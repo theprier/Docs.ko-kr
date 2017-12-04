@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app-mac/start-mvc
-ms.openlocfilehash: 387d7a91ae7d58cbc293c04039017df1dd208c82
-ms.sourcegitcommit: f017f940a164dbaf84307410c78eb14e0f3ac811
+ms.openlocfilehash: 21f115eec924d5e4b21ad78398c8cbd99e02a0a8
+ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="getting-started-with-aspnet-core-mvc-and-visual-studio-for-mac"></a>ASP.NET Core MVC 및 Mac용 Visual Studio 시작
 
@@ -32,7 +32,7 @@ ms.lasthandoff: 11/15/2017
 
 ## <a name="prerequisites"></a>필수 구성 요소
 
-이 자습서에서는 [.NET Core 2.0.0 SDK](https://www.microsoft.com/net/core) 이상이 필요합니다. ASP.NET Core 1.1 버전에 대해서는 [PDF](https://github.com/aspnet/Docs/blob/master/aspnetcore/tutorials/first-mvc-app-mac/start-mvc/8-23-17.pdf)를 참조하세요.
+이 자습서에서는 [.NET Core 2.0.0 SDK](https://www.microsoft.com/net/core) 이상이 필요합니다.
 
 다음을 설치합니다.
 
@@ -55,7 +55,7 @@ Visual Studio에서 **파일 > 새 솔루션**을 선택합니다.
 
 ### <a name="launch-the-app"></a>앱 시작
 
-Visual Studio에서 **실행 > 디버깅하지 않고 시작**을 선택하여 앱을 시작합니다. Visual Studio가 [Kestrel](xref:fundamentals/servers/index#Kestrel)을 시작하고 브라우저를 실행하며 `http://localhost:port`로 이동합니다. 여기서 *port*는 임의로 선택된 포트 번호입니다.
+Visual Studio에서 **실행 > 디버깅하지 않고 시작**을 선택하여 앱을 시작합니다. Visual Studio가 [Kestrel](xref:fundamentals/servers/index#kestrel)을 시작하고 브라우저를 실행하며 `http://localhost:port`로 이동합니다. 여기서 *port*는 임의로 선택된 포트 번호입니다.
 
 ![새 프로젝트가 있는 브라우저](start-mvc/b1.png)
 

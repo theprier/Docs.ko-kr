@@ -11,11 +11,11 @@ ms.assetid: a4449ad3-5bad-410c-afa7-dc32d832b552
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: publishing/iis
-ms.openlocfilehash: e9e9019d5b879498e8800bb579c177dd3ad64061
-ms.sourcegitcommit: 96af03c9f44f7c206e68ae3ef8596068e6b4e5fd
+ms.openlocfilehash: 7eb1537df47fcf0b24db2a7d843b655a6f6f8f21
+ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/15/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>IIS가 있는 Windows에서 ASP.NET Core 호스팅
 
@@ -56,7 +56,7 @@ ms.lasthandoff: 11/15/2017
 
 ## <a name="install-the-net-core-windows-server-hosting-bundle"></a>.NET Core Windows Server 호스팅 번들 설치
 
-1. 호스팅 시스템에 [.NET Core Windows Server 호스팅 번들](https://download.microsoft.com/download/5/C/1/5C190037-632B-443D-842D-39085F02E1E8/DotNetCore.2.0.3-WindowsHosting.exe)을 설치합니다. 번들은 .NET Core 런타임, .NET Core 라이브러리 및 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)을 설치합니다. 이 모듈은 IIS와 Kestrel 서버 사이에 역방향 프록시를 만듭니다. 시스템이 인터넷에 연결되지 않은 경우 [Microsoft Visual C++ 2015 재배포 가능 패키지](https://www.microsoft.com/download/details.aspx?id=53840)를 설치한 후에 .NET Core Windows Server 호스팅 번들을 설치합니다.
+1. 호스팅 시스템에 [.NET Core Windows Server 호스팅 번들](https://aka.ms/dotnetcore-2-windowshosting)을 설치합니다. 번들은 .NET Core 런타임, .NET Core 라이브러리 및 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)을 설치합니다. 이 모듈은 IIS와 Kestrel 서버 사이에 역방향 프록시를 만듭니다. 시스템이 인터넷에 연결되지 않은 경우 [Microsoft Visual C++ 2015 재배포 가능 패키지](https://www.microsoft.com/download/details.aspx?id=53840)를 설치한 후에 .NET Core Windows Server 호스팅 번들을 설치합니다.
 
 2. 시스템을 다시 시작하거나 명령 프롬프트에서 **net stop was /y**에 이어 **net start w3svc**를 실행하여 시스템 PATH에 대한 변경 내용을 선택합니다.
 
@@ -272,7 +272,7 @@ IIS 구성은 여전히 역방향 프록시 구성에 적용되는 IIS 기능에
 
 ## <a name="configuration-sections-of-webconfig"></a>web.config 구성 섹션
 
-*web.config*의 `<system.web>`, `<appSettings>`, `<connectionStrings>` 및 `<location>` 요소로 구성된 .NET Framework 응용 프로그램과 달리 ASP.NET Core 응용 프로그램은 다른 구성 공급자를 사용하여 구성됩니다. 자세한 내용은 [구성](xref:fundamentals/configuration)을 참조하세요.
+*web.config*의 `<system.web>`, `<appSettings>`, `<connectionStrings>` 및 `<location>` 요소로 구성된 .NET Framework 응용 프로그램과 달리 ASP.NET Core 응용 프로그램은 다른 구성 공급자를 사용하여 구성됩니다. 자세한 내용은 [구성](xref:fundamentals/configuration/index)을 참조하세요.
 
 ## <a name="application-pools"></a>응용 프로그램 풀
 
@@ -495,7 +495,7 @@ Kestrel이 IIS 뒤에서 정상적으로 시작되지만 로컬에서 성공적�
 
 * **응용 프로그램 로그:** 실제 루트 'C:\\{PATH}\'이(가) 있는 응용 프로그램 'MACHINE/WEBROOT/APPHOST/MY_APPLICATION'에서 '"C:\\{PATH}\my_application.{exe|dll}"'명령줄로 프로세스를 만들었지만 지정된 포트 '{PORT}'에서 충돌하거나 응답하지 않거나 수신 대기하지 않습니다., 오류 코드 = '0x800705b4'
 
-* **ASP.NET Core 모듈 로그:**  로그 파일이 만들어졌고 정상 작동을 보여 줍니다.
+*  **ASP.NET Core 모듈 로그:**  로그 파일이 만들어졌고 정상 작동을 보여 줍니다.
 
 문제 해결
 
