@@ -10,15 +10,15 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages-mac/index
-ms.openlocfilehash: cd8e0824da09b42e65a0ad10c4d0f98eb0214f88
-ms.sourcegitcommit: 74a8ad9c1ba5c155d7c4303e67632a0922c38e86
+ms.openlocfilehash: 95a89f11a946bbfacc8eb234151d85bfc3046d6e
+ms.sourcegitcommit: 7444087ee28ca5789e08532605683d1d235212e2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/20/2017
+ms.lasthandoff: 11/11/2017
 ---
 # <a name="create-a-razor-pages-web-app-with-aspnet-core-and-visual-studio-for-mac"></a>ASP.NET Core 및 Mac용 Visual Studio를 사용하여 Razor 페이지 웹앱 만들기
 
-이것은 진행 중인 작업입니다. 2주 이내에 시리즈를 완료하기를 기대합니다.
+이것은 진행 중인 작업입니다.
 
 이 시리즈는 Mac에서 ASP.NET Core를 사용하여 Razor 페이지 웹앱을 빌드하는 작업의 기본 사항을 설명합니다.
 

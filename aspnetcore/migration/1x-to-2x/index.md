@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/1x-to-2x/index
-ms.openlocfilehash: 9574f1f8e0970e1b64c2910bf46794621583f18d
-ms.sourcegitcommit: 3cf879f6beaaca2d401ad980cd26cfec70c05c24
+ms.openlocfilehash: 12734504953f2942458c3bfe1fe146f48d8f24ff
+ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/06/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="migrating-from-aspnet-core-1x-to-aspnet-core-20"></a>ASP.NET Core 1.x에서 ASP.NET Core 2.0으로 마이그레이션
 
@@ -123,7 +123,7 @@ Unable to create an object of type '<Context>'. Add an implementation of 'IDesig
 
 이전 코드 조각의 `CreateDefaultBuilder` 메서드에서 사용하는 구성은 [여기](https://github.com/aspnet/MetaPackages/blob/rel/2.0.0/src/Microsoft.AspNetCore/WebHost.cs#L152)에서 확인할 수 있습니다.
 
-자세한 내용은 [ASP.NET Core의 구성](xref:fundamentals/configuration)을 참조하세요.
+자세한 내용은 [ASP.NET Core의 구성](xref:fundamentals/configuration/index)을 참조하세요.
 
 <a name="db-init-code"></a>
 
