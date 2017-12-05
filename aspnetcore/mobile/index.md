@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mobile/index
 ms.openlocfilehash: 56cd92cb55c4c2071ce8be48dc9237d3f4ec35fa
-ms.sourcegitcommit: aa6951e0c2e62209bf7c25e3b3138f04eb92898d
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/18/2017
+ms.lasthandoff: 11/10/2017
 ---
-# <a name="mobile"></a><span data-ttu-id="d7dfc-103">휴대폰</span><span class="sxs-lookup"><span data-stu-id="d7dfc-103">Mobile</span></span>
+# <a name="mobile"></a><span data-ttu-id="3290e-103">휴대폰</span><span class="sxs-lookup"><span data-stu-id="3290e-103">Mobile</span></span>
 
-*   [<span data-ttu-id="d7dfc-104">네이티브 모바일 응용 프로그램에 대한 백 엔드 서비스 만들기</span><span class="sxs-lookup"><span data-stu-id="d7dfc-104">Creating Backend Services for Native Mobile Applications</span></span>](native-mobile-backend.md)
+*   [<span data-ttu-id="3290e-104">네이티브 모바일 응용 프로그램에 대한 백 엔드 서비스 만들기</span><span class="sxs-lookup"><span data-stu-id="3290e-104">Creating Backend Services for Native Mobile Applications</span></span>](native-mobile-backend.md)
