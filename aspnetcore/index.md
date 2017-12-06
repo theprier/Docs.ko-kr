@@ -1,7 +1,7 @@
 ---
 title: "ASP.NET Core 소개"
 author: rick-anderson
-description: 
+description: "ASP.NET Core를 소개합니다."
 keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: index
-ms.openlocfilehash: 748c8c0b9dd0e6eab0d7347bbf89ed80c10bdb54
-ms.sourcegitcommit: e4a1df2a5a85f299322548809e547a79b380bb92
+ms.openlocfilehash: a075c63fddb9e28a1da37d4ef6647808a0dcb583
+ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="introduction-to-aspnet-core"></a>ASP.NET Core 소개
 
@@ -35,7 +35,7 @@ ASP.NET Core는 다음과 같은 이점을 제공합니다.
 
 * 웹 UI 및 웹 API를 동일한 과정으로 빌드합니다.
 * [최신 클라이언트 쪽 프레임워크](xref:client-side/index) 및 워크플로 개발을 통합합니다.
-* 클라우드를 갖춘 환경 기반 [구성 시스템](xref:fundamentals/configuration)입니다.
+* 클라우드를 갖춘 환경 기반 [구성 시스템](xref:fundamentals/configuration/index)입니다.
 * [종속성 주입](xref:fundamentals/dependency-injection)이 기본 제공됩니다.
 * 간단한 고성능 모듈식 HTTP 요청 파이프라인을 포함합니다.
 * IIS에서 호스트하거나 고유한 프로세스에서 자체 호스팅하는 기능이 있습니다.
