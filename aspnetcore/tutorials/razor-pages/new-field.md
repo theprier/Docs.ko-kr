@@ -74,7 +74,7 @@ SqlException: Invalid column name 'Rating'.
 
 <span data-ttu-id="af2bc-141">솔루션을 빌드합니다.</span><span class="sxs-lookup"><span data-stu-id="af2bc-141">Build the solution.</span></span>
 
-<span data-ttu-id="af2bc-142"><a name="pmc"></a> **도구** 메뉴에서 **NuGet 패키지 관리자 > 패키지 관리자 콘솔**을 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="af2bc-142"><a name="pmc"></a> From the **Tools** menu, select **NuGet Package Manager > Package Manager Console**.</span></span>
+<a name="pmc"></a> <span data-ttu-id="af2bc-142">**도구** 메뉴에서 **NuGet 패키지 관리자 > 패키지 관리자 콘솔**을 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="af2bc-142">From the **Tools** menu, select **NuGet Package Manager > Package Manager Console**.</span></span>
 <span data-ttu-id="af2bc-143">PMC에서 다음 명령을 입력합니다.</span><span class="sxs-lookup"><span data-stu-id="af2bc-143">In the PMC, enter the following commands:</span></span>
 
 ```powershell
@@ -89,7 +89,7 @@ Update-Database
 
 <span data-ttu-id="af2bc-147">"Rating" 이름은 임의로 지정되며 마이그레이션 파일의 이름을 지정하는 데 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="af2bc-147">The name "Rating" is arbitrary and is used to name the migration file.</span></span> <span data-ttu-id="af2bc-148">마이그레이션 파일에 의미 있는 이름을 사용하는 것이 좋습니다.</span><span class="sxs-lookup"><span data-stu-id="af2bc-148">It's helpful to use a meaningful name for the migration file.</span></span>
 
-<span data-ttu-id="af2bc-149"><a name="ssox"></a> DB의 모든 레코드를 삭제하는 경우 이니셜라이저에서 DB를 시드하고 `Rating` 필드를 포함합니다.</span><span class="sxs-lookup"><span data-stu-id="af2bc-149"><a name="ssox"></a> If you delete all the records in the DB, the initializer will seed the DB and include the `Rating` field.</span></span> <span data-ttu-id="af2bc-150">브라우저 또는 [SSOX](xref:tutorials/razor-pages/sql#ssox)(Sql Server 개체 탐색기)에서 삭제 링크를 사용하여 이를 수행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="af2bc-150">You can do this with the delete links in the browser or from [Sql Server Object Explorer](xref:tutorials/razor-pages/sql#ssox) (SSOX).</span></span> <span data-ttu-id="af2bc-151">SSOX에서 데이터베이스를 삭제하려면:</span><span class="sxs-lookup"><span data-stu-id="af2bc-151">To delete the database from SSOX:</span></span>
+<a name="ssox"></a> <span data-ttu-id="af2bc-149">DB의 모든 레코드를 삭제하는 경우 이니셜라이저에서 DB를 시드하고 `Rating` 필드를 포함합니다.</span><span class="sxs-lookup"><span data-stu-id="af2bc-149">If you delete all the records in the DB, the initializer will seed the DB and include the `Rating` field.</span></span> <span data-ttu-id="af2bc-150">브라우저 또는 [SSOX](xref:tutorials/razor-pages/sql#ssox)(Sql Server 개체 탐색기)에서 삭제 링크를 사용하여 이를 수행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="af2bc-150">You can do this with the delete links in the browser or from [Sql Server Object Explorer](xref:tutorials/razor-pages/sql#ssox) (SSOX).</span></span> <span data-ttu-id="af2bc-151">SSOX에서 데이터베이스를 삭제하려면:</span><span class="sxs-lookup"><span data-stu-id="af2bc-151">To delete the database from SSOX:</span></span>
 
 * <span data-ttu-id="af2bc-152">SSOX에서 데이터베이스를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="af2bc-152">Select the database in SSOX.</span></span>
 * <span data-ttu-id="af2bc-153">데이터베이스를 마우스 오른쪽 단추로 클릭하고 *삭제*를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="af2bc-153">Right click on the database, and select *Delete*.</span></span>
