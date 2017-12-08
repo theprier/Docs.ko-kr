@@ -1,0 +1,239 @@
+---
+uid: mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application
+title: "ASP.NET MVC 응용 프로그램 (7 / 10) Entity Framework 사용 하 여 동시성 처리 | Microsoft Docs"
+author: tdykstra
+description: "Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 5 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 4 응용 프로그램을 만드는 방법을 보여 줍니다 중..."
+ms.author: aspnetcontent
+manager: wpickett
+ms.date: 07/30/2013
+ms.topic: article
+ms.assetid: b83f47c4-8521-4d0a-8644-e8f77e39733e
+ms.technology: dotnet-mvc
+ms.prod: .net-framework
+msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application
+msc.type: authoredcontent
+ms.openlocfilehash: b072134043ceda809bfeca98447a132ed407b323
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.translationtype: MT
+ms.contentlocale: ko-KR
+ms.lasthandoff: 11/10/2017
+---
+<a name="handling-concurrency-with-the-entity-framework-in-an-aspnet-mvc-application-7-of-10"></a>ASP.NET MVC 응용 프로그램 (7 / 10) Entity Framework 사용 하 여 동시성 처리
+====================
+으로 [Tom Dykstra](https://github.com/tdykstra)
+
+[완료 된 프로젝트를 다운로드 합니다.](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
+
+> Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 5 Code First 및 Visual Studio 2012를 사용 하 여 ASP.NET MVC 4 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대 한 정보를 참조 하십시오. [시리즈의 첫 번째 자습서](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)합니다. 시작 부분에서 자습서 시리즈를 시작할 수 있습니다 또는 [이 장의 대 한 시작 프로젝트 다운로드](building-the-ef5-mvc4-chapter-downloads.md) 여기에서 시작 하 고 있습니다.
+> 
+> > [!NOTE] 
+> > 
+> > 해결할 수 없는 문제에 직면 하는 경우 [완료 장 다운로드](building-the-ef5-mvc4-chapter-downloads.md) 문제를 재현 하려고 합니다. 일반적으로 코드 완성 된 코드를 비교 하 여 문제에 솔루션을 찾을 수 있습니다. 몇 가지 일반적인 오류 및 해결 하는 방법에 대 한 참조 [오류 및 해결 방법입니다.](advanced-entity-framework-scenarios-for-an-mvc-web-application.md#errors)
+
+
+이전 두 자습서 관련된 데이터와 함께 작동 합니다. 이 자습서에는 동시성을 처리 하는 방법을 보여 줍니다. 사용 하는 웹 페이지를 만들 수는 `Department` 엔터티와 편집 및 삭제 하는 페이지 `Department` 엔터티는 동시성 오류를 처리 합니다. 다음 그림은 동시성 충돌이 발생 한 경우 표시 되는 일부 메시지를 포함 하는 인덱스 및 Delete 페이지를 보여 줍니다.
+
+![Department_Index_page_before_edits](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image1.png)
+
+![Department_Edit_page_2_after_clicking_Save](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image2.png)
+
+## <a name="concurrency-conflicts"></a>동시성 충돌
+
+한 명의 사용자를 편집 하기 위해 엔터티 데이터를 표시 하 고 첫 번째 사용자의 변경 내용을 데이터베이스에 기록 되기 전에 다른 사용자는 동일한 엔터티의 데이터를 업데이트 하는 다음 동시성 충돌이 발생 합니다. 이러한 충돌 감지를 사용 하지 않을 경우 다른 사용자의 변경 내용을 덮어씁니다 마지막 누구 든 지 데이터베이스를 업데이트 합니다. 많은 응용 프로그램에서이 위험을 감수할: 적은 수의 사용자, 또는 몇 가지 업데이트 하거나 동시성에 대 한 프로그래밍의 비용의 이점 보다 클 수 일부 변경 내용이 덮어쓰면 실제로 중요 하지 않은 합니다. 이 경우 동시성 충돌을 처리 하도록 응용 프로그램을 구성할 필요가 없습니다.
+
+### <a name="pessimistic-concurrency-locking"></a>비관적 동시성 (잠금)
+
+응용 프로그램에서 동시성 시나리오에서 실수로 인 한 데이터 손실을 방지할 필요가 경우 작업을 수행 하는 한 가지 방법은 데이터베이스 잠금을 사용 하는 합니다. 이 라고 *비관적 동시성*합니다. 예를 들어 데이터베이스에서 행을 읽기 전에 요청에 대 한 잠금을 읽기 전용 이거나 업데이트 액세스 합니다. 업데이트 권한이 대 한 행을 잠그는 다른 사용자가 허용 되는 경우 행에 대해 잠글 읽기 전용 또는 변경 중인 데이터의 복사본을 가져오기 때문에 대 한 액세스를 업데이트 합니다. 읽기 전용 액세스에 대 한 행을 잠그는 경우 다른 사용자도 잠글 수 있지만 업데이트에 대 한 읽기 전용 액세스 합니다.
+
+잠금 관리에 단점이 있습니다. 프로그램으로 복잡할 수 있습니다. 중요 한 데이터베이스 관리 리소스 있어야 하며 응용 프로그램의 사용자의 수로 성능 문제가 생길 수 증가 (즉, 하기 쉽지 않습니다). 이러한 이유로 모든 데이터베이스 관리 시스템 비관적 동시성을 지원 합니다. Entity Framework,에 대 한 기본 제공 지원이 제공 하 고이 자습서에서는 구현 하는 방법을 표시 되지 않습니다.
+
+### <a name="optimistic-concurrency"></a>낙관적 동시성
+
+비관적 동시성을 대신 사용 하는 *낙관적 동시성*합니다. 낙관적 동시성 현상이 동시성 충돌을 허용 하 고 그럴 경우 적절 하 게 반응 의미 합니다. 이한일은 변경 부서 편집 페이지를 실행 하는 예를 들어는 **예산** $0.00으로 $350,000.00에서 영어 부서에 대 한 금액입니다.
+
+![Changing_English_dept_budget_to_100000](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image3.png)
+
+John 클릭 하기 전에 **저장**, Jane의 동일한 페이지 및 변경 내용 실행 되는 **시작 날짜** 2013 년 8 월 8 일에 필드를 2007 년 9 월 1입니다.
+
+![Changing_English_dept_start_date_to_1999](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image4.png)
+
+John 클릭 **저장** 클릭 한 다음 jane은 인덱스 페이지에는 브라우저는 반환 될 때 그의 변경에 게 표시 하 고 첫 번째 **저장**합니다. 다음은 동시성 충돌을 처리 하는 방법을 따라 결정 됩니다. 일부 옵션은 다음과 같습니다.
+
+- 한 사용자가 수정 되는 속성을 추적 하 고 데이터베이스의 해당 열만 업데이트할 수 있습니다. 예제 시나리오에서 데이터가 손실 될, 서로 다른 속성 두 사용자가 업데이트 되었기 때문에 합니다. 다음에 영어 부서 이동, John의와 Jane의 변경 내용을 볼 수 있습니다-2013 년 8 월 8 일의 시작 날짜와 예산 0 달러입니다.
+
+    이 메서드를 업데이트 하는 데이터가 손실 될 수 있는 충돌 수를 줄일 수 있지만 경쟁 변경 되 면 동일한 엔터티의 속성에 데이터 손실을 방지할 수 없습니다. Entity Framework이 방식이으로 작동 하는지 여부를 업데이트 코드를 구현 하는 방법에 따라 달라 집니다. 것은 엔터티에 대 한 기존 속성 값 뿐만 아니라 새 값의 추적을 유지 하기 위해 많은 양의 상태를 유지 해야 하므로 웹 응용 프로그램에서는 실용적 없는 경우가 많습니다. 많은 양의 상태를 유지 관리 서버 리소스를 필요로 하거나 (예를 들어 숨겨진된 필드)에 웹 페이지 자체에 포함 해야 하기 때문에 응용 프로그램 성능이 떨어질 수 있습니다.
+- John의 내용으로 덮어쓰게 Jane의 변경 하도록 할 수 있습니다. 다음에 영어 부서 이동, 2013 년 8 월 8 일을 볼 수 있습니다 및 복원 된 $350,000.00 값입니다. 이 라고는 *클라이언트 우선* 또는 *최신으로* 시나리오입니다. (클라이언트의 값 보다 우선 데이터 저장소에 포함 된 내용입니다.) 동시성 처리에 대 한 코딩이 이렇게 하지 않으면이 섹션의 소개 부분에서 언급 했 듯이이 자동으로 수행 됩니다.
+- 데이터베이스에서 업데이트 되 고에서 Jane의 변경을 방지할 수 있습니다. 일반적으로 오류 메시지가 표시, 그녀는 데이터의 현재 상태를 표시 하는 그녀는 여전히 있도록가 그녀의 변경 내용을 다시 적용할 수 있습니다. 이 라고는 *저장소 Wins* 시나리오입니다. (데이터 저장소 값 보다 우선 적용 클라이언트에서 전송한 값.) 이 자습서에서는 저장소 Wins 시나리오를 구현 합니다. 이 메서드는 변경 하는 상황과 경고가 표시 되 고 사용자가 없어도 덮어씀을 확인 합니다.
+
+### <a name="detecting-concurrency-conflicts"></a>동시성 충돌 확인
+
+처리 하 여 충돌을 해결할 수 [OptimisticConcurrencyException](https://msdn.microsoft.com/en-us/library/system.data.optimisticconcurrencyexception.aspx) Entity Framework throw 하는 예외입니다. 이러한 예외를 throw 하는 시기를 확인 하기 위해 Entity Framework에서 충돌을 검색할 수 있어야 합니다. 따라서 구성 해야 데이터베이스와 데이터 모델 적절 하 게 합니다. 충돌 감지를 사용 하기 위한 몇 가지 옵션은 다음과 같습니다.
+
+- 데이터베이스 테이블에 행이 변경 된 시기를 결정 하는 데 사용할 수 있는 추적 열을 포함 합니다. Entity Framework의 해당 열을 포함 하도록 구성할 수 있습니다는 `Where` sql 절 `Update` 또는 `Delete` 명령입니다.
+
+    추적 열의 데이터 형식이 일반적으로 [rowversion](https://msdn.microsoft.com/en-us/library/ms182776(v=sql.110).aspx)합니다. [rowversion](https://msdn.microsoft.com/en-us/library/ms182776(v=sql.110).aspx) 값은 행이 업데이트 될 때마다가 증가 하는 일련 번호입니다. 에 `Update` 또는 `Delete` 명령을 `Where` 절 추적 열 (원래 행 버전)의 원래 값이 포함 됩니다. 업데이트 되는 행의 값을 다른 사용자에 의해 변경 된 경우는 `rowversion` 열이 원래 값과 다른 하므로 `Update` 또는 `Delete` 문 때문에 업데이트할 행을 찾을 수 없습니다는 `Where` 절. 경우 Entity Framework의 행이 없는 하 여 업데이트를 찾습니다는 `Update` 또는 `Delete` 명령 (즉 때 영향을 받는 행 수는 0), 동시성 충돌 하는 해석 합니다.
+- Entity Framework에서 테이블의 모든 열의 원래 값을 포함 하도록 구성 된 `Where` 절 `Update` 및 `Delete` 명령 합니다.
+
+    첫 번째 옵션 행 주체를 읽어 먼저 이후에 변경 된 행에 아무 것도 경우와 같이 `Where` 절 반환 하지 않습니다는 행을 업데이트 하려면 Entity Framework를 동시성 충돌로 해석 합니다. 많은 열이 있는 데이터베이스 테이블에 대 한이 방법을 사용 하면 매우 큰 `Where` 절, 많은 양의 상태를 유지 관리 하는 필요할 수 있습니다. 앞에서 설명한 대로 많은 양의 상태를 유지 관리 성능이 떨어질 수 있습니다 응용 프로그램 때문에 서버 리소스를 필요로 하거나 웹 페이지 자체에 포함 되어야 합니다. 따라서이 방법은 일반적으로 권장 되지 않으며,이 자습서에 사용 하는 방법은 아닙니다.
+
+    추가 하 여 동시성을 추적 하려는 엔터티의 모든 아닌 기본 키 속성을 표시 해야 하는 동시성이 접근 방식을 구현 않으려면는 [ConcurrencyCheck](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.concurrencycheckattribute.aspx) 특성을 해당 합니다. Entity Framework는 SQL의 모든 열을 포함 하도록 변경 하는 `WHERE` 절 `UPDATE` 문.
+
+이 자습서의 나머지 부분에서는 추가 [rowversion](https://msdn.microsoft.com/en-us/library/ms182776(v=sql.110).aspx) 속성을 추적는 `Department` 엔터티를 컨트롤러와 뷰를 만들고 모든 항목이 올바르게 작동 하는지 확인 하려면 테스트 합니다.
+
+## <a name="add-an-optimistic-concurrency-property-to-the-department-entity"></a>낙관적 동시성 속성 부서 엔터티에 추가
+
+*Models\Department.cs*, 라는 추적 속성을 추가 `RowVersion`:
+
+[!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample1.cs?highlight=18-19)]
+
+[타임 스탬프](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.timestampattribute.aspx) 특성에이 열은 포함 되어야 함을 지정는 `Where` 절 `Update` 및 `Delete` 명령을 데이터베이스에 전송 합니다. 이 특성 이라고 [타임 스탬프](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.timestampattribute.aspx) 이전 버전의 SQL Server는 SQL을 사용 하기 때문에 [타임 스탬프](https://msdn.microsoft.com/en-us/library/ms182776(v=SQL.90).aspx) SQL 전에 데이터 형식 [rowversion](https://msdn.microsoft.com/en-us/library/ms182776(v=sql.110).aspx) 대체 했습니다. .Net 유형을 `rowversion` 는 바이트 배열입니다. Fluent API를 사용 하는 것을 선호 하는 경우 사용할 수 있습니다는 [IsConcurrencyToken](https://msdn.microsoft.com/en-us/library/gg679501(v=VS.103).aspx) 메서드를 다음 예제와 같이 추적 속성을 지정 합니다.
+
+[!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample2.cs)]
+
+속성을 추가 하 여 다른 마이그레이션을 수행 해야 하므로 데이터베이스 모델을 변경 했습니다. 패키지 관리자 콘솔 (PMC)에서 다음 명령을 입력 합니다.
+
+[!code-console[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample3.cmd)]
+
+## <a name="create-a-department-controller"></a>부서 컨트롤러 만들기
+
+만들기는 `Department` 컨트롤러와 뷰는 동일한 방식으로 다른 컨트롤러에서 다음 설정을 사용 하 여:
+
+![Add_Controller_dialog_box_for_Department_controller](https://asp.net/media/2578041/Windows-Live-Writer_Handling-C.NET-MVC-Application-7-of-10h1_AFDC_Add_Controller_dialog_box_for_Department_controller_d1d9c788-f970-4d6a-9f5a-1eddc84330b7.png)
+
+*Controllers\DepartmentController.cs*, 추가 `using` 문:
+
+[!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample4.cs)]
+
+변경 "LastName" "fullname" (4 회)이이 파일에 있는 부서 관리자 드롭 다운 목록 있도록 마지막 이름만 아니라 강의의 전체 이름을 포함 합니다.
+
+[!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample5.cs?highlight=1)]
+
+에 대 한 기존 코드는 `HttpPost` `Edit` 메서드를 다음 코드로:
+
+[!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample6.cs)]
+
+보기는 원래 저장 `RowVersion` 숨겨진된 필드의 값입니다. 모델 바인더를 만들 때는 `department` 인스턴스에 해당 개체가 원래 갖습니다 `RowVersion` 속성 값과 다른 속성을 편집 페이지에서 사용자가 입력 한 대로 대 한 새 값입니다. Entity Framework는 SQL을 생성할 때 다음 `UPDATE` 명령, 명령 포함 됩니다는 `WHERE` 원래 있는 행을 검색 하는 절 `RowVersion` 값입니다.
+
+행의 영향을 받는 경우는 `UPDATE` 명령 (행이 없는 원래 `RowVersion` 값), Entity Framework에서는 `DbUpdateConcurrencyException` 예외 및의 코드는 `catch` 블록 가져옵니다 영향을 받는 `Department` 예외에서 엔터티 개체입니다. 이 엔터티는 데이터베이스에서 읽은 값과 사용자가 입력 한 새 값에:
+
+[!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample7.cs)]
+
+다음으로, 코드 편집 페이지에서 사용자 입력에서 다른 데이터베이스 값이 포함 된 각 열에 대 한 사용자 지정 오류 메시지를 추가 합니다.
+
+[!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample8.cs)]
+
+긴 오류 메시지에 발생 하는 결과 수행할 작업 항목에 대 한 설명 합니다.
+
+[!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample9.cs)]
+
+마지막으로 코드가 설정는 `RowVersion` 의 값은 `Department` 데이터베이스에서 검색 한 개체를 새 값입니다. 이 새로운 `RowVersion` 페이지 다시 표시 됩니다, 편집 및 다음의 사용자 클릭을 시간 값 숨겨진된 필드에 저장 됩니다 **저장**만 편집 페이지를 다시 표시 됩니다 찾아낼 수 때문에 발생 하는 동시성 오류.
+
+*Views\Department\Edit.cshtml*를 저장 하는 숨겨진된 필드를 추가 하는 `RowVersion` 속성 값을 바로 다음에 대 한 숨겨진된 필드는 `DepartmentID` 속성:
+
+[!code-cshtml[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample10.cshtml?highlight=17)]
+
+*Views\Department\Index.cshtml*, 기존 코드를 왼쪽 행 링크를 이동 하 고 표시 하는 페이지 제목 및 열 머리글을 변경할를 다음 코드로 바꿉니다 `FullName` 대신 `LastName` 는 에**관리자** 열:
+
+[!code-cshtml[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample11.cshtml)]
+
+## <a name="testing-optimistic-concurrency-handling"></a>낙관적 동시성 처리를 테스트합니다.
+
+사이트를 실행 하 고 클릭 **부서**:
+
+![Department_Index_page_before_edits](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image5.png)
+
+마우스 오른쪽 단추로 클릭는 **편집** Kim 손 및 선택에 대 한 하이퍼링크 **새 탭에서 열기** 클릭는 **편집** Kim abercrombie 하이퍼링크입니다. 두 창에는 동일한 정보를 표시합니다.
+
+![Department_Edit_page_before_changes](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image6.png)
+
+첫 번째 브라우저 창에서 필드를 변경 하 고 클릭 **저장**합니다.
+
+![Department_Edit_page_1_after_change](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image7.png)
+
+브라우저는 변경 된 값은 인덱스 페이지를 보여 줍니다.
+
+![Departments_Index_page_after_first_budget_edit](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image8.png)
+
+두 번째 브라우저 창에서 모든 필드를 변경 하 고 클릭 **저장**합니다.
+
+![Department_Edit_page_2_after_change](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image9.png)
+
+클릭 **저장** 두 번째 브라우저 창에서. 오류 메시지가 나타납니다.
+
+![Department_Edit_page_2_after_clicking_Save](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image10.png)
+
+클릭 **저장** 다시 합니다. 두 번째 브라우저에 입력 된 값은 첫 번째 브라우저에서 변경 데이터의 원래 값과 함께 저장 됩니다. 인덱스 페이지가 표시 되 면 저장된 된 값을 참조 합니다.
+
+![Department_Index_page_with_change_from_second_browser](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image11.png)
+
+## <a name="updating-the-delete-page"></a>업데이트 페이지 삭제
+
+Delete 페이지에 대 한 Entity Framework는 다른 부서에서 비슷한 방식으로 편집 사용자에 의해 발생 한 동시성 충돌을 검색 합니다. 경우는 `HttpGet` `Delete` 확인 뷰를 표시 하는 메서드, 보기 포함 원래 `RowVersion` 숨겨진된 필드의 값입니다. 값은 사용할 수 있는 다음의 `HttpPost` `Delete` 메서드를 사용자가 삭제 확인 될 때 호출 됩니다. Entity Framework는 SQL을 생성할 때 `DELETE` 명령을 포함 한 `WHERE` 원래 절 `RowVersion` 값입니다. 0 개의 행에 명령 결과가 (행이 삭제 확인 페이지에 표시 된 후 변경 의미), 영향을 받는 경우 동시성 예외가 throw 되 고 `HttpGet Delete` 로 설정 하는 오류 플래그가 메서드는 `true` 다시 표시 하려면는 오류 메시지와 함께 확인 페이지입니다. 행이 없는 경우에서 다른 오류 메시지가 표시 되는 행 다른 사용자가 삭제 되었으므로 때문에 영향을 받은 수 이기도 합니다.
+
+*DepartmentController.cs*, 대체 된 `HttpGet` `Delete` 메서드를 다음 코드로:
+
+[!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample12.cs)]
+
+메서드는 동시성 오류가 발생 한 후 페이지는 다시 표시 되 고 있는지 여부를 나타내는 선택적 매개 변수를 허용 합니다. 이 플래그는 경우 `true`를 사용 하 여 보기에 오류 메시지가 전송 되는 `ViewBag` 속성입니다.
+
+코드는 `HttpPost` `Delete` 메서드 (라는 `DeleteConfirmed`)를 다음 코드로:
+
+[!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample13.cs)]
+
+대체 했습니까 스 캐 폴드 코드에서이 메서드는 레코드 ID만 수락 됨:
+
+[!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample14.cs)]
+
+이 매개 변수를 변경한 후는 `Department` 모델 바인더를 통해 만든 엔터티 인스턴스. 그러면에 액세스할 수는 `RowVersion` 레코드 키 외에 속성 값입니다.
+
+[!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample15.cs)]
+
+작업 메서드 이름을 변경한 `DeleteConfirmed` 를 `Delete`합니다. 명명 된 스 캐 폴드 코드는 `HttpPost` `Delete` 메서드 `DeleteConfirmed` 제공 하는 `HttpPost` 메서드는 고유의 시그니처가 있습니다. (CLR 오버 로드 된 메서드를 다른 메서드에 매개 변수가 필요 합니다.) 이제는 서명 되는 고유 수는 MVC 규칙 집중 하에 동일한 이름을 사용 하 여는 `HttpPost` 및 `HttpGet` 메서드를 삭제 합니다.
+
+동시성 오류 들어갈 코드 삭제 확인 페이지를 다시 표시 하 고 것을 나타내는 플래그를 동시성 오류 메시지를 표시할지를 제공 합니다.
+
+*Views\Department\Delete.cshtml*, 대체 서식이 일부는 다음 코드를 사용 하 여 스 캐 폴드 코드를 변경 하 고 오류 메시지 필드를 추가 합니다. 변경 내용은 강조 표시 됩니다.
+
+[!code-cshtml[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample16.cshtml?highlight=9,37,40,45-46)]
+
+이 코드 사이 오류 메시지가 추가 `h2` 및 `h3` 머리글:
+
+[!code-cshtml[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample17.cshtml)]
+
+대체 `LastName` 와 `FullName` 에 `Administrator` 필드:
+
+[!code-cshtml[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample18.cshtml)]
+
+마지막으로, 숨겨진된 필드에 대 한 추가 `DepartmentID` 및 `RowVersion` 후 속성은 `Html.BeginForm` 문:
+
+[!code-cshtml[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample19.cshtml)]
+
+부서 인덱스 페이지를 실행 합니다. 마우스 오른쪽 단추로 클릭는 **삭제** 영어 부서 및 선택에 대 한 하이퍼링크 **새 창에서 열기** 첫 번째 창에서 클릭 된 **편집** 의 영어에 대 한 하이퍼링크 부서입니다.
+
+첫 번째 창에서 값 중 하나를 변경 하 고 클릭 **저장** :
+
+![Department_Edit_page_after_change_before_delete](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image12.png)
+
+인덱스 페이지에 변경 내용을 확인합니다.
+
+![Departments_Index_page_after_budget_edit_before_delete](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image13.png)
+
+두 번째 창에서 클릭 **삭제**합니다.
+
+![Department_Delete_confirmation_page_before_concurrency_error](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image14.png)
+
+동시성 오류 메시지가 표시 되며 부서 값은 현재 데이터베이스와 새로 고쳐집니다.
+
+![Department_Delete_confirmation_page_with_concurrency_error](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image15.png)
+
+클릭 하면 **삭제** 부서 삭제 했을 보여 주는 인덱스 페이지로 이동 하는 하는 다시 합니다.
+
+## <a name="summary"></a>요약
+
+동시성 충돌 처리 소개를 완료 합니다. 다양 한 동시성 시나리오를 처리 하는 다른 방법에 대 한 정보를 참조 하십시오. [낙관적 동시성 패턴](https://blogs.msdn.com/b/adonet/archive/2011/02/03/using-dbcontext-in-ef-feature-ctp5-part-9-optimistic-concurrency-patterns.aspx) 및 [속성 값을 가진 작업](https://blogs.msdn.com/b/adonet/archive/2011/01/30/using-dbcontext-in-ef-feature-ctp5-part-5-working-with-property-values.aspx) Entity Framework 팀 블로그. 다음 자습서에 대 한 계층당 하나의 테이블 상속을 구현 하는 방법을 보여 줍니다는 `Instructor` 및 `Student` 엔터티.
+
+다른 Entity Framework 리소스에 대 한 링크에서 확인할 수 있습니다는 [ASP.NET 데이터 액세스 콘텐츠 맵](../../../../whitepapers/aspnet-data-access-content-map.md)합니다.
+
+>[!div class="step-by-step"]
+[이전](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+[다음](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application.md)
