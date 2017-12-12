@@ -1,8 +1,8 @@
 ---
 title: "클레임 기반 권한 부여"
 author: rick-anderson
-description: 
-keywords: ASP.NET Core
+description: "이 문서에서는 ASP.NET Core 응용 프로그램에서 권한 부여에 대 한 클레임 검사를 추가 하는 방법을 설명 합니다."
+keywords: "ASP.NET Core, 권한 부여 클레임"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,17 +11,17 @@ ms.assetid: 737be5cd-3511-4f1c-b0ce-65403fb5eed3
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/claims
-ms.openlocfilehash: fca75952429d48b02c2c4350b79e29a1957599dc
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: eebaddabdd360f34b6ff44e8f4f9f1f10fda6406
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="claims-based-authorization"></a>클레임 기반 권한 부여
 
-<a name=security-authorization-claims-based></a>
+<a name="security-authorization-claims-based"></a>
 
-Id를 만들 때 신뢰할 수 있는 당사자가 발급 하는 하나 이상의 클레임 할당할 수 있습니다. 클레임은 어떤 주제를 나타내는 쌍은 이름 값, 하지 어떤 주체 작업을 수행할 수 있습니다. 예를 들어 로컬 구동 라이선스 기관에서 발급 한 운전 면허 할 수 있습니다. 드라이버의 라이선스 생년월일 갖고 있습니다. 이 경우 클레임 이름이 표시 됩니다 `DateOfBirth`, 클레임 값과 수 생년월일, 예를 들어 `8th June 1970` 발급자 구동 라이선스 기관 될 수 있습니다. 가장 간단한 클레임 기반 권한 부여 클레임의 값을 확인 하 고 해당 값에 따라 리소스에 대 한 액세스를 허용 합니다. 에 권한 부여 프로세스 밤 클럽에 액세스 하려는 경우를 예로 들 수 있습니다.
+Id를 만들 때 신뢰할 수 있는 당사자가 발급 하는 하나 이상의 클레임 할당할 수 있습니다. 클레임은 어떤 주제를 나타내는 쌍은 이름 값, 하지 어떤 주체 작업을 수행할 수 있습니다. 예를 들어 로컬 구동 라이선스 기관에서 발급 하는 운전 면허증을 할 수 있습니다. 드라이버의 라이선스 생년월일 갖고 있습니다. 이 경우 클레임 이름이 표시 됩니다 `DateOfBirth`, 클레임 값과 수 생년월일, 예를 들어 `8th June 1970` 발급자 구동 라이선스 기관 될 수 있습니다. 가장 간단한 클레임 기반 권한 부여 클레임의 값을 확인 하 고 해당 값에 따라 리소스에 대 한 액세스를 허용 합니다. 에 권한 부여 프로세스 밤 클럽에 액세스 하려는 경우를 예로 들 수 있습니다.
 
 문 보안 책임자 출생 클레임 및 액세스 권한을 부여 하기 전에 (구동 라이선스 기관) 발급자 서로 신뢰 하는지 여부의 날짜 값을 평가 됩니다.
 
@@ -105,7 +105,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ## <a name="multiple-policy-evaluation"></a>여러 정책 평가
 
-컨트롤러 또는 동작에 여러 정책을 적용 하는 경우 액세스 권한을 부여 하기 전에 모든 정책 통과 해야 합니다. 예:
+컨트롤러 또는 동작에 여러 정책을 적용 하면 액세스 권한을 부여 하기 전에 모든 정책 통과 해야 합니다. 예:
 
 ```csharp
 [Authorize(Policy = "EmployeeOnly")]
@@ -124,4 +124,4 @@ public class SalaryController : Controller
 
 위의 예에 충족 하는 모든 id는 `EmployeeOnly` 정책에 액세스할 수는 `Payslip` 해당 정책으로는 작업의 컨트롤러에 적용 됩니다. 그러나 호출 하기 위해는 `UpdateSalary` id 충족 해야 하는 작업 *둘 다* 는 `EmployeeOnly` 정책 및 `HumanResources` 정책입니다.
 
-더 복잡 한 정책을 원하는 출생 클레임의 날짜를 가져와 같은 보존 기간을 확인 한 다음에서 나 계산 21 또는 오래 된 경우를 작성 해야 [사용자 지정 정책 처리기](policies.md#security-authorization-policies-based)합니다.
+더 복잡 한 정책을 원하는 출생 클레임의 날짜를 가져와 같은 보존 기간을 확인 한 다음에서 나 계산 21 또는 오래 된 경우를 작성 해야 [사용자 지정 정책 처리기](policies.md)합니다.

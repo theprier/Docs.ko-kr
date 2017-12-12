@@ -11,11 +11,11 @@ ms.assetid: 531bda08-aa5b-4471-8f08-96add22c8683
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/filters
-ms.openlocfilehash: 215d165d0029bbf38ef37cdde57b80a15bff9ef9
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 0a2a374ac77b9fd7c626aa6749cffbd3fb0f08d5
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="filters"></a>필터
 
@@ -82,7 +82,7 @@ ms.lasthandoff: 09/22/2017
 
 프레임 워크 하위 클래스를 할 수 있는 기본 제공 특성 기반 필터를 포함 하 고 사용자 지정 합니다. 예를 들어 다음 결과 필터 응답에 대 한 헤더를 추가 합니다.
 
-<a name=add-header-attribute></a>
+<a name="add-header-attribute"></a>
 
 [!code-csharp[Main](./filters/sample/src/FiltersSample/Filters/AddHeaderAttribute.cs?highlight=5,16)]
 
@@ -167,7 +167,7 @@ ms.lasthandoff: 09/22/2017
 
 설정 하 여 언제 든 지 필터 파이프라인을 단락 수는 `Result` 속성에는 `context` 필터 메서드에 제공 된 매개 변수입니다. 예를 들어, 다음과 같은 리소스 필터 파이프라인의 나머지 부분에서 실행 되지 않도록합니다.
 
-<a name=short-circuiting-resource-filter></a>
+<a name="short-circuiting-resource-filter"></a>
 
 [!code-csharp[Main](./filters/sample/src/FiltersSample/Filters/ShortCircuitingResourceFilterAttribute.cs?highlight=12,13,14,15)]
 
@@ -188,7 +188,7 @@ ms.lasthandoff: 09/22/2017
 * `IFilterFactory`특성에 구현
 
 > [!NOTE]
-> DI에서 가져올 하려는 경우 종속성을 하나는 거입니다. 그러나 만들고 이후 로깅 용도로 필터를 사용 하를 사용 하지는 [기본 제공 프레임 워크 로깅 기능이](../../fundamentals/logging.md) 필요한 이미 제공 될 수 있습니다. 필터에 로깅을 추가 하려는 경우 비즈니스 도메인 문제나 또는 필터를 보다는 MVC 동작 또는 다른 프레임 워크 이벤트에 대 한 동작에 집중 해야 합니다.
+> DI에서 가져올 하려는 경우 종속성을 하나는 거입니다. 그러나 만들고 이후 로깅 용도로 필터를 사용 하를 사용 하지는 [기본 제공 프레임 워크 로깅 기능이](xref:fundamentals/logging/index) 필요한 이미 제공 될 수 있습니다. 필터에 로깅을 추가 하려는 경우 비즈니스 도메인 문제나 또는 필터를 보다는 MVC 동작 또는 다른 프레임 워크 이벤트에 대 한 동작에 집중 해야 합니다.
 
 ### <a name="servicefilterattribute"></a>ServiceFilterAttribute
 

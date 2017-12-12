@@ -12,10 +12,10 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/overview
 ms.openlocfilehash: 2492b6aa4602dbbf3b9cd3dca00d40690c640cab
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="overview-of-aspnet-core-mvc"></a>ASP.NET Core MVC 개요
 
@@ -183,7 +183,7 @@ ASP.NET Core에서 기본적으로 지원 [종속성 주입 (DI)](../fundamental
 
 [영역](controllers/areas.md) 큰 ASP.NET Core MVC 웹 응용 프로그램 여러 개의 작은 기능 그룹으로 분할 하는 방법을 제공 합니다. 실질적으로 영역은 응용 프로그램 내의 MVC 구조입니다. MVC 프로젝트에서 모델, 컨트롤러 및 보기와 같은 논리적 구성 요소는 서로 다른 폴더에 저장 하는 및 MVC 명명 규칙을 사용 하 여 이러한 구성 요소 간의 관계를 만들 수 있습니다. 규모가 큰 앱에 대 한 별도 높은 수준의 기능 영역을를 응용 프로그램을 분할 하는 것이 도움이 수도 있습니다. 예를 들어, 체크 아웃, 청구 및 검색 등과 같은 여러 비즈니스 단위를 사용 하 여 전자 상거래 앱입니다. 각 이러한 단위가 있는 자신의 논리적 구성 요소 뷰, 컨트롤러 및 모델입니다.
 
-### <a name="web-apis"></a>웹 Api
+### <a name="web-apis"></a>Web API
 
 웹 사이트를 구축 하기 위한 훌륭한 플랫폼 않도록, ASP.NET Core MVC는 웹 Api를 구축 하기 위한 훌륭한 지원 합니다. 다양 한 브라우저 및 모바일 장치를 포함 하 여 클라이언트를 연결할 수 있는 서비스를 작성할 수 있습니다.
 

@@ -11,11 +11,11 @@ ms.assetid: 81f6c9c2-a819-4f3a-97a4-4b0503b56c26
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/migrations
-ms.openlocfilehash: 638bef0cda14f53a326c66c6a5da3f3c1bb762c6
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 20b05801ac666feef29fd05dd3e4738b1bd50b86
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="migrations---ef-core-with-aspnet-core-mvc-tutorial-4-of-10"></a>마이그레이션-EF 코어 ASP.NET Core MVC 자습서 (4 / 10)
 
@@ -87,11 +87,11 @@ Done. To undo this action, use 'ef migrations remove'
 > [!NOTE]
 > 오류 메시지가 표시 되 면 *없는 실행 파일을 일치 하는 명령 "dotnet-ef" 찾을*, 참조 [이 블로그 게시물](http://thedatafarm.com/data-access/no-executable-found-matching-command-dotnet-ef/) 문제 해결 도움말에 대 한 합니다.
 
-오류 메시지가 표시 되 면 "*... 파일에 액세스할 수 없습니다 ContosoUniversity.dll 다른 프로세스에서 사용 되 고 있으므로 합니다. *"Windows 시스템 트레이에서 찾기 IIS Express 아이콘을 마우스 오른쪽 단추로 클릭 차례로 클릭 **ContosoUniversity > 중지 사이트**합니다.
+오류 메시지가 표시 되 면 "*... 파일에 액세스할 수 없습니다 ContosoUniversity.dll 다른 프로세스에서 사용 되 고 있으므로 합니다.* "Windows 시스템 트레이에서 찾기 IIS Express 아이콘을 마우스 오른쪽 단추로 클릭 차례로 클릭 **ContosoUniversity > 중지 사이트**합니다.
 
 ## <a name="examine-the-up-and-down-methods"></a>위쪽을 검토 하 고 아래쪽 메서드
 
-실행 하는 시기는 `migrations add` 명령, EF에서 생성 한 코드를 처음부터 데이터베이스 만들기. 이 코드는는 *마이그레이션* 라는 파일에 폴더 * \<타임 스탬프 > _InitialCreate.cs*합니다. `Up` 의 메서드는 `InitialCreate` 클래스는 데이터 모델 엔터티 집합에 해당 하는 데이터베이스 테이블을 만듭니다 및 `Down` 다음 예제와 같이, 메서드 삭제 합니다.
+실행 하는 시기는 `migrations add` 명령, EF에서 생성 한 코드를 처음부터 데이터베이스 만들기. 이 코드는는 *마이그레이션* 라는 파일에 폴더  *\<타임 스탬프 > _InitialCreate.cs*합니다. `Up` 의 메서드는 `InitialCreate` 클래스는 데이터 모델 엔터티 집합에 해당 하는 데이터베이스 테이블을 만듭니다 및 `Down` 다음 예제와 같이, 메서드 삭제 합니다.
 
 [!code-csharp[Main](intro/samples/cu/Migrations/20170215220724_InitialCreate.cs?range=92-118)]
 
@@ -109,7 +109,7 @@ Done. To undo this action, use 'ef migrations remove'
 
 현재 데이터베이스 스키마, 코드에 표현 되므로 EF 코어 마이그레이션 만들려는 데이터베이스와 상호 작용할 필요가 없습니다. 마이그레이션에 추가 하면 EF 스냅숏 파일에 데이터 모델을 비교 하 여 변경 내용을 결정 합니다. EF는 데이터베이스를 업데이트 해야 하는 경우에 데이터베이스와 상호 작용 합니다. 
 
-명명 된 파일을 삭제 하 여 마이그레이션의 제거할 수 없습니다 만들 하는 마이그레이션 동기화 되어야 하는 스냅숏 파일에 * \<타임 스탬프 > _\<migrationname >.cs*합니다. 해당 파일을 삭제 하면 나머지 마이그레이션은 데이터베이스 스냅숏 파일와 동기화 됩니다. 사용자가 추가한 마지막 마이그레이션을 삭제 하려면 사용 하 여는 [dotnet ef 마이그레이션 제거](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet#dotnet-ef-migrations-remove) 명령입니다.
+명명 된 파일을 삭제 하 여 마이그레이션의 제거할 수 없습니다 만들 하는 마이그레이션 동기화 되어야 하는 스냅숏 파일에  *\<타임 스탬프 > _\<migrationname >.cs*합니다. 해당 파일을 삭제 하면 나머지 마이그레이션은 데이터베이스 스냅숏 파일와 동기화 됩니다. 사용자가 추가한 마지막 마이그레이션을 삭제 하려면 사용 하 여는 [dotnet ef 마이그레이션 제거](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet#dotnet-ef-migrations-remove) 명령입니다.
 
 ## <a name="apply-the-migration-to-the-database"></a>마이그레이션 데이터베이스에 적용
 
@@ -119,7 +119,7 @@ Done. To undo this action, use 'ef migrations remove'
 dotnet ef database update
 ```
 
-명령의 출력은는 `migrations add` 명령을 제외 하 고 데이터베이스를 설정 하는 SQL 명령에 대 한 로그를 참조 하십시오. 대부분의 로그는 다음 예제 출력에서 생략 됩니다. 이 수준의 로그 메시지에 대 한 세부 정보를 표시 하지 않으려는 경우의 로그 수준을 변경할 수 있습니다는 *appsettings 합니다. Development.json* 파일입니다. 자세한 내용은 참조 [로깅 소개](xref:fundamentals/logging)합니다.
+명령의 출력은는 `migrations add` 명령을 제외 하 고 데이터베이스를 설정 하는 SQL 명령에 대 한 로그를 참조 하십시오. 대부분의 로그는 다음 예제 출력에서 생략 됩니다. 이 수준의 로그 메시지에 대 한 세부 정보를 표시 하지 않으려는 경우에서 로그 수준을 변경할 수 있습니다는 *appsettings 합니다. Development.json* 파일입니다. 자세한 내용은 참조 [로깅 소개](xref:fundamentals/logging/index)합니다.
 
 ```text
 info: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[0]

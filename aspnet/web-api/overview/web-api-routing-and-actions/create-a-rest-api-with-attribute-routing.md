@@ -1,0 +1,259 @@
+---
+uid: web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
+title: "ASP.NET Web API 2의에서 특성 라우팅을 사용 하 여 REST API 만들기 | Microsoft Docs"
+author: MikeWasson
+description: 
+ms.author: aspnetcontent
+manager: wpickett
+ms.date: 06/26/2013
+ms.topic: article
+ms.assetid: 23fc77da-2725-4434-99a0-ff872d96336b
+ms.technology: dotnet-webapi
+ms.prod: .net-framework
+msc.legacyurl: /web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
+msc.type: authoredcontent
+ms.openlocfilehash: 9ecc233e595716a167ad800a0a21a6162b051648
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.translationtype: MT
+ms.contentlocale: ko-KR
+ms.lasthandoff: 11/10/2017
+---
+<a name="create-a-rest-api-with-attribute-routing-in-aspnet-web-api-2"></a>ASP.NET Web API 2에서에서의 라우팅 특성으로 REST API 만들기
+====================
+으로 [Mike Wasson](https://github.com/MikeWasson)
+
+Web API 2는 새로운 형식을 지 원하는 라우팅 이라고 *특성 라우팅을*합니다. 특성 라우팅을의 일반적인 개요를 참조 하십시오. [특성 Web API 2에서의 라우팅](attribute-routing-in-web-api-2.md)합니다. 이 자습서에서는 있습니다 특성 라우팅을 만드는 데 사용할 책의 컬렉션에 대 한 REST API입니다. API에는 다음 작업이 지원 됩니다.
+
+| 작업 | 예제 URI |
+| --- | --- |
+| 모든 책 목록을 가져옵니다. | / api/설명서 |
+| 책 id 가져오기 | /api/books/1 |
+| 책의 세부 정보를 가져옵니다. | /api/books/1/details |
+| 장르별로 책의 목록을 가져옵니다. | /api/books/fantasy |
+| 게시 날짜 책의 목록을 가져옵니다. | /api/books/date/2013-02-16 /api/books/date/2013/02/16 (대체 폼) |
+| 특정 작성자가 발행 한 책 목록을 가져옵니다. | /api/authors/1/books |
+
+모든 메서드는 읽기 전용 (HTTP GET 요청 수)입니다.
+
+데이터 계층에 대 한 Entity Framework를 사용 합니다. 책 레코드는 다음 필드가 포함 됩니다.
+
+- ID
+- 제목
+- 장르
+- 게시 날짜
+- 가격
+- 설명
+- AuthorID (Authors 테이블에 외래 키)
+
+그러나 대부분의 요청에 대 한 API (title, author 및 장르)이이 데이터의 하위 집합을 반환 됩니다. 요청을 가져오지 전체 기록을 클라이언트 `/api/books/{id}/details`합니다.
+
+## <a name="prerequisites"></a>필수 구성 요소
+
+[Visual Studio 2017](https://www.visualstudio.com/vs/) Community, Professional 또는 Enterprise edition.
+
+## <a name="create-the-visual-studio-project"></a>Visual Studio 프로젝트 만들기
+
+Visual Studio를 실행 하 여 시작 합니다. **파일** 메뉴 선택 **새로** 선택한 후 **프로젝트**합니다.
+
+에 **템플릿** 창 선택 **설치 된 템플릿** 확장는 **Visual C#** 노드. 아래 **Visual C#**선택, **웹**합니다. 프로젝트 템플릿 목록에서 선택 **ASP.NET MVC 4 웹 응용 프로그램**합니다. 프로젝트 이름을 &quot;BooksAPI&quot;합니다.
+
+![](create-a-rest-api-with-attribute-routing/_static/image1.png)
+
+에 **새 ASP.NET 프로젝트** 대화 상자에서는 **빈** 서식 파일입니다. "폴더를 추가 및에 대 한 참조를 핵심" 아래에서 선택 된 **웹 API** 확인란을 선택 합니다. 클릭 **프로젝트 만들기**합니다.
+
+![](create-a-rest-api-with-attribute-routing/_static/image2.png)
+
+이 웹 API 기능에 대해 구성 된 기본 프로젝트를 만듭니다.
+
+### <a name="domain-models"></a>도메인 모델
+
+다음으로 도메인 모델에 대 한 클래스를 추가 합니다. 솔루션 탐색기에서 모델 폴더를 마우스 오른쪽 단추로 클릭 합니다. 선택 **추가**을 선택한 후 **클래스**합니다. 클래스 이름을 `Author`로 지정합니다.
+
+![](create-a-rest-api-with-attribute-routing/_static/image3.png)
+
+Author.cs에 코드를 다음으로 바꿉니다.
+
+[!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample1.cs)]
+
+이제 라는 다른 클래스를 추가할 `Book`합니다.
+
+[!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample2.cs)]
+
+### <a name="add-a-web-api-controller"></a>웹 API 컨트롤러 추가
+
+이 단계에서는 데이터 계층으로 Entity Framework를 사용 하는 Web API 컨트롤러를 추가 합니다.
+
+Ctrl+Shift+B를 눌러 프로젝트를 빌드합니다. Entity Framework 리플렉션을 사용 하 여 컴파일된 어셈블리는 데이터베이스 스키마를 만들 필요는 모델의 속성을 검색 합니다.
+
+솔루션 탐색기에서 Controllers 폴더를 마우스 오른쪽 단추로 클릭 합니다. 선택 **추가**을 선택한 후 **컨트롤러**합니다.
+
+![](create-a-rest-api-with-attribute-routing/_static/image4.png)
+
+에 **추가 스 캐 폴드** 대화 상자에서 "Web API 2 Entity Framework를 사용 하 여 읽기/쓰기 동작이 포함 된 컨트롤러입니다."
+
+[![](create-a-rest-api-with-attribute-routing/_static/image6.png)](create-a-rest-api-with-attribute-routing/_static/image5.png)
+
+에 **컨트롤러 추가** 대화 상자에서에 대 한 **컨트롤러 이름**, 입력 &quot;BooksController&quot;합니다. 선택 된 &quot;비동기 컨트롤러 동작을 사용 하 여&quot; 확인란을 선택 합니다. 에 대 한 **모델 클래스**선택, &quot;책&quot;합니다. (표시 되지 않으면는 `Book` 드롭다운에 나열 된 클래스, 프로젝트가 빌드 되었는지 확인 합니다.) "+" 단추를 클릭 합니다.
+
+![](create-a-rest-api-with-attribute-routing/_static/image7.png)
+
+클릭 **추가** 에 **새 데이터 컨텍스트에** 대화 상자.
+
+![](create-a-rest-api-with-attribute-routing/_static/image8.png)
+
+클릭 **추가** 에 **컨트롤러 추가** 대화 상자. 라는 클래스를 추가 하는 스 캐 폴딩을 `BooksController` 정의 하는 API 컨트롤러입니다. 라는 클래스도 추가 `BooksAPIContext` 데이터 컨텍스트 Entity Framework에 대 한 정의 Models 폴더에 있습니다.
+
+![](create-a-rest-api-with-attribute-routing/_static/image9.png)
+
+### <a name="seed-the-database"></a>데이터베이스를 시드하십시오
+
+도구 메뉴에서 선택 **라이브러리 패키지 관리자**를 선택한 후 **패키지 관리자 콘솔**합니다.
+
+패키지 관리자 콘솔 창에서 다음 명령을 입력 합니다.
+
+[!code-powershell[Main](create-a-rest-api-with-attribute-routing/samples/sample3.ps1)]
+
+이 명령은 Migrations 폴더를 만들고 Configuration.cs 라는 새 코드 파일을 추가 합니다. 이 파일을 열고 다음 코드를 추가 하는 `Configuration.Seed` 메서드.
+
+[!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample4.cs)]
+
+패키지 관리자 콘솔 창에서 다음 명령을 입력 합니다.
+
+[!code-powershell[Main](create-a-rest-api-with-attribute-routing/samples/sample5.ps1)]
+
+이 명령은 로컬 데이터베이스를 만들고 데이터베이스를 채우는 시드 메서드를 호출 합니다.
+
+![](create-a-rest-api-with-attribute-routing/_static/image10.png)
+
+## <a name="add-dto-classes"></a>DTO 클래스 추가
+
+이제 응용 프로그램을 실행 하 고 /api/books/1에 GET 요청을 보내고 응답 다음과 유사 합니다. (읽기 쉽도록 들여쓰기 추가 했습니다.)
+
+[!code-json[Main](create-a-rest-api-with-attribute-routing/samples/sample6.json)]
+
+대신,이 요청을 필드의 하위 집합을 반환 합니다. 만든 ID 대신 작성자의 이름을 반환 하도록 하겠습니다 또한 이를 위해 반환 하는 컨트롤러 메서드가 수정 합니다는 *데이터 전송 개체* DTO ()는 EF 모델 대신 합니다. 한 DTO는만 데이터를 전송 하도록 설계 하는 개체입니다.
+
+솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭 하 고 선택 **추가** | **새 폴더**합니다. 폴더 이름을 &quot;Dto&quot;합니다. 라는 클래스를 추가 `BookDto` Dto 폴더로 다음 정의 사용 합니다.
+
+[!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample7.cs)]
+
+라는 다른 클래스를 추가 `BookDetailDto`합니다.
+
+[!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample8.cs)]
+
+다음을 업데이트 하는 `BooksController` 반환 하기 `BookDto` 인스턴스. 에서는 [Queryable.Select](https://msdn.microsoft.com/en-us/library/system.linq.queryable.select.aspx) 메서드를 프로젝트 `Book` 인스턴스 `BookDto` 인스턴스. 컨트롤러 클래스에 대 한 업데이트 된 코드는 다음과 같습니다.
+
+[!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample9.cs)]
+
+> [!NOTE]
+> 삭제는 `PutBook`, `PostBook`, 및 `DeleteBook` 메서드가이 자습서에 대 한 필요 없는 때문에 있습니다.
+
+
+이제 응용 프로그램을 실행 하 고을 /api/books/1 요청할 경우 응답 본문은 다음과 같이 표시 됩니다.
+
+[!code-json[Main](create-a-rest-api-with-attribute-routing/samples/sample10.json)]
+
+## <a name="add-route-attributes"></a>경로 특성 추가
+
+다음으로 특성 라우팅을 사용 하는 컨트롤러도 변환 합니다. 먼저 추가 하는 **RoutePrefix** 컨트롤러 특성입니다. 이 특성이이 컨트롤러에 모든 메서드에 대 한 초기 URI 세그먼트를 정의합니다.
+
+[!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample11.cs?highlight=1)]
+
+그런 다음 추가 **[경로]** 컨트롤러 작업에 특성을 다음과 같이 합니다.
+
+[!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample12.cs?highlight=1,7)]
+
+각 컨트롤러 메서드에 대 한 경로 템플릿을 접두사와 문자열에 지정 된 된 **경로** 특성입니다. 에 대 한는 `GetBook` 매개 변수가 있는 문자열을 포함 하는 메서드를 경로 템플릿에 &quot;{id: int}&quot;, URI 세그먼트는 정수 값을 포함 하는 경우와 일치 합니다.
+
+| 메서드 | 경로 템플릿 | 예제 URI |
+| --- | --- | --- |
+| `GetBooks` | "api/books" | `http://localhost/api/books` |
+| `GetBook` | "api/설명서 / {id: int}" | `http://localhost/api/books/5` |
+
+## <a name="get-book-details"></a>책 세부 정보 가져오기
+
+클라이언트에 GET 요청을 보내 책 세부 정보를 얻으려면 `/api/books/{id}/details`여기서 *{id}* 책의 ID입니다.
+
+다음 메서드를 `BooksController` 클래스에 추가합니다.
+
+[!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample13.cs)]
+
+요청 하는 경우 `/api/books/1/details`, 응답은 다음과 같습니다.
+
+[!code-json[Main](create-a-rest-api-with-attribute-routing/samples/sample14.json)]
+
+## <a name="get-books-by-genre"></a>Genre가 발행 한 책 가져오기
+
+책의 목록이 특정 장르를 가져오려면 클라이언트에 GET 요청을 보내 `/api/books/genre`여기서 *장르* 장르의 이름입니다. `/get/books/fantasy` 등을 예로 들 수 있습니다.
+
+다음 메서드를 추가 `BooksController`합니다.
+
+[!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample15.cs)]
+
+여기 URI 템플릿에서 {장르} 매개 변수를 포함 하는 경로 정의 하는 것입니다. 웹 API는 이러한 두 Uri를 구분 하 고 다양 한 방법을 라우팅합니다 수 있는지 확인 합니다.
+
+`/api/books/1`
+
+`/api/books/fantasy`
+
+때문는 `GetBook` 메서드에 "id" 세그먼트는 정수 값 이어야 하는 제약 조건이 포함 되어 있습니다.
+
+[!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample16.cs?highlight=1)]
+
+/Api/books/fantasy 요청 하는 경우 응답은 다음과 같습니다.
+
+`[ { "Title": "Midnight Rain", "Author": "Ralls, Kim", "Genre": "Fantasy" }, { "Title": "Maeve Ascendant", "Author": "Corets, Eva", "Genre": "Fantasy" }, { "Title": "The Sundered Grail", "Author": "Corets, Eva", "Genre": "Fantasy" } ]`
+
+## <a name="get-books-by-author"></a>작성자가 발행 한 책 가져오기
+
+클라이언트에 GET 요청을 보내 특정 만든에 대 한 한 책의 목록이 가져오려는 `/api/authors/id/books`여기서 *id* 작성자의 ID입니다.
+
+다음 메서드를 추가 `BooksController`합니다.
+
+[!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample17.cs)]
+
+이 예제는 흥미 로우 하기 때문에 &quot;설명서&quot; 는 처리의 자식 리소스 &quot;작성자&quot;합니다. 이 패턴은 RESTful Api에서 매우 일반적입니다.
+
+경로 접두사를 재정의 하는 경로 템플릿에서 물결표 (~)는 **RoutePrefix** 특성입니다.
+
+## <a name="get-books-by-publication-date"></a>게시 날짜 설명서 가져오기
+
+책의 목록이 게시 날짜 여을 가져오려면 클라이언트에 GET 요청을 보내 `/api/books/date/yyyy-mm-dd`여기서 *yyyy-월-일* 날짜입니다.
+
+이 작업을 수행 하는 한 가지 방법은 다음과 같습니다.
+
+[!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample18.cs)]
+
+`{pubdate:datetime}` 매개 변수가 일치 하도록 제한 되는 **DateTime** 값입니다. 이 방법이 작동 하지만 예상 보다 더 실제로 허용. 예를 들어 이러한 Uri 경로 일치 합니다.
+
+`/api/books/date/Thu, 01 May 2008`
+
+`/api/books/date/2000-12-16T00:00:00`
+
+잘못 된 이러한 Uri를 허용 하는 일은 없습니다. 그러나 경로 템플릿을 정규식 제약 조건을 추가 하 여 경로 특정 형식으로 제한할 수 있습니다.
+
+[!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample19.cs?highlight=1)]
+
+이제 날짜만 형태로 &quot;yyyy-월-일&quot; 일치 합니다. 이제 실제 날짜 유효성을 검사 하는 regex를 사용 하지 않는 것을 확인 합니다. 웹 API에 URI 세그먼트를 변환 하려고 할 때 처리 되는 한 **DateTime** 인스턴스. 잘못 된 날짜와 같은 ' 2012-47-99' 변환 될 실패 하 고 클라이언트에는 404 오류가 발생 합니다.
+
+슬래시로 구분 기호를 지원할 수도 있습니다 (`/api/books/date/yyyy/mm/dd`) 다른 추가 하 여 **[경로]** 다른 정규식 특성입니다.
+
+[!code-html[Main](create-a-rest-api-with-attribute-routing/samples/sample20.html)]
+
+미세 하지만 중요 한 세부 여기 있습니다. 두 번째 경로 템플릿을 와일드 카드 문자 (\*) {pubdate} 매개 변수의 시작 부분에:
+
+[!code-json[Main](create-a-rest-api-with-attribute-routing/samples/sample21.json)]
+
+이렇게 하면 라우팅 엔진 {pubdate}에 URI의 나머지와 일치 해야 합니다. 템플릿 매개 변수는 기본적으로 단일 URI 세그먼트와 일치합니다. 이 경우 여러 개의 URI 세그먼트에 걸쳐 {pubdate} 하려고 합니다.
+
+`/api/books/date/2013/06/17`
+
+## <a name="controller-code"></a>컨트롤러 코드
+
+BooksController 클래스에 대 한 전체 코드는 다음과 같습니다.
+
+[!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample22.cs)]
+
+## <a name="summary"></a>요약
+
+특성 라우팅을 제공 보다 많은 제어 및 유연성 API에 대 한 Uri를 디자인 합니다.

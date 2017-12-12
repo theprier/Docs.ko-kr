@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity-configuration
-ms.openlocfilehash: adf577ae1e1c752c3b1a332ec94a7a7627a7a4b4
-ms.sourcegitcommit: 76d42f09f3e0dd2f2105493eca6b29994aa47706
+ms.openlocfilehash: 2861ca474e7e82da81943966394a92040ce96ab8
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/19/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="configure-identity"></a>Id 구성
 
@@ -22,7 +22,7 @@ ASP.NET Core Id 된 응용 프로그램에서 쉽게 재정의할 수 있는 몇
 
 ## <a name="passwords-policy"></a>암호 정책
 
-기본적으로 Id는 암호에 대문자, 소문자, 숫자, 및는 영숫자 문자가 포함 필요 합니다. 몇 가지 제한 사항이 있습니다. 암호 제한 간소화 하려는 경우 있습니다에서 이렇게 할 수는 `Startup` 응용 프로그램의 클래스입니다.
+기본적으로 Id는 암호에 대문자, 소문자, 숫자 및 영숫자가 아닌 문자를 포함 필요 합니다. 몇 가지 제한 사항이 있습니다. 암호 제한 간소화 하려는 경우 있습니다에서 이렇게 할 수는 `Startup` 응용 프로그램의 클래스입니다.
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 

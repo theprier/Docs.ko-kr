@@ -12,10 +12,10 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/httpsys
 ms.openlocfilehash: d3f9eb4943ed62b674d6bb2ab1b275b0a3c02343
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>ASP.NET Core 웹 서버 구현이 HTTP.sys
 
@@ -40,7 +40,7 @@ HTTP.sys는 다음과 같은 기능을 지원합니다.
 
 - Windows 7 및 Windows Server 2008 R2 이상
 
-[보거나 다운로드 샘플 코드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/httpsys/sample) ([다운로드 하는 방법을](xref:tutorials/index#how-to-download-a-sample))
+[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/httpsys/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="when-to-use-httpsys"></a>HTTP.sys를 사용 하는 경우
 
@@ -125,7 +125,7 @@ public IActionResult MyActionMethod()
 
 경우의 이점은 `UrlPrefixes` 는 수를 가져올 오류 메시지가 즉시 서식이 잘못 지정 된 접두사를 추가 하려고 합니다. 경우의 이점은 `UseUrls` (공유 하면 `urls` 및 ASPNETCORE_URLS) 보다 쉽게 Kestrel 고 HTTP.sys 파일 간에 전환할 수는 있습니다.
 
-둘 다 사용 하는 경우 `UseUrls` (또는 `urls` 또는 ASPNETCORE_URLS) 및 `UrlPrefixes`에서 설정을 `UrlPrefixes` 재정의 `UseUrls`합니다. 자세한 내용은 참조 [호스팅](xref:fundamentals/hosting)합니다.
+둘 다 사용 하는 경우 `UseUrls` (또는 `urls` 또는 ASPNETCORE_URLS) 및 `UrlPrefixes`에서 설정을 `UrlPrefixes` 재정의 `UseUrls`합니다. 자세한 내용은 [호스팅](xref:fundamentals/hosting)을 참조하세요.
 
 HTTP.sys를 사용 하는 [HTTP 서버 API UrlPrefix 문자열 형식은](https://msdn.microsoft.com/library/windows/desktop/aa364698.aspx)합니다.
 

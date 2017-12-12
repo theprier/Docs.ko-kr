@@ -12,10 +12,10 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: hosting/aspnet-core-module
 ms.openlocfilehash: ac52b791e02ce52da35fe8d599465076d251b4da
-ms.sourcegitcommit: 8005eb4051e568d88ee58d48424f39916052e6e2
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/24/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="aspnet-core-module-configuration-reference"></a>ASP.NET Core 모듈 구성 참조
 
@@ -106,7 +106,7 @@ ASP.NET Core 모듈에 백 엔드 프로세스 또는 백 엔드 프로세스 �
 
 ASP.NET Core 모듈 리디렉션합니다 `stdout` 및 `stderr` 설정 하는 경우 디스크에 로그는 `stdoutLogEnabled` 및 `stdoutLogFile` 의 특성은 `aspNetCore` 요소입니다. 에 있는 폴더는 `stdoutLogFile` 경로 로그 파일을 만들 모듈에 대 한 순서에 존재 해야 합니다. 타임 스탬프 및 파일 확장명은 로그 파일을 만들 때 자동으로 추가 됩니다. 프로세스 재활용/를 다시 시작이 발생 하지 않으면 로그 회전 되지 않습니다. 것은 로그 사용할 디스크 공간을 제한 하는 호스팅 서비스 공급자의 책임입니다. 사용 하 여 `stdout` 로그만 일반 응용 프로그램 로깅 목적으로 아닌와 응용 프로그램 시작 문제 해결을 위한 것이 좋습니다.
 
-프로세스 ID (PID), 타임 스탬프를 추가 하 여 로그 파일 이름이 구성 됩니다 (*yyyyMdhms*), 파일 확장명 (*.log*)의 마지막 세그먼트에는 `stdoutLogFile` 경로 (일반적으로 *stdout *) 밑줄로 구분 합니다. 예를 들어 경우는 `stdoutLogFile` 로 끝나는 경로 *stdout*, 12시 05분: 02에서 8/10/2017에 만든 10652의 PID 사용 하 여 앱에 대 한 로그 파일 이름이 *stdout_10652_20178101252.log*합니다.
+프로세스 ID (PID), 타임 스탬프를 추가 하 여 로그 파일 이름이 구성 됩니다 (*yyyyMdhms*), 파일 확장명 (*.log*)의 마지막 세그먼트에는 `stdoutLogFile` 경로 (일반적으로 *stdout* ) 밑줄로 구분 합니다. 예를 들어 경우는 `stdoutLogFile` 로 끝나는 경로 *stdout*, 12시 05분: 02에서 8/10/2017에 만든 10652의 PID 사용 하 여 앱에 대 한 로그 파일 이름이 *stdout_10652_20178101252.log*합니다.
 
 다음은 샘플 `aspNetCore` 구성 요소 `stdout` 로깅. `stdoutLogFile` 예제에 표시 된 경로 Azure 앱 서비스에 적합 합니다. 로컬 경로 또는 네트워크 공유 경로 로컬 로깅 있습니다. AppPool 사용자 id 제공 된 경로에 쓸 수 있는 권한이 있는지 확인 합니다.
 
@@ -120,7 +120,7 @@ ASP.NET Core 모듈 리디렉션합니다 `stdout` 및 `stderr` 설정 하는 �
 
 ## <a name="aspnet-core-module-with-an-iis-shared-configuration"></a>IIS 사용 하 여 ASP.NET Core 모듈 구성 공유
 
-ASP.NET Core 모듈 설치 관리자의 권한으로 실행 되는 **시스템** 계정. 설치 관리자가 액세스 거부 오류가에서 모듈 설정을 구성 하는 동안 적중지 것입니다 로컬 시스템 계정 IIS 공유 구성에 사용 되는 공유 경로 대 한 권한을 수정지 않습니다, 때문에 * applicationHost.config* 공유에 있습니다.
+ASP.NET Core 모듈 설치 관리자의 권한으로 실행 되는 **시스템** 계정. 설치 관리자가 액세스 거부 오류가에서 모듈 설정을 구성 하는 동안 적중지 것입니다 로컬 시스템 계정 IIS 공유 구성에 사용 되는 공유 경로 대 한 권한을 수정지 않습니다, 때문에  *applicationHost.config* 공유에 있습니다.
 
 지원 되지 않는 문제를 해결 하 고 설치 프로그램을 실행 IIS 공유 구성을 사용 하지 않도록 설정, 업데이트 된 내보내기는 *applicationHost.config* 는 공유에 파일을 다시 IIS 공유 구성을 사용 하도록 설정 합니다.
 

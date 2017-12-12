@@ -11,10 +11,10 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/portable-object-localization
 ms.openlocfilehash: 4fa73ae08b10217de657681a27f6097fc3443737
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="configure-portable-object-localization-with-orchard-core"></a>휴대용 개체 지역화 Orchard 코어를 사용 하 여 구성
 
@@ -24,7 +24,7 @@ ms.lasthandoff: 10/01/2017
 
 **참고:** Orchard 핵심 Microsoft 제품이 아닙니다. 따라서 Microsoft는이 기능에 대 한 지원 되지 않습니다을 제공합니다.
 
-[보거나 다운로드 샘플 코드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/localization/sample/POLocalization) ([다운로드 하는 방법을](xref:tutorials/index#how-to-download-a-sample))
+[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/localization/sample/POLocalization)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="what-is-a-po-file"></a>PO 파일 이란 무엇 인가요?
 

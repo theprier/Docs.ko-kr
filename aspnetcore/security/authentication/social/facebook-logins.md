@@ -1,8 +1,8 @@
 ---
 title: "ASP.NET Core에서 Facebook 외부 로그인 설정"
 author: rick-anderson
-description: "ASP.NET Core에서 Facebook 외부 로그인 설정"
-keywords: ASP.NET Core,
+description: "이 자습서는 기존 ASP.NET Core 응용 프로그램에 Facebook 계정 사용자 인증의 통합을 보여 줍니다."
+keywords: "ASP.NET Core, Facebook, 로그인, 인증"
 ms.author: riande
 manager: wpickett
 ms.date: 08/01/2017
@@ -11,23 +11,21 @@ ms.assetid: 8c65179b-688c-4af1-8f5e-1862920cda95
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/facebook-logins
-ms.openlocfilehash: 2b478ce38e98977a7c52e9317b5bc6fa0d6624b7
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: 826ac826c22dae81e5dbea08a11a62cac0b1068a
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="configuring-facebook-authentication"></a>Facebook 인증 구성
 
-<a name=security-authentication-facebook-logins></a>
-
 작성자: [Valeriy Novytskyy](https://github.com/01binary) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-이 자습서에서 만든 샘플 ASP.NET 코어 2.0 프로젝트를 사용 하 여 들이 Facebook 계정으로 로그인 할 사용자를 활성화 하는 방법을 보여 줍니다.는 [이전 페이지](index.md)합니다. Facebook 응용 프로그램 ID에 따라 만들어서 시작는 [공식 단계](https://www.facebook.com/unsupportedbrowser)합니다.
+이 자습서에서 만든 샘플 ASP.NET 코어 2.0 프로젝트를 사용 하 여 들이 Facebook 계정으로 로그인 할 사용자를 활성화 하는 방법을 보여 줍니다.는 [이전 페이지](index.md)합니다. Facebook 응용 프로그램 ID에 따라 만들어서 시작는 [공식 단계](https://developers.facebook.com)합니다.
 
 ## <a name="create-the-app-in-facebook"></a>Facebook에서 앱을 만들
 
-*  로 이동 된 [개발자를 위한 Facebook](https://www.facebook.com/unsupportedbrowser) 페이지 하 고 로그인 합니다. Facebook 계정 없는 경우 사용 하 여는 **Facebook에 등록** 새로 만들려면 로그인 페이지에 링크 합니다.
+*  로 이동 된 [개발자를 위한 Facebook](https://developers.facebook.com) 페이지 하 고 로그인 합니다. Facebook 계정 없는 경우 사용 하 여는 **Facebook에 등록** 새로 만들려면 로그인 페이지에 링크 합니다.
 
 * 탭의 **앱 만들기** 는 새 응용 프로그램 ID를 만들려면 오른쪽 위 모퉁이의 단추
 
@@ -64,6 +62,13 @@ ms.lasthandoff: 09/28/2017
 ## <a name="store-facebook-app-id-and-app-secret"></a>Facebook 응용 프로그램 ID 및 응용 프로그램 암호 저장
 
 Facebook와 같은 중요 한 설정이 연결 `App ID` 및 `App Secret` 사용 하 여 응용 프로그램 구성에는 [암호 관리자](xref:security/app-secrets)합니다. 이 자습서에서는 이름을 토큰 `Authentication:Facebook:AppId` 및 `Authentication:Facebook:AppSecret`합니다.
+
+안전 하 게 저장 하려면 다음 명령을 실행 `App ID` 및 `App Secret` 암호 관리자를 사용 하 여:
+
+```console
+dotnet user-secrets set Authentication:Facebook:AppId <app-id>
+dotnet user-secrets set Authentication:Facebook:AppSecret <app-secret>
+```
 
 ## <a name="configure-facebook-authentication"></a>Facebook 인증 구성
 

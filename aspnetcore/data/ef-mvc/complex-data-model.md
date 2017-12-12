@@ -12,10 +12,10 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/complex-data-model
 ms.openlocfilehash: cacb23441e5f5ab06c6be27f3068276f21ff4ed9
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="creating-a-complex-data-model---ef-core-with-aspnet-core-mvc-tutorial-5-of-10"></a>복잡 한 데이터 모델-EF 코어 ASP.NET Core MVC 자습서 (5/10) 만들기
 
@@ -93,7 +93,7 @@ dotnet ef migrations add MaxLengthOnNames
 dotnet ef database update
 ```
 
-`migrations add` 명령 데이터 손실이 발생할 수 있습니다는 변경을 통해 두 개의 열에 대 한 짧은 최대 길이 때문에 경고 합니다.  마이그레이션 라는 파일을 만듭니다 * \<타임 스탬프 > _MaxLengthOnNames.cs*합니다. 이 파일의 코드에 포함 된 `Up` 현재 데이터 모델과 일치 하도록 데이터베이스를 업데이트 하는 메서드. `database update` 명령이 해당 코드를 실행 합니다.
+`migrations add` 명령 데이터 손실이 발생할 수 있습니다는 변경을 통해 두 개의 열에 대 한 짧은 최대 길이 때문에 경고 합니다.  마이그레이션 라는 파일을 만듭니다  *\<타임 스탬프 > _MaxLengthOnNames.cs*합니다. 이 파일의 코드에 포함 된 `Up` 현재 데이터 모델과 일치 하도록 데이터베이스를 업데이트 하는 메서드. `database update` 명령이 해당 코드를 실행 합니다.
 
 마이그레이션 파일 이름에 접두사로 타임 스탬프를 마이그레이션 요청 Entity Framework에서 사용 됩니다. 마이그레이션을 여러 건 update-database 명령을 실행 하기 전에 만들고 생성 된 순서에 적용 됩니다는 마이그레이션의 모든 합니다.
 

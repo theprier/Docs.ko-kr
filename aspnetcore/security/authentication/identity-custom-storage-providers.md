@@ -11,11 +11,11 @@ ms.assetid: b2ace545-ecf6-4664-b31e-b65bd4a6b025
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: c1d974e72eab388ba7b196c4b48f21a06b59dc20
-ms.sourcegitcommit: f5cf472d49c2475e4d57654efd5fc0a4ccecba4c
+ms.openlocfilehash: 687ca96be5121502e816bdc856e17dcd5923fe05
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/30/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>ASP.NET Core Id에 대 한 사용자 지정 저장소 공급자
 
@@ -68,7 +68,7 @@ ASP.NET Core Id 관리자와 저장소를 호출 하는 클래스로 구성 됩�
 
 ### <a name="user-claims"></a>사용자 클레임
 
-문 집합 (또는 [클레임](https://docs.microsoft.com//dotnet/api/system.security.claims.claim) 사용자의 id를 나타내는 사용자에 대 한 합니다. 더 나은 식의 역할을 통해 액세스가 가능 보다는 사용자의 id 사용 하도록 설정할 수 있습니다.
+문 집합 (또는 [클레임](https://docs.microsoft.com//dotnet/api/system.security.claims.claim))는 사용자의 id를 나타내는 사용자에 대 한 합니다. 더 나은 식의 역할을 통해 액세스가 가능 보다는 사용자의 id 사용 하도록 설정할 수 있습니다.
 
 ### <a name="user-logins"></a>사용자 로그인
 

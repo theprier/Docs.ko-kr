@@ -7,22 +7,21 @@ ms.author: riande
 manager: wpickett
 ms.date: 02/28/2017
 ms.topic: article
-ms.assetid: 4095d273-bf3f-46cf-bdcc-18cf6815cbad
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/using-gulp
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d2a2971a46d9d45a8fda5ac56073af608a0ede2b
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 68f6838889cfb830f2c5a1976b3140ae5d94ac25
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="introduction-to-using-gulp-in-aspnet-core"></a>ASP.NET Core에서 Gulp를 사용 하 여 소개 
 
 여 [Erik Reitan](https://github.com/Erikre), [Scott Addie](https://scottaddie.com), [김 Roth](https://github.com/danroth27), 및 [Shayne 보이 어](https://twitter.com/spboyer)
 
-일반적인 최신 웹 응용 프로그램에서 빌드 프로세스 수: 있습니다.
+일반적인 웹 앱을 빌드 프로세스 수: 있습니다.
 
 * 번들 하 고 JavaScript 및 CSS 파일을 축소할 합니다.
 * 각 빌드 전에 묶음 및 축소 작업을 호출 하는 도구를 실행 합니다.
@@ -31,7 +30,7 @@ ms.lasthandoff: 09/22/2017
 
 A *task runner가* 이러한 일상적인 개발 작업 및 기타 작업을 자동화 하는 도구입니다. Visual Studio에서는 두 명의 인기 있는 JavaScript 기반 task runner에 대 한 기본 제공 지원: [Gulp](https://gulpjs.com/) 및 [Grunt](using-grunt.md)합니다.
 
-## <a name="gulp"></a>Gulp
+## <a name="gulp"></a>gulp
 
 Gulp는 JavaScript 기반 스트리밍 빌드 도구 키트 클라이언트 측 코드에 대 한 합니다. 빌드 환경에서 특정 이벤트가 트리거되면 일련의 프로세스를 통해 클라이언트 쪽 파일을 스트리밍하려면 일반적으로 사용 됩니다. Gulp 수 자동화 하는 데 예를 들어, [묶음 및 축소](bundling-and-minification.md) 또는 새 빌드를 하기 전에 개발 환경의 정리 합니다.
 

@@ -11,17 +11,17 @@ ms.assetid: ab4705b7-59d7-4f31-bc97-ea7f292fe926
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/view-components
-ms.openlocfilehash: 3bc6d3f85d8ea7fb9b72b18cfd9c5ec2d07293b0
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: 2cf82df78c250cdfdd808d49acfc06dc2ea82f5f
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="view-components"></a>구성 요소 보기
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[보거나 다운로드 샘플 코드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/view-components/sample) ([다운로드 하는 방법을](xref:tutorials/index#how-to-download-a-sample))
+[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/view-components/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="introducing-view-components"></a>뷰 구성 요소 소개
 
@@ -89,23 +89,23 @@ ms.lasthandoff: 10/01/2017
 
 뷰 구성 요소를 사용 하려면 다음을 호출 뷰 내:
 
-```html
+```cshtml
 @Component.InvokeAsync("Name of view component", <anonymous type containing parameters>)
 ```
 
 에 전달 될 매개 변수는 `InvokeAsync` 메서드. `PriorityList` 문서에서 개발한 뷰 구성 요소에서 호출 되는 *Views/Todo/Index.cshtml* 파일 보기. 다음 예제에서 `InvokeAsync` 메서드는 두 개의 매개 변수를 사용 합니다.
 
-[!code-html[Main](view-components/sample/ViewCompFinal/Views/Todo/IndexFinal.cshtml?range=35)]
+[!code-cshtml[Main](view-components/sample/ViewCompFinal/Views/Todo/IndexFinal.cshtml?range=35)]
 
 ## <a name="invoking-a-view-component-as-a-tag-helper"></a>태그 도우미로 뷰 구성 요소를 호출합니다.
 
 ASP.NET Core 1.1 이상에서는 뷰 구성 요소도 호출할 수 있습니다는 [태그 도우미](xref:mvc/views/tag-helpers/intro):
 
-[!code-html[Main](view-components/sample/ViewCompFinal/Views/Todo/IndexTagHelper.cshtml?range=37-38)]
+[!code-cshtml[Main](view-components/sample/ViewCompFinal/Views/Todo/IndexTagHelper.cshtml?range=37-38)]
 
 파스칼식 대/소문자 클래스 및 메서드 매개 변수 태그 도우미에 대 한 변환 자신의 [kebab 대/소문자를 줄이려면](https://stackoverflow.com/questions/11273282/whats-the-name-for-dash-separated-case/12273101)합니다. 뷰 구성 요소를 호출 하는 태그 도우미를 사용 하 여는 `<vc></vc>` 요소입니다. 뷰 구성 요소는 다음과 같이 지정 됩니다.
 
-```html
+```cshtml
 <vc:[view-component-name]
   parameter1="parameter1 value"
   parameter2="parameter2 value">
@@ -114,7 +114,7 @@ ASP.NET Core 1.1 이상에서는 뷰 구성 요소도 호출할 수 있습니다
 
 참고: 태그 도우미로 뷰 구성 요소를 사용 하려면 등록 해야 사용 하 여 뷰 구성 요소를 포함 하는 어셈블리는 `@addTagHelper` 지시문입니다. 뷰 구성 요소 "MyWebApp" 라는 어셈블리에 있으면, 예를 들어에 다음 지시문을 추가 `_ViewImports.cshtml` 파일:
 
-```csharp
+```cshtml
 @addTagHelper *, MyWebApp
 ```
 
@@ -122,11 +122,11 @@ ASP.NET Core 1.1 이상에서는 뷰 구성 요소도 호출할 수 있습니다
 
 `InvokeAsync` 이 자습서에 사용 된 방법:
 
-[!code-html[Main](view-components/sample/ViewCompFinal/Views/Todo/IndexFinal.cshtml?range=35)]
+[!code-cshtml[Main](view-components/sample/ViewCompFinal/Views/Todo/IndexFinal.cshtml?range=35)]
 
 태그 도우미 태그:
 
-[!code-html[Main](view-components/sample/ViewCompFinal/Views/Todo/IndexTagHelper.cshtml?range=37-38)]
+[!code-cshtml[Main](view-components/sample/ViewCompFinal/Views/Todo/IndexTagHelper.cshtml?range=37-38)]
 
 위의 샘플에서는 `PriorityList` 뷰 구성 요소는 `priority-list`합니다. 뷰 구성 요소에는 매개 변수는 kebab 소문자로에 특성으로 전달 됩니다.
 
@@ -172,7 +172,7 @@ ASP.NET Core 1.1 이상에서는 뷰 구성 요소도 호출할 수 있습니다
 
 * 만들기는 *뷰/공유/구성 요소/PriorityList* 폴더입니다. 이 폴더 이름은 뷰 구성 요소 클래스의 이름 또는 접미사 뺀 클래스의 이름과 일치 해야 합니다 (규칙 따른 하 고 사용 되는 경우는 *ViewComponent* 클래스 이름에서 접미사). 사용 하는 경우는 `ViewComponent` 특성을 클래스 이름 특성 지정은 일치 하도록 해야 합니다.
 
-* 만들기는 *Views/Shared/Components/PriorityList/Default.cshtml* Razor 보기:[!code-html[Main](view-components/sample/ViewCompFinal/Views/Shared/Components/PriorityList/Default1.cshtml)]
+* 만들기는 *Views/Shared/Components/PriorityList/Default.cshtml* Razor 보기:[!code-cshtml[Main](view-components/sample/ViewCompFinal/Views/Shared/Components/PriorityList/Default1.cshtml)]
     
    Razor 뷰 목록을 가져와서 `TodoItem` 하 고 표시 합니다. 경우 뷰 구성 요소 `InvokeAsync` 메서드 (예: 우리의 샘플) 보기의 이름을 전달 하지 않습니다 *기본* 규칙에 따라 뷰 이름에 사용 됩니다. 자습서의 뒷부분에 나오는 I 보여줍니다 보기의 이름을 전달 하는 방법. 특정 컨트롤러에 대 한 기본 스타일을 재정의 하려면 보기 컨트롤러 관련 보기 폴더를 추가 합니다 (예를 들어 *Views/Todo/Components/PriorityList/Default.cshtml)*합니다.
     
@@ -180,7 +180,7 @@ ASP.NET Core 1.1 이상에서는 뷰 구성 요소도 호출할 수 있습니다
 
 * 추가 `div` 맨 아래에 우선 순위 목록 구성 요소에 대 한 호출을 포함 하는 *Views/Todo/index.cshtml* 파일:
 
-    [!code-html[Main](view-components/sample/ViewCompFinal/Views/Todo/IndexFirst.cshtml?range=34-38)]
+    [!code-cshtml[Main](view-components/sample/ViewCompFinal/Views/Todo/IndexFirst.cshtml?range=34-38)]
 
 태그 `@await Component.InvokeAsync` 뷰 구성 요소를 호출 하는 구문을 보여 줍니다. 첫 번째 인수에는 구성 요소를 호출 하거나 호출 하려는의 이름입니다. 후속 매개 변수는 구성 요소에 전달 됩니다. `InvokeAsync`임의 개수의 인수를 걸릴 수 있습니다.
 
@@ -202,13 +202,13 @@ ASP.NET Core 1.1 이상에서는 뷰 구성 요소도 호출할 수 있습니다
 
 복사는 *Views/Shared/Components/PriorityList/Default.cshtml* 파일 라는 이름의 뷰가을 *Views/Shared/Components/PriorityList/PVC.cshtml*합니다. PVC 뷰를 사용 하는 것을 나타내려면 제목을 추가 합니다.
 
-[!code-html[Main](../../mvc/views/view-components/sample/ViewCompFinal/Views/Shared/Components/PriorityList/PVC.cshtml?highlight=3)]
+[!code-cshtml[Main](../../mvc/views/view-components/sample/ViewCompFinal/Views/Shared/Components/PriorityList/PVC.cshtml?highlight=3)]
 
 업데이트 *Views/TodoList/Index.cshtml*:
 
 <!-- Views/TodoList/Index.cshtml is never imported, so change to test tutorial -->
 
-[!code-html[Main](view-components/sample/ViewCompFinal/Views/Todo/IndexFinal.cshtml?range=35)]
+[!code-cshtml[Main](view-components/sample/ViewCompFinal/Views/Todo/IndexFinal.cshtml?range=35)]
 
 응용 프로그램을 실행 하 고 PVC 보기를 확인 합니다.
 
@@ -244,7 +244,7 @@ PVC 뷰 렌더링 되지 않습니다 4 이상을의 우선 순위를 가진 뷰
 
 추가 `using` 파일을 확인 하 고 사용 하는 프로그램 Razor 문을 `nameof` 연산자:
 
-[!code-html[Main](view-components/sample/ViewCompFinal/Views/Todo/IndexNameof.cshtml?range=1-6,33-)]
+[!code-cshtml[Main](view-components/sample/ViewCompFinal/Views/Todo/IndexNameof.cshtml?range=1-6,33-)]
 
 ## <a name="additional-resources"></a>추가 리소스
 

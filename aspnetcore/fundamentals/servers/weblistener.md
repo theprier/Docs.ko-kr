@@ -12,10 +12,10 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/weblistener
 ms.openlocfilehash: f1abb3558546cd907c78b44d9353d9c9f1f5aff1
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="weblistener-web-server-implementation-in-aspnet-core"></a>ASP.NET Core 웹 서버 구현이 WebListener
 
@@ -42,7 +42,7 @@ WebListener는 다음과 같은 기능을 지원합니다.
 
 - Windows 7 및 Windows Server 2008 R2 이상
 
-[보거나 다운로드 샘플 코드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/weblistener/sample) ([다운로드 하는 방법을](xref:tutorials/index#how-to-download-a-sample))
+[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/weblistener/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="when-to-use-weblistener"></a>WebListener를 사용 하는 경우
 
@@ -86,7 +86,7 @@ WebListener는 Kestrel를 사용 하 여 가져올 수 없습니다 제공 하�
 
 * Url 및 포트에서 수신 하도록 구성 
 
-  기본적으로 ASP.NET Core을 바인딩합니다 `http://localhost:5000`합니다. URL 접두사와 포트를 구성 하려면 사용할 수 있습니다는 `UseURLs` 확장 메서드는 `urls` 명령줄 인수 또는 ASP.NET Core 구성 시스템입니다. 자세한 내용은 참조 [호스팅](../../fundamentals/hosting.md)합니다.
+  기본적으로 ASP.NET Core을 바인딩합니다 `http://localhost:5000`합니다. URL 접두사와 포트를 구성 하려면 사용할 수 있습니다는 `UseURLs` 확장 메서드는 `urls` 명령줄 인수 또는 ASP.NET Core 구성 시스템입니다. 자세한 내용은 [호스팅](../../fundamentals/hosting.md)을 참조하세요.
 
   수신기 사용 하 여 웹에서 [Http.Sys 접두사 문자열 형식은](https://msdn.microsoft.com/library/windows/desktop/aa364698.aspx)합니다. WebListener 관련이 없는 접두사 문자열 형식 요구 사항이 있습니다.
 

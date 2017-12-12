@@ -12,10 +12,10 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/advanced
 ms.openlocfilehash: d63502a32e38eb192b40f21f5cd57d20048154e3
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="advanced-topics---ef-core-with-aspnet-core-mvc-tutorial-10-of-10"></a>고급 항목-EF 코어 ASP.NET Core MVC 자습서 (10 / 10)
 
@@ -83,7 +83,7 @@ Contoso 대학 관리자가 모든 과정에 대 한 크레딧의 수를 변경 
 
 **솔루션 탐색기**를 마우스 오른쪽 단추로 클릭는 *뷰/Courses* 폴더를 마우스 클릭 한 다음 **추가 > 새 항목**합니다.
 
-에 **새 항목 추가** 대화 상자에서 클릭 **ASP.NET** 아래 **설치 됨** 왼쪽된 창에서 클릭 **MVC 뷰 페이지**, 새뷰이름을지정하고* UpdateCourseCredits.cshtml*합니다.
+에 **새 항목 추가** 대화 상자에서 클릭 **ASP.NET** 아래 **설치 됨** 왼쪽된 창에서 클릭 **MVC 뷰 페이지**, 새뷰이름을지정하고 *UpdateCourseCredits.cshtml*합니다.
 
 *Views/Courses/UpdateCourseCredits.cshtml*, 템플릿 코드를 다음 코드로 바꿉니다.
 
@@ -228,7 +228,7 @@ IIS express 사이트를 중지 합니다. 로 이동는 Windows 시스템 트�
 
 가장 간단한 방법은 데이터베이스의 이름을 바꾸려면 *appsettings.json*합니다. 다음에 실행할 때 `database update`, 새 데이터베이스가 생성 됩니다.
 
-SSOX에 데이터베이스를 삭제 하려면 데이터베이스를 마우스 오른쪽 단추로 클릭 합니다 **삭제**, 한 다음는 **데이터베이스 삭제** 대화 상자 선택 **기존 연결 닫기** 클릭** 정상**합니다.
+SSOX에 데이터베이스를 삭제 하려면 데이터베이스를 마우스 오른쪽 단추로 클릭 합니다 **삭제**, 한 다음는 **데이터베이스 삭제** 대화 상자 선택 **기존 연결 닫기** 클릭 **정상**합니다.
 
 실행 CLI를 사용 하 여 데이터베이스를 삭제 하는 `database drop` CLI 명령을:
 

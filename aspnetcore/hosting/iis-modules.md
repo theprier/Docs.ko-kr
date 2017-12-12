@@ -11,15 +11,15 @@ ms.assetid: 492b3a7e-04c5-461b-b96a-38ecee5c64bc
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: hosting/iis-modules
-ms.openlocfilehash: afad266874d3ac059d9f3a6d26a5330a0006320b
-ms.sourcegitcommit: 8005eb4051e568d88ee58d48424f39916052e6e2
+ms.openlocfilehash: fee8e830ab43f731de9c90fad06b577662760f87
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/24/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="using-iis-modules-with-aspnet-core"></a>IIS 모듈을 사용 하 여 ASP.NET 코어
 
-으로 [Luke Latham](https://github.com/guardrex)
+[Luke Latham](https://github.com/guardrex)으로
 
 ASP.NET Core 응용 프로그램은 역방향 프록시 구성에서 IIS에서 호스트 됩니다. 네이티브 IIS 모듈의 일부 및 모든 관리 되는 IIS 모듈 ASP.NET Core 응용 프로그램에 대 한 요청을 처리 하는 사용할 수 없는 합니다. 대부분의 경우 ASP.NET Core IIS 네이티브 및 관리 되는 모듈의 기능에 대 한 대안을 제공합니다.
 
@@ -37,10 +37,10 @@ ASP.NET Core 응용 프로그램은 역방향 프록시 구성에서 IIS에서 �
 **다이제스트 인증**<br>`DigestAuthenticationModule` | 예 | 
 **디렉터리 검색**<br>`DirectoryListingModule` | 아니요 | [디렉터리 검색 미들웨어](xref:fundamentals/static-files#enabling-directory-browsing)
 **동적 압축**<br>`DynamicCompressionModule` | 예 | [응답 압축 미들웨어](xref:performance/response-compression)
-**추적**<br>`FailedRequestsTracingModule` | 예 | [ASP.NET Core 로깅](xref:fundamentals/logging#the-tracesource-provider)
+**추적**<br>`FailedRequestsTracingModule` | 예 | [ASP.NET Core 로깅](xref:fundamentals/logging/index#the-tracesource-provider)
 **파일 캐싱**<br>`FileCacheModule` | 아니요 | [응답 캐싱 미들웨어](xref:performance/caching/middleware)
 **HTTP 캐싱**<br>`HttpCacheModule` | 아니요 | [응답 캐싱 미들웨어](xref:performance/caching/middleware)
-**HTTP 로깅**<br>`HttpLoggingModule` | 예 | [ASP.NET Core 로깅](xref:fundamentals/logging)<br>구현: [elmah.io](https://github.com/elmahio/Elmah.Io.Extensions.Logging), [Loggr](https://github.com/imobile3/Loggr.Extensions.Logging), [NLog](https://github.com/NLog/NLog.Extensions.Logging), [Serilog](https://github.com/serilog/serilog-extensions-logging)
+**HTTP 로깅**<br>`HttpLoggingModule` | 예 | [ASP.NET Core 로깅](xref:fundamentals/logging/index)<br>구현: [elmah.io](https://github.com/elmahio/Elmah.Io.Extensions.Logging), [Loggr](https://github.com/imobile3/Loggr.Extensions.Logging), [NLog](https://github.com/NLog/NLog.Extensions.Logging), [Serilog](https://github.com/serilog/serilog-extensions-logging)
 **HTTP 리디렉션**<br>`HttpRedirectionModule` | 예 | [URL 재작성 미들웨어](xref:fundamentals/url-rewriting)
 **IIS 클라이언트 인증서 매핑 인증**<br>`IISCertificateMappingAuthenticationModule` | 예 | 
 **IP 및 도메인 제한**<br>`IpRestrictionModule` | 예 | 

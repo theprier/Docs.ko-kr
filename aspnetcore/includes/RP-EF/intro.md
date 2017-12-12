@@ -1,0 +1,1 @@
+Contoso 대학 웹 응용 프로그램 EF 코어 및 Visual Studio를 사용 하 여 Razor 페이지 웹 앱을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대 한 정보를 참조 하십시오. [첫 번째 자습서](xref:data/ef-rp/intro)합니다.

@@ -12,16 +12,16 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/request-features
 ms.openlocfilehash: b689d82d16c6ef55485691b3474a070765c8144b
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="request-features-in-aspnet-core"></a>ASP.NET Core에서 기능을 요청
 
 으로 [Steve Smith](https://ardalis.com/)
 
-웹 HTTP 요청 및 응답에 관련 된 세부 인터페이스에 정의 된 서버 구현입니다. 이러한 인터페이스를 생성 및 호스팅 응용 프로그램의 파이프라인을 수정할 서버 구현 및 미들웨어에서 사용 됩니다.
+웹 서버 구현은 HTTP 요청과 관련하여 설명되고 응답은 인터페이스에서 정의됩니다. 이러한 인터페이스를 생성 및 호스팅 응용 프로그램의 파이프라인을 수정할 서버 구현 및 미들웨어에서 사용 됩니다.
 
 ## <a name="feature-interfaces"></a>기능 인터페이스
 

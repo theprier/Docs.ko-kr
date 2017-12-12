@@ -11,11 +11,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/intro
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 06644b8359fb5ccc2e61a17a4c6e20e354d5ceef
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: 78d9fdbd32eae29d7714507498d5d68b86c6d12e
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="introduction-to-tag-helpers-in-aspnet-core"></a>ASP.NET Core에서 태그 도우미 소개 
 
@@ -35,13 +35,13 @@ ms.lasthandoff: 09/28/2017
 
 대부분의 기본 제공 태그 도우미 기존 HTML 요소를 대상 하 고 요소에 대 한 서버 쪽 특성을 제공 합니다. 예를 들어는 `<input>` 에서 대부분의 보기 중에서 사용 하는 요소는 *뷰/계정* 폴더에는 `asp-for` 렌더링 된 HTML로 지정 된 모델 속성의 이름을 추출 하는 특성입니다. 다음 Razor 태그:
 
-```html
+```cshtml
 <label asp-for="Email"></label>
 ```
 
 다음 HTML을 생성합니다.
 
-```html
+```cshtml
 <label for="Email">Email</label>
 ```
 
@@ -51,19 +51,19 @@ ms.lasthandoff: 09/28/2017
 
 태그 도우미 범위가의 조합에 의해 제어 됩니다 `@addTagHelper`, `@removeTagHelper`, 및 "!" 옵트아웃 문자입니다.
 
-<a name=add-helper-label></a>
+<a name="add-helper-label"></a>
 
 ### <a name="addtaghelper-makes-tag-helpers-available"></a>`@addTagHelper`태그 도우미를 사용할 수 있도록 설정
 
 라는 새 ASP.NET Core 웹 앱을 만들 경우 *AuthoringTagHelpers* (인증 안 함),으로 다음 *Views/_ViewImports.cshtml* 파일을 프로젝트에 추가 됩니다:
 
-[!code-html[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImportsCopy.cshtml?highlight=2&range=2-3)]
+[!code-cshtml[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImportsCopy.cshtml?highlight=2&range=2-3)]
 
 `@addTagHelper` 지시문 태그 도우미 보기를 사용할 수 있도록 합니다. 이 경우에 파일 보기 *Views/_ViewImports.cshtml*에 있는 모든 보기 파일에 상속 되는 기본적으로는 *뷰* 폴더 및 하위 디렉터리; 태그 도우미를 사용할 수 있도록 합니다. 위의 코드에 와일드 카드 구문을 사용 하 여 ("\*") 되도록 지정 하려면 지정된 된 어셈블리의 모든 태그 도우미 (*Microsoft.AspNetCore.Mvc.TagHelpers*)의 모든 뷰 파일을 사용할 수 있습니다는 *뷰* 디렉터리 또는 하위 디렉터리입니다. 후 첫 번째 매개 변수 `@addTagHelper` 로드할 태그 도우미를 지정 합니다 (사용 하 여 "\*" 모든 태그 도우미에 대 한), 두 번째 매개 변수 "Microsoft.AspNetCore.Mvc.TagHelpers" 태그 도우미를 포함 하는 어셈블리를 지정 합니다. *Microsoft.AspNetCore.Mvc.TagHelpers* 는 어셈블리의 기본 제공 ASP.NET 핵심 태그 도우미입니다.
 
 이 프로젝트의 태그 도우미의 모든 (이라는 어셈블리를 만드는 *AuthoringTagHelpers*), 다음을 사용 합니다.
 
-[!code-html[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImportsCopy.cshtml?highlight=3)]
+[!code-cshtml[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImportsCopy.cshtml?highlight=3)]
 
 프로젝트에 포함 된 경우는 `EmailTagHelper` 기본 네임 스페이스를 가진 (`AuthoringTagHelpers.TagHelpers.EmailTagHelper`), 태그 도우미의 정규화 된 이름 (FQN)를 제공할 수 있습니다.
 
@@ -75,14 +75,14 @@ ms.lasthandoff: 09/28/2017
 
 태그 도우미는 FQN를 사용 하 여 뷰를 추가 하려면 먼저는 FQN가 추가 (`AuthoringTagHelpers.TagHelpers.EmailTagHelper`), 및 다음 어셈블리 이름 (*AuthoringTagHelpers*). 대부분의 개발자 선호 하는 "\*" 와일드 카드 구문을 합니다. 와일드 카드 구문을 사용 하면 와일드 카드 문자를 삽입할 수 있습니다 "\*" 접미사는 FQN의으로 합니다. 예를 들어 다음 지시문를 가져오므로 `EmailTagHelper`:
 
-```csharp
+```cshtml
 @addTagHelper AuthoringTagHelpers.TagHelpers.E*, AuthoringTagHelpers
 @addTagHelper AuthoringTagHelpers.TagHelpers.Email*, AuthoringTagHelpers
 ```
 
 앞에서 언급 한 바와 같이 추가 `@addTagHelper` 지시문을 *Views/_ViewImports.cshtml* 파일을 사용 하면 태그 도우미의 모든 뷰 파일에 사용할 수는 *뷰* 디렉터리 및 하위 디렉터리입니다. 사용할 수는 `@addTagHelper` 태그 도우미는 보기에만 노출 하는 데 옵트인 하려면 특정 보기 파일에 지시문입니다.
 
-<a name=remove-razor-directives-label></a>
+<a name="remove-razor-directives-label"></a>
 
 ### <a name="removetaghelper-removes-tag-helpers"></a>`@removeTagHelper`태그 도우미를 제거합니다.
 
@@ -98,19 +98,19 @@ ms.lasthandoff: 09/28/2017
 
 태그 도우미 옵트아웃 문자로 요소 수준에서 태그 도우미를 사용 하지 않도록 설정할 수 있습니다 ("!"). 예를 들어 `Email` 유효성 검사에 사용 되지 않는지는 `<span>` 태그 도우미 옵트아웃 문자로:
 
-```csharp
+```cshtml
 <!span asp-validation-for="Email" class="text-danger"></!span>
 ```
 
 여는 태그와 닫는 태그에 태그 도우미 옵트아웃 문자를 적용 해야 합니다. (Visual Studio 편집기 자동으로 추가 옵트아웃 문자 닫는 태그를 지정 하 여는 태그를 하나 추가) 합니다. 옵트아웃 문자를 추가 하면 요소 및 태그 도우미 특성 구별 되는 글꼴에 더 이상 표시 됩니다.
 
-<a name=prefix-razor-directives-label></a>
+<a name="prefix-razor-directives-label"></a>
 
 ### <a name="using-taghelperprefix-to-make-tag-helper-usage-explicit"></a>사용 하 여 `@tagHelperPrefix` 명시적으로 만들어야 하 태그 도우미 사용
 
 `@tagHelperPrefix` 지시문을 사용 하면 태그 도우미 지원 기능이 사용 하 고 명시적 태그 도우미 사용을 확인 하려면 태그 접두사 문자열을 지정할 수 있습니다. 예를 들어 다음 태그를 추가할 수 있습니다는 *Views/_ViewImports.cshtml* 파일:
 
-```html
+```cshtml
 @tagHelperPrefix th:
 ```
 아래 코드 이미지 태그 도우미 접두사로 설정 되어 `th:`, 접두사를 사용 하는 요소에만 `th:` 태그 도우미 (태그 도우미 지원 요소에서 보유 한 고유한 글꼴)를 지원 합니다. `<label>` 및 `<input>` 요소 태그 도우미 접두사 대 한 태그 도우미를 사용할 수는 동안는 `<span>` 요소는 그렇지 않습니다.
@@ -127,7 +127,7 @@ HTML을 작성 하는 것이 좋습니다. `<label>` 요소입니다. 입력으�
 
 ![이미지](intro/_static/label.png)
 
-뿐만 아니라 HTML 도움말 아이콘 하지만 가져올 수 있습니다 (의 "@" 기호가 그 아래에서 "<>").
+뿐만 아니라 HTML 도움말 아이콘 하지만 가져올 수 있습니다 (의 "@" symbol with "<>" 그 아래).
 
 ![이미지](intro/_static/tagSym.png)
 
@@ -163,13 +163,13 @@ IntelliSense에는 속성과 페이지에서 모델에 사용할 수 있는 방�
 
 태그 도우미 Razor 뷰에서 HTML 요소에 연결 하는 동안 [HTML 도우미](http://stephenwalther.com/archive/2009/03/03/chapter-6-understanding-html-helpers) 메서드 Razor 뷰에서 html 섞인 상태로 호출 됩니다. "캡션" 하는 CSS 클래스를 사용 하 여 HTML 레이블을 만듭니다 다음 Razor 태그를 고려 합니다.
 
-```html
+```cshtml
 @Html.Label("FirstName", "First Name:", new {@class="caption"})
 ```
 
 에 (`@`) 기호 이라는 Razor 코드의 시작 됩니다. 다음 두 매개 변수 ("FirstName" 및 "이름:")은 문자열 이므로 [IntelliSense](https://docs.microsoft.com/visualstudio/ide/using-intellisense) 도울 수 없습니다. 마지막 인수:
 
-```html
+```cshtml
 new {@class="caption"}
 ```
 
@@ -189,7 +189,7 @@ IntelliSense를 사용 하면 전체 줄을 쓸 수 있습니다. `LabelTagHelpe
 
 생성합니다.
 
-```html
+```cshtml
 <label class="caption" for="FirstName">First Name</label>
 ```
 
@@ -199,7 +199,7 @@ IntelliSense를 사용 하면 전체 줄을 쓸 수 있습니다. `LabelTagHelpe
 
 생성합니다.
 
-```html
+```cshtml
 <label class="caption" for="FirstName">Name First</label>
 ```
 
@@ -209,7 +209,7 @@ IntelliSense를 사용 하면 전체 줄을 쓸 수 있습니다. `LabelTagHelpe
 
 Visual Studio 편집기에는 C# 코드가 회색 배경과 함께 표시 됩니다. 예를 들어는 `AntiForgeryToken` HTML 도우미:
 
-```html
+```cshtml
 @Html.AntiForgeryToken()
 ```
 
