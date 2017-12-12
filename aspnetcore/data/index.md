@@ -1,28 +1,39 @@
 ---
 title: "ASP.NET Core에서 데이터 작업"
 author: rick-anderson
-description: 
+description: "데이터 작업에 대한 문서 링크를 제공합니다. 많은 사람들이 Entity Framework Core를 사용합니다."
 keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
-ms.date: 10/14/2016
+ms.date: 10/14/2017
 ms.topic: article
-ms.assetid: a8fb7eb7-e0e5-4394-84f3-1f1dbe0ba2ef
 ms.technology: aspnet
 ms.prod: asp.net-core
-ms.openlocfilehash: 3566127476289ae085a9161132b103638bc9b068
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+uid: data/index
+ms.openlocfilehash: b3bcd15a078ed2125d14c3e94311e385a1db9683
+ms.sourcegitcommit: 6e46abd65973dea796d364a514de9ec2e3e1c1ed
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="working-with-data-in-aspnet-core"></a>ASP.NET Core에서 데이터 작업 
 
+* [Visual Studio를 사용하여 Razor 페이지 및 Entity Framework Core 시작](xref:data/ef-rp/index)
+
+   * [Razor 페이지 및 EF 시작](xref:data/ef-rp/intro)
+   * [만들기, 읽기, 업데이트 및 삭제 작업](xref:data/ef-rp/crud)
+   * [정렬, 필터링, 페이징 및 그룹화](xref:data/ef-rp/sort-filter-page)
+   * [마이그레이션](xref:data/ef-rp/migrations)
+   * [복합 데이터 모델 만들기](xref:data/ef-rp/complex-data-model)
+   * [관련 데이터 읽기](xref:data/ef-rp/read-related-data)
+   * [관련 데이터 업데이트](xref:data/ef-rp/update-related-data)
+   * [동시성 충돌 처리](xref:data/ef-rp/concurrency)
+
 *   [Visual Studio를 사용하여 ASP.NET Core 및 Entity Framework Core 시작](ef-mvc/index.md)
     *   [시작](ef-mvc/intro.md)
-    *   [만들기, 읽기, 업데이트 및 삭제 작업](ef-mvc/crud.md)
-    *   [정렬, 필터링, 페이징 및 그룹화](ef-mvc/sort-filter-page.md)
-    *   [마이그레이션](ef-mvc/migrations.md)
+    *   [만들기, 읽기, 업데이트 및 삭제 작업](xref:data/ef-mvc/crud)
+    *   [정렬, 필터링, 페이징 및 그룹화](xref:data/ef-mvc/sort-filter-page)
+    *   [마이그레이션](xref:data/ef-mvc/migrations)
     *   [복합 데이터 모델 만들기](ef-mvc/complex-data-model.md)
     *   [관련 데이터 읽기](ef-mvc/read-related-data.md)
     *   [관련 데이터 업데이트](ef-mvc/update-related-data.md)
@@ -37,3 +48,4 @@ ms.lasthandoff: 08/11/2017
     *   [Azure Blob Storage 및 Visual Studio 연결된 서비스 시작](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-blobs/)
     *   [Queue Storage 및 Visual Studio 연결된 서비스 시작](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-queues/)
     *   [Azure Table Storage 및 Visual Studio 연결된 서비스를 시작하는 방법](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-tables/)
+

@@ -1,20 +1,20 @@
 ---
 title: "ASP.NET Core 자습서"
-author: tdykstra
+author: rick-anderson
 description: "ASP.NET Core 응용 프로그램을 개발하는 방법을 배우기 위한 단계별 가이드 목록입니다."
 keywords: ASP.NET Core,
-ms.author: tdykstra
+ms.author: riande
 manager: wpickett
-ms.date: 07/14/2017
+ms.date: 10/14/2017
 ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/index
-ms.openlocfilehash: b3ea7688eefa69171fd1179de42497c98cf9302e
-ms.sourcegitcommit: 4d9c6d47bded895f3d9a35e9550e31ae213c083c
+ms.openlocfilehash: 44eaac4f3f4ad55cbc9b5ca9fae6e406ceff3d3c
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/19/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="aspnet-core-tutorials"></a>ASP.NET Core 자습서
 
@@ -22,15 +22,21 @@ ASP.NET Core 응용 프로그램을 개발하기 위해 다음 단계별 가이�
 
 ## <a name="building-web-applications"></a>웹 응용 프로그램 빌드
 
-[Razor 페이지](xref:mvc/razor-pages/index)는 ASP.NET Core 2.0을 사용하여 웹 UI를 만드는 좋은 방법입니다.
+[Razor 페이지](xref:mvc/razor-pages/index)는 ASP.NET Core 2.0을 사용하여 새로운 웹 UI 앱을 만드는 좋은 방법입니다.
 
 * [ASP.NET Core의 Razor 페이지 소개](xref:mvc/razor-pages/index)
-* [Windows에서 ASP.NET Core를 사용하여 Razor 페이지 웹앱 만들기](xref:tutorials/razor-pages/index)
-* [Mac에서 ASP.NET Core를 사용하여 Razor 페이지 웹앱 만들기](xref:tutorials/razor-pages-mac/index)  
-* [VS Code와 함께 ASP.NET Core를 사용하여 Razor 페이지 웹앱 만들기](xref:tutorials/razor-pages-vsc/index) 
-* [Windows에서 Visual Studio를 사용하여 ASP.NET Core MVC 웹앱 만들기](first-mvc-app/index.md)
-* [Mac에서 Visual Studio를 사용하여 ASP.NET Core MVC 웹앱 만들기](first-mvc-app-mac/index.md)
-* [Mac 또는 Linux에서 Visual Studio Code를 사용하여 ASP.NET Core MVC 웹앱 만들기](first-mvc-app-xplat/index.md)
+* ASP.NET Core를 사용하여 Razor 페이지 웹앱 만들기
+
+   * [Windows의 Razor 페이지](xref:tutorials/razor-pages/index)
+   * [Mac의 Razor 페이지](xref:tutorials/razor-pages-mac/index)
+   * [VS Code를 사용하는 Razor 페이지](xref:tutorials/razor-pages-vsc/index)  
+
+* ASP.NET Core MVC 웹앱 만들기
+
+   * [Windows용 Visual Studio를 사용하는 웹앱](first-mvc-app/index.md)
+   * [Mac용 Visual Studio를 사용하는 웹앱](first-mvc-app-mac/index.md)
+   * [Mac 또는 Linux에서 Visual Studio Code를 사용하는 웹앱](first-mvc-app-xplat/index.md)
+
 * [Visual Studio를 사용하여 ASP.NET Core 및 Entity Framework Core 시작](../data/ef-mvc/index.md)
 * [Yeoman을 사용하여 프로젝트 빌드](../client-side/yeoman.md)
 * [태그 도우미 작성](../mvc/views/tag-helpers/authoring.md)
@@ -38,10 +44,13 @@ ASP.NET Core 응용 프로그램을 개발하기 위해 다음 단계별 가이�
 * [dotnet watch를 사용하여 ASP.NET Core 응용 프로그램 개발](dotnet-watch.md)
 
 ## <a name="building-web-apis"></a>Web API 빌드
-* [ASP.NET Core 및 Mac용 Visual Studio를 사용하여 Web API 만들기](xref:tutorials/first-web-api-mac)
-* [ASP.NET Core 및 Windows용 Visual Studio를 사용하여 Web API 만들기](first-web-api.md)
-* [ASP.NET Core 및 Visual Studio Code를 사용하여 Web API 만들기](web-api-vsc.md)
-* [Swagger를 사용한 ASP.NET Web API 도움말 페이지](web-api-help-pages-using-swagger.md)
+* ASP.NET Core를 사용하여 Web API 만들기
+
+  * [Windows용 Visual Studio를 사용하는 Web API](first-web-api.md)
+  * [Mac용 Visual Studio를 사용하는 Web API](xref:tutorials/first-web-api-mac)
+  * [Visual Studio Code를 사용하는 Web API](web-api-vsc.md)
+  
+* [Swagger를 사용한 ASP.NET Core Web API 도움말 페이지](web-api-help-pages-using-swagger.md)
 * [네이티브 모바일 응용 프로그램에 대한 백 엔드 웹 서비스 만들기](../mobile/native-mobile-backend.md)
 
 ## <a name="working-with-data"></a>데이터 작업
@@ -65,6 +74,7 @@ ASP.NET Core 응용 프로그램을 개발하기 위해 다음 단계별 가이�
 
 ## <a name="publishing-and-deployment"></a>게시 및 배포
 * [Visual Studio를 사용하여 Azure에 ASP.NET Core 웹앱 배포](publish-to-azure-webapp-using-vs.md)
+* [명령줄을 사용하여 Azure에 ASP.NET Core 웹앱 배포](publish-to-azure-webapp-using-cli.md)
 * [연속 배포를 사용하여 Azure 웹앱에 게시](../publishing/azure-continuous-deployment.md)
 * [원격 Docker 호스트에 ASP.NET 컨테이너 배포](https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker)
 * [Nano Server의 ASP.NET Core](nano-server.md)

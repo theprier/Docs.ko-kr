@@ -1,23 +1,47 @@
 ---
-title: "보안"
-author: rick-anderson
-description: 
-keywords: ASP.NET Core,
-ms.author: riande
+title: "ASP.NET Core 보안 개요 | Microsoft Docs"
+author: rachelappel
+description: "ASP.NET Core의 인증, 권한 부여 및 보안 기본 사항 알아보기"
+ms.author: rachelap
 manager: wpickett
-ms.date: 10/14/2016
+ms.date: 11/01/2017
 ms.topic: article
 ms.assetid: a8fb7eb7-e0e5-4394-84f3-1f1dbe012345
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/index
-ms.openlocfilehash: f173d03f55a1ce52222a75c023f9e8a20d5c60dc
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: 4f3a74d67ce3453499ea9785cc80bee183dc1aff
+ms.sourcegitcommit: e4fb6b13be56a0fb2f2778623740a047d6489227
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 11/16/2017
 ---
-# <a name="security"></a>보안
+# <a name="aspnet-core-security-overview"></a>ASP.NET Core 보안 개요
+
+개발자는 ASP.NET Core를 사용하여 앱의 보안을 간편하게 구성 및 관리할 수 있습니다. ASP.NET Core는 인증, 권한 부여, 데이터 보호, SSL 적용, 앱 비밀, 요청 위조 방지 및 CORS 관리를 위한 기능을 포함하고 있습니다. 이러한 보안 기능을 사용하여 강력하면서도 안전한 ASP.NET Core 앱을 빌드할 수 있습니다. 
+
+## <a name="aspnet-core-security-features"></a>ASP.NET Core 보안 기능
+
+ASP.NET Core는 기본 제공 ID 공급자를 포함하여 앱을 보호하는 여러 도구와 라이브러리를 제공하지만 Facebook, Twitter, LinkedIn 등의 타사 ID 서비스를 사용할 수도 있습니다. ASP.NET Core를 사용하면 기밀 정보를 코드에 노출할 필요 없이 저장하고 사용할 수 있는 방법인 앱 비밀을 간편하게 관리할 수 있습니다. 
+
+## <a name="authentication-vs-authorization"></a>인증 vs. 권한 부여
+
+인증은 사용자가 자격 증명을 제공하면 운영 체제, 데이터베이스, 앱 또는 리소스에 저장된 자격 증명과 비교하는 프로세스입니다. 두 자격 증명이 일치하면 사용자 인증이 성공하고 사용자는 권한 부여 프로세스 동안 권한이 부여된 작업을 수행할 수 있습니다. 권한 부여는 사용자가 할 수 있는 작업을 결정하는 프로세스를 말합니다. 
+
+인증을 이해하기 위한 또 다른 개념으로 서버, 데이터베이스, 앱, 리소스 등의 공간에 들어가는 것으로 생각할 수 있고, 권한 부여는 사용자가 해당 공간(서버, 데이터베이스 또는 앱) 내에서 어떤 개체에 대해 어떤 작업을 수행할 수 있는지 결정하는 것입니다.
+
+## <a name="common-vulnerabilities-in-software"></a>소프트웨어의 일반적인 취약점
+
+ASP.NET Core 및 EF는 앱을 보호하고 보안 위반을 방지하는 기능을 포함하고 있습니다. 다음 링크 목록을 선택하면 웹앱의 가장 일반적인 보안 취약점을 방지하는 기술을 구체적으로 설명하는 문서로 이동합니다.
+
+* [사이트 간 스크립팅 공격](https://docs.microsoft.com/aspnet/core/security/cross-site-scripting)
+* [SQL 삽입 공격](https://docs.microsoft.com/ef/core/querying/raw-sql)
+* [CSRF(사이트 간 요청 위조)](https://docs.microsoft.com/aspnet/core/security/anti-request-forgery)
+* [오픈 리디렉션 공격](https://docs.microsoft.com/aspnet/core/security/preventing-open-redirects)
+
+그 외에도 알고 계셔야 하는 취약점이 더 있습니다. 자세한 내용은 이 문서의 *ASP.NET 보안 설명서*에 대한 섹션을 참조하세요. 
+
+## <a name="aspnet-security-documentation"></a>ASP.NET 보안 설명서
 
 *   [인증](authentication/index.md)
     *   [ID 소개](authentication/identity.md)
@@ -41,7 +65,7 @@ ms.lasthandoff: 09/28/2017
     *   [사용자 지정 정책 기반 권한 부여](authorization/policies.md)
     *   [요구 사항 처리기의 종속성 주입](authorization/dependencyinjection.md)
     *   [리소스 기반 권한 부여](authorization/resourcebased.md)
-    *   [뷰 기반 권한 부여](authorization/views.md)
+    *   [보기 기반 권한 부여](authorization/views.md)
     *   [구성표로 ID 제한](authorization/limitingidentitybyscheme.md)
 *   [데이터 보호](data-protection/index.md)
     *   [데이터 보호 소개](data-protection/introduction.md)
@@ -63,7 +87,7 @@ ms.lasthandoff: 09/28/2017
         *   [키 관리 확장성](data-protection/extensibility/key-management.md)
         *   [기타 API](data-protection/extensibility/misc-apis.md)
     *   [구현](data-protection/implementation/index.md)
-        *   [인증된 암호화 세부 정보.](data-protection/implementation/authenticated-encryption-details.md)
+        *   [인증된 암호화 세부 정보](data-protection/implementation/authenticated-encryption-details.md)
         *   [하위 키 파생 및 인증된 암호화](data-protection/implementation/subkeyderivation.md)
         *   [컨텍스트 헤더](data-protection/implementation/context-headers.md)
         *   [키 관리](data-protection/implementation/key-management.md)

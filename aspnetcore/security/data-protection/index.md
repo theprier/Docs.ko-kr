@@ -1,8 +1,8 @@
 ---
 title: "ASP.NET Core에서 데이터 보호"
 author: rick-anderson
-description: 
-keywords: ASP.NET Core,
+description: "이 문서는 다양한 ASP.NET Core 데이터 보호 항목에 대한 목차로 사용됩니다."
+keywords: "ASP.NET Core,데이터 보호"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,11 +11,11 @@ ms.assetid: 1f402da8-1052-4970-9835-9f9f16a02dbc
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/index
-ms.openlocfilehash: 39f2ca96f8542de033274ea957b5c7736948c981
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 8b42e65bb6121355120a6f4fbe8cd4d1fea153de
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="data-protection-in-aspnet-core-consumer-apis-configuration-extensibility-apis-and-implementation"></a>ASP.NET Core에서 데이터 보호: 소비자 API, 구성, 확장성 API 및 구현
 
@@ -57,7 +57,7 @@ ms.lasthandoff: 08/11/2017
 
 * [구현](implementation/index.md)
 
-  * [인증된 암호화 세부 정보.](implementation/authenticated-encryption-details.md)
+  * [인증된 암호화 세부 정보](implementation/authenticated-encryption-details.md)
 
   * [하위 키 파생 및 인증된 암호화](implementation/subkeyderivation.md)
 

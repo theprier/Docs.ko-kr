@@ -11,11 +11,11 @@ ms.assetid: f0930c68-4d17-4748-adbf-801e17601eb6
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: publishing/index
-ms.openlocfilehash: df3c1f0c2768b89c3ea5dc901782170c530a542e
-ms.sourcegitcommit: 74a8ad9c1ba5c155d7c4303e67632a0922c38e86
+ms.openlocfilehash: 0de459128426c4d027606951592b1fe3fdd24fd9
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/20/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="hosting-and-deployment-overview-for-aspnet-core-apps"></a>ASP.NET Core 앱에 대한 호스팅 및 배포 개요
 
@@ -58,6 +58,10 @@ ASP.NET Core 앱은 서버가 부팅되고 작동 중단 후 다시 시작될 �
 일반적으로 배포에는 `dotnet publish`에서 서버로 출력을 복사하는 것 외에 추가 작업이 필요합니다. 예를 들어 추가 파일을 *publish* 폴더에 포함하거나 파일을 제외할 수 있습니다. Visual Studio에서는 웹 배포에 MSBuild를 사용하고 MSBuild를 사용자 지정하여 배포 중에 많은 다른 작업을 수행할 수 있습니다. 자세한 내용은 [Visual Studio에서 프로필 게시](xref:publishing/web-publishing-vs) 및 [MSBuild 및 Team Foundation Build 사용](http://msbuildbook.com/) 문서를 참조하세요.
 
 [웹 게시 기능](xref:tutorials/publish-to-azure-webapp-using-vs)을 사용하거나 [기본 제공 Git 지원](xref:publishing/azure-continuous-deployment)을 사용하여 Visual Studio에서 Azure App Service로 직접 배포할 수 있습니다. Visual Studio Team Services에서는 [Azure App Service에 연속 배포](https://www.visualstudio.com/docs/build/aspnet/core/quick-to-azure)를 지원합니다.
+
+## <a name="publishing-to-azure"></a>Azure에 게시
+
+Visual Studio를 사용하여 Azure에 이 앱을 게시하는 방법에 관한 지침은 [Visual Studio를 사용하여 Azure App Service에 ASP.NET Core 웹앱 게시](xref:tutorials/publish-to-azure-webapp-using-vs)를 참조하세요.  [명령줄](xref:tutorials/publish-to-azure-webapp-using-cli)에서도 앱을 Azure에 게시할 수 있습니다.
 
 ## <a name="additional-resources"></a>추가 리소스
 

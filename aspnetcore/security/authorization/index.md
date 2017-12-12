@@ -1,8 +1,8 @@
 ---
 title: "ASP.NET Core의 권한 부여"
 author: rick-anderson
-description: 
-keywords: ASP.NET Core,
+description: "이 문서는 다양한 ASP.NET Core 권한 부여 항목에 대한 목차로 사용됩니다."
+keywords: "ASP.NET Core,권한 부여"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,13 +11,13 @@ ms.assetid: 1abd456b-2199-4ba3-9698-3241e0bd4afc
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/index
-ms.openlocfilehash: c632a3a6009545fcd93ea36131aad1b761e58998
-ms.sourcegitcommit: 0b6c8e6d81d2b3c161cd375036eecbace46a9707
+ms.openlocfilehash: 2bd9a41acedcd87afc57490f0e89e917f7bc31f8
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 11/10/2017
 ---
-# <a name="authorization-in-aspnet-core--simple-role-claims-based-and-custom"></a>ASP.NET Core에서 권한 부여: 단순, 역할, 클레임 기반 및 사용자 지정
+# <a name="authorization-in-aspnet-core-simple-role-claims-based-and-custom"></a>ASP.NET Core에서 권한 부여: 단순, 역할, 클레임 기반 및 사용자 지정
 
 * [소개](introduction.md)
 
@@ -33,6 +33,6 @@ ms.lasthandoff: 08/11/2017
 
 * [리소스 기반 권한 부여](resourcebased.md)
 
-* [뷰 기반 권한 부여](views.md)
+* [보기 기반 권한 부여](views.md)
 
 * [구성표로 ID 제한](limitingidentitybyscheme.md)

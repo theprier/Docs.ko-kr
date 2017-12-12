@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/razor-pages/index
-ms.openlocfilehash: 3112faa38bb9702f6856097e315c413f0974010d
-ms.sourcegitcommit: 3ba32b2b6425ed94604cb0f681db0d5bb5f8ad58
+ms.openlocfilehash: 36dd2ad01f93ab1093bad84a58504a150c70ea16
+ms.sourcegitcommit: 4925a91ef4130ddb333f187ab13defe66f2c6cef
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 12/03/2017
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core의 Razor 페이지 소개
 
@@ -23,6 +23,8 @@ ms.lasthandoff: 09/28/2017
 Razor 페이지는 더 쉽고 더 생산적으로 코딩 페이지에 초점을 맞춘 시나리오를 만드는 ASP.NET Core MVC의 새로운 기능입니다.
 
 모델-뷰-컨트롤러 방법을 사용하는 자습서를 검색할 경우 [ASP.NET Core MVC 시작](xref:tutorials/first-mvc-app/start-mvc)을 참조하세요.
+
+이 문서에서는 Razor 페이지를 소개합니다. 이 문서는 단계별 자습서가 아닙니다. 이해하기 어려운 섹션이 있는 경우 [Razor 페이지 시작](xref:tutorials/razor-pages/razor-pages-start)을 참조하세요.
 
 <a name="prerequisites"></a>
 
@@ -106,6 +108,10 @@ Razor 페이지 기능은 웹 브라우저에서 사용되는 일반 패턴을 �
 데이터 모델:
 
 [!code-cs[main](index/sample/RazorPagesContacts/Data/Customer.cs)]
+
+db 컨텍스트:
+
+[!code-cs[main](index/sample/RazorPagesContacts/Data/AppDbContext.cs)]
 
 *Pages/Create.cshtml* 뷰 파일:
 
@@ -313,7 +319,7 @@ Razor 페이지의 뷰 검색에는 *Pages* 폴더가 포함됩니다. MVC 컨�
 
 ## <a name="tempdata"></a>TempData
 
-ASP.NET Core는 [TempData](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controller#Microsoft_AspNetCore_Mvc_Controller_TempData) 속성을 [컨트롤러](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controller)에서 노출합니다. 이 속성은 판독될 때까지 데이터를 저장합니다. `Keep` 및 `Peek` 메서드를 사용하여 삭제 없이 데이터를 검사할 수 있습니다. `TempData`는 두 개 이상의 요청에 대한 데이터가 필요할 경우 리디렉션에 유용합니다.
+ASP.NET Core는 [TempData](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.controller.tempdata?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_Controller_TempData) 속성을 [컨트롤러](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controller)에서 노출합니다. 이 속성은 판독될 때까지 데이터를 저장합니다. `Keep` 및 `Peek` 메서드를 사용하여 삭제 없이 데이터를 검사할 수 있습니다. `TempData`는 두 개 이상의 요청에 대한 데이터가 필요할 경우 리디렉션에 유용합니다.
 
 `[TempData]` 특성은 ASP.NET Core 2.0의 새로운 기능이고 컨트롤러 및 페이지에서 지원됩니다.
 
@@ -373,10 +379,43 @@ URL에서 쿼리 문자열 `?handler=JoinList`를 사용하지 않으려면 경�
 
 [!code-cs[main](index/sample/RazorPagesContacts/StartupAdvanced.cs?name=snippet_1)]
 
-현재 `RazorPagesOptions`를 사용하여 페이지의 루트 디렉터리를 설정하거나 페이지에 대한 응용 프로그램 모델 규칙을 추가할 수 있습니다. 나중에 이 방법으로 더 큰 확장성을 사용할 수 있기를 기대합니다.
+현재 `RazorPagesOptions`를 사용하여 페이지의 루트 디렉터리를 설정하거나 페이지에 대한 응용 프로그램 모델 규칙을 추가할 수 있습니다. 나중에 이 방법으로 더 큰 확장성을 지원할 예정입니다.
 
 뷰를 미리 컴파일하려면 [Razor 뷰 컴파일](xref:mvc/views/view-compilation)을 참조하세요.
 
 [샘플 코드를 다운로드하거나 봅니다](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/razor-pages/index/sample).
 
 이 소개에 따라 빌드되는 [ASP.NET Core의 Razor 페이지 시작](xref:tutorials/razor-pages/razor-pages-start)을 참조하세요.
+
+### <a name="specify-that-razor-pages-are-at-the-content-root"></a>Razor 페이지를 콘텐츠 루트로 지정
+
+기본적으로 Razor 페이지의 루트 경로는 */Pages* 디렉터리입니다. [AddMvc](/dotnet/api/microsoft.extensions.dependencyinjection.mvcservicecollectionextensions.addmvc#Microsoft_Extensions_DependencyInjection_MvcServiceCollectionExtensions_AddMvc_Microsoft_Extensions_DependencyInjection_IServiceCollection_)에 [WithRazorPagesAtContentRoot](/dotnet/api/microsoft.extensions.dependencyinjection.mvcrazorpagesmvcbuilderextensions.withrazorpagesatcontentroot)를 추가하여 Razor 페이지를 앱의 콘텐츠 루트([ContentRootPath](/dotnet/api/microsoft.aspnetcore.hosting.ihostingenvironment.contentrootpath))로 지정합니다.
+
+```csharp
+services.AddMvc()
+    .AddRazorPagesOptions(options =>
+    {
+        ...
+    })
+    .WithRazorPagesAtContentRoot();
+```
+
+### <a name="specify-that-razor-pages-are-at-a-custom-root-directory"></a>Razor 페이지가 사용자 지정 루트 디렉터리에 있도록 지정
+
+[AddMvc](/dotnet/api/microsoft.extensions.dependencyinjection.mvcservicecollectionextensions.addmvc#Microsoft_Extensions_DependencyInjection_MvcServiceCollectionExtensions_AddMvc_Microsoft_Extensions_DependencyInjection_IServiceCollection_)에 [WithRazorPagesRoot](/dotnet/api/microsoft.extensions.dependencyinjection.mvcrazorpagesmvccorebuilderextensions.withrazorpagesroot)를 추가하여 Razor 페이지가 앱의 사용자 지정 루트 디렉터리에 있도록 지정합니다(상대 경로 제공).
+
+```csharp
+services.AddMvc()
+    .AddRazorPagesOptions(options =>
+    {
+        ...
+    })
+    .WithRazorPagesRoot("/path/to/razor/pages");
+```
+
+## <a name="see-also"></a>참고 항목
+
+* [Razor 페이지 시작](xref:tutorials/razor-pages/razor-pages-start)
+* [Razor 페이지 권한 부여 규칙](xref:security/authorization/razor-pages-authorization)
+* [Razor 페이지 사용자 지정 경로 및 페이지 모델 공급자](xref:mvc/razor-pages/razor-pages-convention-features)
+* [Razor 페이지 단위 및 통합 테스트](xref:testing/razor-pages-testing)
