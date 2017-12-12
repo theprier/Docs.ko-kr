@@ -1,61 +1,80 @@
 ---
-title: "보기 기반 권한 부여"
+title: "ASP.NET Core MVC에서 보기 기반 권한 부여"
 author: rick-anderson
-description: 
-keywords: ASP.NET Core
+description: "이 문서에 삽입 하 고 ASP.NET Core Razor 뷰 내에 권한 부여 서비스를 사용 하는 방법을 보여 줍니다."
+keywords: "ASP.NET Core, 권한 부여, IAuthorizationService, Razor 권한 부여"
 ms.author: riande
 manager: wpickett
-ms.date: 10/14/2016
+ms.date: 10/30/2017
 ms.topic: article
 ms.assetid: 24ce40d8-9b83-4bae-9d4c-a66350fcc8f8
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/views
-ms.openlocfilehash: 3b7fa6025d766da80ba92ee27af20bf9bfe0dcf4
-ms.sourcegitcommit: 74e22e08e3b08cb576e5184d16f4af5656c13c0c
+ms.openlocfilehash: 756431f398c29376ab0ecd6c4f4d1db4f8022b0b
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/25/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="view-based-authorization"></a>보기 기반 권한 부여
 
-<a name=security-authorization-views></a>
+하려는 개발자는 종종 표시, 숨기기, 그렇지 않으면 현재 사용자 id에 따라 UI를 수정 합니다. 권한 부여 서비스를 통해 MVC 뷰 내에서 액세스할 수 있습니다 [종속성 주입](xref:fundamentals/dependency-injection#fundamentals-dependency-injection)합니다. 에 삽입 하는 권한 부여 서비스 Razor 뷰를 사용 하 여는 `@inject` 지시문:
 
-종종 개발자 표시, 숨기기 또는 그렇지 않으면 현재 사용자 id에 따라 UI를 수정 합니다. 권한 부여 서비스를 통해 MVC 뷰 내에서 액세스할 수 있습니다 [종속성 주입](../../fundamentals/dependency-injection.md#fundamentals-dependency-injection)합니다. Razor 뷰 사용을 권한 부여 서비스를 삽입할 수는 `@inject` 예를 들어 지시문 `@inject IAuthorizationService AuthorizationService` (필요 `@using Microsoft.AspNetCore.Authorization`). 모든 보기에서 권한 부여 서비스를 사용할 경우 배치 합니다.는 `@inject` 지시문에 `_ViewImports.cshtml` 파일에 `Views` 디렉터리입니다. 종속성 주입 보기에 대 한 자세한 내용은 참조 [뷰로 종속성 주입](../../mvc/views/dependency-injection.md)합니다.
+```cshtml
+@using Microsoft.AspNetCore.Authorization
+@inject IAuthorizationService AuthorizationService
+```
 
-호출 하 여 사용 권한 부여 서비스를 삽입 한 후의 `AuthorizeAsync` 정확히 같은 방식으로 검사 하는 동안에 메서드가 [리소스 기반 권한 부여](resourcebased.md#security-authorization-resource-based-imperative)합니다.
+모든 보기에서 권한 부여 서비스 배치는 `@inject` 지시문에 *_ViewImports.cshtml* 의 파일은 *뷰* 디렉터리입니다. 자세한 내용은 참조 [뷰로 종속성 주입](xref:mvc/views/dependency-injection)합니다.
 
-```csharp
-@if (await AuthorizationService.AuthorizeAsync(User, "PolicyName"))
-   {
-       <p>This paragraph is displayed because you fulfilled PolicyName.</p>
-   }
-   ```
+삽입 된 권한 부여 서비스를 사용 하 여 호출할 `AuthorizeAsync` 정확히 같은 방식 중 체크 [리소스 기반 권한 부여](xref:security/authorization/resourcebased#security-authorization-resource-based-imperative):
 
-일부 경우에는 리소스를 보기 모델을 되며 호출할 수 있습니다 `AuthorizeAsync` 정확히 같은 방식으로 검사 하는 동안에 [리소스 기반 권한 부여](resourcebased.md#security-authorization-resource-based-imperative);
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET 2.x 핵심](#tab/aspnetcore2x)
-
-```csharp
-   @if ((await AuthorizationService.AuthorizeAsync(User, Model, Operations.Edit)).Succeeded)
-   {
-       <p><a class="btn btn-default" role="button"
-           href="@Url.Action("Edit", "Document", new { id = Model.Id })">Edit</a></p>
-   }
-   ```
+```cshtml
+@if ((await AuthorizationService.AuthorizeAsync(User, "PolicyName")).Succeeded)
+{
+    <p>This paragraph is displayed because you fulfilled PolicyName.</p>
+}
+```
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-```csharp
-   @if (await AuthorizationService.AuthorizeAsync(User, Model, Operations.Edit))
-   {
-       <p><a class="btn btn-default" role="button"
-           href="@Url.Action("Edit", "Document", new { id = Model.Id })">Edit</a></p>
-   }
-   ```
+```cshtml
+@if (await AuthorizationService.AuthorizeAsync(User, "PolicyName"))
+{
+    <p>This paragraph is displayed because you fulfilled PolicyName.</p>
+}
+```
+
 ---
 
-여기서 모델 리소스 권한 부여 고려해 야 하는 변수로 전달 된 확인할 수 있습니다.
+경우에 따라 리소스 보기 모델 됩니다. 호출 `AuthorizeAsync` 정확히 같은 방식 중 체크 [리소스 기반 권한 부여](xref:security/authorization/resourcebased#security-authorization-resource-based-imperative):
 
->[!WARNING]
->표시 또는 숨기기 유일한 인증 방법으로 UI의 부분에 의존 하지 마십시오. UI를 숨기 거 요소 의미가 아니라 사용자가 액세스할 수 없습니다. 또한 컨트롤러 코드 내에서 사용자 권한을 부여 해야 합니다.
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+
+```cshtml
+@if ((await AuthorizationService.AuthorizeAsync(User, Model, Operations.Edit)).Succeeded)
+{
+    <p><a class="btn btn-default" role="button"
+        href="@Url.Action("Edit", "Document", new { id = Model.Id })">Edit</a></p>
+}
+```
+
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+
+```cshtml
+@if (await AuthorizationService.AuthorizeAsync(User, Model, Operations.Edit))
+{
+    <p><a class="btn btn-default" role="button"
+        href="@Url.Action("Edit", "Document", new { id = Model.Id })">Edit</a></p>
+}
+```
+
+---
+
+위의 코드에서 모델을 고려 정책 평가 수행 해야 하는 리소스로 전달 됩니다.
+
+> [!WARNING]
+> 유일한 권한 확인으로 응용 프로그램의 UI 요소의 토글 표시 여부에 의존 하지 마십시오. UI 요소를 숨기 거 수 있습니다 완전히 되지 액세스 하는 연결 된 컨트롤러 작업이 있습니다. 예를 들어 앞의 코드 조각에 있는 단추를 것이 좋습니다. 사용자가 호출할 수는 `Edit` 동작 메서드는 상대 리소스를 자신이 알고 있는 경우 URL이 */Document/Edit/1*합니다. 이러한 이유로 `Edit` 동작 메서드는 자체 권한 부여 확인을 수행 해야 합니다.

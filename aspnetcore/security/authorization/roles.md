@@ -1,8 +1,8 @@
 ---
 title: "역할 기반 권한 부여"
 author: rick-anderson
-description: 
-keywords: ASP.NET Core,
+description: "이 문서에는 역할 권한 부여 속성에 전달 하 여 ASP.NET Core 컨트롤러 및 작업 액세스를 제한 하는 방법을 보여 줍니다."
+keywords: "ASP.NET Core, 역할, 권한 부여"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,23 +11,23 @@ ms.assetid: 5e014da1-8bc0-409b-951a-88b92c661fdf
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/roles
-ms.openlocfilehash: 1dc76f316b70d486febe386cc47cd1f843d8d8e3
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 649b21d99c742843534748b0ba9d7b7b22483a62
+ms.sourcegitcommit: 703593d5fd14076e79be2ba75a5b8da12a60ab15
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 12/05/2017
 ---
 # <a name="role-based-authorization"></a>역할 기반 권한 부여
 
-<a name=security-authorization-role-based></a>
+<a name="security-authorization-role-based"></a>
 
-Id를 만들 때 하나 이상의 역할에 속할 수, Scott 사용자 역할에만 속할 수 하는 동안 Tracy 관리자 및 사용자 역할에 속할 수는 예입니다. 이러한 역할이 만들고 관리 하는 방법의 권한 부여 프로세스는 백업 저장소에 따라 달라 집니다. 역할을 통해 개발자에 게 노출 되는 [IsInRole](https://docs.microsoft.com/dotnet/api/system.security.principal.genericprincipal.isinrole) 속성에는 [ClaimsPrincipal](https://docs.microsoft.com/dotnet/api/system.security.claims.claimsprincipal) 클래스입니다.
+Id를 만들 때 하나 이상의 역할에 속할 수 있습니다. 예를 들어 Tracy Scott 사용자 역할에만 속할 수 하는 동안 관리자 및 사용자 역할에 속할 수 있습니다. 이러한 역할이 만들고 관리 하는 방법의 권한 부여 프로세스는 백업 저장소에 따라 달라 집니다. 역할을 통해 개발자에 게 노출 되는 [IsInRole](https://docs.microsoft.com/dotnet/api/system.security.principal.genericprincipal.isinrole) 에서 메서드는 [ClaimsPrincipal](https://docs.microsoft.com/dotnet/api/system.security.claims.claimsprincipal) 클래스입니다.
 
 ## <a name="adding-role-checks"></a>추가 역할 검사
 
-역할 기반 권한 부여 확인은 선언적-개발자 포함을 컨트롤러나는 컨트롤러 내 작업에 대해 해당 코드 내에서 현재 사용자는 요청 된 리소스에 액세스의 구성원 이어야 하는 역할을 지정 합니다.
+역할 기반 권한 부여 확인은 선언적&mdash;개발자 포함을 컨트롤러나는 컨트롤러 내 작업에 대해 해당 코드 내에서 현재 사용자는 요청 된 리소스에 액세스의 구성원 이어야 하는 역할을 지정 합니다.
 
-예를 들어 다음 코드는 제한 작업에 대 한 액세스에는 `AdministrationController` 의 구성원 인 사용자에 게는 `Administrator` 그룹입니다.
+다음 코드에 있는 동작에 대 한 액세스는 제한할 예를 들어는 `AdministrationController` 의 구성원 인 사용자에 게는 `Administrator` 그룹입니다.
 
 ```csharp
 [Authorize(Roles = "Administrator")]
@@ -57,7 +57,7 @@ public class ControlPanelController : Controller
 }
 ```
 
-작업 수준;에서 추가 역할 권한 부여 특성을 적용 하 여 액세스를 추가로 제한할 수 있습니다.
+작업 수준에서 추가 역할 권한 부여 특성을 적용 하 여 액세스를 추가로 제한할 수 있습니다.
 
 ```csharp
 [Authorize(Roles = "Administrator, PowerUser")]
@@ -93,7 +93,7 @@ public class ControlPanelController : Controller
 }
 ```
 
-<a name=security-authorization-role-policy></a>
+<a name="security-authorization-role-policy"></a>
 
 ## <a name="policy-based-role-checks"></a>정책 기반 역할 검사
 
@@ -111,7 +111,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-사용 하 여 정책이 적용 되는 `Policy` 속성에는 `AuthorizeAttribute` ; 특성
+사용 하 여 정책이 적용 되는 `Policy` 속성에는 `AuthorizeAttribute` 특성:
 
 ```csharp
 [Authorize(Policy = "RequireAdministratorRole")]
@@ -121,7 +121,7 @@ public IActionResult Shutdown()
 }
 ```
 
-요구 사항에 허용 되는 여러 역할을 지정 하려는 경우에 매개 변수로 지정할 수 있습니다는 `RequireRole` 메서드도 있습니다.
+요구 사항에 허용 되는 여러 역할을 지정 하려는 경우에 매개 변수로 지정할 수 있습니다는 `RequireRole` 메서드:
 
 ```csharp
 options.AddPolicy("ElevatedRights", policy =>

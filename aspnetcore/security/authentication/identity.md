@@ -11,11 +11,11 @@ ms.assetid: cf119f21-1a2b-49a2-b052-547ccb66ee83
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity
-ms.openlocfilehash: 820836eaf3a29c9941e84458f09ac470f8150ba7
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 0679663b3b3b66f9935d0fb24360be2954fcdee1
+ms.sourcegitcommit: 9ecd4e9fb0c40c3693dab079eab1ff94b461c922
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>ASP.NET Core에 Id 소개
 
@@ -32,11 +32,11 @@ ASP.NET Core Id 사용자 이름, 암호 및 프로필 데이터를 저장 하�
 1.  개별 사용자 계정을 가진 ASP.NET Core 웹 응용 프로그램 프로젝트를 만듭니다.
 
     # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
-    Visual Studio에서 선택 **파일** -> **새로** -> **프로젝트**합니다. 선택 된 **ASP.NET 웹 응용 프로그램** 에서 **새 프로젝트** 대화 상자. ASP.NET Core를 선택 하면 **웹 응용 프로그램** 와 **개별 사용자 계정** 인증 방법으로 합니다.
+    Visual Studio에서 선택 **파일** -> **새로** -> **프로젝트**합니다. 선택 된 **ASP.NET 웹 응용 프로그램** 에서 **새 프로젝트** 대화 상자. ASP.NET Core를 선택 하면 **웹 Application(Model-View-Controller)** ASP.NET core와 2.x **개별 사용자 계정** 인증 방법으로 합니다.
 
     참고: 선택 해야 **개별 사용자 계정**합니다.
  
-    ![새 프로젝트 대화 상자](identity/_static/01-mvc.png)
+    ![새 프로젝트 대화 상자](identity/_static/01-mvc_2.png)
     
     # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
     .NET Core CLI를 사용 하는 경우 사용 하 여 새 프로젝트 만들기 ``dotnet new mvc --auth Individual``합니다. Visual Studio 만듭니다 Identity 템플릿 코드는 새 프로젝트를 만듭니다.
@@ -134,7 +134,7 @@ ASP.NET Core Id 사용자 이름, 암호 및 프로필 데이터를 저장 하�
  
 7.  데이터베이스를 봅니다.
 
-    앱 (Windows와 Visual Studio 사용자에 대 한 기본값)는 SQL Server 데이터베이스를 사용 하는 경우에 만든 응용 프로그램 데이터베이스를 볼 수 있습니다. 사용할 수 있습니다 **SQL Server Management Studio**합니다. 또는 Visual Studio에서 선택 **보기** -> **SQL Server 개체 탐색기**합니다. 연결할 **(localdb) \MSSQLLocalDB**합니다. 일치 하는 이름을 사용 하 여 데이터베이스 * *aspnet-<*프로젝트의 이름*>-<*날짜 문자열*> * * 표시 됩니다.
+    앱 (Windows와 Visual Studio 사용자에 대 한 기본값)는 SQL Server 데이터베이스를 사용 하는 경우에 만든 응용 프로그램 데이터베이스를 볼 수 있습니다. 사용할 수 있습니다 **SQL Server Management Studio**합니다. 또는 Visual Studio에서 선택 **보기** -> **SQL Server 개체 탐색기**합니다. 연결할 **(localdb) \MSSQLLocalDB**합니다. 일치 하는 이름을 사용 하 여 데이터베이스  **aspnet-<*프로젝트의 이름*>-<*날짜 문자열*> * * 표시 됩니다.
 
     ![AspNetUsers 데이터베이스 테이블에 대 한 상황에 맞는 메뉴](identity/_static/04-db.png)
     

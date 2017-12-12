@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/static-files
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 40c9a799c6ac8a2ce712df4b8fbf3c142ef3fd82
-ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
+ms.openlocfilehash: c0751576a1391f26f045c3f8c42ea39c0ff6e5d9
+ms.sourcegitcommit: e4fb6b13be56a0fb2f2778623740a047d6489227
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/16/2017
 ---
 # <a name="working-with-static-files-in-aspnet-core"></a>ASP.NET Core에 정적 파일 작업
 
@@ -68,6 +68,8 @@ HTML, CSS, 이미지 및 JavaScript와 같은 정적 파일은 ASP.NET Core 응�
 `StaticFileOptions()`응답 헤더를 설정할 수 있습니다. 아래 코드 정적 파일에서 처리를 설정 하는 예를 들어는 *wwwroot* 폴더 및 집합은 `Cache-Control` 헤더를 10 분 (600 초) 동안 공개적으로 캐시할 수 있도록:
 
 [!code-csharp[Main](../fundamentals/static-files/sample/StartupAddHeader.cs?name=snippet1)]
+
+[HeaderDictionaryExtensions.Append](/dotnet/api/microsoft.aspnetcore.http.headerdictionaryextensions.append) 메서드는에서 사용할 수는 [Microsoft.AspNetCore.Http](https://www.nuget.org/packages/Microsoft.AspNetCore.Http/) 패키지 합니다. 추가 `using Microsoft.AspNetCore.Http;` 하 여 *csharp* 메서드를 사용할 수 없는 경우 파일입니다.
 
 ![추가 된 캐시 제어 헤더를 보여 주는 응답 헤더](static-files/_static/add-header.png)
 

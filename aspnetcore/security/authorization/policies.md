@@ -1,8 +1,8 @@
 ---
 title: "사용자 지정 정책 기반 권한 부여"
 author: rick-anderson
-description: 
-keywords: ASP.NET Core,
+description: "이 문서에는 만들고 ASP.NET Core 응용 프로그램의 사용자 지정 권한 부여 정책 처리기를 사용 하는 방법을 설명 합니다."
+keywords: "ASP.NET Core, 권한 부여, 사용자 지정 정책, 권한 부여 정책"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,17 +11,17 @@ ms.assetid: e422a1b2-dc4a-4bcc-b8d9-7ee62009b6a3
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/policies
-ms.openlocfilehash: 5021b5d20f6d9b9a4d8889f25b5e41f2c9306f64
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: 0281d054204a11acc2cf11cf5fca23a8f70aad8e
+ms.sourcegitcommit: 037d3900f739dbaa2ba14158e3d7dc81478952ad
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="custom-policy-based-authorization"></a>사용자 지정 정책 기반 권한 부여
 
-<a name=security-authorization-policies-based></a>
+<a name="security-authorization-policies-based"></a>
 
-내부적는 [역할 권한 부여](roles.md#security-authorization-role-based) 및 [권한 부여 클레임](claims.md#security-authorization-claims-based) 요구 사항의 사용, 요구 사항 및 미리 구성 된 정책에 대 한 처리기를 확인 합니다. 이러한 빌딩 블록을 사용 하면 코드를 다시 사용할 수는 다양 한 작업에 대 한 허용 및 쉽게 테스트할 권한 부여 구조에서 권한 부여 평가 표현할 수 있도록 합니다.
+내부적는 [역할 권한 부여](roles.md) 및 [권한 부여 클레임](claims.md) 요구 사항의 사용, 요구 사항 및 미리 구성 된 정책에 대 한 처리기를 확인 합니다. 이러한 빌딩 블록을 사용 하면 코드를 다시 사용할 수는 다양 한 작업에 대 한 허용 및 쉽게 테스트할 권한 부여 구조에서 권한 부여 평가 표현할 수 있도록 합니다.
 
 권한 부여 정책 하나 이상의 요구 사항으로 구성 되며 응용 프로그램 시작 시에 권한 부여 서비스 구성의 일부로 등록 `ConfigureServices` 에 *Startup.cs* 파일입니다.
 
@@ -74,13 +74,13 @@ public class MinimumAgeRequirement : IAuthorizationRequirement
 
 데이터 또는 속성 요구 사항 필요 하지 않습니다.
 
-<a name=security-authorization-policies-based-authorization-handler></a>
+<a name="security-authorization-policies-based-authorization-handler"></a>
 
 ## <a name="authorization-handlers"></a>권한 부여 처리기
 
 권한 부여 처리기는 요구 사항 속성의 계산 합니다. 권한 부여 처리기는 제공 된 기준으로 평가 해야 `AuthorizationHandlerContext` 권한 부여 허용 되는지 여부를 결정 합니다. 요구 사항이 있을 수 있습니다 [여러 처리기](policies.md#security-authorization-policies-based-multiple-handlers)합니다. 처리기에서 상속 해야 합니다. `AuthorizationHandler<T>` 여기서 T는 요구 사항을 처리 합니다.
 
-<a name=security-authorization-handler-example></a>
+<a name="security-authorization-handler-example"></a>
 
 최소 보존 기간 처리기는 다음과 같습니다.
 
@@ -114,10 +114,11 @@ public class MinimumAgeHandler : AuthorizationHandler<MinimumAgeRequirement>
 }
 ```
 
-위의 코드에 먼저 의견에 귀 현재 사용자 계정이 회원님의 발급자와 신뢰에서 실행 하지는 클레임 생년월일 날짜에 있는지를 합니다. 클레임이 없는 경우 반환 하므로 권한을 부여할 수 없습니다 것입니다. 오래 된 사용자가 파악 클레임 있는데 하 고 요구 사항에 의해 전달 된 최소 보존 기간을 충족 하는 경우 다음 권한 부여에 성공한 키를 누릅니다. 일단 부여 된 이라고 `context.Succeed()` 매개 변수로 성공적으로 실행 되었는지 요구 사항을 전달 합니다.
+위의 코드에서 먼저 의견에 귀 현재 사용자 계정이 회원님의 발급자와 신뢰에서 실행 하지는 클레임 생년월일 날짜에 있는지를 합니다. 클레임이 없는 경우 반환 하므로 권한을 부여할 수 없습니다 것입니다. 오래 된 사용자가 파악 클레임 있는데 하 고 요구 사항에 의해 전달 된 최소 보존 기간을 충족 하는 경우 다음 권한 부여에 성공한 키를 누릅니다. 일단 부여 된 이라고 `context.Succeed()` 매개 변수로 성공적으로 실행 되었는지 요구 사항을 전달 합니다.
 
-<a name=security-authorization-policies-based-handler-registration></a>
+<a name="security-authorization-policies-based-handler-registration"></a>
 
+### <a name="handler-registration"></a>처리기를 등록
 예를 들어 처리기 구성 하는 동안 서비스 컬렉션에 등록 합니다.
 
 ```csharp
@@ -148,9 +149,9 @@ public void ConfigureServices(IServiceCollection services)
 
 * 실패 한 요구 사항에 대해 다른 처리기 성공 하는 경우에, 호출 `context.Fail`합니다.
 
-호출 하는 처리기 내에 관계 없이 정책 요구 사항에서 요구 하는 경우 요구 사항에 대 한 모든 처리기가 호출 됩니다. 이렇게 하면 요구 사항에는 항상 적용 하는 로깅 같은 의도 하지 않은 경우에 `context.Fail()` 다른 처리기에서 호출 되었습니다.
+어떤 내부 처리기를 호출 하는 것에 관계 없이 정책 요구 사항에서 요구 하는 경우 요구 사항에 대 한 모든 처리기가 호출 됩니다. 이렇게 하면 요구 사항에는 항상 적용 하는 로깅 같은 의도 하지 않은 경우에 `context.Fail()` 다른 처리기에서 호출 되었습니다.
 
-<a name=security-authorization-policies-based-multiple-handlers></a>
+<a name="security-authorization-policies-based-multiple-handlers"></a>
 
 ## <a name="why-would-i-want-multiple-handlers-for-a-requirement"></a>이유는 여러 처리기는 요구 사항에 대 한?
 
@@ -195,7 +196,7 @@ public class HasTemporaryStickerHandler : AuthorizationHandler<EnterBuildingRequ
 
 경우가 정책 처리는 코드에서 표현 하기 간단 합니다. 만 제공 하는 것이 불가능 한 `Func<AuthorizationHandlerContext, bool>` 와 정책을 구성 하는 경우는 `RequireAssertion` 정책 작성기입니다.
 
-예를 들어 이전 `BadgeEntryHandler` ; 다음과 같이 다시 작성할 수 있습니다
+예를 들어 이전 `BadgeEntryHandler` 다음과 같이 다시 작성할 수 있습니다.
 
 ```csharp
 services.AddAuthorization(options =>

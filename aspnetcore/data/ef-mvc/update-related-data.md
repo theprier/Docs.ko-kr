@@ -11,11 +11,11 @@ ms.assetid: 67bd162b-bfb7-4750-9e7f-705228b5288c
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/update-related-data
-ms.openlocfilehash: daf6dd8024863e02e40ad002a0a7da388f5a2ec7
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: b59782bccce00f3940da4ec8bcff768aff8fa4ef
+ms.sourcegitcommit: ccf08615ad59bc6f654560de33b93396113a2eb0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 11/11/2017
 ---
 # <a name="updating-related-data---ef-core-with-aspnet-core-mvc-tutorial-7-of-10"></a>관련된 데이터-ASP.NET Core MVC 자습서 (7 / 10)와 함께 EF 코어 업데이트
 
@@ -71,7 +71,7 @@ HttpGet `Edit` 메서드 편집 중인 과정에 이미 할당 되어 있는 분
 
 ### <a name="modify-the-course-views"></a>과정 뷰 수정
 
-*Views/Courses/Create.cshtml*, "부서 선택" 옵션을 추가 하는 **부서** 드롭 다운 목록에서에서 캡션은 변경할 **DepartmentID** 를 ** 부서**, 유효성 검사 메시지를 추가 합니다.
+*Views/Courses/Create.cshtml*, "부서 선택" 옵션을 추가 하는 **부서** 드롭 다운 목록에서에서 캡션은 변경할 **DepartmentID** 를  **부서**, 유효성 검사 메시지를 추가 합니다.
 
 [!code-html[Main](intro/samples/cu/Views/Courses/Create.cshtml?highlight=2-6&range=29-34)]
 
@@ -216,11 +216,11 @@ Course 및 Instructor 엔터티 간의 다 대 다입니다. 추가 하 고 관�
 
 ### <a name="update-the-instructor-views"></a>강사 뷰 업데이트
 
-*Views/Instructors/Edit.cshtml*, 추가 **Courses** 을 추가 하 여 확인란의 배열로 필드 바로 다음 코드는 `div` 에 대 한 요소는 **Office ** 필드 및 하기 전에 `div` 에 대 한 요소는 **저장** 단추입니다.
+*Views/Instructors/Edit.cshtml*, 추가 **Courses** 을 추가 하 여 확인란의 배열로 필드 바로 다음 코드는 `div` 에 대 한 요소는 **Office**  필드 및 하기 전에 `div` 에 대 한 요소는 **저장** 단추입니다.
 
 <a id="notepad"></a>
 > [!NOTE] 
-> Visual Studio에서 코드를 붙여 넣을 때 줄 바꿈 코드를 중단 하는 방식으로 변경 됩니다.  자동 서식 지정을 실행 취소 하려면 Ctrl + Z를 한 번 누릅니다.  여기 같이 있도록 줄 바꿈이 수정 합니다. 들여쓰기 완벽 하지 않아도 되지만 `@</tr><tr>`, `@:<td>`, `@:</td>`, 및 `@:</tr>` 줄 각각 한 줄에 표시 된 것 처럼 이거나 런타임 오류 메시지가 나타납니다. 선택 된 새 코드 블록과 Tab 세 번 키를 눌러 줄 기존 코드와 함께 새 코드를 합니다.
+> Visual Studio에서 코드를 붙여 넣을 때 줄 바꿈 코드를 중단 하는 방식으로 변경 됩니다.  자동 서식 지정을 실행 취소 하려면 Ctrl + Z를 한 번 누릅니다.  여기 같이 있도록 줄 바꿈이 수정 합니다. 들여쓰기 완벽 하지 않아도 되지만 `@</tr><tr>`, `@:<td>`, `@:</td>`, 및 `@:</tr>` 줄 각각 한 줄에 표시 된 것 처럼 이거나 런타임 오류 메시지가 나타납니다. 선택 된 새 코드 블록과 Tab 세 번 키를 눌러 줄 기존 코드와 함께 새 코드를 합니다. 이 문제의 상태를 확인할 수 [여기](https://developercommunity.visualstudio.com/content/problem/147795/razor-editor-malforms-pasted-markup-and-creates-in.html)합니다.
 
 [!code-html[Main](intro/samples/cu/Views/Instructors/Edit.cshtml?range=35-61)]
 

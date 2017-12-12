@@ -1,8 +1,8 @@
 ---
-title: "암호화 정보를 인증합니다."
+title: "인증 된 암호화 정보"
 author: rick-anderson
-description: 
-keywords: ASP.NET Core,
+description: "이 문서 윤곽선 ASP.NET Core 데이터 보호의 구현 세부 정보는 암호화를 인증합니다."
+keywords: "ASP.NET Core, 데이터 보호 인증 암호화"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,15 +11,15 @@ ms.assetid: 826e6d5d-9620-44e6-ad93-3b1d9969b70b
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/authenticated-encryption-details
-ms.openlocfilehash: 4d0e63d7722071ab8806a217e96ee7ad7bf10286
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: dc96412f6578e612a39e86ce00e1dc5a20cf84e9
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 11/10/2017
 ---
-# <a name="authenticated-encryption-details"></a>암호화 정보를 인증합니다.
+# <a name="authenticated-encryption-details"></a>인증 된 암호화 정보
 
-<a name=data-protection-implementation-authenticated-encryption-details></a>
+<a name="data-protection-implementation-authenticated-encryption-details"></a>
 
 IDataProtector.Protect 호출 하는 인증 된 암호화 작업입니다. Protect 메서드 신뢰성과 신뢰성을 소개 하며이 특정 IDataProtector 인스턴스 IDataProtectionProvider 루트에서 파생 하는 데 사용 된 용도 체인에 연결 되어 합니다.
 

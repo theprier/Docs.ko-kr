@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/startup
-ms.openlocfilehash: bba0eafe3917fa850b3a07df8df6448409f4062d
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: 83b2647df8beec1feae33400224dacf9823be9b4
+ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="application-startup-in-aspnet-core"></a>ASP.NET Core 응용 프로그램 시작
 
@@ -30,7 +30,7 @@ ASP.NET Core 응용 프로그램에서는 한 `Startup` 클래스 이름으로 �
 
 또는 정의할 수 있습니다는 고정 `Startup` 호출 하 여 환경에 관계 없이 사용 되는 클래스 `UseStartup<TStartup>`합니다. 이는 권장되는 방법입니다.
 
-`Startup` 클래스 생성자를 통해 제공 되는 종속성을 수락할 수 있는 [종속성 주입](xref:fundamentals/dependency-injection)합니다. 사용 하는 일반적인 방법은 것 `IHostingEnvironment` 를 설정 하려면 [구성](xref:fundamentals/configuration) 원본입니다.
+`Startup` 클래스 생성자를 통해 제공 되는 종속성을 수락할 수 있는 [종속성 주입](xref:fundamentals/dependency-injection)합니다. 사용 하는 일반적인 방법은 것 `IHostingEnvironment` 를 설정 하려면 [구성](xref:fundamentals/configuration/index) 원본입니다.
 
 `Startup` 클래스에 포함 해야 합니다는 `Configure` 메서드 및 선택적으로 포함할 수는 `ConfigureServices` 응용 프로그램을 시작할 때 호출 되는 메서드. 클래스를 포함할 수도 [이러한 메서드의 환경별 버전](xref:fundamentals/environments#startup-conventions)합니다. `ConfigureServices`있는 경우 전에 호출 됩니다 `Configure`합니다.
 
@@ -38,7 +38,7 @@ ASP.NET Core 응용 프로그램에서는 한 `Startup` 클래스 이름으로 �
 
 ## <a name="the-configureservices-method"></a>ConfigureServices 메서드
 
-[ConfigureServices](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.hosting.startupbase#Microsoft_AspNetCore_Hosting_StartupBase_ConfigureServices_Microsoft_Extensions_DependencyInjection_IServiceCollection_) 방법은 선택 사항 이지만 사용 하는 경우 전에 호출 됩니다는 `Configure` 웹 호스트에 의해 메서드. 웹 호스트 되기 전에 일부 서비스를 구성할 수 있습니다 ``Startup`` 메서드가 호출 되어 (참조 [호스팅](xref:fundamentals/hosting)). 규칙에 따라 [구성 옵션](xref:fundamentals/configuration) 이 메서드에서 설정 됩니다.
+[ConfigureServices](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.hosting.startupbase#Microsoft_AspNetCore_Hosting_StartupBase_ConfigureServices_Microsoft_Extensions_DependencyInjection_IServiceCollection_) 방법은 선택 사항 이지만 사용 하는 경우 전에 호출 됩니다는 `Configure` 웹 호스트에 의해 메서드. 웹 호스트 되기 전에 일부 서비스를 구성할 수 있습니다 ``Startup`` 메서드가 호출 되어 (참조 [호스팅](xref:fundamentals/hosting)). 규칙에 따라 [구성 옵션](xref:fundamentals/configuration/index) 이 메서드에서 설정 됩니다.
 
 상당한 설치 해야 하는 기능에 대 한 없는 `Add[Service]` 에 확장 메서드 [IServiceCollection](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.dependencyinjection.iservicecollection)합니다. 이 예제에서는 기본 웹 사이트 서식 파일에서 서비스 Entity Framework, Id 및 MVC를 사용 하도록 앱을 구성 합니다.
 
@@ -76,5 +76,5 @@ ASP.NET Core 응용 프로그램에서는 한 `Startup` 클래스 이름으로 �
 
 * [여러 환경 사용](xref:fundamentals/environments)
 * [미들웨어](xref:fundamentals/middleware)
-* [로깅](xref:fundamentals/logging)
-* [구성](xref:fundamentals/configuration)
+* [로깅](xref:fundamentals/logging/index)
+* [구성](xref:fundamentals/configuration/index)

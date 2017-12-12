@@ -11,11 +11,11 @@ ms.assetid: 9c826a76-fbd2-46b5-978d-6ca6df53531a
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/http-modules
-ms.openlocfilehash: eb5049d4d63c224ca74fc39072ae2c0d98ba330d
-ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
+ms.openlocfilehash: f217e5264742826f285444dcbaea4b28b97c4d7e
+ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="migrating-http-handlers-and-modules-to-aspnet-core-middleware"></a>HTTP 처리기 및 ASP.NET Core 미들웨어 모듈을 마이그레이션하는 방법 
 
@@ -169,11 +169,11 @@ HTTP 처리기 구성 의해 이루어진다는 *Web.config* 다음과 같은 �
 
 일부 모듈과 처리기에 저장 되어 있는 구성 옵션을 사용할 *Web.config*합니다. 그러나 ASP.NET Core에는 새 구성 모델이 사용 됩니다 대신 *Web.config*합니다.
 
-새 [구성 시스템](../fundamentals/configuration.md) 이 문제를 해결 하려면 다음이 옵션을 제공 합니다.
+새 [구성 시스템](xref:fundamentals/configuration/index) 이 문제를 해결 하려면 다음이 옵션을 제공 합니다.
 
 * 에 표시 된 대로 미들웨어에 대 한 옵션을 직접 삽입는 [절로](#loading-middleware-options-through-direct-injection)합니다.
 
-* 사용 하 여 [옵션 패턴](../fundamentals/configuration.md#options-config-objects):
+* 사용 하 여 [옵션 패턴](xref:fundamentals/configuration/options):
 
 1.  예를 들어 미들웨어 옵션을 저장 하는 클래스를 만듭니다.
 
@@ -384,7 +384,7 @@ public async Task Invoke(HttpContext httpContext)
 
 * [HTTP 처리기 및 HTTP 모듈 개요](https://docs.microsoft.com/iis/configuration/system.webserver/)
 
-* [구성](../fundamentals/configuration.md)
+* [구성](xref:fundamentals/configuration/index)
 
 * [응용 프로그램 시작](../fundamentals/startup.md)
 

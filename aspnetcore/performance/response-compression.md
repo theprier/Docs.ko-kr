@@ -11,27 +11,32 @@ ms.assetid: de621887-c5c9-4ac8-9efd-f5cc0457a134
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: performance/response-compression
-ms.openlocfilehash: 7aea4db44764d5d8f47520adb6599e651e0e9000
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: fdb396d8857dc9c118cc19da1f7d1d498dfaacd5
+ms.sourcegitcommit: 8ab9d0065fad23400757e4e08033787e42c97d41
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="response-compression-middleware-for-aspnet-core"></a>ASP.NET Core에 대 한 응답 압축 미들웨어
 
 [Luke Latham](https://github.com/guardrex)으로
 
-[보거나 다운로드 샘플 코드](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/response-compression/samples) ([다운로드 하는 방법을](xref:tutorials/index#how-to-download-a-sample))
+[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/response-compression/samples)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 네트워크 대역폭은 제한 된 리소스입니다. 일반적으로 응답의 크기를 줄이면 응용 프로그램의 응답성 종종 크게 증가 합니다. 페이로드 크기를 줄이기 위해 가지 방법은 응용 프로그램의 응답을 압축 하는 것입니다.
 
 ## <a name="when-to-use-response-compression-middleware"></a>응답 압축 미들웨어를 사용 하는 경우
-IIS, Apache 또는 Nginx 여기서 미들웨어의 성능을 아마도 일치 하지 않게 서버 모듈의 응답 서버 기반 압축 기술을 사용 합니다. 사용할 수 있는 경우 응답 압축 미들웨어를 사용 합니다.
-* [IIS 동적 압축이 모듈](https://www.iis.net/overview/reliability/dynamiccachingandcompression)
-* [Apache mod_deflate 모듈](http://httpd.apache.org/docs/current/mod/mod_deflate.html)
-* [NGINX 압축 및 압축 풀기](https://www.nginx.com/resources/admin-guide/compression-and-decompression/)
-* [HTTP.sys 서버의](xref:fundamentals/servers/httpsys) (이전의 [WebListener](xref:fundamentals/servers/weblistener))
-* [Kestrel](xref:fundamentals/servers/kestrel)
+IIS, Apache 또는 Nginx 응답 서버 기반 압축 기술을 사용 합니다. 미들웨어의 성능을 때문일 수와 일치 하지 않습니다 서버 모듈입니다. [HTTP.sys 서버의](xref:fundamentals/servers/httpsys) 및 [Kestrel](xref:fundamentals/servers/kestrel) 현재 기본 제공 압축 지원을 제공 하지 않습니다.
+
+했으면 응답 압축 미들웨어를 사용 합니다.
+
+* 다음과 같은 서버 기반 압축 기술을 사용할 수 없습니다.
+  * [IIS 동적 압축이 모듈](https://www.iis.net/overview/reliability/dynamiccachingandcompression)
+  * [Apache mod_deflate 모듈](http://httpd.apache.org/docs/current/mod/mod_deflate.html)
+  * [NGINX 압축 및 압축 풀기](https://www.nginx.com/resources/admin-guide/compression-and-decompression/)
+* 직접 호스팅:
+  * [HTTP.sys 서버의](xref:fundamentals/servers/httpsys) (이전의 [WebListener](xref:fundamentals/servers/weblistener))
+  * [Kestrel](xref:fundamentals/servers/kestrel)
 
 ## <a name="response-compression"></a>응답 압축
 일반적으로 압축 되지 않음 응답에서 응답 압축 이점을 얻을 수 있습니다. 일반적으로 압축 되지 않음 응답에 포함: CSS, JavaScript, HTML, XML 및 JSON입니다. PNG 파일 등의 기본적으로 압축 된 자산을 압축 하지 않아야 합니다. 기본적으로 압축 된 응답을 압축 하려고 하면 압축을 처리 하는 데 걸린 시간으로 작은 추가 크기와 전송 시간 감소가 늘린다 가능성이 됩니다. (파일의 콘텐츠 및 압축의 효율성)에 따라 약 150-1000 바이트 보다 작은 파일을 압축 안 함. 작은 파일을 압축 하는 오버 헤드는 압축 되지 않은 파일 보다 큰 압축된 된 파일을 생성할 수 있습니다.

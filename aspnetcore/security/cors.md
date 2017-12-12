@@ -1,8 +1,8 @@
 ---
 title: "크로스-원본 요청 (CORS)를 사용 하도록 설정"
 author: rick-anderson
-description: 
-keywords: ASP.NET Core,
+description: "이 문서를 허용 하거나 거부 된 ASP.NET Core 응용 프로그램에 대 한 교차 원본 요청에 대 한 표준으로 CORS를 소개 합니다."
+keywords: "ASP.NET Core, CORS 교차 원본"
 ms.author: riande
 manager: wpickett
 ms.date: 05/17/2017
@@ -11,11 +11,11 @@ ms.assetid: f9d95e88-4d7e-4d0c-a8e1-47de1128d505
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/cors
-ms.openlocfilehash: e441ce1c50139a5b33865eec8e8d99764258730d
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 5398b6ad6531710de2b8000cb368e5fa607ae7ff
+ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="enabling-cross-origin-requests-cors"></a>크로스-원본 요청 (CORS)를 사용 하도록 설정
 
@@ -219,7 +219,7 @@ $.ajax({
 
 [!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=89-94)]
 
-<a name=cors-how-cors-works></a>
+<a name="cors-how-cors-works"></a>
 
 ## <a name="how-cors-works"></a>CORS가 작동 하는 방법
 
@@ -240,7 +240,7 @@ User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6
 Host: myservice.azurewebsites.net
 ```
 
-서버 요청을 허용 하는 경우 액세스 제어-허용-원본 헤더를 설정 합니다. 이 헤더의 값 원본 헤더 또는 와일드 카드 값 "*", 모든 원본을 허용 되는 의미 합니다.:
+서버 요청을 허용 하는 경우 응답에 대 한 액세스 제어-허용-원본 헤더를 설정 합니다. 이 헤더의 값은 요청에서 원본 헤더 마치도록 와일드 카드 값 "*", 모든 원본을 허용 되는 의미 합니다.
 
 ```
 HTTP/1.1 200 OK

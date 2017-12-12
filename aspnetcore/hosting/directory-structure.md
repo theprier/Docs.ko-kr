@@ -11,15 +11,15 @@ ms.assetid: e55eb131-d42e-4bf6-b130-fd626082243c
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: hosting/directory-structure
-ms.openlocfilehash: f406d866bb1c8ac2d4371c8ddf669fc08af0fada
-ms.sourcegitcommit: 8005eb4051e568d88ee58d48424f39916052e6e2
+ms.openlocfilehash: 60797bff85a44dd10caad4aabc109ee12dedfe61
+ms.sourcegitcommit: 7efdc4b6025ad70c15c26bf7451c3c0411123794
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/24/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="directory-structure-of-published-aspnet-core-apps"></a>게시 된 ASP.NET Core 응용 프로그램의 디렉터리 구조
 
-으로 [Luke Latham](https://github.com/guardrex)
+[Luke Latham](https://github.com/guardrex)으로
 
 ASP.NET Core, 응용 프로그램 디렉터리에서에서 *게시*, 응용 프로그램 파일, config 파일, 정적 자산, 패키지 및 런타임 (앱에 대 한 자체 포함)의 구성 됩니다. 이전 버전의 ASP.NET 전체 응용 프로그램 웹 루트 디렉터리 안에 거주와 동일한 디렉터리 구조입니다.
 
@@ -32,12 +32,16 @@ ASP.NET Core, 응용 프로그램 디렉터리에서에서 *게시*, 응용 프�
 내용을 *게시* 디렉터리 나타냅니다는 *콘텐츠 루트 경로*라고도 하는 *응용 프로그램 기본 경로*, 배포의 합니다. 에 이름이 지정 된는 *게시* 배포에 있는 디렉터리를 해당 위치 역할 호스팅된 응용 프로그램에는 서버의 실제 경로입니다. *wwwroot* 디렉터리에 있는 경우 정적 자산이 포함만 합니다. *로그* 디렉터리를 프로젝트에서 만들고 추가 하 여 배포에 포함 될 수 있습니다는 `<Target>` 요소 아래에 표시 된 프로그램 *.csproj* 파일 또는에 디렉터리를 만들어 물리적으로 서버입니다.
 
 ```xml
-<Target Name="CreateLogsFolder" AfterTargets="AfterPublish">
-  <MakeDir Directories="$(PublishDir)logs" Condition="!Exists('$(PublishDir)logs')" />
-  <MakeDir Directories="$(PublishUrl)Logs" Condition="!Exists('$(PublishUrl)Logs')" />
+<Target Name="CreateLogsFolder" AfterTargets="Publish">
+  <MakeDir Directories="$(PublishDir)Logs" 
+           Condition="!Exists('$(PublishDir)Logs')" />
+  <WriteLinesToFile File="$(PublishDir)Logs\.log" 
+                    Lines="Generated file" 
+                    Overwrite="True" 
+                    Condition="!Exists('$(PublishDir)Logs\.log')" />
 </Target>
 ```
 
-첫 번째 `<MakeDir>` 를 사용 하는 요소는 `PublishDir` 게시 작업에 대 한 대상 위치를 확인 하려면 속성을.NET Core CLI를 통해 사용 됩니다. 두 번째 `<MakeDir>` 를 사용 하는 요소는 `PublishUrl` 속성을 대상 위치를 확인 하려면 Visual Studio에서 사용 됩니다. Visual Studio를 사용 하 여는 `PublishUrl` 아닌.NET Core 프로젝트와의 호환성에 대 한 속성입니다.
+`<MakeDir>` 요소는 빈 만듭니다 *로그* 게시 된 출력에는 폴더입니다. 요소를 사용 하 여는 `PublishDir` 폴더를 만들기 위한 대상 위치를 확인 하는 속성입니다. 웹 배포와 같은 몇 가지 배포 방법, 배포 하는 동안 빈 폴더를 건너뜁니다. `<WriteLinesToFile>` 에 파일을 생성 하는 요소는 *로그* 폴더를이 서버에 폴더의 배포를 보장 합니다. 작업자 프로세스가 대상 폴더에 대 한 쓰기 권한이 하지 않는 경우 폴더 만들기 오류가 여전히 발생할 수 있는 참고 합니다.
 
 배포 디렉터리에 읽기/실행 권한이 필요로 하는 동안는 *로그* 디렉터리에 대 한 읽기/쓰기 권한이 필요 합니다. 자산을 쓸 추가 디렉터리 읽기/쓰기 권한이 필요 합니다.

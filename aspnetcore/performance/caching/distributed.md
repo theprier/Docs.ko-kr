@@ -1,31 +1,29 @@
 ---
-title: "분산된 캐시 사용"
+title: "ASP.NET Core에서 분산된 캐시 사용"
 author: ardalis
-description: 
-keywords: ASP.NET Core,
+description: "클라우드 또는 서버 팜 환경에서 호스팅되는 경우에 특히 성능 및 ASP.NET Core 응용 프로그램의 확장성을 개선 하기 위해 분산 캐시를 사용 하는 방법에 알아봅니다."
 ms.author: riande
 manager: wpickett
 ms.date: 02/14/2017
 ms.topic: article
-ms.assetid: 870f082d-6d43-453d-b311-45f3aeb4d2c5
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: performance/caching/distributed
-ms.openlocfilehash: abf680fef9de175082c1e4f4cebc2b9648f18a28
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: a00937e8c47e73fa8e29af883f44f6e1f4d4b1b4
+ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 11/29/2017
 ---
-# <a name="working-with-a-distributed-cache"></a>분산된 캐시 사용
+# <a name="working-with-a-distributed-cache-in-aspnet-core"></a>ASP.NET Core에서 분산된 캐시 사용
 
 으로 [Steve Smith](https://ardalis.com/)
 
 분산 된 캐시 클라우드 또는 서버 팜 환경에서 호스팅되는 경우에 특히 성능 및 ASP.NET Core 응용 프로그램의 확장성을 개선할 수 있습니다. 이 문서에서는 ASP.NET Core 기본 제공 분산된 캐시 추상화 및 구현 작업 하는 방법을 설명 합니다.
 
-[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/distributed/sample)
+[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/distributed/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
-## <a name="what-is-a-distributed-cache"></a>분산 캐시 이란
+## <a name="what-is-a-distributed-cache"></a>분산된 캐시 이란
 
 분산된 캐시 여러 응용 프로그램 서버에서 공유 됩니다 (참조 [기본 사항 캐싱](memory.md#caching-basics)). 캐시에 정보가 개별 웹 서버의 메모리에 저장 되지 않으며 캐시 된 데이터는 모든 응용 프로그램의 서버에 사용할 수 있습니다. 이 여러 가지 이점을 제공합니다.
 
@@ -68,7 +66,7 @@ ms.lasthandoff: 09/12/2017
 
    2. 구성의 특정 구현 `IDistributedCache` 에 프로그램 `Startup` 클래스의 `ConfigureServices` 메서드를 하 고 있는 컨테이너에 추가 합니다.
 
-   3. 응용 프로그램의 [`Middleware](../../fundamentals/middleware.md) or MVC controller classes, request an instance of `IDistributedCache' 생성자에서 합니다. 인스턴스에 의해 제공 됩니다 [종속성 주입](../../fundamentals/dependency-injection.md) (DI).
+   3. 응용 프로그램의에서 [미들웨어](../../fundamentals/middleware.md) MVC 컨트롤러 클래스의 인스턴스를 요청 하거나 `IDistributedCache` 생성자에서 합니다. 인스턴스에 의해 제공 됩니다 [종속성 주입](../../fundamentals/dependency-injection.md) (DI).
 
 > [!NOTE]
 > 사용에 대 한 단일 항목 또는 Scoped 수명이 필요가 없는 `IDistributedCache` 인스턴스 (최소한 기본 구현에 대 한). 하나 필요할 때마다 인스턴스를 만들 수도 있습니다 (사용 하는 대신 [종속성 주입](../../fundamentals/dependency-injection.md)),이 어려워지며 코드를 테스트 하려면 하지만 위반는 [명시적 종속성 원칙](http://deviq.com/explicit-dependencies-principle/)합니다.
@@ -86,7 +84,7 @@ ms.lasthandoff: 09/12/2017
 > [!NOTE]
 > 이후 `IDistributedCache` 에 구성 된는 `ConfigureServices` 은 사용할 수 있는 메서드를는 `Configure` 메서드에 매개 변수로 합니다. 매개 변수로 추가 하면 DI를 통해 제공 되는 구성 된 인스턴스.
 
-## <a name="using-a-redis-distributed-cache"></a>Redis를 사용 하 여 분산 캐시
+## <a name="using-a-redis-distributed-cache"></a>분산 Redis 캐시를 사용 하 여
 
 [Redis](https://redis.io/) 는 분산된 캐시로 흔히 사용 되는 오픈 소스 메모리 내 데이터 저장소입니다. 로컬에서 사용할 수 있습니다 및 구성할 수 있습니다는 [Azure Redis Cache](https://azure.microsoft.com/services/cache/) ASP.NET Core Azure 호스팅 응용 프로그램에 대 한 합니다. ASP.NET Core 응용 프로그램을 사용 하 여 캐시 구현 구성는 `RedisDistributedCache` 인스턴스.
 
@@ -105,7 +103,7 @@ SqlServerCache 구현 하면 해당 백업 저장소로 SQL Server 데이터베�
 
 Sql 캐시 도구를 사용 하려면 추가 `SqlConfig.Tools` 에 `<ItemGroup>` 의 요소는 *.csproj* 파일 고 dotnet 복원을 실행 합니다.
 
-[!code-csharp[Main](./distributed/sample/src/DistCacheSample/DistCacheSample.csproj?range=23-25)]
+[!code-xml[Main](./distributed/sample/src/DistCacheSample/DistCacheSample.csproj?range=23-25)]
 
 다음 명령을 실행 하 여 SqlConfig.Tools 테스트
 
@@ -136,8 +134,13 @@ C:\DistCacheSample\src\DistCacheSample>dotnet sql-cache create "Data Source=(loc
 
 어떤 구현을 결정할 때 `IDistributedCache` Redis 중에서 선택할 응용 프로그램에 대 한 오른쪽 및 기존 인프라 및 환경, 성능 요구 사항 및 팀의 환경에 따라 SQL Server가 있습니다. 팀이 더 친숙 Redis와 함께 작업을 경우 매우 적합 합니다. SQL Server 팀이 선호 하는 경우 구현에도 안정적 수 있습니다. 기존의 캐싱 솔루션에는 데이터의 빠른 검색을 허용 하는 메모리 내 데이터 저장을 참고 합니다. 캐시에서 자주 사용 되는 데이터를 저장 하 고 SQL Server 또는 Azure 저장소와 같은 백 엔드 영구 저장소에 전체 데이터를 저장 해야 합니다. Redis 캐시는 SQL 캐시를 비교 하 여 높은 처리량과 낮은 대기 시간 제공 하는 캐싱 솔루션입니다.
 
-추가 리소스:
+## <a name="additional-resources"></a>추가 리소스
 
-* [에 메모리 캐싱은](memory.md)
 * [Redis Cache Azure에서](https://azure.microsoft.com/documentation/services/redis-cache/)
 * [Azure에서 SQL 데이터베이스](https://azure.microsoft.com/documentation/services/sql-database/)
+* [메모리 내 캐싱](xref:performance/caching/memory)
+* [변경 내용을 변경 토큰으로 검색](xref:fundamentals/primitives/change-tokens)
+* [응답 캐싱](xref:performance/caching/response)
+* [응답 캐싱 미들웨어](xref:performance/caching/middleware)
+* [캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
+* [분산된 캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)

@@ -12,21 +12,21 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/dependency-injection
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f5c903a72d004afac55fbcc04ad157442e7a18ee
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: 8d12960708f9d9bf2bc7c5997f82096d93087d13
+ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="introduction-to-dependency-injection-in-aspnet-core"></a>ASP.NET Core의 종속성 주입 소개
 
-<a name=fundamentals-dependency-injection></a>
+<a name="fundamentals-dependency-injection"></a>
 
 여 [Steve Smith](https://ardalis.com/) 및 [Scott Addie](https://scottaddie.com)
 
 ASP.NET Core는 지원 및 종속성 주입을 활용 하도록를 처음부터 다시 설계 되었습니다. ASP.NET Core 응용 프로그램 시작 클래스의 메서드를 삽입 하 여 기본 제공 프레임 워크 서비스를 활용할 수 있습니다 및 삽입도에 대 한 응용 프로그램 서비스를 구성할 수 있습니다. ASP.NET Core에서 제공 하는 기본 서비스 컨테이너에는 최소 기능 설정 및 다른 컨테이너를 대체 하기 위한 하지 제공 합니다.
 
-[보거나 다운로드 샘플 코드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/dependency-injection/sample) ([다운로드 하는 방법을](xref:tutorials/index#how-to-download-a-sample))
+[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/dependency-injection/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="what-is-dependency-injection"></a>종속성 주입 이란?
 
@@ -143,7 +143,7 @@ Entity Framework 컨텍스트를 사용 하 여 서비스 컨테이너에 추가
 >[!WARNING]
 > 경계 해야 할 주요 위험을 확인 하는 한 `Scoped` 단일 서비스입니다. 이 경우 후속 요청을 처리할 때 서비스가 잘못 된 상태를 갖게 됩니다 가능성이 높습니다.
 
-종속성이 있는 서비스 컨테이너에 등록 해야 합니다. 서비스의 생성자는 기본 형식인와 같은 필요한 경우는 `string`를 사용 하 여이 값이 삽입 될 수 있습니다는 [패턴 및 구성 옵션](configuration.md)합니다.
+종속성이 있는 서비스 컨테이너에 등록 해야 합니다. 서비스의 생성자는 기본 형식인와 같은 필요한 경우는 `string`를 사용 하 여이 값이 삽입 될 수 있습니다 [구성](xref:fundamentals/configuration/index) 및 [옵션 패턴](xref:fundamentals/configuration/options)합니다.
 
 ## <a name="service-lifetimes-and-registration-options"></a>서비스 수명 및 등록 옵션
 
@@ -228,11 +228,16 @@ public class Service1 : IDisposable {}
 public class Service2 : IDisposable {}
 public class Service3 : IDisposable {}
 
+public interface ISomeService {}
+public class SomeServiceImplementation : ISomeService, IDisposable {}
+
+
 public void ConfigureServices(IServiceCollection services)
 {
     // container will create the instance(s) of these types and will dispose them
     services.AddScoped<Service1>();
     services.AddSingleton<Service2>();
+    services.AddSingleton<ISomeService>(sp => new SomeServiceImplementation());
 
     // container did not create instance so it will NOT dispose it
     services.AddSingleton<Service3>(new Service3());
@@ -296,7 +301,7 @@ Singleton 서비스는 스레드로부터 안전 해야 합니다. Singleton 서
 
 * DI은 복잡 한 종속성이 있는 개체입니다. 컨트롤러, 서비스, 어댑터 및 리포지토리는 DI에 추가할 수 있는 개체의 모든 예입니다.
 
-* DI에서 직접 데이터 및 구성을 저장 하지 않습니다. 예를 들어 사용자의 쇼핑 카트 일반적으로 서비스 컨테이너에 추가 하지 않아야 합니다. 구성을 사용 해야는 [옵션 모델](configuration.md#options-config-objects)합니다. 다른 개체에 대 한 액세스를 허용 하기 위해서만 존재 하는 "데이터 소유자" 개체를 하지 마십시오. 가능한 경우 DI를 통해 필요 실제 항목을 요청 하는 것이 좋습니다.
+* DI에서 직접 데이터 및 구성을 저장 하지 않습니다. 예를 들어 사용자의 쇼핑 카트 일반적으로 서비스 컨테이너에 추가 하지 않아야 합니다. 구성을 사용 해야는 [옵션 패턴](xref:fundamentals/configuration/options)합니다. 다른 개체에 대 한 액세스를 허용 하기 위해서만 존재 하는 "데이터 소유자" 개체를 하지 마십시오. 가능한 경우 DI를 통해 필요 실제 항목을 요청 하는 것이 좋습니다.
 
 * 서비스에 대 한 정적 액세스를 하지 마십시오.
 

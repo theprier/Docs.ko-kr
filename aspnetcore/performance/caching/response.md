@@ -1,26 +1,24 @@
 ---
 title: "ASP.NET Core의 응답 캐싱"
 author: rick-anderson
-description: "응답을 대역폭을 줄이고 성능을 향상 하려면 캐시를 사용 하는 방법에 알아봅니다."
-keywords: "ASP.NET Core, 캐싱, HTTP 헤더 응답"
+description: "낮은 대역폭 요구 사항에 캐싱 응답을 사용 하는 방법을 알아보고 ASP.NET Core 응용 프로그램의 성능을 향상 합니다."
 ms.author: riande
 manager: wpickett
 ms.date: 09/20/2017
 ms.topic: article
-ms.assetid: cb42035a-60b0-472e-a614-cb79f443f654
 ms.prod: asp.net-core
 uid: performance/caching/response
-ms.openlocfilehash: 79d9246632aae0fe9c3629fd7202842836828151
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: 104cfb2eab706a2ec6278b4d1c461f70b0af5df1
+ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="response-caching-in-aspnet-core"></a>ASP.NET Core의 응답 캐싱
 
 여 [John Luo](https://github.com/JunTaoLuo), [Rick Anderson](https://twitter.com/RickAndMSFT), [Steve Smith](https://ardalis.com/), 및 [Luke Latham](https://github.com/guardrex)
 
-[보거나 다운로드 샘플 코드](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/response/sample) ([다운로드 하는 방법을](xref:tutorials/index#how-to-download-a-sample))
+[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/response/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 응답 캐시 클라이언트 또는 프록시 웹 서버에 수행 된 요청 수가 줄어듭니다. 응답 캐시도 줄일 수 작업의 응답을 생성 하는 웹 서버 수행 합니다. 응답 캐시 클라이언트, 프록시 및 응답을 캐시 미들웨어 용도 지정 하는 헤더에 의해 제어 됩니다.
 
@@ -179,4 +177,9 @@ Cache-Control: public,max-age=60
 
 * [사양에서 HTTP에서 캐싱](https://tools.ietf.org/html/rfc7234#section-3)
 * [캐시 제어](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
+* [메모리 내 캐싱](xref:performance/caching/memory)
+* [분산된 캐시 사용](xref:performance/caching/distributed)
+* [변경 내용을 변경 토큰으로 검색](xref:fundamentals/primitives/change-tokens)
 * [응답 캐싱 미들웨어](xref:performance/caching/middleware)
+* [캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
+* [분산된 캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)

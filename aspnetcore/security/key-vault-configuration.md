@@ -10,11 +10,11 @@ ms.topic: article
 ms.assetid: 0292bdae-b3ed-4637-bd67-19b9bb8b65cb
 ms.prod: asp.net-core
 uid: security/key-vault-configuration
-ms.openlocfilehash: c5d8506c1bc8e6364d01596a0c82e1da41eea4ca
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: 352d125b9042c603b59ed9bda0e99b6a49c7ab9f
+ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="azure-key-vault-configuration-provider"></a>Azure 키 자격 증명 모음 구성 공급자
 
@@ -58,7 +58,7 @@ ms.lasthandoff: 10/01/2017
 1. 키 자격 증명 모음 만들기 및 Azure Active Directory (Azure AD)의 지침에 따라 응용 프로그램에 대 한 설정 [Azure 키 자격 증명 모음 시작](https://azure.microsoft.com/documentation/articles/key-vault-get-started/)합니다.
   * 암호를 사용 하 여 주요 자격 증명 모음에 추가 된 [AzureRM 키 자격 증명 모음 PowerShell 모듈](/powershell/module/azurerm.keyvault) 에서 사용할 수는 [PowerShell 갤러리](https://www.powershellgallery.com/packages/AzureRM.KeyVault), [Azure 키 자격 증명 모음 REST API](/rest/api/keyvault/), 또는 [Azure 포털](https://portal.azure.com/)합니다. 비밀 하나로 만들어집니다 *수동* 또는 *인증서* 비밀 정보입니다. *인증서* 비밀 앱 및 서비스에서 사용 하기 위해 인증서가 있지만 구성 공급자에서 지원 되지 않습니다. 사용 해야는 *수동* 구성 공급자와 함께 사용 하기 위해 암호 이름-값 쌍을 만드는 옵션을 합니다.
     * 단순 암호 이름-값 쌍으로 생성 됩니다. Azure 키 자격 증명 모음 보안 이름은 영숫자, 대시로 제한 됩니다.
-    * 계층 값 (구성 섹션) 사용 하 여 `--` (대시 두 개)이 샘플에서 구분 기호로 합니다. 하위 키에의 한 부분을 구분 하는 데 일반적으로 사용 되는 콜론 [ASP.NET Core 구성](xref:fundamentals/configuration), 비밀 이름에 사용할 수 없습니다. 따라서 대시 두 개 사용 되며 암호는 응용 프로그램의 구성에 로드 될 때 콜론으로 교체 됩니다.
+    * 계층 값 (구성 섹션) 사용 하 여 `--` (대시 두 개)이 샘플에서 구분 기호로 합니다. 하위 키에의 한 부분을 구분 하는 데 일반적으로 사용 되는 콜론 [ASP.NET Core 구성](xref:fundamentals/configuration/index), 비밀 이름에 사용할 수 없습니다. 따라서 대시 두 개 사용 되며 암호는 응용 프로그램의 구성에 로드 될 때 콜론으로 교체 됩니다.
     * 두 개 만든 *수동* 비밀 다음 이름-값 쌍을 포함 합니다. 첫 번째 암호는 단순한 이름 및 값, 및 두 번째 암호 섹션 및 비밀 이름에 하위 키와 비밀 값을 만듭니다.
       * `SecretName`: `secret_value_1`
       * `Section--SecretName`: `secret_value_2`
@@ -146,7 +146,7 @@ Configuration.Reload();
 사용 안 함 및 만료 된 암호를 throw 한 `KeyVaultClientException`합니다. 응용 프로그램에서 throw를 방지 하려면 응용 프로그램을 교체 또는 사용 안 함/만료 된 암호를 업데이트 합니다.
 
 ## <a name="troubleshooting"></a>문제 해결
-응용 프로그램에서 공급자를 사용 하 여 구성을 로드 하지 못하는에 오류 메시지가 기록 됩니다는 [ASP.NET 로깅 인프라](xref:fundamentals/logging)합니다. 다음과 같은 구성을 로드에서 하지 것입니다.
+응용 프로그램에서 공급자를 사용 하 여 구성을 로드 하지 못하는에 오류 메시지가 기록 됩니다는 [ASP.NET 로깅 인프라](xref:fundamentals/logging/index)합니다. 다음과 같은 구성을 로드에서 하지 것입니다.
 * 응용 프로그램은 Azure Active Directory에 올바르게 구성 되지 않았습니다.
 * Azure 키 자격 증명 모음에 키 자격 증명 모음 존재 하지 않습니다.
 * 응용 프로그램에 키 자격 증명 모음에 액세스할 권한이 부여 되지 않았습니다.
@@ -157,7 +157,7 @@ Configuration.Reload();
 * 구성 키 (이름)을 로드 하려고 하는 값에 대 한 응용 프로그램에서 올바르지 않습니다.
 
 ## <a name="additional-resources"></a>추가 리소스
-* <xref:fundamentals/configuration>
+* [구성](xref:fundamentals/configuration/index)
 * [Microsoft Azure: 키 자격 증명 모음](https://azure.microsoft.com/services/key-vault/)
 * [Microsoft Azure: 키 자격 증명 모음 설명서](https://docs.microsoft.com/azure/key-vault/)
 * [Azure 키 자격 증명 모음에 대 한 키 생성 및 HSM 보호 된 전송 하는 방법](https://docs.microsoft.com/azure/key-vault/key-vault-hsm-protected-keys)

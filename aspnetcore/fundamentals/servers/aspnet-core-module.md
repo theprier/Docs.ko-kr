@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/aspnet-core-module
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8ced1e667acb7d11954aea27de7701db89091fd9
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: 1d1f551dbde5f3dd6e71808154c2e5885d588d7c
+ms.sourcegitcommit: 282f69e8dd63c39bde97a6d72783af2970d92040
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 12/05/2017
 ---
 # <a name="introduction-to-aspnet-core-module"></a>ASP.NET Core 모듈 소개
 
@@ -28,7 +28,7 @@ ASP.NET Core 모듈 (ANCM)를 사용 하면 ASP.NET Core IIS 뒤에 있는 응�
 
 * Windows 7 및 Windows Server 2008 R2 이상
 
-[보거나 다운로드 샘플 코드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/aspnet-core-module/sample) ([다운로드 하는 방법을](xref:tutorials/index#how-to-download-a-sample))
+[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/aspnet-core-module/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="what-aspnet-core-module-does"></a>ASP.NET Core 모듈에서 수행 하는 작업
 
@@ -58,7 +58,8 @@ ANCM에 몇 가지 다른 기능도 있습니다.
 
 ### <a name="install-ancm"></a>ANCM 설치
 
-ASP.NET Core 모듈 설치 되어 있어야 IIS에서 서버 및 IIS Express에서 개발 컴퓨터의 합니다. 서버, ANCM에 포함 되는 [.NET 핵심 Windows Server 호스팅 번들](https://aka.ms/dotnetcore.2.0.0-windowshosting)합니다. 개발 컴퓨터에 대 한 Visual Studio 자동으로 설치 ANCM IIS 및 IIS Express에서 이미 컴퓨터에 설치 된 경우.
+
+ASP.NET Core 모듈 설치 되어 있어야 IIS에서 서버 및 IIS Express에서 개발 컴퓨터의 합니다. 서버, ANCM에 포함 되는 [.NET 핵심 Windows Server 호스팅 번들](https://aka.ms/dotnetcore-2-windowshosting)합니다. 개발 컴퓨터에 대 한 Visual Studio 자동으로 설치 ANCM IIS 및 IIS Express에서 이미 컴퓨터에 설치 된 경우.
 
 ### <a name="install-the-iisintegration-nuget-package"></a>IISIntegration NuGet 패키지 설치
 
@@ -111,6 +112,12 @@ ASP.NET Core 모듈에 대 한 구성에 저장 됩니다는 *Web.config* 응용
 ### <a name="run-with-iis-express-in-development"></a>개발에서 IIS Express와 함께 실행 합니다.
 
 IIS Express는 ASP.NET Core 템플릿에 정의 된 기본 프로필을 사용 하 여 Visual Studio에서 실행할 수 있습니다.
+
+## <a name="proxy-configuration-uses-http-protocol-and-a-pairing-token"></a>HTTP 프로토콜 및 페어링 토큰을 사용 하는 프록시 구성
+
+ANCM와 Kestrel 사이 프록시는 HTTP 프로토콜을 사용 합니다. HTTP를 사용 하 여 성능 최적화 수행 되입니다 ANCM와 Kestrel 간의 트래픽을 루프백 주소에 네트워크 인터페이스 오프 합니다. ANCM 및 위치는 서버에서 분리에서 Kestrel 간 트래픽을 도청의 위험은 없습니다.
+
+페어링 토큰은 Kestrel에서 받은 요청 IIS에서 프록시 했으며 다른 소스에서 제공 되지 않은 보장 하기 위해 사용 됩니다. 페어링 토큰 생성 되어 환경 변수로 설정 (`ASPNETCORE_TOKEN`)는 ANCM 여 합니다. 페어링 토큰 헤더에 설정 됩니다 (`MSAspNetCoreToken`) 프록시 요청 마다. IIS 미들웨어 검사 페어링 토큰 헤더 값에서 환경 변수 값이 일치 하는지 확인 하 고 수신한 요청 합니다. 토큰 값을 일치 하지 않으면 요청이 기록 되 고 거부 합니다. 페어링 토큰 환경 변수와 ANCM와 Kestrel 간의 트래픽을 서버에서 분리 된 위치에서 액세스할 수 없습니다. 공격자는 페어링 토큰 값을 몰라도 IIS 미들웨어에서 검사를 무시 하는 요청을 전송할 수 없습니다.
 
 ## <a name="next-steps"></a>다음 단계
 

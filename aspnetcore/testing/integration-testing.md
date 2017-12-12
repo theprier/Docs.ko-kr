@@ -12,10 +12,10 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: testing/integration-testing
 ms.openlocfilehash: 155fd2f0663c6225531a4df6f323ebb30ab1ee73
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="integration-testing-in-aspnet-core"></a>ASP.NET Core에서 통합 테스트
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 10/01/2017
 
 통합 테스트 함께 어셈블되어 때 응용 프로그램의 구성 요소가 제대로 작동 하는지 확인 합니다. ASP.NET Core 지원 통합 단위 테스트 프레임 워크 및 네트워크 오버 헤드 없이 요청을 처리 하는 데 사용할 수 있는 기본 제공 테스트 웹 호스트를 사용 하 여 테스트 합니다.
 
-[보거나 다운로드 샘플 코드](https://github.com/aspnet/Docs/tree/master/aspnetcore/testing/integration-testing/sample) ([다운로드 하는 방법을](xref:tutorials/index#how-to-download-a-sample))
+[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/testing/integration-testing/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="introduction-to-integration-testing"></a>통합 테스트 소개
 

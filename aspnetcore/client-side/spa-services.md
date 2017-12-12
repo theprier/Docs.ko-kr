@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/spa-services
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f3c38a1730e43586f37cd773bb8daa418736952f
-ms.sourcegitcommit: b3d46df910fb679edb8dd47234db6b4da604eedb
+ms.openlocfilehash: 8d47910beef9195295c8da6ac81b83b3ffe20124
+ms.sourcegitcommit: fe880bf4ed1c8116071c0e47c0babf3623b7f44a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/10/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="using-javascriptservices-for-creating-single-page-applications-with-aspnet-core"></a>ASP.NET Core 사용 단일 페이지 응용 프로그램을 만들기 위한 JavaScriptServices를 사용 하 여
 
@@ -98,11 +98,11 @@ ASP.NET Core [태그 도우미](xref:mvc/views/tag-helpers/intro) 제공한 SpaS
 
 태그 도우미 프로젝트의 네임 스페이스 등록을 통해 검색 가능한 내용이 *_ViewImports.cshtml* 파일:
 
-[!code-csharp[Main](../client-side/spa-services/sample/SpaServicesSampleApp/Views/_ViewImports.cshtml?highlight=3)]
+[!code-cshtml[Main](../client-side/spa-services/sample/SpaServicesSampleApp/Views/_ViewImports.cshtml?highlight=3)]
 
 이러한 태그 도우미 Razor 뷰 내에 HTML 형식의 구문을 활용 하 여 하위 수준 Api와 직접 통신 하는 복잡 한을 추상화 합니다.
 
-[!code-html[Main](../client-side/spa-services/sample/SpaServicesSampleApp/Views/Home/Index.cshtml?range=5)]
+[!code-cshtml[Main](../client-side/spa-services/sample/SpaServicesSampleApp/Views/Home/Index.cshtml?range=5)]
 
 ### <a name="the-asp-prerender-module-tag-helper"></a>`asp-prerender-module` 태그 도우미
 
@@ -118,7 +118,7 @@ ASP.NET Core [태그 도우미](xref:mvc/views/tag-helpers/intro) 제공한 SpaS
 
 함께 사용 하면는 `asp-prerender-module` 태그 도우미의 `asp-prerender-data` Razor 보기에서 서버 쪽 JavaScript를 컨텍스트 정보를 전달 하 태그 도우미를 사용할 수 있습니다. 다음 태그를 사용자 데이터를 전달 하는 예를 들어는 `main-server` 모듈:
 
-[!code-html[Main](../client-side/spa-services/sample/SpaServicesSampleApp/Views/Home/Index.cshtml?range=9-12)]
+[!code-cshtml[Main](../client-side/spa-services/sample/SpaServicesSampleApp/Views/Home/Index.cshtml?range=9-12)]
 
 받은 `UserName` 인수 기본 제공 JSON 직렬 변환기를 사용 하 여 직렬화 되 고에 저장 되는 `params.data` 개체입니다. 다음 각 예제에서 데이터 내에서 개인 설정 된 인사말을 생성 하는 데 사용 된 `h1` 요소:
 

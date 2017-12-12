@@ -11,15 +11,17 @@ ms.assetid: b67c3d4a-f2bf-4132-a48b-4b0d599d7981
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/intro
-ms.openlocfilehash: 379802f644b977563b0b50354feb1fb9a4c8fabb
-ms.sourcegitcommit: e3b1726cc04e80dc28464c35259edbd3bc39a438
+ms.openlocfilehash: 5095def776f79d0bb76d5a8e94a4228ef0abed75
+ms.sourcegitcommit: a80d35647aff66323160b2cb413b65d79d98f7a6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 12/08/2017
 ---
 # <a name="getting-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio-1-of-10"></a>Visual Studio (1 / 10)을 사용 하 여 Entity Framework Core 및 ASP.NET Core MVC 시작
 
 여 [Tom Dykstra](https://github.com/tdykstra) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
+
+이 자습서의 Razor 페이지 버전을 사용할 수 [여기](xref:data/ef-rp/intro)합니다. Razor 페이지 버전 보다 쉽게 따를 수 이며 더 많은 EF 기능에 설명 합니다. 따라야 하는 것이 좋습니다는 [이 자습서의 Razor 페이지 버전](xref:data/ef-rp/intro)합니다.
 
 Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework (EF) 코어 2.0 및 Visual Studio 2017을 사용 하 여 ASP.NET 코어 2.0 MVC 웹 응용 프로그램을 만드는 방법을 보여 줍니다.
 
@@ -64,7 +66,7 @@ Visual Studio를 열고 ASP.NET Core C# 웹 라는 새 프로젝트 "ContosoUniv
 
 * 왼쪽된 창에서 선택 **설치 > Visual C# > 웹**합니다.
 
-* 선택 된 **ASP.NET Core 웹 응용 프로그램** 프로젝트 템플릿을 합니다.
+* **ASP.NET Core 웹 응용 프로그램** 프로젝트 템플릿을 선택합니다.
 
 * 입력 **ContosoUniversity** 이름과 클릭으로 **확인**합니다.
 
@@ -192,7 +194,7 @@ ASP.NET Core 구현 [종속성 주입](../../fundamentals/dependency-injection.m
 
 [!code-csharp[Main](intro/samples/cu/Startup.cs?name=snippet_SchoolContext&highlight=3-4)]
 
-연결 문자열의 이름에는 메서드를 호출 하 여 컨텍스트에 전달 됩니다는 `DbContextOptionsBuilder` 개체입니다. 로컬 개발에 대 한는 [ASP.NET Core 구성 시스템](../../fundamentals/configuration.md) 는 연결 문자열에서 *appsettings.json* 파일입니다.
+연결 문자열의 이름에는 메서드를 호출 하 여 컨텍스트에 전달 됩니다는 `DbContextOptionsBuilder` 개체입니다. 로컬 개발에 대 한는 [ASP.NET Core 구성 시스템](xref:fundamentals/configuration/index) 는 연결 문자열에서 *appsettings.json* 파일입니다.
 
 추가 `using` 에 대 한 문을 `ContosoUniversity.Data` 및 `Microsoft.EntityFrameworkCore` 네임 스페이스에 다음 프로젝트를 빌드합니다.
 

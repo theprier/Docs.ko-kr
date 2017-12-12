@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/formatting
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 91ba2456178fe806b90f27bbd2940773da950423
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: abc125a093ff2cd5a38a537ecdfc795ff03e23f7
+ms.sourcegitcommit: d1d8071d4093bf2444b5ae19d6e45c3d187e338b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 11/19/2017
 ---
 # <a name="introduction-to-formatting-response-data-in-aspnet-core-mvc"></a>ASP.NET Core MVC의 서식 지정 응답 데이터 소개
 
@@ -84,7 +84,7 @@ JSON 형식의 데이터를 반환 합니다.
 
 ### <a name="content-negotiation-process"></a>콘텐츠 협상 프로세스
 
-콘텐츠 *협상* 만 수행한 경우는 `Accept` 요청에 헤더를 표시 합니다. 요청에 accept 헤더가 포함 되어 있으면, 프레임 워크 기본 설정 순서 대로 accept 헤더의 미디어 유형을 열거 합니다 및 accept 헤더에 의해 지정 된 형식 중 하나에 대 한 응답을 생성할 수 있는 포맷터를 찾으려고 시도 합니다. 프레임 워크 응답을 생성할 수 있는 첫 번째 포맷터를 찾으려고 시도할 경우 클라이언트의 요청을 충족 시킬 수 있는 포맷터를 발견 되 면 (개발자가에서 옵션을 구성 하지 않는 한 `MvcOptions` 406 반환할 승인 금지 대신). 이 요청에는 XML을 지정 하는 경우 XML 포맷터 구성 되지 않았습니다. JSON 포맷터 사용 됩니다. 보다 일반적으로 포맷터를 구성 된 경우 요청 된 형식으로 제공할 수 있는 다음 개체의 서식을 지정할 수 있는 보다 첫 번째 포맷터가 사용 합니다. 헤더가 없으면이 지정 되 면 반환 될 개체를 처리할 수 있는 첫 번째 포맷터는 응답을 직렬화 하는 데 사용될지 합니다. 이 경우 모든 협상이 발생 하지 않으므로-서버 결정할 때 알고리즘 형식을 사용 합니다.
+콘텐츠 *협상* 만 수행한 경우는 `Accept` 요청에 헤더를 표시 합니다. 요청에 accept 헤더가 포함 되어 있으면, 프레임 워크 기본 설정 순서 대로 accept 헤더의 미디어 유형을 열거 합니다 및 accept 헤더에 의해 지정 된 형식 중 하나에 대 한 응답을 생성할 수 있는 포맷터를 찾으려고 시도 합니다. 프레임 워크 응답을 생성할 수 있는 첫 번째 포맷터를 찾으려고 시도할 경우 클라이언트의 요청을 충족 시킬 수 있는 포맷터를 발견 되 면 (개발자가에서 옵션을 구성 하지 않는 한 `MvcOptions` 406 반환할 승인 금지 대신). 이 요청에는 XML을 지정 하는 경우 XML 포맷터 구성 되지 않았습니다. JSON 포맷터 사용 됩니다. 보다 일반적으로 포맷터를 구성 된 경우 요청 된 형식으로 제공할 수 있는 다음 개체의 서식을 지정할 수 있는 첫 번째 포맷터는 데 사용 합니다. 헤더가 없으면이 지정 되 면 반환 될 개체를 처리할 수 있는 첫 번째 포맷터는 응답을 직렬화 하는 데 사용될지 합니다. 이 경우 모든 협상이 발생 하지 않으므로-서버 결정할 때 알고리즘 형식을 사용 합니다.
 
 > [!NOTE]
 > Accept 헤더를 포함 하는 경우 `*/*`, 머리글은 무시 됩니다 `RespectBrowserAcceptHeader` 로 설정 하면 true이 고 `MvcOptions`합니다.
@@ -99,7 +99,7 @@ JSON 형식의 데이터를 반환 합니다.
 services.AddMvc(options =>
 {
     options.RespectBrowserAcceptHeader = true; // false by default
-}
+});
 ```
 
 ## <a name="configuring-formatters"></a>포맷터를 구성합니다.

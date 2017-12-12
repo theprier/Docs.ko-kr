@@ -11,11 +11,11 @@ ms.assetid: 8468d859-ff32-4a92-9e62-08c4a9e36594
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/configuration
-ms.openlocfilehash: 4cf2227db22fbfd7f0c6239dad0d0a470c35d28c
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: d20235feec9d66c371b8ce0b7c66fb424fb261d5
+ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="migrating-configuration"></a>구성 마이그레이션
 
@@ -23,13 +23,13 @@ ms.lasthandoff: 10/01/2017
 
 이전 문서에서는 하기 시작 [ASP.NET Core mvc ASP.NET MVC 프로젝트 마이그레이션](mvc.md)합니다. 이 문서에서는 구성을 마이그레이션 했습니다.
 
-[보거나 다운로드 샘플 코드](https://github.com/aspnet/Docs/tree/master/aspnetcore/migration/configuration/samples) ([다운로드 하는 방법을](xref:tutorials/index#how-to-download-a-sample))
+[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/migration/configuration/samples)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="setup-configuration"></a>설치 구성
 
 ASP.NET Core 더 이상 사용 하지는 *Global.asax* 및 *web.config* 이전 버전의 ASP.NET 사용 하는 파일입니다. 이전 버전의 ASP.NET 응용 프로그램 시작 논리에 배치 된는 `Application_StartUp` 메서드 내에서 *Global.asax*합니다. ASP.NET MVC의 뒷부분에 나오는 *Startup.cs* 고 파일; 프로젝트의 루트에 포함 된 응용 프로그램이 시작 될 때 호출 되었습니다. ASP.NET Core가이 접근 방법을 채택 완전히 모든 시작 논리에 배치 하 여는 *Startup.cs* 파일입니다.
 
-*web.config* 파일 에서도 ASP.NET Core 대체 되었습니다. 자체 구성 이제을 구성할 수 있으며 응용 프로그램 시작에서 설명한 절차의 일부로 *Startup.cs*합니다. 구성 XML 파일을 사용할 수 있지만 일반적으로 ASP.NET Core 프로젝트에에서 배치 됩니다 구성 값을 JSON 형식 파일을 같은 *appsettings.json*합니다. ASP.NET Core 구성 시스템 환경 관련 값에 대 한 안전 하 고 강력한 위치를 제공할 수 있는 환경 변수를도 쉽게 액세스할 수 있습니다. 연결 문자열 및 소스 제어에 체크 인할 수 해야 하는 API 키와 같은 기밀 정보에 대 한 경우 특히 유용 합니다. 참조 [구성](../fundamentals/configuration.md) ASP.NET Core에서 구성에 대 한 자세한 내용을 보려면 합니다.
+*web.config* 파일 에서도 ASP.NET Core 대체 되었습니다. 자체 구성 이제을 구성할 수 있으며 응용 프로그램 시작에서 설명한 절차의 일부로 *Startup.cs*합니다. 구성 XML 파일을 사용할 수 있지만 일반적으로 ASP.NET Core 프로젝트에에서 배치 됩니다 구성 값을 JSON 형식 파일을 같은 *appsettings.json*합니다. ASP.NET Core 구성 시스템 환경 관련 값에 대 한 안전 하 고 강력한 위치를 제공할 수 있는 환경 변수를도 쉽게 액세스할 수 있습니다. 연결 문자열 및 소스 제어에 체크 인할 수 해야 하는 API 키와 같은 기밀 정보에 대 한 경우 특히 유용 합니다. 참조 [구성](xref:fundamentals/configuration/index) ASP.NET Core에서 구성에 대 한 자세한 내용을 보려면 합니다.
 
 ASP.NET Core 일부만 마이그레이션된 프로젝트와 시작 되며이 문서에 대 한 [이전 문서](mvc.md)합니다. 구성 설정, 다음 생성자 및 속성을 추가 하는 *Startup.cs* 프로젝트의 루트에 있는 파일:
 

@@ -11,11 +11,11 @@ ms.assetid: 3155cc9e-d0c9-424b-886c-35c0ec6f9f4e
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/mvc2
-ms.openlocfilehash: e0691b276b63ee12d3163ac48d1392696fb97aa6
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: 8005d23ad00774e488eecc9771f36a244a051126
+ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="migrating-from-aspnet-to-aspnet-core-20"></a>ASP.NET에서 ASP.NET Core 2.0 마이그레이션
 
@@ -107,7 +107,7 @@ DI([종속성 주입](xref:fundamentals/dependency-injection))를 사용하여 �
 services.Configure<AppConfiguration>(Configuration.GetSection("AppConfiguration"));
 ````
 
-**참고:** ASP.NET Core 구성에 대한 자세한 내용은 [ASP.NET Core의 구성](xref:fundamentals/configuration)을 참조하세요.
+**참고:** ASP.NET Core 구성에 대한 자세한 내용은 [ASP.NET Core의 구성](xref:fundamentals/configuration/index)을 참조하세요.
 
 ## <a name="native-dependency-injection"></a>네이티브 종속성 주입
 크고 확장 가능한 응용 프로그램을 빌드할 때 중요한 목표는 구성 요소와 서비스를 느슨하게 결합하는 것입니다. [종속성 주입](xref:fundamentals/dependency-injection)은 이 목표를 위해 널리 사용되는 기술이고 ASP.NET Core의 네이티브 구성 요소입니다.

@@ -11,17 +11,17 @@ ms.assetid: 423e0a79-2f34-44c4-aaf3-146a53c39251
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/key-storage-providers
-ms.openlocfilehash: 1c73608245e668c0810813e29f78f1ac3dacc414
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: d4b286dc47f8d66e6d09c3e0f48e6326139c8e1e
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="key-storage-providers"></a>키 저장소 공급자
 
-<a name=data-protection-implementation-key-storage-providers></a>
+<a name="data-protection-implementation-key-storage-providers"></a>
 
-기본적으로 데이터 보호 시스템 [경험적 접근을 사용](../configuration/default-settings.md#data-protection-default-settings) 암호화 키 자료 유지할지를 결정 하 합니다. 개발자는 추론은 무시 하 고 수동으로 위치를 지정할 수도 있습니다.
+기본적으로 데이터 보호 시스템 [경험적 접근을 사용](xref:security/data-protection/configuration/default-settings) 암호화 키 자료 유지할지를 결정 하 합니다. 개발자는 추론은 무시 하 고 수동으로 위치를 지정할 수도 있습니다.
 
 > [!NOTE]
 > 키 지 속성을 명시적 위치를 지정 하는 경우 데이터 보호 시스템은 추론은 제공 하는 rest 메커니즘에 기본 키 암호화 등록 해제 미사용에 더 이상 키를 암호화 됩니다. 것을 또한 [명시적 키 암호화 메커니즘을 지정](key-encryption-at-rest.md#data-protection-implementation-key-encryption-at-rest-providers) 프로덕션 응용 프로그램에 대 한 합니다.

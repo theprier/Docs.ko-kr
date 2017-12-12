@@ -1,26 +1,24 @@
 ---
 title: "ASP.NET Core의 미들웨어 캐싱 응답"
 author: guardrex
-description: "구성 및 ASP.NET Core 응용 프로그램에서 캐싱 미들웨어의 응답의 사용 합니다."
-keywords: "ASP.NET Core 응답 캐싱, 캐싱, ResponseCache, ResponseCaching, 캐시 제어, VaryByQueryKeys, 미들웨어"
+description: "구성 및 ASP.NET Core 응용 프로그램에서 캐싱 미들웨어의 응답을 사용 하는 방법을 알아봅니다."
 ms.author: riande
 manager: wpickett
 ms.date: 08/22/2017
 ms.topic: article
-ms.assetid: f9267eab-2762-42ac-1638-4a25d2c9d67c
 ms.prod: asp.net-core
 uid: performance/caching/middleware
-ms.openlocfilehash: bc3350a7ef15c5c38aa072bab15cbddc7d0ee0fa
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: f3312d0c333b47169c71891eea79f03be0abcfa3
+ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="response-caching-middleware-in-aspnet-core"></a>ASP.NET Core의 미들웨어 캐싱 응답
 
 여 [Luke Latham](https://github.com/guardrex) 및 [John Luo](https://github.com/JunTaoLuo)
 
-[보거나 다운로드 샘플 코드](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/middleware/samples) ([다운로드 하는 방법을](xref:tutorials/index#how-to-download-a-sample))
+[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/middleware/samples)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 이 문서에서 ASP.NET Core 응용 프로그램 응답 캐싱 미들웨어를 구성 하는 방법에 자세히 설명 합니다. 미들웨어는 응답에 캐시할 수 있는 경우, 저장소 응답 및 캐시에서 응답 하는 데 사용 결정 합니다. HTTP 캐시에 대 한 소개 및 `ResponseCache` 특성을 참조 하십시오. [응답 캐시](response.md)합니다.
 
@@ -112,13 +110,13 @@ if (responseCachingFeature != null)
 
 [미들웨어 향상 될](https://github.com/aspnet/ResponseCaching/issues/96) 캐싱 시나리오에 대 한 미들웨어 구성 허용 여기서 요청 `Cache-Control` 된 캐시 된 응답을 제공 하도록 결정할 때 헤더를 무시 해야 합니다. 더 많이 제어할 캐싱 동작을 검색 하는 경우 ASP.NET 코어의 다른 캐싱 기능을 탐색 합니다. 다음 항목을 참조하십시오.
 
-* [ASP.NET Core의 메모리 내 캐싱 소개](xref:performance/caching/memory)
+* [메모리 내 캐싱](xref:performance/caching/memory)
 * [분산된 캐시 사용](xref:performance/caching/distributed)
 * [ASP.NET Core MVC에서에서 태그 도우미를 캐시 합니다.](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
 * [분산된 캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
 
 ## <a name="troubleshooting"></a>문제 해결
-캐싱 동작 없는 경우 예상 대로, 응답은 캐시할 수 되며 들어오는 헤더는 요청 및 응답의 나가는 헤더를 검사 하 여 캐시에서 제공 되 고 수 있는지 확인 합니다. 사용 하도록 설정 [로깅](xref:fundamentals/logging) 디버깅할 때 도움이 될 수 있습니다. 캐싱 동작 및 응답을 캐시에서 검색 되는 경우의 미들웨어 로그입니다.
+캐싱 동작 없는 경우 예상 대로, 응답은 캐시할 수 되며 들어오는 헤더는 요청 및 응답의 나가는 헤더를 검사 하 여 캐시에서 제공 되 고 수 있는지 확인 합니다. 사용 하도록 설정 [로깅](xref:fundamentals/logging/index) 디버깅할 때 도움이 될 수 있습니다. 캐싱 동작 및 응답을 캐시에서 검색 되는 경우의 미들웨어 로그입니다.
 
 캐싱 동작 문제 해결을 테스트할 때 브라우저 바람직하지 않은 방법으로 캐싱에 영향을 주는 요청 헤더를 설정할 수 있습니다. 예를 들어 브라우저 설정할 수 있습니다는 `Cache-Control` 헤더를 `no-cache` 페이지를 새로 고칩니다. 다음 도구 요청 헤더에 명시적으로 설정할 수 및 캐싱 테스트에 대 한 기본 설정 됩니다.
 
@@ -148,3 +146,9 @@ if (responseCachingFeature != null)
 
 * [응용 프로그램 시작](xref:fundamentals/startup)
 * [미들웨어](xref:fundamentals/middleware)
+* [메모리 내 캐싱](xref:performance/caching/memory)
+* [분산된 캐시 사용](xref:performance/caching/distributed)
+* [변경 내용을 변경 토큰으로 검색](xref:fundamentals/primitives/change-tokens)
+* [응답 캐싱](xref:performance/caching/response)
+* [캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
+* [분산된 캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)

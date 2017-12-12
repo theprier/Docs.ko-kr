@@ -11,11 +11,11 @@ ms.assetid: bc8b4ba3-e9ba-48fd-b1eb-cd48ff6bc7a1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/dependency-injection
-ms.openlocfilehash: ff0a1a34ee6b025be6312a81f1a0bcdd07026adb
-ms.sourcegitcommit: 8f4d4fad1ca27adf9e396f5c205c9875a3963664
+ms.openlocfilehash: 46b92a1cab6fb2cd06eff44feb6a55788fca5c2a
+ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="dependency-injection-into-controllers"></a>컨트롤러에 대 한 종속성 주입
 
@@ -89,7 +89,7 @@ Microsoft.Extensions.DependencyInjection.ActivatorUtilities.FindApplicableConstr
 
 ## <a name="accessing-settings-from-a-controller"></a>컨트롤러에서 설정 액세스
 
-컨트롤러 내에서 응용 프로그램 또는 구성 설정에 액세스 하는 일반적인 패턴입니다. 이 액세스에 설명 된 옵션 패턴을 사용 해야 [구성](../../fundamentals/configuration.md)합니다. 일반적으로 하지 요청 해야 설정을 종속성 주입을 사용 하 여 컨트롤러에서 직접 합니다. 하는 것이 좋습니다 요청은 `IOptions<T>` 인스턴스, 여기서 `T` 필요한 구성 클래스입니다.
+컨트롤러 내에서 응용 프로그램 또는 구성 설정에 액세스 하는 일반적인 패턴입니다. 이 액세스에 설명 된 옵션 패턴을 사용 해야 [구성](xref:fundamentals/configuration/index)합니다. 일반적으로 하지 요청 해야 설정을 종속성 주입을 사용 하 여 컨트롤러에서 직접 합니다. 하는 것이 좋습니다 요청은 `IOptions<T>` 인스턴스, 여기서 `T` 필요한 구성 클래스입니다.
 
 옵션 패턴을 사용 하려면이 다음과 같은 옵션을 나타내는 클래스를 만들려면:
 
@@ -100,7 +100,7 @@ Microsoft.Extensions.DependencyInjection.ActivatorUtilities.FindApplicableConstr
 [!code-csharp[Main](./dependency-injection/sample/src/ControllerDI/Startup.cs?highlight=3,4,5,6,9,16,19&range=14-44)]
 
 > [!NOTE]
-> 위의 목록에서 구성 하는 중 응용 프로그램을 JSON 형식 파일에서 설정을 읽습니다. 또한 위의 주석 처리 된 코드에 표시 된 대로 코드에서 완전히 설정을 구성할 수 있습니다. 참조 [구성](../../fundamentals/configuration.md) 추가 구성 옵션에 대 한 합니다.
+> 위의 목록에서 구성 하는 중 응용 프로그램을 JSON 형식 파일에서 설정을 읽습니다. 또한 위의 주석 처리 된 코드에 표시 된 대로 코드에서 완전히 설정을 구성할 수 있습니다. 참조 [구성](xref:fundamentals/configuration/index) 추가 구성 옵션에 대 한 합니다.
 
 강력한 형식의 구성 개체를 지정한 후 (이 경우 `SampleWebSettings`) 추가할 서비스 컬렉션 요청할 수 있습니다이 모든 컨트롤러 또는 동작 메서드에서 인스턴스를 요청 하 여 `IOptions<T>` (이 경우 `IOptions<SampleWebSettings>`) . 다음 코드는 컨트롤러에서 설정을 요청 것 하나를 보여 줍니다.
 

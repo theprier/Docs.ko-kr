@@ -1,28 +1,26 @@
 ---
 title: "ASP.NET Core의 메모리 내 캐싱"
 author: rick-anderson
-description: "ASP.NET Core 메모리에 데이터를 캐시 하는 방법을 보여 줍니다."
-keywords: "ASP.NET Core, 캐시, 메모리 내 성능"
+description: "ASP.NET Core 메모리에 데이터를 캐시 하는 방법을 알아봅니다."
 ms.author: riande
 manager: wpickett
 ms.date: 12/14/2016
 ms.topic: article
-ms.assetid: 819511cf-d33e-410a-b5a9-bef7fa64d2f3
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: performance/caching/memory
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 5ce865427b6ca44c76888908fdeea9cd45c881c4
-ms.sourcegitcommit: 732cd2684246e49e796836596643a8d37e20c46d
+ms.openlocfilehash: 23312e73b4530b24b8479e2d379f16315b672ca4
+ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/01/2017
+ms.lasthandoff: 11/29/2017
 ---
-# <a name="introduction-to-in-memory-caching-in-aspnet-core"></a>ASP.NET Core의 메모리 내 캐싱 소개
+# <a name="in-memory-caching-in-aspnet-core"></a>ASP.NET Core의 메모리 내 캐싱
 
 여 [Rick Anderson](https://twitter.com/RickAndMSFT), [John Luo](https://github.com/JunTaoLuo), 및 [Steve Smith](https://ardalis.com/)
 
-[보거나 다운로드 샘플 코드](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/memory/sample) ([다운로드 하는 방법을](xref:tutorials/index#how-to-download-a-sample))
+[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/memory/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="caching-basics"></a>캐싱 기본 사항
 
@@ -89,7 +87,7 @@ ASP.NET Core 몇 가지 다른 캐시를 지원합니다. 가장 간단한 캐�
 
 사용 하는 `CancellationTokenSource` 여러 캐시 항목이 그룹으로 제거할 수 있습니다. 와 `using` 내에 만들어진 위의 코드에서 패턴, 캐시 항목의 `using` 블록 트리거 및 만료 설정을 상속 합니다.
 
-### <a name="additional-notes"></a>추가 참고 사항
+## <a name="additional-notes"></a>추가 참고 사항
 
 - 콜백을 사용 하 여 캐시 항목을 다시 채우기:
 
@@ -98,7 +96,11 @@ ASP.NET Core 몇 가지 다른 캐시를 지원합니다. 가장 간단한 캐�
 
 - 하나의 캐시 항목을 사용 하 여 다른 만들을 부모 항목의 만료 토큰 및 시간 기반 만료 설정을 자식 복사 합니다. 자식 수동 제거 하 여 만료 된 또는 부모 항목의 업데이트 아닙니다.
 
-### <a name="other-resources"></a>기타 리소스
+## <a name="additional-resources"></a>추가 리소스
 
-* [분산 캐시 사용](distributed.md)
-* [응답 캐싱 미들웨어](middleware.md)
+* [분산된 캐시 사용](xref:performance/caching/distributed)
+* [변경 내용을 변경 토큰으로 검색](xref:fundamentals/primitives/change-tokens)
+* [응답 캐싱](xref:performance/caching/response)
+* [응답 캐싱 미들웨어](xref:performance/caching/middleware)
+* [캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
+* [분산된 캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)

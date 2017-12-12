@@ -1,7 +1,7 @@
 ---
 title: "쿠키 응용 프로그램 간 공유"
 author: rick-anderson
-description: 
+description: "이 문서에서는 데이터 보호 스택은 지원 ASP.NET 간의 인증 쿠키의 공유 하는 방법을 설명 4.x 및 ASP.NET Core 응용 프로그램입니다."
 keywords: "ASP.NET Core,ASP.NET,cookies,Interop,cookie 공유"
 ms.author: riande
 manager: wpickett
@@ -11,11 +11,11 @@ ms.assetid: 9a7aae45-8e21-4c54-950c-3c29df6c1082
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/compatibility/cookie-sharing
-ms.openlocfilehash: dbf52b0a990a3627b8eded22db033c45d51ba6ad
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: e92cc81f9362787b7b4bfb44ba26b82182826a59
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="sharing-cookies-between-applications"></a>쿠키 응용 프로그램 간 공유
 
@@ -27,28 +27,28 @@ ms.lasthandoff: 09/22/2017
 
 두 개의 ASP.NET Core 응용 프로그램과 인증 쿠키를 공유 하려면 다음과 같이 쿠키를 공유 해야 하는 각 응용 프로그램을 구성 합니다.
 
-프로그램 쿠키에 대 한 데이터 보호 서비스를 설정 하려면 CookieAuthenticationOptions 및 ASP.NET에 맞게 AuthenticationScheme 메서드 사용 하 여 구성 4.X 합니다.
+사용자 메서드를 구성, 쿠키 및에서 AuthenticationScheme에 대 한 데이터 보호 서비스를 ASP.NET 일치 하도록 설정 하는 CookieAuthenticationOptions를 사용 하 여 4.x 합니다.
 
 Identity 사용 중인 경우:
 
 ```csharp
 app.AddIdentity<ApplicationUser, IdentityRole>(options =>
-   {
-       options.Cookies.ApplicationCookie.AuthenticationScheme = "ApplicationCookie";
-       var protectionProvider = DataProtectionProvider.Create(new DirectoryInfo(@"c:\shared-auth-ticket-keys\"));
-       options.Cookies.ApplicationCookie.DataProtectionProvider = protectionProvider;
-       options.Cookies.ApplicationCookie.TicketDataFormat = new TicketDataFormat(protectionProvider.CreateProtector("Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationMiddleware", "Cookies", "v2"));
-   });
-   ```
+{
+    options.Cookies.ApplicationCookie.AuthenticationScheme = "ApplicationCookie";
+    var protectionProvider = DataProtectionProvider.Create(new DirectoryInfo(@"c:\shared-auth-ticket-keys\"));
+    options.Cookies.ApplicationCookie.DataProtectionProvider = protectionProvider;
+    options.Cookies.ApplicationCookie.TicketDataFormat = new TicketDataFormat(protectionProvider.CreateProtector("Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationMiddleware", "Cookies", "v2"));
+});
+```
 
 사용 하 여 쿠키 직접:
 
 ```csharp
 app.UseCookieAuthentication(new CookieAuthenticationOptions
-   {
-       DataProtectionProvider = DataProtectionProvider.Create(new DirectoryInfo(@"c:\shared-auth-ticket-keys\"))
-   });
-   ```
+{
+    DataProtectionProvider = DataProtectionProvider.Create(new DirectoryInfo(@"c:\shared-auth-ticket-keys\"))
+});
+```
    
 `DataProtectionProvider` 필요는 `Microsoft.AspNetCore.DataProtection.Extensions` NuGet 패키지 합니다.
 
@@ -97,20 +97,20 @@ ASP.NET 4.x 응용 프로그램 및 ASP.NET Core 응용 프로그램 간의 인�
 
     ```csharp
     app.UseCookieAuthentication(new CookieAuthenticationOptions
-       {
-           AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-           CookieName = ".AspNetCore.Cookies",
-           // CookieName = ".AspNetCore.ApplicationCookie", (if you're using identity)
-           // CookiePath = "...", (if necessary)
-           // ...
-           TicketDataFormat = new AspNetTicketDataFormat(
-               new DataProtectorShim(
-                   DataProtectionProvider.Create(new DirectoryInfo(@"c:\shared-auth-ticket-keys\"))
-                   .CreateProtector("Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationMiddleware",
-                   "Cookies", "v2"))),
-           CookieManager = new ChunkingCookieManager()
-       });
-       ```
+    {
+        AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
+        CookieName = ".AspNetCore.Cookies",
+        // CookieName = ".AspNetCore.ApplicationCookie", (if you're using identity)
+        // CookiePath = "...", (if necessary)
+        // ...
+        TicketDataFormat = new AspNetTicketDataFormat(
+            new DataProtectorShim(
+                DataProtectionProvider.Create(new DirectoryInfo(@"c:\shared-auth-ticket-keys\"))
+                .CreateProtector("Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationMiddleware",
+                "Cookies", "v2"))),
+        CookieManager = new ChunkingCookieManager()
+    });
+    ```
     ASP.NET Core 응용 프로그램을 지정 하며 동일한 설정을 사용 하 여 구성 해야 하는 동일한 저장소 위치를 가리키도록 DirectoryInfo에 있습니다.
 
 ASP.NET 4.x 및 ASP.NET Core 응용 프로그램은 이제 인증 쿠키를 공유 하도록 구성 됩니다.

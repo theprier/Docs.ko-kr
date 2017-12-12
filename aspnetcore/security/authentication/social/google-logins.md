@@ -1,8 +1,8 @@
 ---
 title: "ASP.NET Core에서 Google 외부 로그인 설정"
 author: rick-anderson
-description: "ASP.NET Core에서 Google 외부 로그인 설정"
-keywords: ASP.NET Core,
+description: "이 자습서는 기존 ASP.NET Core 응용 프로그램에 Google 계정 사용자 인증의 통합을 보여 줍니다."
+keywords: "ASP.NET Core, Google, 로그인, 인증"
 ms.author: riande
 manager: wpickett
 ms.date: 08/02/2017
@@ -10,15 +10,13 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/google-logins
-ms.openlocfilehash: 8723a74250ff1b0a63139057bfc17fdd31dd169e
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: af316d832de7356d539eaaab5be6485639030c7a
+ms.sourcegitcommit: 8ab9d0065fad23400757e4e08033787e42c97d41
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="configuring-google-authentication-in-aspnet-core"></a>ASP.NET Core에서 Google 인증 구성
-
-<a name=security-authentication-google-logins></a>
 
 작성자: [Valeriy Novytskyy](https://github.com/01binary) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -89,13 +87,6 @@ Google와 같은 중요 한 설정이 연결 `Client ID` 및 `Client Secret` 사
 
 ## <a name="configure-google-authentication"></a>Google 인증 구성
 
-이 자습서에 사용 된 프로젝트 템플릿을 사용 하면 [Microsoft.AspNetCore.Authentication.Google](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Google) 패키지를 설치 합니다.
-
- * Visual Studio 2017으로이 패키지를 설치 하려면 마우스 오른쪽 단추로 클릭 프로젝트와 선택 **NuGet 패키지 관리**합니다.
- * .NET Core CLI를 설치 하려면 다음 프로젝트 디렉터리에 실행 합니다.
-
-   `dotnet add package Microsoft.AspNetCore.Authentication.Google`
-
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 Google 서비스에 추가 `ConfigureServices` 메서드에서 *Startup.cs* 파일:
@@ -115,6 +106,13 @@ services.AddAuthentication().AddGoogle(googleOptions =>
 [!INCLUDE[default settings configuration](includes/default-settings.md)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+
+이 자습서에 사용 된 프로젝트 템플릿을 사용 하면 [Microsoft.AspNetCore.Authentication.Google](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Google) 패키지를 설치 합니다.
+
+ * Visual Studio 2017으로이 패키지를 설치 하려면 마우스 오른쪽 단추로 클릭 프로젝트와 선택 **NuGet 패키지 관리**합니다.
+ * .NET Core CLI를 설치 하려면 다음 프로젝트 디렉터리에 실행 합니다.
+
+   `dotnet add package Microsoft.AspNetCore.Authentication.Google`
 
 Google 미들웨어에서 추가 된 `Configure` 에서 메서드 *Startup.cs* 파일:
 

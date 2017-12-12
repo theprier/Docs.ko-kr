@@ -5,20 +5,20 @@ description: "전자 메일 확인 및 암호 재설정으로 ASP.NET Core 응�
 keywords: "ASP.NET Core 암호 다시 설정, 전자 메일 확인, 보안"
 ms.author: riande
 manager: wpickett
-ms.date: 07/19/2017
+ms.date: 12/1/2017
 ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/accconfirm
-ms.openlocfilehash: b05dd2fee50f6cc96058971daa42b069dbb6d21d
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 955064122d2335016c7eb3dd7451b14106a3b83f
+ms.sourcegitcommit: 6e46abd65973dea796d364a514de9ec2e3e1c1ed
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 12/02/2017
 ---
 # <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a>계정 확인 및 ASP.NET 코어에서 암호 복구
 
-작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
+작성자: [Rick Anderson](https://twitter.com/RickAndMSFT) 및 [Joe Audette](https://twitter.com/joeaudette) 
 
 이 자습서에서는 전자 메일 확인 및 암호 재설정으로 ASP.NET Core 응용 프로그램을 구축 하는 방법을 보여 줍니다.
 
@@ -117,7 +117,7 @@ config.SignIn.RequireConfirmedEmail = true;
 
 이 자습서에서는 SendGrid 전자 메일을 보내는 데 사용 됩니다. SendGrid 계정 및 전자 메일을 보내는 키 필요. 다른 전자 메일 공급자를 사용할 수 있습니다. ASP.NET Core 2.x 포함 `System.Net.Mail`, 응용 프로그램에서 전자 메일을 보낼 수 있습니다. 전자 메일을 보내는 SendGrid 또는 다른 전자 메일 서비스를 사용 하는 것이 좋습니다.
 
-[옵션 패턴](xref:fundamentals/configuration#options-config-objects) 사용자 계정 및 키 설정에 액세스 하는 데 사용 됩니다. 자세한 내용은 참조 [구성](xref:fundamentals/configuration)합니다.
+[옵션 패턴](xref:fundamentals/configuration/options) 사용자 계정 및 키 설정에 액세스 하는 데 사용 됩니다. 자세한 내용은 참조 [구성](xref:fundamentals/configuration/index)합니다.
 
 전자 메일 보안 키를 인출 하는 클래스를 만듭니다. 이 샘플은 `AuthMessageSenderOptions` 클래스에 만들어집니다는 *Services/AuthMessageSenderOptions.cs* 파일입니다.
 
@@ -195,6 +195,8 @@ await _signInManager.SignInAsync(user, isPersistent: false);
 전체 메서드 강조 표시 하는 변경 된 줄으로 표시 됩니다.
 
 [!code-csharp[Main](accconfirm/sample/WebPW/Controllers/AccountController.cs?highlight=19&name=snippet_Register)]
+
+참고: 앞의 코드 구현 하는 경우 실패 합니다 `IEmailSender` 일반 텍스트 전자 메일을 보냅니다. 참조 [이 문제](https://github.com/aspnet/Home/issues/2152) 자세한 내용 및 문제를 해결 합니다.
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 

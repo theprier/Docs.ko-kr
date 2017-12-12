@@ -11,7 +11,7 @@
 1. 키 자격 증명 모음 만들기 및 Azure Active Directory (Azure AD)의 지침에 따라 응용 프로그램에 대 한 설정 [Azure 키 자격 증명 모음 시작](https://azure.microsoft.com/documentation/articles/key-vault-get-started/)합니다.
   * 암호를 사용 하 여 주요 자격 증명 모음에 추가 된 [AzureRM 키 자격 증명 모음 PowerShell 모듈](/powershell/module/azurerm.keyvault) 에서 사용할 수는 [PowerShell 갤러리](https://www.powershellgallery.com/packages/AzureRM.KeyVault), [Azure 키 자격 증명 모음 REST API](/rest/api/keyvault/), 또는 [Azure 포털](https://portal.azure.com/)합니다. 비밀 하나로 만들어집니다 *수동* 또는 *인증서* 비밀 정보입니다. *인증서* 비밀 앱 및 서비스에서 사용 하기 위해 인증서가 있지만 구성 공급자에서 지원 되지 않습니다. 사용 해야는 *수동* 구성 공급자와 함께 사용 하기 위해 암호 이름-값 쌍을 만드는 옵션을 합니다.
     * 단순 암호 이름-값 쌍으로 생성 됩니다. Azure 키 자격 증명 모음 보안 이름은 영숫자, 대시로 제한 됩니다.
-    * 계층 값 (구성 섹션) 사용 하 여 `--` (대시 두 개)이 샘플에서 구분 기호로 합니다. 하위 키에의 한 부분을 구분 하는 데 일반적으로 사용 되는 콜론 [ASP.NET Core 구성](xref:fundamentals/configuration), 비밀 이름에 사용할 수 없습니다. 따라서 대시 두 개 사용 되며 암호는 응용 프로그램의 구성에 로드 될 때 콜론으로 교체 됩니다.
+    * 계층 값 (구성 섹션) 사용 하 여 `--` (대시 두 개)이 샘플에서 구분 기호로 합니다. 하위 키에의 한 부분을 구분 하는 데 일반적으로 사용 되는 콜론 [ASP.NET Core 구성](xref:fundamentals/configuration/index), 비밀 이름에 사용할 수 없습니다. 따라서 대시 두 개 사용 되며 암호는 응용 프로그램의 구성에 로드 될 때 콜론으로 교체 됩니다.
     * 두 개 만든 *수동* 비밀 다음 이름-값 쌍을 포함 합니다. 첫 번째 암호는 단순한 이름 및 값, 및 두 번째 암호 섹션 및 비밀 이름에 하위 키와 비밀 값을 만듭니다.
       * `SecretName`: `secret_value_1`
       * `Section--SecretName`: `secret_value_2`

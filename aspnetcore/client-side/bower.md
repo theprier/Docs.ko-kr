@@ -2,7 +2,7 @@
 title: "ASP.NET Core에서 Bower를 사용 하 여"
 author: rick-anderson
 description: "Bower 사용 하 여 클라이언트 패키지를 관리 합니다."
-keywords: ASP.NET Core, bower
+keywords: ASP.NET Core,Bower
 ms.author: riande
 manager: wpickett
 ms.date: 02/14/2017
@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/bower
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f5d9acc59b6f40dc8a336f59925d639fff007c4e
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 183e748cbf87b1973941eacb3fb1008f4041bb2a
+ms.sourcegitcommit: 532a323f99a37c4d7894c95cee3f7a04b594dcec
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 12/01/2017
 ---
 # <a name="manage-client-side-packages-with-bower-in-aspnet-core"></a>ASP.NET Core에서 Bower 사용 하 여 클라이언트 패키지를 관리 합니다.
 
@@ -36,7 +36,7 @@ ms.lasthandoff: 09/22/2017
 
 * 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭 하 고 선택 **Bower 패키지 관리** (또는 주 메뉴에서 **프로젝트** > **Bower 패키지 관리**).
 
-* 에 **Bower: \<프로젝트 이름\> ** 창 "찾아보기" 탭을 클릭 한 다음를 입력 하 여 패키지 목록 필터링 `font-awesome` 검색 상자에:
+* 에 **Bower: \<프로젝트 이름\>**  창 "찾아보기" 탭을 클릭 한 다음를 입력 하 여 패키지 목록 필터링 `font-awesome` 검색 상자에:
 
  ![bower 패키지 관리](bower/_static/manage-bower-packages.png)
 
@@ -78,7 +78,7 @@ ms.lasthandoff: 09/22/2017
 
 ## <a name="exploring-the-client-side-build-process"></a>클라이언트 쪽 빌드 프로세스를 탐색합니다.
 
-대부분의 ASP.NET Core 프로젝트 템플릿은 Bower를 사용 하도록 구성 됩니다. 다음이 연습에서는 빈 ASP.NET Core 프로젝트로 시작 되며 각 부분을 수동으로 추가 되므로 Bower 프로젝트에서 사용 방법에 대 한 지 파악할 수 있습니다. 프로젝트 구조에 수행 되는 작업 수와 각 구성 변경으로 출력 런타임 만들어지는 볼 있습니다.
+대부분의 ASP.NET Core 프로젝트 템플릿은 Bower를 사용 하도록 구성 됩니다. 다음이 연습에서는 빈 ASP.NET Core 프로젝트로 시작 되며 각 부분을 수동으로 추가 되므로 Bower 프로젝트에서 사용 방법에 대 한 지 파악할 수 있습니다. 프로젝트 구조 및 각 구성을 변경 하는 대로 출력 런타임으로 수행 되는 작업을 볼 수 있습니다.
 
 Bower 클라이언트 쪽 빌드 프로세스를 사용 하는 일반적인 단계는
 

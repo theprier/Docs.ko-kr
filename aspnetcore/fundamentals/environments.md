@@ -11,11 +11,11 @@ ms.assetid: b5bba985-be12-4464-9a01-df3599b2a6f1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/environments
-ms.openlocfilehash: becdfa647acb6483b39f5421ab881c4817f31c40
-ms.sourcegitcommit: e3b1726cc04e80dc28464c35259edbd3bc39a438
+ms.openlocfilehash: 3eb19aa090d0a979ceaf4edc56752472ba47ae84
+ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/12/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="working-with-multiple-environments"></a>여러 환경 작업
 
@@ -158,6 +158,6 @@ ASP.NET Core 다양 한 기능 및 다양 한 환경에서 응용 프로그램�
 
 ## <a name="additional-resources"></a>추가 리소스
 
-* [구성](configuration.md)
+* [구성](xref:fundamentals/configuration/index)
 
 * [태그 도우미 소개](../mvc/views/tag-helpers/intro.md)

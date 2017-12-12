@@ -10,17 +10,17 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/hosting
-ms.openlocfilehash: 455b992dc10129278f8e23366aac9d8bcbf5594c
-ms.sourcegitcommit: ef9784dd7500f22fb98b3591ebd73d57d4f67544
+ms.openlocfilehash: 7deccf135ddd21729206ebed58ddc8aca52c1deb
+ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="hosting-in-aspnet-core"></a>ASP.NET Core에서 호스팅
 
-으로 [Luke Latham](https://github.com/guardrex)
+[Luke Latham](https://github.com/guardrex)으로
 
-ASP.NET Core 응용 프로그램 구성 및 실행 한 *호스트*, 응용 프로그램 시작 및 수명 관리 담당 하는 합니다. 여기에 최소한 호스트 서버 및 요청 처리 파이프라인을 구성합니다.
+ASP.NET Core 앱은 앱 시작 및 수명 관리를 담당하는 *호스트*를 구성하고 실행합니다. 여기에 최소한 호스트 서버 및 요청 처리 파이프라인을 구성합니다.
 
 ## <a name="setting-up-a-host"></a>호스트 설정
 
@@ -40,12 +40,12 @@ ASP.NET Core 응용 프로그램 구성 및 실행 한 *호스트*, 응용 프�
   * [사용자의 비밀](xref:security/app-secrets) 응용 프로그램을 실행 하는 경우는 `Development` 환경입니다.
   * 환경 변수.
   * 명령줄 인수입니다.
-* 구성 [로깅](xref:fundamentals/logging) 사용 하 여 콘솔 및 디버그 출력에 대 한 [로그 필터링](xref:fundamentals/logging#log-filtering) 의 로깅 구성 섹션에 지정 된 규칙은 *appsettings.json* 또는 *appsettings 합니다. {환경}.json* 파일입니다.
+* 구성 [로깅](xref:fundamentals/logging/index) 사용 하 여 콘솔 및 디버그 출력에 대 한 [로그 필터링](xref:fundamentals/logging/index#log-filtering) 의 로깅 구성 섹션에 지정 된 규칙은 *appsettings.json* 또는 *appsettings 합니다. {환경}.json* 파일입니다.
 * 뒤에 IIS를 실행 하면 [IIS 통합](xref:publishing/iis) 기본 경로 포트를 구성 하 여 서버 수신 대기할 때 사용 하는 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)합니다. 모듈은 IIS와 Kestrel 간의 역방향 프록시를 만듭니다. 또한 응용 프로그램을 구성 [시작 오류 캡처](#capture-startup-errors)합니다. IIS 기본 옵션을 참조 하십시오. [IIS의 IIS와 Windows에서 호스트 ASP.NET Core 섹션 옵션](xref:publishing/iis#iis-options)합니다.
 
 *콘텐츠 루트* 호스트 MVC 뷰 파일과 같은 콘텐츠 파일을 검색 하는 위치를 결정 합니다. 기본 콘텐츠 루트는 [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory)합니다. 이 인해 응용 프로그램 루트 폴더에서 시작 될 때 웹 프로젝트의 루트 폴더 콘텐츠 루트로 사용 하 여 (예를 들어 호출 [실행 dotnet](/dotnet/core/tools/dotnet-run) 프로젝트 폴더에서). 사용 되는 기본 이것이 [Visual Studio](https://www.visualstudio.com/) 및 [dotnet 새 템플릿을](/dotnet/core/tools/dotnet-new)합니다.
 
-참조 [ASP.NET Core에서 구성을](xref:fundamentals/configuration) 응용 프로그램 구성에 대 한 자세한 내용은 합니다.
+참조 [ASP.NET Core에서 구성을](xref:fundamentals/configuration/index) 응용 프로그램 구성에 대 한 자세한 내용은 합니다.
 
 > [!NOTE]
 > 정적을 사용 하는 대신 `CreateDefaultBuilder` 에서 호스트를 만드는 메서드를 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) 은 지원 되는 ASP.NET Core 방법을 2.x 합니다. 자세한 내용은 ASP.NET Core 1.x 탭을 참조 하십시오.
@@ -403,7 +403,7 @@ var host = new WebHostBuilder()
 
 ## <a name="overriding-configuration"></a>구성을 무시
 
-사용 하 여 [구성](configuration.md) 호스트를 구성할 수 있습니다. 다음 예제에서는 호스트 구성을 필요에 따라 지정에 *hosting.json* 파일입니다. 모든 구성에서 로드 된 *hosting.json* 명령줄 인수 파일을 덮어쓸 수 있습니다. 기본 제공된 구성 (에 `config`) 사용 하 여 호스트를 구성 하는 데는 `UseConfiguration`합니다.
+사용 하 여 [구성](xref:fundamentals/configuration/index) 호스트를 구성할 수 있습니다. 다음 예제에서는 호스트 구성을 필요에 따라 지정에 *hosting.json* 파일입니다. 모든 구성에서 로드 된 *hosting.json* 명령줄 인수 파일을 덮어쓸 수 있습니다. 기본 제공된 구성 (에 `config`) 사용 하 여 호스트를 구성 하는 데는 `UseConfiguration`합니다.
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 

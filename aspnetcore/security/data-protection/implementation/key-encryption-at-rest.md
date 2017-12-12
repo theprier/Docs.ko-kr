@@ -1,8 +1,8 @@
 ---
 title: "미사용 데이터 암호화 키"
 author: rick-anderson
-description: 
-keywords: ASP.NET Core,
+description: "이 문서에는 ASP.NET Core 데이터 보호 키 암호화의 구현 세부 사항을 설명합니다."
+keywords: "ASP.NET Core, 데이터 보호, 키 암호화"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
@@ -11,22 +11,22 @@ ms.assetid: f2bbbf4e-0945-43ce-be59-8bf19e448798
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/key-encryption-at-rest
-ms.openlocfilehash: 16a9385630d88c4c9f33954f83fce2bbce5be719
-ms.sourcegitcommit: 9cdbfd0d670d70b9c354216aabee260c52dad5ee
+ms.openlocfilehash: b56dc56ed94662dbedeea49022aa73941bc833c5
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 11/10/2017
 ---
 # <a name="key-encryption-at-rest"></a>미사용 데이터 암호화 키
 
-<a name=data-protection-implementation-key-encryption-at-rest></a>
+<a name="data-protection-implementation-key-encryption-at-rest"></a>
 
-기본적으로 데이터 보호 시스템 [경험적 접근을 사용](../configuration/default-settings.md#data-protection-default-settings) 어떻게 암호화 키 자료를 확인 하려면 휴지 암호화 해야 합니다. 개발자는 추론은 무시 하 고 수동으로 키를 미사용 암호화 해야 하는 방법을 지정할 수도 있습니다.
+기본적으로 데이터 보호 시스템 [경험적 접근을 사용](xref:security/data-protection/configuration/default-settings) 어떻게 암호화 키 자료를 확인 하려면 휴지 암호화 해야 합니다. 개발자는 추론은 무시 하 고 수동으로 키를 미사용 암호화 해야 하는 방법을 지정할 수도 있습니다.
 
 > [!NOTE]
 > 나머지 메커니즘에는 명시적 키 암호화를 지정 하는 경우 데이터 보호 시스템의 추론은 제공 하는 기본 키 저장소 메커니즘 등록을 취소 합니다. 수행 해야 [명시적 키 저장소 메커니즘을 지정](key-storage-providers.md#data-protection-implementation-key-storage-providers), 그렇지 않으면 데이터 보호 시스템 시작에 실패 합니다.
 
-<a name=data-protection-implementation-key-encryption-at-rest-providers></a>
+<a name="data-protection-implementation-key-encryption-at-rest-providers"></a>
 
 데이터 보호 시스템 세 가지 기본 키 암호화 메커니즘 함께 제공 됩니다.
 
@@ -38,17 +38,17 @@ ms.lasthandoff: 09/12/2017
 
 ```csharp
 sc.AddDataProtection()
-       // only the local user account can decrypt the keys
-       .ProtectKeysWithDpapi();
-   ```
+    // only the local user account can decrypt the keys
+    .ProtectKeysWithDpapi();
+```
 
-ProtectKeysWithDpapi 매개 변수 없이 호출 되 면 현재 Windows 사용자 계정 으로만 지속형된 키 자료를 읽을 수 있습니다. 컴퓨터 (뿐 아니라 현재 사용자 계정)의 모든 사용자 계정이 되도록 키 자료를 해독할 수와 같이 필요에 따라 지정할 수 있습니다는 아래 예제입니다.
+경우 `ProtectKeysWithDpapi` 현재 Windows 사용자 계정이 지속형된 키 자료를 해독할 수 있습니다만 매개 변수 없이 호출 됩니다. 컴퓨터 (뿐 아니라 현재 사용자 계정)의 모든 사용자 계정이 되도록 키 자료를 해독할 수와 같이 필요에 따라 지정할 수 있습니다는 아래 예제입니다.
 
 ```csharp
 sc.AddDataProtection()
-       // all user accounts on the machine can decrypt the keys
-       .ProtectKeysWithDpapi(protectToLocalMachine: true);
-   ```
+    // all user accounts on the machine can decrypt the keys
+    .ProtectKeysWithDpapi(protectToLocalMachine: true);
+```
 
 ## <a name="x509-certificate"></a>X.509 인증서
 
@@ -58,13 +58,13 @@ sc.AddDataProtection()
 
 ```csharp
 sc.AddDataProtection()
-       // searches the cert store for the cert with this thumbprint
-       .ProtectKeysWithCertificate("3BCE558E2AD3E0E34A7743EAB5AEA2A9BD2575A0");
-   ```
+    // searches the cert store for the cert with this thumbprint
+    .ProtectKeysWithCertificate("3BCE558E2AD3E0E34A7743EAB5AEA2A9BD2575A0");
+```
 
 .NET Framework 제한으로 인해 CAPI 개인 키가 있는 인증서만 지원 됩니다. 참조 [인증서 기반 암호화와 Windows DPAPI-NG](#data-protection-implementation-key-encryption-at-rest-dpapi-ng) 아래 가능한 해결 방법에 이러한 제한 사항에 대 한 합니다.
 
-<a name=data-protection-implementation-key-encryption-at-rest-dpapi-ng></a>
+<a name="data-protection-implementation-key-encryption-at-rest-dpapi-ng"></a>
 
 ## <a name="windows-dpapi-ng"></a>Windows DPAPI NG
 
@@ -80,18 +80,18 @@ Windows 8 부터는 운영 체제 DPAPI NG (CNG DPAPI 라고도 함)를 지원 �
 
 ```csharp
 sc.AddDataProtection()
-     // uses the descriptor rule "SID=S-1-5-21-..."
-     .ProtectKeysWithDpapiNG("SID=S-1-5-21-...",
-       flags: DpapiNGProtectionDescriptorFlags.None);
-   ```
+    // uses the descriptor rule "SID=S-1-5-21-..."
+    .ProtectKeysWithDpapiNG("SID=S-1-5-21-...",
+    flags: DpapiNGProtectionDescriptorFlags.None);
+```
 
-ProtectKeysWithDpapiNG 매개 변수가 없는 오버 로드를 이기도합니다. 이 규칙을 지정 하기 위한 편리한 방법 "SID 마이닝 =" 여기서 내 것은 현재 Windows 사용자 계정의 SID.
+매개 변수가 없는 오버 로드를 이기도 `ProtectKeysWithDpapiNG`합니다. 이 규칙을 지정 하기 위한 편리한 방법 "SID 마이닝 =" 여기서 내 것은 현재 Windows 사용자 계정의 SID.
 
 ```csharp
 sc.AddDataProtection()
-     // uses the descriptor rule "SID={current account SID}"
-     .ProtectKeysWithDpapiNG();
-   ```
+    // uses the descriptor rule "SID={current account SID}"
+    .ProtectKeysWithDpapiNG();
+```
 
 이 시나리오에서 AD 도메인 컨트롤러는 DPAPI NG 작업에 의해 사용 된 암호화 키를 배포 하는 일을 담당 합니다. 대상 사용자 (제공 하는 프로세스가 실행 되는 해당 id에서) 도메인에 가입 된 컴퓨터에서 암호화 된 페이로드를 해독할 수 됩니다.
 
@@ -101,13 +101,13 @@ Windows 8.1 실행 하는 경우 / Windows Server 2012 R2 이상 버전에서는
 
 ```csharp
 sc.AddDataProtection()
-       // searches the cert store for the cert with this thumbprint
-       .ProtectKeysWithDpapiNG("CERTIFICATE=HashId:3BCE558E2AD3E0E34A7743EAB5AEA2A9BD2575A0",
-           flags: DpapiNGProtectionDescriptorFlags.None);
-   ```
+    // searches the cert store for the cert with this thumbprint
+    .ProtectKeysWithDpapiNG("CERTIFICATE=HashId:3BCE558E2AD3E0E34A7743EAB5AEA2A9BD2575A0",
+        flags: DpapiNGProtectionDescriptorFlags.None);
+```
 
 Windows 8.1이 리포지토리를 가리켜야 하는 응용 프로그램을 실행 해야 / Windows Server 2012 R2 또는 나중에이 키를 알아볼 수 있습니다.
 
 ## <a name="custom-key-encryption"></a>사용자 지정 키 암호화
 
-기본 메커니즘 적합 하지 않은 경우 개발자는 사용자 지정 IXmlEncryptor 제공 하 여 고유 키 암호화 메커니즘을 지정할 수 있습니다.
+개발자는 사용자 지정을 제공 하 여 고유 키 암호화 메커니즘을 지정할 수는 기본 메커니즘 적합 하지 않은 경우 `IXmlEncryptor`합니다.

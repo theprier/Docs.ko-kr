@@ -7,3 +7,10 @@
   ```console
   dotnet aspnet-codegenerator razorpage -m Movie -dc MovieContext -udl -outDir Pages/Movies --referenceScriptLibraries
   ```
+  
+오류가 표시될 경우:
+  ```
+No executable found matching command "dotnet-aspnet-codegenerator"
+  ```
+
+프로젝트 디렉터리(*Program.cs*, *Startup.cs* 및 *.csproj* 파일이 포함된 디렉터리)에서 명령 창을 엽니다.

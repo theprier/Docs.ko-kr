@@ -11,11 +11,11 @@ ms.assetid: b355a48e-a15c-4d58-b69c-899763613a97
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/model-binding
-ms.openlocfilehash: 92085829d2a37a2aa6080aeb34a5e14be95e02d8
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: 40aa105dcf06b269025d0c44e5cd7bffef271e9d
+ms.sourcegitcommit: fe880bf4ed1c8116071c0e47c0babf3623b7f44a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 11/21/2017
 ---
 # <a name="model-binding"></a>모델 바인딩
 
@@ -61,9 +61,19 @@ The link works but generates an error when building with DocFX
 
 클래스 작업이 발생 하는 바인딩에 대 한 순서 대로 공용 기본 생성자가 있어야 하 고 바인딩되어야 멤버에는 쓰기 가능한 공용 속성 이어야 합니다. 클래스는 인스턴스화할 수 공용 기본 생성자를 사용 하 여 모델 바인딩 경우에 속성을 설정할 수 있습니다.
 
-매개 변수가 바인딩되면 모델 바인딩을 찾고 해당 이름 가진 값에 대 한 중지 하 고에 대해 다음 매개 변수를 바인딩합니다. 바인딩 실패, MVC 오류를 throw 하지 않습니다. 선택 하 여 모델 상태 오류 쿼리할 수 있습니다는 `ModelState.IsValid` 속성입니다.
+매개 변수가 바인딩되면 모델 바인딩을 찾고 해당 이름 가진 값에 대 한 중지 하 고에 대해 다음 매개 변수를 바인딩합니다. 그렇지 않은 경우 기본 모델 바인딩 동작 매개 변수를 해당 유형에 따라 해당 기본값으로 설정:
 
-참고: 각 항목에는 컨트롤러의 `ModelState` 속성은 한 `ModelStateEntry` 포함 하는 `Errors property`합니다. 것은이 컬렉션을 직접 쿼리할 필요가 거의 없습니다. 대신 `ModelState.IsValid` 를 사용하세요.
+* `T[]`:를 형식의 배열을 `byte[]`, 형식의 매개 변수를 설정 하는 바인딩 `T[]` 를 `Array.Empty<T>()`합니다. 형식의 배열 `byte[]` 로 설정 `null`합니다.
+
+* 참조 형식: 바인딩 인스턴스를 만듭니다 클래스의 기본 생성자로 속성을 설정 하지 않고 있습니다. 그러나 바인딩 집합을 모델 `string` 매개 변수를 `null`합니다.
+
+* Nullable 형식: Nullable 형식으로 설정 됩니다 `null`합니다. 위의 예제에서는 바인딩 집합을 모델 `id` 를 `null` 형식 이므로 `int?`합니다.
+
+* 값 유형: 형식이 nullable이 아닌 값 형식 `T` 로 설정 `default(T)`합니다. 모델 바인딩은 매개 변수를 설정 하는 예를 들어 `int id` 0입니다. 기본값에 의존 하지 않고 모델 유효성 검사 또는 nullable 형식을 사용 하는 것이 좋습니다.
+
+바인딩 실패, MVC 오류를 throw 하지 않습니다. 사용자 입력을 허용 하는 모든 작업을 확인 하는 `ModelState.IsValid` 속성입니다.
+
+참고: 각 항목에는 컨트롤러의 `ModelState` 속성은 한 `ModelStateEntry` 포함 하는 `Errors` 속성입니다. 것은이 컬렉션을 직접 쿼리할 필요가 거의 없습니다. 대신 `ModelState.IsValid` 를 사용하세요.
 
 또한 MVC 모델 바인딩 수행할 때 고려해 야 하는 특수 데이터 형식도 있습니다.
 

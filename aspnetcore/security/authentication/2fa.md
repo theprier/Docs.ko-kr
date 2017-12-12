@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/2fa
-ms.openlocfilehash: 802a4c92b366d656e194e2099b412e48eef7ae6d
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: 15620d89c4db2e74dbcec4707bb2ebc6df916e03
+ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 11/29/2017
 ---
 # <a name="two-factor-authentication-with-sms"></a>SMS와 2 단계 인증
 
@@ -57,7 +57,7 @@ Twilio 계정 대시보드 탭에서 복사 된 **계정 SID** 및 **인증 토�
 
 ### <a name="provide-credentials-for-the-sms-service"></a>SMS 서비스에 대 한 자격 증명을 제공 합니다.
 
-에서는 [옵션 패턴](xref:fundamentals/configuration#options-config-objects) 사용자 계정 및 키 설정에 액세스 합니다. 
+에서는 [옵션 패턴](xref:fundamentals/configuration/options) 사용자 계정 및 키 설정에 액세스 합니다. 
 
    * 보안 SMS 키를 인출 하는 클래스를 만듭니다. 이 샘플은 `SMSoptions` 클래스에 만들어집니다는 *Services/SMSoptions.cs* 파일입니다.
 
