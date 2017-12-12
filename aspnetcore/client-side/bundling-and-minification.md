@@ -1,234 +1,314 @@
 ---
 title: "묶음 및 축소에서 ASP.NET Core"
-author: spboyer
-description: 
-keywords: "ASP.NET 코어 묶음 및 축소, CSS, JavaScript, 축소할 BuildBundlerMinifier"
-ms.author: riande
+author: scottaddie
+description: "묶음 및 축소 기술을 적용 하 여 ASP.NET Core 웹 응용 프로그램에서 정적 리소스를 최적화 하는 방법에 알아봅니다."
 manager: wpickett
-ms.date: 02/28/2017
-ms.topic: article
-ms.assetid: d54230f9-8e5f-4861-a29c-1d3a14e0b0d9
-ms.technology: aspnet
+ms.author: scaddie
+ms.custom: mvc
+ms.date: 12/01/2017
+ms.devlang: csharp
 ms.prod: aspnet-core
+ms.technology: aspnet
+ms.topic: article
 uid: client-side/bundling-and-minification
-ms.openlocfilehash: 11528cb2067ced79a09845f9ff78d897da033438
-ms.sourcegitcommit: 78d28178345a0eea91556e4cd1adad98b1446db8
+ms.openlocfilehash: c271b7ef386bacedbd45fbe9f62c9c486db55b36
+ms.sourcegitcommit: 05e798c9bac7b9e9983599afb227ef393905d023
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/22/2017
+ms.lasthandoff: 12/05/2017
 ---
-# <a name="bundling-and-minification-in-aspnet-core"></a><span data-ttu-id="31979-103">묶음 및 축소에서 ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="31979-103">Bundling and minification in ASP.NET Core</span></span>
+# <a name="bundling-and-minification"></a><span data-ttu-id="bd9f2-103">묶음 및 축소</span><span class="sxs-lookup"><span data-stu-id="bd9f2-103">Bundling and minification</span></span>
 
-<span data-ttu-id="31979-104">묶음 및 축소는 다음 두 가지 기술 웹 응용 프로그램에 대 한 페이지 로드 성능 향상을 위해 ASP.NET에서 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="31979-104">Bundling and minification are two techniques you can use in ASP.NET to improve page load performance for your web application.</span></span> <span data-ttu-id="31979-105">번들로 단일 파일에 여러 파일을 결합합니다.</span><span class="sxs-lookup"><span data-stu-id="31979-105">Bundling combines multiple files into a single file.</span></span> <span data-ttu-id="31979-106">다양 한 스크립트와 페이로드가 작을수록에 CSS를 서로 다른 코드 최적화를 수행 하는 축소 합니다.</span><span class="sxs-lookup"><span data-stu-id="31979-106">Minification performs a variety of different code optimizations to scripts and CSS, which results in smaller payloads.</span></span> <span data-ttu-id="31979-107">함께 사용할 묶음 및 축소 부하 시간 여 성능을 향상 시킵니다 서버에 요청 수를 줄이고 CSS 및 JavaScript 파일과 같은 요청 된 자산의 크기를 줄이십시오.</span><span class="sxs-lookup"><span data-stu-id="31979-107">Used together, bundling and minification improves load time performance by reducing the number of requests to the server and reducing the size of the requested assets (such as CSS and JavaScript files).</span></span>
+<span data-ttu-id="bd9f2-104">작성자: [Scott Addie](https://twitter.com/Scott_Addie)</span><span class="sxs-lookup"><span data-stu-id="bd9f2-104">By [Scott Addie](https://twitter.com/Scott_Addie)</span></span>
 
-<span data-ttu-id="31979-108">이 문서에서는 묶음 및 축소, ASP.NET Core 응용 프로그램과 함께 이러한 기능은 사용할 수 있는 방법을 포함 하 여 사용의 이점에 설명 합니다.</span><span class="sxs-lookup"><span data-stu-id="31979-108">This article explains the benefits of using bundling and minification, including how these features can be used with ASP.NET Core applications.</span></span>
+<span data-ttu-id="bd9f2-105">이 문서는 이점과 묶음 및 축소, ASP.NET Core 웹 앱과 이러한 기능은 사용할 수 있는 방법을 포함 하 여 설명 합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-105">This article explains the benefits of applying bundling and minification, including how these features can be used with ASP.NET Core web apps.</span></span>
 
-## <a name="overview"></a><span data-ttu-id="31979-109">개요</span><span class="sxs-lookup"><span data-stu-id="31979-109">Overview</span></span>
+## <a name="what-is-bundling-and-minification"></a><span data-ttu-id="bd9f2-106">묶음 및 축소는 무엇입니까?</span><span class="sxs-lookup"><span data-stu-id="bd9f2-106">What is bundling and minification?</span></span>
 
-<span data-ttu-id="31979-110">ASP.NET Core 응용 프로그램에서 묶음 및 축소 클라이언트 리소스에 대 한 여러 옵션이 있습니다.</span><span class="sxs-lookup"><span data-stu-id="31979-110">In ASP.NET Core apps, there are multiple options for bundling and minifying client-side resources.</span></span> <span data-ttu-id="31979-111">MVC에 대 한 핵심 템플릿 구성 파일 및 BuildBundlerMinifier NuGet 패키지를 사용 하 여 기본적으로 솔루션을 제공 합니다.</span><span class="sxs-lookup"><span data-stu-id="31979-111">The core templates for MVC provide an out-of-the-box solution using a configuration file and BuildBundlerMinifier NuGet package.</span></span> <span data-ttu-id="31979-112">와 같은 타사 도구 [Gulp](using-gulp.md) 및 [Grunt](using-grunt.md) 추가 워크플로 또는 복잡 한 프로세스 필요한 해야 동일한 작업을 수행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="31979-112">Third party tools, such as [Gulp](using-gulp.md) and [Grunt](using-grunt.md) are also available to accomplish the same tasks should your processes require additional workflow or complexities.</span></span> <span data-ttu-id="31979-113">디자인 타임 묶음 및 축소를 사용 하 여 응용 프로그램의 배포 하기 전에 축소 된 파일이 생성 됩니다.</span><span class="sxs-lookup"><span data-stu-id="31979-113">By using design-time bundling and minification, the minified files are created prior to the application’s deployment.</span></span> <span data-ttu-id="31979-114">묶음 및 축소 배포 하기 전에 서버 부하 감소의 이점이 있습니다.</span><span class="sxs-lookup"><span data-stu-id="31979-114">Bundling and minifying before deployment provides the advantage of reduced server load.</span></span> <span data-ttu-id="31979-115">그러나 해당 디자인 타임 번들로 인식 해야 하 고 축소 빌드 복잡성을 증가 하 고 정적 파일 에서만 작동 합니다.</span><span class="sxs-lookup"><span data-stu-id="31979-115">However, it’s important to recognize that design-time bundling and minification increases build complexity and only works with static files.</span></span>
+<span data-ttu-id="bd9f2-107">묶음 및 축소는 두 가지 고유한 성능 최적화가 웹 응용 프로그램에 적용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-107">Bundling and minification are two distinct performance optimizations you can apply in a web app.</span></span> <span data-ttu-id="bd9f2-108">함께 사용할 묶음 및 축소 성능을 향상 시킬 서버 요청 수를 줄이면 및 정적 요청 된 자산의 크기를 줄이십시오.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-108">Used together, bundling and minification improve performance by reducing the number of server requests and reducing the size of the requested static assets.</span></span>
 
-<span data-ttu-id="31979-116">묶음 및 축소는 주로 첫 번째 페이지 요청 부하 시간을 개선 합니다.</span><span class="sxs-lookup"><span data-stu-id="31979-116">Bundling and minification primarily improve the first page request load time.</span></span> <span data-ttu-id="31979-117">브라우저 캐시 자산 (JavaScript, CSS 및 이미지) 웹 페이지를 요청 되 면 페이지는 동일한 사이트 자산과 동일한 요청 하거나 묶음 및 축소 같은 페이지를 요청할 때 모든 성능 향상을 제공 하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="31979-117">Once a web page has been requested, the browser caches the assets (JavaScript, CSS and images) so bundling and minification won’t provide any performance boost when requesting the same page, or pages on the same site requesting the same assets.</span></span> <span data-ttu-id="31979-118">설정 하지 않으면는 사용자의 자산에서 올바르게 헤더 만료 묶음 및 축소를 사용 하지 않는, 브라우저의 새로 고침 추론 됩니다 자산 부실 몇 일 후 약관을 표시할 브라우저 각 자산에 대 한 유효성 검사 요청을 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="31979-118">If you don’t set the expires header correctly on your assets, and you don’t use bundling and minification, the browser's freshness heuristics will mark the assets stale after a few days and the browser will require a validation request for each asset.</span></span> <span data-ttu-id="31979-119">이 경우 묶음 및 축소 첫 번째 페이지 요청 후에 성능 향상을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="31979-119">In this case, bundling and minification provide a performance increase even after the first page request.</span></span>
+<span data-ttu-id="bd9f2-109">묶음 및 축소는 주로 첫 번째 페이지 요청 부하 시간을 개선 합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-109">Bundling and minification primarily improve the first page request load time.</span></span> <span data-ttu-id="bd9f2-110">웹 페이지를 요청 되 면 브라우저 정적 자산 (JavaScript, CSS 및 이미지)를 캐시 합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-110">Once a web page has been requested, the browser caches the static assets (JavaScript, CSS, and images).</span></span> <span data-ttu-id="bd9f2-111">따라서 묶음 및 축소 하지 때 성능을 향상 시킬 동일한 페이지 또는 같은 자산을 요청 하는 동일한 사이트에서 페이지를 요청 합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-111">Consequently, bundling and minification don't improve performance when requesting the same page, or pages, on the same site requesting the same assets.</span></span> <span data-ttu-id="bd9f2-112">설정 하지 않으면는 사용자의 자산에서 올바르게 헤더 만료 되 고 묶음 및 축소를 사용 하지 않는 경우 브라우저의 새로 고침 추론 표시 자산 부실 몇 일 후 합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-112">If you don't set the expires header correctly on your assets, and if you don’t use bundling and minification, the browser's freshness heuristics mark the assets stale after a few days.</span></span> <span data-ttu-id="bd9f2-113">또한 브라우저 각 자산에 대 한 유효성 검사 요청을 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-113">Additionally, the browser requires a validation request for each asset.</span></span> <span data-ttu-id="bd9f2-114">이 경우 묶음 및 축소 첫 번째 페이지 요청 후에 뛰어난 성능을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-114">In this case, bundling and minification provide a performance improvement even after the first page request.</span></span>
 
-### <a name="bundling"></a><span data-ttu-id="31979-120">번들</span><span class="sxs-lookup"><span data-stu-id="31979-120">Bundling</span></span>
+### <a name="bundling"></a><span data-ttu-id="bd9f2-115">번들</span><span class="sxs-lookup"><span data-stu-id="bd9f2-115">Bundling</span></span>
 
-<span data-ttu-id="31979-121">번들로 결합 하거나 단일 파일에 여러 파일을 번들을 활용할 수 있는 기능입니다.</span><span class="sxs-lookup"><span data-stu-id="31979-121">Bundling is a feature that makes it easy to combine or bundle multiple files into a single file.</span></span> <span data-ttu-id="31979-122">번들 파일 결합 하 여 여러 단일 파일로, 되므로 검색 하 고 웹 페이지 등의 웹 자산을 표시 하는 데 필요한 서버에 요청 수 감소 시킵니다.</span><span class="sxs-lookup"><span data-stu-id="31979-122">Because bundling combines multiple files into a single file, it reduces the number of requests to the server that are required to retrieve and display a web asset, such as a web page.</span></span> <span data-ttu-id="31979-123">CSS, JavaScript 및 다른 번들을 만들 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="31979-123">You can create CSS, JavaScript and other bundles.</span></span> <span data-ttu-id="31979-124">적은 파일 서버에 브라우저 또는 응용 프로그램을 제공 하는 서비스에서 더 적은 수의 HTTP 요청을 의미 합니다.</span><span class="sxs-lookup"><span data-stu-id="31979-124">Fewer files means fewer HTTP requests from your browser to the server or from the service providing your application.</span></span> <span data-ttu-id="31979-125">이 결과에서 첫 번째 페이지 부하 성능이 향상 되었습니다.</span><span class="sxs-lookup"><span data-stu-id="31979-125">This results in improved first page load performance.</span></span>
+<span data-ttu-id="bd9f2-116">번들로 단일 파일에 여러 파일을 결합합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-116">Bundling combines multiple files into a single file.</span></span> <span data-ttu-id="bd9f2-117">번들 웹 페이지 등의 웹 자산을 렌더링 하는 데 필요한 서버 요청의 수를 줄입니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-117">Bundling reduces the number of server requests which are necessary to render a web asset, such as a web page.</span></span> <span data-ttu-id="bd9f2-118">CSS, JavaScript 등을 위해 특별히 개수에 관계 없이 개별 번들을 만들 수 있습니다. 적은 파일 서버에 대 한 브라우저 또는 응용 프로그램을 제공 하는 서비스에서 더 적은 수의 HTTP 요청을 의미 합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-118">You can create any number of individual bundles specifically for CSS, JavaScript, etc. Fewer files means fewer HTTP requests from the browser to the server or from the service providing your application.</span></span> <span data-ttu-id="bd9f2-119">이 결과에서 첫 번째 페이지 부하 성능이 향상 되었습니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-119">This results in improved first page load performance.</span></span>
 
-### <a name="minification"></a><span data-ttu-id="31979-126">축소</span><span class="sxs-lookup"><span data-stu-id="31979-126">Minification</span></span>
+### <a name="minification"></a><span data-ttu-id="bd9f2-120">축소</span><span class="sxs-lookup"><span data-stu-id="bd9f2-120">Minification</span></span>
 
-<span data-ttu-id="31979-127">다양 한 요청 된 자산 (예: CSS, 이미지, JavaScript 파일)의 크기를 줄이기 위해 다른 코드 최적화를 수행 하는 축소 합니다.</span><span class="sxs-lookup"><span data-stu-id="31979-127">Minification performs a variety of different code optimizations to reduce the size of requested assets (such as CSS, images, JavaScript files).</span></span> <span data-ttu-id="31979-128">축소의 일반적인 결과 불필요 한 공백 및 메모를 제거 하 고 한 문자를 변수 이름을 단축 포함 됩니다.</span><span class="sxs-lookup"><span data-stu-id="31979-128">Common results of minification include removing unnecessary white space and comments, and shortening variable names to one character.</span></span>
+<span data-ttu-id="bd9f2-121">축소 기능을 변경 하지 않고 코드에서 불필요 한 문자를 제거 합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-121">Minification removes unnecessary characters from code without altering functionality.</span></span> <span data-ttu-id="bd9f2-122">결과 요청 된 자산 (예: CSS, 이미지 및 JavaScript 파일)의 크기가 크게 감소 합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-122">The result is a significant size reduction in requested assets (such as CSS, images, and JavaScript files).</span></span> <span data-ttu-id="bd9f2-123">축소의 일반적인 부작용에는 한 문자를 변수 이름을 단축 및 주석과 불필요 한 공백이 제거 포함 됩니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-123">Common side effects of minification include shortening variable names to one character and removing comments and unnecessary whitespace.</span></span>
 
-<span data-ttu-id="31979-129">다음 JavaScript 함수가 있다고 합시다.</span><span class="sxs-lookup"><span data-stu-id="31979-129">Consider the following JavaScript function:</span></span>
+<span data-ttu-id="bd9f2-124">다음 JavaScript 함수가 있다고 합시다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-124">Consider the following JavaScript function:</span></span>
 
-```javascript
-AddAltToImg = function (imageTagAndImageID, imageContext) {
-  ///<signature>
-  ///<summary> Adds an alt tab to the image
-  // </summary>
-  //<param name="imgElement" type="String">The image selector.</param>
-  //<param name="ContextForImage" type="String">The image context.</param>
-  ///</signature>
-  var imageElement = $(imageTagAndImageID, imageContext);
-  imageElement.attr('alt', imageElement.attr('id').replace(/ID/, ''));
-}
-```
+[!code-javascript[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/wwwroot/js/site.js)]
 
-<span data-ttu-id="31979-130">축소 후 함수가 다음과 감소 됩니다.</span><span class="sxs-lookup"><span data-stu-id="31979-130">After minification, the function is reduced to the following:</span></span>
+<span data-ttu-id="bd9f2-125">다음으로 함수를 축소 하는 축소:</span><span class="sxs-lookup"><span data-stu-id="bd9f2-125">Minification reduces the function to the following:</span></span>
 
-```javascript
-AddAltToImg=function(t,a){var r=$(t,a);r.attr("alt",r.attr("id").replace(/ID/,""))};
-```
+[!code-javascript[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/wwwroot/js/site.min.js)]
 
-<span data-ttu-id="31979-131">주석 및 불필요 한 공백을 제거 하는 것 외에도 다음 매개 변수 및 변수 이름은 열의 이름을 (축약 됨) 다음과 같습니다.</span><span class="sxs-lookup"><span data-stu-id="31979-131">In addition to removing the comments and unnecessary whitespace, the following parameters and variable names were renamed (shortened) as follows:</span></span>
+<span data-ttu-id="bd9f2-126">주석 및 불필요 한 공백을 제거 하는 것 외에도 다음 매개 변수 및 변수 이름 열의 이름을 다음과 같습니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-126">In addition to removing the comments and unnecessary whitespace, the following parameter and variable names were renamed as follows:</span></span>
 
-<span data-ttu-id="31979-132">원래 색</span><span class="sxs-lookup"><span data-stu-id="31979-132">Original</span></span> | <span data-ttu-id="31979-133">이름이 바뀜</span><span class="sxs-lookup"><span data-stu-id="31979-133">Renamed</span></span>
+<span data-ttu-id="bd9f2-127">원래 색</span><span class="sxs-lookup"><span data-stu-id="bd9f2-127">Original</span></span> | <span data-ttu-id="bd9f2-128">이름이 바뀜</span><span class="sxs-lookup"><span data-stu-id="bd9f2-128">Renamed</span></span>
 --- | :---:
-<span data-ttu-id="31979-134">imageTagAndImageID</span><span class="sxs-lookup"><span data-stu-id="31979-134">imageTagAndImageID</span></span> | <span data-ttu-id="31979-135">t</span><span class="sxs-lookup"><span data-stu-id="31979-135">t</span></span>
-<span data-ttu-id="31979-136">이미지 컨텍스트</span><span class="sxs-lookup"><span data-stu-id="31979-136">imageContext</span></span> | <span data-ttu-id="31979-137">a</span><span class="sxs-lookup"><span data-stu-id="31979-137">a</span></span>
-<span data-ttu-id="31979-138">imageElement</span><span class="sxs-lookup"><span data-stu-id="31979-138">imageElement</span></span> | <span data-ttu-id="31979-139">r</span><span class="sxs-lookup"><span data-stu-id="31979-139">r</span></span>
+`imageTagAndImageID` | `t`
+`imageContext` | `a`
+`imageElement` | `r`
 
-## <a name="impact-of-bundling-and-minification"></a><span data-ttu-id="31979-140">묶음 및 축소의 영향</span><span class="sxs-lookup"><span data-stu-id="31979-140">Impact of bundling and minification</span></span>
+## <a name="impact-of-bundling-and-minification"></a><span data-ttu-id="bd9f2-129">묶음 및 축소의 영향</span><span class="sxs-lookup"><span data-stu-id="bd9f2-129">Impact of bundling and minification</span></span>
 
-<span data-ttu-id="31979-141">다음 표에서 모든 자산을 개별적으로 나열 하 고 간단한 웹 페이지에서 묶음 및 축소를 사용 하 여 간의 몇 가지 중요 한 차이점을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="31979-141">The following table shows several important differences between listing all the assets individually and using bundling and minification on a simple web page:</span></span>
+<span data-ttu-id="bd9f2-130">다음 표에서 개별적으로 자산을 로드 하 고 묶음 및 축소를 사용 하 여 차이점을 설명 합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-130">The following table outlines differences between individually loading assets and using bundling and minification:</span></span>
 
-<span data-ttu-id="31979-142">작업</span><span class="sxs-lookup"><span data-stu-id="31979-142">Action</span></span> | <span data-ttu-id="31979-143">M B/으로</span><span class="sxs-lookup"><span data-stu-id="31979-143">With B/M</span></span> | <span data-ttu-id="31979-144">M B/없이</span><span class="sxs-lookup"><span data-stu-id="31979-144">Without B/M</span></span> | <span data-ttu-id="31979-145">변경</span><span class="sxs-lookup"><span data-stu-id="31979-145">Change</span></span>
+<span data-ttu-id="bd9f2-131">작업</span><span class="sxs-lookup"><span data-stu-id="bd9f2-131">Action</span></span> | <span data-ttu-id="bd9f2-132">M B/으로</span><span class="sxs-lookup"><span data-stu-id="bd9f2-132">With B/M</span></span> | <span data-ttu-id="bd9f2-133">M B/없이</span><span class="sxs-lookup"><span data-stu-id="bd9f2-133">Without B/M</span></span> | <span data-ttu-id="bd9f2-134">변경</span><span class="sxs-lookup"><span data-stu-id="bd9f2-134">Change</span></span>
 --- | :---: | :---: | :---:
-<span data-ttu-id="31979-146">파일 요청</span><span class="sxs-lookup"><span data-stu-id="31979-146">File Requests</span></span> |<span data-ttu-id="31979-147">7</span><span class="sxs-lookup"><span data-stu-id="31979-147">7</span></span> | <span data-ttu-id="31979-148">18</span><span class="sxs-lookup"><span data-stu-id="31979-148">18</span></span> | <span data-ttu-id="31979-149">157%</span><span class="sxs-lookup"><span data-stu-id="31979-149">157%</span></span>
-<span data-ttu-id="31979-150">전송 KB</span><span class="sxs-lookup"><span data-stu-id="31979-150">KB Transferred</span></span> | <span data-ttu-id="31979-151">156</span><span class="sxs-lookup"><span data-stu-id="31979-151">156</span></span> | <span data-ttu-id="31979-152">264.68</span><span class="sxs-lookup"><span data-stu-id="31979-152">264.68</span></span> | <span data-ttu-id="31979-153">70%</span><span class="sxs-lookup"><span data-stu-id="31979-153">70%</span></span>
-<span data-ttu-id="31979-154">로드 시간 (밀리초)</span><span class="sxs-lookup"><span data-stu-id="31979-154">Load Time (MS)</span></span> | <span data-ttu-id="31979-155">885</span><span class="sxs-lookup"><span data-stu-id="31979-155">885</span></span> | <span data-ttu-id="31979-156">2360</span><span class="sxs-lookup"><span data-stu-id="31979-156">2360</span></span> | <span data-ttu-id="31979-157">167%</span><span class="sxs-lookup"><span data-stu-id="31979-157">167%</span></span>
+<span data-ttu-id="bd9f2-135">파일 요청</span><span class="sxs-lookup"><span data-stu-id="bd9f2-135">File Requests</span></span>  | <span data-ttu-id="bd9f2-136">7</span><span class="sxs-lookup"><span data-stu-id="bd9f2-136">7</span></span>   | <span data-ttu-id="bd9f2-137">18</span><span class="sxs-lookup"><span data-stu-id="bd9f2-137">18</span></span>     | <span data-ttu-id="bd9f2-138">157%</span><span class="sxs-lookup"><span data-stu-id="bd9f2-138">157%</span></span>
+<span data-ttu-id="bd9f2-139">전송 KB</span><span class="sxs-lookup"><span data-stu-id="bd9f2-139">KB Transferred</span></span> | <span data-ttu-id="bd9f2-140">156</span><span class="sxs-lookup"><span data-stu-id="bd9f2-140">156</span></span> | <span data-ttu-id="bd9f2-141">264.68</span><span class="sxs-lookup"><span data-stu-id="bd9f2-141">264.68</span></span> | <span data-ttu-id="bd9f2-142">70%</span><span class="sxs-lookup"><span data-stu-id="bd9f2-142">70%</span></span>
+<span data-ttu-id="bd9f2-143">로드 시간 (밀리초)</span><span class="sxs-lookup"><span data-stu-id="bd9f2-143">Load Time (ms)</span></span> | <span data-ttu-id="bd9f2-144">885</span><span class="sxs-lookup"><span data-stu-id="bd9f2-144">885</span></span> | <span data-ttu-id="bd9f2-145">2360</span><span class="sxs-lookup"><span data-stu-id="bd9f2-145">2360</span></span>   | <span data-ttu-id="bd9f2-146">167%</span><span class="sxs-lookup"><span data-stu-id="bd9f2-146">167%</span></span>
 
-<span data-ttu-id="31979-158">보낸 바이트 브라우저 요청에 적용 되는 HTTP 헤더와 함께 매우 자세한 정보는 번들 소프트웨어 크게 감소를 했습니다.</span><span class="sxs-lookup"><span data-stu-id="31979-158">The bytes sent had a significant reduction with bundling as browsers are fairly verbose with the HTTP headers that they apply on requests.</span></span> <span data-ttu-id="31979-159">이 예제를 로컬로 실행 되지만 로드 시간이 상당히 개선을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="31979-159">The load time shows a big improvement, however this example was run locally.</span></span> <span data-ttu-id="31979-160">자산 묶음 및 축소를 사용 하 여 네트워크를 통해 전송 되 면 성능에 큰 향상 발생 합니다.</span><span class="sxs-lookup"><span data-stu-id="31979-160">You will get greater gains in performance when using bundling and minification with assets transferred over a network.</span></span>
+<span data-ttu-id="bd9f2-147">브라우저는 HTTP 요청 헤더와 관련 하 여 매우 자세한 정보를 표시 합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-147">Browsers are fairly verbose with regard to HTTP request headers.</span></span> <span data-ttu-id="bd9f2-148">총 바이트 메트릭을 보여 준다는 사실을 알았습니다을 크게 절감 번들로 묶으면 전송 합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-148">The total bytes sent metric saw a significant reduction when bundling.</span></span> <span data-ttu-id="bd9f2-149">이 예에서는 로컬로 실행 되지만 로드 시간이 크게 향상을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-149">The load time shows a significant improvement, however this example ran locally.</span></span> <span data-ttu-id="bd9f2-150">큰 성능 향상은 자산 묶음 및 축소를 사용 하 여 네트워크를 통해 전송 될 때 실현 됩니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-150">Greater performance gains are realized when using bundling and minification with assets transferred over a network.</span></span>
 
-## <a name="using-bundling-and-minification-in-a-project"></a><span data-ttu-id="31979-161">묶음 및 축소를 사용 하 여 프로젝트의</span><span class="sxs-lookup"><span data-stu-id="31979-161">Using bundling and minification in a project</span></span>
+## <a name="choose-a-bundling-and-minification-strategy"></a><span data-ttu-id="bd9f2-151">묶음 및 축소 전략 선택</span><span class="sxs-lookup"><span data-stu-id="bd9f2-151">Choose a bundling and minification strategy</span></span>
 
-<span data-ttu-id="31979-162">MVC 프로젝트 템플릿은 제공는 `bundleconfig.json` 구성 파일을 각 번들에 대 한 옵션을 정의 합니다.</span><span class="sxs-lookup"><span data-stu-id="31979-162">The MVC project template provides a `bundleconfig.json` configuration file which defines the options for each bundle.</span></span> <span data-ttu-id="31979-163">기본적으로 단일 번들 구성 사용자 지정 JavaScript에 대 한 정의 (`wwwroot/js/site.js`) 및 스타일 시트 (`wwwroot/css/site.css`) 파일입니다.</span><span class="sxs-lookup"><span data-stu-id="31979-163">By default, a single bundle configuration is defined for the custom JavaScript (`wwwroot/js/site.js`) and Stylesheet (`wwwroot/css/site.css`) files.</span></span>
+<span data-ttu-id="bd9f2-152">MVC 및 Razor 페이지 프로젝트 템플릿은 묶음 및 축소는 JSON 구성 파일의 구성에 대 한 기본적으로 솔루션을 제공 합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-152">The MVC and Razor Pages project templates provide an out-of-the-box solution for bundling and minification consisting of a JSON configuration file.</span></span> <span data-ttu-id="bd9f2-153">와 같은 타사 도구는 [Gulp](xref:client-side/using-gulp) 및 [Grunt](xref:client-side/using-grunt) runner 작업을 좀 더 복잡 한와 동일한 작업을 수행 합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-153">Third-party tools, such as the [Gulp](xref:client-side/using-gulp) and [Grunt](xref:client-side/using-grunt) task runners, accomplish the same tasks with a bit more complexity.</span></span> <span data-ttu-id="bd9f2-154">개발 워크플로에 묶음 및 축소 이외의 처리가 필요한 경우에 타사 도구는 갖추고&mdash;linting 및 이미지 최적화 합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-154">A third-party tool is a great fit when your development workflow requires processing beyond bundling and minification&mdash;such as linting and image optimization.</span></span> <span data-ttu-id="bd9f2-155">디자인 타임 묶음 및 축소를 사용 하 여 응용 프로그램의 배포 하기 전에 축소 된 파일이 생성 됩니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-155">By using design-time bundling and minification, the minified files are created prior to the app's deployment.</span></span> <span data-ttu-id="bd9f2-156">묶음 및 축소 배포 하기 전에 서버 부하 감소의 이점이 있습니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-156">Bundling and minifying before deployment provides the advantage of reduced server load.</span></span> <span data-ttu-id="bd9f2-157">그러나 해당 디자인 타임 번들로 인식 해야 하 고 축소 빌드 복잡성을 증가 하 고 정적 파일 에서만 작동 합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-157">However, it's important to recognize that design-time bundling and minification increases build complexity and only works with static files.</span></span>
 
-[!code-json[Main](../client-side/bundling-and-minification/samples/BuildBundlerMinifierExample/bundleconfig.json)]
+## <a name="configure-bundling-and-minification"></a><span data-ttu-id="bd9f2-158">묶음 및 축소 구성</span><span class="sxs-lookup"><span data-stu-id="bd9f2-158">Configure bundling and minification</span></span>
 
-<span data-ttu-id="31979-164">번들 옵션은 다음과 같습니다.</span><span class="sxs-lookup"><span data-stu-id="31979-164">Bundle options include:</span></span>
+<span data-ttu-id="bd9f2-159">MVC 및 Razor 페이지 프로젝트 템플릿에 *bundleconfig.json* 구성 파일을 각 번들에 대 한 옵션을 정의 합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-159">The MVC and Razor Pages project templates provide a *bundleconfig.json* configuration file which defines the options for each bundle.</span></span> <span data-ttu-id="bd9f2-160">기본적으로 단일 번들 구성 사용자 지정 JavaScript에 대 한 정의 (*wwwroot/js/site.js*) 및 스타일 시트 (*wwwroot/css/site.css*) 파일:</span><span class="sxs-lookup"><span data-stu-id="bd9f2-160">By default, a single bundle configuration is defined for the custom JavaScript (*wwwroot/js/site.js*) and stylesheet (*wwwroot/css/site.css*) files:</span></span>
 
-* <span data-ttu-id="31979-165">outputFileName-출력 번들 파일의 이름입니다.</span><span class="sxs-lookup"><span data-stu-id="31979-165">outputFileName - name of the bundle file to output.</span></span> <span data-ttu-id="31979-166">상대 경로 포함할 수 있습니다는 `bundleconfig.json` 파일입니다.</span><span class="sxs-lookup"><span data-stu-id="31979-166">Can contain a relative path from the `bundleconfig.json` file.</span></span> <span data-ttu-id="31979-167">**필수**</span><span class="sxs-lookup"><span data-stu-id="31979-167">**required**</span></span>
-* <span data-ttu-id="31979-168">inputFiles-함께 번들로 묶는 파일의 배열입니다.</span><span class="sxs-lookup"><span data-stu-id="31979-168">inputFiles - array of files to bundle together.</span></span> <span data-ttu-id="31979-169">이들은 구성 파일에 상대 경로입니다.</span><span class="sxs-lookup"><span data-stu-id="31979-169">These are relative paths to the configuration file.</span></span> <span data-ttu-id="31979-170">**선택적**, * 빈 출력 파일에 빈 값이 발생 합니다.</span><span class="sxs-lookup"><span data-stu-id="31979-170">**optional**, *an empty value results in an empty output file.</span></span> <span data-ttu-id="31979-171">[와일드 카드 사용](http://www.tldp.org/LDP/abs/html/globbingref.html) 패턴이 지원 됩니다.</span><span class="sxs-lookup"><span data-stu-id="31979-171">[globbing](http://www.tldp.org/LDP/abs/html/globbingref.html) patterns are supported.</span></span>
-* <span data-ttu-id="31979-172">축소할-출력에 대 한 축소 옵션을 입력 합니다.</span><span class="sxs-lookup"><span data-stu-id="31979-172">minify - minification options for the output type.</span></span> <span data-ttu-id="31979-173">**선택적**, *기본값-`minify: { enabled: true }`*</span><span class="sxs-lookup"><span data-stu-id="31979-173">**optional**, *default - `minify: { enabled: true }`*</span></span>
-  * <span data-ttu-id="31979-174">구성 옵션은 출력 파일 형식을 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="31979-174">Configuration options are available per output file type.</span></span>
-    * [<span data-ttu-id="31979-175">CSS Minifier입니다.</span><span class="sxs-lookup"><span data-stu-id="31979-175">CSS Minifier</span></span>](https://github.com/madskristensen/BundlerMinifier/wiki/cssminifier)
-    * [<span data-ttu-id="31979-176">JavaScript Minifier입니다.</span><span class="sxs-lookup"><span data-stu-id="31979-176">JavaScript Minifier</span></span>](https://github.com/madskristensen/BundlerMinifier/wiki)
-    * [<span data-ttu-id="31979-177">HTML Minifier입니다.</span><span class="sxs-lookup"><span data-stu-id="31979-177">HTML Minifier</span></span>](https://github.com/madskristensen/BundlerMinifier/wiki)
-* <span data-ttu-id="31979-178">includeInProject-프로젝트 파일 생성 된 파일을 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="31979-178">includeInProject - add generated files to project file.</span></span> <span data-ttu-id="31979-179">**선택적**, *기본값-false*</span><span class="sxs-lookup"><span data-stu-id="31979-179">**optional**, *default - false*</span></span>
-* <span data-ttu-id="31979-180">-sourcemap을 내보내면 해당 번들된 파일에 대 한 소스 맵을 생성 합니다.</span><span class="sxs-lookup"><span data-stu-id="31979-180">sourceMaps - generate source maps for the bundled file.</span></span> <span data-ttu-id="31979-181">**선택적**, *기본값-false*</span><span class="sxs-lookup"><span data-stu-id="31979-181">**optional**, *default - false*</span></span>
+[!code-json[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/bundleconfig.json)]
 
-### <a name="visual-studio-2015--2017"></a><span data-ttu-id="31979-182">Visual Studio 2015 / 2017</span><span class="sxs-lookup"><span data-stu-id="31979-182">Visual Studio 2015 / 2017</span></span>
+<span data-ttu-id="bd9f2-161">번들 옵션은 다음과 같습니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-161">Bundle options include:</span></span>
 
-<span data-ttu-id="31979-183">열기 `bundleconfig.json` Visual Studio에서 사용자 환경에 설치 해야 합니다; 확장명이 없는 묻는 메시지가 표시 됩니다 하나이 파일 형식을 지원할 수 있는지를 제안 합니다.</span><span class="sxs-lookup"><span data-stu-id="31979-183">Open `bundleconfig.json` in Visual Studio, if your environment does not have the extension installed; a prompt is presented suggesting that there is one that could assist with this file type.</span></span>
+* <span data-ttu-id="bd9f2-162">`outputFileName`: 출력 번들 파일의 이름입니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-162">`outputFileName`: The name of the bundle file to output.</span></span> <span data-ttu-id="bd9f2-163">상대 경로 포함할 수 있습니다는 *bundleconfig.json* 파일입니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-163">Can contain a relative path from the *bundleconfig.json* file.</span></span> <span data-ttu-id="bd9f2-164">**필수**</span><span class="sxs-lookup"><span data-stu-id="bd9f2-164">**required**</span></span>
+* <span data-ttu-id="bd9f2-165">`inputFiles`: 함께 번들로 묶는 파일의 배열입니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-165">`inputFiles`: An array of files to bundle together.</span></span> <span data-ttu-id="bd9f2-166">이들은 구성 파일에 상대 경로입니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-166">These are relative paths to the configuration file.</span></span> <span data-ttu-id="bd9f2-167">**선택적**, * 빈 출력 파일에 빈 값이 발생 합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-167">**optional**, *an empty value results in an empty output file.</span></span> <span data-ttu-id="bd9f2-168">[와일드 카드 사용](http://www.tldp.org/LDP/abs/html/globbingref.html) 패턴이 지원 됩니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-168">[globbing](http://www.tldp.org/LDP/abs/html/globbingref.html) patterns are supported.</span></span>
+* <span data-ttu-id="bd9f2-169">`minify`: 출력 형식에 대 한 축소 옵션입니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-169">`minify`: The minification options for the output type.</span></span> <span data-ttu-id="bd9f2-170">**선택적**, *기본값-`minify: { enabled: true }`*</span><span class="sxs-lookup"><span data-stu-id="bd9f2-170">**optional**, *default - `minify: { enabled: true }`*</span></span>
+  * <span data-ttu-id="bd9f2-171">구성 옵션은 출력 파일 형식을 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-171">Configuration options are available per output file type.</span></span>
+    * [<span data-ttu-id="bd9f2-172">CSS Minifier입니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-172">CSS Minifier</span></span>](https://github.com/madskristensen/BundlerMinifier/wiki/cssminifier)
+    * [<span data-ttu-id="bd9f2-173">JavaScript Minifier입니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-173">JavaScript Minifier</span></span>](https://github.com/madskristensen/BundlerMinifier/wiki/JavaScript-Minifier-settings)
+    * [<span data-ttu-id="bd9f2-174">HTML Minifier입니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-174">HTML Minifier</span></span>](https://github.com/madskristensen/BundlerMinifier/wiki)
+* <span data-ttu-id="bd9f2-175">`includeInProject`: 프로젝트 파일을 생성 된 파일을 추가할 것인지를 나타내는 플래그입니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-175">`includeInProject`: Flag indicating whether to add generated files to project file.</span></span> <span data-ttu-id="bd9f2-176">**선택적**, *기본값-false*</span><span class="sxs-lookup"><span data-stu-id="bd9f2-176">**optional**, *default - false*</span></span>
+* <span data-ttu-id="bd9f2-177">`sourceMap`: 해당 번들된 파일에 대 한 소스 맵을 생성 여부를 나타내는 플래그입니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-177">`sourceMap`: Flag indicating whether to generate a source map for the bundled file.</span></span> <span data-ttu-id="bd9f2-178">**선택적**, *기본값-false*</span><span class="sxs-lookup"><span data-stu-id="bd9f2-178">**optional**, *default - false*</span></span>
+* <span data-ttu-id="bd9f2-179">`sourceMapRootPath`생성 된 소스 맵 파일을 저장 하기 위한: 루트 경로입니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-179">`sourceMapRootPath`: The root path for storing the generated source map file.</span></span>
 
-![BuildBundlerMinifier 확장 제안](../client-side/bundling-and-minification/_static/bundler-extension-suggestion.png)
+## <a name="build-time-execution-of-bundling-and-minification"></a><span data-ttu-id="bd9f2-180">빌드 타임 실행 묶음 및 축소</span><span class="sxs-lookup"><span data-stu-id="bd9f2-180">Build-time execution of bundling and minification</span></span>
 
-<span data-ttu-id="31979-185">확장 보기를 선택 하 고 설치는 **번들러 & Minifier** 확장 (Visual Studio가 필요 다시 시작)입니다.</span><span class="sxs-lookup"><span data-stu-id="31979-185">Select View Extensions, and install the **Bundler & Minifier** extension (Requires Visual Studio restart).</span></span>
+<span data-ttu-id="bd9f2-181">[BuildBundlerMinifier](https://www.nuget.org/packages/BuildBundlerMinifier/) 번들로 실행 및 축소 빌드 시 NuGet 패키지에 사용 하도록 설정 합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-181">The [BuildBundlerMinifier](https://www.nuget.org/packages/BuildBundlerMinifier/) NuGet package enables the execution of bundling and minification at build time.</span></span> <span data-ttu-id="bd9f2-182">패키지를 삽입 합니다. [MSBuild 대상](/visualstudio/msbuild/msbuild-targets) 를 빌드 및 정리 시간에 실행 합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-182">The package injects [MSBuild Targets](/visualstudio/msbuild/msbuild-targets) which run at build and clean time.</span></span> <span data-ttu-id="bd9f2-183">*bundleconfig.json* 파일 정의 된 구성에 따라 출력 파일을 생성 하는 빌드 프로세스에 의해 분석 됩니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-183">The *bundleconfig.json* file is analyzed by the build process to produce the output files based on the defined configuration.</span></span>
 
-![BuildBundlerMinifier 확장 제안](../client-side/bundling-and-minification/_static/view-extension.png)
+# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="bd9f2-184">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="bd9f2-184">Visual Studio</span></span>](#tab/visual-studio) 
 
-<span data-ttu-id="31979-187">다시 시작이 완료 되 면 축소 및 클라이언트 쪽 자산 번들의 프로세스를 실행 하 여 빌드를 구성 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="31979-187">When the restart is complete, you need to configure the build to run the processes of minifying and bundling the client-side assets.</span></span> <span data-ttu-id="31979-188">마우스 오른쪽 단추로 클릭는 `bundleconfig.json` 파일을 선택 *빌드에 사용 번들... *.</span><span class="sxs-lookup"><span data-stu-id="31979-188">Right-click the `bundleconfig.json` file and select *Enable bundle on build...*.</span></span>
+<span data-ttu-id="bd9f2-185">추가 *BuildBundlerMinifier* 프로젝트에 패키지 합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-185">Add the *BuildBundlerMinifier* package to your project.</span></span>
 
-<span data-ttu-id="31979-189">프로젝트를 빌드할 및 `bundleconfig.json` 구성에 따라 출력 파일을 생성 하기 위해 빌드 프로세스에 포함 됩니다.</span><span class="sxs-lookup"><span data-stu-id="31979-189">Build the project, and the `bundleconfig.json` is included in the build process to produce the output files based on the configuration.</span></span>
+<span data-ttu-id="bd9f2-186">프로젝트를 빌드합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-186">Build the project.</span></span> <span data-ttu-id="bd9f2-187">다음이 출력 창에 나타납니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-187">The following appears in the Output window:</span></span>
 
 ```console
-1>------ Build started: Project: BuildBundlerMinifierExample, Configuration: Debug Any CPU ------
+1>------ Build started: Project: BuildBundlerMinifierApp, Configuration: Debug Any CPU ------
 1>
 1>Bundler: Begin processing bundleconfig.json
+1>  Minified wwwroot/css/site.min.css
+1>  Minified wwwroot/js/site.min.js
 1>Bundler: Done processing bundleconfig.json
-1>BuildBundlerMinifierExample -> C:\BuildBundlerMinifierExample\bin\Debug\netcoreapp1.1\BuildBundlerMinifierExample.dll
-========== Build: 1 succeeded or up-to-date, 0 failed, 0 skipped ==========
+1>BuildBundlerMinifierApp -> C:\BuildBundlerMinifierApp\bin\Debug\netcoreapp2.0\BuildBundlerMinifierApp.dll
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
 ```
 
-### <a name="visual-studio-code-or-command-line"></a><span data-ttu-id="31979-190">Visual Studio Code 또는 명령줄</span><span class="sxs-lookup"><span data-stu-id="31979-190">Visual Studio Code or Command Line</span></span>
+<span data-ttu-id="bd9f2-188">프로젝트를 정리 합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-188">Clean the project.</span></span> <span data-ttu-id="bd9f2-189">다음이 출력 창에 나타납니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-189">The following appears in the Output window:</span></span>
 
-<span data-ttu-id="31979-191">Visual Studio 및 확장; GUI 제스처를 사용 하 여 묶음 및 축소 프로세스를 드라이브 그러나 동일한 기능을 사용할 수는 `dotnet` CLI 및 BuildBundlerMinifier NuGet 패키지 합니다.</span><span class="sxs-lookup"><span data-stu-id="31979-191">Visual Studio and the extension drive the bundling and minification process using GUI gestures; however, the same capabilities are available with the `dotnet` CLI and BuildBundlerMinifier NuGet package.</span></span>
+```console
+1>------ Clean started: Project: BuildBundlerMinifierApp, Configuration: Debug Any CPU ------
+1>
+1>Bundler: Cleaning output from bundleconfig.json
+1>Bundler: Done cleaning output file from bundleconfig.json
+========== Clean: 1 succeeded, 0 failed, 0 skipped ==========
+```
 
-<span data-ttu-id="31979-192">프로젝트에 NuGet 패키지를 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="31979-192">Add the NuGet package to your project:</span></span>
+# <a name="net-core-clitabnetcore-cli"></a>[<span data-ttu-id="bd9f2-190">.NET Core CLI</span><span class="sxs-lookup"><span data-stu-id="bd9f2-190">.NET Core CLI</span></span>](#tab/netcore-cli) 
+
+<span data-ttu-id="bd9f2-191">추가 *BuildBundlerMinifier* 패키지를 프로젝트:</span><span class="sxs-lookup"><span data-stu-id="bd9f2-191">Add the *BuildBundlerMinifier* package to your project:</span></span>
 
 ```console
 dotnet add package BuildBundlerMinifier
 ```
 
-<span data-ttu-id="31979-193">종속성을 복원 합니다.</span><span class="sxs-lookup"><span data-stu-id="31979-193">Restore the dependencies:</span></span>
+<span data-ttu-id="bd9f2-192">ASP.NET을 사용 하는 경우 1.x 핵심 새로 추가 된 패키지를 복원 하십시오.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-192">If using ASP.NET Core 1.x, restore the newly added package:</span></span>
 
 ```console
 dotnet restore
 ```
 
-<span data-ttu-id="31979-194">응용 프로그램을 빌드하십시오.</span><span class="sxs-lookup"><span data-stu-id="31979-194">Build the app:</span></span>
+<span data-ttu-id="bd9f2-193">프로젝트를 빌드하십시오.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-193">Build the project:</span></span>
 
 ```console
 dotnet build
 ```
 
-<span data-ttu-id="31979-195">빌드 명령의 출력은 축소 및/또는 구성에 따라 번들의 결과 보여줍니다.</span><span class="sxs-lookup"><span data-stu-id="31979-195">The output from the build command shows the results of the minification and/or bundling according to what is configured.</span></span>
+<span data-ttu-id="bd9f2-194">다음이 나타납니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-194">The following appears:</span></span>
 
 ```console
-Microsoft (R) Build Engine version 15.1.545.13942
+Microsoft (R) Build Engine version 15.4.8.50001 for .NET Core
 Copyright (C) Microsoft Corporation. All rights reserved.
 
 
-  Bundler: Begin processing bundleconfig.json
-     Minified wwwroot/css/site.min.css
-  Bundler: Done processing bundleconfig.json
-  BuildBundlerMinifierExample -> /BuildBundlerMinifierExample/bin/Debug/netcoreapp1.0/BuildBundlerMinifierExample.dll
+    Bundler: Begin processing bundleconfig.json
+    Bundler: Done processing bundleconfig.json
+    BuildBundlerMinifierApp -> C:\BuildBundlerMinifierApp\bin\Debug\netcoreapp2.0\BuildBundlerMinifierApp.dll
 ```
 
-## <a name="adding-files"></a><span data-ttu-id="31979-196">파일 추가</span><span class="sxs-lookup"><span data-stu-id="31979-196">Adding files</span></span>
+<span data-ttu-id="bd9f2-195">프로젝트를 정리 합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-195">Clean the project:</span></span>
 
-<span data-ttu-id="31979-197">이 예제에서는 CSS 파일을 추가로 호출 추가 됩니다 `custom.css` 묶음 및 축소를 위해 구성 및 `site.css`단일에서 결과, `site.min.css`합니다.</span><span class="sxs-lookup"><span data-stu-id="31979-197">In this example, an additional CSS file is added called `custom.css` and configured for bundling and minification with `site.css`, resulting in a single `site.min.css`.</span></span>
-
-<span data-ttu-id="31979-198">custom.css</span><span class="sxs-lookup"><span data-stu-id="31979-198">custom.css</span></span>
-
-```css
-.about, [role=main], [role=complementary]
-{
-    margin-top: 60px;
-}
-
-footer
-{
-    margin-top: 10px;
-}
+```console
+dotnet clean
 ```
 
-<span data-ttu-id="31979-199">상대 경로를 추가할 `bundleconfig.json`합니다.</span><span class="sxs-lookup"><span data-stu-id="31979-199">Add the relative path to `bundleconfig.json`.</span></span>
+<span data-ttu-id="bd9f2-196">다음과 같은 출력이 표시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-196">The following output appears:</span></span>
 
-[!code-json[Main](../client-side/bundling-and-minification/samples/BuildBundlerMinifierExample/bundleconfig2.json)]
+```console
+Microsoft (R) Build Engine version 15.4.8.50001 for .NET Core
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+
+  Bundler: Cleaning output from bundleconfig.json
+  Bundler: Done cleaning output file from bundleconfig.json
+```
+
+---
+
+## <a name="ad-hoc-execution-of-bundling-and-minification"></a><span data-ttu-id="bd9f2-197">묶음 및 축소의 임시 실행</span><span class="sxs-lookup"><span data-stu-id="bd9f2-197">Ad hoc execution of bundling and minification</span></span>
+
+<span data-ttu-id="bd9f2-198">프로젝트를 작성 하지 않고 임시 트랜잭션이란에 묶음 및 축소 작업을 실행 하려면 것 같습니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-198">It's possible to run the bundling and minification tasks on an ad hoc basis, without building the project.</span></span> <span data-ttu-id="bd9f2-199">추가 [BundlerMinifier.Core](https://www.nuget.org/packages/BundlerMinifier.Core/) NuGet 패키지를 프로젝트:</span><span class="sxs-lookup"><span data-stu-id="bd9f2-199">Add the [BundlerMinifier.Core](https://www.nuget.org/packages/BundlerMinifier.Core/) NuGet package to your project:</span></span>
+
+[!code-xml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/BuildBundlerMinifierApp.csproj?range=10)]
+
+<span data-ttu-id="bd9f2-200">.NET Core CLI 포함 하도록 확장 하는이 패키지는 *dotnet 번들* 도구입니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-200">This package extends the .NET Core CLI to include the *dotnet-bundle* tool.</span></span> <span data-ttu-id="bd9f2-201">패키지 관리자 콘솔 (PMC) 창이 나 명령 셸에서 다음 명령을 실행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-201">The following command can be executed in the Package Manager Console (PMC) window or in a command shell:</span></span>
+
+```console
+dotnet bundle
+```
+
+> [!IMPORTANT]
+> <span data-ttu-id="bd9f2-202">종속성으로 *.csproj 파일에 추가 하는 NuGet 패키지 관리자 `<PackageReference />` 노드.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-202">NuGet Package Manager adds dependencies to the *.csproj file as `<PackageReference />` nodes.</span></span> <span data-ttu-id="bd9f2-203">`dotnet bundle` 명령에 등록 된.NET Core CLI 경우에만 `<DotNetCliToolReference />` 노드를 사용 합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-203">The `dotnet bundle` command is registered with the .NET Core CLI only when a `<DotNetCliToolReference />` node is used.</span></span> <span data-ttu-id="bd9f2-204">*.Csproj 파일을 적절 하 게 수정 합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-204">Modify the *.csproj file accordingly.</span></span>
+
+## <a name="add-files-to-workflow"></a><span data-ttu-id="bd9f2-205">워크플로에 파일 추가</span><span class="sxs-lookup"><span data-stu-id="bd9f2-205">Add files to workflow</span></span>
+
+<span data-ttu-id="bd9f2-206">예제를 고려해 보세요 추가 *custom.css* 다음과 같은 파일이 추가 됩니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-206">Consider an example in which an additional *custom.css* file is added resembling the following:</span></span>
+
+[!code-css[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/wwwroot/css/custom.css)]
+
+<span data-ttu-id="bd9f2-207">축소할 *custom.css* 하 고 사용 하 여 제공할 *site.css* 에 *site.min.css* 파일, 상대 경로를 추가할 *bundleconfig.json*:</span><span class="sxs-lookup"><span data-stu-id="bd9f2-207">To minify *custom.css* and bundle it with *site.css* into a *site.min.css* file, add the relative path to *bundleconfig.json*:</span></span>
+
+[!code-json[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/bundleconfig2.json?highlight=6)]
 
 > [!NOTE]
-> <span data-ttu-id="31979-200">또는 와일드 카드 사용 패턴을 사용할 수 없습니다- `"inputFiles": ["wwwroot/**/*(*.css|!(*.min.css)"]` 는 모든 CSS 파일을 가져오고 제외 되어 축소 된 파일 패턴입니다.</span><span class="sxs-lookup"><span data-stu-id="31979-200">Alternatively, the globbing pattern could be used - `"inputFiles": ["wwwroot/**/*(*.css|!(*.min.css)"]` which gets all CSS files and excludes the minified file pattern.</span></span>
+> <span data-ttu-id="bd9f2-208">또는 와일드 카드 사용 패턴을 사용할 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-208">Alternatively, the following globbing pattern could be used:</span></span>
+>
+> ```json
+> "inputFiles": ["wwwroot/**/*(*.css|!(*.min.css)"]
+> ```
+>
+> <span data-ttu-id="bd9f2-209">이 와일드 카드 사용 패턴 일치 하는 모든 CSS 파일에 축소 된 파일 패턴을 제외 합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-209">This globbing pattern matches all CSS files and excludes the minified file pattern.</span></span>
 
-<span data-ttu-id="31979-201">응용 프로그램을 빌드합니다 열면 및 `site.min.css`는 이제 알 수의 내용을 `custom.css` 파일의 끝에 추가 된 합니다.</span><span class="sxs-lookup"><span data-stu-id="31979-201">Build the application and if you open `site.min.css`, you'll now notice that contents of `custom.css` has been appended to the end of the file.</span></span>
+<span data-ttu-id="bd9f2-210">응용 프로그램을 빌드합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-210">Build the application.</span></span> <span data-ttu-id="bd9f2-211">열기 *site.min.css* 내외의 내용을 *custom.css* 파일의 끝에 추가 됩니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-211">Open *site.min.css* and notice the content of *custom.css* is appended to the end of the file.</span></span>
 
-## <a name="controlling-bundling-and-minification"></a><span data-ttu-id="31979-202">묶음 및 축소를 제어합니다.</span><span class="sxs-lookup"><span data-stu-id="31979-202">Controlling bundling and minification</span></span>
+## <a name="environment-based-bundling-and-minification"></a><span data-ttu-id="bd9f2-212">환경 기반 묶음 및 축소</span><span class="sxs-lookup"><span data-stu-id="bd9f2-212">Environment-based bundling and minification</span></span>
 
-<span data-ttu-id="31979-203">일반적으로 프로덕션 환경에만 응용 프로그램의 번들로 묶은 및 축소 된 파일을 사용 하려면.</span><span class="sxs-lookup"><span data-stu-id="31979-203">In general, you want to use the bundled and minified files of your app only in a production environment.</span></span> <span data-ttu-id="31979-204">개발 하는 동안 앱을 쉽게 디버깅할 수 있도록 원본 파일을 사용 하려면.</span><span class="sxs-lookup"><span data-stu-id="31979-204">During development, you want to use your original files so your app is easier to debug.</span></span>
+<span data-ttu-id="bd9f2-213">모범 사례로, 프로덕션 환경에서 앱의 번들로 묶은 및 축소 된 파일을 사용 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-213">As a best practice, the bundled and minified files of your app should be used in a production environment.</span></span> <span data-ttu-id="bd9f2-214">개발 하는 동안 원본 파일 보다 쉽게 디버그 하려면 앱에 대 한 확인 하십시오.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-214">During development, the original files make for easier debugging of the app.</span></span>
 
-<span data-ttu-id="31979-205">스크립트와 레이아웃 페이지에서 환경 태그 도우미를 사용 하 여 페이지에 포함할 CSS 파일을 지정할 수 있습니다 (참조 [태그 도우미](../mvc/views/tag-helpers/index.md)).</span><span class="sxs-lookup"><span data-stu-id="31979-205">You can specify which scripts and CSS files to include in your pages using the environment tag helper in your layout pages (see [Tag Helpers](../mvc/views/tag-helpers/index.md)).</span></span> <span data-ttu-id="31979-206">환경 태그 도우미 특정 환경에서 실행 하는 경우 해당 콘텐츠를 렌더링만 합니다.</span><span class="sxs-lookup"><span data-stu-id="31979-206">The environment tag helper will only render its contents when running in specific environments.</span></span> <span data-ttu-id="31979-207">참조 [여러 환경 작업](../fundamentals/environments.md) 지정 현재 환경에 대 한 합니다.</span><span class="sxs-lookup"><span data-stu-id="31979-207">See [Working with Multiple Environments](../fundamentals/environments.md) for details on specifying the current environment.</span></span>
+<span data-ttu-id="bd9f2-215">사용 하 여 페이지에 포함할 파일을 지정 된 [환경 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/environment-tag-helper) 보기에 있습니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-215">Specify which files to include in your pages by using the [Environment Tag Helper](xref:mvc/views/tag-helpers/builtin-th/environment-tag-helper) in your views.</span></span> <span data-ttu-id="bd9f2-216">특정에서 실행 될 때만 해당 콘텐츠를 렌더링 환경 태그 도우미 [환경](xref:fundamentals/environments)합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-216">The Environment Tag Helper only renders its contents when running in specific [environments](xref:fundamentals/environments).</span></span>
 
-<span data-ttu-id="31979-208">실행할 때 다음과 같은 환경 태그 처리 되지 않은 CSS 파일을 렌더링 합니다는 `Development` 환경:</span><span class="sxs-lookup"><span data-stu-id="31979-208">The following environment tag will render the unprocessed CSS files when running in the `Development` environment:</span></span>
+<span data-ttu-id="bd9f2-217">다음 `environment` 태그에서 실행할 때 처리 되지 않은 CSS 파일을 렌더링 된 `Development` 환경:</span><span class="sxs-lookup"><span data-stu-id="bd9f2-217">The following `environment` tag renders the unprocessed CSS files when running in the `Development` environment:</span></span>
 
-[!code-html[Main](../client-side/bundling-and-minification/samples/BuildBundlerMinifierExample/Views/Shared/_Layout.cshtml?highlight=3&range=9-12)]
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="bd9f2-218">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="bd9f2-218">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
-<span data-ttu-id="31979-209">실행 하는 경우에이 환경 태그는 번들 및 축소 된 CSS 파일을 렌더링 합니다 `Production` 또는 `Staging`:</span><span class="sxs-lookup"><span data-stu-id="31979-209">This environment tag will render the bundled and minified CSS files only when running in `Production` or `Staging`:</span></span>
+[!code-cshtml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/Pages/_Layout.cshtml?highlight=3&range=21-24)]
 
-[!code-html[Main](../client-side/bundling-and-minification/samples/BuildBundlerMinifierExample/Views/Shared/_Layout.cshtml?highlight=5&range=13-18)]
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="bd9f2-219">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="bd9f2-219">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
-## <a name="consuming-bundleconfigjson-from-gulp"></a><span data-ttu-id="31979-210">Bundleconfig.json Gulp에서 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="31979-210">Consuming bundleconfig.json from Gulp</span></span>
+[!code-cshtml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/Pages/_Layout.cshtml?highlight=3&range=9-12)]
 
-<span data-ttu-id="31979-211">예: 이미지 처리, 캐시 busting, CDN assest 처리 등의 추가 프로세스를 해야 하는 응용 프로그램 묶음 및 축소 과정 번들 및 Minify 프로세스 Gulp를 변환할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="31979-211">If your app bundling and minification workflow requires additional processes such as image processing, cache busting, CDN assest processing, etc., then you can convert the Bundle and Minify process to Gulp.</span></span>
+---
 
-> [!NOTE]
-> <span data-ttu-id="31979-212">변환 옵션 Visual Studio 2015 및 2017 에서만 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="31979-212">Conversion option only available in Visual Studio 2015 and 2017.</span></span>
+<span data-ttu-id="bd9f2-220">다음 `environment` 이외의 환경에서 실행 하는 경우 태그 렌더링 번들 및 축소 된 CSS 파일 `Development`합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-220">The following `environment` tag renders the bundled and minified CSS files when running in an environment other than `Development`.</span></span> <span data-ttu-id="bd9f2-221">예를 들어에서 실행 `Production` 또는 `Staging` 이러한 스타일 시트의 렌더링을 트리거합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-221">For example, running in `Production` or `Staging` triggers the rendering of these stylesheets:</span></span>
 
-<span data-ttu-id="31979-213">마우스 오른쪽 단추로 클릭는 `bundleconfig.json` 선택 **Gulp 변환... **. 자동으로 생성 됩니다는 `gulpfile.js` 하 고 필요한 npm 패키지를 설치 합니다.</span><span class="sxs-lookup"><span data-stu-id="31979-213">Right-click the `bundleconfig.json` and select **Convert to Gulp...**. This will generate the `gulpfile.js` and install the necessary npm packages.</span></span>
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="bd9f2-222">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="bd9f2-222">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
-![Gulp를 변환](../client-side/bundling-and-minification/_static/convert-togulp.png)
+[!code-cshtml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/Pages/_Layout.cshtml?highlight=5&range=25-30)]
 
-<span data-ttu-id="31979-215">`gulpfile.js` 읽기 생성 되는 `bundleconfig.json` 파일 구성을 위해, 따라서를 계속 하려면는 입/출력 및 설정에 사용할 합니다.</span><span class="sxs-lookup"><span data-stu-id="31979-215">The `gulpfile.js` produced reads the `bundleconfig.json` file for the configuration, therefore it can continue to be used for the inputs/outputs and settings.</span></span>
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="bd9f2-223">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="bd9f2-223">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
-[!code-javascript[Main](../client-side/bundling-and-minification/samples/BuildBundlerMinifierExample/gulpfile.js)]
+[!code-cshtml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/Pages/_Layout.cshtml?highlight=3&range=13-18)]
 
-<span data-ttu-id="31979-216">Gulp를 Visual Studio 2017에서 프로젝트가 빌드될 때 사용 하도록 설정 하려면 *.csproj 파일에 다음을 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="31979-216">To enable Gulp when the project builds in Visual Studio 2017, add the following to the *.csproj file:</span></span>
+---
 
-```xml
-<Target Name="MyPreCompileTarget" BeforeTargets="Build">
-    <Exec Command="gulp min" />
-</Target>
+## <a name="consume-bundleconfigjson-from-gulp"></a><span data-ttu-id="bd9f2-224">Bundleconfig.json Gulp에서 사용 합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-224">Consume bundleconfig.json from Gulp</span></span>
+
+<span data-ttu-id="bd9f2-225">묶음 및 축소 워크플로 응용 프로그램의 추가 처리를 필요로 하는 경우가 있습니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-225">There are cases in which an app's bundling and minification workflow requires additional processing.</span></span> <span data-ttu-id="bd9f2-226">이미지 최적화, 캐시 busting 및 CDN 자산 처리를 예로 들 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-226">Examples include image optimization, cache busting, and CDN asset processing.</span></span> <span data-ttu-id="bd9f2-227">이러한 요구를 충족 하기 위해 묶음 및 축소 워크플로 Gulp를 사용 하도록 변환할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-227">To satisfy these requirements, you can convert the bundling and minification workflow to use Gulp.</span></span>
+
+### <a name="use-the-bundler--minifier-extension"></a><span data-ttu-id="bd9f2-228">번들러 & Minifier 확장을 사용 하 여</span><span class="sxs-lookup"><span data-stu-id="bd9f2-228">Use the Bundler & Minifier extension</span></span>
+
+<span data-ttu-id="bd9f2-229">Visual Studio [번들러 & Minifier](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.BundlerMinifier) 확장 처리 Gulp로 변환 합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-229">The Visual Studio [Bundler & Minifier](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.BundlerMinifier) extension handles the conversion to Gulp.</span></span>
+
+<span data-ttu-id="bd9f2-230">마우스 오른쪽 단추로 클릭는 *bundleconfig.json* 솔루션 탐색기에서 파일을 선택 **번들러 & Minifier** > **Gulp 변환...** :</span><span class="sxs-lookup"><span data-stu-id="bd9f2-230">Right-click the *bundleconfig.json* file in Solution Explorer and select **Bundler & Minifier** > **Convert To Gulp...**:</span></span>
+
+![상황에 맞는 메뉴 항목 Gulp 변환](../client-side/bundling-and-minification/_static/convert-to-gulp.png)
+
+<span data-ttu-id="bd9f2-232">*gulpfile.js* 및 *package.json* 파일이 프로젝트에 추가 됩니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-232">The *gulpfile.js* and *package.json* files are added to the project.</span></span> <span data-ttu-id="bd9f2-233">지 원하는 [npm](https://www.npmjs.com/) 에 나열 된 패키지는 *package.json* 파일의 `devDependencies` 섹션 설치 됩니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-233">The supporting [npm](https://www.npmjs.com/) packages listed in the *package.json* file's `devDependencies` section are installed.</span></span>
+
+<span data-ttu-id="bd9f2-234">전역 종속성으로 Gulp CLI를 설치 하려면 PMC 창에서 다음 명령을 실행 합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-234">Run the following command in the PMC window to install the Gulp CLI as a global dependency:</span></span>
+
+```console
+npm i -g gulp-cli
 ```
 
-<span data-ttu-id="31979-217">Visual Studio 2015에서 프로젝트가 빌드될 때 Gulp를 사용 하려면 다음을 추가 `project.json` 파일:</span><span class="sxs-lookup"><span data-stu-id="31979-217">To enable Gulp when the project builds in Visual Studio 2015, add the following to the `project.json` file:</span></span>
+<span data-ttu-id="bd9f2-235">*gulpfile.js* 파일 읽기는 *bundleconfig.json* 입력, 출력 및 설정에 대 한 파일입니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-235">The *gulpfile.js* file reads the *bundleconfig.json* file for the inputs, outputs, and settings.</span></span>
 
-```json
-"scripts": {
-    "precompile": "gulp min"
-}
+[!code-javascript[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/gulpfile.js?range=1-12&highlight=10)]
+
+### <a name="convert-manually"></a><span data-ttu-id="bd9f2-236">수동으로 변환</span><span class="sxs-lookup"><span data-stu-id="bd9f2-236">Convert manually</span></span>
+
+<span data-ttu-id="bd9f2-237">Visual Studio 및/또는 번들러 & Minifier 확장을 사용할 수 없는 경우 수동으로 변환 합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-237">If Visual Studio and/or the Bundler & Minifier extension aren't available, convert manually.</span></span>
+
+<span data-ttu-id="bd9f2-238">추가 *package.json* 파일을 다음으로 `devDependencies`, 프로젝트 루트에:</span><span class="sxs-lookup"><span data-stu-id="bd9f2-238">Add a *package.json* file, with the following `devDependencies`, to the project root:</span></span>
+
+[!code-json[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/package.json?range=5-13)]
+
+<span data-ttu-id="bd9f2-239">와 같은 수준에서 다음 명령을 실행 하 여 종속성을 설치 *package.json*:</span><span class="sxs-lookup"><span data-stu-id="bd9f2-239">Install the dependencies by running the following command at the same level as *package.json*:</span></span>
+
+```console
+npm i
 ```
 
-## <a name="additional-resources"></a><span data-ttu-id="31979-218">추가 리소스</span><span class="sxs-lookup"><span data-stu-id="31979-218">Additional resources</span></span>
+<span data-ttu-id="bd9f2-240">전역 종속성으로 Gulp CLI를 설치 합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-240">Install the Gulp CLI as a global dependency:</span></span>
 
-* [<span data-ttu-id="31979-219">Gulp 사용</span><span class="sxs-lookup"><span data-stu-id="31979-219">Using Gulp</span></span>](using-gulp.md)
-* [<span data-ttu-id="31979-220">Grunt 사용</span><span class="sxs-lookup"><span data-stu-id="31979-220">Using Grunt</span></span>](using-grunt.md)
-* [<span data-ttu-id="31979-221">여러 환경 사용</span><span class="sxs-lookup"><span data-stu-id="31979-221">Working with Multiple Environments</span></span>](../fundamentals/environments.md)
-* [<span data-ttu-id="31979-222">태그 도우미</span><span class="sxs-lookup"><span data-stu-id="31979-222">Tag Helpers</span></span>](../mvc/views/tag-helpers/index.md)
+```console
+npm i -g gulp-cli
+```
+
+<span data-ttu-id="bd9f2-241">복사는 *gulpfile.js* 프로젝트 루트 아래의 파일:</span><span class="sxs-lookup"><span data-stu-id="bd9f2-241">Copy the *gulpfile.js* file below to the project root:</span></span>
+
+[!code-javascript[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/gulpfile.js?range=1-11,14-)]
+
+### <a name="run-gulp-tasks"></a><span data-ttu-id="bd9f2-242">Gulp 작업 실행된</span><span class="sxs-lookup"><span data-stu-id="bd9f2-242">Run Gulp tasks</span></span>
+
+<span data-ttu-id="bd9f2-243">Gulp 축소 작업을 트리거하는 Visual Studio에서 프로젝트를 구성 하기 전에, 다음 추가 [MSBuild 대상](/visualstudio/msbuild/msbuild-targets) *.csproj 파일에:</span><span class="sxs-lookup"><span data-stu-id="bd9f2-243">To trigger the Gulp minification task before the project builds in Visual Studio, add the following [MSBuild Target](/visualstudio/msbuild/msbuild-targets) to the *.csproj file:</span></span>
+
+[!code-xml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/BuildBundlerMinifierApp.csproj?range=14-16)]
+
+<span data-ttu-id="bd9f2-244">이 예제에서는 모든 작업 내에서 정의 `MyPreCompileTarget` 전에 미리 정의 된 실행 대상 `Build` 대상입니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-244">In this example, any tasks defined within the `MyPreCompileTarget` target run before the predefined `Build` target.</span></span> <span data-ttu-id="bd9f2-245">Visual Studio의 출력 창에 다음과 비슷한 출력이 나타납니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-245">Output similar to the following appears in Visual Studio's Output window:</span></span>
+
+```console
+1>------ Build started: Project: BuildBundlerMinifierApp, Configuration: Debug Any CPU ------
+1>BuildBundlerMinifierApp -> C:\BuildBundlerMinifierApp\bin\Debug\netcoreapp2.0\BuildBundlerMinifierApp.dll
+1>[14:17:49] Using gulpfile C:\BuildBundlerMinifierApp\gulpfile.js
+1>[14:17:49] Starting 'min:js'...
+1>[14:17:49] Starting 'min:css'...
+1>[14:17:49] Starting 'min:html'...
+1>[14:17:49] Finished 'min:js' after 83 ms
+1>[14:17:49] Finished 'min:css' after 88 ms
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
+```
+
+<span data-ttu-id="bd9f2-246">또는 Visual Studio의 Task Runner 탐색기 Gulp 작업을 특정 Visual Studio 이벤트에 바인딩 데 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-246">Alternatively, Visual Studio's Task Runner Explorer may be used to bind Gulp tasks to specific Visual Studio events.</span></span> <span data-ttu-id="bd9f2-247">참조 [기본 작업을 실행](xref:client-side/using-gulp#running-default-tasks) 것에 대 한 지침은 합니다.</span><span class="sxs-lookup"><span data-stu-id="bd9f2-247">See [Running default tasks](xref:client-side/using-gulp#running-default-tasks) for instructions on doing that.</span></span>
+
+## <a name="additional-resources"></a><span data-ttu-id="bd9f2-248">추가 리소스</span><span class="sxs-lookup"><span data-stu-id="bd9f2-248">Additional resources</span></span>
+
+* [<span data-ttu-id="bd9f2-249">Gulp 사용</span><span class="sxs-lookup"><span data-stu-id="bd9f2-249">Using Gulp</span></span>](xref:client-side/using-gulp)
+* [<span data-ttu-id="bd9f2-250">Grunt 사용</span><span class="sxs-lookup"><span data-stu-id="bd9f2-250">Using Grunt</span></span>](xref:client-side/using-grunt)
+* [<span data-ttu-id="bd9f2-251">여러 환경 사용</span><span class="sxs-lookup"><span data-stu-id="bd9f2-251">Working with Multiple Environments</span></span>](xref:fundamentals/environments)
+* [<span data-ttu-id="bd9f2-252">태그 도우미</span><span class="sxs-lookup"><span data-stu-id="bd9f2-252">Tag Helpers</span></span>](xref:mvc/views/tag-helpers/intro)

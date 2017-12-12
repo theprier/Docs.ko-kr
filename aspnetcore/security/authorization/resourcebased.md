@@ -1,45 +1,52 @@
 ---
-title: "리소스 기반 권한 부여"
-author: rick-anderson
-description: 
-keywords: ASP.NET Core,
-ms.author: riande
+title: "ASP.NET Core에서 리소스 기반의 권한 부여"
+author: scottaddie
+description: "권한 부여 속성 않습니다 요구 사항을 충족 하는 경우 ASP.NET Core 응용 프로그램의 리소스 기반 권한 부여를 구현 하는 방법을 알아봅니다."
 manager: wpickett
-ms.date: 10/14/2016
-ms.topic: article
-ms.assetid: 0902ba17-5304-4a12-a2d4-e0904569e988
-ms.technology: aspnet
+ms.author: scaddie
+ms.custom: mvc
+ms.date: 11/07/2017
+ms.devlang: csharp
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/authorization/resourcebased
-ms.openlocfilehash: 7f7df52bf51a81558818836450997281a21b5839
-ms.sourcegitcommit: f303a457644ed034a49aa89edecb4e79d9028cb1
+ms.openlocfilehash: 708f306da740870b106cbeeb96879480f8745439
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/12/2017
+ms.lasthandoff: 11/10/2017
 ---
-# <a name="resource-based-authorization"></a><span data-ttu-id="7646c-103">리소스 기반 권한 부여</span><span class="sxs-lookup"><span data-stu-id="7646c-103">Resource Based Authorization</span></span>
+# <a name="resource-based-authorization"></a><span data-ttu-id="3b53f-103">리소스 기반 권한 부여</span><span class="sxs-lookup"><span data-stu-id="3b53f-103">Resource-based authorization</span></span>
 
-<a name=security-authorization-resource-based></a>
+<span data-ttu-id="3b53f-104">작성자: [Scott Addie](https://twitter.com/Scott_Addie)</span><span class="sxs-lookup"><span data-stu-id="3b53f-104">By [Scott Addie](https://twitter.com/Scott_Addie)</span></span>
 
-<span data-ttu-id="7646c-104">권한 부여 자주 액세스 되는 리소스에 따라 달라 집니다.</span><span class="sxs-lookup"><span data-stu-id="7646c-104">Often authorization depends upon the resource being accessed.</span></span> <span data-ttu-id="7646c-105">예를 들어, 문서 작성자 속성이 있을 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="7646c-105">For example, a document may have an author property.</span></span> <span data-ttu-id="7646c-106">리소스 권한 부여 평가 수행 하기 전에 문서 저장소에서 로드할 수 있도록 업데이트 문서 작성자만 허용 합니다.</span><span class="sxs-lookup"><span data-stu-id="7646c-106">Only the document author would be allowed to update it, so the resource must be loaded from the document repository before an authorization evaluation can be made.</span></span> <span data-ttu-id="7646c-107">이 같이 특성 평가 데이터 바인딩 전에 및 액션 내 리소스를 로드 하는 사용자 고유의 코드를 실행 하기 전에 권한 부여 특성으로 수행할 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="7646c-107">This cannot be done with an Authorize attribute, as attribute evaluation takes place before data binding and before your own code to load a resource runs inside an action.</span></span> <span data-ttu-id="7646c-108">선언적 권한 부여 특성 메서드를 대신 명령적 권한 부여 개발자가 자신의 코드 내에 권한 부여 함수를 호출 하는 경우 사용 해야 했습니다.</span><span class="sxs-lookup"><span data-stu-id="7646c-108">Instead of declarative authorization, the attribute method, we must use imperative authorization, where a developer calls an authorize function within their own code.</span></span>
+<span data-ttu-id="3b53f-105">권한 부여 전략 액세스 되는 리소스에 따라 달라 집니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-105">Authorization strategy depends upon the resource being accessed.</span></span> <span data-ttu-id="3b53f-106">Author 속성에 문서를 가정 합니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-106">Consider a document which has an author property.</span></span> <span data-ttu-id="3b53f-107">작성자만 문서를 업데이트할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-107">Only the author is allowed to update the document.</span></span> <span data-ttu-id="3b53f-108">따라서 문서 권한 부여 평가 하기 전에 데이터 저장소에서 검색 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-108">Consequently, the document must be retrieved from the data store before authorization evaluation can occur.</span></span>
 
-## <a name="authorizing-within-your-code"></a><span data-ttu-id="7646c-109">코드 내에서 권한 부여</span><span class="sxs-lookup"><span data-stu-id="7646c-109">Authorizing within your code</span></span>
+<span data-ttu-id="3b53f-109">특성 평가 데이터 바인딩 전에 페이지 처리기 또는 문서를 로드 하는 작업의 실행 하기 전에 발생 합니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-109">Attribute evaluation occurs before data binding and before execution of the page handler or action which loads the document.</span></span> <span data-ttu-id="3b53f-110">이러한 이유로, 사용한 선언적 권한 부여는 `[Authorize]` 특성으로 충분 하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-110">For these reasons, declarative authorization with an `[Authorize]` attribute won't suffice.</span></span> <span data-ttu-id="3b53f-111">대신, 사용자 지정 권한 부여 메서드를 호출할 수 있습니다&mdash;스타일 명령적 권한 부여 라고 합니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-111">Instead, you can invoke a custom authorization method&mdash;a style known as imperative authorization.</span></span>
 
-<span data-ttu-id="7646c-110">권한 부여는 서비스로 구현 됩니다 `IAuthorizationService`서비스 컬렉션에 등록 된, 및을 통해 사용할 [종속성 주입](../../fundamentals/dependency-injection.md#fundamentals-dependency-injection) 액세스 하는 컨트롤러에 대 한 합니다.</span><span class="sxs-lookup"><span data-stu-id="7646c-110">Authorization is implemented as a service, `IAuthorizationService`, registered in the service collection and available via [dependency injection](../../fundamentals/dependency-injection.md#fundamentals-dependency-injection) for Controllers to access.</span></span>
+<span data-ttu-id="3b53f-112">사용 하 여는 [앱 샘플](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/resourcebased/samples) ([다운로드 하는 방법](xref:tutorials/index#how-to-download-a-sample))이이 항목에서 설명 하는 기능을 탐색할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-112">Use the [sample apps](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/resourcebased/samples) ([how to download](xref:tutorials/index#how-to-download-a-sample)) to explore the features described in this topic.</span></span>
+
+## <a name="use-imperative-authorization"></a><span data-ttu-id="3b53f-113">필수 권한 부여를 사용 하 여</span><span class="sxs-lookup"><span data-stu-id="3b53f-113">Use imperative authorization</span></span>
+
+<span data-ttu-id="3b53f-114">권한 부여로 구현 됩니다는 [IAuthorizationService](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationservice) 내에서 서비스 컬렉션에 등록 하 고 서비스는 `Startup` 클래스입니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-114">Authorization is implemented as an [IAuthorizationService](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationservice) service and is registered in the service collection within the `Startup` class.</span></span> <span data-ttu-id="3b53f-115">서비스를 통해 제공할 [종속성 주입](xref:fundamentals/dependency-injection#fundamentals-dependency-injection) 페이지 처리기 또는 작업에 있습니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-115">The service is made available via [dependency injection](xref:fundamentals/dependency-injection#fundamentals-dependency-injection) to page handlers or actions.</span></span>
+
+[!code-csharp[](resourcebased/samples/ResourceBasedAuthApp2/Controllers/DocumentController.cs?name=snippet_IAuthServiceDI&highlight=6)]
+
+<span data-ttu-id="3b53f-116">`IAuthorizationService`에 두 개의 `AuthorizeAsync` 메서드 오버 로드: 리소스와 정책 이름 및 다른 리소스와 평가 하기 위한 요구 사항 목록이 수락 하나 수락 합니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-116">`IAuthorizationService` has two `AuthorizeAsync` method overloads: one accepting the resource and the policy name and the other accepting the resource and a list of requirements to evaluate.</span></span>
+
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="3b53f-117">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="3b53f-117">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
 ```csharp
-public class DocumentController : Controller
-{
-    IAuthorizationService _authorizationService;
-
-    public DocumentController(IAuthorizationService authorizationService)
-    {
-        _authorizationService = authorizationService;
-    }
-}
+Task<AuthorizationResult> AuthorizeAsync(ClaimsPrincipal user,
+                          object resource,
+                          IEnumerable<IAuthorizationRequirement> requirements);
+Task<AuthorizationResult> AuthorizeAsync(ClaimsPrincipal user,
+                          object resource,
+                          string policyName);
 ```
 
-<span data-ttu-id="7646c-111">`IAuthorizationService`에 전달 하는 리소스와 정책 이름 및 다른 리소스 및 평가 하기 위한 요구 사항 목록을 전달 하면 한 두 개의 메서드가 있습니다.</span><span class="sxs-lookup"><span data-stu-id="7646c-111">`IAuthorizationService` has two methods, one where you pass the resource and the policy name and the other where you pass the resource and a list of requirements to evaluate.</span></span>
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="3b53f-118">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="3b53f-118">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
 ```csharp
 Task<bool> AuthorizeAsync(ClaimsPrincipal user,
@@ -50,104 +57,78 @@ Task<bool> AuthorizeAsync(ClaimsPrincipal user,
                           string policyName);
 ```
 
-<a name=security-authorization-resource-based-imperative></a>
+---
 
-<span data-ttu-id="7646c-112">서비스를 호출 하려면 작업 내에서 리소스를 로드 한 다음 호출는 `AuthorizeAsync` 필요한 오버 로드 합니다.</span><span class="sxs-lookup"><span data-stu-id="7646c-112">To call the service, load your resource within your action then call the `AuthorizeAsync` overload you require.</span></span> <span data-ttu-id="7646c-113">예:</span><span class="sxs-lookup"><span data-stu-id="7646c-113">For example:</span></span>
+<a name="security-authorization-resource-based-imperative"></a>
 
-```csharp
-public async Task<IActionResult> Edit(Guid documentId)
-{
-    Document document = documentRepository.Find(documentId);
+<span data-ttu-id="3b53f-119">다음 예제에서는 보안을 유지 하도록 리소스는 사용자 지정에 로드 됩니다 `Document` 개체입니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-119">In the following example, the resource to be secured is loaded into a custom `Document` object.</span></span> <span data-ttu-id="3b53f-120">`AuthorizeAsync` 오버 로드는 현재 사용자가 제공 된 문서를 편집할 수 있는지 여부를 확인 하기 위해 호출 된 합니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-120">An `AuthorizeAsync` overload is invoked to determine whether the current user is allowed to edit the provided document.</span></span> <span data-ttu-id="3b53f-121">사용자 지정 "EditPolicy" 권한 부여 정책에 대 한 결정으로 구분 됩니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-121">A custom "EditPolicy" authorization policy is factored into the decision.</span></span> <span data-ttu-id="3b53f-122">참조 [사용자 지정 정책 기반 권한 부여](xref:security/authorization/policies) 권한 부여 정책 만들기에 대 한 자세한 합니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-122">See [Custom policy-based authorization](xref:security/authorization/policies) for more on creating authorization policies.</span></span>
 
-    if (document == null)
-    {
-        return new HttpNotFoundResult();
-    }
+> [!NOTE]
+> <span data-ttu-id="3b53f-123">다음 코드 샘플 인증을 실행 하는 것으로 가정 하 고 집합의 `User` 속성입니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-123">The following code samples assume authentication has run and set the `User` property.</span></span>
 
-    if (await _authorizationService.AuthorizeAsync(User, document, "EditPolicy"))
-    {
-        return View(document);
-    }
-    else
-    {
-        return new ChallengeResult();
-    }
-}
-```
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="3b53f-124">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="3b53f-124">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
-## <a name="writing-a-resource-based-handler"></a><span data-ttu-id="7646c-114">리소스 기반 처리기 작성</span><span class="sxs-lookup"><span data-stu-id="7646c-114">Writing a resource based handler</span></span>
+[!code-csharp[](resourcebased/samples/ResourceBasedAuthApp2/Pages/Document/Edit.cshtml.cs?name=snippet_DocumentEditHandler)]
 
-<span data-ttu-id="7646c-115">작성 리소스 기반 권한 부여에 대 한 처리기를 많이 다릅니다 하는 것은 [일반 요구 사항 처리기 작성](policies.md#security-authorization-policies-based-authorization-handler)합니다.</span><span class="sxs-lookup"><span data-stu-id="7646c-115">Writing a handler for resource based authorization is not that much different to [writing a plain requirements handler](policies.md#security-authorization-policies-based-authorization-handler).</span></span> <span data-ttu-id="7646c-116">에서는 요구 사항을 만들고 그런 다음 앞으로 요구 사항 및 리소스 종류를 지정 하는 요구 사항에 대 한 처리기를 구현 합니다.</span><span class="sxs-lookup"><span data-stu-id="7646c-116">You create a requirement, and then implement a handler for the requirement, specifying the requirement as before and also the resource type.</span></span> <span data-ttu-id="7646c-117">예를 들어 문서 리소스를 수락할 수 처리기 다음과 같이 표시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="7646c-117">For example, a handler which might accept a Document resource would look as follows:</span></span>
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="3b53f-125">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="3b53f-125">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
-```csharp
-public class DocumentAuthorizationHandler : AuthorizationHandler<MyRequirement, Document>
-{
-    protected override Task HandleRequirementAsync(AuthorizationHandlerContext context,
-                                                MyRequirement requirement,
-                                                Document resource)
-    {
-        // Validate the requirement against the resource and identity.
+[!code-csharp[](resourcebased/samples/ResourceBasedAuthApp1/Controllers/DocumentController.cs?name=snippet_DocumentEditAction)]
 
-        return Task.CompletedTask;
-    }
-}
-```
+---
 
-<span data-ttu-id="7646c-118">에 처리기를 등록 해야 하는 데 반드시는 `ConfigureServices` 메서드:</span><span class="sxs-lookup"><span data-stu-id="7646c-118">Don't forget you also need to register your handler in the `ConfigureServices` method:</span></span>
+## <a name="write-a-resource-based-handler"></a><span data-ttu-id="3b53f-126">리소스 기반 처리기 작성</span><span class="sxs-lookup"><span data-stu-id="3b53f-126">Write a resource-based handler</span></span>
 
-```csharp
-services.AddSingleton<IAuthorizationHandler, DocumentAuthorizationHandler>();
-```
+<span data-ttu-id="3b53f-127">리소스 기반 권한 부여 보다 큰 차이가 없습니다.에 대 한 처리기를 작성 [일반 요구 사항 처리기 작성](xref:security/authorization/policies#security-authorization-policies-based-authorization-handler)합니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-127">Writing a handler for resource-based authorization isn't much different than [writing a plain requirements handler](xref:security/authorization/policies#security-authorization-policies-based-authorization-handler).</span></span> <span data-ttu-id="3b53f-128">사용자 지정 요구 사항 클래스를 만들고 요구 사항 처리기 클래스를 구현 합니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-128">Create a custom requirement class, and implement a requirement handler class.</span></span> <span data-ttu-id="3b53f-129">처리기 클래스 요구 사항 및 리소스 종류를 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-129">The handler class specifies both the requirement and resource type.</span></span> <span data-ttu-id="3b53f-130">예를 들어 한 처리기를 활용 하는 `SameAuthorRequirement` 요구 사항 및 `Document` 리소스 모양은 다음과 같습니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-130">For example, a handler utilizing a `SameAuthorRequirement` requirement and a `Document` resource looks as follows:</span></span>
 
-### <a name="operational-requirements"></a><span data-ttu-id="7646c-119">운영 요구 사항</span><span class="sxs-lookup"><span data-stu-id="7646c-119">Operational Requirements</span></span>
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="3b53f-131">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="3b53f-131">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
-<span data-ttu-id="7646c-120">읽기, 쓰기, update 및 delete 등의 작업에 따라 하는 결정을 내려야 하는 경우 사용할 수 있습니다는 `OperationAuthorizationRequirement` 클래스에 `Microsoft.AspNetCore.Authorization.Infrastructure` 네임 스페이스입니다.</span><span class="sxs-lookup"><span data-stu-id="7646c-120">If you are making decisions based on operations such as read, write, update and delete, you can use the `OperationAuthorizationRequirement` class in the `Microsoft.AspNetCore.Authorization.Infrastructure` namespace.</span></span> <span data-ttu-id="7646c-121">이 미리 작성 된 요구 사항 클래스를 사용 하면 각 작업에 대 한 개별 클래스를 만드는 대신 매개 변수가 있는 작업 이름이 단일 처리기를 작성할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="7646c-121">This prebuilt requirement class enables you to write a single handler which has a parameterized operation name, rather than create individual classes for each operation.</span></span> <span data-ttu-id="7646c-122">이 기능을 사용 하려면 일부 작업 이름을 제공 합니다.</span><span class="sxs-lookup"><span data-stu-id="7646c-122">To use it, provide some operation names:</span></span>
+[!code-csharp[](resourcebased/samples/ResourceBasedAuthApp2/Services/DocumentAuthorizationHandler.cs?name=snippet_HandlerAndRequirement)]
 
-```csharp
-public static class Operations
-{
-    public static OperationAuthorizationRequirement Create =
-        new OperationAuthorizationRequirement { Name = "Create" };
-    public static OperationAuthorizationRequirement Read =
-        new OperationAuthorizationRequirement   { Name = "Read" };
-    public static OperationAuthorizationRequirement Update =
-        new OperationAuthorizationRequirement { Name = "Update" };
-    public static OperationAuthorizationRequirement Delete =
-        new OperationAuthorizationRequirement { Name = "Delete" };
-}
-```
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="3b53f-132">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="3b53f-132">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
-<span data-ttu-id="7646c-123">처리기에 다음 구현할 수 있습니다 다음과 같은 가상의 사용 하 여 `Document` 리소스로 클래스:</span><span class="sxs-lookup"><span data-stu-id="7646c-123">Your handler could then be implemented as follows, using a hypothetical `Document` class as the resource:</span></span>
+[!code-csharp[](resourcebased/samples/ResourceBasedAuthApp1/Services/DocumentAuthorizationHandler.cs?name=snippet_HandlerAndRequirement)]
 
-```csharp
-public class DocumentAuthorizationHandler :
-    AuthorizationHandler<OperationAuthorizationRequirement, Document>
-{
-    public override Task HandleRequirementAsync(AuthorizationHandlerContext context,
-                                                OperationAuthorizationRequirement requirement,
-                                                Document resource)
-    {
-        // Validate the operation using the resource, the identity and
-        // the Name property value from the requirement.
+---
 
-        return Task.CompletedTask;
-    }
-}
-```
+<span data-ttu-id="3b53f-133">요구 사항 및 처리기에 등록 된 `Startup.ConfigureServices` 메서드:</span><span class="sxs-lookup"><span data-stu-id="3b53f-133">Register the requirement and handler in the `Startup.ConfigureServices` method:</span></span>
 
-<span data-ttu-id="7646c-124">처리기는 확인할 수 있습니다 `OperationAuthorizationRequirement`합니다.</span><span class="sxs-lookup"><span data-stu-id="7646c-124">You can see the handler works on `OperationAuthorizationRequirement`.</span></span> <span data-ttu-id="7646c-125">처리기 내에서 코드를 해당 평가 만들 때 제공 된 요구 사항 계정으로의 Name 속성을 취해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="7646c-125">The code inside the handler must take the Name property of the supplied requirement into account when making its evaluations.</span></span>
+[!code-csharp[](resourcebased/samples/ResourceBasedAuthApp2/Startup.cs?name=snippet_ConfigureServicesSample&highlight=3-7,9)]
 
-<span data-ttu-id="7646c-126">호출할 때 작업을 지정 해야 하는 작업 리소스 처리기를 호출 하려면 `AuthorizeAsync` 사용자 작업에서 합니다.</span><span class="sxs-lookup"><span data-stu-id="7646c-126">To call an operational resource handler you need to specify the operation when calling `AuthorizeAsync` in your action.</span></span> <span data-ttu-id="7646c-127">예:</span><span class="sxs-lookup"><span data-stu-id="7646c-127">For example:</span></span>
+### <a name="operational-requirements"></a><span data-ttu-id="3b53f-134">운영 요구 사항</span><span class="sxs-lookup"><span data-stu-id="3b53f-134">Operational requirements</span></span>
 
-```csharp
-if (await _authorizationService.AuthorizeAsync(User, document, Operations.Read))
-{
-    return View(document);
-}
-else
-{
-    return new ChallengeResult();
-}
-```
+<span data-ttu-id="3b53f-135">수행 하면 CRUD의 결과에 따라 결정 하는 경우 (**C**작성, **R**읽기, **U**업데이트 (), **D**삭제 ()) 작업을 사용 하 여는 [OperationAuthorizationRequirement](/dotnet/api/microsoft.aspnetcore.authorization.infrastructure.operationauthorizationrequirement) 도우미 클래스입니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-135">If you're making decisions based on the outcomes of CRUD (**C**reate, **R**ead, **U**pdate, **D**elete) operations, use the [OperationAuthorizationRequirement](/dotnet/api/microsoft.aspnetcore.authorization.infrastructure.operationauthorizationrequirement) helper class.</span></span> <span data-ttu-id="3b53f-136">이 클래스를 사용 하면 각 작업 유형에 대해 개별 클래스 대신 단일 처리기를 작성할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-136">This class enables you to write a single handler instead of an individual class for each operation type.</span></span> <span data-ttu-id="3b53f-137">이 기능을 사용 하려면 일부 작업 이름을 제공 합니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-137">To use it, provide some operation names:</span></span>
 
-<span data-ttu-id="7646c-128">이 예에서는 사용자가 현재에 대 한 읽기 작업을 수행할 수 있으면 확인 `document` 인스턴스.</span><span class="sxs-lookup"><span data-stu-id="7646c-128">This example checks if the User is able to perform the Read operation for the current `document` instance.</span></span> <span data-ttu-id="7646c-129">권한 부여에 성공 하면 문서에 대 한 보기 반환 됩니다.</span><span class="sxs-lookup"><span data-stu-id="7646c-129">If authorization succeeds the view for the document will be returned.</span></span> <span data-ttu-id="7646c-130">권한 부여 실패 반환 `ChallengeResult` 는 알립니다 모든 인증 미들웨어 권한 부여는 실패 했 고 미들웨어 적절 한 응답 예를 들어 403 또는 401 상태 코드를 반환 하거나 사용자에 대 한 로그인 페이지로 리디렉션하여 걸릴 수 있습니다 대화형 브라우저 클라이언트입니다.</span><span class="sxs-lookup"><span data-stu-id="7646c-130">If authorization fails returning `ChallengeResult` will inform any authentication middleware authorization has failed and the middleware can take the appropriate response, for example returning a 401 or 403 status code, or redirecting the user to a login page for interactive browser clients.</span></span>
+[!code-csharp[](resourcebased/samples/ResourceBasedAuthApp2/Services/DocumentAuthorizationCrudHandler.cs?name=snippet_OperationsClass)]
+
+<span data-ttu-id="3b53f-138">처리기는 다음과 같이 사용 하 여 구현 된 `OperationAuthorizationRequirement` 요구 사항 및 `Document` 리소스:</span><span class="sxs-lookup"><span data-stu-id="3b53f-138">The handler is implemented as follows, using an `OperationAuthorizationRequirement` requirement and a `Document` resource:</span></span>
+
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="3b53f-139">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="3b53f-139">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
+
+[!code-csharp[](resourcebased/samples/ResourceBasedAuthApp2/Services/DocumentAuthorizationCrudHandler.cs?name=snippet_Handler)]
+
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="3b53f-140">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="3b53f-140">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
+
+[!code-csharp[](resourcebased/samples/ResourceBasedAuthApp1/Services/DocumentAuthorizationCrudHandler.cs?name=snippet_Handler)]
+
+---
+
+<span data-ttu-id="3b53f-141">이전 처리기 리소스, 사용자의 id 및 요구 사항의를 사용 하 여 작업의 유효성을 검사 `Name` 속성입니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-141">The preceding handler validates the operation using the resource, the user's identity, and the requirement's `Name` property.</span></span>
+
+<span data-ttu-id="3b53f-142">작업 리소스 처리기를 호출 하려면 작업을 호출할 때 지정 `AuthorizeAsync` 페이지 처리기의 동작입니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-142">To call an operational resource handler, specify the operation when invoking `AuthorizeAsync` in your page handler or action.</span></span> <span data-ttu-id="3b53f-143">다음 예제에서는 인증 된 사용자가 제공 된 문서를 볼 수 있는지 여부를 결정 합니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-143">The following example determines whether the authenticated user is permitted to view the provided document.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="3b53f-144">다음 코드 샘플 인증을 실행 하는 것으로 가정 하 고 집합의 `User` 속성입니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-144">The following code samples assume authentication has run and set the `User` property.</span></span>
+
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="3b53f-145">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="3b53f-145">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
+
+[!code-csharp[](resourcebased/samples/ResourceBasedAuthApp2/Pages/Document/View.cshtml.cs?name=snippet_DocumentViewHandler&highlight=10-11)]
+
+<span data-ttu-id="3b53f-146">권한 부여에 성공 하면 문서를 보기 위한 페이지가 반환 됩니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-146">If authorization succeeds, the page for viewing the document is returned.</span></span> <span data-ttu-id="3b53f-147">경우 권한 부여 실패 하지만 사용자가 인증 되 면 반환 `ForbidResult` 권한 부여에 실패 한 모든 인증 미들웨어에 알립니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-147">If authorization fails but the user is authenticated, returning `ForbidResult` informs any authentication middleware that authorization failed.</span></span> <span data-ttu-id="3b53f-148">A `ChallengeResult` 인증을 수행 해야 하는 경우 반환 됩니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-148">A `ChallengeResult` is returned when authentication must be performed.</span></span> <span data-ttu-id="3b53f-149">대화형 브라우저 클라이언트에는 사용자를 로그인 페이지로 리디렉션합니다 적절 한 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-149">For interactive browser clients, it may be appropriate to redirect the user to a login page.</span></span>
+
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="3b53f-150">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="3b53f-150">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
+
+[!code-csharp[](resourcebased/samples/ResourceBasedAuthApp1/Controllers/DocumentController.cs?name=snippet_DocumentViewAction&highlight=11-12)]
+
+<span data-ttu-id="3b53f-151">권한 부여에 성공 하면 문서에 대 한 보기 반환 됩니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-151">If authorization succeeds, the view for the document is returned.</span></span> <span data-ttu-id="3b53f-152">권한 부여에 실패 하면 반환 `ChallengeResult` 모든 인증 미들웨어에 알리고 권한 부여 실패, 미들웨어 적절 한 응답을 걸릴 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-152">If authorization fails, returning `ChallengeResult` informs any authentication middleware that authorization failed, and the middleware can take the appropriate response.</span></span> <span data-ttu-id="3b53f-153">적절 한 응답 401 또는 403 상태 코드를 반환 될 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-153">An appropriate response could be returning a 401 or 403 status code.</span></span> <span data-ttu-id="3b53f-154">대화형 브라우저 클라이언트에 대 한 사용자를 로그인 페이지로 리디렉션하여 관리할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="3b53f-154">For interactive browser clients, it could mean redirecting the user to a login page.</span></span>
+
+---

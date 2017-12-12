@@ -1,31 +1,33 @@
 ---
-title: "데이터 보호를 구성합니다."
+title: "ASP.NET Core에서 데이터 보호를 구성합니다."
 author: rick-anderson
-description: 
-keywords: ASP.NET Core,
+description: "ASP.NET Core에서 데이터 보호를 구성 하는 방법을 알아봅니다."
+keywords: "ASP.NET Core, 데이터 보호, 구성"
 ms.author: riande
 manager: wpickett
-ms.date: 10/14/2016
+ms.date: 07/17/2017
 ms.topic: article
 ms.assetid: 0e4881a3-a94d-4e35-9c1c-f025d65dcff0
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/configuration/overview
-ms.openlocfilehash: 9361dcec89a0f35067181523cc56637d629614ff
-ms.sourcegitcommit: 6e83c55eb0450a3073ef2b95fa5f5bcb20dbbf89
+ms.openlocfilehash: 4713c2bed04af784e74586daa10ec847262a1345
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/28/2017
+ms.lasthandoff: 11/10/2017
 ---
-# <a name="configuring-data-protection"></a><span data-ttu-id="d9152-103">데이터 보호를 구성합니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-103">Configuring data protection</span></span>
+# <a name="configuring-data-protection-in-aspnet-core"></a><span data-ttu-id="a90ad-104">ASP.NET Core에서 데이터 보호를 구성합니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-104">Configuring Data Protection in ASP.NET Core</span></span>
 
-<a name=data-protection-configuring></a>
+<span data-ttu-id="a90ad-105">작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="a90ad-105">By [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
 
-<span data-ttu-id="d9152-104">데이터 보호 시스템 초기화 될 때 일부 적용 [기본 설정](default-settings.md#data-protection-default-settings) 운영 환경에 따라 합니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-104">When the data protection system is initialized it applies some [default settings](default-settings.md#data-protection-default-settings) based on the operational environment.</span></span> <span data-ttu-id="d9152-105">이 설정은 일반적으로 단일 컴퓨터에서 실행 중인 응용 프로그램에 유용 합니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-105">These settings are generally good for applications running on a single machine.</span></span> <span data-ttu-id="d9152-106">개발자는 이러한 변경 해야 할 수는 있는 경우에 따라 (아마도 규정 준수 상의 이유로 또는 여러 컴퓨터 간에 분산 되는 응용 프로그램 때문에), 이러한 시나리오에 대 한 데이터 보호 시스템 풍부한 구성 API를 제공 합니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-106">There are some cases where a developer may want to change these (perhaps because their application is spread across multiple machines or for compliance reasons), and for these scenarios the data protection system offers a rich configuration API.</span></span>
+<span data-ttu-id="a90ad-106">데이터 보호 시스템 초기화 될 때 적용 [기본 설정](xref:security/data-protection/configuration/default-settings) 운영 환경에 따라 합니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-106">When the Data Protection system is initialized, it applies [default settings](xref:security/data-protection/configuration/default-settings) based on the operational environment.</span></span> <span data-ttu-id="a90ad-107">이 설정은 일반적으로 단일 컴퓨터에서 실행 되는 앱에 적합 합니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-107">These settings are generally appropriate for apps running on a single machine.</span></span> <span data-ttu-id="a90ad-108">개발자 이거나 준수 이유 여러 컴퓨터 간에 분산 되는 응용 프로그램 때문에 기본 설정을 아마도 변경 해야 할 수는 있는 경우가 많습니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-108">There are cases where a developer may want to change the default settings, perhaps because their app is spread across multiple machines or for compliance reasons.</span></span> <span data-ttu-id="a90ad-109">이러한 시나리오에 대 한 데이터 보호 시스템 풍부한 구성 API를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-109">For these scenarios, the Data Protection system offers a rich configuration API.</span></span>
 
-<a name=data-protection-configuration-callback></a>
+<span data-ttu-id="a90ad-110">확장 메서드가 없는 [AddDataProtection](/dotnet/api/microsoft.extensions.dependencyinjection.dataprotectionservicecollectionextensions.adddataprotection) 반환 하는 [IDataProtectionBuilder](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotectionbuilder)합니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-110">There's an extension method [AddDataProtection](/dotnet/api/microsoft.extensions.dependencyinjection.dataprotectionservicecollectionextensions.adddataprotection) that returns an [IDataProtectionBuilder](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotectionbuilder).</span></span> <span data-ttu-id="a90ad-111">`IDataProtectionBuilder`확장 메서드를 함께 결합할 수 데이터 보호를 구성 하려면 옵션을 표시 합니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-111">`IDataProtectionBuilder` exposes extension methods that you can chain together to configure Data Protection options.</span></span>
 
-<span data-ttu-id="d9152-107">확장 메서드가 AddDataProtection는 IDataProtectionBuilder 반환 하는 확장 메서드를 함께 결합할 수 옵션을 다양 한 데이터 보호를 구성 하려면 논리 노출 합니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-107">There is an extension method AddDataProtection which returns an IDataProtectionBuilder which itself exposes extension methods that you can chain together to configure various data protection options.</span></span> <span data-ttu-id="d9152-108">예를 들어 % LOCALAPPDATA % (기본값) 대신 UNC 공유에서 키를 저장 하려면 시스템이 다음과 같이 구성.</span><span class="sxs-lookup"><span data-stu-id="d9152-108">For instance, to store keys at a UNC share instead of %LOCALAPPDATA% (the default), configure the system as follows:</span></span>
+## <a name="persistkeystofilesystem"></a><span data-ttu-id="a90ad-112">PersistKeysToFileSystem</span><span class="sxs-lookup"><span data-stu-id="a90ad-112">PersistKeysToFileSystem</span></span>
+
+<span data-ttu-id="a90ad-113">키에서 대신 UNC 공유에 저장 하는 *% LOCALAPPDATA %* 기본 위치를 사용 하 여 시스템 구성 [PersistKeysToFileSystem](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.persistkeystofilesystem):</span><span class="sxs-lookup"><span data-stu-id="a90ad-113">To store keys on a UNC share instead of at the *%LOCALAPPDATA%* default location, configure the system with [PersistKeysToFileSystem](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.persistkeystofilesystem):</span></span>
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -35,12 +37,12 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
->[!WARNING]
-> <span data-ttu-id="d9152-109">지 속성 키 위치를 변경 하면 시스템 더 이상 자동으로 암호화 키 미사용 DPAPI는 적절 한 암호화 메커니즘 인지 알 수 없기 때문.</span><span class="sxs-lookup"><span data-stu-id="d9152-109">If you change the key persistence location, the system will no longer automatically encrypt keys at rest since it doesn't know whether DPAPI is an appropriate encryption mechanism.</span></span>
+> [!WARNING]
+> <span data-ttu-id="a90ad-114">지 속성 키 위치를 변경 하면 DPAPI는 적절 한 암호화 메커니즘 인지 알 수 없기 때문 시스템이 더 이상 자동으로 미사용 키를 암호화 합니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-114">If you change the key persistence location, the system no longer automatically encrypts keys at rest, since it doesn't know whether DPAPI is an appropriate encryption mechanism.</span></span>
 
-<a name=configuring-x509-certificate></a>
+## <a name="protectkeyswith"></a><span data-ttu-id="a90ad-115">ProtectKeysWith\*</span><span class="sxs-lookup"><span data-stu-id="a90ad-115">ProtectKeysWith\*</span></span>
 
-<span data-ttu-id="d9152-110">시스템을 미사용 키는 ProtectKeysWith 중 하나를 호출 하 여 보호를 구성할 수 있습니다\* 구성 Api입니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-110">You can configure the system to protect keys at rest by calling any of the ProtectKeysWith\* configuration APIs.</span></span> <span data-ttu-id="d9152-111">아래 예제에서는 UNC 공유에서 키를 저장 하 고 저장 된 상태의 특정 X.509 인증서와 해당 키를 암호화 하는 것이 좋습니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-111">Consider the example below, which stores keys at a UNC share and encrypts those keys at rest with a specific X.509 certificate.</span></span>
+<span data-ttu-id="a90ad-116">시스템을 미사용 키 중 하나를 호출 하 여 보호를 구성할 수는 [ProtectKeysWith\* ](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions) 구성 Api입니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-116">You can configure the system to protect keys at rest by calling any of the [ProtectKeysWith\*](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions) configuration APIs.</span></span> <span data-ttu-id="a90ad-117">아래 UNC 공유의 키를 저장 하 고 저장 된 상태의 특정 X.509 인증서와 해당 키를 암호화 하는 예를 살펴보십시오.</span><span class="sxs-lookup"><span data-stu-id="a90ad-117">Consider the example below, which stores keys on a UNC share and encrypts those keys at rest with a specific X.509 certificate:</span></span>
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -51,9 +53,11 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-<span data-ttu-id="d9152-112">참조 [미사용 데이터 암호화 키](../implementation/key-encryption-at-rest.md#data-protection-implementation-key-encryption-at-rest) 추가 예제 및 기본 제공 키 암호화 메커니즘에 대 한 토론 합니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-112">See [key encryption at rest](../implementation/key-encryption-at-rest.md#data-protection-implementation-key-encryption-at-rest) for more examples and for discussion on the built-in key encryption mechanisms.</span></span>
+<span data-ttu-id="a90ad-118">참조 [휴지 키 암호화](xref:security/data-protection/implementation/key-encryption-at-rest) 추가 예제 및 기본 제공 키 암호화 메커니즘에 대 한 토론에 대 한 합니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-118">See [Key Encryption At Rest](xref:security/data-protection/implementation/key-encryption-at-rest) for more examples and discussion on the built-in key encryption mechanisms.</span></span>
 
-<span data-ttu-id="d9152-113">14 일의 기본 키 수명 90 일 대신 사용 하도록 시스템을 구성 하려면 다음 예제를 참조 하세요.</span><span class="sxs-lookup"><span data-stu-id="d9152-113">To configure the system to use a default key lifetime of 14 days instead of 90 days, consider the following example:</span></span>
+## <a name="setdefaultkeylifetime"></a><span data-ttu-id="a90ad-119">SetDefaultKeyLifetime</span><span class="sxs-lookup"><span data-stu-id="a90ad-119">SetDefaultKeyLifetime</span></span>
+
+<span data-ttu-id="a90ad-120">90 일 동안 14 일의 키 수명 기본값 대신 사용 하도록 시스템을 구성 하려면 사용 [SetDefaultKeyLifetime](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.setdefaultkeylifetime):</span><span class="sxs-lookup"><span data-stu-id="a90ad-120">To configure the system to use a key lifetime of 14 days instead of the default 90 days, use [SetDefaultKeyLifetime](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.setdefaultkeylifetime):</span></span>
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -63,21 +67,21 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-<span data-ttu-id="d9152-114">기본적으로 데이터 보호 시스템에서는 다른 응용 프로그램이 동일한 물리적 키 저장소를 공유 하는 경우에 합니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-114">By default the data protection system isolates applications from one another, even if they're sharing the same physical key repository.</span></span> <span data-ttu-id="d9152-115">이렇게 하면 다른 사용자의 보호 된 페이로드를 이해 하는에서 응용 프로그램을 않습니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-115">This prevents the applications from understanding each other's protected payloads.</span></span> <span data-ttu-id="d9152-116">두 개의 서로 다른 응용 프로그램 간에 보호 된 페이로드를 공유 하려면 두 응용 프로그램에서 같이 동일한 응용 프로그램 이름을 전달 하는 시스템 구성의 아래 예제:</span><span class="sxs-lookup"><span data-stu-id="d9152-116">To share protected payloads between two different applications, configure the system passing in the same application name for both applications as in the below example:</span></span>
+## <a name="setapplicationname"></a><span data-ttu-id="a90ad-121">SetApplicationName</span><span class="sxs-lookup"><span data-stu-id="a90ad-121">SetApplicationName</span></span>
 
-<a name=data-protection-code-sample-application-name></a>
+<span data-ttu-id="a90ad-122">기본적으로 데이터 보호 시스템 동일한 물리적 키 저장소를 공유 하는 경우에 서로에서 응용 프로그램을 격리 합니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-122">By default, the Data Protection system isolates apps from one another, even if they're sharing the same physical key repository.</span></span> <span data-ttu-id="a90ad-123">이렇게 하면 앱을에서 다른 사용자의 보호 된 페이로드 이해지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-123">This prevents the apps from understanding each other's protected payloads.</span></span> <span data-ttu-id="a90ad-124">두 앱 간에 보호 된 페이로드를 공유 하려면 사용 하 여 [SetApplicationName](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.setapplicationname) 각 앱에 대 한 값:</span><span class="sxs-lookup"><span data-stu-id="a90ad-124">To share protected payloads between two apps, use [SetApplicationName](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.setapplicationname) with the same value for each app:</span></span>
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddDataProtection()
-        .SetApplicationName("my application");
+        .SetApplicationName("shared app name");
 }
 ```
 
-<a name=data-protection-configuring-disable-automatic-key-generation></a>
+## <a name="disableautomatickeygeneration"></a><span data-ttu-id="a90ad-125">DisableAutomaticKeyGeneration</span><span class="sxs-lookup"><span data-stu-id="a90ad-125">DisableAutomaticKeyGeneration</span></span>
 
-<span data-ttu-id="d9152-117">마지막으로, 여기서 원하지 않는 만료 거의 도달 하면 자동으로 키를 롤백하기 위해 응용 프로그램 시나리오를 할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-117">Finally, you may have a scenario where you do not want an application to automatically roll keys as they approach expiration.</span></span> <span data-ttu-id="d9152-118">이러한 예로 여기서 기본 응용 프로그램은 키 관리 문제를 담당 하 고 키 링의 읽기 전용 보기를 단순히 포함 하는 모든 보조 응용 프로그램 기본 / 보조 관계를 설정 하는 응용 프로그램을 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-118">One example of this might be applications set up in a primary / secondary relationship, where only the primary application is responsible for key management concerns, and all secondary applications simply have a read-only view of the key ring.</span></span> <span data-ttu-id="d9152-119">아래와 같이 시스템을 구성 하 여 키 링 읽기 전용으로 처리 하도록 보조 응용 프로그램을 구성할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-119">The secondary applications can be configured to treat the key ring as read-only by configuring the system as below:</span></span>
+<span data-ttu-id="a90ad-126">앱이 자동으로 만료를 성능의 키 (새 키 만들기)을 롤 않도록 하려는 시나리오를 할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-126">You may have a scenario where you don't want an app to automatically roll keys (create new keys) as they approach expiration.</span></span> <span data-ttu-id="a90ad-127">기본 응용 프로그램 키 관리 고려 사항에 대 한 책임이 보조 앱 하기만 키 링의 읽기 전용 보기를 주/보조 관계에서를 설정 하는 앱이 예로 들 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-127">One example of this might be apps set up in a primary/secondary relationship, where only the primary app is responsible for key management concerns and secondary apps simply have a read-only view of the key ring.</span></span> <span data-ttu-id="a90ad-128">보조 앱 키 링을 사용 하 여 시스템을 구성 하 여 읽기 전용으로 처리 하도록 구성할 수 있습니다 [DisableAutomaticKeyGeneration](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.disableautomatickeygeneration):</span><span class="sxs-lookup"><span data-stu-id="a90ad-128">The secondary apps can be configured to treat the key ring as read-only by configuring the system with [DisableAutomaticKeyGeneration](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.disableautomatickeygeneration):</span></span>
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -87,46 +91,44 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-<a name=data-protection-configuration-per-app-isolation></a>
+## <a name="per-application-isolation"></a><span data-ttu-id="a90ad-129">응용 프로그램 격리</span><span class="sxs-lookup"><span data-stu-id="a90ad-129">Per-application isolation</span></span>
 
-## <a name="per-application-isolation"></a><span data-ttu-id="d9152-120">응용 프로그램 격리</span><span class="sxs-lookup"><span data-stu-id="d9152-120">Per-application isolation</span></span>
+<span data-ttu-id="a90ad-130">데이터 보호 시스템 ASP.NET Core 호스트에 의해 제공 되 면 문제가 응용 프로그램 같은 작업자 프로세스 계정에서 실행 되 고 동일한 마스터 키 자료를 사용 하는 경우에 서로의 앱을 자동으로 격리 합니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-130">When the Data Protection system is provided by an ASP.NET Core host, it automatically isolates apps from one another, even if those apps are running under the same worker process account and are using the same master keying material.</span></span> <span data-ttu-id="a90ad-131">이 비슷합니다는 IsolateApps 한정자 System.Web의에서  **\<machineKey >** 요소입니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-131">This is somewhat similar to the IsolateApps modifier from System.Web's **\<machineKey>** element.</span></span>
 
-<span data-ttu-id="d9152-121">데이터 보호 시스템 ASP.NET Core 호스트에 의해 제공 되 면 해당 응용 프로그램이 동일한 작업자 프로세스 계정에서 실행 되 고 동일한 마스터 키 자료를 사용 하는 경우에 응용 프로그램을 서로 격리 자동으로 됩니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-121">When the data protection system is provided by an ASP.NET Core host, it will automatically isolate applications from one another, even if those applications are running under the same worker process account and are using the same master keying material.</span></span> <span data-ttu-id="d9152-122">이 비슷합니다는 IsolateApps 한정자 System.Web의에서 <machineKey> 요소입니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-122">This is somewhat similar to the IsolateApps modifier from System.Web's <machineKey> element.</span></span>
+<span data-ttu-id="a90ad-132">따라서 고유 테 넌 트로 로컬 컴퓨터에서 각 응용 프로그램을 고려 하 여 격리 메커니즘의 작동은 [IDataProtector](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotector) 판별자로 응용 프로그램 ID를 자동으로 포함 하는 지정 된 모든 앱에 대 한 루트입니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-132">The isolation mechanism works by considering each app on the local machine as a unique tenant, thus the [IDataProtector](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotector) rooted for any given app automatically includes the app ID as a discriminator.</span></span> <span data-ttu-id="a90ad-133">응용 프로그램의 고유 ID 두 위치 중 하나에서 나옵니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-133">The app's unique ID comes from one of two places:</span></span>
 
-<span data-ttu-id="d9152-123">고유한 테 넌 트로 로컬 컴퓨터에서 각 응용 프로그램을 고려 하 여 격리 메커니즘 작동 하므로 자동으로 지정된 된 응용 프로그램에 대 한 루트 IDataProtector ID를 포함 응용 프로그램 판별자로 합니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-123">The isolation mechanism works by considering each application on the local machine as a unique tenant, thus the IDataProtector rooted for any given application automatically includes the application ID as a discriminator.</span></span> <span data-ttu-id="d9152-124">응용 프로그램의 고유 ID 두 위치 중 하나에서 제공 됩니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-124">The application's unique ID comes from one of two places.</span></span>
+1. <span data-ttu-id="a90ad-134">응용 프로그램을 IIS에서 호스트 하는 경우 고유 식별자는 응용 프로그램의 구성 경로입니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-134">If the app is hosted in IIS, the unique identifier is the app's configuration path.</span></span> <span data-ttu-id="a90ad-135">응용 프로그램을 웹 팜 환경에 배포 하는 경우이 값은 웹 팜의 모든 컴퓨터에 IIS 환경 비슷하게 구성 이라고 가정할 안정적인 여야 합니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-135">If an app is deployed in a web farm environment, this value should be stable assuming that the IIS environments are configured similarly across all machines in the web farm.</span></span>
 
-1. <span data-ttu-id="d9152-125">응용 프로그램을 IIS에서 호스트 하는 경우 고유 식별자는 응용 프로그램의 구성 경로입니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-125">If the application is hosted in IIS, the unique identifier is the application's configuration path.</span></span> <span data-ttu-id="d9152-126">팜 환경에 응용 프로그램을 배포한 경우 팜의 모든 컴퓨터에 IIS 환경 비슷하게 구성 있다고 가정할 경우이 값을 안정적 이어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-126">If an application is deployed in a farm environment, this value should be stable assuming that the IIS environments are configured similarly across all machines in the farm.</span></span>
+2. <span data-ttu-id="a90ad-136">응용 프로그램을 IIS에서 호스트 되지 않습니다. 하는 경우 고유 식별자는 앱의 실제 경로입니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-136">If the app isn't hosted in IIS, the unique identifier is the physical path of the app.</span></span>
 
-2. <span data-ttu-id="d9152-127">응용 프로그램은 IIS에서 호스트 되지 않는, 고유 식별자는 응용 프로그램의 실제 경로입니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-127">If the application is not hosted in IIS, the unique identifier is the physical path of the application.</span></span>
+<span data-ttu-id="a90ad-137">고유 식별자 다시 설정 후에 유지 하도록 되어 &mdash; 개별 응용 프로그램 및 컴퓨터 자체입니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-137">The unique identifier is designed to survive resets &mdash; both of the individual app and of the machine itself.</span></span>
 
-<span data-ttu-id="d9152-128">고유 식별자는 다시 설정-개별 응용 프로그램 및 컴퓨터 자체의 유지 되도록 설계 되었습니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-128">The unique identifier is designed to survive resets - both of the individual application and of the machine itself.</span></span>
+<span data-ttu-id="a90ad-138">이 격리 메커니즘 앱 악성이 아닌지 가정 합니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-138">This isolation mechanism assumes that the apps are not malicious.</span></span> <span data-ttu-id="a90ad-139">악성 앱 동일한 작업자 프로세스 계정에서 실행 중인 다른 모든 앱에 항상 영향을 줄 수입니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-139">A malicious app can always impact any other app running under the same worker process account.</span></span> <span data-ttu-id="a90ad-140">응용 프로그램 상호 신뢰할 수 없는 공유 호스팅 환경에서 호스팅 공급자 간의 분리 앱의 기본 키 저장소를 포함 하 여 운영 체제 수준 격리를 보장 하는 단계를 수행 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-140">In a shared hosting environment where apps are mutually untrusted, the hosting provider should take steps to ensure OS-level isolation between apps, including separating the apps' underlying key repositories.</span></span>
 
-<span data-ttu-id="d9152-129">이 격리 메커니즘에서는 응용 프로그램은 악성이 아닌지 가정 합니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-129">This isolation mechanism assumes that the applications are not malicious.</span></span> <span data-ttu-id="d9152-130">악성 응용 프로그램 같은 작업자 프로세스 계정에서 실행 중인 다른 응용 프로그램에 항상 영향을 줄 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-130">A malicious application can always impact any other application running under the same worker process account.</span></span> <span data-ttu-id="d9152-131">응용 프로그램 상호 신뢰할 수 없는 공유 호스팅 환경에서 호스팅 공급자는 여러 응용 프로그램에서 분리 응용 프로그램의 기본 키 저장소를 포함 하 여 운영 체제 수준 격리를 보장 하는 단계를 수행 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-131">In a shared hosting environment where applications are mutually untrusted, the hosting provider should take steps to ensure OS-level isolation between applications, including separating the applications' underlying key repositories.</span></span>
+<span data-ttu-id="a90ad-141">ASP.NET Core 호스트에서 데이터 보호 시스템 제공 되지 않습니다 (통해 인스턴스화하는 경우에 예를 들어는 `DataProtectionProvider` 구체적 형식)는 기본적으로 응용 프로그램 격리를 해제 합니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-141">If the Data Protection system isn't provided by an ASP.NET Core host (for example, if you instantiate it via the `DataProtectionProvider` concrete type) app isolation is disabled by default.</span></span> <span data-ttu-id="a90ad-142">적절 한 제공으로 뒷받침 되며 동일한 키 자료는 모든 응용 프로그램 페이로드를 공유할 수 앱 격리가 비활성화 된 경우 [목적으로](xref:security/data-protection/consumer-apis/purpose-strings)합니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-142">When app isolation is disabled, all apps backed by the same keying material can share payloads as long as they provide the appropriate [purposes](xref:security/data-protection/consumer-apis/purpose-strings).</span></span> <span data-ttu-id="a90ad-143">이 환경에서 응용 프로그램 격리를 제공 하려면 호출는 [SetApplicationName](#setapplicationname) 구성에 대 한 메서드 개체 및 각 응용 프로그램에 대 한 고유 이름을 제공 합니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-143">To provide app isolation in this environment, call the [SetApplicationName](#setapplicationname) method on the configuration object and provide a unique name for each app.</span></span>
 
-<span data-ttu-id="d9152-132">데이터 보호 시스템 (예: 경우 개발자 인스턴스화하지 자신 DataProtectionProvider 구체적인 형식을 통해) ASP.NET Core 호스트에서 제공 하지 않는, 응용 프로그램 격리 기본적으로 비활성화 되 고 동일한 키 지정에서 지 원하는 모든 응용 프로그램 자료 적절 한 목적으로 제공으로 페이로드를 공유할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-132">If the data protection system is not provided by an ASP.NET Core host (e.g., if the developer instantiates it himself via the DataProtectionProvider concrete type), application isolation is disabled by default, and all applications backed by the same keying material can share payloads as long as they provide the appropriate purposes.</span></span> <span data-ttu-id="d9152-133">이 환경에서 응용 프로그램 격리를 제공 하려면 구성 개체에서 SetApplicationName 메서드를 호출, 참조는 [코드 샘플](#data-protection-code-sample-application-name) 위에 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-133">To provide application isolation in this environment, call the SetApplicationName method on the configuration object, see the [code sample](#data-protection-code-sample-application-name) above.</span></span>
+## <a name="changing-algorithms-with-usecryptographicalgorithms"></a><span data-ttu-id="a90ad-144">UseCryptographicAlgorithms와 알고리즘을 변경합니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-144">Changing algorithms with UseCryptographicAlgorithms</span></span>
 
-<a name=data-protection-changing-algorithms></a>
+<span data-ttu-id="a90ad-145">데이터 보호 스택의 사용 하면 새로 생성 된 키로 사용 되는 기본 알고리즘을 변경할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-145">The Data Protection stack allows you to change the default algorithm used by newly-generated keys.</span></span> <span data-ttu-id="a90ad-146">호출 하는 것이 작업을 수행 하는 가장 간단한 방법은 [UseCryptographicAlgorithms](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.usecryptographicalgorithms) 구성 콜백에서:</span><span class="sxs-lookup"><span data-stu-id="a90ad-146">The simplest way to do this is to call [UseCryptographicAlgorithms](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.usecryptographicalgorithms) from the configuration callback:</span></span>
 
-## <a name="changing-algorithms"></a><span data-ttu-id="d9152-134">알고리즘 변경</span><span class="sxs-lookup"><span data-stu-id="d9152-134">Changing algorithms</span></span>
-
-<span data-ttu-id="d9152-135">데이터 보호 스택의 새로 생성 된 키로 사용 되는 기본 알고리즘을 변경 하는 허용 합니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-135">The data protection stack allows changing the default algorithm used by newly-generated keys.</span></span> <span data-ttu-id="d9152-136">이 작업을 수행 하는 가장 간단한 방법은에서 같이 구성 콜백에서 UseCryptographicAlgorithms를 호출 하는 것은 아래 예제입니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-136">The simplest way to do this is to call UseCryptographicAlgorithms from the configuration callback, as in the below example.</span></span>
-
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="d9152-137">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="d9152-137">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="a90ad-147">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="a90ad-147">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
 ```csharp
 services.AddDataProtection()
-    .UseCryptographicAlgorithms(new AuthenticatedEncryptorConfiguration()
+    .UseCryptographicAlgorithms(
+        new AuthenticatedEncryptorConfiguration()
     {
         EncryptionAlgorithm = EncryptionAlgorithm.AES_256_CBC,
         ValidationAlgorithm = ValidationAlgorithm.HMACSHA256
     });
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="d9152-138">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="d9152-138">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="a90ad-148">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="a90ad-148">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
 ```csharp
 services.AddDataProtection()
-    .UseCryptographicAlgorithms(new AuthenticatedEncryptionSettings()
+    .UseCryptographicAlgorithms(
+        new AuthenticatedEncryptionSettings()
     {
         EncryptionAlgorithm = EncryptionAlgorithm.AES_256_CBC,
         ValidationAlgorithm = ValidationAlgorithm.HMACSHA256
@@ -135,105 +137,106 @@ services.AddDataProtection()
 
 ---
 
-<span data-ttu-id="d9152-139">기본 EncryptionAlgorithm 및 ValidationAlgorithm은 AES-256-CBC 및 HMACSHA256, 각각입니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-139">The default EncryptionAlgorithm and ValidationAlgorithm are AES-256-CBC and HMACSHA256, respectively.</span></span> <span data-ttu-id="d9152-140">기본 정책을 통해 시스템 관리자가 설정할 수 있습니다 [컴퓨터 넓은 정책](machine-wide-policy.md), 하지만 UseCryptographicAlgorithms 하기 위해 명시적 호출이 기본 정책을 재정의 합니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-140">The default policy can be set by a system administrator via [Machine Wide Policy](machine-wide-policy.md), but an explicit call to UseCryptographicAlgorithms will override the default policy.</span></span>
+<span data-ttu-id="a90ad-149">기본 EncryptionAlgorithm CBC AES 256-, 이며 기본 ValidationAlgorithm HMACSHA256 합니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-149">The default EncryptionAlgorithm is AES-256-CBC, and the default ValidationAlgorithm is HMACSHA256.</span></span> <span data-ttu-id="a90ad-150">기본 정책을 통해 시스템 관리자가 설정할 수 있습니다는 [시스템 수준의 정책](xref:security/data-protection/configuration/machine-wide-policy), 하지만를 명시적으로 호출 `UseCryptographicAlgorithms` 기본 정책 보다 우선 합니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-150">The default policy can be set by a system administrator via a [machine-wide policy](xref:security/data-protection/configuration/machine-wide-policy), but an explicit call to `UseCryptographicAlgorithms` overrides the default policy.</span></span>
 
-<span data-ttu-id="d9152-141">UseCryptographicAlgorithms 호출을 사용 하면 미리 정의 된 기본 제공 목록), (에서 원하는 알고리즘을 지정 하려면 개발자 및 개발자는 알고리즘의 구현에 걱정할 필요가 없습니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-141">Calling UseCryptographicAlgorithms will allow the developer to specify the desired algorithm (from a predefined built-in list), and the developer does not need to worry about the implementation of the algorithm.</span></span> <span data-ttu-id="d9152-142">예를 들어, 데이터 보호 시스템 위의 시나리오에서 사용 하도록 시도할 AES의 CNG 구현을 Windows에서 실행 되는 경우, 그렇지 않으면 대체 됩니다 관리 되는 System.Security.Cryptography.Aes 클래스에 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-142">For instance, in the scenario above the data protection system will attempt to use the CNG implementation of AES if running on Windows, otherwise it will fall back to the managed System.Security.Cryptography.Aes class.</span></span>
+<span data-ttu-id="a90ad-151">호출 `UseCryptographicAlgorithms` 미리 정의 된 기본 제공 목록에서 원하는 알고리즘을 지정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-151">Calling `UseCryptographicAlgorithms` allows you to specify the desired algorithm from a predefined built-in list.</span></span> <span data-ttu-id="a90ad-152">알고리즘의 구현에 대해 걱정할 필요가 없습니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-152">You don't need to worry about the implementation of the algorithm.</span></span> <span data-ttu-id="a90ad-153">위의 시나리오에서 데이터 보호 시스템에는 Windows에서 실행 되는 경우 AES의 CNG 구현을 사용 하 여 시도 합니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-153">In the scenario above, the Data Protection system attempts to use the CNG implementation of AES if running on Windows.</span></span> <span data-ttu-id="a90ad-154">그렇지 않으면로 대체은 관리 되는 [System.Security.Cryptography.Aes](/dotnet/api/system.security.cryptography.aes) 클래스입니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-154">Otherwise, it falls back to the managed [System.Security.Cryptography.Aes](/dotnet/api/system.security.cryptography.aes) class.</span></span>
 
-<span data-ttu-id="d9152-143">에 표시 된 대로 UseCustomCryptographicAlgorithms에 대 한 호출을 통해 원하는 경우 개발자 구현을 직접 지정할 수는 아래 예제입니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-143">The developer can manually specify an implementation if desired via a call to UseCustomCryptographicAlgorithms, as show in the below examples.</span></span>
+<span data-ttu-id="a90ad-155">호출을 통해 구현을 직접 지정할 수 있습니다 [UseCustomCryptographicAlgorithms](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.usecustomcryptographicalgorithms)합니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-155">You can manually specify an implementation via a call to [UseCustomCryptographicAlgorithms](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.usecustomcryptographicalgorithms).</span></span>
 
->[!TIP]
-> <span data-ttu-id="d9152-144">알고리즘 변경 키 링의 기존 키 영향을 주지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-144">Changing algorithms does not affect existing keys in the key ring.</span></span> <span data-ttu-id="d9152-145">새로 생성 된 키를만 영향을 줍니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-145">It only affects newly-generated keys.</span></span>
+> [!TIP]
+> <span data-ttu-id="a90ad-156">알고리즘 변경 키 링의 기존 키 영향을 주지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-156">Changing algorithms doesn't affect existing keys in the key ring.</span></span> <span data-ttu-id="a90ad-157">새로 생성 된 키를만 영향을 줍니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-157">It only affects newly-generated keys.</span></span>
 
-<a name=data-protection-changing-algorithms-custom-managed></a>
+### <a name="specifying-custom-managed-algorithms"></a><span data-ttu-id="a90ad-158">관리 되는 사용자 지정 알고리즘을 지정</span><span class="sxs-lookup"><span data-stu-id="a90ad-158">Specifying custom managed algorithms</span></span>
 
-### <a name="specifying-custom-managed-algorithms"></a><span data-ttu-id="d9152-146">관리 되는 사용자 지정 알고리즘을 지정</span><span class="sxs-lookup"><span data-stu-id="d9152-146">Specifying custom managed algorithms</span></span>
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="a90ad-159">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="a90ad-159">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="d9152-147">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="d9152-147">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
-
-<span data-ttu-id="d9152-148">관리 되는 사용자 지정 알고리즘을 지정 하려면 구현 형식을 가리키는 ManagedAuthenticatedEncryptorConfiguration 인스턴스를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-148">To specify custom managed algorithms, create a ManagedAuthenticatedEncryptorConfiguration instance that points to the implementation types.</span></span>
+<span data-ttu-id="a90ad-160">관리 되는 사용자 지정 알고리즘을 지정 하려면 만듭니다는 [ManagedAuthenticatedEncryptorConfiguration](/dotnet/api/microsoft.aspnetcore.dataprotection.authenticatedencryption.configurationmodel.managedauthenticatedencryptorconfiguration) 구현 형식을 가리키는 인스턴스:</span><span class="sxs-lookup"><span data-stu-id="a90ad-160">To specify custom managed algorithms, create a [ManagedAuthenticatedEncryptorConfiguration](/dotnet/api/microsoft.aspnetcore.dataprotection.authenticatedencryption.configurationmodel.managedauthenticatedencryptorconfiguration) instance that points to the implementation types:</span></span>
 
 ```csharp
 serviceCollection.AddDataProtection()
-    .UseCustomCryptographicAlgorithms(new ManagedAuthenticatedEncryptorConfiguration()
+    .UseCustomCryptographicAlgorithms(
+        new ManagedAuthenticatedEncryptorConfiguration()
     {
-        // a type that subclasses SymmetricAlgorithm
+        // A type that subclasses SymmetricAlgorithm
         EncryptionAlgorithmType = typeof(Aes),
 
-        // specified in bits
+        // Specified in bits
         EncryptionAlgorithmKeySize = 256,
 
-        // a type that subclasses KeyedHashAlgorithm
+        // A type that subclasses KeyedHashAlgorithm
         ValidationAlgorithmType = typeof(HMACSHA256)
     });
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="d9152-149">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="d9152-149">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="a90ad-161">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="a90ad-161">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
-<span data-ttu-id="d9152-150">관리 되는 사용자 지정 알고리즘을 지정 하려면 구현 형식을 가리키는 ManagedAuthenticatedEncryptionSettings 인스턴스를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-150">To specify custom managed algorithms, create a ManagedAuthenticatedEncryptionSettings instance that points to the implementation types.</span></span>
+<span data-ttu-id="a90ad-162">관리 되는 사용자 지정 알고리즘을 지정 하려면 만듭니다는 [ManagedAuthenticatedEncryptionSettings](/dotnet/api/microsoft.aspnetcore.dataprotection.authenticatedencryption.managedauthenticatedencryptionsettings) 구현 형식을 가리키는 인스턴스:</span><span class="sxs-lookup"><span data-stu-id="a90ad-162">To specify custom managed algorithms, create a [ManagedAuthenticatedEncryptionSettings](/dotnet/api/microsoft.aspnetcore.dataprotection.authenticatedencryption.managedauthenticatedencryptionsettings) instance that points to the implementation types:</span></span>
 
 ```csharp
 serviceCollection.AddDataProtection()
-    .UseCustomCryptographicAlgorithms(new ManagedAuthenticatedEncryptionSettings()
+    .UseCustomCryptographicAlgorithms(
+        new ManagedAuthenticatedEncryptionSettings()
     {
-        // a type that subclasses SymmetricAlgorithm
+        // A type that subclasses SymmetricAlgorithm
         EncryptionAlgorithmType = typeof(Aes),
 
-        // specified in bits
+        // Specified in bits
         EncryptionAlgorithmKeySize = 256,
 
-        // a type that subclasses KeyedHashAlgorithm
+        // A type that subclasses KeyedHashAlgorithm
         ValidationAlgorithmType = typeof(HMACSHA256)
     });
 ```
 
 ---
 
-<span data-ttu-id="d9152-151">일반적으로 \*형식 속성 콘크리트를 가리켜야 SymmetricAlgorithm 및 KeyedHashAlgorithm을 구현의 (공용 매개 변수가 없는 생성자)를 통해 인스턴스화할 수 있는 경우에 시스템 특수 한 경우와 같은 일부 값 typeof(Aes) 편의 위해 .</span><span class="sxs-lookup"><span data-stu-id="d9152-151">Generally the \*Type properties must point to concrete, instantiable (via a public parameterless ctor) implementations of SymmetricAlgorithm and KeyedHashAlgorithm, though the system special-cases some values like typeof(Aes) for convenience.</span></span>
+<span data-ttu-id="a90ad-163">일반적으로 \*형식 속성 콘크리트를 가리켜야 합니다. (공용 매개 변수가 없는 생성자)를 통해 인스턴스화할 수 있는 구현 [SymmetricAlgorithm](/dotnet/api/system.security.cryptography.symmetricalgorithm) 및 [KeyedHashAlgorithm](/dotnet/api/system.security.cryptography.keyedhashalgorithm)경우에 시스템 특수 한 경우와 같은 일부 값 `typeof(Aes)` 편의 위해.</span><span class="sxs-lookup"><span data-stu-id="a90ad-163">Generally the \*Type properties must point to concrete, instantiable (via a public parameterless ctor) implementations of [SymmetricAlgorithm](/dotnet/api/system.security.cryptography.symmetricalgorithm) and [KeyedHashAlgorithm](/dotnet/api/system.security.cryptography.keyedhashalgorithm), though the system special-cases some values like `typeof(Aes)` for convenience.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="d9152-152">≥ 128 비트의 키 길이 및 ≥ 64 비트의 블록 크기는 SymmetricAlgorithm 있어야 하 고 PKCS #7 안쪽 여백 사용 하 여 CBC 모드 암호화를 지원 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-152">The SymmetricAlgorithm must have a key length of ≥ 128 bits and a block size of ≥ 64 bits, and it must support CBC-mode encryption with PKCS #7 padding.</span></span> <span data-ttu-id="d9152-153">KeyedHashAlgorithm 다이제스트 크기인 있어야 합니다. > = 128 비트 키 길이 해시 알고리즘의 다이제스트 길이 지원 해야 하 고 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-153">The KeyedHashAlgorithm must have a digest size of >= 128 bits, and it must support keys of length equal to the hash algorithm's digest length.</span></span> <span data-ttu-id="d9152-154">KeyedHashAlgorithm HMAC를 엄격 하 게 필요 하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-154">The KeyedHashAlgorithm is not strictly required to be HMAC.</span></span>
+> <span data-ttu-id="a90ad-164">`SymmetricAlgorithm` 의 키 길이 > = 128 비트의 블록 크기 > 64 비트 고 PKCS #7 안쪽 여백 사용 하 여 CBC 모드 암호화를 지원 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-164">The `SymmetricAlgorithm` must have a key length of >= 128 bits, a block size of >= 64 bits, and it must support CBC-mode encryption with PKCS #7 padding.</span></span> <span data-ttu-id="a90ad-165">`KeyedHashAlgorithm` 다이제스트 크기인 있어야 합니다. > = 128 비트 키 길이 해시 알고리즘의 다이제스트 길이 지원 해야 하 고 있습니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-165">The `KeyedHashAlgorithm` must have a digest size of >= 128 bits, and it must support keys of length equal to the hash algorithm's digest length.</span></span> <span data-ttu-id="a90ad-166">`KeyedHashAlgorithm` HMAC를 엄격 하 게 필요 하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-166">The `KeyedHashAlgorithm` isn't strictly required to be HMAC.</span></span>
+> <span data-ttu-id="a90ad-167">≥ 128 비트의 키 길이 및 ≥ 64 비트의 블록 크기는 SymmetricAlgorithm 있어야 하 고 PKCS #7 안쪽 여백 사용 하 여 CBC 모드 암호화를 지원 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-167">The SymmetricAlgorithm must have a key length of ≥ 128 bits and a block size of ≥ 64 bits, and it must support CBC-mode encryption with PKCS #7 padding.</span></span> <span data-ttu-id="a90ad-168">KeyedHashAlgorithm 다이제스트 크기인 있어야 합니다. > = 128 비트 키 길이 해시 알고리즘의 다이제스트 길이 지원 해야 하 고 있습니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-168">The KeyedHashAlgorithm must have a digest size of >= 128 bits, and it must support keys of length equal to the hash algorithm's digest length.</span></span> <span data-ttu-id="a90ad-169">KeyedHashAlgorithm HMAC를 엄격 하 게 필요 하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-169">The KeyedHashAlgorithm is not strictly required to be HMAC.</span></span>
 
-<a name=data-protection-changing-algorithms-cng></a>
+### <a name="specifying-custom-windows-cng-algorithms"></a><span data-ttu-id="a90ad-170">사용자 지정 Windows CNG 알고리즘 지정</span><span class="sxs-lookup"><span data-stu-id="a90ad-170">Specifying custom Windows CNG algorithms</span></span>
 
-### <a name="specifying-custom-windows-cng-algorithms"></a><span data-ttu-id="d9152-155">사용자 지정 Windows CNG 알고리즘 지정</span><span class="sxs-lookup"><span data-stu-id="d9152-155">Specifying custom Windows CNG algorithms</span></span>
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="a90ad-171">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="a90ad-171">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="d9152-156">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="d9152-156">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
-
-<span data-ttu-id="d9152-157">CBC 모드 암호화 + HMAC 유효성 검사를 사용 하 여 사용자 지정 Windows CNG 알고리즘을 지정 하려면 알고리즘 정보를 포함 하는 CngCbcAuthenticatedEncryptorConfiguration 인스턴스를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-157">To specify a custom Windows CNG algorithm using CBC-mode encryption + HMAC validation, create a CngCbcAuthenticatedEncryptorConfiguration instance that contains the algorithmic information.</span></span>
+<span data-ttu-id="a90ad-172">CBC 모드 암호화를 사용 하 여 HMAC 유효성 검사와 함께 사용자 지정 Windows CNG 알고리즘을 지정 하려면 만듭니다는 [CngCbcAuthenticatedEncryptorConfiguration](/dotnet/api/microsoft.aspnetcore.dataprotection.authenticatedencryption.configurationmodel.cngcbcauthenticatedencryptorconfiguration) 알고리즘 정보를 포함 하는 인스턴스:</span><span class="sxs-lookup"><span data-stu-id="a90ad-172">To specify a custom Windows CNG algorithm using CBC-mode encryption with HMAC validation, create a [CngCbcAuthenticatedEncryptorConfiguration](/dotnet/api/microsoft.aspnetcore.dataprotection.authenticatedencryption.configurationmodel.cngcbcauthenticatedencryptorconfiguration) instance that contains the algorithmic information:</span></span>
 
 ```csharp
 services.AddDataProtection()
-    .UseCustomCryptographicAlgorithms(new CngCbcAuthenticatedEncryptorConfiguration()
+    .UseCustomCryptographicAlgorithms(
+        new CngCbcAuthenticatedEncryptorConfiguration()
     {
-        // passed to BCryptOpenAlgorithmProvider
+        // Passed to BCryptOpenAlgorithmProvider
         EncryptionAlgorithm = "AES",
         EncryptionAlgorithmProvider = null,
 
-        // specified in bits
+        // Specified in bits
         EncryptionAlgorithmKeySize = 256,
 
-        // passed to BCryptOpenAlgorithmProvider
+        // Passed to BCryptOpenAlgorithmProvider
         HashAlgorithm = "SHA256",
         HashAlgorithmProvider = null
     });
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="d9152-158">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="d9152-158">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="a90ad-173">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="a90ad-173">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
-<span data-ttu-id="d9152-159">CBC 모드 암호화 + HMAC 유효성 검사를 사용 하 여 사용자 지정 Windows CNG 알고리즘을 지정 하려면 알고리즘 정보를 포함 하는 CngCbcAuthenticatedEncryptionSettings 인스턴스를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-159">To specify a custom Windows CNG algorithm using CBC-mode encryption + HMAC validation, create a CngCbcAuthenticatedEncryptionSettings instance that contains the algorithmic information.</span></span>
+<span data-ttu-id="a90ad-174">CBC 모드 암호화를 사용 하 여 HMAC 유효성 검사와 함께 사용자 지정 Windows CNG 알고리즘을 지정 하려면 만듭니다는 [CngCbcAuthenticatedEncryptionSettings](/dotnet/api/microsoft.aspnetcore.dataprotection.authenticatedencryption.cngcbcauthenticatedencryptionsettings) 알고리즘 정보를 포함 하는 인스턴스:</span><span class="sxs-lookup"><span data-stu-id="a90ad-174">To specify a custom Windows CNG algorithm using CBC-mode encryption with HMAC validation, create a [CngCbcAuthenticatedEncryptionSettings](/dotnet/api/microsoft.aspnetcore.dataprotection.authenticatedencryption.cngcbcauthenticatedencryptionsettings) instance that contains the algorithmic information:</span></span>
 
 ```csharp
 services.AddDataProtection()
-    .UseCustomCryptographicAlgorithms(new CngCbcAuthenticatedEncryptionSettings()
+    .UseCustomCryptographicAlgorithms(
+        new CngCbcAuthenticatedEncryptionSettings()
     {
-        // passed to BCryptOpenAlgorithmProvider
+        // Passed to BCryptOpenAlgorithmProvider
         EncryptionAlgorithm = "AES",
         EncryptionAlgorithmProvider = null,
 
-        // specified in bits
+        // Specified in bits
         EncryptionAlgorithmKeySize = 256,
 
-        // passed to BCryptOpenAlgorithmProvider
+        // Passed to BCryptOpenAlgorithmProvider
         HashAlgorithm = "SHA256",
         HashAlgorithmProvider = null
     });
@@ -242,38 +245,40 @@ services.AddDataProtection()
 ---
 
 > [!NOTE]
-> <span data-ttu-id="d9152-160">블록 대칭 암호화 알고리즘 ≥ 128 비트의 키 길이 ≥ 64 비트의 블록 크기 있고 PKCS #7 안쪽 여백 사용 하 여 CBC 모드 암호화를 지원 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-160">The symmetric block cipher algorithm must have a key length of ≥ 128 bits and a block size of ≥ 64 bits, and it must support CBC-mode encryption with PKCS #7 padding.</span></span> <span data-ttu-id="d9152-161">해시 알고리즘의 다이제스트 크기 있어야 합니다. > = 128 비트 및 BCRYPT_ALG_HANDLE_HMAC_FLAG 플래그로 열기를 지원 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-161">The hash algorithm must have a digest size of >= 128 bits and must support being opened with the BCRYPT_ALG_HANDLE_HMAC_FLAG flag.</span></span> <span data-ttu-id="d9152-162">\*공급자 속성은 지정된 된 알고리즘에 대 한 기본 공급자를 사용 하려면 null로 설정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-162">The \*Provider properties can be set to null to use the default provider for the specified algorithm.</span></span> <span data-ttu-id="d9152-163">참조는 [BCryptOpenAlgorithmProvider](https://msdn.microsoft.com/library/windows/desktop/aa375479(v=vs.85).aspx) 자세한 정보에 대 한 설명서입니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-163">See the [BCryptOpenAlgorithmProvider](https://msdn.microsoft.com/library/windows/desktop/aa375479(v=vs.85).aspx) documentation for more information.</span></span>
+> <span data-ttu-id="a90ad-175">블록 대칭 암호화 알고리즘의 키 길이 있어야 합니다. > = 128 비트의 블록 크기 > 64 비트 고 PKCS #7 안쪽 여백 사용 하 여 CBC 모드 암호화를 지원 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-175">The symmetric block cipher algorithm must have a key length of >= 128 bits, a block size of >= 64 bits, and it must support CBC-mode encryption with PKCS #7 padding.</span></span> <span data-ttu-id="a90ad-176">해시 알고리즘의 다이제스트 크기 있어야 합니다. > = 128 비트 하 고는 BCRYPT 열린 지원 해야\_ALG\_처리\_HMAC\_플래그 플래그입니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-176">The hash algorithm must have a digest size of >= 128 bits and must support being opened with the BCRYPT\_ALG\_HANDLE\_HMAC\_FLAG flag.</span></span> <span data-ttu-id="a90ad-177">\*공급자 속성은 지정된 된 알고리즘에 대 한 기본 공급자를 사용 하려면 null로 설정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-177">The \*Provider properties can be set to null to use the default provider for the specified algorithm.</span></span> <span data-ttu-id="a90ad-178">참조는 [BCryptOpenAlgorithmProvider](https://msdn.microsoft.com/library/windows/desktop/aa375479(v=vs.85).aspx) 자세한 정보에 대 한 설명서입니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-178">See the [BCryptOpenAlgorithmProvider](https://msdn.microsoft.com/library/windows/desktop/aa375479(v=vs.85).aspx) documentation for more information.</span></span>
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="d9152-164">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="d9152-164">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="a90ad-179">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="a90ad-179">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
-<span data-ttu-id="d9152-165">Galois/카운터 모드 암호화 + 유효성 검사를 사용 하 여 사용자 지정 Windows CNG 알고리즘을 지정 하려면 알고리즘 정보를 포함 하는 CngGcmAuthenticatedEncryptorConfiguration 인스턴스를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-165">To specify a custom Windows CNG algorithm using Galois/Counter Mode encryption + validation, create a CngGcmAuthenticatedEncryptorConfiguration instance that contains the algorithmic information.</span></span>
+<span data-ttu-id="a90ad-180">유효성 검사와 Galois/카운터 모드 암호화를 사용 하 여 사용자 지정 Windows CNG 알고리즘을 지정 하려면 만듭니다는 [CngGcmAuthenticatedEncryptorConfiguration](/dotnet/api/microsoft.aspnetcore.dataprotection.authenticatedencryption.configurationmodel.cnggcmauthenticatedencryptorconfiguration) 알고리즘 정보를 포함 하는 인스턴스:</span><span class="sxs-lookup"><span data-stu-id="a90ad-180">To specify a custom Windows CNG algorithm using Galois/Counter Mode encryption with validation, create a [CngGcmAuthenticatedEncryptorConfiguration](/dotnet/api/microsoft.aspnetcore.dataprotection.authenticatedencryption.configurationmodel.cnggcmauthenticatedencryptorconfiguration) instance that contains the algorithmic information:</span></span>
 
 ```csharp
 services.AddDataProtection()
-    .UseCustomCryptographicAlgorithms(new CngGcmAuthenticatedEncryptorConfiguration()
+    .UseCustomCryptographicAlgorithms(
+        new CngGcmAuthenticatedEncryptorConfiguration()
     {
-        // passed to BCryptOpenAlgorithmProvider
+        // Passed to BCryptOpenAlgorithmProvider
         EncryptionAlgorithm = "AES",
         EncryptionAlgorithmProvider = null,
 
-        // specified in bits
+        // Specified in bits
         EncryptionAlgorithmKeySize = 256
     });
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="d9152-166">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="d9152-166">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="a90ad-181">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="a90ad-181">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
-<span data-ttu-id="d9152-167">Galois/카운터 모드 암호화 + 유효성 검사를 사용 하 여 사용자 지정 Windows CNG 알고리즘을 지정 하려면 알고리즘 정보를 포함 하는 CngGcmAuthenticatedEncryptionSettings 인스턴스를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-167">To specify a custom Windows CNG algorithm using Galois/Counter Mode encryption + validation, create a CngGcmAuthenticatedEncryptionSettings instance that contains the algorithmic information.</span></span>
+<span data-ttu-id="a90ad-182">유효성 검사와 Galois/카운터 모드 암호화를 사용 하 여 사용자 지정 Windows CNG 알고리즘을 지정 하려면 만듭니다는 [CngGcmAuthenticatedEncryptionSettings](/dotnet/api/microsoft.aspnetcore.dataprotection.authenticatedencryption.cnggcmauthenticatedencryptionsettings) 알고리즘 정보를 포함 하는 인스턴스:</span><span class="sxs-lookup"><span data-stu-id="a90ad-182">To specify a custom Windows CNG algorithm using Galois/Counter Mode encryption with validation, create a [CngGcmAuthenticatedEncryptionSettings](/dotnet/api/microsoft.aspnetcore.dataprotection.authenticatedencryption.cnggcmauthenticatedencryptionsettings) instance that contains the algorithmic information:</span></span>
 
 ```csharp
 services.AddDataProtection()
-    .UseCustomCryptographicAlgorithms(new CngGcmAuthenticatedEncryptionSettings()
+    .UseCustomCryptographicAlgorithms(
+        new CngGcmAuthenticatedEncryptionSettings()
     {
-        // passed to BCryptOpenAlgorithmProvider
+        // Passed to BCryptOpenAlgorithmProvider
         EncryptionAlgorithm = "AES",
         EncryptionAlgorithmProvider = null,
 
-        // specified in bits
+        // Specified in bits
         EncryptionAlgorithmKeySize = 256
     });
 ```
@@ -281,13 +286,20 @@ services.AddDataProtection()
 ---
 
 > [!NOTE]
-> <span data-ttu-id="d9152-168">블록 대칭 암호화 알고리즘 ≥ 128 비트의 키 길이 정확 하 게 128 비트의 블록 크기 있고 GCM 암호화를 지원 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-168">The symmetric block cipher algorithm must have a key length of ≥ 128 bits and a block size of exactly 128 bits, and it must support GCM encryption.</span></span> <span data-ttu-id="d9152-169">지정된 된 알고리즘에 대 한 기본 공급자를 사용 하려면 null로 EncryptionAlgorithmProvider 속성을 설정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-169">The EncryptionAlgorithmProvider property can be set to null to use the default provider for the specified algorithm.</span></span> <span data-ttu-id="d9152-170">참조는 [BCryptOpenAlgorithmProvider](https://msdn.microsoft.com/library/windows/desktop/aa375479(v=vs.85).aspx) 자세한 정보에 대 한 설명서입니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-170">See the [BCryptOpenAlgorithmProvider](https://msdn.microsoft.com/library/windows/desktop/aa375479(v=vs.85).aspx) documentation for more information.</span></span>
+> <span data-ttu-id="a90ad-183">블록 대칭 암호화 알고리즘의 키 길이 있어야 합니다. > = 128 비트 정확히 128 비트의 블록 크기 및 GCM 암호화를 지원 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-183">The symmetric block cipher algorithm must have a key length of >= 128 bits, a block size of exactly 128 bits, and it must support GCM encryption.</span></span> <span data-ttu-id="a90ad-184">설정할 수 있습니다는 [EncryptionAlgorithmProvider](/dotnet/api/microsoft.aspnetcore.dataprotection.authenticatedencryption.configurationmodel.cngcbcauthenticatedencryptorconfiguration.encryptionalgorithmprovider) 속성을 null로 지정된 된 알고리즘에 대 한 기본 공급자를 사용 합니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-184">You can set the [EncryptionAlgorithmProvider](/dotnet/api/microsoft.aspnetcore.dataprotection.authenticatedencryption.configurationmodel.cngcbcauthenticatedencryptorconfiguration.encryptionalgorithmprovider) property to null to use the default provider for the specified algorithm.</span></span> <span data-ttu-id="a90ad-185">참조는 [BCryptOpenAlgorithmProvider](https://msdn.microsoft.com/library/windows/desktop/aa375479(v=vs.85).aspx) 자세한 정보에 대 한 설명서입니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-185">See the [BCryptOpenAlgorithmProvider](https://msdn.microsoft.com/library/windows/desktop/aa375479(v=vs.85).aspx) documentation for more information.</span></span>
 
-### <a name="specifying-other-custom-algorithms"></a><span data-ttu-id="d9152-171">다른 사용자 지정 알고리즘을 지정</span><span class="sxs-lookup"><span data-stu-id="d9152-171">Specifying other custom algorithms</span></span>
+### <a name="specifying-other-custom-algorithms"></a><span data-ttu-id="a90ad-186">다른 사용자 지정 알고리즘을 지정</span><span class="sxs-lookup"><span data-stu-id="a90ad-186">Specifying other custom algorithms</span></span>
 
-<span data-ttu-id="d9152-172">경우에 첫 번째 클래스 API로 노출 되지 데이터 보호 시스템은 거의 모든 종류의 알고리즘을 지정할 수 있을 만큼 확장 가능 합니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-172">Though not exposed as a first-class API, the data protection system is extensible enough to allow specifying almost any kind of algorithm.</span></span> <span data-ttu-id="d9152-173">예를 들어 HSM 내에 포함 된 모든 키를 유지 하 고 암호화 및 암호 해독 루틴의 핵심 사용자 지정 구현을 제공 됩니다.</span><span class="sxs-lookup"><span data-stu-id="d9152-173">For example, it is possible to keep all keys contained within an HSM and to provide a custom implementation of the core encryption and decryption routines.</span></span> <span data-ttu-id="d9152-174">IAuthenticatedEncryptorConfiguration 핵심 암호화 확장성 섹션에 대 한 자세한 내용은 참조 하십시오.</span><span class="sxs-lookup"><span data-stu-id="d9152-174">See IAuthenticatedEncryptorConfiguration in the core cryptography extensibility section for more information.</span></span>
+<span data-ttu-id="a90ad-187">경우에 첫 번째 클래스 API로 노출 되지 데이터 보호 시스템은 거의 모든 종류의 알고리즘을 지정할 수 있을 만큼 확장 가능.</span><span class="sxs-lookup"><span data-stu-id="a90ad-187">Though not exposed as a first-class API, the Data Protection system is extensible enough to allow specifying almost any kind of algorithm.</span></span> <span data-ttu-id="a90ad-188">예를 들어 하드웨어 보안 모듈 (HSM) 내에 포함 된 모든 키를 유지 하 고 암호화 및 암호 해독 루틴의 핵심 사용자 지정 구현을 제공 됩니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-188">For example, it's possible to keep all keys contained within a Hardware Security Module (HSM) and to provide a custom implementation of the core encryption and decryption routines.</span></span> <span data-ttu-id="a90ad-189">참조 [IAuthenticatedEncryptor](/dotnet/api/microsoft.aspnetcore.dataprotection.authenticatedencryption.iauthenticatedencryptor) 에 [암호화 확장성을 핵심](xref:security/data-protection/extensibility/core-crypto) 자세한 정보에 대 한 합니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-189">See [IAuthenticatedEncryptor](/dotnet/api/microsoft.aspnetcore.dataprotection.authenticatedencryption.iauthenticatedencryptor) in [Core cryptography extensibility](xref:security/data-protection/extensibility/core-crypto) for more information.</span></span>
 
-### <a name="see-also"></a><span data-ttu-id="d9152-175">참고 항목</span><span class="sxs-lookup"><span data-stu-id="d9152-175">See also</span></span>
+## <a name="persisting-keys-when-hosting-in-a-docker-container"></a><span data-ttu-id="a90ad-190">Docker 컨테이너에서 호스팅하는 경우에 영구적 키</span><span class="sxs-lookup"><span data-stu-id="a90ad-190">Persisting keys when hosting in a Docker container</span></span>
 
-* [<span data-ttu-id="d9152-176">비 DI 인식 시나리오</span><span class="sxs-lookup"><span data-stu-id="d9152-176">Non DI Aware Scenarios</span></span>](non-di-scenarios.md)
-* [<span data-ttu-id="d9152-177">컴퓨터 수준 정책</span><span class="sxs-lookup"><span data-stu-id="d9152-177">Machine Wide Policy</span></span>](machine-wide-policy.md)
+<span data-ttu-id="a90ad-191">호스팅하는 경우는 [Docker](/dotnet/standard/microservices-architecture/container-docker-introduction/) 컨테이너에서 키를 유지 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-191">When hosting in a [Docker](/dotnet/standard/microservices-architecture/container-docker-introduction/) container, keys should be maintained in either:</span></span>
+
+* <span data-ttu-id="a90ad-192">예: 공유 볼륨 또는 호스트 탑재 된 볼륨 컨테이너의 수명이 유지 되는 Docker 볼륨이 있는 폴더입니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-192">A folder that's a Docker volume that persists beyond the container's lifetime, such as a shared volume or a host-mounted volume.</span></span>
+* <span data-ttu-id="a90ad-193">외부 공급자와 같은 [Azure 키 자격 증명 모음](https://azure.microsoft.com/services/key-vault/) 또는 [Redis](https://redis.io/)합니다.</span><span class="sxs-lookup"><span data-stu-id="a90ad-193">An external provider, such as [Azure Key Vault](https://azure.microsoft.com/services/key-vault/) or [Redis](https://redis.io/).</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="a90ad-194">참고 항목</span><span class="sxs-lookup"><span data-stu-id="a90ad-194">See also</span></span>
+
+* [<span data-ttu-id="a90ad-195">비 DI 인식 시나리오</span><span class="sxs-lookup"><span data-stu-id="a90ad-195">Non DI Aware Scenarios</span></span>](xref:security/data-protection/configuration/non-di-scenarios)
+* [<span data-ttu-id="a90ad-196">컴퓨터 수준 정책</span><span class="sxs-lookup"><span data-stu-id="a90ad-196">Machine Wide Policy</span></span>](xref:security/data-protection/configuration/machine-wide-policy)

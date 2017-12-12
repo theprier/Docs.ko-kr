@@ -1,0 +1,78 @@
+---
+uid: whitepapers/ms03-32-issue
+title: "IE에 대 한 보안 업데이트를 적용 한 후 '서버 응용 프로그램 사용할 수 없는 오류에 대 한 수정 | Microsoft Docs"
+author: rick-anderson
+description: "이 문서에서는 m s 03 32 보안 업데이트 Wi에서 실행 되는 ASP.NET 1.0 응용 프로그램에 영향을 주는 Internet Explorer에 대 한 문제를 해결 하는 패치 설명..."
+ms.author: aspnetcontent
+manager: wpickett
+ms.date: 02/10/2010
+ms.topic: article
+ms.assetid: 1365eebb-bdf7-4a05-8d18-7f200531be55
+ms.technology: 
+ms.prod: .net-framework
+msc.legacyurl: /whitepapers/ms03-32-issue
+msc.type: content
+ms.openlocfilehash: 8658e387aeb4ea0340080666906b2b89db49a31a
+ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.translationtype: MT
+ms.contentlocale: ko-KR
+ms.lasthandoff: 11/10/2017
+---
+<a name="fix-for-server-application-unavailable-error-after-applying-security-update-for-ie"></a><span data-ttu-id="b647d-103">IE에 대 한 보안 업데이트를 적용 한 후 '서버 응용 프로그램 사용할 수 없는 오류에 대 한 수정</span><span class="sxs-lookup"><span data-stu-id="b647d-103">Fix for 'Server Application Unavailable' Error after Applying Security Update for IE</span></span>
+====================
+> <span data-ttu-id="b647d-104">이 문서에서는 m s 03 32 보안 업데이트와 함께 Windows XP Professional에서 실행 중인 ASP.NET 1.0 응용 프로그램에 영향을 주는 Internet Explorer에 대 한 문제를 해결 하는 패치를 설명 합니다.</span><span class="sxs-lookup"><span data-stu-id="b647d-104">This paper describes the patch that fixes an issue with the MS03-32 Security Update for Internet Explorer that affects ASP.NET 1.0 applications running on Windows XP Professional.</span></span>
+> 
+> <span data-ttu-id="b647d-105">ASP.NET 1.0 및 Windows XP Professional에 적용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="b647d-105">Applies to ASP.NET 1.0 and Windows XP Professional.</span></span>
+
+
+<span data-ttu-id="b647d-106">Microsoft은 Internet Explorer 보안 패치 m s 03 32 보안 업데이트 및 Windows XP에서 실행 되는 ASP.NET 1.0 사용 하 여 문제를 확인 합니다.</span><span class="sxs-lookup"><span data-stu-id="b647d-106">Microsoft identified an issue with the MS03-32 Security Update for Internet Explorer security patch and ASP.NET 1.0 running on Windows XP.</span></span> <span data-ttu-id="b647d-107">수동으로 또는 Windows 업데이트 사이트에서 최신 중요 업데이트를 가져와서이 패치를 설치할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="b647d-107">This patch can be installed manually or by obtaining recent critical updates from the Windows Update site.</span></span>
+
+<span data-ttu-id="b647d-108">이 문제의 증상은는 Windows XP 컴퓨터에서 패치를 설치한 후 로컬 IIS 5.1 웹 서버에서 실행 중인 ASP.NET 응용 프로그램에 대 한 모든 요청 "서버 응용 프로그램이 사용할 수 없음" 라는 오류 메시지가.</span><span class="sxs-lookup"><span data-stu-id="b647d-108">The symptom of this issue is that after installing the patch on a Windows XP machine, all requests to ASP.NET applications running on the local IIS 5.1 web server result in an error message saying "Server Application Unavailable".</span></span> <span data-ttu-id="b647d-109">요청을 원격 웹 서버에 영향을 받지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="b647d-109">Requests to remote web servers are unaffected.</span></span>
+
+<span data-ttu-id="b647d-110">이 문제는 Windows XP에서 ASP.NET 1.0을 실행 하는 설치에만 영향을 줍니다.</span><span class="sxs-lookup"><span data-stu-id="b647d-110">This issue only impacts installations running ASP.NET 1.0 on Windows XP.</span></span> <span data-ttu-id="b647d-111">Windows 2000 또는 Windows Server 2003을 실행 하는 컴퓨터 영향을 주지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="b647d-111">It does not impact machines running Windows 2000 or Windows Server 2003.</span></span> <span data-ttu-id="b647d-112">ASP.NET 1.1이 설치 된 Windows XP를 실행 하는 컴퓨터 영향 하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="b647d-112">It also does not impact machines running Windows XP with ASP.NET 1.1 installed.</span></span>
+
+<span data-ttu-id="b647d-113">유의 사항:이 문제 **않습니다** asp.net 보안 버그입니다.</span><span class="sxs-lookup"><span data-stu-id="b647d-113">Please note that this issue **is not** a security bug with ASP.NET.</span></span> <span data-ttu-id="b647d-114">그 **없는** 개방 또는 ASP.NET 응용 프로그램 또는 서버에 대 한 모든 악의적인 공격을 허용 합니다.</span><span class="sxs-lookup"><span data-stu-id="b647d-114">It **does not** open up or allow any malicious attacks against an ASP.NET application or server.</span></span> <span data-ttu-id="b647d-115">만으로도 자체 패치로 인 한 기능 버그 순수 하 게 합니다.</span><span class="sxs-lookup"><span data-stu-id="b647d-115">Instead, it is purely a functional bug caused by the patch itself.</span></span>
+
+<span data-ttu-id="b647d-116">최선을 다하고이 문제에 대 한 영구적인 솔루션에 있습니다.</span><span class="sxs-lookup"><span data-stu-id="b647d-116">We are working hard on a permanent solution for this issue.</span></span> <span data-ttu-id="b647d-117">그 동안에 문제에 대 한 문제를 해결 하려면 다음 배치 파일을 실행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="b647d-117">In the meantime, you can execute the following batch file as a workaround for the issue.</span></span> <span data-ttu-id="b647d-118">배치 파일은 다음을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="b647d-118">The batch file does the following:</span></span>
+
+1. <span data-ttu-id="b647d-119">IIS 및 ASP.NET 상태 서비스를 중지합니다.</span><span class="sxs-lookup"><span data-stu-id="b647d-119">Stops the IIS and ASP.NET state services</span></span>
+2. <span data-ttu-id="b647d-120">삭제 하 고 알려진 임시 암호로 ASPNET 계정을 다시 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="b647d-120">Deletes and recreates the ASPNET account with a known temporary password</span></span>
+3. <span data-ttu-id="b647d-121">Windows를 사용 하 여 `runas` ASPNET 사용자 프로필을 만드는 실행 파일 시작 명령을</span><span class="sxs-lookup"><span data-stu-id="b647d-121">Uses the Windows `runas` command to launch an executable that creates an ASPNET user profile</span></span>
+4. <span data-ttu-id="b647d-122">ASP.NET을 다시 등록합니다.</span><span class="sxs-lookup"><span data-stu-id="b647d-122">Re-registers ASP.NET.</span></span> <span data-ttu-id="b647d-123">이 계정에 대 한 새로운 임의의 암호를 만들고 기본 ASP.NET 액세스 제어에 대 한 설정에 적용</span><span class="sxs-lookup"><span data-stu-id="b647d-123">This creates a new random password for the account and applies default ASP.NET access control settings for it</span></span>
+5. <span data-ttu-id="b647d-124">IIS 서비스를 다시 시작</span><span class="sxs-lookup"><span data-stu-id="b647d-124">Restarts the IIS service</span></span>
+
+<span data-ttu-id="b647d-125">배치 파일의 하드 코드 된 임시 암호를 포함 합니다. "**1pass@word**" 배치 파일을 실행할 때의 실행 명령에 대해를 입력 하 라는 메시지가 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="b647d-125">The batch file contains a hardcoded temporary password of "**1pass@word**" which you will be prompted to enter for the runas command when the batch file is run.</span></span> <span data-ttu-id="b647d-126">Runas 명령을 완료 되 면 ASPNET 계정 암호가 강력한 임의 값으로 다시 만들어집니다.</span><span class="sxs-lookup"><span data-stu-id="b647d-126">After the runas command completes, the ASPNET account password is recreated with a strong random value.</span></span> <span data-ttu-id="b647d-127">배치 파일은 하드 코드 된 암호 사용자 환경에서 암호 복잡성 요구 사항에 맞지 않는 경우 오류가 발생할 수 있는 참고 합니다.</span><span class="sxs-lookup"><span data-stu-id="b647d-127">Note that the batch file may fail if the hardcoded password does not meet the password complexity requirements in your environment.</span></span> <span data-ttu-id="b647d-128">해당 되는 경우, 사용자 환경에 적합 한 다른 값으로 변경할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="b647d-128">If that's the case, you can change it to another value that is appropriate for your environment.</span></span>
+
+<span data-ttu-id="b647d-129">*> [!IMPORTANT]*사용자 지정 액세스 제어 설정 또는 ASPNET 계정에 대 한 데이터베이스 계정 사용 권한을 추가한 경우이 배치 파일에서 완료 된 후 다시 만들어야 할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="b647d-129">*> [!IMPORTANT]* If you have added custom access control settings or database account permissions for the ASPNET account, they will need to be recreated after this batch file completes.</span></span> <span data-ttu-id="b647d-130">즉, 계정을 다시 만들 때 새 보안 식별자 (SID)를 가져와야 합니다.</span><span class="sxs-lookup"><span data-stu-id="b647d-130">This is because when the account is recreated, it will get a new security identifier (SID).</span></span>
+
+<span data-ttu-id="b647d-131">*> [!IMPORTANT]*다음으로 사용자 지정 ASPNET 계정 이외의 계정을 사용 하 여 ASP.NET 작업자 프로세스를 실행 하는 경우이 배치 파일으로 실행 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="b647d-131">*> [!IMPORTANT]* If you are running the ASP.NET worker process with a custom account other than the ASPNET account, then you should not run this batch file.</span></span> <span data-ttu-id="b647d-132">대신, 대화형으로 로그인 하거나 해당 계정에 대 한 사용자 프로필을 만드는 해당 계정에서 runas 명령을 사용 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="b647d-132">Instead, you should log in interactively or use the runas command with that account which will create a user profile for that account.</span></span>
+
+<span data-ttu-id="b647d-133">배치 파일은 아래 자동 압축 풀기 보관 파일에 포함 됩니다.</span><span class="sxs-lookup"><span data-stu-id="b647d-133">The batch file is included in the self-extracting archive below.</span></span> <span data-ttu-id="b647d-134">사용:</span><span class="sxs-lookup"><span data-stu-id="b647d-134">To use it:</span></span>
+
+1. <span data-ttu-id="b647d-135">관리자 권한이 있는 계정으로 실행 해야</span><span class="sxs-lookup"><span data-stu-id="b647d-135">You must be running as an account with Administrator privileges</span></span>
+2. [<span data-ttu-id="b647d-136">다운로드 하 여 자동 압축 풀기 실행 파일을 열고</span><span class="sxs-lookup"><span data-stu-id="b647d-136">Download and open the self-extracting executable file</span></span>](ms03-32-issue/_static/fixup1.exe)
+3. <span data-ttu-id="b647d-137">C:\에 콘텐츠를 추출</span><span class="sxs-lookup"><span data-stu-id="b647d-137">Extract the contents to c:\\</span></span>
+4. <span data-ttu-id="b647d-138">시작 메뉴에서 실행... 선택 하 고 입력`cmd.exe`</span><span class="sxs-lookup"><span data-stu-id="b647d-138">Select Run... from the start menu, and enter `cmd.exe`</span></span>
+5. <span data-ttu-id="b647d-139">열기 명령 창이 입력 `c:\fixup.cmd`합니다.</span><span class="sxs-lookup"><span data-stu-id="b647d-139">In the open command windows, type `c:\fixup.cmd`.</span></span>
+6. <span data-ttu-id="b647d-140">메시지가 표시 되 면 입력  **1pass@word**  암호로 합니다.</span><span class="sxs-lookup"><span data-stu-id="b647d-140">When prompted, enter **1pass@word** as the password.</span></span>
+7. <span data-ttu-id="b647d-141">를 이전에 사용자 지정 액세스 제어 설정 또는 ASPNET 계정에 대 한 데이터베이스 계정 사용 권한 있는 지금 이러한 설정을 다시 적용 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="b647d-141">If you have previously custom access control settings or database account permissions for the ASPNET account, you'll need to re-apply these settings now.</span></span>
+
+<span data-ttu-id="b647d-142">이 인해 불편을 드려 많은 드리지 합니다.</span><span class="sxs-lookup"><span data-stu-id="b647d-142">Many apologies for the inconvenience that this has caused.</span></span> <span data-ttu-id="b647d-143">추가 정보를 사용할 수 있도록 게시 합니다.</span><span class="sxs-lookup"><span data-stu-id="b647d-143">We'll post additional information as it becomes available.</span></span>
+
+<span data-ttu-id="b647d-144">아래 표는 플랫폼 및 버전이이 문제의 영향을 자세히 설명 합니다.</span><span class="sxs-lookup"><span data-stu-id="b647d-144">The matrix below details platforms and versions impacted by this issue.</span></span>
+
+| <span data-ttu-id="b647d-145">.NET Framework</span><span class="sxs-lookup"><span data-stu-id="b647d-145">.NET Framework</span></span> | <span data-ttu-id="b647d-146">플랫폼</span><span class="sxs-lookup"><span data-stu-id="b647d-146">Platform</span></span> | <span data-ttu-id="b647d-147">영향을</span><span class="sxs-lookup"><span data-stu-id="b647d-147">Affected</span></span> |
+| --- | --- | --- |
+| <span data-ttu-id="b647d-148">버전 1.0</span><span class="sxs-lookup"><span data-stu-id="b647d-148">Version 1.0</span></span> | <span data-ttu-id="b647d-149">Windows 2000 Professional</span><span class="sxs-lookup"><span data-stu-id="b647d-149">Windows 2000 Professional</span></span> | <span data-ttu-id="b647d-150">아니요</span><span class="sxs-lookup"><span data-stu-id="b647d-150">No</span></span> |
+| <span data-ttu-id="b647d-151">버전 1.0</span><span class="sxs-lookup"><span data-stu-id="b647d-151">Version 1.0</span></span> | <span data-ttu-id="b647d-152">Windows 2000 Server</span><span class="sxs-lookup"><span data-stu-id="b647d-152">Windows 2000 Server</span></span> | <span data-ttu-id="b647d-153">아니요</span><span class="sxs-lookup"><span data-stu-id="b647d-153">No</span></span> |
+| <span data-ttu-id="b647d-154">버전 1.0</span><span class="sxs-lookup"><span data-stu-id="b647d-154">Version 1.0</span></span> | <span data-ttu-id="b647d-155">Windows XP Professional</span><span class="sxs-lookup"><span data-stu-id="b647d-155">Windows XP Professional</span></span> | <span data-ttu-id="b647d-156">예</span><span class="sxs-lookup"><span data-stu-id="b647d-156">Yes</span></span> |
+| <span data-ttu-id="b647d-157">버전 1.0</span><span class="sxs-lookup"><span data-stu-id="b647d-157">Version 1.0</span></span> | <span data-ttu-id="b647d-158">Windows Server 2003</span><span class="sxs-lookup"><span data-stu-id="b647d-158">Windows Server 2003</span></span> | <span data-ttu-id="b647d-159">아니요</span><span class="sxs-lookup"><span data-stu-id="b647d-159">No</span></span> |
+| <span data-ttu-id="b647d-160">버전 1.0</span><span class="sxs-lookup"><span data-stu-id="b647d-160">Version 1.0</span></span> | <span data-ttu-id="b647d-161">Windows XP Home Cassini와</span><span class="sxs-lookup"><span data-stu-id="b647d-161">Windows XP Home with Cassini</span></span> | <span data-ttu-id="b647d-162">아니요</span><span class="sxs-lookup"><span data-stu-id="b647d-162">No</span></span> |
+| <span data-ttu-id="b647d-163">버전 1.1</span><span class="sxs-lookup"><span data-stu-id="b647d-163">Version 1.1</span></span> | <span data-ttu-id="b647d-164">Windows 2000 Professional</span><span class="sxs-lookup"><span data-stu-id="b647d-164">Windows 2000 Professional</span></span> | <span data-ttu-id="b647d-165">아니요</span><span class="sxs-lookup"><span data-stu-id="b647d-165">No</span></span> |
+| <span data-ttu-id="b647d-166">버전 1.1</span><span class="sxs-lookup"><span data-stu-id="b647d-166">Version 1.1</span></span> | <span data-ttu-id="b647d-167">Windows 2000 Server</span><span class="sxs-lookup"><span data-stu-id="b647d-167">Windows 2000 Server</span></span> | <span data-ttu-id="b647d-168">아니요</span><span class="sxs-lookup"><span data-stu-id="b647d-168">No</span></span> |
+| <span data-ttu-id="b647d-169">버전 1.1</span><span class="sxs-lookup"><span data-stu-id="b647d-169">Version 1.1</span></span> | <span data-ttu-id="b647d-170">Windows XP Professional</span><span class="sxs-lookup"><span data-stu-id="b647d-170">Windows XP Professional</span></span> | <span data-ttu-id="b647d-171">아니요</span><span class="sxs-lookup"><span data-stu-id="b647d-171">No</span></span> |
+| <span data-ttu-id="b647d-172">버전 1.1</span><span class="sxs-lookup"><span data-stu-id="b647d-172">Version 1.1</span></span> | <span data-ttu-id="b647d-173">Windows Server 2003</span><span class="sxs-lookup"><span data-stu-id="b647d-173">Windows Server 2003</span></span> | <span data-ttu-id="b647d-174">아니요</span><span class="sxs-lookup"><span data-stu-id="b647d-174">No</span></span> |
+| <span data-ttu-id="b647d-175">버전 1.1</span><span class="sxs-lookup"><span data-stu-id="b647d-175">Version 1.1</span></span> | <span data-ttu-id="b647d-176">Windows XP Home Cassini와</span><span class="sxs-lookup"><span data-stu-id="b647d-176">Windows XP Home with Cassini</span></span> | <span data-ttu-id="b647d-177">아니요</span><span class="sxs-lookup"><span data-stu-id="b647d-177">No</span></span> |
+
+<span data-ttu-id="b647d-178">감사,</span><span class="sxs-lookup"><span data-stu-id="b647d-178">Thanks,</span></span>   
+ <span data-ttu-id="b647d-179">ASP.NET 팀</span><span class="sxs-lookup"><span data-stu-id="b647d-179">The ASP.NET Team</span></span>
