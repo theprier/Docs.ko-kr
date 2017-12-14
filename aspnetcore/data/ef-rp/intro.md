@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/intro
-ms.openlocfilehash: d3bcf9aaf7fa809825a0ba8631ee52d3860b090d
-ms.sourcegitcommit: 05e798c9bac7b9e9983599afb227ef393905d023
+ms.openlocfilehash: 98fe1b0c2dcf2e133d921b2cc8695bd2056c5ec0
+ms.sourcegitcommit: a33737ea24e1ea9642e461d1bc90d6701f889436
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="getting-started-with-razor-pages-and-entity-framework-core-using-visual-studio-1-of-8"></a>Razor 페이지 및 Visual Studio (1 / 8)를 사용 하 여 Entity Framework Core 시작
 
@@ -71,9 +71,9 @@ Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework (EF) 코어
 
 변경 내용은 강조 표시 됩니다.
 
-[!code-html[](intro/samples/cu/Pages/_Layout.cshtml?highlight=6,29,35-39,47&range=1-50)]
+[!code-html[](intro/samples/cu/Pages/_Layout.cshtml?highlight=6,29,35-38,47&range=1-50)]
 
-*Views/Home/Index.cshtml*, 파일의 내용을 텍스트를 바꿀 ASP.NET MVC에 대 한이 앱에 대 한 텍스트를 다음 코드로 바꿉니다.
+*Pages/Index.cshtml*, 파일의 내용을 텍스트를 바꿀 ASP.NET MVC에 대 한이 앱에 대 한 텍스트를 다음 코드로 바꿉니다.
 
 [!code-html[](intro/samples/cu/Pages/Index.cshtml)]
 
@@ -279,7 +279,7 @@ SSOX, 클릭 **(localdb) \MSSQLLocalDB > 데이터베이스 > ContosoUniversity1
 
 마우스 오른쪽 단추로 클릭는 **학생** 테이블 마우스 클릭 **데이터 보기** 만든 열 및 테이블에 삽입 된 행을 볼 수 있습니다.
 
-*.mdf* 및 *.ldf* DB 파일에 있는 *C:\Users\<yourusername >* 폴더입니다.
+*.mdf* 및 *.ldf* DB 파일에 있는 *C:\Users\\ <yourusername>*  폴더입니다.
 
 `EnsureCreated`다음 작업 흐름을 허용 하는 응용 프로그램 시작에서 호출 됩니다.
 
