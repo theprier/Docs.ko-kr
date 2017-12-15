@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/intro
-ms.openlocfilehash: 98fe1b0c2dcf2e133d921b2cc8695bd2056c5ec0
-ms.sourcegitcommit: a33737ea24e1ea9642e461d1bc90d6701f889436
+ms.openlocfilehash: 571d683636244565b184cfec49061ec656377f11
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="getting-started-with-razor-pages-and-entity-framework-core-using-visual-studio-1-of-8"></a>Razor 페이지 및 Visual Studio (1 / 8)를 사용 하 여 Entity Framework Core 시작
 
@@ -250,6 +250,14 @@ The system cannot find the file specified.
 ```
 
 명령을 다시 실행 하 고 페이지 아래쪽에 의견을 남겨 합니다.
+
+오류가 표시될 경우:
+  ```
+No executable found matching command "dotnet-aspnet-codegenerator"
+  ```
+
+프로젝트 디렉터리(*Program.cs*, *Startup.cs* 및 *.csproj* 파일이 포함된 디렉터리)에서 명령 창을 엽니다.
+
 
 프로젝트를 빌드합니다. 빌드에서는 다음과 같은 오류를 생성합니다.
 

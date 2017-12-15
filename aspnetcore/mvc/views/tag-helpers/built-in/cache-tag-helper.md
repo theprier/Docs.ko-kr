@@ -11,16 +11,15 @@ ms.assetid: c045d485-d1dc-4cea-a675-46be83b7a012
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/cache-tag-helper
-ms.openlocfilehash: 1710a5781fb69aaa6101270d6b4fd44f92c7f06c
-ms.sourcegitcommit: a33737ea24e1ea9642e461d1bc90d6701f889436
+ms.openlocfilehash: 74080d089dc7a72da96f9f18d613cb313cd930db
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="cache-tag-helper-in-aspnet-core-mvc"></a>ASP.NET Core MVC에서에서 태그 도우미를 캐시 합니다.
 
 작성자: [Peter Kellner](http://peterkellner.net) 
-
 
 캐시 태그 도우미의 내부 ASP.NET Core 캐시 공급자를 해당 콘텐츠를 캐시 하 여 ASP.NET Core 응용 프로그램의 성능이 크게 향상 하는 기능을 제공 합니다.
 
@@ -29,7 +28,7 @@ Razor 뷰 엔진 기본 설정 `expires-after` 20 분입니다.
 날짜/시간을 캐시 하는 다음 Razor 태그:
 
 ```cshtml
-<Cache>@DateTime.Now<Cache>
+<cache>@DateTime.Now</cache>
 ```
 
 첫 번째 요청을 포함 하는 페이지 `CacheTagHelper` 현재 날짜/시간을 표시 됩니다. 추가 요청은 캐시 (기본값: 20 분)을 만료 되거나 메모리가 중에 의해 제거 될 때까지 캐시 된 값이 표시 합니다.
@@ -54,9 +53,9 @@ Razor 뷰 엔진 기본 설정 `expires-after` 20 분입니다.
 예제:
 
 ```cshtml
-<Cache enabled="true">
+<cache enabled="true">
     Current Time Inside Cache Tag Helper: @DateTime.Now
-</Cache>
+</cache>
 ```
 
 - - -
@@ -73,9 +72,9 @@ Razor 뷰 엔진 기본 설정 `expires-after` 20 분입니다.
 예제:
 
 ```cshtml
-<Cache expires-on="@new DateTime(2025,1,29,17,02,0)">
+<cache expires-on="@new DateTime(2025,1,29,17,02,0)">
     Current Time Inside Cache Tag Helper: @DateTime.Now
-</Cache>
+</cache>
 ```
 
 - - -
@@ -92,9 +91,9 @@ Razor 뷰 엔진 기본 설정 `expires-after` 20 분입니다.
 예제:
 
 ```cshtml
-<Cache expires-after="@TimeSpan.FromSeconds(120)">
+<cache expires-after="@TimeSpan.FromSeconds(120)">
     Current Time Inside Cache Tag Helper: @DateTime.Now
-</Cache>
+</cache>
 ```
 
 - - -
@@ -111,9 +110,9 @@ Razor 뷰 엔진 기본 설정 `expires-after` 20 분입니다.
 예제:
 
 ```cshtml
-<Cache expires-sliding="@TimeSpan.FromSeconds(60)">
+<cache expires-sliding="@TimeSpan.FromSeconds(60)">
     Current Time Inside Cache Tag Helper: @DateTime.Now
-</Cache>
+</cache>
 ```
 
 - - -
@@ -130,9 +129,9 @@ Razor 뷰 엔진 기본 설정 `expires-after` 20 분입니다.
 예제:
 
 ```cshtml
-<Cache vary-by-header="User-Agent">
+<cache vary-by-header="User-Agent">
     Current Time Inside Cache Tag Helper: @DateTime.Now
-</Cache>
+</cache>
 ```
 
 - - -
@@ -149,9 +148,9 @@ Razor 뷰 엔진 기본 설정 `expires-after` 20 분입니다.
 예제:
 
 ```cshtml
-<Cache vary-by-query="Make,Model">
+<cache vary-by-query="Make,Model">
     Current Time Inside Cache Tag Helper: @DateTime.Now
-</Cache>
+</cache>
 ```
 
 - - -
@@ -176,9 +175,9 @@ routes.MapRoute(
 *Index.cshtml*
 
 ```cshtml
-<Cache vary-by-route="Make,Model">
+<cache vary-by-route="Make,Model">
     Current Time Inside Cache Tag Helper: @DateTime.Now
-</Cache>
+</cache>
 ```
 
 - - -
@@ -195,9 +194,9 @@ routes.MapRoute(
 예제:
 
 ```cshtml
-<Cache vary-by-cookie=".AspNetCore.Identity.Application">
+<cache vary-by-cookie=".AspNetCore.Identity.Application">
     Current Time Inside Cache Tag Helper: @DateTime.Now
-</Cache>
+</cache>
 ```
 
 - - -
@@ -216,9 +215,9 @@ routes.MapRoute(
 예제:
 
 ```cshtml
-<Cache vary-by-user="true">
+<cache vary-by-user="true">
     Current Time Inside Cache Tag Helper: @DateTime.Now
-</Cache>
+</cache>
 ```
 
 이 특성을 사용 하 여 로그인 및 로그 아웃 주기를 통해 캐시에서 콘텐츠를 유지 관리 합니다.  사용 하는 경우 `vary-by-user="true"`, 로그인 및 로그 아웃 작업을 인증된 된 사용자에 대 한 캐시를 무효화 합니다.  로그인에 새 고유한 쿠키 값을 생성 하기 때문에 캐시를 무효화 합니다. 쿠키가 없는 없거나 만료 된 경우 익명 상태에 대 한 캐시 유지 관리 됩니다. 즉, 사용자가 로그인 하는 경우 캐시는 유지 됩니다.
@@ -254,9 +253,9 @@ public IActionResult Index(string myParam1,string myParam2,string myParam3)
 *Index.cshtml*
 
 ```cshtml
-<Cache vary-by="@Model"">
+<cache vary-by="@Model"">
     Current Time Inside Cache Tag Helper: @DateTime.Now
-</Cache>
+</cache>
 ```
 
 - - -
@@ -275,9 +274,9 @@ public IActionResult Index(string myParam1,string myParam2,string myParam3)
 예제:
 
 ```cshtml
-<Cache priority="High">
+<cache priority="High">
     Current Time Inside Cache Tag Helper: @DateTime.Now
-</Cache>
+</cache>
 ```
 
 `priority` 특성 특정 수준의 캐시 보존을 보장 하지 않습니다. `CacheItemPriority`뿐입니다. 이 특성을 설정 `NeverRemove` 캐시는 항상 유지 되어야 하는 것을 보장 하지 않습니다. 참조 [추가 리소스](#additional-resources) 자세한 정보에 대 한 합니다.

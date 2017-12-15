@@ -12,7 +12,7 @@
       * `5000-AppSecret`: `5.0.0.0_secret_value`
       * `5100-AppSecret`: `5.1.0.0_secret_value`
   * Azure Active Directory와 샘플 응용 프로그램을 등록 합니다.
-  * 응용 프로그램에서 주요 자격 증명 모음에 액세스 권한을 부여 합니다. 사용 하는 경우는 `Set-AzureRmKeyVaultAccessPolicy` 앱 키 자격 증명 모음에 액세스할 수 권한을 부여 하는 PowerShell cmdlet을 제공 `List` 및 `Get` 와 비밀 정보에 대 한 액세스 `-PermissionsToKeys list,get`합니다.
+  * 응용 프로그램에서 주요 자격 증명 모음에 액세스 권한을 부여 합니다. 사용 하는 경우는 `Set-AzureRmKeyVaultAccessPolicy` 앱 키 자격 증명 모음에 액세스할 수 권한을 부여 하는 PowerShell cmdlet을 제공 `List` 및 `Get` 와 비밀 정보에 대 한 액세스 `-PermissionsToSecrets list,get`합니다.
 2. 응용 프로그램의 업데이트 *appsettings.json* 파일의 값을 가진 `Vault`, `ClientId`, 및 `ClientSecret`합니다.
 3. 구성 값을 가져오는 샘플 응용 프로그램을 실행 `IConfigurationRoot` 접두사가 붙은 비밀 이름으로 같은 이름의 합니다. 이 샘플에서는 접두사는 응용 프로그램의 버전에 제공 된 `PrefixKeyVaultSecretManager` Azure 키 자격 증명 모음 구성 공급자를 추가 하는 경우. 에 대 한 값 `AppSecret` 사용 하 여 얻은 `config["AppSecret"]`합니다.
 4. 프로젝트 파일에서 응용 프로그램 어셈블리의 버전을 변경 `5.0.0.0` 를 `5.1.0.0` 응용 프로그램을 다시 실행 합니다. 이 이번에 반환 된 보안 값은 `5.1.0.0_secret_value`합니다.

@@ -11,11 +11,11 @@ ms.assetid: 5de0c8f7-50ce-4e2c-b3d4-a1bd9fdfcff5
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: hosting/aspnet-core-module
-ms.openlocfilehash: ac52b791e02ce52da35fe8d599465076d251b4da
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f0759f16ada531774a3945f67495e5f634e6154e
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="aspnet-core-module-configuration-reference"></a>ASP.NET Core 모듈 구성 참조
 
@@ -66,7 +66,7 @@ ASP.NET Core 모듈 사이트 또는 응용 프로그램을 통해 구성 된 *w
 | startupTimeLimit | <p>선택적 정수 특성입니다.</p><p>포트에서 수신 하는 프로세스가 시작 되는 파일에 대 한 모듈에서 대기 하는 시간 (초) 기간입니다. 이 시간 제한을 초과 하는 모듈 프로세스를 중단 합니다. 모듈에서 새 요청을 수신 하 고 계속 시도 응용 프로그램이 시작 되지 않는 한 이후 들어오는 요청에서 프로세스를 다시 시작 하는 경우 프로세스를 다시 시작 하려고 **rapidFailsPerMinute** 번호 마지막 롤링 분에 한 번입니다.</p><p>기본값은 120입니다.</p> |
 | shutdownTimeLimit | <p>선택적 정수 특성입니다.</p><p>기간 (초) 모듈 기다릴 정상적으로 종료 되는 파일에 대 한 경우는 *app_offline.htm* 파일이 검색 됩니다.</p><p>기본값은 10입니다.</p> |
 | rapidFailsPerMinute | <p>선택적 정수 특성입니다.</p><p>에 지정 된 프로세스의 수를 지정 **processPath** 분당 충돌을 허용 합니다. 이 제한을 초과 하는 나머지 분에서 프로세스 시작 모듈 중지 됩니다.</p><p>기본값은 10입니다.</p> |
-| requestTimeout | <p>선택적 timespan 특성입니다.</p><p>ASP.NET Core 모듈 기다릴 ASPNETCORE_PORT % %를 수신 하는 프로세스에서 응답에 대 한 기간을 지정 합니다.</p><p>기본값은 "00:02:00"입니다.</p> |
+| requestTimeout | <p>선택적 timespan 특성입니다.</p><p>ASP.NET Core 모듈 기다릴 ASPNETCORE_PORT % %를 수신 하는 프로세스에서 응답에 대 한 기간을 지정 합니다.</p><p>기본값은 "00:02:00"입니다.</p><p>`requestTimeout` 지정 해야이 분 단위로, 그렇지 않으면 기본적으로 2 분입니다.</p> |
 | stdoutLogEnabled | <p>선택적 부울 특성입니다.</p><p>True 이면 **stdout** 및 **stderr** 에 지정 된 프로세스에 대 한 **processPath** 에 지정 된 파일에 리디렉션됩니다 **가 stdoutLogFile**.</p><p>기본값은 false입니다.</p> |
 | 가 stdoutLogFile | <p>선택적 문자열 특성입니다.</p><p>상대 또는 절대 파일 경로를 지정 **stdout** 및 **stderr** 에 지정 된 프로세스에서 **processPath** 기록 됩니다. 상대 경로 사이트의 루트를 기준으로 합니다. 로 시작 하는 경로 '.'을 사이트 루트 기준 되며 다른 모든 경로 절대 경로로 간주 합니다. 모든 폴더 경로에 제공 된 로그 파일을 만들 모듈에 대 한 순서에 있어야 합니다. 프로세스 ID, 타임 스탬프 (*yyyyMdhms*), 파일 확장명 (*.log*) 밑줄로 구분 기호가 추가 됩니다 마지막 세그먼트는 **가 stdoutLogFile** 제공 합니다.</p><p>기본값은 `aspnetcore-stdout`입니다.</p> |
 | forwardWindowsAuthToken | 참 또는 거짓입니다.</p><p>True 이면 토큰 요청당 헤더로 ' MS ASPNETCORE WINAUTHTOKEN'ASPNETCORE_PORT % %를 수신 하는 자식 프로세스에 전달 됩니다. 것은 해당 프로세스를 요청에 따라이 토큰에 CloseHandle 호출의 책임입니다.</p><p>기본값은 true입니다.</p> |

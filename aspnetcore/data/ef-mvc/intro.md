@@ -11,17 +11,17 @@ ms.assetid: b67c3d4a-f2bf-4132-a48b-4b0d599d7981
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/intro
-ms.openlocfilehash: 5095def776f79d0bb76d5a8e94a4228ef0abed75
-ms.sourcegitcommit: a80d35647aff66323160b2cb413b65d79d98f7a6
+ms.openlocfilehash: 2b21c7fb35c65d9374723faac5b812289023a0f6
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/08/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="getting-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio-1-of-10"></a>Visual Studio (1 / 10)을 사용 하 여 Entity Framework Core 및 ASP.NET Core MVC 시작
 
 여 [Tom Dykstra](https://github.com/tdykstra) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-이 자습서의 Razor 페이지 버전을 사용할 수 [여기](xref:data/ef-rp/intro)합니다. Razor 페이지 버전 보다 쉽게 따를 수 이며 더 많은 EF 기능에 설명 합니다. 따라야 하는 것이 좋습니다는 [이 자습서의 Razor 페이지 버전](xref:data/ef-rp/intro)합니다.
+이 자습서의 Razor 페이지 버전을 사용할 수 [여기](xref:data/ef-rp/intro)합니다. Razor 페이지 버전은 좀 더 쉽게 따라 할 수 있으며 더 많은 EF 기능을 다룹니다. 따라야 하는 것이 좋습니다는 [이 자습서의 Razor 페이지 버전](xref:data/ef-rp/intro)합니다.
 
 Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework (EF) 코어 2.0 및 Visual Studio 2017을 사용 하 여 ASP.NET 코어 2.0 MVC 웹 응용 프로그램을 만드는 방법을 보여 줍니다.
 
@@ -244,15 +244,10 @@ Entity Framework에서 빈 데이터베이스를 만듭니다.  이 섹션에서
 
 * 마우스 오른쪽 단추로 클릭는 **컨트롤러** 폴더에 **솔루션 탐색기** 선택 **추가 > 스 캐 폴드 된 새 항목**합니다.
 
-* **MVC 종속성 추가** 대화 상자에서 **최소 종속성**을 선택하고 **추가**를 선택합니다.
+경우는 **MVC 종속성 추가** 대화 상자가 나타납니다.
 
-  ![종속성 추가](intro/_static/add-depend.png)
-
-  Visual Studio는 컨트롤러를 스 캐 폴딩 하는 데 필요한 종속성을 추가 합니다. 프로젝트 파일에만 변경 내용이 추가 `Microsoft.VisualStudio.Web.CodeGeneration.Design` 패키지 합니다.
-
-  A *ScaffoldingReadMe.txt* 삭제할 수 있는 파일이 생성 됩니다.
-
-* 다시 한 번, 마우스 오른쪽 단추로 클릭는 **컨트롤러** 폴더에 **솔루션 탐색기** 선택 **추가 > 스 캐 폴드 된 새 항목**합니다.
+* [Visual Studio 최신 버전으로 업데이트](https://www.visualstudio.com/downloads/)합니다. Visual Studio 버전 15.5 이전이 대화 상자를 표시 합니다.
+* 를 업데이트할 수 없는 경우 선택 **추가**를 다시 추가 컨트롤러 단계를 따릅니다.
 
 * 에 **추가 스 캐 폴드** 대화 상자:
 

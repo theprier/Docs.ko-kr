@@ -12,15 +12,18 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/bower
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 183e748cbf87b1973941eacb3fb1008f4041bb2a
-ms.sourcegitcommit: 532a323f99a37c4d7894c95cee3f7a04b594dcec
+ms.openlocfilehash: 0258315e0e24d662086a3171b58112e08b9a40ab
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="manage-client-side-packages-with-bower-in-aspnet-core"></a>ASP.NET Core에서 Bower 사용 하 여 클라이언트 패키지를 관리 합니다.
 
 여 [Rick Anderson](https://twitter.com/RickAndMSFT), [Noel 밥](https://blog.falafel.com/falafel-software-recognized-sitefinity-website-year/), 및 [Scott Addie](https://scottaddie.com) 
+
+> [!IMPORTANT]
+> Bower 유지 되는 동안 다른 솔루션을 사용 하도록 권장 합니다. Yarn 시스템용으로 사용 하는 하나의 인기 있는를 [마이그레이션 지침](https://bower.io/blog/2017/how-to-migrate-away-from-bower/) 사용할 수 있습니다.
 
 [Bower](https://bower.io/) "패키지에 대 한 관리자는 웹." 자신을 호출 .NET 환경 내에서 NuGet의 불가능 정적 콘텐츠 파일을 전달 하 여 남아 있는 공간을 채웁니다. ASP.NET Core 프로젝트에 대 한 이러한 정적 파일은과 같은 클라이언트 쪽 라이브러리에 따르는 [jQuery](http://jquery.com/) 및 [부트스트랩](http://getbootstrap.com/)합니다. .NET 라이브러리에 대 한 계속 사용할 [NuGet](https://www.nuget.org/) 패키지 관리자.
 

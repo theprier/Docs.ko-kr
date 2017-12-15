@@ -5,17 +5,17 @@ description: "MVC Razor 뷰 컴파일 및 미리 컴파일 ASP.NET Core 응용 �
 keywords: "ASP.NET Core, Razor 컴파일, Razor 전 컴파일, Razor 미리 보기"
 ms.author: riande
 manager: wpickett
-ms.date: 12/05/2017
+ms.date: 12/13/2017
 ms.topic: article
 ms.assetid: ab4705b7-1638-1638-bc97-ea7f292fe92a
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/view-compilation
-ms.openlocfilehash: 873f6203f9e7b5bb14968dcec3f8d8e5548bd834
-ms.sourcegitcommit: 282f69e8dd63c39bde97a6d72783af2970d92040
+ms.openlocfilehash: 6839892c104673af0fd0fd074d368f3f42259d76
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="razor-view-compilation-and-precompilation-in-aspnet-core"></a>Razor 뷰 컴파일 및 ASP.NET 코어에서 미리 컴파일
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 12/05/2017
 
 Razor 뷰는 뷰를 호출 하면 런타임에 컴파일됩니다. ASP.NET 1.1.0 핵심 및 높을수록 수 필요에 따라 컴파일 Razor 뷰 및 응용 프로그램와 함께 배포할&mdash;프로세스 미리 컴파일 라고 합니다. ASP.NET Core 2.x 프로젝트 템플릿 기본적으로 미리 컴파일을 허용 합니다.
 
-> [!NOTE]
+> [!IMPORTANT]
 > Razor 뷰 미리 컴파일 현재 사용할 수 없는 수행 하는 경우는 [자체 포함된 배포 (SCD)](/dotnet/core/deploying/#self-contained-deployments-scd) ASP.NET 코어 2.0에서. 2.1를 놓을 때 기능 Scd에 대 한 제공 됩니다. 자세한 내용은 참조 [Windows에서 Linux에 대 한 크로스 컴파일을 하는 보기 컴파일에 실패](https://github.com/aspnet/MvcPrecompilation/issues/102)합니다.
 
 미리 컴파일 고려 사항:
@@ -54,6 +54,12 @@ ASP.NET Core 2.x 프로젝트 템플릿 암시적으로 설정 합니다. `MvcRa
 [!code-xml[Main](view-compilation\sample\MvcRazorCompileOnPublish.csproj?highlight=5,12)]
 
 ---
+
+에 대 한 앱 준비는 [프레임 워크 종속 배포](/dotnet/core/deploying/#framework-dependent-deployments-fdd) 프로젝트 루트에 다음과 같은 명령을 실행 하 여:
+
+```console
+dotnet publish -c Release
+```
 
 A *< project_name > 합니다. PrecompiledViews.dll* 컴파일된 Razor 뷰를 포함 하는 파일을 미리 컴파일 성공할 때 생성 됩니다. 예를 들어, 아래 스크린샷에서 보여주고 내용의 *Index.cshtml* 내부에 *WebApplication1.PrecompiledViews.dll*:
 

@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/crud
-ms.openlocfilehash: 410829608540697ac4563f1399c8e72d28a13cf2
-ms.sourcegitcommit: 703593d5fd14076e79be2ba75a5b8da12a60ab15
+ms.openlocfilehash: b4b24c155c29a0ef8ffffda752253f56097e50ed
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="create-read-update-and-delete---ef-core-with-razor-pages-2-of-8"></a>만들기, 읽기, 업데이트 및 삭제-EF 코어 Razor 페이지 (2 / 8)
 
@@ -102,7 +102,7 @@ ms.lasthandoff: 12/05/2017
 열기 *Pages/Students/Details.cshtml*합니다. 등록의 목록을 표시 하려면 다음 강조 표시 된 코드를 추가 합니다.
 
  <!--2do ricka. if doesn't change, remove dup -->
-[!code-cshtml[Main](intro/samples/cu/Pages/Students/Details1.cshtml?highlight=35-53)]
+[!code-cshtml[Main](intro/samples/cu/Pages/Students/Details1.cshtml?highlight=32-53)]
 
 코드 들여쓰기 된 코드를 붙여 넣는 후 잘못 된 경우 CTRL-K-D를 수정한 후에 키를 누릅니다.
 

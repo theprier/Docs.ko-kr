@@ -5,17 +5,17 @@ description: "ASP.NET Core 응용 프로그램과 함께 Id를 사용 하 여"
 keywords: "ASP.NET Core, Identity, 권한 부여, 보안"
 ms.author: riande
 manager: wpickett
-ms.date: 07/07/2017
+ms.date: 12/15/2017
 ms.topic: article
 ms.assetid: cf119f21-1a2b-49a2-b052-547ccb66ee83
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity
-ms.openlocfilehash: 0679663b3b3b66f9935d0fb24360be2954fcdee1
-ms.sourcegitcommit: 9ecd4e9fb0c40c3693dab079eab1ff94b461c922
+ms.openlocfilehash: 7daf0267a6dc659afbd188ce87e35ca40816a31d
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>ASP.NET Core에 Id 소개
 
@@ -39,7 +39,7 @@ ASP.NET Core Id 사용자 이름, 암호 및 프로필 데이터를 저장 하�
     ![새 프로젝트 대화 상자](identity/_static/01-mvc_2.png)
     
     # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
-    .NET Core CLI를 사용 하는 경우 사용 하 여 새 프로젝트 만들기 ``dotnet new mvc --auth Individual``합니다. Visual Studio 만듭니다 Identity 템플릿 코드는 새 프로젝트를 만듭니다.
+    .NET Core CLI를 사용 하는 경우 사용 하 여 새 프로젝트 만들기 ``dotnet new mvc --auth Individual``합니다. 이 명령은 Visual Studio 만듭니다 Identity 템플릿 코드와 새 프로젝트를 만듭니다.
  
     만든된 프로젝트에 포함 되어는 `Microsoft.AspNetCore.Identity.EntityFrameworkCore` Id 데이터 및 스키마를 사용 하 여 SQL Server를 유지 하는 패키지 [Entity Framework Core](https://docs.microsoft.com/ef/)합니다.
     

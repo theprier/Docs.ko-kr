@@ -5,21 +5,22 @@ description: "보기에서 응용 프로그램의 데이터 표시 및 ASP.NET C
 keywords: "ASP.NET Core MVC, razor, viewmodel, viewdata, viewbag을 보려면"
 ms.author: riande
 manager: wpickett
-ms.date: 09/26/2017
+ms.date: 12/12/2017
 ms.topic: article
-ms.assetid: 668c320d-c050-45e3-8161-2f460dc93b2f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/overview
-ms.openlocfilehash: 4530d2f500dd887bf649a753283fb3e4af995322
-ms.sourcegitcommit: c2f6c593d81fbd90e6ddd672fe0a5636d06b615a
+ms.openlocfilehash: 2562d4e5fb85159e6ccb47990f54448ddc188077
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="views-in-aspnet-core-mvc"></a>ASP.NET Core MVC에서 뷰
 
 여 [Steve Smith](https://ardalis.com/) 및 [Luke Latham](https://github.com/guardrex)
+
+이 문서에서는 ASP.NET Core MVC 응용 프로그램에서 사용 되는 보기를 설명 합니다. Razor 페이지에 대 한 자세한 내용은 참조 하십시오. [Razor 페이지 소개](xref:mvc/razor-pages/index)합니다.
 
 에 **M**odel-**V**뷰-**C**ontroller (MVC) 패턴의 *보기* 응용 프로그램의 데이터 프레젠테이션 및 사용자 상호 작용을 처리 합니다. 뷰의 HTML 서식 파일은 포함 된 [Razor 태그](xref:mvc/views/razor)합니다. Razor 태그는 HTML 태그를 클라이언트에 전송 되는 웹 페이지를 생성 하기 위해 상호 작용 하는 코드입니다.
 

@@ -11,11 +11,11 @@ ms.assetid: 8c65179b-688c-4af1-8f5e-1862920cda95
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/facebook-logins
-ms.openlocfilehash: 826ac826c22dae81e5dbea08a11a62cac0b1068a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 058670b4f699288e1acbe76bae08dcebf69346b8
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="configuring-facebook-authentication"></a>Facebook 인증 구성
 
@@ -25,9 +25,9 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="create-the-app-in-facebook"></a>Facebook에서 앱을 만들
 
-*  로 이동 된 [개발자를 위한 Facebook](https://developers.facebook.com) 페이지 하 고 로그인 합니다. Facebook 계정 없는 경우 사용 하 여는 **Facebook에 등록** 새로 만들려면 로그인 페이지에 링크 합니다.
+*  로 이동는 [Facebook Developers 앱](https://developers.facebook.com/apps/) 페이지 하 고 로그인 합니다. Facebook 계정 없는 경우 사용 하 여는 **Facebook에 등록** 새로 만들려면 로그인 페이지에 링크 합니다.
 
-* 탭의 **앱 만들기** 는 새 응용 프로그램 ID를 만들려면 오른쪽 위 모퉁이의 단추
+* 탭의 **새 앱 추가** 는 새 응용 프로그램 ID를 만들려면 오른쪽 위 모퉁이의 단추
 
    ![Facebook 개발자 포털에 대 한 Microsoft Edge에서 열기](index/_static/FBMyApps.png)
 
@@ -35,10 +35,10 @@ ms.lasthandoff: 11/10/2017
 
    ![새 앱 ID 양식 만들기](index/_static/FBNewAppId.png)
 
-* 구현과 **제품 선택** 프롬프트를 클릭 하 여 **Set Up** 에 **Facebook 로그인** 카드입니다.
+* 에 **제품 선택** 페이지에서 클릭 **Set Up** 에 **Facebook 로그인** 카드입니다.
 
    ![제품 설치 페이지](index/_static/FBProductSetup.png)
-
+  
 * **퀵 스타트** 마법사가 시작 됩니다 **플랫폼 선택** 의 첫 번째 페이지입니다. 마법사를 클릭 하 여 지금은 무시는 **설정을** 왼쪽 메뉴에서 링크:
 
    ![Skip 빠른 시작](index/_static/FBSkipQuickStart.png)
@@ -72,13 +72,6 @@ dotnet user-secrets set Authentication:Facebook:AppSecret <app-secret>
 
 ## <a name="configure-facebook-authentication"></a>Facebook 인증 구성
 
-이 자습서에 사용 된 프로젝트 템플릿을 사용 하면 [Microsoft.AspNetCore.Authentication.Facebook](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Facebook) 패키지가 이미 설치 되었습니다.
-
-* Visual Studio 2017으로이 패키지를 설치 하려면 마우스 오른쪽 단추로 클릭 프로젝트와 선택 **NuGet 패키지 관리**합니다.
-* .NET Core CLI를 설치 하려면 다음 프로젝트 디렉터리에 실행 합니다.
-
-   `dotnet add package Microsoft.AspNetCore.Authentication.Facebook`
-
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 Facebook 서비스에 추가 된 `ConfigureServices` 에서 메서드는 *Startup.cs* 파일:
@@ -98,6 +91,13 @@ services.AddAuthentication().AddFacebook(facebookOptions =>
 [!INCLUDE[default settings configuration](includes/default-settings.md)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+
+설치는 [Microsoft.AspNetCore.Authentication.Facebook](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Facebook) 패키지 합니다.
+
+* Visual Studio 2017으로이 패키지를 설치 하려면 마우스 오른쪽 단추로 클릭 프로젝트와 선택 **NuGet 패키지 관리**합니다.
+* .NET Core CLI를 설치 하려면 다음 프로젝트 디렉터리에 실행 합니다.
+
+   `dotnet add package Microsoft.AspNetCore.Authentication.Facebook`
 
 Facebook 미들웨어에서 추가 된 `Configure` 에서 메서드 *Startup.cs* 파일:
 

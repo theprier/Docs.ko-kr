@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/hosting
-ms.openlocfilehash: 7deccf135ddd21729206ebed58ddc8aca52c1deb
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: dfec2a67112d40b528b97c847da3dda8ef1e63bd
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="hosting-in-aspnet-core"></a>ASP.NET Core에서 호스팅
 
@@ -48,7 +48,7 @@ ASP.NET Core 앱은 앱 시작 및 수명 관리를 담당하는 *호스트*를 
 참조 [ASP.NET Core에서 구성을](xref:fundamentals/configuration/index) 응용 프로그램 구성에 대 한 자세한 내용은 합니다.
 
 > [!NOTE]
-> 정적을 사용 하는 대신 `CreateDefaultBuilder` 에서 호스트를 만드는 메서드를 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) 은 지원 되는 ASP.NET Core 방법을 2.x 합니다. 자세한 내용은 ASP.NET Core 1.x 탭을 참조 하십시오.
+> 정적을 사용 하는 대신 `CreateDefaultBuilder` 에서 호스트를 만드는 메서드를 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) 은 지원 되는 ASP.NET Core 방법을 2.x 합니다. 자세한 내용은 ASP.NET Core 1.x 탭을 참조하세요.
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
@@ -254,7 +254,7 @@ WebHost.CreateDefaultBuilder(args)
 
 ### <a name="prevent-hosting-startup"></a>호스팅 시작 방지
 
-호스팅 시작 어셈블리, 응용 프로그램의 어셈블리를 포함 하 여 자동 로드를 방지 합니다.
+호스팅 시작 어셈블리, 호스팅 응용 프로그램의 어셈블리에 의해 구성 된 시작 어셈블리를 포함 하 여 자동 로드를 방지 합니다. 참조 [IHostingStartup를 사용 하 여 외부 어셈블리에서 응용 프로그램 기능 추가](xref:hosting/ihostingstartup) 자세한 정보에 대 한 합니다.
 
 **키**: preventHostingStartup  
 **형식**: *bool* (`true` 또는 `1`)  
