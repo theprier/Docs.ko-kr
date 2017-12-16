@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/testing-and-debugging/troubleshooting-http-405-errors-after-publishing-web-api-applications
 msc.type: authoredcontent
-ms.openlocfilehash: 2455bbed891179466de8fb6ade3b0a8e66eadee6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b87ae7420e1295030e90c30e97b1e331413ce263
+ms.sourcegitcommit: f1436107b4c022b26f5235dddef103cec5aa6bff
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 12/15/2017
 ---
 <a name="troubleshooting-http-405-errors-after-publishing-web-api-2-applications"></a>HTTP 문제 해결 405 오류 게시 후 Web API 2 응용 프로그램
 ====================
@@ -44,7 +44,7 @@ HTTP 405 오류 문제 하는 방법을 배우 위한 첫 번째 단계에서 HT
 | **가져오기** | 이 메서드는 데이터를 검색 하는 URI에서 아마도 가장 사용 되는 HTTP 메서드가 사용 됩니다. |
 | **H E A D** | 이 메서드는 것과 마찬가지로 GET 메서드 요청 URI에서에서 실제로 데이터를 검색 하지 않는 것-단순히 HTTP 상태를 검색 한다는 점이 다릅니다. |
 | **올리기** | 이 메서드는; URI를 새 데이터를 보내는 데 일반적으로 POST 양식 데이터 전송에 주로 사용 됩니다. |
-| **PUT** | 이 메서드는 대개; URI에 원시 데이터 사용 Web API 응용 프로그램에 JSON 또는 XML 데이터를 제출 하려면 PUT 자주 사용 됩니다. |
+| **PUT** | 이 메서드는; URI를 원시 데이터를 보내는 데 일반적으로 Web API 응용 프로그램에 JSON 또는 XML 데이터를 제출 하려면 PUT 자주 사용 됩니다. |
 | **삭제** | 이 메서드는 데이터를 제거 하는 URI에서 사용 됩니다. |
 | **옵션** | 이 메서드는 일반적으로 URI에 지원 되는 HTTP 메서드 목록을 가져오는 데 사용 됩니다. |
 | **복사 이동** | 그 목적은 자체 설명 및이 두 방법을 WebDAV로 사용 됩니다. |

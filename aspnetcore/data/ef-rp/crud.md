@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/crud
-ms.openlocfilehash: b4b24c155c29a0ef8ffffda752253f56097e50ed
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: 163bc35afed0bf1d9236935d5ce60e6975356594
+ms.sourcegitcommit: f1436107b4c022b26f5235dddef103cec5aa6bff
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 12/15/2017
 ---
 # <a name="create-read-update-and-delete---ef-core-with-razor-pages-2-of-8"></a>만들기, 읽기, 업데이트 및 삭제-EF 코어 Razor 페이지 (2 / 8)
 
@@ -158,7 +158,7 @@ ms.lasthandoff: 12/14/2017
 
 [!code-csharp[Main](intro/samples/cu/Pages/Students/CreateVM.cshtml.cs?name=snippet_OnPostAsync)]
 
-[SetValues](https://docs.microsoft.com/ dotnet/api/microsoft.entityframeworkcore.changetracking.propertyvalues.setvalues?view=efcore-2.0#Microsoft_EntityFrameworkCore_ChangeTracking_PropertyValues_SetValues_System_Object_) 에서 다른 값을 참조 하 여이 개체의 값을 설정 하는 메서드 [Propertyvalue](https://docs.microsoft.com/ dotnet/api/microsoft.entityframeworkcore.changetracking.propertyvalues) 개체입니다. `SetValues`속성 이름 일치를 사용합니다. 보기 모델 형식을 모델 종류와 연결 될 필요가 없습니다, 그리고 일치 하는 속성이 하기만 합니다.
+[SetValues](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.changetracking.propertyvalues.setvalues?view=efcore-2.0#Microsoft_EntityFrameworkCore_ChangeTracking_PropertyValues_SetValues_System_Object_) 에서 다른 값을 참조 하 여이 개체의 값을 설정 하는 메서드 [Propertyvalue](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.changetracking.propertyvalues) 개체입니다. `SetValues`속성 이름 일치를 사용합니다. 보기 모델 형식을 모델 종류와 연결 될 필요가 없습니다, 그리고 일치 하는 속성이 하기만 합니다.
 
 사용 하 여 `StudentVM` 필요 [CreateVM.cshtml](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/cu/Pages/Students/CreateVM.cshtml) 사용 하도록 업데이트 `StudentVM` 대신 `Student`합니다.
 

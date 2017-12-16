@@ -1,153 +1,79 @@
 ---
-title: "사용자 지정 정책 기반 권한 부여"
+title: "ASP.NET Core에서 정책 기반 사용자 지정 권한 부여"
 author: rick-anderson
-description: "이 문서에는 만들고 ASP.NET Core 응용 프로그램의 사용자 지정 권한 부여 정책 처리기를 사용 하는 방법을 설명 합니다."
+description: "만들고 ASP.NET Core 응용 프로그램에서 권한 부여 요구 사항을 적용 하기 위한 사용자 지정 권한 부여 정책 처리기를 사용 하는 방법을 알아봅니다."
 keywords: "ASP.NET Core, 권한 부여, 사용자 지정 정책, 권한 부여 정책"
 ms.author: riande
+ms.custom: mvc
 manager: wpickett
-ms.date: 10/14/2016
+ms.date: 11/21/2017
 ms.topic: article
 ms.assetid: e422a1b2-dc4a-4bcc-b8d9-7ee62009b6a3
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/policies
-ms.openlocfilehash: 0281d054204a11acc2cf11cf5fca23a8f70aad8e
-ms.sourcegitcommit: 037d3900f739dbaa2ba14158e3d7dc81478952ad
+ms.openlocfilehash: 280dd72b75e39546061d8455931f597f50c829fe
+ms.sourcegitcommit: f1436107b4c022b26f5235dddef103cec5aa6bff
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/15/2017
 ---
 # <a name="custom-policy-based-authorization"></a>사용자 지정 정책 기반 권한 부여
 
-<a name="security-authorization-policies-based"></a>
+내부적 [역할 기반 권한 부여](xref:security/authorization/roles) 및 [클레임 기반 권한 부여](xref:security/authorization/claims) 요구, 요구 사항 처리기 및 미리 구성 된 정책을 사용 합니다. 이러한 빌딩 블록 코드에서 권한 부여 평가 식을 지원합니다. 결과 다양 한 재사용 가능한 하 고 테스트 가능 권한 부여 구조입니다.
 
-내부적는 [역할 권한 부여](roles.md) 및 [권한 부여 클레임](claims.md) 요구 사항의 사용, 요구 사항 및 미리 구성 된 정책에 대 한 처리기를 확인 합니다. 이러한 빌딩 블록을 사용 하면 코드를 다시 사용할 수는 다양 한 작업에 대 한 허용 및 쉽게 테스트할 권한 부여 구조에서 권한 부여 평가 표현할 수 있도록 합니다.
+권한 부여 정책 하나 이상의 요구 사항으로 구성 됩니다. 에 등록 되어 있는 권한 부여 서비스 구성의 일부로 `ConfigureServices` 의 메서드는 `Startup` 클래스:
 
-권한 부여 정책 하나 이상의 요구 사항으로 구성 되며 응용 프로그램 시작 시에 권한 부여 서비스 구성의 일부로 등록 `ConfigureServices` 에 *Startup.cs* 파일입니다.
+[!code-csharp[](policies/samples/PoliciesAuthApp1/Startup.cs?range=40-41,50-55,63,72)]
 
-```csharp
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddMvc();
+앞의 예제에서 "AtLeast21" 정책을 만듭니다. 단일 반드시 그래야 하의 최소 연령 제공 되는 요구 사항에 매개 변수로 가집니다.
 
-    services.AddAuthorization(options =>
-    {
-        options.AddPolicy("Over21",
-                          policy => policy.Requirements.Add(new MinimumAgeRequirement(21)));
-    });
-}
-```
+사용 하 여 정책이 적용 되는 `[Authorize]` 정책 이름 가진 특성이 있습니다. 예:
 
-여기서는의 최소 연령 변수로 전달 되는 매개 변수 요구 사항에 단일 요구 사항에는 "Over21" 정책이 만들어지면이 볼 수 있습니다.
-
-사용 하 여 정책이 적용 되는 `Authorize` 예를 들어 정책 이름을 지정 하 여 특성
-
-```csharp
-[Authorize(Policy="Over21")]
-public class AlcoholPurchaseRequirementsController : Controller
-{
-    public ActionResult Login()
-    {
-    }
-
-    public ActionResult Logout()
-    {
-    }
-}
-```
+[!code-csharp[](policies/samples/PoliciesAuthApp1/Controllers/AlcoholPurchaseController.cs?name=snippet_AlcoholPurchaseControllerClass&highlight=4)]
 
 ## <a name="requirements"></a>요구 사항
 
-권한 부여 요구 사항은 현재 사용자 보안 주체를 평가 하는 정책을 사용할 수 있는 데이터 매개 변수 컬렉션입니다. 보호 최소 보존 기간 정책 요구 사항이 있는 경우 단일 매개 변수를 최소 보존 기간 요구 사항을 구현 해야 `IAuthorizationRequirement`합니다. 빈, 표식 인터페이스입니다. 매개 변수가 있는 최소 연령 요구 사항을 다음과 같이; 구현 될 수 있습니다.
+권한 부여 요구 사항은 현재 사용자 보안 주체를 평가 하는 정책을 사용할 수 있는 데이터 매개 변수 컬렉션입니다. 보호 "AtLeast21" 정책 요구 사항이 단일 매개 변수는&mdash;최소 보존 기간입니다. 요구 사항 구현 `IAuthorizationRequirement`, 빈 표식 인터페이스인 합니다. 매개 변수가 있는 최소 연령 요구 사항 다음과 같이 구현 될 수 없습니다.
 
-```csharp
-public class MinimumAgeRequirement : IAuthorizationRequirement
-{
-    public int MinimumAge { get; private set; }
-    
-    public MinimumAgeRequirement(int minimumAge)
-    {
-        MinimumAge = minimumAge;
-    }
-}
-```
+[!code-csharp[](policies/samples/PoliciesAuthApp1/Services/Requirements/MinimumAgeRequirement.cs?name=snippet_MinimumAgeRequirementClass)]
 
-데이터 또는 속성 요구 사항 필요 하지 않습니다.
+> [!NOTE]
+> 데이터 또는 속성 요구 사항 필요 하지 않습니다.
 
 <a name="security-authorization-policies-based-authorization-handler"></a>
 
 ## <a name="authorization-handlers"></a>권한 부여 처리기
 
-권한 부여 처리기는 요구 사항 속성의 계산 합니다. 권한 부여 처리기는 제공 된 기준으로 평가 해야 `AuthorizationHandlerContext` 권한 부여 허용 되는지 여부를 결정 합니다. 요구 사항이 있을 수 있습니다 [여러 처리기](policies.md#security-authorization-policies-based-multiple-handlers)합니다. 처리기에서 상속 해야 합니다. `AuthorizationHandler<T>` 여기서 T는 요구 사항을 처리 합니다.
+권한 부여 처리기는 평가 요구 사항 속성의 담당 합니다. 제공 된 작업에 대 한 요구 사항을 평가 하는 권한 부여 처리기 `AuthorizationHandlerContext` 액세스 허용 확인 하려면. 요구 사항이 있을 수 있습니다 [여러 처리기](#security-authorization-policies-based-multiple-handlers)합니다. 처리기 상속 `AuthorizationHandler<T>`여기서 `T` 처리 요구 사항입니다.
 
 <a name="security-authorization-handler-example"></a>
 
 최소 보존 기간 처리기는 다음과 같습니다.
 
-```csharp
-public class MinimumAgeHandler : AuthorizationHandler<MinimumAgeRequirement>
-{
-    protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, MinimumAgeRequirement requirement)
-    {
-        if (!context.User.HasClaim(c => c.Type == ClaimTypes.DateOfBirth &&
-                                   c.Issuer == "http://contoso.com"))
-        {
-            // .NET 4.x -> return Task.FromResult(0);
-            return Task.CompletedTask;
-        }
+[!code-csharp[](policies/samples/PoliciesAuthApp1/Services/Handlers/MinimumAgeHandler.cs?name=snippet_MinimumAgeHandlerClass)]
 
-        var dateOfBirth = Convert.ToDateTime(context.User.FindFirst(
-            c => c.Type == ClaimTypes.DateOfBirth && c.Issuer == "http://contoso.com").Value);
-
-        int calculatedAge = DateTime.Today.Year - dateOfBirth.Year;
-        if (dateOfBirth > DateTime.Today.AddYears(-calculatedAge))
-        {
-            calculatedAge--;
-        }
-
-        if (calculatedAge >= requirement.MinimumAge)
-        {
-            context.Succeed(requirement);
-        }
-        return Task.CompletedTask;
-    }
-}
-```
-
-위의 코드에서 먼저 의견에 귀 현재 사용자 계정이 회원님의 발급자와 신뢰에서 실행 하지는 클레임 생년월일 날짜에 있는지를 합니다. 클레임이 없는 경우 반환 하므로 권한을 부여할 수 없습니다 것입니다. 오래 된 사용자가 파악 클레임 있는데 하 고 요구 사항에 의해 전달 된 최소 보존 기간을 충족 하는 경우 다음 권한 부여에 성공한 키를 누릅니다. 일단 부여 된 이라고 `context.Succeed()` 매개 변수로 성공적으로 실행 되었는지 요구 사항을 전달 합니다.
+위의 코드에 알려지고 신뢰할 수 있는 발급자가 발급 하는 클레임 생년월일 날짜는 현재 사용자 계정이 있는지 확인 합니다. 권한 부여 클레임 누락 되었을 때 발생할 수 없습니다, 그리고 완료 된 작업 반환 되는 경우. 클레임에 있는 경우 사용자의 나이 계산 됩니다. 사용자 요구 사항에 정의 된 최소 보존 기간을 충족할 경우 권한 부여를 성공적으로 간주 됩니다. 부여 된, `context.Succeed` 매개 변수로 만족된 요구를 사용 하 여 호출 합니다.
 
 <a name="security-authorization-policies-based-handler-registration"></a>
 
 ### <a name="handler-registration"></a>처리기를 등록
-예를 들어 처리기 구성 하는 동안 서비스 컬렉션에 등록 합니다.
 
-```csharp
+처리기는 구성 하는 동안 서비스 컬렉션에 등록 됩니다. 예:
 
-public void ConfigureServices(IServiceCollection services)
-{
-    services.AddMvc();
+[!code-csharp[](policies/samples/PoliciesAuthApp1/Startup.cs?range=40-41,50-55,63-65,72)]
 
-    services.AddAuthorization(options =>
-    {
-        options.AddPolicy("Over21",
-                          policy => policy.Requirements.Add(new MinimumAgeRequirement(21)));
-    });
-
-    services.AddSingleton<IAuthorizationHandler, MinimumAgeHandler>();
-}
-```
-
-서비스 컬렉션을 사용 하 여 각 처리기가 추가 `services.AddSingleton<IAuthorizationHandler, YourHandlerClass>();` 처리기 클래스를 전달 합니다.
+각 처리기가 호출 하 여 서비스 컬렉션에 추가 `services.AddSingleton<IAuthorizationHandler, YourHandlerClass>();`합니다.
 
 ## <a name="what-should-a-handler-return"></a>처리기를 반환 해야?
 
-볼 수 있듯이 우리의 [처리기 예제](policies.md#security-authorization-handler-example) 하는 `Handle()` 메서드 반환 값이 없는 어떻게 수행 म 성공 또는 실패를 나타내는?
+`Handle` 에서 메서드는 [처리기 예제](#security-authorization-handler-example) 아무 값도 반환 합니다. 성공 또는 실패를 표시 된 상태는 어떻게 합니까?
 
 * 처리기를 호출 하 여이 성공 했음을 의미 `context.Succeed(IAuthorizationRequirement requirement)`, 된 요구 사항을 전달 성공적으로 확인 되었습니다.
 
 * 처리기를 배포할 수 있습니다. 동일한 요구 사항에 대해 다른 처리기 처럼 일반적으로 오류를 처리 하도록 필요는 없습니다.
 
-* 실패 한 요구 사항에 대해 다른 처리기 성공 하는 경우에, 호출 `context.Fail`합니다.
+* 오류, 다른 요구 사항을 처리기 성공 하는 경우에, 호출 `context.Fail`합니다.
 
 어떤 내부 처리기를 호출 하는 것에 관계 없이 정책 요구 사항에서 요구 하는 경우 요구 사항에 대 한 모든 처리기가 호출 됩니다. 이렇게 하면 요구 사항에는 항상 적용 하는 로깅 같은 의도 하지 않은 경우에 `context.Fail()` 다른 처리기에서 호출 되었습니다.
 
@@ -155,74 +81,43 @@ public void ConfigureServices(IServiceCollection services)
 
 ## <a name="why-would-i-want-multiple-handlers-for-a-requirement"></a>이유는 여러 처리기는 요구 사항에 대 한?
 
-에 있는 것으로 평가 하려는 경우에는 **또는** 별로 단일 요구 사항에 대해 여러 처리기를 구현 합니다. 예를 들어 Microsoft는 주요 카드를 사용 하는 열만 있는 문. 키 카드를 집에 두면는 접수원이 임시 스티커 인쇄를 문을 열립니다. 이 시나리오에서는 단일 반드시 그래야 할 것 *EnterBuilding*, 하지만 단일 요구 사항 검사 하나씩 여러 처리기입니다.
+에 있는 것으로 평가 하려는 경우에는 **또는** 별로 단일 요구 사항에 대해 여러 처리기를 구현 합니다. 예를 들어 Microsoft는 주요 카드를 사용 하는 열만 있는 문. 키 카드를 집에 두면 접수원 임시 스티커 인쇄 하 고 사용자에 대 한 문을 엽니다. 이 시나리오에서는 단일 요구 사항, 갖기 *BuildingEntry*, 하지만 단일 요구 사항 검사 하나씩 여러 처리기입니다.
 
-```csharp
-public class EnterBuildingRequirement : IAuthorizationRequirement
-{
-}
+*BuildingEntryRequirement.cs*
 
-public class BadgeEntryHandler : AuthorizationHandler<EnterBuildingRequirement>
-{
-    protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, EnterBuildingRequirement requirement)
-    {
-        if (context.User.HasClaim(c => c.Type == ClaimTypes.BadgeId &&
-                                       c.Issuer == "http://microsoftsecurity"))
-        {
-            context.Succeed(requirement);
-        }
-        return Task.CompletedTask;
-    }
-}
+[!code-csharp[](policies/samples/PoliciesAuthApp1/Services/Requirements/BuildingEntryRequirement.cs?name=snippet_BuildingEntryRequirementClass)]
 
-public class HasTemporaryStickerHandler : AuthorizationHandler<EnterBuildingRequirement>
-{
-    protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, EnterBuildingRequirement requirement)
-    {
-        if (context.User.HasClaim(c => c.Type == ClaimTypes.TemporaryBadgeId &&
-                                       c.Issuer == "https://microsoftsecurity"))
-        {
-            // We'd also check the expiration date on the sticker.
-            context.Succeed(requirement);
-        }
-        return Task.CompletedTask;
-    }
-}
-```
+*BadgeEntryHandler.cs*
 
-이제는 두 처리기 가정 [등록](xref:security/authorization/policies#security-authorization-policies-based-handler-registration) 정책을 평가 하면는 `EnterBuildingRequirement` 처리기 중 하나에 성공 하면 정책 평가 성공 합니다.
+[!code-csharp[](policies/samples/PoliciesAuthApp1/Services/Handlers/BadgeEntryHandler.cs?name=snippet_BadgeEntryHandlerClass)]
+
+*TemporaryStickerHandler.cs*
+
+[!code-csharp[](policies/samples/PoliciesAuthApp1/Services/Handlers/TemporaryStickerHandler.cs?name=snippet_TemporaryStickerHandlerClass)]
+
+이 두 처리기 되는지 확인 [등록](xref:security/authorization/policies#security-authorization-policies-based-handler-registration)합니다. 어느 처리기 성공 때 정책을 평가 `BuildingEntryRequirement`, 정책 평가 성공 합니다.
 
 ## <a name="using-a-func-to-fulfill-a-policy"></a>Func는 정책을 처리 하는 데 사용 하 여
 
-경우가 정책 처리는 코드에서 표현 하기 간단 합니다. 만 제공 하는 것이 불가능 한 `Func<AuthorizationHandlerContext, bool>` 와 정책을 구성 하는 경우는 `RequireAssertion` 정책 작성기입니다.
+정책을 코드에서 표현 하기 간단 따르는 데는 경우가 있습니다. 제공 하는 것이 불가능 한 `Func<AuthorizationHandlerContext, bool>` 와 정책을 구성할 때는 `RequireAssertion` 정책 작성기.
 
 예를 들어 이전 `BadgeEntryHandler` 다음과 같이 다시 작성할 수 있습니다.
 
-```csharp
-services.AddAuthorization(options =>
-    {
-        options.AddPolicy("BadgeEntry",
-                          policy => policy.RequireAssertion(context =>
-                                  context.User.HasClaim(c =>
-                                     (c.Type == ClaimTypes.BadgeId ||
-                                      c.Type == ClaimTypes.TemporaryBadgeId)
-                                      && c.Issuer == "https://microsoftsecurity"));
-                          }));
-    }
- }
-```
+[!code-csharp[](policies/samples/PoliciesAuthApp1/Startup.cs?range=52-53,57-63)]
 
 ## <a name="accessing-mvc-request-context-in-handlers"></a>처리기에서 MVC 요청 컨텍스트 액세스
 
-`Handle` 권한 부여 처리기에서 구현 해야 하는 메서드에 두 개의 매개 변수가 있는 `AuthorizationContext` 및 `Requirement` 를 처리 하는 합니다. MVC 또는 Jabbr 등의 프레임 워크는에 개체를 추가할 수는 `Resource` 속성에는 `AuthorizationContext` 추가 정보를 통과 하도록 합니다.
+`HandleRequirementAsync` 권한 부여 처리기에서 구현 하는 메서드에 두 개의 매개 변수가:는 `AuthorizationHandlerContext` 및 `TRequirement` 처리 됩니다. MVC 또는 Jabbr 등의 프레임 워크는에 개체를 추가할 수는 `Resource` 속성에는 `AuthorizationHandlerContext` 추가 정보를 전달 합니다.
 
-MVC의 인스턴스를 전달 하는 예를 들어 `Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext` 다른 MVC HttpContext RouteData 및 모든 항목에 액세스 하는 데 사용 되는 리소스 속성에 제공 합니다.
+MVC의 인스턴스를 전달 하는 예를 들어 [AuthorizationFilterContext](/dotnet/api/?term=AuthorizationFilterContext) 에 `Resource` 속성입니다. 이 속성에 대 한 액세스를 제공 `HttpContext`, `RouteData`, 그리고 다른 MVC 및 Razor 페이지에서 제공 합니다.
 
-사용 하 여 `Resource` 속성은 특정 프레임 워크입니다. 정보를 사용 하 여 `Resource` 속성에는 권한 부여 정책을 특정 프레임 워크를 제한 합니다. 캐스팅 해야는 `Resource` 사용 하 여 속성의 `as` 키워드 및 다음 확인은 캐스트에 성공 코드 충돌 하지 않는 되도록와 `InvalidCastExceptions` ; 다른 프레임 워크에서 실행할 때
+사용 하 여 `Resource` 속성은 특정 프레임 워크입니다. 정보를 사용 하는 `Resource` 속성 권한 부여 정책을 특정 프레임 워크를 제한 합니다. 캐스팅 해야는 `Resource` 사용 하 여 속성은 `as` 키워드를 선택한 다음 해당 캐스트의 코드 충돌 하지 않습니다 확인에 성공 했습니다 확인으로 `InvalidCastException` 다른 프레임 워크에서 실행할 때:
 
 ```csharp
-if (context.Resource is Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext mvcContext)
+// Requires the following import:
+//     using Microsoft.AspNetCore.Mvc.Filters;
+if (context.Resource is AuthorizationFilterContext mvcContext)
 {
-    // Examine MVC specific things like routing data.
+    // Examine MVC-specific things like routing data.
 }
 ```
