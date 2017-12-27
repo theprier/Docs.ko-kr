@@ -1,7 +1,7 @@
 ---
 title: "소비자 API"
 author: rick-anderson
-description: "이 문서는 다양한 ASP.NET Core 소비자 API 데이터 보호 항목에 대한 목차로 사용됩니다."
+description: "이 문서는 다양한 ASP.NET Core 소비자 API 데이터 보호 기사의 목차입니다."
 keywords: "ASP.NET Core,소비자 API,데이터 보호"
 ms.author: riande
 manager: wpickett
@@ -23,10 +23,10 @@ ms.lasthandoff: 11/10/2017
 
 * [용도 문자열](purpose-strings.md)
 
-* [용도 계층 구조 및 다중 테넌트](purpose-strings-multitenancy.md)
+* [용도 계층 구조 및 다중-테넌트](purpose-strings-multitenancy.md)
 
-* [암호 해시](password-hashing.md)
+* [비밀번호 해싱](password-hashing.md)
 
-* [보호된 페이로드의 수명 제한](limited-lifetime-payloads.md)
+* [보호된 페이로드의 수명 제한하기](limited-lifetime-payloads.md)
 
-* [호출된 키가 속한 페이로드 보호 해제](dangerous-unprotect.md)
+* [키가 폐기된 페이로드의 보호 해제하기](dangerous-unprotect.md)
