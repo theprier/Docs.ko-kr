@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/web-development-best-practices/what-not-to-do-in-aspnet-and-what-to-do-instead
 msc.type: authoredcontent
-ms.openlocfilehash: 24c6a35a6b663ebb0f8d0e3e7988322fa5d9018c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6790cd0deb36c9fb297ccd4df371f763dba17844
+ms.sourcegitcommit: 17b025bd33f4474f0deaafc6d0447a4e72bcad87
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 12/27/2017
 ---
 <a name="what-not-to-do-in-aspnet-and-what-to-do-instead"></a>ASP.NET 및 대신 수행할 작업에서 작업을 수행 하지 않의 사항을
 ====================
@@ -49,7 +49,7 @@ ms.lasthandoff: 11/10/2017
     - [UrlPathEncode](#urlpathencode)
 - [안정성 및 성능](#performance)
 
-    - [PreSendRequestHeaders 및 PreSendRequestContext](#presend)
+    - [PreSendRequestHeaders 및 PreSendRequestContent](#presend)
     - [Web Forms 사용 하 여 비동기 페이지 이벤트](#asyncevents)
     - [실행 하 고 잊어 작업](#fire)
     - [요청 엔터티 본문](#requestentity)
@@ -200,11 +200,13 @@ UrlPathEncode 메서드는 매우 구체적인 브라우저 호환성 문제를 
 
 <a id="presend"></a>
 
-### <a name="presendrequestheaders-and-presendrequestcontext"></a>PreSendRequestHeaders 및 PreSendRequestContext
+### <a name="presendrequestheaders-and-presendrequestcontent"></a>PreSendRequestHeaders 및 PreSendRequestContent
 
 권장 사항: 관리 되는 모듈 함께 이러한 이벤트를 사용 하지 마십시오. 대신, 필요한 작업을 수행 하는 네이티브 IIS 모듈을 작성 합니다. 참조 [네이티브 코드 HTTP 모듈을 만들고](https://msdn.microsoft.com/en-us/library/ms693629.aspx)합니다.
 
-사용할 수는 [PreSendRequestHeaders](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.presendrequestheaders.aspx) 및 [PreSendRequestContext](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.presendrequestcontent.aspx) 네이티브 IIS 모듈을 사용 하 여 이벤트 하지만 IHttpModule을 구현 하는 관리 되는 모듈을 함께 사용 하지 마십시오. 이러한 속성을 설정 비동기 요청에 문제가 발생할 수 있습니다.
+사용할 수는 [PreSendRequestHeaders](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.presendrequestheaders.aspx) 및 [PreSendRequestContent](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.presendrequestcontent.aspx) 네이티브 IIS 모듈을 사용 하 여 이벤트입니다.
+> [!WARNING]
+> 사용 하지 마십시오 `PreSendRequestHeaders` 및 `PreSendRequestContent` 구현 하는 관리 되는 모듈 `IHttpModule`합니다. 이러한 속성을 설정 비동기 요청에 문제가 발생할 수 있습니다. 응용 프로그램 요청 라우팅 (ARR)와 websocket 조합 w3wp 충돌을 일으킬 수 있는 액세스 위반 예외 발생할 수 있습니다. 예를 들어 iiscore! W3_CONTEXT_BASE::GetIsLastNotification + iiscore.dll에 68 (의 0xC0000005)에서 액세스 위반이 예외가 발생 했습니다.
 
 <a id="asyncevents"></a>
 

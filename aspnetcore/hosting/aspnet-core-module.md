@@ -11,11 +11,11 @@ ms.assetid: 5de0c8f7-50ce-4e2c-b3d4-a1bd9fdfcff5
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: hosting/aspnet-core-module
-ms.openlocfilehash: f0759f16ada531774a3945f67495e5f634e6154e
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: 277e63a5663aca622e8252d6c6be1671e57cbf68
+ms.sourcegitcommit: 44a62f59d4db39d685c4487a0345a486be18d7c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="aspnet-core-module-configuration-reference"></a>ASP.NET Core 모듈 구성 참조
 
@@ -117,6 +117,7 @@ ASP.NET Core 모듈 리디렉션합니다 `stdout` 및 `stderr` 설정 하는 �
     stdoutLogFile="\\?\%home%\LogFiles\stdout">
 </aspNetCore>
 ```
+참조 [web.config 통해 구성](#configuration-via-webconfig) 의 예는 `aspNetCore` 요소에는 *web.config* 파일입니다.
 
 ## <a name="aspnet-core-module-with-an-iis-shared-configuration"></a>IIS 사용 하 여 ASP.NET Core 모듈 구성 공유
 
@@ -126,7 +127,7 @@ ASP.NET Core 모듈 설치 관리자의 권한으로 실행 되는 **시스템**
 
 ## <a name="module-schema-and-configuration-file-locations"></a>모듈, 스키마 및 구성 파일 위치
 
-### <a name="module"></a>모듈
+### <a name="module"></a>Module
 
 **IIS (x86/amd64):**
 

@@ -11,11 +11,11 @@ ms.assetid: 7f275a09-f118-41c9-88d1-8de52d6a5aa1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/localization
-ms.openlocfilehash: 1922037245a33f49c17f1c361003260462d96264
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a3fdbf8a1ab4ca397824a46da445fa34ddd35204
+ms.sourcegitcommit: 4be61844141d3cfb6f263636a36aebd26e90fb28
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 12/22/2017
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>전역화 및 지역화 ASP.NET Core
 
@@ -124,7 +124,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ASP.NET Core를 사용 하면 두 문화권 값을 지정할 수 있습니다 `SupportedCultures` 및 `SupportedUICultures`합니다. [CultureInfo](https://docs.microsoft.com/dotnet/api/system.globalization.cultureinfo) 개체에 대 한 `SupportedCultures` 날짜, 시간, 숫자 및 통화 형식 같은 culture에 종속 된 함수의 결과 결정 합니다. `SupportedCultures`또한 텍스트, 대/소문자 규칙 및 문자열 비교의 정렬 순서를 결정합니다. 참조 [CultureInfo.CurrentCulture](https://docs.microsoft.com/dotnet/api/system.stringcomparer.currentculture#System_StringComparer_CurrentCulture) 에 대 한 자세한 정보는 서버가 문화권을 가져오는 방식입니다. `SupportedUICultures` 이것은 문자열 해석 결정 (에서 *.resx* 파일)을 조회 하 여는 [ResourceManager](https://docs.microsoft.com/dotnet/api/system.resources.resourcemanager)합니다. `ResourceManager` 의해 결정 되는 culture 관련 문자열을 단순히 조회 `CurrentUICulture`합니다. .NET의 모든 스레드는 `CurrentCulture` 및 `CurrentUICulture` 개체입니다. ASP.NET Core 문화권 종속 기능을 렌더링 하는 경우 이러한 값을 검사 합니다. 예를 들어, 현재 스레드 문화권 "EN-US" (영어, United States)로 설정 되어 있으면 `DateTime.Now.ToLongDateString()` 이지만 if "목요일, 2016 년 2 월 18,", 표시 `CurrentCulture` 설정 된 "ES-ES" 스페인어 (스페인)에 출력 됩니다 "jueves, 18 febrero de-de 2016" 입니다.
 
-## <a name="working-with-resource-files"></a>리소스 파일 작업
+## <a name="resource-files"></a>리소스 파일
 
 리소스 파일은 코드에서 지역화 가능한 문자열을 구분 하는 데 유용한 메커니즘이 있습니다. 기본이 아닌 언어에 대 한 번역 된 문자열은 격리 된 *.resx* 리소스 파일입니다. 예를 들어 라는 스페인어 리소스 파일을 만드는 경우가 *Welcome.es.resx* 포함 된 문자열을 변환 합니다. "es" 스페인어 언어 코드입니다. Visual Studio에서이 리소스 파일을 만들려면:
 
@@ -172,19 +172,21 @@ Visual Studio 2017 미리 보기 버전 15.3를 사용 하는 경우에 리소�
 
 사용 하지 않는 경우는 `ResourcesPath` 옵션을는 *.resx* 보기는 보기와 같은 폴더에에 대 한 파일입니다.
 
-".Fr" 문화권 지정자를 제거 하 고 쿠키 또는 기타 메커니즘) (통해 프랑스어로 설정 하는 문화권, 기본 리소스 파일을 읽고 문자열이 지역화 됩니다. 리소스 관리자는 culture 지정자 없이 *.resx 파일을 처리 하는 사용자의 요청 된 문화권 아무 것도 충족 하는 경우 기본 또는 대체 (fallback) 리소스를 지정 합니다. 요청 된 문화권의 리소스를 없습니다 기본 리소스 파일을가 필요한 경우 키에만 반환 하려면.
+## <a name="culture-fallback-behavior"></a>문화권 fallback 동작
 
-### <a name="generating-resource-files-with-visual-studio"></a>Visual Studio를 사용 하 여 리소스 파일을 생성합니다.
+예를 들어, ".fr" 문화권 지정자를 제거 하는 경우 프랑스어로 설정 하는 문화권 있으면 기본 리소스 파일을 읽고 문자열이 지역화 됩니다. 리소스 관리자 요청된 culture에 맞지 기본 또는 대체 (fallback) 리소스를 지정 합니다. 요청 된 문화권의 리소스를 없습니다 기본 리소스 파일을가 필요한 경우 키에만 반환 하려면.
+
+### <a name="generate-resource-files-with-visual-studio"></a>Visual Studio를 사용 하 여 리소스 파일을 생성 합니다.
 
 파일 이름에는 문화권 하지 않고 Visual Studio에서 리소스 파일을 만드는 경우 (예를 들어 *Welcome.resx*), Visual Studio는 각 문자열에 대 한 속성을 갖는 C# 클래스를 만듭니다. 이 결과 원하지 ASP.NET 코어; 일반적으로 기본값이 없는 *.resx* 리소스 파일 (A *.resx* 문화권 이름 없이 파일). 만들어야 하는 것이 좋습니다는 *.resx* 문화권 이름으로 파일 (예를 들어 *Welcome.fr.resx*). 만들 때 한 *.resx* 문화권 이름을 사용할 경우 Visual Studio 파일 클래스 파일을 생성 하지 것입니다. 예상 많은 개발자 됩니다 **하지** 기본 언어 리소스 파일을 만듭니다.
 
-### <a name="adding-other-cultures"></a>다른 문화권에 맞게 추가
+### <a name="add-other-cultures"></a>다른 문화권에 맞게 추가
 
 각 언어 및 culture 조합 (기본 언어)와 다른 고유한 리소스 파일이 필요합니다. ISO 언어 코드를 파일 이름에 있는 새 리소스 파일을 만들어 서로 다른 문화권 및 로캘에 대 한 리소스 파일을 만듭니다 (예를 들어 **en-우리**, **fr ca**, 및  **en gb**). 파일 이름 사이 이러한 ISO 코드 위치 및 *.resx* 에서 같이 파일 이름 확장명을 *Welcome.es MX.resx* (스페인어/멕시코). 중립 문화권에 따라 언어를 지정 하려면 국가 코드를 제거 (`MX` 앞의 예제에서). 스페인어 중립 문화권 리소스 파일 이름이 *Welcome.es.resx*합니다.
 
 ## <a name="implement-a-strategy-to-select-the-languageculture-for-each-request"></a>각 요청에 대 한 언어/문화권을 선택 하는 전략을 구현 합니다.  
 
-### <a name="configuring-localization"></a>지역화를 구성합니다.
+### <a name="configure-localization"></a>지역화를 구성 합니다.
 
 지역화에 구성 된 `ConfigureServices` 메서드:
 
@@ -236,7 +238,7 @@ Visual Studio 2017 미리 보기 버전 15.3를 사용 하는 경우에 리소�
 
 [Accept-language 헤더](https://www.w3.org/International/questions/qa-accept-lang-locales) 대부분의 브라우저에서 설정할 수는 않았고 원래 사용자의 언어를 지정 합니다. 이 설정은 브라우저 전송 하도록 설정 된 또는 기본 운영 체제에서 상속한 것을 나타냅니다. Accept-language HTTP 헤더의 브라우저 요청 사용자의 기본 언어를 검색 하는 infallible 있는 것은 아닙니다 (참조 [브라우저의 언어 기본 설정](https://www.w3.org/International/questions/qa-lang-priorities.en.php)). 프로덕션 응용 프로그램 사용자는 선택한 culture 지정할 수 있는 방법을 포함 해야 합니다.
 
-### <a name="setting-the-accept-language-http-header-in-ie"></a>IE에서 Accept-language HTTP 헤더 설정
+### <a name="set-the-accept-language-http-header-in-ie"></a>IE에서 Accept-language HTTP 헤더 설정
 
 1. 기어 아이콘에서을 누릅니다 **인터넷 옵션**합니다.
 
@@ -252,7 +254,7 @@ Visual Studio 2017 미리 보기 버전 15.3를 사용 하는 경우에 리소�
 
 6. 언어를 차례로 누릅니다 **위로 이동**합니다.
 
-### <a name="using-a-custom-provider"></a>사용자 지정 공급자를 사용 하 여
+### <a name="use-a-custom-provider"></a>사용자 지정 공급자를 사용 하 여
 
 데이터베이스에 해당 언어 및 culture를 저장 하 여 소비자에 게 알리는 한다고 가정 합니다. 사용자에 대 한 이러한 값을 조회 하는 공급자를 작성할 수 있습니다. 다음 코드에는 사용자 지정 공급자를 추가 하는 방법을 보여 줍니다.
 
@@ -281,7 +283,7 @@ services.Configure<RequestLocalizationOptions>(options =>
 
 사용 하 여 `RequestLocalizationOptions` 지역화 공급자를 추가 하거나 제거 합니다.
 
-### <a name="setting-the-culture-programmatically"></a>프로그래밍 방식으로 문화권 설정
+### <a name="set-the-culture-programmatically"></a>프로그래밍 방식으로 문화권 설정
 
 이 샘플 **Localization.StarterWeb** 프로젝션 할 [GitHub](https://github.com/aspnet/entropy) 설정 하는 UI가 포함 된 `Culture`합니다. *Views/Shared/_SelectLanguagePartial.cshtml* 파일을 사용 하면 지원 되는 culture의 목록에서 culture를 지정할 수 있습니다.
 

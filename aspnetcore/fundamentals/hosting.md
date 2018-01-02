@@ -10,17 +10,17 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/hosting
-ms.openlocfilehash: dfec2a67112d40b528b97c847da3dda8ef1e63bd
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: 14e48adf5671a41ad6e135caeb4a87fdf7292aa6
+ms.sourcegitcommit: 5834afb87e4262b9b88e60e3fe6c735e61a1e08d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 12/20/2017
 ---
 # <a name="hosting-in-aspnet-core"></a>ASP.NET Core에서 호스팅
 
 [Luke Latham](https://github.com/guardrex)으로
 
-ASP.NET Core 앱은 앱 시작 및 수명 관리를 담당하는 *호스트*를 구성하고 실행합니다. 여기에 최소한 호스트 서버 및 요청 처리 파이프라인을 구성합니다.
+ASP.NET Core 응용 프로그램 구성 및 실행 한 *호스트*합니다. 호스트는 응용 프로그램 시작 및 수명 관리 담당 합니다. 여기에 최소한 호스트 서버 및 요청 처리 파이프라인을 구성합니다.
 
 ## <a name="setting-up-a-host"></a>호스트 설정
 
@@ -40,19 +40,19 @@ ASP.NET Core 앱은 앱 시작 및 수명 관리를 담당하는 *호스트*를 
   * [사용자의 비밀](xref:security/app-secrets) 응용 프로그램을 실행 하는 경우는 `Development` 환경입니다.
   * 환경 변수.
   * 명령줄 인수입니다.
-* 구성 [로깅](xref:fundamentals/logging/index) 사용 하 여 콘솔 및 디버그 출력에 대 한 [로그 필터링](xref:fundamentals/logging/index#log-filtering) 의 로깅 구성 섹션에 지정 된 규칙은 *appsettings.json* 또는 *appsettings 합니다. {환경}.json* 파일입니다.
+* 구성 [로깅](xref:fundamentals/logging/index) 콘솔 및 디버그 출력에 대 한 합니다. 로깅에 포함 됩니다 [로그 필터링](xref:fundamentals/logging/index#log-filtering) 의 로깅 구성 섹션에 지정 된 규칙은 *appsettings.json* 또는 *appsettings. { 환경}.json* 파일입니다.
 * 뒤에 IIS를 실행 하면 [IIS 통합](xref:publishing/iis) 기본 경로 포트를 구성 하 여 서버 수신 대기할 때 사용 하는 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)합니다. 모듈은 IIS와 Kestrel 간의 역방향 프록시를 만듭니다. 또한 응용 프로그램을 구성 [시작 오류 캡처](#capture-startup-errors)합니다. IIS 기본 옵션을 참조 하십시오. [IIS의 IIS와 Windows에서 호스트 ASP.NET Core 섹션 옵션](xref:publishing/iis#iis-options)합니다.
 
-*콘텐츠 루트* 호스트 MVC 뷰 파일과 같은 콘텐츠 파일을 검색 하는 위치를 결정 합니다. 기본 콘텐츠 루트는 [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory)합니다. 이 인해 응용 프로그램 루트 폴더에서 시작 될 때 웹 프로젝트의 루트 폴더 콘텐츠 루트로 사용 하 여 (예를 들어 호출 [실행 dotnet](/dotnet/core/tools/dotnet-run) 프로젝트 폴더에서). 사용 되는 기본 이것이 [Visual Studio](https://www.visualstudio.com/) 및 [dotnet 새 템플릿을](/dotnet/core/tools/dotnet-new)합니다.
+*콘텐츠 루트* 호스트 MVC 뷰 파일과 같은 콘텐츠 파일을 검색 하는 위치를 결정 합니다. 기본 콘텐츠 루트는 [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory)합니다. 기본 콘텐츠 루트 (`Directory.GetCurrentDirectory`)을 응용 프로그램 루트 폴더에서 시작 될 때 웹 프로젝트의 루트 폴더 콘텐츠 루트로 사용 (호출 예를 들어 [실행 dotnet](/dotnet/core/tools/dotnet-run) 프로젝트 폴더에서). 사용 되는 기본 이것이 [Visual Studio](https://www.visualstudio.com/) 및 [dotnet 새 템플릿을](/dotnet/core/tools/dotnet-new)합니다.
 
-참조 [ASP.NET Core에서 구성을](xref:fundamentals/configuration/index) 응용 프로그램 구성에 대 한 자세한 내용은 합니다.
+응용 프로그램 구성에 대 한 자세한 내용은 참조 하십시오. [ASP.NET Core에서 구성을](xref:fundamentals/configuration/index)합니다.
 
 > [!NOTE]
-> 정적을 사용 하는 대신 `CreateDefaultBuilder` 에서 호스트를 만드는 메서드를 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) 은 지원 되는 ASP.NET Core 방법을 2.x 합니다. 자세한 내용은 ASP.NET Core 1.x 탭을 참조하세요.
+> 정적을 사용 하는 대신 `CreateDefaultBuilder` 에서 호스트를 만드는 메서드를 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) 은 지원 되는 ASP.NET Core 방법을 2.x 합니다. 자세한 내용은 ASP.NET Core 1.x 탭을 참조 하십시오.
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-인스턴스를 사용 하 여 호스트 만들기 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder)합니다. 이 일반적으로 응용 프로그램의 진입점에서 수행 되어는 `Main` 메서드. 프로젝트 템플릿에서 `Main` 에 위치한 *Program.cs*합니다. 다음 *Program.cs* 사용 하는 방법을 보여 줍니다. `WebHostBuilder` 호스트 빌드하려면:
+인스턴스를 사용 하 여 호스트 만들기 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder)합니다. 응용 프로그램의 진입점에서 일반적으로 수행 호스트 만들기는 `Main` 메서드. 프로젝트 템플릿에서 `Main` 에 위치한 *Program.cs*합니다. 일반적인 *Program.cs* 호출 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) 설정은 호스트를 시작 하려면:
 
 [!code-csharp[Main](../common/samples/WebApplication1/Program.cs)]
 
@@ -82,7 +82,11 @@ host.Run();
 
 ## <a name="host-configuration-values"></a>호스트 구성 값
 
-[WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) 와 직접 설정 될 수 있는 호스트에 대 한 대부분의 사용 가능한 구성 값을 설정 하기 위한 메서드를 제공 [UseSetting](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder.usesetting) 와 연결 된 키입니다. 사용 하 여 값을 설정할 때 `UseSetting`, 유형에 관계 없이 (따옴표로 묶음)을 문자열로 설정 됩니다.
+[WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) 호스트에 대 한 대부분의 사용 가능한 구성 값을 설정 하는 다음 방법 중 하나를 제공 합니다.
+
+* 환경 변수 형식으로 `ASPNETCORE_{configurationKey}`합니다. 예를 들어, `ASPNETCORE_DETAILEDERRORS`을 입력합니다.
+* 명시적 메서드 같은 `CaptureStartupErrors`합니다.
+* [UseSetting](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder.usesetting) 와 연결 된 키입니다. 사용 하 여 값을 설정할 때 `UseSetting`, 유형에 관계 없이 한 문자열로 값이 설정 됩니다.
 
 ### <a name="capture-startup-errors"></a>시작 오류 캡처
 
@@ -91,7 +95,8 @@ host.Run();
 **키**: captureStartupErrors  
 **형식**: *bool* (`true` 또는 `1`)  
 **기본**: 기본값으로 `false` Kestrel 며 기본값은 IIS 뒤에 있는 앱이 실행 하지 않는 한 `true`합니다.  
-**사용 하 여 설정**:`CaptureStartupErrors`
+**사용 하 여 설정**:`CaptureStartupErrors`  
+**환경 변수**:`ASPNETCORE_CAPTURESTARTUPERRORS`
 
 때 `false`, 종료 하는 호스트에서 시작 결과 동안 오류가 발생 합니다. 때 `true`, 호스트 시작 하는 동안 예외를 캡처하고 서버를 시작 하려고 합니다.
 
@@ -120,7 +125,8 @@ var host = new WebHostBuilder()
 **키**: contentRoot  
 **형식**: *문자열*  
 **기본**: 응용 프로그램 어셈블리 파일이 있는 폴더를 기본값으로 합니다.  
-**사용 하 여 설정**:`UseContentRoot`
+**사용 하 여 설정**:`UseContentRoot`  
+**환경 변수**:`ASPNETCORE_CONTENTROOT`
 
 에 대 한 기본 경로로 콘텐츠 루트는 또한는 [웹 루트 설정을](#web-root)합니다. 경로가 존재 하지 않는 경우 호스트가 시작 되지 않습니다.
 
@@ -149,7 +155,8 @@ var host = new WebHostBuilder()
 **키**: detailedErrors  
 **형식**: *bool* (`true` 또는 `1`)  
 **기본**: false  
-**사용 하 여 설정**:`UseSetting`
+**사용 하 여 설정**:`UseSetting`  
+**환경 변수**:`ASPNETCORE_DETAILEDERRORS`
 
 사용 하는 경우 (또는 경우는 <a href="#environment">환경</a> 로 설정 되어 `Development`), 응용 프로그램 자세한 예외를 캡처합니다.
 
@@ -178,7 +185,8 @@ var host = new WebHostBuilder()
 **키**: 환경  
 **형식**: *문자열*  
 **기본**: 프로덕션  
-**사용 하 여 설정**:`UseEnvironment`
+**사용 하 여 설정**:`UseEnvironment`  
+**환경 변수**:`ASPNETCORE_ENVIRONMENT`
 
 설정할 수 있습니다는 *환경* 값으로. 프레임 워크에서 정의 된 값 포함 `Development`, `Staging`, 및 `Production`합니다. 값에 대/소문자 구분 되지 않습니다. 기본적으로는 *환경* 에서 읽기는 `ASPNETCORE_ENVIRONMENT` 환경 변수입니다. 사용 하는 경우 [Visual Studio](https://www.visualstudio.com/), 환경 변수를 설정할 수 있습니다는 *launchSettings.json* 파일입니다. 자세한 내용은 [여러 환경 사용](xref:fundamentals/environments)을 참조하세요.
 
@@ -207,7 +215,8 @@ var host = new WebHostBuilder()
 **키**: hostingStartupAssemblies  
 **형식**: *문자열*  
 **기본**: 빈 문자열  
-**사용 하 여 설정**:`UseSetting`
+**사용 하 여 설정**:`UseSetting`  
+**환경 변수**:`ASPNETCORE_HOSTINGSTARTUPASSEMBLIES`
 
 호스팅 시작 로드할 어셈블리를 시작할 때의 세미콜론으로 구분 된 문자열입니다. 이 기능은 ASP.NET 코어 2.0의 새로운 기능입니다.
 
@@ -234,7 +243,8 @@ WebHost.CreateDefaultBuilder(args)
 **키**: preferHostingUrls  
 **형식**: *bool* (`true` 또는 `1`)  
 **기본**: true  
-**사용 하 여 설정**:`PreferHostingUrls`
+**사용 하 여 설정**:`PreferHostingUrls`  
+**환경 변수**:`ASPNETCORE_PREFERHOSTINGURLS`
 
 이 기능은 ASP.NET 코어 2.0의 새로운 기능입니다.
 
@@ -259,7 +269,8 @@ WebHost.CreateDefaultBuilder(args)
 **키**: preventHostingStartup  
 **형식**: *bool* (`true` 또는 `1`)  
 **기본**: false  
-**사용 하 여 설정**:`UseSetting`
+**사용 하 여 설정**:`UseSetting`  
+**환경 변수**:`ASPNETCORE_PREVENTHOSTINGSTARTUP`
 
 이 기능은 ASP.NET 코어 2.0의 새로운 기능입니다.
 
@@ -284,7 +295,8 @@ IP 주소 또는 서버에서 요청을 수신 해야 하는 포트와 프로토
 **키**: url  
 **형식**: *문자열*  
 **기본**: http://localhost:5000  
-**사용 하 여 설정**:`UseUrls`
+**사용 하 여 설정**:`UseUrls`  
+**환경 변수**:`ASPNETCORE_URLS`
 
 세미콜론으로 구분 된로 설정 (;) URL의 목록 prefixes 서버 응답 해야 합니다. 예를 들어, `http://localhost:123`을 입력합니다. 사용 하 여 "\*" 서버 모든 IP 주소 또는 지정 된 포트 및 프로토콜을 사용 하 여 호스트 이름에 대 한 요청에 대 한 수신 대기 해야 함을 나타내기 위해 (예를 들어 `http://*:5000`). 프로토콜 (`http://` 또는 `https://`) 각 URL에 포함 되어 있어야 합니다. 지원 되는 형식의 서버 마다 다릅니다.
 
@@ -315,7 +327,8 @@ var host = new WebHostBuilder()
 **키**: shutdownTimeoutSeconds  
 **형식**: *int*  
 **기본**: 5  
-**사용 하 여 설정**:`UseShutdownTimeout`
+**사용 하 여 설정**:`UseShutdownTimeout`  
+**환경 변수**:`ASPNETCORE_SHUTDOWNTIMEOUTSECONDS`
 
 키를 허용 하지만 *int* 와 `UseSetting` (예를 들어 `.UseSetting(WebHostDefaults.ShutdownTimeoutKey, "10")`), `UseShutdownTimeout` 확장 메서드를 사용는 `TimeSpan`합니다. 이 기능은 ASP.NET 코어 2.0의 새로운 기능입니다.
 
@@ -340,7 +353,8 @@ WebHost.CreateDefaultBuilder(args)
 **키**: startupAssembly  
 **형식**: *문자열*  
 **기본**: 응용 프로그램의 어셈블리  
-**사용 하 여 설정**:`UseStartup`
+**사용 하 여 설정**:`UseStartup`  
+**환경 변수**:`ASPNETCORE_STARTUPASSEMBLY`
 
 이름으로 어셈블리를 참조할 수 있습니다 (`string`) 또는 형식 (`TStartup`). 여러 개인 경우 `UseStartup` 메서드가 호출 되어, 마지막 우선적으로 적용 합니다.
 
@@ -381,7 +395,8 @@ var host = new WebHostBuilder()
 **키**: webroot  
 **형식**: *문자열*  
 **기본**: 기본값은 "(Content Root)/wwwroot 지정 하지 않으면" 경로가 존재 하는 경우. 경로가 존재 하지 않는 경우 아무 파일 공급자가 사용 됩니다.  
-**사용 하 여 설정**:`UseWebRoot`
+**사용 하 여 설정**:`UseWebRoot`  
+**환경 변수**:`ASPNETCORE_WEBROOT`
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
@@ -819,7 +834,7 @@ public async Task Invoke(HttpContext context, IHostingEnvironment env)
 | --------------------- | --------------------- |
 | `ApplicationStarted`  | 호스트 시작 완벽 하 게 했습니다. |
 | `ApplicationStopping` | 호스트에서 정상 종료를 수행 하 고 있습니다. 요청은 계속 처리할 수 있습니다. 이 이벤트가 완료 될 때까지 차단을 종료 합니다. |
-| `ApplicationStopped`  | 호스트에서 정상 종료를 완료 합니다. 모든 요청을 완전히 처리 되어야 합니다. 이 이벤트가 완료 될 때까지 차단을 종료 합니다. |
+| `ApplicationStopped`  | 호스트에서 정상 종료를 완료 합니다. 모든 요청을 처리 합니다. 이 이벤트가 완료 될 때까지 차단을 종료 합니다. |
 
 | 메서드            | 작업                                           |
 | ----------------- | ------------------------------------------------ |

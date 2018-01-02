@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/intro
-ms.openlocfilehash: 571d683636244565b184cfec49061ec656377f11
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: acbd987438edeea13f29547dc471f9a211e87b04
+ms.sourcegitcommit: 1de159820a572c08955ee77cc8b1caa3d7aa938c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 12/23/2017
 ---
 # <a name="getting-started-with-razor-pages-and-entity-framework-core-using-visual-studio-1-of-8"></a>Razor 페이지 및 Visual Studio (1 / 8)를 사용 하 여 Entity Framework Core 시작
 
@@ -29,6 +29,8 @@ Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework (EF) 코어
 ## <a name="prerequisites"></a>필수 구성 요소
 
 [!INCLUDE[install 2.0](../../includes/install2.0.md)]
+
+익숙한 [Razor 페이지](xref:mvc/razor-pages/index)합니다. 새 프로그래머 완료 해야 [Razor 페이지 시작](xref:tutorials/razor-pages/razor-pages-start) 이 시리즈를 시작 하기 전에.
 
 ## <a name="troubleshooting"></a>문제 해결
 

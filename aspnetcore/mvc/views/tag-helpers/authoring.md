@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/authoring
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 6858b6b8ec89a5e5ffa9e5f8dddb905f38e16603
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cbe46ee1d3cd9f7a30a87d364074f1302f9af7ab
+ms.sourcegitcommit: 5834afb87e4262b9b88e60e3fe6c735e61a1e08d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 12/20/2017
 ---
 # <a name="authoring-tag-helpers-in-aspnet-core-a-walkthrough-with-samples"></a>ASP.NET Core, 샘플을 연습에서에서 태그 도우미를 작성합니다.
 
@@ -76,9 +76,18 @@ ms.lasthandoff: 11/10/2017
     
     위의 코드에서는 와일드 카드 구문을 사용할 수 있는 모든 태그 도우미 어셈블리에서 지정 하 여 뒤의 첫 번째 문자열 `@addTagHelper` 로드할 태그 도우미를 지정 합니다 (사용 하 여 "*" 모든 태그 도우미에 대 한), 및 두 번째 문자열 "AuthoringTagHelpers" 태그 도우미에는 어셈블리를 지정 합니다. 또한 와일드 카드 구문을 사용 하 여 ASP.NET Core MVC 태그 도우미의 두 번째 줄을 제공 하는 확인 (해당 도우미에 대해서는 설명 [태그 도우미 소개](intro.md).) `@addTagHelper` 지시문 태그 도우미 Razor 뷰를 사용할 수 있도록 합니다. 또는 다음과 같이 태그 도우미의 정규화 된 이름 (FQN)를 제공할 수 있습니다.
     
-    [!code-html[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImports.cshtml?highlight=3&range=1-3)]
+```csharp
+@using AuthoringTagHelpers
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper AuthoringTagHelpers.TagHelpers.EmailTagHelper, AuthoringTagHelpers
+```
     
-    태그 도우미는 FQN를 사용 하 여 뷰를 추가 하려면 먼저는 FQN가 추가 (`AuthoringTagHelpers.TagHelpers.EmailTagHelper`), 및 다음 어셈블리 이름 (*AuthoringTagHelpers*). 와일드 카드 구문을 사용 하 여 대부분의 개발자를 선호 합니다. [태그 도우미 소개](intro.md) 태그 도우미 추가, 제거, 계층 및 와일드 카드 구문을 세부적으로 이동 합니다.
+<!--
+the following snippet uses TagHelpers3 and should use TagHelpers (not the 3)
+    [!code-html[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImports.cshtml?highlight=3&range=1-3)]
+-->
+    
+태그 도우미는 FQN를 사용 하 여 뷰를 추가 하려면 먼저는 FQN가 추가 (`AuthoringTagHelpers.TagHelpers.EmailTagHelper`), 및 다음 어셈블리 이름 (*AuthoringTagHelpers*). 와일드 카드 구문을 사용 하 여 대부분의 개발자를 선호 합니다. [태그 도우미 소개](intro.md) 태그 도우미 추가, 제거, 계층 및 와일드 카드 구문을 세부적으로 이동 합니다.
     
 3.  태그가 업데이트는 *Views/Home/Contact.cshtml* 이러한 변경 내용으로 파일:
 
