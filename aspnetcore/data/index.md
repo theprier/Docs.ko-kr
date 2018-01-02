@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/index
-ms.openlocfilehash: b3bcd15a078ed2125d14c3e94311e385a1db9683
-ms.sourcegitcommit: 6e46abd65973dea796d364a514de9ec2e3e1c1ed
+ms.openlocfilehash: bc19cbf0093e8a7f26af82d19f597cc805e04309
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="working-with-data-in-aspnet-core"></a>ASP.NET Core에서 데이터 작업 
 
@@ -29,7 +29,7 @@ ms.lasthandoff: 12/02/2017
    * [관련 데이터 업데이트](xref:data/ef-rp/update-related-data)
    * [동시성 충돌 처리](xref:data/ef-rp/concurrency)
 
-*   [Visual Studio를 사용하여 ASP.NET Core 및 Entity Framework Core 시작](ef-mvc/index.md)
+*   [Visual Studio를 사용하여 ASP.NET Core MVC 및 Entity Framework Core 시작](ef-mvc/index.md)
     *   [시작](ef-mvc/intro.md)
     *   [만들기, 읽기, 업데이트 및 삭제 작업](xref:data/ef-mvc/crud)
     *   [정렬, 필터링, 페이징 및 그룹화](xref:data/ef-mvc/sort-filter-page)
