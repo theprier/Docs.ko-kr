@@ -5,18 +5,18 @@ description: "ASP.NET Core의 로깅 프레임워크에 대해 알아봅니다. 
 keywords: "ASP.NET Core,로깅,로깅 공급자,Microsoft.Extensions.Logging,ILogger,ILoggerFactory,LogLevel,WithFilter,TraceSource,EventLog,EventSource,범위"
 ms.author: tdykstra
 manager: wpickett
-ms.date: 11/15/2017
+ms.date: 12/15/2017
 ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/logging/index
-ms.openlocfilehash: f7f5f08799513aa07223995410f2125407c58c94
-ms.sourcegitcommit: 037d3900f739dbaa2ba14158e3d7dc81478952ad
+ms.openlocfilehash: 737de614625ce560df1c3d7cfd9810f9433c153d
+ms.sourcegitcommit: f1436107b4c022b26f5235dddef103cec5aa6bff
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 12/15/2017
 ---
-# <a name="introduction-to-logging-in-aspnet-core"></a>ASP.NET Core 로그인 소개
+# <a name="introduction-to-logging-in-aspnet-core"></a>ASP.NET Core에 로그인 소개
 
 작성자: [Steve Smith](https://ardalis.com/) 및 [Tom Dykstra](https://github.com/tdykstra)
 
@@ -587,7 +587,13 @@ loggerFactory.AddTraceSource(sourceSwitchName);
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-공급자 패키지를 설치하거나 `AddAzureWebAppDiagnostics` 확장 메서드를 호출할 필요가 없습니다. Azure App Service에 앱을 배포하면 자동으로 앱에 공급자가 제공됩니다.
+.NET Core를 대상으로 지정하는 경우 공급자 패키지를 설치하거나 명시적으로 `AddAzureWebAppDiagnostics`을 호출하지 않아도 됩니다. Azure App Service에 앱을 배포하면 자동으로 앱에 공급자가 제공됩니다.
+
+.NET Framework를 대상으로 지정하는 경우 패키지 공급자를 프로젝트에 추가하고 `AddAzureWebAppDiagnostics`을 호출합니다.
+
+```csharp
+logging.AddAzureWebAppDiagnostics();
+```
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 

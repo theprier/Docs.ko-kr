@@ -11,11 +11,11 @@ ms.assetid: eda7ee17-f38c-462e-8d1d-63f459901cf3
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/social/index
-ms.openlocfilehash: 9fc0d6c3e9691f8c3fa0d769ac53c3337d822fc5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9cc637f469dcb7097ee1b3996fde8a4ebac8d7ff
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="enabling-authentication-using-facebook-google-and-other-external-providers"></a>Facebook, Google 및 기타 외부 공급자를 통해 인증 사용
 
@@ -46,6 +46,13 @@ ms.lasthandoff: 11/10/2017
 ![새 웹 응용 프로그램 대화 상자](index/_static/select-project.png)
 
 참고: 이 자습서에서는 마법사의 위쪽에서 선택할 수 있는 ASP.NET Core 2.0 SDK 버전에 적용됩니다.
+
+## <a name="apply-migrations"></a>마이그레이션 적용
+
+* 앱을 실행하고 **로그인** 링크를 선택합니다.
+* **Register as a new user**(새 사용자로 등록) 링크를 선택합니다.
+* 새 계정의 메일과 암호를 입력한 다음 **등록**을 선택합니다.
+* 지침에 따라 마이그레이션을 적용합니다.
 
 ## <a name="require-ssl"></a>SSL 필요
 

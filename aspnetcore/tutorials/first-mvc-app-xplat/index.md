@@ -11,15 +11,15 @@ ms.assetid: 959ff4ca-be2d-1638-ac04-789e7f7146ff
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app-xplat/index
-ms.openlocfilehash: 8a6fa695a1b1ad660f7f5b1aeb520d5372a273a8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4083dea74548099ee3ba8d963110bb2c3c8ae00a
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 12/14/2017
 ---
 # <a name="create-an-aspnet-core-mvc-app-with-visual-studio-code"></a>Visual Studio Code를 사용하여 ASP.NET Core MVC 앱 만들기
 
-이 자습서 시리즈에서는 Visual Studio를 사용하여 ASP.NET Core MVC 웹앱을 빌드하는 기본 사항에 대해 알아봅니다. 
+이 자습서 시리즈에서는 Visual Studio Code를 사용하여 ASP.NET Core MVC 웹앱을 빌드하는 기본 사항에 대해 알아봅니다. 
 
 [!INCLUDE[consider RP](../../includes/razor.md)]
 
