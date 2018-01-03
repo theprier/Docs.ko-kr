@@ -37,6 +37,18 @@
 ### [관련 데이터 업데이트](xref:data/ef-rp/update-related-data)
 ### [동시성 충돌 처리](xref:data/ef-rp/concurrency)
 
+## [데이터 액세스 - EF Core를 사용한 MVC](data/ef-mvc/index.md)
+### [시작](data/ef-mvc/intro.md)
+### [만들기, 읽기, 업데이트 및 삭제 작업](data/ef-mvc/crud.md)
+### [정렬, 필터링, 페이징 및 그룹화](data/ef-mvc/sort-filter-page.md)
+### [마이그레이션](data/ef-mvc/migrations.md)
+### [복합 데이터 모델 만들기](data/ef-mvc/complex-data-model.md)
+### [관련 데이터 읽기](data/ef-mvc/read-related-data.md)
+### [관련 데이터 업데이트](data/ef-mvc/update-related-data.md)
+### [동시성 충돌 처리](data/ef-mvc/concurrency.md)
+### [상속](data/ef-mvc/inheritance.md)
+### [고급 항목](data/ef-mvc/advanced.md)
+
 ## [모바일 앱에 대한 백 엔드 서비스 만들기](mobile/native-mobile-backend.md)
 ## [Web API 빌드](mvc/web-api/index.md)
 ## [Web API 만들기](xref:tutorials/first-web-api-mac)
