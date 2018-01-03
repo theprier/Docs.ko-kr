@@ -5,24 +5,24 @@ author: tfitzmac
 description: "이 자습서는 개별 데이터베이스 항목을 삭제 하는 방법을 보여 줍니다. ASP.NET 웹 Pa.에서 데이터베이스 데이터 업데이트를 통해 시리즈를 완료 했습니다.. 가정"
 ms.author: aspnetcontent
 manager: wpickett
-ms.date: 05/28/2015
+ms.date: 01/02/2018
 ms.topic: article
 ms.assetid: 75b5c1cf-84bd-434f-8a86-85c568eb5b09
 ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/deleting-data
 msc.type: authoredcontent
-ms.openlocfilehash: aef31b6170cc3bba2421eb8c2c41e83aadc129c5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5bc92b5d40e7a55dcd730d552c71031d913b277e
+ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/03/2018
 ---
 <a name="introducing-aspnet-web-pages---deleting-database-data"></a>Introducing ASP.NET 웹 페이지-데이터베이스 데이터 삭제
 ====================
 으로 [Tom FitzMacken](https://github.com/tfitzmac)
 
-> 이 자습서는 개별 데이터베이스 항목을 삭제 하는 방법을 보여 줍니다. 통해 시리즈를 완료 한 것으로 가정 [ASP.NET 웹 페이지에서 데이터베이스 데이터 업데이트](https://go.microsoft.com/fwlink/?LinkId=251583)합니다.
+> 이 자습서는 개별 데이터베이스 항목을 삭제 하는 방법을 보여 줍니다. 통해 시리즈를 완료 한 것으로 가정 [ASP.NET 웹 페이지에서 데이터베이스 데이터 업데이트](updating-data.md)합니다.
 > 
 > 학습 내용:
 > 
@@ -76,7 +76,7 @@ ms.lasthandoff: 11/10/2017
 
 이 링크는 라는 페이지 호출 *DeleteMovie* 선택한 동영상의 ID를 전달 합니다.
 
-이 자습서는 거의 동일 하기 때문에이 링크 생성 방법에 대 한 정보를 확인할 다루지는 않겠습니다.는 **편집** 이전 자습서의 링크 ([ASP.NET 웹 페이지에서 데이터베이스 데이터 업데이트](https://go.microsoft.com/fwlink/?LinkId=251583)).
+이 자습서는 거의 동일 하기 때문에이 링크 생성 방법에 대 한 정보를 확인할 다루지는 않겠습니다.는 **편집** 이전 자습서의 링크 ([ASP.NET 웹 페이지에서 데이터베이스 데이터 업데이트](updating-data.md)).
 
 ## <a name="creating-the-delete-page"></a>Delete 페이지 만들기
 
@@ -169,7 +169,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="additional-resources"></a>추가 리소스
 
-- [Razor 구문을 사용 하 여 ASP.NET 웹 프로그래밍 소개](https://go.microsoft.com/fwlink/?LinkID=202890)
+- [Razor 구문을 사용 하 여 ASP.NET 웹 프로그래밍 소개](../introducing-razor-syntax-c.md)
 - [SQL DELETE 문을](http://www.w3schools.com/sql/sql_delete.asp) W3Schools 사이트
 
 >[!div class="step-by-step"]

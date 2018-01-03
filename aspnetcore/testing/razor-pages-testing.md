@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: testing/razor-pages-testing
-ms.openlocfilehash: 7a3f1bfa8bec830216af37d89aa588a921485e6b
-ms.sourcegitcommit: 4925a91ef4130ddb333f187ab13defe66f2c6cef
+ms.openlocfilehash: 1ecdf010f7c283a0a08b224d570a5bc5cdf536df
+ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/03/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="razor-pages-unit-and-integration-testing-in-aspnet-core"></a>Razor 페이지 단위 및 ASP.NET Core에서 통합 테스트
 
@@ -57,7 +57,7 @@ dotnet test
 * 메시지에서 설명 된 `Message` 클래스 (*Data/Message.cs*) 두 개의 속성이 있는: `Id` (키) 및 `Text` (메시지). `Text` 속성 인수가 필요 하 고 200 자로 제한 됩니다.
 * 메시지를 사용 하 여 저장 된 [Entity Framework의 메모리 내 데이터베이스](/ef/core/providers/in-memory/)&#8224;.
 * 앱의 데이터베이스 컨텍스트 클래스의 데이터 액세스 계층 (DAL)에 포함 되어 `AppDbContext` (*Data/AppDbContext.cs*). DAL 메서드는 표시 `virtual`, 테스트에서 사용 하기 위해 메서드를 모의 수 있습니다.
-* 개발 환경에서는 세 가지 메시지와 함께 메시지 저장소를 초기화 합니다. 이러한 *메시지 시드* 테스트에 사용 됩니다.
+* 데이터베이스 응용 프로그램 시작 시에 비어 있으면 메시지 저장소 세 가지 메시지와 함께 초기화 됩니다. 이러한 *메시지 시드* 테스트에 사용 됩니다.
 
 &#8224; EF 항목 [with InMemory 테스트](/ef/core/miscellaneous/testing/in-memory), MSTest를 사용 하 여 테스트에 대 한 메모리 내 데이터베이스를 사용 하는 방법에 설명 합니다. 이 항목에서는 [xUnit](https://xunit.github.io/) 테스트 프레임 워크입니다. 다양 한 테스트 프레임 워크에서 테스트 구현 및 테스트 개념은 유사 하지만 동일 하지는 않습니다.
 

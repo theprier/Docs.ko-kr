@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/hosting
-ms.openlocfilehash: 14e48adf5671a41ad6e135caeb4a87fdf7292aa6
-ms.sourcegitcommit: 5834afb87e4262b9b88e60e3fe6c735e61a1e08d
+ms.openlocfilehash: 0ee8827ad3d5464e1645a40d453054b9e23641cf
+ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/20/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="hosting-in-aspnet-core"></a>ASP.NET Core에서 호스팅
 
@@ -33,7 +33,7 @@ ASP.NET Core 응용 프로그램 구성 및 실행 한 *호스트*합니다. 호
 `CreateDefaultBuilder`다음 작업을 수행합니다.
 
 * 구성 [Kestrel](servers/kestrel.md) 웹 서버로 합니다. Kestrel 기본 옵션을 참조 하십시오. [는 Kestrel 옵션 섹션에서 ASP.NET Core 웹 서버 구현 Kestrel](xref:fundamentals/servers/kestrel#kestrel-options)합니다.
-* 설정 하는 콘텐츠 루트 [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory)합니다.
+* 반환 된 경로를 설정 하는 콘텐츠 루트 [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory)합니다.
 * 선택적 구성에서 로드 합니다.
   * *appsettings.json*합니다.
   * *appsettings 합니다. {환경}.json*합니다.
@@ -41,9 +41,9 @@ ASP.NET Core 응용 프로그램 구성 및 실행 한 *호스트*합니다. 호
   * 환경 변수.
   * 명령줄 인수입니다.
 * 구성 [로깅](xref:fundamentals/logging/index) 콘솔 및 디버그 출력에 대 한 합니다. 로깅에 포함 됩니다 [로그 필터링](xref:fundamentals/logging/index#log-filtering) 의 로깅 구성 섹션에 지정 된 규칙은 *appsettings.json* 또는 *appsettings. { 환경}.json* 파일입니다.
-* 뒤에 IIS를 실행 하면 [IIS 통합](xref:publishing/iis) 기본 경로 포트를 구성 하 여 서버 수신 대기할 때 사용 하는 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)합니다. 모듈은 IIS와 Kestrel 간의 역방향 프록시를 만듭니다. 또한 응용 프로그램을 구성 [시작 오류 캡처](#capture-startup-errors)합니다. IIS 기본 옵션을 참조 하십시오. [IIS의 IIS와 Windows에서 호스트 ASP.NET Core 섹션 옵션](xref:publishing/iis#iis-options)합니다.
+* 뒤에 IIS를 실행 하면 [IIS 통합](xref:publishing/iis)합니다. 구성 요소의 기본 경로 및 사용 하는 경우 서버에서 수신 대기 해야 하는 포트는 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)합니다. 모듈은 IIS와 Kestrel 간의 역방향 프록시를 만듭니다. 또한 응용 프로그램을 구성 [시작 오류 캡처](#capture-startup-errors)합니다. IIS 기본 옵션을 참조 하십시오. [IIS의 IIS와 Windows에서 호스트 ASP.NET Core 섹션 옵션](xref:publishing/iis#iis-options)합니다.
 
-*콘텐츠 루트* 호스트 MVC 뷰 파일과 같은 콘텐츠 파일을 검색 하는 위치를 결정 합니다. 기본 콘텐츠 루트는 [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory)합니다. 기본 콘텐츠 루트 (`Directory.GetCurrentDirectory`)을 응용 프로그램 루트 폴더에서 시작 될 때 웹 프로젝트의 루트 폴더 콘텐츠 루트로 사용 (호출 예를 들어 [실행 dotnet](/dotnet/core/tools/dotnet-run) 프로젝트 폴더에서). 사용 되는 기본 이것이 [Visual Studio](https://www.visualstudio.com/) 및 [dotnet 새 템플릿을](/dotnet/core/tools/dotnet-new)합니다.
+*콘텐츠 루트* 호스트 MVC 뷰 파일과 같은 콘텐츠 파일을 검색 하는 위치를 결정 합니다. 응용 프로그램 프로젝트의 루트 폴더에서 시작 되 면 프로젝트의 루트 폴더 콘텐츠 루트도 사용 됩니다. 사용 되는 기본 이것이 [Visual Studio](https://www.visualstudio.com/) 및 [dotnet 새 템플릿을](/dotnet/core/tools/dotnet-new)합니다.
 
 응용 프로그램 구성에 대 한 자세한 내용은 참조 하십시오. [ASP.NET Core에서 구성을](xref:fundamentals/configuration/index)합니다.
 
@@ -52,15 +52,15 @@ ASP.NET Core 응용 프로그램 구성 및 실행 한 *호스트*합니다. 호
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-인스턴스를 사용 하 여 호스트 만들기 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder)합니다. 응용 프로그램의 진입점에서 일반적으로 수행 호스트 만들기는 `Main` 메서드. 프로젝트 템플릿에서 `Main` 에 위치한 *Program.cs*합니다. 일반적인 *Program.cs* 호출 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) 설정은 호스트를 시작 하려면:
+인스턴스를 사용 하 여 호스트 만들기 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder)합니다. 응용 프로그램의 진입점에서 일반적으로 수행 호스트 만들기는 `Main` 메서드. 프로젝트 템플릿에서 `Main` 에 위치한 *Program.cs*:
 
 [!code-csharp[Main](../common/samples/WebApplication1/Program.cs)]
 
 `WebHostBuilder`필요는 [IServer를 구현 하는 서버](servers/index.md)합니다. 기본 제공 서버는 [Kestrel](servers/kestrel.md) 및 [HTTP.sys](servers/httpsys.md) (HTTP.sys ASP.NET 코어 2.0이 출시 되기 전에 호출 된 [WebListener](xref:fundamentals/servers/weblistener)). 이 예제는 [UseKestrel 확장 메서드](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel?view=aspnetcore-1.1) Kestrel 서버를 지정 합니다.
 
-*콘텐츠 루트* 호스트 MVC 뷰 파일과 같은 콘텐츠 파일을 검색 하는 위치를 결정 합니다. 에 제공 되는 기본 콘텐츠 루트 `UseContentRoot` 은 [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory?view=netcore-1.1)합니다. 이 인해 응용 프로그램 루트 폴더에서 시작 될 때 웹 프로젝트의 루트 폴더 콘텐츠 루트로 사용 하 여 (예를 들어 호출 [실행 dotnet](/dotnet/core/tools/dotnet-run) 프로젝트 폴더에서). 사용 되는 기본 이것이 [Visual Studio](https://www.visualstudio.com/) 및 [dotnet 새 템플릿을](/dotnet/core/tools/dotnet-new)합니다.
+*콘텐츠 루트* 호스트 MVC 뷰 파일과 같은 콘텐츠 파일을 검색 하는 위치를 결정 합니다. 기본 콘텐츠 루트에 대 한 가져온 `UseContentRoot` 여 [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory?view=netcore-1.1)합니다. 응용 프로그램 프로젝트의 루트 폴더에서 시작 되 면 프로젝트의 루트 폴더 콘텐츠 루트도 사용 됩니다. 사용 되는 기본 이것이 [Visual Studio](https://www.visualstudio.com/) 및 [dotnet 새 템플릿을](/dotnet/core/tools/dotnet-new)합니다.
 
-IIS는 역방향 프록시를 사용 하려면 호출 [UseIISIntegration](/aspnet/core/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions) 호스트 빌드 과정의 일환으로 합니다. `UseIISIntegration`구성 하지 않는 한 *서버*처럼 [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel?view=aspnetcore-1.1) 않습니다. `UseIISIntegration`구성 요소의 기본 경로 및 사용 하는 경우 서버에서 수신 대기 해야 하는 포트는 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module) Kestrel와 IIS 사이 역방향 프록시를 만들 수 있습니다. IIS에서 ASP.NET Core를 사용 하려면 둘 다 지정 해야 하면 `UseKestrel` 및 `UseIISIntegration`합니다. `UseIISIntegration`IIS 또는 IIS Express 뒤에서 실행 하는 경우에 활성화 됩니다. 자세한 내용은 참조 [ASP.NET Core 모듈 소개](xref:fundamentals/servers/aspnet-core-module) 및 [ASP.NET Core 모듈 구성 참조](xref:hosting/aspnet-core-module)합니다.
+IIS는 역방향 프록시를 사용 하려면 호출 [UseIISIntegration](/aspnet/core/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions) 호스트 빌드 과정의 일환으로 합니다. `UseIISIntegration`구성 하지 않는 한 *서버*처럼 [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel?view=aspnetcore-1.1) 않습니다. `UseIISIntegration`구성 요소의 기본 경로 및 사용 하는 경우 서버에서 수신 대기 해야 하는 포트는 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module) Kestrel와 IIS 사이 역방향 프록시를 만들 수 있습니다. ASP.NET Core와 IIS를 사용 하도록 `UseKestrel` 및 `UseIISIntegration` 지정 해야 합니다. `UseIISIntegration`IIS 또는 IIS Express 뒤에서 실행 하는 경우에 활성화 됩니다. 자세한 내용은 참조 [ASP.NET Core 모듈 소개](xref:fundamentals/servers/aspnet-core-module) 및 [ASP.NET Core 모듈 구성 참조](xref:hosting/aspnet-core-module)합니다.
 
 호스트 (및 ASP.NET Core 응용 프로그램)를 구성 하는 최소 구현을 서버와 응용 프로그램의 요청 파이프라인의 구성을 지정 하는 포함 됩니다.
 
@@ -78,15 +78,17 @@ host.Run();
 
 ---
 
-제공할 수는 호스트를 설정할 때 [구성](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configure?view=aspnetcore-1.1) 및 [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder.configureservices?view=aspnetcore-1.1) 메서드. 지정 하는 경우는 `Startup` 정의 해야 클래스는 `Configure` 메서드. 자세한 내용은 참조 [에서 ASP.NET Core 응용 프로그램 시작](startup.md)합니다. 여러 번 호출 `ConfigureServices` 서로에 추가 합니다. 여러 번 호출 `Configure` 또는 `UseStartup` 에 `WebHostBuilder` 이전 설정을 대체 합니다.
+한 호스트를 설정할 때 [구성](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configure?view=aspnetcore-1.1) 및 [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder.configureservices?view=aspnetcore-1.1) 메서드를 제공 될 수 있습니다. 경우는 `Startup` 클래스 지정을 정의 해야 합니다는 `Configure` 메서드. 자세한 내용은 참조 [에서 ASP.NET Core 응용 프로그램 시작](startup.md)합니다. 여러 번 호출 `ConfigureServices` 서로에 추가 합니다. 여러 번 호출 `Configure` 또는 `UseStartup` 에 `WebHostBuilder` 이전 설정을 대체 합니다.
 
 ## <a name="host-configuration-values"></a>호스트 구성 값
 
-[WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) 호스트에 대 한 대부분의 사용 가능한 구성 값을 설정 하는 다음 방법 중 하나를 제공 합니다.
+[WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder) 호스트 구성 값을 설정 하려면 다음 방법 중 하나에 의존 합니다.
 
-* 환경 변수 형식으로 `ASPNETCORE_{configurationKey}`합니다. 예를 들어, `ASPNETCORE_DETAILEDERRORS`을 입력합니다.
+* 형식으로 환경 변수를 포함 하는 호스트 작성기 구성을 `ASPNETCORE_{configurationKey}`합니다. 예를 들어, `ASPNETCORE_URLS`을 입력합니다.
 * 명시적 메서드 같은 `CaptureStartupErrors`합니다.
 * [UseSetting](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder.usesetting) 와 연결 된 키입니다. 사용 하 여 값을 설정할 때 `UseSetting`, 유형에 관계 없이 한 문자열로 값이 설정 됩니다.
+
+호스트는 선택한 옵션에 설정 하는 마지막 값을 사용 합니다. 자세한 내용은 참조 [덮어씁니다 구성](#overriding-configuration) 다음 섹션에 있습니다.
 
 ### <a name="capture-startup-errors"></a>시작 오류 캡처
 
@@ -188,7 +190,7 @@ var host = new WebHostBuilder()
 **사용 하 여 설정**:`UseEnvironment`  
 **환경 변수**:`ASPNETCORE_ENVIRONMENT`
 
-설정할 수 있습니다는 *환경* 값으로. 프레임 워크에서 정의 된 값 포함 `Development`, `Staging`, 및 `Production`합니다. 값에 대/소문자 구분 되지 않습니다. 기본적으로는 *환경* 에서 읽기는 `ASPNETCORE_ENVIRONMENT` 환경 변수입니다. 사용 하는 경우 [Visual Studio](https://www.visualstudio.com/), 환경 변수를 설정할 수 있습니다는 *launchSettings.json* 파일입니다. 자세한 내용은 [여러 환경 사용](xref:fundamentals/environments)을 참조하세요.
+환경 값으로 설정할 수 있습니다. 프레임 워크에서 정의 된 값 포함 `Development`, `Staging`, 및 `Production`합니다. 값에 대/소문자 구분 되지 않습니다. 기본적으로는 *환경* 에서 읽기는 `ASPNETCORE_ENVIRONMENT` 환경 변수입니다. 사용 하는 경우 [Visual Studio](https://www.visualstudio.com/), 환경 변수를 설정할 수 있습니다는 *launchSettings.json* 파일입니다. 자세한 내용은 [여러 환경 사용](xref:fundamentals/environments)을 참조하세요.
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
@@ -220,7 +222,7 @@ var host = new WebHostBuilder()
 
 호스팅 시작 로드할 어셈블리를 시작할 때의 세미콜론으로 구분 된 문자열입니다. 이 기능은 ASP.NET 코어 2.0의 새로운 기능입니다.
 
-구성 기본값을 빈 문자열로 있지만 호스팅 시작 어셈블리는 항상 응용 프로그램의 어셈블리를 포함 합니다. 호스팅 시작 어셈블리를 제공 하면 해당 파일은 응용 프로그램 시작 하는 동안 일반적인 서비스를 빌드할 때 로드에 대 한 응용 프로그램의 어셈블리에 추가 됩니다.
+구성 기본값을 빈 문자열로 있지만 호스팅 시작 어셈블리는 항상 응용 프로그램의 어셈블리를 포함 합니다. 호스팅 시작 어셈블리는 제공 되며, 해당 파일은 응용 프로그램 시작 하는 동안 일반적인 서비스를 빌드할 때 로드에 대 한 응용 프로그램의 어셈블리에 추가 됩니다.
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
@@ -356,7 +358,7 @@ WebHost.CreateDefaultBuilder(args)
 **사용 하 여 설정**:`UseStartup`  
 **환경 변수**:`ASPNETCORE_STARTUPASSEMBLY`
 
-이름으로 어셈블리를 참조할 수 있습니다 (`string`) 또는 형식 (`TStartup`). 여러 개인 경우 `UseStartup` 메서드가 호출 되어, 마지막 우선적으로 적용 합니다.
+이름으로 어셈블리 (`string`) 또는 형식 (`TStartup`)를 참조할 수 있습니다. 여러 개인 경우 `UseStartup` 메서드가 호출 되어, 마지막 우선적으로 적용 합니다.
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
@@ -503,19 +505,13 @@ public class Program
 ---
 
 > [!NOTE]
-> `UseConfiguration` 확장 메서드는 현재에서 반환 되는 구성 섹션을 구문 분석할 수 없습니다 `GetSection` (예를 들어 `.UseConfiguration(Configuration.GetSection("section"))`합니다. `GetSection` 메서드 요청 섹션에 있는 구성 키를 필터링 되지만 섹션 이름에는 키 (예를 들어 `section:urls`, `section:environment`). `UseConfiguration` 메서드에서 예상 키와 일치 하도록는 `WebHostBuilder` 키 (예를 들어 `urls`, `environment`). 키에 대해 섹션 이름의 존재는 호스트 구성에서 섹션의 값을 방지 합니다. 이 문제는 향후 릴리스에서 해결될 예정입니다. 자세한 내용 및 해결 방법에 대 한 참조 [전체 키를 사용 하 여 WebHostBuilder.UseConfiguration에 구성 섹션을 전달](https://github.com/aspnet/Hosting/issues/839)합니다.
+> [UseConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useconfiguration) 확장 메서드는 현재에서 반환 되는 구성 섹션을 구문 분석할 수 없습니다 `GetSection` (예를 들어 `.UseConfiguration(Configuration.GetSection("section"))`합니다. `GetSection` 메서드 요청 섹션에 있는 구성 키를 필터링 되지만 섹션 이름에는 키 (예를 들어 `section:urls`, `section:environment`). `UseConfiguration` 메서드에서 예상 키와 일치 하도록는 `WebHostBuilder` 키 (예를 들어 `urls`, `environment`). 키에 대해 섹션 이름의 존재는 호스트 구성에서 섹션의 값을 방지 합니다. 이 문제는 향후 릴리스에서 해결될 예정입니다. 자세한 내용 및 해결 방법에 대 한 참조 [전체 키를 사용 하 여 WebHostBuilder.UseConfiguration에 구성 섹션을 전달](https://github.com/aspnet/Hosting/issues/839)합니다.
 
-특정 URL에서 실행 하는 호스트를 지정 하려면 전달할 수 있습니다는 원하는 값에 명령 프롬프트에서 실행할 때 `dotnet run`합니다. 명령줄 인수 재정의 `urls` 에서 값의 *hosting.json* 포트 8080에서 수신 하는 파일 및 서버:
+특정 URL에서 실행 하는 호스트를 지정 하려면 원하는 값에 전달 될 수는 명령 프롬프트에서 실행할 때 `dotnet run`합니다. 명령줄 인수 재정의 `urls` 에서 값의 *hosting.json* 포트 8080에서 수신 하는 파일 및 서버:
 
 ```console
 dotnet run --urls "http://*:8080"
 ```
-
-## <a name="ordering-importance"></a>순서 중요성
-
-일부는 `WebHostBuilder` 설정을 먼저 읽습니다에서 환경 변수를 설정 합니다. 이러한 환경 변수 형식을 사용 하 여 `ASPNETCORE_{configurationKey}`합니다. 설정 하면 기본적으로에서 서버가 수신 하는 Url을 설정 하려면 `ASPNETCORE_URLS`합니다.
-
-구성을 지정 하 여 이러한 환경 변수 값을 재정의할 수 있습니다 (사용 하 여 `UseConfiguration`) 또는 값을 명시적으로 설정 하 여 (사용 하 여 `UseSetting` 명시적 확장 메서드 중 하나 또는 같은 `UseUrls`). 호스트 선택한 옵션에 설정 하는 마지막 값을 사용 합니다. 프로그래밍 방식으로 값 중 하나에 기본 URL을 설정 되었지만 구성으로 재정의 될 수 있도록 하려는 경우 URL을 설정 후 명령줄 구성을 사용할 수 있습니다. 참조 [덮어씁니다 구성](#overriding-configuration)합니다.
 
 ## <a name="starting-the-host"></a>호스트를 시작합니다.
 
@@ -531,7 +527,7 @@ host.Run();
 
 **Start**
 
-호출 하 여 비블로킹 방식으로 호스트를 실행할 수 있습니다는 `Start` 메서드:
+비동기 방식으로 호스트를 호출 하 여 실행 해당 `Start` 메서드:
 
 ```csharp
 using (host)
@@ -541,7 +537,7 @@ using (host)
 }
 ```
 
-에 대 한 Url 목록을 전달 하는 경우는 `Start` 지정 된 Url에서 수신 대기 메서드:
+Url 목록에 전달 되 면는 `Start` 메서드를 지정 된 Url에서 수신 합니다.
 
 ```csharp
 var urls = new List<string>()
@@ -561,7 +557,7 @@ using (host)
 }
 ```
 
-초기화 하 고의 미리 구성 된 기본값을 사용 하 여 새 호스트를 시작할 수 있습니다 `CreateDefaultBuilder` 정적 편의 메서드를 사용 합니다. 이러한 메서드는을 콘솔 출력 하지 않고 서버를 시작 [WaitForShutdown](/dotnet/api/microsoft.aspnetcore.hosting.webhostextensions.waitforshutdown) (Ctrl-C/SIGINT 또는 SIGTERM) 중단 될 때까지 기다리는:
+응용 프로그램에서 초기화 하 고의 미리 구성 된 기본값을 사용 하 여 새 호스트를 시작할 수 `CreateDefaultBuilder` 정적 편의 메서드를 사용 합니다. 이러한 메서드는을 콘솔 출력 하지 않고 서버를 시작 [WaitForShutdown](/dotnet/api/microsoft.aspnetcore.hosting.webhostextensions.waitforshutdown) (Ctrl-C/SIGINT 또는 SIGTERM) 중단 될 때까지 기다리는:
 
 **시작 (RequestDelegate 앱)**
 
@@ -702,7 +698,7 @@ host.Run();
 
 **Start**
 
-호출 하 여 비블로킹 방식으로 호스트를 실행할 수 있습니다는 `Start` 메서드:
+비동기 방식으로 호스트를 호출 하 여 실행 해당 `Start` 메서드:
 
 ```csharp
 using (host)
@@ -712,7 +708,7 @@ using (host)
 }
 ```
 
-에 대 한 Url 목록을 전달 하는 경우는 `Start` 지정 된 Url에서 수신 대기 메서드:
+Url 목록에 전달 되 면는 `Start` 메서드를 지정 된 Url에서 수신 합니다.
 
 
 ```csharp
@@ -737,7 +733,7 @@ using (host)
 
 ## <a name="ihostingenvironment-interface"></a>IHostingEnvironment 인터페이스
 
-[IHostingEnvironment 인터페이스](/aspnet/core/api/microsoft.aspnetcore.hosting.ihostingenvironment) 응용 프로그램의 웹 호스팅 환경에 대 한 정보를 제공 합니다. 사용할 수 있습니다 [생성자 삽입](xref:fundamentals/dependency-injection) 얻으려고는 `IHostingEnvironment` 속성 및 확장 메서드를 사용 하려면:
+[IHostingEnvironment 인터페이스](/aspnet/core/api/microsoft.aspnetcore.hosting.ihostingenvironment) 응용 프로그램의 웹 호스팅 환경에 대 한 정보를 제공 합니다. 사용 하 여 [생성자 삽입](xref:fundamentals/dependency-injection) 얻으려고는 `IHostingEnvironment` 속성 및 확장 메서드를 사용 하려면:
 
 ```csharp
 public class CustomFileReader
@@ -757,7 +753,7 @@ public class CustomFileReader
 }
 ```
 
-사용할 수는 [규칙 기반 접근 방식을](xref:fundamentals/environments#startup-conventions) 를 환경에 따라 시작할 때 응용 프로그램을 구성 합니다. 삽입할 수 있습니다는 `IHostingEnvironment` 에 `Startup` 생성자에서 사용 하기 위해 `ConfigureServices`:
+A [규칙 기반 접근 방식을](xref:fundamentals/environments#startup-conventions) 는 시작할 때 환경에 따라 응용 프로그램을 구성 하는 데 사용할 수 있습니다. 삽입 또는 `IHostingEnvironment` 에 `Startup` 생성자에서 사용 하기 위해 `ConfigureServices`:
 
 ```csharp
 public class Startup
@@ -808,7 +804,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 }
 ```
 
-삽입할 수 있으며 `IHostingEnvironment` 에 `Invoke` 메서드를 사용자 지정을 만들 때 [미들웨어](xref:fundamentals/middleware#writing-middleware):
+`IHostingEnvironment`에 삽입할 수는 `Invoke` 메서드 사용자 지정을 만들 때 [미들웨어](xref:fundamentals/middleware#writing-middleware):
 
 ```csharp
 public async Task Invoke(HttpContext context, IHostingEnvironment env)
@@ -828,7 +824,7 @@ public async Task Invoke(HttpContext context, IHostingEnvironment env)
 
 ## <a name="iapplicationlifetime-interface"></a>IApplicationLifetime 인터페이스
 
-[IApplicationLifetime 인터페이스](/aspnet/core/api/microsoft.aspnetcore.hosting.iapplicationlifetime) 후 시작 및 종료 작업을 수행할 수 있습니다. 인터페이스에서 세 가지 속성으로 등록할 수 있는 취소 토큰은 `Action` 시작 및 종료 이벤트를 정의 하는 메서드. 또한 한 `StopApplication` 메서드.
+[IApplicationLifetime](/aspnet/core/api/microsoft.aspnetcore.hosting.iapplicationlifetime) 후 시작 및 종료 작업에 대 한 허용 합니다. 인터페이스에서 세 가지 속성을 등록 하는 데 사용 되는 취소 토큰은 `Action` 시작 및 종료 이벤트를 정의 하는 메서드. 또한 한 `StopApplication` 메서드.
 
 | 취소 토큰    | 트리거된 경우 &#8230; |
 | --------------------- | --------------------- |
@@ -878,9 +874,9 @@ public class Startup
 
 **ASP.NET Core 2.0만에 적용 됩니다.**
 
-삽입 하 여 호스트를 작성 하는 경우 `IStartup` 호출 보다는 종속성 주입 컨테이너에 직접 `UseStartup` 또는 `Configure`, 다음과 같은 오류가 발생할 수 있습니다: `Unhandled Exception: System.ArgumentException: A valid non-empty application name must be provided`합니다.
+호스트를 삽입 하 여 빌드된 경우 `IStartup` 호출 보다는 종속성 주입 컨테이너에 직접 `UseStartup` 또는 `Configure`, 다음과 같은 오류가 발생할 수 있습니다: `Unhandled Exception: System.ArgumentException: A valid non-empty application name must be provided`합니다.
 
-이 때문에 발생는 [applicationName(ApplicationKey)](/aspnet/core/api/microsoft.aspnetcore.hosting.webhostdefaults#Microsoft_AspNetCore_Hosting_WebHostDefaults_ApplicationKey) (현재 어셈블리)를 검색 하는 데 필요한 `HostingStartupAttributes`합니다. 수동으로 삽입할 경우 `IStartup` 종속성 주입 컨테이너에는 다음 호출을 추가 하면 `WebHostBuilder` 지정 된 어셈블리 이름:
+이 때문에 발생는 [applicationName(ApplicationKey)](/aspnet/core/api/microsoft.aspnetcore.hosting.webhostdefaults#Microsoft_AspNetCore_Hosting_WebHostDefaults_ApplicationKey) (현재 어셈블리)를 검색 하는 데 필요한 `HostingStartupAttributes`합니다. 응용 프로그램을 수동으로 삽입 하는 경우 `IStartup` 종속성 주입 컨테이너에는 다음 호출을 추가 `WebHostBuilder` 지정 된 어셈블리 이름:
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)
@@ -888,7 +884,7 @@ WebHost.CreateDefaultBuilder(args)
     ...
 ```
 
-Dummy 또는 추가할 `Configure` 하 여 `WebHostBuilder`로 설정 하는 `applicationName`(`ApplicationKey`) 자동으로:
+또는 dummy 추가할 `Configure` 에 `WebHostBuilder`로 설정 하는 `applicationName`(`ApplicationKey`) 자동으로:
 
 ```csharp
 WebHost.CreateDefaultBuilder(args)
@@ -896,7 +892,7 @@ WebHost.CreateDefaultBuilder(args)
     ...
 ```
 
-**참고**:는 유일한 및 ASP.NET 코어 2.0 릴리스로 필요한 경우에 호출 하지 않으면 `UseStartup` 또는 `Configure`합니다.
+**참고**:는 유일한 및 ASP.NET 코어 2.0 릴리스로 필요한 경우에 응용 프로그램을 호출 하지 않습니다 `UseStartup` 또는 `Configure`합니다.
 
 자세한 내용은 참조 [공지: Microsoft.Extensions.PlatformAbstractions 되었습니다 (주석)를 제거](https://github.com/aspnet/Announcements/issues/237#issuecomment-323786938) 및 [StartupInjection 샘플](https://github.com/aspnet/Hosting/blob/8377d226f1e6e1a97dabdb6769a845eeccc829ed/samples/SampleStartups/StartupInjection.cs)합니다.
 

@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/concurrency
-ms.openlocfilehash: 0c49376fd1b602fe03ef2a152d19b58513ae2710
-ms.sourcegitcommit: 05e798c9bac7b9e9983599afb227ef393905d023
+ms.openlocfilehash: 8862c6b9a5eb7ac3b6889071e4ce9ff6f02512c9
+ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 01/03/2018
 ---
 en-미국 /
 
@@ -194,7 +194,7 @@ dotnet aspnet-codegenerator razorpage -m Department -dc SchoolContext -udl -outD
 
 [!code-csharp[](intro/samples/cu/Pages/Departments/Edit.cshtml.cs?name=snippet)]
 
-동시성 문제를 감지 하는 [OriginalValue](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.changetracking.propertyentry.originalvalue?view=efcore-2.0#Microsoft_EntityFrameworkCore_ChangeTracking_PropertyEntry_OriginalValue) 으로 업데이트는 `rowVersion` 엔터티에서 값이 인출 되었습니다. EF 코어 원본이 포함 된 WHERE 절과 함께 SQL UPDATE 명령과 생성 `RowVersion` 값입니다. UPDATE 명령 영향을 받는 행이 없는 경우 (행이 없는 원래 `RowVersion` 값), 즉 `DbUpdateConcurrencyException` 예외가 throw 됩니다.
+동시성 문제를 감지 하는 [OriginalValue](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.changetracking.propertyentry.originalvalue?view=efcore-2.0#Microsoft_EntityFrameworkCore_ChangeTracking_PropertyEntry_OriginalValue) 으로 업데이트는 `rowVersion` 값이 인출 된 엔터티에서 합니다. EF 코어 원본이 포함 된 WHERE 절과 함께 SQL UPDATE 명령과 생성 `RowVersion` 값입니다. UPDATE 명령 영향을 받는 행이 없는 경우 (행이 없는 원래 `RowVersion` 값), 즉 `DbUpdateConcurrencyException` 예외가 throw 됩니다.
 
 [!code-csharp[](intro/samples/cu/Pages/Departments/Edit.cshtml.cs?name=snippet_rv&highlight=24-)]
 

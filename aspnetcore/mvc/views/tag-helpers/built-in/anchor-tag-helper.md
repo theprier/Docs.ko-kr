@@ -11,11 +11,11 @@ ms.assetid: c045d485-d1dc-4cea-a675-46be83b7a011
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/anchor-tag-helper
-ms.openlocfilehash: 503ad7c4ce8c4f08b2a06dbe9f985566f54d3ca2
-ms.sourcegitcommit: 44a62f59d4db39d685c4487a0345a486be18d7c7
+ms.openlocfilehash: b2bdf8b2b297a66b08445d99afbc5f43d2e37ef6
+ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="anchor-tag-helper"></a>앵커 태그 도우미
 
@@ -86,16 +86,18 @@ ms.lasthandoff: 12/21/2017
 
 The `asp-page` attribute is mutually exclusive with the `asp-route`, `asp-controller`, and `asp-action` attributes. However, `asp-page` can be used with `asp-route-id` to control routing, as the following code sample demonstrates:
 
-```
-cshtml<a asp-page="/Speaker" asp-route-id="@speaker.Id">스피커 보기</a>
+```cshtml
+<a asp-page="/Speaker" asp-route-id="@speaker.Id">View Speaker</a>
 ```
 
-The `asp-route-id` produces the following output:
+`asp-route-id` 는 다음과 같은 출력을 생성 합니다.
 
 ```html
 https://localhost:44399/Speakers/Index/2?page=%2FSpeaker
 ```
 
+> [!NOTE]
+> 사용 하는 `asp-page` 의 특성 Razor 페이지, Url 해야 상대 경로 예를 들어 `"./Speaker"`합니다. 상대 경로 `asp-page` 특성에서에서 사용할 수 없는 MVC 뷰. 대신 MVC 뷰에 대 한 "/" 구문을 사용 합니다.
 
 ### <a name="asp-route-value"></a>asp-경로-{value}
 

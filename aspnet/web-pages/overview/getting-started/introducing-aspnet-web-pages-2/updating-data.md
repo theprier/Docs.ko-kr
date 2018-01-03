@@ -5,24 +5,24 @@ author: tfitzmac
 description: "이 자습서에서는 ASP.NET 웹 페이지 (Razor)를 사용 하는 경우 (변경) 기존 데이터베이스 항목을 업데이트 하는 방법을 보여 줍니다. 계열을 완료 한 것으로 가정 번째..."
 ms.author: aspnetcontent
 manager: wpickett
-ms.date: 05/28/2015
+ms.date: 01/02/2018
 ms.topic: article
 ms.assetid: ac86ec9c-6b69-485b-b9e0-8b9127b13e6b
 ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/updating-data
 msc.type: authoredcontent
-ms.openlocfilehash: 6fdb365c1449e6c54dfdbe492211700211f61005
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aabf572e254de9861719fdc502340353482919b4
+ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/03/2018
 ---
 <a name="introducing-aspnet-web-pages---updating-database-data"></a>Introducing ASP.NET 웹 페이지-데이터베이스 데이터 업데이트
 ====================
 으로 [Tom FitzMacken](https://github.com/tfitzmac)
 
-> 이 자습서에서는 ASP.NET 웹 페이지 (Razor)를 사용 하는 경우 (변경) 기존 데이터베이스 항목을 업데이트 하는 방법을 보여 줍니다. 통해 시리즈를 완료 한 것으로 가정 [데이터 입력 하 여 사용 하 여 양식을 사용 하 여 ASP.NET 웹 페이지](https://go.microsoft.com/fwlink/?LinkId=251582)합니다.
+> 이 자습서에서는 ASP.NET 웹 페이지 (Razor)를 사용 하는 경우 (변경) 기존 데이터베이스 항목을 업데이트 하는 방법을 보여 줍니다. 통해 시리즈를 완료 한 것으로 가정 [데이터 입력 하 여 사용 하 여 양식을 사용 하 여 ASP.NET 웹 페이지](entering-data.md)합니다.
 > 
 > 학습 내용:
 > 
@@ -143,7 +143,7 @@ ms.lasthandoff: 11/10/2017
 
 이 태그와 코드에 있는 것과 비슷합니다는 *AddMovie* 페이지. 제출 단추에 대 한 텍스트에 약간의 차이가 있습니다. 과 마찬가지로 *AddMovie* 페이지, 즉는 `Html.ValidationSummary` 되어 있는 경우 유효성 검사 오류를 표시 하는 호출 합니다. 에 대 한 호출을 제외 하는 것이 시간 `Validation.Message`이므로 유효성 검사 요약에 오류가 표시 됩니다. 이전 자습서에서 설명한 대로, 다양 한 조합에서 유효성 검사 요약 및 개별 오류 메시지를 사용할 수 있습니다.
 
-다시 확인 하는 `method` 특성에는 `<form>` 로 설정 된 `post`합니다. 과 마찬가지로 *AddMovie.cshtml* 페이지에서이 페이지를 수정 하는 데이터베이스입니다. 따라서이 폼을 수행 해야는 `POST` 작업 합니다. (간의 차이 대 한 자세한 `GET` 및 `POST` 작업의 경우 참조는 [GET, POST 및 HTTP 동사 안전](https://go.microsoft.com/fwlink/?LinkId=251581#GET,_POST,_and_HTTP_Verb_Safety) HTML 폼에 대 한 자습서에서 사이드바.)
+다시 확인 하는 `method` 특성에는 `<form>` 로 설정 된 `post`합니다. 과 마찬가지로 *AddMovie.cshtml* 페이지에서이 페이지를 수정 하는 데이터베이스입니다. 따라서이 폼을 수행 해야는 `POST` 작업 합니다. (간의 차이 대 한 자세한 `GET` 및 `POST` 작업의 경우 참조는 [GET, POST 및 HTTP 동사 안전](form-basics.md#GET,_POST,_and_HTTP_Verb_Safety) HTML 폼에 대 한 자습서에서 사이드바.)
 
 이전 자습서에서 볼 수 있듯이 `value` 텍스트 상자의 특성을 미리 설치 하기 위해 Razor 코드로 설정 되 고 있습니다. 이 시간 하지만 사용 하는 같은 변수 `title` 및 `genre` 대신 해당 작업에 대해 `Request.Form["title"]`:
 
@@ -224,7 +224,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > 물론,는 `Query` 메서드는 데이터베이스 행을 하나만 반환할 수 있습니다. 그러나 ASP.NET의 결과 항상 처리는 `Query` 메서드 컬렉션으로. 메서드가 하나의 행을 반환 하는 경우에 컬렉션에서 단일 행에는 추출 해야 합니다. 경우에 따라서 여기서 있습니다 *알고* 얻을 다시 행을 하나만, 사용 하는 편리한 방법을 다소 `QuerySingle`합니다.
 > 
-> 특정 유형의 데이터베이스 작업을 수행 하는 다른 메서드를 몇 개 있습니다. 데이터베이스 메서드 목록을 찾을 수 있습니다는 [ASP.NET Web Pages API 빠른 참조](https://go.microsoft.com/fwlink/?LinkID=202907#Data)합니다.
+> 특정 유형의 데이터베이스 작업을 수행 하는 다른 메서드를 몇 개 있습니다. 데이터베이스 메서드 목록을 찾을 수 있습니다는 [ASP.NET Web Pages API 빠른 참조](../../api-reference/asp-net-web-pages-api-reference.md#Data)합니다.
 
 
 ## <a name="making-validation-for-the-id-more-robust"></a>강력한 ID 등에 대 한 유효성 검사를 수행
@@ -308,7 +308,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="additional-resources"></a>추가 리소스
 
-- [Razor 구문을 사용 하 여 ASP.NET 웹 프로그래밍 소개](https://go.microsoft.com/fwlink/?LinkID=202890)
+- [Razor 구문을 사용 하 여 ASP.NET 웹 프로그래밍 소개](introducing-razor-syntax-c.md)
 - [SQL UPDATE 문을](http://www.w3schools.com/sql/sql_update.asp) W3Schools 사이트
 
 >[!div class="step-by-step"]

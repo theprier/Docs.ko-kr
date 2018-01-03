@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: dotnet-mvc
 ms.prod: .net-framework
 uid: mvc/overview/getting-started/introduction/adding-a-view
-ms.openlocfilehash: 52f15784f16d355791360021f045cf4f3c467897
-ms.sourcegitcommit: d1d8071d4093bf2444b5ae19d6e45c3d187e338b
+ms.openlocfilehash: cf0bb7984ad3460f8784193f7bb407c9b0ad50db
+ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/19/2017
+ms.lasthandoff: 01/03/2018
 ---
 <a name="adding-a-view"></a>뷰 추가
 ====================
@@ -109,7 +109,7 @@ ms.lasthandoff: 11/19/2017
 
 ![](adding-a-view/_static/image9.png)
 
-우리의 약간의 &quot;데이터&quot; (이 경우에 &quot;우리의 보기 템플릿에서 Hello!&quot; 메시지) 하지만 하드 코딩 되어 있습니다. MVC 응용 프로그램에는 &quot;V&quot; (뷰) 구현할 수는 &quot;C&quot; (컨트롤러) 없는 &quot;M&quot; (모델) 아직 합니다. 곧 살펴봅니다 방법 데이터베이스를 만들고 여기에서 모델 데이터를 검색 합니다.
+우리의 약간의 &quot;데이터&quot; (이 경우에 &quot;우리의 보기 템플릿에서 Hello!&quot; 메시지) 하지만 하드 코딩 되어 있습니다. MVC 응용 프로그램에는 &quot;V&quot; (뷰) 구현할 수는 &quot;C&quot; (컨트롤러) 없는 &quot;M&quot; (모델) 아직 합니다. 잠시 후, 데이터베이스를 만들고 여기에서 모델 데이터를 검색 하는 방법을 살펴봅니다.
 
 ## <a name="passing-data-from-the-controller-to-the-view"></a>컨트롤러에서 보기로 데이터 전달
 
