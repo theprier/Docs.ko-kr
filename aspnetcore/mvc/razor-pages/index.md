@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/razor-pages/index
-ms.openlocfilehash: a66b5ea32c2090b9944cd61f90f7fe011a823e82
-ms.sourcegitcommit: 3511552becb081fb860a23d6c9b6c4efcab74577
+ms.openlocfilehash: 31d8b1f662d3d5e7dad8f459d951c7b8181148b8
+ms.sourcegitcommit: 5834afb87e4262b9b88e60e3fe6c735e61a1e08d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/07/2017
+ms.lasthandoff: 12/20/2017
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core의 Razor 페이지 소개
 
@@ -165,7 +165,7 @@ Razor 페이지는 기본적으로 GET이 아닌 동사에만 속성을 바인�
 
 [!code-cshtml[main](index/sample/RazorPagesContacts/Pages/Index.cshtml?range=21)]
 
-[앵커 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper)는 [asp-route-{value}](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper#route) 특성을 사용하여 편집 페이지 링크를 생성했습니다. 링크에는 연락처 ID와 함께 경로 데이터가 포함됩니다. 예를 들어, `http://localhost:5000/Edit/1`을 입력합니다.
+[앵커 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper)는 `asp-route-{value}` 특성을 사용하여 편집 페이지 링크를 생성했습니다. 링크에는 연락처 ID와 함께 경로 데이터가 포함됩니다. 예를 들어, `http://localhost:5000/Edit/1`을 입력합니다.
 
 *Pages/Edit.cshtml* 파일:
 
