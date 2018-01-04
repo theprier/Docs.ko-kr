@@ -11,11 +11,11 @@ ms.assetid: 7f275a09-f118-41c9-88d1-8de52d6a5aa1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/localization
-ms.openlocfilehash: a3fdbf8a1ab4ca397824a46da445fa34ddd35204
-ms.sourcegitcommit: 4be61844141d3cfb6f263636a36aebd26e90fb28
+ms.openlocfilehash: d1f8cf5607fdd08bf0dadc224ae0fdba7ec696bc
+ms.sourcegitcommit: 677986b3a39817b712e2432cce85ad1685326b75
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/22/2017
+ms.lasthandoff: 01/04/2018
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>전역화 및 지역화 ASP.NET Core
 
@@ -25,7 +25,7 @@ ASP.NET Core를 사용 하 여 다국어 웹 사이트 만들기 하도록 사�
 
 국제화 포함 [전역화](https://docs.microsoft.com/dotnet/api/system.globalization) 및 [지역화](https://docs.microsoft.com/dotnet/standard/globalization-localization/localization)합니다. 세계화는 서로 다른 culture를 지 원하는 응용 프로그램을 설계 하는 과정입니다. 세계화에는 입력, 표시 및 정의 된 집합이 특정 지역과 관련 된 언어 스크립트의 출력에 대 한 지원을 추가 합니다.
 
-지역화는 이미 특정 문화권/로캘로 지역화 가능성에 대 한 처리 전역화 된 응용 프로그램을 위해 조정 하는 과정입니다.  자세한 내용은 참조 **전역화 및 지역화 용어** 이 문서의 끝 부분입니다.
+지역화는 이미 특정 문화권/로캘로 지역화 가능성에 대 한 처리 전역화 된 응용 프로그램을 위해 조정 하는 과정입니다. 자세한 내용은 참조 **전역화 및 지역화 용어** 이 문서의 끝 부분입니다.
 
 응용 프로그램 지역화 과정은 다음과 같습니다.
 
@@ -305,7 +305,7 @@ services.Configure<RequestLocalizationOptions>(options =>
 
 [지역화 가능성](https://docs.microsoft.com/dotnet/standard/globalization-localization/localizability-review) 는 세계화 된 응용 프로그램 지역화 하는 데 사용할 준비가 되어 있는지 확인 하기 위한 중간 프로세스입니다.
 
-[RFC 4646](https://www.ietf.org/rfc/rfc4646.txt) 문화권 이름에 대 한 서식을 "<languagecode2>-< country/regioncode2 >", 여기서 <languagecode2> 언어 코드 이며 < country/regioncode2 > 하위 문화권 코드입니다. 예를 들어 `es-CL` 스페인어 (칠레)에 대 한 `en-US` 영어 (미국) 및 `en-AU` 영어 (오스트레일리아)에 대 한 합니다. [RFC 4646](https://www.ietf.org/rfc/rfc4646.txt) 는 언어와 관련 된 두 문자의 소문자 문화권 코드는 ISO 639 및는 ISO 3166 국가 또는 지역와 관련 된 두 문자의 대문자 하위 문화권 코드의 조합입니다.  참조 [언어 문화권 이름](https://msdn.microsoft.com/library/ee825488(v=cs.20).aspx)합니다.
+[RFC 4646](https://www.ietf.org/rfc/rfc4646.txt) 문화권 이름에 대 한 서식을 `<languagecode2>-<country/regioncode2>`여기서 `<languagecode2>` 는 언어 코드 및 `<country/regioncode2>` 하위 문화권 코드입니다. 예를 들어 `es-CL` 스페인어 (칠레)에 대 한 `en-US` 영어 (미국) 및 `en-AU` 영어 (오스트레일리아)에 대 한 합니다. [RFC 4646](https://www.ietf.org/rfc/rfc4646.txt) 는 언어와 관련 된 두 문자의 소문자 문화권 코드는 ISO 639 및는 ISO 3166 국가 또는 지역와 관련 된 두 문자의 대문자 하위 문화권 코드의 조합입니다. 참조 [언어 문화권 이름](https://msdn.microsoft.com/library/ee825488(v=cs.20).aspx)합니다.
 
 국제화 "I18N" 종종 약어로 됩니다. 약어는 첫 번째 및 마지막 문자를 사용 하 고 있으므로 18 둘 간의 문자의 수 첫째 문자의 수에 대 한 "I"와 "N" 마지막 합니다. (G11N) 전역화 및 지역화 (L10N)에 마찬가지입니다.
 

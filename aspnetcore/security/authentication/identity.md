@@ -5,17 +5,17 @@ description: "ASP.NET Core 응용 프로그램과 함께 Id를 사용 하 여"
 keywords: "ASP.NET Core, Identity, 권한 부여, 보안"
 ms.author: riande
 manager: wpickett
-ms.date: 12/15/2017
+ms.date: 01/02/2018
 ms.topic: article
 ms.assetid: cf119f21-1a2b-49a2-b052-547ccb66ee83
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity
-ms.openlocfilehash: 7daf0267a6dc659afbd188ce87e35ca40816a31d
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: 7af53bfad2b77558a06003cbc6534236235054c4
+ms.sourcegitcommit: 677986b3a39817b712e2432cce85ad1685326b75
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/04/2018
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>ASP.NET Core에 Id 소개
 
@@ -32,11 +32,20 @@ ASP.NET Core Id 사용자 이름, 암호 및 프로필 데이터를 저장 하�
 1.  개별 사용자 계정을 가진 ASP.NET Core 웹 응용 프로그램 프로젝트를 만듭니다.
 
     # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
-    Visual Studio에서 선택 **파일** -> **새로** -> **프로젝트**합니다. 선택 된 **ASP.NET 웹 응용 프로그램** 에서 **새 프로젝트** 대화 상자. ASP.NET Core를 선택 하면 **웹 Application(Model-View-Controller)** ASP.NET core와 2.x **개별 사용자 계정** 인증 방법으로 합니다.
+    Visual Studio에서 선택 **파일** -> **새로** -> **프로젝트**합니다. 선택 **ASP.NET Core 웹 응용 프로그램** 클릭 **확인**합니다. 
 
-    참고: 선택 해야 **개별 사용자 계정**합니다.
+    ![새 프로젝트 대화 상자](identity/_static/01-new-project.png)
+
+    ASP.NET Core 선택 **웹 응용 프로그램 (모델-뷰-컨트롤러)** ASP.NET에 대 한 핵심 2.x를 선택한 다음 선택 **인증 변경**합니다. 
+
+    ![새 프로젝트 대화 상자](identity/_static/02-new-project.png)
+
+    제공 하는 대화 상자가 나타납니다 인증 선택 합니다. 선택 **개별 사용자 계정** 클릭 **확인** 이전 대화 상자로 돌아갑니다.
+
+    ![새 프로젝트 대화 상자](identity/_static/03-new-project-auth.png)
+    
+    선택 하면 **개별 사용자 계정** 모델, Viewmodel, 뷰, 컨트롤러 및 프로젝트 템플릿의 일부로 인증에 필요한 기타 자산을 만들려면 Visual Studio를 안내 합니다.
  
-    ![새 프로젝트 대화 상자](identity/_static/01-mvc_2.png)
     
     # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
     .NET Core CLI를 사용 하는 경우 사용 하 여 새 프로젝트 만들기 ``dotnet new mvc --auth Individual``합니다. 이 명령은 Visual Studio 만듭니다 Identity 템플릿 코드와 새 프로젝트를 만듭니다.
@@ -77,7 +86,7 @@ ASP.NET Core Id 사용자 이름, 암호 및 프로필 데이터를 저장 하�
 
     응용 프로그램을 시작 하 고을 클릭는 **등록** 링크 합니다.
 
-    처음이이 작업을 수행 하는 경우 마이그레이션을 실행 하는 데 필요한 수 있습니다. 응용 프로그램 하 라는 메시지가 표시 **적용 마이그레이션**:
+    처음이이 작업을 수행 하는 경우 마이그레이션을 실행 하는 데 필요한 수 있습니다. 응용 프로그램 하 라는 메시지가 표시 **적용 마이그레이션**합니다. 필요한 경우 페이지를 새로 고칩니다.
     
     ![마이그레이션 웹 페이지를 적용 합니다.](identity/_static/apply-migrations.png)
     
@@ -100,9 +109,9 @@ ASP.NET Core Id 사용자 이름, 암호 및 프로필 데이터를 저장 하�
  
     사용자가 클릭 하 여 로그인 할 수는 **로그인** 사이트의 맨 위에 링크 될 수 있습니다 이동 하 게 될 로그인 페이지에 권한 부여를 요구 하는 사이트의 일부에 액세스 하려는 경우 또는 합니다. 사용자가 로그인 페이지에 폼을 제출는 ``AccountController`` ``Login`` 작업을 호출 합니다.
 
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_login&highlight=13-14)]
- 
     ``Login`` 동작 호출 ``PasswordSignInAsync`` 에 ``_signInManager`` 개체 (제공 된 ``AccountController`` 종속성 주입 하 여).
+
+    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_login&highlight=13-14)]
  
     기본 ``Controller`` 클래스가 노출 한 ``User`` 컨트롤러 메서드에서 액세스할 수 있는 속성입니다. 예를 들어, 열거할 수 있습니다 `User.Claims` 을 권한 부여 결정을 내립니다. 자세한 내용은 참조 [권한 부여](xref:security/authorization/index)합니다.
  
@@ -139,6 +148,35 @@ ASP.NET Core Id 사용자 이름, 암호 및 프로필 데이터를 저장 하�
     ![AspNetUsers 데이터베이스 테이블에 대 한 상황에 맞는 메뉴](identity/_static/04-db.png)
     
     데이터베이스 확장 및 해당 **테이블**를 마우스 오른쪽 단추로 클릭 한 다음는 **dbo입니다. AspNetUsers** 테이블을 선택한 **데이터 보기**합니다.
+
+8. Identity 작동 확인
+
+    기본 *ASP.NET Core 웹 응용 프로그램* 프로젝트 템플릿이 필요 없이 응용 프로그램에서 모든 작업에 액세스할 수 있도록 로그인에 있습니다. ASP.NET Identity 작동 하는지 확인 하려면 추가`[Authorize]` 특성을 `About` 의 작업은 `Home` 컨트롤러입니다.
+ 
+    ```cs
+    [Authorize]
+    public IActionResult About()
+    {
+        ViewData["Message"] = "Your application description page.";
+        return View();
+    }
+    ```
+    
+    # <a name="visual-studiotabvisualstudio"></a>[Visual Studio](#tab/visualstudio)     
+
+    사용 하 여 프로젝트 실행 **Ctrl** + **F5** 로 이동 하 고는 **에 대 한** 페이지. 인증 된 사용자만 액세스할 수 있습니다는 **에 대 한** 페이지 이제 하므로 ASP.NET에 로그인 하거나 등록 로그인 페이지로 리디렉션됩니다.
+
+    # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
+
+    명령 창을 열고 프로젝트의 루트 디렉터리로 이동 포함 된 디렉터리는 `.csproj` 파일입니다. 실행 된 `dotnet run` 명령을 앱을 실행 하려면:
+
+    ```cs
+    dotnet run 
+    ```
+
+    검색의 출력에 지정 된 URL의 `dotnet run` 명령입니다. URL 가리키는 `localhost` 생성 된 포트 번호를 사용 합니다. 탐색 하 고 **에 대 한** 페이지. 인증 된 사용자만 액세스할 수 있습니다는 **에 대 한** 페이지 이제 하므로 ASP.NET에 로그인 하거나 등록 로그인 페이지로 리디렉션됩니다.
+
+    ---
 
 ## <a name="identity-components"></a>Identity 구성 요소
 
