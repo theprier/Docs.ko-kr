@@ -28,20 +28,20 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="prerequisites"></a>전제 조건
 
-* ASP.NET Core 1.1 (1.0에서는 동작하지 않습니다.)
+* ASP.NET Core 1.1 (1.0에서는 실행되지 않습니다.)
 * ASP.NET Core가 실행되는 모든 OS:
   
   * Windows 7 / Windows Server 2008 이상
   * Linux
   * MacOS
 
-* **예외**: Windows에서 IIS 또는 WebListener를 통해서 응용 프로그램을 실행한다면 다음을 만족해야 합니다:
+* **예외**: Windows에서 IIS 또는 WebListener를 통해서 앱을 실행한다면 다음을 만족해야 합니다.
 
   * Windows 8 / Windows Server 2012 이상
   * IIS 8 / IIS 8 Express
   * IIS에서 WebSocket을 활성화시켜야 합니다.
 
-* WebSocket 지원 브라우저에 관한 정보는 http://caniuse.com/#feat=websockets을 참고하시기 바랍니다.
+* 지원 브라우저에 관한 정보는 http://caniuse.com/#feat=websockets을 참고하시기 바랍니다.
 
 ## <a name="when-to-use-it"></a>용도
 
@@ -49,12 +49,12 @@ ms.lasthandoff: 11/10/2017
 
 [ASP.NET SignalR](https://docs.microsoft.com/aspnet/signalr/overview/getting-started/introduction-to-signalr)은 실시간 기능을 지원하는 보다 풍부한 응용 프로그램 모델을 제공하지만 ASP.NET에서만 실행되며 ASP.NET Core에서는 사용할 수 없습니다. SignalR의 Core 버전은 현재 개발중으로, 개발 진행 상황을 확인하려면 [SignalR Core의 GitHub 저장소](https://github.com/aspnet/SignalR)를 참고하시기 바랍니다.
 
-SignalR Core를 기다리고 싶지 않다면, 대신 지금 바로 WebSocket을 사용할 수 있습니다. 그러나 SignalR이 제공하는 다음과 같은 기능들을 직접 개발해야 할 수도 있습니다:
+SignalR Core를 기다리고 싶지 않다면, 대신 지금 바로 WebSocket을 사용할 수 있습니다. 그러나 SignalR이 제공하는 다음과 같은 기능들을 직접 개발해야 할 수도 있습니다.
 
 * 대체 전송 방식에 대한 자동 폴백을 통해서 보다 다양한 브라우저 버전을 지원합니다.
 * 연결이 끊어지면 자동으로 다시 연결합니다.
 * 서버의 메서드를 호출하는 클라이언트, 또는 반대로 클라이언트의 메서드를 호출하는 서버를 지원합니다.
-* 복수 서버에 대한 확장을 지원합니다.
+* 여러 서버에 대한 확장을 지원합니다.
 
 ## <a name="how-to-use-it"></a>사용 방법
 
@@ -80,15 +80,15 @@ SignalR Core를 기다리고 싶지 않다면, 대신 지금 바로 WebSocket을
 
 요청 수명 주기의 뒷부분에서 (예를 들어, `Configure` 메서드나 MVC 액션의 뒷부분에서) WebSocket 요청 여부를 확인하고 WebSocket 요청을 수락합니다.
 
-다음 예제는 `Configure` 메서드의 뒷부분에 위치합니다.
+다음은 `Configure` 메서드의 뒷부분에 나오는 예제입니다.
 
 [!code-csharp[](websockets/sample/Startup.cs?name=AcceptWebSocket&highlight=7)]
 
 WebSocket 요청은 모든 URL을 통해서 전달될 수 있지만, 이 예제 코드에서는 `/ws`에 대한 요청만 수락합니다.
 
-### <a name="send-and-receive-messages"></a>메시지 전송 및 수신하기
+### <a name="send-and-receive-messages"></a>메시지 전송 및 수신 (혹은 그대로)메시지 보내기 및 받기
 
-`AcceptWebSocketAsync` 메서드는 TCP 연결을 WebSocket 연결로 업그레이드하고 [WebSocket](https://docs.microsoft.com/dotnet/core/api/system.net.websockets.websocket) 개체를 반환합니다. 이 WebSocket 개체를 이용해서 메시지를 전송하거나 수신합니다.
+`AcceptWebSocketAsync` 메서드는 WebSocket 연결에 TCP 연결을 업그레이드 하 고 제공 된 [WebSocket](https://docs.microsoft.com/dotnet/core/api/system.net.websockets.websocket) 개체입니다. 메시지를 받거나 보내기 위해 WebSocket 개체를 사용 합니다. 
 
 앞에서 살펴본 WebSocket 요청을 수락하는 코드는 `WebSocket` 개체를 `Echo` 메서드로 전달하는데, `Echo` 메서드의 코드는 다음과 같습니다. 이 코드는 메시지를 수신하고 즉시 동일한 메시지를 다시 송신합니다. 그리고 클라이언트가 연결을 닫을 때까지 루프를 반복합니다.
 
