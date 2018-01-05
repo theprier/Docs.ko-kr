@@ -29,7 +29,7 @@ ms.lasthandoff: 11/10/2017
 
 이 다이어그램에서 `IDataProtector`의 인스턴스 A 및 B는 서로 상대방의 페이로드를 **읽을 수 없으며**, 자신의 페이로드만 읽을 수 있습니다.
 
-용도 문자열 자체는 암호화 할 필요가 없습니다. 정상적으로 동작하는 다른 구성 요소가 사용하는 용도 문자열과 중복되지 않는 유일한 문자열을 지정하기만 하면 됩니다.
+용도 문자열 자체를 암호화할 필요는 없습니다. 정상적으로 동작하는 다른 구성 요소가 사용하는 용도 문자열과 중복되지 않는 유일한 문자열을 지정하기만 하면 됩니다.
 
 >[!TIP]
 >경험적으로 데이터 보호 API를 소비하는 구성 요소의 네임스페이스와 형식 이름을 조합해서 사용하는 것도 좋은 방법입니다. 사실상 이 정보는 중복되지 않기 때문입니다.
@@ -43,21 +43,21 @@ ms.lasthandoff: 11/10/2017
 >[!WARNING]
 >신뢰할 수 없는 사용자의 입력이 구성 요소 용도 체인의 유일한 입력 원본이 될 수 있도록 허용해서는 안됩니다.
 >
->가령, 보안 메시지의 저장을 담당하는 Contoso.Messaging.SecureMessage라는 구성 요소가 존재한다고 가정해보겠습니다. 만약, 이 구성 요소가 `CreateProtector([ 사용자 이름 ])`과 같이 메서드를 호출하도록 작성되어 있다면, 악의적인 사용자가 사용자 계정을 "Contoso.Security.BearerToken"이라는 이름으로 생성해서 `CreateProtector([ "Contoso.Security.BearerToken" ])`과 같이 메서드를 호출하는 구성 요소를 얻으려고 시도할 수 있으며, 이는 의도하지 않게 인증 토큰으로 인식할 수도 있는 페이로드를 보안 메시징 시스템이 발급할 수도 있는 결과를 초래하게 됩니다.
+>가령, 보안 메시지의 저장을 담당하는 Contoso.Messaging.SecureMessage라는 구성 요소가 존재한다고 가정해보겠습니다. 만약, 이 보안 메시징 구성 요소가 `CreateProtector([ 사용자 이름 ])`와 같이 메서드를 호출하도록 작성되어 있다면, 악의적인 사용자가 "Contoso.Security.BearerToken"이라는 사용자 이름의 계정을 생성해서 `CreateProtector([ "Contoso.Security.BearerToken" ])`와 같이 메서드를 호출하는 구성 요소를 얻으려고 시도할 수 있으며, 이는 의도하지 않게 인증 토큰으로 인식할 수도 있는 페이로드를 보안 메시징 시스템이 발급할 수도 있는 결과를 초래하게 됩니다.
 >
->따라서 이 메시징 구성 요소에 적합한 용도 체인은, 적절한 격리를 제공할 수 있는 `CreateProtector([ "Contoso.Messaging.SecureMessage", "User: username" ])` 입니다.
+>따라서 이 메시징 구성 요소에 적합한 용도 체인은, 적절한 격리를 제공할 수 있는 `CreateProtector([ "Contoso.Messaging.SecureMessage", "User: username" ])`입니다.
 
-`IDataProtectionProvider`, `IDataProtector` 및 용도에 의해서 제공되는 격리 및 동작은 다음과 같습니다:
+`IDataProtectionProvider`, `IDataProtector` 및 용도에 의해서 제공되는 격리 및 동작은 다음과 같습니다.
 
 * 특정 `IDataProtectionProvider` 개체의 `CreateProtector` 메서드는 `IDataProtector` 개체를 생성하는 `IDataProtectionProvider` 개체와 메서드에 전달된 용도 매개 변수 양쪽 모두와 고유하게 연결된 `IDataProtector` 개체를 생성합니다.
 
 * 용도 매개 변수에 null을 지정할 수 없습니다. (용도를 배열로 지정할 경우에는 배열의 길이가 0이 될 수 없으며 배열의 모든 요소가 null이 아니어야 합니다.) 기술적으로 용도에 빈 문자열을 지정할 수는 있지만 권장하지는 않습니다.
 
-* 두 개로 요소로 구성된 용도 인자는 동일한 문자열이 동일한 순서로 담겨진 경우에만 같은 것으로 간주됩니다 (서수 비교자가 사용됩니다). 단일 용도 문자열 인자의 경우, 해당 인자를 담고 있는 단일 요소 용도 배열과 동일합니다.
+* 두 개 요소로 구성된 용도 인자는 동일한 문자열(서수 비교자가 사용됨)이 동일한 순서로 담겨진 경우에만 같은 것으로 간주됩니다. 단일 용도 문자열 인자의 경우, 해당 인자를 담고 있는 단일 요소 용도 배열과 동일합니다.
 
 * 두 개의 `IDataProtector` 개체는 동일한 용도 매개 변수를 이용해서 동일한 `IDataProtectionProvider` 개체로부터 생성된 경우에만 동일한 것으로 간주됩니다.
 
-* 특정 `IDataProtector` 개체에서 `Unprotect(protectedData)`를 호출할 경우, 동일한 `IDataProtector` 개체에서 `protectedData := Protect(unprotectedData)` 인 경우에만 보호 해제된 원본 데이터가 반환됩니다.
+*+* 특정 `IDataProtector` 개체에서 `Unprotect(protectedData)`를 호출할 경우, 동일한 `IDataProtector` 개체에서 `protectedData := Protect(unprotectedData)`인 경우에만 원본 `unprotectedData`가 반환됩니다.
 
 > [!NOTE]
 > 본문에서는 일부 구성 요소가 다른 구성 요소와 동일한 용도 문자열을 의도적으로 선택하는 경우는 감안하지 않습니다. 기본적으로 이런 구성 요소는 악의적인 구성 요소로 간주되며, 데이터 보호 시스템은 이미 악의적인 코드가 작업자 프로세스 내부에서 실행 중인 경우까지 보안을 보장하지는 않습니다.
