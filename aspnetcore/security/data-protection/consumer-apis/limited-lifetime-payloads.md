@@ -19,15 +19,15 @@ ms.lasthandoff: 11/10/2017
 ---
 # <a name="limiting-the-lifetime-of-protected-payloads"></a>보호된 페이로드의 수명 제한하기
 
-일부 시나리오에서는 응용 프로그램 개발자가 일정 시간 후에 만료되는 보호된 페이로드를 생성해야 할 수도 있습니다. 예를 들어, 비밀번호 재설정 토큰으로 사용되는 한 시간 동안만 유효한 보호된 페이로드 같은 경우를 들 수 있습니다. 물론 개발자가 내부적으로 만료 일자를 담고 있는 페이로드 형식을 직접 만드는 것도 불가능한 일은 아니고, 오히려 고급 개발자라면 이런 방식을 더 선호할 수도 있겠지만, 만료를 관리하는 이런 작업은 대다수 개발자에게는 번거러운 작업입니다.
+응용 프로그램 개발자가 설정된 된 시간 동안 후에 만료 되는 보호 된 페이로드를 작성 하려고 하는 위치 시나리오가 있습니다. 예를 들어, 보호 된 페이로드는 1 시간 동안 유효 해야만 암호 다시 설정 토큰을 나타낼 수 있습니다. 개발자는 포함 된 만료 날짜를 포함 하는 고유한 페이로드 형식을 만들 수에 대 한 수 및 고급 개발자를 누르고, 이렇게 할 수 있습니다 이지만 대부분 개발자의 이러한 만료 관리 수 커집니다 번거로운. 
 
-개발자가 이런 작업을 손쉽게 처리할 수 있도록 [Microsoft.AspNetCore.DataProtection.Extensions](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.Extensions/) 패키지에는 일정 시간 뒤에 자동으로 만료되는 페이로드를 생성하는 유틸리티 API들이 포함되어 있습니다. 이 API들은 `ITimeLimitedDataProtector` 형식에서 제공됩니다.
+패키지 대상 우리의 개발자에 대 한 더 쉽게 확인 하려면 [Microsoft.AspNetCore.DataProtection.Extensions](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.Extensions/) 설정 시간이 지나면 자동으로 만료 되는 페이로드를 만들기 위한 유틸리티 Api를 포함 합니다. 이러한 Api의 오프 중지는 `ITimeLimitedDataProtector` 유형입니다. 
 
 ## <a name="api-usage"></a>API 사용 방법
 
 `ITimeLimitedDataProtector` 인터페이스는 시간 제한/자체 만료 페이로드를 보호하거나 보호 해제하는 작업을 수행하기 위한 핵심 인터페이스입니다. `ITimeLimitedDataProtector`의 인스턴스를 생성하려면, 먼저 특정 용도를 지정해서 생성한 일반적인 [IDataProtector](overview.md)의 인스턴스가 필요합니다. `IDataProtector`의 인스턴스를 얻은 뒤에 `IDataProtector.ToTimeLimitedDataProtector` 확장 메서드를 호출해서 만료 기능이 내장된 보호자를 다시 얻습니다.
 
-`ITimeLimitedDataProtector`는 다음과 같은 API 표면 및 확장 메서드를 노출합니다:
+`ITimeLimitedDataProtector`다음과 같은 API 화면 및 확장 메서드를 노출합니다. 
 
 * CreateProtector(string purpose) : ITimeLimitedDataProtector - 이 API는 루트 시간 제한 보호자로부터 [용도 체인](purpose-strings.md)을 생성할 수 있다는 점에서 기존의 `IDataProtectionProvider.CreateProtector`와 비슷합니다.
 
@@ -43,7 +43,7 @@ ms.lasthandoff: 11/10/2017
 
 * Protect(string plaintext) : string
 
-평문만 전달하는 핵심 `Protect` 메서드들과 페이로드의 만료 일자를 지정할 수 있는 새로운 오버로드 메서드들이 함께 제공됩니다. 만료 일자는 절대 일시 (`DateTimeOffset` 형식으로) 또는 상대적 시간으로 (현재 시스템 시간에 대한 `TimeSpan` 형식으로) 지정할 수 있습니다. 만료가 지정되지 않은 오버로드 메서드가 호출되면 페이로드가 만료되지 않는 것으로 간주됩니다.
+평문만 전달하는 핵심 `Protect` 메서드와 페이로드의 만료 일자를 지정할 수 있는 새로운 오버로드 메서드가 함께 제공됩니다. 만료 날짜는 절대 날짜로 지정할 수 있습니다 (통해는 `DateTimeOffset`) 또는 상대 시간 (현재 시스템에서 시간을 통해는 `TimeSpan`). 만료 날짜를 사용 하지 않습니다는 오버 로드를 호출 하면 페이로드 가정 하지 만료 합니다. 
 
 * Unprotect(byte[] protectedData, out DateTimeOffset expiration) : byte[]
 
