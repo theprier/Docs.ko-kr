@@ -27,12 +27,13 @@ ASP.NET Core 데이터 보호 API는 무기한 기밀 페이로드의 유지를 
 
 ## <a name="ipersisteddataprotector"></a>IPersistedDataProtector
 
-키가 폐기된 경우에도 페이로드의 보호를 해제할 수 있도록 허용해야 하는 시나리오를 지원하기 위해서 데이터 보호 시스템에는 `IPersistedDataProtector` 형식이 포함되어 있습니다. `IPersistedDataProtector`의 인스턴스를 얻기 위해서는 그냥 일반적인 `IDataProtector`의 인스턴스를 얻은 다음, 해당 인스턴스를 `IPersistedDataProtector` 형식으로 형변환하기만 하면 됩니다.
+키가 폐기된 경우에도 페이로드의 보호를 해제할 수 있도록 허용해야 하는 시나리오를 지원하기 위해서 데이터 보호 시스템에는 `IPersistedDataProtector` 형식이 포함되어 있습니다. `IPersistedDataProtector`의 인스턴스를 얻기 위해서는 간단히 일반적인 `IDataProtector`의 인스턴스를 얻은 다음, 
+해당 인스턴스를 `IPersistedDataProtector` 형식으로 형변환하기만 하면 됩니다.
 
 > [!NOTE]
 > 모든 `IDataProtector` 인스턴스를 `IPersistedDataProtector` 형식으로 형변환 할 수 있는 것은 아닙니다. 따라서 개발자는 C#의 as 연산자나 비슷한 다른 기능을 이용해서 유효하지 않은 형변환 시도로부터 발생하는 런타임 예외를 방지하고, 형변환에 실패하는 경우에 대한 적절한 처리를 준비해야 합니다.
 
-`IPersistedDataProtector`는 다음과 같은 API 표면을 노출합니다:
+`IPersistedDataProtector`는 다음과 같은 API 표면을 노출합니다.
 
 ```csharp
 DangerousUnprotect(byte[] protectedData, bool ignoreRevocationErrors,
@@ -43,7 +44,7 @@ DangerousUnprotect(byte[] protectedData, bool ignoreRevocationErrors,
 
 * `requiresMigration`: 페이로드를 보호하는데 사용된 키가 더 이상 활성화 된 기본 키가 아닌 경우 true로 설정됩니다 (페이로드를 보호하는데 사용된 키가 오래되어 키 롤링 작업이 발생한 경우 등). 업무 규칙에 따라서는 호출자가 페이로드를 다시 보호해야 하는 경우도 있습니다.
 
-* `wasRevoked`: 페이로드를 보호하는데 사용된 키가 폐기된 경우 true로 설정됩니다.
+* `wasRevoked`: 페이로드를 보호하는 데 사용된 키가 폐기된 경우 true로 설정됩니다.
 
 >[!WARNING]
 > `DangerousUnprotect` 메서드를 호출할 때 `ignoreRevocationErrors` 매개 변수를 true로 전달하는 경우에는 특히 주의하시기 바랍니다. 만약 이 메서드를 호출한 후 `wasRevoked` 값으로 true가 반환된다면, 페이로드 보호에 사용된 키가 폐기되었으며 페이로드의 신뢰성이 의심스러운 것으로 간주되어야 합니다. 그런 경우, 신뢰할 수 없는 웹 클라이언트에서 전송된 페이로드 등을 제외한, 보안 데이터베이스에서 가져온 페이로드처럼 별도로 신뢰성을 확실하게 보장할 수 있는 경우에만 보호 해제된 페이로드를 이용해서 작업을 수행해야 합니다.
