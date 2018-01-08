@@ -11,11 +11,11 @@ ms.assetid: 1c33e576-33de-481a-8ad3-896b94fde0e3
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: publishing/linuxproduction
-ms.openlocfilehash: 01768263fe82dc75a7da0e113b1850c8d788bfd3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7c7b949fc922c605aa4554c158200a4123c4eb1c
+ms.sourcegitcommit: fc98e93464ccf37d9904e89a71cdddbd4bbdb86a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="set-up-a-hosting-environment-for-aspnet-core-on-linux-with-nginx-and-deploy-to-it"></a>Linux에서 Nginx를 사용하여 ASP.NET Core에 대한 호스팅 환경을 설정하고 해당 환경에 배포
 
@@ -45,8 +45,6 @@ ms.lasthandoff: 11/10/2017
  - 명령줄에서 `dotnet yourapp.dll`을 실행합니다.
  - 브라우저에서 `http://<serveraddress>:<port>`로 이동하여 앱이 Linux에서 작동하는지 확인합니다. 
  
-**참고:** [Yeoman](xref:client-side/yeoman)을 사용하여 새 프로젝트에 대한 새 ASP.NET Core 앱을 만듭니다.
-
 ## <a name="configure-a-reverse-proxy-server"></a>역방향 프록시 서버 구성
 
 역방향 프록시는 동적 웹 응용 프로그램을 지원하기 위한 일반적인 설정입니다. 역방향 프록시는 HTTP 요청을 종료하고 이 요청을 ASP.NET Core 응용 프로그램에 전달합니다.
@@ -123,7 +121,7 @@ server {
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection keep-alive;
-        proxy_set_header Host $host;
+        proxy_set_header Host $http_host;
         proxy_cache_bypass $http_upgrade;
     }
 }
