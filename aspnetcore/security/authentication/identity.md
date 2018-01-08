@@ -11,11 +11,11 @@ ms.assetid: cf119f21-1a2b-49a2-b052-547ccb66ee83
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity
-ms.openlocfilehash: 7af53bfad2b77558a06003cbc6534236235054c4
-ms.sourcegitcommit: 677986b3a39817b712e2432cce85ad1685326b75
+ms.openlocfilehash: 4a5d3622a22b70daa22333cafe58f8831bf0918e
+ms.sourcegitcommit: fc98e93464ccf37d9904e89a71cdddbd4bbdb86a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>ASP.NET Core에 Id 소개
 
@@ -32,28 +32,29 @@ ASP.NET Core Id 사용자 이름, 암호 및 프로필 데이터를 저장 하�
 1.  개별 사용자 계정을 가진 ASP.NET Core 웹 응용 프로그램 프로젝트를 만듭니다.
 
     # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
-    Visual Studio에서 선택 **파일** -> **새로** -> **프로젝트**합니다. 선택 **ASP.NET Core 웹 응용 프로그램** 클릭 **확인**합니다. 
+
+    Visual Studio에서 선택 **파일** -> **새로** -> **프로젝트**합니다. 선택 **ASP.NET Core 웹 응용 프로그램** 클릭 **확인**합니다.
 
     ![새 프로젝트 대화 상자](identity/_static/01-new-project.png)
 
-    ASP.NET Core 선택 **웹 응용 프로그램 (모델-뷰-컨트롤러)** ASP.NET에 대 한 핵심 2.x를 선택한 다음 선택 **인증 변경**합니다. 
+    ASP.NET Core 선택 **웹 응용 프로그램 (모델-뷰-컨트롤러)** ASP.NET에 대 한 핵심 2.x를 선택한 다음 선택 **인증 변경**합니다.
 
     ![새 프로젝트 대화 상자](identity/_static/02-new-project.png)
 
     제공 하는 대화 상자가 나타납니다 인증 선택 합니다. 선택 **개별 사용자 계정** 클릭 **확인** 이전 대화 상자로 돌아갑니다.
 
     ![새 프로젝트 대화 상자](identity/_static/03-new-project-auth.png)
-    
+
     선택 하면 **개별 사용자 계정** 모델, Viewmodel, 뷰, 컨트롤러 및 프로젝트 템플릿의 일부로 인증에 필요한 기타 자산을 만들려면 Visual Studio를 안내 합니다.
- 
-    
+
     # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
+
     .NET Core CLI를 사용 하는 경우 사용 하 여 새 프로젝트 만들기 ``dotnet new mvc --auth Individual``합니다. 이 명령은 Visual Studio 만듭니다 Identity 템플릿 코드와 새 프로젝트를 만듭니다.
- 
+
     만든된 프로젝트에 포함 되어는 `Microsoft.AspNetCore.Identity.EntityFrameworkCore` Id 데이터 및 스키마를 사용 하 여 SQL Server를 유지 하는 패키지 [Entity Framework Core](https://docs.microsoft.com/ef/)합니다.
-    
+
     ---
- 
+
 2.  Id 서비스를 구성 하 고 미들웨어에서 추가 `Startup`합니다.
 
     Id 서비스에서 응용 프로그램에 추가 되는 `ConfigureServices` 에서 메서드는 `Startup` 클래스:
@@ -162,7 +163,7 @@ ASP.NET Core Id 사용자 이름, 암호 및 프로필 데이터를 저장 하�
     }
     ```
     
-    # <a name="visual-studiotabvisualstudio"></a>[Visual Studio](#tab/visualstudio)     
+    # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
     사용 하 여 프로젝트 실행 **Ctrl** + **F5** 로 이동 하 고는 **에 대 한** 페이지. 인증 된 사용자만 액세스할 수 있습니다는 **에 대 한** 페이지 이제 하므로 ASP.NET에 로그인 하거나 등록 로그인 페이지로 리디렉션됩니다.
 
