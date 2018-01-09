@@ -1,7 +1,7 @@
 ---
 title: "ASP.NET Core의 호환성"
 author: rick-anderson
-description: "이 문서는 다양한 ASP.NET Core 데이터 보호 호환성 항목들의 목차입니다."
+description: "이 문서는 다양한 ASP.NET Core 데이터 보호 호환성 항목들의 목차로 이루어져 있습니다."
 keywords: "ASP.NET Core,호환성,데이터 보호"
 ms.author: riande
 manager: wpickett
