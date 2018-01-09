@@ -11,11 +11,11 @@ ms.assetid: a8fb7eb7-e0e5-4394-84f3-1f1dbe0ba2e4
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/index
-ms.openlocfilehash: b4770a91a735cf9c7304e03b848f9593bacb1455
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: 926aecb243153b92d70d5aa5a689eeec4dc8415a
+ms.sourcegitcommit: fc98e93464ccf37d9904e89a71cdddbd4bbdb86a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="client-side-development-in-aspnet-core"></a>ASP.NET Core의 클라이언트 쪽 개발
 
@@ -28,7 +28,7 @@ ms.lasthandoff: 12/14/2017
 - [TypeScript](https://www.typescriptlang.org/docs/handbook/asp-net-core.html)
 - [브라우저 링크 사용](xref:client-side/using-browserlink)
 - [SPA에 JavaScriptServices 사용](xref:client-side/spa-services)
-- [SPA 프로젝트 템플릿(미리 보기) 사용](xref:spa/index)
+- [SPA 프로젝트 템플릿(RC) 사용](xref:spa/index)
     - [Angular 프로젝트 템플릿](xref:spa/angular)
     - [React 프로젝트 템플릿](xref:spa/react)
     - [React with Redux 프로젝트 템플릿](xref:spa/react-with-redux)
