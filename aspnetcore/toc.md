@@ -70,7 +70,6 @@
 ### [LoggerMessage를 사용하여 로깅](xref:fundamentals/logging/loggermessage)
 ## [오류 처리](fundamentals/error-handling.md)
 ## [파일 공급자](fundamentals/file-providers.md)
-## [정적 파일 작업](fundamentals/static-files.md)
 ## [호스팅](fundamentals/hosting.md)
 ## [세션 및 응용 프로그램 상태](fundamentals/app-state.md)
 ## [서버](fundamentals/servers/index.md)
