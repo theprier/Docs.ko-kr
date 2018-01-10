@@ -11,11 +11,11 @@ ms.assetid: 5e014da1-8bc0-409b-951a-88b92c661fdf
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/roles
-ms.openlocfilehash: 649b21d99c742843534748b0ba9d7b7b22483a62
-ms.sourcegitcommit: 703593d5fd14076e79be2ba75a5b8da12a60ab15
+ms.openlocfilehash: 26babef1a296aaa1fa11f36d30c4d911d73808ce
+ms.sourcegitcommit: df2157ae9aeea0075772719c29784425c783e82a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="role-based-authorization"></a>역할 기반 권한 부여
 
@@ -27,7 +27,7 @@ Id를 만들 때 하나 이상의 역할에 속할 수 있습니다. 예를 들�
 
 역할 기반 권한 부여 확인은 선언적&mdash;개발자 포함을 컨트롤러나는 컨트롤러 내 작업에 대해 해당 코드 내에서 현재 사용자는 요청 된 리소스에 액세스의 구성원 이어야 하는 역할을 지정 합니다.
 
-다음 코드에 있는 동작에 대 한 액세스는 제한할 예를 들어는 `AdministrationController` 의 구성원 인 사용자에 게는 `Administrator` 그룹입니다.
+다음 코드에서 모든 작업에 대 한 액세스를 제한 하는 예를 들어는 `AdministrationController` 의 구성원 인 사용자에 게는 `Administrator` 역할:
 
 ```csharp
 [Authorize(Roles = "Administrator")]

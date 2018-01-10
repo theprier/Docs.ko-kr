@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: dotnet-mvc
 ms.prod: .net-framework
 uid: mvc/overview/getting-started/introduction/adding-a-view
-ms.openlocfilehash: cf0bb7984ad3460f8784193f7bb407c9b0ad50db
-ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
+ms.openlocfilehash: d273eb5e99da6c6b7678e03b1a8973041113744c
+ms.sourcegitcommit: 2d23ea501e0213bbacf65298acf1c8bd17209540
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 01/09/2018
 ---
 <a name="adding-a-view"></a>뷰 추가
 ====================
@@ -31,7 +31,7 @@ ms.lasthandoff: 01/03/2018
 
 `Index` 위의 방법을 템플릿 보기를 사용 하 여 브라우저에 대 한 HTML 응답을 생성 합니다. 컨트롤러 메서드 (라고도 [작업 메서드](http://rachelappel.com/asp.net-mvc-actionresults-explained))와 같은 `Index` 위의 메서드는 일반적으로 반환 된 [ActionResult](https://msdn.microsoft.com/en-us/library/system.web.mvc.actionresult.aspx) (또는 클래스에서 파생 된 [ActionResult](https://msdn.microsoft.com/en-us/library/system.web.mvc.actionresult.aspx))와 같은 문자열 하지 기본 형식입니다.
 
-마우스 오른쪽 단추로 클릭는 *Views\HelloWorld* 폴더 **추가**, 클릭 **MVC 5 뷰 페이지 (Razor 레이아웃)**합니다.
+마우스 오른쪽 단추로 클릭는 *Views\HelloWorld* 폴더 **추가**, 클릭 **(Razor) 레이아웃이 있는 MVC 5 뷰 페이지**합니다.
   
 ![](adding-a-view/_static/image1.png)   
   

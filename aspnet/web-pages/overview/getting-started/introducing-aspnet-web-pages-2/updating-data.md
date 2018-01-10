@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/updating-data
 msc.type: authoredcontent
-ms.openlocfilehash: aabf572e254de9861719fdc502340353482919b4
-ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
+ms.openlocfilehash: b016231975bf8d359f4c390b0b478edc383117d4
+ms.sourcegitcommit: df2157ae9aeea0075772719c29784425c783e82a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 01/10/2018
 ---
 <a name="introducing-aspnet-web-pages---updating-database-data"></a>Introducing ASP.NET 웹 페이지-데이터베이스 데이터 업데이트
 ====================
@@ -308,7 +308,7 @@ ms.lasthandoff: 01/03/2018
 
 ## <a name="additional-resources"></a>추가 리소스
 
-- [Razor 구문을 사용 하 여 ASP.NET 웹 프로그래밍 소개](introducing-razor-syntax-c.md)
+- [Razor 구문을 사용 하 여 ASP.NET 웹 프로그래밍 소개](../../getting-started/introducing-razor-syntax-c.md)
 - [SQL UPDATE 문을](http://www.w3schools.com/sql/sql_update.asp) W3Schools 사이트
 
 >[!div class="step-by-step"]

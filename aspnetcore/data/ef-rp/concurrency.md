@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/concurrency
-ms.openlocfilehash: 8862c6b9a5eb7ac3b6889071e4ce9ff6f02512c9
-ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
+ms.openlocfilehash: 841c638b2cacaab7970f2b173fee488972957b63
+ms.sourcegitcommit: 2d23ea501e0213bbacf65298acf1c8bd17209540
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 01/09/2018
 ---
 en-미국 /
 
@@ -302,7 +302,7 @@ DB가 있는 각 열에 게시 된 작업에서 다른 값에 대 한 사용자 
 
 두 번째 탭에서 테스트 부서를 삭제 합니다. 동시성 오류는 DB의 현재 값으로 표시 됩니다. 클릭 하면 **삭제** 되지 않는 한 엔터티를 삭제 `RowVersion` updated.department가 삭제 되었습니다.
 
-참조 [상속](xref:data/ef-mvc/inheritance) 데이터 모델에서 상속 하는 방법에 대 한 합니다.
+참조 [상속](xref:data/ef-mvc/inheritance) 데이터 모델을 상속 하는 방법에 있습니다.
 
 ### <a name="additional-resources"></a>추가 리소스
 
