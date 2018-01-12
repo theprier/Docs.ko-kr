@@ -11,11 +11,11 @@ ms.assetid: 92a2986a-d005-4ff6-9559-6657fd466bb7
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/advanced
-ms.openlocfilehash: d63502a32e38eb192b40f21f5cd57d20048154e3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4c20ed37e1e54273929593dddc9fe1180f1492d6
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="advanced-topics---ef-core-with-aspnet-core-mvc-tutorial-10-of-10"></a>고급 항목-EF 코어 ASP.NET Core MVC 자습서 (10 / 10)
 
@@ -192,7 +192,7 @@ Entity Framework Core에 대 한 소스 코드에서 제공 됩니다. [https://
 
 EF 코어에 대 한 자세한 내용은 참조는 [Entity Framework Core 설명서](https://docs.microsoft.com/ef/core)합니다. 책 제공 됩니다.: [동작에서 Entity Framework Core](https://www.manning.com/books/entity-framework-core-in-action)합니다.
 
-작성 한 후 웹 응용 프로그램을 배포 하는 방법에 대 한 정보를 참조 하십시오. [게시 및 배포](../../publishing/index.md)합니다.
+웹 앱을 배포 하는 방법에 대 한 정보를 참조 하십시오. [호스트 하 고 배포](xref:host-and-deploy/index)합니다.
 
 인증 및 권한, 같은 ASP.NET Core MVC와 관련 된 다른 항목에 대 한 정보에 대 한 참조는 [ASP.NET Core 설명서](https://docs.microsoft.com/aspnet/core/)합니다.
 

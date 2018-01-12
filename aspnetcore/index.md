@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: index
-ms.openlocfilehash: 3a18ed30819a3d395e9bfb5dba0547667a4425e8
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: 5d8e9a72a3b69866f5a4f725076e44575d20d64f
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="introduction-to-aspnet-core"></a>ASP.NET Core 소개
 
@@ -38,7 +38,7 @@ ASP.NET Core는 다음과 같은 이점을 제공합니다.
 * 클라우드를 갖춘 환경 기반 [구성 시스템](xref:fundamentals/configuration/index)입니다.
 * [종속성 주입](xref:fundamentals/dependency-injection)이 기본 제공됩니다.
 * 간단한 [고성능](https://github.com/aspnet/benchmarks) 모듈식 HTTP 요청 파이프라인을 포함합니다.
-* [IIS](xref:publishing/iis), [Nginx](xref:publishing/linuxproduction), [Apache](xref:publishing/apache-proxy), [Docker](xref:publishing/docker)에서 호스트하거나 고유한 프로세스에서 자체 호스트하는 기능이 있습니다.
+* [IIS](xref:host-and-deploy/iis/index), [Nginx](xref:host-and-deploy/linux-nginx), [Apache](xref:host-and-deploy/linux-apache), [Docker](xref:host-and-deploy/docker/index)에서 호스트하거나 고유한 프로세스에서 자체 호스트하는 기능이 있습니다.
 * [.NET Core](https://docs.microsoft.com/dotnet/articles/standard/choosing-core-framework-server)를 대상으로 하는 경우 앱 버전을 함께 관리할 수 있습니다.
 * 최신 웹 개발을 간소화하는 도구를 포함합니다.
 * Windows, macOS 및 Linux에서 빌드하고 실행할 수 있습니다.
@@ -48,7 +48,7 @@ ASP.NET Core는 완전히 [NuGet](https://www.nuget.org/) 패키지로 제공됩
 
 ## <a name="build-web-apis-and-web-ui-using-aspnet-core-mvc"></a>ASP.NET Core MVC를 사용하여 웹 API 및 웹 UI 빌드
 
-ASP.NET Core MVC에서는 [Web API](xref:tutorials/index#building-web-apis) 및 [웹앱](xref:tutorials/index#building-web-applications)을 빌드하는 기능을 제공합니다.
+ASP.NET Core MVC에서는 [Web API](xref:tutorials/index#build-web-apis) 및 [웹앱](xref:tutorials/index#build-web-apps)을 빌드하는 기능을 제공합니다.
 
 * [MVC(모델-뷰-컨트롤러) 패턴](xref:mvc/overview)을 통해 웹 API 및 웹앱을 [테스트 가능](testing/index.md)하게 합니다.
 * [Razor 페이지](xref:mvc/razor-pages/index)(ASP.NET Core 2.0의 새로운 기능)는 웹 UI를 쉽게 빌드하고 생산성을 높일 수 있는 페이지 기반 프로그래밍 모델입니다.

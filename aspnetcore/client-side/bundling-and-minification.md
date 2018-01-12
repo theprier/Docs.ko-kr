@@ -5,17 +5,17 @@ description: "묶음 및 축소 기술을 적용 하 여 ASP.NET Core 웹 응용
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 12/01/2017
+ms.date: 01/10/2018
 ms.devlang: csharp
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bundling-and-minification
-ms.openlocfilehash: c271b7ef386bacedbd45fbe9f62c9c486db55b36
-ms.sourcegitcommit: 05e798c9bac7b9e9983599afb227ef393905d023
+ms.openlocfilehash: ac8e7fee7600dabb8f4970b5bf87ad7a57ebf17f
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="bundling-and-minification"></a>묶음 및 축소
 
@@ -75,7 +75,7 @@ MVC 및 Razor 페이지 프로젝트 템플릿에 *bundleconfig.json* 구성 파
 
 [!code-json[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/bundleconfig.json)]
 
-번들 옵션은 다음과 같습니다.
+구성 옵션은 다음과 같습니다.
 
 * `outputFileName`: 출력 번들 파일의 이름입니다. 상대 경로 포함할 수 있습니다는 *bundleconfig.json* 파일입니다. **필수**
 * `inputFiles`: 함께 번들로 묶는 파일의 배열입니다. 이들은 구성 파일에 상대 경로입니다. **선택적**, * 빈 출력 파일에 빈 값이 발생 합니다. [와일드 카드 사용](http://www.tldp.org/LDP/abs/html/globbingref.html) 패턴이 지원 됩니다.
@@ -91,6 +91,9 @@ MVC 및 Razor 페이지 프로젝트 템플릿에 *bundleconfig.json* 구성 파
 ## <a name="build-time-execution-of-bundling-and-minification"></a>빌드 타임 실행 묶음 및 축소
 
 [BuildBundlerMinifier](https://www.nuget.org/packages/BuildBundlerMinifier/) 번들로 실행 및 축소 빌드 시 NuGet 패키지에 사용 하도록 설정 합니다. 패키지를 삽입 합니다. [MSBuild 대상](/visualstudio/msbuild/msbuild-targets) 를 빌드 및 정리 시간에 실행 합니다. *bundleconfig.json* 파일 정의 된 구성에 따라 출력 파일을 생성 하는 빌드 프로세스에 의해 분석 됩니다.
+
+> [!NOTE]
+> BuildBundlerMinifier는 Microsoft 지원 되지 않습니다 제공 하는 GitHub의 커뮤니티 기반 프로젝트에 속해 있습니다. 문제를 제출 해야 [여기](https://github.com/madskristensen/BundlerMinifier/issues)합니다.
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio) 
 
@@ -176,6 +179,9 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 
 [!code-xml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/BuildBundlerMinifierApp.csproj?range=10)]
 
+> [!NOTE]
+> BundlerMinifier.Core는 Microsoft 지원 되지 않습니다 제공 하는 GitHub의 커뮤니티 기반 프로젝트에 속해 있습니다. 문제를 제출 해야 [여기](https://github.com/madskristensen/BundlerMinifier/issues)합니다.
+
 .NET Core CLI 포함 하도록 확장 하는이 패키지는 *dotnet 번들* 도구입니다. 패키지 관리자 콘솔 (PMC) 창이 나 명령 셸에서 다음 명령을 실행할 수 있습니다.
 
 ```console
@@ -243,6 +249,9 @@ dotnet bundle
 ### <a name="use-the-bundler--minifier-extension"></a>번들러 & Minifier 확장을 사용 하 여
 
 Visual Studio [번들러 & Minifier](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.BundlerMinifier) 확장 처리 Gulp로 변환 합니다.
+
+> [!NOTE]
+> 번들러 & Minifier 확장을 Microsoft 지원을 제공 하지는 GitHub의 커뮤니티 기반 프로젝트에 속해 있습니다. 문제를 제출 해야 [여기](https://github.com/madskristensen/BundlerMinifier/issues)합니다.
 
 마우스 오른쪽 단추로 클릭는 *bundleconfig.json* 솔루션 탐색기에서 파일을 선택 **번들러 & Minifier** > **Gulp 변환...** :
 

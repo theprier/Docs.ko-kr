@@ -11,11 +11,11 @@ ms.assetid: de621887-c5c9-4ac8-9efd-f5cc0457a134
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: performance/response-compression
-ms.openlocfilehash: 68e8c89f6e5485f25d1a551ab3e524f0e9c53d0d
-ms.sourcegitcommit: f5a7f0198628f0d152257d90dba6c3a0747a355a
+ms.openlocfilehash: 86244179115fe6a7d0f7298495086a96ee9570d9
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/19/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="response-compression-middleware-for-aspnet-core"></a>ASP.NET Core에 대 한 응답 압축 미들웨어
 
@@ -187,7 +187,7 @@ Gzip 압축 공급자 기본적으로 가장 빠른 압축 수준 (`CompressionL
 요청에서 Nginx, 프록시 되 고 `Accept-Encoding` 헤더를 제거 합니다. 이렇게 하면 미들웨어를에서 응답을 압축지 않습니다. 자세한 내용은 참조 [NGINX: 압축 및 압축 풀기](https://www.nginx.com/resources/admin-guide/compression-and-decompression/)합니다. 이 문제를 추적 하 여 [nginx (BasicMiddleware #123)에 대 한 통과 압축 파악](https://github.com/aspnet/BasicMiddleware/issues/123)합니다.
 
 ## <a name="working-with-iis-dynamic-compression"></a>IIS 동적 압축이 사용
-활성 IIS 동적 압축이 모듈을 응용 프로그램에 대해 사용 하지 않도록 설정 하려는 서버 수준에서 구성 하는 경우 그렇게 할 수 있습니다에 대 한 추가 된 프로그램 *web.config* 파일입니다. 자세한 내용은 참조 [비활성화 IIS 모듈](xref:hosting/iis-modules#disabling-iis-modules)합니다.
+활성 IIS 동적 압축이 모듈을 응용 프로그램에 대해 사용 하지 않도록 설정 하려는 서버 수준에서 구성 하는 경우 그렇게 할 수 있습니다에 대 한 추가 된 프로그램 *web.config* 파일입니다. 자세한 내용은 참조 [비활성화 IIS 모듈](xref:host-and-deploy/iis/modules#disabling-iis-modules)합니다.
 
 ## <a name="troubleshooting"></a>문제 해결
 와 같은 도구를 사용 하 여 [Fiddler](http://www.telerik.com/fiddler), [Firebug](http://getfirebug.com/), 또는 [우체부](https://www.getpostman.com/)를 설정할 수 있도록는 `Accept-Encoding` 요청 헤더 및 응답 헤더, 크기 및 본문을 학습 합니다. 응답 압축 미들웨어 다음 조건을 충족 하는 응답을 압축 합니다.

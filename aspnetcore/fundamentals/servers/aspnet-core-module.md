@@ -12,11 +12,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/aspnet-core-module
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 1d1f551dbde5f3dd6e71808154c2e5885d588d7c
-ms.sourcegitcommit: 282f69e8dd63c39bde97a6d72783af2970d92040
+ms.openlocfilehash: 5eef9405c0c3d219755d7cffa5d45c3df45ddb5c
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="introduction-to-aspnet-core-module"></a>ASP.NET Core 모듈 소개
 
@@ -54,7 +54,7 @@ ANCM에 몇 가지 다른 기능도 있습니다.
 
 ## <a name="how-to-use-ancm-in-aspnet-core-apps"></a>ANCM ASP.NET Core 응용 프로그램에서 사용 하는 방법
 
-이 섹션에서는 IIS 서버 및 ASP.NET Core 응용 프로그램 설정에 대 한 프로세스의 개요를 제공 합니다. 자세한 내용은 참조 [를 IIS에 게시](../../publishing/iis.md)합니다.
+이 섹션에서는 IIS 서버 및 ASP.NET Core 응용 프로그램 설정에 대 한 프로세스의 개요를 제공 합니다. 자세한 내용은 참조 [Windows iis에서 호스트](xref:host-and-deploy/iis/index)합니다.
 
 ### <a name="install-ancm"></a>ANCM 설치
 
@@ -107,7 +107,7 @@ ASP.NET Core 1.0에서 호출 하는 경우 `UseUrls`, 호출 **전에** 호출 
 
 ### <a name="configure-ancm-options-in-webconfig"></a>Web.config에서 ANCM 옵션을 구성 합니다.
 
-ASP.NET Core 모듈에 대 한 구성에 저장 됩니다는 *Web.config* 응용 프로그램의 루트 폴더에 있는 파일입니다. 이 파일의 설정을 시작 명령 및 ASP.NET Core 응용 프로그램을 시작 하는 인수를 가리킵니다. 샘플 Web.config 코드 및 구성 옵션에 대 한 지침에 대 한 참조 [ASP.NET 핵심 모듈 구성 참조](../../hosting/aspnet-core-module.md)합니다.
+ASP.NET Core 모듈에 대 한 구성에 저장 됩니다는 *web.config* 응용 프로그램의 루트 폴더에 있는 파일입니다. 이 파일의 설정을 시작 명령 및 ASP.NET Core 응용 프로그램을 시작 하는 인수를 가리킵니다. 샘플에 대 한 *web.config* 코드 및 구성 옵션에 대 한 지침 참조 [ASP.NET 핵심 모듈 구성 참조](xref:host-and-deploy/aspnet-core-module)합니다.
 
 ### <a name="run-with-iis-express-in-development"></a>개발에서 IIS Express와 함께 실행 합니다.
 
@@ -125,5 +125,5 @@ ANCM와 Kestrel 사이 프록시는 HTTP 프로토콜을 사용 합니다. HTTP�
 
 * [이 문서에 대 한 샘플 응용 프로그램](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/aspnet-core-module/sample)
 * [ASP.NET Core 모듈의 소스 코드](https://github.com/aspnet/AspNetCoreModule)
-* [ASP.NET Core 모듈 구성 참조](../../hosting/aspnet-core-module.md)
-* [IIS에 게시](../../publishing/iis.md)
+* [ASP.NET Core 모듈 구성 참조](xref:host-and-deploy/aspnet-core-module)
+* [IIS를 사용하여 Windows에서 호스트](xref:host-and-deploy/iis/index)

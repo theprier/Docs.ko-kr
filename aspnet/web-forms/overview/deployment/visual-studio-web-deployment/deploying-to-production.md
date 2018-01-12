@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-production
 msc.type: authoredcontent
-ms.openlocfilehash: 2a8b165c149ceacba49a193c25e4a66a701ea0d6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2c49e7f6925b1ca172642747c5052ba97d70d036
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/11/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-to-production"></a>Visual Studio를 사용 하 여 ASP.NET 웹 배포: 프로덕션에 배포
 ====================
@@ -42,7 +42,7 @@ Azure 계정이 없는 경우 몇 분에서에서 무료 평가판 계정을 만
 ## <a name="create-a-staging-environment"></a>스테이징 환경 만들기
 
 > [!NOTE]
-> 이 자습서 기록 되었기 때문 Azure 앱 서비스 많은 주위 스테이징 및 프로덕션 환경에 있는 프로세스를 자동화 하는 새 기능을 추가 합니다. 참조 [스테이징 환경에서 Azure 앱 서비스 웹 앱에 대 한 설정](https://azure.microsoft.com/en-us/documentation/articles/web-sites-staged-publishing/)합니다.
+> 이 자습서 기록 되었기 때문 Azure 앱 서비스 다양 한 준비 및 프로덕션 환경을 만들기 위한 프로세스를 자동화 하는 새 기능을 추가 합니다. 참조 [스테이징 환경에서 Azure 앱 서비스 웹 앱에 대 한 설정](https://azure.microsoft.com/documentation/articles/web-sites-staged-publishing/)합니다.
 
 
 에 설명 된 대로 [테스트 환경 자습서로 배포](deploying-to-iis.md)는 가장 신뢰할 수 있는 테스트 환경은 프로덕션 웹 사이트와 방금 호스팅 공급자에서 웹 사이트입니다. 호스팅 공급자는 대부분에 중요 한 추가 비용에 대해이 가치가 해야 하지만 Azure에서 스테이징 응용 프로그램으로 추가 무료 웹 앱을 만들 수 있습니다. 또한 데이터베이스, 해야 이며 프로덕션 데이터베이스의 비용을 통해 해당 추가 비용은 없음 또는 / 최소 합니다. Azure의 비용을 지불이 아니라 각 데이터베이스에 대 한 데이터베이스 저장을 사용 하면 용량을 초과 하 고 준비 단계에서 사용 하는 추가 저장소 양을 최소화 됩니다.

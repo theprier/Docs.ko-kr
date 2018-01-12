@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/hosting
-ms.openlocfilehash: 054b60206cafc3d6dd5775436995638d7f5700cf
-ms.sourcegitcommit: 2d23ea501e0213bbacf65298acf1c8bd17209540
+ms.openlocfilehash: 8adc58d67f103e8d1fc8fe197cf392752bdaf660
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="hosting-in-aspnet-core"></a>ASP.NET Core에서 호스팅
 
@@ -41,7 +41,7 @@ ASP.NET Core 응용 프로그램 구성 및 실행 한 *호스트*합니다. 호
   * 환경 변수.
   * 명령줄 인수입니다.
 * 구성 [로깅](xref:fundamentals/logging/index) 콘솔 및 디버그 출력에 대 한 합니다. 로깅에 포함 됩니다 [로그 필터링](xref:fundamentals/logging/index#log-filtering) 의 로깅 구성 섹션에 지정 된 규칙은 *appsettings.json* 또는 *appsettings. { 환경}.json* 파일입니다.
-* 뒤에 IIS를 실행 하면 [IIS 통합](xref:publishing/iis)합니다. 구성 요소의 기본 경로 및 사용 하는 경우 서버에서 수신 대기 해야 하는 포트는 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)합니다. 모듈은 IIS와 Kestrel 간의 역방향 프록시를 만듭니다. 또한 응용 프로그램을 구성 [시작 오류 캡처](#capture-startup-errors)합니다. IIS 기본 옵션을 참조 하십시오. [IIS의 IIS와 Windows에서 호스트 ASP.NET Core 섹션 옵션](xref:publishing/iis#iis-options)합니다.
+* 뒤에 IIS를 실행 하면 [IIS 통합](xref:host-and-deploy/iis/index)합니다. 구성 요소의 기본 경로 및 사용 하는 경우에 서버가 수신 포트는 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)합니다. 모듈은 IIS와 Kestrel 간의 역방향 프록시를 만듭니다. 또한 응용 프로그램을 구성 [시작 오류 캡처](#capture-startup-errors)합니다. IIS 기본 옵션을 참조 하십시오. [IIS의 IIS와 Windows에서 호스트 ASP.NET Core 섹션 옵션](xref:host-and-deploy/iis/index#iis-options)합니다.
 
 *콘텐츠 루트* 호스트 MVC 뷰 파일과 같은 콘텐츠 파일을 검색 하는 위치를 결정 합니다. 응용 프로그램 프로젝트의 루트 폴더에서 시작 되 면 프로젝트의 루트 폴더 콘텐츠 루트도 사용 됩니다. 사용 되는 기본 이것이 [Visual Studio](https://www.visualstudio.com/) 및 [dotnet 새 템플릿을](/dotnet/core/tools/dotnet-new)합니다.
 
@@ -60,7 +60,7 @@ ASP.NET Core 응용 프로그램 구성 및 실행 한 *호스트*합니다. 호
 
 *콘텐츠 루트* 호스트 MVC 뷰 파일과 같은 콘텐츠 파일을 검색 하는 위치를 결정 합니다. 기본 콘텐츠 루트에 대 한 가져온 `UseContentRoot` 여 [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory?view=netcore-1.1)합니다. 응용 프로그램 프로젝트의 루트 폴더에서 시작 되 면 프로젝트의 루트 폴더 콘텐츠 루트도 사용 됩니다. 사용 되는 기본 이것이 [Visual Studio](https://www.visualstudio.com/) 및 [dotnet 새 템플릿을](/dotnet/core/tools/dotnet-new)합니다.
 
-IIS는 역방향 프록시를 사용 하려면 호출 [UseIISIntegration](/aspnet/core/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions) 호스트 빌드 과정의 일환으로 합니다. `UseIISIntegration`구성 하지 않는 한 *서버*처럼 [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel?view=aspnetcore-1.1) 않습니다. `UseIISIntegration`구성 요소의 기본 경로 및 사용 하는 경우 서버에서 수신 대기 해야 하는 포트는 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module) Kestrel와 IIS 사이 역방향 프록시를 만들 수 있습니다. ASP.NET Core와 IIS를 사용 하도록 `UseKestrel` 및 `UseIISIntegration` 지정 해야 합니다. `UseIISIntegration`IIS 또는 IIS Express 뒤에서 실행 하는 경우에 활성화 됩니다. 자세한 내용은 참조 [ASP.NET Core 모듈 소개](xref:fundamentals/servers/aspnet-core-module) 및 [ASP.NET Core 모듈 구성 참조](xref:hosting/aspnet-core-module)합니다.
+IIS는 역방향 프록시를 사용 하려면 호출 [UseIISIntegration](/aspnet/core/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions) 호스트 빌드 과정의 일환으로 합니다. `UseIISIntegration`구성 하지 않는 한 *서버*처럼 [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel?view=aspnetcore-1.1) 않습니다. `UseIISIntegration`구성 요소의 기본 경로 및 사용 하는 경우에 서버가 수신 포트는 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module) Kestrel와 IIS 사이가 역방향 프록시를 만들 수 있습니다. ASP.NET Core와 IIS를 사용 하도록 `UseKestrel` 및 `UseIISIntegration` 지정 해야 합니다. `UseIISIntegration`IIS 또는 IIS Express 뒤에서 실행 하는 경우에 활성화 됩니다. 자세한 내용은 참조 [ASP.NET Core 모듈 소개](xref:fundamentals/servers/aspnet-core-module) 및 [ASP.NET Core 모듈 구성 참조](xref:host-and-deploy/aspnet-core-module)합니다.
 
 호스트 (및 ASP.NET Core 응용 프로그램)를 구성 하는 최소 구현을 서버와 응용 프로그램의 요청 파이프라인의 구성을 지정 하는 포함 됩니다.
 
@@ -266,7 +266,7 @@ WebHost.CreateDefaultBuilder(args)
 
 ### <a name="prevent-hosting-startup"></a>호스팅 시작 방지
 
-호스팅 시작 어셈블리, 호스팅 응용 프로그램의 어셈블리에 의해 구성 된 시작 어셈블리를 포함 하 여 자동 로드를 방지 합니다. 참조 [IHostingStartup를 사용 하 여 외부 어셈블리에서 응용 프로그램 기능 추가](xref:hosting/ihostingstartup) 자세한 정보에 대 한 합니다.
+호스팅 시작 어셈블리, 호스팅 응용 프로그램의 어셈블리에 의해 구성 된 시작 어셈블리를 포함 하 여 자동 로드를 방지 합니다. 참조 [IHostingStartup를 사용 하 여 외부 어셈블리에서 응용 프로그램 기능 추가](xref:host-and-deploy/ihostingstartup) 자세한 정보에 대 한 합니다.
 
 **키**: preventHostingStartup  
 **형식**: *bool* (`true` 또는 `1`)  
@@ -908,7 +908,7 @@ WebHost.CreateDefaultBuilder(args)
 
 ## <a name="additional-resources"></a>추가 리소스
 
-* [IIS를 사용 하 여 Windows에 게시](../publishing/iis.md)
-* [Nginx를 사용 하 여 Linux에 게시](../publishing/linuxproduction.md)
-* [Apache를 사용 하 여 Linux에 게시](../publishing/apache-proxy.md)
-* [Windows 서비스의 호스트](xref:hosting/windows-service)
+* [IIS를 사용하여 Windows에서 호스트](xref:host-and-deploy/iis/index)
+* [Nginx를 사용하여 Linux에서 호스트](xref:host-and-deploy/linux-nginx)
+* [Apache를 사용하여 Linux에서 호스트](xref:host-and-deploy/linux-apache)
+* [Windows 서비스의 호스트](xref:host-and-deploy/windows-service)

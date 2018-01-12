@@ -11,11 +11,11 @@ ms.assetid: e6130638-c410-4161-9921-b658ce988bd1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/url-rewriting
-ms.openlocfilehash: 754af24f4dcf054dd89eaa5f237ab680bf2d1172
-ms.sourcegitcommit: df2157ae9aeea0075772719c29784425c783e82a
+ms.openlocfilehash: e07634a6d7ad97bf8735029b5c28d6935b71eb52
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="url-rewriting-middleware-in-aspnet-core"></a>URL의 ASP.NET Core 미들웨어를 다시 작성
 
@@ -245,7 +245,7 @@ A `StreamReader` 에서 규칙을 읽는 데 사용 되는 *IISUrlRewrite.xml* �
 
 ![브라우저 창을 요청 및 응답을 추적 하는 개발자 도구](url-rewriting/_static/add_iis_url_rewrite.png)
 
-영향을 미치는 방식 앱 바람직하지 않은 방법으로 구성 된 서버 수준 규칙 활성 IIS를 다시 작성 모듈 있는 경우 응용 프로그램에 대 한 IIS 재작성 모듈을 해제할 수 있습니다. 자세한 내용은 참조 [비활성화 IIS 모듈](xref:hosting/iis-modules#disabling-iis-modules)합니다.
+영향을 미치는 방식 앱 바람직하지 않은 방법으로 구성 된 서버 수준 규칙 활성 IIS를 다시 작성 모듈 있는 경우 응용 프로그램에 대 한 IIS 재작성 모듈을 해제할 수 있습니다. 자세한 내용은 참조 [비활성화 IIS 모듈](xref:host-and-deploy/iis/modules#disabling-iis-modules)합니다.
 
 #### <a name="unsupported-features"></a>지원 되지 않는 기능
 
