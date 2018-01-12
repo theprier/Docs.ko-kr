@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-search
 msc.type: authoredcontent
-ms.openlocfilehash: a7664d16a056424ee51db2208152cb5d35d8e5d9
-ms.sourcegitcommit: d1d8071d4093bf2444b5ae19d6e45c3d187e338b
+ms.openlocfilehash: 10457d154f5fda875f7d1054d48daeeba3a50b7c
+ms.sourcegitcommit: 2b263e87217658caa42eedc4f9d2d21ef0ab5d59
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/19/2017
+ms.lasthandoff: 01/12/2018
 ---
 <a name="search"></a>검색
 ====================
@@ -123,7 +123,7 @@ Visual Studio 2013에는 표시 및 보기 파일을 편집 하는 경우 좋은
 
 [!code-csharp[Main](adding-search/samples/sample12.cs)]
 
-코드를 사용 하 여는 `AddRange` 메서드는 제네릭의 `List` 모든 고유 장르 목록에 추가할 컬렉션입니다. (없이 `Distinct` 한정자를 중복 장르는 추가-샘플에 두 번 코미디는 추가 하는 예를 들어). 코드에는 다음에 장르 목록을 저장 된 `ViewBag.movieGenre` 개체입니다. 범주 데이터 (이러한 동영상 장르의)으로 저장 한 [SelectList](https://msdn.microsoft.com/en-us/library/system.web.mvc.selectlist(v=vs.108).aspx) 개체는 `ViewBag`, MVC 응용 프로그램에 대 한 일반적인 방법은 드롭다운 목록 상자에서 범주 데이터에 액세스 합니다.
+코드를 사용 하 여는 `AddRange` 메서드는 제네릭의 `List` 모든 고유 장르 목록에 추가할 컬렉션입니다. (없이 `Distinct` 한정자를 중복 장르는 추가-샘플에 두 번 코미디는 추가 하는 예를 들어). 코드에는 다음에 장르 목록을 저장 된 `ViewBag.MovieGenre` 개체입니다. 범주 데이터 (이러한 동영상 장르의)으로 저장 한 [SelectList](https://msdn.microsoft.com/en-us/library/system.web.mvc.selectlist(v=vs.108).aspx) 개체는 `ViewBag`, MVC 응용 프로그램에 대 한 일반적인 방법은 드롭다운 목록 상자에서 범주 데이터에 액세스 합니다.
 
 다음 코드를 확인 하는 방법을 보여 줍니다는 `movieGenre` 매개 변수입니다. 비어 있지 않으면 코드를 추가로 지정된 장르에 선택 된 동영상을 제한 하려면 영화 쿼리를 제한 합니다.
 
@@ -141,7 +141,7 @@ Visual Studio 2013에는 표시 및 보기 파일을 편집 하는 경우 좋은
 
 [!code-cshtml[Main](adding-search/samples/sample15.cshtml)]
 
-에 대 한 키를 제공 하는 "movieGenre" 매개 변수는 `DropDownList` 찾으려고 도우미는 `IEnumerable<SelectListItem>` 에 `ViewBag`합니다. `ViewBag` 작업 메서드에서 채워졌습니다.
+에 대 한 키를 제공 하는 "MovieGenre" 매개 변수는 `DropDownList` 찾으려고 도우미는 `IEnumerable<SelectListItem>` 에 `ViewBag`합니다. `ViewBag` 작업 메서드에서 채워졌습니다.
 
 [!code-csharp[Main](adding-search/samples/sample16.cs?highlight=10)]
 

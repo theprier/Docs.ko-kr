@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-new-field
 msc.type: authoredcontent
-ms.openlocfilehash: c10eb343259b58052fd1f2411dbdc2196eafc858
-ms.sourcegitcommit: d1d8071d4093bf2444b5ae19d6e45c3d187e338b
+ms.openlocfilehash: 7427b4f7c6b7a00fe795053aac0f612471a163cd
+ms.sourcegitcommit: 2b263e87217658caa42eedc4f9d2d21ef0ab5d59
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/19/2017
+ms.lasthandoff: 01/12/2018
 ---
 <a name="adding-a-new-field"></a>새 필드 추가
 ====================
@@ -161,7 +161,7 @@ Seed 메서드를 업데이트 하는 새 열에 대 한 값을 제공 합니다
 
 `add-migration` 명령 마이그레이션 프레임 워크에 현재 영화 DB 스키마와 현재 영화 모델을 점검 하 여 DB 새 모델을 마이그레이션하는 데 필요한 코드를 만들 지시 합니다. 이름을 *등급* 은 임의로 지정 하 고 마이그레이션 파일 이름을 지정 하는 데 사용 됩니다. 마이그레이션 단계에 대 한 의미 있는 이름을 사용 하는 것이 좋습니다.
 
-Visual Studio 새 정의 하는 클래스 파일을 엽니다이 명령이 완료 되 면 `DbMIgration` 파생 클래스를 및는 `Up` 메서드 새 열을 만드는 코드를 볼 수 있습니다.
+Visual Studio 새 정의 하는 클래스 파일을 엽니다이 명령이 완료 되 면 `DbMigration` 파생 클래스를 및는 `Up` 메서드 새 열을 만드는 코드를 볼 수 있습니다.
 
 [!code-csharp[Main](adding-a-new-field/samples/sample11.cs)]
 
@@ -179,8 +179,7 @@ Visual Studio 새 정의 하는 클래스 파일을 엽니다이 명령이 완�
 
 ![7_CreateRioII](adding-a-new-field/_static/image13.png)
 
-
-              **만들기**를 클릭합니다. 등급을 포함 하 여 새 동영상은 이제 나열 영화에서 표시:
+**만들기**를 클릭합니다. 등급을 포함 하 여 새 동영상은 이제 나열 영화에서 표시:
 
 ![7_ourNewMovie_SM](adding-a-new-field/_static/image14.png)
 
