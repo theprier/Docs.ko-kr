@@ -39,18 +39,18 @@ ASP.NET Core는 응용 프로그램이 현재 실행되고 있는 환경을 구�
 
 만약 Visual Studio를 사용하고 있다면, 프로젝트의 디버그 프로필에서 환경을 구성할 수 있습니다. 디버그 프로필에서는 응용 프로그램을 시작할 때 사용할 [서버](xref:fundamentals/servers/index)와 설정할 모든 환경 변수를 지정합니다. 한 프로젝트에 환경 변수를 서로 다르게 구성한 별개의 디버그 프로필이 다수 존재할 수 있습니다. 이 프로필들은 웹 응용 프로그램 프로젝트의 **속성** 메뉴의  **디버그** 탭을 통해서 관리됩니다. 프로젝트 속성에서 설정한 값은 *launchSettings.json* 파일에 저장되며, 이 파일을 직접 편집해서 프로필을 구성할 수도 있습니다.
 
-다음은 IIS Express 프로필을 보여줍니다:
+다음은 IIS Express 프로필을 보여줍니다.
 
 ![프로젝트 속성 설정 환경 변수](environments/_static/project-properties-debug.png)
 
-다음은 `Development` 환경과 `Staging` 환경을 위한 프로필을 포함하고 있는 `launchSettings.json` 파일을 보여줍니다:
+다음은 `Development` 환경과 `Staging` 환경을 위한 프로필을 포함하고 있는 `launchSettings.json` 파일을 보여줍니다.
 
 [!code-json[Main](../fundamentals/environments/sample/src/Environments/Properties/launchSettings.json?highlight=15,22)]
 
 프로젝트 프로필의 변경 사항은 사용되는 웹 서버가 재시작될 때까지 반영되지 않을 수도 있습니다 (특히, Kestrel은 재시작해야만 해당 환경의 변경 사항을 감지할 수 있습니다).
 
 >[!WARNING]
-> *launchSettings.json* 파일에 저장되는 환경 변수는 어떤 방식으로도 보호되지 않으며, 만약 소스 코드 리파지터리를 사용하고 있다면 프로젝트의 소스 코드와 함께 리파지터리에 저장됩니다. **따라서 이 파일에는 자격 증명이나 기타 보안에 민감한 데이터를 저장하면 안됩니다.** 만약 그런 데이터를 저장해야만 한다면 [개발 중 민감한 응용 프로그램 정보 안전하게 저장하기](../security/app-secrets.md#security-app-secrets)에서 설명하는 Secret Manager 도구를 사용하는 것이 좋습니다.
+> *launchSettings.json* 파일에 저장되는 환경 변수는 어떤 방식으로도 보호되지 않으며, 만약 소스 코드 리포지터리를 사용하고 있다면 프로젝트의 소스 코드와 함께 리포지터리에 저장됩니다. **따라서 이 파일에는 자격 증명이나 기타 보안에 민감한 데이터를 저장하면 안 됩니다.** 만약 그런 데이터를 저장해야만 한다면 [개발 중 민감한 응용 프로그램 정보 안전하게 저장하기](../security/app-secrets.md#security-app-secrets)에서 설명하는 Secret Manager 도구를 사용하는 것이 좋습니다.
 
 ### <a name="staging"></a>스테이징
 
@@ -58,7 +58,7 @@ ASP.NET Core는 응용 프로그램이 현재 실행되고 있는 환경을 구�
 
 ### <a name="production"></a>프로덕션
 
-`Production` 환경은 응용 프로그램이 실제로 실행되고 최종 사용자에 의해 사용되는 환경입니다. 이 환경은 보안과 성능, 그리고 응용 프로그램의 견고성이 극대화되도록 구성되어야 합니다. 다음은 일반적으로 개발 환경과 프로덕션 환경 사이에 차이점이 존재하는 몇 가지 설정입니다:
+`Production` 환경은 응용 프로그램이 실제로 실행되고 최종 사용자에 의해 사용되는 환경입니다. 이 환경은 보안과 성능, 그리고 응용 프로그램의 견고성이 극대화되도록 구성되어야 합니다. 다음은 일반적으로 개발 환경과 프로덕션 환경 사이에 차이점이 존재하는 몇 가지 설정입니다.
 
 * 캐싱 사용하기
 
@@ -129,7 +129,7 @@ Linux 배포판의 경우, 세션 기반의 변수를 설정하려면 명령줄�
 > [!NOTE]
 > 특정 환경에서 응용 프로그램이 실행 중인지 확인해야 할 경우, 단순히 `env.EnvironmentName == "Development"` 같이 문자열을 비교하는 대신, 안전하게 대소문자를 구분하지 않는 `env.IsEnvironment("environmentname")` 메서드를 사용하십시오.
 
-예를 들어서, Configure 메서드에 다음과 같은 코드를 작성하면 환경별 오류 처리를 구성할 수 있습니다:
+예를 들어서, Configure 메서드에 다음과 같은 코드를 작성하면 환경별 오류 처리를 구성할 수 있습니다.
 
 [!code-csharp[Main](environments/sample/src/Environments/Startup.cs?range=19-30)]
 
@@ -145,7 +145,7 @@ Linux 배포판의 경우, 세션 기반의 변수를 설정하려면 명령줄�
 
 ASP.NET Core는 현재 환경을 기반으로 응용 프로그램의 시작을 구성하는 규약 기반의 접근 방식을 지원합니다. 또한 응용 프로그램이 실행 중인 환경에 따라서 응용 프로그램이 동작하는 방식을 프로그래밍적인 방식으로 제어할 수 있으며, 자신만의 규약을 만들고 관리할 수 있습니다.
 
-ASP.NET Core 응용 프로그램이 시작될 때, 응용 프로그램을 부트스트랩 하고 구성 설정을 로드하는 등의 작업에 `Startup` 클래스가 사용됩니다. ([ASP.NET 시작에 대해 자세히 알아보기](startup.md)). 그런데, 만약 `Startup{EnvironmentName}`라는 클래스가 존재하고 (예, `StartupDevelopment`), `ASPNETCORE_ENVIRONMENT` 환경 변수의 값이 이 이름과 일치하면 해당 클래스가 `Startup` 클래스 대신 사용됩니다. 따라서 이 기능을 활용하면 우선 개발 환경을 위한 `Startup` 클래스를 구성하고, 응용 프로그램이 프로덕션에서 실행될 때 사용될 별도의 `StartupProduction` 클래스를 구성할 수 있습니다. 물론 그 반대의 경우도 마찬가지입니다.
+ASP.NET Core 응용 프로그램이 시작될 때, 응용 프로그램을 부트스트랩하고 구성 설정을 로드하는 등의 작업에 `Startup` 클래스가 사용됩니다. ([ASP.NET 시작에 대해 자세히 알아보기](startup.md)). 그런데, 만약 `Startup{EnvironmentName}`라는 클래스가 존재하고 (예, `StartupDevelopment`), `ASPNETCORE_ENVIRONMENT` 환경 변수의 값이 이 이름과 일치하면 해당 `Startup` 클래스가 대신 사용됩니다. 따라서 이 기능을 활용하면 우선 개발 환경을 위한 `Startup` 클래스를 구성하고, 응용 프로그램이 프로덕션에서 실행될 때 사용될 별도의 `StartupProduction` 클래스를 구성할 수 있습니다. 물론 그 반대의 경우도 마찬가지입니다.
 
 > [!NOTE]
 > `WebHostBuilder.UseStartup<TStartup>()`를 호출하면 구성 섹션이 재정의됩니다.
