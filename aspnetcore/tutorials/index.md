@@ -10,17 +10,17 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/index
-ms.openlocfilehash: 66f6e4542dd208a986b256acd4bd1d0381aa46c6
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: acedebaa9b89a0e00602b497d11d5612fce99a5f
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="aspnet-core-tutorials"></a>ASP.NET Core 자습서
 
 ASP.NET Core 응용 프로그램을 개발하기 위해 다음 단계별 가이드를 사용할 수 있습니다.
 
-## <a name="building-web-applications"></a>웹 응용 프로그램 빌드
+## <a name="build-web-apps"></a>웹 앱 개발
 
 [Razor 페이지](xref:mvc/razor-pages/index)는 ASP.NET Core 2.0을 사용하여 새로운 웹 UI 앱을 만드는 좋은 방법입니다.
 
@@ -38,11 +38,11 @@ ASP.NET Core 응용 프로그램을 개발하기 위해 다음 단계별 가이�
    * [Mac 또는 Linux에서 Visual Studio Code를 사용하는 웹앱](first-mvc-app-xplat/index.md)
 
 * [Visual Studio를 사용하여 ASP.NET Core 및 Entity Framework Core 시작](../data/ef-mvc/index.md)
-* [태그 도우미 작성](../mvc/views/tag-helpers/authoring.md)
+* [태그 도우미 만들기](../mvc/views/tag-helpers/authoring.md)
 * [간단한 뷰 구성 요소 만들기](../mvc/views/view-components.md#walkthrough-creating-a-simple-view-component)
-* [dotnet watch를 사용하여 ASP.NET Core 응용 프로그램 개발](dotnet-watch.md)
+* [dotnet watch를 사용하여 ASP.NET Core 앱 개발](dotnet-watch.md)
 
-## <a name="building-web-apis"></a>Web API 빌드
+## <a name="build-web-apis"></a>웹 API 개발
 * ASP.NET Core를 사용하여 Web API 만들기
 
   * [Windows용 Visual Studio를 사용하는 Web API](first-web-api.md)
@@ -50,9 +50,9 @@ ASP.NET Core 응용 프로그램을 개발하기 위해 다음 단계별 가이�
   * [Visual Studio Code를 사용하는 Web API](web-api-vsc.md)
   
 * [Swagger를 사용한 ASP.NET Core Web API 도움말 페이지](web-api-help-pages-using-swagger.md)
-* [네이티브 모바일 응용 프로그램에 대한 백 엔드 웹 서비스 만들기](../mobile/native-mobile-backend.md)
+* [네이티브 모바일 앱에 대한 백 엔드 웹 서비스 만들기](../mobile/native-mobile-backend.md)
 
-## <a name="working-with-data"></a>데이터 작업
+## <a name="data-access-and-storage"></a>데이터 액세스 및 저장소
 * [Visual Studio를 사용하여 ASP.NET Core 및 Entity Framework Core 시작](../data/ef-mvc/index.md)
 * [ASP.NET Core with EF Core - new database](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db)(ASP.NET Core 및 EF Core - 새로운 데이터베이스)
 * [ASP.NET Core with EF Core - existing database](https://docs.microsoft.com/ef/core/get-started/aspnetcore/existing-db)(ASP.NET Core 및 EF Core - 기존 데이터베이스)
@@ -66,15 +66,15 @@ ASP.NET Core 응용 프로그램을 개발하기 위해 다음 단계별 가이�
 * [Gulp 사용](../client-side/using-gulp.md)
 * [Grunt 사용](../client-side/using-grunt.md)
 * [Bower를 사용하여 클라이언트 쪽 패키지 관리](../client-side/bower.md)
-* [부트스트랩을 사용하여 아름답고 반응이 빠른 사이트 빌드](../client-side/bootstrap.md)
+* [부트스트랩을 사용하여 반응이 빠른 사이트 빌드](../client-side/bootstrap.md)
 
-## <a name="testing"></a>테스트
-* [Dotnet 테스트를 사용한 .NET Core의 단위 테스트](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
+## <a name="test"></a>테스트
+* [Dotnet 테스트를 사용한 .NET Core의 유닛 테스트](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
 
-## <a name="publishing-and-deployment"></a>게시 및 배포
+## <a name="publish-and-deploy"></a>게시 및 배포
 * [Visual Studio를 사용하여 Azure에 ASP.NET Core 웹앱 배포](publish-to-azure-webapp-using-vs.md)
 * [명령줄을 사용하여 Azure에 ASP.NET Core 웹앱 배포](publish-to-azure-webapp-using-cli.md)
-* [연속 배포를 사용하여 Azure 웹앱에 게시](../publishing/azure-continuous-deployment.md)
+* [연속 배포를 사용하여 Azure 웹앱에 게시](xref:host-and-deploy/azure-apps/azure-continuous-deployment)
 * [원격 Docker 호스트에 ASP.NET 컨테이너 배포](https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker)
 * [Nano Server의 ASP.NET Core](nano-server.md)
 * [ASP.NET Core 및 Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-add-a-web-frontend)

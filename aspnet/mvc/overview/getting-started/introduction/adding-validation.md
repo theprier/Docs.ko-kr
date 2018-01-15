@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-validation
 msc.type: authoredcontent
-ms.openlocfilehash: db09b6c947b219ce21e8f4248dcc6629c6add76c
-ms.sourcegitcommit: d1d8071d4093bf2444b5ae19d6e45c3d187e338b
+ms.openlocfilehash: 11fc0363c20b179a4d74f29c4dafed81ca692ef2
+ms.sourcegitcommit: 77b8025c30ec2fd46d85ee2a2b497c44435d3009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/19/2017
+ms.lasthandoff: 01/12/2018
 ---
 <a name="adding-validation"></a>유효성 검사 추가
 ====================
@@ -42,7 +42,7 @@ ASP.NET MVC 및 Entity Framework Code First 제공 하는 유효성 검사 지�
 
 이제 업데이트 된 `Movie` 클래스는 기본 제공 기능을 활용 하려면 [ `Required` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.requiredattribute.aspx), [ `StringLength` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx), [정규식으로](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.regularexpressionattribute.aspx), 및 [ `Range` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.rangeattribute.aspx) 유효성 검사 특성입니다. 대체는 `Movie` 다음을 사용 하 여 클래스:
 
-[!code-csharp[Main](adding-validation/samples/sample1.cs?highlight=8,22-24,30-31,37-38)]
+[!code-csharp[Main](adding-validation/samples/sample1.cs?highlight=5,13-15,18-19,22-23)]
 
 [ `StringLength` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) 특성 문자열의 최대 길이 설정 하 고 데이터베이스에이 제한을 설정, 따라서는 데이터베이스 스키마가 변경 됩니다. 마우스 오른쪽 단추로 클릭는 **동영상** 테이블에 **서버 탐색기** 클릭 **테이블 정의 열기**:
 

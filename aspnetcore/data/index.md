@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/index
-ms.openlocfilehash: bc19cbf0093e8a7f26af82d19f597cc805e04309
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: 325f95cf9ecc295f7a1c646e352b9cd496b6268e
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="working-with-data-in-aspnet-core"></a>ASP.NET Core에서 데이터 작업 
 
@@ -22,7 +22,7 @@ ms.lasthandoff: 12/14/2017
 
    * [Razor 페이지 및 EF 시작](xref:data/ef-rp/intro)
    * [만들기, 읽기, 업데이트 및 삭제 작업](xref:data/ef-rp/crud)
-   * [정렬, 필터링, 페이징 및 그룹화](xref:data/ef-rp/sort-filter-page)
+   * [정렬, 필터, 페이징 및 그룹](xref:data/ef-rp/sort-filter-page)
    * [마이그레이션](xref:data/ef-rp/migrations)
    * [복합 데이터 모델 만들기](xref:data/ef-rp/complex-data-model)
    * [관련 데이터 읽기](xref:data/ef-rp/read-related-data)
@@ -32,7 +32,7 @@ ms.lasthandoff: 12/14/2017
 *   [Visual Studio를 사용하여 ASP.NET Core MVC 및 Entity Framework Core 시작](ef-mvc/index.md)
     *   [시작](ef-mvc/intro.md)
     *   [만들기, 읽기, 업데이트 및 삭제 작업](xref:data/ef-mvc/crud)
-    *   [정렬, 필터링, 페이징 및 그룹화](xref:data/ef-mvc/sort-filter-page)
+    *   [정렬, 필터, 페이징 및 그룹](xref:data/ef-mvc/sort-filter-page)
     *   [마이그레이션](xref:data/ef-mvc/migrations)
     *   [복합 데이터 모델 만들기](ef-mvc/complex-data-model.md)
     *   [관련 데이터 읽기](ef-mvc/read-related-data.md)
@@ -47,5 +47,5 @@ ms.lasthandoff: 12/14/2017
     *   [Visual Studio 연결된 서비스를 사용하여 Azure Storage 추가](https://azure.microsoft.com/documentation/articles/vs-azure-tools-connected-services-storage/)
     *   [Azure Blob Storage 및 Visual Studio 연결된 서비스 시작](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-blobs/)
     *   [Queue Storage 및 Visual Studio 연결된 서비스 시작](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-queues/)
-    *   [Azure Table Storage 및 Visual Studio 연결된 서비스를 시작하는 방법](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-tables/)
+    *   [Azure Table Storage 및 Visual Studio 연결된 서비스 시작](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-tables/)
 

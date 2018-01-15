@@ -11,15 +11,17 @@ ms.assetid: 1abd456b-2199-4ba3-9698-3241e0bd4afc
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/index
-ms.openlocfilehash: d74254c8f2cc3ee55f6842f9f952d7ab93fe7a03
-ms.sourcegitcommit: f1436107b4c022b26f5235dddef103cec5aa6bff
+ms.openlocfilehash: 13b4e1db7e3ae73a0cba49d214c5ffdb31601e5c
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/15/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="authorization-in-aspnet-core-simple-role-claims-based-and-custom"></a>ASP.NET Core에서 권한 부여: 단순, 역할, 클레임 기반 및 사용자 지정
 
 * [소개](introduction.md)
+
+* [Razor 페이지 권한 부여](xref:security/authorization/razor-pages-authorization)
 
 * [단순 권한 부여](simple.md)
 
@@ -27,7 +29,7 @@ ms.lasthandoff: 12/15/2017
 
 * [클레임 기반 권한 부여](claims.md)
 
-* [사용자 지정 정책 기반 권한 부여](policies.md)
+* [정책 기반 권한 부여](policies.md)
 
 * [요구 사항 처리기의 종속성 주입](dependencyinjection.md)
 
