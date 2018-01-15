@@ -28,7 +28,7 @@ ms.lasthandoff: 10/01/2017
 
 ## <a name="the-developer-exception-page"></a>개발자 예외 페이지
 
-자세한 예외 정보를 보여주는 오류 페이지를 표시하도록 응용 프로그램을 구성하려면, `Microsoft.AspNetCore.Diagnostics` NuGet 패키지를 설치하고 [Startup 클래스의 Configure 메서드](startup.md)에 다음과 같은 라인을 추가합니다:
+자세한 예외 정보를 보여주는 오류 페이지를 표시하도록 응용 프로그램을 구성하려면, `Microsoft.AspNetCore.Diagnostics` NuGet 패키지를 설치하고 [Startup 클래스의 Configure 메서드](startup.md)에 다음과 같은 라인을 추가합니다.
 
 [!code-csharp[Main](error-handling/sample/Startup.cs?name=snippet_DevExceptionPage&highlight=7)]
 
@@ -55,7 +55,7 @@ ms.lasthandoff: 10/01/2017
 
 [!code-csharp[Main](error-handling/sample/Startup.cs?name=snippet_DevExceptionPage&highlight=11)]
 
-이때 MVC 앱의 경우, 오류 처리기 액션 메서드에 명시적으로 `HttpGet` 같은 HTTP 메서드 어트리뷰트를 지정하면 안됩니다. 명시적 동사를 지정하면 일부 요청이 메서드에 도달하지 못할 수도 있습니다.
+이때 MVC 앱의 경우, 오류 처리기 액션 메서드에 명시적으로 `HttpGet` 같은 HTTP 메서드 어트리뷰트를 지정하면 안 됩니다. 명시적 동사를 지정하면 일부 요청이 메서드에 도달하지 못할 수도 있습니다.
 
 ```csharp
 [Route("/Error")]
@@ -67,17 +67,17 @@ public IActionResult Index()
 
 ## <a name="configuring-status-code-pages"></a>상태 코드 페이지 구성하기
 
-기본적으로 응용 프로그램에서는 500 (내부 서버 오류) 또는 404 (찾을 수 없음) 같은 HTTP 상태 코드에 대한 자세한 상태 코드 페이지를 제공하지 않습니다. 그러나 `Configure` 메서드에 다음과 같은 라인을 추가해서 `StatusCodePagesMiddleware`를 구성할 수 있습니다:
+기본적으로 응용 프로그램에서는 500 (내부 서버 오류) 또는 404 (찾을 수 없음) 같은 HTTP 상태 코드에 대한 자세한 상태 코드 페이지를 제공하지 않습니다. 그러나 `Configure` 메서드에 다음과 같은 라인을 추가해서 `StatusCodePagesMiddleware`를 구성할 수 있습니다.
 
 ```csharp
 app.UseStatusCodePages();
 ```
 
-이 미들웨어는 기본적으로 404 같은 일반적인 상태 코드에 대한 단순한 텍스트 전용 처리기를 추가합니다:
+이 미들웨어는 기본적으로 404 같은 일반적인 상태 코드에 대한 단순한 텍스트 전용 처리기를 추가합니다.
 
 ![404 페이지](error-handling/_static/default-404-status-code.png)
 
-이 미들웨어는 몇 가지 다른 확장 메서드도 지원합니다. 그 중 한 버전은 람다 식을 전달받고, 또 다른 버전은 콘텐츠 형식 및 서식 문자열을 전달받습니다. 
+이 미들웨어는 몇 가지 다른 확장 메서드도 지원합니다. 그중 한 버전은 람다 식을 전달받고, 또 다른 버전은 콘텐츠 형식 및 서식 문자열을 전달받습니다.  
 
 [!code-csharp[Main](error-handling/sample/Startup.cs?name=snippet_StatusCodePages)]
 
@@ -93,7 +93,7 @@ app.UseStatusCodePages("text/plain", "Status code page, status code: {0}");
 app.UseStatusCodePagesWithReExecute("/error/{0}");
 ```
 
-특정 요청에 대해 상태 코드 페이지를 비활성시키고 싶다면, 다음과 같이 처리할 수 있습니다:
+특정 요청에 대해 상태 코드 페이지를 비활성시키고 싶다면, 다음과 같이 처리할 수 있습니다.
 
 ```csharp
 var statusCodePagesFeature = context.Features.Get<IStatusCodePagesFeature>();
@@ -107,7 +107,7 @@ if (statusCodePagesFeature != null)
 
 예외 처리 페이지의 코드에서도 예외는 발생할 수 있습니다. 따라서 프로덕션 오류 페이지는 순수한 정적 콘텐츠로 구성하는 것도 좋습니다. 
 
-또한, 일단 응답 헤더를 전송하고 나면 응답의 상태 코드를 변경할 수 없으며, 어떠한 예외 페이지나 처리기도 실행될 수 없다는 점을 인지하고 있어야 합니다. 해당 응답은 완료되거나 연결 중단되어야 합니다.
+또한, 일단 응답 헤더를 전송하고 나면 응답의 상태 코드를 변경할 수 없으며, 어떠한 예외 페이지나 처리기도 실행될 수 없음에 유의하세요. 해당 응답은 완료되거나 연결 중단되어야 합니다.
 
 ## <a name="server-exception-handling"></a>서버 예외 처리
 
