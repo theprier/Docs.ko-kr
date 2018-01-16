@@ -21,14 +21,14 @@ ms.lasthandoff: 01/03/2018
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-데이터 보호 시스템이 초기화 될 때, 운영 환경에 따른 [기본 설정](xref:security/data-protection/configuration/default-settings)이 적용됩니다. 대부분 이런 기본 설정은 단일 컴퓨터에서 실행되는 응용 프로그램에 적합합니다. 그러나 때로는 응용 프로그램이 여러 컴퓨터에 분산되어 배포되기 때문에, 또는 규정을 준수하기 위해서 개발자가 설정을 변경해야 하는 경우도 존재하며, 데이터 보호 시스템은 이런 시나리오를 지원하기 위한 풍부한 API를 제공합니다.
+데이터 보호 시스템이 초기화 될 때, 운영 환경에 따른 [기본 설정](xref:security/data-protection/configuration/default-settings)이 적용됩니다. 대부분 이런 기본 설정은 단일 컴퓨터에서 실행되는 앱에 적합합니다. 그러나 때로는 앱이 여러 컴퓨터에 분산되어 배포되기 때문에, 또는 규정을 준수하기 위해서 개발자가 설정을 변경해야 하는 경우도 존재하며, 데이터 보호 시스템은 이런 시나리오를 지원하기 위한 풍부한 구성 API를 제공합니다. 
 
 [IDataProtectionBuilder](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotectionbuilder)를 반환하는 [AddDataProtection](/dotnet/api/microsoft.extensions.dependencyinjection.dataprotectionservicecollectionextensions.adddataprotection) 확장 메서드가 제공되는데, `IDataProtectionBuilder`는 함께 연이어 호출해서 데이터 보호 옵션을 구성할 수 있는 확장 메서드들을 노출합니다.
 
 
 ## <a name="persistkeystofilesystem"></a>PersistKeysToFileSystem
 
-기본 위치인 *%LOCALAPPDATA%* 대신 UNC 공유에 키를 저장하려면 [PersistKeysToFileSystem](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.persistkeystofilesystem)을 이용해서 다음과 같이 시스템을 구성합니다:
+기본 위치인 *%LOCALAPPDATA%* 대신 UNC 공유에 키를 저장하려면 [PersistKeysToFileSystem](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.persistkeystofilesystem)을 이용해서 다음과 같이 시스템을 구성합니다.
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -43,7 +43,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ## <a name="protectkeyswith"></a>ProtectKeysWith\*
 
-[ProtectKeysWith\*](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions) 구성 API들 중 하나를 호출하면 시스템이 저장된 비활성 키를 보호하도록 구성할 수 있습니다. 다음 예제는 키를 UNC 공유에 저장하고 특정 X.509 인증서를 이용해서 저장된 비활성 키를 암호화합니다:
+[ProtectKeysWith\*](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions) 구성 API들 중 하나를 호출하면 시스템이 저장된 비활성 키를 보호하도록 구성할 수 있습니다. 다음 예제는 키를 UNC 공유에 저장하고 특정 X.509 인증서를 이용해서 저장된 비활성 키를 암호화합니다.
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -58,7 +58,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ## <a name="setdefaultkeylifetime"></a>SetDefaultKeyLifetime
 
-키의 기본 수명인 90일 대신 14일의 키 수명을 사용하도록 시스템을 구성하려면 [SetDefaultKeyLifetime](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.setdefaultkeylifetime)을 사용합니다:
+키의 기본 수명인 90일 대신 14일의 키 수명을 사용하도록 시스템을 구성하려면 [SetDefaultKeyLifetime](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.setdefaultkeylifetime)을 사용합니다.
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -70,7 +70,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ## <a name="setapplicationname"></a>SetApplicationName
 
-데이터 보호 시스템은 기본적으로 응용 프로그램들이 동일한 물리적 키 저장소를 공유하는 경우에도 응용 프로그램들을 서로 격리합니다. 따라서 응용 프로그램들은 서로 다른 응용 프로그램이 보호한 페이로드를 이해할 수 없습니다. 서로 다른 두 응용 프로그램 간에 보호된 페이로드를 공유하려면, 각 응용 프로그램 모두에서 [SetApplicationName](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.setapplicationname)을 이용해서 동일한 응용 프로그램 이름을 전달하여 시스템을 구성해야 합니다:
+데이터 보호 시스템은 기본적으로 앱들이 동일한 물리적 키 저장소를 공유하는 경우에도 앱들을 서로 격리합니다. 따라서 앱들은 서로 다른 앱이 보호한 페이로드를 이해할 수 없습니다. 서로 다른 두 앱 간에 보호된 페이로드를 공유하려면, 각 앱 모두에서 [SetApplicationName](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.setapplicationname)을 이용해서 동일한 앱 이름을 전달하여 시스템을 구성해야 합니다.
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -82,7 +82,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ## <a name="disableautomatickeygeneration"></a>DisableAutomaticKeyGeneration
 
-키 만료가 다가오더라도 응용 프로그램이 자동으로 키를 롤링하지 않도록 (새로운 키를 생성하지 않도록) 구성해야 하는 시나리오도 있을 수 있습니다. 한 가지 사례는 응용 프로그램들이 주/보조 관계를 갖도록 설정되어 있어서 주 응용 프로그램만 키 관리 작업을 수행하고 나머지 모든 보조 응용 프로그램들은 단순히 키 링의 읽기 전용 뷰만 갖고 있는 경우입니다. 그런 경우에는 [DisableAutomaticKeyGeneration](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.disableautomatickeygeneration)으로 보조 응용 프로그램은 키 링을 읽기 전용으로만 처리하도록 시스템을 구성할 수 있습니다:
+키 만료가 다가오더라도 앱이 자동으로 키를 롤링하지 않도록 (새로운 키를 생성하지 않도록) 구성해야 하는 시나리오도 있을 수 있습니다. 한 가지 사례는 앱들이 주/보조 관계를 갖도록 설정되어 있어서 주 앱만 키 관리 작업을 수행하고 나머지 모든 보조 앱들은 단순히 키 링의 읽기 전용 뷰만 갖고 있는 경우입니다. 그런 경우에는 [DisableAutomaticKeyGeneration](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.disableautomatickeygeneration)으로 보조 앱은 키 링을 읽기 전용으로만 처리하도록 시스템을 구성할 수 있습니다.
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -94,23 +94,23 @@ public void ConfigureServices(IServiceCollection services)
 
 ## <a name="per-application-isolation"></a>응용 프로그램 격리
 
-ASP.NET Core 호스트에 의해서 데이터 보호 시스템이 제공되는 경우, 여러 응용 프로그램이 동일한 작업자 프로세스 계정으로 실행되고 동일한 마스터 키 관련 자료를 사용하더라도 서로 자동으로 격리됩니다. 이런 특징은 System.Web의  **\<machineKey >** 요소에서 제공되는 IsolateApps 한정자의 동작과 다소 유사합니다.
+ASP.NET Core 호스트에 의해서 데이터 보호 시스템이 제공되는 경우, 여러 앱이 동일한 작업자 프로세스 계정으로 실행되고 동일한 마스터 키 관련 자료를 사용하더라도 서로 자동으로 격리됩니다. 이런 특징은 System.Web의 **\<machineKey >** 요소에서 제공되는 IsolateApps 한정자의 동작과 다소 유사합니다. 
 
-이 격리 메커니즘은 로컬 컴퓨터의 각 응용 프로그램들을 고유한 테넌트로 간주하는 방식으로 동작하며, 따라서 해당하는 모든 응용 프로그램에 루트로 제공되는 [IDataProtector](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotector)에는 자동으로 응용 프로그램 ID가 판별자로 포함됩니다. 여기에 사용되는 응용 프로그램 고유 ID는 다음 두 가지 방법 중 한 가지 방식으로 얻어집니다:
+이 격리 메커니즘은 로컬 컴퓨터의 각 응용 프로그램들을 고유한 테넌트로 간주하는 방식으로 동작하며, 따라서 해당하는 모든 응용 프로그램에 루트로 제공되는 [IDataProtector](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotector)에는 자동으로 응용 프로그램 ID가 판별자로 포함됩니다. 여기에 사용되는 응용 프로그램 고유 ID는 다음 두 가지 방법 중 한 가지 방식으로 얻어집니다.
 
-1. 응용 프로그램이 IIS에서 호스트 될 경우, 응용 프로그램의 구성 경로가 고유 식별자로 사용됩니다. 만약 응용 프로그램이 팜 환경에 배포된다면 팜에 포함된 모든 컴퓨터 간에 IIS 환경이 비슷하게 구성되었다는 전제 하에 이 값이 일정해야 합니다.
+1. 응용 프로그램이 IIS에서 호스트 될 경우, 응용 프로그램의 구성 경로가 고유 식별자로 사용됩니다. 만약 응용 프로그램이 팜 환경에 배포된다면 팜에 포함된 모든 컴퓨터 간에 IIS 환경이 비슷하게 구성되었다는 전제하에 이 값이 일정해야 합니다. 
 
 2. 응용 프로그램이 IIS에서 호스트 되지 않을 경우, 응용 프로그램의 물리적 경로가 고유 식별자로 사용됩니다.
 
 고유 식별자는 개별 응용 프로그램 및 컴퓨터 자체가 재설정되더라도 유지되도록 설계되었습니다.
 
-이 격리 메커니즘은 응용 프로그램에 악의적인 의사가 없음을 전제로 합니다. 악의적인 응용 프로그램은 언제든지 동일한 작업자 프로세스 계정으로 동작하는 다른 모든 응용 프로그램에 영향을 미칠 수 있습니다. 응용 프로그램들 간에 서로 신뢰할 수 없는 공유 호스팅 환경에서는 호스팅 공급자가 응용 프로그램의 기본 키 저장소를 분리하는 등, OS 수준에서 응용 프로그램 간에 격리를 담보할 수 있는 조취를 취해야만 합니다.
+이 격리 메커니즘은 응용 프로그램에 악의적인 의사가 없음을 전제로 합니다. 악의적인 응용 프로그램은 언제든지 동일한 작업자 프로세스 계정으로 동작하는 다른 모든 응용 프로그램에 영향을 미칠 수 있습니다. 응용 프로그램들 간에 서로 신뢰할 수 없는 공유 호스팅 환경에서는 호스팅 공급자가 응용 프로그램의 기본 키 저장소를 분리하는 등, OS 수준에서 응용 프로그램 간에 격리를 담보할 수 있는 조치를 취해야만 합니다. 
 
 데이터 보호 시스템이 ASP.NET Core 호스트에 의해 제공되지 않는 경우에는 (가령, 개발자가 직접 구체적인 `DataProtectionProvider` 형식을 이용해서 인스턴스를 생성하는 등), 자동으로 응용 프로그램 격리가 비활성화되며 적절한 [용도](xref:security/data-protection/consumer-apis/purpose-strings)를 제공하기만 하면 동일한 키 관련 자료를 사용하는 모든 응용 프로그램들 간에 페이로드를 공유할 수 있습니다. 이런 환경에서 응용 프로그램 간 격리를 제공하려면 앞에서 살펴본 예제처럼 구성 개체의 [SetApplicationName](#setapplicationname) 메서드를 호출하면 됩니다.
 
 ## <a name="changing-algorithms-with-usecryptographicalgorithms"></a>UseCryptographicAlgorithms으로 알고리즘 변경하기
 
-새로 생성된 키에 의해 사용되는 데이터 보호 스택의 기본 알고리즘을 변경할 수도 있습니다. 이 작업을 수행하는 가장 간단한 방법은 구성 콜백에서 [UseCryptographicAlgorithms](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.usecryptographicalgorithms)을 호출하는 것입니다:
+새로 생성된 키에 의해 사용되는 데이터 보호 스택의 기본 알고리즘을 변경할 수도 있습니다. 이 작업을 수행하는 가장 간단한 방법은 구성 콜백에서 [UseCryptographicAlgorithms](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.usecryptographicalgorithms)을 호출하는 것입니다.
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
@@ -142,7 +142,7 @@ EncryptionAlgorithm 및 ValidationAlgorithm의 기본값은 각각 AES-256-CBC�
 
 `UseCryptographicAlgorithms`을 호출하면 미리 제공되는 목록 중에서 원하는 알고리즘을 지정할 수 있습니다. 개발자는 알고리즘 구현을 걱정할 필요가 없습니다. 위의 시나리오에서 데이터 보호 시스템이 Windows에서 실행 중이라면 AES의 CNG 구현을 사용하려고 시도하고, 그렇지 않으면 관리되는 [System.Security.Cryptography.Aes](/dotnet/api/system.security.cryptography.aes) 클래스로 대체됩니다.
 
-[UseCustomCryptographicAlgorithms](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.usecustomcryptographicalgorithms)을 호출해서 원하는 구현을 직접 수작업으로 지정할 수도 있습니다.
+[UseCustomCryptographicAlgorithms](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.usecustomcryptographicalgorithms)를 호출해서 원하는 구현을 직접 지정할 수도 있습니다. 
 
 > [!TIP]
 > 알고리즘을 변경하더라도 키 링에 존재하는 기존 키에는 영향을 주지 않습니다. 알고리즘 변경은 새로 생성되는 키에만 영향을 줍니다.
@@ -151,7 +151,7 @@ EncryptionAlgorithm 및 ValidationAlgorithm의 기본값은 각각 AES-256-CBC�
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-관리되는 사용자 지정 알고리즘을 지정하려면, 구현 형식을 가리키는 [ManagedAuthenticatedEncryptorConfiguration](/dotnet/api/microsoft.aspnetcore.dataprotection.authenticatedencryption.configurationmodel.managedauthenticatedencryptorconfiguration)의 인스턴스를 생성합니다:
+관리되는 사용자 지정 알고리즘을 지정하려면, 구현 형식을 가리키는 [ManagedAuthenticatedEncryptorConfiguration](/dotnet/api/microsoft.aspnetcore.dataprotection.authenticatedencryption.configurationmodel.managedauthenticatedencryptorconfiguration)의 인스턴스를 생성합니다.
 
 ```csharp
 serviceCollection.AddDataProtection()
@@ -171,7 +171,7 @@ serviceCollection.AddDataProtection()
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-관리되는 사용자 지정 알고리즘을 지정하려면, 구현 형식을 가리키는 [ManagedAuthenticatedEncryptionSettings](/dotnet/api/microsoft.aspnetcore.dataprotection.authenticatedencryption.managedauthenticatedencryptionsettings)의 인스턴스를 생성합니다:
+관리되는 사용자 지정 알고리즘을 지정하려면, 구현 형식을 가리키는 [ManagedAuthenticatedEncryptionSettings](/dotnet/api/microsoft.aspnetcore.dataprotection.authenticatedencryption.managedauthenticatedencryptionsettings)의 인스턴스를 생성합니다.
 
 ```csharp
 serviceCollection.AddDataProtection()
@@ -199,7 +199,7 @@ serviceCollection.AddDataProtection()
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-CBC 모드 암호화 + HMAC 유효성 검사를 사용하는 사용자 지정 Windows CNG 알고리즘을 지정하려면, 알고리즘 정보를 담고 있는 [CngCbcAuthenticatedEncryptorConfiguration](/dotnet/api/microsoft.aspnetcore.dataprotection.authenticatedencryption.configurationmodel.cngcbcauthenticatedencryptorconfiguration)의 인스턴스를 생성합니다:
+CBC 모드 암호화 + HMAC 유효성 검사를 사용하는 사용자 지정 Windows CNG 알고리즘을 지정하려면, 알고리즘 정보를 담고 있는 [CngCbcAuthenticatedEncryptorConfiguration](/dotnet/api/microsoft.aspnetcore.dataprotection.authenticatedencryption.configurationmodel.cngcbcauthenticatedencryptorconfiguration)의 인스턴스를 생성합니다.
 
 ```csharp
 services.AddDataProtection()
@@ -221,7 +221,7 @@ services.AddDataProtection()
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-CBC 모드 암호화 + HMAC 유효성 검사를 사용하는 사용자 지정 Windows CNG 알고리즘을 지정하려면, 알고리즘 정보를 담고 있는 [CngCbcAuthenticatedEncryptionSettings](/dotnet/api/microsoft.aspnetcore.dataprotection.authenticatedencryption.cngcbcauthenticatedencryptionsettings)의 인스턴스를 생성합니다:
+CBC 모드 암호화 + HMAC 유효성 검사를 사용하는 사용자 지정 Windows CNG 알고리즘을 지정하려면, 알고리즘 정보를 담고 있는 [CngCbcAuthenticatedEncryptionSettings](/dotnet/api/microsoft.aspnetcore.dataprotection.authenticatedencryption.cngcbcauthenticatedencryptionsettings)의 인스턴스를 생성합니다.
 
 ```csharp
 services.AddDataProtection()
@@ -248,7 +248,7 @@ services.AddDataProtection()
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-갈루아(Galois)/카운터 모드 암호화 + 유효성 검사를 사용하는 사용자 지정 Windows CNG 알고리즘을 지정하려면, 알고리즘 정보를 담고 있는 [CngGcmAuthenticatedEncryptorConfiguration](/dotnet/api/microsoft.aspnetcore.dataprotection.authenticatedencryption.configurationmodel.cnggcmauthenticatedencryptorconfiguration)의 인스턴스를 생성합니다:
+갈루아(Galois)/카운터 모드 암호화 + 유효성 검사를 사용하는 사용자 지정 Windows CNG 알고리즘을 지정하려면, 알고리즘 정보를 담고 있는 [CngGcmAuthenticatedEncryptorConfiguration](/dotnet/api/microsoft.aspnetcore.dataprotection.authenticatedencryption.configurationmodel.cnggcmauthenticatedencryptorconfiguration)의 인스턴스를 생성합니다.
 
 ```csharp
 services.AddDataProtection()
@@ -266,7 +266,7 @@ services.AddDataProtection()
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-갈루아(Galois)/카운터 모드 암호화 + 유효성 검사를 사용하는 사용자 지정 Windows CNG 알고리즘을 지정하려면, 알고리즘 정보를 담고 있는 [CngGcmAuthenticatedEncryptionSettings](/dotnet/api/microsoft.aspnetcore.dataprotection.authenticatedencryption.cnggcmauthenticatedencryptionsettings)의 인스턴스를 생성합니다:
+갈루아(Galois)/카운터 모드 암호화 + 유효성 검사를 사용하는 사용자 지정 Windows CNG 알고리즘을 지정하려면, 알고리즘 정보를 담고 있는 [CngGcmAuthenticatedEncryptionSettings](/dotnet/api/microsoft.aspnetcore.dataprotection.authenticatedencryption.cnggcmauthenticatedencryptionsettings)의 인스턴스를 생성합니다.
 
 ```csharp
 services.AddDataProtection()
@@ -291,12 +291,12 @@ services.AddDataProtection()
 
 기본적인 API로 제공되지는 않지만 데이터 보호 시스템은 거의 모든 유형의 알고리즘을 지정할 수 있도록 충분한 확장이 가능합니다. 예를 들어서, 하드웨어 보안 모듈 (HSM) 내에 포함된 모든 키들을 유지하고, 핵심 암호화 및 복호화 루틴의 사용자 지정 구현을 제공하는 것도 가능합니다. 보다 자세한 정보는 [핵심 암호화 확장성(Core Cryptography Extensibility)](xref:security/data-protection/extensibility/core-crypto)의 [IAuthenticatedEncryptor](/dotnet/api/microsoft.aspnetcore.dataprotection.authenticatedencryption.iauthenticatedencryptor) 절을 참고하시기 바랍니다.
 
-## <a name="persisting-keys-when-hosting-in-a-docker-container"></a>Docker 컨테이너에서 호스팅 할 때 키 유지하기
+## <a name="persisting-keys-when-hosting-in-a-docker-container"></a>Docker 컨테이너에서 호스팅할 때 키 유지하기 
 
-[Docker](/dotnet/standard/microservices-architecture/container-docker-introduction/) 컨테이너에서 호스팅 할 경우, 다음 중 한 곳에 키를 저장해야 합니다:
+[Docker](/dotnet/standard/microservices-architecture/container-docker-introduction/) 컨테이너에서 호스팅할 경우, 다음 중 한 곳에 키를 저장해야 합니다.
 
-* 공유 볼륨이나 호스트 탑재 볼륨 같이 컨테이너의 수명과 무관하게 유지되는 Docker 볼륨의 폴더.
-* [Azure 키 자격 증명 모음](https://azure.microsoft.com/services/key-vault/) 또는 [Redis](https://redis.io/)와 같은 외부 공급자.
+* 공유 볼륨이나 호스트 탑재 볼륨 같이 컨테이너의 수명과 무관하게 유지되는 Docker 볼륨의 폴더
+* [Azure 키 자격 증명 모음](https://azure.microsoft.com/services/key-vault/) 또는 [Redis](https://redis.io/)와 같은 외부 공급자
 
 ## <a name="see-also"></a>참고자료
 
