@@ -25,9 +25,9 @@ ms.lasthandoff: 10/02/2017
 
 [예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/middleware/sample) ([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
-## <a name="what-is-middleware"></a>미들웨어
+## <a name="what-is-middleware"></a>미들웨어란?
 
-미들웨어는 응용 프로그램의 파이프라인으로 조립되어 요청 및 응답을 처리하는 소프트웨어입니다. 각 구성 요소는:
+미들웨어는 응용 프로그램의 파이프라인으로 조립되어 요청 및 응답을 처리하는 소프트웨어입니다. 각 구성 요소는.
 
 * 파이프라인의 다음 구성 요소로 요청을 전달할지 여부를 선택합니다.
 * 파이프라인의 다음 구성 요소가 호출되기 이전 및 이후에 특정 동작을 수행할 수 있습니다. 
@@ -40,7 +40,7 @@ ms.lasthandoff: 10/02/2017
 
 ## <a name="creating-a-middleware-pipeline-with-iapplicationbuilder"></a>IApplicationBuilder로 미들웨어 파이프라인 생성하기
 
-ASP.NET Core의 요청 파이프라인은 다음 다이어그램에서 볼 수 있는 것처럼, 순차적으로 다른 요청 대리자를 호출하는 일련의 요청 대리자들로 구성됩니다 (실행 흐름은 검은색 화살표를 따릅니다):
+ASP.NET Core의 요청 파이프라인은 다음 다이어그램에서 볼 수 있는 것처럼, 순차적으로 다른 요청 대리자를 호출하는 일련의 요청 대리자들로 구성됩니다 (실행 흐름은 검은색 화살표를 따릅니다).
 
 ![요청이 전달되고, 세 가지 미들웨어를 통해서 처리된 다음, 응용 프로그램에서 응답이 나가는 요청 처리 패턴을 보여줍니다. 각각의 미들웨어는 자신의 로직을 실행하고 next() 구문을 통해서 다음 미들웨어로 요청을 전달합니다. 세 번째 미들웨어가 요청을 처리하고 나면, 클라이언트에 대한 응답이 응용 프로그램을 떠나기 전에, 다시 차례대로 next () 구문 이후의 추가적인 처리를 위해, 이전 두 개의 미들웨어를 통해서 다시 전달됩니다.](middleware/_static/request-delegate-pipeline.png)
 
@@ -52,12 +52,12 @@ ASP.NET Core의 요청 파이프라인은 다음 다이어그램에서 볼 수 �
 
 이 첫 번째 [app.Run](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.runextensions) 대리자는 파이프라인을 그대로 종료합니다.
 
-반면 [app.Use](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.useextensions)를 사용하면 다수의 요청 대리자를 서로 연결할 수 있습니다. 이때, `next` 매개 변수는 파이프라인의 다음 대리자를 나타냅니다. (*next* 매개 변수를 *호출하지 않음*으로써 파이프라인을 중단하고 빠져나갈 수 있다는 점을 기억해두시기 바랍니다.) 다음 예제에서 볼 수 있는 것처럼, 일반적으로 다음 대리자를 호출하기 전과 후에 필요한 작업을 수행합니다:
+반면 [app.Use](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.useextensions)를 사용하면 다수의 요청 대리자를 서로 연결할 수 있습니다. 이때, `next` 매개 변수는 파이프라인의 다음 대리자를 나타냅니다. (*next* 매개 변수를 *호출하지 않음*으로써 파이프라인을 중단하고 빠져나갈 수 있다는 점을 기억해두시기 바랍니다.) 다음 예제에서 볼 수 있는 것처럼, 일반적으로 다음 대리자를 호출하기 전과 후에 필요한 작업을 수행합니다.
 
 [!code-csharp[Main](middleware/sample/Chain/Startup.cs?name=snippet1)]
 
 >[!WARNING]
-> 일단 응답이 클라이언트로 전송된 후에는 `next.Invoke`를 호출하면 안됩니다. 응답이 전송되기 시작된 뒤에 `HttpResponse`를 변경하면 예외가 발생합니다. 예를 들어, 헤더나 상태 코드 등을 설정하면 예외가 발생합니다. 또한 `next`를 호출한 뒤에 응답 본문을 작성하면:
+> 일단 응답이 클라이언트로 전송된 후에는 `next.Invoke`를 호출하면 안됩니다. 응답이 전송되기 시작된 뒤에 `HttpResponse`를 변경하면 예외가 발생합니다. 예를 들어, 헤더나 상태 코드 등을 설정하면 예외가 발생합니다. 또한 `next`를 호출한 뒤에 응답 본문을 작성하면 다음과 같은 사항이 발생합니다.
 > - 프로토콜 위반이 발생할 수 있습니다. 예를 들어, 명시된 `content-length`보다 긴 내용이 작성될 수 있습니다.
 > - 본문의 형식이 손상될 수 있습니다. 예를 들어, CSS 파일에 HTML 바닥글이 작성될 수 있습니다.
 >
@@ -147,7 +147,7 @@ HTTP 파이프라인은 `Use`, `Run`, 및 `Map`을 이용해서 구성합니다.
 
 [!code-csharp[Main](middleware/sample/Chain/StartupMap.cs?name=snippet1)]
 
-다음 표는 위의 코드를 사용할 경우, `http://localhost:1234`에 대한 요청 및 응답을 보여줍니다:
+다음 표는 위의 코드를 사용할 경우, `http://localhost:1234`에 대한 요청 및 응답을 보여줍니다.
 
 | 요청 | 응답 |
 | --- | --- |
@@ -158,18 +158,18 @@ HTTP 파이프라인은 `Use`, `Run`, 및 `Map`을 이용해서 구성합니다.
 
 `Map`을 사용하면, 각 요청마다 일치하는 경로 세그먼트가 `HttpRequest.Path`에서 제거되고 `HttpRequest.PathBase`에 추가됩니다.
 
-[MapWhen](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mapwhenextensions)은 지정한 조건자의 결과에 따라서 요청 파이프라인을 분기합니다. `Func<HttpContext, bool>` 형식의 조건자를 지정해서 파이프라인의 새로운 분기로 요청을 맵핑할 수 있습니다. 다음 예제는 조건자를 이용해서 `branch`라는 쿼리 문자열 변수가 존재하는지 여부를 감지합니다:
+[MapWhen](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mapwhenextensions)은 지정한 조건자의 결과에 따라서 요청 파이프라인을 분기합니다. `Func<HttpContext, bool>` 형식의 조건자를 지정해서 파이프라인의 새로운 분기로 요청을 맵핑할 수 있습니다. 다음 예제는 조건자를 이용해서 `branch`라는 쿼리 문자열 변수가 존재하는지 여부를 감지합니다.
 
 [!code-csharp[Main](middleware/sample/Chain/StartupMapWhen.cs?name=snippet1)]
 
-다음 표는 위의 코드를 사용할 경우, `http://localhost:1234`에 대한 요청 및 응답을 보여줍니다:
+다음 표는 위의 코드를 사용할 경우, `http://localhost:1234`에 대한 요청 및 응답을 보여줍니다.
 
 | 요청 | 응답 |
 | --- | --- |
 | localhost:1234 | Hello from non-Map delegate. |
 | localhost:1234/?branch=master | Branch used = master |
 
-다음 예제와 같이 `Map`은 중첩도 지원합니다:
+다음 예제와 같이 `Map`은 중첩도 지원합니다.
 
 ```csharp
 app.Map("/level1", level1App => {
@@ -184,7 +184,7 @@ app.Map("/level1", level1App => {
    });
    ```
 
-`Map`은 한 번에 여러 단계로 구성된 세그먼트도 지원합니다:
+`Map`은 한 번에 여러 단계로 구성된 세그먼트도 지원합니다.
 
  ```csharp
 app.Map("/level1/level2", HandleMultiSeg);
@@ -192,7 +192,7 @@ app.Map("/level1/level2", HandleMultiSeg);
 
 ## <a name="built-in-middleware"></a>기본 제공 미들웨어
 
-ASP.NET Core는 기본적으로 다음과 같은 미들웨어 구성 요소를 제공합니다:
+ASP.NET Core는 기본적으로 다음과 같은 미들웨어 구성 요소를 제공합니다.
 
 | 미들웨어 | 설명 |
 | ----- | ------- |
@@ -209,7 +209,7 @@ ASP.NET Core는 기본적으로 다음과 같은 미들웨어 구성 요소를 �
 
 ## <a name="writing-middleware"></a>미들웨어 구현하기
 
-일반적으로 미들웨어는 클래스로 캡슐화되어 확장 메서드와 함께 제공됩니다. 쿼리 문자열에 지정된 정보를 이용해서 현재 요청에 대한 문화권을 설정하는 다음 미들웨어를 살펴보시기 바랍니다:
+일반적으로 미들웨어는 클래스로 캡슐화되어 확장 메서드와 함께 제공됩니다. 쿼리 문자열에 지정된 정보를 이용해서 현재 요청에 대한 문화권을 설정하는 다음 미들웨어를 살펴보시기 바랍니다.
 
 [!code-csharp[Main](middleware/sample/Culture/StartupCulture.cs?name=snippet1)]
 
@@ -217,15 +217,15 @@ ASP.NET Core는 기본적으로 다음과 같은 미들웨어 구성 요소를 �
 
 `http://localhost:7997/?culture=no` 같이 쿼리 문자열에 문화권을 지정해서 미들웨어를 테스트해 볼 수 있습니다.
 
-계속해서 다음 코드는 이 미들웨어 대리자를 클래스로 구현한 것입니다:
+계속해서 다음 코드는 이 미들웨어 대리자를 클래스로 구현한 것입니다.
 
 [!code-csharp[Main](middleware/sample/Culture/RequestCultureMiddleware.cs)]
 
-그리고 다음 확장 메서드는 [IApplicationBuilder](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.iapplicationbuilder)를 통해서 이 미들웨어를 노출합니다:
+그리고 다음 확장 메서드는 [IApplicationBuilder](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.iapplicationbuilder)를 통해서 이 미들웨어를 노출합니다.
 
 [!code-csharp[Main](middleware/sample/Culture/RequestCultureMiddlewareExtensions.cs)]
 
-마지막으로 다음 코드는 `Configure` 메서드에서 미들웨어를 호출합니다:
+마지막으로 다음 코드는 `Configure` 메서드에서 미들웨어를 호출합니다.
 
 [!code-csharp[Main](middleware/sample/Culture/Startup.cs?name=snippet1&highlight=5)]
 
@@ -235,7 +235,7 @@ ASP.NET Core는 기본적으로 다음과 같은 미들웨어 구성 요소를 �
 
 ### <a name="per-request-dependencies"></a>요청별 종속성
 
-미들웨어는 매번 요청이 전달될 때가 아닌, 응용 프로그램이 구동되는 시점에 생성되기 때문에, 미들웨어 생성자에 의해서 사용되는 *범위(Scoped)* 수명 서비스는 각 요청 동안 주입된 다른 종속성 형식과 공유되지 않습니다. 미들웨어와 다른 형식 간에 *범위* 서비스를 공유해야 한다면, 해당 서비스를 `Invoke` 메서드의 시그니처에 추가하십시오. 다음 예제와 같이 `Invoke` 메서드는 종속성 주입으로 만들어진 추가적인 매개 변수를 전달받을 수 있습니다:
+미들웨어는 매번 요청이 전달될 때가 아닌, 응용 프로그램이 구동되는 시점에 생성되기 때문에, 미들웨어 생성자에 의해서 사용되는 *범위(Scoped)* 수명 서비스는 각 요청 동안 주입된 다른 종속성 형식과 공유되지 않습니다. 미들웨어와 다른 형식 간에 *범위* 서비스를 공유해야 한다면, 해당 서비스를 `Invoke` 메서드의 시그니처에 추가하십시오. 다음 예제와 같이 `Invoke` 메서드는 종속성 주입으로 만들어진 추가적인 매개 변수를 전달받을 수 있습니다.
 
 ```c#
 public class MyMiddleware
