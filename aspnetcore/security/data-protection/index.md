@@ -11,11 +11,11 @@ ms.assetid: 1f402da8-1052-4970-9835-9f9f16a02dbc
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/index
-ms.openlocfilehash: 8b42e65bb6121355120a6f4fbe8cd4d1fea153de
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cbf18c6ec867fefec22980f3e3493562594ef72d
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="data-protection-in-aspnet-core-consumer-apis-configuration-extensibility-apis-and-implementation"></a>ASP.NET Core에서 데이터 보호: 소비자 API, 구성, 확장성 API 및 구현
 
@@ -43,7 +43,7 @@ ms.lasthandoff: 11/10/2017
 
   * [기본 설정](configuration/default-settings.md)
 
-  * [컴퓨터 수준 정책](configuration/machine-wide-policy.md)
+  * [컴퓨터 수준의 정책](configuration/machine-wide-policy.md)
 
   * [비 DI 인식 시나리오](configuration/non-di-scenarios.md)
 
@@ -77,6 +77,6 @@ ms.lasthandoff: 11/10/2017
 
 * [호환성](compatibility/index.md)
 
-  * [응용프로그램 쿠키 공유](compatibility/cookie-sharing.md)
+  * [앱 간에 쿠키 공유](compatibility/cookie-sharing.md)
 
   * [ASP.NET에서 <machineKey> 바꾸기](compatibility/replacing-machinekey.md)

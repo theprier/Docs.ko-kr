@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/logging/index
-ms.openlocfilehash: 737de614625ce560df1c3d7cfd9810f9433c153d
-ms.sourcegitcommit: f1436107b4c022b26f5235dddef103cec5aa6bff
+ms.openlocfilehash: 3eb167c961b8d089d508ef5622db6ae1cdd99088
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/15/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="introduction-to-logging-in-aspnet-core"></a>ASP.NET Core에 로그인 소개
 
@@ -56,7 +56,7 @@ ASP.NET Core는 비동기 로거 메서드를 제공하지 않습니다. 비동�
 
 [!code-csharp[](index/sample2/Program.cs?name=snippet_ExpandDefault&highlight=16,17)]
 
-기본 프로젝트 템플릿은 이전 코드에서 살펴본 방식에 따라 로깅을 설정하지만, `ConfigureLogging` 호출은 `CreateDefaultBuilder` 메서드를 통해 수행됩니다. 다음은 프로젝트 템플릿으로 만든 *Program.cs*의 코드입니다.
+기본 프로젝트 템플릿을 사용하면 [CreateDefaultBuilder](https://docs.microsoft.com/ dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder?view=aspnetcore-2.0#Microsoft_AspNetCore_WebHost_CreateDefaultBuilder_System_String___) 메서드를 사용하여 로깅할 수 있습니다.
 
 [!code-csharp[](index/sample2/Program.cs?name=snippet_TemplateCode&highlight=7)]
 
@@ -302,11 +302,11 @@ System.Exception: Item not found exception.
 | 1      | 디버그         | 모든 범주                          | 정보       |
 | 2      | 콘솔       | Microsoft.AspNetCore.Mvc.Razor.Internal | 경고           |
 | 3      | 콘솔       | Microsoft.AspNetCore.Mvc.Razor.Razor    | 디버그             |
-| 4      | 콘솔       | Microsoft.AspNetCore.Mvc.Razor          | 오류             |
+| 4      | 콘솔       | Microsoft.AspNetCore.Mvc.Razor          | Error             |
 | 5      | 콘솔       | 모든 범주                          | 정보       |
 | 6      | 모든 공급자 | 모든 범주                          | 디버그             |
 | 7      | 모든 공급자 | 시스템                                  | 디버그             |
-| 9      | 디버그         | Microsoft                               | 추적             |
+| 8      | 디버그         | Microsoft                               | 추적             |
 
 로그를 쓰는 `ILogger` 개체를 만들 때 `ILoggerFactory` 개체는 공급자마다 해당 로거에 적용할 단일 규칙을 선택합니다. `ILogger` 개체를 통해 작성된 모든 메시지는 선택한 규칙을 기반으로 필터링됩니다. 사용 가능한 규칙 중에서 각 공급자 및 범주 쌍에 적용 가능한 가장 구체적인 규칙이 선택됩니다.
 

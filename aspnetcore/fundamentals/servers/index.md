@@ -11,11 +11,11 @@ ms.assetid: dba74f39-58cd-4dee-a061-6d15f7346959
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/index
-ms.openlocfilehash: 04dee100dff91f7868175ff4be01156787e13e81
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b149cb316e4266e67d846b8ef8c2c7f2a25ded5c
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="web-server-implementations-in-aspnet-core"></a>ASP.NET Core의 웹 서버 구현
 
@@ -79,11 +79,11 @@ IIS 또는 IIS Express를 ASP.NET Core에 대한 역방향 프록시로 사용�
 
 ### <a name="nginx-with-kestrel"></a>Nginx 및 Kestrel
 
-Linux에서 Kestrel에 대한 역방향 프록시 서버로 Nginx를 사용하는 방법에 대한 자세한 내용은 [Linux 프로덕션 환경에 게시](../../publishing/linuxproduction.md)를 참조하세요.
+Linux에서 Kestrel에 대한 역방향 프록시 서버로 Nginx를 사용하는 방법에 대한 자세한 내용은 [Nginx를 사용하여 Linux에서 호스트](xref:host-and-deploy/linux-nginx)를 참조하세요.
 
 ### <a name="apache-with-kestrel"></a>Apache 및 Kestrel
 
-Linux에서 Kestrel에 대한 역방향 프록시 서버로 Apache를 사용하는 방법에 대한 자세한 내용은 [역방향 프록시로 Apache 웹 서버 사용](../../publishing/apache-proxy.md)을 참조하세요.
+Linux에서 Apache에 대한 역방향 프록시 서버로 Nginx를 사용하는 방법에 대한 자세한 내용은 [Apache를 사용하여 Linux에서 호스트](xref:host-and-deploy/linux-apache)를 참조하세요.
 
 ## <a name="httpsys"></a>HTTP.sys
 
@@ -131,16 +131,16 @@ Kestrel이 지원하지 않는 WebListener가 필요한 경우 내부 네트워�
 
 - [Kestrel](kestrel.md)
 - [Kestrel 및 IIS](aspnet-core-module.md)
-- [Kestrel 및 Nginx](../../publishing/linuxproduction.md)
-- [Kestrel 및 Apache](../../publishing/apache-proxy.md)
+- [Nginx를 사용하여 Linux에서 호스트](xref:host-and-deploy/linux-nginx)
+- [Apache를 사용하여 Linux에서 호스트](xref:host-and-deploy/linux-apache)
 - [HTTP.sys](httpsys.md)
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 - [Kestrel](kestrel.md)
 - [Kestrel 및 IIS](aspnet-core-module.md)
-- [Kestrel 및 Nginx](../../publishing/linuxproduction.md)
-- [Kestrel 및 Apache](../../publishing/apache-proxy.md)
+- [Nginx를 사용하여 Linux에서 호스트](xref:host-and-deploy/linux-nginx)
+- [Apache를 사용하여 Linux에서 호스트](xref:host-and-deploy/linux-apache)
 - [WebListener](weblistener.md)
 
 ---

@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 6281d6ba254670b111964715410fc0694ae4d149
-ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
+ms.openlocfilehash: b662e66ab5b4c46d1a8d10eb7c38bf4064b5b927
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="configure-an-aspnet-core-app"></a>ASP.NET Core 앱 구성
 
@@ -258,7 +258,7 @@ Left: 1979
 
 명령줄에 전달된 인수는 다음 표에 표시된 두 형식 중 하나를 따라야 합니다.
 
-| 인수 형식                                                     | 예제        |
+| 인수 형식                                                     | 예        |
 | ------------------------------------------------------------------- | :------------: |
 | 단일 인수: 등호로 구분되는 키-값 쌍(`=`) | `key1=value`   |
 | 두 인수 시퀀스: 공백으로 구분되는 키-값 쌍    | `/key1 value1` |
@@ -269,7 +269,7 @@ Left: 1979
 
 키에 접두사가 붙을 수 있습니다.
 
-| 키 접두사               | 예제         |
+| 키 접두사               | 예         |
 | ------------------------ | :-------------: |
 | 접두사 없음                | `key1=value1`   |
 | 단일 대시(`-`)&#8224; | `-key2=value2`  |
@@ -292,7 +292,7 @@ dotnet run key1=value1 -key2=value2 --key3=value3 /key4=value4
 
 키에 접두사가 있어야 합니다.
 
-| 키 접두사               | 예제         |
+| 키 접두사               | 예         |
 | ------------------------ | :-------------: |
 | 단일 대시(`-`)&#8224; | `-key1 value1`  |
 | 대시 2개(`--`)        | `--key2 value2` |
@@ -375,7 +375,7 @@ Left: 1988
 
 ## <a name="the-webconfig-file"></a>web.config 파일
 
-IIS 또는 IIS Express에서 앱을 호스트하는 경우 *web.config* 파일이 필요합니다. *web.config*는 IIS에서 AspNetCoreModule을 켜서 앱을 시작합니다. *web.config*의 설정은 IIS의 AspNetCoreModule이 앱을 시작하고 다른 IIS 설정 및 모듈을 구성할 수 있게 합니다. Visual Studio를 사용 중이고 *web.config*를 삭제하면 Visual Studio가 새 web.config를 만듭니다.
+IIS 또는 IIS Express에서 앱을 호스트하는 경우 *web.config* 파일이 필요합니다. *web.config*의 설정은 IIS의 [ASP.NET Core Module](xref:fundamentals/servers/aspnet-core-module)이 앱을 시작하고 다른 IIS 설정 및 모듈을 구성할 수 있게 합니다. *web.config* 파일이 없고 프로젝트 파일에 `<Project Sdk="Microsoft.NET.Sdk.Web">`이 포함되어 있는 경우 프로젝트를 게시하면 게시된 출력에 *web.config* 파일이 만들어집니다(*게시* 폴더). 자세한 내용은 [IIS가 있는 Windows에서 ASP.NET Core 호스팅](xref:host-and-deploy/iis/index#webconfig)을 참조하세요.
 
 ## <a name="additional-notes"></a>추가 참고 사항
 

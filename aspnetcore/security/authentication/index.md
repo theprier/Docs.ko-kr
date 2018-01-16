@@ -11,11 +11,11 @@ ms.assetid: 981852c9-78f9-4590-aaee-9d50a2838dfe
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/index
-ms.openlocfilehash: 9b92a3206e2d6ca921e8580fa367e4bae12725c5
-ms.sourcegitcommit: 037d3900f739dbaa2ba14158e3d7dc81478952ad
+ms.openlocfilehash: 182d3b5d567a46bb0f7d7c5864ebbc252782d8a3
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 01/11/2018
 ---
 # <a name="authentication"></a>인증
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 12/01/2017
 
 * [Facebook, Google 및 기타 외부 공급자를 통해 인증 사용](social/index.md)
 
-* [ASP.NET ID에서 QR 코드 생성 사용](identity-enable-qrcodes.md)
+* [ID에서 QR 코드 생성 사용](identity-enable-qrcodes.md)
 
 * [Windows 인증 구성](windowsauth.md)
 
@@ -33,18 +33,18 @@ ms.lasthandoff: 12/01/2017
 
 * [SMS를 사용한 2단계 인증](2fa.md)
 
-* [ASP.NET Core ID 없이 쿠키 인증 사용](cookie.md)
+* [ID 없이 쿠키 인증 사용](cookie.md)
 
 * [Azure Active Directory](azure-active-directory/index.md)
 
   * [ASP.NET Core 웹앱에 Azure AD 통합](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)
 
-  * [Azure AD를 사용하여 WPF 응용 프로그램에서 ASP.NET Core Web API 호출](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore/)
+  * [Azure AD를 사용하여 WPF 앱에서 ASP.NET Core Web API 호출](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore/)
 
-  * [Azure AD를 사용하여 ASP.NET Core 웹 응용 프로그램에서 Web API 호출](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/)
+  * [Azure AD를 사용하여 ASP.NET Core 웹앱에서 Web API 호출](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/)
 
 * [IdentityServer4를 사용하여 ASP.NET Core 앱 보호](http://docs.identityserver.io/en/release/)
 
-* [Azure App Service 인증(간편 인증)을 사용하여 ASP.NET Core 앱 보안](https://docs.microsoft.com/azure/app-service/app-service-authentication-overview)
+* [Azure App Service 인증(간편 인증)을 사용하여 ASP.NET Core 앱 보호](https://docs.microsoft.com/azure/app-service/app-service-authentication-overview)
 
 * [개별 사용자 계정을 사용하여 만든 프로젝트 기반의 문서](xref:security/authentication/individual)
