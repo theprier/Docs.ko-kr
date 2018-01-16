@@ -26,7 +26,7 @@ ASP.NET Core 응용 프로그램은 `Main` 메서드에서 웹 서버를 생성�
 
 [!code-csharp[Main](../getting-started/sample/aspnetcoreapp/Program2x.cs)]
 
-`Main` 메서드는 빌드 패턴에 따라 웹 응용 프로그램 호스트를 생성하는 `WebHost.CreateDefaultBuilder`를 호출합니다. 이 빌더는 웹 서버를 정의하거나 (예: `UseKestrel`) 시작 클래스를 정의하는 (`UseStartup`) 메서드들을 제공합니다. 위의 예제에서는 기본적으로 [Kestrel](xref:fundamentals/servers/kestrel) 웹 서버가 할당되며, 가능하다면 ASP.NET Core의 웹 호스트는  IIS에서 실행하려고 시도합니다. 그러나 적절한 확장 메서드를 호출해서 [HTTP.sys](xref:fundamentals/servers/httpsys) 같은 다른 웹 서버를 사용할 수도 있습니다. `UseStartup`에 관해서는 다음 섹션에서 더 자세히 살펴봅니다.
+`Main` 메서드는 빌드 패턴에 따라 웹 응용 프로그램 호스트를 생성하는 `WebHost.CreateDefaultBuilder`를 호출합니다. 이 빌더는 웹 서버를 정의하거나 (예: `UseKestrel`) 시작 클래스를 정의하는 (`UseStartup`) 메서드들을 제공합니다. 위의 예제에서는 기본적으로 [Kestrel](xref:fundamentals/servers/kestrel) 웹 서버가 할당되며, 가능하다면 ASP.NET Core의 웹 호스트는 IIS에서 실행하려고 시도합니다. 그러나 적절한 확장 메서드를 호출해서 [HTTP.sys](xref:fundamentals/servers/httpsys) 같은 다른 웹 서버를 사용할 수도 있습니다. `UseStartup`에 관해서는 다음 섹션에서 더 자세히 살펴봅니다.
 
 `WebHost.CreateDefaultBuilder` 호출로부터 반환되는 `IWebHostBuilder` 형식은 다양한 선택적 메서드를 제공합니다. 이 메서드들 중에는 HTTP.sys에서 앱을 호스트하기 위한 `UseHttpSys` 및 루트 콘텐츠 디렉터리를 지정하기 위한 `UseContentRoot`도 포함되어 있습니다. `Build` 및 `Run` 메서드는 앱을 호스트하고 HTTP 요청의 수신 대기를 시작하는 `IWebHost` 개체를 빌드합니다.
 
@@ -36,7 +36,7 @@ ASP.NET Core 응용 프로그램은 `Main` 메서드에서 웹 서버를 생성�
 
 `Main` 메서드는 빌드 패턴에 따라 웹 응용 프로그램 호스트를 생성하는 `WebHost.CreateDefaultBuilder`를 사용합니다. 이 빌더는 웹 서버를 정의하거나 (예: `UseKestrel`) 시작 클래스를 정의하는 (`UseStartup`) 메서드들을 제공합니다. 위의 예제에서는 [Kestrel](xref:fundamentals/servers/kestrel) 웹 서버를 사용하고 있습니다. 그러나 적절한 확장 메서드를 호출해서 [WebListener](xref:fundamentals/servers/weblistener) 같은 다른 웹 서버를 사용할 수도 있습니다. `UseStartup`에 관해서는 다음 섹션에서 더 자세히 살펴봅니다.
 
-`WebHostBuilder`는 IIS 및 IIS Express에서 호스팅하기 위한 `UseIISIntegration` 확장 메서드 및 루트 콘텐츠 디렉터리를 지정하기 위한 `UseContentRoot` 확장 메서드를 비롯한 다양한 선택적 메서드를 제공합니다. `Build` 및 `Run` 메서드는 앱을 호스트하고 HTTP 요청의 수신 대기를 시작하는 `IWebHost` 개체를 빌드합니다.
+WebHost.CreateDefaultBuilder 호출의 리턴 유형인 IWebHostBuilder는 여러 가지 선택적 메서드를 제공합니다. 이러한 메서드 중 일부는 HTTP.sys의 응용 프로그램의 호스팅을 위해 UseHttpSys를 포함하고 루트 콘텐츠 디렉터리를 지정하기 위해 UseContentRoot를 포함합니다.
 
 ---
 
@@ -54,7 +54,7 @@ ASP.NET Core 응용 프로그램은 `Main` 메서드에서 웹 서버를 생성�
 
 ---
 
-`Startup` 클래스는 요청 처리 파이프라인을 정의하고 앱에 필요한 모든 서비스를 구성하는 곳입니다. `Startup` 클래스는 public으로 지정해야 하며 다음과 같은 메서드들을 제공해야 합니다:
+`Startup` 클래스는 요청 처리 파이프라인을 정의하고 앱에 필요한 모든 서비스를 구성하는 곳입니다. `Startup` 클래스는 public으로 지정해야 하며 다음과 같은 메서드들을 제공해야 합니다.
 
 ```csharp
 public class Startup
@@ -87,7 +87,7 @@ public class Startup
 
 ## <a name="dependency-injection-services"></a>종속성 주입(서비스)
 
-서비스는 앱에서 공통으로 사용하기 위한 구성 요소입니다. 서비스는 DI([종속성 주입](xref:fundamentals/dependency-injection))를 통해서 사용됩니다. ASP.NET Core에는 기본적으로 [생성자 주입](xref:mvc/controllers/dependency-injection#constructor-injection)을 지원하는 네이티브 IoC(**I**nversion **o**f **C**) 컨테이너가 포함되어 있습니다. 만약 원한다면 기본 네이티브 컨테이너를 교체할 수도 있습니다. DI를 사용하면 느슨한 결합의 이점을 얻을 수 있을뿐만 아니라, 앱 전체에서 서비스를 사용할 수 있습니다(예: [로깅](xref:fundamentals/logging)).
+서비스는 앱에서 공통으로 사용하기 위한 구성 요소입니다. 서비스는 DI([종속성 주입](xref:fundamentals/dependency-injection))를 통해서 사용됩니다. ASP.NET Core에는 기본적으로 [생성자 주입](xref:mvc/controllers/dependency-injection#constructor-injection)을 지원하는 네이티브 IoC(**I**nversion **o**f **C**) 컨테이너가 포함되어 있습니다. 만약 원한다면 기본 네이티브 컨테이너를 교체할 수도 있습니다. DI를 사용하면 느슨한 결합의 이점을 얻을 수 있을 뿐만 아니라, 앱 전체에서 서비스를 사용할 수 있습니다(예: [로깅](xref:fundamentals/logging)).
 
 자세한 내용은 [종속성 주입](xref:fundamentals/dependency-injection)을 참고하시기 바랍니다.
 
@@ -95,7 +95,7 @@ public class Startup
 
 ASP.NET Core는 [미들웨어](xref:fundamentals/middleware)를 사용해서 요청 파이프라인을 구성합니다. ASP.NET Core의 미들웨어는 `HttpContext` 상에서 비동기 논리를 수행한 다음, 시퀀스 상의 다음 미들웨어를 호출하거나 그대로 요청을 종료합니다. 일반적으로 "XYZ"라는 미들웨어 구성 요소는 `Configure` 메서드에서 `UseXYZ` 확장 메서드를 호출하는 방식으로 추가됩니다.
 
-ASP.NET Core는 다양한 기본 제공 미들웨어들을 함께 제공합니다:
+ASP.NET Core는 다양한 기본 제공 미들웨어들을 함께 제공합니다.
 
 * [정적 파일](xref:fundamentals/static-files)
 * [라우팅](xref:fundamentals/routing)
@@ -133,7 +133,7 @@ ASP.NET Core는 앱에서 오류를 처리하기 위한 개발자 예외 페이�
 
 ## <a name="routing"></a>라우팅
 
-ASP.NET Core는 응용 프로그램 요청을 경로 처리기로 라우팅는 기능을 제공합니다.
+ASP.NET Core는 응용 프로그램 요청을 경로 처리기로 라우팅하는 기능을 제공합니다.
 
 자세한 내용은 [라우팅](xref:fundamentals/routing)을 참고하시기 바랍니다.
 
@@ -163,7 +163,7 @@ ASP.NET Core 앱은 앱의 시작과 수명 관리를 담당하는 *호스트*�
 
 ## <a name="servers"></a>서버
 
-ASP.NET Core의 호스팅 모델은 요청을 직접 수신하지 않습니다. 대신 호스팅 모델은 HTTP 서버 구현에 의존해서 요청을 앱에 전달합니다. 전달된 요청은 인터페이스를 통해서 접근할 수 있는 기능 개체 집합으로 래핑됩니다. ASP.NET Core에는 [Kestrel](xref:fundamentals/servers/kestrel)이라는 관리되는 크로스 플랫폼 웹 서버가 포함되어 있습니다. 일반적으로 Kestrel은 [IIS](https://www.iis.net/) 또는 [nginx](http://nginx.org) 같은 프로덕션 웹 서버의 뒷단에서 실행됩니다. Kestrel은 에지 서버로 실행될 수 있습니다.
+ASP.NET Core의 호스팅 모델은 요청을 직접 수신하지 않습니다. 대신 호스팅 모델은 HTTP 서버 구현에 의존해서 요청을 앱에 전달합니다. 전달된 요청은 인터페이스를 통해서 접근할 수 있는 기능 개체 집합으로 래핑됩니다. ASP.NET Core에는 [Kestrel](xref:fundamentals/servers/kestrel)이라는 관리되는 크로스 플랫폼 웹 서버가 포함되어 있습니다. 일반적으로 Kestrel은 [IIS](https://www.iis.net/) 또는 [nginx](http://nginx.org) 같은 프로덕션 웹 서버의 뒤에서 실행됩니다. Kestrel은 에지 서버로 실행될 수 있습니다.
 
 자세한 내용은 [서버](xref:fundamentals/servers/index) 및 다음 항목을 참고하시기 바랍니다.
 
@@ -173,7 +173,7 @@ ASP.NET Core의 호스팅 모델은 요청을 직접 수신하지 않습니다. 
 
 ## <a name="globalization-and-localization"></a>전역화 및 지역화
 
-ASP.NET Core를 사용해서 다국어 웹 사이트를 만들면 더 광범위한 사용자가 사이트를 사용할 수 있습니다. ASP.NET Core는 다른 언어 및 문화권에 대한 지역화를 위한 서비스 및 미들웨어를 제공합니다.
+ASP.NET Core를 사용해서 다국어 웹 사이트를 만들면 더 광범위한 사용자가 사이트를 사용할 수 있습니다. ASP.NET Core는 다른 언어 및 문화권의 지역화를 위한 서비스 및 미들웨어를 제공합니다.
 
 자세한 내용은 [전역화 및 지역화](xref:fundamentals/localization)를 참고하시기 바랍니다.
 
@@ -185,7 +185,7 @@ HTTP 요청 및 응답과 관련된 웹 서버 구현의 세부 사항은 인터
 
 ## <a name="open-web-interface-for-net-owin"></a>OWIN(Open Web Interface for .NET)
 
-ASP.NET Core는 OWIN(Open Web Interface for .NET)을 지원합니다. OWIN을 사용하면 웹 앱을 웹 서버에서 분리시킬 수 있습니다.
+ASP.NET Core는 OWIN(Open Web Interface for .NET)을 지원합니다. OWIN을 사용하면 웹 앱을 웹 서버에서 분리할 수 있습니다.
 
 자세한 내용은 [OWIN(Open Web Interface for .NET)](xref:fundamentals/owin)을 참고하시기 바랍니다.
 
@@ -197,7 +197,7 @@ ASP.NET Core는 OWIN(Open Web Interface for .NET)을 지원합니다. OWIN을 �
 
 ## <a name="microsoftaspnetcoreall-metapackage"></a>Microsoft.AspNetCore.All 메타패키지
 
-ASP.NET Core에 대한 [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All) 메타패키지에는 다음 패키지들이 포함되어 있습니다:
+ASP.NET Core에 대한 [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All) 메타패키지에는 다음 패키지들이 포함되어 있습니다.
 
 * ASP.NET Core 팀에서 지원되는 모든 패키지
 * Entity Framework Core에서 지원되는 모든 패키지 
