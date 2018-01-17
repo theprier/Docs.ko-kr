@@ -10,11 +10,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/crud
-ms.openlocfilehash: 163bc35afed0bf1d9236935d5ce60e6975356594
-ms.sourcegitcommit: f1436107b4c022b26f5235dddef103cec5aa6bff
+ms.openlocfilehash: 246e6307989f2660d84288ceac6793c422875f93
+ms.sourcegitcommit: 87168cdc409e7a7257f92a0f48f9c5ab320b5b28
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/15/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="create-read-update-and-delete---ef-core-with-razor-pages-2-of-8"></a>만들기, 읽기, 업데이트 및 삭제-EF 코어 Razor 페이지 (2 / 8)
 
@@ -202,7 +202,7 @@ DB 컨텍스트 엔터티 메모리에는 데이터베이스에서 해당 행과
 
 ## <a name="update-the-delete-page"></a>업데이트 페이지 삭제
 
-사용자 지정 오류 구현에 코드가 추가이 섹션에서는 메시지에 대 한 호출 `SaveChanges` 실패 합니다. Possile 오류 메시지를 포함 하는 문자열을 추가 합니다.
+사용자 지정 오류 구현에 코드가 추가이 섹션에서는 메시지에 대 한 호출 `SaveChanges` 실패 합니다. 가능한 오류 메시지를 포함 하는 문자열을 추가 합니다.
 
 [!code-csharp[Main](intro/samples/cu/Pages/Students/Delete.cshtml.cs?name=snippet1&highlight=12)]
 

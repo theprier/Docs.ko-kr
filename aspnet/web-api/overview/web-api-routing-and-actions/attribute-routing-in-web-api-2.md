@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: ad44ee525601f308498967159e964aa41a2ce00c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7c563f566b8456b63ffe0a3c4876432c60a19e89
+ms.sourcegitcommit: 87168cdc409e7a7257f92a0f48f9c5ab320b5b28
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/17/2018
 ---
 <a name="attribute-routing-in-aspnet-web-api-2"></a>ASP.NET Web API 2에서에서 특성의 라우팅
 ====================
@@ -130,7 +130,7 @@ URI 템플릿에서 여러 매개 변수를 가질 수 있습니다.
 
 또한 web API HTTP 메서드 (GET, POST 등)는 요청에 따라 작업을 선택 합니다. 기본적으로 웹 API 컨트롤러 메서드 이름의 시작 되 면 대/소문자 구분 일치 항목을 찾습니다. 예를 들어 라는 컨트롤러 메서드 `PutCustomers` HTTP PUT 요청을 일치 합니다.
 
-재정의할 수 있습니다이 규칙이 준수 mathod 데코레이팅하여 다음과 같은 특성:
+재정의할 수 있습니다이 규칙 함께 메서드를 데코레이팅하는 다음 특성:
 
 - **[HttpDelete]**
 - **[HttpGet]**
@@ -178,24 +178,24 @@ URI 템플릿에서 여러 매개 변수를 가질 수 있습니다.
 
 다음 표에서 지원 되는 제약 조건을 나열 합니다.
 
-| 제약 조건 | 설명 | 예제 |
+| 제약 조건 | 설명 | 예 |
 | --- | --- | --- |
 | 알파 | 일치 하는 항목 대문자 또는 소문자로 라틴어 알파벳 (a ~ z, A-Z) | {x: 알파} |
-| bool | 부울 값을 찾습니다. | {x: bool} |
-| datetime | 일치는 **DateTime** 값입니다. | {x: datetime을 (를) |
-| decimal | 10 진수 값을 찾습니다. | {x: 소수} |
-| double | 64 비트 부동 소수점 값을 찾습니다. | {x: double} |
+| bool | 부울 값을 찾습니다. | {x:bool} |
+| datetime | 일치는 **DateTime** 값입니다. | {x:datetime} |
+| decimal | 10 진수 값을 찾습니다. | {x:decimal} |
+| double | 64 비트 부동 소수점 값을 찾습니다. | {x:double} |
 | float | 32 비트 부동 소수점 값을 찾습니다. | {x: float} |
 | guid | GUID 값과 일치 합니다. | {x: guid} |
 | int | 32 비트 정수 값과 일치 합니다. | {x: int} |
 | 길이 | 지정 된 길이로 또는 길이의 지정된 된 범위 내 문자열과 일치합니다. | {x: length(6)} {x: length(1,20)} |
 | long | 64 비트 정수 값과 일치 합니다. | {x: long} |
-| max | 최대 값을 가진 정수를 찾습니다. | {x: max(10)} |
-| maxlength | 최대 길이가 문자열과 일치합니다. | {x: maxlength(10)} |
-| 분 | 최소 값이 포함 된 정수를 찾습니다. | {x: min(10)} |
-| minlength | 최소 길이가 문자열과 일치합니다. | {x: minlength(10)} |
-| range | 정수 값의 범위 내에서 일치합니다. | {x: range(10,50)} |
-| 정규식 | 정규식과 일치 합니다. | {x: regex(^\d{3}-\d{3}-\d{4}$)} |
+| max | 최대 값을 가진 정수를 찾습니다. | {x:max(10)} |
+| maxlength | 최대 길이가 문자열과 일치합니다. | {x:maxlength(10)} |
+| 분 | 최소 값이 포함 된 정수를 찾습니다. | {x:min(10)} |
+| minlength | 최소 길이가 문자열과 일치합니다. | {x:minlength(10)} |
+| range | 정수 값의 범위 내에서 일치합니다. | {x:range(10,50)} |
+| 정규식 | 정규식과 일치 합니다. | {x:regex(^\d{3}-\d{3}-\d{4}$)} |
 
 공지 여 제약 조건 중 일부는 같은 &quot;min&quot;, 괄호 안에 인수를 사용 합니다. 콜론으로 구분 된 매개 변수에 여러 개의 제약 조건을 적용할 수 있습니다.
 
@@ -269,10 +269,10 @@ Web API에서 모든 경로는 이름이 있습니다. 경로 이름은 HTTP 응
 
 이러한 경로 다음과 같이 정렬 됩니다.
 
-1. 주문/세부 정보
+1. orders/details
 2. 주문 / {id}
-3. 주문 / {customerName}
-4. 주문 / {\*날짜}
-5. 주문 / 보류 중
+3. orders/{customerName}
+4. orders/{\*date}
+5. orders/pending
 
 "Details"는 리터럴 세그먼트 및 "{id}" 앞에 표시 되 있지만 "보류 중" 표시 마지막는 **RouteOrder** 속성은 1입니다. (이 예에서는 고객이 없는 "details" 라고 가정 "보류 중" 또는 합니다. 일반적으로 모호한 경로 방지 하려고 합니다. 이 예제에 대 한 더 나은 경로 템플릿 `GetByCustomer` 는 "고객이 / {customerName}")
