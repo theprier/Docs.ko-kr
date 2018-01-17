@@ -1,8 +1,8 @@
 ---
-title: "ASP.NET Core에 Id 소개"
+title: "ASP.NET Core Identity 소개"
 author: rick-anderson
-description: "ASP.NET Core 응용 프로그램과 함께 Id를 사용 하 여"
-keywords: "ASP.NET Core, Identity, 권한 부여, 보안"
+description: "ASP.NET Core 응용 프로그램에서 Identity 사용하기"
+keywords: "ASP.NET Core,Identity,권한 부여,보안"
 ms.author: riande
 manager: wpickett
 ms.date: 01/02/2018
@@ -17,57 +17,57 @@ ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/09/2018
 ---
-# <a name="introduction-to-identity-on-aspnet-core"></a>ASP.NET Core에 Id 소개
+# <a name="introduction-to-identity-on-aspnet-core"></a>ASP.NET Core Identity 소개
 
-여 [Pranav Rastogi](https://github.com/rustd), [Rick Anderson](https://twitter.com/RickAndMSFT), [Tom Dykstra](https://github.com/tdykstra), Jon Galloway [Erik Reitan](https://github.com/Erikre), 및 [Steve Smith](https://ardalis.com/)
+작성자: [Pranav Rastogi](https://github.com/rustd), [Rick Anderson](https://twitter.com/RickAndMSFT), [Tom Dykstra](https://github.com/tdykstra), Jon Galloway, [Erik Reitan](https://github.com/Erikre), 및 [Steve Smith](https://ardalis.com/)
 
-ASP.NET Core Id는 응용 프로그램에 로그인 기능을 추가할 수 있는 멤버 자격 시스템입니다. 사용자 계정 및 로그인 사용자 이름으로 만들 수 있습니다 및 암호 또는 Facebook, Google, Microsoft 계정, Twitter 또는 다른 사용자와 같은 외부 로그인 공급자를 사용할 수 있습니다.
+ASP.NET Core Identity는 응용 프로그램에 로그인 기능을 추가할 수 있는 멤버십 시스템입니다. 사용자는 계정을 생성한 다음 사용자 이름과 비밀번호를 사용해서 로그인하거나 Facebook, Google, Microsoft Account, Twitter 같은 외부 로그인 공급자를 사용할 수 있습니다.
 
-ASP.NET Core Id 사용자 이름, 암호 및 프로필 데이터를 저장 하는 SQL Server 데이터베이스를 사용 하도록 구성할 수 있습니다. 또는 사용자 고유의 영구 저장소 예를 들어 Azure 테이블 저장소를 사용할 수 있습니다. 이 문서에는 Visual Studio는 CLI를 사용 하 여 위한 지침이 포함 되어 있습니다.
+ASP.NET Core Identity는 SQL Server 데이터베이스에 사용자 이름, 비밀번호 및 프로필 정보를 저장하도록 구성할 수 있습니다. 또는 Azure 테이블 저장소 같은 사용자 고유의 영구 저장소를 사용할 수도 있습니다. 이 문서는 Visual Studio 및 CLI를 사용하는 경우에 대한 지침을 모두 포함합니다.
 
-[보거나 샘플 코드를 다운로드 합니다.](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample/src/ASPNETCore-IdentityDemoComplete/) [(다운로드 하는 방법)](https://docs.microsoft.com/en-us/aspnet/core/tutorials/index#how-to-download-a-sample)
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample/src/ASPNETCore-IdentityDemoComplete/) [(다운로드 방법)](https://docs.microsoft.com/en-us/aspnet/core/tutorials/index#how-to-download-a-sample)
 
-## <a name="overview-of-identity"></a>Id의 개요
+## <a name="overview-of-identity"></a>Identity 개요
 
-이 항목에서는 등록, 로그인 하는 기능을 추가 하려면 ASP.NET Core Id를 사용 하 고 로그 아웃 한 사용자 합니다. ASP.NET Core Id를 사용 하 여 앱을 만드는 방법에 대해 더 자세한 내용은이 문서의 끝에 다음 단계 섹션을 참조 하십시오.
+본문에서는 ASP.NET Core Identity를 이용해서 사용자를 등록하고, 로그인하고, 로그아웃 하는 기능을 추가하는 방법을 살펴봅니다. ASP.NET Core Identity를 이용해서 응용 프로그램을 생성하는 보다 상세한 지침은 본문의 마지막 섹션인 다음 단계 섹션을 참고하시기 바랍니다.
 
-1.  개별 사용자 계정을 가진 ASP.NET Core 웹 응용 프로그램 프로젝트를 만듭니다.
+1. **개별 사용자 계정(Individual User Accounts)**으로 새로운 ASP.NET Core 웹 응용 프로그램 생성하기
 
     # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-    Visual Studio에서 선택 **파일** > **새로** > **프로젝트**합니다. 선택 **ASP.NET Core 웹 응용 프로그램** 클릭 **확인**합니다.
+    Visual Studio에서 **파일** > **새로 만들기** > **프로젝트**를 선택합니다. 그리고 **ASP.NET Core 웹 응용 프로그램**을 선택한 다음, **확인**을 클릭합니다.
 
     ![새 프로젝트 대화 상자](identity/_static/01-new-project.png)
 
-    ASP.NET Core 선택 **웹 응용 프로그램 (모델-뷰-컨트롤러)** ASP.NET에 대 한 핵심 2.x를 선택한 다음 선택 **인증 변경**합니다.
+    계속해서 ASP.NET Core 2.x 용 ASP.NET Core **웹 응용 프로그램 (모델-뷰-컨트롤러)**을 선택하고 **인증 변경**을 선택합니다.
 
     ![새 프로젝트 대화 상자](identity/_static/02-new-project.png)
 
-    제공 하는 대화 상자가 나타납니다 인증 선택 합니다. 선택 **개별 사용자 계정** 클릭 **확인** 이전 대화 상자로 돌아갑니다.
+    그러면 인증 방식을 선택할 수 있는 대화 상자가 나타납니다. **개별 사용자 계정**을 선택하고 **확인**을 클릭해서 이전 대화 상자로 돌아갑니다.
 
     ![새 프로젝트 대화 상자](identity/_static/03-new-project-auth.png)
 
-    선택 하면 **개별 사용자 계정** 모델, Viewmodel, 뷰, 컨트롤러 및 프로젝트 템플릿의 일부로 인증에 필요한 기타 자산을 만들려면 Visual Studio를 안내 합니다.
+    이렇게 **개별 사용자 계정**을 선택하면 Visual Studio에게 프로젝트 템플릿의 일부로 인증에 필요한 모델, 뷰 모델, 뷰, 컨트롤러 및 기타 자산을 생성하도록 지시합니다.
 
     # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 
-    .NET Core CLI를 사용 하는 경우 사용 하 여 새 프로젝트 만들기 ``dotnet new mvc --auth Individual``합니다. 이 명령은 Visual Studio 만듭니다 Identity 템플릿 코드와 새 프로젝트를 만듭니다.
+    .NET Core CLI를 사용하는 경우, `dotnet new mvc --auth Individual` 명령으로 새로운 프로젝트를 생성합니다. 이 명령은 Visual Studio가 생성하는 것과 동일한 Identity 템플릿 코드를 사용하는 새로운 프로젝트를 생성합니다.
 
-    만든된 프로젝트에 포함 되어는 `Microsoft.AspNetCore.Identity.EntityFrameworkCore` Id 데이터 및 스키마를 사용 하 여 SQL Server를 유지 하는 패키지 [Entity Framework Core](https://docs.microsoft.com/ef/)합니다.
+    생성된 프로젝트에는 [Entity Framework Core](https://docs.microsoft.com/ef/)를 이용해서 SQL Server에 Identity 데이터와 스키마를 저장하는 `Microsoft.AspNetCore.Identity.EntityFrameworkCore` 패키지가 포함되어 있습니다.
 
     ---
 
-2.  Id 서비스를 구성 하 고 미들웨어에서 추가 `Startup`합니다.
+2.  Identity 서비스를 구성하고 `Startup`에서 미들웨어 추가하기
 
-    Id 서비스에서 응용 프로그램에 추가 되는 `ConfigureServices` 에서 메서드는 `Startup` 클래스:
+    Identity 서비스는 `Startup` 클래스의 `ConfigureServices` 메서드에서 응용 프로그램에 추가됩니다:
 
     # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
     
     [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,11-28,30-39)]
     
-    이러한 서비스를 통해 응용 프로그램에서 사용할 수 [종속성 주입](xref:fundamentals/dependency-injection)합니다.
+    이 서비스들은 응용 프로그램에서 [종속성 주입](xref:fundamentals/dependency-injection)을 통해서 사용할 수 있습니다.
     
-    Identity를 호출 하 여 응용 프로그램에 대해 사용할 `UseAuthentication` 에 `Configure` 메서드. `UseAuthentication`인증 추가 [미들웨어](xref:fundamentals/middleware) 요청 파이프라인을 합니다.
+    `Configure` 메서드에서 `UseAuthentication` 메서드를 호출하면 응용 프로그램에서 Identity가 활성화됩니다. `UseAuthentication`는 요청 파이프라인에 인증 [미들웨어](xref:fundamentals/middleware)를 추가합니다.
     
     [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configure&highlight=17)]
     
@@ -75,60 +75,60 @@ ASP.NET Core Id 사용자 이름, 암호 및 프로필 데이터를 저장 하�
     
     [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,13-34)]
     
-    이러한 서비스를 통해 응용 프로그램에서 사용할 수 [종속성 주입](xref:fundamentals/dependency-injection)합니다.
+    이 서비스들은 응용 프로그램에서 [종속성 주입](xref:fundamentals/dependency-injection)을 통해서 사용할 수 있습니다.
     
-    Identity를 호출 하 여 응용 프로그램에 대해 사용할 `UseIdentity` 에 `Configure` 메서드. `UseIdentity`쿠키 기반 인증 추가 [미들웨어](xref:fundamentals/middleware) 요청 파이프라인을 합니다.
+    `Configure` 메서드에서 `UseIdentity` 메서드를 호출하면 응용 프로그램에서 Identity가 활성화됩니다. `UseIdentity`는 요청 파이프라인에 쿠키 기반의 인증 [미들웨어](xref:fundamentals/middleware)를 추가합니다.
         
     [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configure&highlight=21)]
     
     ---
-     
-    프로세스를 응용 프로그램 시작에 대 한 자세한 내용은 참조 [응용 프로그램 시작](xref:fundamentals/startup)합니다.
-
-3.  사용자를 만듭니다.
-
-    응용 프로그램을 시작 하 고을 클릭는 **등록** 링크 합니다.
-
-    처음이이 작업을 수행 하는 경우 마이그레이션을 실행 하는 데 필요한 수 있습니다. 응용 프로그램 하 라는 메시지가 표시 **적용 마이그레이션**합니다. 필요한 경우 페이지를 새로 고칩니다.
     
-    ![마이그레이션 웹 페이지를 적용 합니다.](identity/_static/apply-migrations.png)
+    응용 프로그램 시작 과정에 대한 더 자세한 내용은 [응용 프로그램 시작](xref:fundamentals/startup)을 참고하시기 바랍니다.
+
+3.  사용자 생성
+
+    응용 프로그램을 실행한 다음, **Register** 링크를 클릭합니다.
+
+    이 작업을 처음하는 경우, 마이그레이션을 수행해야 할 수도 있습니다. 그럴 경우, 응용 프로그램이 **마이그레이션을 수행**하라는 메시지를 출력합니다. 필요에 따라 페이지를 새로 고칩니다.
     
-    또는 영구 데이터베이스 없이 응용 프로그램과 함께 ASP.NET Core Id를 사용 하 여 메모리 내 데이터베이스를 사용 하 여 테스트할 수 있습니다. 메모리 내 데이터베이스를 사용 하려면 추가 ``Microsoft.EntityFrameworkCore.InMemory`` 앱 패키지 및 응용 프로그램의 호출을 수정 ``AddDbContext`` 에 ``ConfigureServices`` 다음과 같습니다.
+    ![마이그레이션 웹 페이지를 적용합니다.](identity/_static/apply-migrations.png)
+    
+    또는 영구적인 데이터베이스 없이 메모리 내 데이터베이스를 이용해서 응용 프로그램과 ASP.NET Core Identity를 테스트 할 수도 있습니다. 메모리 내 데이터베이스를 사용하려면 응용 프로그램에 `Microsoft.EntityFrameworkCore.InMemory` 패키지를 추가하고, 응용 프로그램이 `ConfigureServices`에서 `AddDbContext`를 호출하는 부분을 다음과 같이 수정합니다:
 
     ```csharp
     services.AddDbContext<ApplicationDbContext>(options =>
         options.UseInMemoryDatabase(Guid.NewGuid().ToString()));
     ```
     
-    사용자가 클릭할 때는 **등록** 링크는 ``Register`` 에서 동작이 호출 될 ``AccountController``합니다. ``Register`` 동작 호출 하 여 사용자를 만듭니다 `CreateAsync` 에 `_userManager` 개체 (제공 된 ``AccountController`` 종속성 주입 하 여):
+    사용자가 **Register** 버튼을 클릭하면 `AccountController`의 `Register` 액션이 호출됩니다. `Register` 액션은 `_userManager` 개체의 (종속성 주입으로 `AccountController`에 제공된) `CreateAsync`를 호출해서 사용자를 생성합니다:
  
     [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_register&highlight=11)]
 
-    에 대 한 호출 사용자가 로그인 된 사용자가 성공적으로 만들어진 경우 ``_signInManager.SignInAsync``합니다.
+    사용자가 정상적으로 생성되면 `_signInManager.SignInAsync`가 호출되어 사용자가 즉시 로그인 됩니다.
 
-    **참고:** 참조 [계정 확인](xref:security/authentication/accconfirm#prevent-login-at-registration) 등록 시 즉시 로그인을 방지 하는 단계에 대 한 합니다.
+    **참고:** 사용자 등록 즉시 로그인을 방지하는 방법은 [계정 확인](xref:security/authentication/accconfirm#prevent-login-at-registration)을 참고하시기 바랍니다.
  
-4.  로그인.
+4.  로그인
  
-    사용자가 클릭 하 여 로그인 할 수는 **로그인** 사이트의 맨 위에 링크 될 수 있습니다 이동 하 게 될 로그인 페이지에 권한 부여를 요구 하는 사이트의 일부에 액세스 하려는 경우 또는 합니다. 사용자가 로그인 페이지에 폼을 제출는 ``AccountController`` ``Login`` 작업을 호출 합니다.
-
-    ``Login`` 동작 호출 ``PasswordSignInAsync`` 에 ``_signInManager`` 개체 (제공 된 ``AccountController`` 종속성 주입 하 여).
+    사용자는 사이트 상단의 **Log in** 링크를 클릭해서 로그인 할 수 있으며, 사이트에서 권한 부여가 필요한 페이지에 접근하려고 시도할 경우 Login 페이지로 이동하게 됩니다. 사용자가 Login 페이지의 양식을 제출하면 `AccountController`의 `Login` 액션이 호출됩니다.
+    
+    `Login` 액션은 `_signInManager` 개체의 (종속성 주입으로 `AccountController`에 제공된) `PasswordSignInAsync`를 호출합니다.
 
     [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_login&highlight=13-14)]
+
+    기본 `Controller` 클래스는 컨트롤러의 메서드에서 접근할 수 있는 `User` 속성을 제공합니다. 예를 들어, `User.Claims`를 열거하고 권한 부여 결정을 내릴 수 있습니다. 자세한 내용은 [권한 부여](xref:security/authorization/index)를 참조하시기 바랍니다.
  
-    기본 ``Controller`` 클래스가 노출 한 ``User`` 컨트롤러 메서드에서 액세스할 수 있는 속성입니다. 예를 들어, 열거할 수 있습니다 `User.Claims` 을 권한 부여 결정을 내립니다. 자세한 내용은 참조 [권한 부여](xref:security/authorization/index)합니다.
+5.  로그아웃
  
-5.  로그 아웃 합니다.
- 
-    클릭 하 고 **로그 아웃** 호출 연결는 `LogOut` 동작 합니다.
- 
+    **LogOut** 링크를 클릭하면 `LogOut` 액션이 호출됩니다.
+
     [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_logout&highlight=7)]
  
-    앞의 코드 호출 위에 `_signInManager.SignOutAsync` 메서드. `SignOutAsync` 메서드 쿠키에 저장 하는 사용자의 클레임을 지웁니다.
+    위의 코드는 `_signInManager.SignOutAsync` 메서드를 호출합니다. `SignOutAsync` 메서드는 쿠키에 저장된 사용자의 클레임을 삭제합니다.
  
-6.  구성입니다.
+6.  구성
 
-    Id는 응용 프로그램의 시작 클래스에서 재정의할 수 있는 몇 가지 기본 동작에 있습니다. 구성 하지 않아도 ``IdentityOptions`` 기본 동작을 사용 하는 경우.
+    Identity는 응용 프로그램의 시작 클래스에서 재지정할 수 있는 몇 가지 기본적인 동작을 갖고 있습니다. 기본 동작을 사용하고자 하는 경우에는 `IdentityOptions`를 구성할 필요가 없습니다.
 
     # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
     
@@ -140,21 +140,25 @@ ASP.NET Core Id 사용자 이름, 암호 및 프로필 데이터를 저장 하�
 
     ---
     
-    Id를 구성 하는 방법에 대 한 자세한 내용은 참조 [구성 Identity](xref:security/authentication/identity-configuration)합니다.
+    Identity를 구성하는 보다 자세한 방법은 [Identity 구성하기](xref:security/authentication/identity-configuration)를 참고하시기 바랍니다.
     
-    기본 키의 데이터 형식을 구성할 수 참조 [Id 구성 기본 키 데이터 형식이](xref:security/authentication/identity-primary-key-configuration)합니다.
+    기본 키의 데이터 형식도 구성 가능합니다. [Identity 기본 키 데이터 형식 구성하기](xref:security/authentication/identity-primary-key-configuration)를 참고하시기 바랍니다.
  
-7.  데이터베이스를 봅니다.
+7.  데이터베이스 살펴보기
 
-    앱 (Windows와 Visual Studio 사용자에 대 한 기본값)는 SQL Server 데이터베이스를 사용 하는 경우에 만든 응용 프로그램 데이터베이스를 볼 수 있습니다. 사용할 수 있습니다 **SQL Server Management Studio**합니다. 또는 Visual Studio에서 선택 **보기** > **SQL Server 개체 탐색기**합니다. 연결할 **(localdb) \MSSQLLocalDB**합니다. 일치 하는 이름을 사용 하 여 데이터베이스  **aspnet-<*프로젝트의 이름*>-<*날짜 문자열*> * * 표시 됩니다.
+    응용 프로그램에서 SQL Server 데이터베이스를 사용할 경우 (Windows 및 Visual Studio 사용자에 대한 기본값입니다), 응용 프로그램이 생성한 데이터베이스를 직접 살펴볼 수 있습니다.
+    이때 **SQL Server Management Studio**를 사용할 수 있습니다.
+    또는 Visual Studio에서 **보기** > **SQL Server 개체 탐색기**를 선택합니다.
+    그리고 **(localdb) \MSSQLLocalDB**에 연결합니다.
+    그러면 **aspnet-<*프로젝트명*>-<*날짜 문자열*>** 형태의 이름을 가진 데이터베이스가 출력됩니다.
 
-    ![AspNetUsers 데이터베이스 테이블에 대 한 상황에 맞는 메뉴](identity/_static/04-db.png)
+    ![AspNetUsers 데이터베이스 테이블에 대한 컨텍스트 메뉴](identity/_static/04-db.png)
     
-    데이터베이스 확장 및 해당 **테이블**를 마우스 오른쪽 단추로 클릭 한 다음는 **dbo입니다. AspNetUsers** 테이블을 선택한 **데이터 보기**합니다.
+    데이터베이스와 그 테이블들을 확장하고, **dbo.AspNetUsers** 테이블을 마우스 오른쪽 버튼으로 클릭한 다음, **데이터 보기**를 선택합니다.
 
-8. Identity 작동 확인
+8. Identity 동작 확인하기
 
-    기본 *ASP.NET Core 웹 응용 프로그램* 프로젝트 템플릿이 필요 없이 응용 프로그램에서 모든 작업에 액세스할 수 있도록 로그인에 있습니다. ASP.NET Identity 작동 하는지 확인 하려면 추가`[Authorize]` 특성을 `About` 의 작업은 `Home` 컨트롤러입니다.
+    기본 *ASP.NET Core 웹 응용 프로그램* 프로젝트 템플릿은 사용자가 로그인 하지 않더라도 응용 프로그램의 모든 액션에 접근할 수 있습니다. 정상적으로 ASP.NET Identity가 동작하는지 확인해보려면 `Home` 컨트롤러의 `About` 액션에 `[Authorize]` 특성을 추가합니다.
  
     ```cs
     [Authorize]
@@ -167,39 +171,43 @@ ASP.NET Core Id 사용자 이름, 암호 및 프로필 데이터를 저장 하�
     
     # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-    사용 하 여 프로젝트 실행 **Ctrl** + **F5** 로 이동 하 고는 **에 대 한** 페이지. 인증 된 사용자만 액세스할 수 있습니다는 **에 대 한** 페이지 이제 하므로 ASP.NET에 로그인 하거나 등록 로그인 페이지로 리디렉션됩니다.
+    **Ctrl** + **F5** 키를 눌러서 프로젝트를 실행하고 **About** 페이지로 이동합니다.
+    이제 인증된 사용자만 **About** 페이지에 접근할 수 있기 때문에, 로그인하거나 등록할 수 있도록 로그인 페이지로 리디렉션됩니다.
 
     # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 
-    명령 창을 열고 프로젝트의 루트 디렉터리로 이동 포함 된 디렉터리는 `.csproj` 파일입니다. 실행 된 `dotnet run` 명령을 앱을 실행 하려면:
+    명령 창을 열고 `.csproj` 파일이 위치한 프로젝트의 루트 디렉터리로 이동합니다. `dotnet run` 명령을 실행해서 응용 프로그램을 실행합니다:
 
     ```cs
     dotnet run 
     ```
 
-    검색의 출력에 지정 된 URL의 `dotnet run` 명령입니다. URL 가리키는 `localhost` 생성 된 포트 번호를 사용 합니다. 탐색 하 고 **에 대 한** 페이지. 인증 된 사용자만 액세스할 수 있습니다는 **에 대 한** 페이지 이제 하므로 ASP.NET에 로그인 하거나 등록 로그인 페이지로 리디렉션됩니다.
+    `dotnet run` 명령의 출력에 지정된 URL을 찾습니다.
+    이 URL은 생성된 포트 번호가 지정된 `localhost`를 가리켜야 합니다.
+    브라우저에서 **About** 페이지로 이동합니다.
+    이제 인증된 사용자만 **About** 페이지에 접근할 수 있기 때문에, 로그인하거나 등록할 수 있도록 로그인 페이지로 리디렉션됩니다.
 
     ---
 
 ## <a name="identity-components"></a>Identity 구성 요소
 
-Id 시스템에 대 한 기본 참조 어셈블리는 `Microsoft.AspNetCore.Identity`합니다. 이 패키지 ASP.NET Core Id에 대 한 인터페이스의 핵심 집합으로 포함 되어 있으며 `Microsoft.AspNetCore.Identity.EntityFrameworkCore`합니다.
+Identity 시스템의 기본 참조 어셈블리는 `Microsoft.AspNetCore.Identity`입니다. 이 패키지에는 ASP.NET Core Identity에 대한 주요 인터페이스 모음이 포함되어 있으며, `Microsoft.AspNetCore.Identity.EntityFrameworkCore`에 포함되어 있습니다.
 
-이러한 종속성 ASP.NET Core 응용 프로그램의 Id 시스템을 사용 하려면 필요 합니다.
+ASP.NET Core 응용 프로그램에서 Identity 시스템을 사용하려면 다음과 같은 종속성들이 필요합니다:
 
-* `Microsoft.AspNetCore.Identity.EntityFrameworkCore`-Identity Entity Framework Core 사용 시 필요한 형식을 포함 합니다.
+* `Microsoft.AspNetCore.Identity.EntityFrameworkCore` - Entity Framework Core로 Identity를 사용하는데 필요한 형식들을 포함하고 있습니다.
 
-* `Microsoft.EntityFrameworkCore.SqlServer`-Entity Framework Core는 SQL Server와 같은 관계형 데이터베이스에 대 한 Microsoft의 권장 되는 데이터 액세스 기술입니다. 테스트를 위해 사용할 수 있습니다 `Microsoft.EntityFrameworkCore.InMemory`합니다.
+* `Microsoft.EntityFrameworkCore.SqlServer` - Entity Framework는 관계형 데이터베이스에 대한 Microsoft의 권장 데이터 접근 기술입니다. 테스트  목적으로 대신 `Microsoft.EntityFrameworkCore.InMemory`를 사용할 수도 있습니다.
 
-* `Microsoft.AspNetCore.Authentication.Cookies`-앱이 쿠키 기반 인증을 사용할 수 있도록 하는 미들웨어입니다.
+* `Microsoft.AspNetCore.Authentication.Cookies` - 응용 프로그램이 쿠키 기반의 인증을 사용할 수 있게 해주는 미들웨어입니다.
 
-## <a name="migrating-to-aspnet-core-identity"></a>ASP.NET Core Id로 마이그레이션
+## <a name="migrating-to-aspnet-core-identity"></a>ASP.NET Identity로 마이그레이션하기
 
-추가 정보 및 기존 본인 마이그레이션하는 방법에 대 한 지침을 참조 저장 [마이그레이션 인증 및 Id](xref:migration/identity)합니다.
+기존 Identity 저장소를 마이그레이션하는 방법에 대한 위한 추가적인 정보와 지침은 [인증 및 Identity 마이그레이션하기](xref:migration/identity)를 참고하시기 바랍니다.
 
 ## <a name="next-steps"></a>다음 단계
 
-* [인증 및 ID 마이그레이션](xref:migration/identity)
-* [계정 확인 및 암호 복구](xref:security/authentication/accconfirm)
-* [SMS를 사용한 2단계 인증](xref:security/authentication/2fa)
-* [Facebook, Google 및 기타 외부 공급자를 통해 인증 사용](xref:security/authentication/social/index)
+* [인증 및 Identity 마이그레이션하기](xref:migration/identity)
+* [계정 확인 및 비밀번호 복구](xref:security/authentication/accconfirm)
+* [SMS를 이용한 2단계 인증](xref:security/authentication/2fa)
+* [Facebook, Google 및 기타 외부 공급자를 이용한 인증 활성화시키기](xref:security/authentication/social/index)
