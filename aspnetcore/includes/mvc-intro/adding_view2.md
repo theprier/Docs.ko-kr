@@ -18,7 +18,7 @@
 
 ## <a name="change-the-title-and-menu-link-in-the-layout-file"></a>레이아웃 파일의 제목 및 메뉴 링크 변경
 
-제목 요소의 콘텐츠를 변경합니다. 레이아웃 템플릿에서 앵커 텍스트를 "동영상 앱"으로, 컨트롤러를 `Home`에서 아래 강조 표시된 `Movies`로 변경합니다.
+제목 요소에서 `MvcMovie`를 `Movie App`으로 변경합니다. 레이아웃 템플릿에서 앵커 텍스트를 `MvcMovie`에서 `Mvc Movie`로, 컨트롤러를 `Home`에서 아래 강조 표시된 `Movies`로 변경합니다.
 
 참고: ASP.NET Core 2.0 버전은 약간 다릅니다. `@inject ApplicationInsights` 및 `@Html.Raw(JavaScriptSnippet.FullScript)`는 포함하지 않습니다.
 
@@ -29,9 +29,9 @@
 
 변경 내용을 저장하고 **정보** 링크를 누릅니다. 브라우저 탭의 제목에서 **정보 - Mvc 동영상** 대신 **정보 - 동영상 앱**을 표시하는 방법을 확인합니다: 
 
-![정보 탭](../../tutorials/first-mvc-app/adding-view/_static/hell3.png)
+![정보 탭](../../tutorials/first-mvc-app/adding-view/_static/about2.png)
 
-**연락처** 링크를 누르고 **동영상 앱**도 표시하는 것을 확인합니다. 레이아웃 템플릿에 변경 사항을 한 번 적용할 수 있었으며 사이트의 모든 페이지에 새 링크 텍스트 및 새 제목을 반영했습니다.
+**연락처** 링크를 누르고 제목 및 앵커 텍스트가 **동영상 앱**을 표시하는지 확인합니다. 레이아웃 템플릿에 변경 사항을 한 번 적용할 수 있었으며 사이트의 모든 페이지에 새 링크 텍스트 및 새 제목을 반영했습니다.
 
 *Views/_ViewStart.cshtml* 파일을 검사합니다.
 
@@ -105,7 +105,7 @@
 
 URL에서 데이터를 가져오고 [MVC 모델 바인더](xref:mvc/models/model-binding)를 사용하여 컨트롤러에 전달됩니다. 컨트롤러는 데이터를 `ViewData` 사전으로 패키징하고 해당 개체를 보기에 전달합니다. 그런 다음 보기는 데이터를 HTML로 브라우저에 렌더링합니다.
 
-![시작 레이블 및 네 번 표시되는 구 Hello Rick을 보여 주는 정보 보기](../../tutorials/first-mvc-app/adding-view/_static/rick.png)
+![시작 레이블 및 네 번 표시되는 구 Hello Rick을 보여 주는 정보 보기](../../tutorials/first-mvc-app/adding-view/_static/rick2.png)
 
 위의 샘플에서 `ViewData` 사전을 사용하여 컨트롤러에서 보기로 데이터를 전달했습니다. 자습서의 뒷부분에서 보기 모델을 사용하여 컨트롤러에서 보기로 데이터를 전달합니다. 데이터를 전달하는 보기 모델 방법은 일반적으로 `ViewData` 사전 접근 방법보다 훨씬 많이 사용됩니다. 자세한 내용은 [MVC에서 ViewModel vs ViewData vs ViewBag vs TempData vs Session](http://www.mytecbits.com/microsoft/dot-net/viewmodel-viewdata-viewbag-tempdata-mvc)을 참조하세요.
 

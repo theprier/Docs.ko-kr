@@ -5,25 +5,22 @@ description: "간단한 ASP.NET Core 앱에 모델을 추가합니다."
 keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
-ms.date: 03/30/2017
+ms.date: 12/8/2017
 ms.topic: get-started-article
-ms.assetid: 8dc28498-00ee-4d66-b903-b593059e9f39
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app/adding-model
-ms.openlocfilehash: a29bab9cf0712936fa9c3f2b4bb3b275a46fe6f6
-ms.sourcegitcommit: e641c5794525f983485621860926d8ab4e7360c8
+ms.openlocfilehash: 03c16e523fe2f91cae5c71357835684d813e3a1f
+ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/23/2017
+ms.lasthandoff: 12/14/2017
 ---
 [!INCLUDE[adding-model](../../includes/mvc-intro/adding-model1.md)]
 
 참고: ASP.NET Core 2.0 템플릿은 *Models* 폴더를 포함합니다.
 
-솔루션 탐색기에서 **MvcMovie** 프로젝트를 마우스 오른쪽 단추로 클릭하고 **추가** > **새 폴더**를 선택합니다. 폴더 이름을 *Models*로 지정합니다.
-
-*Models* 폴더를 마우스 오른쪽 단추로 클릭하고 **추가** > **클래스**를 선택합니다. 클래스 이름을 **Movie**로 지정하고 다음 속성을 추가합니다.
+*Models* 폴더> **추가** > **클래스**를 마우스 오른쪽 단추로 클릭합니다. 클래스 이름을 **Movie**로 지정하고 다음 속성을 추가합니다.
 
 [!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieNoEF.cs?name=snippet_1)]
 
@@ -37,15 +34,10 @@ ms.lasthandoff: 11/23/2017
 
 ![위의 단계 보기](adding-model/_static/add_controller.png)
 
-**MVC 종속성 추가** 대화 상자에서 **최소 종속성**을 선택하고 **추가**를 선택합니다.
+**MVC 종속성 추가** 대화 상자가 나타나는 경우:
 
-![위의 단계 보기](adding-model/_static/add_depend.png)
-
-Visual Studio가 컨트롤러를 스캐폴드하는 데 필요한 종속성을 추가하지만 컨트롤러 자체는 생성되지 않습니다. 다음 **> 추가 > 컨트롤러** 호출에서 컨트롤러를 만듭니다. 
-
-**솔루션 탐색기**에서 *Controllers* 폴더를 마우스 오른쪽 단추로 클릭하고 **추가 > 컨트롤러**를 선택합니다.
-
-![위의 단계 보기](adding-model/_static/add_controller.png)
+* [Visual Studio를 최신 버전으로 업데이트합니다](https://www.visualstudio.com/downloads/). Visual Studio 15.5 이전 버전이 이 대화 상자를 표시합니다.
+* 업데이트할 수 없는 경우 **추가**를 선택한 다음 컨트롤러 추가 단계를 다시 따릅니다.
 
 **스캐폴드 추가** 대화 상자에서 **보기 포함 MVC 컨트롤러, Entity Framework > 추가 사용**을 누릅니다.
 

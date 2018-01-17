@@ -1,22 +1,23 @@
 ---
 title: "Visual Studio를 사용하여 Azure에 ASP.NET Core 앱 게시"
 author: rick-anderson
-description: 
+description: "Visual Studio를 사용하여 Azure App Service에 ASP.NET Core 앱을 게시하는 방법을 알아봅니다."
 keywords: ASP.NET Core
 ms.author: riande
 manager: wpickett
-ms.date: 10/05/2017
+ms.date: 12/16/2017
 ms.topic: get-started-article
-ms.assetid: 78571e4a-a143-452d-9cf2-0860f85972e6
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/publish-to-azure-webapp-using-vs
-ms.openlocfilehash: 6f697ed4d8876a19cd058533e4f6a5d4f7cdc2fb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e8de630c4fa8cff5395f7246b91384d4725e4ca6
+ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/11/2018
 ---
+/ko-kr
+
 # <a name="publish-an-aspnet-core-web-app-to-azure-app-service-using-visual-studio"></a>Visual Studio를 사용하여 Azure App Service에 ASP.NET Core 웹앱 게시
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT), [Cesar Blum Silveira](https://github.com/cesarbs) 및 [Rachel Appel](https://twitter.com/rachelappel)
@@ -36,9 +37,7 @@ Visual Studio 시작 페이지에서 **파일 > 새로 만들기 > 프로젝트.
 **새 프로젝트** 대화 상자를 완료합니다.
 
 * 왼쪽 창에서 **.NET Core**를 선택합니다.
-
 * 가운데 창에서 **ASP.NET Core 웹 응용 프로그램**을 선택합니다.
-
 * **확인**을 선택합니다.
 
 ![새 프로젝트 대화 상자](publish-to-azure-webapp-using-vs/_static/new_prj.png)
@@ -46,7 +45,6 @@ Visual Studio 시작 페이지에서 **파일 > 새로 만들기 > 프로젝트.
 **새 ASP.NET Core 웹 응용 프로그램** 대화 상자에서:
 
 * **웹 응용 프로그램**을 선택합니다.
-
 * **인증 변경**을 선택합니다.
 
 ![새 프로젝트 대화 상자](publish-to-azure-webapp-using-vs/_static/new_prj_2.png)
@@ -54,25 +52,24 @@ Visual Studio 시작 페이지에서 **파일 > 새로 만들기 > 프로젝트.
 **인증 변경** 대화 상자가 나타납니다. 
 
 * **개별 사용자 계정**을 선택합니다.
-
 * **확인**을 선택하여 **새 ASP.NET Core 웹 응용 프로그램**으로 돌아간 다음 다시 **확인**을 선택합니다.
 
 ![새 ASP.NET Core 웹 인증 대화 상자](publish-to-azure-webapp-using-vs/_static/new_prj_auth.png) 
 
 Visual Studio는 솔루션을 만듭니다.
 
-## <a name="run-the-app-locally"></a>로컬에서 앱 실행
+## <a name="run-the-app"></a>앱 실행
 
-* **디버그**를 선택한 다음 **디버깅하지 않고 시작**을 선택하여 앱을 로컬에서 실행합니다.
-
-* **정보**와 **연락처** 링크를 클릭하여 웹 응용 프로그램 작업을 확인합니다.
+* Ctrl+F5를 눌러 프로젝트를 실행합니다.
+* **정보** 및 **연락처** 링크를 테스트합니다.
 
 ![localhost의 Microsoft Edge에서 열린 웹 응용 프로그램](publish-to-azure-webapp-using-vs/_static/show.png)
+
+### <a name="register-a-user"></a>사용자 등록
 
 * **등록**을 선택하고 새 사용자를 등록합니다. 가상의 전자 메일 주소를 사용할 수 있습니다. 제출하면 페이지에 다음과 같은 오류가 표시됩니다.
 
     *“내부 서버 오류: 요청을 처리하는 동안 데이터베이스 작업이 실패했습니다. SQL 예외: 데이터베이스를 열 수 없습니다. 응용 프로그램 DB 컨텍스트에 대한 기존 마이그레이션 적용으로 이 문제를 해결할 수 있습니다.”*
-
 * **마이그레이션 적용**을 선택한 다음 페이지가 업데이트되면 페이지를 새로 고칩니다.
 
 ![내부 서버 오류: 요청을 처리하는 동안 데이터베이스 작업이 실패했습니다. SQL 예외: 데이터베이스를 열 수 없습니다. 응용 프로그램 DB 컨텍스트에 대한 기존 마이그레이션 적용으로 이 문제를 해결할 수 있습니다.](publish-to-azure-webapp-using-vs/_static/mig.png)
@@ -83,23 +80,24 @@ Visual Studio는 솔루션을 만듭니다.
 
 ## <a name="deploy-the-app-to-azure"></a>Azure에 앱 배포
 
-웹 페이지를 닫고 Visual Studio로 돌아간 다음 **디버그** 메뉴에서 **디버깅 중지**를 선택합니다.
-
 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 **게시...**를 선택합니다.
 
 ![강조 표시된 게시 링크로 열린 바로 가기 메뉴](publish-to-azure-webapp-using-vs/_static/pub.png)
 
-**게시** 대화 상자에서 **Microsoft Azure App Service**를 선택하고 **게시**를 클릭합니다.
+**게시** 대화 상자에서:
+
+* **Microsoft Azure App Service**를 선택합니다.
+* 기어 아이콘을 선택한 다음 **프로필 만들기**를 선택합니다.
+* **프로필 만들기**를 선택합니다.
 
 ![게시 대화 상자](publish-to-azure-webapp-using-vs/_static/maas1.png)
 
-* 앱에 고유한 이름을 지정합니다. 
+### <a name="create-azure-resources"></a>Azure 리소스 만들기
 
-* 구독을 선택합니다.
+**App Service 만들기** 대화 상자가 나타납니다.
 
-* 리소스 그룹에 대해 **새로 만들기...**를 선택하고 새 리소스 그룹에 대한 이름을 입력합니다.
-
-* App Service 계획에 대해 **새로 만들기...**를 선택하고 가까운 위치를 선택합니다. 기본적으로 생성되는 이름을 유지할 수 있습니다.
+* 구독을 입력합니다.
+* **앱 이름**, **리소스 그룹** 및 **App Service 계획** 항목 필드가 채워집니다. 이러한 이름을 유지하거나 변경할 수 있습니다.
 
 ![App Service 대화 상자](publish-to-azure-webapp-using-vs/_static/newrg1.png)
 
@@ -115,9 +113,7 @@ Visual Studio는 솔루션을 만듭니다.
 
 **SQL Server 구성** 대화 상자가 나타납니다.
 
-* 관리자 사용자 이름 및 암호를 입력한 다음 **확인**을 선택합니다. 이 단계에서 만드는 사용자 이름 및 암호를 잊지 마십시오. 기본 **서버 이름**을 유지할 수 있습니다. 
-
-* 데이터베이스 및 연결 문자열에 대한 이름을 입력합니다.
+* 관리자 사용자 이름 및 암호를 입력한 다음 **확인**을 선택합니다. 기본 **서버 이름**을 유지할 수 있습니다. 
 
 > [!NOTE]
 > "관리자"는 관리자 사용자 이름으로 사용할 수 없습니다.
@@ -132,21 +128,22 @@ Visual Studio가 **App Service 만들기** 대화 상자로 돌아갑니다.
 
 ![SQL Database 구성 대화 상자](publish-to-azure-webapp-using-vs/_static/conf_final.png)
 
-* **게시** 대화 상자에서 **설정** 링크를 클릭합니다.
+Visual Studio는 Azure에서 웹앱 및 SQL Server를 만듭니다. 이 단계는 몇 분 정도 걸릴 수 있습니다. 만든 리소스에 대한 자세한 내용은 [추가 리소스](#additonal-resources)를 참조하세요.
 
-![게시 대화 상자: 연결 패널](publish-to-azure-webapp-using-vs/_static/pubc.png)
+배포가 완료되면 **설정**을 선택합니다.
+
+![SQL Server 구성 대화 상자](publish-to-azure-webapp-using-vs/_static/set.png)
 
 **게시** 대화 상자의 **설정** 페이지에서:
 
   * **데이터베이스**를 확장하고 **런타임 시 이 연결 문자열 사용**을 선택합니다.
-
   * **Entity Framework 마이그레이션**을 확장하고 **게시에 이 마이그레이션 적용**을 선택합니다.
 
 * **저장**을 선택합니다. Visual Studio가 **게시** 대화 상자로 돌아갑니다. 
 
 ![게시 대화 상자: 설정 패널](publish-to-azure-webapp-using-vs/_static/pubs.png)
 
-**게시**를 클릭합니다. Visual Studio는 앱을 Azure에 게시하고 브라우저에서 클라우드 앱을 시작합니다.
+**게시**를 클릭합니다. Visual Studio는 Azure에 앱을 게시합니다. 배포가 완료되면 앱이 브라우저에서 열립니다.
 
 ### <a name="test-your-app-in-azure"></a>Azure에서 앱 테스트
 
@@ -158,9 +155,7 @@ Visual Studio가 **App Service 만들기** 대화 상자로 돌아갑니다.
 
 ### <a name="update-the-app"></a>앱 업데이트
 
-* *Pages/About.cshtml* Razor 페이지를 편집하고 내용을 변경합니다. 예를 들어 단락을 수정하여 “Hello ASP.NET Core!” 문구를 표시할 수 있습니다.
-
-    [!code-html[About](publish-to-azure-webapp-using-vs/sample/about.cshtml?highlight=9&range=1-9)]
+* *Pages/About.cshtml* Razor 페이지를 편집하고 내용을 변경합니다. 예를 들어 단락을 수정하여 “Hello ASP.NET Core!” 문구를 표시할 수 있습니다. [!code-html[About](publish-to-azure-webapp-using-vs/sample/about.cshtml?highlight=9&range=1-9)]
 
 * 프로젝트를 마우스 오른쪽 단추로 클릭하고 **게시...**를 선택합니다.
 
@@ -186,4 +181,10 @@ Visual Studio가 **App Service 만들기** 대화 상자로 돌아갑니다.
 
 ### <a name="next-steps"></a>다음 단계
 
-* [Visual Studio 및 Git을 사용하여 Azure에 연속 배포](../publishing/azure-continuous-deployment.md)
+* [Visual Studio 및 Git을 사용하여 Azure에 연속 배포](xref:host-and-deploy/azure-apps/azure-continuous-deployment)
+
+## <a name="additonal-resources"></a>추가 리소스
+
+* [Azure App Service](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-overview)
+* [Azure 리소스 그룹](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#resource-groups)
+* [Azure SQL Database](https://docs.microsoft.com/en-us/azure/sql-database/)
