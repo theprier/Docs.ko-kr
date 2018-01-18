@@ -5,22 +5,22 @@ description: "구성 API를 사용하여 여러 가지 방법으로 ASP.NET Core
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 11/01/2017
+ms.date: 1/11/2018
 ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/configuration/index
-ms.openlocfilehash: b662e66ab5b4c46d1a8d10eb7c38bf4064b5b927
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 0f8618898089418f709506aee5eb013f983dc294
+ms.sourcegitcommit: 87168cdc409e7a7257f92a0f48f9c5ab320b5b28
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="configure-an-aspnet-core-app"></a>ASP.NET Core 앱 구성
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT), [Mark Michaelis](http://intellitect.com/author/mark-michaelis/), [Steve Smith](https://ardalis.com/), [Daniel Roth](https://github.com/danroth27), [Luke Latham](https://github.com/guardrex)
 
-구성 API는 이름-값 쌍 목록을 기반으로 ASP.NET Core 웹앱을 구성하는 방법을 제공합니다. 구성은 여러 소스에서 런타임에 읽힙니다. 이러한 이름-값 쌍을 다중 수준 계층으로 그룹화할 수 있습니다. 
+구성 API는 이름-값 쌍 목록을 기반으로 ASP.NET Core 웹앱을 구성하는 방법을 제공합니다. 구성은 여러 소스에서 런타임에 읽힙니다. 이러한 이름-값 쌍을 다중 수준 계층으로 그룹화할 수 있습니다.
 
 다음에 대한 구성 공급자가 있습니다.
 
@@ -50,19 +50,21 @@ ms.lasthandoff: 01/11/2018
 
 구성은 콜론으로 노드를 구분하는 이름-값 쌍의 계층적 목록으로 이루어집니다. 값을 검색하려면 해당 항목의 키를 사용하여 `Configuration` 인덱서에 액세스합니다.
 
-```csharp
-Console.WriteLine($"option1 = {Configuration["subsection:suboption1"]}");
-```
+[!code-csharp[Main](index/sample/ConfigJson/Program.cs?range=24-24)]
 
 JSON 형식 구성 소스의 배열을 작업하려면 배열 인덱스를 콜론으로 구분된 문자열의 일부로 사용합니다. 다음 예제는 앞에서 나온 `wizards` 배열의 첫 번째 항목 이름을 가져옵니다.
 
 ```csharp
-Console.Write($"{Configuration["wizards:0:Name"]}, ");
+Console.Write($"{Configuration["wizards:0:Name"]}");
+// Output: Gandalf
 ```
 
-기본 제공 `Configuration` 공급자에 기록된 이름-값 쌍은 유지되지 **않습니다**. 그러나 값을 저장하는 사용자 지정 공급자를 만들 수 있습니다. [사용자 지정 구성 공급자](xref:fundamentals/configuration/index#custom-config-providers)를 참조하세요.
+기본 제공 [구성](https://docs.microsoft.com/ dotnet/api/microsoft.extensions.configuration) 공급자에 기록된 이름-값 쌍은 유지되지 **않습니다**. 그러나 값을 저장하는 사용자 지정 공급자를 만들 수 있습니다. [사용자 지정 구성 공급자](xref:fundamentals/configuration/index#custom-config-providers)를 참조하세요.
 
 이전 샘플은 구성 인덱서를 사용하여 값을 읽습니다. `Startup` 외부에서 구성에 액세스하려면 *옵션 패턴*을 사용합니다. 자세한 내용은 [옵션](xref:fundamentals/configuration/options) 항목을 참조하세요.
+
+
+## <a name="configuration-by-environment"></a>환경별 구성
 
 개발, 테스트, 프로덕션 등 환경마다 다른 구성 설정을 사용하는 것이 일반적입니다. ASP.NET Core 2.x 앱의 `CreateDefaultBuilder` 확장 메서드(또는 ASP.NET Core 1.x 앱에서 바로 `AddJsonFile` 및 `AddEnvironmentVariables` 사용)는 JSON 파일 및 시스템 구성 소스를 읽기 위한 구성 공급자를 추가합니다.
 
@@ -70,18 +72,28 @@ Console.Write($"{Configuration["wizards:0:Name"]}, ");
 * *appsettings.\<EnvironmentName>.json*
 * 환경 변수
 
-매개 변수에 대한 설명은 [AddJsonFile](/dotnet/api/microsoft.extensions.configuration.jsonconfigurationextensions)을 참조하세요. `reloadOnChange`는 ASP.NET Core 1.1 이상에서만 지원됩니다. 
+ASP.NET Core 1.x 앱은 `AddJsonFile` 및 [AddEnvironmentVariables](https://docs.microsoft.com/ dotnet/api/microsoft.extensions.configuration.environmentvariablesextensions.addenvironmentvariables #Microsoft_Extensions_Configuration_EnvironmentVariablesExtensions_AddEnvironmentVariables_Microsoft_Extensions_Configuration_IConfigurationBuilder_System_String_)를 호출해야 합니다.
 
-구성 소스는 지정된 순서대로 읽힙니다. 위의 코드에서 환경 변수는 마지막에 읽힙니다. 환경을 통해 설정된 구성 값은 두 이전 공급자에서 설정된 구성 값을 대체합니다.
+매개 변수에 대한 설명은 [AddJsonFile](/dotnet/api/microsoft.extensions.configuration.jsonconfigurationextensions)을 참조하세요. `reloadOnChange`는 ASP.NET Core 1.1 이상에서만 지원됩니다.
+
+구성 소스는 지정된 순서대로 읽힙니다. 이전 코드에서 환경 변수는 마지막에 읽힙니다. 환경을 통해 설정된 구성 값은 두 이전 공급자에서 설정된 구성 값을 대체합니다.
+
+다음 *appsettings.Staging.json* 파일을 고려해 보세요.
+
+[!code-json[Main](index/sample/appsettings.Staging.json)]
+
+환경이 `Staging`으로 설정되면 다음 `Configure` 메서드가 `MyConfig` 값을 읽습니다.
+
+[!code-csharp[Main](index/sample/StartupConfig.cs?name=snippet&highlight=3,4)]
+
 
 환경은 일반적으로 `Development`, `Staging` 또는 `Production`으로 설정됩니다. 자세한 내용은 [여러 환경 사용](xref:fundamentals/environments)을 참조하세요.
 
 구성 고려 사항:
 
 * `IOptionsSnapshot`은 구성 데이터가 변경되면 구성 데이터를 다시 로드할 수 있습니다. 자세한 내용은 [IOptionsSnapshot](xref:fundamentals/configuration/options#reload-configuration-data-with-ioptionssnapshot)을 참조하세요.
-* 구성 키는 대/소문자를 구분합니다.
-* 배포된 구성 파일의 설정을 로컬 환경이 재정의하도록 환경 변수를 마지막으로 지정합니다.
-* 구성 공급자 코드 또는 일반 텍스트 구성 파일에 암호 또는 기타 중요한 데이터를 **절대 저장하지 마세요**. 개발 또는 테스트 환경에서 프로덕션 비밀을 사용하지 마세요. 그 대신, 의도치 않게 리포지토리에 커밋되는 일이 없도록 프로젝트 외부에서 비밀을 지정합니다. [여러 환경 사용](xref:fundamentals/environments) 및 [개발 중 안전한 앱 비밀 저장소](xref:security/app-secrets) 관리에 대해 자세히 알아보세요.
+* 구성 키는 대/소문자를 구분하지 **않습니다**.
+* 구성 공급자 코드 또는 일반 텍스트 구성 파일에 암호 또는 기타 중요한 데이터를 **절대 저장하지 마세요**. 개발 또는 테스트 환경에서 프로덕션 비밀을 사용하지 마세요. 의도치 않게 리포지토리에 커밋되는 일이 없도록 프로젝트 외부에서 비밀을 지정하세요. [여러 환경 사용](xref:fundamentals/environments) 및 [개발 중 안전한 앱 비밀 저장소](xref:security/app-secrets) 관리에 대해 자세히 알아보세요.
 * 시스템의 환경 변수에서 콜론(`:`)을 사용할 수 없으면 콜론(`:`)을 이중 밑줄(`__`)로 바꾸세요.
 
 ## <a name="in-memory-provider-and-binding-to-a-poco-class"></a>메모리 내 공급자 및 POCO 클래스에 바인딩
@@ -96,7 +108,7 @@ Console.Write($"{Configuration["wizards:0:Name"]}, ");
 
 다음 샘플은 [GetValue&lt;T&gt;](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.configuration.configurationbinder#Microsoft_Extensions_Configuration_ConfigurationBinder_GetValue_Microsoft_Extensions_Configuration_IConfiguration_System_Type_System_String_System_Object_) 확장 메서드를 보여줍니다.
 
-[!code-csharp[Main](index/sample/InMemoryGetValue/Program.cs?highlight=27-29)]
+[!code-csharp[Main](index/sample/InMemoryGetValue/Program.cs?highlight=31)]
 
 ConfigurationBinder의 `GetValue<T>` 메서드를 사용하여 기본값을 지정할 수 있습니다(이 샘플에서는 80). `GetValue<T>`는 간단한 시나리오에 사용되며 전체 섹션에 바인딩되지 않습니다. `GetValue<T>`는 특정 형식으로 변환된 `GetSection(key).Value`에서 스칼라 값을 가져옵니다.
 
@@ -110,7 +122,7 @@ ConfigurationBinder의 `GetValue<T>` 메서드를 사용하여 기본값을 지�
 
 [!code-csharp[Main](index/sample/ObjectGraph/Program.cs?highlight=15-16)]
 
-**ASP.NET Core 1.1** 이상은 전체 섹션에서 작동하는 `Get<T>`를 사용할 수 있습니다. `Get<T>`가 `Bind`을 사용하는 것보다 편리할 수 있습니다. 다음 코드는 위의 샘플에 `Get<T>`를 사용하는 방법을 보여 줍니다.
+**ASP.NET Core 1.1** 이상은 전체 섹션에서 작동하는 `Get<T>`를 사용할 수 있습니다. `Get<T>`가 `Bind`을 사용하는 것보다 편리할 수 있습니다. 다음 코드는 이전 샘플에 `Get<T>`를 사용하는 방법을 보여 줍니다.
 
 ```csharp
 var appConfig = config.GetSection("App").Get<AppSettings>();
@@ -153,7 +165,7 @@ public void CanBindObjectTree()
 
 ## <a name="create-an-entity-framework-custom-provider"></a>Entity Framework 사용자 지정 공급자 만들기
 
-이 섹션에서는 EF를 사용하여 데이터베이스에서 이름-값 쌍을 읽는 기본 구성 공급자가 생성됩니다. 
+이 섹션에서는 EF를 사용하여 데이터베이스에서 이름-값 쌍을 읽는 기본 구성 공급자가 생성됩니다.
 
 데이터베이스에 구성 값을 저장하는 `ConfigurationValue` 엔터티를 정의합니다.
 
@@ -167,7 +179,7 @@ public void CanBindObjectTree()
 
 [!code-csharp[Main](index/sample/CustomConfigurationProvider/EntityFrameworkConfigurationSource.cs?highlight=7)]
 
-[ConfigurationProvider](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.configuration.configurationprovider)에서 상속하여 사용자 지정 구성 공급자를 만듭니다.  구성 공급자는 비어 있는 데이터베이스를 초기화합니다.
+[ConfigurationProvider](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.configuration.configurationprovider)에서 상속하여 사용자 지정 구성 공급자를 만듭니다. 구성 공급자는 비어 있는 데이터베이스를 초기화합니다.
 
 [!code-csharp[Main](index/sample/CustomConfigurationProvider/EntityFrameworkConfigurationProvider.cs?highlight=9,18-31,38-39)]
 
@@ -187,7 +199,7 @@ public void CanBindObjectTree()
 
 [!code-json[Main](index/sample/CustomConfigurationProvider/appsettings.json)]
 
-다음이 표시됩니다.
+다음 출력이 표시됩니다.
 
 ```console
 key1=value_from_ef_1
@@ -241,10 +253,15 @@ Left: 1979
 
 `CreateDefaultBuilder`는 *appsettings.json*, *appsettings.{Environment}.json*, [사용자 비밀](xref:security/app-secrets)(`Development` 환경의 경우), 환경 변수 및 명령줄 인수에서 선택적 구성을 로드합니다. CommandLine 구성 공급자는 마지막에 호출됩니다. 공급자가 마지막에 호출되기 때문에 다른 구성 공급자가 이전에 설정한 구성을 런타임에 전달되는 명령줄 인수가 재정의할 수 있습니다.
 
-*appsettings* 파일의 경우 `reloadOnChange`가 사용하도록 설정됩니다. 앱이 시작된 후 *appsettings* 파일의 일치하는 구성 값이 변경되면 명령줄 인수가 재정의됩니다.
+*appsettings* 파일에는
 
-> [!NOTE]
-> ASP.NET Core 2.x에서는 `CreateDefaultBuilder` 메서드를 사용하는 대신 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder)를 사용하여 호스트를 만들고 [ConfigurationBuilder](/api/microsoft.extensions.configuration.configurationbuilder)를 사용하여 수동으로 구성을 빌드하는 방법이 지원됩니다. 자세한 내용은 ASP.NET Core 1.x 탭을 참조하세요.
+* `reloadOnChange`가 활성화됩니다.
+* 명령줄 인수와 *appsettings* 파일에 동일한 설정을 포함하세요.
+* 일치하는 명령줄 인수가 포함된 *appsettings* 파일은 앱이 시작된 후 변경됩니다.
+
+이전 조건이 모두 참인 경우 명령줄 인수가 무시됩니다.
+
+ASP.NET Core 2.x 앱은 [ConfigurationBuilder](/api/microsoft.extensions.configuration.configurationbuilder)를 사용하여 수동으로 설정된 구성인 ``CreateDefaultBuilder`. When using `WebHostBuilder` 대신 WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder)를 사용할 수 있습니다. 자세한 내용은 ASP.NET Core 1.x 탭을 참조하세요.
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
@@ -384,6 +401,7 @@ IIS 또는 IIS Express에서 앱을 호스트하는 경우 *web.config* 파일�
 * `IConfiguration`에는 두 가지 특수화가 있습니다.
   * `IConfigurationRoot`는 루트 노드에 사용됩니다. 다시 로드를 트리거할 수 있습니다.
   * `IConfigurationSection`은 구성 값의 섹션을 나타냅니다. `GetSection` 및 `GetChildren` 메서드는 `IConfigurationSection`을 반환합니다.
+  * 구성을 다시 로드하는 경우 또는 각 공급자에 액세스해야 하는 경우 [IConfigurationRoot](https://docs.microsoft.com/ dotnet/api/microsoft.extensions.configuration.iconfigurationroot)를 사용하세요. 이러한 상황은 일반적이지 않습니다.
 
 ## <a name="additional-resources"></a>추가 리소스
 
