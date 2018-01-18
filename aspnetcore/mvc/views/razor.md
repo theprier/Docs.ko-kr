@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/razor
-ms.openlocfilehash: e3c3149254d602db1fcc6d42360690be026189a5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6df769069fce52755a57d8404f88203a652a1ab9
+ms.sourcegitcommit: a3e88639a6bcf8fb4d634036dac93130c464a097
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/18/2018
 ---
 # <a name="razor-syntax-for-aspnet-core"></a>ASP.NET Core에 대 한 razor 구문
 
@@ -76,7 +76,7 @@ C# 제외 하 고 `await` 키워드, 암시적 식 공백을 포함 해서는 �
  * "Int" 요소가 닫히지 않았습니다.  모든 요소가 하나 있어야 자체 닫거나는 짝이 되는 끝 태그가 있습니다.
  *  메서드 그룹을 비 대리자 형식 'object' ' GenericMethod'으로 변환할 수 없습니다. 메서드를 호출 하 시겠습니까?' 
  
-제네릭 메서드 호출에 래핑되어야는 [명시적 Razor 식](#explicit-razor-expressions) 또는 [Razor 코드 블록](#razor-code-blocks)합니다. 이 제한에 적용 되지 않습니다 *.vbhtml* Razor Visual Basic 구문의 대괄호 대신 제네릭 형식 매개 변수 주위에 괄호를 배치 하기 때문에 파일입니다.
+제네릭 메서드 호출에 래핑되어야는 [명시적 Razor 식](#explicit-razor-expressions) 또는 [Razor 코드 블록](#razor-code-blocks)합니다.
 
 ## <a name="explicit-razor-expressions"></a>명시적 Razor 식
 
@@ -127,8 +127,6 @@ Razor 식은 명시적으로 구성 될는 `@` 균형 잡힌 괄호 기호입니
 ```cshtml
 <p>@(GenericMethod<int>())</p>
 ```
-
-참고:이 제한에 적용 되지 않습니다 *.vbhtml* Razor 파일입니다.  와 *.vbhtml* Razor 파일, Visual Basic 구문의 대괄호 대신 제네릭 형식 매개 변수 주위에 괄호를 배치 합니다.
 
 ## <a name="expression-encoding"></a>식 인코딩
 
