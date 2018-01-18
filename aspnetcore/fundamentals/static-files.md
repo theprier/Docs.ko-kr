@@ -1,227 +1,258 @@
 ---
-title: "ASP.NET Core에 정적 파일 작업"
+title: "ASP.NET Core에서 정적 파일로 작업"
 author: rick-anderson
-description: "ASP.NET Core에 정적 파일을 사용 하는 방법을 알아봅니다."
+description: "처리 하 고 정적 파일을 보호 하 고 정적 파일 미들웨어 동작 ASP.NET Core 웹 앱에서 호스트를 구성 하는 방법을 알아봅니다."
 keywords: "ASP.NET Core, 정적 파일, 정적 자산, HTML, CSS, JavaScript"
-ms.author: riande
 manager: wpickett
-ms.date: 4/07/2017
-ms.topic: article
-ms.assetid: e32245c7-4eee-4831-bd2e-915dbf9f5f70
-ms.technology: aspnet
+ms.author: riande
+ms.custom: mvc
+ms.date: 01/18/2018
+ms.devlang: csharp
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: fundamentals/static-files
-ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: c0751576a1391f26f045c3f8c42ea39c0ff6e5d9
-ms.sourcegitcommit: e4fb6b13be56a0fb2f2778623740a047d6489227
+ms.openlocfilehash: 912923860939a1d1dd91ccc79862e23f9095d161
+ms.sourcegitcommit: a3e88639a6bcf8fb4d634036dac93130c464a097
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/16/2017
+ms.lasthandoff: 01/18/2018
 ---
-# <a name="working-with-static-files-in-aspnet-core"></a><span data-ttu-id="4b16d-104">ASP.NET Core에 정적 파일 작업</span><span class="sxs-lookup"><span data-stu-id="4b16d-104">Working with static files in ASP.NET Core</span></span>
+# <a name="work-with-static-files-in-aspnet-core"></a><span data-ttu-id="5e584-104">ASP.NET Core에서 정적 파일로 작업</span><span class="sxs-lookup"><span data-stu-id="5e584-104">Work with static files in ASP.NET Core</span></span>
 
-<a name="fundamentals-static-files"></a>
+<span data-ttu-id="5e584-105">여 [Rick Anderson](https://twitter.com/RickAndMSFT) 및 [Scott Addie](https://twitter.com/Scott_Addie)</span><span class="sxs-lookup"><span data-stu-id="5e584-105">By [Rick Anderson](https://twitter.com/RickAndMSFT) and [Scott Addie](https://twitter.com/Scott_Addie)</span></span>
 
-<span data-ttu-id="4b16d-105">작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="4b16d-105">By [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
+<span data-ttu-id="5e584-106">HTML, CSS, JavaScript 및 이미지와 같은 정적 파일은 자산 클라이언트에 직접 ASP.NET Core 응용 프로그램을 제공 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-106">Static files, such as HTML, CSS, images, and JavaScript, are assets an ASP.NET Core app serves directly to clients.</span></span> <span data-ttu-id="5e584-107">일부 구성은 이러한 파일의 처리를 사용 하도록 설정 하는 데 필요 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-107">Some configuration is required to enable to serving of these files.</span></span>
 
-<span data-ttu-id="4b16d-106">HTML, CSS, 이미지 및 JavaScript와 같은 정적 파일은 ASP.NET Core 응용 프로그램을 클라이언트에 직접 제공할 수 있는 자산입니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-106">Static files, such as HTML, CSS, image, and JavaScript, are assets that an ASP.NET Core app can serve directly to clients.</span></span>
+<span data-ttu-id="5e584-108">[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/static-files/samples)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))</span><span class="sxs-lookup"><span data-stu-id="5e584-108">[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/static-files/samples) ([how to download](xref:tutorials/index#how-to-download-a-sample))</span></span>
 
-<span data-ttu-id="4b16d-107">[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/static-files/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))</span><span class="sxs-lookup"><span data-stu-id="4b16d-107">[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/static-files/sample) ([how to download](xref:tutorials/index#how-to-download-a-sample))</span></span>
+## <a name="serve-static-files"></a><span data-ttu-id="5e584-109">정적 파일을 제공</span><span class="sxs-lookup"><span data-stu-id="5e584-109">Serve static files</span></span>
 
-## <a name="serving-static-files"></a><span data-ttu-id="4b16d-108">정적 파일 처리</span><span class="sxs-lookup"><span data-stu-id="4b16d-108">Serving static files</span></span>
+<span data-ttu-id="5e584-110">정적 파일은 프로젝트의 웹 루트 디렉터리 안에 저장 됩니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-110">Static files are stored within your project's web root directory.</span></span> <span data-ttu-id="5e584-111">기본 디렉터리는  *\<content_root > / wwwroot*을 통해 변경할 수 있습니다 하지만 [UseWebRoot](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.usewebroot#Microsoft_AspNetCore_Hosting_HostingAbstractionsWebHostBuilderExtensions_UseWebRoot_Microsoft_AspNetCore_Hosting_IWebHostBuilder_System_String_) 메서드.</span><span class="sxs-lookup"><span data-stu-id="5e584-111">The default directory is *\<content_root>/wwwroot*, but it can be changed via the [UseWebRoot](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.usewebroot#Microsoft_AspNetCore_Hosting_HostingAbstractionsWebHostBuilderExtensions_UseWebRoot_Microsoft_AspNetCore_Hosting_IWebHostBuilder_System_String_) method.</span></span> <span data-ttu-id="5e584-112">참조 [콘텐츠 루트](xref:fundamentals/index#content-root) 및 [웹 루트](xref:fundamentals/index#web-root) 자세한 정보에 대 한 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-112">See [Content root](xref:fundamentals/index#content-root) and [Web root](xref:fundamentals/index#web-root) for more information.</span></span>
 
-<span data-ttu-id="4b16d-109">정적 파일은 일반적으로 %programfiles%\microsoft는 `web root` (*\<콘텐츠 루트 > / wwwroot*) 폴더입니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-109">Static files are typically located in the `web root` (*\<content-root>/wwwroot*) folder.</span></span> <span data-ttu-id="4b16d-110">참조 [콘텐츠 루트](xref:fundamentals/index#content-root) 및 [웹 루트](xref:fundamentals/index#web-root) 자세한 정보에 대 한 합니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-110">See [Content root](xref:fundamentals/index#content-root) and [Web root](xref:fundamentals/index#web-root) for more information.</span></span> <span data-ttu-id="4b16d-111">콘텐츠 루트 현재 디렉터리를 일반적으로 설정 되도록 프로젝트의 `web root` 개발에서 찾을 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-111">You generally set the content root to be the current directory so that your project's `web root` will be found while in development.</span></span>
+<span data-ttu-id="5e584-113">응용 프로그램의 웹 호스트 콘텐츠 루트 디렉터리의 인식 수 있어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-113">The app's web host must be made aware of the content root directory.</span></span>
 
-[!code-csharp[Main](../common/samples/WebApplication1/Program.cs?highlight=5&start=12&end=22)]
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="5e584-114">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="5e584-114">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
-<span data-ttu-id="4b16d-112">아래의 모든 폴더에 정적 파일을 저장할 수 있습니다는 `web root` 해당 루트의 상대 경로 사용 하 여 액세스 하 고 있습니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-112">Static files can be stored in any folder under the `web root` and accessed with a relative path to that root.</span></span> <span data-ttu-id="4b16d-113">예를 들어 Visual Studio를 사용 하 여 기본 웹 응용 프로그램 프로젝트를 만들 때 여러 폴더가 있는 내에서 만든는 *wwwroot* 폴더- *css*, *이미지*, 및 *js*합니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-113">For example, when you create a default Web application project using Visual Studio, there are several folders created within the *wwwroot*  folder - *css*, *images*, and *js*.</span></span> <span data-ttu-id="4b16d-114">URI에 있는 이미지에 액세스 하기는 *이미지* 하위 폴더:</span><span class="sxs-lookup"><span data-stu-id="4b16d-114">The URI to access an image in the *images* subfolder:</span></span>
+<span data-ttu-id="5e584-115">`WebHost.CreateDefaultBuilder` 메서드 콘텐츠 루트를 현재 디렉터리로 설정 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-115">The `WebHost.CreateDefaultBuilder` method sets the content root to the current directory:</span></span>
 
-* `http://<app>/images/<imageFileName>`
-* `http://localhost:9189/images/banner3.svg`
+[!code-csharp[](../common/samples/WebApplication1DotNetCore2.0App/Program.cs?name=snippet_Main&highlight=9)]
 
-<span data-ttu-id="4b16d-115">정적 파일 처리에 대 한 순서 대로 구성 해야는 [미들웨어](middleware.md) 파이프라인에 정적 파일을 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-115">In order for static files to be served, you must configure the [Middleware](middleware.md) to add static files to the pipeline.</span></span> <span data-ttu-id="4b16d-116">정적 파일 미들웨어에서 종속성을 추가 하 여 구성할 수 있습니다는 *Microsoft.AspNetCore.StaticFiles* 패키지를 프로젝트와 다음 호출에서 `UseStaticFiles` 에서 확장 메서드 `Startup.Configure`:</span><span class="sxs-lookup"><span data-stu-id="4b16d-116">The static file middleware can be configured by adding a dependency on the *Microsoft.AspNetCore.StaticFiles* package to your project and then calling the `UseStaticFiles` extension method from `Startup.Configure`:</span></span>
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="5e584-116">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="5e584-116">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
-[!code-csharp[Main](../fundamentals/static-files/sample/StartupStaticFiles.cs?highlight=3&name=snippet1)]
+<span data-ttu-id="5e584-117">호출 하 여 콘텐츠 루트 현재 디렉터리로 설정 [UseContentRoot](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.usecontentroot#Microsoft_AspNetCore_Hosting_HostingAbstractionsWebHostBuilderExtensions_UseContentRoot_Microsoft_AspNetCore_Hosting_IWebHostBuilder_System_String_) 내부에 `Program.Main`:</span><span class="sxs-lookup"><span data-stu-id="5e584-117">Set the content root to the current directory by invoking [UseContentRoot](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.usecontentroot#Microsoft_AspNetCore_Hosting_HostingAbstractionsWebHostBuilderExtensions_UseContentRoot_Microsoft_AspNetCore_Hosting_IWebHostBuilder_System_String_) inside of `Program.Main`:</span></span>
 
-<span data-ttu-id="4b16d-117">`app.UseStaticFiles();`에 있는 파일을 사용 하면 `web root` (*wwwroot* 기본적으로) servable 합니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-117">`app.UseStaticFiles();` makes the files in `web root` (*wwwroot* by default) servable.</span></span> <span data-ttu-id="4b16d-118">나중에 다른 디렉터리 내용을와 servable 확인 하는 방법을 보여 드리 려 `UseStaticFiles`합니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-118">Later I'll show how to make other directory contents servable with `UseStaticFiles`.</span></span>
+[!code-csharp[](static-files/samples/1x/Program.cs?name=snippet_ProgramClass&highlight=7)]
 
-<span data-ttu-id="4b16d-119">"Microsoft.AspNetCore.StaticFiles" NuGet 패키지를 포함 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-119">You must include the NuGet package "Microsoft.AspNetCore.StaticFiles".</span></span>
+---
 
-> [!NOTE]
-> <span data-ttu-id="4b16d-120">`web root`기본적으로 *wwwroot* 있지만 디렉터리를 설정할 수는 `web root` ड ि र ॅ `UseWebRoot`합니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-120">`web root` defaults to the *wwwroot* directory, but you can set the `web root` directory with `UseWebRoot`.</span></span>
+<span data-ttu-id="5e584-118">정적 파일은 웹 루트에 상대적인 경로 통해 액세스할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-118">Static files are accessible via a path relative to the web root.</span></span> <span data-ttu-id="5e584-119">예를 들어는 **웹 응용 프로그램** 내에서 여러 폴더를 포함 하는 프로젝트 템플릿에 *wwwroot* 폴더:</span><span class="sxs-lookup"><span data-stu-id="5e584-119">For example, the **Web Application** project template contains several folders within the *wwwroot* folder:</span></span>
 
-<span data-ttu-id="4b16d-121">있다고 가정 하면 외부 사용 하려는 정적 파일이 있는 프로젝트 계층 구조는 `web root`합니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-121">Suppose you have a project hierarchy where the static files you wish to serve are outside the `web root`.</span></span> <span data-ttu-id="4b16d-122">예:</span><span class="sxs-lookup"><span data-stu-id="4b16d-122">For example:</span></span>
+* <span data-ttu-id="5e584-120">**wwwroot**</span><span class="sxs-lookup"><span data-stu-id="5e584-120">**wwwroot**</span></span>
+  * <span data-ttu-id="5e584-121">**css**</span><span class="sxs-lookup"><span data-stu-id="5e584-121">**css**</span></span>
+  * <span data-ttu-id="5e584-122">**images**</span><span class="sxs-lookup"><span data-stu-id="5e584-122">**images**</span></span>
+  * <span data-ttu-id="5e584-123">**js**</span><span class="sxs-lookup"><span data-stu-id="5e584-123">**js**</span></span>
 
-* <span data-ttu-id="4b16d-123">wwwroot</span><span class="sxs-lookup"><span data-stu-id="4b16d-123">wwwroot</span></span>
-  * <span data-ttu-id="4b16d-124">css</span><span class="sxs-lookup"><span data-stu-id="4b16d-124">css</span></span>
-  * <span data-ttu-id="4b16d-125">이미지</span><span class="sxs-lookup"><span data-stu-id="4b16d-125">images</span></span>
-  * <span data-ttu-id="4b16d-126">...</span><span class="sxs-lookup"><span data-stu-id="4b16d-126">...</span></span>
-* <span data-ttu-id="4b16d-127">MyStaticFiles</span><span class="sxs-lookup"><span data-stu-id="4b16d-127">MyStaticFiles</span></span>
-  * <span data-ttu-id="4b16d-128">test.png</span><span class="sxs-lookup"><span data-stu-id="4b16d-128">test.png</span></span>
+<span data-ttu-id="5e584-124">파일에 액세스 하려면 URI 형식이 고 *이미지* 하위 폴더는 *http://\<server_address > /images/\<image_file_name >*합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-124">The URI format to access a file in the *images* subfolder is *http://\<server_address>/images/\<image_file_name>*.</span></span> <span data-ttu-id="5e584-125">예를 들어 *http://localhost:9189/images/banner3.svg*합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-125">For example, *http://localhost:9189/images/banner3.svg*.</span></span>
 
-<span data-ttu-id="4b16d-129">에 액세스 하려면 요청에 대 한 *test.png*, 정적 파일 미들웨어를 다음과 같이 구성 합니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-129">For a request to access *test.png*, configure the static files middleware as follows:</span></span>
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="5e584-126">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="5e584-126">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
-[!code-csharp[Main](../fundamentals/static-files/sample/StartupTwoStaticFiles.cs?highlight=5,6,7,8,9,10&name=snippet1)]
+<span data-ttu-id="5e584-127">.NET Framework를 대상으로 하는 경우 추가 [Microsoft.AspNetCore.StaticFiles](https://www.nuget.org/packages/Microsoft.AspNetCore.StaticFiles/) 프로젝트에 패키지 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-127">If targeting .NET Framework, add the [Microsoft.AspNetCore.StaticFiles](https://www.nuget.org/packages/Microsoft.AspNetCore.StaticFiles/) package to your project.</span></span> <span data-ttu-id="5e584-128">.NET Core를 대상으로 하는 경우는 [Microsoft.AspNetCore.All metapackage](xref:fundamentals/metapackage) 이 패키지를 포함 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-128">If targeting .NET Core, the [Microsoft.AspNetCore.All metapackage](xref:fundamentals/metapackage) includes this package.</span></span>
 
-<span data-ttu-id="4b16d-130">요청을 `http://<app>/StaticFiles/test.png` 사용할는 *test.png* 파일입니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-130">A request to `http://<app>/StaticFiles/test.png` will serve the *test.png* file.</span></span>
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="5e584-129">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="5e584-129">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
-<span data-ttu-id="4b16d-131">`StaticFileOptions()`응답 헤더를 설정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-131">`StaticFileOptions()` can set response headers.</span></span> <span data-ttu-id="4b16d-132">아래 코드 정적 파일에서 처리를 설정 하는 예를 들어는 *wwwroot* 폴더 및 집합은 `Cache-Control` 헤더를 10 분 (600 초) 동안 공개적으로 캐시할 수 있도록:</span><span class="sxs-lookup"><span data-stu-id="4b16d-132">For example, the code below sets up static file serving from the *wwwroot* folder and sets the `Cache-Control` header to make them publicly cacheable for 10 minutes (600 seconds):</span></span>
+<span data-ttu-id="5e584-130">추가 [Microsoft.AspNetCore.StaticFiles](https://www.nuget.org/packages/Microsoft.AspNetCore.StaticFiles/) 프로젝트에 패키지 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-130">Add the [Microsoft.AspNetCore.StaticFiles](https://www.nuget.org/packages/Microsoft.AspNetCore.StaticFiles/) package to your project.</span></span>
 
-[!code-csharp[Main](../fundamentals/static-files/sample/StartupAddHeader.cs?name=snippet1)]
+---
 
-<span data-ttu-id="4b16d-133">[HeaderDictionaryExtensions.Append](/dotnet/api/microsoft.aspnetcore.http.headerdictionaryextensions.append) 메서드는에서 사용할 수는 [Microsoft.AspNetCore.Http](https://www.nuget.org/packages/Microsoft.AspNetCore.Http/) 패키지 합니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-133">The [HeaderDictionaryExtensions.Append](/dotnet/api/microsoft.aspnetcore.http.headerdictionaryextensions.append) method is available from the [Microsoft.AspNetCore.Http](https://www.nuget.org/packages/Microsoft.AspNetCore.Http/) package.</span></span> <span data-ttu-id="4b16d-134">추가 `using Microsoft.AspNetCore.Http;` 하 여 *csharp* 메서드를 사용할 수 없는 경우 파일입니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-134">Add `using Microsoft.AspNetCore.Http;` to your *csharp* file if the method is unavailable.</span></span>
+<span data-ttu-id="5e584-131">구성에서 [미들웨어](xref:fundamentals/middleware) 정적 파일 처리 할 수 있게 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-131">Configure the [middleware](xref:fundamentals/middleware) which enables the serving of static files.</span></span>
+
+### <a name="serve-files-inside-of-web-root"></a><span data-ttu-id="5e584-132">웹 루트 내부에서 파일을 제공 합니다</span><span class="sxs-lookup"><span data-stu-id="5e584-132">Serve files inside of web root</span></span>
+
+<span data-ttu-id="5e584-133">호출 된 [UseStaticFiles](/dotnet/api/microsoft.aspnetcore.builder.staticfileextensions.usestaticfiles#Microsoft_AspNetCore_Builder_StaticFileExtensions_UseStaticFiles_Microsoft_AspNetCore_Builder_IApplicationBuilder_) 메서드 내에서 `Startup.Configure`:</span><span class="sxs-lookup"><span data-stu-id="5e584-133">Invoke the [UseStaticFiles](/dotnet/api/microsoft.aspnetcore.builder.staticfileextensions.usestaticfiles#Microsoft_AspNetCore_Builder_StaticFileExtensions_UseStaticFiles_Microsoft_AspNetCore_Builder_IApplicationBuilder_) method within `Startup.Configure`:</span></span>
+
+[!code-csharp[](static-files/samples/1x/StartupStaticFiles.cs?name=snippet_ConfigureMethod&highlight=3)]
+
+<span data-ttu-id="5e584-134">매개 변수가 없는 `UseStaticFiles` 메서드 오버 로드로 servable 웹 루트에 있는 파일을 표시 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-134">The parameterless `UseStaticFiles` method overload marks the files in web root as servable.</span></span> <span data-ttu-id="5e584-135">다음 태그 참조 *wwwroot/images/banner1.svg*:</span><span class="sxs-lookup"><span data-stu-id="5e584-135">The following markup references *wwwroot/images/banner1.svg*:</span></span>
+
+[!code-cshtml[](static-files/samples/1x/Views/Home/Index.cshtml?name=snippet_static_file_wwwroot)]
+
+### <a name="serve-files-outside-of-web-root"></a><span data-ttu-id="5e584-136">웹 루트 외부 파일을 제공 합니다</span><span class="sxs-lookup"><span data-stu-id="5e584-136">Serve files outside of web root</span></span>
+
+<span data-ttu-id="5e584-137">서비스할 수 정적 파일 외부에 있는 웹 루트 디렉터리 계층 구조를 고려해 야 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-137">Consider a directory hierarchy in which the static files to be served reside outside of the web root:</span></span>
+
+* <span data-ttu-id="5e584-138">**wwwroot**</span><span class="sxs-lookup"><span data-stu-id="5e584-138">**wwwroot**</span></span>
+  * <span data-ttu-id="5e584-139">**css**</span><span class="sxs-lookup"><span data-stu-id="5e584-139">**css**</span></span>
+  * <span data-ttu-id="5e584-140">**images**</span><span class="sxs-lookup"><span data-stu-id="5e584-140">**images**</span></span>
+  * <span data-ttu-id="5e584-141">**js**</span><span class="sxs-lookup"><span data-stu-id="5e584-141">**js**</span></span>
+* <span data-ttu-id="5e584-142">**MyStaticFiles**</span><span class="sxs-lookup"><span data-stu-id="5e584-142">**MyStaticFiles**</span></span>
+  * <span data-ttu-id="5e584-143">**images**</span><span class="sxs-lookup"><span data-stu-id="5e584-143">**images**</span></span>
+      * <span data-ttu-id="5e584-144">*banner1.svg*</span><span class="sxs-lookup"><span data-stu-id="5e584-144">*banner1.svg*</span></span>
+
+<span data-ttu-id="5e584-145">요청에 액세스할 수는 *banner1.svg* 정적 파일 미들웨어를 다음과 같이 구성 하 여 파일:</span><span class="sxs-lookup"><span data-stu-id="5e584-145">A request can access the *banner1.svg* file by configuring the static file middleware as follows:</span></span>
+
+[!code-csharp[](static-files/samples/1x/StartupTwoStaticFiles.cs?name=snippet_ConfigureMethod&highlight=5-10)]
+
+<span data-ttu-id="5e584-146">위의 코드는 *MyStaticFiles* 디렉터리 계층 구조를 통해 공개적으로 노출 됩니다는 *StaticFiles* URI 세그먼트입니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-146">In the preceding code, the *MyStaticFiles* directory hierarchy is exposed publicly via the *StaticFiles* URI segment.</span></span> <span data-ttu-id="5e584-147">요청을 *http://\<server_address > /StaticFiles/images/banner1.svg* 역할는 *banner1.svg* 파일입니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-147">A request to *http://\<server_address>/StaticFiles/images/banner1.svg* serves the *banner1.svg* file.</span></span>
+
+<span data-ttu-id="5e584-148">다음 태그 참조 *MyStaticFiles/images/banner1.svg*:</span><span class="sxs-lookup"><span data-stu-id="5e584-148">The following markup references *MyStaticFiles/images/banner1.svg*:</span></span>
+
+[!code-cshtml[](static-files/samples/1x/Views/Home/Index.cshtml?name=snippet_static_file_outside)]
+
+### <a name="set-http-response-headers"></a><span data-ttu-id="5e584-149">HTTP 응답 헤더 설정</span><span class="sxs-lookup"><span data-stu-id="5e584-149">Set HTTP response headers</span></span>
+
+<span data-ttu-id="5e584-150">A [StaticFileOptions](/dotnet/api/microsoft.aspnetcore.builder.staticfileoptions) 개체는 HTTP 응답 헤더를 설정할 데 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-150">A [StaticFileOptions](/dotnet/api/microsoft.aspnetcore.builder.staticfileoptions) object can be used to set HTTP response headers.</span></span> <span data-ttu-id="5e584-151">웹 루트에서 정적 파일 서비스를 구성 하는 것 외에도 다음 코드에서는 `Cache-Control` 헤더:</span><span class="sxs-lookup"><span data-stu-id="5e584-151">In addition to configuring static file serving from the web root, the following code sets the `Cache-Control` header:</span></span>
+
+[!code-csharp[](static-files/samples/1x/StartupAddHeader.cs?name=snippet_ConfigureMethod)]
+
+<span data-ttu-id="5e584-152">[HeaderDictionaryExtensions.Append](/dotnet/api/microsoft.aspnetcore.http.headerdictionaryextensions.append) 에 있는 메서드는 [Microsoft.AspNetCore.Http](https://www.nuget.org/packages/Microsoft.AspNetCore.Http/) 패키지 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-152">The [HeaderDictionaryExtensions.Append](/dotnet/api/microsoft.aspnetcore.http.headerdictionaryextensions.append) method exists in the [Microsoft.AspNetCore.Http](https://www.nuget.org/packages/Microsoft.AspNetCore.Http/) package.</span></span>
+
+<span data-ttu-id="5e584-153">파일 내용이 공개적으로 캐시할 수 10 분 (600 초):</span><span class="sxs-lookup"><span data-stu-id="5e584-153">The files have been made publicly cacheable for 10 minutes (600 seconds):</span></span>
 
 ![추가 된 캐시 제어 헤더를 보여 주는 응답 헤더](static-files/_static/add-header.png)
 
-## <a name="static-file-authorization"></a><span data-ttu-id="4b16d-136">정적 파일 권한 부여</span><span class="sxs-lookup"><span data-stu-id="4b16d-136">Static file authorization</span></span>
+## <a name="static-file-authorization"></a><span data-ttu-id="5e584-155">정적 파일 권한 부여</span><span class="sxs-lookup"><span data-stu-id="5e584-155">Static file authorization</span></span>
 
-<span data-ttu-id="4b16d-137">정적 파일 모듈에서는 **없는** 권한 부여 확인 합니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-137">The static file module provides **no** authorization checks.</span></span> <span data-ttu-id="4b16d-138">모든 파일에서 제공 비롯 *wwwroot* 공개적으로 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-138">Any files served by it, including those under *wwwroot* are publicly available.</span></span> <span data-ttu-id="4b16d-139">파일을 제공 하려면 권한 부여 기반으로 합니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-139">To serve files based on authorization:</span></span>
+<span data-ttu-id="5e584-156">정적 파일 미들웨어 인증 검사를 제공 하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-156">The static file middleware doesn't provide authorization checks.</span></span> <span data-ttu-id="5e584-157">모든 파일에서 제공 비롯 *wwwroot*, 공개적으로 액세스할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-157">Any files served by it, including those under *wwwroot*, are publicly accessible.</span></span> <span data-ttu-id="5e584-158">파일을 제공 하려면 권한 부여 기반으로 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-158">To serve files based on authorization:</span></span>
 
-* <span data-ttu-id="4b16d-140">외부에 보관해 두면 *wwwroot* 및 정적 파일 미들웨어에 액세스할 수 있는 모든 디렉터리 **및**</span><span class="sxs-lookup"><span data-stu-id="4b16d-140">Store them outside of *wwwroot* and any directory accessible to the static file middleware **and**</span></span>
+* <span data-ttu-id="5e584-159">외부에 보관해 두면 *wwwroot* 및 정적 파일 미들웨어에 액세스할 수 있는 모든 디렉터리 **및**</span><span class="sxs-lookup"><span data-stu-id="5e584-159">Store them outside of *wwwroot* and any directory accessible to the static file middleware **and**</span></span>
+* <span data-ttu-id="5e584-160">권한 부여 적용 되는 동작 메서드를 통해 역할입니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-160">Serve them via an action method to which authorization is applied.</span></span> <span data-ttu-id="5e584-161">반환 된 [FileResult](/dotnet/api/microsoft.aspnetcore.mvc.fileresult) 개체:</span><span class="sxs-lookup"><span data-stu-id="5e584-161">Return a [FileResult](/dotnet/api/microsoft.aspnetcore.mvc.fileresult) object:</span></span>
 
-* <span data-ttu-id="4b16d-141">반환 되는 컨트롤러 동작을 통해 역할는 `FileResult` 권한 부여 적용 되는 위치</span><span class="sxs-lookup"><span data-stu-id="4b16d-141">Serve them through a controller action, returning a `FileResult` where authorization is applied</span></span>
+[!code-csharp[](static-files/samples/1x/Controllers/HomeController.cs?name=snippet_BannerImageAction)]
 
-## <a name="enabling-directory-browsing"></a><span data-ttu-id="4b16d-142">디렉터리 검색을 사용 하도록 설정</span><span class="sxs-lookup"><span data-stu-id="4b16d-142">Enabling directory browsing</span></span>
+## <a name="enable-directory-browsing"></a><span data-ttu-id="5e584-162">디렉터리 검색을 사용 하도록 설정</span><span class="sxs-lookup"><span data-stu-id="5e584-162">Enable directory browsing</span></span>
 
-<span data-ttu-id="4b16d-143">디렉터리 검색 웹 응용 프로그램의 사용자가 지정된 된 디렉터리 내에서 파일과 디렉터리의 목록을 볼 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-143">Directory browsing allows the user of your web app to see a list of directories and files within a specified directory.</span></span> <span data-ttu-id="4b16d-144">보안상의 이유로 기본적으로 비활성화 되어 디렉터리 검색 (참조 [고려 사항](#considerations)).</span><span class="sxs-lookup"><span data-stu-id="4b16d-144">Directory browsing is disabled by default for security reasons (see [Considerations](#considerations)).</span></span> <span data-ttu-id="4b16d-145">디렉터리 검색을 사용 하려면 호출는 `UseDirectoryBrowser` 에서 확장 메서드 `Startup.Configure`:</span><span class="sxs-lookup"><span data-stu-id="4b16d-145">To enable directory browsing, call the `UseDirectoryBrowser` extension method from  `Startup.Configure`:</span></span>
+<span data-ttu-id="5e584-163">디렉터리 검색 웹 응용 프로그램의 사용자가 디렉터리 목록을 볼 수 및 지정된 된 디렉터리 내의 파일입니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-163">Directory browsing allows users of your web app to see a directory listing and files within a specified directory.</span></span> <span data-ttu-id="5e584-164">보안상의 이유로 기본적으로 비활성화 되어 디렉터리 검색 (참조 [고려 사항](#considerations)).</span><span class="sxs-lookup"><span data-stu-id="5e584-164">Directory browsing is disabled by default for security reasons (see [Considerations](#considerations)).</span></span> <span data-ttu-id="5e584-165">Enable 디렉터리를 호출 하 여 검색 된 [UseDirectoryBrowser](/dotnet/api/microsoft.aspnetcore.builder.directorybrowserextensions.usedirectorybrowser#Microsoft_AspNetCore_Builder_DirectoryBrowserExtensions_UseDirectoryBrowser_Microsoft_AspNetCore_Builder_IApplicationBuilder_Microsoft_AspNetCore_Builder_DirectoryBrowserOptions_) 메서드에서 `Startup.Configure`:</span><span class="sxs-lookup"><span data-stu-id="5e584-165">Enable directory browsing by invoking the [UseDirectoryBrowser](/dotnet/api/microsoft.aspnetcore.builder.directorybrowserextensions.usedirectorybrowser#Microsoft_AspNetCore_Builder_DirectoryBrowserExtensions_UseDirectoryBrowser_Microsoft_AspNetCore_Builder_IApplicationBuilder_Microsoft_AspNetCore_Builder_DirectoryBrowserOptions_) method in `Startup.Configure`:</span></span>
 
-[!code-csharp[Main](static-files/sample/StartupBrowse.cs?name=snippet1)]
+[!code-csharp[](static-files/samples/1x/StartupBrowse.cs?name=snippet_ConfigureMethod&highlight=12-17)]
 
-<span data-ttu-id="4b16d-146">호출 하 여 필요한 서비스를 추가 하 고 `AddDirectoryBrowser` 에서 확장 메서드 `Startup.ConfigureServices`:</span><span class="sxs-lookup"><span data-stu-id="4b16d-146">And add required services by calling `AddDirectoryBrowser` extension method from `Startup.ConfigureServices`:</span></span>
+<span data-ttu-id="5e584-166">필요한 서비스를 호출 하 여 추가 된 [AddDirectoryBrowser](/dotnet/api/microsoft.extensions.dependencyinjection.directorybrowserserviceextensions.adddirectorybrowser#Microsoft_Extensions_DependencyInjection_DirectoryBrowserServiceExtensions_AddDirectoryBrowser_Microsoft_Extensions_DependencyInjection_IServiceCollection_) 메서드에서 `Startup.ConfigureServices`:</span><span class="sxs-lookup"><span data-stu-id="5e584-166">Add required services by invoking the [AddDirectoryBrowser](/dotnet/api/microsoft.extensions.dependencyinjection.directorybrowserserviceextensions.adddirectorybrowser#Microsoft_Extensions_DependencyInjection_DirectoryBrowserServiceExtensions_AddDirectoryBrowser_Microsoft_Extensions_DependencyInjection_IServiceCollection_) method from `Startup.ConfigureServices`:</span></span>
 
-[!code-csharp[Main](static-files/sample/StartupBrowse.cs?name=snippet2)]
+[!code-csharp[](static-files/samples/1x/StartupBrowse.cs?name=snippet_ConfigureServicesMethod&highlight=3)]
 
-<span data-ttu-id="4b16d-147">위의 코드 디렉터리를 검색할 수는 *wwwroot/이미지* URL http://를 사용 하 여 폴더\<앱 > / 각 파일 및 폴더에 대 한 링크와 MyImages:</span><span class="sxs-lookup"><span data-stu-id="4b16d-147">The code above allows directory browsing of the *wwwroot/images* folder using the URL http://\<app>/MyImages, with links to each file and folder:</span></span>
+<span data-ttu-id="5e584-167">위의 코드 디렉터리를 검색할 수는 *wwwroot/이미지* URL을 사용 하 여 폴더 *http://\<server_address > / MyImages*, 각 파일 및 폴더에 대 한 링크로:</span><span class="sxs-lookup"><span data-stu-id="5e584-167">The preceding code allows directory browsing of the *wwwroot/images* folder using the URL *http://\<server_address>/MyImages*, with links to each file and folder:</span></span>
 
 ![디렉터리 검색](static-files/_static/dir-browse.png)
 
-<span data-ttu-id="4b16d-149">참조 [고려 사항](#considerations) 검색을 사용 하도록 설정할 때는 보안 위험에 있습니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-149">See [Considerations](#considerations) on the security risks when enabling browsing.</span></span>
+<span data-ttu-id="5e584-169">참조 [고려 사항](#considerations) 검색을 사용 하도록 설정할 때는 보안 위험에 있습니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-169">See [Considerations](#considerations) on the security risks when enabling browsing.</span></span>
 
-<span data-ttu-id="4b16d-150">두 참고 `app.UseStaticFiles` 호출 합니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-150">Note the two `app.UseStaticFiles` calls.</span></span> <span data-ttu-id="4b16d-151">CSS, 이미지 및 JavaScript에서 제공 하는 데 필요한 첫 번째는 *wwwroot* 폴더 및 디렉터리의 검색에 대 한 두 번째 호출에서 *wwwroot/이미지* URL http://를 사용 하 여 폴더\<응용 프로그램 > / MyImages:</span><span class="sxs-lookup"><span data-stu-id="4b16d-151">The first one is required to serve the CSS, images and JavaScript in the *wwwroot* folder, and the second call for directory browsing of the *wwwroot/images* folder using the URL http://\<app>/MyImages:</span></span>
+<span data-ttu-id="5e584-170">두 참고 `UseStaticFiles` 다음 예제에서를 호출 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-170">Note the two `UseStaticFiles` calls in the following example.</span></span> <span data-ttu-id="5e584-171">첫 번째 호출의 정적 파일 처리를 사용 하면는 *wwwroot* 폴더입니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-171">The first call enables the serving of static files in the *wwwroot* folder.</span></span> <span data-ttu-id="5e584-172">두 번째 호출의 디렉터리 검색을 사용 하면는 *wwwroot/이미지* URL을 사용 하 여 폴더 *http://\<server_address > / MyImages*:</span><span class="sxs-lookup"><span data-stu-id="5e584-172">The second call enables directory browsing of the *wwwroot/images* folder using the URL *http://\<server_address>/MyImages*:</span></span>
 
-[!code-csharp[Main](static-files/sample/StartupBrowse.cs?highlight=3,5&name=snippet1)]
+[!code-csharp[](static-files/samples/1x/StartupBrowse.cs?name=snippet_ConfigureMethod&highlight=3,5)]
 
-## <a name="serving-a-default-document"></a><span data-ttu-id="4b16d-152">기본 문서를 처리합니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-152">Serving a default document</span></span>
+## <a name="serve-a-default-document"></a><span data-ttu-id="5e584-173">기본 문서를 제공</span><span class="sxs-lookup"><span data-stu-id="5e584-173">Serve a default document</span></span>
 
-<span data-ttu-id="4b16d-153">기본 홈 페이지를 설정 하면 사이트 방문자 사이트를 방문할 때 시작 하는 곳입니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-153">Setting a default home page gives site visitors a place to start when visiting your site.</span></span> <span data-ttu-id="4b16d-154">사용자에 게 URI를 정규화 하지 않고 기본 페이지를 제공 하도록 웹 앱에 대 한 순서 대로 호출는 `UseDefaultFiles` 에서 확장 메서드 `Startup.Configure` 다음과 같습니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-154">In order for your Web app to serve a default page without the user having to fully qualify the URI, call the `UseDefaultFiles` extension method from `Startup.Configure` as follows.</span></span>
+<span data-ttu-id="5e584-174">설정 기본 홈 페이지 방문자 논리는 시작점을 제공 사이트를 방문할 때.</span><span class="sxs-lookup"><span data-stu-id="5e584-174">Setting a default home page provides visitors a logical starting point when visiting your site.</span></span> <span data-ttu-id="5e584-175">기본 페이지의 URI를 정규화 하는 사용자 없이 처리 하려면 호출는 [UseDefaultFiles](/dotnet/api/microsoft.aspnetcore.builder.defaultfilesextensions.usedefaultfiles#Microsoft_AspNetCore_Builder_DefaultFilesExtensions_UseDefaultFiles_Microsoft_AspNetCore_Builder_IApplicationBuilder_) 메서드에서 `Startup.Configure`:</span><span class="sxs-lookup"><span data-stu-id="5e584-175">To serve a default page without the user fully qualifying the URI, call the [UseDefaultFiles](/dotnet/api/microsoft.aspnetcore.builder.defaultfilesextensions.usedefaultfiles#Microsoft_AspNetCore_Builder_DefaultFilesExtensions_UseDefaultFiles_Microsoft_AspNetCore_Builder_IApplicationBuilder_) method from `Startup.Configure`:</span></span>
 
-[!code-csharp[Main](../fundamentals/static-files/sample/StartupEmpty.cs?highlight=3&name=snippet1)]
+[!code-csharp[](static-files/samples/1x/StartupEmpty.cs?name=snippet_ConfigureMethod&highlight=3)]
 
-> [!NOTE]
-> <span data-ttu-id="4b16d-155">`UseDefaultFiles`먼저 호출 해야 `UseStaticFiles` 기본 파일 역할을 합니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-155">`UseDefaultFiles` must be called before `UseStaticFiles` to serve the default file.</span></span> <span data-ttu-id="4b16d-156">`UseDefaultFiles`파일을 처리 하지 않는 실제로 있는 URL 다시 작성기입니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-156">`UseDefaultFiles` is a URL re-writer that doesn't actually serve the file.</span></span> <span data-ttu-id="4b16d-157">정적 파일 미들웨어를 사용 하도록 설정 해야 합니다 (`UseStaticFiles`)에이 파일을 제공 합니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-157">You must enable the static file middleware (`UseStaticFiles`) to serve the file.</span></span>
+> [!IMPORTANT]
+> <span data-ttu-id="5e584-176">`UseDefaultFiles`먼저 호출 해야 `UseStaticFiles` 기본 파일 역할을 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-176">`UseDefaultFiles` must be called before `UseStaticFiles` to serve the default file.</span></span> <span data-ttu-id="5e584-177">`UseDefaultFiles`파일 사용 될 실제로 하지 않는 URL 재작성 기가입니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-177">`UseDefaultFiles` is a URL rewriter that doesn't actually serve the file.</span></span> <span data-ttu-id="5e584-178">정적 파일 미들웨어를 통해 사용 하도록 설정 `UseStaticFiles` 파일 역할을 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-178">Enable the static file middleware via `UseStaticFiles` to serve the file.</span></span>
 
-<span data-ttu-id="4b16d-158">와 `UseDefaultFiles`, 폴더에 대 한 요청에 대 한 검색 합니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-158">With `UseDefaultFiles`, requests to a folder will search for:</span></span>
+<span data-ttu-id="5e584-179">와 `UseDefaultFiles`에 대 한 폴더 검색에 대 한 요청:</span><span class="sxs-lookup"><span data-stu-id="5e584-179">With `UseDefaultFiles`, requests to a folder search for:</span></span>
 
-* <span data-ttu-id="4b16d-159">default.htm</span><span class="sxs-lookup"><span data-stu-id="4b16d-159">default.htm</span></span>
-* <span data-ttu-id="4b16d-160">default.html</span><span class="sxs-lookup"><span data-stu-id="4b16d-160">default.html</span></span>
-* <span data-ttu-id="4b16d-161">index.htm</span><span class="sxs-lookup"><span data-stu-id="4b16d-161">index.htm</span></span>
-* <span data-ttu-id="4b16d-162">index.html</span><span class="sxs-lookup"><span data-stu-id="4b16d-162">index.html</span></span>
+* <span data-ttu-id="5e584-180">*default.htm*</span><span class="sxs-lookup"><span data-stu-id="5e584-180">*default.htm*</span></span>
+* <span data-ttu-id="5e584-181">*default.html*</span><span class="sxs-lookup"><span data-stu-id="5e584-181">*default.html*</span></span>
+* <span data-ttu-id="5e584-182">*index.htm*</span><span class="sxs-lookup"><span data-stu-id="5e584-182">*index.htm*</span></span>
+* <span data-ttu-id="5e584-183">*index.html*</span><span class="sxs-lookup"><span data-stu-id="5e584-183">*index.html*</span></span>
 
-<span data-ttu-id="4b16d-163">첫 번째 파일을 목록에서 찾을 수는 (하지만 요청 된 URI를 표시 하도록 브라우저 URL 계속)의 정규화 된 URI 요청이 경우 처럼 처리 됩니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-163">The first file found from the list will be served as if the request was the fully qualified URI (although the browser URL will continue to show the URI requested).</span></span>
+<span data-ttu-id="5e584-184">목록에서 첫 번째 파일이 요청에는 정규화 된 URI가 것 처럼 서비스 됩니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-184">The first file found from the list is served as though the request were the fully qualified URI.</span></span> <span data-ttu-id="5e584-185">요청 된 URI를 반영 하기 위해 브라우저 URL이 계속 됩니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-185">The browser URL continues to reflect the URI requested.</span></span>
 
-<span data-ttu-id="4b16d-164">다음 코드에서는 기본 파일 이름을 변경 하는 방법을 보여 줍니다. *mydefault.html*합니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-164">The following code shows how to change the default file name to *mydefault.html*.</span></span>
+<span data-ttu-id="5e584-186">다음 코드에서는 기본 파일 이름을 변경 *mydefault.html*:</span><span class="sxs-lookup"><span data-stu-id="5e584-186">The following code changes the default file name to *mydefault.html*:</span></span>
 
-[!code-csharp[Main](static-files/sample/StartupDefault.cs?name=snippet1)]
+[!code-csharp[](static-files/samples/1x/StartupDefault.cs?name=snippet_ConfigureMethod)]
 
-## <a name="usefileserver"></a><span data-ttu-id="4b16d-165">UseFileServer</span><span class="sxs-lookup"><span data-stu-id="4b16d-165">UseFileServer</span></span>
+## <a name="usefileserver"></a><span data-ttu-id="5e584-187">UseFileServer</span><span class="sxs-lookup"><span data-stu-id="5e584-187">UseFileServer</span></span>
 
-<span data-ttu-id="4b16d-166">`UseFileServer`기능을 결합 `UseStaticFiles`, `UseDefaultFiles`, 및 `UseDirectoryBrowser`합니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-166">`UseFileServer` combines the functionality of `UseStaticFiles`, `UseDefaultFiles`, and `UseDirectoryBrowser`.</span></span>
+<span data-ttu-id="5e584-188">[UseFileServer](/dotnet/api/microsoft.aspnetcore.builder.fileserverextensions.usefileserver#Microsoft_AspNetCore_Builder_FileServerExtensions_UseFileServer_Microsoft_AspNetCore_Builder_IApplicationBuilder_) 의 기능을 결합 `UseStaticFiles`, `UseDefaultFiles`, 및 `UseDirectoryBrowser`합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-188">[UseFileServer](/dotnet/api/microsoft.aspnetcore.builder.fileserverextensions.usefileserver#Microsoft_AspNetCore_Builder_FileServerExtensions_UseFileServer_Microsoft_AspNetCore_Builder_IApplicationBuilder_) combines the functionality of `UseStaticFiles`, `UseDefaultFiles`, and `UseDirectoryBrowser`.</span></span>
 
-<span data-ttu-id="4b16d-167">다음 코드를 통해 정적 파일 및 기본 파일 서비스 되도록 하지만 디렉터리 검색을 허용 하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-167">The following code enables static files and the default file to be served, but does not allow directory browsing:</span></span>
+<span data-ttu-id="5e584-189">다음 코드에서는 기본 파일 및 정적 파일 처리 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-189">The following code enables the serving of static files and the default file.</span></span> <span data-ttu-id="5e584-190">디렉터리 검색 기능이 사용 되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-190">Directory browsing isn't enabled.</span></span>
 
 ```csharp
 app.UseFileServer();
-   ```
+```
 
-<span data-ttu-id="4b16d-168">다음 코드를 통해 정적 파일, 기본 파일 및 디렉터리 검색:</span><span class="sxs-lookup"><span data-stu-id="4b16d-168">The following code enables static files, default files and  directory browsing:</span></span>
+<span data-ttu-id="5e584-191">매개 변수가 없는 오버 로드에 디렉터리 검색을 사용 하 여 다음 코드를 작성 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-191">The following code builds upon the parameterless overload by enabling directory browsing:</span></span>
 
 ```csharp
 app.UseFileServer(enableDirectoryBrowsing: true);
-   ```
+```
 
-<span data-ttu-id="4b16d-169">참조 [고려 사항](#considerations) 검색을 사용 하도록 설정할 때는 보안 위험에 있습니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-169">See [Considerations](#considerations) on the security risks when enabling browsing.</span></span> <span data-ttu-id="4b16d-170">와 마찬가지로 `UseStaticFiles`, `UseDefaultFiles`, 및 `UseDirectoryBrowser`외부에 있는 파일을 제공 하려는 경우는 `web root`를 인스턴스화하고 구성는 `FileServerOptions` 매개 변수로 전달 하는 개체 `UseFileServer`합니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-170">As with `UseStaticFiles`, `UseDefaultFiles`, and `UseDirectoryBrowser`, if you wish to serve files that exist outside the `web root`, you instantiate and configure an `FileServerOptions` object that you pass as a parameter to `UseFileServer`.</span></span> <span data-ttu-id="4b16d-171">웹 앱의 다음 디렉터리 계층 구조를 예로 들 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-171">For example, given the following directory hierarchy in your Web app:</span></span>
+<span data-ttu-id="5e584-192">다음 디렉터리 계층 구조를 고려해 야 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-192">Consider the following directory hierarchy:</span></span>
 
-* <span data-ttu-id="4b16d-172">wwwroot</span><span class="sxs-lookup"><span data-stu-id="4b16d-172">wwwroot</span></span>
+* <span data-ttu-id="5e584-193">**wwwroot**</span><span class="sxs-lookup"><span data-stu-id="5e584-193">**wwwroot**</span></span>
+  * <span data-ttu-id="5e584-194">**css**</span><span class="sxs-lookup"><span data-stu-id="5e584-194">**css**</span></span>
+  * <span data-ttu-id="5e584-195">**images**</span><span class="sxs-lookup"><span data-stu-id="5e584-195">**images**</span></span>
+  * <span data-ttu-id="5e584-196">**js**</span><span class="sxs-lookup"><span data-stu-id="5e584-196">**js**</span></span>
+* <span data-ttu-id="5e584-197">**MyStaticFiles**</span><span class="sxs-lookup"><span data-stu-id="5e584-197">**MyStaticFiles**</span></span>
+  * <span data-ttu-id="5e584-198">**images**</span><span class="sxs-lookup"><span data-stu-id="5e584-198">**images**</span></span>
+      * <span data-ttu-id="5e584-199">*banner1.svg*</span><span class="sxs-lookup"><span data-stu-id="5e584-199">*banner1.svg*</span></span>
+  * <span data-ttu-id="5e584-200">*default.html*</span><span class="sxs-lookup"><span data-stu-id="5e584-200">*default.html*</span></span>
 
-  * <span data-ttu-id="4b16d-173">css</span><span class="sxs-lookup"><span data-stu-id="4b16d-173">css</span></span>
+<span data-ttu-id="5e584-201">다음 코드를 통해 정적 파일, 기본 파일 및 디렉터리 검색의 `MyStaticFiles`:</span><span class="sxs-lookup"><span data-stu-id="5e584-201">The following code enables static files, default files, and directory browsing of `MyStaticFiles`:</span></span>
 
-  * <span data-ttu-id="4b16d-174">이미지</span><span class="sxs-lookup"><span data-stu-id="4b16d-174">images</span></span>
+[!code-csharp[](static-files/samples/1x/StartupUseFileServer.cs?name=snippet_ConfigureMethod&highlight=5-11)]
 
-  * <span data-ttu-id="4b16d-175">...</span><span class="sxs-lookup"><span data-stu-id="4b16d-175">...</span></span>
+<span data-ttu-id="5e584-202">`AddDirectoryBrowser`호출 해야 합니다는 `EnableDirectoryBrowsing` 속성 값은 `true`:</span><span class="sxs-lookup"><span data-stu-id="5e584-202">`AddDirectoryBrowser` must be called when the `EnableDirectoryBrowsing` property value is `true`:</span></span>
 
-* <span data-ttu-id="4b16d-176">MyStaticFiles</span><span class="sxs-lookup"><span data-stu-id="4b16d-176">MyStaticFiles</span></span>
+[!code-csharp[](static-files/samples/1x/StartupUseFileServer.cs?name=snippet_ConfigureServicesMethod)]
 
-  * <span data-ttu-id="4b16d-177">test.png</span><span class="sxs-lookup"><span data-stu-id="4b16d-177">test.png</span></span>
+<span data-ttu-id="5e584-203">Url 및 파일 계층 구조를 사용 하 여 앞에 오는 코드를 다음과 같이 확인 됩니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-203">Using the file hierarchy and preceding code, URLs resolve as follows:</span></span>
 
-  * <span data-ttu-id="4b16d-178">default.html</span><span class="sxs-lookup"><span data-stu-id="4b16d-178">default.html</span></span>
-
-<span data-ttu-id="4b16d-179">위의 계층 예제를 사용 하려는 경우도 정적 파일, 기본 파일 및 검색을 사용 하도록 설정 된 `MyStaticFiles` 디렉터리입니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-179">Using the hierarchy example above, you might want to enable static files, default files, and browsing for the `MyStaticFiles` directory.</span></span> <span data-ttu-id="4b16d-180">다음 코드 조각에서 한 번 호출 하 여 수행 됩니다 하는 `FileServerOptions`합니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-180">In the following code snippet, that is accomplished with a single call to `FileServerOptions`.</span></span>
-
-[!code-csharp[Main](static-files/sample/StartupUseFileServer.cs?highlight=5,6,7,8,9,10,11&name=snippet1)]
-
-<span data-ttu-id="4b16d-181">경우 `enableDirectoryBrowsing` 로 설정 된 `true` 호출에 필요한 `AddDirectoryBrowser` 에서 확장 메서드 `Startup.ConfigureServices`:</span><span class="sxs-lookup"><span data-stu-id="4b16d-181">If `enableDirectoryBrowsing` is set to `true` you are required to call `AddDirectoryBrowser` extension method from  `Startup.ConfigureServices`:</span></span>
-
-[!code-csharp[Main](static-files/sample/StartupUseFileServer.cs?name=snippet2)]
-
-<span data-ttu-id="4b16d-182">파일 계층 구조 및 위의 코드를 사용 하 여:</span><span class="sxs-lookup"><span data-stu-id="4b16d-182">Using the file hierarchy and code above:</span></span>
-
-| <span data-ttu-id="4b16d-183">URI</span><span class="sxs-lookup"><span data-stu-id="4b16d-183">URI</span></span>            |                             <span data-ttu-id="4b16d-184">응답</span><span class="sxs-lookup"><span data-stu-id="4b16d-184">Response</span></span>  |
+| <span data-ttu-id="5e584-204">URI</span><span class="sxs-lookup"><span data-stu-id="5e584-204">URI</span></span>            |                             <span data-ttu-id="5e584-205">응답</span><span class="sxs-lookup"><span data-stu-id="5e584-205">Response</span></span>  |
 | ------- | ------|
-| `http://<app>/StaticFiles/test.png`    |      <span data-ttu-id="4b16d-185">MyStaticFiles/test.png</span><span class="sxs-lookup"><span data-stu-id="4b16d-185">MyStaticFiles/test.png</span></span> |
-| `http://<app>/StaticFiles`              |     <span data-ttu-id="4b16d-186">MyStaticFiles/default.html</span><span class="sxs-lookup"><span data-stu-id="4b16d-186">MyStaticFiles/default.html</span></span> |
+| <span data-ttu-id="5e584-206">*http://\<server_address>/StaticFiles/images/banner1.svg*</span><span class="sxs-lookup"><span data-stu-id="5e584-206">*http://\<server_address>/StaticFiles/images/banner1.svg*</span></span>    |      <span data-ttu-id="5e584-207">MyStaticFiles/images/banner1.svg</span><span class="sxs-lookup"><span data-stu-id="5e584-207">MyStaticFiles/images/banner1.svg</span></span> |
+| <span data-ttu-id="5e584-208">*http://\<server_address>/StaticFiles*</span><span class="sxs-lookup"><span data-stu-id="5e584-208">*http://\<server_address>/StaticFiles*</span></span>             |     <span data-ttu-id="5e584-209">MyStaticFiles/default.html</span><span class="sxs-lookup"><span data-stu-id="5e584-209">MyStaticFiles/default.html</span></span> |
 
-<span data-ttu-id="4b16d-187">명명 된 파일이 기본값이 있는 경우는 *MyStaticFiles* 디렉터리, http://\<앱 > StaticFiles 클릭 가능한 링크와 함께 나열 하는 디렉터리를 반환 합니다. /:</span><span class="sxs-lookup"><span data-stu-id="4b16d-187">If no default named files are in the *MyStaticFiles* directory, http://\<app>/StaticFiles returns the directory listing with clickable links:</span></span>
+<span data-ttu-id="5e584-210">에 기본 이름이 지정 된 파일이 없는 경우는 *MyStaticFiles* 디렉터리 *http://\<server_address > / StaticFiles* 클릭 가능한 링크와 함께 나열 하는 디렉터리를 반환 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-210">If no default-named file exists in the *MyStaticFiles* directory, *http://\<server_address>/StaticFiles* returns the directory listing with clickable links:</span></span>
 
-![정적 파일 목록](static-files/_static/db2.PNG)
+![정적 파일 목록](static-files/_static/db2.png)
 
 > [!NOTE]
-> <span data-ttu-id="4b16d-189">`UseDefaultFiles`및 `UseDirectoryBrowser` url http:// 걸립니다\<앱 >는 후행 슬래시 및 원인 없이 StaticFiles http:// 리디렉션됩니다 클라이언트 쪽 /\<응용 프로그램 > /StaticFiles/ (후행 슬래시 추가).</span><span class="sxs-lookup"><span data-stu-id="4b16d-189">`UseDefaultFiles` and `UseDirectoryBrowser` will take the url http://\<app>/StaticFiles without the trailing slash and cause a client side redirect to http://\<app>/StaticFiles/ (adding the trailing slash).</span></span> <span data-ttu-id="4b16d-190">문서 내에서 후행 슬래시 상대 Url 없이 올바르지 않게 됩니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-190">Without the trailing slash relative URLs within the documents would be incorrect.</span></span>
+> <span data-ttu-id="5e584-212">`UseDefaultFiles`및 `UseDirectoryBrowser` URL을 사용 하 여 *http://\<server_address > / StaticFiles* 리디렉션됩니다 후행 슬래시를 트리거하는 클라이언트 쪽 없이 *http://\<server_address > / StaticFiles /*합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-212">`UseDefaultFiles` and `UseDirectoryBrowser` use the URL *http://\<server_address>/StaticFiles* without the trailing slash to trigger a client-side redirect to *http://\<server_address>/StaticFiles/*.</span></span> <span data-ttu-id="5e584-213">후행 슬래시를 추가 확인 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-213">Notice the addition of the trailing slash.</span></span> <span data-ttu-id="5e584-214">문서 내에서 상대 Url은 후행 슬래시가 없는 잘못 된 것으로 간주 됩니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-214">Relative URLs within the documents are deemed invalid without a trailing slash.</span></span>
 
-## <a name="fileextensioncontenttypeprovider"></a><span data-ttu-id="4b16d-191">FileExtensionContentTypeProvider</span><span class="sxs-lookup"><span data-stu-id="4b16d-191">FileExtensionContentTypeProvider</span></span>
+## <a name="fileextensioncontenttypeprovider"></a><span data-ttu-id="5e584-215">FileExtensionContentTypeProvider</span><span class="sxs-lookup"><span data-stu-id="5e584-215">FileExtensionContentTypeProvider</span></span>
 
-<span data-ttu-id="4b16d-192">`FileExtensionContentTypeProvider` 클래스 파일 확장명이 MIME 콘텐츠 형식이 매핑되는 컬렉션을 포함 합니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-192">The `FileExtensionContentTypeProvider` class contains a  collection that maps file extensions to MIME content types.</span></span> <span data-ttu-id="4b16d-193">다음 샘플에서는 여러 파일 확장명이 알려진된 MIME 형식에 등록 된, ".rtf" 대신 표시 되며 ".mp4" 제거 됩니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-193">In the following sample, several file extensions are registered to known MIME types, the ".rtf" is replaced, and ".mp4" is removed.</span></span>
+<span data-ttu-id="5e584-216">[FileExtensionContentTypeProvider](/dotnet/api/microsoft.aspnetcore.staticfiles.fileextensioncontenttypeprovider) 클래스를 포함 한 `Mappings` 속성의 MIME 콘텐츠 형식에 대 한 파일 확장명 매핑을 역할을 수행 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-216">The [FileExtensionContentTypeProvider](/dotnet/api/microsoft.aspnetcore.staticfiles.fileextensioncontenttypeprovider) class contains a `Mappings` property serving as a mapping of file extensions to MIME content types.</span></span> <span data-ttu-id="5e584-217">다음 샘플에서는 여러 파일 확장명이 알려진된 MIME 형식에 등록 됩니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-217">In the following sample, several file extensions are registered to known MIME types.</span></span> <span data-ttu-id="5e584-218">*.rtf* 확장 바뀝니다 및 *.mp4* 제거 됩니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-218">The *.rtf* extension is replaced, and *.mp4* is removed.</span></span>
 
-[!code-csharp[Main](../fundamentals/static-files/sample/StartupFileExtensionContentTypeProvider.cs?highlight=3,4,5,6,7,8,9,10,11,12,19&name=snippet1)]
+[!code-csharp[](static-files/samples/1x/StartupFileExtensionContentTypeProvider.cs?name=snippet_ConfigureMethod&highlight=3-12,19)]
 
-<span data-ttu-id="4b16d-194">참조 [MIME 콘텐츠 형식을](http://www.iana.org/assignments/media-types/media-types.xhtml)합니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-194">See   [MIME content types](http://www.iana.org/assignments/media-types/media-types.xhtml).</span></span>
+<span data-ttu-id="5e584-219">참조 [MIME 콘텐츠 형식을](http://www.iana.org/assignments/media-types/media-types.xhtml)합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-219">See [MIME content types](http://www.iana.org/assignments/media-types/media-types.xhtml).</span></span>
 
-## <a name="non-standard-content-types"></a><span data-ttu-id="4b16d-195">사용할 수 없는 콘텐츠 형식</span><span class="sxs-lookup"><span data-stu-id="4b16d-195">Non-standard content types</span></span>
+## <a name="non-standard-content-types"></a><span data-ttu-id="5e584-220">사용할 수 없는 콘텐츠 형식</span><span class="sxs-lookup"><span data-stu-id="5e584-220">Non-standard content types</span></span>
 
-<span data-ttu-id="4b16d-196">ASP.NET 정적 파일 미들웨어 거의 400 알려진된 파일 콘텐츠 형식을 이해합니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-196">The ASP.NET static file middleware understands almost 400 known file content types.</span></span> <span data-ttu-id="4b16d-197">사용자가 알 수 없는 파일 형식의 파일을 요청 하는 경우 정적 파일 미들웨어는 HTTP 404 (찾을 수 없음) 응답을 반환 합니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-197">If the user requests a file of an unknown file type, the static file middleware returns a HTTP 404 (Not found) response.</span></span> <span data-ttu-id="4b16d-198">디렉터리 검색을 사용 하는 경우 파일에 대 한 링크에는 표시 하지만 URI에서 HTTP 404 오류를 반환 합니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-198">If directory browsing is enabled, a link to the file will be displayed, but the URI will return an HTTP 404 error.</span></span>
+<span data-ttu-id="5e584-221">거의 400 알려진된 파일 콘텐츠 형식을 이해 하는 정적 파일 미들웨어입니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-221">The static file middleware understands almost 400 known file content types.</span></span> <span data-ttu-id="5e584-222">사용자가 알 수 없는 파일 형식의 파일을 요청 하는 경우 정적 파일 미들웨어는 HTTP 404 (찾을 수 없음) 응답을 반환 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-222">If the user requests a file of an unknown file type, the static file middleware returns a HTTP 404 (Not Found) response.</span></span> <span data-ttu-id="5e584-223">디렉터리 검색을 사용 하는 경우 파일에는 링크가 표시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-223">If directory browsing is enabled, a link to the file is displayed.</span></span> <span data-ttu-id="5e584-224">URI는 HTTP 404 오류를 반환합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-224">The URI returns an HTTP 404 error.</span></span>
 
-<span data-ttu-id="4b16d-199">다음 코드에서는 처리 알 수 없는 형식을 사용 하면 고 알 수 없는 파일을 이미지로 렌더링 됩니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-199">The following code enables serving unknown types and will render the unknown file as an image.</span></span>
+<span data-ttu-id="5e584-225">다음 코드는 알 수 없는 형식을 처리를 사용 하도록 설정 하 고 알 수 없는 파일을 이미지로 렌더링.</span><span class="sxs-lookup"><span data-stu-id="5e584-225">The following code enables serving unknown types and renders the unknown file as an image:</span></span>
 
-[!code-csharp[Main](static-files/sample/StartupServeUnknownFileTypes.cs?name=snippet1)]
+[!code-csharp[](static-files/samples/1x/StartupServeUnknownFileTypes.cs?name=snippet_ConfigureMethod)]
 
-<span data-ttu-id="4b16d-200">위의 코드와 함께 파일을 알 수 없는 콘텐츠 형식에 대 한 요청 이미지 형식으로 반환 됩니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-200">With the code above, a request for a file with an unknown content type will be returned as an image.</span></span>
+<span data-ttu-id="5e584-226">위의 코드에서 알 수 없는 콘텐츠 형식으로 파일에 대 한 요청 이미지 형식으로 반환 됩니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-226">With the preceding code, a request for a file with an unknown content type is returned as an image.</span></span>
 
->[!WARNING]
-> <span data-ttu-id="4b16d-201">사용 하도록 설정 `ServeUnknownFileTypes` 보안상 위험할 수 및 사용은 권장 되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-201">Enabling `ServeUnknownFileTypes` is a security risk and using it is discouraged.</span></span>  <span data-ttu-id="4b16d-202">`FileExtensionContentTypeProvider`(위에서 설명한) 비표준 확장명을 가진 파일을 처리 하는 보다 안전한 대체 방법을 제공 합니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-202">`FileExtensionContentTypeProvider`  (explained above) provides a safer alternative to serving files with non-standard extensions.</span></span>
+> [!WARNING]
+> <span data-ttu-id="5e584-227">사용 하도록 설정 [ServeUnknownFileTypes](/dotnet/api/microsoft.aspnetcore.builder.staticfileoptions.serveunknownfiletypes#Microsoft_AspNetCore_Builder_StaticFileOptions_ServeUnknownFileTypes) 보안상 위험할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-227">Enabling [ServeUnknownFileTypes](/dotnet/api/microsoft.aspnetcore.builder.staticfileoptions.serveunknownfiletypes#Microsoft_AspNetCore_Builder_StaticFileOptions_ServeUnknownFileTypes) is a security risk.</span></span> <span data-ttu-id="5e584-228">기본적으로 비활성화 되어 및의 사용은 권장 되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-228">It's disabled by default, and its use is discouraged.</span></span> <span data-ttu-id="5e584-229">[FileExtensionContentTypeProvider](#fileextensioncontenttypeprovider) 비표준 확장명을 가진 파일을 처리 하는 보다 안전한 대체 방법을 제공 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-229">[FileExtensionContentTypeProvider](#fileextensioncontenttypeprovider) provides a safer alternative to serving files with non-standard extensions.</span></span>
 
-### <a name="considerations"></a><span data-ttu-id="4b16d-203">고려 사항</span><span class="sxs-lookup"><span data-stu-id="4b16d-203">Considerations</span></span>
+### <a name="considerations"></a><span data-ttu-id="5e584-230">고려 사항</span><span class="sxs-lookup"><span data-stu-id="5e584-230">Considerations</span></span>
 
->[!WARNING]
-> <span data-ttu-id="4b16d-204">`UseDirectoryBrowser`및 `UseStaticFiles` 비밀 정보를 누출 할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-204">`UseDirectoryBrowser` and `UseStaticFiles` can leak secrets.</span></span> <span data-ttu-id="4b16d-205">하는 것이 좋습니다 있습니다 **하지** 사용 디렉터리 프로덕션 환경에서 검색 합니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-205">We recommend that you **not** enable directory browsing in production.</span></span> <span data-ttu-id="4b16d-206">주의를 사용 하는 디렉터리에 대 한 `UseStaticFiles` 또는 `UseDirectoryBrowser` 대로 전체 디렉터리와 모든 하위 디렉터리를 액세스할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-206">Be careful about which directories you enable with `UseStaticFiles` or `UseDirectoryBrowser` as the entire directory and all sub-directories will be accessible.</span></span> <span data-ttu-id="4b16d-207">와 같은 자체 디렉터리에 공용 콘텐츠를 유지 하는 것이 좋습니다  *\<콘텐츠 루트 > / wwwroot*, 응용 프로그램 뷰, 구성 파일 등에서 떨어진 곳입니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-207">We recommend keeping public content in its own directory such as *\<content root>/wwwroot*, away from application views, configuration files, etc.</span></span>
+> [!WARNING]
+> <span data-ttu-id="5e584-231">`UseDirectoryBrowser`및 `UseStaticFiles` 비밀 정보를 누출 할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-231">`UseDirectoryBrowser` and `UseStaticFiles` can leak secrets.</span></span> <span data-ttu-id="5e584-232">해제 디렉터리를 프로덕션 환경에서 검색을 사용 하는 것이 좋습니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-232">Disabling directory browsing in production is highly recommended.</span></span> <span data-ttu-id="5e584-233">디렉터리를 활성화를 주의 깊게 검토 `UseStaticFiles` 또는 `UseDirectoryBrowser`합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-233">Carefully review which directories are enabled via `UseStaticFiles` or `UseDirectoryBrowser`.</span></span> <span data-ttu-id="5e584-234">전체 디렉터리와 해당 하위 디렉터리의 공개적으로 액세스할 수 있게 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-234">The entire directory and its sub-directories become publicly accessible.</span></span> <span data-ttu-id="5e584-235">저장소 파일을 공개적으로 서비스에 대 한 적합 한 전용된 디렉터리에 같은  *\<content_root > / wwwroot*합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-235">Store files suitable for serving to the public in a dedicated directory, such as *\<content_root>/wwwroot*.</span></span> <span data-ttu-id="5e584-236">MVC 뷰, Razor 페이지 (2.x에만 해당), 구성 파일 등에서 이러한 파일을 구분 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-236">Separate these files from MVC views, Razor Pages (2.x only), configuration files, etc.</span></span>
 
-* <span data-ttu-id="4b16d-208">노출 된 콘텐츠에 대 한 Url `UseDirectoryBrowser` 및 `UseStaticFiles` 는 대/소문자 구분 및 해당 내부 파일 시스템의 문자 제한이 적용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-208">The URLs for content exposed with `UseDirectoryBrowser` and `UseStaticFiles` are subject to the case sensitivity and character restrictions of their underlying file system.</span></span> <span data-ttu-id="4b16d-209">예를 들어 Windows 대/소문자 구분, 이지만 Mac 및 Linux 하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-209">For example, Windows is case insensitive, but Mac and Linux are not.</span></span>
+* <span data-ttu-id="5e584-237">노출 된 콘텐츠에 대 한 Url `UseDirectoryBrowser` 및 `UseStaticFiles` 는 대/소문자 구분 및 기본 파일 시스템의 문자 제한이 적용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-237">The URLs for content exposed with `UseDirectoryBrowser` and `UseStaticFiles` are subject to the case sensitivity and character restrictions of the underlying file system.</span></span> <span data-ttu-id="5e584-238">예를 들어 Windows는 대/소문자 구분&mdash;Mac 및 Linux 되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-238">For example, Windows is case insensitive&mdash;Mac and Linux aren't.</span></span>
 
-* <span data-ttu-id="4b16d-210">IIS에서 호스팅되는 ASP.NET Core 응용 프로그램의 경우 정적 파일에 대 한 요청을 포함 하 여 응용 프로그램에 대 한 모든 요청을 전달 하도록 ASP.NET 코어 모듈을 사용 합니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-210">ASP.NET Core applications hosted in IIS use the ASP.NET Core Module to forward all requests to the application including requests for static files.</span></span> <span data-ttu-id="4b16d-211">ASP.NET Core 모듈에 의해 처리 되기 전에 요청을 처리할 수 있는 기회가 못하는 때문에 IIS 정적 파일 처리기 사용 되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-211">The IIS static file handler is not used because it doesn't get a chance to handle requests before they are handled by the ASP.NET Core Module.</span></span>
+* <span data-ttu-id="5e584-239">ASP.NET Core 응용 프로그램을 사용 하 여 IIS에서에서 호스팅되는 [ASP.NET Core 모듈 (ANCM)](xref:fundamentals/servers/aspnet-core-module) 정적 파일 요청을 비롯 한 응용 프로그램에 대 한 모든 요청을 전달 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-239">ASP.NET Core apps hosted in IIS use the [ASP.NET Core Module (ANCM)](xref:fundamentals/servers/aspnet-core-module) to forward all requests to the app, including static file requests.</span></span> <span data-ttu-id="5e584-240">IIS 정적 파일 처리기는 사용 되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-240">The IIS static file handler isn't used.</span></span> <span data-ttu-id="5e584-241">요청을 처리 하기 전에 ANCM 하 여 처리 중인 확률이 없습니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-241">It has no chance to handle requests before they're handled by the ANCM.</span></span>
 
-* <span data-ttu-id="4b16d-212">에 서버 또는 웹 사이트 수준에서 IIS 정적 파일 처리기를 제거 합니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-212">To remove the IIS static file handler (at the server or website level):</span></span>
+* <span data-ttu-id="5e584-242">IIS 관리자에서 서버 또는 웹 사이트 수준에서 IIS 정적 파일 처리기를 제거 하려면 다음 단계를 완료 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-242">Complete the following steps in IIS Manager to remove the IIS static file handler at the server or website level:</span></span>
+    1. <span data-ttu-id="5e584-243">탐색 하 고 **모듈** 기능입니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-243">Navigate to the **Modules** feature.</span></span>
+    1. <span data-ttu-id="5e584-244">선택 **모듈은 staticfilemodule입니다** 목록에 있습니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-244">Select **StaticFileModule** in the list.</span></span>
+    1. <span data-ttu-id="5e584-245">클릭 **제거** 에 **동작** 사이드바 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-245">Click **Remove** in the **Actions** sidebar.</span></span>
 
-     * <span data-ttu-id="4b16d-213">탐색 하 고 **모듈** 기능</span><span class="sxs-lookup"><span data-stu-id="4b16d-213">Navigate to the **Modules** feature</span></span>
+> [!WARNING]
+> <span data-ttu-id="5e584-246">IIS 정적 파일 처리기에서 사용 되는 경우 **및** 는 ANCM 올바르게 구성 되었는지, 정적 파일에서 제공 됩니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-246">If the IIS static file handler is enabled **and** the ANCM is configured incorrectly, static files are served.</span></span> <span data-ttu-id="5e584-247">이런 경우 예를 들어 경우는 *web.config* 파일이 배포 되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-247">This happens, for example, if the *web.config* file isn't deployed.</span></span>
 
-     * <span data-ttu-id="4b16d-214">선택 **모듈은 staticfilemodule입니다** 목록에서</span><span class="sxs-lookup"><span data-stu-id="4b16d-214">Select **StaticFileModule** in the list</span></span>
+* <span data-ttu-id="5e584-248">코드 파일을 배치할 (포함 하 여 *.cs* 및 *.cshtml*) 응용 프로그램 프로젝트의 웹 루트 외부입니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-248">Place code files (including *.cs* and *.cshtml*) outside of the app project's web root.</span></span> <span data-ttu-id="5e584-249">따라서 응용 프로그램의 클라이언트 쪽 콘텐츠 및 서버 기반 코드 사이 논리적 분리를 만들어집니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-249">A logical separation is therefore created between the app's client-side content and server-based code.</span></span> <span data-ttu-id="5e584-250">이렇게 하면 서버 쪽 코드를에서 유출 되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="5e584-250">This prevents server-side code from being leaked.</span></span>
 
-     * <span data-ttu-id="4b16d-215">탭 **제거** 에 **동작** 사이드바</span><span class="sxs-lookup"><span data-stu-id="4b16d-215">Tap **Remove** in the **Actions** sidebar</span></span>
+## <a name="additional-resources"></a><span data-ttu-id="5e584-251">추가 리소스</span><span class="sxs-lookup"><span data-stu-id="5e584-251">Additional resources</span></span>
 
->[!WARNING]
-> <span data-ttu-id="4b16d-216">IIS 정적 파일 처리기에서 사용 되는 경우 **및** ASP.NET Core 모듈 (ANCM) 제대로 구성 되지 않은 (예를 들어 경우 *web.config* 응용 프로그램이 배포 되지), 정적 파일 처리 됩니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-216">If the IIS static file handler is enabled **and** the ASP.NET Core Module (ANCM) is not correctly configured (for example if *web.config* was not deployed), static files will be served.</span></span>
+* [<span data-ttu-id="5e584-252">미들웨어</span><span class="sxs-lookup"><span data-stu-id="5e584-252">Middleware</span></span>](xref:fundamentals/middleware)
 
-* <span data-ttu-id="4b16d-217">응용 프로그램 프로젝트 외부에서 코드 파일 (c# 및 Razor 포함)를 배치할 `web root` (*wwwroot* 기본적으로).</span><span class="sxs-lookup"><span data-stu-id="4b16d-217">Code files (including c# and Razor) should be placed outside of the app project's `web root` (*wwwroot* by default).</span></span> <span data-ttu-id="4b16d-218">이렇게 하면 응용 프로그램의 클라이언트 쪽 콘텐츠 및 서버 쪽 코드 유출 되지 않도록 방지 서버 쪽 소스 코드를 명확히 구분을 만들어집니다.</span><span class="sxs-lookup"><span data-stu-id="4b16d-218">This creates a clean separation between your app's client side content and server side source code, which prevents server side code from being leaked.</span></span>
-
-## <a name="additional-resources"></a><span data-ttu-id="4b16d-219">추가 리소스</span><span class="sxs-lookup"><span data-stu-id="4b16d-219">Additional Resources</span></span>
-
-* [<span data-ttu-id="4b16d-220">미들웨어</span><span class="sxs-lookup"><span data-stu-id="4b16d-220">Middleware</span></span>](middleware.md)
-
-* [<span data-ttu-id="4b16d-221">ASP.NET Core 소개</span><span class="sxs-lookup"><span data-stu-id="4b16d-221">Introduction to ASP.NET Core</span></span>](../index.md)
+* [<span data-ttu-id="5e584-253">ASP.NET Core 소개</span><span class="sxs-lookup"><span data-stu-id="5e584-253">Introduction to ASP.NET Core</span></span>](xref:index)
