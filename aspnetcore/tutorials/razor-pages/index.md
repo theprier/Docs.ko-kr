@@ -2,7 +2,6 @@
 title: "ASP.NET Core를 사용하여 Razor 페이지 웹앱 만들기"
 author: rick-anderson
 description: "Windows에서 Visual Studio, ASP.NET Core 및 EF Core를 사용하여 Razor 페이지 웹앱을 만듭니다."
-keywords: "ASP.NET Core, Razor 페이지, 스캐폴딩, Entity Framework Core, EF, EF Core, 데이터베이스"
 ms.author: riande
 manager: wpickett
 ms.date: 09/08/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/index
-ms.openlocfilehash: 1902795279e202bcce9361d9be7a12d9e34880c3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d2448dde22eb09cd6c69854b1b86b379a4a6873c
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="create-a-razor-pages-web-app-with-aspnet-core"></a>ASP.NET Core를 사용하여 Razor 페이지 웹앱 만들기
 
