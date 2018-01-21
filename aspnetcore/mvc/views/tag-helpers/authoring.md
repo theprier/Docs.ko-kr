@@ -2,29 +2,27 @@
 title: "ASP.NET Core에서 태그 도우미를 작성합니다."
 author: rick-anderson
 description: "ASP.NET Core에서 태그 도우미를 작성 하는 방법을 알아봅니다."
-keywords: "ASP.NET Core, 태그 도우미"
 ms.author: riande
 manager: wpickett
-ms.date: 06/14/2017
+ms.date: 01/19/2018
 ms.topic: article
-ms.assetid: 4f16d978-5695-4abf-a785-fdaabf3bbcb9
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/authoring
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: cbe46ee1d3cd9f7a30a87d364074f1302f9af7ab
-ms.sourcegitcommit: 5834afb87e4262b9b88e60e3fe6c735e61a1e08d
+ms.openlocfilehash: 9aaf40377e07e53fd0b7ebb177bcbb2df52b7553
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/20/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="authoring-tag-helpers-in-aspnet-core-a-walkthrough-with-samples"></a>ASP.NET Core, 샘플을 연습에서에서 태그 도우미를 작성합니다.
+# <a name="author-tag-helpers-in-aspnet-core-a-walkthrough-with-samples"></a>ASP.NET Core, 샘플을 연습에서에서 만든 태그 도우미
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 [샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/authoring/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
-## <a name="getting-started-with-tag-helpers"></a>태그 도우미를 시작 하기
+## <a name="get-started-with-tag-helpers"></a>시작 태그 도우미
 
 이 자습서는 프로그래밍 태그 도우미에 대 한 소개를 제공합니다. [태그 도우미 소개](intro.md) 태그 도우미를 제공 하는 이점에 설명 합니다.
 
@@ -46,7 +44,7 @@ ms.lasthandoff: 12/20/2017
 
 ```html
 <a href="mailto:Support@contoso.com">Support@contoso.com</a>
-   ```
+```
 
 즉, 앵커 태그는 하면 전자 메일 링크 합니다. 블로그 엔진을 작성 하는 경우 동일한 도메인에 모든 마케팅, 지원 및 다른 연락처에 대 한 전자 메일을 보낼 수 필요 사용자에 게 이렇게 할 수 있습니다.
 
@@ -148,7 +146,7 @@ the following snippet uses TagHelpers3 and should use TagHelpers (not the 3)
 
 3.  응용 프로그램을 실행 하 고 유효한 전자 메일 링크를 생성 하는지 확인 합니다.
 
-### <a name="removeall-precontentsethtmlcontent-and-postcontentsethtmlcontent"></a>RemoveAll, PreContent.SetHtmlContent 및 PostContent.SetHtmlContent
+### <a name="removeall-precontentsethtmlcontent-and-postcontentsethtmlcontent"></a>RemoveAll, PreContent.SetHtmlContent and PostContent.SetHtmlContent
 
 1.  다음 추가 `BoldTagHelper` 클래스는 *TagHelpers* 폴더입니다.
 
@@ -188,7 +186,7 @@ the following snippet uses TagHelpers3 and should use TagHelpers (not the 3)
 [HtmlTargetElement("MyBold")]
    ```
 
-## <a name="passing-a-model-to-a-tag-helper"></a>태그 도우미에는 모델을 전달합니다.
+## <a name="pass-a-model-to-a-tag-helper"></a>모델 태그 도우미에 전달합니다
 
 1.  추가 *모델* 폴더입니다.
 
@@ -285,7 +283,7 @@ the following snippet uses TagHelpers3 and should use TagHelpers (not the 3)
 >
 >[nameof](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/nameof) 연산자는 보호 코드 해야 것도 리팩터링할 (하도록 이름을 변경 하려는 `RedCondition`) 합니다.
 
-### <a name="avoiding-tag-helper-conflicts"></a>태그 도우미 충돌 방지
+### <a name="avoid-tag-helper-conflicts"></a>태그 도우미 충돌 방지
 
 이 섹션에서는 한 쌍 자동 링크 태그 도우미의 작성할 수 있습니다. 첫 번째는 HTML 앵커 태그 동일한 URL이 포함 된 (및 따라서 URL에 대 한 링크를 생성)를 HTTP로 시작 하는 URL을 포함 하는 태그를 바뀝니다. 두 번째는 동일한 작업을 수행 URL에 대 한 WWW로 시작 합니다.
 
@@ -329,7 +327,7 @@ the following snippet uses TagHelpers3 and should use TagHelpers (not the 3)
     
     위의 코드는 HTTP 태그 도우미 WWW 태그 도우미 하기 전에 실행 되도록 보장 됩니다. 변경 `Order` 를 `MaxValue` WWW 태그에 대 한 생성 된 태그 올바른지 확인 합니다.
 
-## <a name="inspecting-and-retrieving-child-content"></a>검사 하 고 자식 콘텐츠를 검색 합니다.
+## <a name="inspect-and-retrieve-child-content"></a>검사 하 고 자식 콘텐츠를 검색 합니다.
 
 태그 도우미 콘텐츠를 검색 하도록 여러 가지 속성을 제공 합니다.
 

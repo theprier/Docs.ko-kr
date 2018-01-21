@@ -2,21 +2,19 @@
 title: "단일 페이지 응용 프로그램을 만들기 위한 JavaScriptServices를 사용 하 여"
 author: scottaddie
 description: "단일 페이지 응용 프로그램 (SPA) 뒷받침 되며 ASP.NET Core 만들려는 JavaScriptServices 사용의 이점에 알아봅니다."
-keywords: "ASP.NET Core 각도, SPA, JavaScriptServices, SpaServices"
 ms.author: scaddie
 manager: wpickett
 ms.date: 08/02/2017
 ms.topic: article
-ms.assetid: 4b30576b-2718-4c39-9253-a59966747893
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/spa-services
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8d47910beef9195295c8da6ac81b83b3ffe20124
-ms.sourcegitcommit: fe880bf4ed1c8116071c0e47c0babf3623b7f44a
+ms.openlocfilehash: 6d84659c8c65bebb46551eb38bd52e405ff56016
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="using-javascriptservices-for-creating-single-page-applications-with-aspnet-core"></a>ASP.NET Core 사용 단일 페이지 응용 프로그램을 만들기 위한 JavaScriptServices를 사용 하 여
 
@@ -75,7 +73,7 @@ SpaServices를 사용 하려면 다음을 설치 합니다.
 * [.NET core SDK](https://www.microsoft.com/net/download/core) 1.0 (이상)
     * Windows를 사용 하는 경우 설치 Visual Studio 2017을 선택 하 여 **.NET Core 플랫폼 간 개발** 작업 합니다.
 
-* [Microsoft.AspNetCore.SpaServices](https://www.nuget.org/packages/Microsoft.AspNetCore.SpaServices/) NuGet 패키지
+* [Microsoft.AspNetCore.SpaServices](https://www.nuget.org/packages/Microsoft.AspNetCore.SpaServices/) NuGet package
 
 <a name="server-prerendering"></a>
 
@@ -239,12 +237,12 @@ dotnet new --install Microsoft.AspNetCore.SpaTemplates::*
 
 | 템플릿                                 | 짧은 이름 | 언어 | Tags        |
 |:------------------------------------------|:-----------|:---------|:------------|
-| 각도와 MVC ASP.NET Core             | angular    | [C#]     | 웹/MVC/SPA |
-| MVC ASP.NET Core Aurelia와             | aurelia    | [C#]     | 웹/MVC/SPA |
-| Knockout.js와 MVC ASP.NET Core         | knockout   | [C#]     | 웹/MVC/SPA |
-| MVC ASP.NET Core React.js와            | react      | [C#]     | 웹/MVC/SPA |
-| MVC ASP.NET Core React.js 및 Redux  | reactredux | [C#]     | 웹/MVC/SPA |
-| MVC ASP.NET Core Vue.js와              | vue        | [C#]     | 웹/MVC/SPA | 
+| 각도와 MVC ASP.NET Core             | angular    | [C#]     | Web/MVC/SPA |
+| MVC ASP.NET Core Aurelia와             | aurelia    | [C#]     | Web/MVC/SPA |
+| Knockout.js와 MVC ASP.NET Core         | knockout   | [C#]     | Web/MVC/SPA |
+| MVC ASP.NET Core React.js와            | react      | [C#]     | Web/MVC/SPA |
+| MVC ASP.NET Core React.js 및 Redux  | reactredux | [C#]     | Web/MVC/SPA |
+| MVC ASP.NET Core Vue.js와              | vue        | [C#]     | Web/MVC/SPA | 
 
 SPA 템플릿 중 하나를 사용 하 여 새 프로젝트를 만들려면 포함는 **약식 이름** 에 서식 파일의는 `dotnet new` 명령입니다. 다음 명령은 서버 측에 대해 구성 된 ASP.NET Core MVC와 함께 각 응용 프로그램를 만듭니다.
 

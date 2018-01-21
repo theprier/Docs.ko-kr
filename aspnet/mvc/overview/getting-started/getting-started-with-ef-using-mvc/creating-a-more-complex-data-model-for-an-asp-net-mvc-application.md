@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-a-more-complex-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: fc21857d5017799536f153dac3ee54ba2f8f5778
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c4710c507f605c539d3e595a6c757f4d5393292b
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 <a name="creating-a-more-complex-data-model-for-an-aspnet-mvc-application"></a>ASP.NET MVC 응용 프로그램에 대 한 보다 복잡 한 데이터 모델 만들기
 ====================
@@ -81,7 +81,7 @@ MVC에서 다른 날짜 형식을 처리 하는 방법에 대 한 자세한 내�
 
 [StringLength](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) 특성 이름에 공백을 입력에서 사용자를 금지 되지는 않습니다. 사용할 수는 [정규식으로](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.regularexpressionattribute.aspx) 특성을 입력에 제한을 적용 합니다. 예를 들어 다음 코드는 첫 번째 문자를 대문자로 변환 하 고 나머지 문자를 사전순으로 필요 합니다.
 
-`[RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]`
+`[RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]`
 
 [MaxLength](https://msdn.microsoft.com/en-us/library/System.ComponentModel.DataAnnotations.MaxLengthAttribute.aspx) 특성은 유사한 기능을 제공는 [StringLength](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) 특성 하지만 클라이언트 쪽을 제공 하지 않는 유효성 검사 합니다.
 
@@ -301,17 +301,17 @@ MVC에서 다른 날짜 형식을 처리 하는 방법에 대 한 자세한 내�
 
 다음 그림은 엔터티 다이어그램에서 이러한 관계 모양을 보여 줍니다. (이 다이어그램을 사용 하 여 만들어졌습니다는 [Entity Framework 파워 도구](https://visualstudiogallery.msdn.microsoft.com/72a60b14-1581-4b9b-89f2-846072eff19d); 자습서의 일부가 아닌는 다이어그램을 만들어만 사용 되 고로 보여 줍니다.)
 
-![Many_relationship를 학생 Course_many](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image12.png)
+![Student-Course_many-to-many_relationship](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image12.png)
 
 각 관계 선을 값은 1에서 한쪽 끝에 별표 (\*)에, 일 대 다 관계를 나타내는입니다.
 
 경우는 `Enrollment` 테이블 등급 정보를 포함 하지 않은, 두 개의 외래 키를 포함 시키기만 하면 `CourseID` 및 `StudentID`합니다. 다 대 다 조인 테이블에 해당 하는 경우 *페이로드 없이* (또는 *순수 조인 테이블*) 데이터베이스에 전혀에 대 한 모델 클래스를 만들 필요가 없게 되 고 있습니다. `Instructor` 및 `Course` 엔터티에 이러한 종류의 다 대 다 관계 및 간에 엔터티 클래스가 없습니다.이 볼 수 있습니다.
 
-![Many_relationship를 강사 Course_many](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image13.png)
+![Instructor-Course_many-to-many_relationship](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image13.png)
 
 그러나 조인 테이블에는 데이터베이스 필요는 다음 데이터베이스 다이어그램에 표시 된 것 처럼:
 
-![Many_relationship_tables를 강사 Course_many](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image14.png)
+![Instructor-Course_many-to-many_relationship_tables](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image14.png)
 
 Entity Framework를 자동으로 만듭니다는 `CourseInstructor` 테이블 및 있습니다 읽고 하지 직접 하 여 업데이트를 읽고 업데이트는 `Instructor.Courses` 및 `Course.Instructors` 탐색 속성입니다.
 

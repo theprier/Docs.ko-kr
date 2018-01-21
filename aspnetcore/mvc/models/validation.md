@@ -2,20 +2,18 @@
 title: "ASP.NET Core MVC에서 모델 유효성 검사"
 author: rachelappel
 description: "ASP.NET Core MVC에서 모델 유효성 검사에 알아봅니다."
-keywords: "ASP.NET Core, MVC에서 유효성 검사"
 ms.author: riande
 manager: wpickett
 ms.date: 12/18/2016
 ms.topic: article
-ms.assetid: 3a8676dd-7ed8-4a05-bca2-44e288ab99ee
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/validation
-ms.openlocfilehash: 7f641c247cb672934e76fa13bc7b7beb3990dd82
-ms.sourcegitcommit: f5a7f0198628f0d152257d90dba6c3a0747a355a
+ms.openlocfilehash: 91db17e103723ac411a2ad4f3f9549860f250cce
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/19/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="introduction-to-model-validation-in-aspnet-core-mvc"></a>ASP.NET Core MVC에서 모델 유효성 검사 소개
 
@@ -173,7 +171,7 @@ $.get({
 
 ### <a name="add-validation-to-dynamic-controls"></a>동적 컨트롤에 유효성 검사 추가
 
-등의 개별 컨트롤 때에 폼에 대 한 유효성 검사 규칙을 업데이트할 수 있습니다 `<input/>`s 및 `<select/>`s, 동적으로 생성 됩니다. 이러한 요소에 대 한 선택기를 전달할 수 없습니다는 `parse()` 메서드를 직접 주변 폼 이미 구문 분석 하 고 업데이트 되지 것입니다.  대신, 있습니다 먼저 기존 유효성 검사 데이터를 제거한 다음 아래와 같이 전체 폼 재분석:
+등의 개별 컨트롤 때에 폼에 대 한 유효성 검사 규칙을 업데이트할 수 있습니다 `<input/>`s 및 `<select/>`s, 동적으로 생성 됩니다. 이러한 요소에 대 한 선택기를 전달할 수 없습니다는 `parse()` 메서드를 직접 주변 폼 이미 구문 분석 하 고 업데이트 되지 것입니다. 대신, 있습니다 먼저 기존 유효성 검사 데이터를 제거한 다음 아래와 같이 전체 폼 재분석:
 
 ```js
 $.get({
@@ -233,11 +231,11 @@ $.get({
 
 이제 사용자가 전자 메일을 입력 하면 보기에는 JavaScript에서는 한 원격 호출을 참조 하는 경우 해당 전자 메일 작업이 수행 되 고,이 경우 오류 메시지를 표시 합니다. 그렇지 않으면 사용자는 일반적으로 폼을 제출할 수 있습니다.
 
-`AdditionalFields` 의 속성은 `[Remote]` 특성은 조합에 서버에서 데이터에 대 한 유효성을 검사 하는 데 유용 합니다.  예를 들어 경우는 `User` 위쪽에서 모델에 라는 두 개의 추가 속성 `FirstName` 및 `LastName`, 기존 사용자가 이미 있는 해당 쌍의 이름 확인 해야 할 수 있습니다.  다음 코드 에서처럼 새 속성을 정의 합니다.
+`AdditionalFields` 의 속성은 `[Remote]` 특성은 조합에 서버에서 데이터에 대 한 유효성을 검사 하는 데 유용 합니다. 예를 들어 경우는 `User` 위쪽에서 모델에 라는 두 개의 추가 속성 `FirstName` 및 `LastName`, 기존 사용자가 이미 있는 해당 쌍의 이름 확인 해야 할 수 있습니다. 다음 코드 에서처럼 새 속성을 정의 합니다.
 
 [!code-csharp[Main](validation/sample/User.cs?range=10-13)]
 
-`AdditionalFields`설정 될 수 명시적으로 문자열에 `"FirstName"` 및 `"LastName"`, 하지만 사용 하 여는 [ `nameof` ](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/nameof) 리팩터링 나중에 다음과 같은 연산자를 간소화 합니다.  유효성 검사를 수행 하는 작업 메서드를 다음의 값에 대해 하나씩 두 개의 인수를 받아들여야 `FirstName` 및의 값에 대해 하나씩 `LastName`합니다.
+`AdditionalFields`설정 될 수 명시적으로 문자열에 `"FirstName"` 및 `"LastName"`, 하지만 사용 하 여는 [ `nameof` ](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/nameof) 리팩터링 나중에 다음과 같은 연산자를 간소화 합니다. 유효성 검사를 수행 하는 작업 메서드를 다음의 값에 대해 하나씩 두 개의 인수를 받아들여야 `FirstName` 및의 값에 대해 하나씩 `LastName`합니다.
 
 
 [!code-csharp[Main](validation/sample/UsersController.cs?range=30-39)]
@@ -248,11 +246,11 @@ $.get({
 * 쌍은 수행 된 경우 오류 메시지가 표시 됩니다. 
 * 되지 않은 경우, 사용자는 양식을 전송할 수 있습니다.
 
-두 개 이상의 추가 필드와 유효성을 검사 해야 하는 경우는 `[Remote]` 특성을 제공 하는 쉼표로 구분 된 목록으로 합니다.  예를 들어, 추가 하는 `MiddleName` 모델에 속성이 설정는 `[Remote]` 다음 코드와 같이 특성:
+두 개 이상의 추가 필드와 유효성을 검사 해야 하는 경우는 `[Remote]` 특성을 제공 하는 쉼표로 구분 된 목록으로 합니다. 예를 들어, 추가 하는 `MiddleName` 모델에 속성이 설정는 `[Remote]` 다음 코드와 같이 특성:
 
 ```cs
 [Remote(action: "VerifyName", controller: "Users", AdditionalFields = nameof(FirstName) + "," + nameof(LastName))]
 public string MiddleName { get; set; }
 ```
 
-`AdditionalFields`모든 특성 인수가 같은 상수 식 이어야 합니다.  따라서 사용 하면 안는 [문자열 보간](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/interpolated-strings) 호출 또는 [ `string.Join()` ](https://msdn.microsoft.com/en-us/library/system.string.join(v=vs.110).aspx) 초기화 `AdditionalFields`합니다. 에 추가 하는 모든 추가 필드에는 `[Remote]` 특성을 해당 컨트롤러 동작 메서드에 다른 인수를 추가 해야 합니다.
+`AdditionalFields`모든 특성 인수가 같은 상수 식 이어야 합니다. 따라서 사용 하면 안는 [문자열 보간](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/interpolated-strings) 호출 또는 [ `string.Join()` ](https://msdn.microsoft.com/en-us/library/system.string.join(v=vs.110).aspx) 초기화 `AdditionalFields`합니다. 에 추가 하는 모든 추가 필드에는 `[Remote]` 특성을 해당 컨트롤러 동작 메서드에 다른 인수를 추가 해야 합니다.

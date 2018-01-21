@@ -2,20 +2,18 @@
 title: "ASP.NET Core MVC EF 코어-고급-10 / 10"
 author: tdykstra
 description: "이 자습서에서는 고급의 Entity Framework Core를 사용 하는 ASP.NET 웹 응용 프로그램 개발 기능 수행 하는 경우 고려해 야 하는 데 유용 하는 여러 항목을 소개 합니다."
-keywords: "ASP.NET Core, Entity Framework Core 원시 sql 검사 sql, 저장소 패턴, 작업 패턴을 자동 변경 내용 검색 단위 기존 데이터베이스"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 03/15/2017
 ms.topic: get-started-article
-ms.assetid: 92a2986a-d005-4ff6-9559-6657fd466bb7
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/advanced
-ms.openlocfilehash: 4c20ed37e1e54273929593dddc9fe1180f1492d6
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: ea83e5b17df80e5615dda49335247340d1cfb016
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="advanced-topics---ef-core-with-aspnet-core-mvc-tutorial-10-of-10"></a>고급 항목-EF 코어 ASP.NET Core MVC 자습서 (10 / 10)
 

@@ -2,7 +2,6 @@
 title: "ASP.NET Core에서 호스팅"
 author: guardrex
 description: "ASP.NET Core 응용 프로그램 시작 및 수명 관리를 담당 하는 웹 호스트에 알아봅니다."
-keywords: "ASP.NET Core 웹 IWebHost, WebHostBuilder, IHostingEnvironment, IApplicationLifetime 호스트"
 ms.author: riande
 manager: wpickett
 ms.date: 09/21/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/hosting
-ms.openlocfilehash: 8adc58d67f103e8d1fc8fe197cf392752bdaf660
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 7f6712073002b73ca4ddd7586718c81e62cacbc2
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="hosting-in-aspnet-core"></a>ASP.NET Core에서 호스팅
 
@@ -35,8 +34,8 @@ ASP.NET Core 응용 프로그램 구성 및 실행 한 *호스트*합니다. 호
 * 구성 [Kestrel](servers/kestrel.md) 웹 서버로 합니다. Kestrel 기본 옵션을 참조 하십시오. [는 Kestrel 옵션 섹션에서 ASP.NET Core 웹 서버 구현 Kestrel](xref:fundamentals/servers/kestrel#kestrel-options)합니다.
 * 반환 된 경로를 설정 하는 콘텐츠 루트 [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory)합니다.
 * 선택적 구성에서 로드 합니다.
-  * *appsettings.json*합니다.
-  * *appsettings 합니다. {환경}.json*합니다.
+  * *appsettings.json*.
+  * *appsettings.{Environment}.json*.
   * [사용자의 비밀](xref:security/app-secrets) 응용 프로그램을 실행 하는 경우는 `Development` 환경입니다.
   * 환경 변수.
   * 명령줄 인수입니다.
@@ -559,7 +558,7 @@ using (host)
 
 응용 프로그램에서 초기화 하 고의 미리 구성 된 기본값을 사용 하 여 새 호스트를 시작할 수 `CreateDefaultBuilder` 정적 편의 메서드를 사용 합니다. 이러한 메서드는을 콘솔 출력 하지 않고 서버를 시작 [WaitForShutdown](/dotnet/api/microsoft.aspnetcore.hosting.webhostextensions.waitforshutdown) (Ctrl-C/SIGINT 또는 SIGTERM) 중단 될 때까지 기다리는:
 
-**시작 (RequestDelegate 앱)**
+**Start(RequestDelegate app)**
 
 로 시작는 `RequestDelegate`:
 

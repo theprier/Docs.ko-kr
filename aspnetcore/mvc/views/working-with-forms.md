@@ -2,21 +2,19 @@
 title: "폼에 ASP.NET Core 태그 도우미"
 author: rick-anderson
 description: "태그 도우미 폼과 함께 사용 하는 기본 제공을 설명 합니다."
-keywords: "ASP.NET Core, 태그 도우미 TagHelper를 HTML 양식 Forms"
 ms.author: riande
 manager: wpickett
 ms.date: 02/14/2017
 ms.topic: article
-ms.assetid: 25595059-4fac-4785-8152-f88590e3169b
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/working-with-forms
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: da36985206521798d3bfe71f6372dc5cc4fca09a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9fbe2c5cb495aabee0e1f0bdb3871641efa03599
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="introduction-to-using-tag-helpers-in-forms-in-aspnet-core"></a>태그 도우미를 사용 하 여 폼에 ASP.NET Core 소개
 
@@ -111,12 +109,12 @@ Type expected
 
 |.NET 형식|입력된 형식|
 |---|---|
-|Bool|형식이 "checkbox" =|
-|문자열|형식 = "text"|
-|DateTime|형식 = "datetime"|
-|Byte|형식 = "number"|
-|Int|형식 = "number"|
-|Single, Double|형식 = "number"|
+|Bool|type=”checkbox”|
+|문자열|type=”text”|
+|DateTime|type=”datetime”|
+|Byte|type=”number”|
+|Int|type=”number”|
+|Single, Double|type=”number”|
 
 
 다음 표에서 몇 가지 일반적인 [데이터 주석](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) 입력된 태그 도우미 (모든 유효성 검사 특성 설명 되어 있음)는 특정 입력된 형식에 매핑되는 특성:
@@ -124,13 +122,13 @@ Type expected
 
 |특성|입력된 형식|
 |---|---|
-|[EmailAddress]|형식 = "email"|
-|[Url]|형식 = "url"|
-|[HiddenInput]|형식 = "hidden"|
-|[Phone]|형식 = "전화"|
-|[DataType(DataType.Password)]| 형식 = "password"|
-|[DataType(DataType.Date)]| 형식 = "date"|
-|[DataType(DataType.Time)]| 형식 = "시간"|
+|[EmailAddress]|type=”email”|
+|[Url]|type=”url”|
+|[HiddenInput]|type=”hidden”|
+|[Phone]|type=”tel”|
+|[DataType(DataType.Password)]| type=”password”|
+|[DataType(DataType.Date)]| type=”date”|
+|[DataType(DataType.Time)]| type=”time”|
 
 
 예제:
@@ -362,7 +360,7 @@ public IActionResult Edit(int id, int colorIndex)
 
 `Validation Summary Tag Helper` 유효성 검사 메시지의 요약 정보를 표시 하는 데 사용 됩니다. `asp-validation-summary` 특성 값은 다음 중 하나일 수 있습니다.
 
-|asp 유효성 검사 요약|표시 되는 유효성 검사 메시지|
+|asp-validation-summary|표시 되는 유효성 검사 메시지|
 |--- |--- |
 |ValidationSummary.All|속성 및 모델 수준|
 |ValidationSummary.ModelOnly|모델|

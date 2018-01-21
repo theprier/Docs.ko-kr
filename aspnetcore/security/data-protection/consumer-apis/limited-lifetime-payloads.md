@@ -1,63 +1,61 @@
 ---
-title: "보호된 페이로드의 수명 제한하기"
+title: "보호 된 페이로드의 수명을 제한"
 author: rick-anderson
-description: "이 문서에서는 ASP.NET Core 데이터 보호 API를 사용하여 보호된 페이로드의 수명을 제한하는 방법을 살펴봅니다."
-keywords: "ASP.NET Core, 데이터 보호, 페이로드 수명"
+description: "이 문서에서는 ASP.NET Core 데이터 보호 Api를 사용 하 여 보호 된 페이로드의 수명을 제한 하는 방법을 설명 합니다."
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: 000175e2-10fc-43dd-bfc2-51e004b97b44
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/consumer-apis/limited-lifetime-payloads
-ms.openlocfilehash: 3fe2e97db118a92cf6fa003b9ce8a9dedf253136
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 144097cd1551c1d0aece5df20ce01e14146a41d1
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
-# <a name="limiting-the-lifetime-of-protected-payloads"></a>보호된 페이로드의 수명 제한하기
+# <a name="limiting-the-lifetime-of-protected-payloads"></a>보호 된 페이로드의 수명을 제한
 
-응용 프로그램 개발자가 설정된 된 시간 동안 후에 만료 되는 보호 된 페이로드를 작성 하려고 하는 위치 시나리오가 있습니다. 예를 들어, 보호 된 페이로드는 1 시간 동안 유효 해야만 암호 다시 설정 토큰을 나타낼 수 있습니다. 개발자는 포함 된 만료 날짜를 포함 하는 고유한 페이로드 형식을 만들 수에 대 한 수 및 고급 개발자를 누르고, 이렇게 할 수 있습니다 이지만 대부분 개발자의 이러한 만료 관리 수 커집니다 번거로운. 
+응용 프로그램 개발자가 설정된 된 시간 동안 후에 만료 되는 보호 된 페이로드를 작성 하려고 하는 위치 시나리오가 있습니다. 예를 들어, 보호 된 페이로드는 1 시간 동안 유효 해야만 암호 다시 설정 토큰을 나타낼 수 있습니다. 개발자는 포함 된 만료 날짜를 포함 하는 고유한 페이로드 형식을 만들 수에 대 한 수 및 고급 개발자를 누르고, 이렇게 할 수 있습니다 이지만 대부분 개발자의 이러한 만료 관리 수 커집니다 번거로운.
 
-패키지 대상 우리의 개발자에 대 한 더 쉽게 확인 하려면 [Microsoft.AspNetCore.DataProtection.Extensions](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.Extensions/) 설정 시간이 지나면 자동으로 만료 되는 페이로드를 만들기 위한 유틸리티 Api를 포함 합니다. 이러한 Api의 오프 중지는 `ITimeLimitedDataProtector` 유형입니다. 
+패키지 대상 우리의 개발자에 대 한 더 쉽게 확인 하려면 [Microsoft.AspNetCore.DataProtection.Extensions](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.Extensions/) 설정 시간이 지나면 자동으로 만료 되는 페이로드를 만들기 위한 유틸리티 Api를 포함 합니다. 이러한 Api의 오프 중지는 `ITimeLimitedDataProtector` 유형입니다.
 
-## <a name="api-usage"></a>API 사용 방법
+## <a name="api-usage"></a>API 사용
 
-`ITimeLimitedDataProtector` 인터페이스는 시간 제한/자체 만료 페이로드를 보호하거나 보호 해제하는 작업을 수행하기 위한 핵심 인터페이스입니다. `ITimeLimitedDataProtector`의 인스턴스를 생성하려면, 먼저 특정 용도를 지정해서 생성한 일반적인 [IDataProtector](overview.md)의 인스턴스가 필요합니다. `IDataProtector`의 인스턴스를 얻은 뒤에 `IDataProtector.ToTimeLimitedDataProtector` 확장 메서드를 호출해서 만료 기능이 내장된 보호자를 다시 얻습니다.
+`ITimeLimitedDataProtector` 인터페이스는 보호 하 고, 시간이 제한 된 / 자동으로 만료 되는 페이로드를 보호 해제에 대 한 핵심 인터페이스입니다. 인스턴스를 만드는 `ITimeLimitedDataProtector`, 일반의 인스턴스를 먼저 해야 [IDataProtector](overview.md) 특정 용도 사용 하 여 생성 합니다. 한 번의 `IDataProtector` 인스턴스를 사용할 수 있는 호출에서 `IDataProtector.ToTimeLimitedDataProtector` 기본 만료 기능 다시 보호기를 가져올 확장 메서드를 합니다.
 
-`ITimeLimitedDataProtector`다음과 같은 API 화면 및 확장 메서드를 노출합니다. 
+`ITimeLimitedDataProtector`다음과 같은 API 화면 및 확장 메서드를 노출합니다.
 
-* CreateProtector(string purpose) : ITimeLimitedDataProtector - 이 API는 루트 시간 제한 보호자로부터 [용도 체인](purpose-strings.md)을 생성할 수 있다는 점에서 기존의 `IDataProtectionProvider.CreateProtector`와 비슷합니다.
+* CreateProtector (문자열 용도): ITimeLimitedDataProtector-이 API는 기존 비슷합니다 `IDataProtectionProvider.CreateProtector` 만들기를 사용할 수 있다는 점에서 [체인의 용도 위해](purpose-strings.md) 루트 시간이 제한 된 보호기를 합니다.
 
 * Protect(byte[] plaintext, DateTimeOffset expiration) : byte[]
 
 * Protect(byte[] plaintext, TimeSpan lifetime) : byte[]
 
-* Protect(byte[] plaintext) : byte[]
+* (바이트 일반 텍스트)를 보호: byte
 
-* Protect(string plaintext, DateTimeOffset expiration) : string
+* (문자열 일반 텍스트, DateTimeOffset 만료) 보호: 문자열
 
-* Protect(string plaintext, TimeSpan lifetime) : string
+* 보호 (문자열 일반 텍스트, TimeSpan 수명): 문자열
 
-* Protect(string plaintext) : string
+* (문자열 일반 텍스트)를 보호: 문자열
 
-평문만 전달하는 핵심 `Protect` 메서드와 페이로드의 만료 일자를 지정할 수 있는 새로운 오버로드 메서드가 함께 제공됩니다. 만료 날짜는 절대 날짜로 지정할 수 있습니다 (통해는 `DateTimeOffset`) 또는 상대 시간 (현재 시스템에서 시간을 통해는 `TimeSpan`). 만료 날짜를 사용 하지 않습니다는 오버 로드를 호출 하면 페이로드 가정 하지 만료 합니다. 
+핵심 외에도 `Protect` 의 일반 텍스트만 수행 하는 메서드는 페이로드의 만료 날짜를 지정할 수 있는 새로운 오버 로드가 있습니다. 만료 날짜는 절대 날짜로 지정할 수 있습니다 (통해는 `DateTimeOffset`) 또는 상대 시간 (현재 시스템에서 시간을 통해는 `TimeSpan`). 만료 날짜를 사용 하지 않습니다는 오버 로드를 호출 하면 페이로드 가정 하지 만료 합니다.
 
 * Unprotect(byte[] protectedData, out DateTimeOffset expiration) : byte[]
 
 * Unprotect(byte[] protectedData) : byte[]
 
-* Unprotect(string protectedData, out DateTimeOffset expiration) : string
+* (DateTimeOffset 만료 아웃 문자열 protectedData)를 보호 해제: 문자열
 
-* Unprotect(string protectedData) : string
+* (문자열 protectedData)를 보호 해제: 문자열
 
-`Unprotect` 메서드는 보호가 해제된 원본 데이터를 반환합니다. 페이로드가 아직 만료되지 않았다면 보호되지 않은 원본 데이터와 함께 절대 만료일시가 선택적 out 매개 변수를 통해서 함께 반환됩니다. 반면 이미 페이로드가 만료됐다면 모든 `Unprotect` 오버로드 메서드가 `CryptographicException`을 던집니다.
+`Unprotect` 메서드 원래 보호 되지 않는 데이터를 반환 합니다. 페이로드 아직 만료 되지 않았는지, 절대 만료를 선택적 출력 매개 변수는 원래 보호 되지 않는 데이터와 함께 반환 됩니다. 페이로드 만료 되 면 CryptographicException Unprotect 메서드의 모든 오버 로드에 throw 됩니다.
 
 >[!WARNING]
-> 이 API들을 이용해서 장기간 혹은 무기한 유지되어야 하는 페이로드를 보호하는 것은 바람직하지 않습니다. 경험적으로 "보호된 페이로드가 한 달 뒤에 영구적으로 복구할 수 없게 되더라도 감당할 수 있는가?"라는 질문이 좋은 판단의 기준이 될 수 있습니다. 만약 이 질문에 대한 답이 "아니오"라면 다른 API를 고려해봐야 합니다.
+> 하지 장기 또는 무기한 보존 해야 하는 페이로드를 보호 하기 위해 이러한 Api를 사용 하는 것이 좋습니다. "있습니까 여유가 한 달이 지난 후 영구적으로 복구할 수 없게 하려면 보호 된 페이로드"? 바람직한 방법은;으로 사용할 수 있습니다. 대답 한 경우 다음 없습니다 개발자 대체 Api를 고려해 야 합니다.
 
-다음 예제는 데이터 보호 시스템의 인스턴스를 생성하기 위해서 [비-DI 코드 경로](../configuration/non-di-scenarios.md)를 사용합니다. 이 예제를 실행하려면, 먼저 Microsoft.AspNetCore.DataProtection.Extensions 패키지 참조를 추가해야 합니다.
+사용 하 여 아래 샘플은 [DI 아닌 코드 경로](../configuration/non-di-scenarios.md) 데이터 보호 시스템을 인스턴스화하기 위한 합니다. 이 샘플을 실행 하려면 먼저 Microsoft.AspNetCore.DataProtection.Extensions 패키지에 대 한 참조를 추가 했는지 확인 합니다.
 
 [!code-csharp[Main](limited-lifetime-payloads/samples/limitedlifetimepayloads.cs)]

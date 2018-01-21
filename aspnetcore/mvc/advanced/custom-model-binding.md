@@ -2,20 +2,18 @@
 title: "사용자 지정 모델 바인딩"
 author: ardalis
 description: "ASP.NET Core mvc에서 모델 바인딩 사용자 지정합니다."
-keywords: "ASP.NET Core, 모델 바인딩, 사용자 지정 모델 바인더"
 ms.author: riande
 manager: wpickett
 ms.date: 04/10/2017
 ms.topic: article
-ms.assetid: ebd98159-a028-4a94-b06c-43981c79c6be
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/advanced/custom-model-binding
-ms.openlocfilehash: f3fc3d624c3b79d49a886dd85ca8b19147631e39
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d8b94f53954c5ab63ccf3aab4eb7a7a7dbea487b
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="custom-model-binding"></a>사용자 지정 모델 바인딩
 
@@ -74,7 +72,7 @@ public IModelBinder GetBinder(ModelBinderProviderContext context)
 
 와 같은 도구를 사용 하 여이 api 메서드를 base64 인코딩 문자열을 게시할 수 [우체부](https://www.getpostman.com/):
 
-![우체부](custom-model-binding/images/postman.png "우체부")
+![postman](custom-model-binding/images/postman.png "postman")
 
 바인더는 요청 데이터를 적절 하 게 명명 된 속성 또는 인수를 바인딩할 수,으로 모델 바인딩 성공 합니다. 다음 예제에서는 사용 하는 방법을 보여 줍니다. `ByteArrayModelBinder` 보기 모델을 사용 합니다.
 

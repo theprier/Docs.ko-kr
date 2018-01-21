@@ -2,20 +2,18 @@
 title: "URL의 ASP.NET Core 미들웨어를 다시 작성"
 author: guardrex
 description: "다시 작성 및 ASP.NET Core 응용 프로그램의 URL 재작성 미들웨어와 리디렉션 URL에 알아봅니다."
-keywords: "ASP.NET Core URL 재작성, URL 재작성, URL 리디렉션, 미들웨어, apache_mod 리디렉션 URL"
 ms.author: riande
 manager: wpickett
 ms.date: 08/17/2017
 ms.topic: article
-ms.assetid: e6130638-c410-4161-9921-b658ce988bd1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/url-rewriting
-ms.openlocfilehash: e07634a6d7ad97bf8735029b5c28d6935b71eb52
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 769696931498605bd3cf3459279939afb86a4ee8
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="url-rewriting-middleware-in-aspnet-core"></a>URL의 ASP.NET Core 미들웨어를 다시 작성
 
@@ -199,7 +197,7 @@ A `StreamReader` 에서 규칙을 읽는 데 사용 되는 *ApacheModRewrite.txt
 * HTTP_REFERER
 * HTTP_USER_AGENT
 * HTTPS
-* I P V 6
+* IPV6
 * QUERY_STRING
 * REMOTE_ADDR
 * REMOTE_PORT
@@ -209,7 +207,7 @@ A `StreamReader` 에서 규칙을 읽는 데 사용 되는 *ApacheModRewrite.txt
 * REQUEST_URI
 * SCRIPT_FILENAME
 * SERVER_ADDR
-* 서버 _ 포트
+* SERVER_PORT
 * SERVER_PROTOCOL
 * 시간
 * TIME_DAY
@@ -266,7 +264,7 @@ A `StreamReader` 에서 규칙을 읽는 데 사용 되는 *IISUrlRewrite.xml* �
 * CustomResponse 동작
 * 사용자 지정 서버 변수
 * 와일드카드
-* 동작: CustomResponse
+* Action:CustomResponse
 * LogRewrittenUrl
 
 ---
@@ -299,7 +297,7 @@ A `StreamReader` 에서 규칙을 읽는 데 사용 되는 *IISUrlRewrite.xml* �
 ### <a name="method-based-rule"></a>메서드 기반 규칙
 사용 하 여 `Add(Action<RewriteContext> applyRule)` 메서드에서 사용자 고유의 규칙 논리를 구현할 수 있습니다. `RewriteContext` 노출는 `HttpContext` 메서드에서 사용 합니다. `context.Result` 확인 방법을 추가 파이프라인 처리 됩니다.
 
-| 컨텍스트입니다. 결과                       | 작업                                                          |
+| context.Result                       | 작업                                                          |
 | ------------------------------------ | --------------------------------------------------------------- |
 | `RuleResult.ContinueRules`(기본값) | 계속 규칙 적용                                         |
 | `RuleResult.EndResponse`             | 규칙 적용을 중지 하 고 응답 보내기                       |

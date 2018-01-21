@@ -2,20 +2,18 @@
 title: "ASP.NET Core MVC에서 보기 기반 권한 부여"
 author: rick-anderson
 description: "이 문서에 삽입 하 고 ASP.NET Core Razor 뷰 내에 권한 부여 서비스를 사용 하는 방법을 보여 줍니다."
-keywords: "ASP.NET Core, 권한 부여, IAuthorizationService, Razor 권한 부여"
 ms.author: riande
 manager: wpickett
 ms.date: 10/30/2017
 ms.topic: article
-ms.assetid: 24ce40d8-9b83-4bae-9d4c-a66350fcc8f8
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/views
-ms.openlocfilehash: 756431f398c29376ab0ecd6c4f4d1db4f8022b0b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8f87ca90b77be1efd75688e8203cb57b1a3360ad
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="view-based-authorization"></a>보기 기반 권한 부여
 

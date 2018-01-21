@@ -2,20 +2,18 @@
 title: "ASP.NET Core MVC 웹 Api에에서 대 한 사용자 지정 포맷터"
 author: tdykstra
 description: "만들고 ASP.NET Core의 웹 Api에 대 한 사용자 지정 포맷터를 사용 하는 방법을 알아봅니다."
-keywords: "ASP.NET Core 웹 api를 사용자 지정 포맷터"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 02/08/2017
 ms.topic: article
-ms.assetid: 1fb6fdc2-e199-4469-9012-b909d1913422
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/custom-formatters
-ms.openlocfilehash: 5e665abe10fd7444c3fd5f20cfeca3ef0a5f79d3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3a6474fdae29b170978226de74d523b20a16cd0c
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="custom-formatters-in-aspnet-core-mvc-web-apis"></a>ASP.NET Core MVC 웹 Api에에서 대 한 사용자 지정 포맷터
 
@@ -67,7 +65,7 @@ ASP.NET Core MVC JSON, XML 또는 일반 텍스트 형식을 사용 하 여 web 
 > [!NOTE]  
 > 포맷터 클래스의 생성자 종속성 주입을 수행할 수 없습니다. 예를 들어 생성자에로 거 매개 변수를 추가 하 여로 거를 가져올 수 없습니다. 서비스에 액세스 하려면 메서드에 전달 된 컨텍스트 개체를 사용 해야 합니다. 코드 예제를 보려면 [아래](#read-write) 이 작업을 수행 하는 방법을 보여 줍니다.
 
-### <a name="override-canreadtypecanwritetype"></a>CanReadType/CanWriteType 재정의 
+### <a name="override-canreadtypecanwritetype"></a>Override CanReadType/CanWriteType 
 
 Á ´ â 재정의 하 여에서 serialize 하거나 deserialize 수는 `CanReadType` 또는 `CanWriteType` 메서드. VCard 텍스트에서 만들 수만 예를 들어 한 `Contact` 형식 그 반대의 경우도 마찬가지입니다.
 

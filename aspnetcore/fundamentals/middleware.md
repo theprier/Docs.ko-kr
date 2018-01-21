@@ -1,21 +1,19 @@
 ---
-title: "ASP.NET Core 미들웨어"
+title: ASP.NET Core Middleware
 author: rick-anderson
 description: "ASP.NET Core 미들웨어 및 요청 파이프라인에 알아봅니다."
-keywords: "ASP.NET Core, 미들웨어, 파이프라인, 대리자"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2017
 ms.topic: article
-ms.assetid: db9a86ab-46c2-40e0-baed-86e38c16af1f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/middleware
-ms.openlocfilehash: ad8d207b1e6de396f16d098fb07ddc89bea2c520
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: af16046c97964e8e1c16a4f5989fcfa794741c4d
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="aspnet-core-middleware-fundamentals"></a>ASP.NET Core 미들웨어 기본 사항
 
@@ -153,9 +151,9 @@ public void Configure(IApplicationBuilder app)
 | 요청 | 응답 |
 | --- | --- |
 | localhost:1234 | 맵 비 대리자에서 번호입니다.  |
-| localhost:1234 / map1 | 맵 테스트 1 |
-| localhost:1234 / map2 | 맵 테스트 2 |
-| localhost:1234 / map3 | 맵 비 대리자에서 번호입니다.  |
+| localhost:1234/map1 | 맵 테스트 1 |
+| localhost:1234/map2 | 맵 테스트 2 |
+| localhost:1234/map3 | 맵 비 대리자에서 번호입니다.  |
 
 때 `Map` 는 사용 하는 일치 하는 경로 세그먼트에서 제거 됩니다 `HttpRequest.Path` 에 추가 되 고 `HttpRequest.PathBase` 각 요청에 대 한 합니다.
 
@@ -168,7 +166,7 @@ public void Configure(IApplicationBuilder app)
 | 요청 | 응답 |
 | --- | --- |
 | localhost:1234 | 맵 비 대리자에서 번호입니다.  |
-| localhost:1234 /? 분기 마스터 = | 분기 사용 되는 마스터 =|
+| localhost:1234/?branch=master | 분기 사용 되는 마스터 =|
 
 `Map`예를 들어 중첩 지원:
 

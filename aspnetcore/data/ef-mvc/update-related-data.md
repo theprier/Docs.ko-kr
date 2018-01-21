@@ -2,20 +2,18 @@
 title: "ASP.NET Core MVC EF 코어-업데이트와 관련 데이터-7 / 10"
 author: tdykstra
 description: "이 자습서에서는 외래 키 필드와 탐색 속성을 업데이트 하 여 관련된 데이터를 업데이트 합니다."
-keywords: "ASP.NET Core, Entity Framework Core 관련된 데이터를 조인"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 03/15/2017
 ms.topic: get-started-article
-ms.assetid: 67bd162b-bfb7-4750-9e7f-705228b5288c
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/update-related-data
-ms.openlocfilehash: b59782bccce00f3940da4ec8bcff768aff8fa4ef
-ms.sourcegitcommit: ccf08615ad59bc6f654560de33b93396113a2eb0
+ms.openlocfilehash: 0e4df407a1ca15aa5baa2b7226be1cf91902a583
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/11/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="updating-related-data---ef-core-with-aspnet-core-mvc-tutorial-7-of-10"></a>관련된 데이터-ASP.NET Core MVC 자습서 (7 / 10)와 함께 EF 코어 업데이트
 
@@ -95,8 +93,7 @@ HttpGet `Edit` 메서드 편집 중인 과정에 이미 할당 되어 있는 분
 
 ![코스 만들기 페이지](update-related-data/_static/course-create.png)
 
-
-              **만들기**를 클릭합니다. Courses 인덱스 페이지가 목록에 추가 된 새 과정으로 표시 됩니다. 인덱스 페이지 목록에 있는 부서 이름과 관계가 올바르게 설정 되었는지 표시 하는 탐색 속성에서 제공 됩니다.
+**만들기**를 클릭합니다. Courses 인덱스 페이지가 목록에 추가 된 새 과정으로 표시 됩니다. 인덱스 페이지 목록에 있는 부서 이름과 관계가 올바르게 설정 되었는지 표시 하는 탐색 속성에서 제공 됩니다.
 
 클릭 **편집** Courses 인덱스 페이지에는 과정에 있습니다.
 

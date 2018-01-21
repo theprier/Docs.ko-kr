@@ -2,7 +2,6 @@
 title: "ASP.NET Core에서 Gulp를 사용 하 여"
 author: rick-anderson
 description: "ASP.NET Core에서 Gulp를 사용 하는 방법을 알아봅니다."
-keywords: "ASP.NET Core를 Gulp"
 ms.author: riande
 manager: wpickett
 ms.date: 02/28/2017
@@ -11,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/using-gulp
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 68f6838889cfb830f2c5a1976b3140ae5d94ac25
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 11f7254a2f3d3d132f2f6af6d5ddab23f896cf63
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="introduction-to-using-gulp-in-aspnet-core"></a>ASP.NET Core에서 Gulp를 사용 하 여 소개 
 
@@ -64,9 +63,9 @@ paths.concatCssDest = paths.webroot + "css/site.min.css";
 |---|---|
 |gulp|Gulp 스트리밍 빌드 시스템입니다. 자세한 내용은 참조 [gulp](https://www.npmjs.com/package/gulp)합니다.|
 |rimraf|노드 삭제 모듈입니다. 자세한 내용은 참조 [rimraf](https://www.npmjs.com/package/rimraf)합니다.|
-|gulp concat|운영 체제의 줄 바꿈 문자에 따라 파일을 연결 하는 모듈입니다. 자세한 내용은 참조 [gulp concat](https://www.npmjs.com/package/gulp-concat)합니다.|
-|gulp cssmin|CSS 파일을 축소 하는 모듈입니다. 자세한 내용은 참조 [gulp cssmin](https://www.npmjs.com/package/gulp-cssmin)합니다.|
-|gulp uglify|축소 하는 모듈 *.js* 파일입니다. 자세한 내용은 참조 [gulp uglify](https://www.npmjs.com/package/gulp-uglify)합니다.|
+|gulp-concat|운영 체제의 줄 바꿈 문자에 따라 파일을 연결 하는 모듈입니다. 자세한 내용은 참조 [gulp concat](https://www.npmjs.com/package/gulp-concat)합니다.|
+|gulp-cssmin|CSS 파일을 축소 하는 모듈입니다. 자세한 내용은 참조 [gulp cssmin](https://www.npmjs.com/package/gulp-cssmin)합니다.|
+|gulp-uglify|축소 하는 모듈 *.js* 파일입니다. 자세한 내용은 참조 [gulp uglify](https://www.npmjs.com/package/gulp-uglify)합니다.|
 
 필수 모듈을 가져온 후 작업을 지정할 수 있습니다. 6 가지 작업 같습니다 등록, 다음 코드에 의해 표현:
 
@@ -249,7 +248,7 @@ gulp.task("min", ["min:js", "min:css"]);
     gulp.task("series", ["series:first", "series:second"], function () {});
     ```
  
-    이제 작업 3 가지: `series:first`, `series:second`, 및 `series`합니다. `series:second` 을 실행 하 고 이전에 완료 작업의 배열을 지정 하는 두 번째 매개 변수를 포함 하는 작업은 `series:second` 작업이 실행 됩니다.  만 위의 코드에 지정 된 대로 `series:first` 작업을 먼저 완료 해야 합니다는 `series:second` 작업이 실행 됩니다.
+    이제 작업 3 가지: `series:first`, `series:second`, 및 `series`합니다. `series:second` 을 실행 하 고 이전에 완료 작업의 배열을 지정 하는 두 번째 매개 변수를 포함 하는 작업은 `series:second` 작업이 실행 됩니다. 만 위의 코드에 지정 된 대로 `series:first` 작업을 먼저 완료 해야 합니다는 `series:second` 작업이 실행 됩니다.
 
 2.  저장 *gulpfile.js*합니다.
 
@@ -328,7 +327,7 @@ Gulp를 사용 하 여 스테이징 및 프로덕션에 대 한 클라이언트 
 
 ## <a name="task-and-module-details"></a>작업 및 모듈 세부 정보
 
-Gulp 작업은 함수 이름으로 등록 됩니다.  다른 작업은 현재 작업 보다 먼저 실행 해야 하는 경우 종속성을 지정할 수 있습니다. 추가 함수를 사용 하면 실행 및 조사식 Gulp 작업으로 소스를 설정 하려면 (*src*)와 대상 (*dest*) 수정 하 고 파일의 합니다. 다음은 기본 Gulp API 함수입니다.
+Gulp 작업은 함수 이름으로 등록 됩니다. 다른 작업은 현재 작업 보다 먼저 실행 해야 하는 경우 종속성을 지정할 수 있습니다. 추가 함수를 사용 하면 실행 및 조사식 Gulp 작업으로 소스를 설정 하려면 (*src*)와 대상 (*dest*) 수정 하 고 파일의 합니다. 다음은 기본 Gulp API 함수입니다.
 
 |Gulp 함수|구문|설명|
 |---   |--- |--- |

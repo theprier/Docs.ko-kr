@@ -2,7 +2,6 @@
 title: "마이그레이션 인증 및 ASP.NET 코어 2.0 Id"
 author: scottaddie
 description: "이 문서는 ASP.NET 코어 2.0으로 마이그레이션 ASP.NET Core 1.x 인증 및 Id에 대 한 가장 일반적인 단계를 간략하게 설명 합니다."
-keywords: "ASP.NET Core, Id 인증"
 ms.author: scaddie
 manager: wpickett
 ms.date: 10/26/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/1x-to-2x/identity-2x
-ms.openlocfilehash: 1d8c75a21cd7110b3e414f0c600e9f05cbaeff45
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 72ad31438a344fb5fa2b357c709b923b8077e742
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="migrating-authentication-and-identity-to-aspnet-core-20"></a>마이그레이션 인증 및 ASP.NET 코어 2.0 Id
 
@@ -297,7 +296,7 @@ services.AddAuthentication(IISDefaults.AuthenticationScheme);
 
 <a name="identity-cookie-options"></a>
 
-## <a name="identitycookieoptions-instances"></a>IdentityCookieOptions 인스턴스
+## <a name="identitycookieoptions-instances"></a>IdentityCookieOptions Instances
 2.0 변경의 부작용은 옵션 쿠키 옵션 인스턴스 대신 명명 된 사용으로 전환 합니다. Identity 쿠키 구성표 이름을 사용자 지정 하는 기능이 제거 됩니다.
 
 예를 들어 1.x 프로젝트 사용 [생성자 삽입](xref:mvc/controllers/dependency-injection#constructor-injection) 전달 하는 `IdentityCookieOptions` 매개 변수를 *AccountController.cs*합니다. 외부 쿠키 인증 체계는에서 제공된 된 인스턴스에 액세스 합니다.

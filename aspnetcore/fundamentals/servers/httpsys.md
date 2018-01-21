@@ -2,20 +2,18 @@
 title: "ASP.NET Core 웹 서버 구현이 HTTP.sys"
 author: rick-anderson
 description: "Windows에서 ASP.NET Core에 대 한 웹 서버 HTTP.sys를 소개합니다. IIS 없이 인터넷에 직접 연결에 사용할 수 있는 Kestrel 하는 대신을 HTTP.sys는 Http.Sys 커널 모드 드라이버를 기반 합니다."
-keywords: "ASP.NET Core,HttpSys,HTTP.sys,HttpListener,url 접두사, SSL"
 ms.author: riande
 manager: wpickett
 ms.date: 08/07/2017
 ms.topic: article
-ms.assetid: 0a7286e4-6428-424e-b5c4-5c98815cf61c
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: 8d46862af44379d8592efdf214a80214dce2d69d
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: 60301e1e3eb96f51e86ef9f8be61f5fd8a4c009c
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>ASP.NET Core 웹 서버 구현이 HTTP.sys
 
@@ -162,7 +160,7 @@ netsh http add sslcert ipport=0.0.0.0:443 certhash=MyCertHash_Here appid={000000
 여기에 대 한 참조 설명서는 *netsh.exe*:
 
 * [Netsh 명령에 대 한 하이퍼텍스트 전송 프로토콜 (HTTP)](https://technet.microsoft.com/library/cc725882.aspx)
-* [UrlPrefix 문자열](https://msdn.microsoft.com/library/windows/desktop/aa364698.aspx)
+* [UrlPrefix Strings](https://msdn.microsoft.com/library/windows/desktop/aa364698.aspx)
 
 다음 리소스는 여러 시나리오에 대 한 자세한 지침을 제공 합니다. HttpListener를 참조 하는 문서 Http.Sys를 기반으로 둘 다으로 HTTP.sys에 동일 하 게 적용 됩니다.
 

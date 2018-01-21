@@ -2,20 +2,18 @@
 title: "ASP.NET Core 웹 서버 구현이 WebListener"
 author: rick-anderson
 description: "Windows에서 ASP.NET Core 웹 서버로 WebListener를 소개합니다. Http.Sys 커널 모드 드라이버 기술을 기반으로 한 WebListener는 IIS가 없이 인터넷에 직접 연결에 사용할 수 있는 Kestrel 하지 않아도 됩니다."
-keywords: "ASP.NET Core, WebListener, HttpListener, SSL url 접두사"
 ms.author: riande
 manager: wpickett
 ms.date: 08/07/2017
 ms.topic: article
-ms.assetid: 0a7286e4-6428-424e-b5c4-5c98815cf61c
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/weblistener
-ms.openlocfilehash: f1abb3558546cd907c78b44d9353d9c9f1f5aff1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f1bdbc723e4602c2e53723aff91ec5d254f4bd93
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="weblistener-web-server-implementation-in-aspnet-core"></a>ASP.NET Core 웹 서버 구현이 WebListener
 
@@ -153,7 +151,7 @@ netsh http add sslcert ipport=0.0.0.0:443 certhash=MyCertHash_Here appid={000000
 다음은 공식 참조 설명서가입니다.
 
 * [Netsh 명령에 대 한 하이퍼텍스트 전송 프로토콜 (HTTP)](https://technet.microsoft.com/library/cc725882.aspx)
-* [UrlPrefix 문자열](https://msdn.microsoft.com/library/windows/desktop/aa364698.aspx)
+* [UrlPrefix Strings](https://msdn.microsoft.com/library/windows/desktop/aa364698.aspx)
 
 다음 리소스는 여러 시나리오에 대 한 자세한 지침을 제공 합니다. 참조 하는 문서 `HttpListener` 에 동일 하 게 적용 `WebListener`, 둘 다 Http.Sys 기반으로 합니다.
 

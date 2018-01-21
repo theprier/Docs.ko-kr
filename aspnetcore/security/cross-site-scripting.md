@@ -2,20 +2,18 @@
 title: "사이트 간 스크립팅 방지"
 author: rick-anderson
 description: "이 문서에는 교차 사이트 스크립팅 (XSS) 및 ASP.NET Core 응용 프로그램의이 취약점을 해결 하기 위한 기술을 소개 합니다."
-keywords: "ASP.NET Core, XSS, 보안 문제"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: 95790927-2bfe-445e-b1fd-429c2c7030ce
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/cross-site-scripting
-ms.openlocfilehash: fdb26a8338b98135cfc3f6bce9d87285e9a7eb12
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: af73a86aa6bcde084ecbe1a3fb5711c7da55871c
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="preventing-cross-site-scripting"></a>사이트 간 스크립팅 방지
 
@@ -171,7 +169,7 @@ public class HomeController : Controller
 
 ## <a name="encoding-url-parameters"></a>URL 매개 변수 인코딩
 
-값 사용으로 신뢰할 수 없는 입력을 사용 하는 URL 쿼리 문자열을 빌드 하려는 경우는 `UrlEncoder` 를 인코딩하는 값입니다. 예를 들면 다음과 같습니다.
+값 사용으로 신뢰할 수 없는 입력을 사용 하는 URL 쿼리 문자열을 빌드 하려는 경우는 `UrlEncoder` 를 인코딩하는 값입니다. 예를 들어 개체에 적용된
 
 ```csharp
 var example = "\"Quoted Value with spaces and &\"";

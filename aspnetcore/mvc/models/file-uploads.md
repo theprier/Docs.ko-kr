@@ -2,20 +2,18 @@
 title: "ASP.NET Core에서 파일 업로드"
 author: ardalis
 description: "ASP.NET Core MVC에서 파일을 업로드 하려면 모델 바인딩 및 스트리밍를 사용 하는 방법입니다."
-keywords: "ASP.NET Core, 파일 업로드, 바인딩, 스트리밍 IFormFile 모델"
 ms.author: riande
 manager: wpickett
 ms.date: 07/05/2017
 ms.topic: article
-ms.assetid: ebc98159-a028-4a94-b06c-43981c79c6be
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/file-uploads
-ms.openlocfilehash: e8608a46d6688df8da6c665a25b6f4db5f480461
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3c5abe84a5c7cc399e0586e680a414fab7a26c1d
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="file-uploads-in-aspnet-core"></a>ASP.NET Core에서 파일 업로드
 

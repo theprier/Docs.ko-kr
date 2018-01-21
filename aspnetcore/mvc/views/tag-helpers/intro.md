@@ -2,7 +2,6 @@
 title: "ASP.NET Core에서 태그 도우미"
 author: rick-anderson
 description: "태그 도우미 정의 및 ASP.NET 코어에서 사용 하는 방법에 알아봅니다."
-keywords: "ASP.NET Core, 태그 도우미"
 ms.author: riande
 manager: wpickett
 ms.date: 7/14/2017
@@ -11,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/intro
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 78d9fdbd32eae29d7714507498d5d68b86c6d12e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 003a22d4b0d9400f3e9effe0892d2d7e03704cde
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="introduction-to-tag-helpers-in-aspnet-core"></a>ASP.NET Core에서 태그 도우미 소개 
 

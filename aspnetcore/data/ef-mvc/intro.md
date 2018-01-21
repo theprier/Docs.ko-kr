@@ -2,20 +2,18 @@
 title: "ASP.NET Core MVC Entity Framework 코어 자습서 1 / 10 인"
 author: tdykstra
 description: 
-keywords: "ASP.NET Core, Entity Framework Core 자습서"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 03/15/2017
 ms.topic: get-started-article
-ms.assetid: b67c3d4a-f2bf-4132-a48b-4b0d599d7981
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/intro
-ms.openlocfilehash: 2b21c7fb35c65d9374723faac5b812289023a0f6
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: df13726689c430ab19786e104ea7404051107aa9
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="getting-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio-1-of-10"></a>Visual Studio (1 / 10)을 사용 하 여 Entity Framework Core 및 ASP.NET Core MVC 시작
 
@@ -44,7 +42,7 @@ EF 코어 2.0 EF의 최신 버전은 있지만 아직 되지 않은 EF의 모든
 솔루션에 코드를 비교 하 여 일반적으로 찾을 수 문제를 해결할 수 없는 실행 하는 경우는 [완료 된 프로젝트](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final)합니다. 일반적인 오류 및 해결 방법을 목록은 참조 하십시오. [계열의 마지막 자습서의 문제 해결 섹션](advanced.md#common-errors)합니다. 에 대 한 StackOverflow.com에 질문을 게시할 수 필요한 있습니다을 찾지 못한 경우 [ASP.NET Core](https://stackoverflow.com/questions/tagged/asp.net-core) 또는 [EF 코어](https://stackoverflow.com/questions/tagged/entity-framework-core)합니다.
 
 > [!TIP] 
-> 각각 이전 자습서에서 수행 되는 동작과 기반으로 하는 일련의 10 자습서입니다.  각 자습서 완료 후 프로젝트의 복사본을 저장 하는 것이 좋습니다.  문제를 실행 하는 경우에 전체 계열의 시작 부분으로 다시 이동 하지 않고도 이전 자습서에서를 통해 시작할 수 있습니다.
+> 각각 이전 자습서에서 수행 되는 동작과 기반으로 하는 일련의 10 자습서입니다. 각 자습서 완료 후 프로젝트의 복사본을 저장 하는 것이 좋습니다. 문제를 실행 하는 경우에 전체 계열의 시작 부분으로 다시 이동 하지 않고도 이전 자습서에서를 통해 시작할 수 있습니다.
 
 ## <a name="the-contoso-university-web-application"></a>Contoso 대학 웹 응용 프로그램
 
@@ -136,7 +134,7 @@ Entity Framework Core에 사용할 수 있는 다른 데이터베이스 공급�
 
 `Enrollments` 속성은 탐색 속성입니다. 이 엔터티와 관련 된 다른 엔터티와 탐색 속성을 보유 합니다. 이 경우는 `Enrollments` 속성의는 `Student entity` 를 모두 보유할는 `Enrollment` 엔터티는 관련 된 `Student` 엔터티. 즉, 하는 경우 데이터베이스의 지정된 된 학생 행에 두 개의 관련 된 등록 행 (해당 StudentID 외래 키 열에 해당 학생의 기본 키 값을 포함 하는 행)는 `Student` 엔터티의 `Enrollments` 탐색 속성은 포함 하는 것 두 개의 `Enrollment` 엔터티.
 
-해당 형식은 항목 추가, 삭제 및 업데이트와 같은 될 수 있는 목록 이어야 합니다는 탐색 속성 (예: 다 대 다 또는 일 대 다 관계) 여러 엔터티를 보유할 수, 하는 경우 `ICollection<T>`합니다.  지정할 수 있습니다 `ICollection<T>` 또는 형식으로 `List<T>` 또는 `HashSet<T>`합니다. 지정 하는 경우 `ICollection<T>`, EF 만듭니다는 `HashSet<T>` 기본적으로 컬렉션입니다.
+해당 형식은 항목 추가, 삭제 및 업데이트와 같은 될 수 있는 목록 이어야 합니다는 탐색 속성 (예: 다 대 다 또는 일 대 다 관계) 여러 엔터티를 보유할 수, 하는 경우 `ICollection<T>`합니다. 지정할 수 있습니다 `ICollection<T>` 또는 형식으로 `List<T>` 또는 `HashSet<T>`합니다. 지정 하는 경우 `ICollection<T>`, EF 만듭니다는 `HashSet<T>` 기본적으로 컬렉션입니다.
 
 ### <a name="the-enrollment-entity"></a>등록 엔터티
 
@@ -210,7 +208,7 @@ ASP.NET Core 구현 [종속성 주입](../../fundamentals/dependency-injection.m
 
 ## <a name="add-code-to-initialize-the-database-with-test-data"></a>테스트 데이터로 데이터베이스를 초기화 하는 코드를 추가 합니다.
 
-Entity Framework에서 빈 데이터베이스를 만듭니다.  이 섹션에서는 테스트 데이터로 채우기 위해 데이터베이스를 만든 후 호출 되는 메서드를 작성할 수 있습니다.
+Entity Framework에서 빈 데이터베이스를 만듭니다. 이 섹션에서는 테스트 데이터로 채우기 위해 데이터베이스를 만든 후 호출 되는 메서드를 작성할 수 있습니다.
 
 사용 하 여 여기에서 `EnsureCreated` 방법을 자동으로 데이터베이스를 만들 수 있습니다. 에 [이후의 자습서](migrations.md) 삭제 하 고 데이터베이스를 다시 작성 하는 대신 데이터베이스 스키마를 변경 하려면 Code First 마이그레이션을 사용 하 여 모델 변경 내용을 처리 하는 방법을 배웁니다.
 
@@ -218,7 +216,7 @@ Entity Framework에서 빈 데이터베이스를 만듭니다.  이 섹션에서
 
 [!code-csharp[Main](intro/samples/cu/Data/DbInitializer.cs?name=snippet_Intro)]
 
-코드는 데이터베이스의 어떤 학생 되는 경우 데이터베이스는 새로운 클래스 이며 테스트 데이터로 시드할 해야 하는 경우를 가정 그렇지 않은 경우를 확인 합니다.  배열에 테스트 데이터를 로드 하지 않고 `List<T>` 성능을 최적화 하는 컬렉션입니다.
+코드는 데이터베이스의 어떤 학생 되는 경우 데이터베이스는 새로운 클래스 이며 테스트 데이터로 시드할 해야 하는 경우를 가정 그렇지 않은 경우를 확인 합니다. 배열에 테스트 데이터를 로드 하지 않고 `List<T>` 성능을 최적화 하는 컬렉션입니다.
 
 *Program.cs*, 수정 된 `Main` 응용 프로그램 시작 시에 다음을 수행 하는 메서드:
 
@@ -244,10 +242,10 @@ Entity Framework에서 빈 데이터베이스를 만듭니다.  이 섹션에서
 
 * 마우스 오른쪽 단추로 클릭는 **컨트롤러** 폴더에 **솔루션 탐색기** 선택 **추가 > 스 캐 폴드 된 새 항목**합니다.
 
-경우는 **MVC 종속성 추가** 대화 상자가 나타납니다.
+**MVC 종속성 추가** 대화 상자가 나타나는 경우:
 
-* [Visual Studio 최신 버전으로 업데이트](https://www.visualstudio.com/downloads/)합니다. Visual Studio 버전 15.5 이전이 대화 상자를 표시 합니다.
-* 를 업데이트할 수 없는 경우 선택 **추가**를 다시 추가 컨트롤러 단계를 따릅니다.
+* [Visual Studio를 최신 버전으로 업데이트합니다](https://www.visualstudio.com/downloads/). Visual Studio 15.5 이전 버전이 이 대화 상자를 표시합니다.
+* 업데이트할 수 없는 경우 **추가**를 선택한 다음 컨트롤러 추가 단계를 다시 따릅니다.
 
 * 에 **추가 스 캐 폴드** 대화 상자:
 
@@ -353,7 +351,7 @@ SSOX, 클릭 **(localdb) \MSSQLLocalDB > 데이터베이스**, 다음의 연결 
 
 Entity Framework를 사용 하는 비동기 코드를 작성할 때 알아두어야 할 일부의 원인:
 
-* 쿼리 또는 데이터베이스에 보낼 명령을 발생 하는 명령문만 비동기적으로 실행 됩니다. 예를 들어 포함 된 `ToListAsync`, `SingleOrDefaultAsync`, 및 `SaveChangesAsync`합니다.  포함 하지 않습니다, 예를 들어 변경 하는 문에 `IQueryable`와 같은 `var students = context.Students.Where(s => s.LastName == "Davolio")`합니다.
+* 쿼리 또는 데이터베이스에 보낼 명령을 발생 하는 명령문만 비동기적으로 실행 됩니다. 예를 들어 포함 된 `ToListAsync`, `SingleOrDefaultAsync`, 및 `SaveChangesAsync`합니다. 포함 하지 않습니다, 예를 들어 변경 하는 문에 `IQueryable`와 같은 `var students = context.Students.Where(s => s.LastName == "Davolio")`합니다.
 
 * EF 컨텍스트 스레드로부터 안전 하지 않습니다: 동시에 여러 작업을 수행 하지 마세요. 비동기 EF 메서드를 호출 하는 경우 항상 사용는 `await` 키워드입니다.
 
@@ -366,4 +364,4 @@ Entity Framework를 사용 하는 비동기 코드를 작성할 때 알아두어
 이제 Entity Framework Core 및 SQL Server Express LocalDB를 사용 하 여 저장 하 고 데이터를 표시 하는 간단한 응용 프로그램을 만들었습니다. 다음 자습서에서는 기본 CRUD 수행 하는 방법을 배우게 됩니다 (만들기, 읽기, 업데이트, 삭제) 작업입니다.
 
 >[!div class="step-by-step"]
-[다음](crud.md)  
+[다음](crud.md)

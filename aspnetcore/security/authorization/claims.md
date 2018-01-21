@@ -2,20 +2,18 @@
 title: "클레임 기반 권한 부여"
 author: rick-anderson
 description: "이 문서에서는 ASP.NET Core 응용 프로그램에서 권한 부여에 대 한 클레임 검사를 추가 하는 방법을 설명 합니다."
-keywords: "ASP.NET Core, 권한 부여 클레임"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: 737be5cd-3511-4f1c-b0ce-65403fb5eed3
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/claims
-ms.openlocfilehash: eebaddabdd360f34b6ff44e8f4f9f1f10fda6406
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: dd8f42684f9e58b9329602aa9b70d2c0ab950892
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="claims-based-authorization"></a>클레임 기반 권한 부여
 

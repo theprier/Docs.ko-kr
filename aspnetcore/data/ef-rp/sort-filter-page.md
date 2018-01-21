@@ -2,18 +2,17 @@
 title: "EF 코어-정렬, 필터, 페이징-8 3 razor 페이지"
 author: rick-anderson
 description: "이 자습서에서는 정렬, 필터링 및 페이징을 ASP.NET 코어 및 Entity Framework 코어를 사용 하 여 페이지 기능을 추가 합니다."
-keywords: "ASP.NET Core, Entity Framework Core, 정렬, 필터, 페이징, 그룹화"
 ms.author: riande
 ms.date: 10/22/2017
 ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: 5e17663b88a622101245228e9372db55e4e874be
-ms.sourcegitcommit: 703593d5fd14076e79be2ba75a5b8da12a60ab15
+ms.openlocfilehash: 08f00e183dd8a8daa883d0b9ff15698b3a39f625
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="sorting-filtering-paging-and-grouping---ef-core-with-razor-pages-3-of-8"></a>정렬, 필터링, 페이징 및 그룹화-EF 코어 Razor 페이지 (3 / 8)
 
@@ -142,7 +141,7 @@ ms.lasthandoff: 12/05/2017
 
 앞의 코드를 사용 하 여는 `<form>` [태그 도우미](xref:mvc/views/tag-helpers/intro) 검색 텍스트 상자 및 단추를 추가 합니다. 기본적으로는 `<form>` 태그 도우미는 POST로 양식 데이터를 전송 합니다. Post, 매개 변수는 URL 및 HTTP 메시지 본문에 전달 됩니다. HTTP GET을 사용 하는 양식 데이터 URL에 쿼리 문자열로 전달 됩니다. URL에 책갈피를 사용 하면 쿼리 문자열을 사용 하 여 데이터를 전달 합니다. [W3C 지침](https://www.w3.org/2001/tag/doc/whenToUseGet.html) 작업이 업데이트 되지 않습니다 경우 GET를 사용 해야 하는 것이 좋습니다.
 
-앱을 테스트 합니다.
+앱을 테스트합니다.
 
 * 선택 된 **학생** 탭 하 고 검색 문자열을 입력 합니다.
 * 선택 **검색**합니다.

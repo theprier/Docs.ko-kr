@@ -2,7 +2,6 @@
 title: "휴대용 개체 지역화를 구성 합니다."
 author: sebastienros
 description: "이 문서는 휴대용 개체 파일을 소개 하 고 Orchard 핵심 프레임 워크와 ASP.NET Core 응용 프로그램에서 사용 하 여 단계를 간략하게 설명 합니다."
-keywords: "ASP.NET Core, 지역화, 문화권, 언어, 휴대용 개체"
 ms.author: scaddie
 manager: wpickett
 ms.date: 09/26/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/portable-object-localization
-ms.openlocfilehash: 4fa73ae08b10217de657681a27f6097fc3443737
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: dfdd86b4706a1fb8e313c24ba830ec996fe09225
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="configure-portable-object-localization-with-orchard-core"></a>휴대용 개체 지역화 Orchard 코어를 사용 하 여 구성
 
@@ -33,7 +32,7 @@ PO 파일은 지정된 된 언어에 대 한 번역 된 문자열을 포함 하�
 - PO 파일 처럼 컴파일되지 않습니다 *.resx* 파일입니다. 이와 같이 특수 한 도구 및 빌드 단계 사용할 필요가 없습니다.
 - PO 파일 공동 온라인 편집 도구와 잘 작동합니다.
 
-### <a name="example"></a>예제
+### <a name="example"></a>예
 
 복수 형태의으로 하나를 포함 하 여 프랑스어로 두 개의 문자열에 대 한 번역을 포함 하는 샘플 PO 파일 다음과 같습니다.
 

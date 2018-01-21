@@ -2,7 +2,6 @@
 title: "EF 코어 8-동시성-8 사용 하 여 razor 페이지"
 author: rick-anderson
 description: "이 자습서에는 여러 사용자가 동시에 같은 엔터티를 업데이트 하는 경우 충돌을 처리 하는 방법을 보여 줍니다."
-keywords: "ASP.NET Core, Entity Framework Core 동시성"
 ms.author: riande
 manager: wpickett
 ms.date: 11/15/2017
@@ -10,13 +9,13 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/concurrency
-ms.openlocfilehash: 841c638b2cacaab7970f2b173fee488972957b63
-ms.sourcegitcommit: 2d23ea501e0213bbacf65298acf1c8bd17209540
+ms.openlocfilehash: a980669d49d332d7ef2ff5a18c73e9b269281287
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 01/19/2018
 ---
-en-미국 /
+en-us/
 
 # <a name="handling-concurrency-conflicts---ef-core-with-razor-pages-8-of-8"></a>동시성 충돌-EF 코어 Razor 페이지 (8의 8)에 처리
 

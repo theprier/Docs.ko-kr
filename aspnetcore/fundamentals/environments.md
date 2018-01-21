@@ -2,7 +2,6 @@
 title: "여러 환경에서 ASP.NET Core 작업"
 author: rick-anderson
 description: "ASP.NET Core 여러 환경에 걸쳐 응용 프로그램 동작을 제어 하는 것에 대 한 지원에 제공 하는 방법에 대해 알아봅니다."
-keywords: "ASP.NET Core, 환경 설정, ASPNETCORE_ENVIRONMENT"
 ms.author: riande
 manager: wpickett
 ms.date: 12/25/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/environments
-ms.openlocfilehash: 784d176145c3e4e44ddc0ea06b6702f70cd4b08c
-ms.sourcegitcommit: 87168cdc409e7a7257f92a0f48f9c5ab320b5b28
+ms.openlocfilehash: 83d1593d46761b1c00aa431cfdcde59cb3b28b65
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="working-with-multiple-environments"></a>여러 환경 작업
 
@@ -157,7 +156,7 @@ export ASPNETCORE_ENVIRONMENT=Development
 ### <a name="linux"></a>Linux
 사용 하 여 Linux 배포판는 `export` 세션 변수 설정을 기반으로 하는 명령줄에서 명령 및 *bash_profile* 시스템 수준 환경 설정에 대 한 파일입니다.
 
-### <a name="configuration-by-environment"></a>환경 구성
+### <a name="configuration-by-environment"></a>환경별 구성
 
 참조 [환경에 의해 구성](xref:fundamentals/configuration/index#configuration-by-environment) 자세한 정보에 대 한 합니다.
 

@@ -2,7 +2,6 @@
 title: "ASP.NET Core에서 Google 외부 로그인 설정"
 author: rick-anderson
 description: "이 자습서는 기존 ASP.NET Core 응용 프로그램에 Google 계정 사용자 인증의 통합을 보여 줍니다."
-keywords: "ASP.NET Core, Google, 로그인, 인증"
 ms.author: riande
 manager: wpickett
 ms.date: 08/02/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/google-logins
-ms.openlocfilehash: af316d832de7356d539eaaab5be6485639030c7a
-ms.sourcegitcommit: 8ab9d0065fad23400757e4e08033787e42c97d41
+ms.openlocfilehash: 30d224061bce3a727fc31d19c194e96559e28310
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="configuring-google-authentication-in-aspnet-core"></a>ASP.NET Core에서 Google 인증 구성
 
@@ -49,7 +48,7 @@ ms.lasthandoff: 11/17/2017
 ![API 관리자 Google + API 페이지](index/_static/GoogleConsoleGoCredentials.png)
 
 * 다음 중 하나를 선택합니다.
-   * **Google + API**
+   * **Google+ API**
    * **웹 서버 (예:: node.js, Tomcat)**, 및
    * **사용자 데이터**:
 

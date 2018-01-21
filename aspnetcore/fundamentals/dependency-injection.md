@@ -2,21 +2,19 @@
 title: "ASP.NET Core의 종속성 주입"
 author: ardalis
 description: "ASP.NET Core 종속성 주입을 구현 하는 방법 및 사용 하는 방법에 알아봅니다."
-keywords: "종속성 주입, di ASP.NET Core"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: fccd69be-7ad1-47fb-b203-b3633b6b9a9b
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/dependency-injection
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8d12960708f9d9bf2bc7c5997f82096d93087d13
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: 1da3d557c48921747634b08cedb518184fb5f963
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="introduction-to-dependency-injection-in-aspnet-core"></a>ASP.NET Core의 종속성 주입 소개
 
@@ -157,7 +155,7 @@ ASP.NET 서비스 다음 수명을 구성할 수 있습니다.
 
 범위 지정된 수명 서비스는 요청당 한 번 생성 됩니다.
 
-**단일 항목**
+**Singleton**
 
 Singleton 수명 서비스 요청 될 때 처음으로 생성 됩니다 (또는 경우 `ConfigureServices` 있는 인스턴스를 지정 하는 경우 실행) 및 모든 후속 요청에서는 동일한 인스턴스를 사용 하는 다음 합니다. 응용 프로그램에 단일 동작 필요한 경우 단일 디자인 패턴을 구현 하 고 직접 클래스에서 개체의 수명을 관리 하는 대신 서비스 컨테이너 서비스의 수명을 관리할 수 있도록이 좋습니다.
 

@@ -2,19 +2,17 @@
 title: "Azure 키 자격 증명 모음 구성 공급자"
 author: guardrex
 description: "Azure 키 자격 증명 모음 구성 공급자를 사용 하 여 런타임에 로드 하는 이름-값 쌍을 사용 하 여 응용 프로그램을 구성 하는 방법에 알아봅니다."
-keywords: "ASP.NET Core, 구성, Azure 주요 자격 증명 모음"
 ms.author: riande
 manager: wpickett
 ms.date: 08/09/2017
 ms.topic: article
-ms.assetid: 0292bdae-b3ed-4637-bd67-19b9bb8b65cb
 ms.prod: asp.net-core
 uid: security/key-vault-configuration
-ms.openlocfilehash: 19cab22176c732c5cb8e337d7635bddc54107921
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: 25c7d38a27741c9877538673425c5a9dceccac93
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="azure-key-vault-configuration-provider"></a>Azure 키 자격 증명 모음 구성 공급자
 
@@ -46,11 +44,11 @@ ms.lasthandoff: 12/14/2017
 
 공급자에 추가 되는 `ConfigurationBuilder` 와 `AddAzureKeyVault` 확장 합니다. 샘플 응용 프로그램에서 확장 프로그램은 사용에서 로드 된 세 가지 구성 값은 *appsettings.json* 파일입니다.
 
-| 앱 설정    | 설명                    | 예제                                      |
+| 앱 설정    | 설명                    | 예                                      |
 | -------------- | ------------------------------ | -------------------------------------------- |
 | `Vault`        | Azure 키 자격 증명 모음 이름           | contosovault                                 |
-| `ClientId`     | Azure Active Directory 응용 프로그램 Id  | 627e911e-43cc-61d4-992e-12db9c81b413         |
-| `ClientSecret` | Azure Active Directory 응용 프로그램 키 | g58K3dtg59o1Pa e59v2Tx829w6VxTB2yv9sv/101di + = |
+| `ClientId`     | Azure Active Directory App Id  | 627e911e-43cc-61d4-992e-12db9c81b413         |
+| `ClientSecret` | Azure Active Directory 응용 프로그램 키 | g58K3dtg59o1Pa+e59v2Tx829w6VxTB2yv9sv/101di= |
 
 [!code-csharp[Program](key-vault-configuration/samples/basic-sample/2.x/Program.cs?name=snippet1&highlight=2,7-10)]
 

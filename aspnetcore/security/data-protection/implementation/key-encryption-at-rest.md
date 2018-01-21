@@ -2,20 +2,18 @@
 title: "미사용 데이터 암호화 키"
 author: rick-anderson
 description: "이 문서에는 ASP.NET Core 데이터 보호 키 암호화의 구현 세부 사항을 설명합니다."
-keywords: "ASP.NET Core, 데이터 보호, 키 암호화"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: f2bbbf4e-0945-43ce-be59-8bf19e448798
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/key-encryption-at-rest
-ms.openlocfilehash: b56dc56ed94662dbedeea49022aa73941bc833c5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a0b9ab31264e5cae666a69491bf4a8ee8251a86f
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="key-encryption-at-rest"></a>미사용 데이터 암호화 키
 

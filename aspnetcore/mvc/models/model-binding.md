@@ -2,20 +2,18 @@
 title: "모델 바인딩"
 author: rick-anderson
 description: 
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: b355a48e-a15c-4d58-b69c-899763613a97
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/model-binding
-ms.openlocfilehash: 40aa105dcf06b269025d0c44e5cd7bffef271e9d
-ms.sourcegitcommit: fe880bf4ed1c8116071c0e47c0babf3623b7f44a
+ms.openlocfilehash: 84b9c5dc3a87b739affaeaecaa180d1b01f49b8e
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="model-binding"></a>모델 바인딩
 
@@ -73,7 +71,7 @@ The link works but generates an error when building with DocFX
 
 바인딩 실패, MVC 오류를 throw 하지 않습니다. 사용자 입력을 허용 하는 모든 작업을 확인 하는 `ModelState.IsValid` 속성입니다.
 
-참고: 각 항목에는 컨트롤러의 `ModelState` 속성은 한 `ModelStateEntry` 포함 하는 `Errors` 속성입니다. 것은이 컬렉션을 직접 쿼리할 필요가 거의 없습니다. 대신 `ModelState.IsValid` 를 사용하세요.
+참고: 각 항목에는 컨트롤러의 `ModelState` 속성은 한 `ModelStateEntry` 포함 하는 `Errors` 속성입니다. 것은이 컬렉션을 직접 쿼리할 필요가 거의 없습니다. 대신 `ModelState.IsValid`를 사용하세요.
 
 또한 MVC 모델 바인딩 수행할 때 고려해 야 하는 특수 데이터 형식도 있습니다.
 

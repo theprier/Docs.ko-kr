@@ -2,7 +2,6 @@
 title: "ASP.NET Core에서 정적 파일로 작업"
 author: rick-anderson
 description: "처리 하 고 정적 파일을 보호 하 고 정적 파일 미들웨어 동작 ASP.NET Core 웹 앱에서 호스트를 구성 하는 방법을 알아봅니다."
-keywords: "ASP.NET Core, 정적 파일, 정적 자산, HTML, CSS, JavaScript"
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -12,11 +11,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/static-files
-ms.openlocfilehash: 912923860939a1d1dd91ccc79862e23f9095d161
-ms.sourcegitcommit: a3e88639a6bcf8fb4d634036dac93130c464a097
+ms.openlocfilehash: 60b205bf0a45e2965f9dab46f46956947ae513fd
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/18/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="work-with-static-files-in-aspnet-core"></a>ASP.NET Core에서 정적 파일로 작업
 

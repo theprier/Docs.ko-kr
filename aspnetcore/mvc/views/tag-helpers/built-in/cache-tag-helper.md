@@ -2,20 +2,18 @@
 title: "ASP.NET Core MVC에서에서 태그 도우미를 캐시 합니다."
 author: pkellner
 description: "캐시 태그 도우미를 사용 하는 방법을 보여 줍니다."
-keywords: "ASP.NET Core, 태그 도우미"
 ms.author: riande
 manager: wpickett
 ms.date: 02/14/2017
 ms.topic: article
-ms.assetid: c045d485-d1dc-4cea-a675-46be83b7a012
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/cache-tag-helper
-ms.openlocfilehash: 74080d089dc7a72da96f9f18d613cb313cd930db
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: dfd9c3c0c4e50a99e4f8703b01bd9b384930b87a
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="cache-tag-helper-in-aspnet-core-mvc"></a>ASP.NET Core MVC에서에서 태그 도우미를 캐시 합니다.
 
@@ -60,7 +58,7 @@ Razor 뷰 엔진 기본 설정 `expires-after` 20 분입니다.
 
 - - -
 
-### <a name="expires-on"></a>만료 
+### <a name="expires-on"></a>expires-on 
 
 | 특성 유형    | 예제 값     |
 |----------------   |----------------   |
@@ -79,7 +77,7 @@ Razor 뷰 엔진 기본 설정 `expires-after` 20 분입니다.
 
 - - -
 
-### <a name="expires-after"></a>이후에 만료
+### <a name="expires-after"></a>expires-after
 
 | 특성 유형    | 예제 값     |
 |----------------   |----------------   |
@@ -98,7 +96,7 @@ Razor 뷰 엔진 기본 설정 `expires-after` 20 분입니다.
 
 - - -
 
-### <a name="expires-sliding"></a>슬라이딩 만료
+### <a name="expires-sliding"></a>expires-sliding
 
 | 특성 유형    | 예제 값     |
 |----------------   |----------------   |
@@ -117,12 +115,12 @@ Razor 뷰 엔진 기본 설정 `expires-after` 20 분입니다.
 
 - - -
 
-### <a name="vary-by-header"></a>vary 헤더
+### <a name="vary-by-header"></a>vary-by-header
 
 | 특성 유형    | 예제 값                |
 |----------------   |----------------               |
 | 문자열            | "사용자-에이전트"                  |
-|                   | "사용자 에이전트, 콘텐츠 인코딩" |
+|                   | "User-Agent,content-encoding" |
 
 변경 될 때 캐시 새로 고침을 트리거하는 헤더 값의 쉼표로 구분 된 목록 또는 단일 헤더 값을 허용 합니다. 다음 예제에서는 헤더 값을 모니터링 `User-Agent`합니다. 예제는에 대 한 콘텐츠를 캐시 하는 모든 다른 `User-Agent` 웹 서버에 제공 합니다.
 
@@ -140,7 +138,7 @@ Razor 뷰 엔진 기본 설정 `expires-after` 20 분입니다.
 
 | 특성 유형    | 예제 값                |
 |----------------   |----------------               |
-| 문자열            | "확인"                |
+| 문자열            | "Make"                |
 |                   | "모델 만들기" |
 
 헤더 값이 변경 될 때 캐시 새로 고침을 트리거하는 헤더 값의 쉼표로 구분 된 목록 또는 단일 헤더 값을 허용 합니다. 다음 예의 값을 검사 `Make` 및 `Model`합니다.
@@ -155,11 +153,11 @@ Razor 뷰 엔진 기본 설정 `expires-after` 20 분입니다.
 
 - - -
 
-### <a name="vary-by-route"></a>다 경로
+### <a name="vary-by-route"></a>vary-by-route
 
 | 특성 유형    | 예제 값                |
 |----------------   |----------------               |
-| 문자열            | "확인"                |
+| 문자열            | "Make"                |
 |                   | "모델 만들기" |
 
 경로 데이터 매개 변수 값 변경 하는 경우 캐시 새로 고침을 트리거하는 헤더 값의 쉼표로 구분 된 목록 또는 단일 헤더 값을 허용 합니다. 예제:
@@ -186,8 +184,8 @@ routes.MapRoute(
 
 | 특성 유형    | 예제 값                |
 |----------------   |----------------               |
-| 문자열            | ". AspNetCore.Identity.Application "                |
-|                   | ". AspNetCore.Identity.Application,HairColor " |
+| 문자열            | ".AspNetCore.Identity.Application"                |
+|                   | ".AspNetCore.Identity.Application,HairColor" |
 
 헤더 값 (s) 변경 하는 경우 캐시 새로 고침을 트리거하는 헤더 값의 쉼표로 구분 된 목록 또는 단일 헤더 값을 허용 합니다. 다음 예제에서는 ASP.NET Id와 연관 된 쿠키를 살펴봅니다. 사용자가 인증 하는 경우 캐시 새로 고침을 트리거하는 요청 쿠키 설정 해야 합니다.
 
