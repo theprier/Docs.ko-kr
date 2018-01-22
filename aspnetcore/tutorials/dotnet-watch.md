@@ -2,20 +2,18 @@
 title: "dotnet watch를 사용하여 ASP.NET Core 앱 개발"
 author: rick-anderson
 description: "이 자습서에서는 ASP.NET Core 응용 프로그램에서 .NET Core CLI 파일 감시자(dotnet 감시자) 도구를 사용하는 방법을 보여줍니다."
-keywords: "ASP.NET Core, dotnet watch 사용"
 ms.author: riande
 manager: wpickett
 ms.date: 10/05/2017
 ms.topic: article
-ms.assetid: 563ffb3f-d369-4aa5-bf0a-7300b4e7832c
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/dotnet-watch
-ms.openlocfilehash: 1b26beaa41f4b38e0cfd2c8300cb521a3dcce47d
-ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
+ms.openlocfilehash: cadd4a6a78c29e2213c39a02729b5c32a2b93ebd
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="developing-aspnet-core-apps-using-dotnet-watch"></a>dotnet watch를 사용하여 ASP.NET Core 앱 개발
 

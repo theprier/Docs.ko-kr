@@ -2,7 +2,6 @@
 title: "ASP.NET Core에서 Razor 페이지 시작"
 author: rick-anderson
 description: "ASP.NET Core에서 Razor 페이지 시작"
-keywords: "ASP.NET Core, Razor 페이지, Razor, MVC"
 ms.author: riande
 manager: wpickett
 ms.date: 12/22/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/razor-pages-start
-ms.openlocfilehash: 12685d6a391c127d78399408291c26caa0192ee2
-ms.sourcegitcommit: 44a62f59d4db39d685c4487a0345a486be18d7c7
+ms.openlocfilehash: 69a5bc439130ffacf2d267c79b1a6b0347171e49
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/21/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="get-started-with-razor-pages-in-aspnet-core"></a>ASP.NET Core에서 Razor 페이지 시작
 
@@ -41,10 +40,7 @@ ms.lasthandoff: 12/21/2017
   ![새 ASP.NET Core 웹 응용 프로그램](../../mvc/razor-pages/index/_static/np.png)
 * 드롭다운에서 **ASP.NET Core 2.0**을 선택하고 **웹 응용 프로그램**을 선택합니다.
 
-> [!NOTE]
-> .NET Framework에서 ASP.NET Core를 사용하려는 경우 먼저 대화 상자의 가장 왼쪽에 있는 드롭다운에서 **.NET Framework**를 선택해야 합니다. 그런 다음 원하는 ASP.NET Core 버전을 선택할 수 있습니다.
-
-  ![웹 응용 프로그램(Razor 페이지)](razor-pages-start/_static/np2.png)
+  [!INCLUDE[install 2.0](../../includes/dotnetcore-on-dotnetfx-vs.md)]
 
 Visual Studio 템플릿은 시작 프로젝트를 만듭니다.
 
@@ -58,6 +54,9 @@ Visual Studio 템플릿은 시작 프로젝트를 만듭니다.
 * **Ctrl+F5**(디버그 이외 모드)를 사용하여 앱을 시작하면 코드를 변경하고, 파일을 저장하고, 브라우저를 새로 고치고, 코드 변경 내용을 확인할 수 있습니다. 대부분의 개발자는 앱을 빠르게 시작하고 변경 내용을 확인하기 위해 디버그 이외 모드를 사용하려고 합니다.
 
 [!INCLUDE[razor-pages-start](../../includes/RP/razor-pages-start.md)]
+
+>[!div class="step-by-step"]
+[다음: 모델 추가](xref:tutorials/razor-pages/model)
 
 >[!div class="step-by-step"]
 [다음: 모델 추가](xref:tutorials/razor-pages/model)

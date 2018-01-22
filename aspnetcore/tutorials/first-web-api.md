@@ -2,7 +2,6 @@
 title: "ASP.NET Core 및 Windows용 Visual Studio를 사용하여 Web API 만들기"
 author: rick-anderson
 description: "ASP.NET Core MVC 및 Windows용 Visual Studio를 사용하여 Web API 빌드"
-keywords: "ASP.NET Core, WebAPI, Web API, REST, HTTP, 서비스, HTTP 서비스"
 ms.author: riande
 manager: wpickett
 ms.date: 08/15/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-web-api
-ms.openlocfilehash: da47296fd952300ce60121603834a9f22be3c339
-ms.sourcegitcommit: 703593d5fd14076e79be2ba75a5b8da12a60ab15
+ms.openlocfilehash: 234dbf73f9751ad4f995d6e7471d94f060fb15bf
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 01/19/2018
 ---
 #<a name="create-a-web-api-with-aspnet-core-and-visual-studio-for-windows"></a>ASP.NET Core 및 Windows용 Visual Studio를 사용하여 Web API 만들기
 
