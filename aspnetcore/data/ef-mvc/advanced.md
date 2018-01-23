@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/advanced
-ms.openlocfilehash: ea83e5b17df80e5615dda49335247340d1cfb016
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: c5c06e61239c65cb1ff501a57777363a047a8db5
+ms.sourcegitcommit: f8ecf3d8f5b15f1e84ec86de3835b49ebe89fa1e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/23/2018
 ---
 # <a name="advanced-topics---ef-core-with-aspnet-core-mvc-tutorial-10-of-10"></a>고급 항목-EF 코어 ASP.NET Core MVC 자습서 (10 / 10)
 
@@ -169,7 +169,7 @@ _context.ChangeTracker.AutoDetectChangesEnabled = false;
 
 ## <a name="entity-framework-core-source-code-and-development-plans"></a>Entity Framework Core 소스 코드 및 개발 계획
 
-Entity Framework Core에 대 한 소스 코드에서 제공 됩니다. [https://github.com/aspnet/EntityFrameworkCore](https://github.com/aspnet/EntityFrameworkCore)합니다. 소스 코드 외에도 있습니다 수 야간 빌드 가져오기, 추적 실행, 기능 사양, 디자인 회의 노트 [이후 개발에 대 한 로드맵](https://github.com/aspnet/EntityFrameworkCore/wiki/Roadmap), 등입니다. 버그를 보고할 수 있습니다 및 EF 소스 코드에 고유한 향상 된 기능에 영향을 줄 수 있습니다.
+에 Entity Framework Core 소스를 [https://github.com/aspnet/EntityFrameworkCore](https://github.com/aspnet/EntityFrameworkCore)합니다. 야간 빌드, 문제 추적, 기능 사양, 디자인 회의 노트, EF 핵심 리포지토리 포함 및 [이후 개발에 대 한 로드맵](https://github.com/aspnet/EntityFrameworkCore/wiki/Roadmap)합니다. 파일 또는 기여 버그를 찾을 수 있습니다.
 
 소스 코드를 연 하지만 Entity Framework 코어는 Microsoft 제품으로 완전히 지원 됩니다. Microsoft Entity Framework 팀 기여 허용 되는 제어를 유지 하 고 각 릴리스의 품질을 보장할 수 있는 모든 코드 변경 내용을 테스트 합니다.
 

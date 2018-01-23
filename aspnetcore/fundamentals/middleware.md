@@ -4,16 +4,16 @@ author: rick-anderson
 description: "ASP.NET Core 미들웨어 및 요청 파이프라인에 알아봅니다."
 ms.author: riande
 manager: wpickett
-ms.date: 10/14/2017
+ms.date: 01/22/2018
 ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/middleware
-ms.openlocfilehash: af16046c97964e8e1c16a4f5989fcfa794741c4d
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: ef130e736e2f32fa134156d979ce5bfbedcae828
+ms.sourcegitcommit: 3f491f887074310fc0f145cd01a670aa63b969e3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/22/2018
 ---
 # <a name="aspnet-core-middleware-fundamentals"></a>ASP.NET Core 미들웨어 기본 사항
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 01/19/2018
 
 [샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/middleware/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
-## <a name="what-is-middleware"></a>미들웨어는 무엇입니까
+## <a name="what-is-middleware"></a>미들웨어는 무엇입니까?
 
 미들웨어는 소프트웨어 요청 및 응답을 처리 하는 응용 프로그램 파이프라인에 넣을입니다. 각 구성 요소입니다.
 
@@ -191,18 +191,22 @@ app.Map("/level1/level2", HandleMultiSeg);
 
 ## <a name="built-in-middleware"></a>기본 제공 미들웨어
 
-ASP.NET Core 다음 미들웨어 구성 요소와 함께 제공 합니다.
+ASP.NET Core로 다음 미들웨어 구성 요소를 추가 해야 하는 순서에 대 한 설명을 제공 합니다.
 
-| 미들웨어 | 설명 |
-| ----- | ------- |
-| [인증](xref:security/authentication/identity) | 인증 지원을 제공합니다. |
-| [CORS](xref:security/cors) | 크로스-원본 자원 공유를 구성합니다. |
-| [응답 캐싱](xref:performance/caching/middleware) | 응답을 캐시에 대 한 지원을 제공 합니다. |
-| [응답 압축](xref:performance/response-compression) | 응답을 압축 하는 것에 대 한 지원을 제공 합니다. |
-| [라우팅](xref:fundamentals/routing) | 정의 하 고 요청 경로 제한 합니다. |
-| [세션](xref:fundamentals/app-state) | 사용자 세션을 관리 하기 위한 지원을 제공 합니다. |
-| [정적 파일](xref:fundamentals/static-files) | 정적 파일 및 디렉터리 검색을 처리 하기 위한 지원을 제공 합니다. |
-| [URL 재작성 미들웨어](xref:fundamentals/url-rewriting) | Url 다시 쓰기 및 요청 리디렉션에 대 한 지원을 제공 합니다. |
+| 미들웨어 | 설명 | 순서 |
+| ---------- | ----------- | ----- |
+| [인증](xref:security/authentication/identity) | 인증 지원을 제공합니다. | 하기 전에 `HttpContext.User` 필요 합니다. OAuth 콜백에 대 한 터미널입니다. |
+| [CORS](xref:security/cors) | 크로스-원본 자원 공유를 구성합니다. | CORS를 사용 하는 구성 요소 보다 먼저 |
+| [진단](xref:fundamentals/error-handling) | 진단을 구성 합니다. | 이전 오류를 생성 하는 구성 요소입니다. |
+| [ForwardedHeaders/HttpOverrides](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions) | 현재 요청에 프록시 헤더를 전달합니다. | 업데이트 된 필드를 사용 하는 구성 요소 보다 먼저 (예: 체계, 호스트, ClientIP, 메서드). |
+| [응답 캐싱](xref:performance/caching/middleware) | 응답을 캐시에 대 한 지원을 제공 합니다. | 구성 요소 보다 먼저 캐싱이 필요한입니다. |
+| [응답 압축](xref:performance/response-compression) | 응답을 압축 하는 것에 대 한 지원을 제공 합니다. | 전에 필요한 구성 요소를 압축 합니다. |
+| [RequestLocalization](xref:fundamentals/localization) | 지역화 지원을 제공 합니다. | 전에 중요 한 구성 요소 지역화 합니다. |
+| [라우팅](xref:fundamentals/routing) | 정의 하 고 요청 경로 제한 합니다. | 일치 하는 경로 대 한 터미널입니다. |
+| [세션](xref:fundamentals/app-state) | 사용자 세션을 관리 하기 위한 지원을 제공 합니다. | 이전 세션을 필요로 하는 구성 요소입니다. |
+| [정적 파일](xref:fundamentals/static-files) | 정적 파일 및 디렉터리 검색을 처리 하기 위한 지원을 제공 합니다. | 터미널 파일과 일치 하는 요청 하는 경우입니다. |
+| [URL 다시 쓰기](xref:fundamentals/url-rewriting) | Url 다시 쓰기 및 요청 리디렉션에 대 한 지원을 제공 합니다. | 전에 URL을 사용 하는 구성 요소입니다. |
+| [WebSockets](xref:fundamentals/websockets) | Websocket 프로토콜을 사용할 수 있도록 합니다. | WebSocket 요청을 수락 하는 데 필요한 구성 요소 보다 먼저 |
 
 <a name="middleware-writing-middleware"></a>
 

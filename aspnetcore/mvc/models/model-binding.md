@@ -1,19 +1,20 @@
 ---
 title: "모델 바인딩"
-author: rick-anderson
-description: 
-ms.author: riande
+author: rachelappel
+description: "ASP.NET Core mvc에서 모델 바인딩 방법에 대 한 정보"
+ms.author: rachelap
 manager: wpickett
-ms.date: 10/14/2016
+ms.date: 01/22/2018
 ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
+ms.assetid: 0be164aa-1d72-4192-bd6b-192c9c301164
 uid: mvc/models/model-binding
-ms.openlocfilehash: 84b9c5dc3a87b739affaeaecaa180d1b01f49b8e
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 8fc6ff66d05164c1040f8cc77886357a633a0472
+ms.sourcegitcommit: 3f491f887074310fc0f145cd01a670aa63b969e3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/22/2018
 ---
 # <a name="model-binding"></a>모델 바인딩
 
@@ -41,7 +42,7 @@ MVC 요청 데이터를 이름으로 작업 매개 변수를 바인딩할 하려
 
 1. `Form values`: 이들은 POST 메서드를 사용 하 여 HTTP 요청에서 이동 하는 폼 값입니다. (jQuery POST 요청 포함).
 
-2. `Route values`:에서 제공 하는 경로 값 집합이 [라우팅](../../fundamentals/routing.md)
+2. `Route values`:에서 제공 하는 경로 값 집합이 [라우팅](xref:fundamentals/routing)
 
 3. `Query strings`쿼리 문자열: URI의 부분입니다.
 
@@ -101,7 +102,7 @@ MVC에는 다른 소스에 해당 기본 모델 바인딩 동작을 직접 사�
 
 특성은 모델 바인딩의 기본 동작을 재정의 해야 할 매우 유용한 도구입니다.
 
-## <a name="binding-formatted-data-from-the-request-body"></a>요청 본문에서 데이터 형식이 지정 되는 바인딩
+## <a name="bind-formatted-data-from-the-request-body"></a>요청 본문에서 형식이 지정 된 데이터 바인딩
 
 요청 데이터는 다양 한 형식의 JSON, XML 및 다른 많은 요인을 포함 하 여 가져올 수 있습니다. [FromBody] 특성을 사용 하 여 데이터 요청 본문에는 매개 변수를 바인딩할 것인지 지정 MVC 포맷터의 구성 된 집합을 사용 하 여 해당 콘텐츠 형식에 따라 요청 데이터를 처리 합니다. MVC에는 기본적으로는 `JsonInputFormatter` XML 및 다른 사용자 지정 형식도 처리 하기 위한 추가 포맷터 추가할 수 있지만 JSON 데이터를 처리에 대 한 클래스입니다.
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: 7c563f566b8456b63ffe0a3c4876432c60a19e89
-ms.sourcegitcommit: 87168cdc409e7a7257f92a0f48f9c5ab320b5b28
+ms.openlocfilehash: 67ab1536b4a72abf8c0d3ed5aa0c48bc79a8fb5f
+ms.sourcegitcommit: 3d512ea991ac36dfd4c800b7d1f8a27bfc50635e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/23/2018
 ---
 <a name="attribute-routing-in-aspnet-web-api-2"></a>ASP.NET Web API 2에서에서 특성의 라우팅
 ====================
@@ -68,7 +68,7 @@ ms.lasthandoff: 01/17/2018
 `/orders/1`  
 `/orders/pending`
 
-**여러 매개 변수 형식**
+**여러 매개 변수 유형**
 
 이 예에서는 주문 번호를 "1"은 하지만 "16/06/2013" 날짜를 지정 합니다.
 
