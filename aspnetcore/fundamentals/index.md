@@ -2,21 +2,19 @@
 title: "ASP.NET Core 기본 사항"
 author: rick-anderson
 description: "ASP.NET Core 응용 프로그램을 빌드하기 위한 기본적인 개념을 검색합니다."
-keywords: "ASP.NET Core, 기본 사항, 개요"
 ms.author: riande
 manager: wpickett
 ms.date: 09/30/2017
 ms.topic: get-started-article
-ms.assetid: a19b7836-63e4-44e8-8250-50d426dd1070
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/index
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 83bed4676be3ca752442da3fe560f1f2a4d728a1
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: 0d977c13eb5f4cbe8bac261733bdc747e6c19b2a
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="aspnet-core-fundamentals"></a>ASP.NET Core 기본 사항
 
@@ -163,7 +161,7 @@ ASP.NET Core 앱은 앱 시작 및 수명 관리를 담당하는 *호스트*를 
 
 ## <a name="servers"></a>서버
 
-ASP.NET Core 호스팅 모델은 요청을 직접 수신하지 않습니다. 호스팅 모델은 HTTP 서버 구현을 사용하여 앱에 요청을 전달합니다. 전달된 요청은 인터페이스를 통해 액세스할 수 있는 기능 개체 집합으로 래핑됩니다. ASP.NET Core에는 [Kestrel](xref:fundamentals/servers/kestrel)이라는 관리되는 플랫폼 간 웹 서버가 포함됩니다. Kestrel은 주로 [IIS](https://www.iis.net/) 또는 [nginx](http://nginx.org)와 같은 프로덕션 웹 서버의 백그라운드에서 실행됩니다. Kestrel은 에지 서버로 실행될 수 있습니다.
+ASP.NET Core 호스팅 모델은 요청을 직접 수신하지 않습니다. 호스팅 모델은 HTTP 서버 구현을 사용하여 앱에 요청을 전달합니다. 전달된 요청은 인터페이스를 통해 액세스할 수 있는 기능 개체 집합으로 래핑됩니다. ASP.NET Core에는 [Kestrel](xref:fundamentals/servers/kestrel)이라는 관리되는 플랫폼 간 웹 서버가 포함됩니다. Kestrel은 종종 [IIS](https://www.iis.net/) 또는 [Nginx](http://nginx.org)와 같은 프로덕션 웹 서버의 백그라운드에서 실행됩니다. Kestrel은 에지 서버로 실행될 수 있습니다.
 
 자세한 내용은 [서버](xref:fundamentals/servers/index) 및 다음 항목을 참조하세요.
 

@@ -130,6 +130,7 @@
 ## [테스트 컨트롤러](xref:mvc/controllers/testing)
 ## [원격 디버깅](/visualstudio/debugger/remote-debugging-azure)
 ## [스냅숏 디버깅](/azure/application-insights/app-insights-snapshot-debugger)
+## [Visual Studio에서 스냅숏 디버깅](/visualstudio/debugger/debug-live-azure-applications)
 
 # [데이터 액세스 및 저장소](data/index.md)
 ## [Visual Studio를 사용하여 Razor 페이지 및 Entity Framework Core 시작](xref:data/ef-rp/intro)

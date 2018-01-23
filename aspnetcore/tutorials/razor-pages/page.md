@@ -2,7 +2,6 @@
 title: "ASP.NET Core의 스캐폴드된 Razor 페이지"
 author: rick-anderson
 description: "스캐폴딩을 통해 생성된 Razor 페이지를 설명합니다."
-keywords: "ASP.NET Core, Razor 페이지, Razor, MVC"
 ms.author: riande
 manager: wpickett
 ms.date: 09/27/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/page
-ms.openlocfilehash: e42e7e469e411d2d4bc1bd1b3a3995a77c355ebd
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: ad2a2b48beb31dddcfd78a8aab79ac58ccda28f3
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="scaffolded-razor-pages-in-aspnet-core"></a>ASP.NET Core의 스캐폴드된 Razor 페이지
 
@@ -26,12 +25,32 @@ ms.lasthandoff: 12/14/2017
 
 ## <a name="the-create-delete-details-and-edit-pages"></a>만들기, 삭제, 세부 정보 및 편집 페이지.
 
-Pages/Movies/Index.cshtml.cs 코드 숨김 파일을 살펴봅니다. [!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml.cs)]
+*Pages/Movies/Index.cshtml.cs* 페이지 모델을 살펴봅니다. [!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml.cs)]
 
 Razor 페이지는 `PageModel`에서 파생됩니다. 일반적으로 `PageModel` 파생 클래스를 `<PageName>Model`이라고 합니다. 생성자는 [종속성 주입](xref:fundamentals/dependency-injection)을 사용하여 `MovieContext`를 페이지에 추가합니다. 모든 스캐폴드된 페이지가 이 패턴을 따릅니다. 엔터티 프레임워크로 비동기 프로그래밍에 대한 자세한 내용은 [비동기 코드](xref:data/ef-rp/intro#asynchronous-code)를 참조하세요.
 
-페이지에 대한 요청을 만들면 `OnGetAsync` 메서드가 Razor 페이지에 동영상 목록을 반환합니다. 페이지 상태를 초기화하기 위해 `OnGetAsync` 또는 `OnGet`이 Razor 페이지에서 호출됩니다. 이 경우 `OnGetAsync`는 표시할 동영상 목록을 가져옵니다.
+페이지에 대한 요청을 만들면 `OnGetAsync` 메서드가 Razor 페이지에 동영상 목록을 반환합니다. 페이지 상태를 초기화하기 위해 `OnGetAsync` 또는 `OnGet`이 Razor 페이지에서 호출됩니다. 이 경우 `OnGetAsync`는 동영상 목록을 가져와 표시합니다. 
 
+`OnGet`에서 `void`를 반환하거나 `OnGetAsync`에서 `Task`를 반환하면 반환 메서드가 사용되지 않은 것입니다. 반환 형식이 `IActionResult` 또는 `Task<IActionResult>`이면 반환 문을 제공해야 합니다. *Pages/Movies/Create.cshtml.cs* `OnPostAsync` 메서드를 예로 들 수 있습니다.
+
+<!-- TODO - replace with snippet
+[!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Create.cshtml.cs?name=snippetALL)]
+ -->
+
+```csharp
+public async Task<IActionResult> OnPostAsync()
+{
+    if (!ModelState.IsValid)
+    {
+        return Page();
+    }
+
+    _context.Movie.Add(Movie);
+    await _context.SaveChangesAsync();
+
+    return RedirectToPage("./Index");
+}
+```
 *Pages/Movies/Index.cshtml* Razor 페이지를 살펴봅니다.
 
 [!code-cshtml[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml)]
