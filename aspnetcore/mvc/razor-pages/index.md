@@ -1,7 +1,19 @@
 ---
-제목: ASP.NET Core의 Razor 페이지 소개 작성자: Rick-Anderson 설명: Razor 페이지에 대한 ASP.NET Core 자습서. MVC Core, ASP.NET Core 2.x, 웹 개발 소개 및 Visual Studio 2017을 포함합니다.
-이 문서는 ASP.NET Core의 Razor 페이지를 사용하여 페이지에 초점을 맞춘 시나리오의 손쉬운 개발에 관한 개요를 제공합니다.
-ms.author: riande 관리자: wpickett ms.date: 09/12/2017 ms.topic: get-started-article ms.technology: aspnet ms.prod: asp.net-core uid: mvc/razor-페이지/인덱스
+title: "ASP.NET Core의 Razor 페이지 소개"
+author: Rick-Anderson
+description: "Razor 페이지에 대한 ASP.NET Core 자습서입니다. MVC Core, ASP.NET Core 2.x, 웹 개발 소개 및 Visual Studio 2017을 포함합니다. 이 문서는 ASP.NET Core의 Razor 페이지를 사용하여 페이지에 초점을 맞춘 시나리오의 손쉬운 개발에 관한 개요를 제공합니다."
+ms.author: riande
+manager: wpickett
+ms.date: 09/12/2017
+ms.topic: get-started-article
+ms.technology: aspnet
+ms.prod: asp.net-core
+uid: mvc/razor-pages/index
+ms.openlocfilehash: 059dc3a163c646877da40a73bcc9a75eb38fb345
+ms.sourcegitcommit: 459cb3289741a3f46325e605a617dc926ee0563d
+ms.translationtype: HT
+ms.contentlocale: ko-KR
+ms.lasthandoff: 01/22/2018
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core의 Razor 페이지 소개
 

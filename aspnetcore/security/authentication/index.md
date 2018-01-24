@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/index
-ms.openlocfilehash: e8d9a8b36b4f7b6392d1dde42532caec51b140ee
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 017aa939ce4c469c08d1cc3a63002ae24c66c096
+ms.sourcegitcommit: 459cb3289741a3f46325e605a617dc926ee0563d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/22/2018
 ---
 # <a name="authentication"></a>인증
 
@@ -36,6 +36,8 @@ ms.lasthandoff: 01/19/2018
 * [Azure Active Directory](azure-active-directory/index.md)
 
   * [ASP.NET Core 웹앱에 Azure AD 통합](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)
+
+  * [Azure AD B2C를 고객 지향 ASP.NET Core 웹앱에 통합](azure-ad-b2c.md)
 
   * [Azure AD를 사용하여 WPF 앱에서 ASP.NET Core Web API 호출](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore/)
 
