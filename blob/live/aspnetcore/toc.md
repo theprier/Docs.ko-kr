@@ -130,6 +130,7 @@
 ## [테스트 컨트롤러](xref:mvc/controllers/testing)
 ## [원격 디버깅](/visualstudio/debugger/remote-debugging-azure)
 ## [스냅숏 디버깅](/azure/application-insights/app-insights-snapshot-debugger)
+## [Visual Studio에서 스냅숏 디버깅](/visualstudio/debugger/debug-live-azure-applications)
 
 # [데이터 액세스 및 저장소](data/index.md)
 ## [Visual Studio를 사용하여 Razor 페이지 및 Entity Framework Core 시작](xref:data/ef-rp/intro)
@@ -204,6 +205,7 @@
 ### [ID 없이 쿠키 인증 사용](xref:security/authentication/cookie)
 ### [Azure Active Directory](xref:security/authentication/azure-active-directory/index)
 #### [ASP.NET Core 웹앱에 Azure AD 통합](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)
+#### [Azure AD B2C를 고객 지향 ASP.NET Core 웹앱에 통합](xref:security/authentication/azure-ad-b2c)
 #### [Azure AD를 사용하여 WPF 앱에서 ASP.NET Core Web API 호출](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore/)
 #### [Azure AD를 사용하여 ASP.NET Core 웹앱에서 Web API 호출](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/)
 ### [IdentityServer4를 사용하여 ASP.NET Core 앱 보호](https://identityserver4.readthedocs.io/)
