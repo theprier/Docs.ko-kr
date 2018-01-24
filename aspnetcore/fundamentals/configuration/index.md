@@ -5,16 +5,16 @@ description: "구성 API를 사용하여 여러 가지 방법으로 ASP.NET Core
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 1/11/2018
+ms.date: 01/11/2018
 ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 0f8618898089418f709506aee5eb013f983dc294
-ms.sourcegitcommit: 87168cdc409e7a7257f92a0f48f9c5ab320b5b28
+ms.openlocfilehash: c4f57d1e02ad5f4e235039999af9df9d236756a7
+ms.sourcegitcommit: 3d512ea991ac36dfd4c800b7d1f8a27bfc50635e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 01/23/2018
 ---
 # <a name="configure-an-aspnet-core-app"></a>ASP.NET Core 앱 구성
 
@@ -50,7 +50,7 @@ ms.lasthandoff: 01/17/2018
 
 구성은 콜론으로 노드를 구분하는 이름-값 쌍의 계층적 목록으로 이루어집니다. 값을 검색하려면 해당 항목의 키를 사용하여 `Configuration` 인덱서에 액세스합니다.
 
-[!code-csharp[Main](index/sample/ConfigJson/Program.cs?range=24-24)]
+[!code-csharp[Main](index/sample/ConfigJson/Program.cs?range=21-22)]
 
 JSON 형식 구성 소스의 배열을 작업하려면 배열 인덱스를 콜론으로 구분된 문자열의 일부로 사용합니다. 다음 예제는 앞에서 나온 `wizards` 배열의 첫 번째 항목 이름을 가져옵니다.
 
@@ -59,7 +59,7 @@ Console.Write($"{Configuration["wizards:0:Name"]}");
 // Output: Gandalf
 ```
 
-기본 제공 [구성](https://docs.microsoft.com/ dotnet/api/microsoft.extensions.configuration) 공급자에 기록된 이름-값 쌍은 유지되지 **않습니다**. 그러나 값을 저장하는 사용자 지정 공급자를 만들 수 있습니다. [사용자 지정 구성 공급자](xref:fundamentals/configuration/index#custom-config-providers)를 참조하세요.
+기본 제공 [구성](/dotnet/api/microsoft.extensions.configuration) 공급자에 기록된 이름-값 쌍은 유지되지 **않습니다**. 그러나 값을 저장하는 사용자 지정 공급자를 만들 수 있습니다. [사용자 지정 구성 공급자](xref:fundamentals/configuration/index#custom-config-providers)를 참조하세요.
 
 이전 샘플은 구성 인덱서를 사용하여 값을 읽습니다. `Startup` 외부에서 구성에 액세스하려면 *옵션 패턴*을 사용합니다. 자세한 내용은 [옵션](xref:fundamentals/configuration/options) 항목을 참조하세요.
 
@@ -72,7 +72,7 @@ Console.Write($"{Configuration["wizards:0:Name"]}");
 * *appsettings.\<EnvironmentName>.json*
 * 환경 변수
 
-ASP.NET Core 1.x 앱은 `AddJsonFile` 및 [AddEnvironmentVariables](https://docs.microsoft.com/ dotnet/api/microsoft.extensions.configuration.environmentvariablesextensions.addenvironmentvariables #Microsoft_Extensions_Configuration_EnvironmentVariablesExtensions_AddEnvironmentVariables_Microsoft_Extensions_Configuration_IConfigurationBuilder_System_String_)를 호출해야 합니다.
+ASP.NET Core 1.x 앱은 `AddJsonFile` 및 [AddEnvironmentVariables](/dotnet/api/microsoft.extensions.configuration.environmentvariablesextensions.addenvironmentvariables#Microsoft_Extensions_Configuration_EnvironmentVariablesExtensions_AddEnvironmentVariables_Microsoft_Extensions_Configuration_IConfigurationBuilder_System_String_)를 호출해야 합니다.
 
 매개 변수에 대한 설명은 [AddJsonFile](/dotnet/api/microsoft.extensions.configuration.jsonconfigurationextensions)을 참조하세요. `reloadOnChange`는 ASP.NET Core 1.1 이상에서만 지원됩니다.
 
@@ -106,7 +106,7 @@ ASP.NET Core 1.x 앱은 `AddJsonFile` 및 [AddEnvironmentVariables](https://docs
 
 ### <a name="getvalue"></a>GetValue
 
-다음 샘플은 [GetValue&lt;T&gt;](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.configuration.configurationbinder#Microsoft_Extensions_Configuration_ConfigurationBinder_GetValue_Microsoft_Extensions_Configuration_IConfiguration_System_Type_System_String_System_Object_) 확장 메서드를 보여줍니다.
+다음 샘플은 [GetValue&lt;T&gt;](/dotnet/api/microsoft.extensions.configuration.configurationbinder.get?view=aspnetcore-2.0#Microsoft_Extensions_Configuration_ConfigurationBinder_Get__1_Microsoft_Extensions_Configuration_IConfiguration_) 확장 메서드를 보여줍니다.
 
 [!code-csharp[Main](index/sample/InMemoryGetValue/Program.cs?highlight=31)]
 
@@ -175,11 +175,11 @@ public void CanBindObjectTree()
 
 [!code-csharp[Main](index/sample/CustomConfigurationProvider/ConfigurationContext.cs?name=snippet1)]
 
-[IConfigurationSource](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.configuration.iconfigurationsource)를 구현하는 클래스를 만듭니다.
+[IConfigurationSource](/dotnet/api/Microsoft.Extensions.Configuration.IConfigurationSource)를 구현하는 클래스를 만듭니다.
 
 [!code-csharp[Main](index/sample/CustomConfigurationProvider/EntityFrameworkConfigurationSource.cs?highlight=7)]
 
-[ConfigurationProvider](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.configuration.configurationprovider)에서 상속하여 사용자 지정 구성 공급자를 만듭니다. 구성 공급자는 비어 있는 데이터베이스를 초기화합니다.
+[ConfigurationProvider](/dotnet/api/Microsoft.Extensions.Configuration.ConfigurationProvider)에서 상속하여 사용자 지정 구성 공급자를 만듭니다. 구성 공급자는 비어 있는 데이터베이스를 초기화합니다.
 
 [!code-csharp[Main](index/sample/CustomConfigurationProvider/EntityFrameworkConfigurationProvider.cs?highlight=9,18-31,38-39)]
 
@@ -401,7 +401,7 @@ IIS 또는 IIS Express에서 앱을 호스트하는 경우 *web.config* 파일�
 * `IConfiguration`에는 두 가지 특수화가 있습니다.
   * `IConfigurationRoot`는 루트 노드에 사용됩니다. 다시 로드를 트리거할 수 있습니다.
   * `IConfigurationSection`은 구성 값의 섹션을 나타냅니다. `GetSection` 및 `GetChildren` 메서드는 `IConfigurationSection`을 반환합니다.
-  * 구성을 다시 로드하는 경우 또는 각 공급자에 액세스해야 하는 경우 [IConfigurationRoot](https://docs.microsoft.com/ dotnet/api/microsoft.extensions.configuration.iconfigurationroot)를 사용하세요. 이러한 상황은 일반적이지 않습니다.
+  * 구성을 다시 로드하는 경우 또는 각 공급자에 액세스해야 하는 경우 [IConfigurationRoot](/dotnet/api/microsoft.extensions.configuration.iconfigurationroot)를 사용하세요. 이러한 상황은 일반적이지 않습니다.
 
 ## <a name="additional-resources"></a>추가 리소스
 
