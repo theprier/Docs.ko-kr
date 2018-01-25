@@ -1,7 +1,7 @@
 ---
 title: "교차 원본 요청(CORS) 활성화시키기"
 author: rick-anderson
-description: "본문에서는 ASP.NET Core 응용 프로그램에서 교차-원본 요청을 허용하거나 거부하는 표준인 CORS를 소개합니다."
+description: "본문에서는 ASP.NET Core 응용 프로그램에서 교차-원본 요청을 허용하거나 거부하는 표준 CORS를 소개합니다."
 keywords: "ASP.NET Core, CORS 교차 원본"
 ms.author: riande
 manager: wpickett
@@ -29,13 +29,13 @@ ms.lasthandoff: 11/29/2017
 
 두 URL의 스키마, 호스트 및 포트가 모두 동일한 경우, 두 URL의 원본이 동일하다고 말합니다. ([RFC 6454](http://tools.ietf.org/html/rfc6454))
 
-다음 두 URL은 동일한 원본입니다:
+다음 두 URL은 동일한 원본입니다.
 
 * `http://example.com/foo.html`
 
 * `http://example.com/bar.html`
 
-반면, 다음 URL들은 위의 두 URL과는 다른 원본입니다:
+반면, 다음 URL들은 위의 두 URL과는 다른 원본입니다.
 
 * `http://example.net`-도메인이 다릅니다.
 
@@ -58,17 +58,17 @@ ASP.NET Core 응용 프로그램에 CORS를 설정하려면 프로젝트에 `Mic
 
 ## <a name="enabling-cors-with-middleware"></a>미들웨어를 이용해서 CORS 활성화시키기
 
-전체 응용 프로그램에서 CORS를 활성화시키려면 `UseCors` 확장 메서드를 이용해서 요청 파이프라인에 CORS 미들웨어를 추가합니다. 참고로 교차 원본 요청을 지원하고자 하는 응용 프로그램 내의 모든 정의된 끝점보다 CORS 미들웨어를 먼저 파이프라인에 추가해야 합니다 (예, `UseMvc`를 호출하기 전에).
+전체 응용 프로그램에서 CORS를 활성화시키려면 `UseCors` 확장 메서드를 이용해서 요청 파이프라인에 CORS 미들웨어를 추가합니다. 참고로 교차 원본 요청을 지원하고자 하는 응용 프로그램 내의 모든 정의된 끝점보다 `UseMvc`를 호출하기 전에 CORS 미들웨어를 먼저 파이프라인에 추가해야 합니다.
 
-CORS 미들웨어를 추가할 때, `CorsPolicyBuilder` 클래스를 이용해서 원본 간 정책을 지정할 수 있습니다. 구체적인 방법은 두 가지입니다. 먼저, 첫 번째 방법은 람다를 전달해서 `UseCors`를 호출하는 것입니다:
+CORS 미들웨어를 추가할 때, `CorsPolicyBuilder` 클래스를 이용해서 원본 간 정책을 지정할 수 있습니다. 구체적인 방법은 두 가지입니다. 먼저, 첫 번째 방법은 람다를 전달해서 `UseCors`를 호출하는 것입니다.
 
 [!code-csharp[Main](cors/sample/CorsExample1/Startup.cs?highlight=11,12&range=22-38)]
 
-**참고:** 반드시 후행 슬래시(`/`)가 없는 URL을 지정해야합니다. 만약 URL이 `/`로 끝나면, 비교 결과가 `false`를 반환하여 아무런 헤더도 반환되지 않습니다.
+**참고:** 반드시 후행 슬래시(`/`)가 없는 URL을 지정해야 합니다. 만약 URL이 `/`로 끝나면, 비교 결과가 `false`를 반환하여 아무런 헤더도 반환되지 않습니다.
 
 람다는 `CorsPolicyBuilder` 개체를 전달받습니다. [구성 옵션](#cors-policy-options)의 목록은 잠시 후 다시 살펴봅니다. 이 예제 코드의 정책은 `http://example.com`에서 전달된 교차 원본 요청은 허용하지만, 다른 원본의 요청은 허용하지 않습니다.
 
-CorsPolicyBuilder는 Fluent API를 지원하므로 다음과 같이 메서드 호출을 연결할 수 있습니다:
+CorsPolicyBuilder는 Fluent API를 지원하므로 다음과 같이 메서드 호출을 연결할 수 있습니다.
 
 [!code-csharp[Main](../security/cors/sample/CorsExample3/Startup.cs?highlight=3&range=29-32)]
 
@@ -80,7 +80,7 @@ CorsPolicyBuilder는 Fluent API를 지원하므로 다음과 같이 메서드 �
 
 ## <a name="enabling-cors-in-mvc"></a>MVC에서 CORS 활성화시키기
 
-MVC를 이용해서 액션 별, 컨트롤러 별 또는 모든 컨트롤러에 대해 전역으로 특정 CORS를 적용할 수도 있습니다. MVC를 이용해서 CORS를 활성화시키는 경우에도 동일한 CORS 서비스가 사용되지만, 이 경우 CORS 미들웨어는 사용되지 않습니다.
+MVC를 이용해서 액션별, 컨트롤러별 또는 모든 컨트롤러에 대해 전역으로 특정 CORS를 적용할 수도 있습니다. MVC를 이용해서 CORS를 활성화시키는 경우에도 동일한 CORS 서비스가 사용되지만, 이 경우 CORS 미들웨어는 사용되지 않습니다.
 
 ### <a name="per-action"></a>액션 별
 
@@ -96,7 +96,7 @@ MVC를 이용해서 액션 별, 컨트롤러 별 또는 모든 컨트롤러에 �
 
 ### <a name="globally"></a>전역으로
 
-모든 컨트롤러에서 전역으로 CORS를 활성화시키려면, 전역 필터 컬렉션에 `CorsAuthorizationFilterFactory` 필터를 추가합니다:
+모든 컨트롤러에서 전역으로 CORS를 활성화시키려면, 전역 필터 컬렉션에 `CorsAuthorizationFilterFactory` 필터를 추가합니다.
 
 [!code-csharp[Main](cors/sample/CorsMVC/Startup2.cs?name=snippet_configureservices)]
 
@@ -104,7 +104,7 @@ MVC를 이용해서 액션 별, 컨트롤러 별 또는 모든 컨트롤러에 �
 
 ### <a name="disable-cors"></a>CORS 비활성시키기
 
-컨트롤러나 액션의 CORS를 비활성화시키려면, `[DisableCors]` 특성을 적용합니다:
+컨트롤러나 액션의 CORS를 비활성화시키려면, `[DisableCors]` 특성을 적용합니다.
 
 [!code-csharp[Main](cors/sample/CorsMVC/Controllers/ValuesController.cs?name=DisableOnAction)]
 
@@ -128,7 +128,7 @@ MVC를 이용해서 액션 별, 컨트롤러 별 또는 모든 컨트롤러에 �
 
 ### <a name="set-the-allowed-origins"></a>허용되는 원본 설정하기
 
-하나 이상의 특정 원본을 허용하려면 다음과 같이 구성합니다:
+하나 이상의 특정 원본을 허용하려면 다음과 같이 구성합니다.
 
 [!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=19-23)]
 
@@ -140,7 +140,7 @@ MVC를 이용해서 액션 별, 컨트롤러 별 또는 모든 컨트롤러에 �
 
 ### <a name="set-the-allowed-http-methods"></a>허용되는 HTTP 메서드 설정하기
 
-모든 HTTP 메서드를 허용하려면 다음과 같이 구성합니다:
+모든 HTTP 메서드를 허용하려면 다음과 같이 구성합니다.
 
 [!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=44-49)]
 
@@ -148,13 +148,13 @@ MVC를 이용해서 액션 별, 컨트롤러 별 또는 모든 컨트롤러에 �
 
 ### <a name="set-the-allowed-request-headers"></a>허용되는 요청 헤더 설정하기
 
-CORS의 예비 요청에는 클라이언트 응용 프로그램에서 설정한 HTTP 헤더들이 나열된 Access-Control-Request-Headers 헤더가 포함되어 있을 수 있습니다 (이를 일명 "사용자 지정 요청 헤더(Author Request Headers)라고 부릅니다").
+CORS의 예비 요청에는 클라이언트 응용 프로그램에서 설정한 HTTP 헤더들이 나열된 Access-Control-Request-Headers 헤더가 포함되어 있을 수 있습니다. 이를 일명 "사용자 지정 요청 헤더(Author Request Headers)"라고 부릅니다.
 
-특정 헤더들에 대한 허용 목록을 만들려면 다음과 같이 구성합니다:
+특정 헤더들에 대한 허용 목록을 만들려면 다음과 같이 구성합니다.
 
 [!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=53-58)]
 
-모든 사용자 지정 요청 헤더를 허용하려면 다음과 같이 구성합니다:
+모든 사용자 지정 요청 헤더를 허용하려면 다음과 같이 구성합니다.
 
 [!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=62-67)]
 
@@ -162,7 +162,7 @@ CORS의 예비 요청에는 클라이언트 응용 프로그램에서 설정한 
 
 ### <a name="set-the-exposed-response-headers"></a>노출되는 응답 헤더 설정하기
 
-기본적으로 브라우저는 클라이언트 응용 프로그램에 모든 응답 헤더를 노출하지 않습니다. ([http://www.w3.org/TR/cors/#simple-response-header](http://www.w3.org/TR/cors/#simple-response-header) 참고.) 기본적으로 사용 가능한 응답 헤더들은 다음과 같습니다:
+기본적으로 브라우저는 클라이언트 응용 프로그램에 모든 응답 헤더를 노출하지 않습니다([http://www.w3.org/TR/cors/#simple-response-header](http://www.w3.org/TR/cors/#simple-response-header) 참고). 기본적으로 사용 가능한 응답 헤더들은 다음과 같습니다.
 
 * Cache-Control
 
@@ -176,13 +176,13 @@ CORS의 예비 요청에는 클라이언트 응용 프로그램에서 설정한 
 
 * Pragma
 
-CORS 명세에서는 이 헤더들을 *단순 응답 헤더(Simple Response Header)*라고 부릅니다. 응용 프로그램에서 다른 헤더들을 사용할 수 있게 하려면 다음과 같이 구성합니다:
+CORS 명세에서는 이 헤더들을 *단순 응답 헤더(Simple Response Header)*라고 부릅니다. 응용 프로그램에서 다른 헤더들을 사용할 수 있게 하려면 다음과 같이 구성합니다.
 
 [!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=71-76)]
 
 ### <a name="credentials-in-cross-origin-requests"></a>교차 원본 요청의 자격 증명
 
-CORS 요청에서 자격 증명(Credentials)은 특별한 처리를 필요로 합니다. 교차 원본 요청 시, 기본적으로 브라우저는 어떠한 자격 증명도 전송하지 않습니다. 여기에서 말하는 자격 증명에는 쿠키뿐만 아니라 HTTP 인증 스킴도 포함됩니다. 교차 원본 요청 시 자격 증명을 함께 전송하려면, 클라이언트에서 XMLHttpRequest.withCredentials 속성을 true로 설정해야 합니다.
+CORS 요청에서 자격 증명(Credentials)은 특별한 처리를 해야 합니다. 교차 원본 요청 시, 기본적으로 브라우저는 어떠한 자격 증명도 전송하지 않습니다. 여기에서 말하는 자격 증명에는 쿠키뿐만 아니라 HTTP 인증 스킴도 포함됩니다. 교차 원본 요청 시 자격 증명을 함께 전송하려면, 클라이언트에서 XMLHttpRequest.withCredentials 속성을 true로 설정해야 합니다.
 
 직접 XMLHttpRequest를 사용할 경우:
 
@@ -203,11 +203,11 @@ $.ajax({
 }
 ```
 
-또한 서버에서도 자격 증명을 허용해야만 합니다. 교차 원본 자격 증명을 허용하려면 다음과 같이 구성합니다:
+또한 서버에서도 자격 증명을 허용해야만 합니다. 교차 원본 자격 증명을 허용하려면 다음과 같이 구성합니다.
 
 [!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=80-85)]
 
-이 구성이 적용되면 HTTP 응답에 Access-Control-Allow-Credentials 헤더가 포함됩니다. 이 헤더는 서버가 교차 원본 요청에 대한 자격 증명을 허용한다는 것을 브라우저에게 알려줍니다.
+이 구성이 적용되면 HTTP 응답에 Access-Control-Allow-Credentials 헤더가 포함됩니다. 이 헤더는 서버가 교차 원본 요청에 대한 자격 증명을 허용한다는 것을 브라우저에 알려줍니다.
 
 브라우저가 자격 증명을 전송하지만, 응답에 유효한 Access-Control-Allow-Credentials 헤더가 포함되어 있지 않다면, 브라우저가 응용 프로그램에게 응답을 노출하지 않으므로 AJAX 요청은 실패하게 됩니다.
 
@@ -215,7 +215,7 @@ $.ajax({
 
 ### <a name="set-the-preflight-expiration-time"></a>예비 요청 만료 시간 설정하기
 
-Access-Control-Max-Age 헤더는 예비 요청에 대한 응답을 캐시할 수 있는 기간을 지정합니다. 이 헤더를 설정하려면 다음과 같이 구성합니다:
+Access-Control-Max-Age 헤더는 예비 요청에 대한 응답을 캐시할 수 있는 기간을 지정합니다. 이 헤더를 설정하려면 다음과 같이 구성합니다.
 
 [!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=89-94)]
 
@@ -227,7 +227,7 @@ Access-Control-Max-Age 헤더는 예비 요청에 대한 응답을 캐시할 수
 
 CORS 명세에서는 교차 원본 요청을 활성화시키기 위한 용도로 몇 가지 새로운 HTTP 헤더들이 도입되었습니다. 그러나, 브라우저가 CORS를 지원할 경우, 교차 원본 요청 시 브라우저가 자동으로 이 헤더들을 설정해주므로 JavaScript 코드에서 직접 처리해줘야 할 작업은 전혀 없습니다.
 
-다음은 교차 원본 요청의 실제 사례입니다. 브라우저가 요청을 생성한 사이트의 도메인이 지정된 "Origin" 헤더를 자동으로 추가해줍니다:
+다음은 교차 원본 요청의 실제 사례입니다. 브라우저가 요청을 생성한 사이트의 도메인이 지정된 "Origin" 헤더를 자동으로 추가해줍니다.
 
 ```
 GET http://myservice.azurewebsites.net/api/test HTTP/1.1
@@ -240,7 +240,7 @@ User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6
 Host: myservice.azurewebsites.net
 ```
 
-서버는 요청을 허용하는 경우에 한해서 Access-Control-Allow-Origin 헤더를 지정해서 응답을 반환합니다. 이 헤더의 값은 Origin 헤더 값과 동일하거나, 모든 원본이 허용됨을 뜻하는 와일드카드 값인 "*" 이어야 합니다:
+서버는 요청을 허용하는 경우에 한해서 Access-Control-Allow-Origin 헤더를 지정해서 응답을 반환합니다. 이 헤더의 값은 Origin 헤더 값과 동일하거나, 모든 원본이 허용됨을 뜻하는 와일드카드 값인 "*" 이어야 합니다.
 
 ```
 HTTP/1.1 200 OK
@@ -258,7 +258,7 @@ Test message
 
 ### <a name="preflight-requests"></a>예비 요청
 
-브라우저는 일부 CORS 요청에 대해서, 리소스에 대한 실제 요청을 전송하기 전에, "예비 요청(Preflight Requests)"이라고 부르는 별도의 요청을 전송합니다. 다음과 같은 조건들을 만족할 경우, 브라우저는 예비 요청을 생략할 수 있습니다:
+브라우저는 일부 CORS 요청에 대해서, 리소스에 대한 실제 요청을 전송하기 전에, "예비 요청(Preflight Requests)"이라고 부르는 별도의 요청을 전송합니다. 다음과 같은 조건들을 만족할 경우, 브라우저는 예비 요청을 생략할 수 있습니다.
 
 * 요청 메서드가 GET, HEAD 또는 POST 이고,
 
@@ -274,7 +274,7 @@ Test message
 
 이 예비 요청의 헤더 관련 규칙은 `XMLHttpRequest` 개체의 `setRequestHeader`를 호출해서 클라이언트 응용 프로그램이 설정한 헤더들만을 대상으로 합니다. (CORS 명세서에서는 이런 헤더들을 "사용자 지정 요청 헤더(Author Request Headers)"라고 부릅니다.) 이 규칙은 User-Agent, Host 또는 Content-Length 같이 브라우저가 지정한 헤더에는 적용되지 않습니다.
 
-다음은 예비 요청의 실제 사례입니다:
+다음은 예비 요청의 실제 사례입니다.
 
 ```
 OPTIONS http://myservice.azurewebsites.net/api/test HTTP/1.1
@@ -288,13 +288,13 @@ Host: myservice.azurewebsites.net
 Content-Length: 0
 ```
 
-예비 요청에는 HTTP OPTIONS 메서드가 사용됩니다. 그리고 이 요청에는 두 가지 특별한 헤더가 존재합니다:
+예비 요청에는 HTTP OPTIONS 메서드가 사용됩니다. 그리고 이 요청에는 두 가지 특별한 헤더가 존재합니다.
 
 * Access-Control-Request-Method: 실제 요청에 사용될 HTTP 메서드가 지정됩니다.
 
 * Access-Control-Request-Headers: 실제 요청에서 응용 프로그램이 설정할 요청 헤더들의 목록입니다. (역시 이번에도 브라우저가 설정한 헤더는 해당되지 않습니다.)
 
-다음은 서버가 이 요청을 허용한다고 가정한 경우의 예제 응답입니다:
+다음은 서버가 이 요청을 허용한다고 가정한 경우의 예제 응답입니다.
 
 ```
 HTTP/1.1 200 OK
