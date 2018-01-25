@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/working-with-forms
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 9fbe2c5cb495aabee0e1f0bdb3871641efa03599
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 9fd51755e1dc9a1dfb9ab5cc4558f7da9475ce32
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-using-tag-helpers-in-forms-in-aspnet-core"></a>태그 도우미를 사용 하 여 폼에 ASP.NET Core 소개
 
@@ -22,7 +22,7 @@ ms.lasthandoff: 01/19/2018
 
 이 문서에 폼 및 폼에 일반적으로 사용 되는 HTML 요소 작업을 보여 줍니다. HTML [양식](https://www.w3.org/TR/html401/interact/forms.html) 요소는 서버에 데이터를 다시 게시 하는 기본 메커니즘 웹 앱 사용을 제공 합니다. 이 문서의 대부분 설명 [태그 도우미](tag-helpers/intro.md) 있고 어떻게 수 생산적으로 강력한 HTML 폼을 만들 수 있습니다. 참조 [태그 도우미 소개](tag-helpers/intro.md) 이 문서를 읽기 전에 합니다.
 
-대부분의 경우에서 HTML 도우미 특정 태그 도우미에는 다른 방법은 제공 하지만 태그 도우미는 HTML 도우미를 대체 하지 않고 각 HTML 도우미에 대 한 태그 도우미 없기 인식 하는 것이 중요 합니다. 존재 하는 HTML 도우미 대신 경우 다룹니다.
+대부분의 경우에서 HTML 도우미 특정 태그 도우미에는 다른 방법은 제공 하지만 태그 도우미는 HTML 도우미를 바꾸지 않습니다. 각 HTML 도우미에 대 한 태그 도우미 없기 인식 하는 것이 중요 합니다. 존재 하는 HTML 도우미 대신 경우 다룹니다.
 
 <a name="my-asp-route-param-ref-label"></a>
 
@@ -86,7 +86,7 @@ MVC 런타임에서 생성 된 `action` Form 태그 도우미 특성에서 특�
 
 * HTML 설정 `type` 특성 값에는 모델 유형에 따라 및 [데이터 주석을](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) 모델 속성에 적용 된 특성
 
-* HTML을 덮어쓰지 것입니다 `type` 특성 값이 지정 된 경우
+* HTML 덮어쓸지 않습니다 `type` 특성 값이 지정 된 경우
 
 * 생성 [HTML5](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5) 에서 유효성 검사 특성 [데이터 주석을](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.dataannotations.iattributeadapter) 모델 속성에 적용 되는 특성
 
@@ -159,7 +159,7 @@ Type expected
 
 ### <a name="html-helper-alternatives-to-input-tag-helper"></a>입력 태그 도우미에 대 한 HTML 도우미 대안
 
-`Html.TextBox``Html.TextBoxFor`, `Html.Editor` 및 `Html.EditorFor` 겹치는 입력 태그 도우미와 기능입니다. 입력 태그 도우미에서 자동으로 설정 된 `type` ; 특성 `Html.TextBox` 및 `Html.TextBoxFor` 되지 것입니다. `Html.Editor`및 `Html.EditorFor` 컬렉션, 복잡 한 개체 및 템플릿; 처리 된 입력 태그 도우미는 그렇지 않습니다. 입력 태그 도우미 `Html.EditorFor` 및 `Html.TextBoxFor` 은 강력한 형식 (람다 식 사용). `Html.TextBox` 및 `Html.Editor` 없습니다 (식 이름 사용).
+`Html.TextBox``Html.TextBoxFor`, `Html.Editor` 및 `Html.EditorFor` 겹치는 입력 태그 도우미와 기능입니다. 입력 태그 도우미에서 자동으로 설정 된 `type` ; 특성 `Html.TextBox` 및 `Html.TextBoxFor` 되지 않습니다. `Html.Editor`및 `Html.EditorFor` 컬렉션, 복잡 한 개체 및 템플릿; 처리 된 입력 태그 도우미 하지 않습니다. 입력 태그 도우미 `Html.EditorFor` 및 `Html.TextBoxFor` 은 강력한 형식 (람다 식 사용). `Html.TextBox` 및 `Html.Editor` 없습니다 (식 이름 사용).
 
 ### <a name="htmlattributes"></a>HtmlAttributes
 
@@ -436,7 +436,7 @@ HTTP POST `Index` 메서드 선택 항목을 표시 합니다.
 ```
 
 > [!NOTE]
-> 사용 하지 않는 것이 좋습니다 `ViewBag` 또는 `ViewData` 선택 태그 도우미와 합니다. 뷰 모델은 MVC 메타 데이터를 제공할에 더 강력 하 고 문제를 줄일 일반적으로 합니다.
+> 사용할 수 있는 권장 하지 않는 `ViewBag` 또는 `ViewData` 선택 태그 도우미와 합니다. 뷰 모델은 MVC 메타 데이터를 제공할에 더 강력 하 고 문제를 줄일 일반적으로 합니다.
 
 `asp-for` 특성 값은 특별 한 경우 있으며 필요 하지 않습니다는 `Model` 접두사, 다른 태그 도우미 특성 안 함 (예: `asp-items`)
 
@@ -549,7 +549,7 @@ HTML [ \<optgroup >](https://www.w3.org/wiki/HTML/Elements/optgroup) 뷰 모델 
 
 [!code-HTML[Main](working-with-forms/sample/final/Views/Shared/EditorTemplates/CountryViewModel.cshtml)]
 
-추가 HTML [ \<옵션 >](https://www.w3.org/wiki/HTML/Elements/option) 요소에 국한 되지 않음는 *선택 영역이 없는* 대/소문자입니다. 예를 들어 다음과 같은 보기 및 작업 메서드는 위의 코드와 유사한 HTML을 생성 합니다.
+추가 HTML [ \<옵션 >](https://www.w3.org/wiki/HTML/Elements/option) 요소도 제한 되지 않습니다는 *선택 영역이 없는* 대/소문자입니다. 예를 들어 다음과 같은 보기 및 작업 메서드는 위의 코드와 유사한 HTML을 생성 합니다.
 
 [!code-csharp[Main](working-with-forms/sample/final/Controllers/HomeController.cs?range=114-119)]
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/error-handling/web-api-global-error-handling
 msc.type: authoredcontent
-ms.openlocfilehash: d2bdf04b4da2a099f3a2af100b16682c68f946f2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c593c56ba3d0ee8ebf6dc425408d2c3b91c83f93
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="global-error-handling-in-aspnet-web-api-2"></a>ASP.NET Web API 2 처리 하는 전역 오류
 ====================
@@ -46,7 +46,7 @@ ms.lasthandoff: 11/10/2017
 1. 예외로 거를 여러 개 있지만 한 개의 예외 처리기 등록을 지원 합니다.
 2. 예외로 거 항상 호출 연결을 중단 하려고 하는 경우에 합니다. 예외 처리기만 호출 여전히 보낼 응답 메시지를 선택할 수 있을 때.
 
-두 서비스 모두 예외 감지 되었으며 지점에서 관련 정보를 포함 하는 예외 컨텍스트에 대 한 액세스를 제공 특히 [HttpRequestMessage](https://msdn.microsoft.com/en-us/library/system.net.http.httprequestmessage(v=vs.110).aspx), [HttpRequestContext](https://msdn.microsoft.com/en-us/library/system.web.http.controllers.httprequestcontext(v=vs.118).aspx), 예외 및 예외 원본 (아래의 세부 정보)를 발생 합니다.
+두 서비스 모두 예외 감지 되었으며 지점에서 관련 정보를 포함 하는 예외 컨텍스트에 대 한 액세스를 제공 특히 [HttpRequestMessage](https://msdn.microsoft.com/library/system.net.http.httprequestmessage(v=vs.110).aspx), [HttpRequestContext](https://msdn.microsoft.com/library/system.web.http.controllers.httprequestcontext(v=vs.118).aspx), 예외 및 예외 원본 (아래의 세부 정보)를 발생 합니다.
 
 ### <a name="design-principles"></a>디자인 원칙
 
@@ -78,7 +78,7 @@ ms.lasthandoff: 11/10/2017
 - OWIN 호스트:
 
     - HttpMessageHandlerAdapter.BufferResponseContentAsync (에 대 한 출력을 버퍼링)
-    - HttpMessageHandlerAdapter.CopyResponseContentAsync (스트리밍에 대 한 출력)
+    - HttpMessageHandlerAdapter.CopyResponseContentAsync (for streaming output)
 - 웹 호스트:
 
     - HttpControllerHandler.WriteBufferedResponseContentAsync (에 대 한 출력을 버퍼링)
@@ -97,7 +97,7 @@ Catch 블록 문자열 목록에도 정적 읽기 전용 속성을 통해 제공
 
 [!code-csharp[Main](web-api-global-error-handling/samples/sample5.cs)]
 
-예외 처리기를 설정 하 여 예외가 처리 했음을 나타냅니다는 `Result` 작업 결과를 속성 (예를 들어 한 [ExceptionResult](https://msdn.microsoft.com/en-us/library/system.web.http.results.exceptionresult(v=vs.118).aspx), [InternalServerErrorResult](https://msdn.microsoft.com/en-us/library/system.web.http.results.internalservererrorresult(v=vs.118).aspx), [ StatusCodeResult](https://msdn.microsoft.com/en-us/library/system.web.http.results.statuscoderesult(v=vs.118).aspx), 또는 사용자 지정 결과). 경우는 `Result` 속성이 null 이므로, 예외 처리 되지 않은 및 원래의 예외가 다시 throw 됩니다.
+예외 처리기를 설정 하 여 예외가 처리 했음을 나타냅니다는 `Result` 작업 결과를 속성 (예를 들어 한 [ExceptionResult](https://msdn.microsoft.com/library/system.web.http.results.exceptionresult(v=vs.118).aspx), [InternalServerErrorResult](https://msdn.microsoft.com/library/system.web.http.results.internalservererrorresult(v=vs.118).aspx), [ StatusCodeResult](https://msdn.microsoft.com/library/system.web.http.results.statuscoderesult(v=vs.118).aspx), 또는 사용자 지정 결과). 경우는 `Result` 속성이 null 이므로, 예외 처리 되지 않은 및 원래의 예외가 다시 throw 됩니다.
 
 호출 스택의 맨 위에 있는 예외에 대 한 별도 단계 API 호출자에 대 한 적절 한 응답 되는지 했습니다. 호스트에서 예외 전파를 호출자에 게 사망의 노란색 화면 표시 되는 것 또는 HTML는 일반적으로 응답 하 고 적절 한 API 오류 응답 하지 않는 다른 호스트에서 제공 합니다. 이러한 경우에 null이 아닌 및 사용자 지정 예외 처리기가 명시적으로 설정 하는 경우에 결과 시작 다시 `null` (처리 되지 않은)은 예외 전파는 호스트입니다. 설정 `Result` 를 `null` 이러한 경우에 유용할 수 두 가지 시나리오:
 

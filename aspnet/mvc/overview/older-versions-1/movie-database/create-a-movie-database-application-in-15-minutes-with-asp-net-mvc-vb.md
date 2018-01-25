@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/movie-database/create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4dbb3804bbb0ccb80506a592f1efb585c5748c2f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b87a69df24a410161dfaf055519eb6137fa76c06
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="create-a-movie-database-application-in-15-minutes-with-aspnet-mvc-vb"></a>ASP.NET mvc (VB) 15 분 내에 동영상 데이터베이스 응용 프로그램 만들기
 ====================
@@ -59,11 +59,11 @@ Visual Studio 2008 또는 Visual Web Developer 2008 Express는 ASP.NET MVC 응�
 
 Visual Studio 2008를 소유 하지 않는 경우 Visual Studio 2008의 90 일 평가판이 웹이 사이트에서 다운로드할 수 있습니다.
 
-[https://msdn.microsoft.com/en-us/vs2008/products/cc268305.aspx](https://msdn.microsoft.com/en-us/vs2008/products/cc268305.aspx)
+[https://msdn.microsoft.com/vs2008/products/cc268305.aspx](https://msdn.microsoft.com/vs2008/products/cc268305.aspx)
 
 또는 만들 수 있습니다 ASP.NET MVC 응용 프로그램 Visual Web Developer Express 2008을 사용 합니다. Visual Web Developer Express를 사용 하려는 경우 서비스 팩 1을 갖고 있어야 합니다. Visual Web Developer 2008 Express 서비스 팩 1이 웹 사이트에서 다운로드할 수 있습니다.
 
-[https://www.microsoft.com/downloads/details.aspx?FamilyId=BDB6391C-05CA-4036-9154-6DF4F6DEBD14&amp;4a83-b309-53b7b77edf78&displaylang = en](https://www.microsoft.com/downloads/details.aspx?FamilyId=BDB6391C-05CA-4036-9154-6DF4F6DEBD14&amp;displaylang=en)
+[https://www.microsoft.com/downloads/details.aspx?FamilyId=BDB6391C-05CA-4036-9154-6DF4F6DEBD14&amp;displaylang=en](https://www.microsoft.com/downloads/details.aspx?FamilyId=BDB6391C-05CA-4036-9154-6DF4F6DEBD14&amp;displaylang=en)
 
 Visual Studio 2008 또는 Visual Web Developer 2008을 설치한 후 ASP.NET MVC 프레임 워크를 설치 해야 합니다. 다음 웹 사이트에서 ASP.NET MVC 프레임 워크를 다운로드할 수 있습니다.
 
@@ -136,8 +136,8 @@ Visual Studio와 함께 새 MVC 응용 프로그램을 만들 때에 샘플 응�
 | **열 이름** | **데이터 형식** | **Null 허용** |
 | --- | --- | --- |
 | ID | Int | False |
-| 제목 | Nvarchar (100) | False |
-| 감독 | Nvarchar (100) | False |
+| 제목 | Nvarchar(100) | False |
+| 감독 | Nvarchar(100) | False |
 | DateReleased | DateTime | False |
 
 
@@ -216,7 +216,7 @@ Visual Studio와 함께 새 MVC 응용 프로그램을 만들 때에 샘플 응�
 **그림 08**: 새 ASP.NET MVC 컨트롤러 추가 ([전체 크기 이미지를 보려면 클릭](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/_static/image16.png))
 
 
-**1 – Controllers\HomeController.vb 나열**
+**Listing 1 – Controllers\HomeController.vb**
 
 [!code-vb[Main](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/samples/sample1.vb)]
 
@@ -306,7 +306,7 @@ Visual Studio에서는 새 동영상 데이터베이스를 만들기 위한 양�
 
 Visual Studio를 자동으로 목록 5에서 뷰를 생성합니다. 이 보기는 각 영화 클래스의 속성에 해당 하는 필드를 포함 하는 HTML 폼을 포함 합니다.
 
-**5-Views\Home\Create.aspx 나열**
+**Listing 5 – Views\Home\Create.aspx**
 
 [!code-aspx[Main](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb/samples/sample5.aspx)]
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/working-with-ssl-in-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 8c631900c8c5ab6097e0cb9fd4a71abbcba1c88b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 127b336cb628e55bd59481ecb1c4df83960dc25b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="working-with-ssl-in-web-api"></a>Web API의에서 SSL 작업
 ====================
@@ -72,7 +72,7 @@ ApplicationHost.config 파일에 이러한 옵션을 설정할 수도 있습니�
 
 ### <a name="creating-a-client-certificate-for-testing"></a>테스트를 위해 클라이언트 인증서 만들기
 
-테스트를 위해 사용할 수 있습니다 [MakeCert.exe](https://msdn.microsoft.com/en-US/library/bfsktky3.aspx) 클라이언트 인증서를 만들 수 있습니다. 먼저, 테스트 루트 기관을 만듭니다.
+테스트를 위해 사용할 수 있습니다 [MakeCert.exe](https://msdn.microsoft.com/library/bfsktky3.aspx) 클라이언트 인증서를 만들 수 있습니다. 먼저, 테스트 루트 기관을 만듭니다.
 
 [!code-console[Main](working-with-ssl-in-web-api/samples/sample4.cmd)]
 
@@ -95,6 +95,6 @@ Makecert는 개인 키에 대 한 암호를 입력 하 라는 메시지가 됩�
 
 ### <a name="using-client-certificates-in-web-api"></a>클라이언트 인증서를 사용 하 여 Web API의
 
-서버 쪽에서 호출 하 여 클라이언트 인증서를 가져올 수 있습니다 [GetClientCertificate](https://msdn.microsoft.com/en-us/library/system.net.http.httprequestmessageextensions.getclientcertificate.aspx) 요청 메시지에 있습니다. 메서드가 없는 클라이언트 인증서가 있는 경우 null을 반환 합니다. 그렇지 않으면 반환 된 **X509Certificate2** 인스턴스. 정보 발급자 및 주체와 같이 인증서를 가져오기 위해이 개체를 사용 합니다. 그런 다음 인증 및/또는 권한 부여에 대 한이 정보를 사용할 수 있습니다.
+서버 쪽에서 호출 하 여 클라이언트 인증서를 가져올 수 있습니다 [GetClientCertificate](https://msdn.microsoft.com/library/system.net.http.httprequestmessageextensions.getclientcertificate.aspx) 요청 메시지에 있습니다. 메서드가 없는 클라이언트 인증서가 있는 경우 null을 반환 합니다. 그렇지 않으면 반환 된 **X509Certificate2** 인스턴스. 정보 발급자 및 주체와 같이 인증서를 가져오기 위해이 개체를 사용 합니다. 그런 다음 인증 및/또는 권한 부여에 대 한이 정보를 사용할 수 있습니다.
 
 [!code-csharp[Main](working-with-ssl-in-web-api/samples/sample6.cs)]

@@ -12,15 +12,15 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2012/aspnet-and-web-tools-20131-for-visual-studio-2012
 msc.type: authoredcontent
-ms.openlocfilehash: 1e4ee8eb4901305bf6a8c9c5b949dc4ee10290e5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c11e2ef9c33b0cae1f196690533094ce1c342da5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="release-notes-for-aspnet-and-web-tools-20131-for-visual-studio-2012"></a>ASP.NET 및 Visual Studio 2012 용 웹 도구 2013.1에 대 한 릴리스 정보
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 이 문서에서는 Visual Studio 2012 용 ASP.NET 및 웹 도구 2013.1의 릴리스를 설명 합니다.
 
@@ -31,7 +31,7 @@ ms.lasthandoff: 11/10/2017
 - [소프트웨어 요구 사항](#requirements)
 - ASP.NET 및 Web Tools 2013.1 for Visual Studio 2012의 새로운 기능
 
-    - [부트스트랩](#bootstrap)
+    - [Bootstrap](#bootstrap)
     - [템플릿](#templates)
 
         - [ASP.NET MVC 5 서식 파일](#mvc5template)
@@ -190,7 +190,7 @@ ASP.NET Razor 3 또는 ASP.NET MVC 5로 업그레이드 한 후 tilde(~) 표기�
 
 ![구성 오류](aspnet-and-web-tools-20131-for-visual-studio-2012/_static/image2.png)
 
-해당 버전의 Windows에 설치 된 경우 Visual Studio 2012 ASP.NET 4.5 기능을 사용 하지 않는 때문에이 오류가 표시 됩니다. ASP.NET 4.5를 사용 하도록 설정 하려면에 설명 된 단계를 수행 [Windows 기능 설정 또는 해제](https://windows.microsoft.com/en-us/windows-8/turn-windows-features-on-off)합니다.
+해당 버전의 Windows에 설치 된 경우 Visual Studio 2012 ASP.NET 4.5 기능을 사용 하지 않는 때문에이 오류가 표시 됩니다. ASP.NET 4.5를 사용 하도록 설정 하려면에 설명 된 단계를 수행 [Windows 기능 설정 또는 해제](https://windows.microsoft.com/windows-8/turn-windows-features-on-off)합니다.
 
 ![Windows 기능 설정](aspnet-and-web-tools-20131-for-visual-studio-2012/_static/image3.png)
 

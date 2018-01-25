@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/bootstrap
-ms.openlocfilehash: aee3304515686fc8e45e8e2aafb79d957219f94a
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 4332dce4c341cb8e5c241a67547048301ae9a8b1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="building-beautiful-responsive-sites-with-bootstrap"></a>부트스트랩을 사용한 beautiful 및 응답성이 뛰어난 사이트 구축
 
@@ -214,8 +214,8 @@ Visual Studio 2012 또는 2013에서 기본 ASP.NET MVC 템플릿을 사용한 �
 
 ## <a name="javascript-support"></a>JavaScript가 지원
 
-부트스트랩의 JavaScript 라이브러리에는 응용 프로그램에서 프로그래밍 방식으로 동작을 제어 하는 포함 된 구성 요소에 대 한 API 지원을 포함 합니다. 또한 *bootstrap.js* 수십 개의 포함 전환, 모달 대화 상자와 같은 추가 기능을 제공 하는 사용자 지정 jQuery 플러그 인 (스타일 문서에 사용자 스크롤 위치에 따라 업데이트)를 감지, 스크롤 화면 밖 스크롤되지 있도록 창에 동작과 컨베이어 벨트, 추가 메뉴를 축소 합니다. 부트스트랩 – 방문 하십시오 자세히 알아보려면에 기본 제공 JavaScript 추가 기능의 모든 처리 하려면 충분 한 공간이 없을 [http://getbootstrap.com/javascript/](http://getbootstrap.com/javascript/)합니다.
+부트스트랩의 JavaScript 라이브러리에는 응용 프로그램에서 프로그래밍 방식으로 동작을 제어 하는 포함 된 구성 요소에 대 한 API 지원을 포함 합니다. 또한 *bootstrap.js* 수십 개의 포함 전환, 모달 대화 상자와 같은 추가 기능을 제공 하는 사용자 지정 jQuery 플러그 인 (스타일 문서에 사용자 스크롤 위치에 따라 업데이트)를 감지, 스크롤 화면 밖 스크롤하여 하지 하도록 창에 동작과 컨베이어 벨트, 추가 메뉴를 축소 합니다. 부트스트랩 – 방문 하십시오 자세히 알아보려면에 기본 제공 JavaScript 추가 기능의 모든 처리 하려면 충분 한 공간이 없을 [http://getbootstrap.com/javascript/](http://getbootstrap.com/javascript/)합니다.
 
 ## <a name="summary"></a>요약
 
-부트스트랩 신속 하 고 생산성을 배치 하 고 다양 한 웹 사이트 및 응용 프로그램 스타일 지정에 사용할 수 있는 웹 프레임 워크를 제공 합니다. 기본 입력 체계 및 스타일 수동 하거나 상업적으로 구입할 수 있는 사용자 지정 테마 지원을 통해 쉽게 조작할 수 있는 한 쾌적 한 모양 및 느낌을 제공 합니다. 다양 한 웹 구성 요소 이전에 비용이 많이 드는 타사 컨트롤 현대적이 고 열린 웹 표준을 지 원하는 동안 수행 하기 위해이 요구를 지원 합니다.
+부트스트랩 신속 하 고 생산성을 배치 하 고 다양 한 웹 사이트 및 응용 프로그램 스타일 지정에 사용할 수 있는 웹 프레임 워크를 제공 합니다. 기본 입력 체계 및 스타일 수동 하거나 상업적으로 구입할 수 있는 사용자 지정 테마 지원을 통해 쉽게 조작할 수 있는 한 쾌적 한 모양 및 느낌을 제공 합니다. 다양 한 현대적이 고 열린 웹 표준을 지 원하는 동안 수행 하기 위해 비용이 많이 드는 타사 컨트롤은 필요한 이전에는 웹 구성 요소를 지원 합니다.

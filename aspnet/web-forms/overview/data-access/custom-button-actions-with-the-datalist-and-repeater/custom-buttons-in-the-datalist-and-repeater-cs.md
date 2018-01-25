@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions-with-the-datalist-and-repeater/custom-buttons-in-the-datalist-and-repeater-cs
 msc.type: authoredcontent
-ms.openlocfilehash: fa4b3ea69999f0d97d20047663d302277ebdf433
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9a072ae18bbb19d086eb825c6e72b68d40b2e429
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="custom-buttons-in-the-datalist-and-repeater-c"></a>DataList 및 반복기 (C#)에서 사용자 지정 단추
 ====================
@@ -114,17 +114,17 @@ DataList 컨트롤은 Visual Studio의 기본 생성을 달리 `ItemTemplate` �
 
 단추를 클릭할 때, 포스트백이 발생할 및 DataList 또는 반복기의 `ItemCommand` 이벤트 발생 합니다. 이벤트 처리기 단추 s 전달 `CommandName` 및 `CommandArgument` 값입니다.
 
-S 반복기에 대 한 이벤트 처리기를 만들고 `ItemCommand` 이벤트 처리기에 전달 된 이벤트와 두 번째 매개 변수 메모 (라는 `e`). 이 두 번째 매개 변수는 형식 [ `RepeaterCommandEventArgs` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.repeatercommandeventargs.aspx) 다음 네 가지 속성이 있습니다.
+S 반복기에 대 한 이벤트 처리기를 만들고 `ItemCommand` 이벤트 처리기에 전달 된 이벤트와 두 번째 매개 변수 메모 (라는 `e`). 이 두 번째 매개 변수는 형식 [ `RepeaterCommandEventArgs` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.repeatercommandeventargs.aspx) 다음 네 가지 속성이 있습니다.
 
 - `CommandArgument`s 클릭 한 단추의 값 `CommandArgument` 속성
 - `CommandName`s 단추의 값 `CommandName` 속성
 - `CommandSource`클릭 된 단추 컨트롤에 대 한 참조
-- `Item`에 대 한 참조는 [ `RepeaterItem` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.repeateritem.aspx) 으로 반복기에 바인딩된 각 레코드는 매니페스트; 클릭 된 단추의 포함 하는`RepeaterItem`
+- `Item`에 대 한 참조는 [ `RepeaterItem` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.repeateritem.aspx) 으로 반복기에 바인딩된 각 레코드는 매니페스트; 클릭 된 단추의 포함 하는`RepeaterItem`
 
 선택한 범주의 s 이후 `CategoryID` 를 통해 전달 되는 `CommandArgument` 속성에서 선택한 범주와 관련 된 제품의 집합을 가져올 수 있습니다는 `ItemCommand` 이벤트 처리기입니다. 이러한 제품 BulletedList 컨트롤에 바인딩할 수 다음는 `ItemTemplate` (어떤 것 추가할 아직 했습니다). 유지 되는 경우 다음 BulletedList를 추가 하는 모든 참조는 `ItemCommand` 이벤트 처리기의 경우 4 단계에서에서 해결할 선택한 범주에 대 한 제품 집합에 바인딩합니다.
 
 > [!NOTE]
-> DataList s `ItemCommand` 형식의 개체를 전달 된 이벤트 처리기 [ `DataListCommandEventArgs` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalistcommandeventargs.aspx)과 같은 4 개의 속성을 제공 하는 `RepeaterCommandEventArgs` 클래스입니다.
+> DataList s `ItemCommand` 형식의 개체를 전달 된 이벤트 처리기 [ `DataListCommandEventArgs` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalistcommandeventargs.aspx)과 같은 4 개의 속성을 제공 하는 `RepeaterCommandEventArgs` 클래스입니다.
 
 
 ## <a name="step-4-displaying-the-selected-category-s-products-in-a-bulleted-list"></a>4 단계: 글머리 기호 목록에서 선택한 범주의 제품 표시

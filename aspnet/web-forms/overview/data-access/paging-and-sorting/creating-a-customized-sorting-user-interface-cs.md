@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sorting-user-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: bc009272df3626402ee4c52578f9b364f70a4e78
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: dbd2f6c8f1e21529da8a0fbffab212a29f615cc1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-customized-sorting-user-interface-c"></a>사용자 지정 된 정렬의 사용자 인터페이스 (C#) 만들기
 ====================
@@ -187,7 +187,7 @@ BoundFields 이외의 필드 형식을 처리 하려면 코드를 추가 해야 
 
 
 > [!NOTE]
-> 제품을 설정한 경우 `NULL` 값에 대 한 데이터베이스는 `CategoryID`, `SupplierID`, 또는 `UnitPrice` 필드, 해당 값으로 나타납니다 GridView에서 빈 문자열만 와해당제품에대한구분기호s행내부텍스트를의미합니다.기본적으로`NULL`범주와 같은 값을 읽이 됩니다: (즉, 없어 s 항목 뒤에 이름이 없는: 범주와 함께: 음료). 여기에 표시 된 값을 반환 하는 경우 설정할 수 있습니다는 BoundFields [ `NullDisplayText` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.boundfield.nulldisplaytext.aspx) 텍스트에 표시 하려는 하거나 할당할 때 조건문 Render 메서드에 추가할 수 있습니다는 `currentValue` 구분 기호를 행의 `Text` 속성입니다.
+> 제품을 설정한 경우 `NULL` 값에 대 한 데이터베이스는 `CategoryID`, `SupplierID`, 또는 `UnitPrice` 필드, 해당 값으로 나타납니다 GridView에서 빈 문자열만 와해당제품에대한구분기호s행내부텍스트를의미합니다.기본적으로`NULL`범주와 같은 값을 읽이 됩니다: (즉, 없어 s 항목 뒤에 이름이 없는: 범주와 함께: 음료). 여기에 표시 된 값을 반환 하는 경우 설정할 수 있습니다는 BoundFields [ `NullDisplayText` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.boundfield.nulldisplaytext.aspx) 텍스트에 표시 하려는 하거나 할당할 때 조건문 Render 메서드에 추가할 수 있습니다는 `currentValue` 구분 기호를 행의 `Text` 속성입니다.
 
 
 ## <a name="summary"></a>요약

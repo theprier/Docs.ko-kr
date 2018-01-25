@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 42beb4ffcff9974230ba0c4a2f243020bcd4f99d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8f5d223a5944d8adb9fe65c89e87829d18d1c7ee
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-visual-basic"></a>Razor 구문 (Visual Basic)를 사용 하 여 ASP.NET 웹 프로그래밍 소개
 ====================
@@ -58,7 +58,7 @@ Razor 구문이 있는 ASP.NET 웹 페이지를 사용 하 여 대부분의 예�
 
 브라우저에 표시 된 결과:
 
-![Razor Img1](introducing-razor-syntax-vb/_static/image1.jpg)
+![Razor-Img1](introducing-razor-syntax-vb/_static/image1.jpg)
 
 > [!TIP] 
 > 
@@ -79,7 +79,7 @@ Razor 구문이 있는 ASP.NET 웹 페이지를 사용 하 여 대부분의 예�
 
 브라우저에 표시 된 결과:
 
-![Razor Img2](introducing-razor-syntax-vb/_static/image2.jpg)
+![Razor-Img2](introducing-razor-syntax-vb/_static/image2.jpg)
 
 ### <a name="3-inside-a-block-you-end-each-code-statement-with-a-line-break"></a>3. 블록 안에 줄 바꿈이 각 코드 문을 종료합니다
 
@@ -95,7 +95,7 @@ Visual Basic 코드 블록에 각 문에 줄 바꿈을로 끝납니다. (문서�
 
 브라우저에 표시 된 결과:
 
-![Razor Img3](introducing-razor-syntax-vb/_static/image3.jpg)
+![Razor-Img3](introducing-razor-syntax-vb/_static/image3.jpg)
 
 ### <a name="5-you-enclose-literal-string-values-in-double-quotation-marks"></a>5. 리터럴 문자열 값을 큰따옴표로 묶습니다.
 
@@ -109,7 +109,7 @@ A *문자열* 텍스트로 처리 되는 문자 시퀀스입니다. 문자열을
 
 브라우저에 표시 된 결과:
 
-![Razor Img4](introducing-razor-syntax-vb/_static/image4.jpg)
+![Razor-Img4](introducing-razor-syntax-vb/_static/image4.jpg)
 
 ### <a name="6-visual-basic-code-is-not-case-sensitive"></a>6. Visual Basic 코드 대/소문자 구분 됩니다.
 
@@ -121,7 +121,7 @@ Visual Basic 언어가 대/소문자 구분 되지 않습니다. 프로그래밍
 
 브라우저에 표시 된 결과:
 
-![vb-구문-5](introducing-razor-syntax-vb/_static/image5.jpg)
+![vb-syntax-5](introducing-razor-syntax-vb/_static/image5.jpg)
 
 ### <a name="7-much-of-your-coding-involves-working-with-objects"></a>7. 개체를 사용 하 여 코딩의 대부분
 
@@ -133,7 +133,7 @@ Visual Basic 언어가 대/소문자 구분 되지 않습니다. 프로그래밍
 
 브라우저에 표시 된 결과:
 
-![Razor Img5](introducing-razor-syntax-vb/_static/image6.jpg)
+![Razor-Img5](introducing-razor-syntax-vb/_static/image6.jpg)
 
 ### <a name="8-you-can-write-code-that-makes-decisions"></a>8. 의사 결정 하는 코드를 작성할 수 있습니다.
 
@@ -145,7 +145,7 @@ Visual Basic 언어가 대/소문자 구분 되지 않습니다. 프로그래밍
 
 브라우저에 표시 된 결과 (클릭 한 후 **전송**):
 
-![Razor Img6](introducing-razor-syntax-vb/_static/image7.jpg)
+![Razor-Img6](introducing-razor-syntax-vb/_static/image7.jpg)
 
 > [!TIP] 
 > 
@@ -176,7 +176,7 @@ Visual Basic 언어가 대/소문자 구분 되지 않습니다. 프로그래밍
     - `<form>` 태그를 포함 한 `method="post"` 특성입니다. 이 지정 하는 사용자가 클릭할 때 **추가**, 페이지 HTTP POST 메서드를 사용 하 여 서버에 보내집니다. 페이지가 제출 되는 경우, 코드 `If IsPost` 조건부 true로 평가 되 코드를 실행, 숫자를 추가 하는 결과 표시 합니다.
 3. 페이지를 저장 하 고 브라우저에서 실행 합니다. (있는지 확인 페이지에서 선택한는 **파일** 실행 하기 전에 작업 영역입니다.) 두 정수를 입력 한 다음 클릭는 **추가** 단추입니다.
 
-    ![Razor Img7](introducing-razor-syntax-vb/_static/image8.jpg)
+    ![Razor-Img7](introducing-razor-syntax-vb/_static/image8.jpg)
 
 ## <a name="visual-basic-language-and-syntax"></a>Visual Basic 언어 및 구문
 
@@ -257,7 +257,7 @@ Razor 구문 주석을 코드 블록 내에서 사용 하거나 일반 Visual Ba
 
 브라우저에 표시 된 결과:
 
-![Razor Img9](introducing-razor-syntax-vb/_static/image9.jpg)
+![Razor-Img9](introducing-razor-syntax-vb/_static/image9.jpg)
 
 ### <a name="converting-and-testing-data-types"></a>변환 및 데이터 형식 테스트
 
@@ -384,7 +384,7 @@ ASP.NET 서버 코드 하면 조건 및 루프를 실행 하는 지정 된 횟�
 
 브라우저에 표시 하는 마지막 두 개의 조건부 블록의 결과:
 
-![Razor Img10](introducing-razor-syntax-vb/_static/image10.jpg)
+![Razor-Img10](introducing-razor-syntax-vb/_static/image10.jpg)
 
 ### <a name="looping-code"></a>코드를 반복합니다.
 
@@ -400,7 +400,7 @@ ASP.NET 서버 코드 하면 조건 및 루프를 실행 하는 지정 된 횟�
 
 사이 코드 줄은 `For` 및 `Next` 줄 루프의 각 반복에 대해 실행 되는 코드를 포함 합니다. 태그에 새 단락 만듭니다 (`<p>` 요소) 시간 및의 값을 표시 하는 출력에 추가 하는 각 i (카운터). 이 페이지를 실행 하면이 예제에서는 항목 수를 나타내는 각 줄에 있는 텍스트로 출력을 표시 하는 11 선을 만듭니다.
 
-![Razor Img11](introducing-razor-syntax-vb/_static/image11.jpg)
+![Razor-Img11](introducing-razor-syntax-vb/_static/image11.jpg)
 
 를 컬렉션 또는 배열으로 작업 하는 경우 자주 사용 하는 `For Each` 루프입니다. 컬렉션은 유사한 개체의 그룹 및 `For Each` 루프는 컬렉션의 각 항목에 작업을 수행할 수 있습니다. 이 유형의 루프는 컬렉션에 대 한 편리한 때문에 달리는 `For` 카운터를 증가 또는 제한을 설정 하지 않아도 루프입니다. 대신,는 `For Each` 루프 코드 컬렉션을 통해 완료 될 때까지 단순히 진행 합니다.
 
@@ -410,7 +410,7 @@ ASP.NET 서버 코드 하면 조건 및 루프를 실행 하는 지정 된 횟�
 
 `For Each` 키워드 다음에 컬렉션의 단일 항목을 나타내는 변수 (예제에서는 `myItem`)와 `In` 키워드, 컬렉션을 순환 검색 하려면 다음 합니다. 본문에는 `For Each` 루프 앞에서 선언한 변수를 사용 하 여 현재 항목에 액세스할 수 있습니다.
 
-![Razor Img12](introducing-razor-syntax-vb/_static/image12.jpg)
+![Razor-Img12](introducing-razor-syntax-vb/_static/image12.jpg)
 
 범용 루프를 만들려면 사용은 `Do While` 문:
 
@@ -451,7 +451,7 @@ Asp.net에서 가장 기본적인 개체 페이지입니다. 조건에 맞는 �
 
 브라우저에 표시 된 문자열 배열 코드의 출력:
 
-![Razor Img13](introducing-razor-syntax-vb/_static/image13.jpg)
+![Razor-Img13](introducing-razor-syntax-vb/_static/image13.jpg)
 
 사전에 키 (또는 이름)을 설정 하거나 해당 값을 검색할를 입력할 수 있는 키/값 쌍의 컬렉션입니다.
 
@@ -500,7 +500,7 @@ Asp.net에서 가장 기본적인 개체 페이지입니다. 조건에 맞는 �
 
 프로그래밍 측면에서 이러한 경우 라고 *예외*합니다. 코드에서 예외를 발견 하는 경우 (throw)를 생성 오류 메시지 인 즉, 가장 좋은 경우 사용자에 게까지 합니다.
 
-![Razor Img14](introducing-razor-syntax-vb/_static/image14.jpg)
+![Razor-Img14](introducing-razor-syntax-vb/_static/image14.jpg)
 
 코드 예외, 발생할 수 있는 경우에이 유형의 오류 메시지를 방지 하기 위해을 사용 하면 `Try/Catch` 문. 에 `Try` 체크 인하는 코드를 실행 하면 문입니다. 하나 이상의 `Catch` 문을 찾을 수 있습니다 특정 발생 했을 수 있는 오류 (특정 형식의 예외). 여러 개 포함할 수 있습니다 `Catch` 있습니다과 문에서 예상 하는 오류에 대 한 확인 해야 합니다.
 
@@ -518,5 +518,5 @@ Asp.net에서 가장 기본적인 개체 페이지입니다. 조건에 맞는 �
 
 ### <a name="reference-documentation"></a>참조 설명서
 
-- [ASP.NET](https://msdn.microsoft.com/en-us/library/ee532866.aspx)
-- [Visual Basic 언어](https://msdn.microsoft.com/en-us/library/2x7h1hfk.aspx)
+- [ASP.NET](https://msdn.microsoft.com/library/ee532866.aspx)
+- [Visual Basic 언어](https://msdn.microsoft.com/library/2x7h1hfk.aspx)

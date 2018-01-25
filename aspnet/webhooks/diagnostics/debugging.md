@@ -10,17 +10,17 @@ ms.topic: article
 ms.assetid: 467da78b-3c35-4c51-8b08-77a32379e4a8
 ms.technology: 
 ms.prod: .net-framework
-ms.openlocfilehash: 566ee353f6a947e3ef0efdfd0af3a81dff2147c7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 524cdf0246eda9ef213414923cd23a92a01f211e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="aspnet-webhooks-debugging"></a>ASP.NET Webhook 디버깅  
 
 ## <a name="debugging-in-azure"></a>Azure의 디버깅
 
-Azure에서 실행 하는 동안 웹 응용 프로그램을 디버깅 하려면이 자습서를 참조 하십시오 [Visual Studio를 사용 하 여 Azure 앱 서비스의 웹 앱의 문제를 해결](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/#webserverlogs)합니다.
+Azure에서 실행 하는 동안 웹 응용 프로그램을 디버깅 하려면이 자습서를 참조 하십시오 [Visual Studio를 사용 하 여 Azure 앱 서비스의 웹 앱의 문제를 해결](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/#webserverlogs)합니다.
 
 ## <a name="debugging-with-source-and-symbols"></a>소스 및 기호를 사용 하 여 디버깅
 

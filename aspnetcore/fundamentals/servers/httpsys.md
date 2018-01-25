@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: 60301e1e3eb96f51e86ef9f8be61f5fd8a4c009c
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 6fc356d8ecc1b699269286f244000b493e48a2c5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>ASP.NET Core 웹 서버 구현이 HTTP.sys
 
@@ -140,7 +140,7 @@ Visual Studio에서 기본 실행 프로필은 IIS Express 합니다. 콘솔 응
 
 ## <a name="preregister-url-prefixes-and-configure-ssl"></a>URL 접두사 __'asverify'__ 및 SSL 구성
 
-HTTP.sys와 IIS 기본 Http.Sys 커널 모드 드라이버 요청을 수신 하 고 초기 처리를 수행 합니다. Iis에서 관리 UI 제공 모든 항목을 구성 하는 상대적으로 쉬운 방법이 합니다. 그러나 Http.Sys를 직접 구성 해야 합니다. 즉 수행 하는 데 기본 제공 도구 *netsh.exe*합니다. 
+HTTP.sys와 IIS 기본 Http.Sys 커널 모드 드라이버 요청을 수신 하 고 초기 처리를 수행 합니다. Iis에서 관리 UI 제공 모든 항목을 구성 하는 상대적으로 쉬운 방법이 합니다. 그러나 Http.Sys를 직접 구성 해야 합니다. 작업을 수행 하는 기본 제공 도구의 *netsh.exe*합니다. 
 
 와 *netsh.exe* URL 접두사를 예약 하 고 SSL 인증서를 할당할 수 있습니다. 이 도구는 관리 권한이 필요합니다.
 

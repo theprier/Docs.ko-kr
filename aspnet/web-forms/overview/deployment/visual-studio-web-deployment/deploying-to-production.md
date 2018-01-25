@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-production
 msc.type: authoredcontent
-ms.openlocfilehash: 2c49e7f6925b1ca172642747c5052ba97d70d036
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: abd3f3f78dd9a9e6394e2f61aa9bd692810ca875
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-to-production"></a>Visual Studio를 사용 하 여 ASP.NET 웹 배포: 프로덕션에 배포
 ====================
@@ -150,7 +150,7 @@ Azure 계정이 없는 경우 몇 분에서에서 무료 평가판 계정을 만
     5. 닫기는 **데이터베이스 업데이트 구성** 대화 상자.
 10. 아래 **SchoolContext** 에 **데이터베이스** 섹션에서 **실행 Code First 마이그레이션을 (응용 프로그램 시작 시 실행)**합니다.
 
-    Visual Studio에서 표시 **Code First 마이그레이션 실행** 대신 **데이터베이스 업데이트** 에 대 한 `DbContext` 클래스입니다. 사용 하 여 액세스할 수 있는 데이터베이스를 배포 하려면 마이그레이션 대신 dbDacFx 공급자를 사용 하려는 경우는 `DbContext` 클래스를 참조 하십시오 [마이그레이션 없이 코드 첫 번째 데이터베이스를 어떻게 배포 합니까?](https://msdn.microsoft.com/en-us/library/ee942158.aspx#deploy_code_first_without_migrations) 에서 Visual Studio에 대 한 웹 배포 FAQ 및 MSDN에서 ASP.NET을 추가 합니다.
+    Visual Studio에서 표시 **Code First 마이그레이션 실행** 대신 **데이터베이스 업데이트** 에 대 한 `DbContext` 클래스입니다. 사용 하 여 액세스할 수 있는 데이터베이스를 배포 하려면 마이그레이션 대신 dbDacFx 공급자를 사용 하려는 경우는 `DbContext` 클래스를 참조 하십시오 [마이그레이션 없이 코드 첫 번째 데이터베이스를 어떻게 배포 합니까?](https://msdn.microsoft.com/library/ee942158.aspx#deploy_code_first_without_migrations) 에서 Visual Studio에 대 한 웹 배포 FAQ 및 MSDN에서 ASP.NET을 추가 합니다.
 
     **설정을** 탭은 이제 다음 예제와 같습니다.
 
@@ -193,7 +193,7 @@ Azure 계정이 없는 경우 몇 분에서에서 무료 평가판 계정을 만
 - 추측할 수 될 난독 처리 된 URL을 사용 합니다.
 - 만들기는 *robots.txt* 파일에는 검색 엔진을 크롤링하지 것입니다 테스트 응용 프로그램 및 보고서 링크를 검색 결과에 있습니다.
 
-이러한 메서드의 첫 번째 가장 효과적 이지만 Azure 앱 서비스 하는 대신 Azure 클라우드 서비스를 배포 하는 것이 해야 하므로이 자습서에서 다루지 않습니다. 클라우드 서비스에 대 한 자세한 내용 및 Azure에서 IP 제한을 참조 [계산 호스팅 옵션 Azure에서 제공](https://docs.microsoft.com/azure/cloud-services/cloud-services-choose-me) 및 [웹 역할에 액세스 하지 못하도록 하는 특정 IP 주소 블록](https://msdn.microsoft.com/en-us/library/windowsazure/jj154098.aspx)합니다. 제 3 자 호스팅 공급자에 게 배포 하는 경우 IP 제한을 구현 하는 방법을 알아보려면 공급자에 게 문의 합니다.
+이러한 메서드의 첫 번째 가장 효과적 이지만 Azure 앱 서비스 하는 대신 Azure 클라우드 서비스를 배포 하는 것이 해야 하므로이 자습서에서 다루지 않습니다. 클라우드 서비스에 대 한 자세한 내용 및 Azure에서 IP 제한을 참조 [계산 호스팅 옵션 Azure에서 제공](https://docs.microsoft.com/azure/cloud-services/cloud-services-choose-me) 및 [웹 역할에 액세스 하지 못하도록 하는 특정 IP 주소 블록](https://msdn.microsoft.com/library/windowsazure/jj154098.aspx)합니다. 제 3 자 호스팅 공급자에 게 배포 하는 경우 IP 제한을 구현 하는 방법을 알아보려면 공급자에 게 문의 합니다.
 
 이 자습서에서는 만듭니다는 *robots.txt* 파일입니다.
 
@@ -256,7 +256,7 @@ ELMAH 추적 되며 다음 ELMAH 오류 보고서를 요청 하면 오류가 발
 
 각 *.pubxml* 는 파일을 *. pubxml.user* 파일입니다. *. pubxml.user* 파일을 선택한 경우 암호화 된 암호가 들어는 **암호 저장** 옵션을은 프로젝트에서 제외 되는 기본적으로 합니다.
 
-A *.pubxml* 파일에 특정 게시 프로필 관련 설정이 포함 됩니다. 모든 프로필에 적용 하는 설정을 구성 하려는 경우 만들 수 있습니다는 *. wpp.targets* 파일입니다. 빌드 프로세스에 이러한 파일을 가져오는 *.csproj* 또는 *.vbproj* 프로젝트 파일, 프로젝트 파일에서 구성할 수 있는 대부분의 설정을이 파일에서 구성할 수 있습니다. 에 대 한 자세한 내용은 *.pubxml* 파일 및 *. wpp.targets* 파일, 참조 [하는 방법: 게시 프로 파일 (.pubxml) 파일에서 배포 설정 편집 및. wpp.targets Visual Studio에서 파일 웹 프로젝트](https://msdn.microsoft.com/en-us/library/ff398069.aspx)합니다.
+A *.pubxml* 파일에 특정 게시 프로필 관련 설정이 포함 됩니다. 모든 프로필에 적용 하는 설정을 구성 하려는 경우 만들 수 있습니다는 *. wpp.targets* 파일입니다. 빌드 프로세스에 이러한 파일을 가져오는 *.csproj* 또는 *.vbproj* 프로젝트 파일, 프로젝트 파일에서 구성할 수 있는 대부분의 설정을이 파일에서 구성할 수 있습니다. 에 대 한 자세한 내용은 *.pubxml* 파일 및 *. wpp.targets* 파일, 참조 [하는 방법: 게시 프로 파일 (.pubxml) 파일에서 배포 설정 편집 및. wpp.targets Visual Studio에서 파일 웹 프로젝트](https://msdn.microsoft.com/library/ff398069.aspx)합니다.
 
 1. **솔루션 탐색기**를 확장 하 고 **속성** 확장 **PublishProfiles**합니다.
 2. 마우스 오른쪽 단추로 클릭 *Production.pubxml* 클릭 **열려**합니다.
@@ -271,7 +271,7 @@ A *.pubxml* 파일에 특정 게시 프로필 관련 설정이 포함 됩니다.
 
     [!code-xml[Main](deploying-to-production/samples/sample4.xml?highlight=18-20)]
 
-    파일 및 폴더를 제외 하는 방법에 대 한 자세한 내용은 참조 [수 나타나지 않게 특정 파일 또는 폴더 배포에서?](https://msdn.microsoft.com/en-us/library/ee942158.aspx#can_i_exclude_specific_files_or_folders_from_deployment) 에 **Visual Studio 및 ASP.NET에 대 한 웹 배포 FAQ** msdn 합니다.
+    파일 및 폴더를 제외 하는 방법에 대 한 자세한 내용은 참조 [수 나타나지 않게 특정 파일 또는 폴더 배포에서?](https://msdn.microsoft.com/library/ee942158.aspx#can_i_exclude_specific_files_or_folders_from_deployment) 에 **Visual Studio 및 ASP.NET에 대 한 웹 배포 FAQ** msdn 합니다.
 
 ### <a name="deploy-to-production"></a>프로덕션 환경에 배포
 
@@ -295,7 +295,7 @@ A *.pubxml* 파일에 특정 게시 프로필 관련 설정이 포함 됩니다.
 다음 자습서에서는 응용 프로그램 코드를 업데이트 하 고 변경 내용을 테스트, 스테이징 및 프로덕션 환경에 배포 합니다.
 
 > [!NOTE]
-> 응용 프로그램은 프로덕션 환경에서 사용 중인 동안 복구 계획을 구현 해야 합니다. 즉, 있습니다 해야 정기적으로 백업 데이터베이스를 프로덕션 앱에서 보안 저장소 위치를 하 고 몇 가지 세대의 이러한 백업 유지 해야 합니다. 데이터베이스를 업데이트할 때 변경 직전의 백업 복사본을 확인 해야 합니다. 그런 다음 실수 하 고 프로덕션 환경에 배포한 후 때까지 검색 하지 않는 경우에 데이터베이스를 손상 되기 전의 상태로 복구할 수 계속 합니다. 자세한 내용은 참조 [Azure SQL 데이터베이스 백업 및 복원](https://msdn.microsoft.com/en-us/library/windowsazure/jj650016.aspx)합니다.
+> 응용 프로그램은 프로덕션 환경에서 사용 중인 동안 복구 계획을 구현 해야 합니다. 즉, 있습니다 해야 정기적으로 백업 데이터베이스를 프로덕션 앱에서 보안 저장소 위치를 하 고 몇 가지 세대의 이러한 백업 유지 해야 합니다. 데이터베이스를 업데이트할 때 변경 직전의 백업 복사본을 확인 해야 합니다. 그런 다음 실수 하 고 프로덕션 환경에 배포한 후 때까지 검색 하지 않는 경우에 데이터베이스를 손상 되기 전의 상태로 복구할 수 계속 합니다. 자세한 내용은 참조 [Azure SQL 데이터베이스 백업 및 복원](https://msdn.microsoft.com/library/windowsazure/jj650016.aspx)합니다.
 
 
 > [!NOTE]

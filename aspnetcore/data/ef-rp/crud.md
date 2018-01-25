@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/crud
-ms.openlocfilehash: c26ba75f6a401d50a6b46bd7ee40500c5736f20f
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: d9b34c141401fbeaafe439fae1a7a75f2fe7b4ae
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="create-read-update-and-delete---ef-core-with-razor-pages-2-of-8"></a>만들기, 읽기, 업데이트 및 삭제-EF 코어 Razor 페이지 (2 / 8)
 
@@ -86,7 +86,7 @@ ms.lasthandoff: 01/19/2018
 
 ### <a name="add-related-data"></a>관련된 데이터를 추가 합니다.
 
-학생 인덱스 페이지에 대 한 스 캐 폴드 코드에는 포함 된 `Enrollments` 속성입니다. 이 섹션의 내용에는 `Enrollments` 컬렉션 세부 정보 페이지에 표시 됩니다.
+학생 인덱스 페이지에 대 한 스 캐 폴드 코드 포함 되지 않습니다는 `Enrollments` 속성입니다. 이 섹션의 내용에는 `Enrollments` 컬렉션 세부 정보 페이지에 표시 됩니다.
 
 `OnGetAsync` 방식의 *Pages/Students/Details.cshtml.cs* 사용 하 여는 `FirstOrDefaultAsync` 메서드는 단일 검색를 `Student` 엔터티. 다음 강조 표시 된 코드를 추가 합니다.
 
@@ -132,7 +132,7 @@ ms.lasthandoff: 01/19/2018
 <a id="overpost"></a>
 ### <a name="overposting"></a>초과 게시
 
-사용 하 여 `TryUpdateModel` overposting 못하기 때문에 보안 모범 사례 게시 된 값이 포함 된 필드를 업데이트 합니다. 예를 들어, 학생 엔터티를 포함 한 `Secret` 속성을이 웹 페이지를 업데이트 하거나 추가 하지 않습니다.
+사용 하 여 `TryUpdateModel` overposting 못하기 때문에 보안 모범 사례 게시 된 값이 포함 된 필드를 업데이트 합니다. 예를 들어, 학생 엔터티를 포함 한 `Secret` 이 웹 페이지를 업데이트 하거나 추가할 하지 않아야 하는 속성:
 
 [!code-csharp[Main](intro/samples/cu/Models/StudentZsecret.cs?name=snippet_Intro&highlight=7)]
 

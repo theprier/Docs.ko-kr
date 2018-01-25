@@ -10,17 +10,17 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/app-state
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 13b4d759ae574cdf9899ca148f0ffd3d9df6f9ae
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: e00960370fbe87ac0f81f8455526221fa992decd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-session-and-application-state-in-aspnet-core"></a>ASP.NET Core에서 세션 및 응용 프로그램 상태 소개
 
 여 [Rick Anderson](https://twitter.com/RickAndMSFT), [Steve Smith](https://ardalis.com/), 및 [Diana LaRose](https://github.com/DianaLaRose)
 
-HTTP는 상태 비저장 프로토콜입니다. 웹 서버 독립적인 요청으로 각 HTTP 요청을 처리 하 고 이전 요청에서 사용자 값을 유지 하지 않습니다. 이 문서에서는 응용 프로그램 및 요청 간에 세션 상태를 유지 하기 위해 다양 한 방법 설명 합니다. 
+HTTP는 상태 비저장 프로토콜입니다. 웹 서버 독립적인 요청으로 각 HTTP 요청을 처리 하 고 이전 요청에서 사용자 값을 유지 되지 않습니다. 이 문서에서는 응용 프로그램 및 요청 간에 세션 상태를 유지 하기 위해 다양 한 방법 설명 합니다. 
 
 ## <a name="session-state"></a>세션 상태
 
@@ -28,7 +28,7 @@ HTTP는 상태 비저장 프로토콜입니다. 웹 서버 독립적인 요청�
 
 ASP.NET Core 클라이언트 각 요청과 함께 서버에 전송 된 세션 ID를 포함 하는 쿠키를 제공 하 여 세션 상태를 유지 합니다. 서버 세션 ID를 사용 하 여 세션 데이터를 가져옵니다. 세션 쿠키의 브라우저 관련 이기 때문에 브라우저 세션을 공유할 수 없습니다. 세션 쿠키는 브라우저 세션이 끝나면 삭제 됩니다. 쿠키가 만료 된 세션에 대 한 수신 되 면 같은 세션 쿠키를 사용 하는 새 세션 생성 됩니다. 
 
-서버는 마지막 요청 이후 제한 된 시간에 대 한 세션을 유지합니다. 세션 제한 시간을 설정 하거나 기본값인 20 분을 사용할 수 있습니다. 세션 상태는 영구적으로 유지 될 필요가 없습니다 있지만 특정 세션에 고유한 사용자 데이터를 저장 하는 데 이상적입니다. 데이터에서에서 삭제 됩니다 백업 저장소 중 하나를 호출할 때 `Session.Clear` 세션 데이터 저장소에서 만료 될 때 또는 합니다. 브라우저를 닫을 때 세션 쿠키를 삭제 하는 경우 또는 서버를 알지 못합니다.
+서버는 마지막 요청 이후 제한 된 시간에 대 한 세션을 유지합니다. 세션 제한 시간을 설정 하거나 기본값인 20 분을 사용할 수 있습니다. 세션 상태는 영구적으로 유지 될 필요가 없습니다 있지만 특정 세션에 고유한 사용자 데이터를 저장 하는 데 이상적입니다. 데이터에서에서 삭제 됩니다 백업 저장소 중 하나를 호출할 때 `Session.Clear` 세션 데이터 저장소에서 만료 될 때 또는 합니다. 서버는 브라우저를 닫을 때 세션 쿠키를 삭제 하는 경우 또는 알지 못합니다.
 
 > [!WARNING]
 > 세션에 중요 한 데이터를 저장 하지 마십시오. 클라이언트 수 하지 브라우저를 닫고 세션 쿠키의 선택을 취소 (및 일부 브라우저 세션 쿠키 활성 상태를 유지할 전체 windows). 또한 세션; 단일 사용자로 제한 될 수 있습니다. 다음 사용자는 동일한 세션 계속 될 수 있습니다.
@@ -38,7 +38,7 @@ ASP.NET Core 클라이언트 각 요청과 함께 서버에 전송 된 세션 ID
 <a name="temp"></a>
 ## <a name="tempdata"></a>TempData
 
-ASP.NET Core MVC 노출 된 [TempData](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.controller.tempdata?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_Controller_TempData) 속성에는 [컨트롤러](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.controller?view=aspnetcore-2.0)합니다. 이 속성은 판독될 때까지 데이터를 저장합니다. `Keep` 및 `Peek` 메서드를 사용하여 삭제 없이 데이터를 검사할 수 있습니다. `TempData`단일 요청 보다 많이 필요한 데이터의 경우 리디렉션, 데 특히 유용 합니다. `TempData`이 공급자에 의해 구현 TempData 예를 들어 세션 상태 또는 쿠키를 사용 하 여 합니다.
+ASP.NET Core MVC 노출 된 [TempData](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.controller.tempdata?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_Controller_TempData) 속성에는 [컨트롤러](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.controller?view=aspnetcore-2.0)합니다. 이 속성은 읽을 때까지 데이터를 저장 합니다. `Keep` 및 `Peek` 메서드를 사용하여 삭제 없이 데이터를 검사할 수 있습니다. `TempData`단일 요청 보다 많이 필요한 데이터의 경우 리디렉션, 데 특히 유용 합니다. `TempData`이 공급자에 의해 구현 TempData 예를 들어 세션 상태 또는 쿠키를 사용 하 여 합니다.
 
 <a name="tempdata-providers"></a>
 ### <a name="tempdata-providers"></a>TempData 공급자
@@ -47,7 +47,7 @@ ASP.NET Core MVC 노출 된 [TempData](https://docs.microsoft.com/dotnet/api/mic
 
 ASP.NET Core 2.0 이상에서는 TempData 쿠키에 저장 하려면 기본적으로는 쿠키 기반 TempData 공급자를 사용 합니다.
 
-쿠키 데이터가 인코딩된는 [Base64UrlTextEncoder](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.webutilities.base64urltextencoder?view=aspnetcore-2.0)합니다. 단일 쿠키 크기가 쿠키 암호화 되 고 청크를 있으므로 제한에 ASP.NET Core 1.x 적용 되지 않습니다. 쿠키 데이터가 같은 보안 문제를 일으킬 수 암호화 된 데이터를 압축 하기 때문에 압축 되지 않은 [범죄](https://wikipedia.org/wiki/CRIME_(security_exploit)) 및 [위반](https://wikipedia.org/wiki/BREACH_(security_exploit)) 공격입니다. 쿠키 기반 TempData 공급자에 대 한 자세한 내용은 참조 하십시오. [CookieTempDataProvider](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.ViewFeatures/ViewFeatures/CookieTempDataProvider.cs)합니다.
+쿠키 데이터가 인코딩된는 [Base64UrlTextEncoder](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.webutilities.base64urltextencoder?view=aspnetcore-2.0)합니다. 단일 쿠키 크기가 쿠키 암호화 되 고 청크를 있으므로 제한에 ASP.NET Core 1.x 적용 되지 않습니다. 쿠키 데이터가 같은 보안 문제를 일으킬 수 암호화 된 데이터를 압축 하기 때문에 압축 되지 않은 [범죄](https://wikipedia.org/wiki/CRIME_(security_exploit)) 및 [위반](https://wikipedia.org/wiki/BREACH_(security_exploit)) 공격입니다. 쿠키 기반 TempData 공급자에 대 한 자세한 내용은 참조 하십시오. [CookieTempDataProvider](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.ViewFeatures/ViewFeatures/CookieTempDataProvider.cs)합니다.
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
@@ -101,13 +101,13 @@ TempData 공급자를 선택 하려면와 같은 몇 가지 고려 사항:
 
 쿠키는 웹 응용 프로그램에서 사용자 관련 데이터를 저장 하는 방법을 제공 합니다. 쿠키는 모든 요청과 함께 전송 되므로, 해당 크기를 최소로 유지 되어야 합니다. 이상적으로 서버에 저장 된 실제 데이터와 식별자만 쿠키에 저장 되어야 합니다. 대부분의 브라우저는 4096 바이트에 쿠키를 제한합니다. 또한 제한 된 개수의 쿠키는 각 도메인에 대해 사용할 수 있습니다.  
 
-쿠키는 변조 될 이기 때문에 서버에서 이러한 유효성을 검사 해야 합니다. 클라이언트에 쿠키의 지 속성 사용자 작업 및 만료 될 수 있는 경우에 클라이언트에서 데이터 지 속성 형식의 가장 영 속은 일반적으로.
+쿠키는 변조 될 이기 때문에 서버에서 이러한 유효성을 검사 해야 합니다. 클라이언트에 쿠키의 지 속성 사용자 작업 및 만료 될 수 있는 경우에 클라이언트에서 데이터 지 속성 형식의 가장 영 속는 일반적으로 합니다.
 
 쿠키는 자주 사용 개인 설정에 대 한 콘텐츠 알려진된 사용자에 대 한 사용자 지정한 합니다. 사용자만 파악 하 고 대부분의 경우에서 인증 되지 않은, 때문에 사용자 이름, 계정 이름 또는 고유한 사용자 ID (예: GUID)를 쿠키에 저장 하 여 쿠키를 일반적으로 보호할 수 있습니다. 그런 다음 사이트의 사용자 개인 설정 인프라에 액세스할 쿠키를 사용할 수 있습니다.
 
 ## <a name="httpcontextitems"></a>HttpContext.Items
 
-`Items` 컬렉션은 데이터를 저장 하는 좋은 위치 하나의 특정 요청을 처리 동안에 필요 합니다. 컬렉션의 각 요청 후 삭제 됩니다. `Items` 컬렉션은 가장 요청 하는 중에 다른 시점에서 작동 하 고 매개 변수를 전달할 방법이 없습니다 직접 때 통신 하도록 구성 요소 또는 미들웨어에 대 한 방법으로 사용 됩니다. 자세한 내용은 참조 [HttpContext.Items 작업](#working-with-httpcontextitems)이 문서의 뒷부분에 나오는 합니다.
+`Items` 컬렉션은 필요한 데이터를 저장 하는 좋은 위치 하나의 특정 요청을 처리 하는 동안에 합니다. 컬렉션의 각 요청 후 삭제 됩니다. `Items` 컬렉션은 가장 요청 하는 중에 다른 시점에서 작동 하 고 매개 변수를 전달할 방법이 없습니다 직접 때 통신 하도록 구성 요소 또는 미들웨어에 대 한 방법으로 사용 됩니다. 자세한 내용은 참조 [HttpContext.Items 작업](#working-with-httpcontextitems)이 문서의 뒷부분에 나오는 합니다.
 
 ## <a name="cache"></a>캐시
 
@@ -136,7 +136,7 @@ TempData 공급자를 선택 하려면와 같은 몇 가지 고려 사항:
 
 ---
 
-세션을 참조할 수 있습니다 `HttpContext` 일단 설치 되 고 구성 합니다.
+세션을 참조할 수 있습니다 `HttpContext` 후이 설치 되어 구성 합니다.
 
 액세스 하려는 경우 `Session` 전에 `UseSession` 예외 호출 된 `InvalidOperationException: Session has not been configured for this application or request` throw 됩니다.
 
@@ -144,13 +144,13 @@ TempData 공급자를 선택 하려면와 같은 몇 가지 고려 사항:
 
 ### <a name="loading-session-asynchronously"></a>세션을 비동기적으로 로드 
 
-기본 세션 레코드를 로드 하는 기본 세션 공급자에서 ASP.NET Core [IDistributedCache](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.distributed.idistributedcache) 경우에만 비동기적으로 저장소는 [ISession.LoadAsync](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.http.isession#Microsoft_AspNetCore_Http_ISession_LoadAsync) 명시적으로 메서드는 하기 전에  `TryGetValue`, `Set`, 또는 `Remove` 메서드. 경우 `LoadAsync` 내부 먼저 호출 되지 않습니다는 영향을 줄 수 크기를 조정 하는 앱의 기능 세션 레코드를 동기적으로 로드 합니다.
+기본 세션 레코드를 로드 하는 기본 세션 공급자에서 ASP.NET Core [IDistributedCache](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.distributed.idistributedcache) 경우에만 비동기적으로 저장소는 [ISession.LoadAsync](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.http.isession#Microsoft_AspNetCore_Http_ISession_LoadAsync) 명시적으로 메서드는 하기 전에  `TryGetValue`, `Set`, 또는 `Remove` 메서드. 경우 `LoadAsync` 호출 되지 않은 먼저 내부는 영향을 줄 수 크기를 조정 하는 앱의 기능 세션 레코드를 동기적으로 로드 합니다.
 
-이 패턴을 적용 하는 응용 프로그램을 래핑하는 [DistributedSessionStore](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.session.distributedsessionstore) 및 [DistributedSession](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.session.distributedsession) 경우 예외를 throw 하는 버전와 구현 된 `LoadAsync` 메서드는 없습니다 이전에 호출 `TryGetValue`, `Set`, 또는 `Remove`합니다. 서비스 컨테이너에 래핑된 버전을 등록 합니다.
+이 패턴을 적용 하는 응용 프로그램을 래핑하는 [DistributedSessionStore](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.session.distributedsessionstore) 및 [DistributedSession](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.session.distributedsession) 구현 하면 예외가 throw 된 버전으로는 `LoadAsync` 메서드가 실행 되지 않으면 이전에 호출 `TryGetValue`, `Set`, 또는 `Remove`합니다. 서비스 컨테이너에 래핑된 버전을 등록 합니다.
 
 ### <a name="implementation-details"></a>구현 세부 정보
 
-세션 쿠키를 사용 하 여 추적 하 고 단일 브라우저에서 요청을 식별 합니다. 기본적으로이 쿠키 이름은 "입니다. 경로 사용 하 여 AspNet.Session"하며"/"입니다. 쿠키 기본 도메인을 지정 하지 않으므로, 것 사용할 수 없어 클라이언트 쪽 스크립트를 페이지에서 (때문에 `CookieHttpOnly` 기본값으로 `true`).
+세션 쿠키를 사용 하 여 추적 하 고 단일 브라우저에서 요청을 식별 합니다. 기본적으로이 쿠키 이름은 "입니다. 경로 사용 하 여 AspNet.Session"하며"/"입니다. 쿠키 기본 도메인을 지정 하지 않는 때문에 이루어지지 않습니다 클라이언트 쪽 스크립트에서 사용할 페이지에서 (때문에 `CookieHttpOnly` 기본값으로 `true`).
 
 사용 하 여 세션 기본값을 재정의 하려면 `SessionOptions`:
 

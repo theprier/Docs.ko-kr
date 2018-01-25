@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/read-related-data
-ms.openlocfilehash: 1321cb00a432669b4a97ad20063b6cf9ea75f24c
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 2333ac70c77847ece1f90c9ff22eec30bc35fea1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="reading-related-data---ef-core-with-aspnet-core-mvc-tutorial-6-of-10"></a>읽기 관련 데이터-EF 코어 ASP.NET Core MVC 자습서 (6 / 10)
 
@@ -45,7 +45,7 @@ Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework Core 및 Vi
 
   ![명시적 로드 예제](read-related-data/_static/explicit-loading.png)
 
-* 지연 로드 합니다. 먼저 엔터티를 읽으면 관련된 데이터가 검색 되지 않습니다. 그러나는 탐색 속성에 액세스 하려고 처음으로 해당 탐색 속성에 필요한 데이터가 자동으로 검색 됩니다. 쿼리는 탐색 속성에서 처음으로 데이터를 가져올 하려고 할 때마다 데이터베이스에 전송 됩니다. Entity Framework Core 1.0 지연 로드를 지원 하지 않습니다.
+* 지연 로드 합니다. 먼저 엔터티를 읽으면 관련된 데이터가 검색 되지 않습니다. 그러나는 탐색 속성에 액세스 하려고 처음으로 해당 탐색 속성에 필요한 데이터가 자동으로 검색 됩니다. 쿼리는 탐색 속성에서 처음으로 데이터를 가져올 하려고 할 때마다 데이터베이스에 전송 됩니다. Entity Framework Core 1.0 한 지연 로딩이 지원 하지 않습니다.
 
 ### <a name="performance-considerations"></a>성능 고려 사항
 
@@ -75,7 +75,7 @@ Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework Core 및 Vi
 
 * 인덱스에서 제목 Courses로 변경 합니다.
 
-* 추가 **번호** 보여 주는 열은 `CourseID` 속성 값입니다. 기본적으로 기본 키 이므로 일반적으로 최종 사용자에 게 의미가 스 캐 폴드 되지 않습니다. 그러나이 경우 기본 키 의미 이며 하려는 표시할지를 기준으로 합니다.
+* 추가 **번호** 보여 주는 열은 `CourseID` 속성 값입니다. 기본적으로 기본 키 있기 때문에 일반적으로 최종 사용자에 게 의미가 스 캐 폴드 되지 않습니다. 그러나이 경우 기본 키 의미 이며 하려는 표시할지를 기준으로 합니다.
 
 * 변경 된 **부서** 부서 이름을 표시 하는 열입니다. 코드 표시는 `Name` 에 로드 되는 부서 엔터티의 속성은 `Department` 탐색 속성:
 
@@ -173,7 +173,7 @@ Index 메서드가 관련된 데이터를 즉시 로드의 보기 모델에 저�
 
 * 페이지 제목을 변경 **인덱스** 를 **강사**합니다.
 
-* 추가 **Office** 표시 하는 열 `item.OfficeAssignment.Location` 경우에만 `item.OfficeAssignment` null입니다. (0 또는 1을 한 관계 이기 때문에 있을 수 있습니다 하지 관련된 OfficeAssignment 엔터티.)
+* 추가 **Office** 표시 하는 열 `item.OfficeAssignment.Location` 경우에만 `item.OfficeAssignment` 이 null이 아닌 합니다. (0 또는 1을 한 관계 이기 때문에 있을 수 있습니다 하지 관련된 OfficeAssignment 엔터티.)
 
   ```html
   @if (item.OfficeAssignment != null)

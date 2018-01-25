@@ -8,11 +8,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: security/authorization/secure-data
-ms.openlocfilehash: 861ac619c7f5fb19a56c59536e20724d96bbddca
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 7404b8ec20ed6a00554c8a7ade9a282362b9a186
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>권한 부여에 의해 보호 되는 사용자 데이터와 ASP.NET Core 응용 프로그램 만들기
 
@@ -53,7 +53,7 @@ A `ContactIsOwnerAuthorizationHandler` 인증 처리기를 사용 하면 사용�
 
 ## <a name="prerequisites"></a>필수 구성 요소
 
-시작 자습서 아닙니다. 에 대해 잘 알고 있어야 합니다.
+이 자습서를 시작 하지 않습니다. 에 대해 잘 알고 있어야 합니다.
 
 * [ASP.NET Core MVC](xref:tutorials/first-mvc-app/start-mvc)
 * [Entity Framework Core](xref:data/ef-mvc/intro)
@@ -163,7 +163,7 @@ Entity Framework Core를 사용 하 여 서비스를 위해 등록 되어야 [�
 
 [!code-csharp[Main](secure-data/samples/final/Startup.cs?name=AuthorizationHandlers)]
 
-`ContactAdministratorsAuthorizationHandler`및 `ContactManagerAuthorizationHandler` 단일 항목으로 추가 됩니다. Singleton 이들은 하므로 EF를 사용 하지 않아 이며 필요한 모든 정보에는 `Context` 의 매개 변수는 `HandleRequirementAsync` 메서드.
+`ContactAdministratorsAuthorizationHandler`및 `ContactManagerAuthorizationHandler` 단일 항목으로 추가 됩니다. EF를 사용 하지 않는 하 고 필요한 모든 정보는 되므로 singleton 하기가 `Context` 의 매개 변수는 `HandleRequirementAsync` 메서드.
 
 전체 `ConfigureServices`:
 
@@ -221,11 +221,11 @@ Entity Framework Core를 사용 하 여 서비스를 위해 등록 되어야 [�
 
 추가`@using ContactManager.Authorization;`
 
-업데이트는 `Edit` 및 `Delete` 하므로 편집 및 연락처를 삭제할 수 있는 권한 가진 사용자에 대 한 렌더링 되는 링크입니다.
+업데이트는 `Edit` 및 `Delete` 편집 및 연락처를 삭제할 수 있는 권한 가진 사용자에 대 한 렌더링만 있으므로 연결 합니다.
 
 [!code-html[Main](secure-data/samples/final/Views/Contacts/Index.cshtml?range=63-84)]
 
-경고: 데이터를 편집 또는 삭제 권한이 없는 사용자 로부터 링크 숨기기 응용 프로그램을 보호 하지 못합니다. 링크 숨기기 사용 하면 응용 프로그램 사용자 친숙 한 유효한 링크를 표시 하 여 있습니다. 사용자가 편집을 호출 하 고 자신이 소유 하지 않는 데이터에 대 한 작업을 삭제 하도록 생성 된 Url 해킹 수 있습니다.  컨트롤러는 액세스 보안 검사를 반복 해야 합니다.
+경고: 응용 프로그램을 보호 하지 않는 편집 하거나 데이터를 삭제할 수 없는 권한이 있는 사용자는 링크 숨기기 합니다. 링크 숨기기 사용 하면 응용 프로그램 사용자 친숙 한 유효한 링크를 표시 하 여 있습니다. 사용자가 편집을 호출 하 고 자신이 소유 하지 않는 데이터에 대 한 작업을 삭제 하도록 생성 된 Url 해킹 수 있습니다.  컨트롤러는 액세스 보안 검사를 반복 해야 합니다.
 
 ### <a name="update-the-details-view"></a>업데이트 세부 정보 보기
 

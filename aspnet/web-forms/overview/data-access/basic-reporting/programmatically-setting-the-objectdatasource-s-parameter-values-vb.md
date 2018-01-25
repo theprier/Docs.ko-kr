@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/programmatically-setting-the-objectdatasource-s-parameter-values-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1f84558bcc59068f2c6cab390c303ebd97953aaa
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aa4afbf2200e1167c9f66aeaddb4273e710394b4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="programmatically-setting-the-objectdatasources-parameter-values-vb"></a>ObjectDataSource의 매개 변수 값 (VB)를 프로그래밍 방식으로 설정
 ====================
@@ -33,7 +33,7 @@ ms.lasthandoff: 11/10/2017
 
 그러나 기본 제공 데이터 원본 중 하나에서 담당 하 게 아직 일부 소스에서 매개 변수 값이 되 면 경우가 있을 수 있습니다 `Parameter` 개체입니다. 사이트에 사용자 계정을 지원 되는 경우 하고자 할 수 있습니다는 현재 로그인 id입니다. 방문자의 사용자에 따라 매개 변수 설정 또는 ObjectDataSource의 기본 개체의 메서드에 따라 보내기 전에 매개 변수 값을 사용자 지정 해야 합니다.
 
-때마다 ObjectDataSource의 `Select` 메서드가 호출 되는 ObjectDataSource 먼저 발생 합니다. 해당 [Selecting 이벤트](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.objectdatasource.selecting%28VS.80%29.aspx)합니다. 그런 다음 ObjectDataSource의 기본 개체의 메서드를 호출 합니다. ObjectDataSource의 완료 되 면 [선택한 이벤트](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.objectdatasource.selected%28VS.80%29.aspx) (그림 1에서는이 이벤트의이 시퀀스를 설명)에 발생 합니다. ObjectDataSource의 기본 개체의 메서드에 전달 된 매개 변수 값을 설정 하거나에 대 한 이벤트 처리기에서 사용자 지정할 수는 `Selecting` 이벤트입니다.
+때마다 ObjectDataSource의 `Select` 메서드가 호출 되는 ObjectDataSource 먼저 발생 합니다. 해당 [Selecting 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.selecting%28VS.80%29.aspx)합니다. 그런 다음 ObjectDataSource의 기본 개체의 메서드를 호출 합니다. ObjectDataSource의 완료 되 면 [선택한 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.selected%28VS.80%29.aspx) (그림 1에서는이 이벤트의이 시퀀스를 설명)에 발생 합니다. ObjectDataSource의 기본 개체의 메서드에 전달 된 매개 변수 값을 설정 하거나에 대 한 이벤트 처리기에서 사용자 지정할 수는 `Selecting` 이벤트입니다.
 
 
 [![ObjectDataSource의 선택 항목 및 선택 하면 이벤트 화재 전과 후 해당 기본 개체의 메서드 호출](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image2.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image1.png)
@@ -55,7 +55,7 @@ ms.lasthandoff: 11/10/2017
 **그림 2**: 새 쿼리를 추가 `EmployeesTableAdapter` ([전체 크기 이미지를 보려면 클릭](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image6.png))
 
 
-행을 반환 하는 SQL 문을 추가 하려면 선택 합니다. 지정 나타나면는 `SELECT` 문 기본 화면 `SELECT` 문을 `EmployeesTableAdapter` 이미 로드 됩니다. 에 추가 하면는 `WHERE` 절: `WHERE DATEPART(m, HireDate) = @Month`합니다. [DATEPART](https://msdn.microsoft.com/en-us/library/ms174420.aspx) 의 특정 날짜 부분을 반환 하는 T-SQL 함수는 `datetime` 형식;을 사용 하 여이 예제의 `DATEPART` 의 월을 반환 하는 `HireDate` 열입니다.
+행을 반환 하는 SQL 문을 추가 하려면 선택 합니다. 지정 나타나면는 `SELECT` 문 기본 화면 `SELECT` 문을 `EmployeesTableAdapter` 이미 로드 됩니다. 에 추가 하면는 `WHERE` 절: `WHERE DATEPART(m, HireDate) = @Month`합니다. [DATEPART](https://msdn.microsoft.com/library/ms174420.aspx) 의 특정 날짜 부분을 반환 하는 T-SQL 함수는 `datetime` 형식;을 사용 하 여이 예제의 `DATEPART` 의 월을 반환 하는 `HireDate` 열입니다.
 
 
 [![반환 된 행 위치 HireDate 열만 보다 작거나 같음는 @HiredBeforeDate 매개 변수](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image8.png)](programmatically-setting-the-objectdatasource-s-parameter-values-vb/_static/image7.png)

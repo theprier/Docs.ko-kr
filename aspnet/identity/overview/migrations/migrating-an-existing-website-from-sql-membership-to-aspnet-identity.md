@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: b88cd54040c02c977a83e20d7af7fda4fff969c1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3638c6779a0fcedaaa49623126b28ecf09a4954f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="migrating-an-existing-website-from-sql-membership-to-aspnet-identity"></a>ASP.NET Id로 기존 웹 사이트 SQL 멤버 자격에서 마이그레이션
 ====================
@@ -51,7 +51,7 @@ ms.lasthandoff: 11/10/2017
 
 ### <a name="migrating-to-visual-studio-2013"></a>Visual Studio 2013로 마이그레이션
 
-1. 웹 또는와 함께 Visual Studio 2013 용 Visual Studio Express 2013을 설치는 [최신 업데이트](https://www.microsoft.com/en-us/download/details.aspx?id=44921)합니다.
+1. 웹 또는와 함께 Visual Studio 2013 용 Visual Studio Express 2013을 설치는 [최신 업데이트](https://www.microsoft.com/download/details.aspx?id=44921)합니다.
 2. 설치 된 버전의 Visual Studio에서 위의 프로젝트를 엽니다. SQL Server Express 설치 되어 있지 않으면 컴퓨터에, 연결 문자열에서 SQL Express를 사용 하기 때문에 프로젝트를 열 때 메시지가 표시 됩니다. SQL Express를 설치 하거나로 해결 변경 LocalDb에 연결 문자열 하도록 선택할 수 있습니다. 이 문서에 대 한 LocalDb로 변경할 수 있습니다.
 3. Web.config를 열고 연결 문자열을 변경 합니다. (LocalDb) v 11.0에 SQLExpess 합니다. 제거 ' 사용자 인스턴스 = true' 연결 문자열에서 합니다.
 
@@ -89,26 +89,26 @@ ASP.NET Id 시스템에 필요한 스키마에 기존 데이터베이스를 마�
 | **IdentityUser** | **Type** | **IdentityRole** | **IdentityUserRole** | **IdentityUserLogin** | **IdentityUserClaim** |
 | --- | --- | --- | --- | --- | --- |
 | ID | string | ID | RoleId | ProviderKey | ID |
-| 사용자 이름 | string | 이름 | 사용자 Id | 사용자 Id | ClaimType |
+| 사용자 이름 | string | name | UserId | UserId | ClaimType |
 | PasswordHash | string |  |  | LoginProvider | ClaimValue |
 | SecurityStamp | string |  |  |  | 사용자\_Id |
 | 메일 | string |  |  |  |  |
 | EmailConfirmed | bool |  |  |  |  |
-| 전화 번호 | string |  |  |  |  |
+| PhoneNumber | string |  |  |  |  |
 | PhoneNumberConfirmed | bool |  |  |  |  |
 | LockoutEnabled | bool |  |  |  |  |
 | LockoutEndDate | DateTime |  |  |  |  |
 | AccessFailedCount | int |  |  |  |  |
 
-각이 모델에 대 한 속성에 해당 하는 열이 있는 테이블을 가져야 필요 합니다. 에 정의 된 클래스 및 테이블 간의 매핑을 `OnModelCreating` 의 메서드는 `IdentityDBContext`합니다. 이 구성의 fluent API 메서드 라고 하며 자세한 정보를 찾을 수 [여기](https://msdn.microsoft.com/en-us/data/jj591617.aspx)합니다. 클래스에 대 한 구성은 아래에서 설명한 대로
+각이 모델에 대 한 속성에 해당 하는 열이 있는 테이블을 가져야 필요 합니다. 에 정의 된 클래스 및 테이블 간의 매핑을 `OnModelCreating` 의 메서드는 `IdentityDBContext`합니다. 이 구성의 fluent API 메서드 라고 하며 자세한 정보를 찾을 수 [여기](https://msdn.microsoft.com/data/jj591617.aspx)합니다. 클래스에 대 한 구성은 아래에서 설명한 대로
 
 | **클래스** | **Table** | **기본 키** | **외래 키** |
 | --- | --- | --- | --- |
 | IdentityUser | AspnetUsers | ID |  |
 | IdentityRole | AspnetRoles | ID |  |
-| IdentityUserRole | AspnetUserRole | UserId + RoleId | 사용자\_Id-&gt;AspnetUsers RoleId-&gt;AspnetRoles |
-| IdentityUserLogin | AspnetUserLogins | ProviderKey + UserId + LoginProvider | 사용자 Id-&gt;AspnetUsers |
-| IdentityUserClaim | AspnetUserClaims | ID | 사용자\_Id-&gt;AspnetUsers |
+| IdentityUserRole | AspnetUserRole | UserId + RoleId | User\_Id-&gt;AspnetUsers RoleId-&gt;AspnetRoles |
+| IdentityUserLogin | AspnetUserLogins | ProviderKey + UserId + LoginProvider | UserId-&gt;AspnetUsers |
+| IdentityUserClaim | AspnetUserClaims | ID | User\_Id-&gt;AspnetUsers |
 
 이 정보에서는 새 테이블을 만드는 SQL 문을 만들 수 있습니다. 개별적으로 각 문을 작성 하거나 그런 다음 편집할 수는 EntityFramework PowerShell 명령을 사용 하 여 필요에 따라 전체 스크립트를 생성 했습니다. VS 열기에서이 작업을 수행 하는 **패키지 관리자 콘솔** 에서 **보기** 또는 **도구** 메뉴
 
@@ -122,7 +122,7 @@ SQL 멤버 자격 사용자 정보에 다른 Id 사용자 모델 클래스 즉 �
 
 [!code-sql[Main](migrating-an-existing-website-from-sql-membership-to-aspnet-identity/samples/sample1.sql)]
 
-다음 Id에 대 한 SQL 멤버 자격 데이터베이스에서 새로 추가 된 테이블에 기존 정보를 복사 해야 합니다. 이를 다른 한 테이블에서 직접 데이터를 복사 하 여 SQL을 통해 수행할 수 있습니다. 사용 데이터 테이블의 행을 추가 하려면는 `INSERT INTO [Table]` 생성 합니다. 사용 하는 다른 테이블에서 복사 하는 `INSERT INTO` 와 함께 문을 `SELECT` 문. 쿼리 하는 데 필요한 모든 사용자 정보를 가져오려는 *aspnet\_사용자* 및 *aspnet\_구성원* 테이블 데이터를 복사 하는 *AspNetUsers*테이블입니다. 사용 하 여는 `INSERT INTO` 및 `SELECT` 와 함께 `JOIN` 및 `LEFT OUTER JOIN` 문. 쿼리 및 테이블 간에 데이터를 복사 하는 방법에 대 한 자세한 내용은를 참조 [이](https://technet.microsoft.com/en-us/library/ms190750%28v=sql.105%29.aspx) 링크 합니다. 또한 AspnetUserLogins 및 AspnetUserClaims 테이블 않으므로 빈로 시작 기본적으로이 매핑되는 SQL 멤버 자격 정보가 없습니다. 복사 하는 유일한 정보는 사용자와 역할입니다. 이전 단계에서 만든 프로젝트에 대 한 정보를 사용자 테이블에 복사 하기 위한 SQL 문을 것
+다음 Id에 대 한 SQL 멤버 자격 데이터베이스에서 새로 추가 된 테이블에 기존 정보를 복사 해야 합니다. 이를 다른 한 테이블에서 직접 데이터를 복사 하 여 SQL을 통해 수행할 수 있습니다. 사용 데이터 테이블의 행을 추가 하려면는 `INSERT INTO [Table]` 생성 합니다. 사용 하는 다른 테이블에서 복사 하는 `INSERT INTO` 와 함께 문을 `SELECT` 문. 쿼리 하는 데 필요한 모든 사용자 정보를 가져오려는 *aspnet\_사용자* 및 *aspnet\_구성원* 테이블 데이터를 복사 하는 *AspNetUsers*테이블입니다. 사용 하 여는 `INSERT INTO` 및 `SELECT` 와 함께 `JOIN` 및 `LEFT OUTER JOIN` 문. 쿼리 및 테이블 간에 데이터를 복사 하는 방법에 대 한 자세한 내용은를 참조 [이](https://technet.microsoft.com/library/ms190750%28v=sql.105%29.aspx) 링크 합니다. 또한 AspnetUserLogins 및 AspnetUserClaims 테이블 않으므로 빈로 시작 기본적으로이 매핑되는 SQL 멤버 자격 정보가 없습니다. 복사 하는 유일한 정보는 사용자와 역할입니다. 이전 단계에서 만든 프로젝트에 대 한 정보를 사용자 테이블에 복사 하기 위한 SQL 문을 것
 
 [!code-sql[Main](migrating-an-existing-website-from-sql-membership-to-aspnet-identity/samples/sample2.sql)]
 
@@ -145,11 +145,11 @@ SQL 멤버 자격 사용자 정보에 다른 Id 사용자 모델 클래스 즉 �
 
     다음 SQL 멤버 자격 테이블의 정보는 새 Id 시스템에 매핑되는 방식을입니다.
 
-    aspnet\_역할--&gt; AspNetRoles
+    aspnet\_Roles --&gt; AspNetRoles
 
     asp\_netUsers 및 asp\_netMembership-&gt; AspNetUsers
 
-    aspnet\_UserInRoles-&gt; AspNetUserRoles
+    aspnet\_UserInRoles --&gt; AspNetUserRoles
 
     위의 섹션에서 설명 했 듯이 AspNetUserClaims 및 AspNetUserLogins 테이블은 비어 있습니다. AspNetUser 테이블의 '판별자' 필드에는 다음 단계로 정의 된 모델 클래스 이름과 일치 해야 합니다. PasswordHash 열이 형식에도 ' 암호화 암호 | 암호 솔트 | 암호 형식 '. 그러면 기존 암호를 다시 사용할 수 있도록 특수 SQL 멤버 자격 암호화 논리를 사용할 수 있습니다. 문서의 뒷부분에 설명 되어 있습니다.
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-iis
 msc.type: authoredcontent
-ms.openlocfilehash: 97910940f9de26ca71b111b945581d2de6650b02
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 01f72e0240e84944f8ffece9a2dbc5802be4646b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-to-test"></a>Visual Studio를 사용 하 여 ASP.NET 웹 배포: 테스트에 배포
 ====================
@@ -40,7 +40,7 @@ ms.lasthandoff: 11/10/2017
 
 옵션 2를 테스트 하는 가장 안정적인 방법은 이며 그럴 경우 반드시 없으면 옵션 1을 수행 합니다. 그러나에 배포 하는 경우 타사 호스팅 공급자 옵션을 2 못할 수도 있습니다 또는 수 비용이 많이 들며, 있으므로이 자습서 시리즈 두 메서드를 보여 줍니다. 옵션 2에 대 한 지침에 제공 되는 [프로덕션 환경에 배포](deploying-to-production.md) 자습서입니다.
 
-Visual Studio에서 웹 서버를 사용 하는 방법에 대 한 자세한 내용은 참조 [ASP.NET 웹 프로젝트에 대 한 Visual Studio의 웹 서버](https://msdn.microsoft.com/en-us/library/58wxa9w5.aspx)합니다.
+Visual Studio에서 웹 서버를 사용 하는 방법에 대 한 자세한 내용은 참조 [ASP.NET 웹 프로젝트에 대 한 Visual Studio의 웹 서버](https://msdn.microsoft.com/library/58wxa9w5.aspx)합니다.
 
 미리 알림: 오류 메시지가 자습서를 진행할 때 작동 하지 않는 경우 반드시 확인는 [문제 해결 페이지](troubleshooting.md)합니다.
 
@@ -73,7 +73,7 @@ IIS를 설치한 후 실행 **IIS 관리자** 를.NET Framework 버전 4 기본 
     [![Inetmgr_showing_4.0_app_pools](deploying-to-iis/_static/image3.png)](deploying-to-iis/_static/image2.png)
 4. 두 개의 응용 프로그램 풀을 참조 하는 경우.NET Framework 2.0으로 설정 되어 두 값을 함께 IIS에서 ASP.NET 4를 설치 해야 합니다.
 
-    Windows 8 되도록 ASP.NET 4.5를 설치 하면 섹션 또는 참조 이전 지침을 참조 하십시오. [이 KB 문서](https://support.microsoft.com/kb/2736284)합니다. Windows 7을 마우스 오른쪽 단추로 클릭 하 여 명령 프롬프트 창을 열고 **명령 프롬프트** windows에서 **시작** 메뉴에서 **관리자 권한으로 실행**합니다. 그러고 나 서 [aspnet\_regiis.exe](https://msdn.microsoft.com/en-us/library/k6h9cz8h.aspx) 다음 명령을 사용 하 여 IIS에서 ASP.NET 4를 설치 합니다. (32 비트 시스템 "프레임 워크"와 "Framework64"를 대체 합니다.)
+    Windows 8 되도록 ASP.NET 4.5를 설치 하면 섹션 또는 참조 이전 지침을 참조 하십시오. [이 KB 문서](https://support.microsoft.com/kb/2736284)합니다. Windows 7을 마우스 오른쪽 단추로 클릭 하 여 명령 프롬프트 창을 열고 **명령 프롬프트** windows에서 **시작** 메뉴에서 **관리자 권한으로 실행**합니다. 그러고 나 서 [aspnet\_regiis.exe](https://msdn.microsoft.com/library/k6h9cz8h.aspx) 다음 명령을 사용 하 여 IIS에서 ASP.NET 4를 설치 합니다. (32 비트 시스템 "프레임 워크"와 "Framework64"를 대체 합니다.)
 
     [!code-console[Main](deploying-to-iis/samples/sample1.cmd)]
 
@@ -94,9 +94,9 @@ IIS, 웹 응용 프로그램을 게시할 준비가 되었습니다. 그러나 �
 
 LocalDB은 테스트 환경에 설치 된 SQL Server Express가 필요 하므로 IIS에서 작동 하도록 설계 되지 않았습니다. Visual Studio 2010 SQL Server Express를 사용 중인 경우 기본적으로 이미 설치 되었습니다. Visual Studio 2012를 사용 하는 경우 설치 해야 합니다.
 
-SQL Server Express를 설치 하려면 설치에서 [다운로드 센터: Microsoft SQL Server 2012 Express](https://www.microsoft.com/en-us/download/details.aspx?id=29062) 클릭 하 여 [ENU\x64\SQLEXPR\_x64\_ENU.exe](https://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x64/SQLEXPR_x64_ENU.exe) 또는 [ ENU\x86\SQLEXPR\_x86\_ENU.exe](https://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x86/SQLEXPR_x86_ENU.exe)합니다. 잘못 선택 하면 시스템에 대 한 것을 설치 하지 하 고 다른 하나를 시도할 수 있습니다.
+SQL Server Express를 설치 하려면 설치에서 [다운로드 센터: Microsoft SQL Server 2012 Express](https://www.microsoft.com/download/details.aspx?id=29062) 클릭 하 여 [ENU\x64\SQLEXPR\_x64\_ENU.exe](https://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x64/SQLEXPR_x64_ENU.exe) 또는 [ ENU\x86\SQLEXPR\_x86\_ENU.exe](https://download.microsoft.com/download/8/D/D/8DD7BDBA-CEF7-4D8E-8C16-D9F69527F909/ENU/x86/SQLEXPR_x86_ENU.exe)합니다. 잘못 선택 하면 시스템에 대 한 것을 설치 하지 하 고 다른 하나를 시도할 수 있습니다.
 
-SQL Server 설치 센터의 첫 번째 페이지에서 클릭 **새 SQL Server 독립 실행형 설치 또는 기존 설치에 기능 추가**, 기본 선택 항목을 수락 하 여 지침을 따릅니다. 설치 마법사에서 기본 설정을 적용 합니다. 설치 옵션에 대 한 자세한 내용은 참조 [(설치) 설치 마법사에서 SQL Server 2012 설치](https://msdn.microsoft.com/en-us/library/ms143219.aspx)합니다.
+SQL Server 설치 센터의 첫 번째 페이지에서 클릭 **새 SQL Server 독립 실행형 설치 또는 기존 설치에 기능 추가**, 기본 선택 항목을 수락 하 여 지침을 따릅니다. 설치 마법사에서 기본 설정을 적용 합니다. 설치 옵션에 대 한 자세한 내용은 참조 [(설치) 설치 마법사에서 SQL Server 2012 설치](https://msdn.microsoft.com/library/ms143219.aspx)합니다.
 
 ## <a name="create-sql-server-express-databases-for-the-test-environment"></a>테스트 환경에 대 한 SQL Server Express 데이터베이스 만들기
 
@@ -233,7 +233,7 @@ Contoso 대학교 응용 프로그램 데이터베이스가 두 개인: 멤버 �
 
 Visual Studio에서 Entity Framework를 감지 하는 경우 `DbContext` 클래스에 항목을 만듭니다는 **데이터베이스** 포함 된 섹션에는 **Code First 마이그레이션 실행** 대신 확인란은  **데이터베이스를 업데이트** 확인란 합니다. 이 자습서에 대 한 Code First 마이그레이션을 배포를 지정 하려면 해당 확인란을 사용 합니다.
 
-일부 시나리오에서 사용 중일 수 있습니다는 `DbContext` 데이터베이스 남기려는 마이그레이션 대신 dbDacFx 공급자를 사용 하 여 데이터베이스를 배포 합니다. 이 경우 참조 [마이그레이션 없이 코드 첫 번째 데이터베이스를 어떻게 배포 합니까?](https://msdn.microsoft.com/en-us/library/ee942158.aspx#deploy_code_first_without_migrations) MSDN에서 ASP.NET 웹 배포 FAQ에 있습니다.
+일부 시나리오에서 사용 중일 수 있습니다는 `DbContext` 데이터베이스 남기려는 마이그레이션 대신 dbDacFx 공급자를 사용 하 여 데이터베이스를 배포 합니다. 이 경우 참조 [마이그레이션 없이 코드 첫 번째 데이터베이스를 어떻게 배포 합니까?](https://msdn.microsoft.com/library/ee942158.aspx#deploy_code_first_without_migrations) MSDN에서 ASP.NET 웹 배포 FAQ에 있습니다.
 
 다음 단계에 적용 된 **SchoolContext** 여기에 데이터베이스는 **데이터베이스** 대화 상자의 섹션.
 
@@ -332,7 +332,7 @@ Visual Studio에서 IIS 또는 IIS Express를 실행 하는 방법에 대 한 �
 
 - [IIS Express 개요](https://www.iis.net/learn/extensions/introduction-to-iis-express/iis-express-overview) IIS.net 사이트에 있습니다.
 - [IIS Express 소개](https://weblogs.asp.net/scottgu/archive/2010/06/28/introducing-iis-express.aspx) Scott Guthrie의 블로그입니다.
-- [ASP.NET 웹 프로젝트에 Visual Studio의 서버를 웹](https://msdn.microsoft.com/en-us/library/58wxa9w5.aspx)합니다.
+- [ASP.NET 웹 프로젝트에 Visual Studio의 서버를 웹](https://msdn.microsoft.com/library/58wxa9w5.aspx)합니다.
 - [주요 차이점 간의 IIS 및 ASP.NET 개발 서버](../../older-versions-getting-started/deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-cs.md) ASP.NET 사이트의 합니다.
 
 어떤 문제에 대 한 정보는 보통 신뢰 수준에서 응용 프로그램이 실행 될 때 발생할 수 있습니다, 참조 [보통 신뢰에서 ASP.NET 응용 프로그램 호스팅](http://www.4guysfromrolla.com/articles/100307-1.aspx) Rolla 사이트에서 4 Guy에 있습니다.

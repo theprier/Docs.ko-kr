@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8d4d1a5795f5edabc51b578ecc45676490711c1a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 79f06707cadf027baa03652dc722cab31f494b09
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="core-differences-between-iis-and-the-aspnet-development-server-c"></a>코어 IIS와 ASP.NET 개발 서버 (C#)의 차이점
 ====================
@@ -47,7 +47,7 @@ ASP.NET 개발 서버는 현재 로그온된 한 사용자의 보안 컨텍스�
 [!code-csharp[Main](core-differences-between-iis-and-the-asp-net-development-server-cs/samples/sample1.cs)]
 
 > [!NOTE]
-> [ `File.WriteAllText` 메서드](https://msdn.microsoft.com/en-us/library/system.io.file.writealltext.aspx) 존재 하지 않는 경우 다음 지정된 된 콘텐츠를 씁니다 새 파일을 만듭니다. 파일이 이미 있는 경우 기존 내용을 덮어씁니다.
+> [ `File.WriteAllText` 메서드](https://msdn.microsoft.com/library/system.io.file.writealltext.aspx) 존재 하지 않는 경우 다음 지정된 된 콘텐츠를 씁니다 새 파일을 만듭니다. 파일이 이미 있는 경우 기존 내용을 덮어씁니다.
 
 
 다음으로 방문는 *업무량이 직접 ASP.NET 3.5 24 시간 동안에서* ASP.NET 개발 서버를 사용 하 여 개발 환경에서 책 검토 페이지. 로그인 되어 있다고 가정할 경우 만들고는 웹에서 텍스트 파일을 수정 하려면 적절 한 권한이 있는 계정 사용 하 여 컴퓨터에 로그온 할 응용 프로그램의 루트 디렉터리는 우수, 이전과 동일 나타나지만 날짜 및 시간과 사용자의 페이지는 때마다 방문  IP 주소에 저장 됩니다는 `LastTYASP35Access.txt` 파일입니다. 이 파일을; 브라우저를 가리키도록 그림 1에 나와 있는 것과 유사한 메시지가 나타납니다.
@@ -58,7 +58,7 @@ ASP.NET 개발 서버는 현재 로그온된 한 사용자의 보안 컨텍스�
 **그림 1**: 텍스트 파일에 마지막 날짜와 시간에서 우수 개체를 방문한 ([전체 크기 이미지를 보려면 클릭](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image3.png))
 
 
-프로덕션 환경에 웹 응용 프로그램을 배포 하 고 호스팅된을 방문 *업무량이 직접 ASP.NET 3.5 24 시간 동안에서* 책 검토 페이지. 이 시점에서 하거나 나타납니다 책 검토 페이지 normal 또는 그림 2에 표시 되는 오류 메시지. 일부 웹 호스트 공급자는 경우 페이지는 오류 없이 작동 익명 ASP.NET 컴퓨터 계정에 대 한 쓰기 권한을 부여 합니다. 웹 호스트 공급자가 익명 계정에 대 한 쓰기 액세스를 금지 하는 반면 경우 아니라면 [ `UnauthorizedAccessException` 예외](https://msdn.microsoft.com/en-us/library/system.unauthorizedaccessexception.aspx) 발생할 때의 `TYASP35.aspx` 페이지 현재 날짜 및 시간에 쓰려고 시도 `LastTYASP35Access.txt` 파일입니다.
+프로덕션 환경에 웹 응용 프로그램을 배포 하 고 호스팅된을 방문 *업무량이 직접 ASP.NET 3.5 24 시간 동안에서* 책 검토 페이지. 이 시점에서 하거나 나타납니다 책 검토 페이지 normal 또는 그림 2에 표시 되는 오류 메시지. 일부 웹 호스트 공급자는 경우 페이지는 오류 없이 작동 익명 ASP.NET 컴퓨터 계정에 대 한 쓰기 권한을 부여 합니다. 웹 호스트 공급자가 익명 계정에 대 한 쓰기 액세스를 금지 하는 반면 경우 아니라면 [ `UnauthorizedAccessException` 예외](https://msdn.microsoft.com/library/system.unauthorizedaccessexception.aspx) 발생할 때의 `TYASP35.aspx` 페이지 현재 날짜 및 시간에 쓰려고 시도 `LastTYASP35Access.txt` 파일입니다.
 
 
 [![IIS에서 사용 되는 기본 컴퓨터 계정에 파일 시스템에 쓸 수 있는 권한이 없는](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image5.png)](core-differences-between-iis-and-the-asp-net-development-server-cs/_static/image4.png)
@@ -90,7 +90,7 @@ ASP.NET 런타임 여러 (요청자 식별) 하는 인증 및 권한 부여 (요
 
 [!code-xml[Main](core-differences-between-iis-and-the-asp-net-development-server-cs/samples/sample3.xml)]
 
-코드로 대체 합니다.
+바꿀 대상:
 
 [!code-xml[Main](core-differences-between-iis-and-the-asp-net-development-server-cs/samples/sample4.xml)]
 
@@ -123,7 +123,7 @@ IIS가 사용 하도록 구성 되 면 통합된 파이프라인에 다음 태�
 이 태그는 ASP.NET 기반 인증 및 권한 부여 모듈을 사용 하는 IIS 7을 지시 합니다. 응용 프로그램을 다시 배포 하 고 PDF 파일을 다시 방문. IIS에서 요청을 처리 하는 경우이 시간 제공 ASP.NET 런타임 인증 및 권한 부여 논리 기회를 요청을 검사 합니다. 인증 된 사용자만의 내용을 볼 수 있으므로 `PrivateDocs` 익명 방문자 폴더를 자동으로 로그인 페이지로 리디렉션됩니다. (그림 3을 다시 참조).
 
 > [!NOTE]
-> 웹 호스트 공급자는 계속 IIS 6을 사용 하는 경우 통합된 파이프라인 기능을 사용할 수 없습니다. 한 가지 해결 방법은 HTTP 액세스를 금지 하는 폴더에 개인 문서를 저장 하는 (예: `App_Data`) 한 다음 이러한 문서를 처리 하는 페이지를 만듭니다. 이 페이지를 호출할 수 있습니다 `GetPDF.aspx`, 쿼리 문자열 매개 변수를 통해 PDF의 이름을 전달 됩니다. `GetPDF.aspx` 페이지는 사용자가 파일을 볼 수 있으며,이 경우 사용 먼저 확인 됩니다는 [ `Response.WriteFile(filePath)` ](https://msdn.microsoft.com/en-us/library/system.web.httpresponse.writefile.aspx) 메서드는 요청 된 PDF 파일의 내용을 요청 클라이언트로 다시 보낼 수 있습니다. 이 기술이 통합된 파이프라인 수 있도록 하지 않은 경우에 IIS 7에 대 한 작동할 것입니다.
+> 웹 호스트 공급자는 계속 IIS 6을 사용 하는 경우 통합된 파이프라인 기능을 사용할 수 없습니다. 한 가지 해결 방법은 HTTP 액세스를 금지 하는 폴더에 개인 문서를 저장 하는 (예: `App_Data`) 한 다음 이러한 문서를 처리 하는 페이지를 만듭니다. 이 페이지를 호출할 수 있습니다 `GetPDF.aspx`, 쿼리 문자열 매개 변수를 통해 PDF의 이름을 전달 됩니다. `GetPDF.aspx` 페이지는 사용자가 파일을 볼 수 있으며,이 경우 사용 먼저 확인 됩니다는 [ `Response.WriteFile(filePath)` ](https://msdn.microsoft.com/library/system.web.httpresponse.writefile.aspx) 메서드는 요청 된 PDF 파일의 내용을 요청 클라이언트로 다시 보낼 수 있습니다. 이 기술이 통합된 파이프라인 수 있도록 하지 않은 경우에 IIS 7에 대 한 작동할 것입니다.
 
 
 ## <a name="summary"></a>요약
@@ -138,7 +138,7 @@ IIS가 사용 하도록 구성 되 면 통합된 파이프라인에 다음 태�
 
 - [IIS 7.0에서 ASP.NET과 통합](https://www.iis.net/learn/application-frameworks/building-and-running-aspnet-applications/aspnet-integration-with-iis)
 - [ASP.NET 포럼 인증을 사용 하 여 모든 종류의 IIS 7에서 콘텐츠](https://blogs.iis.net/bills/archive/2007/05/19/using-asp-net-forms-authentication-with-all-types-of-content-with-iis7-video.aspx) (비디오)
-- [Visual Web Developer에서 웹 서버](https://msdn.microsoft.com/en-us/library/58wxa9w5.aspx)
+- [Visual Web Developer에서 웹 서버](https://msdn.microsoft.com/library/58wxa9w5.aspx)
 
 >[!div class="step-by-step"]
 [이전](common-configuration-differences-between-development-and-production-cs.md)

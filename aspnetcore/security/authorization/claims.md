@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authorization/claims
-ms.openlocfilehash: dd8f42684f9e58b9329602aa9b70d2c0ab950892
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 870bdf79abc2c94745ab5da6997a37ed0e4ea4e2
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="claims-based-authorization"></a>클레임 기반 권한 부여
 
@@ -29,7 +29,7 @@ id 값이 여러 개인 여러 클레임을 포함할 수 있습니다 및 동�
 
 클레임 기반된 권한 부여 확인은 선언적-개발자 포함 하는 컨트롤러 또는 컨트롤러 내 작업에 대해 해당 코드 내에서 현재 사용자가 소유 해야, 필요에 따라 클레임 값 해야 하 고 있으면 액세스 하는 클레임을 지정 하는 요청 된 리소스입니다. 요구 사항은 정책 기반 클레임 개발자 값이 빌드 및 클레임 요구를 표현 하는 정책을 등록 합니다.
 
-가장 단순한 유형의 클레임을 클레임의 존재에 대 한 정책 검색 하 고 값을 확인 하지 않습니다.
+가장 단순한 유형의 클레임을 클레임의 존재에 대 한 정책 검색 및 값을 확인 하지 않습니다.
 
 먼저를 만들고 정책을 등록 해야 합니다. 에 일반적으로 참여 하는 권한 부여 서비스 구성의 일부분으로 수행 됩니다이 `ConfigureServices()` 에 프로그램 *Startup.cs* 파일입니다.
 

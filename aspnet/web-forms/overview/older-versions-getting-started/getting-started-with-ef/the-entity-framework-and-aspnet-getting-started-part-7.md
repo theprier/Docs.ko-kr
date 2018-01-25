@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: 7697763b97e36304d686c77e8cedd060d630c530
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aeea122636f5235364e6a40cb6e041b1fe221317
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-7"></a>먼저 Entity Framework 4.0 데이터베이스와 시작 및 ASP.NET 4 Web Forms-7 부
 ====================
@@ -135,7 +135,7 @@ Entity Framework가 자동으로 실행 되지 저장된 프로시저와 같은 
 
 페이지 사용 하 여 이제는 `GetCourses` 모든 과정의 목록을 검색 하는 프로시저를 저장 합니다. 이전 처럼 작동 하는지 확인 하려면 페이지를 실행 합니다.
 
-(저장된 프로시저에 의해 검색 되는 엔터티의 탐색 속성 하지 자동으로 채워질 수에 따라 이러한 엔터티와 관련 된 데이터 `ObjectContext` 기본 설정 합니다. 자세한 내용은 참조 [관련 개체 로드](https://msdn.microsoft.com/en-us/library/bb896272.aspx) MSDN 라이브러리에서.)
+(저장된 프로시저에 의해 검색 되는 엔터티의 탐색 속성 하지 자동으로 채워질 수에 따라 이러한 엔터티와 관련 된 데이터 `ObjectContext` 기본 설정 합니다. 자세한 내용은 참조 [관련 개체 로드](https://msdn.microsoft.com/library/bb896272.aspx) MSDN 라이브러리에서.)
 
 다음 자습서에서 프로그램 및 테스트 데이터 서식 및 유효성 검사 규칙을 쉽게 수행할 수 있도록 Dynamic Data 기능을 사용 하는 방법을 설명 합니다. 데이터 형식 문자열 등의 각 웹 페이지 규칙 및는 필드는 필수 여부를 지정 하지 않고 데이터 모델 메타 데이터에 이러한 규칙을 지정할 수 있습니다 및 모든 페이지에 자동으로 적용 합니다.
 

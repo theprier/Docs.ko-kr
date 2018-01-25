@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/dependency-injection
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 1da3d557c48921747634b08cedb518184fb5f963
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 7a5a0991694b2c7caa79dbc09f6471d614f67dac
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-dependency-injection-in-aspnet-core"></a>ASP.NET Core의 종속성 주입 소개
 
@@ -22,7 +22,7 @@ ms.lasthandoff: 01/19/2018
 
 여 [Steve Smith](https://ardalis.com/) 및 [Scott Addie](https://scottaddie.com)
 
-ASP.NET Core는 지원 및 종속성 주입을 활용 하도록를 처음부터 다시 설계 되었습니다. ASP.NET Core 응용 프로그램 시작 클래스의 메서드를 삽입 하 여 기본 제공 프레임 워크 서비스를 활용할 수 있습니다 및 삽입도에 대 한 응용 프로그램 서비스를 구성할 수 있습니다. ASP.NET Core에서 제공 하는 기본 서비스 컨테이너에는 최소 기능 설정 및 다른 컨테이너를 대체 하기 위한 하지 제공 합니다.
+ASP.NET Core는 지원 및 종속성 주입을 활용 하도록를 처음부터 다시 설계 되었습니다. ASP.NET Core 응용 프로그램 시작 클래스의 메서드를 삽입 하 여 기본 제공 프레임 워크 서비스를 활용할 수 있습니다 및 삽입도에 대 한 응용 프로그램 서비스를 구성할 수 있습니다. ASP.NET Core에서 제공 하는 기본 서비스 컨테이너에는 최소 기능 설정 및 다른 컨테이너를 대체 하기 위한 되지 제공 합니다.
 
 [샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/dependency-injection/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
@@ -30,7 +30,7 @@ ASP.NET Core는 지원 및 종속성 주입을 활용 하도록를 처음부터 
 
 종속성 주입 DI ()은 개체와 공동 작업자 또는 종속성 간의 느슨한 결합을 실현을 위한 기술입니다. 공동 작업자를 인스턴스화하거나 정적 참조를 사용 하 여 직접, 대신 클래스의 동작을 수행 하는 데 필요한 개체는 특정 방식으로 클래스에 제공 됩니다. 대부분의 경우 클래스 선언를 수행 하도록 허용 하는 생성자를 통해 해당 종속성은 [명시적 종속성 원칙](http://deviq.com/explicit-dependencies-principle/)합니다. 이 방법은 "생성자 삽입" 라고 합니다.
 
-클래스 염두에서 DI 함께 디자인 된 때 자신의 공동 작업자에 직접적으로 하드 코드 된 종속성이 없는 때문에 느슨하게 결합 됩니다. 같은 [종속성 반전 원칙](http://deviq.com/dependency-inversion-principle/), 상태는 *"높은 수준의 모듈 낮은 수준 모듈에 종속; 둘 다 추상화에 의존 해야 합니다."* 특정 구현을 참조 하는 대신 클래스 요청 추상화 (일반적으로 `interfaces`) 클래스를 생성할 때에 제공 되는 합니다. 인터페이스에 대 한 종속성을 추출 하 고 매개 변수로 이러한 인터페이스의 구현을 제공 하는 또한의 예로 [전략 디자인 패턴](http://deviq.com/strategy-design-pattern/)합니다.
+클래스는 염두에서 DI 함께 디자인 된 때 직접적으로 하드 코드 된 종속성이 없는 경우 해당 공동 작업자 때문에 느슨하게 결합 하는 합니다. 같은 [종속성 반전 원칙](http://deviq.com/dependency-inversion-principle/), 상태는 *"높은 수준의 모듈 낮은 수준 모듈에 의존해 서는 안; 둘 다 추상화에 의존 해야 합니다."* 특정 구현을 참조 하는 대신 클래스 요청 추상화 (일반적으로 `interfaces`) 클래스를 생성할 때에 제공 되는 합니다. 인터페이스에 대 한 종속성을 추출 하 고 매개 변수로 이러한 인터페이스의 구현을 제공 하는 또한의 예로 [전략 디자인 패턴](http://deviq.com/strategy-design-pattern/)합니다.
 
 시스템 DI를 사용 하도록 설계 된, 자신의 생성자 (또는 속성)을 통해 해당 종속성을 요청 하는 여러 클래스가 때 관련된 종속성과 함께 이러한 클래스를 만드는 데 전용된 되는 클래스를 알면 큰 도움이 됩니다. 이러한 클래스 라고 *컨테이너*, 또는 보다 구체적으로, [Inversion of Control (IoC)](http://deviq.com/inversion-of-control/) DI (Dependency Injection) 컨테이너 또는 컨테이너입니다. 컨테이너에서 요청 된 형식의 인스턴스를 제공 해야 하는 팩터리 기본적으로. 지정된 된 형식에 선언에 종속성이 고 컨테이너 종속성 형식을 제공 하도록 구성 된 경우 요청한 인스턴스를 만드는 중 종속성 만들어집니다. 이러한 방식으로 모든 개체 하드 코드 된 생성의 도움 없이 클래스에 복잡 한 종속성 그래프를 제공할 수 있습니다. 종속성과 함께 개체를 만들 뿐만 아니라 컨테이너는 일반적으로 응용 프로그램 내에서 개체 수명을 관리 합니다.
 
@@ -112,7 +112,7 @@ public CharactersController(ICharacterRepository characterRepository, string tit
 
 `AddTransient` 메서드가 인스턴스화되는 별도로 필요로 하는 모든 개체에 대 한 구체적인 서비스에 추상 형식을 매핑할 때 사용 됩니다. 서비스의로 알려져 *수명*, 및 추가 수명 옵션은 다음과 같습니다. 각 등록 하면 서비스에 대 한 적절 한 기간 동안 선택 하는 것이 유용 합니다. 서비스의 새 인스턴스를 요청한 각 클래스에 제공 해야 하나요? 하나의 인스턴스만 사용 되도록 지정 된 웹 요청? 단일 인스턴스를 사용할지 또는 응용 프로그램의 수명 동안?
 
-이 문서에 대 한 샘플에는 호출 되는 문자 이름을 표시 하는 간단한 컨트롤러 `CharactersController`합니다. 해당 `Index` 메서드는 응용 프로그램에서 저장 된 문자의 현재 목록을 표시 하 고 없는 경우에 소수의 문자를 사용 하 여 컬렉션을 초기화 합니다. 이 응용 프로그램 엔터티 프레임 워크 코어를 사용 하지만 및 `ApplicationDbContext` 중 어떤 것도 컨트롤러에서 해당 지 속성에 대 한 클래스입니다. 인터페이스 뒤에 있는 특정 데이터 액세스 메커니즘 추출 된 대신 `ICharacterRepository`을 따라는 [리포지토리 패턴](http://deviq.com/repository-pattern/)합니다. 인스턴스 `ICharacterRepository` 생성자를 통해 요청 되 고 다음에 사용 되는 문자를 필요에 따라 액세스 전용 필드에 할당 합니다.
+이 문서에 대 한 샘플에는 호출 되는 문자 이름을 표시 하는 간단한 컨트롤러 `CharactersController`합니다. 해당 `Index` 메서드는 응용 프로그램에서 저장 된 문자의 현재 목록을 표시 하 고 없는 경우에 소수의 문자를 사용 하 여 컬렉션을 초기화 합니다. 이 응용 프로그램 엔터티 프레임 워크 코어를 사용 하지만 및 `ApplicationDbContext` 중 해당 지 속성에 대 한 클래스 즉 컨트롤러에서 명백 합니다. 인터페이스 뒤에 있는 특정 데이터 액세스 메커니즘 추출 된 대신 `ICharacterRepository`을 따라는 [리포지토리 패턴](http://deviq.com/repository-pattern/)합니다. 인스턴스 `ICharacterRepository` 생성자를 통해 요청 되 고 다음에 사용 되는 문자를 필요에 따라 액세스 전용 필드에 할당 합니다.
 
 [!code-csharp[Main](../fundamentals/dependency-injection/sample/DependencyInjectionSample/Controllers/CharactersController.cs?highlight=3,5,6,7,8,14,21-27&range=8-36)]
 
@@ -120,7 +120,7 @@ public CharactersController(ICharacterRepository characterRepository, string tit
 
 [!code-csharp[Main](../fundamentals/dependency-injection/sample/DependencyInjectionSample/Interfaces/ICharacterRepository.cs?highlight=8,9)]
 
-이 인터페이스는 구체적인 형식에서 구현에 `CharacterRepository`, 즉 사용 됩니다.
+이 인터페이스는 구체적인 형식에서 구현에 `CharacterRepository`, 런타임에 사용 되는 합니다.
 
 > [!NOTE]
 > DI 방식으로 함께 사용 되는 `CharacterRepository` 클래스는 일반 모델 뿐 아니라 "저장소" 또는 데이터 액세스 클래스에서 응용 프로그램 서비스의 모든 따를 수 있습니다.
@@ -149,7 +149,7 @@ ASP.NET 서비스 다음 수명을 구성할 수 있습니다.
 
 **일시적이 지**
 
-일시적인 수명 서비스 요청 될 때마다 생성 됩니다. 이 수명 간단한 상태 비저장 서비스에 가장 적합 합니다.
+일시적인 수명 서비스를 요청 하는 때마다 만들어집니다. 이 수명 간단한 상태 비저장 서비스에 가장 적합 합니다.
 
 **범위 지정**
 
@@ -157,7 +157,7 @@ ASP.NET 서비스 다음 수명을 구성할 수 있습니다.
 
 **Singleton**
 
-Singleton 수명 서비스 요청 될 때 처음으로 생성 됩니다 (또는 경우 `ConfigureServices` 있는 인스턴스를 지정 하는 경우 실행) 및 모든 후속 요청에서는 동일한 인스턴스를 사용 하는 다음 합니다. 응용 프로그램에 단일 동작 필요한 경우 단일 디자인 패턴을 구현 하 고 직접 클래스에서 개체의 수명을 관리 하는 대신 서비스 컨테이너 서비스의 수명을 관리할 수 있도록이 좋습니다.
+Singleton 수명 서비스를 처음 요청 중인 만들어집니다 (또는 경우 `ConfigureServices` 있는 인스턴스를 지정 하는 경우 실행) 및 모든 후속 요청에서는 동일한 인스턴스를 사용 하는 다음 합니다. 응용 프로그램에 단일 동작 필요한 경우 단일 디자인 패턴을 구현 하 고 직접 클래스에서 개체의 수명을 관리 하는 대신 서비스 컨테이너 서비스의 수명을 관리할 수 있도록이 좋습니다.
 
 여러 가지 방법으로 컨테이너와 서비스를 등록할 수 있습니다. 에 사용할 구체적인 형식을 지정 하 여 지정 된 유형의 서비스 구현을 등록 하는 방법을 이미 살펴보았습니다. 또한 팩터리 지정할 수 있습니다, 다음 인스턴스를 만드는 요청에 사용 되는. 세 번째 방법은 직접 없는 경우 컨테이너 인스턴스를 만들 하려고 시도 하지 것입니다 (또는 인스턴스 dispose 됩니다)를 사용 하려면 형식의 인스턴스를 지정 하는 것입니다.
 
@@ -237,7 +237,7 @@ public void ConfigureServices(IServiceCollection services)
     services.AddSingleton<Service2>();
     services.AddSingleton<ISomeService>(sp => new SomeServiceImplementation());
 
-    // container did not create instance so it will NOT dispose it
+    // container didn't create instance so it will NOT dispose it
     services.AddSingleton<Service3>(new Service3());
     services.AddSingleton(new Service3());
 }
@@ -310,7 +310,7 @@ Singleton 서비스는 스레드로부터 안전 해야 합니다. Singleton 서
 > [!NOTE]
 > 권장 구성의 모든 집합 처럼 하나만 필요할된 때 발생할 수 있습니다. 프레임 워크 자체 내에서 특별 한 대부분의 경우-많지 않은 예외를 발견 했습니다.
 
-종속성 주입은는 *대체* 정적/전역 개체 액세스 패턴을 합니다. 정적 개체 액세스와 함께 사용할 경우 DI의 이점을 실현 수 없습니다.
+종속성 주입은는 *대체* 정적/전역 개체 액세스 패턴을 합니다. 정적 개체 액세스와 함께 사용할 경우 DI의 장점을 이해 수 없습니다.
 
 ## <a name="additional-resources"></a>추가 리소스
 

@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: performance/caching/memory
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 23312e73b4530b24b8479e2d379f16315b672ca4
-ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
+ms.openlocfilehash: 12d3982ce1abf74a575dae5362b037bd4ecc3d0f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="in-memory-caching-in-aspnet-core"></a>ASP.NET Core의 메모리 내 캐싱
 
@@ -46,7 +46,7 @@ ASP.NET Core 몇 가지 다른 캐시를 지원합니다. 가장 간단한 캐�
 
 `IMemoryCache`NuGet 패키지 "Microsoft.Extensions.Caching.Memory" 필요합니다.
 
-다음 코드에서는 [TryGetValue](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.imemorycache#Microsoft_Extensions_Caching_Memory_IMemoryCache_TryGetValue_System_Object_System_Object__) 을 현재 시간 캐시에 있는지 확인 하십시오. 새 항목 만들어지고과 함께 캐시에 추가 된 항목, 캐시 되지 않으면 [설정](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_Set__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object___0_)합니다.
+다음 코드에서는 [TryGetValue](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.imemorycache#Microsoft_Extensions_Caching_Memory_IMemoryCache_TryGetValue_System_Object_System_Object__) 을 현재 시간 캐시에 있는지 확인 하십시오. 새 항목이 만들어지고과 함께 캐시에 추가 항목이 캐시 되지 않을 경우 [설정](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_Set__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object___0_)합니다.
 
 [!code-csharp[Main](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet1)]
 
@@ -94,13 +94,13 @@ ASP.NET Core 몇 가지 다른 캐시를 지원합니다. 가장 간단한 캐�
   - 여러 개의 요청 찾을 수 있는 캐시 된 키 값 빈 콜백을 완료 되지 않았습니다. 
   - 이 캐시 된 항목을 채우는 여러 스레드 발생할 수 있습니다.
 
-- 하나의 캐시 항목을 사용 하 여 다른 만들을 부모 항목의 만료 토큰 및 시간 기반 만료 설정을 자식 복사 합니다. 자식 수동 제거 하 여 만료 된 또는 부모 항목의 업데이트 아닙니다.
+- 하나의 캐시 항목을 사용 하 여 다른 만들을 부모 항목의 만료 토큰 및 시간 기반 만료 설정을 자식 복사 합니다. 자식 수동 제거에서 만료 되거나 부모 항목의 업데이트를 하지 않습니다.
 
 ## <a name="additional-resources"></a>추가 리소스
 
-* [분산된 캐시 사용](xref:performance/caching/distributed)
-* [변경 내용을 변경 토큰으로 검색](xref:fundamentals/primitives/change-tokens)
+* [분산 캐시 사용](xref:performance/caching/distributed)
+* [변경 토큰을 사용하여 변경 내용 검색](xref:fundamentals/primitives/change-tokens)
 * [응답 캐싱](xref:performance/caching/response)
 * [응답 캐싱 미들웨어](xref:performance/caching/middleware)
 * [캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
-* [분산된 캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
+* [분산 캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/validating-user-credentials-against-the-membership-user-store-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 59becd46684d96f28bec43b7d5b4e0fd50c92117
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f57bc8c32757c1ea25bf6bbb34539570e4c09aad
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="validating-user-credentials-against-the-membership-user-store-vb"></a>(VB)의 멤버 자격 사용자 저장소에 대 한 사용자 자격 증명 유효성 검사
 ====================
@@ -39,7 +39,7 @@ ms.lasthandoff: 11/10/2017
 
 폼 인증을 사용 하는 웹 사이트에 대 한 사용자 로그온 웹 사이트에 로그인 페이지를 방문 하 고 자격 증명을 입력 합니다. 이러한 자격 증명 사용자 저장소에 대 한 다음 비교 됩니다. 유효한 경우에 사용자 id 및 방문자의 신뢰성을 나타내는 보안 토큰을 폼 인증 티켓을 부여 됩니다.
 
-멤버 자격 프레임 워크에 대해 사용자 확인을 위해 사용 하 여는 `Membership` 클래스의 [ `ValidateUser` 메서드](https://msdn.microsoft.com/en-us/library/system.web.security.membership.validateuser.aspx)합니다. `ValidateUser` 메서드는 두 입력된 매개 변수- `username` 및 `password` -자격 증명이 유효한 지 여부를 나타내는 부울 값을 반환 합니다. 와 함께 `CreateUser` 에서 이전 자습서 인 검사 했습니다 메서드는 `ValidateUser` 메서드 실제 유효성 검사 구성 된 멤버 자격 공급자를 위임 합니다.
+멤버 자격 프레임 워크에 대해 사용자 확인을 위해 사용 하 여는 `Membership` 클래스의 [ `ValidateUser` 메서드](https://msdn.microsoft.com/library/system.web.security.membership.validateuser.aspx)합니다. `ValidateUser` 메서드는 두 입력된 매개 변수- `username` 및 `password` -자격 증명이 유효한 지 여부를 나타내는 부울 값을 반환 합니다. 와 함께 `CreateUser` 에서 이전 자습서 인 검사 했습니다 메서드는 `ValidateUser` 메서드 실제 유효성 검사 구성 된 멤버 자격 공급자를 위임 합니다.
 
 `SqlMembershipProvider` 제공 된 자격 증명을 통해 지정된 된 사용자의 암호를 확보 하 여 유효성을 검사는 `aspnet_Membership_GetPasswordWithFormat` 저장 프로시저입니다. 이전에 설명한 대로 `SqlMembershipProvider` 세 가지 형식 중 하나를 사용 하 여 사용자의 암호: 암호화, 해시 또는 선택 취소 합니다. `aspnet_Membership_GetPasswordWithFormat` 저장된 프로시저는 원시 형식으로 암호를 반환 합니다. 암호화 / 해시 된 암호에 대 한는 `SqlMembershipProvider` 변환는 `password` 에 전달 된 값은 `ValidateUser` 에 해당 하는 메서드 암호화 또는 해시 상태와 다음 데이터베이스에서 반환 된 비교 합니다. 사용자가 입력 한 서식이 지정 된 암호와 일치 하는 데이터베이스에 저장 된 암호 자격 증명이 유효 합니다.
 
@@ -84,7 +84,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="step-2-collecting-credentials-through-the-login-web-control"></a>로그인 웹 컨트롤을 통해 자격 증명을 수집 하는 2 단계:
 
-[로그인 웹 컨트롤](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.aspx) 기본 사용자 인터페이스를 다시에서 만든 것과 매우 비슷한 렌더링는 <a id="Tutorial02"> </a> [ *폼 인증의 개요는* ](../introduction/an-overview-of-forms-authentication-vb.md) 자습서입니다. Login 컨트롤을 사용 하 여의 방문자의 자격 증명을 수집 하는 인터페이스를 만드는 작업을 저장 주세요. 또한 Login 컨트롤 자동으로 로그인 (전송 된 자격 증명이 유효 가정), 사용자 함으로써 우리 저장 코드를 작성 하지 않아도 합니다.
+[로그인 웹 컨트롤](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.aspx) 기본 사용자 인터페이스를 다시에서 만든 것과 매우 비슷한 렌더링는 <a id="Tutorial02"> </a> [ *폼 인증의 개요는* ](../introduction/an-overview-of-forms-authentication-vb.md) 자습서입니다. Login 컨트롤을 사용 하 여의 방문자의 자격 증명을 수집 하는 인터페이스를 만드는 작업을 저장 주세요. 또한 Login 컨트롤 자동으로 로그인 (전송 된 자격 증명이 유효 가정), 사용자 함으로써 우리 저장 코드를 작성 하지 않아도 합니다.
 
 정보를 업데이트 `Login.aspx`, 대체 수동으로 만든된 인터페이스 및 로그인 제어를 사용한 코드입니다. 기존 태그를 제거 하 여 시작 하 고 코드에서 `Login.aspx`합니다. 완전 한, 삭제 또는 단순히 주석으로 처리 될 수 있습니다. 선언적 태그, 주석 처리를 사용 하 여 서라운드는 `<%--` 및 `--%>` 구분 기호입니다. 이러한 구분 기호를 직접 입력 또는 텍스트를 주석으로 처리 하 고 도구 모음에서 선택한 줄 아이콘 주석 클릭 그림 2에서 볼 수 있듯이 선택할 수 있습니다. 마찬가지로, 선택한 줄 아이콘 주석 코드 숨김 클래스의 선택 된 코드를 주석 처리를 사용할 수 있습니다.
 
@@ -112,7 +112,7 @@ Login 컨트롤 네 가지 요소를 사용 하 여 적절 한 페이지를 성�
 
 - Login 컨트롤에 연결 되어 있는지 로그인 페이지에 정의 된 대로 `loginUrl` 이 설정의 기본값은 있으며 폼 인증 구성에서 설정`Login.aspx`
 - 존재는 `ReturnUrl` querystring 매개 변수
-- Login 컨트롤의 값 [ `DestinationUrl` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.destinationpageurl.aspx)
+- Login 컨트롤의 값 [ `DestinationUrl` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.destinationpageurl.aspx)
 - `defaultUrl` 인증 구성 설정의 폼에 지정 된 값이이 설정의 기본값은 Default.aspx;
 
 그림 4는 방법을 보여 주며 로그인 컨트롤 이러한 4 개의 매개 변수를 사용 하 여 해당 페이지를 적절 한 의사 결정에 도달 하 게 합니다.
@@ -131,19 +131,19 @@ Login 컨트롤 네 가지 요소를 사용 하 여 적절 한 페이지를 성�
 
 (로그에) 제목과 함께 사용자 인터페이스를 렌더링 하는 로그인 컨트롤의 기본 속성 설정이, 확인란을 선택 하 고 로그인 단추 다음 때는 암호 저장 사용자 이름 및 암호 입력에 대 한 텍스트 상자 및 레이블을 제어 합니다. 이러한 요소 들의 모양은 모든 로그인 컨트롤의 다양 한 속성을 통해 구성할 수 있습니다. 또한,--새 사용자 계정을 만들려면 페이지에 대 한 링크와 같은 추가 사용자 인터페이스 요소는 속성 또는 두 개를 설정 하 여 추가할 수 있습니다.
 
-우리의 로그인 컨트롤의 모양을 구성 gussy를 몇 분 정도 지출 보겠습니다. 이후는 `Login.aspx` 페이지에 이미 로그인을 표시 하는 페이지의 위쪽에 텍스트, 로그인 컨트롤의 제목은 불필요 합니다. 따라서 지울는 [ `TitleText` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.titletext.aspx) 로그인 컨트롤의 제목을 제거 하려면 값입니다.
+우리의 로그인 컨트롤의 모양을 구성 gussy를 몇 분 정도 지출 보겠습니다. 이후는 `Login.aspx` 페이지에 이미 로그인을 표시 하는 페이지의 위쪽에 텍스트, 로그인 컨트롤의 제목은 불필요 합니다. 따라서 지울는 [ `TitleText` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.titletext.aspx) 로그인 컨트롤의 제목을 제거 하려면 값입니다.
 
-사용자 이름: 및 암호: 통해 두 개의 TextBox 컨트롤의 왼쪽에 레이블을 사용자 지정할 수는 [ `UserNameLabelText` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.usernamelabeltext.aspx) 및 [ `PasswordLabelText` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.passwordlabeltext.aspx)각각. 사용자 이름 바꿔보겠습니다: Username을 읽기 위한 레이블: 합니다. 레이블 및 텍스트 스타일을 통해 구성할 수는 [ `LabelStyle` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.labelstyle.aspx) 및 [ `TextBoxStyle` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.textboxstyle.aspx)각각.
+사용자 이름: 및 암호: 통해 두 개의 TextBox 컨트롤의 왼쪽에 레이블을 사용자 지정할 수는 [ `UserNameLabelText` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.usernamelabeltext.aspx) 및 [ `PasswordLabelText` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.passwordlabeltext.aspx)각각. 사용자 이름 바꿔보겠습니다: Username을 읽기 위한 레이블: 합니다. 레이블 및 텍스트 스타일을 통해 구성할 수는 [ `LabelStyle` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.labelstyle.aspx) 및 [ `TextBoxStyle` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.textboxstyle.aspx)각각.
 
-암호 저장 로그인 컨트롤을 통해 다음 시간 CheckBox의 Text 속성을 설정할 수 있습니다 [ `RememberMeText` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.remembermetext.aspx), 기본 검사 상태를 통해 구성할 수는 [ `RememberMeSet` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.remembermeset.aspx)(어떤 기본값: False)입니다. 계속 해 설정 된 `RememberMeSet` 기본적으로 속성을 다음 시간을 메일 주소 저장 확인란 있도록 true로 확인 됩니다.
+암호 저장 로그인 컨트롤을 통해 다음 시간 CheckBox의 Text 속성을 설정할 수 있습니다 [ `RememberMeText` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.remembermetext.aspx), 기본 검사 상태를 통해 구성할 수는 [ `RememberMeSet` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.remembermeset.aspx)(어떤 기본값: False)입니다. 계속 해 설정 된 `RememberMeSet` 기본적으로 속성을 다음 시간을 메일 주소 저장 확인란 있도록 true로 확인 됩니다.
 
-Login 컨트롤은 해당 사용자 인터페이스 컨트롤의 레이아웃을 조정 하기 위한 두 가지 속성을 제공 합니다. [ `TextLayout` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.textlayout.aspx) 나타냅니다 있는지 여부를 사용자 이름: 및 암호: 레이블 또는 위에 (기본값) 이면 해당 해당 입력란의 왼쪽에 나타납니다. [ `Orientation` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.orientation.aspx) 사용자 이름 및 암호 입력 세로로 배치 있는지 여부를 나타냅니다 (나란히) 또는 가로로 합니다. 이러한 두 속성을 해당 기본값으로 설정 유지 하려고 하지만 그에 따른 결과 보려면 기본이 아닌 값으로 이러한 두 속성을 설정 해 보고을 확인해 보십시오.
+Login 컨트롤은 해당 사용자 인터페이스 컨트롤의 레이아웃을 조정 하기 위한 두 가지 속성을 제공 합니다. [ `TextLayout` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.textlayout.aspx) 나타냅니다 있는지 여부를 사용자 이름: 및 암호: 레이블 또는 위에 (기본값) 이면 해당 해당 입력란의 왼쪽에 나타납니다. [ `Orientation` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.orientation.aspx) 사용자 이름 및 암호 입력 세로로 배치 있는지 여부를 나타냅니다 (나란히) 또는 가로로 합니다. 이러한 두 속성을 해당 기본값으로 설정 유지 하려고 하지만 그에 따른 결과 보려면 기본이 아닌 값으로 이러한 두 속성을 설정 해 보고을 확인해 보십시오.
 
 > [!NOTE]
 > 다음 섹션에서 로그인 컨트롤의 레이아웃을 구성 살펴보도록 하겠습니다 템플릿을 사용 하 여 레이아웃 컨트롤의 사용자 인터페이스 요소의 정확한 레이아웃을 정의 합니다.
 
 
-설정 하 여 로그인 컨트롤의 속성 설정을 마무리는 [ `CreateUserText` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.createusertext.aspx) 및 [ `CreateUserUrl` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.createuserurl.aspx) 아직 등록 not? 계정을 만듭니다. 및 `~/Membership/CreatingUserAccounts.aspx`각각. 하이퍼링크에서 만든 페이지를 가리키는 로그인 컨트롤의 인터페이스를 추가 하는이 <a id="Tutorial05"> </a> [이전 자습서](creating-user-accounts-vb.md)합니다. Login 컨트롤 [ `HelpPageText` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.helppagetext.aspx) 및 [ `HelpPageUrl` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.helppageurl.aspx) 및 [ `PasswordRecoveryText` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.passwordrecoverytext.aspx) 및 [ `PasswordRecoveryUrl` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.passwordrecoveryurl.aspx) 도움말 페이지 및 암호 복구 페이지에 대 한 링크를 렌더링 하는 동일한 방식으로 작동 합니다.
+설정 하 여 로그인 컨트롤의 속성 설정을 마무리는 [ `CreateUserText` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.createusertext.aspx) 및 [ `CreateUserUrl` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.createuserurl.aspx) 아직 등록 not? 계정을 만듭니다. 및 `~/Membership/CreatingUserAccounts.aspx`각각. 하이퍼링크에서 만든 페이지를 가리키는 로그인 컨트롤의 인터페이스를 추가 하는이 <a id="Tutorial05"> </a> [이전 자습서](creating-user-accounts-vb.md)합니다. Login 컨트롤 [ `HelpPageText` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.helppagetext.aspx) 및 [ `HelpPageUrl` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.helppageurl.aspx) 및 [ `PasswordRecoveryText` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.passwordrecoverytext.aspx) 및 [ `PasswordRecoveryUrl` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.passwordrecoveryurl.aspx) 도움말 페이지 및 암호 복구 페이지에 대 한 링크를 렌더링 하는 동일한 방식으로 작동 합니다.
 
 속성 변경 후 로그인 컨트롤의 선언적 태그 및 모양 비슷해야 그림 5에 표시 된 것입니다.
 
@@ -162,7 +162,7 @@ Login 컨트롤은 해당 사용자 인터페이스 컨트롤의 레이아웃을
 1. 추가 자격 증명을 수집 하려면 웹 컨트롤을 포함 하도록 로그인 컨트롤의 인터페이스를 업데이트 합니다.
 2. 사용자가 자신의 사용자 이름과 암호가 올바른지, 그리고 추가 자격 증명은 너무 유효 하는 경우에 인증 되도록 로그인 컨트롤의 내부 인증 논리를 재정의 합니다.
 
-첫 번째 작업을 수행 하려면 하 Login 컨트롤을 템플릿으로 변환 하 고 필요한 웹 컨트롤을 추가 해야 합니다. 두 번째 작업의 경우와 로그인 컨트롤의 인증 논리 대체 될 수 있습니다는 컨트롤에 대 한 이벤트 처리기를 만들어 [ `Authenticate` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.authenticate.aspx)합니다.
+첫 번째 작업을 수행 하려면 하 Login 컨트롤을 템플릿으로 변환 하 고 필요한 웹 컨트롤을 추가 해야 합니다. 두 번째 작업의 경우와 로그인 컨트롤의 인증 논리 대체 될 수 있습니다는 컨트롤에 대 한 이벤트 처리기를 만들어 [ `Authenticate` 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.authenticate.aspx)합니다.
 
 자신의 사용자 이름, 암호 및 전자 메일 주소에 대 한 메시지를 표시 하 고 제공 된 전자 메일 주소는 파일에서 전자 메일 주소를 일치 하는 경우에 사용자를 인증에 보겠습니다 Login 컨트롤을 업데이트 합니다. 먼저 로그인 컨트롤의 인터페이스를 템플릿으로 변환 해야 합니다. 로그인 컨트롤의 스마트 태그에서 변환 서식 파일 옵션을 선택 합니다.
 
@@ -202,11 +202,11 @@ Login 컨트롤이 시점에서 계속 사용 하 여 `Membership.ValidateUser` 
 
 ## <a name="step-3-modifying-the-login-controls-authentication-logic"></a>3 단계: 로그인 컨트롤의 인증 논리를 수정합니다.
 
-그녀는 방문자가 제공 하는 경우 자격 증명 및 로그인 단추를 다시 게시 계속 클릭 및 로그인 인증 워크플로 통해 진행 될 때 제어 합니다. 발생 시켜 워크플로 시작에서 [ `LoggingIn` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.loggingin.aspx)합니다. 이 이벤트와 연결 된 모든 이벤트 처리기를 설정 하 여 작업에서 로그를 취소할 수는 `e.Cancel` 속성을 `True`합니다.
+그녀는 방문자가 제공 하는 경우 자격 증명 및 로그인 단추를 다시 게시 계속 클릭 및 로그인 인증 워크플로 통해 진행 될 때 제어 합니다. 발생 시켜 워크플로 시작에서 [ `LoggingIn` 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.loggingin.aspx)합니다. 이 이벤트와 연결 된 모든 이벤트 처리기를 설정 하 여 작업에서 로그를 취소할 수는 `e.Cancel` 속성을 `True`합니다.
 
-워크플로 발생 시켜 진행 되는 작업에 대 한 로그를 취소 하지는 [ `Authenticate` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.authenticate.aspx)합니다. 경우에 대 한 이벤트 처리기는 `Authenticate` 이벤트,이 제공 된 자격 증명이 유효한 지 여부를 결정 합니다. Login 컨트롤에 사용 하 여 이벤트 처리기를 지정 하는 경우는 `Membership.ValidateUser` 메서드는 자격 증명의 유효성을 확인 합니다.
+워크플로 발생 시켜 진행 되는 작업에 대 한 로그를 취소 하지는 [ `Authenticate` 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.authenticate.aspx)합니다. 경우에 대 한 이벤트 처리기는 `Authenticate` 이벤트,이 제공 된 자격 증명이 유효한 지 여부를 결정 합니다. Login 컨트롤에 사용 하 여 이벤트 처리기를 지정 하는 경우는 `Membership.ValidateUser` 메서드는 자격 증명의 유효성을 확인 합니다.
 
-제공 된 자격 증명이 유효 원본인 경우 폼 인증 티켓 생성 되는 [ `LoggedIn` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.loggedin.aspx) 이 발생 하면 사용자가 적절 한 페이지로 리디렉션되 합니다. 그러나 자격 증명이 유효 하지 여겨지는 경우 하면 [ `LoginError` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.loginerror.aspx) 발생 하 고 사용자에 게 자격 증명 잘못 되었음을 알리는 메시지가 표시 됩니다. 기본적으로 로그인 실패 시 컨트롤 설정 해당 `FailureText` 레이블을 지정 (로그인 하지 못했습니다 오류 메시지를 컨트롤의 Text 속성. 다시 시도 하십시오). 그러나 경우 Login 컨트롤 [ `FailureAction` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.failureaction.aspx) 로 설정 된 `RedirectToLoginPage`, 로그인 제어 문제 다음는 `Response.Redirect` querystring 매개 변수를 추가 합니다. 로그인 페이지에 `loginfailure=1` (때문에 로그인 오류 메시지를 표시할 컨트롤)입니다.
+제공 된 자격 증명이 유효 원본인 경우 폼 인증 티켓 생성 되는 [ `LoggedIn` 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.loggedin.aspx) 이 발생 하면 사용자가 적절 한 페이지로 리디렉션되 합니다. 그러나 자격 증명이 유효 하지 여겨지는 경우 하면 [ `LoginError` 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.loginerror.aspx) 발생 하 고 사용자에 게 자격 증명 잘못 되었음을 알리는 메시지가 표시 됩니다. 기본적으로 로그인 실패 시 컨트롤 설정 해당 `FailureText` 레이블을 지정 (로그인 하지 못했습니다 오류 메시지를 컨트롤의 Text 속성. 다시 시도 하십시오). 그러나 경우 Login 컨트롤 [ `FailureAction` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.failureaction.aspx) 로 설정 된 `RedirectToLoginPage`, 로그인 제어 문제 다음는 `Response.Redirect` querystring 매개 변수를 추가 합니다. 로그인 페이지에 `loginfailure=1` (때문에 로그인 오류 메시지를 표시할 컨트롤)입니다.
 
 그림 9에서는 인증 워크플로의 순서도 제공합니다.
 
@@ -226,11 +226,11 @@ Login 컨트롤이 시점에서 계속 사용 하 여 `Membership.ValidateUser` 
 
 [!code-vb[Main](validating-user-credentials-against-the-membership-user-store-vb/samples/sample3.vb)]
 
-볼 수 있듯이 `Authenticate` 형식의 개체를 전달 된 이벤트 처리기 [ `AuthenticateEventArgs` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.authenticateeventargs.aspx) 두 번째 입력된 매개 변수로 합니다. `AuthenticateEventArgs` 라는 부울 속성을 포함 하는 클래스 `Authenticated` 제공 된 자격 증명이 유효한 지 여부를 지정 하는 데 사용 되는 합니다. 이 작업, 제공 된 자격 증명이 유효한 지 여부를 결정 하는 코드를 작성 하 고 설정 하려면 그런 다음,이 `e.Authenticate` 속성 적절 하 게 합니다.
+볼 수 있듯이 `Authenticate` 형식의 개체를 전달 된 이벤트 처리기 [ `AuthenticateEventArgs` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.authenticateeventargs.aspx) 두 번째 입력된 매개 변수로 합니다. `AuthenticateEventArgs` 라는 부울 속성을 포함 하는 클래스 `Authenticated` 제공 된 자격 증명이 유효한 지 여부를 지정 하는 데 사용 되는 합니다. 이 작업, 제공 된 자격 증명이 유효한 지 여부를 결정 하는 코드를 작성 하 고 설정 하려면 그런 다음,이 `e.Authenticate` 속성 적절 하 게 합니다.
 
 ### <a name="determining-and-validating-the-supplied-credentials"></a>확인 하 고 제공된 된 자격 증명 유효성 검사
 
-Login 컨트롤을 사용 하 여 [ `UserName` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.username.aspx) 및 [ `Password` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.password.aspx) 사용자가 입력 한 사용자 이름 및 암호 자격 증명을 확인 하려면. 추가 웹 컨트롤에 입력 된 값을 확인 하기 위해 (같은 `Email` TextBox 이전 단계에서 추가 되었습니다)를 사용 하 여 `LoginControlID.FindControl`("*`controlID`*") 웹에 대 한 프로그래밍 참조를 가져올 수 서식 파일에서 컨트롤 `ID` 속성이  *`controlID`* 합니다. 예를 들어에 대 한 참조를 얻으려고는 `Email` 텍스트 상자 다음 코드를 사용 합니다.
+Login 컨트롤을 사용 하 여 [ `UserName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.username.aspx) 및 [ `Password` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.password.aspx) 사용자가 입력 한 사용자 이름 및 암호 자격 증명을 확인 하려면. 추가 웹 컨트롤에 입력 된 값을 확인 하기 위해 (같은 `Email` TextBox 이전 단계에서 추가 되었습니다)를 사용 하 여 `LoginControlID.FindControl`("*`controlID`*") 웹에 대 한 프로그래밍 참조를 가져올 수 서식 파일에서 컨트롤 `ID` 속성이  *`controlID`* 합니다. 예를 들어에 대 한 참조를 얻으려고는 `Email` 텍스트 상자 다음 코드를 사용 합니다.
 
 `Dim EmailTextBox As TextBox = CType(myLogin.FindControl("Email"), TextBox)`
 
@@ -239,9 +239,9 @@ Login 컨트롤을 사용 하 여 [ `UserName` ](https://msdn.microsoft.com/en-u
 1. 제공 된 사용자 이름 및 암호가 유효한 지 확인
 2. 전자 메일 주소를 입력 한 로그인을 시도 하는 사용자에 대 한 파일에 전자 메일 주소와 일치 하는지 확인 하십시오.
 
-에서는 사용 하기만 하면 첫 번째 확인을 수행 하는 `Membership.ValidateUser` 1 단계에서에서 설명한 것 처럼 메서드. 두 번째 검사에서 TextBox 컨트롤에 입력 될 전자 메일 주소에 비교할 수 있습니다 수 있도록 사용자의 전자 메일 주소를 확인 해야 합니다. 특정 사용자에 대 한 정보를 가져오려면는 `Membership` 클래스의 [ `GetUser` 메서드](https://msdn.microsoft.com/en-us/library/system.web.security.membership.getuser.aspx)합니다.
+에서는 사용 하기만 하면 첫 번째 확인을 수행 하는 `Membership.ValidateUser` 1 단계에서에서 설명한 것 처럼 메서드. 두 번째 검사에서 TextBox 컨트롤에 입력 될 전자 메일 주소에 비교할 수 있습니다 수 있도록 사용자의 전자 메일 주소를 확인 해야 합니다. 특정 사용자에 대 한 정보를 가져오려면는 `Membership` 클래스의 [ `GetUser` 메서드](https://msdn.microsoft.com/library/system.web.security.membership.getuser.aspx)합니다.
 
-`GetUser` 메서드는 다양 한 오버 로드 합니다. 매개 변수 전달 하지 않고 사용 하는 경우 현재 로그인된 한 사용자에 대 한 정보를 반환 합니다. 특정 사용자에 대 한 정보를 가져오려면 호출 `GetUser` 자신의 사용자 이름에 전달 합니다. 두 가지 경우 모두 `GetUser` 반환는 [ `MembershipUser` 개체](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.aspx), 같은 속성이 있는 `UserName`, `Email`, `IsApproved`, `IsOnline`등입니다.
+`GetUser` 메서드는 다양 한 오버 로드 합니다. 매개 변수 전달 하지 않고 사용 하는 경우 현재 로그인된 한 사용자에 대 한 정보를 반환 합니다. 특정 사용자에 대 한 정보를 가져오려면 호출 `GetUser` 자신의 사용자 이름에 전달 합니다. 두 가지 경우 모두 `GetUser` 반환는 [ `MembershipUser` 개체](https://msdn.microsoft.com/library/system.web.security.membershipuser.aspx), 같은 속성이 있는 `UserName`, `Email`, `IsApproved`, `IsOnline`등입니다.
 
 다음 코드는이 두 가지 검사를 구현합니다. 다음 모두 전달 `e.Authenticate` 로 설정 된 `True`, 그렇지 않으면 할당 `False`합니다.
 
@@ -261,7 +261,7 @@ Login 컨트롤을 사용 하 여 [ `UserName` ](https://msdn.microsoft.com/en-u
 
 ## <a name="step-4-improving-the-login-controls-invalid-credentials-message"></a>4 단계: 개선 로그인 컨트롤의 잘못 된 자격 증명 메시지
 
-사용자가 잘못 된 자격 증명으로 로그온 하려고 하는 경우 로그인 컨트롤 로그인 시도가 성공 했음을 설명 하는 메시지를 표시 합니다. 컨트롤에서 지정한 메시지를 표시 하는 특히, 해당 [ `FailureText` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.failuretext.aspx)에 로그인 시도의 기본 값이 있는 실패 했습니다. 다시 시도하세요.
+사용자가 잘못 된 자격 증명으로 로그온 하려고 하는 경우 로그인 컨트롤 로그인 시도가 성공 했음을 설명 하는 메시지를 표시 합니다. 컨트롤에서 지정한 메시지를 표시 하는 특히, 해당 [ `FailureText` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.failuretext.aspx)에 로그인 시도의 기본 값이 있는 실패 했습니다. 다시 시도하세요.
 
 회수는 여러 가지 이유로 이유는 사용자의 자격 증명이 올바르지 않을 수 있습니다.
 
@@ -304,8 +304,8 @@ Login 컨트롤 표준 로그인 사용자 인터페이스를 렌더링 하 고 
 
 - [잠긴 및 승인 되지 않은 사용자가 사용자 지정 메시지를 표시 합니다.](http://aspnet.4guysfromrolla.com/articles/050306-1.aspx)
 - [ASP.NET 2.0의 검사 멤버 자격, 역할 및 프로필](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx)
-- [방법: ASP.NET 로그인 페이지를 만듭니다.](https://msdn.microsoft.com/en-us/library/ms178331.aspx)
-- [로그인 제어 기술 문서](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.aspx)
+- [방법: ASP.NET 로그인 페이지를 만듭니다.](https://msdn.microsoft.com/library/ms178331.aspx)
+- [로그인 제어 기술 문서](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.aspx)
 - [Login 컨트롤을 사용 하 여](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/security/login.aspx)
 
 ### <a name="about-the-author"></a>작성자 정보

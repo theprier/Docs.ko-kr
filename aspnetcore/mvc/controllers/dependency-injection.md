@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/dependency-injection
-ms.openlocfilehash: 21cffcd285879fdca81cb7d92d0f079d4bf7756c
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 946d695c572379c3ebc2eda1569f186f25ab9bfc
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="dependency-injection-into-controllers"></a>컨트롤러에 대 한 종속성 주입
 
@@ -87,7 +87,7 @@ Microsoft.Extensions.DependencyInjection.ActivatorUtilities.FindApplicableConstr
 
 ## <a name="accessing-settings-from-a-controller"></a>컨트롤러에서 설정 액세스
 
-컨트롤러 내에서 응용 프로그램 또는 구성 설정에 액세스 하는 일반적인 패턴입니다. 이 액세스에 설명 된 옵션 패턴을 사용 해야 [구성](xref:fundamentals/configuration/index)합니다. 일반적으로 하지 요청 해야 설정을 종속성 주입을 사용 하 여 컨트롤러에서 직접 합니다. 하는 것이 좋습니다 요청은 `IOptions<T>` 인스턴스, 여기서 `T` 필요한 구성 클래스입니다.
+컨트롤러 내에서 응용 프로그램 또는 구성 설정에 액세스 하는 일반적인 패턴입니다. 이 액세스에 설명 된 옵션 패턴을 사용 해야 [구성](xref:fundamentals/configuration/index)합니다. 일반적으로 종속성 주입을 사용 하 여 컨트롤러에서 직접 설정 요청 하지 않아야 합니다. 하는 것이 좋습니다 요청은 `IOptions<T>` 인스턴스, 여기서 `T` 필요한 구성 클래스입니다.
 
 옵션 패턴을 사용 하려면이 다음과 같은 옵션을 나타내는 클래스를 만들려면:
 

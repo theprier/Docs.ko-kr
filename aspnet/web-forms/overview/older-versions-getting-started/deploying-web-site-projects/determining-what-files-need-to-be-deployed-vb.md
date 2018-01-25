@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/determining-what-files-need-to-be-deployed-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 44349b09fdc0de8ad6bd241a4c158d6a198e5d01
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aad0d4d4f7db5942c51255c34f36be73ed0e1f2d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="determining-what-files-need-to-be-deployed-vb"></a>(VB)를 배포 해야 할 파일 확인
 ====================
@@ -43,7 +43,7 @@ ASP.NET 페이지 라는 고려 `Clock.aspx` 텍스트 속성이 현재 날짜 �
 
 이 페이지에서는 페이지의 코드 부분에 대 한 요청을 처리 하는 ASP.NET 엔진에 대 한 순서 대로 (의  *`WebPage`*  `.aspx.vb` 파일) 먼저 컴파일해야 합니다. 이 컴파일 명시적으로 또는 자동으로 발생할 수 있습니다.
 
-컴파일할 때 발생 하는 명시적으로 경우 전체 응용 프로그램의 소스 코드는 하나 이상의 어셈블리로 컴파일됩니다 (`.dll` 파일)에 응용 프로그램의 `Bin` 디렉터리입니다. 컴파일 문제가 발생 하면 자동으로 생성 된 자동 생성 기본적으로 어셈블리는에 배치 된 `Temporary ASP.NET Files` 폴더에서 찾을 수 있는 `%WINDOWS%\Microsoft.NET\Framework\<version>`이 위치를 통해 구성할 수는 있지만는 [ &lt; 컴파일&gt; 요소](https://msdn.microsoft.com/en-us/library/s10awwz0.aspx) 에서 `Web.config`합니다. 명시적 컴파일을 사용한 ASP.NET 응용 프로그램의 코드를 어셈블리로 컴파일할 작업을 수행 해야 하 고이 단계를 배포 하기 전에 발생 합니다. 자동 컴파일을 컴파일 프로세스 리소스에 처음 액세스할 때 웹 서버에서 발생 합니다.
+컴파일할 때 발생 하는 명시적으로 경우 전체 응용 프로그램의 소스 코드는 하나 이상의 어셈블리로 컴파일됩니다 (`.dll` 파일)에 응용 프로그램의 `Bin` 디렉터리입니다. 컴파일 문제가 발생 하면 자동으로 생성 된 자동 생성 기본적으로 어셈블리는에 배치 된 `Temporary ASP.NET Files` 폴더에서 찾을 수 있는 `%WINDOWS%\Microsoft.NET\Framework\<version>`이 위치를 통해 구성할 수는 있지만는 [ &lt; 컴파일&gt; 요소](https://msdn.microsoft.com/library/s10awwz0.aspx) 에서 `Web.config`합니다. 명시적 컴파일을 사용한 ASP.NET 응용 프로그램의 코드를 어셈블리로 컴파일할 작업을 수행 해야 하 고이 단계를 배포 하기 전에 발생 합니다. 자동 컴파일을 컴파일 프로세스 리소스에 처음 액세스할 때 웹 서버에서 발생 합니다.
 
 사용 하면 어떤 컴파일 모델에 관계 없이, 모든 ASP.NET 페이지의 태그 부분 (의 `WebPage.aspx` 파일) 프로덕션 환경에 복사 해야 합니다. 어셈블리를 복사 해야 명시적 컴파일을 사용한는 `Bin` 폴더, ASP.NET 페이지의 코드 부분을 복사 하지 않아도 (의 `WebPage.aspx.vb` 파일). 자동 컴파일 코드 표시 되며 해당 페이지를 방문 하는 경우 자동으로 컴파일할 수 있도록 코드 부분 파일을 복사 해야 합니다. 각 ASP.NET 웹 페이지의 태그 부분에 포함 되어는 `@Page` 지시문을 명시적으로 이미 연결 된 코드 페이지의 컴파일된 여부 또는 자동으로 컴파일할 필요가 있는지 여부를 나타내는 특성입니다. 결과적으로, 프로덕션 환경 중 하나 컴파일 모델을 원활 하 게 사용할 수 있으며 명시적 또는 자동 컴파일을 사용 해야 함을 나타내기 위해 특별 한 구성 설정을 적용할 필요가 없습니다.
 
@@ -69,7 +69,7 @@ Microsoft Visual Studio 2005를 릴리스 했습니다. 이러한 제거 웹 응
 - Visual Studio에서 프로젝트를 빌드하면에서는 변수에서 어셈블리는 `Bin` 디렉터리입니다. 대신, 웹 사이트 프로젝트를 빌드하는 컴파일 타임 오류를 보고 합니다.
 - 자동 컴파일 지원 합니다. 코드 미리 컴파일된 (명시적 컴파일)을 사용할 수 있지만 웹 사이트 프로젝트를 프로덕션 환경에 태그 및 소스 코드를 복사 하 여 일반적으로 배포 됩니다.
 
-Microsoft Visual Studio 2005 서비스 팩 1을 릴리스 하는 경우 웹 응용 프로그램 프로젝트 모델을 다시 합니다. 그러나 Visual Web Developer만 웹 사이트 프로젝트 모델을 지원 하도록 계속 합니다. 다행 스럽게도이 제한은 Visual Web Developer 2008 서비스 팩 1 인해 삭제 되었습니다. 오늘 Visual Studio에 (Visual Web Developer) 웹 응용 프로그램 프로젝트 모델이 나 웹 사이트 프로젝트 모델을 사용 하 여 ASP.NET 응용 프로그램을 만들 수 있습니다. 두 모델의 장단점은 있습니다. 참조 [웹 응용 프로그램 프로젝트 소개: 웹 사이트 프로젝트 비교와 웹 응용 프로그램 프로젝트](https://msdn.microsoft.com/en-us/library/aa730880.aspx#wapp_topic5) 은 두 모델의 및 어떤 프로젝트 모델이 상황에 가장 적합 한 결정에 도움이 되는 비교에 대 한 합니다.
+Microsoft Visual Studio 2005 서비스 팩 1을 릴리스 하는 경우 웹 응용 프로그램 프로젝트 모델을 다시 합니다. 그러나 Visual Web Developer만 웹 사이트 프로젝트 모델을 지원 하도록 계속 합니다. 다행 스럽게도이 제한은 Visual Web Developer 2008 서비스 팩 1 인해 삭제 되었습니다. 오늘 Visual Studio에 (Visual Web Developer) 웹 응용 프로그램 프로젝트 모델이 나 웹 사이트 프로젝트 모델을 사용 하 여 ASP.NET 응용 프로그램을 만들 수 있습니다. 두 모델의 장단점은 있습니다. 참조 [웹 응용 프로그램 프로젝트 소개: 웹 사이트 프로젝트 비교와 웹 응용 프로그램 프로젝트](https://msdn.microsoft.com/library/aa730880.aspx#wapp_topic5) 은 두 모델의 및 어떤 프로젝트 모델이 상황에 가장 적합 한 결정에 도움이 되는 비교에 대 한 합니다.
 
 ## <a name="exploring-the-sample-web-application"></a>샘플 웹 응용 프로그램 탐색
 
@@ -179,15 +179,15 @@ ASP.NET 응용 프로그램을 배포 하려면 개발 환경에서 프로덕션
 
 이 자습서에 설명 된 항목에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
-- [ASP.NET 컴파일 개요](https://msdn.microsoft.com/en-us/library/ms178466.aspx)
-- [ASP.NET 사용자 정의 컨트롤](https://msdn.microsoft.com/en-us/library/y6wb1a0e.aspx)
+- [ASP.NET 컴파일 개요](https://msdn.microsoft.com/library/ms178466.aspx)
+- [ASP.NET 사용자 정의 컨트롤](https://msdn.microsoft.com/library/y6wb1a0e.aspx)
 - [ASP를 검사 합니다. NET의 사이트 탐색](http://aspnet.4guysfromrolla.com/articles/111605-1.aspx)
-- [웹 응용 프로그램 프로젝트 소개](https://msdn.microsoft.com/en-us/library/aa730880.aspx)
+- [웹 응용 프로그램 프로젝트 소개](https://msdn.microsoft.com/library/aa730880.aspx)
 - [마스터 페이지 자습서](../master-pages/creating-a-site-wide-layout-using-master-pages-cs.md)
 - [페이지 간 코드 공유](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/pages/code.aspx)
 - [ASP.NET 페이지의 코드 숨김 클래스에 대 한 사용자 지정 기본 클래스를 사용 하 여](http://aspnet.4guysfromrolla.com/articles/041305-1.aspx)
 - [Visual Studio 2005의 웹 사이트 프로젝트 시스템: 것 란 무엇이 고 왜 수행할가?](https://weblogs.asp.net/scottgu/archive/2005/08/21/423201.aspx)
-- [연습: Visual Studio에서 웹 응용 프로그램 프로젝트를 웹 사이트 프로젝트를 변환](https://msdn.microsoft.com/en-us/library/aa983476.aspx)
+- [연습: Visual Studio에서 웹 응용 프로그램 프로젝트를 웹 사이트 프로젝트를 변환](https://msdn.microsoft.com/library/aa983476.aspx)
 
 >[!div class="step-by-step"]
 [이전](asp-net-hosting-options-vb.md)

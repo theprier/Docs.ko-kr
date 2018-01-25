@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/configuration/overview
-ms.openlocfilehash: c19b1a9cba89a02420c8792b575827d439bc262b
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: b560f360b4962f2d50e0fdc9a99ab389eb113f43
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="configuring-data-protection-in-aspnet-core"></a>ASP.NET Core에서 데이터 보호를 구성합니다.
 
@@ -191,7 +191,7 @@ serviceCollection.AddDataProtection()
 일반적으로 \*형식 속성 콘크리트를 가리켜야 합니다. (공용 매개 변수가 없는 생성자)를 통해 인스턴스화할 수 있는 구현 [SymmetricAlgorithm](/dotnet/api/system.security.cryptography.symmetricalgorithm) 및 [KeyedHashAlgorithm](/dotnet/api/system.security.cryptography.keyedhashalgorithm)경우에 시스템 특수 한 경우와 같은 일부 값 `typeof(Aes)` 편의 위해.
 
 > [!NOTE]
-> ≥ 128 비트의 키 길이 및 ≥ 64 비트의 블록 크기는 SymmetricAlgorithm 있어야 하 고 PKCS #7 안쪽 여백 사용 하 여 CBC 모드 암호화를 지원 해야 합니다. KeyedHashAlgorithm 다이제스트 크기인 있어야 합니다. > = 128 비트 키 길이 해시 알고리즘의 다이제스트 길이 지원 해야 하 고 있습니다. KeyedHashAlgorithm HMAC를 엄격 하 게 필요 하지 않습니다.
+> ≥ 128 비트의 키 길이 및 ≥ 64 비트의 블록 크기는 SymmetricAlgorithm 있어야 하 고 PKCS #7 안쪽 여백 사용 하 여 CBC 모드 암호화를 지원 해야 합니다. KeyedHashAlgorithm 다이제스트 크기인 있어야 합니다. > = 128 비트 키 길이 해시 알고리즘의 다이제스트 길이 지원 해야 하 고 있습니다. KeyedHashAlgorithm 엄격 하 게 HMAC 될 필요는 없습니다.
 
 ### <a name="specifying-custom-windows-cng-algorithms"></a>사용자 지정 Windows CNG 알고리즘 지정
 

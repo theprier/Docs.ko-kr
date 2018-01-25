@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/razor
-ms.openlocfilehash: d932e28246998c60e2b3f9c77a2521fe55991e85
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: abdbb8112533d42f81180abad52f5ee86e3b280f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="razor-syntax-for-aspnet-core"></a>ASP.NET Core에 대 한 razor 구문
 
@@ -72,8 +72,8 @@ C# 제외 하 고 `await` 키워드, 암시적 식 공백을 포함 해서는 �
 
 위의 코드에서는 다음 중 하 나와 비슷한 컴파일러 오류가 생성 됩니다.
 
- * "Int" 요소가 닫히지 않았습니다. 모든 요소가 하나 있어야 자체 닫거나는 짝이 되는 끝 태그가 있습니다.
- * 메서드 그룹을 비 대리자 형식 'object' ' GenericMethod'으로 변환할 수 없습니다. 메서드를 호출 하 시겠습니까?' 
+ * "Int" 요소 종료 되지 않았습니다. 모든 요소가 하나 있어야 자체 닫거나는 짝이 되는 끝 태그가 있습니다.
+ *  메서드 그룹을 비 대리자 형식 'object' ' GenericMethod'으로 변환할 수 없습니다. 메서드를 호출 하 시겠습니까?' 
  
 제네릭 메서드 호출에 래핑되어야는 [명시적 Razor 식](#explicit-razor-expressions) 또는 [Razor 코드 블록](#razor-code-blocks)합니다.
 
@@ -118,8 +118,8 @@ Razor 식은 명시적으로 구성 될는 `@` 균형 잡힌 괄호 기호입니
 
 위의 코드에서는 다음 중 하 나와 비슷한 컴파일러 오류가 생성 됩니다.
 
- * "Int" 요소가 닫히지 않았습니다. 모든 요소가 하나 있어야 자체 닫거나는 짝이 되는 끝 태그가 있습니다.
- * 메서드 그룹을 비 대리자 형식 'object' ' GenericMethod'으로 변환할 수 없습니다. 메서드를 호출 하 시겠습니까?' 
+ * "Int" 요소 종료 되지 않았습니다. 모든 요소가 하나 있어야 자체 닫거나는 짝이 되는 끝 태그가 있습니다.
+ *  메서드 그룹을 비 대리자 형식 'object' ' GenericMethod'으로 변환할 수 없습니다. 메서드를 호출 하 시겠습니까?' 
  
  다음 태그는 올바른 방법은 쓰기가이 코드를 보여 줍니다. 명시적 식으로 코드를 작성 합니다.
 

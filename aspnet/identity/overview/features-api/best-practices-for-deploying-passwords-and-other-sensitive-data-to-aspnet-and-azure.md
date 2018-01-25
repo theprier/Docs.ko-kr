@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure
 msc.type: authoredcontent
-ms.openlocfilehash: 465c9cf6f452c268e7e23509e7a29547df5d3e83
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 995d9a088e3095f36a01d2adb19ec08e6a6d1b3e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure-app-service"></a>ASP.NET 및 Azure 앱 서비스 암호 및 기타 중요 한 데이터를 배포 하기 위한 모범 사례
 ====================
@@ -54,7 +54,7 @@ ms.lasthandoff: 11/10/2017
 ASP.NET 런타임 병합의 태그를 사용 하 여 외부 파일의 내용을 &lt;appSettings&gt; 요소입니다. 런타임에서 지정된 된 파일을 찾을 수 없는 경우 파일 특성을 무시 합니다.
 
 > [!WARNING]
-> 보안-추가 하지 않으면 프로그램 *비밀.config* 프로젝트에 파일 또는 소스 제어에 체크 인 합니다. 기본적으로 Visual Studio 설정에서 `Build Action` 를 `Content`, 배포 된 파일을 의미 하는 합니다. 자세한 내용은 참조 [이유 하지 않는 프로젝트 폴더 내에 있는 파일의 모든 배포?](https://msdn.microsoft.com/en-us/library/ee942158(v=vs.110).aspx#can_i_exclude_specific_files_or_folders_from_deployment) 에 대 한 모든 확장을 사용할 수 있지만 *비밀.config* 파일인 것이 가장 좋습니다 유지 *.config*마찬가지로 IIS에서 구성 파일을 제공 하지 않습니다. 또한는 *AppSettingsSecrets.config* 파일은 최대 두 디렉터리 수준에서의 *web.config* 파일 이기 때문에 솔루션 디렉터리를 완전히 벗어났습니다. 솔루션 디렉터리에서 파일을 이동 하 여 &quot;git 추가 \* &quot; 리포지토리에 추가 되지는 않습니다.
+> 보안-추가 하지 않으면 프로그램 *비밀.config* 프로젝트에 파일 또는 소스 제어에 체크 인 합니다. 기본적으로 Visual Studio 설정에서 `Build Action` 를 `Content`, 배포 된 파일을 의미 하는 합니다. 자세한 내용은 참조 [이유 하지 않는 프로젝트 폴더 내에 있는 파일의 모든 배포?](https://msdn.microsoft.com/library/ee942158(v=vs.110).aspx#can_i_exclude_specific_files_or_folders_from_deployment) 에 대 한 모든 확장을 사용할 수 있지만 *비밀.config* 파일인 것이 가장 좋습니다 유지 *.config*마찬가지로 IIS에서 구성 파일을 제공 하지 않습니다. 또한는 *AppSettingsSecrets.config* 파일은 최대 두 디렉터리 수준에서의 *web.config* 파일 이기 때문에 솔루션 디렉터리를 완전히 벗어났습니다. 솔루션 디렉터리에서 파일을 이동 하 여 &quot;git 추가 \* &quot; 리포지토리에 추가 되지는 않습니다.
 
 
 <a id="con"></a>
@@ -96,7 +96,7 @@ Azure에 웹 앱을 배포할 때의 *AppSettingsSecrets.config* (즉, 대상) �
 
 **앱 설정** 및 **연결 문자열** 값의 동일한 설정을 재정의 *web.config* 파일입니다. 예에서 우리 배포 되지 않은 이러한 설정을 Azure에 이러한 키 모두에 있지만 *web.config* 파일을 포털에 표시 된 설정을 우선 합니다.
 
-수행 하는 것이 좋습니다는 [DevOps 워크플로](../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything.md) 사용 하 여 [Azure PowerShell](https://azure.microsoft.com/en-us/documentation/articles/install-configure-powershell/) (또는와 같은 다른 프레임 워크 [Chef](http://www.opscode.com/chef/) 또는 [Puppet](http://puppetlabs.com/puppet/what-is-puppet))를 자동화 Azure에서 이러한 값을 설정 합니다. 다음 PowerShell 스크립트를 사용 하 여 [Export-clixml](http://www.powershellcookbook.com/recipe/PukO/securely-store-credentials-on-disk) 디스크에 암호화 된 암호를 내보내려면:
+수행 하는 것이 좋습니다는 [DevOps 워크플로](../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything.md) 사용 하 여 [Azure PowerShell](https://azure.microsoft.com/documentation/articles/install-configure-powershell/) (또는와 같은 다른 프레임 워크 [Chef](http://www.opscode.com/chef/) 또는 [Puppet](http://puppetlabs.com/puppet/what-is-puppet))를 자동화 Azure에서 이러한 값을 설정 합니다. 다음 PowerShell 스크립트를 사용 하 여 [Export-clixml](http://www.powershellcookbook.com/recipe/PukO/securely-store-credentials-on-disk) 디스크에 암호화 된 암호를 내보내려면:
 
 [!code-powershell[Main](best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure/samples/sample6.ps1)]
 
@@ -105,7 +105,7 @@ Azure에 웹 앱을 배포할 때의 *AppSettingsSecrets.config* (즉, 대상) �
 [!code-powershell[Main](best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure/samples/sample7.ps1)]
 
 > [!WARNING]
-> 보안-암호 또는 기타 암호 중요 한 데이터를 배포 하는 PowerShell 스크립트를 사용 하는 목적은 너무 비교를 수행 하는 PowerShell 스크립트에 포함 하지 않습니다. [Get-credential](https://technet.microsoft.com/en-us/library/hh849815.aspx) cmdlet은 암호를 가져옵니다 하는 보안 메커니즘을 제공 합니다. UI 프롬프트를 사용 하는 암호를 누수 방지할 수 있습니다.
+> 보안-암호 또는 기타 암호 중요 한 데이터를 배포 하는 PowerShell 스크립트를 사용 하는 목적은 너무 비교를 수행 하는 PowerShell 스크립트에 포함 하지 않습니다. [Get-credential](https://technet.microsoft.com/library/hh849815.aspx) cmdlet은 암호를 가져옵니다 하는 보안 메커니즘을 제공 합니다. UI 프롬프트를 사용 하는 암호를 누수 방지할 수 있습니다.
 
 
 ### <a name="deploying-db-connection-strings"></a>배포 DB 연결 문자열
@@ -119,7 +119,7 @@ Azure에 웹 앱을 배포할 때의 *AppSettingsSecrets.config* (즉, 대상) �
 
 ## <a name="notes-for-on-premises-servers"></a>온-프레미스 서버에 대 한 참고 사항
 
-온-프레미스 웹 서버를 배포 하는 경우에 하 여 보안 비밀을 도울 수 있습니다 [구성 파일의 구성 섹션 암호화](https://msdn.microsoft.com/en-us/library/ff647398.aspx)합니다. 대신 Azure 웹 사이트에 대 한 권장 같은 방법을 사용할 수 있습니다: 구성 파일에서 개발 설정 유지 하 고 프로덕션 설정에 대 한 환경 변수 값을 사용 합니다. 하지만 Azure 웹 사이트에서 자동 기능에 대 한 응용 프로그램 코드를 작성 해야이 경우: 환경 변수에서 설정을 검색 하 여 구성 파일 설정 대신 해당 값을 사용 하거나 구성 파일 설정을 사용 하는 경우 환경 변수는 찾을 수 없습니다.
+온-프레미스 웹 서버를 배포 하는 경우에 하 여 보안 비밀을 도울 수 있습니다 [구성 파일의 구성 섹션 암호화](https://msdn.microsoft.com/library/ff647398.aspx)합니다. 대신 Azure 웹 사이트에 대 한 권장 같은 방법을 사용할 수 있습니다: 구성 파일에서 개발 설정 유지 하 고 프로덕션 설정에 대 한 환경 변수 값을 사용 합니다. 하지만 Azure 웹 사이트에서 자동 기능에 대 한 응용 프로그램 코드를 작성 해야이 경우: 환경 변수에서 설정을 검색 하 여 구성 파일 설정 대신 해당 값을 사용 하거나 구성 파일 설정을 사용 하는 경우 환경 변수는 찾을 수 없습니다.
 
 <a id="addRes"></a>
 ## <a name="additional-resources"></a>추가 리소스

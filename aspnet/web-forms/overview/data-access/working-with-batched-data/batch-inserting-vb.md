@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-inserting-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e1e77dde4602350b18508bf5d71dbcd953f8961c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3f09b5fd86c1cc6641fb42a466b07da161c1dd35
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="batch-inserting-vb"></a>일괄 처리 (VB)를 삽입 합니다.
 ====================
@@ -96,7 +96,7 @@ ObjectDataSource 마법사를 완료 한 후 Visual Studio는 BoundFields 및 �
 다음으로, 그림 1에 다시 표시 된 삽입 인터페이스를 만드는 필요 합니다. 다양 한 HTML 기술을 통해이 인터페이스를 만들 수 있지만 매우 간단한 하나를 사용 합니다: 네 개의 열과 7 행 테이블입니다.
 
 > [!NOTE]
-> HTML에 대 한 태그를 입력할 때 `<table>` 요소 않겠습니다. 소스 뷰를 사용 합니다. Visual Studio에 추가 하기 위한 도구는 동안 `<table>` 디자이너를 통해 요소를 디자이너 보이는 모든 너무 기꺼이 삽입을 원하지 않는 메일 `style` 태그에 설정 합니다. 만든 후의 `<table>` 태그, 일반적으로 반환 해야 디자이너로 웹 컨트롤을 추가 하 고 해당 속성을 설정 합니다. 정적 HTML을 사용 하 여 원하는 미리 결정된 된 열과 행 테이블을 만들 때 보다는 [Table 웹 컨트롤](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.table.aspx) Table 웹 컨트롤 내에 있는 웹 컨트롤만 액세스할 수 있으므로 사용 하는 `FindControl("controlID")` 패턴입니다. 그러나 Table 웹 컨트롤을 프로그래밍 방식으로 생성할 수 있습니다. 이후 동적으로 크기의 테이블 (텍스처를 행 또는 열 일부 데이터베이스 또는 사용자 지정 기준에 기반)에 대 한 테이블 웹 컨트롤 사용을 않습니다.
+> HTML에 대 한 태그를 입력할 때 `<table>` 요소 않겠습니다. 소스 뷰를 사용 합니다. Visual Studio에 추가 하기 위한 도구는 동안 `<table>` 디자이너를 통해 요소를 디자이너 보이는 모든 너무 기꺼이 삽입을 원하지 않는 메일 `style` 태그에 설정 합니다. 만든 후의 `<table>` 태그, 일반적으로 반환 해야 디자이너로 웹 컨트롤을 추가 하 고 해당 속성을 설정 합니다. 정적 HTML을 사용 하 여 원하는 미리 결정된 된 열과 행 테이블을 만들 때 보다는 [Table 웹 컨트롤](https://msdn.microsoft.com/library/system.web.ui.webcontrols.table.aspx) Table 웹 컨트롤 내에 있는 웹 컨트롤만 액세스할 수 있으므로 사용 하는 `FindControl("controlID")` 패턴입니다. 그러나 Table 웹 컨트롤을 프로그래밍 방식으로 생성할 수 있습니다. 이후 동적으로 크기의 테이블 (텍스처를 행 또는 열 일부 데이터베이스 또는 사용자 지정 기준에 기반)에 대 한 테이블 웹 컨트롤 사용을 않습니다.
 
 
 내에서 다음 태그를 입력에서 `<asp:Panel>` 의 태그는 `InsertingInterface` 패널:

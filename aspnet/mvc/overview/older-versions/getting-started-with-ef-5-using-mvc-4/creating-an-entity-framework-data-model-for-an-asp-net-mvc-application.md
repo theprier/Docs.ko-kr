@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: c25ebf472df5dcbc664257cdf8678bfac535d846
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 223dd48bb996de527f20291e4701e7d1b60a539d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-an-entity-framework-data-model-for-an-aspnet-mvc-application-1-of-10"></a>ASP.NET MVC 응용 프로그램 (1 / 10)에 대 한 Entity Framework 데이터 모델 만들기
 ====================
@@ -33,7 +33,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > ## <a name="code-first"></a>Code First
 > 
-> 세 가지 방법으로 데이터 Entity Framework에서 사용할 수 있습니다: *Database First*, *Model First*, 및 *Code First*합니다. 첫 번째 코드에 대 한이 자습서가입니다. 이러한 워크플로 지침 간의 차이점에 대 한 사용자 시나리오에 가장 적합 한 선택 하는 방법에 정보를 참조 하십시오. [Entity Framework 개발 워크플로에](https://msdn.microsoft.com/en-us/library/ms178359.aspx#dbfmfcf)합니다.
+> 세 가지 방법으로 데이터 Entity Framework에서 사용할 수 있습니다: *Database First*, *Model First*, 및 *Code First*합니다. 첫 번째 코드에 대 한이 자습서가입니다. 이러한 워크플로 지침 간의 차이점에 대 한 사용자 시나리오에 가장 적합 한 선택 하는 방법에 정보를 참조 하십시오. [Entity Framework 개발 워크플로에](https://msdn.microsoft.com/library/ms178359.aspx#dbfmfcf)합니다.
 > 
 > ## <a name="mvc"></a>MVC
 > 
@@ -51,7 +51,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > ## <a name="questions"></a>질문
 > 
-> 자습서를 직접 관련 되지 않는 질문 해야 하도록를 게시할 수 있습니다는 [ASP.NET Entity Framework 포럼](https://forums.asp.net/1227.aspx), [Entity Framework와 LINQ to Entities 포럼](https://social.msdn.microsoft.com/forums/en-US/adodotnetentityframework/threads/), 또는 [ StackOverflow.com](http://stackoverflow.com/)합니다.
+> 자습서를 직접 관련 되지 않는 질문 해야 하도록를 게시할 수 있습니다는 [ASP.NET Entity Framework 포럼](https://forums.asp.net/1227.aspx), [Entity Framework와 LINQ to Entities 포럼](https://social.msdn.microsoft.com/forums/adodotnetentityframework/threads/), 또는 [ StackOverflow.com](http://stackoverflow.com/)합니다.
 > 
 > ## <a name="acknowledgments"></a>승인
 > 
@@ -84,7 +84,7 @@ Visual Studio가 설치 되어 있는 경우 위의 링크 모든 누락 된 구
 
 ## <a name="create-an-mvc-web-application"></a>MVC 웹 응용 프로그램 만들기
 
-Visual Studio를 열고 새 C# 프로젝트 만들기 "ContosoUniversity"를 사용 하 여 명명 된 **ASP.NET MVC 4 웹 응용 프로그램** 서식 파일입니다. 대상 확인 **.NET Framework 4.5** (사용 하 게 [ `enum` 속성](https://msdn.microsoft.com/en-us/data/hh859576.aspx),.NET 4.5를 필요로 하).
+Visual Studio를 열고 새 C# 프로젝트 만들기 "ContosoUniversity"를 사용 하 여 명명 된 **ASP.NET MVC 4 웹 응용 프로그램** 서식 파일입니다. 대상 확인 **.NET Framework 4.5** (사용 하 게 [ `enum` 속성](https://msdn.microsoft.com/data/hh859576.aspx),.NET 4.5를 필요로 하).
 
 ![New_project_dialog_box](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image3.png)
 
@@ -159,7 +159,7 @@ Visual Studio를 열고 새 C# 프로젝트 만들기 "ContosoUniversity"를 사
 
 [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample5.cs)]
 
-등급 속성은 한 [enum](https://msdn.microsoft.com/en-us/data/hh859576.aspx)합니다. 후 물음표는 `Grade` 형식 선언을 나타냅니다는 `Grade` 속성은 [nullable](https://msdn.microsoft.com/en-us/library/2cf62fcy.aspx)합니다. Null이 등급은 0 개 등급 다릅니다-의미 하는 등급 알려진 또는 아직 할당 되지 않았습니다.
+등급 속성은 한 [enum](https://msdn.microsoft.com/data/hh859576.aspx)합니다. 후 물음표는 `Grade` 형식 선언을 나타냅니다는 `Grade` 속성은 [nullable](https://msdn.microsoft.com/library/2cf62fcy.aspx)합니다. Null이 등급은 0 개 등급 다릅니다-의미 하는 등급 알려진 또는 아직 할당 되지 않았습니다.
 
 `StudentID` 속성은 외래 키 및 해당 탐색 속성은 `Student`합니다. `Enrollment` 엔터티는 하 나와 연결 `Student` 엔터티, 속성에는 단일만 포함할 수 있으므로 `Student` 엔터티 (달리는 `Student.Enrollments` 탐색 속성 했 듯이, 여러을 보유할 수 있는 `Enrollment` 엔터티)입니다.
 
@@ -175,19 +175,19 @@ Visual Studio를 열고 새 C# 프로젝트 만들기 "ContosoUniversity"를 사
 
 `Enrollments` 속성은 탐색 속성입니다. A `Course` 개수에 관계 없이 관련 될 수 있는 엔터티 `Enrollment` 엔터티.
 
-에 대 한 내용은 라고는 [[DatabaseGenerated](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.databasegeneratedattribute(v=vs.110).aspx)([databasegeneratedoption입니다](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.databasegeneratedoption(v=vs.95).aspx)합니다. 다음 자습서의 특성 없음)]입니다. 기본적으로,이 특성 과정 대신 생성 하는 데이터베이스에 대 한 기본 키를 입력할 수 있습니다.
+에 대 한 내용은 라고는 [[DatabaseGenerated](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.databasegeneratedattribute(v=vs.110).aspx)([databasegeneratedoption입니다](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.databasegeneratedoption(v=vs.95).aspx)합니다. 다음 자습서의 특성 없음)]입니다. 기본적으로,이 특성 과정 대신 생성 하는 데이터베이스에 대 한 기본 키를 입력할 수 있습니다.
 
 ## <a name="create-the-database-context"></a>데이터베이스 컨텍스트 만들기
 
-지정된 된 데이터 모델에 대 한 Entity Framework 기능을 조정 하는 기본 클래스는는 *데이터베이스 컨텍스트* 클래스입니다. 이 클래스에서 파생 시켜 만들는 [System.Data.Entity.DbContext](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext(v=VS.103).aspx) 클래스입니다. 코드에서 데이터 모델에 포함 된 엔터티 지정 합니다. 특정 Entity Framework 동작을 사용자 지정할 수 있습니다. 이 프로젝트에 클래스 이름은 `SchoolContext`합니다.
+지정된 된 데이터 모델에 대 한 Entity Framework 기능을 조정 하는 기본 클래스는는 *데이터베이스 컨텍스트* 클래스입니다. 이 클래스에서 파생 시켜 만들는 [System.Data.Entity.DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=VS.103).aspx) 클래스입니다. 코드에서 데이터 모델에 포함 된 엔터티 지정 합니다. 특정 Entity Framework 동작을 사용자 지정할 수 있습니다. 이 프로젝트에 클래스 이름은 `SchoolContext`합니다.
 
 라는 폴더를 만듭니다 *DAL* (데이터 액세스 계층)에 대 한 합니다. 해당 폴더에 라는 새 클래스 파일을 만들 *SchoolContext.cs*, 기존 코드를 다음 코드로 바꿉니다.
 
 [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample7.cs)]
 
-이 코드에서는 [DbSet](https://msdn.microsoft.com/en-us/library/system.data.entity.dbset(v=VS.103).aspx) 각 엔터티 집합에 대 한 속성입니다. Entity Framework 용어에서는 *엔터티 집합* 일반적으로 데이터베이스 테이블에 해당 및 *엔터티* 테이블의 행에 해당 합니다.
+이 코드에서는 [DbSet](https://msdn.microsoft.com/library/system.data.entity.dbset(v=VS.103).aspx) 각 엔터티 집합에 대 한 속성입니다. Entity Framework 용어에서는 *엔터티 집합* 일반적으로 데이터베이스 테이블에 해당 및 *엔터티* 테이블의 행에 해당 합니다.
 
-`modelBuilder.Conventions.Remove` 의 문에서 [OnModelCreating](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext.onmodelcreating(v=vs.103).aspx) 복수화 되 고에서 테이블 이름을 수 없습니다. 이렇게 하지 않은 생성된 된 테이블 이름이 `Students`, `Courses`, 및 `Enrollments`합니다. 테이블 이름이 됩니다 대신 `Student`, `Course`, 및 `Enrollment`합니다. 개발자는 테이블 이름을 복수화할지 여부에 대해 동의하지 않습니다. 이 자습서에서는 단 수 형태를 사용 하지만 중요 한 점은 포함 하거나 코드이 줄을 생략 하 여 원하는 어떤 폼을 선택할 수 있습니다.
+`modelBuilder.Conventions.Remove` 의 문에서 [OnModelCreating](https://msdn.microsoft.com/library/system.data.entity.dbcontext.onmodelcreating(v=vs.103).aspx) 복수화 되 고에서 테이블 이름을 수 없습니다. 이렇게 하지 않은 생성된 된 테이블 이름이 `Students`, `Courses`, 및 `Enrollments`합니다. 테이블 이름이 됩니다 대신 `Student`, `Course`, 및 `Enrollment`합니다. 개발자는 테이블 이름을 복수화할지 여부에 대해 동의하지 않습니다. 이 자습서에서는 단 수 형태를 사용 하지만 중요 한 점은 포함 하거나 코드이 줄을 생략 하 여 원하는 어떤 폼을 선택할 수 있습니다.
 
 ## <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
 
@@ -201,15 +201,15 @@ Visual Studio 2012 이상 버전에서 LocalDB는 Visual Studio를 사용 하 �
 
 [!code-xml[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample8.xml)]
 
-기본적으로 이름이 연결 문자열에 대 한 Entity Framework 찾습니다는 `DbContext` 클래스 (`SchoolContext` 이 프로젝트에 대 한). 명명 된 LocalDB 데이터베이스를 지정 하는 사용자가 추가한 연결 문자열 *ContosoUniversity.mdf* 에 *앱\_데이터* 폴더입니다. 자세한 내용은 참조 [ASP.NET 웹 응용 프로그램에 대 한 SQL Server 연결 문자열](https://msdn.microsoft.com/en-us/library/jj653752.aspx)합니다.
+기본적으로 이름이 연결 문자열에 대 한 Entity Framework 찾습니다는 `DbContext` 클래스 (`SchoolContext` 이 프로젝트에 대 한). 명명 된 LocalDB 데이터베이스를 지정 하는 사용자가 추가한 연결 문자열 *ContosoUniversity.mdf* 에 *앱\_데이터* 폴더입니다. 자세한 내용은 참조 [ASP.NET 웹 응용 프로그램에 대 한 SQL Server 연결 문자열](https://msdn.microsoft.com/library/jj653752.aspx)합니다.
 
-실제로 연결 문자열을 지정할 필요가 없습니다. 연결 문자열을 지정 하지 않으면 Entity Framework에서 만듭니다. 그러나 데이터베이스에 없을 수도 *앱\_데이터* 응용 프로그램의 폴더입니다. 데이터베이스를 만들 위치에 대 한 정보를 참조 하십시오. [Code First를 새 데이터베이스로](https://msdn.microsoft.com/en-us/data/jj193542)합니다.
+실제로 연결 문자열을 지정할 필요가 없습니다. 연결 문자열을 지정 하지 않으면 Entity Framework에서 만듭니다. 그러나 데이터베이스에 없을 수도 *앱\_데이터* 응용 프로그램의 폴더입니다. 데이터베이스를 만들 위치에 대 한 정보를 참조 하십시오. [Code First를 새 데이터베이스로](https://msdn.microsoft.com/data/jj193542)합니다.
 
 `connectionStrings` 컬렉션 이라는 연결 문자열에 `DefaultConnection` 멤버 자격 데이터베이스에 사용 됩니다. 이 자습서에서는 멤버 자격 데이터베이스를 사용 되지 않습니다. 유일한 차이점은 두 개의 연결 문자열에는 데이터베이스 이름 및 name 특성 값입니다.
 
 ## <a name="set-up-and-execute-a-code-first-migration"></a>설정 하 고 실행 코드의 첫 번째 마이그레이션
 
-를 처음 시작 하면 응용 프로그램을 개발 하는 경우 데이터 모델 변경 내용을 자주 고 될 때마다 모델 변경 내용을 가져오는 데이터베이스와 동기화 합니다. 자동으로 삭제 하 고 데이터 모델을 변경할 때마다 데이터베이스를 다시 만드는 Entity Framework를 구성할 수 있습니다. 테스트 데이터를 쉽게 다시 만들 수 있지만 일반적으로 데이터베이스를 삭제 하지 않고 데이터베이스 스키마를 업데이트 하려면 프로덕션 환경에 배포한 후에 개발 초기에 문제가 되지 않습니다. 마이그레이션 기능 코드 첫 번째 데이터베이스를 삭제 하 고 다시 만들기를 업데이트할 수 있습니다. 새 프로젝트의 개발 주기의 초기 단계에서 사용 하려는 [DropCreateDatabaseIfModelChanges](https://msdn.microsoft.com/en-us/library/gg679604(v=vs.103).aspx) 모델 변경 될 때마다을 삭제, 다시 만들고 데이터베이스를 다시 시드해야 합니다. 응용 프로그램을 배포할 준비가 발생 하나 마이그레이션 접근 방식으로 변환할 수 있습니다. 이 자습서에 대 한 마이그레이션만 사용 합니다. 자세한 내용은 참조 [Code First 마이그레이션을](https://msdn.microsoft.com/en-us/data/jj591621) 및 [마이그레이션 동영상 가이드 시리즈](https://blogs.msdn.com/b/adonet/archive/2014/03/12/migrations-screencast-series.aspx)합니다.
+를 처음 시작 하면 응용 프로그램을 개발 하는 경우 데이터 모델 변경 내용을 자주 고 될 때마다 모델 변경 내용을 가져오는 데이터베이스와 동기화 합니다. 자동으로 삭제 하 고 데이터 모델을 변경할 때마다 데이터베이스를 다시 만드는 Entity Framework를 구성할 수 있습니다. 테스트 데이터를 쉽게 다시 만들 수 있지만 일반적으로 데이터베이스를 삭제 하지 않고 데이터베이스 스키마를 업데이트 하려면 프로덕션 환경에 배포한 후에 개발 초기에 문제가 되지 않습니다. 마이그레이션 기능 코드 첫 번째 데이터베이스를 삭제 하 고 다시 만들기를 업데이트할 수 있습니다. 새 프로젝트의 개발 주기의 초기 단계에서 사용 하려는 [DropCreateDatabaseIfModelChanges](https://msdn.microsoft.com/library/gg679604(v=vs.103).aspx) 모델 변경 될 때마다을 삭제, 다시 만들고 데이터베이스를 다시 시드해야 합니다. 응용 프로그램을 배포할 준비가 발생 하나 마이그레이션 접근 방식으로 변환할 수 있습니다. 이 자습서에 대 한 마이그레이션만 사용 합니다. 자세한 내용은 참조 [Code First 마이그레이션을](https://msdn.microsoft.com/data/jj591621) 및 [마이그레이션 동영상 가이드 시리즈](https://blogs.msdn.com/b/adonet/archive/2014/03/12/migrations-screencast-series.aspx)합니다.
 
 ### <a name="enable-code-first-migrations"></a>Code First 마이그레이션을 사용 하도록 설정
 
@@ -234,9 +234,9 @@ Visual Studio 2012 이상 버전에서 LocalDB는 Visual Studio를 사용 하 �
 
 ### <a name="set-up-the-seed-method"></a>Seed 메서드 설정
 
-[시드](https://msdn.microsoft.com/en-us/library/hh829453(v=vs.103).aspx) Code First 마이그레이션을 데이터베이스를 만들 때 및 최신 마이그레이션을 위해 데이터베이스를 업데이트 될 때마다 메서드를 실행 합니다. Seed 메서드의 목적은 응용 프로그램 하기 전에 테이블에 데이터를 삽입할 수 있도록 처음으로 데이터베이스에 액세스 합니다.
+[시드](https://msdn.microsoft.com/library/hh829453(v=vs.103).aspx) Code First 마이그레이션을 데이터베이스를 만들 때 및 최신 마이그레이션을 위해 데이터베이스를 업데이트 될 때마다 메서드를 실행 합니다. Seed 메서드의 목적은 응용 프로그램 하기 전에 테이블에 데이터를 삽입할 수 있도록 처음으로 데이터베이스에 액세스 합니다.
 
-첫 번째 코드의 이전 버전에서 마이그레이션 전에 이었습니다 `Seed` 개발 하는 동안 모델 바뀔 때마다 데이터베이스에서 발생 완전히 삭제 하 고 처음부터 다시 생성 하기 때문에 테스트 데이터를 삽입 하는 메서드. Code First 마이그레이션을, 데이터베이스 변경 된 후 데이터는 유지 하는 테스트의 테스트 데이터를 포함 하므로 [시드](https://msdn.microsoft.com/en-us/library/hh829453(v=vs.103).aspx) 일반적으로 메서드는 필요 없습니다. 않도록 실제로 `Seed` 합니다 사용할 경우 마이그레이션에 데이터베이스를 프로덕션에 배포 하기 때문에 테스트 데이터를 삽입 하는 메서드는 `Seed` 메서드가 프로덕션 환경에서 실행 됩니다. 원하는 경우에 `Seed` 메서드를 프로덕션 환경에 삽입할 데이터만 데이터베이스에 삽입 합니다. 데이터베이스의 실제 부서 이름을 포함 하도록 할 수는 예를 들어는 `Department` 응용 프로그램이 프로덕션 환경에서 사용할 수 있을 때 테이블입니다.
+첫 번째 코드의 이전 버전에서 마이그레이션 전에 이었습니다 `Seed` 개발 하는 동안 모델 바뀔 때마다 데이터베이스에서 발생 완전히 삭제 하 고 처음부터 다시 생성 하기 때문에 테스트 데이터를 삽입 하는 메서드. Code First 마이그레이션을, 데이터베이스 변경 된 후 데이터는 유지 하는 테스트의 테스트 데이터를 포함 하므로 [시드](https://msdn.microsoft.com/library/hh829453(v=vs.103).aspx) 일반적으로 메서드는 필요 없습니다. 않도록 실제로 `Seed` 합니다 사용할 경우 마이그레이션에 데이터베이스를 프로덕션에 배포 하기 때문에 테스트 데이터를 삽입 하는 메서드는 `Seed` 메서드가 프로덕션 환경에서 실행 됩니다. 원하는 경우에 `Seed` 메서드를 프로덕션 환경에 삽입할 데이터만 데이터베이스에 삽입 합니다. 데이터베이스의 실제 부서 이름을 포함 하도록 할 수는 예를 들어는 `Department` 응용 프로그램이 프로덕션 환경에서 사용할 수 있을 때 테이블입니다.
 
 이 자습서를 사용 하기 마이그레이션 배포에 대 한 하지만 `Seed` 메서드는 테스트 데이터 삽입 그래도 보다 쉽게 응용 프로그램 기능을 수동으로 많은 데이터를 삽입 하지 않고도 어떻게 작동 하는지 확인할 수 있도록 합니다.
 
@@ -244,11 +244,11 @@ Visual Studio 2012 이상 버전에서 LocalDB는 Visual Studio를 사용 하 �
 
     [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample11.cs)]
 
-    [시드](https://msdn.microsoft.com/en-us/library/hh829453(v=vs.103).aspx) 메서드가 데이터베이스 컨텍스트 개체를 입력된 매개 변수로 하 고는 메서드의 코드에서에서 해당 개체를 사용 하 여 데이터베이스에 새 엔터티를 추가 합니다. 각 엔터티 형식에 대 한 새 엔터티 컬렉션을 만듭니다을 코드에 적절 한 추가 [DbSet](https://msdn.microsoft.com/en-us/library/system.data.entity.dbset(v=vs.103).aspx) 속성을 선택한 다음 변경 내용이 데이터베이스에 저장 합니다. 호출할 필요가 없습니다는 [SaveChanges](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext.savechanges(v=VS.103).aspx) 엔터티의 각 그룹 뒤 메서드, 여기서 단원의 하지만 코드는 데이터베이스에 쓰는 동안 예외가 발생 하면 문제의 원인의 찾을 수 있습니다 작업을 수행 합니다.
+    [시드](https://msdn.microsoft.com/library/hh829453(v=vs.103).aspx) 메서드가 데이터베이스 컨텍스트 개체를 입력된 매개 변수로 하 고는 메서드의 코드에서에서 해당 개체를 사용 하 여 데이터베이스에 새 엔터티를 추가 합니다. 각 엔터티 형식에 대 한 새 엔터티 컬렉션을 만듭니다을 코드에 적절 한 추가 [DbSet](https://msdn.microsoft.com/library/system.data.entity.dbset(v=vs.103).aspx) 속성을 선택한 다음 변경 내용이 데이터베이스에 저장 합니다. 호출할 필요가 없습니다는 [SaveChanges](https://msdn.microsoft.com/library/system.data.entity.dbcontext.savechanges(v=VS.103).aspx) 엔터티의 각 그룹 뒤 메서드, 여기서 단원의 하지만 코드는 데이터베이스에 쓰는 동안 예외가 발생 하면 문제의 원인의 찾을 수 있습니다 작업을 수행 합니다.
 
-    사용 하 여 일부 데이터를 삽입 하는 문에 [AddOrUpdate](https://msdn.microsoft.com/en-us/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx) 메서드는 "upsert" 작업을 수행 하도록 합니다. 때문에 `Seed` 모든 마이그레이션을 사용 하 여 메서드 실행, 때문에 추가 하려고 하는 행 이미 있는 데이터베이스를 만드는 첫 번째 마이그레이션 후에 데이터를 삽입할 수 없습니다. "Upsert" 작업이 있지만 이미 존재 하는 행을 삽입 하려고 할 경우 수행 하는 오류를 방지할 수 ***재정의*** 응용 프로그램을 테스트 하는 동안 실행 한 데이터 변경 사항이 있습니다. 테스트 테이블의에서 데이터 일부 원하지 않을 수 있습니다이 위해서는: 경우에 따라 테스트 하는 동안 데이터를 변경 하면 원하는 변경 내용을 데이터베이스 업데이트 후 하 게 유지 합니다. 조건부 삽입 작업을 수행 하려는 경우: 존재 하지 않는 경우에 행을 삽입 합니다. Seed 메서드는 두 가지 방법을 모두 사용합니다.
+    사용 하 여 일부 데이터를 삽입 하는 문에 [AddOrUpdate](https://msdn.microsoft.com/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx) 메서드는 "upsert" 작업을 수행 하도록 합니다. 때문에 `Seed` 모든 마이그레이션을 사용 하 여 메서드 실행, 때문에 추가 하려고 하는 행 이미 있는 데이터베이스를 만드는 첫 번째 마이그레이션 후에 데이터를 삽입할 수 없습니다. "Upsert" 작업이 있지만 이미 존재 하는 행을 삽입 하려고 할 경우 수행 하는 오류를 방지할 수 ***재정의*** 응용 프로그램을 테스트 하는 동안 실행 한 데이터 변경 사항이 있습니다. 테스트 테이블의에서 데이터 일부 원하지 않을 수 있습니다이 위해서는: 경우에 따라 테스트 하는 동안 데이터를 변경 하면 원하는 변경 내용을 데이터베이스 업데이트 후 하 게 유지 합니다. 조건부 삽입 작업을 수행 하려는 경우: 존재 하지 않는 경우에 행을 삽입 합니다. Seed 메서드는 두 가지 방법을 모두 사용합니다.
 
-    에 전달 된 첫 번째 매개 변수는 [AddOrUpdate](https://msdn.microsoft.com/en-us/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx) 메서드 행 이미 존재 하는지 확인 하는 데 속성을 지정 합니다. 테스트 학생 데이터를 제공 하는 대 한는 `LastName` 속성 목록에 각 성이 고유 이므로이 용도로 사용할 수 수 있습니다.
+    에 전달 된 첫 번째 매개 변수는 [AddOrUpdate](https://msdn.microsoft.com/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx) 메서드 행 이미 존재 하는지 확인 하는 데 속성을 지정 합니다. 테스트 학생 데이터를 제공 하는 대 한는 `LastName` 속성 목록에 각 성이 고유 이므로이 용도로 사용할 수 수 있습니다.
 
     [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample12.cs)]
 
@@ -258,7 +258,7 @@ Visual Studio 2012 이상 버전에서 LocalDB는 Visual Studio를 사용 하 �
 
     에 대 한 자세한 내용은 `AddOrUpdate` 메서드를 참조 [EF 4.3 AddOrUpdate 메서드로 주의](http://thedatafarm.com/blog/data-access/take-care-with-ef-4-3-addorupdate-method/) Julie Lerman 블로그.
 
-    추가 하는 코드 `Enrollment` 엔터티를 사용 하지 않는 `AddOrUpdate` 메서드. 확인 하는 경우 엔터티 이미 있으며 존재 하지 않는 경우 엔터티를 삽입 합니다. 이 방법은 마이그레이션을 실행 하는 경우 등록 등급에 수행한 변경 내용을 유지 됩니다. 코드의 각 멤버를 반복는 `Enrollment` [목록](https://msdn.microsoft.com/en-us/library/6sh2ey19.aspx) 등록 데이터베이스에 없는 경우에 등록 데이터베이스에 추가 합니다. 데이터베이스를 업데이트 하는 처음으로 데이터베이스가 비어 있게 됩니다, 되므로 각 등록 추가 됩니다.
+    추가 하는 코드 `Enrollment` 엔터티를 사용 하지 않는 `AddOrUpdate` 메서드. 확인 하는 경우 엔터티 이미 있으며 존재 하지 않는 경우 엔터티를 삽입 합니다. 이 방법은 마이그레이션을 실행 하는 경우 등록 등급에 수행한 변경 내용을 유지 됩니다. 코드의 각 멤버를 반복는 `Enrollment` [목록](https://msdn.microsoft.com/library/6sh2ey19.aspx) 등록 데이터베이스에 없는 경우에 등록 데이터베이스에 추가 합니다. 데이터베이스를 업데이트 하는 처음으로 데이터베이스가 비어 있게 됩니다, 되므로 각 등록 추가 됩니다.
 
     [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample13.cs)]
 
@@ -343,7 +343,7 @@ Visual Studio 2012 이상 버전에서 LocalDB는 Visual Studio를 사용 하 �
 - 엔터티 속성 이름은 열 이름에 사용 됩니다.
 - 명명 된 엔터티 속성 `ID` 또는 *classname* `ID` 기본 키 속성으로 인식 됩니다.
 
-지금까지 살펴본 규칙을 재정의할 수 있습니다 (예를 들어 사용자가 지정한 테이블 이름을 복수화 수 해서는 안) 있으며 규칙 및 재정의에 해당 하는 방법에 대해 자세히 배울 수 있습니다는 [더 복잡 한 데이터 모델을 만드는](creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md) 자습서 나중에 있습니다. 자세한 내용은 참조 [코드 첫 번째 규칙](https://msdn.microsoft.com/en-us/data/jj679962)합니다.
+지금까지 살펴본 규칙을 재정의할 수 있습니다 (예를 들어 사용자가 지정한 테이블 이름을 복수화 수 해서는 안) 있으며 규칙 및 재정의에 해당 하는 방법에 대해 자세히 배울 수 있습니다는 [더 복잡 한 데이터 모델을 만드는](creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md) 자습서 나중에 있습니다. 자세한 내용은 참조 [코드 첫 번째 규칙](https://msdn.microsoft.com/data/jj679962)합니다.
 
 ## <a name="summary"></a>요약
 

@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/single-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: f0d465b363652c691c203d608f2cb9d139e72fed
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b3640c94a8ae9ede330c0fe6a392acb5843cb65c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="single-sign-on-building-real-world-cloud-apps-with-azure"></a>Single Sign-on (Azure로 응용 프로그램 빌딩 실제 클라우드)
 ====================
@@ -31,12 +31,12 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="introduction-to-azure-ad"></a>Azure AD 소개
 
-[Azure AD](https://docs.microsoft.com/azure/active-directory/) 제공 [Active Directory](https://msdn.microsoft.com/en-us/library/windows/desktop/aa746492.aspx) 클라우드에 있습니다. 주요 기능은 다음과 같습니다.
+[Azure AD](https://docs.microsoft.com/azure/active-directory/) 제공 [Active Directory](https://msdn.microsoft.com/library/windows/desktop/aa746492.aspx) 클라우드에 있습니다. 주요 기능은 다음과 같습니다.
 
 - 온-프레미스 Active Directory와 통합합니다.
 - Single sign on 여 응용 프로그램과 함께 수 있습니다.
 - 와 같은 공개 표준을 지원 [SAML](http://en.wikipedia.org/wiki/SAML_2.0), [Ws-fed](http://en.wikipedia.org/wiki/WS-Federation), 및 [OAuth 2.0](http://oauth.net/2/)합니다.
-- 엔터프라이즈 지원 [Graph REST API](https://msdn.microsoft.com/en-us/library/hh974476.aspx)합니다.
+- 엔터프라이즈 지원 [Graph REST API](https://msdn.microsoft.com/library/hh974476.aspx)합니다.
 
 인트라넷 응용 프로그램에 로그온 하는 직원을 사용 하도록 설정 하는 데 사용 하는 온-프레미스 Windows Server Active Directory 환경에 있다고 가정 합니다.
 
@@ -64,7 +64,7 @@ AD와 Azure AD 간의이 연결 했습니다. 웹 앱 및 모바일 장치는 �
 
 ## <a name="set-up-an-azure-ad-tenant"></a>Azure AD 테 넌 트 설정
 
-Azure AD에서 Azure AD 디렉터리 라고 [테 넌 트](https://technet.microsoft.com/en-us/library/jj573650.aspx), 매우 쉽습니다 테 넌 트를 설정 하 고 있습니다. 개념을 설명 하기 위해 Azure 관리 포털에서 수행 방법을 보여 드리 려 우리 없지만 물론 다른 포털 함수 처럼 수 있습니다도 것 스크립트 또는 관리 API 사용 하 여 합니다.
+Azure AD에서 Azure AD 디렉터리 라고 [테 넌 트](https://technet.microsoft.com/library/jj573650.aspx), 매우 쉽습니다 테 넌 트를 설정 하 고 있습니다. 개념을 설명 하기 위해 Azure 관리 포털에서 수행 방법을 보여 드리 려 우리 없지만 물론 다른 포털 함수 처럼 수 있습니다도 것 스크립트 또는 관리 API 사용 하 여 합니다.
 
 관리 포털에서 Active Directory 탭을 클릭 합니다.
 
@@ -118,7 +118,7 @@ Azure 계정에 대 한 Azure AD 테 넌 트를 자동으로 부여 되며을 �
 
 ![WAAD 동기화 도구 구성 마법사](single-sign-on/_static/image17.png)
 
-클라우드에 저장할 수 있는 암호 해시는 단방향 해시; 실제 암호는 Azure AD에 저장 되지 않습니다. 사용 해야 클라우드에서 강력한 해시에 대해 결정 한 경우 [Active Directory Federation Services](https://technet.microsoft.com/en-us/library/hh831502.aspx) (ADFS). 또한 [경우 고려해 야 할 기타 요인 ADFS 사용 여부를 선택](https://technet.microsoft.com/en-us/library/jj573653.aspx)합니다. ADFS 옵션에는 몇 가지 추가 구성 단계가 필요합니다.
+클라우드에 저장할 수 있는 암호 해시는 단방향 해시; 실제 암호는 Azure AD에 저장 되지 않습니다. 사용 해야 클라우드에서 강력한 해시에 대해 결정 한 경우 [Active Directory Federation Services](https://technet.microsoft.com/library/hh831502.aspx) (ADFS). 또한 [경우 고려해 야 할 기타 요인 ADFS 사용 여부를 선택](https://technet.microsoft.com/library/jj573653.aspx)합니다. ADFS 옵션에는 몇 가지 추가 구성 단계가 필요합니다.
 
 클라우드에서 해시를 저장 하도록 선택 하면, 삭제 하 고 나면를 클릭할 때 디렉터리 동기화 도구가 시작 경우 **다음**합니다.
 
@@ -156,7 +156,7 @@ Visual Studio에서는 몇 가지 스크린 샷에서 볼 수 있듯이 single s
 
 ![인증 대화 상자를 구성 합니다.](single-sign-on/_static/image24.png)
 
-응용 프로그램 읽기를 제공 하거나 수도 디렉터리 데이터에 대 한 권한이 읽기/쓰기입니다. 이렇게 하면 사용할 수는 [Azure Graph REST API](https://msdn.microsoft.com/en-us/library/windowsazure/hh974476.aspx) 사용자의 전화 번호를 조회할 확인 하는 경우 변경 내용은 하면 사무실에 마지막 등으로 기록 합니다.
+응용 프로그램 읽기를 제공 하거나 수도 디렉터리 데이터에 대 한 권한이 읽기/쓰기입니다. 이렇게 하면 사용할 수는 [Azure Graph REST API](https://msdn.microsoft.com/library/windowsazure/hh974476.aspx) 사용자의 전화 번호를 조회할 확인 하는 경우 변경 내용은 하면 사무실에 마지막 등으로 기록 합니다.
 
 -할 모든 Visual Studio 자격 증명에 대 한 Azure AD 테 넌 트의 관리자에 대 한 문의 한 다음 새 응용 프로그램에 대 한 Azure AD 테 넌 트와 프로젝트를 구성 합니다.
 
@@ -186,7 +186,7 @@ Visual Studio에서는 몇 가지 스크린 샷에서 볼 수 있듯이 single s
 - [Azure Active Directory 설명서](https://docs.microsoft.com/azure/active-directory/)합니다. Windowsazure.com 사이트에서 Azure AD 설명서에 대 한 포털 페이지입니다. 단계별 자습서에 대 한 참조는 **개발** 섹션.
 - [Azure Multi-factor Authentication](https://docs.microsoft.com/azure/multi-factor-authentication/)합니다. Azure에서 다단계 인증에 대 한 설명서 포털 페이지입니다.
 - [조직 계정 인증 옵션](../../../../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#orgauthoptions)합니다. Visual Studio 2013 새 프로젝트 대화 상자에서 Azure AD 인증 옵션을 설명 합니다.
-- [Microsoft Patterns and Practices-Federated Identity 패턴](https://msdn.microsoft.com/en-us/library/dn589790.aspx)합니다.
+- [Microsoft Patterns and Practices-Federated Identity 패턴](https://msdn.microsoft.com/library/dn589790.aspx)합니다.
 - [방법: Azure Active Directory 동기화 도구 설치](https://social.technet.microsoft.com/wiki/contents/articles/19098.howto-install-the-windows-azure-active-directory-sync-tool-now-with-pictures.aspx)합니다.
 - [Active Directory Federation Services 2.0 콘텐츠 맵](https://social.technet.microsoft.com/wiki/contents/articles/2735.ad-fs-2-0-content-map.aspx)합니다. ADFS 2.0에 대 한 설명서 링크를 제공 합니다.
 - [Windows Azure AD 응용 프로그램에서 역할 기준 및 ACL 기반 권한 부여](https://code.msdn.microsoft.com/Role-Based-and-ACL-Based-86ad71a1)합니다. 샘플 응용 프로그램입니다.

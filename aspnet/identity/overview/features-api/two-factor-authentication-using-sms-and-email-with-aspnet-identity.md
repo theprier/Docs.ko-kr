@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: ecb1fc693063995a3a05a7af5db64554c9f595e2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0f9ff7cf74048a008b150da1e843ff15333269ab
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="two-factor-authentication-using-sms-and-email-with-aspnet-identity"></a>SMS 및 전자 메일을 사용 하 여 ASP.NET Identity와 2 단계 인증
 ====================
@@ -168,7 +168,7 @@ ms.lasthandoff: 11/10/2017
 
 `isPersistent` 매개 변수는 인증 세션이 여러 요청 간에 지속 되는지 여부를 설정 합니다.
 
-새 보안 스탬프를 생성 되 고에 저장 된 보안 프로필을 변경 하면는 `SecurityStamp` 필드는 *AspNetUsers* 테이블입니다. 단는 `SecurityStamp` 필드는 보안 쿠키와에서 다릅니다. 보안 쿠키에 저장 되지 않습니다는 `AspNetUsers` 테이블 (또는 Identity DB의 다른 곳). 사용 하 여 보안 쿠키 토큰 자체 서명 [DPAPI](https://msdn.microsoft.com/en-us/library/system.security.cryptography.protecteddata.aspx) 와 만들어집니다는 `UserId, SecurityStamp` 및 만료 시간 정보입니다.
+새 보안 스탬프를 생성 되 고에 저장 된 보안 프로필을 변경 하면는 `SecurityStamp` 필드는 *AspNetUsers* 테이블입니다. 단는 `SecurityStamp` 필드는 보안 쿠키와에서 다릅니다. 보안 쿠키에 저장 되지 않습니다는 `AspNetUsers` 테이블 (또는 Identity DB의 다른 곳). 사용 하 여 보안 쿠키 토큰 자체 서명 [DPAPI](https://msdn.microsoft.com/library/system.security.cryptography.protecteddata.aspx) 와 만들어집니다는 `UserId, SecurityStamp` 및 만료 시간 정보입니다.
 
 쿠키 미들웨어 각 요청에 대해 쿠키를 확인합니다. `SecurityStampValidator` 에서 메서드는 `Startup` 클래스 DB에 도달 하 고 보안 스탬프를 주기적으로 확인 된 지정 된 대로 `validateInterval`합니다. 이 보안 프로필을 변경 하지 않는 한 (샘플)에서 30 분 마다만 발생 합니다. 30 분 간격 데이터베이스에 대 한 왕복을 최소화 하기 위해 선택 되었습니다.
 
@@ -264,7 +264,7 @@ QR 코드 생성기 같은 더 많은 2FA 공급자를 추가 하거나 소유�
 
 [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample17.cs?highlight=10-11,17-18)]
 
-다음 코드는 `SendCode` 동작 메서드가 있습니다. A [SelectListItem](https://msdn.microsoft.com/en-us/library/system.web.mvc.selectlistitem.aspx) 사용자에 대해 사용 하도록 설정 하는 모든 2FA 메서드를 사용 하 여 만들어집니다. [SelectListItem](https://msdn.microsoft.com/en-us/library/system.web.mvc.selectlistitem.aspx) 에 전달 되는 [DropDownListFor](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.dropdownlist.aspx) 도우미 사용자 (일반적으로 전자 메일 및 SMS) 2FA 접근 방식을 선택할 수 있습니다.
+다음 코드는 `SendCode` 동작 메서드가 있습니다. A [SelectListItem](https://msdn.microsoft.com/library/system.web.mvc.selectlistitem.aspx) 사용자에 대해 사용 하도록 설정 하는 모든 2FA 메서드를 사용 하 여 만들어집니다. [SelectListItem](https://msdn.microsoft.com/library/system.web.mvc.selectlistitem.aspx) 에 전달 되는 [DropDownListFor](https://msdn.microsoft.com/library/system.web.ui.webcontrols.dropdownlist.aspx) 도우미 사용자 (일반적으로 전자 메일 및 SMS) 2FA 접근 방식을 선택할 수 있습니다.
 
 [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample18.cs)]
 
@@ -284,6 +284,6 @@ QR 코드 생성기 같은 더 많은 2FA 공급자를 추가 하거나 소유�
 - [Facebook, Twitter, LinkedIn 및 Google OAuth2 로그온 된 MVC 5 앱](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md) 사용자 테이블에 프로필 정보를 추가 하는 방법도 설명 합니다.
 - [ASP.NET MVC 및 Id 2.0: 기본 사항을 이해](http://typecastexception.com/post/2014/04/20/ASPNET-MVC-and-Identity-20-Understanding-the-Basics.aspx) John Atten 여 합니다.
 - [계정 확인 및 ASP.NET Id와 암호 복구](account-confirmation-and-password-recovery-with-aspnet-identity.md)
-- [ASP.NET Id 소개](../getting-started/introduction-to-aspnet-identity.md)
+- [ASP.NET ID 소개](../getting-started/introduction-to-aspnet-identity.md)
 - [ASP.NET Identity 2.0.0의 RTM 발표](https://blogs.msdn.com/b/webdev/archive/2014/03/20/test-announcing-rtm-of-asp-net-identity-2-0-0.aspx) Pranav Rastogi 여 합니다.
 - [ASP.NET Id 2.0: 계정 유효성 검사 및 2 단계 인증을 설정](http://typecastexception.com/post/2014/04/20/ASPNET-Identity-20-Setting-Up-Account-Validation-and-Two-Factor-Authorization.aspx) John Atten 여 합니다.

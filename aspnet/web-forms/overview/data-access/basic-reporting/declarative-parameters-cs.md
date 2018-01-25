@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/declarative-parameters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3a4685741e0acab7a944e2822a5c43c5cf3e9cf1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4bbe32ae65f71196fc1f939671b9d1a24bee8c34
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="declarative-parameters-c"></a>선언적 매개 변수 (C#)
 ====================
@@ -111,7 +111,7 @@ ObjectDataSource 컨트롤의 선언적 태그 데이터 소스 구성 마법사
 **그림 8**: 매개 변수 값으로 설정 된 `CountryName` 컨트롤 값 ([전체 크기 이미지를 보려면 클릭](declarative-parameters-cs/_static/image24.png))
 
 
-ObjectDataSource의 선언적 태그는 첫 번째 예제에서 약간 다릅니다.를 사용 하는 [ControlParameter](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.controlparameter.aspx) 표준 대신 `Parameter` 개체입니다. A `ControlParameter` 추가 속성이 지정 하는 `ID` 웹 컨트롤 및 속성 값을 매개 변수로 사용 (`PropertyName`). 데이터 소스 구성 마법사가 하는 텍스트 상자에 대 한 म 합니다 가능성이를 사용할지 결정 하는 `Text` 매개 변수 값에 대 한 속성입니다. 그러나 웹 컨트롤의 다른 속성 값을 사용 하려는 경우 변경할 수 있습니다는 `PropertyName` 여기서 또는 마법사에 있는 "고급 속성 표시" 링크를 클릭 하 여 값입니다.
+ObjectDataSource의 선언적 태그는 첫 번째 예제에서 약간 다릅니다.를 사용 하는 [ControlParameter](https://msdn.microsoft.com/library/system.web.ui.webcontrols.controlparameter.aspx) 표준 대신 `Parameter` 개체입니다. A `ControlParameter` 추가 속성이 지정 하는 `ID` 웹 컨트롤 및 속성 값을 매개 변수로 사용 (`PropertyName`). 데이터 소스 구성 마법사가 하는 텍스트 상자에 대 한 म 합니다 가능성이를 사용할지 결정 하는 `Text` 매개 변수 값에 대 한 속성입니다. 그러나 웹 컨트롤의 다른 속성 값을 사용 하려는 경우 변경할 수 있습니다는 `PropertyName` 여기서 또는 마법사에 있는 "고급 속성 표시" 링크를 클릭 하 여 값입니다.
 
 [!code-aspx[Main](declarative-parameters-cs/samples/sample2.aspx)]
 

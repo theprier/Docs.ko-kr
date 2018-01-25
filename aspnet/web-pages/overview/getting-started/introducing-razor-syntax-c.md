@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-c
 msc.type: authoredcontent
-ms.openlocfilehash: f054d574026ab6444cc59a126ef9dcdc323f7bff
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 32cdd8d524d783d7ccc3ab076de636ce4a868132
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>Razor 구문 (C#)를 사용 하 여 ASP.NET 웹 프로그래밍 소개
 ====================
@@ -58,7 +58,7 @@ ms.lasthandoff: 11/10/2017
 
 다음은 이러한 문을 페이지를 브라우저에서 실행할 때 모양을입니다.
 
-![Razor Img1](introducing-razor-syntax-c/_static/image1.jpg)
+![Razor-Img1](introducing-razor-syntax-c/_static/image1.jpg)
 
 > [!TIP] 
 > 
@@ -79,7 +79,7 @@ A *코드 블록* 하나 이상의 코드 문을 포함 하 고 중괄호로 묶
 
 브라우저에 표시 된 결과:
 
-![Razor Img2](introducing-razor-syntax-c/_static/image2.jpg)
+![Razor-Img2](introducing-razor-syntax-c/_static/image2.jpg)
 
 ### <a name="3-inside-a-block-you-end-each-code-statement-with-a-semicolon"></a>3. 블록 내 각 코드 문을 세미콜론으로 종료
 
@@ -95,7 +95,7 @@ A *코드 블록* 하나 이상의 코드 문을 포함 하 고 중괄호로 묶
 
 브라우저에 표시 된 결과:
 
-![Razor Img3](introducing-razor-syntax-c/_static/image3.jpg)
+![Razor-Img3](introducing-razor-syntax-c/_static/image3.jpg)
 
 <a id="ID_StringLiterals"></a>
 ### <a name="5-you-enclose-literal-string-values-in-double-quotation-marks"></a>5. 리터럴 문자열 값을 큰따옴표로 묶습니다.
@@ -114,7 +114,7 @@ A *문자열* 텍스트로 처리 되는 문자 시퀀스입니다. 문자열을
 
 이러한 예제 모두를 사용 하 여 페이지에서의 결과 다음과 같습니다.
 
-![Razor Img4](introducing-razor-syntax-c/_static/image4.jpg)
+![Razor-Img4](introducing-razor-syntax-c/_static/image4.jpg)
 
 > [!NOTE]
 > 에 `@` 문자는 C#에서 축 자 문자열 리터럴을 표시 하 고 ASP.NET 페이지의에서 코드를 표시 하는 사용 됩니다.
@@ -142,7 +142,7 @@ C#에서는 키워드 (같은 `var`, `true`, 및 `if`) 변수 이름은 대/소�
 
 브라우저에 표시 된 결과:
 
-![Razor Img5](introducing-razor-syntax-c/_static/image5.jpg)
+![Razor-Img5](introducing-razor-syntax-c/_static/image5.jpg)
 
 ### <a name="8-you-can-write-code-that-makes-decisions"></a>8. 의사 결정 하는 코드를 작성할 수 있습니다.
 
@@ -154,7 +154,7 @@ C#에서는 키워드 (같은 `var`, `true`, 및 `if`) 변수 이름은 대/소�
 
 브라우저에 표시 된 결과 (클릭 한 후 **전송**):
 
-![Razor Img6](introducing-razor-syntax-c/_static/image6.jpg)
+![Razor-Img6](introducing-razor-syntax-c/_static/image6.jpg)
 
 > [!TIP] 
 > 
@@ -187,7 +187,7 @@ C#에서는 키워드 (같은 `var`, `true`, 및 `if`) 변수 이름은 대/소�
     - `<form>` 태그를 포함 한 `method="post"` 특성입니다. 이 지정 하는 사용자가 클릭할 때 **추가**, 페이지 HTTP POST 메서드를 사용 하 여 서버에 보내집니다. 페이지가 제출 되는 경우는 `if(IsPost)` 테스트 결과가 true와 조건 코드를 실행, 숫자를 추가 하는 결과 표시 합니다.
 3. 페이지를 저장 하 고 브라우저에서 실행 합니다. (있는지 확인 페이지에서 선택한는 **파일** 실행 하기 전에 작업 영역입니다.) 두 정수를 입력 한 다음 클릭는 **추가** 단추입니다. 
 
-    ![Razor Img7](introducing-razor-syntax-c/_static/image7.jpg)
+    ![Razor-Img7](introducing-razor-syntax-c/_static/image7.jpg)
 
 ## <a name="basic-programming-concepts"></a>기본 프로그래밍 개념
 
@@ -209,7 +209,7 @@ Razor 구문이 버전인 ASP.NET에는 Microsoft.NET Framework를 기반으로 
 
 Razor 구문 쉽게 전문가 하는 경우는 초보자를 위한 본인이 사용 하면 생산성을 높일 경우 배울 수 있는 간단한 구문을 사용 하는 ASP.NET의 모든 기능을 제공 합니다. 이 구문은 간단 하 게 사용 하는 경우에 웹 사이트 보다 복잡 해지면 서 있는지 있습니다 사용할 수 있는 더 큰 프레임 워크의 강력한 제품군의 관계 ASP.NET 및.NET Framework를 의미 합니다.
 
-![Razor Img8](introducing-razor-syntax-c/_static/image8.jpg)
+![Razor-Img8](introducing-razor-syntax-c/_static/image8.jpg)
 
 > [!TIP] 
 > 
@@ -325,7 +325,7 @@ Razor에 C#의 중첩 된 블록에 제한이 있습니다. 자세한 내용은 
 
 페이지에 앞의 예제를 함께 사용 하면 브라우저에 표시 된이 표시 됩니다.
 
-![Razor Img9](introducing-razor-syntax-c/_static/image9.jpg)
+![Razor-Img9](introducing-razor-syntax-c/_static/image9.jpg)
 
 ### <a name="converting-and-testing-data-types"></a>변환 및 데이터 형식 테스트
 
@@ -451,7 +451,7 @@ ASP.NET 서버 코드를 사용 하면 조건에 따라 작업을 수행 하 고
 
 브라우저에 표시 하는 마지막 두 개의 조건부 블록의 결과:
 
-![Razor Img10](introducing-razor-syntax-c/_static/image10.jpg)
+![Razor-Img10](introducing-razor-syntax-c/_static/image10.jpg)
 
 ### <a name="looping-code"></a>코드를 반복합니다.
 
@@ -467,7 +467,7 @@ ASP.NET 서버 코드를 사용 하면 조건에 따라 작업을 수행 하 고
 
 중괄호 안에 루프의 각 반복에 대해 실행 되는 코드입니다. 태그에 새 단락 만듭니다 (`<p>` 요소) 시간 및의 값을 표시 하는 출력에 추가 하는 각 `i` (카운터). 이 페이지를 실행 하면이 예제에서는 항목 수를 나타내는 각 줄에 있는 텍스트로 출력을 표시 하는 11 선을 만듭니다.
 
-![Razor Img11](introducing-razor-syntax-c/_static/image11.jpg)
+![Razor-Img11](introducing-razor-syntax-c/_static/image11.jpg)
 
 를 컬렉션 또는 배열으로 작업 하는 경우 자주 사용 하는 `foreach` 루프입니다. 컬렉션은 유사한 개체의 그룹 및 `foreach` 루프는 컬렉션의 각 항목에 작업을 수행할 수 있습니다. 이 유형의 루프는 컬렉션에 대 한 편리한 때문에 달리는 `for` 카운터를 증가 또는 제한을 설정 하지 않아도 루프입니다. 대신,는 `foreach` 루프 코드 컬렉션을 통해 완료 될 때까지 단순히 진행 합니다.
 
@@ -477,7 +477,7 @@ ASP.NET 서버 코드를 사용 하면 조건에 따라 작업을 수행 하 고
 
 `foreach` 키워드 뒤에 괄호가 올 컬렉션의 단일 항목을 나타내는 변수를 선언 하는 위치가 (예제에서는 `var item`)와 `in` 키워드와 반복 하려는 컬렉션입니다. 본문에는 `foreach` 루프 앞에서 선언한 변수를 사용 하 여 현재 항목에 액세스할 수 있습니다.
 
-![Razor Img12](introducing-razor-syntax-c/_static/image12.jpg)
+![Razor-Img12](introducing-razor-syntax-c/_static/image12.jpg)
 
 범용 루프를 만들려면 사용은 `while` 문:
 
@@ -523,7 +523,7 @@ A *컬렉션* 컬렉션과 같은 동일한 유형의 개체 그룹은 `Customer
 
 브라우저에 표시 된 문자열 배열 코드의 출력:
 
-![Razor Img13](introducing-razor-syntax-c/_static/image13.jpg)
+![Razor-Img13](introducing-razor-syntax-c/_static/image13.jpg)
 
 사전에 키 (또는 이름)을 설정 하거나 해당 값을 검색할를 입력할 수 있는 키/값 쌍의 컬렉션입니다.
 
@@ -575,7 +575,7 @@ Razor 구문 메서드에 매개 변수를 전달 하기 위한 두 가지 옵�
 
 프로그래밍 측면에서 이러한 경우 라고 *예외*합니다. 코드에서 예외를 발견 하는 경우 (throw)를 생성 오류 메시지, 사용자에 게 기껏해야까지:
 
-![Razor Img14](introducing-razor-syntax-c/_static/image14.jpg)
+![Razor-Img14](introducing-razor-syntax-c/_static/image14.jpg)
 
 코드 예외, 발생할 수 있는 경우에이 유형의 오류 메시지를 방지 하기 위해을 사용 하면 `try/catch` 문. 에 `try` 체크 인하는 코드를 실행 하면 문입니다. 하나 이상의 `catch` 문을 찾을 수 있습니다 특정 발생 했을 수 있는 오류 (특정 형식의 예외). 여러 개 포함할 수 있습니다 `catch` 문을 때 예상 되는 오류에 대 한 확인 해야 합니다.
 
@@ -600,6 +600,6 @@ Razor 구문 메서드에 매개 변수를 전달 하기 위한 두 가지 옵�
 **참조 설명서**
 
 
-[ASP.NET](https://msdn.microsoft.com/en-us/library/ee532866.aspx)
+[ASP.NET](https://msdn.microsoft.com/library/ee532866.aspx)
 
-[C# 언어](https://msdn.microsoft.com/en-us/library/kx37x362.aspx)
+[C# 언어](https://msdn.microsoft.com/library/kx37x362.aspx)

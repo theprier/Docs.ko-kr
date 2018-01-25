@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/aspnet-identity-recommended-resources
 msc.type: authoredcontent
-ms.openlocfilehash: 8050d37cfea91701e1cae0413feb41ca9a68baff
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cb6e378d6b1de7d43bbc4272b64f9029f4e92924
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-identity-recommended-resources"></a>ASP.NET Id 권장 리소스
 ====================
@@ -27,7 +27,7 @@ ms.lasthandoff: 11/10/2017
 > 훌륭한 블로그 게시물을 알고 있는 경우 [stackoverflow](http://stackoverflow.com) 스레드나 다른 링크는 것이 유용한 [전자 메일을 보내](mailto:aspnetue@microsoft.com?subject=Identity recommended resources) 링크와 하거나이 페이지의 맨 아래에 메시지를 유지 합니다.
 
 
-- [ASP.NET Identity 시작](#gettingstarted)
+- [ASP.NET ID 시작](#gettingstarted)
 - [새로운 기능 갖춘된 해야 읽기 기사](#feat)
 - [ASP.NET Id에 대 한 약간](#adv)
 - [비디오](#video)
@@ -42,9 +42,9 @@ ms.lasthandoff: 11/10/2017
 
 - [Facebook, Twitter, LinkedIn 및 Google OAuth2 로그온 된 MVC 5 앱](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md) 이 자습서에서는 Facebook 및 Google OAuth 2 인증을 사용 하 여 ASP.NET MVC 5 앱을 작성 하는 방법을 보여 줍니다. 또한 Id 데이터베이스에 데이터를 추가 하는 방법을 보여 줍니다.
 - [멤버 자격, OAuth, SQL 데이터베이스와 보안 ASP.NET MVC 응용 프로그램을 Azure에 배포](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data)합니다. 이 자습서에서는 Azure 배포 추가 역할을 사용 하 여 앱을 보호 하는 방법을 사용자 및 역할 및 추가 보안 기능을 추가할 구성원 API를 사용 하는 방법.
-- [ASP.NET Id 소개](introduction-to-aspnet-identity.md)
+- [ASP.NET ID 소개](introduction-to-aspnet-identity.md)
 - [전자 메일 확인 및 암호 재설정에 대 한 로그와 함께 보안 ASP.NET MVC 5 웹 응용 프로그램 만들기](../../../mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset.md)
-- [SMS 및 전자 메일 2 단계 인증을 사용 하는 ASP.NET MVC 5 앱](../../../mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication.md)
+- [SMS 및 전자 메일 2단계 인증을 사용하는 ASP.NET MVC 5 앱](../../../mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication.md)
 
 <a id="feat"></a>
 ## <a name="new-featured-must-read-articles"></a>새로운 기능 갖춘된 해야 읽기 기사
@@ -59,11 +59,11 @@ ms.lasthandoff: 11/10/2017
 ## <a name="intermediate-aspnet-identity"></a>ASP.NET Id에 대 한 약간
 
 - [계정 확인 및 ASP.NET Id와 암호 복구](../features-api/account-confirmation-and-password-recovery-with-aspnet-identity.md)
-- [SMS 및 전자 메일을 사용 하 여 ASP.NET Identity와 2 단계 인증](../features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity.md)
-- [ASP.NET Id로 기존 웹 사이트 SQL 멤버 자격에서 마이그레이션](../migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)
-- [프로젝트를 구성 하는 비어 있거나 기존 웹에 ASP.NET Id 추가](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project.md)
-- MSDN Magazine [ASP.NET Identity와 외부 인증](https://msdn.microsoft.com/en-us/magazine/dn745860.aspx) Dino Esposito 하 여
-- MSDN Magazine[둘러보기 ASP.NET Identity](https://msdn.microsoft.com/en-us/magazine/dn605872.aspx) Dino Esposito 하 여
+- [ASP.NET ID와 SMS 및 전자 메일을 사용한 2단계 인증](../features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity.md)
+- [기존 웹 사이트를 SQL 멤버 자격에서 ASP.NET ID로 마이그레이션](../migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)
+- [비어 있는 또는 기존 Web Forms 프로젝트에 ASP.NET ID 추가](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project.md)
+- MSDN Magazine [ASP.NET Identity와 외부 인증](https://msdn.microsoft.com/magazine/dn745860.aspx) Dino Esposito 하 여
+- MSDN Magazine[둘러보기 ASP.NET Identity](https://msdn.microsoft.com/magazine/dn605872.aspx) Dino Esposito 하 여
 - [ASP.NET Id – 사용자 잠금](http://tech.trailmax.info/2014/06/asp-net-identity-user-lockout/)
 
 <a id="samp"></a>

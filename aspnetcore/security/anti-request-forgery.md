@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/anti-request-forgery
-ms.openlocfilehash: d7df8f91e88290509c8751a4b69804b60138846e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3831bf737186d10eb1b298f5ec2da1fd33ebedd9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="preventing-cross-site-request-forgery-xsrfcsrf-attacks-in-aspnet-core"></a>ASP.NET Core에서 교차 사이트 요청 위조 (XSRF/CSRF) 공격 방지
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="what-attack-does-anti-forgery-prevent"></a>위조 방지 어떤 공격을 방지가?
 
-교차 사이트 요청 위조 (XSRF 또는 CSRF, 발음 함 *참조 surf*)가 악의적인 웹 사이트 클라이언트 브라우저와 신뢰 하는 웹 사이트 간의 상호 작용 영향을 줄 수는 그에 따라 웹 호스팅 응용 프로그램에 대 한 공격 해당 브라우저입니다. 이러한 공격은 웹 브라우저가 웹 사이트에 일부 유형의 인증 토큰 모든 요청에 자동으로 전송 하기 때문에 가능 합니다. 이러한 형태의 악용은 라고도 *원클릭 공격* 또는 as *세션 도용을*공격 활용 하는 사용자의 세션을 이전에 인증의 때문에, 합니다.
+교차 사이트 요청 위조 (XSRF 또는 CSRF, 발음 함 *참조 surf*)가 악의적인 웹 사이트 클라이언트 브라우저와 신뢰 하는 웹 사이트 간의 상호 작용 영향을 줄 수는 그에 따라 웹 호스팅 응용 프로그램에 대 한 공격 해당 브라우저입니다. 이러한 공격은 웹 브라우저가 웹 사이트에 일부 유형의 인증 토큰 모든 요청에 자동으로 전송 하기 때문에 가능 합니다. 이러한 형태의 악용 라고도는 *원클릭 공격* 또는 as *세션 도용을*공격 활용 하는 사용자의 세션을 이전에 인증의 때문에 있습니다.
 
 CSRF 공격의 예:
 
@@ -51,13 +51,13 @@ Form action에는 취약 한 사이트 악성 사이트에 게시 확인 합니�
 * 양식을 제출을 하 여 AJAX 요청으로 보냅니다. 
 * Css 숨겨진된 폼을 사용 합니다. 
 
-SSL을 사용 하 여 해도 CSRF 공격을 악성 사이트로 보낼 수는 `https://` 요청 합니다. 
+SSL을 사용 하 여 CSRF 공격을 방지 하지 않습니다, 악성 사이트로 보낼 수는 `https://` 요청 합니다. 
 
 일부 공격 대상에 응답 하는 사이트 끝점 `GET` (공격의이 폼은 일반적인 포럼 사이트에 이미지를 허용 하지만 JavaScript를 차단 하는) 작업을 수행할 경우의 이미지 태그를 사용할 수 있는 요청 합니다. 상태 변경 하는 응용 프로그램 `GET` 요청은 악의적인 공격에 취약 합니다.
 
 CSRF 공격 브라우저가 대상 웹 사이트에 모든 관련 쿠키를 전송 하기 때문에 인증을 위한 쿠키를 사용 하는 웹 사이트에 대해 수는 있습니다. 그러나 CSRF 공격 쿠키 악용에 제한 되지 않습니다. 예를 들어, 기본 및 다이제스트 인증 취약 됩니다. 기본 또는 다이제스트 인증을 사용 하 여 사용자가 로그 되어 세션이 종료 될 때까지 브라우저가 자동으로 자격 증명을 보냅니다.
 
-참고:이 컨텍스트에서 *세션* 참조 하는 사용자가 인증 하는 클라이언트 세션입니다. 서버 쪽 세션와 관련 없는 또는 [세션 미들웨어](xref:fundamentals/app-state)합니다.
+참고:이 컨텍스트에서 *세션* 참조 하는 사용자가 인증 하는 클라이언트 세션입니다. 서버 쪽 세션에 관련 되지 않은 또는 [세션 미들웨어](xref:fundamentals/app-state)합니다.
 
 사용자가 여 CSRF 취약점을 방지할 수 있습니다.:
 * 웹 사이트에서 사용 하 여 종료 되었음을 로깅입니다.
@@ -84,8 +84,8 @@ ASP.NET Core MVC 2.0에서는 [FormTagHelper](xref:mvc/views/working-with-forms#
 
 * `form` 태그에는 `method="post"` 특성 AND
 
-  * Action 특성은 비어 있습니다. ( `action=""`) 또는
-  * 작업 특성이 제공 되지 않습니다. (`<form method="post">`)
+  * Action 특성은 비어 있습니다. ( `action=""`) OR
+  * 작업 특성을 제공 하지 않으면 합니다. (`<form method="post">`)
 
 위조 방지 토큰에서 HTML 폼 요소에 대 한 자동 생성을 비활성화할 수 있습니다.
 
@@ -171,7 +171,7 @@ public async Task<IActionResult> RemoveLogin(RemoveLoginViewModel account)
 
 ### <a name="autovalidateantiforgerytoken"></a>AutoValidateAntiforgeryToken
 
-일반적으로 ASP.NET Core 앱은 HTTP 안전 메서드 (GET, HEAD, 옵션 및 추적)에 대 한 antiforgery 토큰을 생성 하지 않습니다. 광범위 하 게 적용 하는 대신는 ``ValidateAntiForgeryToken`` 특성과 다음 사용 하 여 재정의 ``IgnoreAntiforgeryToken`` 사용할 수 있습니다 특성은 ``AutoValidateAntiforgeryToken`` 특성입니다. 이 특성은 동일 하 게 작동는 ``ValidateAntiForgeryToken`` 특성을 제외 하 고 토큰에 대 한 다음과 같은 HTTP 메서드를 사용 하 여 요청 필요 하지 않습니다.
+ASP.NET Core 응용 프로그램은 일반적으로 HTTP는 안전 메서드 (GET, HEAD, 옵션 및 추적)에 대 한 antiforgery 토큰 생성 하지 않습니다. 광범위 하 게 적용 하는 대신는 ``ValidateAntiForgeryToken`` 특성과 다음 사용 하 여 재정의 ``IgnoreAntiforgeryToken`` 사용할 수 있습니다 특성은 ``AutoValidateAntiforgeryToken`` 특성입니다. 이 특성은 동일 하 게 작동는 ``ValidateAntiForgeryToken`` 특성을 제외 하 고 토큰에 대 한 다음과 같은 HTTP 메서드를 사용 하 여 요청 필요 하지 않습니다.
 
 * 가져오기
 * HEAD
@@ -337,7 +337,7 @@ Https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.cookieau
 
 ### <a name="extending-antiforgery"></a>Antiforgery 확장
 
-[IAntiForgeryAdditionalDataProvider](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.antiforgery.iantiforgeryadditionaldataprovider) 형식에서는 개발자가 각 토큰의 추가 데이터를 왕복 하 여 ANTI-XSRF 시스템의 동작을 확장할 수 있습니다. [GetAdditionalData](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.antiforgery.iantiforgeryadditionaldataprovider#Microsoft_AspNetCore_Antiforgery_IAntiforgeryAdditionalDataProvider_GetAdditionalData_Microsoft_AspNetCore_Http_HttpContext_) 될 때마다 메서드는 필드 토큰이 생성 되 고 반환 값은 생성 되는 토큰 내에 포함 되어 있습니다. 구현 자가 수 타임 스탬프, nonce, 또는 다른 모든 값을 반환 하 고 호출 [ValidateAdditionalData](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.antiforgery.iantiforgeryadditionaldataprovider#Microsoft_AspNetCore_Antiforgery_IAntiforgeryAdditionalDataProvider_ValidateAdditionalData_Microsoft_AspNetCore_Http_HttpContext_System_String_) 토큰의 유효성을 검사할 때이 데이터를 유효성 검사 합니다. 클라이언트의 사용자 이름은 이미 생성 된 토큰에 포함 되어 있으므로이 정보를 포함할 필요가 없습니다. 아니지만 추가 데이터 토큰을 포함 하는 경우 `IAntiForgeryAdditionalDataProvider` 된 구성, 추가 데이터 유효성이 검사 되지 않습니다.
+[IAntiForgeryAdditionalDataProvider](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.antiforgery.iantiforgeryadditionaldataprovider) 형식에서는 개발자가 각 토큰의 추가 데이터를 왕복 하 여 ANTI-XSRF 시스템의 동작을 확장할 수 있습니다. [GetAdditionalData](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.antiforgery.iantiforgeryadditionaldataprovider#Microsoft_AspNetCore_Antiforgery_IAntiforgeryAdditionalDataProvider_GetAdditionalData_Microsoft_AspNetCore_Http_HttpContext_) 될 때마다 메서드는 필드 토큰이 생성 되 고 반환 값은 생성 되는 토큰 내에 포함 되어 있습니다. 구현 자가 수 타임 스탬프, nonce, 또는 다른 모든 값을 반환 하 고 호출 [ValidateAdditionalData](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.antiforgery.iantiforgeryadditionaldataprovider#Microsoft_AspNetCore_Antiforgery_IAntiforgeryAdditionalDataProvider_ValidateAdditionalData_Microsoft_AspNetCore_Http_HttpContext_System_String_) 토큰의 유효성을 검사할 때이 데이터를 유효성 검사 합니다. 클라이언트의 사용자 이름은 이미 생성 된 토큰에 포함 되어 있으므로이 정보를 포함할 필요가 없습니다. 아니지만 추가 데이터 토큰을 포함 하는 경우 `IAntiForgeryAdditionalDataProvider` 된 구성, 보조 데이터 확인 되지 않습니다.
 
 ## <a name="fundamentals"></a>기본 사항
 
@@ -345,7 +345,7 @@ CSRF 공격 도메인과 해당 도메인에 대 한 모든 요청 연관 된 �
 
 ### <a name="cookie-based-authentication"></a>쿠키 기반 인증
 
-자신의 사용자 이름과 암호를 사용 하 여 사용자가 인증 되 면 나오기 식별 하 고 인증 되었는지 유효성을 검사 하는 데 사용할 수 있는 토큰입니다. 토큰이는 클라이언트는 모든 요청을 함께 제공 되는 쿠키 함에 따라 저장 됩니다. 생성 하 고이 쿠키를 유효성 검사 쿠키 인증 미들웨어에서 수행 됩니다. ASP.NET Core 쿠키를 제공 합니다. [미들웨어](../fundamentals/middleware.md) 주 서버를 다시 만들어 암호화 된 쿠키에 사용자 계정 또는 그 반대로 serialize 하 고 그런 다음 이후 요청에서 쿠키를 유효성을 검사에 할당 합니다는 `User` 속성 `HttpContext`.
+사용자가 자신의 사용자 이름과 암호를 사용 하 여 인증가 식별 하 고 인증 되었는지 유효성을 검사 하는 데 사용할 수 있는 토큰을 발급 하는 합니다. 토큰이는 클라이언트는 모든 요청을 함께 제공 되는 쿠키 함에 따라 저장 됩니다. 생성 하 고이 쿠키를 유효성 검사 쿠키 인증 미들웨어에서 수행 됩니다. ASP.NET Core 쿠키를 제공 합니다. [미들웨어](../fundamentals/middleware.md) 주 서버를 다시 만들어 암호화 된 쿠키에 사용자 계정 또는 그 반대로 serialize 하 고 그런 다음 이후 요청에서 쿠키를 유효성을 검사에 할당 합니다는 `User` 속성 `HttpContext`.
 
 쿠키를 사용 하면 인증 쿠키가 단순한 폼 인증 티켓에 대 한 컨테이너입니다. 티켓 각 요청과 함께 폼 인증 쿠키의 값으로 전달 되 고 인증된 된 사용자를 식별 하는 서버에서 폼 인증에서 사용 됩니다.
 
@@ -353,11 +353,11 @@ CSRF 공격 도메인과 해당 도메인에 대 한 모든 요청 연관 된 �
 
 ### <a name="user-tokens"></a>사용자 토큰
 
-토큰 기반 인증 서버에 세션을 저장 하지 않습니다. 대신, 사용자가 로그인 할 때 나오기 (하지 antiforgery 토큰) 토큰입니다. 이 토큰은 토큰의 유효성을 검사 하는 데 필요한 모든 데이터를 보유 합니다. 또한 형식으로 사용자 정보를 포함 [클레임](https://docs.microsoft.com/dotnet/framework/security/claims-based-identity-model)합니다. 사용자가 인증을 요구 하는 서버 리소스에 액세스 하려고 하는 경우 토큰이 전달자 {토큰}의 양식에서 추가 인증 헤더를 사용 하 여 서버에 전송 됩니다. 이렇게 하면 응용 프로그램 상태 비저장 각 후속 요청에 토큰은 전달 요청에 서버 쪽 유효성 검사에 대 한 이후 있습니다. 이 토큰은 하지 *암호화 된*; 보다는 *인코딩된*합니다. 서버 쪽에서 토큰 내에서 원시 정보에 액세스 하려면 토큰을 디코딩할 수 있습니다. 토큰의 후속 요청을 보내려면 저장할 수 있습니다 하거나 브라우저의 로컬 저장소에 또는 쿠키에 있습니다. 토큰의 로컬 저장소에 저장 되어 있지만 토큰 쿠키에 저장 되는 경우 문제가 발생 하는 경우 XSRF 취약점에 걱정할 필요가 없습니다.
+토큰 기반 인증 서버에 세션을 저장 하지 않습니다. 대신, 사용자가 로그인 할 때가 (하지 antiforgery 토큰) 토큰을 발급 하는 합니다. 이 토큰은 토큰의 유효성을 검사 하는 데 필요한 모든 데이터를 보유 합니다. 또한 형식으로 사용자 정보를 포함 [클레임](https://docs.microsoft.com/dotnet/framework/security/claims-based-identity-model)합니다. 사용자가 인증을 요구 하는 서버 리소스에 액세스 하려고 하는 경우 토큰이 전달자 {토큰}의 양식에서 추가 인증 헤더를 사용 하 여 서버에 전송 됩니다. 이렇게 하면 응용 프로그램 상태 비저장 각 후속 요청에 토큰은 전달 요청에 서버 쪽 유효성 검사에 대 한 이후 있습니다. 이 토큰이 없는 *암호화 된*; 보다는 *인코딩된*합니다. 서버 쪽에서 토큰 내에서 원시 정보에 액세스 하려면 토큰을 디코딩할 수 있습니다. 토큰의 후속 요청을 보내려면 저장할 수 있습니다 하거나 브라우저의 로컬 저장소에 또는 쿠키에 있습니다. 토큰의 로컬 저장소에 저장 되어 있지만 토큰 쿠키에 저장 되는 경우 문제가 발생 하는 경우 XSRF 취약점에 걱정할 필요가 없습니다.
 
 ### <a name="multiple-applications-are-hosted-in-one-domain"></a>여러 응용 프로그램 도메인에서 호스팅됩니다.
 
-경우에 `example1.cloudapp.net` 및 `example2.cloudapp.net` 는 서로 다른 호스트의 모든 호스트 간의 암시적 트러스트 관계가 있는 `*.cloudapp.net` 도메인입니다. 이 암시적 트러스트 관계에는 신뢰할 수 없는 호스트를 (AJAX 요청을 제어 하는 동일 원본 정책 반드시에 적용 되지 않습니다 HTTP 쿠키) 다른 사용자의 쿠키에 영향을 줄 수 있습니다. ASP.NET Core 런타임 사용자 이름 필드 토큰에 포함 되어 있으므로 악의적인 하위 도메인은 세션 토큰을 덮어쓸 수 있는 경우에 됩니다 하지 사용자에 대 한 유효한 필드 토큰을 생성할 수 있다는 점에서 몇 가지 완화를 제공 합니다. 그러나 이러한 환경에서 호스팅되는 경우 기본 제공 ANTI-XSRF 루틴 여전히 없습니다 공격을 방어할 세션 하이재킹 또는 CSRF 로그인 합니다. 공유 호스팅 환경 세션 하이재킹, CSRF, 로그인 및 기타 공격 vunerable 됩니다.
+경우에 `example1.cloudapp.net` 및 `example2.cloudapp.net` 는 서로 다른 호스트의 모든 호스트 간의 암시적 트러스트 관계가 있는 `*.cloudapp.net` 도메인입니다. 이 암시적 트러스트 관계에는 신뢰할 수 없는 호스트를 (AJAX 요청을 제어 하는 동일 원본 정책 반드시 HTTP 쿠키를 적용 하지 않는) 다른 사용자의 쿠키에 영향을 줄 수 있습니다. ASP.NET Core 런타임 사용자 이름 필드 토큰에 포함 되어 있으므로 악의적인 하위 도메인은 세션 토큰을 덮어쓸 수 있는 경우에 됩니다 하지 사용자에 대 한 유효한 필드 토큰을 생성할 수 있다는 점에서 몇 가지 완화를 제공 합니다. 그러나 이러한 환경에서 호스팅되는 경우 기본 제공 ANTI-XSRF 루틴 여전히 없습니다 공격을 방어할 세션 하이재킹 또는 CSRF 로그인 합니다. 공유 호스팅 환경 세션 하이재킹, CSRF, 로그인 및 기타 공격 vunerable 됩니다.
 
 
 ### <a name="additional-resources"></a>추가 리소스

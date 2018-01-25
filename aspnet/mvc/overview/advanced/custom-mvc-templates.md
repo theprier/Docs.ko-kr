@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/advanced/custom-mvc-templates
 msc.type: authoredcontent
-ms.openlocfilehash: a1fe1844e582f402a1eed9ddf10ee249e856b083
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c3ddd4e341511f520927e924b25d890088adb69e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="custom-mvc-template"></a>사용자 지정 MVC 템플릿
 ====================
@@ -26,7 +26,7 @@ Visual Studio 2010 for MVC 3 도구 업데이트 릴리스에서 MVC 프로젝�
 
 사용자 지정 템플릿 추가 레지스트리를 사용 하 여 볼 수 있도록 하려면 새 템플릿을 MVC 프로젝트 마법사에 의존 하는 한 힘든 작업 했습니다. 새 서식 파일의 작성자는 설치 중에 필요한 레지스트리 항목을 만들 수는 확인 하기 위해 MSI를 래핑합니다 해야 했습니다. ZIP 파일을 사용할 수 있는 템플릿이 포함 된 필수 레지스트리 항목을 수동으로 만드는 최종 사용자가를 대체가 했습니다.
 
-앞에서 언급 한 접근 방식 중 이므로 이상적인에서 제공 하는 기존 인프라 중 일부를 활용할 하기로 결정 [VSIX](https://msdn.microsoft.com/en-us/library/ff363239.aspx) 작성자를 쉽게 수행할 수 있도록 확장 배포 및 MVC 4로 시작 하는 사용자 지정 MVC 템플릿 설치 Visual Studio 2012입니다. 이 방법을 사용 하 여 제공 하는 이점은 다음과 같습니다.
+앞에서 언급 한 접근 방식 중 이므로 이상적인에서 제공 하는 기존 인프라 중 일부를 활용할 하기로 결정 [VSIX](https://msdn.microsoft.com/library/ff363239.aspx) 작성자를 쉽게 수행할 수 있도록 확장 배포 및 MVC 4로 시작 하는 사용자 지정 MVC 템플릿 설치 Visual Studio 2012입니다. 이 방법을 사용 하 여 제공 하는 이점은 다음과 같습니다.
 
 - VSIX 확장 (C# 및 Visual Basic) 서로 다른 언어를 지 원하는 여러 서식 파일의 여러 뷰 엔진 (ASPX 및 Razor)를 포함할 수 있습니다.
 - VSIX 확장에는 여러 Sku의 Visual Studio Express Sku를 포함 하 여 지정할 수 있습니다.
@@ -39,7 +39,7 @@ Visual Studio 2010 for MVC 3 도구 업데이트 릴리스에서 MVC 프로젝�
 - 사용자는 Visual Studio Professional가 필요 하 고 이상이 설치 합니다. Express Sku에서 VSIX 프로젝트를 지원 하지 않습니다.
 - [Visual Studio 2012 SDK](https://www.microsoft.com/download/details.aspx?id=30668) 설치 합니다.
 
-## <a name="example"></a>예제
+## <a name="example"></a>예
 
 첫 번째 단계는 C# 또는 Visual Basic을 사용 하 여 새 VSIX 프로젝트를 만드는 것입니다. 선택 **파일 > 새 프로젝트**, 클릭 **확장성** 고 왼쪽된 창에서는 **VSIX 프로젝트**합니다.
 
@@ -63,15 +63,15 @@ Sku 및 확장 프로그램에서 지원 되는 버전의 Visual Studio를 지�
 
 **자산** 탭 VSIX에 모든 콘텐츠 파일을 추가 하는 데 사용 됩니다. MVC 사용자 지정 메타 데이터를 필요 하므로 편집기를 사용 하지 않고 VSIX 매니페스트 파일의 원시 XML을는 **자산** 콘텐츠 추가를 탭 합니다. 템플릿 내용을 VSIX 프로젝트에 추가 하 여 시작 합니다. 폴더 및 내용을의 구조는 프로젝트의 레이아웃을 미러링 하 유용 합니다. 다음 예제에서는 기본 MVC 프로젝트 템플릿에서 파생 된 있는 4 개의 프로젝트 템플릿이 포함 되어 있습니다. 프로젝트 템플릿을 (ProjectTemplates 폴더 아래 모든 항목)를 구성 하는 모든 파일에 추가 되어 있는지 확인은 **콘텐츠** VSIX에 itemgroup 프로젝트 파일 및 각 항목에 포함 되어 있는지는  **출력 디렉터리로 복사** 및 **IncludeInVsix** 아래 예에 나와 있는 것 처럼 메타 데이터를 설정 합니다.
 
-&lt;콘텐츠에 포함 =&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx\BasicWeb.config&quot;&gt;
+&lt;Content Include=&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx\BasicWeb.config&quot;&gt;
 
-&lt;출력 디렉터리로 복사&gt;항상&lt;/CopyToOutputDirectory&gt;
+&lt;CopyToOutputDirectory&gt;Always&lt;/CopyToOutputDirectory&gt;
 
 &lt;IncludeInVSIX&gt;true&lt;/IncludeInVSIX&gt;
 
-&lt;/ 콘텐츠&gt;
+&lt;/Content&gt;
 
-그렇지 않으면 IDE VSIX 빌드하고 오류가 표시 될 가능성이 때 서식 파일의 내용을 컴파일할 하려고 합니다. 서식 파일에서 코드 파일에 종종 특수 포함 [템플릿 매개 변수](https://msdn.microsoft.com/en-us/library/eehb4faa(v=vs.110).aspx) 때 프로젝트 템플릿이 인스턴스화될 및 IDE에서 컴파일할 수 없습니다 Visual Studio에서 사용 합니다.
+그렇지 않으면 IDE VSIX 빌드하고 오류가 표시 될 가능성이 때 서식 파일의 내용을 컴파일할 하려고 합니다. 서식 파일에서 코드 파일에 종종 특수 포함 [템플릿 매개 변수](https://msdn.microsoft.com/library/eehb4faa(v=vs.110).aspx) 때 프로젝트 템플릿이 인스턴스화될 및 IDE에서 컴파일할 수 없습니다 Visual Studio에서 사용 합니다.
 
 ![솔루션 탐색기](custom-mvc-templates/_static/image6.jpg)
 
@@ -83,27 +83,27 @@ VSIX 디자이너를 닫은 다음 마우스 오른쪽 단추로 클릭는 **sou
 
 방금 VSIX에 파일을 추가 MVC 마법사로 서식 파일을 등록 하는 충분 하지 않습니다. MVC 마법사 템플릿 이름, 설명, 지원 되는 뷰 엔진 및 프로그래밍 언어와 같은 정보를 제공 해야 합니다. 이 정보에 연결 된 사용자 지정 특성에 전달 되는  **&lt;자산&gt;**  요소 각각에 대해 **vstemplate** 파일입니다.
 
-&lt;자산 d:VsixSubPath =&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx&quot;
+&lt;Asset d:VsixSubPath=&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx&quot;
 
-형식 =&quot;Microsoft.VisualStudio.Mvc.Template&quot;
+Type=&quot;Microsoft.VisualStudio.Mvc.Template&quot;
 
-d:Source =&quot;파일&quot;
+d:Source=&quot;File&quot;
 
-경로 =&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx\BasicMvcWebApplicationProjectTemplate.11.csaspx.vstemplate&quot;
+Path=&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx\BasicMvcWebApplicationProjectTemplate.11.csaspx.vstemplate&quot;
 
-ProjectType =&quot;MVC&quot;
+ProjectType=&quot;MVC&quot;
 
-Language =&quot;C#&quot;
+Language=&quot;C#&quot;
 
-Viewengine이 제공 됨 =&quot;Aspx&quot;
+ViewEngine=&quot;Aspx&quot;
 
-TemplateId =&quot;MyMvcApplication&quot;
+TemplateId=&quot;MyMvcApplication&quot;
 
 제목 =&quot;기본 사용자 지정 웹 응용 프로그램&quot;
 
 설명 =&quot;기본 MVC 웹 응용 프로그램 (Razor)에서 파생 된 사용자 지정 서식 파일&quot;
 
-버전 =&quot;4.0&quot;/&gt;
+Version=&quot;4.0&quot;/&gt;
 
 다음은 나타나야 하는 사용자 지정 특성에 대해 설명 합니다.
 

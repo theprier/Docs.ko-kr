@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: client-side/spa-services
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 6d84659c8c65bebb46551eb38bd52e405ff56016
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 514efcdd78957f999e46c521d0266f092f742538
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="using-javascriptservices-for-creating-single-page-applications-with-aspnet-core"></a>ASP.NET Core 사용 단일 페이지 응용 프로그램을 만들기 위한 JavaScriptServices를 사용 하 여
 
@@ -46,7 +46,7 @@ JavaScriptServices 세 가지 고유한 NuGet 패키지 이루어져 있습니�
 
 ## <a name="what-is-spaservices"></a>SpaServices 란?
 
-ASP.NET Core SPAs를 구축 하기 위한 개발자의 기본 서버 쪽 플랫폼으로 배치 하려면 SpaServices 만들어졌습니다. SpaServices ASP.NET 코어 SPAs 개발할 필요가 없습니다 및 특정 클라이언트 프레임 워크에 고정 하지 않는 것입니다.
+ASP.NET Core SPAs를 구축 하기 위한 개발자의 기본 서버 쪽 플랫폼으로 배치 하려면 SpaServices 만들어졌습니다. SpaServices SPAs ASP.NET Core를 개발 하는 필요 하지 않습니다 및 특정 클라이언트 프레임 워크에 고정 하지 않는 것입니다.
 
 SpaServices와 같은 유용한 인프라를 제공 합니다.
 * [서버 쪽 사전 렌더링이](#server-prerendering)
@@ -200,7 +200,7 @@ app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions {
 
 ## <a name="routing-helpers"></a>라우팅 도우미
 
-대부분의 ASP.NET Core 기반 SPAs 서버 쪽 라우팅과 함께 클라이언트 쪽 라우팅 합니다. SPA 및 MVC 라우팅 시스템 방해를 받지 않고 독립적으로 작업할 수 있습니다. 그러나가 문제점을 게시 한 특별 한 경우: 404 HTTP 응답을 식별 합니다.
+대부분의 ASP.NET Core 기반 SPAs 서버 쪽 라우팅과 함께 클라이언트 쪽 라우팅 합니다. SPA 및 MVC 라우팅 시스템 방해를 받지 않고 독립적으로 작업할 수 있습니다. 그러나, 하나의 가장자리 사례 가장 하 여 문제를 제기: 404 HTTP 응답을 식별 합니다.
 
 시나리오를 고려해 야의 확장명은 경로 `/some/page` 사용 됩니다. 해당 패턴 일치는 클라이언트 쪽 경로 않지만 요청 하지 않는 패턴 일치 한 서버 쪽 경로 가정 합니다. 에 대 한 들어오는 요청에 알아보겠습니다 `/images/user-512.png`, 일반적으로 서버에서 이미지 파일을 찾으려고 시도 합니다. 클라이언트 쪽 응용 프로그램에서 처리할 것 있음을 그럴 가능성은 해당 요청 된 리소스 경로는 모든 서버 쪽 경로 또는 정적 파일와 일치 하지 않으면,-404 HTTP 상태 코드를 반환 하려면 일반적으로 합니다.
 

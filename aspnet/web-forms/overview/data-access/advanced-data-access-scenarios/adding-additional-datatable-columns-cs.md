@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/adding-additional-datatable-columns-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0b1fe8d2e376065aed8d94b1267910bd1f7e5bd0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2982af897b433706889cb4eda79dcb4e76baea62
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-additional-datatable-columns-c"></a>추가 DataTable 열 (C#)를 추가합니다.
 ====================
@@ -90,12 +90,12 @@ TableAdapter s 주 쿼리를 반영 하는 DataTable의 스키마의 모델에�
 
 [!code-sql[Main](adding-additional-datatable-columns-cs/samples/sample1.sql)]
 
-위의 쿼리에서 새 SQL Server 2005 s 사용 [ `NTILE` 함수](https://msdn.microsoft.com/en-us/library/ms175126.aspx) 그룹에 의해 결정 됩니다 여기서 4 개 그룹으로 결과 분할 하는 `UnitPrice` 내림차순으로 정렬 하는 값입니다.
+위의 쿼리에서 새 SQL Server 2005 s 사용 [ `NTILE` 함수](https://msdn.microsoft.com/library/ms175126.aspx) 그룹에 의해 결정 됩니다 여기서 4 개 그룹으로 결과 분할 하는 `UnitPrice` 내림차순으로 정렬 하는 값입니다.
 
 안타깝게도, 쿼리 작성기 방법을 모르는 구문 분석 하는 `OVER` 키워드 위의 쿼리를 구문 분석할 때 오류가 표시 됩니다. 따라서 쿼리 작성기를 사용 하지 않고 마법사에서 텍스트 상자에 직접 위의 쿼리를 입력 합니다.
 
 > [!NOTE]
-> NTILE 및 SQL Server 2005 s에 대 한 자세한 내용은 다른 순위 함수 참조 [Microsoft SQL Server 2005를 사용 하 여 순위 결과 반환](http://www.4guysfromrolla.com/webtech/010406-1.shtml) 및 [순위 함수 섹션](https://msdn.microsoft.com/en-us/library/ms189798.aspx) 에서 [SQL Server 2005 온라인 설명서](https://msdn.microsoft.com/en-us/library/ms189798.aspx)합니다.
+> NTILE 및 SQL Server 2005 s에 대 한 자세한 내용은 다른 순위 함수 참조 [Microsoft SQL Server 2005를 사용 하 여 순위 결과 반환](http://www.4guysfromrolla.com/webtech/010406-1.shtml) 및 [순위 함수 섹션](https://msdn.microsoft.com/library/ms189798.aspx) 에서 [SQL Server 2005 온라인 설명서](https://msdn.microsoft.com/library/ms189798.aspx)합니다.
 
 
 입력 한 후의 `SELECT` 마법사 요청을 만드는 저장된 프로시저에 대 한 이름을 제공 하 쿼리 및 다음을 클릭 합니다. 새 저장된 프로시저의 이름을 `Products_SelectWithPriceQuartile` 고 다음을 클릭 합니다.

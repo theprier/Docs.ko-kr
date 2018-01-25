@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-production-environment-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: d5574ee353ff41205e9029e4aa5d139a5aa0e959
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cdd13f96ddf08ff86b01ef9de17ea82cf038ab28
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="scenario-configuring-a-production-environment-for-web-deployment"></a>시나리오: 웹 배포를 위한 프로덕션 환경 구성
 ====================
@@ -35,7 +35,7 @@ ms.lasthandoff: 11/10/2017
 - 응용 프로그램에 대 한 변경 내용은 테스트 나 스테이징 배포가 보다 덜 자주 배포 됩니다.
 
 > [!NOTE]
-> 이 자습서의 범위를 벗어납니다 여러 서버에서 데이터베이스 배포를 확장 합니다. 이 영역에 대 한 자세한 내용은 참조 하십시오 [SQL Server 온라인 설명서](https://technet.microsoft.com/en-us/library/ms130214.aspx)합니다.
+> 이 자습서의 범위를 벗어납니다 여러 서버에서 데이터베이스 배포를 확장 합니다. 이 영역에 대 한 자세한 내용은 참조 하십시오 [SQL Server 온라인 설명서](https://technet.microsoft.com/library/ms130214.aspx)합니다.
 
 
 예를 들어, 우리의 [자습서 시나리오](../deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md), 팀 빌드 서버 않아 솔루션을 빌드하고 단일 단계에서 스테이징 환경에 배포할 수 있도록 하는 빌드 정의 포함 합니다. 응용 프로그램 보안 요구 사항 및 네트워크 인프라에서 적용 된 제약 조건으로 인해 프로덕션 환경에 배포할 준비가 되 면 프로덕션 환경 관리자가 수동으로 웹 패키지를 프로덕션 웹 서버에 복사한 해야 가져오기 인터넷 정보 서비스 (IIS) 관리자를 통해 것입니다.

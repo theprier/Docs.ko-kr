@@ -11,11 +11,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: fa1cd068a7466e0b6b6fe7716090c8a7afd2a4d5
-ms.sourcegitcommit: ec9371e2fbfcb8d62e7e7cae69e7752f3f205385
+ms.openlocfilehash: 6ff9fd279a03197f761454bba3f180d7428b1b1f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/23/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-aspnet-web-api-2-c"></a>ASP.NET Web API 2 (C#) 시작
 ====================
@@ -107,12 +107,12 @@ Visual Studio를 시작 하 고 선택 **새 프로젝트** 에서 **시작** �
 - `GetAllProducts` 메서드로 제품의 전체 목록을 반환는 **IEnumerable&lt;제품&gt;**  유형입니다.
 - `GetProduct` 단일 제품의 id를 조회 메서드
 
-그거에요! 작업 중인 웹 API 해야합니다. 컨트롤러의 각 메서드에 하나 이상의 Uri에 해당합니다.
+정말 간단하죠. 작업 중인 웹 API 해야합니다. 컨트롤러의 각 메서드에 하나 이상의 Uri에 해당합니다.
 
 | 컨트롤러 메서드 | URI |
 | --- | --- |
 | GetAllProducts | / api/제품 |
-| GetProduct | /api/제품/*id* |
+| GetProduct | /api/products/*id* |
 
 에 대 한는 `GetProduct` 메서드는 *id* URI에 자리 표시자입니다. 예를 들어 ID 5 인 제품을 가져오려면 URI는 `api/products/5`합니다.
 
@@ -186,11 +186,11 @@ HTTP 서비스를 사용 하는 경우에 HTTP 요청을 보고 요청 메시지
 
 Azure에이 솔루션을 배포 하려면 Azure 계정이 필요 합니다. 계정이 아직 없는 경우 다음 옵션:
 
-- [무료 Azure 계정을 개설](https://azure.microsoft.com/en-us/pricing/free-trial/?WT.mc_id=A443DD604) -크레딧을 얻게 유료 Azure 서비스를 실행 해 사용할 수 있으며, 사용 후에 최대 계정 등에 사용 가능한 Azure 서비스입니다.
-- [MSDN 구독자 혜택을 활성화](https://azure.microsoft.com/en-us/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604) -Your MSDN을 구독 하면 크레딧 매달 유료 Azure 서비스에 사용할 수 있습니다.
+- [무료 Azure 계정을 개설](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A443DD604) -크레딧을 얻게 유료 Azure 서비스를 실행 해 사용할 수 있으며, 사용 후에 최대 계정 등에 사용 가능한 Azure 서비스입니다.
+- [MSDN 구독자 혜택을 활성화](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604) -Your MSDN을 구독 하면 크레딧 매달 유료 Azure 서비스에 사용할 수 있습니다.
 
 ## <a name="next-steps"></a>다음 단계
 
 - POST, PUT 및 DELETE 작업을 지원 하 고 데이터베이스에 기록 하는 HTTP 서비스의 자세한 예제를 참조 하십시오. [Entity Framework 6와 Web API 2를 사용 하 여](../data/using-web-api-with-entity-framework/part-1.md)합니다.
 - HTTP 서비스를 기반으로 유동성 및 응답성이 뛰어난 웹 응용 프로그램을 만드는 방법에 대 한 자세한 내용은 [ASP.NET 단일 페이지 응용 프로그램](../../../single-page-application/index.md)합니다.
-- Azure 앱 서비스를 Visual Studio 웹 프로젝트를 배포 하는 방법에 대 한 정보를 참조 하십시오. [Azure 앱 서비스에서 ASP.NET 웹 앱을 만들](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-get-started/)합니다.
+- Azure 앱 서비스를 Visual Studio 웹 프로젝트를 배포 하는 방법에 대 한 정보를 참조 하십시오. [Azure 앱 서비스에서 ASP.NET 웹 앱을 만들](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/)합니다.

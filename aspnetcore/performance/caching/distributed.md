@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: performance/caching/distributed
-ms.openlocfilehash: a00937e8c47e73fa8e29af883f44f6e1f4d4b1b4
-ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
+ms.openlocfilehash: a0af4887143f6ed37a1af982ec21a2ad5eae9515
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="working-with-a-distributed-cache-in-aspnet-core"></a>ASP.NET Core에서 분산된 캐시 사용
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 11/29/2017
 
 ## <a name="what-is-a-distributed-cache"></a>분산된 캐시 이란
 
-분산된 캐시 여러 응용 프로그램 서버에서 공유 됩니다 (참조 [기본 사항 캐싱](memory.md#caching-basics)). 캐시에 정보가 개별 웹 서버의 메모리에 저장 되지 않으며 캐시 된 데이터는 모든 응용 프로그램의 서버에 사용할 수 있습니다. 이 여러 가지 이점을 제공합니다.
+분산된 캐시 여러 응용 프로그램 서버에서 공유 됩니다 (참조 [기본 사항 캐싱](memory.md#caching-basics)). 캐시의 정보는 개별 웹 서버의 메모리에 저장 되지 않습니다 및 캐시 된 데이터는 모든 응용 프로그램의 서버에 사용할 수 있습니다. 이 여러 가지 이점을 제공합니다.
 
 1. 캐시 된 데이터는 모든 웹 서버에서 일관 됩니다. 사용자가 서버를 웹에 따라 해당 요청을 처리 하는 다른 결과가 표시 되지 않으면
 
@@ -48,15 +48,15 @@ ms.lasthandoff: 11/29/2017
 
 문자열 키를 사용 하 고 캐시 된 항목으로 검색 한 `byte[]` 경우 캐시에서 발견 합니다.
 
-**SetAsync 집합**
+**Set, SetAsync**
 
 항목 추가 (으로 `byte[]`) 문자열 키를 사용 하 여 캐시에 있습니다.
 
-**새로 고침, RefreshAsync**
+**Refresh, RefreshAsync**
 
 해당 키를 다시 설정 하는 상대 (sliding) 만료 시간 제한 (있는 경우)에 따라 캐시에서 항목을 새로 고칩니다.
 
-**를 제거합니다 하 고 비동기적으로 제거**
+**Remove, RemoveAsync**
 
 해당 키에 따라 캐시 엔트리를 제거 합니다.
 
@@ -139,8 +139,8 @@ C:\DistCacheSample\src\DistCacheSample>dotnet sql-cache create "Data Source=(loc
 * [Redis Cache Azure에서](https://azure.microsoft.com/documentation/services/redis-cache/)
 * [Azure에서 SQL 데이터베이스](https://azure.microsoft.com/documentation/services/sql-database/)
 * [메모리 내 캐싱](xref:performance/caching/memory)
-* [변경 내용을 변경 토큰으로 검색](xref:fundamentals/primitives/change-tokens)
+* [변경 토큰을 사용하여 변경 내용 검색](xref:fundamentals/primitives/change-tokens)
 * [응답 캐싱](xref:performance/caching/response)
 * [응답 캐싱 미들웨어](xref:performance/caching/middleware)
 * [캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
-* [분산된 캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
+* [분산 캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)

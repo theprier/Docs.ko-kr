@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/using-page-inspector-in-a-visual-studio-11-beta-web-forms-project
 msc.type: authoredcontent
-ms.openlocfilehash: a2ac8334e62e6ab7af7042572cfd5950c687001b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ca8a3c194577766e56d0604323fef567d539316c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-page-inspector-for-visual-studio-2012-in-aspnet-web-forms"></a>페이지 검사기를 사용 하 여 ASP.NET Web Forms에서 Visual Studio 2012 용
 ====================
@@ -42,7 +42,7 @@ Tim Ammann으로
 > 
 > [스타일 창에서 CSS 변경 내용 미리 보기](#_7_previewing_css)
 > 
-> [CSS 자동 동기화](#css_auto_sync)
+> [CSS Auto Sync](#css_auto_sync)
 > 
 > [CSS 색 선택을 사용 하 여](#css_color_picker)
 
@@ -51,7 +51,7 @@ Tim Ammann으로
 
 ## <a name="prerequisites"></a>필수 구성 요소
 
-- [Visual Studio 2012](https://www.microsoft.com/visualstudio/11/en-us) 또는 [Visual Studio Express 2012 for Web](https://www.microsoft.com/visualstudio/11/en-us/downloads#express-web)합니다.
+- [Visual Studio 2012](https://www.microsoft.com/visualstudio/11) 또는 [Visual Studio Express 2012 for Web](https://www.microsoft.com/visualstudio/11/downloads#express-web)합니다.
 
 > [!NOTE]
 > 페이지 검사기의 최신 버전을 사용 [웹 플랫폼 설치 관리자](https://go.microsoft.com/fwlink/?LinkId=255386) 하려면 Azure SDK for.NET 2.0를 설치 합니다.
@@ -91,7 +91,7 @@ Tim Ammann으로
 
 ![ALT + TAB Visual Studio와는 도킹 되지 않은 페이지 검사기 창 간에 부동 도구 windows 확인란의 선택을 취소합니다](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image5.png)
 
-페이지 검사기 창 상단의 브라우저 창에서 현재 페이지를 보여 줍니다. 아래쪽 창의 왼쪽에 HTML 태그에서 페이지가 표시 되 고 오른쪽 수 있는 일부 탭 페이지의 다양 한 측면을 검사 합니다. 아래쪽 창의 비슷합니다는 [F12 개발자 도구](https://msdn.microsoft.com/en-us/ie/aa740478) Internet Explorer에서 합니다. 그러나 (개발자 도구와는 달리 사용할 수 있습니다 Visual Studio에서 바로 페이지 검사기.)
+페이지 검사기 창 상단의 브라우저 창에서 현재 페이지를 보여 줍니다. 아래쪽 창의 왼쪽에 HTML 태그에서 페이지가 표시 되 고 오른쪽 수 있는 일부 탭 페이지의 다양 한 측면을 검사 합니다. 아래쪽 창의 비슷합니다는 [F12 개발자 도구](https://msdn.microsoft.com/ie/aa740478) Internet Explorer에서 합니다. 그러나 (개발자 도구와는 달리 사용할 수 있습니다 Visual Studio에서 바로 페이지 검사기.)
 
 ![페이지 검사기](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image6.png)
 

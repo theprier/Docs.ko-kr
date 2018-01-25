@@ -10,11 +10,11 @@ ms.topic: article
 ms.assetid: a55b0d20-9c90-4bd3-a471-20da6f569f0c
 ms.technology: 
 ms.prod: .net-framework
-ms.openlocfilehash: 3aaef756ee00d7e44aa757062e1ef297312ecf22
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 12acae0883c12698a8f9c2150623ba792303e7ef
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="aspnet-webhooks-handlers"></a>ASP.NET Webhook 처리기
 
@@ -62,7 +62,7 @@ public class MyWebHookHandler : WebHookHandler
 
 응답은 약간의 시간 (초) 내에서 생성 되지 않은 경우 대부분 WebHook 발신자는 한 WebHook을 다시 보냅니다. 즉, 처리기가 다시 호출 되어 하지 하기 위해에서 해당 시간 프레임 내에서 처리를 완료 해야 합니다.
 
-처리 더 오래 걸리며 또는 더 잘 콘텐츠를 수정 하는 경우 다음의 [WebHookQueueHandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookQueueHandler.cs) 는 예를 들어 큐에 WebHook 요청을 제출 하는 데 사용할 수 [Azure 저장소 큐](https://msdn.microsoft.com/en-us/library/azure/dd179353.aspx)합니다.
+처리 더 오래 걸리며 또는 더 잘 콘텐츠를 수정 하는 경우 다음의 [WebHookQueueHandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookQueueHandler.cs) 는 예를 들어 큐에 WebHook 요청을 제출 하는 데 사용할 수 [Azure 저장소 큐](https://msdn.microsoft.com/library/azure/dd179353.aspx)합니다.
 
 개요는 [WebHookQueueHandler](https://github.com/aspnet/WebHooks/blob/master/src/Microsoft.AspNet.WebHooks.Receivers/WebHooks/WebHookQueueHandler.cs) 구현을 제공 합니다.
 

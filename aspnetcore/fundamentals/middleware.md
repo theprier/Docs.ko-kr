@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/middleware
-ms.openlocfilehash: ef130e736e2f32fa134156d979ce5bfbedcae828
-ms.sourcegitcommit: 3f491f887074310fc0f145cd01a670aa63b969e3
+ms.openlocfilehash: 84f386db4ab96a82011ee2fc0b6c20a1a05b5e4b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="aspnet-core-middleware-fundamentals"></a>ASP.NET Core 미들웨어 기본 사항
 
@@ -55,7 +55,7 @@ ASP.NET Core 요청 파이프라인의 요청 대리자, 즉,이 다이어그램
 [!code-csharp[Main](middleware/sample/Chain/Startup.cs?name=snippet1)]
 
 >[!WARNING]
-> 호출 하지 마십시오 `next.Invoke` 클라이언트에 응답을 보낸 후 합니다. 변경 내용 `HttpResponse` 응답이 시작 된 후 예외가 throw 됩니다. 예를 들어 헤더, 상태 코드 등을 설정 하는 등의 변경에는 예외가 throw 됩니다. 호출한 후 응답 본문에 쓰기 `next`:
+> 호출 하지 `next.Invoke` 클라이언트에 응답을 보낸 후 합니다. 변경 내용 `HttpResponse` 응답이 시작 된 후 예외가 throw 됩니다. 예를 들어 헤더, 상태 코드 등을 설정 하는 등의 변경에는 예외가 throw 됩니다. 호출한 후 응답 본문에 쓰기 `next`:
 > - 프로토콜 위반이 발생할 수 있습니다. 예를 들어 쓰기는 언급 된 것 보다 많은 `content-length`합니다.
 > - 본문 형식을 손상 될 수 있습니다. 예를 들어 HTML 바닥글 CSS 파일에 기록 됩니다.
 >
@@ -63,7 +63,7 @@ ASP.NET Core 요청 파이프라인의 요청 대리자, 즉,이 다이어그램
 
 ## <a name="ordering"></a>정렬
 
-미들웨어 구성 요소에 추가 되는 순서는 `Configure` 요청에서 호출 되는 순서와 역순은 응답에 대 한 메서드를 정의 합니다. 이 순서 지정 하는 것은 보안, 성능 및 기능에 대 한 중요 합니다.
+미들웨어 구성 요소에 추가 되는 순서는 `Configure` 요청에서 호출 하는 순서와 역순은 응답에 대 한 메서드를 정의 합니다. 이 순서 지정 하는 것은 보안, 성능 및 기능에 대 한 중요 합니다.
 
 Configure 메서드 (아래 참조) 다음 미들웨어 구성 요소를 추가 합니다.
 
@@ -116,11 +116,11 @@ public void Configure(IApplicationBuilder app)
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 
-요청이 정적 파일 미들웨어에서 처리 되지 않으면 Identity 미들웨어 전달 됩니다 (`app.UseAuthentication`), 인증을 수행 하는 합니다. Identity 인증 되지 않은 요청을 단락 하지 않습니다. Identity 요청을 인증 하는 있지만 권한 부여 (및 거부) MVC가 특정 Razor 페이지 또는 컨트롤러 및 작업을 선택한 후에 발생 합니다.
+요청이 정적 파일 미들웨어에서 처리 되지 않은, Identity 미들웨어 전달 됩니다 (`app.UseAuthentication`), 인증을 수행 하는 합니다. Identity 인증 되지 않은 요청 단락 하지 않습니다. Identity 요청을 인증 하는 있지만 권한 부여 (및 거부) MVC가 특정 Razor 페이지 또는 컨트롤러 및 작업을 선택한 후에 발생 합니다.
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-요청이 정적 파일 미들웨어에서 처리 되지 않으면 Identity 미들웨어 전달 됩니다 (`app.UseIdentity`), 인증을 수행 하는 합니다. Identity 인증 되지 않은 요청을 단락 하지 않습니다. Identity 요청을 인증 하는 있지만 권한 부여 (및 거부) MVC가 특정 컨트롤러와 작업을 선택한 후에 발생 합니다.
+요청이 정적 파일 미들웨어에서 처리 되지 않은, Identity 미들웨어 전달 됩니다 (`app.UseIdentity`), 인증을 수행 하는 합니다. Identity 인증 되지 않은 요청 단락 하지 않습니다. Identity 요청을 인증 하는 있지만 권한 부여 (및 거부) MVC가 특정 컨트롤러와 작업을 선택한 후에 발생 합니다.
 
 -----------
 

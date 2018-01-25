@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-at-application-startup-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 06370e31d27aeab50e56e0b0b860aca7c3ad683b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5b84b797bf0c9670ac65a5384b6d95d5df3827eb
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="caching-data-at-application-startup-vb"></a>응용 프로그램 시작 (VB)에서 데이터 캐싱
 ====================
@@ -36,7 +36,7 @@ ms.lasthandoff: 11/10/2017
 사전 로드 및 살펴보겠습니다이 자습서에서는 형식이 다른 버전은 응용 프로그램 시작 시 캐시에 데이터를 로드 합니다. 이 방법은 데이터베이스 조회 테이블의 레코드와 같은 정적 데이터를 캐싱하는 데 특히 유용 합니다.
 
 > [!NOTE]
-> 장점과 단점을 구현 권장 사항 목록 뿐만 아니라 사전 예방적 이며 반응 적인 로드 간의 차이점에 대 한 자세한 설명에 대 한 참조는 [캐시의 내용을 관리](https://msdn.microsoft.com/en-us/library/ms978503.aspx) 의 섹션은 [ .NET Framework 응용 프로그램에 대 한 아키텍처 가이드 캐싱](https://msdn.microsoft.com/en-us/library/ms978498.aspx)합니다.
+> 장점과 단점을 구현 권장 사항 목록 뿐만 아니라 사전 예방적 이며 반응 적인 로드 간의 차이점에 대 한 자세한 설명에 대 한 참조는 [캐시의 내용을 관리](https://msdn.microsoft.com/library/ms978503.aspx) 의 섹션은 [ .NET Framework 응용 프로그램에 대 한 아키텍처 가이드 캐싱](https://msdn.microsoft.com/library/ms978498.aspx)합니다.
 
 
 ## <a name="step-1-determining-what-data-to-cache-at-application-startup"></a>1 단계: 응용 프로그램 시작 시 캐시 데이터 확인
@@ -68,7 +68,7 @@ ms.lasthandoff: 11/10/2017
 
 수 전에 *SomeMethod* 하거나 작업할 *SomeProperty*, 사용 하 여 클래스의 인스턴스 먼저 만들어야는 `New` 키워드입니다. *SomeMethod* 및 *SomeProperty* 특정 인스턴스와 연결 됩니다. 이러한 멤버의 수명은 해당 연결 된 개체의 수명에 연결 됩니다. *정적 멤버*, 변수, 속성 및 메서드 간에 공유 되는 반면에 *모든* 클래스 인스턴스의 따라서 수명은 클래스는 및입니다. 키워드에 의해 표시 됩니다. 정적 멤버 `Shared`합니다.
 
-정적 멤버 뿐만 아니라 응용 프로그램 상태를 사용 하 여 데이터를 캐시할 수 있습니다. 각 ASP.NET 응용 프로그램 모든 사용자 및 응용 프로그램의 페이지에서 공유 s 이름/값 컬렉션을 유지 합니다. 사용 하 여이 컬렉션에 액세스할 수는 [ `HttpContext` 클래스](https://msdn.microsoft.com/en-us/library/system.web.httpcontext.aspx) s [ `Application` 속성](https://msdn.microsoft.com/en-us/library/system.web.httpcontext.application.aspx), ASP.NET 페이지의 코드 숨김 클래스에서 사용 되 고 같이:
+정적 멤버 뿐만 아니라 응용 프로그램 상태를 사용 하 여 데이터를 캐시할 수 있습니다. 각 ASP.NET 응용 프로그램 모든 사용자 및 응용 프로그램의 페이지에서 공유 s 이름/값 컬렉션을 유지 합니다. 사용 하 여이 컬렉션에 액세스할 수는 [ `HttpContext` 클래스](https://msdn.microsoft.com/library/system.web.httpcontext.aspx) s [ `Application` 속성](https://msdn.microsoft.com/library/system.web.httpcontext.application.aspx), ASP.NET 페이지의 코드 숨김 클래스에서 사용 되 고 같이:
 
 
 [!code-vb[Main](caching-data-at-application-startup-vb/samples/sample2.vb)]
@@ -135,7 +135,7 @@ ms.lasthandoff: 11/10/2017
 - **`Session_Start`**새 세션을 만들 때 실행
 - **`Session_End`**세션이 만료 되었거나 중단 하면 실행 됩니다.
 
-`Application_Start` s 응용 프로그램 수명 주기 동안 한 번만 이벤트 처리기가 호출 됩니다. 응용 프로그램을 처음으로 응용 프로그램에서 요청 하 고 응용 프로그램은 다시 시작할 때까지 계속 실행 하는 ASP.NET 리소스의 내용을 수정 하 여 발생할 수 있음 시작는 `/Bin` 폴더 수정 `Global.asax`수정 하 고는 콘텐츠는 `App_Code` 폴더 또는 수정는 `Web.config` 다른 원인 중 파일입니다. 참조 [ASP.NET 응용 프로그램 수명 주기 개요](https://msdn.microsoft.com/en-us/library/ms178473.aspx) 에 대 한 자세한 내용은 응용 프로그램 수명 주기 합니다.
+`Application_Start` s 응용 프로그램 수명 주기 동안 한 번만 이벤트 처리기가 호출 됩니다. 응용 프로그램을 처음으로 응용 프로그램에서 요청 하 고 응용 프로그램은 다시 시작할 때까지 계속 실행 하는 ASP.NET 리소스의 내용을 수정 하 여 발생할 수 있음 시작는 `/Bin` 폴더 수정 `Global.asax`수정 하 고는 콘텐츠는 `App_Code` 폴더 또는 수정는 `Web.config` 다른 원인 중 파일입니다. 참조 [ASP.NET 응용 프로그램 수명 주기 개요](https://msdn.microsoft.com/library/ms178473.aspx) 에 대 한 자세한 내용은 응용 프로그램 수명 주기 합니다.
 
 이 자습서에 대 한만 하면 코드를 추가 하는 `Application_Start` 메서드, 따라서 자유롭게 다른 항목을 제거 합니다. `Application_Start`를 호출 하기만 하면는 `StaticCache` s 클래스 `LoadStaticCache()` 메서드를 로드 하 고 공급 업체 정보를 캐시:
 

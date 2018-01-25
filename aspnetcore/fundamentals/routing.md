@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/routing
-ms.openlocfilehash: ffa3178dc4e3aac3ba51c29b7efa3f71eb56bcfe
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 8f6f4fac89afe14d83d629128fc3e4632ae95510
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="routing-in-aspnet-core"></a>ASP.NET Core의 라우팅
 
@@ -98,9 +98,9 @@ routes.MapRoute(
     template: "{controller=Home}/{action=Index}/{id?}");
 ```
 
-이 서식 파일의 URL 경로 같은 일치시킬지 `/Products/Details/17` 경로 값을 추출 하 고 `{ controller = Products, action = Details, id = 17 }`합니다. URL 경로 세그먼트로 분할 하 고 각 세그먼트와 일치 하 여 경로 값을 결정는 *경로 매개 변수가* 경로 서식 파일의 이름입니다. 경로 매개 변수 이름이 지정 됩니다. 중괄호에 매개 변수 이름을 포함 하 여 정의 된 `{ }`합니다.
+이 서식 파일의 URL 경로 같은 일치시킬지 `/Products/Details/17` 경로 값을 추출 하 고 `{ controller = Products, action = Details, id = 17 }`합니다. URL 경로 세그먼트로 분할 하 고 각 세그먼트와 일치 하 여 경로 값을 결정는 *경로 매개 변수가* 경로 서식 파일의 이름입니다. 경로 매개 변수 이름이 지정 됩니다. 중괄호에 매개 변수 이름을 포함 하 여 정의 `{ }`합니다.
 
-위의 서식 파일의 URL 경로 일치 수 `/` 값 생성 및 `{ controller = Home, action = Index }`합니다. 때문에 이런는 `{controller}` 및 `{action}` 경로 매개 변수에 기본값이 및 `id` 경로 매개 변수는 선택 사항입니다. 본사 `=` 경로 매개 변수 이름에는 매개 변수에 대 한 기본값을 정의 하는 후 부호와 값입니다. 물음표 `?` 후 선택적으로 매개 변수를 정의 하는 경로 매개 변수 이름입니다. 기본값은 매개 변수를 라우팅할 *항상* 경로가 일치-선택적 매개 변수는 해당 URL 경로 세그먼트가 있는 경우 경로 값을 생성 하지 때 경로 값을 생성 합니다.
+위의 서식 파일의 URL 경로 일치 수 `/` 값 생성 및 `{ controller = Home, action = Index }`합니다. 때문에 이런는 `{controller}` 및 `{action}` 경로 매개 변수에 기본값이 및 `id` 경로 매개 변수는 선택 사항입니다. 본사 `=` 경로 매개 변수 이름에는 매개 변수에 대 한 기본값을 정의 하는 후 부호와 값입니다. 물음표 `?` 후 선택적으로 매개 변수를 정의 하는 경로 매개 변수 이름입니다. 기본값은 매개 변수를 라우팅할 *항상* 경로가 일치-선택적 매개 변수는 해당 URL 경로 세그먼트가 있는 경우 경로 값을 생성 하지 않습니다 때 경로 값을 생성 합니다.
 
 참조 [경로-템플릿-참조](#route-template-reference) 에 대 한 철저 한 설명은 경로 템플릿 기능 및 구문입니다.
 
@@ -255,7 +255,7 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
 
 ## <a name="route-template-reference"></a>경로 템플릿 참조
 
-중괄호 안에 토큰 (`{ }`) 정의 *매개 변수를 라우팅할* 를 바인딩할 경로의 일치 하는 경우. 경로 세그먼트에 둘 이상의 경로 매개 변수를 정의할 수 있지만는 리터럴 값으로 구분 되어야 합니다. 예를 들어 `{controller=Home}{action=Index}` 됩니다 유효한 경로 사이의 리터럴 값이 없는 이므로 `{controller}` 및 `{action}`합니다. 이러한 경로 매개 변수는 이름이 있어야 합니다. 및 추가 특성 지정한 경우 사용할 수 있습니다.
+중괄호 안에 토큰 (`{ }`) 정의 *매개 변수를 라우팅할* 를 바인딩할 경로의 일치 하는 경우. 경로 세그먼트에 둘 이상의 경로 매개 변수를 정의할 수 있지만는 리터럴 값으로 구분 되어야 합니다. 예를 들어 `{controller=Home}{action=Index}` 사이의 리터럴 값이 없는 이므로 유효 경로 수 없게 `{controller}` 및 `{action}`합니다. 이러한 경로 매개 변수는 이름이 있어야 합니다. 및 추가 특성 지정한 경우 사용할 수 있습니다.
 
 경로 매개 변수 이외의 리터럴 텍스트 (예를 들어 `{id}`) 경로 구분 기호 및 `/` URL에 텍스트와 일치 해야 합니다. 텍스트 일치 이며 대/소문자 구분에 기반한 Url 경로의 디코딩된 표현 합니다. 리터럴 경로 매개 변수 구분 기호에 맞게 `{` 또는 `}`, 문자를 반복 하 여 이스케이프 (`{{` 또는 `}}`).
 

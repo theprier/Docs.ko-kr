@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/hosting-aspnet-web-api/host-aspnet-web-api-in-an-azure-worker-role
 msc.type: authoredcontent
-ms.openlocfilehash: 326c4a4e274dbc1aa6e09f1d07c4d135e4304484
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9a7f8242bf482e81513accfe05e10a64ae0ca0b2
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="host-aspnet-web-api-2-in-an-azure-worker-role"></a>ASP.NET Web API 2 Azure 작업자 역할에 호스트
 ====================
@@ -33,7 +33,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
 > - Web API 2
-> - [Azure SDK for.NET 2.3](https://azure.microsoft.com/en-us/downloads/)
+> - [Azure SDK for.NET 2.3](https://azure.microsoft.com/downloads/)
 
 
 ## <a name="create-a-microsoft-azure-project"></a>Microsoft Azure 프로젝트 만들기
@@ -137,7 +137,7 @@ WorkerRole.cs에 대 한 전체 코드는 다음과 같습니다.
 
 ## <a name="deploy-to-azure"></a>Azure에 배포
 
-이 단계에서는 Azure 계정이 있어야 합니다. 아직 없는 하나, 몇 분에서에서 무료 평가판 계정을 만들 수 있습니다. 자세한 내용은 참조 [Microsoft Azure 무료 평가판](https://azure.microsoft.com/en-us/pricing/free-trial/?WT.mc_id=A261C142F)합니다.
+이 단계에서는 Azure 계정이 있어야 합니다. 아직 없는 하나, 몇 분에서에서 무료 평가판 계정을 만들 수 있습니다. 자세한 내용은 참조 [Microsoft Azure 무료 평가판](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F)합니다.
 
 솔루션 탐색기에서 AzureApp 프로젝트를 마우스 오른쪽 단추로 클릭 합니다. **게시**를 선택합니다.
 
@@ -151,8 +151,7 @@ Azure 계정에 로그인 하지 않은 경우 클릭 **로그인**합니다.
 
 [![](host-aspnet-web-api-in-an-azure-worker-role/_static/image17.png)](host-aspnet-web-api-in-an-azure-worker-role/_static/image16.png)
 
-클라우드 서비스에 대 한 이름을 입력 하 고 지역을 선택 합니다. 
-              **만들기**를 클릭합니다.
+클라우드 서비스에 대 한 이름을 입력 하 고 지역을 선택 합니다. **만들기**를 클릭합니다.
 
 ![](host-aspnet-web-api-in-an-azure-worker-role/_static/image18.png)
 
@@ -166,5 +165,5 @@ Azure 활동 로그 창에는 배포의 진행률이 표시 됩니다. 앱을 �
 
 ## <a name="additional-resources"></a>추가 리소스
 
-- [프로젝트 Katana의 개요](../../../aspnet/overview/owin-and-katana/an-overview-of-project-katana.md)
+- [프로젝트 Katana 개요](../../../aspnet/overview/owin-and-katana/an-overview-of-project-katana.md)
 - [GitHub에서 Katana 프로젝트](https://github.com/aspnet/AspNetKatana)

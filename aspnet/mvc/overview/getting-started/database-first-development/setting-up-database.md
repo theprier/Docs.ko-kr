@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/setting-up-database
 msc.type: authoredcontent
-ms.openlocfilehash: 9ecde847841eb727a0440f0483c69d1df6757815
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cb979333131cc6ac87fd640bf7c96931054a1814
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-entity-framework-6-database-first-using-mvc-5"></a>Entity Framework 6 Database First MVC 5를 사용 하 여 시작 하기
 ====================
@@ -37,7 +37,7 @@ ms.lasthandoff: 11/10/2017
 
 Code First 개발의 기본 예제를 보려면 [Getting Started with ASP.NET MVC 5](../introduction/getting-started.md)합니다. 고급 예제를 보려면 [ASP.NET MVC 4 응용 프로그램에 대 한 Entity Framework 데이터 모델을 만드는](../getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)합니다.
 
-사용 하려면 Entity Framework 방식을 선택에 대 한 지침을 참조 하십시오. [Entity Framework 개발 방법](https://msdn.microsoft.com/en-us/library/ms178359.aspx#dbfmfcf)합니다.
+사용 하려면 Entity Framework 방식을 선택에 대 한 지침을 참조 하십시오. [Entity Framework 개발 방법](https://msdn.microsoft.com/library/ms178359.aspx#dbfmfcf)합니다.
 
 ## <a name="prerequisites"></a>필수 구성 요소
 
@@ -49,7 +49,7 @@ Visual Studio 2013 또는 Visual Studio Express 2013 for Web
 
 이 자습서는 Visual Studio 2013 또는 Visual Studio Express 2013과 함께 LocalDB를 사용 하 여 웹에 대 한 개발 되었습니다. LocalDB, 대신 기존 데이터베이스 서버를 사용할 수 있지만 프로그램 버전의 Visual Studio 및 데이터베이스 유형에 따라 데이터 도구는 Visual Studio의 모든 지원 되지 않는 경우. 도구를 데이터베이스에 대해 사용할 수 없는 경우 데이터베이스에 대 한 일부 관리 도구 모음 내에서 데이터베이스 관련 단계를 수행 해야 합니다.
 
-Visual Studio 버전에 데이터베이스 도구에 문제가 있는 경우 최신 버전의 데이터베이스 도구를 설치 했는지 확인 합니다. 업데이트 또는 데이터베이스 도구를 설치 하는 방법에 대 한 정보를 참조 하십시오. [Microsoft SQL Server Data Tools](https://msdn.microsoft.com/en-us/data/hh297027)합니다.
+Visual Studio 버전에 데이터베이스 도구에 문제가 있는 경우 최신 버전의 데이터베이스 도구를 설치 했는지 확인 합니다. 업데이트 또는 데이터베이스 도구를 설치 하는 방법에 대 한 정보를 참조 하십시오. [Microsoft SQL Server Data Tools](https://msdn.microsoft.com/data/hh297027)합니다.
 
 Visual Studio를 시작 하 고 만듭니다는 **SQL Server 데이터베이스 프로젝트**합니다. 프로젝트 이름을 **ContosoUniversityData**합니다.
 

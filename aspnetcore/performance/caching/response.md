@@ -8,11 +8,11 @@ ms.date: 09/20/2017
 ms.topic: article
 ms.prod: asp.net-core
 uid: performance/caching/response
-ms.openlocfilehash: 104cfb2eab706a2ec6278b4d1c461f70b0af5df1
-ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
+ms.openlocfilehash: d7726443dbcc34c21fd6cf0f56c4412863617b9f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="response-caching-in-aspnet-core"></a>ASP.NET Core의 응답 캐싱
 
@@ -34,9 +34,9 @@ ms.lasthandoff: 11/29/2017
 | --------------------------------------------------------------- | ------ |
 | [public](https://tools.ietf.org/html/rfc7234#section-5.2.2.5)   | 캐시 된 응답을 저장할 수 있습니다. |
 | [private](https://tools.ietf.org/html/rfc7234#section-5.2.2.6)  | 공유 캐시에서 응답을 저장 되어야 합니다. 개인 캐시는 저장 하 고 응답을 다시 사용할 수 있습니다. |
-| [최대 처리 기간](https://tools.ietf.org/html/rfc7234#section-5.2.1.1)  | 클라이언트는 오래 된 시간 (초) 지정 된 숫자 보다 큰 경우 응답을 수락 하지 않습니다. 예: `max-age=60` (60 초) `max-age=2592000` (1 월) |
-| [캐시 없음](https://tools.ietf.org/html/rfc7234#section-5.2.1.4) | **요청에서**: 요청을 충족 하도록 저장된 응답 캐시를 사용 하지 않아야 합니다. 참고:는 원본 서버는 클라이언트에 대 한 응답을 다시 생성 하 고 미들웨어 캐시에 저장 된 응답을 업데이트 합니다.<br><br>**응답에 대해**: 원본 서버에서 유효성을 검사 하지 않고 후속 요청에 대 한 응답을 사용할 수 있어야 합니다. |
-| [저장소 아니요](https://tools.ietf.org/html/rfc7234#section-5.2.1.5) | **요청에서**: 캐시 요청을 저장 하지 않아야 합니다.<br><br>**응답에 대해**: 캐시 응답의 모든 부분을 저장 하지 않아야 합니다. |
+| [max-age](https://tools.ietf.org/html/rfc7234#section-5.2.1.1)  | 클라이언트는 오래 된 시간 (초) 지정 된 숫자 보다 큰 경우 응답을 수락 하지 않습니다. 예: `max-age=60` (60 초) `max-age=2592000` (1 월) |
+| [no-cache](https://tools.ietf.org/html/rfc7234#section-5.2.1.4) | **요청에서**: 요청을 충족 하도록 저장된 응답 캐시를 사용 하지 않아야 합니다. 참고:는 원본 서버는 클라이언트에 대 한 응답을 다시 생성 하 고 미들웨어 캐시에 저장 된 응답을 업데이트 합니다.<br><br>**응답에 대해**: 원본 서버에서 유효성을 검사 하지 않고 후속 요청에 대 한 응답을 사용할 수 있어야 합니다. |
+| [no-store](https://tools.ietf.org/html/rfc7234#section-5.2.1.5) | **요청에서**: 캐시 요청을 저장 하지 않아야 합니다.<br><br>**응답에 대해**: 캐시 응답의 모든 부분을 저장 하지 않아야 합니다. |
 
 캐시의 역할을 하는 다른 캐시 헤더는 다음 표에 표시 됩니다.
 
@@ -65,7 +65,7 @@ ms.lasthandoff: 11/29/2017
 
 ### <a name="distributed-cache"></a>분산된 캐시
 
-분산된 캐시를 사용 하 여 응용 프로그램 클라우드 또는 서버 팜에서 호스트 될 때 메모리에 데이터를 저장 합니다. 캐시 요청을 처리 하는 서버 간에 공유 됩니다. 클라이언트는 그룹의 모든 서버에서 처리 하는 요청을 제출할 수 및 클라이언트에 대 한 캐시 된 데이터를 사용할 수 있습니다. ASP.NET Core에서는 SQL Server 및 분산 Redis 캐시를 제공합니다.
+분산된 캐시를 사용 하 여 응용 프로그램 클라우드 또는 서버 팜에서 호스트 될 때 메모리에 데이터를 저장 합니다. 캐시 요청을 처리 하는 서버 간에 공유 됩니다. 그룹의 모든 서버에서 처리 하 고 클라이언트에 대 한 데이터를 캐시 하는 요청은 사용할 수 있는 클라이언트를 제출할 수 있습니다. ASP.NET Core에서는 SQL Server 및 분산 Redis 캐시를 제공합니다.
 
 자세한 내용은 참조 [분산된 캐시 작업](xref:performance/caching/distributed)합니다.
 
@@ -96,7 +96,7 @@ ms.lasthandoff: 11/29/2017
 | `http://example.com?key1=value1` | 미들웨어에서 반환 |
 | `http://example.com?key1=value2` | 서버에서 반환 된     |
 
-첫 번째 요청이 서버에서 반환 하 고 미들웨어에 캐시 합니다. 이전 요청과 일치 하는 쿼리 문자열 때문에 두 번째 요청 미들웨어에서 반환 됩니다. 세 번째 요청에에서 없는 경우 미들웨어 캐시에서 쿼리 문자열 값인 이전 요청이 일치 하지 않으므로 
+첫 번째 요청이 서버에서 반환 하 고 미들웨어에 캐시 합니다. 이전 요청과 일치 하는 쿼리 문자열 때문에 두 번째 요청 미들웨어에서 반환 됩니다. 세 번째 요청 쿼리 문자열 값에는 이전 요청 일치 하지 않으므로 미들웨어 캐시에 없습니다. 
 
 `ResponseCacheAttribute` 는 구성 하 고 만드는 데 사용 됩니다 (통해 `IFilterFactory`)는 `ResponseCacheFilter`합니다. `ResponseCacheFilter` 적절 한 HTTP 헤더 및 응답의 기능을 업데이트 하는 작업을 수행 합니다. 필터:
 
@@ -176,10 +176,10 @@ Cache-Control: public,max-age=60
 ## <a name="additional-resources"></a>추가 리소스
 
 * [사양에서 HTTP에서 캐싱](https://tools.ietf.org/html/rfc7234#section-3)
-* [캐시 제어](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
+* [Cache-Control](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
 * [메모리 내 캐싱](xref:performance/caching/memory)
-* [분산된 캐시 사용](xref:performance/caching/distributed)
-* [변경 내용을 변경 토큰으로 검색](xref:fundamentals/primitives/change-tokens)
+* [분산 캐시 사용](xref:performance/caching/distributed)
+* [변경 토큰을 사용하여 변경 내용 검색](xref:fundamentals/primitives/change-tokens)
 * [응답 캐싱 미들웨어](xref:performance/caching/middleware)
 * [캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
-* [분산된 캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
+* [분산 캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)

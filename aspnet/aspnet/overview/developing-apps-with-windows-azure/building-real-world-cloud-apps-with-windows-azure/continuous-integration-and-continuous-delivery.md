@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery
 msc.type: authoredcontent
-ms.openlocfilehash: 0af5f7e841bb43fa41fa0daa4ad8d59ee0596404
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4a5433a7dd70e27b59163822ba427b026c3f4ce0
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="continuous-integration-and-continuous-delivery-building-real-world-cloud-apps-with-azure"></a>연속 통합 및 지속적인 업데이트 (Azure로 응용 프로그램 빌딩 실제 클라우드)
 ====================
@@ -37,7 +37,7 @@ ms.lasthandoff: 11/10/2017
 
 다음 다이어그램에서 [는 Microsoft Patterns and Practices 전자책 지속적인 업데이트에 대 한](http://aka.ms/ReleasePipeline) 일반적인 워크플로 보여 줍니다. 원래 컨텍스트에서 전체 크기를 볼 이미지를 클릭 합니다.
 
-[![지속적인 업데이트 워크플로](continuous-integration-and-continuous-delivery/_static/image1.png)](https://msdn.microsoft.com/en-us/library/dn449955.aspx)
+[![지속적인 업데이트 워크플로](continuous-integration-and-continuous-delivery/_static/image1.png)](https://msdn.microsoft.com/library/dn449955.aspx)
 
 ## <a name="how-the-cloud-enables-cost-effective-ci-and-cd"></a>클라우드 비용 효율적인 CI 및 CD를 사용 하는 방법을
 
@@ -65,14 +65,14 @@ VSTS는 다양 한 배포를 계획에서 응용 프로그램 개발에 도움�
 
 ## <a name="resources"></a>리소스
 
-자세한 내용은 참조 [Azure 앱 서비스의 웹 앱을 배포](https://azure.microsoft.com/en-us/documentation/articles/web-sites-deploy/)합니다.
+자세한 내용은 참조 [Azure 앱 서비스의 웹 앱을 배포](https://azure.microsoft.com/documentation/articles/web-sites-deploy/)합니다.
 
 다음 리소스를 참조 하십시오.
 
 - [Team Foundation server 2012 릴리스 파이프라인을 구축](http://aka.ms/ReleasePipeline)합니다. 전자책, 실습 및 예제 코드에서 Microsoft Patterns and Practices, 지속적인 업데이트에 대 한 자세한 소개를 제공 합니다. Visual Studio Lab Management 및 Visual Studio Release Management의 내부적 사용 합니다.
 - [ALM Rangers DevOps 도구 및 지침](https://aka.ms/vsarsolutions/)합니다. DevOps 워크 벤치 샘플 도우미 솔루션 및 패턴으로 공동 작업에 대 한 지침에서는 ALM Rangers 도입 &amp; 사례 책 *TFS 2012와 릴리스 파이프라인을 구축*를 시작 하는 좋은 방법으로 DevOps 개념과 &amp; TFS 2012에 대 한 및 넣지 릴리스 관리 합니다. 지침에는 한 번 빌드하여 여러 환경에 배포 하는 방법을 보여 줍니다.
-- [Visual Studio 2012를 사용한 지속적인 업데이트 테스트](https://msdn.microsoft.com/en-us/library/jj159345.aspx)합니다. 전자책 (영문)에서 Microsoft Patterns and Practices, 지속적인 업데이트를 사용 하 여 자동화 된 테스트를 통합 하는 방법에 설명 합니다.
-- [WindowsAzureDeploymentTracker](https://github.com/RyanTBerry/WindowsAzureDeploymentTracker)합니다. TFS (레이블을에 기반)에서 빌드를 캡처, 빌드, 패키지,의 특정 측면을 구성 하는 DevOps 역할에서 허용 하는 사용자 및 Azure에 밀어 넣습니다 설계 도구에 대 한 소스 코드입니다. 도구 작업 "롤백"를 이전에 배포 된 버전을 사용할 수 있도록 배포 프로세스를 추적 합니다. 이 도구는 외부 종속성이 없습니다 하며 TFS Api 및 Azure SDK에는 독립 실행형를 사용 하 여 작동할 수 있습니다.
+- [Visual Studio 2012를 사용한 지속적인 업데이트 테스트](https://msdn.microsoft.com/library/jj159345.aspx)합니다. 전자책 (영문)에서 Microsoft Patterns and Practices, 지속적인 업데이트를 사용 하 여 자동화 된 테스트를 통합 하는 방법에 설명 합니다.
+- [WindowsAzureDeploymentTracker](https://github.com/RyanTBerry/WindowsAzureDeploymentTracker). TFS (레이블을에 기반)에서 빌드를 캡처, 빌드, 패키지,의 특정 측면을 구성 하는 DevOps 역할에서 허용 하는 사용자 및 Azure에 밀어 넣습니다 설계 도구에 대 한 소스 코드입니다. 도구 작업 "롤백"를 이전에 배포 된 버전을 사용할 수 있도록 배포 프로세스를 추적 합니다. 이 도구는 외부 종속성이 없습니다 하며 TFS Api 및 Azure SDK에는 독립 실행형를 사용 하 여 작동할 수 있습니다.
 - [지속적인 업데이트: 신뢰할 수 있는 소프트웨어를 빌드, 테스트 및 배포 자동화를 통해 해제](https://www.amazon.com/Continuous-Delivery-Deployment-Automation-Addison-Wesley/dp/0321601912/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1377126361)합니다. 미 천 한 Jez의 책입니다.
 - [해제! 디자인 및 프로덕션에 사용 가능한 소프트웨어 배포](https://www.amazon.com/Release-It-Production-Ready-Pragmatic-Programmers/dp/0978739213)합니다. Michael 화 Nygard의 책입니다.
 

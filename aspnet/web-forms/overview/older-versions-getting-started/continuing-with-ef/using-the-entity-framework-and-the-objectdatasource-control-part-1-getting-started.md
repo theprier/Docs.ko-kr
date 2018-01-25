@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started
 msc.type: authoredcontent
-ms.openlocfilehash: 6f93d6033b68773507d624125936f0a69777e2b7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 83fe815af9030aee10a5204718b00c79925e9126
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-1-getting-started"></a>1 부 Entity Framework 4.0 및 ObjectDataSource 컨트롤을 사용 하 여,: 시작 하기
 ====================
@@ -30,7 +30,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > ## <a name="database-first"></a>먼저 데이터베이스
 > 
-> 세 가지 방법으로 데이터 Entity Framework에서 사용할 수 있습니다: *Database First*, *Model First*, 및 *Code First*합니다. 첫 번째 데이터베이스에 대 한이 자습서가입니다. 이러한 워크플로 지침 간의 차이점에 대 한 사용자 시나리오에 가장 적합 한 선택 하는 방법에 정보를 참조 하십시오. [Entity Framework 개발 워크플로에](https://msdn.microsoft.com/en-us/library/ms178359.aspx#dbfmfcf)합니다.
+> 세 가지 방법으로 데이터 Entity Framework에서 사용할 수 있습니다: *Database First*, *Model First*, 및 *Code First*합니다. 첫 번째 데이터베이스에 대 한이 자습서가입니다. 이러한 워크플로 지침 간의 차이점에 대 한 사용자 시나리오에 가장 적합 한 선택 하는 방법에 정보를 참조 하십시오. [Entity Framework 개발 워크플로에](https://msdn.microsoft.com/library/ms178359.aspx#dbfmfcf)합니다.
 > 
 > ## <a name="web-forms"></a>Web Forms
 > 
@@ -47,7 +47,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > ## <a name="questions"></a>질문
 > 
-> 자습서를 직접 관련 되지 않는 질문 해야 하도록를 게시할 수 있습니다는 [ASP.NET Entity Framework 포럼](https://forums.asp.net/1227.aspx), [Entity Framework와 LINQ to Entities 포럼](https://social.msdn.microsoft.com/forums/en-US/adodotnetentityframework/threads/), 또는 [ StackOverflow.com](http://stackoverflow.com/)합니다.
+> 자습서를 직접 관련 되지 않는 질문 해야 하도록를 게시할 수 있습니다는 [ASP.NET Entity Framework 포럼](https://forums.asp.net/1227.aspx), [Entity Framework와 LINQ to Entities 포럼](https://social.msdn.microsoft.com/forums/adodotnetentityframework/threads/), 또는 [ StackOverflow.com](http://stackoverflow.com/)합니다.
 
 
 `EntityDataSource` 컨트롤을 사용 하면 응용 프로그램을 매우 신속 하 게 만들 수 있지만 일반적으로 필요한 비즈니스 논리 및 데이터 액세스 논리에 상당한 양의 유지할 수 있습니다 프로그램 *.aspx* 페이지입니다. 복잡 하 고 지속적인 유지 관리를 요구 하려면 응용 프로그램의 예상 되는 경우 높여줍니다 더 많은 개발 시간을 미리 만들려면는 *n 계층* 또는 *계층화* 응용 프로그램 구조 더 쉽게 유지 관리할입니다. 이 아키텍처를 구현 하려면 BLL ()는 비즈니스 논리 계층 및 데이터 액세스 계층 (DAL)에서 프레젠테이션 계층을 구분 합니다. 이 구조를 구현 하는 한 가지 방법은 사용 하는 것은 `ObjectDataSource` 컨트롤 대신는 `EntityDataSource` 제어 합니다. 사용 하는 경우는 `ObjectDataSource` 컨트롤을 사용자 고유의 데이터 액세스 코드를 구현 하 고 다음 호출에서 *.aspx* 가 같은 많이 사용 하는 컨트롤을 사용 하 여 페이지 기능을 다른 데이터 소스 컨트롤입니다. 이 n 계층 접근 방식의 이점을 Web Forms 컨트롤을 사용 하 여 데이터 액세스의 장점을 함께 결합할 수 있습니다.
@@ -60,7 +60,7 @@ ms.lasthandoff: 11/10/2017
 
 기본적인 CRUD 작업을 사용 하면 만든 클래스 외에도 `ObjectDataSource` 컨트롤 비즈니스 논리를 실행 해야 할 수 있습니다 때는 `ObjectDataSource` 읽거나 데이터를 업데이트 합니다. 예를 들어 한 부서를 업데이트할 때 다른 부서에서는 한 사람만 둘 이상의 부서의 관리자 수 없기 때문에 동일한 관리자 권한이 있는지 할 수 있습니다.
 
-일부 `ObjectDataSource` 설명서와 같은 [ObjectDataSource 클래스 개요](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.aspx), 라고 하는 클래스를 호출 하는 컨트롤을 *비즈니스 개체* 비즈니스 논리와 데이터 액세스 논리를 포함 하는 . 이 자습서에서는 데이터 액세스 논리 및 비즈니스 논리에 대 한 별도 클래스를 만듭니다. 데이터 액세스 논리를 캡슐화 하는 클래스 라고는 *리포지토리*합니다. 비즈니스 논리 클래스 비즈니스 논리 메서드 및 데이터 액세스 메서드를 모두 포함 되어 있지만 데이터 액세스 메서드는 데이터 액세스 작업을 수행 하는 저장소를 호출 합니다.
+일부 `ObjectDataSource` 설명서와 같은 [ObjectDataSource 클래스 개요](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.aspx), 라고 하는 클래스를 호출 하는 컨트롤을 *비즈니스 개체* 비즈니스 논리와 데이터 액세스 논리를 포함 하는 . 이 자습서에서는 데이터 액세스 논리 및 비즈니스 논리에 대 한 별도 클래스를 만듭니다. 데이터 액세스 논리를 캡슐화 하는 클래스 라고는 *리포지토리*합니다. 비즈니스 논리 클래스 비즈니스 논리 메서드 및 데이터 액세스 메서드를 모두 포함 되어 있지만 데이터 액세스 메서드는 데이터 액세스 작업을 수행 하는 저장소를 호출 합니다.
 
 자동화 된 단위를 용이 하 게 DAL 및 BLL 간의 추상화 계층 만들어집니다 BLL의 테스트 합니다. 인터페이스를 만들고 비즈니스 논리 클래스에서 리포지토리를 인스턴스화할 때 인터페이스를 사용 하 여이 추상화 계층 구현 됩니다. 이렇게 하면 비즈니스 논리 클래스 리포지토리 인터페이스를 구현 하는 개체에 대 한 참조로 제공할 수 있습니다. 일반 작업에 대 한 Entity Framework와 함께 사용할 수 있는 저장소 개체를 제공 합니다. 테스트를 위해 컬렉션으로 정의 된 클래스 변수 같은 쉽게 조작할 수 있는 방식으로 저장 된 데이터를 사용 하는 저장소 개체를 제공 합니다.
 

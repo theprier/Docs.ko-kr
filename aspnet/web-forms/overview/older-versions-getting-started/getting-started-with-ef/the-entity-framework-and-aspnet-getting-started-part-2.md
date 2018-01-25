@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: 4e2a3176aaedccd40ef6b619efa3c4052dd8470b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a549bd62bd78573c368784fd1529a830e009b0d4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-2"></a>먼저 Entity Framework 4.0 데이터베이스와 시작 및 ASP.NET 4 Web Forms-2 부
 ====================
@@ -35,7 +35,7 @@ ms.lasthandoff: 11/10/2017
 
 [![Image18](the-entity-framework-and-aspnet-getting-started-part-2/_static/image6.png)](the-entity-framework-and-aspnet-getting-started-part-2/_static/image5.png)
 
-이 응용 프로그램에서 있하지 않습니다 수 입력된 유효성 검사 페이지에 추가 데이터베이스를 업데이트 하 고 프로덕션 응용 프로그램에 필요한 강력한 됩니다 오류 처리의 일부 note 합니다. Entity Framework에 집중 하는 자습서를 유지 하 고 너무 길거나에서 유지 합니다. 응용 프로그램에 이러한 기능을 추가 하는 방법에 대 한 세부 정보를 참조 하십시오. [ASP.NET 웹 페이지에서 사용자 입력 유효성 검사](https://msdn.microsoft.com/en-us/library/7kh55542.aspx) 및 [ASP.NET 페이지 및 응용 프로그램에서 오류 처리](https://msdn.microsoft.com/en-us/library/w16865z6.aspx)합니다.
+이 응용 프로그램에서 있하지 않습니다 수 입력된 유효성 검사 페이지에 추가 데이터베이스를 업데이트 하 고 프로덕션 응용 프로그램에 필요한 강력한 됩니다 오류 처리의 일부 note 합니다. Entity Framework에 집중 하는 자습서를 유지 하 고 너무 길거나에서 유지 합니다. 응용 프로그램에 이러한 기능을 추가 하는 방법에 대 한 세부 정보를 참조 하십시오. [ASP.NET 웹 페이지에서 사용자 입력 유효성 검사](https://msdn.microsoft.com/library/7kh55542.aspx) 및 [ASP.NET 페이지 및 응용 프로그램에서 오류 처리](https://msdn.microsoft.com/library/w16865z6.aspx)합니다.
 
 ## <a name="adding-and-configuring-the-entitydatasource-control"></a>EntityDataSource 컨트롤 추가 및 구성
 
@@ -157,13 +157,13 @@ Visual Studio가 열고 있는 있는지 확인 및 1 단계에서 만든 프로
 
 - 성능 향상. 경우는 `EntityDataSource` 제어를 사용 하 여 데이터 모델을 초기화 합니다.는 `ConnectionString` 및 `DefaultContainerName` 특성의 경우 모든 요청에 대해 메타 데이터를 로드 하기 위해 추가적인 작업 수행 합니다. 이 지정 하는 경우에 필요 하지 않습니다는 `ContextTypeName` 특성입니다.
 - 생성 된 개체 컨텍스트 클래스에서 기본적으로 지연 로드 상태에서 (같은 `SchoolEntities` 이 자습서에서는) Entity Framework 4.0의 합니다. 즉, 탐색 속성은 로드 관련된 데이터와 함께 자동으로 필요할 때 오른쪽입니다. 지연 로드는이 자습서의 뒷부분에서 자세히 설명 되어 있습니다.
-- 개체 컨텍스트 클래스에 적용 한 모든 사용자 지정 (이 경우는 `SchoolEntities` 클래스)를 사용 하는 컨트롤에 사용할 수 있습니다는 `EntityDataSource` 제어 합니다. 개체 컨텍스트 클래스를 사용자 지정은 자습서이 계열에 적용 되지 않는 고급 항목입니다. 자세한 내용은 참조 [엔터티 프레임 워크 생성 형식 확장](https://msdn.microsoft.com/en-us/library/dd456844.aspx)합니다.
+- 개체 컨텍스트 클래스에 적용 한 모든 사용자 지정 (이 경우는 `SchoolEntities` 클래스)를 사용 하는 컨트롤에 사용할 수 있습니다는 `EntityDataSource` 제어 합니다. 개체 컨텍스트 클래스를 사용자 지정은 자습서이 계열에 적용 되지 않는 고급 항목입니다. 자세한 내용은 참조 [엔터티 프레임 워크 생성 형식 확장](https://msdn.microsoft.com/library/dd456844.aspx)합니다.
 
 이제 태그 (속성의 순서 다를 수 있습니다) 다음 예와 비슷하게 표시 됩니다.
 
 [!code-aspx[Main](the-entity-framework-and-aspnet-getting-started-part-2/samples/sample6.aspx)]
 
-`EnableFlattening` 특성이 외래 키 열 엔터티 속성으로 노출 되지 않은 이전 버전의 Entity Framework에 필요 하는 기능을 참조 합니다. 현재 버전을 사용 하면 사용 하 여 *외래 키 연결*를 제외한 모든 다 대 다 연결에 대해 노출 된 외래 키 속성을 의미 하는 합니다. 엔터티에 외래 키 속성 및 no 경우 [복합 형식을](https://msdn.microsoft.com/en-us/library/bb738472.aspx),이 특성이로 설정 그대로 둘 수 있습니다 `False`합니다. 기본값은 때문에 태그에서 특성을 제거 하지 마십시오 `True`합니다. 자세한 내용은 참조 [평면화 개체 (EntityDataSource)](https://msdn.microsoft.com/en-us/library/ee404746.aspx)합니다.
+`EnableFlattening` 특성이 외래 키 열 엔터티 속성으로 노출 되지 않은 이전 버전의 Entity Framework에 필요 하는 기능을 참조 합니다. 현재 버전을 사용 하면 사용 하 여 *외래 키 연결*를 제외한 모든 다 대 다 연결에 대해 노출 된 외래 키 속성을 의미 하는 합니다. 엔터티에 외래 키 속성 및 no 경우 [복합 형식을](https://msdn.microsoft.com/library/bb738472.aspx),이 특성이로 설정 그대로 둘 수 있습니다 `False`합니다. 기본값은 때문에 태그에서 특성을 제거 하지 마십시오 `True`합니다. 자세한 내용은 참조 [평면화 개체 (EntityDataSource)](https://msdn.microsoft.com/library/ee404746.aspx)합니다.
 
 페이지를 실행 하 고 학생 (필터링 정당한 학생용 다음 자습서의) 직원의 목록이 표시 됩니다. 이름 및 성 함께 표시 됩니다.
 

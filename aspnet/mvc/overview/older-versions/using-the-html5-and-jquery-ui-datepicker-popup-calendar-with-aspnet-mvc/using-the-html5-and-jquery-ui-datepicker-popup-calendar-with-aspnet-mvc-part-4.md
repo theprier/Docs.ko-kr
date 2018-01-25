@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4
 msc.type: authoredcontent
-ms.openlocfilehash: 2b76d2e449d491fd8d808343065b22ba267f1152
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 32211465adeb1353908daa1014d188b84389e1a7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-4"></a>ASP.NET MVC-4 부 HTML5 및 jQuery UI Datepicker 팝업 일정 사용
 ====================
@@ -27,9 +27,9 @@ ms.lasthandoff: 11/10/2017
 
 ### <a name="adding-a-template-for-editing-dates"></a>날짜를 편집용 템플릿을 추가
 
-이 섹션에서는 ASP.NET MVC로 표시 된 모델 속성을 편집 하기 위해 UI를 표시 하는 경우 적용 되는 날짜 편집에 대 한 템플릿을 만듭니다는 **날짜** 의 열거 된 [DataType](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx) 특성이 있습니다. 서식 파일은 날짜만; 렌더링 합니다. 시간 표시 되지 않습니다. 템플릿을 사용 하 여는 [jQuery UI Datepicker](http://jqueryui.com/demos/datepicker/) 팝업 달력 날짜 편집 하는 방법을 제공 합니다.
+이 섹션에서는 ASP.NET MVC로 표시 된 모델 속성을 편집 하기 위해 UI를 표시 하는 경우 적용 되는 날짜 편집에 대 한 템플릿을 만듭니다는 **날짜** 의 열거 된 [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) 특성이 있습니다. 서식 파일은 날짜만; 렌더링 합니다. 시간 표시 되지 않습니다. 템플릿을 사용 하 여는 [jQuery UI Datepicker](http://jqueryui.com/demos/datepicker/) 팝업 달력 날짜 편집 하는 방법을 제공 합니다.
 
-를 시작 하려면 열기는 *Movie.cs* 파일을 추가 [DataType](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatypeattribute.aspx) 특성이 **날짜** 열거형을는 `ReleaseDate` 속성을 다음 코드에 나와 있는 것 처럼:
+를 시작 하려면 열기는 *Movie.cs* 파일을 추가 [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) 특성이 **날짜** 열거형을는 `ReleaseDate` 속성을 다음 코드에 나와 있는 것 처럼:
 
 [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/samples/sample1.cs)]
 
@@ -53,11 +53,11 @@ Ctrl+F5를 눌러 응용 프로그램을 실행합니다. 릴리스 날짜에 �
 
 [!code-cshtml[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/samples/sample2.cshtml)]
 
-첫 번째 줄은 선언 된 모델을는 `DateTime` 유형입니다. 편집에서 모델 형식을 선언 하 고 템플릿을 표시 하지 않아도, 이지만 가장 좋은 방법은 컴파일 타임을 받을 수 있도록 뷰에 전달 되 고 모델 검사를 수행 합니다. (또 다른 이점은 Visual Studio에서 보기에서 모델에 대 한 IntelliSense를 가져온 후.) 모델 형식, 선언 되지 않은 경우 ASP.NET MVC 간주 하는 [동적](https://msdn.microsoft.com/en-us/library/dd264741.aspx) 입력 하 고 컴파일 시간이 없습니다 형식 검사 합니다. 모델을 선언 하는 경우는 `DateTime` 유형, 강력 하 게 형식화 됩니다.
+첫 번째 줄은 선언 된 모델을는 `DateTime` 유형입니다. 편집에서 모델 형식을 선언 하 고 템플릿을 표시 하지 않아도, 이지만 가장 좋은 방법은 컴파일 타임을 받을 수 있도록 뷰에 전달 되 고 모델 검사를 수행 합니다. (또 다른 이점은 Visual Studio에서 보기에서 모델에 대 한 IntelliSense를 가져온 후.) 모델 형식, 선언 되지 않은 경우 ASP.NET MVC 간주 하는 [동적](https://msdn.microsoft.com/library/dd264741.aspx) 입력 하 고 컴파일 시간이 없습니다 형식 검사 합니다. 모델을 선언 하는 경우는 `DateTime` 유형, 강력 하 게 형식화 됩니다.
 
 두 번째 줄은 표시 하는 HTML 태그 리터럴 &quot;날짜 템플릿을 사용 하 여&quot; 날짜 필드 앞입니다. 이 날짜 서식 파일 사용 되 고 있는지 확인 하려면이 줄을 일시적으로 사용 합니다.
 
-다음 줄은는 [Html.TextBox](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.inputextensions.textbox.aspx) 렌더링 하는 도우미는 `input` 필드는 텍스트 상자가입니다. 도우미에 대 한 세 번째 매개 변수 익명 형식을 사용 하 여 텍스트 상자에 대 한 클래스를 설정 `datefield` 하 고 형식을 `date`합니다. (때문에 `class` 는 예약 되어 C#에서 사용 해야는 `@` 문자를 이스케이프 하는 `class` C# 파서에 특성입니다.)
+다음 줄은는 [Html.TextBox](https://msdn.microsoft.com/library/system.web.mvc.html.inputextensions.textbox.aspx) 렌더링 하는 도우미는 `input` 필드는 텍스트 상자가입니다. 도우미에 대 한 세 번째 매개 변수 익명 형식을 사용 하 여 텍스트 상자에 대 한 클래스를 설정 `datefield` 하 고 형식을 `date`합니다. (때문에 `class` 는 예약 되어 C#에서 사용 해야는 `@` 문자를 이스케이프 하는 `class` C# 파서에 특성입니다.)
 
 `date` 형식은 HTML5 인식 브라우저는 HTML5 달력 컨트롤을 렌더링할 수 있도록 설정 하는 HTML5 입력된 형식입니다. 일부 JavaScript에 jQuery datepicker 후크를 나중에 추가 된 `Html.TextBox` 사용 하 여 요소는 `datefield` 클래스.
 
@@ -129,7 +129,7 @@ JQuery 모르는 경우이 수행 하는 작업에 대 한 간략 한 설명이 
 
 [!code-cshtml[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/samples/sample7.cshtml)]
 
-[URL 콘텐츠 도우미](https://msdn.microsoft.com/en-us/library/system.web.mvc.urlhelper.content.aspx) 메서드 리소스 경로 절대 경로로 변환 합니다. 사용 해야 `@URL.Content` 올바르게 응용 프로그램은 IIS에서 실행 되는 이러한 리소스를 참조 하도록 합니다.
+[URL 콘텐츠 도우미](https://msdn.microsoft.com/library/system.web.mvc.urlhelper.content.aspx) 메서드 리소스 경로 절대 경로로 변환 합니다. 사용 해야 `@URL.Content` 올바르게 응용 프로그램은 IIS에서 실행 되는 이러한 리소스를 참조 하도록 합니다.
 
 Ctrl+F5를 눌러 응용 프로그램을 실행합니다. 편집 링크를 선택한 다음에 삽입 지점을 **ReleaseDate** 필드입니다. JQuery UI 팝업 일정 표시 됩니다.
 

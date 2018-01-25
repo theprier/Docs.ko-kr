@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/guide-to-the-api/hubs-api-guide-server
 msc.type: authoredcontent
-ms.openlocfilehash: 1cd5569554c3fbd966ee5d55ad08a79b81af36de
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c2567d4d39a494daf77a23db5dff83c8fae4925d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-signalr-hubs-api-guide---server-c"></a>ASP.NET SignalR 허브 API 가이드-서버 (C#)
 ====================
@@ -102,7 +102,7 @@ SignalR 2에 대 한 서버 구성 요소는.NET 4.5에서 사용할 수만 있�
 
 ## <a name="how-to-register-signalr-middleware"></a>SignalR 미들웨어를 등록 하는 방법
 
-클라이언트에서 허브에 연결 하는 데 사용 하는 경로 정의 하려면 호출에서 `MapSignalR` 메서드 응용 프로그램이 시작 합니다. `MapSignalR`이 [확장 메서드](https://msdn.microsoft.com/en-us/library/vstudio/bb383977.aspx) 에 대 한는 `OwinExtensions` 클래스입니다. 다음 예제에는 OWIN 시작 클래스를 사용 하 여 SignalR 허브 경로 정의 하는 방법을 보여 줍니다.
+클라이언트에서 허브에 연결 하는 데 사용 하는 경로 정의 하려면 호출에서 `MapSignalR` 메서드 응용 프로그램이 시작 합니다. `MapSignalR`이 [확장 메서드](https://msdn.microsoft.com/library/vstudio/bb383977.aspx) 에 대 한는 `OwinExtensions` 클래스입니다. 다음 예제에는 OWIN 시작 클래스를 사용 하 여 SignalR 허브 경로 정의 하는 방법을 보여 줍니다.
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample1.cs)]
 
@@ -156,7 +156,7 @@ SignalR;에 대 한 사용할 수 없음이 기본 URL을 구성 하는 특수 �
 
 ## <a name="how-to-create-and-use-hub-classes"></a>만들고 허브 클래스를 사용 하는 방법
 
-허브를 만들려면에서 파생 되는 클래스를 만듭니다 [Microsoft.Aspnet.Signalr.Hub](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hub(v=vs.111).aspx)합니다. 다음 예제에서는 채팅 응용 프로그램에 대 한 간단한 허브 클래스를 보여 줍니다.
+허브를 만들려면에서 파생 되는 클래스를 만듭니다 [Microsoft.Aspnet.Signalr.Hub](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hub(v=vs.111).aspx)합니다. 다음 예제에서는 채팅 응용 프로그램에 대 한 간단한 허브 클래스를 보여 줍니다.
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample7.cs)]
 
@@ -178,7 +178,7 @@ SignalR;에 대 한 사용할 수 없음이 기본 URL을 구성 하는 특수 �
 
 기본적으로 JavaScript 클라이언트에 허브 클래스 이름의 카멜식 대/소문자 버전을 사용 하 여 참조 합니다. SignalR 자동으로 이러한 변경 때문 JavaScript 코드는 JavaScript 규칙을 따를 수 있습니다. 앞의 예제로 참조 될 `contosoChatHub` JavaScript 코드에서.
 
-**서버**
+**Server**
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample8.cs?highlight=1)]
 
@@ -188,7 +188,7 @@ SignalR;에 대 한 사용할 수 없음이 기본 URL을 구성 하는 특수 �
 
 추가 사용 하려면 클라이언트에 대해 다른 이름을 지정 하려는 경우는 `HubName` 특성입니다. 사용 하는 경우는 `HubName` 특성을 클라이언트 JavaScript에서 카멜식 대/소문자에 이름이 변경 되지 않았습니다.
 
-**서버**
+**Server**
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample10.cs?highlight=1)]
 
@@ -240,7 +240,7 @@ SignalR;에 대 한 사용할 수 없음이 기본 URL을 구성 하는 특수 �
 
 기본적으로 메서드 이름의 카멜식 대/소문자 버전을 사용 하 여 JavaScript 클라이언트 허브 메서드를 참조 합니다. SignalR 자동으로 이러한 변경 때문 JavaScript 코드는 JavaScript 규칙을 따를 수 있습니다.
 
-**서버**
+**Server**
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample15.cs?highlight=1)]
 
@@ -250,7 +250,7 @@ SignalR;에 대 한 사용할 수 없음이 기본 URL을 구성 하는 특수 �
 
 추가 사용 하려면 클라이언트에 대해 다른 이름을 지정 하려는 경우는 `HubMethodName` 특성입니다.
 
-**서버**
+**Server**
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample17.cs?highlight=1)]
 
@@ -262,7 +262,7 @@ SignalR;에 대 한 사용할 수 없음이 기본 URL을 구성 하는 특수 �
 
 ### <a name="when-to-execute-asynchronously"></a>비동기적으로 실행 하는 경우
 
-메서드는 될 장기 실행 또는 작업을 수행 해야 하는 경우에 대기 데이터베이스를 조회 하는 웹 서비스 호출 등을 포함를 반환 하 여 허브 메서드를 비동기적으로 만듭니다 하 하는 [작업](https://msdn.microsoft.com/en-us/library/system.threading.tasks.task.aspx) (대신 `void` 반환) 또는 [ 작업&lt;T&gt; ](https://msdn.microsoft.com/en-us/library/dd321424.aspx) 개체 (대신 `T` 반환 형식). 반환 하는 `Task` SignalR 메서드에서 개체에 대 한 대기는 `Task` 를 완료 하 고 전송 합니다 래핑되지 않은 결과 클라이언트에 클라이언트에서 메서드 호출 코드가 방식에 차이점이 하도록 합니다.
+메서드는 될 장기 실행 또는 작업을 수행 해야 하는 경우에 대기 데이터베이스를 조회 하는 웹 서비스 호출 등을 포함를 반환 하 여 허브 메서드를 비동기적으로 만듭니다 하 하는 [작업](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) (대신 `void` 반환) 또는 [ 작업&lt;T&gt; ](https://msdn.microsoft.com/library/dd321424.aspx) 개체 (대신 `T` 반환 형식). 반환 하는 `Task` SignalR 메서드에서 개체에 대 한 대기는 `Task` 를 완료 하 고 전송 합니다 래핑되지 않은 결과 클라이언트에 클라이언트에서 메서드 호출 코드가 방식에 차이점이 하도록 합니다.
 
 허브 메서드를 만드는 비동기 방지 WebSocket 전송 사용 하는 경우 연결을 차단 합니다. 허브 메서드를 동기적으로 실행 하는 경우 전송 WebSocket은 동일한 클라이언트에서 허브에 대 한 메서드는 다음 호출 허브 메서드가 완료 될 때까지 차단 됩니다.
 
@@ -303,7 +303,7 @@ SignalR 2.1에 대 한 지원을 추가 하는 [진행 상황을 보고 패턴](
 
 메서드를 호출 클라이언트에서 서버를 사용 하 여는 `Clients` 허브 클래스에서 메서드에서는 속성입니다. 다음 예제에서는 호출 하는 서버 코드 `addNewMessageToPage` 연결 된 모든 클라이언트 및 JavaScript 클라이언트에서 메서드를 정의 하는 클라이언트 코드에 있습니다.
 
-**서버**
+**Server**
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample23.cs?highlight=5)]
 
@@ -331,7 +331,7 @@ SignalR 2.1에 대 한 지원을 추가 하는 [진행 상황을 보고 패턴](
 
 ### <a name="selecting-which-clients-will-receive-the-rpc"></a>클라이언트를 선택 하는 RPC 받습니다.
 
-클라이언트 속성은 반환 된 [HubConnectionContext](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubs.hubconnectioncontext(v=vs.111).aspx) 클라이언트 RPC 받습니다 지정 하기 위한 몇 가지 옵션을 제공 하는 개체:
+클라이언트 속성은 반환 된 [HubConnectionContext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.hubconnectioncontext(v=vs.111).aspx) 클라이언트 RPC 받습니다 지정 하기 위한 몇 가지 옵션을 제공 하는 개체:
 
 - 연결 된 모든 클라이언트입니다.
 
@@ -403,7 +403,7 @@ SignalR 2.1에 대 한 지원을 추가 하는 [진행 상황을 보고 패턴](
 
 ### <a name="how-to-use-a-string-variable-as-the-method-name"></a>메서드 이름으로 문자열 변수를 사용 하는 방법
 
-캐스팅 메서드 이름으로 문자열 변수를 사용 하 여 클라이언트 메서드를 호출 하려면 `Clients.All` (또는 `Clients.Others`, `Clients.Caller`등)를 `IClientProxy` 호출 [Invoke (methodName,... args) ](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubs.iclientproxy.invoke(v=vs.111).aspx).
+캐스팅 메서드 이름으로 문자열 변수를 사용 하 여 클라이언트 메서드를 호출 하려면 `Clients.All` (또는 `Clients.Others`, `Clients.Caller`등)를 `IClientProxy` 호출 [Invoke (methodName,... args) ](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.iclientproxy.invoke(v=vs.111).aspx).
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample42.cs)]
 
@@ -413,9 +413,9 @@ SignalR 2.1에 대 한 지원을 추가 하는 [진행 상황을 보고 패턴](
 
 SignalR에서 그룹 연결 된 클라이언트의 지정 된 하위 집합에 메시지 브로드캐스트에 대 한 메서드를 제공합니다. 그룹의 클라이언트, 모든 수 있고 클라이언트가 여러 그룹의 멤버일 수 있습니다.
 
-그룹 구성원 자격을 관리 하려면 사용 하 여는 [추가](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.igroupmanager.add(v=vs.111).aspx) 및 [제거](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.igroupmanager.remove(v=vs.111).aspx) 에서 제공 하는 메서드는 `Groups` 허브 클래스의 속성입니다. 다음 예제와 `Groups.Add` 및 `Groups.Remove` 호출 하는 JavaScript 클라이언트 코드가 뒤에 오는 클라이언트 코드에서 호출할 허브 메서드에서 사용 하는 방법입니다.
+그룹 구성원 자격을 관리 하려면 사용 하 여는 [추가](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.igroupmanager.add(v=vs.111).aspx) 및 [제거](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.igroupmanager.remove(v=vs.111).aspx) 에서 제공 하는 메서드는 `Groups` 허브 클래스의 속성입니다. 다음 예제와 `Groups.Add` 및 `Groups.Remove` 호출 하는 JavaScript 클라이언트 코드가 뒤에 오는 클라이언트 코드에서 호출할 허브 메서드에서 사용 하는 방법입니다.
 
-**서버**
+**Server**
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample43.cs?highlight=5,10)]
 
@@ -494,7 +494,7 @@ SignalR을 일반적으로 사용 하는 응용 프로그램 어떤 사용자가
 
 ## <a name="how-to-get-information-about-the-client-from-the-context-property"></a>컨텍스트 속성에서 클라이언트에 대 한 정보를 가져오는 방법
 
-클라이언트에 대 한 정보를 가져오려면는 `Context` 허브 클래스의 속성입니다. `Context` 속성에서 반환 된 [HubCallerContext](https://msdn.microsoft.com/en-us/library/jj890883(v=vs.111).aspx) 다음 정보에 대 한 액세스를 제공 하는 개체:
+클라이언트에 대 한 정보를 가져오려면는 `Context` 허브 클래스의 속성입니다. `Context` 속성에서 반환 된 [HubCallerContext](https://msdn.microsoft.com/library/jj890883(v=vs.111).aspx) 다음 정보에 대 한 액세스를 제공 하는 개체:
 
 - 호출 클라이언트의 연결 ID입니다.
 
@@ -578,7 +578,7 @@ VB.NET 또는 강력한 형식의 허브의 호출자 상태 개체를 통해 �
 허브 클래스 메서드에서 발생 하는 오류를 처리 하려면 다음 방법 중 하나 이상을 사용 합니다.
 
 - Try / catch 블록에서 메서드 코드를 래핑하고 예외 개체를 기록 합니다. 디버깅 목적으로 클라이언트에 예외를 보낼 수 있지만 보안에 대 한 프로덕션의 클라이언트에 자세한 정보를 보내의 이유로 권장 되지 않습니다.
-- 처리 하는 허브 파이프라인 모듈 만들기는 [OnIncomingError](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubs.hubpipelinemodule.onincomingerror(v=vs.111).aspx) 메서드. 다음 예제에서는 코드 모듈을 허브 파이프라인에 삽입 합니다. Startup.cs에서 다음 오류 로그에 기록 하는 파이프라인 모듈을 보여 줍니다.
+- 처리 하는 허브 파이프라인 모듈 만들기는 [OnIncomingError](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.hubpipelinemodule.onincomingerror(v=vs.111).aspx) 메서드. 다음 예제에서는 코드 모듈을 허브 파이프라인에 삽입 합니다. Startup.cs에서 다음 오류 로그에 기록 하는 파이프라인 모듈을 보여 줍니다.
 
     [!code-csharp[Main](hubs-api-guide-server/samples/sample61.cs)]
 
@@ -674,4 +674,4 @@ SignalR을 사용 하는 허브 파이프라인에 사용자 고유의 코드를
 
 [!code-csharp[Main](hubs-api-guide-server/samples/sample77.cs?highlight=3)]
 
-재정의할 수 있는 여러 가지 방법이 있습니다. 전체 목록을 보려면를 참조 하십시오. [HubPipelineModule 메서드](https://msdn.microsoft.com/en-us/library/jj918633(v=vs.111).aspx)합니다.
+재정의할 수 있는 여러 가지 방법이 있습니다. 전체 목록을 보려면를 참조 하십시오. [HubPipelineModule 메서드](https://msdn.microsoft.com/library/jj918633(v=vs.111).aspx)합니다.

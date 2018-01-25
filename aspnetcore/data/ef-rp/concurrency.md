@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/concurrency
-ms.openlocfilehash: a980669d49d332d7ef2ff5a18c73e9b269281287
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: b36fb71cba058a3409b30a1d9469159fcd027375
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 en-us/
 
@@ -32,7 +32,7 @@ en-us/
 * 사용자는 엔터티에 대 한 편집 페이지를 탐색합니다.
 * 다른 사용자는 db 첫 번째 사용자의 변경 내용을 기록 하기 전에 동일한 엔터티를 업데이트 합니다.
 
-동시성 검색을 사용 하지 않는 경우 동시 업데이트 발생 합니다.
+동시 업데이트 수행 시 동시성 검색이 설정 되지 않습니다.
 
 * 마지막 업데이트 우선 합니다. 즉, 마지막 값 업데이트 DB에 저장 됩니다.
 * 현재 업데이트 중 첫 번째 작업은 손실 됩니다.
@@ -63,7 +63,7 @@ John 클릭 **저장** $350,000.00의 예산에 여전히 표시 하는 편집 �
 
 * Jane의 내용으로 덮어쓰게 이한일의 변경 하도록 할 수 있습니다.
 
- 다음에 영어 부서 이동, 2013 년 9 월 1 일을 볼 수 있습니다 및 인출 된 $350,000.00 값입니다. 이 방법은 라고는 *클라이언트 우선* 또는 *최신으로* 시나리오입니다. (클라이언트에서 모든 값 보다 우선 데이터 저장소에 포함 된 내용입니다.) 동시성 처리에 대 한 코딩이 이렇게 하지 않으면 자동으로 이루어짐 클라이언트 우선 합니다.
+ 다음에 영어 부서 이동, 2013 년 9 월 1 일 표시 되는 경우 인출 된 $350,000.00 값입니다. 이 방법은 라고는 *클라이언트 우선* 또는 *최신으로* 시나리오입니다. (클라이언트에서 모든 값 보다 우선 데이터 저장소에 포함 된 내용입니다.) 동시성 처리에 대 한 코딩이 이렇게 하지 않으면 자동으로 이루어짐 클라이언트 우선 합니다.
 
 * 데이터베이스에서 업데이트할 이한일의 변경을 방지할 수 있습니다. 응용 프로그램은 일반적으로: * 오류 메시지를 표시 합니다.
         * 데이터의 현재 상태를 표시 합니다.
@@ -73,18 +73,18 @@ John 클릭 **저장** $350,000.00의 예산에 여전히 표시 하는 편집 �
 
 ## <a name="handling-concurrency"></a>동시성 처리 
 
-속성으로 구성 된 경우는 [동시성 토큰](https://docs.microsoft.com/en-us/ef/core/modeling/concurrency):
+속성으로 구성 된 경우는 [동시성 토큰](https://docs.microsoft.com/ef/core/modeling/concurrency):
 
-* EF 코어가 인출 된 후 수정 되지 않은 속성을 확인 합니다. 확인이 수행 때 [SaveChanges](https://docs.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechanges?view=efcore-2.0#Microsoft_EntityFrameworkCore_DbContext_SaveChanges) 또는 [SaveChangesAsync](https://docs.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechangesasync?view=efcore-2.0#Microsoft_EntityFrameworkCore_DbContext_SaveChangesAsync_System_Threading_CancellationToken_) 호출 됩니다.
+* EF 코어가 인출 된 후 수정 되지 않은 속성을 확인 합니다. 확인이 수행 때 [SaveChanges](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechanges?view=efcore-2.0#Microsoft_EntityFrameworkCore_DbContext_SaveChanges) 또는 [SaveChangesAsync](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechangesasync?view=efcore-2.0#Microsoft_EntityFrameworkCore_DbContext_SaveChangesAsync_System_Threading_CancellationToken_) 호출 됩니다.
 * 이 인출 된 후 속성을 변경한 경우 한 [DbUpdateConcurrencyException](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbupdateconcurrencyexception?view=efcore-2.0) throw 됩니다. 
 
 DB 및 데이터 모델 throw 지원 하도록 구성 해야 `DbUpdateConcurrencyException`합니다.
 
 ### <a name="detecting-concurrency-conflicts-on-a-property"></a>속성에 대 한 동시성 충돌 검색
 
-사용 속성 수준에서 동시성 충돌을 검색할 수는 [ConcurrencyCheck](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations.concurrencycheckattribute?view=netcore-2.0) 특성입니다. 특성은 모델에 여러 속성에 적용할 수 있습니다. 자세한 내용은 참조 [데이터 주석 ConcurrencyCheck](https://docs.microsoft.com/en-us/ef/core/modeling/concurrency#data-annotations)합니다.
+사용 속성 수준에서 동시성 충돌을 검색할 수는 [ConcurrencyCheck](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.concurrencycheckattribute?view=netcore-2.0) 특성입니다. 특성은 모델에 여러 속성에 적용할 수 있습니다. 자세한 내용은 참조 [데이터 주석 ConcurrencyCheck](https://docs.microsoft.com/ef/core/modeling/concurrency#data-annotations)합니다.
 
-`[ConcurrencyCheck]` 특성이이 자습서에서 사용 되지 않습니다.
+`[ConcurrencyCheck]` 특성은이 자습서에서 사용 되지 않습니다.
 
 ### <a name="detecting-concurrency-conflicts-on-a-row"></a>행에 대해 동시성 충돌 확인
 
@@ -127,7 +127,7 @@ modelBuilder.Entity<Department>()
 
 [!code-sql[](intro/samples/sql.txt?highlight=4-6)]
 
-[@@ROWCOUNT ](https://docs.microsoft.com/en-us/sql/t-sql/functions/rowcount-transact-sql) 마지막 문의 영향을 받는 행 수를 반환 합니다. 아무에서 행이 업데이트 되, EF 코어를 throw 한 `DbUpdateConcurrencyException`합니다.
+[@@ROWCOUNT ](https://docs.microsoft.com/sql/t-sql/functions/rowcount-transact-sql) 마지막 문의 영향을 받는 행 수를 반환 합니다. 아무에서 행이 업데이트 되, EF 코어를 throw 한 `DbUpdateConcurrencyException`합니다.
 
 Visual Studio의 출력 창에 T-SQL EF 코어 생성을 확인할 수 있습니다.
 
@@ -175,7 +175,7 @@ dotnet aspnet-codegenerator razorpage -m Department -dc SchoolContext -udl -outD
 
 ### <a name="update-the-departments-index-page"></a>부서 인덱스 페이지를 업데이트 합니다.
 
-만든 스 캐 폴딩 엔진은 `RowVersion` 인덱스 페이지 이지만 해당 필드에 대 한 열을 표시 하지 않아야 합니다. 이 자습서의 마지막 바이트는 `RowVersion` 동시성 이해 하기 위해 표시 됩니다. 마지막 바이트는 고유 하 게 보장 되지 않습니다. 실제 앱 없게 표시 `RowVersion` 또는의 마지막 바이트 `RowVersion`합니다.
+만든 스 캐 폴딩 엔진은 `RowVersion` 인덱스 페이지 이지만 해당 필드에 대 한 열을 표시 하지 않아야 합니다. 이 자습서의 마지막 바이트는 `RowVersion` 동시성 이해 하기 위해 표시 됩니다. 마지막 바이트 고유 하 게 보장 되지 않습니다. 실제 앱 없게 표시 `RowVersion` 또는의 마지막 바이트 `RowVersion`합니다.
 
 인덱스 페이지를 업데이트 합니다.
 
@@ -250,7 +250,7 @@ DB가 있는 각 열에 게시 된 작업에서 다른 값에 대 한 사용자 
 
 ![부서 편집 페이지 오류 메시지](concurrency/_static/edit-error.png)
 
-이 브라우저 창 Name 필드를 변경 하 려 하지 않았던 합니다. 복사 하 고 현재 값 (언어)의 이름 필드에 붙여넣습니다. 탭 합니다. 클라이언트 쪽 유효성 검사 오류 메시지를 제거합니다.
+이 브라우저 창 의도 하지 않았던 Name 필드를 변경 합니다. 복사 하 고 현재 값 (언어)의 이름 필드에 붙여넣습니다. 탭 합니다. 클라이언트 쪽 유효성 검사 오류 메시지를 제거합니다.
 
 ![부서 편집 페이지 오류 메시지](concurrency/_static/cv.png)
 
@@ -305,8 +305,8 @@ DB가 있는 각 열에 게시 된 작업에서 다른 값에 대 한 사용자 
 
 ### <a name="additional-resources"></a>추가 리소스
 
-* [EF 코어의 동시성 토큰](https://docs.microsoft.com/en-us/ef/core/modeling/concurrency)
-* [EF 코어에서 동시성 처리](https://docs.microsoft.com/en-us/ef/core/saving/concurrency)
+* [EF 코어의 동시성 토큰](https://docs.microsoft.com/ef/core/modeling/concurrency)
+* [EF 코어에서 동시성 처리](https://docs.microsoft.com/ef/core/saving/concurrency)
 
 >[!div class="step-by-step"]
 [이전](xref:data/ef-rp/update-related-data)

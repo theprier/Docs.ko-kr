@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/implementing-optimistic-concurrency-with-the-sqldatasource-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 69ba9e47071956385e96a28372454a3ae93ccc89
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b089a0b25aa5a520f3e20af8ec5212072ad7c7bf
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="implementing-optimistic-concurrency-with-the-sqldatasource-c"></a>SqlDataSource (C#)를 사용 하 여 낙관적 동시성을 구현합니다.
 ====================
@@ -116,8 +116,8 @@ ms.lasthandoff: 11/10/2017
 
 보충 하며는 `WHERE` 절은 `UpdateCommand` 및 `DeleteCommand` 속성 (및 해당 매개 변수 컬렉션에 추가 매개 변수를 추가)을 사용 하 여 낙관적 동시성 옵션을 조정 두 개의 다른 선택 하면 속성:
 
-- 변경 된 [ `ConflictDetection` 속성](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.sqldatasource.conflictdetection.aspx) 에서 `OverwriteChanges` (기본값)를`CompareAllValues`
-- 변경 된 [ `OldValuesParameterFormatString` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sqldatasource.oldvaluesparameterformatstring.aspx) 원래 (기본값) {0}에서\_{0}.
+- 변경 된 [ `ConflictDetection` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.conflictdetection.aspx) 에서 `OverwriteChanges` (기본값)를`CompareAllValues`
+- 변경 된 [ `OldValuesParameterFormatString` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.oldvaluesparameterformatstring.aspx) 원래 (기본값) {0}에서\_{0}.
 
 웹 컨트롤 데이터 SqlDataSource s를 호출 하는 경우 `Update()` 또는 `Delete()` 원래 값 메서드를 전달 합니다. 경우 SqlDataSource s `ConflictDetection` 속성이 `CompareAllValues`, 원래 값이 명령에 추가 됩니다. `OldValuesParameterFormatString` 속성은 이러한 원래 값 매개 변수에 대해 사용 되는 명명 패턴을 제공 합니다. 데이터 소스 구성 마법사를 사용 하 여 원래\_{0} 각 원래 매개 변수 이름을 지정 하 고는 `UpdateCommand` 및 `DeleteCommand` 속성 및 `UpdateParameters` 및 `DeleteParameters` 컬렉션 적절 하 게 합니다.
 

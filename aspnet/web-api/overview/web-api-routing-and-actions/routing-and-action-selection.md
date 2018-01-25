@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/routing-and-action-selection
 msc.type: authoredcontent
-ms.openlocfilehash: 02c2a01ef8ec2b5a49f2c303ee61f02702a3ba54
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 997582263bd48590b74434ee0ffc6be928fa1e08
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="routing-and-action-selection-in-aspnet-web-api"></a>라우팅 및 ASP.NET Web API의에서 작업 선택
 ====================
@@ -121,7 +121,7 @@ URI 경로 "8/api/루트" 이면 사전 두 값이 포함 됩니다.
 
 선택 알고리즘을 보고 하기 전에 컨트롤러 작업에 대 한 몇 가지 사항을 이해 해야 합니다.
 
-**컨트롤러에서 메서드 "작업" 것으로 간주 됩니다?** 동작을 선택할 때 프레임 워크만 확인 공용 인스턴스 메서드를 컨트롤러에 있습니다. 또한이 메서드를 제외 ["특수 name"](https://msdn.microsoft.com/en-us/library/system.reflection.methodbase.isspecialname) 메서드 (생성자, 이벤트, 연산자 오버 로드 등), 및에서 상속 된 메서드는 **ApiController** 클래스입니다.
+**컨트롤러에서 메서드 "작업" 것으로 간주 됩니다?** 동작을 선택할 때 프레임 워크만 확인 공용 인스턴스 메서드를 컨트롤러에 있습니다. 또한이 메서드를 제외 ["특수 name"](https://msdn.microsoft.com/library/system.reflection.methodbase.isspecialname) 메서드 (생성자, 이벤트, 연산자 오버 로드 등), 및에서 상속 된 메서드는 **ApiController** 클래스입니다.
 
 **HTTP 메서드입니다.** 프레임 워크는만 다음과 같이 결정 요청의 HTTP 메서드를 일치 하는 작업을 선택 합니다.
 
@@ -134,7 +134,7 @@ URI 경로 "8/api/루트" 이면 사전 두 값이 포함 됩니다.
 - URI에서 단순 유형은 가져옵니다.
 - 요청 본문에서 복합 형식은 가져옵니다.
 
-단순 형식에 포함할 모든는 [.NET Framework 기본 형식](https://msdn.microsoft.com/en-us/library/system.type.isprimitive), 플러스 **DateTime**, **10 진수**, **Guid**, **문자열** , 및 **TimeSpan**합니다. 각 동작에 대해 최대 하나의 매개 변수는 요청 본문을 읽을 수 있습니다.
+단순 형식에 포함할 모든는 [.NET Framework 기본 형식](https://msdn.microsoft.com/library/system.type.isprimitive), 플러스 **DateTime**, **10 진수**, **Guid**, **문자열** , 및 **TimeSpan**합니다. 각 동작에 대해 최대 하나의 매개 변수는 요청 본문을 읽을 수 있습니다.
 
 > [!NOTE]
 > 기본 바인딩 규칙을 재정의 하는 것이 불가능 합니다. 참조 [내부적인 WebAPI 매개 변수 바인딩을](https://blogs.msdn.com/b/jmstall/archive/2012/05/11/webapi-parameter-binding-under-the-hood.aspx)합니다.

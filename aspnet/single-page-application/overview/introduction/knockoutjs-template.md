@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/introduction/knockoutjs-template
 msc.type: authoredcontent
-ms.openlocfilehash: 6e84dcc16345e33fcd3a3f83c4b35bc993c03ca6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e6c0c45bed098a8a1160ff11e4f77244bf55ffd3
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="single-page-application-knockoutjs-template"></a>단일 페이지 응용 프로그램: KnockoutJS 서식 파일
 ====================
@@ -92,7 +92,7 @@ Visual Studio 프로젝트 모델 폴더는 서버 쪽에서 사용 되는 모�
 
 ![](knockoutjs-template/_static/image9.png)
 
-**TodoItem을 TodoList**
+**TodoItem, TodoList**
 
 이 Entity Framework Code First에 대 한 데이터베이스 모델입니다. 이러한 모델 서로를 가리키는 속성을 갖고 있는지 확인 합니다. `ToDoList`ToDoItems, 및 각의 컬렉션을 포함 `ToDoItem` 다시 ToDoList 부모에 대 한 참조가 있습니다. 이러한 속성은 탐색 속성을 라고 하 고 할 일 목록 및 해당 할 일 항목 대 다 관계를 나타냅니다.
 
@@ -117,7 +117,7 @@ SPA 서식 파일은 Dto 도메인 모델와 동일한 데이터를 포함 합�
 
 ## <a name="entity-framework"></a>Entity Framework
 
-SPA 템플릿은 EF Code First 사용합니다. Code First 개발에 코드에서 먼저 모델을 정의 하 고 EF 모델을 사용 하 여 데이터베이스를 만들 수는 다음 키를 누릅니다. 기존 데이터베이스와 EF를 사용할 수도 있습니다 ([Database First](https://msdn.microsoft.com/en-us/data/jj206878.aspx)).
+SPA 템플릿은 EF Code First 사용합니다. Code First 개발에 코드에서 먼저 모델을 정의 하 고 EF 모델을 사용 하 여 데이터베이스를 만들 수는 다음 키를 누릅니다. 기존 데이터베이스와 EF를 사용할 수도 있습니다 ([Database First](https://msdn.microsoft.com/data/jj206878.aspx)).
 
 `TodoItemContext` 모델 폴더의 클래스에서 파생 **DbContext**합니다. 이 클래스는 모델 및 EF 간의 "글 루"를 제공합니다. `TodoItemContext` 보유 한 `ToDoItem` 컬렉션 및 `TodoList` 컬렉션입니다. 데이터베이스를 쿼리하려면 하기만 하면 이러한 컬렉션에 대 한 LINQ 쿼리를 작성 합니다. 예를 들어 모든 사용자 "Alice"에 대 한 일 목록을 선택 하는 방법을 같습니다.
 
@@ -145,10 +145,10 @@ ASP.NET Web API에서 컨트롤러는 HTTP 요청을 처리 하는 개체입니�
 | HTTP 요청 | 컨트롤러 메서드 | 설명 |
 | --- | --- | --- |
 | GET /api/todo | `GetTodoLists` | 할 일 목록 컬렉션을 가져옵니다. |
-| GET/api/todo/*id* | `GetTodoList` | ID로 할 일 목록을 가져옵니다. |
+| GET /api/todo/*id* | `GetTodoList` | ID로 할 일 목록을 가져옵니다. |
 | PUT/api/todo/*id* | `PutTodoList` | 할 일 목록을 업데이트합니다. |
 | POST /api/todo | `PostTodoList` | 할 일 목록을 새로 만듭니다. |
-| DELETE/api/todo/*id* | `DeleteTodoList` | 할 일 목록을 삭제합니다. |
+| DELETE /api/todo/*id* | `DeleteTodoList` | 할 일 목록을 삭제합니다. |
 
 일부 작업에 대 한 Uri는 ID 값에 대 한 자리 표시 자가 들어 있는지 확인 합니다. 예를 들어 목록을 삭제 하려면에-42 ID로, URI가 `/api/todo/42`합니다.
 
@@ -229,7 +229,7 @@ Knockout 다양 한 다양 한 바인딩 유형 제공합니다. 일부 SPA 서�
 
 위조 방지 토큰에는 악의적인 페이지 동일 원본 정책으로 인해 사용자의 토큰을 읽을 수 없으므로 작동 합니다. (동일 원본 정책에서 다른 사용자의 콘텐츠에 액세스 하는 두 개의 다른 사이트에서 호스팅되는 문서를 방지 합니다.)
 
-ASP.NET MVC 위조 방지 토큰에 대 한 기본 제공 지원을 통해 제공 된 [AntiForgery](https://msdn.microsoft.com/en-us/library/system.web.helpers.antiforgery.aspx) 클래스 및 [[ValidateAntiForgeryToken]](https://msdn.microsoft.com/en-us/library/system.web.mvc.validateantiforgerytokenattribute.aspx) 특성입니다. 현재이 기능에 포함 되어 있지 웹 API입니다. 그러나 SPA 서식 파일에는 웹 API에 대 한 사용자 지정 구현이 포함 되어 있습니다. 이 코드에 정의 된는 `ValidateHttpAntiForgeryTokenAttribute` 솔루션의 필터 폴더에 있는 클래스입니다. 앤티 CSRF 웹 API에 대 한 자세한 참조 [방지 교차 사이트 요청 위조 (CSRF) 공격](../../../web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks.md)합니다.
+ASP.NET MVC 위조 방지 토큰에 대 한 기본 제공 지원을 통해 제공 된 [AntiForgery](https://msdn.microsoft.com/library/system.web.helpers.antiforgery.aspx) 클래스 및 [[ValidateAntiForgeryToken]](https://msdn.microsoft.com/library/system.web.mvc.validateantiforgerytokenattribute.aspx) 특성입니다. 현재이 기능에 포함 되어 있지 웹 API입니다. 그러나 SPA 서식 파일에는 웹 API에 대 한 사용자 지정 구현이 포함 되어 있습니다. 이 코드에 정의 된는 `ValidateHttpAntiForgeryTokenAttribute` 솔루션의 필터 폴더에 있는 클래스입니다. 앤티 CSRF 웹 API에 대 한 자세한 참조 [방지 교차 사이트 요청 위조 (CSRF) 공격](../../../web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks.md)합니다.
 
 ## <a name="conclusion"></a>결론
 

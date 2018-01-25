@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/authentication-and-authorization-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 137ac45166be03ae3c4864f41666d2acd1a37dc2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2a4b5ed8a712b061b4afdf5a3adc9378dd72b37f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="authentication-and-authorization-in-aspnet-web-api"></a>인증 및 ASP.NET Web API의에서 권한 부여
 ====================
@@ -37,7 +37,7 @@ ms.lasthandoff: 11/10/2017
 
 Web API에 인증 하는 호스트에서 발생 하는 가정 합니다. 웹 호스팅에 대 한 호스트가 IIS 인증에 HTTP 모듈을 사용 합니다. IIS 또는 ASP.NET에 기본 제공 인증 모듈을 사용 하 여 프로젝트를 구성 하거나 사용자 지정 인증을 수행할 사용자 고유의 HTTP 모듈을 작성할 수 있습니다.
 
-호스트에서 사용자를 인증 하는 경우 생성 한 *주*, 변수인는 [IPrincipal](https://msdn.microsoft.com/en-us/library/System.Security.Principal.IPrincipal.aspx) 코드가 실행 되는 보안 컨텍스트를 나타내는 개체입니다. 호스트가 현재 스레드를 설정 하 여 주 서버를 연결할 **Thread.CurrentPrincipal**합니다. 연결 된 보안 주체가 포함 **Identity** 사용자에 대 한 정보를 포함 하는 개체입니다. 사용자가 인증 하는 경우는 **Identity.IsAuthenticated** 속성에서 반환 **true**합니다. 익명 요청에 대 한 **IsAuthenticated** 반환 **false**합니다. 보안 주체에 대 한 자세한 내용은 참조 [역할 기반 보안](https://msdn.microsoft.com/en-us/library/shz8h065.aspx)합니다.
+호스트에서 사용자를 인증 하는 경우 생성 한 *주*, 변수인는 [IPrincipal](https://msdn.microsoft.com/library/System.Security.Principal.IPrincipal.aspx) 코드가 실행 되는 보안 컨텍스트를 나타내는 개체입니다. 호스트가 현재 스레드를 설정 하 여 주 서버를 연결할 **Thread.CurrentPrincipal**합니다. 연결 된 보안 주체가 포함 **Identity** 사용자에 대 한 정보를 포함 하는 개체입니다. 사용자가 인증 하는 경우는 **Identity.IsAuthenticated** 속성에서 반환 **true**합니다. 익명 요청에 대 한 **IsAuthenticated** 반환 **false**합니다. 보안 주체에 대 한 자세한 내용은 참조 [역할 기반 보안](https://msdn.microsoft.com/library/shz8h065.aspx)합니다.
 
 ### <a name="http-message-handlers-for-authentication"></a>인증에 대 한 HTTP 메시지 처리기
 
@@ -57,8 +57,8 @@ Web API에 인증 하는 호스트에서 발생 하는 가정 합니다. 웹 호
 
 모든 사용자 지정 인증 논리를 수행 하는 응용 프로그램을 두 위치에 주 서버를 설정 해야 합니다.
 
-- **Thread.CurrentPrincipal**합니다. 이 속성은.net에서 스레드의 보안 주체를 설정 하는 표준 방법입니다.
-- **HttpContext.Current.User**합니다. 이 속성은 ASP.NET 관련이 있습니다.
+- **Thread.CurrentPrincipal**. 이 속성은.net에서 스레드의 보안 주체를 설정 하는 표준 방법입니다.
+- **HttpContext.Current.User**. 이 속성은 ASP.NET 관련이 있습니다.
 
 다음 코드에는 주 서버를 설정 하는 방법을 보여 줍니다.
 
@@ -78,7 +78,7 @@ Web API에 인증 하는 호스트에서 발생 하는 가정 합니다. 웹 호
 <a id="auth3"></a>
 ### <a name="using-the-authorize-attribute"></a>사용 하 고 [인증] 특성
 
-기본 제공 권한 부여 필터를 제공 하는 web API [AuthorizeAttribute](https://msdn.microsoft.com/en-us/library/system.web.http.authorizeattribute.aspx)합니다. 이 필터는 사용자가 인증 여부를 확인 합니다. 그렇지 않으면 다음 작업을 호출 하지 않고 HTTP 상태 코드 401 (권한 없음)를 반환 합니다.
+기본 제공 권한 부여 필터를 제공 하는 web API [AuthorizeAttribute](https://msdn.microsoft.com/library/system.web.http.authorizeattribute.aspx)합니다. 이 필터는 사용자가 인증 여부를 확인 합니다. 그렇지 않으면 다음 작업을 호출 하지 않고 HTTP 상태 코드 401 (권한 없음)를 반환 합니다.
 
 컨트롤러 수준에서 전역적으로 또는 inidivual 작업 수준에서 필터를 적용할 수 있습니다.
 

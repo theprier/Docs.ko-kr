@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/portable-object-localization
-ms.openlocfilehash: dfdd86b4706a1fb8e313c24ba830ec996fe09225
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: ad68c8a7df5a8ea0f7ef42137c29cd3b37657052
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="configure-portable-object-localization-with-orchard-core"></a>휴대용 개체 지역화 Orchard 코어를 사용 하 여 구성
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 01/19/2018
 
 이 문서에서는 ASP.NET Core 응용 프로그램을 이식 가능한 개체 (PO) 파일을 사용 하는 단계를 안내는 [Orchard 코어](https://github.com/OrchardCMS/OrchardCore) 프레임 워크입니다.
 
-**참고:** Orchard 핵심 Microsoft 제품이 아닙니다. 따라서 Microsoft는이 기능에 대 한 지원 되지 않습니다을 제공합니다.
+**참고:** Orchard 코어는 Microsoft 제품 되지 않습니다. 따라서 Microsoft는이 기능에 대 한 지원 되지 않습니다을 제공합니다.
 
 [샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/localization/sample/POLocalization)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 

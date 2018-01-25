@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/cross-site-scripting
-ms.openlocfilehash: af73a86aa6bcde084ecbe1a3fb5711c7da55871c
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 3aaab9d4fecd3f0d0da6a0df4d83bee090b329ea
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="preventing-cross-site-scripting"></a>사이트 간 스크립팅 방지
 
@@ -31,7 +31,7 @@ ms.lasthandoff: 01/19/2018
 
 3. HTML 특성을 신뢰할 수 없는 데이터를 전환 하기 전에 인코딩된 HTML 특성을 확인 합니다. HTML 인코딩을의 상위 집합 및와 같은 추가 문자를 인코딩하고 HTML 특성 인코딩입니다 "및 '.
 
-4. JavaScript를 신뢰할 수 없는 데이터를 전환 하기 전에 데이터를 런타임에 검색할 내용이 HTML 요소에 배치 합니다. 이 불가능 한 다음 데이터를 확인 하는 경우 JavaScript이 인코딩됩니다. JavaScript에 대 한 위험한 문자는 JavaScript 인코딩 및 예를 들어 해당 16 진수도 바꿔 &lt; 로 인코딩해야 `\u003C`합니다.
+4. JavaScript를 신뢰할 수 없는 데이터를 전환 하기 전에 데이터를 런타임에 검색할 내용이 HTML 요소에 배치 합니다. 이 수는 없습니다 다음 데이터는 JavaScript이 인코딩됩니다. JavaScript에 대 한 위험한 문자는 JavaScript 인코딩 및 예를 들어 해당 16 진수도 바꿔 &lt; 로 인코딩해야 `\u003C`합니다.
 
 5. URL 쿼리 문자열을 신뢰할 수 없는 데이터를 전환 하기 전에 인코딩된 URL을 확인 합니다.
 
@@ -56,7 +56,7 @@ Razor 엔진 MVC에서 자동으로 사용 되는 모든 인코딩합니다 이�
    ```
 
 >[!WARNING]
-> ASP.NET Core MVC 제공는 `HtmlString` 클래스는 자동으로 출력 시 인코딩되지 않습니다. 이것은 사용 되지 함께 신뢰할 수 없는 입력이 XSS 취약성에 노출 됩니다.
+> ASP.NET Core MVC 제공는 `HtmlString` 클래스는 출력 시 자동으로 인코딩된 되지 않습니다. 이것은 사용 되지 함께 신뢰할 수 없는 입력이 XSS 취약성에 노출 됩니다.
 
 ## <a name="javascript-encoding-using-razor"></a>Razor를 사용 하 여 Javascript 인코딩
 
@@ -141,11 +141,11 @@ JavaScript 인코더를를 직접 호출 또한 수 있습니다.
    ```
 
 >[!WARNING]
-> DOM 요소를 만드는 JavaScript에서 신뢰할 수 없는 입력을 연결 하지 마세요. 사용 해야 `createElement()` 와 같은 적절 하 게 속성 값을 할당 하 고 `node.TextContent=`, 사용 또는 `element.SetAttribute()` / `element[attribute]=` 그렇지 않은 경우에 노출 있습니다 XSS DOM 기반 합니다.
+> DOM 요소를 만드는 JavaScript에서 신뢰할 수 없는 입력을 연결 하지 마십시오. 사용 해야 `createElement()` 와 같은 적절 하 게 속성 값을 할당 하 고 `node.TextContent=`, 사용 또는 `element.SetAttribute()` / `element[attribute]=` 그렇지 않은 경우에 노출 있습니다 XSS DOM 기반 합니다.
 
 ## <a name="accessing-encoders-in-code"></a>코드에서 인코더에 액세스
 
-HTML, JavaScript 및 URL 인코더는 두 가지 방법으로 코드에서 사용할 수 있습니다 수는 이러한 구성 요소를 통해, [종속성 주입](../fundamentals/dependency-injection.md#fundamentals-dependency-injection) 또는에 포함 된 기본 인코더를 사용할 수는 `System.Text.Encodings.Web` 네임 스페이스입니다. 문자 범위에 적용 되는 모든 기본 인코더를 사용 하는 경우에 안전한 것으로 처리 되도록 하려면 내용이 적용 되지 않습니다-기본 인코더 가능한 가장 안전한 인코딩 규칙을 사용 합니다.
+HTML, JavaScript 및 URL 인코더는 두 가지 방법으로 코드에서 사용할 수 있습니다 수는 이러한 구성 요소를 통해, [종속성 주입](../fundamentals/dependency-injection.md#fundamentals-dependency-injection) 또는에 포함 된 기본 인코더를 사용할 수는 `System.Text.Encodings.Web` 네임 스페이스입니다. 에 적용 되는 모든 기본 인코더를 사용 하는 경우에 안전한 것으로 간주 문자 범위 사항은 적용-기본 인코더 가능한 가장 안전한 인코딩 규칙을 사용 합니다.
 
 이렇게 하려면 생성자 취해야 DI 사용 하는 구성 가능한 인코더가 사용 하는 *HtmlEncoder*, *JavaScriptEncoder* 및 *UrlEncoder* 매개 변수를 적절 하 게 합니다. 예를 들어
 
@@ -228,4 +228,4 @@ services.AddSingleton<HtmlEncoder>(
 
 ## <a name="validation-as-an-xss-prevention-technique"></a>XSS 방지 기법으로 유효성 검사
 
-유효성 검사 제한 XSS 공격에 유용한 도구 될 수 있습니다. 예를 들어 0-9를 포함 하는 단순한 숫자 문자열은 XSS 공격을 트리거하지 않습니다. 유효성 검사 불가능 하지 않다면 어려울은 HTML 입력을 구문 분석할-사용자 입력의 HTML을 허용 하려는 경우 문제가 더 복잡해 집니다. MarkDown 및 기타 텍스트 형식이 안전한 옵션이 풍부한 입력에 대 한 것입니다. 유효성 검사에 단독에 의존 하지 않아야 합니다. 항상 수행 했는지 유효성에 관계 없이 출력 전에 신뢰할 수 없는 입력을 인코딩하십시오.
+유효성 검사 제한 XSS 공격에 유용한 도구 될 수 있습니다. 예를 들어 0-9를 포함 하는 단순한 숫자 문자열 XSS 공격을 트리거하지 않습니다. 유효성 검사 불가능 하지 않다면 어려울은 HTML 입력을 구문 분석할-사용자 입력의 HTML을 허용 하려는 경우 문제가 더 복잡해 집니다. MarkDown 및 기타 텍스트 형식이 안전한 옵션이 풍부한 입력에 대 한 것입니다. 유효성 검사에 단독에 의존 하지 않아야 합니다. 항상 수행 했는지 유효성에 관계 없이 출력 전에 신뢰할 수 없는 입력을 인코딩하십시오.

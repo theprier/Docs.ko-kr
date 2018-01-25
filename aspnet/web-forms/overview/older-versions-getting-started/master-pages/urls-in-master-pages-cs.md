@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/urls-in-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 243bd8a30a84d3a57d418da7b2b55cfe132bf0e3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8b01f0ac780121c4e0941df6016220a1cb1ed2d1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="urls-in-master-pages-c"></a>마스터 페이지 (C#)의 Url
 ====================
@@ -104,11 +104,11 @@ ms.lasthandoff: 11/10/2017
 
 좋은 소식은 ASP.NET 런타임에 유효한 상대 URL을 생성 하기 위한 메서드를 제공 한다는 것입니다.
 
-## <a name="usingandresolveclienturl"></a>사용 하 여`~`및`ResolveClientUrl`
+## <a name="usingandresolveclienturl"></a>Using`~`and`ResolveClientUrl`
 
 대신 절대 URL를 하드 코딩 보다 ASP.NET을 사용 하면 페이지 개발자가 물결표를 사용 하도록 (`~`) 웹 응용 프로그램의 루트를 나타냅니다. 예를 들어 표기법 사용이 자습서의 앞부분에 나오는 `~/Admin/Default.aspx` 을 가리키는 텍스트에는 `Default.aspx` 페이지에 `Admin` 폴더입니다. `~` 나타냅니다는 `Admin` 폴더에는 웹 응용 프로그램의 루트의 하위 폴더입니다.
 
-`Control` 클래스의 [ `ResolveClientUrl` 메서드](https://msdn.microsoft.com/en-us/library/system.web.ui.control.resolveclienturl.aspx) URL을 사용 하 고는 컨트롤이 포함 된 웹 페이지에 대 한 적절 한 상대 URL을 수정 합니다. 예를 들어 호출 `ResolveClientUrl("~/Images/PoweredByASPNET.gif")` 에서 `About.aspx` 반환 `Images/PoweredByASPNET.gif`합니다. 그러나 호출에서 `~/Admin/Default.aspx`, 반환 `../Images/PoweredByASPNET.gif`합니다.
+`Control` 클래스의 [ `ResolveClientUrl` 메서드](https://msdn.microsoft.com/library/system.web.ui.control.resolveclienturl.aspx) URL을 사용 하 고는 컨트롤이 포함 된 웹 페이지에 대 한 적절 한 상대 URL을 수정 합니다. 예를 들어 호출 `ResolveClientUrl("~/Images/PoweredByASPNET.gif")` 에서 `About.aspx` 반환 `Images/PoweredByASPNET.gif`합니다. 그러나 호출에서 `~/Admin/Default.aspx`, 반환 `../Images/PoweredByASPNET.gif`합니다.
 
 > [!NOTE]
 > 모든 ASP.NET 서버 컨트롤에서 파생 되므로 `Control` 클래스, 모든 서버 컨트롤에 액세스할 수는 `ResolveClientUrl` 메서드. 도 `Page` 클래스에서 파생 되는 `Control` 클래스, ASP.NET 페이지의 코드 숨김 클래스에서 직접이 메서드를 사용할 수 있는 의미 합니다.
@@ -148,7 +148,7 @@ ASP.NET 서버 컨트롤에만 변환 염두에서에 둬야는 `~` URL와 관�
 
 [!code-aspx[Main](urls-in-master-pages-cs/samples/sample8.aspx)]
 
-그거에요! 이 시점에서 모든 마스터 페이지 및 콘텐츠 페이지 폴더에 관계 없이 콘텐츠 페이지에서 렌더링 될 때 가격 마스터 페이지에 있는 Url 기반 제대로에 있습니다.
+정말 간단하죠. 이 시점에서 모든 마스터 페이지 및 콘텐츠 페이지 폴더에 관계 없이 콘텐츠 페이지에서 렌더링 될 때 가격 마스터 페이지에 있는 Url 기반 제대로에 있습니다.
 
 ### <a name="automatic-url-resolution-in-theheadsection"></a>자동 URL 해상도`<head>`섹션
 

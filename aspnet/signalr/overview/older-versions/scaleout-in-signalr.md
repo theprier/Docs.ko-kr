@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/scaleout-in-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: e6230d4d65adb8c9a064545ad761898ca53562bf
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ee3384046bf8a0f363aa6801d7a46f68b2bf125a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introduction-to-scaleout-in-signalr-1x"></a>SignalR에서 확장 소개 1.x
 ====================
@@ -39,19 +39,19 @@ SignalR 현재 세 가지 백플레인을 제공합니다.
 
 - **Azure 서비스 버스**합니다. 서비스 버스에 구성 요소가 느슨하게 결합 된 방식으로 메시지를 보낼 수 있도록 하는 메시징 인프라입니다.
 - **Redis**합니다. Redis는 메모리에 키-값 저장소입니다. Redis는 메시지를 보내기 위한 게시/구독 ("pub/sub") 패턴을 지원 합니다.
-- **SQL Server**합니다. SQL Server 백플레인에서 SQL 테이블에 메시지를 씁니다. 백플레인에서 효율적인 메시징에 대 한 Service Broker를 사용 합니다. 그러나 해당 Service Broker를 사용 하지 않는 경우에 작동 합니다.
+- **SQL Server**. SQL Server 백플레인에서 SQL 테이블에 메시지를 씁니다. 백플레인에서 효율적인 메시징에 대 한 Service Broker를 사용 합니다. 그러나 해당 Service Broker를 사용 하지 않는 경우에 작동 합니다.
 
 Azure에서 응용 프로그램을 배포 하는 경우에 Azure 서비스 버스 백플레인으로 사용 하는 것이 좋습니다. 사용자 고유의 서버 팜에 배포 하는 경우 SQL Server 또는 Redis 백플레인 것이 좋습니다.
 
 다음 항목에서는 각 백플레인에 대 한 단계별 자습서 포함 되어 있습니다.
 
-- [Azure 서비스 버스에 SignalR 확장](scaleout-with-windows-azure-service-bus.md)
-- [Redis와 함께 SignalR 확장](scaleout-with-redis.md)
-- [SQL Server와 함께 SignalR 확장](scaleout-with-sql-server.md)
+- [Azure Service Bus로 SignalR 규모 확장](scaleout-with-windows-azure-service-bus.md)
+- [Redis로 SignalR 규모 확장](scaleout-with-redis.md)
+- [SQL Server로 SignalR 규모 확장](scaleout-with-sql-server.md)
 
 ## <a name="implementation"></a>구현
 
-SignalR에 모든 메시지는 메시지 버스를 통해 전송 됩니다. 메시지 버스 구현 하는 [IMessageBus](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.messaging.imessagebus(v=vs.100).aspx) 인터페이스에는 게시/구독 추상화를 제공 합니다. 기본 대체 하 여 작업의 백플레인 **IMessageBus** 는 버스 해당 백플레인에서 위한 것입니다. 예를 들어 Redis 용 메시지 버스는 [RedisMessageBus](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.redis.redismessagebus(v=vs.100).aspx), Redis를 사용 하 여 [pub/sub](http://redis.io/topics/pubsub) 메시지를 송수신 하는 메커니즘입니다.
+SignalR에 모든 메시지는 메시지 버스를 통해 전송 됩니다. 메시지 버스 구현 하는 [IMessageBus](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.imessagebus(v=vs.100).aspx) 인터페이스에는 게시/구독 추상화를 제공 합니다. 기본 대체 하 여 작업의 백플레인 **IMessageBus** 는 버스 해당 백플레인에서 위한 것입니다. 예를 들어 Redis 용 메시지 버스는 [RedisMessageBus](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.redis.redismessagebus(v=vs.100).aspx), Redis를 사용 하 여 [pub/sub](http://redis.io/topics/pubsub) 메시지를 송수신 하는 메커니즘입니다.
 
 버스를 통해 백플레인에서에 각 서버 인스턴스에 연결합니다. 메시지를 보낼 때를 백플레인에 이동 하 고 백플레인에서 모든 서버에 보냅니다. 서버에서 메시지 백플레인에서 받으면 메시지 로컬 캐시에 배치 합니다. 서버는 다음 로컬 캐시에서 클라이언트에 메시지를 배달 합니다.
 

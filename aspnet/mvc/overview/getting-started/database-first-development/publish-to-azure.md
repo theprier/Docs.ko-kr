@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/publish-to-azure
 msc.type: authoredcontent
-ms.openlocfilehash: f75b7192b4d97c88fcbcb4ad7fef88c83157c902
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: eadc0f2b08df29f80fe53d03cf88cd3cdcecfb12
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="publish-mvc-database-first-site-to-azure"></a>MVC 데이터베이스 첫 번째 사이트를 Azure에 게시
 ====================
@@ -31,8 +31,8 @@ ms.lasthandoff: 11/10/2017
 
 이 자습서를 완료 하려면 Azure 계정이 필요 합니다.
 
-- 있습니다 수 [무료로 Azure 계정을 개설](https://azure.microsoft.com/en-us/pricing/free-trial/?WT.mc_id=A261C142F) -크레딧을 얻게 유료 Azure 서비스를 실행 해 사용할 수 있으며, 사용 후에 최대 계정 등에 사용 가능한 Azure 서비스입니다.
-- 있습니다 수 [MSDN 구독자 혜택을 활성화](https://azure.microsoft.com/en-us/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) -Your MSDN을 구독 하면 크레딧 매달 유료 Azure 서비스에 사용할 수 있습니다.
+- 있습니다 수 [무료로 Azure 계정을 개설](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F) -크레딧을 얻게 유료 Azure 서비스를 실행 해 사용할 수 있으며, 사용 후에 최대 계정 등에 사용 가능한 Azure 서비스입니다.
+- 있습니다 수 [MSDN 구독자 혜택을 활성화](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) -Your MSDN을 구독 하면 크레딧 매달 유료 Azure 서비스에 사용할 수 있습니다.
 
 웹 앱을 게시 하려면 프로젝트를 마우스 오른쪽 단추로 클릭 하 고 선택 **게시**합니다.
 
@@ -98,7 +98,7 @@ Azure 포털을 통해 Azure 계정에 로그인 합니다.
 
 이전 단계에서 추가한 IP 주소를 연결에 대 한 구성 해야 유일한 IP 주소가 없는 가능성이 높습니다. 연결 제대로 설정 되어 있는지 확인 하는 데이터베이스에 로그인을 시도할 수 있습니다. 사용자 이름 및 앞에서 만든 암호를 제공 합니다.
 
-![로그인](publish-to-azure/_static/image12.png)
+![login](publish-to-azure/_static/image12.png)
 
 오류 메시지가 표시 되 면 다른 IP 주소를 추가 해야 합니다. 오류에 대 한 자세한 내용을 보려면 오류 메시지를 클릭 합니다. 세부 정보에서를 추가 해야 하는 IP 주소를 표시 됩니다. 이 IP 주소를 note 합니다.
 
@@ -134,7 +134,7 @@ Azure 포털을 통해 Azure 계정에 로그인 합니다.
 
 확인을 클릭합니다.
 
-모든 연결 정보를 다시 입력 하지 않고 나중에 업데이트를 게시할 수 있도록이 프로필을 저장 하려고 할 수 있습니다. 선택 **프로필을 만들**합니다.
+모든 연결 정보를 다시 입력 하지 않고 나중에 업데이트를 게시할 수 있도록이 프로필을 저장 하려고 할 수 있습니다. **프로필 만들기**를 선택합니다.
 
 ![프로필 저장](publish-to-azure/_static/image19.png)
 

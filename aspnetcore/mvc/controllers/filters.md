@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/filters
-ms.openlocfilehash: db5d6a98d5e6702842e8b036c378ed96aef61b70
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 32bfddde48f5e5de9c06cb159493eb9ba6ede8be
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="filters"></a>필터
 
@@ -70,7 +70,7 @@ ms.lasthandoff: 01/19/2018
 
 ### <a name="ifilterfactory"></a>IFilterFactory
 
-`IFilterFactory`는 `IFilter`를 구현합니다. 따라서는 `IFilterFactory` 으로 인스턴스를 사용할 수 있습니다는 `IFilter` 필터 파이프라인의 아무 곳 이나 인스턴스. 으로 캐스팅을 시도 하는 필터를 호출 하는 프레임 워크를 준비 하는 경우는 `IFilterFactory`합니다. 해당 캐스트에 성공 하면는 `CreateInstance` 메서드는 만들려는 `IFilter` 호출 되는 인스턴스. 응용 프로그램이 시작 될 때 명시적으로 설정 하지 않아도 정밀한 필터 파이프라인 이후 유연 하 게 디자인을 제공 합니다.
+`IFilterFactory`는 `IFilter`를 구현합니다. 따라서는 `IFilterFactory` 으로 인스턴스를 사용할 수 있습니다는 `IFilter` 필터 파이프라인의 아무 곳 이나 인스턴스. 으로 캐스팅을 시도 하는 필터를 호출 하는 프레임 워크를 준비 하는 경우는 `IFilterFactory`합니다. 해당 캐스트에 성공 하면는 `CreateInstance` 메서드는 만들려는 `IFilter` 호출 되는 인스턴스. 정밀한 필터 파이프라인 응용 프로그램이 시작 될 때 명시적으로 설정할 필요가 없습니다 이후 유연 하 게 디자인을 제공 합니다.
 
 구현할 수 있습니다 `IFilterFactory` 필터를 만드는 다른 방법으로 사용자 고유의 특성 구현:
 
@@ -177,7 +177,7 @@ ms.lasthandoff: 01/19/2018
 
 유형 또는 인스턴스가 필터를 추가할 수 있습니다. 인스턴스를 추가 하는 경우 해당 인스턴스가 모든 요청에 대해 사용 됩니다. 종류를 추가 하면 됩니다 형식 활성, 즉 각 요청에 대 한 인스턴스를 만들 수는 되 고 모든 생성자 종속성에 의해 채워지는 [종속성 주입](../../fundamentals/dependency-injection.md) (DI). 에 해당 하는 형식으로 필터를 추가 `filters.Add(new TypeFilterAttribute(typeof(MyFilter)))`합니다.
 
-특성으로 구현 되어 컨트롤러 클래스 또는 동작 메서드를 직접 추가 하는 필터에서 제공 하는 생성자 종속성이 하 여야 [종속성 주입](../../fundamentals/dependency-injection.md) (DI). 특성에 적용 되는 위치를 제공 하는 생성자 매개 변수의 있어야 하기 때문입니다. 특성이 작동 되는 방법의 제한 사항입니다.
+특성으로 구현 되어 컨트롤러 클래스 또는 동작 메서드를 직접 추가 하는 필터에서 제공 하는 생성자 종속성이 하 여야 [종속성 주입](../../fundamentals/dependency-injection.md) (DI). 특성에는 트리거가 적용 하는 제공 된 자신의 생성자 매개 변수를 사용 해야 합니다. 때문입니다. 특성이 작동 되는 방법의 제한 사항입니다.
 
 필터에 종속성 DI에서 액세스 해야 하는 경우 지원 되는 여러 가지 방법으로 있습니다. 다음 중 하나를 사용 하 여 클래스 또는 동작 메서드에 필터를 적용할 수 있습니다.
 
@@ -207,9 +207,9 @@ System.InvalidOperationException: No service for type
 
 ### <a name="typefilterattribute"></a>TypeFilterAttribute
 
-`TypeFilterAttribute`매우 비슷하지만 `ServiceFilterAttribute` (하며 구현 `IFilterFactory`), 하지만 DI 컨테이너에서 직접 해당 형식을 확인할 수 없습니다. 사용 하 여 형식을 인스턴스화합니다 대신 `Microsoft.Extensions.DependencyInjection.ObjectFactory`합니다.
+`TypeFilterAttribute`매우 비슷합니다 `ServiceFilterAttribute` (하며 구현 `IFilterFactory`), 있지만 해당 형식을 DI 컨테이너에서 직접 확인 하지 않습니다. 사용 하 여 형식을 인스턴스화합니다 대신 `Microsoft.Extensions.DependencyInjection.ObjectFactory`합니다.
 
-형식 사용 하 여 참조 되는 이러한 차이로 인해는 `TypeFilterAttribute` 먼저 컨테이너를 사용 하 여 등록할 필요가 없습니다 (하지만 컨테이너에 의해 충족 종속성 수는 여전히). 또한 `TypeFilterAttribute` 해당 형식에 대 한 생성자 인수를 필요에 따라 허용할 수 있습니다. 다음 예제에는 인수를 사용 하 여 형식을 전달 하는 방법을 보여 줍니다 `TypeFilterAttribute`:
+형식 사용 하 여 참조 되는 이러한 차이로 인해는 `TypeFilterAttribute` 먼저 컨테이너를 사용 하 여 등록할 필요 하지 않습니다 (하지만 컨테이너에 의해 충족 종속성 수는 여전히). 또한 `TypeFilterAttribute` 해당 형식에 대 한 생성자 인수를 필요에 따라 허용할 수 있습니다. 다음 예제에는 인수를 사용 하 여 형식을 전달 하는 방법을 보여 줍니다 `TypeFilterAttribute`:
 
 [!code-csharp[Main](../../mvc/controllers/filters/sample/src/FiltersSample/Controllers/HomeController.cs?name=snippet_TypeFilter&highlight=1,2)]
 
@@ -223,7 +223,7 @@ System.InvalidOperationException: No service for type
 
 *권한 부여 필터* 동작 메서드에 대 한 액세스를 제어 하 고 첫 번째 필터를 필터 파이프라인 내에서 실행 됩니다. 만 있는 메서드를 지 원하는 메서드 전후 대부분 필터와 달리 하기 전에. 만 작성 해야 사용자 지정 권한 부여 필터는 자신의 권한 부여 프레임 워크를 작성 하는 경우. 권한 부여 정책을 구성 하거나 사용자 지정 필터를 작성 하는 대신 사용자 지정 권한 부여 정책 작성을 선호 합니다. 기본 제공 필터를 구현 하면은 권한 부여 시스템을 호출 합니다.
 
-예외 처리는 아무것도 때문에 권한 부여 필터 내에서 예외 throw 하지 않아야 참고 (예외 필터 처리할 수 없는 해당). 대신, 챌린지를 발급 하거나 다른 해결 방법의 찾을 합니다.
+예외를 처리 하는 아무 것도 있으므로 권한 부여 필터 내에서 예외를 throw 해서는 안 (예외 필터 처리할 수 없는 해당). 대신, 챌린지를 발급 하거나 다른 해결 방법의 찾을 합니다.
 
 에 대 한 자세한 내용은 [권한 부여](../../security/authorization/index.md)합니다.
 
@@ -252,7 +252,7 @@ System.InvalidOperationException: No service for type
 * `Canceled`-다른 필터에 의해 액션 실행 short-circuited가 true입니다.
 * `Exception`-작업 또는 후속 작업 필터에서 예외가 null이 아닌 됩니다. 이 속성을 효과적으로 null로 설정 'handles' 예외를 및 `Result` 경우 정상적으로 동작 메서드에서 반환 된 것 처럼 실행 됩니다.
 
-에 대 한는 `IAsyncActionFilter`에 대 한 호출에서 `ActionExecutionDelegate` 모든 후속 작업 필터를 실행 하는 반환 된 작업 메서드는 `ActionExecutedContext`합니다. 단락 (short-circuit)를 할당 하려면 `ActionExecutingContext.Result` 일부 결과에 인스턴스를 호출 하지 않으면는 `ActionExecutionDelegate`합니다.
+에 대 한는 `IAsyncActionFilter`에 대 한 호출에서 `ActionExecutionDelegate` 모든 후속 작업 필터를 실행 하는 반환 된 작업 메서드는 `ActionExecutedContext`합니다. 단락 (short-circuit)를 할당 하려면 `ActionExecutingContext.Result` 일부 결과에 인스턴스를 호출 하지는 `ActionExecutionDelegate`합니다.
 
 프레임 워크는 추상 제공 `ActionFilterAttribute` 하위 클래스를 할 수 있습니다. 
 
@@ -270,14 +270,14 @@ System.InvalidOperationException: No service for type
 
 [!code-csharp[Main](./filters/sample/src/FiltersSample/Filters/CustomExceptionFilterAttribute.cs?name=snippet_ExceptionFilter&highlight=1,14)]
 
-예외 필터는 두 개의 이벤트가 (전 및 후)-구현만 `OnException` (또는 `OnExceptionAsync`). 
+(이전 및 이후) 예외 필터에서 두 개의 이벤트를 없는-구현만 `OnException` (또는 `OnExceptionAsync`). 
 
 컨트롤러 만들기에서 발생 하는 처리 되지 않은 예외를 처리 하는 예외 필터 [모델 바인딩](../models/model-binding.md), 작업 메서드 또는 작업 필터. 리소스 필터, 결과 필터 또는 MVC 결과 실행에서 발생 하는 예외를 catch 하지 않습니다.
 
 예외를 처리 하려면 설정는 `ExceptionContext.ExceptionHandled` 속성을 true 또는 응답을 작성 합니다. 그러면 예외는 전파 되지 않습니다. 참고 예외 필터는 "성공"으로 예외를 설정할 수 없습니다. 작업 필터를 작업을 수행할 수 있습니다.
 
 > [!NOTE]
-> ASP.NET 1.1에서는 응답 보내집니다 설정 하면 `ExceptionHandled` true로 **및** 응답을 작성 합니다. 이 시나리오에서 ASP.NET Core 1.0는 응답을 전송 하 고 ASP.NET Core 1.1.2 1.0 동작으로 반환 됩니다. 자세한 내용은 참조 [#5594 발급](https://github.com/aspnet/Mvc/issues/5594) GitHub 리포지토리에 합니다. 
+> 설정 하는 경우 ASP.NET 1.1 응답 전송 되지 않고 `ExceptionHandled` true로 **및** 응답을 작성 합니다. 이 시나리오에서 ASP.NET Core 1.0는 응답을 전송 하 고 ASP.NET Core 1.1.2 1.0 동작으로 반환 됩니다. 자세한 내용은 참조 [#5594 발급](https://github.com/aspnet/Mvc/issues/5594) GitHub 리포지토리에 합니다. 
 
 예외 필터는 MVC 동작 내에서 발생 하는 예외를 트래핑 하는 데 유용 하지만 유연 하 게 오류 미들웨어를 처리 하지 않습니다. 일반적인 경우에 대 한 미들웨어를 선호 하 고만 해야 하는 필터를 사용 하 여 오류 처리 작업을 수행할 *다르게* MVC 작업 선택에 따라 합니다. 예를 들어 앱에는 뷰/HTML 및 API 끝점 모두에 대 한 동작 메서드가 있을 수 있습니다. API 끝점 보기 기반 동작 html 오류 페이지가 반환 될 수 하는 동안 JSON으로 오류 정보를 반환할 수 있습니다.
 
@@ -301,13 +301,13 @@ HTTP 헤더를 추가 하는 결과 필터의 예를 들면 다음과 같습니�
 
 `ResultExecutedContext.Exception`작업 결과 또는 후속 결과 필터에서 예외가 null이 아닌 값으로 설정 됩니다. 설정 `Exception` 를 null에서 효과적으로 예외 ' handles' 하 고 하면 예외가 MVC 파이프라인의 뒷부분에 나오는 예외가 다시 throw 되지 않습니다. 결과 필터에서 예외를 처리 하는 경우 응답에 모든 데이터를 쓸 수 없습니다. 작업 결과가 실행을 통해 충족할 throw 하는 경우 헤더 이미 플 리 시 된 클라이언트에 오류 코드를 전송 하는 신뢰할 수 있는 메커니즘이 있습니다.
 
-에 대 한 프로그램 `IAsyncResultFilter` 에 대 한 호출 `await next()` 에 `ResultExecutionDelegate` 모든 후속 결과 필터를 실행 하는 작업 결과입니다. 단락 (short-circuit)를 설정 하려면 `ResultExecutingContext.Cancel` 를 호출 하지 마십시오 하 고 true는 `ResultExectionDelegate`합니다.
+에 대 한 프로그램 `IAsyncResultFilter` 에 대 한 호출 `await next()` 에 `ResultExecutionDelegate` 모든 후속 결과 필터를 실행 하는 작업 결과입니다. 단락 (short-circuit)를 설정 하려면 `ResultExecutingContext.Cancel` 를 true 및를 호출 하지는 `ResultExectionDelegate`합니다.
 
 프레임 워크는 추상 제공 `ResultFilterAttribute` 하위 클래스를 할 수 있습니다. [AddHeaderAttribute](#add-header-attribute) 앞에 표시 된 클래스는 결과 필터 특성의 예시입니다.
 
 ## <a name="using-middleware-in-the-filter-pipeline"></a>필터 파이프라인에 미들웨어를 사용 하 여
 
-리소스 필터 처럼 작동 [미들웨어](../../fundamentals/middleware.md) 파이프라인의 뒷부분에 제공 되는 모든 실행을 둘러싸고 한다는 점에서 합니다. 하지만 MVC 컨텍스트 및 구문에 액세스할 수 있는 즉 MVC의 일부인 한다는 점에서 필터 미들웨어에서 다릅니다.
+리소스 필터 처럼 작동 [미들웨어](../../fundamentals/middleware.md) 파이프라인의 뒷부분에 제공 되는 모든 실행을 둘러싸고 한다는 점에서 합니다. 하지만 MVC 컨텍스트 및 구문에 액세스할 수 있는 즉 MVC의 일부로 표시 한다는 점에서 필터 미들웨어에서 다릅니다.
 
 ASP.NET Core 1.1에서는 필터 파이프라인에 미들웨어를 사용할 수 있습니다. MVC 경로 데이터 또는 컨트롤러 또는 작업을 특정 실행 해야 하는 하나에 액세스 해야 하는 미들웨어 구성 요소를 설정한 경우 작업을 수행 하 고 좋습니다.
 

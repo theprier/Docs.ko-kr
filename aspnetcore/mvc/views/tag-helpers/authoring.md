@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/authoring
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 9aaf40377e07e53fd0b7ebb177bcbb2df52b7553
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: a1f1b2c2e60a1337c15f019185c764d0a9ada1b5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="author-tag-helpers-in-aspnet-core-a-walkthrough-with-samples"></a>ASP.NET Core, 샘플을 연습에서에서 만든 태그 도우미
 
@@ -164,7 +164,7 @@ the following snippet uses TagHelpers3 and should use TagHelpers (not the 3)
 
 3.  앱을 실행합니다. 소스를 검사 하는 태그를 확인 하십시오. 즐겨 찾는 브라우저를 사용할 수 있습니다.
 
-    `[HtmlTargetElement]` 위의 특성에만 "bold"의 특성 이름을 제공 하는 HTML 태그를 대상으로 합니다. `<bold>` 요소 태그 도우미에서 수정 되지 않았습니다.
+    `[HtmlTargetElement]` 위의 특성에만 "bold"의 특성 이름을 제공 하는 HTML 태그를 대상으로 합니다. `<bold>` 요소가 태그 도우미에서 수정 되지 않았습니다.
 
 4. 주석으로 처리는 `[HtmlTargetElement]` 고 특성 줄을 대상으로 기본값은 `<bold>` 폼의 HTML 태그, 태그 `<bold>`합니다. 기억, 기본 명명 규칙 클래스 이름과 일치 합니다 **b o l d**TagHelper를 `<bold>` 태그입니다.
 
@@ -208,13 +208,13 @@ the following snippet uses TagHelpers3 and should use TagHelpers (not the 3)
     [HtmlTargetElement("WebsiteInformation")]
     ```
     
-    더 낮은 kebab 사례 태그 `<website-information />` 일치 하지 않습니다. 사용 하려는 경우는 `[HtmlTargetElement]` 특성을 아래와 같이 kebab 대/소문자를 사용 합니다.
+    더 낮은 kebab 사례 태그 `<website-information />` 일치 하지 않아 합니다. 사용 하려는 경우는 `[HtmlTargetElement]` 특성을 아래와 같이 kebab 대/소문자를 사용 합니다.
     
     ```csharp
     [HtmlTargetElement("Website-Information")]
     ```
     
-    * 자체 닫는 요소에는 내용이 없는 합니다. 이 예제에 대 한 Razor 태그를 사용 하 여 자체적으로 닫는 태그 이지만 태그 도우미를 만들는 [섹션](http://www.w3.org/TR/html5/sections.html#the-section-element) 요소 (자체적으로 닫는 되 고 작성 하는 내 콘텐츠는 `section` 요소). 따라서 설정 해야 `TagMode` 를 `StartTagAndEndTag` 출력을 작성 합니다. 또는 주석으로 처리 설정 행 `TagMode` 닫는 태그를 사용 하 여 태그를 작성 합니다. (이 자습서의 뒷부분에 나오는 예제 태그 제공 됩니다.)
+    * 자체 닫는 요소에는 내용이 없는 합니다. 이 예제에 대 한 Razor 태그를 사용 하 여 자체적으로 닫는 태그 이지만 태그 도우미를 만들는 [섹션](http://www.w3.org/TR/html5/sections.html#the-section-element) 요소 (자체적으로 닫는 아닌 고 작성 하는 내 콘텐츠는 `section` 요소). 따라서 설정 해야 `TagMode` 를 `StartTagAndEndTag` 출력을 작성 합니다. 또는 주석으로 처리 설정 행 `TagMode` 닫는 태그를 사용 하 여 태그를 작성 합니다. (이 자습서의 뒷부분에 나오는 예제 태그 제공 됩니다.)
     
     * `$` (달러 기호) 사용 하 여 다음 줄에서 한 [문자열 보간](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/interpolated-strings):
     
@@ -274,7 +274,7 @@ the following snippet uses TagHelpers3 and should use TagHelpers (not the 3)
 
     [!code-csharp[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Controllers/HomeController.cs?range=9-18)]
 
-4.  응용 프로그램을 실행 하 고 홈 페이지로 이동 합니다. 조건부의 태그를 `div` 렌더링 되지 것입니다. 쿼리 문자열 추가 `?approved=true` url (예를 들어 `http://localhost:1235/Home/Index?approved=true`). `approved`가 true로 설정 되었고 조건부 태그 표시 됩니다.
+4.  응용 프로그램을 실행 하 고 홈 페이지로 이동 합니다. 조건부의 태그를 `div` 렌더링 되지 않습니다. 쿼리 문자열 추가 `?approved=true` url (예를 들어 `http://localhost:1235/Home/Index?approved=true`). `approved`가 true로 설정 되었고 조건부 태그 표시 됩니다.
 
 >[!NOTE]
 >사용 하 여는 [nameof](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/nameof) 연산자를 굵게 표시 된 태그 도우미에서와 마찬가지로 문자열을 지정 하지 않고 대상에 특성을 지정 합니다.
@@ -306,7 +306,7 @@ the following snippet uses TagHelpers3 and should use TagHelpers (not the 3)
 
     [!code-csharp[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z1AutoLinker.cs?highlight=15-34&range=7-34)]
 
-5.  앱을 실행합니다. 링크로 www 텍스트를 렌더링 하지 않으면이 HTTP 텍스트를 확인 합니다. 두 클래스에 중단점을 배치 하면 HTTP 태그 도우미 클래스 첫 번째 실행 되는지 확인할 수 있습니다. 문제는 태그 도우미 출력에 캐시 되며 HTTP 태그 도우미의 캐시 된 출력 덮어씁니다 WWW 태그 도우미를 실행 하는 경우입니다. 이 자습서의 뒷부분에 나오는 태그 도우미에서 실행 되는 순서를 제어 하는 방법을 살펴보겠습니다. 다음 코드를 수정 하겠습니다.
+5.  앱을 실행합니다. 필름 www 텍스트를 한 링크로 렌더링 되지만 HTTP 텍스트 되지 않습니다. 두 클래스에 중단점을 배치 하면 HTTP 태그 도우미 클래스 첫 번째 실행 되는지 확인할 수 있습니다. 문제는 태그 도우미 출력에 캐시 되며 HTTP 태그 도우미의 캐시 된 출력 덮어씁니다 WWW 태그 도우미를 실행 하는 경우입니다. 이 자습서의 뒷부분에 나오는 태그 도우미에서 실행 되는 순서를 제어 하는 방법을 살펴보겠습니다. 다음 코드를 수정 하겠습니다.
 
     [!code-csharp[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z1AutoLinkerCopy.cs?highlight=5,6,10,21,22,26&range=8-37)]
 
@@ -321,7 +321,7 @@ the following snippet uses TagHelpers3 and should use TagHelpers (not the 3)
     >
     >위의 코드 콘텐츠가 수정 된 출력 버퍼에서 콘텐츠를 가져옵니다 적 하는 경우를 확인 합니다.
 
-6.  응용 프로그램을 실행 하 고 두 개의 링크가 예상 대로 작동 하는지 확인 합니다. 우리의 자동 링커 태그 도우미는 완벽 한 상태가 나타날 수 있습니다, 미묘한 문제가 이었지만 합니다. WWW 태그 도우미 실행 될 경우 첫 번째, www 링크 올바른 되지 않습니다. 코드를 추가 하 여 업데이트 된 `Order` 태그에서 실행 되는 순서를 제어 하는 오버 로드 합니다. `Order` 속성 같은 요소를 대상으로 하는 다른 태그 도우미를 기준으로 실행 순서를 결정 합니다. 기본 순서 값은 0이 고 더 낮은 값이 있는 인스턴스를 먼저 실행 됩니다.
+6.  응용 프로그램을 실행 하 고 두 개의 링크가 예상 대로 작동 하는지 확인 합니다. 우리의 자동 링커 태그 도우미는 완벽 한 상태가 나타날 수 있습니다, 미묘한 문제가 이었지만 합니다. WWW 태그 도우미 실행 될 경우 첫 번째, www 링크 올바른 수 없습니다. 코드를 추가 하 여 업데이트 된 `Order` 태그에서 실행 되는 순서를 제어 하는 오버 로드 합니다. `Order` 속성 같은 요소를 대상으로 하는 다른 태그 도우미를 기준으로 실행 순서를 결정 합니다. 기본 순서 값은 0이 고 더 낮은 값이 있는 인스턴스를 먼저 실행 됩니다.
 
     [!code-csharp[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z2AutoLinkerCopy.cs?highlight=5,6,7,8&range=8-15)]
     
@@ -333,8 +333,8 @@ the following snippet uses TagHelpers3 and should use TagHelpers (not the 3)
 
 -  결과 `GetChildContentAsync` 추가할 수 있는 `output.Content`합니다.
 -  결과 검사할 수 `GetChildContentAsync` 와 `GetContent`합니다.
--  수정 하는 경우 `output.Content`, TagHelper 본문을 실행 되거나 호출 하지 않으면 렌더링 되지 것입니다 `GetChildContentAsync` 자동 링커 샘플에서와 같이:
+-  수정 하는 경우 `output.Content`, TagHelper 본문을 실행 되거나 호출 하지 않으면 렌더링 되지 않습니다 `GetChildContentAsync` 자동 링커 샘플에서와 같이:
 
 [!code-csharp[Main](../../views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z1AutoLinkerCopy.cs?highlight=5,6,10&range=8-21)]
 
--  여러 번 호출 `GetChildContentAsync` 은 동일한 값을 반환 하 고 다시 실행 되지 것입니다는 `TagHelper` 캐시 된 결과 사용 하지 않으므로 나타내는 false 매개 변수에서 전달 하지 않으면 본문입니다.
+-  여러 번 호출 `GetChildContentAsync` 같은 값을 반환 하 고 다시 실행 하지 않습니다는 `TagHelper` 를 캐시 된 결과 사용 하지 않는 나타내는 false 매개 변수를 전달 하지 않으면 본문입니다.

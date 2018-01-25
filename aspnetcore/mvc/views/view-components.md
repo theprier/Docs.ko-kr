@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/view-components
-ms.openlocfilehash: 2d93dcee102009661af708b9a9066e8af0bdbb17
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 65074ca02a1365db278d348d4e024121a6eb4634
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="view-components"></a>구성 요소 보기
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 01/19/2018
 
 ## <a name="introducing-view-components"></a>뷰 구성 요소 소개
 
-새 ASP.NET Core mvc 뷰 구성 요소는 부분 뷰로 유사 하지만 훨씬 더 강력 합니다. 보기 구성 요소 하지 않는 모델 바인딩을 사용 하 고만를 호출할 때 제공 된 데이터에 따라 달라 집니다. 뷰 구성 요소:
+새 ASP.NET Core mvc 뷰 구성 요소는 부분 뷰 유사 하지만 하기가 훨씬 더 강력 합니다. 보기 구성 요소 하지 않는 모델 바인딩을 사용 하 고만를 호출할 때 제공 된 데이터에 따라 달라 집니다. 뷰 구성 요소:
 
 * 전체 응답 하지 않고 청크를 렌더링합니다.
 * 컨트롤러와 뷰 사이 있는 테스트 용이성 이점과 분리-문제의 동일한 포함 됩니다.
@@ -60,7 +60,7 @@ ms.lasthandoff: 01/19/2018
 
 * 생성자를 완벽 하 게 지원 [종속성 주입](../../fundamentals/dependency-injection.md)
 
-* 즉, 사용할 수 없는 컨트롤러 수명 주기에서 파트를 사용 하지 않는 [필터](../controllers/filters.md) 뷰 구성 요소에
+* 즉, 사용할 수 없는 컨트롤러 수명 주기에 관여 하지 않습니다 [필터](../controllers/filters.md) 뷰 구성 요소에
 
 ### <a name="view-component-methods"></a>구성 요소 메서드를 보기
 
@@ -69,7 +69,7 @@ ms.lasthandoff: 01/19/2018
 * 정의 `InvokeAsync` 반환 하는 메서드는`IViewComponentResult`
 * 일반적으로 모델을 초기화 하 고 호출 하 여 보기에 전달 된 `ViewComponent` `View` 메서드
 * 매개 변수에서 호출 하는 메서드의 HTTP가 아닌 야 하며, 모델 바인딩되지 않습니다.
-* 됩니다 (일반적으로 보기)에서 사용자 코드에서 호출 HTTP 끝점으로 직접 연결할 수 없음, 됩니다. 뷰 구성 요소는 요청을 처리 하지 않습니다.
+* HTTP 끝점으로 직접 연결할 수 없음, 하는 호출 있습니다 (일반적으로 보기)에서 사용자 코드에서. 뷰 구성 요소는 요청을 처리 하지 않습니다.
 * 현재 HTTP 요청에서 세부 정보 보다는 서명을에 오버 로드
 
 ### <a name="view-search-path"></a>보기 검색 경로
@@ -130,7 +130,7 @@ ASP.NET Core 1.1 이상에서는 뷰 구성 요소도 호출할 수 있습니다
 
 ### <a name="invoking-a-view-component-directly-from-a-controller"></a>컨트롤러에서 직접 뷰 구성 요소 호출
 
-뷰 구성 요소는 일반적으로 보기에서 호출 하지만 컨트롤러 메서드에에서 직접 호출할 수 있습니다. 콘텐츠를 반환 하는 컨트롤러 동작 구성 요소 보기 컨트롤러와 같은 끝점을 정의 하지 않는 동안 쉽게 구현할 수는 `ViewComponentResult`합니다.
+뷰 구성 요소는 일반적으로 보기에서 호출 하지만 컨트롤러 메서드에에서 직접 호출할 수 있습니다. 콘텐츠를 반환 하는 컨트롤러 동작 구성 요소 보기 컨트롤러와 같은 끝점을 정의 하지 않음, 동안 쉽게 구현할 수는 `ViewComponentResult`합니다.
 
 이 예제에서는 뷰 구성 요소는 컨트롤러에서 직접 호출 됩니다.
 
@@ -152,7 +152,7 @@ ASP.NET Core 1.1 이상에서는 뷰 구성 요소도 호출할 수 있습니다
 
 * 뷰 구성 요소 클래스에 포함 될 수 있는 **모든** 프로젝트의 폴더입니다.
 * 클래스 이름 PriorityList**ViewComponent** 된 접미사로 끝나는지 **ViewComponent**, 클래스 구성 요소는 뷰에서 참조 하는 경우 런타임이 "PriorityList" 문자열을 사용 합니다. 설명 하겠습니다를 자세히 나중에.
-* `[ViewComponent]` 특성 뷰 구성 요소를 참조 하는 데 이름을 변경할 수 있습니다. 예를 들어 우리 수에 명명 된 클래스 `XYZ` 적용 하 고는 `ViewComponent` 특성:
+* `[ViewComponent]` 특성 뷰 구성 요소를 참조 하는 데 이름을 변경할 수 있습니다. 예를 들어 우리 수 이름을 지정한 클래스 `XYZ` 적용 하 고는 `ViewComponent` 특성:
 
   ```csharp
   [ViewComponent(Name = "PriorityList")]
@@ -212,7 +212,7 @@ ASP.NET Core 1.1 이상에서는 뷰 구성 요소도 호출할 수 있습니다
 
 ![우선 순위 뷰 구성 요소](view-components/_static/pvc.png)
 
-PVC 뷰 렌더링 되지 않습니다 4 이상을의 우선 순위를 가진 뷰 구성 요소를 호출 하는 확인 합니다.
+PVC 뷰 렌더링 되지 않는 경우 4 이상을의 우선 순위를 가진 뷰 구성 요소를 호출 하는 확인 합니다.
 
 ### <a name="examine-the-view-path"></a>뷰 경로 검사
 
@@ -222,7 +222,7 @@ PVC 뷰 렌더링 되지 않습니다 4 이상을의 우선 순위를 가진 뷰
 
    ```
    An unhandled exception occurred while processing the request.
-   InvalidOperationException: The view 'Components/PriorityList/Default' was not found. The following locations were searched:
+   InvalidOperationException: The view 'Components/PriorityList/Default' wasn't found. The following locations were searched:
    /Views/ToDo/Components/PriorityList/Default.cshtml
    /Views/Shared/Components/PriorityList/Default.cshtml
    EnsureSuccessful

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/uploading-files-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3e66f581d0ea07831ea6356a9c13d26ed6a19b81
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 69586ade54a40aabb55dd507731a6c2820774c04
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="uploading-files-vb"></a>파일 (VB)를 업로드 하는 중
 ====================
@@ -99,7 +99,7 @@ ms.lasthandoff: 11/10/2017
 데이터베이스에서 직접 이진 데이터를 저장할 경우의 주요 장점은 이진 데이터와 데이터베이스 레코드 간의 긴밀 하 게 결합 됩니다. 이 백업 또는 다른 사이트 또는 서버에 데이터베이스를 이동 하는 등의 데이터베이스 관리 작업을 크게 단순화 합니다. 또한 자동으로 레코드를 삭제 하면 해당 이진 데이터를 삭제 합니다. 데이터베이스의 이진 데이터를 저장할 경우의 많은 미묘한 혜택도 있습니다. 참조 [저장 이진 파일 직접 데이터베이스를 사용 하 여 ASP.NET 2.0](http://aspnet.4guysfromrolla.com/articles/120606-1.aspx) 에 대 한 자세한 내용은 합니다.
 
 > [!NOTE]
-> Microsoft SQL Server 2000 및 이전 버전의 `varbinary` 데이터 형식에 최대 제한인 8, 000 바이트입니다. 최대 2GB의 이진 데이터를 저장 하는 [ `image` 데이터 형식](https://msdn.microsoft.com/en-us/library/ms187993.aspx) 를 대신 사용 해야 합니다. 그러나 추가 하 여 `MAX` SQL Server 2005에서는는 `image` 데이터 형식이 사용 되지 않습니다. 그 s 계속 지원에 대 한 이전 버전과 호환성을 되지만 Microsoft를 발표 했습니다는 `image` 데이터 형식은 나중 버전의 SQL Server에서 제거 됩니다.
+> Microsoft SQL Server 2000 및 이전 버전의 `varbinary` 데이터 형식에 최대 제한인 8, 000 바이트입니다. 최대 2GB의 이진 데이터를 저장 하는 [ `image` 데이터 형식](https://msdn.microsoft.com/library/ms187993.aspx) 를 대신 사용 해야 합니다. 그러나 추가 하 여 `MAX` SQL Server 2005에서는는 `image` 데이터 형식이 사용 되지 않습니다. 그 s 계속 지원에 대 한 이전 버전과 호환성을 되지만 Microsoft를 발표 했습니다는 `image` 데이터 형식은 나중 버전의 SQL Server에서 제거 됩니다.
 
 
 이전 데이터 모델을 사용 하 여 작업할 경우 발생할 수 있습니다는 `image` 데이터 형식입니다. Northwind 데이터베이스 s `Categories` 테이블에는 `Picture` 범주에 대 한 이미지 파일의 이진 데이터를 저장 하기 위해 사용할 수 있는 열입니다. Northwind 데이터베이스에 Microsoft Access 및 이전 버전의 SQL Server에 있으므로이 열이 유형이 `image`합니다.
@@ -210,7 +210,7 @@ DAL 업데이트와 이제 남은 것은 BLL 비즈니스 논리 계층 ()에서
 
 종종 이진 데이터를 수집 하려는 경우이 데이터는 최종 사용자가 제공 됩니다. 이 정보를 캡처하려면 사용자를 웹 서버에 컴퓨터의 파일을 업로드할 수 있도록 해야 합니다. 업로드 된 데이터는 다음을 의미할 수 있습니다. 파일을 웹 서버의 파일 시스템 및 데이터베이스의 파일 경로 추가 또는 데이터베이스에 직접 이진 콘텐츠를 쓰기 저장 데이터 모델에 통합할 수 있어야 합니다. 이 단계에서는 사용자가 자신의 컴퓨터에서 서버에 파일을 업로드 하도록 허용 하는 방법을 살펴보겠습니다. 다음 자습서에는 데이터 모델을 업로드 한 파일을 통합 하는 데 주의 살펴보겠습니다.
 
-ASP.NET 2.0 새로운 [파일 업로드 웹 컨트롤](https://msdn.microsoft.com/en-us/library/ms227677(VS.80).aspx) 사용자가 자신의 컴퓨터에서 웹 서버에 파일을 보낼 수에 대 한 메커니즘을 제공 합니다. 파일 업로드 컨트롤으로 렌더링는 `<input>` 요소 인 `type` 특성은 브라우저는 찾아보기 단추가 있는 textbox로 표시 된 파일을로 설정 합니다. 사용자 파일을 선택할 수 있는 대화 상자에서 찾아보기 단추를 클릭 하면 나타납니다. 양식에 다시 게시 하는 경우 선택한 파일의 내용은 포스트백 함께 전송 됩니다. 서버 쪽에서 업로드 된 파일에 대 한 정보는 파일 업로드 컨트롤의의 속성을 통해 액세스할 수 있습니다.
+ASP.NET 2.0 새로운 [파일 업로드 웹 컨트롤](https://msdn.microsoft.com/library/ms227677(VS.80).aspx) 사용자가 자신의 컴퓨터에서 웹 서버에 파일을 보낼 수에 대 한 메커니즘을 제공 합니다. 파일 업로드 컨트롤으로 렌더링는 `<input>` 요소 인 `type` 특성은 브라우저는 찾아보기 단추가 있는 textbox로 표시 된 파일을로 설정 합니다. 사용자 파일을 선택할 수 있는 대화 상자에서 찾아보기 단추를 클릭 하면 나타납니다. 양식에 다시 게시 하는 경우 선택한 파일의 내용은 포스트백 함께 전송 됩니다. 서버 쪽에서 업로드 된 파일에 대 한 정보는 파일 업로드 컨트롤의의 속성을 통해 액세스할 수 있습니다.
 
 업로드 파일을 보여 주기 위해 열고는 `FileUpload.aspx` 페이지에 `BinaryData` 폴더를 디자이너에 도구 상자에서 파일 업로드 컨트롤을 끌어서 컨트롤 s 설정 `ID` 속성을 `UploadTest`합니다. 다음으로 설정 단추 웹 컨트롤을 추가 해당 `ID` 및 `Text` 속성을 `UploadButton` 각각 선택한 파일을 업로드 합니다. 마지막으로, 지우기 단추 아래의 Label 웹 컨트롤을 배치 해당 `Text` 속성 집합과 해당 `ID` 속성을 `UploadDetails`합니다.
 
@@ -233,13 +233,13 @@ ASP.NET 2.0 새로운 [파일 업로드 웹 컨트롤](https://msdn.microsoft.co
 
 [!code-vb[Main](uploading-files-vb/samples/sample5.vb)]
 
-파일 업로드 컨트롤 다양 한 업로드 된 데이터를 사용 하기 위한 속성을 제공 합니다. 예를 들어,는 [ `HasFile` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.fileupload.hasfile.aspx) 사용자가 업로드 된 한 파일이 있는지 여부를 나타내는 동안는 [ `FileBytes` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.fileupload.filebytes.aspx) 바이트의 배열로 업로드 된 이진 데이터에 대 한 액세스를 제공 합니다. `Click` 파일 업로드 되었는지 확인 하 여 이벤트 처리기를 시작 합니다. 파일을 업로드 경우 레이블을 업로드 된 파일, 바이트의 크기 및 해당 콘텐츠 형식을의 이름을 표시 합니다.
+파일 업로드 컨트롤 다양 한 업로드 된 데이터를 사용 하기 위한 속성을 제공 합니다. 예를 들어,는 [ `HasFile` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.fileupload.hasfile.aspx) 사용자가 업로드 된 한 파일이 있는지 여부를 나타내는 동안는 [ `FileBytes` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.fileupload.filebytes.aspx) 바이트의 배열로 업로드 된 이진 데이터에 대 한 액세스를 제공 합니다. `Click` 파일 업로드 되었는지 확인 하 여 이벤트 처리기를 시작 합니다. 파일을 업로드 경우 레이블을 업로드 된 파일, 바이트의 크기 및 해당 콘텐츠 형식을의 이름을 표시 합니다.
 
 > [!NOTE]
 > 사용자를 확인할 수 있습니다 파일 업로드를 위해는 `HasFile` 속성 경우 경고를 표시 하 고 그 s `False`, 하거나 사용할 수 있습니다는 [RequiredFieldValidator 제어](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/validation/default.aspx) 대신 합니다.
 
 
-파일 업로드 s `SaveAs(filePath)` 업로드 된 파일을 지정 된 저장 *filePath*합니다. *filePath* 이어야 합니다는 *실제 경로* (`C:\Websites\Brochures\SomeFile.pdf`) 대신 *가상* *경로* (`/Brochures/SomeFile.pdf`). [ `Server.MapPath(virtPath)` 메서드](https://msdn.microsoft.com/en-us/library/system.web.httpserverutility.mappath.aspx) 가상 경로 사용 하 고 해당 물리적 경로 반환 합니다. 여기에서 가상 경로가 `~/Brochures/fileName`여기서 *fileName* 업로드 된 파일의 이름입니다. 참조 [를 사용 하 여 Server.MapPath](http://www.4guysfromrolla.com/webtech/121799-1.shtml) 가상 및 실제 경로 및 사용에 대 한 자세한 내용은 `Server.MapPath`합니다.
+파일 업로드 s `SaveAs(filePath)` 업로드 된 파일을 지정 된 저장 *filePath*합니다. *filePath* 이어야 합니다는 *실제 경로* (`C:\Websites\Brochures\SomeFile.pdf`) 대신 *가상* *경로* (`/Brochures/SomeFile.pdf`). [ `Server.MapPath(virtPath)` 메서드](https://msdn.microsoft.com/library/system.web.httpserverutility.mappath.aspx) 가상 경로 사용 하 고 해당 물리적 경로 반환 합니다. 여기에서 가상 경로가 `~/Brochures/fileName`여기서 *fileName* 업로드 된 파일의 이름입니다. 참조 [를 사용 하 여 Server.MapPath](http://www.4guysfromrolla.com/webtech/121799-1.shtml) 가상 및 실제 경로 및 사용에 대 한 자세한 내용은 `Server.MapPath`합니다.
 
 완료 한 후는 `Click` 이벤트 처리기를 충분히 브라우저에서 페이지를 테스트해 보십시오. 찾아보기 단추를 클릭 하드 드라이브에서 파일을 선택 하 고 선택한 파일 업로드 단추를 클릭 합니다. 파일에 대 한 정보를 저장 하기 전에 다음 표시 하는 웹 서버에 포스트백 선택한 파일의 내용을 송신할는 `~/Brochures` 폴더입니다. 파일을 업로드 한 후 Visual Studio로 반환 하 고 솔루션 탐색기에서 새로 고침 단추를 클릭 합니다. 방금 ~/Brochures 폴더에 업로드 한 파일에 표시 됩니다!
 
@@ -264,7 +264,7 @@ ASP.NET 2.0 새로운 [파일 업로드 웹 컨트롤](https://msdn.microsoft.co
 
 ## <a name="challenges-involved-with-very-large-amounts-of-binary-data"></a>매우 많은 양의 이진 데이터와 관련 된 문제
 
-이 자습서는 캡처된 이진 데이터 크기에 어느 정도의 라고 가정 합니다. 이진 데이터 파일을 몇 메가바이트 매우 많은 양의 작업 또는 더 큰이 자습서의 범위를 벗어나는 새로운 과제가 있습니다. 예를 들어 기본적으로 ASP.NET 거부 업로드 작업 4MB 보다이 통해 구성할 수 있지만 [ `<httpRuntime>` 요소](https://msdn.microsoft.com/en-us/library/e1f13641.aspx) 에서 `Web.config`합니다. IIS는 너무 고유 파일 업로드 크기 제한을 적용합니다. 참조 [IIS 업로드 파일 크기](http://vandamme.typepad.com/development/2005/09/iis_upload_file.html) 자세한 정보에 대 한 합니다. 또한, 큰 파일을 업로드 하는 데 걸린 시간 기본 ASP.NET 요청을 기다리는 110 초 초과할 수 있습니다. 큰 파일을 작업할 때 발생 하는 메모리 및 성능 문제가 있습니다.
+이 자습서는 캡처된 이진 데이터 크기에 어느 정도의 라고 가정 합니다. 이진 데이터 파일을 몇 메가바이트 매우 많은 양의 작업 또는 더 큰이 자습서의 범위를 벗어나는 새로운 과제가 있습니다. 예를 들어 기본적으로 ASP.NET 거부 업로드 작업 4MB 보다이 통해 구성할 수 있지만 [ `<httpRuntime>` 요소](https://msdn.microsoft.com/library/e1f13641.aspx) 에서 `Web.config`합니다. IIS는 너무 고유 파일 업로드 크기 제한을 적용합니다. 참조 [IIS 업로드 파일 크기](http://vandamme.typepad.com/development/2005/09/iis_upload_file.html) 자세한 정보에 대 한 합니다. 또한, 큰 파일을 업로드 하는 데 걸린 시간 기본 ASP.NET 요청을 기다리는 110 초 초과할 수 있습니다. 큰 파일을 작업할 때 발생 하는 메모리 및 성능 문제가 있습니다.
 
 파일 업로드 컨트롤 대형 파일 업로드 시에 유용 합니다. 파일의 내용을 서버에 게시 되는, 최종 사용자가 업로드 진행 되 고 있다는 확인 없이 꾸준히 기다려야 합니다. 몇 초 후에 업로드할 수 있지만 더 큰 파일을 업로드 하는 데 시간이 걸릴 수를 처리할 때 문제가 발생할 수 있는 더 작은 파일을 다룰 때에 많은 양의 문제가 되지 않습니다. 다양 한 제 3 자 파일 업로드 컨트롤 대규모 업로드를 처리 하기 위한 더 적합 있으며 이들 공급이 업체의 많은 제공 진행률 표시기 및 ActiveX 업로드 훨씬 더 세련 된 사용자 환경을 제공 하는 관리자.
 
@@ -280,7 +280,7 @@ ASP.NET 2.0 새로운 [파일 업로드 웹 컨트롤](https://msdn.microsoft.co
 
 이 자습서에 설명 된 항목에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
-- [큰 값 데이터 형식 사용](https://msdn.microsoft.com/en-us/library/ms178158.aspx)
+- [큰 값 데이터 형식 사용](https://msdn.microsoft.com/library/ms178158.aspx)
 - [파일 업로드 컨트롤 퀵 스타트](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/standard/fileupload.aspx)
 - [ASP.NET 2.0 파일 업로드 서버 컨트롤](http://www.wrox.com/WileyCDA/Section/id-292158.html)
 - [파일 업로드](http://www.aspnetresources.com/articles/dark_side_of_file_uploads.aspx)

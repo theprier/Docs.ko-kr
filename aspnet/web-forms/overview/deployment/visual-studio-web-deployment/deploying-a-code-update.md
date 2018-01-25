@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-code-update
 msc.type: authoredcontent
-ms.openlocfilehash: 10da2b5013ae1348b69ea4f456d81bb4c4b73df6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f6861c702c1ccb19e5a4eee484a622079e205f86
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-a-code-update"></a>Visual Studio를 사용 하 여 ASP.NET 웹 배포: 코드 업데이트 배포
 ====================
@@ -79,7 +79,7 @@ ms.lasthandoff: 11/10/2017
 
 일반적인 회귀 테스트를 수행 (즉, 테스트 되는 새로운 변경 하지 않은 기존 기능이 해제 해야 하는 사이트의 나머지 부분)입니다. 하지만이 자습서에 대 한 해당 단계를 건너뜁니다 고 업데이트를 스테이징 및 프로덕션 배포를 진행 합니다.
 
-다시 배포 하면 어떤 파일이 변경 되어 자동으로 결정 웹 배포 및 복사본만 서버에 파일을 변경 합니다. 기본적으로 웹 배포를 사용 하 여 마지막 변경 날짜 파일에 변경 된 것을 확인 합니다. 소스 제어 시스템 파일 내용을 변경 하지 않는 경우에 날짜 파일을 변경 합니다. 이 경우 다음 파일 체크섬 변경 된 파일을 확인 하는 데 웹 배포를 구성 하는 것이 좋습니다. 자세한 내용은 참조 [이유 수행 내 파일의 모든 가져오기 재배포 변경 하지 않은 있지만?](https://msdn.microsoft.com/en-us/library/ee942158.aspx#use_checksum) ASP.NET 배포 FAQ에 있습니다.
+다시 배포 하면 어떤 파일이 변경 되어 자동으로 결정 웹 배포 및 복사본만 서버에 파일을 변경 합니다. 기본적으로 웹 배포를 사용 하 여 마지막 변경 날짜 파일에 변경 된 것을 확인 합니다. 소스 제어 시스템 파일 내용을 변경 하지 않는 경우에 날짜 파일을 변경 합니다. 이 경우 다음 파일 체크섬 변경 된 파일을 확인 하는 데 웹 배포를 구성 하는 것이 좋습니다. 자세한 내용은 참조 [이유 수행 내 파일의 모든 가져오기 재배포 변경 하지 않은 있지만?](https://msdn.microsoft.com/library/ee942158.aspx#use_checksum) ASP.NET 배포 FAQ에 있습니다.
 
 ## <a name="take-the-application-offline-during-deployment"></a>배포 하는 동안 있는 오프 라인 응용 프로그램
 
@@ -188,7 +188,7 @@ URL은 Azure 관리 포털에서 웹 사이트의 대시보드 페이지에 표�
 
     대상 환경에 로컬 파일의 버전 사이의 차이 표시 하려면 창이 열립니다.
 
-    ![Diff-콘텐츠/Site.css](deploying-a-code-update/_static/image13.png)
+    ![Diff-Content/Site.css](deploying-a-code-update/_static/image13.png)
 4. **솔루션 탐색기**를 마우스 오른쪽 단추로 클릭 **Site.css** 다시 클릭 하 고 **게시 Site.css**합니다.
 
     **웹 게시 동작** 파일 게시 된 창에 표시 합니다.

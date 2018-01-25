@@ -9,17 +9,17 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: 6a5feb9039c5b0e9823e5f22f4d55a70830dd3e6
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: f0953ad5d9f1bfa92ecc5169d9a211ce6b8cda8f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>ASP.NET Core Id에 대 한 사용자 지정 저장소 공급자
 
 으로 [Steve Smith](https://ardalis.com/)
 
-ASP.NET Core Id는 사용자 지정 저장소 공급자를 만들고 응용 프로그램에 연결할 수 있도록 하는 확장 가능한 시스템입니다. 이 항목에서는 ASP.NET Core Id에 대 한 사용자 지정 된 저장소 공급자를 만드는 방법을 설명 합니다. 저장소 공급자를 만들기 위한 중요 한 개념을 다루지만 단계별 연습 않습니다.
+ASP.NET Core Id는 사용자 지정 저장소 공급자를 만들고 응용 프로그램에 연결할 수 있도록 하는 확장 가능한 시스템입니다. 이 항목에서는 ASP.NET Core Id에 대 한 사용자 지정 된 저장소 공급자를 만드는 방법을 설명 합니다. 저장소 공급자를 만들기 위한 중요 한 개념을 다루지만 단계별 연습 되지 않습니다.
 
 [보기 또는 GitHub에서 샘플을 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample)합니다.
 
@@ -80,7 +80,7 @@ ASP.NET Core Id 관리자와 저장소를 호출 하는 클래스로 구성 됩�
 
 이 항목에서는 사용 하고자 하는 지 속성 메커니즘 및 해당 메커니즘에 대 한 엔터티를 만드는 방법에 익숙한 가정 합니다. 이 항목을 저장소 또는 데이터 액세스 클래스; 만드는 방법에 대 한 세부 정보를 제공 하지 않습니다. ASP.NET Core Id 작업할 때 디자인 결정에 대 한 몇 가지 제안 사항 제공 합니다.
 
-사용자 지정 된 저장소 공급자에 대 한 데이터 액세스 계층을 디자인할 때 원하는 대로 많은 해야 합니다. 응용 프로그램에서 사용 하려는 기능에 대 한 지 속성 메커니즘을 만드는 하기만 하면 됩니다. 예를 들어 앱에서 역할을 사용 하지 않는 경우 않아도 역할 또는 사용자 역할 연결에 대 한 저장소를 만드는 합니다. 기술 및 기존 인프라에는 ASP.NET Core Id의 기본 구현에서 매우 다른 구조가 필요할 수 있습니다. 데이터 액세스 계층, 저장소 구현 구조와 함께 작동 하는 논리를 제공할 수 있습니다.
+사용자 지정 된 저장소 공급자에 대 한 데이터 액세스 계층을 디자인할 때 원하는 대로 많은 해야 합니다. 응용 프로그램에서 사용 하려는 기능에 대 한 지 속성 메커니즘을 만드는 하기만 하면 됩니다. 예를 들어 앱에서 역할을 사용 하지 않는 경우에 역할 또는 사용자 역할 연결에 대 한 저장소를 만들 필요가 없습니다. 기술 및 기존 인프라에는 ASP.NET Core Id의 기본 구현에서 매우 다른 구조가 필요할 수 있습니다. 데이터 액세스 계층, 저장소 구현 구조와 함께 작동 하는 논리를 제공할 수 있습니다.
 
 데이터 액세스 계층을 데이터 소스에서 ASP.NET Core Id 데이터를 저장 하는 논리를 제공 합니다. 사용자 지정 된 저장소 공급자에 대 한 데이터 액세스 계층에는 사용자 및 역할 정보를 저장 하는 다음 클래스가 포함 될 수 있습니다.
 

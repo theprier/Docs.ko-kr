@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6a1533b80828532b756940d0b08fe4c6dab2d5dd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 95c0b72e3811dc23f8bdea180be5b20800ab3bd8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="logging-error-details-with-aspnet-health-monitoring-vb"></a>ASP.NET 상태 모니터링 (VB)를 사용 하 여 오류 세부 정보를 로깅
 ====================
@@ -43,13 +43,13 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="exploring-the-health-monitoring-systems-configuration"></a>상태 시스템의 구성을 모니터링 탐색
 
-상태 시스템의 동작 모니터링에 있는 해당 구성 정보에 의해 정의 됩니다는 [ `<healthMonitoring>` 요소](https://msdn.microsoft.com/en-us/library/2fwh2ss9.aspx) 에서 `Web.config`합니다. 이 구성 섹션의 정보는 다음 세 가지 중요 한 부분 무엇 보다도 정의합니다.
+상태 시스템의 동작 모니터링에 있는 해당 구성 정보에 의해 정의 됩니다는 [ `<healthMonitoring>` 요소](https://msdn.microsoft.com/library/2fwh2ss9.aspx) 에서 `Web.config`합니다. 이 구성 섹션의 정보는 다음 세 가지 중요 한 부분 무엇 보다도 정의합니다.
 
 1. 상태 모니터링 이벤트를 기록해 야, 발생 하는 경우
 2. 로그 원본 및
 3. 각 상태 모니터링 (1)에 정의 된 이벤트 로그 소스에 매핑하는 방법을 (2)에서 정의 합니다.
 
-이 정보는 세 명의 하위 구성 요소를 통해 지정 되어: [ `<eventMappings>` ](https://msdn.microsoft.com/en-us/library/yc5yk01w.aspx), [ `<providers>` ](https://msdn.microsoft.com/en-us/library/zaa41kz1.aspx), 및 [ `<rules>` ](https://msdn.microsoft.com/en-us/library/fe5wyxa0.aspx)각각.
+이 정보는 세 명의 하위 구성 요소를 통해 지정 되어: [ `<eventMappings>` ](https://msdn.microsoft.com/library/yc5yk01w.aspx), [ `<providers>` ](https://msdn.microsoft.com/library/zaa41kz1.aspx), 및 [ `<rules>` ](https://msdn.microsoft.com/library/fe5wyxa0.aspx)각각.
 
 기본 상태 시스템 구성 정보를 모니터링에서 확인할 수 있습니다는 `Web.config` 파일 `%WINDIR%\Microsoft.NET\Framework\version\CONFIG` 폴더입니다. 이 기본 구성 정보를 간단 하 게 나타내기에 대 한 제거 일부 태그와 함께 아래 나와 있습니다.
 
@@ -114,7 +114,7 @@ ms.lasthandoff: 11/10/2017
 2. 등록에서 전자 메일 로그 소스 공급자는 `<providers>` 요소 및
 3. 항목을 추가 `<rules>` "모든 오류가" 이벤트 로그 소스 공급자 (2) 단계에서 추가한에 매핑하는 요소입니다.
 
-두 개의 전자 메일 로그 소스 공급자 클래스를 포함 하는 상태 시스템 모니터링: `SimpleMailWebEventProvider` 및 `TemplatedMailWebEventProvider`합니다. [ `SimpleMailWebEventProvider` 클래스](https://msdn.microsoft.com/en-us/library/system.web.management.simplemailwebeventprovider.aspx) 자세히 설명 하 고 전자 메일 본문의 사용자 지정이 거의 제공 하는 이벤트를 포함 하는 일반 텍스트 전자 메일 메시지를 보냅니다. 와 [ `TemplatedMailWebEventProvider` 클래스](https://msdn.microsoft.com/en-us/library/system.web.management.templatedmailwebeventprovider.aspx) 렌더링 된 피드백 전자 메일 메시지 본문으로 사용 되는 ASP.NET 페이지를 지정 합니다. [ `TemplatedMailWebEventProvider` 클래스](https://msdn.microsoft.com/en-us/library/system.web.management.templatedmailwebeventprovider.aspx) 내용과 전자 메일 메시지의 서식을 통해 보다 광범위 제어를 제공 하지만 전자 메일 메시지의 본문을 생성 하는 ASP.NET 페이지를 만들어야 할 때 좀 더 선행 작업이 필요 하지 않습니다. 이 자습서를 사용 하 여 중점적는 `SimpleMailWebEventProvider` 클래스입니다.
+두 개의 전자 메일 로그 소스 공급자 클래스를 포함 하는 상태 시스템 모니터링: `SimpleMailWebEventProvider` 및 `TemplatedMailWebEventProvider`합니다. [ `SimpleMailWebEventProvider` 클래스](https://msdn.microsoft.com/library/system.web.management.simplemailwebeventprovider.aspx) 자세히 설명 하 고 전자 메일 본문의 사용자 지정이 거의 제공 하는 이벤트를 포함 하는 일반 텍스트 전자 메일 메시지를 보냅니다. 와 [ `TemplatedMailWebEventProvider` 클래스](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) 렌더링 된 피드백 전자 메일 메시지 본문으로 사용 되는 ASP.NET 페이지를 지정 합니다. [ `TemplatedMailWebEventProvider` 클래스](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) 내용과 전자 메일 메시지의 서식을 통해 보다 광범위 제어를 제공 하지만 전자 메일 메시지의 본문을 생성 하는 ASP.NET 페이지를 만들어야 할 때 좀 더 선행 작업이 필요 하지 않습니다. 이 자습서를 사용 하 여 중점적는 `SimpleMailWebEventProvider` 클래스입니다.
 
 상태 시스템의 모니터링 업데이트 `<providers>` 요소에는 `Web.config` 파일에 대 한 로그 소스를 포함 하는 `SimpleMailWebEventProvider` 클래스:
 
@@ -139,7 +139,7 @@ ms.lasthandoff: 11/10/2017
 
 ASP.NET 상태 모니터링 시스템은 관리자가 배포 된 웹 응용 프로그램의 상태를 모니터링할 수 있도록 설계 되었습니다. 상태 모니터링 이벤트 응용 프로그램 중지 시 때 사용자 성공적으로 사이트에 로그온을 같은 특정 작업 펼침 또는 처리 되지 않은 예외가 발생할 때 발생 합니다. 이러한 이벤트는 임의 개수의 원본 로그에 기록할 수 있습니다. 이 자습서에는 데이터베이스에 및 전자 메일 메시지를 통해 처리 되지 않은 예외의 세부 정보를 기록 하는 방법을 배웠습니다.
 
-이 자습서에 처리 되지 않은 예외를 기록 하지만 상태 모니터링은 배포 된 ASP.NET 응용 프로그램의 전반적인 상태를 측정 하도록 설계 된 및 다양 한 상태 모니터링 이벤트만 포함 되어 염두에 둬야 및 소스를 하지 로그 모니터링 상태를 사용 하 여에 집중 여기를 탐색 합니다. 더구나 고유한 상태 모니터링 이벤트 및 로그 소스를 만들 수 필요한 발생 합니다. 좋은 파악 하는 상태 모니터링에 대 한 더 자세히 알고 싶은 경우 [Erik Reitan](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)의 [상태 모니터링 FAQ](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)합니다. 그런 다음, 참조 [방법: ASP.NET 2.0에서 사용 하 여 상태 모니터링](https://msdn.microsoft.com/en-us/library/ms998306.aspx)합니다.
+이 자습서에 처리 되지 않은 예외를 기록 하지만 상태 모니터링은 배포 된 ASP.NET 응용 프로그램의 전반적인 상태를 측정 하도록 설계 된 및 다양 한 상태 모니터링 이벤트만 포함 되어 염두에 둬야 및 소스를 하지 로그 모니터링 상태를 사용 하 여에 집중 여기를 탐색 합니다. 더구나 고유한 상태 모니터링 이벤트 및 로그 소스를 만들 수 필요한 발생 합니다. 좋은 파악 하는 상태 모니터링에 대 한 더 자세히 알고 싶은 경우 [Erik Reitan](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)의 [상태 모니터링 FAQ](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)합니다. 그런 다음, 참조 [방법: ASP.NET 2.0에서 사용 하 여 상태 모니터링](https://msdn.microsoft.com/library/ms998306.aspx)합니다.
 
 만족도 매우 프로그래밍!
 
@@ -147,11 +147,11 @@ ASP.NET 상태 모니터링 시스템은 관리자가 배포 된 웹 응용 프�
 
 이 자습서에 설명 된 항목에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
-- [ASP.NET 상태 모니터링 개요](https://msdn.microsoft.com/en-us/library/bb398933.aspx)
+- [ASP.NET 상태 모니터링 개요](https://msdn.microsoft.com/library/bb398933.aspx)
 - [구성 및 상태 모니터링 시스템의 ASP.NET 사용자 지정](http://dotnetslackers.com/articles/aspnet/ConfiguringAndCustomizingTheHealthMonitoringSystemOfASPNET.aspx)
 - [FAQ-상태 모니터링 ASP.NET 2.0에서](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)
-- [방법: 상태 모니터링 알림을 위한 전자 메일 보내기](https://msdn.microsoft.com/en-us/library/ms227553.aspx)
-- [방법: ASP.NET에서 상태 모니터링 사용](https://msdn.microsoft.com/en-us/library/ms998306.aspx)
+- [방법: 상태 모니터링 알림을 위한 전자 메일 보내기](https://msdn.microsoft.com/library/ms227553.aspx)
+- [방법: ASP.NET에서 상태 모니터링 사용](https://msdn.microsoft.com/library/ms998306.aspx)
 - [ASP.NET에서 모니터링 하는 상태](http://aspnet.4guysfromrolla.com/articles/031407-1.aspx)
 
 >[!div class="step-by-step"]

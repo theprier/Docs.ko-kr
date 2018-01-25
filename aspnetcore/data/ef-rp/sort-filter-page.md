@@ -8,11 +8,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: 08f00e183dd8a8daa883d0b9ff15698b3a39f625
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 24649374b71da39d638d943617a219d45f064846
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="sorting-filtering-paging-and-grouping---ef-core-with-razor-pages-3-of-8"></a>정렬, 필터링, 페이징 및 그룹화-EF 코어 Razor 페이지 (3 / 8)
 
@@ -71,7 +71,7 @@ ms.lasthandoff: 01/19/2018
 
 [!code-csharp[Main](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortOnly&highlight=6-)]
 
- 경우는`IQueryable` 를 만들거나 수정 하 고, 데이터베이스에 쿼리가 전송 됩니다. 쿼리 될 때까지 실행 되지 않습니다는 `IQueryable` 개체 컬렉션으로 변환 됩니다. `IQueryable`와 같은 메서드를 호출 하 여 컬렉션으로 변환 됩니다 `ToListAsync`합니다. 따라서는 `IQueryable` 되어야 다음 문을 실행 하는 단일 쿼리 결과 코드:
+ 경우는`IQueryable` 를 만들거나 수정 하 고, 데이터베이스에 쿼리가 전송 됩니다. 쿼리 될 때까지 실행 하지 않으면는 `IQueryable` 개체 컬렉션으로 변환 됩니다. `IQueryable`와 같은 메서드를 호출 하 여 컬렉션으로 변환 됩니다 `ToListAsync`합니다. 따라서는 `IQueryable` 되어야 다음 문을 실행 하는 단일 쿼리 결과 코드:
 
 [!code-csharp[Main](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortOnlyRtn)]
 
@@ -139,7 +139,7 @@ ms.lasthandoff: 01/19/2018
 
 [!code-html[](intro/samples/cu/Pages/Students/Index3.cshtml?highlight=14-23&range=1-25)]
 
-앞의 코드를 사용 하 여는 `<form>` [태그 도우미](xref:mvc/views/tag-helpers/intro) 검색 텍스트 상자 및 단추를 추가 합니다. 기본적으로는 `<form>` 태그 도우미는 POST로 양식 데이터를 전송 합니다. Post, 매개 변수는 URL 및 HTTP 메시지 본문에 전달 됩니다. HTTP GET을 사용 하는 양식 데이터 URL에 쿼리 문자열로 전달 됩니다. URL에 책갈피를 사용 하면 쿼리 문자열을 사용 하 여 데이터를 전달 합니다. [W3C 지침](https://www.w3.org/2001/tag/doc/whenToUseGet.html) 작업이 업데이트 되지 않습니다 경우 GET를 사용 해야 하는 것이 좋습니다.
+앞의 코드를 사용 하 여는 `<form>` [태그 도우미](xref:mvc/views/tag-helpers/intro) 검색 텍스트 상자 및 단추를 추가 합니다. 기본적으로는 `<form>` 태그 도우미는 POST로 양식 데이터를 전송 합니다. Post, 매개 변수는 URL 및 HTTP 메시지 본문에 전달 됩니다. HTTP GET을 사용 하는 양식 데이터 URL에 쿼리 문자열로 전달 됩니다. URL에 책갈피를 사용 하면 쿼리 문자열을 사용 하 여 데이터를 전달 합니다. [W3C 지침](https://www.w3.org/2001/tag/doc/whenToUseGet.html) 동작 하지 않는 업데이트 될 경우 GET에 사용 해야 하는 것이 좋습니다.
 
 앱을 테스트합니다.
 
@@ -201,7 +201,7 @@ http://localhost:5000/Students?SearchString=an
 검색 문자열 페이징 하는 동안 변경 되 면 페이지 1로 다시 설정 됩니다. 페이지에서 표시할 다른 데이터를 새 필터 발생할 수 있기 때문에 1로 다시 사용 해야 합니다. 검색 값을 입력 하는 경우 및 **전송** 을 선택 합니다.
 
 * 검색 문자열이 변경 됩니다.
-* `searchString` 매개 변수는 null입니다.
+* `searchString` null이 아닌 매개 변수입니다.
 
 [!code-csharp[Main](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage3)]
 

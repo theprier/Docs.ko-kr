@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/extensibility/key-management
-ms.openlocfilehash: 2bd0f945306a7acd6252c2a00aafb648cf722616
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: d748ee9d3edf9eed4285fab447d5b379dfcd937c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="key-management-extensibility"></a>키 관리 확장성
 
@@ -59,7 +59,7 @@ ms.lasthandoff: 01/19/2018
 * 하나 이상의 키를 해지 하 고 저장소는 해지 정보를 저장 합니다.
 
 >[!WARNING]
-> 작성 한 `IKeyManager` 는 고급 작업이 며 대부분의 개발자는 시도 하지 않아야 합니다. 대신 대부분의 개발자가 제공 하는 기능 사용 해야는 [XmlKeyManager](xref:security/data-protection/extensibility/key-management#data-protection-extensibility-key-management-xmlkeymanager) 클래스입니다.
+> 작성 한 `IKeyManager` 는 고급 작업이 며 대부분의 개발자가 려 서는 안 됩니다. 대신 대부분의 개발자가 제공 하는 기능 사용 해야는 [XmlKeyManager](xref:security/data-protection/extensibility/key-management#data-protection-extensibility-key-management-xmlkeymanager) 클래스입니다.
 
 <a name="data-protection-extensibility-key-management-xmlkeymanager"></a>
 

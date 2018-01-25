@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/readme
 msc.type: content
-ms.openlocfilehash: 90f24550d2bb50147bab6be545be63c1838f312a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b8402aa3db1b2566878c4d56212facbbb2925eec
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="webmatrix-readme"></a>WebMatrix 추가 정보
 ====================
@@ -135,7 +135,7 @@ ms.lasthandoff: 11/10/2017
 > [!code-xml[Main](overview/samples/sample1.xml)]
 
 
-#### <a id="Changes"></a>변경 내용
+#### <a id="Changes"></a>  Changes
 
 #### <a name="change-webpagesadminfoldervirtualpath-key-renamed-to-aspadminfoldervirtualpath"></a>변경 사항: "webPages:AdminFolderVirtualPath" 키 "asp: AdminFolderVirtualPath"로 변경
 
@@ -218,7 +218,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > [!code-xml[Main](overview/samples/sample2.xml)]
 > 
-> 프록시 서버를 구성 하는 방법에 대 한 자세한 내용은 참조 [ &lt;프록시&gt; 요소 (네트워크 설정)](https://msdn.microsoft.com/en-us/library/sa91de1e.aspx) MSDN 웹 사이트에 있습니다.
+> 프록시 서버를 구성 하는 방법에 대 한 자세한 내용은 참조 [ &lt;프록시&gt; 요소 (네트워크 설정)](https://msdn.microsoft.com/library/sa91de1e.aspx) MSDN 웹 사이트에 있습니다.
 
 
 #### <a name="issue-uninstalling-the-net-framework-version-4-disables-aspnet-web-pages-with-razor-syntax"></a>문제: Razor 구문이 있는 ASP.NET 웹 페이지를 사용 하지 않도록 설정.NET Framework 버전 4 제거 합니다.
@@ -257,10 +257,10 @@ ms.lasthandoff: 11/10/2017
 > 
 > 1. 데이터베이스 엔진 어셈블리를 복사는 *Bin* 대상 컴퓨터에 응용 프로그램의 폴더 (및 하위 폴더):  
 > 
->     - 복사 *C:\Program Files\Microsoft SQL Server Edition\v4.0\Desktop\System.Data.SqlServerCe.dll*   
->         **** *\Bin*
->     - 복사 *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\* * *를***\Bin\x86*
->     - 복사 *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\** **를***\Bin\amd64*
+>     - Copy *C:\Program Files\Microsoft SQL Server Edition\v4.0\Desktop\System.Data.SqlServerCe.dll*   
+>         **to** *\Bin*
+>     - Copy *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\****to***\Bin\x86*
+>     - Copy *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\** **to***\Bin\amd64*
 > 2. 웹 사이트의 루트 폴더에 작성 하거나 열을 *web.config* 파일입니다. (이 파일 형식은 WebMatrix 1.0에서 클릭 하면 사용할 수는 **모든** 에 **파일 형식을 선택** 대화 상자.)
 > 3. 다음 요소를 자식으로 추가 된 `<configuration>` 요소 (에 포함 되지 않은 `<system.web>` 요소):
 > 
@@ -400,7 +400,7 @@ ms.lasthandoff: 11/10/2017
 
 IIS Express에 다음 URL에서 사용할 수 있는 추가 정보 파일을 사용 하는 자체 있습니다.
 
-[https://go.microsoft.com/fwlink/?LinkID=207675&amp;clcid = 0x409](https://go.microsoft.com/fwlink/?LinkID=207675&amp;clcid=0x409)
+[https://go.microsoft.com/fwlink/?LinkID=207675&amp;clcid=0x409](https://go.microsoft.com/fwlink/?LinkID=207675&amp;clcid=0x409)
 
 <a id="Known_Issues_SQLServerCompact"></a>
 
@@ -563,4 +563,4 @@ WebMatrix 1.0에 대 한 자세한 내용은 다음 웹 사이트를 참조 하�
 - [ASP.NET](https://asp.net/webmatrix)
 - [Microsoft.com/web](https://www.microsoft.com/web)
 
-© 2011 Microsoft Corporation입니다. All Rights Reserved. [사용 약관](https://msdn.microsoft.com/en-us/cc300389.aspx)합니다.
+© 2011 Microsoft Corporation. All Rights Reserved. [사용 약관](https://msdn.microsoft.cos/cc300389.aspx)합니다.

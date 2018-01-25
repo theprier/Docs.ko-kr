@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: 78a54fb1b0e4c0ebd5445cca175103471925a065
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 323ee44f43f6d4081bd9ba50791755696bc9128f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-8"></a>먼저 Entity Framework 4.0 데이터베이스와 시작 및 ASP.NET 4 Web Forms-8 부
 ====================
@@ -125,11 +125,11 @@ ms.lasthandoff: 11/10/2017
 
 - [Entity Framework FAQ](http://www.ef-faq.org/introduction.html)
 - [Entity Framework 팀 블로그](https://blogs.msdn.com/b/adonet/)
-- [MSDN Library에서 entity Framework](https://msdn.microsoft.com/en-us/library/bb399572.aspx)
-- [MSDN 데이터 개발자 센터에서 entity Framework](https://msdn.microsoft.com/en-us/data/ef.aspx)
-- [MSDN Library에서 EntityDataSource 웹 서버 컨트롤 개요](https://msdn.microsoft.com/en-us/library/cc488502.aspx)
-- [EntityDataSource 컨트롤 MSDN 라이브러리의 API 참조](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.entitydatasource.aspx)
-- [Entity Framework 포럼](https://social.msdn.microsoft.com/forums/en-US/adodotnetentityframework/)
+- [MSDN Library에서 entity Framework](https://msdn.microsoft.com/library/bb399572.aspx)
+- [MSDN 데이터 개발자 센터에서 entity Framework](https://msdn.microsoft.com/data/ef.aspx)
+- [MSDN Library에서 EntityDataSource 웹 서버 컨트롤 개요](https://msdn.microsoft.com/library/cc488502.aspx)
+- [EntityDataSource 컨트롤 MSDN 라이브러리의 API 참조](https://msdn.microsoft.com/library/system.web.ui.webcontrols.entitydatasource.aspx)
+- [Entity Framework 포럼](https://social.msdn.microsoft.com/forums/adodotnetentityframework/)
 - [Julie Lerman 블로그](http://thedatafarm.com/blog/)
 
 >[!div class="step-by-step"]

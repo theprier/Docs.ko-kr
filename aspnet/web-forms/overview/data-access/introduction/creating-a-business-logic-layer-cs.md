@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-business-logic-layer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d117456521442972f1bfcfc15a4e8e7253e07e53
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7518ddd11a05a9e3d5df85e3cf6ceffa09a25060
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-business-logic-layer-c"></a>비즈니스 논리 계층 (C#) 만들기
 ====================
@@ -56,7 +56,7 @@ DAL;에서 각 TableAdapter에 대해 하나씩 네 개의 클래스 우리의 B
 다음으로, 단순히 첫 번째 자습서에서 Tableadapter에 대해 정의 된 메서드를 래핑하는 클래스의 각 메서드를 추가 해 보겠습니다. 이제 이러한 메서드는 호출 하 게 직접 DAL; 필요한 비즈니스 논리를 추가 하려면 이상 반환 합니다.
 
 > [!NOTE]
-> Visual Studio Standard Edition을 사용 하는 이상 (본인이 즉, *하지* Visual Web Developer를 사용 하 여)을 시각적으로 사용 하 여 클래스를 선택적으로 디자인할 수 있습니다는 [클래스 디자이너](https://msdn.microsoft.com/library/default.asp?url=/library/en-us/dv_vstechart/html/clssdsgnr.asp)합니다. 참조는 [클래스 디자이너 블로그](https://blogs.msdn.com/classdesigner/default.aspx) Visual Studio에서이 새로운 기능에 대 한 자세한 내용은 합니다.
+> Visual Studio Standard Edition을 사용 하는 이상 (본인이 즉, *하지* Visual Web Developer를 사용 하 여)을 시각적으로 사용 하 여 클래스를 선택적으로 디자인할 수 있습니다는 [클래스 디자이너](https://msdn.microsoft.com/library/default.asp?url=/library/dv_vstechart/html/clssdsgnr.asp)합니다. 참조는 [클래스 디자이너 블로그](https://blogs.msdn.com/classdesigner/default.aspx) Visual Studio에서이 새로운 기능에 대 한 자세한 내용은 합니다.
 
 
 에 대 한는 `ProductsBLL` 클래스는 총 7 개의 메서드를 추가 해야 합니다.
@@ -76,7 +76,7 @@ ProductsBLL.cs
 
 단순히 데이터를 반환 하는 메서드가 `GetProducts`, `GetProductByProductID`, `GetProductsByCategoryID`, 및 `GetProductBySuppliersID` 은 단순히 호출 DAL에는 매우 간단 합니다. 일부 시나리오에서 있습니다 수 있지만 구현 되어야 하는 비즈니스 규칙 (예: 현재 로그온된 한 사용자 또는 사용자가 속한 역할 기반 권한 부여 규칙)이이 수준에서 단순히 두겠습니다 이러한 방법으로-됩니다. 이러한 방법에 대 한 다음, BLL 프록시로 사용 되어 단순히는는 프레젠테이션 계층 데이터 액세스 계층에서 기본 데이터에 액세스 합니다.
 
-`AddProduct` 및 `UpdateProduct` 메서드 둘 다 매개 변수로 다양 한 제품 필드에 대 한 값 및 새 제품을 추가 하거나 기존을 각각 업데이트 합니다. 다양 한 이후는 `Product` 테이블의 열을 사용할 수 `NULL` 값 (`CategoryID`, `SupplierID`, 및 `UnitPrice`, 등), 이러한 입력 매개 변수를 `AddProduct` 및 `UpdateProduct` 이러한 열 사용 매핑되[nullable 형식](https://msdn.microsoft.com/en-us/library/1t3y8s4s(v=vs.80).aspx)합니다. Nullable 형식은.NET 2.0에 새로 고 여야 하는지 여부를 값 형식 해야 대신 나타내는 기술을 제공 `null`합니다. C#에서 플래그를 지정 하면 값 형식을 nullable 형식으로 추가 하 여 `?` 된 형식의 이름을 따서 (같은 `int? x;`). 참조는 [Nullable 형식](https://msdn.microsoft.com/en-us/library/1t3y8s4s.aspx) 섹션는 [C# 프로그래밍 가이드](https://msdn.microsoft.com/en-us/library/67ef8sbd%28VS.80%29.aspx) 자세한 정보에 대 한 합니다.
+`AddProduct` 및 `UpdateProduct` 메서드 둘 다 매개 변수로 다양 한 제품 필드에 대 한 값 및 새 제품을 추가 하거나 기존을 각각 업데이트 합니다. 다양 한 이후는 `Product` 테이블의 열을 사용할 수 `NULL` 값 (`CategoryID`, `SupplierID`, 및 `UnitPrice`, 등), 이러한 입력 매개 변수를 `AddProduct` 및 `UpdateProduct` 이러한 열 사용 매핑되[nullable 형식](https://msdn.microsoft.com/library/1t3y8s4s(v=vs.80).aspx)합니다. Nullable 형식은.NET 2.0에 새로 고 여야 하는지 여부를 값 형식 해야 대신 나타내는 기술을 제공 `null`합니다. C#에서 플래그를 지정 하면 값 형식을 nullable 형식으로 추가 하 여 `?` 된 형식의 이름을 따서 (같은 `int? x;`). 참조는 [Nullable 형식](https://msdn.microsoft.com/library/1t3y8s4s.aspx) 섹션는 [C# 프로그래밍 가이드](https://msdn.microsoft.com/library/67ef8sbd%28VS.80%29.aspx) 자세한 정보에 대 한 합니다.
 
 세 가지 방법이 모두 행 된 삽입, 업데이트 또는 영향을 받는 행의 작업을 발생 하지 않을 수 있으므로 삭제 여부를 나타내는 부울 값을 반환 합니다. 예를 들어, 페이지 개발자 호출 하는 경우 `DeleteProduct` 전달는 `ProductID` 존재 하지 않는 제품에 대 한는 `DELETE` 데이터베이스에 실행 된 문이 아무 영향도 주지 것입니다 따라서 및는 `DeleteProduct` 메서드는 반환 `false`합니다.
 
@@ -86,7 +86,7 @@ ProductsBLL.cs
 
 `UpdateProduct` 를 사용 하 여 업데이트 제품에 먼저 로드 `GetProductByProductID(productID)`합니다. 이 데이터베이스에는 불필요 한 이동 처럼 보일 수 있지만,이 추가로 이동은 낙관적 동시성을 탐색 하는 이후 자습서에 것입니다. 낙관적 동시성은 작업 하는 동시에 동일한 데이터에서 두 사용자가 다른의 변경 내용을 덮어쓸 실수로 하지 확인 하는 기법입니다. 전체 레코드를 클릭 한 다음도 쉽게 수만 데이터 행의 열 하위 집합을 수정 하는 BLL에 update 메서드를 만듭니다. 탐색 우리는 `SuppliersBLL` 클래스 예제를 살펴보겠습니다.
 
-마지막으로, 유의 `ProductsBLL` 클래스에는 [DataObject 특성](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataobjectattribute.aspx) 적용 (의 `[System.ComponentModel.DataObject]` 파일의 맨 위 근처에 class 문 바로 앞에 구문) 메서드가 있고 [ DataObjectMethodAttribute 특성](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataobjectmethodattribute.aspx)합니다. `DataObject` 특성 클래스는 개체에 대 한 바인딩에 적합 한 것으로 표시 된 [ObjectDataSource 컨트롤](https://msdn.microsoft.com/en-us/library/9a4kyhcx.aspx)반면는 `DataObjectMethodAttribute` 메서드의 용도 나타냅니다. 자습서 나중에 볼 수 있겠지만, ASP.NET 2.0 ObjectDataSource 쉽게 선언적으로 클래스에서 데이터에 액세스할 수 있습니다. ObjectDataSource의 마법사에서 바인딩할 가능한 클래스 목록 필터링을 위해 기본적으로 표시 된 클래스만 `DataObjects` 마법사의 드롭다운 목록에 표시 됩니다. `ProductsBLL` 클래스와 마찬가지로 이러한 특성이 없는 작동 하지만 ObjectDataSource의 마법사에서 사용 하기 쉽게에 추가 합니다.
+마지막으로, 유의 `ProductsBLL` 클래스에는 [DataObject 특성](https://msdn.microsoft.com/library/system.componentmodel.dataobjectattribute.aspx) 적용 (의 `[System.ComponentModel.DataObject]` 파일의 맨 위 근처에 class 문 바로 앞에 구문) 메서드가 있고 [ DataObjectMethodAttribute 특성](https://msdn.microsoft.com/library/system.componentmodel.dataobjectmethodattribute.aspx)합니다. `DataObject` 특성 클래스는 개체에 대 한 바인딩에 적합 한 것으로 표시 된 [ObjectDataSource 컨트롤](https://msdn.microsoft.com/library/9a4kyhcx.aspx)반면는 `DataObjectMethodAttribute` 메서드의 용도 나타냅니다. 자습서 나중에 볼 수 있겠지만, ASP.NET 2.0 ObjectDataSource 쉽게 선언적으로 클래스에서 데이터에 액세스할 수 있습니다. ObjectDataSource의 마법사에서 바인딩할 가능한 클래스 목록 필터링을 위해 기본적으로 표시 된 클래스만 `DataObjects` 마법사의 드롭다운 목록에 표시 됩니다. `ProductsBLL` 클래스와 마찬가지로 이러한 특성이 없는 작동 하지만 ObjectDataSource의 마법사에서 사용 하기 쉽게에 추가 합니다.
 
 ## <a name="adding-the-other-classes"></a>다른 클래스를 추가합니다.
 
@@ -144,7 +144,7 @@ BLL 클래스는 ObjectDataSource를 사용 하 여 선언적 (형식화 된 데
 - `ProductID`, `ProductName`, 및 `Discontinued` 필드는 필요 하지만 다른 모든 필드는 선택 사항
 - `UnitPrice`, `UnitsInStock`, `UnitsOnOrder`, 및 `ReorderLevel` 필드는 0 보다 크거나 이어야 합니다
 
-이러한 규칙 수 및 데이터베이스 수준에서 표시 해야 합니다. 문자 제한에는 `ProductName` 및 `QuantityPerUnit` 필드에 있는 해당 열의 데이터 형식에서 캡처되는 `Products` 테이블 (`nvarchar(40)` 및 `nvarchar(20)`각각). 데이터베이스 테이블 열에서 허용 하는 경우 하 여 표현 됩니다 필수 및 선택적 필드 인지 `NULL` s입니다. 4 개의 [check 제약 조건](https://msdn.microsoft.com/en-us/library/ms188258.aspx) 존재만 값이 0 보다 크거나 같은 경우에 사용할 수 있는지 확인 하는 `UnitPrice`, `UnitsInStock`, `UnitsOnOrder`, 또는 `ReorderLevel` 열입니다.
+이러한 규칙 수 및 데이터베이스 수준에서 표시 해야 합니다. 문자 제한에는 `ProductName` 및 `QuantityPerUnit` 필드에 있는 해당 열의 데이터 형식에서 캡처되는 `Products` 테이블 (`nvarchar(40)` 및 `nvarchar(20)`각각). 데이터베이스 테이블 열에서 허용 하는 경우 하 여 표현 됩니다 필수 및 선택적 필드 인지 `NULL` s입니다. 4 개의 [check 제약 조건](https://msdn.microsoft.com/library/ms188258.aspx) 존재만 값이 0 보다 크거나 같은 경우에 사용할 수 있는지 확인 하는 `UnitPrice`, `UnitsInStock`, `UnitsOnOrder`, 또는 `ReorderLevel` 열입니다.
 
 데이터베이스에서 이러한 규칙을 적용 하는 것 외에도 이러한 해야 적용 될 데이터 집합 수준. 사실, 필드 길이 및 값이 필수 또는 선택적인 이미 DataColumns의 각 데이터 테이블 집합에 대 한 캡처. 자동으로 제공 하는 기존 필드 수준 유효성 검사를 보려면 데이터 집합 디자이너로 이동 하는 Datatable 중 하나에서 필드를 선택 하 고 속성 창으로 이동 하 여 합니다. 그림 4에서 볼 수 있듯이 `QuantityPerUnit` DataColumn에는 `ProductsDataTable` 최대 길이는 20 자가 고 허용 않는 `NULL` 값입니다. 설정 하려고 하면는 `ProductsDataRow`의 `QuantityPerUnit` 속성을 문자열 값을 20 자 보다 긴는 `ArgumentException` throw 됩니다.
 
@@ -154,7 +154,7 @@ BLL 클래스는 ObjectDataSource를 사용 하 여 선언적 (형식화 된 데
 **그림 4**: The DataColumn 제공 기본 필드 수준 유효성 검사 ([전체 크기 이미지를 보려면 클릭](creating-a-business-logic-layer-cs/_static/image8.png))
 
 
-그러나 우리 지정할 수 없습니다 범위 검사와 같은 `UnitPrice` 속성 창을 통해 0 보다 크거나 값 이어야 합니다. 이 형식의 필드 수준 유효성 검사를 제공 하기 위해 DataTable의에 대 한 이벤트 처리기를 만들고 해야 [ColumnChanging](https://msdn.microsoft.com/en-us/library/system.data.datatable.columnchanging%28VS.80%29.aspx) 이벤트입니다. 설명한 것 처럼는 [이전 자습서](creating-a-data-access-layer-cs.md), partial 클래스를 사용 하 여 입력 데이터 집합에서 생성 된 DataSet, Datatable 및 DataRow 개체를 확장할 수 있습니다. 만들 수 있습니다이 기술을 사용 하는 `ColumnChanging` 에 대 한 이벤트 처리기는 `ProductsDataTable` 클래스입니다. 클래스를 만들어 시작는 `App_Code` 라는 폴더 `ProductsDataTable.ColumnChanging.cs`합니다.
+그러나 우리 지정할 수 없습니다 범위 검사와 같은 `UnitPrice` 속성 창을 통해 0 보다 크거나 값 이어야 합니다. 이 형식의 필드 수준 유효성 검사를 제공 하기 위해 DataTable의에 대 한 이벤트 처리기를 만들고 해야 [ColumnChanging](https://msdn.microsoft.com/library/system.data.datatable.columnchanging%28VS.80%29.aspx) 이벤트입니다. 설명한 것 처럼는 [이전 자습서](creating-a-data-access-layer-cs.md), partial 클래스를 사용 하 여 입력 데이터 집합에서 생성 된 DataSet, Datatable 및 DataRow 개체를 확장할 수 있습니다. 만들 수 있습니다이 기술을 사용 하는 `ColumnChanging` 에 대 한 이벤트 처리기는 `ProductsDataTable` 클래스입니다. 클래스를 만들어 시작는 `App_Code` 라는 폴더 `ProductsDataTable.ColumnChanging.cs`합니다.
 
 
 [![App_Code 폴더에 새 클래스를 추가 합니다.](creating-a-business-logic-layer-cs/_static/image10.png)](creating-a-business-logic-layer-cs/_static/image9.png)
@@ -188,7 +188,7 @@ BLL 클래스 하 여 응용 프로그램의 비즈니스 규칙을 준수 검�
 
 ## <a name="responding-to-validation-errors-in-the-presentation-tier"></a>프레젠테이션 계층에서 유효성 검사 오류에 응답
 
-프레젠테이션 계층에서 BLL를 호출 하는 경우에 발생할 수 있습니다 또는 ASP.NET 전달 되도록 허용 하는 모든 예외를 처리 하도록 시도할 것인지를 결정할 수 있습니다 (발생 시키고는 `HttpApplication`의 `Error` 이벤트). BLL를 프로그래밍 방식으로 작업할 때 예외를 처리 하려면를 사용 하면 한 [try … catch](https://msdn.microsoft.com/en-us/library/0yd65esw.aspx) 다음 예제와 같이 블록:
+프레젠테이션 계층에서 BLL를 호출 하는 경우에 발생할 수 있습니다 또는 ASP.NET 전달 되도록 허용 하는 모든 예외를 처리 하도록 시도할 것인지를 결정할 수 있습니다 (발생 시키고는 `HttpApplication`의 `Error` 이벤트). BLL를 프로그래밍 방식으로 작업할 때 예외를 처리 하려면를 사용 하면 한 [try … catch](https://msdn.microsoft.com/library/0yd65esw.aspx) 다음 예제와 같이 블록:
 
 
 [!code-csharp[Main](creating-a-business-logic-layer-cs/samples/sample7.cs)]

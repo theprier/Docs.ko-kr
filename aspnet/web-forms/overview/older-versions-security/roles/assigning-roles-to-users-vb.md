@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/assigning-roles-to-users-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 528d6f844c68cc7077a86961f9c432e405f22ee7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c790f5f9b486b6598955459827c07ec9ad33ae38
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="assigning-roles-to-users-vb"></a>사용자 (VB)에 역할 할당
 ====================
@@ -81,13 +81,13 @@ DropDownList를 아래에 명명 된 반복기를 추가 `UsersRoleList`합니�
 
 [!code-vb[Main](assigning-roles-to-users-vb/samples/sample5.vb)]
 
-`BindUsersToUserList` 메서드를 통해 시스템에서 모든 사용자 계정을 검색는 [ `Membership.GetAllUsers` 메서드](https://msdn.microsoft.com/en-us/library/dy8swhya.aspx)합니다. 반환 합니다.는 [ `MembershipUserCollection` 개체](https://msdn.microsoft.com/en-us/library/system.web.security.membershipusercollection.aspx)의 컬렉션인 [ `MembershipUser` 인스턴스](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.aspx)합니다. 이 컬렉션에 바인딩된 다음는 `UserList` DropDownList 합니다. `MembershipUser` 컬렉션와 같은 다양 한 속성을 포함 하는 구성을 인스턴스 `UserName`, `Email`, `CreationDate`, 및 `IsOnline`합니다. 값을 표시할 DropDownList 지시 하기 위해는 `UserName` 속성을 확인는 `UserList` DropDownList의 `DataTextField` 및 `DataValueField` 속성이 "UserName"으로 설정 되어 있는지 합니다.
+`BindUsersToUserList` 메서드를 통해 시스템에서 모든 사용자 계정을 검색는 [ `Membership.GetAllUsers` 메서드](https://msdn.microsoft.com/library/dy8swhya.aspx)합니다. 반환 합니다.는 [ `MembershipUserCollection` 개체](https://msdn.microsoft.com/library/system.web.security.membershipusercollection.aspx)의 컬렉션인 [ `MembershipUser` 인스턴스](https://msdn.microsoft.com/library/system.web.security.membershipuser.aspx)합니다. 이 컬렉션에 바인딩된 다음는 `UserList` DropDownList 합니다. `MembershipUser` 컬렉션와 같은 다양 한 속성을 포함 하는 구성을 인스턴스 `UserName`, `Email`, `CreationDate`, 및 `IsOnline`합니다. 값을 표시할 DropDownList 지시 하기 위해는 `UserName` 속성을 확인는 `UserList` DropDownList의 `DataTextField` 및 `DataValueField` 속성이 "UserName"으로 설정 되어 있는지 합니다.
 
 > [!NOTE]
 > `Membership.GetAllUsers` 메서드에 두 개의 오버 로드가: 입력된 된 매개 변수를 허용 하 고 모든 사용자가 반환 하 고 다른 하나는 인덱스 페이지 및 페이지 크기에 대 한 정수 값에서 사용 하 고는 사용자의 하위 집합에 지정 된 반환 합니다. 있는 경우 많은 양의 페이징할 수 있는 사용자 인터페이스 요소에 표시 되는 사용자 계정, 두 번째 오버 로드 데 사용할 수에서 사용자가 페이지 보다 효율적으로 모두가 아닌 사용자 계정의 정확한 하위 집합만 반환 하기 때문입니다.
 
 
-`BindRolesToList` 메서드를 호출 하 여 시작 된 `Roles` 클래스의 [ `GetAllRoles` 메서드](https://msdn.microsoft.com/en-us/library/system.web.security.roles.getallroles.aspx), 시스템에서 역할을 포함 하는 문자열 배열을 반환 하는입니다. 이 문자열 배열 반복기에 바인딩됩니다.
+`BindRolesToList` 메서드를 호출 하 여 시작 된 `Roles` 클래스의 [ `GetAllRoles` 메서드](https://msdn.microsoft.com/library/system.web.security.roles.getallroles.aspx), 시스템에서 역할을 포함 하는 문자열 배열을 반환 하는입니다. 이 문자열 배열 반복기에 바인딩됩니다.
 
 마지막으로, 페이지 처음 로드 될 때이 두 메서드를 호출 해야 합니다. 다음 코드를 `Page_Load` 이벤트 처리기에 추가합니다.
 
@@ -107,10 +107,10 @@ DropDownList를 아래에 명명 된 반복기를 추가 `UsersRoleList`합니�
 
 [!code-vb[Main](assigning-roles-to-users-vb/samples/sample7.vb)]
 
-위의 코드는 선택한 사용자를 확인 하 여 시작 합니다. 역할 클래스의 사용 하 여 다음 [ `GetRolesForUser(userName)` 메서드](https://msdn.microsoft.com/en-us/library/system.web.security.roles.getrolesforuser.aspx) 역할을 문자열 배열로 지정된 된 사용자의 집합을 반환 합니다. 반복기의 항목 열거 되는 다음으로, 및 각 항목의 `RoleCheckBox` 확인란을 선택은 프로그래밍 방식으로 참조 합니다. 에 해당 역할에 포함 된 경우에에서 확인란을 선택는 `selectedUsersRoles` 문자열 배열을 반환 합니다.
+위의 코드는 선택한 사용자를 확인 하 여 시작 합니다. 역할 클래스의 사용 하 여 다음 [ `GetRolesForUser(userName)` 메서드](https://msdn.microsoft.com/library/system.web.security.roles.getrolesforuser.aspx) 역할을 문자열 배열로 지정된 된 사용자의 집합을 반환 합니다. 반복기의 항목 열거 되는 다음으로, 및 각 항목의 `RoleCheckBox` 확인란을 선택은 프로그래밍 방식으로 참조 합니다. 에 해당 역할에 포함 된 경우에에서 확인란을 선택는 `selectedUsersRoles` 문자열 배열을 반환 합니다.
 
 > [!NOTE]
-> `Linq.Enumerable.Contains(Of String)(...)` ASP.NET 버전 2.0 사용 하는 경우 구문 컴파일되지 것입니다. `Contains(Of String)` 메서드는의 일부는 [LINQ 라이브러리](http://en.wikipedia.org/wiki/Language_Integrated_Query), 새로운 ASP.NET 3.5입니다. ASP.NET 버전 2.0 여전히 사용 중인 경우 사용 하 여는 [ `Array.IndexOf(Of String)` 메서드](https://msdn.microsoft.com/en-us/library/eha9t187.aspx) 대신 합니다.
+> `Linq.Enumerable.Contains(Of String)(...)` ASP.NET 버전 2.0 사용 하는 경우 구문 컴파일되지 것입니다. `Contains(Of String)` 메서드는의 일부는 [LINQ 라이브러리](http://en.wikipedia.org/wiki/Language_Integrated_Query), 새로운 ASP.NET 3.5입니다. ASP.NET 버전 2.0 여전히 사용 중인 경우 사용 하 여는 [ `Array.IndexOf(Of String)` 메서드](https://msdn.microsoft.com/library/eha9t187.aspx) 대신 합니다.
 
 
 `CheckRolesForSelectedUser` 메서드를 두 가지 경우에 호출 해야 합니다.: 페이지가 처음 로드 될 때와 때마다는 `UserList` DropDownList의 선택한 인덱스 변경 됩니다. 따라서에서이 메서드를 호출할는 `Page_Load` 이벤트 처리기 (을 호출한 후 `BindUsersToUserList` 및 `BindRolesToList`). 또한 DropDownList의에 대 한 이벤트 처리기를 만들고 `SelectedIndexChanged` 이벤트 여기에서이 메서드를 호출 합니다.
@@ -129,7 +129,7 @@ DropDownList를 아래에 명명 된 반복기를 추가 `UsersRoleList`합니�
 
 [!code-aspx[Main](assigning-roles-to-users-vb/samples/sample10.aspx)]
 
-우리의 마지막 작업을 완료 하는 `RoleCheckBox_CheckChanged` 이벤트 처리기입니다. 이 확인란을 인스턴스를 알려줍니다. 역할이 checked 또는 unchecked 통해 때문에 이벤트를 발생 시킨 CheckBox 컨트롤을 참조 하 여을 시작 해야 해당 `Text` 및 `Checked` 속성입니다. 선택한 사용자의 사용자 이름와 함께이 정보를 사용 하 여 우리에서 추가 하거나 제거할 사용자를 통해 역할은 `Roles` 클래스의 [ `AddUserToRole` ](https://msdn.microsoft.com/en-us/library/system.web.security.roles.addusertorole.aspx) 또는 [ `RemoveUserFromRole` 메서드](https://msdn.microsoft.com/en-us/library/system.web.security.roles.removeuserfromrole.aspx)합니다.
+우리의 마지막 작업을 완료 하는 `RoleCheckBox_CheckChanged` 이벤트 처리기입니다. 이 확인란을 인스턴스를 알려줍니다. 역할이 checked 또는 unchecked 통해 때문에 이벤트를 발생 시킨 CheckBox 컨트롤을 참조 하 여을 시작 해야 해당 `Text` 및 `Checked` 속성입니다. 선택한 사용자의 사용자 이름와 함께이 정보를 사용 하 여 우리에서 추가 하거나 제거할 사용자를 통해 역할은 `Roles` 클래스의 [ `AddUserToRole` ](https://msdn.microsoft.com/library/system.web.security.roles.addusertorole.aspx) 또는 [ `RemoveUserFromRole` 메서드](https://msdn.microsoft.com/library/system.web.security.roles.removeuserfromrole.aspx)합니다.
 
 [!code-vb[Main](assigning-roles-to-users-vb/samples/sample11.vb)]
 
@@ -181,7 +181,7 @@ DropDownList를 아래에 명명 된 반복기를 추가 `UsersRoleList`합니�
 
 [!code-vb[Main](assigning-roles-to-users-vb/samples/sample14.vb)]
 
-이 메서드를 통해 선택된 된 역할에서 시작 된 `RoleList` DropDownList 합니다. 다음 사용 하 여는 [ `Roles.GetUsersInRole(roleName)` 메서드](https://msdn.microsoft.com/en-us/library/system.web.security.roles.getusersinrole.aspx) 해당 역할에 속하는 사용자의 사용자 이름의 문자열 배열을 검색 합니다. 이 배열에 바인딩된 다음는 `RolesUserList` GridView입니다.
+이 메서드를 통해 선택된 된 역할에서 시작 된 `RoleList` DropDownList 합니다. 다음 사용 하 여는 [ `Roles.GetUsersInRole(roleName)` 메서드](https://msdn.microsoft.com/library/system.web.security.roles.getusersinrole.aspx) 해당 역할에 속하는 사용자의 사용자 이름의 문자열 배열을 검색 합니다. 이 배열에 바인딩된 다음는 `RolesUserList` GridView입니다.
 
 이 메서드를 두 가지 상황에서 호출 해야 합니다.: 페이지가 처음 로드 될 때 선택된 된 역할에는 `RoleList` DropDownList 변경 합니다. 따라서 업데이트는 `Page_Load` 이벤트 처리기를 호출한 후이 메서드는 호출 되도록 `CheckRolesForSelectedUser`합니다. 에 대 한 이벤트 처리기를 다음으로 만듭니다는 `RoleList`의 `SelectedIndexChanged` 이벤트를 너무 여기에서이 메서드를 호출 합니다.
 
@@ -242,7 +242,7 @@ GridView에 삭제 단추 필드를 추가 하 여 시작 합니다. 이 필드�
 대부분의 코드에는 `Click` 이벤트 처리기는 다양 한 유효성 검사를 수행 합니다. 방문자에서 사용자 이름을 제공 됨을 보장 하므로 `UserNameToAddToRole` 이미 선택된 된 역할에 속하지 않은 사용자는 시스템에 존재 하 고 텍스트 상자입니다. 적절 한 메시지에 표시 됩니다는 이러한 점검 작업이 실패 하면, `ActionStatus` 및 이벤트 처리기를 종료 합니다. 사용자가을 통해 역할에 추가 모든 검사를 통과 `Roles.AddUserToRole` 메서드. 그런 다음, 입력란의 `Text` 속성이 선택 취소 되어, GridView을 새로 고칠 및 `ActionStatus` 레이블이 지정된 된 사용자 선택된 된 역할에 성공적으로 추가 된 메시지가 표시 됩니다.
 
 > [!NOTE]
-> 사용을 보장 하기 위해 지정 된 사용자가 이미 선택된 된 역할에 속해 있지는 [ `Roles.IsUserInRole(userName, roleName)` 메서드](https://msdn.microsoft.com/en-us/library/system.web.security.roles.isuserinrole.aspx)를 나타내는 부울 값을 반환 하는 여부를 *userName* 의멤버인*roleName*합니다. 다시이 메서드를 사용 합니다는 <a id="_msoanchor_2"> </a> [다음 자습서](role-based-authorization-vb.md) 역할 기반 권한 부여 때 살펴보겠습니다.
+> 사용을 보장 하기 위해 지정 된 사용자가 이미 선택된 된 역할에 속해 있지는 [ `Roles.IsUserInRole(userName, roleName)` 메서드](https://msdn.microsoft.com/library/system.web.security.roles.isuserinrole.aspx)를 나타내는 부울 값을 반환 하는 여부를 *userName* 의멤버인*roleName*합니다. 다시이 메서드를 사용 합니다는 <a id="_msoanchor_2"> </a> [다음 자습서](role-based-authorization-vb.md) 역할 기반 권한 부여 때 살펴보겠습니다.
 
 
 브라우저를 통해 페이지를 방문 하 고 있는 감독자 역할을 선택는 `RoleList` DropDownList 합니다. 잘못 된 사용자 이름을 입력 해 봅니다-사용자가 시스템에 존재 하지 않는지를 설명 하는 메시지가 표시 되어야 합니다.
@@ -356,7 +356,7 @@ Checked 또는 unchecked에서 역할은 때마다 GridView를 갱신 해야이 
 
 이 자습서에 설명 된 항목에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
-- [ASP.NET 웹 사이트 관리 도구 개요](https://msdn.microsoft.com/en-us/library/ms228053.aspx)
+- [ASP.NET 웹 사이트 관리 도구 개요](https://msdn.microsoft.com/library/ms228053.aspx)
 - [ASP를 검사 합니다. NET의 멤버 자격, 역할 및 프로필](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx)
 - [자신의 웹 사이트 관리 도구를 롤링합니다.](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx)
 

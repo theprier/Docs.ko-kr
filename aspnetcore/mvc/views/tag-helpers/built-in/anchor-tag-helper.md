@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/anchor-tag-helper
-ms.openlocfilehash: 7923876c792544ac4d559eb8de29475d8a4b37e0
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 74609b515936ec7da8bfc133c27cb69f51311924
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="anchor-tag-helper"></a>앵커 태그 도우미
 
@@ -44,7 +44,7 @@ ms.lasthandoff: 01/19/2018
 <a href="/Speaker">All Speakers</a>
 ```
 
-경우는 `asp-controller` 지정 및 `asp-action` 않습니다 기본 `asp-action` 현재 실행 중인 뷰의 기본 컨트롤러 메서드가 됩니다. 위 예에서 경우 `asp-action` 생략이 앵커 태그 도우미에서 생성 되 고 *HomeController*의 `Index` 보기 (**/홈**), 생성된 된 태그 됩니다:
+경우는 `asp-controller` 지정 및 `asp-action` 하지 않으면 기본 `asp-action` 현재 실행 중인 뷰의 기본 컨트롤러 메서드가 됩니다. 위 예에서 경우 `asp-action` 생략이 앵커 태그 도우미에서 생성 되 고 *HomeController*의 `Index` 보기 (**/홈**), 생성된 된 태그 됩니다:
 
 ```html
 <a href="/Home">All Speakers</a>
@@ -99,7 +99,7 @@ https://localhost:44399/Speakers/Index/2?page=%2FSpeaker
 
 ### <a name="asp-route-value"></a>asp-route-{value}
 
-`asp-route-`와일드 카드 경로 접두사입니다. 모든 값을 추가한 후 뒤에 오는 대시 잠재적 경로 매개 변수로 해석 됩니다. 기본 경로가 없는 경우이 경로 접두사 요청 매개 변수 및 값으로 생성 된 href에 추가 됩니다. 그렇지 않은 경우에 경로 템플릿을 대체 됩니다.
+`asp-route-`와일드 카드 경로 접두사입니다. 모든 값을 추가한 후 뒤에 오는 대시 잠재적 경로 매개 변수로 해석 됩니다. 기본 경로 찾을 수 없으면,이 경로 접두사 요청 매개 변수 및 값으로 생성 된 href에 추가 됩니다. 그렇지 않은 경우에 경로 템플릿을 대체 됩니다.
 
 가정 하 고 있는 컨트롤러 메서드가 다음과 같이 정의.
 
@@ -142,7 +142,7 @@ app.UseMvc(routes =>
 <a href='/Speaker/Detail/12'>SpeakerId: 12</a>
 ```
 
-경로 접두사 발견 라우팅 서식 파일의 일부가 아닌 경우, 즉 다음과 같은 **cshtml** 파일:
+다음의 경우 경로 접두사 부분에서는 라우팅 템플릿 찾을 수 없으면 **cshtml** 파일:
 
 ```cshtml
 @model SpeakerData
@@ -164,7 +164,7 @@ app.UseMvc(routes =>
 
 `asp-route`명명 된 경로에 직접 연결 되는 URL을 만들 방법을 제공 합니다. 라우팅 특성을 사용 하는 경로 이름을 지정할 수 있습니다에 표시 된 대로 `SpeakerController` 에서 사용 하 고 해당 `Evaluations` 메서드.
 
-`Name = "speakerevals"`URL을 사용 하 여 해당 컨트롤러 메서드에 대 한 직접 경로 생성 하는 앵커 태그 도우미 지시 `/Speaker/Evaluations`합니다. 경우 `asp-controller` 또는 `asp-action` 외에 지정 `asp-route`, 예상 대로 경로가 생성 되지 않을 수 있습니다. `asp-route`특성 중 하나를 사용할 수 없습니다 `asp-controller` 또는 `asp-action` 경로 충돌 하지 않도록 합니다.
+`Name = "speakerevals"`URL을 사용 하 여 해당 컨트롤러 메서드에 대 한 직접 경로 생성 하는 앵커 태그 도우미 지시 `/Speaker/Evaluations`합니다. 경우 `asp-controller` 또는 `asp-action` 외에 지정 `asp-route`, 예상 대로 경로가 생성 되지 않을 수 있습니다. `asp-route`특성 중 하나를 사용 하면 안 `asp-controller` 또는 `asp-action` 경로 충돌 하지 않도록 합니다.
 
 ### <a name="asp-all-route-data"></a>asp-all-route-data
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/aspnet-error-handling
 msc.type: authoredcontent
-ms.openlocfilehash: d5d89a6a82c91b915d61ddc3c350ea0935511c07
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c5ec43ac78be4a9452ebaa6495a6883506ac162f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-error-handling"></a>ASP.NET 오류 처리
 ====================
@@ -313,7 +313,7 @@ ELMAH 로그를 확인 하는 것은 간단 하지만 먼저 ELMAH 로그에 기
 
 ## <a name="tutorial-series-conclusion"></a>자습서 시리즈 결론
 
-*보지 주셔서 감사 합니다. 자습서의이 집합에 대해 ASP.NET Web Forms 하는 데 도움이 바랍니다. ASP.NET 4.5 및 Visual Studio 2013에서 사용할 수 있는 Web Forms 기능에 대 한 자세한 정보를 보려면 참고* [ *ASP.NET 및 Web Tools for Visual Studio 2013 릴리스 정보* ](../../../../visual-studio/overview/2013/release-notes.md)  *. 또한에 언급 된 자습서를 살펴보려면 않아야는*   ***다음 단계 * * * 섹션과 defintely 사용해는* [ *무료 Azure 평가판* ](https://azure.microsoft.com/pricing/free-trial/)*.*
+*보지 주셔서 감사 합니다. 자습서의이 집합에 대해 ASP.NET Web Forms 하는 데 도움이 바랍니다. ASP.NET 4.5 및 Visual Studio 2013에서 사용할 수 있는 Web Forms 기능에 대 한 자세한 정보를 보려면 참고* [ *ASP.NET 및 Web Tools for Visual Studio 2013 릴리스 정보* ](../../../../visual-studio/overview/2013/release-notes.md)  *. 또한에 언급 된 자습서를 살펴보려면 않아야는* ***다음 단계 * * * 섹션과 defintely 사용해는* [ *무료 Azure 평가판* ](https://azure.microsoft.com/pricing/free-trial/)*.*
 
 ![감사-Erik](aspnet-error-handling/_static/image10.png)  
 
@@ -335,9 +335,9 @@ Microsoft Azure에 웹 응용 프로그램을 배포 하는 방법에 대 한 �
 
 이 자습서 시리즈의 내용에 중요 한 기여를 수행한 다음 사람에 게 감사 하 고 싶습니다.
 
-- [Alberto Poblacion, MVP &amp; MCT, 스페인](https://mvp.microsoft.com/en-us/mvp/Alberto%20Poblacion%20Bolano-36772)
+- [Alberto Poblacion, MVP &amp; MCT, 스페인](https://mvp.microsoft.com/mvp/Alberto%20Poblacion%20Bolano-36772)
 - [Alex Thissen, 네덜란드](http://blog.alexthissen.nl/) (twitter: [ @alexthissen ](http://twitter.com/alexthissen))
-- [Andre Tournier, 미국](http://andret503.wordpress.com/)
+- [Andre Tournier, USA](http://andret503.wordpress.com/)
 - Apurva Joshi, Microsoft
 - [Bojan Vrhovnik, 슬로베니아](http://twitter.com/bvrhovnik)
 - [Bruno Sonnino, 브라질](http://msmvps.com/blogs/bsonnino) (twitter: [ @bsonnino ](http://twitter.com/bsonnino))
@@ -348,7 +348,7 @@ Microsoft Azure에 웹 응용 프로그램을 배포 하는 방법에 대 한 �
 - Mike 서
 - [Mitchel Sellers, USA](http://www.mitchelsellers.com/) (twitter: [ @MitchelSellers ](http://twitter.com/MitchelSellers))
 - [Paul Cociuba, Microsoft](http://linqto.me/Links/pcociuba)
-- [파울로 Morgado, 포르투갈](http://paulomorgado.net/)
+- [Paulo Morgado, Portugal](http://paulomorgado.net/)
 - [Pranav Rastogi, Microsoft](https://blogs.msdn.com/b/pranav_rastogi)
 - [Tim Ammann, Microsoft](https://blogs.iis.net/timamm/default.aspx)
 - [Tom Dykstra, Microsoft](https://blogs.msdn.com/aspnetue)

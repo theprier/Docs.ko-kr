@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/implementation/key-encryption-at-rest
-ms.openlocfilehash: a0b9ab31264e5cae666a69491bf4a8ee8251a86f
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 0a62a1a10e578e59e1d80579d80779d4dcf1658a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="key-encryption-at-rest"></a>미사용 데이터 암호화 키
 
@@ -50,7 +50,7 @@ sc.AddDataProtection()
 
 ## <a name="x509-certificate"></a>X.509 인증서
 
-*이 메커니즘에서 사용할 수 없으면 `.NET Core 1.0` 또는 `1.1`합니다.*
+*이 메커니즘에서 사용할 수 없습니다. `.NET Core 1.0` 또는 `1.1`합니다.*
 
 여러 컴퓨터 간에 분산 되는 응용 프로그램 편리한 컴퓨터 간에 공유 하는 X.509 인증서를 배포 하 고 미사용 키의 암호화에 대 한이 인증서를 사용 하려면 응용 프로그램을 구성할 수도 있습니다. 예를 보려면 아래를 참조 하십시오.
 

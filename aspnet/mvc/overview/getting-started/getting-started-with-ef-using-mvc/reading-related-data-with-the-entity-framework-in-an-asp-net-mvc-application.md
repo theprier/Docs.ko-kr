@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 1f4912bb3113a8f9cdae4211e055a7e317ab2aff
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7a74d01f306abeeac5ac28c942f03001e0fe00f8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="reading-related-data-with-the-entity-framework-in-an-aspnet-mvc-application"></a>ASP.NET MVC 응용 프로그램에서 Entity Framework 사용 하 여 데이터를 관련 읽기
 ====================
@@ -45,7 +45,7 @@ ms.lasthandoff: 11/10/2017
 - *즉시 로드*합니다. 엔터티를 읽을 때 함께 관련된 데이터가 검색 됩니다. 일반적으로 필요한 데이터를 모두 검색 하는 단일 조인 쿼리에서 발생 합니다. 즉시 로드를 사용 하 여 지정 된 `Include` 메서드.
 
     ![Eager_loading_example](https://asp.net/media/2577856/Windows-Live-Writer_Reading-Re.NET-MVC-Application-5-of-10h1_ADC3_Eager_loading_example_33f907ff-f0b0-4057-8e75-05a8cacac807.png)
-- *명시적 로드*합니다. 이 지연 로드를 제외 하 코드에서 관련된 데이터를 명시적으로 검색 탐색 속성에 액세스할 때 자동으로 발생 하지 않습니다. 엔터티 및 호출에 대 한 개체 상태 관리자 항목을 가져오는 하 여 수동으로 관련된 데이터를 로드 하면는 [Collection.Load](https://msdn.microsoft.com/en-us/library/gg696220(v=vs.103).aspx) 컬렉션에 대 한 메서드 또는 [Reference.Load](https://msdn.microsoft.com/en-us/library/gg679166(v=vs.103).aspx) 포함 하는 속성에 대 한 메서드는 단일 엔터티입니다. (다음 예제에서는 관리자 탐색 속성을 로드 하려는 경우 바꿨을 것 `Collection(x => x.Courses)` 와 `Reference(x => x.Administrator)`.) 일반적으로 지연 오프 로드 설정 하는 경우에 명시적으로 로드를 사용 합니다.
+- *명시적 로드*합니다. 이 지연 로드를 제외 하 코드에서 관련된 데이터를 명시적으로 검색 탐색 속성에 액세스할 때 자동으로 발생 하지 않습니다. 엔터티 및 호출에 대 한 개체 상태 관리자 항목을 가져오는 하 여 수동으로 관련된 데이터를 로드 하면는 [Collection.Load](https://msdn.microsoft.com/library/gg696220(v=vs.103).aspx) 컬렉션에 대 한 메서드 또는 [Reference.Load](https://msdn.microsoft.com/library/gg679166(v=vs.103).aspx) 포함 하는 속성에 대 한 메서드는 단일 엔터티입니다. (다음 예제에서는 관리자 탐색 속성을 로드 하려는 경우 바꿨을 것 `Collection(x => x.Courses)` 와 `Reference(x => x.Administrator)`.) 일반적으로 지연 오프 로드 설정 하는 경우에 명시적으로 로드를 사용 합니다.
 
     ![Explicit_loading_example](https://asp.net/media/2577862/Windows-Live-Writer_Reading-Re.NET-MVC-Application-5-of-10h1_ADC3_Explicit_loading_example_79d8c368-6d82-426f-be9a-2b443644ab15.png)
 
@@ -57,7 +57,7 @@ ms.lasthandoff: 11/10/2017
 
 반면에 일부 시나리오에서는 한 지연 로딩이 더 효율적입니다. 즉시 로드에는 SQL Server 없습니다 효율적으로 처리 하는 생성 될 매우 복잡 한 조인이 될 수 있습니다. 또는 엔터티 집합의 하위 집합에 대 한 엔터티 탐색 속성에 액세스 해야 하는 경우 처리 하는, 즉시 로드 필요한 것 보다 더 많은 데이터를 검색 하기 때문에 한 지연 로딩이 향상 될 수도 있습니다. 성능이 중요 한 경우에 최상의 선택을 하기 위해 두 가지 방식으로 성능을 테스트 하는 가장 좋습니다.
 
-지연 로드로 인해 성능 문제가 발생 하는 코드를 마스킹할 수 있습니다. 예를 들어 eager 또는 명시적 로드를 지정 하지 않으면 하지만 많은 양의 엔터티를 처리 하 고 각 반복에서 몇 가지 탐색 속성을 사용 하 여 코드를 수 없습니다 효율적이 지 (때문에 데이터베이스에 여러 번 왕복). 온-프레미스 SQL server를 사용 하 여 개발을 수행 하는 응용 프로그램에는 대기 시간이 증가 및 지연 로드로 인해 Azure SQL 데이터베이스를 이동할 때 성능 문제가 있을 수 있습니다. 데이터베이스 쿼리는 실제 테스트 한 부하를 프로 파일링 한 지연 로딩이 적합 한지 결정 하는 데 도움이 됩니다. 자세한 내용은 참조 [Entity Framework 전략 제공: 관련 데이터를 로드](https://msdn.microsoft.com/en-us/magazine/hh205756.aspx) 및 [SQL Azure로 네트워크 대기 시간 줄이기를 Entity Framework를 사용 하 여](https://msdn.microsoft.com/en-us/magazine/gg309181.aspx)합니다.
+지연 로드로 인해 성능 문제가 발생 하는 코드를 마스킹할 수 있습니다. 예를 들어 eager 또는 명시적 로드를 지정 하지 않으면 하지만 많은 양의 엔터티를 처리 하 고 각 반복에서 몇 가지 탐색 속성을 사용 하 여 코드를 수 없습니다 효율적이 지 (때문에 데이터베이스에 여러 번 왕복). 온-프레미스 SQL server를 사용 하 여 개발을 수행 하는 응용 프로그램에는 대기 시간이 증가 및 지연 로드로 인해 Azure SQL 데이터베이스를 이동할 때 성능 문제가 있을 수 있습니다. 데이터베이스 쿼리는 실제 테스트 한 부하를 프로 파일링 한 지연 로딩이 적합 한지 결정 하는 데 도움이 됩니다. 자세한 내용은 참조 [Entity Framework 전략 제공: 관련 데이터를 로드](https://msdn.microsoft.com/magazine/hh205756.aspx) 및 [SQL Azure로 네트워크 대기 시간 줄이기를 Entity Framework를 사용 하 여](https://msdn.microsoft.com/magazine/gg309181.aspx)합니다.
 
 ### <a name="disable-lazy-loading-before-serialization"></a>Serialization 전에 지연 로드 사용 안 함
 
@@ -67,9 +67,9 @@ ms.lasthandoff: 11/10/2017
 
 에 표시 된 것 처럼 serialization 문제를 방지 하는 한 가지 방법은 데이터 전송 개체 (Dto) 대신 엔터티 개체를 serialize 하는 것은 [Entity Framework를 사용 하 여 웹 API를 사용 하 여](../../../../web-api/overview/data/using-web-api-with-entity-framework/part-5.md) 자습서입니다.
 
-지연 로드를 사용 하지 않도록 설정 하 고 하 여 프록시 문제를 방지할 수 Dto를 사용 하지 않는 경우 [프록시 생성을 사용 하지 않도록 설정](https://msdn.microsoft.com/en-US/data/jj592886.aspx)합니다.
+지연 로드를 사용 하지 않도록 설정 하 고 하 여 프록시 문제를 방지할 수 Dto를 사용 하지 않는 경우 [프록시 생성을 사용 하지 않도록 설정](https://msdn.microsoft.com/data/jj592886.aspx)합니다.
 
-다음은 몇 가지 다른 [지연 로드를 사용 하지 않도록 설정 하는 방법을](https://msdn.microsoft.com/en-US/data/jj574232):
+다음은 몇 가지 다른 [지연 로드를 사용 하지 않도록 설정 하는 방법을](https://msdn.microsoft.com/data/jj574232):
 
 - 특정 탐색 속성에 대 한 생략 된 `virtual` 키워드는 속성을 선언 하는 경우.
 - 모든 탐색 속성에 대 한 설정 `LazyLoadingEnabled` 를 `false`, 컨텍스트 클래스의 생성자에 다음 코드를 입력 합니다. 
@@ -164,7 +164,7 @@ Department 열에 대 한 스 캐 폴드 코드 표시 됩니다는 `Name` 의 �
 
 `Where` 메서드 컬렉션을 반환 하지만 조건 하나만에서 해당 메서드 결과에 전달 되는 경우 `Instructor` 엔터티를 반환 합니다. `Single` 메서드 컬렉션을 단일 `Instructor` 해당 엔터티에 액세스할 수 있는 엔터티 `Courses` 속성입니다.
 
-사용 된 [단일](https://msdn.microsoft.com/en-us/library/system.linq.enumerable.single.aspx) 메서드 컬렉션을 알고 있는 경우 컬렉션에 항목을 하나만 갖습니다. `Single` 메서드는 전달 된 컬렉션은 비어 있거나 둘 이상의 항목이 없는 경우 예외를 throw 합니다. 대신 [SingleOrDefault](https://msdn.microsoft.com/en-us/library/bb342451.aspx), 기본 값을 반환 하 (`null` 이 예제의) 컬렉션이 비어 있는 경우. 그러나이 경우에 여전히 초래 예외 (찾으려고 시도에서 `Courses` 속성에는 `null` 참조), 예외 메시지는 문제의 원인을 477860 덜 명확 하 게 하 고 있습니다. 호출 하는 경우는 `Single` 메서드를 전달할 수도 있습니다에 `Where` 조건을 호출 하는 대신는 `Where` 메서드 별도로:
+사용 된 [단일](https://msdn.microsoft.com/library/system.linq.enumerable.single.aspx) 메서드 컬렉션을 알고 있는 경우 컬렉션에 항목을 하나만 갖습니다. `Single` 메서드는 전달 된 컬렉션은 비어 있거나 둘 이상의 항목이 없는 경우 예외를 throw 합니다. 대신 [SingleOrDefault](https://msdn.microsoft.com/library/bb342451.aspx), 기본 값을 반환 하 (`null` 이 예제의) 컬렉션이 비어 있는 경우. 그러나이 경우에 여전히 초래 예외 (찾으려고 시도에서 `Courses` 속성에는 `null` 참조), 예외 메시지는 문제의 원인을 477860 덜 명확 하 게 하 고 있습니다. 호출 하는 경우는 `Single` 메서드를 전달할 수도 있습니다에 `Where` 조건을 호출 하는 대신는 `Where` 메서드 별도로:
 
 [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample12.cs)]
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: migration/configuration
-ms.openlocfilehash: 90d9f730d31c2c70aec3d47610b9031a7d8e621b
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 51665059d1d803cbe57bc9a884a0e91eac9e7cb4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="migrating-configuration"></a>구성 마이그레이션
 
@@ -27,13 +27,13 @@ ms.lasthandoff: 01/19/2018
 
 ASP.NET Core 더 이상 사용 하지는 *Global.asax* 및 *web.config* 이전 버전의 ASP.NET 사용 하는 파일입니다. 이전 버전의 ASP.NET 응용 프로그램 시작 논리에 배치 된는 `Application_StartUp` 메서드 내에서 *Global.asax*합니다. ASP.NET MVC의 뒷부분에 나오는 *Startup.cs* 고 파일; 프로젝트의 루트에 포함 된 응용 프로그램이 시작 될 때 호출 되었습니다. ASP.NET Core가이 접근 방법을 채택 완전히 모든 시작 논리에 배치 하 여는 *Startup.cs* 파일입니다.
 
-*web.config* 파일 에서도 ASP.NET Core 대체 되었습니다. 자체 구성 이제을 구성할 수 있으며 응용 프로그램 시작에서 설명한 절차의 일부로 *Startup.cs*합니다. 구성 XML 파일을 사용할 수 있지만 일반적으로 ASP.NET Core 프로젝트에에서 배치 됩니다 구성 값을 JSON 형식 파일을 같은 *appsettings.json*합니다. ASP.NET Core 구성 시스템 환경 관련 값에 대 한 안전 하 고 강력한 위치를 제공할 수 있는 환경 변수를도 쉽게 액세스할 수 있습니다. 연결 문자열 및 소스 제어에 체크 인할 수 해야 하는 API 키와 같은 기밀 정보에 대 한 경우 특히 유용 합니다. 참조 [구성](xref:fundamentals/configuration/index) ASP.NET Core에서 구성에 대 한 자세한 내용을 보려면 합니다.
+*web.config* 파일 에서도 ASP.NET Core 대체 되었습니다. 자체 구성 이제을 구성할 수 있으며 응용 프로그램 시작에서 설명한 절차의 일부로 *Startup.cs*합니다. 구성 XML 파일을 사용할 수 있지만 일반적으로 ASP.NET Core 프로젝트에에서 배치 됩니다 구성 값을 JSON 형식 파일을 같은 *appsettings.json*합니다. ASP.NET Core 구성 시스템 환경 관련 값에 대 한 안전 하 고 강력한 위치를 제공할 수 있는 환경 변수를도 쉽게 액세스할 수 있습니다. 연결 문자열 및 소스 제어에 체크 인할 수 하지 않아야 하는 API 키와 같은 기밀 정보에 대 한 경우 특히 유용 합니다. 참조 [구성](xref:fundamentals/configuration/index) ASP.NET Core에서 구성에 대 한 자세한 내용을 보려면 합니다.
 
 ASP.NET Core 일부만 마이그레이션된 프로젝트와 시작 되며이 문서에 대 한 [이전 문서](mvc.md)합니다. 구성 설정, 다음 생성자 및 속성을 추가 하는 *Startup.cs* 프로젝트의 루트에 있는 파일:
 
 [!code-csharp[Main](configuration/samples/WebApp1/src/WebApp1/Startup.cs?range=11-21)]
 
-이 시점에서 즉 참고는 *Startup.cs* 파일 컴파일되지 않고 다음 코드를 추가 해야 하는 대로 `using` 문:
+이 시점에서 즉 참고는 *Startup.cs* 파일에 다음 추가 해야 하는 대로 컴파일되지 않습니다 `using` 문:
 
 ```csharp
 using Microsoft.Extensions.Configuration;

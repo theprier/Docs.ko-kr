@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/using-the-dropdownlist-helper-with-aspnet-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: b8393e1503cb562a46a00f49b51c0cb64ff2cfdc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 278d04aec68e93f3ebfd12d06a96b59f3bcbef4b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-the-dropdownlist-helper-with-aspnet-mvc"></a>ASP.NET MVC DropDownList 도우미 사용
 ====================
 으로 [Rick Anderson](https://github.com/Rick-Anderson)
 
-이 자습서의 작업을 기본 사항은 설명 됩니다는 [DropDownList](https://msdn.microsoft.com/en-us/library/dd492948.aspx) 도우미 및 [ListBox](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.selectextensions.listbox.aspx) ASP.NET MVC 웹 응용 프로그램에서 도우미입니다. Microsoft Visual Web Developer 2010 Express 서비스 팩 1, 즉 자습서를 수행 하려면 Microsoft Visual Studio의 무료 버전을 사용할 수 있습니다. 시작 하기 전에 아래에 나열 된 필수 구성 요소가 설치 되어 있는지 확인 합니다. 다음 링크를 클릭 하 여 모두를 설치할 수 있습니다: [웹 플랫폼 설치 관리자](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)합니다. 또는 다음 링크를 사용 하 여 필수 구성 요소를 개별적으로 설치할 수 있습니다.
+이 자습서의 작업을 기본 사항은 설명 됩니다는 [DropDownList](https://msdn.microsoft.com/library/dd492948.aspx) 도우미 및 [ListBox](https://msdn.microsoft.com/library/system.web.mvc.html.selectextensions.listbox.aspx) ASP.NET MVC 웹 응용 프로그램에서 도우미입니다. Microsoft Visual Web Developer 2010 Express 서비스 팩 1, 즉 자습서를 수행 하려면 Microsoft Visual Studio의 무료 버전을 사용할 수 있습니다. 시작 하기 전에 아래에 나열 된 필수 구성 요소가 설치 되어 있는지 확인 합니다. 다음 링크를 클릭 하 여 모두를 설치할 수 있습니다: [웹 플랫폼 설치 관리자](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)합니다. 또는 다음 링크를 사용 하 여 필수 구성 요소를 개별적으로 설치할 수 있습니다.
 
 - [Visual Studio Web Developer Express SP1 필수 구성 요소](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)<a id="post"></a>
 - [ASP.NET MVC 3 도구 업데이트](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=MVC3)
@@ -34,7 +34,7 @@ C# 소스 코드 완성 된 자습서와 함께 Visual Web Developer 프로젝�
 
 ### <a name="what-youll-build"></a>만들 것인지
 
-작업 메서드 및 뷰를 사용 하는 만듭니다는 [DropDownList](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.selectextensions.dropdownlist.aspx) 범주를 선택 하는 도우미입니다. 또한 사용 합니다 **jQuery** 새 범주 (예: 장르 또는 예술가)이 필요한 경우 사용할 수 있는 삽입 범주 대화 상자를 추가 합니다. 다음은 새 장르를 추가 하 고 새 예술가 추가에 대 한 링크를 보여 주는 뷰 만들기의 스크린샷을입니다.
+작업 메서드 및 뷰를 사용 하는 만듭니다는 [DropDownList](https://msdn.microsoft.com/library/system.web.mvc.html.selectextensions.dropdownlist.aspx) 범주를 선택 하는 도우미입니다. 또한 사용 합니다 **jQuery** 새 범주 (예: 장르 또는 예술가)이 필요한 경우 사용할 수 있는 삽입 범주 대화 상자를 추가 합니다. 다음은 새 장르를 추가 하 고 새 예술가 추가에 대 한 링크를 보여 주는 뷰 만들기의 스크린샷을입니다.
 
 ![](using-the-dropdownlist-helper-with-aspnet-mvc/_static/image1.png)
 
@@ -42,7 +42,7 @@ C# 소스 코드 완성 된 자습서와 함께 Visual Web Developer 프로젝�
 
 학습할 다음과 같습니다.
 
-- 사용 하는 방법의 [DropDownList](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.selectextensions.dropdownlist.aspx) 범주 데이터를 선택 하는 도우미입니다.
+- 사용 하는 방법의 [DropDownList](https://msdn.microsoft.com/library/system.web.mvc.html.selectextensions.dropdownlist.aspx) 범주 데이터를 선택 하는 도우미입니다.
 - 추가 하는 방법 한 **jQuery** 대화 새 범주를 추가 합니다.
 
 ### <a name="getting-started"></a>시작
@@ -75,9 +75,9 @@ Select 목록의 각 항목에 값 (작업에 대 한 0, 드라마 1, 2 코미�
 
 [!code-csharp[Main](using-the-dropdownlist-helper-with-aspnet-mvc/samples/sample2.cs)]
 
-[DropDownList](https://msdn.microsoft.com/en-us/library/dd492738.aspx) 도우미 HTML 선택 목록을 만드는 데 필요한는 **IEnumerable&lt;SelectListItem &gt;** , 명시적 또는 암시적으로 합니다. 즉, 전달할 수 있습니다는 **a b l e&lt;SelectListItem &gt;**  에 명시적으로 [DropDownList](https://msdn.microsoft.com/en-us/library/dd492738.aspx) 도우미 추가할 수 있습니다는 **IEnumerable&lt; SelectListItem &gt;**  에 [ViewBag](https://blogs.msdn.com/b/rickandy/archive/2011/01/28/dynamic-v-strongly-typed-views.aspx) 에 동일한 이름을 사용 하는 **SelectListItem** 모델 속성으로. 전달 된 **SelectListItem** 암시적 및 명시적으로 자습서의 다음 부분에 대해서는 설명 합니다. 위의 코드를 만드는 가장 간단한 가능한 방법은 표시는 **a b l e&lt;SelectListItem &gt;**  텍스트와 값으로 채웁니다. 참고는 `Comedy` [SelectListItem](https://msdn.microsoft.com/en-us/library/system.web.mvc.selectlistitem.aspx) 에 [선택한](https://msdn.microsoft.com/en-us/library/system.web.mvc.selectlistitem.selected.aspx) 속성이로 설정 **true;** 이렇게 렌더링 된 선택 목록 표시 하도록 하면 **코미디** 목록에서 선택한 항목으로 합니다.
+[DropDownList](https://msdn.microsoft.com/library/dd492738.aspx) 도우미 HTML 선택 목록을 만드는 데 필요한는 **IEnumerable&lt;SelectListItem &gt;** , 명시적 또는 암시적으로 합니다. 즉, 전달할 수 있습니다는 **a b l e&lt;SelectListItem &gt;**  에 명시적으로 [DropDownList](https://msdn.microsoft.com/library/dd492738.aspx) 도우미 추가할 수 있습니다는 **IEnumerable&lt; SelectListItem &gt;**  에 [ViewBag](https://blogs.msdn.com/b/rickandy/archive/2011/01/28/dynamic-v-strongly-typed-views.aspx) 에 동일한 이름을 사용 하는 **SelectListItem** 모델 속성으로. 전달 된 **SelectListItem** 암시적 및 명시적으로 자습서의 다음 부분에 대해서는 설명 합니다. 위의 코드를 만드는 가장 간단한 가능한 방법은 표시는 **a b l e&lt;SelectListItem &gt;**  텍스트와 값으로 채웁니다. 참고는 `Comedy` [SelectListItem](https://msdn.microsoft.com/library/system.web.mvc.selectlistitem.aspx) 에 [선택한](https://msdn.microsoft.com/library/system.web.mvc.selectlistitem.selected.aspx) 속성이로 설정 **true;** 이렇게 렌더링 된 선택 목록 표시 하도록 하면 **코미디** 목록에서 선택한 항목으로 합니다.
 
-**a b l e&lt;SelectListItem &gt;**  만든 위에에 추가 되는 [ViewBag](https://blogs.msdn.com/b/rickandy/archive/2011/01/28/dynamic-v-strongly-typed-views.aspx) MovieType 이름의 합니다. 이 전달 방법을 **a b l e&lt;SelectListItem &gt;**  암시적으로 [DropDownList](https://msdn.microsoft.com/en-us/library/dd492738.aspx) 도우미 아래에 표시 합니다.
+**a b l e&lt;SelectListItem &gt;**  만든 위에에 추가 되는 [ViewBag](https://blogs.msdn.com/b/rickandy/archive/2011/01/28/dynamic-v-strongly-typed-views.aspx) MovieType 이름의 합니다. 이 전달 방법을 **a b l e&lt;SelectListItem &gt;**  암시적으로 [DropDownList](https://msdn.microsoft.com/library/dd492738.aspx) 도우미 아래에 표시 합니다.
 
 열기는 *Views\Home\SelectCategory.cshtml* 파일 및 태그를 검사 합니다.
 
@@ -85,7 +85,7 @@ Select 목록의 각 항목에 값 (작업에 대 한 0, 드라마 1, 2 코미�
 
 세 번째 줄에 설정 하 여 레이아웃을 뷰/공유/\_간단한\_Layout.cshtml은 표준 레이아웃 파일의 단순화 된 버전입니다. 표시 하지 않으려면이 작업을 수행 하 고 렌더링 된 HTML 단순 합니다.
 
-이 샘플에서는 변경 하지 않는 응용 프로그램의 상태 하므로 사용 하 여 데이터 전송 됩니다는 **HTTP GET**이 아니라 **HTTP POST**합니다. W3C 섹션을 참조 [선택 HTTP GET 또는 POST에 대 한 빠른 검사 목록](http://www.w3.org/2001/tag/doc/whenToUseGet.html#checklist)합니다. 사용 하지는 응용 프로그램을 변경 하 고 폼 게시, 때문에 [Html.BeginForm](https://msdn.microsoft.com/en-us/library/dd460344.aspx) 동작 메서드, 컨트롤러 및 폼 메서드를 지정할 수 있도록 하는 오버 로드 (**HTTP POST** 또는 **HTTP GET**). 일반적으로 뷰를 포함 된 [Html.BeginForm](https://msdn.microsoft.com/en-us/library/dd505244.aspx) 매개 변수가 없는 오버 로드 합니다. 매개 변수 버전이 없는 POST 버전의 동일한 작업 메서드 및 컨트롤러에 양식 데이터를 게시 기본값으로 사용 됩니다.
+이 샘플에서는 변경 하지 않는 응용 프로그램의 상태 하므로 사용 하 여 데이터 전송 됩니다는 **HTTP GET**이 아니라 **HTTP POST**합니다. W3C 섹션을 참조 [선택 HTTP GET 또는 POST에 대 한 빠른 검사 목록](http://www.w3.org/2001/tag/doc/whenToUseGet.html#checklist)합니다. 사용 하지는 응용 프로그램을 변경 하 고 폼 게시, 때문에 [Html.BeginForm](https://msdn.microsoft.com/library/dd460344.aspx) 동작 메서드, 컨트롤러 및 폼 메서드를 지정할 수 있도록 하는 오버 로드 (**HTTP POST** 또는 **HTTP GET**). 일반적으로 뷰를 포함 된 [Html.BeginForm](https://msdn.microsoft.com/library/dd505244.aspx) 매개 변수가 없는 오버 로드 합니다. 매개 변수 버전이 없는 POST 버전의 동일한 작업 메서드 및 컨트롤러에 양식 데이터를 게시 기본값으로 사용 됩니다.
 
 다음 줄
 
@@ -112,7 +112,7 @@ Select 목록의 각 항목에 값 (작업에 대 한 0, 드라마 1, 2 코미�
 
 [!code-csharp[Main](using-the-dropdownlist-helper-with-aspnet-mvc/samples/sample6.cs)]
 
-[enum](https://msdn.microsoft.com/en-us/library/sbbt4032(VS.80).aspx) `eMovieCategories` 4 개의 동영상 유형 캡처합니다. `SetViewBagMovieType` 메서드를 만듭니다는 **a b l e&lt;SelectListItem &gt;**  에서 `eMovieCategories` **enum**, 설정 및는 `Selected` 는 속성`selectedMovie` 매개 변수입니다. `SelectCategoryEnum` 작업 메서드가 동일한 뷰를 사용 하 여는 `SelectCategory` 동작 메서드가 있습니다.
+[enum](https://msdn.microsoft.com/library/sbbt4032(VS.80).aspx) `eMovieCategories` 4 개의 동영상 유형 캡처합니다. `SetViewBagMovieType` 메서드를 만듭니다는 **a b l e&lt;SelectListItem &gt;**  에서 `eMovieCategories` **enum**, 설정 및는 `Selected` 는 속성`selectedMovie` 매개 변수입니다. `SelectCategoryEnum` 작업 메서드가 동일한 뷰를 사용 하 여는 `SelectCategory` 동작 메서드가 있습니다.
 
 테스트 페이지를 탐색 하 고 클릭는 `Select Movie Category (Enum)` 링크 합니다. 이 이번에 표시 되는 값 (숫자), 대신 열거형을 나타내는 문자열로 표시 됩니다.
 
@@ -128,7 +128,7 @@ HTML 폼 서버에 데이터를 게시 하려면 일반적으로 사용 됩니�
 
 ### <a name="creating-a-multiple-section-select-element"></a>여러 섹션 Select 요소 만들기
 
-[ListBox](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.selectextensions.listbox.aspx) HTML을 렌더링 하는 HTML 도우미 `<select>` 인 요소는 `multiple` 특성을 여러 개 선택할 수 있습니다. 테스트 링크 문서로 이동한 다음 선택에서 **다중 선택 국가** 링크 합니다. 렌더링 된 UI를 사용 하면 여러 국가 선택할 수 있습니다. 아래 그림에서는 캐나다 및 중국 선택 됩니다.
+[ListBox](https://msdn.microsoft.com/library/system.web.mvc.html.selectextensions.listbox.aspx) HTML을 렌더링 하는 HTML 도우미 `<select>` 인 요소는 `multiple` 특성을 여러 개 선택할 수 있습니다. 테스트 링크 문서로 이동한 다음 선택에서 **다중 선택 국가** 링크 합니다. 렌더링 된 UI를 사용 하면 여러 국가 선택할 수 있습니다. 아래 그림에서는 캐나다 및 중국 선택 됩니다.
 
 ![](using-the-dropdownlist-helper-with-aspnet-mvc/_static/image8.png)
 
@@ -142,7 +142,7 @@ HTML 폼 서버에 데이터를 게시 하려면 일반적으로 사용 됩니�
 
 [!code-csharp[Main](using-the-dropdownlist-helper-with-aspnet-mvc/samples/sample9.cs)]
 
-1. *항목*:는 [IEnumerable](https://msdn.microsoft.com/en-us/library/system.collections.ienumerable.aspx) 목록에 항목을 포함 하 합니다. 국가의 목록 위의 예제입니다.
+1. *항목*:는 [IEnumerable](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx) 목록에 항목을 포함 하 합니다. 국가의 목록 위의 예제입니다.
 2. *dataValueField*:에 속성의 이름은 **IEnumerable** 값이 포함 된 목록입니다. 위의 예에는 `ID` 속성입니다.
 3. *dataTextField*:에 속성의 이름은 **IEnumerable** 표시할 정보를 포함 하는 목록입니다. 위의 예에는 `name` 속성입니다.
 4. *selectedValues*: 선택한 값 목록입니다.
@@ -151,7 +151,7 @@ HTML 폼 서버에 데이터를 게시 하려면 일반적으로 사용 됩니�
 
 [!code-cshtml[Main](using-the-dropdownlist-helper-with-aspnet-mvc/samples/sample10.cshtml)]
 
-HTML 도우미 [ListBox](https://msdn.microsoft.com/en-us/library/dd470200.aspx) 메서드 위에 사용 두 개의 매개 변수를 모델 바인딩할 속성의 이름 및 [MultiSelectList](https://msdn.microsoft.com/en-us/library/system.web.mvc.multiselectlist.aspx) 포함 옵션을 선택 하 고 값입니다. `ViewBag.YouSelected` 위의 코드는 폼을 제출 하면 선택한 국가 같이 값을 표시 하는 데 사용 됩니다. HTTP POST 오버 로드 확인은 `MultiSelectCountry` 메서드.
+HTML 도우미 [ListBox](https://msdn.microsoft.com/library/dd470200.aspx) 메서드 위에 사용 두 개의 매개 변수를 모델 바인딩할 속성의 이름 및 [MultiSelectList](https://msdn.microsoft.com/library/system.web.mvc.multiselectlist.aspx) 포함 옵션을 선택 하 고 값입니다. `ViewBag.YouSelected` 위의 코드는 폼을 제출 하면 선택한 국가 같이 값을 표시 하는 데 사용 됩니다. HTTP POST 오버 로드 확인은 `MultiSelectCountry` 메서드.
 
 [!code-csharp[Main](using-the-dropdownlist-helper-with-aspnet-mvc/samples/sample11.cs)]
 
@@ -193,7 +193,7 @@ HTML 도우미 [ListBox](https://msdn.microsoft.com/en-us/library/dd470200.aspx)
 
 [!code-cshtml[Main](using-the-dropdownlist-helper-with-aspnet-mvc/samples/sample12.cshtml)]
 
-위의 코드에 추가 하 고 HTML 특성 및 특성 값 `class = "chzn-select"`합니다. @ 문자 앞에 클래스 아무런 상관이 Razor 뷰 엔진입니다. `class`이 [C# 키워드](https://msdn.microsoft.com/en-us/library/x53a06bb.aspx)합니다. 접두사로 @을 포함 하지 않는 한 C# 키워드를 식별자로 사용할 수 없습니다. 위의 예에서 `@class` 올바른 식별자가 있지만 **클래스** 않으므로 **클래스** 는 키워드입니다.
+위의 코드에 추가 하 고 HTML 특성 및 특성 값 `class = "chzn-select"`합니다. @ 문자 앞에 클래스 아무런 상관이 Razor 뷰 엔진입니다. `class`이 [C# 키워드](https://msdn.microsoft.com/library/x53a06bb.aspx)합니다. 접두사로 @을 포함 하지 않는 한 C# 키워드를 식별자로 사용할 수 없습니다. 위의 예에서 `@class` 올바른 식별자가 있지만 **클래스** 않으므로 **클래스** 는 키워드입니다.
 
 에 대 한 참조 추가 *Chosen/chosen.jquery.js* 및 *Chosen/chosen.css* 파일입니다. *Chosen/chosen.jquery.js* 구현 하는 선택한 플러그 인의 기능적으로 합니다. *Chosen/chosen.css* 파일은 스타일 지정을 제공 합니다. 맨 아래에 다음이 참조를 추가 *Views\Home\MultiSelectCountry.cshtml* 파일입니다. 다음 코드에는 선택한 플러그 인을 참조 하는 방법을 보여 줍니다.
 

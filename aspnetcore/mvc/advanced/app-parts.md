@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/extensibility/app-parts
-ms.openlocfilehash: 12c34b7a9521835533998c5609870bc712a6d48c
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 702d7773374f331b25489060b18f752186d7acea
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="application-parts-in-aspnet-core"></a>ASP.NET Core 응용 프로그램 파트
 
@@ -40,9 +40,9 @@ services.AddMvc()
 
 기본적으로 MVC 종속성 트리를 검색 하 고 (다른 어셈블리)에 컨트롤러를 찾이 됩니다. (예를 들어, 컴파일 타임에 참조 되지 않으면 플러그 인)에서 임의의 어셈블리를 로드 하려면 응용 프로그램 부분을 사용할 수 있습니다.
 
-응용 프로그램 파트를 사용할 수 있습니다 *방지* 특정 어셈블리 또는 위치에 컨트롤러를 찾고 있습니다. 어떤 부분 또는 어셈블리는 응용 프로그램에 사용할 수 있는 수정 하 여 제어할 수 있습니다는 `ApplicationParts` 의 컬렉션은 `ApplicationPartManager`합니다. 에 있는 항목의 순서는 `ApplicationParts` 컬렉션 중요 하지 않습니다. 완전히 구성 해야는 `ApplicationPartManager` 컨테이너에 서비스를 구성 하는 데 사용 하기 전에. 완벽 하 게 구성 해야 예를 들어는 `ApplicationPartManager` 호출 하기 전에 `AddControllersAsServices`합니다. 이렇게 하려면 실패 한 것을 의미 합니다 응용 프로그램 부분에 있는 컨트롤러 후 추가 되었는지 메서드 호출 적용 되지 것입니다 (서비스로 등록 가져올 됩니다) 응용 프로그램의 잘못 된 bevavior 될 수 있습니다.
+응용 프로그램 파트를 사용할 수 있습니다 *방지* 특정 어셈블리 또는 위치에 컨트롤러를 찾고 있습니다. 어떤 부분 또는 어셈블리는 응용 프로그램에 사용할 수 있는 수정 하 여 제어할 수 있습니다는 `ApplicationParts` 의 컬렉션은 `ApplicationPartManager`합니다. 에 있는 항목의 순서는 `ApplicationParts` 컬렉션 중요 하지 않습니다. 완전히 구성 해야는 `ApplicationPartManager` 컨테이너에 서비스를 구성 하는 데 사용 하기 전에. 완벽 하 게 구성 해야 예를 들어는 `ApplicationPartManager` 호출 하기 전에 `AddControllersAsServices`합니다. 이렇게 하려면 실패 한 것을 의미 합니다 응용 프로그램 부분에 있는 컨트롤러 후 추가 되었는지 메서드 호출이 영향을 받지 않습니다 (서비스로 등록 되지 않습니다) 응용 프로그램의 잘못 된 bevavior 될 수 있습니다.
 
-사용 하지 않으려는 경우 컨트롤러를 포함 하는 어셈블리를 설정한 경우 제거 된 `ApplicationPartManager`:
+사용 하지 않을 컨트롤러를 포함 하는 어셈블리를 설정한 경우 제거 된 `ApplicationPartManager`:
 
 ```csharp
 services.AddMvc()

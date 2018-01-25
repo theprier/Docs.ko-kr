@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/10-working-with-video
 msc.type: authoredcontent
-ms.openlocfilehash: 0e1849fb780908b55520d8108e2227d046759987
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a14659997d86d1b5cf5381e21e997c1a03a3f57c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="displaying-video-in-an-aspnet-web-pages-razor-site"></a>ASP.NET 웹 페이지 (Razor) 사이트에서 비디오를 표시합니다.
 ====================
@@ -118,7 +118,7 @@ ms.lasthandoff: 11/10/2017
     [!code-cshtml[Main](10-working-with-video/samples/sample2.cshtml)]
 4. 브라우저에서 페이지를 실행 합니다. (있는지 확인 페이지에서 선택한는 **파일** 실행 하기 전에 작업 영역입니다.) 페이지가 표시 되 고 자동으로 재생 합니다. 
 
-    ![[image] ] (10-working-with-video/_static/image1.jpg "ch08_video 1.jpg")
+    ![[image]](10-working-with-video/_static/image1.jpg "ch08_video-1.jpg")
 
 설정할 수 있습니다는 `quality` 는 플래시 비디오에 대 한 매개 변수 `low`, `autolow`, `autohigh`, `medium`, `high`, 및 `best`:
 
@@ -148,7 +148,7 @@ Flash player 설정 명명 된 비디오 모드를 지원 `windowMode`합니다.
     [!code-cshtml[Main](10-working-with-video/samples/sample5.cshtml)]
 4. 브라우저에서 페이지를 실행 합니다. 이 비디오는 로드 하 고 자동으로 재생 합니다. 
 
-    ![[image] ] (10-working-with-video/_static/image2.jpg "ch08_video 2.jpg")
+    ![[image]](10-working-with-video/_static/image2.jpg "ch08_video-2.jpg")
 
 설정할 수 있습니다 `playCount` 에 비디오를 자동으로 재생 횟수를 나타내는 정수입니다.
 
@@ -178,14 +178,14 @@ Flash player 설정 명명 된 비디오 모드를 지원 `windowMode`합니다.
     [!code-cshtml[Main](10-working-with-video/samples/sample10.cshtml)]
 4. 브라우저에서 페이지를 실행 합니다. 
 
-    ![[image] ] (10-working-with-video/_static/image3.jpg "ch08_video 3.jpg")
+    ![[image]](10-working-with-video/_static/image3.jpg "ch08_video-3.jpg")
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>추가 리소스
 
 
-[Silverlight 개요](https://msdn.microsoft.com/en-us/library/bb404700(VS.95).aspx)
+[Silverlight 개요](https://msdn.microsoft.com/library/bb404700(VS.95).aspx)
 
 [Flash 개체 및 EMBED 태그 특성](http://kb2.adobe.com/cps/127/tn_12701.html)
 
-[Windows Media Player 11 SDK PARAM 태그](https://msdn.microsoft.com/en-us/library/aa392321(VS.85).aspx)
+[Windows Media Player 11 SDK PARAM 태그](https://msdn.microsoft.com/library/aa392321(VS.85).aspx)

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-team-project-in-tfs
 msc.type: authoredcontent
-ms.openlocfilehash: 4cb0d72330086ecb8cd9e6fb70ce0a57698dda5a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ef8cddb7733c1f8cacd24c5cf341a42741d25a95
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-team-project-in-tfs"></a>TFS에서 팀 프로젝트 만들기
 ====================
@@ -109,14 +109,14 @@ ms.lasthandoff: 11/10/2017
 
     > [!NOTE]
     > 나타날 수 있습니다는 **HTTP 404 찾을 수 없음** 오류 이중 HTTP 인코딩 버그 때문에 발생 합니다. 이 경우이 URL을 바꿉니다.   
-    > [*사이트 컬렉션 URL*] /\_layouts/permsetup.aspx  
+    > [*site collection URL*]/\_layouts/permsetup.aspx  
     > 예:  
     > http://tfs/sites/Fabrikam%20Web%20Projects/\_layouts/permsetup.aspx
 8. 에 **그룹이이 사이트에 대 한 설정** 페이지에서 사용자를 팀 프로젝트를 만들고는 추가 **소유자** 그룹을 마우스 클릭 **확인**합니다.
 
     ![](creating-a-team-project-in-tfs/_static/image10.png)
 
-사용자가 팀 프로젝트 컬렉션 내에서 새 팀 프로젝트를 만드는 설정에 대 한 자세한 내용은 참조 하십시오. [팀 프로젝트 컬렉션에 대 한 관리자 권한 설정](https://msdn.microsoft.com/en-us/library/dd547204.aspx)합니다.
+사용자가 팀 프로젝트 컬렉션 내에서 새 팀 프로젝트를 만드는 설정에 대 한 자세한 내용은 참조 하십시오. [팀 프로젝트 컬렉션에 대 한 관리자 권한 설정](https://msdn.microsoft.com/library/dd547204.aspx)합니다.
 
 ## <a name="create-a-new-team-project-and-add-users"></a>새 팀 프로젝트를 만들고 사용자 추가
 
@@ -162,9 +162,9 @@ ms.lasthandoff: 11/10/2017
 11. 에 **프로세스 템플릿 선택** 페이지에서 클릭 하 고 개발 프로세스를 관리 하는 데 사용할 프로세스 템플릿을 선택 **다음**합니다.
 
     > [!NOTE]
-    > 프로세스 템플릿 TFS에 대 한 자세한 내용은 참조 하십시오. [프로세스 템플릿과 도구](https://msdn.microsoft.com/en-us/vstudio/aa718795)합니다.
+    > 프로세스 템플릿 TFS에 대 한 자세한 내용은 참조 하십시오. [프로세스 템플릿과 도구](https://msdn.microsoft.com/vstudio/aa718795)합니다.
 12. 에 **팀 사이트 설정** 페이지 변경 하지 않은 기본 설정을 유지 하 고 클릭 **다음**합니다.
-13. 이 설정을 만들거나 TFS 팀 프로젝트와 연결 된 SharePoint 팀 사이트를 식별 합니다. 개발 팀이이 사이트를 사용 설명서를 관리할를 토론에 참여, wiki 페이지를 만들고 코드와 관련 되지 않은 다른 다양 한 작업을 수행할 수 있습니다. 자세한 내용은 참조 [SharePoint 제품 간의 상호 작용 및 Team Foundation Server](https://msdn.microsoft.com/en-us/library/ms253177.aspx)합니다.
+13. 이 설정을 만들거나 TFS 팀 프로젝트와 연결 된 SharePoint 팀 사이트를 식별 합니다. 개발 팀이이 사이트를 사용 설명서를 관리할를 토론에 참여, wiki 페이지를 만들고 코드와 관련 되지 않은 다른 다양 한 작업을 수행할 수 있습니다. 자세한 내용은 참조 [SharePoint 제품 간의 상호 작용 및 Team Foundation Server](https://msdn.microsoft.com/library/ms253177.aspx)합니다.
 14. 에 **소스 제어 설정 지정** 페이지 변경 하지 않은 기본 설정을 유지 하 고 클릭 **다음**합니다.
 15. 이 설정은 식별 하거나 루트 폴더 콘텐츠를 작동할 TFS 폴더 계층의 위치를 만듭니다.
 16. 에 **팀 프로젝트 설정 확인** 페이지 **마침**합니다.
@@ -200,7 +200,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="further-reading"></a>추가 정보
 
-TFS에서 팀 프로젝트를 만드는 방법에 광범위 한 지침을 참조 하십시오. [팀 프로젝트를 만들](https://msdn.microsoft.com/en-us/library/ms181477(v=VS.100).aspx)합니다. 사용자가 팀 프로젝트 컬렉션 내에서 새 팀 프로젝트를 만드는 설정에 대 한 자세한 내용은 참조 하십시오. [팀 프로젝트 컬렉션에 대 한 관리자 권한 설정](https://msdn.microsoft.com/en-us/library/dd547204.aspx)합니다. 팀 프로젝트에 사용자를 추가 하는 방법에 대 한 자세한 내용은 참조 하십시오. [팀 프로젝트에 사용자 추가](https://msdn.microsoft.com/en-us/library/bb558971.aspx)합니다.
+TFS에서 팀 프로젝트를 만드는 방법에 광범위 한 지침을 참조 하십시오. [팀 프로젝트를 만들](https://msdn.microsoft.com/library/ms181477(v=VS.100).aspx)합니다. 사용자가 팀 프로젝트 컬렉션 내에서 새 팀 프로젝트를 만드는 설정에 대 한 자세한 내용은 참조 하십시오. [팀 프로젝트 컬렉션에 대 한 관리자 권한 설정](https://msdn.microsoft.com/library/dd547204.aspx)합니다. 팀 프로젝트에 사용자를 추가 하는 방법에 대 한 자세한 내용은 참조 하십시오. [팀 프로젝트에 사용자 추가](https://msdn.microsoft.com/library/bb558971.aspx)합니다.
 
 >[!div class="step-by-step"]
 [이전](configuring-team-foundation-server-for-web-deployment.md)

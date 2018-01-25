@@ -12,28 +12,28 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/performance/using-asynchronous-methods-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 6a0c8dbbd02549757c316807b8e8e64fdfd70123
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b4280c6ab1b6d8d2ceaa7cef14fce94ab8c6df53
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-asynchronous-methods-in-aspnet-mvc-4"></a>ASP.NET MVC 4에서 비동기 메서드 사용
 ====================
 으로 [Rick Anderson](https://github.com/Rick-Anderson)
 
-> 이 자습서는 사용 하 여 비동기 ASP.NET MVC 웹 응용 프로그램을 구축 하는 기초 업무량이 [Visual Studio Express 2012 for Web](https://www.microsoft.com/visualstudio/11/en-us), Microsoft Visual Studio의 무료 버전입니다. 사용할 수도 있습니다 [Visual Studio 2012](https://www.microsoft.com/visualstudio/11/en-us)합니다.
+> 이 자습서는 사용 하 여 비동기 ASP.NET MVC 웹 응용 프로그램을 구축 하는 기초 업무량이 [Visual Studio Express 2012 for Web](https://www.microsoft.com/visualstudio/11), Microsoft Visual Studio의 무료 버전입니다. 사용할 수도 있습니다 [Visual Studio 2012](https://www.microsoft.com/visualstudio/11)합니다.
 
 > 전체 샘플은 github에서이 자습서에 제공 된 [https://github.com/RickAndMSFT/Async-ASP.NET/](https://github.com/RickAndMSFT/Async-ASP.NET/)
 
 
-ASP.NET MVC 4 [컨트롤러](https://msdn.microsoft.com/en-us/library/system.web.mvc.controller(VS.108).aspx) 조합에서 클래스 [.NET 4.5](https://msdn.microsoft.com/en-us/library/w0x726c2(VS.110).aspx) 형식의 개체를 반환 하는 비동기 작업 메서드를 작성할 수 있게 [작업&lt;ActionResult&gt; ](https://msdn.microsoft.com/en-us/library/dd321424(VS.110).aspx). .NET Framework 4 라고 하는 비동기 프로그래밍 개념을 도입는 [작업](https://msdn.microsoft.com/en-us/library/system.threading.tasks.task.aspx) ASP.NET MVC 4를 지원 하 고 [작업](https://msdn.microsoft.com/en-us/library/system.threading.tasks.task.aspx)합니다. 작업으로 표시 됩니다는 **작업** 유형과 관련 된 형식을 [System.Threading.Tasks](https://msdn.microsoft.com/en-us/library/system.threading.tasks.aspx) 네임 스페이스입니다. 이 비동기 지원을 사용을 기반으로 하는.NET Framework 4.5는 [await](https://msdn.microsoft.com/en-us/library/hh156528(VS.110).aspx) 및 [비동기](https://msdn.microsoft.com/en-us/library/hh156513(VS.110).aspx) 작업할 수 있게 하는 키워드 [작업](https://msdn.microsoft.com/en-us/library/system.threading.tasks.task.aspx) 이전 보다 훨씬 덜 복잡 한 개체 비동기 접근 방식입니다. [await](https://msdn.microsoft.com/en-us/library/hh156528(VS.110).aspx) 키워드 구문의 줄임 표기를 나타내는 코드를 코드의 다른 부분에서 비동기적으로 대기 해야 하는 합니다. [비동기](https://msdn.microsoft.com/en-us/library/hh156513(VS.110).aspx) 키워드 작업 기반 비동기 메서드로 메서드를 표시 하는 데 사용할 수 있는 힌트를 나타냅니다. 조합의 **await**, **비동기**, 및 **작업** 개체를 사용 하면 훨씬 쉽게.NET 4.5에서 비동기 코드를 작성할 수 있습니다. 비동기 메서드에 대해 새로운 모델 라고는 *작업 기반 비동기 패턴* (**탭**). 이 자습서에서는 사용 하 여 비동기 프로그래밍을 잘 알고 있다고 가정 [await](https://msdn.microsoft.com/en-us/library/hh156528(VS.110).aspx) 및 [비동기](https://msdn.microsoft.com/en-us/library/hh156513(VS.110).aspx) 키워드 및 [작업](https://msdn.microsoft.com/en-us/library/system.threading.tasks.task.aspx) 네임 스페이스입니다.
+ASP.NET MVC 4 [컨트롤러](https://msdn.microsoft.com/library/system.web.mvc.controller(VS.108).aspx) 조합에서 클래스 [.NET 4.5](https://msdn.microsoft.com/library/w0x726c2(VS.110).aspx) 형식의 개체를 반환 하는 비동기 작업 메서드를 작성할 수 있게 [작업&lt;ActionResult&gt; ](https://msdn.microsoft.com/library/dd321424(VS.110).aspx). .NET Framework 4 라고 하는 비동기 프로그래밍 개념을 도입는 [작업](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) ASP.NET MVC 4를 지원 하 고 [작업](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx)합니다. 작업으로 표시 됩니다는 **작업** 유형과 관련 된 형식을 [System.Threading.Tasks](https://msdn.microsoft.com/library/system.threading.tasks.aspx) 네임 스페이스입니다. 이 비동기 지원을 사용을 기반으로 하는.NET Framework 4.5는 [await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx) 및 [비동기](https://msdn.microsoft.com/library/hh156513(VS.110).aspx) 작업할 수 있게 하는 키워드 [작업](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) 이전 보다 훨씬 덜 복잡 한 개체 비동기 접근 방식입니다. [await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx) 키워드 구문의 줄임 표기를 나타내는 코드를 코드의 다른 부분에서 비동기적으로 대기 해야 하는 합니다. [비동기](https://msdn.microsoft.com/library/hh156513(VS.110).aspx) 키워드 작업 기반 비동기 메서드로 메서드를 표시 하는 데 사용할 수 있는 힌트를 나타냅니다. 조합의 **await**, **비동기**, 및 **작업** 개체를 사용 하면 훨씬 쉽게.NET 4.5에서 비동기 코드를 작성할 수 있습니다. 비동기 메서드에 대해 새로운 모델 라고는 *작업 기반 비동기 패턴* (**탭**). 이 자습서에서는 사용 하 여 비동기 프로그래밍을 잘 알고 있다고 가정 [await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx) 및 [비동기](https://msdn.microsoft.com/library/hh156513(VS.110).aspx) 키워드 및 [작업](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) 네임 스페이스입니다.
 
-사용 하 여 자세한 내용은 [await](https://msdn.microsoft.com/en-us/library/hh156528(VS.110).aspx) 및 [비동기](https://msdn.microsoft.com/en-us/library/hh156513(VS.110).aspx) 키워드 및 [작업](https://msdn.microsoft.com/en-us/library/system.threading.tasks.task.aspx) 네임 스페이스에 다음을 참조 합니다.
+사용 하 여 자세한 내용은 [await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx) 및 [비동기](https://msdn.microsoft.com/library/hh156513(VS.110).aspx) 키워드 및 [작업](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) 네임 스페이스에 다음을 참조 합니다.
 
 - [백서: 비동기.NET에](https://go.microsoft.com/fwlink/?LinkId=204844)
 - [Async/Await FAQ](https://blogs.msdn.com/b/pfxteam/archive/2012/04/12/10293335.aspx)
-- [Visual Studio 비동기 프로그래밍](https://msdn.microsoft.com/en-us/vstudio/gg316360)
+- [Visual Studio 비동기 프로그래밍](https://msdn.microsoft.com/vstudio/gg316360)
 
 ## <a id="HowRequestsProcessedByTP"></a>스레드 풀에서 요청을 처리 하는 방법
 
@@ -64,7 +64,7 @@ ASP.NET MVC 4 [컨트롤러](https://msdn.microsoft.com/en-us/library/system.web
 - 때 아웃 스레드 전환의 이점은 컨텍스트 전환 비용에 가중치를 적용 합니다. 일반적으로 지정 해야 메서드에 비동기 동기 메서드로 ASP.NET 요청 스레드의 아무 작업도 수행 하는 동안 대기 하는 경우. 호출을 비동기 실행 하 여 ASP.NET 요청 스레드의 되지 동안에 웹 서비스 요청을 완료를 기다리는 동안 작업이 없습니다.
 - 테스트 차단 사이트 성능에 병목 현상이 되 게와 IIS가 차단 되는 이러한 호출에 대 한 비동기 메서드를 사용 하 여 더 많은 요청을 처리할 수 있음을 보여 줍니다.
 
- 다운로드 가능한 샘플에는 비동기 작업 메서드를 효율적으로 사용 하는 방법을 보여 줍니다. 제공 된 샘플은.NET 4.5를 사용 하 여 ASP.NET MVC 4의 비동기 프로그래밍의 간단한 데모를 제공 하도록 설계 되었습니다. 이 샘플은 ASP.NET MVC에서 비동기 프로그래밍에 대 한 참조 아키텍처 없습니다. 샘플 프로그램 호출 [ASP.NET Web API](../../../web-api/index.md) 메서드를 호출 하는 [Task.Delay](https://msdn.microsoft.com/en-us/library/hh139096(VS.110).aspx) 장기 실행 웹 서비스 호출을 시뮬레이션할 수 있습니다. 대부분의 프로덕션 응용 프로그램에는 비동기 작업 메서드 사용으로 뚜렷한 이점을 표시 되지 않습니다.   
+ 다운로드 가능한 샘플에는 비동기 작업 메서드를 효율적으로 사용 하는 방법을 보여 줍니다. 제공 된 샘플은.NET 4.5를 사용 하 여 ASP.NET MVC 4의 비동기 프로그래밍의 간단한 데모를 제공 하도록 설계 되었습니다. 이 샘플은 ASP.NET MVC에서 비동기 프로그래밍에 대 한 참조 아키텍처 없습니다. 샘플 프로그램 호출 [ASP.NET Web API](../../../web-api/index.md) 메서드를 호출 하는 [Task.Delay](https://msdn.microsoft.com/library/hh139096(VS.110).aspx) 장기 실행 웹 서비스 호출을 시뮬레이션할 수 있습니다. 대부분의 프로덕션 응용 프로그램에는 비동기 작업 메서드 사용으로 뚜렷한 이점을 표시 되지 않습니다.   
   
 응용 프로그램은 거의 모든 작업 메서드에 비동기적 필요 합니다. 대개 몇 가지 동기 작업 메서드를 비동기 메서드로 변환 필요한 작업량는 것이 효율성 증대를 제공 합니다.
 
@@ -93,7 +93,7 @@ ASP.NET MVC 4 [컨트롤러](https://msdn.microsoft.com/en-us/library/system.web
 
 ## <a id="CreatingAsynchGizmos"></a>비동기 Gizmos 작업 메서드 만들기
 
-샘플에서는 새 [비동기](https://msdn.microsoft.com/en-us/library/hh156513(VS.110).aspx) 및 [await](https://msdn.microsoft.com/en-us/library/hh156528(VS.110).aspx) 키워드 (.NET 4.5 및 Visual Studio 2012에서 사용 가능) 하는 복잡 한 변환에 필요한 유지 관리 하는 일을 담당 하 고 컴파일러 비동기 프로그래밍 합니다. 컴파일러를 사용 하면 코드는 C#의 동기 제어 흐름을 생성 하는 사용 하 여 작성 하 고 컴파일러에 스레드를 차단 되지 않도록 하기 위해 콜백을 사용 하는 데 필요한 변환을 자동으로 적용 됩니다.
+샘플에서는 새 [비동기](https://msdn.microsoft.com/library/hh156513(VS.110).aspx) 및 [await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx) 키워드 (.NET 4.5 및 Visual Studio 2012에서 사용 가능) 하는 복잡 한 변환에 필요한 유지 관리 하는 일을 담당 하 고 컴파일러 비동기 프로그래밍 합니다. 컴파일러를 사용 하면 코드는 C#의 동기 제어 흐름을 생성 하는 사용 하 여 작성 하 고 컴파일러에 스레드를 차단 되지 않도록 하기 위해 콜백을 사용 하는 데 필요한 변환을 자동으로 적용 됩니다.
 
 다음 코드는 `Gizmos` 동기 메서드 및 `GizmosAsync` 비동기 메서드. 브라우저가 지 원하는 경우는 [HTML 5 `<mark>` 요소](http://www.w3.org/wiki/HTML/Elements/mark)의 변경 내용을 표시 `GizmosAsync` 의 노란색 강조 표시 합니다.
 
@@ -103,15 +103,15 @@ ASP.NET MVC 4 [컨트롤러](https://msdn.microsoft.com/en-us/library/system.web
 
  다음과 같은 변경을 허용 하도록 적용 된는 `GizmosAsync` 비동기적 이어야 합니다.
 
-- 메서드가로 표시 되는 [비동기](https://msdn.microsoft.com/en-us/library/hh156513(VS.110).aspx) 본문의 부분에 대 한 콜백을 생성 하 고 자동으로 만들 수는 컴파일러가 키워드는 `Task<ActionResult>` 반환 되는 합니다.
+- 메서드가로 표시 되는 [비동기](https://msdn.microsoft.com/library/hh156513(VS.110).aspx) 본문의 부분에 대 한 콜백을 생성 하 고 자동으로 만들 수는 컴파일러가 키워드는 `Task<ActionResult>` 반환 되는 합니다.
 - &quot;비동기&quot; 메서드 이름에 추가 되었습니다. "Async"를 추가 합니다.은 필요 하지 않지만 비동기 메서드를 작성할 때 규칙이 적용 됩니다.
 - 반환 형식이에서 변경 된 `ActionResult` 를 `Task<ActionResult>`합니다. 반환 형식을 `Task<ActionResult>` 진행 중인 작업을 나타내며 비동기 작업이 완료 될 때까지 대기 하는 핸들 사용 하 여 메서드의 호출자를 제공 합니다. 이 경우 호출자는 웹 서비스. `Task<ActionResult>`나타냅니다 진행 중인 작업의 결과 함께`ActionResult.`
-- [await](https://msdn.microsoft.com/en-us/library/hh156528(VS.110).aspx) 키워드 웹 서비스 호출에 적용 되었습니다.
+- [await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx) 키워드 웹 서비스 호출에 적용 되었습니다.
 - 비동기 웹 서비스 API를 호출 했습니다 (`GetGizmosAsync`).
 
 내부에 `GetGizmosAsync` 메서드는 다른 비동기 메서드 본문 `GetGizmosAsync` 호출 됩니다. `GetGizmosAsync`즉시 반환는 `Task<List<Gizmo>>` 하는 데이터를 사용할 수 있는 경우을 결국 완료 됩니다. 코드 작업을 기다립니다 gizmo 데이터 구성할 때까지 다른 작업을 수행 하지 않으려면 때문에 (사용 하는 **await** 키워드)입니다. 사용할 수는 **await** 주석으로 추가 된 경우에 키워드는 **비동기** 키워드입니다.
 
-**await** 키워드는 작업이 완료 될 때까지 스레드를 차단 하지 않습니다. 태스크에 대 한 콜백 메서드의 나머지 부분을 서명 하 고 즉시 반환 합니다. 대기 중인된 작업을 완료 하면 해당 콜백을 호출 되며 따라서 중단 메서드 오른쪽의 실행을 다시 시작 합니다. 사용 하 여 대 한 자세한 내용은 [await](https://msdn.microsoft.com/en-us/library/hh156528(VS.110).aspx) 및 [비동기](https://msdn.microsoft.com/en-us/library/hh156513(VS.110).aspx) 키워드 및 [작업](https://msdn.microsoft.com/en-us/library/system.threading.tasks.task.aspx) 네임 스페이스 참조는 [비동기 참조](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/async)합니다.
+**await** 키워드는 작업이 완료 될 때까지 스레드를 차단 하지 않습니다. 태스크에 대 한 콜백 메서드의 나머지 부분을 서명 하 고 즉시 반환 합니다. 대기 중인된 작업을 완료 하면 해당 콜백을 호출 되며 따라서 중단 메서드 오른쪽의 실행을 다시 시작 합니다. 사용 하 여 대 한 자세한 내용은 [await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx) 및 [비동기](https://msdn.microsoft.com/library/hh156513(VS.110).aspx) 키워드 및 [작업](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) 네임 스페이스 참조는 [비동기 참조](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/async)합니다.
 
 다음 코드는 `GetGizmos` 및 `GetGizmosAsync` 메서드.
 
@@ -121,9 +121,9 @@ ASP.NET MVC 4 [컨트롤러](https://msdn.microsoft.com/en-us/library/system.web
 
  비동기 변경이 하려고 하는 것과 유사한는 **GizmosAsync** 위에 있습니다. 
 
-- 메서드 시그니처를 주석 처리는 [비동기](https://msdn.microsoft.com/en-us/library/hh156513(VS.110).aspx) 키워드, 반환 형식으로 변경 되었습니다 `Task<List<Gizmo>>`, 및 *비동기* 메서드 이름에 추가 되었습니다.
-- 비동기 [HttpClient](https://msdn.microsoft.com/en-us/library/system.net.http.httpclient(VS.110).aspx) 클래스 대신 사용 되는 [WebClient](https://msdn.microsoft.com/en-us/library/system.net.webclient.aspx) 클래스입니다.
-- [await](https://msdn.microsoft.com/en-us/library/hh156528(VS.110).aspx) 에 적용 된 키워드는 [HttpClient](https://msdn.microsoft.com/en-us/library/system.net.http.httpclient(VS.110).aspx) 비동기 메서드.
+- 메서드 시그니처를 주석 처리는 [비동기](https://msdn.microsoft.com/library/hh156513(VS.110).aspx) 키워드, 반환 형식으로 변경 되었습니다 `Task<List<Gizmo>>`, 및 *비동기* 메서드 이름에 추가 되었습니다.
+- 비동기 [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(VS.110).aspx) 클래스 대신 사용 되는 [WebClient](https://msdn.microsoft.com/library/system.net.webclient.aspx) 클래스입니다.
+- [await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx) 에 적용 된 키워드는 [HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(VS.110).aspx) 비동기 메서드.
 
 다음 그림에서는 비동기 gizmo 보기를 보여 줍니다.
 
@@ -133,7 +133,7 @@ ASP.NET MVC 4 [컨트롤러](https://msdn.microsoft.com/en-us/library/system.web
 
 ## <a id="Parallel"></a>동시에 여러 작업을 수행합니다.
 
-비동기 작업 메서드는 동작 여러 개의 독립적인 작업을 수행 해야 하는 경우 동기 메서드를 통해 중요 한 장점을 갖습니다. 제공 된 샘플 동기 메서드로 `PWG`(에 대 한 제품, Widget 및 Gizmos) 제품, widget 및 gizmos 목록을 가져오려면 세 가지 웹 서비스 호출의 결과 표시 합니다. [ASP.NET Web API](../../../web-api/index.md) 이러한 제공 하는 프로젝트 서비스 사용 하 여 [Task.Delay](https://msdn.microsoft.com/en-us/library/hh139096(VS.110).aspx) 시 지연 또는 느린 네트워크를 시뮬레이션 하기 위해 호출 합니다. 지연 비동기 500 밀리초로 설정 되 면 `PWGasync` 메서드는 동기 동안 완료를 약간 넘는 500 밀리초 `PWG` 버전 1, 500 밀리초 보다 우선 합니다. 동기 `PWG` 메서드는 다음 코드에 표시 됩니다.
+비동기 작업 메서드는 동작 여러 개의 독립적인 작업을 수행 해야 하는 경우 동기 메서드를 통해 중요 한 장점을 갖습니다. 제공 된 샘플 동기 메서드로 `PWG`(에 대 한 제품, Widget 및 Gizmos) 제품, widget 및 gizmos 목록을 가져오려면 세 가지 웹 서비스 호출의 결과 표시 합니다. [ASP.NET Web API](../../../web-api/index.md) 이러한 제공 하는 프로젝트 서비스 사용 하 여 [Task.Delay](https://msdn.microsoft.com/library/hh139096(VS.110).aspx) 시 지연 또는 느린 네트워크를 시뮬레이션 하기 위해 호출 합니다. 지연 비동기 500 밀리초로 설정 되 면 `PWGasync` 메서드는 동기 동안 완료를 약간 넘는 500 밀리초 `PWG` 버전 1, 500 밀리초 보다 우선 합니다. 동기 `PWG` 메서드는 다음 코드에 표시 됩니다.
 
 [!code-csharp[Main](using-asynchronous-methods-in-aspnet-mvc-4/samples/sample7.cs)]
 
@@ -147,11 +147,11 @@ ASP.NET MVC 4 [컨트롤러](https://msdn.microsoft.com/en-us/library/system.web
 
 ## <a id="CancelToken"></a>취소 토큰을 사용 하 여
 
-반환 하는 비동기 작업 메서드에 `Task<ActionResult>`가지도록 되는 취소할 수 있는는 [CancellationToken](https://msdn.microsoft.com/en-us/library/system.threading.cancellationtoken(VS.110).aspx) 하나와 함께 제공 되는 경우 매개 변수는 [AsyncTimeout](https://msdn.microsoft.com/en-us/library/system.web.mvc.asynctimeoutattribute(VS.108).aspx) 특성입니다. 다음 코드는 `GizmosCancelAsync` 150 밀리초의 시간 제한 사용 하 여 메서드.
+반환 하는 비동기 작업 메서드에 `Task<ActionResult>`가지도록 되는 취소할 수 있는는 [CancellationToken](https://msdn.microsoft.com/library/system.threading.cancellationtoken(VS.110).aspx) 하나와 함께 제공 되는 경우 매개 변수는 [AsyncTimeout](https://msdn.microsoft.com/library/system.web.mvc.asynctimeoutattribute(VS.108).aspx) 특성입니다. 다음 코드는 `GizmosCancelAsync` 150 밀리초의 시간 제한 사용 하 여 메서드.
 
 [!code-csharp[Main](using-asynchronous-methods-in-aspnet-mvc-4/samples/sample9.cs?highlight=1-3,5,10)]
 
-다음 코드에서는 사용 GetGizmosAsync 오버 로드는 [CancellationToken](https://msdn.microsoft.com/en-us/library/system.threading.cancellationtoken(VS.110).aspx) 매개 변수입니다.
+다음 코드에서는 사용 GetGizmosAsync 오버 로드는 [CancellationToken](https://msdn.microsoft.com/library/system.threading.cancellationtoken(VS.110).aspx) 매개 변수입니다.
 
 [!code-csharp[Main](using-asynchronous-methods-in-aspnet-mvc-4/samples/sample10.cs)]
 
@@ -163,13 +163,13 @@ ASP.NET MVC 4 [컨트롤러](https://msdn.microsoft.com/en-us/library/system.web
 
 - Windows 7, Windows Vista 및 모든 Windows 클라이언트 운영 체제 최대 10 개의 동시 요청 했습니다. Windows Server 운영 체제를 과부하 상태에서 비동기 메서드의 이점을 활용 해야 합니다.
 - 관리자 권한 명령 프롬프트에서 IIS를.NET 4.5를 등록 합니다.  
- %windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet\_regiis-i  
- 참조 [ASP.NET IIS 등록 도구 (Aspnet\_regiis.exe)](https://msdn.microsoft.com/en-us/library/k6h9cz8h.aspx)
+ %windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet\_regiis -i  
+ 참조 [ASP.NET IIS 등록 도구 (Aspnet\_regiis.exe)](https://msdn.microsoft.com/library/k6h9cz8h.aspx)
 - 늘려야 할 수는 [HTTP.sys](https://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture) 1000에서 5000 기본값에서 큐 제한 합니다. 표시 될 수 설정이 너무 낮으면 [HTTP.sys](https://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture) HTTP 503 상태와 함께 요청을 거부 합니다. 변경 하려면 HTTP.sys 큐 제한:
 
     - IIS 관리자를 열고 응용 프로그램 풀 창으로 이동 합니다.
     - 대상 응용 프로그램 풀을 마우스 오른쪽 단추로 클릭 하 고 선택 **고급 설정**합니다.  
-        ![고급](using-asynchronous-methods-in-aspnet-mvc-4/_static/image4.png)
+        ![advanced](using-asynchronous-methods-in-aspnet-mvc-4/_static/image4.png)
     - 에 **고급 설정** 대화 상자에서 변경 *Queue Length* 5000 1000에서입니다.  
         ![큐 길이](using-asynchronous-methods-in-aspnet-mvc-4/_static/image5.png)  
   
@@ -177,6 +177,6 @@ ASP.NET MVC 4 [컨트롤러](https://msdn.microsoft.com/en-us/library/system.web
 
     - [.NET 4.0으로 현재 위치 업그레이드 하는.NET 버전 관리 및 멀티 타기 팅-.NET 4.5](http://www.hanselman.com/blog/NETVersioningAndMultiTargetingNET45IsAnInplaceUpgradeToNET40.aspx)
     - [IIS 응용 프로그램 또는 AppPool 2.0 보다는 ASP.NET 3.5를 사용 하도록 설정 하는 방법](http://www.hanselman.com/blog/HowToSetAnIISApplicationOrAppPoolToUseASPNET35RatherThan20.aspx)
-    - [.NET framework 버전 및 종속성](https://msdn.microsoft.com/en-us/library/bb822049(VS.110).aspx)
-- 응용 프로그램에서 웹 서비스를 이용 또는 HTTP를 통해는 백엔드와 통신 하는 System.NET 증가 시켜야 하는 경우는 [connectionManagement/maxconnection](https://msdn.microsoft.com/en-us/library/fb6y0fyc(VS.110).aspx) 요소입니다. ASP.NET 응용 프로그램에 대 한이 12 배 Cpu 수를 자동 구성 기능에 의해 제한 됩니다. 즉, 쿼드 프로세서에은 수는 최대 12 \* 4 = 48 IP 끝점에 대 한 동시 연결 합니다. 이에 연결 되기 때문에 [autoConfig](https://msdn.microsoft.com/en-us/library/7w2sway1(VS.110).aspx), 증가 하는 가장 쉬운 방법은 `maxconnection` ASP.NET 응용 프로그램으로 설정 하는 [System.Net.ServicePointManager.DefaultConnectionLimit](https://msdn.microsoft.com/en-us/library/system.net.servicepointmanager.defaultconnectionlimit(VS.110).aspx) 에 프로그래밍 방식으로 `Application_Start` 에서 메서드는 *global.asax* 파일입니다. 예제 다운로드 샘플을 참조 하십시오.
+    - [.NET framework 버전 및 종속성](https://msdn.microsoft.com/library/bb822049(VS.110).aspx)
+- 응용 프로그램에서 웹 서비스를 이용 또는 HTTP를 통해는 백엔드와 통신 하는 System.NET 증가 시켜야 하는 경우는 [connectionManagement/maxconnection](https://msdn.microsoft.com/library/fb6y0fyc(VS.110).aspx) 요소입니다. ASP.NET 응용 프로그램에 대 한이 12 배 Cpu 수를 자동 구성 기능에 의해 제한 됩니다. 즉, 쿼드 프로세서에은 수는 최대 12 \* 4 = 48 IP 끝점에 대 한 동시 연결 합니다. 이에 연결 되기 때문에 [autoConfig](https://msdn.microsoft.com/library/7w2sway1(VS.110).aspx), 증가 하는 가장 쉬운 방법은 `maxconnection` ASP.NET 응용 프로그램으로 설정 하는 [System.Net.ServicePointManager.DefaultConnectionLimit](https://msdn.microsoft.com/library/system.net.servicepointmanager.defaultconnectionlimit(VS.110).aspx) 에 프로그래밍 방식으로 `Application_Start` 에서 메서드는 *global.asax* 파일입니다. 예제 다운로드 샘플을 참조 하십시오.
 - .NET 4.5, 5000 기본값인 [MaxConcurrentRequestsPerCPU](https://blogs.msdn.com/tmarq/archive/2007/07/21/asp-net-thread-usage-on-iis-7-0-and-6-0.aspx) 이 괜찮아 야 합니다.

@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/cache-tag-helper
-ms.openlocfilehash: dfd9c3c0c4e50a99e4f8703b01bd9b384930b87a
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 10aa1b493dbd0672cac789f6e48ddf2f14ba35dc
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="cache-tag-helper-in-aspnet-core-mvc"></a>ASP.NET Core MVC에서에서 태그 도우미를 캐시 합니다.
 
@@ -277,7 +277,7 @@ public IActionResult Index(string myParam1,string myParam2,string myParam3)
 </cache>
 ```
 
-`priority` 특성 특정 수준의 캐시 보존을 보장 하지 않습니다. `CacheItemPriority`뿐입니다. 이 특성을 설정 `NeverRemove` 캐시는 항상 유지 되어야 하는 것을 보장 하지 않습니다. 참조 [추가 리소스](#additional-resources) 자세한 정보에 대 한 합니다.
+`priority` 특성 특정 수준의 캐시 보존을 보장 하지 않습니다. `CacheItemPriority`뿐입니다. 이 특성을 설정 `NeverRemove` 캐시는 항상 유지 되어야 하는 가능성이 보장 되지 않습니다. 참조 [추가 리소스](#additional-resources) 자세한 정보에 대 한 합니다.
 
 캐시 태그 도우미에 따라 달라 집니다.는 [메모리 캐시 서비스](xref:performance/caching/memory)합니다. 캐시 태그 도우미 추가 되지 않은 경우 서비스를 추가 합니다.
 

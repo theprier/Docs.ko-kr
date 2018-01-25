@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4c7f15053ca035a1df1222f88752b8243808bef0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 95102e5e6b3e8b78e2757a2bdee39976003011e3
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="processing-unhandled-exceptions-c"></a>처리 되지 않은 예외 (C#)를 처리 합니다.
 ====================
@@ -41,9 +41,9 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="executing-code-when-theerrorevent-is-raised"></a>때 코드 실행은`Error`이벤트 발생
 
-이벤트 개체 발생 하는 흥미로운, 신호에 대 한 다른 개체에 대 한 응답에서 코드를 실행 하는 메커니즘을 제공 합니다. ASP.NET 개발자로 서 이벤트를 기준으로 생각 하는 데 익숙한 합니다. 해당 단추에 대 한 이벤트 처리기를 만들고 방문자가 특정 단추를 클릭할 때 일부 코드를 실행 하려는 경우 `Click` 이벤트 및 코드 대시보드에 배치한 것입니다. ASP.NET 런타임에서 발생 하는 [ `Error` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.error.aspx) 의 오류 세부 정보를 기록 하기 위한 코드는 이벤트 처리기에서 라인으로 설정 하에 따라 처리 되지 않은 예외가 발생할 때마다 합니다. 하지만 방법에 대 한 이벤트 처리기를 만들 수 있습니다는 `Error` 이벤트?
+이벤트 개체 발생 하는 흥미로운, 신호에 대 한 다른 개체에 대 한 응답에서 코드를 실행 하는 메커니즘을 제공 합니다. ASP.NET 개발자로 서 이벤트를 기준으로 생각 하는 데 익숙한 합니다. 해당 단추에 대 한 이벤트 처리기를 만들고 방문자가 특정 단추를 클릭할 때 일부 코드를 실행 하려는 경우 `Click` 이벤트 및 코드 대시보드에 배치한 것입니다. ASP.NET 런타임에서 발생 하는 [ `Error` 이벤트](https://msdn.microsoft.com/library/system.web.httpapplication.error.aspx) 의 오류 세부 정보를 기록 하기 위한 코드는 이벤트 처리기에서 라인으로 설정 하에 따라 처리 되지 않은 예외가 발생할 때마다 합니다. 하지만 방법에 대 한 이벤트 처리기를 만들 수 있습니다는 `Error` 이벤트?
 
-`Error` 이벤트는에서 대부분의 이벤트 중 하나는 [ `HttpApplication` 클래스](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.aspx) 요청 되는 동안 HTTP 파이프라인에서 특정 단계에서 발생 하는 합니다. 예를 들어는 `HttpApplication` 클래스의 [ `BeginRequest` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.beginrequest.aspx) 모든 요청;의 시작 부분에서 발생 해당 [ `AuthenticateRequest` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.authenticaterequest.aspx) 보안 모듈에서 요청자를 확인 하는 경우 발생 합니다. 이러한 `HttpApplication` 이벤트 페이지 개발자는 요청 수명에 다양 한 포인트에서 사용자 지정 논리를 실행 하는 방법을 제공 합니다.
+`Error` 이벤트는에서 대부분의 이벤트 중 하나는 [ `HttpApplication` 클래스](https://msdn.microsoft.com/library/system.web.httpapplication.aspx) 요청 되는 동안 HTTP 파이프라인에서 특정 단계에서 발생 하는 합니다. 예를 들어는 `HttpApplication` 클래스의 [ `BeginRequest` 이벤트](https://msdn.microsoft.com/library/system.web.httpapplication.beginrequest.aspx) 모든 요청;의 시작 부분에서 발생 해당 [ `AuthenticateRequest` 이벤트](https://msdn.microsoft.com/library/system.web.httpapplication.authenticaterequest.aspx) 보안 모듈에서 요청자를 확인 하는 경우 발생 합니다. 이러한 `HttpApplication` 이벤트 페이지 개발자는 요청 수명에 다양 한 포인트에서 사용자 지정 논리를 실행 하는 방법을 제공 합니다.
 
 에 대 한 이벤트 처리기는 `HttpApplication` 이벤트 라는 특수 한 파일에 배치할 수 있습니다 `Global.asax`합니다. 웹 사이트에서이 파일을 만들려면 이름을 가진 전역 응용 프로그램 클래스 템플릿을 사용 하 여 웹 사이트의 루트에 새 항목을 추가 `Global.asax`합니다.
 
@@ -60,19 +60,19 @@ ms.lasthandoff: 11/10/2017
 > 복사 해야 하는 ASP.NET 응용 프로그램을 배포 하는 경우는 `Global.asax` 프로덕션 환경에는 파일입니다. `Global.asax.cs` 는 WAP에서 생성 된 파일을 프로젝트의 어셈블리에이 코드는 컴파일되므로 프로덕션에 복사할 필요가 없습니다.
 
 
-Visual Studio의 전역 응용 프로그램 클래스 템플릿으로 만든 이벤트 처리기 하지는 않습니다. 에 대 한 이벤트 처리기를 추가할 수 있습니다 `HttpApplication` 이벤트 처리기의 이름을 지정 하 여 이벤트 `Application_EventName`합니다. 예를 들어 다음 코드를 추가할 수 있습니다는 `Global.asax` 에 대 한 이벤트 처리기를 만들려는 파일의 [ `AuthorizeRequest` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.authorizerequest.aspx):
+Visual Studio의 전역 응용 프로그램 클래스 템플릿으로 만든 이벤트 처리기 하지는 않습니다. 에 대 한 이벤트 처리기를 추가할 수 있습니다 `HttpApplication` 이벤트 처리기의 이름을 지정 하 여 이벤트 `Application_EventName`합니다. 예를 들어 다음 코드를 추가할 수 있습니다는 `Global.asax` 에 대 한 이벤트 처리기를 만들려는 파일의 [ `AuthorizeRequest` 이벤트](https://msdn.microsoft.com/library/system.web.httpapplication.authorizerequest.aspx):
 
 [!code-vb[Main](processing-unhandled-exceptions-cs/samples/sample1.vb)]
 
 마찬가지로, 전역 응용 프로그램 클래스 템플릿으로 만든 필요 하지 않은 모든 이벤트 처리기를 제거할 수 있습니다. 이 자습서에서는 필요한에 대 한 이벤트 처리기는 `Error` 이벤트를 자유롭게 다른 이벤트 처리기를 제거 하 고 `Global.asax` 파일입니다.
 
 > [!NOTE]
-> *HTTP 모듈* 제공에 대 한 이벤트 처리기를 정의 하는 다른 방법은 `HttpApplication` 이벤트입니다. HTTP 모듈은 별도 클래스 라이브러리에 직접 웹 응용 프로그램 프로젝트 내에 배치 하거나 분리할 수 있는 클래스 파일을으로 생성 됩니다. HTTP 모듈을 만들기 위한 보다 유연 하 고 다시 사용할 수 있는 모델을 제공 클래스 라이브러리로 구분 될 수 있습니다, 때문에 `HttpApplication` 이벤트 처리기입니다. 반면는 `Global.asax` 파일은 특정 있는 웹 응용 프로그램에 HTTP 모듈 이때 웹 사이트에 HTTP 모듈을 추가 하기만 하면 됩니다 어셈블리를 삭제 하는 중 어셈블리로 컴파일할 수는 `Bin` 폴더 및 등록 된 모듈에 `Web.config`합니다. 이 자습서를 작성 하 고 HTTP 모듈을 사용 하 여 찾지 않습니다 되지만 다음과 같은 두 개의 자습서에 사용 되는 두 개의 오류 로깅 라이브러리 HTTP 모듈로 구현 됩니다. 자세한 배경을 알고 싶으면 HTTP 모듈의 이점에 대 한 참조 [를 사용 하 여 HTTP 모듈 및 처리기 플러그형 ASP.NET 구성 요소 만들기에](https://msdn.microsoft.com/en-us/library/aa479332.aspx)합니다.
+> *HTTP 모듈* 제공에 대 한 이벤트 처리기를 정의 하는 다른 방법은 `HttpApplication` 이벤트입니다. HTTP 모듈은 별도 클래스 라이브러리에 직접 웹 응용 프로그램 프로젝트 내에 배치 하거나 분리할 수 있는 클래스 파일을으로 생성 됩니다. HTTP 모듈을 만들기 위한 보다 유연 하 고 다시 사용할 수 있는 모델을 제공 클래스 라이브러리로 구분 될 수 있습니다, 때문에 `HttpApplication` 이벤트 처리기입니다. 반면는 `Global.asax` 파일은 특정 있는 웹 응용 프로그램에 HTTP 모듈 이때 웹 사이트에 HTTP 모듈을 추가 하기만 하면 됩니다 어셈블리를 삭제 하는 중 어셈블리로 컴파일할 수는 `Bin` 폴더 및 등록 된 모듈에 `Web.config`합니다. 이 자습서를 작성 하 고 HTTP 모듈을 사용 하 여 찾지 않습니다 되지만 다음과 같은 두 개의 자습서에 사용 되는 두 개의 오류 로깅 라이브러리 HTTP 모듈로 구현 됩니다. 자세한 배경을 알고 싶으면 HTTP 모듈의 이점에 대 한 참조 [를 사용 하 여 HTTP 모듈 및 처리기 플러그형 ASP.NET 구성 요소 만들기에](https://msdn.microsoft.com/library/aa479332.aspx)합니다.
 
 
 ## <a name="retrieving-information-about-the-unhandled-exception"></a>처리 되지 않은 예외에 대 한 정보 검색
 
-Global.asax 파일을 했으므로 시점에서 `Application_Error` 이벤트 처리기입니다. 이 이벤트 처리기를 실행 하는 경우 오류 개발자에 게 알림와 세부 정보를 로그 필요 합니다. 이러한 작업을 수행 하려면 먼저 발생 한 예외의 세부 정보를 확인 해야 합니다. 서버 개체를 사용 하 여 [ `GetLastError` 메서드](https://msdn.microsoft.com/en-us/library/system.web.httpserverutility.getlasterror.aspx) 시킨 처리 되지 않은 예외의 세부 정보를 검색 하는 `Error` 이벤트를 발생 합니다.
+Global.asax 파일을 했으므로 시점에서 `Application_Error` 이벤트 처리기입니다. 이 이벤트 처리기를 실행 하는 경우 오류 개발자에 게 알림와 세부 정보를 로그 필요 합니다. 이러한 작업을 수행 하려면 먼저 발생 한 예외의 세부 정보를 확인 해야 합니다. 서버 개체를 사용 하 여 [ `GetLastError` 메서드](https://msdn.microsoft.com/library/system.web.httpserverutility.getlasterror.aspx) 시킨 처리 되지 않은 예외의 세부 정보를 검색 하는 `Error` 이벤트를 발생 합니다.
 
 [!code-csharp[Main](processing-unhandled-exceptions-cs/samples/sample2.cs)]
 
@@ -90,7 +90,7 @@ Global.asax 파일을 했으므로 시점에서 `Application_Error` 이벤트 �
 
 프로덕션 환경에서 처리 되지 않은 예외가 발생 하는 경우에 개발 팀의 경고는 오류를 평가 하 고 수행 해야 하는 작업을 확인할 수 있도록 해야 합니다. 예를 들어 없을 경우 double로 해야 합니다는 데이터베이스에 대 한 연결에 오류가 확인 연결 문자열 하 고, 웹 호스팅 회사도 지원 티켓을 엽니다. 예외는 프로그래밍 오류 때문에 발생 한 경우 추가 코드 또는 유효성 검사 논리를 나중에 이러한 오류를 방지 하기 위해 추가 해야 합니다.
 
-사용 되는.NET Framework 클래스는 [ `System.Net.Mail` 네임 스페이스](https://msdn.microsoft.com/en-us/library/system.net.mail.aspx) 쉽게 전자 메일을 보낼 수 있도록 합니다. [ `MailMessage` 클래스](https://msdn.microsoft.com/en-us/library/system.net.mail.mailmessage.aspx) 전자 메일 메시지를 나타내며 같은 속성을 보유 `To`, `From`, `Subject`, `Body`, 및 `Attachments`합니다. `SmtpClass` 보내는 데 사용 되는 `MailMessage` 개체는 지정 된 SMTP 서버를 사용 하 여, SMTP 서버 설정에서 프로그래밍 방식으로 또는 선언적으로 지정할 수 있습니다는 [ `<system.net>` 요소](https://msdn.microsoft.com/en-us/library/6484zdc1.aspx) 에 `Web.config file`합니다. 전자 메일을 보내는 방법에 대 한 자세한 내용은 ASP.NET 응용 프로그램에서 메시지 확인해 내 문서 [ASP.NET에서 전자 메일 보내기](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx), 및 [System.Net.Mail FAQ](http://systemnetmail.com/)합니다.
+사용 되는.NET Framework 클래스는 [ `System.Net.Mail` 네임 스페이스](https://msdn.microsoft.com/library/system.net.mail.aspx) 쉽게 전자 메일을 보낼 수 있도록 합니다. [ `MailMessage` 클래스](https://msdn.microsoft.com/library/system.net.mail.mailmessage.aspx) 전자 메일 메시지를 나타내며 같은 속성을 보유 `To`, `From`, `Subject`, `Body`, 및 `Attachments`합니다. `SmtpClass` 보내는 데 사용 되는 `MailMessage` 개체는 지정 된 SMTP 서버를 사용 하 여, SMTP 서버 설정에서 프로그래밍 방식으로 또는 선언적으로 지정할 수 있습니다는 [ `<system.net>` 요소](https://msdn.microsoft.com/library/6484zdc1.aspx) 에 `Web.config file`합니다. 전자 메일을 보내는 방법에 대 한 자세한 내용은 ASP.NET 응용 프로그램에서 메시지 확인해 내 문서 [ASP.NET에서 전자 메일 보내기](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx), 및 [System.Net.Mail FAQ](http://systemnetmail.com/)합니다.
 
 > [!NOTE]
 > `<system.net>` 요소에서 사용 하는 SMTP 서버 설정이 포함 되어는 `SmtpClient` 전자 메일을 보낼 때 클래스입니다. 웹 호스팅 회사 가능성이 응용 프로그램에서 전자 메일을 보내는 데 사용할 수 있는 SMTP 서버를 있습니다. 웹 응용 프로그램에서 사용 해야 하는 SMTP 서버 설정에 대 한 정보는 웹 호스트의 지원 섹션을 참조 하십시오.
@@ -102,7 +102,7 @@ Global.asax 파일을 했으므로 시점에서 `Application_Error` 이벤트 �
 
 위의 코드는 매우 긴,에서는 대량의 개발자에 게 보내는 전자 메일에 표시 되는 HTML을 만듭니다. 참조 하 여 시작 하는 코드는 `HttpException` 에서 반환 되는 `GetLastError` 메서드 (`lastErrorWrapper`). 요청에 의해 발생 한 실제 예외를 통해 검색은 `lastErrorWrapper.InnerException` 변수에 할당 하 고 `lastError`합니다. 유형, 메시지 및 스택 추적 정보에서 검색 됩니다 `lastError` 이며 세 개의 문자열 변수에 저장 합니다.
 
-다음으로 `MailMessage` 라는 개체 `mm` 만들어집니다. 전자 메일 본문에는 HTML 형식의 이며 요청된 된 페이지의 URL는 현재 로그온된 한 사용자 이름과 (유형, 메시지 및 스택 추적) 예외에 대 한 정보를 표시 합니다. 에 대 한 유용한 기능 중 하나는 `HttpException` 클래스는를 호출 하 여는 예외 세부 정보 노란색 화면의 사망 (YSOD)를 만드는 데 사용 되는 HTML을 생성할 수 있습니다는 [GetHtmlErrorMessage 메서드](https://msdn.microsoft.com/en-us/library/system.web.httpexception.gethtmlerrormessage.aspx)합니다. 이 메서드는 예외 세부 정보 YSOD 태그를 검색 하 고 첨부 파일로 메일에 추가 하려면 여기 사용 됩니다. 주의 사항: 발생 하는 예외는 `Error` 이벤트 (예: 존재 하지 않는 페이지에 대 한 요청) HTTP 기반 예외가 했습니다 하면 `GetHtmlErrorMessage` 메서드는 반환 `null`합니다.
+다음으로 `MailMessage` 라는 개체 `mm` 만들어집니다. 전자 메일 본문에는 HTML 형식의 이며 요청된 된 페이지의 URL는 현재 로그온된 한 사용자 이름과 (유형, 메시지 및 스택 추적) 예외에 대 한 정보를 표시 합니다. 에 대 한 유용한 기능 중 하나는 `HttpException` 클래스는를 호출 하 여는 예외 세부 정보 노란색 화면의 사망 (YSOD)를 만드는 데 사용 되는 HTML을 생성할 수 있습니다는 [GetHtmlErrorMessage 메서드](https://msdn.microsoft.com/library/system.web.httpexception.gethtmlerrormessage.aspx)합니다. 이 메서드는 예외 세부 정보 YSOD 태그를 검색 하 고 첨부 파일로 메일에 추가 하려면 여기 사용 됩니다. 주의 사항: 발생 하는 예외는 `Error` 이벤트 (예: 존재 하지 않는 페이지에 대 한 요청) HTTP 기반 예외가 했습니다 하면 `GetHtmlErrorMessage` 메서드는 반환 `null`합니다.
 
 마지막 단계는 보낼는 `MailMessage`합니다. 새 이렇게 `SmtpClient` 메서드와 호출 해당 `Send` 메서드.
 
@@ -139,7 +139,7 @@ Global.asax 파일을 했으므로 시점에서 `Application_Error` 이벤트 �
 
 한 순수 효과 처리 되지 않은 예외가 발생 하는 요청 HTTP 302 리디렉션을 때 끝나는 것입니다. 사용자 지정 오류 페이지에 대 한 후속 요청은 완전히 새로운 요청; ASP.NET이 시점 엔진 오류 정보는 삭제 하 고는 또한 사용자 지정 오류 페이지에 대 한 새 요청 이전 요청에서 처리 되지 않은 예외를 연결할 수 없습니다. 이 인해 `GetLastError` 반환 `null` 사용자 지정 오류 페이지에서 호출 합니다.
 
-그러나, 사용자 지정 오류 페이지에 오류가 발생 한 동일한 요청 하는 동안 실행 수는 있습니다. [ `Server.Transfer(url)` ](https://msdn.microsoft.com/en-us/library/system.web.httpserverutility.transfer.aspx) 메서드 실행을 지정된 된 URL로 이동 하 고 동일한 요청 내에서 처리 합니다. 코드를 이동할 수는 `Application_Error` 이벤트 처리기에서 대체 되는 사용자 지정 오류 페이지의 코드 숨김 클래스를 `Global.asax` 를 다음 코드로:
+그러나, 사용자 지정 오류 페이지에 오류가 발생 한 동일한 요청 하는 동안 실행 수는 있습니다. [ `Server.Transfer(url)` ](https://msdn.microsoft.com/library/system.web.httpserverutility.transfer.aspx) 메서드 실행을 지정된 된 URL로 이동 하 고 동일한 요청 내에서 처리 합니다. 코드를 이동할 수는 `Application_Error` 이벤트 처리기에서 대체 되는 사용자 지정 오류 페이지의 코드 숨김 클래스를 `Global.asax` 를 다음 코드로:
 
 [!code-csharp[Main](processing-unhandled-exceptions-cs/samples/sample5.cs)]
 
@@ -163,9 +163,9 @@ ASP.NET 런타임에서 발생 하는 ASP.NET 웹 응용 프로그램에서 처�
 - [HTTP 처리기 및 asp.net에서 HTTP 모듈](http://www.15seconds.com/Issue/020417.htm)
 - [ASP.NET에서 메일을 보내는 중](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx)
 - [이해의 `Global.asax` 파일](http://aspalliance.com/1114_Understanding_the_Globalasax_file.all)
-- [HTTP 모듈 및 처리기를 사용 하 여 플러그형 ASP.NET 구성 요소 만들기](https://msdn.microsoft.com/en-us/library/aa479332.aspx)
+- [HTTP 모듈 및 처리기를 사용 하 여 플러그형 ASP.NET 구성 요소 만들기](https://msdn.microsoft.com/library/aa479332.aspx)
 - [ASP.NET 작업 `Global.asax` 파일](http://articles.techrepublic.com.com/5100-10878_11-5771721.html)
-- [작업 `HttpApplication` 인스턴스](https://msdn.microsoft.com/en-us/library/a0xez8f2.aspx)
+- [작업 `HttpApplication` 인스턴스](https://msdn.microsoft.com/library/a0xez8f2.aspx)
 
 >[!div class="step-by-step"]
 [이전](displaying-a-custom-error-page-cs.md)

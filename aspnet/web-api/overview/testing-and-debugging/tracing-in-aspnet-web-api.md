@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/testing-and-debugging/tracing-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: f35c8a10018ce796e2d905d6ee839ff09bb380a1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7392ae5d9bc4c3aab45a9373099a0ee18e873a4f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="tracing-in-aspnet-web-api-2"></a>ASP.NET Web API 2의 추적
 ====================
@@ -58,7 +58,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](tracing-in-aspnet-web-api/samples/sample2.cs?highlight=6)]
 
-이 코드는 추가 [SystemDiagnosticsTraceWriter](https://msdn.microsoft.com/en-us/library/system.web.http.tracing.systemdiagnosticstracewriter.aspx) Web API 파이프라인에는 클래스입니다. **SystemDiagnosticsTraceWriter** 클래스에 추적 정보를 기록 [System.Diagnostics.Trace](https://msdn.microsoft.com/en-us/library/system.diagnostics.trace)합니다.
+이 코드는 추가 [SystemDiagnosticsTraceWriter](https://msdn.microsoft.com/library/system.web.http.tracing.systemdiagnosticstracewriter.aspx) Web API 파이프라인에는 클래스입니다. **SystemDiagnosticsTraceWriter** 클래스에 추적 정보를 기록 [System.Diagnostics.Trace](https://msdn.microsoft.com/library/system.diagnostics.trace)합니다.
 
 추적을 보려면 디버거에서 응용 프로그램을 실행 합니다. 브라우저에서로 이동 `/api/values`합니다.
 
@@ -68,7 +68,7 @@ Trace 문은 Visual Studio의 출력 창에 기록 됩니다. (에서 **보기**
 
 [![](tracing-in-aspnet-web-api/_static/image7.png)](tracing-in-aspnet-web-api/_static/image6.png)
 
-때문에 **SystemDiagnosticsTraceWriter** 에 추적 정보를 기록 **System.Diagnostics.Trace**, 추가 추적 수신기를 등록할 수 있습니다; 예를 들어 쓸 추적 로그 파일에 있습니다. 추적 기록기에 대 한 자세한 내용은 참조는 [추적 수신기](https://msdn.microsoft.com/en-us/library/4y5y10s7.aspx) MSDN 항목.
+때문에 **SystemDiagnosticsTraceWriter** 에 추적 정보를 기록 **System.Diagnostics.Trace**, 추가 추적 수신기를 등록할 수 있습니다; 예를 들어 쓸 추적 로그 파일에 있습니다. 추적 기록기에 대 한 자세한 내용은 참조는 [추적 수신기](https://msdn.microsoft.com/library/4y5y10s7.aspx) MSDN 항목.
 
 ### <a name="configuring-systemdiagnosticstracewriter"></a>SystemDiagnosticsTraceWriter를 구성합니다.
 
@@ -89,7 +89,7 @@ Trace 문은 Visual Studio의 출력 창에 기록 됩니다. (에서 **보기**
 
 추적 기록기를 얻기 위해 호출 **HttpConfiguration.Services.GetTraceWriter**합니다. 이 메서드는 컨트롤러에서를 통해 액세스할 수는 **ApiController.Configuration** 속성입니다.
 
-추적을 작성 하기 위해 호출할 수 있습니다는 **ITraceWriter.Trace** 메서드를 직접 되지만 [ITraceWriterExtensions](https://msdn.microsoft.com/en-us/library/system.web.http.tracing.itracewriterextensions.aspx) 클래스 더 친숙 한 있는 몇 가지 확장 메서드를 정의 합니다. 예를 들어는 **정보** 메서드 위에 표시 된 추적 수준으로 추적을 만들 **정보**합니다.
+추적을 작성 하기 위해 호출할 수 있습니다는 **ITraceWriter.Trace** 메서드를 직접 되지만 [ITraceWriterExtensions](https://msdn.microsoft.com/library/system.web.http.tracing.itracewriterextensions.aspx) 클래스 더 친숙 한 있는 몇 가지 확장 메서드를 정의 합니다. 예를 들어는 **정보** 메서드 위에 표시 된 추적 수준으로 추적을 만들 **정보**합니다.
 
 ## <a name="web-api-tracing-infrastructure"></a>Web API 추적 인프라
 

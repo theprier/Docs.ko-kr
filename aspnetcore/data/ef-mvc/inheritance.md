@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/inheritance
-ms.openlocfilehash: 756f1bbba73bd760f780d18c01597642dd1f7216
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: a4ae696bdd114ab9c36d1218f753fa3d515f2300
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="inheritance---ef-core-with-aspnet-core-mvc-tutorial-9-of-10"></a>상속-EF 코어 ASP.NET Core MVC 자습서 (9 / 10)
 
@@ -106,7 +106,7 @@ dotnet ef migrations add Inheritance
 
 * 학생 행 고용 날짜 되지 않았으므로 HireDate null을 허용 하면 있습니다.
 
-* 학생을 가리키는 외래 키를 업데이트 하는 임시 필드를 추가 합니다. 학생 Person 테이블에 복사 하는 경우 새 기본 키 값을 볼 수 있습니다.
+* 학생을 가리키는 외래 키를 업데이트 하는 임시 필드를 추가 합니다. 학생 Person 테이블에 복사할 때 새 기본 키 값 받게 됩니다.
 
 * Person 테이블에 학생 테이블에서 데이터를 복사 합니다. 이렇게 하면 새 기본 키 값도 할당에 대해 학습 합니다.
 

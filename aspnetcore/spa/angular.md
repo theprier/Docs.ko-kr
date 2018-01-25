@@ -11,16 +11,16 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/angular
-ms.openlocfilehash: b54798a43f6a448c2e2aad0613ee60805a61f303
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 4162b1c26e9d278c811f691c4277d4de25adb204
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="use-the-angular-project-template-release-candidate"></a>각 프로젝트 템플릿 (릴리스 후보)를 사용 하 여
 
 > [!NOTE]
-> 이 문서는 릴리스된 각도 프로젝트 템플릿에 대 한 아닙니다. **각 서식 파일의 릴리스 후보에 대 한이 설명서는 합니다.** 에 초기 2018 릴리스 버전을 출시 하시기 바랍니다.
+> 이 설명서는 릴리스된 각도 프로젝트 템플릿에 대 한 하지 않습니다. **각 서식 파일의 릴리스 후보에 대 한이 설명서는 합니다.** 에 초기 2018 릴리스 버전을 출시 하시기 바랍니다.
 
 업데이트 된 각 프로젝트 템플릿은 있는 편리 하 게 시작 지점을 제공 ASP.NET Core에 대 한 각도 5 및 각도 CLI를 사용 하는 다양 하 고 클라이언트 쪽 UI (사용자 인터페이스)를 구현 하는 앱입니다.
 
@@ -176,7 +176,7 @@ SSR, 하는 동안 각 앱에 ASP.NET Core 응용 프로그램에서 요청 데�
 ```csharp
 options.SupplyData = (context, data) =>
 {
-    // Creates a new value called isHttpsRequest that is passed to TypeScript code
+    // Creates a new value called isHttpsRequest that's passed to TypeScript code
     data["isHttpsRequest"] = context.Request.IsHttps;
 };
 ```

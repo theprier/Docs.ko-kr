@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/deployment/using-asp-net-mvc-with-different-versions-of-iis-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 57a729501d15ebf9a533716b2a1767766954bb4c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6c9c3bf004b13677728c7c6bf2f5adf6a264dc49
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-aspnet-mvc-with-different-versions-of-iis-vb"></a>ASP.NET MVC를 사용 하 여 서로 다른 버전의 IIS (VB)
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 이 자습서에서는 여러 가지 버전의 인터넷 정보 서비스 URL 라우팅 및 ASP.NET MVC를 사용 하는 방법에 설명 합니다. ASP.NET MVC를 사용 하 여 IIS 7.0 (기본 모드), IIS 6.0 및 이전 버전의 IIS에 대 한 여러 전략 방법을 배웁니다.
 
@@ -33,7 +33,7 @@ ASP.NET MVC 프레임 워크 경로 브라우저 요청 컨트롤러 작업을 A
 - IIS 7.0 (기본 모드)-ASP.NET 라우팅을 사용 하려면 특별 한 구성이 수행 해야 합니다.
 - IIS 6.0 또는 아래-ASP.NET 라우팅을 사용 하려면 특별 한 구성 작업을 수행 해야 합니다.
 
-최신 버전의 IIS 버전 7.5 (Win7)에 합니다. IIS의 IIS 7 이상 포함 된 Windows Server 2008 AND VISTA/s p 1은 합니다. 또한 Home Basic 제외 하 고 Vista 운영 체제의 모든 버전에 IIS 7.0를 설치할 수 있습니다 (참조 [https://technet.microsoft.com/en-us/library/cc731179%28WS.10%29.aspx](https://technet.microsoft.com/en-us/library/cc731179%28WS.10%29.aspx)).
+최신 버전의 IIS 버전 7.5 (Win7)에 합니다. IIS의 IIS 7 이상 포함 된 Windows Server 2008 AND VISTA/s p 1은 합니다. 또한 Home Basic 제외 하 고 Vista 운영 체제의 모든 버전에 IIS 7.0를 설치할 수 있습니다 (참조 [https://technet.microsoft.com/library/cc731179%28WS.10%29.aspx](https://technet.microsoft.com/library/cc731179%28WS.10%29.aspx)).
 
 IIS 7.0 요청 처리를 위한 두 가지 모드를 지원 합니다. 통합된 모드 또는 클래식 모드를 사용할 수 있습니다. 통합된 모드의 IIS 7.0을 사용 하는 경우 특수 구성 단계를 수행할 필요가 없습니다. 클래식 모드에서 IIS 7.0을 사용 하는 경우 추가 구성을 수행할 필요가 있습니다.
 

@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/update-related-data
-ms.openlocfilehash: 0e4df407a1ca15aa5baa2b7226be1cf91902a583
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 3cdd36ae03824645e09f97cae85cc55956679390
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="updating-related-data---ef-core-with-aspnet-core-mvc-tutorial-7-of-10"></a>관련된 데이터-ASP.NET Core MVC 자습서 (7 / 10)와 함께 EF 코어 업데이트
 
@@ -49,7 +49,7 @@ Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework Core 및 Vi
 
 `PopulateDepartmentsDropDownList` 메서드 이름을 기준으로 정렬 하는 모든 부서의 목록을 가져옵니다, 만듭니다는 `SelectList` 드롭 다운 목록에 대 한 컬렉션 뷰 컬렉션을 전달 하 고 `ViewBag`합니다. 메서드에 선택적 `selectedDepartment` 드롭 다운 목록에서 렌더링 될 때 선택 항목을 지정 하는 호출 코드를 허용 하는 매개 변수입니다. 보기에 이름이 "DepartmentID"를 전달 하는 `<select>` 태그 도우미와 도우미를 찾는 다음 알고는 `ViewBag` 개체에 대 한는 `SelectList` "DepartmentID" 라는 합니다.
 
-HttpGet `Create` 메서드 호출의 `PopulateDepartmentsDropDownList` 새 과정에 대 한 부서 설정 되지 않으며 아직 때문에 선택한 항목을 설정 하지 않고 메서드:
+HttpGet `Create` 메서드 호출의 `PopulateDepartmentsDropDownList` 새 과정은 부서 아직 설정 되지 않습니다 때문에 선택한 항목을 설정 하지 않고 메서드:
 
 [!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?highlight=3&name=snippet_CreateGet)]
 
@@ -129,7 +129,7 @@ HttpGet `Edit` 메서드 편집 중인 과정에 이미 할당 되어 있는 분
 
 -  모델 바인더의 값으로 검색 된 Instructor 엔터티를 업데이트합니다. `TryUpdateModel` 오버 로드를 사용 하면 허용 목록에 포함 하려는 속성입니다. 이렇게 하면 과도 하 게 게시에 설명 된 대로 [두 번째 자습서](crud.md)합니다.
 
-    <!-- Snippets do not play well with <ul> [!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?range=241-244)] -->
+    <!-- Snippets don't play well with <ul> [!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?range=241-244)] -->
 
     ```csharp
     if (await TryUpdateModelAsync<Instructor>(
@@ -140,7 +140,7 @@ HttpGet `Edit` 메서드 편집 중인 과정에 이미 할당 되어 있는 분
     
 -   사무실 위치 비어 있으면 OfficeAssignment 테이블의 관련된 행이 삭제 됩니다 되도록 null로 Instructor.OfficeAssignment 속성을 설정 합니다.
 
-    <!-- Snippets do not play well with <ul>  "intro/samples/cu/Controllers/InstructorsController.cs"} -->
+    <!-- Snippets don't play well with <ul>  "intro/samples/cu/Controllers/InstructorsController.cs"} -->
 
     ```csharp
     if (String.IsNullOrWhiteSpace(instructorToUpdate.OfficeAssignment?.Location))
@@ -221,7 +221,7 @@ Course 및 Instructor 엔터티 간의 다 대 다입니다. 추가 하 고 관�
 
 [!code-html[Main](intro/samples/cu/Views/Instructors/Edit.cshtml?range=35-61)]
 
-이 코드는 세 개의 열이 있는 HTML 테이블을 만듭니다. 각 열에는 확인란이 과정 번호 및 제목으로 구성 된 캡션 뒤 합니다. 모든 확인란 있어야 그룹으로 처리 해야 하는 모델 바인더에 게 동일한 이름 ("selectedCourses"). 각 확인란의 value 속성의 값으로 설정 되어 `CourseID`합니다. 모델 바인더 구성 된 컨트롤러에 배열을 전달 페이지가 게시 되는 경우는 `CourseID` 확인란만 선택 되에 대 한 값입니다.
+이 코드는 세 개의 열이 있는 HTML 테이블을 만듭니다. 각 열에는 확인란이 과정 번호 및 제목으로 구성 된 캡션 뒤 합니다. 확인란을 모두 그룹으로 간주 하는 모델 바인더에 게 동일한 이름 ("selectedCourses"). 각 확인란의 value 속성의 값으로 설정 되어 `CourseID`합니다. 모델 바인더 구성 된 컨트롤러에 배열을 전달 페이지가 게시 되는 경우는 `CourseID` 확인란만 선택 되에 대 한 값입니다.
 
 확인란은 처음 렌더링 됩니다 때 (에 확인 표시)을 선택 하는 특성을 확인가 강사에 할당 하는 과정에 사용 되는 것입니다.
 

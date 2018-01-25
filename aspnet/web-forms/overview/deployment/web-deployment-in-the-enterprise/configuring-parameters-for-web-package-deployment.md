@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/configuring-parameters-for-web-package-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: dd1ae266740ea4728c0624b1833a98ac262e0e5a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 12a4ba8ad30df43e7192500ad4514dfa9679f899
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-parameters-for-web-package-deployment"></a>웹 패키지 배포에 대 한 매개 변수를 구성합니다.
 ====================
@@ -88,7 +88,7 @@ WPP에 생성 된 배포 패키지에서 이러한 속성 매개 변수화 합�
 
 배포 패키지를 수동으로 설치 하는 경우 IIS 관리자는 해당 속성을 자동으로 매개 변수화 된와 함께 서비스 끝점 주소에 대 한 묻는 됩니다. 실행 하 여 배포 패키지를 설치 하는 경우는 *. deploy.cmd* 파일을 편집할 수 있습니다는 *SetParameters.xml* 파일에 대 한 값과 함께 서비스 끝점 주소에 대 한 값을 제공 하는 자동으로 매개 변수화 된는 속성입니다.
 
-만드는 방법에 대 한 자세한 내용은 *parameters.xml* 파일에서 참조 [하는 방법: 설치 되어 구성 배포 설정을 때는 패키지에 매개 변수 사용](https://msdn.microsoft.com/en-us/library/ff398068.aspx)합니다. 라는 프로시저 **Web.config 파일 설정에 대 한 배포 매개 변수를 사용 하려면** 단계별 지침을 제공 합니다.
+만드는 방법에 대 한 자세한 내용은 *parameters.xml* 파일에서 참조 [하는 방법: 설치 되어 구성 배포 설정을 때는 패키지에 매개 변수 사용](https://msdn.microsoft.com/library/ff398068.aspx)합니다. 라는 프로시저 **Web.config 파일 설정에 대 한 배포 매개 변수를 사용 하려면** 단계별 지침을 제공 합니다.
 
 ## <a name="modifying-the-setparametersxml-file"></a>SetParameters.xml 파일 수정
 
@@ -144,7 +144,7 @@ WPP에 생성 된 배포 패키지에서 이러한 속성 매개 변수화 합�
 
 ## <a name="further-reading"></a>추가 정보
 
-웹 패키지를 만드는 방법에 대 한 자세한 내용은 참조 하십시오. [빌드 및 패키징 웹 응용 프로그램 프로젝트](building-and-packaging-web-application-projects.md)합니다. 실제로 웹 패키지를 배포 하는 방법에 대 한 지침을 참조 하십시오. [웹 패키지 배포](deploying-web-packages.md)합니다. 만드는 방법에 대 한 단계별 연습은 *parameters.xml* 파일에서 참조 [하는 방법: 설치 되어 구성 배포 설정을 때는 패키지에 매개 변수 사용](https://msdn.microsoft.com/en-us/library/ff398068.aspx)합니다.
+웹 패키지를 만드는 방법에 대 한 자세한 내용은 참조 하십시오. [빌드 및 패키징 웹 응용 프로그램 프로젝트](building-and-packaging-web-application-projects.md)합니다. 실제로 웹 패키지를 배포 하는 방법에 대 한 지침을 참조 하십시오. [웹 패키지 배포](deploying-web-packages.md)합니다. 만드는 방법에 대 한 단계별 연습은 *parameters.xml* 파일에서 참조 [하는 방법: 설치 되어 구성 배포 설정을 때는 패키지에 매개 변수 사용](https://msdn.microsoft.com/library/ff398068.aspx)합니다.
 
 매개 변수화 웹 배포에 대 한 일반적인 정보를 참조 하십시오. [웹 배포에서 매개 변수화 동작](https://go.microsoft.com/?linkid=9805119) (블로그 게시물).
 

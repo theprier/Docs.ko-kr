@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/identity-configuration
-ms.openlocfilehash: d3a13d1cef3417522460b44c52c1361c3e9d1162
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 9e79e670173952f1e791a0cefba61c41e1ad4437
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="configure-identity"></a>Id 구성
 
@@ -103,7 +103,7 @@ ASP.NET Core 추가 2.0는 `RequiredUniqueChars` 속성입니다. 그렇지 않�
 | 속성                | 설명                       | 기본 |
 | ----------------------- | --------------------------------- | ------- |
 | `Cookie.Name`  | 쿠키의 이름입니다.  | .AspNetCore.Cookies.  |
-| `Cookie.HttpOnly`  | True 인 경우는 쿠키는 클라이언트 쪽 스크립트에서 액세스할 수 없습니다.  |  true |
+| `Cookie.HttpOnly`  | True 인 경우 쿠키는 클라이언트 쪽 스크립트에서 액세스할 수 없습니다.  |  true |
 | `ExpireTimeSpan`  | 쿠키에 저장 된 인증 티켓 시간 유효 하 게 유지에서 만들어진 시점을 제어 합니다.  | 14 일  |
 | `LoginPath`  | 사용자 권한이 없는 경우 로그인에이 경로로 이동 합니다. | / 계정/로그인  |
 | `LogoutPath`  | 사용자 로그 아웃 하는 경우이 경로로 이동 합니다.  | /Account/Logout  |

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-staging-environment-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: b5f223f59a8b222f4f01322d228cf7434e3dfc14
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 683a0cf88225fee762e82925afe3785a2defd5bf
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="scenario-configuring-a-staging-environment-for-web-deployment"></a>시나리오: 웹 배포에 대 한 스테이징 환경 구성
 ====================
@@ -35,7 +35,7 @@ ms.lasthandoff: 11/10/2017
 - 응용 프로그램을 변경을 자주 배포 되므로 환경을 단일 단계를 지원 해야 하거나 자동 배포 합니다.
 
 > [!NOTE]
-> 이 자습서의 범위를 벗어납니다 여러 서버에서 데이터베이스 배포를 확장 합니다. 이 영역에 대 한 자세한 내용은 참조 하십시오 [SQL Server 온라인 설명서](https://technet.microsoft.com/en-us/library/ms130214.aspx)합니다.
+> 이 자습서의 범위를 벗어납니다 여러 서버에서 데이터베이스 배포를 확장 합니다. 이 영역에 대 한 자세한 내용은 참조 하십시오 [SQL Server 온라인 설명서](https://technet.microsoft.com/library/ms130214.aspx)합니다.
 
 
 예를 들어, 우리의 [자습서 시나리오](../deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md), Team Foundation Server (TFS) Contact Manager 솔루션을 관리 합니다. Rob 받는 TFS 관리자, 개발자가 필요에 따라 스테이징 환경에 배포를 트리거할 수 있는 빌드 정을 만들었습니다.

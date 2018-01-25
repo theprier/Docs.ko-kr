@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/using-oauth-providers-with-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 965d2e740cc76838b1b4e1c618a2a6d784672fcc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f0d053cecbf9a59f258470ee370852e3f112908c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-oauth-providers-with-mvc-4"></a>MVC 4와 함께 OAuth 공급자 사용
 ====================
@@ -148,7 +148,7 @@ Facebook 자격 증명으로 로그인을 한 후 페이지에 사용자 사이�
 
 에서 설명한 것 처럼 이전 섹션을 작동 하려면 기본 제공 계정 등록에 대 한 추가 정보를 검색할 필요가 없습니다. 그러나 대부분의 외부 공급자의 사용자에 대 한 다시 추가 정보를 전달 합니다. 다음 섹션에는 해당 정보를 유지 하 고 데이터베이스에 저장 하는 방법을 보여 줍니다. 특히, 사용자의 전체 이름, 사용자의 개인 웹 페이지의 URI에 대 한 값과 Facebook 계정을 확인 여부를 나타내는 값을 유지 합니다.
 
-사용 하 여 [Code First 마이그레이션을](https://msdn.microsoft.com/en-us/data/jj591621) 추가 사용자 정보를 저장 하기 위한 테이블을 추가 합니다. 되므로 현재 데이터베이스의 스냅숏을 만들 필요가 먼저 기존 데이터베이스에 테이블을 추가 됩니다. 현재 데이터베이스의 스냅숏을 만들어서 마이그레이션 새 테이블만 포함 하는 나중에 만들 수 있습니다. 현재 데이터베이스의 스냅숏을 만들려면:
+사용 하 여 [Code First 마이그레이션을](https://msdn.microsoft.com/data/jj591621) 추가 사용자 정보를 저장 하기 위한 테이블을 추가 합니다. 되므로 현재 데이터베이스의 스냅숏을 만들 필요가 먼저 기존 데이터베이스에 테이블을 추가 됩니다. 현재 데이터베이스의 스냅숏을 만들어서 마이그레이션 새 테이블만 포함 하는 나중에 만들 수 있습니다. 현재 데이터베이스의 스냅숏을 만들려면:
 
 1. 열기는 **패키지 관리자 콘솔**
 2. 명령을 실행 **설정 마이그레이션**
@@ -188,7 +188,7 @@ UsersContext 클래스에서 새 클래스에 대 한 DbSet 속성을 생성 하
 
 - ID
 - name
-- link
+- 선택합니다.
 - 성별
 - accesstoken
 

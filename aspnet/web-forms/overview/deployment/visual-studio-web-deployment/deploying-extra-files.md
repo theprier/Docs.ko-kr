@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-extra-files
 msc.type: authoredcontent
-ms.openlocfilehash: a34607b25f6cf502f5fbf2fe51bf1937f470159e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 46e18ba81c3db8bb04c5cb997bcc1607e4e38bae
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-extra-files"></a>Visual Studio를 사용 하 여 ASP.NET 웹 배포: 그 외의 파일 배포
 ====================
@@ -83,18 +83,18 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="more-information"></a>추가 정보
 
-MSBuild 파일을 사용 하는 방법을 알고 있는 경우에 코드를 작성 하 여 다른 많은 배포 작업을 자동화할 수 있습니다 *.pubxml* (프로필 관련 작업)에 대 한 파일 또는 프로젝트 *. wpp.targets* 파일 (하는 태스크 모든 프로필에 적용). 에 대 한 자세한 내용은 *.pubxml* 및 *. wpp.targets* 파일, 참조 [하는 방법: 게시 프로 파일 (.pubxml) 파일에서 배포 설정 편집 및. wpp.targets Visual Studio 웹에서 파일 프로젝트](https://msdn.microsoft.com/en-us/library/ff398069)합니다. MSBuild 코드에 대 한 기본적인 소개를 참조 하십시오. **프로젝트 파일의 분석** 에 [엔터프라이즈 배포 시리즈: 프로젝트 파일 이해](../web-deployment-in-the-enterprise/understanding-the-project-file.md)합니다. 를 고유한 시나리오에 대 한 작업을 수행 하는 MSBuild 파일을 사용 하는 방법을 확인 하려면이 가이드를 참조 하십시오.: [Microsoft Build Engine 안에: MSBuild를 사용 하 여 및 Team Foundation Build](http://msbuildbook.com) Sayed Ibraham Hashimi 및 William Bartholomew 합니다.
+MSBuild 파일을 사용 하는 방법을 알고 있는 경우에 코드를 작성 하 여 다른 많은 배포 작업을 자동화할 수 있습니다 *.pubxml* (프로필 관련 작업)에 대 한 파일 또는 프로젝트 *. wpp.targets* 파일 (하는 태스크 모든 프로필에 적용). 에 대 한 자세한 내용은 *.pubxml* 및 *. wpp.targets* 파일, 참조 [하는 방법: 게시 프로 파일 (.pubxml) 파일에서 배포 설정 편집 및. wpp.targets Visual Studio 웹에서 파일 프로젝트](https://msdn.microsoft.com/library/ff398069)합니다. MSBuild 코드에 대 한 기본적인 소개를 참조 하십시오. **프로젝트 파일의 분석** 에 [엔터프라이즈 배포 시리즈: 프로젝트 파일 이해](../web-deployment-in-the-enterprise/understanding-the-project-file.md)합니다. 를 고유한 시나리오에 대 한 작업을 수행 하는 MSBuild 파일을 사용 하는 방법을 확인 하려면이 가이드를 참조 하십시오.: [Microsoft Build Engine 안에: MSBuild를 사용 하 여 및 Team Foundation Build](http://msbuildbook.com) Sayed Ibraham Hashimi 및 William Bartholomew 합니다.
 
 ## <a name="acknowledgements"></a>감사의 글
 
 이 자습서 시리즈의 내용에 중요 한 기여를 수행한 다음 사람에 게 감사 하 고 싶습니다.
 
-- [Alberto Poblacion, MVP &amp; MCT, 스페인](https://mvp.microsoft.com/en-us/mvp/Alberto%20Poblacion%20Bolano-36772)
+- [Alberto Poblacion, MVP &amp; MCT, 스페인](https://mvp.microsoft.com/mvp/Alberto%20Poblacion%20Bolano-36772)
 - Jarod 퍼거슨, 데이터 플랫폼 개발 MVP United States
-- 강한 Mittal, Microsoft
+- Harsh Mittal, Microsoft
 - [Jon Galloway](https://weblogs.asp.net/jgalloway) (twitter: [ @jongalloway ](http://twitter.com/jongalloway))
 - [Kristina Olson, Microsoft](https://blogs.iis.net/krolson/default.aspx)
-- [Mike 서, Microsoft](http://www.mikepope.com/blog/DisplayBlog.aspx)
+- [Mike Pope, Microsoft](http://www.mikepope.com/blog/DisplayBlog.aspx)
 - Mohit Srivastava, Microsoft
 - [Raffaele Rialdi 이탈리아](http://www.iamraf.net/)
 - [Rick Anderson, Microsoft](https://blogs.msdn.com/b/rickandy/)

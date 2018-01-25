@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/performance-and-traffic/15-caching-to-improve-the-performance-of-your-website
 msc.type: authoredcontent
-ms.openlocfilehash: c747fef33a6d1db19f09fd0303c47d689b956687
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 742409219bd3b05f8ddf2c0d5034919fc9bf1d26
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="caching-data-in-an-aspnet-web-pages-razor-site-for-better-performance"></a>성능 향상을 위해 ASP.NET 웹 페이지 (Razor) 사이트에서 데이터 캐싱
 ====================
@@ -72,15 +72,15 @@ ASP.NET에 포함 되어는 `WebCache` 도우미 사이트에 캐싱을 추가 �
     이 코드에서는 데이터를 캐시 하는 경우 항상 사용 해야 하는 패턴을 보여 줍니다. 캐시에서 항목을 가져오기 전에 항상 먼저 확인 여부는 `WebCache.Get` 메서드가 null을 반환 했습니다. 캐시 항목 만료 또는 제거 되었거나 다른 이유로, 없으므로 된 제공된 항목은 캐시에 포함 되도록 보장 되지 기억 합니다.
 3. 실행 *WebCache.cshtml* 브라우저에서 합니다. (있는지 확인 페이지에서 선택한는 **파일** 실행 하기 전에 작업 영역입니다.) 처음으로 페이지 요청 시간 데이터는 캐시에 없는 및 코드 시간 값을 캐시에 추가 합니다.
 
-    ![캐시-1](15-caching-to-improve-the-performance-of-your-website/_static/image1.jpg)
+    ![cache-1](15-caching-to-improve-the-performance-of-your-website/_static/image1.jpg)
 4. 새로 고침 *WebCache.cshtml* 브라우저에서 합니다. 이 시간은 시간 데이터의 캐시입니다. 에 마지막으로 페이지를 본 이후에 변경 되지 않은 것을 확인 합니다.
 
-    ![캐시-2](15-caching-to-improve-the-performance-of-your-website/_static/image2.jpg)
+    ![cache-2](15-caching-to-improve-the-performance-of-your-website/_static/image2.jpg)
 5. 캐시를 비울 수에 대 일 분까지 기다려야 다음 페이지를 새로 고 치세요. 페이지 다시 나타내며 시간 데이터 캐시에서 찾을 수 없거나 업데이트 된 시간이 캐시에 추가 됩니다.
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>추가 리소스
 
 
-- [차트에 데이터를 표시합니다.](https://go.microsoft.com/fwlink/?LinkId=202895)
-- [WebCache API 참조](https://msdn.microsoft.com/en-us/library/system.web.helpers.webcache(v=vs.99).aspx) (MSDN)
+- [차트에 데이터 표시](https://go.microsoft.com/fwlink/?LinkId=202895)
+- [WebCache API 참조](https://msdn.microsoft.com/library/system.web.helpers.webcache(v=vs.99).aspx) (MSDN)

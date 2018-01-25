@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/an-overview-of-forms-authentication-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4c4564e5f1f71763e7e6a78622d30a25f1a6f640
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 90bcff91d0642e6af66f43fd807b253cc516d277
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="an-overview-of-forms-authentication-vb"></a>폼 인증 (VB)의 개요
 ====================
@@ -39,12 +39,12 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="understanding-the-forms-authentication-workflow"></a>폼 인증 워크플로 이해합니다.
 
-ASP.NET 런타임, ASP.NET 페이지 또는 ASP.NET 웹 서비스 같은 ASP.NET 리소스에 대 한 요청을 처리할 때 요청 된 수의 이벤트 수명 주기 동안 발생 합니다. 요청이 인증 되 고 권한이 부여 된, 처리 되지 않은 예외 및 기타의 경우 발생 하는 이벤트 있을 때 발생 하는 스토리는 요청을 시작 하 고 매우 끝날 때 발생 하는 이벤트 있습니다. 이벤트의 전체 목록을 보려면, 참조는 [HttpApplication 개체의 이벤트](https://msdn.microsoft.com/en-us/library/system.web.httpapplication_events.aspx)합니다.
+ASP.NET 런타임, ASP.NET 페이지 또는 ASP.NET 웹 서비스 같은 ASP.NET 리소스에 대 한 요청을 처리할 때 요청 된 수의 이벤트 수명 주기 동안 발생 합니다. 요청이 인증 되 고 권한이 부여 된, 처리 되지 않은 예외 및 기타의 경우 발생 하는 이벤트 있을 때 발생 하는 스토리는 요청을 시작 하 고 매우 끝날 때 발생 하는 이벤트 있습니다. 이벤트의 전체 목록을 보려면, 참조는 [HttpApplication 개체의 이벤트](https://msdn.microsoft.com/library/system.web.httpapplication_events.aspx)합니다.
 
 *HTTP 모듈* 는 관리 되는 클래스는 요청 수명에 특정 이벤트에 해당 코드가 실행 됩니다. ASP.NET 원리를 자세히 파악할수록 필수 작업을 수행 하는 HTTP 모듈의 수와 함께 제공 합니다. 특히 관련 논의 하는 두 개의 기본 제공 HTTP 모듈은:
 
-- **[FormsAuthenticationModule](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthenticationmodule.aspx)**  -일반적으로 사용자의 쿠키 컬렉션에 포함 된 폼 인증 티켓을 검사 하 여 사용자를 인증 합니다. 폼 인증 티켓 없는 있는 경우 사용자가 익명입니다.
-- **[UrlAuthorizationModule](https://msdn.microsoft.com/en-us/library/system.web.security.urlauthorizationmodule.aspx)**  -현재 사용자가 요청 된 URL에 액세스를 권한이 있는지 여부를 결정 합니다. 이 모듈 응용 프로그램의 구성 파일에 지정 된 권한 부여 규칙을 참고 하 여 권한을 결정 합니다. ASP.NET도 포함 되어는 [FileAuthorizationModule](https://msdn.microsoft.com/en-us/library/system.web.security.fileauthorizationmodule.aspx) 기관 요청한 파일 Acl을 참고 하 여 결정 하는 합니다.
+- **[FormsAuthenticationModule](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx)**  -일반적으로 사용자의 쿠키 컬렉션에 포함 된 폼 인증 티켓을 검사 하 여 사용자를 인증 합니다. 폼 인증 티켓 없는 있는 경우 사용자가 익명입니다.
+- **[UrlAuthorizationModule](https://msdn.microsoft.com/library/system.web.security.urlauthorizationmodule.aspx)**  -현재 사용자가 요청 된 URL에 액세스를 권한이 있는지 여부를 결정 합니다. 이 모듈 응용 프로그램의 구성 파일에 지정 된 권한 부여 규칙을 참고 하 여 권한을 결정 합니다. ASP.NET도 포함 되어는 [FileAuthorizationModule](https://msdn.microsoft.com/library/system.web.security.fileauthorizationmodule.aspx) 기관 요청한 파일 Acl을 참고 하 여 결정 하는 합니다.
 
 FormsAuthenticationModule 실행 UrlAuthorizationModule (및 FileAuthorizationModule) 하기 전에 사용자를 인증 하려고 시도 합니다. 권한 부여 모듈은 요청을 종료 하 고이 반환 요청을 만드는 사용자는 요청 된 리소스에 액세스할 수 있는 권한이 없는, 경우는 [HTTP 401 권한이 없음](http://www.checkupdown.com/status/E401.html) 상태입니다. Windows 인증 시나리오에서 HTTP 401 상태는 브라우저에 반환 됩니다. 이 상태 코드에는 모달 대화 상자를 통해 자격 증명을 묻는 브라우저를 발생 합니다. 하지만 폼 인증을 사용 HTTP 401 권한이 없음 상태로 전송 되지 않습니다는 브라우저는 FormsAuthenticationModule이이 상태를 검색 하 고 대신 로그인 페이지에는 사용자를 리디렉션합니다 수정 하기 때문에 (통해는 [HTTP 302 리디렉션](http://www.checkupdown.com/status/E302.html) 상태).
 
@@ -80,12 +80,12 @@ FormsAuthenticationModule 실행 UrlAuthorizationModule (및 FileAuthorizationMo
 
 ## <a name="step-1-creating-an-aspnet-website-for-this-tutorial-series"></a>1 단계:이 자습서 시리즈에 대 한 ASP.NET 웹 사이트 만들기
 
-Visual Studio 2008의 Microsoft의 무료 버전으로 생성 됩니다이 시리즈 작성할 ASP.NET 웹 사이트 많은 달성 하기 위해 [Visual Web Developer 2008](https://www.microsoft.com/express/vwd/)합니다. 구현 해 서 SqlMembershipProvider 사용자 저장소에는 [Microsoft SQL Server 2005 Express Edition](https://msdn.microsoft.com/en-us/sql/Aa336346.aspx) 데이터베이스입니다. Visual Studio 2005 또는 다른 버전의 Visual Studio 2008 또는 SQL Server를 사용 하는 경우 걱정 하지 마십시오-단계 거의 동일 하 게 됩니다 하 고 모든 특수 차이점 지적 합니다.
+Visual Studio 2008의 Microsoft의 무료 버전으로 생성 됩니다이 시리즈 작성할 ASP.NET 웹 사이트 많은 달성 하기 위해 [Visual Web Developer 2008](https://www.microsoft.com/express/vwd/)합니다. 구현 해 서 SqlMembershipProvider 사용자 저장소에는 [Microsoft SQL Server 2005 Express Edition](https://msdn.microsoft.com/sql/Aa336346.aspx) 데이터베이스입니다. Visual Studio 2005 또는 다른 버전의 Visual Studio 2008 또는 SQL Server를 사용 하는 경우 걱정 하지 마십시오-단계 거의 동일 하 게 됩니다 하 고 모든 특수 차이점 지적 합니다.
 
 폼 인증을 구성 하 여 ASP.NET 웹 사이트 먼저 해야 합니다. 먼저 새 파일 시스템 기반 ASP.NET 웹 사이트를 만듭니다. 이를 위해 Visual Web Developer를 시작 하 파일 메뉴로 이동 하 고 새 웹 사이트 대화 상자를 표시 하는 새 웹 사이트를 선택 합니다. ASP.NET 웹 사이트 템플릿을 선택, 파일 시스템으로 위치 드롭 다운 목록 설정, 웹 사이트를 배치할 폴더를 선택 및 언어 VB.로 설정 새 웹 사이트를 응용 프로그램 Default.aspx ASP.NET 페이지와 이때\_데이터 폴더 및 Web.config 파일입니다.
 
 > [!NOTE]
-> Visual Studio 프로젝트 관리의 두 모드를 지원: 웹 사이트 프로젝트와 웹 응용 프로그램 프로젝트입니다. 웹 사이트 프로젝트는 웹 응용 프로그램 프로젝트를 Visual Studio.NET 2002/2003에서 프로젝트 아키텍처 모방-프로젝트 파일을 포함 하 고 /bin 폴더에 있는 단일 어셈블리로 프로젝트의 소스 코드를 컴파일할 때 반면 프로젝트 파일을 부족 합니다. Visual Studio 2005 처음만 지원 되는 웹 사이트 프로젝트, 서비스 팩 1; 웹 응용 프로그램 프로젝트 모델이 다시 발생 하지만 Visual Studio 2008 둘 다 프로젝트 모델을 제공 합니다. 그러나 Visual Web Developer 2005 및 2008 edition만 지원 웹 사이트 프로젝트. 웹 사이트 프로젝트 모델을 사용 하겠습니다. Express 이외의 버전을 사용 하는 경우를 사용 하려는 [웹 응용 프로그램 프로젝트 모델](https://msdn.microsoft.com/en-us/library/aa730880(vs.80).aspx) 대신 자유롭게 있을 수 있음을 약간 다 화면 및 비교 수행 해야 하는 단계에 표시 되는 내용 간에 수 있지만 이렇게는 표시 된 스크린 샷 및이 자습서에 제공 된 지침.
+> Visual Studio 프로젝트 관리의 두 모드를 지원: 웹 사이트 프로젝트와 웹 응용 프로그램 프로젝트입니다. 웹 사이트 프로젝트는 웹 응용 프로그램 프로젝트를 Visual Studio.NET 2002/2003에서 프로젝트 아키텍처 모방-프로젝트 파일을 포함 하 고 /bin 폴더에 있는 단일 어셈블리로 프로젝트의 소스 코드를 컴파일할 때 반면 프로젝트 파일을 부족 합니다. Visual Studio 2005 처음만 지원 되는 웹 사이트 프로젝트, 서비스 팩 1; 웹 응용 프로그램 프로젝트 모델이 다시 발생 하지만 Visual Studio 2008 둘 다 프로젝트 모델을 제공 합니다. 그러나 Visual Web Developer 2005 및 2008 edition만 지원 웹 사이트 프로젝트. 웹 사이트 프로젝트 모델을 사용 하겠습니다. Express 이외의 버전을 사용 하는 경우를 사용 하려는 [웹 응용 프로그램 프로젝트 모델](https://msdn.microsoft.com/library/aa730880(vs.80).aspx) 대신 자유롭게 있을 수 있음을 약간 다 화면 및 비교 수행 해야 하는 단계에 표시 되는 내용 간에 수 있지만 이렇게는 표시 된 스크린 샷 및이 자습서에 제공 된 지침.
 
 
 [![새 파일 시스템 기반 웹 사이트 만들기](an-overview-of-forms-authentication-vb/_static/image5.png)](an-overview-of-forms-authentication-vb/_static/image4.png)
@@ -95,7 +95,7 @@ Visual Studio 2008의 Microsoft의 무료 버전으로 생성 됩니다이 시�
 
 ### <a name="adding-a-master-page"></a>마스터 페이지 추가
 
-다음을 새 마스터 페이지 Site.master 명명 된 루트 디렉터리에 있는 사이트에 추가 합니다. [마스터 페이지](https://msdn.microsoft.com/en-us/library/wtxbf3hh.aspx) 페이지 개발자는 ASP.NET 페이지에 적용할 수 있는 사이트 수준 템플릿 정의를 사용 합니다. 마스터 페이지의 주요 장점은 사이트의 전반적인 모양을 정의할 수 있다는 단일 위치에 쉽게 업데이트 하거나 사이트의 레이아웃을 조정 하도록입니다.
+다음을 새 마스터 페이지 Site.master 명명 된 루트 디렉터리에 있는 사이트에 추가 합니다. [마스터 페이지](https://msdn.microsoft.com/library/wtxbf3hh.aspx) 페이지 개발자는 ASP.NET 페이지에 적용할 수 있는 사이트 수준 템플릿 정의를 사용 합니다. 마스터 페이지의 주요 장점은 사이트의 전반적인 모양을 정의할 수 있다는 단일 위치에 쉽게 업데이트 하거나 사이트의 레이아웃을 조정 하도록입니다.
 
 
 [![마스터 페이지를 추가할 웹 사이트에 Site.master 라는](an-overview-of-forms-authentication-vb/_static/image8.png)](an-overview-of-forms-authentication-vb/_static/image7.png)
@@ -150,7 +150,7 @@ Visual Studio 2008의 Microsoft의 무료 버전으로 생성 됩니다이 시�
 
 ## <a name="step-2-enabling-forms-authentication"></a>2 단계: 폼 인증을 사용 하도록 설정
 
-ASP.NET 웹 사이트를 만든 폼 인증을 사용 하도록 설정 하는 다음 작업이입니다. 통해 응용 프로그램의 인증 구성이 지정 되어 있는 [ &lt;인증&gt; 요소](https://msdn.microsoft.com/en-us/library/532aee0e.aspx) Web.config에 있습니다. &lt;인증&gt; 요소는 응용 프로그램에서 사용 되는 인증 모델을 지정 하는 모드 라는 단일 특성을 포함 합니다. 이 특성은 다음 네 가지 값 중 하나일 수 있습니다.
+ASP.NET 웹 사이트를 만든 폼 인증을 사용 하도록 설정 하는 다음 작업이입니다. 통해 응용 프로그램의 인증 구성이 지정 되어 있는 [ &lt;인증&gt; 요소](https://msdn.microsoft.com/library/532aee0e.aspx) Web.config에 있습니다. &lt;인증&gt; 요소는 응용 프로그램에서 사용 되는 인증 모델을 지정 하는 모드 라는 단일 특성을 포함 합니다. 이 특성은 다음 네 가지 값 중 하나일 수 있습니다.
 
 - **Windows** -는 방문자에 인증 해야 하는 웹 서버의 응용 프로그램에서 Windows 인증을 사용 하는 경우 이전 자습서에 설명 된 대로 하 고 기본, 다이제스트 또는 Windows 통합을 통해 일반적으로 이렇게 인증입니다.
 - **Forms**-웹 페이지의 양식을 통해 사용자가 인증 됩니다.
@@ -221,7 +221,7 @@ Login.aspx로 두 개의 텍스트 상자를 추가 하 고 해당 ID 속성 이
 
 ASP.NET 2.0 이전 개발자가 자신의 사용자 저장소를 모두 구현 하 고 저장소에 대해 제공된 된 자격 증명의 유효성을 검사 하는 코드를 작성 하는 일을 담당 했습니다. 대부분의 개발자 명명 된 사용자 사용자 이름, 암호, 전자 메일, LastLoginDate, 등과 같은 열이 있는 테이블을 만드는 사용자 저장소에서 데이터베이스를 구현 합니다. 그런 다음이 테이블에서 사용자 계정 마다 하나의 레코드를 것입니다. 사용자의 제공 된 자격 증명을 확인 하는 일치 하는 사용자 이름에 대 한 데이터베이스를 쿼리 한 다음 데이터베이스에 암호가 제공 된 암호에 상응 하는 확인 포함 됩니다.
 
-ASP.NET 2.0에서는 개발자가 하나를 사용 해야 멤버 자격 공급자의 사용자 저장소를 관리 하 합니다. 이 자습서 시리즈의 사용자 저장소에 대 한 SQL Server 데이터베이스를 사용 하 여 SqlMembershipProvider를 사용 합니다. SqlMembershipProvider를 사용 하는 경우 테이블, 뷰 및 공급자가 예상 하는 저장된 프로시저를 포함 하는 특정 데이터베이스 스키마를 구현 해야 합니다. 이 스키마를 구현 하는 방법을 검토 합니다는  *[SQL Server에서 멤버 자격 스키마 만들기](../membership/creating-the-membership-schema-in-sql-server-vb.md)*  자습서입니다. 위치에 멤버 자격 공급자를 사용자의 자격 증명 유효성을 검사 하는 작업은 호출으로는 [멤버 자격 클래스](https://msdn.microsoft.com/en-us/library/system.web.security.membership.aspx)의 [ValidateUser (*username*, *암호*) 메서드](https://msdn.microsoft.com/en-us/library/system.web.security.membership.validateuser.aspx)를 나타내는 부울 값을 반환 하는 여부의 유효성을 검사는 *사용자 이름* 및 *암호* 조합 합니다. 것을 확인으로 SqlMembershipProvider 사용자 저장소를 아직 구현 하지 않았습니다 멤버 자격 클래스 ValidateUser 메서드이 이번에 사용할 수 없습니다.
+ASP.NET 2.0에서는 개발자가 하나를 사용 해야 멤버 자격 공급자의 사용자 저장소를 관리 하 합니다. 이 자습서 시리즈의 사용자 저장소에 대 한 SQL Server 데이터베이스를 사용 하 여 SqlMembershipProvider를 사용 합니다. SqlMembershipProvider를 사용 하는 경우 테이블, 뷰 및 공급자가 예상 하는 저장된 프로시저를 포함 하는 특정 데이터베이스 스키마를 구현 해야 합니다. 이 스키마를 구현 하는 방법을 검토 합니다는  *[SQL Server에서 멤버 자격 스키마 만들기](../membership/creating-the-membership-schema-in-sql-server-vb.md)*  자습서입니다. 위치에 멤버 자격 공급자를 사용자의 자격 증명 유효성을 검사 하는 작업은 호출으로는 [멤버 자격 클래스](https://msdn.microsoft.com/library/system.web.security.membership.aspx)의 [ValidateUser (*username*, *암호*) 메서드](https://msdn.microsoft.com/library/system.web.security.membership.validateuser.aspx)를 나타내는 부울 값을 반환 하는 여부의 유효성을 검사는 *사용자 이름* 및 *암호* 조합 합니다. 것을 확인으로 SqlMembershipProvider 사용자 저장소를 아직 구현 하지 않았습니다 멤버 자격 클래스 ValidateUser 메서드이 이번에 사용할 수 없습니다.
 
 만드는 대신 많은 시간을 고유한 사용자 지정 사용자가 데이터베이스 테이블 (만드는 것이 사용 되지 않는 SqlMembershipProvider를 구현한 후) 보겠습니다 대신 하드 코딩 유효한 자격 증명을 로그인에 자체 페이지입니다. LoginButton의 클릭 이벤트 처리기를 다음 코드를 추가 합니다.
 
@@ -231,23 +231,23 @@ ASP.NET 2.0에서는 개발자가 하나를 사용 해야 멤버 자격 공급�
 
 유효한 자격 증명을 입력 하는 경우 적절 한 페이지로 리디렉션됩니다 다음 언급 했습니다. 그러나 적절 한 페이지 이란? 사용자를 보려면 허가 되지 않은 페이지를 방문는 FormsAuthenticationModule 자동으로 리디렉션되는 또 로그인 페이지에는 점에 유의 하세요. 이 과정에서 요청된 된 URL ReturnUrl 매개 변수를 통해 쿼리 문자열에 포함 됩니다. 즉, ProtectedPage.aspx를 방문 하 여 사용자가 고 그러려면 권한이 부여 되지 않은 경우는 FormsAuthenticationModule 리디렉션합니다 수 있습니다:
 
-Login.aspx? ReturnUrl=ProtectedPage.aspx
+Login.aspx?ReturnUrl=ProtectedPage.aspx
 
 성공적으로 로그인 시 사용자 ProtectedPage.aspx 돌아가기 리디렉션되어야 합니다. 또는 사용자가 자신의 volition 로그인 페이지를 방문 수 있습니다. 이 경우 사용자 로그인은 전송 되어야 합니다는 루트 폴더의 Default.aspx 페이지에.
 
 ### <a name="logging-in-the-user"></a>사용자 로그인
 
-가정 하면 제공 된 자격 증명이 유효 하면 필요한 폼 인증 티켓을 만들 수 있으므로 사이트에 사용자를 로그인 합니다. [FormsAuthentication 클래스](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.aspx) 에 [System.Web.Security 네임 스페이스](https://msdn.microsoft.com/en-us/library/system.web.security.aspx) 인증 시스템 로깅 및 폼을 통해 사용자 로깅에 대 한 다양 한 메서드를 제공 합니다. FormsAuthentication 클래스에서 여러 가지가 있습니다 하지만 시점에 관심이 세 가지 합니다.
+가정 하면 제공 된 자격 증명이 유효 하면 필요한 폼 인증 티켓을 만들 수 있으므로 사이트에 사용자를 로그인 합니다. [FormsAuthentication 클래스](https://msdn.microsoft.com/library/system.web.security.formsauthentication.aspx) 에 [System.Web.Security 네임 스페이스](https://msdn.microsoft.com/library/system.web.security.aspx) 인증 시스템 로깅 및 폼을 통해 사용자 로깅에 대 한 다양 한 메서드를 제공 합니다. FormsAuthentication 클래스에서 여러 가지가 있습니다 하지만 시점에 관심이 세 가지 합니다.
 
-- [GetAuthCookie (*username*, *persistCookie*)](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.getauthcookie.aspx) -제공 된 이름에 대 한 폼 인증 티켓을 만들어 *username*합니다. 다음으로,이 메서드가 만들고 인증 티켓의 콘텐츠를 보유 하는 HttpCookie 개체를 반환 합니다. 경우 *persistCookie* 은 True, 영구 쿠키 생성 됩니다.
-- [SetAuthCookie (*username*, *persistCookie*)](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.setauthcookie.aspx) -는 GetAuthCookie 호출 (*username*, *persistCookie*) 폼 인증 쿠키를 생성 하는 방법입니다. 이 메서드는 다음 (사용 되는, 그렇지 않으면 쿠키 기반 폼 인증 되 고,이 메서드는 쿠키 티켓 논리를 처리 하는 내부 클래스를 호출 한다고 가정) 쿠키 컬렉션에 GetAuthCookie에서 반환 된 쿠키를 추가 합니다.
-- [RedirectFromLoginPage (*username*, *persistCookie*)](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.redirectfromloginpage.aspx) -이 메서드를 호출 SetAuthCookie (*username*, *persistCookie* ), 한 다음 적절 한 페이지로 사용자를 리디렉션합니다.
+- [GetAuthCookie (*username*, *persistCookie*)](https://msdn.microsoft.com/library/system.web.security.formsauthentication.getauthcookie.aspx) -제공 된 이름에 대 한 폼 인증 티켓을 만들어 *username*합니다. 다음으로,이 메서드가 만들고 인증 티켓의 콘텐츠를 보유 하는 HttpCookie 개체를 반환 합니다. 경우 *persistCookie* 은 True, 영구 쿠키 생성 됩니다.
+- [SetAuthCookie (*username*, *persistCookie*)](https://msdn.microsoft.com/library/system.web.security.formsauthentication.setauthcookie.aspx) -는 GetAuthCookie 호출 (*username*, *persistCookie*) 폼 인증 쿠키를 생성 하는 방법입니다. 이 메서드는 다음 (사용 되는, 그렇지 않으면 쿠키 기반 폼 인증 되 고,이 메서드는 쿠키 티켓 논리를 처리 하는 내부 클래스를 호출 한다고 가정) 쿠키 컬렉션에 GetAuthCookie에서 반환 된 쿠키를 추가 합니다.
+- [RedirectFromLoginPage (*username*, *persistCookie*)](https://msdn.microsoft.com/library/system.web.security.formsauthentication.redirectfromloginpage.aspx) -이 메서드를 호출 SetAuthCookie (*username*, *persistCookie* ), 한 다음 적절 한 페이지로 사용자를 리디렉션합니다.
 
 GetAuthCookie 인증 티켓 쿠키 컬렉션에 쿠키를 쓰기 전에 수정 해야 할 때 유용 합니다. SetAuthCookie 쿠키 컬렉션에 추가 하 고 폼 인증 티켓 만들기를 이지만 적절 한 페이지로 사용자를 리디렉션할 하지 않으려는 경우에 유용 합니다. 로그인 페이지에 보관 하거나 일부 다른 페이지에 게 보낼 하려는 경우가 있을 것입니다.
 
 사용자 로그인과 해당 페이지로 리디렉션됩니다 할 것 이므로 RedirectFromLoginPage 사용 합니다. 업데이트 LoginButton의 클릭 이벤트 처리기를 코드의 다음 행으로 두 주석 처리 된 TODO 줄을 바꿉니다.
 
-FormsAuthentication.RedirectFromLoginPage (UserName.Text, RememberMe.Checked)
+FormsAuthentication.RedirectFromLoginPage(UserName.Text, RememberMe.Checked)
 
 폼 인증 티켓에 대 한 사용자 이름 텍스트 상자의 텍스트 속성이 사용 폼 인증 티켓을 만들 때 *username* 매개 변수 및에 대 한 RememberMe 확인란의 선택된 상태는  *persistCookie* 매개 변수입니다.
 
@@ -283,7 +283,7 @@ FormsAuthentication.RedirectFromLoginPage (UserName.Text, RememberMe.Checked)
 
 짐작할 아마도 지금까지, 여기서 인증 된 방문자 및 익명 방문자에 게 AnonymousMessagePanel 방금 AuthenticatedMessagePanel만 표시 되려고 합니다. 이를 위해 사용자의 로그인은 여부에 따라 이러한 패널의 표시 되는 속성을 설정 해야 합니다.
 
-[Request.IsAuthenticated 속성](https://msdn.microsoft.com/en-us/library/system.web.httprequest.isauthenticated.aspx) 요청이 인증 되었는지 여부를 나타내는 부울 값을 반환 합니다. 다음 코드 페이지에 입력\_이벤트 처리기 코드를 로드 합니다.
+[Request.IsAuthenticated 속성](https://msdn.microsoft.com/library/system.web.httprequest.isauthenticated.aspx) 요청이 인증 되었는지 여부를 나타내는 부울 값을 반환 합니다. 다음 코드 페이지에 입력\_이벤트 처리기 코드를 로드 합니다.
 
 [!code-vb[Main](an-overview-of-forms-authentication-vb/samples/sample7.vb)]
 
@@ -300,30 +300,30 @@ FormsAuthentication.RedirectFromLoginPage (UserName.Text, RememberMe.Checked)
 **그림 12**: 인증 된 사용자는 진화 표시 됩니다. 메시지 ([전체 크기 이미지를 보려면 클릭](an-overview-of-forms-authentication-vb/_static/image36.png))
 
 
-통해 현재 로그온된 한 사용자의 id를 확인할 수 있습니다는 [HttpContext 개체](https://msdn.microsoft.com/en-us/library/system.web.httpcontext.aspx)의 [사용자 속성](https://msdn.microsoft.com/en-us/library/system.web.httpcontext.user.aspx)합니다. HttpContext 개체 현재 요청에 대 한 정보를 나타내며는 다른 규칙 으로부터 응답, 요청 및 세션 등과 같은 일반적인 ASP.NET 개체에 대 한 홈입니다. 사용자 속성의 현재 HTTP 요청 및 구현 보안 컨텍스트를 나타내는 [IPrincipal 인터페이스](https://msdn.microsoft.com/en-us/library/system.security.principal.iprincipal.aspx)합니다.
+통해 현재 로그온된 한 사용자의 id를 확인할 수 있습니다는 [HttpContext 개체](https://msdn.microsoft.com/library/system.web.httpcontext.aspx)의 [사용자 속성](https://msdn.microsoft.com/library/system.web.httpcontext.user.aspx)합니다. HttpContext 개체 현재 요청에 대 한 정보를 나타내며는 다른 규칙 으로부터 응답, 요청 및 세션 등과 같은 일반적인 ASP.NET 개체에 대 한 홈입니다. 사용자 속성의 현재 HTTP 요청 및 구현 보안 컨텍스트를 나타내는 [IPrincipal 인터페이스](https://msdn.microsoft.com/library/system.security.principal.iprincipal.aspx)합니다.
 
 사용자 속성의 FormsAuthenticationModule로 설정 됩니다. 특히 면는 FormsAuthenticationModule가 들어오는 요청에서 폼 인증 티켓을 찾으면 새 GenericPrincipal 개체 만들어지고 사용자 속성에 할당 합니다.
 
 (예: GenericPrincipal) 주 개체는 사용자의 id와 이들이 속하는 역할에 정보를 제공 합니다. IPrincipal 인터페이스는 두 명의 멤버를 정의합니다.
 
-- [IsInRole (*roleName*)](https://msdn.microsoft.com/en-us/library/system.security.principal.iprincipal.isinrole.aspx) -보안 주체가 지정된 된 역할에 속하는지를 나타내는 부울 값을 반환 하는 메서드입니다.
-- [Identity](https://msdn.microsoft.com/en-us/library/system.security.principal.iprincipal.identity.aspx) -구현 하는 개체를 반환 하는 속성은 [IIdentity 인터페이스](https://msdn.microsoft.com/en-us/library/system.security.principal.iidentity.aspx)합니다. IIdentity 인터페이스는 세 가지 속성을 정의: [AuthenticationType](https://msdn.microsoft.com/en-us/library/system.security.principal.iidentity.authenticationtype.aspx), [IsAuthenticated](https://msdn.microsoft.com/en-us/library/system.security.principal.iidentity.isauthenticated.aspx), 및 [이름](https://msdn.microsoft.com/en-us/library/system.security.principal.iidentity.name.aspx)합니다.
+- [IsInRole (*roleName*)](https://msdn.microsoft.com/library/system.security.principal.iprincipal.isinrole.aspx) -보안 주체가 지정된 된 역할에 속하는지를 나타내는 부울 값을 반환 하는 메서드입니다.
+- [Identity](https://msdn.microsoft.com/library/system.security.principal.iprincipal.identity.aspx) -구현 하는 개체를 반환 하는 속성은 [IIdentity 인터페이스](https://msdn.microsoft.com/library/system.security.principal.iidentity.aspx)합니다. IIdentity 인터페이스는 세 가지 속성을 정의: [AuthenticationType](https://msdn.microsoft.com/library/system.security.principal.iidentity.authenticationtype.aspx), [IsAuthenticated](https://msdn.microsoft.com/library/system.security.principal.iidentity.isauthenticated.aspx), 및 [이름](https://msdn.microsoft.com/library/system.security.principal.iidentity.name.aspx)합니다.
 
 다음 코드를 사용 하 여 현재 방문자의 이름을 확인할 수 있습니다.
 
 Dim currentUsersName As String = User.Identity.Name
 
-사용 하 여 폼 인증을, 하는 경우는 [FormsIdentity 개체](https://msdn.microsoft.com/en-us/library/system.web.security.formsidentity.aspx) GenericPrincipal의 Identity 속성에 대해 생성 됩니다. 항상 FormsIdentity 클래스 IsAuthenticated 속성에 대해 문자열 폼의 AuthenticationType 속성 및 True를 반환합니다. Name 속성 폼 인증 티켓을 만들 때 지정한 사용자 이름을 반환 합니다. 이 세 가지 속성 외에도 FormsIdentity 포함을 통해 기본 인증 티켓에 대 한 액세스는 [속성 티켓](https://msdn.microsoft.com/en-us/library/system.web.security.formsidentity.ticket.aspx)합니다. 형식의 개체를 반환 하는 티켓 속성 [FormsAuthenticationTicket](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthenticationticket.aspx), 만료, IsPersistent, IssueDate, 이름, 등 속성이 있는 합니다.
+사용 하 여 폼 인증을, 하는 경우는 [FormsIdentity 개체](https://msdn.microsoft.com/library/system.web.security.formsidentity.aspx) GenericPrincipal의 Identity 속성에 대해 생성 됩니다. 항상 FormsIdentity 클래스 IsAuthenticated 속성에 대해 문자열 폼의 AuthenticationType 속성 및 True를 반환합니다. Name 속성 폼 인증 티켓을 만들 때 지정한 사용자 이름을 반환 합니다. 이 세 가지 속성 외에도 FormsIdentity 포함을 통해 기본 인증 티켓에 대 한 액세스는 [속성 티켓](https://msdn.microsoft.com/library/system.web.security.formsidentity.ticket.aspx)합니다. 형식의 개체를 반환 하는 티켓 속성 [FormsAuthenticationTicket](https://msdn.microsoft.com/library/system.web.security.formsauthenticationticket.aspx), 만료, IsPersistent, IssueDate, 이름, 등 속성이 있는 합니다.
 
 중요 한 부분은 여기는 *username* 는 FormsAuthentication.GetAuthCookie에 지정 된 매개 변수 (*사용자 이름*, *persistCookie*), FormsAuthentication.SetAuthCookie (*username*, *persistCookie*), 및 FormsAuthentication.RedirectFromLoginPage (*username*, *persistCookie*) 메서드는 동일한 값을 User.Identity.Name 반환 합니다. 또한 이러한 메서드에서 생성 인증 티켓을 User.Identity FormsIdentity 개체를 캐스팅 하 고 다음 Ticket 속성에 액세스 하 여 사용할 수 있습니다.
 
-Ident으로 FormsIdentity dim = CType (User.Identity, FormsIdentity)
+Dim ident As FormsIdentity = CType(User.Identity, FormsIdentity)
 
-AuthTicket으로 FormsAuthenticationTicket dim ident = 합니다. 티켓
+Dim authTicket As FormsAuthenticationTicket = ident.Ticket
 
 Default.aspx에서 더 개인 설정 된 메시지를 제공 해 보겠습니다. 페이지가 업데이트\_WelcomeBackMessage 레이블의 Text 속성 문자열 시작 다시 할당 되도록 이벤트 처리기를 로드할 *username*!
 
-WelcomeBackMessage.Text "ळ े," = &amp; User.Identity.Name &amp; "!"
+WelcomeBackMessage.Text = "Welcome back, " &amp; User.Identity.Name &amp; "!"
 
 그림 13 (Scott 사용자로 로그인) 하는 경우이 수정 작업의 결과 보여 줍니다.
 
@@ -337,7 +337,7 @@ WelcomeBackMessage.Text "ळ े," = &amp; User.Identity.Name &amp; "!"
 
 인증 및 익명 사용자에 게 다른 콘텐츠를 표시 하는 것은 일반적인 요구 사항은; 현재 로그온된 한 사용자의 이름을 표시 합니다. 따라서 ASP.NET를 한 줄의 코드를 작성할 필요 하지 않고 그림 13에 표시 되는 동일한 기능을 제공 하는 두 개의 웹 컨트롤에 포함 됩니다.
 
-[LoginView 컨트롤](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.loginview.aspx) 손쉽게 인증 및 익명 사용자에 게 다른 데이터를 표시할 수 있는 템플릿 기반 웹 컨트롤입니다. LoginView는 두 개의 미리 정의 된 템플릿이 포함 되어 있습니다.
+[LoginView 컨트롤](https://msdn.microsoft.com/library/system.web.ui.webcontrols.loginview.aspx) 손쉽게 인증 및 익명 사용자에 게 다른 데이터를 표시할 수 있는 템플릿 기반 웹 컨트롤입니다. LoginView는 두 개의 미리 정의 된 템플릿이 포함 되어 있습니다.
 
 - 이 서식 파일에 추가 된 모든 태그 AnonymousTemplate-은 익명 방문자에 게 표시 됩니다.
 - LoggedInTemplate-이 서식 파일의이 태그는 인증 된 사용자 에게만 표시 됩니다.
@@ -368,7 +368,7 @@ LoginView 컨트롤 LoginContent ContentPlaceHolder 내에서 다음을 추가 �
 
 LoginView의 템플릿 디자이너 또는 선언적 태그에서 정의할 수 있습니다. Visual Studio의 디자이너에서 구성 된 템플릿 드롭다운 목록에 나열 된 LoginView의 스마트 태그를 확장 합니다. Hello, 텍스트 모르는 AnonymousTemplate;에 입력 그런 다음, 하이퍼링크 컨트롤을 추가 하 고 로그에서 해당 텍스트와 NavigateUrl 속성을 설정 하 고 ~ / Login.aspx, 각각.
 
-AnonymousTemplate를 구성한 후의 LoggedInTemplate로 전환 하 고 텍스트, "진화,"를 입력 합니다. 그런 다음 "시작 다시" 텍스트 직후 배치 하는 것은 LoggedInTemplate로 도구 상자에서 LoginName 컨트롤을 끕니다. [LoginName 컨트롤](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.loginname.aspx), 의미 이름으로, 현재 로그인된 한 사용자의 이름을 표시 합니다. 내부적으로 LoginName 컨트롤 User.Identity.Name 속성을 단순히 출력
+AnonymousTemplate를 구성한 후의 LoggedInTemplate로 전환 하 고 텍스트, "진화,"를 입력 합니다. 그런 다음 "시작 다시" 텍스트 직후 배치 하는 것은 LoggedInTemplate로 도구 상자에서 LoginName 컨트롤을 끕니다. [LoginName 컨트롤](https://msdn.microsoft.com/library/system.web.ui.webcontrols.loginname.aspx), 의미 이름으로, 현재 로그인된 한 사용자의 이름을 표시 합니다. 내부적으로 LoginName 컨트롤 User.Identity.Name 속성을 단순히 출력
 
 LoginView의 서식 파일에 추가 하는이 코드를 변경한 후 태그는 다음과 비슷하게 표시 됩니다.
 
@@ -406,9 +406,9 @@ LoginContent ContentPlaceHolder에 대 한 기본 태그를 무시 하려면 디
 
 ## <a name="step-5-logging-out"></a>5 단계: 로그 아웃
 
-3 단계에서에서 보이는 것 처럼 로그인 페이지의 사용자는 사이트에 로그인 할 구성 하지만 아직 사용자를 로그 아웃 하는 방법을 참조 하십시오. 사용자를 기록 하기 위한 방법, 이외에 FormsAuthentication 클래스 제공는 [SignOut 메서드에](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.signout.aspx)합니다. SignOut 메서드는 단순히 함으로써 사이트에서 사용자로 로그온 폼 인증 티켓을 삭제 합니다.
+3 단계에서에서 보이는 것 처럼 로그인 페이지의 사용자는 사이트에 로그인 할 구성 하지만 아직 사용자를 로그 아웃 하는 방법을 참조 하십시오. 사용자를 기록 하기 위한 방법, 이외에 FormsAuthentication 클래스 제공는 [SignOut 메서드에](https://msdn.microsoft.com/library/system.web.security.formsauthentication.signout.aspx)합니다. SignOut 메서드는 단순히 함으로써 사이트에서 사용자로 로그온 폼 인증 티켓을 삭제 합니다.
 
-로그 아웃 링크는 이러한 일반적인 기능을 제공 하는 ASP.NET 사용자를 로그 아웃 하도록 특별히 설계 된 컨트롤을 포함 합니다. [LoginStatus 제어](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.loginstatus.aspx) 로그인 LinkButton 또는 사용자의 인증 상태에 따라 로그 아웃 LinkButton을 표시 합니다. 로그 아웃 LinkButton 인증 된 사용자에 게 표시 되는 반면 익명 사용자에 대 한 로그인 LinkButton 렌더링 됩니다. 로그인 및 로그 아웃 링크 단추가 대 한 텍스트는 LoginStatus 통해 구성할 수 있습니다 LoginText 및 LogoutText 속성입니다.
+로그 아웃 링크는 이러한 일반적인 기능을 제공 하는 ASP.NET 사용자를 로그 아웃 하도록 특별히 설계 된 컨트롤을 포함 합니다. [LoginStatus 제어](https://msdn.microsoft.com/library/system.web.ui.webcontrols.loginstatus.aspx) 로그인 LinkButton 또는 사용자의 인증 상태에 따라 로그 아웃 LinkButton을 표시 합니다. 로그 아웃 LinkButton 인증 된 사용자에 게 표시 되는 반면 익명 사용자에 대 한 로그인 LinkButton 렌더링 됩니다. 로그인 및 로그 아웃 링크 단추가 대 한 텍스트는 LoginStatus 통해 구성할 수 있습니다 LoginText 및 LogoutText 속성입니다.
 
 로그인 LinkButton을 클릭 하면 로그인 페이지에 리디렉션이 실행 되어, 다시 게시 합니다. 로그 아웃 LinkButton를 클릭 하면 LoginStatus 컨트롤이 FormsAuthentication.SignOff 메서드를 호출 하 고 페이지에는 사용자를 리디렉션합니다. 로그인된 페이지 사용자 리디렉션됩니다 다음 세 값 중 하나를 지정할 수 있는 LogoutAction 속성에 따라 달라 집니다.
 
@@ -459,14 +459,14 @@ LoginView 컨트롤 외부에서 LoginStatus 이므로 익명 및 인증 된 사
 이 자습서에 설명 된 항목에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
 - [Iis 6 및 IIS7 보안 간의 변경 사항](https://www.iis.net/articles/view.aspx/IIS7/Managing-IIS7/Configuring-Security/Changes-between-IIS6-and-IIS7-Security)
-- [로그인 ASP.NET 컨트롤](https://msdn.microsoft.com/en-us/library/d51ttbhx.aspx)
+- [로그인 ASP.NET 컨트롤](https://msdn.microsoft.com/library/d51ttbhx.aspx)
 - [전문 ASP.NET 2.0 보안, 구성원 자격 및 역할 관리](http://www.wrox.com/WileyCDA/WroxTitle/productCd-0764596985.html) (ISBN: 978-0-7645-9698-8)
-- [&lt;인증&gt; 요소](https://msdn.microsoft.com/en-us/library/532aee0e.aspx)
-- [&lt;forms&gt; 요소에 대 한 &lt;인증&gt;](https://msdn.microsoft.com/en-us/library/1d3t3c61.aspx)
+- [&lt;인증&gt; 요소](https://msdn.microsoft.com/library/532aee0e.aspx)
+- [&lt;forms&gt; 요소에 대 한 &lt;인증&gt;](https://msdn.microsoft.com/library/1d3t3c61.aspx)
 
 ### <a name="video-training-on-topics-contained-in-this-tutorial"></a>이 자습서에 포함 된 항목에 대 한 비디오 교육
 
-- [기본 폼 인증을 사용 하 여 ASP.NET에서](../../../videos/authentication/using-basic-forms-authentication-in-aspnet.md)
+- [ASP.NET에서 기본 폼 인증 사용](../../../videos/authentication/using-basic-forms-authentication-in-aspnet.md)
 
 ### <a name="about-the-author"></a>작성자 정보
 

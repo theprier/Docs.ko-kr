@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: d76efa2e95c95c91045c7f631040dfff3d4afd2c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 47af34c72f1959756f5d68e0e80052e700c7b19c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="part-1-overview-and-creating-the-project"></a>1 부: 개요 및 프로젝트 만들기
 ====================
@@ -84,7 +84,7 @@ Visual Web Developer Express 또는 정식 버전의 Visual Studio를 사용 하
 - 오른쪽 위 모서리에 있는 "Register" 링크를 클릭 하 여 새 사용자가 등록할 수 있습니다.
 - "로그인" 링크를 클릭 하 여 등록된 한 사용자 로그인 수입니다.
 
-멤버 자격 정보는 자동으로 생성 되는 데이터베이스에 유지 됩니다. ASP.NET MVC에서 폼 인증에 대 한 자세한 내용은 참조 [연습: ASP.NET MVC에서 폼 인증을 사용 하 여](https://msdn.microsoft.com/en-us/library/ff398049(VS.98).aspx)합니다.
+멤버 자격 정보는 자동으로 생성 되는 데이터베이스에 유지 됩니다. ASP.NET MVC에서 폼 인증에 대 한 자세한 내용은 참조 [연습: ASP.NET MVC에서 폼 인증을 사용 하 여](https://msdn.microsoft.com/library/ff398049(VS.98).aspx)합니다.
 
 ## <a name="update-the-css-file"></a>CSS 파일 업데이트
 

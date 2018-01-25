@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/creating-a-connection-string
 msc.type: authoredcontent
-ms.openlocfilehash: 41f1f30d86406580ab9fc7278a94d9c291913f9a
-ms.sourcegitcommit: d1d8071d4093bf2444b5ae19d6e45c3d187e338b
+ms.openlocfilehash: 25d1c1c9954baaca9ef91eff3dd3c853930a5893
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/19/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-connection-string-and-working-with-sql-server-localdb"></a>연결 문자열 만들기 및 SQL Server LocalDB 사용
 ====================
@@ -36,7 +36,7 @@ SQL Server Express 프로덕션 웹 응용 프로그램에서 사용 하기 위�
 
 Visual Studio 2017 LocalDB Visual Studio와 함께 기본적으로 설치 됩니다.
 
-기본적으로 개체 컨텍스트 클래스와 같은 이름으로 지정 하는 연결 문자열에 대 한 Entity Framework 찾습니다 (`MovieDBContext` 이 프로젝트에 대 한). 자세한 내용은 참조 [ASP.NET 웹 응용 프로그램에 대 한 SQL Server 연결 문자열](https://msdn.microsoft.com/en-us/library/jj653752.aspx)합니다.
+기본적으로 개체 컨텍스트 클래스와 같은 이름으로 지정 하는 연결 문자열에 대 한 Entity Framework 찾습니다 (`MovieDBContext` 이 프로젝트에 대 한). 자세한 내용은 참조 [ASP.NET 웹 응용 프로그램에 대 한 SQL Server 연결 문자열](https://msdn.microsoft.com/library/jj653752.aspx)합니다.
 
 응용 프로그램 루트를 열고 *Web.config* 파일 아래에 표시 합니다. (하지는 *Web.config* 파일에 *뷰* 폴더입니다.)
 
@@ -56,11 +56,11 @@ Visual Studio 2017 LocalDB Visual Studio와 함께 기본적으로 설치 됩니
 
 두 개의 연결 문자열은 매우 비슷합니다. 첫 번째 연결 문자열 이름이 `DefaultConnection` 응용 프로그램에 액세스할 수 있는 컨트롤을 멤버 자격 데이터베이스에 사용 됩니다. 명명 된 LocalDB 데이터베이스를 지정 하는 사용자가 추가한 연결 문자열 *Movie.mdf* 에 *앱\_데이터* 폴더입니다. 내 자습서를 참조 하십시오 멤버 자격, 인증 및 보안에 대 한 자세한 내용은이 자습서의 멤버 자격 데이터베이스를 사용 하지 않습니다 म [인증 및 SQL DB ASP.NET MVC 응용 프로그램 만들기 및 Azure 앱 서비스 배포](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data)합니다.
 
-연결 문자열의 이름의 이름과 일치 해야 합니다는 [DbContext](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext(v=vs.103).aspx) 클래스입니다.
+연결 문자열의 이름의 이름과 일치 해야 합니다는 [DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx) 클래스입니다.
 
 [!code-csharp[Main](creating-a-connection-string/samples/sample3.cs?highlight=15)]
 
-추가 하지 않아도 실제로 `MovieDBContext` 연결 문자열입니다. Entity Framework의 정규화 된 이름 사용 하 여 사용자가 디렉터리에 LocalDB 데이터베이스를 만드는 연결 문자열을 지정 하지 않으면는 [DbContext](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext(v=vs.103).aspx) 클래스 (이 경우 `MvcMovie.Models.MovieDBContext`). 이름은 데이터베이스 원하는가지고 *합니다. MDF* 접미사입니다. 예를 들어, 데이터베이스 이름이 우리 *MyFilms.mdf*합니다.
+추가 하지 않아도 실제로 `MovieDBContext` 연결 문자열입니다. Entity Framework의 정규화 된 이름 사용 하 여 사용자가 디렉터리에 LocalDB 데이터베이스를 만드는 연결 문자열을 지정 하지 않으면는 [DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx) 클래스 (이 경우 `MvcMovie.Models.MovieDBContext`). 이름은 데이터베이스 원하는가지고 *합니다. MDF* 접미사입니다. 예를 들어, 데이터베이스 이름이 우리 *MyFilms.mdf*합니다.
 
 다음으로 빌드합니다.이 새 `MoviesController` 동영상 데이터를 표시 하 고 사용자가 새 동영상 목록을 만들 수 있도록 허용 하는 데 사용할 수 있는 클래스입니다.
 

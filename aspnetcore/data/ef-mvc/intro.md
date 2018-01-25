@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/intro
-ms.openlocfilehash: df13726689c430ab19786e104ea7404051107aa9
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: c30556368ba24fb38cf3347dd49f171b5246514c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="getting-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio-1-of-10"></a>Visual Studio (1 / 10)을 사용 하 여 Entity Framework Core 및 ASP.NET Core MVC 시작
 
@@ -27,7 +27,7 @@ Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework (EF) 코어
 
 [다운로드 하거나 완성 된 응용 프로그램을 보고 합니다.](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final)
 
-EF 코어 2.0 EF의 최신 버전은 있지만 아직 되지 않은 EF의 모든 기능 6.x 합니다. EF 선택 하는 방법에 대 한 내용은 6.x 및 EF 코어 참조 [EF 코어 vs. EF6.x](https://docs.microsoft.com/ef/efcore-and-ef6/)합니다. EF를 선택 하는 경우 6.x 참조 [이 자습서 시리즈의 이전 버전](https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application)합니다.
+EF 코어 2.0 최신 버전의 EF 이지만 EF의 모든 기능에 아직 없는 6.x 합니다. EF 선택 하는 방법에 대 한 내용은 6.x 및 EF 코어 참조 [EF 코어 vs. EF6.x](https://docs.microsoft.com/ef/efcore-and-ef6/)합니다. EF를 선택 하는 경우 6.x 참조 [이 자습서 시리즈의 이전 버전](https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application)합니다.
 
 > [!NOTE]
 > * 이 자습서의 ASP.NET Core 1.1 버전에 대 한 참조는 [PDF 형식으로이 자습서의 VS 2017 업데이트 2 버전](https://github.com/aspnet/Docs/blob/master/aspnetcore/data/ef-mvc/intro/_static/efmvc1.1.pdf)합니다.
@@ -74,7 +74,7 @@ Visual Studio를 열고 ASP.NET Core C# 웹 라는 새 프로젝트 "ContosoUniv
 
 * 선택 **ASP.NET 코어 2.0** 및 **웹 응용 프로그램 (모델-뷰-컨트롤러)** 서식 파일입니다.
 
-  **참고:** ASP.NET 코어 2.0 및 EF 코어 2.0 이상-있는지 확인 하는이 자습서에서는 **ASP.NET Core 1.1** 선택 하지 않으면 합니다.
+  **참고:** ASP.NET 코어 2.0 및 EF 코어 2.0 이상-있는지 확인 하는이 자습서에서는 **ASP.NET Core 1.1** 선택 되지 않습니다.
 
 * 확인 **인증** 로 설정 된 **인증 안 함**합니다.
 
@@ -178,7 +178,7 @@ Entity Framework 라고 하는 경우 외래 키 속성으로 속성을 해석 `
 
 이 코드에서는 `DbSet` 각 엔터티 집합에 대 한 속성입니다. Entity Framework 용어에서 엔터티 집합은 일반적으로 데이터베이스 테이블에 해당하고 엔터티는 테이블의 행에 해당합니다.
 
-생략 했습니다 수는 `DbSet<Enrollment>` 및 `DbSet<Course>` 문과 것은 동일 하 게 작동 합니다. Entity Framework 하기 때문에 암시적으로 해당 포함 됩니다는 `Student` 엔터티 참조는 `Enrollment` 엔터티 및 `Enrollment` 엔터티 참조는 `Course` 엔터티.
+생략 한 하면는 `DbSet<Enrollment>` 및 `DbSet<Course>` 문과 것은 동일 하 게 작동 합니다. Entity Framework 하기 때문에 암시적으로 해당 포함 됩니다는 `Student` 엔터티 참조는 `Enrollment` 엔터티 및 `Enrollment` 엔터티 참조는 `Course` 엔터티.
 
 EF는 데이터베이스를 만들 때 같은 이름을 갖는 테이블을 만듭니다는 `DbSet` 속성 이름입니다. 컬렉션에 대 한 속성 이름에는 일반적으로 (학생을 하지 않고 학생) 복수형 하지만 개발자 또는 테이블 이름을 복수화 여부에 대 한 동의. 이 자습서에 대 한 DbContext 단 수 테이블 이름을 지정 하 여 기본 동작을 재정의 합니다. 이렇게 하려면 마지막 DbSet 속성 뒤 다음 강조 표시 된 코드를 추가 합니다.
 
@@ -204,7 +204,7 @@ ASP.NET Core 구현 [종속성 주입](../../fundamentals/dependency-injection.m
 
 ### <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
 
-연결 문자열은 SQL Server LocalDB 데이터베이스를 지정 합니다. LocalDB는 SQL Server Express 데이터베이스 엔진의 경량 버전 하며 응용 프로그램 개발의 경우 프로덕션 환경에서 사용 되지 않습니다. LocalDB는 요청 시 시작하고 사용자 모드에서 실행되므로 복잡한 구성이 없습니다. 기본적으로 LocalDB 만듭니다 *.mdf* 데이터베이스 파일에는 `C:/Users/<user>` 디렉터리입니다.
+연결 문자열은 SQL Server LocalDB 데이터베이스를 지정 합니다. LocalDB는 SQL Server Express 데이터베이스 엔진의 경량 버전 하며 응용 프로그램 개발의 경우 프로덕션 환경에서 사용 되지 않습니다. LocalDB 요청 시 시작 하 고 사용자 모드에서 실행 되므로 복잡 한 구성이 없습니다. 기본적으로 LocalDB 만듭니다 *.mdf* 데이터베이스 파일에는 `C:/Users/<user>` 디렉터리입니다.
 
 ## <a name="add-code-to-initialize-the-database-with-test-data"></a>테스트 데이터로 데이터베이스를 초기화 하는 코드를 추가 합니다.
 
@@ -351,9 +351,9 @@ SSOX, 클릭 **(localdb) \MSSQLLocalDB > 데이터베이스**, 다음의 연결 
 
 Entity Framework를 사용 하는 비동기 코드를 작성할 때 알아두어야 할 일부의 원인:
 
-* 쿼리 또는 데이터베이스에 보낼 명령을 발생 하는 명령문만 비동기적으로 실행 됩니다. 예를 들어 포함 된 `ToListAsync`, `SingleOrDefaultAsync`, 및 `SaveChangesAsync`합니다. 포함 하지 않습니다, 예를 들어 변경 하는 문에 `IQueryable`와 같은 `var students = context.Students.Where(s => s.LastName == "Davolio")`합니다.
+* 쿼리 또는 데이터베이스에 보낼 명령을 발생 하는 명령문만 비동기적으로 실행 됩니다. 예를 들어 포함 된 `ToListAsync`, `SingleOrDefaultAsync`, 및 `SaveChangesAsync`합니다. 포함 되지 않습니다, 예를 들어 변경 하는 문에 `IQueryable`와 같은 `var students = context.Students.Where(s => s.LastName == "Davolio")`합니다.
 
-* EF 컨텍스트 스레드로부터 안전 하지 않습니다: 동시에 여러 작업을 수행 하지 마세요. 비동기 EF 메서드를 호출 하는 경우 항상 사용는 `await` 키워드입니다.
+* EF 컨텍스트 스레드로부터 안전 하지: 동시에 여러 작업을 수행 하지 마세요. 비동기 EF 메서드를 호출 하는 경우 항상 사용는 `await` 키워드입니다.
 
 * 페이징 등 사용 중인 비동기 코드의 성능 이점을 활용, 라이브러리는 패키지에 있는지 확인 하려는 경우, 또한 비동기 때문에 쿼리가 데이터베이스에 전송 하는 Entity Framework 메서드를 호출 하는 경우 메서드를 사용 합니다.
 

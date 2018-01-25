@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/samples-list
 msc.type: content
-ms.openlocfilehash: 2f40cd4bebdd64c3a4b94cfc1e717fa4b304e57e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1e1f43bbeedfc052f0b3a3924f51b544a5a79dca
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="web-api-samples-list"></a>Web API 샘플 목록
 ====================
@@ -24,7 +24,7 @@ ms.lasthandoff: 11/10/2017
 
 **Bing 번역 샘플** | [VS 2012 소스](http://aspnet.codeplex.com/SourceControl/changeset/view/15dfe7e0759f#Samples%2fNet45%2fCS%2fHttpClient%2fBingTranslateSample%2fReadMe.txt)
 
-호출 하는 방법을 보여 줍니다.는 [Microsoft Translator 서비스](https://msdn.microsoft.com/en-us/library/ff512419.aspx) 를 사용 하는 **HttpClient** 클래스입니다. Microsoft Translator 서비스 API에는 변환기 서비스에 각 요청에 대 한 토큰 Azure 서버에 요청을 전송 하 여 응용 프로그램 구성 파일에 OAuth 토큰이 필요 합니다. 결과 토큰 서버에서 번역 서비스에 전송 된 요청에 공급 됩니다. 이 샘플을 실행 하기 전에 얻어야는 [Azure Marketplace의 응용 프로그램 키](https://msdn.microsoft.com/en-us/library/hh454950.aspx) AccessTokenMessageHandler 샘플 클래스에 대 한 정보를 입력 하 고 있습니다.
+호출 하는 방법을 보여 줍니다.는 [Microsoft Translator 서비스](https://msdn.microsoft.com/library/ff512419.aspx) 를 사용 하는 **HttpClient** 클래스입니다. Microsoft Translator 서비스 API에는 변환기 서비스에 각 요청에 대 한 토큰 Azure 서버에 요청을 전송 하 여 응용 프로그램 구성 파일에 OAuth 토큰이 필요 합니다. 결과 토큰 서버에서 번역 서비스에 전송 된 요청에 공급 됩니다. 이 샘플을 실행 하기 전에 얻어야는 [Azure Marketplace의 응용 프로그램 키](https://msdn.microsoft.com/library/hh454950.aspx) AccessTokenMessageHandler 샘플 클래스에 대 한 정보를 입력 하 고 있습니다.
 
 **Google 지도 샘플** | [자세한 설명](https://blogs.msdn.com/b/henrikn/archive/2012/02/17/downloading-a-google-map-to-local-file.aspx) | [VS 2012 소스](http://aspnet.codeplex.com/SourceControl/changeset/view/15dfe7e0759f#Samples%2fNet45%2fCS%2fHttpClient%2fGoogleMapsSample%2fReadMe.txt)
 
@@ -83,7 +83,7 @@ ASP.NET Web API 컨트롤러는 동적으로 로드 된 라이브러리 어셈�
 
 **파일에 Azure Blob 저장소 샘플에 대 한 업로드가** | [자세한 설명](https://blogs.msdn.com/b/yaohuang1/archive/2012/07/02/asp-net-web-api-and-azure-blob-storage.aspx) | [VS 2012 소스](http://aspnet.codeplex.com/SourceControl/changeset/view/61dfed023e50#Samples%2fNet45%2fCS%2fWebApi%2fAzureBlobsFileUploadSample%2fReadMe.txt)
 
-이 샘플은 파일 업로드 샘플 유사 하지만 로컬 디스크에 업로드 된 파일을 저장 하는 대신 비동기적으로 업로드 파일을 [Azure Blob 저장소](https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-how-to-use-blobs) 를 사용 하 여 [Windows Azure SDK for.NET](https://www.windowsazure.com/en-us/develop/net/)합니다. 또한 현재에 있는 blob을 나열 하기 위한 메커니즘을 제공 된 [Azure Blob 저장소 컨테이너](https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-how-to-use-blobs)합니다. 이 샘플에 대해 실행을 수행 하려면 **Azure 저장소 에뮬레이터** Azure SDK와 함께 제공 되 합니다. 있는 경우는 [Azure 저장소 계정](https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-how-to-use-blobs)는 실제 저장소 서비스에 대해 실행할 수 있습니다.
+이 샘플은 파일 업로드 샘플 유사 하지만 로컬 디스크에 업로드 된 파일을 저장 하는 대신 비동기적으로 업로드 파일을 [Azure Blob 저장소](https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-how-to-use-blobs) 를 사용 하 여 [Windows Azure SDK for.NET](https://www.windowsazure.com/develop/net/)합니다. 또한 현재에 있는 blob을 나열 하기 위한 메커니즘을 제공 된 [Azure Blob 저장소 컨테이너](https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-how-to-use-blobs)합니다. 이 샘플에 대해 실행을 수행 하려면 **Azure 저장소 에뮬레이터** Azure SDK와 함께 제공 되 합니다. 있는 경우는 [Azure 저장소 계정](https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-how-to-use-blobs)는 실제 저장소 서비스에 대해 실행할 수 있습니다.
 
 **Http 메시지 처리기 파이프라인 샘플** | [자세한 설명](https://blogs.msdn.com/b/henrikn/archive/2012/08/07/httpclient-httpclienthandler-and-httpwebrequesthandler.aspx) | [VS 2010 소스](http://aspnet.codeplex.com/SourceControl/changeset/view/15dfe7e0759f#Samples%2fNet4%2fCS%2fWebApi%2fHttpMessageHandlerPipelineSample%2fReadMe.txt)
 

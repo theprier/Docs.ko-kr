@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/adding-content-to-source-control
 msc.type: authoredcontent
-ms.openlocfilehash: a6a90a03674cfe7565da0ed56148186ee9525707
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d46e2697d10ca27f8e08533350a6e7f2354b4a43
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-content-to-source-control"></a>소스 제어에 콘텐츠 추가
 ====================
@@ -90,7 +90,7 @@ ms.lasthandoff: 11/10/2017
 1. 개발자 워크스테이션에서 팀 프로젝트에 매핑된 폴더 구조 내에서 적절 한 위치 프로젝트 및 솔루션을 이동 합니다.
 
     > [!NOTE]
-    > 대부분의 조직에서는 소스 제어에서 프로젝트 및 솔루션을 구성 하는 방법을 대 한 기본 액세스를 해야 합니다. 폴더를 구조화 하는 방법에 대 한 지침을 참조 하십시오. [How To: Team Foundation Server에서 구조 Your 소스 제어 폴더](https://msdn.microsoft.com/en-us/library/bb668992.aspx)합니다.
+    > 대부분의 조직에서는 소스 제어에서 프로젝트 및 솔루션을 구성 하는 방법을 대 한 기본 액세스를 해야 합니다. 폴더를 구조화 하는 방법에 대 한 지침을 참조 하십시오. [How To: Team Foundation Server에서 구조 Your 소스 제어 폴더](https://msdn.microsoft.com/library/bb668992.aspx)합니다.
 2. Visual Studio 2010에서 솔루션을 엽니다.
 3. 에 **솔루션 탐색기** 창 솔루션을 마우스 오른쪽 단추로 클릭 **소스 제어에 솔루션 추가**합니다.
 
@@ -149,13 +149,13 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="conclusion"></a>결론
 
-이 항목에는 팀 프로젝트에 연결 하 고 폴더 구조를 매핑할 소스 제어에 콘텐츠를 추가 하는 방법을 설명 합니다. 소스 제어에서 항목을 사용 하는 방법에 대 한 자세한 내용은 참조 하십시오. [버전 제어를 사용 하 여](https://msdn.microsoft.com/en-us/library/ms181368.aspx)합니다.
+이 항목에는 팀 프로젝트에 연결 하 고 폴더 구조를 매핑할 소스 제어에 콘텐츠를 추가 하는 방법을 설명 합니다. 소스 제어에서 항목을 사용 하는 방법에 대 한 자세한 내용은 참조 하십시오. [버전 제어를 사용 하 여](https://msdn.microsoft.com/library/ms181368.aspx)합니다.
 
 다음 항목인 [웹 배포를 위한 TFS 빌드 서버 구성](configuring-a-tfs-build-server-for-web-deployment.md), 빌드 및 솔루션 배포를 TFS 팀 빌드 서버를 준비 하는 방법을 설명 합니다.
 
 ## <a name="further-reading"></a>추가 정보
 
-TFS에서 소스 제어를 사용한 작업에 대 한 자세한 내용은 참조 하십시오. [버전 제어를 사용 하 여](https://msdn.microsoft.com/en-us/library/ms181368.aspx)합니다.
+TFS에서 소스 제어를 사용한 작업에 대 한 자세한 내용은 참조 하십시오. [버전 제어를 사용 하 여](https://msdn.microsoft.com/library/ms181368.aspx)합니다.
 
 >[!div class="step-by-step"]
 [이전](creating-a-team-project-in-tfs.md)

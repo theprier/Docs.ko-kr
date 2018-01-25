@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/distributed-caching
 msc.type: authoredcontent
-ms.openlocfilehash: 923a8257376e98e6cae10d905f1cb18f7fdb28e7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 24ede9cb9289c84140f6e2573f9d526f19cac64b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="distributed-caching-building-real-world-cloud-apps-with-azure"></a>분산 캐싱 (실제 클라우드로 응용 프로그램 빌딩 Azure)
 ====================
@@ -79,12 +79,12 @@ Caching의 이점은 수 점점 더 측정 가능한 더는 응용 프로그램�
 
 ## <a name="azure-caching-services"></a>Azure caching 서비스
 
-Azure는 다음과 같은 캐싱 서비스 제공: [Azure Redis Cache](https://msdn.microsoft.com/en-us/library/dn690523.aspx) 및 [Azure 관리 캐시](https://msdn.microsoft.com/en-us/library/dn386094.aspx)합니다. Azure Redis 캐시는 인기 있는에 따라 [오픈 소스 Redis 캐시](http://redis.io/) 및 시나리오 캐싱 대부분에 대 한 첫 번째 선택 합니다.
+Azure는 다음과 같은 캐싱 서비스 제공: [Azure Redis Cache](https://msdn.microsoft.com/library/dn690523.aspx) 및 [Azure 관리 캐시](https://msdn.microsoft.com/library/dn386094.aspx)합니다. Azure Redis 캐시는 인기 있는에 따라 [오픈 소스 Redis 캐시](http://redis.io/) 및 시나리오 캐싱 대부분에 대 한 첫 번째 선택 합니다.
 
 <a id="sessionstate"></a>
 ## <a name="aspnet-session-state-using-a-cache-provider"></a>ASP.NET 세션 상태 캐시 공급자를 사용 하 여
 
-설명한 것 처럼는 [웹 개발 모범 사례 장](web-development-best-practices.md), 세션 상태를 사용 하지 않도록 하는 것이 좋습니다. 응용 프로그램 세션 상태를 해야 하는 경우에 다음 모범 사례 (웹 서버의 여러 인스턴스)에 확장을 사용 하도록 설정 하지 않습니다는 있으므로 기본 메모리 내 공급자를 사용 하지 않는 것입니다. 세션 상태를 사용 하는 여러 웹 서버에서 실행 되는 사이트를 사용 하는 SQL Server ASP.NET 세션 상태 공급자 있지만 메모리 내 공급자에 비해 높은 대기 시간이 비용을 발생 시킵니다. 와 같은 캐시 공급자를 사용 하는 세션 상태를 사용 해야 할 경우 가장 적합 한 솔루션의 [Azure 캐시용 세션 상태 공급자](https://msdn.microsoft.com/en-us/library/windowsazure/gg185668.aspx)합니다.
+설명한 것 처럼는 [웹 개발 모범 사례 장](web-development-best-practices.md), 세션 상태를 사용 하지 않도록 하는 것이 좋습니다. 응용 프로그램 세션 상태를 해야 하는 경우에 다음 모범 사례 (웹 서버의 여러 인스턴스)에 확장을 사용 하도록 설정 하지 않습니다는 있으므로 기본 메모리 내 공급자를 사용 하지 않는 것입니다. 세션 상태를 사용 하는 여러 웹 서버에서 실행 되는 사이트를 사용 하는 SQL Server ASP.NET 세션 상태 공급자 있지만 메모리 내 공급자에 비해 높은 대기 시간이 비용을 발생 시킵니다. 와 같은 캐시 공급자를 사용 하는 세션 상태를 사용 해야 할 경우 가장 적합 한 솔루션의 [Azure 캐시용 세션 상태 공급자](https://msdn.microsoft.com/library/windowsazure/gg185668.aspx)합니다.
 
 ## <a name="summary"></a>요약
 
@@ -96,11 +96,11 @@ Azure는 다음과 같은 캐싱 서비스 제공: [Azure Redis Cache](https://m
 
 설명서
 
-- [Azure 캐시](https://msdn.microsoft.com/en-us/library/gg278356.aspx)합니다. Azure의 캐싱에 대 공식 MSDN 설명서입니다.
-- [Microsoft Patterns and Practices-Azure 지침](https://msdn.microsoft.com/en-us/library/dn568099.aspx)합니다. 캐싱 지침 및 캐시 배제 패턴을 참조 하십시오.
-- [Failsafe: 복원 력 있는 클라우드 아키텍처에 대 한 지침](https://msdn.microsoft.com/en-us/library/windowsazure/jj853352.aspx)합니다. 백서: Marc Mercuri, Ulrich Homann 및 Andrew Townhill 합니다. Caching에서 섹션을 참조 하십시오.
-- [Azure 클라우드 서비스에서 대규모 서비스를 디자인에 대 한 유용한](https://msdn.microsoft.com/en-us/library/windowsazure/jj717232.aspx)합니다. W. 백서: Mark Simms 및 Michael Thomassy 합니다. 분산 캐싱 섹션을 참조 하십시오.
-- [배포 확장성에 대 한 경로 대 한 캐싱을](https://msdn.microsoft.com/en-us/magazine/dd942840.aspx)합니다. 이전 버전 (2009) MSDN Magazine 문서 하지만 분산 캐싱 일반적;에 대 한 명확 하 게 작성 된 소개 FailSafe 및 모범 사례 백서의 캐싱 섹션 보다 좀 더 깊이에 저장합니다.
+- [Azure 캐시](https://msdn.microsoft.com/library/gg278356.aspx)합니다. Azure의 캐싱에 대 공식 MSDN 설명서입니다.
+- [Microsoft Patterns and Practices-Azure 지침](https://msdn.microsoft.com/library/dn568099.aspx)합니다. 캐싱 지침 및 캐시 배제 패턴을 참조 하십시오.
+- [Failsafe: 복원 력 있는 클라우드 아키텍처에 대 한 지침](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx)합니다. 백서: Marc Mercuri, Ulrich Homann 및 Andrew Townhill 합니다. Caching에서 섹션을 참조 하십시오.
+- [Azure 클라우드 서비스에서 대규모 서비스를 디자인에 대 한 유용한](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx)합니다. W. 백서: Mark Simms 및 Michael Thomassy 합니다. 분산 캐싱 섹션을 참조 하십시오.
+- [배포 확장성에 대 한 경로 대 한 캐싱을](https://msdn.microsoft.com/magazine/dd942840.aspx)합니다. 이전 버전 (2009) MSDN Magazine 문서 하지만 분산 캐싱 일반적;에 대 한 명확 하 게 작성 된 소개 FailSafe 및 모범 사례 백서의 캐싱 섹션 보다 좀 더 깊이에 저장합니다.
 
 비디오
 

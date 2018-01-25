@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/authentication-filters
 msc.type: authoredcontent
-ms.openlocfilehash: eee4e7accd338262698d127ed08d4182608839ab
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7c704cc351876b49ec143a49b25cc0ca83876e06
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="authentication-filters-in-aspnet-web-api-2"></a>ASP.NET Web API 2의에서 인증 필터
 ====================
@@ -47,7 +47,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="implementing-a-web-api-authentication-filter"></a>웹 API 인증 필터를 구현합니다.
 
-인증 필터 Web API에서 구현 된 [System.Web.Http.Filters.IAuthenticationFilter](https://msdn.microsoft.com/en-us/library/system.web.http.filters.iauthenticationfilter.aspx) 인터페이스입니다. 상속 해야 **System.Attribute**을 특성으로 적용 하도록 합니다.
+인증 필터 Web API에서 구현 된 [System.Web.Http.Filters.IAuthenticationFilter](https://msdn.microsoft.com/library/system.web.http.filters.iauthenticationfilter.aspx) 인터페이스입니다. 상속 해야 **System.Attribute**을 특성으로 적용 하도록 합니다.
 
 **IAuthenticationFilter** 인터페이스에는 두 가지 방법:
 
@@ -168,4 +168,4 @@ Web API 파이프라인 내 호스트 수준의 인증을 사용 하지 않으�
 
 ## <a name="additional-resources"></a>추가 리소스
 
-[ASP.NET 웹 API 보안 필터가](https://msdn.microsoft.com/en-us/magazine/dn781361.aspx) (MSDN Magazine)
+[ASP.NET 웹 API 보안 필터가](https://msdn.microsoft.com/magazine/dn781361.aspx) (MSDN Magazine)

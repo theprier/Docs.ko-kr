@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/wrapping-database-modifications-within-a-transaction-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3081a695230056aedce875dbbb750c6853a863b7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e2dafdf9a9414bddfca37ef942856c94096f35b8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="wrapping-database-modifications-within-a-transaction-c"></a>트랜잭션 (C#) 내에서 줄 바꿈 데이터베이스 수정
 ====================
@@ -54,13 +54,13 @@ ms.lasthandoff: 11/10/2017
 3. 2 단계에서 트랜잭션 롤백하고에서에서 문 중 하나에 오류가 있는 경우.
 4. 오류 없이 완료 모든 2 단계에서에서 문을 경우 트랜잭션을 커밋하십시오.
 
-를 만들려면 사용 되는 SQL 문의 커밋, 및 저장 프로시저를 만들거나 SQL 스크립트를 작성할 때 트랜잭션을 수동으로 입력할 수 있습니다 롤백하거나 프로그래밍을 통해의 클래스 또는 ADO.NET을 사용 하 여 의미는 [ `System.Transactions` 네임 스페이스](https://msdn.microsoft.com/en-us/library/system.transactions.aspx)합니다. 만 살펴보겠습니다이 자습서에서는 ADO.NET을 사용 하 여 트랜잭션을 관리 합니다. 이후 자습서 될 때 SQL 문을 만들고, 롤백 하 고 트랜잭션을 커밋하기 위한 살펴볼 것 데이터 액세스 계층에서 저장된 프로시저를 사용 하는 방법을 살펴보겠습니다. 한편, 참조 [SQL Server 저장 프로시저에서 트랜잭션을 관리](http://www.4guysfromrolla.com/webtech/080305-1.shtml) 자세한 정보에 대 한 합니다.
+를 만들려면 사용 되는 SQL 문의 커밋, 및 저장 프로시저를 만들거나 SQL 스크립트를 작성할 때 트랜잭션을 수동으로 입력할 수 있습니다 롤백하거나 프로그래밍을 통해의 클래스 또는 ADO.NET을 사용 하 여 의미는 [ `System.Transactions` 네임 스페이스](https://msdn.microsoft.com/library/system.transactions.aspx)합니다. 만 살펴보겠습니다이 자습서에서는 ADO.NET을 사용 하 여 트랜잭션을 관리 합니다. 이후 자습서 될 때 SQL 문을 만들고, 롤백 하 고 트랜잭션을 커밋하기 위한 살펴볼 것 데이터 액세스 계층에서 저장된 프로시저를 사용 하는 방법을 살펴보겠습니다. 한편, 참조 [SQL Server 저장 프로시저에서 트랜잭션을 관리](http://www.4guysfromrolla.com/webtech/080305-1.shtml) 자세한 정보에 대 한 합니다.
 
 > [!NOTE]
-> [ `TransactionScope` 클래스](https://msdn.microsoft.com/en-us/library/system.transactions.transactionscope.aspx) 에서 `System.Transactions` 네임 스페이스 개발자가 프로그래밍 방식으로 트랜잭션 범위 내에서 일련의 문을 래핑할 수와 여러 관련 된 복잡 한 트랜잭션에 대 한 지원이 포함 됩니다. 두 개의 서로 다른 데이터베이스 또는 심지어 유형이 다른 Microsoft SQL Server 데이터베이스, Oracle 데이터베이스 및 웹 서비스 같은 데이터 저장소와 같은 원본입니다. I 대신이 자습서에 대 한 ADO.NET 트랜잭션을 사용 하기로 결정 했습니다는 `TransactionScope` 클래스 ADO.NET 데이터베이스 트랜잭션 및 대부분의 경우에서 특정 해야 하므로 훨씬 적은 리소스를 많이 사용 합니다. 또한 특정 시나리오에서의 `TransactionScope` 클래스는 Microsoft Distributed Transaction Coordinator (MSDTC)를 사용 합니다. 구성, 구현 및 성능 문제 주변 MSDTC를 사용 하면 보다 특수 한 고급 항목 및이 자습서의 범위를 벗어납니다.
+> [ `TransactionScope` 클래스](https://msdn.microsoft.com/library/system.transactions.transactionscope.aspx) 에서 `System.Transactions` 네임 스페이스 개발자가 프로그래밍 방식으로 트랜잭션 범위 내에서 일련의 문을 래핑할 수와 여러 관련 된 복잡 한 트랜잭션에 대 한 지원이 포함 됩니다. 두 개의 서로 다른 데이터베이스 또는 심지어 유형이 다른 Microsoft SQL Server 데이터베이스, Oracle 데이터베이스 및 웹 서비스 같은 데이터 저장소와 같은 원본입니다. I 대신이 자습서에 대 한 ADO.NET 트랜잭션을 사용 하기로 결정 했습니다는 `TransactionScope` 클래스 ADO.NET 데이터베이스 트랜잭션 및 대부분의 경우에서 특정 해야 하므로 훨씬 적은 리소스를 많이 사용 합니다. 또한 특정 시나리오에서의 `TransactionScope` 클래스는 Microsoft Distributed Transaction Coordinator (MSDTC)를 사용 합니다. 구성, 구현 및 성능 문제 주변 MSDTC를 사용 하면 보다 특수 한 고급 항목 및이 자습서의 범위를 벗어납니다.
 
 
-호출을 통해 트랜잭션을 시작 ADO.NET에서 SqlClient 공급자를 사용할 때의 [ `SqlConnection` 클래스](https://msdn.microsoft.com/en-US/library/system.data.sqlclient.sqlconnection.aspx) s [ `BeginTransaction` 메서드](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlconnection.begintransaction.aspx)를 반환 하는 [ `SqlTransaction` 개체](https://msdn.microsoft.com/en-US/library/system.data.sqlclient.sqltransaction.aspx)합니다. 구성을 트랜잭션 내에 배치 됩니다 하는 데이터 수정 문을 `try...catch` 블록입니다. 문에 오류가 발생 하는 경우는 `try` 에 전송 하는 실행을 차단는 `catch` 블록은 트랜잭션을 통해 다시 롤백할 수 있습니다는 `SqlTransaction` 개체 s [ `Rollback` 메서드](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqltransaction.rollback.aspx)합니다. 모든 문을 성공적으로 호출을 완료 하는 경우는 `SqlTransaction` 개체 s [ `Commit` 메서드](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqltransaction.commit.aspx) 의 끝에는 `try` 블록에 트랜잭션을 커밋합니다. 다음 코드 조각에서는이 패턴을 보여 줍니다. 참조 [트랜잭션 사용 하 여 데이터베이스 일관성을 유지](http://aspnet.4guysfromrolla.com/articles/072705-1.aspx) 추가 구문 및 트랜잭션을 사용 하 여 ado.net 예입니다.
+호출을 통해 트랜잭션을 시작 ADO.NET에서 SqlClient 공급자를 사용할 때의 [ `SqlConnection` 클래스](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection.aspx) s [ `BeginTransaction` 메서드](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection.begintransaction.aspx)를 반환 하는 [ `SqlTransaction` 개체](https://msdn.microsoft.com/library/system.data.sqlclient.sqltransaction.aspx)합니다. 구성을 트랜잭션 내에 배치 됩니다 하는 데이터 수정 문을 `try...catch` 블록입니다. 문에 오류가 발생 하는 경우는 `try` 에 전송 하는 실행을 차단는 `catch` 블록은 트랜잭션을 통해 다시 롤백할 수 있습니다는 `SqlTransaction` 개체 s [ `Rollback` 메서드](https://msdn.microsoft.com/library/system.data.sqlclient.sqltransaction.rollback.aspx)합니다. 모든 문을 성공적으로 호출을 완료 하는 경우는 `SqlTransaction` 개체 s [ `Commit` 메서드](https://msdn.microsoft.com/library/system.data.sqlclient.sqltransaction.commit.aspx) 의 끝에는 `try` 블록에 트랜잭션을 커밋합니다. 다음 코드 조각에서는이 패턴을 보여 줍니다. 참조 [트랜잭션 사용 하 여 데이터베이스 일관성을 유지](http://aspnet.4guysfromrolla.com/articles/072705-1.aspx) 추가 구문 및 트랜잭션을 사용 하 여 ado.net 예입니다.
 
 
 [!code-csharp[Main](wrapping-database-modifications-within-a-transaction-cs/samples/sample1.cs)]
@@ -125,7 +125,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](wrapping-database-modifications-within-a-transaction-cs/samples/sample3.cs)]
 
-`partial` 내에서 추가 된 멤버에 추가 하는 컴파일러에 알리는 키워드를 클래스 선언에는 `ProductsTableAdapter` 클래스에 `NorthwindTableAdapters` 네임 스페이스입니다. 참고는 `using System.Data.SqlClient` 파일 맨 위에 있는 문. TableAdapter가 SqlClient 공급자를 사용 하도록 구성 된 이후 내부적으로 사용 하 여 한 [ `SqlDataAdapter` ](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqldataadapter.aspx) 개체를 데이터베이스에 해당 명령을 실행 합니다. 사용 해야 결과적는 `SqlTransaction` 트랜잭션을 시작 하는 클래스 다음 커밋하거나 롤백합니다. Microsoft SQL Server 이외의 데이터 저장소를 사용 하는 경우 적절 한 공급자를 사용 하도록 해야 합니다.
+`partial` 내에서 추가 된 멤버에 추가 하는 컴파일러에 알리는 키워드를 클래스 선언에는 `ProductsTableAdapter` 클래스에 `NorthwindTableAdapters` 네임 스페이스입니다. 참고는 `using System.Data.SqlClient` 파일 맨 위에 있는 문. TableAdapter가 SqlClient 공급자를 사용 하도록 구성 된 이후 내부적으로 사용 하 여 한 [ `SqlDataAdapter` ](https://msdn.microsoft.com/library/system.data.sqlclient.sqldataadapter.aspx) 개체를 데이터베이스에 해당 명령을 실행 합니다. 사용 해야 결과적는 `SqlTransaction` 트랜잭션을 시작 하는 클래스 다음 커밋하거나 롤백합니다. Microsoft SQL Server 이외의 데이터 저장소를 사용 하는 경우 적절 한 공급자를 사용 하도록 해야 합니다.
 
 이러한 메서드는 롤백를 시작 하는 데 필요한 구성 요소를 제공 하 고 트랜잭션을 커밋하는 합니다. 표시 된 `public`, 내에서 사용할 수 있도록는 `ProductsTableAdapter`, DAL에서 다른 클래스 또는 BLL 같은 아키텍처의 또 다른 계층입니다. `BeginTransaction`내부 tableadapter를 엽니다 `SqlConnection` (필요한 경우) 트랜잭션을 시작 하 고에 할당 된 `Transaction` 속성을 트랜잭션을 내부에 연결 하 고 `SqlDataAdapter` s `SqlCommand` 개체입니다. `CommitTransaction`및 `RollbackTransaction` 호출는 `Transaction` 개체 s `Commit` 및 `Rollback` 메서드 내부를 닫기 전에 각각 `Connection` 개체입니다.
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/understanding-the-build-process
 msc.type: authoredcontent
-ms.openlocfilehash: 551e31a7a2d0a4e6259f74977c2f8e21cb694e42
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3efcefc40dc135ff42f55911036f8b38b5aa13b1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="understanding-the-build-process"></a>빌드 프로세스 이해
 ====================
@@ -77,7 +77,7 @@ Contact Manager 솔루션 개발자 테스트 환경에 배포 하려면 개발�
 
 
 > [!NOTE]
-> **/fl** 전환 (짧은 **/fileLogger**) 라는 파일에 빌드 출력을 기록 *msbuild.log* 현재 디렉터리에 있습니다. 자세한 내용은 참조는 [MSBuild 명령줄 참조](https://msdn.microsoft.com/en-us/library/ms164311.aspx)합니다.
+> **/fl** 전환 (짧은 **/fileLogger**) 라는 파일에 빌드 출력을 기록 *msbuild.log* 현재 디렉터리에 있습니다. 자세한 내용은 참조는 [MSBuild 명령줄 참조](https://msdn.microsoft.com/library/ms164311.aspx)합니다.
 
 
 MSBuild의 실행을 시작, 로드이 시점에서 *Publish.proj* 파일 및 그 안에 지침을 처리 하기 시작 합니다. 첫 번째 명령 프로젝트 MSBuild 지시 파일을 **TargetEnvPropsFile** 매개 변수를 지정 합니다.
@@ -178,7 +178,7 @@ MSBuild 항목 목록이 작성 하 여이 명령을 처리 **ProjectsToBuild**�
 **DbPublishPackages** 항목의 경로를 단일 값을 포함 됩니다는 *ContactManager.Database.deploymanifest* 파일입니다.
 
 > [!NOTE]
-> 데이터베이스 프로젝트를 빌드하고 MSBuild 프로젝트 파일과 같은 스키마를 사용 하는 경우.deploymanifest 파일 생성 됩니다. 데이터베이스 스키마 (.dbschema)의 위치 및 모든 배포 전 / 배포 후 스크립트의 세부 정보를 포함 하 여 데이터베이스를 배포 하는 데 필요한 모든 정보를 포함 합니다. 자세한 내용은 참조 [는 개요의 데이터베이스를 빌드하고 배포](https://msdn.microsoft.com/en-us/library/aa833165.aspx)합니다.
+> 데이터베이스 프로젝트를 빌드하고 MSBuild 프로젝트 파일과 같은 스키마를 사용 하는 경우.deploymanifest 파일 생성 됩니다. 데이터베이스 스키마 (.dbschema)의 위치 및 모든 배포 전 / 배포 후 스크립트의 세부 정보를 포함 하 여 데이터베이스를 배포 하는 데 필요한 모든 정보를 포함 합니다. 자세한 내용은 참조 [는 개요의 데이터베이스를 빌드하고 배포](https://msdn.microsoft.com/library/aa833165.aspx)합니다.
 
 
 배포 패키지 및 데이터베이스 배포 매니페스트 생성 및 사용 방법을 자세히 알아봅니다 [빌드 및 패키징 웹 응용 프로그램 프로젝트](building-and-packaging-web-application-projects.md) 및 [데이터베이스 프로젝트 배포](deploying-database-projects.md)합니다.
@@ -193,13 +193,13 @@ MSBuild 항목 목록이 작성 하 여이 명령을 처리 **ProjectsToBuild**�
 [!code-xml[Main](understanding-the-build-process/samples/sample10.xml)]
 
 
-한 예로이 *대상 일괄 처리*합니다. MSBuild 프로젝트 파일의 일괄 처리는 컬렉션을 반복 하기 위한 기술입니다. 값은 **출력** 특성 **"% (DbPublishPackages.Identity)"**, 참조 하는 **Identity** 의 메타 데이터 속성은 **DbPublishPackages**  항목 목록입니다. 이 표기 **출력 = %***(ItemList.ItemMetadataName)*,으로 변환 됩니다.
+한 예로이 *대상 일괄 처리*합니다. MSBuild 프로젝트 파일의 일괄 처리는 컬렉션을 반복 하기 위한 기술입니다. 값은 **출력** 특성 **"% (DbPublishPackages.Identity)"**, 참조 하는 **Identity** 의 메타 데이터 속성은 **DbPublishPackages**  항목 목록입니다. 이 표기 **Outputs=%***(ItemList.ItemMetadataName)*,으로 변환 됩니다.
 
 - 에 있는 항목을 분할 **DbPublishPackages** 동일한 포함 된 항목의 일괄 처리로 **Identity** 메타 데이터 값입니다.
 - 대상 일괄 처리에 한 번씩 실행 합니다.
 
 > [!NOTE]
-> **Identity** 중 하나는 [기본 제공 메타 데이터 값](https://msdn.microsoft.com/en-us/library/ms164313.aspx) 생성의 모든 항목에 할당 된 합니다. 값을 참조는 **Include** 특성에 **항목** 요소 & #x 2014; 즉, 파일 경로 항목의 합니다.
+> **Identity** 중 하나는 [기본 제공 메타 데이터 값](https://msdn.microsoft.com/library/ms164313.aspx) 생성의 모든 항목에 할당 된 합니다. 값을 참조는 **Include** 특성에 **항목** 요소 & #x 2014; 즉, 파일 경로 항목의 합니다.
 
 
 이 경우 동일한 경로 및 파일 이름으로 둘 이상의 항목이 없어야, 때문에 기본적으로 최선을 다하고 하나의 일괄 처리 크기를 사용 합니다. 대상 마다 데이터베이스 패키지를 한 번 실행 됩니다.
@@ -210,7 +210,7 @@ MSBuild 항목 목록이 작성 하 여이 명령을 처리 **ProjectsToBuild**�
 [!code-xml[Main](understanding-the-build-process/samples/sample11.xml)]
 
 
-이 경우 **%(DbPublishPackages.DatabaseConnectionString)**, **%(DbPublishPackages.TargetDatabase)**, 및 **%(DbPublishPackages.FullPath)** 를 모두 참조 메타 데이터 값은 **DbPublishPackages** 항목 컬렉션입니다.  **\_Cmd** 속성은 사용 된 **Exec** 명령을 호출 하는 작업입니다.
+이 경우 **%(DbPublishPackages.DatabaseConnectionString)**, **%(DbPublishPackages.TargetDatabase)**, 및 **%(DbPublishPackages.FullPath)** 를 모두 참조 메타 데이터 값은 **DbPublishPackages** 항목 컬렉션입니다. **\_Cmd** 속성은 사용 된 **Exec** 명령을 호출 하는 작업입니다.
 
 
 [!code-xml[Main](understanding-the-build-process/samples/sample12.xml)]
@@ -219,7 +219,7 @@ MSBuild 항목 목록이 작성 하 여이 명령을 처리 **ProjectsToBuild**�
 이 표기법의 결과 **Exec** 작업 일괄 처리의 고유한 조합에 따라 만들어집니다는 **DatabaseConnectionString**, **TargetDatabase**, 및 **FullPath** 메타 데이터 값과 작업 각 일괄 처리에 대해 한 번 실행 됩니다. 한 예로이 *작업 일괄 처리*합니다. 그러나 대상 수준 일괄 처리를 단일 항목 일괄 처리로 업체 항목 컬렉션 이미 나누 때문에 **Exec** 작업 대상의 각 반복에 대해 한 번만 실행 됩니다. 즉,이 작업은 솔루션의 각 데이터베이스 패키지에 대해 한 번씩 VSDBCMD 유틸리티를 호출합니다.
 
 > [!NOTE]
-> MSBuild 대상 및 작업 일괄 처리에 대 한 자세한 내용은 참조 [일괄 처리가](https://msdn.microsoft.com/en-us/library/ms171473.aspx), [대상 일괄 처리의 항목 메타 데이터](https://msdn.microsoft.com/en-US/library/ms228229.aspx), 및 [작업 일괄 처리의 항목 메타 데이터](https://msdn.microsoft.com/en-us/library/ms171474.aspx)합니다.
+> MSBuild 대상 및 작업 일괄 처리에 대 한 자세한 내용은 참조 [일괄 처리가](https://msdn.microsoft.com/library/ms171473.aspx), [대상 일괄 처리의 항목 메타 데이터](https://msdn.microsoft.com/library/ms228229.aspx), 및 [작업 일괄 처리의 항목 메타 데이터](https://msdn.microsoft.com/library/ms171474.aspx)합니다.
 
 
 ### <a name="the-publishwebpackages-target"></a>PublishWebPackages 대상

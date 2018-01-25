@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/formats-and-model-binding/json-and-xml-serialization
 msc.type: authoredcontent
-ms.openlocfilehash: 7aafe4823d3a6090fae4a63f1a66fb2670ecb025
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b1fcaf70cc38d73da0a454764520197b97f34b26
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="json-and-xml-serialization-in-aspnet-web-api"></a>JSON 및 ASP.NET Web API의에서 XML 직렬화
 ====================
@@ -89,7 +89,7 @@ JSON 형식 지정에서 제공 되는 **JsonMediaTypeFormatter** 클래스입�
 
 [!code-csharp[Main](json-and-xml-serialization/samples/sample5.cs)]
 
-사용 하려는 경우 [Microsoft JSON 날짜 형식](https://msdn.microsoft.com/en-us/library/bb299886.aspx#intro_to_json_sidebarb) (`"\/Date(ticks)\/"`) ISO 8601 대신 설정는 **DateFormatHandling** serializer 설정에는 속성:
+사용 하려는 경우 [Microsoft JSON 날짜 형식](https://msdn.microsoft.com/library/bb299886.aspx#intro_to_json_sidebarb) (`"\/Date(ticks)\/"`) ISO 8601 대신 설정는 **DateFormatHandling** serializer 설정에는 속성:
 
 [!code-csharp[Main](json-and-xml-serialization/samples/sample6.cs)]
 

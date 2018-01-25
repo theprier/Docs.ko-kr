@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/environments
-ms.openlocfilehash: 83d1593d46761b1c00aa431cfdcde59cb3b28b65
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 60a1543ce11d08490e6df0eb84f980672ecfe672
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="working-with-multiple-environments"></a>여러 환경 작업
 
@@ -25,7 +25,7 @@ ASP.NET Core를 환경 변수와 런타임 시 응용 프로그램 동작을 설
 
 ## <a name="environments"></a>환경
 
-ASP.NET Core 환경 변수를 읽는 `ASPNETCORE_ENVIRONMENT` 응용 프로그램 시작 및 값 저장소에서 [IHostingEnvironment.EnvironmentName](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.ihostingenvironment.environmentname?view=aspnetcore-2.0#Microsoft_AspNetCore_Hosting_IHostingEnvironment_EnvironmentName)합니다. `ASPNETCORE_ENVIRONMENT`임의의 값으로 설정할 수 있지만 [3 개의 값](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.environmentname?view=aspnetcore-2.0) 프레임 워크에서 지원 됩니다: [개발](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.environmentname.development?view=aspnetcore-2.0), [준비](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.environmentname.staging?view=aspnetcore-2.0), 및 [프로덕션](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.environmentname.production?view=aspnetcore-2.0)합니다. 경우 `ASPNETCORE_ENVIRONMENT` 값은 기본적으로 설정 되어 있지 않은 `Production`합니다.
+ASP.NET Core 환경 변수를 읽는 `ASPNETCORE_ENVIRONMENT` 응용 프로그램 시작 및 값 저장소에서 [IHostingEnvironment.EnvironmentName](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.ihostingenvironment.environmentname?view=aspnetcore-2.0#Microsoft_AspNetCore_Hosting_IHostingEnvironment_EnvironmentName)합니다. `ASPNETCORE_ENVIRONMENT`임의의 값으로 설정할 수 있지만 [3 개의 값](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.environmentname?view=aspnetcore-2.0) 프레임 워크에서 지원 됩니다: [개발](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.environmentname.development?view=aspnetcore-2.0), [준비](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.environmentname.staging?view=aspnetcore-2.0), 및 [프로덕션](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.environmentname.production?view=aspnetcore-2.0)합니다. 경우 `ASPNETCORE_ENVIRONMENT` 값은 기본적으로 설정 되지 않습니다 `Production`합니다.
 
 [!code-csharp[Main](environments/sample/WebApp1/Startup.cs?name=snippet)]
 
@@ -46,7 +46,7 @@ ASP.NET Core 환경 변수를 읽는 `ASPNETCORE_ENVIRONMENT` 응용 프로그�
 
 ### <a name="development"></a>개발
 
-개발 환경 프로덕션 환경에서 노출 되지 않아야 하는 기능을 활성화할 수 있습니다. ASP.NET Core 템플릿을 사용 하는 예를 들어는 [개발자 예외 페이지](xref:fundamentals/error-handling#the-developer-exception-page) 개발 환경에서 합니다.
+개발 환경 프로덕션 환경에서 노출 하지 않아야 하는 기능을 활성화할 수 있습니다. ASP.NET Core 템플릿을 사용 하는 예를 들어는 [개발자 예외 페이지](xref:fundamentals/error-handling#the-developer-exception-page) 개발 환경에서 합니다.
 
 로컬 컴퓨터 개발을 위한 환경에서 설정할 수 있습니다는 *Properties\launchSettings.json* 프로젝트의 파일입니다. 환경 값으로 설정할 *launchSettings.json* 시스템 환경에서 설정 값을 재정의 합니다.
 
@@ -83,7 +83,7 @@ Visual Studio **디버그** 탭 편집 하려면 GUI에서는 제공 된 *launch
 웹 서버를 다시 시작 될 때까지 프로젝트 프로필의 변경 내용이 적용 되지 않을 수 있습니다. 해당 환경에 대해 변경 내용을 감지 합니다 kestrel은 다시 시작 해야 합니다.
 
 >[!WARNING]
-> *launchSettings.json* 비밀 정보를 저장 하지 마십시오. [암호 관리자 도구](xref:security/app-secrets) 로컬 개발에 대 한 암호를 저장 하기 위해 사용할 수 있습니다.
+> *launchSettings.json* 비밀 정보를 저장 하지 않아야 합니다. [암호 관리자 도구](xref:security/app-secrets) 로컬 개발에 대 한 암호를 저장 하기 위해 사용할 수 있습니다.
 
 ### <a name="production"></a>프로덕션
 
@@ -97,7 +97,7 @@ Visual Studio **디버그** 탭 편집 하려면 GUI에서는 제공 된 *launch
 
 ## <a name="setting-the-environment"></a>환경 설정
 
-테스트 하기 위한 특정 환경을 설정 하는 것이 유용 합니다. 환경 설정 되어 있지 않으면 기본적으로 선택 됩니다 `Production` 는 대부분의 디버깅 기능을 사용 하지 않도록 설정 합니다.
+테스트 하기 위한 특정 환경을 설정 하는 것이 유용 합니다. 환경 설정 되지 않은 경우 값은 기본적으로 `Production` 는 대부분의 디버깅 기능을 사용 하지 않도록 설정 합니다.
 
 환경 설정에 대 한 메서드는 운영 체제에 따라 달라 집니다.
 

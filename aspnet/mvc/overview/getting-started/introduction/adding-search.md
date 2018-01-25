@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-search
 msc.type: authoredcontent
-ms.openlocfilehash: 10457d154f5fda875f7d1054d48daeeba3a50b7c
-ms.sourcegitcommit: 2b263e87217658caa42eedc4f9d2d21ef0ab5d59
+ms.openlocfilehash: 116f681e14af0a09a4eb1502ef9f057c5db2f97d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 01/24/2018
 ---
 <a name="search"></a>검색
 ====================
@@ -34,7 +34,7 @@ ms.lasthandoff: 01/12/2018
 
 [!code-csharp[Main](adding-search/samples/sample1.cs?highlight=1,6-9)]
 
-첫 번째 줄은 `Index` 메서드 다음 항목을 만듭니다 [LINQ](https://msdn.microsoft.com/en-us/library/bb397926.aspx) 쿼리는 영화를 선택 하려면:
+첫 번째 줄은 `Index` 메서드 다음 항목을 만듭니다 [LINQ](https://msdn.microsoft.com/library/bb397926.aspx) 쿼리는 영화를 선택 하려면:
 
 [!code-csharp[Main](adding-search/samples/sample2.cs)]
 
@@ -44,10 +44,10 @@ ms.lasthandoff: 01/12/2018
 
 [!code-csharp[Main](adding-search/samples/sample3.cs)]
 
-위의 `s => s.Title` 코드는 [람다 식](https://msdn.microsoft.com/en-us/library/bb397687.aspx)입니다. 람다 식은 메서드 기반에 사용 되 [LINQ](https://msdn.microsoft.com/en-us/library/bb397926.aspx) 와 같은 표준 쿼리 연산자 메서드의 인수로 쿼리는 [여기서](https://msdn.microsoft.com/en-us/library/system.linq.enumerable.where.aspx) 위의 코드에서 사용 하는 방법입니다. 정의 된 또는 같은 메서드를 호출 하 여 수정 된 경우에 LINQ 쿼리 실행 되지 않습니다 `Where` 또는 `OrderBy`합니다. 대신, 쿼리 실행이 지연, 즉, 실제로 실현된 값 반복 될 때까지 식의 계산이 지연 되는지 또는 [ `ToList` ](https://msdn.microsoft.com/en-us/library/bb342261.aspx) 메서드를 호출 합니다. 에 `Search` 샘플에서는 쿼리가에서 실행 되는 *Index.cshtml* 보기. 지연된 쿼리 실행에 대한 자세한 내용은 [쿼리 실행](https://msdn.microsoft.com/en-us/library/bb738633.aspx)을 참조하세요.
+위의 `s => s.Title` 코드는 [람다 식](https://msdn.microsoft.com/library/bb397687.aspx)입니다. 람다 식은 메서드 기반에 사용 되 [LINQ](https://msdn.microsoft.com/library/bb397926.aspx) 와 같은 표준 쿼리 연산자 메서드의 인수로 쿼리는 [여기서](https://msdn.microsoft.com/library/system.linq.enumerable.where.aspx) 위의 코드에서 사용 하는 방법입니다. 정의 된 또는 같은 메서드를 호출 하 여 수정 된 경우에 LINQ 쿼리 실행 되지 않습니다 `Where` 또는 `OrderBy`합니다. 대신, 쿼리 실행이 지연, 즉, 실제로 실현된 값 반복 될 때까지 식의 계산이 지연 되는지 또는 [ `ToList` ](https://msdn.microsoft.com/library/bb342261.aspx) 메서드를 호출 합니다. 에 `Search` 샘플에서는 쿼리가에서 실행 되는 *Index.cshtml* 보기. 지연된 쿼리 실행에 대한 자세한 내용은 [쿼리 실행](https://msdn.microsoft.com/library/bb738633.aspx)을 참조하세요.
 
 > [!NOTE]
-> [Contains](https://msdn.microsoft.com/en-us/library/bb155125.aspx) 데이터베이스 하지는 위의 c# 코드에서 메서드를 실행 합니다. 다음은 데이터베이스에서 [Contains](https://msdn.microsoft.com/en-us/library/bb155125.aspx) 매핑됩니다 [SQL LIKE](https://msdn.microsoft.com/en-us/library/ms179859.aspx), 대/소문자 구분 되 합니다.
+> [Contains](https://msdn.microsoft.com/library/bb155125.aspx) 데이터베이스 하지는 위의 c# 코드에서 메서드를 실행 합니다. 다음은 데이터베이스에서 [Contains](https://msdn.microsoft.com/library/bb155125.aspx) 매핑됩니다 [SQL LIKE](https://msdn.microsoft.com/library/ms179859.aspx), 대/소문자 구분 되 합니다.
 
 업데이트할 수 이제는 `Index` 사용자에 게 폼을 표시 하는 보기입니다.
 
@@ -123,7 +123,7 @@ Visual Studio 2013에는 표시 및 보기 파일을 편집 하는 경우 좋은
 
 [!code-csharp[Main](adding-search/samples/sample12.cs)]
 
-코드를 사용 하 여는 `AddRange` 메서드는 제네릭의 `List` 모든 고유 장르 목록에 추가할 컬렉션입니다. (없이 `Distinct` 한정자를 중복 장르는 추가-샘플에 두 번 코미디는 추가 하는 예를 들어). 코드에는 다음에 장르 목록을 저장 된 `ViewBag.MovieGenre` 개체입니다. 범주 데이터 (이러한 동영상 장르의)으로 저장 한 [SelectList](https://msdn.microsoft.com/en-us/library/system.web.mvc.selectlist(v=vs.108).aspx) 개체는 `ViewBag`, MVC 응용 프로그램에 대 한 일반적인 방법은 드롭다운 목록 상자에서 범주 데이터에 액세스 합니다.
+코드를 사용 하 여는 `AddRange` 메서드는 제네릭의 `List` 모든 고유 장르 목록에 추가할 컬렉션입니다. (없이 `Distinct` 한정자를 중복 장르는 추가-샘플에 두 번 코미디는 추가 하는 예를 들어). 코드에는 다음에 장르 목록을 저장 된 `ViewBag.MovieGenre` 개체입니다. 범주 데이터 (이러한 동영상 장르의)으로 저장 한 [SelectList](https://msdn.microsoft.cus/library/system.web.mvc.selectlist(v=vs.108).aspx) 개체는 `ViewBag`, MVC 응용 프로그램에 대 한 일반적인 방법은 드롭다운 목록 상자에서 범주 데이터에 액세스 합니다.
 
 다음 코드를 확인 하는 방법을 보여 줍니다는 `movieGenre` 매개 변수입니다. 비어 있지 않으면 코드를 추가로 지정된 장르에 선택 된 동영상을 제한 하려면 영화 쿼리를 제한 합니다.
 

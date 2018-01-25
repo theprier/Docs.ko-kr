@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/tag-helpers/intro
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 003a22d4b0d9400f3e9effe0892d2d7e03704cde
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 3c198ccc3e3e2c11f3e2b9379bc63bd6428dbf69
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-tag-helpers-in-aspnet-core"></a>ASP.NET Core에서 태그 도우미 소개 
 
@@ -22,7 +22,7 @@ ms.lasthandoff: 01/19/2018
 
 ## <a name="what-are-tag-helpers"></a>태그 도우미 이란?
 
-태그 도우미 만들기 및 Razor 파일에서 HTML 요소 렌더링에 참여 하도록 서버 쪽 코드를 사용 하도록 설정 합니다. 예를 들어 기본 제공 `ImageTagHelper` 버전 번호를 이미지 이름에 추가할 수 있습니다. 이미지 변경 될 때마다 서버 없으므로 클라이언트 (오래 된 캐시 된 이미지) 하는 대신 현재 이미지를 가져올 보장 되는 이미지에 대 한 새로운 고유 버전을 생성 합니다. -양식, 링크, 로드 자산 및 점점-공용 GitHub 리포지토리에 및 NuGet로 훨씬 더 사용할 수 있는 패키지 만들기와 같은 일반적인 작업에 대 한 기본 제공 태그 도우미 여러 가지가 있습니다. 태그 도우미 C#에서 작성 하 고 요소 이름, 특성 이름 또는 부모 태그를 기반으로 하는 HTML 요소를 대상입니다. 예를 들어 기본 제공 `LabelTagHelper` HTML 대상으로 지정할 수 `<label>` 요소 때는 `LabelTagHelper` 특성이 적용 됩니다. 익숙한 경우 [HTML 도우미](http://stephenwalther.com/archive/2009/03/03/chapter-6-understanding-html-helpers), 태그 도우미 Razor 뷰에서 HTML 및 C# 전환을 명시적 줄입니다. 대부분의 경우에서 HTML 도우미 특정 태그 도우미에는 다른 방법은 제공 하지만 태그 도우미는 HTML 도우미를 대체 하지 않고 각 HTML 도우미에 대 한 태그 도우미 없기 인식 하는 것이 중요 합니다. [태그 도우미 HTML 도우미에 비해](#tag-helpers-compared-to-html-helpers) 자세히 차이점에 설명 합니다.
+태그 도우미 만들기 및 Razor 파일에서 HTML 요소 렌더링에 참여 하도록 서버 쪽 코드를 사용 하도록 설정 합니다. 예를 들어 기본 제공 `ImageTagHelper` 버전 번호를 이미지 이름에 추가할 수 있습니다. 이미지 변경 될 때마다 서버 없으므로 클라이언트 (오래 된 캐시 된 이미지) 하는 대신 현재 이미지를 가져올 보장 되는 이미지에 대 한 새로운 고유 버전을 생성 합니다. -양식, 링크, 로드 자산 및 점점-공용 GitHub 리포지토리에 및 NuGet로 훨씬 더 사용할 수 있는 패키지 만들기와 같은 일반적인 작업에 대 한 기본 제공 태그 도우미 여러 가지가 있습니다. 태그 도우미 C#에서 작성 하 고 요소 이름, 특성 이름 또는 부모 태그를 기반으로 하는 HTML 요소를 대상입니다. 예를 들어 기본 제공 `LabelTagHelper` HTML 대상으로 지정할 수 `<label>` 요소 때는 `LabelTagHelper` 특성이 적용 됩니다. 익숙한 경우 [HTML 도우미](http://stephenwalther.com/archive/2009/03/03/chapter-6-understanding-html-helpers), 태그 도우미 Razor 뷰에서 HTML 및 C# 전환을 명시적 줄입니다. 대부분의 경우에서 HTML 도우미 특정 태그 도우미에는 다른 방법은 제공 하지만 태그 도우미는 HTML 도우미를 바꾸지 않습니다. 각 HTML 도우미에 대 한 태그 도우미 없기 인식 하는 것이 중요 합니다. [태그 도우미 HTML 도우미에 비해](#tag-helpers-compared-to-html-helpers) 자세히 차이점에 설명 합니다.
 
 ## <a name="what-tag-helpers-provide"></a>태그 도우미의 제공
 
@@ -112,7 +112,7 @@ ms.lasthandoff: 01/19/2018
 ```cshtml
 @tagHelperPrefix th:
 ```
-아래 코드 이미지 태그 도우미 접두사로 설정 되어 `th:`, 접두사를 사용 하는 요소에만 `th:` 태그 도우미 (태그 도우미 지원 요소에서 보유 한 고유한 글꼴)를 지원 합니다. `<label>` 및 `<input>` 요소 태그 도우미 접두사 대 한 태그 도우미를 사용할 수는 동안는 `<span>` 요소는 그렇지 않습니다.
+아래 코드 이미지 태그 도우미 접두사로 설정 되어 `th:`, 접두사를 사용 하는 요소에만 `th:` 태그 도우미 (태그 도우미 지원 요소에서 보유 한 고유한 글꼴)를 지원 합니다. `<label>` 및 `<input>` 요소 태그 도우미 접두사 대 한 태그 도우미를 사용할 수는 동안는 `<span>` 요소 하지 않습니다.
 
 ![이미지](intro/_static/thp.png)
 
@@ -192,7 +192,7 @@ IntelliSense를 사용 하면 전체 줄을 쓸 수 있습니다. `LabelTagHelpe
 <label class="caption" for="FirstName">First Name</label>
 ```
 
-카멜식 대 문장 대/소문자를 사용 하는 콘텐츠를 콘텐츠를 추가 하는 경우 사용 되지 않습니다는 `<label>`합니다. 예:
+콘텐츠를 추가 하는 경우에 사용 되지 않는 카멜식 대 콘텐츠 문장 대/소문자를 사용 하 여 `<label>`합니다. 예:
 
 ![이미지](intro/_static/1stName.png)
 
@@ -222,7 +222,7 @@ Visual Studio 편집기에는 C# 코드가 회색 배경과 함께 표시 됩니
 
 [!code-csharp[Main](intro/sample/Register.cshtml?range=12-18)]
 
-각 "asp-" 특성을 "Email"의 값 갖지만 "Email" 문자열이 아닙니다. 이 컨텍스트에서 "Email"는 C# 모델 식 속성에 대 한는 `RegisterViewModel`합니다.
+각 "asp-" 특성 "Email"의 값 있지만 "Email" 문자열이 아닌 합니다. 이 컨텍스트에서 "Email"는 C# 모델 식 속성에 대 한는 `RegisterViewModel`합니다.
 
 Visual Studio 편집기를 사용 하면 작성 **모든** Visual Studio에서는 대부분의 HTML 도우미 접근 방식에서 코드에 대 한 도움말을 제공 하는 동안 레지스터 폼의 태그 도우미 접근 방식에서 변경 내용입니다. [태그 도우미에 대 한 IntelliSense 지원을](#intellisense-support-for-tag-helpers) Visual Studio 편집기에서 태그 도우미 작업 정보를 확인할 이동 합니다.
 

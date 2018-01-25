@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: c375fe6ea98c621012eb55589c8b174c2a95b697
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 2446f4734e9bb1ab6829001f6e7888c4c14ee1b7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="creating-a-complex-data-model---ef-core-with-razor-pages-tutorial-5-of-8"></a>복잡 한 데이터 모델-EF 코어 Razor 페이지 자습서 (8 5)와 함께 만들기
 
@@ -51,7 +51,7 @@ ms.lasthandoff: 01/19/2018
 
 `DataType` 특성 내보냅니다 HTML 5 `data-` HTML 5 브라우저를 사용 하는 (커맨드 데이터 대시) 특성입니다. `DataType` 특성 유효성 검사를 제공 하지 않습니다.
 
-`DataType.Date`는 표시되는 날짜의 서식을 지정하지 않습니다. 기본적으로 날짜 필드는 서버에 따라 기본 형식에 따라 표시 [CultureInfo](https://docs.microsoft.com/aspnet/core/fundamentals/localization#provide-localized-resources-for-the-languages-and-cultures-you-support)합니다.
+`DataType.Date`표시 되는 날짜의 형식을 지정 하지 않습니다. 기본적으로 날짜 필드는 서버에 따라 기본 형식에 따라 표시 [CultureInfo](https://docs.microsoft.com/aspnet/core/fundamentals/localization#provide-localized-resources-for-the-languages-and-cultures-you-support)합니다.
 
 `DisplayFormat` 특성은 날짜 형식을 명시적으로 지정하는 데 사용됩니다.
 
@@ -59,7 +59,7 @@ ms.lasthandoff: 01/19/2018
 [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
 ```
 
-`ApplyFormatInEditMode` 설정은 서식을 적용 해야 하는지도 편집 UI에 지정 합니다. 일부 필드를 사용 하지 않아야 `ApplyFormatInEditMode`합니다. 예를 들어, 통화 기호는 일반적으로 나타나지 편집 텍스트 상자에.
+`ApplyFormatInEditMode` 설정은 서식을 적용 해야 하는지도 편집 UI에 지정 합니다. 일부 필드를 사용 하면 안 `ApplyFormatInEditMode`합니다. 예를 들어, 통화 기호는 일반적으로 나타나지 편집 텍스트 상자에.
 
 `DisplayFormat` 특성 단독으로 사용할 수 있습니다. 일반적으로 사용 하는 `DataType` 특성이 `DisplayFormat` 특성입니다. `DataType` 특성의 데이터를 화면에 렌더링 하는 방법 전송할 의미 체계를 전달 합니다. `DataType` 특성에서 사용할 수 있는 다음과 같은 이점을 제공 `DisplayFormat`:
 
@@ -159,7 +159,7 @@ Please review the migration for accuracy.
 
 ### <a name="the-required-attribute"></a>필수 특성
 
-`Required` 특성 필드에 필수 이름 속성을 사용 합니다. `Required` nullable이 아닌 형식 예: 값 형식에 대 한 특성은 필요 하지 않습니다 (`DateTime`, `int`, `double`등.). Null 일 수 없는 형식 필수 필드로 자동으로 처리 됩니다.
+`Required` 특성 필드에 필수 이름 속성을 사용 합니다. `Required` nullable이 아닌 형식 예: 값 형식에 대 한 특성이 필요 하지 않습니다 (`DateTime`, `int`, `double`등.). Null 일 수 없는 형식 필수 필드로 자동으로 처리 됩니다.
 
 `Required` 특성의 최소 길이 매개 변수를 대체할 수 있습니다는 `StringLength` 특성:
 
@@ -284,7 +284,7 @@ public Instructor Instructor { get; set; }
 
 EF 코어는 모델에 관련된 엔터티에 대 한 탐색 속성을 포함 하는 경우 데이터 모델에 대 한 외래 키 속성이 필요 하지 않습니다.
 
-EF 코어 자동으로 만듭니다 FKs 데이터베이스에는 필요할 때마다. EF 코어 만듭니다 [숨기](https://docs.microsoft.com/ef/core/modeling/shadow-properties) 자동으로 만들어진된 FKs에 대 한 합니다. 쉽고 효율적으로 데이터 모델에는 외래 키를 포함 합니다. 업데이트를 수행할 수 있습니다. 예를 들어 모델에 외래 키 속성 `DepartmentID` 은 *하지* 포함 합니다. 때 과정 엔터티는 편집 하려면 인출 됩니다.
+EF 코어 자동으로 만듭니다 FKs 데이터베이스에 필요한 곳 마다. EF 코어 만듭니다 [숨기](https://docs.microsoft.com/ef/core/modeling/shadow-properties) 자동으로 만들어진된 FKs에 대 한 합니다. 쉽고 효율적으로 데이터 모델에는 외래 키를 포함 합니다. 업데이트를 수행할 수 있습니다. 예를 들어 모델에 외래 키 속성 `DepartmentID` 은 *하지* 포함 합니다. 때 과정 엔터티는 편집 하려면 인출 됩니다.
 
 * `Department` 엔터티는 명시적으로 로드 된 경우 null입니다.
 * 과정 엔터티를 업데이트 하려면는 `Department` 엔터티 먼저 가져와야 합니다.
@@ -373,10 +373,10 @@ public ICollection<Course> Courses { get; set; }
 
 참고: 일반적으로 EF 코어 모두 삭제를 하 고 다 대 다 관계에 대 한 nullable이 아닌 FKs에 대 한 있습니다. 연계 delete 순환 cascade 규칙 삭제 될 수 있습니다. 순환 모두 마이그레이션하는 추가 될 때 예외가 규칙 원인을 삭제 합니다.
 
-예를 들어 경우는 `Department.InstructorID` 속성 nullable로 정의 되지 않았습니다.
+예를 들어 경우는 `Department.InstructorID` 속성이 nullable로 정의 되지 않았습니다.
 
 * EF 코어 부서 삭제 될 때 강의 삭제 하는 cascade delete 규칙을 구성 합니다.
-* 의도 된 동작 않습니다 부서 삭제 될 때 강의 삭제 합니다.
+* 강사 부서 삭제 될 때 삭제는 의도 된 동작 하지 않습니다.
 
 비즈니스 규칙이 요구 하는 경우는 `InstructorID` 속성을 허용 하지 않는 수 다음 fluent API 문을 사용 합니다.
 
@@ -431,7 +431,7 @@ public Student Student { get; set; }
 
 `Instructor` 및 `Course` 엔터티 순수 조인 테이블을 사용 하 여 다 대 다 관계가 설정 되어 있습니다.
 
-참고: EF 6.x 지원 다 대 다 관계가 되지만 EF 코어에 대 한 암시적 조인 테이블은 그렇지 않습니다. 자세한 내용은 참조 [다 대 다 관계 EF 코어 2.0에서](https://blog.oneunicorn.com/2017/09/25/many-to-many-relationships-in-ef-core-2-0-part-1-the-basics/)합니다.
+참고: EF 6.x 지원 다 대 다 관계가 되지만 EF 코어에 대 한 테이블 암시적 조인 하지 않습니다. 자세한 내용은 참조 [다 대 다 관계 EF 코어 2.0에서](https://blog.oneunicorn.com/2017/09/25/many-to-many-relationships-in-ef-core-2-0-part-1-the-basics/)합니다.
 
 ## <a name="the-courseassignment-entity"></a>CourseAssignment 엔터티
 
@@ -462,7 +462,7 @@ FKs는 null을 허용 하지 않습니다. 두 개의 FKs `CourseAssignment` (`I
 
 * 여러 행을 하나의 과정에 대 한 사용할 수 있습니다.
 * 여러 행은 하나의 강사에 허용 됩니다.
-* 동일한 강사 및 과정에 대 한 여러 행을 사용할 수 없습니다.
+* 동일한 강사 및 과정에 대 한 여러 행이 허용 되지 않습니다.
 
 `Enrollment` 이러한 종류의 중복이 가능 하므로 조인 엔터티 자체 PK을 정의 합니다. 방지 하려면 이러한 중복 항목:
 
@@ -638,7 +638,7 @@ SSOX DB를 엽니다.
 프로덕션 응용 프로그램은:
 
 * 코드 또는 추가 하는 스크립트가 포함 `Department` 행 및 관련 `Course` 행을 새 `Department` 행.
-* "Temp" 부서 또는 기본값을 사용 하지 않을 `Course.DepartmentID `합니다.
+* "Temp" 부서 또는 대 한 기본값을 사용 하지 `Course.DepartmentID`합니다.
 
 다음 자습서에서는 관련된 데이터에 설명 합니다.
 

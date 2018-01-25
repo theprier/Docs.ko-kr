@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/using-data-protection
-ms.openlocfilehash: 54976a7f2ac13fe445eb2eea204f4f781813030f
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: c6a631b6dc4a7855b11031dfcef42b17906754b0
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="getting-started-with-the-data-protection-apis"></a>데이터 보호 Api 시작
 
@@ -31,9 +31,9 @@ ms.lasthandoff: 01/19/2018
 
 [!code-csharp[Main](../../security/data-protection/using-data-protection/samples/protectunprotect.cs?highlight=26,34,35,36,37,38,39,40)]
 
-하나 이상을 제공 해야 합니다는 보호기를 만들 때 [목적 문자열](consumer-apis/purpose-strings.md)합니다. 소비자 간에 격리를 제공 하는 목적은 문자열. 예를 들어 "녹색"의 목적은 문자열을 사용 하 여 만든 보호기 "자주색"의 용도 보호기에서 제공 되는 데이터를 보호할 수 없게 됩니다.
+하나 이상을 제공 해야 합니다는 보호기를 만들 때 [목적 문자열](consumer-apis/purpose-strings.md)합니다. 소비자 간에 격리를 제공 하는 목적은 문자열. 예를 들어 "녹색"의 목적은 문자열을 사용 하 여 만든 보호기 하는지 "자주색"의 용도 보호기에서 제공 되는 데이터를 보호할 수 없게 됩니다.
 
 >[!TIP]
-> 인스턴스 `IDataProtectionProvider` 및 `IDataProtector` 여러 호출자에 대 한 스레드로부터 안전 합니다. 구성 요소에 대 한 참조를 가져온 후 사용 하는 `IDataProtector` 호출을 통해 `CreateProtector`, 해당 참조를 여러 번 호출에 사용할 `Protect` 및 `Unprotect`합니다.
+> 인스턴스 `IDataProtectionProvider` 및 `IDataProtector` 여러 호출자에 대 한 스레드로부터 안전 합니다. 구성 요소에 대 한 참조를 가져온 후 하는 것에 `IDataProtector` 호출을 통해 `CreateProtector`, 해당 참조를 여러 번 호출에 사용할 `Protect` 및 `Unprotect`합니다.
 >
 >에 대 한 호출 `Unprotect` CryptographicException 보호 된 페이로드를 확인 하거나 해독할 수 없는 경우이 throw 합니다. 일부 구성 요소 오류를 무시 하려는 경우가 있을 수 하는 동안 작업을 보호 해제 인증 쿠키를 읽는 구성 요소 수 있습니다이 오류를 처리 하 고 전혀 쿠키가 없는 이전의 요청 처럼 처리할 대신 완전 한 요청에 실패 합니다. 구체적으로이 동작을 방지 하는 구성 요소는 모든 예외를 받아들이지 않고 CryptographicException을 catch 해야 합니다.

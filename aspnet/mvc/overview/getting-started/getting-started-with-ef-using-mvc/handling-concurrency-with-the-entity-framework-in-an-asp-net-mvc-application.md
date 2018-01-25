@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: e7b79503a1d297d40c6824f8b2b7bbc1f42b9fca
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9df5b9c7e955b784bca7a4195b7c9cf3d2bca7a7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="handling-concurrency-with-the-entity-framework-6-in-an-aspnet-mvc-5-application-10-of-12"></a>ASP.NET MVC 5 (10 / 12) 응용 프로그램에서 Entity Framework 6 사용 하 여 동시성 처리
 ====================
@@ -65,18 +65,18 @@ John 클릭 **저장** 클릭 한 다음 jane은 인덱스 페이지에는 브�
 
 ### <a name="detecting-concurrency-conflicts"></a>동시성 충돌 확인
 
-처리 하 여 충돌을 해결할 수 [OptimisticConcurrencyException](https://msdn.microsoft.com/en-us/library/system.data.optimisticconcurrencyexception.aspx) Entity Framework throw 하는 예외입니다. 이러한 예외를 throw 하는 시기를 확인 하기 위해 Entity Framework에서 충돌을 검색할 수 있어야 합니다. 따라서 구성 해야 데이터베이스와 데이터 모델 적절 하 게 합니다. 충돌 감지를 사용 하기 위한 몇 가지 옵션은 다음과 같습니다.
+처리 하 여 충돌을 해결할 수 [OptimisticConcurrencyException](https://msdn.microsoft.com/library/system.data.optimisticconcurrencyexception.aspx) Entity Framework throw 하는 예외입니다. 이러한 예외를 throw 하는 시기를 확인 하기 위해 Entity Framework에서 충돌을 검색할 수 있어야 합니다. 따라서 구성 해야 데이터베이스와 데이터 모델 적절 하 게 합니다. 충돌 감지를 사용 하기 위한 몇 가지 옵션은 다음과 같습니다.
 
 - 데이터베이스 테이블에 행이 변경 된 시기를 결정 하는 데 사용할 수 있는 추적 열을 포함 합니다. Entity Framework의 해당 열을 포함 하도록 구성할 수 있습니다는 `Where` sql 절 `Update` 또는 `Delete` 명령입니다.
 
-    추적 열의 데이터 형식이 일반적으로 [rowversion](https://msdn.microsoft.com/en-us/library/ms182776(v=sql.110).aspx)합니다. [rowversion](https://msdn.microsoft.com/en-us/library/ms182776(v=sql.110).aspx) 값은 행이 업데이트 될 때마다가 증가 하는 일련 번호입니다. 에 `Update` 또는 `Delete` 명령을 `Where` 절 추적 열 (원래 행 버전)의 원래 값이 포함 됩니다. 업데이트 되는 행의 값을 다른 사용자에 의해 변경 된 경우는 `rowversion` 열이 원래 값과 다른 하므로 `Update` 또는 `Delete` 문 때문에 업데이트할 행을 찾을 수 없습니다는 `Where` 절. 경우 Entity Framework의 행이 없는 하 여 업데이트를 찾습니다는 `Update` 또는 `Delete` 명령 (즉 때 영향을 받는 행 수는 0), 동시성 충돌 하는 해석 합니다.
+    추적 열의 데이터 형식이 일반적으로 [rowversion](https://msdn.microsoft.com/library/ms182776(v=sql.110).aspx)합니다. [rowversion](https://msdn.microsoft.com/library/ms182776(v=sql.110).aspx) 값은 행이 업데이트 될 때마다가 증가 하는 일련 번호입니다. 에 `Update` 또는 `Delete` 명령을 `Where` 절 추적 열 (원래 행 버전)의 원래 값이 포함 됩니다. 업데이트 되는 행의 값을 다른 사용자에 의해 변경 된 경우는 `rowversion` 열이 원래 값과 다른 하므로 `Update` 또는 `Delete` 문 때문에 업데이트할 행을 찾을 수 없습니다는 `Where` 절. 경우 Entity Framework의 행이 없는 하 여 업데이트를 찾습니다는 `Update` 또는 `Delete` 명령 (즉 때 영향을 받는 행 수는 0), 동시성 충돌 하는 해석 합니다.
 - Entity Framework에서 테이블의 모든 열의 원래 값을 포함 하도록 구성 된 `Where` 절 `Update` 및 `Delete` 명령 합니다.
 
     첫 번째 옵션 행 주체를 읽어 먼저 이후에 변경 된 행에 아무 것도 경우와 같이 `Where` 절 반환 하지 않습니다는 행을 업데이트 하려면 Entity Framework를 동시성 충돌로 해석 합니다. 많은 열이 있는 데이터베이스 테이블에 대 한이 방법을 사용 하면 매우 큰 `Where` 절, 많은 양의 상태를 유지 관리 하는 필요할 수 있습니다. 앞에서 설명한 것 처럼 많은 양의 상태를 유지 관리 응용 프로그램 성능 영향을 줄 수 있습니다. 따라서이 방법은 일반적으로 권장 되지 않으며,이 자습서에 사용 하는 방법은 아닙니다.
 
-    추가 하 여 동시성을 추적 하려는 엔터티의 모든 아닌 기본 키 속성을 표시 해야 하는 동시성이 접근 방식을 구현 않으려면는 [ConcurrencyCheck](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.concurrencycheckattribute.aspx) 특성을 해당 합니다. Entity Framework는 SQL의 모든 열을 포함 하도록 변경 하는 `WHERE` 절 `UPDATE` 문.
+    추가 하 여 동시성을 추적 하려는 엔터티의 모든 아닌 기본 키 속성을 표시 해야 하는 동시성이 접근 방식을 구현 않으려면는 [ConcurrencyCheck](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.concurrencycheckattribute.aspx) 특성을 해당 합니다. Entity Framework는 SQL의 모든 열을 포함 하도록 변경 하는 `WHERE` 절 `UPDATE` 문.
 
-이 자습서의 나머지 부분에서는 추가 [rowversion](https://msdn.microsoft.com/en-us/library/ms182776(v=sql.110).aspx) 속성을 추적는 `Department` 엔터티를 컨트롤러와 뷰를 만들고 모든 항목이 올바르게 작동 하는지 확인 하려면 테스트 합니다.
+이 자습서의 나머지 부분에서는 추가 [rowversion](https://msdn.microsoft.com/library/ms182776(v=sql.110).aspx) 속성을 추적는 `Department` 엔터티를 컨트롤러와 뷰를 만들고 모든 항목이 올바르게 작동 하는지 확인 하려면 테스트 합니다.
 
 ## <a name="add-an-optimistic-concurrency-property-to-the-department-entity"></a>낙관적 동시성 속성 부서 엔터티에 추가
 
@@ -84,9 +84,9 @@ John 클릭 **저장** 클릭 한 다음 jane은 인덱스 페이지에는 브�
 
 [!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample1.cs?highlight=20-22)]
 
-[타임 스탬프](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.timestampattribute.aspx) 특성에이 열은 포함 되어야 함을 지정는 `Where` 절 `Update` 및 `Delete` 명령을 데이터베이스에 전송 합니다. 이 특성 이라고 [타임 스탬프](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.timestampattribute.aspx) 이전 버전의 SQL Server는 SQL을 사용 하기 때문에 [타임 스탬프](https://msdn.microsoft.com/en-us/library/ms182776(v=SQL.90).aspx) SQL 전에 데이터 형식 [rowversion](https://msdn.microsoft.com/en-us/library/ms182776(v=sql.110).aspx) 대체 했습니다. .Net 유형을 [rowversion](https://msdn.microsoft.com/en-us/library/ms182776(v=sql.110).aspx) 는 바이트 배열입니다.
+[타임 스탬프](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.timestampattribute.aspx) 특성에이 열은 포함 되어야 함을 지정는 `Where` 절 `Update` 및 `Delete` 명령을 데이터베이스에 전송 합니다. 이 특성 이라고 [타임 스탬프](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.timestampattribute.aspx) 이전 버전의 SQL Server는 SQL을 사용 하기 때문에 [타임 스탬프](https://msdn.microsoft.com/library/ms182776(v=SQL.90).aspx) SQL 전에 데이터 형식 [rowversion](https://msdn.microsoft.com/library/ms182776(v=sql.110).aspx) 대체 했습니다. .Net 유형을 [rowversion](https://msdn.microsoft.com/library/ms182776(v=sql.110).aspx) 는 바이트 배열입니다.
 
-Fluent API를 사용 하는 것을 선호 하는 경우 사용할 수 있습니다는 [IsConcurrencyToken](https://msdn.microsoft.com/en-us/library/gg679501(v=VS.103).aspx) 메서드를 다음 예제와 같이 추적 속성을 지정 합니다.
+Fluent API를 사용 하는 것을 선호 하는 경우 사용할 수 있습니다는 [IsConcurrencyToken](https://msdn.microsoft.com/library/gg679501(v=VS.103).aspx) 메서드를 다음 예제와 같이 추적 속성을 지정 합니다.
 
 [!code-csharp[Main](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample2.cs)]
 
@@ -232,7 +232,7 @@ Delete 페이지에 대 한 Entity Framework는 다른 부서에서 비슷한 �
 
 ## <a name="summary"></a>요약
 
-동시성 충돌 처리 소개를 완료 합니다. 다양 한 동시성 시나리오를 처리 하는 다른 방법에 대 한 정보를 참조 하십시오. [낙관적 동시성 패턴](https://msdn.microsoft.com/en-us/data/jj592904) 및 [속성 값을 가진 작업](https://msdn.microsoft.com/en-us/data/jj592677) msdn 합니다. 다음 자습서에 대 한 계층당 하나의 테이블 상속을 구현 하는 방법을 보여 줍니다는 `Instructor` 및 `Student` 엔터티.
+동시성 충돌 처리 소개를 완료 합니다. 다양 한 동시성 시나리오를 처리 하는 다른 방법에 대 한 정보를 참조 하십시오. [낙관적 동시성 패턴](https://msdn.microsoft.com/data/jj592904) 및 [속성 값을 가진 작업](https://msdn.microsoft.com/data/jj592677) msdn 합니다. 다음 자습서에 대 한 계층당 하나의 테이블 상속을 구현 하는 방법을 보여 줍니다는 `Instructor` 및 `Student` 엔터티.
 
 다른 Entity Framework 리소스에 대 한 링크에서 확인할 수 있습니다는 [ASP.NET 데이터 액세스-권장 리소스](../../../../whitepapers/aspnet-data-access-content-map.md)합니다.
 

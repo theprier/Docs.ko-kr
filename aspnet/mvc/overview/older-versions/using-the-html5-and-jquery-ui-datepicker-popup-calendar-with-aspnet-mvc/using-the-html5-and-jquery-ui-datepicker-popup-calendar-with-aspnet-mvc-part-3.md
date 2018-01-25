@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: dc81961094928025e25cf62ce4d51d12bc67b80c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7d4ed67254c2b0fc2aef748cfab1c8f628b25641
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-3"></a>ASP.NET MVC-3 부 HTML5 및 jQuery UI Datepicker 팝업 일정 사용
 ====================
@@ -86,14 +86,14 @@ Ctrl + f 5를 눌러 응용 프로그램을 실행 하 여 탐색 하 *영화/Pe
 - 적용 된 `DisplayFormat` 특성 모델의 속성입니다. 예를 들어 다음 코드는 시간을 제외 표시할 날짜를 생성 합니다.
 
     [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample8.cs)]
-- 적용 한 [DataType](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx) 특성 데이터 형식 지정 및 모델에 속성입니다. 예를 들어 다음 코드에서는 시간을 제외한 표시할 날짜를 생성 합니다.
+- 적용 한 [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) 특성 데이터 형식 지정 및 모델에 속성입니다. 예를 들어 다음 코드에서는 시간을 제외한 표시할 날짜를 생성 합니다.
 
     [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3/samples/sample9.cs)]
 
     응용 프로그램을 포함 하는 경우는 *date.cshtml* 에서 서식 파일은 *Views\Shared\DisplayTemplates* 폴더 또는 *Views\Movies\DisplayTemplates* 해당 서식 파일, 폴더 렌더링에 사용 되는 `DateTime` 속성입니다. 그렇지 않은 경우 기본 제공 ASP.NET 템플릿 시스템 날짜로 속성을 표시합니다.
 - 디스플레이 템플릿을 만드는 *Views\Shared\DisplayTemplates* 폴더 또는 *Views\Movies\DisplayTemplates* 폴더 이름이 서식을 지정할 데이터 형식이 일치 합니다. 예를 들어 언급 했 듯이 하는 *Views\Shared\DisplayTemplates\DateTime.cshtml* 렌더링 하는 데 사용한 `DateTime` 모델에 특성을 추가 하지 않고 및 보기에 태그를 추가 하지 않고 모델의 속성.
-- 사용 하는 [UIHint](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.uihintattribute.uihint.aspx) 모델 속성을 표시 하려면 서식 파일을 지정 하려면 모델에는 특성입니다.
-- 표시 템플릿 이름을 명시적으로 추가 된 [Html.DisplayFor](https://msdn.microsoft.com/en-us/library/ee407420.aspx) 보기에서 호출 합니다.
+- 사용 하는 [UIHint](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.uihintattribute.uihint.aspx) 모델 속성을 표시 하려면 서식 파일을 지정 하려면 모델에는 특성입니다.
+- 표시 템플릿 이름을 명시적으로 추가 된 [Html.DisplayFor](https://msdn.microsoft.com/library/ee407420.aspx) 보기에서 호출 합니다.
 
 응용 프로그램에서 작업을 수행 해야 할 작업에 사용 하는 방법에 따라 달라 집니다. 이러한 접근 방식을 정확 하 게 종류의 서식 지정 해야 하는 get를 혼합 하는 일반적이 지 않습니다.
 

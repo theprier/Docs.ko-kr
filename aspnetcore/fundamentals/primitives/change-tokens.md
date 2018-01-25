@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/primitives/change-tokens
-ms.openlocfilehash: a9479e3d676ed4dc880996a4a77de30d82b84cd5
-ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
+ms.openlocfilehash: 94bf356fcbfab3930804485c1b65e4a0f4c52b8e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="detect-changes-with-change-tokens-in-aspnet-core"></a>ASP.NET Core에서는 변경 토큰으로 변경 내용을 검색합니다
 
@@ -135,7 +135,7 @@ config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
 
 [!code-csharp[Main](change-tokens/sample/Pages/Index.cshtml.cs?name=snippet2)]
 
-때 `OnPostStartMonitoring` 은 트리거된 모니터링을 사용할 수 및 현재 상태가 지워집니다. 때 `OnPostStopMonitoring` 은 트리거된 모니터링 하지 않는 경우 및 상태 모니터링은 발생 하지 반영 하도록 설정 됩니다.
+때 `OnPostStartMonitoring` 은 트리거된 모니터링을 사용할 수 및 현재 상태가 지워집니다. 때 `OnPostStopMonitoring` 은 트리거된 모니터링 하지 않는 경우 및 상태 모니터링 되지 않습니다 발생 하는지 반영 하도록 설정 됩니다.
 
 ## <a name="monitoring-cached-file-changes"></a>캐시 된 파일 변경 사항 모니터링
 
@@ -200,9 +200,9 @@ var compositeChangeToken =
 ## <a name="see-also"></a>참고 항목
 
 * [메모리 내 캐싱](xref:performance/caching/memory)
-* [분산된 캐시 사용](xref:performance/caching/distributed)
-* [변경 내용을 변경 토큰으로 검색](xref:fundamentals/primitives/change-tokens)
+* [분산 캐시 사용](xref:performance/caching/distributed)
+* [변경 토큰을 사용하여 변경 내용 검색](xref:fundamentals/primitives/change-tokens)
 * [응답 캐싱](xref:performance/caching/response)
 * [응답 캐싱 미들웨어](xref:performance/caching/middleware)
 * [캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
-* [분산된 캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
+* [분산 캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)

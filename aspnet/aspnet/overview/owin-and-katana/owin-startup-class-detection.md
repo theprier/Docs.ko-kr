@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-startup-class-detection
 msc.type: authoredcontent
-ms.openlocfilehash: a6ac34307b7558ad13684448f339ca74ade9e997
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 618f8fa23630dcf9821a54415766dc015694e535
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="owin-startup-class-detection"></a>OWIN 시작 클래스 검색
 ====================
@@ -79,7 +79,7 @@ ms.lasthandoff: 11/10/2017
 
     [!code-csharp[Main](owin-startup-class-detection/samples/sample8.cs?highlight=5,7,15-28,31-34)]
   
- `app.Use` 람다 식을 OWIN 파이프라인에 지정 된 미들웨어 구성 요소를 등록 하는 데 사용 됩니다. 이 경우 들어오는 요청에 응답 하기 전에 들어오는 요청의 로깅을 설정 하는 합니다. `next` 매개 변수는 대리자 ( [Func](https://msdn.microsoft.com/en-us/library/bb534960(v=vs.100).aspx) &lt; [작업](https://msdn.microsoft.com/en-us/library/dd321424(v=vs.100).aspx) &gt; ) 파이프라인의 다음 구성 요소입니다. `app.Run` 람다 식을 연결 하는 들어오는 요청에 파이프라인 및 응답 메커니즘을 제공 합니다.
+ `app.Use` 람다 식을 OWIN 파이프라인에 지정 된 미들웨어 구성 요소를 등록 하는 데 사용 됩니다. 이 경우 들어오는 요청에 응답 하기 전에 들어오는 요청의 로깅을 설정 하는 합니다. `next` 매개 변수는 대리자 ( [Func](https://msdn.microsoft.com/library/bb534960(v=vs.100).aspx) &lt; [작업](https://msdn.microsoft.com/library/dd321424(v=vs.100).aspx) &gt; ) 파이프라인의 다음 구성 요소입니다. `app.Run` 람다 식을 연결 하는 들어오는 요청에 파이프라인 및 응답 메커니즘을 제공 합니다.
      > [!NOTE]
      > 위의 코드에서 우리는 주석으로 처리는 `OwinStartup` 특성과 우리 라는 클래스를 실행 중인 규칙을 사용 하 `Startup` .-키를 눌러 ***F5*** 응용 프로그램을 실행 합니다. 여러 번 새로 고침을 누릅니다.  
   

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/taking-web-applications-offline-with-web-deploy
 msc.type: authoredcontent
-ms.openlocfilehash: a0c59245eedbf53f367949e12dd83e2611f44fc4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1c262ec7b834107524a18c6552b171f731452c91
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="taking-web-applications-offline-with-web-deploy"></a>기록 사용 웹 응용 프로그램 오프 라인 웹 배포
 ====================
@@ -74,7 +74,7 @@ ms.lasthandoff: 11/10/2017
 > 다음 절차에 설명 된 대로 배포 프로세스를 제어 하는 사용자 지정 MSBuild 프로젝트 파일을 사용 하는 것으로 가정 [프로젝트 파일 이해](../web-deployment-in-the-enterprise/understanding-the-project-file.md)합니다. Visual Studio에서 직접 배포 하는, 서로 다른 접근 방식을 사용 해야 합니다. Sayed Ibrahim Hashimi 설명에 이러한 한 가지 방법은 [걸릴 Your 웹 응용 프로그램 오프 라인으로 하는 동안 게시 하는 방법을](http://sedodream.com/2012/01/08/HowToTakeYourWebAppOfflineDuringPublishing.aspx)합니다.
 
 
-배포 하는 *앱\_오프 라인* 파일 대상 IIS 웹 사이트를 사용 하 여 MSDeploy.exe를 호출 해야는 [웹 배포 **contentPath** 공급자](https://technet.microsoft.com/en-us/library/dd569034(WS.10).aspx)합니다. **contentPath** 공급자 지원 IIS 웹 사이트 또는 응용 프로그램 경로 및 실제 디렉터리 경로 모두 하므로 Visual Studio 프로젝트 폴더와 IIS 웹 응용 프로그램 파일을 동기화 하는 데 좋습니다. 파일을 배포 하려면이 MSDeploy 명령 유사 합니다.
+배포 하는 *앱\_오프 라인* 파일 대상 IIS 웹 사이트를 사용 하 여 MSDeploy.exe를 호출 해야는 [웹 배포 **contentPath** 공급자](https://technet.microsoft.com/library/dd569034(WS.10).aspx)합니다. **contentPath** 공급자 지원 IIS 웹 사이트 또는 응용 프로그램 경로 및 실제 디렉터리 경로 모두 하므로 Visual Studio 프로젝트 폴더와 IIS 웹 응용 프로그램 파일을 동기화 하는 데 좋습니다. 파일을 배포 하려면이 MSDeploy 명령 유사 합니다.
 
 
 [!code-console[Main](taking-web-applications-offline-with-web-deploy/samples/sample1.cmd)]
@@ -95,7 +95,7 @@ ms.lasthandoff: 11/10/2017
 
     [!code-xml[Main](taking-web-applications-offline-with-web-deploy/samples/sample3.xml)]
 3. **SourceRoot** 속성은 다른 곳에서 정의 된 *Publish.proj* 파일입니다. 원본 콘텐츠 위치에 상대적인 즉, 현재 경로 & #x 2014 기준으로;에 대 한 루트 폴더의 위치를 나타내는 *Publish.proj* 파일입니다.
-4. **contentPath** 공급자를 배포 하기 전에 소스 파일에 절대 경로 가져와야 할 하므로 상대 파일 경로 허용 하지 것입니다. 사용할 수는 [ConvertToAbsolutePath](https://msdn.microsoft.com/en-us/library/bb882668.aspx) 이 작업을 수행 하는 작업입니다.
+4. **contentPath** 공급자를 배포 하기 전에 소스 파일에 절대 경로 가져와야 할 하므로 상대 파일 경로 허용 하지 것입니다. 사용할 수는 [ConvertToAbsolutePath](https://msdn.microsoft.com/library/bb882668.aspx) 이 작업을 수행 하는 작업입니다.
 5. 새로 추가 **대상** 라는 요소 **GetAppOfflineAbsolutePath**합니다. 이 대상 내에서 사용 하 여는 **ConvertToAbsolutePath** 태스크의 절대 경로를 가져올는 *앱\_템플릿을 오프 라인* 프로젝트 폴더의 파일입니다.
 
     [!code-xml[Main](taking-web-applications-offline-with-web-deploy/samples/sample4.xml)]
@@ -148,7 +148,7 @@ ms.lasthandoff: 11/10/2017
 1. Visual Studio 2010에서 솔루션을 엽니다.
 2. 에 **솔루션 탐색기** 창 웹 응용 프로그램 프로젝트 노드를 마우스 오른쪽 단추로 클릭 (예를 들어 **ContactManager.Mvc**)를 가리키고 **추가**, 클릭하고**새 항목**합니다.
 3. 에 **새 항목 추가** 대화 상자는 **XML 파일** 템플릿.
-4. 에 **이름** 상자에 입력 합니다 *[프로젝트 이름]***. wpp.targets** (예를 들어 **ContactManager.Mvc.wpp.targets**), 를클릭한다음 **추가**합니다.
+4. 에 **이름** 상자에 입력 합니다 *[프로젝트 이름] * * *.wpp.targets** (예를 들어 **ContactManager.Mvc.wpp.targets**)를 클릭 하 고 **추가**.
 
     ![](taking-web-applications-offline-with-web-deploy/_static/image4.png)
 

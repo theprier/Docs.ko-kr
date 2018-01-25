@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/tutorial-getting-started-with-signalr-and-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: e678c85520613fea2a8d00de60aca04d895d6307
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 632e6098a03eae02f2367c6dc1c293dbdb6b6170
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="tutorial-getting-started-with-signalr-1x-and-mvc-4"></a>자습서: SignalR 시작 1.x 및 MVC 4
 ====================
@@ -53,7 +53,7 @@ ms.lasthandoff: 11/10/2017
 필수 구성 요소:
 
 - Visual Studio 2010 SP1, Visual Studio 2012 또는 Visual Studio 2012 Express를 선택 합니다. Visual Studio가 참조 [ASP.NET 다운로드](https://www.asp.net/downloads) 무료 Visual Studio 2012 Express 개발 도구를 얻으려고 합니다.
-- Visual Studio 2010 설치 [ASP.NET MVC 4](https://www.microsoft.com/en-us/download/details.aspx?id=30683)합니다.
+- Visual Studio 2010 설치 [ASP.NET MVC 4](https://www.microsoft.com/download/details.aspx?id=30683)합니다.
 
 이 섹션에는 ASP.NET MVC 4 응용 프로그램을 만들 SignalR 라이브러리를 추가 하 고 채팅 응용 프로그램을 만드는 방법을 보여 줍니다.
 

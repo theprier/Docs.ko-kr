@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage
 msc.type: authoredcontent
-ms.openlocfilehash: 6cb77e8ef301c2eeef7df3e391e14f4e2c0364e9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 489769533a26c99404c6a5186d66f560385dcffd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="unstructured-blob-storage-building-real-world-cloud-apps-with-azure"></a>구조화 되지 않은 Blob 저장소 (Azure로 응용 프로그램 빌딩 실제 클라우드)
 ====================
@@ -33,7 +33,7 @@ ms.lasthandoff: 11/10/2017
 
 Azure 저장소 Blob 서비스는 클라우드에서 파일을 저장 하는 방법을 제공 합니다. Blob 서비스에 다양 한 파일을 로컬 네트워크 파일 시스템에 저장 하는 이점이 있습니다.
 
-- 확장성이 높은 됩니다. 단일 저장소 계정을 저장할 수 있는 [수백 테라바이트](https://msdn.microsoft.com/en-us/library/windowsazure/dn249410.aspx), 있으며 저장소 계정을 여러 개 있을 수 있습니다. 가장 큰 Azure 고객의 일부 페타바이트 수백 저장합니다. Microsoft SkyDrive는 blob 저장소를 사용합니다.
+- 확장성이 높은 됩니다. 단일 저장소 계정을 저장할 수 있는 [수백 테라바이트](https://msdn.microsoft.com/library/windowsazure/dn249410.aspx), 있으며 저장소 계정을 여러 개 있을 수 있습니다. 가장 큰 Azure 고객의 일부 페타바이트 수백 저장합니다. Microsoft SkyDrive는 blob 저장소를 사용합니다.
 - 지속 됩니다. Blob 서비스에 저장 하는 모든 파일은 자동으로 백업 합니다.
 - 고가용성을 제공 합니다. [저장소에 대 한 SLA](https://go.microsoft.com/fwlink/p/?linkid=159705&amp;clcid=0x409) promises 99.9% 또는 99.99% 가동 시간, 지리적 중복 옵션에 따라 선택 합니다.
 - 방금 저장 하 고 파일을 사용 하는 저장소는 실제 크기에 대해서만 지불 검색할 azure 플랫폼으로-서비스 (PaaS) 기능이 며 Azure 자동으로 설정 하 고 관리 하는 Vm의 디스크 드라이브에 필요한 모든 처리는 서비스입니다.
@@ -146,7 +146,7 @@ Azure 지역 정치적 경계에 걸쳐 데이터를 복제 하지 않을: 파�
 - [Azure BLOB 저장소에 대 한 소개](https://www.simple-talk.com/cloud/cloud-data/an-introduction-to-windows-azure-blob-storage-/)합니다. Mike 목재 하 여 블로그입니다.
 - [.NET에서 Azure Blob 저장소 서비스를 사용 하는 방법](https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-how-to-use-blobs)합니다. MicrosoftAzure.com 사이트에서 공식 설명서입니다. 컨테이너 만들고 업로드 등 blob 다운로드 하는 blob 저장소에 blob 저장소에 연결 하는 방법을 보여 주는 코드 예제에서는 뒤에 대 한 간략 한 소개 합니다.
 - [FailSafe: 복원 력 있는 확장 가능한 클라우드 서비스를 만드는](https://channel9.msdn.com/Series/FailSafe)합니다. Marc Mercuri, Ulrich Homann, Mark Simms 하 여 비디오 시리즈를 9 개 부분으로 구성 합니다. 고급 개념 및 아키텍처 원칙 매우 액세스 가능 하 고 흥미로운 방법으로 스토리 실제 고객과 Microsoft 고객 자문 팀 (CAT) 환경에서 가져온 것으로 표시 합니다. Azure 저장소 서비스와 blob의 토론, 에피소드 5 35:13에서 시작을 참조 하십시오.
-- [Microsoft Patterns and Practices-Azure 지침](https://msdn.microsoft.com/en-us/library/dn568099.aspx)합니다. 참조 Valet 키 패턴입니다.
+- [Microsoft Patterns and Practices-Azure 지침](https://msdn.microsoft.com/library/dn568099.aspx)합니다. 참조 Valet 키 패턴입니다.
 
 >[!div class="step-by-step"]
 [이전](data-partitioning-strategies.md)

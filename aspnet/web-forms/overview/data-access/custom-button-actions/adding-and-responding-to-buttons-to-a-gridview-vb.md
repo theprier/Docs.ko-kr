@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions/adding-and-responding-to-buttons-to-a-gridview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ba66c867df93a9e1a0bb7897052ace7300b672af
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8a642a9a8e25d64028df0b5d8741da3008700652
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-and-responding-to-buttons-to-a-gridview-vb"></a>추가 하 고 응답 하는 GridView (VB)에 단추
 ====================
@@ -199,7 +199,7 @@ FormView에 단추를 추가 하기 전에, 모두 중단 됩니다를 클릭 �
 **그림 15**:는 중단 모든 제품 단추 웹 컨트롤을 추가 FormView s `ItemTemplate` ([전체 크기 이미지를 보려면 클릭](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image41.png))
 
 
-페이지에서 포스트백 계속 사용자 방문 및 FormView의 단추를 클릭할 때 [ `ItemCommand` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.formview.itemcommand.aspx) 발생 합니다. 이 단추 클릭 되 고이에 대 한 응답 사용자 지정 코드를 실행 하려면이 이벤트에 대 한 이벤트 처리기를 만들 수 있습니다. 이해, 하지만 하는 `ItemCommand` 이벤트가 발생할 때마다 *모든* FormView 안에서 LinkButton을 단추나 ImageButton 웹 컨트롤을 클릭 합니다. 즉, 사용자는 FormView에서 다른 한 페이지에서 이동할 때의 `ItemCommand` 이벤트 발생 않으면 새로 만들기, 편집를 클릭 하거나 삽입, 업데이트 또는 삭제를 지 원하는 FormView에서 삭제 하는 경우 동일 합니다.
+페이지에서 포스트백 계속 사용자 방문 및 FormView의 단추를 클릭할 때 [ `ItemCommand` 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.formview.itemcommand.aspx) 발생 합니다. 이 단추 클릭 되 고이에 대 한 응답 사용자 지정 코드를 실행 하려면이 이벤트에 대 한 이벤트 처리기를 만들 수 있습니다. 이해, 하지만 하는 `ItemCommand` 이벤트가 발생할 때마다 *모든* FormView 안에서 LinkButton을 단추나 ImageButton 웹 컨트롤을 클릭 합니다. 즉, 사용자는 FormView에서 다른 한 페이지에서 이동할 때의 `ItemCommand` 이벤트 발생 않으면 새로 만들기, 편집를 클릭 하거나 삽입, 업데이트 또는 삭제를 지 원하는 FormView에서 삭제 하는 경우 동일 합니다.
 
 이후는 `ItemCommand` 이벤트 처리기를 모든 제품을 중단 단추 클릭 한 경우 확인 하는 방법이 필요 또는 기타 단추 인 경우 어떤 단추를 클릭 하는 것에 관계 없이 발생 합니다. 이를 위해 Button 웹 컨트롤 s 설정할 수 있습니다 `CommandName` 속성을 식별 일부 값입니다. 단추를 클릭할 때,이 `CommandName` 에 값이 전달 되는 `ItemCommand` 수 있어 모든 제품을 중단 단추는 단추 클릭 했는지 확인 하려면 이벤트 처리기입니다. 모든 제품 단추 중단 s 설정 `CommandName` 속성 DiscontinueProducts 합니다.
 
@@ -215,7 +215,7 @@ FormView s에 대 한 이벤트 처리기를 다음으로 만들고 `ItemCommand
 
 [!code-vb[Main](adding-and-responding-to-buttons-to-a-gridview-vb/samples/sample7.vb)]
 
-`SupplierID` FormView에서 현재 선택 된 공급 업체의 액세스할 수 FormView s를 사용 하 여 [ `SelectedValue` 속성](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.formview.selectedvalue.aspx)합니다. `SelectedValue` 속성 첫 번째 데이터 키 FormView에 표시 되는 레코드에 대 한 값을 반환 합니다. FormView s [ `DataKeyNames` 속성](https://msdn.microsoft.com/en-us/system.web.ui.webcontrols.formview.datakeynames.aspx),으로 자동으로 설정 된에서 필드를 데이터 값을 키를 가져오는 데이터를 나타내는 `SupplierID` FormView 뒤로 ObjectDataSource를 바인딩할 때 Visual Studio에서 2 단계.
+`SupplierID` FormView에서 현재 선택 된 공급 업체의 액세스할 수 FormView s를 사용 하 여 [ `SelectedValue` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.formview.selectedvalue.aspx)합니다. `SelectedValue` 속성 첫 번째 데이터 키 FormView에 표시 되는 레코드에 대 한 값을 반환 합니다. FormView s [ `DataKeyNames` 속성](https://msdn.microsoft.com/system.web.ui.webcontrols.formview.datakeynames.aspx),으로 자동으로 설정 된에서 필드를 데이터 값을 키를 가져오는 데이터를 나타내는 `SupplierID` FormView 뒤로 ObjectDataSource를 바인딩할 때 Visual Studio에서 2 단계.
 
 와 `ItemCommand` 이벤트 처리기를 만든 보십시오 페이지를 테스트 합니다. Cooperativa de Quesos로 이동 ' Las Cabras' 공급 업체 (이 s 내 FormView에서 다섯 번째 공급 업체). 이 공급자를 두 개의 제품이 Queso Cabrales 및 Queso Manchego La Pastora 둘 다 제공 *하지* 중단 되었습니다.
 
@@ -252,7 +252,7 @@ GridView의 뷰 상태를 비활성화 한 경우 GridView 포스트백이 발�
 
 ## <a name="step-7-adding-the-increase-and-decrease-buttons-to-the-gridview"></a>GridView에 증가 및 감소 단추를 추가 하는 7 단계:
 
-GridView (및 DetailsView) 둘 다 구성 된 필드의 컬렉션입니다. ASP.NET 및 뿐만 아니라 BoundFields, CheckBoxFields, TemplateFields, 이름에서 알 수 있듯이 각 행에 대해 단추나 LinkButton을 ImageButton 인 열으로 렌더링 하는 ButtonField를 포함 합니다. 클릭 하 여 FormView 비슷합니다 *모든* GridView 페이징 단추, 편집 또는 삭제 단추, 단추 정렬, 및 등 내에서 단추 포스트백 및 GridView s 발생 [ `RowCommand` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.rowcommand.aspx)합니다.
+GridView (및 DetailsView) 둘 다 구성 된 필드의 컬렉션입니다. ASP.NET 및 뿐만 아니라 BoundFields, CheckBoxFields, TemplateFields, 이름에서 알 수 있듯이 각 행에 대해 단추나 LinkButton을 ImageButton 인 열으로 렌더링 하는 ButtonField를 포함 합니다. 클릭 하 여 FormView 비슷합니다 *모든* GridView 페이징 단추, 편집 또는 삭제 단추, 단추 정렬, 및 등 내에서 단추 포스트백 및 GridView s 발생 [ `RowCommand` 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rowcommand.aspx)합니다.
 
 ButtonField에는 `CommandName` 각 단추에 지정 된 값을 할당 하는 속성 `CommandName` 속성입니다. FormView와 함께 `CommandName` 값에서 사용 됩니다는 `RowCommand` 이벤트 처리기는 단추를 클릭 했는지 확인 합니다.
 
@@ -264,7 +264,7 @@ Let s 단추 텍스트로 Price + 10 하나 GridView에 두 개의 새 ButtonFie
 **그림 18**: 두 ButtonFields GridView에 추가
 
 
-처음 두 GridView 필드로 표시 되도록 두 개의 ButtonFields를 이동 합니다. 다음으로 설정 된 `Text` 가격 + 10 %를 이러한 두 ButtonFields 및 Price-10의 속성 %와 `CommandName` IncreasePrice 고 DecreasePrice, 속성을 각각. 기본적으로는 ButtonField 링크 단추가으로 단추의 해당 열을 렌더링합니다. 그러나이 변경할 수 있습니다, ButtonField s 통해 [ `ButtonType` 속성](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.buttonfieldbase.buttontype.aspx)합니다. 이러한 두 ButtonFields 일반 누름 단추;로 렌더링 있는 s 따라서 설정 하는 `ButtonType` 속성을 `Button`합니다. 그림 19 필드 대화 상자를 표시 한 후 이러한 변경 사항이; 그 다음에 GridView s 선언 태그입니다.
+처음 두 GridView 필드로 표시 되도록 두 개의 ButtonFields를 이동 합니다. 다음으로 설정 된 `Text` 가격 + 10 %를 이러한 두 ButtonFields 및 Price-10의 속성 %와 `CommandName` IncreasePrice 고 DecreasePrice, 속성을 각각. 기본적으로는 ButtonField 링크 단추가으로 단추의 해당 열을 렌더링합니다. 그러나이 변경할 수 있습니다, ButtonField s 통해 [ `ButtonType` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.buttonfieldbase.buttontype.aspx)합니다. 이러한 두 ButtonFields 일반 누름 단추;로 렌더링 있는 s 따라서 설정 하는 `ButtonType` 속성을 `Button`합니다. 그림 19 필드 대화 상자를 표시 한 후 이러한 변경 사항이; 그 다음에 GridView s 선언 태그입니다.
 
 
 ![ButtonFields 텍스트, CommandName, 및 ButtonType 속성 구성](adding-and-responding-to-buttons-to-a-gridview-vb/_static/image49.png)

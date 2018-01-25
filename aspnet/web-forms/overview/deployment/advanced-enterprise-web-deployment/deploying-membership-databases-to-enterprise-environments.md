@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/deploying-membership-databases-to-enterprise-environments
 msc.type: authoredcontent
-ms.openlocfilehash: f4d898b6e09b5b9df44b62f9cb4b9d367f288efb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 27fade9fc5cae917579d4963da7bca12f6a5cda1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-membership-databases-to-enterprise-environments"></a>멤버 자격 데이터베이스 엔터프라이즈 환경에 배포
 ====================
@@ -44,8 +44,8 @@ ms.lasthandoff: 11/10/2017
 
 엔터프라이즈 서버 환경에서 멤버 자격 데이터베이스를 프로 비전 하는 방법을 선택할 때 이러한 지침을 따르세요.
 
-- 가능 하면 멤버 자격 데이터베이스를 배포 하지 마십시오. 대상 데이터베이스 서버에서 멤버 자격 데이터베이스를 수동으로 만들 대신 합니다. 멤버 자격 데이터베이스 스키마를 사용자 지정 하지 않은 경우 만들 수 있습니다 간단히 새 situ에 사용 하 여 대상에는 [ASP.NET SQL Server 등록 도구 (aspnet\_regsql.exe)](https://msdn.microsoft.com/en-us/library/ms229862(v=vs.100).aspx)합니다.
-- 배포 멤버 자격 데이터베이스 & #x 2014; 있지만 옵션이 있는 경우 예를 들어 경우 광범위 한 데이터베이스 스키마 & #x 2014; 수정 내용을 변경한 후 수행 해야 사용자 계정 데이터를 제외 하는 멤버 자격 데이터베이스의 스키마 전용 배포 및 다음 필수 구성 데이터를 추가 하는 배포 후 스크립트를 실행 합니다. 이러한 방법에 대 한 광범위 한 지침을 찾을 수 있습니다 [하는 방법: ASP.NET 멤버 자격 데이터베이스 없이 포함 하 여 사용자 계정을 배포](https://msdn.microsoft.com/en-us/library/ff361972(v=vs.100).aspx)합니다.
+- 가능 하면 멤버 자격 데이터베이스를 배포 하지 마십시오. 대상 데이터베이스 서버에서 멤버 자격 데이터베이스를 수동으로 만들 대신 합니다. 멤버 자격 데이터베이스 스키마를 사용자 지정 하지 않은 경우 만들 수 있습니다 간단히 새 situ에 사용 하 여 대상에는 [ASP.NET SQL Server 등록 도구 (aspnet\_regsql.exe)](https://msdn.microsoft.com/library/ms229862(v=vs.100).aspx)합니다.
+- 배포 멤버 자격 데이터베이스 & #x 2014; 있지만 옵션이 있는 경우 예를 들어 경우 광범위 한 데이터베이스 스키마 & #x 2014; 수정 내용을 변경한 후 수행 해야 사용자 계정 데이터를 제외 하는 멤버 자격 데이터베이스의 스키마 전용 배포 및 다음 필수 구성 데이터를 추가 하는 배포 후 스크립트를 실행 합니다. 이러한 방법에 대 한 광범위 한 지침을 찾을 수 있습니다 [하는 방법: ASP.NET 멤버 자격 데이터베이스 없이 포함 하 여 사용자 계정을 배포](https://msdn.microsoft.com/library/ff361972(v=vs.100).aspx)합니다.
 
 사항에 유의 해야 *멤버 자격 데이터베이스의 스키마가 상당히 정적일 가능성이*합니다. 멤버 자격 데이터베이스를 사용자 지정한 경우에 가능성이 정기적으로 & #x 2014에서 스키마를 업데이트 해야 하며 웹 응용 프로그램 또는 데이터베이스 프로젝트의 코드와 동일한 빈도로 변경 되기 하지 않습니다. 따라서 멤버 자격 데이터베이스는 단일 단계 또는 자동화 된 배포 프로세스에 포함할 필요는 없습니다.
 
@@ -57,8 +57,8 @@ ms.lasthandoff: 11/10/2017
 
 멤버 자격 데이터베이스 스키마를 업데이트 하려면 같은 대략적인 단계를 사용할 수 있습니다.
 
-1. VSDBCMD 사용 하 여 **가져오기** 소스 멤버 자격 데이터베이스에 대 한.dbschema 파일을 생성 하는 작업입니다. 이 절차에 설명 되어 [하는 방법: 명령 프롬프트에서 스키마 가져오기](https://msdn.microsoft.com/en-us/library/dd172135.aspx)합니다.
-2. VSDBCMD 사용 하 여 **배포** .dbschema 파일 대상 멤버 자격 데이터베이스에 배포 하는 작업입니다. 이 절차에 설명 되어 [VSDBCMD에 대 한 명령줄 참조 합니다. EXE (배포 및 스키마 가져오기)](https://msdn.microsoft.com/en-us/library/dd193283.aspx)합니다.
+1. VSDBCMD 사용 하 여 **가져오기** 소스 멤버 자격 데이터베이스에 대 한.dbschema 파일을 생성 하는 작업입니다. 이 절차에 설명 되어 [하는 방법: 명령 프롬프트에서 스키마 가져오기](https://msdn.microsoft.com/library/dd172135.aspx)합니다.
+2. VSDBCMD 사용 하 여 **배포** .dbschema 파일 대상 멤버 자격 데이터베이스에 배포 하는 작업입니다. 이 절차에 설명 되어 [VSDBCMD에 대 한 명령줄 참조 합니다. EXE (배포 및 스키마 가져오기)](https://msdn.microsoft.com/library/dd193283.aspx)합니다.
 
 ## <a name="conclusion"></a>결론
 
@@ -66,7 +66,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="further-reading"></a>추가 정보
 
-자세한 내용과 예 VSDBCMD를 사용 하는 방법에 대 한 참조 [VSDBCMD에 대 한 명령줄 참조 합니다. EXE (배포 및 스키마 가져오기)](https://msdn.microsoft.com/en-us/library/dd193283.aspx) 및 [하는 방법: 명령 프롬프트에서 스키마 가져오기](https://msdn.microsoft.com/en-us/library/dd172135.aspx)합니다. Aspnet를 사용 하 여 대 한 자세한 내용은\_멤버 자격 데이터베이스를 만들 regsql.exe 참조 [ASP.NET SQL Server 등록 도구 (aspnet\_regsql.exe)](https://msdn.microsoft.com/en-us/library/ms229862(v=vs.100).aspx)합니다. 멤버 자격 데이터베이스 배포에 대 한 보다 일반적인 지침을 참조 하십시오. [하는 방법: ASP.NET 멤버 자격 데이터베이스 없이 포함 하 여 사용자 계정을 배포](https://msdn.microsoft.com/en-us/library/ff361972(v=vs.100).aspx)합니다.
+자세한 내용과 예 VSDBCMD를 사용 하는 방법에 대 한 참조 [VSDBCMD에 대 한 명령줄 참조 합니다. EXE (배포 및 스키마 가져오기)](https://msdn.microsoft.com/library/dd193283.aspx) 및 [하는 방법: 명령 프롬프트에서 스키마 가져오기](https://msdn.microsoft.com/library/dd172135.aspx)합니다. Aspnet를 사용 하 여 대 한 자세한 내용은\_멤버 자격 데이터베이스를 만들 regsql.exe 참조 [ASP.NET SQL Server 등록 도구 (aspnet\_regsql.exe)](https://msdn.microsoft.com/library/ms229862(v=vs.100).aspx)합니다. 멤버 자격 데이터베이스 배포에 대 한 보다 일반적인 지침을 참조 하십시오. [하는 방법: ASP.NET 멤버 자격 데이터베이스 없이 포함 하 여 사용자 계정을 배포](https://msdn.microsoft.com/library/ff361972(v=vs.100).aspx)합니다.
 
 >[!div class="step-by-step"]
 [이전](deploying-database-role-memberships-to-test-environments.md)

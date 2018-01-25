@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/mvc4-release-notes
 msc.type: content
-ms.openlocfilehash: fb9d2eaa83fe7486279815c21aec204bdfdf122d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 399fbe3fa1e71a9ffa7c5e6dfeca7ccab7294d1b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4"></a>ASP.NET MVC 4
 ====================
@@ -66,7 +66,7 @@ ASP.NET MVC에 대 한 설명서는 다음 URL의 MSDN 웹 사이트에서 사�
 ASP.NET 웹 사이트의 MVC 4 페이지에서 사용할 수 있는 자습서 및 ASP.NET MVC에 대 한 기타 정보 ([https://www.asp.net/mvc/mvc4](../mvc/mvc4.md)).
 
 <a id="_Toc303253804"></a>
-## <a name="support"></a>지원
+## <a name="support"></a>Support(지원)
 
 ASP.NET MVC 4는 완전히 지원 됩니다. 이 릴리스에서 사용에 대 한 문의 사항이 있으면 게시할 수도 있습니다에 ASP.NET MVC 포럼 ([https://forums.asp.net/1146.aspx](https://forums.asp.net/1146.aspx))에서 ASP.NET 커뮤니티의 회원과 비공식적인 지원을 제공할 수 있는 경우가 많습니다.
 
@@ -271,7 +271,7 @@ ASP.NET MVC 4 릴리스 후보 릴리스 정보는 여기에서 확인할 수 �
     [!code-xml[Main](mvc4-release-notes/samples/sample6.xml)]
 - **NuGet 패키지 관리자 Visual Studio 2010 및 Visual Web Developer 2010의 병렬 설치에 대 한 ASP.NET MVC 4를 설치 하려고 하면 설치 되지 않습니다.** Visual Studio 2010과 Visual Web Developer 2010 ASP.NET MVC 4와 함께 실행 하려면 두 버전의 Visual Studio 설치 된 후 ASP.NET MVC 4를 설치 해야 합니다.
 - **ASP.NET MVC 4를 제거 합니다. 필수 구성 요소가 이미 제거 된 경우 실패 합니다.** ASP.NET MVC를 완전히 제거 하려면 4you Visual Studio를 제거 하기 전에 ASP.NET MVC 4를 제거 해야 합니다.
-- **ASP.NET MVC 3 RTM 응용 프로그램을 중단 ASP.NET MVC 4를 설치 합니다.** RTM을 사용 하 여 만든 ASP.NET MVC 3 응용 프로그램 릴리스 (아닌는 [ASP.NET MVC 3 도구 업데이트](https://www.microsoft.com/en-us/download/details.aspx?id=1491) 릴리스) 나란히 ASP.NET MVC 4를 작동 하려면 다음과 같이 변경 해야 합니다. 컴파일 오류 수행 이러한 업데이트가 발생 하지 않고 프로젝트를 작성 합니다. 
+- **ASP.NET MVC 3 RTM 응용 프로그램을 중단 ASP.NET MVC 4를 설치 합니다.** RTM을 사용 하 여 만든 ASP.NET MVC 3 응용 프로그램 릴리스 (아닌는 [ASP.NET MVC 3 도구 업데이트](https://www.microsoft.com/download/details.aspx?id=1491) 릴리스) 나란히 ASP.NET MVC 4를 작동 하려면 다음과 같이 변경 해야 합니다. 컴파일 오류 수행 이러한 업데이트가 발생 하지 않고 프로젝트를 작성 합니다. 
 
     **필수 업데이트**
 

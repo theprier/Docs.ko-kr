@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/creating-web-projects-in-visual-studio
 msc.type: authoredcontent
-ms.openlocfilehash: 96960ef56b1206374458dbbba4befffaa83c1624
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aacae7a9ccf483b21d3c6796c0411d558fa3c75b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-aspnet-web-projects-in-visual-studio-2013"></a>Visual Studio 2013에서 ASP.NET 웹 프로젝트 만들기
 ====================
@@ -31,7 +31,7 @@ ms.lasthandoff: 11/10/2017
 > - 사용 [부트스트랩](#bootstrap) 반응 형 디자인 및 테마 설정 기능을 제공 합니다.
 > - 와 같은 MVC에 대해서만 제공 하는 데 사용 하는 Web Forms에 대 한 새로운 기능 [자동 테스트 프로젝트 만들기](#testproj) 및 [인트라넷 사이트 템플릿](#winauth)합니다.
 > 
-> Azure 클라우드 서비스 또는 Azure 모바일 서비스에 대 한 웹 프로젝트를 만드는 방법에 대 한 정보를 참조 하십시오. [Azure 클라우드 서비스 및 ASP.NET 시작](https://azure.microsoft.com/en-us/documentation/articles/cloud-services-dotnet-get-started/) 및 [Azure 모바일 서비스의 경우.NET을 사용 하 여 순위표 응용 프로그램 만들기 백 엔드](https://azure.microsoft.com/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/)합니다.
+> Azure 클라우드 서비스 또는 Azure 모바일 서비스에 대 한 웹 프로젝트를 만드는 방법에 대 한 정보를 참조 하십시오. [Azure 클라우드 서비스 및 ASP.NET 시작](https://azure.microsoft.com/documentation/articles/cloud-services-dotnet-get-started/) 및 [Azure 모바일 서비스의 경우.NET을 사용 하 여 순위표 응용 프로그램 만들기 백 엔드](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/)합니다.
 
 
 <a id="prerequisites"></a>
@@ -42,7 +42,7 @@ ms.lasthandoff: 11/10/2017
 <a id="wap"></a>
 ## <a name="web-application-projects-versus-web-site-projects"></a>웹 응용 프로그램 프로젝트와 웹 사이트 프로젝트 비교
 
-ASP.NET에서는 두 종류의 웹 프로젝트 간 선택할: *웹 응용 프로그램 프로젝트* 및 *웹 사이트 프로젝트*합니다. 새 개발을 위해 웹 응용 프로그램 프로젝트 것이 좋습니다 및 웹 응용 프로그램 프로젝트에만이 문서에 적용 됩니다. 자세한 내용은 참조 [웹 응용 프로그램 프로젝트와 Visual Studio에서 웹 사이트 프로젝트 비교](https://msdn.microsoft.com/en-us/library/dd547590(v=vs.120).aspx) MSDN 사이트입니다.
+ASP.NET에서는 두 종류의 웹 프로젝트 간 선택할: *웹 응용 프로그램 프로젝트* 및 *웹 사이트 프로젝트*합니다. 새 개발을 위해 웹 응용 프로그램 프로젝트 것이 좋습니다 및 웹 응용 프로그램 프로젝트에만이 문서에 적용 됩니다. 자세한 내용은 참조 [웹 응용 프로그램 프로젝트와 Visual Studio에서 웹 사이트 프로젝트 비교](https://msdn.microsoft.com/library/dd547590(v=vs.120).aspx) MSDN 사이트입니다.
 
 <a id="overview"></a>
 ## <a name="overview-of-web-application-project-creation"></a>웹 응용 프로그램 프로젝트 만들기 개요
@@ -54,8 +54,8 @@ ASP.NET에서는 두 종류의 웹 프로젝트 간 선택할: *웹 응용 프�
 
     ![새 프로젝트 대화 상자](creating-web-projects-in-visual-studio/_static/image1.png)
 
-    선택할 수 있습니다 **클라우드** 를 만들려면 왼쪽된 창에서 한 [Azure 클라우드 서비스](https://docs.microsoft.com/azure/cloud-services/cloud-services-how-to-create-deploy), [Azure 모바일 서비스](https://msdn.microsoft.com/en-us/library/windows/apps/dn629482.aspx), 또는 [Azure WebJob](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-webjobs)합니다. 이 항목에는 해당 템플릿을 처리 하지는 않습니다.
-3. 오른쪽 창에서 클릭는 **프로젝트에 Application Insights 추가** 확인란 상태와 사용량 응용 프로그램에 대 한 모니터링을 선택 합니다. 자세한 내용은 참조 [웹 응용 프로그램의 성능을 모니터링](https://azure.microsoft.com/en-us/documentation/articles/app-insights-web-monitor-performance/)합니다.
+    선택할 수 있습니다 **클라우드** 를 만들려면 왼쪽된 창에서 한 [Azure 클라우드 서비스](https://docs.microsoft.com/azure/cloud-services/cloud-services-how-to-create-deploy), [Azure 모바일 서비스](https://msdn.microsoft.com/library/windows/apps/dn629482.aspx), 또는 [Azure WebJob](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-webjobs)합니다. 이 항목에는 해당 템플릿을 처리 하지는 않습니다.
+3. 오른쪽 창에서 클릭는 **프로젝트에 Application Insights 추가** 확인란 상태와 사용량 응용 프로그램에 대 한 모니터링을 선택 합니다. 자세한 내용은 참조 [웹 응용 프로그램의 성능을 모니터링](https://azure.microsoft.com/documentation/articles/app-insights-web-monitor-performance/)합니다.
 4. 프로젝트를 지정 **이름**, **위치**, 기타 옵션 및 클릭 **확인**합니다.
 
     **새 ASP.NET 프로젝트** 대화 상자가 나타납니다.
@@ -86,7 +86,7 @@ Visual Studio에는 쉽게 웹 응용 프로그램 호스팅에 대 한 Azure �
 - 디버그 모드에서 원격으로 실행할 응용 프로그램은 클라우드에서 실행 되는 동안.
 - Viiew 및 SQL 데이터베이스와 같은 다른 Azure 서비스를 관리 합니다.
 
-할 수 있습니다 [Azure 계정을 만들려면](https://www.windowsazure.com/en-us/pricing/free-trial/) 무료, 기본 서비스 등 웹 앱을 포함 하 고 MSDN 구독자 인 경우 다음을 할 수 있습니다 [혜택을 활성화](https://azure.microsoft.com/pricing/member-offers/visual-studio-subscriptions/) 추가 Azure 방향으로 월간 크레딧을 제공 하는 서비스입니다. 
+할 수 있습니다 [Azure 계정을 만들려면](https://www.windowsazure.com/pricing/free-trial/) 무료, 기본 서비스 등 웹 앱을 포함 하 고 MSDN 구독자 인 경우 다음을 할 수 있습니다 [혜택을 활성화](https://azure.microsoft.com/pricing/member-offers/visual-studio-subscriptions/) 추가 Azure 방향으로 월간 크레딧을 제공 하는 서비스입니다. 
 
 기본적으로는 **새 ASP.NET 프로젝트** 대화 상자를 사용 하면 웹 앱 또는 새 웹 프로젝트에 대 한 가상 컴퓨터를 만들 수 있습니다. 새 웹 응용 프로그램 또는 가상 컴퓨터를 만들려면 않으려면 선택을 취소는 **클라우드의 호스트에에서** 확인란 합니다.
 
@@ -96,7 +96,7 @@ Visual Studio에는 쉽게 웹 응용 프로그램 호스팅에 대 한 Azure �
 
 ![Azure 앱 설정 구성](creating-web-projects-in-visual-studio/_static/image9.png)
 
-Azure 리소스를 만들기 위한이 프로세스를 사용 하는 방법에 대 한 자세한 내용은 참조 [Azure 및 ASP.NET 시작](https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-dotnet) 및 [Visual Studio와 함께 웹 사이트에 대 한 가상 컴퓨터를 만드는](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-dotnet-create-visual-studio-powershell/)합니다.
+Azure 리소스를 만들기 위한이 프로세스를 사용 하는 방법에 대 한 자세한 내용은 참조 [Azure 및 ASP.NET 시작](https://docs.microsoft.com/azure/app-service-web/app-service-web-get-started-dotnet) 및 [Visual Studio와 함께 웹 사이트에 대 한 가상 컴퓨터를 만드는](https://azure.microsoft.com/documentation/articles/virtual-machines-dotnet-create-visual-studio-powershell/)합니다.
 
 이 문서의 나머지 부분에서는 사용 가능한 템플릿 및 해당 옵션에 대 한 자세한 정보를 제공합니다. 또한 문서 서식 파일에 사용 되는 부트스트랩, 레이아웃 및 테마 프레임 워크를 제공 합니다.
 
@@ -112,7 +112,7 @@ Visual Studio 2013 이상 버전의.NET framework 또는.NET 4.5를 대상으로
 - [MVC 템플릿](#mvc)
 - [웹 API 서식 파일](#webapi)
 - [단일 페이지 응용 프로그램 템플릿](#spa)
-- [Azure 모바일 서비스 템플릿](https://azure.microsoft.com/en-us/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/)
+- [Azure 모바일 서비스 템플릿](https://azure.microsoft.com/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-leaderboard/)
 - [Visual Studio 2012 템플릿](#vs2012)
 
 제공 하는 Visual Studio 확장을 설치할 수 있습니다는 [Facebook 템플릿](#facebook)합니다.
@@ -198,7 +198,7 @@ KnockoutJS 이외의 다른 JavaScript 프레임 워크를 사용 하는 추가 
 
 - [ASP.NET 단일 페이지 응용 프로그램](../../../single-page-application/index.md)합니다.
 - [VS2013 RC에 대 한 SPA 서식 파일의 보안 기능을 이해](https://blogs.msdn.com/b/webdev/archive/2013/09/20/understanding-security-features-in-spa-template.aspx)
-- [단일 페이지 응용 프로그램: asp.net 현대적이 고 응답성이 뛰어난 웹 응용 프로그램 빌드](https://msdn.microsoft.com/en-us/magazine/dn463786.aspx)
+- [단일 페이지 응용 프로그램: asp.net 현대적이 고 응답성이 뛰어난 웹 응용 프로그램 빌드](https://msdn.microsoft.com/magazine/dn463786.aspx)
 
 <a id="facebook"></a>
 ### <a name="facebook-template"></a>Facebook 템플릿
@@ -321,7 +321,7 @@ ASP.NET Id는 외부 고객에 주로 인터넷 웹 사이트를 만드는 경�
 
 개별 사용자 계정 옵션에 대 한 자세한 내용은 다음 리소스를 참조 합니다.
 
-- [www.asp.net/identity](../../../identity/index.md)합니다. ASP.NET 웹 사이트에서 ASP.NET Identity에 대 한 설명서입니다.
+- [www.asp.net/identity](../../../identity/index.md). ASP.NET 웹 사이트에서 ASP.NET Identity에 대 한 설명서입니다.
 - [Facebook, Google OAuth2 및 OpenID 로그온 ASP.NET MVC 5 앱을 만드는](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)합니다. 또한 사용자 프로필 데이터를 사용자 지정 하는 방법을 보여 줍니다.
 - [웹 API-외부 인증 서비스](../../../web-api/overview/security/external-authentication-services.md)
 - [Visual Studio 2013에서 ASP.NET 응용 프로그램에 외부 로그인을 추가합니다.](https://blogs.msdn.com/b/webdev/archive/2013/06/27/adding-external-logins-to-your-asp-net-application-in-visual-studio-2013.aspx)
@@ -360,7 +360,7 @@ Azure AD 옵션 중 하나를 시도 하지만 계정이 아직 없는 경우 [A
 
 ![단일 조직에 인증](creating-web-projects-in-visual-studio/_static/image24.png)
 
-하나의 Azure AD에 정의 된 사용자 계정에 대 한 인증을 사용 하도록 설정 하려는 경우이 옵션을 선택 [테 넌 트](https://technet.microsoft.com/en-us/library/jj573650.aspx)합니다. 예를 들어 사이트는 contoso.com 및 해당 사용 가능 하 게 contoso.onmicrosoft.com 테 넌 트 내에 있는 Contoso 회사의 직원에 게 합니다. Azure AD 사용자가 다른 테 넌 트 응용 프로그램에 액세스를 허용 하도록 구성할 수 없습니다.
+하나의 Azure AD에 정의 된 사용자 계정에 대 한 인증을 사용 하도록 설정 하려는 경우이 옵션을 선택 [테 넌 트](https://technet.microsoft.com/library/jj573650.aspx)합니다. 예를 들어 사이트는 contoso.com 및 해당 사용 가능 하 게 contoso.onmicrosoft.com 테 넌 트 내에 있는 Contoso 회사의 직원에 게 합니다. Azure AD 사용자가 다른 테 넌 트 응용 프로그램에 액세스를 허용 하도록 구성할 수 없습니다.
 
 #### <a name="domain"></a>도메인
 
@@ -368,7 +368,7 @@ Azure AD 옵션 중 하나를 시도 하지만 계정이 아직 없는 경우 [A
 
 #### <a name="access-level"></a>액세스 수준
 
-응용 프로그램 쿼리 또는 Graph API를 사용 하 여 디렉터리 정보 업데이트를 선택 하는 경우 **Single Sign-on, 디렉터리 데이터 읽기** 또는 **Single Sign On, 읽기 및 쓰기 디렉터리 데이터**합니다. 그렇지 않은 경우, 선택 **Single Sign On**합니다. 자세한 내용은 참조 [응용 프로그램 액세스 수준을](https://msdn.microsoft.com/en-us/library/windowsazure/b08d91fa-6a64-4deb-92f4-f5857add9ed8#BKMK_AccessLevels) 및 [쿼리 Azure AD Graph API를 사용 하 여](https://msdn.microsoft.com/en-US/library/windowsazure/dn151791.aspx)합니다.
+응용 프로그램 쿼리 또는 Graph API를 사용 하 여 디렉터리 정보 업데이트를 선택 하는 경우 **Single Sign-on, 디렉터리 데이터 읽기** 또는 **Single Sign On, 읽기 및 쓰기 디렉터리 데이터**합니다. 그렇지 않은 경우, 선택 **Single Sign On**합니다. 자세한 내용은 참조 [응용 프로그램 액세스 수준을](https://msdn.microsoft.com/library/windowsazure/b08d91fa-6a64-4deb-92f4-f5857add9ed8#BKMK_AccessLevels) 및 [쿼리 Azure AD Graph API를 사용 하 여](https://msdn.microsoft.com/library/windowsazure/dn151791.aspx)합니다.
 
 #### <a name="application-id-uri"></a>응용 프로그램 ID URI
 
@@ -386,8 +386,8 @@ Visual Studio을 Azure AD에서 응용 프로그램을 프로 비전 하거나 �
 
 - [Azure 인증](../2012/windows-azure-authentication.md)
 - [Azure AD를 사용 하 여 웹 응용 프로그램에 로그온 기능 추가](https://msdn.microsoft.com/library/windowsazure/dn151790.aspx)
-- [Azure Active Directory와 ASP.NET 앱 개발](../../../identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory.md)
-- [Azure AD와 ASP.NET 웹 API 보안 및 Microsoft OWIN 구성 요소](https://msdn.microsoft.com/en-us/magazine/dn463788.aspx)
+- [Azure Active Directory를 사용하여 ASP.NET 앱 개발](../../../identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory.md)
+- [Azure AD와 ASP.NET 웹 API 보안 및 Microsoft OWIN 구성 요소](https://msdn.microsoft.com/magazine/dn463788.aspx)
 
 자습서에서는 Visual Studio 2013;에 대 한 아직 업데이트 되지 않았습니다. Visual Studio 2013에서 수동으로 작업을 수행할 수 있는 자습서 직접 일부 자동화 합니다.
 
@@ -396,14 +396,14 @@ Visual Studio을 Azure AD에서 응용 프로그램을 프로 비전 하거나 �
 
 ![여러 조직 인증](creating-web-projects-in-visual-studio/_static/image25.png)
 
-여러 Azure AD에 정의 된 사용자 계정에 대 한 인증을 사용 하도록 설정 하려는 경우이 옵션을 선택 [테 넌 트](https://technet.microsoft.com/en-us/library/jj573650.aspx)합니다. 예를 들어 사이트는 contoso.com 및 그 사용 가능 하 게 contoso.onmicrosoft.com 테 넌 트, Contoso 회사의 직원이 Fabrikam 회사의 직원 fabrikam.onmicrosoft.com 테 넌 트에서 합니다.
+여러 Azure AD에 정의 된 사용자 계정에 대 한 인증을 사용 하도록 설정 하려는 경우이 옵션을 선택 [테 넌 트](https://technet.microsoft.com/library/jj573650.aspx)합니다. 예를 들어 사이트는 contoso.com 및 그 사용 가능 하 게 contoso.onmicrosoft.com 테 넌 트, Contoso 회사의 직원이 Fabrikam 회사의 직원 fabrikam.onmicrosoft.com 테 넌 트에서 합니다.
 
 입력 하는 설정 및 단계 프로 비전 응용 프로그램은 비슷합니다 [단일 조직 인증](#orgauthsingle)합니다.
 
 사용 하는 응용 프로그램을 만드는 방법에 대 한 내용은 **클라우드-다중 조직** 인증을 다음 리소스를 참조 합니다.
 
 - [ASP.NET, Azure Active Directory와의 손쉬운 웹 응용 프로그램 통합 &amp; Visual Studio](https://blogs.msdn.com/b/active_directory_team_blog/archive/2013/06/26/improved-windows-azure-active-directory-integration-with-asp-net-amp-visual-studio.aspx) Active Directory 팀 블로그.
-- [Azure AD 사용한 다중 테 넌 트 웹 응용 프로그램 개발](https://msdn.microsoft.com/en-us/library/windowsazure/dn151789.aspx) 자습서입니다. 이 자습서는 Visual Studio 2013; 아직 업데이트 되지 않은 Visual Studio 2013에서 자동화 되어 일부 기능 자습서 지시 수동으로 작업을 수행할 수 있습니다.
+- [Azure AD 사용한 다중 테 넌 트 웹 응용 프로그램 개발](https://msdn.microsoft.com/library/windowsazure/dn151789.aspx) 자습서입니다. 이 자습서는 Visual Studio 2013; 아직 업데이트 되지 않은 Visual Studio 2013에서 자동화 되어 일부 기능 자습서 지시 수동으로 작업을 수행할 수 있습니다.
 - [로그인 하려면 사용자 고유의 여러 조직에서는 ASP.NET 응용 프로그램으로 등록 해야](http://www.cloudidentity.com/blog/2013/10/26/you-have-to-sign-up-with-your-own-multiple-organizations-asp-net-app-before-you-can-sign-in/)합니다. 블로그에 올린 Vittorio Bertocci 일반적인 문제 사람을 해결 하는 방법에 설명 하는 다중 조직 인증을 사용 하는 프로젝트를 만들 때 발생 합니다.
 
 <a id="orgauthonprem"></a>

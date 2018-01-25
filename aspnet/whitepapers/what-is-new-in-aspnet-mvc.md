@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/what-is-new-in-aspnet-mvc
 msc.type: content
-ms.openlocfilehash: e7f92dd7a09d1986ad775203effcbce76fb0e6f4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 29692b380f0ad1673459681042610876d152a76f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="whats-new-in-aspnet-mvc-2"></a>ASP.NET MVC 2의에서 새로운 기능
 ====================
@@ -42,9 +42,9 @@ ms.lasthandoff: 11/10/2017
 [Html.ValidationSummary 도우미 메서드는 모델 수준 오류를 표시할 수 있습니다.](#_TOC3_14)   
 [T4 템플릿을 Visual Studio 생성 된 코드에서 특정.NET Framework의 대상 버전으로](#_TOC3_15)[API 개선 사항](#_TOC4)  
 [주요 변경 내용](#_TOC5)  
-[고 지 사항](#_TOC6)  
+[Disclaimer](#_TOC6)  
 
-## <a id="_TOC1"></a>소개
+## <a id="_TOC1"></a>  Introduction
 
 ASP.NET MVC 2 ASP.NET MVC 1.0을 바탕으로 하며 다양 한 생산성 증가에 포커스를 설정 하는 기능과 향상 된 기능을 소개 합니다. 적용할 계속 해 서 모든 기술 자료, 기술, 코드 및 ASP.NET MVC 1.0에 대 한 확장이이 릴리스는 ASP.NET MVC 1.0과 호환 됩니다.
 
@@ -88,7 +88,7 @@ ASP.NET MVC 2에 대 한 기본 프로젝트 템플릿은 Global.asax 파일에 
 
 ### <a id="_TOC3_3"></a>비동기 컨트롤러에 대 한 지원
 
-이제 ASP.NET MVC 2에는 요청을 비동기적으로 처리 하는 컨트롤러 수 있습니다. 이 자주 함수와 비 블록 킹를 대신 호출을 차단 작업 (예: 네트워크 요청 수)를 호출 하는 서버를 허용 하 여 성능이 향상 될 수 있습니다. 자세한 내용은 참조는 [ASP.NET MVC에서 비동기 컨트롤러를 사용 하 여](https://msdn.microsoft.com/en-us/library/ee728598(v=VS.100).aspx) MSDN 항목.
+이제 ASP.NET MVC 2에는 요청을 비동기적으로 처리 하는 컨트롤러 수 있습니다. 이 자주 함수와 비 블록 킹를 대신 호출을 차단 작업 (예: 네트워크 요청 수)를 호출 하는 서버를 허용 하 여 성능이 향상 될 수 있습니다. 자세한 내용은 참조는 [ASP.NET MVC에서 비동기 컨트롤러를 사용 하 여](https://msdn.microsoft.com/library/ee728598(v=VS.100).aspx) MSDN 항목.
 
 ### <a id="_TOC3_4"></a>동작 메서드 매개 변수에서 DefaultValueAttribute에 대 한 지원
 
@@ -104,7 +104,7 @@ System.ComponentModel.DefaultValueAttribute 클래스에서 인수 매개 변수
 
 - / 문서/뷰/123
 - / 문서/뷰/123? 페이지 = 1 (효과적으로 동일 이전 요청)
-- / 문서/뷰/123? 페이지 = 2
+- /Article/View/123?page=2
 
 DefaultValueAttribute 특성이 없으면 위의 목록에서 첫 번째 URL 작동 하지 않습니다, 페이지 인수는 null이 아닌 값 형식 값을 지정 하지 않았습니다.
 
@@ -142,7 +142,7 @@ ModelMetadataProvider 클래스 뷰 내에서 모델에 대 한 메타 데이터
 
 ViewDataDictionary 클래스 ModelMetadataProvider 클래스에 의해 모델에서 추출 된 메타 데이터를 포함 한 ModelMetadata 개체를 노출 합니다. 따라서이 메타 데이터를 사용 하 고 해당 출력을 적절 하 게 조정 하는 템플릿 기반 도우미 수 있습니다.
 
-자세한 내용은 참조에 대 한 설명서는 [ModelMetadata](https://msdn.microsoft.com/en-us/library/system.web.mvc.modelmetadataprovider(VS.100).aspx) 및 [ModelMetadataProvider](https://msdn.microsoft.com/en-us/library/system.web.mvc.modelmetadataprovider(VS.100).aspx) 클래스입니다.
+자세한 내용은 참조에 대 한 설명서는 [ModelMetadata](https://msdn.microsoft.com/library/system.web.mvc.modelmetadataprovider(VS.100).aspx) 및 [ModelMetadataProvider](https://msdn.microsoft.com/library/system.web.mvc.modelmetadataprovider(VS.100).aspx) 클래스입니다.
 
 ### <a id="_TOC3_7"></a>DataAnnotations 특성에 대 한 지원
 
@@ -152,7 +152,7 @@ ASP.NET MVC 2 지원 (System.ComponentModel.DataAnnotations 네임 스페이스�
 
 ### <a id="_TOC3_8"></a>모델 유효성 검사기 공급자
 
-모델 유효성 검사 공급자 클래스는 모델에 대 한 유효성 검사 논리를 제공 하는 추상화를 나타냅니다. ASP.NET MVC System.ComponentModel.DataAnnotations 네임 스페이스에 포함 된 유효성 검사 특성을 기반으로 기본 공급자가 포함 되어 있습니다. 모델에 사용자 지정 유효성 검사 규칙 및 유효성 검사 규칙의 사용자 지정 매핑을 정의 하는 고유한 유효성 검사 공급자를 만들 수 있습니다. 자세한 내용은 참조에 대 한 설명서는 [ModelValidatorProvider](https://msdn.microsoft.com/en-us/library/system.web.mvc.ModelValidatorProvider(VS.100).aspx) 클래스입니다.
+모델 유효성 검사 공급자 클래스는 모델에 대 한 유효성 검사 논리를 제공 하는 추상화를 나타냅니다. ASP.NET MVC System.ComponentModel.DataAnnotations 네임 스페이스에 포함 된 유효성 검사 특성을 기반으로 기본 공급자가 포함 되어 있습니다. 모델에 사용자 지정 유효성 검사 규칙 및 유효성 검사 규칙의 사용자 지정 매핑을 정의 하는 고유한 유효성 검사 공급자를 만들 수 있습니다. 자세한 내용은 참조에 대 한 설명서는 [ModelValidatorProvider](https://msdn.microsoft.com/library/system.web.mvc.ModelValidatorProvider(VS.100).aspx) 클래스입니다.
 
 ### <a id="_TOC3_9"></a>클라이언트 쪽 유효성 검사
 
@@ -289,7 +289,7 @@ DefaultControllerFactory 클래스 RequestContext 속성을 제거 하 여 수�
 영역 기능을 사용 하는 경우에 경로 URL의 일부로 {영역}를 사용 하지 않도록 해야 합니다.
 
 
-## <a id="_TOC6"></a>고 지 사항
+## <a id="_TOC6"></a>  Disclaimer
 
 본 문서는 예비 문서이며, 여기에 설명한 소프트웨어의 최종 상업적 출시 전에 크게 변경될 수 있습니다.
 
@@ -303,7 +303,7 @@ Microsoft가 이 설명서 본안에 관련된 특허권, 상표권, 저작권 �
 
 다른 설명이 없는 한, 용례에 사용된 회사, 기관, 제품, 도메인 이름, 전자 메일 주소, 로고, 사람, 장소 및 이벤트 등은 실제 데이터가 아닙니다. 어떠한 실제 회사, 기관, 제품, 도메인 이름, 전자 메일 주소, 로고, 사람, 장소 또는 이벤트와도 연관시킬 의도가 없으며 그렇게 유추해서도 안 됩니다.
 
-© 2010 Microsoft Corporation입니다. All rights reserved.
+© 2010 Microsoft Corporation. All rights reserved.
 
 Microsoft 및 Windows는 미국 및/또는 기타 국가에서 Microsoft Corporation의 상표이거나 등록된 상표입니다.
 

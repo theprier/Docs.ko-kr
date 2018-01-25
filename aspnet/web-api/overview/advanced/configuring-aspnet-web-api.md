@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/advanced/configuring-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 1c007c4c327b7cde6ff52c6b0022acdff3c9b137
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f9b471fe2afdce278869a2e4d9b693a78030324b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-aspnet-web-api-2"></a>ASP.NET Web API 2 구성합니다.
 ====================
@@ -33,15 +33,15 @@ ms.lasthandoff: 11/10/2017
 <a id="settings"></a>
 ## <a name="configuration-settings"></a>구성 설정
 
-구성 설정은 웹 API에 정의 된는 [HttpConfiguration](https://msdn.microsoft.com/en-us/library/system.web.http.httpconfiguration.aspx) 클래스입니다.
+구성 설정은 웹 API에 정의 된는 [HttpConfiguration](https://msdn.microsoft.com/library/system.web.http.httpconfiguration.aspx) 클래스입니다.
 
 | 멤버 | 설명 |
 | --- | --- |
 | **DependencyResolver** | 컨트롤러에 대 한 종속성 주입을 사용 하도록 설정 합니다. 참조 [Web API 종속성 확인자를 사용 하 여](dependency-injection.md)합니다. |
 | **필터** | 작업 필터입니다. |
 | **포맷터** | [미디어 유형 포맷터](../formats-and-model-binding/media-formatters.md)합니다. |
-| **IncludeErrorDetailPolicy** | 서버 HTTP 응답 메시지에 예외 메시지, 스택 추적 등의 오류 정보를 포함할지 여부를 지정 합니다. 참조 [IncludeErrorDetailPolicy](https://msdn.microsoft.com/en-us/library/system.web.http.includeerrordetailpolicy(v=vs.108))합니다. |
-| **이니셜라이저** | 최종 초기화를 수행 하는 함수는 **HttpConfiguration**합니다. |
+| **IncludeErrorDetailPolicy** | 서버 HTTP 응답 메시지에 예외 메시지, 스택 추적 등의 오류 정보를 포함할지 여부를 지정 합니다. 참조 [IncludeErrorDetailPolicy](https://msdn.microsoft.com/library/system.web.http.includeerrordetailpolicy(v=vs.108))합니다. |
+| **Initializer** | 최종 초기화를 수행 하는 함수는 **HttpConfiguration**합니다. |
 | **MessageHandlers** | [HTTP 메시지 처리기](http-message-handlers.md)합니다. |
 | **ParameterBindingRules** | 바인딩 매개 변수에서 컨트롤러 작업에 대 한 규칙의 컬렉션입니다. |
 | **속성** | 일반 속성 모음입니다. |
@@ -56,7 +56,7 @@ ms.lasthandoff: 11/10/2017
 <a id="webhost"></a>
 ## <a name="configuring-web-api-with-aspnet-hosting"></a>ASP.NET 호스팅와 Web API 구성
 
-ASP.NET 응용 프로그램에서 Web API를 호출 하 여 구성 [GlobalConfiguration.Configure](https://msdn.microsoft.com/en-us/library/system.web.http.globalconfiguration.configure.aspx) 에 **응용 프로그램\_시작** 메서드. **구성** 형식의 단일 매개 변수를 사용 하 여 대리자 메서드를 사용 하며 **HttpConfiguration**합니다. 대리자 내 구성 프로그램을 모두 수행 합니다.
+ASP.NET 응용 프로그램에서 Web API를 호출 하 여 구성 [GlobalConfiguration.Configure](https://msdn.microsoft.com/library/system.web.http.globalconfiguration.configure.aspx) 에 **응용 프로그램\_시작** 메서드. **구성** 형식의 단일 매개 변수를 사용 하 여 대리자 메서드를 사용 하며 **HttpConfiguration**합니다. 대리자 내 구성 프로그램을 모두 수행 합니다.
 
 익명 대리자를 사용 하는 예제는 다음과 같습니다.
 
@@ -126,7 +126,7 @@ Visual Studio 2017 년에서 "ASP.NET 웹 응용 프로그램" 프로젝트 템�
 | **ModelBinderProvider** | 지정된 된 형식에 대 한 모델 바인더를 반환합니다. |
 | **ModelMetadataProvider** | 모델에 대 한 메타 데이터를 제공합니다. |
 | **ModelValidatorProvider** | 모델 유효성 검사기를 제공 합니다. |
-| **ValueProviderFactory** | 값 공급자를 만듭니다. 자세한 내용은 Mike Stall 블로그 게시물을 참조 하십시오. [WebAPI에 사용자 지정 값 공급자를 만드는 방법](https://blogs.msdn.com/b/jmstall/archive/2012/04/23/how-to-create-a-custom-value-provider-in-webapi.aspx) |입니다.
+| **ValueProviderFactory** | 값 공급자를 만듭니다. 자세한 내용은 Mike Stall 블로그 게시물을 참조 하십시오. [WebAPI에 사용자 지정 값 공급자를 만드는 방법](https://blogs.msdn.com/b/jmstall/archive/2012/04/23/how-to-create-a-custom-value-provider-in-webapi.aspx) |이어야 합니다.
 
 여러 인스턴스 서비스에 사용자 지정 구현을 추가 하려면 **추가** 또는 **삽입** 에 **서비스** 컬렉션:
 

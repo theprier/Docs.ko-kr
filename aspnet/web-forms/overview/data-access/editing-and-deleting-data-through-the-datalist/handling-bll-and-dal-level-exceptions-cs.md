@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/handling-bll-and-dal-level-exceptions-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 659976d40f6109422f222d794b54d837faeb0764
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 284f3bebcd07c9cc70b3a7d645f353f5797889a7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="handling-bll--and-dal-level-exceptions-c"></a>처리 BLL 및 DAL 수준의 예외 (C#)
 ====================
@@ -101,7 +101,7 @@ Visual Studio ObjectDataSource 마법사를 완료 한 후 자동으로 만들�
 
 예외가 발생 하는 경우는 예외에 대 한 세부 정보를 할당 합니다. 우리는 `ExceptionDetails` 레이블 컨트롤의 `Text` 속성입니다. 후속 포스트백에서 해당 뷰 상태가 해제 되어 있으므로 `Text`의 속성 프로그래밍 방식으로 변경 내용이 손실, 경고 메시지를 숨기 거 함으로써 기본 텍스트 (빈 문자열),으로 다시 전환 됩니다.
 
-페이지에서 도움이 메시지를 표시 하도록 오류가 발생 했습니다 시기를 확인 하려면 추가 해야 한다고 한 `Try ... Catch` 블록을 `UpdateCommand` 이벤트 처리기입니다. `Try` 부분 예외를 야기할 수 있는 코드를 포함 하는 동안는 `Catch` 블록에서 예외가 발생할 때 실행 되는 코드를 포함 합니다. 체크 아웃의 [예외 처리 기본 사항](https://msdn.microsoft.com/en-us/library/2w8f0bss.aspx) 에 자세한 내용은.NET Framework 설명서 섹션의 `Try ... Catch` 블록입니다.
+페이지에서 도움이 메시지를 표시 하도록 오류가 발생 했습니다 시기를 확인 하려면 추가 해야 한다고 한 `Try ... Catch` 블록을 `UpdateCommand` 이벤트 처리기입니다. `Try` 부분 예외를 야기할 수 있는 코드를 포함 하는 동안는 `Catch` 블록에서 예외가 발생할 때 실행 되는 코드를 포함 합니다. 체크 아웃의 [예외 처리 기본 사항](https://msdn.microsoft.com/library/2w8f0bss.aspx) 에 자세한 내용은.NET Framework 설명서 섹션의 `Try ... Catch` 블록입니다.
 
 
 [!code-csharp[Main](handling-bll-and-dal-level-exceptions-cs/samples/sample5.cs)]
@@ -142,7 +142,7 @@ GridView 및 ObjectDataSource 제공 예외 되었으면 여부를 나타내기 
 
 이 자습서에 설명 된 항목에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
-- [예외에 대 한 디자인 지침](https://msdn.microsoft.com/en-us/library/ms298399.aspx)
+- [예외 디자인 지침](https://msdn.microsoft.com/library/ms298399.aspx)
 - [오류 로깅 모듈 및 처리기 (ELMAH)](http://workspaces.gotdotnet.com/elmah) (오류 기록에 대 한 오픈 소스 라이브러리)
 - [.NET Framework 2.0 용 Enterprise Library](https://www.microsoft.com/downloads/details.aspx?familyid=5A14E870-406B-4F2A-B723-97BA84AE80B5&amp;displaylang=en) (예외 관리 응용 프로그램 블록을 포함 합니다.)
 

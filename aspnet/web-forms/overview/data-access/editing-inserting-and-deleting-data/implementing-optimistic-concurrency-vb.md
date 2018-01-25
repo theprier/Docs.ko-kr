@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/implementing-optimistic-concurrency-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6f7507bcd4f9150e4ebf239bfa9f90fce103b0d5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a31ce101c3264d10ec80a45718d9222fc18c093c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="implementing-optimistic-concurrency-vb"></a>낙관적 동시성 (VB) 구현
 ====================
@@ -257,7 +257,7 @@ DAL 및 BLL 완료 했으므로 이제 남은 것 시스템에 기본 제공 하
 > 값은 `OldValuesParameterFormatString` 속성 BLL에 원래 값을 예상 하는 입력된 매개 변수 이름에 매핑해야 합니다. 이러한 매개 변수 이름을 이후 `original_productName`, `original_supplierID`등의 그대로 둘 수 있습니다는 `OldValuesParameterFormatString` 속성 값으로 `original_{0}`합니다. 그러나 BLL 메서드의 입력된 매개 변수를 갖는 경우와 같은 이름을 `old_productName`, `old_supplierID`, 등의를 업데이트 해야 하는 `OldValuesParameterFormatString` 속성을 `old_{0}`합니다.
 
 
-ObjectDataSource 올바르게 BLL 메서드를 원래 값을 전달 하는 순서로 수행 해야 하는 최종 속성 설정 중 하나 있습니다. ObjectDataSource에는 [ConflictDetection 속성](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.objectdatasource.conflictdetection.aspx) 에 할당할 수 있는 [두 값 중 하나](https://msdn.microsoft.com/en-US/library/system.web.ui.conflictoptions.aspx):
+ObjectDataSource 올바르게 BLL 메서드를 원래 값을 전달 하는 순서로 수행 해야 하는 최종 속성 설정 중 하나 있습니다. ObjectDataSource에는 [ConflictDetection 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.conflictdetection.aspx) 에 할당할 수 있는 [두 값 중 하나](https://msdn.microsoft.com/library/system.web.ui.conflictoptions.aspx):
 
 - `OverwriteChanges`-기본값입니다. 원래 입력된 매개 변수는 BLL 메서드도 원래 값을 전송 하지 않습니다.
 - `CompareAllValues`-는 BLL 방식의을 원래 값에 전송 낙관적 동시성을 사용 하는 경우이 옵션을 선택 합니다.
@@ -342,7 +342,7 @@ GridView 구성 된 방식으로 관련 된 문제의 두 가지가 있습니다
 
 검색 된 (하지 않고 데이터를 덮어씁니다 맹목적으로 결과) 동시성 위반 되는 작업을 확인 하려면이 페이지에 두 개의 브라우저 창을 열고 해야 합니다. 브라우저 인스턴스 모두에 chai 편집 단추를 클릭 합니다. 그런 다음 하나의 브라우저, 이름을 "Chai 찻잔"로 변경 하 고 업데이트를 클릭 합니다. 업데이트는 성공 하 고를 새 제품 이름으로 "Chai 찻잔"와 미리 편집 상태로 GridView를 반환 해야 합니다.
 
-그러나 다른 브라우저 창 인스턴스의 제품 이름 텍스트 상자에 붙여넣습니다 여전히 표시 "Chai" 됩니다. 이 두 번째 브라우저 창에서 업데이트 된 `UnitPrice` 를 `25.00`합니다. 낙관적 동시성을 지원 하지 않는 두 번째 브라우저 인스턴스에서 업데이트를 클릭 하는 제품 이름으로 다시 변경할 수 있으므로 첫 번째 브라우저 인스턴스에서에서 변경한 내용을 덮어쓰지 "Chai". 하지만 낙관적 동시성을 사용 두 번째 브라우저 인스턴스에서 업데이트 단추를 클릭 하면 번째로 [DBConcurrencyException](https://msdn.microsoft.com/en-us/library/system.data.dbconcurrencyexception.aspx)합니다.
+그러나 다른 브라우저 창 인스턴스의 제품 이름 텍스트 상자에 붙여넣습니다 여전히 표시 "Chai" 됩니다. 이 두 번째 브라우저 창에서 업데이트 된 `UnitPrice` 를 `25.00`합니다. 낙관적 동시성을 지원 하지 않는 두 번째 브라우저 인스턴스에서 업데이트를 클릭 하는 제품 이름으로 다시 변경할 수 있으므로 첫 번째 브라우저 인스턴스에서에서 변경한 내용을 덮어쓰지 "Chai". 하지만 낙관적 동시성을 사용 두 번째 브라우저 인스턴스에서 업데이트 단추를 클릭 하면 번째로 [DBConcurrencyException](https://msdn.microsoft.com/library/system.data.dbconcurrencyexception.aspx)합니다.
 
 
 [![DBConcurrencyException Throw 되는 동시성 위반이 검색 되 면](implementing-optimistic-concurrency-vb/_static/image48.png)](implementing-optimistic-concurrency-vb/_static/image47.png)

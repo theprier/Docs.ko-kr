@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/ui_and_navigation
 msc.type: authoredcontent
-ms.openlocfilehash: 98c96749781f577d9544c80f58404353d40848b2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7f1d8a1a473820a7c8da4c8086904cc41c86fd2a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="ui-and-navigation"></a>UI 및 탐색
 ====================
@@ -261,7 +261,7 @@ Visual Studio 2013 프로젝트 템플릿을 사용 하 여 [부트스트랩](ht
 에 포함 된 데이터를 검사할 수 이제는 *wingtiptoys.mdf* 사용 하 여 데이터베이스 파일의 **서버 탐색기** 창.
 
 1. 확장 된 *앱\_데이터* 폴더입니다. 경우는 *앱\_데이터* 폴더가 표시 되지 않습니다. 위의 참고를 참조 하십시오.
-2. 경우는 *wingtiptoys.mdf* 데이터베이스 파일은 표시를 선택는 **새로 고침** 아이콘 차례로 **모든 파일 표시** 맨 위에 있는 아이콘은 **솔루션 탐색기 ** 창.
+2. 경우는 *wingtiptoys.mdf* 데이터베이스 파일은 표시를 선택는 **새로 고침** 아이콘 차례로 **모든 파일 표시** 맨 위에 있는 아이콘은 **솔루션 탐색기**  창.
 3. 마우스 오른쪽 단추로 클릭는 *wingtiptoys.mdf* 데이터베이스 파일 및 선택 **열려**합니다.  
     **서버 탐색기** 표시 됩니다. 
 
@@ -288,8 +288,8 @@ Visual Studio 2013 프로젝트 템플릿을 사용 하 여 [부트스트랩](ht
 
 ## <a name="additional-resources"></a>추가 리소스
 
-[ASP.NET 웹 페이지 프로그래밍 소개](https://msdn.microsoft.com/en-us/library/ms178125.aspx)   
-[ASP.NET 웹 서버 컨트롤 개요](https://msdn.microsoft.com/en-us/library/zsyt68f1.aspx)   
+[ASP.NET 웹 페이지 프로그래밍 소개](https://msdn.microsoft.com/library/ms178125.aspx)   
+[ASP.NET 웹 서버 컨트롤 개요](https://msdn.microsoft.com/library/zsyt68f1.aspx)   
 [CSS 자습서](http://www.w3schools.com/css/default.asp)
 
 >[!div class="step-by-step"]

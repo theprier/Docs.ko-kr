@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-rp/migrations
-ms.openlocfilehash: 9a0fb52a1d1a62bce3f11c7e0394c00b9d544ab3
-ms.sourcegitcommit: 3d512ea991ac36dfd4c800b7d1f8a27bfc50635e
+ms.openlocfilehash: 7b0a3f73efd1d30b903b3258bea2082792eb6e8c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="migrations---ef-core-with-razor-pages-tutorial-4-of-8"></a>마이그레이션-EF 코어 Razor 페이지 자습서 (8 4)
 
@@ -54,7 +54,7 @@ DB 데이터 모델을 통해 동기화를 유지 하려면이 방법을 프로�
 
 [!code-json[Main](intro/samples/cu/appsettings2.json?range=1-4)]
 
-연결 문자열에 DB 이름을 변경 하면 새 DB를 만들려면 첫 번째 마이그레이션이 합니다. 해당 이름으로 존재 하지 않기 때문에 새 DB 만들어집니다. 연결 문자열을 변경 마이그레이션을 시작 하기 위한 필요 하지 않습니다.
+연결 문자열에 DB 이름을 변경 하면 새 DB를 만들려면 첫 번째 마이그레이션이 합니다. 존재 하지 않는 이름의 때문에 새 DB 만들어집니다. 연결 문자열을 변경 마이그레이션을 시작 하기 위한 필요 하지 않습니다.
 
 DB 이름 변경 하는 대신 DB을 삭제 하는 중입니다. 사용 하 여 **SQL Server 개체 탐색기** (SSOX) 또는 `database drop` CLI 명령을:
 
@@ -189,7 +189,7 @@ Done.
 
 ## <a name="appling-migrations-in-production"></a>프로덕션 환경에서 적용 마이그레이션
 
-프로덕션 응용 프로그램 해야 하는 것이 좋습니다 **하지** 호출 [Database.Migrate](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.relationaldatabasefacadeextensions.migrate?view=efcore-2.0#Microsoft_EntityFrameworkCore_RelationalDatabaseFacadeExtensions_Migrate_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_) 응용 프로그램 시작 시. `Migrate`서버 팜의 응용 프로그램에서 호출할 수 없습니다. 예를 들어, 응용 프로그램 (앱의 여러 인스턴스가 실행 중인) 확장을 사용 하 여 배포 하는 클라우드 되었습니다.
+프로덕션 응용 프로그램 해야 하는 것이 좋습니다 **하지** 호출 [Database.Migrate](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.relationaldatabasefacadeextensions.migrate?view=efcore-2.0#Microsoft_EntityFrameworkCore_RelationalDatabaseFacadeExtensions_Migrate_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_) 응용 프로그램 시작 시. `Migrate`서버 팜에서 응용 프로그램에서 호출할 수 없습니다. 예를 들어, 응용 프로그램 (앱의 여러 인스턴스가 실행 중인) 확장을 사용 하 여 배포 하는 클라우드 되었습니다.
 
 데이터베이스 마이그레이션 제어 되는 방식에서 및 배포의 일부로 수행 되어야 합니다. 프로덕션 데이터베이스 마이그레이션 방법 다음과 같습니다.
 
@@ -210,7 +210,7 @@ PMC를 사용 하 여 선호 하는 개발자도,이 자습서에는 CLI를 사�
 
 PMC EF 코어 주석은에 [Microsoft.EntityFrameworkCore.Tools](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools) 패키지 합니다. 이 패키지에 포함 되어는 [Microsoft.AspNetCore.All](xref:fundamentals/metapackage) metapackage, 하므로 설치할 필요가 없습니다.
 
-**중요:** 이 동일한 패키지를 편집 하 여 CLI를 설치 하는 것과는 *.csproj* 파일입니다. 이 개체의 이름이 끝나는 `Tools`, CLI 패키지 이름에는 달리 `Tools.DotNet`합니다.
+**중요:** 이 값은 편집 하 여 CLI를 설치 하는 것과 동일한 패키지는 *.csproj* 파일입니다. 이 개체의 이름이 끝나는 `Tools`, CLI 패키지 이름에는 달리 `Tools.DotNet`합니다.
 
 CLI 명령에 대 한 자세한 내용은 참조 [.NET Core CLI](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet)합니다.
 

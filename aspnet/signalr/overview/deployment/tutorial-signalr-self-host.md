@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/deployment/tutorial-signalr-self-host
 msc.type: authoredcontent
-ms.openlocfilehash: 997756ff8d48e41da981491d6154f3107ec7a051
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d38e6fbc3407e4beca6942bbdefcaa8258ebc5ad
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="tutorial-signalr-self-host"></a>자습서: SignalR 자체 호스트
 ====================
@@ -94,7 +94,7 @@ IIS에서 호스팅하지 이유는 다음과 같습니다.
 
     위의 코드는 세 가지 클래스가 포함 되어 있습니다.
 
-    - **프로그램**를 포함 하 여는 **Main** 메서드 주 실행 경로 정의 합니다. 이 방법에서는 웹 응용 프로그램 형식의 **시작** 지정된 된 URL에 따라 시작 됩니다 (`http://localhost:8080`). 끝점에 보안에 필요한 경우에 SSL은 구현할 수 있습니다. 참조 [하는 방법: SSL 인증서로 포트 구성](https://msdn.microsoft.com/en-us/library/ms733791.aspx) 자세한 정보에 대 한 합니다.
+    - **프로그램**를 포함 하 여는 **Main** 메서드 주 실행 경로 정의 합니다. 이 방법에서는 웹 응용 프로그램 형식의 **시작** 지정된 된 URL에 따라 시작 됩니다 (`http://localhost:8080`). 끝점에 보안에 필요한 경우에 SSL은 구현할 수 있습니다. 참조 [하는 방법: SSL 인증서로 포트 구성](https://msdn.microsoft.com/library/ms733791.aspx) 자세한 정보에 대 한 합니다.
     - **시작**, SignalR 서버에 대 한 구성을 포함 하는 클래스 (이 자습서에서는 유일한 구성 하는 데 `UseCors`)에 대 한 호출은 `MapSignalR`, 모든 허브 개체에 대 한 경로 프로젝트에 만듭니다.
     - **MyHub**, 응용 프로그램이 클라이언트에 제공 하는 SignalR 허브 클래스입니다. 이 클래스에는 단일 메서드가 **보낼**, 메시지를 브로드캐스팅하려면 연결 된 다른 모든 클라이언트에 클라이언트에서 호출할 합니다.
 6. 응용 프로그램을 컴파일하고 실행합니다. 서버가 실행 되는 주소를 콘솔 창에 표시 됩니다.

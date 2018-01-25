@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/data-protection/consumer-apis/dangerous-unprotect
-ms.openlocfilehash: f2425de3f790cd8dab17940ec52a2a7e170cc630
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 08a8ad9b3b3cc2de48751d4149bf39c58954fd90
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="unprotecting-payloads-whose-keys-have-been-revoked"></a>해당 레지스트리 키가 해지 한 보호 해제 페이로드
 
@@ -44,6 +44,6 @@ DangerousUnprotect(byte[] protectedData, bool ignoreRevocationErrors,
 * `wasRevoked`:이 페이로드를 보호 하기 위해 사용 되는 키가 해지 하는 경우 true로 설정 됩니다.
 
 >[!WARNING]
-> 전달 하는 경우 각별히 주의 해 `ignoreRevocationErrors: true` 에 `DangerousUnprotect` 메서드. 이 메서드를 호출한 경우에는 `wasRevoked` 값이 true 이면이 페이로드를 보호 하기 위해 사용 되는 키가 해지 되 고 페이로드의 신뢰성 주의 대상으로 처리 되어야 합니다. 이 경우에 작업을 계속 보호 되지 않는 페이로드에 별도 일부 보증을 사용 하는 경우 인증 되었는지, 한다는 예를 들어 신뢰할 수 없는 웹 클라이언트에서 전송 되는 대신 보안 데이터베이스에서 올 합니다.
+> 전달 하는 경우 각별히 주의 해 `ignoreRevocationErrors: true` 에 `DangerousUnprotect` 메서드. 이 메서드를 호출한 경우에는 `wasRevoked` 값이 true 이면이 페이로드를 보호 하기 위해 사용 되는 키가 해지 되 고 페이로드의 신뢰성 주의 대상으로 처리 되어야 합니다. 이 경우에 작업을 계속 보호 되지 않는 페이로드에 임을 인증, 예를 들어 일부 별도 보증을 사용 하는 경우 신뢰할 수 없는 웹 클라이언트에서 전송 되는 것이 아니라 보안 데이터베이스에서 온 것인지 합니다.
 
 [!code-csharp[Main](dangerous-unprotect/samples/dangerous-unprotect.cs)]

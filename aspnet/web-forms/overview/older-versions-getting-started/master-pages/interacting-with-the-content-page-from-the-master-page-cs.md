@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-content-page-from-the-master-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 923d291d84a47e64b31d99bcb13cfe53e5806444
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4d7f6eeac084f3516ab470adf8973351cf08a7f1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="interacting-with-the-content-page-from-the-master-page-c"></a>마스터 페이지 (C#)에서 콘텐츠 페이지와 상호 작용
 ====================
@@ -158,7 +158,7 @@ SqlDataSource 컨트롤 이름을 지정 하 고 마스터 페이지 다음에 �
 이벤트 처리기에 전달 된 두 번째 매개 변수는 이벤트에 대 한 추가 정보를 포함할 수 있습니다. 기본 `EventArgs` 클래스 정보에 따라 통과 하지 못하면, 다양 한 확장 하는 클래스를 포함 하는.NET Framework `EventArgs` 추가 속성을 포함 합니다. 예를 들어 한 `CommandEventArgs` 인스턴스에 응답 하는 이벤트 처리기로 전달 되는 `Command` 이벤트, 두 정보 속성을 포함 하 고: `CommandArgument` 및 `CommandName`합니다.
 
 > [!NOTE]
-> 만드는 방법에 대 한 자세한 내용은 시키고 이벤트를 처리 참조 [이벤트 및 대리자](https://msdn.microsoft.com/en-us/library/17sde2xt.aspx) 및 [영어로 간단한 이벤트 대리자](http://www.codeproject.com/KB/cs/eventdelegates.aspx)합니다.
+> 만드는 방법에 대 한 자세한 내용은 시키고 이벤트를 처리 참조 [이벤트 및 대리자](https://msdn.microsoft.com/library/17sde2xt.aspx) 및 [영어로 간단한 이벤트 대리자](http://www.codeproject.com/KB/cs/eventdelegates.aspx)합니다.
 
 
 정의 하는 이벤트에는 다음 구문을 사용 합니다.
@@ -251,7 +251,7 @@ SqlDataSource 컨트롤 이름을 지정 하 고 마스터 페이지 다음에 �
 이 자습서에 설명 된 항목에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
 - [Asp.net에서 데이터 액세스 및 업데이트](http://aspnet.4guysfromrolla.com/articles/011106-1.aspx)
-- [이벤트 및 대리자](https://msdn.microsoft.com/en-us/library/17sde2xt.aspx)
+- [이벤트 및 대리자](https://msdn.microsoft.com/library/17sde2xt.aspx)
 - [콘텐츠 및 마스터 페이지 사이의 정보 전달](http://aspnet.4guysfromrolla.com/articles/013107-1.aspx)
 - [ASP.NET 자습서에서 데이터 작업](../../data-access/index.md)
 

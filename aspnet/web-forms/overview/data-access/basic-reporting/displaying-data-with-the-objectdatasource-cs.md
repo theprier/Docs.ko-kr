@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/displaying-data-with-the-objectdatasource-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8025a4d236d126b939b44fac9114ae3d0e98f6ad
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8bd6534b652735e657aa71cdf07dac48f20a549c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="displaying-data-with-the-objectdatasource-c"></a>ObjectDataSource (C#)를 사용 하 여 데이터를 표시합니다.
 ====================
@@ -31,7 +31,7 @@ ms.lasthandoff: 11/10/2017
 
 이 응용 프로그램 아키텍처 및 웹 사이트 페이지 레이아웃 완료에서는 다양 한 데이터 및 보고 관련 일반 작업을 수행 하는 방법을 보여 시작할 준비가 된 것입니다. 이전 자습서에서 프로그래밍 방식으로 데이터는 ASP.NET 페이지의 웹 컨트롤에는 DAL 및 BLL에서 데이터를 바인딩하는 방법을 살펴보았습니다. 이 구문은 데이터 웹 컨트롤의 할당 `DataSource` 속성을 표시 한 다음 컨트롤의 데이터로 `DataBind()` 메서드 ASP.NET 1.x 응용 프로그램에서 사용 되는 패턴 였으며 계속 2.0 응용 프로그램에서 사용할 수 있습니다. 그러나 ASP.NET 2.0의 새로운 데이터 소스 컨트롤 데이터로 작업 하는 선언적 방법을 제공 합니다. 만든 BLL에서 검색 된 데이터를 바인딩할 수 있습니다 이러한 컨트롤을 사용 하 여 [이전 자습서](../introduction/creating-a-business-logic-layer-cs.md) 코드 줄을 작성 하지 않고도!
 
-ASP.NET 2.0 5 개의 기본 제공 데이터 소스 제어와 함께 제공 [SqlDataSource](https://msdn.microsoft.com/en-us/library/dz12d98w(vs.80).aspx), [AccessDataSource](https://msdn.microsoft.com/en-us/library/8e5545e1.aspx), [ObjectDataSource](https://msdn.microsoft.com/en-us/library/9a4kyhcx.aspx), [XmlDataSource](https://msdn.microsoft.com/en-us/library/e8d8587a(en-US,VS.80).aspx), 및 [SiteMapDataSource](https://msdn.microsoft.com/en-us/library/5ex9t96x(en-US,VS.80).aspx) 직접 만들 수 있지만 [사용자 지정 데이터 소스 컨트롤과](https://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnvs05/html/DataSourceCon1.asp), 필요한 경우. 아키텍처에는 자습서 응용 프로그램에 대 한 개발 했습니다, 이후 사용할 예정 된 ObjectDataSource BLL 클래스에 대 한 합니다.
+ASP.NET 2.0 5 개의 기본 제공 데이터 소스 제어와 함께 제공 [SqlDataSource](https://msdn.microsoft.com/library/dz12d98w(vs.80).aspx), [AccessDataSource](https://msdn.microsoft.com/library/8e5545e1.aspx), [ObjectDataSource](https://msdn.microsoft.com/library/9a4kyhcx.aspx), [XmlDataSource](https://msdn.microsoft.com/library/e8d8587a(en-US,VS.80).aspx), 및 [SiteMapDataSource](https://msdn.microsoft.com/library/5ex9t96x(en-US,VS.80).aspx) 직접 만들 수 있지만 [사용자 지정 데이터 소스 컨트롤과](https://msdn.microsoft.com/library/default.asp?url=/library/dnvs05/html/DataSourceCon1.asp), 필요한 경우. 아키텍처에는 자습서 응용 프로그램에 대 한 개발 했습니다, 이후 사용할 예정 된 ObjectDataSource BLL 클래스에 대 한 합니다.
 
 
 ![ASP.NET 2.0 5 개의 기본 제공 데이터 소스 제어를 포함합니다.](displaying-data-with-the-objectdatasource-cs/_static/image1.png)
@@ -90,7 +90,7 @@ ObjectDataSource의 데이터 소스 구성 마법사는 사용 하 여 개체�
 
 [!code-aspx[Main](displaying-data-with-the-objectdatasource-cs/samples/sample1.aspx)]
 
-데이터 소스 구성 마법사를 중지 해야 ObjectDataSource를 수동으로 구성 하는 마법사만 개발자가 만든 클래스를 나열 하는 경우가 있을 수 있습니다 선호 하는 경우에. 와 같은.NET Framework의 클래스에는 ObjectDataSource를 바인딩할 하려는 경우는 [멤버 자격 클래스](https://msdn.microsoft.com/en-us/library/system.web.security.membership.aspx), 사용자 계정 정보에 액세스할 수 또는 [디렉터리 클래스](https://msdn.microsoft.com/en-us/library/system.io.directory.aspx) 파일 시스템 정보를 작성 하려면 ObjectDataSource의 속성을 수동으로 설정 해야 합니다.
+데이터 소스 구성 마법사를 중지 해야 ObjectDataSource를 수동으로 구성 하는 마법사만 개발자가 만든 클래스를 나열 하는 경우가 있을 수 있습니다 선호 하는 경우에. 와 같은.NET Framework의 클래스에는 ObjectDataSource를 바인딩할 하려는 경우는 [멤버 자격 클래스](https://msdn.microsoft.com/library/system.web.security.membership.aspx), 사용자 계정 정보에 액세스할 수 또는 [디렉터리 클래스](https://msdn.microsoft.com/library/system.io.directory.aspx) 파일 시스템 정보를 작성 하려면 ObjectDataSource의 속성을 수동으로 설정 해야 합니다.
 
 ## <a name="step-2-adding-a-data-web-control-and-binding-it-to-the-objectdatasource"></a>2 단계: 데이터 웹 컨트롤을 추가 하 고는 ObjectDataSource에 바인딩
 
@@ -172,7 +172,7 @@ DataWebControls에 GridView 테마 이름 바꾸기 (에서 GridView 폴더를 �
 
 [!code-xml[Main](displaying-data-with-the-objectdatasource-cs/samples/sample5.xml)]
 
-그을 마쳤습니다. `styleSheetTheme` 설정은 테마에서 지정한 속성이 표시 되지 않도록 나타냅니다 *하지* 제어 수준에서 지정 된 속성을 재정의 합니다. 테마 설정을 제어 설정을 종사자 해야를 지정 하려면는 `theme` 대신 특성 `styleSheetTheme`; 아쉽게도 테마 설정을 통해 지정 된는 `theme` 특성 Visual Studio 디자인 보기에 표시 되지 않습니다. 참조 [ASP.NET 테마 및 스킨 개요](https://msdn.microsoft.com/en-us/library/ykzx33wh.aspx) 및 [서버 쪽 스타일을 사용 하 여 테마](https://quickstarts.asp.net/quickstartv20/aspnet/doc/themes/stylesheettheme.aspx) 테마와 스킨;에 대 한 자세한 내용은 참조 [방법: ASP.NET 테마 적용](https://msdn.microsoft.com/en-us/library/0yy5hxdk(VS.80).aspx) 에 대 한 자세한 페이지 테마를 사용 하도록 구성 합니다.
+그을 마쳤습니다. `styleSheetTheme` 설정은 테마에서 지정한 속성이 표시 되지 않도록 나타냅니다 *하지* 제어 수준에서 지정 된 속성을 재정의 합니다. 테마 설정을 제어 설정을 종사자 해야를 지정 하려면는 `theme` 대신 특성 `styleSheetTheme`; 아쉽게도 테마 설정을 통해 지정 된는 `theme` 특성 Visual Studio 디자인 보기에 표시 되지 않습니다. 참조 [ASP.NET 테마 및 스킨 개요](https://msdn.microsoft.com/library/ykzx33wh.aspx) 및 [서버 쪽 스타일을 사용 하 여 테마](https://quickstarts.asp.net/quickstartv20/aspnet/doc/themes/stylesheettheme.aspx) 테마와 스킨;에 대 한 자세한 내용은 참조 [방법: ASP.NET 테마 적용](https://msdn.microsoft.com/library/0yy5hxdk(VS.80).aspx) 에 대 한 자세한 페이지 테마를 사용 하도록 구성 합니다.
 
 
 [![GridView 제품의 이름, 범주, 공급 업체, 가격 및 지원 되지 않는 정보를 표시합니다.](displaying-data-with-the-objectdatasource-cs/_static/image31.png)](displaying-data-with-the-objectdatasource-cs/_static/image30.png)
@@ -182,7 +182,7 @@ DataWebControls에 GridView 테마 이름 바꾸기 (에서 GridView 폴더를 �
 
 ## <a name="displaying-one-record-at-a-time-in-the-detailsview"></a>DetailsView에서 한 번에 하나의 레코드를 표시합니다.
 
-연결 된 데이터 소스 제어에서 반환 된 각 레코드에 대해 하나의 행을 표시 하는 GridView입니다. 그러나 때 한 번에 유일한 레코드 또는 포함 된 단일 레코드를 표시 해야 할 경우가 있습니다. [DetailsView 컨트롤](https://msdn.microsoft.com/en-us/library/s3w1w7t4.aspx) 는 HTML로 렌더링 합니다.이 기능을 제공 `<table>` 두 개의 열과 각 열 또는 컨트롤에 바인딩된 속성에 대해 한 행입니다. DetailsView는 단일 레코드 90도 회전된 된 GridView로 생각할 수 있습니다.
+연결 된 데이터 소스 제어에서 반환 된 각 레코드에 대해 하나의 행을 표시 하는 GridView입니다. 그러나 때 한 번에 유일한 레코드 또는 포함 된 단일 레코드를 표시 해야 할 경우가 있습니다. [DetailsView 컨트롤](https://msdn.microsoft.com/library/s3w1w7t4.aspx) 는 HTML로 렌더링 합니다.이 기능을 제공 `<table>` 두 개의 열과 각 열 또는 컨트롤에 바인딩된 속성에 대해 한 행입니다. DetailsView는 단일 레코드 90도 회전된 된 GridView로 생각할 수 있습니다.
 
 DetailsView 컨트롤을 추가 하 여 시작 *위에* 에 GridView `SimpleDisplay.aspx`합니다. 다음으로, GridView로 동일한 ObjectDataSource 컨트롤에 바인딩하십시오. ObjectDataSource의 반환 되는 개체의 각 속성에 대 한 DetailsView에 추가 됩니다 BoundField GridView와 마찬가지로 `Select` 메서드. 유일한 차이점은 세로로 아닌 가로로 DetailsView의 BoundFields 레이아웃 됩니다.
 
@@ -219,7 +219,7 @@ GridView 처럼 DetailsView의 BoundFields는 ObjectDataSource에서 반환 된 
 
 DetailsView에는 ObjectDataSource에서 반환 된 각 레코드를 표시 하는 방법을 상당히 고정 된 관계로입니다. 데이터의 보다 유연한 보기가 좋겠습니다. 예를 들어 별도 행에는 제품 이름, 범주, 공급 업체, 가격 및 지원 되지 않는 정보를 표시 하는 대신 하려는 제품 이름을 표시 하 고에 가격는 `<h4>` 제목에서 표시 되는 범주 및 공급 업체 정보 이름 및 글꼴 크기의 가격 아래 합니다. 및에서는 값 옆에 있는 속성 이름 (제품, 범주 및 등)을 표시 하려면 중요 하지 않을 수 있습니다.
 
-[FormView 컨트롤](https://msdn.microsoft.com/en-US/library/fyf1dk77.aspx) 사용자 지정의이 수준을 제공 합니다. FormView에서는 다양 한 웹 컨트롤에 정적 HTML 허용 하는 서식 파일 필드 (예: GridView 및 DetailsView 수행 됨)를 사용 하 여 하지 않고 사용 및 [구문이](http://www.15seconds.com/issue/040630.htm)합니다. ASP.NET에서 반복기 컨트롤에 잘 알고 있다면 경우 1.x 이라고 수 있습니다 FormView의 단일 레코드를 표시 하는 데 반복 합니다.
+[FormView 컨트롤](https://msdn.microsoft.com/library/fyf1dk77.aspx) 사용자 지정의이 수준을 제공 합니다. FormView에서는 다양 한 웹 컨트롤에 정적 HTML 허용 하는 서식 파일 필드 (예: GridView 및 DetailsView 수행 됨)를 사용 하 여 하지 않고 사용 및 [구문이](http://www.15seconds.com/issue/040630.htm)합니다. ASP.NET에서 반복기 컨트롤에 잘 알고 있다면 경우 1.x 이라고 수 있습니다 FormView의 단일 레코드를 표시 하는 데 반복 합니다.
 
 FormView 컨트롤을 추가 `SimpleDisplay.aspx` 페이지의 디자인 화면입니다. 처음 FormView 표시 된 회색 블록으로 us에 최소한 컨트롤의 제공 해야 함을 `ItemTemplate`합니다.
 
@@ -256,12 +256,12 @@ ASP.NET 2.0 ObjectDataSource 컨트롤 덕분에 코드 줄도 작성 하지 않
 
 이 자습서에 설명 된 항목에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
-- [고유한 데이터 소스 컨트롤 만들기](https://msdn.microsoft.com/en-us/library/ms364049.aspx)
-- [ASP.NET 2.0에 대 한 GridView 예제](https://msdn.microsoft.com/en-us/library/aa479339.aspx)
+- [고유한 데이터 소스 컨트롤 만들기](https://msdn.microsoft.com/library/ms364049.aspx)
+- [ASP.NET 2.0에 대 한 GridView 예제](https://msdn.microsoft.com/library/aa479339.aspx)
 - [간소화 되 고 데이터 구문을 ASP.NET 2.0에서에서 바인딩 확장](http://www.15seconds.com/issue/040630.htm)
 - [ASP.NET 2.0에서 테마](http://www.odetocode.com/Articles/423.aspx)
 - [테마를 사용 하 여 서버 쪽 스타일](https://quickstarts.asp.net/quickstartv20/aspnet/doc/themes/stylesheettheme.aspx)
-- [방법: ASP.NET 테마를 프로그래밍 방식으로 적용](https://msdn.microsoft.com/en-us/library/tx35bd89.aspx)
+- [방법: ASP.NET 테마를 프로그래밍 방식으로 적용](https://msdn.microsoft.com/library/tx35bd89.aspx)
 
 ## <a name="about-the-author"></a>작성자 정보
 

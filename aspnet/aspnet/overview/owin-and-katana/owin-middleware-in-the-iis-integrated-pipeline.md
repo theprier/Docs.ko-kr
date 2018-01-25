@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-middleware-in-the-iis-integrated-pipeline
 msc.type: authoredcontent
-ms.openlocfilehash: 42851cb9b8046ca4f70894b9ec5b671b269da04c
-ms.sourcegitcommit: 97432cbf9b8673bc4ad7012d5b6f2ed273420295
+ms.openlocfilehash: 4e1270f9fb58032d22380117f4ec18b00bd725fc
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="owin-middleware-in-the-iis-integrated-pipeline"></a>IIS 통합된 파이프라인의 OWIN 미들웨어.
 ====================
@@ -36,9 +36,9 @@ ms.lasthandoff: 11/17/2017
 
 ## <a name="how-owin-middleware-executes-in-the-iis-integrated-pipeline"></a>OWIN 미들웨어입니다. IIS 통합된 파이프라인에서 실행 하는 방법
 
-OWIN 콘솔 응용 프로그램에 대 한 응용 프로그램 파이프라인 사용 하 여 작성 된 [시작 구성](owin-startup-class-detection.md) 구성 요소를 사용 하 여 추가 되는 순서에 의해 설정 됩니다는 `IAppBuilder.Use` 메서드. 즉, OWIN 파이프라인에는 [Katana](an-overview-of-project-katana.md) 런타임 OMCs를 사용 하 여 등록 된 이러한 순서로 처리 됩니다 `IAppBuilder.Use`합니다. IIS 통합된 파이프라인의 요청 파이프라인의 구성 [HttpModules](https://msdn.microsoft.com/en-us/library/ms178468(v=vs.85).aspx) 와 같은 미리 정의 된 집합이 파이프라인 이벤트를 구독할 [BeginRequest](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.beginrequest.aspx), [AuthenticateRequest](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.authenticaterequest.aspx), [AuthorizeRequest](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.authorizerequest.aspx)등입니다.
+OWIN 콘솔 응용 프로그램에 대 한 응용 프로그램 파이프라인 사용 하 여 작성 된 [시작 구성](owin-startup-class-detection.md) 구성 요소를 사용 하 여 추가 되는 순서에 의해 설정 됩니다는 `IAppBuilder.Use` 메서드. 즉, OWIN 파이프라인에는 [Katana](an-overview-of-project-katana.md) 런타임 OMCs를 사용 하 여 등록 된 이러한 순서로 처리 됩니다 `IAppBuilder.Use`합니다. IIS 통합된 파이프라인의 요청 파이프라인의 구성 [HttpModules](https://msdn.microsoft.com/library/ms178468(v=vs.85).aspx) 와 같은 미리 정의 된 집합이 파이프라인 이벤트를 구독할 [BeginRequest](https://msdn.microsoft.com/library/system.web.httpapplication.beginrequest.aspx), [AuthenticateRequest](https://msdn.microsoft.com/library/system.web.httpapplication.authenticaterequest.aspx), [AuthorizeRequest](https://msdn.microsoft.com/library/system.web.httpapplication.authorizerequest.aspx)등입니다.
 
-OMC 비교 하면는 [HttpModule](https://msdn.microsoft.com/en-us/library/zec9k340(v=vs.85).aspx) ASP.NET 세계 OMC는 미리 정의 된 올바른 파이프라인 이벤트에 등록 되어야 합니다. 예를 들어 HttpModule `MyModule` 요청 도달할 경우 호출 됩니다는 [AuthenticateRequest](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.authenticaterequest.aspx) 파이프라인 단계에서에서:
+OMC 비교 하면는 [HttpModule](https://msdn.microsoft.com/library/zec9k340(v=vs.85).aspx) ASP.NET 세계 OMC는 미리 정의 된 올바른 파이프라인 이벤트에 등록 되어야 합니다. 예를 들어 HttpModule `MyModule` 요청 도달할 경우 호출 됩니다는 [AuthenticateRequest](https://msdn.microsoft.com/library/system.web.httpapplication.authenticaterequest.aspx) 파이프라인 단계에서에서:
 
 [!code-csharp[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample2.cs?highlight=10)]
 
@@ -57,7 +57,7 @@ OMC 비교 하면는 [HttpModule](https://msdn.microsoft.com/en-us/library/zec9k
 
 [!code-console[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample5.cmd)]
 
-Katana 런타임 OWIN 미들웨어 구성 요소와의 각 매핑된 [PreExecuteRequestHandler](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.prerequesthandlerexecute.aspx) IIS 파이프라인 이벤트에 해당 하는 기본적으로 [PreRequestHandlerExecute](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.prerequesthandlerexecute.aspx)합니다.
+Katana 런타임 OWIN 미들웨어 구성 요소와의 각 매핑된 [PreExecuteRequestHandler](https://msdn.microsoft.com/library/system.web.httpapplication.prerequesthandlerexecute.aspx) IIS 파이프라인 이벤트에 해당 하는 기본적으로 [PreRequestHandlerExecute](https://msdn.microsoft.com/library/system.web.httpapplication.prerequesthandlerexecute.aspx)합니다.
 
 ## <a name="stage-markers"></a>표식 단계
 
@@ -65,7 +65,7 @@ Katana 런타임 OWIN 미들웨어 구성 요소와의 각 매핑된 [PreExecute
 
 [!code-csharp[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample6.cs?highlight=13,19)]
 
-`app.UseStageMarker(PipelineStage.Authenticate)` 호출 (이 경우 두 개의 진단 구성)의 모든 이전에 등록 된 미들웨어 구성 요소를 파이프라인의 인증 단계에서 실행 되도록 구성 합니다. 마지막 미들웨어 구성 요소 (표시 하는 진단 요청에 응답 하)에서 실행 되는 `ResolveCache` 단계 (의 [ResolveRequestCache](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.resolverequestcache.aspx) 이벤트).
+`app.UseStageMarker(PipelineStage.Authenticate)` 호출 (이 경우 두 개의 진단 구성)의 모든 이전에 등록 된 미들웨어 구성 요소를 파이프라인의 인증 단계에서 실행 되도록 구성 합니다. 마지막 미들웨어 구성 요소 (표시 하는 진단 요청에 응답 하)에서 실행 되는 `ResolveCache` 단계 (의 [ResolveRequestCache](https://msdn.microsoft.com/library/system.web.httpapplication.resolverequestcache.aspx) 이벤트).
 
 F5 키를 눌러 앱을 실행 합니다. 출력 창에 표시
 

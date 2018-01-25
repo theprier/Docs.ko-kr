@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/file-uploads
-ms.openlocfilehash: 3c5abe84a5c7cc399e0586e680a414fab7a26c1d
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: bc1cfe0d6ee88a0af49cdff9ce77ad42f57b95f7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="file-uploads-in-aspnet-core"></a>ASP.NET Core에서 파일 업로드
 
@@ -134,7 +134,7 @@ public async Task<IActionResult> Register(RegisterViewModel model)
 크기 또는 파일 업로드 빈도 앱에 대 한 리소스 문제를 발생 시킨 경우 고려 전체를 버퍼링 하는 것이 아니라 파일 업로드를 스트리밍 위에 표시 된 모델 바인딩 방법을 마찬가지로 합니다. 사용 하는 동안 `IFormFile` 모델 바인딩은 훨씬 간단한 해결책을 제대로 구현 하는 단계 수가 스트리밍을 사용 하려면 필요 합니다.
 
 > [!NOTE]
-> 모든 단일 버퍼링된 파일 64KB를 초과 서버에 디스크에 임시 파일 RAM에서 이동할 수 됩니다. 파일 업로드에서 사용 되는 리소스 (디스크, RAM)의 동시 파일 업로드 크기와 수에 따라 달라 집니다. 스트리밍가 아닙니다. 성능에 대 한 수많은 눈금에 관한 것입니다. 너무 많은 업로드 버퍼링 하려고 하면 사이트에 메모리 또는 디스크 공간이 부족할 때 작동이 중단 됩니다.
+> 모든 단일 버퍼링된 파일 64KB를 초과 서버에 디스크에 임시 파일 RAM에서 이동할 수 됩니다. 파일 업로드에서 사용 되는 리소스 (디스크, RAM)의 동시 파일 업로드 크기와 수에 따라 달라 집니다. 성능에 대 한 수많은 없는 스트리밍, 배율에 관한 것입니다. 너무 많은 업로드 버퍼링 하려고 하면 사이트에 메모리 또는 디스크 공간이 부족할 때 작동이 중단 됩니다.
 
 다음 예제에서는 컨트롤러 작업에 stream을 JavaScript/각을 사용 하 여 보여 줍니다. 사용자 지정 필터 특성을 사용 하 고 대신 요청 본문에 HTTP 헤더에 전달 된 파일의 antiforgery 토큰이 생성 됩니다. 동작 메서드가 업로드 된 데이터를 직접 처리 하기 때문에 모델 바인딩은 다른 필터에 의해 비활성화 됩니다. 작업, 내에서 폼의 읽은 내용을 사용 하는 `MultipartReader`, 각 개인을 읽는 `MultipartSection`, 파일을 처리 하거나 적절 하 게 콘텐츠를 저장 합니다. 모든 섹션을 읽은 후 동작 자체 모델 바인딩을 수행 합니다.
 
@@ -199,4 +199,4 @@ The request filtering module is configured to deny a request that exceeds the re
 
 ### <a name="null-reference-exception-with-iformfile"></a>IFormFile 사용 하 여 null 참조 예외
 
-컨트롤러는 수락 하는 경우 사용 하 여 파일 업로드 `IFormFile` HTML 폼이 지정 되 고 있는지 확인, 값은 항상 null을 찾을 수 있지만 `enctype` 값 `multipart/form-data`합니다. 이 특성이 설정 되지 않은 경우는 `<form>` 요소, 파일 업로드 수행 되지 것입니다 및 모든 바운드 `IFormFile` 인수는 null이 됩니다.
+컨트롤러는 수락 하는 경우 사용 하 여 파일 업로드 `IFormFile` HTML 폼이 지정 되 고 있는지 확인, 값은 항상 null을 찾을 수 있지만 `enctype` 값 `multipart/form-data`합니다. 이 특성에 설정 되지 않습니다는 `<form>` 파일 업로드도 발생 하지 않습니다, 요소 및 모든 바운드 `IFormFile` 인수는 null이 됩니다.

@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/validation
-ms.openlocfilehash: 91db17e103723ac411a2ad4f3f9549860f250cce
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 56928c61ae47d313145afadf3e0fa93a078b681b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-model-validation-in-aspnet-core-mvc"></a>ASP.NET Core MVC에서 모델 유효성 검사 소개
 
@@ -148,14 +148,14 @@ MVC 유형 특성 값을 사용 하 여를 재정의할 수 있는 속성의.NET
 
 ### <a name="add-validation-to-dynamic-forms"></a>동적 양식을에 유효성 검사 추가
 
-유효성 검사 비 가시적인 jQuery 유효성 검사 논리 및 매개 변수 jQuery 유효성 검사 페이지 처음 로드 될 때를 전달 하기 때문에 동적으로 생성 된 양식 유효성 검사를 자동으로 발생 하지 않습니다. 대신, jQuery 비간섭 유효성 검사 만든 후 즉시 동적 폼의 구문 분석을 알려야 합니다. 예를 들어 아래 코드는 AJAX를 통해 추가 폼의 클라이언트 쪽 유효성 검사를 설정할 수 있는 방법을 보여 줍니다.
+유효성 검사 비 가시적인 jQuery 유효성 검사 논리 및 매개 변수 jQuery 유효성 검사 페이지 처음 로드 될 때를 전달 하기 때문에 동적으로 생성 된 양식 유효성 검사를 자동으로 발생 되지 않습니다. 대신, jQuery 비간섭 유효성 검사 만든 후 즉시 동적 폼의 구문 분석을 알려야 합니다. 예를 들어 아래 코드는 AJAX를 통해 추가 폼의 클라이언트 쪽 유효성 검사를 설정할 수 있는 방법을 보여 줍니다.
 
 ```js
 $.get({
     url: "https://url/that/returns/a/form",
     dataType: "html",
     error: function(jqXHR, textStatus, errorThrown) {
-        alert(textStatus + ": Could not add form. " + errorThrown);
+        alert(textStatus + ": Couldn't add form. " + errorThrown);
     },
     success: function(newFormHTML) {
         var container = document.getElementById("form-container");
@@ -171,14 +171,14 @@ $.get({
 
 ### <a name="add-validation-to-dynamic-controls"></a>동적 컨트롤에 유효성 검사 추가
 
-등의 개별 컨트롤 때에 폼에 대 한 유효성 검사 규칙을 업데이트할 수 있습니다 `<input/>`s 및 `<select/>`s, 동적으로 생성 됩니다. 이러한 요소에 대 한 선택기를 전달할 수 없습니다는 `parse()` 메서드를 직접 주변 폼 이미 구문 분석 하 고 업데이트 되지 것입니다. 대신, 있습니다 먼저 기존 유효성 검사 데이터를 제거한 다음 아래와 같이 전체 폼 재분석:
+등의 개별 컨트롤 때에 폼에 대 한 유효성 검사 규칙을 업데이트할 수 있습니다 `<input/>`s 및 `<select/>`s, 동적으로 생성 됩니다. 이러한 요소에 대 한 선택기를 전달할 수 없습니다는 `parse()` 메서드를 직접 주변 폼 이미 구문 분석 하 고 업데이트 되지 않습니다. 대신, 있습니다 먼저 기존 유효성 검사 데이터를 제거한 다음 아래와 같이 전체 폼 재분석:
 
 ```js
 $.get({
     url: "https://url/that/returns/a/control",
     dataType: "html",
     error: function(jqXHR, textStatus, errorThrown) {
-        alert(textStatus + ": Could not add form. " + errorThrown);
+        alert(textStatus + ": Couldn't add form. " + errorThrown);
     },
     success: function(newInputHTML) {
         var form = document.getElementById("my-form");
@@ -235,8 +235,7 @@ $.get({
 
 [!code-csharp[Main](validation/sample/User.cs?range=10-13)]
 
-`AdditionalFields`설정 될 수 명시적으로 문자열에 `"FirstName"` 및 `"LastName"`, 하지만 사용 하 여는 [ `nameof` ](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/nameof) 리팩터링 나중에 다음과 같은 연산자를 간소화 합니다. 유효성 검사를 수행 하는 작업 메서드를 다음의 값에 대해 하나씩 두 개의 인수를 받아들여야 `FirstName` 및의 값에 대해 하나씩 `LastName`합니다.
-
+`AdditionalFields`수 했으므로 명시적으로 설정 된 문자열에 `"FirstName"` 및 `"LastName"`, 하지만 사용 하 여는 [ `nameof` ](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/nameof) 리팩터링 나중에 다음과 같은 연산자를 간소화 합니다. 유효성 검사를 수행 하는 작업 메서드를 다음의 값에 대해 하나씩 두 개의 인수를 받아들여야 `FirstName` 및의 값에 대해 하나씩 `LastName`합니다.
 
 [!code-csharp[Main](validation/sample/UsersController.cs?range=30-39)]
 
@@ -253,4 +252,4 @@ $.get({
 public string MiddleName { get; set; }
 ```
 
-`AdditionalFields`모든 특성 인수가 같은 상수 식 이어야 합니다. 따라서 사용 하면 안는 [문자열 보간](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/interpolated-strings) 호출 또는 [ `string.Join()` ](https://msdn.microsoft.com/en-us/library/system.string.join(v=vs.110).aspx) 초기화 `AdditionalFields`합니다. 에 추가 하는 모든 추가 필드에는 `[Remote]` 특성을 해당 컨트롤러 동작 메서드에 다른 인수를 추가 해야 합니다.
+`AdditionalFields`모든 특성 인수가 같은 상수 식 이어야 합니다. 따라서 사용 하면 안는 [문자열 보간](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/interpolated-strings) 호출 또는 [ `string.Join()` ](https://msdn.microsoft.com/library/system.string.join(v=vs.110).aspx) 초기화 `AdditionalFields`합니다. 에 추가 하는 모든 추가 필드에는 `[Remote]` 특성을 해당 컨트롤러 동작 메서드에 다른 인수를 추가 해야 합니다.

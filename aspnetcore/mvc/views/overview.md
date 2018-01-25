@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/overview
-ms.openlocfilehash: c0a1f475941f3389e9aa1f5bb7819bef491b2cae
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: dc36c76dbd7d82a926e39d8a8ab3a2a53b65d954
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="views-in-aspnet-core-mvc"></a>ASP.NET Core MVC에서 뷰
 
@@ -186,7 +186,7 @@ namespace WebApplication1.ViewModels
 
 ### <a name="weakly-typed-data-viewdata-and-viewbag"></a>약한 형식의 데이터 (ViewData 및 ViewBag)
 
-참고: `ViewBag` Razor 페이지에서 사용할 수 있습니다.
+참고: `ViewBag` Razor 페이지에서 사용할 수 없습니다.
 
 강력한 형식의 뷰 외에도 뷰는에 대 한 액세스는 *약한 형식의* (호출 또한 *자유로운 형식의*) 데이터의 컬렉션입니다. 강력한 종류와 달리 *약한 형식* (또는 *형식 느슨한*)를 사용 하는 데이터 형식에 있는 명시적으로 선언 하지 않는 것을 의미 합니다. 적은 양의 컨트롤러와 뷰 간에 데이터를 전달 하기 위한 약한 형식의 데이터의 컬렉션을 사용할 수 있습니다.
 
@@ -245,7 +245,7 @@ public IActionResult SomeAction()
 
 **ViewBag**
 
-참고: `ViewBag` Razor 페이지에서 사용할 수 있습니다.
+참고: `ViewBag` Razor 페이지에서 사용할 수 없습니다.
 
 `ViewBag`이 [DynamicViewData](/aspnet/core/api/microsoft.aspnetcore.mvc.viewfeatures.internal.dynamicviewdata) 에 저장 된 개체에 대 한 동적 액세스를 제공 하는 개체 `ViewData`합니다. `ViewBag`캐스팅 필요 하지 않으므로 작업할 더 편리할 수 있습니다. 다음 예제에서는 사용 하는 방법을 보여 줍니다. `ViewBag` 사용 하 여 동일한 결과 함께 `ViewData` 위에:
 
@@ -278,7 +278,7 @@ public IActionResult SomeAction()
 
 **ViewData 및 ViewBag를 동시에 사용 하 여**
 
-참고: `ViewBag` Razor 페이지에서 사용할 수 있습니다.
+참고: `ViewBag` Razor 페이지에서 사용할 수 없습니다.
 
 이후 `ViewData` 및 `ViewBag` 동일한 기본 참조 `ViewData` 컬렉션을 모두 사용할 수 있습니다 `ViewData` 및 `ViewBag` 혼합 및 경우에 읽기 및 쓰기 값 사이 일치 합니다.
 
@@ -318,7 +318,7 @@ public IActionResult SomeAction()
 
 **ViewBag ViewData 사이의 차이 요약**
 
- `ViewBag`Razor 페이지에서 사용할 수 없는 경우
+ `ViewBag`Razor 페이지에서 사용할 수 없습니다.
 
 * `ViewData`
   * 파생 [ViewDataDictionary](/aspnet/core/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary)는와 같은 유용할 수 있는 사전 속성이 있으므로 `ContainsKey`, `Add`, `Remove`, 및 `Clear`합니다.

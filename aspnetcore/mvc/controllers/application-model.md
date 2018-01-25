@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/application-model
-ms.openlocfilehash: c69dd1cfae713036ce0ee95f70acc162b1e82cb0
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: a0913edaab723656c9be484332e02c551a5c88e1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="working-with-the-application-model"></a>응용 프로그램 모델 작업
 
@@ -35,7 +35,7 @@ ASP.NET Core MVC 응용 프로그램 모델의 구조는 다음과 같습니다.
 모델의 각 수준에는 공통 권한이 `Properties` 컬렉션 및 하위 수준 액세스 하 고 계층의 상위 수준에서 설정 된 속성 값을 덮어쓸 수 있습니다. 속성에 저장 됩니다는 `ActionDescriptor.Properties` 작업을 만드는 시기입니다. 다음 요청을 처리 중인 경우 모든 속성 추가 또는 수정 된 규칙을 통해 액세스할 수 `ActionContext.ActionDescriptor.Properties`합니다. 속성을 사용 하는 필터, 모델 바인더, 등-액션에 구성할 수 있는 좋은 방법입니다.
 
 > [!NOTE]
-> `ActionDescriptor.Properties` 컬렉션 스레드로부터 안전 하지 않습니다 (쓰기)에 대 한 응용 프로그램 시작을 완료 했습니다. 규칙은 안전 하 게 데이터를이 컬렉션에 추가 하는 가장 좋은 방법은 합니다.
+> `ActionDescriptor.Properties` 컬렉션 응용 프로그램 시작 완료 되 면 스레드 (쓰기)에 대 한 안전 하 게 보호 되지 않습니다. 규칙은 안전 하 게 데이터를이 컬렉션에 추가 하는 가장 좋은 방법은 합니다.
 
 ### <a name="iapplicationmodelprovider"></a>IApplicationModelProvider
 
@@ -53,7 +53,7 @@ ASP.NET Core MVC 응용 프로그램 모델의 구조는 다음과 같습니다.
 * [`CorsApplicationModelProvider`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.cors.internal.corsapplicationmodelprovider)
 
 > [!NOTE]
-> 순서에 대해 같은 값으로는 두 공급자 `Order` 라고 따라서 해야에 의존 하 고이 정의 되지 않습니다.
+> 순서에 대해 같은 값으로는 두 공급자 `Order` 라고, 정의 되지 않으며에 의존할 수 없습니다.
 
 > [!NOTE]
 > `IApplicationModelProvider`프레임 워크를 확장 하는 작성자를 위한 고급 개념이입니다. 일반적으로 앱 규칙을 사용 해야 하 고 프레임 워크 공급자를 사용 해야 합니다. 중요 한 차이점은 규칙 하기 전에 공급자는 항상 실행 합니다.

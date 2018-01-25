@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/building-an-interface-to-select-one-user-account-from-many-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e1edeaa392abea96a0f5085539cd8ab7810d59e0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 42a8fb48b8c8cfb653ac4d64f6efe011f92b966b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="building-an-interface-to-select-one-user-account-from-many-c"></a>많은 (C#)에서 사용자 계정 하나를 선택 하는 인터페이스를 작성 합니다.
 ====================
@@ -134,13 +134,13 @@ GridView에서 원하는 사용자 계정 정보를 표시 하기 위해 설정 
 > 사용자 이름의 모든 문자, 숫자 및 문장 부호를 포함 하 여 시작할 수 있습니다. 이러한 계정은 볼 수 있도록 관리자가 모든 LinkButton 옵션을 사용 해야 합니다. 또는 숫자로 시작 하는 모든 사용자 계정 반환할 LinkButton을 추가할 수 있습니다. I이 그대로 실행으로 판독기에 대 한 합니다.
 
 
-포스트백 필터링 링크 단추가 중 하나를 클릭 하 고는 반복기를 발생 시킵니다 `ItemCommand` 이벤트를 아직 이유임 때문에 눈금에서 변경 되지 않은 결과 필터링 하려면 코드를 작성 합니다. `Membership` 클래스를 포함 한 [ `FindUsersByName` 메서드](https://technet.microsoft.com/en-us/library/system.web.security.membership.findusersbyname.aspx) 했는데 사용자 지정된 된 검색 패턴과 일치 하는 해당 사용자 계정을 반환 하는 합니다. 이 메서드 인 사용자 이름으로 지정 된 문자로 시작 하는 해당 사용자 계정 검색을 사용할 수는 `CommandName` 클릭 된 필터링 된 LinkButton의 합니다.
+포스트백 필터링 링크 단추가 중 하나를 클릭 하 고는 반복기를 발생 시킵니다 `ItemCommand` 이벤트를 아직 이유임 때문에 눈금에서 변경 되지 않은 결과 필터링 하려면 코드를 작성 합니다. `Membership` 클래스를 포함 한 [ `FindUsersByName` 메서드](https://technet.microsoft.com/library/system.web.security.membership.findusersbyname.aspx) 했는데 사용자 지정된 된 검색 패턴과 일치 하는 해당 사용자 계정을 반환 하는 합니다. 이 메서드 인 사용자 이름으로 지정 된 문자로 시작 하는 해당 사용자 계정 검색을 사용할 수는 `CommandName` 클릭 된 필터링 된 LinkButton의 합니다.
 
 업데이트 하 여 시작 된 `ManageUser.aspx` 라는 속성이 포함 되도록 페이지의 코드 숨김 클래스 `UsernameToMatch`합니다. 이 속성 게시할 사용자 이름 필터 문자열을 유지 됩니다.
 
 [!code-csharp[Main](building-an-interface-to-select-one-user-account-from-many-cs/samples/sample8.cs)]
 
-`UsernameToMatch` 속성에 할당 된 해당 값이 저장 된 `ViewState` UsernameToMatch 키를 사용 하 여 컬렉션입니다. 이 속성의이 값을 읽을 때 확인 하는 값에 있는 경우는 `ViewState` 컬렉션, 그렇지 않으면 해당 기본값은 빈 문자열을 반환 합니다. `UsernameToMatch` 속성에서 속성에 모든 변경 내용은 게시할 보관 되도록 뷰 상태 값을 유지 하는 즉, 일반적인 패턴을 보여 줍니다. 이 패턴에 대 한 자세한 내용은 읽기 [이해 ASP.NET 뷰 상태](https://msdn.microsoft.com/en-us/library/ms972976.aspx)합니다.
+`UsernameToMatch` 속성에 할당 된 해당 값이 저장 된 `ViewState` UsernameToMatch 키를 사용 하 여 컬렉션입니다. 이 속성의이 값을 읽을 때 확인 하는 값에 있는 경우는 `ViewState` 컬렉션, 그렇지 않으면 해당 기본값은 빈 문자열을 반환 합니다. `UsernameToMatch` 속성에서 속성에 모든 변경 내용은 게시할 보관 되도록 뷰 상태 값을 유지 하는 즉, 일반적인 패턴을 보여 줍니다. 이 패턴에 대 한 자세한 내용은 읽기 [이해 ASP.NET 뷰 상태](https://msdn.microsoft.com/library/ms972976.aspx)합니다.
 
 다음을 업데이트 하는 `BindUserAccounts` 메서드를 대신 호출 `Membership.GetAllUsers`, 호출 `Membership.FindUsersByName`의 값에 전달 하는 `UsernameToMatch` SQL 와일드 카드 문자를 추가 하는 속성 %입니다.
 
@@ -177,7 +177,7 @@ GridView 컨트롤에서는 두 가지 유형의 페이징을 제공합니다.
 
 사용자 지정 페이징을 구현 하려면 먼저 정확한 GridView에서 표시 하는 레코드 하위 집합을 검색 하는 기준인 메커니즘이 필요 합니다. 다행 스럽게도 하는 `Membership` 클래스의 `FindUsersByName` 메서드 페이지 인덱스 및 페이지 크기를 지정할 수 있도록 하는 오버 로드를 있으며 레코드의 해당 범위에 속하는 사용자 계정만 반환 합니다.
 
-특히,이 오버 로드에는 다음 서명이: [ `FindUsersByName(usernameToMatch, pageIndex, pageSize, totalRecords)` ](https://msdn.microsoft.com/en-us/library/fa5st8b2.aspx)합니다.
+특히,이 오버 로드에는 다음 서명이: [ `FindUsersByName(usernameToMatch, pageIndex, pageSize, totalRecords)` ](https://msdn.microsoft.com/library/fa5st8b2.aspx)합니다.
 
 *pageIndex* 반환 됩니다; 사용자 계정 페이지를 지정 하는 매개 변수 *pageSize* 페이지당 표시할 레코드를 나타냅니다. *totalRecords* 매개 변수는 한 `out` 사용자 저장소에 전체 사용자 계정 수를 반환 하는 매개 변수입니다.
 
@@ -258,7 +258,7 @@ GridView는 사용자 지정 페이징 있지만 ObjectDataSource 컨트롤에 �
 
 ### <a name="about-the-author"></a>작성자 정보
 
-여러 ASP/ASP.NET 책의 작성자 및 4GuysFromRolla.com의 창립자 Scott Mitchell의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 * [Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*합니다. Scott에 도달할 수 [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) 또는에서 그의 블로그 통해 [http://ScottOnWriting.NET](http://scottonwriting.net/)합니다.
+여러 ASP/ASP.NET 책의 작성자 및 4GuysFromRolla.com의 창립자 Scott Mitchell의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은  *[Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*합니다. Scott에 도달할 수 [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) 또는에서 그의 블로그 통해 [http://ScottOnWriting.NET](http://scottonwriting.net/)합니다.
 
 ### <a name="special-thanks-to"></a>특별히 감사
 

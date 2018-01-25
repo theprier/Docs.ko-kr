@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-elmah-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d7082808d4aeb21767524c1e687dd688324d4d46
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 41e1f8673b42571a9dcbdae668a30426fe90f42f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="logging-error-details-with-elmah-vb"></a>오류 세부 정보 ELMAH (VB)를 사용 하 여 로깅
 ====================
@@ -254,7 +254,7 @@ ELMAH는 ASP.NET 웹 응용 프로그램에서 오류를 기록 하는 단순 �
 - [ELMAH 프로젝트 페이지](https://code.google.com/p/elmah/) (소스 코드, 샘플, wiki)
 - [ELMAH에는 웹 응용 프로그램 처리 되지 않은 예외를 Catch 연결](http://screencastaday.com/ScreenCasts/43_Plugging_Elmah_into_Web_Application_to_Catch_Unhandled_Exceptions.aspx) (비디오)
 - [보안 오류 로그 페이지](https://code.google.com/p/elmah/wiki/SecuringErrorLogPages)
-- [HTTP 모듈 및 처리기를 사용 하 여 플러그형 ASP.NET 구성 요소 만들기](https://msdn.microsoft.com/en-us/library/aa479332.aspx)
+- [HTTP 모듈 및 처리기를 사용 하 여 플러그형 ASP.NET 구성 요소 만들기](https://msdn.microsoft.com/library/aa479332.aspx)
 - [웹 사이트 보안 자습서](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)
 
 >[!div class="step-by-step"]

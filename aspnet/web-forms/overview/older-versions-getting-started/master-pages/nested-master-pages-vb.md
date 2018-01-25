@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/nested-master-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 41a9fd6b752252d563a0f15a420262cbb31c19ff
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9059e358311cc80b6a64aa3ee1168f4ffcd4e94c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="nested-master-pages-vb"></a>중첩 된 마스터 페이지 (VB)
 ====================
@@ -352,7 +352,7 @@ ContentPlaceHolder 컨트롤과 하는 각 콘텐츠 컨트롤에 ContentPlaceHo
 
 이 자습서에 설명 된 항목에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
-- [중첩 된 ASP.NET 마스터 페이지](https://msdn.microsoft.com/en-us/library/x2b3ktt7.aspx)
+- [중첩 된 ASP.NET 마스터 페이지](https://msdn.microsoft.com/library/x2b3ktt7.aspx)
 - [중첩 된 마스터 페이지 및 VS 2005 디자인 타임에 대 한 팁](https://weblogs.asp.net/scottgu/archive/2005/11/11/430382.aspx)
 - [VS 2008 중첩 마스터 페이지 지원](https://weblogs.asp.net/scottgu/archive/2007/07/09/vs-2008-nested-master-page-support.aspx)
 

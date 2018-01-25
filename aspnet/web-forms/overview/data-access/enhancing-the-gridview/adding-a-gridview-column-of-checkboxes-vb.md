@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/adding-a-gridview-column-of-checkboxes-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 326201f9fe9ba5f482308dc8bfd7d2decb9fbd8f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4468f7e0c142fa432e58d4c686dd79d3b38612ad
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-a-gridview-column-of-checkboxes-vb"></a>확인란 (VB)의 GridView 열 추가
 ====================
@@ -100,7 +100,7 @@ ASP.NET 2.0에는 CheckBoxField, 이후는 GridView에 확인란 열 추가를 �
 
 이 시점에서 우리는 열이 확인란을 선택 하지만 어떤 확인란 포스트백에 체크 인 했던 확인할 방법이 없습니다. 선택한 제품 삭제 단추를 클릭할 때 하지만 알아야 해당 제품을 삭제 하려면 체크 인 했던 어떤 확인란을 선택 합니다.
 
-GridView s [ `Rows` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.rows.aspx) GridView의 데이터 행에 대 한 액세스를 제공 합니다. CheckBox 컨트롤을 프로그래밍 방식으로 액세스 하 고 그런 다음 참조에서는 이러한 행을 반복할 수 있는 해당 `Checked` 확인란 선택 되었는지 여부를 결정 하는 속성입니다.
+GridView s [ `Rows` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rows.aspx) GridView의 데이터 행에 대 한 액세스를 제공 합니다. CheckBox 컨트롤을 프로그래밍 방식으로 액세스 하 고 그런 다음 참조에서는 이러한 행을 반복할 수 있는 해당 `Checked` 확인란 선택 되었는지 여부를 결정 하는 속성입니다.
 
 에 대 한 이벤트 처리기를 만들고는 `DeleteSelectedProducts` 단추 웹 컨트롤의 `Click` 이벤트를 다음 코드를 추가:
 

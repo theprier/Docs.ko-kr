@@ -11,16 +11,16 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/react
-ms.openlocfilehash: aa70a35ad938fff6911367ee9d12aac9d575be7e
-ms.sourcegitcommit: efc9e5b5fffa0e13957131a0da52cc1532a87651
-ms.translationtype: HT
+ms.openlocfilehash: 5978094083a098a771f5dca103434ea8fcce7777
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/23/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="use-the-react-project-template-release-candidate"></a>React 프로젝트 템플릿 (릴리스 후보)를 사용 하 여
 
 > [!NOTE]
-> 이 문서는 릴리스된 React 프로젝트 템플릿에 대 한 아닙니다. **이 설명서는 React 서식 파일의 릴리스 후보에 대 한 합니다.** 에 초기 2018 릴리스 버전을 출시 하시기 바랍니다.
+> 이 문서는 릴리스된 React 프로젝트 템플릿에 대 한 하지 않습니다. **이 설명서는 React 서식 파일의 릴리스 후보에 대 한 합니다.** 에 초기 2018 릴리스 버전을 출시 하시기 바랍니다.
 
 업데이트 된 React 프로젝트 템플릿은 제공 편리한 시작점을 ASP.NET Core에 대 한 반응을 사용 하 여 앱 및 [react 만들기-app](https://github.com/facebookincubator/create-react-app) (CRA)는 다양 하 고 클라이언트 쪽 UI (사용자 인터페이스)를 구현 하는 규칙입니다.
 

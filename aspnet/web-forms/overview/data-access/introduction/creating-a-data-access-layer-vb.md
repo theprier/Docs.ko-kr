@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-data-access-layer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 556b90f5e29f30756a4bd3b16be9608011558c4d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ad578d5d5fb1ef0ac63d3cbde3f307535ea3d98c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-data-access-layer-vb"></a>데이터 액세스 계층 (VB)을 만들려면
 ====================
@@ -89,7 +89,7 @@ ms.lasthandoff: 11/10/2017
 강력한 형식의 개체를 반환 하려면 개발자가 자신의 사용자 지정 비즈니스 개체를 만들 하거나 형식화 된 데이터 집합을 사용 합니다. 비즈니스 개체 속성은 일반적으로 비즈니스 개체의 기본 데이터베이스 테이블의 열을 반영 하는 클래스를 나타내는 대로 개발자가 구현 됩니다. 형식화 된 데이터 집합은 데이터베이스 스키마 및 해당 멤버는이 스키마에 따라 강력한 형식에 따라 Visual Studio에서 자동으로 생성 하는 클래스. ADO.NET DataSet, DataTable 및 DataRow 클래스를 확장 하는 클래스의 형식화 된 데이터 집합 자체 구성 됩니다. 뿐만 아니라 강력한 형식의 Datatable 형식화 된 데이터 집합 이제 포함 하는 데이터 집합의 Datatable 채우기 및 수정은 Datatable 내에서 데이터베이스에 다시 전파 하기 위한 메서드를 사용 하 여 클래스입니다.
 
 > [!NOTE]
-> 형식화 된 데이터 집합을 사용 하 여 사용자 지정 비즈니스 개체와의 장단점에 자세한 내용은를 참조 [데이터 계층 구성 요소를 디자인 하 고 계층 간 데이터 전달](https://msdn.microsoft.com/en-us/library/ms978496.aspx)합니다.
+> 형식화 된 데이터 집합을 사용 하 여 사용자 지정 비즈니스 개체와의 장단점에 자세한 내용은를 참조 [데이터 계층 구성 요소를 디자인 하 고 계층 간 데이터 전달](https://msdn.microsoft.com/library/ms978496.aspx)합니다.
 
 
 이 자습서의이 아키텍처에 대 한 강력한 형식의 데이터 집합을 사용 합니다. 그림 3에서는 형식화 된 데이터 집합을 사용 하는 응용 프로그램의 다른 계층 간에 워크플로 보여 줍니다.
@@ -293,7 +293,7 @@ Beverages.aspx.vb
 **그림 21**: 각 삽입, 업데이트 및 삭제 요청에 즉시 데이터베이스에 전송 됩니다 ([전체 크기 이미지를 보려면 클릭](creating-a-data-access-layer-vb/_static/image57.png))
 
 
-참조 업데이트 패턴에 따라 일괄 처리 하는 것을 다른 패턴은 전체 데이터 집합, DataTable, 또는 한 메서드 호출에서 Datarow의 컬렉션을 업데이트 하기 위해서입니다. 이 패턴으로 개발자 삭제, 삽입 및 수정 DataTable에 Datarow 하 고 update 메서드를 이러한 Datarow 또는 DataTable을 전달 합니다. 이 메서드를 다음에 전달 된 Datarow를 열거, 확인 여부은 한 수정, 추가 되거나 삭제 (DataRow의 통해 [RowState 속성](https://msdn.microsoft.com/en-us/library/system.data.datarow.rowstate.aspx) 값), 각 레코드에 대 한 적절 한 데이터베이스 요청을 실행 하 고 있습니다.
+참조 업데이트 패턴에 따라 일괄 처리 하는 것을 다른 패턴은 전체 데이터 집합, DataTable, 또는 한 메서드 호출에서 Datarow의 컬렉션을 업데이트 하기 위해서입니다. 이 패턴으로 개발자 삭제, 삽입 및 수정 DataTable에 Datarow 하 고 update 메서드를 이러한 Datarow 또는 DataTable을 전달 합니다. 이 메서드를 다음에 전달 된 Datarow를 열거, 확인 여부은 한 수정, 추가 되거나 삭제 (DataRow의 통해 [RowState 속성](https://msdn.microsoft.com/library/system.data.datarow.rowstate.aspx) 값), 각 레코드에 대 한 적절 한 데이터베이스 요청을 실행 하 고 있습니다.
 
 
 [![Update 메서드를 호출 하면 모든 변경 내용이 데이터베이스와 동기화](creating-a-data-access-layer-vb/_static/image59.png)](creating-a-data-access-layer-vb/_static/image58.png)
@@ -339,7 +339,7 @@ TableAdapter 일괄 처리 업데이트 패턴을 사용 하 여 기본적으로
 **그림 25**: 새 행을 추가 하는 메서드 만들기는 `Products` 테이블 ([전체 크기 이미지를 보려면 클릭](creating-a-data-access-layer-vb/_static/image69.png))
 
 
-다음 화면에서의 `InsertCommand`의 `CommandText` 나타납니다. 추가 하 여이 쿼리를 보강할 `SELECT SCOPE_IDENTITY()` 쿼리의 끝에 삽입 된 마지막 id 값을 반환 합니다는 `IDENTITY` 같은 범위에 있는 열입니다. (참조는 [기술 문서](https://msdn.microsoft.com/en-us/library/ms190315.aspx) 에 대 한 자세한 내용은 `SCOPE_IDENTITY()` 하고자 하는 이유 및 [범위를 사용 하 여\_@ 대신 IDENTITY()@IDENTITY](http://weblogs.sqlteam.com/travisl/archive/2003/10/29/405.aspx).) 끝낼 때는 `INSERT` 문을 세미콜론으로 추가 하기 전에 `SELECT` 문.
+다음 화면에서의 `InsertCommand`의 `CommandText` 나타납니다. 추가 하 여이 쿼리를 보강할 `SELECT SCOPE_IDENTITY()` 쿼리의 끝에 삽입 된 마지막 id 값을 반환 합니다는 `IDENTITY` 같은 범위에 있는 열입니다. (참조는 [기술 문서](https://msdn.microsoft.com/library/ms190315.aspx) 에 대 한 자세한 내용은 `SCOPE_IDENTITY()` 하고자 하는 이유 및 [범위를 사용 하 여\_@ 대신 IDENTITY()@IDENTITY](http://weblogs.sqlteam.com/travisl/archive/2003/10/29/405.aspx).) 끝낼 때는 `INSERT` 문을 세미콜론으로 추가 하기 전에 `SELECT` 문.
 
 
 [![Scope_identity () 값을 반환 하도록 쿼리를 확장 합니다.](creating-a-data-access-layer-vb/_static/image71.png)](creating-a-data-access-layer-vb/_static/image70.png)
@@ -520,18 +520,18 @@ SuppliersAndProducts.aspx.vb
 이 자습서에 설명 된 항목에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
 - [강력한 형식의 Tableadapter 및 Datatable VS 2005와 ASP.NET 2.0을 사용 하 여 DAL 작성](https://weblogs.asp.net/scottgu/435498)
-- [데이터 계층 구성 요소를 디자인 하 고 계층을 통한 데이터 전달](https://msdn.microsoft.com/en-us/library/ms978496.aspx)
+- [데이터 계층 구성 요소를 디자인 하 고 계층을 통한 데이터 전달](https://msdn.microsoft.com/library/ms978496.aspx)
 - [Visual Studio 2005 데이터 집합 디자이너로 데이터 액세스 계층을 구축](http://www.theserverside.net/articles/showarticle.tss?id=DataSetDesigner)
 - [ASP.NET 2.0에서에서 구성 정보 암호화 응용 프로그램](http://aspnet.4guysfromrolla.com/articles/021506-1.aspx)
-- [TableAdapter 개요](https://msdn.microsoft.com/en-us/library/bz9tthwx.aspx)
-- [형식화 된 데이터 집합으로 작업](https://msdn.microsoft.com/en-us/library/esbykkzb.aspx)
+- [TableAdapter 개요](https://msdn.microsoft.com/library/bz9tthwx.aspx)
+- [형식화 된 데이터 집합으로 작업](https://msdn.microsoft.com/library/esbykkzb.aspx)
 - [Visual Studio 2005와 ASP.NET 2.0에서 강력한 형식의 데이터 액세스를 사용 하 여](http://aspnet.4guysfromrolla.com/articles/020806-1.aspx)
 - [TableAdapter 메서드를 확장 하는 방법](https://blogs.msdn.com/vbteam/archive/2005/05/04/ExtendingTableAdapters.aspx)
 - [저장된 프로시저에서 스칼라 데이터 검색](http://aspnet.4guysfromrolla.com/articles/062905-1.aspx)
 
 ### <a name="video-training-on-topics-contained-in-this-tutorial"></a>이 자습서에 포함 된 항목에 대 한 비디오 교육
 
-- [ASP.NET 응용 프로그램에서 데이터 액세스 계층](../../../videos/data-access/adonet-data-services/data-access-layers-in-aspnet-applications.md)
+- [ASP.NET 응용 프로그램의 데이터 액세스 레이어](../../../videos/data-access/adonet-data-services/data-access-layers-in-aspnet-applications.md)
 - [수동으로 Datagrid에 데이터 집합을 바인딩하는 방법](../../../videos/data-access/adonet-data-services/how-to-manually-bind-a-dataset-to-a-datagrid.md)
 - [ASP 응용 프로그램에서 데이터 집합 및 필터와 함께 작동 하는 방법](../../../videos/data-access/adonet-data-services/how-to-work-with-datasets-and-filters-from-an-asp-application.md)
 

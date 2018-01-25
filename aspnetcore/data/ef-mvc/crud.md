@@ -9,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: data/ef-mvc/crud
-ms.openlocfilehash: 7e495ba56958012713836c1dd75ac0c5a8bff942
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 873e4592ba668bbcb22f761c2a547a2a27d7e443
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="create-read-update-and-delete---ef-core-with-aspnet-core-mvc-tutorial-2-of-10"></a>만들기, 읽기, 업데이트 및 삭제-EF 코어 ASP.NET Core MVC 자습서 (2 / 10)
 
@@ -46,7 +46,7 @@ Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework Core 및 Vi
 
 `Include` 및 `ThenInclude` 메서드 인해 로드 컨텍스트는 `Student.Enrollments` 탐색 속성 및 각 등록 내는 `Enrollment.Course` 탐색 속성입니다.  이러한 방법에 대해 자세히 알아봅니다는 [관련된 데이터를 읽는](read-related-data.md) 자습서입니다.
 
-`AsNoTracking` 메서드는 반환 되는 엔터티를 현재 컨텍스트 수명에서 업데이트 되지 것입니다 없는 시나리오에서 성능을 향상 합니다. 에 대 한 자세히 알아보세요 `AsNoTracking` 이 자습서의 끝에 있습니다.
+`AsNoTracking` 메서드는 현재 컨텍스트 수명에서 반환 되는 엔터티는 업데이트 되지 않습니다 없는 시나리오에서 성능을 향상 합니다. 에 대 한 자세히 알아보세요 `AsNoTracking` 이 자습서의 끝에 있습니다.
 
 ### <a name="route-data"></a>경로 데이터
 
@@ -176,7 +176,7 @@ HttpPost 편집 동작 메서드를 다음 코드로 바꿉니다.
 
 [!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_ReadFirst)]
 
-이러한 변경 내용은 overposting 방지 하기 위해 보안 모범 사례를 구현 합니다. 생성 된 scaffolder는 `Bind` 특성을 사용 하 여 설정 엔터티를 모델 바인더에서 만든 엔터티를 추가 `Modified` 플래그입니다. 때문에 코드 대부분의 시나리오에 권장 되지 않는다고는 `Bind` 특성에 나열 되지 않은 필드에서 기존의 모든 데이터를 지웁니다는 `Include` 매개 변수입니다.
+이러한 변경 내용은 overposting 방지 하기 위해 보안 모범 사례를 구현 합니다. 생성 된 scaffolder는 `Bind` 특성을 사용 하 여 설정 엔터티를 모델 바인더에서 만든 엔터티를 추가 `Modified` 플래그입니다. 코드 때문에 대부분의 시나리오에 권장 되지 않습니다는 `Bind` 특성에 나열 되지 않은 필드에서 기존의 모든 데이터를 지웁니다는 `Include` 매개 변수입니다.
 
 기존 엔터티 및 호출에서 새 코드를 읽고 `TryUpdateModel` 필드 검색 된 엔터티를 업데이트 하 [폼 게시 된 데이터에서 사용자 입력에 따라](xref:mvc/models/model-binding#how-model-binding-works)합니다. Entity Framework의 변경 내용 자동 추적 설정은 `Modified` 폼 입력에 의해 변경 된 필드에 대 한 플래그입니다. 경우는 `SaveChanges` 메서드가 호출 되 면 Entity Framework 데이터베이스 행을 업데이트 하는 SQL 문을 만듭니다. 동시성 충돌 무시 되 고 데이터베이스에서 사용자가 업데이트 된 테이블 열만 업데이트 됩니다. (이후의 자습서 동시성 충돌을 처리 하는 방법을 보여 줍니다.)
 
@@ -216,7 +216,7 @@ HttpPost 편집 동작 메서드를 다음 코드로 바꿉니다.
 
 하지만 추가 읽기 작업을 수행 하지 않으려는 경우, 모델 바인더를 통해 생성 된 엔터티 개체를 사용 해야 합니다.  이 작업을 수행 하는 가장 간단한 방법은 앞에서 살펴본 대체 HttpPost 편집 코드 에서처럼 엔터티 상태를 수정한 날짜를 설정 하려면 됩니다. 호출 하면 `SaveChanges`, Entity Framework는 컨텍스트는 변경 되는 속성을 알 수 없기 때문에 데이터베이스 행의 모든 열을 업데이트 합니다.
 
-읽기 중심 접근 방식을 방지 하려면 표시 되지만 사용자가 실제로 변경 된 필드에만 업데이트 하도록 SQL UPDATE 문을 시겠습니까 코드는 복잡 합니다. 에 특정 한 방식으로 원래 값을 저장 해야 (같은 숨겨진된 필드를 사용 하 여)를 사용할 수 있는 경우는 HttpPost `Edit` 메서드를 호출 합니다. 그러면 원래 값이 호출을 사용 하 여 학생 엔터티를 만들 수 있습니다는 `Attach` 메서드는 해당 원래 버전은 엔터티의 엔터티의 값을 새 값으로 업데이트 한 다음 호출 `SaveChanges`합니다.
+읽기 중심 접근 방식을 방지 하려면 표시 되지만 사용자가 실제로 변경 된 필드에만 업데이트 하도록 SQL UPDATE 문을 시겠습니까 코드는 복잡 합니다. 에 특정 한 방식으로 원래 값을 저장 해야 (같은 숨겨진된 필드를 사용 하 여) 더 사용할 수 있는 경우는 HttpPost `Edit` 메서드를 호출 합니다. 그러면 원래 값이 호출을 사용 하 여 학생 엔터티를 만들 수 있습니다는 `Attach` 메서드는 해당 원래 버전은 엔터티의 엔터티의 값을 새 값으로 업데이트 한 다음 호출 `SaveChanges`합니다.
 
 ### <a name="test-the-edit-page"></a>편집 페이지를 테스트 합니다.
 
