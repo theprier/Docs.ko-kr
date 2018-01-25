@@ -11,11 +11,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/react
-ms.openlocfilehash: a63d81633a0f37d24ad5e05de293e3c41004eba1
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
-ms.translationtype: MT
+ms.openlocfilehash: aa70a35ad938fff6911367ee9d12aac9d575be7e
+ms.sourcegitcommit: efc9e5b5fffa0e13957131a0da52cc1532a87651
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/23/2018
 ---
 # <a name="use-the-react-project-template-release-candidate"></a>React 프로젝트 템플릿 (릴리스 후보)를 사용 하 여
 
@@ -33,7 +33,7 @@ ms.lasthandoff: 01/11/2018
 명령을 사용 하 여 명령 프롬프트에서 새 프로젝트 만들기 `dotnet new react` 빈 디렉터리에 있습니다. 예를 들어 다음 명령에서 응용 프로그램을 만듭니다는 *내-새-app* 디렉터리와 해당 디렉터리에 스위치:
 
 ```console
-dotnet new -o my-new-app
+dotnet new react -o my-new-app
 cd my-new-app
 ```
 
