@@ -20,20 +20,20 @@ ms.lasthandoff: 11/10/2017
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-이 문서에서는 다음과 같은 내용을 살펴봅니다:
+이 문서에서는 다음과 같은 내용을 살펴봅니다.
 
 - 모든 요청에 SSL을 필수로 강제하는 방법 (HTTPS 요청만 허용하는 방법)
-- 모든 HTTP 요청을 HTTPS로 리디렉션 하는 방법
+- 모든 HTTP 요청을 HTTPS로 리디렉션하는 방법
 
 ## <a name="require-ssl"></a>SSL 강제 적용하기
 
 SSL을 필수로 지정하기 위해서는 [RequireHttpsAttribute](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.requirehttpsattribute)가 사용됩니다. 이 특성은 컨트롤러나 메서드에 개별적으로 지정할 수도 있고, 다음과 같이 전역으로 구성할 수도 있습니다.
 
-`Startup`의 `ConfigureServices`에 다음 코드를 추가합니다:
+`Startup`의 `ConfigureServices`에 다음 코드를 추가합니다.
 
 [!code-csharp[Main](authentication/accconfirm/sample/WebApp1/Startup.cs?name=snippet2&highlight=4-)]
 
-위의 강조 표시된 코드는 모든 요청에 `HTTPS`를 사용하도록 강제하며, 그 결과 HTTP 요청은 무시됩니다. 반면, 다음에 강조 표시된 코드는 모든 HTTP 요청을 HTTPS로 리디렉션합니다:
+위의 강조 표시된 코드는 모든 요청에 `HTTPS`를 사용하도록 강제하며, 그 결과 HTTP 요청은 무시됩니다. 반면, 다음에 강조 표시된 코드는 모든 HTTP 요청을 HTTPS로 리디렉션합니다.
 
 [!code-csharp[Main](authentication/accconfirm/sample/WebApp1/Startup.cs?name=snippet_AddRedirectToHttps&highlight=7-)]
 
