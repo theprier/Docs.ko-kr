@@ -20,9 +20,9 @@ ms.lasthandoff: 12/19/2017
 
 여 [Steve Smith](https://ardalis.com), [Tom Dykstra](https://github.com/tdykstra), 및 [Luke Latham](https://github.com/guardrex)
 
-`Startup` 클래스 서비스 및 응용 프로그램의 요청 파이프라인을 구성 합니다.
+`Startup` 클래스는 서비스와 응용 프로그램의 요청 파이프라인을 구성합니다.
 
-## <a name="the-startup-class"></a>시작 클래스입니다.
+## <a name="the-startup-class"></a>Startup 클래스
 
 ASP.NET Core 응용 프로그램 사용을 `Startup` 클래스 이름으로 지정 된 `Startup` 규칙에 따라 합니다. `Startup` 클래스:
 
@@ -61,7 +61,7 @@ ASP.NET Core 응용 프로그램 사용을 `Startup` 클래스 이름으로 지�
 
 [!code-csharp[Main](../common/samples/WebApplication1/Startup.cs?highlight=4,7,11&start=40&end=55)]
 
-## <a name="services-available-in-startup"></a>시작에 사용할 수 있는 서비스
+## <a name="services-available-in-startup"></a>Startup에서 사용할 수 있는 서비스
 
 에 사용할 수 있는 몇 가지 서비스를 제공 하는 웹 호스트는 `Startup` 클래스 생성자입니다. 응용 프로그램을 통해 추가 서비스를 추가 합니다. `ConfigureServices`합니다. 호스트와 응용 프로그램 서비스에서 사용할 수 있는 다음 `Configure` 및 응용 프로그램에 걸쳐 있습니다.
 
