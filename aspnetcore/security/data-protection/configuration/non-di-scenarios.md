@@ -27,7 +27,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-none[Main](non-di-scenarios/_static/nodisample1.cs)]
 
-기본적으로 `DataProtectionProvider` 구체 형식은 원시 키 관련 자료를 파일 시스템에 저장하기 전에 암호화 하지 않습니다. 이는 개발자가 네트워크 공유를 지정하는 등의 경우를 지원하기 위한 것으로, 그런 경우에는 데이터 보호 시스템이 저장된 비활성 키에 대한 적절한 암호화 메커니즘을 자동으로 추론할 수 없습니다.
+기본적으로 `DataProtectionProvider` 구체 형식은 원시 키 관련 자료를 파일 시스템에 저장하기 전에 암호화하지 않습니다. 이는 개발자가 네트워크 공유를 지정하는 등의 경우를 지원하기 위한 것으로, 그런 경우에는 데이터 보호 시스템이 저장된 비활성 키에 대한 적절한 암호화 메커니즘을 자동으로 추론할 수 없습니다.
 
 또한, 기본적으로 `DataProtectionProvider` 구체 형식은 [응용 프로그램을 격리](xref:security/data-protection/configuration/overview#per-application-isolation)하지 않습니다. 동일한 키 디렉터리를 가리키는 모든 응용 프로그램들은 [용도 매개 변수](xref:security/data-protection/consumer-apis/purpose-strings)가 일치하기만 하면 페이로드를 공유할 수 있습니다.
 
