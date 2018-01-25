@@ -11,11 +11,11 @@ ms.assetid: 54bb961d-29d9-4dee-8e2c-a93fc33c16f2
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/web-api-help-pages-using-swagger
-ms.openlocfilehash: 630378510f4182034735cb4c306dfc5a761543ab
-ms.sourcegitcommit: f5a7f0198628f0d152257d90dba6c3a0747a355a
+ms.openlocfilehash: 08503b724aaea64ad2d32eaa710378ec77b9a1fe
+ms.sourcegitcommit: 2d23ea501e0213bbacf65298acf1c8bd17209540
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/19/2017
+ms.lasthandoff: 01/09/2018
 ---
 # <a name="aspnet-core-web-api-help-pages-using-swagger"></a>Swagger를 사용한 ASP.NET Core Web API 도움말 페이지
 
@@ -227,6 +227,8 @@ XML 주석은 다음 방법으로 사용하도록 설정할 수 있습니다.
 Visual Studio Code를 참조하세요.
 
 ---
+
+XML 주석을 사용하면 문서화되지 않은 public 형식과 멤버에 대한 디버그 정보를 제공합니다. 문서화되지 않은 형식과 멤버는 *공개된 형식 또는 멤버에 대한 XML 주석이 없습니다.*라는 경고 메시지로 표시됩니다.
 
 생성된 XML 파일을 사용하도록 Swagger를 구성합니다. Linux 또는 Windows가 아닌 운영 체제의 경우 파일 이름 및 경로는 대/소문자를 구분할 수 있습니다. 예를 들어 *ToDoApi.XML* 파일은 Windows에는 있지만 CentOS에는 없습니다.
 
