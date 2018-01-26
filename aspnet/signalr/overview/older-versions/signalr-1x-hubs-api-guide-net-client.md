@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/signalr-1x-hubs-api-guide-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: 9cf99ba7887e7db847097a63c0a964ef5d461a9d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9a61bd255a217876aa2fdbeb6389539483b9f013
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-signalr-hubs-api-guide---net-client-signalr-1x"></a>ASP.NET SignalR 허브 API 가이드-.NET 클라이언트 (SignalR 1.x)
 ====================
@@ -68,7 +68,7 @@ ms.lasthandoff: 11/10/2017
 - [SignalR 허브 API 가이드-서버](../guide-to-the-api/hubs-api-guide-server.md)
 - [SignalR 허브 API 가이드-JavaScript 클라이언트](../guide-to-the-api/hubs-api-guide-javascript-client.md)
 
-API 참조 항목의 링크를.NET 4.5 버전의 API 되도록합니다. .NET 4를 사용 하 여 참조 [.NET 4 버전의 API 항목](https://msdn.microsoft.com/en-us/library/jj891075(v=vs.100).aspx)합니다.
+API 참조 항목의 링크를.NET 4.5 버전의 API 되도록합니다. .NET 4를 사용 하 여 참조 [.NET 4 버전의 API 항목](https://msdn.microsoft.com/library/jj891075(v=vs.100).aspx)합니다.
 
 <a id="clientsetup"></a>
 
@@ -104,7 +104,7 @@ SignalR 클라이언트에가지고 있는 버전이 서버에 있는 버전과 
 
 ### <a name="cross-domain-connections-from-silverlight-clients"></a>Silverlight 클라이언트에서 도메인 간 연결
 
-Silverlight 클라이언트에서 도메인 간 연결을 설정 하는 방법에 대 한 정보를 참조 하십시오. [하는 서비스 사용 가능한 도메인 경계를 넘어](https://msdn.microsoft.com/en-us/library/cc197955(v=vs.95).aspx)합니다.
+Silverlight 클라이언트에서 도메인 간 연결을 설정 하는 방법에 대 한 정보를 참조 하십시오. [하는 서비스 사용 가능한 도메인 경계를 넘어](https://msdn.microsoft.com/library/cc197955(v=vs.95).aspx)합니다.
 
 <a id="configureconnection"></a>
 
@@ -126,7 +126,7 @@ WPF 클라이언트 2의 값이 기본값에서 동시 연결의 최대 수를 �
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-net-client/samples/sample4.cs?highlight=4)]
 
-자세한 내용은 참조 [ServicePointManager.DefaultConnectionLimit](https://msdn.microsoft.com/en-us/library/system.net.servicepointmanager.defaultconnectionlimit.aspx)합니다.
+자세한 내용은 참조 [ServicePointManager.DefaultConnectionLimit](https://msdn.microsoft.com/library/system.net.servicepointmanager.defaultconnectionlimit.aspx)합니다.
 
 <a id="querystring"></a>
 
@@ -148,12 +148,12 @@ WPF 클라이언트 2의 값이 기본값에서 동시 연결의 최대 수를 �
 
 [!code-csharp[Main](signalr-1x-hubs-api-guide-net-client/samples/sample7.cs?highlight=4)]
 
-[Microsoft.AspNet.SignalR.Client.Transports](https://msdn.microsoft.com/en-us/library/jj918090(v=vs.111).aspx) 네임 스페이스는 전송을 지정 하는 데 사용할 수 있는 다음과 같은 클래스가 포함 됩니다.
+[Microsoft.AspNet.SignalR.Client.Transports](https://msdn.microsoft.com/library/jj918090(v=vs.111).aspx) 네임 스페이스는 전송을 지정 하는 데 사용할 수 있는 다음과 같은 클래스가 포함 됩니다.
 
-- [LongPollingTransport](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.client.transports.longpollingtransport(v=vs.111).aspx)
-- [ServerSentEventsTransport](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.client.transports.serversenteventstransport(v=vs.111).aspx)
-- [WebSocketTransport](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.client.transports.websockettransport(v=vs.111).aspx) (사용 가능 서버와 클라이언트 모두.NET 4.5를 사용 하는 경우에 합니다.)
-- [AutoTransport](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.client.transports.autotransport(v=vs.111).aspx) (클라이언트와 서버 모두에서 지 원하는 최상의 전송에서 자동으로 선택 합니다. 이 기본 전송입니다. 전달 하려면이 작업에 `Start` 메서드는 모든 항목에 전달 하지 않을 것과 같습니다.)
+- [LongPollingTransport](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.transports.longpollingtransport(v=vs.111).aspx)
+- [ServerSentEventsTransport](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.transports.serversenteventstransport(v=vs.111).aspx)
+- [WebSocketTransport](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.transports.websockettransport(v=vs.111).aspx) (사용 가능 서버와 클라이언트 모두.NET 4.5를 사용 하는 경우에 합니다.)
+- [AutoTransport](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.transports.autotransport(v=vs.111).aspx) (클라이언트와 서버 모두에서 지 원하는 최상의 전송에서 자동으로 선택 합니다. 이 기본 전송입니다. 전달 하려면이 작업에 `Start` 메서드는 모든 항목에 전달 하지 않을 것과 같습니다.)
 
 ForeverFrame 전송 브라우저에만 사용 되기 때문에이 목록에 포함 되지 않습니다.
 
@@ -321,7 +321,7 @@ SignalR 다음 연결을 처리할 수 있는 수명 이벤트를 제공 합니�
 - `ConnectionSlow`: 클라이언트 느리거나 자주 삭제 연결을 검색 하는 경우 발생 합니다.
 - `Reconnecting`: 기본 전송 다시 시작 될 때 발생 합니다.
 - `Reconnected`: 기본 전송에 다시 연결 되 면 발생 합니다.
-- `StateChanged`: 연결 상태가 변경 될 때 발생 합니다. 이전 상태와 새 상태를 제공합니다. 연결에 대 한 정보에 대 한 상태 값 참조 [ConnectionState 열거형](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.client.connectionstate(v=vs.111).aspx)합니다.
+- `StateChanged`: 연결 상태가 변경 될 때 발생 합니다. 이전 상태와 새 상태를 제공합니다. 연결에 대 한 정보에 대 한 상태 값 참조 [ConnectionState 열거형](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.connectionstate(v=vs.111).aspx)합니다.
 - `Closed`: 연결을 끊을 때 발생 합니다.
 
 예를 들어 심각한 되지 않으며 간헐적인 연결 문제가 발생 하는 오류에 대 한 경고 메시지를 표시 하려는 경우 속도 저하가 또는 자주 등의 연결을 삭제 하는 중 처리 된 `ConnectionSlow` 이벤트입니다.
