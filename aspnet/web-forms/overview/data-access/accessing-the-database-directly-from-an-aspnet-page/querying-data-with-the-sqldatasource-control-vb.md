@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/querying-data-with-the-sqldatasource-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 84d2b9b5379475c4f8f2208a49b4f9e07b242a51
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a3832bd9847ec8e789b71d13b30a673c8779f4ac
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="querying-data-with-the-sqldatasource-control-vb"></a>SqlDataSource 컨트롤 (VB)를 사용 하 여 데이터를 쿼리합니다.
 ====================
@@ -33,7 +33,7 @@ ms.lasthandoff: 11/10/2017
 
 아키텍처 사용해본 지금까지 자습서의 모든 데이터로 작업 하는 것도 액세스, 삽입, 업데이트 및 아키텍처를 우회 하는 ASP.NET 페이지에서 직접 데이터베이스 데이터를 삭제할 수 있습니다. 이 위치는 특정 데이터베이스 쿼리 및 비즈니스 논리는 웹 페이지에 직접 합니다. 충분히 크거나 복잡 한 응용 프로그램 디자인, 구현 및 계층 구성된 구조를 사용 하는 성공, 업데이트 가능성 및 응용 프로그램의 유지 관리에 대 한 매우 중요 합니다. 하지만 강력한 아키텍처를 개발 할 수 있습니다 하지 매우 간단 하 고 일회용 응용 프로그램을 만들 때.
 
-ASP.NET 2.0에서는 5 개의 기본 제공 데이터 소스 컨트롤을 제공 [SqlDataSource](https://msdn.microsoft.com/en-us/library/dz12d98w%28vs.80%29.aspx), [AccessDataSource](https://msdn.microsoft.com/en-us/library/8e5545e1.aspx), [ObjectDataSource](https://msdn.microsoft.com/en-us/library/9a4kyhcx.aspx), [XmlDataSource](https://msdn.microsoft.com/en-us/library/e8d8587a%28en-US,VS.80%29.aspx), 및 [SiteMapDataSource](https://msdn.microsoft.com/en-us/library/5ex9t96x%28en-US,VS.80%29.aspx)합니다. SqlDataSource 액세스 하 고 Microsoft SQL Server, Microsoft Access, Oracle, MySQL 및 다른 사용자를 포함 하 여 관계형 데이터베이스에서 직접 데이터를 수정할 데 사용할 수 있습니다. 이 자습서에는 다음 세 SqlDataSource 컨트롤 작업, 삽입, 업데이트 및 데이터 삭제를 SqlDataSource를 사용 하는 방법 뿐만 아니라 쿼리 하는 방법을 필터 데이터베이스 데이터를 탐색 하는 방법을 검토 합니다.
+ASP.NET 2.0에서는 5 개의 기본 제공 데이터 소스 컨트롤을 제공 [SqlDataSource](https://msdn.microsoft.com/library/dz12d98w%28vs.80%29.aspx), [AccessDataSource](https://msdn.microsoft.com/library/8e5545e1.aspx), [ObjectDataSource](https://msdn.microsoft.com/library/9a4kyhcx.aspx), [XmlDataSource](https://msdn.microsoft.com/library/e8d8587a%28en-US,VS.80%29.aspx), 및 [SiteMapDataSource](https://msdn.microsoft.com/library/5ex9t96x%28en-US,VS.80%29.aspx)합니다. SqlDataSource 액세스 하 고 Microsoft SQL Server, Microsoft Access, Oracle, MySQL 및 다른 사용자를 포함 하 여 관계형 데이터베이스에서 직접 데이터를 수정할 데 사용할 수 있습니다. 이 자습서에는 다음 세 SqlDataSource 컨트롤 작업, 삽입, 업데이트 및 데이터 삭제를 SqlDataSource를 사용 하는 방법 뿐만 아니라 쿼리 하는 방법을 필터 데이터베이스 데이터를 탐색 하는 방법을 검토 합니다.
 
 
 ![ASP.NET 2.0 5 개의 기본 제공 데이터 소스 제어를 포함합니다.](querying-data-with-the-sqldatasource-control-vb/_static/image1.gif)
@@ -144,12 +144,12 @@ SqlDataSource 컨트롤의 데이터 소스 구성 마법사가 표시 됩니다
 
 마법사를 완료 하려면 마침을 클릭 합니다.
 
-ObjectDataSource를와 SqlDataSource의 마법사 단순히 값을 할당 컨트롤의 속성 즉 처럼는 [ `ConnectionString` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sqldatasource.connectionstring.aspx) 및 [ `SelectCommand` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sqldatasource.selectcommand.aspx) 속성입니다. 마법사를 완료 한 후 SqlDataSource 컨트롤 s 선언적 태그는 다음과 비슷하게 표시 됩니다.
+ObjectDataSource를와 SqlDataSource의 마법사 단순히 값을 할당 컨트롤의 속성 즉 처럼는 [ `ConnectionString` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.connectionstring.aspx) 및 [ `SelectCommand` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.selectcommand.aspx) 속성입니다. 마법사를 완료 한 후 SqlDataSource 컨트롤 s 선언적 태그는 다음과 비슷하게 표시 됩니다.
 
 
 [!code-aspx[Main](querying-data-with-the-sqldatasource-control-vb/samples/sample2.aspx)]
 
-`ConnectionString` 속성 데이터베이스에 연결 하는 방법에 대해 설명 합니다. 이 속성 완료 하드 코드 된 연결 문자열 값을 할당 하거나에서 연결 문자열을를 가리킬 수 `Web.config`합니다. Web.config의 연결 문자열 값을 참조 하려면 구문을 사용 하 여 `<%$ expressionPrefix:expressionValue %>`합니다. 일반적으로 *expressionPrefix* ConnectionStrings은 및 *expressionValue* 에서 연결 문자열의 이름인는 `Web.config` [ `<connectionStrings>` 섹션](https://msdn.microsoft.com/en-us/library/bf7sd233.aspx)합니다. 하지만 구문을 사용 참조에 `<appSettings>` 요소 또는 리소스 파일에서 콘텐츠입니다. 참조 [ASP.NET 식 개요](https://msdn.microsoft.com/en-us/library/d5bd1tad.aspx) 이 구문에 대 한 자세한 합니다.
+`ConnectionString` 속성 데이터베이스에 연결 하는 방법에 대해 설명 합니다. 이 속성 완료 하드 코드 된 연결 문자열 값을 할당 하거나에서 연결 문자열을를 가리킬 수 `Web.config`합니다. Web.config의 연결 문자열 값을 참조 하려면 구문을 사용 하 여 `<%$ expressionPrefix:expressionValue %>`합니다. 일반적으로 *expressionPrefix* ConnectionStrings은 및 *expressionValue* 에서 연결 문자열의 이름인는 `Web.config` [ `<connectionStrings>` 섹션](https://msdn.microsoft.com/library/bf7sd233.aspx)합니다. 하지만 구문을 사용 참조에 `<appSettings>` 요소 또는 리소스 파일에서 콘텐츠입니다. 참조 [ASP.NET 식 개요](https://msdn.microsoft.com/library/d5bd1tad.aspx) 이 구문에 대 한 자세한 합니다.
 
 `SelectCommand` 속성 임시 SQL 문 또는 저장된 프로시저 실행 데이터를 반환할 수를 지정 합니다.
 
@@ -190,7 +190,7 @@ SqlDataSource 발생 페이징 및 정렬 된 또 다른 주의 해야 합니다
 
 정렬 및 페이징을 SqlDataSource 자유로운 형식의 데이터 집합에는 데이터베이스 데이터를 검색 하기 때문에 작동 합니다. 데이터 집합에서 쿼리에 의해 반환 되는 필수적인 측면 페이징을 구현 하는 레코드의 총 수를 조사할 수 있습니다. 또한 데이터 집합의 결과 DataView를 통해 정렬할 수 있습니다. 이러한 기능은 GridView 요청 페이징 또는 데이터를 정렬 하는 경우에 자동으로 SqlDataSource에서 사용 됩니다.
 
-SqlDataSource 변경 하 여 데이터 집합 대신 DataReader를 반환 하도록 구성할 수 있습니다는 [ `DataSourceMode` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sqldatasource.datasourcemode.aspx) 에서 `DataSet` (기본값)를 `DataReader`합니다. SqlDataSource의 결과 DataReader를 필요로 하는 기존 코드를 전달할 때 상황에서 DataReader를 사용 하 여을 선호 될 수 있습니다. 또한 DataReaders는 데이터 집합 보다 훨씬 단순한 개체, 이므로 더 나은 성능을 제공 합니다. 그러나, 이렇게 변경 하는 경우 데이터 웹 컨트롤도 ַ ׂ 하거나 SqlDataSource 레코드 수는 쿼리에 의해 반환 된 확인할 수 없는 하지도 않습니다 DataReader 이후 페이지에 반환된 된 데이터 정렬에 대 한 모든 기술을 제공 합니다.
+SqlDataSource 변경 하 여 데이터 집합 대신 DataReader를 반환 하도록 구성할 수 있습니다는 [ `DataSourceMode` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.datasourcemode.aspx) 에서 `DataSet` (기본값)를 `DataReader`합니다. SqlDataSource의 결과 DataReader를 필요로 하는 기존 코드를 전달할 때 상황에서 DataReader를 사용 하 여을 선호 될 수 있습니다. 또한 DataReaders는 데이터 집합 보다 훨씬 단순한 개체, 이므로 더 나은 성능을 제공 합니다. 그러나, 이렇게 변경 하는 경우 데이터 웹 컨트롤도 ַ ׂ 하거나 SqlDataSource 레코드 수는 쿼리에 의해 반환 된 확인할 수 없는 하지도 않습니다 DataReader 이후 페이지에 반환된 된 데이터 정렬에 대 한 모든 기술을 제공 합니다.
 
 ## <a name="step-4-using-a-custom-sql-statement-or-stored-procedure"></a>4 단계:를 사용 하 여 사용자 지정 SQL 문 또는 저장 프로시저
 
@@ -249,9 +249,9 @@ SqlDataSource 컨트롤을 구성할 때 사용자 지정 SQL 문 또는 저장�
 이 자습서에 설명 된 항목에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
 - [관계형 데이터베이스 데이터에 액세스](http://aspnet.4guysfromrolla.com/articles/022206-1.aspx)
-- [SqlDataSource 컨트롤 개요](https://msdn.microsoft.com/en-us/library/dz12d98w.aspx)
+- [SqlDataSource 컨트롤 개요](https://msdn.microsoft.com/library/dz12d98w.aspx)
 - [ASP.NET 빠른 시작 자습서: SqlDataSource 컨트롤](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/data/sqldatasource.aspx)
-- [Web.config `<connectionStrings>` 요소](https://msdn.microsoft.com/en-us/library/bf7sd233.aspx)
+- [Web.config `<connectionStrings>` 요소](https://msdn.microsoft.com/library/bf7sd233.aspx)
 - [데이터베이스 연결 문자열 참조](http://www.connectionstrings.com/)
 
 ## <a name="about-the-author"></a>작성자 정보

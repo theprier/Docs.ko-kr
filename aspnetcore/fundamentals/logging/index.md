@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/logging/index
-ms.openlocfilehash: 387d19af9165d4b54ce3cb1a9b04412271da6fb0
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: af8364c584b686fd5c0fe30a89e241d9d08a30c0
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-logging-in-aspnet-core"></a>ASP.NET Core에 로그인 소개
 
@@ -356,7 +356,7 @@ System.Exception: Item not found exception.
 
 [!code-csharp[](index/sample/Startup.cs?name=snippet_AddConsoleAndDebugWithFilter&highlight=6-7)]
 
-`AddEventLog` 메서드는 `EventLogSettings` 인스턴스를 사용하는 오버로드를 갖고 있으며, 이 인스턴스의 `Filter` 속성에는 필터링 함수가 포함될 수 있습니다. TraceSource 공급자는 오버로드를 제공하지 않습니다. 로깅 수준 및 기타 매개가 사용하는 `SourceSwitch` 및 `TraceListener`를 기반으로 하기 때문입니다.
+`AddEventLog` 메서드는 `EventLogSettings` 인스턴스를 사용하는 오버로드를 갖고 있으며, 이 인스턴스의 `Filter` 속성에는 필터링 함수가 포함될 수 있습니다. TraceSource 공급자는 오버로드를 제공하지 않습니다. 로깅 수준 및 기타 매개 변수가 사용하는 `SourceSwitch` 및 `TraceListener`를 기반으로 하기 때문입니다.
 
 `WithFilter` 확장 메서드를 사용하여 `ILoggerFactory` 인스턴스에 등록된 모든 공급자에 대한 필터링 규칙을 설정할 수 있습니다. 아래 예제는 프레임워크 로그(범주가 "Microsoft" 또는 "시스템"으로 시작)를 경고로 제한하고 디버그 수준에서 앱 로그를 허용합니다.
 
@@ -610,7 +610,7 @@ App Service 앱에 배포할 때 응용 프로그램은 Azure Portal **App Servi
 
 로그 파일의 기본 위치는 *D:\\home\\LogFiles\\Application* 폴더이며, 기본 파일 이름은 *diagnostics-yyyymmdd.txt*입니다. 기본 파일 크기 제한은 10MB이고, 보존되는 기본 최대 파일 수는 2입니다. 기본 BLOB 이름은 *{app-name}{timestamp}/yyyy/mm/dd/hh/{guid}-applicationLog.txt*입니다. 기본 동작에 대한 자세한 내용은 [AzureAppServicesDiagnosticsSettings](https://github.com/aspnet/Logging/blob/c7d0b1b88668ff4ef8a86ea7d2ebb5ca7f88d3e0/src/Microsoft.Extensions.Logging.AzureAppServices/AzureAppServicesDiagnosticsSettings.cs)를 참조하세요.
 
-공급자는 프로젝트가 Azure 환경에서 실행되는 경우에만 작동합니다. 로컬로 실행하는 경우에는 아무 영향도 없습니다. BLOB에 대한 로컬 파일 또는 로컬 개발 저장소에 기록하지 않습니다.
+공급자는 프로젝트가 Azure 환경에서 실행되는 경우에만 작동합니다. 로컬로 실행하는 경우에는 아무 영향도 없습니다. Blob에 대한 로컬 파일 또는 로컬 개발 저장소에 기록하지 않습니다.
 
 ## <a name="third-party-logging-providers"></a>타사 로깅 공급자
 

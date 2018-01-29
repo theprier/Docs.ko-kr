@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 3d6cc52f7fa3089f30f1a6bbd76593f1eca95009
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 85276377671b96e65406639c8584d9ebf8d77ff7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="advanced-entity-framework-6-scenarios-for-an-mvc-5-web-application-12-of-12"></a>MVC 5 웹 응용 프로그램 (12 / 12)에 대 한 고급 Entity Framework 6 시나리오
 ====================
@@ -58,9 +58,9 @@ ms.lasthandoff: 11/10/2017
 
 엔터티 프레임 워크 코드의 첫 번째 API에는 SQL 명령을 데이터베이스에 직접 전달할 수 있도록 하는 방법을 제공 합니다. 다음과 같은 옵션을 선택할 수 있습니다.
 
-- 사용 하 여 [DbSet.SqlQuery](https://msdn.microsoft.com/en-us/library/system.data.entity.dbset.sqlquery.aspx) 엔터티 형식을 반환 하는 쿼리에 대 한 메서드. 반환 된 개체에 필요한 형식 이어야 합니다는 `DbSet` 있으며 개체를 자동으로 추적 됩니다는 데이터베이스 컨텍스트에서 해제 하지 않으면 추적 합니다. (다음 섹션에 대 한 참조는 [AsNoTracking](https://msdn.microsoft.com/en-us/library/system.data.entity.dbextensions.asnotracking.aspx) 메서드.)
-- 사용 하 여는 [Database.SqlQuery](https://msdn.microsoft.com/en-us/library/system.data.entity.database.sqlquery.aspx) 엔터티 지원 하지 않는 형식을 반환 하는 쿼리에 메서드. 반환 된 데이터 엔터티 형식을 검색 하려면이 메서드를 사용 하는 경우에 데이터베이스 컨텍스트에 의해 추적 되지 않습니다.
-- 사용 하 여 [Database.ExecuteSqlCommand](https://msdn.microsoft.com/en-us/library/gg679456.aspx) 쿼리가 아닌 명령에 대 한 합니다.
+- 사용 하 여 [DbSet.SqlQuery](https://msdn.microsoft.com/library/system.data.entity.dbset.sqlquery.aspx) 엔터티 형식을 반환 하는 쿼리에 대 한 메서드. 반환 된 개체에 필요한 형식 이어야 합니다는 `DbSet` 있으며 개체를 자동으로 추적 됩니다는 데이터베이스 컨텍스트에서 해제 하지 않으면 추적 합니다. (다음 섹션에 대 한 참조는 [AsNoTracking](https://msdn.microsoft.com/library/system.data.entity.dbextensions.asnotracking.aspx) 메서드.)
+- 사용 하 여는 [Database.SqlQuery](https://msdn.microsoft.com/library/system.data.entity.database.sqlquery.aspx) 엔터티 지원 하지 않는 형식을 반환 하는 쿼리에 메서드. 반환 된 데이터 엔터티 형식을 검색 하려면이 메서드를 사용 하는 경우에 데이터베이스 컨텍스트에 의해 추적 되지 않습니다.
+- 사용 하 여 [Database.ExecuteSqlCommand](https://msdn.microsoft.com/library/gg679456.aspx) 쿼리가 아닌 명령에 대 한 합니다.
 
 Entity Framework 사용의 장점 중 하나를 방지할 수 제한 된 데이터를 저장 하는 특정 방법에 가깝게 너무 코드입니다. 생성 하 여 SQL 쿼리 및 명령, 직접 작성 하지 않아도 하므로 수행 합니다. 하지만 예외적인 시나리오 수동으로 만든 특정 SQL 쿼리를 실행 해야 할 때 있으며 이러한 방법을 원활 하 게 이러한 예외를 처리할 수 있습니다.
 
@@ -68,7 +68,7 @@ Entity Framework 사용의 장점 중 하나를 방지할 수 제한 된 데이�
 
 ### <a name="calling-a-query-that-returns-entities"></a>엔터티를 반환 하는 쿼리 호출
 
-[DbSet&lt;TEntity&gt; ](https://msdn.microsoft.com/en-us/library/gg696460.aspx) 클래스 형식의 엔터티를 반환 하는 쿼리를 실행 하는 데 사용할 수 있는 메서드를 제공 `TEntity`합니다. 이 방법을 보려면 있습니다의 코드를 변경 합니다는 `Details` 의 메서드는 `Department` 컨트롤러입니다.
+[DbSet&lt;TEntity&gt; ](https://msdn.microsoft.com/library/gg696460.aspx) 클래스 형식의 엔터티를 반환 하는 쿼리를 실행 하는 데 사용할 수 있는 메서드를 제공 `TEntity`합니다. 이 방법을 보려면 있습니다의 코드를 변경 합니다는 `Details` 의 메서드는 `Department` 컨트롤러입니다.
 
 *DepartmentController.cs*에 `Details` 메서드를 대체는 `db.Departments.FindAsync` 메서드 호출을 `db.Departments.SqlQuery` 다음 강조 표시 된 코드에 나와 있는 것 처럼 메서드 호출:
 
@@ -84,7 +84,7 @@ Entity Framework 사용의 장점 중 하나를 방지할 수 제한 된 데이�
 
 [!code-csharp[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample2.cs)]
 
-LINQ를 사용 하는 것이 아니라 SQL에서 직접이 데이터는 코드를 작성 한다고 가정 합니다. 엔터티 개체 이외의 형식을 반환 하는 쿼리를 실행 해야 할 즉 사용 해야는 [Database.SqlQuery](https://msdn.microsoft.com/en-us/library/system.data.entity.database.sqlquery(v=VS.103).aspx) 메서드.
+LINQ를 사용 하는 것이 아니라 SQL에서 직접이 데이터는 코드를 작성 한다고 가정 합니다. 엔터티 개체 이외의 형식을 반환 하는 쿼리를 실행 해야 할 즉 사용 해야는 [Database.SqlQuery](https://msdn.microsoft.com/library/system.data.entity.database.sqlquery(v=VS.103).aspx) 메서드.
 
 *HomeController.cs*에서 LINQ 문을 대체는 `About` 다음 강조 표시 된 코드에 표시 된 대로 SQL 문 사용 하 여 메서드:
 
@@ -130,19 +130,19 @@ Contoso 대학 관리자가 모든 과정에 대 한 크레딧의 수를 변경 
 
 ![Courses_Index_page_showing_revised_credits](advanced-entity-framework-scenarios-for-an-mvc-web-application/_static/image9.png)
 
-원시 SQL 쿼리 하는 방법에 대 한 자세한 내용은 참조 [원시 SQL 쿼리](https://msdn.microsoft.com/en-us/data/jj592907) msdn 합니다.
+원시 SQL 쿼리 하는 방법에 대 한 자세한 내용은 참조 [원시 SQL 쿼리](https://msdn.microsoft.com/data/jj592907) msdn 합니다.
 
 <a id="notracking"></a>
 ## <a name="no-tracking-queries"></a>No 추적 쿼리
 
 데이터베이스 컨텍스트 테이블 행을 검색 하 고을 나타내는 엔터티 개체를 만드는 때 기본적으로를 추적 데이터베이스에 포함 된 내용으로 메모리에 엔터티 동기화 되었는지 여부입니다. 데이터를 메모리에에서 한 캐시 역할을 하 고 엔터티를 업데이트할 때 사용 됩니다. 이 캐싱은 종종에 필요 하지 않은 웹 응용 프로그램 컨텍스트는 일반적으로 수명이 짧은 (새로운 삭제을 만들어 각 요청에 대 한) 인스턴스와 컨텍스트 때문에 읽는 엔터티는 해당 엔터티를 다시 사용 하기 전에 일반적으로 삭제 됩니다.
 
-사용 하 여 메모리에 엔터티 개체의 추적을 해제할 수 있습니다는 [AsNoTracking](https://msdn.microsoft.com/en-us/library/gg679352(v=vs.103).aspx) 메서드. 다음과 같은 일반적인 시나리오를 사용할 수 있습니다.
+사용 하 여 메모리에 엔터티 개체의 추적을 해제할 수 있습니다는 [AsNoTracking](https://msdn.microsoft.com/library/gg679352(v=vs.103).aspx) 메서드. 다음과 같은 일반적인 시나리오를 사용할 수 있습니다.
 
 - 쿼리 추적을 해제 성능을 눈에 띄게 향상 시킬 수 있는 데이터의 큰 볼륨을 검색 합니다.
 - 업데이트 하려면 엔터티를 연결 하려고 하지만 이전 다른 목적을 위해 동일한 엔터티를 검색 합니다. 엔터티는 데이터베이스 컨텍스트에서 이미 추적 중인를 변경 하려면 해당 하는 엔터티를 연결할 수 없습니다. 이 상황을 처리 하는 한 가지 방법은 사용 하는 것은 `AsNoTracking` 이전 쿼리를 사용 하는 옵션입니다.
 
-사용 하는 방법을 보여 주는 예제는 [AsNoTracking](https://msdn.microsoft.com/en-us/library/gg679352(v=vs.103).aspx) 메서드를 참조 [이 자습서의 이전 버전](../../older-versions/getting-started-with-ef-5-using-mvc-4/advanced-entity-framework-scenarios-for-an-mvc-web-application.md)합니다. 자습서의이 버전 하지 않는 Modified에 플래그를 설정 편집 메서드는 모델 바인더를 만든 엔터티 되므로 필요 하지 않습니다 `AsNoTracking`합니다.
+사용 하는 방법을 보여 주는 예제는 [AsNoTracking](https://msdn.microsoft.com/library/gg679352(v=vs.103).aspx) 메서드를 참조 [이 자습서의 이전 버전](../../older-versions/getting-started-with-ef-5-using-mvc-4/advanced-entity-framework-scenarios-for-an-mvc-web-application.md)합니다. 자습서의이 버전 하지 않는 Modified에 플래그를 설정 편집 메서드는 모델 바인더를 만든 엔터티 되므로 필요 하지 않습니다 `AsNoTracking`합니다.
 
 <a id="sql"></a>
 ## <a name="examining-sql-sent-to-the-database"></a>데이터베이스에 전송 SQL 검사
@@ -204,8 +204,8 @@ A `SelectList` 드롭 다운 목록에 대 한 모든 부서가 포함 된 컬�
 저장소 및 작업 패턴의 단위를 구현 하는 방법에 대 한 자세한 내용은 참조 [이 자습서 시리즈의 Entity Framework 5 버전](../../older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application.md)합니다. Entity Framework 6에서 TDD를 구현 하는 방법에 대 한 내용은 다음 리소스를 참조 합니다.
 
 - [EF6 사용 하는 방법을 Mocking DbSets 보다 쉽게](http://thedatafarm.com/data-access/how-ef6-enables-mocking-dbsets-more-easily/)
-- [모의 프레임 워크를 사용 하 여 테스트](https://msdn.microsoft.com/en-us/data/dn314429)
-- [사용자 고유의 test double을 사용 하 여 테스트](https://msdn.microsoft.com/en-us/data/dn314431)
+- [모의 프레임 워크를 사용 하 여 테스트](https://msdn.microsoft.com/data/dn314429)
+- [사용자 고유의 test double을 사용 하 여 테스트](https://msdn.microsoft.com/data/dn314431)
 
 <a id="proxies"></a>
 ## <a name="proxy-classes"></a>프록시 클래스
@@ -220,11 +220,11 @@ Entity Framework (예: 쿼리를 실행 하는 경우) 엔터티 인스턴스를
 
 대부분의 프록시를 사용 하이 여가 주의 해야 할 필요 하지 않습니다 되지만 예외가:
 
-- 일부 시나리오에서는 Entity Framework 프록시 인스턴스를 만들지 못하도록는 것이 좋습니다. 예를 들어 엔터티를 직렬화 하는 경우 일반적으로 POCO 클래스를 프록시 클래스가 아니라 보겠습니다. 에 표시 된 것 처럼 serialization 문제를 방지 하는 한 가지 방법은 데이터 전송 개체 (Dto) 대신 엔터티 개체를 serialize 하는 것은 [Entity Framework를 사용 하 여 웹 API를 사용 하 여](../../../../web-api/overview/data/using-web-api-with-entity-framework/part-1.md) 자습서입니다. 또 다른 방법은 [프록시 생성 기능을 해제](https://msdn.microsoft.com/en-US/data/jj592886.aspx)합니다.
-- 사용 하 여 엔터티 클래스를 인스턴스화하는 `new` 연산자, 프록시 인스턴스를 가져오지 않음. 즉, 변경 내용 추적을 지연 로드 및 자동과 같은 기능을 활용 하지 않습니다. 이 일반적으로 알겠습니다. 일반적으로 필요 하지 않습니다 지연 로드는 데이터베이스에 없는 새 엔터티를 작성 하는 동안에 및 변경 내용 추적을으로 엔터티를 명시적으로 표시 하는 경우 일반적으로 필요 하지 않습니다 `Added`합니다. 그러나 지연 로드 해야 하는 경우 필요한 변경 내용 추적을 만들 수 있습니다 새 엔터티 인스턴스를 사용 하 여 프록시는 [만들기](https://msdn.microsoft.com/en-us/library/gg679504.aspx) 의 메서드는 `DbSet` 클래스입니다.
-- 프록시 형식을에서 실제 엔터티 형식을 가져올 좋습니다. 사용할 수는 [GetObjectType](https://msdn.microsoft.com/en-us/library/system.data.objects.objectcontext.getobjecttype.aspx) 의 메서드는 `ObjectContext` 클래스의 프록시 형식 인스턴스를 실제 엔터티 형식을 가져올 수 있습니다.
+- 일부 시나리오에서는 Entity Framework 프록시 인스턴스를 만들지 못하도록는 것이 좋습니다. 예를 들어 엔터티를 직렬화 하는 경우 일반적으로 POCO 클래스를 프록시 클래스가 아니라 보겠습니다. 에 표시 된 것 처럼 serialization 문제를 방지 하는 한 가지 방법은 데이터 전송 개체 (Dto) 대신 엔터티 개체를 serialize 하는 것은 [Entity Framework를 사용 하 여 웹 API를 사용 하 여](../../../../web-api/overview/data/using-web-api-with-entity-framework/part-1.md) 자습서입니다. 또 다른 방법은 [프록시 생성 기능을 해제](https://msdn.microsoft.com/data/jj592886.aspx)합니다.
+- 사용 하 여 엔터티 클래스를 인스턴스화하는 `new` 연산자, 프록시 인스턴스를 가져오지 않음. 즉, 변경 내용 추적을 지연 로드 및 자동과 같은 기능을 활용 하지 않습니다. 이 일반적으로 알겠습니다. 일반적으로 필요 하지 않습니다 지연 로드는 데이터베이스에 없는 새 엔터티를 작성 하는 동안에 및 변경 내용 추적을으로 엔터티를 명시적으로 표시 하는 경우 일반적으로 필요 하지 않습니다 `Added`합니다. 그러나 지연 로드 해야 하는 경우 필요한 변경 내용 추적을 만들 수 있습니다 새 엔터티 인스턴스를 사용 하 여 프록시는 [만들기](https://msdn.microsoft.com/library/gg679504.aspx) 의 메서드는 `DbSet` 클래스입니다.
+- 프록시 형식을에서 실제 엔터티 형식을 가져올 좋습니다. 사용할 수는 [GetObjectType](https://msdn.microsoft.com/library/system.data.objects.objectcontext.getobjecttype.aspx) 의 메서드는 `ObjectContext` 클래스의 프록시 형식 인스턴스를 실제 엔터티 형식을 가져올 수 있습니다.
 
-자세한 내용은 참조 [프록시 작업](https://msdn.microsoft.com/en-us/data/JJ592886.aspx) msdn 합니다.
+자세한 내용은 참조 [프록시 작업](https://msdn.microsoft.com/data/JJ592886.aspx) msdn 합니다.
 
 <a id="changedetection"></a>
 ## <a name="automatic-change-detection"></a>자동 변경 내용 검색
@@ -241,12 +241,12 @@ Entity Framework 엔터티의 현재 값과 원래 값을 비교 하 여 엔터�
 - `DbContext.Entry`
 - `DbChangeTracker.Entries`
 
-많은 엔터티를 추적 하 고 있는 경우 루프에서 여러 번 다음이 방법 중 하나 호출 하면 변경 내용 자동 감지를 사용 하 여 일시적으로 해제 하 여 성능 향상을 발생할 수 있습니다는 [AutoDetectChangesEnabled](https://msdn.microsoft.com/en-us/library/system.data.entity.infrastructure.dbcontextconfiguration.autodetectchangesenabled.aspx) 속성입니다. 자세한 내용은 참조 [자동으로 검색 되는 변경 내용을](https://msdn.microsoft.com/en-us/data/jj556205) msdn 합니다.
+많은 엔터티를 추적 하 고 있는 경우 루프에서 여러 번 다음이 방법 중 하나 호출 하면 변경 내용 자동 감지를 사용 하 여 일시적으로 해제 하 여 성능 향상을 발생할 수 있습니다는 [AutoDetectChangesEnabled](https://msdn.microsoft.com/library/system.data.entity.infrastructure.dbcontextconfiguration.autodetectchangesenabled.aspx) 속성입니다. 자세한 내용은 참조 [자동으로 검색 되는 변경 내용을](https://msdn.microsoft.com/data/jj556205) msdn 합니다.
 
 <a id="validation"></a>
 ## <a name="automatic-validation"></a>자동 유효성 검사
 
-호출 하는 경우는 `SaveChanges` 메서드를 Entity Framework 기본적으로 모든 변경 된 엔터티의 모든 속성의 데이터를 하기 전에 유효성 검사 데이터베이스를 업데이트 합니다. 많은 엔터티를 업데이트 한 및 이미이 작업은 필요 하지는 데이터를 확인 했으므로 있습니다 고 저장 프로세스를 만들 수는 경우 변경 내용을 유효성 검사를 일시적으로 해제 하 여 더 짧은 시간을 적용 합니다. 사용 하 여 해당 하는 작업을 수행할 수는 [ValidateOnSaveEnabled](https://msdn.microsoft.com/en-us/library/system.data.entity.infrastructure.dbcontextconfiguration.validateonsaveenabled.aspx) 속성입니다. 자세한 내용은 참조 [유효성 검사](https://msdn.microsoft.com/en-us/data/gg193959) msdn 합니다.
+호출 하는 경우는 `SaveChanges` 메서드를 Entity Framework 기본적으로 모든 변경 된 엔터티의 모든 속성의 데이터를 하기 전에 유효성 검사 데이터베이스를 업데이트 합니다. 많은 엔터티를 업데이트 한 및 이미이 작업은 필요 하지는 데이터를 확인 했으므로 있습니다 고 저장 프로세스를 만들 수는 경우 변경 내용을 유효성 검사를 일시적으로 해제 하 여 더 짧은 시간을 적용 합니다. 사용 하 여 해당 하는 작업을 수행할 수는 [ValidateOnSaveEnabled](https://msdn.microsoft.com/library/system.data.entity.infrastructure.dbcontextconfiguration.validateonsaveenabled.aspx) 속성입니다. 자세한 내용은 참조 [유효성 검사](https://msdn.microsoft.com/data/gg193959) msdn 합니다.
 
 <a id="tools"></a>
 ## <a name="entity-framework-power-tools"></a>Entity Framework 파워 도구
@@ -267,7 +267,7 @@ Entity Framework 6에 대 한 소스 코드에서 제공 됩니다. [GitHub](htt
 <a id="summary"></a>
 ## <a name="summary"></a>요약
 
-이 일련의 ASP.NET MVC 응용 프로그램에서 Entity Framework를 사용 하는 자습서를 완료 했습니다. Entity Framework를 사용 하 여 데이터를 사용 하는 방법에 대 한 자세한 내용은 참조는 [msdn 설명서 페이지 EF](https://msdn.microsoft.com/en-us/data/ee712907) 및 [ASP.NET 데이터 액세스-권장 리소스](../../../../whitepapers/aspnet-data-access-content-map.md)합니다.
+이 일련의 ASP.NET MVC 응용 프로그램에서 Entity Framework를 사용 하는 자습서를 완료 했습니다. Entity Framework를 사용 하 여 데이터를 사용 하는 방법에 대 한 자세한 내용은 참조는 [msdn 설명서 페이지 EF](https://msdn.microsoft.com/data/ee712907) 및 [ASP.NET 데이터 액세스-권장 리소스](../../../../whitepapers/aspnet-data-access-content-map.md)합니다.
 
 작성 한 후 웹 응용 프로그램을 배포 하는 방법에 대 한 자세한 내용은 참조 하십시오. [권장 리소스-ASP.NET 웹 배포](../../../../whitepapers/aspnet-web-deployment-content-map.md) MSDN 라이브러리에서.
 
