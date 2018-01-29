@@ -9,17 +9,19 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app-xplat/start-mvc
-ms.openlocfilehash: f439b6414d95f6edd1c2201c8aee043f1eab9b76
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: dae1b0f7c8700bbd99080752fb4bb37f93441c9a
+ms.sourcegitcommit: 18ff1fdaa3e1ae204ed6a2ba9351ce8cf1371c85
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="getting-started-with-aspnet-core-mvc--on-mac-linux-or-windows"></a>Mac, Linux 또는 Windows에서 ASP.NET Core MVC 시작
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-이 자습서에서는 [Visual Studio Code](https://code.visualstudio.com)(VS Code)를 사용하여 ASP.NET Core MVC 웹앱을 빌드하는 기본 사항에 대해 알아봅니다. 이 자습서에서는 VS 코드를 잘 알고 있다고 가정합니다. 자세한 내용은 [VS 코드 시작](https://code.visualstudio.com/docs) 및 [Visual Studio Code 도움말](#visual-studio-code-help)을 참조하세요. [!INCLUDE[consider RP](../../includes/razor.md)]
+이 자습서에서는 [Visual Studio Code](https://code.visualstudio.com)(VS Code)를 사용하여 ASP.NET Core MVC 웹앱을 빌드하는 기본 사항에 대해 알아봅니다. 이 자습서에서는 VS 코드를 잘 알고 있다고 가정합니다. 자세한 내용은 [VS 코드 시작](https://code.visualstudio.com/docs) 및 [Visual Studio Code 도움말](#visual-studio-code-help)을 참조하세요. 
+
+[!INCLUDE[consider RP](../../includes/razor.md)]
 
 이 자습서는 세 가지 버전이 있습니다.
 
