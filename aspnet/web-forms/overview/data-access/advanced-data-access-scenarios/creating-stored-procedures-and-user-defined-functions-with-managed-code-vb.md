@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-stored-procedures-and-user-defined-functions-with-managed-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: efec52c4085c24b1d6227a86f7c435ca657e493c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e30df9ddc094d0390d9e5985ec676713b57feaf4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-stored-procedures-and-user-defined-functions-with-managed-code-vb"></a>저장 프로시저와 관리 코드 (VB)와 사용자 정의 함수 만들기
 ====================
@@ -33,12 +33,12 @@ Microsoft SQL Server 2005 s와 같은 데이터베이스 사용은 [Transact-Str
 
 본질적으로 데이터 집합으로 작업 하기 위한 SQL 설계 되었습니다. `SELECT`, `UPDATE`, 및 `DELETE` 문을 기본적으로 해당 테이블의 모든 레코드에 적용 되 고 뿐 해당 `WHERE` 절. 아직 설계 하 고 스칼라 데이터를 조작 하기 위해 한 번에 하나의 레코드를 사용 하기 위한 언어 기능이 많이 있습니다. [`CURSOR`s](http://www.sqlteam.com/item.asp?ItemID=553) 레코드 집합을 통해 한 번에 하나씩 반복 될 수 있습니다. 문자열 조작 함수 같은 `LEFT`, `CHARINDEX`, 및 `PATINDEX` 스칼라 데이터와 함께 작동 합니다. SQL에도 같은 제어 흐름 문의 `IF` 및 `WHILE`합니다.
 
-Microsoft SQL Server 2005 이전 저장된 프로시저 및 Udf 수로 정의 될 T-SQL 문 모음입니다. 그러나 SQL Server 2005와의 통합을 제공 하도록 디자인 된는 [공용 언어 런타임 (CLR)](https://msdn.microsoft.com/en-us/netframework/aa497266.aspx), 하는 모든.NET 어셈블리에서 사용 하는 런타임입니다. 따라서 저장된 프로시저 및 Udf는 SQL Server 2005 데이터베이스에 만들 수 있습니다 관리 코드를 사용 하 여 합니다. 즉, 저장된 프로시저 또는 UDF를 Visual Basic 클래스의 메서드로 만들 수 있습니다. 이렇게 하면 이러한 저장된 프로시저 및 사용자 지정 클래스와.NET Framework의 기능을 활용 하는 Udf 수 있습니다.
+Microsoft SQL Server 2005 이전 저장된 프로시저 및 Udf 수로 정의 될 T-SQL 문 모음입니다. 그러나 SQL Server 2005와의 통합을 제공 하도록 디자인 된는 [공용 언어 런타임 (CLR)](https://msdn.microsoft.com/netframework/aa497266.aspx), 하는 모든.NET 어셈블리에서 사용 하는 런타임입니다. 따라서 저장된 프로시저 및 Udf는 SQL Server 2005 데이터베이스에 만들 수 있습니다 관리 코드를 사용 하 여 합니다. 즉, 저장된 프로시저 또는 UDF를 Visual Basic 클래스의 메서드로 만들 수 있습니다. 이렇게 하면 이러한 저장된 프로시저 및 사용자 지정 클래스와.NET Framework의 기능을 활용 하는 Udf 수 있습니다.
 
 이 자습서에 살펴보겠습니다 관리 되는 만드는 방법을 저장 프로시저 및 사용자 정의 함수 및 Northwind 데이터베이스에 통합 하는 방법. Let s가 시작 되었습니다.
 
 > [!NOTE]
-> 관리 되는 데이터베이스 개체에는 SQL 대응에 비해 몇 가지 이점을 제공 합니다. 언어 풍부 하 고 친숙 하 고 기존 코드와 논리를 다시 사용할 수 있는 가지 주요 이점이 있습니다. 하지만 관리 되는 데이터베이스 개체의 절차적 논리 없이 많은 관련 되지 않은 데이터 집합으로 작업할 때 효율성이 떨어지는 일 수 있습니다. 관리 되는 코드와 T-SQL을 사용 하 여의 장점에 보다 철저 한 논의 체크 아웃의 [장점의를 사용 하 여 관리 코드를 데이터베이스 개체를 만드는](https://msdn.microsoft.com/en-us/library/k2e1fb36(VS.80).aspx)합니다.
+> 관리 되는 데이터베이스 개체에는 SQL 대응에 비해 몇 가지 이점을 제공 합니다. 언어 풍부 하 고 친숙 하 고 기존 코드와 논리를 다시 사용할 수 있는 가지 주요 이점이 있습니다. 하지만 관리 되는 데이터베이스 개체의 절차적 논리 없이 많은 관련 되지 않은 데이터 집합으로 작업할 때 효율성이 떨어지는 일 수 있습니다. 관리 되는 코드와 T-SQL을 사용 하 여의 장점에 보다 철저 한 논의 체크 아웃의 [장점의를 사용 하 여 관리 코드를 데이터베이스 개체를 만드는](https://msdn.microsoft.com/library/k2e1fb36(VS.80).aspx)합니다.
 
 
 ## <a name="step-1-moving-the-northwind-database-out-ofappdata"></a>1 단계: 부재 중 Northwind 데이터베이스를 이동합니다.`App_Data`
@@ -81,7 +81,7 @@ Northwind 데이터베이스에 연결할 필요는 `DataFiles` 폴더 (또는 �
 
 ## <a name="step-2-creating-a-new-solution-and-sql-server-project-in-visual-studio"></a>2 단계: Visual Studio에서 새 솔루션 및 SQL Server 프로젝트 만들기
 
-SQL Server 2005에서 관리 되는 저장된 프로시저 또는 Udf 만들 저장된 프로시저 및 UDF 논리 클래스에서 Visual Basic 코드를 작성 하 합니다. 코드를 쓴 후이 클래스를 어셈블리로 컴파일할 해야 합니다 (한 `.dll` 파일), SQL Server 데이터베이스와 어셈블리를 등록 한 다음에 해당 하는 메서드를 가리키는 데이터베이스에서 저장된 프로시저 또는 UDF 개체를 만듭니다 어셈블리입니다. 다음이 단계 수 모두 수동으로 수행 합니다. 편집기 텍스트의 코드를 작성, Visual Basic 컴파일러를 사용 하 여 명령줄에서 컴파일할 수 우리 (`vbc.exe`)를 사용 하 여 데이터베이스에 등록는 [ `CREATE ASSEMBLY` ](https://msdn.microsoft.com/en-us/library/ms189524.aspx) 명령 또는 Management Studio에서 저장 된 추가 프로시저 또는 UDF 비슷한 방법으로는 개체입니다. 다행히 팀 시스템 및 Professional 버전의 Visual Studio는 이러한 작업을 자동화 하는 SQL Server 프로젝트 유형을 포함 합니다. 이 자습서에서 살펴보게 될 것을 통해 관리 되는 저장된 프로시저 및 UDF를 만드는 SQL Server 프로젝트 형식을 사용 하 여 합니다.
+SQL Server 2005에서 관리 되는 저장된 프로시저 또는 Udf 만들 저장된 프로시저 및 UDF 논리 클래스에서 Visual Basic 코드를 작성 하 합니다. 코드를 쓴 후이 클래스를 어셈블리로 컴파일할 해야 합니다 (한 `.dll` 파일), SQL Server 데이터베이스와 어셈블리를 등록 한 다음에 해당 하는 메서드를 가리키는 데이터베이스에서 저장된 프로시저 또는 UDF 개체를 만듭니다 어셈블리입니다. 다음이 단계 수 모두 수동으로 수행 합니다. 편집기 텍스트의 코드를 작성, Visual Basic 컴파일러를 사용 하 여 명령줄에서 컴파일할 수 우리 (`vbc.exe`)를 사용 하 여 데이터베이스에 등록는 [ `CREATE ASSEMBLY` ](https://msdn.microsoft.com/library/ms189524.aspx) 명령 또는 Management Studio에서 저장 된 추가 프로시저 또는 UDF 비슷한 방법으로는 개체입니다. 다행히 팀 시스템 및 Professional 버전의 Visual Studio는 이러한 작업을 자동화 하는 SQL Server 프로젝트 유형을 포함 합니다. 이 자습서에서 살펴보게 될 것을 통해 관리 되는 저장된 프로시저 및 UDF를 만드는 SQL Server 프로젝트 형식을 사용 하 여 합니다.
 
 > [!NOTE]
 > 표준 버전의 Visual Studio 또는 Visual Web Developer를 사용 하는 경우 수동 접근을 대신 사용 해야 합니다. 13 단계는 수동으로 이러한 단계를 수행 하기 위한 자세한 지침을 제공 합니다. 확인해부터 12까지이 단계는 사용 중인 Visual Studio의 어떤 버전에 관계 없이 적용 해야 하는 중요 한 SQL Server 구성 지침이 포함 되어 있으므로 13 단계를 읽기 전에 단계 2를 읽을 수 있습니다.
@@ -149,14 +149,14 @@ Northwind 데이터베이스에 관리 되는 저장된 프로시저를 추가 �
 
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample2.vb)]
 
-저장된 프로시저는로 구현 하는 `Shared` 내에서 메서드는 `Partial` 라는 클래스 파일 `StoredProcedures`합니다. 또한는 `GetDiscontinuedProducts` 로 데코레이팅된 메서드는 [ `SqlProcedure` 특성](https://msdn.microsoft.com/en-us/library/microsoft.sqlserver.server.sqlprocedureattribute.aspx), 저장 프로시저로 메서드를 표시 하는입니다.
+저장된 프로시저는로 구현 하는 `Shared` 내에서 메서드는 `Partial` 라는 클래스 파일 `StoredProcedures`합니다. 또한는 `GetDiscontinuedProducts` 로 데코레이팅된 메서드는 [ `SqlProcedure` 특성](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlprocedureattribute.aspx), 저장 프로시저로 메서드를 표시 하는입니다.
 
 다음 코드에서는 `SqlCommand` 개체 및 집합 해당 `CommandText` 에 `SELECT` 의 모든 열에서 반환 하는 쿼리는 `Products` 인 제품에 대 한 테이블 `Discontinued` 1 필드입니다. 다음 명령을 실행 하 고 클라이언트 응용 프로그램에 다시 결과 보냅니다. 이 코드를 추가 하는 `GetDiscontinuedProducts` 메서드.
 
 
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample3.vb)]
 
-모든 관리 되는 데이터베이스 개체에 대 한 액세스는는 [ `SqlContext` 개체](https://msdn.microsoft.com/en-us/library/ms131108.aspx) 호출자의 컨텍스트를 나타내는입니다. `SqlContext` 에 액세스할 수는 [ `SqlPipe` 개체](https://msdn.microsoft.com/en-us/library/microsoft.sqlserver.server.sqlpipe.aspx) 를 통해 해당 [ `Pipe` 속성](https://msdn.microsoft.com/en-us/library/microsoft.sqlserver.server.sqlcontext.pipe.aspx)합니다. 이 `SqlPipe` 개체는 SQL Server 데이터베이스 및 호출 응용 프로그램 간에 정보를 ferry 하는 데 사용 됩니다. 이름에서 알 수 있듯이 [ `ExecuteAndSend` 메서드](https://msdn.microsoft.com/en-us/library/microsoft.sqlserver.server.sqlpipe.executeandsend.aspx) 는 전달 기능을 실행 `SqlCommand` 개체와 클라이언트 응용 프로그램에 결과 다시 보냅니다.
+모든 관리 되는 데이터베이스 개체에 대 한 액세스는는 [ `SqlContext` 개체](https://msdn.microsoft.com/library/ms131108.aspx) 호출자의 컨텍스트를 나타내는입니다. `SqlContext` 에 액세스할 수는 [ `SqlPipe` 개체](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlpipe.aspx) 를 통해 해당 [ `Pipe` 속성](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlcontext.pipe.aspx)합니다. 이 `SqlPipe` 개체는 SQL Server 데이터베이스 및 호출 응용 프로그램 간에 정보를 ferry 하는 데 사용 됩니다. 이름에서 알 수 있듯이 [ `ExecuteAndSend` 메서드](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlpipe.executeandsend.aspx) 는 전달 기능을 실행 `SqlCommand` 개체와 클라이언트 응용 프로그램에 결과 다시 보냅니다.
 
 > [!NOTE]
 > 관리 되는 데이터베이스 개체는 저장된 프로시저 및 집합 기반 논리 보다는 절차적 논리를 사용 하는 Udf에 가장 적합 합니다. 절차적 논리 없이-행 단위에서 작업 데이터 집합으로 스칼라 데이터 작업을 작업이 포함 됩니다. 그러나 `GetDiscontinuedProducts` 방금 만든, 방법은 절차적 논리 없이 없습니다. 따라서 그 구현 하는 것이 가장 좋습니다 T-SQL 저장 프로시저입니다. 저장된 프로시저를 관리 하는 관리 되는 저장된 프로시저를 만들고 배포 하는 데 필요한 단계를 설명 하기 위해 구현 됩니다.
@@ -214,7 +214,7 @@ Northwind 데이터베이스의 구성 정보를 검사할 입력 하 고 명령
 
 [!code-sql[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample5.sql)]
 
-다시 실행 하는 경우는 `exec sp_configure` 위의 문은 사용 하도록 설정 하는 clr 설정 s config 값 1로 업데이트 되도록 하지만 실행된 값을 0으로 여전히 설정 되어 있는지 표시 됩니다. 이 구성 변경 내용을 적용 하려면을 실행 해야는 [ `RECONFIGURE` 명령](https://msdn.microsoft.com/en-us/library/ms176069.aspx), 현재 구성 값으로 실행된 값이 설정 됩니다입니다. 단순히 입력 `RECONFIGURE` 쿼리 창에서 도구 모음에서 실행 아이콘을 클릭 합니다. 실행 하는 경우 `exec sp_configure` 이제 사용 하도록 설정 하는 clr 설정의 구성에 대 한 1의 값이 표시 하 고 값을 실행 해야 합니다.
+다시 실행 하는 경우는 `exec sp_configure` 위의 문은 사용 하도록 설정 하는 clr 설정 s config 값 1로 업데이트 되도록 하지만 실행된 값을 0으로 여전히 설정 되어 있는지 표시 됩니다. 이 구성 변경 내용을 적용 하려면을 실행 해야는 [ `RECONFIGURE` 명령](https://msdn.microsoft.com/library/ms176069.aspx), 현재 구성 값으로 실행된 값이 설정 됩니다입니다. 단순히 입력 `RECONFIGURE` 쿼리 창에서 도구 모음에서 실행 아이콘을 클릭 합니다. 실행 하는 경우 `exec sp_configure` 이제 사용 하도록 설정 하는 clr 설정의 구성에 대 한 1의 값이 표시 하 고 값을 실행 해야 합니다.
 
 사용 하도록 설정 하는 clr 구성이 완료 하는 관리 되는 실행할 준비가 `GetDiscontinuedProducts` 저장 프로시저입니다. 쿼리 창에서를 입력 하 고 다음 명령을 실행 `exec` `GetDiscontinuedProducts`합니다. 관리 되는 해당 코드가 사용 하면 저장된 프로시저를 호출 하는 `GetDiscontinuedProducts` 메서드를 실행 합니다. 이 코드를 발급 한 `SELECT` 제공이 중단 된이 인스턴스의 SQL Server Management Studio는 호출 응용 프로그램에이 데이터를 반환 하는 모든 제품을 반환 하도록 쿼리 합니다. Management Studio는 이러한 결과 수신 하 고 결과 창에 표시 합니다.
 
@@ -232,7 +232,7 @@ Northwind 데이터베이스의 구성 정보를 검사할 입력 하 고 명령
 
 프로젝트에 새 저장된 프로시저를 추가 하려면 마우스 오른쪽 단추로 클릭는 `ManagedDatabaseConstructs` 프로젝트 이름 및 새 저장된 프로시저를 추가 하려면 선택 합니다. 파일 이름을 `GetProductsWithPriceLessThan.vb`로 지정합니다. 새 Visual Basic 클래스 파일을 라는 메서드가 있는 이때 3 단계에서에서 설명한 것 처럼 `GetProductsWithPriceLessThan` 내에 배치 된 `Partial` 클래스 `StoredProcedures`합니다.
 
-업데이트는 `GetProductsWithPriceLessThan` s 메서드 정의 허용 하도록는 [ `SqlMoney` ](https://msdn.microsoft.com/en-us/library/system.data.sqltypes.sqlmoney.aspx) 라는 입력된 매개 변수 `price` 고 실행 하 고 쿼리 결과 반환 코드를 작성 합니다.
+업데이트는 `GetProductsWithPriceLessThan` s 메서드 정의 허용 하도록는 [ `SqlMoney` ](https://msdn.microsoft.com/library/system.data.sqltypes.sqlmoney.aspx) 라는 입력된 매개 변수 `price` 고 실행 하 고 쿼리 결과 반환 코드를 작성 합니다.
 
 
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample6.vb)]
@@ -400,19 +400,19 @@ Udf는 테이블 형식 데이터를 반환할 수도 있습니다. 예를 들�
 **그림 25**: 추가 하는 새 관리 되는 UDF는 `ManagedDatabaseConstructs` 프로젝트 ([전체 크기 이미지를 보려면 클릭](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/_static/image61.png))
 
 
-사용자 정의 함수 템플릿은 만듭니다는 `Partial` 라는 클래스 `UserDefinedFunctions` 클래스의 파일 이름과 동일한 이름이 메서드로 (`udf_ComputeInventoryValue_Managed`,이 인스턴스의). 이 메서드를 사용 하 여 데코 레이트 된 [ `SqlFunction` 특성](https://msdn.microsoft.com/en-us/library/microsoft.sqlserver.server.sqlfunctionattribute.aspx), 메서드는 관리 되는 UDF로 플래그입니다.
+사용자 정의 함수 템플릿은 만듭니다는 `Partial` 라는 클래스 `UserDefinedFunctions` 클래스의 파일 이름과 동일한 이름이 메서드로 (`udf_ComputeInventoryValue_Managed`,이 인스턴스의). 이 메서드를 사용 하 여 데코 레이트 된 [ `SqlFunction` 특성](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlfunctionattribute.aspx), 메서드는 관리 되는 UDF로 플래그입니다.
 
 
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample13.vb)]
 
-`udf_ComputeInventoryValue` 현재 메서드는 [ `SqlString` 개체](https://msdn.microsoft.com/en-us/library/system.data.sqltypes.sqlstring.aspx) 는 입력 매개 변수를 허용 하지 않습니다. 받아들이도록 세 개의 입력 매개 변수-메서드 정의 업데이트 해야 `UnitPrice`, `UnitsInStock`, 및 `Discontinued` -반환는 `SqlMoney` 개체입니다. 재고 현황 값을 계산 하기 위한 논리는 T-SQL와 동일 `udf_ComputeInventoryValue` UDF 합니다.
+`udf_ComputeInventoryValue` 현재 메서드는 [ `SqlString` 개체](https://msdn.microsoft.com/library/system.data.sqltypes.sqlstring.aspx) 는 입력 매개 변수를 허용 하지 않습니다. 받아들이도록 세 개의 입력 매개 변수-메서드 정의 업데이트 해야 `UnitPrice`, `UnitsInStock`, 및 `Discontinued` -반환는 `SqlMoney` 개체입니다. 재고 현황 값을 계산 하기 위한 논리는 T-SQL와 동일 `udf_ComputeInventoryValue` UDF 합니다.
 
 
 [!code-vb[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb/samples/sample14.vb)]
 
-UDF의 메서드에 입력된 매개 변수는 해당 SQL 형식의: `SqlMoney` 에 대 한는 `UnitPrice` 필드 [ `SqlInt16` ](https://msdn.microsoft.com/en-us/library/system.data.sqltypes.sqlint16.aspx) 에 대 한 `UnitsInStock`, 및 [ `SqlBoolean` ](https://msdn.microsoft.com/en-us/library/system.data.sqltypes.sqlboolean.aspx) 에 대 한 `Discontinued`합니다. 이러한 데이터 형식에 정의 된 형식을 반영는 `Products` 테이블:는 `UnitPrice` 형식의 열이 `money`, `UnitsInStock` 형식의 열 `smallint`, 및 `Discontinued` 형식의 열 `bit`합니다.
+UDF의 메서드에 입력된 매개 변수는 해당 SQL 형식의: `SqlMoney` 에 대 한는 `UnitPrice` 필드 [ `SqlInt16` ](https://msdn.microsoft.com/library/system.data.sqltypes.sqlint16.aspx) 에 대 한 `UnitsInStock`, 및 [ `SqlBoolean` ](https://msdn.microsoft.com/library/system.data.sqltypes.sqlboolean.aspx) 에 대 한 `Discontinued`합니다. 이러한 데이터 형식에 정의 된 형식을 반영는 `Products` 테이블:는 `UnitPrice` 형식의 열이 `money`, `UnitsInStock` 형식의 열 `smallint`, 및 `Discontinued` 형식의 열 `bit`합니다.
 
-만들어서 시작 하는 코드는 `SqlMoney` 명명 된 인스턴스 `inventoryValue` 할당 된 값이 0입니다. `Products` 데이터베이스에 대 한 테이블을 사용 하면 `NULL` 값에 `UnitsInPrice` 및 `UnitsInStock` 열입니다. 따라서 해야 첫 번째 확인이 값이 들어 `NULL` s를 통해 수행 하는 `SqlMoney` 개체 s [ `IsNull` 속성](https://msdn.microsoft.com/en-us/library/system.data.sqltypes.sqlmoney.isnull.aspx)합니다. 모두 `UnitPrice` 및 `UnitsInStock` 포함 비-`NULL` 에서는 계산 값는 `inventoryValue` 두 제품 되도록 합니다. 그런 다음 if `Discontinued` 가 true 이면 값 절반으로 줄일 했습니다.
+만들어서 시작 하는 코드는 `SqlMoney` 명명 된 인스턴스 `inventoryValue` 할당 된 값이 0입니다. `Products` 데이터베이스에 대 한 테이블을 사용 하면 `NULL` 값에 `UnitsInPrice` 및 `UnitsInStock` 열입니다. 따라서 해야 첫 번째 확인이 값이 들어 `NULL` s를 통해 수행 하는 `SqlMoney` 개체 s [ `IsNull` 속성](https://msdn.microsoft.com/library/system.data.sqltypes.sqlmoney.isnull.aspx)합니다. 모두 `UnitPrice` 및 `UnitsInStock` 포함 비-`NULL` 에서는 계산 값는 `inventoryValue` 두 제품 되도록 합니다. 그런 다음 if `Discontinued` 가 true 이면 값 절반으로 줄일 했습니다.
 
 > [!NOTE]
 > `SqlMoney` 만 개체를 두 개 사용 하면 `SqlMoney` 함께 곱할 인스턴스. 허용 하지 않습니다는 `SqlMoney` 인스턴스를 리터럴 부동 소수점 숫자를 곱합니다. 따라서를 절반으로 줄일 `inventoryValue` 를 새 것을 곱하면 `SqlMoney` 값이 0.5 된 인스턴스.
@@ -559,13 +559,13 @@ Visual Studio의 SQL Server 프로젝트 형식 만들기, 컴파일 및 관리 
 - [장점 및 단점 사용자 정의 함수](http://www.samspublishing.com/articles/article.asp?p=31724&amp;rl=1)
 - [관리 코드에서 SQL Server 2005 개체 만들기](https://channel9.msdn.com/Showpost.aspx?postid=142413)
 - [SQL Server 2005의에서 관리 되는 코드를 사용 하 여 트리거를 만드는 중](http://www.15seconds.com/issue/041006.htm)
-- [방법: 만들기 및 실행 CLR SQL Server 저장 프로시저](https://msdn.microsoft.com/en-us/library/5czye81z(VS.80).aspx)
-- [방법: 만들기 및 CLR SQL Server 사용자 정의 함수 실행](https://msdn.microsoft.com/en-us/library/w2kae45k(VS.80).aspx)
-- [방법: 편집는 `Test.sql` SQL 개체를 실행 하는 스크립트](https://msdn.microsoft.com/en-us/library/ms233682(VS.80).aspx)
+- [방법: 만들기 및 실행 CLR SQL Server 저장 프로시저](https://msdn.microsoft.com/library/5czye81z(VS.80).aspx)
+- [방법: 만들기 및 CLR SQL Server 사용자 정의 함수 실행](https://msdn.microsoft.com/library/w2kae45k(VS.80).aspx)
+- [방법: 편집는 `Test.sql` SQL 개체를 실행 하는 스크립트](https://msdn.microsoft.com/library/ms233682(VS.80).aspx)
 - [소개 사용자 정의 함수](http://www.sqlteam.com/item.asp?ItemID=1955)
 - [관리 코드와 SQL Server 2005 (비디오)](https://channel9.msdn.com/Showpost.aspx?postid=142413)
-- [TRANSACT-SQL 참조](https://msdn.microsoft.com/en-us/library/aa299742(SQL.80).aspx)
-- [연습: 관리 코드에서 저장된 프로시저 만들기](https://msdn.microsoft.com/en-us/library/zxsa8hkf(VS.80).aspx)
+- [TRANSACT-SQL 참조](https://msdn.microsoft.com/library/aa299742(SQL.80).aspx)
+- [연습: 관리 코드에서 저장된 프로시저 만들기](https://msdn.microsoft.com/library/zxsa8hkf(VS.80).aspx)
 
 ## <a name="about-the-author"></a>작성자 정보
 
