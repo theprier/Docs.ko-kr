@@ -12,31 +12,31 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: 
 msc.type: content
-ms.openlocfilehash: 92ba2d8a62aad23974ba558152e394f3b09c7d0f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5d335017a28f3dcbb8332b5361a2b068bddd2cce
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
-<a name="whitepapers"></a><span data-ttu-id="2d04e-103">백서</span><span class="sxs-lookup"><span data-stu-id="2d04e-103">Whitepapers</span></span>
+<a name="whitepapers"></a><span data-ttu-id="3f1b2-103">백서</span><span class="sxs-lookup"><span data-stu-id="3f1b2-103">Whitepapers</span></span>
 ====================
-- [<span data-ttu-id="2d04e-104">백서</span><span class="sxs-lookup"><span data-stu-id="2d04e-104">Whitepapers</span></span>](overview.md)
-- [<span data-ttu-id="2d04e-105">ASP.NET 4 및 Visual Studio 2010 웹 개발 개요</span><span class="sxs-lookup"><span data-stu-id="2d04e-105">ASP.NET 4 and Visual Studio 2010 Web Development Overview</span></span>](aspnet4/index.md)
+- [<span data-ttu-id="3f1b2-104">백서</span><span class="sxs-lookup"><span data-stu-id="3f1b2-104">Whitepapers</span></span>](overview.md)
+- [<span data-ttu-id="3f1b2-105">ASP.NET 4 및 Visual Studio 2010 웹 개발 개요</span><span class="sxs-lookup"><span data-stu-id="3f1b2-105">ASP.NET 4 and Visual Studio 2010 Web Development Overview</span></span>](aspnet4/index.md)
 
-    - [<span data-ttu-id="2d04e-106">ASP.NET 4 및 Visual Studio 2010 웹 개발 개요</span><span class="sxs-lookup"><span data-stu-id="2d04e-106">ASP.NET 4 and Visual Studio 2010 Web Development Overview</span></span>](aspnet4/overview.md)
-    - [<span data-ttu-id="2d04e-107">ASP.NET 4 주요 변경 내용</span><span class="sxs-lookup"><span data-stu-id="2d04e-107">ASP.NET 4 Breaking Changes</span></span>](aspnet4/breaking-changes.md)
-- [<span data-ttu-id="2d04e-108">ASP.NET MVC 2 ASP.NET MVC 1.0 응용 프로그램 업그레이드</span><span class="sxs-lookup"><span data-stu-id="2d04e-108">Upgrading an ASP.NET MVC 1.0 Application to ASP.NET MVC 2</span></span>](aspnet-mvc2-upgrade-notes.md)
-- [<span data-ttu-id="2d04e-109">ASP.NET은 IIS 디렉터리에 대 한 액세스가 거부</span><span class="sxs-lookup"><span data-stu-id="2d04e-109">ASP.NET Denied Access to IIS Directories</span></span>](denied-access-to-iis-directories.md)
-- [<span data-ttu-id="2d04e-110">ASP.NET MVC 2의에서 새로운 기능</span><span class="sxs-lookup"><span data-stu-id="2d04e-110">What’s New in ASP.NET MVC 2</span></span>](what-is-new-in-aspnet-mvc.md)
-- [<span data-ttu-id="2d04e-111">ASP.NET MVC 3</span><span class="sxs-lookup"><span data-stu-id="2d04e-111">ASP.NET MVC 3</span></span>](mvc3-release-notes.md)
-- [<span data-ttu-id="2d04e-112">ASP.NET MVC 4</span><span class="sxs-lookup"><span data-stu-id="2d04e-112">ASP.NET MVC 4</span></span>](mvc4-beta-release-notes.md)
-- [<span data-ttu-id="2d04e-113">IIS 6.0 사용한 ASP.NET 1.1을 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="2d04e-113">Running ASP.NET 1.1 with IIS 6.0</span></span>](aspnet-and-iis6.md)
-- [<span data-ttu-id="2d04e-114">방법: ASP.NET Web Forms에 모바일 페이지를 추가 / MVC 응용 프로그램</span><span class="sxs-lookup"><span data-stu-id="2d04e-114">How To: Add Mobile Pages to Your ASP.NET Web Forms / MVC Application</span></span>](add-mobile-pages-to-your-aspnet-web-forms-mvc-application.md)
-- [<span data-ttu-id="2d04e-115">IE에 대 한 보안 업데이트를 적용 한 후 '서버 응용 프로그램 사용할 수 없는 오류에 대 한 수정</span><span class="sxs-lookup"><span data-stu-id="2d04e-115">Fix for 'Server Application Unavailable' Error after Applying Security Update for IE</span></span>](ms03-32-issue.md)
-- [<span data-ttu-id="2d04e-116">.NET Framework 1.0 및 1.1의 ASP.NET-Side-by-side 실행</span><span class="sxs-lookup"><span data-stu-id="2d04e-116">ASP.NET Side-by-Side Execution of .NET Framework 1.0 and 1.1</span></span>](side-by-side-with-10.md)
-- [<span data-ttu-id="2d04e-117">ASP.NET MVC 4</span><span class="sxs-lookup"><span data-stu-id="2d04e-117">ASP.NET MVC 4</span></span>](mvc4-release-notes.md)
-- [<span data-ttu-id="2d04e-118">요청 유효성 검사-스크립트 공격 방지</span><span class="sxs-lookup"><span data-stu-id="2d04e-118">Request Validation - Preventing Script Attacks</span></span>](request-validation.md)
-- [<span data-ttu-id="2d04e-119">ASP.NET 데이터 액세스-권장 리소스</span><span class="sxs-lookup"><span data-stu-id="2d04e-119">ASP.NET Data Access - Recommended Resources</span></span>](aspnet-data-access-content-map.md)
-- [<span data-ttu-id="2d04e-120">ASP.NET 웹 배포-권장 리소스</span><span class="sxs-lookup"><span data-stu-id="2d04e-120">ASP.NET Web Deployment - Recommended Resources</span></span>](aspnet-web-deployment-content-map.md)
-- [<span data-ttu-id="2d04e-121">릴리스 정보에 ASP.NET 및 Web Tools 2012.2</span><span class="sxs-lookup"><span data-stu-id="2d04e-121">ASP.NET and Web Tools 2012.2 Release Notes</span></span>](aspnet-and-web-tools-20122-release-notes.md)
-- [<span data-ttu-id="2d04e-122">ASP.NET 4.5 및 Visual Studio 2012의 새로운 기능</span><span class="sxs-lookup"><span data-stu-id="2d04e-122">What's New in ASP.NET 4.5 and Visual Studio 2012</span></span>](whats-new-in-aspnet-45-and-visual-studio-2012.md)
+    - [<span data-ttu-id="3f1b2-106">ASP.NET 4 및 Visual Studio 2010 웹 개발 개요</span><span class="sxs-lookup"><span data-stu-id="3f1b2-106">ASP.NET 4 and Visual Studio 2010 Web Development Overview</span></span>](aspnet4/overview.md)
+    - [<span data-ttu-id="3f1b2-107">ASP.NET 4 주요 변경 내용</span><span class="sxs-lookup"><span data-stu-id="3f1b2-107">ASP.NET 4 Breaking Changes</span></span>](aspnet4/breaking-changes.md)
+- [<span data-ttu-id="3f1b2-108">ASP.NET MVC 1.0 응용 프로그램을 ASP.NET MVC 2로 업그레이드</span><span class="sxs-lookup"><span data-stu-id="3f1b2-108">Upgrading an ASP.NET MVC 1.0 Application to ASP.NET MVC 2</span></span>](aspnet-mvc2-upgrade-notes.md)
+- [<span data-ttu-id="3f1b2-109">ASP.NET에서 IIS 디렉터리에 대한 액세스 거부</span><span class="sxs-lookup"><span data-stu-id="3f1b2-109">ASP.NET Denied Access to IIS Directories</span></span>](denied-access-to-iis-directories.md)
+- [<span data-ttu-id="3f1b2-110">ASP.NET MVC 2의에서 새로운 기능</span><span class="sxs-lookup"><span data-stu-id="3f1b2-110">What's New in ASP.NET MVC 2</span></span>](what-is-new-in-aspnet-mvc.md)
+- [<span data-ttu-id="3f1b2-111">ASP.NET MVC 3</span><span class="sxs-lookup"><span data-stu-id="3f1b2-111">ASP.NET MVC 3</span></span>](mvc3-release-notes.md)
+- [<span data-ttu-id="3f1b2-112">ASP.NET MVC 4</span><span class="sxs-lookup"><span data-stu-id="3f1b2-112">ASP.NET MVC 4</span></span>](mvc4-beta-release-notes.md)
+- [<span data-ttu-id="3f1b2-113">IIS 6.0에서 ASP.NET 1.1 실행</span><span class="sxs-lookup"><span data-stu-id="3f1b2-113">Running ASP.NET 1.1 with IIS 6.0</span></span>](aspnet-and-iis6.md)
+- [<span data-ttu-id="3f1b2-114">방법: ASP.NET Web Forms/MVC 응용 프로그램에 모바일 페이지 추가</span><span class="sxs-lookup"><span data-stu-id="3f1b2-114">How To: Add Mobile Pages to Your ASP.NET Web Forms / MVC Application</span></span>](add-mobile-pages-to-your-aspnet-web-forms-mvc-application.md)
+- [<span data-ttu-id="3f1b2-115">IE 보안 업데이트 적용 후 '서버 응용 프로그램을 사용할 수 없음' 오류에 대한 픽스</span><span class="sxs-lookup"><span data-stu-id="3f1b2-115">Fix for 'Server Application Unavailable' Error after Applying Security Update for IE</span></span>](ms03-32-issue.md)
+- [<span data-ttu-id="3f1b2-116">.NET Framework 1.0 및 1.1의 ASP.NET Side-by-Side 실행</span><span class="sxs-lookup"><span data-stu-id="3f1b2-116">ASP.NET Side-by-Side Execution of .NET Framework 1.0 and 1.1</span></span>](side-by-side-with-10.md)
+- [<span data-ttu-id="3f1b2-117">ASP.NET MVC 4</span><span class="sxs-lookup"><span data-stu-id="3f1b2-117">ASP.NET MVC 4</span></span>](mvc4-release-notes.md)
+- [<span data-ttu-id="3f1b2-118">요청 유효성 검사 - 스크립트 공격 방지</span><span class="sxs-lookup"><span data-stu-id="3f1b2-118">Request Validation - Preventing Script Attacks</span></span>](request-validation.md)
+- [<span data-ttu-id="3f1b2-119">ASP.NET 데이터 액세스 - 권장 리소스</span><span class="sxs-lookup"><span data-stu-id="3f1b2-119">ASP.NET Data Access - Recommended Resources</span></span>](aspnet-data-access-content-map.md)
+- [<span data-ttu-id="3f1b2-120">ASP.NET 웹 배포 - 권장 리소스</span><span class="sxs-lookup"><span data-stu-id="3f1b2-120">ASP.NET Web Deployment - Recommended Resources</span></span>](aspnet-web-deployment-content-map.md)
+- [<span data-ttu-id="3f1b2-121">ASP.NET 및 Web Tools 2012.2 릴리스 정보</span><span class="sxs-lookup"><span data-stu-id="3f1b2-121">ASP.NET and Web Tools 2012.2 Release Notes</span></span>](aspnet-and-web-tools-20122-release-notes.md)
+- [<span data-ttu-id="3f1b2-122">ASP.NET 4.5 및 Visual Studio 2012의 새로운 기능</span><span class="sxs-lookup"><span data-stu-id="3f1b2-122">What's New in ASP.NET 4.5 and Visual Studio 2012</span></span>](whats-new-in-aspnet-45-and-visual-studio-2012.md)
