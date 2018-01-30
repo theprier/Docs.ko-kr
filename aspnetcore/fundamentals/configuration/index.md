@@ -10,17 +10,17 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/configuration/index
-ms.openlocfilehash: ee9bdc66d0bfa6433736fbc55126bdd37ba9d080
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 20c75d202d67a491890d87cebf549585e0313da0
+ms.sourcegitcommit: 18ff1fdaa3e1ae204ed6a2ba9351ce8cf1371c85
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/29/2018
 ---
 # <a name="configure-an-aspnet-core-app"></a>ASP.NET Core 앱 구성
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT), [Mark Michaelis](http://intellitect.com/author/mark-michaelis/), [Steve Smith](https://ardalis.com/), [Daniel Roth](https://github.com/danroth27), [Luke Latham](https://github.com/guardrex)
 
-구성 API는 이름-값 쌍 목록을 기반으로 ASP.NET Core 웹앱을 구성하는 방법을 제공합니다. 구성은 여러 소스에서 런타임에 읽힙니다. 이러한 이름-값 쌍을 다중 수준 계층으로 그룹화할 수 있습니다.
+구성 API는 이름-값 쌍 목록을 기반으로 ASP.NET Core 웹앱을 구성하는 방법을 제공합니다. 구성은 여러 소스에서 런타임에 읽힙니다. 이름-값 쌍을 다중 수준 계층으로 그룹화할 수 있습니다.
 
 다음에 대한 구성 공급자가 있습니다.
 
@@ -93,7 +93,7 @@ ASP.NET Core 1.x 앱은 `AddJsonFile` 및 [AddEnvironmentVariables](/dotnet/api/
 
 * `IOptionsSnapshot`은 구성 데이터가 변경되면 구성 데이터를 다시 로드할 수 있습니다. 자세한 내용은 [IOptionsSnapshot](xref:fundamentals/configuration/options#reload-configuration-data-with-ioptionssnapshot)을 참조하세요.
 * 구성 키는 대/소문자를 구분하지 **않습니다**.
-* 구성 공급자 코드 또는 일반 텍스트 구성 파일에 암호 또는 기타 중요한 데이터를 **절대 저장하지 마세요**. 개발 또는 테스트 환경에서 프로덕션 비밀을 사용하지 마세요. 의도치 않게 리포지토리에 커밋되는 일이 없도록 프로젝트 외부에서 비밀을 지정하세요. [여러 환경 사용](xref:fundamentals/environments) 및 [개발 중 안전한 앱 비밀 저장소](xref:security/app-secrets) 관리에 대해 자세히 알아보세요.
+* 구성 공급자 코드 또는 일반 텍스트 구성 파일에 암호 또는 기타 중요한 데이터를 **절대 저장하지 마세요**. 개발 또는 테스트 환경에서 프로덕션 비밀을 사용하지 마세요. 의도치 않게 소스 코드 리포지토리에 커밋되는 일이 없도록 프로젝트 외부에서 비밀을 지정하세요. [여러 환경 사용](xref:fundamentals/environments) 및 [개발 중 안전한 앱 비밀 저장소](xref:security/app-secrets) 관리에 대해 자세히 알아보세요.
 * 시스템의 환경 변수에서 콜론(`:`)을 사용할 수 없으면 콜론(`:`)을 이중 밑줄(`__`)로 바꾸세요.
 
 ## <a name="in-memory-provider-and-binding-to-a-poco-class"></a>메모리 내 공급자 및 POCO 클래스에 바인딩
@@ -114,7 +114,7 @@ ConfigurationBinder의 `GetValue<T>` 메서드를 사용하여 기본값을 지�
 
 ## <a name="bind-to-an-object-graph"></a>개체 그래프에 바인딩
 
-클래스의 각 개체에 재귀적으로 바인딩할 수 있습니다. 다음 `AppSettings` 클래스를 살펴보세요.
+클래스의 각 개체를 재귀적으로 바인딩할 수 있습니다. 다음 `AppSettings` 클래스를 살펴보세요.
 
 [!code-csharp[Main](index/sample/ObjectGraph/AppSettings.cs)]
 
@@ -185,7 +185,7 @@ public void CanBindObjectTree()
 
 샘플이 실행되면 데이터베이스의 강조 표시된 값("value_from_ef_1" 및 "value_from_ef_2")이 표시됩니다.
 
-구성 소스를 추가하기 위한 `EFConfigSource` 확장 메서드를 추가할 수 있습니다.
+구성 소스를 추가하기 위한 `EFConfigSource` 확장 메서드를 사용할 수 있습니다.
 
 [!code-csharp[Main](index/sample/CustomConfigurationProvider/EntityFrameworkExtensions.cs?highlight=12)]
 
@@ -217,7 +217,7 @@ key3=value_from_json_3
 
 # <a name="basic-configurationtabbasicconfiguration"></a>[기본 구성](#tab/basicconfiguration)
 
-명령줄 구성을 활성화하려면 [ConfigurationBuilder](/api/microsoft.extensions.configuration.configurationbuilder) 인스턴스에서 `AddCommandLine` 확장 메서드를 호출합니다.
+명령줄 구성을 활성화하려면 [ConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.configurationbuilder) 인스턴스에서 `AddCommandLine` 확장 메서드를 호출합니다.
 
 [!code-csharp[Main](index/sample_snapshot//CommandLine/Program.cs?highlight=18,21)]
 
@@ -261,7 +261,7 @@ Left: 1979
 
 이전 조건이 모두 참인 경우 명령줄 인수가 무시됩니다.
 
-ASP.NET Core 2.x 앱은 [ConfigurationBuilder](/api/microsoft.extensions.configuration.configurationbuilder)를 사용하여 수동으로 설정된 구성인 ``CreateDefaultBuilder`. When using `WebHostBuilder` 대신 WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder)를 사용할 수 있습니다. 자세한 내용은 ASP.NET Core 1.x 탭을 참조하세요.
+ASP.NET Core 2.x 앱은 `CreateDefaultBuilder` 대신 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder)를 사용할 수 있습니다. `WebHostBuilder`를 사용하는 경우 [ConfigurationBuilder](/api/microsoft.extensions.configuration.configurationbuilder)를 사용하여 수동으로 구성을 설정하세요. 자세한 내용은 ASP.NET Core 1.x 탭을 참조하세요.
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
@@ -331,7 +331,7 @@ dotnet run -key1 value1 --key2 value2 /key3 value3
 
 ### <a name="switch-mappings"></a>스위치 매핑
 
-`ConfigurationBuilder`를 사용하여 수동으로 구성을 빌드하는 경우 선택적으로 `AddCommandLine` 메서드에 스위치 매핑 사전을 제공할 수 있습니다. 스위치 매핑을 통해 키 이름 교체 논리를 제공할 수 있습니다.
+`ConfigurationBuilder`를 사용하여 수동으로 구성을 빌드하는 경우 `AddCommandLine` 메서드에 스위치 매핑 사전을 추가할 수 있습니다. 스위치 매핑은 키 이름 교체 논리를 지원합니다.
 
 스위치 매핑 사전을 사용하면 명령줄 인수를 통해 제공된 키와 일치하는 키에 대해 사전을 검사합니다. 사전에서 명령줄 키가 발견되면 사전 값(키 교체)이 다시 구성으로 전달됩니다. 단일 대시(`-`) 접두사가 붙은 명령줄 키에는 스위치 매핑이 필수입니다.
 
@@ -394,6 +394,10 @@ Left: 1988
 
 IIS 또는 IIS Express에서 앱을 호스트하는 경우 *web.config* 파일이 필요합니다. *web.config*의 설정은 IIS의 [ASP.NET Core Module](xref:fundamentals/servers/aspnet-core-module)이 앱을 시작하고 다른 IIS 설정 및 모듈을 구성할 수 있게 합니다. *web.config* 파일이 없고 프로젝트 파일에 `<Project Sdk="Microsoft.NET.Sdk.Web">`이 포함되어 있는 경우 프로젝트를 게시하면 게시된 출력에 *web.config* 파일이 만들어집니다(*게시* 폴더). 자세한 내용은 [IIS가 있는 Windows에서 ASP.NET Core 호스팅](xref:host-and-deploy/iis/index#webconfig)을 참조하세요.
 
+## <a name="accessing-configuration-during-startup"></a>시작하는 동안 구성에 액세스
+
+시작하는 동안 `ConfigureServices` 또는 `Configure` 내에서 구성에 액세스하려면 [응용 프로그램 시작](xref:fundamentals/startup) 항목의 예를 참조하세요.
+
 ## <a name="additional-notes"></a>추가 참고 사항
 
 * `ConfigureServices`가 호출되기 전에는 DI(종속성 주입)가 설정되지 않습니다.
@@ -401,7 +405,7 @@ IIS 또는 IIS Express에서 앱을 호스트하는 경우 *web.config* 파일�
 * `IConfiguration`에는 두 가지 특수화가 있습니다.
   * `IConfigurationRoot`는 루트 노드에 사용됩니다. 다시 로드를 트리거할 수 있습니다.
   * `IConfigurationSection`은 구성 값의 섹션을 나타냅니다. `GetSection` 및 `GetChildren` 메서드는 `IConfigurationSection`을 반환합니다.
-  * 구성을 다시 로드하는 경우 또는 각 공급자에 액세스해야 하는 경우 [IConfigurationRoot](/dotnet/api/microsoft.extensions.configuration.iconfigurationroot)를 사용하세요. 이러한 상황은 일반적이지 않습니다.
+  * 구성을 다시 로드하는 경우 또는 각 공급자에 액세스하는 경우 [IConfigurationRoot](/dotnet/api/microsoft.extensions.configuration.iconfigurationroot)를 사용하세요. 이러한 상황은 일반적이지 않습니다.
 
 ## <a name="additional-resources"></a>추가 리소스
 
