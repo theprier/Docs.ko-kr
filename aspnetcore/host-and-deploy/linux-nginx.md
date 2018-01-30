@@ -1,20 +1,20 @@
 ---
 title: "Nginx를 사용하여 Linux에서 ASP.NET Core 호스트"
-description: "Ubuntu 16.04 Kestrel에서 실행 되는 ASP.NET Core 웹 앱에 대 한 HTTP 트래픽을 전달 하도록에 역방향 프록시로 Nginx를 설정 하는 방법을 설명 합니다."
 author: rick-anderson
-ms.author: riande
+description: "Ubuntu 16.04 Kestrel에서 실행 되는 ASP.NET Core 웹 앱에 대 한 HTTP 트래픽을 전달 하도록에 역방향 프록시로 Nginx를 설정 하는 방법을 설명 합니다."
 manager: wpickett
+ms.author: riande
 ms.custom: mvc
 ms.date: 08/21/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: host-and-deploy/linux-nginx
-ms.openlocfilehash: 465f1391ef4ff9492d9aed48cb32da0659ceda41
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9939e420fee41b11e709da911d4051a048e789b3
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="host-aspnet-core-on-linux-with-nginx"></a>Nginx를 사용하여 Linux에서 ASP.NET Core 호스트
 
@@ -51,7 +51,7 @@ ASP.NET Core 응용 프로그램 (예: SCP, FTP) 조직의 워크플로로 통�
 
 ### <a name="why-use-a-reverse-proxy-server"></a>역방향 프록시 서버를 사용하는 이유는 무엇인가요?
 
-Kestrel은 ASP.NET Core에서 동적 콘텐츠를 지원할 수 있는 유용한 기능이지만, 웹 지원 부분은 IIS, Apache 또는 Nginx 같은 서버만큼 기능이 다양하지 않습니다. 역방향 프록시 서버는 정적 콘텐츠 지원, 요청 캐시, 요청 압축 및 HTTP 서버에서 SSL 종료 같은 작업을 오프로드할 수 있습니다. 역방향 프록시 서버는 전용 컴퓨터에 있거나 HTTP 서버와 함께 배포될 수 있습니다.
+Kestrel은 ASP.NET Core에서 동적 콘텐츠를 처리 하기 위한 훌륭한입니다. 그러나 웹 서비스 기능으로 IIS, Apache 또는 Nginx 등의 서버 기능 풍부한으로 되지 않습니다. 역방향 프록시 서버는 정적 콘텐츠를 처리, 요청을 캐시 하 고, 요청, 및 HTTP 서버에서 SSL 종료를 압축 하는 등의 작업을 줄일 수 있습니다. 역방향 프록시 서버는 전용 컴퓨터에 있거나 HTTP 서버와 함께 배포될 수 있습니다.
 
 이 가이드에서는 Nginx의 단일 인스턴스가 사용됩니다. 이 인스턴스는 HTTP 서버와 함께 동일한 서버에서 실행됩니다. 다른 설치 요구 사항에 따라 선택한을 수 있습니다.
 

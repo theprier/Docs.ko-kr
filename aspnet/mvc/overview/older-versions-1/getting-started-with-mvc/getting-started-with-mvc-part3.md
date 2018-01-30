@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part3
 title: "뷰 추가 | Microsoft Docs"
 author: shanselman
-description: "ASP.NET MVC의 기본 사항을 소개 하는 초보자를 위한 자습서입니다. 읽기 및 쓰기는 데이터베이스에서 단순 웹 응용 프로그램을 만들 수 있습니다."
+description: "ASP.NET MVC의 기본 사항을 소개 하는 초보자를 위한 자습서입니다. 읽기 및 쓰기는 데이터베이스에서 단순 웹 응용 프로그램을 만듭니다."
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part3
 msc.type: authoredcontent
-ms.openlocfilehash: 509dd301eef7c00431eae194a0df69d70e6d80f8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8725d054861c857ceac10a42b0cc3f2afe056aea
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="adding-a-view"></a>뷰 추가
 ====================
@@ -83,7 +83,7 @@ Index () 메서드에 대 한 사용할 수 있는 프로젝트에 템플릿 보
 
 응용 프로그램을 실행 하 고 /Movies를 방문 합니다. 브라우저의 제목, 기본 제목 및 작은 제목을 변경 되었습니다. 확인 합니다. 크게 변경 약간 변경 된 응용 프로그램에서 보기에 두는 것이 쉽습니다.
 
-[![Windows Internet Explorer-동영상 목록](getting-started-with-mvc-part3/_static/image9.png)](getting-started-with-mvc-part3/_static/image8.png)
+[![Movie List - Windows Internet Explorer](getting-started-with-mvc-part3/_static/image9.png)](getting-started-with-mvc-part3/_static/image8.png)
 
 우리의 약간 (이 경우 "Hello World!"의 "데이터"의 그러나 코딩 된 메시지)는 하드입니다. V (Views) 준비 하 고 C (컨트롤러) 하지만 없는 M (모델) 아직 접수 했습니다. 방법 곧 살펴봅니다 데이터베이스를 만들고 여기에서 모델 데이터를 검색 합니다.
 

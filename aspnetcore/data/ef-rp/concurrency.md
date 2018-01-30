@@ -2,18 +2,18 @@
 title: "EF 코어 8-동시성-8 사용 하 여 razor 페이지"
 author: rick-anderson
 description: "이 자습서에는 여러 사용자가 동시에 같은 엔터티를 업데이트 하는 경우 충돌을 처리 하는 방법을 보여 줍니다."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 11/15/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-rp/concurrency
-ms.openlocfilehash: b36fb71cba058a3409b30a1d9469159fcd027375
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1c6cdefa1410839606711d7460a8f4d0f1d6c72b
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 en-us/
 

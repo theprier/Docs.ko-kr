@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-an-ftp-client-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1edd53b1005449c060ff92fc7ebd02dbe7fa6ac2
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 3c53dcf40cde244a9df9afc27b20c9e7ef288198
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="deploying-your-site-using-an-ftp-client-c"></a>FTP 클라이언트 (C#)를 사용 하 여 사이트를 배포 합니다.
 ====================
@@ -48,7 +48,7 @@ ms.lasthandoff: 01/24/2018
 
 로 이동 하 여 BookReviewsWAP 프로젝트를 시작 합니다.는 `BookReviewsWAP` 폴더를 두 번 클릭 하 고 `BookReviewsWAP.sln` 파일입니다. 프로젝트를 배포 하기 전에 소스 코드를 변경 컴파일된 어셈블리에 포함 되어 있는지 확인 하도록 작성 해야 합니다. 프로젝트를 빌드하려면 빌드 메뉴로 이동한 BookReviewsWAP 빌드 메뉴 옵션을 선택 합니다. 단일 어셈블리에 프로젝트의 소스 코드를 컴파일하고이 `BookReviewsWAP.dll`에 추가 하는 `Bin` 폴더입니다.
 
-이제 필요한 파일을 배포할 준비가 되었습니다! FTP 클라이언트를 시작 하 고 웹 호스트 공급자에서 웹 서버에 연결 합니다. (웹 호스팅 회사에 등록 하면 FTP 서버에 연결 하는 방법 알아보려면 전자 됩니다은, 여기에 FTP 서버 뿐만 아니라 사용자 이름 및 암호에 대 한 주소)
+이제 필요한 파일을 배포할 준비가 되었습니다! FTP 클라이언트를 시작 하 고 웹 호스트 공급자에서 웹 서버에 연결 합니다. (호스팅 업체는 웹 등록은 전자 메일로 전송 됩니다 하면 FTP 서버에 연결 하는 방법에 대 한 정보, 여기에 FTP 서버 뿐만 아니라 사용자 이름 및 암호에 대 한 주소)
 
 바탕 화면에서 다음 파일을 웹 호스트 공급자에서 루트 웹 사이트 폴더에 복사 합니다. 웹 서버에 FTP는 웹에서 호스팅할 때 공급자 웹 사이트 루트 디렉터리에 가능성이 높습니다. 그러나 일부 웹 호스트 공급자는 라는 하위 폴더 `www` 또는 `wwwroot` 역할을 웹 사이트 파일에 대 한 루트 폴더입니다. 마지막으로, 파일 FTPing 때 해야 할 수 있습니다-프로덕션 환경에 해당 폴더 구조를 만드는 `Bin` 폴더는 `Fiction` 폴더는 `Images` 폴더 및 기타 등등.
 

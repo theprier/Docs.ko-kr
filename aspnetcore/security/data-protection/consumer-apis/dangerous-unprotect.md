@@ -2,18 +2,18 @@
 title: "해당 레지스트리 키가 해지 한 보호 해제 페이로드"
 author: rick-anderson
 description: "이 문서에서는 이후로 해지 된, ASP.NET Core 응용 프로그램의 키로 보호 된 데이터를 보호 해제 하는 방법을 설명 합니다."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/data-protection/consumer-apis/dangerous-unprotect
-ms.openlocfilehash: 08a8ad9b3b3cc2de48751d4149bf39c58954fd90
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 584dbb545c15add4401086b9160d4bf30caf41b5
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="unprotecting-payloads-whose-keys-have-been-revoked"></a>해당 레지스트리 키가 해지 한 보호 해제 페이로드
 

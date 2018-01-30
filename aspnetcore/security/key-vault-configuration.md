@@ -2,17 +2,17 @@
 title: "Azure 키 자격 증명 모음 구성 공급자"
 author: guardrex
 description: "Azure 키 자격 증명 모음 구성 공급자를 사용 하 여 런타임에 로드 하는 이름-값 쌍을 사용 하 여 응용 프로그램을 구성 하는 방법에 알아봅니다."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 08/09/2017
-ms.topic: article
 ms.prod: asp.net-core
+ms.topic: article
 uid: security/key-vault-configuration
-ms.openlocfilehash: 25c7d38a27741c9877538673425c5a9dceccac93
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 1318ae855154dd8fc91ff0c19b0ab111d86c71e6
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="azure-key-vault-configuration-provider"></a>Azure 키 자격 증명 모음 구성 공급자
 

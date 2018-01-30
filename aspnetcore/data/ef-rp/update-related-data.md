@@ -2,18 +2,18 @@
 title: "EF 코어-를 사용 하 여 razor 페이지 관련된 데이터-7/8 업데이트"
 author: rick-anderson
 description: "이 자습서에서는 외래 키 필드와 탐색 속성을 업데이트 하 여 관련된 데이터를 업데이트 합니다."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 11/15/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-rp/update-related-data
-ms.openlocfilehash: 236589d0202a7f30f1e1a9d69902000fd9a2dd71
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5c91c91ab938f3aa4abc55049c54f399469f6163
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="updating-related-data---ef-core-razor-pages-7-of-8"></a>관련된 데이터 요금-EF 핵심 Razor 페이지 (7/8)를 업데이트합니다.
 

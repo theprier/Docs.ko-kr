@@ -2,18 +2,18 @@
 title: "ASP.NET Core 및 Entity Framework 6 시작"
 author: tdykstra
 description: "이 문서에는 ASP.NET Core 응용 프로그램에서 Entity Framework 6을 사용 하는 방법을 보여 줍니다."
-ms.author: tdykstra
 manager: wpickett
+ms.author: tdykstra
 ms.date: 02/24/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: data/entity-framework-6
-ms.openlocfilehash: 7f3c1f28c1e0b3a68db7f6f84c56b18643b56cc8
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7407fe8a976978d7d5077d5e5ac6cc264565621d
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="getting-started-with-aspnet-core-and-entity-framework-6"></a>ASP.NET Core 및 Entity Framework 6 시작
 
@@ -37,7 +37,7 @@ ASP.NET Core 프로젝트는.NET framework 및 EF6 참조 해야 합니다. 예�
 
 [!code-xml[](entity-framework-6/sample/MVCCore/MVCCore.csproj?range=3-9&highlight=2)]
 
-새 프로젝트를 만드는 경우 사용 하 여는 **ASP.NET Core 웹 응용 프로그램 (.NET Framework)** 서식 파일입니다.
+새 프로젝트를 만들 때 사용 된 **ASP.NET Core 웹 응용 프로그램 (.NET Framework)** 서식 파일입니다.
 
 ## <a name="handle-connection-strings"></a>연결 문자열을 처리 합니다.
 

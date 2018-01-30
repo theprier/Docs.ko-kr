@@ -2,19 +2,19 @@
 title: "Azure 앱 서비스에서 ASP.NET Core 문제 해결"
 author: guardrex
 description: "ASP.NET Core Azure App Service 배포에 대한 문제 진단 방법을 알아봅니다."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.custom: mvc
 ms.date: 01/08/2018
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: host-and-deploy/azure-apps/troubleshoot
-ms.openlocfilehash: 5ea292aeedbdab1df5b1e14405c8a039695412d5
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 6c8880a3db0deb987706b25aeefc7db9ae73a92a
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="troubleshoot-aspnet-core-on-azure-app-service"></a>Azure 앱 서비스에서 ASP.NET Core 문제 해결
 

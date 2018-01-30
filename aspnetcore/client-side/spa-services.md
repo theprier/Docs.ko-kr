@@ -2,19 +2,19 @@
 title: "단일 페이지 응용 프로그램을 만들기 위한 JavaScriptServices를 사용 하 여"
 author: scottaddie
 description: "단일 페이지 응용 프로그램 (SPA) 뒷받침 되며 ASP.NET Core 만들려는 JavaScriptServices 사용의 이점에 알아봅니다."
-ms.author: scaddie
 manager: wpickett
-ms.date: 08/02/2017
-ms.topic: article
-ms.technology: aspnet
-ms.prod: asp.net-core
-uid: client-side/spa-services
+ms.author: scaddie
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 514efcdd78957f999e46c521d0266f092f742538
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.date: 08/02/2017
+ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
+uid: client-side/spa-services
+ms.openlocfilehash: bd18d342de7c147e3588bd6daa3aebd68aa81c36
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="using-javascriptservices-for-creating-single-page-applications-with-aspnet-core"></a>ASP.NET Core 사용 단일 페이지 응용 프로그램을 만들기 위한 JavaScriptServices를 사용 하 여
 
@@ -288,7 +288,7 @@ dotnet run
 
 ## <a name="testing-the-app"></a>응용 프로그램 테스트
 
-SpaServices 템플릿은 사용 하 여 클라이언트 쪽 테스트를 실행 하는 미리 구성 된 [Karma](https://karma-runner.github.io/1.0/index.html) 및 [Jasmine](https://jasmine.github.io/)합니다. Karma test runner를 해당 테스트에 대 한 반면 jasmine는 인기 있는 단위 테스트 프레임 워크에 JavaScript를입니다. Karma 함께 작동 하도록 구성 되는 [시스템용 Dev 미들웨어](#webpack-dev-middleware) 중지 하 고 변경 내용이 적용 될 때마다 테스트를 실행 하지 않아도 되도록 합니다. 테스트 사례 또는 테스트 사례 자체에 대해 실행 되는 코드 인지 테스트가 자동으로 실행 합니다.
+SpaServices 템플릿은 사용 하 여 클라이언트 쪽 테스트를 실행 하는 미리 구성 된 [Karma](https://karma-runner.github.io/1.0/index.html) 및 [Jasmine](https://jasmine.github.io/)합니다. Karma test runner를 해당 테스트에 대 한 반면 jasmine는 인기 있는 단위 테스트 프레임 워크에 JavaScript를입니다. Karma 함께 작동 하도록 구성 되는 [시스템용 Dev 미들웨어](#webpack-dev-middleware) 를 중지 하 고 변경 내용이 적용 될 때마다 테스트를 실행 하는 개발자는 필요 하지 않습니다. 테스트 사례 또는 테스트 사례 자체에 대해 실행 되는 코드 인지 테스트가 자동으로 실행 합니다.
 
 각 응용 프로그램을 사용 하 여 예를 들어, 두 개의 자스민 테스트 사례가 이미 제공에 대 한는 `CounterComponent` 에 *counter.component.spec.ts* 파일:
 

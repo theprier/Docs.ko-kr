@@ -2,18 +2,18 @@
 title: "EF 코어 8-CRUD-2 사용 하 여 razor 페이지"
 author: rick-anderson
 description: "만들기, 읽기, 업데이트, EF 코어를 삭제 하는 방법을 보여 줍니다."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/15/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-rp/crud
-ms.openlocfilehash: d9b34c141401fbeaafe439fae1a7a75f2fe7b4ae
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 757aeb713b645cea0fe633b150784184d2d3571e
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="create-read-update-and-delete---ef-core-with-razor-pages-2-of-8"></a>만들기, 읽기, 업데이트 및 삭제-EF 코어 Razor 페이지 (2 / 8)
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 01/24/2018
 
 이 자습서에서는 스 캐 폴드 CRUD (만들기, 읽기, 업데이트, 삭제) 코드 검토 및 사용자 지정 합니다.
 
-참고: 복잡성을 최소화 하 고 이러한 자습서 EF 코어 데 초점을 유지 하려면 EF 핵심 코드 Razor 페이지 코드 숨김 파일에서 사용 됩니다. 일부 개발자는 UI (Razor 페이지) 및 데이터 액세스 계층 간에 추상화 계층을 작성할에서 서비스 계층 또는 리포지토리 패턴을 사용 합니다.
+참고: 복잡성을 최소화 하 고 이러한 자습서 EF 코어 데 초점을 유지 하려면 EF 핵심 코드 Razor 페이지 페이지 모델에 사용 됩니다. 일부 개발자는 UI (Razor 페이지) 및 데이터 액세스 계층 간에 추상화 계층을 작성할에서 서비스 계층 또는 리포지토리 패턴을 사용 합니다.
 
 이 자습서, 만들기, 편집, 삭제 및의 세부 정보 Razor 페이지에는 *학생* 폴더 수정 됩니다.
 
@@ -147,7 +147,7 @@ ms.lasthandoff: 01/24/2018
 <a name="vm"></a>
 ### <a name="view-model"></a>뷰 모델
 
-뷰 모델은 일반적으로 응용 프로그램에서 사용 되는 모델에 포함 된 속성의 하위 집합을 포함 합니다. 응용 프로그램 모델에는 도메인 모델을 이라고 합니다. 일반적으로 도메인 모델의 해당 엔터티 db에서에 필요한 모든 속성을 포함 합니다. 뷰 모델 (예를 들어 만들기 페이지) UI 계층에 필요한 속성에만 포함 되어 있습니다. 뷰 모델 외에도 일부 앱 Razor 페이지 코드 숨김 클래스와 브라우저 간에 데이터를 전달 바인딩 모델이 나 입력된 모델 사용 합니다. 다음 사항을 고려 `Student` 뷰 모델:
+뷰 모델은 일반적으로 응용 프로그램에서 사용 되는 모델에 포함 된 속성의 하위 집합을 포함 합니다. 응용 프로그램 모델에는 도메인 모델을 이라고 합니다. 일반적으로 도메인 모델의 해당 엔터티 db에서에 필요한 모든 속성을 포함 합니다. 뷰 모델 (예를 들어 만들기 페이지) UI 계층에 필요한 속성에만 포함 되어 있습니다. 뷰 모델 외에도 일부 앱 Razor 페이지 페이지 모델 클래스와 브라우저 간에 데이터를 전달 바인딩 모델이 나 입력된 모델 사용 합니다. 다음 사항을 고려 `Student` 뷰 모델:
 
 [!code-csharp[Main](intro/samples/cu/Models/StudentVM.cs)]
 
@@ -165,7 +165,7 @@ Razor 페이지에는 `PageModel` 파생된 클래스는 뷰 모델입니다.
 
 ## <a name="update-the-edit-page"></a>업데이트 편집 페이지
 
-편집 페이지 코드 숨김 파일을 업데이트 합니다.
+편집 페이지에 대 한 페이지 모델을 업데이트 합니다.
 
 [!code-csharp[Main](intro/samples/cu/Pages/Students/Edit.cshtml.cs?name=snippet_OnPostAsync&highlight=20,36)]
 

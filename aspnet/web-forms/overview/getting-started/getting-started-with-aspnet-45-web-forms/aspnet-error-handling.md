@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/aspnet-error-handling
 msc.type: authoredcontent
-ms.openlocfilehash: c5ec43ac78be4a9452ebaa6495a6883506ac162f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 3f732ae6f1b7845bcae88912b4a4fe26574c10de
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="aspnet-error-handling"></a>ASP.NET 오류 처리
 ====================
@@ -273,7 +273,7 @@ ELMAH (오류 로깅 모듈 및 처리기)에 NuGet 패키지로 ASP.NET 응용 
 - 처리 되지 않은 예외의 로깅을 구성 합니다.
 - 기록 된 처리 되지 않은 예외에 대 한 전체 로그를 보려는 웹 페이지입니다.
 - 각각의 전체 세부 정보를 보려면 웹 페이지 예외를 기록 합니다.
-- 메일 알림을 각 오류 발생 시.
+- 전자 메일 알림 각 오류 발생 시.
 - 마지막 15 오류 로그에서 RSS 피드입니다.
 
 ELMAH 작업할 수 있습니다, 전에 설치 해야 합니다. 이것은 쉽게 사용 하 여는 *NuGet* 패키지 설치 관리자입니다. 이 자습서 시리즈의 앞부분에 나오는 설명 했 듯이 NuGet은 쉽게 설치 하 고 Visual Studio에서 오픈 소스 라이브러리와 도구를 업데이트 하는 Visual Studio 확장 합니다.

@@ -4,15 +4,15 @@ author: rick-anderson
 description: "이 자습서에서는 정렬, 필터링 및 페이징을 ASP.NET 코어 및 Entity Framework 코어를 사용 하 여 페이지 기능을 추가 합니다."
 ms.author: riande
 ms.date: 10/22/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: 24649374b71da39d638d943617a219d45f064846
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9c1ee6f8c00f3cd501ea86fbf73f51ae540a010a
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="sorting-filtering-paging-and-grouping---ef-core-with-razor-pages-3-of-8"></a>정렬, 필터링, 페이징 및 그룹화-EF 코어 Razor 페이지 (3 / 8)
 
@@ -107,7 +107,7 @@ ms.lasthandoff: 01/24/2018
 필터링을 추가 하려면 학생 인덱스 페이지에:
 
 * 텍스트 상자 및 전송 단추가 Razor 페이지에 추가 됩니다. 텍스트 상자에서 첫 번째 또는 마지막 이름에 검색 문자열을 제공합니다.
-* 코드 숨김 파일은 텍스트 상자 값을 사용 하도록 업데이트 됩니다.
+* 페이지 모델이 텍스트 상자 값을 사용 하도록 업데이트 됩니다.
 
 ### <a name="add-filtering-functionality-to-the-index-method"></a>Index 메서드에 필터링 기능 추가
 
@@ -245,7 +245,7 @@ http://localhost:5000/Students?SearchString=an
 이 단계에서는 *Pages/About.cshtml* 각 등록 날짜에 대해 등록 한 학생 수를 표시 하도록 업데이트 됩니다. 업데이트는 그룹화를 사용 하며 다음 단계로 구성 됩니다.
 
 * 사용 되는 데이터에 대 한 보기 모델 클래스 만들기는 **에 대 한** 페이지.
-* Razor 페이지에 대 한 및 코드 숨김 파일을 수정 합니다.
+* 에 대 한 Razor 페이지와 페이지 모델을 수정 합니다.
 
 ### <a name="create-the-view-model"></a>뷰 모델 만들기
 
@@ -255,7 +255,7 @@ http://localhost:5000/Students?SearchString=an
 
 [!code-csharp[Main](intro/samples/cu/Models/SchoolViewModels/EnrollmentDateGroup.cs)]
 
-### <a name="update-the-about-code-behind-page"></a>업데이트 정보 코드 숨김 페이지
+### <a name="update-the-about-page-model"></a>정보 페이지 모델 업데이트
 
 업데이트는 *Pages/About.cshtml.cs* 를 다음 코드로 파일:
 

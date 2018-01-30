@@ -2,18 +2,18 @@
 title: "하위 키 파생 및 인증 된 암호화"
 author: rick-anderson
 description: "이 문서에서는 ASP.NET Core 데이터 보호의 구현 세부 정보 파생을 하위 키와 인증 암호화에 설명 합니다."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/data-protection/implementation/subkeyderivation
-ms.openlocfilehash: 7db0bb7cd641512e7e5850e1765ad5b3e54e3aca
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 4b905bbc7bb064b6ba1741557bd694c8c67ccfa8
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="subkey-derivation-and-authenticated-encryption"></a>하위 키 파생 및 인증 된 암호화
 

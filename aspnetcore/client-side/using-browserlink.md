@@ -2,19 +2,19 @@
 title: "ASP.NET Core에서 브라우저 링크"
 author: ncarandini
 description: "어떻게 브라우저 링크는 하나 이상의 웹 브라우저와 함께 개발 환경에 연결 하는 Visual Studio 기능에 설명 합니다."
-ms.author: riande
 manager: wpickett
-ms.date: 09/22/2017
-ms.topic: article
-ms.technology: aspnet
-ms.prod: asp.net-core
-uid: client-side/using-browserlink
+ms.author: riande
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d5db65c268923e96c45b034639437fc3496ccac1
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.date: 09/22/2017
+ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
+uid: client-side/using-browserlink
+ms.openlocfilehash: 3e62bdd180bb1f5e2ce0645a8cf13c9ffe76197e
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="browser-link-in-aspnet-core"></a>ASP.NET Core에서 브라우저 링크 
 

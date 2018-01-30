@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/common-configuration-differences-between-development-and-production-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 725812c64667488b9a06c065c7100d0536c2e3e2
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 092362e3811213047820dab08efc16e1a1e75020
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="common-configuration-differences-between-development-and-production-c"></a>개발 및 프로덕션 (C#) 간의 일반적인 구성 차이
 ====================
@@ -30,7 +30,7 @@ ms.lasthandoff: 01/24/2018
 ## <a name="introduction"></a>소개
 
 
-마지막 두 개의 자습서 연습을 통해 간단한 웹 응용 프로그램을 배포 합니다. [ *FTP 클라이언트를 사용 하 여 사이트를 배포* ](deploying-your-site-using-an-ftp-client-cs.md) 자습서에는 독립 실행형 FTP 클라이언트를 사용 하 여 최대 프로덕션 개발 환경에서 필요한 파일을 복사 하는 방법을 배웠습니다. 이전 자습서 [ *배포 Your 사이트를 사용 하 여 Visual Studio*](deploying-your-site-using-visual-studio-cs.md), Visual Studio의 웹 사이트 복사 도구 및 게시 옵션을 사용 하 여 배포에서 조회할 합니다. 두 자습서 프로덕션 환경에서 모든 파일에는 개발 환경에서 파일의 복사본을 했습니다. 그러나와 다를 개발 환경에서 프로덕션 환경에서 구성 파일에 대 한 일반적이 지 않습니다. 웹 응용 프로그램의 구성에 저장 됩니다는 `Web.config` 파일, 일반적으로 데이터베이스, 웹 및 전자 메일 서버 등의 외부 리소스에 대 한 정보를 포함 합니다. 것도 줄이지 않고 처리 되지 않은 예외가 발생할 때 실행 하는 작업 과정 같은 특정 상황에서 응용 프로그램의 동작 합니다.
+마지막 두 개의 자습서 연습을 통해 간단한 웹 응용 프로그램을 배포 합니다. [ *FTP 클라이언트를 사용 하 여 사이트를 배포* ](deploying-your-site-using-an-ftp-client-cs.md) 자습서에는 독립 실행형 FTP 클라이언트를 사용 하 여 최대 프로덕션 개발 환경에서 필요한 파일을 복사 하는 방법을 배웠습니다. 이전 자습서 [ *배포 Your 사이트를 사용 하 여 Visual Studio*](deploying-your-site-using-visual-studio-cs.md), Visual Studio의 웹 사이트 복사 도구 및 게시 옵션을 사용 하 여 배포에서 조회할 합니다. 두 자습서 프로덕션 환경에서 모든 파일에는 개발 환경에서 파일의 복사본을 했습니다. 그러나와 다를 개발 환경에서 프로덕션 환경에서 구성 파일에 대 한 일반적이 지 않습니다. 웹 응용 프로그램의 구성에 저장 됩니다는 `Web.config` 파일, 일반적으로 데이터베이스, 웹 및 메일 서버 등의 외부 리소스에 대 한 정보를 포함 합니다. 것도 줄이지 않고 처리 되지 않은 예외가 발생할 때 실행 하는 작업 과정 같은 특정 상황에서 응용 프로그램의 동작 합니다.
 
 웹 응용 프로그램을 배포 하는 경우에 올바른 구성 정보는 프로덕션 환경에서 결국 중요 합니다. 대부분의 경우에는 `Web.config` 개발 환경에서 파일을 프로덕션 환경으로 복사할 수 없습니다-됩니다. 대신, 사용자 지정 된 버전의 `Web.config` 프로덕션 환경으로 업로드 해야 합니다. 이 자습서에서는 몇 가지 일반적인 구성 차이점; 살펴봅니다. 또한 환경 간에 서로 다른 구성 정보를 유지 관리 하기 위한 몇 가지 기술을 요약 되어 있습니다.
 

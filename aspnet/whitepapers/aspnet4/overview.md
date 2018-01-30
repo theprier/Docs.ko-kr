@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/aspnet4
 msc.type: content
-ms.openlocfilehash: f0224bcd2badc423ba5146feacccc44b8f33a608
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 29d5b2f4c04b899b900427ac202c0a4f57f8076f
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>ASP.NET 4 및 Visual Studio 2010 웹 개발 개요
 ====================
@@ -1218,7 +1218,7 @@ ASP.NET 4에서 동적 데이터 지원의 주요 목표는 모든 ASP.NET 응�
 
 <a id="0.2__Toc224729045"></a><a id="0.2__Toc253429282"></a><a id="0.2__Toc243304653"></a>
 
-### <a name="new-field-templates-for-urls-and-e-mail-addresses"></a>Url 및 전자 메일 주소에 대 한 새 필드 템플릿
+### <a name="new-field-templates-for-urls-and-email-addresses"></a>Url 및 전자 메일 주소에 대 한 새 필드 템플릿
 
 ASP.NET 4에서는 두 개의 새로운 기본 제공 필드 템플릿을 `EmailAddress.ascx` 및 `Url.ascx`합니다. 이러한 템플릿은으로 표시 된 필드에 사용 됩니다 *EmailAddress* 또는 *Url* 와 *DataType* 특성입니다. 에 대 한 *EmailAddress* 개체를 사용 하 여 만든 하이퍼링크로 필드가 표시 됩니다는 *mailto:* 프로토콜입니다. 사용자가 링크를 클릭 하면 사용자의 전자 메일 클라이언트 열리고 기본 메시지가 만들어집니다. 로 형식화 된 개체가 *Url* 일반 하이퍼링크로 표시 됩니다.
 
@@ -1382,7 +1382,7 @@ Visual Studio 2010에서는 IIS 원격 관리 서비스를 사용 하 여 원격
 
 Microsoft가 이 설명서 본안에 관련된 특허권, 상표권, 저작권 또는 기타 지적 재산권 등을 보유할 수도 있습니다. 서면 사용권 계약에 따라 Microsoft로부터 귀하에게 명시적으로 제공된 권리 이외에, 이 문서의 제공은 귀하에게 이러한 특허권, 상표권, 저작권, 또는 기타 지적 소유권 등에 대한 어떠한 사용권도 허여하지 않습니다.
 
-다른 설명이 없는 한, 용례에 사용된 회사, 기관, 제품, 도메인 이름, 전자 메일 주소, 로고, 사람, 장소 및 이벤트 등은 실제 데이터가 아닙니다. 어떠한 실제 회사, 기관, 제품, 도메인 이름, 전자 메일 주소, 로고, 사람, 장소 또는 이벤트와도 연관시킬 의도가 없으며 그렇게 유추해서도 안 됩니다.
+다른 설명이 없는 한 예제 회사, 조직, 제품, 도메인 이름, 전자 메일 주소, 로고, 사람, 장소 및 이벤트 용례은 실제 데이터가 아닙니다과 연결 된 실제 회사, 조직, 제품, 도메인 이름, 전자 메일 주소, 로고, 사람, 장소 또는 이벤트 해서도 그렇게 유추 해서도 안 됩니다.
 
 © 2009 Microsoft Corporation입니다. All rights reserved.
 

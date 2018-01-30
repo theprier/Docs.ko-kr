@@ -2,18 +2,18 @@
 title: "ASP.NET Core에서 Grunt를 사용 하 여"
 author: rick-anderson
 description: 
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: client-side/using-grunt
-ms.openlocfilehash: 527373829754757e52ab84b64e04702d649e9062
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c23f170b36ac1b9623835337020f2b5ac9514971
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="using-grunt-in-aspnet-core"></a>ASP.NET Core에서 Grunt를 사용 하 여 
 
@@ -51,7 +51,7 @@ Grunt은 스크립트 축소, TypeScript 컴파일, 코드 품질 "중요" 도�
 
 4.  라는 새 폴더 추가 `TypeScript` 프로젝트 디렉터리에 있습니다.
 
-5.  모든 파일을 추가 하기 전에 보겠습니다 가지도록 Visual Studio 옵션 ' 컴파일 저장할 때 ' TypeScript 파일 확인에 대 한 합니다. *도구 > 옵션 > 텍스트 편집기 > Typescript > 프로젝트*
+5.  모든 파일을 추가 하기 전에 Visual Studio는 옵션이 있는지 확인 ' 컴파일 저장할 때 ' TypeScript 파일을 선택 합니다. 로 이동 **도구** > **옵션** > **텍스트 편집기** > **Typescript**  >  **프로젝트**:
 
     ![TypeScript 파일의 자동 compliation 설정 옵션](using-grunt/_static/typescript-options.png)
 

@@ -2,7 +2,7 @@
 uid: aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
 title: "실습 랩: Azure 웹 사이트를 유지 관리 가능한: 변경 및 크기 조정 관리 | Microsoft Docs"
 author: rick-anderson
-description: "Microsoft Azure를 사용 하면 쉽게 만들고 프로덕션 환경에 웹 사이트를 배포 합니다. 하지만 응용 프로그램은 라이브 때 완료 되지 않았습니다, 그리고 방금 시작! 있습니다..."
+description: "이 랩에서 Microsoft Azure 손쉽게 방법을를 빌드 및 프로덕션 환경에 웹 사이트 배포에 대해 알아봅니다."
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/16/2014
@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
 msc.type: authoredcontent
-ms.openlocfilehash: 3d24c633368abc14efcd9fcf200a4d05c5b182c9
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 4bce02b2c592ff04e0dbce78d18004c69268e4fd
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a>실습 랩: Azure 웹 사이트를 유지 관리 가능한: 변경 및 크기 조정 관리
 ====================

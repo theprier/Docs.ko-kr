@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/configuration-and-instrumentation
 msc.type: authoredcontent
-ms.openlocfilehash: 5780bfde928011f46c3f504aec927f2127f10d0d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 16dfe3c899dfa028d8a52b4b5f9c2868887e8fa9
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="configuration-and-instrumentation"></a>구성 및 계측
 ====================
@@ -138,7 +138,7 @@ System.Web.Management 네임 스페이스의 클래스 및 ASP.NET 응용 프로
 
 ASP.NET 2.0 시작 및 중지,으로 처리 되지 않은 예외 로깅 응용 프로그램 도메인을 기준으로 이벤트를 기록 하는 이벤트 로그 공급자의 the-기본적으로 사용 합니다. 이렇게 하면 기본 시나리오 중 일부를 다룬 것입니다. 예를 들어 응용 프로그램 예외를 throw 하지만 사용자 오류를 저장 하지는 않습니다를 재현할 수 없는 가정해 봅니다. 기본 이벤트 로그 규칙으로 알아둡니다 어떤 종류의 오류가 발생 한 예외 및 스택 정보를 수집할 수는 합니다. 또 다른 예에는 응용 프로그램은 세션 상태를 유지 하는 경우 적용 됩니다. 이 경우 응용 프로그램 도메인이 재활용 되 고 응용 프로그램 도메인을 멈춘 이유에 처음에 있는지 여부를 확인 하려면 이벤트 로그에서 볼 수 있습니다.
 
-또한 상태 모니터링 시스템은 확장 가능 합니다. 예를 들어 사용자 지정 웹 이벤트를 정의 하 고, 응용 프로그램 내에서 발생 하도록 하 고, 다음 전자 메일 등 공급자에 이벤트 정보를 전송할 규칙을 정의할 수 있습니다. 이 상태 공급자를 모니터링 하 여 계측을 쉽게 연결할 수 있습니다. 또 다른 예로, 주문 처리 되 고 SQL Server 데이터베이스에 각 이벤트를 전송 하는 규칙을 설정할 때마다 이벤트를 발생 수 있습니다. 또한 사용자가 행을 여러 번 로그온 하 고 전자 메일 기반 공급자를 사용 하도록 이벤트를 설정 하지 못하면 이벤트를 발생 수 없습니다.
+또한 상태 모니터링 시스템은 확장 가능 합니다. 예를 들어 사용자 지정 웹 이벤트를 정의 하 고, 응용 프로그램 내에서 발생 하도록 하 고, 다음 같은 사용자의 전자 메일 공급자에 이벤트 정보를 전송할 규칙을 정의할 수 있습니다. 이 상태 공급자를 모니터링 하 여 계측을 쉽게 연결할 수 있습니다. 또 다른 예로, 주문 처리 되 고 SQL Server 데이터베이스에 각 이벤트를 전송 하는 규칙을 설정할 때마다 이벤트를 발생 수 있습니다. 또한 사용자가 행을 여러 번 로그온 하 고 전자 메일 기반 공급자를 사용 하도록 이벤트를 설정 하지 못하면 이벤트를 발생 수 없습니다.
 
 기본 공급자 및 이벤트에 대 한 구성은 전역 Web.config 파일에 저장 됩니다. 전역 Web.config 파일에서 ASP.NET 1 Machine.config 파일에 저장 된 모든 웹 기반 설정을 저장 x. 전역 Web.config 파일은 다음 디렉터리에 있습니다.
 
@@ -196,7 +196,7 @@ Wmi 이벤트를 전달할 수도 있습니다. WMI 공급자는 기본적으로
 
 [!code-xml[Main](configuration-and-instrumentation/samples/sample10.xml)]
 
-## <a name="how-to-forward-events-to-e-mail"></a>전자 메일에 대 한 이벤트를 전달 하는 방법
+## <a name="how-to-forward-events-to-email"></a>전자 메일에 이벤트를 전달 하는 방법
 
 전자 메일에 대 한 이벤트를 전달할 수 있습니다. 주의 이벤트는 규칙 수 실수로 보내 처럼 사용자가 직접 정보도 많이 제공 하는 전자 메일 공급자에 매핑할 수 있습니다 하는 방법에 대 한 SQL Server 또는 이벤트 로그에 더 적합 해야 합니다. 두 명의 전자 메일 공급자가 있습니다. SimpleMailWebEventProvider 및 TemplatedMailWebEventProvider 합니다. 각 값에 동일한 구성 특성은 둘 다 에서만 사용할 수는 TemplatedMailWebEventProvider "템플릿" 및 "detailedTemplateErrors" 특성을 제외 하 고 있습니다.
 
@@ -208,7 +208,7 @@ Wmi 이벤트를 전달할 수도 있습니다. WMI 공급자는 기본적으로
 
 [!code-xml[Main](configuration-and-instrumentation/samples/sample11.xml)]
 
-전자 메일 공급자를 연결 하는 다음 규칙이 추가 되어는 **모든 이벤트** 이벤트 맵:
+다음 규칙에 전자 메일 공급자 연결에 추가 됩니다는 **모든 이벤트** 이벤트 맵:
 
 [!code-xml[Main](configuration-and-instrumentation/samples/sample12.xml)]
 
@@ -330,7 +330,7 @@ TargetDir 매개 변수를 지정 하 여 배포 (컴파일 대상 위치에)에
 
 | **파일 형식** | **컴파일러 동작** |
 | --- | --- |
-| .ascx, .aspx, .master | 이러한 파일에 포함 된 모든 코드 및 코드 숨김 파일을 모두 포함 하는 태그 코드와 소스 코드도 분할 됩니다 &lt;스크립트 runat = "server"&gt; 요소입니다. 소스 코드 해싱 알고리즘에서 파생 된 이름 갖는 어셈블리로 컴파일하고 Bin 디렉터리에 저장 됩니다. 인라인 코드, 즉, 사이 포함 된 코드는  **&lt; %**  및  **% &gt;**  대괄호는 태그에 포함 되며 컴파일되지 않습니다. 새 파일의 소스 파일과 동일한 이름의 태그를 포함 하도록 만들고 해당 출력 디렉터리에 배치 합니다. |
+| .ascx, .aspx, .master | 이러한 파일에 포함 된 모든 코드 및 코드 숨김 파일을 모두 포함 하는 태그 코드와 소스 코드도 분할 됩니다 &lt;스크립트 runat = "server"&gt; 요소입니다. 소스 코드 해싱 알고리즘에서 파생 된 이름 갖는 어셈블리로 컴파일하고 Bin 디렉터리에 저장 됩니다. 인라인 코드, 즉, 사이 포함 된 코드는 ** &lt; % ** 및 ** % &gt; ** 대괄호는 태그에 포함 되며 컴파일되지 않습니다. 새 파일의 소스 파일과 동일한 이름의 태그를 포함 하도록 만들고 해당 출력 디렉터리에 배치 합니다. |
 | .ashx, .asmx | 이러한 파일 컴파일되고 고 컴파일되지 출력 디렉터리로 이동 됩니다. 컴파일된 처리기 코드 하려는 경우 앱의 소스 코드 파일에 코드를 배치\_코드 디렉터리입니다. |
 | .cs,.vb,.jsl,.cpp (앞에서 나열 된 파일 형식에 대 한 코드 숨김 파일 제외) | 이러한 파일 컴파일되고 참조 하는 어셈블리에 리소스로 포함 됩니다. 소스 파일은 출력 디렉터리에 복사 되지 않습니다. 코드 파일을 참조 하지 않은 경우 컴파일되지 않습니다. |
 | 사용자 지정 파일 형식 | 이러한 파일은 컴파일되지 않습니다. 이러한 파일은 해당 출력 디렉터리에 복사 됩니다. |
@@ -344,7 +344,7 @@ TargetDir 매개 변수를 지정 하 여 배포 (컴파일 대상 위치에)에
 
 | **파일 형식** | **컴파일러 동작** |
 | --- | --- |
-| .aspx, .asmx, .ashx, .master | 이러한 파일에 포함 된 모든 코드 및 코드 숨김 파일을 모두 포함 하는 태그 코드와 소스 코드도 분할 됩니다 &lt;스크립트 runat = "server"&gt; 요소입니다. 소스 코드는 해싱 알고리즘에서 파생 된 이름 갖는 어셈블리로 컴파일됩니다. 결과 어셈블리 Bin 디렉터리에 배치 됩니다. 인라인 코드, 즉, 사이 포함 된 코드는  **&lt; %**  및  **% &gt;**  대괄호는 태그에 포함 되며 컴파일되지 않습니다. 컴파일러는 소스 파일과 동일한 이름의 태그를 포함할 새 파일을 만듭니다. 이러한 결과 파일은 Bin 디렉터리에 배치 됩니다. 또한 컴파일러의 소스 파일과 동일한 이름의 하지만 확장명은 파일을 만듭니다. 매핑 정보를 포함 하는 컴파일된 합니다. 합니다. 컴파일된 파일은 소스 파일의 원래 위치에 해당 하는 출력 디렉터리에 배치 됩니다. |
+| .aspx, .asmx, .ashx, .master | 이러한 파일에 포함 된 모든 코드 및 코드 숨김 파일을 모두 포함 하는 태그 코드와 소스 코드도 분할 됩니다 &lt;스크립트 runat = "server"&gt; 요소입니다. 소스 코드는 해싱 알고리즘에서 파생 된 이름 갖는 어셈블리로 컴파일됩니다. 결과 어셈블리 Bin 디렉터리에 배치 됩니다. 인라인 코드, 즉, 사이 포함 된 코드는 ** &lt; % ** 및 ** % &gt; ** 대괄호는 태그에 포함 되며 컴파일되지 않습니다. 컴파일러는 소스 파일과 동일한 이름의 태그를 포함할 새 파일을 만듭니다. 이러한 결과 파일은 Bin 디렉터리에 배치 됩니다. 또한 컴파일러의 소스 파일과 동일한 이름의 하지만 확장명은 파일을 만듭니다. 매핑 정보를 포함 하는 컴파일된 합니다. 합니다. 컴파일된 파일은 소스 파일의 원래 위치에 해당 하는 출력 디렉터리에 배치 됩니다. |
 | .ascx | 이러한 파일은 태그 및 소스 코드도 분할 됩니다. 소스 코드를 어셈블리에 컴파일되고 해싱 알고리즘에서 파생 된 형식의 이름으로 Bin 디렉터리에 배치 됩니다. 태그 파일이 생성 됩니다. |
 | .cs,.vb,.jsl,.cpp (앞에서 나열 된 파일 형식에 대 한 코드 숨김 파일 제외) | .Ascx,.ashx, 또는.aspx 파일에서 생성 된 어셈블리에서 참조 되는 소스 코드를 어셈블리에 컴파일되고 Bin 디렉터리에 배치 됩니다. 원본 파일이 복사 됩니다. |
 | 사용자 지정 파일 형식 | 이러한 파일은 동적 파일 처럼 컴파일됩니다. 에 기반 하는 파일의 형식에 따라 컴파일러 출력 디렉터리에 매핑 파일을 배치할 수 있습니다. |
@@ -360,7 +360,7 @@ MSI Windows Installer를 사용 하 여 웹 응용 프로그램 배포 등의 �
 
 ### <a name="strong-name-compilationhttpsmsdnmicrosoftcomlibraryms229863aspx"></a>[강력한 이름의 컴파일](https://msdn.microsoft.com/library/ms229863.aspx##)
 
-**aptca**, **-delaysign**, **-keycontainer** 및 **-keyfile** Aspnet를 사용할 수 있도록 옵션이 제공 됩니다\_ 사용 하지 않고 compiler.exe를 만드는 강력한 이름의 어셈블리는 [강력한 이름 도구 (Sn.exe)](https://msdn.microsoft.com/library/k5b5tt23.aspx) 별도로 합니다. 이러한 옵션 각각 해당을 **AllowPartiallyTrustedCallersAttribute**, **AssemblyDelaySignAttribute**, **AssemblyKeyNameAttribute**, 및  **AssemblyKeyFileAttribute**합니다.
+**aptca**, **-delaysign**, **-keycontainer** 및 **-keyfile** Aspnet를 사용할 수 있도록 옵션이 제공 됩니다\_ 사용 하지 않고 compiler.exe를 만드는 강력한 이름의 어셈블리는 [강력한 이름 도구 (Sn.exe)](https://msdn.microsoft.com/library/k5b5tt23.aspx) 별도로 합니다. 이러한 옵션 각각 해당을 **AllowPartiallyTrustedCallersAttribute**, **AssemblyDelaySignAttribute**, **AssemblyKeyNameAttribute**, 및 ** AssemblyKeyFileAttribute**합니다.
 
 이러한 특성에 대 한 설명은이 과정의 범위를 벗어났습니다.
 

@@ -2,18 +2,18 @@
 title: "마이그레이션 인증 및 ASP.NET 코어 2.0 Id"
 author: scottaddie
 description: "이 문서는 ASP.NET 코어 2.0으로 마이그레이션 ASP.NET Core 1.x 인증 및 Id에 대 한 가장 일반적인 단계를 간략하게 설명 합니다."
-ms.author: scaddie
 manager: wpickett
+ms.author: scaddie
 ms.date: 10/26/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: migration/1x-to-2x/identity-2x
-ms.openlocfilehash: 72ad31438a344fb5fa2b357c709b923b8077e742
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: dd48b2b027d22b570aa182e748ca91738e935f49
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="migrating-authentication-and-identity-to-aspnet-core-20"></a>마이그레이션 인증 및 ASP.NET 코어 2.0 Id
 
@@ -136,7 +136,7 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerfactory) {
 
     전달 하 여 기본 체계를 설정 해야 하므로이 코드 조각은 Id를 사용 하지 않는 `JwtBearerDefaults.AuthenticationScheme` 에 `AddAuthentication` 메서드.
 
-### <a name="openid-connect-oidc-authentication"></a>OpenID Connect (OIDC) 인증
+### <a name="openid-connect-oidc-authentication"></a>OpenID 연결 (OIDC) 인증
 다음과 같이 변경 *Startup.cs*:
 
 - 대체는 `UseOpenIdConnectAuthentication` 메서드 호출의 `Configure` 메서드 `UseAuthentication`:
@@ -161,7 +161,7 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerfactory) {
     });
     ```
 
-### <a name="facebook-authentication"></a>Facebook 인증
+### <a name="facebook-authentication"></a>facebook 인증
 다음과 같이 변경 *Startup.cs*:
 - 대체는 `UseFacebookAuthentication` 메서드 호출의 `Configure` 메서드 `UseAuthentication`:
  
@@ -296,7 +296,7 @@ services.AddAuthentication(IISDefaults.AuthenticationScheme);
 
 <a name="identity-cookie-options"></a>
 
-## <a name="identitycookieoptions-instances"></a>IdentityCookieOptions Instances
+## <a name="identitycookieoptions-instances"></a>IdentityCookieOptions instances
 2.0 변경의 부작용은 옵션 쿠키 옵션 인스턴스 대신 명명 된 사용으로 전환 합니다. Identity 쿠키 구성표 이름을 사용자 지정 하는 기능이 제거 됩니다.
 
 예를 들어 1.x 프로젝트 사용 [생성자 삽입](xref:mvc/controllers/dependency-injection#constructor-injection) 전달 하는 `IdentityCookieOptions` 매개 변수를 *AccountController.cs*합니다. 외부 쿠키 인증 체계는에서 제공된 된 인스턴스에 액세스 합니다.
@@ -313,7 +313,7 @@ services.AddAuthentication(IISDefaults.AuthenticationScheme);
 
 <a name="navigation-properties"></a>
 
-## <a name="add-identityuser-poco-navigation-properties"></a>IdentityUser POCO 탐색 속성 추가
+## <a name="add-identityuser-poco-navigation-properties"></a>POCO IdentityUser 탐색 속성 추가
 자료의 Entity Framework (EF) 핵심 탐색 속성 `IdentityUser` POCO (Plain Old CLR Object) 제거 되었습니다. 이러한 속성을 사용 하는 1.x 프로젝트에 수동으로 추가 다시 2.0 프로젝트에:
 
 ```csharp

@@ -2,18 +2,18 @@
 title: "키 관리"
 author: rick-anderson
 description: "이 문서에는 ASP.NET Core 데이터 보호 키 관리 Api의 구현 세부 사항을 설명합니다."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/data-protection/implementation/key-management
-ms.openlocfilehash: 9c4d293355e26d8bf5ba1360b070a7b9809bfe56
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 00f48718ad8b9cc9070b7adc54b26ecd89eb320f
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="key-management"></a>키 관리
 

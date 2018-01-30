@@ -1,19 +1,19 @@
 ---
-title: "ASP.NET Core Id에 대 한 사용자 지정 저장소 공급자 | Microsoft Docs"
+title: "ASP.NET Core Id에 대 한 사용자 지정 저장소 공급자"
 author: ardalis
-description: "ASP.NET Core Id에 대 한 사용자 지정 저장소 공급자를 구성 하는 방법입니다."
-ms.author: riande
+description: "ASP.NET Core Id에 대 한 사용자 지정 저장소 공급자를 구성 하는 방법에 알아봅니다."
 manager: wpickett
+ms.author: riande
 ms.date: 05/24/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: f0953ad5d9f1bfa92ecc5169d9a211ce6b8cda8f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 8541fe47207c0af232ca81ae45da6af201d94799
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>ASP.NET Core Id에 대 한 사용자 지정 저장소 공급자
 

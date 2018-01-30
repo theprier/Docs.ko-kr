@@ -2,18 +2,18 @@
 title: "ASP.NET Core MVC EF 코어 상속-9 / 10 인"
 author: tdykstra
 description: "이 자습서에서는 ASP.NET Core 응용 프로그램에서 Entity Framework Core를 사용 하 여 데이터 모델에서 상속을 구현 하는 방법을 보여줍니다."
-ms.author: tdykstra
 manager: wpickett
+ms.author: tdykstra
 ms.date: 03/15/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-mvc/inheritance
-ms.openlocfilehash: a4ae696bdd114ab9c36d1218f753fa3d515f2300
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 985cc38b10ef830b8274e40ad5f7050157fd4d86
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="inheritance---ef-core-with-aspnet-core-mvc-tutorial-9-of-10"></a>상속-EF 코어 ASP.NET Core MVC 자습서 (9 / 10)
 

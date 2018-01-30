@@ -2,18 +2,18 @@
 title: "ASP.NET Core로 특정 구성표-권한 부여"
 author: rick-anderson
 description: "이 문서에서는 여러 가지 인증 방법을 사용할 때 id는 특정 체계를 제한 하는 방법을 설명 합니다."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/12/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/authorization/limitingidentitybyscheme
-ms.openlocfilehash: 099dba1a4235ef62ea298748645b99e2d6d12d44
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: dd044a0829382f9f7f0c3256c6e669340f2d5240
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="authorize-with-a-specific-scheme"></a>특정 구성표로 권한 부여
 

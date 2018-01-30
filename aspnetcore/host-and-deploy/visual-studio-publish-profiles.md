@@ -2,19 +2,19 @@
 title: "Visual Studio ASP.NET Core 응용 프로그램 배포에 대 한 프로필 게시"
 author: rick-anderson
 description: "만드는 방법을 익힐 Visual Studio에서 ASP.NET Core 응용 프로그램에 대 한 프로필을 게시 합니다."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.custom: mvc
 ms.date: 09/26/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: host-and-deploy/visual-studio-publish-profiles
-ms.openlocfilehash: 1f403447c39db4ebfe3dafda591602f0dc9db8c3
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 138b60d0e7c2a3d8848d534ffed854feaf0f5661
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="visual-studio-publish-profiles-for-aspnet-core-app-deployment"></a>Visual Studio ASP.NET Core 응용 프로그램 배포에 대 한 프로필 게시
 
@@ -294,7 +294,7 @@ MSBuild는 다음 구문을 사용합니다.
 
 `msbuild <path-to-project-file> /p:DeployOnBuild=true /p:PublishProfile=<Publish Profile> /p:Username=<USERNAME> /p:Password=<PASSWORD>`
 
-가져오기는 `Password` 에서  *\<게시 이름 >. PublishSettings* 파일입니다. 다운로드는 *합니다. PublishSettings* 파일 중 하나에서:
+가져오기는 `Password` 에서 * \<게시 이름 >. PublishSettings* 파일입니다. 다운로드는 *합니다. PublishSettings* 파일 중 하나에서:
 
 * 솔루션 탐색기: 웹 응용 프로그램을 마우스 오른쪽 단추로 클릭 하 고 선택 **게시 프로필 다운로드**합니다.
 * Azure 관리 포털: 선택 **Get 게시 프로필** 웹 앱 블레이드에서 합니다.

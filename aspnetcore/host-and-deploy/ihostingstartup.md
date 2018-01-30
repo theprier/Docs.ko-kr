@@ -2,19 +2,19 @@
 title: "ASP.NET Core에서 IHostingStartup를 사용 하 여 외부 어셈블리의 응용 프로그램 기능을 추가 합니다."
 author: guardrex
 description: "IHostingStartup 구현을 사용 하 여 외부 어셈블리의 기능을 ASP.NET Core 응용 프로그램을 추가 하는 방법을 알아봅니다."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.custom: mvc
 ms.date: 12/07/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: host-and-deploy/ihostingstartup
-ms.openlocfilehash: 6013091d94302f0f9ecbc777d3ef64774b49aebe
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: bd2446d6133e0c06dc14509271c2d17be4c95b63
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="add-app-features-from-an-external-assembly-using-ihostingstartup-in-aspnet-core"></a>ASP.NET Core에서 IHostingStartup를 사용 하 여 외부 어셈블리의 응용 프로그램 기능을 추가 합니다.
 

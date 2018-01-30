@@ -2,18 +2,18 @@
 title: "크로스-원본 요청 (CORS)를 사용 하도록 설정"
 author: rick-anderson
 description: "이 문서를 허용 하거나 거부 된 ASP.NET Core 응용 프로그램에 대 한 교차 원본 요청에 대 한 표준으로 CORS를 소개 합니다."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 05/17/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/cors
-ms.openlocfilehash: 9f53ce11f1659aa3416fe4fbb94183c64ab0dab5
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1c0d87b61882f69dbf2aeb0a896d9294bd029374
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="enabling-cross-origin-requests-cors"></a>크로스-원본 요청 (CORS)를 사용 하도록 설정
 
@@ -209,7 +209,7 @@ $.ajax({
 
 브라우저에서 자격 증명을 보내는 응답에는 한 유효한 액세스-컨트롤--자격 증명 허용 헤더가 포함 되지 않은 경우, 브라우저 응용 프로그램에 대 한 응답을 노출 하지 않습니다 및 AJAX 요청이 실패 합니다.
 
-크로스-원본 자격 증명을 허용 하는 방법에 대 한 때문에 신중을 기해야 다른 도메인에서 웹 사이트 사용자가 인식 하지 않고 사용자를 대신 하 여, 앱에 로그인 한 사용자의 자격 증명 보낼 수 있음을 의미 합니다. CORS 사양도 상태 해당 설정을 원본이 "*" (모든 원본을) 액세스-컨트롤--자격 증명 허용 헤더가 있으면 올바르지 않습니다.
+크로스-원본 자격 증명을 허용할 때 주의 해야 합니다. 다른 도메인에서 웹 사이트에 로그인 한 사용자의 자격 증명에서 사용자 모르게 사용자 대신 응용 프로그램에 보낼 수 있습니다. CORS 사양에 해당 설정 설명과 함께 원본이 "*" (모든 원본을) 유효 하지 하는 경우는 `Access-Control-Allow-Credentials` 헤더가 있으면 헤더입니다.
 
 ### <a name="set-the-preflight-expiration-time"></a>실행 전 만료 시간 설정
 
@@ -221,11 +221,11 @@ $.ajax({
 
 ## <a name="how-cors-works"></a>CORS가 작동 하는 방법
 
-이 섹션에서는 CORS 요청은 HTTP 메시지 수준에서 수행 되는 작업을 설명 합니다. 작동 방식을 이해 CORS CORS 정책을 올바르게 구성 하 고 예상 대로 작동 하지 않는 경우 문제를 해결할 수 있도록 하는 것이 유용 합니다.
+이 섹션의 CORS 요청은 HTTP 메시지 수준에서 수행 되는 작업을 설명 합니다. 예기치 않은 동작이 발생 하는 경우 CORS CORS 정책을 올바르게 구성할 수 있도록의 작동 원리와 troubleshooted를 이해 하는 것이 유용 합니다.
 
-CORS 사양 교차 원본 요청을 사용 하도록 설정 하는 몇 가지 새 HTTP 헤더를 소개 합니다. 크로스-원본 요청;에 대 한 자동으로 이러한 헤더를 설정 브라우저 CORS를 지 원하는 경우 JavaScript 코드에 특수 한 어떤 작업도 수행할 필요가 없습니다.
+CORS 사양 교차 원본 요청을 사용 하도록 설정 하는 몇 가지 새 HTTP 헤더를 소개 합니다. 브라우저에서 CORS를 지 원하는 경우 이러한 헤더가 크로스-원본 요청에 대 한 자동으로 설정 합니다. CORS를 사용 하도록 사용자 지정 JavaScript 코드는 필요 하지 않습니다.
 
-크로스-원본 요청의 예를 들면 다음과 같습니다. "원본" 헤더는 요청을 수행 하는 사이트의 도메인을 제공 합니다.
+크로스-원본 요청의 예를 들면 다음과 같습니다. `Origin` 헤더는 요청을 수행 하는 사이트의 도메인을 제공 합니다.
 
 ```
 GET http://myservice.azurewebsites.net/api/test HTTP/1.1

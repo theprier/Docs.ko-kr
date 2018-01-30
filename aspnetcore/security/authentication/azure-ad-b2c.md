@@ -2,25 +2,27 @@
 title: "클라우드 인증을 Azure Active Directory B2C"
 author: camsoper
 description: "ASP.NET Core와 Azure Active Directory B2C 인증을 설정 하는 방법을 알아봅니다."
-ms.author: casoper
 manager: wpickett
-ms.date: 01/12/2018
+ms.date: 01/25/2018
 ms.topic: tutorial
 ms.technology: aspnet
 ms.prod: asp.net-core
+ms.custom: mvc
 uid: security/authentication/azure-ad-b2c
-custom: mvc
-ms.openlocfilehash: 5c4716022c61e33b0301fa0077f911dcc4b3628c
-ms.sourcegitcommit: 459cb3289741a3f46325e605a617dc926ee0563d
+ms.openlocfilehash: d60698b5798e837a5946dbe158a647aae9e149d4
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="cloud-authentication-with-azure-active-directory-b2c"></a>클라우드 인증을 Azure Active Directory B2C
 
 작성자: [Cam Soper](https://twitter.com/camsoper)
 
-[Azure Active Directory B2C](/azure/active-directory-b2c/active-directory-b2c-overview) (Azure AD B2C)는 웹 및 모바일 앱에 대 한 클라우드 id 관리 솔루션입니다. 서비스는 클라우드 및 온-프레미스에서 호스트 되는 앱에 대 한 인증을 제공 합니다. 인증 형식에는 엔터프라이즈 계정을 페더레이션 및 개별 계정, 소셜 네트워크 계정을 포함 합니다.  또한 Azure AD B2C 최소 구성으로 다단계 인증을 제공할 수 있습니다.
+[Azure Active Directory B2C](/azure/active-directory-b2c/active-directory-b2c-overview) (Azure AD B2C)는 웹 및 모바일 앱에 대 한 클라우드 id 관리 솔루션입니다. 서비스는 클라우드 및 온-프레미스에서 호스트 되는 앱에 대 한 인증을 제공 합니다. 인증 형식에는 엔터프라이즈 계정을 페더레이션 및 개별 계정, 소셜 네트워크 계정을 포함 합니다. 또한 Azure AD B2C 최소 구성으로 다단계 인증을 제공할 수 있습니다.
+
+> [!TIP]
+> Azure Active Directory (Azure AD) Azure AD B2C 별도 제품이 제공 됩니다. Azure AD 테 넌 트 조직을 나타내고 Azure AD B2C 테 넌 트를 신뢰 당사자 응용 프로그램과 함께 사용할 id의 컬렉션을 나타냅니다. 자세한 내용은 참고 [Azure AD B2C: 질문과 대답 (FAQ)](/azure/active-directory-b2c/active-directory-b2c-faqs)합니다.
 
 이 자습서에 설명 하는 방법:
 
@@ -34,7 +36,7 @@ ms.lasthandoff: 01/22/2018
 
 다음은이 연습에 필요한입니다.
 
-* [Microsoft Azure 구독](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)합니다. 
+* [Microsoft Azure 구독](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio)
 * [Visual Studio 2017](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs) (모든 버전)
 
 ## <a name="create-the-azure-active-directory-b2c-tenant"></a>Azure Active Directory B2C 테 넌 트 만들기
@@ -49,7 +51,7 @@ Azure Active Directory B2C 테 넌 트 만들기 [설명서에 설명 된 대로
 
 | 설정                       | 값                     | 노트                                                                                                                                                                                              |
 |-------------------------------|---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **이름**                      | *\<응용 프로그램 이름\>*            | 입력 한 **이름** 소비자에 게 앱을 설명 하는 앱에 대 한 합니다.                                                                                                                                 |
+| **이름**                      | *&lt;응용 프로그램 이름&gt;*        | 입력 한 **이름** 소비자에 게 앱을 설명 하는 앱에 대 한 합니다.                                                                                                                                 |
 | **웹 앱/웹 API** | 예                       |                                                                                                                                                                                                    |
 | **암시적 흐름 허용**       | 예                       |                                                                                                                                                                                                    |
 | **회신 URL**                 | `https://localhost:44300` | 회신 Url은 Azure AD B2C 응용 프로그램을 요청 하는 모든 토큰을 반환 하는 위치 끝점입니다. Visual Studio를 사용 하 여 회신 URL을 제공 합니다. 지금은 입력 `https://localhost:44300` 양식을 완성 하 합니다. |
@@ -59,7 +61,7 @@ Azure Active Directory B2C 테 넌 트 만들기 [설명서에 설명 된 대로
 > [!WARNING]
 > 경우 고려해 야 localhost가 아닌 회신 URL을 설정는 [회신 URL 목록에 허용 되는 제약 조건을](/azure/active-directory-b2c/active-directory-b2c-app-registration#choosing-a-web-app-or-api-reply-url)합니다. 
 
-앱을 등록 한 후 테 넌 트에 있는 앱의 목록이 표시 됩니다. 방금 등록 된 응용 프로그램을 선택 합니다. 선택 된 **복사** 아이콘의 오른쪽에는 **응용 프로그램 ID** 응용 프로그램 ID를 클립보드에 복사 하려면 필드입니다.
+앱을 등록 한 후 테 넌 트에 있는 앱의 목록이 표시 됩니다. 방금 등록 된 응용 프로그램을 선택 합니다. 선택은 **복사** 아이콘의 오른쪽에는 **응용 프로그램 ID** 필드를 클립보드에 복사 합니다.
 
 아무 것도 더 이번에 Azure AD B2C 테 넌 트에 구성할 수 있지만 브라우저 창을 열어 둡니다. ASP.NET Core 응용 프로그램을 만든 후 더 복잡 한 구성이 있습니다.
 
@@ -81,15 +83,15 @@ Visual Studio에서 합니다.
 
 5. 다음 값을 갖는 양식을 작성 하 여:
     
-    | 설정                       | 값                                             |
-    |-------------------------------|---------------------------------------------------|
-    | **도메인 이름**               | *\<B2C 테 넌 트의 도메인 이름\>*          |
-    | **응용 프로그램 ID**            | *\<클립보드의 응용 프로그램 ID를 붙여 넣습니다.\>* |
-    | **콜백 경로**             | *\<기본값을 사용 하 여\>*                       |
-    | **등록 또는 로그인 시 정책** | `B2C_1_SiUpIn`                                    |
-    | **암호 재설정 정책**     | `B2C_1_SSPR`                                      |
-    | **프로필 정책 편집**       | *\<비워\>*                                 |
-
+    | 설정                       | 값                                                 |
+    |-------------------------------|-------------------------------------------------------|
+    | **도메인 이름**               | *&lt;B2C 테 넌 트의 도메인 이름&gt;*          |
+    | **응용 프로그램 ID**            | *&lt;클립보드의 응용 프로그램 ID를 붙여 넣습니다.&gt;* |
+    | **콜백 경로**             | *&lt;기본값을 사용 하 여&gt;*                       |
+    | **등록 또는 로그인 시 정책** | `B2C_1_SiUpIn`                                        |
+    | **암호 재설정 정책**     | `B2C_1_SSPR`                                          |
+    | **프로필 정책 편집**       | *&lt;비워&gt;*                                 |
+    
     선택의 **복사** 옆에 연결 **회신 URI** 회신 URI를 클립보드에 복사 합니다. 선택 **확인** 를 닫으려면는 **인증 변경** 대화 상자. 선택 **확인** 웹 앱을 만듭니다.
 
 ## <a name="finish-the-b2c-app-registration"></a>B2C 앱 등록 완료
@@ -122,7 +124,7 @@ B2C 앱 속성이 계속 열려 있는 브라우저 창으로 돌아갑니다. �
 
 ## <a name="next-steps"></a>다음 단계
 
-이 자습서에서 배운 됩니다 하는 방법:
+이 자습서에서는 다음 방법을 학습했습니다.
 
 > [!div class="checklist"]
 > * Azure Active Directory B2C 테 넌 트 만들기
@@ -137,3 +139,5 @@ ASP.NET Core 응용 프로그램은 인증을 위해 Azure AD B2C를 사용 하�
 * [Multi-factor authentication 사용](/azure/active-directory-b2c/active-directory-b2c-reference-mfa)합니다.
 * 추가 id 공급자와 같은 구성 [Microsoft](/azure/active-directory-b2c/active-directory-b2c-setup-msa-app), [Facebook](/azure/active-directory-b2c/active-directory-b2c-setup-fb-app), [Google](/azure/active-directory-b2c/active-directory-b2c-setup-goog-app), [Amazon](/azure/active-directory-b2c/active-directory-b2c-setup-amzn-app), [Twitter ](/azure/active-directory-b2c/active-directory-b2c-setup-twitter-app), 등입니다.
 * [Azure AD Graph API를 사용 하 여](/azure/active-directory-b2c/active-directory-b2c-devquickstarts-graph-dotnet) Azure AD B2C 테 넌 트에서 그룹 구성원 자격 등의 추가 사용자 정보를 검색 합니다.
+* [ASP.NET Core Azure AD B2C를 사용 하 여 웹 API 보안](xref:security/authentication/azure-ad-b2c-api)합니다.
+* [Azure AD B2C를 사용 하 여.NET 웹 앱에서.NET web API를 호출](/azure/active-directory-b2c/active-directory-b2c-devquickstarts-web-api-dotnet)합니다.

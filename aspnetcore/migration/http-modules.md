@@ -2,18 +2,18 @@
 title: "HTTP 처리기 및 ASP.NET Core 미들웨어 모듈을 마이그레이션하는 방법"
 author: rick-anderson
 description: 
-ms.author: tdykstra
 manager: wpickett
+ms.author: tdykstra
 ms.date: 12/07/2016
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: migration/http-modules
-ms.openlocfilehash: a38ddc64583de05b4088cd31d48fbd7ee949d4e5
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: f104c9116cfaa4a82ac88e4a83b4b6f172eb2aa1
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="migrating-http-handlers-and-modules-to-aspnet-core-middleware"></a>HTTP 처리기 및 ASP.NET Core 미들웨어 모듈을 마이그레이션하는 방법 
 
@@ -380,10 +380,7 @@ public async Task Invoke(HttpContext httpContext)
 
 ## <a name="additional-resources"></a>추가 리소스
 
-* [HTTP 처리기 및 HTTP 모듈 개요](https://docs.microsoft.com/iis/configuration/system.webserver/)
-
+* [HTTP 처리기 및 HTTP 모듈 개요](/iis/configuration/system.webserver/)
 * [구성](xref:fundamentals/configuration/index)
-
-* [응용 프로그램 시작](../fundamentals/startup.md)
-
-* [미들웨어](../fundamentals/middleware.md)
+* [응용 프로그램 시작](xref:fundamentals/startup)
+* [미들웨어](xref:fundamentals/middleware)

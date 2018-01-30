@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-middleware-in-the-iis-integrated-pipeline
 msc.type: authoredcontent
-ms.openlocfilehash: 4e1270f9fb58032d22380117f4ec18b00bd725fc
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5f6ed1ae0309e9bdd3ca4ae229195835f20bc729
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="owin-middleware-in-the-iis-integrated-pipeline"></a>IIS 통합된 파이프라인의 OWIN 미들웨어.
 ====================
@@ -78,7 +78,7 @@ Owin 미들웨어 구성 요소 (OMC) 다음 OWIN 파이프라인 단계 이벤�
 [!code-csharp[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample8.cs)]
 
 1. 기본적으로 OMCs 마지막 이벤트에서 실행 (`PreHandlerExecute`). 바로 이러한 이유로 첫 번째 예제 코드는 "PreExecuteRequestHandler"를 표시 합니다.
-2. 사용할 수는 `pp.UseStageMarker` OWIN 파이프라인의 각 단계 이전에 실행 되도록 OMC 등록에 나열 된는 `PipelineStage` 열거형입니다.
+2. 사용할 수는 `app.UseStageMarker` OWIN 파이프라인의 각 단계 이전에 실행 되도록 OMC 등록에 나열 된는 `PipelineStage` 열거형입니다.
 3. OWIN 파이프라인으로, IIS 파이프라인 정렬 되는 경우 따라서에 대 한 호출 `app.UseStageMarker` 순서 여야 합니다. 이벤트 처리기에 등록 된 마지막 이벤트 앞에 오는 이벤트를 설정할 수 없습니다 `app.UseStageMarker`합니다. 예를 들어 *후* 호출:
 
     [!code-console[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample9.cmd)]

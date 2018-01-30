@@ -2,18 +2,18 @@
 title: "ASP.NET Core MVC Entity Framework 코어 자습서 1 / 10 인"
 author: tdykstra
 description: 
-ms.author: tdykstra
 manager: wpickett
+ms.author: tdykstra
 ms.date: 03/15/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-mvc/intro
-ms.openlocfilehash: c30556368ba24fb38cf3347dd49f171b5246514c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7de43a390ee0e11f6eda811b0774343ab330c53b
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="getting-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio-1-of-10"></a>Visual Studio (1 / 10)을 사용 하 여 Entity Framework Core 및 ASP.NET Core MVC 시작
 
@@ -78,7 +78,7 @@ Visual Studio를 열고 ASP.NET Core C# 웹 라는 새 프로젝트 "ContosoUniv
 
 * 확인 **인증** 로 설정 된 **인증 안 함**합니다.
 
-* **확인**을 클릭합니다.
+*  **확인**을 클릭합니다.
 
   ![새 ASP.NET 프로젝트 대화 상자](intro/_static/new-aspnet.png)
 
@@ -325,7 +325,7 @@ SSOX, 클릭 **(localdb) \MSSQLLocalDB > 데이터베이스**, 다음의 연결 
 
 * ID 또는 classnameID 명명 된 엔터티 속성은 기본 키 속성으로 인식 됩니다.
 
-* 라고 하는 경우 외래 키 속성으로는 속성을 해석  *<navigation property name> <primary key property name>*  (예를 들어 `StudentID` 에 대 한는 `Student` 이후 탐색 속성은 `Student` 엔터티의 기본 키가 `ID`). 외래 키 속성은 단순히 또한 이름은 수  *<primary key property name>*  (예를 들어 `EnrollmentID` 이후는 `Enrollment` 엔터티의 기본 키가 `EnrollmentID`).
+* 라고 하는 경우 외래 키 속성으로는 속성을 해석 * <navigation property name> <primary key property name> * (예를 들어 `StudentID` 에 대 한는 `Student` 이후 탐색 속성은 `Student` 엔터티의 기본 키가 `ID`). 외래 키 속성은 단순히 또한 이름은 수 * <primary key property name> * (예를 들어 `EnrollmentID` 이후는 `Enrollment` 엔터티의 기본 키가 `EnrollmentID`).
 
 기본 동작을 재정의할 수 있습니다. 예를 들어이 자습서의 앞부분에서 본 것 처럼 테이블 이름에 지정할 수 명시적으로. 열 이름을 설정할 수 있으며에서 볼 수 있듯이 기본 키 또는 외래 키 속성을 설정 하 고는 [이후의 자습서](complex-data-model.md) 이 시리즈의 합니다.
 

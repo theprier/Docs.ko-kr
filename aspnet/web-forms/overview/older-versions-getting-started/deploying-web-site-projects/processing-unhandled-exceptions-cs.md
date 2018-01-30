@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 95102e5e6b3e8b78e2757a2bdee39976003011e3
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7be257faa350476bef9f6d372ea4f140fff8d136
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="processing-unhandled-exceptions-c"></a>처리 되지 않은 예외 (C#)를 처리 합니다.
 ====================
@@ -93,10 +93,10 @@ Global.asax 파일을 했으므로 시점에서 `Application_Error` 이벤트 �
 사용 되는.NET Framework 클래스는 [ `System.Net.Mail` 네임 스페이스](https://msdn.microsoft.com/library/system.net.mail.aspx) 쉽게 전자 메일을 보낼 수 있도록 합니다. [ `MailMessage` 클래스](https://msdn.microsoft.com/library/system.net.mail.mailmessage.aspx) 전자 메일 메시지를 나타내며 같은 속성을 보유 `To`, `From`, `Subject`, `Body`, 및 `Attachments`합니다. `SmtpClass` 보내는 데 사용 되는 `MailMessage` 개체는 지정 된 SMTP 서버를 사용 하 여, SMTP 서버 설정에서 프로그래밍 방식으로 또는 선언적으로 지정할 수 있습니다는 [ `<system.net>` 요소](https://msdn.microsoft.com/library/6484zdc1.aspx) 에 `Web.config file`합니다. 전자 메일을 보내는 방법에 대 한 자세한 내용은 ASP.NET 응용 프로그램에서 메시지 확인해 내 문서 [ASP.NET에서 전자 메일 보내기](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx), 및 [System.Net.Mail FAQ](http://systemnetmail.com/)합니다.
 
 > [!NOTE]
-> `<system.net>` 요소에서 사용 하는 SMTP 서버 설정이 포함 되어는 `SmtpClient` 전자 메일을 보낼 때 클래스입니다. 웹 호스팅 회사 가능성이 응용 프로그램에서 전자 메일을 보내는 데 사용할 수 있는 SMTP 서버를 있습니다. 웹 응용 프로그램에서 사용 해야 하는 SMTP 서버 설정에 대 한 정보는 웹 호스트의 지원 섹션을 참조 하십시오.
+> `<system.net>` 요소에서 사용 하는 SMTP 서버 설정이 포함 되어는 `SmtpClient` 전자 메일을 보낼 때 클래스입니다. 웹 호스팅 가능성이 회사 전자 메일을 보내는 응용 프로그램에서 사용할 수 있는 SMTP 서버를 있습니다. 웹 응용 프로그램에서 사용 해야 하는 SMTP 서버 설정에 대 한 정보는 웹 호스트의 지원 섹션을 참조 하십시오.
 
 
-다음 코드를 추가 하는 `Application_Error` 개발자는 전자 메일을 보낼 오류가 발생할 때 이벤트 처리기.
+다음 코드를 추가 하는 `Application_Error` 개발자는 전자 메일을 보내는 오류가 발생할 때 이벤트 처리기.
 
 [!code-csharp[Main](processing-unhandled-exceptions-cs/samples/sample4.cs)]
 
@@ -107,10 +107,10 @@ Global.asax 파일을 했으므로 시점에서 `Application_Error` 이벤트 �
 마지막 단계는 보낼는 `MailMessage`합니다. 새 이렇게 `SmtpClient` 메서드와 호출 해당 `Send` 메서드.
 
 > [!NOTE]
-> 웹 응용 프로그램에서이 코드를 사용 하기 전에 값을 변경 해야는 `ToAddress` 및 `FromAddress` 상수 support@example.com 어떤 전자 메일 주소로 오류 알림 전자 메일에 보내야 및에서 발생 합니다. 에 SMTP 서버 설정을 지정 해야는 `<system.net>` 섹션 `Web.config`합니다. 사용할 SMTP 서버 설정을 확인 하 여 웹 호스트 공급자를 참조 하십시오.
+> 웹 응용 프로그램에서이 코드를 사용 하기 전에 값을 변경 해야는 `ToAddress` 및 `FromAddress` 상수 support@example.com 어떤 전자 메일에 오류 알림 전자 메일 주소를 보낼 및에서 발생 합니다. 에 SMTP 서버 설정을 지정 해야는 `<system.net>` 섹션 `Web.config`합니다. 사용할 SMTP 서버 설정을 확인 하 여 웹 호스트 공급자를 참조 하십시오.
 
 
-이 코드 위치에서 오류가 있으면 언제 든 지 개발자는 전송 전자 메일 메시지를 오류를 요약 하 고는 YSOD 포함 됩니다. 이전 자습서에서 시연을 런타임 오류 Genre.aspx를 방문 하 고 잘못 된를 전달 하 여 `ID` like는 쿼리 문자열을 통해 값 `Genre.aspx?ID=foo`합니다. 사용 하 여 페이지 방문의 `Global.asax` -이전 자습서에서 개발 환경에서 계속 해 서에서는 프로덕션 환경에서 예외 세부 정보 노란색 화면의 사망, 볼 처럼으로 동일한 사용자 환경을 생성 하는 곳에 파일 사용자 지정 오류 페이지를 참조 하십시오. 개발자는이 기존 동작 외에도 전자 메일을 전송 됩니다.
+이 코드 위치에서 오류로 인해 개발자가 전송 오류 요약 하 고는 YSOD를 포함 하는 전자 메일 메시지. 이전 자습서에서 시연을 런타임 오류 Genre.aspx를 방문 하 고 잘못 된를 전달 하 여 `ID` like는 쿼리 문자열을 통해 값 `Genre.aspx?ID=foo`합니다. 사용 하 여 페이지 방문의 `Global.asax` -이전 자습서에서 개발 환경에서 계속 해 서에서는 프로덕션 환경에서 예외 세부 정보 노란색 화면의 사망, 볼 처럼으로 동일한 사용자 환경을 생성 하는 곳에 파일 사용자 지정 오류 페이지를 참조 하십시오. 개발자는이 기존 동작 외에도 전자 메일을 전송 됩니다.
 
 **그림 2** 을 방문할 때 받은 전자 메일을 보여 줍니다 `Genre.aspx?ID=foo`합니다. 전자 메일 본문에서 예외 정보를 요약 하는 동안는 `YSOD.htm` 첨부 파일에는 예외 세부 정보 YSOD에 표시 되는 콘텐츠가 표시 됩니다 (참조 **그림 3**).
 

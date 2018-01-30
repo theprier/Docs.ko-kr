@@ -2,18 +2,18 @@
 title: "ASP.NET Core에서 분산된 캐시 사용"
 author: ardalis
 description: "클라우드 또는 서버 팜 환경에서 호스팅되는 경우에 특히 성능 및 ASP.NET Core 응용 프로그램의 확장성을 개선 하기 위해 분산 캐시를 사용 하는 방법에 알아봅니다."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 02/14/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: performance/caching/distributed
-ms.openlocfilehash: a0af4887143f6ed37a1af982ec21a2ad5eae9515
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 86fd40863f6eeef3c129335141d704769d36b4c1
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="working-with-a-distributed-cache-in-aspnet-core"></a>ASP.NET Core에서 분산된 캐시 사용
 

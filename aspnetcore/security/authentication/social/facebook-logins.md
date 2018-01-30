@@ -2,18 +2,18 @@
 title: "ASP.NET Core에서 Facebook 외부 로그인 설정"
 author: rick-anderson
 description: "이 자습서는 기존 ASP.NET Core 응용 프로그램에 Facebook 계정 사용자 인증의 통합을 보여 줍니다."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 08/01/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/authentication/facebook-logins
-ms.openlocfilehash: cd86e089e4bbe0d4a18e49a9384753f4d2cd0c38
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 283de1df68c45fa1b41ed75710fe9eb7925f815f
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="configuring-facebook-authentication"></a>Facebook 인증 구성
 

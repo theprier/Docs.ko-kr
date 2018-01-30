@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 85a8615bf71f58c58b9565da14bc3b3fbef9d264
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5bbba0e4e8660dbc60b9f9ad220c923274144b89
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 <a name="logging-error-details-with-aspnet-health-monitoring-c"></a>ASP.NET 상태 모니터링 (C#)를 사용 하 여 오류 세부 정보를 로깅
 ====================
@@ -104,17 +104,17 @@ ms.lasthandoff: 01/24/2018
 > 이후의 자습서 ELMAH 라는 대체 오류 로깅 및 알림 시스템을 탐색 합니다. ELMAH는 RSS 피드로 웹 페이지에서 오류 로그를 볼 수 있는 기본 제공 메커니즘을 포함 합니다.
 
 
-## <a name="logging-events-to-e-mail"></a>전자 메일에 이벤트 기록을
+## <a name="logging-events-to-email"></a>전자 메일에 이벤트 로깅
 
 상태 시스템 모니터링 이벤트를 전자 메일 메시지에 "기록" 하는 로그 소스 공급자가 포함 되어 있습니다. 로그 원본 데이터베이스 전자 메일 메시지 본문에 기록 되는 동일한 정보를 포함 합니다. 특정 상태 모니터링 이벤트가 발생할 때 개발자에 알리기 위해이 로그 소스를 사용할 수 있습니다.
 
 웹 사이트의 구성에서는 예외가 발생할 때마다 전자 메일을 받을 수 있도록 발생 책 검토를 업데이트 해 보겠습니다. 이렇게 하려면 세 가지 작업을 수행 해야 합니다.
 
-1. 전자 메일을 보낼 ASP.NET 웹 응용 프로그램을 구성 합니다. 전자 메일 메시지를 통해 전송 되는 방법을 지정 하 여 이렇게는 `<system.net>` 구성 요소입니다. 전자 메일을 보내는 방법에 대 한 자세한 내용은 ASP.NET 응용 프로그램에서 메시지를 참조 [ASP.NET에서 전자 메일 보내기](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx) 및 [System.Net.Mail FAQ](http://systemnetmail.com/)합니다.
+1. 전자 메일을 보내는 ASP.NET 웹 응용 프로그램을 구성 합니다. 전자 메일 메시지를 통해 전송 되는 방법을 지정 하 여 이렇게는 `<system.net>` 구성 요소입니다. 전자 메일을 보내는 방법에 대 한 자세한 내용은 ASP.NET 응용 프로그램에서 메시지를 참조 [ASP.NET에서 전자 메일 보내기](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx) 및 [System.Net.Mail FAQ](http://systemnetmail.com/)합니다.
 2. 등록에서 전자 메일 로그 소스 공급자는 `<providers>` 요소 및
 3. 항목을 추가 `<rules>` "모든 오류가" 이벤트 로그 소스 공급자 (2) 단계에서 추가한에 매핑하는 요소입니다.
 
-두 개의 전자 메일 로그 소스 공급자 클래스를 포함 하는 상태 시스템 모니터링: `SimpleMailWebEventProvider` 및 `TemplatedMailWebEventProvider`합니다. [ `SimpleMailWebEventProvider` 클래스](https://msdn.microsoft.com/library/system.web.management.simplemailwebeventprovider.aspx) 자세히 설명 하 고 전자 메일 본문의 사용자 지정이 거의 제공 하는 이벤트를 포함 하는 일반 텍스트 전자 메일 메시지를 보냅니다. 와 [ `TemplatedMailWebEventProvider` 클래스](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) 렌더링 된 피드백 전자 메일 메시지 본문으로 사용 되는 ASP.NET 페이지를 지정 합니다. [ `TemplatedMailWebEventProvider` 클래스](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) 내용과 전자 메일 메시지의 서식을 통해 보다 광범위 제어를 제공 하지만 전자 메일 메시지의 본문을 생성 하는 ASP.NET 페이지를 만들어야 할 때 좀 더 선행 작업이 필요 하지 않습니다. 이 자습서를 사용 하 여 중점적는 `SimpleMailWebEventProvider` 클래스입니다.
+두 개의 전자 메일 로그 소스 공급자 클래스를 포함 하는 상태 시스템 모니터링: `SimpleMailWebEventProvider` 및 `TemplatedMailWebEventProvider`합니다. [ `SimpleMailWebEventProvider` 클래스](https://msdn.microsoft.com/library/system.web.management.simplemailwebeventprovider.aspx) 자세히 설명 하 고 전자 메일 본문의 사용자 지정이 거의 제공 하는 이벤트를 포함 하는 일반 텍스트 전자 메일 메시지를 보냅니다. 와 [ `TemplatedMailWebEventProvider` 클래스](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) 렌더링 된 피드백 전자 메일 메시지의 본문으로 사용 되는 ASP.NET 페이지를 지정 합니다. [ `TemplatedMailWebEventProvider` 클래스](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) 내용과 전자 메일 메시지의 서식을 통해 보다 광범위 제어를 제공 하지만 전자 메일 메시지의 본문을 생성 하는 ASP.NET 페이지를 만들어야 할 때 좀 더 선행 작업이 필요 하지 않습니다. 이 자습서를 사용 하 여 중점적는 `SimpleMailWebEventProvider` 클래스입니다.
 
 상태 시스템의 모니터링 업데이트 `<providers>` 요소에는 `Web.config` 파일에 대 한 로그 소스를 포함 하는 `SimpleMailWebEventProvider` 클래스:
 
@@ -126,13 +126,13 @@ ms.lasthandoff: 01/24/2018
 
 [!code-xml[Main](logging-error-details-with-asp-net-health-monitoring-cs/samples/sample4.xml)]
 
-`<rules>` 섹션에는 이제 두 개의 규칙이 포함 됩니다. "모든 오류에 전자 메일"을 명명 된 첫 번째 "EmailWebEventProvider" 로그 소스를 모든 처리 되지 않은 예외를 보냅니다. 이 규칙에 지정 된 웹 사이트에서 오류에 대 한 세부 정보를 보내는 효과가 주소입니다. 모든 오류에 "데이터베이스" 규칙은 사이트의 데이터베이스에 오류 세부 정보를 기록합니다. 따라서 세부 정보는 사이트에서 처리 되지 않은 예외가 발생할 때마다 모두 되 데이터베이스에 로깅되 고 지정 된 전자 메일 주소로 전송 합니다.
+`<rules>` 섹션에는 이제 두 개의 규칙이 포함 됩니다. "모든 오류에 전자 메일", 명명 된 첫 번째 "EmailWebEventProvider" 로그 소스를 모든 처리 되지 않은 예외를 보냅니다. 이 규칙에 지정 된 웹 사이트에서 오류에 대 한 세부 정보를 보내는 효과가 주소입니다. 모든 오류에 "데이터베이스" 규칙은 사이트의 데이터베이스에 오류 세부 정보를 기록합니다. 따라서 세부 정보는 사이트에서 처리 되지 않은 예외가 발생할 때마다 모두 되 데이터베이스에 로깅되 고 지정 된 전자 메일 주소로 전송 합니다.
 
 **그림 2** 에 의해 생성 된 전자 메일을 보여 줍니다는 `SimpleMailWebEventProvider` 을 방문할 때 클래스 `Genre.aspx?ID=foo`합니다.
 
 [![](logging-error-details-with-asp-net-health-monitoring-cs/_static/image5.png)](logging-error-details-with-asp-net-health-monitoring-cs/_static/image4.png)
 
-**그림 2**: 오류 세부 정보 전자 메일 메시지에 보내집니다.  
+**그림 2**: 오류 세부 정보는 전자 메일 메시지에 보내집니다.  
 ([전체 크기 이미지를 보려면 클릭](logging-error-details-with-asp-net-health-monitoring-cs/_static/image6.png))
 
 ## <a name="summary"></a>요약

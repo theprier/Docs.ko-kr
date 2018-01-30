@@ -2,18 +2,18 @@
 title: "용도 문자열"
 author: rick-anderson
 description: "이 문서의 목적은 문자열 ASP.NET Core 데이터 보호 Api에서에서 사용 되는 방법을 자세히 설명 합니다."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/data-protection/consumer-apis/purpose-strings
-ms.openlocfilehash: 181d2ae85f38051ea12c7b7ac79198ec05f36bec
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b4a0db801ecc1c4ba0762f0c9faf7429b4ac097b
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="purpose-strings"></a>용도 문자열
 

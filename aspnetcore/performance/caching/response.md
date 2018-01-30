@@ -2,22 +2,25 @@
 title: "ASP.NET Core의 응답 캐싱"
 author: rick-anderson
 description: "낮은 대역폭 요구 사항에 캐싱 응답을 사용 하는 방법을 알아보고 ASP.NET Core 응용 프로그램의 성능을 향상 합니다."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 09/20/2017
-ms.topic: article
 ms.prod: asp.net-core
+ms.topic: article
 uid: performance/caching/response
-ms.openlocfilehash: d7726443dbcc34c21fd6cf0f56c4412863617b9f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c38f9b9a1bf1c523951e2cf1f3070858fe5daf04
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="response-caching-in-aspnet-core"></a>ASP.NET Core의 응답 캐싱
 
 여 [John Luo](https://github.com/JunTaoLuo), [Rick Anderson](https://twitter.com/RickAndMSFT), [Steve Smith](https://ardalis.com/), 및 [Luke Latham](https://github.com/guardrex)
 
+> [!NOTE]
+> 응답 캐시 [ASP.NET 코어 2.0과 함께 Razor 페이지에서 지원 되지 않거나](https://github.com/aspnet/Mvc/issues/6437)합니다. 이 기능에서 지원 됩니다는 [ASP.NET Core 2.1 릴리스](https://github.com/aspnet/Home/wiki/Roadmap)합니다.
+  
 [샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/response/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 응답 캐시 클라이언트 또는 프록시 웹 서버에 수행 된 요청 수가 줄어듭니다. 응답 캐시도 줄일 수 작업의 응답을 생성 하는 웹 서버 수행 합니다. 응답 캐시 클라이언트, 프록시 및 응답을 캐시 미들웨어 용도 지정 하는 헤더에 의해 제어 됩니다.

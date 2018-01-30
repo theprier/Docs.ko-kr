@@ -2,19 +2,19 @@
 title: "ASP.NET Core에서 Gulp를 사용 하 여"
 author: rick-anderson
 description: "ASP.NET Core에서 Gulp를 사용 하는 방법을 알아봅니다."
-ms.author: riande
 manager: wpickett
-ms.date: 02/28/2017
-ms.topic: article
-ms.technology: aspnet
-ms.prod: asp.net-core
-uid: client-side/using-gulp
+ms.author: riande
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 2ccfed42d66ea49c5f2745bc8653d8fb12bf707a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.date: 02/28/2017
+ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
+uid: client-side/using-gulp
+ms.openlocfilehash: f091370bc85a37eeaac1291a2fdc6ea85164f148
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="introduction-to-using-gulp-in-aspnet-core"></a>ASP.NET Core에서 Gulp를 사용 하 여 소개 
 
@@ -59,13 +59,13 @@ paths.concatCssDest = paths.webroot + "css/site.min.css";
 
 위의 코드 지정 되는 노드 모듈 필요 합니다. `require` 함수는 종속 태스크의 기능을 활용할 수 있도록 각 모듈을 가져옵니다. 가져온된 모듈의 각 변수에 할당 합니다. 모듈 이름 또는 경로 중 하나에 있을 수 있습니다. 이 예제에서는 모듈 이름이 `gulp`, `rimraf`, `gulp-concat`, `gulp-cssmin`, 및 `gulp-uglify` 이름별으로 검색 됩니다. 또한, CSS 및 JavaScript 파일의 위치를 다시 사용 하 고 작업 내에서 참조할 수 있도록 경로의 일련이 만들어집니다. 다음 표에서에 포함 된 모듈 설명 *gulpfile.js*합니다.
 
-|모듈 이름|설명|
-|---|---|
-|gulp|Gulp 스트리밍 빌드 시스템입니다. 자세한 내용은 참조 [gulp](https://www.npmjs.com/package/gulp)합니다.|
-|rimraf|노드 삭제 모듈입니다. 자세한 내용은 참조 [rimraf](https://www.npmjs.com/package/rimraf)합니다.|
-|gulp-concat|운영 체제의 줄 바꿈 문자에 따라 파일을 연결 하는 모듈입니다. 자세한 내용은 참조 [gulp concat](https://www.npmjs.com/package/gulp-concat)합니다.|
-|gulp-cssmin|CSS 파일을 축소 하는 모듈입니다. 자세한 내용은 참조 [gulp cssmin](https://www.npmjs.com/package/gulp-cssmin)합니다.|
-|gulp-uglify|축소 하는 모듈 *.js* 파일입니다. 자세한 내용은 참조 [gulp uglify](https://www.npmjs.com/package/gulp-uglify)합니다.|
+| 모듈 이름 | 설명 |
+| ----------- | ----------- |
+| gulp        | Gulp 스트리밍 빌드 시스템입니다. 자세한 내용은 참조 [gulp](https://www.npmjs.com/package/gulp)합니다. |
+| rimraf      | 노드 삭제 모듈입니다. 자세한 내용은 참조 [rimraf](https://www.npmjs.com/package/rimraf)합니다. |
+| gulp-concat | 운영 체제의 줄 바꿈 문자에 따라 파일을 연결 하는 모듈입니다. 자세한 내용은 참조 [gulp concat](https://www.npmjs.com/package/gulp-concat)합니다. |
+| gulp-cssmin | CSS 파일을 축소 하는 모듈입니다. 자세한 내용은 참조 [gulp cssmin](https://www.npmjs.com/package/gulp-cssmin)합니다. |
+| gulp-uglify | 축소 하는 모듈 *.js* 파일입니다. 자세한 내용은 참조 [gulp uglify](https://www.npmjs.com/package/gulp-uglify)합니다. |
 
 필수 모듈을 가져온 후 작업을 지정할 수 있습니다. 6 가지 작업 같습니다 등록, 다음 코드에 의해 표현:
 

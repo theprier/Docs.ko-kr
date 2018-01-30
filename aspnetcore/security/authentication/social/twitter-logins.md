@@ -2,18 +2,18 @@
 title: "Twitter 외부 로그인 설정"
 author: rick-anderson
 description: "이 자습서는 기존 ASP.NET Core 응용 프로그램에 Twitter 계정 사용자 인증의 통합을 보여 줍니다."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 11/01/2016
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/authentication/twitter-logins
-ms.openlocfilehash: 4fd1c2d59cc277ef3781df5e306e4a5e6064520a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: f684a0e43a4c20092d0edb1d82a31ed3cc611232
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="configuring-twitter-authentication"></a>Twitter 인증 구성
 
