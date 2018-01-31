@@ -2,7 +2,6 @@
 title: "ASP.NET Core Razor 페이지에 검색 추가"
 author: rick-anderson
 description: "ASP.NET Core Razor 페이지에 검색을 추가하는 방법을 보여 줍니다."
-keywords: "ASP.NET Core, 검색, Razor 페이지"
 ms.author: riande
 manager: wpickett
 ms.date: 08/07/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/razor-pages/search
-ms.openlocfilehash: 3729f351ba7d1e5f566046a619c17e9e1e6614cb
-ms.sourcegitcommit: 2d23ea501e0213bbacf65298acf1c8bd17209540
+ms.openlocfilehash: 7a9287dedf75530dc1345a54e24c3bfe6fb50bbe
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="adding-search-to-a-razor-pages-app"></a>Razor 페이지 앱에 검색 추가
 
@@ -90,7 +89,7 @@ HTML `<form>` 태그는 [양식 태그 도우미](xref:mvc/views/working-with-fo
 <!-- BUG in OPS
 Tag snippet_selectlist's start line '75' should be less than end line '29' when resolving "[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Movies/Index.cshtml.cs?name=snippet_SelectList)]"
 
-There is no start line.
+There's no start line.
 
 [!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Movies/Index.cshtml.cs?name=snippet_SelectList)]
 -->

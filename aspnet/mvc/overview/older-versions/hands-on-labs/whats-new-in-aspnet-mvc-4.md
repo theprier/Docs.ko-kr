@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/whats-new-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 3de952224e23eed29f90ed0e8c662e4ee3f531ce
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8b1bdae048afc78399ccc7b0eac7125d9b983c13
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="whats-new-in-aspnet-mvc-4"></a>ASP.NET MVC 4의에서 새로운 기능
 ====================
 으로 [웹 캠프 팀](https://twitter.com/webcamps)
 
-[웹 캠프 학습 키트를 다운로드 합니다.](http://www.microsoft.com/en-us/download/29843)
+[웹 캠프 학습 키트를 다운로드 합니다.](http://www.microsoft.com/download/29843)
 
 > ASP.NET MVC 4는 ASP.NET 및.NET framework의 능력에 대 한 체계적인 디자인 패턴을 사용 하 여 확장 가능 하 고 표준 기반 웹 응용 프로그램을 구축 하기 위한 프레임 워크. 이 새로운, 네 번째 버전의 framework 모바일 웹 응용 프로그램 개발을 보다 쉽게에 중점을 둡니다.
 > 
@@ -30,7 +30,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > ASP.NET MVC 4로 시작 됩니다이 실습 랩에서 &quot;인터넷 응용 프로그램&quot; 사진 갤러리 응용 프로그램을 만드는 프로젝트 템플릿을 합니다. JQuery Mobile 및 ASP.NET MVC 4의 새로운 기능을 사용 하 여 다양 한 모바일 장치 및 데스크톱 웹 브라우저와 호환 되도록 하려면 앱을 점진적으로 향상 됩니다. 코드 생성 및 ASP.NET MVC 4 사용을 쉽게 방법 작업을 지원 하 여 비동기 작업 메서드를 작성할 수에 대 한 새 코드 레시피에 대 한 배웁니다&lt;ActionResult&gt; 형식을 반환 합니다.
 > 
-> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [https://www.microsoft.com/en-us/download/29843](https://www.microsoft.com/en-us/download/29843)합니다.
+> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843)합니다.
 
 
 <a id="Objectives"></a>
@@ -56,7 +56,7 @@ ms.lasthandoff: 11/10/2017
 
 - [Microsoft Visual Studio Express 2012 for Web](https://www.microsoft.com/visualstudio/eng/products/visual-studio-express-for-web) 하거나 그 보다 뛰어난 (읽기 [부록 B](#AppendixB) 설치 하는 방법에 대 한 지침은).
 - [ASP.NET MVC 4](../../../mvc4.md) (Microsoft Visual Studio 2012 설치에 포함 됨)
-- Windows Phone 에뮬레이터 (에 포함 된 [7.1.1 Windows Phone SDK](https://www.microsoft.com/en-us/download/details.aspx?id=29233))
+- Windows Phone 에뮬레이터 (에 포함 된 [7.1.1 Windows Phone SDK](https://www.microsoft.com/download/details.aspx?id=29233))
 - 선택 사항- [WebMatrix 2](https://www.microsoft.com/web/webmatrix/) 와 **Electric Plum iPhone 시뮬레이터** (iPhone 시뮬레이터와 웹 응용 프로그램을 탐색 하는 데 사용 하는 연습 3)에 확장
 
 <a id="Setup"></a>
@@ -345,7 +345,7 @@ ASP.NET MVC 4 모바일 앱을 위해 웹 사이트 및 태블릿 브라우저�
 
 
     [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample5.cs)]
-4. 열기는 **HomeController.cs** 에서 파일의 **컨트롤러** 폴더입니다.
+4. **컨트롤러** 폴더에서 **HomeController.cs** 파일을 엽니다.
 5. 다음 using 문을 추가합니다.
 
     (코드 조각- *ASP.NET MVC 4-Ex02-랩 HomeController Using*)
@@ -622,7 +622,7 @@ jQuery Mobile 기본 테마 문자 권한이 부여 된 5 견본 포함 (a, b, c
 
 Microsoft.NET Framework 4.5에서는 C# 및 Visual Basic로 비동기.NET 프로그래밍에 대 한 새 기초를 제공 하는 새로운 언어 기능을 소개 합니다. 이 새 foundation 비슷합니다-쉽고 약-동기 프로그래밍으로 간단한 비동기 프로그래밍을 사용 하십시오. ASP.NET MVC 4의 비동기 작업 메서드를 사용 하 여 쓸 수는 **AsyncController** 클래스입니다. 장기 실행에 대 한 비동기 작업 메서드를 사용할 수 있는데, CPU 바인딩되지 않은 요청 합니다. 이렇게 차단 하는 웹 서버의 요청 처리 되는 동안 작업을 수행 합니다. AsyncController 클래스는 일반적으로 장기 실행 웹 서비스 호출에 사용 됩니다.
 
-이 연습에서는 ASP.NET MVC 4의 비동기 작업의 기본 사항을 설명합니다. 심층 분석 하려는 경우 다음 문서 아웃 확인할 수 있습니다: [ [https://msdn.microsoft.com/en-us/library/ee728598%28v=vs.100%29.aspx](https://msdn.microsoft.com/en-us/library/ee728598%28v=vs.100%29.aspx)](https://msdn.microsoft.com/en-us/library/ee728598%28v=vs.100%29.aspx)
+이 연습에서는 ASP.NET MVC 4의 비동기 작업의 기본 사항을 설명합니다. 심층 분석 하려는 경우 다음 문서 아웃 확인할 수 있습니다: [ [https://msdn.microsoft.com/library/ee728598%28v=vs.100%29.aspx](https://msdn.microsoft.com/library/ee728598%28v=vs.100%29.aspx)](https://msdn.microsoft.com/library/ee728598%28v=vs.100%29.aspx)
 
 <a id="Task_1_-_Implementing_an_Asynchronous_Controller"></a>
 #### <a name="task-1---implementing-an-asynchronous-controller"></a>작업 1-비동기 컨트롤러를 구현 합니다.

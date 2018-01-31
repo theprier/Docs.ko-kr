@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/introduction/master-pages-and-site-navigation-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 32ddda8d883a99805d2448c9673e585bfe9ef2f4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4c44ad7ec1b43129365cc22f5076b4fa7fe860f4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="master-pages-and-site-navigation-c"></a>마스터 페이지 및 사이트 탐색 (C#)
 ====================
@@ -167,11 +167,11 @@ Web.sitemap
 **그림 10**: 사이트 맵 탐색 계층 구조를 나타냅니다 ([전체 크기 이미지를 보려면 클릭](master-pages-and-site-navigation-cs/_static/image26.png))
 
 
-.NET Framework를 통해 사이트 맵 구조를 표시 하는 ASP.NET [SiteMap 클래스](https://msdn.microsoft.com/en-us/library/system.web.sitemap.aspx)합니다. 이 클래스에는 `CurrentNode` 속성을 사용자가 현재 방문; 섹션에 대 한 정보를 반환 하는 `RootNode` 사이트 맵의 제곱근을 반환 하는 속성 (집 우리의 사이트 맵에서). 둘 다는 `CurrentNode` 및 `RootNode` 속성 반환 [SiteMapNode](https://msdn.microsoft.com/en-us/library/system.web.sitemapnode.aspx) 인스턴스 속성이 같은 `ParentNode`, `ChildNodes`, `NextSibling`, `PreviousSibling`, 등의 사이트 맵 수 있는 진행할를 계층 구조입니다.
+.NET Framework를 통해 사이트 맵 구조를 표시 하는 ASP.NET [SiteMap 클래스](https://msdn.microsoft.com/library/system.web.sitemap.aspx)합니다. 이 클래스에는 `CurrentNode` 속성을 사용자가 현재 방문; 섹션에 대 한 정보를 반환 하는 `RootNode` 사이트 맵의 제곱근을 반환 하는 속성 (집 우리의 사이트 맵에서). 둘 다는 `CurrentNode` 및 `RootNode` 속성 반환 [SiteMapNode](https://msdn.microsoft.com/library/system.web.sitemapnode.aspx) 인스턴스 속성이 같은 `ParentNode`, `ChildNodes`, `NextSibling`, `PreviousSibling`, 등의 사이트 맵 수 있는 진행할를 계층 구조입니다.
 
 ## <a name="step-3-displaying-a-menu-based-on-the-site-map"></a>사이트 맵에 따라 메뉴를 표시 하는 3 단계:
 
-ASP.NET 2.0에서 데이터에 액세스할 수 ASP.NET에서와 같이 프로그래밍 방식으로 수행 1.x 또는 새 통해 선언적으로 [데이터 소스 컨트롤과](https://msdn.microsoft.com/en-us/library/ms227679.aspx)합니다. 관계형 데이터베이스 데이터, ObjectDataSource 컨트롤에서 클래스 및 다른 사용자 데이터에 액세스 하는 것에 대 한 액세스를 위한 SqlDataSource 컨트롤 같은 기본 제공 데이터 소스 컨트롤이 여러 개 있습니다. 만들 수도 있습니다 직접 [사용자 지정 데이터 소스 컨트롤과](https://msdn.microsoft.com/asp.net/reference/data/default.aspx?pull=/library/en-us/dnvs05/html/DataSourceCon1.asp)합니다.
+ASP.NET 2.0에서 데이터에 액세스할 수 ASP.NET에서와 같이 프로그래밍 방식으로 수행 1.x 또는 새 통해 선언적으로 [데이터 소스 컨트롤과](https://msdn.microsoft.com/library/ms227679.aspx)합니다. 관계형 데이터베이스 데이터, ObjectDataSource 컨트롤에서 클래스 및 다른 사용자 데이터에 액세스 하는 것에 대 한 액세스를 위한 SqlDataSource 컨트롤 같은 기본 제공 데이터 소스 컨트롤이 여러 개 있습니다. 만들 수도 있습니다 직접 [사용자 지정 데이터 소스 컨트롤과](https://msdn.microsoft.com/asp.net/reference/data/default.aspx?pull=/library/dnvs05/html/DataSourceCon1.asp)합니다.
 
 데이터 소스 컨트롤은 ASP.NET 페이지 및 원본 데이터 간의 프록시도 사용 됩니다. 데이터 소스 컨트롤의 검색된 데이터를 표시 하기 위해 일반적으로 페이지에 다른 웹 컨트롤을 추가할 알아보고 하겠습니다 데이터 소스 컨트롤에 바인딩합니다. 웹 컨트롤을 데이터 소스 제어에 바인딩할 웹 컨트롤을 설정 하기만 하면 `DataSourceID` 속성을 데이터 소스 컨트롤의 값으로 `ID` 속성입니다.
 
@@ -218,7 +218,7 @@ SiteMapDataSource 제어가 반환 사이트 맵 한 계층 수준을 한 번에
 
 모든 ASP.NET 컨트롤의 상태를 유지할 필요에 따라 수는 [뷰 상태](https://msdn.microsoft.com/msdnmag/issues/03/02/CuttingEdge/), 렌더링 된 HTML에서 숨겨진된 양식 필드도 serialize 되는 합니다. 뷰 상태 데이터 웹 컨트롤에 바인딩된 데이터가 같은 컨트롤에서 포스트백을 통해 프로그래밍 방식으로 변경의 상태를 기억 하기 사용 됩니다. 뷰 상태 정보를 게시할를 기억 하 고 허용 하는 동안 클라이언트에 전송 해야 하며 심각한 페이지 크기를 늘리지 발생할 수 있습니다 되지 않은 경우 주의 깊게 모니터링 하는 태그의 크기를 증가 합니다. 웹 컨트롤 GridView 특히 데이터는 특히 태그의 추가 킬로바이트 수십 개 페이지에 추가 합니다. 이러한 증가 하는 광대역 또는 인트라넷 사용자가 무시할 수 있지만, 뷰 상태를 사용 하 여 몇 초 정도 전화 접속 사용자에 대 한 왕복에 추가할 수 있습니다.
 
-뷰 상태를 브라우저에서 페이지를 방문 하는 웹 페이지에서 보낸 소스를 볼의 영향을 확인 하려면 (Internet Explorer에서 보기 메뉴 옵션을 선택 소스). 또한 켤 수 [페이지 추적](https://msdn.microsoft.com/en-us/library/sfbfw58f.aspx) 할당 각 페이지에 컨트롤에서 사용 하는 보기 상태를 볼 수 있습니다. 뷰 상태 정보가 라는 숨겨진된 폼 필드에 serialize 되는 `__VIEWSTATE`에 있는 한 `<div>` 열기 바로 다음 요소 `<form>` 태그입니다. 뷰 상태는 Web Form 사용 되는 경우에 유지 ASP.NET 페이지에 포함 되어 있지 않으면는 `<form runat="server">` 없습니다 선언적 구문에는 `__VIEWSTATE` 렌더링된 된 태그에서 숨겨진된 양식 필드입니다.
+뷰 상태를 브라우저에서 페이지를 방문 하는 웹 페이지에서 보낸 소스를 볼의 영향을 확인 하려면 (Internet Explorer에서 보기 메뉴 옵션을 선택 소스). 또한 켤 수 [페이지 추적](https://msdn.microsoft.com/library/sfbfw58f.aspx) 할당 각 페이지에 컨트롤에서 사용 하는 보기 상태를 볼 수 있습니다. 뷰 상태 정보가 라는 숨겨진된 폼 필드에 serialize 되는 `__VIEWSTATE`에 있는 한 `<div>` 열기 바로 다음 요소 `<form>` 태그입니다. 뷰 상태는 Web Form 사용 되는 경우에 유지 ASP.NET 페이지에 포함 되어 있지 않으면는 `<form runat="server">` 없습니다 선언적 구문에는 `__VIEWSTATE` 렌더링된 된 태그에서 숨겨진된 양식 필드입니다.
 
 `__VIEWSTATE` 마스터 페이지에 의해 생성 된 양식 필드 생성 되는 페이지의 태그에 약 1, 800 바이트를 추가 합니다. 반복기 컨트롤을 주로 추가 볼록이는 상태를 보려면 SiteMapDataSource 컨트롤의 내용이 유지 됩니다. 추가 1, 800 바이트는 GridView 많은 필드와 레코드를 사용 하는 경우, 흥미를 얼마나 하지 보일 수 있지만, 뷰 상태는 10 개 이상의 인수에 따라 쉽게 부풀어 오름 수 있습니다.
 
@@ -252,7 +252,7 @@ SiteMapDataSource 제어가 반환 사이트 맵 한 계층 수준을 한 번에
 
 사이트의 자습서에서는 범주로 구분 다른 기본 보고 필터링, 사용자 지정 형식 지정, 각 범주 및 해당 폴더 내의 ASP.NET 페이지와 해당 자습서에 대 한 폴더와 등. 또한 각 폴더에는 `Default.aspx` 페이지. 이 기본 페이지에 대 한 모든 현재 섹션에 대 한 자습서를 표시 해 보겠습니다. 즉,에 대 한는 `Default.aspx` 에 `BasicReporting` 폴더 우리는에 대 한 링크가 `SimpleDisplay.aspx`, `DeclarativeParams.aspx`, 및 `ProgrammaticParams.aspx`합니다. 여기에서 다시 사용할 수는 `SiteMap` 에 정의 된 클래스 및 데이터 사이트 맵을 기반으로이 정보를 표시 하려면 웹 컨트롤 `Web.sitemap`합니다.
 
-다시 이번 제목 및 자습서의 설명을 표시 합니다는 반복기를 사용 하는 순서가 지정 되지 않은 목록을 표시 해 보겠습니다. 태그와이는 수행 하는 코드를 각각에 대해 반복 해야 하므로 `Default.aspx` 페이지에서는 캡슐화 할 수 있습니다이 UI 논리에는 [사용자 정의 컨트롤](https://msdn.microsoft.com/en-us/library/y6wb1a0e.aspx)합니다. 호출 하는 웹 사이트에 폴더를 만들고 `UserControls` 하 라는 웹 사용자 정의 컨트롤 유형의 새 항목 추가 `SectionLevelTutorialListing.ascx`, 다음 태그를 추가 하 고:
+다시 이번 제목 및 자습서의 설명을 표시 합니다는 반복기를 사용 하는 순서가 지정 되지 않은 목록을 표시 해 보겠습니다. 태그와이는 수행 하는 코드를 각각에 대해 반복 해야 하므로 `Default.aspx` 페이지에서는 캡슐화 할 수 있습니다이 UI 논리에는 [사용자 정의 컨트롤](https://msdn.microsoft.com/library/y6wb1a0e.aspx)합니다. 호출 하는 웹 사이트에 폴더를 만들고 `UserControls` 하 라는 웹 사용자 정의 컨트롤 유형의 새 항목 추가 `SectionLevelTutorialListing.ascx`, 다음 태그를 추가 하 고:
 
 
 [![Usercontrol은 폴더에 새 웹 사용자 컨트롤 추가](master-pages-and-site-navigation-cs/_static/image30.png)](master-pages-and-site-navigation-cs/_static/image29.png)
@@ -297,15 +297,15 @@ SectionLevelTutorialListing.ascx.cs
 
 이 자습서에 설명 된 항목에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
-- [ASP.NET 마스터 페이지 개요](https://msdn.microsoft.com/en-us/library/wtxbf3hh.aspx)
+- [ASP.NET 마스터 페이지 개요](https://msdn.microsoft.com/library/wtxbf3hh.aspx)
 - [ASP.NET 2.0의에서 마스터 페이지](http://odetocode.com/Articles/419.aspx)
 - [ASP.NET 2.0 디자인 템플릿](https://msdn.microsoft.com/asp.net/reference/design/templates/default.aspx)
-- [ASP.NET 사이트 탐색 개요](https://msdn.microsoft.com/en-us/library/e468hxky.aspx)
+- [ASP.NET 사이트 탐색 개요](https://msdn.microsoft.com/library/e468hxky.aspx)
 - [사이트 탐색의 ASP.NET 2.0 검사](http://aspnet.4guysfromrolla.com/articles/111605-1.aspx)
 - [ASP.NET 2.0 사이트 탐색 기능](https://weblogs.asp.net/scottgu/archive/2005/11/20/431019.aspx)
-- [ASP.NET 뷰 상태 이해](https://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnaspp/html/viewstate.asp)
-- [방법: ASP.NET 페이지에 대 한 추적을 설정 합니다.](https://msdn.microsoft.com/en-us/library/94c55d08%28VS.80%29.aspx)
-- [ASP.NET 사용자 정의 컨트롤](https://msdn.microsoft.com/en-us/library/y6wb1a0e.aspx)
+- [ASP.NET 뷰 상태 이해](https://msdn.microsoft.com/library/default.asp?url=/library/dnaspp/html/viewstate.asp)
+- [방법: ASP.NET 페이지에 대 한 추적을 설정 합니다.](https://msdn.microsoft.com/library/94c55d08%28VS.80%29.aspx)
+- [ASP.NET 사용자 정의 컨트롤](https://msdn.microsoft.com/library/y6wb1a0e.aspx)
 
 ## <a name="about-the-author"></a>작성자 정보
 

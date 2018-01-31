@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/caching
 msc.type: authoredcontent
-ms.openlocfilehash: d3ef613f625d862314eb0bb60f083f60bb2317e5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9b229de60e09b94189f62a6bb6fa61a9973d637b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="caching"></a>캐싱
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 캐싱의 이해가 성능이 뛰어난 ASP.NET 응용 프로그램에 대 한 중요 합니다. ASP.NET 캐싱;에 대 한 3 가지 옵션을 제공 하는 1.x 출력 캐싱, 부분 캐싱 및 캐시 API입니다.
 
@@ -77,12 +77,12 @@ SQL Server 7 및 2000 SQL 캐시 종속성에 대 한 폴링 기반 모델을 �
 
 | **명령줄 스위치** | **용도** |
 | --- | --- |
-| -S *서버* | 서버 이름을 지정합니다. |
+| -S *server* | 서버 이름을 지정합니다. |
 | -ed | SQL 캐시 종속성에 대 한 데이터베이스를 사용 해야 한다고 지정 합니다. |
-| -d *데이터베이스\_이름* | SQL 캐시 종속성을 사용 하도록 설정 하는 데이터베이스 이름을 지정 합니다. |
+| -d *database\_name* | SQL 캐시 종속성을 사용 하도록 설정 하는 데이터베이스 이름을 지정 합니다. |
 | -E | 해당 aspnet 지정\_regsql 데이터베이스에 연결할 때 Windows 인증을 사용 해야 합니다. |
 | -et | SQL 캐시 종속성에 대 한 데이터베이스 테이블 설정 하는 것을 지정 합니다. |
-| -t *테이블\_이름* | SQL 캐시 종속성을 사용할 수 있도록 데이터베이스 테이블의 이름을 지정 합니다. |
+| -t *table\_name* | SQL 캐시 종속성을 사용할 수 있도록 데이터베이스 테이블의 이름을 지정 합니다. |
 
 > [!NOTE]
 > Aspnet에 사용할 수 있는 다른 스위치는\_regsql.exe 합니다. 전체 목록은 실행 aspnet\_regsql.exe-? 명령줄입니다.
@@ -102,7 +102,7 @@ SQL Server 7 및 2000 SQL 캐시 종속성에 대 한 폴링 기반 모델을 �
 | AspNet\_SqlCacheUpdateChangeIdStoredProcedure | 변경된 된 테이블에 대 한 changeId 증가 하 여 알림 테이블을 업데이트 합니다. ASP.NET이이 값을 사용 하 여 데이터 변경 되었는지 여부를 결정 합니다. 아래에 표시 된 대로이 저장된 프로시저는 테이블을 설정할 때 만든 트리거에 의해 실행 됩니다. |
 
 
-- SQL Server 트리거를 호출  ***테이블\_이름*\_AspNet\_SqlCacheNotification\_트리거** 테이블에 대해 생성 됩니다. 이 트리거가 실행 AspNet\_SqlCacheUpdateChangeIdStoredProcedure는 INSERT, UPDATE 또는 DELETE는 테이블에서 수행 하는 경우.
+- SQL Server 트리거를 호출 ***테이블\_이름 *\_AspNet\_SqlCacheNotification\_트리거** 테이블에 대해 생성 됩니다. 이 트리거가 실행 AspNet\_SqlCacheUpdateChangeIdStoredProcedure는 INSERT, UPDATE 또는 DELETE는 테이블에서 수행 하는 경우.
 - SQL Server 역할 이라는 **aspnet\_ChangeNotification\_ReceiveNotificationsOnlyAccess** 데이터베이스에 추가 합니다.
 
 **aspnet\_ChangeNotification\_ReceiveNotificationsOnlyAccess** SQL Server 역할 권한이 EXEC AspNet\_SqlCachePollingStoredProcedure 합니다. Aspnet에 프로세스 계정을 추가 해야 하는 제대로 작동 하려면 폴링 모델에 대 한 순서로\_ChangeNotification\_ReceiveNotificationsOnlyAccess 역할입니다. Aspnet\_regsql.exe 도구에서 하지 이렇게 합니다.
@@ -144,7 +144,7 @@ SQL 캐시 종속성을 프로그래밍 방식으로 정의할의 이점 중 하
 
 [!code-csharp[Main](caching/samples/sample11.cs)]
 
-추가 정보: [https://msdn.microsoft.com/en-us/library/t9x04ed2.aspx](https://msdn.microsoft.com/en-us/library/t9x04ed2.aspx)
+추가 정보: [https://msdn.microsoft.com/library/t9x04ed2.aspx](https://msdn.microsoft.com/library/t9x04ed2.aspx)
 
 ## <a name="query-based-sql-cache-dependencies-sql-server-2005-only"></a>쿼리 기반 SQL 캐시 종속성 (SQL Server 2005만)
 
@@ -188,7 +188,7 @@ ASP.NET 대체 컨트롤은 동적으로 생성 하지 않고 캐시는 캐시 �
 
 ### <a name="substitution-api"></a>대체 API
 
-캐시 된 페이지에 대 한 동적 콘텐츠를 프로그래밍 방식으로 만들려면 호출할 수 있습니다는 [WriteSubstitution](https://msdn.microsoft.com/en-us/library/system.web.httpresponse.writesubstitution.aspx) 메서드 페이지 코드에서 메서드 이름을 매개 변수로 전달 합니다. 동적 콘텐츠의 생성을 처리 하는 메서드는 단일 [HttpContext](https://msdn.microsoft.com/en-us/library/system.web.httpcontext.aspx) 매개 변수는 문자열을 반환 합니다. 반환 문자열은 지정된 된 위치에서 대체 되는 콘텐츠. 대체 컨트롤에 선언적으로 사용 하는 대신 WriteSubstitution 메서드를 호출 하는 경우의 이점은 Page 또는 UserControl 개체의 정적 메서드를 호출 하는 것이 아니라 임의의 개체 메서드를 호출할 수 있습니다.
+캐시 된 페이지에 대 한 동적 콘텐츠를 프로그래밍 방식으로 만들려면 호출할 수 있습니다는 [WriteSubstitution](https://msdn.microsoft.com/library/system.web.httpresponse.writesubstitution.aspx) 메서드 페이지 코드에서 메서드 이름을 매개 변수로 전달 합니다. 동적 콘텐츠의 생성을 처리 하는 메서드는 단일 [HttpContext](https://msdn.microsoft.com/library/system.web.httpcontext.aspx) 매개 변수는 문자열을 반환 합니다. 반환 문자열은 지정된 된 위치에서 대체 되는 콘텐츠. 대체 컨트롤에 선언적으로 사용 하는 대신 WriteSubstitution 메서드를 호출 하는 경우의 이점은 Page 또는 UserControl 개체의 정적 메서드를 호출 하는 것이 아니라 임의의 개체 메서드를 호출할 수 있습니다.
 
 WriteSubstitution 메서드를 호출 하면 클라이언트 쪽 캐시 가능성이 서버 캐시 가능성으로 변경 되므로 클라이언트에서의 페이지 캐시 되지 것입니다. 이렇게 하면 페이지에 앞으로 요청 다시 동적 콘텐츠를 생성 하는 메서드를 호출 하 합니다.
 
@@ -198,15 +198,15 @@ WriteSubstitution 메서드를 호출 하면 클라이언트 쪽 캐시 가능�
 
 ## <a name="controlcachepolicy-class"></a>ControlCachePolicy 클래스
 
-ControlCachePolicy 클래스 사용자 정의 컨트롤을 사용 하 여 캐싱 조각의 프로그래밍 방식으로 제어할 수 있습니다. ASP.NET에서 사용자 정의 컨트롤을 포함 한 [BasePartialCachingControl](https://msdn.microsoft.com/en-us/library/system.web.ui.basepartialcachingcontrol.aspx) 인스턴스. BasePartialCachingControl 클래스에 출력 캐싱을 사용 하도록 설정 하는 사용자 정의 컨트롤을 나타냅니다.
+ControlCachePolicy 클래스 사용자 정의 컨트롤을 사용 하 여 캐싱 조각의 프로그래밍 방식으로 제어할 수 있습니다. ASP.NET에서 사용자 정의 컨트롤을 포함 한 [BasePartialCachingControl](https://msdn.microsoft.com/library/system.web.ui.basepartialcachingcontrol.aspx) 인스턴스. BasePartialCachingControl 클래스에 출력 캐싱을 사용 하도록 설정 하는 사용자 정의 컨트롤을 나타냅니다.
 
-액세스 하는 경우는 [BasePartialCachingControl.CachePolicy](https://msdn.microsoft.com/en-us/library/system.web.ui.basepartialcachingcontrol.cachepolicy.aspx) 속성은 [PartialCachingControl](https://msdn.microsoft.com/en-us/library/system.web.ui.partialcachingcontrol.aspx) 컨트롤을 올바른 ControlCachePolicy 개체를 항상 표시 됩니다. 그러나 액세스 하는 경우는 [UserControl.CachePolicy](https://msdn.microsoft.com/en-us/library/system.web.ui.usercontrol.cachepolicy.aspx) 속성은 [UserControl](https://msdn.microsoft.com/en-us/library/system.web.ui.usercontrol.aspx) 컨트롤을 받게 유효한 ControlCachePolicy 개체가 사용자 정의 컨트롤에서 래핑된 이미 있는 경우에는 BasePartialCachingControl 컨트롤입니다. 래핑되지 않은 ControlCachePolicy 개체의 속성에서 반환 되는 관련된 BasePartialCachingControl 없기 때문에 조작 하려고 할 때 예외를 throw 합니다. 를 UserControl 인스턴스 예외를 생성 하지 않고 캐싱을 지원 하는지 확인 하려면 검사는 [SupportsCaching](https://msdn.microsoft.com/en-us/library/system.web.ui.controlcachepolicy.supportscaching.aspx) 속성입니다.
+액세스 하는 경우는 [BasePartialCachingControl.CachePolicy](https://msdn.microsoft.com/library/system.web.ui.basepartialcachingcontrol.cachepolicy.aspx) 속성은 [PartialCachingControl](https://msdn.microsoft.com/library/system.web.ui.partialcachingcontrol.aspx) 컨트롤을 올바른 ControlCachePolicy 개체를 항상 표시 됩니다. 그러나 액세스 하는 경우는 [UserControl.CachePolicy](https://msdn.microsoft.com/library/system.web.ui.usercontrol.cachepolicy.aspx) 속성은 [UserControl](https://msdn.microsoft.com/library/system.web.ui.usercontrol.aspx) 컨트롤을 받게 유효한 ControlCachePolicy 개체가 사용자 정의 컨트롤에서 래핑된 이미 있는 경우에는 BasePartialCachingControl 컨트롤입니다. 래핑되지 않은 ControlCachePolicy 개체의 속성에서 반환 되는 관련된 BasePartialCachingControl 없기 때문에 조작 하려고 할 때 예외를 throw 합니다. 를 UserControl 인스턴스 예외를 생성 하지 않고 캐싱을 지원 하는지 확인 하려면 검사는 [SupportsCaching](https://msdn.microsoft.com/library/system.web.ui.controlcachepolicy.supportscaching.aspx) 속성입니다.
 
 ControlCachePolicy 클래스를 사용 하 여 출력 캐시를 사용 하는 여러 가지 방법 중 하나입니다. 다음 목록에서는 출력 캐싱을 사용 하도록 설정 하는 방법은 설명 합니다.
 
-- 사용 하 여는 [@ OutputCache](https://msdn.microsoft.com/en-us/library/hdxfb6cy.aspx) 지시문 사용할 수 있도록 출력 선언적 시나리오에서 캐시 합니다.
-- 사용 하 여는 [PartialCachingAttribute](https://msdn.microsoft.com/en-us/library/system.web.ui.partialcachingattribute.aspx) 특성을 코드 숨김 파일에서 사용자 정의 컨트롤에 대 한 캐싱을 사용 합니다.
-- 사용 하는 앞의 두 방법 중 하나를 사용 하 여 캐시 활성화 되 고는 를사용하여동적으로로드된BasePartialCachingControl인스턴스프로그래밍시나리오에서캐시설정을지정하려면ControlCachePolicy클래스를사용하여[System.Web.UI.TemplateControl.LoadControl](https://msdn.microsoft.com/en-us/library/system.web.ui.templatecontrol.loadcontrol.aspx) 메서드.
+- 사용 하 여는 [@ OutputCache](https://msdn.microsoft.com/library/hdxfb6cy.aspx) 지시문 사용할 수 있도록 출력 선언적 시나리오에서 캐시 합니다.
+- 사용 하 여는 [PartialCachingAttribute](https://msdn.microsoft.com/library/system.web.ui.partialcachingattribute.aspx) 특성을 코드 숨김 파일에서 사용자 정의 컨트롤에 대 한 캐싱을 사용 합니다.
+- 사용 하는 앞의 두 방법 중 하나를 사용 하 여 캐시 활성화 되 고는 를사용하여동적으로로드된BasePartialCachingControl인스턴스프로그래밍시나리오에서캐시설정을지정하려면ControlCachePolicy클래스를사용하여[System.Web.UI.TemplateControl.LoadControl](https://msdn.microsoft.com/library/system.web.ui.templatecontrol.loadcontrol.aspx) 메서드.
 
 ControlCachePolicy 인스턴스 제어 수명 주기의 Init 및 PreRender 단계 사이만 성공적으로 조작할 수 있습니다. PreRender 단계 이후에 ControlCachePolicy 개체를 수정 하는 경우 컨트롤이 렌더링 되 면 후 변경한 모든 내용은 캐시 설정 (컨트롤 렌더링 단계 동안 캐시 됨)에 실제로 영향을 줄 수 없습니다 ASP.NET 예외를 throw 합니다. 마지막으로, 사용자 정의 컨트롤 인스턴스 (및 따라서 ControlCachePolicy 개체)은 프로그래밍 방식으로 조작에 사용할 수 있는 경우에는 실제로 렌더링 합니다.
 
@@ -216,7 +216,7 @@ ASP.NET 2.0에서 캐싱 구성에 몇 가지 변경 사항이 있습니다. &lt
 
 | **요소** | **설명** |
 | --- | --- |
-| **캐시** | 선택적 요소입니다. 전역 응용 프로그램 캐시 설정을 정의합니다. |
+| **cache** | 선택적 요소입니다. 전역 응용 프로그램 캐시 설정을 정의합니다. |
 | **outputCache** | 선택적 요소입니다. 응용 프로그램 수준 출력 캐시 설정을 지정합니다. |
 | **outputCacheSettings** | 선택적 요소입니다. 응용 프로그램의 페이지에 적용할 수 있는 출력 캐시 설정을 지정 합니다. |
 | **sqlCacheDependency** | 선택적 요소입니다. ASP.NET 응용 프로그램에 대 한 SQL 캐시 종속성을 구성합니다. |
@@ -240,7 +240,7 @@ ASP.NET 2.0에서 캐싱 구성에 몇 가지 변경 사항이 있습니다. &lt
 | **특성** | **설명** |
 | --- | --- |
 | **enableOutputCache** | 선택적 **부울** 특성입니다. 페이지 출력 캐시를 설정/해제합니다. 사용 하지 않을 경우 프로그래밍 방식으로 또는 선언적 설정에 관계 없이 페이지가 캐시 됩니다. 기본값은 **true**합니다. |
-| **enableFragmentCache** | 선택적 **부울** 특성입니다. 응용 프로그램 부분 캐시를 설정/해제합니다. 비활성화 하면 페이지가 없는에 관계 없이 캐시 된 [@ OutputCache](https://msdn.microsoft.com/en-us/library/hdxfb6cy.aspx) 지시문 또는 캐싱을 사용 하는 프로필입니다. 업스트림 프록시 서버는 물론 브라우저 클라이언트 페이지 출력 캐시를 시도 하지 않아야 표시 하는 캐시 제어 헤더를 포함 합니다. 기본값은 **false**합니다. |
+| **enableFragmentCache** | 선택적 **부울** 특성입니다. 응용 프로그램 부분 캐시를 설정/해제합니다. 비활성화 하면 페이지가 없는에 관계 없이 캐시 된 [@ OutputCache](https://msdn.microsoft.com/library/hdxfb6cy.aspx) 지시문 또는 캐싱을 사용 하는 프로필입니다. 업스트림 프록시 서버는 물론 브라우저 클라이언트 페이지 출력 캐시를 시도 하지 않아야 표시 하는 캐시 제어 헤더를 포함 합니다. 기본값은 **false**합니다. |
 | **sendCacheControlHeader** | 선택적 **부울** 특성입니다. 나타내는 값을 가져오거나 여부는 **캐시-control: private** 출력 캐시 모듈에 의해 기본적으로 헤더를 보냅니다. 기본값은 **false**합니다. |
 | **omitVaryStar** | 선택적 **부울** 특성입니다. Http 전송 사용 가능/불가능 "**달라질 수 있습니다: \*** " 응답에서 헤더입니다. 기본 설정인 false, 사용 된 "**달라질 수 있습니다: \*** " 출력 캐시 된 페이지에 대 한 헤더를 보냅니다. Vary 헤더를 보낼 때 수에 대 한 서로 다른 버전을 캐싱하지 Vary 헤더에 지정 된 내용에 따라 합니다. 예를 들어 *Vary: 사용자-에이전트* 요청을 실행 하는 사용자 에이전트에 따라 페이지의 여러 버전을 저장 합니다. 기본값은 **false**합니다. |
 
@@ -254,7 +254,7 @@ ASP.NET 2.0에서 캐싱 구성에 몇 가지 변경 사항이 있습니다. &lt
 
 | **특성** | **설명** |
 | --- | --- |
-| **사용 하도록 설정** | 필요한 **부울** 특성입니다. 변경 내용 폴링 하는지 여부를 나타냅니다. |
+| **enabled** | 필요한 **부울** 특성입니다. 변경 내용 폴링 하는지 여부를 나타냅니다. |
 | **pollTime** | 선택적 **Int32** 특성입니다. SqlCacheDependency 된 변경에 대 한 데이터베이스 테이블을 폴링하는 빈도 설정 합니다. 이 값은 연속적인 폴링 간격 (밀리초)의 수에 해당합니다. 500 밀리초 미만에 설정할 수 없습니다. 기본값은 1 분입니다. |
 
 ### <a name="more-information"></a>추가 정보

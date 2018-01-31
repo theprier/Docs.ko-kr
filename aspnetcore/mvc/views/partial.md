@@ -2,20 +2,18 @@
 title: "부분 뷰"
 author: ardalis
 description: "ASP.NET Core mvc에서 부분 뷰를 사용 하 여"
-keywords: "ASP.NET Core, 부분 뷰, 부분"
 ms.author: riande
 manager: wpickett
 ms.date: 03/14/2017
 ms.topic: article
-ms.assetid: 4be1b12c-b74e-44ff-826b-99ce86e8d464
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/partial
-ms.openlocfilehash: 60f5255ca31accbffffec18053b29810977a5ff1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5919c273de2a298c3e407f118ac478e6a6031332
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="partial-views"></a>부분 뷰
 
@@ -39,7 +37,7 @@ ASP.NET Core MVC는 재사용 가능한 파트의 서로 다른 뷰 간에 공�
 
 ## <a name="declaring-partial-views"></a>부분 뷰를 선언합니다.
 
-부분 뷰를 다른 뷰와 마찬가지로 만들어집니다: 만들면는 *.cshtml* 내에 파일이 *뷰* 폴더입니다. 부분 뷰 및 일반 보기 간의 의미 체계 차이점이-다르게 렌더링만 합니다. 컨트롤러의 직접에서 반환 되는 뷰를 사용할 수 있습니다 `ViewResult`, 부분 뷰로 같은 보기를 사용할 수 있습니다. 부분 뷰 실행 하지 않는 뷰와 부분 뷰 렌더링 되는 방식 간의 주요 차이점은 *_viewstart.vbhtml* (뷰 수행-자세한 정보에 대 한 동안 *_viewstart.vbhtml* 에 [레이아웃 ](layout.md)).
+부분 뷰를 다른 뷰와 마찬가지로 만들어집니다: 만들면는 *.cshtml* 내에 파일이 *뷰* 폴더입니다. 부분 뷰 및 일반 보기 간의 의미 체계 차이점이-다르게 렌더링만 하는 합니다. 컨트롤러의 직접에서 반환 되는 뷰를 사용할 수 있습니다 `ViewResult`, 부분 뷰로 같은 보기를 사용할 수 있습니다. 부분 뷰를 실행 하지 않는 뷰와 부분 뷰 렌더링 되는 방식 간의 주요 차이점은 *_viewstart.vbhtml* (뷰 수행-자세한 정보에 대 한 동안 *_viewstart.vbhtml* 에 [레이아웃 ](layout.md)).
 
 ## <a name="referencing-a-partial-view"></a>부분 뷰를 참조합니다.
 
@@ -112,7 +110,7 @@ ASP.NET Core MVC는 재사용 가능한 파트의 서로 다른 뷰 간에 공�
 
 [!code-html[Main](partial/sample/src/PartialViewsSample/Views/Articles/Read.cshtml)]
 
-*뷰/공유/AuthorPartial*:
+*Views/Shared/AuthorPartial*:
 
 [!code-html[Main](partial/sample/src/PartialViewsSample/Views/Shared/AuthorPartial.cshtml)]
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-authentication-and-profile-application-services
 msc.type: authoredcontent
-ms.openlocfilehash: 7e0ddc15fac9af40a0a20a99979a80517eb1b6a2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 182276f9f91b99beb1ce0fc40dcda1f19376669a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="understanding-aspnet-ajax-authentication-and-profile-application-services"></a>ASP.NET AJAX 인증 및 프로필 응용 프로그램 서비스 이해
 ====================
@@ -43,7 +43,7 @@ Microsoft ASP.NET 프로필 및 인증 서비스는 ASP.NET 폼 인증 시스템
 
 프로필 서비스를 자동으로 통합 및 멤버 자격에 따라 인증 서비스에서 제공 하는 사용자 데이터의 저장소를 수 있습니다. Web.config 파일에 저장 된 데이터는 지정 하 고 다양 한 프로 파일링 서비스 공급자, 데이터 관리를 처리 합니다. 인증 서비스와 마찬가지로 AJAX 프로필 서비스는 표준 ASP.NET 프로필 서비스와 호환 되므로 AJAX 지원을 포함 하 여 현재 ASP.NET 프로필 서비스의 기능을 통합 하는 페이지를 나눌 수 해야 합니다.
 
-응용 프로그램에 ASP.NET 인증 및 자체 프로 파일링 서비스를 통합 하는이 백서의 범위를 벗어났습니다. 항목에 대 한 자세한 내용은 MSDN Library를 참조 하십시오. 참조 문서에서 멤버를 사용 하 여 사용자 관리 [https://msdn.microsoft.com/en-us/library/tw292whz.aspx](https://msdn.microsoft.com/en-us/library/tw292whz.aspx)합니다. 또한 ASP.NET 멤버 자격 ASP.NET 멤버 자격에 대 한 기본 인증 서비스 공급자 인 SQL Server와 함께 자동으로 설정 하는 유틸리티를 포함 합니다. 자세한 내용은 문서 ASP.NET SQL Server 등록 도구 참조 (Aspnet\_regsql.exe)에서 [https://msdn.microsoft.com/en-us/library/ms229862(vs.80).aspx](https://msdn.microsoft.com/en-us/library/ms229862(vs.80).aspx).
+응용 프로그램에 ASP.NET 인증 및 자체 프로 파일링 서비스를 통합 하는이 백서의 범위를 벗어났습니다. 항목에 대 한 자세한 내용은 MSDN Library를 참조 하십시오. 참조 문서에서 멤버를 사용 하 여 사용자 관리 [https://msdn.microsoft.com/library/tw292whz.aspx](https://msdn.microsoft.com/library/tw292whz.aspx)합니다. 또한 ASP.NET 멤버 자격 ASP.NET 멤버 자격에 대 한 기본 인증 서비스 공급자 인 SQL Server와 함께 자동으로 설정 하는 유틸리티를 포함 합니다. 자세한 내용은 문서 ASP.NET SQL Server 등록 도구 참조 (Aspnet\_regsql.exe)에서 [https://msdn.microsoft.com/library/ms229862(vs.80).aspx](https://msdn.microsoft.com/library/ms229862(vs.80).aspx).
 
 ## <a name="using-the-aspnet-ajax-authentication-service"></a>*ASP.NET AJAX 인증 서비스를 사용 하 여*
 
@@ -65,7 +65,7 @@ Login() 메서드는 사용자의 자격 증명을 인증 하는 요청을 시�
 
 | **매개 변수 이름** | **의미** |
 | --- | --- |
-| 사용자 이름 | 필수 요소. 사용자 이름 인증입니다. |
+| userName | 필수. 사용자 이름 인증입니다. |
 | 암호 | 옵션 (기본값은 null)입니다. 사용자의 암호입니다. |
 | isPersistent | 선택 사항 (기본값: false)입니다. 여부 사용자의 인증 쿠키는 세션 간에 유지 해야 합니다. False 인 경우, 사용자는 브라우저 종료 하거나 세션이 만료 되 면 기록 합니다. |
 | redirectUrl | 옵션 (기본값은 null)입니다. 인증 성공 시 브라우저를 리디렉션할 URL입니다. 이 매개 변수가 null 또는 빈 문자열인 경우 없습니다 리디렉션이 발생 합니다. |
@@ -117,7 +117,7 @@ Logout() 메서드는 자격 증명 쿠키를 제거 하 고 웹 응용 프로�
 | --- | --- |
 | 오류 | 오류 정보를 지정합니다. |
 | userContext | 로그인 또는 로그 아웃 함수를 호출할 때 제공 하는 사용자 컨텍스트 정보를 지정 합니다. |
-| MethodName | 호출 메서드의 이름입니다. |
+| methodName | 호출 메서드의 이름입니다. |
 
 *defaultLoginCompletedCallback 속성 (get, set):*
 
@@ -133,7 +133,7 @@ Logout() 메서드는 자격 증명 쿠키를 제거 하 고 웹 응용 프로�
 | --- | --- |
 | validCredentials | 사용자 올바른 자격 증명을 제공 하는지 여부를 지정 합니다. `true`사용자가 성공적으로;에 로그인 하는 경우 그렇지 않으면 `false`합니다. |
 | userContext | 로그인 함수를 호출할 때 제공 하는 사용자 컨텍스트 정보를 지정 합니다. |
-| MethodName | 호출 메서드의 이름입니다. |
+| methodName | 호출 메서드의 이름입니다. |
 
 *defaultLogoutCompletedCallback 속성 (get, set):*
 
@@ -149,7 +149,7 @@ Logout() 메서드는 자격 증명 쿠키를 제거 하 고 웹 응용 프로�
 | --- | --- |
 | 결과 | 이 매개 변수는 항상 됩니다 `null`; 나중에 사용 하도록 예약 되어 있습니다. |
 | userContext | 로그인 함수를 호출할 때 제공 하는 사용자 컨텍스트 정보를 지정 합니다. |
-| MethodName | 호출 메서드의 이름입니다. |
+| methodName | 호출 메서드의 이름입니다. |
 
 *isLoggedIn 속성 (get):*
 
@@ -195,7 +195,7 @@ Web.config; 프로필 서비스를 사용할 수 있어야 합니다. 기본적�
 
 AJAX 프로 파일링 서비스를 구성한 후 즉시; 페이지에서 사용할 수 있습니다. 그러나 사용 하기 전에 한 번 로드 해야 합니다.
 
-*Sys.Services.ProfileService 멤버*
+*Sys.Services.ProfileService members*
 
 *속성 필드:*
 
@@ -249,9 +249,9 @@ Save () 메서드는 사용자의 ASP.NET 프로필에 지정 된 속성 목록 
 
 | **매개 변수 이름** | **의미** |
 | --- | --- |
-| 오류 | 오류 정보를 지정합니다. |
+| Error | 오류 정보를 지정합니다. |
 | userContext | 될 때 제공 하는 사용자 컨텍스트 정보를 지정 합니다. 부하 저장 함수 호출 했습니다. |
-| MethodName | 호출 메서드의 이름입니다. |
+| methodName | 호출 메서드의 이름입니다. |
 
 *defaultSaveCompleted 속성 (get, set):*
 
@@ -267,7 +267,7 @@ Save () 메서드는 사용자의 ASP.NET 프로필에 지정 된 속성 목록 
 | --- | --- |
 | numPropsSaved | 저장 된 속성의 수를 지정 합니다. |
 | userContext | 될 때 제공 하는 사용자 컨텍스트 정보를 지정 합니다. 부하 저장 함수 호출 했습니다. |
-| MethodName | 호출 메서드의 이름입니다. |
+| methodName | 호출 메서드의 이름입니다. |
 
 *defaultLoadCompleted 속성 (get, set):*
 
@@ -283,7 +283,7 @@ Save () 메서드는 사용자의 ASP.NET 프로필에 지정 된 속성 목록 
 | --- | --- |
 | numPropsLoaded | 로드 되는 속성의 수를 지정 합니다. |
 | userContext | 될 때 제공 하는 사용자 컨텍스트 정보를 지정 합니다. 부하 저장 함수 호출 했습니다. |
-| MethodName | 호출 메서드의 이름입니다. |
+| methodName | 호출 메서드의 이름입니다. |
 
 *경로 속성 (get, set):*
 

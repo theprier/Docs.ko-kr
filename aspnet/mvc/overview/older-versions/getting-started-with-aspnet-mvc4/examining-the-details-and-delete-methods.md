@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/examining-the-details-and-delete-methods
 msc.type: authoredcontent
-ms.openlocfilehash: 213626147424e08d10d6442034ec450174200b09
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f3c56356aaa595e200a16fe0045a8b00dc5823b7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="examining-the-details-and-delete-methods"></a>세부 정보 및 삭제 메서드를 검사합니다.
 ====================
@@ -66,7 +66,7 @@ CLR(공용 언어 런타임)은 고유한 매개 변수 서명을 갖기 위해 
 
 ## <a name="next-steps"></a>다음 단계
 
-작성 하 고 웹 응용 프로그램을 테스트 후 다른 사람이 인터넷을 통해 사용 하도록 사용할 수 있도록 하려면 다음 단계가입니다. 이렇게 하려면 웹 호스팅 공급자를 배포 해야 합니다. Microsoft에서 제공 하는 최대 10 개의 웹 사이트의 무료 웹 호스팅는 [Windows Azure 평가판 계정 무료](https://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=A443DD604)합니다. 다음 내 자습서를 따라 보시기 [Windows Azure 웹 사이트 멤버 자격, OAuth, SQL 데이터베이스와 Secure ASP.NET MVC 응용 프로그램 배포](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data)합니다. 뛰어난 자습서가 Tom Dykstra 중간 수준 [ASP.NET MVC 응용 프로그램에 대 한 Entity Framework 데이터 모델을 만드는](../../getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)합니다. [Stackoverflow](http://stackoverflow.com/help) 및 [ASP.NET MVC 포럼](https://forums.asp.net/1146.aspx) 질문을 하는 좋은 배치 됩니다. 에 따라 [me](https://twitter.com/RickAndMSFT) 에서 twitter 때문 내 최신 자습서에 대 한 업데이트를 가져올 수 있습니다.
+작성 하 고 웹 응용 프로그램을 테스트 후 다른 사람이 인터넷을 통해 사용 하도록 사용할 수 있도록 하려면 다음 단계가입니다. 이렇게 하려면 웹 호스팅 공급자를 배포 해야 합니다. Microsoft에서 제공 하는 최대 10 개의 웹 사이트의 무료 웹 호스팅는 [Windows Azure 평가판 계정 무료](https://www.windowsazure.com/pricing/free-trial/?WT.mc_id=A443DD604)합니다. 다음 내 자습서를 따라 보시기 [Windows Azure 웹 사이트 멤버 자격, OAuth, SQL 데이터베이스와 Secure ASP.NET MVC 응용 프로그램 배포](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data)합니다. 뛰어난 자습서가 Tom Dykstra 중간 수준 [ASP.NET MVC 응용 프로그램에 대 한 Entity Framework 데이터 모델을 만드는](../../getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)합니다. [Stackoverflow](http://stackoverflow.com/help) 및 [ASP.NET MVC 포럼](https://forums.asp.net/1146.aspx) 질문을 하는 좋은 배치 됩니다. 에 따라 [me](https://twitter.com/RickAndMSFT) 에서 twitter 때문 내 최신 자습서에 대 한 업데이트를 가져올 수 있습니다.
 
 피드백을 보내 주십시오.
 

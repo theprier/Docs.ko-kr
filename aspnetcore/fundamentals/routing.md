@@ -2,20 +2,18 @@
 title: "ASP.NET Core의 라우팅"
 author: ardalis
 description: "ASP.NET Core 라우팅 기능 경로 처리기에 들어오는 요청을 매핑하는 일을 담당 어떻게를 파악 합니다."
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: bbbcf9e4-3c4c-4f50-b91e-175fe9cae4e2
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/routing
-ms.openlocfilehash: 58388f674ed5d353c1c7208a67fb338e49fdb592
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8f6f4fac89afe14d83d629128fc3e4632ae95510
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="routing-in-aspnet-core"></a>ASP.NET Core의 라우팅
 
@@ -100,9 +98,9 @@ routes.MapRoute(
     template: "{controller=Home}/{action=Index}/{id?}");
 ```
 
-이 서식 파일의 URL 경로 같은 일치시킬지 `/Products/Details/17` 경로 값을 추출 하 고 `{ controller = Products, action = Details, id = 17 }`합니다. URL 경로 세그먼트로 분할 하 고 각 세그먼트와 일치 하 여 경로 값을 결정는 *경로 매개 변수가* 경로 서식 파일의 이름입니다. 경로 매개 변수 이름이 지정 됩니다. 중괄호에 매개 변수 이름을 포함 하 여 정의 된 `{ }`합니다.
+이 서식 파일의 URL 경로 같은 일치시킬지 `/Products/Details/17` 경로 값을 추출 하 고 `{ controller = Products, action = Details, id = 17 }`합니다. URL 경로 세그먼트로 분할 하 고 각 세그먼트와 일치 하 여 경로 값을 결정는 *경로 매개 변수가* 경로 서식 파일의 이름입니다. 경로 매개 변수 이름이 지정 됩니다. 중괄호에 매개 변수 이름을 포함 하 여 정의 `{ }`합니다.
 
-위의 서식 파일의 URL 경로 일치 수 `/` 값 생성 및 `{ controller = Home, action = Index }`합니다. 때문에 이런는 `{controller}` 및 `{action}` 경로 매개 변수에 기본값이 및 `id` 경로 매개 변수는 선택 사항입니다. 본사 `=` 경로 매개 변수 이름에는 매개 변수에 대 한 기본값을 정의 하는 후 부호와 값입니다. 물음표 `?` 후 선택적으로 매개 변수를 정의 하는 경로 매개 변수 이름입니다. 기본값은 매개 변수를 라우팅할 *항상* 경로가 일치-선택적 매개 변수는 해당 URL 경로 세그먼트가 있는 경우 경로 값을 생성 하지 때 경로 값을 생성 합니다.
+위의 서식 파일의 URL 경로 일치 수 `/` 값 생성 및 `{ controller = Home, action = Index }`합니다. 때문에 이런는 `{controller}` 및 `{action}` 경로 매개 변수에 기본값이 및 `id` 경로 매개 변수는 선택 사항입니다. 본사 `=` 경로 매개 변수 이름에는 매개 변수에 대 한 기본값을 정의 하는 후 부호와 값입니다. 물음표 `?` 후 선택적으로 매개 변수를 정의 하는 경로 매개 변수 이름입니다. 기본값은 매개 변수를 라우팅할 *항상* 경로가 일치-선택적 매개 변수는 해당 URL 경로 세그먼트가 있는 경우 경로 값을 생성 하지 않습니다 때 경로 값을 생성 합니다.
 
 참조 [경로-템플릿-참조](#route-template-reference) 에 대 한 철저 한 설명은 경로 템플릿 기능 및 구문입니다.
 
@@ -233,9 +231,9 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
 | URI | 응답  |
 | ------- | -------- |
 | /package/create/3  | Hello! 경로 값: [작업을 만듭니다], [3 id] |
-| 패키지/추적/3 /  | Hello! 경로 값: [작업, 트랙] [-3 id] |
-| 패키지/추적/3 / / | Hello! 경로 값: [작업, 트랙] [-3 id]  |
-| /package/추적 / | \<진행 일치 없음 > |
+| /package/track/-3  | Hello! 경로 값: [작업, 트랙] [-3 id] |
+| /package/track/-3/ | Hello! 경로 값: [작업, 트랙] [-3 id]  |
+| /package/track/ | \<진행 일치 없음 > |
 | /Hello/Joe 가져오기 | 안녕하세요, Joe! |
 | POST /hello/Joe | \<진행, 일치 하는 HTTP GET 항목만 > |
 | /Hello/Joe/Smith 가져오기 | \<진행 일치 없음 > |
@@ -257,7 +255,7 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
 
 ## <a name="route-template-reference"></a>경로 템플릿 참조
 
-중괄호 안에 토큰 (`{ }`) 정의 *매개 변수를 라우팅할* 를 바인딩할 경로의 일치 하는 경우. 경로 세그먼트에 둘 이상의 경로 매개 변수를 정의할 수 있지만는 리터럴 값으로 구분 되어야 합니다. 예를 들어 `{controller=Home}{action=Index}` 됩니다 유효한 경로 사이의 리터럴 값이 없는 이므로 `{controller}` 및 `{action}`합니다. 이러한 경로 매개 변수는 이름이 있어야 합니다. 및 추가 특성 지정한 경우 사용할 수 있습니다.
+중괄호 안에 토큰 (`{ }`) 정의 *매개 변수를 라우팅할* 를 바인딩할 경로의 일치 하는 경우. 경로 세그먼트에 둘 이상의 경로 매개 변수를 정의할 수 있지만는 리터럴 값으로 구분 되어야 합니다. 예를 들어 `{controller=Home}{action=Index}` 사이의 리터럴 값이 없는 이므로 유효 경로 수 없게 `{controller}` 및 `{action}`합니다. 이러한 경로 매개 변수는 이름이 있어야 합니다. 및 추가 특성 지정한 경우 사용할 수 있습니다.
 
 경로 매개 변수 이외의 리터럴 텍스트 (예를 들어 `{id}`) 경로 구분 기호 및 `/` URL에 텍스트와 일치 해야 합니다. 텍스트 일치 이며 대/소문자 구분에 기반한 Url 경로의 디코딩된 표현 합니다. 리터럴 경로 매개 변수 구분 기호에 맞게 `{` 또는 `}`, 문자를 반복 하 여 이스케이프 (`{{` 또는 `}}`).
 
@@ -275,14 +273,14 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
 
 다음 표에서 일부 경로 템플릿 및 해당 동작을 보여 줍니다.
 
-| 경로 템플릿 | 예를 들어 일치 하는 URL | 참고 |
+| 경로 템플릿 | 예를 들어 일치 하는 URL | 노트 |
 | -------- | -------- | ------- |
 | hello  | /hello  | 단일 경로만 일치`/hello` |
-| {페이지 홈 =} | / | 일치 하 고 설정 `Page` 를`Home` |
-| {페이지 홈 =}  | / 연락처  | 일치 하 고 설정 `Page` 를`Contact` |
-| {controller} / {action} / {id}? | / 제품/목록 | 매핑될 `Products` 컨트롤러 및 `List` 동작 |
-| {controller} / {action} / {id}? | / 제품/세부 정보/123  |  매핑될 `Products` 컨트롤러 및 `Details` 동작 합니다.  `id`123으로 설정 |
-| {컨트롤러 = Home} / {action = 인덱스} / {id}? | /  |  매핑될 `Home` 컨트롤러 및 `Index` 메서드도 있습니다. `id` 는 무시 됩니다. |
+| {Page=Home} | / | 일치 하 고 설정 `Page` 를`Home` |
+| {Page=Home}  | / 연락처  | 일치 하 고 설정 `Page` 를`Contact` |
+| {controller}/{action}/{id?} | / 제품/목록 | 매핑될 `Products` 컨트롤러 및 `List` 동작 |
+| {controller}/{action}/{id?} | /Products/Details/123  |  매핑될 `Products` 컨트롤러 및 `Details` 동작 합니다.  `id`123으로 설정 |
+| {controller=Home}/{action=Index}/{id?} | /  |  매핑될 `Home` 컨트롤러 및 `Index` 메서드도 있습니다. `id` 는 무시 됩니다. |
 
 템플릿을 사용 하는 일반적으로 가장 간단한 방식은 라우팅입니다. 제약 조건 및 기본값을 외부 경로 템플릿을 지정할 수도 있습니다.
 
@@ -297,7 +295,7 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
 
 다음 표에서 일부 경로 제약 조건 및 예상 되는 동작을 보여 줍니다.
 
-| 제약 조건 | 예제 | 예제에서는 일치 하는 항목 | 참고 |
+| 제약 조건 | 예 | 예제에서는 일치 하는 항목 | 노트 |
 | --------   | ------- | ------------- | ----- |
 | `int` | `{id:int}` | `123456789`, `-123456789`  | 임의의 정수와 일치 |
 | `bool`  | `{active:bool}` | `true`, `FALSE` | 일치 하는 항목 `true` 또는 `false` (대/소문자 구분) |
@@ -340,10 +338,10 @@ ASP.NET Core 프레임 워크 추가 `RegexOptions.IgnoreCase | RegexOptions.Com
 | ----------------- | ------------ |  ------------ |  ------------ | 
 | `[a-z]{2}` | hello | 예 | 하위 문자열 일치 |
 | `[a-z]{2}` | 123abc456 | 예 | 하위 문자열 일치 |
-| `[a-z]{2}` | 없으며 mz | 예 | 식과 일치 |
-| `[a-z]{2}` | 없으며 MZ | 예 | 하지 대/소문자 구분 |
-| `^[a-z]{2}$` |  hello | no | 참조 `^` 및 `$` 위에 |
-| `^[a-z]{2}$` |  123abc456 | no | 참조 `^` 및 `$` 위에 |
+| `[a-z]{2}` | mz | 예 | 식과 일치 |
+| `[a-z]{2}` | MZ | 예 | 하지 대/소문자 구분 |
+| `^[a-z]{2}$` |  hello | 아니요 | 참조 `^` 및 `$` 위에 |
+| `^[a-z]{2}$` |  123abc456 | 아니요 | 참조 `^` 및 `$` 위에 |
 
 참조 [.NET Framework 정규식](https://docs.microsoft.com/dotnet/standard/base-types/regular-expression-language-quick-reference) 정규식 구문에 대 한 자세한 내용은 합니다.
 
@@ -365,10 +363,10 @@ ASP.NET Core 프레임 워크 추가 `RegexOptions.IgnoreCase | RegexOptions.Com
 
 | 앰비언트 값 | 명시적 값 | 결과 |
 | -------------   | -------------- | ------ |
-| 컨트롤러 "홈" = | action = "About" | `/Home/About` |
-| 컨트롤러 "홈" = | 컨트롤러 동작 "Order" = = "About" | `/Order/About` |
-| 컨트롤러 = "홈" color = "Red" | action = "About" | `/Home/About` |
-| 컨트롤러 "홈" = | action = "정보" 색 "Red" = | `/Home/About?color=Red`
+| controller="Home" | action="About" | `/Home/About` |
+| controller="Home" | controller="Order",action="About" | `/Order/About` |
+| controller="Home",color="Red" | action="About" | `/Home/About` |
+| controller="Home" | action="About",color="Red" | `/Home/About?color=Red`
 
 경로 매개 변수에 해당 하지 않는 기본 값이 해당 값이 명시적으로 제공 하는 경우 기본값을 일치 해야 합니다. 예:
 

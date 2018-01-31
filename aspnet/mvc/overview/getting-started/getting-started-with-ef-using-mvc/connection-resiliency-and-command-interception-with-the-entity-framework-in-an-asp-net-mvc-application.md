@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: fecdd582918a61f3d01519c75d159f9c601c8223
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1a28284e203904cc943e5e46b369e8a58ea5c820
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="connection-resiliency-and-command-interception-with-the-entity-framework-in-an-aspnet-mvc-application"></a>연결 복원 력 및 ASP.NET MVC 응용 프로그램에서 Entity Framework와 함께 인터 셉 션 명령
 ====================
@@ -49,14 +49,14 @@ Windows Azure에 응용 프로그램을 배포 하면 Windows Azure SQL 데이�
 
 Entity Framework 공급자에서 지 원하는 모든 데이터베이스 환경에 대해 수동으로 이러한 설정을 구성할 수 있지만 일반적으로 Windows Azure SQL 데이터베이스를 사용 하는 온라인 응용 프로그램에 대 한 잘 작동 하는 기본 값으로 이미 구성 및 이러한 설정은 Contoso 대학 응용 프로그램을 구현 합니다.
 
-클래스에서 파생 하는 사용자 어셈블리에 만들어져 연결 복원 력 설정 하기 위해 해야 모든는 [DbConfiguration](https://msdn.microsoft.com/en-us/data/jj680699.aspx) 클래스와 해당 클래스에서 SQL 데이터베이스 설정 *실행 전략*, EF에서 변수인 에 대 한 다른 용어 *다시 시도 정책*합니다.
+클래스에서 파생 하는 사용자 어셈블리에 만들어져 연결 복원 력 설정 하기 위해 해야 모든는 [DbConfiguration](https://msdn.microsoft.com/data/jj680699.aspx) 클래스와 해당 클래스에서 SQL 데이터베이스 설정 *실행 전략*, EF에서 변수인 에 대 한 다른 용어 *다시 시도 정책*합니다.
 
 1. DAL 폴더에서 라는 클래스 파일을 추가 *SchoolConfiguration.cs*합니다.
 2. 템플릿 코드를 다음 코드로 바꿉니다.
 
     [!code-csharp[Main](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample1.cs)]
 
-    파생 된 클래스에서 발견 하는 코드를 자동으로 실행 하는 Entity Framework `DbConfiguration`합니다. 사용할 수는 `DbConfiguration` 그렇지 않은 경우에 수행 하려면 코드에서 구성 작업을 수행 하는 클래스는 *Web.config* 파일입니다. 자세한 내용은 참조 [EntityFramework 코드 기반 구성](https://msdn.microsoft.com/en-us/data/jj680699)합니다.
+    파생 된 클래스에서 발견 하는 코드를 자동으로 실행 하는 Entity Framework `DbConfiguration`합니다. 사용할 수는 `DbConfiguration` 그렇지 않은 경우에 수행 하려면 코드에서 구성 작업을 수행 하는 클래스는 *Web.config* 파일입니다. 자세한 내용은 참조 [EntityFramework 코드 기반 구성](https://msdn.microsoft.com/data/jj680699)합니다.
 3. *StudentController.cs*, 추가 `using` 문을 `System.Data.Entity.Infrastructure`합니다.
 
     [!code-csharp[Main](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample2.cs)]
@@ -66,13 +66,13 @@ Entity Framework 공급자에서 지 원하는 모든 데이터베이스 환경�
 
     사용 하 던 `DataException` 친숙 한 "다시 시도" 메시지를 제공 하기 위해 일시적인 될 수 있는 오류를 식별 하려고 합니다. 하지만 다시 시도 정책에 설정한 했으므로 오류만 일시적인 일 수는 이미 시도 되어 여러 번 실패 했습니다 반환 된 실제 예외에 래핑됩니다는 `RetryLimitExceededException` 예외입니다.
 
-자세한 내용은 참조 [Entity Framework 연결 복원 력 / 다시 시도 논리](https://msdn.microsoft.com/en-us/data/dn456835)합니다.
+자세한 내용은 참조 [Entity Framework 연결 복원 력 / 다시 시도 논리](https://msdn.microsoft.com/data/dn456835)합니다.
 
 ## <a name="enable-command-interception"></a>명령 인터 셉 션을 사용 하도록 설정
 
 다시 시도 정책에 설정한 했으므로 어떻게 테스트 합니까 예상 대로 작동 하는지 확인? 일시적인 오류가 발생할 것인지, 특히를 로컬로 실행 하는 시점과 자동화 된 단위 테스트에 실제 일시적인 오류를 통합 하 특히 어려울 것 하기가 쉽지 않습니다. 연결 복원 기능을 테스트 하려면 SQL Server에 전송 하는 Entity Framework는 쿼리를 가로채 고 일반적으로 일시적인 예외 형식과 SQL 서버 응답을 대체 하는 방법이 필요 합니다.
 
-클라우드 응용 프로그램에 대 한 모범 사례를 구현 하는 데 쿼리 인터셉터를 사용할 수도 있습니다: [대기 시간 및 성공 또는 실패 외부 서비스에 대 한 모든 호출의 기록](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry.md#log) 예: 데이터베이스 서비스입니다. EF6 제공는 [로깅 API를 전용](https://msdn.microsoft.com/en-us/data/dn469464) 로깅, 보다 쉽게 만들 수는 있지만 자습서의이 섹션의 Entity Framework를 사용 하는 방법을 알아봅니다 [인터 셉 션 기능](https://msdn.microsoft.com/en-us/data/dn469464) 를 직접 모두에 대해 로깅 및 일시적인 오류를 시뮬레이션 하는 데 있습니다.
+클라우드 응용 프로그램에 대 한 모범 사례를 구현 하는 데 쿼리 인터셉터를 사용할 수도 있습니다: [대기 시간 및 성공 또는 실패 외부 서비스에 대 한 모든 호출의 기록](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry.md#log) 예: 데이터베이스 서비스입니다. EF6 제공는 [로깅 API를 전용](https://msdn.microsoft.com/data/dn469464) 로깅, 보다 쉽게 만들 수는 있지만 자습서의이 섹션의 Entity Framework를 사용 하는 방법을 알아봅니다 [인터 셉 션 기능](https://msdn.microsoft.com/data/dn469464) 를 직접 모두에 대해 로깅 및 일시적인 오류를 시뮬레이션 하는 데 있습니다.
 
 ### <a name="create-a-logging-interface-and-class"></a>로깅 인터페이스 및 클래스 만들기
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 84ca4bbaebe401d14233131bcaa027debf7ea0f9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 46f53279e2e6daa4266c06feb4ba544e14b68a03
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-entity-framework-6-code-first-using-mvc-5"></a>MVC 5를 사용하여 Entity Framework 6 Code First 시작
 ====================
@@ -29,7 +29,7 @@ ms.lasthandoff: 11/10/2017
 > > 이 자습서 시리즈의 최신 버전을 사용할 수 있는: [ASP.NET Core 및 Visual Studio 2015를 사용 하 여 Entity Framework Core 시작](https://docs.asp.net/en/latest/data/ef-mvc/intro.html)합니다.
 > 
 > 
-> Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 6 및 Visual Studio 2013을 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다. 이 자습서에서는 코드 첫 번째 워크플로 사용 합니다. Code First, Database First 및 Model First 선택 하는 방법에 대 한 정보를 참조 하십시오. [Entity Framework 개발 워크플로에](https://msdn.microsoft.com/en-us/library/ms178359.aspx#dbfmfcf)합니다.
+> Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 6 및 Visual Studio 2013을 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다. 이 자습서에서는 코드 첫 번째 워크플로 사용 합니다. Code First, Database First 및 Model First 선택 하는 방법에 대 한 정보를 참조 하십시오. [Entity Framework 개발 워크플로에](https://msdn.microsoft.com/library/ms178359.aspx#dbfmfcf)합니다.
 > 
 > 샘플 응용 프로그램은 웹 사이트 가상 Contoso 대학입니다. 학생 진입, 과정 만들기 및 강사 할당 등의 기능을 포함합니다. 이 자습서 시리즈 Contoso 대학 샘플 응용 프로그램을 작성 하는 방법에 설명 합니다. 있습니다 수 [완성 된 응용 프로그램 다운로드](https://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)합니다.
 > 
@@ -53,7 +53,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > ## <a name="questions-and-comments"></a>질문이 나 의견이
 > 
-> 이 자습서를 연결 하는 방법 및 페이지의 맨 아래에 주석에서 향상 될 수 있습니다 어떻게에 의견을 남겨 주세요. 자습서를 직접 관련 되지 않는 질문 해야 하도록를 게시할 수 있습니다는 [ASP.NET Entity Framework 포럼](https://forums.asp.net/1227.aspx), [Entity Framework와 LINQ to Entities 포럼](https://social.msdn.microsoft.com/forums/en-US/adodotnetentityframework/threads/), 또는 [ StackOverflow.com](http://stackoverflow.com/)합니다.
+> 이 자습서를 연결 하는 방법 및 페이지의 맨 아래에 주석에서 향상 될 수 있습니다 어떻게에 의견을 남겨 주세요. 자습서를 직접 관련 되지 않는 질문 해야 하도록를 게시할 수 있습니다는 [ASP.NET Entity Framework 포럼](https://forums.asp.net/1227.aspx), [Entity Framework와 LINQ to Entities 포럼](https://social.msdn.microsoft.com/forums/adodotnetentityframework/threads/), 또는 [ StackOverflow.com](http://stackoverflow.com/)합니다.
 > 
 > 문제를 해결할 수 없는 실행 하는 경우 코드를 다운로드할 수 있는 완료 된 프로젝트를 비교 하 여 일반적으로 문제에 솔루션을 찾을 수 있습니다. 몇 가지 일반적인 오류 및 해결 하는 방법에 대 한 참조 [일반적인 오류 및 솔루션 또는 해당에 대 한 대안입니다.](advanced-entity-framework-scenarios-for-an-mvc-web-application.md#errors)
 
@@ -169,7 +169,7 @@ Visual Studio를 열고 "ContosoUniversity" 라는 새로운 C# 웹 프로젝트
 
 `EnrollmentID` 속성은 기본 키를 됩니다;이 엔터티 사용는 *classname* `ID` 대신 패턴 `ID` 에서 본 것 처럼 자체적으로 `Student` 엔터티. 일반적으로 한 패턴을 선택 하는 데이터 모델 전체에서 사용 합니다. 여기서는 변형 패턴 중 하나를 사용할 수 있는 보여 줍니다. 자습서의 뒷부분에 표시 됩니다 방법을 사용 하 여 `ID` 없이 `classname` 데이터 모델에서 상속을 구현 하기가 쉬워집니다.
 
-`Grade` 속성은 한 [enum](https://msdn.microsoft.com/en-us/data/hh859576.aspx)합니다. 후 물음표는 `Grade` 형식 선언을 나타냅니다는 `Grade` 속성은 [nullable](https://msdn.microsoft.com/en-us/library/2cf62fcy.aspx)합니다. Null이 등급은 0 개 등급 다릅니다-의미 하는 등급 알려진 또는 아직 할당 되지 않았습니다.
+`Grade` 속성은 한 [enum](https://msdn.microsoft.com/data/hh859576.aspx)합니다. 후 물음표는 `Grade` 형식 선언을 나타냅니다는 `Grade` 속성은 [nullable](https://msdn.microsoft.com/library/2cf62fcy.aspx)합니다. Null이 등급은 0 개 등급 다릅니다-의미 하는 등급 알려진 또는 아직 할당 되지 않았습니다.
 
 `StudentID` 속성은 외래 키 및 해당 탐색 속성은 `Student`합니다. `Enrollment` 엔터티는 하 나와 연결 `Student` 엔터티, 속성에는 단일만 포함할 수 있으므로 `Student` 엔터티 (달리는 `Student.Enrollments` 탐색 속성 했 듯이, 여러을 보유할 수 있는 `Enrollment` 엔터티)입니다.
 
@@ -187,11 +187,11 @@ Entity Framework 라고 하는 경우 외래 키 속성으로 속성을 해석  
 
 `Enrollments` 속성은 탐색 속성입니다. A `Course` 개수에 관계 없이 관련 될 수 있는 엔터티 `Enrollment` 엔터티.
 
-에 대 한 내용은 라고는 [DatabaseGenerated](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.databasegeneratedattribute(v=vs.110).aspx) 이 시리즈의 자습서의 뒷부분에서 특성입니다. 기본적으로,이 특성 과정 대신 생성 하는 데이터베이스에 대 한 기본 키를 입력할 수 있습니다.
+에 대 한 내용은 라고는 [DatabaseGenerated](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.databasegeneratedattribute(v=vs.110).aspx) 이 시리즈의 자습서의 뒷부분에서 특성입니다. 기본적으로,이 특성 과정 대신 생성 하는 데이터베이스에 대 한 기본 키를 입력할 수 있습니다.
 
 ## <a name="create-the-database-context"></a>데이터베이스 컨텍스트 만들기
 
-지정된 된 데이터 모델에 대 한 Entity Framework 기능을 조정 하는 기본 클래스는는 *데이터베이스 컨텍스트* 클래스입니다. 이 클래스에서 파생 시켜 만들는 [System.Data.Entity.DbContext](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext(v=VS.103).aspx) 클래스입니다. 코드에서 데이터 모델에 포함 된 엔터티 지정 합니다. 특정 Entity Framework 동작을 사용자 지정할 수 있습니다. 이 프로젝트에 클래스 이름은 `SchoolContext`합니다.
+지정된 된 데이터 모델에 대 한 Entity Framework 기능을 조정 하는 기본 클래스는는 *데이터베이스 컨텍스트* 클래스입니다. 이 클래스에서 파생 시켜 만들는 [System.Data.Entity.DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=VS.103).aspx) 클래스입니다. 코드에서 데이터 모델에 포함 된 엔터티 지정 합니다. 특정 Entity Framework 동작을 사용자 지정할 수 있습니다. 이 프로젝트에 클래스 이름은 `SchoolContext`합니다.
 
 프로젝트를 마우스 오른쪽 단추로 클릭 ContosoUniversity 프로젝트의 폴더를 만들려고 **솔루션 탐색기** 클릭 **추가**, 클릭 하 고 **새 폴더**합니다. 새 폴더 이름을 *DAL* (데이터 액세스 계층)에 대 한 합니다. 해당 폴더에 라는 새 클래스 파일을 만들 *SchoolContext.cs*, 템플릿 코드를 다음 코드로 바꿉니다.
 
@@ -199,7 +199,7 @@ Entity Framework 라고 하는 경우 외래 키 속성으로 속성을 해석  
 
 ### <a name="specifying-entity-sets"></a>지정 하 여 엔터티 집합
 
-이 코드에서는 [DbSet](https://msdn.microsoft.com/en-us/library/system.data.entity.dbset(v=VS.103).aspx) 각 엔터티 집합에 대 한 속성입니다. Entity Framework 용어에서는 *엔터티 집합* 일반적으로 데이터베이스 테이블에 해당 및 *엔터티* 테이블의 행에 해당 합니다.
+이 코드에서는 [DbSet](https://msdn.microsoft.com/library/system.data.entity.dbset(v=VS.103).aspx) 각 엔터티 집합에 대 한 속성입니다. Entity Framework 용어에서는 *엔터티 집합* 일반적으로 데이터베이스 테이블에 해당 및 *엔터티* 테이블의 행에 해당 합니다.
 
 > [!NOTE] 
 > 
@@ -212,13 +212,13 @@ Entity Framework 라고 하는 경우 외래 키 속성으로 속성을 해석  
 
 [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample7.cs?highlight=1)]
 
-또한 Web.config 파일에 저장 된의 이름이 아니라 연결 문자열 자체에 전달할 수 있습니다. 사용 하도록 데이터베이스를 지정 하기 위한 옵션에 대 한 자세한 내용은 참조 [Entity Framework 연결 및 모델](https://msdn.microsoft.com/en-us/data/jj592674)합니다.
+또한 Web.config 파일에 저장 된의 이름이 아니라 연결 문자열 자체에 전달할 수 있습니다. 사용 하도록 데이터베이스를 지정 하기 위한 옵션에 대 한 자세한 내용은 참조 [Entity Framework 연결 및 모델](https://msdn.microsoft.com/data/jj592674)합니다.
 
 연결 문자열 또는 하나의 이름을 명시적으로 지정 하지 않으면, Entity Framework 연결 문자열 이름이 클래스 이름과 이라고 가정 합니다. 이 예제의 기본 연결 문자열 이름이 됩니다. `SchoolContext`, 명시적으로 지정 하는 어떤와 동일 합니다.
 
 ### <a name="specifying-singular-table-names"></a>단일 테이블 이름 지정
 
-`modelBuilder.Conventions.Remove` 의 문에서 [OnModelCreating](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext.onmodelcreating(v=vs.103).aspx) 복수화 되 고에서 테이블 이름을 수 없습니다. 이렇게 하지 않은 데이터베이스에 생성된 된 테이블 이름이 `Students`, `Courses`, 및 `Enrollments`합니다. 테이블 이름이 됩니다 대신 `Student`, `Course`, 및 `Enrollment`합니다. 개발자는 테이블 이름을 복수화할지 여부에 대해 동의하지 않습니다. 이 자습서에서는 단 수 형태를 사용 하지만 중요 한 점은 포함 하거나 코드이 줄을 생략 하 여 원하는 어떤 폼을 선택할 수 있습니다.
+`modelBuilder.Conventions.Remove` 의 문에서 [OnModelCreating](https://msdn.microsoft.com/library/system.data.entity.dbcontext.onmodelcreating(v=vs.103).aspx) 복수화 되 고에서 테이블 이름을 수 없습니다. 이렇게 하지 않은 데이터베이스에 생성된 된 테이블 이름이 `Students`, `Courses`, 및 `Enrollments`합니다. 테이블 이름이 됩니다 대신 `Student`, `Course`, 및 `Enrollment`합니다. 개발자는 테이블 이름을 복수화할지 여부에 대해 동의하지 않습니다. 이 자습서에서는 단 수 형태를 사용 하지만 중요 한 점은 포함 하거나 코드이 줄을 생략 하 여 원하는 어떤 폼을 선택할 수 있습니다.
 
 ## <a name="set-up-ef-to-initialize-the-database-with-test-data"></a>테스트 데이터로 데이터베이스 초기화에 EF를 설정 합니다.
 
@@ -241,7 +241,7 @@ DAL 폴더에 라는 새 클래스 파일을 만들 *SchoolInitializer.cs* 누�
 
 [!code-xml[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample9.xml?highlight=2-6)]
 
-`context type` 정규화 된 컨텍스트 클래스 이름 및에 어셈블리를 지정 및 `databaseinitializer type` 이니셜라이저 클래스 및 중인 어셈블리의 정규화 된 이름을 지정 합니다. (이니셜라이저를 사용 하는 EF를 사용 하지 않으려는 경우에 특성을 설정할 수 있습니다는 `context` 요소: `disableDatabaseInitialization="true"`.) 자세한 내용은 참조 [Entity Framework-구성 파일 설정](https://msdn.microsoft.com/en-us/data/jj556606)합니다.
+`context type` 정규화 된 컨텍스트 클래스 이름 및에 어셈블리를 지정 및 `databaseinitializer type` 이니셜라이저 클래스 및 중인 어셈블리의 정규화 된 이름을 지정 합니다. (이니셜라이저를 사용 하는 EF를 사용 하지 않으려는 경우에 특성을 설정할 수 있습니다는 `context` 요소: `disableDatabaseInitialization="true"`.) 자세한 내용은 참조 [Entity Framework-구성 파일 설정](https://msdn.microsoft.com/data/jj556606)합니다.
 
 에 이니셜라이저를 설정 하는 대신는 *Web.config* 파일은 추가 하 여 코드에서 수행 하는 `Database.SetInitializer` 문을 `Application_Start` 에서 메서드는 *Global.asax.cs* 파일입니다. 자세한 내용은 참조 [의 Entity Framework Code First 이해 데이터베이스 이니셜라이저](http://www.codeguru.com/csharp/article.php/c19999/Understanding-Database-Initializers-in-Entity-Framework-Code-First.htm)합니다.
 
@@ -264,9 +264,9 @@ Visual Studio 2015를 사용 하는 경우에 기본 SQL Server 인스턴스 이
 
 [!code-xml[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample10.xml?highlight=1-3)]
 
-사용자가 추가한 연결 문자열 지정 Entity Framework가 명명 된 LocalDB 데이터베이스를 사용 합니다 *ContosoUniversity1.mdf*합니다. (데이터베이스가 존재 하지 않으면; EF을 만듭니다.) 데이터베이스에 생성 될 경우 프로그램 *앱\_데이터* 폴더를 추가할 수 있습니다 `AttachDBFilename=|DataDirectory|\ContosoUniversity1.mdf` 연결 문자열에 있습니다. 연결 문자열에 대 한 자세한 내용은 참조 [ASP.NET 웹 응용 프로그램에 대 한 SQL Server 연결 문자열](https://msdn.microsoft.com/en-us/library/jj653752.aspx)합니다.
+사용자가 추가한 연결 문자열 지정 Entity Framework가 명명 된 LocalDB 데이터베이스를 사용 합니다 *ContosoUniversity1.mdf*합니다. (데이터베이스가 존재 하지 않으면; EF을 만듭니다.) 데이터베이스에 생성 될 경우 프로그램 *앱\_데이터* 폴더를 추가할 수 있습니다 `AttachDBFilename=|DataDirectory|\ContosoUniversity1.mdf` 연결 문자열에 있습니다. 연결 문자열에 대 한 자세한 내용은 참조 [ASP.NET 웹 응용 프로그램에 대 한 SQL Server 연결 문자열](https://msdn.microsoft.com/library/jj653752.aspx)합니다.
 
-연결 문자열이 있이 필요가 실제로 *Web.config* 파일입니다. 연결 문자열을 지정 하지 않으면 Entity Framework는 기본 컨텍스트 클래스에 따라 하나를 사용 합니다. 자세한 내용은 참조 [Code First를 새 데이터베이스로](https://msdn.microsoft.com/en-us/data/jj193542)합니다.
+연결 문자열이 있이 필요가 실제로 *Web.config* 파일입니다. 연결 문자열을 지정 하지 않으면 Entity Framework는 기본 컨텍스트 클래스에 따라 하나를 사용 합니다. 자세한 내용은 참조 [Code First를 새 데이터베이스로](https://msdn.microsoft.com/data/jj193542)합니다.
 
 ## <a name="creating-a-student-controller-and-views"></a>학생 컨트롤러 및 뷰 만들기
 
@@ -334,7 +334,7 @@ Visual Studio 2015를 사용 하는 경우에 기본 SQL Server 인스턴스 이
 - 명명 된 엔터티 속성 `ID` 또는 *classname* `ID` 기본 키 속성으로 인식 됩니다.
 - 라고 하는 경우 외래 키 속성으로는 속성을 해석  *&lt;탐색 속성 이름&gt;&lt;기본 키 속성 이름&gt;*  (예를 들어 `StudentID` 는 에대한`Student` 이후 탐색 속성에서 `Student` 엔터티의 기본 키가 `ID`). 외래 키 속성 수 또한 같은 이름 단순히 &lt;기본 키 속성 이름&gt; (예를 들어 `EnrollmentID` 이후는 `Enrollment` 엔터티의 기본 키가 `EnrollmentID`).
 
-살펴본 규칙을 재정의할 수 있습니다. 예를 들어 지정한 테이블 이름을 복수화 됩니다 하지 않아야, 나중에 확인할 수 명시적으로 외래 키 속성으로 속성을 표시 하는 방법입니다. 규칙 및 재정의에 해당 하는 방법에 대해 자세히 알아봅니다는 [더 복잡 한 데이터 모델을 만드는](creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md) 이 시리즈의 뒷부분에 나오는 자습서입니다. 규칙에 대 한 자세한 내용은 참조 [코드 첫 번째 규칙](https://msdn.microsoft.com/en-us/data/jj679962)합니다.
+살펴본 규칙을 재정의할 수 있습니다. 예를 들어 지정한 테이블 이름을 복수화 됩니다 하지 않아야, 나중에 확인할 수 명시적으로 외래 키 속성으로 속성을 표시 하는 방법입니다. 규칙 및 재정의에 해당 하는 방법에 대해 자세히 알아봅니다는 [더 복잡 한 데이터 모델을 만드는](creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md) 이 시리즈의 뒷부분에 나오는 자습서입니다. 규칙에 대 한 자세한 내용은 참조 [코드 첫 번째 규칙](https://msdn.microsoft.com/data/jj679962)합니다.
 
 ## <a name="summary"></a>요약
 

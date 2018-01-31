@@ -2,7 +2,7 @@
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/examining-the-events-associated-with-inserting-updating-and-deleting-vb
 title: "삽입, 업데이트 및 삭제 (VB)와 관련 된 이벤트 검사 | Microsoft Docs"
 author: rick-anderson
-description: "이 자습서에서는 전 또는 배포 시 삽입 후 발생 하는 이벤트를 사용 하 여 검토 합니다 업데이트 또는 ASP.NET 데이터 웹 컨트롤의 작업을 삭제 합니다. W...."
+description: "이 자습서에서는 전 또는 배포 시 삽입 후 발생 하는 이벤트를 사용 하 여 검토 합니다 업데이트 또는 ASP.NET 데이터 웹 컨트롤의 작업을 삭제 합니다. W..."
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/17/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/examining-the-events-associated-with-inserting-updating-and-deleting-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5daa9d1fe63e4ad8ec8c667f84de00fadd77fefa
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 88f6beb3f3514c6a9784d4cb936a5b779ce75ae1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="examining-the-events-associated-with-inserting-updating-and-deleting-vb"></a>삽입, 업데이트 및 삭제 (VB)와 연결 된 이벤트를 검사 합니다.
 ====================
@@ -162,12 +162,12 @@ ObjectDataSource만에 있을 때 `UpdateParameters` 제품의 이름, 가격 �
 
 그러나 $19.00 throw와 같은 텍스트 상자에 통화 기호와 함께 제품 업데이트는 `FormatException`합니다. GridView에서 ObjectDataSource에 사용자가 제공한 값을 할당 하려고 할 때 `UpdateParameters` 변환할 수 없는 컬렉션의 `UnitPrice` 에 "$19.00" 문자열을 `Decimal` 매개 변수에 필요한 (11 그림 참조). 이 해결 하려면 GridView의에 대 한 이벤트 처리기를 만들 수 있습니다 `RowUpdating` 이벤트를 사용자가 제공한 구문 분석 `UnitPrice` 통화 형식으로 `Decimal`합니다.
 
-GridView의 `RowUpdating` 이벤트 형식의 개체를 두 번째 매개 변수로 받아들입니다 [GridViewUpdateEventArgs](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridviewupdateeventargs(VS.80).aspx)를 포함 하는 `NewValues` 사전 준비 되도록 사용자가 제공한 값을 포함 하는 속성 중 하나로 ObjectDataSource의에 할당 된 `UpdateParameters` 컬렉션입니다. 기존을 덮어쓸 수 `UnitPrice` 값에 `NewValues` 10 진수 값을 사용 하 여 컬렉션에 코드의 다음 줄으로 통화 형식을 사용 하 여 구문 분석은 `RowUpdating` 이벤트 처리기:
+GridView의 `RowUpdating` 이벤트 형식의 개체를 두 번째 매개 변수로 받아들입니다 [GridViewUpdateEventArgs](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridviewupdateeventargs(VS.80).aspx)를 포함 하는 `NewValues` 사전 준비 되도록 사용자가 제공한 값을 포함 하는 속성 중 하나로 ObjectDataSource의에 할당 된 `UpdateParameters` 컬렉션입니다. 기존을 덮어쓸 수 `UnitPrice` 값에 `NewValues` 10 진수 값을 사용 하 여 컬렉션에 코드의 다음 줄으로 통화 형식을 사용 하 여 구문 분석은 `RowUpdating` 이벤트 처리기:
 
 
 [!code-vb[Main](examining-the-events-associated-with-inserting-updating-and-deleting-vb/samples/sample4.vb)]
 
-사용자가 제공 하는 경우는 `UnitPrice` 값 (예: "$19.00") 하 여 계산 된 10 진수 값으로이 값을 덮어씁니다 [Decimal.Parse](https://msdn.microsoft.com/en-us/library/system.decimal.parse(VS.80).aspx), 통화로 값을 구문 분석 합니다. 올바르게 통화 기호, 쉼표, 소수점 및 이런 식으로 발생할 경우 소수점 구문 분석 하 고 사용 하 여이 [NumberStyles 열거형](https://msdn.microsoft.com/en-US/library/system.globalization.numberstyles(VS.80).aspx) 에 [System.Globalization](https://msdn.microsoft.com/en-US/library/abeh092z(VS.80).aspx) 네임 스페이스입니다.
+사용자가 제공 하는 경우는 `UnitPrice` 값 (예: "$19.00") 하 여 계산 된 10 진수 값으로이 값을 덮어씁니다 [Decimal.Parse](https://msdn.microsoft.com/library/system.decimal.parse(VS.80).aspx), 통화로 값을 구문 분석 합니다. 올바르게 통화 기호, 쉼표, 소수점 및 이런 식으로 발생할 경우 소수점 구문 분석 하 고 사용 하 여이 [NumberStyles 열거형](https://msdn.microsoft.com/library/system.globalization.numberstyles(VS.80).aspx) 에 [System.Globalization](https://msdn.microsoft.com/library/abeh092z(VS.80).aspx) 네임 스페이스입니다.
 
 그림 11에는 사용자가 제공한 통화 기호에 의해 발생 된 문제를 보여 줍니다. `UnitPrice`, 방식과 GridView의 `RowUpdating` 이러한 입력을 올바르게 구문 분석 하는 이벤트 처리기를 활용할 수 있습니다.
 
@@ -216,10 +216,10 @@ GridView의 `RowUpdating` 이벤트 형식의 개체를 두 번째 매개 변수
 
 GridView의를 사용 하는 방법을 지금까지 살펴본 것 `RowUpdating` ObjectDataSource의에 지정 된 매개 변수 값을 프로그래밍 방식으로 변경 하는 이벤트 `UpdateParameters` 컬렉션에도 취소 하는 업데이트 처리 완전히 하는 방식입니다. 이러한 개념 FormView 및 DetailsView 컨트롤에 탭으로 이전 하 고 삽입 및 삭제에 적용 합니다.
 
-에 대 한 이벤트 처리기를 통해 ObjectDataSource 수준에서 다음이 작업을 수행 해당 `Inserting`, `Updating`, 및 `Deleting` 이벤트입니다. 이러한 이벤트는 기본 개체의 연결 된 메서드를 호출 하기 전에 발생 하 고 입력된 매개 변수 컬렉션을 수정 하거나 완전 한 작업을 취소할 수 있는 마지막 기회 기회를 제공 합니다. 이러한 세 이벤트에 대 한 이벤트 처리기 형식의 개체로 전달 [ObjectDataSourceMethodEventArgs](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.objectdatasourcemethodeventargs(VS.80).aspx) 하는 두 가지 속성이 필요 합니다.
+에 대 한 이벤트 처리기를 통해 ObjectDataSource 수준에서 다음이 작업을 수행 해당 `Inserting`, `Updating`, 및 `Deleting` 이벤트입니다. 이러한 이벤트는 기본 개체의 연결 된 메서드를 호출 하기 전에 발생 하 고 입력된 매개 변수 컬렉션을 수정 하거나 완전 한 작업을 취소할 수 있는 마지막 기회 기회를 제공 합니다. 이러한 세 이벤트에 대 한 이벤트 처리기 형식의 개체로 전달 [ObjectDataSourceMethodEventArgs](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasourcemethodeventargs(VS.80).aspx) 하는 두 가지 속성이 필요 합니다.
 
-- [취소](https://msdn.microsoft.com/en-US/library/system.componentmodel.canceleventargs.cancel(VS.80).aspx)이며 경우로 설정 `True`, 수행 되는 작업을 취소 합니다.
-- [InputParameters](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.objectdatasourcemethodeventargs.inputparameters(VS.80).aspx), 컬렉션의 `InsertParameters`, `UpdateParameters`, 또는 `DeleteParameters`에 대 한 이벤트 처리기가 있는지 여부에 따라는 `Inserting`, `Updating`, 또는 `Deleting` 이벤트
+- [취소](https://msdn.microsoft.com/library/system.componentmodel.canceleventargs.cancel(VS.80).aspx)이며 경우로 설정 `True`, 수행 되는 작업을 취소 합니다.
+- [InputParameters](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasourcemethodeventargs.inputparameters(VS.80).aspx), 컬렉션의 `InsertParameters`, `UpdateParameters`, 또는 `DeleteParameters`에 대 한 이벤트 처리기가 있는지 여부에 따라는 `Inserting`, `Updating`, 또는 `Deleting` 이벤트
 
 ObjectDataSource 수준에서 매개 변수 값으로 작업을 설명 하기 위해 보겠습니다 새 제품을 추가 하려면 사용자가 수 있는 가격 페이지에는 DetailsView를 포함 합니다. 이 DetailsView이 인터페이스를 제공 신속 하 게 데이터베이스에 새 제품을 추가 하는 데 사용 됩니다. 에 대 한 값만을 입력 하는 데 사용할 수 보겠습니다에 새 제품을 추가할 때 일관 된 사용자 인터페이스를 유지 하는 `ProductName` 및 `UnitPrice` 필드입니다. 기본적으로 DetailsView의 삽입 인터페이스에 제공 되지 않습니다는 해당 값으로 설정 됩니다는 `NULL` 데이터베이스 값입니다. 그러나 ObjectDataSource의 사용할 수 `Inserting` 를 볼 수 있겠지만, 곧 다른 기본값을 삽입 하는 이벤트입니다.
 

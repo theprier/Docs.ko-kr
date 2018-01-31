@@ -2,19 +2,18 @@
 title: "ASP.NET Core의 razor 페이지 권한 부여 규칙"
 author: guardrex
 description: "시작 시 사용자가 권한을 부여 하 고 익명 사용자가 개별 페이지나 페이지의 하위 폴더에 액세스할 수 있도록 하는 규칙을 사용 하 여 페이지에 대 한 액세스를 제어 하는 방법에 알아봅니다."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/27/2017
-ms.topic: article
-ms.assetid: f65ad22d-9472-478a-856c-c59c8681fa71
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/authorization/razor-pages-authorization
-ms.openlocfilehash: 36acf3c06a462882972c5f389d544d98cadc35f6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2bad6e1cc654b972206af03f99160628f81e026f
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="razor-pages-authorization-conventions-in-aspnet-core"></a>ASP.NET Core의 razor 페이지 권한 부여 규칙
 

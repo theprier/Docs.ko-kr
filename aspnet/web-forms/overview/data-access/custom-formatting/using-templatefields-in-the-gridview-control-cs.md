@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-gridview-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4202f25b241a6ca115c1ffc0a80258ee96563f72
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 004f1450937cc6543cb728e01586e3c3529a57d0
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-templatefields-in-the-gridview-control-c"></a>GridView 컨트롤 (C#)에서 TemplateFields 사용
 ====================
@@ -158,7 +158,7 @@ GridView 이런이 방식으로 바인딩 자동으로 추가 BoundField 각 직
 
 ## <a name="step-3-using-the-calendar-control-to-display-thehireddatefield"></a>3 단계: 디스플레이로 달력 컨트롤을 사용 하 여`HiredDate`필드
 
-GridView에 텍스트로 데이터 필드 값을 표시 하는 것은 BoundField를 사용 하 여 단순하게입니다. 그러나 특정 시나리오에 대 한 가장 잘 표시 됩니다 텍스트만 대신 특정 웹 컨트롤을 사용 하 여 합니다. 이러한 사용자 지정 데이터의 표시의은 TemplateFields로 이전에 가능 합니다. 예를 들어 대신 직원의 고용 날짜를 텍스트로 표시를 보다 수 알아보겠습니다 달력 (사용 하 여 [Calendar 컨트롤](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.calendar(VS.80).aspx)) 직원과 고용 날짜를 강조 표시 됩니다.
+GridView에 텍스트로 데이터 필드 값을 표시 하는 것은 BoundField를 사용 하 여 단순하게입니다. 그러나 특정 시나리오에 대 한 가장 잘 표시 됩니다 텍스트만 대신 특정 웹 컨트롤을 사용 하 여 합니다. 이러한 사용자 지정 데이터의 표시의은 TemplateFields로 이전에 가능 합니다. 예를 들어 대신 직원의 고용 날짜를 텍스트로 표시를 보다 수 알아보겠습니다 달력 (사용 하 여 [Calendar 컨트롤](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar(VS.80).aspx)) 직원과 고용 날짜를 강조 표시 됩니다.
 
 이를 위해 변환 하 여 시작 된 `HiredDate` BoundField를 TemplateField로 합니다. GridView의 스마트 태그에 파일을 필드 대화 상자를 표시 하 고 열 편집 링크를 클릭 합니다. 선택 된 `HiredDate` BoundField 및 클릭 "변환"이이 필드를 TemplateField로 합니다.
 
@@ -178,7 +178,7 @@ Calendar 컨트롤에 텍스트를 바꾸려면 레이블을 제거 하 고는 �
 **그림 12**: 달력 컨트롤을 추가 `HireDate` TemplateField의 `ItemTemplate` ([전체 크기 이미지를 보려면 클릭](using-templatefields-in-the-gridview-control-cs/_static/image36.png))
 
 
-GridView에서 각 행은에서 달력 컨트롤을 포함 하는 시점에서 해당 `HiredDate` TemplateField 합니다. 그러나 직원의 실제 `HiredDate` 를 기본적으로 현재 월 및 날짜를 표시 하려면 각 Calendar 컨트롤을 일으키는 Calendar 컨트롤에 값이 아무 곳 이나 설정 되지 않습니다. 이 해결 하려면 각 직원의 할당 해야 `HiredDate` 달력 컨트롤의 [SelectedDate](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.calendar.selecteddate(VS.80).aspx) 및 [VisibleDate](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.calendar.visibledate(VS.80).aspx) 속성입니다.
+GridView에서 각 행은에서 달력 컨트롤을 포함 하는 시점에서 해당 `HiredDate` TemplateField 합니다. 그러나 직원의 실제 `HiredDate` 를 기본적으로 현재 월 및 날짜를 표시 하려면 각 Calendar 컨트롤을 일으키는 Calendar 컨트롤에 값이 아무 곳 이나 설정 되지 않습니다. 이 해결 하려면 각 직원의 할당 해야 `HiredDate` 달력 컨트롤의 [SelectedDate](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.selecteddate(VS.80).aspx) 및 [VisibleDate](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.visibledate(VS.80).aspx) 속성입니다.
 
 Calendar 컨트롤의 스마트 태그에서 데이터 바인딩 편집을 선택 합니다. 다음으로, 둘 다를 바인딩할 `SelectedDate` 및 `VisibleDate` 속성을는 `HiredDate` 데이터 필드입니다.
 

@@ -2,20 +2,18 @@
 title: "ASP.NET Core MVC EF 코어-와 관련 된 데이터 읽기-6 / 10"
 author: tdykstra
 description: "이 자습서에서는 읽기 및 관련된 데이터-Entity Framework 탐색 속성에 로드 하는 데이터를 표시 합니다."
-keywords: "ASP.NET Core, Entity Framework Core 관련된 데이터를 조인"
-ms.author: tdykstra
 manager: wpickett
+ms.author: tdykstra
 ms.date: 03/15/2017
-ms.topic: get-started-article
-ms.assetid: 71fec30f-8ea7-4ca8-96e3-d2e26c5be44e
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-mvc/read-related-data
-ms.openlocfilehash: 778ef976fdbef70684ca26b0c7c548ffcc83ee00
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 58b05587458aacad1a633a04f0359a4d2a3605a3
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="reading-related-data---ef-core-with-aspnet-core-mvc-tutorial-6-of-10"></a>읽기 관련 데이터-EF 코어 ASP.NET Core MVC 자습서 (6 / 10)
 
@@ -47,7 +45,7 @@ Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework Core 및 Vi
 
   ![명시적 로드 예제](read-related-data/_static/explicit-loading.png)
 
-* 지연 로드 합니다. 먼저 엔터티를 읽으면 관련된 데이터가 검색 되지 않습니다. 그러나는 탐색 속성에 액세스 하려고 처음으로 해당 탐색 속성에 필요한 데이터가 자동으로 검색 됩니다. 쿼리는 탐색 속성에서 처음으로 데이터를 가져올 하려고 할 때마다 데이터베이스에 전송 됩니다. Entity Framework Core 1.0 지연 로드를 지원 하지 않습니다.
+* 지연 로드 합니다. 먼저 엔터티를 읽으면 관련된 데이터가 검색 되지 않습니다. 그러나는 탐색 속성에 액세스 하려고 처음으로 해당 탐색 속성에 필요한 데이터가 자동으로 검색 됩니다. 쿼리는 탐색 속성에서 처음으로 데이터를 가져올 하려고 할 때마다 데이터베이스에 전송 됩니다. Entity Framework Core 1.0 한 지연 로딩이 지원 하지 않습니다.
 
 ### <a name="performance-considerations"></a>성능 고려 사항
 
@@ -77,7 +75,7 @@ Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework Core 및 Vi
 
 * 인덱스에서 제목 Courses로 변경 합니다.
 
-* 추가 **번호** 보여 주는 열은 `CourseID` 속성 값입니다. 기본적으로 기본 키 이므로 일반적으로 최종 사용자에 게 의미가 스 캐 폴드 되지 않습니다. 그러나이 경우 기본 키 의미 이며 하려는 표시할지를 기준으로 합니다.
+* 추가 **번호** 보여 주는 열은 `CourseID` 속성 값입니다. 기본적으로 기본 키 있기 때문에 일반적으로 최종 사용자에 게 의미가 스 캐 폴드 되지 않습니다. 그러나이 경우 기본 키 의미 이며 하려는 표시할지를 기준으로 합니다.
 
 * 변경 된 **부서** 부서 이름을 표시 하는 열입니다. 코드 표시는 `Name` 에 로드 되는 부서 엔터티의 속성은 `Department` 탐색 속성:
 
@@ -175,7 +173,7 @@ Index 메서드가 관련된 데이터를 즉시 로드의 보기 모델에 저�
 
 * 페이지 제목을 변경 **인덱스** 를 **강사**합니다.
 
-* 추가 **Office** 표시 하는 열 `item.OfficeAssignment.Location` 경우에만 `item.OfficeAssignment` null입니다. (0 또는 1을 한 관계 이기 때문에 있을 수 있습니다 하지 관련된 OfficeAssignment 엔터티.)
+* 추가 **Office** 표시 하는 열 `item.OfficeAssignment.Location` 경우에만 `item.OfficeAssignment` 이 null이 아닌 합니다. (0 또는 1을 한 관계 이기 때문에 있을 수 있습니다 하지 관련된 OfficeAssignment 엔터티.)
 
   ```html
   @if (item.OfficeAssignment != null)

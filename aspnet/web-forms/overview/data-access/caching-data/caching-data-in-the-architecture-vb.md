@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-in-the-architecture-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f1d94045236cc8e1b12839ced4de1258466a626e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1aca89b022bb3bb7e4154ab575b5bb5513144cd5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="caching-data-in-the-architecture-vb"></a>아키텍처 (VB)에서 데이터 캐싱
 ====================
@@ -62,7 +62,7 @@ Let s DAL 및 BLL 클래스에서 더 많은 CL 명확 하 게 별도 클래스�
 
 [!code-vb[Main](caching-data-in-the-architecture-vb/samples/sample1.vb)]
 
-[ `Cache` 클래스](https://msdn.microsoft.com/en-us/library/system.web.caching.cache.aspx) s [ `Insert` 메서드](https://msdn.microsoft.com/en-us/library/system.web.caching.cache.insert.aspx) 다양 한 오버 로드 했습니다. `Cache("key") = value`및 `Cache.Insert(key, value)` 동의어인 둘 다가 정의 된 만료 없이 지정된 된 키를 사용 하 여 캐시에 항목을 추가 합니다. 일반적으로, 종속성, 시간 기반 만료 또는 둘 다로 캐시에 항목을 추가 하는 경우 만료를 지정 하려고 합니다. 다른 중 하나를 사용 하 여 `Insert`의 메서드 오버 로드 종속성 또는 시간 기반 만료 정보를 제공 합니다.
+[ `Cache` 클래스](https://msdn.microsoft.com/library/system.web.caching.cache.aspx) s [ `Insert` 메서드](https://msdn.microsoft.com/library/system.web.caching.cache.insert.aspx) 다양 한 오버 로드 했습니다. `Cache("key") = value`및 `Cache.Insert(key, value)` 동의어인 둘 다가 정의 된 만료 없이 지정된 된 키를 사용 하 여 캐시에 항목을 추가 합니다. 일반적으로, 종속성, 시간 기반 만료 또는 둘 다로 캐시에 항목을 추가 하는 경우 만료를 지정 하려고 합니다. 다른 중 하나를 사용 하 여 `Insert`의 메서드 오버 로드 종속성 또는 시간 기반 만료 정보를 제공 합니다.
 
 S 메서드 요청 된 데이터 캐시에 있는 경우 그리고 있다면을 먼저 확인 해야 하는 캐싱 계층에서에서 반환 합니다. 요청된 된 데이터 캐시에 없는 경우 적절 한 BLL 메서드를 호출 해야 합니다. 반환 값을 캐시 하 고 다음 시퀀스 다이어그램에서 같이 다음 반환 해야 합니다.
 
@@ -90,7 +90,7 @@ S 메서드 요청 된 데이터 캐시에 있는 경우 그리고 있다면을 
 > 데이터 캐시 스레드로부터 안전한 이므로 간단한 읽기 또는 쓰기에 대 한 스레드 액세스를 동기화 할 필요가 없습니다. 그러나 원자성 캐시에 데이터에 대해 여러 작업을 수행 해야 할 모르는 경우 잠금이나 스레드로부터 안전을 보장 하기 위해 다른 메커니즘을 구현 해야 합니다. 참조 [ASP.NET 캐시에 대 한 동기화 액세스](http://www.ddj.com/184406369) 자세한 정보에 대 한 합니다.
 
 
-사용 하 여 데이터 캐시에서 항목을 프로그래밍 방식으로 제거할 수는 [ `Remove` 메서드](https://msdn.microsoft.com/en-us/library/system.web.caching.cache.remove.aspx) 같이:
+사용 하 여 데이터 캐시에서 항목을 프로그래밍 방식으로 제거할 수는 [ `Remove` 메서드](https://msdn.microsoft.com/library/system.web.caching.cache.remove.aspx) 같이:
 
 
 [!code-vb[Main](caching-data-in-the-architecture-vb/samples/sample4.vb)]
@@ -115,10 +115,10 @@ S 메서드 요청 된 데이터 캐시에 있는 경우 그리고 있다면을 
 
 `GetCacheItem(key)`사용 하지 않는 *키* 호출 그 대신 제공 될 때 값은 `GetCacheKey(key)` 반환 하는 *키* ProductsCache-로 시작 합니다. `MasterCacheKeyArray`, ProductsCache, 문자열을 보유 하를 사용 하 여 `AddCacheItem(key, value)` 메서드를 일시적으로 볼 수 있겠지만 합니다.
 
-ASP.NET 페이지의 코드 숨김 클래스에서 데이터 캐시 액세스할 수 있습니다를 사용 하는 `Page` s 클래스 [ `Cache` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.page.cache.aspx), 하 고 같은 구문을 허용 `Cache("key") = value`2 단계에서에서 설명 했 듯이, 합니다. 아키텍처 내에서 클래스에서 데이터 캐시 액세스할 수 중 하나를 사용 하 여 `HttpRuntime.Cache` 또는 `HttpContext.Current.Cache`합니다. [Peter Johnson](https://weblogs.asp.net/pjohnson/default.aspx)의 블로그 항목 [HttpRuntime.Cache vs. HttpContext.Current.Cache](https://weblogs.asp.net/pjohnson/httpruntime-cache-vs-httpcontext-current-cache) 정보를 사용 하 여에 약간의 성능 우위 `HttpRuntime` 대신 `HttpContext.Current`; 따라서 `ProductsCL` 사용 하 여 `HttpRuntime`합니다.
+ASP.NET 페이지의 코드 숨김 클래스에서 데이터 캐시 액세스할 수 있습니다를 사용 하는 `Page` s 클래스 [ `Cache` 속성](https://msdn.microsoft.com/library/system.web.ui.page.cache.aspx), 하 고 같은 구문을 허용 `Cache("key") = value`2 단계에서에서 설명 했 듯이, 합니다. 아키텍처 내에서 클래스에서 데이터 캐시 액세스할 수 중 하나를 사용 하 여 `HttpRuntime.Cache` 또는 `HttpContext.Current.Cache`합니다. [Peter Johnson](https://weblogs.asp.net/pjohnson/default.aspx)의 블로그 항목 [HttpRuntime.Cache vs. HttpContext.Current.Cache](https://weblogs.asp.net/pjohnson/httpruntime-cache-vs-httpcontext-current-cache) 정보를 사용 하 여에 약간의 성능 우위 `HttpRuntime` 대신 `HttpContext.Current`; 따라서 `ProductsCL` 사용 하 여 `HttpRuntime`합니다.
 
 > [!NOTE]
-> 아키텍처에는 클래스 라이브러리 프로젝트를 사용 하 여 구현 된 경우에 대 한 참조를 추가 해야 합니다는 `System.Web` 사용 하려면 어셈블리는 [ `HttpRuntime` ](https://msdn.microsoft.com/en-us/library/system.web.httpruntime.aspx) 및 [ `HttpContext` ](https://msdn.microsoft.com/en-us/library/system.web.httpcontext.aspx) 클래스입니다.
+> 아키텍처에는 클래스 라이브러리 프로젝트를 사용 하 여 구현 된 경우에 대 한 참조를 추가 해야 합니다는 `System.Web` 사용 하려면 어셈블리는 [ `HttpRuntime` ](https://msdn.microsoft.com/library/system.web.httpruntime.aspx) 및 [ `HttpContext` ](https://msdn.microsoft.com/library/system.web.httpcontext.aspx) 클래스입니다.
 
 
 항목이 캐시에 없는 경우는 `ProductsCL` 클래스의 메서드 BLL에서 데이터를 가져오고 사용 하 여 캐시에 추가 된 `AddCacheItem(key, value)` 메서드. 추가할 *값* 캐시에 60 초 시간 만료를 사용 하 여 다음 코드를 사용할 수 있습니다.
@@ -126,7 +126,7 @@ ASP.NET 페이지의 코드 숨김 클래스에서 데이터 캐시 액세스할
 
 [!code-vb[Main](caching-data-in-the-architecture-vb/samples/sample7.vb)]
 
-`DateTime.Now.AddSeconds(CacheDuration)`시간 기반 만료 60 초 미래 시간이 지정 [ `System.Web.Caching.Cache.NoSlidingExpiration` ](https://msdn.microsoft.com/en-us/library/system.web.caching.cache.noslidingexpiration(vs.80).aspx) 한다는 문제가 s 슬라이딩 만료 없이 나타냅니다. 이 동안 `Insert` 메서드 오버 로드에는 절대 모두에 대 한 매개 변수를 입력 및 만료 슬라이딩에서는 제공할 수 있습니다만 둘 중 하나입니다. 절대 시간 및 시간 범위를 모두 지정 하려고 하면는 `Insert` 메서드는 throw 된 `ArgumentException` 예외입니다.
+`DateTime.Now.AddSeconds(CacheDuration)`시간 기반 만료 60 초 미래 시간이 지정 [ `System.Web.Caching.Cache.NoSlidingExpiration` ](https://msdn.microsoft.com/library/system.web.caching.cache.noslidingexpiration(vs.80).aspx) 한다는 문제가 s 슬라이딩 만료 없이 나타냅니다. 이 동안 `Insert` 메서드 오버 로드에는 절대 모두에 대 한 매개 변수를 입력 및 만료 슬라이딩에서는 제공할 수 있습니다만 둘 중 하나입니다. 절대 시간 및 시간 범위를 모두 지정 하려고 하면는 `Insert` 메서드는 throw 된 `ArgumentException` 예외입니다.
 
 > [!NOTE]
 > 이 구현에서 `AddCacheItem(key, value)` 메서드에 현재 가지 단점이 있습니다. 4 단계에서에서 이러한 문제를 극복 알아보고 해결 하겠습니다.
@@ -150,7 +150,7 @@ Let s 업데이트는 `AddCacheItem(key, value)` 메서드가이 메서드를 �
 
 [!code-vb[Main](caching-data-in-the-architecture-vb/samples/sample9.vb)]
 
-`MasterCacheKeyArray`ProductsCache 단일 값을 보유 하는 문자열 배열이입니다. 첫째, 캐시 항목이 캐시에 추가 되 고 현재 날짜 및 시간을 할당 합니다. 캐시 항목이 이미 있는 경우 업데이트 됩니다. 다음으로, 캐시 종속성이 생성 됩니다. [ `CacheDependency` 클래스](https://msdn.microsoft.com/en-US/library/system.web.caching.cachedependency(VS.80).aspx) s 생성자에 다양 한 오버 로드가 있지만 여기에 사용 되는 두 `String` 입력 배열입니다. 첫 번째 파일을 사용 하 여 종속성으로 집합을 지정 합니다. T 값의 모든 파일 기반 종속성을 사용 하려면 것 때문 `Nothing` 첫 번째 입력된 매개 변수에 사용 됩니다. 두 번째 입력된 매개 변수 종속성으로 사용할 캐시 키의 집합을 지정 합니다. 이 단일 종속성 지정 여기 `MasterCacheKeyArray`합니다. `CacheDependency` 다음에 전달 되는 `Insert` 메서드.
+`MasterCacheKeyArray`ProductsCache 단일 값을 보유 하는 문자열 배열이입니다. 첫째, 캐시 항목이 캐시에 추가 되 고 현재 날짜 및 시간을 할당 합니다. 캐시 항목이 이미 있는 경우 업데이트 됩니다. 다음으로, 캐시 종속성이 생성 됩니다. [ `CacheDependency` 클래스](https://msdn.microsoft.com/library/system.web.caching.cachedependency(VS.80).aspx) s 생성자에 다양 한 오버 로드가 있지만 여기에 사용 되는 두 `String` 입력 배열입니다. 첫 번째 파일을 사용 하 여 종속성으로 집합을 지정 합니다. T 값의 모든 파일 기반 종속성을 사용 하려면 것 때문 `Nothing` 첫 번째 입력된 매개 변수에 사용 됩니다. 두 번째 입력된 매개 변수 종속성으로 사용할 캐시 키의 집합을 지정 합니다. 이 단일 종속성 지정 여기 `MasterCacheKeyArray`합니다. `CacheDependency` 다음에 전달 되는 `Insert` 메서드.
 
 이 수정 `AddCacheItem(key, value)`invaliding, 캐시는 하기만 하면 종속성을 제거 합니다.
 

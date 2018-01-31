@@ -2,19 +2,19 @@
 title: "IIS가 있는 Windows에서 ASP.NET Core 호스팅"
 author: guardrex
 description: "Windows Server IIS(인터넷 정보 서비스)에서 ASP.NET Core 앱을 호스팅하는 방법을 알아봅니다."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.custom: mvc
 ms.date: 03/13/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 01cedb4e3abb35670d2908fe8cb4367c3fd58b33
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 1df438af2394f41b686413cd1ce5ad73a9416ec5
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>IIS가 있는 Windows에서 ASP.NET Core 호스팅
 
@@ -136,7 +136,7 @@ services.Configure<IISOptions>(options =>
 
 1. 대상 IIS 시스템에서는 [디렉터리 구조](xref:host-and-deploy/directory-structure)에서 설명하는 앱의 게시된 폴더와 파일을 포함할 폴더를 만듭니다.
 
-2. stdout 로깅이 사용되면 stdout 로그를 보관할 *logs* 폴더를 폴더 내에 만듭니다. 앱이 페이로드에서 *logs* 폴더와 함께 배포되는 경우 이 단계를 건너뜁니다. MSBuild에서 *logs* 폴더를 만드는 방법에 대한 지침은 [디렉터리 구조](xref:host-and-deploy/directory-structure) 항목을 참조하세요.
+2. 폴더 내에서 *logs* 폴더를 만들어 stdout 로깅이 활성화될 때 stdout 로그를 보관합니다. 앱이 페이로드에서 *logs* 폴더와 함께 배포되는 경우 이 단계를 건너뜁니다. MSBuild에서 *logs* 폴더를 만드는 방법에 대한 지침은 [디렉터리 구조](xref:host-and-deploy/directory-structure) 항목을 참조하세요.
 
 3. **IIS 관리자**에서 새 웹 사이트를 만듭니다. **사이트 이름**을 제공하고 **실제 경로**를 앱의 배포 폴더로 설정합니다. **바인딩** 구성을 제공하고 웹 사이트를 만듭니다.
 

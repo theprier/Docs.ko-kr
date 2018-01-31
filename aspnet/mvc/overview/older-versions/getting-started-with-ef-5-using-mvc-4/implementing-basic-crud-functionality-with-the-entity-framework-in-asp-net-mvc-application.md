@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 425335d72643da39faee6e457d552c9faa6a1f5f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d031cd760fb578d29626933eed39fe987ef796d7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="implementing-basic-crud-functionality-with-the-entity-framework-in-aspnet-mvc-application-2-of-10"></a>ASP.NET MVC 응용 프로그램 (2 / 10)에서 Entity Framework와 함께 기본 CRUD 기능 구현
 ====================
@@ -71,7 +71,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="updating-the-create-page"></a>만들기 페이지를 업데이트합니다.
 
-1. *Controllers\StudentController.cs*, 대체는 `HttpPost``Create` 동작 메서드를 추가 하려면 다음 코드는 `try-catch` 블록 및 [바인딩 특성](https://msdn.microsoft.com/en-us/library/system.web.mvc.bindattribute(v=vs.108).aspx) 스 캐 폴드 메서드에: 
+1. *Controllers\StudentController.cs*, 대체는 `HttpPost``Create` 동작 메서드를 추가 하려면 다음 코드는 `try-catch` 블록 및 [바인딩 특성](https://msdn.microsoft.com/library/system.web.mvc.bindattribute(v=vs.108).aspx) 스 캐 폴드 메서드에: 
 
     [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample4.cs?highlight=4,7-8,14-20)]
 
@@ -86,7 +86,7 @@ ms.lasthandoff: 11/10/2017
     > 
     > [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample5.cs?highlight=7)]
     > 
-    > Even if you don't have a `Secret` field on the web page, a hacker could use a tool such as [fiddler](http://fiddler2.com/home), or write some JavaScript, to post a `Secret` form value. Without the [Bind](https://msdn.microsoft.com/en-us/library/system.web.mvc.bindattribute(v=vs.108).aspx) attribute limiting the fields that the model binder uses when it creates a `Student` instance*,* the model binder would pick up that `Secret` form value and use it to update the `Student` entity instance. Then whatever value the hacker specified for the `Secret` form field would be updated in your database. The following image shows the fiddler tool adding the `Secret` field (with the value "OverPost") to the posted form values.
+    > Even if you don't have a `Secret` field on the web page, a hacker could use a tool such as [fiddler](http://fiddler2.com/home), or write some JavaScript, to post a `Secret` form value. Without the [Bind](https://msdn.microsoft.com/library/system.web.mvc.bindattribute(v=vs.108).aspx) attribute limiting the fields that the model binder uses when it creates a `Student` instance*,* the model binder would pick up that `Secret` form value and use it to update the `Student` entity instance. Then whatever value the hacker specified for the `Secret` form field would be updated in your database. The following image shows the fiddler tool adding the `Secret` field (with the value "OverPost") to the posted form values.
     > 
     > ![](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/_static/image6.png)  
     > 
@@ -96,7 +96,7 @@ ms.lasthandoff: 11/10/2017
     > 
     > Another alternative approach, and one preferred by many, is to use only view models with model binding. The view model contains only the properties you want to bind. Once the MVC model binder has finished, you copy the view model properties to the entity instance.
 
-    Other than the `Bind` attribute, the `try-catch` block is the only change you've made to the scaffolded code. If an exception that derives from [DataException](https://msdn.microsoft.com/en-us/library/system.data.dataexception.aspx) is caught while the changes are being saved, a generic error message is displayed. [DataException](https://msdn.microsoft.com/en-us/library/system.data.dataexception.aspx) exceptions are sometimes caused by something external to the application rather than a programming error, so the user is advised to try again. Although not implemented in this sample, a production quality application would log the exception (and non-null inner exceptions ) with a logging mechanism such as [ELMAH](https://code.google.com/p/elmah/).
+    Other than the `Bind` attribute, the `try-catch` block is the only change you've made to the scaffolded code. If an exception that derives from [DataException](https://msdn.microsoft.com/library/system.data.dataexception.aspx) is caught while the changes are being saved, a generic error message is displayed. [DataException](https://msdn.microsoft.com/library/system.data.dataexception.aspx) exceptions are sometimes caused by something external to the application rather than a programming error, so the user is advised to try again. Although not implemented in this sample, a production quality application would log the exception (and non-null inner exceptions ) with a logging mechanism such as [ELMAH](https://code.google.com/p/elmah/).
 
     The code in *Views\Student\Create.cshtml* is similar to what you saw in *Details.cshtml*, except that `EditorFor` and `ValidationMessageFor` helpers are used for each field instead of `DisplayFor`. The following example shows the relevant code:
 
@@ -125,17 +125,17 @@ ms.lasthandoff: 11/10/2017
 
 *Controllers\StudentController.cs*, `HttpGet` `Edit` 메서드 (없이 하나는 `HttpPost` 특성) 사용 하 여는 `Find` 를 선택한 검색할 메서드 `Student` 엔터티에으로 보여 준다는 사실을 알았습니다 에 `Details` 메서드. 이 방법을 변경할 필요가 없습니다.
 
-그러나 대체는 `HttpPost` `Edit` 동작 메서드를 추가 하려면 다음 코드는 `try-catch` 블록 및 [바인딩 특성](https://msdn.microsoft.com/en-us/library/system.web.mvc.bindattribute(v=vs.108).aspx):
+그러나 대체는 `HttpPost` `Edit` 동작 메서드를 추가 하려면 다음 코드는 `try-catch` 블록 및 [바인딩 특성](https://msdn.microsoft.com/library/system.web.mvc.bindattribute(v=vs.108).aspx):
 
 [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample8.cs)]
 
-이 코드에서 본 것과 비슷합니다는 `HttpPost` `Create` 메서드. 그러나 엔터티 집합에 모델 바인더에서 만든 엔터티를 추가 하는 대신이 코드에 플래그를 설정 변경 되었음을 나타내는 엔터티. 때는 [SaveChanges](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext.savechanges(v=VS.103).aspx) 메서드가 호출 되는 [Modified](https://msdn.microsoft.com/en-us/library/system.data.entitystate.aspx) 플래그를 사용 하면 Entity Framework 데이터베이스 행을 업데이트 하는 SQL 문을 만들 수 있습니다. 사용자 변경 되지 않은 포함 하 여 데이터베이스 행의 모든 열을 업데이트할지 및 동시성 충돌은 무시 됩니다. (이 시리즈의 자습서의 뒷부분에서 동시성을 처리 하는 방법을 설명 합니다.)
+이 코드에서 본 것과 비슷합니다는 `HttpPost` `Create` 메서드. 그러나 엔터티 집합에 모델 바인더에서 만든 엔터티를 추가 하는 대신이 코드에 플래그를 설정 변경 되었음을 나타내는 엔터티. 때는 [SaveChanges](https://msdn.microsoft.com/library/system.data.entity.dbcontext.savechanges(v=VS.103).aspx) 메서드가 호출 되는 [Modified](https://msdn.microsoft.com/library/system.data.entitystate.aspx) 플래그를 사용 하면 Entity Framework 데이터베이스 행을 업데이트 하는 SQL 문을 만들 수 있습니다. 사용자 변경 되지 않은 포함 하 여 데이터베이스 행의 모든 열을 업데이트할지 및 동시성 충돌은 무시 됩니다. (이 시리즈의 자습서의 뒷부분에서 동시성을 처리 하는 방법을 설명 합니다.)
 
 ### <a name="entity-states-and-the-attach-and-savechanges-methods"></a>엔터티 상태 및 연결, SaveChanges 메서드
 
-메모리에 엔터티는 해당 행에는 데이터베이스와 동기화 하 고이 정보를 호출할 때 수행 되는 작업을 결정 하는 여부를 추적 데이터베이스 컨텍스트는 `SaveChanges` 메서드. 예를 들어 전달 하는 경우에 새 엔터티는 [추가](https://msdn.microsoft.com/en-us/library/system.data.entity.dbset.add(v=vs.103).aspx) 메서드 엔터티의 상태로 설정 된 `Added`합니다. 호출 하면는 [SaveChanges](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext.savechanges(v=VS.103).aspx) 메서드, 데이터베이스 컨텍스트 발급 SQL `INSERT` 명령입니다.
+메모리에 엔터티는 해당 행에는 데이터베이스와 동기화 하 고이 정보를 호출할 때 수행 되는 작업을 결정 하는 여부를 추적 데이터베이스 컨텍스트는 `SaveChanges` 메서드. 예를 들어 전달 하는 경우에 새 엔터티는 [추가](https://msdn.microsoft.com/library/system.data.entity.dbset.add(v=vs.103).aspx) 메서드 엔터티의 상태로 설정 된 `Added`합니다. 호출 하면는 [SaveChanges](https://msdn.microsoft.com/library/system.data.entity.dbcontext.savechanges(v=VS.103).aspx) 메서드, 데이터베이스 컨텍스트 발급 SQL `INSERT` 명령입니다.
 
-엔터티 중 하나에 있을 수 있습니다는[상태 다음](https://msdn.microsoft.com/en-us/library/system.data.entitystate.aspx):
+엔터티 중 하나에 있을 수 있습니다는[상태 다음](https://msdn.microsoft.com/library/system.data.entitystate.aspx):
 
 - `Added`. 엔터티는 데이터베이스에 아직 존재 하지 않습니다. `SaveChanges` 메서드 실행 해야 합니다는 `INSERT` 문.
 - `Unchanged`. 하 여이 엔터티를 사용 하 여 수행 해야 하는 아무 것도 `SaveChanges` 메서드. 데이터베이스에서 엔터티를 읽을 때 엔터티가이 상태에 있는 시작 합니다.
@@ -145,9 +145,9 @@ ms.lasthandoff: 11/10/2017
 
 데스크톱 응용 프로그램 상태 변경 내용이 일반적으로 자동으로 설정 됩니다. 데스크톱 응용 프로그램 형식에 엔터티 읽고 속성 값 일부 변경 해야 합니다. 이렇게 하면 해당 엔터티 상태를 자동으로 변경 해야 `Modified`합니다. 호출 하면 `SaveChanges`, Entity Framework는 SQL 생성 `UPDATE` 변경 하는 실제 속성만 업데이트 하는 문입니다.
 
-이 연속 시퀀스에 대 한 웹 앱의 연결이 끊어진된 특성 허용 하지 않습니다. [DbContext](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext(v=VS.103).aspx) 읽는 엔터티 페이지를 렌더링 한 다음 삭제 됩니다. 경우는 `HttpPost` `Edit` 동작 메서드는, 새 요청이 있고의 새 인스턴스는 [DbContext](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext(v=VS.103).aspx)엔터티 상태를 수동으로 설정 해야 하므로 `Modified.` 호출 하는 경우 다음 `SaveChanges`, Entity Framework는 컨텍스트는 변경 되는 속성을 알 수 없기 때문에 데이터베이스 행의 모든 열을 업데이트 합니다.
+이 연속 시퀀스에 대 한 웹 앱의 연결이 끊어진된 특성 허용 하지 않습니다. [DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=VS.103).aspx) 읽는 엔터티 페이지를 렌더링 한 다음 삭제 됩니다. 경우는 `HttpPost` `Edit` 동작 메서드는, 새 요청이 있고의 새 인스턴스는 [DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=VS.103).aspx)엔터티 상태를 수동으로 설정 해야 하므로 `Modified.` 호출 하는 경우 다음 `SaveChanges`, Entity Framework는 컨텍스트는 변경 되는 속성을 알 수 없기 때문에 데이터베이스 행의 모든 열을 업데이트 합니다.
 
-SQL 하려는 경우 `Update` 사용자 실제로 변경 된 필드만 업데이트 하는 문을 사용할 수 있는 경우 되도록 (예: 숨겨진된 필드) 어떤 식으로든에서 원래 값을 저장할 수는 `HttpPost` `Edit` 메서드를 호출 합니다. 그러면 만들 수 있습니다는 `Student` 원래 값이 호출을 사용 하 여 엔터티는 `Attach` 메서드는 해당 원래 버전은 엔터티의 엔터티의 값을 새 값으로 업데이트 한 다음 호출 `SaveChanges.` 자세한 내용은 참조 [ 엔터티 상태 및 SaveChanges](https://msdn.microsoft.com/en-us/data/jj592676) 및 [로컬 데이터](https://msdn.microsoft.com/en-us/data/jj592872) MSDN 데이터 개발자 센터에서.
+SQL 하려는 경우 `Update` 사용자 실제로 변경 된 필드만 업데이트 하는 문을 사용할 수 있는 경우 되도록 (예: 숨겨진된 필드) 어떤 식으로든에서 원래 값을 저장할 수는 `HttpPost` `Edit` 메서드를 호출 합니다. 그러면 만들 수 있습니다는 `Student` 원래 값이 호출을 사용 하 여 엔터티는 `Attach` 메서드는 해당 원래 버전은 엔터티의 엔터티의 값을 새 값으로 업데이트 한 다음 호출 `SaveChanges.` 자세한 내용은 참조 [ 엔터티 상태 및 SaveChanges](https://msdn.microsoft.com/data/jj592676) 및 [로컬 데이터](https://msdn.microsoft.com/data/jj592872) MSDN 데이터 개발자 센터에서.
 
 코드 *Views\Student\Edit.cshtml* 에서 본 것과 비슷합니다 *Create.cshtml*, 및 변경이 필요 없음.
 
@@ -171,12 +171,12 @@ SQL 하려는 경우 `Update` 사용자 실제로 변경 된 필드만 업데이
 
     [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample9.cs)]
 
-    이 코드가 허용는 [선택적](https://msdn.microsoft.com/en-us/library/dd264739.aspx) ब ा ळ 실패 한 후 호출 된 여부를 나타내는 부울 매개 변수입니다. 이 매개 변수는 `false` 때는 `HttpGet` `Delete` 이전에 실패 한 없이 메서드를 호출 합니다. 에 의해 호출 됩니다는 `HttpPost` `Delete` 데이터베이스 업데이트 오류에 대 한 응답에서 메서드를 매개 변수는 `true` 보기에 오류 메시지가 전달 됩니다.
+    이 코드가 허용는 [선택적](https://msdn.microsoft.com/library/dd264739.aspx) ब ा ळ 실패 한 후 호출 된 여부를 나타내는 부울 매개 변수입니다. 이 매개 변수는 `false` 때는 `HttpGet` `Delete` 이전에 실패 한 없이 메서드를 호출 합니다. 에 의해 호출 됩니다는 `HttpPost` `Delete` 데이터베이스 업데이트 오류에 대 한 응답에서 메서드를 매개 변수는 `true` 보기에 오류 메시지가 전달 됩니다.
 - 대체는 `HttpPost` `Delete` 동작 메서드 (라는 `DeleteConfirmed`)를 다음 코드로 실제 삭제 동작을 수행 하 고이 한 데이터베이스 업데이트 오류를 catch 합니다.
 
     [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample10.cs)]
 
-    이 코드에서는 선택된 된 엔터티를 검색 한 다음 호출는 [제거](https://msdn.microsoft.com/en-us/library/system.data.entity.dbset.remove(v=vs.103).aspx) 엔터티의 상태 설정 하는 방법은 `Deleted`합니다. 때 `SaveChanges` 호출 되는 SQL `DELETE` 명령이 생성 합니다. 작업 메서드 이름을 변경한 `DeleteConfirmed` 를 `Delete`합니다. 명명 된 스 캐 폴드 코드는 `HttpPost` `Delete` 메서드 `DeleteConfirmed` 제공 하는 `HttpPost` 메서드는 고유의 시그니처가 있습니다. (CLR 오버 로드 된 메서드를 다른 메서드에 매개 변수가 필요 합니다.) 이제는 서명 되는 고유 수는 MVC 규칙 집중 하에 동일한 이름을 사용 하 여는 `HttpPost` 및 `HttpGet` 메서드를 삭제 합니다.
+    이 코드에서는 선택된 된 엔터티를 검색 한 다음 호출는 [제거](https://msdn.microsoft.com/library/system.data.entity.dbset.remove(v=vs.103).aspx) 엔터티의 상태 설정 하는 방법은 `Deleted`합니다. 때 `SaveChanges` 호출 되는 SQL `DELETE` 명령이 생성 합니다. 작업 메서드 이름을 변경한 `DeleteConfirmed` 를 `Delete`합니다. 명명 된 스 캐 폴드 코드는 `HttpPost` `Delete` 메서드 `DeleteConfirmed` 제공 하는 `HttpPost` 메서드는 고유의 시그니처가 있습니다. (CLR 오버 로드 된 메서드를 다른 메서드에 매개 변수가 필요 합니다.) 이제는 서명 되는 고유 수는 MVC 규칙 집중 하에 동일한 이름을 사용 하 여는 `HttpPost` 및 `HttpGet` 메서드를 삭제 합니다.
 
     대규모 응용 프로그램의 성능을 개선 하는 것이 중요, 호출 하는 코드 줄을 대체 하 여 행을 검색 하는 불필요 한 SQL 쿼리를 방지할 수 있습니다는 `Find` 및 `Remove` 노란색으로 표시 된 것 처럼 다음 코드를 사용 하 여 메서드 강조 표시 합니다.
 
@@ -196,7 +196,7 @@ SQL 하려는 경우 `Update` 사용자 실제로 변경 된 필드만 업데이
 
 ## <a name="ensuring-that-database-connections-are-not-left-open"></a>데이터베이스 연결 열기 남아 있지 않습니다 보장
 
-데이터베이스 연결이 제대로 종료 하는 한 리소스를 해제 된, 나타납니다에 컨텍스트 인스턴스가 삭제 될 있는지 확인 하십시오. 즉 이유는 스 캐 폴드 코드를 제공 합니다는 [Dispose](https://msdn.microsoft.com/en-us/library/system.idisposable.dispose(v=vs.110).aspx) 메서드 끝에 `StudentController` 클래스 *StudentController.cs*다음 예제에 나온 것 처럼:
+데이터베이스 연결이 제대로 종료 하는 한 리소스를 해제 된, 나타납니다에 컨텍스트 인스턴스가 삭제 될 있는지 확인 하십시오. 즉 이유는 스 캐 폴드 코드를 제공 합니다는 [Dispose](https://msdn.microsoft.com/library/system.idisposable.dispose(v=vs.110).aspx) 메서드 끝에 `StudentController` 클래스 *StudentController.cs*다음 예제에 나온 것 처럼:
 
 [!code-csharp[Main](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application/samples/sample13.cs)]
 
@@ -204,7 +204,7 @@ SQL 하려는 경우 `Update` 사용자 실제로 변경 된 필드만 업데이
 
 ## <a name="summary"></a>요약
 
-에 대 한 간단한 CRUD 작업을 수행 하는 페이지의 전체 집합 해야 `Student` 엔터티. 데이터 필드에 대 한 UI 요소를 생성 하 MVC 도우미를 사용 합니다. MVC 도우미에 대 한 자세한 내용은 참조 [양식을 사용 하 여 HTML 도우미 렌더링](https://msdn.microsoft.com/en-us/library/dd410596(v=VS.98).aspx) (페이지는 MVC 3 하지만 MVC 4와 여전히 관련이).
+에 대 한 간단한 CRUD 작업을 수행 하는 페이지의 전체 집합 해야 `Student` 엔터티. 데이터 필드에 대 한 UI 요소를 생성 하 MVC 도우미를 사용 합니다. MVC 도우미에 대 한 자세한 내용은 참조 [양식을 사용 하 여 HTML 도우미 렌더링](https://msdn.microsoft.com/library/dd410596(v=VS.98).aspx) (페이지는 MVC 3 하지만 MVC 4와 여전히 관련이).
 
 다음 자습서에서는 정렬 및 페이징을 추가 하 여 인덱스 페이지의 기능을 확장 합니다.
 

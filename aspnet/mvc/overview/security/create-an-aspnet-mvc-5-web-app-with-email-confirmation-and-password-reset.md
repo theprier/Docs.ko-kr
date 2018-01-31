@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset
 msc.type: authoredcontent
-ms.openlocfilehash: e3d8ad6e00b7fcb95f1c9bbe556021269c1a0624
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5689031015279484cc616090a767a8c25eefa3c1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="create-a-secure-aspnet-mvc-5-web-app-with-log-in-email-confirmation-and-password-reset-c"></a>확인 및 암호 재설정 (C#) 전자 메일을 로그와 함께 보안 ASP.NET MVC 5 웹 앱 만들기
 ====================
@@ -38,9 +38,9 @@ ms.lasthandoff: 11/10/2017
 
 1. 새 ASP.NET 웹 프로젝트를 만들고 MVC 템플릿을 선택 합니다. Web Forms web forms 응용 프로그램에서 비슷한 단계를 반영할 수 있도록 ASP.NET Id를도 지원 합니다.  
     ![](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/_static/image1.png)
-2. 기본 인증을 두고 **개별 사용자 계정**합니다. Azure에서 응용 프로그램 호스트 하려는 경우 확인란을 선택한 상태로 둡니다. 이 자습서의 뒷부분에 나오는에서는 Azure에 배포 합니다. 있습니다 수 [무료로 Azure 계정을 개설](https://azure.microsoft.com/en-us/pricing/free-trial/?WT.mc_id=A261C142F)합니다.
+2. 기본 인증을 두고 **개별 사용자 계정**합니다. Azure에서 응용 프로그램 호스트 하려는 경우 확인란을 선택한 상태로 둡니다. 이 자습서의 뒷부분에 나오는에서는 Azure에 배포 합니다. 있습니다 수 [무료로 Azure 계정을 개설](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F)합니다.
 3. 설정의 [SSL을 사용 하도록 프로젝트](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)합니다.
-4. 응용 프로그램 실행을 클릭는 **등록** 에 연결 하 고 사용자를 등록 합니다. 전자 메일에만 유효성 검사와는 시점에서 [[EmailAddress]](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.emailaddressattribute(v=vs.110).aspx) 특성입니다.
+4. 응용 프로그램 실행을 클릭는 **등록** 에 연결 하 고 사용자를 등록 합니다. 전자 메일에만 유효성 검사와는 시점에서 [[EmailAddress]](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.emailaddressattribute(v=vs.110).aspx) 특성입니다.
 5. 서버 탐색기에서로 이동 **데이터 Connections\DefaultConnection\Tables\AspNetUsers**를 마우스 오른쪽 단추로 클릭 하 고 **테이블 정의 열고**합니다.
 
     다음 그림에서는 `AspNetUsers` 스키마:
@@ -108,7 +108,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-cshtml[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample8.cshtml)]
 
-추가 [Authorize 특성](https://msdn.microsoft.com/en-us/library/system.web.mvc.authorizeattribute(v=vs.118).aspx) 에 `Contact` Home 컨트롤러의 동작 메서드. 클릭을 사용할 수 있습니다는 **연락처** 익명 사용자가 액세스할 수 없는 및 인증 된 사용자가 액세스할 수 있는 권한이 확인 합니다.
+추가 [Authorize 특성](https://msdn.microsoft.com/library/system.web.mvc.authorizeattribute(v=vs.118).aspx) 에 `Contact` Home 컨트롤러의 동작 메서드. 클릭을 사용할 수 있습니다는 **연락처** 익명 사용자가 액세스할 수 없는 및 인증 된 사용자가 액세스할 수 있는 권한이 확인 합니다.
 
 [!code-csharp[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample9.cs?highlight=1)]
 
@@ -129,7 +129,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample12.cs?highlight=17-20)]
 
-주석 문자를 제거는 `ForgotPassword` [ActionLink](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.linkextensions.actionlink(v=vs.118).aspx) 에 *Views\Account\Login.cshtml* razor 파일 보기:
+주석 문자를 제거는 `ForgotPassword` [ActionLink](https://msdn.microsoft.com/library/system.web.mvc.html.linkextensions.actionlink(v=vs.118).aspx) 에 *Views\Account\Login.cshtml* razor 파일 보기:
 
 [!code-cshtml[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample13.cshtml?highlight=47-50)]
 

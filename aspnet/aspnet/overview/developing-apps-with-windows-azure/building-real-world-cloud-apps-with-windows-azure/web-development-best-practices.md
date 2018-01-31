@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices
 msc.type: authoredcontent
-ms.openlocfilehash: a40a3779ddc416e141dd27b665f43830a43590b1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: de536a0ca39cb752c0962f0c4ae36eb00b586bff
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="web-development-best-practices-building-real-world-cloud-apps-with-azure"></a>웹 개발 모범 사례 (Azure로 응용 프로그램 빌딩 실제 클라우드)
 ====================
@@ -142,20 +142,20 @@ Entity Framework 6 쿼리 또는 데이터베이스에 보낼 명령의 발생 �
 
 상태 비저장 웹 서버:
 
-- [Microsoft Patterns and Practices-자동 크기 조정 지침](https://msdn.microsoft.com/en-us/library/dn589774.aspx)합니다.
+- [Microsoft Patterns and Practices-자동 크기 조정 지침](https://msdn.microsoft.com/library/dn589774.aspx)합니다.
 - [해제 ARR 인스턴스에서 Windows Azure 웹 사이트에서 선호도](https://azure.microsoft.com/blog/2013/11/18/disabling-arrs-instance-affinity-in-windows-azure-web-sites/)합니다. 블로그 게시물 Erez Benari 하 여 세션 선호도 Windows Azure 웹 사이트에 설명 합니다.
 
 CDN:
 
 - [FailSafe: 복원 력 있는 확장 가능한 클라우드 서비스를 만드는](https://channel9.msdn.com/Series/FailSafe)합니다. Marc Mercuri, Ulrich Homann, Mark Simms 하 여 비디오 시리즈를 9 개 부분으로 구성 합니다. 1시 34분: 00에서 시작 하는 3 에피소드에서 CDN을 참조 합니다.
-- [Microsoft 패턴 및 사례 정적 콘텐츠 호스팅 패턴](https://msdn.microsoft.com/en-us/library/dn589776.aspx)
+- [Microsoft 패턴 및 사례 정적 콘텐츠 호스팅 패턴](https://msdn.microsoft.com/library/dn589776.aspx)
 - [CDN 검토](http://www.cdnreviews.com/)합니다. 많은 Cdn 간략하게 설명 합니다.
 
 비동기 프로그래밍:
 
 - [비동기 메서드를 사용 하 여 ASP.NET MVC 4의에서](../../../../mvc/overview/performance/using-asynchronous-methods-in-aspnet-mvc-4.md)합니다. Rick anderson 자습서입니다.
-- [비동기 사용한 비동기 프로그래밍 및 Await (C# 및 Visual Basic)](https://msdn.microsoft.com/en-us/library/vstudio/hh191443.aspx)합니다. MSDN는 백서 비동기 프로그래밍에 대 한 설명, ASP.NET 4.5에서 작동 방식 및 구현 하는 코드를 작성 하는 방법을 설명 합니다.
-- [Entity Framework 비동기 쿼리 및 저장](https://msdn.microsoft.com/en-us/data/jj819165)
+- [비동기 사용한 비동기 프로그래밍 및 Await (C# 및 Visual Basic)](https://msdn.microsoft.com/library/vstudio/hh191443.aspx)합니다. MSDN는 백서 비동기 프로그래밍에 대 한 설명, ASP.NET 4.5에서 작동 방식 및 구현 하는 코드를 작성 하는 방법을 설명 합니다.
+- [Entity Framework 비동기 쿼리 및 저장](https://msdn.microsoft.com/data/jj819165)
 - [비동기 사용 하 여 ASP.NET 웹 응용 프로그램을 작성 하는 방법](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/DEV-B337#fbid=tgkT4SR_DK7)합니다. Rowan Miller의 비디오 프레젠테이션 합니다. 그래픽 데모 포함 어떻게 비동기 프로그래밍의 부하가 높은 상황에서 웹 서버 처리량을 크게 향상으로 기여할 수 있습니다.
 - [FailSafe: 복원 력 있는 확장 가능한 클라우드 서비스를 만드는](https://channel9.msdn.com/Series/FailSafe)합니다. Marc Mercuri, Ulrich Homann, Mark Simms 하 여 비디오 시리즈를 9 개 부분으로 구성 합니다. 확장성 비동기 프로그래밍의 영향에 대 한 토론 에피소드 4 및 8 에피소드를 참조 하십시오.
 - [ASP.NET 4.5 및 중요 한 취약점의 비동기 메서드를 사용 하 여 매직](http://www.hanselman.com/blog/TheMagicOfUsingAsynchronousMethodsInASPNET45PlusAnImportantGotcha.aspx)합니다. ASP.NET Web Forms 응용 프로그램에서 async 사용에 대 한 주로 Scott hanselman 블로그 게시물입니다.

@@ -2,21 +2,19 @@
 title: "ASP.NET Core에서 브라우저 링크"
 author: ncarandini
 description: "어떻게 브라우저 링크는 하나 이상의 웹 브라우저와 함께 개발 환경에 연결 하는 Visual Studio 기능에 설명 합니다."
-keywords: "ASP.NET Core, 브라우저 링크 CSS 동기화"
-ms.author: riande
 manager: wpickett
-ms.date: 09/22/2017
-ms.topic: article
-ms.assetid: 11813d4c-3f8a-445a-b23b-e4a57d001abc
-ms.technology: aspnet
-ms.prod: asp.net-core
-uid: client-side/using-browserlink
+ms.author: riande
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b69d085e8bee4cdac2dff08b46a95a8869e263b7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.date: 09/22/2017
+ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
+uid: client-side/using-browserlink
+ms.openlocfilehash: 3e62bdd180bb1f5e2ce0645a8cf13c9ffe76197e
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="browser-link-in-aspnet-core"></a>ASP.NET Core에서 브라우저 링크 
 
@@ -106,7 +104,7 @@ Visual Studio 브라우저 링크 도구 모음 컨트롤 옆에 표시 ASP.NET 
 
 인덱스 뷰를 변경 하 고 연결 된 모든 브라우저 브라우저 링크 새로 고침 단추를 클릭할 때 업데이트 됩니다.
 
-![변경 하는 브라우저 동기화](using-browserlink/_static/browsers-sync-to-changes.png)
+![browsers-sync-to-changes](using-browserlink/_static/browsers-sync-to-changes.png)
 
 브라우저 링크는 Visual Studio 외부에서 시작 하 고 응용 프로그램 URL로 이동 하는 브라우저 에서도 작동 합니다.
 
@@ -114,15 +112,15 @@ Visual Studio 브라우저 링크 도구 모음 컨트롤 옆에 표시 ASP.NET 
 
 브라우저 링크에 대 한 드롭다운 메뉴를 열고 브라우저와 연결을 관리에서 브라우저 링크 대시보드를 엽니다.
 
-![오픈 browserslink 대시보드](using-browserlink/_static/open-browserlink-dashboard.png)
+![open-browserslink-dashboard](using-browserlink/_static/open-browserlink-dashboard.png)
 
 브라우저가 없으므로 연결 되어 있는 경우 선택 하 여 비-디버깅 세션을 시작할 수 있습니다는 *브라우저에서 보기* 링크:
 
-![browserlink 대시보드-no 연결](using-browserlink/_static/browserlink-dashboard-no-connections.png)
+![browserlink-dashboard-no-connections](using-browserlink/_static/browserlink-dashboard-no-connections.png)
 
 그렇지 않으면 연결 된 브라우저와 각 브라우저 표시 하는 페이지의 경로를 표시 됩니다.
 
-![browserlink 대시보드-2 연결](using-browserlink/_static/browserlink-dashboard-two-connections.png)
+![browserlink-dashboard-two-connections](using-browserlink/_static/browserlink-dashboard-two-connections.png)
 
 원하는 경우 해당 단일 브라우저를 새로 고치려면 나열 된 브라우저 이름을 클릭할 수 있습니다.
 

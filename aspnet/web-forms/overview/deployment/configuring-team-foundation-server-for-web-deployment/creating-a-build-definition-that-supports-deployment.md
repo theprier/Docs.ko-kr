@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-build-definition-that-supports-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: c2e7a768c2cf9900731b822ec187093a4b250ead
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e5610753968328e5d0f1dba4cbbfed08480fd773
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-build-definition-that-supports-deployment"></a>배포를 지원 하는 빌드 정의 만들기
 ====================
@@ -42,7 +42,7 @@ ms.lasthandoff: 11/10/2017
 - 다양 한 기타 매개 변수는 빌드 프로세스입니다.
 
 > [!NOTE]
-> 빌드 정의 대 한 자세한 내용은 참조 하십시오. [빌드 프로세스 정의](https://msdn.microsoft.com/en-us/library/ms181715.aspx)합니다.
+> 빌드 정의 대 한 자세한 내용은 참조 하십시오. [빌드 프로세스 정의](https://msdn.microsoft.com/library/ms181715.aspx)합니다.
 
 
 이 항목은 빌드는 개발자가 새 내용에서 체크 인하는 경우에 트리거됩니다 CI를 사용 하는 빌드 정의 만드는 방법을 보여 줍니다. 빌드가 성공한 경우 빌드 서비스를 테스트 환경에 솔루션을 배포 하는 사용자 지정 프로젝트 파일을 실행 합니다.
@@ -149,7 +149,7 @@ CI를 사용 하 여 빌드 정의 구성한 경우에 두 가지 방법으로 �
 
 ## <a name="monitor-the-build-process"></a>빌드 프로세스를 모니터링 합니다.
 
-TFS 광범위 한 빌드 프로세스를 모니터링 하는 기능을 제공 합니다. 예를 들어 TFS 전자 메일을 보낼 수 또는 빌드 완료 되었을 때 작업 표시줄 알림 영역에서 경고를 표시 합니다. 자세한 내용은 참조 [실행 및 빌드 모니터링](https://msdn.microsoft.com/en-us/library/ms181721.aspx)합니다.
+TFS 광범위 한 빌드 프로세스를 모니터링 하는 기능을 제공 합니다. 예를 들어 TFS 전자 메일을 보낼 수 또는 빌드 완료 되었을 때 작업 표시줄 알림 영역에서 경고를 표시 합니다. 자세한 내용은 참조 [실행 및 빌드 모니터링](https://msdn.microsoft.com/library/ms181721.aspx)합니다.
 
 ## <a name="conclusion"></a>결론
 
@@ -159,7 +159,7 @@ TFS 광범위 한 빌드 프로세스를 모니터링 하는 기능을 제공 �
 
 ## <a name="further-reading"></a>추가 정보
 
-빌드 정의 만드는 방법에 대 한 자세한 내용은 참조 하십시오. [기본 빌드 정의 만들기](https://msdn.microsoft.com/en-us/library/ms181716.aspx) 및 [빌드 프로세스 정의](https://msdn.microsoft.com/en-us/library/ms181715.aspx)합니다. 빌드를 큐에 대 한 자세한 지침을 참조 하십시오. [빌드 큐에 대기](https://msdn.microsoft.com/en-us/library/ms181722.aspx)합니다.
+빌드 정의 만드는 방법에 대 한 자세한 내용은 참조 하십시오. [기본 빌드 정의 만들기](https://msdn.microsoft.com/library/ms181716.aspx) 및 [빌드 프로세스 정의](https://msdn.microsoft.com/library/ms181715.aspx)합니다. 빌드를 큐에 대 한 자세한 지침을 참조 하십시오. [빌드 큐에 대기](https://msdn.microsoft.com/library/ms181722.aspx)합니다.
 
 >[!div class="step-by-step"]
 [이전](configuring-a-tfs-build-server-for-web-deployment.md)

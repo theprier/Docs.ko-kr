@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern
 msc.type: authoredcontent
-ms.openlocfilehash: 125d555a9e170ef35dd99e0409a2442d5f9ae34a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ccfbaa26cbf610f847811e6f3c612458277046ed
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="queue-centric-work-pattern-building-real-world-cloud-apps-with-azure"></a>큐 중심 작업 패턴 (Azure로 응용 프로그램 빌딩 실제 클라우드)
 ====================
@@ -91,7 +91,7 @@ ms.lasthandoff: 11/10/2017
 - 사용자가 새 수정 작업을 제출는 태스크를 데이터베이스에 작성 하는 대신 큐에 삽입 합니다.
 - 큐에 메시지를 처리 하는 백 엔드 서비스를 만듭니다.
 
-큐에 사용 된 [Azure 큐 저장소 서비스](https://www.windowsazure.com/en-us/develop/net/how-to-guides/queue-service/)합니다. 또 다른 옵션은 사용 하도록 [Azure 서비스 버스](https://docs.microsoft.com/azure/service-bus/)합니다.
+큐에 사용 된 [Azure 큐 저장소 서비스](https://www.windowsazure.com/develop/net/how-to-guides/queue-service/)합니다. 또 다른 옵션은 사용 하도록 [Azure 서비스 버스](https://docs.microsoft.com/azure/service-bus/)합니다.
 
 큐 서비스를 사용 하 여 기능을 결정 하려면 응용 프로그램 큐에 메시지를 받거나 보내기 위해 요구 하는 방법을 고려 합니다.
 
@@ -106,10 +106,10 @@ ms.lasthandoff: 11/10/2017
 
 수정 작업을 큐에 배치, 하기 웹 프런트 엔드는 다음 단계를 수행 합니다.
 
-1. 만들기는 [CloudQueueClient](https://msdn.microsoft.com/en-us/library/microsoft.windowsazure.storage.queue.cloudqueueclient.aspx) 인스턴스. `CloudQueueClient` 인스턴스를 사용 하 여 큐 서비스에 대 한 요청을 실행할 수 있습니다.
+1. 만들기는 [CloudQueueClient](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.queue.cloudqueueclient.aspx) 인스턴스. `CloudQueueClient` 인스턴스를 사용 하 여 큐 서비스에 대 한 요청을 실행할 수 있습니다.
 2. 아직 존재 하지 않는 경우 큐를 만듭니다.
 3. 수정 작업을 직렬화 합니다.
-4. 호출 [CloudQueue.AddMessageAsync](https://msdn.microsoft.com/en-us/library/microsoft.windowsazure.storage.queue.cloudqueue.addmessageasync.aspx) 큐로 메시지를 넣을 수 있습니다.
+4. 호출 [CloudQueue.AddMessageAsync](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.queue.cloudqueue.addmessageasync.aspx) 큐로 메시지를 넣을 수 있습니다.
 
 생성자에서이 작업을 수행 하겠습니다 및 `SendMessageAsync` 새 방식의 `FixItQueueManager` 클래스입니다.
 
@@ -117,7 +117,7 @@ ms.lasthandoff: 11/10/2017
 
 사용 하 여 여기에서 [Json.NET](https://github.com/JamesNK/Newtonsoft.Json) fixit JSON 형식으로 serialize 하는 라이브러리입니다. 원하는 어떤 serialization 방법을 사용할 수 있습니다. JSON을 사용 하면 XML 보다 정보가 덜 자세 하면서 사람이 읽을 수 있다는 이점이 있습니다.
 
-프로덕션 품질의 코드는 오류 처리 논리를 추가, 데이터베이스를 사용할 수 없게 하는 경우 일시 중지, 복구를 더욱 명확 하 게 처리, 응용 프로그램 시작 시에 큐를 만들려면 및 관리 "[포이즌" 메시지](https://msdn.microsoft.com/en-us/library/ms789028(v=vs.110).aspx)합니다. (포이즌 메시지는 몇 가지 이유로 처리할 수 없는 메시지. 않으려면 포이즌 메시지 큐에 있으면 여기서 작업자 역할에서 지속적으로 하려고 처리, 실패, 다시 시도 실패 및 등입니다.)
+프로덕션 품질의 코드는 오류 처리 논리를 추가, 데이터베이스를 사용할 수 없게 하는 경우 일시 중지, 복구를 더욱 명확 하 게 처리, 응용 프로그램 시작 시에 큐를 만들려면 및 관리 "[포이즌" 메시지](https://msdn.microsoft.com/library/ms789028(v=vs.110).aspx)합니다. (포이즌 메시지는 몇 가지 이유로 처리할 수 없는 메시지. 않으려면 포이즌 메시지 큐에 있으면 여기서 작업자 역할에서 지속적으로 하려고 처리, 실패, 다시 시도 실패 및 등입니다.)
 
 프런트 엔드 MVC 응용 프로그램에서 새 작업을 만드는 코드를 업데이트 해야 합니다. 호출 하는 대신 작업 저장소로,는 `SendMessageAsync` 위에 표시 된 메서드가 있습니다.
 
@@ -156,7 +156,7 @@ ms.lasthandoff: 11/10/2017
 
 ![](queue-centric-work-pattern/_static/image8.png)
 
-자세한 내용은 참조 [Visual studio에서 Azure 프로젝트 만들기.](https://msdn.microsoft.com/en-us/library/windowsazure/ee405487.aspx)
+자세한 내용은 참조 [Visual studio에서 Azure 프로젝트 만들기.](https://msdn.microsoft.com/library/windowsazure/ee405487.aspx)
 
 작업자 역할 내 폴링할 메시지에 대 한 호출 하 여는 `ProcessMessageAsync` 의 메서드는 `FixItQueueManager` 앞에서 살펴본 클래스입니다.
 
@@ -168,7 +168,7 @@ ms.lasthandoff: 11/10/2017
 
 큐 메시지 작은 트랜잭션이 발생에 대해 폴링하면 요금을 청구, 메시지가 처리 되기를 기다리는 경우 작업자 역할의 `RunAsync` 메서드가 폴링하기 전에 두 번째 다시 대기를 호출 하 여 `Task.Delay(1000)`합니다.
 
-웹 프로젝트에서 비동기 코드를 추가 합니다. 자동으로 성능을 향상 시킬 수 IIS 제한 된 스레드 풀을 관리 하기 때문입니다. 작업자 역할 프로젝트에서 아닙니다. 작업자 역할의 확장성을 높이기 위해 다중 스레드 코드를 작성 하거나 비동기 코드를 사용 하 여 구현할 수 있습니다 [병렬 프로그래밍](https://msdn.microsoft.com/en-us/library/ff963553.aspx)합니다. 샘플 병렬 프로그래밍을 구현 하지 않는 있지만 병렬 프로그래밍을 구현할 수 있도록 코드를 비동기화 하는 방법을 보여 줍니다.
+웹 프로젝트에서 비동기 코드를 추가 합니다. 자동으로 성능을 향상 시킬 수 IIS 제한 된 스레드 풀을 관리 하기 때문입니다. 작업자 역할 프로젝트에서 아닙니다. 작업자 역할의 확장성을 높이기 위해 다중 스레드 코드를 작성 하거나 비동기 코드를 사용 하 여 구현할 수 있습니다 [병렬 프로그래밍](https://msdn.microsoft.com/library/ff963553.aspx)합니다. 샘플 병렬 프로그래밍을 구현 하지 않는 있지만 병렬 프로그래밍을 구현할 수 있도록 코드를 비동기화 하는 방법을 보여 줍니다.
 
 ## <a name="summary"></a>요약
 
@@ -184,11 +184,11 @@ ms.lasthandoff: 11/10/2017
 설명서:
 
 - [Microsoft Azure 저장소 큐 1 부: Getting Started](http://justazure.com/microsoft-azure-storage-queues-part-1-getting-started/)합니다. 문서, 로마 Schacherl 합니다.
-- [실행 중인 백그라운드 작업이](https://msdn.microsoft.com/en-us/library/ff803365.aspx)의 5 장을 [3rd Edition 클라우드로 응용 프로그램 이동](https://msdn.microsoft.com/en-us/library/ff728592.aspx) Microsoft Patterns and Practices에서 합니다. (특히, 섹션 ["Azure 저장소 큐를 사용 하 여"](https://msdn.microsoft.com/en-us/library/ff803365.aspx#sec7).)
-- [확장성 및 Azure에서 큐 기반 메시징 솔루션의 비용된 효율성을 극대화 하기 위한 유용한](https://msdn.microsoft.com/en-us/library/windowsazure/hh697709.aspx)합니다. 백서: Valery Mizonov 합니다.
-- [Azure 큐 및 서비스 버스 큐 비교](https://msdn.microsoft.com/en-us/magazine/jj159884.aspx)합니다. MSDN Magazine 문서를 사용 하는 큐 서비스를 선택 하는 데 도움이 되는 추가 정보를 제공 합니다. 문서에 서비스 버스 ACS를 사용할 수 없는 경우 SB 큐는 사용할 수 없습니다 것을 의미 하는 인증에 대 한 ACS에 종속 되어 있는지 설명 합니다. 그러나 SB로 사용할 수 있도록 변경 되었습니다 문서 기록 되었기 때문에 [SAS 토큰](https://msdn.microsoft.com/en-us/library/windowsazure/dn170477.aspx) ACS 하는 대신 합니다.
-- [Microsoft Patterns and Practices-Azure 지침](https://msdn.microsoft.com/en-us/library/dn568099.aspx)합니다. 비동기 메시징 입문서, 파이프와 필터 패턴, 트랜잭션을 보정 패턴, 경쟁 소비자 패턴, CQRS 패턴을 참조 하십시오.
-- [CQRS 정보](https://msdn.microsoft.com/en-us/library/jj554200)합니다. Microsoft Patterns and Practices 여 CQRS에 대 한 전자책을 참고 합니다.
+- [실행 중인 백그라운드 작업이](https://msdn.microsoft.com/library/ff803365.aspx)의 5 장을 [3rd Edition 클라우드로 응용 프로그램 이동](https://msdn.microsoft.com/library/ff728592.aspx) Microsoft Patterns and Practices에서 합니다. (특히, 섹션 ["Azure 저장소 큐를 사용 하 여"](https://msdn.microsoft.com/library/ff803365.aspx#sec7).)
+- [확장성 및 Azure에서 큐 기반 메시징 솔루션의 비용된 효율성을 극대화 하기 위한 유용한](https://msdn.microsoft.com/library/windowsazure/hh697709.aspx)합니다. 백서: Valery Mizonov 합니다.
+- [Azure 큐 및 서비스 버스 큐 비교](https://msdn.microsoft.com/magazine/jj159884.aspx)합니다. MSDN Magazine 문서를 사용 하는 큐 서비스를 선택 하는 데 도움이 되는 추가 정보를 제공 합니다. 문서에 서비스 버스 ACS를 사용할 수 없는 경우 SB 큐는 사용할 수 없습니다 것을 의미 하는 인증에 대 한 ACS에 종속 되어 있는지 설명 합니다. 그러나 SB로 사용할 수 있도록 변경 되었습니다 문서 기록 되었기 때문에 [SAS 토큰](https://msdn.microsoft.com/library/windowsazure/dn170477.aspx) ACS 하는 대신 합니다.
+- [Microsoft Patterns and Practices-Azure 지침](https://msdn.microsoft.com/library/dn568099.aspx)합니다. 비동기 메시징 입문서, 파이프와 필터 패턴, 트랜잭션을 보정 패턴, 경쟁 소비자 패턴, CQRS 패턴을 참조 하십시오.
+- [CQRS 정보](https://msdn.microsoft.com/library/jj554200)합니다. Microsoft Patterns and Practices 여 CQRS에 대 한 전자책을 참고 합니다.
 
 비디오:
 

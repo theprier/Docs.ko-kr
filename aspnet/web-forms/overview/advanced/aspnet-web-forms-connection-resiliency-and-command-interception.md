@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/advanced/aspnet-web-forms-connection-resiliency-and-command-interception
 msc.type: authoredcontent
-ms.openlocfilehash: 1c24ccd220bf6df09a958d07b13077f004da0a03
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e3347657fb5c7bf8c7bb4e51a2e810a1edde826a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-forms-connection-resiliency-and-command-interception"></a>ASP.NET Web Forms 연결 복원 력 및 명령 인터 셉 션
 ====================
@@ -39,13 +39,13 @@ ms.lasthandoff: 11/10/2017
 
 시작 하기 전에 다음 소프트웨어가 컴퓨터에 설치 되어 있는지 확인 합니다.
 
-- [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/en-us/downloads#vs) 또는 [Microsoft Visual Studio Express 2013 for Web](https://www.microsoft.com/visualstudio/11/en-us/downloads#express-web)합니다. .NET Framework는 자동으로 설치 됩니다.
+- [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/downloads#vs) 또는 [Microsoft Visual Studio Express 2013 for Web](https://www.microsoft.com/visualstudio/11/downloads#express-web)합니다. .NET Framework는 자동으로 설치 됩니다.
 - Wingtip Toys 샘플 프로젝트를 Wingtip Toys 프로젝트 내에서이 자습서에 언급 된 기능을 구현할 수 있도록 합니다. 다운로드 세부 정보를 제공 하는 다음 링크를 클릭 합니다.
 
     - [ASP.NET 4.5.1 시작 Web Forms-Wingtip Toys](https://go.microsoft.com/fwlink/?LinkID=389434&amp;clcid=0x409) (C#)
 - 이 자습서를 완료 하기 전에 검토할 관련된 자습서 시리즈 [ASP.NET 4.5 Web Forms 및 Visual Studio 2013 시작](../getting-started/getting-started-with-aspnet-45-web-forms/introduction-and-overview.md)합니다. 자습서 시리즈 익히는 데 도움이 됩니다는 **WingtipToys** 프로젝트 및 코드입니다.
 
-## <a name="connection-resiliency"></a>연결 복원 력
+## <a name="connection-resiliency"></a>연결 복원력
 
 고려해 야 할 한 가지 옵션에 대 한 데이터베이스를 배포 하 고 Windows Azure에 응용 프로그램을 고려할 때 **Windows** **Azure SQL 데이터베이스**, 클라우드 데이터베이스 서비스입니다. 일시적인 연결 오류는 경우 웹 서버와 데이터베이스 서버에 직접 연결 된 함께 동일한 데이터 센터에 클라우드 데이터베이스 서비스에 연결할 때 일반적으로 더 자주 발생 합니다. 클라우드 웹 서버와 클라우드 데이터베이스 서비스는 동일한 데이터 센터에서 호스팅되는, 경우에 연결이 더 많은 네트워크 간 부하 분산 장치와 같은 문제가 발생할 수 있습니다.
 
@@ -81,7 +81,7 @@ Entity Framework 공급자가 지 원하는 모든 데이터베이스 환경에 
 
     [!code-csharp[Main](aspnet-web-forms-connection-resiliency-and-command-interception/samples/sample3.cs?highlight=14-15,17-22)]
 
-추가 하 여는 `RetryLimitExceededException` 예외를 있습니다 또는 제공할 수 있습니다 더 잘 로깅 프로세스를 다시 시도 하도록 선택할 수 있는 사용자에 게 오류 메시지를 표시 합니다. Catch 하 여는 `RetryLimitExceededException` 예외, 오류만 일시적인 일 수는 이미 시도 되어 여러 번 실패 했습니다. 반환 된 실제 예외에 래핑됩니다는 `RetryLimitExceededException` 예외입니다. 또한 일반 catch 블록도 추가 합니다. 에 대 한 자세한 내용은 `RetryLimitExceededException` 예외를 참조 [Entity Framework 연결 복원 력 / 다시 시도 논리](https://msdn.microsoft.com/en-us/data/dn456835)합니다.
+추가 하 여는 `RetryLimitExceededException` 예외를 있습니다 또는 제공할 수 있습니다 더 잘 로깅 프로세스를 다시 시도 하도록 선택할 수 있는 사용자에 게 오류 메시지를 표시 합니다. Catch 하 여는 `RetryLimitExceededException` 예외, 오류만 일시적인 일 수는 이미 시도 되어 여러 번 실패 했습니다. 반환 된 실제 예외에 래핑됩니다는 `RetryLimitExceededException` 예외입니다. 또한 일반 catch 블록도 추가 합니다. 에 대 한 자세한 내용은 `RetryLimitExceededException` 예외를 참조 [Entity Framework 연결 복원 력 / 다시 시도 논리](https://msdn.microsoft.com/data/dn456835)합니다.
 
 ## <a name="command-interception"></a>인터 셉 션 명령
 

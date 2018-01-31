@@ -1,21 +1,19 @@
 ---
-title: "ASP.NET에서 '< machineKey >'를 대체"
+title: "교체 `<machineKey>` asp.net"
 author: rick-anderson
-description: "ASP.NET에서 '< machineKey >'를 대체"
-keywords: "ASP.NET Core, 보안, < machineKey > machineKey"
-ms.author: riande
+description: "교체 `<machineKey>` asp.net"
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.assetid: 5ac13589-3837-4b4d-8abe-81f843942120
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/data-protection/compatibility/replacing-machinekey
-ms.openlocfilehash: b5a1be5fee7489f266e8a676956f68b499c6f14f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 865c949a526e07d41ac4627fdf0411d5422adc16
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="replacing-machinekey-in-aspnet"></a>교체 `<machineKey>` asp.net
 

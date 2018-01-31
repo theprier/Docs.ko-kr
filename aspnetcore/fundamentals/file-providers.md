@@ -2,20 +2,18 @@
 title: "ASP.NET Core 파일 공급자"
 author: ardalis
 description: "ASP.NET Core 파일 공급자를 사용 하 여 파일 시스템 액세스를 추상화 하는 방법에 대해 알아봅니다."
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 02/14/2017
 ms.topic: article
-ms.assetid: 1e35d362-0005-4f84-a187-274ca203a787
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/file-providers
-ms.openlocfilehash: fd847db992b20ab096b54378418d2b9bccff67be
-ms.sourcegitcommit: 2b263e87217658caa42eedc4f9d2d21ef0ab5d59
+ms.openlocfilehash: 10f3276d3e71e8a29b452d4c62865cbb82298513
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="file-providers-in-aspnet-core"></a>ASP.NET Core 파일 공급자
 
@@ -90,7 +88,7 @@ var embeddedProvider = new EmbeddedFileProvider(Assembly.GetEntryAssembly());
 ![파일 공급자 샘플 응용 프로그램이 포함 된 파일 나열](file-providers/_static/embedded-directory-listing.png)
 
 > [!NOTE]
-> 포함된 리소스 디렉터리를 표시 하지 않습니다. 사용 하 여 해당 파일 이름에 (네임 스페이스)를 통해 리소스에 대 한 경로 포함 하는 대신, `.` 구분 기호입니다.
+> 포함된 리소스 디렉터리를 제공 하지 않습니다. 사용 하 여 해당 파일 이름에 (네임 스페이스)를 통해 리소스에 대 한 경로 포함 하는 대신, `.` 구분 기호입니다.
 
 > [!TIP]
 > `EmbeddedFileProvider` 생성자는 선택적 허용 `baseNamespace` 매개 변수입니다. 에 대 한 호출 범위는이 지정 하면 `GetDirectoryContents` 해당 리소스에 제공 된 네임 스페이스에 있습니다.

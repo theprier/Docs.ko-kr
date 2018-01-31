@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: e14f3bed001592c85bdbba868f51141bc52a9470
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 51344535e7ff42f1bd6641aeaaf043be6423f1b7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-introduction"></a>Visual Studio를 사용 하 여 ASP.NET 웹 배포: 소개
 ====================
@@ -53,7 +53,7 @@ ms.lasthandoff: 11/10/2017
 배포 [소스 제어](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control.md) 를 사용 하는 [지속적인 업데이트](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery.md) 프로세스 명령줄에서 배포 하는 방법을 보여 주는 자습서 하나를 제외 하 고이 자습서에서 다루지 않습니다. 지속적인 업데이트에 대 한 내용은 다음 리소스를 참조 합니다.
 
 - [연속 통합 및 지속적인 업데이트 (Windows Azure로 응용 프로그램 빌딩 실제 클라우드)](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery.md)
-- [Azure 앱 서비스의 웹 응용 프로그램 배포](https://azure.microsoft.com/en-us/documentation/articles/web-sites-deploy/)
+- [Azure 앱 서비스의 웹 응용 프로그램 배포](https://azure.microsoft.com/documentation/articles/web-sites-deploy/)
 - [엔터프라이즈 시나리오에서 웹 응용 프로그램 배포](../deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios.md) (의 엔터프라이즈 환경에 대 한 유용한 정보를 아직 Visual Studio 2010 용으로 작성 하는 자습서는 이전 집합입니다.)
 
 ## <a name="using-a-third-party-hosting-provider"></a>제 3 자 호스팅 공급자를 사용 하 여
@@ -128,9 +128,9 @@ Visual Studio 2013을 사용 하는 경우 설치 [Visual Studio 2013 용 Azure 
 
 Visual Studio 2010 s p 1을 사용 하는 경우에 다음 소프트웨어를 설치 합니다.
 
-- [Visual Studio 2010 용 azure SDK](https://go.microsoft.com/fwlink/?LinkID=254269)
+- [Azure SDK for Visual Studio 2010](https://go.microsoft.com/fwlink/?LinkID=254269)
 - [SQL Server Express LocalDB](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=SQLLocalDBOnly_11_0)
-- [SQL Server Data Tools](https://msdn.microsoft.com/en-us/library/hh500335.aspx)합니다.
+- [SQL Server Data Tools](https://msdn.microsoft.com/library/hh500335.aspx)합니다.
 
 SDK 종속성의 개수를 이미 있는 컴퓨터에 따라 Azure SDK를 설치 하면 몇 분에서 30 분 이상까지 시간이 오래 걸릴 수 있습니다. Azure에 대신 제 3 자 호스팅 공급자에 게시할 SDK는 Visual Studio 웹의 최신 업데이트를 포함 하기 때문에 기능을 게시 하려는 경우에는 Azure SDK가 필요 합니다.
 

@@ -2,20 +2,18 @@
 title: "ASP.NET Core 및 Entity Framework 6 시작"
 author: tdykstra
 description: "이 문서에는 ASP.NET Core 응용 프로그램에서 Entity Framework 6을 사용 하는 방법을 보여 줍니다."
-keywords: ASP.NET Core, Entity Framework EF 6
-ms.author: tdykstra
 manager: wpickett
+ms.author: tdykstra
 ms.date: 02/24/2017
-ms.topic: article
-ms.assetid: 016cc836-4c43-45a4-b9a7-9efaf53350df
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: data/entity-framework-6
-ms.openlocfilehash: 8abec95c591f20069e20eec55fd21503e74f8606
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7407fe8a976978d7d5077d5e5ac6cc264565621d
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="getting-started-with-aspnet-core-and-entity-framework-6"></a>ASP.NET Core 및 Entity Framework 6 시작
 
@@ -25,7 +23,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="overview"></a>개요
 
-Entity Framework 6을 사용 하려면 Entity Framework 6에서는.NET Core를 지원 하지 않으므로.NET Framework에 대해 컴파일할 수 프로젝트에 있습니다. 로 업그레이드 해야 플랫폼 기능이 필요 하면 [Entity Framework Core](https://docs.microsoft.com/ef/)합니다.
+Entity Framework 6을 사용 하려면 프로젝트.NET Framework에 대해 컴파일할 수에 Entity Framework 6.NET Core를 지원 하지 않습니다. 로 업그레이드 해야 플랫폼 기능이 필요 하면 [Entity Framework Core](https://docs.microsoft.com/ef/)합니다.
 
 ASP.NET Core 응용 프로그램에서 Entity Framework 6을 사용 하는 권장된 방법은 EF6 컨텍스트를 넣을 수 이며 클래스 라이브러리에 모델 클래스를 프로젝트 대상으로 하는 전체 프레임 워크. ASP.NET Core 프로젝트에서 클래스 라이브러리에 대 한 참조를 추가 합니다. 샘플을 참조 하십시오 [EF6 및 ASP.NET Core 프로젝트가 있는 Visual Studio 솔루션](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/entity-framework-6/sample/)합니다.
 
@@ -39,7 +37,7 @@ ASP.NET Core 프로젝트는.NET framework 및 EF6 참조 해야 합니다. 예�
 
 [!code-xml[](entity-framework-6/sample/MVCCore/MVCCore.csproj?range=3-9&highlight=2)]
 
-새 프로젝트를 만드는 경우 사용 하 여는 **ASP.NET Core 웹 응용 프로그램 (.NET Framework)** 서식 파일입니다.
+새 프로젝트를 만들 때 사용 된 **ASP.NET Core 웹 응용 프로그램 (.NET Framework)** 서식 파일입니다.
 
 ## <a name="handle-connection-strings"></a>연결 문자열을 처리 합니다.
 

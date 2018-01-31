@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/master-pages-and-asp-net-ajax-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 86ec6454313f5a6e78c0f64433ef4e5a4f8461ee
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6e09951be5483ed098b8cab6517335f9962a5d95
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="master-pages-and-aspnet-ajax-c"></a>마스터 페이지 및 ASP.NET AJAX (C#)
 ====================
@@ -31,7 +31,7 @@ ms.lasthandoff: 11/10/2017
 
 작성 된 점점 더 많은 개발자 지난 몇 년간 [AJAX](http://en.wikipedia.org/wiki/Ajax_(programming))-웹 응용 프로그램을 사용 하도록 설정 합니다. AJAX 사용 웹 사이트를 더 빠르게 대응 하는 사용자 환경을 제공 하려면 다양 한 관련된 웹 기술을 사용 합니다. Microsoft의 수 덕분에 매우 쉽게 수행할 수는 AJAX 사용 ASP.NET 응용 프로그램을 만드는 [ASP.NET AJAX 프레임 워크](../../../../ajax/index.md)합니다. ASP.NET AJAX ASP.NET 3.5 및 Visual Studio 2008; 내장 됩니다. ASP.NET 2.0 응용 프로그램에 대 한 별도 다운로드로 제공 됩니다.
 
-정확 하 게 하나에 추가 해야 AJAX 사용 웹 페이지를 ASP.NET AJAX 프레임 워크를 작성할 때 [ScriptManager 컨트롤](https://msdn.microsoft.com/en-us/library/bb398863.aspx) 프레임 워크를 사용 하는 각 페이지에 있습니다. 이름에서 알 수 있듯이 ScriptManager AJAX 사용 웹 페이지에서 사용 되는 클라이언트 쪽 스크립트를 관리 합니다. ScriptManager는 최소한 해당 구성을 ASP.NET AJAX 클라이언트 라이브러리는 JavaScript 파일을 다운로드 하도록 브라우저에 지시 하는 HTML을 내보냅니다. 또한 사용자 지정 JavaScript 파일, 스크립트 사용 웹 서비스 및 사용자 지정 응용 프로그램 서비스 기능 등록을 사용할 수 있습니다.
+정확 하 게 하나에 추가 해야 AJAX 사용 웹 페이지를 ASP.NET AJAX 프레임 워크를 작성할 때 [ScriptManager 컨트롤](https://msdn.microsoft.com/library/bb398863.aspx) 프레임 워크를 사용 하는 각 페이지에 있습니다. 이름에서 알 수 있듯이 ScriptManager AJAX 사용 웹 페이지에서 사용 되는 클라이언트 쪽 스크립트를 관리 합니다. ScriptManager는 최소한 해당 구성을 ASP.NET AJAX 클라이언트 라이브러리는 JavaScript 파일을 다운로드 하도록 브라우저에 지시 하는 HTML을 내보냅니다. 또한 사용자 지정 JavaScript 파일, 스크립트 사용 웹 서비스 및 사용자 지정 응용 프로그램 서비스 기능 등록을 사용할 수 있습니다.
 
 사이트 사용 하 여 마스터 페이지 (는) 하는 경우 반드시 않아도; 모든 단일 콘텐츠 페이지에 ScriptManager 컨트롤을 추가 하려면 대신, 마스터 페이지에 ScriptManager 컨트롤을 추가할 수 있습니다. 이 자습서에서는 마스터 페이지에 ScriptManager 컨트롤을 추가 하는 방법을 보여 줍니다. 특정 콘텐츠 페이지에서 사용자 지정 스크립트 및 스크립트 서비스를 등록 하려면 ScriptManagerProxy 컨트롤을 사용 하는 방법에 대해서도 설명 합니다.
 
@@ -117,7 +117,7 @@ SqlDataSource 컨트롤 통해 Northwind 데이터베이스에 연결을 구성�
 
 [!code-sql[Main](master-pages-and-asp-net-ajax-cs/samples/sample3.sql)]
 
-`TOP 1` 키워드는 `SELECT` 절 쿼리에서 반환한 첫 번째 레코드를 반환 합니다. [ `NEWID()` 함수](https://msdn.microsoft.com/en-us/library/ms190348.aspx) 새로 생성 [전역 고유 식별자 값 (GUID)](http://en.wikipedia.org/wiki/Globally_Unique_Identifier) 에 사용할 수는 `ORDER BY` 임의의 순서로 테이블의 레코드를 반환 하는 절.
+`TOP 1` 키워드는 `SELECT` 절 쿼리에서 반환한 첫 번째 레코드를 반환 합니다. [ `NEWID()` 함수](https://msdn.microsoft.com/library/ms190348.aspx) 새로 생성 [전역 고유 식별자 값 (GUID)](http://en.wikipedia.org/wiki/Globally_Unique_Identifier) 에 사용할 수는 `ORDER BY` 임의의 순서로 테이블의 레코드를 반환 하는 절.
 
 
 [![SqlDataSource를 임의로 선택 된 단일 레코드를 반환할 수를 구성 합니다.](master-pages-and-asp-net-ajax-cs/_static/image11.png)](master-pages-and-asp-net-ajax-cs/_static/image10.png)

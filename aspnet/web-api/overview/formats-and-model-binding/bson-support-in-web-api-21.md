@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/formats-and-model-binding/bson-support-in-web-api-21
 msc.type: authoredcontent
-ms.openlocfilehash: 08ef1564b2f8f11294c3bb1ec0ff9a3d063895b6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 53ad705fad6d2225cecca4d73355bd6ebfcf56d5
+ms.sourcegitcommit: 459cb3289741a3f46325e605a617dc926ee0563d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/22/2018
 ---
 <a name="bson-support-in-aspnet-web-api-21"></a>ASP.NET Web API 2.1의에서 BSON 지원
 ====================
@@ -30,7 +30,7 @@ Web API 2.1에서는 BSON 지원 합니다. 이 항목에서는 Web API 컨트�
 
 BSON 가볍고, 스캔 하기 쉬운 인코딩/디코딩에 빠른 되도록 설계 되었습니다.
 
-- BSON는 JSON 크기가 유사 합니다. 데이터에 따라 BSON 페이로드 JSON 페이로드 보다 크거나 작을 수 있습니다. 이미지 파일과 같은 이진 데이터를 직렬화 하는 작업에 대 한 BSON JSON 보다 작은, 이진 데이터는 것은 아니므로 base64 인코딩.
+- BSON는 JSON 크기가 유사 합니다. 데이터에 따라 BSON 페이로드 JSON 페이로드 보다 크거나 작을 수 있습니다. 이미지 파일과 같은 이진 데이터를 직렬화 하는 작업에 대 한 없기 때문에 이진 데이터가 base64 인코딩 BSON는 JSON, 보다 작습니다.
 - BSON 문서는 쉽게 요소 라는 접두사가 길이 필드 이므로 파서에서 디코딩하지 않고도 요소를 건너뛸 수 때문에 검색할 수 있습니다.
 - 인코딩 및 디코딩하는 숫자 데이터 형식이 문자열이 아니라 숫자로 저장 되기 때문에, 효율적입니다.
 

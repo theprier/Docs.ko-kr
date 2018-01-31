@@ -2,19 +2,18 @@
 title: "ASP.NET Core로 마이그레이션"
 author: rick-anderson
 description: "ASP.NET 4.x 및 ASP.NET Core 2를 포함하여 ASP.NET에서 ASP.NET Core로 마이그레이션하는 방법 설명"
-keywords: "ASP.NET Core, 마이그레이트, 마이그레이션, ASP.NET 4.6, ASP.NET 4.7, ASP.NET 4.x"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 07/27/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: migration/index
-ms.openlocfilehash: 955634b9c3d207a7b0026de76e37b527607f4775
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 6350dc43a2b5e63083a9e707dff74bf6407a0c94
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="migration-to-aspnet-core-including-aspnet-4x-aspnet-core-2"></a>ASP.NET 4.x, ASP.NET Core 2를 포함하여 ASP.NET Core로 마이그레이션
 

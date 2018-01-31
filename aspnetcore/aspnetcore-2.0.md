@@ -2,20 +2,18 @@
 title: "ASP.NET Core 2.0의 새로운 기능"
 author: rick-anderson
 description: "ASP.NET Core 2.0의 새로운 기능"
-keywords: "ASP.NET Core, 릴리스 정보, 새로운 기능"
 ms.author: riande
 manager: wpickett
 ms.date: 07/10/2017
 ms.topic: article
-ms.assetid: 08c9f457-9c24-40f9-a08b-47dc251e4cec
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: aspnetcore-2.0
-ms.openlocfilehash: f01f047f809e4eaa055a4204611b152c5db87f74
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: ca02de7954002dcbc125898c9f570438f88db818
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="whats-new-in-aspnet-core-20"></a>ASP.NET Core 2.0의 새로운 기능
 

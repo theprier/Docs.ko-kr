@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse
 msc.type: authoredcontent
-ms.openlocfilehash: 98b21a54ba00a8c82c3be7ba4e39d44041ed42c6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9cfdced21251b482ca527dda9c3a698de77cc8ca
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="profile-and-debug-your-aspnet-mvc-app-with-glimpse"></a>프로 파일링 하 고 Glimpse 사용해 ASP.NET MVC 응용 프로그램 디버그
 ====================
 으로 [Rick Anderson](https://github.com/Rick-Anderson)
 
-> Glimpse은 활발히 및 자세한 성능을 제공 하는 오픈 소스 NuGet 패키지의 제품군 증가 하 고, 디버깅 및 ASP.NET 앱에 대 한 진단 정보. 설치가 간단 간단 하 고 엄청나게 빠른 이며 모든 페이지의 맨 아래에 주요 성능 메트릭을 표시 합니다. 드릴 다운 하려면 응용 프로그램 서버에서의 진행 상황 확인 해야 할 때 있습니다. Glimpse Azure 테스트 환경을 포함 하 여 개발 주기 전체에서 사용 하는 것이 좋습니다는 훨씬 중요 한 정보를 제공 합니다. 반면 [Fiddler](http://www.telerik.com/fiddler) 및 [F-12 개발 도구](https://msdn.microsoft.com/en-us/library/ie/gg589512(v=vs.85).aspx) 클라이언트 쪽 제공 보기 Glimpse 서버에서 자세히 보기를 제공 합니다. 이 자습서는 간략 ASP.NET MVC와 EF 패키지를 사용 하 여 중점적 하지만 사용할 수 있는 다른 여러 패키지. 가능한 경우을 적절 한에 연결 됩니다 [docs 슬라이드](http://getglimpse.com/Docs/) 유지 관리할 수 있도록입니다. 눈에 볼 수 있는 오픈 소스 프로젝트를 너무 기여할 수 있는 소스 코드와 문서.
+> Glimpse은 활발히 및 자세한 성능을 제공 하는 오픈 소스 NuGet 패키지의 제품군 증가 하 고, 디버깅 및 ASP.NET 앱에 대 한 진단 정보. 설치가 간단 간단 하 고 엄청나게 빠른 이며 모든 페이지의 맨 아래에 주요 성능 메트릭을 표시 합니다. 드릴 다운 하려면 응용 프로그램 서버에서의 진행 상황 확인 해야 할 때 있습니다. Glimpse Azure 테스트 환경을 포함 하 여 개발 주기 전체에서 사용 하는 것이 좋습니다는 훨씬 중요 한 정보를 제공 합니다. 반면 [Fiddler](http://www.telerik.com/fiddler) 및 [F-12 개발 도구](https://msdn.microsoft.com/library/ie/gg589512(v=vs.85).aspx) 클라이언트 쪽 제공 보기 Glimpse 서버에서 자세히 보기를 제공 합니다. 이 자습서는 간략 ASP.NET MVC와 EF 패키지를 사용 하 여 중점적 하지만 사용할 수 있는 다른 여러 패키지. 가능한 경우을 적절 한에 연결 됩니다 [docs 슬라이드](http://getglimpse.com/Docs/) 유지 관리할 수 있도록입니다. 눈에 볼 수 있는 오픈 소스 프로젝트를 너무 기여할 수 있는 소스 코드와 문서.
 
 
 - [Glimpse를 설치합니다.](#ig)
@@ -113,7 +113,7 @@ Glimpse 기본 보안 정책을 이해 표시할 데이터를 로컬 호스트�
 
 모든 사용자만 이러한 변경으로 인해 원격 사이트에 눈에 볼 수 데이터를 볼 수 있습니다. 에 배포 된 적용 된 게시 프로필 (예를 들어 프로그램 Azure 테스트 proifle.)을 사용 하는 경우 위의 태그 게시 프로필에 추가 하는 것이 좋습니다. 추가 될 Glimpse 데이터를 제한 하려면는 `canViewGlimpseData` 역할만 Glimpse 데이터를 보려면이 역할의 사용자가 허용 하 고 있습니다.
 
-주석을 제거는 *GlimpseSecurityPolicy.cs* 파일을 변경는 [IsInRole](https://msdn.microsoft.com/en-us/library/system.security.principal.iprincipal.isinrole(v=vs.110).aspx) 에서 호출할 `Administrator` 에 `canViewGlimpseData` 역할:
+주석을 제거는 *GlimpseSecurityPolicy.cs* 파일을 변경는 [IsInRole](https://msdn.microsoft.com/library/system.security.principal.iprincipal.isinrole(v=vs.110).aspx) 에서 호출할 `Administrator` 에 `canViewGlimpseData` 역할:
 
 [!code-csharp[Main](profile-and-debug-your-aspnet-mvc-app-with-glimpse/samples/sample4.cs?highlight=6)]
 
@@ -121,10 +121,10 @@ Glimpse 기본 보안 정책을 이해 표시할 데이터를 로컬 호스트�
 > 보안-Glimpse에서 제공 되는 다양 한 데이터는 응용 프로그램의 보안을 노출 될 수 있습니다. Microsoft은 프로덕션 앱에서 사용 하기 위해 Glimpse의 보안 감사를 수행 했습니다.
 
 
-추가 역할에 대 한 정보를 참조 하세요. 내 [멤버 자격, OAuth, SQL 데이터베이스와 Secure ASP.NET MVC 5 웹 응용 프로그램을 Azure에 배포](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/) 자습서입니다.
+추가 역할에 대 한 정보를 참조 하세요. 내 [멤버 자격, OAuth, SQL 데이터베이스와 Secure ASP.NET MVC 5 웹 응용 프로그램을 Azure에 배포](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/) 자습서입니다.
 
 <a id="addRes"></a>
 ## <a name="additional-resources"></a>추가 리소스
 
-- [멤버 자격, OAuth, SQL 데이터베이스와 보안 ASP.NET MVC 5 앱을 Azure에 배포](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)
+- [멤버 자격, OAuth, SQL 데이터베이스와 보안 ASP.NET MVC 5 앱을 Azure에 배포](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)
 - [구성 슬라이드](http://getglimpse.com/Docs/Configuration) -Doc 페이지 탭, 런타임 정책을, 로깅 등을 구성 합니다.

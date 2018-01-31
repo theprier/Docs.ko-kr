@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/tutorial-server-broadcast-with-aspnet-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: afb2fa9b3dfd80a2aa49fffae71965fc2098442f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3f641b53a9ed568132909114c6cceaa957064fa2
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="tutorial-server-broadcast-with-aspnet-signalr-1x"></a>자습서: ASP.NET SignalR과 서버 브로드캐스트 1.x
 ====================
@@ -123,7 +123,7 @@ Visual Studio 2010를 설정한 경우 확인 [NuGet](https://visualstudiogaller
 
     [!code-csharp[Main](tutorial-server-broadcast-with-aspnet-signalr/samples/sample3.cs)]
 
-    [허브](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hub(v=vs.111).aspx) 클래스는 클라이언트가 서버에서 호출할 수 있는 메서드를 정의 하는 데 사용 합니다. 메서드가 두 개를 정의 하는: `GetAllStocks()`합니다. 클라이언트가 서버에 처음 연결을 주식의 현재 가격으로 모든 목록을 가져오려면이 메서드를 호출 합니다. 메서드는 동기적으로 실행 하 고 반환할 수 `IEnumerable<Stock>` 메모리에서 연결 된 데이터를 반환 하기 때문에 있습니다. 대기 데이터베이스를 조회 하는 웹 서비스 호출 등을 포함 하는 방법을 사용 하면 데이터를 가져올 메서드를 갖는 경우 지정 하는 경우 `Task<IEnumerable<Stock>>` 비동기 처리를 사용할 경우 반환 값으로. 자세한 내용은 참조 [ASP.NET SignalR 허브 API 가이드-서버-을 비동기적으로 실행할 때](index.md)합니다.
+    [허브](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hub(v=vs.111).aspx) 클래스는 클라이언트가 서버에서 호출할 수 있는 메서드를 정의 하는 데 사용 합니다. 메서드가 두 개를 정의 하는: `GetAllStocks()`합니다. 클라이언트가 서버에 처음 연결을 주식의 현재 가격으로 모든 목록을 가져오려면이 메서드를 호출 합니다. 메서드는 동기적으로 실행 하 고 반환할 수 `IEnumerable<Stock>` 메모리에서 연결 된 데이터를 반환 하기 때문에 있습니다. 대기 데이터베이스를 조회 하는 웹 서비스 호출 등을 포함 하는 방법을 사용 하면 데이터를 가져올 메서드를 갖는 경우 지정 하는 경우 `Task<IEnumerable<Stock>>` 비동기 처리를 사용할 경우 반환 값으로. 자세한 내용은 참조 [ASP.NET SignalR 허브 API 가이드-서버-을 비동기적으로 실행할 때](index.md)합니다.
 
     HubName 특성 허브 클라이언트에 JavaScript 코드에서 참조 되는 방식을 지정 합니다. 이 특성을 사용 하지 않는 경우 클라이언트의 기본 이름 카멜식 대/소문자를 사용의 버전이 예제의 stockTickerHub 수 있는 클래스 이름입니다.
 
@@ -136,7 +136,7 @@ Visual Studio 2010를 설정한 경우 확인 [NuGet](https://visualstudiogaller
 
     ### <a name="storing-the-singleton-instance-in-a-static-field"></a>정적 필드에 단일 인스턴스를 저장합니다.
 
-    코드를 정적 초기화 \_인스턴스 필드는 클래스와이 인스턴스가 있는 인스턴스 속성을 지 원하는 유일한 인스턴스인 만들 수 있는 클래스의 생성자를 private으로 표시 되어 있습니다. [초기화 지연](https://msdn.microsoft.com/en-us/library/dd997286.aspx) 에 사용 되는 \_인스턴스 필드를 인스턴스 생성 threadsafe 인지를 확인 하지만 성능 향상을 위해 되지 않습니다.
+    코드를 정적 초기화 \_인스턴스 필드는 클래스와이 인스턴스가 있는 인스턴스 속성을 지 원하는 유일한 인스턴스인 만들 수 있는 클래스의 생성자를 private으로 표시 되어 있습니다. [초기화 지연](https://msdn.microsoft.com/library/dd997286.aspx) 에 사용 되는 \_인스턴스 필드를 인스턴스 생성 threadsafe 인지를 확인 하지만 성능 향상을 위해 되지 않습니다.
 
     [!code-csharp[Main](tutorial-server-broadcast-with-aspnet-signalr/samples/sample5.cs)]
 
@@ -150,7 +150,7 @@ Visual Studio 2010를 설정한 경우 확인 [NuGet](https://visualstudiogaller
 
     [!code-csharp[Main](tutorial-server-broadcast-with-aspnet-signalr/samples/sample7.cs)]
 
-    주식 컬렉션으로 정의 됩니다는 [ConcurrentDictionary](https://msdn.microsoft.com/en-us/library/dd287191.aspx) 스레드로부터의 안전성에 대 한 유형입니다. 사용할 수 있습니다는 [사전](https://msdn.microsoft.com/en-us/library/xfhwa508.aspx) 개체를 명시적으로 변경 하는 경우 사전을 잠급니다.
+    주식 컬렉션으로 정의 됩니다는 [ConcurrentDictionary](https://msdn.microsoft.com/library/dd287191.aspx) 스레드로부터의 안전성에 대 한 유형입니다. 사용할 수 있습니다는 [사전](https://msdn.microsoft.com/library/xfhwa508.aspx) 개체를 명시적으로 변경 하는 경우 사전을 잠급니다.
 
     이 샘플 응용 프로그램에 대 한 좋다고 확인 메모리에 응용 프로그램 데이터를 저장 하 고 StockTicker 인스턴스가 삭제 될 때 데이터가 손실 합니다. 실제 응용 프로그램에서 데이터베이스와 같은 백 엔드 데이터 저장소와 함께 작동할 것 있습니다.
 
@@ -162,7 +162,7 @@ Visual Studio 2010를 설정한 경우 확인 [NuGet](https://visualstudiogaller
 
     UpdateStockPrices는 state 매개 변수에서 null을 전달 하 고 타이머를 통해 호출 됩니다. 사용 된 잠금이 가격을 업데이트 하기 전에 \_updateStockPricesLock 개체입니다. 코드는 다른 스레드를 가격을 업데이트 하 고 목록에서 각 주식의 TryUpdateStockPrice 호출 다음 확인 합니다. TryUpdateStockPrice 메서드 주가 변경할지 여부를 결정 및 양을 변경할 수 있습니다. 주식 가격이 변경 된 경우 연결 된 모든 클라이언트에 브로드캐스트 주가 변경 BroadcastStockPrice 호출 됩니다.
 
-    \_updatingStockPrices 플래그로 표시 되어 [휘발성](https://msdn.microsoft.com/en-us/library/x13ttww7.aspx) 에 대 한 액세스 threadsafe 인지 확인 합니다.
+    \_updatingStockPrices 플래그로 표시 되어 [휘발성](https://msdn.microsoft.com/library/x13ttww7.aspx) 에 대 한 액세스 threadsafe 인지 확인 합니다.
 
     [!code-csharp[Main](tutorial-server-broadcast-with-aspnet-signalr/samples/sample9.cs)]
 
@@ -182,7 +182,7 @@ Visual Studio 2010를 설정한 경우 확인 [NuGet](https://visualstudiogaller
 
     아직; BroadcastStockPrice를 호출 하는 updateStockPrice 메서드 없음 클라이언트에서 실행 되는 코드를 작성 하는 경우 나중에 추가할 수 있습니다. Clients.All 런타임에 식을 평가할 수는 동적 이므로 updateStockPrice 여기를 참조할 수 있습니다. 이 메서드 호출이 실행 되 면 SignalR에서 메서드 이름과 매개 변수 값에 클라이언트에 보내고 클라이언트에 updateStockPrice 라는 메서드를 해당 메서드는 호출 되 고 매개 변수 값에 전달 됩니다.
 
-    Clients.All 모든 클라이언트에 보내는 것을 의미 합니다. SignalR은 클라이언트 또는에 보내도록 클라이언트 그룹을 지정할 다른 옵션을 제공 합니다. 자세한 내용은 참조 [HubConnectionContext](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubs.hubconnectioncontext(v=vs.111).aspx)합니다.
+    Clients.All 모든 클라이언트에 보내는 것을 의미 합니다. SignalR은 클라이언트 또는에 보내도록 클라이언트 그룹을 지정할 다른 옵션을 제공 합니다. 자세한 내용은 참조 [HubConnectionContext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.hubconnectioncontext(v=vs.111).aspx)합니다.
 
 ### <a name="register-the-signalr-route"></a>SignalR 경로 등록
 
@@ -196,7 +196,7 @@ Visual Studio 2010를 설정한 경우 확인 [NuGet](https://visualstudiogaller
 
     [!code-csharp[Main](tutorial-server-broadcast-with-aspnet-signalr/samples/sample11.cs)]
 
-    기본적으로 모든 SignalR 트래픽에 대 한 기본 URL은 "/ signalr", "/ signalr/허브" 응용 프로그램에 있는 모든 허브에 대 한 프록시를 정의 하는 동적으로 생성 된 JavaScript 파일을 검색 하는 데 사용 됩니다. MapHubs 메서드에 포함 인스턴스의 서로 다른 기본 URL과 특정 SignalR 옵션을 지정할 수 있는 오버 로드는 [HubConfiguration](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubconfiguration(v=vs.111).aspx) 클래스입니다.
+    기본적으로 모든 SignalR 트래픽에 대 한 기본 URL은 "/ signalr", "/ signalr/허브" 응용 프로그램에 있는 모든 허브에 대 한 프록시를 정의 하는 동적으로 생성 된 JavaScript 파일을 검색 하는 데 사용 됩니다. MapHubs 메서드에 포함 인스턴스의 서로 다른 기본 URL과 특정 SignalR 옵션을 지정할 수 있는 오버 로드는 [HubConfiguration](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubconfiguration(v=vs.111).aspx) 클래스입니다.
 4. 사용 하 여 추가 파일 맨 위에 있는 문.
 
     [!code-csharp[Main](tutorial-server-broadcast-with-aspnet-signalr/samples/sample12.cs)]

@@ -2,19 +2,18 @@
 title: "ASP.NET Core 소개"
 author: rick-anderson
 description: "ASP.NET Core를 소개합니다."
-keywords: ASP.NET Core
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 12/12/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: index
-ms.openlocfilehash: 5d8e9a72a3b69866f5a4f725076e44575d20d64f
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: d7957bdc6fa982790141bac9b73ad7d3b1dd3d8a
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="introduction-to-aspnet-core"></a>ASP.NET Core 소개
 
@@ -29,7 +28,7 @@ ASP.NET Core는 클라우드 기반 인터넷에 연결된 최신 응용 프로�
 
 ## <a name="why-use-aspnet-core"></a>ASP.NET Core를 사용하는 이유는 무엇인가요?
 
-수백만 명의 개발자가 [ASP.NET 4.x](https://docs.microsoft.com/en-us/aspnet/overview)를 사용하여 웹앱을 만들었습니다(계속 사용 중). ASP.NET Core는 간결한 모듈식 프레임워크를 만드는 아키텍처 변경 내용을 포함한 ASP.NET 4.x의 새로운 디자인입니다.
+수백만 명의 개발자가 [ASP.NET 4.x](https://docs.microsoft.com/aspnet/overview)를 사용하여 웹앱을 만들었습니다(계속 사용 중). ASP.NET Core는 간결한 모듈식 프레임워크를 만드는 아키텍처 변경 내용을 포함한 ASP.NET 4.x의 새로운 디자인입니다.
 
 ASP.NET Core는 다음과 같은 이점을 제공합니다.
 

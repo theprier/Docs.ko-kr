@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/improving-the-details-and-delete-methods
 msc.type: authoredcontent
-ms.openlocfilehash: d23110944642686b3e62aef1c324847de57a07c4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e46616d45ad0e4a0ab861e6fb53f33bc567cbdea
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="improving-the-details-and-delete-methods-c"></a>세부 정보 및 Delete 메서드 (C#) 향상
 ====================
@@ -77,13 +77,13 @@ ms.lasthandoff: 11/10/2017
 
 응용 프로그램을 배포 하려는 경우에 첫 번째 테스트 로컬 IIS 7 서버에서 응용 프로그램에 도움이 됩니다. 이 사용 하 여 [웹 플랫폼 설치 관리자](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=ASPNET;) 링크 ASP.NET 응용 프로그램에 대 한 IIS 설정을 사용 하도록 설정 합니다. 다음 배포 링크를 참조 하십시오.
 
-- [ASP.NET 배포 콘텐츠 맵](https://msdn.microsoft.com/en-us/library/dd394698.aspx)
+- [ASP.NET 배포 콘텐츠 맵](https://msdn.microsoft.com/library/dd394698.aspx)
 - [IIS를 사용 하도록 설정 7.x](https://blogs.msdn.com/b/rickandy/archive/2011/03/14/enabling-iis-7-x-on-windows-7-vista-sp1-windows-2008-windows-2008-r2.aspx)
-- [웹 응용 프로그램 프로젝트 배포](https://msdn.microsoft.com/en-us/library/dd394698.aspx)
+- [웹 응용 프로그램 프로젝트 배포](https://msdn.microsoft.com/library/dd394698.aspx)
 
-이 중간 수준으로 이동 이제 확인해 [ASP.NET MVC 응용 프로그램에 대 한 Entity Framework 데이터 모델을 만드는](../../../getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md) 및 [MVC Music Store](../../mvc-music-store/mvc-music-store-part-1.md) 자습서 탐색 하는 [ASP.NET MSDN에 대 한 문서](https://msdn.microsoft.com/en-us/library/gg416514(VS.98).aspx), 많은 비디오 및 리소스에을 체크 아웃 하 고 [https://asp.net/mvc](https://asp.net/mvc) ASP.NET MVC에 대해 훨씬 더 자세한! [ASP.NET MVC 포럼](https://forums.asp.net/1146.aspx) 질문 하기에 적합 합니다.
+이 중간 수준으로 이동 이제 확인해 [ASP.NET MVC 응용 프로그램에 대 한 Entity Framework 데이터 모델을 만드는](../../../getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md) 및 [MVC Music Store](../../mvc-music-store/mvc-music-store-part-1.md) 자습서 탐색 하는 [ASP.NET MSDN에 대 한 문서](https://msdn.microsoft.com/library/gg416514(VS.98).aspx), 많은 비디오 및 리소스에을 체크 아웃 하 고 [https://asp.net/mvc](https://asp.net/mvc) ASP.NET MVC에 대해 훨씬 더 자세한! [ASP.NET MVC 포럼](https://forums.asp.net/1146.aspx) 질문 하기에 적합 합니다.
 
-원하는 작업 합니다.
+즐겨보세요!
 
 -Scott Hanselman ([http://hanselman.com](http://hanselman.com) 및 [ @shanselman ](http://twitter.com/shanselman) Twitter의) 및 Rick Anderson [blogs.msdn.com/rickAndy](https://blogs.msdn.com/rickAndy)
 

@@ -2,19 +2,18 @@
 title: "기본 제공 ASP.NET Core 태그 도우미"
 author: pkellner
 description: "기본 제공 ASP.NET Core 태그 도우미"
-keywords: "ASP.NET Core, 태그 도우미"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 09/13/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: aspnet-core
+ms.technology: aspnet
+ms.topic: article
 uid: mvc/views/tag-helpers/builtin-th/Index
-ms.openlocfilehash: dd732822a715df19c0ee4b6accad3455ad6537da
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 09024bf0d6c87fce9eba9b70bebefa11d2ff0a44
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="aspnet-core-built-in-tag-helpers"></a>기본 제공 ASP.NET Core 태그 도우미
 

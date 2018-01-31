@@ -16,7 +16,7 @@ MVC는 들어오는 URL에 따라 컨트롤러 클래스(및 그 안에 작업 �
 
 `/[Controller]/[ActionName]/[Parameters]`
 
-*Startup.cs* 파일의 라우팅에 대한 형식을 지정합니다.
+*Startup.cs* 파일의 `Configure` 메서드에서 라우팅에 대한 형식을 설정합니다.
 
 [!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=snippet_1&highlight=5)]
 

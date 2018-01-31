@@ -12,28 +12,28 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2012/windows-azure-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: 1cb38d66bd0373159e54abf822fba9c5829774ac
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4deb3536699f1ef3025f8858ee71a76a1c2def18
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="windows-azure-authentication"></a>Windows Azure 인증
 ====================
 으로 [Rick Anderson](https://github.com/Rick-Anderson)
 
-> Windows Azure Active Directory를 사용 하면 간단 하 게에서 호스팅된 웹 응용 프로그램에 대 한 인증을 사용 하도록 설정에 대 한 Microsoft ASP.NET 도구 [Windows Azure 웹 사이트](https://www.windowsazure.com/en-us/home/features/web-sites/)합니다. Office 365 사용자 인증을 위해 조직, 온-프레미스 Active Directory에서 동기화 된 회사 계정 또는 사용자 고유의 사용자 지정 Windows Azure Active Directory 도메인에서 만든 사용자가 Windows Azure 인증을 사용할 수 있습니다. Windows Azure 인증을 사용 하도록 설정 단일을 사용 하 여 사용자를 인증 하는 응용 프로그램을 구성 [Windows Azure Active Directory](https://docs.microsoft.com/azure/active-directory/) 테 넌 트입니다.
+> Windows Azure Active Directory를 사용 하면 간단 하 게에서 호스팅된 웹 응용 프로그램에 대 한 인증을 사용 하도록 설정에 대 한 Microsoft ASP.NET 도구 [Windows Azure 웹 사이트](https://www.windowsazure.com/home/features/web-sites/)합니다. Office 365 사용자 인증을 위해 조직, 온-프레미스 Active Directory에서 동기화 된 회사 계정 또는 사용자 고유의 사용자 지정 Windows Azure Active Directory 도메인에서 만든 사용자가 Windows Azure 인증을 사용할 수 있습니다. Windows Azure 인증을 사용 하도록 설정 단일을 사용 하 여 사용자를 인증 하는 응용 프로그램을 구성 [Windows Azure Active Directory](https://docs.microsoft.com/azure/active-directory/) 테 넌 트입니다.
 > 
-> 클라우드 서비스에서 웹 역할에 대 한 ASP.NET Windows Azure 인증 도구를 사용할 수 없습니다 하지만 이후 릴리스에서 그러려면 계획 합니다. [Windows Identity Foundation](https://msdn.microsoft.com/en-us/library/hh291066(v=VS.110).aspx) (WIF)는 Windows Azure 웹 역할에서 지원 됩니다.
+> 클라우드 서비스에서 웹 역할에 대 한 ASP.NET Windows Azure 인증 도구를 사용할 수 없습니다 하지만 이후 릴리스에서 그러려면 계획 합니다. [Windows Identity Foundation](https://msdn.microsoft.com/library/hh291066(v=VS.110).aspx) (WIF)는 Windows Azure 웹 역할에서 지원 됩니다.
 > 
-> 온-프레미스 Active Directory와 Windows Azure Active Directory 테 넌 트 간의 동기화를 설정 하는 방법에 대 한 자세한 내용은 참조 하십시오 [구현 및 관리를 사용 하 여 AD FS 2.0 single sign on](https://technet.microsoft.com/en-us/library/jj205462.aspx)합니다.
+> 온-프레미스 Active Directory와 Windows Azure Active Directory 테 넌 트 간의 동기화를 설정 하는 방법에 대 한 자세한 내용은 참조 하십시오 [구현 및 관리를 사용 하 여 AD FS 2.0 single sign on](https://technet.microsoft.com/library/jj205462.aspx)합니다.
 > 
 > Windows Azure Active Directory는 현재 보기로 사용할 수는 [무료 미리 보기 서비스](https://azure.microsoft.com/free/?WT.mc_id=A443DD604)합니다.
 
 
 ## <a name="requirements"></a>요구 사항:
 
-- Visual Studio 2012 또는 [Visual Studio Express 2012](https://www.microsoft.com/visualstudio/11/en-us/products/express)
+- Visual Studio 2012 또는 [Visual Studio Express 2012](https://www.microsoft.com/visualstudio/11/products/express)
 - [웹 도구 Visual Studio 2012 용 확장](https://go.microsoft.com/fwlink/?LinkID=282228&amp;clcid=0x409) 또는 [웹 도구 확장에 대 한 Visual Studio Express 2012](https://go.microsoft.com/fwlink/?LinkID=282231&amp;clcid=0x409)
 - [Microsoft ASP.NET Windows 용 도구 Visual Studio 2012 Azure Active Directory –](https://go.microsoft.com/fwlink/?LinkID=282306) 또는 [Windows 용 Microsoft ASP.NET 도구 Azure Active Directory – Visual Studio Express 2012 for Web](https://go.microsoft.com/fwlink/?LinkId=282652)
 
@@ -157,15 +157,15 @@ Microsoft 계정 (예: hotmail.com, live.com, outlook.com)에 이미 로그인 �
 
 ## <a name="acs20012-the-request-is-not-a-valid-ws-federation-protocol-message-opop"></a>ACS20012: 요청이 않습니다. 유효한 Ws-federation 프로토콜 메시지 < 된 >< / 된 >
 
-Azure 서비스 중 하나를 다른 Microsoft ID를 이미 로그인 하는 경우 발생할 수 있습니다. 사용 하 여 개인 브라우저 창을 IE에서 InPrivate 또는 Incognito 크롬에서 선택 하거나 모든 쿠키를 취소 합니다. < 된 >< / 된 >
+Azure 서비스 중 하나를 다른 Microsoft ID를 이미 로그인 하는 경우 발생할 수 있습니다. 사용 하 여 개인 브라우저 창을 IE에서 InPrivate 또는 Incognito 크롬에서 선택 하거나 모든 쿠키를 취소 합니다. <o:p></o:p>
 
 ## <a name="additional-resources"></a>추가 리소스
 
 - [Microsoft ASP.NET Windows 용 도구 Visual Studio 2012 Azure Active Directory –](https://blogs.msdn.com/b/vbertocci/archive/2013/02/18/microsoft-asp-net-tools-for-windows-azure-active-directory-visual-studio-2012.aspx) – Vittorio Bertocci
 - [Windows Azure 기능: Identity](https://docs.microsoft.com/azure/active-directory/)
-- [TechNet: Windows Azure Active Directory](https://technet.microsoft.com/en-us/library/hh967619.aspx)
+- [TechNet: Windows Azure Active Directory](https://technet.microsoft.com/library/hh967619.aspx)
 - [Windows Azure Active Directory: 조직에 대 한 앱을 개발 합니다.](https://activedirectory.windowsazure.com/Develop/Single-Tenant.aspx)
 - [Windows Azure Active Directory: 여러 조직에 대 한 앱을 개발 합니다.](https://activedirectory.windowsazure.com/Develop/Multi-Tenant.aspx)
 - [Single sign on Windows Azure Active Directory와 구현 하는 방법](https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect)
 - [Single Sign-on windows Azure Active Directory: 심층](https://blogs.msdn.com/b/vbertocci/archive/2012/07/05/single-sign-on-with-windows-azure-active-directory-a-deep-dive.aspx) – Vittorio Bertocci
-- [구현 및 관리를 사용 하 여 AD FS 2.0 single sign on](https://technet.microsoft.com/en-us/library/jj205462.aspx)
+- [구현 및 관리를 사용 하 여 AD FS 2.0 single sign on](https://technet.microsoft.com/library/jj205462.aspx)

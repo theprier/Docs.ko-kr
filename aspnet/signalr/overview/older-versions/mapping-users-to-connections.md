@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/mapping-users-to-connections
 msc.type: authoredcontent
-ms.openlocfilehash: 561c5739c4e8465efeb4b5d1eaf8a196dab8673f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 896bf4142ce090e39ed5697ff053cd56728318ed
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="mapping-signalr-users-to-connections-in-signalr-1x"></a>SignalR 사용자의 SignalR 연결으로 매핑 1.x
 ====================
@@ -98,7 +98,7 @@ ms.lasthandoff: 11/10/2017
 
 ### <a name="azure-table-storage"></a>Azure 테이블 저장소
 
-다음 Azure 테이블 저장소 예제 데이터베이스 예제와 비슷합니다. Azure 테이블 저장소 서비스를 시작 해야 하는 정보를 모두 포함 되지 않습니다. 자세한 내용은 참조 [.NET에서 테이블 저장소를 사용 하는 방법을](https://azure.microsoft.com/en-us/documentation/articles/storage-dotnet-how-to-use-tables/)합니다.
+다음 Azure 테이블 저장소 예제 데이터베이스 예제와 비슷합니다. Azure 테이블 저장소 서비스를 시작 해야 하는 정보를 모두 포함 되지 않습니다. 자세한 내용은 참조 [.NET에서 테이블 저장소를 사용 하는 방법을](https://azure.microsoft.com/documentation/articles/storage-dotnet-how-to-use-tables/)합니다.
 
 다음 예제에서는 연결 정보를 저장 하기 위한 테이블 엔터티를 보여 줍니다. 사용자 이름으로 데이터를 분할 하 고 사용자는 언제 든 지 여러 개의 연결이 있을 수 있으므로 각 엔터티에 연결 id로 식별 합니다.
 

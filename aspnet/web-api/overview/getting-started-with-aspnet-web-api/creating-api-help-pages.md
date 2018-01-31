@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/creating-api-help-pages
 msc.type: authoredcontent
-ms.openlocfilehash: 18d04492529e96b6c0e14f1d7a30378b4832f4c8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 37fd26ebaea192cb540c443eff8a07343ab8c15b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-help-pages-for-aspnet-web-api"></a>ASP.NET Web API에 대 한 도움말 페이지 만들기
 ====================
@@ -76,7 +76,7 @@ Web API를 만들 때 유용 도움말 페이지를 만들 되 고 다른 개발
 
 ## <a name="adding-api-documentation"></a>API 설명서 추가
 
-기본적으로 도움말 페이지는 설명서에 대 한 자리 표시자 문자열을 제공 합니다. 사용할 수 있습니다 [XML 문서 주석](https://msdn.microsoft.com/en-us/library/b2s063f7.aspx) 는 문서를 만들 수 있습니다. 이 기능을 사용 하려면 영역/HelpPage/응용 프로그램 파일을 열고\_Start/HelpPageConfig.cs 다음 줄에서 주석 처리 제거:
+기본적으로 도움말 페이지는 설명서에 대 한 자리 표시자 문자열을 제공 합니다. 사용할 수 있습니다 [XML 문서 주석](https://msdn.microsoft.com/library/b2s063f7.aspx) 는 문서를 만들 수 있습니다. 이 기능을 사용 하려면 영역/HelpPage/응용 프로그램 파일을 열고\_Start/HelpPageConfig.cs 다음 줄에서 주석 처리 제거:
 
 [!code-csharp[Main](creating-api-help-pages/samples/sample3.cs)]
 

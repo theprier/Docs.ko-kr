@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/signalr-performance
 msc.type: authoredcontent
-ms.openlocfilehash: 52052ad202958eb5d648ceb64d9f06fb86ef3777
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: bad742af28d6c36bb1b66207c2ba09d140332449
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="signalr-performance-signalr-1x"></a>SignalR 성능 (SignalR 1.x)
 ====================
@@ -70,7 +70,7 @@ Serialize 된 개체의 크기를 줄여 SignalR 메시지의 크기를 줄일 �
 
 ### <a name="tuning-your-signalr-server-for-performance"></a>SignalR 서버 성능을 튜닝
 
-다음 구성 설정은 SignalR 응용 프로그램에서 성능 향상을 위해 서버 조정할 데 사용할 수 있습니다. ASP.NET 응용 프로그램의 성능을 향상 하는 방법에 대 한 일반적인 정보를 참조 하십시오. [ASP.NET 성능 향상](https://msdn.microsoft.com/en-us/library/ff647787.aspx)합니다.
+다음 구성 설정은 SignalR 응용 프로그램에서 성능 향상을 위해 서버 조정할 데 사용할 수 있습니다. ASP.NET 응용 프로그램의 성능을 향상 하는 방법에 대 한 일반적인 정보를 참조 하십시오. [ASP.NET 성능 향상](https://msdn.microsoft.com/library/ff647787.aspx)합니다.
 
 **SignalR 구성 설정**
 
@@ -209,19 +209,19 @@ SignalR 메시지 트래픽에 의해 생성 된 오류를 측정 하는 다음 
 
 다음 성능 카운터는 응용 프로그램의 성능 모니터링에 유용한 수도 있습니다.
 
-**메모리**
+**Memory**
 
 - 전체 힙 (w3wp)의.NET CLR 메모리 # 바이트
 
 **ASP.NET**
 
-- Asp. net\requests Current
+- ASP.NET\Requests Current
 - ASP.NET\Queued
 - ASP.NET\Rejected
 
 **CPU**
 
-- 프로세서 Information\Processor 시간
+- Processor Information\Processor Time
 
 **TCP/IP**
 
@@ -244,6 +244,6 @@ SignalR 메시지 트래픽에 의해 생성 된 오류를 측정 하는 다음 
 
 ASP.NET 성능 모니터링 및 튜닝에 대 한 자세한 내용은 다음 항목을 참조 합니다.
 
-- [ASP.NET 성능 개요](https://msdn.microsoft.com/en-us/library/cc668225(v=vs.100).aspx)
+- [ASP.NET 성능 개요](https://msdn.microsoft.com/library/cc668225(v=vs.100).aspx)
 - [IIS 7.5, IIS 7.0 및 IIS 6.0에 ASP.NET 스레드 사용](https://blogs.msdn.com/b/tmarq/archive/2007/07/21/asp-net-thread-usage-on-iis-7-0-and-6-0.aspx)
-- [&lt;applicationPool&gt; 요소 (웹 설정)](https://msdn.microsoft.com/en-us/library/dd560842.aspx)
+- [&lt;applicationPool&gt; 요소 (웹 설정)](https://msdn.microsoft.com/library/dd560842.aspx)

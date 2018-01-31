@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/creating-a-server-farm-with-the-web-farm-framework
 msc.type: authoredcontent
-ms.openlocfilehash: 2458abc863a83364f90fc9d6edaace897c23b4c9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c592ed78a7332834923ce2290af77919fb3c7576
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-server-farm-with-the-web-farm-framework"></a>웹 팜 프레임 워크를 사용 하 여 서버 팜 만들기
 ====================
@@ -65,7 +65,7 @@ WFF 여러 부하 분산 된 웹 서버에서 웹 플랫폼 제품 및 구성 �
 - 서버에 고정 IP 주소입니다.
 
 > [!NOTE]
-> 참조 컴퓨터는 도메인에 가입에 대 한 자세한 내용은 [도메인 및 로그온에 컴퓨터 가입](https://technet.microsoft.com/en-us/library/cc725618(v=WS.10).aspx)합니다. 고정 IP 주소를 구성 하는 방법에 대 한 자세한 내용은 참조 하십시오. [고정 IP 주소 구성](https://technet.microsoft.com/en-us/library/cc754203(v=ws.10).aspx)합니다.
+> 참조 컴퓨터는 도메인에 가입에 대 한 자세한 내용은 [도메인 및 로그온에 컴퓨터 가입](https://technet.microsoft.com/library/cc725618(v=WS.10).aspx)합니다. 고정 IP 주소를 구성 하는 방법에 대 한 자세한 내용은 참조 하십시오. [고정 IP 주소 구성](https://technet.microsoft.com/library/cc754203(v=ws.10).aspx)합니다.
 
 
 ## <a name="create-the-wff-controller-server"></a>WFF 컨트롤러 서버 만들기
@@ -78,7 +78,7 @@ WFF 컨트롤러 서버를 만들려면 IIS 7 이상와 WFF 2.0 이상을 설치
 2. 맨 위에 있는 **웹 플랫폼 설치 관리자 3.0** 창 클릭 **제품**합니다.
 3. 왼쪽 탐색 창에서 창에서 클릭 **서버**합니다.
 4. 에 **IIS 7 권장 구성** 행에서 클릭 **추가**합니다.
-5. 에 **웹 팜 프레임 워크 2.** *x* 행에서 클릭 **추가**합니다.
+5. 에 **웹 팜 프레임 워크 2. * * * x* 행에서 클릭 **추가**합니다.
 
     ![](creating-a-server-farm-with-the-web-farm-framework/_static/image2.png)
 6. **설치**를 클릭합니다. 웹 플랫폼 설치 관리자 설치 목록에 웹 배포 도구 다른 다양 한 종속성과 함께 추가 있는지 확인 합니다.

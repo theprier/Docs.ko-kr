@@ -2,20 +2,18 @@
 title: Azure Active Directory
 author: rick-anderson
 description: "이 문서는 ASP.NET Core와 관련된 다양한 Azure Active Directory 항목에 대한 목차로 사용됩니다."
-keywords: "ASP.NET Core,Azure Active Directory,AAD,인증"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/4/2017
-ms.topic: article
-ms.assetid: bd272e10-7b7d-43cf-85e2-42a7f87fedb5
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/authentication/azure-active-directory/index
-ms.openlocfilehash: 8323454854a5b27949c3d290810071d4c21cc9cf
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3bc8991ff6c2017be43d9fd43ac22e5334b62681
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="azure-active-directory"></a>Azure Active Directory
 

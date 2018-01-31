@@ -2,20 +2,18 @@
 title: "역할 기반 권한 부여"
 author: rick-anderson
 description: "이 문서에는 역할 권한 부여 속성에 전달 하 여 ASP.NET Core 컨트롤러 및 작업 액세스를 제한 하는 방법을 보여 줍니다."
-keywords: "ASP.NET Core, 역할, 권한 부여"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.assetid: 5e014da1-8bc0-409b-951a-88b92c661fdf
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/authorization/roles
-ms.openlocfilehash: 26babef1a296aaa1fa11f36d30c4d911d73808ce
-ms.sourcegitcommit: df2157ae9aeea0075772719c29784425c783e82a
+ms.openlocfilehash: 764d1fcc384fc8370d1a536f9609333de6bd4357
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="role-based-authorization"></a>역할 기반 권한 부여
 

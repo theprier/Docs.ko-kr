@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/creating-the-membership-schema-in-sql-server-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2155f9b0893a0b1d3cf60bc63d80df4417649beb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 38fc60b79a348ab198069a9a80a085e0dc4bcb88
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-the-membership-schema-in-sql-server-c"></a>SQL Server (C#)에서 멤버 자격 스키마 만들기
 ====================
@@ -33,7 +33,7 @@ ms.lasthandoff: 11/10/2017
 
 ASP.NET 2.0 이전 개발자가 이러한 사용자 계정 관련 작업을 모두 구현 하는 데 필요한 후크에 있었습니다. 다행히 ASP.NET 팀이 이러한 단점을 인식 하 고 ASP.NET 2.0과 함께 구성원 프레임 워크가 추가 되었습니다. 멤버 자격 프레임 워크는.NET Framework의 핵심 사용자 계정 관련 작업을 수행 하기 위한 프로그래밍 인터페이스를 제공 하는 클래스의 집합입니다. 이 프레임 워크 위에 빌드된는 [공급자 모델](http://aspnet.4guysfromrolla.com/articles/101905-1.aspx), 개발자가 사용자 지정된 된 구현 하는 표준화 된 API에 연결할 수 있습니다.
 
-에 설명 된 대로 <a id="Tutorial1"> </a> [ *보안 기본 사항 및 ASP.NET 지원* ](../introduction/security-basics-and-asp-net-support-cs.md) 자습서에서는 두 명의 기본 제공 멤버 자격 공급자와 함께 제공 되는.NET Framework: [ `ActiveDirectoryMembershipProvider` ](https://msdn.microsoft.com/en-us/library/system.web.security.activedirectorymembershipprovider.aspx) 및 [ `SqlMembershipProvider` ](https://msdn.microsoft.com/en-us/library/system.web.security.sqlmembershipprovider.aspx)합니다. 이름에서 알 수 있듯이 `SqlMembershipProvider` 사용자 저장소로 Microsoft SQL Server 데이터베이스를 사용 합니다. 응용 프로그램에서이 공급자를 사용 하려면 공급자를 저장소로 사용 하도록 데이터베이스를 해야 합니다. 짐작할 수는 `SqlMembershipProvider` 사용자 저장소 데이터베이스의 특정 데이터베이스 테이블, 뷰 및 저장된 프로시저를 예상 합니다. 선택한 데이터베이스에이 필요한 스키마를 추가 해야 합니다.
+에 설명 된 대로 <a id="Tutorial1"> </a> [ *보안 기본 사항 및 ASP.NET 지원* ](../introduction/security-basics-and-asp-net-support-cs.md) 자습서에서는 두 명의 기본 제공 멤버 자격 공급자와 함께 제공 되는.NET Framework: [ `ActiveDirectoryMembershipProvider` ](https://msdn.microsoft.com/library/system.web.security.activedirectorymembershipprovider.aspx) 및 [ `SqlMembershipProvider` ](https://msdn.microsoft.com/library/system.web.security.sqlmembershipprovider.aspx)합니다. 이름에서 알 수 있듯이 `SqlMembershipProvider` 사용자 저장소로 Microsoft SQL Server 데이터베이스를 사용 합니다. 응용 프로그램에서이 공급자를 사용 하려면 공급자를 저장소로 사용 하도록 데이터베이스를 해야 합니다. 짐작할 수는 `SqlMembershipProvider` 사용자 저장소 데이터베이스의 특정 데이터베이스 테이블, 뷰 및 저장된 프로시저를 예상 합니다. 선택한 데이터베이스에이 필요한 스키마를 추가 해야 합니다.
 
 이 자습서를 사용 하려면 데이터베이스에 필요한 스키마를 추가 하기 위한 기술을 검사 하 여 시작 된 `SqlMembershipProvider`합니다. 그런 다음, 스키마에는 키 테이블을 확인 하 고 목적 및 중요도 설명 합니다. 이 자습서를 살펴보면 ASP.NET 응용 프로그램 구성원 프레임 워크를 사용 해야 하는 공급자를 구별 하는 방법으로 끝납니다.
 
@@ -55,7 +55,7 @@ ASP.NET 응용 프로그램의 데이터는 일반적으로 다양 한 데이터
 두 번째 자습서 이후 구축한에서는 응용 프로그램에 데이터베이스를 아직 필요 하지 않습니다. 하지만 필요 하나 이제 사용자 저장소에 대 한 합니다. 보겠습니다 만들고 하 여 추가 된 후에 필요한 스키마는 `SqlMembershipProvider` 공급자 (2 단계 참조).
 
 > [!NOTE]
-> 이 자습서 시리즈를 사용 합니다는 [Microsoft SQL Server 2005 Express Edition](https://msdn.microsoft.com/en-us/sql/Aa336346.aspx) 를 응용 프로그램 테이블을 저장할 데이터베이스 및 `SqlMembershipProvider` 스키마입니다. 두 가지 이유로이 결정 했지만: 먼저-비용으로 인해 무료 Express Edition은 가장 때 액세스할 수 있는 버전의 SQL Server 2005; 둘째, SQL Server 2005 Express Edition 데이터베이스 안에 있을 수 직접 웹 응용 프로그램의 `App_Data` 패키지는 데이터베이스와 웹 응용 프로그램 시작 함께 하나의 ZIP 파일에 하 고 별도 설치 지침 없이 다시 배포 하려면을 쉽게 만드는 폴더 또는 구성 옵션을 지정 합니다. 비-Express Edition 버전의 SQL Server를 사용 하 여 수행 하려는 경우 자유롭게 합니다. 단계는 거의 동일 합니다. `SqlMembershipProvider` 스키마는 모든 버전의 Microsoft SQL Server 2000 사용 및 최대 합니다.
+> 이 자습서 시리즈를 사용 합니다는 [Microsoft SQL Server 2005 Express Edition](https://msdn.microsoft.com/sql/Aa336346.aspx) 를 응용 프로그램 테이블을 저장할 데이터베이스 및 `SqlMembershipProvider` 스키마입니다. 두 가지 이유로이 결정 했지만: 먼저-비용으로 인해 무료 Express Edition은 가장 때 액세스할 수 있는 버전의 SQL Server 2005; 둘째, SQL Server 2005 Express Edition 데이터베이스 안에 있을 수 직접 웹 응용 프로그램의 `App_Data` 패키지는 데이터베이스와 웹 응용 프로그램 시작 함께 하나의 ZIP 파일에 하 고 별도 설치 지침 없이 다시 배포 하려면을 쉽게 만드는 폴더 또는 구성 옵션을 지정 합니다. 비-Express Edition 버전의 SQL Server를 사용 하 여 수행 하려는 경우 자유롭게 합니다. 단계는 거의 동일 합니다. `SqlMembershipProvider` 스키마는 모든 버전의 Microsoft SQL Server 2000 사용 및 최대 합니다.
 
 
 솔루션 탐색기에서 마우스 오른쪽 단추로 클릭는 `App_Data` 폴더를 새 항목 추가를 선택 합니다. (표시 되지 않으면는 `App_Data` 폴더를 프로젝트 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭 ASP.NET 폴더 추가 선택 하 고 선택 `App_Data`.) 새 항목 추가 대화 상자에서 명명 된 새 SQL 데이터베이스를 추가 하도록 선택 `SecurityTutorials.mdf`합니다. 추가 될이 자습서는 `SqlMembershipProvider` 추가 만듭니다 후속 자습서;이 데이터베이스에 스키마를 응용 프로그램 데이터를 캡처하는 테이블입니다.
@@ -76,7 +76,7 @@ ASP.NET 응용 프로그램의 데이터는 일반적으로 다양 한 데이터
 
 ## <a name="step-2-adding-thesqlmembershipproviderschema-to-the-database"></a>2 단계: 추가 된`SqlMembershipProvider`데이터베이스에 대 한 스키마
 
-`SqlMembershipProvider` 테이블, 뷰 및 저장된 프로시저는 사용자 저장소 데이터베이스에 설치 되어야 하는 특정 집합이 필요 합니다. 사용 하 여 이러한 필요한 데이터베이스 개체를 추가할 수는 [ `aspnet_regsql.exe` 도구](https://msdn.microsoft.com/en-us/library/ms229862.aspx)합니다. 이 파일은 `%WINDIR%\Microsoft.Net\Framework\v2.0.50727\` 폴더입니다.
+`SqlMembershipProvider` 테이블, 뷰 및 저장된 프로시저는 사용자 저장소 데이터베이스에 설치 되어야 하는 특정 집합이 필요 합니다. 사용 하 여 이러한 필요한 데이터베이스 개체를 추가할 수는 [ `aspnet_regsql.exe` 도구](https://msdn.microsoft.com/library/ms229862.aspx)합니다. 이 파일은 `%WINDIR%\Microsoft.Net\Framework\v2.0.50727\` 폴더입니다.
 
 > [!NOTE]
 > `aspnet_regsql.exe` 명령줄 기능과 그래픽 사용자 인터페이스 도구를 제공 합니다. 그래픽 인터페이스 더 많은 사용자에 게 친숙 며이 자습서에 맞게 살펴보겠습니다. 명령줄 인터페이스는 유용 추가 `SqlMembershipProvider` 자동화 해야 하는 스키마, 스크립트 또는 테스트 시나리오를 자동화 된 빌드와 같이 합니다.
@@ -204,7 +204,7 @@ ASP.NET 응용 프로그램에서 멤버 자격 및 역할 프레임 워크를 �
 **그림 11**: 사용자 계정 수 수 분할에서 여러 응용 프로그램 ([전체 크기 이미지를 보려면 클릭](creating-the-membership-schema-in-sql-server-cs/_static/image33.png))
 
 
-`aspnet_Applications` 테이블이 이러한 파티션을 정의 합니다. 데이터베이스를 사용 하 여 사용자 계정 정보를 저장 하는 각 응용 프로그램은이 테이블의 행으로 표시 됩니다. `aspnet_Applications` 테이블에 4 개의 열이: `ApplicationId`, `ApplicationName`, `LoweredApplicationName`, 및 `Description`합니다. `ApplicationId`형식의 [ `uniqueidentifier` ](https://msdn.microsoft.com/en-us/library/ms187942.aspx) 테이블의 기본 키 이며 `ApplicationName` 각 응용 프로그램에 대 한 고유 사용자에 게 친숙 한 이름을 제공 합니다.
+`aspnet_Applications` 테이블이 이러한 파티션을 정의 합니다. 데이터베이스를 사용 하 여 사용자 계정 정보를 저장 하는 각 응용 프로그램은이 테이블의 행으로 표시 됩니다. `aspnet_Applications` 테이블에 4 개의 열이: `ApplicationId`, `ApplicationName`, `LoweredApplicationName`, 및 `Description`합니다. `ApplicationId`형식의 [ `uniqueidentifier` ](https://msdn.microsoft.com/library/ms187942.aspx) 테이블의 기본 키 이며 `ApplicationName` 각 응용 프로그램에 대 한 고유 사용자에 게 친숙 한 이름을 제공 합니다.
 
 다른 멤버 자격 및 역할 관련 테이블에 다시 연결 된 `ApplicationId` 필드에 `aspnet_Applications`합니다. 예를 들어는 `aspnet_Users` , 각 사용자 계정에 대 한 레코드를 포함 하는 테이블에는 `ApplicationId` 외래 키 필드;에 대 한 ditto는 `aspnet_Roles` 테이블입니다. `ApplicationId` 속한 역할 또는 이러한 테이블의 필드에에서 사용자 계정을 응용 프로그램 파티션을 지정 합니다.
 
@@ -216,7 +216,7 @@ ASP.NET 응용 프로그램에서 멤버 자격 및 역할 프레임 워크를 �
 - `UserName`
 - `ApplicationId`
 
-`UserId`기본 키 (유형의 `uniqueidentifier`). `UserName`형식이 `nvarchar(256)` 및 암호와 함께 사용자의 자격 증명을 만듭니다. (사용자의 암호에 저장 됩니다는 `aspnet_Membership` 테이블입니다.) `ApplicationId` 에서 특정 응용 프로그램에 사용자 계정을 연결 `aspnet_Applications`합니다. 복합 [ `UNIQUE` 제약 조건](https://msdn.microsoft.com/en-us/library/ms191166.aspx) 에 `UserName` 및 `ApplicationId` 열입니다. 이렇게 하면 각 사용자 지정된 된 응용 프로그램에 고유 이름이 아직 동일한 고려한 `UserName` 서로 다른 응용 프로그램에서 사용할 수 있습니다.
+`UserId`기본 키 (유형의 `uniqueidentifier`). `UserName`형식이 `nvarchar(256)` 및 암호와 함께 사용자의 자격 증명을 만듭니다. (사용자의 암호에 저장 됩니다는 `aspnet_Membership` 테이블입니다.) `ApplicationId` 에서 특정 응용 프로그램에 사용자 계정을 연결 `aspnet_Applications`합니다. 복합 [ `UNIQUE` 제약 조건](https://msdn.microsoft.com/library/ms191166.aspx) 에 `UserName` 및 `ApplicationId` 열입니다. 이렇게 하면 각 사용자 지정된 된 응용 프로그램에 고유 이름이 아직 동일한 고려한 `UserName` 서로 다른 응용 프로그램에서 사용할 수 있습니다.
 
 `aspnet_Membership` 사용자의 암호, 전자 메일 주소는 마지막 로그인 날짜 및 시간 및 등과 같은 추가 사용자 계정 정보가 포함 됩니다. 레코드 간에 일대일 대응이 `aspnet_Users` 및 `aspnet_Membership` 테이블입니다. 이 관계에 의해 보장 되는 `UserId` 필드에 `aspnet_Membership`, 테이블의 기본 키로 제공 되 합니다. 마찬가지로 `aspnet_Users` 테이블 `aspnet_Membership` 포함는 `ApplicationId` 이 정보는 특정 응용 프로그램 파티션에 연결 하는 필드입니다.
 
@@ -232,13 +232,13 @@ ASP.NET 응용 프로그램에서 멤버 자격 및 역할 프레임 워크를 �
 
 암호를 저장 하는 일을 담당 하는 열 `Password`, `PasswordFormat`, 및 `PasswordSalt`합니다. `PasswordFormat`형식의 필드는 `int` 암호를 저장 하는 데 사용 되는 기술은 나타내는 값: 0 지우기에 대 한; Hashed에 대 한 1; 암호화에 대 한 2입니다. `PasswordSalt`사용 하는 암호 저장 방법에 관계 없이 임의로 생성 된 문자열을 할당 값 `PasswordSalt` 암호의 해시를 계산할 때만 사용 됩니다. 마지막으로 `Password` 일반 텍스트 암호의 암호화 된 암호 또는 암호를 해시 수를 실제 암호 데이터를 포함 하는 열입니다.
 
-표 1이 3 열의 수 모양을 보여줍니다 다양 한 저장소 기술에 대 한 MySecret 암호를 저장할 때! 입니다.
+표 1이 3 열의 수 모양을 보여줍니다 다양 한 저장소 기술에 대 한 MySecret 암호를 저장할 때! 이어야 합니다.
 
 | **저장소 기술&lt;\_o3a\_p /&gt;** | **암호&lt;\_o3a\_p /&gt;** | **PasswordFormat&lt;\_o3a\_p /&gt;** | **PasswordSalt&lt;\_o3a\_p /&gt;** |
 | --- | --- | --- | --- |
-| 지우기 | MySecret! | 0 | tTnkPlesqissc2y2SMEygA = = |
-| 해시 | 2oXm6sZHWbTHFgjgkGQsc2Ec9ZM = | 1 | wFgjUfhdUFOCKQiI61vtiQ = = |
-| 암호화 | 62RZgDvhxykkqsMchZ0Yly7HS6onhpaoCYaRxV8g0F4CW56OXUU3e7Inza9j9BKp | 2 | LSRzhGS/aa/oqAXGLHJNBw = = |
+| 지우기 | MySecret! | 0 | tTnkPlesqissc2y2SMEygA== |
+| 해시 | 2oXm6sZHWbTHFgjgkGQsc2Ec9ZM= | 1 | wFgjUfhdUFOCKQiI61vtiQ== |
+| 암호화 | 62RZgDvhxykkqsMchZ0Yly7HS6onhpaoCYaRxV8g0F4CW56OXUU3e7Inza9j9BKp | 2 | LSRzhGS/aa/oqAXGLHJNBw== |
 
 **표 1**: 암호 MySecret 저장할 때 암호 관련 필드에 대 한 예제 값!
 
@@ -262,13 +262,13 @@ ASP.NET 응용 프로그램에서 멤버 자격 및 역할 프레임 워크를 �
 
 멤버 자격 및 역할 프레임 워크--같은 공급자 모델을 지 원하는 프레임 워크의 모든 자체 구현 세부 사항을 없고 대신 공급자 클래스에 해당 역할을 위임 합니다. 멤버 자격 프레임 워크의 경우는 `Membership` 클래스는 사용자 계정을 관리 하기 위한 API를 정의 하지만 모든 사용자 저장소와 직접 상호 작용 하지 않습니다. 대신,는 `Membership` 클래스의 메서드에 전달 요청에 구성 된 공급자-를 사용 합니다는 `SqlMembershipProvider`합니다. 메서드 중 하나를 호출 우리는 경우는 `Membership` 클래스는 구성원 프레임 워크 확인 방법에 대 한 호출을 위임 하는 `SqlMembershipProvider`?
 
-`Membership` 클래스에는 [ `Providers` 속성](https://msdn.microsoft.com/en-us/library/system.web.security.membership.providers.aspx) 구성원 프레임 워크에서 사용 하기 위해 사용할 수 있는 등록 된 공급자 클래스는 모두에 대 한 참조를 포함 하 합니다. 등록 된 각 공급자에 연결 된 이름 및 유형. 이름에 특정 공급자를 참조 하는 사용자에 게 친숙 한 방법을 제공는 `Providers` 형식 공급자 클래스를 식별 하는 동안 컬렉션입니다. 또한 등록 된 각 공급자는 구성 설정을 포함 될 수 있습니다. 멤버 자격 프레임 워크에 대 한 구성 설정을 포함 `passwordFormat` 및 `requiresUniqueEmail`, 다양 한 기타. 표 2에서 사용 하는 구성 설정의 전체 목록에 대 한 참조는 `SqlMembershipProvider`합니다.
+`Membership` 클래스에는 [ `Providers` 속성](https://msdn.microsoft.com/library/system.web.security.membership.providers.aspx) 구성원 프레임 워크에서 사용 하기 위해 사용할 수 있는 등록 된 공급자 클래스는 모두에 대 한 참조를 포함 하 합니다. 등록 된 각 공급자에 연결 된 이름 및 유형. 이름에 특정 공급자를 참조 하는 사용자에 게 친숙 한 방법을 제공는 `Providers` 형식 공급자 클래스를 식별 하는 동안 컬렉션입니다. 또한 등록 된 각 공급자는 구성 설정을 포함 될 수 있습니다. 멤버 자격 프레임 워크에 대 한 구성 설정을 포함 `passwordFormat` 및 `requiresUniqueEmail`, 다양 한 기타. 표 2에서 사용 하는 구성 설정의 전체 목록에 대 한 참조는 `SqlMembershipProvider`합니다.
 
 `Providers` 속성의 내용을 웹 응용 프로그램의 구성 설정을 통해 지정 됩니다. 기본적으로 모든 웹 응용 프로그램 적용 라는 공급자 `AspNetSqlMembershipProvider` 형식의 `SqlMembershipProvider`합니다. 이 기본 멤버 자격 공급자에 등록 되어 `machine.config` (에 있는 `%WINDIR%\Microsoft.Net\Framework\v2.0.50727\CONFIG)`:
 
 [!code-xml[Main](creating-the-membership-schema-in-sql-server-cs/samples/sample1.xml)]
 
-위의 태그로 [ `<membership>` 요소](https://msdn.microsoft.com/en-us/library/1b9hw62f.aspx) 하는 동안 멤버 자격 프레임 워크에 대 한 구성 설정을 정의 [ `<providers>` 자식 요소가](https://msdn.microsoft.com/en-us/library/6d4936ht.aspx) 지정는 등록 된 공급자입니다. 공급자 추가 될 수 있습니다 또는 사용 하 여 제거는 [ `<add>` ](https://msdn.microsoft.com/en-us/library/whae3t94.aspx) 또는 [ `<remove>` ](https://msdn.microsoft.com/en-us/library/aykw9a6d.aspx) 사용; 요소는 [ `<clear>` ](https://msdn.microsoft.com/en-us/library/t062y6yc.aspx) 현재 모두 제거 하는 요소 등록 된 공급자입니다. 위의 태그로 `machine.config` 라는 공급자 추가 `AspNetSqlMembershipProvider` 형식의 `SqlMembershipProvider`합니다.
+위의 태그로 [ `<membership>` 요소](https://msdn.microsoft.com/library/1b9hw62f.aspx) 하는 동안 멤버 자격 프레임 워크에 대 한 구성 설정을 정의 [ `<providers>` 자식 요소가](https://msdn.microsoft.com/library/6d4936ht.aspx) 지정는 등록 된 공급자입니다. 공급자 추가 될 수 있습니다 또는 사용 하 여 제거는 [ `<add>` ](https://msdn.microsoft.com/library/whae3t94.aspx) 또는 [ `<remove>` ](https://msdn.microsoft.com/library/aykw9a6d.aspx) 사용; 요소는 [ `<clear>` ](https://msdn.microsoft.com/library/t062y6yc.aspx) 현재 모두 제거 하는 요소 등록 된 공급자입니다. 위의 태그로 `machine.config` 라는 공급자 추가 `AspNetSqlMembershipProvider` 형식의 `SqlMembershipProvider`합니다.
 
 외에 `name` 및 `type` 특성의 `<add>` 요소 다양 한 설정 구성에 대 한 값을 정의 하는 특성을 포함 합니다. 표 2는 사용할 수 있는 목록 `SqlMembershipProvider`-특정 구성 설정과 각각에 대해 설명 합니다.
 
@@ -329,7 +329,7 @@ ASP.NET 응용 프로그램에서 멤버 자격 및 역할 프레임 워크를 �
 
 등록할 뿐만 아니라는 `SecurityTutorialsSqlMembershipProvider` 공급자, 위의 태그는 정의 `SecurityTutorialsSqlMembershipProvider` 기본 공급자로 (통해는 `defaultProvider` 특성에 `<membership>` 요소). 멤버 자격 프레임 워크 여러 개 등록 된 공급자를 가질 수 있다는 점에 유의 하세요. 이후 `AspNetSqlMembershipProvider` 에서 첫 번째 공급자로 등록 `machine.config`, 여기서 명시 하지 않는 한 기본 공급자로 사용 합니다.
 
-현재 응용 프로그램에 두 명의 등록 된 공급자: `AspNetSqlMembershipProvider` 및 `SecurityTutorialsSqlMembershipProvider`합니다. 그러나 등록 하기 전에는 `SecurityTutorialsSqlMembershipProvider` 우리 수 선택을 취소 한 모든 이전에 공급자를 추가 하 여 공급자를 등록 한 [ `<clear />` 요소](https://msdn.microsoft.com/en-us/library/t062y6yc.aspx) 바로 앞 우리의 `<add>` 요소입니다. 지울 것이 고 `AspNetSqlMembershipProvider` 의미 하는 등록 된 공급자 목록에서는 `SecurityTutorialsSqlMembershipProvider` 유일한 등록 된 멤버 자격 공급자는 것입니다. 이 방법을 사용한 경우 표시 해야 하지는 `SecurityTutorialsSqlMembershipProvider` 기본 공급자로 이후에 것이 유일한 등록 된 멤버 자격 공급자입니다. 사용 하 여 대 한 자세한 내용은 `<clear />`, 참조 [Using `<clear />` 때 추가 공급자](https://weblogs.asp.net/scottgu/archive/2006/11/20/common-gotcha-don-t-forget-to-clear-when-adding-providers.aspx)합니다.
+현재 응용 프로그램에 두 명의 등록 된 공급자: `AspNetSqlMembershipProvider` 및 `SecurityTutorialsSqlMembershipProvider`합니다. 그러나 등록 하기 전에는 `SecurityTutorialsSqlMembershipProvider` 우리 수 선택을 취소 한 모든 이전에 공급자를 추가 하 여 공급자를 등록 한 [ `<clear />` 요소](https://msdn.microsoft.com/library/t062y6yc.aspx) 바로 앞 우리의 `<add>` 요소입니다. 지울 것이 고 `AspNetSqlMembershipProvider` 의미 하는 등록 된 공급자 목록에서는 `SecurityTutorialsSqlMembershipProvider` 유일한 등록 된 멤버 자격 공급자는 것입니다. 이 방법을 사용한 경우 표시 해야 하지는 `SecurityTutorialsSqlMembershipProvider` 기본 공급자로 이후에 것이 유일한 등록 된 멤버 자격 공급자입니다. 사용 하 여 대 한 자세한 내용은 `<clear />`, 참조 [Using `<clear />` 때 추가 공급자](https://weblogs.asp.net/scottgu/archive/2006/11/20/common-gotcha-don-t-forget-to-clear-when-adding-providers.aspx)합니다.
 
 `SecurityTutorialsSqlMembershipProvider`의 `connectionStringName` 는 방금 추가 된 참조를 설정 `SecurityTutorialsConnectionString` 있고 연결 문자열 이름, 해당 `applicationName` SecurityTutorials의 값으로 설정 되었습니다. 또한는 `requiresUniqueEmail` 설정으로 설정 된 `true`합니다. 다른 모든 구성 옵션의 값에 동일 `AspNetSqlMembershipProvider`합니다. 자유롭게 여기에서 구성 수정 하려는 경우. 예를 들어 대신 하나, 두 개의 영숫자 이외의 문자를 요구 하거나를 8 자로 7 대신 암호 길이 늘려 암호 강도 강화할 수 있습니다.
 
@@ -353,17 +353,17 @@ ASP.NET 응용 프로그램에서 멤버 자격 및 역할 프레임 워크를 �
 - [사용 하 여 SQL Server 2000 또는 SQL Server 2005 응용 프로그램 서비스 ASP.NET 2.0 구성](https://weblogs.asp.net/scottgu/archive/2005/08/25/423703.aspx)
 - [SQL Server Management Studio Express Edition 다운로드](https://www.microsoft.com/downloads/details.aspx?FamilyId=C243A5AE-4BD1-4E3D-94B8-5A0F62BF7796&amp;displaylang=en)
 - [ASP.NET 2.0 검사 s 멤버 자격, 역할 및 프로필](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx)
-- [`<add>` 멤버 자격에 대 한 공급자에 대 한 요소](https://msdn.microsoft.com/en-us/library/whae3t94.aspx)
-- [`<membership>` 요소](https://msdn.microsoft.com/en-us/library/1b9hw62f.aspx)
-- [`<providers>` 멤버 자격에 대 한 요소](https://msdn.microsoft.com/en-us/library/6d4936ht.aspx)
+- [`<add>` 멤버 자격에 대 한 공급자에 대 한 요소](https://msdn.microsoft.com/library/whae3t94.aspx)
+- [`<membership>` 요소](https://msdn.microsoft.com/library/1b9hw62f.aspx)
+- [`<providers>` 멤버 자격에 대 한 요소](https://msdn.microsoft.com/library/6d4936ht.aspx)
 - [사용 하 여 `<clear />` 공급자를 추가 하는 경우](https://weblogs.asp.net/scottgu/archive/2006/11/20/common-gotcha-don-t-forget-to-clear-when-adding-providers.aspx)
 - [와 직접 작업 하는`SqlMembershipProvider`](http://aspnet.4guysfromrolla.com/articles/091207-1.aspx)
 
 ### <a name="video-training-on-topics-contained-in-this-tutorial"></a>이 자습서에 포함 된 항목에 대 한 비디오 교육
 
 - [ASP.NET 멤버 자격 이해](../../../videos/authentication/understanding-aspnet-memberships.md)
-- [멤버 자격 스키마와 함께 SQL 작업을 구성](../../../videos/authentication/configuring-sql-to-work-with-membership-schemas.md)
-- [기본 멤버 자격 스키마의 멤버 자격 설정 변경](../../../videos/authentication/changing-membership-settings-in-the-default-membership-schema.md)
+- [멤버 자격 스키마와 함께 작동하도록 SQL 구성](../../../videos/authentication/configuring-sql-to-work-with-membership-schemas.md)
+- [기본 멤버 자격 스키마에서 멤버 자격 설정 변경](../../../videos/authentication/changing-membership-settings-in-the-default-membership-schema.md)
 
 ### <a name="about-the-author"></a>작성자 정보
 

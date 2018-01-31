@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/testing-and-debugging/unit-testing-signalr-applications
 msc.type: authoredcontent
-ms.openlocfilehash: e55efd644dd4b6fb57061ffb89a5c041136c7b5e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d767e1a9d27670387133e5a48a8f92f5bdd39d9e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="unit-testing-signalr-applications"></a>단위 테스트 SignalR 응용 프로그램
 ====================
@@ -41,7 +41,7 @@ ms.lasthandoff: 11/10/2017
 <a id="unit"></a>
 ## <a name="unit-testing-signalr-applications"></a>SignalR 응용 프로그램 유닛 테스트
 
-SignalR 2에서 단위 테스트를 만드는 SignalR 응용 프로그램에 대 한 단위 테스트 기능을 사용할 수 있습니다. SignalR 2에 포함 되어는 [IHubCallerConnectionContext](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubs.ihubcallerconnectioncontext(v=vs.118).aspx) 인터페이스를 테스트 하기 위한 허브 메서드를 시뮬레이션 하는 모의 개체를 만드는 데 사용할 수 있습니다.
+SignalR 2에서 단위 테스트를 만드는 SignalR 응용 프로그램에 대 한 단위 테스트 기능을 사용할 수 있습니다. SignalR 2에 포함 되어는 [IHubCallerConnectionContext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.ihubcallerconnectioncontext(v=vs.118).aspx) 인터페이스를 테스트 하기 위한 허브 메서드를 시뮬레이션 하는 모의 개체를 만드는 데 사용할 수 있습니다.
 
 이 섹션에서는 만든 응용 프로그램에 대 한 단위 테스트 추가 [시작 자습서](../getting-started/tutorial-getting-started-with-signalr.md) 를 사용 하 여 [XUnit.net](https://github.com/xunit/xunit) 및 [Moq](https://github.com/Moq/moq4)합니다.
 
@@ -82,7 +82,7 @@ XUnit.net; 테스트를 제어 하는 데 사용 됩니다. Moq 만드는 데 �
 
     [!code-csharp[Main](unit-testing-signalr-applications/samples/sample1.cs)]
 
-    위의 코드에서 테스트 클라이언트 사용 하 여 만들어집니다는 `Mock` 에서 개체는 [Moq](https://github.com/Moq/moq4) 형식의 라이브러리 [IHubCallerConnectionContext](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubs.ihubcallerconnectioncontext(v=vs.118).aspx) (SignalR 2.1에서 할당 `dynamic` 유형에 대 한 매개 변수입니다.) `IHubCallerConnectionContext` 인터페이스는 클라이언트에서 메서드를 호출 하는 프록시 개체입니다. `broadcastMessage` 함수는 다음에 대해 정의 된 모의 클라이언트에서 호출할 수 있도록는 `ChatHub` 클래스입니다. 테스트 엔진에서 호출 된 `Send` 의 메서드는 `ChatHub` 호출 하는 모의 클래스 `broadcastMessage` 함수.
+    위의 코드에서 테스트 클라이언트 사용 하 여 만들어집니다는 `Mock` 에서 개체는 [Moq](https://github.com/Moq/moq4) 형식의 라이브러리 [IHubCallerConnectionContext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.ihubcallerconnectioncontext(v=vs.118).aspx) (SignalR 2.1에서 할당 `dynamic` 유형에 대 한 매개 변수입니다.) `IHubCallerConnectionContext` 인터페이스는 클라이언트에서 메서드를 호출 하는 프록시 개체입니다. `broadcastMessage` 함수는 다음에 대해 정의 된 모의 클라이언트에서 호출할 수 있도록는 `ChatHub` 클래스입니다. 테스트 엔진에서 호출 된 `Send` 의 메서드는 `ChatHub` 호출 하는 모의 클래스 `broadcastMessage` 함수.
 9. 키를 눌러 솔루션을 빌드합니다 **F6**합니다.
 10. 단위 테스트를 실행합니다. Visual Studio에서 선택 **테스트**, **Windows**, **테스트 탐색기**합니다. 테스트 탐색기 창에서 마우스 오른쪽 단추로 클릭 **HubsAreMockableViaDynamic** 선택 **선택 된 테스트 실행**합니다.
 
@@ -101,7 +101,7 @@ XUnit.net; 테스트를 제어 하는 데 사용 됩니다. Moq 만드는 데 �
 
     [!code-csharp[Main](unit-testing-signalr-applications/samples/sample2.cs)]
 
-    위의 코드에서 인터페이스의 서명을 정의 생성 됩니다는 `broadcastMessage` 메서드 테스트 엔진에서는 모의 클라이언트를 만듭니다. 모의 클라이언트를 사용 하 여 만들고 그런 다음는 `Mock` 형식의 개체 [IHubCallerConnectionContext](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubs.ihubcallerconnectioncontext(v=vs.118).aspx) (SignalR 2.1에서 할당 `dynamic` 형식 매개 변수.) `IHubCallerConnectionContext` 인터페이스는 클라이언트에서 메서드를 호출 하는 프록시 개체입니다.
+    위의 코드에서 인터페이스의 서명을 정의 생성 됩니다는 `broadcastMessage` 메서드 테스트 엔진에서는 모의 클라이언트를 만듭니다. 모의 클라이언트를 사용 하 여 만들고 그런 다음는 `Mock` 형식의 개체 [IHubCallerConnectionContext](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubs.ihubcallerconnectioncontext(v=vs.118).aspx) (SignalR 2.1에서 할당 `dynamic` 형식 매개 변수.) `IHubCallerConnectionContext` 인터페이스는 클라이언트에서 메서드를 호출 하는 프록시 개체입니다.
 
     테스트의 인스턴스를 만든 후 `ChatHub`, 다음의 모의 버전을 만듭니다는 `broadcastMessage` 메서드를 호출 하 여 호출 되는 `Send` 허브에서 메서드.
 3. 키를 눌러 솔루션을 빌드합니다 **F6**합니다.

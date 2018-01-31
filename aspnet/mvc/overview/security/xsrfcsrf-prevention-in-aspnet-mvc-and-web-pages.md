@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages
 msc.type: authoredcontent
-ms.openlocfilehash: 4ff4ed20d0768a48f8afb2deeb7cdb6b4c60b5bc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6cf30daa7ed966b11405cec715c5bc803b567249
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages"></a>웹 페이지 및 ASP.NET MVC에서 XSRF/CSRF 방지
 ====================
@@ -73,9 +73,9 @@ XSRF 요청 확인 *세션 토큰* HTTP 쿠키로 저장 되 고 현재 페이�
 *필드 토큰이* 으로 저장 되는 `<input type="hidden" />` 페이로드에서 다음 정보를 포함 하 고:
 
 - 로그인 한 사용자의 사용자 이름 (인증) 하는 경우입니다.
-- 제공 하는 모든 추가 데이터는 [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/en-us/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)합니다.
+- 제공 하는 모든 추가 데이터는 [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)합니다.
 
-ANTI-XSRF 토큰의 페이로드가 암호화 되 고 서명, 토큰을 검사 하려면 도구를 사용 하는 경우 사용자 이름을 볼 수 없습니다. 웹 응용 프로그램은 ASP.NET 4.0을 대상으로 지정 하는 경우 암호화 서비스에 의해 제공 되는 [MachineKey.Encode](https://msdn.microsoft.com/en-us/library/system.web.security.machinekey.encode.aspx) 루틴입니다. 웹 응용 프로그램은 ASP.NET 4.5를 대상으로 하거나 더 높은, 암호화 서비스에서 제공 때는 [MachineKey.Protect](https://msdn.microsoft.com/en-us/library/system.web.security.machinekey.protect(v=vs.110)) 더 나은 성능, 확장성 및 보안을 제공 하는 루틴입니다. 자세한 내용은 다음 블로그 게시물을 참조 하십시오.
+ANTI-XSRF 토큰의 페이로드가 암호화 되 고 서명, 토큰을 검사 하려면 도구를 사용 하는 경우 사용자 이름을 볼 수 없습니다. 웹 응용 프로그램은 ASP.NET 4.0을 대상으로 지정 하는 경우 암호화 서비스에 의해 제공 되는 [MachineKey.Encode](https://msdn.microsoft.com/library/system.web.security.machinekey.encode.aspx) 루틴입니다. 웹 응용 프로그램은 ASP.NET 4.5를 대상으로 하거나 더 높은, 암호화 서비스에서 제공 때는 [MachineKey.Protect](https://msdn.microsoft.com/library/system.web.security.machinekey.protect(v=vs.110)) 더 나은 성능, 확장성 및 보안을 제공 하는 루틴입니다. 자세한 내용은 다음 블로그 게시물을 참조 하십시오.
 
 - [ASP.NET 4.5 암호화 향상 된 기능, pt입니다. 1](https://blogs.msdn.com/b/webdev/archive/2012/10/22/cryptographic-improvements-in-asp-net-4-5-pt-1.aspx)
 - [ASP.NET 4.5 암호화 향상 된 기능, pt입니다. 2](https://blogs.msdn.com/b/webdev/archive/2012/10/23/cryptographic-improvements-in-asp-net-4-5-pt-2.aspx)
@@ -83,19 +83,19 @@ ANTI-XSRF 토큰의 페이로드가 암호화 되 고 서명, 토큰을 검사 �
 
 ## <a name="generating-the-tokens"></a>토큰 생성
 
-ANTI-XSRF 토큰을 생성 하려면 호출는 [ @Html.AntiForgeryToken ](https://msdn.microsoft.com/en-us/library/dd470175.aspx) MVC 뷰에서 메서드 또는 @AntiForgery.GetHtmlRazor 페이지에서 (). 런타임은 다음 단계를 수행 다음 합니다.
+ANTI-XSRF 토큰을 생성 하려면 호출는 [ @Html.AntiForgeryToken ](https://msdn.microsoft.com/library/dd470175.aspx) MVC 뷰에서 메서드 또는 @AntiForgery.GetHtmlRazor 페이지에서 (). 런타임은 다음 단계를 수행 다음 합니다.
 
 1. 현재 HTTP 요청 ANTI-XSRF 세션 토큰에 이미 포함 되어 있는 경우 (ANTI-XSRF 쿠키 \_ \_RequestVerificationToken), 보안 토큰에서 추출 됩니다. HTTP 요청에는 ANTI-XSRF 세션 토큰 또는 보안 토큰의 추출이 실패할 경우 새 임의 ANTI-XSRF 토큰 생성 됩니다.
-2. ANTI-XSRF 필드 토큰이 현재 로그인 한 사용자의 id (1) 위의 단계에서 보안 토큰을 사용 하 여 생성 됩니다. (사용자 id 확인에 대 한 자세한 내용은 참조는  **[특별 한 지원 사용 하는 시나리오](#_Scenarios_with_special)**  아래 섹션.) 또한 경우는 [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/en-us/library/jj158328(v=vs.111).aspx) 은 구성 런타임에서 호출 됩니다는 [GetAdditionalData](https://msdn.microsoft.com/en-us/library/system.web.helpers.iantiforgeryadditionaldataprovider.getadditionaldata(v=vs.111).aspx) 메서드 field 토큰에는 반환 된 문자열을 포함 합니다. (참조는  **[구성 및 확장성](#_Configuration_and_extensibility)**  한 자세 합니다.)
+2. ANTI-XSRF 필드 토큰이 현재 로그인 한 사용자의 id (1) 위의 단계에서 보안 토큰을 사용 하 여 생성 됩니다. (사용자 id 확인에 대 한 자세한 내용은 참조는  **[특별 한 지원 사용 하는 시나리오](#_Scenarios_with_special)**  아래 섹션.) 또한 경우는 [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/jj158328(v=vs.111).aspx) 은 구성 런타임에서 호출 됩니다는 [GetAdditionalData](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider.getadditionaldata(v=vs.111).aspx) 메서드 field 토큰에는 반환 된 문자열을 포함 합니다. (참조는  **[구성 및 확장성](#_Configuration_and_extensibility)**  한 자세 합니다.)
 3. 새 ANTI-XSRF 토큰 단계 (1)에서 생성 된, 새 세션 토큰 및 포함 하기 위해 만들어집니다 아웃 바운드 HTTP 쿠키 컬렉션에 추가 됩니다. 단계 (2)에서 필드 토큰이에 래핑됩니다는 `<input type="hidden" />` 요소, 그리고이 HTML 태그의 반환 값이 됩니다 `Html.AntiForgeryToken()` 또는 `AntiForgery.GetHtml()`합니다.
 
 ## <a name="validating-the-tokens"></a>토큰 유효성 검사
 
-들어오는 ANTI-XSRF 토큰의 유효성을 검사 하는 개발자가 포함 된 [ValidateAntiForgeryToken](https://msdn.microsoft.com/en-us/library/system.web.mvc.validateantiforgerytokenattribute(VS.108).aspx) 그녀의 MVC 동작 또는 컨트롤러 또는 그녀는 호출에 특성 `@AntiForgery.Validate()` 그녀의 Razor 페이지에서. 런타임에서 다음 단계를 수행 합니다.
+들어오는 ANTI-XSRF 토큰의 유효성을 검사 하는 개발자가 포함 된 [ValidateAntiForgeryToken](https://msdn.microsoft.com/library/system.web.mvc.validateantiforgerytokenattribute(VS.108).aspx) 그녀의 MVC 동작 또는 컨트롤러 또는 그녀는 호출에 특성 `@AntiForgery.Validate()` 그녀의 Razor 페이지에서. 런타임에서 다음 단계를 수행 합니다.
 
 1. 들어오는 세션 토큰 및 필드 토큰이 읽고 ANTI-XSRF 토큰 각에서 추출 합니다. ANTI-XSRF 토큰 생성 루틴에서 단계 (2) 당 동일 해야 합니다.
 2. 현재 사용자가 인증 되 면 그녀의 사용자 이름 필드 토큰에 저장 된 사용자 이름으로 비교 됩니다. 사용자 이름의 일치 해야 합니다.
-3. 경우는 [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/en-us/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx) 구성 된 런타임 호출 해당 *ValidateAdditionalData* 메서드. 이 메서드는 부울 값을 반환 해야 *true*합니다.
+3. 경우는 [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx) 구성 된 런타임 호출 해당 *ValidateAdditionalData* 메서드. 이 메서드는 부울 값을 반환 해야 *true*합니다.
 
 유효성 검사는 성공 요청은 계속 진행 하도록 허용 합니다. 유효성 검사가 실패할 경우 프레임 워크에서 throw 한 *HttpAntiForgeryException*합니다.
 
@@ -108,7 +108,7 @@ ASP.NET 웹 스택 런타임 v 2와 함께 시작 하는 모든 *HttpAntiForgery
 - 세션 토큰 및 필드 토큰 교체 되었습니다.
 - 세션 토큰 및 필드 토큰이 일치 하지 않는 보안 토큰을 포함 합니다.
 - Field 토큰 내에 포함 된 사용자 이름에는 현재 로그인 한 사용자의 사용자 이름을 일치 하지 않습니다.
--  *[IAntiForgeryAdditionalDataProvider.ValidateAdditionalData](https://msdn.microsoft.com/en-us/library/system.web.helpers.iantiforgeryadditionaldataprovider.validateadditionaldata(v=vs.111).aspx)*  메서드 반환 *false*합니다.
+- *[IAntiForgeryAdditionalDataProvider.ValidateAdditionalData](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider.validateadditionaldata(v=vs.111).aspx)*  메서드 반환 *false*합니다.
 
 ANTI-XSRF 시설 토큰 생성 또는 유효성 검사를 하는 동안 추가 검사 수행 될 수 있습니다 하며 이러한 검사 중에 오류가 발생 하는 예외가 발생할 수 있습니다. 참조는 [WIF / ACS / 클레임 기반 인증](#_WIF_ACS) 및  **[구성 및 확장성](#_Configuration_and_extensibility)**  섹션에서 자세한 정보.
 
@@ -130,12 +130,12 @@ ANTI-XSRF 시스템에 "익명"가 정의 되어 있는 사용자로 익명 사�
 
 클레임 기반 인증 반면에 필요는 없습니다 특정 사용자를 식별 합니다. 대신,는 *ClaimsPrincipal* 및 *ClaimsIdentity* 유형은의 집합과 연결 *클레임* 인스턴스를 개별 클레임 수 있는 "18 + 세 is" 또는 " 관리자가 다른 사용자 계정으로 "입니다. 사용자를 확인 했으면 반드시 않은 이후 런타임에서 사용할 수 없습니다는 *ClaimsIdentity.Name* 이 특정 사용자에 대 한 고유 식별자로 속성입니다. 팀에서 실제 예에 표시 여기서 *ClaimsIdentity.Name* 반환 *null*, 대화명 (표시) 이름을 반환 또는 그렇지 않은 경우 고유 식별자로 사용 하기에 적합 하지 않은 문자열을 반환 합니다. 에 대 한 사용자입니다.
 
-사용 하는 다양 한 클레임 기반 인증을 사용 하 여 배포 [Azure 액세스 제어 서비스](https://msdn.microsoft.com/en-us/library/windowsazure/gg429786.aspx) (ACS) 특히 합니다. ACS 개별 개발자가 구성할 수 있습니다 *id 공급자* (ADFS를 Microsoft 계정 공급자와 같은 OpenID 공급자 등의 yahoo! 등)를 반환 하는 id 공급자 및 *식별자이름지정*. 이러한 이름 식별자 개인 식별이 가능한 정보 (PII) 전자 메일 주소 처럼 포함 되거나 같은 식별자 PPID (Private Personal)를 실적과 될 수 없습니다. 그럼에도 불구 하 고 (id 공급자, 이름 식별자) 튜플 충분히 역할을 특정 사용자에 대 한 적절 한 추적 토큰 그녀 ASP.NET 웹 스택 런타임이 생성 하는 경우 사용자 이름 대신 튜플을 사용할 수 있도록 사이트를 검색 하는 동안 및 ANTI-XSRF 필드 토큰 유효성을 검사 합니다. Id 공급자와의 이름 식별자에 대 한 특정 Uri는:
+사용 하는 다양 한 클레임 기반 인증을 사용 하 여 배포 [Azure 액세스 제어 서비스](https://msdn.microsoft.com/library/windowsazure/gg429786.aspx) (ACS) 특히 합니다. ACS 개별 개발자가 구성할 수 있습니다 *id 공급자* (ADFS를 Microsoft 계정 공급자와 같은 OpenID 공급자 등의 yahoo! 등)를 반환 하는 id 공급자 및 *식별자이름지정*. 이러한 이름 식별자 개인 식별이 가능한 정보 (PII) 전자 메일 주소 처럼 포함 되거나 같은 식별자 PPID (Private Personal)를 실적과 될 수 없습니다. 그럼에도 불구 하 고 (id 공급자, 이름 식별자) 튜플 충분히 역할을 특정 사용자에 대 한 적절 한 추적 토큰 그녀 ASP.NET 웹 스택 런타임이 생성 하는 경우 사용자 이름 대신 튜플을 사용할 수 있도록 사이트를 검색 하는 동안 및 ANTI-XSRF 필드 토큰 유효성을 검사 합니다. Id 공급자와의 이름 식별자에 대 한 특정 Uri는:
 
 - `http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider`
 - `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier`
 
-(이 [ACS doc 페이지](https://msdn.microsoft.com/en-us/library/windowsazure/gg185971.aspx) 대 한 자세한 정보.)
+(이 [ACS doc 페이지](https://msdn.microsoft.com/library/windowsazure/gg185971.aspx) 대 한 자세한 정보.)
 
 를 생성 하거나 유효성을 검사 하는 토큰 ASP.NET 웹 스택 런타임 런타임 시 시도 합니다 형식에 바인딩:
 
@@ -165,7 +165,7 @@ ANTI-XSRF 시스템에 "익명"가 정의 되어 있는 사용자로 익명 사�
 
 | **Property** | **설명** |
 | --- | --- |
-| **AdditionalDataProvider** | [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/en-us/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx) 토큰 생성 하는 동안 추가 데이터를 제공 하 고 토큰 유효성 검사 중 추가 데이터를 많이 사용 합니다. 기본값은 *null*합니다. 자세한 내용은 참조는 [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/en-us/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx) 섹션. |
+| **AdditionalDataProvider** | [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx) 토큰 생성 하는 동안 추가 데이터를 제공 하 고 토큰 유효성 검사 중 추가 데이터를 많이 사용 합니다. 기본값은 *null*합니다. 자세한 내용은 참조는 [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx) 섹션. |
 | **CookieName** | ANTI-XSRF 세션 토큰을 저장 하는 데 사용 되는 HTTP 쿠키의 이름을 지정 하는 문자열입니다. 이 값을 설정 하지 않으면 경우 응용 프로그램의 배포 된 가상 경로에 따라 이름이 자동으로 생성 됩니다. 기본값은 *null*합니다. |
 | **RequireSsl** | ANTI-XSRF 토큰 SSL 보안 채널을 통해 전송 될 필요한 지 여부를 결정 하는 부울입니다. 이 값이 *true*이 고, 자동으로 생성 된 쿠키는 "secure" 플래그를 설정 하 고, 고 ANTI-XSRF Api는 SSL을 통해 전송 되지 않습니다는 요청 내에서 호출 된 경우 throw 됩니다. 기본값은 *false*입니다. |
 | **SuppressIdentityHeuristicChecks** | ANTI-XSRF 시스템 클레임 기반 id에 대 한 지원을 비활성화 해야 하는지 여부를 결정 하는 부울입니다. 이 값이 *true*, 시스템이 있다고 가정 합니다 *IIdentity.Name* 고유한 사용자 식별자로 사용 하기에 적합 하 고는 특별 한 경우 하려고 *IClaimsIdentity*또는 *ClClaimsIdentity* 에 설명 된 대로 [WIF / ACS / 클레임 기반 인증](#_WIF_ACS) 섹션. 기본값은 `false`입니다. |
@@ -175,7 +175,7 @@ ANTI-XSRF 시스템에 "익명"가 정의 되어 있는 사용자로 익명 사�
 
 ### <a name="iantiforgeryadditionaldataprovider"></a>IAntiForgeryAdditionalDataProvider
 
- *[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/en-us/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)*  형식에서는 개발자가 각 토큰의 추가 데이터를 왕복 하 여 ANTI-XSRF 시스템의 동작을 확장할 수 있습니다. *GetAdditionalData* 될 때마다 메서드는 필드 토큰이 생성 되 고 반환 값은 생성 되는 토큰 내에 포함 되어 있습니다. 구현 자가이 메서드에서 타임 스탬프, nonce, 또는 그녀 하지 않고자 한다면 다른 모든 값을 반환할 수 있습니다.
+*[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)*  형식에서는 개발자가 각 토큰의 추가 데이터를 왕복 하 여 ANTI-XSRF 시스템의 동작을 확장할 수 있습니다. *GetAdditionalData* 될 때마다 메서드는 필드 토큰이 생성 되 고 반환 값은 생성 되는 토큰 내에 포함 되어 있습니다. 구현 자가이 메서드에서 타임 스탬프, nonce, 또는 그녀 하지 않고자 한다면 다른 모든 값을 반환할 수 있습니다.
 
 마찬가지로,는 *ValidateAdditionalData* 될 때마다 메서드는 필드 토큰의 유효성을 검사 하 고 토큰 내에 포함 된 "데이터 추가" 문자열 메서드에 전달 됩니다. 루틴 또는 기타 검사 nonce 원하는 논리, 유효성 검사 루틴 (토큰을 만들 때 저장 된 시간에 대해 현재 시간을 확인 하는 중)에서 시간 초과 구현할 수 없습니다.
 

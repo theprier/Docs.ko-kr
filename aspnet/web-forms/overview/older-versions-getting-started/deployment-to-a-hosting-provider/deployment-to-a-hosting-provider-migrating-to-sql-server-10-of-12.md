@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 31d83a11488212ab0ff83494d5e896ffcbeaa8a4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b97834e3e287645151bf927996fde63d93ae8356
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-migrating-to-sql-server---10-of-12"></a>SQL Server Compact Visual Studio 또는 Visual Web Developer를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: SQL Server-10 12로 마이그레이션
 ====================
@@ -37,7 +37,7 @@ ms.lasthandoff: 11/10/2017
 
 SQL Server로 업그레이드 하려면 결정 하면, 개발 및 테스트 환경에서 SQL Server 또는 SQL Server Express를 사용 하는 것이 좋습니다. 데이터베이스 엔진 기능 및 도구 지원에 차이 외에 SQL Server Compact과 다른 버전의 SQL Server 공급자 구현에서 차이점이 있습니다. 이러한 차이 서로 다른 결과 생성 하는 동일한 코드를 발생할 수 있습니다. 따라서 개발 데이터베이스와 SQL Server Compact 유지 하려는 경우 철저히 테스트 해야 사이트 SQL Server 또는 SQL Server Express에서 프로덕션 환경에 각 배포 하기 전에 테스트 환경에서 합니다.
 
-SQL Server Compact와 달리 SQL Server Express는 기본적으로 동일한 데이터베이스 엔진 및 전체 SQL Server와 같은.NET 공급자를 사용 합니다. SQL Server express를 테스트할 때는 SQL Server와 함께 먼 동일한 결과 얻을 수 있으며 합니다. 대부분의 동일한 데이터베이스 도구를 사용 하 여 SQL Server와 함께 사용할 수 있는 SQL Server express (되 고 주목할 만한 예외 [SQL Server Profiler](https://msdn.microsoft.com/en-us/library/ms181091.aspx)), 저장된 프로시저, 뷰, 트리거와 같은 SQL Server의 다른 기능을 지원 하 고 및 복제 합니다. 하지만 (일반적으로 프로덕션 웹 사이트의 전체 SQL Server를 사용 해야 함. SQL Server Express는 공유 호스팅 환경에서 실행할 수 있지만를 위해 사용할 수 없는 및 많은 호스팅 공급자에서 지원 하지 않습니다.)
+SQL Server Compact와 달리 SQL Server Express는 기본적으로 동일한 데이터베이스 엔진 및 전체 SQL Server와 같은.NET 공급자를 사용 합니다. SQL Server express를 테스트할 때는 SQL Server와 함께 먼 동일한 결과 얻을 수 있으며 합니다. 대부분의 동일한 데이터베이스 도구를 사용 하 여 SQL Server와 함께 사용할 수 있는 SQL Server express (되 고 주목할 만한 예외 [SQL Server Profiler](https://msdn.microsoft.com/library/ms181091.aspx)), 저장된 프로시저, 뷰, 트리거와 같은 SQL Server의 다른 기능을 지원 하 고 및 복제 합니다. 하지만 (일반적으로 프로덕션 웹 사이트의 전체 SQL Server를 사용 해야 함. SQL Server Express는 공유 호스팅 환경에서 실행할 수 있지만를 위해 사용할 수 없는 및 많은 호스팅 공급자에서 지원 하지 않습니다.)
 
 Visual Studio 2012를 사용 하는 경우 일반적으로 개발 환경에 대 한 SQL Server Express LocalDB를 선택할 Visual Studio와 함께 기본적으로 설치 된 기능 이므로. 그러나 LocalDB 테스트 환경에 대 한 SQL Server 또는 SQL Server Express를 사용 해야 하므로 IIS에서 작동 하지 않습니다.
 
@@ -57,9 +57,9 @@ Contoso 대학 응용 프로그램에 두 개의 SQL Server Compact 데이터베
 
 SQL Server Express 자동으로 Visual Studio 2010과 기본적으로 설치 되어 있지만 기본적으로 Visual Studio 2012와 함께 설치 되지 않은 합니다. SQL Server 2012 Express를 설치 하려면 다음 링크를 클릭 합니다.
 
-- [SQL Server Express 2012](https://www.microsoft.com/en-us/download/details.aspx?id=29062)
+- [SQL Server Express 2012](https://www.microsoft.com/download/details.aspx?id=29062)
 
-선택 *SQLEXPR x64/한국어/\_x64\_ENU.exe* 또는 *한국어/x86/SQLEXPR\_x86\_ENU.exe*, 설치 마법사에서 기본값을 적용 하 고 설정. 설치 옵션에 대 한 자세한 내용은 참조 [(설치) 설치 마법사에서 SQL Server 2012 설치](https://msdn.microsoft.com/en-us/library/ms143219.aspx)합니다.
+선택 *SQLEXPR x64/한국어/\_x64\_ENU.exe* 또는 *한국어/x86/SQLEXPR\_x86\_ENU.exe*, 설치 마법사에서 기본값을 적용 하 고 설정. 설치 옵션에 대 한 자세한 내용은 참조 [(설치) 설치 마법사에서 SQL Server 2012 설치](https://msdn.microsoft.com/library/ms143219.aspx)합니다.
 
 ## <a name="creating-sql-server-express-databases-for-the-test-environment"></a>테스트 환경에 대 한 SQL Server Express 데이터베이스 만들기
 

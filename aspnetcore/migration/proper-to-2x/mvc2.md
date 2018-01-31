@@ -1,23 +1,21 @@
 ---
-title: "ASP.NET에서 ASP.NET Core 2.0 마이그레이션"
+title: "ASP.NET에서 ASP.NET Core 2.0으로 마이그레이션"
 author: isaac2004
-description: "이 참조 문서에서는 기존 ASP.NET MVC 또는 Web API 응용 프로그램을 ASP.NET Core 2.0으로 마이그레이션하기 위한 지침을 제공합니다."
-keywords: "ASP.NET Core, MVC, 마이그레이션"
-ms.author: scaddie
+description: "기존 ASP.NET MVC 또는 Web API 응용 프로그램을 마이그레이션하여 ASP.NET 코어 2.0에 대 한 지침을 수신 합니다."
 manager: wpickett
+ms.author: scaddie
 ms.date: 08/27/2017
-ms.topic: article
-ms.assetid: 3155cc9e-d0c9-424b-886c-35c0ec6f9f4e
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: migration/mvc2
-ms.openlocfilehash: 8005d23ad00774e488eecc9771f36a244a051126
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: 65717c1605c7f55bfd836110072772fe3dcdeb76
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/30/2018
 ---
-# <a name="migrating-from-aspnet-to-aspnet-core-20"></a>ASP.NET에서 ASP.NET Core 2.0 마이그레이션
+# <a name="migrating-from-aspnet-to-aspnet-core-20"></a>ASP.NET에서 ASP.NET Core 2.0으로 마이그레이션
 
 작성자: [Isaac Levin](https://isaaclevin.com)
 
@@ -71,7 +69,7 @@ ASP.NET Core는 비슷한 방법을 사용하지만 항목을 처리하는 데 O
 * 오류 페이지
 * 정적 파일
 * ASP.NET Core MVC
-* ID
+* 클레임
 
 [!code-csharp[Main](../../common/samples/WebApplication1/Startup.cs?highlight=8,9,10,14,17,19,21&start=58&end=84)]
 
@@ -109,7 +107,7 @@ services.Configure<AppConfiguration>(Configuration.GetSection("AppConfiguration"
 
 **참고:** ASP.NET Core 구성에 대한 자세한 내용은 [ASP.NET Core의 구성](xref:fundamentals/configuration/index)을 참조하세요.
 
-## <a name="native-dependency-injection"></a>네이티브 종속성 주입
+## <a name="native-dependency-injection"></a>기본 종속성 주입
 크고 확장 가능한 응용 프로그램을 빌드할 때 중요한 목표는 구성 요소와 서비스를 느슨하게 결합하는 것입니다. [종속성 주입](xref:fundamentals/dependency-injection)은 이 목표를 위해 널리 사용되는 기술이고 ASP.NET Core의 네이티브 구성 요소입니다.
 
 ASP.NET 응용 프로그램에서 개발자는 타사 라이브러리를 사용하여 종속성 주입을 구현합니다. 이러한 라이브러리 중 하나는 Microsoft Patterns & Practices에서 제공하는 [Unity](https://github.com/unitycontainer/unity)입니다. 
@@ -134,14 +132,14 @@ Unity에서 삽입한 것처럼 리포지토리는 어디든지 삽입될 수 �
 
 **참고:** ASP.NET Core의 종속성 주입에 대한 자세한 내용은 [ASP.NET Core의 종속성 주입](xref:fundamentals/dependency-injection#replacing-the-default-services-container)을 참조하세요.
 
-## <a name="serving-static-files"></a>정적 파일 지원
+## <a name="serving-static-files"></a>정적 파일 처리
 웹 개발의 중요한 부분은 정적 클라이언트 쪽 자산을 지원하는 기능입니다. 정적 파일의 가장 일반적인 예로는 HTML, CSS, Javascript 및 이미지가 있습니다. 이러한 파일은 앱(또는 CDN)의 게시된 위치에 저장되고 요청을 통해 로드될 수 있도록 참조되어야 합니다. 이 프로세스는 ASP.NET Core에서 변경되었습니다.
 
 ASP.NET에서 정적 파일은 다양한 디렉터리에 저장되고 뷰에서 참조됩니다.
 
 ASP.NET Core에서 정적 파일은 별도로 구성되지 않는 한 “웹 루트”(*&lt;content root&gt;/wwwroot*)에 저장됩니다. 파일은 `Startup.Configure`에서 `UseStaticFiles` 확장 메서드를 호출하는 방식으로 요청 파이프라인에 로드됩니다.
 
-[!code-csharp[Main](../../fundamentals/static-files/sample/StartupStaticFiles.cs?highlight=3&name=snippet1)]
+[!code-csharp[Main](../../fundamentals/static-files/samples/1x/StartupStaticFiles.cs?highlight=3&name=snippet_ConfigureMethod)]
 
 **참고:** .NET Framework를 대상으로 지정할 경우 NuGet 패키지 `Microsoft.AspNetCore.StaticFiles`를 설치합니다.
 
@@ -150,4 +148,5 @@ ASP.NET Core에서 정적 파일은 별도로 구성되지 않는 한 “웹 루
 **참고:** ASP.NET Core의 정적 파일 지원에 대한 자세한 내용은 [ASP.NET Core에서 정적 파일 사용 소개](xref:fundamentals/static-files)를 참조하세요.
 
 ## <a name="additional-resources"></a>추가 리소스
-* [.NET Core로 라이브러리 이식](https://docs.microsoft.com/dotnet/core/porting/libraries)
+
+* [.NET Core로 라이브러리 이식](/dotnet/core/porting/libraries)

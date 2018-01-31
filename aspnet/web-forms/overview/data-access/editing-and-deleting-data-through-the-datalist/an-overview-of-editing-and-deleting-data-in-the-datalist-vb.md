@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/an-overview-of-editing-and-deleting-data-in-the-datalist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3f43001b1980452e95187096cf884778c2970eb5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e08b55f763677a40a03503e54a23dc77a10a34f5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="an-overview-of-editing-and-deleting-data-in-the-datalist-vb"></a>DataList (VB)에서 데이터 편집 및 삭제에 대 한 개요
 ====================
@@ -86,11 +86,11 @@ ms.lasthandoff: 11/10/2017
 
 유감 스럽게도, DataList 이러한 기본 제공 기능을 제공 하지 않습니다. ObjectDataSource s 매개 변수는를 s 사용자 값이 할당 되도록 해야 우리의 해당 `Update()` 메서드를 호출 합니다. 주세요.이 노력 지원 하기 위해 DataList 다음과 같은 속성 및 이벤트를 제공 합니다.
 
-- **[ `DataKeyField` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.basedatalist.datakeyfield.aspx)**  DataList의 각 항목을 고유 하 게 식별할 수 있어야 할 업데이트나 삭제 하는 경우. 표시 된 데이터의 기본 키 필드에이 속성을 설정 합니다. DataList s 채울 이렇게 [ `DataKeys` 컬렉션](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.basedatalist.datakeys.aspx) 지정 된 `DataKeyField` 각 DataList 항목에 대 한 값입니다.
-- **[ `EditCommand` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.editcommand.aspx)**  단추나 LinkButton을 ImageButton 같은 경우 발생 인 `CommandName` 속성이로 설정 된 편집을 클릭 합니다.
-- **[ `CancelCommand` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.cancelcommand.aspx)**  단추나 LinkButton을 ImageButton 같은 경우 발생 인 `CommandName` 속성 취소 클릭 합니다.
-- **[ `UpdateCommand` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.updatecommand.aspx)**  단추, LinkButton을 또는 ImageButton 때 발생 된 `CommandName` 속성이로 설정 된 업데이트를 클릭 합니다.
-- **[ `DeleteCommand` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.deletecommand.aspx)**  단추, LinkButton을 또는 ImageButton 때 발생 된 `CommandName` 속성이로 설정 되어 삭제를 클릭 합니다.
+- **[ `DataKeyField` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basedatalist.datakeyfield.aspx)**  DataList의 각 항목을 고유 하 게 식별할 수 있어야 할 업데이트나 삭제 하는 경우. 표시 된 데이터의 기본 키 필드에이 속성을 설정 합니다. DataList s 채울 이렇게 [ `DataKeys` 컬렉션](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basedatalist.datakeys.aspx) 지정 된 `DataKeyField` 각 DataList 항목에 대 한 값입니다.
+- **[ `EditCommand` 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.editcommand.aspx)**  단추나 LinkButton을 ImageButton 같은 경우 발생 인 `CommandName` 속성이로 설정 된 편집을 클릭 합니다.
+- **[ `CancelCommand` 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.cancelcommand.aspx)**  단추나 LinkButton을 ImageButton 같은 경우 발생 인 `CommandName` 속성 취소 클릭 합니다.
+- **[ `UpdateCommand` 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.updatecommand.aspx)**  단추, LinkButton을 또는 ImageButton 때 발생 된 `CommandName` 속성이로 설정 된 업데이트를 클릭 합니다.
+- **[ `DeleteCommand` 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.deletecommand.aspx)**  단추, LinkButton을 또는 ImageButton 때 발생 된 `CommandName` 속성이로 설정 되어 삭제를 클릭 합니다.
 
 이러한 속성 및 이벤트를 사용 하 여 네 가지 방법이 있습니다 DataList에서 데이터를 삭제 하 고 업데이트를 사용할 수 있습니다.
 
@@ -153,7 +153,7 @@ DataList 기본 바꾼 후 `ItemTemplate` 을 사용자 지정 된 것으로 선
 >  편집 가능한 Gridview, DetailsViews, 및 FormViews 만들 때 뷰 상태를 사용 하지 않도록 설정할 수 있었습니다 하 예리한 독자 기억할 것입니다. ASP.NET 2.0 웹 컨트롤을 포함할 수 있으므로이 *컨트롤 상태*역할 상태 보기와 같은 것으로 간주 필수적이 지 게시할 상태가 유지 됩니다.
 
 
-GridView에서 상태 표시 단순히 trivial 상태 정보를 하지 않지만 (포함 하는 편집 및 삭제 하는 데 필요한 상태) 컨트롤 상태를 유지 관리 하는 뷰를 사용 하지 않도록 설정 합니다. ASP.NET 1.x 시간 내에 만든 것 DataList 컨트롤 상태를 사용 하지 않는 하 고 따라서 뷰 상태를 사용할 수 있어야 합니다. 참조 [컨트롤 상태 vs. 뷰 상태](https://msdn.microsoft.com/en-us/library/1whwt1k7.aspx) 컨트롤 상태 및 상태 보기에서에서와 다른 목적에 대 한 자세한 내용은 합니다.
+GridView에서 상태 표시 단순히 trivial 상태 정보를 하지 않지만 (포함 하는 편집 및 삭제 하는 데 필요한 상태) 컨트롤 상태를 유지 관리 하는 뷰를 사용 하지 않도록 설정 합니다. ASP.NET 1.x 시간 내에 만든 것 DataList 컨트롤 상태를 사용 하지 않는 하 고 따라서 뷰 상태를 사용할 수 있어야 합니다. 참조 [컨트롤 상태 vs. 뷰 상태](https://msdn.microsoft.com/library/1whwt1k7.aspx) 컨트롤 상태 및 상태 보기에서에서와 다른 목적에 대 한 자세한 내용은 합니다.
 
 ## <a name="step-4-adding-an-editing-user-interface"></a>4 단계: 편집 사용자 인터페이스를 추가합니다.
 
@@ -225,7 +225,7 @@ GridView 컨트롤 필드 (BoundFields, CheckBoxFields, TemplateFields, 및 등)
 
 단추를 클릭 하면에서 포스트백이 발생 하지만 않습니다 *하지* 목록을 편집 모드에 제품을 전환 합니다. 제품을 편집할 수 있도록 해야 합니다.
 
-1. DataList s 설정 [ `EditItemIndex` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.edititemindex.aspx) 의 인덱스에는 `DataListItem` 방금 편집 단추를 클릭 합니다.
+1. DataList s 설정 [ `EditItemIndex` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.edititemindex.aspx) 의 인덱스에는 `DataListItem` 방금 편집 단추를 클릭 합니다.
 2. DataList에 데이터를 다시 바인딩해야 합니다. DataList는 다시 렌더링 하는 경우는 `DataListItem` 인 `ItemIndex` datalist s 해당 `EditItemIndex` 사용 하 여 렌더링 됩니다 해당 `EditItemTemplate`합니다.
 
 DataList s 이후 `EditCommand` 만들기, 이벤트 편집 단추를 클릭할 때 발생 한 `EditCommand` 이벤트 처리기를 다음 코드로:
@@ -249,7 +249,7 @@ DataList s 이후 `EditCommand` 만들기, 이벤트 편집 단추를 클릭할 
 
 읽기 전용 모드에 있는 해당 항목의 모든 렌더링 DataList가 하도록 설정 해야 합니다.
 
-1. DataList s 설정 [ `EditItemIndex` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.edititemindex.aspx) 존재 하지의 인덱스에 `DataListItem` 인덱스입니다. `-1`것은 안전 하므로 `DataListItem` 인덱스에서 시작 `0`합니다.
+1. DataList s 설정 [ `EditItemIndex` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.edititemindex.aspx) 존재 하지의 인덱스에 `DataListItem` 인덱스입니다. `-1`것은 안전 하므로 `DataListItem` 인덱스에서 시작 `0`합니다.
 2. DataList에 데이터를 다시 바인딩해야 합니다. No 이후 `DataListItem` `ItemIndex` DataList s에 해당 하는 es `EditItemIndex`, 전체 DataList는 읽기 전용 모드에서 렌더링 됩니다.
 
 다음 이벤트 처리기 코드와 다음이 단계를 수행할 수 있습니다.
@@ -263,7 +263,7 @@ DataList s 이후 `EditCommand` 만들기, 이벤트 편집 단추를 클릭할 
 
 1. 편집 된 제품 s 뿐만 아니라 사용자가 입력 한 제품 이름 및 가격을 프로그래밍 방식으로 액세스 `ProductID`합니다.
 2. 적절 한 호출 하 여 업데이트 프로세스를 시작할 `UpdateProduct` 에 오버 로드는 `ProductsBLL` 클래스입니다.
-3. DataList s 설정 [ `EditItemIndex` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.edititemindex.aspx) 존재 하지의 인덱스에 `DataListItem` 인덱스입니다. `-1`것은 안전 하므로 `DataListItem` 인덱스에서 시작 `0`합니다.
+3. DataList s 설정 [ `EditItemIndex` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.edititemindex.aspx) 존재 하지의 인덱스에 `DataListItem` 인덱스입니다. `-1`것은 안전 하므로 `DataListItem` 인덱스에서 시작 `0`합니다.
 4. DataList에 데이터를 다시 바인딩해야 합니다. No 이후 `DataListItem` `ItemIndex` DataList s에 해당 하는 es `EditItemIndex`, 전체 DataList는 읽기 전용 모드에서 렌더링 됩니다.
 
 단계 1 및 2는 s 변경; 사용자를 저장 해야 3 단계와 4 DataList 미리 편집 상태로 되돌리려면 후 변경 내용이 저장 되 고에서 수행 된 단계와 동일는 `CancelCommand` 이벤트 처리기입니다.

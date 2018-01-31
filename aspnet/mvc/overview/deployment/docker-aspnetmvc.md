@@ -11,11 +11,11 @@ ms.prod: .net-framework
 ms.technology: dotnet-mvc
 ms.devlang: dotnet
 ms.assetid: c9f1d52c-b4bd-4b5d-b7f9-8f9ceaf778c4
-ms.openlocfilehash: 336d0e9d2247dd2d63c779fd446f9a50be6dbc50
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: badc1c9b10ac27c3d876e3331c855a9d5904d27d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="migrating-aspnet-mvc-applications-to-windows-containers"></a>ASP.NET MVC 응용 프로그램을 Windows 컨테이너로 마이그레이션
 
@@ -40,9 +40,9 @@ Windows 컨테이너에서 기존 .NET Framework 기반 응용 프로그램을 �
 
 개발 컴퓨터가 실행 중이어야 합니다.
 
-- [Windows 10 1주년 업데이트](https://www.microsoft.com/en-us/software-download/windows10/) 이상 또는 [Windows Server 2016](https://www.microsoft.com/en-us/cloud-platform/windows-server) 이상
+- [Windows 10 1주년 업데이트](https://www.microsoft.com/software-download/windows10/) 이상 또는 [Windows Server 2016](https://www.microsoft.com/cloud-platform/windows-server) 이상
 - [Windows용 Docker](https://docs.docker.com/docker-for-windows/) - 안정적인 버전 1.13.0 또는 1.12 베타 26 이상 버전
-- [Visual Studio 2017](https://www.visualstudio.com/en-us/visual-studio-homepage-vs.aspx)합니다.
+- [Visual Studio 2017](https://www.visualstudio.com/visual-studio-homepage-vs.aspx).
 
 > [!IMPORTANT]
 > Windows Server 2016을 사용하는 경우 [컨테이너 호스트 배포 - Windows Server](https://msdn.microsoft.com/virtualization/windowscontainers/deployment/deployment)에 대한 지침을 따르세요.

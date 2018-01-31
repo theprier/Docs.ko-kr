@@ -2,20 +2,18 @@
 title: "ASP.NET Core MVC 개요"
 author: ardalis
 description: "ASP.NET Core MVC 웹 응용 프로그램을 빌드하기 위한 풍부한 프레임 워크는 방법과 모델-뷰-컨트롤러를 사용 하 여 Api 디자인 패턴에 알아봅니다."
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 01/08/2018
 ms.topic: article
-ms.assetid: 89af38d1-52e0-4db7-b791-dbce909b0714
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/overview
-ms.openlocfilehash: 33c293e15c0a7f18bbace9dc564fe11d93a7d509
-ms.sourcegitcommit: df2157ae9aeea0075772719c29784425c783e82a
+ms.openlocfilehash: 3c3279e7d25704f5e70bbd83cf9feebda8319203
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="overview-of-aspnet-core-mvc"></a>ASP.NET Core MVC 개요
 
@@ -52,7 +50,7 @@ MVC 응용 프로그램에서 모델은 응용 프로그램 및 모든 비즈니
 컨트롤러는 사용자 상호 작용 처리, 모델로 작업 하 고, 궁극적으로에 렌더링할 뷰를 선택 하는 구성 요소입니다. MVC 응용 프로그램에서 뷰 정보만 표시 됩니다. 컨트롤러 처리 하며 사용자 입력 및 상호 작용에 응답 합니다. MVC 패턴에서 컨트롤러는 초기 진입점 하 고 모델을 사용 하려면 형식 및 렌더링 하는 보기를 선택 (따라서 이름-제어 응용 프로그램 요청에 응답 하는 방법을).
 
 > [!NOTE]
-> 너무 많은 책임으로 컨트롤러를 지나치게 복잡 수 해야 합니다. 컨트롤러 논리를 지나치게 복잡 되는 것을 유지 하기 위해 사용 하 여는 [단일 책임 원칙](http://deviq.com/single-responsibility-principle/) 푸시 비즈니스 논리는 컨트롤러를 도메인 모델입니다.
+> 너무 많은 책임으로 컨트롤러를 지나치게 복잡 하지 않아야 합니다. 컨트롤러 논리를 지나치게 복잡 되는 것을 유지 하기 위해 사용 하 여는 [단일 책임 원칙](http://deviq.com/single-responsibility-principle/) 푸시 비즈니스 논리는 컨트롤러를 도메인 모델입니다.
 
 >[!TIP]
 > 컨트롤러 작업 같은 종류의 작업을 자주 수행를 찾을 경우 참고할 수는 [직접 원칙 반복 안 함](http://deviq.com/don-t-repeat-yourself/) 이러한 일반적인 작업을 이동 하 여 [필터](#filters)합니다.

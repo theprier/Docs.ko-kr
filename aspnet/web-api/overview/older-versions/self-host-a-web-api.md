@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/self-host-a-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: b308ee9ec209ba8bbb021827655c83443dd149e6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 564f859e73a88ac9c5f27e9b8f7409ec126642f8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="self-host-aspnet-web-api-1-c"></a>자체 호스트 하는 ASP.NET Web API 1 (C#)
 ====================
@@ -43,7 +43,7 @@ Visual Studio를 시작 하 고 선택 **새 프로젝트** 에서 **시작** �
 
 ## <a name="set-the-target-framework-visual-studio-2010"></a>대상 프레임 워크 (Visual Studio 2010) 설정
 
-Visual Studio 2010을 사용 하는 경우.NET Framework 4.0 대상 프레임 워크를 변경 합니다. (기본적으로 프로젝트 템플릿의 대상은 [.NET Framework 클라이언트 프로필](https://msdn.microsoft.com/en-us/library/cc656912.aspx#features_not_included_in_the_net_framework_client_profile).)
+Visual Studio 2010을 사용 하는 경우.NET Framework 4.0 대상 프레임 워크를 변경 합니다. (기본적으로 프로젝트 템플릿의 대상은 [.NET Framework 클라이언트 프로필](https://msdn.microsoft.com/library/cc656912.aspx#features_not_included_in_the_net_framework_client_profile).)
 
 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭 하 고 선택 **속성**합니다. 에 **대상 프레임 워크** 드롭다운 목록에서.NET Framework 4.0 대상 프레임 워크를 변경 합니다. 를 변경 내용을 적용 하 라는 메시지가 나타나면 클릭 **예**합니다.
 
@@ -101,8 +101,8 @@ NuGet 패키지 관리자를 설치한 후 웹 API Self-Host 패키지를 프로
 | URI | 설명 |
 | --- | --- |
 | / api/제품 | 모든 제품의 목록을 가져옵니다. |
-| /api/제품/*id* | 제품 id 가져오기 |
-| /api/제품 /? category =*범주* | 범주별으로 제품의 목록을 가져옵니다. |
+| /api/products/*id* | 제품 id 가져오기 |
+| /api/products/?category=*category* | 범주별으로 제품의 목록을 가져옵니다. |
 
 ## <a name="host-the-web-api"></a>Web API를 호스트 합니다.
 
@@ -175,7 +175,7 @@ Client/Program.cs 파일을 엽니다. 다음 추가 **를 사용 하 여** 문:
 이러한 각 방법의 동일한 패턴을 따릅니다.
 
 1. 호출 **HttpClient.GetAsync** 적합 한 URI에 GET 요청을 보내려고 합니다.
-2. 호출 **HttpResponseMessage.EnsureSuccessStatusCode**합니다. 이 메서드는 HTTP 응답 상태 오류 코드 이면 예외가 throw 됩니다.
+2. Call **HttpResponseMessage.EnsureSuccessStatusCode**. 이 메서드는 HTTP 응답 상태 오류 코드 이면 예외가 throw 됩니다.
 3. 호출 **ReadAsAsync&lt;T&gt;**  를 HTTP 응답에서 CLR 형식을 역직렬화 합니다. 이 메서드는에 정의 된 확장 메서드를 **System.Net.Http.HttpContentExtensions**합니다.
 
 **GetAsync** 및 **ReadAsAsync** 메서드는 비동기 둘 다 합니다. 반환 **작업** 비동기 작업을 나타내는 개체입니다. 가져오기는 **결과** 속성은 작업이 완료 될 때까지 스레드를 차단 합니다.

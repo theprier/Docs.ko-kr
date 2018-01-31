@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: a5538744dfaff76f28c5f17d8f5d782ef3f6c118
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a7995844ee6ed19efa130c4f6c019214d6652ea7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-to-iis-as-a-test-environment---5-of-12"></a>SQL Server Compact Visual Studio 또는 Visual Web Developer를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: iis 5 / 12-테스트 환경으로 배포
 ====================
@@ -83,7 +83,7 @@ Windows에서 **시작** 메뉴 선택 **실행**"inetmgr"를 입력 한 다음 
 
 두 개의 응용 프로그램 풀을 참조 하는 경우.NET Framework 2.0으로 설정 되어 둘 모두 IIS에서 ASP.NET 4를 설치 해야 합니다.
 
-- 마우스 오른쪽 단추로 클릭 하 여 명령 프롬프트 창을 열고 **명령 프롬프트** windows에서 **시작** 메뉴에서 **관리자 권한으로 실행**합니다. 그러고 나 서 [aspnet\_regiis.exe](https://msdn.microsoft.com/en-us/library/k6h9cz8h.aspx) 다음 명령을 사용 하 여 IIS에서 ASP.NET 4를 설치 합니다. (64 비트 시스템 "Framework64"와 "프레임 워크"를 대체 합니다.)
+- 마우스 오른쪽 단추로 클릭 하 여 명령 프롬프트 창을 열고 **명령 프롬프트** windows에서 **시작** 메뉴에서 **관리자 권한으로 실행**합니다. 그러고 나 서 [aspnet\_regiis.exe](https://msdn.microsoft.com/library/k6h9cz8h.aspx) 다음 명령을 사용 하 여 IIS에서 ASP.NET 4를 설치 합니다. (64 비트 시스템 "Framework64"와 "프레임 워크"를 대체 합니다.)
 
     [!code-console[Main](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12/samples/sample2.cmd)]
 
@@ -111,7 +111,7 @@ Windows에서 **시작** 메뉴 선택 **실행**"inetmgr"를 입력 한 다음 
 - 만들기는 *배포 패키지* 하 고 IIS 관리자 UI를 사용 하 여 설치 합니다. 배포 패키지를 구성 하는 *.zip* 모든 파일 및 IIS에서 사이트를 설치 하는 데 필요한 메타 데이터가 포함 된 파일입니다.
 - 배포 패키지를 만들고 명령줄을 사용 하 여 설치 합니다.
 
-서 자동화 하려면 Visual Studio를 설정 하려면 이전 자습서의 다음 세 가지 방법의 모든 배포 작업 적용 프로세스입니다. 이 자습서를 사용 하 여 이러한 메서드의 첫 번째입니다. 배포 패키지를 사용 하는 방법에 대 한 정보를 참조 하십시오. [ASP.NET 배포 콘텐츠 맵](https://msdn.microsoft.com/en-us/library/bb386521.aspx)합니다.
+서 자동화 하려면 Visual Studio를 설정 하려면 이전 자습서의 다음 세 가지 방법의 모든 배포 작업 적용 프로세스입니다. 이 자습서를 사용 하 여 이러한 메서드의 첫 번째입니다. 배포 패키지를 사용 하는 방법에 대 한 정보를 참조 하십시오. [ASP.NET 배포 콘텐츠 맵](https://msdn.microsoft.com/library/bb386521.aspx)합니다.
 
 게시 하기 전에 Visual Studio를 관리자 모드로 실행 되 고 있는지를 확인 합니다. (Windows 7에서 **시작** 메뉴에서 사용 중인 Visual Studio 버전에 대 한 아이콘을 마우스 오른쪽 단추로 클릭 하 고 선택 **관리자 권한으로 실행**.) 관리자 모드는만 경우 게시 하는 IIS에 로컬 컴퓨터에 게시 하기 위한 필요 합니다.
 
@@ -244,7 +244,7 @@ Visual Studio에서 IIS 또는 IIS Express를 실행 하는 방법에 대 한 �
 
 - [IIS Express 개요](https://www.iis.net/learn/extensions/introduction-to-iis-express/iis-express-overview) IIS.net 사이트에 있습니다.
 - [IIS Express 소개](https://weblogs.asp.net/scottgu/archive/2010/06/28/introducing-iis-express.aspx) Scott Guthrie의 블로그입니다.
-- [방법: Visual Studio에서 웹 프로젝트에 대 한 웹 서버를 지정](https://msdn.microsoft.com/en-us/library/ms178108.aspx)합니다.
+- [방법: Visual Studio에서 웹 프로젝트에 대 한 웹 서버를 지정](https://msdn.microsoft.com/library/ms178108.aspx)합니다.
 - [주요 차이점 간의 IIS 및 ASP.NET 개발 서버](../deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-cs.md) ASP.NET 사이트의 합니다.
 - [ASP.NET MVC 또는 Web Forms 응용 프로그램 IIS 7에서 30 초 내에 테스트](https://blogs.msdn.com/b/rickandy/archive/2011/04/22/test-you-asp-net-mvc-or-webforms-application-on-iis-7-in-30-seconds.aspx) Rick Anderson의 블로그에서 합니다. 이 항목의 예제 이유 (Cassini) Visual Studio 개발 서버를 사용 하 여 안정적이 지 않습니다 IIS Express에서 테스트와 IIS Express에서 테스트 된 이유 IIS에서 테스트 하는 것 만큼 안정적를 제공 합니다.
 

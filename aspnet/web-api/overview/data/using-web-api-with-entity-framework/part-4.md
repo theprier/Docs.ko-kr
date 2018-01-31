@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-4
 msc.type: authoredcontent
-ms.openlocfilehash: 9294da7cd5b7a362d4ade9d1bf7e7747e20ee1a8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 58a9dfb621630f23b37247b96ed3a19a661857f1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="handling-entity-relations"></a>처리 엔터티 관계
 ====================
@@ -86,7 +86,7 @@ Serialization 문제를 방지 하는 한 가지 방법은 데이터 전송 개�
 
 ### <a name="explicit-loading"></a>명시적 로드
 
-명시적 로드는 지연 로드를 제외 하 코드에서 관련된 데이터를 명시적으로 가져오기 탐색 속성에 액세스할 때 자동으로 발생 하지 않습니다. 명시적 로드 관련된 데이터를 로드 하는 경우 보다 자세히 제어를 제공 하지만 추가 코드가 필요 합니다. 명시적 로드에 대 한 자세한 내용은 참조 [관련 엔터티 로드](https://msdn.microsoft.com/en-us/data/jj574232#explicit)합니다.
+명시적 로드는 지연 로드를 제외 하 코드에서 관련된 데이터를 명시적으로 가져오기 탐색 속성에 액세스할 때 자동으로 발생 하지 않습니다. 명시적 로드 관련된 데이터를 로드 하는 경우 보다 자세히 제어를 제공 하지만 추가 코드가 필요 합니다. 명시적 로드에 대 한 자세한 내용은 참조 [관련 엔터티 로드](https://msdn.microsoft.com/data/jj574232#explicit)합니다.
 
 ## <a name="navigation-properties-and-circular-references"></a>탐색 속성 및 순환 참조
 

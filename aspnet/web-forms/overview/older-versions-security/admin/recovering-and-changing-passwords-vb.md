@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/recovering-and-changing-passwords-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f7f6e7e4bc3a8cc7e70911bc22a28d385f762af0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b78469858483a9501a0f73d1c894e29ae0a99122
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="recovering-and-changing-passwords-vb"></a>복구 하 고 (VB) 암호 변경
 ====================
@@ -83,7 +83,7 @@ PasswordRecovery 컨트롤을 사용 하 여 ASP.NET 페이지에서 살펴보�
 
 이 페이지를 테스트 하기 전에 구성 하는 경향이의 마지막 부분을 하나 있습니다:에 메일 배달 설정을 지정 해야 `Web.config`합니다. PasswordRecovery 제어는 전자 메일을 전송에 대 한 이러한 설정을 사용 합니다.
 
-메일 배달 구성으로 지정 됩니다는 [ `<system.net>` 요소](https://msdn.microsoft.com/en-us/library/6484zdc1.aspx)의 [ `<mailSettings>` 요소](https://msdn.microsoft.com/en-us/library/w355a94k.aspx)합니다. 사용 하 여는 [ `<smtp>` 요소](https://msdn.microsoft.com/en-us/library/ms164240.aspx) 배달 방법 및 주소에서 기본을 나타냅니다. 다음 태그 라는 네트워크 SMTP 서버를 사용 하도록 메일 설정을 구성 `smtp.example.com` 포트 25와 사용자 이름/암호 자격 증명의 사용자 이름 및 암호를 사용 합니다.
+메일 배달 구성으로 지정 됩니다는 [ `<system.net>` 요소](https://msdn.microsoft.com/library/6484zdc1.aspx)의 [ `<mailSettings>` 요소](https://msdn.microsoft.com/library/w355a94k.aspx)합니다. 사용 하 여는 [ `<smtp>` 요소](https://msdn.microsoft.com/library/ms164240.aspx) 배달 방법 및 주소에서 기본을 나타냅니다. 다음 태그 라는 네트워크 SMTP 서버를 사용 하도록 메일 설정을 구성 `smtp.example.com` 포트 25와 사용자 이름/암호 자격 증명의 사용자 이름 및 암호를 사용 합니다.
 
 > [!NOTE]
 > `<system.net>`루트의 자식 요소인 `<configuration>` 요소와의 형제 `<system.web>`합니다. 따라서에 두지 마십시오는 `<system.net>` 내의 요소는 `<system.web>` 요소로 대신 같은 수준에 넣습니다.
@@ -93,7 +93,7 @@ PasswordRecovery 컨트롤을 사용 하 여 ASP.NET 페이지에서 살펴보�
 
 SMTP 서버를 사용 하 여 네트워크를 전자 메일 메시지를 보낼 수를 보관 해야 여기서 픽업 디렉터리를 지정할 수 있습니다.
 
-SMTP 설정을 구성한 경우 참조는 `RecoverPassword.aspx` 브라우저를 통해 페이지입니다. 먼저 사용자 저장소에 존재 하지 않는 사용자 이름을 입력 해 보십시오. 그림 2에서 볼 수 있듯이 PasswordRecovery 컨트롤에 사용자 정보를 액세스할 수 없다는 메시지가 표시 됩니다. 컨트롤의를 통해 메시지의 텍스트를 사용자 지정할 수 있는 [ `UserNameFailureText` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.passwordrecovery.usernamefailuretext.aspx)합니다.
+SMTP 설정을 구성한 경우 참조는 `RecoverPassword.aspx` 브라우저를 통해 페이지입니다. 먼저 사용자 저장소에 존재 하지 않는 사용자 이름을 입력 해 보십시오. 그림 2에서 볼 수 있듯이 PasswordRecovery 컨트롤에 사용자 정보를 액세스할 수 없다는 메시지가 표시 됩니다. 컨트롤의를 통해 메시지의 텍스트를 사용자 지정할 수 있는 [ `UserNameFailureText` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.passwordrecovery.usernamefailuretext.aspx)합니다.
 
 
 [![잘못 된 사용자 이름을 입력 한 경우 오류 메시지가 표시 됩니다.](recovering-and-changing-passwords-vb/_static/image5.png)](recovering-and-changing-passwords-vb/_static/image4.png)
@@ -101,7 +101,7 @@ SMTP 설정을 구성한 경우 참조는 `RecoverPassword.aspx` 브라우저를
 **그림 2**:에서 잘못 된 사용자 이름을 입력 한 경우는 오류 메시지가 표시 됩니다 ([전체 크기 이미지를 보려면 클릭](recovering-and-changing-passwords-vb/_static/image6.png))
 
 
-이제 사용자 이름을 입력 합니다. 에 액세스할 수 있으며 해당 보안 대답 하면 전자 메일 주소를 사용 하 여 시스템에 있는 계정의 사용자 이름 확인을 사용 합니다. 사용자 이름 입력을 하 고 다음 제출을 클릭 하면 PasswordRecovery 컨트롤 질문 보기를 표시 합니다. 으로 사용자 이름 보기를 입력 하는 경우 잘못 된 응답 PasswordRecovery 컨트롤 표시 되는 경우 오류 메시지 (그림 3 참조). 사용 하 여는 [ `QuestionFailureText` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.passwordrecovery.questionfailuretext.aspx) 이 오류 메시지를 사용자 지정할 수 있습니다.
+이제 사용자 이름을 입력 합니다. 에 액세스할 수 있으며 해당 보안 대답 하면 전자 메일 주소를 사용 하 여 시스템에 있는 계정의 사용자 이름 확인을 사용 합니다. 사용자 이름 입력을 하 고 다음 제출을 클릭 하면 PasswordRecovery 컨트롤 질문 보기를 표시 합니다. 으로 사용자 이름 보기를 입력 하는 경우 잘못 된 응답 PasswordRecovery 컨트롤 표시 되는 경우 오류 메시지 (그림 3 참조). 사용 하 여는 [ `QuestionFailureText` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.passwordrecovery.questionfailuretext.aspx) 이 오류 메시지를 사용자 지정할 수 있습니다.
 
 
 [![사용자가 잘못 된 보안 대답을 입력 하는 경우 오류 메시지가 표시 됩니다.](recovering-and-changing-passwords-vb/_static/image8.png)](recovering-and-changing-passwords-vb/_static/image7.png)
@@ -127,15 +127,15 @@ PasswordRecovery 컨트롤에서 보냅니다. 기본 전자 메일이 아니라
 
 암호: *암호*
 
-이 메시지의 프로그래밍 방식으로 사용자 PasswordRecovery 컨트롤에 대 한 이벤트 처리기를 통해 지정할 수 [ `SendingMail` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.passwordrecovery.sendingmail.aspx)를 통해 선언적으로 또는 [ `MailDefinition` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.passwordrecovery.maildefinition.aspx)합니다. 두이 옵션 모두를 살펴보겠습니다.
+이 메시지의 프로그래밍 방식으로 사용자 PasswordRecovery 컨트롤에 대 한 이벤트 처리기를 통해 지정할 수 [ `SendingMail` 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.passwordrecovery.sendingmail.aspx)를 통해 선언적으로 또는 [ `MailDefinition` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.passwordrecovery.maildefinition.aspx)합니다. 두이 옵션 모두를 살펴보겠습니다.
 
-`SendingMail` 이벤트가 발생 하기 바로 전에 전자 메일 메시지 전송 되 고 프로그래밍 방식으로 전자 메일 메시지를 조정 하려면 마지막 기회입니다. 이 이벤트는 이벤트 처리기 형식의 개체로 전달 됩니다 [ `MailMessageEventArgs` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.mailmessageeventargs.aspx), 해당 `Message` 속성을 보내도록 전자 메일에 대 한 참조를 포함 합니다.
+`SendingMail` 이벤트가 발생 하기 바로 전에 전자 메일 메시지 전송 되 고 프로그래밍 방식으로 전자 메일 메시지를 조정 하려면 마지막 기회입니다. 이 이벤트는 이벤트 처리기 형식의 개체로 전달 됩니다 [ `MailMessageEventArgs` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.mailmessageeventargs.aspx), 해당 `Message` 속성을 보내도록 전자 메일에 대 한 참조를 포함 합니다.
 
 에 대 한 이벤트 처리기를 만들고는 `SendingMail` 이벤트 프로그래밍 방식으로 추가 하는 다음 코드를 추가 하 고 `webmaster@example.com` 참조 목록에 있습니다.
 
 [!code-vb[Main](recovering-and-changing-passwords-vb/samples/sample2.vb)]
 
-선언적 수단을 통해 전자 메일 메시지를 구성할 수도 있습니다. PasswordRecovery `MailDefinition` 속성은 형식의 개체로 [ `MailDefinition` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.maildefinition.aspx)합니다. `MailDefinition` 클래스 전자 메일 관련 속성을 포함 하 여 다 수 제공 `From`, `CC`, `Priority`, `Subject`, `IsBodyHtml`, `BodyFileName`, 등입니다. 먼저 설정 된 [ `Subject` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.maildefinition.subject.aspx) 좀 더 구체적인 암호가 재설정과 같은 (암호)로, 기본적으로 사용 된 것 보다...
+선언적 수단을 통해 전자 메일 메시지를 구성할 수도 있습니다. PasswordRecovery `MailDefinition` 속성은 형식의 개체로 [ `MailDefinition` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.maildefinition.aspx)합니다. `MailDefinition` 클래스 전자 메일 관련 속성을 포함 하 여 다 수 제공 `From`, `CC`, `Priority`, `Subject`, `IsBodyHtml`, `BodyFileName`, 등입니다. 먼저 설정 된 [ `Subject` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.maildefinition.subject.aspx) 좀 더 구체적인 암호가 재설정과 같은 (암호)로, 기본적으로 사용 된 것 보다...
 
 별도 전자 메일 템플릿 파일을 만들어야 하는 전자 메일 메시지의 본문을 사용자 지정 하는 본문 내용을 들어 있는입니다. 이라는 웹 사이트에서 새 폴더를 만들어 시작 `EmailTemplates`합니다. 다음으로이 폴더에 새 텍스트 파일을 추가 `PasswordRecovery.txt` 다음 내용을 추가 합니다.
 
@@ -143,7 +143,7 @@ PasswordRecovery 컨트롤에서 보냅니다. 기본 전자 메일이 아니라
 
 사용 하 여 자리 표시자 `<%UserName%>` 및 `<%Password%>`합니다. 자동으로 PasswordRecovery 제어는 사용자의 사용자 이름 및 전자 메일을 보내기 전에 복구 암호도 이러한 두 자리 표시자를 바꿉니다.
 
-마지막으로 가리킨는 `MailDefinition`의 [ `BodyFileName` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.maildefinition.bodyfilename.aspx) 방금 만든 메일 템플릿으로 (`~/EmailTemplates/PasswordRecovery.txt`).
+마지막으로 가리킨는 `MailDefinition`의 [ `BodyFileName` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.maildefinition.bodyfilename.aspx) 방금 만든 메일 템플릿으로 (`~/EmailTemplates/PasswordRecovery.txt`).
 
 이러한 변경한 후 조정 된 `RecoverPassword.aspx` 페이지 및 사용자 이름 및 보안 대답을 입력 합니다. 나타나면 그림 5에 있는 것 처럼 보이는 전자 메일을 해야 합니다. `webmaster@example.com` 참조 하 여 제목 및 본문 업데이트 되었습니다.
 
@@ -153,7 +153,7 @@ PasswordRecovery 컨트롤에서 보냅니다. 기본 전자 메일이 아니라
 **그림 5**: 제목, 본문 및 참조 목록 업데이트 되었습니다 ([전체 크기 이미지를 보려면 클릭](recovering-and-changing-passwords-vb/_static/image15.png))
 
 
-HTML 형식의 전자 메일을 보내려면 설정 [ `IsBodyHtml` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.maildefinition.isbodyhtml.aspx) True (기본값은 False) 및 전자 메일 템플릿 update HTML을 포함 하도록 합니다.
+HTML 형식의 전자 메일을 보내려면 설정 [ `IsBodyHtml` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.maildefinition.isbodyhtml.aspx) True (기본값은 False) 및 전자 메일 템플릿 update HTML을 포함 하도록 합니다.
 
 `MailDefinition` 속성 PasswordRecovery 클래스에 고유 하지 않습니다. ChangePassword 컨트롤에서는 2 단계에서에서 알 수 있듯이 한 `MailDefinition` 속성입니다. CreateUserWizard 컨트롤 이러한 속성을 포함 하는 또한 자동으로 새 사용자에 게 환영 전자 메일 메시지를 보낼 구성할 수 있습니다.
 
@@ -163,10 +163,10 @@ HTML 형식의 전자 메일을 보내려면 설정 [ `IsBodyHtml` ](https://msd
 
 ### <a name="programmatically-resetting-a-users-password"></a>프로그래밍 방식으로 사용자의 암호를 다시 설정
 
-PasswordRecovery 사용자의 암호를 재설정 호출을 제어 하는 경우는 `MembershipUser` 개체의 [ `ResetPassword` 메서드](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.resetpassword.aspx)합니다. 이 메서드에 두 개의 오버 로드가 있습니다.
+PasswordRecovery 사용자의 암호를 재설정 호출을 제어 하는 경우는 `MembershipUser` 개체의 [ `ResetPassword` 메서드](https://msdn.microsoft.com/library/system.web.security.membershipuser.resetpassword.aspx)합니다. 이 메서드에 두 개의 오버 로드가 있습니다.
 
-- **[`ResetPassword`](https://msdn.microsoft.com/en-us/library/d94bdzz2.aspx)**-사용자의 암호를 다시 설정 합니다. 경우에이 오버 로드를 사용 하 여 `RequiresQuestionAndAnswer` 은 False입니다.
-- **[`ResetPassword(securityAnswer)`](https://msdn.microsoft.com/en-us/library/d90zte4w.aspx)**-사용자의 암호 경우에만 제공 된 기본값으로 다시 설정 *securityAnswer* 올바릅니다. 경우에이 오버 로드를 사용 하 여 `RequiresQuestionAndAnswer` 은 True입니다.
+- **[`ResetPassword`](https://msdn.microsoft.com/library/d94bdzz2.aspx)**-사용자의 암호를 다시 설정 합니다. 경우에이 오버 로드를 사용 하 여 `RequiresQuestionAndAnswer` 은 False입니다.
+- **[`ResetPassword(securityAnswer)`](https://msdn.microsoft.com/library/d90zte4w.aspx)**-사용자의 암호 경우에만 제공 된 기본값으로 다시 설정 *securityAnswer* 올바릅니다. 경우에이 오버 로드를 사용 하 여 `RequiresQuestionAndAnswer` 은 True입니다.
 
 두 오버 로드는 새, 임의로 생성 된 암호를 반환 합니다.
 
@@ -179,7 +179,7 @@ PasswordRecovery 사용자의 암호를 재설정 호출을 제어 하는 경우
 
 ### <a name="a-word-on-how-the-random-passwords-are-generated"></a>단어는 임의 암호 어떻게에 생성 됩니다.
 
-그림 4 및 5에서 전자 메일 메시지에 표시 되는 임의로 생성 된 암호는 멤버 자격 클래스에 의해 작성 [ `GeneratePassword` 메서드](https://msdn.microsoft.com/en-us/library/system.web.security.membership.generatepassword.aspx)합니다. 이 메서드에 두 개의 정수 입력된 매개 변수- *길이* 및 *numberOfNonAlphanumericCharacters* -적어도 문자열을 반환 하 고 *길이* 에서 오래 문자 최소 *numberOfNonAlphanumericCharacters* 영숫자가 아닌 문자 수입니다. 이러한 두 매개 변수의 값을 멤버 자격 구성에 의해 결정 됩니다 구성원 클래스 또는 로그인 관련 웹 컨트롤 내에서이 메서드를 호출 하면 `MinRequiredPasswordLength` 및 `MinRequiredNonalphanumericCharacters` 각각 7과 1로 설정 하는 속성입니다.
+그림 4 및 5에서 전자 메일 메시지에 표시 되는 임의로 생성 된 암호는 멤버 자격 클래스에 의해 작성 [ `GeneratePassword` 메서드](https://msdn.microsoft.com/library/system.web.security.membership.generatepassword.aspx)합니다. 이 메서드에 두 개의 정수 입력된 매개 변수- *길이* 및 *numberOfNonAlphanumericCharacters* -적어도 문자열을 반환 하 고 *길이* 에서 오래 문자 최소 *numberOfNonAlphanumericCharacters* 영숫자가 아닌 문자 수입니다. 이러한 두 매개 변수의 값을 멤버 자격 구성에 의해 결정 됩니다 구성원 클래스 또는 로그인 관련 웹 컨트롤 내에서이 메서드를 호출 하면 `MinRequiredPasswordLength` 및 `MinRequiredNonalphanumericCharacters` 각각 7과 1로 설정 하는 속성입니다.
 
 `GeneratePassword` 메서드는 강력 하 게 암호화 난수 생성기를 사용 하 여가 없는 바이어스 어떤 임의 문자를 선택 되도록 합니다. 또한 `GeneratePassword` 은 `Public`, 사용할 수 있는 것 ASP.NET 응용 프로그램에서 직접 임의의 문자열 또는 암호를 생성 하는 경우를 의미 합니다.
 
@@ -194,7 +194,7 @@ PasswordRecovery 사용자의 암호를 재설정 호출을 제어 하는 경우
 암호를 변경 하려면 사용자에 대 한 인터페이스를 만들려면 ChangePassword 컨트롤을 사용 합니다. 훨씬 PasswordRecovery 컨트롤 처럼 ChangePassword 컨트롤 구성 두 뷰의: 암호 변경 및 성공 합니다. 이전 구문과 새 암호에 대 한 라는 메시지를 표시 하는 암호 변경 보기입니다. 올바른 이전 암호 최소 길이 및 영숫자가 아닌 문자를 요구 사항을 충족 하는 새 암호를 제공 시 ChangePassword 컨트롤 사용자의 암호를 업데이트 하 고 성공 보기를 표시 합니다.
 
 > [!NOTE]
-> 호출 하 여 사용자의 암호를 수정 하는 암호 변경 제어는 `MembershipUser` 개체의 [ `ChangePassword` 메서드](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.changepassword.aspx)합니다. ChangePassword 메서드에 두 개의 `String` 입력 매개 변수- *oldPassword* 및 *newPassword*-사용자의 계정을 업데이트 하 고는 *newPassword*, 제공 된 것으로 가정 *oldPassword* 올바릅니다.
+> 호출 하 여 사용자의 암호를 수정 하는 암호 변경 제어는 `MembershipUser` 개체의 [ `ChangePassword` 메서드](https://msdn.microsoft.com/library/system.web.security.membershipuser.changepassword.aspx)합니다. ChangePassword 메서드에 두 개의 `String` 입력 매개 변수- *oldPassword* 및 *newPassword*-사용자의 계정을 업데이트 하 고는 *newPassword*, 제공 된 것으로 가정 *oldPassword* 올바릅니다.
 
 
 열기는 `ChangePassword.aspx` 페이지 이름을 지정 하 고 페이지에 ChangePassword 컨트롤을 추가 하 고 `ChangePwd`합니다. 이 시점에서 디자인 보기 표시 암호 변경 (그림 6 참조)를 확인 합니다. 마찬가지로 PasswordRecovery 컨트롤을 컨트롤의 스마트 태그를 통해 뷰 간에 전환할 수 있습니다. 또한 이러한 보기의이 모양을 다양 한 스타일 속성을 통해 또는 서식 파일을 변환 하 여 사용자 지정할 수 있습니다.
@@ -207,7 +207,7 @@ PasswordRecovery 사용자의 암호를 재설정 호출을 제어 하는 경우
 
 ChangePassword 컨트롤에서 현재 로그인된 한 사용자의 암호를 업데이트할 수 *또는* 다른 사용자가 지정 된 사용자의 암호입니다. 기본 암호 변경 보기 3 개의 TextBox 컨트롤을 렌더링 그림 6에서 볼 수 있듯이: 이전 암호와 새 암호를 두 개에 대 한 합니다. 이 기본 인터페이스는 현재 로그온된 한 사용자의 암호를 업데이트할 사용 됩니다.
 
-다른 사용자의 암호를 업데이트 하려면 ChangePassword 컨트롤을 사용 하려면 컨트롤의 설정 [ `DisplayUserName` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.changepassword.displayusername.aspx) True로 합니다. 그러면 TextBox 네 번째 메시지를 표시 하는 사용자의 사용자 이름에 대 한 암호 변경 하려면 페이지에 추가 됩니다.
+다른 사용자의 암호를 업데이트 하려면 ChangePassword 컨트롤을 사용 하려면 컨트롤의 설정 [ `DisplayUserName` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.changepassword.displayusername.aspx) True로 합니다. 그러면 TextBox 네 번째 메시지를 표시 하는 사용자의 사용자 이름에 대 한 암호 변경 하려면 페이지에 추가 됩니다.
 
 설정 `DisplayUserName` 를 True는 로그인 할 필요 없이 암호를 변경 하는 아웃 로그인 한 사용자 수 있도록 하려는 경우에 유용 합니다. 개인적으로 그녀는 암호를 변경 하는 허용 하기 전에 로그인에 사용자 요구에 잘못 된 것이 생각 합니다. 따라서 둡니다 `DisplayUserName` False (기본값)로 설정 합니다. 그러나이 결정에서는 기본적으로 제한 익명 사용자가이 페이지에 도달 하지 못하도록 합니다. 방문에서 익명 사용자의 거부 하기 위해 사이트의 URL 권한 부여 규칙을 업데이트 `ChangePassword.aspx`합니다. URL 권한 부여 규칙 구문에서 메모리를 새로 고치는 경우에 다시 참조는 <a id="_msoanchor_4"> </a> [ *사용자 기반 권한 부여* ](../membership/user-based-authorization-vb.md) 자습서입니다.
 

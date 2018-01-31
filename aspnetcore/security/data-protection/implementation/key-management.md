@@ -2,20 +2,18 @@
 title: "키 관리"
 author: rick-anderson
 description: "이 문서에는 ASP.NET Core 데이터 보호 키 관리 Api의 구현 세부 사항을 설명합니다."
-keywords: "ASP.NET Core, 데이터 보호, 키 관리"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.assetid: fb9b807a-d143-4861-9ddb-005d8796afa3
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/data-protection/implementation/key-management
-ms.openlocfilehash: d9e38fd5c8de2b10ad24fe557aa6e3063e40236e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 00f48718ad8b9cc9070b7adc54b26ecd89eb320f
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="key-management"></a>키 관리
 
@@ -50,9 +48,9 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="key-expiration-and-rolling"></a>키 만료 및 롤링
 
-키를 만들 때 {지금 + 2 일}는 활성화 날짜 및 {지금 + 90 일}의 만료 날짜가 자동으로 지정 됩니다. 정품 인증 시스템을 통해 전파 하는 데 키 시간을 제공 하기 전에 2 일 지연 합니다. 즉, 다른 응용 프로그램을 백업 저장소를 가리키는 따라서는 키에 전파 되는 활성 링 하는 경우 해야 할 수 있는 모든 응용 프로그램 사용 가능성을 최대화 자신의 다음 자동 새로 고침 기간에 키를 확인할 수 있습니다.
+키를 만들 때의 {지금 + 2 일을 (를) 활성화 날짜는 및 {지금 + 90 일}의 만료 날짜가 부여 자동으로 했습니다. 정품 인증 시스템을 통해 전파 하는 데 키 시간을 제공 하기 전에 2 일 지연 합니다. 즉, 다른 응용 프로그램을 백업 저장소를 가리키는 따라서는 키에 전파 되는 활성 링 하는 경우 해야 할 수 있는 모든 응용 프로그램 사용 가능성을 최대화 자신의 다음 자동 새로 고침 기간에 키를 확인할 수 있습니다.
 
-2 일 이내 만료 될 기본 키 및 키 링이 아직 없는 경우에 기본 키가 만료 시 활성화 되는 키 데이터 보호 시스템에는 키 링에 새 키를 자동으로 유지 됩니다. 이 새 키에 {기본 키의 만료 날짜}의 정품 인증 날짜는 및 {지금 + 90 일}의 만료 날짜가 있습니다. 이 통해 정기적으로 서비스의 중단 없이 키를 자동으로 시스템입니다.
+2 일 이내 만료 될 기본 키 및 키 링에 기본 키가 만료 시 활성화 되는 키가 없으면 데이터 보호 시스템에는 키 링에 새 키를 자동으로 유지 됩니다. 이 새 키에 {기본 키의 만료 날짜}의 정품 인증 날짜는 및 {지금 + 90 일}의 만료 날짜가 있습니다. 이 통해 정기적으로 서비스의 중단 없이 키를 자동으로 시스템입니다.
 
 경우도 즉시 정품 인증 키를 만들 위치입니다. 한 가지 예는 응용 프로그램 시간 동안 실행 되지 않은 하 고 키 링에 있는 모든 키 만료 된 것입니다. 이 경우 기본 2 일 활성화 지연 시간 없이 {지금}의 활성화 날짜 키에 제공 됩니다.
 

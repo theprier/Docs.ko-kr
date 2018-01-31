@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/custom-formatting-based-upon-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4122f55c09f94d41f7caa3f86d1fbd5870417a20
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 43aed94fe5b1095af37abdae2cb4c9e67b7d7f6f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="custom-formatting-based-upon-data-vb"></a>데이터 (VB)를 기반으로 사용자 지정 형식 지정
 ====================
@@ -97,7 +97,7 @@ DetailsView에 바인딩된 데이터를 통해 액세스할 수는 `DataItem` �
 [!code-vb[Main](custom-formatting-based-upon-data-vb/samples/sample3.vb)]
 
 > [!NOTE]
-> 이후 `UnitPrice` 가질 수 있습니다는 `NULL` 값은 데이터베이스에 먼저 확인을 있는지 지금 하지 다루고 있는 있는지 확인 한 `NULL` 값에 액세스 하기 전에 `ProductsRow`의 `UnitPrice` 속성입니다. 이 검사는 중요 하기 때문에 액세스 하려고 하면는 `UnitPrice` 속성에 있을 때는 `NULL` 값은 `ProductsRow` 개체를 발생 시킵니다는 [StrongTypingException 예외](https://msdn.microsoft.com/en-us/library/system.data.strongtypingexception.aspx)합니다.
+> 이후 `UnitPrice` 가질 수 있습니다는 `NULL` 값은 데이터베이스에 먼저 확인을 있는지 지금 하지 다루고 있는 있는지 확인 한 `NULL` 값에 액세스 하기 전에 `ProductsRow`의 `UnitPrice` 속성입니다. 이 검사는 중요 하기 때문에 액세스 하려고 하면는 `UnitPrice` 속성에 있을 때는 `NULL` 값은 `ProductsRow` 개체를 발생 시킵니다는 [StrongTypingException 예외](https://msdn.microsoft.com/library/system.data.strongtypingexception.aspx)합니다.
 
 
 ## <a name="step-3-formatting-the-unitprice-value-in-the-detailsview"></a>3 단계: DetailsView에서 UnitPrice 값 서식 지정
@@ -193,7 +193,7 @@ FormView 모든 BoundFields 포함 하지 않으며 따라서에 게 없는 경�
 [!code-vb[Main](custom-formatting-based-upon-data-vb/samples/sample12.vb)]
 
 > [!NOTE]
-> 프로그래밍 방식으로 사용 하 여 웹 컨트롤에 액세스 하는 서식 파일의 서식을 지정 하기 위한 구문을 `FindControl("controlID")` 스타일 관련 속성을 다음 설정도 사용할 수 있습니다 사용할 때 [TemplateFields](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.templatefield(VS.80).aspx) DetailsView 또는 GridView 제어 합니다. 이 다음 자습서 TemplateFields 검토 합니다.
+> 프로그래밍 방식으로 사용 하 여 웹 컨트롤에 액세스 하는 서식 파일의 서식을 지정 하기 위한 구문을 `FindControl("controlID")` 스타일 관련 속성을 다음 설정도 사용할 수 있습니다 사용할 때 [TemplateFields](https://msdn.microsoft.com/library/system.web.ui.webcontrols.templatefield(VS.80).aspx) DetailsView 또는 GridView 제어 합니다. 이 다음 자습서 TemplateFields 검토 합니다.
 
 
 그림 7에는 제품을 볼 때 FormView 나와 있는 `UnitsInStock` 그림 8에 있는 제품의 해당 값이 10 보다 작은 값이 10 보다 크고 합니다.

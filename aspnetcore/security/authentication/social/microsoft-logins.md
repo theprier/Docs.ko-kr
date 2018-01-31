@@ -2,20 +2,18 @@
 title: "Microsoft 계정 외부 로그인 설정"
 author: rick-anderson
 description: "이 자습서는 기존 ASP.NET Core 응용 프로그램에 Microsoft 계정 사용자 인증의 통합을 보여 줍니다."
-keywords: "ASP.NET Core, Microsoft 계정, 로그인, 인증"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 08/24/2017
-ms.topic: article
-ms.assetid: 66DB4B94-C78C-4005-BA03-3D982B87C268
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/authentication/microsoft-logins
-ms.openlocfilehash: 77c16e3ae93c9bfe1f569d0a5888c5b765d04241
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d57647da978f7edaaddedba7c9f4c1de8dc07405
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="configuring-microsoft-account-authentication"></a>Microsoft 계정 인증 구성
 
@@ -108,7 +106,7 @@ app.UseMicrosoftAccountAuthentication(new MicrosoftAccountOptions()
 
 ---
 
-하지만 Microsoft 개발자 포털에서 사용 되는 용어 이러한 토큰 이름을 `ApplicationId` 및 `Password`,으로 노출 된 `ClientId` 및 `ClientSecret` 구성 API에 합니다.
+하지만 Microsoft 개발자 포털에서 사용 되는 용어 이러한 토큰 이름을 `ApplicationId` 및 `Password`,으로 노출 하는 `ClientId` 및 `ClientSecret` 구성 API에 있습니다.
 
 참조는 [MicrosoftAccountOptions](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.microsoftaccountoptions) Microsoft 계정 인증에서 지 원하는 구성 옵션에 대 한 자세한 내용은 API 참조 합니다. 이 사용 하 여 사용자에 대 한 다른 정보를 요청할 수 수 있습니다.
 
@@ -133,7 +131,7 @@ Microsoft을 클릭할 때 리디렉션됩니다 Microsoft 인증에 대 한 합
 * Microsoft 계정 공급자 오류 페이지에 로그인 할 사용자를 리디렉션하를 하는 경우 오류 제목 및 설명 쿼리 문자열 매개 변수 바로 다음에 유의 `#` (hashtag) Uri에 있습니다.
 
   가장 일반적인 원인은 Uri의 일치 하지 않는 응용 프로그램 오류 메시지가 Microsoft 인증 문제가 있는 것 처럼 보이지만는 **리디렉션 Uri** 에 대해 지정 된 된 **웹** 플랫폼 .
-* **ASP.NET Core 2.x만:** 경우 Identity를 호출 하 여 구성 되지 않은 `services.AddIdentity` 에 `ConfigureServices`, 인증을 시도 하면 *ArgumentException: 'SignInScheme' 옵션을 제공 해야*합니다. 이 자습서에 사용 된 프로젝트 템플릿을 확인이 수행 되도록 합니다.
+* **ASP.NET Core 2.x만:** 경우 Identity를 호출 하 여 구성 되지 않았습니다 `services.AddIdentity` 에 `ConfigureServices`, 인증을 시도 하면 *ArgumentException: 'SignInScheme' 옵션을 제공 해야*합니다. 이 자습서에 사용 된 프로젝트 템플릿을 확인이 수행 되도록 합니다.
 * 사이트 데이터베이스 초기 마이그레이션을 적용 하 여 생성 되지 않은 경우 발생 합니다 *요청을 처리 하는 동안 데이터베이스 작업이 실패 했습니다* 오류입니다. 탭 **적용 마이그레이션** 는 데이터베이스를 만들고 오류 지 나 새로 고침 합니다.
 
 ## <a name="next-steps"></a>다음 단계

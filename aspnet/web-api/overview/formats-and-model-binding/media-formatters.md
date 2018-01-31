@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/formats-and-model-binding/media-formatters
 msc.type: authoredcontent
-ms.openlocfilehash: 7d85b995cd577d0ff90fe96bce508c7fbdc6ebbb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9103574597df126a22e21a2f51815f608e46f47f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="media-formatters-in-aspnet-web-api-2"></a>ASP.NET Web API 2의에서 미디어 포맷터
 ====================
@@ -28,8 +28,8 @@ ms.lasthandoff: 11/10/2017
 
 데이터의 형식을 식별 하는 MIME 형식이 라고도 하는 미디어 유형입니다. HTTP, 미디어 유형에 대해 메시지 본문의 형식은 설명합니다. 미디어 유형은 두 문자열, 형식 및 하위 구성 됩니다. 예:
 
-- html 텍스트 /
-- 이미지/png
+- text/html
+- image/png
 - application/json
 
 HTTP 메시지에 엔터티 본문이 포함 되어 있으면, 콘텐츠 형식 헤더는 메시지 본문의 형식을 지정 합니다. 이렇게 하면 수신자는 메시지 본문의 내용을 구문 분석 하는 방법입니다.
@@ -48,8 +48,8 @@ HTTP 메시지에 엔터티 본문이 포함 되어 있으면, 콘텐츠 형식 
 
 미디어 포맷터를 만들려면 이러한 클래스 중 하나에서 파생 됩니다.
 
-- [MediaTypeFormatter](https://msdn.microsoft.com/en-us/library/system.net.http.formatting.mediatypeformatter.aspx)합니다. 이 클래스는 비동기 읽기 및 쓰기 메서드.
-- [BufferedMediaTypeFormatter](https://msdn.microsoft.com/en-us/library/system.net.http.formatting.bufferedmediatypeformatter.aspx)합니다. 이 클래스에서 파생 **MediaTypeFormatter** 하지만 sychronous 읽기/쓰기 메서드를 사용 합니다.
+- [MediaTypeFormatter](https://msdn.microsoft.com/library/system.net.http.formatting.mediatypeformatter.aspx). 이 클래스는 비동기 읽기 및 쓰기 메서드.
+- [BufferedMediaTypeFormatter](https://msdn.microsoft.com/library/system.net.http.formatting.bufferedmediatypeformatter.aspx). 이 클래스에서 파생 **MediaTypeFormatter** 하지만 sychronous 읽기/쓰기 메서드를 사용 합니다.
 
 파생 된 **BufferedMediaTypeFormatter** 은 코드가 없는 비동기 I/O 중 호출 스레드를 차단할 수 의미 하기 때문에 더 간단 합니다.
 
@@ -91,10 +91,10 @@ HTTP 메시지에 엔터티 본문이 포함 되어 있으면, 콘텐츠 형식 
 
 필요에 따라 미디어 포맷터는 ISO 8859-1 또는 u t F-8와 같은 여러 문자 인코딩을 지원할 수 있습니다.
 
-생성자를 하나 이상 추가 [System.Text.Encoding](https://msdn.microsoft.com/en-us/library/system.text.encoding.aspx) 형식을 **SupportedEncodings** 컬렉션입니다. 기본을 인코딩 첫 번째 넣습니다.
+생성자를 하나 이상 추가 [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) 형식을 **SupportedEncodings** 컬렉션입니다. 기본을 인코딩 첫 번째 넣습니다.
 
 [!code-csharp[Main](media-formatters/samples/sample10.cs?highlight=6-7)]
 
-에 **WriteToStream** 및 **ReadFromStream** 메서드를 호출 [MediaTypeFormatter.SelectCharacterEncoding](https://msdn.microsoft.com/en-us/library/hh969054.aspx) 기본 문자 인코딩을 선택할 수 있습니다. 이 메서드는 지원 되는 인코딩 목록에 대해 요청 헤더와 일치합니다. 사용 하 여 반환 된 **인코딩** 읽거나 쓸 스트림의:
+에 **WriteToStream** 및 **ReadFromStream** 메서드를 호출 [MediaTypeFormatter.SelectCharacterEncoding](https://msdn.microsoft.com/library/hh969054.aspx) 기본 문자 인코딩을 선택할 수 있습니다. 이 메서드는 지원 되는 인코딩 목록에 대해 요청 헤더와 일치합니다. 사용 하 여 반환 된 **인코딩** 읽거나 쓸 스트림의:
 
 [!code-csharp[Main](media-formatters/samples/sample11.cs?highlight=3,5)]

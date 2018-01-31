@@ -2,19 +2,18 @@
 title: "ASP.NET Core의 기본 형식"
 author: guardrex
 description: "개발자 고유의 코드에 사용할 수 있는 프레임워크 확장에서 공유하는 ASP.NET Core 구성 요소에 대한 문서를 검색합니다."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/28/2017
-ms.topic: article
-ms.assetid: ea6e1c6a-732a-4028-9863-75d6b5d31fcf
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: fundamentals/primitives/index
-ms.openlocfilehash: 33af49740ee82ab7f2a71745b624d53077f22afb
-ms.sourcegitcommit: 216dfac27542f10a79274a9ce60dc449e888ed20
+ms.openlocfilehash: 1a670d849c890dd0a07608267c621e6291f4214c
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="primitives-in-aspnet-core"></a>ASP.NET Core의 기본 형식
 

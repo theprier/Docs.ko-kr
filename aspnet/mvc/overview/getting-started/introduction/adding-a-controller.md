@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: 878d957344a08450b82b0249d8ca2a205810da4a
-ms.sourcegitcommit: 9ecd4e9fb0c40c3693dab079eab1ff94b461c922
+ms.openlocfilehash: c8f317b2ac133f560461917af1588b7a1fa51c4f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-a-controller"></a>컨트롤러 추가
 ====================
@@ -82,7 +82,7 @@ URL의 첫 번째 부분 컨트롤러 클래스를 결정 합니다. 따라서 *
 [!code-csharp[Main](adding-a-controller/samples/sample3.cs)]
 
 > [!NOTE]
-> 보안 참고: 사용 하 여 위의 코드 [HttpUtility.HtmlEncode](https://msdn.microsoft.com/en-us/library/ee360286(v=vs.110).aspx) 악의적인 입력 (즉 JavaScript)에서 응용 프로그램을 보호 합니다. 자세한 내용은 참조 [하는 방법: 보호에 대 한 스크립트에 의해 악용 문자열을 HTML 인코딩 적용 하 여 웹 응용 프로그램에서](https://msdn.microsoft.com/en-us/library/a2a4yykt(v=vs.100).aspx)합니다.
+> 보안 참고: 사용 하 여 위의 코드 [HttpUtility.HtmlEncode](https://msdn.microsoft.com/library/ee360286(v=vs.110).aspx) 악의적인 입력 (즉 JavaScript)에서 응용 프로그램을 보호 합니다. 자세한 내용은 참조 [하는 방법: 보호에 대 한 스크립트에 의해 악용 문자열을 HTML 인코딩 적용 하 여 웹 응용 프로그램에서](https://msdn.microsoft.com/library/a2a4yykt(v=vs.100).aspx)합니다.
 
 
  ְ ְ ¿כ 예제 URL로 이동 (`http://localhost:xxxx/HelloWorld/Welcome?name=Scott&numtimes=4`). 에 대해 다른 값을 시도할 수 `name` 및 `numtimes` url에서입니다. [ASP.NET MVC 모델 바인딩 시스템이](http://odetocode.com/Blogs/scott/archive/2009/04/27/6-tips-for-asp-net-mvc-model-binding.aspx) 메서드의 매개 변수에 주소 표시줄에는 쿼리 문자열에서 명명 된 매개 변수를 자동으로 매핑합니다.

@@ -2,20 +2,18 @@
 title: "ASP.NET Core MVC EF 코어 10-마이그레이션-4"
 author: tdykstra
 description: "이 자습서에서는 ASP.NET Core MVC 응용 프로그램에서 데이터 모델 변경 내용을 관리 하기 위한 EF 코어 마이그레이션 기능을 사용 하 여 시작 합니다."
-keywords: "ASP.NET Core, Entity Framework Core, 마이그레이션"
-ms.author: tdykstra
 manager: wpickett
+ms.author: tdykstra
 ms.date: 03/15/2017
-ms.topic: get-started-article
-ms.assetid: 81f6c9c2-a819-4f3a-97a4-4b0503b56c26
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-mvc/migrations
-ms.openlocfilehash: 20b05801ac666feef29fd05dd3e4738b1bd50b86
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fd466af8a73bf4c568fafe7e7fdcaa82021624da
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="migrations---ef-core-with-aspnet-core-mvc-tutorial-4-of-10"></a>마이그레이션-EF 코어 ASP.NET Core MVC 자습서 (4 / 10)
 
@@ -159,7 +157,7 @@ Visual Studio에서 PowerShell cmdlet 또는.NET Core CLI 명령에서 사용할
 
 PMC 명령에 대 한 EF 명령은 [Microsoft.EntityFrameworkCore.Tools](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools) 패키지 합니다. 이 패키지에 이미 포함 되어는 [Microsoft.AspNetCore.All](xref:fundamentals/metapackage) metapackage, 하므로 설치할 필요가 없습니다.
 
-**중요:** 이 동일한 패키지를 편집 하 여 CLI를 설치 하는 것과는 *.csproj* 파일입니다. 이 개체의 이름이 끝나는 `Tools`, CLI 패키지 이름에는 달리 `Tools.DotNet`합니다.
+**중요:** 이 값은 편집 하 여 CLI를 설치 하는 것과 동일한 패키지는 *.csproj* 파일입니다. 이 개체의 이름이 끝나는 `Tools`, CLI 패키지 이름에는 달리 `Tools.DotNet`합니다.
 
 CLI 명령에 대 한 자세한 내용은 참조 [.NET Core CLI](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet)합니다. 
 

@@ -2,7 +2,6 @@
 title: "세부 정보 및 삭제 메서드 검사"
 author: rick-anderson
 description: "기본적인 ASP.NET Core MVC 앱의 세부 정보 컨트롤러 메서드 및 보기"
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 03/07/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app/details
-ms.openlocfilehash: 43394106c9074f9487e1065a37a88eb017833bae
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 79eb352082da23400403ff8804d724256a2d3f07
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="examining-the-details-and-delete-methods"></a>세부 정보 및 삭제 메서드 검사
 

@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/mvc4-beta-release-notes
 msc.type: content
-ms.openlocfilehash: 4af2df61ab4507b1f100d6bb75777da1168c5a75
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 58ae178a0e6578d8353e1a4e9d67fc1026e99f55
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4"></a>ASP.NET MVC 4
 ====================
@@ -65,7 +65,7 @@ ASP.NET MVC에 대 한 설명서는 다음 URL의 MSDN 웹 사이트에서 사�
 ASP.NET 웹 사이트의 MVC 4 페이지에서 사용할 수 있는 자습서 및 ASP.NET MVC에 대 한 기타 정보 ([https://www.asp.net/mvc/mvc4](../mvc/mvc4.md)).
 
 <a id="_Toc303253804"></a>
-## <a name="support"></a>지원
+## <a name="support"></a>Support(지원)
 
 미리 보기 버전 이므로 공식적으로 지원 되지 않습니다. 이 릴리스에서 사용에 대 한 질문이 있으면 ASP.NET MVC 포럼에 게시 ([https://forums.asp.net/1146.aspx](https://forums.asp.net/1146.aspx))에서 ASP.NET 커뮤니티의 회원과 비공식적인 지원을 제공할 수 있는 경우가 많습니다.
 
@@ -245,7 +245,7 @@ JQuery Mobile 및 다음을 비롯 한 일부 도우미 파일을 설치 합니�
 
 작성할 수 있습니다 비동기 작업 메서드 형식의 개체를 반환 하는 단일 메서드 *작업* 또는 *작업&lt;ActionResult&gt;*합니다.
 
-예를 들어, Visual C# 5를 사용 하 여 (또는 사용 하 여는 [비동기 CTP](https://msdn.microsoft.com/en-us/vstudio/async.aspx))를 다음과 같이 하는 비동기 작업 메서드를 만들 수 있습니다.
+예를 들어, Visual C# 5를 사용 하 여 (또는 사용 하 여는 [비동기 CTP](https://msdn.microsoft.com/vstudio/async.aspx))를 다음과 같이 하는 비동기 작업 메서드를 만들 수 있습니다.
 
 [!code-csharp[Main](mvc4-beta-release-notes/samples/sample8.cs)]
 

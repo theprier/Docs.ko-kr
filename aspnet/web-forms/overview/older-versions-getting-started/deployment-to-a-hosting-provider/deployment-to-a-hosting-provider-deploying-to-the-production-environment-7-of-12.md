@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: ad44968975b7929f5b0f70334deabc7238797402
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4aa6766c2c7765f499f5c5380962a5fe443e8c9d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-to-the-production-environment---7-of-12"></a>SQL Server Compact Visual Studio 또는 Visual Web Developer를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: 7/12-프로덕션 환경에 배포
 ====================
@@ -246,7 +246,7 @@ Elmah에 쓰기 권한을 갖는지 확인는 *Elmah* 오류가 발생 하 고 �
 
 `User-agent` 줄 지시 파일의 규칙은 모든 검색 엔진 웹 크롤러에 (로봇)에 적용 되는 검색 엔진 및 `Disallow` 줄 사이트 페이지가 해야 크롤링할 수를 지정 합니다.
 
-수행 싶을 프로덕션 배포에서이 파일을 제외 해야 하므로 프로덕션 사이트에서는 카탈로그를 검색 엔진입니다. 이렇게 하려면 참조 **수 나타나지 않게 특정 파일 또는 폴더 배포에서?** 에 [ASP.NET 웹 응용 프로그램 프로젝트 배포 FAQ](https://msdn.microsoft.com/en-us/library/ee942158.aspx#can_i_exclude_specific_files_or_folders_from_deployment)합니다. 프로덕션 게시 프로필에 대해서만 제외를 지정 하는 있는지 확인 합니다.
+수행 싶을 프로덕션 배포에서이 파일을 제외 해야 하므로 프로덕션 사이트에서는 카탈로그를 검색 엔진입니다. 이렇게 하려면 참조 **수 나타나지 않게 특정 파일 또는 폴더 배포에서?** 에 [ASP.NET 웹 응용 프로그램 프로젝트 배포 FAQ](https://msdn.microsoft.com/library/ee942158.aspx#can_i_exclude_specific_files_or_folders_from_deployment)합니다. 프로덕션 게시 프로필에 대해서만 제외를 지정 하는 있는지 확인 합니다.
 
 두 번째 호스팅 계정을 만드는 필요 하지는 않지만 추가 비용 두면 유용할 수 있는 테스트 환경에서 작업 하는 방식입니다. 다음 자습서에서는 계속 해 서 테스트 환경으로 IIS를 사용 하도록 합니다.
 

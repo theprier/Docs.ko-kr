@@ -2,19 +2,18 @@
 title: "ASP.NET Core에서 데이터 작업"
 author: rick-anderson
 description: "데이터 작업에 대한 문서 링크를 제공합니다. 많은 사람들이 Entity Framework Core를 사용합니다."
-keywords: ASP.NET Core,
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: data/index
-ms.openlocfilehash: 325f95cf9ecc295f7a1c646e352b9cd496b6268e
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 6cdd8b2889a2a53c2767e5a5ebb170c31d2c31a4
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="working-with-data-in-aspnet-core"></a>ASP.NET Core에서 데이터 작업 
 

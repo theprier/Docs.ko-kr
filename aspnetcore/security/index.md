@@ -6,15 +6,14 @@ ms.author: rachelap
 manager: wpickett
 ms.date: 11/01/2017
 ms.topic: article
-ms.assetid: a8fb7eb7-e0e5-4394-84f3-1f1dbe012345
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/index
-ms.openlocfilehash: f6a1f32c1edd098b0782fd066d8e32f09952a9b7
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: a4558162158ddb6746aa45a29310b42224d6e7fe
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="aspnet-core-security-overview"></a>ASP.NET Core 보안 개요
 
@@ -97,7 +96,7 @@ ASP.NET Core 및 EF는 앱을 보호하고 보안 위반을 방지하는 기능�
         *   [키 저장소 형식](data-protection/implementation/key-storage-format.md)
         *   [삭제되는 데이터 보호 공급자](data-protection/implementation/key-storage-ephemeral.md)
     *   [호환성](data-protection/compatibility/index.md)
-        *   [앱 간에 쿠키 공유](data-protection/compatibility/cookie-sharing.md)
+        *   [앱 간 쿠키 공유](data-protection/compatibility/cookie-sharing.md)
         *   [ASP.NET에서 <machineKey> 바꾸기](data-protection/compatibility/replacing-machinekey.md)
 *   [권한 부여로 보호된 사용자 데이터를 사용하여 앱 만들기](xref:security/authorization/secure-data)
 *   [개발 중 안전한 앱 비밀 저장소](app-secrets.md)

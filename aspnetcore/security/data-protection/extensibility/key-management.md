@@ -2,20 +2,18 @@
 title: "키 관리 확장성"
 author: rick-anderson
 description: "이 문서에서는 ASP.NET Core 데이터 보호 키 관리 확장성에 설명 합니다."
-keywords: "ASP.NET Core, 데이터 보호, 키 관리"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 11/22/2017
-ms.topic: article
-ms.assetid: 3606b251-8324-4485-8d52-582a2cd5cffb
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/data-protection/extensibility/key-management
-ms.openlocfilehash: 0702e13163c0208e9d2863e711b02ffb257f6260
-ms.sourcegitcommit: e641c5794525f983485621860926d8ab4e7360c8
+ms.openlocfilehash: 68f590dffe8bb98813f974a5ecb9b270a5419ddf
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/23/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="key-management-extensibility"></a>키 관리 확장성
 
@@ -61,7 +59,7 @@ ms.lasthandoff: 11/23/2017
 * 하나 이상의 키를 해지 하 고 저장소는 해지 정보를 저장 합니다.
 
 >[!WARNING]
-> 작성 한 `IKeyManager` 는 고급 작업이 며 대부분의 개발자는 시도 하지 않아야 합니다. 대신 대부분의 개발자가 제공 하는 기능 사용 해야는 [XmlKeyManager](xref:security/data-protection/extensibility/key-management#data-protection-extensibility-key-management-xmlkeymanager) 클래스입니다.
+> 작성 한 `IKeyManager` 는 고급 작업이 며 대부분의 개발자가 려 서는 안 됩니다. 대신 대부분의 개발자가 제공 하는 기능 사용 해야는 [XmlKeyManager](xref:security/data-protection/extensibility/key-management#data-protection-extensibility-key-management-xmlkeymanager) 클래스입니다.
 
 <a name="data-protection-extensibility-key-management-xmlkeymanager"></a>
 
@@ -131,7 +129,7 @@ ms.lasthandoff: 11/23/2017
 
 `IXmlRepository` 인터페이스는 XML을 유지 하 고 백업 저장소에서 XML을 검색할 수 있는 형식을 나타냅니다. 두 개의 Api를 노출합니다.
 
-* GetAllElements(): IReadOnlyCollection<XElement>
+* GetAllElements() : IReadOnlyCollection<XElement>
 
 * StoreElement (XElement 요소, 문자열 friendlyName)
 

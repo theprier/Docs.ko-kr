@@ -2,21 +2,19 @@
 title: "ASP.NET Core MVC에서 응답 데이터 서식 지정"
 author: ardalis
 description: "ASP.NET Core MVC에서 응답 데이터 형식을 지정 하는 방법에 알아봅니다."
-keywords: "ASP.NET Core, IOutputFormatter, IActionResult 응답 데이터"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: c056df45-d013-4826-91a1-4a092bae1ea5
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/models/formatting
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: abc125a093ff2cd5a38a537ecdfc795ff03e23f7
-ms.sourcegitcommit: d1d8071d4093bf2444b5ae19d6e45c3d187e338b
+ms.openlocfilehash: ddda494e0db22031af9d20325e14e8458756cbfd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/19/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-formatting-response-data-in-aspnet-core-mvc"></a>ASP.NET Core MVC의 서식 지정 응답 데이터 소개
 

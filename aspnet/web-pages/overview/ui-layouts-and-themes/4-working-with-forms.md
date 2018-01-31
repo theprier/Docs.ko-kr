@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/4-working-with-forms
 msc.type: authoredcontent
-ms.openlocfilehash: fcdded3a7e80ee797eae445f347735f0f7b3d7ad
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8579c444fd19d1a366349cc09f9f768de23055f8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="working-with-html-forms-in-aspnet-web-pages-razor-sites"></a>ASP.NET 웹 페이지 (Razor) 사이트에서 HTML 폼 사용
 ====================
@@ -134,12 +134,12 @@ ASP.NET 웹 페이지에는 사용자 입력을 자동으로 사용자가 브라
     `value` 특성에는 `<input>` 동적으로의 필드 값을 읽을로 설정 된 요소는 `Request.Form` 개체입니다. 처음으로 페이지를 요청 하는 값은 `Request.Form` 개체 모두 비어 있습니다. 이런 방식으로 폼 비어 있습니다. 때문에 이것이 문제가 있습니다.
 2. 브라우저에서 페이지를 시작, 폼 필드에 또는 해당 비워 놓고 클릭 **전송**합니다. 제출 된 값을 보여 주는 페이지가 표시 됩니다.
 
-    ![폼 5](4-working-with-forms/_static/image5.jpg)
+    ![forms-5](4-working-with-forms/_static/image5.jpg)
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>추가 리소스
 
-- [웹 사용자의 입력에 1,001 방법](https://msdn.microsoft.com/en-us/library/ms971057.aspx)
-- [폼을 사용 하 고 사용자 입력 처리](https://msdn.microsoft.com/en-us/library/ms525182(VS.90).aspx)
+- [웹 사용자의 입력에 1,001 방법](https://msdn.microsoft.com/library/ms971057.aspx)
+- [폼을 사용 하 고 사용자 입력 처리](https://msdn.microsoft.com/library/ms525182(VS.90).aspx)
 - [ASP.NET 웹 페이지 사이트에서 사용자 입력 유효성 검사](https://go.microsoft.com/fwlink/?LinkId=253002)
-- [HTML 폼에서 자동 완성 사용](https://msdn.microsoft.com/en-us/library/ms533032(VS.85).aspx)
+- [HTML 폼에서 자동 완성 사용](https://msdn.microsoft.com/library/ms533032(VS.85).aspx)

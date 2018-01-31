@@ -2,19 +2,18 @@
 title: "개별 사용자 계정을 사용 하 여 만든 프로젝트를 기반으로 문서"
 author: rick-anderson
 description: "이 문서는 개별 사용자 계정을 사용 하 여 만든 프로젝트를 기반으로 문서를 나열 합니다."
-keywords: "ASP.NET Core, IAuthorizationService 권한 부여"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 11/30/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/authentication/individual
-ms.openlocfilehash: 1864625e0ad6b4ec6fc2ada3fa7d93edec91b633
-ms.sourcegitcommit: 037d3900f739dbaa2ba14158e3d7dc81478952ad
+ms.openlocfilehash: aee18fa08fbc5c8452ca2b401d32858edaf55e7c
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="articles-based-on-projects-created-with-individual-user-accounts"></a>개별 사용자 계정을 사용 하 여 만든 프로젝트를 기반으로 문서
 

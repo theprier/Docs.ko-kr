@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/calling-an-odata-service-from-a-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: f6266045ebf55fb7ae691bfb55e9c90cd4edcc96
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 497102cfa98680f2156a56ff9e36d84b7c820020
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="calling-an-odata-service-from-a-net-client-c"></a>.NET 클라이언트 (C#)에서 OData 서비스를 호출합니다.
 ====================
@@ -30,7 +30,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > 
 > - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads) (Visual Studio 2012를 사용한 작동)
-> - [WCF Data Services 클라이언트 라이브러리](https://msdn.microsoft.com/en-us/library/cc668772.aspx)
+> - [WCF Data Services 클라이언트 라이브러리](https://msdn.microsoft.com/library/cc668772.aspx)
 > - Web API 2입니다. (Web API 2를 사용 하 여 OData 서비스 예제 빌드될 있지만 클라이언트 응용 프로그램 웹 API에 의존 하지 않습니다.)
 
 
@@ -46,7 +46,7 @@ ms.lasthandoff: 11/10/2017
 
 - [Web API 2 OData 끝점 만들기](creating-an-odata-endpoint.md)
 - [Web API 2 OData 엔터티 관계](working-with-entity-relations.md)
-- [Web API 2 OData 작업](odata-actions.md)
+- [Web API 2의 OData 작업](odata-actions.md)
 
 ## <a name="generate-the-service-proxy"></a>서비스 프록시를 생성 합니다.
 
@@ -118,7 +118,7 @@ ID에 따라 엔터티를 가져오려면는 `where` 절.
 
 OData 정의 [쿼리 옵션](../supporting-odata-query-options.md) 필터, 정렬, 페이지 데이터 등을 사용할 수 있는 합니다. 서비스 프록시를 다양 한 LINQ 식을 사용 하 여 이러한 옵션을 적용할 수 있습니다.
 
-이 섹션에서는 간단한 예를 살펴보겠습니다. 자세한 내용은 항목을 참조 하십시오. [LINQ 고려 사항 (WCF Data Services)](https://msdn.microsoft.com/en-us/library/ee622463.aspx) msdn 합니다.
+이 섹션에서는 간단한 예를 살펴보겠습니다. 자세한 내용은 항목을 참조 하십시오. [LINQ 고려 사항 (WCF Data Services)](https://msdn.microsoft.com/library/ee622463.aspx) msdn 합니다.
 
 ### <a name="filtering-filter"></a>필터링 ($filter)
 
@@ -226,7 +226,7 @@ Odata에서 [동작](odata-actions.md) 엔터티에 대 한 CRUD 작업으로 �
 
 [!code-csharp[Main](calling-an-odata-service-from-a-net-client/samples/sample24.cs)]
 
-자세한 내용은 참조[서비스 작업 호출 및 작업](https://msdn.microsoft.com/en-us/library/hh230677.aspx)합니다.
+자세한 내용은 참조[서비스 작업 호출 및 작업](https://msdn.microsoft.com/library/hh230677.aspx)합니다.
 
 확장 하는 한 가지 방법은 **컨테이너** 작업을 호출 하는 강력한 형식의 메서드를 제공 하기 위해 클래스:
 

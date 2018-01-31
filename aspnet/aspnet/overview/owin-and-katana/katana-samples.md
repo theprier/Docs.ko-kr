@@ -12,15 +12,15 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/katana-samples
 msc.type: authoredcontent
-ms.openlocfilehash: 5540164bda8db31c4e78b49ecb7f7c573acca013
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 815355c00c9c15cfefa5f98dc89da676743b0390
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="katana-samples"></a>Katana 샘플
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 ## <a name="katana-samples"></a>Katana 샘플
 
@@ -52,4 +52,4 @@ OWIN를 사용 하 여 정적 파일에 대 한 HTTP 요청을 지 원하는 방
 이 예제에는 OWIN IIS에서 호스트 웹 API OWIN 파이프라인을 추가 하는 방법을 보여 줍니다.
 
 **웹 소켓 샘플** | [소스 코드](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/Katana/WebSocketSample/WebSocketServer/Startup.cs)   
-사용 하 여 웹 소켓 OWIN에서 지 원하는 방법을 보여 줍니다는 [System.Net.WebSockets.WebSocket](https://msdn.microsoft.com/en-us/library/system.net.websockets.websocket(v=vs.110).aspx) 클래스입니다.
+사용 하 여 웹 소켓 OWIN에서 지 원하는 방법을 보여 줍니다는 [System.Net.WebSockets.WebSocket](https://msdn.microsoft.com/library/system.net.websockets.websocket(v=vs.110).aspx) 클래스입니다.

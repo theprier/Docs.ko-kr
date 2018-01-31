@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-with-a-dropdownlist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 88e5c65c100bea3cc39b1e08b1aa8a622b4ce7a6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3f66e133b2bc8cdececf55b4d92508e6ff157d95
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="masterdetail-filtering-with-a-dropdownlist-vb"></a>마스터/세부 DropDownList (VB)를 사용 하 여 필터링
 ====================
@@ -31,7 +31,7 @@ ms.lasthandoff: 11/10/2017
 
 일반적인 유형의 보고서는 *마스터/세부 보고서*, 몇 가지 "마스터" 레코드 집합을 표시 하 여 시작 되는 보고서에 있습니다. 사용자는 다음으로 드릴 다운할 수 마스터 레코드 중 하나 함으로써 해당 마스터 레코드의 세부 정보를 "." 보기 마스터/세부 보고는 보고서와 같은 대 다 관계를 시각화에 적합 모든 범주를 보여 주는 다음 사용자를 특정 범주를 선택 하 고 관련된 제품을 표시할 수 있도록 합니다. 또한 마스터/세부 정보 보고서 (더 많은 열이 있는) 특히 "와이드" 테이블에서 자세한 정보를 표시 하는 데 유용 합니다. 예를 들어 "마스터" 수준의 마스터/세부 정보 보고서는 데이터베이스에 제품 이름과 단위 가격만 제품을 표시할 수 있습니다 및 특정 제품으로 드릴 다운 추가 제품 필드를 표시 합니다 (범주, 공급 업체, 단위당, 수량 및 에)입니다.
 
-여러 가지 방법으로는 마스터/세부 정보 보고서를 구현할 수 있습니다. 이 고 다음 세 개의 자습서를 통해 다양 한 마스터/세부 보고서에서 살펴보겠습니다. 이 자습서에서는 마스터 레코드에 표시 하는 방법을 보겠습니다는 [DropDownList 컨트롤](https://msdn.microsoft.com/en-us/library/dtx91y0z.aspx) 는 GridView에 선택한 목록 항목의 세부 정보입니다. 특히,이 자습서의 마스터/세부 정보 보고서는 범주 및 제품 정보를 나열 됩니다.
+여러 가지 방법으로는 마스터/세부 정보 보고서를 구현할 수 있습니다. 이 고 다음 세 개의 자습서를 통해 다양 한 마스터/세부 보고서에서 살펴보겠습니다. 이 자습서에서는 마스터 레코드에 표시 하는 방법을 보겠습니다는 [DropDownList 컨트롤](https://msdn.microsoft.com/library/dtx91y0z.aspx) 는 GridView에 선택한 목록 항목의 세부 정보입니다. 특히,이 자습서의 마스터/세부 정보 보고서는 범주 및 제품 정보를 나열 됩니다.
 
 ## <a name="step-1-displaying-the-categories-in-a-dropdownlist"></a>1 단계: DropDownList에 범주를 표시합니다.
 
@@ -97,7 +97,7 @@ ms.lasthandoff: 11/10/2017
 
 브라우저에서 진행률을 확인해 보십시오. 해당 제품 선택한 범주에 속하는 페이지를 처음 방문 하는 경우 (음료) (그림 9에 표시)으로 표시 되지만 DropDownList 변경 데이터를 업데이트 하지는 않습니다. 즉, 업데이트 하는 GridView에 대 한 포스트백 있어야 합니다. 이를 위해 (둘 중 필요한 코드를 작성)는 두 가지 옵션이 있습니다.
 
-- **범주 DropDownList의 설정**[AutoPostBack 속성](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.listcontrol.autopostback%28VS.80%29.aspx)**True로 합니다.** (이 수행할 수 있습니다 DropDownList의 스마트 태그에서 AutoPostBack 사용 옵션을 선택 합니다.) DropDownList의 선택할 때마다 포스트백을 시도해 사용자 항목을 변경 합니다. 따라서 사용자가 드롭다운 목록에서 새 범주를 선택 하는 경우 계속 다시 게시 될 것 이라고 하 고 GridView 새로 선택한 범주에 대 한 제품으로 업데이트 됩니다. (이 자습서에서 사용한 접근 방식입니다.)
+- **범주 DropDownList의 설정**[AutoPostBack 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.listcontrol.autopostback%28VS.80%29.aspx)**True로 합니다.** (이 수행할 수 있습니다 DropDownList의 스마트 태그에서 AutoPostBack 사용 옵션을 선택 합니다.) DropDownList의 선택할 때마다 포스트백을 시도해 사용자 항목을 변경 합니다. 따라서 사용자가 드롭다운 목록에서 새 범주를 선택 하는 경우 계속 다시 게시 될 것 이라고 하 고 GridView 새로 선택한 범주에 대 한 제품으로 업데이트 됩니다. (이 자습서에서 사용한 접근 방식입니다.)
 - **드롭다운 목록 옆에 있는 단추 웹 컨트롤을 추가 합니다.** 설정의 `Text` 속성 새로 고침을 또는 이와 비슷한 이름입니다. 이 방법을 사용 하면 새 범주를 선택 하 고 다음 단추를 클릭 해야 합니다. 단추를 클릭 하면 포스트백을 발생 하 고 선택한 범주의 해당 제품을 나열 하 여 GridView를 업데이트 합니다.
 
 그림 9와 10 작업에서 마스터/세부 정보 보고서를 보여 줍니다.

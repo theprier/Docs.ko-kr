@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/scaleout-with-redis
 msc.type: authoredcontent
-ms.openlocfilehash: c0d6fd421dad02298326d1975ae68d1e7cc78d8c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8376c6537d693841a621158358cc8f69cda0a1d6
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="signalr-scaleout-with-redis-signalr-1x"></a>Redis와 함께 SignalR 확장 (SignalR 1.x)
 ====================
@@ -132,7 +132,7 @@ IIS 역할을 추가 합니다. WebSocket 프로토콜을 포함 하 여 "응용
 
 웹 관리 서비스에서 실행 되 고 있는지 확인 합니다. 그렇지 않은 경우 서비스를 시작 합니다. (웹 관리 서비스 보이지 않으면의 Windows 서비스 목록에 있는지 확인 IIS 역할을 추가 했을 때 관리 서비스를 설치 합니다.)
 
-웹 관리 서비스는 기본적으로 TCP 8172 포트에서 수신합니다. Windows 방화벽에서 TCP 8172 포트 트래픽을 허용 하는 새 인바운드 규칙을 만듭니다. 자세한 내용은 참조 [방화벽 규칙 구성](https://technet.microsoft.com/en-us/library/dd448559(WS.10).aspx)합니다. (Azure에서 Vm을 호스팅하는 경우 이렇게 하려면 Azure 포털에서 직접 합니다. 참조 [가상 컴퓨터에 끝점을 설정 하는 방법을](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-set-up-endpoints/).)
+웹 관리 서비스는 기본적으로 TCP 8172 포트에서 수신합니다. Windows 방화벽에서 TCP 8172 포트 트래픽을 허용 하는 새 인바운드 규칙을 만듭니다. 자세한 내용은 참조 [방화벽 규칙 구성](https://technet.microsoft.com/library/dd448559(WS.10).aspx)합니다. (Azure에서 Vm을 호스팅하는 경우 이렇게 하려면 Azure 포털에서 직접 합니다. 참조 [가상 컴퓨터에 끝점을 설정 하는 방법을](https://azure.microsoft.com/documentation/articles/virtual-machines-set-up-endpoints/).)
 
 이제 서버에 개발 컴퓨터에서 Visual Studio 프로젝트를 배포할 준비가 되었습니다. 솔루션 탐색기에서 솔루션을 마우스 오른쪽 단추로 클릭 하 고 클릭 **게시**합니다.
 

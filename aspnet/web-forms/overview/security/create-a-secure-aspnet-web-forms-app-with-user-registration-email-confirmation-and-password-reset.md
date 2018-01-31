@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/security/create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset
 msc.type: authoredcontent
-ms.openlocfilehash: b6f3821a8022daa26f5efcc009ab3e6283a76a19
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ed39295ed1bcaa924336a1faf52049e291abeadb
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset-c"></a>확인 및 암호 재설정 (C#) 전자 메일 사용자 등록와 보안 ASP.NET Web Forms 응용 프로그램 만들기
 ====================
@@ -53,7 +53,7 @@ ms.lasthandoff: 11/10/2017
  클릭 **확인** 새 프로젝트를 만듭니다.  
     ![새 ASP.NET 프로젝트 대화 상자](create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset/_static/image1.png)
 3. 프로젝트에 대 한 Secure Sockets Layer (SSL)를 사용 합니다. 사용할 수 있는 단계에 따라는 **프로젝트에 대 한 SSL을 사용 하도록 설정** 의 섹션은 [Web Forms 자습서 시리즈 시작](../getting-started/getting-started-with-aspnet-45-web-forms/checkout-and-payment-with-paypal.md#SSLWebForms)합니다.
-4. 응용 프로그램 실행을 클릭는 **등록** 에 연결 하 고 새 사용자를 등록 합니다. 이 시점에서 전자 메일에만 유효성 검사는 기반는 [[EmailAddress]](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.emailaddressattribute(v=vs.110).aspx) 특성을 전자 메일 주소 형식이 올바른지 확인 합니다. 전자 메일 확인을 추가 하는 코드를 수정 합니다. 브라우저 창을 닫습니다.
+4. 응용 프로그램 실행을 클릭는 **등록** 에 연결 하 고 새 사용자를 등록 합니다. 이 시점에서 전자 메일에만 유효성 검사는 기반는 [[EmailAddress]](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.emailaddressattribute(v=vs.110).aspx) 특성을 전자 메일 주소 형식이 올바른지 확인 합니다. 전자 메일 확인을 추가 하는 코드를 수정 합니다. 브라우저 창을 닫습니다.
 5. **서버 탐색기** 의 Visual Studio (**보기**  - &gt; **서버 탐색기**)로 이동 **데이터 Connections\ DefaultConnection\Tables\AspNetUsers**를 마우스 오른쪽 단추로 클릭 하 고 **테이블 정의 열고**합니다. 
 
     다음 그림에서는 `AspNetUsers` 테이블 스키마:
@@ -78,7 +78,7 @@ ms.lasthandoff: 11/10/2017
 
 1. Visual Studio에서 열고는 **패키지 관리자 콘솔** (**도구**  - &gt; **NuGet 패키지 관리자**  - &gt; **패키지 관리자 콘솔**), 다음 명령을 입력 합니다.  
     `Install-Package SendGrid`
-2. 이동 하는 [Azure SendGrid 등록 페이지](https://azure.microsoft.com/en-us/gallery/store/sendgrid/sendgrid-azure/) 무료로 SendGrid 계정을 등록 하 고 있습니다. 또한에서 직접 무료 SendGrid 계정을 등록 하면 [SendGrid의 사이트](http://www.sendgrid.com)합니다.
+2. 이동 하는 [Azure SendGrid 등록 페이지](https://azure.microsoft.com/gallery/store/sendgrid/sendgrid-azure/) 무료로 SendGrid 계정을 등록 하 고 있습니다. 또한에서 직접 무료 SendGrid 계정을 등록 하면 [SendGrid의 사이트](http://www.sendgrid.com)합니다.
 3. **솔루션 탐색기** 열고는 *IdentityConfig.cs* 파일에 *앱\_시작* 폴더는 에노란색으로강조표시한다음코드를추가하고`EmailService` 구성 하는 클래스 **SendGrid**:
 
     [!code-csharp[Main](create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset/samples/sample1.cs?highlight=3,5,8-37)]
@@ -186,5 +186,5 @@ ms.lasthandoff: 11/10/2017
 - [ASP.NET Id에 대 한 링크 권장 리소스](../../../identity/overview/getting-started/aspnet-identity-recommended-resources.md)
 - [계정 확인 및 ASP.NET Id와 암호 복구](../../../identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity.md)
 - [ASP.NET Web Forms 자습서 시리즈-OAuth 2.0 공급자 추가](../getting-started/getting-started-with-aspnet-45-web-forms/checkout-and-payment-with-paypal.md#OAuthWebForms)
-- [Azure 앱 서비스에 멤버 자격, OAuth, SQL 데이터베이스와 보안 ASP.NET Web Forms 응용 프로그램 배포](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/)
+- [Azure 앱 서비스에 멤버 자격, OAuth, SQL 데이터베이스와 보안 ASP.NET Web Forms 응용 프로그램 배포](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/)
 - [ASP.NET Web Forms 자습서 시리즈-프로젝트에 대 한 SSL 사용](../getting-started/getting-started-with-aspnet-45-web-forms/checkout-and-payment-with-paypal.md#SSLWebForms)

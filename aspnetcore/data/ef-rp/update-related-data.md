@@ -2,19 +2,18 @@
 title: "EF 코어-를 사용 하 여 razor 페이지 관련된 데이터-7/8 업데이트"
 author: rick-anderson
 description: "이 자습서에서는 외래 키 필드와 탐색 속성을 업데이트 하 여 관련된 데이터를 업데이트 합니다."
-keywords: "ASP.NET Core, Entity Framework Core 관련된 데이터를 조인"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 11/15/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-rp/update-related-data
-ms.openlocfilehash: f07a33c19ba1be623fae14228f8fbc909d766816
-ms.sourcegitcommit: 6e46abd65973dea796d364a514de9ec2e3e1c1ed
+ms.openlocfilehash: 5c91c91ab938f3aa4abc55049c54f399469f6163
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="updating-related-data---ef-core-razor-pages-7-of-8"></a>관련된 데이터 요금-EF 핵심 Razor 페이지 (7/8)를 업데이트합니다.
 
@@ -70,7 +69,7 @@ Courses/만들기 및 편집 과정/페이지 부서 이름 목록이 필요 합
 * 캡션이 변경 **DepartmentID** 를 **부서**합니다.
 * 대체 `"ViewBag.DepartmentID"` 와 `DepartmentNameSL` (기본 클래스)에서 사용 합니다.
 * "부서 선택" 옵션을 추가합니다. 이 변경 하는 대신 첫 번째 부서 "부서 선택"을 렌더링합니다.
-* 부서 선택 하지 않은 경우 유효성 검사 메시지를 추가 합니다.
+* 부서 선택 되지 않은 경우 유효성 검사 메시지를 추가 합니다.
 
 Razor 페이지를 사용 하 여 [태그 도우미 선택](xref:mvc/views/working-with-forms#the-select-tag-helper):
 
@@ -96,7 +95,7 @@ Razor 페이지를 사용 하 여 [태그 도우미 선택](xref:mvc/views/worki
 * 캡션이 변경 **DepartmentID** 를 **부서**합니다.
 * 대체 `"ViewBag.DepartmentID"` 와 `DepartmentNameSL` (기본 클래스)에서 사용 합니다.
 * "부서 선택" 옵션을 추가합니다. 이 변경 하는 대신 첫 번째 부서 "부서 선택"을 렌더링합니다.
-* 부서 선택 하지 않은 경우 유효성 검사 메시지를 추가 합니다.
+* 부서 선택 되지 않은 경우 유효성 검사 메시지를 추가 합니다.
 
 페이지에 포함 하 여 숨겨진된 필드 (`<input type="hidden">`) 과정 번호에 대 한 합니다. 추가 `<label>` 으로 도우미를 태그 `asp-for="Course.CourseID"` 숨겨진된 필드에 대 한 필요성을 제거 하지 않습니다. `<input type="hidden">`사용자가 게시 된 데이터에 포함 되도록 과정 번호에 대 한 필요 **저장**합니다.
 
@@ -104,7 +103,7 @@ Razor 페이지를 사용 하 여 [태그 도우미 선택](xref:mvc/views/worki
 
 ## <a name="add-asnotracking-to-the-details-and-delete-page-models"></a>AsNoTracking 세부 정보를 추가 하 고 페이지 모델 삭제
 
-[AsNoTracking](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.entityframeworkqueryableextensions.asnotracking?view=efcore-2.0#Microsoft_EntityFrameworkCore_EntityFrameworkQueryableExtensions_AsNoTracking__1_System_Linq_IQueryable___0__) 추적 필요 하지 않은 경우 성능을 향상 시킬 수 있습니다. 추가 `AsNoTracking` 삭제 및 세부 정보 페이지 모델에 있습니다. 다음 코드는 업데이트 된 Delete 페이지 모델을 보여 줍니다.
+[AsNoTracking](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.entityframeworkqueryableextensions.asnotracking?view=efcore-2.0#Microsoft_EntityFrameworkCore_EntityFrameworkQueryableExtensions_AsNoTracking__1_System_Linq_IQueryable___0__) 관리할 필요 없는 때 성능을 향상 시킬 수 있습니다. 추가 `AsNoTracking` 삭제 및 세부 정보 페이지 모델에 있습니다. 다음 코드는 업데이트 된 Delete 페이지 모델을 보여 줍니다.
 
 [!code-csharp[Main](intro/samples/cu/Pages/Courses/Delete.cshtml.cs?name=snippet&highlight=21,23,40,41)]
 
@@ -165,7 +164,7 @@ Razor 페이지를 사용 하 여 [태그 도우미 선택](xref:mvc/views/worki
 확인란을 courses 강사에 할당 된 변경 내용을 사용 합니다. 데이터베이스의 모든 과정에 대 한 확인란이 표시 됩니다. Courses 강사에 할당 된 확인 됩니다. 사용자가 선택 하거나 과정 할당을 변경 하려면 확인란의 선택을 취소 합니다. Courses 수가 훨씬 더 클 경우:
 
 * 아마도 코스 표시 하려면 다른 사용자 인터페이스를 사용 합니다.
-* 관계 만들기 또는 삭제 하는 조인 엔터티를 조작 하는 방법은 변경 되지 않습니다.
+* 관계 만들기 또는 삭제 하는 조인 엔터티를 조작 하는 방법을 변경 하지 않습니다.
 
 ### <a name="add-classes-to-support-create-and-edit-instructor-pages"></a>지 원하는 클래스를 추가 강사 페이지 만들고 편집
 

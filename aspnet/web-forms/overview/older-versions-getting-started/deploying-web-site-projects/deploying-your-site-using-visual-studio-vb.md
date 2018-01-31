@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-visual-studio-vb
 msc.type: authoredcontent
-ms.openlocfilehash: af4257a91c08efc498c86aceac6fa7f64e527a74
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 362f8391f3352b3abf00045bca0c212cd850b17f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-your-site-using-visual-studio-vb"></a>Visual Studio (VB)를 사용 하 여 사이트를 배포 합니다.
 ====================
@@ -33,7 +33,7 @@ ms.lasthandoff: 11/10/2017
 
 
 > [!NOTE]
-> Visual Studio에서 제공 하는 다른 배포 관련 도구로 [웹 설치 프로젝트](https://msdn.microsoft.com/en-us/library/wx3b589t.aspx) 및 [웹 배포 프로젝트](https://www.microsoft.com/downloads/details.aspx?FamilyId=0AA30AE8-C73B-4BDD-BB1B-FE697256C459&amp;displaylang=en) 추가 기능을 합니다. 웹 설치 프로젝트 웹 사이트의 콘텐츠 및 구성 정보를 단일 MSI 파일로 패키지합니다. 이 옵션은 고객이 자신의 웹 서버에 설치 하는 미리 패키지에 포함 된 웹 응용 프로그램을 판매 하는 회사 또는 인트라넷 내에 배포 된 웹 사이트에 대 한 가장 유용 합니다. 웹 배포 프로젝트 추가 기능을 빌드 개발 환경 및 프로덕션 환경에 대 한 Visual Studio 추가 하는 기능을 지정 하 여 구성의 차이점을 용이 하 게 됩니다. 이 자습서 시리즈; 웹 설치 프로젝트 설명 하지 웹 배포 프로젝트에 요약 되어는 [ *일반적인 구성 차이점 간의 개발 및 프로덕션* ](common-configuration-differences-between-development-and-production-vb.md) 자습서입니다.
+> Visual Studio에서 제공 하는 다른 배포 관련 도구로 [웹 설치 프로젝트](https://msdn.microsoft.com/library/wx3b589t.aspx) 및 [웹 배포 프로젝트](https://www.microsoft.com/downloads/details.aspx?FamilyId=0AA30AE8-C73B-4BDD-BB1B-FE697256C459&amp;displaylang=en) 추가 기능을 합니다. 웹 설치 프로젝트 웹 사이트의 콘텐츠 및 구성 정보를 단일 MSI 파일로 패키지합니다. 이 옵션은 고객이 자신의 웹 서버에 설치 하는 미리 패키지에 포함 된 웹 응용 프로그램을 판매 하는 회사 또는 인트라넷 내에 배포 된 웹 사이트에 대 한 가장 유용 합니다. 웹 배포 프로젝트 추가 기능을 빌드 개발 환경 및 프로덕션 환경에 대 한 Visual Studio 추가 하는 기능을 지정 하 여 구성의 차이점을 용이 하 게 됩니다. 이 자습서 시리즈; 웹 설치 프로젝트 설명 하지 웹 배포 프로젝트에 요약 되어는 [ *일반적인 구성 차이점 간의 개발 및 프로덕션* ](common-configuration-differences-between-development-and-production-vb.md) 자습서입니다.
 
 
 ## <a name="deploying-your-site-using-the-copy-web-site-tool"></a>웹 사이트 복사 도구를 사용 하 여 사이트를 배포 합니다.
@@ -150,11 +150,11 @@ Visual Studio 내에서 웹 응용 프로그램을 배포 하는 다른 방법�
 
 이 자습서에 설명 된 항목에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
-- [웹 사이트 복사 도구와 웹 사이트에 복사](https://msdn.microsoft.com/en-us/library/1cc82atw.aspx)
+- [웹 사이트 복사 도구와 웹 사이트에 복사](https://msdn.microsoft.com/library/1cc82atw.aspx)
 - [I: 웹 사이트 복사 도구를 사용 하 여 웹 사이트 배포](../../../videos/how-do-i/how-do-i-deploy-a-web-site-using-the-copy-web-site-tool.md) (비디오)
-- [방법: 웹 응용 프로그램 프로젝트를 게시 합니다.](https://msdn.microsoft.com/en-us/library/aa983453.aspx)
-- [방법: 웹 사이트 게시](https://msdn.microsoft.com/en-us/library/20yh9f1b.aspx)
-- [설치 및 Visual Studio에서 프로젝트 배포](https://msdn.microsoft.com/en-us/library/wx3b589t.aspx)
+- [방법: 웹 응용 프로그램 프로젝트를 게시 합니다.](https://msdn.microsoft.com/library/aa983453.aspx)
+- [방법: 웹 사이트 게시](https://msdn.microsoft.com/library/20yh9f1b.aspx)
+- [설치 및 Visual Studio에서 프로젝트 배포](https://msdn.microsoft.com/library/wx3b589t.aspx)
 
 >[!div class="step-by-step"]
 [이전](deploying-your-site-using-an-ftp-client-vb.md)

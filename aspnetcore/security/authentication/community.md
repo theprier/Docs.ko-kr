@@ -2,19 +2,18 @@
 title: "커뮤니티 OSS 인증 옵션"
 author: rick-anderson
 description: "ASP.NET Core에 대 한 인증 옵션 소스를 진행 하는 나열 합니다."
-keywords: "ASP.NET Core 오픈 소스 인증"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 08/18/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/authentication/community
-ms.openlocfilehash: 0d57a91a54dc1c88711804cf2c5c0c6d67ee4b8e
-ms.sourcegitcommit: 677986b3a39817b712e2432cce85ad1685326b75
+ms.openlocfilehash: 08171cec99f83677b4bf2a2de48908f31cd11fff
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/04/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="community-oss-authentication-options"></a>커뮤니티 OSS 인증 옵션
 

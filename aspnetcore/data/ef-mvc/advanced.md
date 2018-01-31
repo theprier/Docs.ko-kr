@@ -2,20 +2,18 @@
 title: "ASP.NET Core MVC EF 코어-고급-10 / 10"
 author: tdykstra
 description: "이 자습서에서는 고급의 Entity Framework Core를 사용 하는 ASP.NET 웹 응용 프로그램 개발 기능 수행 하는 경우 고려해 야 하는 데 유용 하는 여러 항목을 소개 합니다."
-keywords: "ASP.NET Core, Entity Framework Core 원시 sql 검사 sql, 저장소 패턴, 작업 패턴을 자동 변경 내용 검색 단위 기존 데이터베이스"
-ms.author: tdykstra
 manager: wpickett
+ms.author: tdykstra
 ms.date: 03/15/2017
-ms.topic: get-started-article
-ms.assetid: 92a2986a-d005-4ff6-9559-6657fd466bb7
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-mvc/advanced
-ms.openlocfilehash: 4c20ed37e1e54273929593dddc9fe1180f1492d6
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 458f2dc8a67f8c706d043f0d9d7cb7ce962e52ce
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="advanced-topics---ef-core-with-aspnet-core-mvc-tutorial-10-of-10"></a>고급 항목-EF 코어 ASP.NET Core MVC 자습서 (10 / 10)
 
@@ -29,7 +27,7 @@ Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework Core 및 Vi
 
 Entity Framework 사용의 장점 중 하나를 방지할 수 제한 된 데이터를 저장 하는 특정 방법에 가깝게 너무 코드입니다. 생성 하 여 SQL 쿼리 및 명령, 직접 작성 하지 않아도 하므로 수행 합니다. 하지만 사용자가 직접 만든 특정 SQL 쿼리를 실행 해야 할 때 예외적인 경우도 있습니다. 이러한 시나리오에는 엔터티 프레임 워크 코드의 첫 번째 API SQL 명령을 데이터베이스에 직접 전달할 수 있도록 하는 메서드를 포함 합니다. EF Core 1.0에서 다음 옵션을 선택할:
 
-* 사용 하 여 `DbSet.FromSql` 엔터티 형식을 반환 하는 쿼리에 대 한 메서드. 반환 된 개체에 필요한 형식 이어야 합니다는 `DbSet` 개체 및 이러한는 자동으로 데이터베이스 컨텍스트에서 추적 하지 않는 한 있습니다 [추적 해제](crud.md#no-tracking-queries)합니다.
+* 사용 하 여 `DbSet.FromSql` 엔터티 형식을 반환 하는 쿼리에 대 한 메서드. 반환 된 개체에 필요한 형식 이어야 합니다는 `DbSet` 개체 및 이러한 하는 자동으로 데이터베이스 컨텍스트에서 추적 하지 않는 한 있습니다 [추적 해제](crud.md#no-tracking-queries)합니다.
 
 * 사용 하 여 `Database.ExecuteSqlCommand` 쿼리가 아닌 명령에 대 한 합니다.
 
@@ -141,7 +139,7 @@ ORDER BY [t].[ID]
 
 ## <a name="repository-and-unit-of-work-patterns"></a>작업 패턴의 단위 및 저장소
 
-대부분의 개발자는 Entity Framework와 함께 사용할 수 있는 코드 주위에서 래퍼로 저장소와 단위 작업 패턴을 구현 하는 코드를 작성 합니다. 이러한 패턴은 데이터 액세스 계층 및 응용 프로그램의 비즈니스 논리 계층 간에 추상화 계층을 만드는 데 사용 됩니다. 이러한 패턴을 구현 하는 데이터 저장소의 변경 내용 으로부터 응용 프로그램을 분리 하는 데 도움이 및 자동화 된 단위 테스트 또는 테스트 기반 개발 (TDD)으로 기여할 수입니다. 그러나 이러한 패턴을 구현 하는 추가 코드를 작성은 여러 가지 이유로 EF를 사용 하는 응용 프로그램에 적합 합니다.
+대부분의 개발자는 Entity Framework와 함께 사용할 수 있는 코드 주위에서 래퍼로 저장소와 단위 작업 패턴을 구현 하는 코드를 작성 합니다. 이러한 패턴은 데이터 액세스 계층 및 응용 프로그램의 비즈니스 논리 계층 간에 추상화 계층을 만드는 데 사용 됩니다. 이러한 패턴을 구현 하는 데이터 저장소의 변경 내용 으로부터 응용 프로그램을 분리 하는 데 도움이 및 자동화 된 단위 테스트 또는 테스트 기반 개발 (TDD)으로 기여할 수입니다. 그러나 이러한 패턴을 구현 하는 추가 코드를 작성은 항상 같은 여러 가지 이유로 EF를 사용 하는 응용 프로그램에 적합 합니다.
 
 * EF 컨텍스트 클래스 자체 데이터 저장소 관련 코드에서 코드를 분리 합니다.
 
@@ -171,7 +169,7 @@ _context.ChangeTracker.AutoDetectChangesEnabled = false;
 
 ## <a name="entity-framework-core-source-code-and-development-plans"></a>Entity Framework Core 소스 코드 및 개발 계획
 
-Entity Framework Core에 대 한 소스 코드에서 제공 됩니다. [https://github.com/aspnet/EntityFrameworkCore](https://github.com/aspnet/EntityFrameworkCore)합니다. 소스 코드 외에도 있습니다 수 야간 빌드 가져오기, 추적 실행, 기능 사양, 디자인 회의 노트 [이후 개발에 대 한 로드맵](https://github.com/aspnet/EntityFrameworkCore/wiki/Roadmap), 등입니다. 버그를 보고할 수 있습니다 및 EF 소스 코드에 고유한 향상 된 기능에 영향을 줄 수 있습니다.
+에 Entity Framework Core 소스를 [https://github.com/aspnet/EntityFrameworkCore](https://github.com/aspnet/EntityFrameworkCore)합니다. EF 핵심 리포지토리 야간 빌드, 문제 추적, 기능 사양, 디자인 회의 노트를 포함 하 고 [이후 개발에 대 한 로드맵](https://github.com/aspnet/EntityFrameworkCore/wiki/Roadmap)합니다. 파일 또는 기여 버그를 찾을 수 있습니다.
 
 소스 코드를 연 하지만 Entity Framework 코어는 Microsoft 제품으로 완전히 지원 됩니다. Microsoft Entity Framework 팀 기여 허용 되는 제어를 유지 하 고 각 릴리스의 품질을 보장할 수 있는 모든 코드 변경 내용을 테스트 합니다.
 

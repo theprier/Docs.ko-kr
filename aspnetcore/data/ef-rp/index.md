@@ -2,19 +2,18 @@
 title: "ASP.NET Core Razor 페이지 및 EF Core - 자습서 시리즈"
 author: rick-anderson
 description: 
-keywords: ASP.NET Core,
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 03/15/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-rp/index
-ms.openlocfilehash: b7dae97d0b16eda1a94f6b9b824506d80be9c663
-ms.sourcegitcommit: 2d23ea501e0213bbacf65298acf1c8bd17209540
+ms.openlocfilehash: ea3a8d88a202028890cdf6ffbbd0151fba7e0a65
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="getting-started-with-razor-pages-and-entity-framework-core-using-visual-studio"></a>Visual Studio를 사용하여 Razor 페이지 및 Entity Framework Core 시작
 

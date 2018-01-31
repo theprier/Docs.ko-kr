@@ -2,20 +2,18 @@
 title: "ASP.NET Core에서 Facebook 외부 로그인 설정"
 author: rick-anderson
 description: "이 자습서는 기존 ASP.NET Core 응용 프로그램에 Facebook 계정 사용자 인증의 통합을 보여 줍니다."
-keywords: "ASP.NET Core, Facebook, 로그인, 인증"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 08/01/2017
-ms.topic: article
-ms.assetid: 8c65179b-688c-4af1-8f5e-1862920cda95
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/authentication/facebook-logins
-ms.openlocfilehash: 058670b4f699288e1acbe76bae08dcebf69346b8
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: 283de1df68c45fa1b41ed75710fe9eb7925f815f
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="configuring-facebook-authentication"></a>Facebook 인증 구성
 
@@ -138,7 +136,7 @@ Facebook 사용자의 자격 증명을 입력 하면 사용자의 전자 메일�
 
 ## <a name="troubleshooting"></a>문제 해결
 
-* **ASP.NET Core 2.x만:** 경우 Identity를 호출 하 여 구성 되지 않은 `services.AddIdentity` 에 `ConfigureServices`, 인증을 시도 하면 *ArgumentException: 'SignInScheme' 옵션을 제공 해야*합니다. 이 자습서에 사용 된 프로젝트 템플릿을 확인이 수행 되도록 합니다.
+* **ASP.NET Core 2.x만:** 경우 Identity를 호출 하 여 구성 되지 않았습니다 `services.AddIdentity` 에 `ConfigureServices`, 인증을 시도 하면 *ArgumentException: 'SignInScheme' 옵션을 제공 해야*합니다. 이 자습서에 사용 된 프로젝트 템플릿을 확인이 수행 되도록 합니다.
 * 사이트 데이터베이스 초기 마이그레이션을 적용 하 여 생성 되지 않은 경우 메시지가 *요청을 처리 하는 동안 데이터베이스 작업이 실패 했습니다* 오류입니다. 탭 **적용 마이그레이션** 는 데이터베이스를 만들고 오류 지 나 새로 고침 합니다.
 
 ## <a name="next-steps"></a>다음 단계

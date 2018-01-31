@@ -2,7 +2,6 @@
 title: "Razor 페이지에 새 필드 추가"
 author: rick-anderson
 description: "Entity Framework Core를 사용하여 Razor 페이지에 새 필드를 추가하는 방법을 보여 줍니다."
-keywords: "ASP.NET Core, Entity Framework Core, 마이그레이션"
 ms.author: riande
 manager: wpickett
 ms.date: 08/07/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/new-field
-ms.openlocfilehash: 128b69513976a56104524bb803f2b8cb1daf1967
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 54ba77cfc3ce87566db14509805a2809d3e460e6
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="adding-a-new-field-to-a-razor-page"></a>Razor 페이지에 새 필드 추가
 

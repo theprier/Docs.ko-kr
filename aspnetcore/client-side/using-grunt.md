@@ -2,20 +2,18 @@
 title: "ASP.NET Core에서 Grunt를 사용 하 여"
 author: rick-anderson
 description: 
-keywords: ASP.NET Core,
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.assetid: 471112e9-2c33-454b-96fc-32916102ce73
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: client-side/using-grunt
-ms.openlocfilehash: 8ae50514ce24c7f9e3bb1e347d5d860e1de43c5f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c23f170b36ac1b9623835337020f2b5ac9514971
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="using-grunt-in-aspnet-core"></a>ASP.NET Core에서 Grunt를 사용 하 여 
 
@@ -53,7 +51,7 @@ Grunt은 스크립트 축소, TypeScript 컴파일, 코드 품질 "중요" 도�
 
 4.  라는 새 폴더 추가 `TypeScript` 프로젝트 디렉터리에 있습니다.
 
-5.  모든 파일을 추가 하기 전에 보겠습니다 가지도록 Visual Studio 옵션 ' 컴파일 저장할 때 ' TypeScript 파일 확인에 대 한 합니다. *도구 > 옵션 > 텍스트 편집기 > Typescript > 프로젝트*
+5.  모든 파일을 추가 하기 전에 Visual Studio는 옵션이 있는지 확인 ' 컴파일 저장할 때 ' TypeScript 파일을 선택 합니다. 로 이동 **도구** > **옵션** > **텍스트 편집기** > **Typescript**  >  **프로젝트**:
 
     ![TypeScript 파일의 자동 compliation 설정 옵션](using-grunt/_static/typescript-options.png)
 
@@ -96,14 +94,14 @@ Grunt은 스크립트 축소, TypeScript 컴파일, 코드 품질 "중요" 도�
 
 1. 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭 하 고 선택 **추가 > 새 항목** 상황에 맞는 메뉴입니다. 선택 된 **NPM 구성 파일** 항목에서 기본 이름을 *package.json*, 클릭 하 고는 **추가** 단추 합니다.
 
-2. 에 *package.json* 파일 내부는 `devDependencies` 중괄호 개체, "grunt"를 입력 합니다. 선택 `grunt` Intellisense에서 나열 하 고 Enter 키를 누릅니다. Visual Studio grunt 패키지 이름을 따옴표를 콜론을 추가 합니다. Intellisense 목록 맨 위부터 콜론 오른쪽에 패키지의 안정적인 최신 버전을 선택 (키를 눌러 `Ctrl-Space` Intellisense 표시 되지 않는 경우).
+2. 에 *package.json* 파일 내부는 `devDependencies` 중괄호 개체, "grunt"를 입력 합니다. 선택 `grunt` Intellisense에서 나열 하 고 Enter 키를 누릅니다. Visual Studio grunt 패키지 이름을 따옴표를 콜론을 추가 합니다. Intellisense 목록 맨 위부터 콜론 오른쪽에 패키지의 안정적인 최신 버전을 선택 (키를 눌러 `Ctrl-Space` Intellisense 표시 하지 않는 경우).
 
     ![grun Intellisense](using-grunt/_static/devdependencies-grunt.png)
     
     > [!NOTE]
     > NPM 사용 하 여 [의미 체계 버전 관리](http://semver.org/) 종속성을 구성할 수 있습니다. 의미 체계 버전 관리로도 알려져 SemVer 번호 매기기 구성표를 사용 하 여 패키지를 식별 <major>.<minor>합니다. <patch>. Intellisense는 일반적인 몇 가지 옵션에만 표시 하 여 의미 체계 버전 관리를 간소화 합니다. 맨 위 항목 (위의 예에서 0.4.5) Intellisense 목록에는 패키지의 안정적인 최신 버전으로 간주 됩니다. 캐럿 (^) 기호가 일치 하는 가장 최근의 주 버전 및 물결표 (~) 최신 부 버전 일치 합니다. 참조는 [NPM semver 버전 파서 참조](https://www.npmjs.com/package/semver) SemVer 제공 하는 전체 표현 하는 기준으로 합니다.
 
-3. 로드에 대 한 더 많은 종속성 grunt 추가-contrib-\* 패키지로 *클린*, *jshint*, *concat*, *uglify*, 및 *조사식* 아래 예에 나와 있는 것 처럼 합니다. 버전의 예제와 일치 하도록 필요가 없습니다.
+3. 로드에 대 한 더 많은 종속성 grunt 추가-contrib-\* 패키지로 *클린*, *jshint*, *concat*, *uglify*, 및 *조사식* 아래 예에 나와 있는 것 처럼 합니다. 버전 예제와 일치 하지 않아도 됩니다.
 
     ```json
     "devDependencies": {

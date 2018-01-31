@@ -2,20 +2,18 @@
 title: "구현"
 author: rick-anderson
 description: "이 문서는 다양한 ASP.NET Core 데이터 보호 구현 항목에 대한 목차로 사용됩니다."
-keywords: "ASP.NET Core,데이터 보호"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.assetid: 706a11bb-bf6e-4e91-930b-e3f4e71d04a0
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/data-protection/implementation/index
-ms.openlocfilehash: 36e92f7ec9c03a7d1530a27d2fdb2838ea939dba
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a464e961c0df1eb5f3def40d2a8c306454ed02d8
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="implementation"></a>구현
 

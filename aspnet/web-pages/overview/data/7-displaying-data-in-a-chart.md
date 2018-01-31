@@ -12,15 +12,15 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/data/7-displaying-data-in-a-chart
 msc.type: authoredcontent
-ms.openlocfilehash: 15daa5fa94094fb50971514a152312fd81a749a1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f252b74bc42d0ea65b8b1150973c4f3c50cc9cf4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="displaying-data-in-a-chart-with-aspnet-web-pages-razor"></a>ASP.NET 웹 페이지 (Razor)와 차트에 데이터를 표시합니다.
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 이 문서를 사용 하 여 ASP.NET 웹 페이지 (Razor) 웹 사이트에서 데이터를 표시 하려면 차트를 사용 하는 방법에 설명 된 `Chart` 도우미입니다.
 > 
@@ -296,4 +296,4 @@ ms.lasthandoff: 11/10/2017
 
 - [ASP.NET 웹에서 데이터베이스 작업 소개 사이트 페이지](https://go.microsoft.com/fwlink/?LinkId=202893)
 - [성능 향상을 위해 사이트 페이지를 ASP.NET 웹에서 캐싱 사용](https://go.microsoft.com/fwlink/?LinkId=202903)
-- [차트 클래스](https://msdn.microsoft.com/en-us/library/system.web.helpers.chart(v=vs.99)) (MSDN에서 ASP.NET 웹 페이지 API 참조)
+- [차트 클래스](https://msdn.microsoft.com/library/system.web.helpers.chart(v=vs.99)) (MSDN에서 ASP.NET 웹 페이지 API 참조)

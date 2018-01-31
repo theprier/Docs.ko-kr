@@ -2,20 +2,18 @@
 title: "ASP.NET Core에서 데이터 보호 구성"
 author: rick-anderson
 description: "ASP.NET Core에서는 데이터 보호를 구성하는 방법을 설명하는 항목을 검색합니다."
-keywords: "ASP.NET Core,데이터 보호"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/12/2017
-ms.topic: article
-ms.assetid: 517047b3-b5a9-4b5a-9084-01dae4c74cef
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/data-protection/configuration/index
-ms.openlocfilehash: a502de94a0f7177f29c95f6a6a4468a715e66983
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9e08452e13c0ffadde1aeb8fe6e64d5d4eb4d306
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="data-protection-configuration-in-aspnet-core"></a>ASP.NET Core에서 데이터 보호 구성
 

@@ -2,20 +2,18 @@
 title: "이미지 태그 도우미 | Microsoft Docs"
 author: pkellner
 description: "이미지 태그 도우미를 사용 하는 방법을 보여 줍니다."
-keywords: "ASP.NET Core, 태그 도우미"
 ms.author: riande
 manager: wpickett
 ms.date: 02/14/2017
 ms.topic: article
-ms.assetid: c045d485-d1dc-4cea-a675-46be83b7a013
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/image-tag-helper
-ms.openlocfilehash: 0d55514508b963ce05031f89a20af696f5d4a670
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d0857e1926c341b2357bc824fa379c4fc30affbc
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="imagetaghelper"></a>ImageTagHelper
 

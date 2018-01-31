@@ -2,25 +2,23 @@
 title: "ASP.NET Core의 오류 처리"
 author: ardalis
 description: "ASP.NET Core 응용 프로그램에서 오류를 처리 하는 방법을 알아봅니다."
-keywords: "ASP.NET Core, 오류 처리, 예외 처리"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 11/30/2016
 ms.topic: article
-ms.assetid: 4db51023-c8a6-4119-bbbe-3917e272c260
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/error-handling
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: de2ba0ff9ad17c198c06b510ecfb49f808721bdf
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 019e31fa749a950db48575e1f4e8d4d26d1cde75
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-error-handling-in-aspnet-core"></a>ASP.NET Core의 오류 처리 소개
 
-여 [Steve Smith](https://ardalis.com/) 및 [Tom Dykstra](https://github.com/tdykstra/)
+작성자: [Steve Smith](https://ardalis.com/) 및 [Tom Dykstra](https://github.com/tdykstra/)
 
 이 문서에서는 일반적인 appoaches ASP.NET Core 응용 프로그램의 오류 처리를 다룹니다.
 
@@ -51,7 +49,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="configuring-a-custom-exception-handling-page"></a>페이지를 처리 하는 사용자 지정 예외를 구성 합니다.
 
-앱 실행 중이지 않을 때 사용 하는 예외 처리기 페이지를 구성 하는 것이 좋습니다는 `Development` 환경입니다.
+응용 프로그램 실행 되 고 있지 때 사용 하는 예외 처리기 페이지를 구성 하는 것이 좋습니다는 `Development` 환경입니다.
 
 [!code-csharp[Main](error-handling/sample/Startup.cs?name=snippet_DevExceptionPage&highlight=11)]
 
@@ -67,7 +65,7 @@ public IActionResult Index()
 
 ## <a name="configuring-status-code-pages"></a>상태 코드 페이지를 구성합니다.
 
-기본적으로 응용 프로그램에 대 한 HTTP 상태 코드 500 (내부 서버 오류) 또는 404 (찾을 수 없음)와 같은 다양 한 상태 코드 페이지를 제공 하지 않습니다. 구성할 수는 `StatusCodePagesMiddleware` 줄을 추가 하 여는 `Configure` 메서드:
+기본적으로 앱 500 (내부 서버 오류) 또는 404 (찾을 수 없음) 등의 HTTP 상태 코드에 대 한 다양 한 상태 코드 페이지를 제공 하지 않습니다. 구성할 수는 `StatusCodePagesMiddleware` 줄을 추가 하 여는 `Configure` 메서드:
 
 ```csharp
 app.UseStatusCodePages();

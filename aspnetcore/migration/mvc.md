@@ -1,21 +1,19 @@
 ---
 title: "ASP.NET MVC에서 ASP.NET Core MVC로 마이그레이션"
 author: ardalis
-description: 
-keywords: "ASP.NET Core, MVC, 마이그레이션"
-ms.author: riande
+description: "ASP.NET Core mvc는 ASP.NET MVC 프로젝트 마이그레이션 시작 하는 방법에 알아봅니다."
 manager: wpickett
+ms.author: riande
 ms.date: 03/07/2017
-ms.topic: article
-ms.assetid: 3155cc9e-d0c9-424b-886c-35c0ec6f9f4e
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: migration/mvc
-ms.openlocfilehash: 7a4357da4cc97d7c60cc7e309add7583ef096597
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 447b13eccf523cab81590405740bb194112b0dad
+ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="migrating-from-aspnet-mvc-to-aspnet-core-mvc"></a>ASP.NET MVC에서 ASP.NET Core MVC로 마이그레이션
 
@@ -96,7 +94,7 @@ ms.lasthandoff: 11/10/2017
 
 ![웹 응용 프로그램에서 Microsoft Edge 열기](mvc/_static/hello-world.png)
 
-참조 [컨트롤러](../mvc/controllers/index.md) 및 [뷰](../mvc/views/index.md) 자세한 정보에 대 한 합니다.
+참조 [컨트롤러](xref:mvc/controllers/actions) 및 [뷰](xref:mvc/views/overview) 자세한 정보에 대 한 합니다.
 
 최소 작업 ASP.NET Core 프로젝트를 만들었으므로 이제 해당 ASP.NET MVC 프로젝트에서 기능을 마이그레이션할 시작할 수 있습니다. 다음 이동 해야 합니다.
 
@@ -158,7 +156,7 @@ ASP.NET MVC 이전 프로젝트에서 사용 [부트스트랩](http://getbootstr
 
 * 만들기는 *뷰/공유* 폴더입니다.
 
-* *선택 사항:* 복사 *_ViewImports.cshtml* 에서 *FullAspNetCore* MVC 프로젝트의 *뷰* ASP.NET Core 프로젝트 폴더*뷰* 폴더입니다. 모든 네임 스페이스 선언을 제거는 *_ViewImports.cshtml* 파일입니다. *_ViewImports.cshtml* 파일 모든 보기 파일에 대 한 네임 스페이스를 제공 하 고는에서 [태그 도우미](../mvc/views/tag-helpers/index.md)합니다. 태그 도우미 새 레이아웃 파일에 사용 됩니다. *_ViewImports.cshtml* ASP.NET Core에 대 한 새 파일을 합니다.
+* *선택 사항:* 복사 *_ViewImports.cshtml* 에서 *FullAspNetCore* MVC 프로젝트의 *뷰* ASP.NET Core 프로젝트 폴더*뷰* 폴더입니다. 모든 네임 스페이스 선언을 제거는 *_ViewImports.cshtml* 파일입니다. *_ViewImports.cshtml* 파일 모든 보기 파일에 대 한 네임 스페이스를 제공 하 고는에서 [태그 도우미](xref:mvc/views/tag-helpers/intro)합니다. 태그 도우미 새 레이아웃 파일에 사용 됩니다. *_ViewImports.cshtml* ASP.NET Core에 대 한 새 파일을 합니다.
 
 * 복사는 *_Layout.cshtml* 이전 ASP.NET MVC 프로젝트에서 파일 *뷰/공유* ASP.NET Core 프로젝트에 폴더 *뷰/공유* 폴더입니다.
 
@@ -193,9 +191,9 @@ ASP.NET MVC 이전 프로젝트에서 사용 [부트스트랩](http://getbootstr
 
 브라우저에서 사이트를 검토 합니다. 원위치에서 예상된 스타일과는 올바르게 로드 이제 해야 합니다.
 
-* *선택 사항:* 새 레이아웃 파일을 사용 하는 것이 좋습니다. 이 프로젝트에 대 한 레이아웃 파일에서 복사할 수 있습니다는 *FullAspNetCore* 프로젝트. 사용 하는 새 레이아웃 파일 [태그 도우미](../mvc/views/tag-helpers/index.md) 있으며 다른 개선 합니다.
+* *선택 사항:* 새 레이아웃 파일을 사용 하는 것이 좋습니다. 이 프로젝트에 대 한 레이아웃 파일에서 복사할 수 있습니다는 *FullAspNetCore* 프로젝트. 사용 하는 새 레이아웃 파일 [태그 도우미](xref:mvc/views/tag-helpers/intro) 있으며 다른 개선 합니다.
 
-## <a name="configure-bundling--minification"></a>구성 묶음 및 축소
+## <a name="configure-bundling-and-minification"></a>묶음 및 축소 구성
 
 묶음 및 축소를 구성 하는 방법에 대 한 정보를 참조 하십시오. [묶음 및 축소](../client-side/bundling-and-minification.md)합니다.
 
@@ -226,6 +224,5 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
 
 ## <a name="additional-resources"></a>추가 리소스
 
-* [클라이언트 쪽 개발](../client-side/index.md)
-
-* [태그 도우미](../mvc/views/tag-helpers/index.md)
+* [클라이언트 쪽 개발](xref:client-side/index)
+* [태그 도우미](xref:mvc/views/tag-helpers/intro)

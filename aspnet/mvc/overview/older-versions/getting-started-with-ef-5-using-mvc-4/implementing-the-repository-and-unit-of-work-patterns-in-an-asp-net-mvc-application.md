@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: c920dc8defe18b6f27d122c2cd1a6c6ffdaad608
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 02b1de31b9513247facc92bc6b72247865d176f9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="implementing-the-repository-and-unit-of-work-patterns-in-an-aspnet-mvc-application-9-of-10"></a>ASP.NET MVC 응용 프로그램 (9 / 10)에서 저장소 및 단위의 작업 패턴 구현
 ====================
@@ -45,15 +45,15 @@ ms.lasthandoff: 11/10/2017
 
 ![Repository_pattern_diagram](https://asp.net/media/2578149/Windows-Live-Writer_8c4963ba1fa3_CE3B_Repository_pattern_diagram_1df790d3-bdf2-4c11-9098-946ddd9cd884.png)
 
-이 자습서 시리즈의 단위 테스트를 만들지 않습니다. 리포지토리 패턴을 사용 하는 MVC 응용 프로그램과 TDD에 대 한 소개를 참조 하십시오. [연습: ASP.NET MVC와 함께 TDD를 사용 하 여](https://msdn.microsoft.com/en-us/library/ff847525.aspx)합니다. 리포지토리 패턴에 대 한 자세한 내용은 다음 리소스를 참조 합니다.
+이 자습서 시리즈의 단위 테스트를 만들지 않습니다. 리포지토리 패턴을 사용 하는 MVC 응용 프로그램과 TDD에 대 한 소개를 참조 하십시오. [연습: ASP.NET MVC와 함께 TDD를 사용 하 여](https://msdn.microsoft.com/library/ff847525.aspx)합니다. 리포지토리 패턴에 대 한 자세한 내용은 다음 리소스를 참조 합니다.
 
-- [리포지토리 패턴](https://msdn.microsoft.com/en-us/library/ff649690.aspx) msdn 합니다.
+- [리포지토리 패턴](https://msdn.microsoft.com/library/ff649690.aspx) msdn 합니다.
 - [작업 단위 및 저장소 패턴을 사용 하 여 Entity Framework 4.0이 있는](https://blogs.msdn.com/b/adonet/archive/2009/06/16/using-repository-and-unit-of-work-patterns-with-entity-framework-4-0.aspx) Entity Framework 팀 블로그.
 - [Agile Entity Framework 4 리포지토리](http://thedatafarm.com/blog/data-access/agile-entity-framework-4-repository-part-1-model-and-poco-classes/) 일련의 Julie Lerman 블로그 게시물입니다.
 - [작성 한 눈에 보기 HTML5/jQuery 응용 프로그램에서 계정을](https://weblogs.asp.net/dwahlin/archive/2011/08/15/building-the-account-at-a-glance-html5-jquery-application.aspx) Dan Wahlin 블로그.
 
 > [!NOTE]
-> 저장소와 단위 작업 패턴을 구현 하는 방법은 여러 가지가 있습니다. 작업 클래스의 단위 유무 저장소 클래스를 사용할 수 있습니다. 각 형식에 대 한 하나 또는 모든 엔터티 형식에 대 한 단일 저장소를 구현할 수 있습니다. 각 형식에 대해 하나를 구현 하는 경우에 별도 클래스, 제네릭 기본 클래스 및 파생된 클래스 또는 추상 기본 클래스 및 파생 된 클래스를 사용할 수 있습니다. 저장소에 비즈니스 논리를 포함 하거나 데이터 액세스 논리를 제한할 수 있습니다. 사용 하 여 데이터베이스 컨텍스트 클래스를 추상 계층을 작성할 수 있습니다 [IDbSet](https://msdn.microsoft.com/en-us/library/gg679233(v=vs.103).aspx) 대신 있습니다 인터페이스 [DbSet](https://msdn.microsoft.com/en-us/library/system.data.entity.dbset(v=vs.103).aspx) 엔터티 집합에 대 한 형식입니다. 이 자습서에서 설명 하는 추상화 계층 구현 하는 방법에는 모든 시나리오 및 환경에 대 한 권장 하지를 고려 하는 한 가지 옵션입니다.
+> 저장소와 단위 작업 패턴을 구현 하는 방법은 여러 가지가 있습니다. 작업 클래스의 단위 유무 저장소 클래스를 사용할 수 있습니다. 각 형식에 대 한 하나 또는 모든 엔터티 형식에 대 한 단일 저장소를 구현할 수 있습니다. 각 형식에 대해 하나를 구현 하는 경우에 별도 클래스, 제네릭 기본 클래스 및 파생된 클래스 또는 추상 기본 클래스 및 파생 된 클래스를 사용할 수 있습니다. 저장소에 비즈니스 논리를 포함 하거나 데이터 액세스 논리를 제한할 수 있습니다. 사용 하 여 데이터베이스 컨텍스트 클래스를 추상 계층을 작성할 수 있습니다 [IDbSet](https://msdn.microsoft.com/library/gg679233(v=vs.103).aspx) 대신 있습니다 인터페이스 [DbSet](https://msdn.microsoft.com/library/system.data.entity.dbset(v=vs.103).aspx) 엔터티 집합에 대 한 형식입니다. 이 자습서에서 설명 하는 추상화 계층 구현 하는 방법에는 모든 시나리오 및 환경에 대 한 권장 하지를 고려 하는 한 가지 옵션입니다.
 
 
 ## <a name="creating-the-student-repository-class"></a>학생 저장소 클래스 만들기
@@ -74,7 +74,7 @@ ms.lasthandoff: 11/10/2017
 
 저장소에 대 한 새 컨텍스트를 인스턴스화할 수 있지만 다음 컨트롤러 하나에 여러 저장소를 사용 하는 경우 각 결국에 별도 컨텍스트를 사용 합니다. 나중에 여러 저장소 사용의 `Course` 컨트롤러를 확인할 수 어떻게 작업 클래스의 단위 모든 저장소 동일한 컨텍스트를 사용 되도록 할 수 있습니다.
 
-저장소 구현 [IDisposable](https://msdn.microsoft.com/en-us/library/system.idisposable.aspx) 하 고 컨트롤러의 앞부분에 언급 했 고 해당 CRUD 메서드 이전에 본 것과 동일한 방식에서 데이터베이스 컨텍스트를 호출 하기에 데이터베이스 컨텍스트를 삭제 합니다.
+저장소 구현 [IDisposable](https://msdn.microsoft.com/library/system.idisposable.aspx) 하 고 컨트롤러의 앞부분에 언급 했 고 해당 CRUD 메서드 이전에 본 것과 동일한 방식에서 데이터베이스 컨텍스트를 호출 하기에 데이터베이스 컨텍스트를 삭제 합니다.
 
 ## <a name="change-the-student-controller-to-use-the-repository"></a>리포지토리를 사용 하도록 학생 컨트롤러 변경
 
@@ -245,7 +245,7 @@ CRUD 메서드 저장소 이제 컨텍스트 대신 호출 됩니다.
 
 ## <a name="summary"></a>요약
 
-저장소와 단위 작업 패턴을 구현 했습니다. 일반 저장소에서 메서드 매개 변수로 람다 식을 사용 했습니다. 함께 이러한 식을 사용 하는 방법에 대 한 자세한 내용은 `IQueryable` 개체, 참조 [IQueryable(T) 인터페이스 (System.Linq)](https://msdn.microsoft.com/en-us/library/bb351562.aspx) MSDN 라이브러리에서. 다음에서 자습서 일부를 처리 하는 방법을 알아봅니다 고급 시나리오를 사용 합니다.
+저장소와 단위 작업 패턴을 구현 했습니다. 일반 저장소에서 메서드 매개 변수로 람다 식을 사용 했습니다. 함께 이러한 식을 사용 하는 방법에 대 한 자세한 내용은 `IQueryable` 개체, 참조 [IQueryable(T) 인터페이스 (System.Linq)](https://msdn.microsoft.com/library/bb351562.aspx) MSDN 라이브러리에서. 다음에서 자습서 일부를 처리 하는 방법을 알아봅니다 고급 시나리오를 사용 합니다.
 
 다른 Entity Framework 리소스에 대 한 링크에서 확인할 수 있습니다는 [ASP.NET 데이터 액세스 콘텐츠 맵](../../../../whitepapers/aspnet-data-access-content-map.md)합니다.
 

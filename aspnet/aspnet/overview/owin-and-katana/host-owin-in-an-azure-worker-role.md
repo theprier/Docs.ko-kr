@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/host-owin-in-an-azure-worker-role
 msc.type: authoredcontent
-ms.openlocfilehash: 647514ae5a92b9d729179327fb97bd8005b0a4b2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8c0fdfdf60ff3bde34b6869adf3f8693b4d9615d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="host-owin-in-an-azure-worker-role"></a>Azure 작업자 역할에는 OWIN 호스트
 ====================
@@ -26,13 +26,13 @@ ms.lasthandoff: 11/10/2017
 > 
 > [.NET 용 웹 인터페이스를 열고](http://owin.org/) (OWIN).NET 웹 서버와 웹 응용 프로그램 간의 추상화를 정의 합니다. OWIN를 자체 IIS 외부의 사용자가 소유한 프로세스에는 웹 응용 프로그램을 호스트 하기에 이상적인는 서버에서 웹 응용 프로그램을 분리 하는 OWIN – Azure 작업자 역할 내 예를 들어 있습니다.
 > 
-> 이 자습서에서는 자체는 Microsoft Azure 작업자 역할 내에서 OWIN 응용 프로그램을 호스트 하는 방법을 설명 합니다. 작업자 역할에 대 한 자세한 참조 [Azure 실행 모델](https://azure.microsoft.com/en-us/documentation/articles/fundamentals-application-models/#CloudServices)합니다.
+> 이 자습서에서는 자체는 Microsoft Azure 작업자 역할 내에서 OWIN 응용 프로그램을 호스트 하는 방법을 설명 합니다. 작업자 역할에 대 한 자세한 참조 [Azure 실행 모델](https://azure.microsoft.com/documentation/articles/fundamentals-application-models/#CloudServices)합니다.
 > 
 > ## <a name="software-versions-used-in-the-tutorial"></a>자습서에서 사용 되는 소프트웨어 버전
 > 
 > 
 > - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
-> - [Azure SDK for.NET 2.3](https://azure.microsoft.com/en-us/downloads/)
+> - [Azure SDK for.NET 2.3](https://azure.microsoft.com/downloads/)
 > - [Microsoft.Owin.Selfhost 2.1.0](http://www.nuget.org/packages/Microsoft.Owin.SelfHost/2.1.0)
 
 
@@ -125,7 +125,7 @@ WorkerRole.cs에 대 한 전체 코드는 다음과 같습니다.
 
 ## <a name="deploy-to-azure"></a>Azure에 배포
 
-이 단계에서는 Azure 계정이 있어야 합니다. 아직 없는 하나, 몇 분에서에서 무료 평가판 계정을 만들 수 있습니다. 자세한 내용은 참조 [Microsoft Azure 무료 평가판](https://azure.microsoft.com/en-us/pricing/free-trial/?WT.mc_id=A261C142F)합니다.
+이 단계에서는 Azure 계정이 있어야 합니다. 아직 없는 하나, 몇 분에서에서 무료 평가판 계정을 만들 수 있습니다. 자세한 내용은 참조 [Microsoft Azure 무료 평가판](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A261C142F)합니다.
 
 솔루션 탐색기에서 AzureApp 프로젝트를 마우스 오른쪽 단추로 클릭 합니다. **게시**를 선택합니다.
 
@@ -139,8 +139,7 @@ Azure 계정에 로그인 하지 않은 경우 클릭 **로그인**합니다.
 
 [![](host-owin-in-an-azure-worker-role/_static/image16.png)](host-owin-in-an-azure-worker-role/_static/image15.png)
 
-클라우드 서비스에 대 한 이름을 입력 하 고 지역을 선택 합니다. 
-              **만들기**를 클릭합니다.
+클라우드 서비스에 대 한 이름을 입력 하 고 지역을 선택 합니다. **만들기**를 클릭합니다.
 
 ![](host-owin-in-an-azure-worker-role/_static/image17.png)
 
@@ -152,5 +151,5 @@ Azure 활동 로그 창에는 배포의 진행률이 표시 됩니다. 로 이�
 
 ## <a name="additional-resources"></a>추가 리소스
 
-- [프로젝트 Katana의 개요](an-overview-of-project-katana.md)
+- [프로젝트 Katana 개요](an-overview-of-project-katana.md)
 - [GitHub에서 Katana 프로젝트](https://github.com/aspnet/AspNetKatana/)

@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/more-patterns-and-guidance
 msc.type: authoredcontent
-ms.openlocfilehash: 2ac18799d214777d098cc85ec6c85fd09f84a782
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a388f2e0ca3e1f0ce24a6def2a2b91711a7bf5a7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="more-patterns-and-guidance-building-real-world-cloud-apps-with-azure"></a>더 많은 패턴 및 지침 (Azure로 응용 프로그램 빌딩 실제 클라우드)
 ====================
@@ -31,18 +31,18 @@ ms.lasthandoff: 11/10/2017
 
 - 기존 온-프레미스 응용 프로그램을 클라우드로 마이그레이션 
 
-    - [클라우드로 응용 프로그램 이동](https://msdn.microsoft.com/en-us/library/ff728592.aspx)합니다. Microsoft Patterns and Practices 여 전자책을 참고 합니다. 으로 제공 된 [하드 카피 페이퍼백](https://www.amazon.com/dp/1621140202)합니다.
+    - [클라우드로 응용 프로그램 이동](https://msdn.microsoft.com/library/ff728592.aspx)합니다. Microsoft Patterns and Practices 여 전자책을 참고 합니다. 으로 제공 된 [하드 카피 페이퍼백](https://www.amazon.com/dp/1621140202)합니다.
     - [마이그레이션 Microsoft ASP.NET 및 IIS.NET](https://go.microsoft.com/fwlink/?LinkId=400656)합니다. 사례 연구 Robert McMurray 여 합니다.
     - [네 번째 이동 &amp; Azure 웹 사이트에 시장이](http://www.jeff.wilcox.name/2013/04/4thandmayor-azure-websites/)합니다. Azure 앱 서비스의 웹 앱에 Amazon 웹 서비스에서 웹 응용 프로그램을 이동 자신의 경험 chronicling Jeff Wilcox 하 여 블로그 게시물입니다.
-    - [앱을 Azure로 전환: 변경 내용을?](https://azure.microsoft.com/en-us/documentation/videos/web-sites-internals-and-the-file-system/) 짧은 Stefan Schackow의 비디오, Azure 앱 서비스의 웹 앱에서 파일 시스템 액세스에 설명 합니다.
+    - [앱을 Azure로 전환: 변경 내용을?](https://azure.microsoft.com/documentation/videos/web-sites-internals-and-the-file-system/) 짧은 Stefan Schackow의 비디오, Azure 앱 서비스의 웹 앱에서 파일 시스템 액세스에 설명 합니다.
     - [Azure 하이브리드 클라우드](https://www.amazon.com/dp/B00EOP4UQW)합니다. 하드 카피 책 또는 Danny Garber, Jamal malik 공저 및 Adam Fazio 전자책 (영문) 합니다.
 - 클라우드 응용 프로그램에 고유한 보안, 인증 및 권한 부여 문제
 
     - [Azure 보안 지침](https://azure.microsoft.com/blog/2014/02/10/best-practices-windows-azure-websites-waws/)
-    - [Microsoft Patterns and Practices-Azure 지침](https://msdn.microsoft.com/en-us/library/dn568099.aspx)합니다. 참조 게이트 키퍼 패턴, 페더레이션 Id 패턴입니다.
+    - [Microsoft Patterns and Practices-Azure 지침](https://msdn.microsoft.com/library/dn568099.aspx)합니다. 참조 게이트 키퍼 패턴, 페더레이션 Id 패턴입니다.
     - [Azure 네트워크 보안](https://download.microsoft.com/download/4/3/9/43902EC9-410E-4875-8800-0788BE146A3D/Windows%20Azure%20Network%20Security%20Whitepaper%20-%20FINAL.docx)합니다. 백서: Ashin Palekar 합니다.
 
-추가 클라우드 컴퓨팅 패턴 및 참고 자료를 참조 하십시오 [Microsoft Patterns and Practices-Azure 지침](https://msdn.microsoft.com/en-us/library/dn568099.aspx)합니다.
+추가 클라우드 컴퓨팅 패턴 및 참고 자료를 참조 하십시오 [Microsoft Patterns and Practices-Azure 지침](https://msdn.microsoft.com/library/dn568099.aspx)합니다.
 
 <a id="resources"></a>
 ## <a name="resources"></a>리소스
@@ -51,9 +51,9 @@ ms.lasthandoff: 11/10/2017
 
 설명서
 
-- [Azure 클라우드 서비스에서 대규모 서비스를 디자인에 대 한 유용한](https://msdn.microsoft.com/en-us/library/windowsazure/jj717232.aspx)합니다. 백서: Mark Simms 및 Michael Thomassy 합니다.
-- [Failsafe: 복원 력 있는 클라우드 아키텍처에 대 한 지침](https://msdn.microsoft.com/en-us/library/windowsazure/jj853352.aspx)합니다. 백서: Marc Mercuri, Ulrich Homann 및 Andrew Townhill 합니다. FailSafe 비디오 시리즈의 웹 페이지 버전입니다.
-- [Azure 지침](https://azure.microsoft.com/en-us/develop/net/guidance/) 공식 설명서 포털 페이지와 관련 된 Azure 용 응용 프로그램을 개발 합니다.
+- [Azure 클라우드 서비스에서 대규모 서비스를 디자인에 대 한 유용한](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx)합니다. 백서: Mark Simms 및 Michael Thomassy 합니다.
+- [Failsafe: 복원 력 있는 클라우드 아키텍처에 대 한 지침](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx)합니다. 백서: Marc Mercuri, Ulrich Homann 및 Andrew Townhill 합니다. FailSafe 비디오 시리즈의 웹 페이지 버전입니다.
+- [Azure 지침](https://azure.microsoft.com/develop/net/guidance/) 공식 설명서 포털 페이지와 관련 된 Azure 용 응용 프로그램을 개발 합니다.
 
 비디오
 
@@ -75,7 +75,7 @@ ms.lasthandoff: 11/10/2017
 - [Windows Azure 업체에 대 한 프로그래밍 패턴](https://www.amazon.com/dp/1849685606)합니다. Riccardo Becker 의해서 합니다에.
 - [Microsoft Windows Azure 개발 Cookbook](https://www.amazon.com/dp/1849682224)합니다. Neil Mackenzie에서.
 
-마지막으로, 실제 응용 프로그램을 구축 하 고 Azure에서 실행을 시작 하는 경우 조만간 아마도 해야 전문가의 지원 합니다. 와 같은 커뮤니티 사이트에 질문 요청 [Azure 포럼 또는 StackOverflow](https://azure.microsoft.com/en-us/support/forums/), 하거나 Microsoft Azure 지원에 대 한 직접 문의할 수 있습니다. Microsoft는 여러 가지 수준의 Azure 기술 지원 제공: 요약과 옵션 비교에 대 한 참조 [Azure 지원](https://azure.microsoft.com/en-us/support/plans/)합니다.
+마지막으로, 실제 응용 프로그램을 구축 하 고 Azure에서 실행을 시작 하는 경우 조만간 아마도 해야 전문가의 지원 합니다. 와 같은 커뮤니티 사이트에 질문 요청 [Azure 포럼 또는 StackOverflow](https://azure.microsoft.com/support/forums/), 하거나 Microsoft Azure 지원에 대 한 직접 문의할 수 있습니다. Microsoft는 여러 가지 수준의 Azure 기술 지원 제공: 요약과 옵션 비교에 대 한 참조 [Azure 지원](https://azure.microsoft.com/support/plans/)합니다.
 
 <a id="acknowledgments"></a>
 ## <a name="acknowledgments"></a>승인

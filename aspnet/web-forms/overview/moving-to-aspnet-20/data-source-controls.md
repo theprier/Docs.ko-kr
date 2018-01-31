@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/data-source-controls
 msc.type: authoredcontent
-ms.openlocfilehash: f40189796d3e25e9c337768cf04fdbfa293cdc2f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b1ac7fb62767d61c97fe00338bc0f5087f4863b5
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="data-source-controls"></a>데이터 소스 제어
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > DataGrid 컨트롤 1.x asp.net에서 웹 응용 프로그램에서 데이터 액세스에서 크게 개선으로 표시 합니다. 그러나 되었을 수 처럼 친숙 않았습니다. 여전히 상당한 양의에서 많은 유용한 기능을 가져오기 위해 코드를 필요 합니다. 예: 1.x에서 모든 데이터 액세스 노력에서 모델입니다.
 
@@ -65,7 +65,7 @@ EnableCaching은 데이터 소스 제어를 사용 캐싱 여부를 결정 하�
 
 CacheDuration 속성 캐시 유효한 상태를 유지 하는 시간 (초)을 설정 합니다. 이 속성을 설정 **0** 캐시가 명시적으로 무효화 될 때까지 유효 합니다.
 
-## <a name="cacheexpirationpolicy-property"></a>CacheExpirationPolicy 속성
+## <a name="cacheexpirationpolicy-property"></a>CacheExpirationPolicy Property
 
 CacheExpirationPolicy 속성 중 하나로 **절대** 또는 **슬라이딩**합니다. 데이터가 캐시 되는 최대 기간 CacheDuration 속성에 지정 된 시간 (초)의 수에 절대 방법을로 설정 합니다. 슬라이딩을 설정 하 여 각 작업이 수행 될 때 만료 시간이 재설정 됩니다.
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 9e257f5061f6bdf14ad0776ff6385fb526d6dcb1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 40a53a110115e5f6342d2a97d21b64470450fd3c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="maximizing-performance-with-the-entity-framework-40-in-an-aspnet-4-web-application"></a>Entity framework 4.0 ASP.NET 4 웹 응용 프로그램에서 성능 최적화
 ====================
@@ -251,17 +251,17 @@ Visual Studio 이라고 하는 뷰를 만드는 코드 파일을 생성 *SchoolM
 
 미리 생성 된 뷰에 대 한 자세한 내용은 다음 리소스를 참조 합니다.
 
-- [방법: 미리 생성 뷰를 쿼리 성능을 향상 시킬](https://msdn.microsoft.com/en-us/library/bb896240.aspx) MSDN 웹 사이트. 사용 하는 방법에 설명 된 `EdmGen.exe` 명령줄 도구를 미리 보기를 생성 합니다.
+- [방법: 미리 생성 뷰를 쿼리 성능을 향상 시킬](https://msdn.microsoft.com/library/bb896240.aspx) MSDN 웹 사이트. 사용 하는 방법에 설명 된 `EdmGen.exe` 명령줄 도구를 미리 보기를 생성 합니다.
 - [미리 컴파일된/사전 generated 보기와 Entity Framework 4의 성능 격리](https://blogs.msdn.com/b/appfabriccat/archive/2010/08/06/isolating-performance-with-precompiled-pre-generated-views-in-the-entity-framework-4.aspx) Windows Server AppFabric 고객 자문 팀 블로그.
 
 Entity Framework를 사용 하 여 ASP.NET 웹 응용 프로그램의 성능 향상을 도입을 완료 합니다. 자세한 내용은 다음 리소스를 참조하세요.
 
-- [성능 고려 사항 (Entity Framework)](https://msdn.microsoft.com/en-us/library/cc853327.aspx) MSDN 웹 사이트입니다.
+- [성능 고려 사항 (Entity Framework)](https://msdn.microsoft.com/library/cc853327.aspx) MSDN 웹 사이트입니다.
 - [Entity Framework 팀 블로그 게시물 성능 관련](https://blogs.msdn.com/b/adonet/archive/tags/performance/)합니다.
 - [EF 병합 옵션 및 컴파일된 쿼리](https://blogs.msdn.com/b/dsimmons/archive/2010/01/12/ef-merge-options-and-compiled-queries.aspx)합니다. 컴파일된 쿼리와 병합의 예기치 않은 동작을 설명 하는 블로그 게시물와 같은 옵션 `NoTracking`합니다. 컴파일된 쿼리를 사용 하거나 응용 프로그램에서 병합 옵션 설정을 조작 하려는 경우 먼저 읽으십시오.
 - [Entity Framework 관련 데이터 및 모델링 고객 자문 팀 블로그의 게시물](https://blogs.msdn.com/b/dmcat/archive/tags/entity+framework/)합니다. 컴파일된 쿼리 및 성능 문제를 발견 하는 Visual Studio 2010 프로파일러 사용에 대 한 게시를 포함 합니다.
-- [매우 복잡 한 쿼리 성능 향상에 정보를 제공 entity Framework 포럼 스레드](https://social.msdn.microsoft.com/Forums/en-US/adodotnetentityframework/thread/ffe8b2ab-c5b5-4331-8988-33a872d0b5f6)합니다.
-- [ASP.NET 상태 관리 권장 사항](https://msdn.microsoft.com/en-us/library/z1hkazw7.aspx)합니다.
+- [매우 복잡 한 쿼리 성능 향상에 정보를 제공 entity Framework 포럼 스레드](https://social.msdn.microsoft.com/Forums/adodotnetentityframework/thread/ffe8b2ab-c5b5-4331-8988-33a872d0b5f6)합니다.
+- [ASP.NET 상태 관리 권장 사항](https://msdn.microsoft.com/library/z1hkazw7.aspx)합니다.
 - [Entity Framework와는 ObjectDataSource를 사용 하 여: 사용자 지정 페이징](http://geekswithblogs.net/Frez/articles/using-the-entity-framework-and-the-objectdatasource-custom-paging.aspx)합니다. 블로그 게시물에서 페이징을 구현 하는 방법을 설명 하기 위해이 자습서에서 만든 ContosoUniversity 응용에 작성 되는 *Departments.aspx* 페이지.
 
 다음 자습서에서 중요 한 향상 된 기능은을 Entity Framework 버전 4의에서 새로운 기능 중 일부를 검토 합니다.

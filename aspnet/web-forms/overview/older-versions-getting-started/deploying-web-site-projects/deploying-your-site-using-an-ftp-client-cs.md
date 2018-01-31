@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-an-ftp-client-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4e4af20fa1fecd1f363e979023b41203096d64ef
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3c53dcf40cde244a9df9afc27b20c9e7ef288198
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="deploying-your-site-using-an-ftp-client-c"></a>FTP 클라이언트 (C#)를 사용 하 여 사이트를 배포 합니다.
 ====================
@@ -48,7 +48,7 @@ ms.lasthandoff: 11/10/2017
 
 로 이동 하 여 BookReviewsWAP 프로젝트를 시작 합니다.는 `BookReviewsWAP` 폴더를 두 번 클릭 하 고 `BookReviewsWAP.sln` 파일입니다. 프로젝트를 배포 하기 전에 소스 코드를 변경 컴파일된 어셈블리에 포함 되어 있는지 확인 하도록 작성 해야 합니다. 프로젝트를 빌드하려면 빌드 메뉴로 이동한 BookReviewsWAP 빌드 메뉴 옵션을 선택 합니다. 단일 어셈블리에 프로젝트의 소스 코드를 컴파일하고이 `BookReviewsWAP.dll`에 추가 하는 `Bin` 폴더입니다.
 
-이제 필요한 파일을 배포할 준비가 되었습니다! FTP 클라이언트를 시작 하 고 웹 호스트 공급자에서 웹 서버에 연결 합니다. (웹 호스팅 회사에 등록 하면 FTP 서버에 연결 하는 방법 알아보려면 전자 됩니다은, 여기에 FTP 서버 뿐만 아니라 사용자 이름 및 암호에 대 한 주소)
+이제 필요한 파일을 배포할 준비가 되었습니다! FTP 클라이언트를 시작 하 고 웹 호스트 공급자에서 웹 서버에 연결 합니다. (호스팅 업체는 웹 등록은 전자 메일로 전송 됩니다 하면 FTP 서버에 연결 하는 방법에 대 한 정보, 여기에 FTP 서버 뿐만 아니라 사용자 이름 및 암호에 대 한 주소)
 
 바탕 화면에서 다음 파일을 웹 호스트 공급자에서 루트 웹 사이트 폴더에 복사 합니다. 웹 서버에 FTP는 웹에서 호스팅할 때 공급자 웹 사이트 루트 디렉터리에 가능성이 높습니다. 그러나 일부 웹 호스트 공급자는 라는 하위 폴더 `www` 또는 `wwwroot` 역할을 웹 사이트 파일에 대 한 루트 폴더입니다. 마지막으로, 파일 FTPing 때 해야 할 수 있습니다-프로덕션 환경에 해당 폴더 구조를 만드는 `Bin` 폴더는 `Fiction` 폴더는 `Images` 폴더 및 기타 등등.
 
@@ -144,7 +144,7 @@ ms.lasthandoff: 11/10/2017
 > 프로젝트에 새 ASP.NET 페이지를 추가 또는 관련 된 코드를 변경할 때마다 할 경우에 어셈블리를 업데이트 하는 프로젝트를 다시 작성은 명시적 컴파일을 사용 하 여 때 염두에 한 가지는 `Bin` 폴더입니다. 따라서 다른 새로운 기능과 업데이트 된 콘텐츠) (함께 프로덕션에 있는 웹 응용 프로그램을 업데이트할 때 프로덕션 환경에이 업데이트 된 어셈블리를 복사 해야 합니다.
 
 
-또한 이해 하 고를 변경 하는 `Web.config` 또는 파일에는 `Bin` 디렉터리 중지 하 고 웹 사이트의 응용 프로그램 풀을 다시 시작 합니다. 사용 하 여 세션 상태가 저장 되는 경우는 `InProc` 모드 (기본값) 다음 사이트의 방문자 이러한 키 파일은 수정 될 때마다 자신의 세션 상태를 잃게 됩니다. 이 문제를 방지 하려면 사용 하 여 세션을 저장할 것 고려해 보십시오.는 `StateServer` 또는 `SQLServer` 모드입니다. 에 대 한 자세한 내용은이 항목 [세션 상태 모드](https://msdn.microsoft.com/en-us/library/ms178586.aspx)합니다.
+또한 이해 하 고를 변경 하는 `Web.config` 또는 파일에는 `Bin` 디렉터리 중지 하 고 웹 사이트의 응용 프로그램 풀을 다시 시작 합니다. 사용 하 여 세션 상태가 저장 되는 경우는 `InProc` 모드 (기본값) 다음 사이트의 방문자 이러한 키 파일은 수정 될 때마다 자신의 세션 상태를 잃게 됩니다. 이 문제를 방지 하려면 사용 하 여 세션을 저장할 것 고려해 보십시오.는 `StateServer` 또는 `SQLServer` 모드입니다. 에 대 한 자세한 내용은이 항목 [세션 상태 모드](https://msdn.microsoft.com/library/ms178586.aspx)합니다.
 
 마지막으로, 응용 프로그램을 다시 배포할 수를 사용 하는 아무 곳 이나 몇 초에서 프로덕션 환경에 복사 해야 하는 파일의 크기와 수에 따라 몇 분 정도 염두에 둬야 합니다. 이 시간 동안 오류 또는 부적절 한 동작 해당 사이트를 방문 하는 사용자가 발생할 수 있습니다. "기능을 해제" 전체 응용 프로그램 페이지를 추가 하 여 `App_Offline.htm` 사용자에 게 설명 하는 응용 프로그램의 루트 디렉터리를 사이트 유지 관리 키나 다운 되 고 됩니다 백업 곧 수 있습니다. 경우는 `App_Offline.htm` 파일이 있는지, ASP.NET 런타임이 해당 페이지에 들어오는 모든 요청을 리디렉션합니다.
 
@@ -159,7 +159,7 @@ ms.lasthandoff: 11/10/2017
 이 자습서에 설명 된 항목에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
 - [응용 프로그램\_Offline.htm 및 해결 "IE 친숙 한" 오류"기능](https://weblogs.asp.net/scottgu/App_5F00_Offline.htm-and-working-around-the-_2200_IE-Friendly-Errors_2200_-feature)
-- [세션 상태 모드](https://msdn.microsoft.com/en-us/library/ms178586.aspx)
+- [세션 상태 모드](https://msdn.microsoft.com/library/ms178586.aspx)
 
 >[!div class="step-by-step"]
 [이전](determining-what-files-need-to-be-deployed-cs.md)

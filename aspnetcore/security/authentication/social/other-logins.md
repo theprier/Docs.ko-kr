@@ -1,18 +1,17 @@
 ---
 title: "다른 인증 공급자의 설문 조사 합니다."
 author: rick-anderson
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 11/03/2016
-ms.topic: article
-ms.assetid: BC36CA84-3DE8-496E-9AA2-2F1B74AE8309
 ms.prod: asp.net-core
+ms.topic: article
 uid: security/authentication/otherlogins
-ms.openlocfilehash: bbc069e974fd826e6e9fb29429a0875f02c01fd3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 74d550115d0d58374494fc34a348d01abed9c664
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="short-survey-of-other-authentication-providers"></a>다른 인증 공급자의 설문 조사
 

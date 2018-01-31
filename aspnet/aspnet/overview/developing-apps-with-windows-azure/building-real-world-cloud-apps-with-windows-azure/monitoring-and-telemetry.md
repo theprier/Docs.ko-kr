@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry
 msc.type: authoredcontent
-ms.openlocfilehash: dfb0158ec05c890ecf80571d95b22d8c791ba7fc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9baddd1836323385239206a3cf49e5938bbaff58
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="monitoring-and-telemetry-building-real-world-cloud-apps-with-azure"></a>모니터링 및 원격 분석 (Azure로 응용 프로그램 빌딩 실제 클라우드)
 ====================
@@ -41,7 +41,7 @@ ms.lasthandoff: 11/10/2017
 - [AppDynamics](http://www.appdynamics.com/)
 - [Dynatrace](https://datamarket.azure.com/application/b4011de2-1212-4375-9211-e882766121ff)
 
-2015 년 3 월을 기준으로 [Visual Studio Online 용 Application Insights Microsoft](https://azure.microsoft.com/en-us/documentation/articles/app-insights-get-started/) 아직 해제 되지 않습니다 되지만를 사용해 미리 보기에서 사용할 수 있습니다. [Microsoft System Center](http://www.petri.co.il/microsoft-system-center-introduction.htm#) 도 모니터링 기능을 포함 합니다.
+2015 년 3 월을 기준으로 [Visual Studio Online 용 Application Insights Microsoft](https://azure.microsoft.com/documentation/articles/app-insights-get-started/) 아직 해제 되지 않습니다 되지만를 사용해 미리 보기에서 사용할 수 있습니다. [Microsoft System Center](http://www.petri.co.il/microsoft-system-center-introduction.htm#) 도 모니터링 기능을 포함 합니다.
 
 New Relic을 얼마나 쉬운지는 것이 원격 분석 시스템을 사용 하도록 표시 하도록 설정 하 여 신속 하 게 살펴보겠습니다.
 
@@ -156,13 +156,13 @@ Azure 앱 서비스의 웹 앱은 쓰기에 대 한 기본 제공 지원 `System
 
 권장 되는 방식이 프로덕션 응용 프로그램을 만들 때 수행 하는 간단한을 만드는 것입니다 *ILogger* 인터페이스와 몇 가지 방법을에 집중 합니다. 이렇게 하면 쉽게 로깅 구현을 나중에 변경 하 여 모든 코드를 진행할 필요가 없습니다. 사용할 수 있습니다는 `System.Diagnostics.Trace` 수정 응용 프로그램 전체에서 클래스 하지만 대신 사용 구현 하는 로깅 클래스에서 내부적 *ILogger*, 하도록 및 *ILogger* 전체에서 메서드 호출 응용 프로그램입니다.
 
-이런 방식으로 로깅을 보다 다양 하 고 확인 하려는 경우 바꾸면 [ `System.Diagnostics.Trace` ](https://docs.microsoft.com/azure/app-service-web/web-sites-dotnet-troubleshoot-visual-studio#apptracelogs) 원하는 로깅 메커니즘을 사용 합니다. 예를 들어 앱이 늘어남에 수도 있습니다와 같은 보다 포괄적인 로깅 패키지를 사용 하려면 [NLog](http://nlog-project.org/) 또는 [Enterprise Library 로깅 응용 프로그램 블록](https://msdn.microsoft.com/en-us/library/dn440731(v=pandp.60).aspx)합니다. ([Log4Net](http://logging.apache.org/log4net/) 다른 인기 있는 로깅 프레임 워크 이지만 비동기 로깅을 수행 하지 않습니다.)
+이런 방식으로 로깅을 보다 다양 하 고 확인 하려는 경우 바꾸면 [ `System.Diagnostics.Trace` ](https://docs.microsoft.com/azure/app-service-web/web-sites-dotnet-troubleshoot-visual-studio#apptracelogs) 원하는 로깅 메커니즘을 사용 합니다. 예를 들어 앱이 늘어남에 수도 있습니다와 같은 보다 포괄적인 로깅 패키지를 사용 하려면 [NLog](http://nlog-project.org/) 또는 [Enterprise Library 로깅 응용 프로그램 블록](https://msdn.microsoft.com/library/dn440731(v=pandp.60).aspx)합니다. ([Log4Net](http://logging.apache.org/log4net/) 다른 인기 있는 로깅 프레임 워크 이지만 비동기 로깅을 수행 하지 않습니다.)
 
 NLog 등의 프레임 워크를 사용 하기 위한 한 가지 가능한 이유는 별도 대용량 및 우선 순위가 높은 데이터 저장소에 로그 출력을 나누는 용이 것입니다. 효율적으로 많은 양의 ACT 데이터에 대 한 빠른 액세스를 유지 하면서,에 대 한 빠른 쿼리를 실행할 필요가 없는 INFORM 데이터를 저장할 수 있습니다.
 
 ### <a name="semantic-logging"></a>의미 체계 로깅
 
-보다 유용한 진단 정보를 생성할 수 있는 로깅 작업을 수행 하는 비교적 새로운 방법을 참조 하세요. [엔터프라이즈 라이브러리 의미 체계 로깅 응용 프로그램 블록 (조각)](http://convective.wordpress.com/2013/08/12/semantic-logging-application-block-slab/)합니다. 조각에 사용 하 여 [Windows 용 이벤트 추적](https://msdn.microsoft.com/en-us/library/windows/desktop/bb968803.aspx) (ETW) 및 [EventSource](https://msdn.microsoft.com/en-us/library/system.diagnostics.tracing.eventsource.aspx) 구조화 되 고 쿼리할 수에 대 한 더 많은 로그를 만들 수 있도록.NET 4.5를 지원 합니다. 각 유형의 작성 정보를 사용자 지정할 수 있는 로그, 이벤트에 대 한 다른 메서드를 정의 합니다. 예를 들어, 호출할 수 있는 SQL 데이터베이스 오류를 기록 하는 `LogSQLDatabaseError` 메서드. 해당 유형의 예외에 대 한 주요 정보는 오류 번호 메서드 시그니처의 오류 번호 매개 변수를 포함 하 고 작성 하는 로그 레코드의 필드로 별도 오류 번호를 기록 수 있도록 하는 것이 알아보았습니다. 별도의 필드 번호는 하므로 보다는 메시지 문자열에 오류 번호를 방금 연결 된 경우에 SQL 오류 번호를 기반으로 보고서 보다 쉽고 안정적으로 얻을 수 있습니다.
+보다 유용한 진단 정보를 생성할 수 있는 로깅 작업을 수행 하는 비교적 새로운 방법을 참조 하세요. [엔터프라이즈 라이브러리 의미 체계 로깅 응용 프로그램 블록 (조각)](http://convective.wordpress.com/2013/08/12/semantic-logging-application-block-slab/)합니다. 조각에 사용 하 여 [Windows 용 이벤트 추적](https://msdn.microsoft.com/library/windows/desktop/bb968803.aspx) (ETW) 및 [EventSource](https://msdn.microsoft.com/library/system.diagnostics.tracing.eventsource.aspx) 구조화 되 고 쿼리할 수에 대 한 더 많은 로그를 만들 수 있도록.NET 4.5를 지원 합니다. 각 유형의 작성 정보를 사용자 지정할 수 있는 로그, 이벤트에 대 한 다른 메서드를 정의 합니다. 예를 들어, 호출할 수 있는 SQL 데이터베이스 오류를 기록 하는 `LogSQLDatabaseError` 메서드. 해당 유형의 예외에 대 한 주요 정보는 오류 번호 메서드 시그니처의 오류 번호 매개 변수를 포함 하 고 작성 하는 로그 레코드의 필드로 별도 오류 번호를 기록 수 있도록 하는 것이 알아보았습니다. 별도의 필드 번호는 하므로 보다는 메시지 문자열에 오류 번호를 방금 연결 된 경우에 SQL 오류 번호를 기반으로 보고서 보다 쉽고 안정적으로 얻을 수 있습니다.
 
 ## <a name="logging-in-the-fix-it-app"></a>수정 프로그램에 로깅 응용 프로그램
 
@@ -244,13 +244,13 @@ Azure 지원 다음과 같은 종류의 [클라우드 서비스에서 로깅](ht
 
 Azure에 로그인을 활성화 한 후에 만들어지는 경우 Visual Studio 출력 창에서 로그를 볼 수 있습니다.
 
-![스트리밍 로그 메뉴](http://wacomdpsstorage.blob.core.windows.net/articlesmedia/content-ppe.windowsazure.com/en-us/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/20140115062810/tws-viewlogsmenu.png)
+![스트리밍 로그 메뉴](http://wacomdpsstorage.blob.core.windows.net/articlesmedia/content-ppe.windowsazure.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/20140115062810/tws-viewlogsmenu.png)
 
-![스트리밍 로그 메뉴](http://wacomdpsstorage.blob.core.windows.net/articlesmedia/content-ppe.windowsazure.com/en-us/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/20140115062810/tws-nologsyet.png)
+![스트리밍 로그 메뉴](http://wacomdpsstorage.blob.core.windows.net/articlesmedia/content-ppe.windowsazure.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/20140115062810/tws-nologsyet.png)
 
 수 또한 로그를 저장소 계정에 기록 하 고 보기 있는 도구 하나를 사용 하 여 Azure 저장소 테이블 서비스에 같은 액세스할 수 **서버 탐색기** Visual Studio에서 또는 [Azure 저장소 탐색기](https://azure.microsoft.com/features/storage-explorer/)합니다.
 
-![서버 탐색기에서 로그](http://wacomdpsstorage.blob.core.windows.net/articlesmedia/content-ppe.windowsazure.com/en-us/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/20140115062810/tws-storagelogs.png)
+![서버 탐색기에서 로그](http://wacomdpsstorage.blob.core.windows.net/articlesmedia/content-ppe.windowsazure.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/20140115062810/tws-storagelogs.png)
 
 ## <a name="summary"></a>요약
 
@@ -264,10 +264,10 @@ Azure에 로그인을 활성화 한 후에 만들어지는 경우 Visual Studio 
 
 원격 분석에 대 한 주로 설명서:
 
-- [Microsoft Patterns and Practices-Azure 지침](https://msdn.microsoft.com/en-us/library/dn568099.aspx)합니다. 계측 및 원격 분석 지침, 지침 서비스 계량, 상태 끝점 모니터링 패턴 및 런타임 재구성 패턴을 참조 하십시오.
+- [Microsoft Patterns and Practices-Azure 지침](https://msdn.microsoft.com/library/dn568099.aspx)합니다. 계측 및 원격 분석 지침, 지침 서비스 계량, 상태 끝점 모니터링 패턴 및 런타임 재구성 패턴을 참조 하십시오.
 - [클라우드에서 모으는 금액: New Relic 성능 Azure 웹 사이트에 대 한 모니터링을 사용 하도록 설정](http://www.hanselman.com/blog/PennyPinchingInTheCloudEnablingNewRelicPerformanceMonitoringOnWindowsAzureWebsites.aspx)합니다.
-- [Azure 클라우드 서비스에서 대규모 서비스를 디자인에 대 한 유용한](https://msdn.microsoft.com/en-us/library/windowsazure/jj717232.aspx)합니다. 백서: Mark Simms 및 Michael Thomassy 합니다. 원격 분석 및 진단 섹션을 참조 하십시오.
-- [Application Insights 사용한 개발 Next-generation](https://msdn.microsoft.com/en-us/magazine/dn683794.aspx)합니다. MSDN Magazine 문서입니다.
+- [Azure 클라우드 서비스에서 대규모 서비스를 디자인에 대 한 유용한](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx)합니다. 백서: Mark Simms 및 Michael Thomassy 합니다. 원격 분석 및 진단 섹션을 참조 하십시오.
+- [Application Insights 사용한 개발 Next-generation](https://msdn.microsoft.com/magazine/dn683794.aspx)합니다. MSDN Magazine 문서입니다.
 
 로깅에 대 한 주로 설명서:
 

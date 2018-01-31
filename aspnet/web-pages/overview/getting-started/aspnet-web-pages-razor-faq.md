@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/aspnet-web-pages-razor-faq
 msc.type: authoredcontent
-ms.openlocfilehash: 7f6dc3b56a33bcbe3e1e4086681ca1ba76d7d153
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 60cc4ca364923cb131d5e91cd7b6307b1e68644b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-pages-razor-faq"></a>ASP.NET 웹 페이지 (Razor) FAQ
 ====================
@@ -99,7 +99,7 @@ IIS Express 페이지를 사용 하도록 설정 하려면이 명령을 실행 �
 <a id="Can_I_use_ASP.NET_Web_Forms_controls_on_a_Web_Pages_page"></a>
 ## <a name="can-i-use-aspnet-web-forms-controls-on-a-web-pages-page"></a>웹 페이지의 페이지에서 ASP.NET Web Forms 컨트롤을 사용할 수 있습니까?
 
-아니요. Web Forms 컨트롤 같은 [확인란](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.checkbox) 컨트롤의 [유효성 검사 컨트롤](https://msdn.microsoft.com/en-us/library/bwd43d0x), 및 [GridView](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview) 만 작동 하 여 Web Forms 페이지에서 (*.aspx* 파일). 이러한 컨트롤에는 Web Forms 페이지 프레임 워크가 필요합니다.
+아니요. Web Forms 컨트롤 같은 [확인란](https://msdn.microsoft.com/library/system.web.ui.webcontrols.checkbox) 컨트롤의 [유효성 검사 컨트롤](https://msdn.microsoft.com/library/bwd43d0x), 및 [GridView](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview) 만 작동 하 여 Web Forms 페이지에서 (*.aspx* 파일). 이러한 컨트롤에는 Web Forms 페이지 프레임 워크가 필요합니다.
 
 <a id="Can_I_deploy_an_ASP.NET_Web_Pages_site_without_using_WebMatrix"></a>
 ## <a name="can-i-deploy-an-aspnet-web-pages-site-without-using-webmatrix"></a>WebMatrix를 사용 하지 않고 ASP.NET 웹 페이지 사이트를 배포할 수 있습니까?
@@ -135,6 +135,6 @@ Windows 인증을 사용 하는 방법에 대 한 내용은 블로그 게시물�
 ## <a name="additional-resources"></a>추가 리소스
 
 
-[ASP.NET 웹 페이지 (Razor) 문제 해결 가이드](https://go.microsoft.com/fwlink/?LinkId=253001)
+[ASP.NET 웹 페이지(Razor) 문제 해결 가이드](https://go.microsoft.com/fwlink/?LinkId=253001)
 
 [WebMatrix 및 ASP.NET 웹 페이지 포럼](https://forums.asp.net/1224.aspx/1?WebMatrix) ASP.NET 웹 사이트에서

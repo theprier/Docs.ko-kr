@@ -2,20 +2,18 @@
 title: "ASP.NET Web API에서 마이그레이션"
 author: ardalis
 description: 
-keywords: ASP.NET Core,
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.assetid: 4f0564b4-ed4e-4e1e-9755-c1144d21a0ef
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: migration/webapi
-ms.openlocfilehash: 4acb7ccf7f944df5d08ac7faa342f0c72cf9d1a7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6325bdf602485b42d8193a05ede00ae275bf0a90
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="migrating-from-aspnet-web-api"></a>ASP.NET Web API에서 마이그레이션
 

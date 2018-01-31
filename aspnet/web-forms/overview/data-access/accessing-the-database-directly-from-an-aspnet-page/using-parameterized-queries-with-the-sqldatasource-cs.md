@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/using-parameterized-queries-with-the-sqldatasource-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7b32a664975254dcc1d015f2400df30d05346948
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b66c68b8306b905a800465ab0ed720ae6f9d16b9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-parameterized-queries-with-the-sqldatasource-c"></a>SqlDataSource (C#)와 매개 변수가 있는 쿼리를 사용 하 여
 ====================
@@ -209,7 +209,7 @@ Let s 라는 Northwind 데이터베이스의 새 저장된 프로시저 만들�
 **그림 11**: Hard-Coded 값 1 사용 하 여 음료 범주에는 제품을 반환할 ([전체 크기 이미지를 보려면 클릭](using-parameterized-queries-with-the-sqldatasource-cs/_static/image22.png))
 
 
-SqlDataSource s 저장된 프로시저를 사용 하는 경우 다음 선언 태그와 같이 `SelectCommand` 저장된 프로시저의 이름 속성 및 [ `SelectCommandType` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sqldatasource.selectcommandtype.aspx) 로 설정 된 `StoredProcedure`한다는 표시 이므로 하 여 `SelectCommand` 임시 SQL 문이 아닌 저장된 프로시저의 이름입니다.
+SqlDataSource s 저장된 프로시저를 사용 하는 경우 다음 선언 태그와 같이 `SelectCommand` 저장된 프로시저의 이름 속성 및 [ `SelectCommandType` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.selectcommandtype.aspx) 로 설정 된 `StoredProcedure`한다는 표시 이므로 하 여 `SelectCommand` 임시 SQL 문이 아닌 저장된 프로시저의 이름입니다.
 
 
 [!code-aspx[Main](using-parameterized-queries-with-the-sqldatasource-cs/samples/sample9.aspx)]
@@ -237,9 +237,9 @@ SqlDataSource를 추가 하 여 시작 `ParameterizedQueries.aspx` 설정 하 �
 
 `ORDER BY NEWID()`임의의 순서로 정렬 된 레코드를 반환 합니다 (참조 [Using `NEWID()` 임의로 정렬 레코드를](http://www.sqlteam.com/item.asp?ItemID=8747)). `SELECT TOP 1`결과 집합에서 첫 번째 레코드를 반환합니다. 이 쿼리는 반환 종합적으로 `CategoryID` 및 `CategoryName` 단일, 임의로 선택 된 범주에서 열 값입니다.
 
-S 범주 표시 하려면 `CategoryName` 값, 페이지로 Label 웹 컨트롤을 추가 하 고, 설정 해당 `ID` 속성을 `CategoryNameLabel`를 제거 하 고 해당 `Text` 속성입니다. 호출 하도록 설정 해야 SqlDataSource 컨트롤에서 데이터를 프로그래밍 방식으로 검색, 해당 `Select()` 메서드. [ `Select()` 메서드](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sqldatasource.select.aspx) 형식의 단일 입력 매개 변수 [ `DataSourceSelectArguments` ](https://msdn.microsoft.com/en-us/library/system.web.ui.datasourceselectarguments.aspx)를 반환 하기 전에 데이터를 이와 하는 방법을 지정 합니다. 이 데이터를 정렬 및 필터링에 대 한 지침을 포함할 수 있습니다 및 웹 컨트롤을 정렬 하거나 SqlDataSource 컨트롤에서 데이터를 통한 페이징을 할 데이터에 사용 합니다. 이 예에서는 그러나 우리 않는 t 필요가 데이터를 반환 하기 전에 수정할 수 및에서 통과 합니다는 `DataSourceSelectArguments.Empty` 개체입니다.
+S 범주 표시 하려면 `CategoryName` 값, 페이지로 Label 웹 컨트롤을 추가 하 고, 설정 해당 `ID` 속성을 `CategoryNameLabel`를 제거 하 고 해당 `Text` 속성입니다. 호출 하도록 설정 해야 SqlDataSource 컨트롤에서 데이터를 프로그래밍 방식으로 검색, 해당 `Select()` 메서드. [ `Select()` 메서드](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.select.aspx) 형식의 단일 입력 매개 변수 [ `DataSourceSelectArguments` ](https://msdn.microsoft.com/library/system.web.ui.datasourceselectarguments.aspx)를 반환 하기 전에 데이터를 이와 하는 방법을 지정 합니다. 이 데이터를 정렬 및 필터링에 대 한 지침을 포함할 수 있습니다 및 웹 컨트롤을 정렬 하거나 SqlDataSource 컨트롤에서 데이터를 통한 페이징을 할 데이터에 사용 합니다. 이 예에서는 그러나 우리 않는 t 필요가 데이터를 반환 하기 전에 수정할 수 및에서 통과 합니다는 `DataSourceSelectArguments.Empty` 개체입니다.
 
-`Select()` 메서드를 구현 하는 개체를 반환 `IEnumerable`합니다. 정확한 형식의 SqlDataSource 컨트롤 값에 따라 반환 [ `DataSourceMode` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sqldatasource.datasourcemode.aspx)합니다. 이 속성의 값으로 설정할 수 있습니다 이전 자습서에서 설명 했 듯이 `DataSet` 또는 `DataReader`합니다. 경우로 설정 `DataSet`, `Select()` 메서드가 반환 되는 [DataView](https://msdn.microsoft.com/en-us/library/01s96x0z.aspx) 개체;로 설정 하는 경우 `DataReader`를 구현 하는 개체를 반환 [ `IDataReader` ](https://msdn.microsoft.com/en-us/library/system.data.idatareader.aspx)합니다. 이후는 `RandomCategoryDataSource` SqlDataSource가 해당 `DataSourceMode` 속성이로 설정 `DataSet` (기본값) 사용할 DataView 개체를 사용 합니다.
+`Select()` 메서드를 구현 하는 개체를 반환 `IEnumerable`합니다. 정확한 형식의 SqlDataSource 컨트롤 값에 따라 반환 [ `DataSourceMode` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.datasourcemode.aspx)합니다. 이 속성의 값으로 설정할 수 있습니다 이전 자습서에서 설명 했 듯이 `DataSet` 또는 `DataReader`합니다. 경우로 설정 `DataSet`, `Select()` 메서드가 반환 되는 [DataView](https://msdn.microsoft.com/library/01s96x0z.aspx) 개체;로 설정 하는 경우 `DataReader`를 구현 하는 개체를 반환 [ `IDataReader` ](https://msdn.microsoft.com/library/system.data.idatareader.aspx)합니다. 이후는 `RandomCategoryDataSource` SqlDataSource가 해당 `DataSourceMode` 속성이로 설정 `DataSet` (기본값) 사용할 DataView 개체를 사용 합니다.
 
 다음 코드에는 레코드를 검색 하는 방법을 보여 줍니다.는 `RandomCategoryDataSource` DataView로 SqlDataSource를 읽는 방법을 뿐만 아니라는 `CategoryName` 첫 번째 DataView 행의 열 값:
 

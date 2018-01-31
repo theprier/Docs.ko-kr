@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 8f68a85e44389ed17576436a9210c0ca3f414403
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ed78b55d2b0315cf428f137c56ad85b29a95e1c5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-webconfig-file-transformations---3-of-12"></a>SQL Server Compact Visual Studio 또는 Visual Web Developer를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: 3 / 12-Web.Config 파일 변환
 ====================
@@ -37,7 +37,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="webconfig-transformations-versus-web-deploy-parameters"></a>Web.config 변환 또는 웹 배포 매개 변수
 
-변경 프로세스를 자동화 하는 방법은 두 가지가 *Web.config* 파일 설정: [Web.config 변환](https://msdn.microsoft.com/en-us/library/dd465326.aspx) 및 [웹 배포 매개 변수](https://msdn.microsoft.com/en-us/library/ff398068.aspx)합니다. A *Web.config* 변경 하는 방법을 지정 하는 XML 태그를 포함 하는 변환 파일은 *Web.config* 배포 될 때 파일입니다. 다른 특정 빌드 구성 변경과 관련에 대 한 게시 프로필을 지정할 수 있습니다. 기본 빌드 구성이 디버그 및 릴리스, 되며 사용자 지정 빌드 구성을 만들 수 있습니다. 게시 프로필은 일반적으로 대상 환경에 해당합니다. (의 프로필 게시에 대해 자세히 알아봅니다는 [iis 테스트 환경으로 배포](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12.md) 자습서입니다.)
+변경 프로세스를 자동화 하는 방법은 두 가지가 *Web.config* 파일 설정: [Web.config 변환](https://msdn.microsoft.com/library/dd465326.aspx) 및 [웹 배포 매개 변수](https://msdn.microsoft.com/library/ff398068.aspx)합니다. A *Web.config* 변경 하는 방법을 지정 하는 XML 태그를 포함 하는 변환 파일은 *Web.config* 배포 될 때 파일입니다. 다른 특정 빌드 구성 변경과 관련에 대 한 게시 프로필을 지정할 수 있습니다. 기본 빌드 구성이 디버그 및 릴리스, 되며 사용자 지정 빌드 구성을 만들 수 있습니다. 게시 프로필은 일반적으로 대상 환경에 해당합니다. (의 프로필 게시에 대해 자세히 알아봅니다는 [iis 테스트 환경으로 배포](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12.md) 자습서입니다.)
 
 웹 배포 매개 변수를 사용 하 여에서 발견 되는 설정을 포함 하 여 배포 하는 동안 구성 해야 하는 설정의 다양 한 종류를 지정할 수 있습니다 *Web.config* 파일입니다. 지정 하는 데 사용 하는 경우 *Web.config* 파일 변경, 웹 배포 매개 변수는 설정 하기가 더 복잡 하지만 값을 배포할 때까지 설정할 수 있는 알지 못할 경우에 유용 합니다. 예를 들어, 엔터프라이즈 환경에서 만들 수 있습니다는 *배포 패키지* 및 프로덕션 환경에서 설치 하려면 IT 부서에서 사용자에 게 지정 하 고 그 사람이 연결 문자열 또는 하지 않도록 암호를 입력할 수 알고 있습니다.
 
@@ -146,7 +146,7 @@ Contoso 대학 웹 페이지에서 설정 된 값을 읽기 `appSettings` 에 *W
 
 ## <a name="more-information"></a>추가 정보
 
-이 자습서에서 다루는 항목에 대 한 자세한 내용은 Web.config 변환 시나리오를을 참조 하십시오. [ASP.NET 배포 콘텐츠 맵](https://msdn.microsoft.com/en-us/library/bb386521.aspx)합니다.
+이 자습서에서 다루는 항목에 대 한 자세한 내용은 Web.config 변환 시나리오를을 참조 하십시오. [ASP.NET 배포 콘텐츠 맵](https://msdn.microsoft.com/library/bb386521.aspx)합니다.
 
 >[!div class="step-by-step"]
 [이전](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md)

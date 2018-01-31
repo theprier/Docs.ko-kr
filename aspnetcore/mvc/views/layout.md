@@ -2,20 +2,18 @@
 title: "레이아웃"
 author: ardalis
 description: 
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: 29f12d1f-9734-48bd-bf1a-cee53a8ab700
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/layout
-ms.openlocfilehash: 064621d8756b007c5b8859111bf3a03a0d7dda81
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e268f045e39188e9cc1e759ff7e6c553662dd669
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="layout"></a>레이아웃
 
@@ -35,7 +33,7 @@ ASP.NET 응용 프로그램에 대 한 기본 레이아웃 규칙에 따라 라�
 
 ![솔루션 탐색기에서 views 폴더](layout/_static/web-project-views.png)
 
-이 레이아웃 앱의 뷰에 대 한 최상위 수준 템플릿을 정의합니다. 앱에는 레이아웃 필요 하지 않습니다 하 고 앱 다양 한 레이아웃을 지정 하는 다른 뷰를 둘 이상의 레이아웃을 정의할 수 있습니다.
+이 레이아웃 앱의 뷰에 대 한 최상위 수준 템플릿을 정의합니다. 앱 레이아웃을 필요가 없는 경우 그리고 앱 다양 한 레이아웃을 지정 하는 다른 뷰를 둘 이상의 레이아웃을 정의할 수 있습니다.
 
 예로 `_Layout.cshtml`:
 
@@ -55,7 +53,7 @@ Razor 보기에 `Layout` 속성입니다. 이 속성을 설정 하 여 레이아
 
 ### <a name="sections"></a>섹션
 
-하나 이상의 레이아웃을 참조할 필요에 따라 수 *섹션*를 호출 하 여 `RenderSection`합니다. 섹션에서는 특정 페이지 요소를 배치할 위치를 구성 하는 방법을 제공 합니다. 호출할 때마다 `RenderSection` 않은 필수 또는 선택 여부를 지정할 수 있습니다. 필수 세션 발견 되지 않으면 예외가 throw 됩니다. 사용 하 여 섹션 내에서 렌더링할 콘텐츠를 지정 하는 개별 뷰에 `@section` Razor 구문입니다. 뷰 섹션을 정의 하는 경우 렌더링 해야 하거나 오류가 발생 합니다.
+하나 이상의 레이아웃을 참조할 필요에 따라 수 *섹션*를 호출 하 여 `RenderSection`합니다. 섹션에서는 특정 페이지 요소를 배치할 위치를 구성 하는 방법을 제공 합니다. 호출할 때마다 `RenderSection` 않은 필수 또는 선택 여부를 지정할 수 있습니다. 필수 세션을 찾을 수 없으면 예외가 throw 됩니다. 사용 하 여 섹션 내에서 렌더링할 콘텐츠를 지정 하는 개별 뷰에 `@section` Razor 구문입니다. 뷰 섹션을 정의 하는 경우 렌더링 해야 하거나 오류가 발생 합니다.
 
 예 `@section` 뷰의 정의:
 

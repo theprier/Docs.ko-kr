@@ -2,20 +2,18 @@
 title: "HTTP 처리기 및 ASP.NET Core 미들웨어 모듈을 마이그레이션하는 방법"
 author: rick-anderson
 description: 
-keywords: ASP.NET Core,
-ms.author: tdykstra
 manager: wpickett
+ms.author: tdykstra
 ms.date: 12/07/2016
-ms.topic: article
-ms.assetid: 9c826a76-fbd2-46b5-978d-6ca6df53531a
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: migration/http-modules
-ms.openlocfilehash: f217e5264742826f285444dcbaea4b28b97c4d7e
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: f104c9116cfaa4a82ac88e4a83b4b6f172eb2aa1
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="migrating-http-handlers-and-modules-to-aspnet-core-middleware"></a>HTTP 처리기 및 ASP.NET Core 미들웨어 모듈을 마이그레이션하는 방법 
 
@@ -53,7 +51,7 @@ ASP.NET Core 미들웨어를 계속 하기 전에 먼저 요약해 보면 HTTP �
 
    1. [응용 프로그램 수명 주기](https://msdn.microsoft.com/library/ms227673.aspx), ASP.NET에서 발생 하는 계열 이벤트 변수인: [BeginRequest](https://docs.microsoft.com/dotnet/api/system.web.httpapplication.beginrequest), [AuthenticateRequest](https://docs.microsoft.com/dotnet/api/system.web.httpapplication.authenticaterequest)등입니다. 각 모듈 하나 이상의 이벤트에 대 한 처리기를 만들 수 있습니다.
 
-   2. 같은 이벤트에 구성 된 순서에 대 한 *Web.config*합니다.
+   2. 동일한 이벤트에서 구성 하는 순서에 대 한 *Web.config*합니다.
 
 모듈을 외에도 수명 주기 이벤트에 대 한 처리기를 추가할 수 있습니다 프로그램 *Global.asax.cs* 파일입니다. 이러한 처리기는 구성 된 모듈의 처리기 후 실행합니다.
 
@@ -79,7 +77,7 @@ ASP.NET Core 미들웨어를 계속 하기 전에 먼저 요약해 보면 HTTP �
 
 **미들웨어와 모듈은 다른 순서로 처리 됩니다.**
 
-   * 미들웨어의 순서는는 삽입할 요청 파이프라인, 모듈의 순서는 주로 기반으로 하는 동안 순서에 따라 [응용 프로그램 수명 주기](https://msdn.microsoft.com/library/ms227673.aspx) 이벤트
+   * 미들웨어의 순서는 있는 삽입할 요청 파이프라인, 모듈의 순서는 주로 기반으로 하는 동안 순서에 따라 [응용 프로그램 수명 주기](https://msdn.microsoft.com/library/ms227673.aspx) 이벤트
 
    * 응답에 대 한 미들웨어의 순서는 모듈의 순서는 요청 및 응답에 대해 동일 하 게 하는 동안 요청에 대 한는 반대
 
@@ -107,11 +105,11 @@ ASP.NET Core 미들웨어를 계속 하기 전에 먼저 요약해 보면 HTTP �
 
 <a name="http-modules-shortcircuiting-middleware"></a>
 
-모듈에는 예를 들어 사용자는 권한이 없는 경우 요청을 종료 될 수 있습니다.
+모듈에는 예를 들어 사용자에 게 권한이 없는 경우 요청을 종료 될 수 있습니다.
 
 [!code-csharp[Main](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Modules/MyTerminatingModule.cs?highlight=9,10,11,12,13&name=snippet_Terminate)]
 
-미들웨어는이 호출 하지 않음으로써 처리 `Invoke` 파이프라인의 다음 미들웨어에 있습니다. 이전 middlewares 응답 파이프라인을 통해 다시 때에 호출 될 때문에이 완벽 하 게을 종료 하지 않는 요청을 염두에서에 둬야 합니다.
+미들웨어는이 호출 하지 않음으로써 처리 `Invoke` 파이프라인의 다음 미들웨어에 있습니다. 이전 middlewares 응답 파이프라인을 통해 다시 때에 호출 될 때문에 완벽 하 게 요청을 종료 하지 않는이 염두에서에 둬야 합니다.
 
 [!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyTerminatingMiddleware.cs?highlight=7,8&name=snippet_Terminate)]
 
@@ -211,7 +209,7 @@ HTTP 처리기 구성 의해 이루어진다는 *Web.config* 다음과 같은 �
 
   [UseMiddleware](#http-modules-usemiddleware) 미들웨어를 추가 하는 확장 메서드는 `IApplicationBuilder` 종속성 주입 담당 합니다.
 
-  에 국한 되지 않음 `IOptions` 개체입니다. 미들웨어 해야 하는 다른 개체에는 이러한 방식으로 삽입 될 수 있습니다.
+  이에 제한 되지 않습니다 `IOptions` 개체입니다. 미들웨어 해야 하는 다른 개체에는 이러한 방식으로 삽입 될 수 있습니다.
 
 ## <a name="loading-middleware-options-through-direct-injection"></a>로드를 통해 직접 삽입 미들웨어 옵션입니다.
 
@@ -321,7 +319,7 @@ public async Task Invoke(HttpContext context)
 >
 >요청당 한 번만 위와 같이 원시 본문을 읽을 수 있습니다. 미들웨어를 첫 번째 읽기 후 본문을 읽는 동안에 빈 본문이 읽습니다.
 >
->이 버퍼에서 수행 되기 때문에 앞에서 표시 된 것 처럼 폼 읽기에 적용 되지 않습니다.
+>이 버퍼에서 수행 되기 때문에 앞에서 표시 된 것 처럼 폼 읽는 적용 되지 않습니다.
 
 ### <a name="httpcontextresponse"></a>HttpContext.Response
 
@@ -382,10 +380,7 @@ public async Task Invoke(HttpContext httpContext)
 
 ## <a name="additional-resources"></a>추가 리소스
 
-* [HTTP 처리기 및 HTTP 모듈 개요](https://docs.microsoft.com/iis/configuration/system.webserver/)
-
+* [HTTP 처리기 및 HTTP 모듈 개요](/iis/configuration/system.webserver/)
 * [구성](xref:fundamentals/configuration/index)
-
-* [응용 프로그램 시작](../fundamentals/startup.md)
-
-* [미들웨어](../fundamentals/middleware.md)
+* [응용 프로그램 시작](xref:fundamentals/startup)
+* [미들웨어](xref:fundamentals/middleware)

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: f2d480793d02c8bfa25c05fd11fa2e6ef9e54a60
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2ca76364a2e9a71dc92644bd579345ae3c304a69
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="updating-related-data-with-the-entity-framework-in-an-aspnet-mvc-application-6-of-10"></a>(6 / 10) ASP.NET MVC 응용 프로그램에서 Entity Framework와 관련된 데이터를 업데이트합니다.
 ====================
@@ -75,8 +75,7 @@ ms.lasthandoff: 11/10/2017
 
 ![Course_create_page](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image3.png)
 
-
-              **만들기**를 클릭합니다. 과정 인덱스 페이지가 목록에 추가 된 새 과정으로 표시 됩니다. 인덱스 페이지 목록에 있는 부서 이름과 관계가 올바르게 설정 되었는지 표시 하는 탐색 속성에서 제공 됩니다.
+**만들기**를 클릭합니다. 과정 인덱스 페이지가 목록에 추가 된 새 과정으로 표시 됩니다. 인덱스 페이지 목록에 있는 부서 이름과 관계가 올바르게 설정 되었는지 표시 하는 탐색 속성에서 제공 됩니다.
 
 ![Course_Index_page_showing_new_course](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image4.png)
 
@@ -111,7 +110,7 @@ ms.lasthandoff: 11/10/2017
 코드는 다음을 수행합니다.
 
 - 현재 가져옵니다 `Instructor` 에 대 한 즉시 로드를 사용 하 여 데이터베이스에서 엔터티는 `OfficeAssignment` 탐색 속성입니다. 이에서 수행한 것과 동일는 `HttpGet` `Edit` 메서드.
-- 검색 된 업데이트 `Instructor` 엔터티 모델 바인더의 값으로. [TryUpdateModel](https://msdn.microsoft.com/en-us/library/dd470908(v=vs.108).aspx) 사용 된 오버 로드를 사용 하면 *화이트 리스트* 포함할 속성입니다. 이렇게 하면 과도 하 게 게시에 설명 된 대로 [두 번째 자습서](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md)합니다.
+- 검색 된 업데이트 `Instructor` 엔터티 모델 바인더의 값으로. [TryUpdateModel](https://msdn.microsoft.com/library/dd470908(v=vs.108).aspx) 사용 된 오버 로드를 사용 하면 *화이트 리스트* 포함할 속성입니다. 이렇게 하면 과도 하 게 게시에 설명 된 대로 [두 번째 자습서](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md)합니다.
 
     [!code-csharp[Main](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample10.cs)]
 - 사무실 위치 비어 있으면 설정 하는 `Instructor.OfficeAssignment` 속성을 null로 되도록 관련된 행에는 `OfficeAssignment` 테이블은 삭제 됩니다.
@@ -147,13 +146,13 @@ ms.lasthandoff: 11/10/2017
 
 에 대 한 즉시 로드를 추가 하는 코드는 `Courses` 탐색 속성 새 호출 `PopulateAssignedCourseData` 메서드를 사용 하 여 확인란 배열에 대 한 정보를 제공는 `AssignedCourseData` 모델 클래스를 보고 합니다.
 
-코드는 `PopulateAssignedCourseData` 메서드를 모두 읽습니다 `Course` 보기를 사용 하는 과정의 목록을 로드 하기 위해 엔터티 모델 클래스입니다. 각 과정에 대 한 코드 과정 강의에 있는지 여부를 확인 `Courses` 탐색 속성입니다. 효율적인 조회를 만들려면 과정에서 강사에 할당 되었는지 여부를 확인할 때 강사에 할당 하는 과정에 저장 됩니다는 [HashSet](https://msdn.microsoft.com/en-us/library/bb359438.aspx) 컬렉션입니다. `Assigned` 속성이 `true` courses 강사 할당 됩니다. 보기 선택 상자로 표시 되어야 하는 확인을 확인 하려면이 속성을 사용 합니다. 목록 보기에 전달 되는 마지막으로, 한 `ViewBag` 속성입니다.
+코드는 `PopulateAssignedCourseData` 메서드를 모두 읽습니다 `Course` 보기를 사용 하는 과정의 목록을 로드 하기 위해 엔터티 모델 클래스입니다. 각 과정에 대 한 코드 과정 강의에 있는지 여부를 확인 `Courses` 탐색 속성입니다. 효율적인 조회를 만들려면 과정에서 강사에 할당 되었는지 여부를 확인할 때 강사에 할당 하는 과정에 저장 됩니다는 [HashSet](https://msdn.microsoft.com/library/bb359438.aspx) 컬렉션입니다. `Assigned` 속성이 `true` courses 강사 할당 됩니다. 보기 선택 상자로 표시 되어야 하는 확인을 확인 하려면이 속성을 사용 합니다. 목록 보기에 전달 되는 마지막으로, 한 `ViewBag` 속성입니다.
 
 다음으로, 사용자가 클릭할 때 실행 되는 코드를 추가 **저장**합니다. 대체는 `HttpPost` `Edit` 메서드를 업데이트 하는 새 메서드를 호출 하는 다음 코드로 `Courses` 의 탐색 속성은 `Instructor` 엔터티. 변경 내용은 강조 표시 됩니다.
 
 [!code-csharp[Main](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample15.cs?highlight=3,7,20,33,37-65)]
 
-보기의 컬렉션인 없으므로 `Course` 엔터티, 모델 바인더 자동으로 업데이트할 수는 `Courses` 탐색 속성입니다. Courses 탐색 속성을 업데이트 하려면 모델 바인더를 사용 하는 대신 작업입니다 새 `UpdateInstructorCourses` 메서드. 따라서 제외 해야는 `Courses` 모델 바인딩에서 속성입니다. 호출 하는 코드를 변경 하지 않아도이 [TryUpdateModel](https://msdn.microsoft.com/en-us/library/dd470908(v=vs.98).aspx) 사용 중 이므로 *허용 목록이* 오버 로드 및 `Courses` include 목록에 있지 않습니다.
+보기의 컬렉션인 없으므로 `Course` 엔터티, 모델 바인더 자동으로 업데이트할 수는 `Courses` 탐색 속성입니다. Courses 탐색 속성을 업데이트 하려면 모델 바인더를 사용 하는 대신 작업입니다 새 `UpdateInstructorCourses` 메서드. 따라서 제외 해야는 `Courses` 모델 바인딩에서 속성입니다. 호출 하는 코드를 변경 하지 않아도이 [TryUpdateModel](https://msdn.microsoft.com/library/dd470908(v=vs.98).aspx) 사용 중 이므로 *허용 목록이* 오버 로드 및 `Courses` include 목록에 있지 않습니다.
 
 경우 없는 확인란이 선택 된을의 코드 `UpdateInstructorCourses` 초기화는 `Courses` 는 빈 컬렉션 탐색 속성:
 

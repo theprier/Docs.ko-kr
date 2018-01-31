@@ -2,20 +2,18 @@
 title: "앵커 태그 도우미 | Microsoft Docs"
 author: pkellner
 description: "앵커 태그 도우미를 사용 하는 방법을 보여 줍니다."
-keywords: "ASP.NET Core, 태그 도우미"
 ms.author: riande
 manager: wpickett
 ms.date: 12/20/2017
 ms.topic: article
-ms.assetid: c045d485-d1dc-4cea-a675-46be83b7a011
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: mvc/views/tag-helpers/builtin-th/anchor-tag-helper
-ms.openlocfilehash: 86756a1d09e6e55ca79aed6e5b718088b82b782c
-ms.sourcegitcommit: 2b263e87217658caa42eedc4f9d2d21ef0ab5d59
+ms.openlocfilehash: 74609b515936ec7da8bfc133c27cb69f51311924
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/12/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="anchor-tag-helper"></a>앵커 태그 도우미
 
@@ -32,7 +30,7 @@ ms.lasthandoff: 01/12/2018
 
 ## <a name="anchor-tag-helper-attributes"></a>앵커 태그 도우미 특성
 
-### <a name="asp-controller"></a>asp 컨트롤러
+### <a name="asp-controller"></a>asp-controller
 
 `asp-controller`URL을 생성 하는 컨트롤러를 연결 하는 데 사용 됩니다. 지정 된 컨트롤러는 현재 프로젝트에 존재 해야 합니다. 다음 코드는 모든 스피커를 나열합니다. 
 
@@ -46,13 +44,13 @@ ms.lasthandoff: 01/12/2018
 <a href="/Speaker">All Speakers</a>
 ```
 
-경우는 `asp-controller` 지정 및 `asp-action` 않습니다 기본 `asp-action` 현재 실행 중인 뷰의 기본 컨트롤러 메서드가 됩니다. 위 예에서 경우 `asp-action` 생략이 앵커 태그 도우미에서 생성 되 고 *HomeController*의 `Index` 보기 (**/홈**), 생성된 된 태그 됩니다:
+경우는 `asp-controller` 지정 및 `asp-action` 하지 않으면 기본 `asp-action` 현재 실행 중인 뷰의 기본 컨트롤러 메서드가 됩니다. 위 예에서 경우 `asp-action` 생략이 앵커 태그 도우미에서 생성 되 고 *HomeController*의 `Index` 보기 (**/홈**), 생성된 된 태그 됩니다:
 
 ```html
 <a href="/Home">All Speakers</a>
 ```
 
-### <a name="asp-action"></a>asp 동작
+### <a name="asp-action"></a>asp-action
 
 `asp-action`포함할 컨트롤러의 동작 메서드의 이름으로 생성 된 `href`합니다. 예를 들어 다음 코드는 생성 된 설정 `href` 스피커 세부 정보 페이지를 가리키도록 합니다.
 
@@ -70,7 +68,7 @@ ms.lasthandoff: 01/12/2018
  
 경우 특성 `asp-action` 은 `Index`, 아무 작업도 앞에 기본 URL에 추가 됩니다 `Index` 메서드를 호출 합니다. 작업이 지정 된 (또는 기본 설정)에서 참조 되는 컨트롤러에 있어야 `asp-controller`합니다.
 
-### <a name="asp-page"></a>asp 페이지
+### <a name="asp-page"></a>asp-page
 
 사용 하 여는 `asp-page` 특정 페이지를 가리키도록 해당 URL을 설정 하는 앵커 태그의 특성입니다. 슬래시를 사용 하 여 페이지 이름을 접두사로 사용 "/" URL을 만듭니다. 현재 디렉터리에 "스피커" 페이지를 가리키고 아래의 예제에 대 한 URL입니다.
 
@@ -99,9 +97,9 @@ https://localhost:44399/Speakers/Index/2?page=%2FSpeaker
 > [!NOTE]
 > 사용 하는 `asp-page` 의 특성 Razor 페이지, Url 해야 상대 경로 예를 들어 `"./Speaker"`합니다. 상대 경로 `asp-page` 특성에서에서 사용할 수 없는 MVC 뷰. 대신 MVC 뷰에 대 한 "/" 구문을 사용 합니다.
 
-### <a name="asp-route-value"></a>asp-경로-{value}
+### <a name="asp-route-value"></a>asp-route-{value}
 
-`asp-route-`와일드 카드 경로 접두사입니다. 모든 값을 추가한 후 뒤에 오는 대시 잠재적 경로 매개 변수로 해석 됩니다. 기본 경로가 없는 경우이 경로 접두사 요청 매개 변수 및 값으로 생성 된 href에 추가 됩니다. 그렇지 않은 경우에 경로 템플릿을 대체 됩니다.
+`asp-route-`와일드 카드 경로 접두사입니다. 모든 값을 추가한 후 뒤에 오는 대시 잠재적 경로 매개 변수로 해석 됩니다. 기본 경로 찾을 수 없으면,이 경로 접두사 요청 매개 변수 및 값으로 생성 된 href에 추가 됩니다. 그렇지 않은 경우에 경로 템플릿을 대체 됩니다.
 
 가정 하 고 있는 컨트롤러 메서드가 다음과 같이 정의.
 
@@ -144,7 +142,7 @@ app.UseMvc(routes =>
 <a href='/Speaker/Detail/12'>SpeakerId: 12</a>
 ```
 
-경로 접두사 발견 라우팅 서식 파일의 일부가 아닌 경우, 즉 다음과 같은 **cshtml** 파일:
+다음의 경우 경로 접두사 부분에서는 라우팅 템플릿 찾을 수 없으면 **cshtml** 파일:
 
 ```cshtml
 @model SpeakerData
@@ -162,13 +160,13 @@ app.UseMvc(routes =>
 
 어느 경우 `asp-controller` 또는 `asp-action` 는 지정 하지 않으면 되 고 뒤에 동일한 기본 처리는 `asp-route` 특성입니다.
 
-### <a name="asp-route"></a>asp 경로
+### <a name="asp-route"></a>asp-route
 
 `asp-route`명명 된 경로에 직접 연결 되는 URL을 만들 방법을 제공 합니다. 라우팅 특성을 사용 하는 경로 이름을 지정할 수 있습니다에 표시 된 대로 `SpeakerController` 에서 사용 하 고 해당 `Evaluations` 메서드.
 
-`Name = "speakerevals"`URL을 사용 하 여 해당 컨트롤러 메서드에 대 한 직접 경로 생성 하는 앵커 태그 도우미 지시 `/Speaker/Evaluations`합니다. 경우 `asp-controller` 또는 `asp-action` 외에 지정 `asp-route`, 예상 대로 경로가 생성 되지 않을 수 있습니다. `asp-route`특성 중 하나를 사용할 수 없습니다 `asp-controller` 또는 `asp-action` 경로 충돌 하지 않도록 합니다.
+`Name = "speakerevals"`URL을 사용 하 여 해당 컨트롤러 메서드에 대 한 직접 경로 생성 하는 앵커 태그 도우미 지시 `/Speaker/Evaluations`합니다. 경우 `asp-controller` 또는 `asp-action` 외에 지정 `asp-route`, 예상 대로 경로가 생성 되지 않을 수 있습니다. `asp-route`특성 중 하나를 사용 하면 안 `asp-controller` 또는 `asp-action` 경로 충돌 하지 않도록 합니다.
 
-### <a name="asp-all-route-data"></a>모든 경로 데이터 asp
+### <a name="asp-all-route-data"></a>asp-all-route-data
 
 `asp-all-route-data`키/값 쌍에 키가 매개 변수 이름 및 값은 해당 키와 연결 된 값의 사전을 만들 수 있습니다.
 
@@ -193,7 +191,7 @@ asp-all-route-data="dict">SpeakerEvals</a>
 
 사전 일치 항목의 키는 매개 변수를 라우팅할 적절 하 게 경로에 해당 값이 대체 됩니다 및 요청 매개 변수도 생성 됩니다. 다른 일치 하지 않는 값입니다.
 
-### <a name="asp-fragment"></a>asp 조각
+### <a name="asp-fragment"></a>asp-fragment
 
 `asp-fragment`URL에 추가할 URL 조각을 정의 합니다. 앵커 태그 도우미 해시 문자를 추가 합니다 (#). 태그를 만들면:
 
@@ -237,7 +235,7 @@ asp-all-route-data="dict">SpeakerEvals</a>
 > [!TIP]
 > 웹 응용 프로그램에서 작동 하도록 MVC 영역 경로 템플릿이 있는 경우 영역에 대 한 참조가 포함 되어야 합니다. 두 번째 매개 변수는 해당 서식 파일의는 `routes.MapRoute` 메서드 호출으로 표시 됩니다.`template: '"{area:exists}/{controller=Home}/{action=Index}"'`
 
-### <a name="asp-protocol"></a>asp 프로토콜
+### <a name="asp-protocol"></a>asp-protocol
 
 `asp-protocol` 프로토콜을 지정 하는 (예: `https`) URL에서 합니다. 앵커 태그 도우미 프로토콜을 포함 하는 예제는 다음과 같이 표시 됩니다.
 

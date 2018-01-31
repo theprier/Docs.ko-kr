@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/updating-the-tableadapter-to-use-joins-vb
 msc.type: authoredcontent
-ms.openlocfilehash: bb0b80f63ea69bb12a28f01193946f5689e70fb9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2e0698269c0a29c234f03dc56f7b63e7bc83d032
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="updating-the-tableadapter-to-use-joins-vb"></a>(VB) 조인 TableAdapter를 사용 하 여 업데이트
 ====================
@@ -54,7 +54,7 @@ ms.lasthandoff: 11/10/2017
 A `JOIN` 일부 조건에 따라 다른 테이블의 레코드와 한 테이블에서 레코드를 병합 합니다. 예를 들어 위의 쿼리에서 `LEFT JOIN Categories ON Categories.CategoryID = Products.CategoryID` 사용 하면 SQL Server 병합 각 범주와 제품 레코드를 기록 하는 `CategoryID` 값과 s 제품 일치 `CategoryID` 값입니다. 병합 된 결과 통해 각 제품에 대 한 해당 범주 필드를 사용 하 여 (예: `CategoryName`).
 
 > [!NOTE]
-> `JOIN`s 관계형 데이터베이스에서 데이터를 쿼리할 때 자주 사용 됩니다. 처음 사용 하는 경우는 `JOIN` 구문 또는 사용법에 대 약간 브러시를 사용 하는 필요성 d 것이 좋습니다.는 [SQL Join 자습서](http://www.w3schools.com/sql/sql_join.asp) 에서 [W3 학교](http://www.w3schools.com/)합니다. 또한 읽기 가치는 [ `JOIN` 기본 사항](https://msdn.microsoft.com/en-us/library/ms191517.aspx) 및 [하위 쿼리 기본 사항](https://msdn.microsoft.com/en-us/library/ms189575.aspx) 의 섹션은 [SQL 온라인 설명서](https://msdn.microsoft.com/en-us/library/ms130214.aspx)합니다.
+> `JOIN`s 관계형 데이터베이스에서 데이터를 쿼리할 때 자주 사용 됩니다. 처음 사용 하는 경우는 `JOIN` 구문 또는 사용법에 대 약간 브러시를 사용 하는 필요성 d 것이 좋습니다.는 [SQL Join 자습서](http://www.w3schools.com/sql/sql_join.asp) 에서 [W3 학교](http://www.w3schools.com/)합니다. 또한 읽기 가치는 [ `JOIN` 기본 사항](https://msdn.microsoft.com/library/ms191517.aspx) 및 [하위 쿼리 기본 사항](https://msdn.microsoft.com/library/ms189575.aspx) 의 섹션은 [SQL 온라인 설명서](https://msdn.microsoft.com/library/ms130214.aspx)합니다.
 
 
 이후 `JOIN` s와 상관된 하위 쿼리 둘 다 사용할 수 다른 테이블에서 관련된 데이터를 검색, 머리 보이지 않는 하 고 사용할 방법에 다음이 궁금할 많은 개발자에 게 남아 있습니다. 모든 SQL gurus I 간의 대화와 거의 동일한 작업에 설명 했습니다 한다는 대상이 t 중요 성능 관점에서 보면으로 SQL Server와 거의 동일한 실행 계획을 생성 합니다. 그런 다음 해당 조언을 팀과 가장 익숙한 기술을 사용 하 고 되려고 합니다. 이 충고를 전달 하는 후 이러한 전문가 즉시 express의 기본 설정의 데이터에 해당 `JOIN` 상관된 하위 쿼리를 통해 s입니다.

@@ -2,20 +2,18 @@
 title: "ASP.NET Core Identity 없이 쿠키 인증을 사용 하 여"
 author: rick-anderson
 description: "ASP.NET Core Id 없이 쿠키 인증을 사용 하 여 설명"
-keywords: "ASP.NET Core, 쿠키"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/11/2017
-ms.topic: article
-ms.assetid: 2bdcbf95-8d9d-4537-a4a0-a5ee439dcb62
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/authentication/cookie
-ms.openlocfilehash: ee660667251ec4a64f2b3e83f39214e9defcea03
-ms.sourcegitcommit: 2d23ea501e0213bbacf65298acf1c8bd17209540
+ms.openlocfilehash: 5b2f70b1f1fc9805025d6fa2256fcfcecf808b9a
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="using-cookie-authentication-without-aspnet-core-identity"></a>ASP.NET Core Identity 없이 쿠키 인증을 사용 하 여
 
@@ -43,7 +41,7 @@ ASP.NET Core에서 마이그레이션 쿠키 기반 인증에 대 한 내용은 
 
 [!code-csharp[Main](cookie/sample/Startup.cs?name=snippet2)]
 
-**AddCookie 옵션**
+**AddCookie Options**
 
 [CookieAuthenticationOptions](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions?view=aspnetcore-2.0) 클래스는 인증 공급자 옵션을 구성 하는 데 사용 됩니다.
 

@@ -2,20 +2,18 @@
 title: "구성 요소 보기"
 author: rick-anderson
 description: "뷰 구성 요소는 다시 사용할 수 있는 렌더링 논리는 아무 곳 이나 사용 됩니다."
-keywords: "ASP.NET Core, 구성 요소 보기, 부분 뷰"
 ms.author: riande
 manager: wpickett
 ms.date: 02/14/2017
 ms.topic: article
-ms.assetid: ab4705b7-59d7-4f31-bc97-ea7f292fe926
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/view-components
-ms.openlocfilehash: 2cf82df78c250cdfdd808d49acfc06dc2ea82f5f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 65074ca02a1365db278d348d4e024121a6eb4634
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="view-components"></a>구성 요소 보기
 
@@ -25,7 +23,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="introducing-view-components"></a>뷰 구성 요소 소개
 
-새 ASP.NET Core mvc 뷰 구성 요소는 부분 뷰로 유사 하지만 훨씬 더 강력 합니다. 보기 구성 요소 하지 않는 모델 바인딩을 사용 하 고만를 호출할 때 제공 된 데이터에 따라 달라 집니다. 뷰 구성 요소:
+새 ASP.NET Core mvc 뷰 구성 요소는 부분 뷰 유사 하지만 하기가 훨씬 더 강력 합니다. 보기 구성 요소 하지 않는 모델 바인딩을 사용 하 고만를 호출할 때 제공 된 데이터에 따라 달라 집니다. 뷰 구성 요소:
 
 * 전체 응답 하지 않고 청크를 렌더링합니다.
 * 컨트롤러와 뷰 사이 있는 테스트 용이성 이점과 분리-문제의 동일한 포함 됩니다.
@@ -62,7 +60,7 @@ ms.lasthandoff: 11/10/2017
 
 * 생성자를 완벽 하 게 지원 [종속성 주입](../../fundamentals/dependency-injection.md)
 
-* 즉, 사용할 수 없는 컨트롤러 수명 주기에서 파트를 사용 하지 않는 [필터](../controllers/filters.md) 뷰 구성 요소에
+* 즉, 사용할 수 없는 컨트롤러 수명 주기에 관여 하지 않습니다 [필터](../controllers/filters.md) 뷰 구성 요소에
 
 ### <a name="view-component-methods"></a>구성 요소 메서드를 보기
 
@@ -71,15 +69,15 @@ ms.lasthandoff: 11/10/2017
 * 정의 `InvokeAsync` 반환 하는 메서드는`IViewComponentResult`
 * 일반적으로 모델을 초기화 하 고 호출 하 여 보기에 전달 된 `ViewComponent` `View` 메서드
 * 매개 변수에서 호출 하는 메서드의 HTTP가 아닌 야 하며, 모델 바인딩되지 않습니다.
-* 됩니다 (일반적으로 보기)에서 사용자 코드에서 호출 HTTP 끝점으로 직접 연결할 수 없음, 됩니다. 뷰 구성 요소는 요청을 처리 하지 않습니다.
+* HTTP 끝점으로 직접 연결할 수 없음, 하는 호출 있습니다 (일반적으로 보기)에서 사용자 코드에서. 뷰 구성 요소는 요청을 처리 하지 않습니다.
 * 현재 HTTP 요청에서 세부 정보 보다는 서명을에 오버 로드
 
 ### <a name="view-search-path"></a>보기 검색 경로
 
 런타임에서 다음 경로에서 보기에 대 한 검색:
 
-   * 뷰 /\<controller_name > /Components/\<view_component_name > /\<뷰 _ 이름 >
-   * 뷰/공유/구성 요소/\<view_component_name > /\<뷰 _ 이름 >
+   * Views/\<controller_name>/Components/\<view_component_name>/\<view_name>
+   * Views/Shared/Components/\<view_component_name>/\<view_name>
 
 뷰 구성 요소에 대 한 기본 뷰 이름은 *기본*, 뷰 파일을 의미 하는 일반적으로 이름이 지정 됩니다 *Default.cshtml*합니다. 뷰 구성 요소 결과 만들 때 또는 호출 하는 경우 서로 다른 뷰 이름을 지정할 수 있습니다는 `View` 메서드.
 
@@ -132,7 +130,7 @@ ASP.NET Core 1.1 이상에서는 뷰 구성 요소도 호출할 수 있습니다
 
 ### <a name="invoking-a-view-component-directly-from-a-controller"></a>컨트롤러에서 직접 뷰 구성 요소 호출
 
-뷰 구성 요소는 일반적으로 보기에서 호출 하지만 컨트롤러 메서드에에서 직접 호출할 수 있습니다. 콘텐츠를 반환 하는 컨트롤러 동작 구성 요소 보기 컨트롤러와 같은 끝점을 정의 하지 않는 동안 쉽게 구현할 수는 `ViewComponentResult`합니다.
+뷰 구성 요소는 일반적으로 보기에서 호출 하지만 컨트롤러 메서드에에서 직접 호출할 수 있습니다. 콘텐츠를 반환 하는 컨트롤러 동작 구성 요소 보기 컨트롤러와 같은 끝점을 정의 하지 않음, 동안 쉽게 구현할 수는 `ViewComponentResult`합니다.
 
 이 예제에서는 뷰 구성 요소는 컨트롤러에서 직접 호출 됩니다.
 
@@ -154,7 +152,7 @@ ASP.NET Core 1.1 이상에서는 뷰 구성 요소도 호출할 수 있습니다
 
 * 뷰 구성 요소 클래스에 포함 될 수 있는 **모든** 프로젝트의 폴더입니다.
 * 클래스 이름 PriorityList**ViewComponent** 된 접미사로 끝나는지 **ViewComponent**, 클래스 구성 요소는 뷰에서 참조 하는 경우 런타임이 "PriorityList" 문자열을 사용 합니다. 설명 하겠습니다를 자세히 나중에.
-* `[ViewComponent]` 특성 뷰 구성 요소를 참조 하는 데 이름을 변경할 수 있습니다. 예를 들어 우리 수에 명명 된 클래스 `XYZ` 적용 하 고는 `ViewComponent` 특성:
+* `[ViewComponent]` 특성 뷰 구성 요소를 참조 하는 데 이름을 변경할 수 있습니다. 예를 들어 우리 수 이름을 지정한 클래스 `XYZ` 적용 하 고는 `ViewComponent` 특성:
 
   ```csharp
   [ViewComponent(Name = "PriorityList")]
@@ -214,7 +212,7 @@ ASP.NET Core 1.1 이상에서는 뷰 구성 요소도 호출할 수 있습니다
 
 ![우선 순위 뷰 구성 요소](view-components/_static/pvc.png)
 
-PVC 뷰 렌더링 되지 않습니다 4 이상을의 우선 순위를 가진 뷰 구성 요소를 호출 하는 확인 합니다.
+PVC 뷰 렌더링 되지 않는 경우 4 이상을의 우선 순위를 가진 뷰 구성 요소를 호출 하는 확인 합니다.
 
 ### <a name="examine-the-view-path"></a>뷰 경로 검사
 
@@ -224,7 +222,7 @@ PVC 뷰 렌더링 되지 않습니다 4 이상을의 우선 순위를 가진 뷰
 
    ```
    An unhandled exception occurred while processing the request.
-   InvalidOperationException: The view 'Components/PriorityList/Default' was not found. The following locations were searched:
+   InvalidOperationException: The view 'Components/PriorityList/Default' wasn't found. The following locations were searched:
    /Views/ToDo/Components/PriorityList/Default.cshtml
    /Views/Shared/Components/PriorityList/Default.cshtml
    EnsureSuccessful

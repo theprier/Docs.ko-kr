@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/aspnet4
 msc.type: content
-ms.openlocfilehash: 226ef83f289b8fbe9a68f0d0741c7eca0d96ba94
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 29d5b2f4c04b899b900427ac202c0a4f57f8076f
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>ASP.NET 4 및 Visual Studio 2010 웹 개발 개요
 ====================
@@ -199,7 +199,7 @@ ASP.NET 4 응용 프로그램 Url의 크기를 확장 하는 것에 대 한 새 
 
 [!code-xml[Main](overview/samples/sample10.xml)]
 
-더 길거나 더 짧은 경로 (프로토콜, 서버 이름 및 쿼리 문자열을 포함 하지 않는 URL의 일부)를 허용 하려면 수정 된  *[maxUrlLength](https://msdn.microsoft.com/en-us/library/system.web.configuration.httpruntimesection.maxurllength.aspx)*  특성입니다. 길거나 짧은 쿼리 문자열을 허용 하려면 값을 수정 된  *[maxQueryStringLength](https://msdn.microsoft.com/en-us/library/system.web.configuration.httpruntimesection.maxquerystringlength.aspx)*  특성입니다.
+더 길거나 더 짧은 경로 (프로토콜, 서버 이름 및 쿼리 문자열을 포함 하지 않는 URL의 일부)를 허용 하려면 수정 된  *[maxUrlLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxurllength.aspx)*  특성입니다. 길거나 짧은 쿼리 문자열을 허용 하려면 값을 수정 된  *[maxQueryStringLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxquerystringlength.aspx)*  특성입니다.
 
 ASP.NET 4를 사용 하면 URL 문자 검사에서 사용 되는 문자를 구성할 수 있습니다. ASP.NET URL의 경로 부분에서 잘못 된 문자를 찾습니다, 요청을 거부 하 고 HTTP 400 오류를 발생 시킵니다. ASP.NET의 이전 버전에서는 URL 문자 검사 된 고정된 문자 집합으로 제한 합니다. ASP.NET 4에서 new를 사용 하는 유효한 문자 집합이 사용자 지정할 수 *requestPathInvalidChars* 특성에는 *httpRuntime* 다음 예제와 같이 구성 요소:
 
@@ -561,7 +561,7 @@ ASP.NET 4 Web forms 라우팅을 사용 하 여에 대 한 기본 제공 지원�
 - 다음과 같은 새 식 작성기에에 정의 된 *System.Web.Compilation.RouteUrlExpressionBuilder* 및 *System.Web.Compilation.RouteValueExpressionBuilder*:
 - *RouteUrl*, ASP.NET 서버 컨트롤 내에서 경로 URL에 해당 하는 URL을 만드는 간단한 방법을 제공 합니다.
 - *RouteValue*에서 정보를 추출 하는 간단한 방법을 제공 하는 *RouteContext* 개체입니다.
-- *RouteParameter* 쉽게에 포함 된 데이터를 전달 하는 클래스는 *RouteContext* 개체 데이터 소스 제어에 대 한 쿼리를 (비슷합니다 [ *FormParameter* ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.formparameter.aspx)).
+- *RouteParameter* 쉽게에 포함 된 데이터를 전달 하는 클래스는 *RouteContext* 개체 데이터 소스 제어에 대 한 쿼리를 (비슷합니다 [ *FormParameter* ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.formparameter.aspx)).
 
 #### <a name="routing-for-web-forms-pages"></a>Web Forms 페이지에 대 한 라우팅
 
@@ -625,7 +625,7 @@ ASP.NET이 자동으로 올바른 경로 작동 (즉, 올바른 URL 생성) 입�
 
 #### <a name="using-route-data-for-data-source-control-parameters"></a>데이터 소스 제어 매개 변수에 대 한 경로 데이터를 사용 하 여
 
-*RouteParameter* 클래스를 사용 하면 데이터 소스 제어에서 쿼리에 대 한 매개 변수 값으로 경로 데이터를 지정할 수 있습니다. 그 [작동과 거의 동일한는](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.formparameter.aspx) 다음 예제와 같이 클래스:
+*RouteParameter* 클래스를 사용 하면 데이터 소스 제어에서 쿼리에 대 한 매개 변수 값으로 경로 데이터를 지정할 수 있습니다. 그 [작동과 거의 동일한는](https://msdn.microsoft.com/library/system.web.ui.webcontrols.formparameter.aspx) 다음 예제와 같이 클래스:
 
 [!code-aspx[Main](overview/samples/sample46.aspx)]
 
@@ -1146,7 +1146,7 @@ ASP.NET MVC 2009 년 3 월에에서 추가 기능 프레임 워크로 ASP.NET 3.
 - 필드에 대해 생성 되는 태그를 쉽게 변경할 수는 *GridView* 및 *DetailsView* 동적 데이터 프로젝트의 일부인 필드 템플릿을 사용 하 여 제어 합니다.
 
 > [!NOTE]
-> 자세한 내용은 참고를 참조 하십시오는 [동적 데이터 설명서](https://msdn.microsoft.com/en-us/library/cc488545.aspx) MSDN 라이브러리에서.
+> 자세한 내용은 참고를 참조 하십시오는 [동적 데이터 설명서](https://msdn.microsoft.com/library/cc488545.aspx) MSDN 라이브러리에서.
 
 
 ASP.NET 4에 대 한 동적 데이터 신속 하 게 데이터 기반 웹 사이트를 구축 하기 위한 개발자에 게 더 많은 전원을 제공 하도록 향상 되었습니다.
@@ -1218,7 +1218,7 @@ ASP.NET 4에서 동적 데이터 지원의 주요 목표는 모든 ASP.NET 응�
 
 <a id="0.2__Toc224729045"></a><a id="0.2__Toc253429282"></a><a id="0.2__Toc243304653"></a>
 
-### <a name="new-field-templates-for-urls-and-e-mail-addresses"></a>Url 및 전자 메일 주소에 대 한 새 필드 템플릿
+### <a name="new-field-templates-for-urls-and-email-addresses"></a>Url 및 전자 메일 주소에 대 한 새 필드 템플릿
 
 ASP.NET 4에서는 두 개의 새로운 기본 제공 필드 템플릿을 `EmailAddress.ascx` 및 `Url.ascx`합니다. 이러한 템플릿은으로 표시 된 필드에 사용 됩니다 *EmailAddress* 또는 *Url* 와 *DataType* 특성입니다. 에 대 한 *EmailAddress* 개체를 사용 하 여 만든 하이퍼링크로 필드가 표시 됩니다는 *mailto:* 프로토콜입니다. 사용자가 링크를 클릭 하면 사용자의 전자 메일 클라이언트 열리고 기본 메시지가 만들어집니다. 로 형식화 된 개체가 *Url* 일반 하이퍼링크로 표시 됩니다.
 
@@ -1325,7 +1325,7 @@ Visual Studio 2010가 MSDeploy 도구를 사용 하 여 응용 프로그램으�
 
 웹 패키지 모든 서버에 복사 하 고 IIS 관리자를 사용 하 여 수동으로 설치 될 수 있습니다. 또는 자동화 된 배포 명령줄 명령을 사용 하 여 또는 배포 Api를 사용 하 여 패키지 설치할 수 있습니다.
 
-Visual Studio 2010 기본 제공 웹 패키지를 만들 대상 및 MSBuild 작업을 제공 합니다. 자세한 내용은 참조 [ASP.NET 웹 응용 프로그램 프로젝트 배포 개요](https://msdn.microsoft.com/en-us/library/dd394698%28VS.100%29.aspx) MSDN 웹 사이트 및 [웹 패키지를 만들어야 하면 10 + 20 이유](http://vishaljoshi.blogspot.com/2009/07/10-20-reasons-why-you-should-create-web.html) Vishal Joshi 블로그.
+Visual Studio 2010 기본 제공 웹 패키지를 만들 대상 및 MSBuild 작업을 제공 합니다. 자세한 내용은 참조 [ASP.NET 웹 응용 프로그램 프로젝트 배포 개요](https://msdn.microsoft.com/library/dd394698%28VS.100%29.aspx) MSDN 웹 사이트 및 [웹 패키지를 만들어야 하면 10 + 20 이유](http://vishaljoshi.blogspot.com/2009/07/10-20-reasons-why-you-should-create-web.html) Vishal Joshi 블로그.
 
 <a id="0.2__Toc224729057"></a><a id="0.2__Toc253429294"></a><a id="0.2__Toc243304665"></a>
 
@@ -1337,7 +1337,7 @@ Visual Studio 2010 웹 응용 프로그램 배포에 대 한 소개 [XML 문서 
 
 [!code-xml[Main](overview/samples/sample102.xml)]
 
-자세한 내용은 참조 [웹 응용 프로그램 프로젝트 배포에 대 한 Web.config 변환 구문은](https://msdn.microsoft.com/en-us/library/dd465326%28VS.100%29.aspx) msdn <a id="0.2_a"> </a> 웹 사이트 및[웹 배포: Web.Config 변환](http://vishaljoshi.blogspot.com/2009/03/web-deployment-webconfig-transformation_23.html)Vishal Joshi 블로그.
+자세한 내용은 참조 [웹 응용 프로그램 프로젝트 배포에 대 한 Web.config 변환 구문은](https://msdn.microsoft.com/library/dd465326%28VS.100%29.aspx) msdn <a id="0.2_a"> </a> 웹 사이트 및[웹 배포: Web.Config 변환](http://vishaljoshi.blogspot.com/2009/03/web-deployment-webconfig-transformation_23.html)Vishal Joshi 블로그.
 
 <a id="0.2__Toc224729058"></a><a id="0.2__Toc253429295"></a><a id="0.2__Toc243304666"></a>
 
@@ -1345,7 +1345,7 @@ Visual Studio 2010 웹 응용 프로그램 배포에 대 한 소개 [XML 문서 
 
 Visual Studio 2010 배포 패키지를 SQL Server 데이터베이스에 대 한 종속성을 포함할 수 있습니다. 패키지 정의의 일부로 원본 데이터베이스에 대 한 연결 문자열을 제공합니다. 웹 패키지를 만들 때 Visual Studio 2010와 필요에 따라 데이터를 데이터베이스 스키마에 대 한 SQL 스크립트 생성 및 패키지에 추가 합니다. 사용자 지정 SQL 스크립트를 제공 하 고 서버에서 실행 해야 하는 순서를 지정할 수도 있습니다. 대상 서버에 대 한 적절 한 연결 문자열로 제공 하는 배포 시 배포 프로세스는 다음이 연결 문자열 사용 하 여 데이터베이스 스키마를 만들고 데이터를 추가 하는 스크립트를 실행 합니다.
 
-또한 한 번의 클릭을 사용 하 여 게시, 배포 응용 프로그램 원격 공유 호스팅 사이트에 게시 되 면 데이터베이스를 직접 게시할 수를 구성할 수 있습니다. 자세한 내용은 참조 [하는 방법: 한 데이터베이스와 웹 응용 프로그램 프로젝트를 배포](https://msdn.microsoft.com/en-us/library/dd465343%28VS.100%29.aspx) MSDN 웹 사이트에서 및 [VS 2010에 데이터베이스 배포](http://vishaljoshi.blogspot.com/2009/03/web-deployment-webconfig-transformation_23.html) Vishal Joshi 블로그.
+또한 한 번의 클릭을 사용 하 여 게시, 배포 응용 프로그램 원격 공유 호스팅 사이트에 게시 되 면 데이터베이스를 직접 게시할 수를 구성할 수 있습니다. 자세한 내용은 참조 [하는 방법: 한 데이터베이스와 웹 응용 프로그램 프로젝트를 배포](https://msdn.microsoft.com/library/dd465343%28VS.100%29.aspx) MSDN 웹 사이트에서 및 [VS 2010에 데이터베이스 배포](http://vishaljoshi.blogspot.com/2009/03/web-deployment-webconfig-transformation_23.html) Vishal Joshi 블로그.
 
 <a id="0.2__Toc224729059"></a><a id="0.2__Toc253429296"></a><a id="0.2__Toc243304667"></a>
 
@@ -1353,7 +1353,7 @@ Visual Studio 2010 배포 패키지를 SQL Server 데이터베이스에 대 한 
 
 Visual Studio 2010에서는 IIS 원격 관리 서비스를 사용 하 여 원격 서버에 웹 응용 프로그램을 게시할 수도 있습니다. 또는 테스트 서버 / 스테이징 서버 호스팅 계정에 대 한 게시 프로필을 만들 수 있습니다. 각 프로필은 적절 한 자격 증명을 안전 하 게 저장할 수 있습니다. 다음에 대상 중 하나에 배포할 수 웹 한 번의 클릭을 사용 하 여 한 번의 클릭 서버 도구 모음을 게시 합니다. Visual Studio 2010과 함께 MSBuild 명령줄을 사용 하 여 게시할 수 있습니다. 이렇게 하면 연속 통합 모델에 게시를 포함 하도록 팀 빌드 환경을 구성할 수 있습니다.
 
-자세한 내용은 참조 [하는 방법: 웹 응용 프로그램 프로젝트를 사용 하 여 한 번의 클릭 게시 및 웹 배포 배포](https://msdn.microsoft.com/en-us/library/dd465337%28VS.100%29.aspx) MSDN 웹 사이트 및 [VS 2010 원클릭 게시 웹](http://vishaljoshi.blogspot.com/2009/05/web-1-click-publish-with-vs-2010.html) Vishal Joshi 블로그. Visual Studio 2010에서 웹 응용 프로그램 배포에 대 한 비디오 프레젠테이션을 보려면 참조 [VS 2010 웹 개발자 미리 보기에 대 한](http://vishaljoshi.blogspot.com/2008/12/vs-2010-for-web-developer-previews.html) Vishal Joshi 블로그.
+자세한 내용은 참조 [하는 방법: 웹 응용 프로그램 프로젝트를 사용 하 여 한 번의 클릭 게시 및 웹 배포 배포](https://msdn.microsoft.com/library/dd465337%28VS.100%29.aspx) MSDN 웹 사이트 및 [VS 2010 원클릭 게시 웹](http://vishaljoshi.blogspot.com/2009/05/web-1-click-publish-with-vs-2010.html) Vishal Joshi 블로그. Visual Studio 2010에서 웹 응용 프로그램 배포에 대 한 비디오 프레젠테이션을 보려면 참조 [VS 2010 웹 개발자 미리 보기에 대 한](http://vishaljoshi.blogspot.com/2008/12/vs-2010-for-web-developer-previews.html) Vishal Joshi 블로그.
 
 <a id="0.2__Toc224729060"></a><a id="0.2__Toc253429297"></a><a id="0.2__Toc243304668"></a>
 
@@ -1361,9 +1361,9 @@ Visual Studio 2010에서는 IIS 원격 관리 서비스를 사용 하 여 원격
 
 다음 웹 사이트는 ASP.NET 4 및 Visual Studio 2010에 대 한 추가 정보를 제공 합니다.
 
-- [ASP.NET 4](https://msdn.microsoft.com/en-us/library/ee532866%28VS.100%29.aspx) -MSDN 웹 사이트에서 ASP.NET 4에 대 한 공식 설명서입니다.
+- [ASP.NET 4](https://msdn.microsoft.com/library/ee532866%28VS.100%29.aspx) -MSDN 웹 사이트에서 ASP.NET 4에 대 한 공식 설명서입니다.
 - [https://www.asp.net/](https://www.asp.net/) -ASP.NET 팀의 웹 사이트입니다.
-- [https://www.asp.net/dynamicdata/](https://msdn.microsoft.com/en-us/library/cc488545.aspx) 및 [ASP.NET 동적 데이터 콘텐츠 맵](https://msdn.microsoft.com/en-us/library/cc488545%28VS.100%29.aspx) -ASP.NET 팀 사이트 및 ASP.NET Dynamic Data에 대 한 공식 설명서의 온라인 리소스.
+- [https://www.asp.net/dynamicdata/](https://msdn.microsoft.com/library/cc488545.aspx) 및 [ASP.NET 동적 데이터 콘텐츠 맵](https://msdn.microsoft.com/library/cc488545%28VS.100%29.aspx) -ASP.NET 팀 사이트 및 ASP.NET Dynamic Data에 대 한 공식 설명서의 온라인 리소스.
 - [https://www.asp.net/ajax/](../../ajax/index.md) -ASP.NET Ajax 개발에 대 한 기본 웹 리소스입니다.
 - [https://blogs.msdn.com/webdevtools/](https://blogs.msdn.com/webdevtools/) -Visual Studio 2010의 기능에 대 한 정보를 포함 하는 경우 Visual Web Developer 팀 블로그.
 - [ASP.NET WebStack](https://github.com/aspnet/AspNetWebStack) -ASP.NET의 미리 보기 릴리스에 대 한 기본 웹 리소스입니다.
@@ -1382,7 +1382,7 @@ Visual Studio 2010에서는 IIS 원격 관리 서비스를 사용 하 여 원격
 
 Microsoft가 이 설명서 본안에 관련된 특허권, 상표권, 저작권 또는 기타 지적 재산권 등을 보유할 수도 있습니다. 서면 사용권 계약에 따라 Microsoft로부터 귀하에게 명시적으로 제공된 권리 이외에, 이 문서의 제공은 귀하에게 이러한 특허권, 상표권, 저작권, 또는 기타 지적 소유권 등에 대한 어떠한 사용권도 허여하지 않습니다.
 
-다른 설명이 없는 한, 용례에 사용된 회사, 기관, 제품, 도메인 이름, 전자 메일 주소, 로고, 사람, 장소 및 이벤트 등은 실제 데이터가 아닙니다. 어떠한 실제 회사, 기관, 제품, 도메인 이름, 전자 메일 주소, 로고, 사람, 장소 또는 이벤트와도 연관시킬 의도가 없으며 그렇게 유추해서도 안 됩니다.
+다른 설명이 없는 한 예제 회사, 조직, 제품, 도메인 이름, 전자 메일 주소, 로고, 사람, 장소 및 이벤트 용례은 실제 데이터가 아닙니다과 연결 된 실제 회사, 조직, 제품, 도메인 이름, 전자 메일 주소, 로고, 사람, 장소 또는 이벤트 해서도 그렇게 유추 해서도 안 됩니다.
 
 © 2009 Microsoft Corporation입니다. All rights reserved.
 

@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling
 msc.type: authoredcontent
-ms.openlocfilehash: 3caeeb83e4c074ae0ffc30f035d793a821eb6be2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b743b04789c5e5ebf5ab922cf34a516a16a6d356
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="transient-fault-handling-building-real-world-cloud-apps-with-azure"></a>일시적인 오류 처리 (Azure 사용 하 여 실제 클라우드 앱 빌드)
 ====================
@@ -39,11 +39,11 @@ ms.lasthandoff: 11/10/2017
 
 여러 가지 방법으로 스마트 재시도 논리를 구현할 수 있습니다.
 
-- Microsoft Patterns &amp; 사례 그룹에는 [일시적인 오류 처리 응용 프로그램 블록](https://msdn.microsoft.com/en-us/library/dn440719(v=pandp.60).aspx) 하는 모든 작업을 수행 하면에 대 한 (Entity Framework) 통해서가 아니라 SQL 데이터베이스 액세스를 위해 ADO.NET을 사용 하는 경우. 다시 시도-는 쿼리를 다시 시도 횟수에 대 한 정책을 설정 하기만 또는 명령 및 대기 시간을 시도-줄 바꿈 사이의 SQL 코드가 *를 사용 하 여* 블록입니다.
+- Microsoft Patterns &amp; 사례 그룹에는 [일시적인 오류 처리 응용 프로그램 블록](https://msdn.microsoft.com/library/dn440719(v=pandp.60).aspx) 하는 모든 작업을 수행 하면에 대 한 (Entity Framework) 통해서가 아니라 SQL 데이터베이스 액세스를 위해 ADO.NET을 사용 하는 경우. 다시 시도-는 쿼리를 다시 시도 횟수에 대 한 정책을 설정 하기만 또는 명령 및 대기 시간을 시도-줄 바꿈 사이의 SQL 코드가 *를 사용 하 여* 블록입니다.
 
     [!code-csharp[Main](transient-fault-handling/samples/sample1.cs)]
 
-    TFH도 지원 [Azure 역할 내 캐시](https://msdn.microsoft.com/en-us/library/windowsazure/dn386103.aspx) 및 [서비스 버스](https://azure.microsoft.com/services/service-bus/)합니다.
+    TFH도 지원 [Azure 역할 내 캐시](https://msdn.microsoft.com/library/windowsazure/dn386103.aspx) 및 [서비스 버스](https://azure.microsoft.com/services/service-bus/)합니다.
 - Entity Framework를 사용 하는 경우 일반적으로 작동 하지 SQL 연결을 직접 사용 되므로이 Patterns and Practices 패키지를 사용할 수 없습니다. 그러나 Entity Framework 6 프레임 워크에 바로 이러한 종류의 재시도 논리를 작성 합니다. 다시 시도 전략 비슷하게에서 지정 하 고 데이터베이스에 액세스할 때마다 EF 해당 전략을 사용 하는 다음 합니다.
 
     수정 응용 프로그램에서이 기능을 사용 하려면 하기만 하면는에서 파생 된 클래스를 추가 *DbConfiguration* 한 재시도 논리를 켭니다.
@@ -88,11 +88,11 @@ Microsoft는 ADO.NET, Entity Framework 또는 Azure를 사용 하는 전략을 �
 
 설명서
 
-- [Azure 클라우드 서비스에서 대규모 서비스를 디자인에 대 한 유용한](https://msdn.microsoft.com/en-us/library/windowsazure/jj717232.aspx)합니다. 백서: Mark Simms 및 Michael Thomassy 합니다. 유사 Failsafe 시리즈 하지만 방법 더 세부적으로 이동 합니다. 원격 분석 및 진단 섹션을 참조 하십시오.
-- [Failsafe: 복원 력 있는 클라우드 아키텍처에 대 한 지침](https://msdn.microsoft.com/en-us/library/windowsazure/jj853352.aspx)합니다. 백서: Marc Mercuri, Ulrich Homann 및 Andrew Townhill 합니다. FailSafe 비디오 시리즈의 웹 페이지 버전입니다.
-- [Microsoft Patterns and Practices-Azure 지침](https://msdn.microsoft.com/en-us/library/dn568099.aspx)합니다. 참조 재시도 패턴, 스케줄러 에이전트 감독자 패턴입니다.
+- [Azure 클라우드 서비스에서 대규모 서비스를 디자인에 대 한 유용한](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx)합니다. 백서: Mark Simms 및 Michael Thomassy 합니다. 유사 Failsafe 시리즈 하지만 방법 더 세부적으로 이동 합니다. 원격 분석 및 진단 섹션을 참조 하십시오.
+- [Failsafe: 복원 력 있는 클라우드 아키텍처에 대 한 지침](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx)합니다. 백서: Marc Mercuri, Ulrich Homann 및 Andrew Townhill 합니다. FailSafe 비디오 시리즈의 웹 페이지 버전입니다.
+- [Microsoft Patterns and Practices-Azure 지침](https://msdn.microsoft.com/library/dn568099.aspx)합니다. 참조 재시도 패턴, 스케줄러 에이전트 감독자 패턴입니다.
 - [Azure SQL 데이터베이스의 내결함성](https://blogs.msdn.com/b/windowsazure/archive/2012/07/30/fault-tolerance-in-windows-azure-sql-database.aspx)합니다. Tony Petrossian 하 여 블로그 게시물입니다.
-- [Entity Framework-연결 복원 력 재시도 논리 /](https://msdn.microsoft.com/en-us/data/dn456835)합니다. 사용 및 일시적인 오류 처리 Entity Framework 6의 기능을 사용자 지정 하는 방법.
+- [Entity Framework-연결 복원 력 재시도 논리 /](https://msdn.microsoft.com/data/dn456835)합니다. 사용 및 일시적인 오류 처리 Entity Framework 6의 기능을 사용자 지정 하는 방법.
 - [연결 복원 력 및 ASP.NET MVC 응용 프로그램에서 Entity Framework와 함께 명령 인터 셉 션](../../../../mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application.md)합니다. 네 번째 9 개 부분으로 이루어진 자습서 시리즈의 SQL 데이터베이스의 EF 6 연결 복원 력 기능은를 설정 하는 방법을 보여 줍니다.
 
 비디오

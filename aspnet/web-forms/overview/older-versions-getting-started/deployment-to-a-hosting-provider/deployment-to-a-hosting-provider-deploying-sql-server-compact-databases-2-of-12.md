@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: d0b76c06495c51df3ed0f61cd318507a05240392
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5296bc1ca3fd0b24123bd79a550a7e2cffc34a44
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-sql-server-compact-databases---2-of-12"></a>SQL Server Compact Visual Studio 또는 Visual Web Developer를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: 배포 SQL Server Compact 데이터베이스-2/12
 ====================
@@ -37,7 +37,7 @@ ms.lasthandoff: 11/10/2017
 
 - [SQL Server Compact](https://www.microsoft.com/sqlserver/en/us/editions/compact.aspx) (데이터베이스 엔진).
 - [ASP.NET Universal Providers](http://www.hanselman.com/blog/IntroducingSystemWebProvidersASPNETUniversalProvidersForSessionMembershipRolesAndUserProfileOnSQLCompactAndSQLAzure.aspx) (SQL Server Compact를 사용 하도록 ASP.NET 멤버 자격 시스템 있도록)
-- [Entity Framework 5.0](https://msdn.microsoft.com/en-us/library/gg696172(d=lightweight,v=vs.103).aspx)(마이그레이션과 함께 첫 번째 코드).
+- [Entity Framework 5.0](https://msdn.microsoft.com/library/gg696172(d=lightweight,v=vs.103).aspx)(마이그레이션과 함께 첫 번째 코드).
 
 데이터베이스의 구조와 일부 (모두는 아님)의 데이터를 응용 프로그램의 두 데이터베이스를 배포 해야 합니다. 일반적으로 응용 프로그램을 개발할 때 테스트 데이터 라이브 사이트에 배포 하지 않으려는 데이터베이스를 입력 합니다. 그러나 배포 하려는 일부 프로덕션 데이터를 입력할 수 있습니다. 이 자습서에서 필요한 소프트웨어와 되도록 올바른 데이터가 포함를 배포할 때 Contoso 대학 프로젝트를 구성 합니다.
 
@@ -47,7 +47,7 @@ ms.lasthandoff: 11/10/2017
 
 예제 응용 프로그램에는 SQL Server Compact 4.0 사용 합니다. 이 데이터베이스 엔진은 웹 사이트;에 대해 비교적 새로운 옵션 이전 버전의 SQL Server Compact는 웹 호스팅 환경에서에서 작동 하지 않습니다. SQL Server Compact는 SQL Server Express를 사용 하 여 개발 하 고 전체 SQL Server에 배포의 일반적인 시나리오에 비해 몇 가지 이점을 제공 합니다. 선택한 호스팅 공급자에 따라 SQL Server Compact 때문일 수 있습니다를 배포 하기 쉽지만 일부 공급자는 전체 SQL Server 데이터베이스를 지원 하기 위해 추가 요금을 청구 합니다. 웹 응용 프로그램의 일부로 자체 데이터베이스 엔진으로 배포할 수에 SQL Server Compact에 대 한 무료 추가 합니다.
 
-그러나 제한 사항을 알아야도 합니다. SQL Server Compact 지원 하지 않습니다 저장된 프로시저, 트리거, 뷰 또는 복제. (SQL Server Compact에서 지원 되지 않는 SQL Server 기능의 전체 목록은 참조 하십시오. [차이점 간의 SQL Server Compact 및 SQL Server](https://msdn.microsoft.com/en-us/library/bb896140.aspx).) 또한, 스키마 및 SQL Server Express 및 SQL Server 데이터베이스의 데이터를 조작 하는 데 사용할 수 있는 도구 중 일부를 작동 하지 않습니다 SQL Server Compact와. 예를 들어 있습니다 사용할 수 없습니다 SQL Server Management Studio 또는 SQL Server Data Tools Visual Studio에서 SQL Server Compact 데이터베이스. SQL Server Compact 데이터베이스 작업에 대 한 다른 옵션이지 않습니다.
+그러나 제한 사항을 알아야도 합니다. SQL Server Compact 지원 하지 않습니다 저장된 프로시저, 트리거, 뷰 또는 복제. (SQL Server Compact에서 지원 되지 않는 SQL Server 기능의 전체 목록은 참조 하십시오. [차이점 간의 SQL Server Compact 및 SQL Server](https://msdn.microsoft.com/library/bb896140.aspx).) 또한, 스키마 및 SQL Server Express 및 SQL Server 데이터베이스의 데이터를 조작 하는 데 사용할 수 있는 도구 중 일부를 작동 하지 않습니다 SQL Server Compact와. 예를 들어 있습니다 사용할 수 없습니다 SQL Server Management Studio 또는 SQL Server Data Tools Visual Studio에서 SQL Server Compact 데이터베이스. SQL Server Compact 데이터베이스 작업에 대 한 다른 옵션이지 않습니다.
 
 - SQL Server Compact에 대 한 제한 된 데이터베이스 조작 기능을 제공 하는 Visual Studio에서 서버 탐색기를 사용할 수 있습니다.
 - 데이터베이스 조작 기능을 사용할 수 [WebMatrix](https://www.microsoft.com/web/webmatrix/), 서버 탐색기에 비해 많은 기능이 있는 합니다.
@@ -119,7 +119,7 @@ ContosoUniversity 프로젝트를 시작 프로젝트로 설정 되어 있는지
 
 맨 위에 있는 **패키지 관리자 콘솔** 창으로 기본 프로젝트 선택한 다음 at ContosoUniversity.DAL 선택은 `PM>` 프롬프트 "마이그레이션 사용"을 입력 합니다.
 
-![enable migrations_command](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image7.png)
+![enable-migrations_command](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image7.png)
 
 이 명령은 만듭니다는 *Configuration.cs* 를 새로운 파일 *마이그레이션* ContosoUniversity.DAL 프로젝트의 폴더에에서 있습니다.
 
@@ -159,13 +159,13 @@ CTRL-SHIFT-B를 눌러 프로젝트를 빌드합니다.
 
 에 **패키지 관리자 콘솔** 창 "추가 마이그레이션 초기" 명령을 입력를 초기 마이그레이션 만들고 "초기" 라는 이름을 지정 합니다.
 
-![추가 migration_command](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image11.png)
+![add-migration_command](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image11.png)
 
 Code First 마이그레이션을에 다른 클래스 파일을 만듭니다는 *마이그레이션* 폴더에 있으며,이 클래스는 데이터베이스 스키마를 만드는 코드를 포함 합니다.
 
 에 **패키지 관리자 콘솔**, 명령 "업데이트-데이터베이스 입력" 데이터베이스를 만들고 실행 하는 **시드** 메서드.
 
-![업데이트 database_command](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image12.png)
+![update-database_command](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image12.png)
 
 (테이블 이미 있으며 만들 수를 나타내는 오류가 발생할 경우 때문일 것 데이터베이스 삭제 되 고 실행 하기 전에 응용 프로그램을 실행 `update-database`합니다. 그런, 삭제는 *School.sdf* 파일을 다시 시도 `update-database` 명령입니다.)
 
@@ -190,7 +190,7 @@ Contoso 대학교 응용 프로그램 ASP.NET 멤버 자격 시스템 및 폼 �
 처음으로 사이트를 배포 하는 경우에 테스트를 위해 생성 하는 사용자 계정의 전체 또는 대부분을 제외 하려면 일반적입니다. 이 경우 관리자 계정 및 사용자 계정이 배포할 수 있습니다. 테스트 계정을 수동으로 삭제 하는 대신 새 멤버 자격 데이터베이스를 프로덕션 환경에서 필요로 하는 한 명의 관리자 사용자 계정 으로만 만듭니다.
 
 > [!NOTE]
-> 멤버 자격 데이터베이스 계정 암호의 해시를 저장 합니다. 한 컴퓨터에서 계정을 배포 하려면 원본 컴퓨터에서 보다 해시 루틴이 대상 서버에서 다른 해시를 생성 하지 않아도 되어 있는지 확인 해야 합니다. 생성 합니다 동일한 해시 ASP.NET Universal Providers를 사용 하는 경우 기본 알고리즘을 변경 하지 않는 상태로 있습니다. 기본 알고리즘 HMACSHA256 이며에 지정 된는 **유효성 검사** 특성에는  **[machineKey](https://msdn.microsoft.com/en-us/library/w8h3skw9.aspx)**  Web.config 파일의 요소입니다.
+> 멤버 자격 데이터베이스 계정 암호의 해시를 저장 합니다. 한 컴퓨터에서 계정을 배포 하려면 원본 컴퓨터에서 보다 해시 루틴이 대상 서버에서 다른 해시를 생성 하지 않아도 되어 있는지 확인 해야 합니다. 생성 합니다 동일한 해시 ASP.NET Universal Providers를 사용 하는 경우 기본 알고리즘을 변경 하지 않는 상태로 있습니다. 기본 알고리즘 HMACSHA256 이며에 지정 된는 **유효성 검사** 특성에는  **[machineKey](https://msdn.microsoft.com/library/w8h3skw9.aspx)**  Web.config 파일의 요소입니다.
 
 
 멤버 자격 데이터베이스는 Code First 마이그레이션을 통해 유지 되지 않습니다 되며 (이므로 School 데이터베이스에 대 한) 테스트 계정 사용 하 여 데이터베이스를 시드하 자동 이니셜라이저 없습니다. 따라서 사용할 수 있는 테스트 데이터를 유지 하려면 지정 테스트 데이터베이스의 복사본을 새를 만들기 전에 합니다.
@@ -243,7 +243,7 @@ SQL Server Compact 데이터베이스 엔진 및 두 데이터베이스를 배�
 
 ## <a name="more-information"></a>추가 정보
 
-NuGet에 대 한 자세한 내용은 참조 하십시오. [NuGet이 포함 된 프로젝트 라이브러리가 관리](https://msdn.microsoft.com/en-us/magazine/hh547106.aspx) 및 [NuGet 설명서](http://docs.nuget.org/docs/start-here/overview)합니다. NuGet을 사용 하지 않으려면 설치 될 때 역할을 결정 하는 NuGet 패키지를 분석 하는 방법에 알아보려면 해야 합니다. (구성할 수는 예를 들어 *Web.config* 변환 등 빌드 시간에 실행 되도록 PowerShell 스크립트를 구성 합니다.) NuGet의 작동 방식에 대 한 자세한 내용은 참조 특히 [만들기 및 게시 패키지](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package) 및 [구성 파일 및 소스 코드 변환](http://docs.nuget.org/docs/creating-packages/configuration-file-and-source-code-transformations)합니다.
+NuGet에 대 한 자세한 내용은 참조 하십시오. [NuGet이 포함 된 프로젝트 라이브러리가 관리](https://msdn.microsoft.com/magazine/hh547106.aspx) 및 [NuGet 설명서](http://docs.nuget.org/docs/start-here/overview)합니다. NuGet을 사용 하지 않으려면 설치 될 때 역할을 결정 하는 NuGet 패키지를 분석 하는 방법에 알아보려면 해야 합니다. (구성할 수는 예를 들어 *Web.config* 변환 등 빌드 시간에 실행 되도록 PowerShell 스크립트를 구성 합니다.) NuGet의 작동 방식에 대 한 자세한 내용은 참조 특히 [만들기 및 게시 패키지](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package) 및 [구성 파일 및 소스 코드 변환](http://docs.nuget.org/docs/creating-packages/configuration-file-and-source-code-transformations)합니다.
 
 >[!div class="step-by-step"]
 [이전](deployment-to-a-hosting-provider-introduction-1-of-12.md)

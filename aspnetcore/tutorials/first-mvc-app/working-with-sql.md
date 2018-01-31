@@ -2,20 +2,18 @@
 title: "SQL Server LocalDB 사용"
 author: rick-anderson
 description: "간단한 MVC 앱으로 SQL Server LocalDB 사용"
-keywords: ASP.NET Core, SQL Server LocalDB, SQL Server, LocalDB
 ms.author: riande
 manager: wpickett
 ms.date: 03/07/2017
 ms.topic: get-started-article
-ms.assetid: ff8fd9b8-7c98-424d-8641-7524e23bf541
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/first-mvc-app/working-with-sql
-ms.openlocfilehash: 67894d05bfd44b0406d10cbbe30ddfdaf0d66636
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: 0394782d1318f810c2ffe6d2e08bcf082f490a7d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="working-with-sql-server-localdb"></a>SQL Server LocalDB 사용
 

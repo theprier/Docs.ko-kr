@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/precompiling-your-website-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 094bcbd2ccebeeed1f620476b6bd6df67047562f
-ms.sourcegitcommit: c07fb5cb5df0a12f9fe6735fcbc90964608fa687
+ms.openlocfilehash: f31f470b4d2b6736b98c0b7d88ea7a53ad1438b9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="precompiling-your-website-c"></a>웹 사이트 (C#)을 미리 컴파일
 ====================
@@ -66,12 +66,12 @@ WSP 모델을 사용 하 여 명시적 컴파일을 사용 하는 것이 불가�
 
 ## <a name="precompilation-options"></a>미리 컴파일 옵션
 
-.NET Framework와 함께 제공 되는 [ASP.NET 컴파일 도구 (`aspnet_compiler.exe`)](https://msdn.microsoft.com/en-us/library/ms229863.aspx) WSP 모델을 사용 하 여 만든 ASP.NET 응용 프로그램의 소스 코드 (및 콘텐츠도) 컴파일할 수 있습니다. 이 도구는.NET Framework 버전 2.0과 함께 출시 된 및에 `%WINDIR%\Microsoft.NET\Framework\v2.0.50727` 폴더; 명령줄에서 사용 되거나 빌드 메뉴의 웹 사이트 게시 옵션을 통해 Visual Studio 내에서 시작 될 수 있습니다.
+.NET Framework와 함께 제공 되는 [ASP.NET 컴파일 도구 (`aspnet_compiler.exe`)](https://msdn.microsoft.com/library/ms229863.aspx) WSP 모델을 사용 하 여 만든 ASP.NET 응용 프로그램의 소스 코드 (및 콘텐츠도) 컴파일할 수 있습니다. 이 도구는.NET Framework 버전 2.0과 함께 출시 된 및에 `%WINDIR%\Microsoft.NET\Framework\v2.0.50727` 폴더; 명령줄에서 사용 되거나 빌드 메뉴의 웹 사이트 게시 옵션을 통해 Visual Studio 내에서 시작 될 수 있습니다.
 
 컴파일 도구에서는 두 가지 일반적인 형태의 컴파일: 내부 미리 컴파일 및 배포용입니다. 실행 하면 전체 미리 컴파일에서 `aspnet_compiler.exe` 명령줄에서 도구를 컴퓨터에 가상 디렉터리 또는 상주 하는 웹 사이트의 실제 경로에 대 한 경로 지정 합니다. 컴파일 도구에는 다음 각 ASP.NET 페이지의 컴파일된 버전을 저장할 프로젝트를 컴파일합니다는 `%WINDIR%\Microsoft.NET\Framework\v2.0.50727\Temporary ASP.NET Files` 폴더 경우 페이지에 각 방문한 처음으로 브라우저에서와 동일 하 게 합니다. 내부 미리 컴파일에이 단계를 수행 하지 않아도 런타임 줄어들어 사이트에 새로 배포 된 ASP.NET 페이지에 대 한 첫 번째 요청 속도가 수 있습니다. 그러나 프로그램을 실행 하는 웹 서버에서 명령줄 수 있어야 하기 때문에 내부에서 미리 컴파일 호스팅된 웹 사이트의 대부분에 유용 하지 않습니다. 공유 호스팅 환경에서 이러한 액세스 수준을 허용 되지 않습니다.
 
 > [!NOTE]
-> 내부 미리 컴파일에 대 한 자세한 내용은 체크 아웃 [방법: ASP.NET 웹 사이트를 미리 컴파일하](https://msdn.microsoft.com/en-us/library/ms227972.aspx) 및 [ASP.NET 2.0에서 미리 컴파일](http://www.odetocode.com/Articles/417.aspx)합니다.
+> 내부 미리 컴파일에 대 한 자세한 내용은 체크 아웃 [방법: ASP.NET 웹 사이트를 미리 컴파일하](https://msdn.microsoft.com/library/ms227972.aspx) 및 [ASP.NET 2.0에서 미리 컴파일](http://www.odetocode.com/Articles/417.aspx)합니다.
 
 
 웹 사이트의 페이지를 컴파일하는 대신는 `Temporary ASP.NET Files` 폴더 배포용 디렉터리를 선택 해 및 프로덕션 환경에 배포할 수 있는 형식에서 페이지를 컴파일합니다.
@@ -107,10 +107,10 @@ Visual Studio에서 책 검토 WSP 열고 빌드 메뉴에서 웹 사이트 게�
 **그림 3**: 배포에 대 한 포함 된 파일은 대상 위치 폴더  
  ([전체 크기 이미지를 보려면 클릭](precompiling-your-website-cs/_static/image9.png))
 
-Wap의 명시적 컴파일을 달리 배포 프로세스에 대 한 미리 컴파일 전체 사이트에 대해 하나의 어셈블리를 만들지 않습니다. 대신, 해당 일괄 처리 함께 여러 페이지에 각 어셈블리. 또한 컴파일합니다는 `Global.asax` (있는 경우)의 모든 클래스 뿐 아니라 자체 어셈블리 파일의 `App_Code` 폴더입니다. ASP.NET에 대 한 선언적 태그를 포함 하는 파일 웹 페이지, 사용자 정의 컨트롤 및 마스터 페이지 (`.aspx`, `.ascx`, 및 `.master` 파일 각각)으로 복사 됩니다-대상 위치 디렉터리 하는 것입니다. 마찬가지로,는 `Web.config` 오버, 예: 이미지, CSS 및 PDF 파일의 모든 정적 파일 뿐만 아니라 파일은 복사 합니다. 에 대 한 보다 공식적인 설명은 어떻게 컴파일 처리 다양 한 파일 형식, 참조 [파일을 처리 하는 동안 ASP.NET 미리 컴파일](https://msdn.microsoft.com/en-us/library/e22s60h9.aspx)합니다.
+Wap의 명시적 컴파일을 달리 배포 프로세스에 대 한 미리 컴파일 전체 사이트에 대해 하나의 어셈블리를 만들지 않습니다. 대신, 해당 일괄 처리 함께 여러 페이지에 각 어셈블리. 또한 컴파일합니다는 `Global.asax` (있는 경우)의 모든 클래스 뿐 아니라 자체 어셈블리 파일의 `App_Code` 폴더입니다. ASP.NET에 대 한 선언적 태그를 포함 하는 파일 웹 페이지, 사용자 정의 컨트롤 및 마스터 페이지 (`.aspx`, `.ascx`, 및 `.master` 파일 각각)으로 복사 됩니다-대상 위치 디렉터리 하는 것입니다. 마찬가지로,는 `Web.config` 오버, 예: 이미지, CSS 및 PDF 파일의 모든 정적 파일 뿐만 아니라 파일은 복사 합니다. 에 대 한 보다 공식적인 설명은 어떻게 컴파일 처리 다양 한 파일 형식, 참조 [파일을 처리 하는 동안 ASP.NET 미리 컴파일](https://msdn.microsoft.com/library/e22s60h9.aspx)합니다.
 
 > [!NOTE]
-> 컴파일 도구 웹 사이트 게시 대화 상자에서 "고정 된 이름을 사용 하 고 페이지당 하나의 어셈블리만" 확인란을 선택 하 여 ASP.NET 페이지, 사용자 정의 컨트롤 또는 마스터 페이지 당 하나의 어셈블리를 만들를 지시할 수 있습니다. 각 ASP.NET 페이징하지 자체 어셈블리로 컴파일된 배포 보다 세부적으로 제어를 허용 합니다. 예를 들어 배포한 경우, 단일 ASP.NET 웹 페이지를 업데이트 하 고 해당 변경 내용을 배포 하는 데 필요한 필요만 해당 페이지의 `.aspx` 파일과 프로덕션 환경에 연결 된 어셈블리입니다. 참조 [방법: ASP.NET Compilation Tool와 고정 된 이름을 생성](https://msdn.microsoft.com/en-us/library/ms228040.aspx) 자세한 정보에 대 한 합니다.
+> 컴파일 도구 웹 사이트 게시 대화 상자에서 "고정 된 이름을 사용 하 고 페이지당 하나의 어셈블리만" 확인란을 선택 하 여 ASP.NET 페이지, 사용자 정의 컨트롤 또는 마스터 페이지 당 하나의 어셈블리를 만들를 지시할 수 있습니다. 각 ASP.NET 페이징하지 자체 어셈블리로 컴파일된 배포 보다 세부적으로 제어를 허용 합니다. 예를 들어 배포한 경우, 단일 ASP.NET 웹 페이지를 업데이트 하 고 해당 변경 내용을 배포 하는 데 필요한 필요만 해당 페이지의 `.aspx` 파일과 프로덕션 환경에 연결 된 어셈블리입니다. 참조 [방법: ASP.NET Compilation Tool와 고정 된 이름을 생성](https://msdn.microsoft.com/library/ms228040.aspx) 자세한 정보에 대 한 합니다.
 
 
 대상 위치 디렉터리도 파일이 포함 된 미리 컴파일된 웹 프로젝트의 일부를 즉 였던 `PrecompiledApp.config`합니다. 이 파일에는 ASP.NET 응용 프로그램이 미리 컴파일 되었는지 런타임과 미리 여부는 업데이트할 수 있는 또는 정오를 업데이트할 수 있는 UI를 사용한 컴파일 되었는지 알립니다.
@@ -185,8 +185,8 @@ ASP.NET 컴파일 두 모드를 지원: 자동 및 명시적입니다. 이전 �
 
 이 자습서에 설명 된 항목에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
-- [ASP.NET 웹 사이트를 미리 컴파일](https://msdn.microsoft.com/en-us/library/ms228015.aspx)
-- [코드 숨김 및 ASP.NET 2.0에서 컴파일](https://msdn.microsoft.com/en-us/magazine/cc163675.aspx)
+- [ASP.NET 웹 사이트를 미리 컴파일](https://msdn.microsoft.com/library/ms228015.aspx)
+- [코드 숨김 및 ASP.NET 2.0에서 컴파일](https://msdn.microsoft.com/magazine/cc163675.aspx)
 - [ASP.NET에서 미리 컴파일](http://www.odetocode.com/Articles/417.aspx)
 - [ASP.NET에서 미리 컴파일된 사이트가 옵션](http://www.dotnetperls.com/precompiled)
 

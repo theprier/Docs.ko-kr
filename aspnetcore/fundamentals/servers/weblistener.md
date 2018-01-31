@@ -2,20 +2,18 @@
 title: "ASP.NET Core 웹 서버 구현이 WebListener"
 author: rick-anderson
 description: "Windows에서 ASP.NET Core 웹 서버로 WebListener를 소개합니다. Http.Sys 커널 모드 드라이버 기술을 기반으로 한 WebListener는 IIS가 없이 인터넷에 직접 연결에 사용할 수 있는 Kestrel 하지 않아도 됩니다."
-keywords: "ASP.NET Core, WebListener, HttpListener, SSL url 접두사"
 ms.author: riande
 manager: wpickett
 ms.date: 08/07/2017
 ms.topic: article
-ms.assetid: 0a7286e4-6428-424e-b5c4-5c98815cf61c
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/weblistener
-ms.openlocfilehash: f1abb3558546cd907c78b44d9353d9c9f1f5aff1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5073a1663ec99a1b161092d74ab035ee9782becd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="weblistener-web-server-implementation-in-aspnet-core"></a>ASP.NET Core 웹 서버 구현이 WebListener
 
@@ -93,7 +91,7 @@ WebListener는 Kestrel를 사용 하 여 가져올 수 없습니다 제공 하�
   > [!NOTE]
   > 동일한 접두사 문자열을 지정 해야 `UseUrls` 하는 서버에서 미리 등록 합니다. 
 
-* 응용 프로그램 IIS 또는 IIS Express를 실행 하도록 구성 되지 않은 있는지 확인 합니다.
+* 응용 프로그램은 IIS 또는 IIS Express를 실행 하도록 구성 되지 않았습니다 있는지 확인 합니다.
 
   Visual Studio에서 기본 실행 프로필은 IIS Express 합니다.  콘솔 응용 프로그램 프로젝트를 실행 하려면 수동으로 변경 해야 선택한 프로필을 다음 스크린 샷에 표시 된 것 처럼 합니다.
 
@@ -133,11 +131,11 @@ using (WebListener listener = new WebListener(settings))
 
 ## <a name="preregister-url-prefixes-and-configure-ssl"></a>URL 접두사 __'asverify'__ 및 SSL 구성
 
-IIS와 WebListener 기본 Http.Sys 커널 모드 드라이버 요청을 수신 하 고 초기 처리를 수행 합니다. Iis에서 관리 UI 제공 모든 항목을 구성 하는 상대적으로 쉬운 방법이 합니다. 그러나 WebListener를 사용 하 여 Http.Sys를 직접 구성 해야 합니다. 즉 netsh.exe를 수행 하는 데 사용 되는 기본 제공 도구입니다. 
+IIS와 WebListener 기본 Http.Sys 커널 모드 드라이버 요청을 수신 하 고 초기 처리를 수행 합니다. Iis에서 관리 UI 제공 모든 항목을 구성 하는 상대적으로 쉬운 방법이 합니다. 그러나 WebListener를 사용 하 여 Http.Sys를 직접 구성 해야 합니다. Netsh.exe를 없애기 위한 기본 제공 도구입니다. 
 
 가장 일반적인 작업에 대 한 netsh.exe를 사용 해야는 URL 접두사를 예약 하 고 SSL 인증서를 할당 합니다.
 
-NetSh.exe는 초보자를 위한 사용 하기 편리한 도구 않습니다. 다음 예제에서는 포트 80 및 443에 대 한 URL 접두사를 예약 하는 데 필요한 최소한 보여 줍니다.
+NetSh.exe는 초보자를 위한 사용 하기 편리한 도구 하지 않습니다. 다음 예제에서는 포트 80 및 443에 대 한 URL 접두사를 예약 하는 데 필요한 최소한 보여 줍니다.
 
 ```console
 netsh http add urlacl url=http://+:80/ user=Users
@@ -153,7 +151,7 @@ netsh http add sslcert ipport=0.0.0.0:443 certhash=MyCertHash_Here appid={000000
 다음은 공식 참조 설명서가입니다.
 
 * [Netsh 명령에 대 한 하이퍼텍스트 전송 프로토콜 (HTTP)](https://technet.microsoft.com/library/cc725882.aspx)
-* [UrlPrefix 문자열](https://msdn.microsoft.com/library/windows/desktop/aa364698.aspx)
+* [UrlPrefix Strings](https://msdn.microsoft.com/library/windows/desktop/aa364698.aspx)
 
 다음 리소스는 여러 시나리오에 대 한 자세한 지침을 제공 합니다. 참조 하는 문서 `HttpListener` 에 동일 하 게 적용 `WebListener`, 둘 다 Http.Sys 기반으로 합니다.
 

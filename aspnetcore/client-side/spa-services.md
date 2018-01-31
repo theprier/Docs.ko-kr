@@ -2,21 +2,19 @@
 title: "단일 페이지 응용 프로그램을 만들기 위한 JavaScriptServices를 사용 하 여"
 author: scottaddie
 description: "단일 페이지 응용 프로그램 (SPA) 뒷받침 되며 ASP.NET Core 만들려는 JavaScriptServices 사용의 이점에 알아봅니다."
-keywords: "ASP.NET Core 각도, SPA, JavaScriptServices, SpaServices"
-ms.author: scaddie
 manager: wpickett
-ms.date: 08/02/2017
-ms.topic: article
-ms.assetid: 4b30576b-2718-4c39-9253-a59966747893
-ms.technology: aspnet
-ms.prod: asp.net-core
-uid: client-side/spa-services
+ms.author: scaddie
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8d47910beef9195295c8da6ac81b83b3ffe20124
-ms.sourcegitcommit: fe880bf4ed1c8116071c0e47c0babf3623b7f44a
+ms.date: 08/02/2017
+ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
+uid: client-side/spa-services
+ms.openlocfilehash: bd18d342de7c147e3588bd6daa3aebd68aa81c36
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/21/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="using-javascriptservices-for-creating-single-page-applications-with-aspnet-core"></a>ASP.NET Core 사용 단일 페이지 응용 프로그램을 만들기 위한 JavaScriptServices를 사용 하 여
 
@@ -48,7 +46,7 @@ JavaScriptServices 세 가지 고유한 NuGet 패키지 이루어져 있습니�
 
 ## <a name="what-is-spaservices"></a>SpaServices 란?
 
-ASP.NET Core SPAs를 구축 하기 위한 개발자의 기본 서버 쪽 플랫폼으로 배치 하려면 SpaServices 만들어졌습니다. SpaServices ASP.NET 코어 SPAs 개발할 필요가 없습니다 및 특정 클라이언트 프레임 워크에 고정 하지 않는 것입니다.
+ASP.NET Core SPAs를 구축 하기 위한 개발자의 기본 서버 쪽 플랫폼으로 배치 하려면 SpaServices 만들어졌습니다. SpaServices SPAs ASP.NET Core를 개발 하는 필요 하지 않습니다 및 특정 클라이언트 프레임 워크에 고정 하지 않는 것입니다.
 
 SpaServices와 같은 유용한 인프라를 제공 합니다.
 * [서버 쪽 사전 렌더링이](#server-prerendering)
@@ -75,7 +73,7 @@ SpaServices를 사용 하려면 다음을 설치 합니다.
 * [.NET core SDK](https://www.microsoft.com/net/download/core) 1.0 (이상)
     * Windows를 사용 하는 경우 설치 Visual Studio 2017을 선택 하 여 **.NET Core 플랫폼 간 개발** 작업 합니다.
 
-* [Microsoft.AspNetCore.SpaServices](https://www.nuget.org/packages/Microsoft.AspNetCore.SpaServices/) NuGet 패키지
+* [Microsoft.AspNetCore.SpaServices](https://www.nuget.org/packages/Microsoft.AspNetCore.SpaServices/) NuGet package
 
 <a name="server-prerendering"></a>
 
@@ -202,7 +200,7 @@ app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions {
 
 ## <a name="routing-helpers"></a>라우팅 도우미
 
-대부분의 ASP.NET Core 기반 SPAs 서버 쪽 라우팅과 함께 클라이언트 쪽 라우팅 합니다. SPA 및 MVC 라우팅 시스템 방해를 받지 않고 독립적으로 작업할 수 있습니다. 그러나가 문제점을 게시 한 특별 한 경우: 404 HTTP 응답을 식별 합니다.
+대부분의 ASP.NET Core 기반 SPAs 서버 쪽 라우팅과 함께 클라이언트 쪽 라우팅 합니다. SPA 및 MVC 라우팅 시스템 방해를 받지 않고 독립적으로 작업할 수 있습니다. 그러나, 하나의 가장자리 사례 가장 하 여 문제를 제기: 404 HTTP 응답을 식별 합니다.
 
 시나리오를 고려해 야의 확장명은 경로 `/some/page` 사용 됩니다. 해당 패턴 일치는 클라이언트 쪽 경로 않지만 요청 하지 않는 패턴 일치 한 서버 쪽 경로 가정 합니다. 에 대 한 들어오는 요청에 알아보겠습니다 `/images/user-512.png`, 일반적으로 서버에서 이미지 파일을 찾으려고 시도 합니다. 클라이언트 쪽 응용 프로그램에서 처리할 것 있음을 그럴 가능성은 해당 요청 된 리소스 경로는 모든 서버 쪽 경로 또는 정적 파일와 일치 하지 않으면,-404 HTTP 상태 코드를 반환 하려면 일반적으로 합니다.
 
@@ -239,12 +237,12 @@ dotnet new --install Microsoft.AspNetCore.SpaTemplates::*
 
 | 템플릿                                 | 짧은 이름 | 언어 | Tags        |
 |:------------------------------------------|:-----------|:---------|:------------|
-| 각도와 MVC ASP.NET Core             | angular    | [C#]     | 웹/MVC/SPA |
-| MVC ASP.NET Core Aurelia와             | aurelia    | [C#]     | 웹/MVC/SPA |
-| Knockout.js와 MVC ASP.NET Core         | knockout   | [C#]     | 웹/MVC/SPA |
-| MVC ASP.NET Core React.js와            | react      | [C#]     | 웹/MVC/SPA |
-| MVC ASP.NET Core React.js 및 Redux  | reactredux | [C#]     | 웹/MVC/SPA |
-| MVC ASP.NET Core Vue.js와              | vue        | [C#]     | 웹/MVC/SPA | 
+| 각도와 MVC ASP.NET Core             | angular    | [C#]     | Web/MVC/SPA |
+| MVC ASP.NET Core Aurelia와             | aurelia    | [C#]     | Web/MVC/SPA |
+| Knockout.js와 MVC ASP.NET Core         | knockout   | [C#]     | Web/MVC/SPA |
+| MVC ASP.NET Core React.js와            | react      | [C#]     | Web/MVC/SPA |
+| MVC ASP.NET Core React.js 및 Redux  | reactredux | [C#]     | Web/MVC/SPA |
+| MVC ASP.NET Core Vue.js와              | vue        | [C#]     | Web/MVC/SPA | 
 
 SPA 템플릿 중 하나를 사용 하 여 새 프로젝트를 만들려면 포함는 **약식 이름** 에 서식 파일의는 `dotnet new` 명령입니다. 다음 명령은 서버 측에 대해 구성 된 ASP.NET Core MVC와 함께 각 응용 프로그램를 만듭니다.
 
@@ -290,7 +288,7 @@ dotnet run
 
 ## <a name="testing-the-app"></a>응용 프로그램 테스트
 
-SpaServices 템플릿은 사용 하 여 클라이언트 쪽 테스트를 실행 하는 미리 구성 된 [Karma](https://karma-runner.github.io/1.0/index.html) 및 [Jasmine](https://jasmine.github.io/)합니다. Karma test runner를 해당 테스트에 대 한 반면 jasmine는 인기 있는 단위 테스트 프레임 워크에 JavaScript를입니다. Karma 함께 작동 하도록 구성 되는 [시스템용 Dev 미들웨어](#webpack-dev-middleware) 중지 하 고 변경 내용이 적용 될 때마다 테스트를 실행 하지 않아도 되도록 합니다. 테스트 사례 또는 테스트 사례 자체에 대해 실행 되는 코드 인지 테스트가 자동으로 실행 합니다.
+SpaServices 템플릿은 사용 하 여 클라이언트 쪽 테스트를 실행 하는 미리 구성 된 [Karma](https://karma-runner.github.io/1.0/index.html) 및 [Jasmine](https://jasmine.github.io/)합니다. Karma test runner를 해당 테스트에 대 한 반면 jasmine는 인기 있는 단위 테스트 프레임 워크에 JavaScript를입니다. Karma 함께 작동 하도록 구성 되는 [시스템용 Dev 미들웨어](#webpack-dev-middleware) 를 중지 하 고 변경 내용이 적용 될 때마다 테스트를 실행 하는 개발자는 필요 하지 않습니다. 테스트 사례 또는 테스트 사례 자체에 대해 실행 되는 코드 인지 테스트가 자동으로 실행 합니다.
 
 각 응용 프로그램을 사용 하 여 예를 들어, 두 개의 자스민 테스트 사례가 이미 제공에 대 한는 `CounterComponent` 에 *counter.component.spec.ts* 파일:
 

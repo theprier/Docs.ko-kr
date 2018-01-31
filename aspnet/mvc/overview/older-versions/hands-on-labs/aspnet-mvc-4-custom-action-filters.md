@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-custom-action-filters
 msc.type: authoredcontent
-ms.openlocfilehash: 6362f0506934ca3b3cc86e1a927af75e7bc4e1d3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 103cd68c576463d87d0077cc149f9b89c6e028e8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4-custom-action-filters"></a>ASP.NET MVC 4 사용자 지정 작업 필터
 ====================
@@ -96,7 +96,7 @@ ms.lasthandoff: 11/10/2017
 > - **결과** ActionResult 개체 실행의 필터입니다. 이 필터는 결과 HTTP 응답을 수정 하는 등의 추가 처리를 수행할 수 있습니다.
 > - **예외** 권한 부여 필터와 시작점과 결과의 실행 동작 메서드에서 어딘가에 발생 하는 처리 되지 않은 예외 경우에 실행 하는 필터입니다. 로깅 또는 오류 페이지 표시 등의 작업에 대 한 예외 필터를 사용할 수 있습니다.
 > 
-> 필터 공급자에 대 한 자세한 내용은 MSDN 링크를 방문 하십시오. ([https://msdn.microsoft.com/en-us/library/dd410209.aspx](https://msdn.microsoft.com/en-us/library/dd410209.aspx)).
+> 필터 공급자에 대 한 자세한 내용은 MSDN 링크를 방문 하십시오. ([https://msdn.microsoft.com/library/dd410209.aspx](https://msdn.microsoft.com/library/dd410209.aspx)).
 
 
 <a id="AboutLoggingFeature"></a>
@@ -164,7 +164,7 @@ ms.lasthandoff: 11/10/2017
     > [!NOTE]
     > **OnActionExecuting** 메서드를 사용 하 여 **Entity Framework** 새 ActionLog 레지스터를 추가 합니다. 작성 하는 컨텍스트 정보로 새 엔터티 인스턴스에 **filterContext**합니다.
     > 
-    > 에 대 한 자세한 내용은 **ControllerContext** 에 클래스 [msdn](https://msdn.microsoft.com/en-us/library/system.web.mvc.controllercontext.aspx)합니다.
+    > 에 대 한 자세한 내용은 **ControllerContext** 에 클래스 [msdn](https://msdn.microsoft.com/library/system.web.mvc.controllercontext.aspx)합니다.
 
 <a id="Ex1Task2"></a>
 
@@ -231,7 +231,7 @@ ms.lasthandoff: 11/10/2017
 
 또한 각 작업 필터는 필터의 범위에서 실행 순서를 결정 하는 데 사용 되는 순서 속성을 있습니다.
 
-사용자 지정 작업 필터 실행 순서에 대 한 자세한 내용은이 MSDN 문서를 참조 하십시오. ([https://msdn.microsoft.com/en-us/library/dd381609(v=vs.98).aspx](https://msdn.microsoft.com/en-us/library/dd381609(v=vs.98).aspx)) 합니다.
+사용자 지정 작업 필터 실행 순서에 대 한 자세한 내용은이 MSDN 문서를 참조 하십시오. ([https://msdn.microsoft.com/library/dd381609(v=vs.98).aspx](https://msdn.microsoft.com/library/dd381609(v=vs.98).aspx)) 합니다.
 
 <a id="Ex2Task1"></a>
 

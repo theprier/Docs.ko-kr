@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/displaying-a-custom-error-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 92a7e945a6f82e78b848bae8f4f362e16a567b1f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8d68dedfc1f606cc6f0381bcbdb3f65c1ea3b2e5
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="displaying-a-custom-error-page-c"></a>사용자 지정 오류 페이지 (C#)를 표시합니다.
 ====================
@@ -31,7 +31,7 @@ ms.lasthandoff: 11/10/2017
 
 완벽 한 상황에서는 런타임에 오류가 있을 것. 강력한 사용자 입력된 유효성 검사 및 외부 데이터베이스 서버와 전자 메일 서버와 같은 리소스는 오프 라인 안함와 프로그래머 링크도 확인을 사용 하 여 코드 버그 작성할 것입니다. 물론, 실제로 오류는 불가피 아닙니다. .NET Framework의 클래스는 예외를 throw 하 여 오류를 표시 합니다. Open 메서드를 개체의 연결 문자열에서 지정 된 데이터베이스에 연결을 설정 하는 예를 들어 SqlConnection을 호출 합니다. 그러나 데이터베이스 다운 된 경우 또는 연결 문자열에 자격 증명이 유효 하지 않으면 다음 Open 메서드가 throw는 `SqlException`합니다. 예외를 사용 하 여 처리 될 수 `try/catch/finally` 블록입니다. 경우 내의 코드는 `try` 제어가 적절 한 catch 블록으로 개발자 수 오류에서 복구를 시도 하는 위치, 블록에서 예외가 발생 합니다. 일치 하는 catch 블록이 없는 없거나 예외 percolates search의 호출 스택으로 예외를 발생 시킨 코드 try 블록에 없는 경우 `try/catch/finally` 블록입니다.
 
-예외 처리 되 고 하지 않고 ASP.NET 런타임이 이르기까지 버블링 되는 경우는 [ `HttpApplication` 클래스](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.aspx)의 [ `Error` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.error.aspx) 발생 구성 된 *오류 페이지*  표시 됩니다. 기본적으로 ASP.NET가 단계적으로 라고 하는 오류 페이지가 표시 됩니다는 [노란색 화면 사망](http://en.wikipedia.org/wiki/Yellow_Screen_of_Death#Yellow) (YSOD). 두 가지 버전의는 YSOD: 한 표시 예외 정보, 스택 추적 및 기타 정보는 응용 프로그램을 디버깅 하는 개발자가 (참조 **그림 1**); 다른 명시 하 고 런타임 오류 (참조 했습니다 **그림 2**).
+예외 처리 되 고 하지 않고 ASP.NET 런타임이 이르기까지 버블링 되는 경우는 [ `HttpApplication` 클래스](https://msdn.microsoft.com/library/system.web.httpapplication.aspx)의 [ `Error` 이벤트](https://msdn.microsoft.com/library/system.web.httpapplication.error.aspx) 발생 구성 된 *오류 페이지*  표시 됩니다. 기본적으로 ASP.NET가 단계적으로 라고 하는 오류 페이지가 표시 됩니다는 [노란색 화면 사망](http://en.wikipedia.org/wiki/Yellow_Screen_of_Death#Yellow) (YSOD). 두 가지 버전의는 YSOD: 한 표시 예외 정보, 스택 추적 및 기타 정보는 응용 프로그램을 디버깅 하는 개발자가 (참조 **그림 1**); 다른 명시 하 고 런타임 오류 (참조 했습니다 **그림 2**).
 
 예외 정보 YSOD 매우 응용 프로그램을 디버깅 하는 개발자를 위한 하지만 끈적이거나 및 비 전문적을 최종 사용자에 게는 YSOD를 표시 합니다. 대신, 최종 사용자가 상황을 설명 하는 보다 사용자 친화적인 용어일와 사이트의 모양과 느낌을 유지 하는 오류 페이지를 취해야 합니다. 다행히도는 사용자 지정 오류 페이지를 만드는 쉽게 된다는 점입니다. 이 자습서를 살펴보고 ASP 시작합니다. NET의 다른 오류는 페이지입니다. 그런 다음 사용자에 게 오류가 발생 한 경우에도 사용자 지정 오류 페이지를 표시할 웹 응용 프로그램을 구성 하는 방법을 보여 줍니다.
 
@@ -87,7 +87,7 @@ ms.lasthandoff: 11/10/2017
 - 구성 정보는 `<customErrors>` 섹션 및
 - 여부 사용자가 로컬 또는 원격으로 사이트를 방문 합니다.
 
-[ `<customErrors>` 섹션](https://msdn.microsoft.com/en-us/library/h0hfz6fc.aspx) 에 `Web.config` 어떤 오류 페이지가 표시 될 영향을 주는 두 개의 특성이: `defaultRedirect` 및 `mode`합니다. `defaultRedirect` 특성은 선택 사항이며 제공 된 경우 사용자 지정 오류 페이지의 URL을 지정 하 고 런타임 오류 YSOD 대신 사용자 지정 오류 페이지 표시 됨을 나타냅니다. `mode` 특성은 필수 이며 세 가지 값 중 하나를 허용: `On`, `Off`, 또는 `RemoteOnly`합니다. 이러한 값은 다음과 같이 동작:
+[ `<customErrors>` 섹션](https://msdn.microsoft.com/library/h0hfz6fc.aspx) 에 `Web.config` 어떤 오류 페이지가 표시 될 영향을 주는 두 개의 특성이: `defaultRedirect` 및 `mode`합니다. `defaultRedirect` 특성은 선택 사항이며 제공 된 경우 사용자 지정 오류 페이지의 URL을 지정 하 고 런타임 오류 YSOD 대신 사용자 지정 오류 페이지 표시 됨을 나타냅니다. `mode` 특성은 필수 이며 세 가지 값 중 하나를 허용: `On`, `Off`, 또는 `RemoteOnly`합니다. 이러한 값은 다음과 같이 동작:
 
 - `On`-사용자 지정 오류 페이지나 런타임 오류 YSOD 로컬 또는 원격 인지 여부에 관계 없이 모든 방문자에 게 표시 됨을 나타냅니다.
 - `Off`-예외 세부 정보 YSOD 로컬 또는 원격 인지 여부에 관계 없이 모든 방문자에 게 표시 되도록 지정 합니다.
@@ -168,9 +168,9 @@ ms.lasthandoff: 11/10/2017
 이 자습서에 설명 된 항목에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
 - [오류 페이지, 한 번 더](http://www.smashingmagazine.com/2009/01/29/404-error-pages-one-more-time/)
-- [예외에 대 한 디자인 지침](https://msdn.microsoft.com/en-us/library/ms229014.aspx)
+- [예외 디자인 지침](https://msdn.microsoft.com/library/ms229014.aspx)
 - [사용자에 게 친숙 오류 페이지](http://aspnet.4guysfromrolla.com/articles/090606-1.aspx)
-- [예외 처리 및 Throw](https://msdn.microsoft.com/en-us/library/5b2yeyab.aspx)
+- [예외 처리 및 Throw](https://msdn.microsoft.com/library/5b2yeyab.aspx)
 - [ASP.NET에서 사용자 지정 오류 페이지를 사용 하 여 제대로](http://professionalaspnet.com/archive/2007/09/30/Properly-Using-Custom-Error-Pages-in-ASP.NET.aspx)
 
 >[!div class="step-by-step"]

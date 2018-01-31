@@ -2,19 +2,18 @@
 title: "계정 확인 및 ASP.NET 코어에서 암호 복구"
 author: rick-anderson
 description: "전자 메일 확인 및 암호 재설정으로 ASP.NET Core 응용 프로그램을 구축 하는 방법을 보여 줍니다."
-keywords: "ASP.NET Core 암호 다시 설정, 전자 메일 확인, 보안"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 12/1/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/authentication/accconfirm
-ms.openlocfilehash: 955064122d2335016c7eb3dd7451b14106a3b83f
-ms.sourcegitcommit: 6e46abd65973dea796d364a514de9ec2e3e1c1ed
+ms.openlocfilehash: 459f1793b1f1f73792bb6537856cb739774c6261
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a>계정 확인 및 ASP.NET 코어에서 암호 복구
 
@@ -90,7 +89,7 @@ dotnet new mvc --auth Individual
 <a name="prevent-login-at-registration"></a>
 ## <a name="require-email-confirmation"></a>전자 메일 확인이 필요
 
-다른 사용자에 가장 하지 않는 것을 확인 하려면 새 사용자 등록의 전자 메일을 확인 하는 것이 좋습니다 (즉, 이러한 하지 않은 등록 된 다른 사용자의 전자 메일). 토론 포럼을 가지 며 하지 못하도록 하려는 경우를 가정해 볼 "yli@example.com로 등록" 에서"nolivetto@contoso.com." 전자 메일 확인 하지 않고 "nolivetto@contoso.com" 응용 프로그램에서 원치 않는 전자 메일을 가져올 수 있습니다. 사용자는 실수로으로 등록 된다고 가정 합니다 "ylo@example.com" 맞춤법 오류를 발견 하지 않은 "yli"의 수 앱이 올바른 전자 메일에 없는 때문에 암호 복구를 사용 하도록 합니다. 전자 메일 확인 bot에서만 제한 된 보호를 제공 하 고 여러 작업 전자 메일 별칭을 등록 하는 데 사용할 수 있는 결정된 된 스팸에서 보호를 제공 하지 않습니다.
+다른 사람을 가장 하지 하는 것을 확인 하려면 새 사용자 등록 전자 메일을 확인 하는 것이 좋습니다 (즉, 이러한 하지 않은 등록 된 다른 사용자의 전자 메일). 토론 포럼을 가지 며 하지 못하도록 하려는 경우를 가정해 볼 "yli@example.com로 등록" 에서"nolivetto@contoso.com." 전자 메일 확인 하지 않고 "nolivetto@contoso.com" 응용 프로그램에서 원치 않는 전자 메일을 가져올 수 있습니다. 사용자는 실수로으로 등록 된다고 가정 합니다 "ylo@example.com" 맞춤법 오류를 발견 하지 않은 "yli"의 수 앱이 올바른 전자 메일에 없는 때문에 암호 복구를 사용 하도록 합니다. 전자 메일 확인 bot에서만 제한 된 보호를 제공 하 고 여러 작업 전자 메일 별칭을 등록 하는 데 사용할 수 있는 결정된 된 스팸에서 보호를 제공 하지 않습니다.
 
 일반적으로 새 사용자는 확인 된 전자 메일을 갖기 전에 웹 사이트에 데이터를 게시 하는 것을 방지 하려고 합니다. 
 
@@ -111,7 +110,7 @@ dotnet new mvc --auth Individual
 ```csharp
 config.SignIn.RequireConfirmedEmail = true;
 ```
-이전 줄에는 해당 전자 메일이 확인 될 때까지 로그인에서 등록 된 사용자 수 없습니다. 그러나 해당 줄에서 등록 한 후에 기록 되 고 새 사용자를 방해 되지는 않습니다. 기본 코드는 등록 한 후 사용자를 로그인 합니다. 로그 한 후에 다시 등록할 때 까지는 로그인 할 수 없습니다. 따라서 새로 등록 된 사용자는 이번에 변경 하는 자습서의 뒷부분에 나오는 **하지** 에 기록 합니다.
+이전 줄에는 해당 전자 메일이 확인 될 때까지 로그인에서 등록 된 사용자 수 없습니다. 그러나 해당 줄에서 등록 한 후에 기록 되 고 새 사용자가 방지 하지 합니다. 기본 코드는 등록 한 후 사용자를 로그인 합니다. 로그 한 후에 다시 등록할 때 까지는 로그인 할 수 없습니다. 따라서 새로 등록 된 사용자는 이번에 변경 하는 자습서의 뒷부분에 나오는 **하지** 에 기록 합니다.
 
 ### <a name="configure-email-provider"></a>전자 메일 공급자를 구성 합니다.
 
@@ -278,7 +277,7 @@ Form 요소에 주석 처리 제거 *Views/Account/ForgotPassword.cshtml*합니�
 
 ## <a name="prevent-login-at-registration"></a>등록 시 로그인을 방지
 
-현재 템플릿과 함께 사용자 등록 양식을 완료 되는 로그인 (인증). 일반적으로 자신의 전자 메일 기록 하기 전에 확인 하려고 합니다. 아래 섹션에 것을 요구 하도록 코드 수정 기록 하기 전에 새로운 사용자가 확인 된 전자 메일입니다. 업데이트는 `[HttpPost] Login` 작업에는 *AccountController.cs* 다음 강조 표시 된 변경 내용과 파일을 합니다.
+현재 템플릿과 함께 사용자 등록 양식을 완료 되 면 로그인 (인증). 일반적으로 자신의 전자 메일 기록 하기 전에 확인 하려고 합니다. 아래 섹션에서 요구 하는 코드를 수정 합니다 म 새 사용자가 확인 된 전자 메일 로그인 합니다. 업데이트는 `[HttpPost] Login` 작업에는 *AccountController.cs* 다음 강조 표시 된 변경 내용과 파일을 합니다.
 
 [!code-csharp[Main](accconfirm/sample/WebApp1/Controllers/AccountController.cs?highlight=11-21&name=snippet_Login)]
 
@@ -303,4 +302,4 @@ Form 요소에 주석 처리 제거 *Views/Account/ForgotPassword.cshtml*합니�
 
 ![Facebook을 나열 하 여 외부 로그인 보기를 관리 합니다.](accconfirm/_static/fb.png)
 
-두 개의 계정은 결합 되었습니다. 두 계정으로 로그온 할 수 있게 됩니다. 경우에 대비 다운 되는 인증 서비스에서 소셜의 로그 또는 쓰지만 대개은 स ॅ स 소셜 계정으로 로컬 계정을 추가 하려면 사용자가 할 수 있습니다.
+두 개의 계정은 결합 되었습니다. 두 계정으로 로그온 할 수 있게 됩니다. 경우 다운 되는 인증 서비스에서 소셜의 로그 또는 쓰지만 대개를 분실 했다고 액세스 소셜 계정에 로컬 계정을 추가 하려면 사용자가 할 수 있습니다.

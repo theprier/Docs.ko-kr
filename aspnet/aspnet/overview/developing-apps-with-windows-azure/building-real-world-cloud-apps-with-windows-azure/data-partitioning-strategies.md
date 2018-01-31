@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-partitioning-strategies
 msc.type: authoredcontent
-ms.openlocfilehash: 8eddb7af2d9032153b30ab54d5e882f0b46cd4ce
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: dca016cb6293a346f5622cc272e510b182c86d58
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="data-partitioning-strategies-building-real-world-cloud-apps-with-azure"></a>데이터 분할 전략 (Azure로 응용 프로그램 빌딩 실제 클라우드)
 ====================
@@ -101,8 +101,8 @@ complication은으로 프로덕션 환경으로 전환 하기 전에을 계획 �
 
 설명서:
 
-- [Windows Azure 클라우드 서비스에서 대규모 서비스를 디자인에 대 한 유용한](https://msdn.microsoft.com/en-us/library/windowsazure/jj717232.aspx)합니다. 백서: Mark Simms 및 Michael Thomassy 합니다.
-- [Microsoft Patterns and Practices-클라우드 디자인 패턴](https://msdn.microsoft.com/en-us/library/dn568099.aspx)합니다. 데이터 분할 지침, 분할 패턴을 참조 하세요.
+- [Windows Azure 클라우드 서비스에서 대규모 서비스를 디자인에 대 한 유용한](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx)합니다. 백서: Mark Simms 및 Michael Thomassy 합니다.
+- [Microsoft Patterns and Practices-클라우드 디자인 패턴](https://msdn.microsoft.com/library/dn568099.aspx)합니다. 데이터 분할 지침, 분할 패턴을 참조 하세요.
 
 비디오:
 

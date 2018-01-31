@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-introduction-1-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 7c03453e64cfc065d9f424702cc5af373e9bf536
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9c0edb301de85d15b9a3527382b72211f6f3d3ec
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-introduction---1-of-12"></a>SQL Server Compact Visual Studio를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: 1 / 12-소개
 ====================
@@ -63,7 +63,7 @@ Cytanium.com,이 자습서에 사용 되는 호스팅 공급자 중 하나를 �
 
 ## <a name="deploying-web-site-projects"></a>웹 사이트 프로젝트 배포
 
-Contoso 대학 Visual Studio 웹 응용 프로그램 프로젝트입니다. 대부분의 배포 방법 및이 자습서에서 설명 하는 도구에는 적용 되지 않습니다 [웹 사이트 프로젝트](https://msdn.microsoft.com/en-us/library/dd547590.aspx)합니다. 웹 사이트 프로젝트를 배포 하는 방법에 대 한 정보를 참조 하십시오. [ASP.NET 배포 콘텐츠 맵](https://msdn.microsoft.com/en-us/library/bb386521.aspx#deployment_for_web_site_projects)합니다.
+Contoso 대학 Visual Studio 웹 응용 프로그램 프로젝트입니다. 대부분의 배포 방법 및이 자습서에서 설명 하는 도구에는 적용 되지 않습니다 [웹 사이트 프로젝트](https://msdn.microsoft.com/library/dd547590.aspx)합니다. 웹 사이트 프로젝트를 배포 하는 방법에 대 한 정보를 참조 하십시오. [ASP.NET 배포 콘텐츠 맵](https://msdn.microsoft.com/library/bb386521.aspx#deployment_for_web_site_projects)합니다.
 
 ## <a name="deploying-aspnet-mvc-projects"></a>ASP.NET MVC 프로젝트 배포
 

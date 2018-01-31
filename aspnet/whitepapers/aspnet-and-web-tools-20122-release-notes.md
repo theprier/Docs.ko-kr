@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/aspnet-and-web-tools-20122-release-notes
 msc.type: content
-ms.openlocfilehash: e6c940aa507d72928d71019070ded5197458a763
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 52559a47f86e572f873d4eaaab50e87eb51722fd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-and-web-tools-20122-release-notes"></a>릴리스 정보에 ASP.NET 및 Web Tools 2012.2
 ====================
@@ -61,7 +61,7 @@ ASP.NET 및 Visual Studio 2012 용 웹 도구 2012.2를 사용해 설치 가능 
 자습서 및 ASP.NET 및 웹 도구 2012.2 하는 방법에 대 한 기타 정보는 ASP.NET 웹 사이트 (https://www.asp.net)에서 사용할 수 있습니다.
 
 <a id="_Support"></a>
-## <a name="support"></a>지원
+## <a name="support"></a>Support(지원)
 
 ASP.NET 및 웹 도구 2012.2는 공식적으로 출시 되어 지원 합니다. 일반적인 지원 채널을 사용할 수 있습니다. ASP.NET 포럼에 질문을 게시할 수도 있습니다 ([https://forums.asp.net/](https://forums.asp.net/))에서 ASP.NET 커뮤니티의 회원과 비공식적인 지원을 제공할 수 있는 경우가 많습니다.
 
@@ -152,7 +152,7 @@ ASP.NET Web API OData에 대 한 자세한 내용은 참조 [https://go.microsof
 
 #### <a name="aspnet-web-api-tracing"></a>ASP.NET Web API 추적
 
-ASP.NET Web API 추적.NET 추적 웹 Api에서에서 추적 데이터를 통합합니다. 이제 Web API 프로젝트 템플릿에 기본적으로 설정 됩니다. 웹에 대 한 데이터 추적 Api 출력 창에 전송 및 IntelliTrace를 통해 사용할 수 있습니다. ASP.NET Web API Tracing 하면 Web API와의 통합을 통해 Windows Azure에서 호스팅되는 경우에 대 한 추적 정보 [Windows Azure 진단](https://msdn.microsoft.com/en-us/library/windowsazure/hh411529.aspx)합니다. 또한 설치 하 고 ASP.NET 웹 API 추적 NuGet 패키지를 사용 하 여 모든 응용 프로그램에서 ASP.NET 웹 API 추적 기능을 활성화 수 ([http://www.nuget.org/packages/microsoft.aspnet.webapi.tracing](http://www.nuget.org/packages/microsoft.aspnet.webapi.tracing)).
+ASP.NET Web API 추적.NET 추적 웹 Api에서에서 추적 데이터를 통합합니다. 이제 Web API 프로젝트 템플릿에 기본적으로 설정 됩니다. 웹에 대 한 데이터 추적 Api 출력 창에 전송 및 IntelliTrace를 통해 사용할 수 있습니다. ASP.NET Web API Tracing 하면 Web API와의 통합을 통해 Windows Azure에서 호스팅되는 경우에 대 한 추적 정보 [Windows Azure 진단](https://msdn.microsoft.com/library/windowsazure/hh411529.aspx)합니다. 또한 설치 하 고 ASP.NET 웹 API 추적 NuGet 패키지를 사용 하 여 모든 응용 프로그램에서 ASP.NET 웹 API 추적 기능을 활성화 수 ([http://www.nuget.org/packages/microsoft.aspnet.webapi.tracing](http://www.nuget.org/packages/microsoft.aspnet.webapi.tracing)).
 
 구성 및 ASP.NET Web API Tracing 사용에 대 한 자세한 내용은 참조 [https://go.microsoft.com/fwlink/?LinkID=269874](https://go.microsoft.com/fwlink/?LinkID=269874)합니다.
 
@@ -226,7 +226,7 @@ ASP.NET 및 웹 도구 2012.2 NuGet 2.1을 함께 제공 하 고 Visual Studio 2
 3. Visual Studio를 닫습니다.
 4. ASP.NET 및 웹 도구 2012.2 설치 폴더로 이동 합니다.
 
-    1. Visual Studio 2012: **Files\Microsoft ASP.NET\ASP.NET 웹 Stack\Visual Studio 2012 프로그램**
+    1. For Visual Studio 2012: **Program Files\Microsoft ASP.NET\ASP.NET Web Stack\Visual Studio 2012**
     2. Visual Studio 2012 Express for Web 용: **Program Files\Microsoft ASP.NET\ASP.NET 웹 Stack\Visual Studio Express 2012 for Web**
 5. NuGet을 다시 설치 하려면 NuGet.Tools.vsix을 두 번 클릭
 
@@ -279,13 +279,13 @@ JQuery 1.9/Knockout 2.2.1 업데이트을 기본 MVC SPA 프로젝트를 실행�
 
 파일 todo.model.js  
  todolist(data) 함수, 추가 다음:  
- **self.isSelected ko.observable(false); =**
+ **self.isSelected = ko.observable(false);**
 
 todoList.prototype.addTodo 함수 blacked 다음 텍스트를 추가 합니다.  
  **self.isSelected(true);**  
- self.newTodoTitle (&quot;&quot;);
+ self.newTodoTitle(&quot;&quot;);
 
 Index.cshtml 파일 blacked 다음 텍스트를 추가 합니다.  
- &lt;데이터 바인딩 폼 =&quot;제출: addTodo&quot;&gt;  
+ &lt;form data-bind=&quot;submit: addTodo&quot;&gt;  
  &lt;클래스를 입력 =&quot;addTodo&quot; 유형 =&quot;텍스트&quot; 데이터 바인딩 =&quot;값: newTodoTitle, 자리 표시자: '여기에 형식을 추가 하려면', blurOnEnter: true 이면 **hasfocus: isSelected**, 이벤트: {흐림: addTodo}&quot; /&gt;  
  &lt;/form&gt;

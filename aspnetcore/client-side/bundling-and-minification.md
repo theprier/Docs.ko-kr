@@ -11,11 +11,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bundling-and-minification
-ms.openlocfilehash: ac8e7fee7600dabb8f4970b5bf87ad7a57ebf17f
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 6c233d0957ce9974adbc6112e6194c072aab0b41
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="bundling-and-minification"></a>묶음 및 축소
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 01/11/2018
 
 묶음 및 축소는 두 가지 고유한 성능 최적화가 웹 응용 프로그램에 적용할 수 있습니다. 함께 사용할 묶음 및 축소 성능을 향상 시킬 서버 요청 수를 줄이면 및 정적 요청 된 자산의 크기를 줄이십시오.
 
-묶음 및 축소는 주로 첫 번째 페이지 요청 부하 시간을 개선 합니다. 웹 페이지를 요청 되 면 브라우저 정적 자산 (JavaScript, CSS 및 이미지)를 캐시 합니다. 따라서 묶음 및 축소 하지 때 성능을 향상 시킬 동일한 페이지 또는 같은 자산을 요청 하는 동일한 사이트에서 페이지를 요청 합니다. 설정 하지 않으면는 사용자의 자산에서 올바르게 헤더 만료 되 고 묶음 및 축소를 사용 하지 않는 경우 브라우저의 새로 고침 추론 표시 자산 부실 몇 일 후 합니다. 또한 브라우저 각 자산에 대 한 유효성 검사 요청을 해야 합니다. 이 경우 묶음 및 축소 첫 번째 페이지 요청 후에 뛰어난 성능을 제공합니다.
+묶음 및 축소는 주로 첫 번째 페이지 요청 부하 시간을 개선 합니다. 웹 페이지를 요청 되 면 브라우저 정적 자산 (JavaScript, CSS 및 이미지)를 캐시 합니다. 따라서 묶음 및 축소 하지 때 성능을 향상 시킬 동일한 페이지 또는 같은 자산을 요청 하는 동일한 사이트에서 페이지를 요청 합니다. 경우는 만료 된 헤더는 자산에 올바르게 설정 되지 않았습니다 고 묶음 및 축소 사용 하지 않을 경우 브라우저의 새로 고침 추론 표시 자산 부실 몇 일 후 합니다. 또한 브라우저 각 자산에 대 한 유효성 검사 요청을 해야 합니다. 이 경우 묶음 및 축소 첫 번째 페이지 요청 후에 뛰어난 성능을 제공합니다.
 
 ### <a name="bundling"></a>번들
 
@@ -77,9 +77,9 @@ MVC 및 Razor 페이지 프로젝트 템플릿에 *bundleconfig.json* 구성 파
 
 구성 옵션은 다음과 같습니다.
 
-* `outputFileName`: 출력 번들 파일의 이름입니다. 상대 경로 포함할 수 있습니다는 *bundleconfig.json* 파일입니다. **필수**
+* `outputFileName`: 출력 번들 파일의 이름입니다. 상대 경로 포함할 수 있습니다는 *bundleconfig.json* 파일입니다. **required**
 * `inputFiles`: 함께 번들로 묶는 파일의 배열입니다. 이들은 구성 파일에 상대 경로입니다. **선택적**, * 빈 출력 파일에 빈 값이 발생 합니다. [와일드 카드 사용](http://www.tldp.org/LDP/abs/html/globbingref.html) 패턴이 지원 됩니다.
-* `minify`: 출력 형식에 대 한 축소 옵션입니다. **선택적**, *기본값-`minify: { enabled: true }`*
+* `minify`: 출력 형식에 대 한 축소 옵션입니다. **optional**, *default - `minify: { enabled: true }`*
   * 구성 옵션은 출력 파일 형식을 사용할 수 있습니다.
     * [CSS Minifier입니다.](https://github.com/madskristensen/BundlerMinifier/wiki/cssminifier)
     * [JavaScript Minifier입니다.](https://github.com/madskristensen/BundlerMinifier/wiki/JavaScript-Minifier-settings)

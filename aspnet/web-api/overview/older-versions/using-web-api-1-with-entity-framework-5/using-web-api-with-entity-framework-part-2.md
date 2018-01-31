@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: 5d4c7d7d02ced5a99db5b59f9e2e1adf6588208a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a573b47d27767dc78d557cd2b6c73714eb9e94f4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="part-2-creating-the-domain-models"></a>2 단계: 도메인 모델 만들기
 ====================
@@ -32,9 +32,9 @@ Entity Framework 방식을 사용 하는 방법은 세 가지가 있습니다.
 - 모델 우선: 시각적 모델로 시작 하 고 엔터티 프레임 워크는 데이터베이스와 코드를 생성 합니다.
 - 코드 중심: 코드를 시작 하 고 Entity Framework는 데이터베이스를 생성 합니다.
 
-도메인 개체 POCOs (일반 이전 CLR 개체)으로 정의 하 여 시작 하므로 코드 중심 접근 방식을 사용 했습니다. 코드 중심 접근 방식으로 도메인 개체는 데이터베이스 계층 예: 거래 또는 지 속성을 지원 하기 위해 모든 추가 코드가 필요 하지 않습니다. (특히 필요가에서 상속 하는 [EntityObject](https://msdn.microsoft.com/en-us/library/system.data.objects.dataclasses.entityobject.aspx) 클래스입니다.) Entity Framework 데이터베이스 스키마를 생성 하는 방법을 제어 하려면 데이터 주석을 여전히 사용할 수 있습니다.
+도메인 개체 POCOs (일반 이전 CLR 개체)으로 정의 하 여 시작 하므로 코드 중심 접근 방식을 사용 했습니다. 코드 중심 접근 방식으로 도메인 개체는 데이터베이스 계층 예: 거래 또는 지 속성을 지원 하기 위해 모든 추가 코드가 필요 하지 않습니다. (특히 필요가에서 상속 하는 [EntityObject](https://msdn.microsoft.com/library/system.data.objects.dataclasses.entityobject.aspx) 클래스입니다.) Entity Framework 데이터베이스 스키마를 생성 하는 방법을 제어 하려면 데이터 주석을 여전히 사용할 수 있습니다.
 
-POCOs 설명 하는 모든 추가 속성을 전송 하지 않기 때문에 [데이터베이스 상태](https://msdn.microsoft.com/en-us/library/system.data.entitystate.aspx), JSON 또는 XML에 쉽게 serialize 할 수 있습니다. 그러나 의미는 아닙니다 항상 클라이언트에 게 직접 Entity Framework 모델을 노출 해야 볼 수 있겠지만,이 자습서의 뒷부분에 나오는 합니다.
+POCOs 설명 하는 모든 추가 속성을 전송 하지 않기 때문에 [데이터베이스 상태](https://msdn.microsoft.com/library/system.data.entitystate.aspx), JSON 또는 XML에 쉽게 serialize 할 수 있습니다. 그러나 의미는 아닙니다 항상 클라이언트에 게 직접 Entity Framework 모델을 노출 해야 볼 수 있겠지만,이 자습서의 뒷부분에 나오는 합니다.
 
 다음 POCOs을 만들겠습니다.
 

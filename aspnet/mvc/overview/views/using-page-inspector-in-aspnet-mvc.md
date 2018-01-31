@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/views/using-page-inspector-in-aspnet-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 6aa9f16f166ecf5529ae33a17951eb5ea425e7af
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5b443963a089f96a9dab11b7db4a25451075d6be
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-page-inspector-in-aspnet-mvc"></a>ASP.NET MVC에서 페이지 검사기 사용
 ====================
@@ -37,7 +37,7 @@ Tim Ammann으로
 > - [페이지 검사기를 사용 하 여 태그를 변경 하려면](#_5_using_page)
 > - [검사 모드 및 HTML 창](#_6_inspection_mode)
 > - [스타일 창에서 CSS 변경 내용 미리 보기](#_7_previewing_css)
-> - [CSS 자동 동기화](#css_auto_sync)
+> - [CSS Auto Sync](#css_auto_sync)
 > - [CSS 색 선택을 사용 하 여](#css_color_picker)
 > - [JavaScript에 매핑 동적 페이지 요소](#map_dynamic_elements)
 
@@ -46,7 +46,7 @@ Tim Ammann으로
 
 ## <a name="prerequisites"></a>필수 구성 요소
 
-- [Visual Studio 2012](https://www.microsoft.com/visualstudio/11/en-us) 또는 [Visual Studio Express 2012 for Web](https://www.microsoft.com/visualstudio/11/en-us/downloads#express-web)합니다.
+- [Visual Studio 2012](https://www.microsoft.com/visualstudio/11) 또는 [Visual Studio Express 2012 for Web](https://www.microsoft.com/visualstudio/11/downloads#express-web)합니다.
 
 > [!NOTE]
 > 페이지 검사기의 최신 버전을 사용 [웹 플랫폼 설치 관리자](https://go.microsoft.com/fwlink/?LinkId=255386) 를 Windows Azure SDK for.NET 2.0 설치 합니다.
@@ -84,9 +84,9 @@ Visual Studio 2012에서 있습니다 수 마우스 오른쪽 단추로 클릭 �
 
 ![페이지 검사기에서 보기 Index.cshtml](using-page-inspector-in-aspnet-mvc/_static/image8.png)
 
-기본적으로 Visual Studio 환경의 왼쪽에서 페이지 검사기 창으로 도킹 됩니다. 원하는 경우, 다른 위치에서 도킹 하거나 창을 도킹을 해제 수 있습니다. 참조 [하는 방법: 창 정렬 및 도킹](https://msdn.microsoft.com/en-us/library/z4y0hsax.aspx)합니다.
+기본적으로 Visual Studio 환경의 왼쪽에서 페이지 검사기 창으로 도킹 됩니다. 원하는 경우, 다른 위치에서 도킹 하거나 창을 도킹을 해제 수 있습니다. 참조 [하는 방법: 창 정렬 및 도킹](https://msdn.microsoft.com/library/z4y0hsax.aspx)합니다.
 
-페이지 검사기 창 상단의 브라우저 창에서 현재 페이지를 보여 줍니다. 아래쪽 창의 페이지의 다양 한 측면을 검사할 수 있는 일부 탭 함께 HTML 태그에서 페이지를 보여줍니다. 아래쪽 창의 비슷합니다는 [F12 개발자 도구](https://msdn.microsoft.com/en-us/ie/aa740478) Internet Explorer에서 합니다.
+페이지 검사기 창 상단의 브라우저 창에서 현재 페이지를 보여 줍니다. 아래쪽 창의 페이지의 다양 한 측면을 검사할 수 있는 일부 탭 함께 HTML 태그에서 페이지를 보여줍니다. 아래쪽 창의 비슷합니다는 [F12 개발자 도구](https://msdn.microsoft.com/ie/aa740478) Internet Explorer에서 합니다.
 
 ![페이지 검사기에서 ASP.NET MVC 응용 프로그램](using-page-inspector-in-aspnet-mvc/_static/image10.png)
 

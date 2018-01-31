@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/performance/signalr-performance
 msc.type: authoredcontent
-ms.openlocfilehash: dec2602e47fbcb838643a506a7e3feebda9d9c81
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4468ee8031afccca847db67bd4b5b263f0a2c5ac
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="signalr-performance"></a>SignalR 성능
 ====================
@@ -87,7 +87,7 @@ Serialize 된 개체의 크기를 줄여 SignalR 메시지의 크기를 줄일 �
 
 ### <a name="tuning-your-signalr-server-for-performance"></a>SignalR 서버 성능을 튜닝
 
-다음 구성 설정은 SignalR 응용 프로그램에서 성능 향상을 위해 서버 조정할 데 사용할 수 있습니다. ASP.NET 응용 프로그램의 성능을 향상 하는 방법에 대 한 일반적인 정보를 참조 하십시오. [ASP.NET 성능 향상](https://msdn.microsoft.com/en-us/library/ff647787.aspx)합니다.
+다음 구성 설정은 SignalR 응용 프로그램에서 성능 향상을 위해 서버 조정할 데 사용할 수 있습니다. ASP.NET 응용 프로그램의 성능을 향상 하는 방법에 대 한 일반적인 정보를 참조 하십시오. [ASP.NET 성능 향상](https://msdn.microsoft.com/library/ff647787.aspx)합니다.
 
 **SignalR 구성 설정**
 
@@ -104,7 +104,7 @@ Serialize 된 개체의 크기를 줄여 SignalR 메시지의 크기를 줄일 �
     [!code-console[Main](signalr-performance/samples/sample4.cmd)]
 - **ApplicationPool QueueLength**: Http.sys 응용 프로그램 풀에 대 한 큐 대기 하는 요청의 최대 수입니다. 큐가 가득 찬 경우 새 요청에서 503 "서비스를 사용할 수 없음" 응답을 수신 합니다. 기본값은 1000입니다.
 
-    응용 프로그램을 호스팅하는 응용 프로그램 풀에서 작업자 프로세스에 대 한 큐 길이 줄이는 메모리 리소스를 확보 합니다. 자세한 내용은 참조 [관리, 조정, 및 응용 프로그램 풀 구성](https://technet.microsoft.com/en-us/library/cc745955.aspx)합니다.
+    응용 프로그램을 호스팅하는 응용 프로그램 풀에서 작업자 프로세스에 대 한 큐 길이 줄이는 메모리 리소스를 확보 합니다. 자세한 내용은 참조 [관리, 조정, 및 응용 프로그램 풀 구성](https://technet.microsoft.com/library/cc745955.aspx)합니다.
 
 **ASP.NET 구성 설정**
 
@@ -215,7 +215,7 @@ SignalR 메시지 트래픽에 의해 생성 된 오류를 측정 하는 다음 
 
 다음 메트릭을 트래픽과 확장 공급자에서 발생 한 오류를 측정 합니다. A **스트림** 이 컨텍스트에서이 확장 공급자에서 사용 하는 배율 단위에는이 SQL Server가 사용 하는 경우 테이블, 서비스 버스를 사용 하는 경우 항목 및 구독을 Redis 사용 되는 경우. 각 스트림에 순서가 지정 된 읽기 및 쓰기 작업을 사용 하면 단일 스트림을 병목 상태가 발생할 수 배율, 되므로 해당 병목 현상을 줄일 수 있도록 스트림 수를 늘릴 수 있습니다. 여러 개의 스트림을 사용 되는 경우 SignalR 이러한 스트림에 지정된 된 연결에서 보낸 메시지 순서는 보장 하는 방식에서 (분할) 메시지를 자동으로 배포 합니다.
 
-[MaxQueueLength](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.messaging.scaleoutconfiguration.maxqueuelength(v=vs.118).aspx) 설정은 SignalR에서 유지 관리 하는 확장 송신 큐의 길이 제어 합니다. 이 값 보다 큰로 설정 0 모든 메시지를 한 번에 하나씩에 보내도록 구성 된 메시징 백플레인으로 송신 큐에 배치 합니다. 큐 크기가 구성된 된 길이 넘으면, 이후에 보내기를 호출 즉시와 함께 실패 한 [InvalidOperationException](https://msdn.microsoft.com/en-us/library/system.invalidoperationexception(v=vs.118).aspx) 큐의 메시지 수가 설정 보다 작으면 될 때까지 다시 합니다. 큐 나 때문에 구현 된 백플레인 일반적으로 자신의 큐 흐름 제어 위치에 기본적으로 비활성화 됩니다. SQL Server의 경우 한 번에 진행 하는 송신의 수를 제한 효과적으로 연결 풀링이 합니다.
+[MaxQueueLength](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.scaleoutconfiguration.maxqueuelength(v=vs.118).aspx) 설정은 SignalR에서 유지 관리 하는 확장 송신 큐의 길이 제어 합니다. 이 값 보다 큰로 설정 0 모든 메시지를 한 번에 하나씩에 보내도록 구성 된 메시징 백플레인으로 송신 큐에 배치 합니다. 큐 크기가 구성된 된 길이 넘으면, 이후에 보내기를 호출 즉시와 함께 실패 한 [InvalidOperationException](https://msdn.microsoft.com/library/system.invalidoperationexception(v=vs.118).aspx) 큐의 메시지 수가 설정 보다 작으면 될 때까지 다시 합니다. 큐 나 때문에 구현 된 백플레인 일반적으로 자신의 큐 흐름 제어 위치에 기본적으로 비활성화 됩니다. SQL Server의 경우 한 번에 진행 하는 송신의 수를 제한 효과적으로 연결 풀링이 합니다.
 
 기본적으로 스트림을 하나만 SQL Server 및 Redis에 대 한 사용, 서비스 버스 5 개의 스트림을 사용 및 queueing 사용 하지 않으면 되지만 SQL 서버와 서비스 버스에서 구성을 통해 이러한 설정을 변경할 수 있습니다.
 
@@ -245,19 +245,19 @@ A **버퍼링** 스트림이 faulted 상태로 전환; 스트림이 faulted 상�
 
 다음 성능 카운터는 응용 프로그램의 성능 모니터링에 유용한 수도 있습니다.
 
-**메모리**
+**Memory**
 
 - .NET CLR 메모리\\전체 힙 (w3wp)에서 바이트 수
 
 **ASP.NET**
 
-- Asp. net\requests Current
+- ASP.NET\Requests Current
 - ASP.NET\Queued
 - ASP.NET\Rejected
 
 **CPU**
 
-- 프로세서 Information\Processor 시간
+- Processor Information\Processor Time
 
 **TCP/IP**
 
@@ -280,6 +280,6 @@ A **버퍼링** 스트림이 faulted 상태로 전환; 스트림이 faulted 상�
 
 ASP.NET 성능 모니터링 및 튜닝에 대 한 자세한 내용은 다음 항목을 참조 합니다.
 
-- [ASP.NET 성능 개요](https://msdn.microsoft.com/en-us/library/cc668225(v=vs.100).aspx)
+- [ASP.NET 성능 개요](https://msdn.microsoft.com/library/cc668225(v=vs.100).aspx)
 - [IIS 7.5, IIS 7.0 및 IIS 6.0에 ASP.NET 스레드 사용](https://blogs.msdn.com/b/tmarq/archive/2007/07/21/asp-net-thread-usage-on-iis-7-0-and-6-0.aspx)
-- [&lt;applicationPool&gt; 요소 (웹 설정)](https://msdn.microsoft.com/en-us/library/dd560842.aspx)
+- [&lt;applicationPool&gt; 요소 (웹 설정)](https://msdn.microsoft.com/library/dd560842.aspx)

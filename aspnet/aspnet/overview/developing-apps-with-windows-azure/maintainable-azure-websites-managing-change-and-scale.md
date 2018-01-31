@@ -2,7 +2,7 @@
 uid: aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
 title: "실습 랩: Azure 웹 사이트를 유지 관리 가능한: 변경 및 크기 조정 관리 | Microsoft Docs"
 author: rick-anderson
-description: "Microsoft Azure를 사용 하면 쉽게 만들고 프로덕션 환경에 웹 사이트를 배포 합니다. 하지만 응용 프로그램은 라이브 때 완료 되지 않았습니다, 그리고 방금 시작! 있습니다..."
+description: "이 랩에서 Microsoft Azure 손쉽게 방법을를 빌드 및 프로덕션 환경에 웹 사이트 배포에 대해 알아봅니다."
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/16/2014
@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
 msc.type: authoredcontent
-ms.openlocfilehash: 1d6d9265d93fbd32e2d9c22e2ac3db9b5ffd9776
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4bce02b2c592ff04e0dbce78d18004c69268e4fd
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a>실습 랩: Azure 웹 사이트를 유지 관리 가능한: 변경 및 크기 조정 관리
 ====================
@@ -251,7 +251,7 @@ ms.lasthandoff: 11/10/2017
 이 연습에서는 배포는 **들은 퀴즈** Git 소스 제어를 사용 하 여 웹 응용 프로그램의 스테이징 환경에 응용 프로그램입니다. 이렇게 하려면 웹 앱 만들기 및 관리 포털에서 필수 구성 요소를 프로 비전를 하는 구성 된 **Git** 리포지토리 및 응용 프로그램을 푸시 하도록 소스 코드를 로컬 컴퓨터에서 스테이징 슬롯입니다. 또한와 프로덕션 데이터베이스를 업데이트 합니다는 **Code First 마이그레이션을** 이전 연습에서 만든 합니다. 그런 다음 해당 작업을 확인 하려면이 테스트 환경에서 응용 프로그램을 실행 합니다. 했으면 한다는 예상에 따라 작동, 프로덕션 환경에 응용 프로그램을 승격 합니다.
 
 > [!NOTE]
-> 준비 된 게시를 활성화 하려면 웹 응용 프로그램에 있어야 **표준 모드**합니다. Note를 표준 모드로 웹 앱을 변경 하는 경우 추가 비용이 발생에 발생 합니다. 가격에 대 한 자세한 내용은 참조 [앱 서비스 가격 책정](https://azure.microsoft.com/en-us/pricing/details/app-service/)합니다.
+> 준비 된 게시를 활성화 하려면 웹 응용 프로그램에 있어야 **표준 모드**합니다. Note를 표준 모드로 웹 앱을 변경 하는 경우 추가 비용이 발생에 발생 합니다. 가격에 대 한 자세한 내용은 참조 [앱 서비스 가격 책정](https://azure.microsoft.com/pricing/details/app-service/)합니다.
 
 
 <a id="Ex2Task1"></a>
@@ -659,7 +659,7 @@ ms.lasthandoff: 11/10/2017
 
     ![Microsoft Visual Studio 경고](maintainable-azure-websites-managing-change-and-scale/_static/image68.png "Microsoft Visual Studio 경고")
 
-    *Microsoft Visual Studio 경고*
+    *Microsoft Visual Studio warning*
 11. **서버 탐색기**를 마우스 오른쪽 단추로 클릭는 **이미지** blob 컨테이너 및 선택 **Blob 컨테이너 보기**합니다.
 
     ![Blob 컨테이너 보기](maintainable-azure-websites-managing-change-and-scale/_static/image69.png "Blob 컨테이너 보기")
@@ -695,7 +695,7 @@ ms.lasthandoff: 11/10/2017
     [!code-xml[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample17.xml)]
 
     > [!NOTE]
-    > URL 다시 쓰기는 들어오는 웹 요청을 가로채 고 다른 리소스에 요청을 리디렉션하는 과정입니다. 규칙을 다시 작성 하는 URL 다시 쓰기 엔진은 리디렉션해야 하 고 요청을 리디렉션할 수 필요로 하는 경우를 나타냅니다. 두 문자열의 다시 쓰기 규칙이 구성 됩니다: 요청한 URL에서 찾을 패턴 (일반적으로 사용 정규식) 하는 경우, 사용 하 여 패턴을 바꿀 문자열을 찾을 수 있습니다. 자세한 내용은 참조 [ASP.NET의 URL 다시 쓰기](https://msdn.microsoft.com/en-us/library/ms972974.aspx)합니다.
+    > URL 다시 쓰기는 들어오는 웹 요청을 가로채 고 다른 리소스에 요청을 리디렉션하는 과정입니다. 규칙을 다시 작성 하는 URL 다시 쓰기 엔진은 리디렉션해야 하 고 요청을 리디렉션할 수 필요로 하는 경우를 나타냅니다. 두 문자열의 다시 쓰기 규칙이 구성 됩니다: 요청한 URL에서 찾을 패턴 (일반적으로 사용 정규식) 하는 경우, 사용 하 여 패턴을 바꿀 문자열을 찾을 수 있습니다. 자세한 내용은 참조 [ASP.NET의 URL 다시 쓰기](https://msdn.microsoft.com/library/ms972974.aspx)합니다.
 3. 키를 눌러 **CTRL + S** 여 변경 내용을 저장 합니다.
 4. 새 **Git Bash** Azure 앱 서비스에 업데이트 된 응용 프로그램을 배포 하는 콘솔입니다.
 5. Azure에 변경 내용을 푸시 하려면 다음 명령을 실행 합니다. 업데이트는 *[귀하가 응용 프로그램 경로]* 자리 표시자에 대 한 경로 **GeekQuiz** 솔루션입니다. 배포 암호를 묻는 메시지가 나타납니다.
@@ -910,7 +910,7 @@ ms.lasthandoff: 11/10/2017
     > 
     > - 부하 테스트의 기간을 늘려야 (예: **10 분**)
     > - 최대값과 최소값을 줄이려면는 **대상 CPU** 웹 응용 프로그램의 자동 크기 조정 구성에 대 한 범위
-    > - 부하 테스트와 클라우드에서 실행 **Visual Studio Online**합니다. 자세한 내용은 [여기](https://www.visualstudio.com/en-us/get-started/load-test-your-app-vs.aspx)
+    > - 부하 테스트와 클라우드에서 실행 **Visual Studio Online**합니다. 자세한 내용은 [여기](https://www.visualstudio.com/get-started/load-test-your-app-vs.aspx)
 
 * * *
 

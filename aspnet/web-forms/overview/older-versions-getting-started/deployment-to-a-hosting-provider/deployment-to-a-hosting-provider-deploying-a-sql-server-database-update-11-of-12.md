@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 898259885da8a089db296bd0f400ee8863877d08
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aeec69c7373a111d30e8f32a374a9f02fb4c080a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-a-sql-server-database-update---11-of-12"></a>SQL Server Compact Visual Studio 또는 Visual Web Developer를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: SQL Server 데이터베이스 업데이트-12 11를 배포 합니다.
 ====================
@@ -153,7 +153,7 @@ Code First 마이그레이션을 테스트 환경에서 동일한 방식으로 �
 
 ## <a name="more-information"></a>추가 정보
 
-이 일련의 제 3 자 호스팅 공급자에 ASP.NET 웹 응용 프로그램 배포에 대 한 자습서를 완료 했습니다. 이 자습서에 포함 된 항목 중 하나에 대 한 자세한 내용은 참조는 [ASP.NET 배포 콘텐츠 맵](https://msdn.microsoft.com/en-us/library/bb386521(v=vs.110).aspx) MSDN 웹 사이트입니다.
+이 일련의 제 3 자 호스팅 공급자에 ASP.NET 웹 응용 프로그램 배포에 대 한 자습서를 완료 했습니다. 이 자습서에 포함 된 항목 중 하나에 대 한 자세한 내용은 참조는 [ASP.NET 배포 콘텐츠 맵](https://msdn.microsoft.com/library/bb386521(v=vs.110).aspx) MSDN 웹 사이트입니다.
 
 ## <a name="acknowledgements"></a>감사의 글
 
@@ -161,9 +161,9 @@ Code First 마이그레이션을 테스트 환경에서 동일한 방식으로 �
 
 - [Alberto Poblacion, MVP &amp; MCT, 스페인](https://mvp.support.microsoft.com/profile/Alberto)
 - Jarod 퍼거슨, 데이터 플랫폼 개발 MVP United States
-- 강한 Mittal, Microsoft
+- Harsh Mittal, Microsoft
 - [Kristina Olson, Microsoft](https://blogs.iis.net/krolson/default.aspx)
-- [Mike 서, Microsoft](http://www.mikepope.com/blog/DisplayBlog.aspx)
+- [Mike Pope, Microsoft](http://www.mikepope.com/blog/DisplayBlog.aspx)
 - Mohit Srivastava, Microsoft
 - [Raffaele Rialdi 이탈리아](http://www.iamraf.net/)
 - [Rick Anderson, Microsoft](https://blogs.msdn.com/b/rickandy/)

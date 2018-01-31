@@ -2,20 +2,18 @@
 title: "인증"
 author: rick-anderson
 description: "이 문서는 다양한 ASP.NET Core 인증 항목에 대한 목차로 사용됩니다."
-keywords: "ASP.NET Core,인증"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: 981852c9-78f9-4590-aaee-9d50a2838dfe
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: security/authentication/index
-ms.openlocfilehash: 182d3b5d567a46bb0f7d7c5864ebbc252782d8a3
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 017aa939ce4c469c08d1cc3a63002ae24c66c096
+ms.sourcegitcommit: 459cb3289741a3f46325e605a617dc926ee0563d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/22/2018
 ---
 # <a name="authentication"></a>인증
 
@@ -38,6 +36,8 @@ ms.lasthandoff: 01/11/2018
 * [Azure Active Directory](azure-active-directory/index.md)
 
   * [ASP.NET Core 웹앱에 Azure AD 통합](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)
+
+  * [Azure AD B2C를 고객 지향 ASP.NET Core 웹앱에 통합](azure-ad-b2c.md)
 
   * [Azure AD를 사용하여 WPF 앱에서 ASP.NET Core Web API 호출](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore/)
 

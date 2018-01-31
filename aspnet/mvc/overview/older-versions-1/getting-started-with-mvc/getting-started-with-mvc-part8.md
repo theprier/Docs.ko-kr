@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part8
 title: "모델에 열 추가 | Microsoft Docs"
 author: shanselman
-description: "ASP.NET MVC의 기본 사항을 소개 하는 초보자를 위한 자습서입니다. 읽기 및 쓰기는 데이터베이스에서 단순 웹 응용 프로그램을 만들 수 있습니다."
+description: "ASP.NET MVC의 기본 사항을 소개 하는 초보자를 위한 자습서입니다. 읽기 및 쓰기는 데이터베이스에서 단순 웹 응용 프로그램을 만듭니다."
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part8
 msc.type: authoredcontent
-ms.openlocfilehash: 4a4fc144dcbed8ad14411332df7acccc032ddf46
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 17ee105f596319423ac83cf718683ed293f952f3
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="adding-a-column-to-the-model"></a>모델에 열 추가
 ====================
@@ -79,7 +79,7 @@ ms.lasthandoff: 11/10/2017
 
 이제 확인해이 중간 수준 자습서로 이동할 수 있습니다 "[MVC Music Store](../../older-versions/mvc-music-store/mvc-music-store-part-1.md)" 뿐 아니라 많은 비디오 및 리소스에 [https://asp.net/mvc](https://asp.net/mvc) ASP.NET MVC에 대해 훨씬 더 자세한!
 
-원하는 작업 합니다.
+즐겨보세요!
 
 - Scott Hanselman- [http://hanselman.com](http://hanselman.com) 및 [ @shanselman ](http://twitter.com/shanselman) Twitter에서.
 

@@ -2,19 +2,18 @@
 title: "EF 코어 8-마이그레이션-4 사용 하 여 razor 페이지"
 author: rick-anderson
 description: "이 자습서에서는 ASP.NET Core MVC 응용 프로그램에서 데이터 모델 변경 내용을 관리 하기 위한 EF 코어 마이그레이션 기능을 사용 하 여 시작 합니다."
-keywords: "ASP.NET Core, Entity Framework Core, 마이그레이션"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/15/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-rp/migrations
-ms.openlocfilehash: 8549fc522bcd05a5755a449cd6d4b655f00d998b
-ms.sourcegitcommit: 6e46abd65973dea796d364a514de9ec2e3e1c1ed
+ms.openlocfilehash: e89d95702cb94556bc6e5dc73253c51acaa11578
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/02/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="migrations---ef-core-with-razor-pages-tutorial-4-of-8"></a>마이그레이션-EF 코어 Razor 페이지 자습서 (8 4)
 
@@ -55,7 +54,7 @@ DB 데이터 모델을 통해 동기화를 유지 하려면이 방법을 프로�
 
 [!code-json[Main](intro/samples/cu/appsettings2.json?range=1-4)]
 
-연결 문자열에 DB 이름을 변경 하면 새 DB를 만들려면 첫 번째 마이그레이션이 합니다. 해당 이름으로 존재 하지 않기 때문에 새 DB 만들어집니다. 연결 문자열을 변경 마이그레이션을 시작 하기 위한 필요 하지 않습니다.
+연결 문자열에 DB 이름을 변경 하면 새 DB를 만들려면 첫 번째 마이그레이션이 합니다. 존재 하지 않는 이름의 때문에 새 DB 만들어집니다. 연결 문자열을 변경 마이그레이션을 시작 하기 위한 필요 하지 않습니다.
 
 DB 이름 변경 하는 대신 DB을 삭제 하는 중입니다. 사용 하 여 **SQL Server 개체 탐색기** (SSOX) 또는 `database drop` CLI 명령을:
 
@@ -128,7 +127,7 @@ EF 코어 명령 `migrations add` DB에서 만드는 코드를 생성 합니다.
 
 ## <a name="remove-ensurecreated"></a>EnsureCreated 제거
 
-초기 개발 작업에 `EnsureCreated` 명령이 사용 되었습니다. 이 자습서에서는 마이그레이션은 사용 됩니다. `EnsureCreated`다음 limatitions에 있습니다.
+초기 개발 작업에 `EnsureCreated` 명령이 사용 되었습니다. 이 자습서에서는 마이그레이션은 사용 됩니다. `EnsureCreated`다음과 같은 제한이 있습니다.
 
 * 마이그레이션을 무시 하 고 DB 및 스키마를 만듭니다.
 * 마이그레이션 테이블을 만들지 않습니다.
@@ -190,7 +189,7 @@ Done.
 
 ## <a name="appling-migrations-in-production"></a>프로덕션 환경에서 적용 마이그레이션
 
-프로덕션 응용 프로그램 해야 하는 것이 좋습니다 **하지** 호출 [Database.Migrate](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.relationaldatabasefacadeextensions.migrate?view=efcore-2.0#Microsoft_EntityFrameworkCore_RelationalDatabaseFacadeExtensions_Migrate_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_) 응용 프로그램 시작 시. `Migrate`서버 팜의 응용 프로그램에서 호출할 수 없습니다. 예를 들어, 응용 프로그램 (앱의 여러 인스턴스가 실행 중인) 확장을 사용 하 여 배포 하는 클라우드 되었습니다.
+프로덕션 응용 프로그램 해야 하는 것이 좋습니다 **하지** 호출 [Database.Migrate](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.relationaldatabasefacadeextensions.migrate?view=efcore-2.0#Microsoft_EntityFrameworkCore_RelationalDatabaseFacadeExtensions_Migrate_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_) 응용 프로그램 시작 시. `Migrate`서버 팜에서 응용 프로그램에서 호출할 수 없습니다. 예를 들어, 응용 프로그램 (앱의 여러 인스턴스가 실행 중인) 확장을 사용 하 여 배포 하는 클라우드 되었습니다.
 
 데이터베이스 마이그레이션 제어 되는 방식에서 및 배포의 일부로 수행 되어야 합니다. 프로덕션 데이터베이스 마이그레이션 방법 다음과 같습니다.
 
@@ -211,7 +210,7 @@ PMC를 사용 하 여 선호 하는 개발자도,이 자습서에는 CLI를 사�
 
 PMC EF 코어 주석은에 [Microsoft.EntityFrameworkCore.Tools](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Tools) 패키지 합니다. 이 패키지에 포함 되어는 [Microsoft.AspNetCore.All](xref:fundamentals/metapackage) metapackage, 하므로 설치할 필요가 없습니다.
 
-**중요:** 이 동일한 패키지를 편집 하 여 CLI를 설치 하는 것과는 *.csproj* 파일입니다. 이 개체의 이름이 끝나는 `Tools`, CLI 패키지 이름에는 달리 `Tools.DotNet`합니다.
+**중요:** 이 값은 편집 하 여 CLI를 설치 하는 것과 동일한 패키지는 *.csproj* 파일입니다. 이 개체의 이름이 끝나는 `Tools`, CLI 패키지 이름에는 달리 `Tools.DotNet`합니다.
 
 CLI 명령에 대 한 자세한 내용은 참조 [.NET Core CLI](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet)합니다.
 

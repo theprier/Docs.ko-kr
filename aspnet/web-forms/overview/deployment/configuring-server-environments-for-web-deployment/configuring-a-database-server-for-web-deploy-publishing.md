@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-database-server-for-web-deploy-publishing
 msc.type: authoredcontent
-ms.openlocfilehash: b225d9911246b3e2be1679b73a9f31d9f8577ba5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 98fd728f48f6fb64a61686bc58824b9fb3a28b13
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-a-database-server-for-web-deploy-publishing"></a>웹 배포 게시에 대 한 데이터베이스 서버 구성
 ====================
@@ -48,7 +48,7 @@ ms.lasthandoff: 11/10/2017
 SQL Server 인스턴스는만 포함 해야는 **데이터베이스 엔진 서비스** SQL Server 설치에 자동으로 포함 된 역할을 합니다. 그러나 구성 및 유지 관리의 용이성을 위해 권장 포함 하는 **관리 도구-기본** 및 **관리 도구-전체** 서버 역할입니다.
 
 > [!NOTE]
-> 참조 컴퓨터는 도메인에 가입에 대 한 자세한 내용은 [도메인 및 로그온에 컴퓨터 가입](https://technet.microsoft.com/en-us/library/cc725618(v=WS.10).aspx)합니다. 고정 IP 주소를 구성 하는 방법에 대 한 자세한 내용은 참조 하십시오. [고정 IP 주소 구성](https://technet.microsoft.com/en-us/library/cc754203(v=ws.10).aspx)합니다. SQL Server 설치에 대 한 자세한 내용은 참조 하십시오. [SQL Server 2008 R2 설치](https://technet.microsoft.com/en-us/library/bb500395.aspx)합니다.
+> 참조 컴퓨터는 도메인에 가입에 대 한 자세한 내용은 [도메인 및 로그온에 컴퓨터 가입](https://technet.microsoft.com/library/cc725618(v=WS.10).aspx)합니다. 고정 IP 주소를 구성 하는 방법에 대 한 자세한 내용은 참조 하십시오. [고정 IP 주소 구성](https://technet.microsoft.com/library/cc754203(v=ws.10).aspx)합니다. SQL Server 설치에 대 한 자세한 내용은 참조 하십시오. [SQL Server 2008 R2 설치](https://technet.microsoft.com/library/bb500395.aspx)합니다.
 
 
 ## <a name="enable-remote-access-to-sql-server"></a>SQL Server에 대 한 원격 액세스를 사용 하도록 설정
@@ -66,7 +66,7 @@ TCP/IP를 통해 통신 하는 SQL Server를 사용 하려면 SQL Server 구성 
 2. 트리 뷰 창에서 확장 **SQL Server 네트워크 구성**, 클릭 하 고 **MSSQLSERVER에 대 한 프로토콜**합니다.
 
     > [!NOTE]
-    > SQL Server의 여러 인스턴스를 설치한 경우 표시 됩니다는 **에 대 한 프로토콜***[인스턴스 이름]* 각 인스턴스에 대 한 항목입니다. 인스턴스에 의해 인스턴스 기반에서 네트워크 설정을 구성 해야 합니다.
+    > SQL Server의 여러 인스턴스를 설치한 경우 표시 됩니다는 **에 대 한 프로토콜 * * * [인스턴스 이름]* 각 인스턴스에 대 한 항목입니다. 인스턴스에 의해 인스턴스 기반에서 네트워크 설정을 구성 해야 합니다.
 3. 세부 정보 창에서 마우스 오른쪽 단추로 클릭는 **TCP/IP** 행을 클릭 하 고 **사용**합니다.
 
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image1.png)
@@ -102,7 +102,7 @@ SQL Server의 기본 인스턴스를 사용 하는 있다고 가정할 경우 �
   
 
 > [!NOTE]
-> 기술적으로 클라이언트 컴퓨터 SQL Server와 통신 하 1024과 5000 사이의 임의로 할당 된 TCP 포트를 사용 되 고 그에 따라 방화벽 규칙을 제한할 수 있습니다. SQL Server 포트 및 방화벽에 대 한 자세한 내용은 참조 하십시오. [TCP/IP 포트 번호 to SQL 방화벽을 통해 통신 하는 데 필요한](https://go.microsoft.com/?linkid=9805125) 및 [하는 방법: 특정 TCP 포트로 (SQL Server 구성에서 수신 하도록 서버 구성 관리자)](https://msdn.microsoft.com/en-us/library/ms177440.aspx)합니다.
+> 기술적으로 클라이언트 컴퓨터 SQL Server와 통신 하 1024과 5000 사이의 임의로 할당 된 TCP 포트를 사용 되 고 그에 따라 방화벽 규칙을 제한할 수 있습니다. SQL Server 포트 및 방화벽에 대 한 자세한 내용은 참조 하십시오. [TCP/IP 포트 번호 to SQL 방화벽을 통해 통신 하는 데 필요한](https://go.microsoft.com/?linkid=9805125) 및 [하는 방법: 특정 TCP 포트로 (SQL Server 구성에서 수신 하도록 서버 구성 관리자)](https://msdn.microsoft.com/library/ms177440.aspx)합니다.
 
 
 대부분의 Windows Server 환경에서 데이터베이스 서버에서 Windows 방화벽을 구성 해야 가능성이 높습니다. 기본적으로 Windows 방화벽 규칙을 구체적으로 금지 하지 않는 한 모든 아웃 바운드 트래픽을 허용 합니다. 데이터베이스에 액세스 하도록 웹 서버를 사용 하려면 SQL Server 인스턴스가 사용 하는 포트 번호에 TCP 트래픽을 허용 하는 인바운드 규칙을 구성 해야 합니다. SQL Server의 기본 인스턴스를 사용 하는 경우에이 규칙을 구성 하려면 다음 절차를 사용할 수 있습니다.
@@ -126,11 +126,11 @@ SQL Server의 기본 인스턴스를 사용 하는 있다고 가정할 경우 �
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image9.png)
 8. 에 **이름** 페이지에서 규칙에 적절 한 설명이 포함 된 이름을 지정 (예를 들어 **SQL Server 기본 인스턴스에 대 한 네트워크 액세스**)를 클릭 하 고 **마침**합니다.
 
-비표준 또는 동적 포트를 통해 SQL Server와 통신, 참조 하는 경우에 특히 SQL Server, Windows 방화벽 구성에 대 한 자세한 내용은 [하는 방법: 데이터베이스 엔진 액세스에 대 한 Windows 방화벽 구성](https://technet.microsoft.com/en-us/library/ms175043.aspx)합니다.
+비표준 또는 동적 포트를 통해 SQL Server와 통신, 참조 하는 경우에 특히 SQL Server, Windows 방화벽 구성에 대 한 자세한 내용은 [하는 방법: 데이터베이스 엔진 액세스에 대 한 Windows 방화벽 구성](https://technet.microsoft.com/library/ms175043.aspx)합니다.
 
 ## <a name="configure-logins-and-database-permissions"></a>로그인을 구성 및 데이터베이스 권한
 
-인터넷 정보 서비스 (IIS)에 웹 응용 프로그램을 배포 하면 응용 프로그램이 응용 프로그램 풀의 id를 사용 하 여 실행 합니다. 도메인 환경에서 응용 프로그램 풀 id에는 네트워크 리소스에 액세스할 실행 되는 서버의 컴퓨터 계정을 사용 합니다. 컴퓨터 계정에는 다음 양식을 사용 *[도메인 이름]***\***[컴퓨터 이름] ***$**& #x 2014 등 **FABRIKAM\ TESTWEB1$**합니다. 네트워크를 통해 데이터베이스에 액세스 하려면 웹 응용 프로그램을 허용 하려면:
+인터넷 정보 서비스 (IIS)에 웹 응용 프로그램을 배포 하면 응용 프로그램이 응용 프로그램 풀의 id를 사용 하 여 실행 합니다. 도메인 환경에서 응용 프로그램 풀 id에는 네트워크 리소스에 액세스할 실행 되는 서버의 컴퓨터 계정을 사용 합니다. 컴퓨터 계정에는 다음 양식을 사용 * [도메인 이름]***\** * [컴퓨터 이름]***$ * * & #x 2014; 예를 들어 **FABRIKAM\TESTWEB1$**합니다. 네트워크를 통해 데이터베이스에 액세스 하려면 웹 응용 프로그램을 허용 하려면:
 
 - SQL Server 인스턴스를 웹 서버 컴퓨터 계정에 대 한 로그인을 추가 합니다.
 - 모든 필수 데이터베이스 역할에 컴퓨터 계정 로그인 매핑 (일반적으로 **db\_datareader** 및 **db\_datawriter**).
@@ -183,7 +183,7 @@ SQL Server 로그인 이므로 데이터베이스 수준 개체 보다는 서버
 데이터베이스 역할을 수동으로 매핑은 테스트 환경에 더욱 적합 한 종종를 스테이징 또는 프로덕션 환경에 대 한 자동화 된 또는 한 번의 클릭 배포에 대 한 작은 좋을 것입니다. 이러한 종류의 배포 후 스크립트를 사용 하 여 작업의 자동화에서 자세한 정보를 찾을 수 [배포 데이터베이스 역할 멤버 자격이 테스트 환경에](../advanced-enterprise-web-deployment/deploying-database-role-memberships-to-test-environments.md)합니다.
 
 > [!NOTE]
-> 서버 프로젝트 및 데이터베이스 프로젝트에 대 한 자세한 내용은 참조 하십시오. [Visual Studio 2010 SQL Server 데이터베이스 프로젝트](https://msdn.microsoft.com/en-us/library/ff678491.aspx)합니다.
+> 서버 프로젝트 및 데이터베이스 프로젝트에 대 한 자세한 내용은 참조 하십시오. [Visual Studio 2010 SQL Server 데이터베이스 프로젝트](https://msdn.microsoft.com/library/ff678491.aspx)합니다.
 
 
 ## <a name="configure-permissions-for-the-deployment-account"></a>배포 계정에 대 한 사용 권한 구성

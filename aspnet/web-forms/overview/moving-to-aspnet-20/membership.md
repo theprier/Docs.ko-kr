@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/membership
 msc.type: authoredcontent
-ms.openlocfilehash: 7e6bff33e9ec1de03c591de6eee2e632c7b7509d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1a5a495845b60f9aac51c9776311af67f5dc8767
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="membership"></a>멤버 자격
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > ASP.NET에서 폼 인증 모델의 성공 여부에 ASP.NET 멤버 자격을 빌드합니다 1.x 합니다. ASP.NET 폼 인증에는 ASP.NET 응용 프로그램에 로그인 폼을 통합 하 고 사용자는 데이터베이스 또는 다른 데이터 저장소에 대해 유효성을 검사 하는 편리한 방법을 제공 합니다.
 
@@ -120,7 +120,7 @@ LoginView 컨트롤은 기본적으로 두 개의 템플릿이 제공 하는 템
 
 ## <a name="passwordrecovery-control"></a>PasswordRecovery 제어
 
-PasswordRecovery 제어를 사용 하면 현재 암호를 포함 된 전자 메일 수신 또는 암호를 다시 설정할 수 있습니다. 일반 텍스트와 암호화 된 암호를 복구 및 사용자에 게 전자 메일로 보낼 수 있습니다. 암호가 해시 되는지 복구할 수 없습니다. 대신 사용자는 암호 재설정을 수행 해야 합니다.
+PasswordRecovery 컨트롤에는 사용자를 자신의 현재 암호를 사용 하는 메일이 또는 암호를 다시 설정할 수 있습니다. 일반 텍스트와 암호화 된 암호 복구 및 사용자에 게 메일로 보낼 수 있습니다. 암호가 해시 되는지 복구할 수 없습니다. 대신 사용자는 암호 재설정을 수행 해야 합니다.
 
 ## <a name="loginstatus-control"></a>LoginStatus 제어
 
@@ -242,7 +242,7 @@ ASP.NET 2.0 액세스 규칙을 지정 하는 폴더에 web.config 파일을 추
 
 - ApplicationName 속성
 - ChangePassword 함수
-- ChangePasswordQuestionAndAnswer 함수
+- ChangePasswordQuestionAndAnswer function
 - CreateUser 함수
 - DeleteUser 함수
 - EnablePasswordReset 속성
@@ -255,7 +255,7 @@ ASP.NET 2.0 액세스 규칙을 지정 하는 폴더에 web.config 파일을 추
 - GetUser 함수
 - GetUserNameByEmail 함수
 - MaxInvalidPasswordAttempts 속성
-- MinRequiredNonAlphanumericCharacters 속성
+- MinRequiredNonAlphanumericCharacters property
 - MinRequiredPasswordLength 속성
 - PasswordAttemptWindow 속성
 - PasswordFormat 속성

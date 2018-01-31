@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-3-add-form-validation-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ffb502be3037e787d79bbd1e83b93cd0b34dca6a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e9ed182fb58addd8c5dadbe6e3d09c391840ca00
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="iteration-3--add-form-validation-vb"></a>반복 #3-추가 폼 유효성 검사 (VB)
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [코드 다운로드](iteration-3-add-form-validation-vb/_static/contactmanager_3_vb1.zip)
 
@@ -63,7 +63,7 @@ ms.lasthandoff: 11/10/2017
 
 이 반복에 간단 하 게,에서는 모든 유효성 검사 코드를 직접 작성 합니다. 유효성 검사 코드를 직접 작성 하는 대신 유효성 검사 프레임 워크를 활용할 수 있습니다. 예를 들어 ASP.NET MVC 응용 프로그램에 대 한 유효성 검사 논리를 구현 하는 Microsoft Enterprise 라이브러리 유효성 검사 응용 프로그램 블록 (VAB)를 사용할 수 있습니다. 유효성 검사 응용 프로그램 블록에 대 한 자세한 내용은 다음을 참조 하세요.
 
-[*http://msdn.microsoft.com/en-us/library/dd203099.aspx*](https://msdn.microsoft.com/en-us/library/dd203099.aspx)
+[*http://msdn.microsoft.com/library/dd203099.aspx*](https://msdn.microsoft.com/library/dd203099.aspx)
 
 ## <a name="adding-validation-to-the-create-view"></a>만들기 뷰에 유효성 검사 추가
 
@@ -117,7 +117,7 @@ ms.lasthandoff: 11/10/2017
 
 수정 된 연락처 컨트롤러 클래스 보기 3에 포함 됩니다. 이 클래스는 create ()와 Edit() 작업 내에서 호출 하는 새 ValidateContact() 메서드.
 
-**3-Controllers\ContactController.vb 나열**
+**Listing 3 - Controllers\ContactController.vb**
 
 [!code-vb[Main](iteration-3-add-form-validation-vb/samples/sample3.vb)]
 

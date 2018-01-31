@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/security/authenticating-users-with-windows-authentication-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d4b83d99fcf1247d08ce83364cc00e738b6a16c8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 63b1266e03041c4261e71fd25e988c63932b503e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="authenticating-users-with-windows-authentication-vb"></a>Windows 인증 (VB)에서 사용자 인증
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > MVC 응용 프로그램의 컨텍스트에서 Windows 인증을 사용 하는 방법에 알아봅니다. Iis 인증을 구성 하는 방법 및 응용 프로그램의 웹 구성 파일 내에서 Windows 인증을 사용 하도록 설정 하는 방법을 설명 합니다. 마지막으로, 특정 Windows 사용자 또는 그룹에 있는 컨트롤러 작업에 대 한 액세스를 제한 하려면 [Authorize] 특성을 사용 하는 방법을 배웁니다.
 
@@ -51,7 +51,7 @@ ASP.NET 개발 웹 서버는 NTLM 인증도 지원합니다. 솔루션 탐색기
 
 > [!NOTE] 
 > 
-> 이러한 유형의 인증의 보다 자세한 개요를 참조 하십시오. [https://msdn.microsoft.com/en-us/library/aa292114(VS.71).aspx](https://msdn.microsoft.com/en-us/library/aa292114(VS.71).aspx).
+> 이러한 유형의 인증의 보다 자세한 개요를 참조 하십시오. [https://msdn.microsoft.com/library/aa292114(VS.71).aspx](https://msdn.microsoft.com/library/aa292114(VS.71).aspx).
 
 
 특정 유형의 인증을 사용 하도록 설정 하려면 인터넷 정보 서비스 관리자를 사용할 수 있습니다. 주의 모든 종류의 인증은 모든 운영 체제의 경우 사용할 수 없습니다. 또한 Windows Vista와 함께 IIS 7.0을 사용할 경우에 인터넷 정보 서비스 관리자에 표시 하기 전에 다양 한 유형의 Windows 인증을 사용 하도록 설정 해야 합니다. 열기 **제어판, 프로그램, 프로그램 및 기능, Windows 기능 설정 또는 해제**, 인터넷 정보 서비스 노드를 확장 하 고 (그림 2 참조).
@@ -72,7 +72,7 @@ Windows 인증을 설정한 후에 사용할 수는 &lt;Authorize&gt; 특성을 
 
 예를 들어 Home 컨트롤러 목록 1의 index (), CompanySecrets(), 및 StephenSecrets() 이라는 세 가지 동작을 노출 합니다. Index () 작업을 호출할 수 누구나 합니다. 그러나 Windows 로컬 관리자 그룹의 구성원만 CompanySecrets() 동작을 호출할 수 있습니다. 마지막으로, Stephen (Redmond 도메인)의 명명 된 Windows 도메인 사용자 StephenSecrets() 동작을 호출할 수 있습니다.
 
-**1 – Controllers\HomeController.vb 나열**
+**Listing 1 – Controllers\HomeController.vb**
 
 [!code-vb[Main](authenticating-users-with-windows-authentication-vb/samples/sample2.vb)]
 

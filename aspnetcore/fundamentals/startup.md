@@ -10,11 +10,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/startup
-ms.openlocfilehash: dd2eb3d3996bc0bf277c8d5e772c8568ef9f147e
-ms.sourcegitcommit: f5a7f0198628f0d152257d90dba6c3a0747a355a
+ms.openlocfilehash: 81d76c39b7890e2d4ab86252cb0a343e3bb7359a
+ms.sourcegitcommit: 83b5a4715fd25e4eb6f7c8427c0ef03850a7fa07
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/19/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="application-startup-in-aspnet-core"></a>ASP.NET Core 응용 프로그램 시작
 
@@ -37,11 +37,14 @@ ASP.NET Core 응용 프로그램 사용을 `Startup` 클래스 이름으로 지�
 
 [!code-csharp[Main](../common/samples/WebApplication1DotNetCore2.0App/Program.cs?name=snippet_Main&highlight=10)]
 
-`Startup` 클래스 생성자는 호스트에 의해 정의 된 종속성을 허용 합니다. 일반적인 용도 [종속성 주입](xref:fundamentals/dependency-injection) 에 `Startup` 클래스를 삽입 하는 [IHostingEnvironment](/dotnet/api/Microsoft.AspNetCore.Hosting.IHostingEnvironment) 환경에서 서비스를 구성 하려면:
+`Startup` 클래스 생성자는 호스트에 의해 정의 된 종속성을 허용 합니다. 일반적인 용도 [종속성 주입](xref:fundamentals/dependency-injection) 에 `Startup` 클래스를 삽입 하는:
+
+* [IHostingEnvironment](/dotnet/api/Microsoft.AspNetCore.Hosting.IHostingEnvironment) 환경에서 서비스를 구성할 수 있습니다.
+* [IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration) 를 시작 하는 동안 응용 프로그램을 구성 합니다.
 
 [!code-csharp[Main](startup/snapshot_sample/Startup2.cs)]
 
-삽입 하는 대신 `IHostingStartup` 규칙 기반 접근 방식을 사용 하는 것입니다. 응용 프로그램을 별도 정의할 수 `Startup` 다양 한 환경에 대 한 클래스 (예를 들어 `StartupDevelopment`), 적절 한 시작 클래스는 런타임에 선택 됩니다. 해당 이름 접미사는 현재 환경에 적합 한 클래스 우선 순위가 부여 됩니다. 응용 프로그램 개발 환경에서 실행 되 고 모두를 포함 하는 경우는 `Startup` 클래스 및 `StartupDevelopment` 클래스는 `StartupDevelopment` 클래스가 사용 됩니다. 자세한 내용은 참조 [여러 환경 작업](xref:fundamentals/environments#startup-conventions)합니다.
+삽입 하는 대신 `IHostingEnvironment` 규칙 기반 접근 방식을 사용 하는 것입니다. 응용 프로그램을 별도 정의할 수 `Startup` 다양 한 환경에 대 한 클래스 (예를 들어 `StartupDevelopment`), 적절 한 시작 클래스는 런타임에 선택 됩니다. 해당 이름 접미사는 현재 환경에 적합 한 클래스 우선 순위가 부여 됩니다. 응용 프로그램 개발 환경에서 실행 되 고 모두를 포함 하는 경우는 `Startup` 클래스 및 `StartupDevelopment` 클래스는 `StartupDevelopment` 클래스가 사용 됩니다. 자세한 내용은 [여러 환경 사용](xref:fundamentals/environments#startup-conventions)을 참조하세요.
 
 에 대 한 자세한 내용은 `WebHostBuilder`, 참조는 [호스팅](xref:fundamentals/hosting) 항목입니다. 시작 하는 동안 오류를 처리 하는 방법은 참조 하십시오. [시작 예외 처리](xref:fundamentals/error-handling#startup-exception-handling)합니다.
 
@@ -83,7 +86,7 @@ ASP.NET Core 응용 프로그램 사용을 `Startup` 클래스 이름으로 지�
 
 [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder.configureservices) 및 [구성](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configure) 편의 메서드를 지정 하는 대신 사용할 수는 `Startup` 클래스입니다. 여러 번 호출 `ConfigureServices` 서로에 추가 합니다. 여러 번 호출 `Configure` 마지막 메서드 호출을 사용 합니다.
 
-[!code-csharp[Main](startup/snapshot_sample/Program.cs?highlight=16,20)]
+[!code-csharp[Main](startup/snapshot_sample/Program.cs?highlight=18,22)]
 
 ## <a name="startup-filters"></a>시작 필터
 

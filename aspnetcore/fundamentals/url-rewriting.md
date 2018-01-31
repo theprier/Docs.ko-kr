@@ -2,20 +2,18 @@
 title: "URL의 ASP.NET Core 미들웨어를 다시 작성"
 author: guardrex
 description: "다시 작성 및 ASP.NET Core 응용 프로그램의 URL 재작성 미들웨어와 리디렉션 URL에 알아봅니다."
-keywords: "ASP.NET Core URL 재작성, URL 재작성, URL 리디렉션, 미들웨어, apache_mod 리디렉션 URL"
 ms.author: riande
 manager: wpickett
 ms.date: 08/17/2017
 ms.topic: article
-ms.assetid: e6130638-c410-4161-9921-b658ce988bd1
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/url-rewriting
-ms.openlocfilehash: e07634a6d7ad97bf8735029b5c28d6935b71eb52
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 99f8d1cc73fdcbd99cffe595ae89f3c61a6f9a53
+ms.sourcegitcommit: 3d512ea991ac36dfd4c800b7d1f8a27bfc50635e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/23/2018
 ---
 # <a name="url-rewriting-middleware-in-aspnet-core"></a>URL의 ASP.NET Core 미들웨어를 다시 작성
 
@@ -40,7 +38,9 @@ URL 다시 쓰기는 하나 이상의 미리 정의 된 규칙을 기반으로 �
 ## <a name="url-redirect-and-url-rewrite"></a>URL 리디렉션 및 URL 다시 쓰기
 단어 사이의 차이 *URL 리디렉션* 및 *URL 재작성* 에 미묘한 보일 수 있지만 첫 번째 요소가 있 클라이언트에 리소스를 제공 하는 데 중요 한 이점이 있습니다. ASP.NET Core URL 다시 쓰기 미들웨어는 모두에 대 한 필요성을 충족 수 있습니다.
 
-A *URL 리디렉션* 는 클라이언트 쪽 작업으로, 다른 주소에서 리소스에 액세스 하려면 클라이언트에 명령입니다. 서버에 대 한 왕복 걸리며 클라이언트는 리소스에 대 한 새 요청을 클라이언트로 반환 된 리디렉션 URL 브라우저의 주소 표시줄에 나타납니다. 경우 `/resource` 은 *리디렉션* 를 `/different-resource`, 클라이언트 요청 `/resource`, 서버 클라이언트에서 리소스를 가져와야 하는 응답 `/different-resource` 리디렉션 임을 나타내는 상태 코드와 함께 임시 또는 영구 합니다. 클라이언트에 리디렉션 URL에 대 한 리소스에 대 한 새 요청을 실행합니다.
+A *URL 리디렉션* 는 클라이언트 쪽 작업으로, 다른 주소에서 리소스에 액세스 하려면 클라이언트에 명령입니다. 이 서버에 왕복을 해야합니다. 클라이언트는 리소스에 대 한 새 요청을 클라이언트로 반환 된 리디렉션 URL이 브라우저의 주소 표시줄에 표시 됩니다. 
+
+경우 `/resource` 은 *리디렉션* 를 `/different-resource`, 클라이언트 요청 `/resource`합니다. 서버가 응답 하는 클라이언트에서 리소스를 가져올 해야 `/different-resource` 임시 또는 영구 리디렉션 임을 나타내는 상태 코드와 함께 합니다. 클라이언트에 리디렉션 URL에 대 한 리소스에 대 한 새 요청을 실행합니다.
 
 ![WebAPI 서비스 끝점 v2 (버전 2) 서버를 일시적으로 변경 버전 (v1) 1에서에서 되었습니다. 클라이언트에서 버전 1 경로 /v1/api 서비스에 대 한 요청을 만듭니다. 서버 응답을 보냅니다 302 (있음)는 서비스에 대 한 새, 임시 경로와 /v2/api 버전 2에 있습니다. 클라이언트는 두 번째 요청 리디렉션 URL에서 서비스에 보냅니다. 서버 (정상) 상태 코드가 200 인 응답합니다.](url-rewriting/_static/url_redirect.png)
 
@@ -199,7 +199,7 @@ A `StreamReader` 에서 규칙을 읽는 데 사용 되는 *ApacheModRewrite.txt
 * HTTP_REFERER
 * HTTP_USER_AGENT
 * HTTPS
-* I P V 6
+* IPV6
 * QUERY_STRING
 * REMOTE_ADDR
 * REMOTE_PORT
@@ -209,7 +209,7 @@ A `StreamReader` 에서 규칙을 읽는 데 사용 되는 *ApacheModRewrite.txt
 * REQUEST_URI
 * SCRIPT_FILENAME
 * SERVER_ADDR
-* 서버 _ 포트
+* SERVER_PORT
 * SERVER_PROTOCOL
 * 시간
 * TIME_DAY
@@ -266,7 +266,7 @@ A `StreamReader` 에서 규칙을 읽는 데 사용 되는 *IISUrlRewrite.xml* �
 * CustomResponse 동작
 * 사용자 지정 서버 변수
 * 와일드카드
-* 동작: CustomResponse
+* Action:CustomResponse
 * LogRewrittenUrl
 
 ---
@@ -299,7 +299,7 @@ A `StreamReader` 에서 규칙을 읽는 데 사용 되는 *IISUrlRewrite.xml* �
 ### <a name="method-based-rule"></a>메서드 기반 규칙
 사용 하 여 `Add(Action<RewriteContext> applyRule)` 메서드에서 사용자 고유의 규칙 논리를 구현할 수 있습니다. `RewriteContext` 노출는 `HttpContext` 메서드에서 사용 합니다. `context.Result` 확인 방법을 추가 파이프라인 처리 됩니다.
 
-| 컨텍스트입니다. 결과                       | 작업                                                          |
+| context.Result                       | 작업                                                          |
 | ------------------------------------ | --------------------------------------------------------------- |
 | `RuleResult.ContinueRules`(기본값) | 계속 규칙 적용                                         |
 | `RuleResult.EndResponse`             | 규칙 적용을 중지 하 고 응답 보내기                       |
@@ -371,7 +371,7 @@ A `StreamReader` 에서 규칙을 읽는 데 사용 되는 *IISUrlRewrite.xml* �
 | 쿼리 문자열에 경로 다시 작성 | `^path/(.*)/(.*)`<br>`/path/abc/123` | `path?var1=$1&var2=$2`<br>`/path?var1=abc&var2=123` |
 | 후행 슬래시를 제거 합니다. | `(.*)/$`<br>`/path/` | `$1`<br>`/path` |
 | 후행 슬래시를 적용 합니다. | `(.*[^/])$`<br>`/path` | `$1/`<br>`/path/` |
-| 특정 요청을 다시 작성 하지 마십시오. | `(.*[^(\.axd)])$`<br>예:`/resource.htm`<br>아니요:`/resource.axd` | `rewritten/$1`<br>`/rewritten/resource.htm`<br>`/resource.axd` |
+| 특정 요청을 다시 작성 하지 마십시오. | `^(.*)(?<!\.axd)$` 또는 `^(?!.*\.axd$)(.*)$`<br>예:`/resource.htm`<br>아니요:`/resource.axd` | `rewritten/$1`<br>`/rewritten/resource.htm`<br>`/resource.axd` |
 | URL 세그먼트를 다시 정렬 | `path/(.*)/(.*)/(.*)`<br>`path/1/2/3` | `path/$3/$2/$1`<br>`path/3/2/1` |
 | URL 세그먼트를 대체 합니다. | `^(.*)/segment2/(.*)`<br>`/segment1/segment2/segment3` | `$1/replaced/$2`<br>`/segment1/replaced/segment3` |
 

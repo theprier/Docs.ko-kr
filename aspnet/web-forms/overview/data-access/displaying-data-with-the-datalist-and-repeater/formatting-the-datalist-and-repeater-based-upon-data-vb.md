@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/formatting-the-datalist-and-repeater-based-upon-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 48e0f2bad8c048e943ec2a3ce72cc0f7ca4d34d9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 460fc36062f3338ffd178aceda2b3b224752a089
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="formatting-the-datalist-and-repeater-based-upon-data-vb"></a>DataList 및 데이터 (VB)를 기반으로 반복기 서식 지정
 ====================
@@ -40,25 +40,25 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="using-theitemdataboundevent-handler"></a>사용 하 여`ItemDataBound`이벤트 처리기
 
-경우에 바인딩된 데이터가 데이터 소스 제어에서 또는 프로그래밍 방식으로 s 컨트롤에 데이터 할당을 통해 `DataSource` 속성과 호출 해당 `DataBind()` 메서드, s DataList `DataBinding` 이벤트가 발생 하면 데이터 원본 열거 및 각 데이터 레코드 DataList에 바인딩됩니다. 데이터 원본의 각 레코드에 대해 DataList 만듭니다는 [ `DataListItem` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalistitem.aspx) 되는 개체를 다음 현재 레코드에 바인딩됩니다. 이 과정에서 DataList 두 이벤트를 발생 시킵니다.
+경우에 바인딩된 데이터가 데이터 소스 제어에서 또는 프로그래밍 방식으로 s 컨트롤에 데이터 할당을 통해 `DataSource` 속성과 호출 해당 `DataBind()` 메서드, s DataList `DataBinding` 이벤트가 발생 하면 데이터 원본 열거 및 각 데이터 레코드 DataList에 바인딩됩니다. 데이터 원본의 각 레코드에 대해 DataList 만듭니다는 [ `DataListItem` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalistitem.aspx) 되는 개체를 다음 현재 레코드에 바인딩됩니다. 이 과정에서 DataList 두 이벤트를 발생 시킵니다.
 
 - **`ItemCreated`**후에 발생는 `DataListItem` 만든
 - **`ItemDataBound`**현재 레코드에 바인딩된 후에 발생는`DataListItem`
 
 다음 단계 DataList 컨트롤에 대 한 데이터 바인딩 프로세스를 간략하게 설명합니다.
 
-1. DataList s [ `DataBinding` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.ui.control.databinding.aspx) 발생 합니다.
+1. DataList s [ `DataBinding` 이벤트](https://msdn.microsoft.com/library/system.web.ui.control.databinding.aspx) 발생 합니다.
 2. DataList에 데이터 바인딩된  
   
  데이터 원본에 있는 각 레코드에 대 한 
 
     1. 만들기는 `DataListItem` 개체
-    2. 화재는 [ `ItemCreated` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.itemcreated.aspx)
+    2. 화재는 [ `ItemCreated` 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.itemcreated.aspx)
     3. 해당 레코드를 바인딩하는`DataListItem`
-    4. 화재는 [ `ItemDataBound` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.itemdatabound.aspx)
+    4. 화재는 [ `ItemDataBound` 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.itemdatabound.aspx)
     5. 추가 `DataListItem` 에 `Items` 컬렉션
 
-반복기 컨트롤을 데이터 바인딩하는 경우 동일한 일련의 단계를 통해 진행 됩니다. 유일한 차이점은 대신 `DataListItem` 인스턴스를 만들고, 반복기 사용 하 여 [ `RepeaterItem` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.repeateritem(VS.80).aspx)s입니다.
+반복기 컨트롤을 데이터 바인딩하는 경우 동일한 일련의 단계를 통해 진행 됩니다. 유일한 차이점은 대신 `DataListItem` 인스턴스를 만들고, 반복기 사용 하 여 [ `RepeaterItem` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.repeateritem(VS.80).aspx)s입니다.
 
 > [!NOTE]
 > 예리한 독자 GridView 데이터에 바인딩될 때 DataList와 반복기와 데이터에 연결 되는 경우 지정 전까지 대기 하는 단계의 순서 간에 약간의 비정상을 보았을 수 있습니다. 데이터 바인딩 프로세스의 꼬리 끝 GridView 발생는 `DataBound` 이벤트가 있습니다; 그러나 DataList 아니고 반복기 제어는 이러한 이벤트입니다. 전처리 및 후 수준의 이벤트 처리기 패턴 일반적인 렸 전에 DataList 및 반복기 컨트롤은 ASP.NET 1.x 기간에 다시 만든 때문입니다.
@@ -93,7 +93,7 @@ DataList 및 ObjectDataSource 기능을 복제 한 후 `Basics.aspx` 에 `Format
 
 [!code-vb[Main](formatting-the-datalist-and-repeater-based-upon-data-vb/samples/sample1.vb)]
 
-개념 및 s DataList 뒤 의미 하는 동안 `ItemDataBound` 이벤트 처리기는 GridView s에서 사용 하는 것과 동일 `RowDataBound` 의 이벤트 처리기는 *데이터 기반 시 사용자 지정 서식* 자습서에서는 구문을 다릅니다 약간 합니다. 경우는 `ItemDataBound` 이벤트 발생은 `DataListItem` 만 데이터에 바인딩된을 통해 해당 이벤트 처리기에 전달 되 `e.Item` (대신 `e.Row`GridView s와 마찬가지로, `RowDataBound` 이벤트 처리기). DataList s `ItemDataBound` 이벤트 처리기에 대해 발생 *각* 행 머리글 행, 바닥글 행 및 행 구분 기호를 포함 하 여 DataList에 추가 합니다. 그러나 제품 정보만 데이터 행에 바인딩되어 있습니다. 따라서 사용 하는 경우는 `ItemDataBound` 있는지 먼저 확인 해야 이벤트 데이터를 검사할 DataList에 바인딩된 다시 데이터 항목을 사용 했습니다. 이 확인 하 여 수행할 수 있습니다는 `DataListItem` s [ `ItemType` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalistitem.itemtype.aspx), 중 하나를 사용할 수 있는 [다음 8 개의 값](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.listitemtype.aspx):
+개념 및 s DataList 뒤 의미 하는 동안 `ItemDataBound` 이벤트 처리기는 GridView s에서 사용 하는 것과 동일 `RowDataBound` 의 이벤트 처리기는 *데이터 기반 시 사용자 지정 서식* 자습서에서는 구문을 다릅니다 약간 합니다. 경우는 `ItemDataBound` 이벤트 발생은 `DataListItem` 만 데이터에 바인딩된을 통해 해당 이벤트 처리기에 전달 되 `e.Item` (대신 `e.Row`GridView s와 마찬가지로, `RowDataBound` 이벤트 처리기). DataList s `ItemDataBound` 이벤트 처리기에 대해 발생 *각* 행 머리글 행, 바닥글 행 및 행 구분 기호를 포함 하 여 DataList에 추가 합니다. 그러나 제품 정보만 데이터 행에 바인딩되어 있습니다. 따라서 사용 하는 경우는 `ItemDataBound` 있는지 먼저 확인 해야 이벤트 데이터를 검사할 DataList에 바인딩된 다시 데이터 항목을 사용 했습니다. 이 확인 하 여 수행할 수 있습니다는 `DataListItem` s [ `ItemType` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalistitem.itemtype.aspx), 중 하나를 사용할 수 있는 [다음 8 개의 값](https://msdn.microsoft.com/library/system.web.ui.webcontrols.listitemtype.aspx):
 
 - `AlternatingItem`
 - `EditItem`
@@ -104,7 +104,7 @@ DataList 및 ObjectDataSource 기능을 복제 한 후 `Basics.aspx` 에 `Format
 - `SelectedItem`
 - `Separator`
 
-둘 다 `Item` 및 `AlternatingItem``DataListItem`의 구성 DataList의 데이터 항목입니다. 작업을 다시 가정 우리는 `Item` 또는 `AlternatingItem`, 우리는 실제 액세스 `ProductsRow` 현재에 바인딩된 인스턴스 `DataListItem`합니다. `DataListItem` s [ `DataItem` 속성](https://msdn.microsoft.com/en-us/system.web.ui.webcontrols.datalistitem.dataitem.aspx) 포함에 대 한 참조는 `DataRowView` 개체의 `Row` 속성은 실제에 대 한 참조를 제공 `ProductsRow` 개체입니다.
+둘 다 `Item` 및 `AlternatingItem``DataListItem`의 구성 DataList의 데이터 항목입니다. 작업을 다시 가정 우리는 `Item` 또는 `AlternatingItem`, 우리는 실제 액세스 `ProductsRow` 현재에 바인딩된 인스턴스 `DataListItem`합니다. `DataListItem` s [ `DataItem` 속성](https://msdn.microsoft.com/system.web.ui.webcontrols.datalistitem.dataitem.aspx) 포함에 대 한 참조는 `DataRowView` 개체의 `Row` 속성은 실제에 대 한 참조를 제공 `ProductsRow` 개체입니다.
 
 다음으로 확인 된 `ProductsRow` 인스턴스의 `UnitPrice` 속성. Products 테이블 s 이후 `UnitPrice` 필드를 사용 하면 `NULL` 값에 액세스 하기 전에 `UnitPrice` 속성에서는 있는지 먼저 확인 해야 있는지는 `NULL` 를 사용 하 여 값의 `IsUnitPriceNull()` 메서드. 경우는 `UnitPrice` 값이 `NULL`, 그런 다음 확인 있는지 것 s $20.00 보다 작은 합니다. 인 경우 아래에서 실제로 $20.00 다음 사용자 지정 서식 지정을 적용 해야 합니다.
 

@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/aspnet-web-deployment-content-map
 msc.type: content
-ms.openlocfilehash: 8bded273de1ca7b050d41ddd872d9a1aa68bb314
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 78ff183394b5ff92f789b50551d01d28f9bff93b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-web-deployment---recommended-resources"></a>ASP.NET 웹 배포-권장 리소스
 ====================
@@ -57,7 +57,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="understanding-deployment-options-for-web-projects"></a>웹 프로젝트에 대 한 배포 옵션 이해
 
-- [Visual Studio 및 ASP.NET에 대 한 웹 배포 개요](https://msdn.microsoft.com/en-us/library/dd394698.aspx) (MSDN).
+- [Visual Studio 및 ASP.NET에 대 한 웹 배포 개요](https://msdn.microsoft.com/library/dd394698.aspx) (MSDN).
 - [Windows Azure 웹 사이트를 배포 하는 방법](https://docs.microsoft.com/azure/app-service-web/web-sites-deploy)합니다. 웹 프로젝트를 Windows Azure 웹 사이트를 포함 하 여 배포에 대 한 리소스에 옵션 및 링크에 설명 [지속적인 업데이트](../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery.md) (에서 자동화 된 [소스 제어](../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control.md)) Visual Studio를 사용 하 여 뿐만 아니라 합니다.
 - [Visual Studio 2012 웹 게시 개선](../visual-studio/overview/2012/visual-studio-2012-web-publishing-improvements.md) (Scott hanselman의 비디오).
 - [VS 2010에서 웹 배포에 대 한 개요 게시](http://vishaljoshi.blogspot.com/2009/09/overview-post-for-web-deployment-in-vs.html) (Vishal Joshi 블로그). 이전 블로그 게시물 하지만 Visual Studio 2010 리소스 중 일부는 Visual Studio 2012에도 적용 하는 정보를 연결 합니다.
@@ -78,7 +78,7 @@ ms.lasthandoff: 11/10/2017
 
 - [Windows Azure 웹 사이트를 배포 하는 방법](https://docs.microsoft.com/azure/app-service-web/web-sites-deploy)합니다. 옵션에 설명 하 고 Windows Azure 웹 사이트를 웹 프로젝트를 배포 하는 리소스에 대 한 링크를 제공 합니다. Visual Studio에서 배포에 대 한 섹션을 포함 합니다.
 - [Visual Studio를 사용 하 여 ASP.NET 웹 배포](../web-forms/overview/deployment/visual-studio-web-deployment/introduction.md)합니다. 12 부분으로 이루어진 자습서 시리즈에서는 SQL Server 데이터베이스와 웹 응용 프로그램을 배포 하는 방법을 보여 줍니다. 데이터베이스에 대 한 배포 dbDacFx 공급자와 Entity Framework Code First 마이그레이션을 사용 됩니다. 에 대 한 정보도 포함 [Web.config 파일 변환](../web-forms/overview/deployment/visual-studio-web-deployment/web-config-transformations.md), [개별 파일을 배포](../web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-code-update.md#specificfiles), [명령줄 배포](../web-forms/overview/deployment/visual-studio-web-deployment/command-line-deployment.md), 및 [하는 방법 Visual Studio 웹 사용자 지정 파이프라인.pubxml 파일을 편집 하 여 게시](../web-forms/overview/deployment/visual-studio-web-deployment/deploying-extra-files.md)합니다. Web Forms, MVC, Web API 등의 모든 ASP.NET 웹 프로젝트에 적용 됨)
-- [방법: 배포 된 웹 프로젝트를 사용 하 여 한 번의 클릭 게시 Visual Studio에서](https://msdn.microsoft.com/en-us/library/dd465337.aspx) (Visual Studio 웹 게시 마법사에 대 한 정보를 참조 합니다.)
+- [방법: 배포 된 웹 프로젝트를 사용 하 여 한 번의 클릭 게시 Visual Studio에서](https://msdn.microsoft.com/library/dd465337.aspx) (Visual Studio 웹 게시 마법사에 대 한 정보를 참조 합니다.)
 - [SQL Server Compact Visual Studio를 사용 하 여 ASP.NET 웹 응용 프로그램 배포](../web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-introduction-1-of-12.md)합니다. 이 이전 버전의 **Visual Studio를 사용 하 여 ASP.NET 웹 배포** 이 섹션의 맨 위에 나열 합니다. SQL Server Compact 데이터베이스를 배포 하는 방법 및 전체 버전의 SQL Server를 SQL Server Compact에서 마이그레이션하는 방법에 대 한 내용은 지금은 주로 유용 합니다.
 - [.NET 다중 계층 응용 프로그램 사용 하 여 저장소 테이블, 큐 및 Blob](https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36) (Microsoft Azure 사이트). 5 부분으로 이루어진 자습서 시리즈 MVC 프로젝트를 만들어 Windows Azure 클라우드 서비스에 배포 하는 방법을 보여 줍니다.
 
@@ -86,8 +86,8 @@ ms.lasthandoff: 11/10/2017
 <a id="package"></a>
 ## <a name="deploying-a-web-application-by-creating-and-installing-a-web-deployment-package"></a>만들고 웹 배포 패키지를 설치 하 여 웹 응용 프로그램 배포
 
-- [방법: Visual Studio에서 웹 배포 패키지 만들기](https://msdn.microsoft.com/en-us/library/dd465323.aspx) (MSDN).
-- [방법: Visual Studio가 설치.deploy.cmd 파일을 사용 하 여 배포 패키지를 만든](https://msdn.microsoft.com/en-us/library/ff356104.aspx) (MSDN).
+- [방법: Visual Studio에서 웹 배포 패키지 만들기](https://msdn.microsoft.com/library/dd465323.aspx) (MSDN).
+- [방법: Visual Studio가 설치.deploy.cmd 파일을 사용 하 여 배포 패키지를 만든](https://msdn.microsoft.com/library/ff356104.aspx) (MSDN).
 - [웹 배포 패키지를 사용 하 여 개발 상자에 IIS를 제 3 자 호스트를 배포 하려면](http://sedodream.com/2011/11/08/UsingAWebDeployPackageToDeployToIISOnTheDevBoxAndToAThirdPartyHost.aspx) (Sayed Hashimi 블로그). IIS에서 로컬 컴퓨터에 배포 패키지를 설치 및 호스팅에 회사 하 여 IIS 관리자를 사용 하는 방법을 원격 관리용 IIS 관리자를 지원 합니다.
 - [웹 배포 패키지에서 Visual Studio 2010 빌드](https://www.iis.net/learn/publish/using-web-deploy/building-a-web-deploy-package-from-visual-studio-2010) (IIS.NET 웹 사이트). 명령줄 패키지 만들기 및 설치에 대 한 지침을 포함합니다.
 - [패키지 게시 아무 곳](http://sedodream.com/2012/03/14/PackageWebUpdatedAndVideoBelow.aspx) (Sayed Hashimi 블로그). 여러 서버에 하나의 패키지를 배포할 수 있도록 여러 대상 환경에 대 한 Web.config 파일을 변형 하는 프로세스를 자동화 하는 NuGet 패키지를 소개 합니다. 참고 항목에서 [PackageWeb 비디오](https://www.youtube.com/watch?v=-LvUJFI8CzM) Sayed Hashimi 여 합니다.
@@ -117,10 +117,10 @@ ms.lasthandoff: 11/10/2017
 ## <a name="using-webconfig-transformations-to-change-settings-in-the-destination-webconfig-file-or-appconfig-file-during-deployment"></a>배포 중 대상 Web.config 파일 또는 app.config 파일에서 설정을 변경 하려면 Web.config 변환 사용
 
 - [Web.config 파일 변환](../web-forms/overview/deployment/visual-studio-web-deployment/web-config-transformations.md)합니다.
-- [Visual Studio를 사용 하 여 웹 프로젝트 배포에 대 한 Web.config 변환 구문은](https://msdn.microsoft.com/en-us/library/dd465326.aspx) (MSDN).
+- [Visual Studio를 사용 하 여 웹 프로젝트 배포에 대 한 Web.config 변환 구문은](https://msdn.microsoft.com/library/dd465326.aspx) (MSDN).
 - [Web.config 변환 도구 2012.2-웹](https://www.youtube.com/watch?v=HdPK8mxpKEI) (Sayed Hashimi YouTube 비디오). Web.config 변환 미리 보기를 설정 하는 방법을 보여 줍니다.
-- [Web.config 변환을 비활성화 하려면 어떻게 합니까?](https://msdn.microsoft.com/en-us/library/ee942158.aspx#disable_web_config_transformation) (MSDN)입니다.
-- [Web.config 변환 하는 대신 웹 배포 매개 변수는 경우 사용 해야 합니까?](https://msdn.microsoft.com/en-us/library/ee942158.aspx#web_deploy_parameters) (MSDN)입니다.
+- [Web.config 변환을 비활성화 하려면 어떻게 합니까?](https://msdn.microsoft.com/library/ee942158.aspx#disable_web_config_transformation) (MSDN)입니다.
+- [Web.config 변환 하는 대신 웹 배포 매개 변수는 경우 사용 해야 합니까?](https://msdn.microsoft.com/library/ee942158.aspx#web_deploy_parameters) (MSDN)입니다.
 - [Codeplex.com에 발표 (XML 문서 변형) XDT](https://blogs.msdn.com/b/webdev/archive/2013/04/23/xdt-xml-document-transform-released-on-codeplex-com.aspx) (.NET 웹 개발 및 도구 블로그). Web.config 파일 변환 엔진에 대 한 소스 코드의 가용성을 알리는 하 고 사용 하는 몇 가지 도구를 나열 합니다.
 - [Windows Azure 웹 사이트: 응용 프로그램의 문자열 방법 및 연결 문자열 작업](https://blogs.msdn.com/b/windowsazure/archive/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work.aspx) (Microsoft Azure 블로그). 대상 환경은 Windows Azure 웹 사이트를 변형 하려면 Web.config에 대 한 대안 변환 `appSettings` 또는 `connectionStrings`합니다.
 
@@ -130,7 +130,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="using-web-deploy-parameters-to-change-settings-in-the-destination-web-application-during-deployment"></a>웹 배포 매개 변수를 사용 하 여 배포 하는 동안 대상 웹 응용 프로그램의 설정을 변경 하려면
 
-- [방법: 사용 하 여 웹 배포 매개 변수는 웹 배포 패키지에](https://msdn.microsoft.com/en-us/library/ff398068.aspx) (MSDN).
+- [방법: 사용 하 여 웹 배포 매개 변수는 웹 배포 패키지에](https://msdn.microsoft.com/library/ff398068.aspx) (MSDN).
 - [MSDeploy: 게시 프로필에 따라 게시에 대 한 앱 설정을 업데이트 하는 방법](http://sedodream.com/2013/03/02/MSDeployHowToUpdateAppSettingsOnPublishBasedOnThePublishProfile.aspx) (Sayed Hashimi 블로그). Visual Studio에 웹 배포 매개 변수를 통합 하는 방법을 보여 줍니다 게시 프로필 합니다.
 - [웹 배포 매개 변수화](https://www.iis.net/learn/publish/using-web-deploy/web-deploy-parameterization) (IIS.NET 웹 사이트).
 - [웹 배포 매개 변수화 동작에서](http://vishaljoshi.blogspot.com/2010/07/web-deploy-parameterization-in-action.html) (Vishal Joshi 블로그).
@@ -155,9 +155,9 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="deploying-a-database-or-changes-to-a-database-as-part-of-web-application-deployment"></a>데이터베이스 또는 변경 내용을 배포 웹 응용 프로그램 배포의 일부로 데이터베이스에
 
-- [Visual Studio에서 데이터베이스 배포를 구성할](https://msdn.microsoft.com/en-us/library/dd394698.aspx#dbdeployment) (MSDN). 웹 프로젝트를 사용 하 여 데이터베이스를 배포 하기 위한 옵션의 개요입니다.
+- [Visual Studio에서 데이터베이스 배포를 구성할](https://msdn.microsoft.com/library/dd394698.aspx#dbdeployment) (MSDN). 웹 프로젝트를 사용 하 여 데이터베이스를 배포 하기 위한 옵션의 개요입니다.
 - [Visual Studio를 사용 하 여 ASP.NET 웹 배포](../web-forms/overview/deployment/visual-studio-web-deployment/introduction.md)합니다. 12 부분으로 이루어진 자습서 시리즈 dbDacFx 공급자 및 Entity Framework Code First 마이그레이션을 사용 하 여 데이터베이스 배포를 보여 줍니다.
-- [방법: 웹 배포 한 번의 클릭을 사용 하 여 프로젝트를 Visual Studio에서 게시](https://msdn.microsoft.com/en-us/library/dd465337.aspx) (MSDN).
+- [방법: 웹 배포 한 번의 클릭을 사용 하 여 프로젝트를 Visual Studio에서 게시](https://msdn.microsoft.com/library/dd465337.aspx) (MSDN).
 - [Windows Azure 웹 사이트에 멤버 자격, OAuth, SQL 데이터베이스와 보안 ASP.NET MVC 5 앱을 배포](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data)합니다. 빌드 및 단일 SQL Server를 사용 하는 응용 프로그램을 배포 하는 긴 자습서는 데이터베이스 멤버 자격 및 응용 프로그램 데이터에 대 한 합니다.
 - [SQL Server Compact Visual Studio를 사용 하 여 ASP.NET 웹 응용 프로그램 배포](../web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-introduction-1-of-12.md)합니다. 12 부분으로 이루어진 자습서 시리즈를 정식 버전의 SQL Server SQL Server Compact에서 마이그레이션하는 방법 및 SQL Server Compact 데이터베이스를 배포 하는 방법을 보여 줍니다.
 
@@ -169,13 +169,13 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="deploying-a-database-separately-from-web-application-deployment"></a>웹 응용 프로그램 배포와 별도로 데이터베이스 배포
 
-- [SQL Server Data Tools](https://msdn.microsoft.com/en-us/library/hh272686(v=vs.103).aspx) (MSDN).
+- [SQL Server Data Tools](https://msdn.microsoft.com/library/hh272686(v=vs.103).aspx) (MSDN).
 - [SQL Server 데이터베이스 프로젝트에서 데이터를 포함 하 여](https://blogs.msdn.com/b/ssdt/archive/2012/02/02/including-data-in-an-sql-server-database-project.aspx) (SQL Server Data Tools 팀 블로그). 데이터베이스를 배포 하는 경우 스키마와 데이터 모두를 배포 하는 방법입니다.
 - [Windows Azure로 데이터베이스를 배포 하는 방법](https://docs.microsoft.com/azure/sql-database/sql-database-cloud-migrate) (Microsoft Azure 사이트)
-- [Windows Azure SQL 데이터베이스 (이전의 SQL Azure)로 데이터베이스 마이그레이션](https://msdn.microsoft.com/en-us/library/windowsazure/ee730904.aspx) (MSDN).
+- [Windows Azure SQL 데이터베이스 (이전의 SQL Azure)로 데이터베이스 마이그레이션](https://msdn.microsoft.com/library/windowsazure/ee730904.aspx) (MSDN).
 - [SSDT를 사용 하 여 SQL Azure로 데이터베이스 마이그레이션](https://blogs.msdn.com/b/ssdt/archive/2012/04/19/migrating-a-database-to-sql-azure-using-ssdt.aspx) (SQL Server Data Tools 팀 블로그).
-- [Windows Azure로 데이터 중심 응용 프로그램 마이그레이션](https://msdn.microsoft.com/en-us/library/jj156154.aspx) (MSDN).
-- [Windows Azure SQL 데이터베이스로 SQL Server 데이터베이스 마이그레이션](https://msdn.microsoft.com/en-us/library/windowsazure/jj156160.aspx) (MSDN).
+- [Windows Azure로 데이터 중심 응용 프로그램 마이그레이션](https://msdn.microsoft.com/library/jj156154.aspx) (MSDN).
+- [Windows Azure SQL 데이터베이스로 SQL Server 데이터베이스 마이그레이션](https://msdn.microsoft.com/library/windowsazure/jj156160.aspx) (MSDN).
 
 
 <a id="aspnetmembership"></a>
@@ -195,9 +195,9 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="precompiling-for-deployment"></a>배포를 위한 미리 컴파일
 
-- [ASP.NET 웹 응용 프로그램 프로젝트에 대 한 미리 컴파일 개요](https://msdn.microsoft.com/en-us/library/aa983464.aspx) (MSDN).
-- [패키지/게시 웹 탭, 프로젝트 속성](https://msdn.microsoft.com/en-us/library/dd410108.aspx) (MSDN).
-- [고급 설정 대화 상자를 미리 컴파일하](https://msdn.microsoft.com/en-us/library/hh475319.aspx) (MSDN).
+- [ASP.NET 웹 응용 프로그램 프로젝트에 대 한 미리 컴파일 개요](https://msdn.microsoft.com/library/aa983464.aspx) (MSDN).
+- [패키지/게시 웹 탭, 프로젝트 속성](https://msdn.microsoft.com/library/dd410108.aspx) (MSDN).
+- [고급 설정 대화 상자를 미리 컴파일하](https://msdn.microsoft.com/library/hh475319.aspx) (MSDN).
 
 
 <a id="intranet"></a>
@@ -206,7 +206,7 @@ ms.lasthandoff: 11/10/2017
 ## <a name="deploying-an-intranet-web-application"></a>인트라넷 웹 응용 프로그램 배포
 
 - [온-프레미스 조직 인증 옵션 (ADFS)를 사용 하 여 Visual Studio 2013에서 ASP.NET과](http://www.cloudidentity.com/blog/2014/02/12/use-the-on-premises-organizational-authentication-option-adfs-with-asp-net-in-visual-studio-2013/) (Vittorio Bertocci 하 여 블로그).
-- [ASP.NET MVC를 사용 하 여 인트라넷 사이트 만드는 방법](https://msdn.microsoft.com/en-us/library/gg703322(VS.98).aspx) (MSDN). Visual Studio 2010에 대 한 이전 연습 기록 된 인트라넷 프로젝트 템플릿에서 Visual Studio 2013에 도입 된 주요 변경 사항이 반영 되지 않습니다.
+- [ASP.NET MVC를 사용 하 여 인트라넷 사이트 만드는 방법](https://msdn.microsoft.com/library/gg703322(VS.98).aspx) (MSDN). Visual Studio 2010에 대 한 이전 연습 기록 된 인트라넷 프로젝트 템플릿에서 Visual Studio 2013에 도입 된 주요 변경 사항이 반영 되지 않습니다.
 
 
 <a id="automating"></a>
@@ -250,7 +250,7 @@ ms.lasthandoff: 11/10/2017
 - [Visual Studio를 사용 하 여 ASP.NET 웹 배포: 문제 해결](../web-forms/overview/deployment/visual-studio-web-deployment/troubleshooting.md)합니다.
 - [일반적인 문제 해결 웹 문제 배포](https://www.iis.net/learn/publish/troubleshooting-web-deploy/troubleshooting-common-problems-with-web-deploy)합니다.
 - [배포 오류 코드를 웹](https://www.iis.net/learn/publish/troubleshooting-web-deploy/web-deploy-error-codes) (IIS.net 사이트).
-- [Visual Studio 및 ASP.NET에 대 한 배포 FAQ 웹](https://msdn.microsoft.com/en-us/library/ee942158.aspx) (MSDN).
+- [Visual Studio 및 ASP.NET에 대 한 배포 FAQ 웹](https://msdn.microsoft.com/library/ee942158.aspx) (MSDN).
 - [IIS와 ASP.NET 개발 서버 간의 차이 핵심](../web-forms/overview/older-versions-getting-started/deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-cs.md)합니다.
 - [개발 및 프로덕션 간의 일반적인 구성 차이](../web-forms/overview/older-versions-getting-started/deploying-web-site-projects/common-configuration-differences-between-development-and-production-cs.md)합니다.
 - [보통 신뢰 ASP.NET 응용 프로그램 호스팅](http://www.4guysfromrolla.com/articles/100307-1.aspx) (4 Guy Rolla 사이트에서).
@@ -262,7 +262,7 @@ ms.lasthandoff: 11/10/2017
 ## <a name="getting-help-with-a-specific-deployment-question"></a>특정 배포 질문 도움말 보기
 
 - [ASP.NET 구성 및 배포 포럼](https://forums.asp.net/26.aspx/1?Configuration and Deployment)합니다.
-- [StackOverflow.com](http://www.StackOverflow.com)합니다.
+- [StackOverflow.com](http://www.StackOverflow.com).
 
 
 <a id="additional"></a>

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/user-based-authorization-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 152b9a4b12f55bd999960568b11d08c96d342c03
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5579292930da97b142ff6db5d34d33be77aeea4b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="user-based-authorization-vb"></a>사용자 기반 권한 부여 (VB)
 ====================
@@ -39,9 +39,9 @@ ASP.NET 쉽게 사용자 기반 권한 부여 규칙을 정의할 수 있습니�
 
 에 설명 된 대로 [ *폼 인증의 개요는* ](../introduction/an-overview-of-forms-authentication-vb.md) 자습서에서는 ASP.NET 런타임은 ASP.NET 요청 리소스를 수명 주기 동안 다양 한 이벤트를 발생 시킵니다.에 대 한 요청을 처리할 때. *HTTP 모듈* 는 관리 되는 클래스는 요청 수명에 특정 이벤트에 해당 코드가 실행 됩니다. ASP.NET 원리를 자세히 파악할수록 필수 작업을 수행 하는 HTTP 모듈의 수와 함께 제공 합니다.
 
-이러한 하나의 HTTP 모듈은 [ `FormsAuthenticationModule` ](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthenticationmodule.aspx)합니다. 이전 자습서의 기본 기능은에 설명 된 대로 `FormsAuthenticationModule` 현재 요청의 id를 결정 하는 것입니다. 이 쿠키에 되었거나 URL 내에 포함 된 폼 인증 티켓을 검사 하 여 수행 됩니다. 이 식별 하는 동안 일어나는 [ `AuthenticateRequest` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.authenticaterequest.aspx)합니다.
+이러한 하나의 HTTP 모듈은 [ `FormsAuthenticationModule` ](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx)합니다. 이전 자습서의 기본 기능은에 설명 된 대로 `FormsAuthenticationModule` 현재 요청의 id를 결정 하는 것입니다. 이 쿠키에 되었거나 URL 내에 포함 된 폼 인증 티켓을 검사 하 여 수행 됩니다. 이 식별 하는 동안 일어나는 [ `AuthenticateRequest` 이벤트](https://msdn.microsoft.com/library/system.web.httpapplication.authenticaterequest.aspx)합니다.
 
-또 다른 중요 한 HTTP 모듈을는 [ `UrlAuthorizationModule` ](https://msdn.microsoft.com/en-us/library/system.web.security.urlauthorizationmodule.aspx), 대 한 응답으로 발생 하는 [ `AuthorizeRequest` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.authorizerequest.aspx) (후 발생 하는 `AuthenticateRequest` 이벤트). `UrlAuthorizationModule` 구성 태그를 검사 하 여 `Web.config` 현재 id 지정된 된 페이지를 방문 하 여 권한을 갖는지 확인 합니다. 이 프로세스 라고 *URL 권한 부여*합니다.
+또 다른 중요 한 HTTP 모듈을는 [ `UrlAuthorizationModule` ](https://msdn.microsoft.com/library/system.web.security.urlauthorizationmodule.aspx), 대 한 응답으로 발생 하는 [ `AuthorizeRequest` 이벤트](https://msdn.microsoft.com/library/system.web.httpapplication.authorizerequest.aspx) (후 발생 하는 `AuthenticateRequest` 이벤트). `UrlAuthorizationModule` 구성 태그를 검사 하 여 `Web.config` 현재 id 지정된 된 페이지를 방문 하 여 권한을 갖는지 확인 합니다. 이 프로세스 라고 *URL 권한 부여*합니다.
 
 살펴봅니다 1 단계에서에서 URL 권한 부여 규칙에 대 한 구문을 하지만 먼저 보겠습니다을 파악는 `UrlAuthorizationModule` 여부는 요청이 허용 되는지 여부에 따라 않습니다. 경우는 `UrlAuthorizationModule` 판단 하는 요청이 승인 되 다음 아무것도 수행 하지, 주기를 통해 요청이 계속 합니다. 그러나 요청이 면 *하지* 에 게 권한이 부여 하면 `UrlAuthorizationModule` 수명 주기를 중단 하 고 지시는 `Response` 반환할 개체는 [HTTP 401 권한이 없음](http://www.checkupdown.com/status/E401.html) 상태입니다. 때문에이 HTTP 401 상태 클라이언트에 반환 되지 않습니다 폼 인증을 사용 하는 경우 경우는 `FormsAuthenticationModule` 감지 하면 HTTP 401 상태를 수정 하는 [HTTP 302 리디렉션](http://www.checkupdown.com/status/E302.html) 로그인 페이지에 있습니다.
 
@@ -70,7 +70,7 @@ ASP.NET 쉽게 사용자 기반 권한 부여 규칙을 정의할 수 있습니�
 그림 2에 설명 된 워크플로 대부분 컴퓨터 숙련 방문자를 befuddle 신속 하 게 수 있습니다. 이 주기 2 단계에서에서 혼동을 방지 하는 방법을 알아봅니다.
 
 > [!NOTE]
-> ASP.NET는 두 가지 메커니즘을 사용 하 여 현재 사용자는 특정 웹 페이지에 액세스할 수 있는지 여부를 확인 하려면: URL 권한 부여 및 파일 권한 부여 합니다. 파일 권한 부여에 의해 구현 됩니다는 [ `FileAuthorizationModule` ](https://msdn.microsoft.com/en-us/library/system.web.security.fileauthorizationmodule.aspx), 요청한 파일 Acl을 참고 하 여 기관을 결정 합니다. Acl은 Windows 계정에 적용 되는 권한 때문에 파일 권한 부여는 Windows 인증을 사용한 가장 많이 사용 됩니다. 폼 인증을 사용할 경우 모든 운영 체제 및 파일 시스템 수준 요청은 사이트를 방문 하는 사용자에 관계 없이 동일한 Windows 계정에 의해 실행 됩니다. 폼 인증을 중점적으로이 자습서 시리즈, 이후에서는 설명 하지 파일 권한 부여 합니다.
+> ASP.NET는 두 가지 메커니즘을 사용 하 여 현재 사용자는 특정 웹 페이지에 액세스할 수 있는지 여부를 확인 하려면: URL 권한 부여 및 파일 권한 부여 합니다. 파일 권한 부여에 의해 구현 됩니다는 [ `FileAuthorizationModule` ](https://msdn.microsoft.com/library/system.web.security.fileauthorizationmodule.aspx), 요청한 파일 Acl을 참고 하 여 기관을 결정 합니다. Acl은 Windows 계정에 적용 되는 권한 때문에 파일 권한 부여는 Windows 인증을 사용한 가장 많이 사용 됩니다. 폼 인증을 사용할 경우 모든 운영 체제 및 파일 시스템 수준 요청은 사이트를 방문 하는 사용자에 관계 없이 동일한 Windows 계정에 의해 실행 됩니다. 폼 인증을 중점적으로이 자습서 시리즈, 이후에서는 설명 하지 파일 권한 부여 합니다.
 
 
 ### <a name="the-scope-of-url-authorization"></a>URL 권한 부여 범위
@@ -87,7 +87,7 @@ ASP.NET 쉽게 사용자 기반 권한 부여 규칙을 정의할 수 있습니�
 
 ## <a name="step-1-defining-url-authorization-rules-inwebconfig"></a>1 단계: URL 권한 부여 규칙의 정의`Web.config`
 
-`UrlAuthorizationModule` 권한을 부여 하거나 응용 프로그램의 구성에 정의 된 URL 권한 부여 규칙에 따라 특정 id에 대 한 요청된 된 리소스에 대 한 액세스를 거부할 것인지 결정 합니다. 권한 부여 규칙에 명시 되는 [ `<authorization>` 요소](https://msdn.microsoft.com/en-us/library/8d82143t.aspx) 의 형태로 `<allow>` 및 `<deny>` 자식 요소입니다. 각 `<allow>` 및 `<deny>` 자식 요소를 지정할 수 있습니다.
+`UrlAuthorizationModule` 권한을 부여 하거나 응용 프로그램의 구성에 정의 된 URL 권한 부여 규칙에 따라 특정 id에 대 한 요청된 된 리소스에 대 한 액세스를 거부할 것인지 결정 합니다. 권한 부여 규칙에 명시 되는 [ `<authorization>` 요소](https://msdn.microsoft.com/library/8d82143t.aspx) 의 형태로 `<allow>` 및 `<deny>` 자식 요소입니다. 각 `<allow>` 및 `<deny>` 자식 요소를 지정할 수 있습니다.
 
 - 특정 사용자
 - 사용자의 쉼표로 구분 된 목록
@@ -230,10 +230,10 @@ GridView의 태그를 생성, म 특정 디렉터리의 파일을 검색 하 �
 
 [!code-vb[Main](user-based-authorization-vb/samples/sample10.vb)]
 
-위의 코드를 사용 하 여는 [ `DirectoryInfo` 클래스](https://msdn.microsoft.com/en-us/library/system.io.directoryinfo.aspx) 응용 프로그램의 루트 폴더에 있는 파일의 목록을 가져올 수 있습니다. [ `GetFiles()` 메서드](https://msdn.microsoft.com/en-us/library/system.io.directoryinfo.getfiles.aspx) 배열로 서 디렉터리의 모든 파일 반환 [ `FileInfo` 개체](https://msdn.microsoft.com/en-us/library/system.io.fileinfo.aspx), GridView에 바인딩된 다음 합니다. `FileInfo` 개체와 같은 다양 한 속성에는 `Name`, `Length`, 및 `IsReadOnly`, 등입니다. 선언적 태그 알 수 있듯이 GridView 방금 표시는 `Name` 및 `Length` 속성입니다.
+위의 코드를 사용 하 여는 [ `DirectoryInfo` 클래스](https://msdn.microsoft.com/library/system.io.directoryinfo.aspx) 응용 프로그램의 루트 폴더에 있는 파일의 목록을 가져올 수 있습니다. [ `GetFiles()` 메서드](https://msdn.microsoft.com/library/system.io.directoryinfo.getfiles.aspx) 배열로 서 디렉터리의 모든 파일 반환 [ `FileInfo` 개체](https://msdn.microsoft.com/library/system.io.fileinfo.aspx), GridView에 바인딩된 다음 합니다. `FileInfo` 개체와 같은 다양 한 속성에는 `Name`, `Length`, 및 `IsReadOnly`, 등입니다. 선언적 태그 알 수 있듯이 GridView 방금 표시는 `Name` 및 `Length` 속성입니다.
 
 > [!NOTE]
-> `DirectoryInfo` 및 `FileInfo` 에서 찾을 수 없는 클래스는 [ `System.IO` 네임 스페이스](https://msdn.microsoft.com/en-us/library/system.io.aspx)합니다. 따라서가를 앞에 이러한 클래스 이름은 네임 스페이스 이름으로, 아니면 클래스 파일에 가져온 네임 스페이스 (통해 `Imports System.IO`).
+> `DirectoryInfo` 및 `FileInfo` 에서 찾을 수 없는 클래스는 [ `System.IO` 네임 스페이스](https://msdn.microsoft.com/library/system.io.aspx)합니다. 따라서가를 앞에 이러한 클래스 이름은 네임 스페이스 이름으로, 아니면 클래스 파일에 가져온 네임 스페이스 (통해 `Imports System.IO`).
 
 
 브라우저를 통해이 페이지를 방문 하 여 보십시오. 응용 프로그램의 루트 디렉터리에 있는 파일 목록이 표시 됩니다. 뷰 또는 링크 삭제 단추가 중 하나를 클릭 하면, 다시 게시 되지만 아직를 이유임 때문에 아무 작업도 발생 합니다 필요한 이벤트 처리기를 만들어야 합니다.
@@ -248,11 +248,11 @@ GridView의 태그를 생성, म 특정 디렉터리의 파일을 검색 하 �
 
 [!code-aspx[Main](user-based-authorization-vb/samples/sample11.aspx)]
 
-다음으로 GridView에 대 한 이벤트 처리기를 만들고 [ `SelectedIndexChanged` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.selectedindexchanged.aspx) 다음 코드를 추가 합니다.
+다음으로 GridView에 대 한 이벤트 처리기를 만들고 [ `SelectedIndexChanged` 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selectedindexchanged.aspx) 다음 코드를 추가 합니다.
 
 [!code-vb[Main](user-based-authorization-vb/samples/sample12.vb)]
 
-이 코드를 사용 하는 GridView 여 `SelectedValue` 선택한 파일의 전체 파일 이름을 확인 하는 속성입니다. 내부적으로 `DataKeys` 를 얻기 위해 컬렉션은 참조는 `SelectedValue`GridView의 설정 하는 명령적 큽니다 `DataKeyNames` 속성을 이름,이 단계에서 설명한 대로 합니다. [ `File` 클래스](https://msdn.microsoft.com/en-us/library/system.io.file.aspx) 다음에 할당 되는 문자열에 선택한 파일의 내용을 읽는 데 사용 되는 `FileContents` 텍스트 상자의 `Text` 페이지에서 선택한 파일의 내용을 표시할 속성입니다.
+이 코드를 사용 하는 GridView 여 `SelectedValue` 선택한 파일의 전체 파일 이름을 확인 하는 속성입니다. 내부적으로 `DataKeys` 를 얻기 위해 컬렉션은 참조는 `SelectedValue`GridView의 설정 하는 명령적 큽니다 `DataKeyNames` 속성을 이름,이 단계에서 설명한 대로 합니다. [ `File` 클래스](https://msdn.microsoft.com/library/system.io.file.aspx) 다음에 할당 되는 문자열에 선택한 파일의 내용을 읽는 데 사용 되는 `FileContents` 텍스트 상자의 `Text` 페이지에서 선택한 파일의 내용을 표시할 속성입니다.
 
 
 [![선택한 파일의 내용은 텍스트 상자에 표시 됩니다.](user-based-authorization-vb/_static/image23.png)](user-based-authorization-vb/_static/image22.png)
@@ -264,7 +264,7 @@ GridView의 태그를 생성, म 특정 디렉터리의 파일을 검색 하 �
 > HTML 태그를 포함 하는 파일의 내용을 보려면 다음 보기 또는 파일을 삭제 하려고 하는 경우 표시 됩니다는 `HttpRequestValidationException` 오류입니다. 텍스트 상자의 내용을 다시 게시 될 때 웹 서버에 다시 전송 되기 때문에 발생 합니다. 기본적으로 asp는 `HttpRequestValidationException` HTML 태그와 같은 잠재적으로 위험한 포스트백 콘텐츠 감지 될 때마다 오류입니다. 이 오류 발생을 사용 하지 않으려면 해제 페이지에 대 한 요청 유효성 검사를 추가 하 여 `ValidateRequest="false"` 에 `@Page` 지시문입니다. 요청 유효성 검사로 뿐만 아니라 예방 조치를 취해야 할 때의 이점에 대 한 자세한 내용은 사용 중지, 읽을 [요청 유효성 검사-스크립트 공격 방지](https://asp.net/learn/whitepapers/request-validation/)합니다.
 
 
-GridView의에 대 한 이벤트 처리기를 다음 코드로 마지막으로 추가 [ `RowDeleting` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.rowdeleting.aspx):
+GridView의에 대 한 이벤트 처리기를 다음 코드로 마지막으로 추가 [ `RowDeleting` 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rowdeleting.aspx):
 
 [!code-vb[Main](user-based-authorization-vb/samples/sample13.vb)]
 
@@ -358,7 +358,7 @@ LoginView의 서식 파일에서 웹 컨트롤을 코드 숨김 클래스에서 
 
 3 단계에서는 익명 사용자가 파일의 내용을 볼 수 없습니다. 하 고 모든 사용자가 있지만 Tito에서 파일 삭제 금지 합니다. 이 연결 된 사용자 인터페이스 요소에 대해 선언적 방법과 프로그래밍 기술을 통해 무단 방문자가 숨기는 방식으로 수행 되었습니다. 간단한 예에서는 사용자 인터페이스 요소를 제대로 숨기기 되었으나 간단한 어떤 점이 더 복잡 한 사이트 동일한 기능을 수행 하는 많은 방법이 될 수 있는? 권한이 없는 사용자가 해당 기능을 제한에서 숨기 거 나 모든 적용 가능한 사용자 인터페이스 요소를 사용 하지 않도록 설정 하지 않으면는 것이 되나요?
 
-해당 클래스 또는 메서드를 장식 하는 기능의 특정 부분 권한이 없는 사용자가 액세스할 수 없도록 하는 쉬운 방법을 [ `PrincipalPermission` 특성](https://msdn.microsoft.com/en-us/library/system.security.permissions.principalpermissionattribute.aspx)합니다. .NET 런타임 클래스를 사용 하 여 또는 메서드 중 하나를 실행 하는 경우 현재 보안 컨텍스트 클래스를 사용 하거나 메서드를 실행할 수 있는 권한을 갖는지 확인을 확인 합니다. `PrincipalPermission` 특성은 이러한 규칙을 정의할 수 있습니다 하는 메커니즘을 제공 합니다.
+해당 클래스 또는 메서드를 장식 하는 기능의 특정 부분 권한이 없는 사용자가 액세스할 수 없도록 하는 쉬운 방법을 [ `PrincipalPermission` 특성](https://msdn.microsoft.com/library/system.security.permissions.principalpermissionattribute.aspx)합니다. .NET 런타임 클래스를 사용 하 여 또는 메서드 중 하나를 실행 하는 경우 현재 보안 컨텍스트 클래스를 사용 하거나 메서드를 실행할 수 있는 권한을 갖는지 확인을 확인 합니다. `PrincipalPermission` 특성은 이러한 규칙을 정의할 수 있습니다 하는 메커니즘을 제공 합니다.
 
 사용 하 여 살펴보겠습니다는 `PrincipalPermission` GridView의 특성이 `SelectedIndexChanged` 및 `RowDeleting` 각각 Tito, 이외의 사용자가 익명 사용자로 실행 하지 못하도록 하는 이벤트 처리기입니다. 각 함수 정의 위에 적절 한 특성을 추가 해야 할 됩니다.
 
@@ -401,13 +401,13 @@ URL 권한 부여 프레임 워크에서 페이지 단위로 권한 부여 규�
 이 자습서에 설명 된 항목에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
 - [비즈니스 및 데이터 계층을 사용 하 여 권한 부여 규칙 추가`PrincipalPermissionAttributes`](https://weblogs.asp.net/scottgu/archive/2006/10/04/Tip_2F00_Trick_3A00_-Adding-Authorization-Rules-to-Business-and-Data-Layers-using-PrincipalPermissionAttributes.aspx)
-- [ASP.NET 권한 부여](https://msdn.microsoft.com/en-us/library/wce3kxhd.aspx)
+- [ASP.NET 권한 부여](https://msdn.microsoft.com/library/wce3kxhd.aspx)
 - [Iis 6 및 IIS7 보안 간의 변경 사항](https://www.iis.net/articles/view.aspx/IIS7/Managing-IIS7/Configuring-Security/Changes-between-IIS6-and-IIS7-Security)
-- [특정 파일 및 하위 디렉터리를 구성합니다.](https://msdn.microsoft.com/en-us/library/6hbkh9s7.aspx)
+- [특정 파일 및 하위 디렉터리를 구성합니다.](https://msdn.microsoft.com/library/6hbkh9s7.aspx)
 - [사용자를 기반으로 하는 데이터 수정 기능 제한](../../data-access/editing-inserting-and-deleting-data/limiting-data-modification-functionality-based-on-the-user-vb.md)
 - [LoginView 컨트롤 퀵 스타트](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/login/loginview.aspx)
 - [IIS7 URL 권한 부여 이해](https://www.iis.net/articles/view.aspx/IIS7/Managing-IIS7/Configuring-Security/URL-Authorization/Understanding-IIS7-URL-Authorization)
-- [`UrlAuthorizationModule`기술 문서](https://msdn.microsoft.com/en-us/library/system.web.security.urlauthorizationmodule.aspx)
+- [`UrlAuthorizationModule`기술 문서](https://msdn.microsoft.com/library/system.web.security.urlauthorizationmodule.aspx)
 - [ASP.NET 2.0에서에서 데이터 사용](../../data-access/index.md)
 
 ### <a name="about-the-author"></a>작성자 정보

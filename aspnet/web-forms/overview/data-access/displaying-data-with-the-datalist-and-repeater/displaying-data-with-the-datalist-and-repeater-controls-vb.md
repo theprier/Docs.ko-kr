@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/displaying-data-with-the-datalist-and-repeater-controls-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b6e71470ae2888ac4332f896c34f666618a425e7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 20a092ee2886932664705c22c3aa88d8a2f7f0ef
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="displaying-data-with-the-datalist-and-repeater-controls-vb"></a>DataList 및 반복기 컨트롤 (VB)를 사용 하 여 데이터 표시
 ====================
@@ -163,7 +163,7 @@ DataList GridView 처럼 스타일 관련 속성의 숫자와 같은 제공 `Fon
 
 - `HeaderTemplate`제공 된 경우 출력에 머리글 행을 추가 하 고이 행을 렌더링 하는 데 사용
 - `AlternatingItemTemplate`대체 항목을 렌더링 하는 데 사용
-- `SelectedItemTemplate`선택한 항목을 렌더링 하는 데 사용 선택한 항목은 s DataList에 해당 하는 인덱스를 포함 하는 항목 [ `SelectedIndex` 속성](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.datalist.selectedindex.aspx)
+- `SelectedItemTemplate`선택한 항목을 렌더링 하는 데 사용 선택한 항목은 s DataList에 해당 하는 인덱스를 포함 하는 항목 [ `SelectedIndex` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.selectedindex.aspx)
 - `EditItemTemplate`편집 중인 항목을 렌더링 하는 데 사용
 - `SeparatorTemplate`제공 된 경우 각 항목 사이 구분 기호를 추가 하 고이 구분 기호를 렌더링 하는 데 사용
 - `FooterTemplate`-를 입력 하면 바닥글 행이 추가 되며이 행을 렌더링 하는 데 사용
@@ -222,7 +222,7 @@ ASP.NET에서 제어 글머리 기호 목록의 일부 데이터 원본에서 �
 - `SectionLevelTutorialListing.ascx`는 반복기는 하위 섹션이 현재 사이트 맵 섹션의 글머리 기호 목록이 표시 하는 데 사용한
 
 > [!NOTE]
-> ASP.NET 2.0을 새 소개 [BulletedList 컨트롤](https://msdn.microsoft.com/en-us/library/ms228101.aspx), 있는 간단한 글머리 기호 목록에 표시 하기 위해 데이터 소스 제어에 바인딩할 수 수 있습니다. BulletedList 컨트롤과 म 필요가 없습니다 목록 관련 HTML; 중 하나를 지정 합니다. 대신, 우리는 단순히 나타냅니다 각 목록 항목에 대 한 텍스트도 표시할 데이터 필드.
+> ASP.NET 2.0을 새 소개 [BulletedList 컨트롤](https://msdn.microsoft.com/library/ms228101.aspx), 있는 간단한 글머리 기호 목록에 표시 하기 위해 데이터 소스 제어에 바인딩할 수 수 있습니다. BulletedList 컨트롤과 म 필요가 없습니다 목록 관련 HTML; 중 하나를 지정 합니다. 대신, 우리는 단순히 나타냅니다 각 목록 항목에 대 한 텍스트도 표시할 데이터 필드.
 
 
 반복 모든 데이터 웹 컨트롤을 catch로 사용 됩니다. 필요한 태그를 생성 하는 기존 컨트롤 없으면 반복기 컨트롤 수 있습니다. 을 설명 하기 위해 반복기를 사용 하 여 s 2 단계에서에서 만든 제품 정보 DataList 위에 표시 되는 범주 목록이 남아 있을 수 있도록 합니다. 특히, s 수 있는 단일 행 HTML에 표시 되는 범주 `<table>` 각 범주로 테이블의 열으로 표시 합니다.

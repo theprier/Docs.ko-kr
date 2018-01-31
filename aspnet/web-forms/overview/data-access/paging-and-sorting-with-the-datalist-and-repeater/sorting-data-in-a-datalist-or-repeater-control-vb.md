@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/sorting-data-in-a-datalist-or-repeater-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e3f505e525fd5e701bb40dc3e6467b880bf75447
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0133a74454a7754f4f7087e2121c7387a1aef8a8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="sorting-data-in-a-datalist-or-repeater-control-vb"></a>DataList 또는 반복기 컨트롤 (VB)에서 데이터 정렬
 ====================
@@ -81,7 +81,7 @@ DataList 또는 반복기 컨트롤과 함께이 기능을 복제 해야 합니�
 
 ## <a name="step-3-instructing-the-objectdatasource-to-sort-the-data"></a>3 단계: 데이터를 정렬 하려면 ObjectDataSource 지시
 
-반복기에 표시 된 데이터를 정렬 하려면 데이터를 정렬 해야 하는 정렬 식의 ObjectDataSource에 알려야 할 합니다. 먼저 발생 ObjectDataSource에서 해당 데이터를 검색 하기 전에 해당 [ `Selecting` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.selecting.aspx), 정렬 식을 지정 하기 위해 기회를 제공 하는 합니다. `Selecting` 형식의 개체를 전달 된 이벤트 처리기 [ `ObjectDataSourceSelectingEventArgs` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasourceselectingeventargs.aspx), 라는 속성이 있는 [ `Arguments` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasourceselectingeventargs.arguments.aspx) 형식의 [ `DataSourceSelectArguments` ](https://msdn.microsoft.com/en-us/library/system.web.ui.datasourceselectarguments.aspx)합니다. `DataSourceSelectArguments` 클래스는 데이터 소비자에 관련 된 데이터 요청 된 데이터 소스 제어를 전달 하기 위해 설계 되었으며 포함 한 [ `SortExpression` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.datasourceselectarguments.sortexpression.aspx)합니다.
+반복기에 표시 된 데이터를 정렬 하려면 데이터를 정렬 해야 하는 정렬 식의 ObjectDataSource에 알려야 할 합니다. 먼저 발생 ObjectDataSource에서 해당 데이터를 검색 하기 전에 해당 [ `Selecting` 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.selecting.aspx), 정렬 식을 지정 하기 위해 기회를 제공 하는 합니다. `Selecting` 형식의 개체를 전달 된 이벤트 처리기 [ `ObjectDataSourceSelectingEventArgs` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasourceselectingeventargs.aspx), 라는 속성이 있는 [ `Arguments` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasourceselectingeventargs.arguments.aspx) 형식의 [ `DataSourceSelectArguments` ](https://msdn.microsoft.com/library/system.web.ui.datasourceselectarguments.aspx)합니다. `DataSourceSelectArguments` 클래스는 데이터 소비자에 관련 된 데이터 요청 된 데이터 소스 제어를 전달 하기 위해 설계 되었으며 포함 한 [ `SortExpression` 속성](https://msdn.microsoft.com/library/system.web.ui.datasourceselectarguments.sortexpression.aspx)합니다.
 
 에 대 한 이벤트 처리기를 만들고 정렬 정보를 ASP.NET 페이지에서는 ObjectDataSource를 전달 하려면는 `Selecting` 이벤트 및 다음 코드를 사용 하 여:
 

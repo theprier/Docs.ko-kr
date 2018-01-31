@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/aspnet4/breaking-changes
 msc.type: content
-ms.openlocfilehash: a0f25ed3c996b73e362177b196539c6f2b143739
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d68723b52ae1ee80142fb1aca3b0b10de34332d1
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="aspnet-4-breaking-changes"></a>ASP.NET 4 주요 변경 내용
 ====================
@@ -49,7 +49,7 @@ ms.lasthandoff: 11/10/2017
 [Passport System.Web.Security 유형은 Obsolete](#0.1__Toc256770158 "_Toc256770158")  
 [ASP.NET 4에에서 있는 이미지를 렌더링 하지 못함 MenuItem.PopOutImageUrl 속성](#0.1__Toc256770159 "_Toc256770159")  
 [경로가 백슬래시를 포함 하는 경우 이미지를 렌더링 하 Menu.DynamicPopOutImageUrl 실패 하 게 되며 Menu.StaticPopOutImageUrl](#0.1__Toc256770160 "_Toc256770160")  
-[고 지 사항](#0.1__Toc256770161 "_Toc256770161")
+[Disclaimer](#0.1__Toc256770161 "_Toc256770161")
 
 <a id="0.1__ControlRenderingCompatibilityVersio"></a><a id="0.1__Toc245724853"></a><a id="0.1__Toc255587630"></a><a id="0.1__Toc256770141"></a>
 
@@ -272,15 +272,15 @@ SharePoint를 실행 하는 웹 서버는 `Web.config` SharePoint 웹 사이트�
 
 이전 버전의 ASP.NET **HttpRequest** 속성 다음 값을 갖습니다.
 
-**HttpRequest.FilePath**:`/testapp/Action.mvc/SomeAction`
+**HttpRequest.FilePath**: `/testapp/Action.mvc/SomeAction`
 
 **HttpRequest.PathInfo**: (비어 있음)
 
 ASP.NET 4에서 **HttpRequest** 속성은 대신 다음과 같은 값을 갖습니다.
 
-**HttpRequest.FilePath**:`/testapp/Action.mvc`
+**HttpRequest.FilePath**: `/testapp/Action.mvc`
 
-**HttpRequest.PathInfo**:`SomeAction`
+**HttpRequest.PathInfo**: `SomeAction`
 
 <a id="0.1__Toc252995493"></a><a id="0.1__Toc255587642"></a><a id="0.1__Toc256770153"></a><a id="0.1__Toc245724861"></a>
 
@@ -385,7 +385,7 @@ ASP.NET 2.0 및 확장에 의해 3.5에 추가 된 ASP.NET 기능.NET Framework 
 - ASP.NET 빌드 공급자가 만든 동적으로 컴파일된 어셈블리 명시적으로 투명으로 어셈블리를 표시 하도록 업데이트 되었습니다.
 - 모든 ASP.NET 어셈블리는 APTCA 특성이 웹 호스팅 환경에만 적용 되는 방식에서으로 표시 됩니다. 부분적으로 신뢰할 수 있는 비 웹 호스팅 환경 ClickOnce 예: ASP.NET 어셈블리를 호출할 수 없습니다.
 
-새 ASP.NET 4 코드 액세스 보안 모델에 대 한 자세한 내용은 참조 [ASP.NET 응용 프로그램의 코드 액세스 보안 사용 하 여](https://msdn.microsoft.com/en-us/library/dd984947%28VS.100%29.aspx) MSDN 웹 사이트에 있습니다.
+새 ASP.NET 4 코드 액세스 보안 모델에 대 한 자세한 내용은 참조 [ASP.NET 응용 프로그램의 코드 액세스 보안 사용 하 여](https://msdn.microsoft.com/library/dd984947%28VS.100%29.aspx) MSDN 웹 사이트에 있습니다.
 
 <a id="0.1__Toc256770156"></a><a id="0.1__Toc245724863"></a><a id="0.1__Toc252995496"></a><a id="0.1__Toc255587645"></a><a id="0.1__Toc245724864"></a>
 
@@ -501,9 +501,9 @@ ASP.NET 4에서 사용 하 여 지정 하는 이미지는 *Menu.StaticPopOutImag
 
 Microsoft가 이 설명서 본안에 관련된 특허권, 상표권, 저작권 또는 기타 지적 재산권 등을 보유할 수도 있습니다. 서면 사용권 계약에 따라 Microsoft로부터 귀하에게 명시적으로 제공된 권리 이외에, 이 문서의 제공은 귀하에게 이러한 특허권, 상표권, 저작권, 또는 기타 지적 소유권 등에 대한 어떠한 사용권도 허여하지 않습니다.
 
-다른 설명이 없는 한, 용례에 사용된 회사, 기관, 제품, 도메인 이름, 전자 메일 주소, 로고, 사람, 장소 및 이벤트 등은 실제 데이터가 아닙니다. 어떠한 실제 회사, 기관, 제품, 도메인 이름, 전자 메일 주소, 로고, 사람, 장소 또는 이벤트와도 연관시킬 의도가 없으며 그렇게 유추해서도 안 됩니다.
+다른 설명이 없는 한 예제 회사, 조직, 제품, 도메인 이름, 전자 메일 주소, 로고, 사람, 장소 및 이벤트 용례은 실제 데이터가 아닙니다과 연결 된 실제 회사, 조직, 제품, 도메인 이름, 전자 메일 주소, 로고, 사람, 장소 또는 이벤트 해서도 그렇게 유추 해서도 안 됩니다.
 
-© 2010 Microsoft Corporation입니다. All rights reserved.
+© 2010 Microsoft Corporation. All rights reserved.
 
 Microsoft 및 Windows는 미국 및/또는 기타 국가에서 Microsoft Corporation의 상표이거나 등록된 상표입니다.
 

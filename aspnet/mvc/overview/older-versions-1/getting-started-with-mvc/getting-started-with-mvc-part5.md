@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part5
 title: "컨트롤러에서 모델의 데이터에 액세스 | Microsoft Docs"
 author: shanselman
-description: "ASP.NET MVC의 기본 사항을 소개 하는 초보자를 위한 자습서입니다. 읽기 및 쓰기는 데이터베이스에서 단순 웹 응용 프로그램을 만들 수 있습니다."
+description: "ASP.NET MVC의 기본 사항을 소개 하는 초보자를 위한 자습서입니다. 읽기 및 쓰기는 데이터베이스에서 단순 웹 응용 프로그램을 만듭니다."
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part5
 msc.type: authoredcontent
-ms.openlocfilehash: 1a733accabcd10409f5611c31001397e97533fb6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cf81d351aef45af3640f5d113eb3619911e03606
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="accessing-your-models-data-from-a-controller"></a>컨트롤러에서 모델의 데이터에 액세스
 ====================
@@ -49,7 +49,7 @@ Controllers 폴더를 마우스 오른쪽 단추로 클릭 하 고 새 MoviesCon
 
 ְ ְ ¿כ 주소 표시줄에 /Movies를 방문 합니다. 이제 고 했으므로 이러한 내용을 컨트롤러 내에 기본 쿼리를 사용 하 여 데이터베이스에서 데이터를 검색 동영상에서 인식 하는 보기에 데이터를 반환 합니다. 해당 보기 다음 동영상 목록을 통해 회전 하 고 us에 대 한 데이터 테이블을 만듭니다.
 
-[![Windows Internet Explorer-동영상 목록](getting-started-with-mvc-part5/_static/image7.png)](getting-started-with-mvc-part5/_static/image6.png)
+[![Movie List - Windows Internet Explorer](getting-started-with-mvc-part5/_static/image7.png)](getting-started-with-mvc-part5/_static/image6.png)
 
 म 않습니다 수 구현-이 응용 프로그램으로 편집, 세부 정보 및 삭제 기능을 수행해 줍니다 스 캐 폴드 템플릿이 생성 하는 기본 링크 필요 하지 않습니다. /Movies/Index.aspx 파일을 열고 해당 구성 요소 제거 합니다.
 
@@ -59,7 +59,7 @@ Controllers 폴더를 마우스 오른쪽 단추로 클릭 하 고 새 MoviesCon
 
 필요 하지 않습니다, 링크 만드는 되므로이 예에 삭제 됩니다. 하지만 다음 그대로 우리의 새로 만들기 링크를 유지할 됩니다 있습니다! 해당 열이 제거 포함 앱 모양은 다음과 같습니다.
 
-[![Windows Internet Explorer-동영상 목록](getting-started-with-mvc-part5/_static/image9.png)](getting-started-with-mvc-part5/_static/image8.png)
+[![Movie List - Windows Internet Explorer](getting-started-with-mvc-part5/_static/image9.png)](getting-started-with-mvc-part5/_static/image8.png)
 
 동영상 데이터의 간단한 목록을 했습니다. 그러나 "새로 만들기" 링크를 클릭 하면 살펴보겠습니다 오류가 대로 연결 되지 않았습니다! 만들기 동작 메서드를 구현 하 고 사용자가 데이터베이스에 새 동영상을 입력할 수 있도록 살펴보겠습니다.
 

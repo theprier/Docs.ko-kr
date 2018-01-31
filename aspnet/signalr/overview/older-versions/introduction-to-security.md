@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/introduction-to-security
 msc.type: authoredcontent
-ms.openlocfilehash: 04487614b219f8f6f8f0524c3b5f1aa42480c4d3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ebc83098b73902fa3f7a90a38dafc43b413e75fe
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introduction-to-signalr-security-signalr-1x"></a>SignalR 보안 소개 (SignalR 1.x)
 ====================
@@ -54,7 +54,7 @@ ms.lasthandoff: 11/10/2017
 
 SignalR 응용 프로그램에 대해 기존 인증 구조에 통합 하도록 설계 되었습니다. 사용자를 인증 하기 위한 모든 기능을 제공 하지 않습니다. 대신, 다음 SignalR 코드에서 인증의 결과 사용 하 고 응용 프로그램에서 일반적으로 사용 하는 사용자가 인증 합니다. 예를 들어 ASP.NET 폼 인증으로 사용자를 인증 하 고 허브에 있는 사용자를 적용할 수 있습니다 또는 메서드를 호출할 권한이 있는 역할입니다. 허브에서 사용자 이름 또는 사용자를 클라이언트에 게 역할에 속해 있는지 여부와 같은 인증 정보를 전달할 수 있습니다.
 
-SignalR 제공는 [Authorize](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.authorizeattribute(v=vs.111).aspx) 허브 또는 메서드에 액세스할 수 있는 사용자 지정 하는 특성입니다. 허브 또는 허브의 특정 메서드 중 하나를 권한 부여 특성을 적용 합니다. 권한 부여 속성 없으면 허브에서 모든 공용 메서드는 허브에 연결 하는 클라이언트에 사용할 수 있습니다. 허브에 대 한 자세한 내용은 참조 [인증 및 권한 부여 SignalR 허브에 대 한](../security/hub-authorization.md)합니다.
+SignalR 제공는 [Authorize](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.authorizeattribute(v=vs.111).aspx) 허브 또는 메서드에 액세스할 수 있는 사용자 지정 하는 특성입니다. 허브 또는 허브의 특정 메서드 중 하나를 권한 부여 특성을 적용 합니다. 권한 부여 속성 없으면 허브에서 모든 공용 메서드는 허브에 연결 하는 클라이언트에 사용할 수 있습니다. 허브에 대 한 자세한 내용은 참조 [인증 및 권한 부여 SignalR 허브에 대 한](../security/hub-authorization.md)합니다.
 
 `Authorize` 특성 허브에만 사용 됩니다. 사용 하는 경우 권한 부여 규칙을 적용 하는 `PersistentConnection` 재정의 해야 합니다는 `AuthorizeRequest` 메서드. 영구 연결에 대 한 자세한 내용은 참조 [인증 및 권한 부여 SignalR 영구 연결에 대 한](../security/persistent-connection-authorization.md)합니다.
 

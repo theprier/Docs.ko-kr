@@ -2,20 +2,18 @@
 title: "사용자 지정 모델 바인딩"
 author: ardalis
 description: "ASP.NET Core mvc에서 모델 바인딩 사용자 지정합니다."
-keywords: "ASP.NET Core, 모델 바인딩, 사용자 지정 모델 바인더"
 ms.author: riande
 manager: wpickett
 ms.date: 04/10/2017
 ms.topic: article
-ms.assetid: ebd98159-a028-4a94-b06c-43981c79c6be
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/advanced/custom-model-binding
-ms.openlocfilehash: f3fc3d624c3b79d49a886dd85ca8b19147631e39
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 85d5ca18944e774d1f2577459c6c45acde01e4d9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="custom-model-binding"></a>사용자 지정 모델 바인딩
 
@@ -74,7 +72,7 @@ public IModelBinder GetBinder(ModelBinderProviderContext context)
 
 와 같은 도구를 사용 하 여이 api 메서드를 base64 인코딩 문자열을 게시할 수 [우체부](https://www.getpostman.com/):
 
-![우체부](custom-model-binding/images/postman.png "우체부")
+![postman](custom-model-binding/images/postman.png "postman")
 
 바인더는 요청 데이터를 적절 하 게 명명 된 속성 또는 인수를 바인딩할 수,으로 모델 바인딩 성공 합니다. 다음 예제에서는 사용 하는 방법을 보여 줍니다. `ByteArrayModelBinder` 보기 모델을 사용 합니다.
 
@@ -106,7 +104,7 @@ public IModelBinder GetBinder(ModelBinderProviderContext context)
 
 [!code-csharp[Main](custom-model-binding/sample/CustomModelBindingSample/Controllers/BoundAuthorsController.cs?name=demo1&highlight=2)]
 
-인수의 이름을 기본 아니기 때문에이 예제에서는 `authorId`를 사용 하 여 매개 변수에서 지정 된 `ModelBinder` 특성입니다. Note는 컨트롤러 및 작업 메서드는 작업 메서드에서 엔터티를 조회에 비해 간단 합니다. 모델 바인더에 Entity Framework Core를 사용 하 여 작성자를 인출 하는 논리를 이동 합니다. 만든 모델에 바인딩하고 수행 하는 데 도움이 하는 여러 메서드가 있는 경우 상당히 단순화 수 있습니다는 [건조 원칙](http://deviq.com/don-t-repeat-yourself/)합니다.
+인수의 이름 없는 기본 때문에이 예제에서는 `authorId`를 사용 하 여 매개 변수에서 지정 된 `ModelBinder` 특성입니다. Note는 컨트롤러 및 작업 메서드는 작업 메서드에서 엔터티를 조회에 비해 간단 합니다. 모델 바인더에 Entity Framework Core를 사용 하 여 작성자를 인출 하는 논리를 이동 합니다. 만든 모델에 바인딩하고 수행 하는 데 도움이 하는 여러 메서드가 있는 경우 상당히 단순화 수 있습니다는 [건조 원칙](http://deviq.com/don-t-repeat-yourself/)합니다.
 
 적용할 수 있습니다는 `ModelBinder` 개별 모델 속성을 특성 (같은 viewmodel에서) 또는 특정 모델 바인더 모델에 대 한 또는 해당 형식이 나 작업에만 지정 하는 동작 메서드 매개 변수에 합니다.
 
@@ -135,6 +133,6 @@ public IModelBinder GetBinder(ModelBinderProviderContext context)
 ## <a name="recommendations-and-best-practices"></a>권장 사항 및 모범 사례
 
 사용자 지정 모델 바인더:
-- 상태 코드를 설정 하거나 결과 반환할 수 없습니다 (예를 들어 404 찾을 수 없음). 모델 바인딩 실패 하면는 [작업 필터](xref:mvc/controllers/filters) 또는 작업 메서드 자체 내에서 논리 오류를 처리 해야 합니다.
+- 상태 코드를 설정 하거나 결과 반환 하려고 시도 하지 않아야 (예를 들어 404 찾을 수 없음). 모델 바인딩 실패 하면는 [작업 필터](xref:mvc/controllers/filters) 또는 작업 메서드 자체 내에서 논리 오류를 처리 해야 합니다.
 - 반복 되는 코드와 작업 방법 중에서 일반적인 문제를 제거 하는 데 가장 유용 합니다.
-- 일반적으로 쓰일 수 없습니다 문자열 사용자 지정 형식으로 변환 하는 [ `TypeConverter` ](https://docs.microsoft.com//dotnet/api/system.componentmodel.typeconverter) 는 일반적으로 더 나은 옵션입니다.
+- 일반적으로 문자열 사용자 지정 형식으로 변환에 사용할 수는 [ `TypeConverter` ](https://docs.microsoft.com//dotnet/api/system.componentmodel.typeconverter) 는 일반적으로 더 나은 옵션입니다.

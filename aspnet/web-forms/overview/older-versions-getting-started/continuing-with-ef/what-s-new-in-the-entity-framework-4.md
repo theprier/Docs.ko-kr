@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/what-s-new-in-the-entity-framework-4
 msc.type: authoredcontent
-ms.openlocfilehash: 4c89ca004ad4c9d731868e868cf6723aa4ed625d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c114627388217e892c84d6b76366d0fa96b0b70c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="whats-new-in-the-entity-framework-40"></a>Entity Framework 4.0의에서 새로운 기능
 ====================
@@ -90,7 +90,7 @@ Contoso 대학 관리자 데이터베이스에 대량 변경 내용이 저장된
 
 (에 원래 값으로 돌아가기 크레딧의 수를 설정 하려는 경우 *UpdateCredits.aspx.cs* 변경 `Credits * {0}` 를 `Credits / {0}` 제도 10을 입력 하 고 페이지를 다시 실행 합니다.)
 
-코드에서 정의 하는 쿼리를 실행 하는 방법에 대 한 자세한 내용은 참조 [하는 방법: 직접 실행 명령에 대 한 데이터 원본](https://msdn.microsoft.com/en-us/library/ee358769.aspx)합니다.
+코드에서 정의 하는 쿼리를 실행 하는 방법에 대 한 자세한 내용은 참조 [하는 방법: 직접 실행 명령에 대 한 데이터 원본](https://msdn.microsoft.com/library/ee358769.aspx)합니다.
 
 ## <a name="model-first-development"></a>우선 모델 개발
 
@@ -178,7 +178,7 @@ A *.sql* 데이터 정의 언어 (DDL) 명령 사용 하 여 파일 만들어지
 
 (참고:이 페이지에서 다운로드할 수 있는 프로젝트에 포함 되어 있지만 있습니다 작동 하도록 만들어야 데이터베이스에 로컬 SQL Server Express 인스턴스는 데이터베이스가 아닌로 포함 되어는 *.mdf* 파일에 *앱\_ 데이터* 폴더입니다.)
 
-Entity Framework의 모델 중심 기능을 사용 하는 방법에 대 한 자세한 내용은 참조 [Entity Framework 4의 중심 모델](https://msdn.microsoft.com/en-us/data/ff830362.aspx)합니다.
+Entity Framework의 모델 중심 기능을 사용 하는 방법에 대 한 자세한 내용은 참조 [Entity Framework 4의 중심 모델](https://msdn.microsoft.com/data/ff830362.aspx)합니다.
 
 ## <a name="poco-support"></a>POCO 지원
 
@@ -188,7 +188,7 @@ Entity Framework의 모델 중심 기능을 사용 하는 방법에 대 한 자�
 
 POCOs Entity Framework에서 사용 하는 방법에 대 한 자세한 내용은 다음 리소스를 참조 합니다.
 
-- [POCO 엔터티 작업](https://msdn.microsoft.com/en-us/library/dd456853.aspx)합니다. 이 파일은 더 자세한 정보를 제공 하는 다른 문서에 대 한 링크가 있는 POCOs에 대 한 개요는는 MSDN 문서입니다.
+- [POCO 엔터티 작업](https://msdn.microsoft.com/library/dd456853.aspx)합니다. 이 파일은 더 자세한 정보를 제공 하는 다른 문서에 대 한 링크가 있는 POCOs에 대 한 개요는는 MSDN 문서입니다.
 - [연습: POCO 엔터티 프레임 워크에 대 한 템플릿을](https://blogs.msdn.com/b/adonet/archive/2010/01/25/walkthrough-poco-template-for-the-entity-framework.aspx) POCOs에 대 한 다른 블로그 게시물에 대 한 링크와 Entity Framework 개발팀의 블로그 게시물입니다.
 
 ## <a name="code-first-development"></a>코드 중심 개발
@@ -209,7 +209,7 @@ Entity Framework 4의 POCO 지원은 여전히 데이터 모델을 만들고 데
 
 이 개요 항목을 새로운 Entity Framework와 Entity Framework 자습서 시리즈를이 계속이 완료 되었습니다. 여기에 포함 되지 않는 Entity Framework 4의 새로운 기능에 대 한 자세한 내용은 다음 리소스를 참조 합니다.
 
-- [ADO.NET의 새로운](https://msdn.microsoft.com/en-us/library/ex6y04yf.aspx) 의 Entity Framework 버전 4의에서 새로운 기능에 대 한 MSDN 항목.
+- [ADO.NET의 새로운](https://msdn.microsoft.com/library/ex6y04yf.aspx) 의 Entity Framework 버전 4의에서 새로운 기능에 대 한 MSDN 항목.
 - [Entity Framework 4의 릴리스 발표](https://blogs.msdn.com/b/efdesign/archive/2010/04/12/announcing-the-release-of-entity-framework-4.aspx) 버전 4의에서 새로운 기능에 대 한 Entity Framework 개발 팀의 블로그 게시물입니다.
 
 >[!div class="step-by-step"]

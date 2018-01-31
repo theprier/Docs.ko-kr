@@ -1,22 +1,20 @@
 ---
-title: "ASP.NET Core 모듈"
+title: ASP.NET Core Module
 author: tdykstra
 description: "역방향 프록시 서버와 IIS 또는 IIS Express를 사용 하면 Kestrel 웹 서버는 IIS 모듈 ASP.NET Core 모듈 (ANCM)을 소개 합니다."
-keywords: "ASP.NET Core, IIS, IIS Express,ASP.NET 핵심 모듈에 UseIISIntegration"
 ms.author: tdykstra
 manager: wpickett
 ms.date: 08/03/2017
 ms.topic: article
-ms.assetid: 4661af33-34c5-4d71-93a0-8c7632f43580
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/servers/aspnet-core-module
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 5eef9405c0c3d219755d7cffa5d45c3df45ddb5c
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 9dc2183ebbdf8b74106fe57a1dd191a57ba5d1bc
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-aspnet-core-module"></a>ASP.NET Core 모듈 소개
 
@@ -38,9 +36,9 @@ ANCM은 IIS 파이프라인에 후크 및 ASP.NET Core 응용 프로그램 백 �
 
 다음은 IIS, ANCM, 및 ASP.NET Core 응용 프로그램 간의 관계를 보여 주는 다이어그램입니다.
 
-![ASP.NET Core 모듈](aspnet-core-module/_static/ancm.png)
+![ASP.NET Core Module](aspnet-core-module/_static/ancm.png)
 
-요청는 웹에서 제공 및 기본 포트 (80) 또는 SSL 포트 (443)에 IIS로 라우팅하는 커널 모드 Http.Sys 드라이버에 도달 합니다. ANCM 포트는 80/443 하는 응용 프로그램에 대해 구성 된 HTTP 포트에서 ASP.NET Core 응용 프로그램에 요청을 전달 합니다.
+요청는 웹에서 제공 및 기본 포트 (80) 또는 SSL 포트 (443)에 IIS로 라우팅하는 커널 모드 Http.Sys 드라이버에 도달 합니다. ANCM 포트가 응용 프로그램에 대해 구성 된 HTTP 포트에서 ASP.NET Core 응용 프로그램에 요청 전달 80/443입니다.
 
 Kestrel은 ANCM에서 들어오는 트래픽을 수신 대기 합니다.  ANCM 시작 시 환경 변수를 통해 포트 지정 및 [UseIISIntegration](#call-useiisintegration) 에서 수신 하도록 서버를 구성 하는 메서드 `http://localhost:{port}`합니다. ANCM에서가 아니라 요청을 거부 하도록 추가 확인 합니다. (ANCM 지원 하지 않습니다 HTTPS 전달 되므로 IIS에서 HTTPS를 통해 수신 하는 경우에 요청은 HTTP를 통해 전달 됩니다.)
 

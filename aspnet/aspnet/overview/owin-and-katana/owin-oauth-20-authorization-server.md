@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-oauth-20-authorization-server
 msc.type: authoredcontent
-ms.openlocfilehash: 8842f57df84d841df77b34e9645dbf4909f82d85
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e5968f8d19191c3f44e9bd58f8e22a39d8d8faff
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="owin-oauth-20-authorization-server"></a>OWIN OAuth 2.0 권한 부여 서버
 ====================
@@ -57,12 +57,12 @@ ms.lasthandoff: 11/10/2017
 ## <a name="prerequisites"></a>필수 구성 요소
 
 - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/downloads#d-2013-editions) 무료 또는 [Visual Studio Express 2013](https://www.microsoft.com/visualstudio/eng/downloads#d-2013-express)에 표시 된 대로, **소프트웨어 버전** 페이지의 위쪽에 있습니다.
-- OWIN 익숙해야 합니다. 참조 [Katana 프로젝트 시작](https://msdn.microsoft.com/en-us/magazine/dn451439.aspx) 및 [OWIN 및 Katana 새로운](index.md)합니다.
+- OWIN 익숙해야 합니다. 참조 [Katana 프로젝트 시작](https://msdn.microsoft.com/magazine/dn451439.aspx) 및 [OWIN 및 Katana 새로운](index.md)합니다.
 - 익숙한 [OAuth](http://tools.ietf.org/html/rfc6749) 용어를 포함 하 여 [역할](http://tools.ietf.org/html/rfc6749#section-1.1), [프로토콜 흐름](http://tools.ietf.org/html/rfc6749#section-1.2), 및 [권한 부여 허용](http://tools.ietf.org/html/rfc6749#section-1.3)합니다. [OAuth 2.0 소개](http://tools.ietf.org/html/rfc6749#section-1) 좋은 소개를 제공 합니다.
 
 ## <a name="create-an-authorization-server"></a>권한 부여 서버 만들기
 
-이 자습서에서는 우리는 대략 다이어그램으로 사용 하는 방법을 [OWIN](https://msdn.microsoft.com/en-us/magazine/dn451439.aspx) 및 ASP.NET MVC 권한 부여 서버를 만들어야 합니다. :이 자습서에 포함 된 각 단계 곧 완성 된 샘플에 대 한 다운로드를 제공 하기 바랍니다. 명명 된 빈 웹 응용 프로그램을 먼저 만듭니다 *AuthorizationServer* 다음 패키지를 설치 하 고 있습니다.
+이 자습서에서는 우리는 대략 다이어그램으로 사용 하는 방법을 [OWIN](https://msdn.microsoft.com/magazine/dn451439.aspx) 및 ASP.NET MVC 권한 부여 서버를 만들어야 합니다. :이 자습서에 포함 된 각 단계 곧 완성 된 샘플에 대 한 다운로드를 제공 하기 바랍니다. 명명 된 빈 웹 응용 프로그램을 먼저 만듭니다 *AuthorizationServer* 다음 패키지를 설치 하 고 있습니다.
 
 - Microsoft.AspNet.Mvc
 - Microsoft.Owin.Host.SystemWeb
@@ -112,7 +112,7 @@ ms.lasthandoff: 11/10/2017
 
 Ietf 초안 OAuth 2 검토 [인증 코드 부여](http://tools.ietf.org/html/rfc6749#section-4.1) 이제 섹션. 
 
-**공급자** (아래 표에서)은 [OAuthAuthorizationServerOptions](https://msdn.microsoft.com/en-us/library/microsoft.owin.security.oauth.oauthauthorizationserveroptions(v=vs.111).aspx)합니다. 형식 공급자 `OAuthAuthorizationServerProvider`, 모든 OAuth 서버 이벤트가 포함 되어 있는 합니다. 
+**공급자** (아래 표에서)은 [OAuthAuthorizationServerOptions](https://msdn.microsoft.com/library/microsoft.owin.security.oauth.oauthauthorizationserveroptions(v=vs.111).aspx)합니다. 형식 공급자 `OAuthAuthorizationServerProvider`, 모든 OAuth 서버 이벤트가 포함 되어 있는 합니다. 
 
 | 인증 코드 권한 섹션에서 단계 흐름 | 샘플 다운로드에는 다음이 단계를 수행합니다. |
 | --- | --- |

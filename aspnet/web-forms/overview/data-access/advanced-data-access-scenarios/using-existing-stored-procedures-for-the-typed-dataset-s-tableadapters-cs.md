@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 58b76f0ac07051496c6f34be41dcf20154e34674
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1f95a6868ccce8ce0dfa16a92486e705c42e1db4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-existing-stored-procedures-for-the-typed-datasets-tableadapters-c"></a>형식화 된 데이터 집합의 Tableadapter (C#)에 대 한 기존 사용 하 여 저장 프로시저
 ====================
@@ -200,7 +200,7 @@ ObjectDataSource 마법사를 완료 되 면 Visual Studio가 BoundFields 및는
 
 서식 파일을 정의 하 여 시작 되는 `TRY...CATCH` 차단, SQL Server 2005를 처음 사용 하는 구문입니다. 와 함께 `try...catch` C#으로 SQL 블록 `TRY...CATCH` 블록의 문은 실행의 `TRY` 블록입니다. 모든 문은 오류가 발생 하면 즉시 제어가 이동 하는 `CATCH` 블록입니다.
 
-해당 구성의 트랜잭션을 SQL 문을 실행 오류가 없는 경우는 `COMMIT TRANSACTION` 변경 내용을 커밋하면 문과 트랜잭션을 완료 합니다. 그러나 하면 오류가 발생 문 중 하나는 경우는 `ROLLBACK TRANSACTION` 에 `CATCH` 블록에 트랜잭션의 시작 이전의 상태로 데이터베이스를 반환 합니다. 저장된 프로시저도 사용 하 여 오류를 발생는 [RAISERROR 명령](https://msdn.microsoft.com/en-us/library/ms178592.aspx), 유발 하는 한 `SqlException` 응용 프로그램에서 발생 합니다.
+해당 구성의 트랜잭션을 SQL 문을 실행 오류가 없는 경우는 `COMMIT TRANSACTION` 변경 내용을 커밋하면 문과 트랜잭션을 완료 합니다. 그러나 하면 오류가 발생 문 중 하나는 경우는 `ROLLBACK TRANSACTION` 에 `CATCH` 블록에 트랜잭션의 시작 이전의 상태로 데이터베이스를 반환 합니다. 저장된 프로시저도 사용 하 여 오류를 발생는 [RAISERROR 명령](https://msdn.microsoft.com/library/ms178592.aspx), 유발 하는 한 `SqlException` 응용 프로그램에서 발생 합니다.
 
 > [!NOTE]
 > 이후는 `TRY...CATCH` 블록은 새로운 SQL Server 2005, 이전 버전의 Microsoft SQL Server를 사용 하는 경우에 위의 템플릿이 작동 하지 것입니다. SQL Server 2005를 사용 하지 않는 경우 참조 [SQL Server 저장 프로시저에서 트랜잭션을 관리](http://www.4guysfromrolla.com/webtech/080305-1.shtml) SQL Server의 다른 버전과 함께 작동 하는 서식 파일에 대 한 합니다.

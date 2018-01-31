@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/whats-new-in-aspnet-45-and-visual-studio-2012
 msc.type: content
-ms.openlocfilehash: 93fdc7ca241198dc1d7c4c1f6be0a61b15790039
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 16a2fa4b1b6617430703853543cbf29e18ba1103
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="whats-new-in-aspnet-45-and-visual-studio-2012"></a>ASP.NET 4.5 및 Visual Studio 2012의 새로운 기능
 ====================
@@ -94,12 +94,12 @@ ms.lasthandoff: 11/10/2017
         - [조각](#_Toc318097422)
         - [사용자 지정 영역](#_Toc318097423)
     - [페이지 검사기](#_Toc318097424)
-    - [게시](#_Toc318097425)
+    - [Publishing](#_Toc318097425)
 
         - [게시 프로필](#_Toc318097426)
         - [ASP.NET 미리 컴파일 및 병합](#_Toc318097427)
 - [IIS Express](#_Toc318097428)
-- [고 지 사항](#_Toc318097429)
+- [Disclaimer](#_Toc318097429)
 
 <a id="_Toc318097372"></a>
 ## <a name="aspnet-core-runtime-and-framework"></a>ASP.NET Core 런타임 및 프레임 워크
@@ -266,8 +266,8 @@ ASP.NET 및 클라이언트 Websocket 핸드셰이크 성공적으로 완료, �
 
 파일을 번들로 제공 되는 경우 먼저 알파벳 순서로 (에 표시 되는 방식을 **솔루션 탐색기**). 다음 구성 된 라이브러리를 알 수 있도록 하 고 해당 사용자 지정 확장 프로그램 (예: jQuery, MooTools, Dojo) 가장 먼저 로드 합니다. 예를 들어 위와 같이 Scripts 폴더의 번들에 대 한 최종 순서가 됩니다.
 
-1. jquery 1.6.2.js
-2. jquery ui.js
+1. jquery-1.6.2.js
+2. jquery-ui.js
 3. jquery.tools.js
 4. a.js
 
@@ -330,7 +330,7 @@ Aspnet 모든 적격 어셈블리 인턴 되었습니다 하기 실행\_intern.e
 
 **요구 사항**:.NET Framework 4.5
 
-콜드 사이트 시작을 위한 어셈블리 필요가 디스크에서 읽은 뿐만 아니라 JIT 컴파일된 사이트 이어야 합니다. 복잡 한 사이트가 지연을 추가할 수 있습니다. .NET Framework 4.5의 새로운 범용 기술으로 사용할 수 있는 프로세서 코어 JIT 컴파일 분배 하 여 이러한 지연을 줄입니다. 만큼이 작업을 수행 하 고 최대한 일찍 도중 수집 된 정보를 사용 하 여 이전 시작 사이트의. 이 기능에 의해 구현 된 [System.Runtime.ProfileOptimization.StartProfile](https://msdn.microsoft.com/en-us/library/system.runtime.profileoptimization.startprofile(VS.110).aspx) 메서드.
+콜드 사이트 시작을 위한 어셈블리 필요가 디스크에서 읽은 뿐만 아니라 JIT 컴파일된 사이트 이어야 합니다. 복잡 한 사이트가 지연을 추가할 수 있습니다. .NET Framework 4.5의 새로운 범용 기술으로 사용할 수 있는 프로세서 코어 JIT 컴파일 분배 하 여 이러한 지연을 줄입니다. 만큼이 작업을 수행 하 고 최대한 일찍 도중 수집 된 정보를 사용 하 여 이전 시작 사이트의. 이 기능에 의해 구현 된 [System.Runtime.ProfileOptimization.StartProfile](https://msdn.microsoft.com/library/system.runtime.profileoptimization.startprofile(VS.110).aspx) 메서드.
 
 JIT 컴파일 여러 코어를 사용 하 여 되므로이 기능을 활용 하기 위해 아무 작업도 수행 하지 않고도 asp.net에서는 기본적으로 사용 됩니다. 이 기능을 사용 하지 않도록 설정 하려면 Web.config 파일에서 다음 설정을 확인 합니다.
 
@@ -875,7 +875,7 @@ Visual Studio 2010에서 웹 응용 프로그램 프로젝트에 대 한 정보�
 게시 프로필 PublishProfiles 폴더에 저장 됩니다. 폴더의 위치에 따라 달라 집니다 사용 중인 프로그래밍 언어에:
 
 - C#: Properties\PublishProfiles
-- Visual Basic: Project\PublishProfiles
+- Visual Basic: My Project\PublishProfiles
 
 각 프로필은 MSBuild 파일. 게시 중 프로젝트의 MSBuild 파일에이 파일을 가져옵니다. Visual Studio 2010에서 게시 또는 패키지 프로세스에 변경 하려는 경우 해야 라는 파일에 사용자 지정 배치 **ProjectName**. wpp.targets 합니다. 이것은 현재 지원 하지만 자체 게시 프로필에 이제 사용자 지정 항목을 넣을 수 있습니다. 이런 방식으로 해당 프로필에 대 한 사용자 지정이 사용 됩니다.
 
@@ -912,7 +912,7 @@ Visual Studio에서 테스트 웹 프로젝트에 대 한 기본 웹 서버 IIS 
 
 Microsoft가 이 설명서 본안에 관련된 특허권, 상표권, 저작권 또는 기타 지적 재산권 등을 보유할 수도 있습니다. 서면 사용권 계약에 따라 Microsoft로부터 귀하에게 명시적으로 제공된 권리 이외에, 이 문서의 제공은 귀하에게 이러한 특허권, 상표권, 저작권, 또는 기타 지적 소유권 등에 대한 어떠한 사용권도 허여하지 않습니다.
 
-다른 설명이 없는 한, 용례에 사용된 회사, 기관, 제품, 도메인 이름, 전자 메일 주소, 로고, 사람, 장소 및 이벤트 등은 실제 데이터가 아닙니다. 어떠한 실제 회사, 기관, 제품, 도메인 이름, 전자 메일 주소, 로고, 사람, 장소 또는 이벤트와도 연관시킬 의도가 없으며 그렇게 유추해서도 안 됩니다.
+다른 설명이 없는 한 예제 회사, 조직, 제품, 도메인 이름, 전자 메일 주소, 로고, 사람, 장소 및 이벤트 용례은 실제 데이터가 아닙니다과 연결 된 실제 회사, 조직, 제품, 도메인 이름, 전자 메일 주소, 로고, 사람, 장소 또는 이벤트 해서도 그렇게 유추 해서도 안 됩니다.
 
 © 2012 Microsoft Corporation. All rights reserved.
 

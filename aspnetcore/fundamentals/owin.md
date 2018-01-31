@@ -2,21 +2,19 @@
 title: OWIN(Open Web Interface for .NET)
 author: ardalis
 description: "ASP.NET Core 지 원하는 방법 열린 웹 인터페이스에 대 한.NET (OWIN), 웹 응용 프로그램 웹 서버에서 분리 될 수 있는 검색 합니다."
-keywords: "ASP.NET Core,.NET, OWIN에 대 한 열린 웹 인터페이스"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: 70c4e6bc-a773-4039-96ec-6fe557c9369d
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/owin
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: e2ee970a1c9cd05ebee76b92c3e2c7c6c6cc6ef8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 42ffa01745b7a492b3b8cb2778805f254863b890
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-open-web-interface-for-net-owin"></a>.NET (OWIN)에 대 한 웹 인터페이스를 열려면 소개
 
@@ -30,7 +28,7 @@ OWIN 두 프레임 워크를 함께 사용할 수 있는 서로 다른 개체 �
 
 이렇게 하면 ASP.NET Core를 호스트/OWIN 호환 서버를 기반으로 또는 ASP.NET Core를 기반으로 실행 되도록 다른 OWIN 호환 가능한 구성 요소에 대해 호스팅할 수 있습니다.
 
-참고: 이러한 어댑터를 사용 하 여 성능 비용이 수반 됩니다. Owin 패키지 또는 어댑터에만 ASP.NET Core 구성 요소를 사용 하 여 응용 프로그램 사용 하지 마십시오.
+참고: 이러한 어댑터를 사용 하 여 성능 비용이 수반 됩니다. Owin 패키지 또는 어댑터만 ASP.NET Core 구성 요소를 사용 하 여 응용 프로그램 사용 하지 않아야 합니다.
 
 [샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/owin/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
@@ -241,84 +239,84 @@ OWIN에 따라 달라 집니다는 `IDictionary<string,object>` HTTP 요청/응�
 
 | Key               | 값 (형식) | 설명 |
 | ----------------- | ------------ | ----------- |
-| owin 합니다. RequestScheme | `String` |  |
-| owin 합니다. RequestMethod  | `String` | |    
-| owin 합니다. RequestPathBase  | `String` | |    
-| owin 합니다. RequestPath | `String` | |     
-| owin 합니다. RequestQueryString  | `String` | |    
-| owin 합니다. RequestProtocol  | `String` | |    
-| owin 합니다. RequestHeaders | `IDictionary<string,string[]>`  | |
-| owin 합니다. RequestBody | `Stream`  | |
+| owin.RequestScheme | `String` |  |
+| owin.RequestMethod  | `String` | |    
+| owin.RequestPathBase  | `String` | |    
+| owin.RequestPath | `String` | |     
+| owin.RequestQueryString  | `String` | |    
+| owin.RequestProtocol  | `String` | |    
+| owin.RequestHeaders | `IDictionary<string,string[]>`  | |
+| owin.RequestBody | `Stream`  | |
 
 ### <a name="request-data-owin-v110"></a>요청 데이터 (OWIN v1.1.0)
 
 | Key               | 값 (형식) | 설명 |
 | ----------------- | ------------ | ----------- |
-| owin 합니다. 요청 Id | `String` | Optional |
+| owin.RequestId | `String` | Optional |
 
 ### <a name="response-data-owin-v100"></a>응답 데이터 (OWIN v1.0.0)
 
 | Key               | 값 (형식) | 설명 |
 | ----------------- | ------------ | ----------- |
-| owin 합니다. ResponseStatusCode | `int` | Optional |
-| owin 합니다. ResponseReasonPhrase | `String` | Optional |
-| owin 합니다. ResponseHeaders | `IDictionary<string,string[]>`  | |
-| owin 합니다. ResponseBody | `Stream`  | |
+| owin.ResponseStatusCode | `int` | Optional |
+| owin.ResponseReasonPhrase | `String` | Optional |
+| owin.ResponseHeaders | `IDictionary<string,string[]>`  | |
+| owin.ResponseBody | `Stream`  | |
 
 
 ### <a name="other-data-owin-v100"></a>다른 데이터 (OWIN v1.0.0)
 
 | Key               | 값 (형식) | 설명 |
 | ----------------- | ------------ | ----------- |
-| owin 합니다. CallCancelled | `CancellationToken` |  |
-| owin 합니다. 버전  | `String` | |   
+| owin.CallCancelled | `CancellationToken` |  |
+| owin.Version  | `String` | |   
 
 
 ### <a name="common-keys"></a>공통 키
 
 | Key               | 값 (형식) | 설명 |
 | ----------------- | ------------ | ----------- |
-| ssl 합니다. ClientCertificate | `X509Certificate` |  |
-| ssl 합니다. LoadClientCertAsync  | `Func<Task>` | |    
-| 서버입니다. RemoteIpAddress  | `String` | |    
-| 서버입니다. 포트 원격 포트 | `String` | |     
-| 서버입니다. LocalIpAddress  | `String` | |    
-| 서버입니다. LocalPort  | `String` | |    
-| 서버입니다. IsLocal  | `bool` | |    
-| 서버입니다. OnSendingHeaders  | `Action<Action<object>,object>` | |
+| ssl.ClientCertificate | `X509Certificate` |  |
+| ssl.LoadClientCertAsync  | `Func<Task>` | |    
+| server.RemoteIpAddress  | `String` | |    
+| server.RemotePort | `String` | |     
+| server.LocalIpAddress  | `String` | |    
+| server.LocalPort  | `String` | |    
+| server.IsLocal  | `bool` | |    
+| server.OnSendingHeaders  | `Action<Action<object>,object>` | |
 
 
 ### <a name="sendfiles-v030"></a>SendFiles v0.3.0
 
 | Key               | 값 (형식) | 설명 |
 | ----------------- | ------------ | ----------- |
-| sendfile 합니다. SendAsync | 참조 [대리자 시그니처](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm) | 요청에 따라 |
+| sendfile.SendAsync | 참조 [대리자 시그니처](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm) | 요청에 따라 |
 
 
 ### <a name="opaque-v030"></a>불투명 v0.3.0
 
 | Key               | 값 (형식) | 설명 |
 | ----------------- | ------------ | ----------- |
-| 불투명 합니다. 버전 | `String` |  |
-| 불투명 합니다. 업그레이드 | `OpaqueUpgrade` | 참조 [대리자 시그니처](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm) |
-| 불투명 합니다. 스트림 | `Stream` |  |
-| 불투명 합니다. CallCancelled | `CancellationToken` |  |
+| opaque.Version | `String` |  |
+| opaque.Upgrade | `OpaqueUpgrade` | 참조 [대리자 시그니처](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm) |
+| opaque.Stream | `Stream` |  |
+| opaque.CallCancelled | `CancellationToken` |  |
 
 
 ### <a name="websocket-v030"></a>WebSocket v0.3.0
 
 | Key               | 값 (형식) | 설명 |
 | ----------------- | ------------ | ----------- |
-| websocket입니다. 버전 | `String` |  |
-| websocket입니다. 허용 | `WebSocketAccept` | 참조 [대리자 시그니처](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm) |
-| websocket입니다. AcceptAlt |  | 비-사양 |
-| websocket입니다. 하위 프로토콜 | `String` | 참조 [RFC6455 섹션 4.2.2](https://tools.ietf.org/html/rfc6455#section-4.2.2) 5.5 단계 |
-| websocket입니다. SendAsync | `WebSocketSendAsync` | 참조 [대리자 시그니처](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm)  |
-| websocket입니다. ReceiveAsync | `WebSocketReceiveAsync` | 참조 [대리자 시그니처](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm)  |
-| websocket입니다. CloseAsync | `WebSocketCloseAsync` | 참조 [대리자 시그니처](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm)  |
-| websocket입니다. CallCancelled | `CancellationToken` |  |
-| websocket입니다. ClientCloseStatus | `int` | Optional |
-| websocket입니다. ClientCloseDescription | `String` | Optional |
+| websocket.Version | `String` |  |
+| websocket.Accept | `WebSocketAccept` | 참조 [대리자 시그니처](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm) |
+| websocket.AcceptAlt |  | 비-사양 |
+| websocket.SubProtocol | `String` | 참조 [RFC6455 섹션 4.2.2](https://tools.ietf.org/html/rfc6455#section-4.2.2) 5.5 단계 |
+| websocket.SendAsync | `WebSocketSendAsync` | 참조 [대리자 시그니처](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm)  |
+| websocket.ReceiveAsync | `WebSocketReceiveAsync` | 참조 [대리자 시그니처](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm)  |
+| websocket.CloseAsync | `WebSocketCloseAsync` | 참조 [대리자 시그니처](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm)  |
+| websocket.CallCancelled | `CancellationToken` |  |
+| websocket.ClientCloseStatus | `int` | Optional |
+| websocket.ClientCloseDescription | `String` | Optional |
 
 
 ## <a name="additional-resources"></a>추가 리소스

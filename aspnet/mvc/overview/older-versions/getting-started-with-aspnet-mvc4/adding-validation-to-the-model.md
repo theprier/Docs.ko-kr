@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-validation-to-the-model
 msc.type: authoredcontent
-ms.openlocfilehash: 73332d168e2f22621cb234a6591f3ce0eeed802f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 93b4df5fcbde8d87866d00dffda8a241d0dd596b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-validation-to-the-model"></a>모델에 유효성 검사 추가
 ====================
@@ -40,13 +40,13 @@ ASP.NET MVC 및 Entity Framework Code First 제공 하는 유효성 검사 지�
 
 일부 유효성 검사 논리를 추가 하 여 먼저는 `Movie` 클래스입니다.
 
-*Movie.cs* 파일을 엽니다. 추가 `using` 문을 참조 하는 파일 맨 위에 있는 [ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx) 네임 스페이스:
+*Movie.cs* 파일을 엽니다. 추가 `using` 문을 참조 하는 파일 맨 위에 있는 [ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) 네임 스페이스:
 
 [!code-csharp[Main](adding-validation-to-the-model/samples/sample1.cs)]
 
 네임 스페이스 포함 하지 않는 `System.Web`합니다. DataAnnotations 모든 클래스 또는 속성에 선언적으로 적용할 수 있는 유효성 검사 특성의 기본 제공 된 집합을 제공 합니다.
 
-이제 업데이트 된 `Movie` 클래스는 기본 제공 기능을 활용 하려면 [ `Required` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.requiredattribute.aspx), [ `StringLength` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx), 및 [ `Range` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.rangeattribute.aspx) 유효성 검사 특성 . 특성을 적용 대상의 예를 들어 다음 코드를 사용 합니다.
+이제 업데이트 된 `Movie` 클래스는 기본 제공 기능을 활용 하려면 [ `Required` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx), [ `StringLength` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx), 및 [ `Range` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) 유효성 검사 특성 . 특성을 적용 대상의 예를 들어 다음 코드를 사용 합니다.
 
 [!code-csharp[Main](adding-validation-to-the-model/samples/sample2.cs?highlight=4,10,13,17)]
 
@@ -99,7 +99,7 @@ Visual Studio 새 정의 하는 클래스 파일을 엽니다이 명령이 완�
 5. 텍스트를 제거 합니다.
 6. 탭 합니다.
 
-위의 순서를 제출 단추에 도달 하지 않고 필요한 유효성 검사를 트리거합니다. 필드를 입력 하지 않고 제출 단추를 누르기 단순히 클라이언트 쪽 유효성 검사를 트리거합니다. 양식 데이터는 클라이언트 쪽 유효성 검사 오류가 없을 때까지 서버에 전송되지 않습니다. HTTP Post 메서드에 중단점을 배치 하거나 사용 하 여 테스트할 수 있습니다는 [fiddler 도구](http://fiddler2.com/fiddler2/) 또는 IE 9 [F12 개발자 도구](https://msdn.microsoft.com/en-us/ie/aa740478)합니다.
+위의 순서를 제출 단추에 도달 하지 않고 필요한 유효성 검사를 트리거합니다. 필드를 입력 하지 않고 제출 단추를 누르기 단순히 클라이언트 쪽 유효성 검사를 트리거합니다. 양식 데이터는 클라이언트 쪽 유효성 검사 오류가 없을 때까지 서버에 전송되지 않습니다. HTTP Post 메서드에 중단점을 배치 하거나 사용 하 여 테스트할 수 있습니다는 [fiddler 도구](http://fiddler2.com/fiddler2/) 또는 IE 9 [F12 개발자 도구](https://msdn.microsoft.com/ie/aa740478)합니다.
 
 ![](adding-validation-to-the-model/_static/image2.png)
 
@@ -137,17 +137,17 @@ Visual Studio 새 정의 하는 클래스 파일을 엽니다이 명령이 완�
 
 ## <a name="adding-formatting-to-the-movie-model"></a>영화 모델에 서식 추가
 
-*Movie.cs* 파일을 열고 `Movie` 클래스를 확인합니다. [ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx) 네임 스페이스는 기본 제공 유효성 검사 특성 집합 외에 서식 특성을 제공 합니다. 이미 적용 한 [ `DataType` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx) 출시 날짜에 시작 및 끝 price 필드 열거형 값입니다. 다음 코드는 `ReleaseDate` 및 `Price` 는 적절 한 속성 [ `DisplayFormat` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.displayformatattribute.aspx) 특성입니다.
+*Movie.cs* 파일을 열고 `Movie` 클래스를 확인합니다. [ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) 네임 스페이스는 기본 제공 유효성 검사 특성 집합 외에 서식 특성을 제공 합니다. 이미 적용 한 [ `DataType` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) 출시 날짜에 시작 및 끝 price 필드 열거형 값입니다. 다음 코드는 `ReleaseDate` 및 `Price` 는 적절 한 속성 [ `DisplayFormat` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) 특성입니다.
 
 [!code-csharp[Main](adding-validation-to-the-model/samples/sample9.cs)]
 
-[ `DataType` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx) 사용 하는 뷰 엔진이 HTML을 렌더링 하는 방법을 설명 하는, 특성은 유효성 검사 특성이 아닙니다. 위의 예에는 `DataType.Date` 특성 시간 없이 날짜로 영화 날짜를 표시 합니다. 예를 들어, 다음 [ `DataType` ](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx) 특성 형식의 데이터의 유효성을 검사 하지 않습니다.
+[ `DataType` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) 사용 하는 뷰 엔진이 HTML을 렌더링 하는 방법을 설명 하는, 특성은 유효성 검사 특성이 아닙니다. 위의 예에는 `DataType.Date` 특성 시간 없이 날짜로 영화 날짜를 표시 합니다. 예를 들어, 다음 [ `DataType` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) 특성 형식의 데이터의 유효성을 검사 하지 않습니다.
 
 [!code-csharp[Main](adding-validation-to-the-model/samples/sample10.cs)]
 
-위에 나열 된 특성에만 데이터의 서식을 지정 하는 뷰 엔진이 대 한 힌트 제공 (같은 특성을 제공 하 고 &lt;는&gt; URL에 대 한 및 &lt;는 href =&quot;mailto:EmailAddress.com&quot; &gt; 전자 메일입니다. 사용할 수는 [정규식으로](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.regularexpressionattribute.aspx) 유효성을 검사할 데이터 형식의 특성입니다.
+위에 나열 된 특성에만 데이터의 서식을 지정 하는 뷰 엔진이 대 한 힌트 제공 (같은 특성을 제공 하 고 &lt;는&gt; URL에 대 한 및 &lt;는 href =&quot;mailto:EmailAddress.com&quot; &gt; 전자 메일입니다. 사용할 수는 [정규식으로](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.regularexpressionattribute.aspx) 유효성을 검사할 데이터 형식의 특성입니다.
 
-사용 하 여 다른 방법은 `DataType` 특성을 명시적으로 설정 된 [ `DataFormatString` ](https://msdn.microsoft.com/en-us/library/system.string.format.aspx) 값입니다. 다음 코드와 날짜 형식 문자열을 사용 하 여 릴리스 날짜 속성 (즉, &quot;d&quot;). 않으려면 시간 릴리스 날짜의 일환으로 지정 하려면이 사용 합니다.
+사용 하 여 다른 방법은 `DataType` 특성을 명시적으로 설정 된 [ `DataFormatString` ](https://msdn.microsoft.com/library/system.string.format.aspx) 값입니다. 다음 코드와 날짜 형식 문자열을 사용 하 여 릴리스 날짜 속성 (즉, &quot;d&quot;). 않으려면 시간 릴리스 날짜의 일환으로 지정 하려면이 사용 합니다.
 
 [!code-csharp[Main](adding-validation-to-the-model/samples/sample11.cs)]
 

@@ -2,20 +2,18 @@
 title: "보기에는 종속성 주입"
 author: ardalis
 description: 
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: 80fb9e43-e4db-4af2-b2a8-e1364a712f69
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/dependency-injection
-ms.openlocfilehash: 4586f50bc663b7269914dfff28b61342e3991a48
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a1258dbe2e659f6c5149d15b37451810ec7d6601
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="dependency-injection-into-views"></a>보기에는 종속성 주입
 
@@ -43,7 +41,7 @@ ASP.NET Core 지원 [종속성 주입](xref:fundamentals/dependency-injection) �
 
 [!code-csharp[Main](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Model/Services/StatisticsService.cs?highlight=15,20,26)]
 
-샘플 리포지토리는 메모리 내 컬렉션을 사용합니다. 위에 표시 된 구현 (에서 작동 하는 모든 데이터를 메모리에에서) 원격으로 액세스, 대규모 데이터 집합에 대 한 권장 되지 않습니다.
+샘플 리포지토리는 메모리 내 컬렉션을 사용합니다. 위에 표시 된 구현에서는 원격으로 액세스, 대규모 데이터 집합에 대 한 권장 되지 않습니다 (에서 작동 하는 모든 데이터를 메모리에에서).
 
 샘플 데이터를 보기에 바인딩된 모델 및 보기에 포함할 서비스를 표시 합니다.
 

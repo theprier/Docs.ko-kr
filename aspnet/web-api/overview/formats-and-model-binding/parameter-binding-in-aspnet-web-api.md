@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/formats-and-model-binding/parameter-binding-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: ad052570fb2f168da657cd1263d8342a59d4cab0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5aa532137436922519c86246ebfa834910ac0d86
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="parameter-binding-in-aspnet-web-api"></a>ASP.NET Web API의에서 바인딩 매개 변수
 ====================
@@ -26,7 +26,7 @@ ms.lasthandoff: 11/10/2017
 
 기본적으로 웹 API 매개 변수를 바인딩하는 다음 규칙을 사용 합니다.
 
-- 매개 변수가 "simple" 형식인 경우 Web API URI에서 값을 가져오려고 합니다. 단순 유형에.NET [기본 형식](https://msdn.microsoft.com/en-us/library/system.type.isprimitive.aspx) (**int**, **bool**, **double**, 등)를 더한 **TimeSpan**, **DateTime**, **Guid**, **10 진수**, 및 **문자열**, *플러스* 모든 문자열에서 변환할 수 있는 형식 변환기 입력 합니다. (에 대 한 자세한 나중에 형식 변환기입니다.)
+- 매개 변수가 "simple" 형식인 경우 Web API URI에서 값을 가져오려고 합니다. 단순 유형에.NET [기본 형식](https://msdn.microsoft.com/library/system.type.isprimitive.aspx) (**int**, **bool**, **double**, 등)를 더한 **TimeSpan**, **DateTime**, **Guid**, **10 진수**, 및 **문자열**, *플러스* 모든 문자열에서 변환할 수 있는 형식 변환기 입력 합니다. (에 대 한 자세한 나중에 형식 변환기입니다.)
 - 사용 하 여 복합 형식의 경우 Web API 메시지 본문에서 값을 읽을 하려고에 대 한는 [미디어 유형 포맷터](media-formatters.md)합니다.
 
 예를 들어 다음은 일반적인 웹 API 컨트롤러 메서드에서가입니다.
@@ -121,7 +121,7 @@ Web API의 기본 값 공급자에서 경로 데이터 및 쿼리 문자열 값�
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample11.cs)]
 
-마지막으로, 모델 바인더 공급자를 추가할 수 있습니다는 **HttpConfiguration**합니다. 모델 바인더 공급자는 모델 바인더를 만드는 팩터리 클래스 단순히 합니다. 파생 하 여 공급자를 만들 수는 [ModelBinderProvider](https://msdn.microsoft.com/en-us/library/system.web.http.modelbinding.modelbinderprovider.aspx) 클래스입니다. 그러나 단일 형식을 처리 하는 모델 바인더를 경우 기본 제공 사용 하기 쉽게 **SimpleModelBinderProvider**,이 목적을 위해 디자인 된 합니다. 다음 코드에서는 이 작업을 수행하는 방법을 보여 줍니다.
+마지막으로, 모델 바인더 공급자를 추가할 수 있습니다는 **HttpConfiguration**합니다. 모델 바인더 공급자는 모델 바인더를 만드는 팩터리 클래스 단순히 합니다. 파생 하 여 공급자를 만들 수는 [ModelBinderProvider](https://msdn.microsoft.com/library/system.web.http.modelbinding.modelbinderprovider.aspx) 클래스입니다. 그러나 단일 형식을 처리 하는 모델 바인더를 경우 기본 제공 사용 하기 쉽게 **SimpleModelBinderProvider**,이 목적을 위해 디자인 된 합니다. 다음 코드에서는 이 작업을 수행하는 방법을 보여 줍니다.
 
 [!code-csharp[Main](parameter-binding-in-aspnet-web-api/samples/sample12.cs)]
 

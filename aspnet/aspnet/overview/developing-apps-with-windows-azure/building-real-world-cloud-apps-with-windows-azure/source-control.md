@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control
 msc.type: authoredcontent
-ms.openlocfilehash: f244e6bd1cd8abd23b64d07ccafcef5c4db1029b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e3ce68b949199db35c18a09771d99d38562b74e9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="source-control-building-real-world-cloud-apps-with-azure"></a>소스 제어 (Azure로 응용 프로그램 빌딩 실제 클라우드)
 ====================
@@ -72,7 +72,7 @@ A 기능은 준비 하면 병합 하는 경우 각 기능에 대 한 분기를 �
 
 이 구조를 사용 하면 고객 피드백에 신속 하 게 대응할 수 있습니다. 프로덕션 환경에 빠른 픽스를 확인 해야 하는 경우 할 수 있는 하는 효율적으로 agile 방법으로 합니다. Master 또는 준비 분기를 만들 수 있습니다 및 마스터를 병합 하 고 아래쪽 설정이 끝나면로 기능 및 개발 합니다.
 
-![핫픽스 분기](source-control/_static/image2.png)
+![Hotfix branch](source-control/_static/image2.png)
 
 분기 구조 다음과 같이 프로덕션 및 development 분기의 해당 구분을 사용 하지 않고 프로덕션 문제 수 있습니다 위치에 배치 되어 프로덕션 수정 함께 새 기능 코드를 승격 하지 않아도 됩니다. 새 기능 코드에서 완전히 테스트 및 준비에 대 한 프로덕션 되지 않을 수 있습니다 및 많은 준비 되지 않은 변경 된 철회 하는 작업을 수행 해야 할 수 있습니다. 또는 지연 변경 내용을 테스트 하 고 배포할 준비가 얻으십시오 하기 위해 수정 해야 할 수 있습니다.
 
@@ -137,9 +137,9 @@ Azure에 대 한 대안에서는 **appSettings** 연결 문자열의 섹션은 *
 
 [Git](http://git-scm.com/) 있는 DVCS 인기 있는 바뀌었기 됩니다. 소스 제어에 Git를 사용 하면 로컬 컴퓨터에 기록의 모든 저장소의 전체 복사본이 있어야 합니다. 많은 사람들이 것이 더 쉬우므로 계속 해 서 네트워크에 연결 되지 않은 작업을 수행 하는 것 등의 작업을 커밋하고 롤백, 만들고 분기를 전환 하며 등을 선호 합니다. 네트워크에 연결 된 경우에 쉽고 빠르게 분기를 만들고 로컬 있으면 모든 분기를 변환할 수는 있습니다. 다른 개발자에 게 영향을 미치는 필요 없이 로컬 커밋 및 롤백 수행할 수 있습니다. 및 서버에 보내기 전에 커밋 일괄 처리할 수 있습니다.
 
-[Microsoft Visual Studio Online](https://www.visualstudio.com/)(VSO) Team Foundation Service 라고 모두 Git를 제공 하는 이전 및 [Team Foundation 버전 제어](https://msdn.microsoft.com/en-us/library/ms181237(v=vs.120).aspx) (TFVC; 소스 제어를 중앙 집중식). 여기 Microsoft Azure의 그룹에서 어떤 팀 사용 하 여 중앙 집중식된 소스 제어에 배포 된 경우 일부 사용 하 고 일부는 조합 (일부 프로젝트에 대 한 중앙 집중식 및 다른 프로젝트에 대 한 분산)를 사용 합니다. VSO 서비스는 최대 5 명의 사용자에 대 한 무료입니다. 무료 계획에 등록할 수 [여기](https://go.microsoft.com/fwlink/?LinkId=307137)합니다.
+[Microsoft Visual Studio Online](https://www.visualstudio.com/)(VSO) Team Foundation Service 라고 모두 Git를 제공 하는 이전 및 [Team Foundation 버전 제어](https://msdn.microsoft.com/library/ms181237(v=vs.120).aspx) (TFVC; 소스 제어를 중앙 집중식). 여기 Microsoft Azure의 그룹에서 어떤 팀 사용 하 여 중앙 집중식된 소스 제어에 배포 된 경우 일부 사용 하 고 일부는 조합 (일부 프로젝트에 대 한 중앙 집중식 및 다른 프로젝트에 대 한 분산)를 사용 합니다. VSO 서비스는 최대 5 명의 사용자에 대 한 무료입니다. 무료 계획에 등록할 수 [여기](https://go.microsoft.com/fwlink/?LinkId=307137)합니다.
 
-기본 제공 기본 클래스를 포함 하는 visual Studio 2013 [Git 지원](https://msdn.microsoft.com/en-us/library/hh850437.aspx); 같습니다. 빠른 작동 하는 방법의 데모입니다.
+기본 제공 기본 클래스를 포함 하는 visual Studio 2013 [Git 지원](https://msdn.microsoft.com/library/hh850437.aspx); 같습니다. 빠른 작동 하는 방법의 데모입니다.
 
 Visual Studio 2013에서 열려 있는 프로젝트에서 솔루션을 마우스 오른쪽 단추로 **솔루션 탐색기**, 선택 **소스 제어에 솔루션 추가**합니다.
 
@@ -187,7 +187,7 @@ Visual Studio에서 자동으로 커밋에 대 한 프로젝트 파일을 모두
 
 이 간단한 예제를 신속 하 게 분기를 만들 하는 방법 간에 분기 사이 대칭 이동 합니다. 이 기능을 사용 하면 분기 구조를 사용 하는 매우 민첩 한 워크플로 및 자동화 스크립트에 표시 되는 [모든 자동화](automate-everything.md) 장 합니다. 예를 들어 할 수 있습니다 Development 분기에서 작업 마스터에서 핫픽스 분기 만들기, 새 분기로 전환, 변경 내용을 확인 및 커밋하기 하 고 Development 분기 다시 전환 합니다 및 하 던 작업을 계속 합니다.
 
-Visual Studio의 로컬 Git 리포지토리를 이용한 사용법은 무엇을 보았을 여기입니다. 팀 환경에서 일반적으로 푸시할 변경 공용 리포지토리로 합니다. Visual Studio 도구를 사용 하면 원격 Git 리포지토리를 가리키도록 수도 있습니다. GitHub.com를 사용 하 여이 위해서는 하거나 사용할 수 있습니다 [Visual Studio Online에서 Git](https://msdn.microsoft.com/en-us/library/hh850437.aspx) 작업 항목 및 버그 추적와 같이 다른 모든 Visual Studio Online 기능에 통합 합니다.
+Visual Studio의 로컬 Git 리포지토리를 이용한 사용법은 무엇을 보았을 여기입니다. 팀 환경에서 일반적으로 푸시할 변경 공용 리포지토리로 합니다. Visual Studio 도구를 사용 하면 원격 Git 리포지토리를 가리키도록 수도 있습니다. GitHub.com를 사용 하 여이 위해서는 하거나 사용할 수 있습니다 [Visual Studio Online에서 Git](https://msdn.microsoft.com/library/hh850437.aspx) 작업 항목 및 버그 추적와 같이 다른 모든 Visual Studio Online 기능에 통합 합니다.
 
 물론 agile 분기 전략을 구현할 수 있습니다 하는 유일한 방법은 아닙니다. 중앙 집중식된 소스 제어 저장소를 사용 하 여 동일한 agile 워크플로 사용할 수 있습니다.
 
@@ -202,14 +202,14 @@ Visual Studio의 로컬 Git 리포지토리를 이용한 사용법은 무엇을 
 
 (중앙 집중식된 버전 제어) TFVC 및 Git (분산된 버전 제어)에 대 한 자세한 내용은 다음 리소스를 참조 합니다.
 
-- [버전 제어 시스템을 사용 해야 합니까: TFVC 또는 Git?](https://msdn.microsoft.com/en-us/library/vstudio/ms181368.aspx#tfvc_or_git_summary) MSDN 설명서 TFVC 및 Git 간의 차이점을 요약 하는 테이블로 포함 됩니다.
+- [버전 제어 시스템을 사용 해야 합니까: TFVC 또는 Git?](https://msdn.microsoft.com/library/vstudio/ms181368.aspx#tfvc_or_git_summary) MSDN 설명서 TFVC 및 Git 간의 차이점을 요약 하는 테이블로 포함 됩니다.
 - [마음에 Team Foundation Server 및 마음에 Git, 하지만, 보다 효율적인 프로토콜?](https://blogs.msdn.com/b/visualstudiouk/archive/2013/08/05/well-i-like-team-foundation-server-and-i-like-git-but-which-is-better.aspx) Git 및 TFVC 비교 합니다.
 
 분기 전략에 대 한 자세한 내용은 다음 리소스를 참조 합니다.
 
-- [Team Foundation server 2012 릴리스 파이프라인을 구축](https://msdn.microsoft.com/en-us/library/dn449957.aspx)합니다. Microsoft Patterns and Practices 설명서입니다. 분기 전략에 대 한 6 장을 참조 하십시오. 대표 기능은 기능 분기를 설정/해제 하 고 기능에 대 한 분기를 사용 하는 경우 보관 수명이 짧은 (시간 또는 일에서 최대) 대표 합니다.
+- [Team Foundation server 2012 릴리스 파이프라인을 구축](https://msdn.microsoft.com/library/dn449957.aspx)합니다. Microsoft Patterns and Practices 설명서입니다. 분기 전략에 대 한 6 장을 참조 하십시오. 대표 기능은 기능 분기를 설정/해제 하 고 기능에 대 한 분기를 사용 하는 경우 보관 수명이 짧은 (시간 또는 일에서 최대) 대표 합니다.
 - [버전 제어 가이드](https://aka.ms/vsarsolutions)합니다. ALM rangers 분기 전략을 안내 합니다. 다운로드 탭에 Strategies.pdf 분기를 참조 하십시오.
-- [기능 설정/해제와 소프트웨어 개발](https://msdn.microsoft.com/en-us/magazine/dn683796.aspx)합니다. MSDN Magazine 문서입니다.
+- [기능 설정/해제와 소프트웨어 개발](https://msdn.microsoft.com/magazine/dn683796.aspx)합니다. MSDN Magazine 문서입니다.
 - [기능 설정/해제](http://martinfowler.com/bliki/FeatureToggle.html)합니다. 설정/해제 기능 소개/기능 Martin Fowler 블로그에서 플래그를 지정 합니다.
 - [기능 설정/해제 vs 기능 분기](http://geekswithblogs.net/Optikal/archive/2013/02/10/152069.aspx)합니다. Dylan Smith가 기능 설정/해제 하는 방법에 대 한 다른 블로그 게시물
 

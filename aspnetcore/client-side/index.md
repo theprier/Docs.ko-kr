@@ -2,20 +2,18 @@
 title: "ASP.NET Core의 클라이언트 쪽 개발"
 author: rick-anderson
 description: 
-keywords: ASP.NET Core
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.assetid: a8fb7eb7-e0e5-4394-84f3-1f1dbe0ba2e4
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: client-side/index
-ms.openlocfilehash: 61a8eeed1a5ef5517f839ebd830eff40b959347a
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: 41cf3ce972de5e330dbe303e6a42fe215f3ac7a5
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="client-side-development-in-aspnet-core"></a>ASP.NET Core의 클라이언트 쪽 개발
 

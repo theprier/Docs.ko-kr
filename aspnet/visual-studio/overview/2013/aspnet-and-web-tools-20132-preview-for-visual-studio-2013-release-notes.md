@@ -12,15 +12,15 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/aspnet-and-web-tools-20132-preview-for-visual-studio-2013-release-notes
 msc.type: authoredcontent
-ms.openlocfilehash: d3a8183fecaf830b2ee1211acd56da86454b4437
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0e7ad52662f7ceaa1f087d007d0b14b610f90bee
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-and-web-tools-20132--for-visual-studio-2013-release-notes"></a>ASP.NET 및 Web Tools 2013.2 for Visual Studio 2013 릴리스 정보
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 ## <a name="installation-notes"></a>설치 참고 사항
 
@@ -232,10 +232,10 @@ NuGet RTM는 2014 년 4 월에에서 출시 될 2.8.1. 릴리스 정보에서 �
 <a id="ef"></a>
 ### <a name="entity-framework-61"></a>Entity Framework 6.1
 
-Entity Framework 런타임 및 도구가 둘 다에 대해 6.1 버전으로 업데이트 되었습니다. Entity Framework (EF) 6.1 Entity Framework 6에 대 한 부분 업데이트는 버그 픽스와 새로운 기능을 포함 하 고 있습니다. 참조에 대 한 자세한 내용은 새로운 기능에 대 한 설명서에 대 한 링크를 포함 하 여 EF6.1 [Entity Framework 버전 기록이](https://msdn.microsoft.com/en-US/data/jj574253)합니다. 이 릴리스의 새로운 기능은 다음과 같습니다.
+Entity Framework 런타임 및 도구가 둘 다에 대해 6.1 버전으로 업데이트 되었습니다. Entity Framework (EF) 6.1 Entity Framework 6에 대 한 부분 업데이트는 버그 픽스와 새로운 기능을 포함 하 고 있습니다. 참조에 대 한 자세한 내용은 새로운 기능에 대 한 설명서에 대 한 링크를 포함 하 여 EF6.1 [Entity Framework 버전 기록이](https://msdn.microsoft.com/data/jj574253)합니다. 이 릴리스의 새로운 기능은 다음과 같습니다.
 
 - **통합 tooling** 일관 된 새 EF 모델을 만들 수 있습니다. 이 기능은 ADO.NET 엔터티 데이터 모델 마법사에서 기존 데이터베이스 리버스 엔지니어링을 포함 하 여 만드는 Code First 모델을 지원 하도록 확장 합니다. 이러한 기능은 EF 파워 도구에서 베타 품질에서 이전에 사용할 수 없었습니다.
-- **트랜잭션 커밋 실패의 처리** 제공 새 [System.Data.Entity.Infrastructure.CommitFailureHandler](https://msdn.microsoft.com/en-us/library/system.data.entity.infrastructure.commitfailurehandler(v=vs.113).aspx) 를 사용 하는 기능이 새로 도입 된 트랜잭션 작업을 가로챌 수 있습니다. **CommitFailureHandler** 트랜잭션을 커밋하는 동안 연결 오류 로부터 자동 복구를 허용 합니다.
+- **트랜잭션 커밋 실패의 처리** 제공 새 [System.Data.Entity.Infrastructure.CommitFailureHandler](https://msdn.microsoft.com/library/system.data.entity.infrastructure.commitfailurehandler(v=vs.113).aspx) 를 사용 하는 기능이 새로 도입 된 트랜잭션 작업을 가로챌 수 있습니다. **CommitFailureHandler** 트랜잭션을 커밋하는 동안 연결 오류 로부터 자동 복구를 허용 합니다.
 - **IndexAttribute** 인덱스를 Code First 모델의 속성 (또는 속성)에 대 한 특성을 배치 하 여 지정할 수 있습니다. 먼저 코드는 데이터베이스에 해당 인덱스를 만들 다음 됩니다.
 - **공용 매핑 API** EF 속성 및 형식에 매핑하는 방식을 데이터베이스의 열과 테이블에는 정보에 대 한 액세스를 제공 합니다. 이전 릴리스와에서이 API를 내부 합니다.
 - **App/Web.config 파일을 통해 인터셉터를 구성 하는 기능**(응용 프로그램을 다시 컴파일하지 않고도 추가할 인터셉터 허용).

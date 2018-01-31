@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/security/persistent-connection-authorization
 msc.type: authoredcontent
-ms.openlocfilehash: 9c6fff86ae6b1b65e6ba9922b6b8448643ef1f15
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d559cfa21f6444b2361fd003b9ce3d2c9c6c57a4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="authentication-and-authorization-for-signalr-persistent-connections"></a>인증 및 권한 부여 SignalR 영구 연결에 대 한
 ====================
@@ -44,7 +44,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="enforce-authorization"></a>권한 부여를 적용 합니다.
 
-사용 하는 경우 권한 부여 규칙을 적용 하는 [PersistentConnection](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.persistentconnection(v=vs.111).aspx) 재정의 해야 합니다는 `AuthorizeRequest` 메서드. 사용할 수 없습니다는 `Authorize` 영구 연결을 사용 하 여 특성입니다. `AuthorizeRequest` 메서드는 사용자가 요청한 작업을 수행할 권한이 있는지 확인 하는 모든 요청 전에 SignalR 프레임 워크에서 호출 됩니다. `AuthorizeRequest` 응용 프로그램의 표준 인증 메커니즘을 통해 사용자를 인증 대신; 클라이언트에서 메서드가 호출 되지 않습니다.
+사용 하는 경우 권한 부여 규칙을 적용 하는 [PersistentConnection](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.persistentconnection(v=vs.111).aspx) 재정의 해야 합니다는 `AuthorizeRequest` 메서드. 사용할 수 없습니다는 `Authorize` 영구 연결을 사용 하 여 특성입니다. `AuthorizeRequest` 메서드는 사용자가 요청한 작업을 수행할 권한이 있는지 확인 하는 모든 요청 전에 SignalR 프레임 워크에서 호출 됩니다. `AuthorizeRequest` 응용 프로그램의 표준 인증 메커니즘을 통해 사용자를 인증 대신; 클라이언트에서 메서드가 호출 되지 않습니다.
 
 다음 예제에서는 인증 된 사용자에 대 한 요청을 제한 하는 방법을 보여 줍니다.
 

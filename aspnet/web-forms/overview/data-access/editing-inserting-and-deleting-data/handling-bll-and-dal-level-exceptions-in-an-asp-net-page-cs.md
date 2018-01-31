@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 17157d595e8283628371ff6ad39fe71879e96a56
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5a0ffde90aa85383d87bd48e16a1c16433465cbf
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="handling-bll--and-dal-level-exceptions-in-an-aspnet-page-c"></a>ASP.NET 페이지 (C#)의 BLL 및 DAL 수준의 예외 처리
 ====================
@@ -101,9 +101,9 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="step-2-gracefully-handling-dal-level-exceptions"></a>2 단계: DAL 수준 예외를 정상적으로 처리
 
-작동 하는 동안 우리의 편집 가능한 GridView 아주 사용자가 편집 된 제품의 이름, 가격 및 재고에 대 한 올바른 값을 입력 하는 경우 잘못 된 값을 입력 하면 예외가 발생 합니다. 예를 들어 생략는 `ProductName` 원인을 값는 [NoNullAllowedException](https://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpref/html/frlrfsystemdatanonullallowedexceptionclasstopic.asp) 이후 throw 되는 `ProductName` 속성에는 `ProdcutsRow` 클래스에 해당 `AllowDBNull` 속성이로 설정 `false`경우는 다운 되는 데이터베이스는 `SqlException` 데이터베이스에 연결 하려고 할 때 TableAdapter에 의해 throw 됩니다. 작업을 수행 하지 않고 이러한 예외 버블 업 데이터 액세스 계층에서 ASP.NET 페이지에는 다음 비즈니스 논리 계층을 마지막으로 ASP.NET 런타임에 합니다.
+작동 하는 동안 우리의 편집 가능한 GridView 아주 사용자가 편집 된 제품의 이름, 가격 및 재고에 대 한 올바른 값을 입력 하는 경우 잘못 된 값을 입력 하면 예외가 발생 합니다. 예를 들어 생략는 `ProductName` 원인을 값는 [NoNullAllowedException](https://msdn.microsoft.com/library/default.asp?url=/library/cpref/html/frlrfsystemdatanonullallowedexceptionclasstopic.asp) 이후 throw 되는 `ProductName` 속성에는 `ProdcutsRow` 클래스에 해당 `AllowDBNull` 속성이로 설정 `false`경우는 다운 되는 데이터베이스는 `SqlException` 데이터베이스에 연결 하려고 할 때 TableAdapter에 의해 throw 됩니다. 작업을 수행 하지 않고 이러한 예외 버블 업 데이터 액세스 계층에서 ASP.NET 페이지에는 다음 비즈니스 논리 계층을 마지막으로 ASP.NET 런타임에 합니다.
 
-웹 응용 프로그램 구성 하는 방법에서 응용 프로그램을 방문 중인 여부에 따라 `localhost`, 일반 서버 오류 페이지, 자세한 오류 보고서 또는 사용자에 게 친숙 웹 페이지 처리 되지 않은 예외가 발생할 수 있습니다. 참조 [웹 응용 프로그램 Error Handling in ASP.NET](http://www.15seconds.com/issue/030102.htm) 및 [customErrors 요소](https://msdn.microsoft.com/en-US/library/h0hfz6fc(VS.80).aspx) 확인할 수 없는 예외가에 ASP.NET 런타임이 응답 하는 방법에 대 한 자세한 내용은 합니다.
+웹 응용 프로그램 구성 하는 방법에서 응용 프로그램을 방문 중인 여부에 따라 `localhost`, 일반 서버 오류 페이지, 자세한 오류 보고서 또는 사용자에 게 친숙 웹 페이지 처리 되지 않은 예외가 발생할 수 있습니다. 참조 [웹 응용 프로그램 Error Handling in ASP.NET](http://www.15seconds.com/issue/030102.htm) 및 [customErrors 요소](https://msdn.microsoft.com/library/h0hfz6fc(VS.80).aspx) 확인할 수 없는 예외가에 ASP.NET 런타임이 응답 하는 방법에 대 한 자세한 내용은 합니다.
 
 그림 6 지정 하지 않고 제품을 업데이트 하려고 할 때 발생 하는 화면 표시는 `ProductName` 값입니다. 이 자세한 오류 보고서를 통해 들어오는 경우에 표시 되는 기본 `localhost`합니다.
 
@@ -153,7 +153,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](handling-bll-and-dal-level-exceptions-in-an-asp-net-page-cs/samples/sample4.cs)]
 
-이 이벤트 처리기의 두 번째 입력된 매개 변수 형식의 개체는 [GridViewUpdatedEventArgs](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.gridviewupdatedeventargs.aspx), 예외 처리에 대 한 관심 있는 세 속성이 있는:
+이 이벤트 처리기의 두 번째 입력된 매개 변수 형식의 개체는 [GridViewUpdatedEventArgs](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridviewupdatedeventargs.aspx), 예외 처리에 대 한 관심 있는 세 속성이 있는:
 
 - `Exception`throw 된 예외;에 대 한 참조 이 속성의 값을 갖습니다 예외가 throw 되는 경우`null`
 - `ExceptionHandled`예외가 처리 되었는지 여부를 나타내는 부울 값은 `RowUpdated` 이벤트 처리기 경우 `false` (기본값) 이면 예외가 다시 throw ASP.NET 런타임에 percolating

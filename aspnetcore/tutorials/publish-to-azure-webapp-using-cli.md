@@ -2,7 +2,6 @@
 title: "명령줄 도구를 사용하여 Azure에 ASP.NET Core 앱 게시 | Microsoft Docs"
 description: "Git 명령줄 클라이언트를 사용하여 Azure App Service에 ASP.NET Core 앱을 게시하는 방법을 알아봅니다."
 services: multiple
-keywords: "ASP.NET Core, Azure, App Service, Git, 명령줄"
 author: camsoper
 ms.author: casoper
 manager: wpickett
@@ -13,11 +12,11 @@ ms.technology: aspnet
 ms.custom: mvc
 ms.devlang: dotnet
 uid: tutorials/publish-to-azure-webapp-using-cli
-ms.openlocfilehash: 6af5de584cbf8cd59d86a965592b958061014c95
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: de05c1688d7de6126434395042103d803ee3064e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="deploy-an-aspnet-core-application-to-azure-app-service-from-the-command-line"></a>명령줄에서 Azure App Service에 ASP.NET Core 응용 프로그램 배포
 
@@ -151,7 +150,7 @@ git push azure master
 ```
 ---
 
-Git은 이전에 설정된 배포 자격 증명을 요구합니다.  인증 후에 응용 프로그램은 원격 위치로 푸시되고, 빌드되며 배포됩니다.
+Git은 이전에 설정된 배포 자격 증명을 요구합니다. 인증 후에 응용 프로그램은 원격 위치로 푸시되고, 빌드되며 배포됩니다.
 
 ![Git 배포 출력](publish-to-azure-webapp-using-cli/_static/post_deploy.png)
 

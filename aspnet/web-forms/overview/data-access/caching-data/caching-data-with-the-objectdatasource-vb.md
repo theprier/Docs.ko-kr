@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-with-the-objectdatasource-vb
 msc.type: authoredcontent
-ms.openlocfilehash: fa0a0f1f80a407f8f68d5fe081b5b144e2945700
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ce0daabf8d68614c530115cc37b4f088f75dba4d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="caching-data-with-the-objectdatasource-vb"></a>ObjectDataSource (VB)를 사용 하 여 데이터 캐싱
 ====================
@@ -44,7 +44,7 @@ ASP.NET 2.0은 다양 한 캐싱 옵션을 제공 합니다. 전체 웹 페이�
 
 지정 된 제거 조건에 관계 없이 캐시의 항목 수 *청소* 시간 기반 또는 종속성 기반 조건이 충족 되었지만 전에 합니다. 캐시가 용량에 도달 하면 새로 추가 하려면 먼저 기존 항목 제거 해야 합니다. 따라서 작업 하는 경우 프로그래밍 방식으로 캐시 된 데이터와 해당 s 항상 가정 하는 중요 한 캐시 된 데이터 표시 되지 않을 수 있습니다. 데이터에 액세스할 때 캐시에서 프로그래밍 방식으로 다음 자습서에서를 사용 하는 패턴에서 살펴보게 *아키텍처에서 데이터 캐싱*합니다.
 
-캐싱은 응용 프로그램에서 성능이 더 빼내에 대 한 경제적이 고 하는 방법을 제공 합니다. 으로 [서 Smith](http://aspadvice.com/blogs/ssmith/) 가 작성 한 문서에서 articulates [ASP.NET 캐싱: 기법 및 모범 사례](https://msdn.microsoft.com/en-us/library/aa478965.aspx):
+캐싱은 응용 프로그램에서 성능이 더 빼내에 대 한 경제적이 고 하는 방법을 제공 합니다. 으로 [서 Smith](http://aspadvice.com/blogs/ssmith/) 가 작성 한 문서에서 articulates [ASP.NET 캐싱: 기법 및 모범 사례](https://msdn.microsoft.com/library/aa478965.aspx):
 
 캐싱 좋은 충분 한 성능을 얻으려면 많은 시간과 분석 필요 없이 좋은 방법이 될 수 있습니다. 메모리는 부담이, 30 초는 하루 또는 한 코드 또는 데이터베이스를 최적화 하는 동안 주 소비 하는 대신 출력을 캐시 하 여 필요한 성능을 얻을 수 있는, 경우 마찬가지로 캐싱 솔루션 (확인는 30-1 초 동안 오래 된 데이터를 것으로 가정)를 이동 합니다. 결국 잘못 된 설계는 아마도 따라잡을 사용자에 게 과정의 응용 프로그램을 올바르게 디자인할 하려고 해야 하므로 합니다. 하지만 경우 성능을 하기 위해 좋은 충분 한 오늘 하기만 하면, 캐싱 방법이 될 수 있는 뛰어난 [], 리팩터링 작업을 수행 하는 시간을 보유 하는 경우 나중에 응용 프로그램 시간을 구입 합니다.
 
@@ -175,10 +175,10 @@ GridView s 스마트 태그 편집 사용 확인란을 선택 하 여 GridView�
 
 몇 가지 속성을 설정 하면, ObjectDataSource는 자동으로 ASP.NET 데이터 캐시에서 검색 된 데이터를 캐시 하도록 구성할 수 있습니다. ObjectDataSource의 캐시 관련 속성을 다음과 같습니다.
 
-- [EnableCaching](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.enablecaching.aspx) 으로 설정 되어 있어야 `True` 캐싱을 사용 하도록 설정 합니다. 기본값은 `False`입니다.
-- [CacheDuration](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.cacheduration.aspx) 시간 (초) 데이터가 캐시입니다. 기본값은 0입니다. ObjectDataSource는 경우에 데이터를 캐시 `EnableCaching` 은 `True` 및 `CacheDuration` 0 보다 큰 값으로 설정 됩니다.
-- [CacheExpirationPolicy](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.cacheexpirationpolicy.aspx) 로 설정할 수 있습니다 `Absolute` 또는 `Sliding`합니다. 경우 `Absolute`, ObjectDataSource에서 검색 된 데이터에 대 한 캐시 `CacheDuration` 초; 경우 `Sliding`에 대 한 액세스 하지 않은 후에 데이터가 만료 되 `CacheDuration` 초입니다. 기본값은 `Absolute`입니다.
-- [CacheKeyDependency](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.cachekeydependency.aspx) 는 기존 캐시 종속성 ObjectDataSource의 캐시 항목을 연결 하려면이 속성을 사용 합니다. ObjectDataSource의 데이터 항목 중간를 제거할 수 있습니다 캐시에서 만료 관련 시켜 `CacheKeyDependency`합니다. 이 속성은 SQL 캐시 종속성 ObjectDataSource의 캐시와 연결할 가장 일반적으로 사용, 항목을 살펴볼 것 이후에 [를 사용 하 여 SQL 캐시 종속성](using-sql-cache-dependencies-vb.md) 자습서입니다.
+- [EnableCaching](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.enablecaching.aspx) 으로 설정 되어 있어야 `True` 캐싱을 사용 하도록 설정 합니다. 기본값은 `False`입니다.
+- [CacheDuration](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.cacheduration.aspx) 시간 (초) 데이터가 캐시입니다. 기본값은 0입니다. ObjectDataSource는 경우에 데이터를 캐시 `EnableCaching` 은 `True` 및 `CacheDuration` 0 보다 큰 값으로 설정 됩니다.
+- [CacheExpirationPolicy](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.cacheexpirationpolicy.aspx) 로 설정할 수 있습니다 `Absolute` 또는 `Sliding`합니다. 경우 `Absolute`, ObjectDataSource에서 검색 된 데이터에 대 한 캐시 `CacheDuration` 초; 경우 `Sliding`에 대 한 액세스 하지 않은 후에 데이터가 만료 되 `CacheDuration` 초입니다. 기본값은 `Absolute`입니다.
+- [CacheKeyDependency](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.cachekeydependency.aspx) 는 기존 캐시 종속성 ObjectDataSource의 캐시 항목을 연결 하려면이 속성을 사용 합니다. ObjectDataSource의 데이터 항목 중간를 제거할 수 있습니다 캐시에서 만료 관련 시켜 `CacheKeyDependency`합니다. 이 속성은 SQL 캐시 종속성 ObjectDataSource의 캐시와 연결할 가장 일반적으로 사용, 항목을 살펴볼 것 이후에 [를 사용 하 여 SQL 캐시 종속성](using-sql-cache-dependencies-vb.md) 자습서입니다.
 
 구성 s는 `ProductsDataSource` ObjectDataSource 절대 단위로에서 30 초 동안 데이터를 캐시할 수 있습니다. ObjectDataSource s 설정 `EnableCaching` 속성을 `True` 및 해당 `CacheDuration` 30 속성입니다. 둡니다는 `CacheExpirationPolicy` 속성이 해당 기본값으로 설정 `Absolute`합니다.
 
@@ -206,7 +206,7 @@ GridView s 스마트 태그 편집 사용 확인란을 선택 하 여 GridView�
 
 각 ASP.NET 응용 프로그램에서 모든 페이지와 방문자 공유 s 인스턴스는 자체 데이터 캐시를 있습니다. 즉,는 objectdatasource 데이터 캐시에 저장 된 데이터 페이지를 방문 하는 모든 사용자가 공유 마찬가지로 됩니다. 이 확인 하려면 열고는 `ObjectDataSource.aspx` 브라우저에서 페이지입니다. 처음 방문 하 여 페이지 (있다고 가정 하면 이전 테스트 하 여 캐시에 추가 된 데이터를 지금까지 제거 된) 선택 하면 발생 한 이벤트 텍스트가 표시 됩니다. 두 번째 브라우저 인스턴스 및 복사 열고 두 번째 인스턴스에 대 한 첫 번째 브라우저 인스턴스 URL을 붙여 넣습니다. 두 번째 브라우저 인스턴스에서 발생 한 이벤트 텍스트 선택 표시 되지 않는 것 같은 사용 하 여 s 첫 데이터를 캐시 합니다.
 
-ObjectDataSource는 포함 된 캐시 키 값을 사용 하 여 해당 검색된 데이터를 캐시에 삽입할 경우:는 `CacheDuration` 및 `CacheExpirationPolicy` 속성 값, 지정 된 ObjectDataSource에서 사용 하 고 기본 비즈니스 개체의 유형 통해는 [ `TypeName` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.typename.aspx) (`ProductsBLL`,이 예에서);의 값은 `SelectMethod` 속성 이름 및 값 매개 변수는 `SelectParameters` 컬렉션의 및 값이 해당 `StartRowIndex`및 `MaximumRows` 구현할 때 사용 되는 속성 [사용자 지정 페이징](../paging-and-sorting/paging-and-sorting-report-data-vb.md)합니다.
+ObjectDataSource는 포함 된 캐시 키 값을 사용 하 여 해당 검색된 데이터를 캐시에 삽입할 경우:는 `CacheDuration` 및 `CacheExpirationPolicy` 속성 값, 지정 된 ObjectDataSource에서 사용 하 고 기본 비즈니스 개체의 유형 통해는 [ `TypeName` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.typename.aspx) (`ProductsBLL`,이 예에서);의 값은 `SelectMethod` 속성 이름 및 값 매개 변수는 `SelectParameters` 컬렉션의 및 값이 해당 `StartRowIndex`및 `MaximumRows` 구현할 때 사용 되는 속성 [사용자 지정 페이징](../paging-and-sorting/paging-and-sorting-report-data-vb.md)합니다.
 
 이러한 속성의 조합으로 캐시 키 값을 만들어 이러한 값이 변경으로 고유 캐시 엔트리를 보장 합니다. 예를 들어 지난 자습서에서에서 우리 했습니다를 사용 하 여에 검토는 `ProductsBLL` s 클래스 `GetProductsByCategoryID(categoryID)`, 지정된 된 범주에 대 한 모든 제품을 반환 하는 합니다. 한 명의 사용자가 페이지 및 보기 음료를 수행할 수는 `CategoryID` 1입니다. ObjectDataSource에 관계 없이 결과 캐시 하는 경우는 `SelectParameters` 값, 다른 사용자 페이지에 제공 하는 경우 캐시에 있던 음료 제품 하는 동안 입력 하면 조미료 보려는 d 표시 조미료 보다는 캐시 된 음료 제품입니다. 이러한 속성에 의해 캐시 키를 변경 하 여의 값을 포함 하는 `SelectParameters`, ObjectDataSource는 beverages 및 조미료에 대 한 별도 캐시 항목을 유지 관리 합니다.
 
@@ -230,8 +230,8 @@ ObjectDataSource를 단순히 해당 값 데이터 캐시에 캐시를 하므로
 
 이 자습서에 설명 된 항목에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
-- [ASP.NET 캐싱: 기법 및 모범 사례](https://msdn.microsoft.com/en-us/library/aa478965.aspx)
-- [.NET Framework 응용 프로그램에 대 한 캐싱 아키텍처 가이드](https://msdn.microsoft.com/en-us/library/ee817645.aspx)
+- [ASP.NET 캐싱: 기법 및 모범 사례](https://msdn.microsoft.com/library/aa478965.aspx)
+- [.NET Framework 응용 프로그램에 대 한 캐싱 아키텍처 가이드](https://msdn.microsoft.com/library/ee817645.aspx)
 - [ASP.NET 2.0의에서 출력 캐싱](http://aspnet.4guysfromrolla.com/articles/121306-1.aspx)
 
 ## <a name="about-the-author"></a>작성자 정보

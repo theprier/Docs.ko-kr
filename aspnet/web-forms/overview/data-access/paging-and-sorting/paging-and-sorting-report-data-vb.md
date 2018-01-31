@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2ef1bb0b68a46535e3320834a0374b9a4f66182c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 23dbd63110092b2e91b7f3f9f6b602ef917c5527
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="paging-and-sorting-report-data-vb"></a>페이징 및 보고서 데이터 (VB)를 정렬 합니다.
 ====================
@@ -101,7 +101,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="step-3-adding-paging-support"></a>3 단계: 추가 페이징 지원
 
-나열 *모든* 한 화면에 제품의 데이터를 읽는 데 사용자에 대 한 정보 오버 로드에 발생할 수 있습니다. 결과 보다 잘 관리할 수 있도록 하려면 데이터의 작은 페이지에 대 한 데이터를 해제 하 고 사용자가 한 번에 한 페이지씩 데이터 단계별로 실행 하도록 허용 수 우리 됩니다. 수행 하기 위해이 확인 GridView s 스마트 태그에서 페이징 사용 확인란 (GridView s 설정 [ `AllowPaging` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.allowpaging.aspx) 를 `true`).
+나열 *모든* 한 화면에 제품의 데이터를 읽는 데 사용자에 대 한 정보 오버 로드에 발생할 수 있습니다. 결과 보다 잘 관리할 수 있도록 하려면 데이터의 작은 페이지에 대 한 데이터를 해제 하 고 사용자가 한 번에 한 페이지씩 데이터 단계별로 실행 하도록 허용 수 우리 됩니다. 수행 하기 위해이 확인 GridView s 스마트 태그에서 페이징 사용 확인란 (GridView s 설정 [ `AllowPaging` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.allowpaging.aspx) 를 `true`).
 
 
 [![확인란을 사용 하도록 설정 페이징 페이징 지원을 추가 하려면](paging-and-sorting-report-data-vb/_static/image10.png)](paging-and-sorting-report-data-vb/_static/image9.png)
@@ -111,12 +111,12 @@ ms.lasthandoff: 11/10/2017
 
 페이지당 표시 되는 레코드의 수를 제한 하 고 추가 페이징을 사용 하도록 설정 된 *페이징 인터페이스* GridView에 있습니다. 그림 7에 표시 된 기본 페이징 인터페이스는 일련의 페이지 번호를 사용자가 데이터의 한 페이지에서 다른 빠르게 탐색할 수 있도록 합니다. 이 페이징 인터페이스 익숙한 것으로 표시 됩니다 했습니다 지난 자습서에서 DetailsView 및 FormView 컨트롤 페이징 지원을 추가할 때이 표시 합니다.
 
-DetailsView와 FormView 컨트롤만 각 페이지에 단일 레코드를 표시합니다. 하지만 GridView 참조 해당 [ `PageSize` 속성](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.gridview.pagesize.aspx) 페이지당 표시할 레코드를 확인 하려면 (이 속성의 기본값은 10).
+DetailsView와 FormView 컨트롤만 각 페이지에 단일 레코드를 표시합니다. 하지만 GridView 참조 해당 [ `PageSize` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.pagesize.aspx) 페이지당 표시할 레코드를 확인 하려면 (이 속성의 기본값은 10).
 
 이 GridView, DetailsView, 및 FormView의 페이징 인터페이스는 다음 속성을 사용 하 여 사용자 지정할 수 있습니다.
 
 - `PagerStyle`페이징 인터페이스;에 대 한 스타일 정보를 나타냅니다. 같은 설정으로 지정할 수 `BackColor`, `ForeColor`, `CssClass`, `HorizontalAlign`등입니다.
-- `PagerSettings`페이징 인터페이스;의 기능을 사용자 지정할 수 있는 속성의 표시를 포함 합니다. `PageButtonCount` (기본값은 10) 페이징 인터페이스에 표시 되는 숫자 페이지 번호의 최대 수를 나타내는; [ `Mode` 속성](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.pagersettings.mode.aspx) 페이징 인터페이스 작동 하 고 설정할 수 있습니다 하는 방법을 나타냅니다. 
+- `PagerSettings`페이징 인터페이스;의 기능을 사용자 지정할 수 있는 속성의 표시를 포함 합니다. `PageButtonCount` (기본값은 10) 페이징 인터페이스에 표시 되는 숫자 페이지 번호의 최대 수를 나타내는; [ `Mode` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pagersettings.mode.aspx) 페이징 인터페이스 작동 하 고 설정할 수 있습니다 하는 방법을 나타냅니다. 
 
     - `NextPrevious`사용자가 이전 이나 이후 위치로 한 번에 한 페이지씩 단계 수 있도록 다음 및 이전 단추를 보여 줍니다.
     - `NextPreviousFirstLast`다음 및 이전 단추 외에도 첫 번째 및 마지막 단추 사항도 포함 되어, 사용자가 신속 하 게 첫 번째 또는 마지막 데이터 페이지로 이동할 수 있도록
@@ -216,7 +216,7 @@ Label 컨트롤 외에도 s를 현재 표시 된 선택한 페이지와 함께 G
 
 ## <a name="step-5-adding-bi-directional-sorting-support"></a>5 단계: 추가 양방향 정렬 지원
 
-GridView s 스마트 태그에서 정렬 사용 옵션을 선택 하기만 하면 페이징 지원을 추가 하기 위한 단순하게 양방향 정렬 지원 추가 (GridView s를 설정 하는 [ `AllowSorting` 속성](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.gridview.allowsorting.aspx) 를 `true`). 이 렌더링 각각의 GridView의 필드의 머리글 링크 단추가 클릭할 때, 포스트백을 발생 하 고 클릭 한 열을 오름차순으로 정렬 된 데이터를 반환 합니다. 동일한 헤더 LinkButton을 다시 클릭 하면 내림차순 데이터 다시 정렬 합니다.
+GridView s 스마트 태그에서 정렬 사용 옵션을 선택 하기만 하면 페이징 지원을 추가 하기 위한 단순하게 양방향 정렬 지원 추가 (GridView s를 설정 하는 [ `AllowSorting` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.allowsorting.aspx) 를 `true`). 이 렌더링 각각의 GridView의 필드의 머리글 링크 단추가 클릭할 때, 포스트백을 발생 하 고 클릭 한 열을 오름차순으로 정렬 된 데이터를 반환 합니다. 동일한 헤더 LinkButton을 다시 클릭 하면 내림차순 데이터 다시 정렬 합니다.
 
 > [!NOTE]
 > 형식화 된 데이터 집합이 아닌 사용자 지정 데이터 액세스 계층을 사용 하는 경우 없을 수 있습니다는 정렬 사용 옵션에서 GridView s 스마트 태그에 있습니다. 기본적으로 정렬을 지 원하는 데이터 원본에 연결 하는 Gridview만이 확인란을 사용할 수 있어야 합니다. ADO.NET DataTable 제공 하므로 형식화 된 데이터 집합에 기본적으로 정렬을 지원 제공는 `Sort` 메서드를 호출 하는 경우 지정 된 조건을 사용 하 여 Datarow DataTable s를 정렬 합니다.
@@ -243,11 +243,11 @@ GridView s 스마트 태그에서 정렬 사용 옵션을 선택 하기만 하�
 
 모든 GridView BoundField, CheckBoxField, TemplateField, 필드 및에 한 `SortExpression` 필드 s 정렬 헤더 링크를 클릭할 때 데이터 정렬 시 사용 해야 하는 식을 나타내는 속성입니다. GridView 역시는 `SortExpression` 속성입니다. GridView 필드 s 할당 정렬 헤더 LinkButton을 클릭할 때 `SortExpression` 값을 해당 `SortExpression` 속성입니다. 데이터는 ObjectDataSource에서 다시 검색 되 고 GridView s에 따라 정렬 되는 다음으로, `SortExpression` 속성입니다. 다음 목록에는 최종 사용자는 GridView의 데이터를 정렬 하면 그러한 일련의 단계를 자세히 설명 합니다.
 
-1. GridView s [Sorting 이벤트](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.sorting(VS.80).aspx) 발생 합니다.
-2. GridView s [ `SortExpression` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.sortexpression.aspx) 로 설정 되 고 `SortExpression` 필드의 LinkButton이 클릭 되었습니다 정렬 헤더에는
+1. GridView s [Sorting 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sorting(VS.80).aspx) 발생 합니다.
+2. GridView s [ `SortExpression` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sortexpression.aspx) 로 설정 되 고 `SortExpression` 필드의 LinkButton이 클릭 되었습니다 정렬 헤더에는
 3. ObjectDataSource 다시 모든 BLL에서 데이터를 검색 하 고 GridView s를 사용 하 여 데이터를 정렬`SortExpression`
 4. GridView의 `PageIndex` 속성은 0으로 다시 설정, 데이터 (페이징 지원을 구현 된 것으로 가정)의 첫 페이지에 반환 되 사용자를 정렬할 때 즉
-5. GridView s [ `Sorted` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.sorted(VS.80).aspx) 발생 합니다.
+5. GridView s [ `Sorted` 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sorted(VS.80).aspx) 발생 합니다.
 
 기본 페이징을 사용 하 여 기본 정렬 옵션 다시 검색 처럼 *모든* BLL에 있는 레코드가 있습니다. 페이징 없이 정렬을 사용 하는 경우 또는 사용한 정렬을 사용 하는 경우 페이징, 여기서 s (보다 짧은 데이터베이스 데이터 캐싱)이이 성능이 뚫을 수 없으므로 기본입니다. 그러나 이후 자습서에서 볼 수 있겠지만,이 s 사용자 지정 페이징을 사용 하는 경우 데이터를 효율적으로 정렬할 수 있습니다.
 
@@ -274,7 +274,7 @@ GridView s 스마트 태그에서 정렬 사용 옵션을 선택 하기만 하�
 
 ## <a name="programmatically-sorting-the-gridview"></a>GridView를 프로그래밍 방식으로 정렬
 
-GridView s를 사용 하 여 GridView의 콘텐츠를 프로그래밍 방식으로 정렬할 수도 있습니다 [ `Sort` 메서드](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.sort.aspx)합니다. 에 전달 하기만 하면는 `SortExpression` 와 함께 정렬 기준 값을는 [ `SortDirection` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sortdirection.aspx) (`Ascending` 또는 `Descending`), GridView의 데이터 다시 정렬 됩니다.
+GridView s를 사용 하 여 GridView의 콘텐츠를 프로그래밍 방식으로 정렬할 수도 있습니다 [ `Sort` 메서드](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sort.aspx)합니다. 에 전달 하기만 하면는 `SortExpression` 와 함께 정렬 기준 값을는 [ `SortDirection` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sortdirection.aspx) (`Ascending` 또는 `Descending`), GridView의 데이터 다시 정렬 됩니다.
 
 정렬할 해제 되어 म 이유 가정해 보세요.는 `UnitPrice` अ स म र 고객 가격이 낮은 제품만 구매할 것 단순히 걱정 때문에 있습니다. 그러나 d 좋아요 순서로 정렬 하려면 제품 가격, 아니라 가장 비싼 가격의 최소 수 있게 해야 하므로 비용이 가장 높은 제품을 구입 하도록 권장 하려고 합니다.
 

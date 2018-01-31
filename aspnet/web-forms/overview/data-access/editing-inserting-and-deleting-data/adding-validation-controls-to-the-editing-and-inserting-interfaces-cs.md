@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-validation-controls-to-the-editing-and-inserting-interfaces-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a5855d5624360e955d5bcbcdd44e745fa54f8bd8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b8b05705629b5e8a9acfc5d23517ef1b3cfa7cd6
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-validation-controls-to-the-editing-and-inserting-interfaces-c"></a>편집을 유효성 검사 컨트롤을 추가 하 고 삽입 인터페이스 (C#)
 ====================
@@ -103,11 +103,11 @@ GridView DetailsView의 기능을 삽입, GridView의 변환에 기본 제공 �
 
 데이터 입력 폼을 생성할 때에는 사용자가 모든 필수 필드를 입력 하는 모든 제공 된 입력 값 법률, 올바르게 포맷 되지 않았는지 중요 합니다. 사용자의 입력이 유효한 지 확인 하려면 ASP.NET에서는 단일 입력된 컨트롤의 값의 유효성을 검사 하는 데 사용 될 하도록 설계 된 다섯 개의 기본 제공 유효성 검사 컨트롤을 제공 합니다.
 
-- [RequiredFieldValidator](https://msdn.microsoft.com/en-us/library/5hbw267h(VS.80).aspx) 는 값이 제공 되었는지를 확인 합니다.
-- [CompareValidator](https://msdn.microsoft.com/en-us/library/db330ayw(VS.80).aspx) 다른 웹 컨트롤 값 또는 상수 값에 대 한 값을 확인 하거나 값의 형식이 지정된 된 데이터 형식에 대 한 법적
-- [RangeValidator](https://msdn.microsoft.com/en-us/library/f70d09xt.aspx) 값의 범위 내에서 값을 확인 합니다.
-- [RegularExpressionValidator](https://msdn.microsoft.com/en-US/library/eahwtc9e.aspx) 에 대 한 값의 유효성을 검사 한 [정규식](http://en.wikipedia.org/wiki/Regular_expression)
-- [CustomValidator](https://msdn.microsoft.com/en-us/library/9eee01cx(VS.80).aspx) 를 기준으로 사용자 지정, 사용자 정의 메서드
+- [RequiredFieldValidator](https://msdn.microsoft.com/library/5hbw267h(VS.80).aspx) 는 값이 제공 되었는지를 확인 합니다.
+- [CompareValidator](https://msdn.microsoft.com/library/db330ayw(VS.80).aspx) 다른 웹 컨트롤 값 또는 상수 값에 대 한 값을 확인 하거나 값의 형식이 지정된 된 데이터 형식에 대 한 법적
+- [RangeValidator](https://msdn.microsoft.com/library/f70d09xt.aspx) 값의 범위 내에서 값을 확인 합니다.
+- [RegularExpressionValidator](https://msdn.microsoft.com/library/eahwtc9e.aspx) 에 대 한 값의 유효성을 검사 한 [정규식](http://en.wikipedia.org/wiki/Regular_expression)
+- [CustomValidator](https://msdn.microsoft.com/library/9eee01cx(VS.80).aspx) 를 기준으로 사용자 지정, 사용자 정의 메서드
 
 이러한 다섯 개의 컨트롤에 대 한 자세한 내용은 체크 아웃 된 [유효성 검사 컨트롤 섹션](https://quickstarts.asp.net/quickstartv20/aspnet/doc/ctrlref/validation/default.aspx) 의 [ASP.NET 빠른 시작 자습서](https://asp.net/QuickStart/aspnet/)합니다.
 
@@ -133,7 +133,7 @@ GridView DetailsView의 기능을 삽입, GridView의 변환에 기본 제공 �
 **그림 5**:에 RequiredFieldValidator 추가 `ProductName` `EditItemTemplate` ([전체 크기 이미지를 보려면 클릭](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image15.png))
 
 
-모든 유효성 검사 컨트롤 단일 ASP.NET 웹 컨트롤의 입력을 확인 하 여 작동 합니다. 따라서 방금 추가한 RequiredFieldValidator에 텍스트 상자에 대해 유효성을 검사 해야 나타내려면 필요는 `EditItemTemplate`; 유효성 검사 컨트롤을 설정 하 여 이렇게 [ControlToValidate 속성](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.basevalidator.controltovalidate(VS.80).aspx) 에 `ID` 적절 한 웹 컨트롤입니다. 텍스트 상자는 현재 대신 흐릿한에 `ID` 의 `TextBox1`, 하지만 더 적절 한 값으로 변경해 보겠습니다. 서식 파일에 텍스트 상자를 클릭 한 다음 속성 창에서 변경 된 `ID` 에서 `TextBox1` 를 `EditProductName`합니다.
+모든 유효성 검사 컨트롤 단일 ASP.NET 웹 컨트롤의 입력을 확인 하 여 작동 합니다. 따라서 방금 추가한 RequiredFieldValidator에 텍스트 상자에 대해 유효성을 검사 해야 나타내려면 필요는 `EditItemTemplate`; 유효성 검사 컨트롤을 설정 하 여 이렇게 [ControlToValidate 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basevalidator.controltovalidate(VS.80).aspx) 에 `ID` 적절 한 웹 컨트롤입니다. 텍스트 상자는 현재 대신 흐릿한에 `ID` 의 `TextBox1`, 하지만 더 적절 한 값으로 변경해 보겠습니다. 서식 파일에 텍스트 상자를 클릭 한 다음 속성 창에서 변경 된 `ID` 에서 `TextBox1` 를 `EditProductName`합니다.
 
 
 [![텍스트 상자의 ID EditProductName를 변경](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image17.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image16.png)
@@ -141,7 +141,7 @@ GridView DetailsView의 기능을 삽입, GridView의 변환에 기본 제공 �
 **그림 6**: 텍스트 상자의 변경 `ID` 를 `EditProductName` ([전체 크기 이미지를 보려면 클릭](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image18.png))
 
 
-다음으로 RequiredFieldValidator 설정 `ControlToValidate` 속성을 `EditProductName`합니다. 마지막으로 설정 된 [ErrorMessage 속성](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.basevalidator.errormessage(VS.80).aspx) "제품의 이름을 제공 해야 합니다"를 및 [Text 속성](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.basevalidator.text(VS.80).aspx) 를 "\*"입니다. `Text` 속성 값을 제공 하는 경우는 유효성 검사에 실패 하면 유효성 검사 컨트롤에 의해 표시 되는 텍스트입니다. `ErrorMessage` 는 필수 사항인 속성 값은 경우 ValidationSummary 컨트롤이 사용는 `Text` 속성 값이 생략 되는 `ErrorMessage` 속성 값이 잘못 된 입력의 유효성 검사 컨트롤에서 표시 되는 텍스트입니다.
+다음으로 RequiredFieldValidator 설정 `ControlToValidate` 속성을 `EditProductName`합니다. 마지막으로 설정 된 [ErrorMessage 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basevalidator.errormessage(VS.80).aspx) "제품의 이름을 제공 해야 합니다"를 및 [Text 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basevalidator.text(VS.80).aspx) 를 "\*"입니다. `Text` 속성 값을 제공 하는 경우는 유효성 검사에 실패 하면 유효성 검사 컨트롤에 의해 표시 되는 텍스트입니다. `ErrorMessage` 는 필수 사항인 속성 값은 경우 ValidationSummary 컨트롤이 사용는 `Text` 속성 값이 생략 되는 `ErrorMessage` 속성 값이 잘못 된 입력의 유효성 검사 컨트롤에서 표시 되는 텍스트입니다.
 
 RequiredFieldValidator의이 세 가지 속성을 설정한 후 화면 그림 7 비슷해야 합니다.
 
@@ -155,7 +155,7 @@ RequiredFieldValidator의이 세 가지 속성을 설정한 후 화면 그림 7 
 
 CompareValidator를 추가 하기 전에 `UnitPrice` `EditItemTemplate`에서 TextBox 웹 컨트롤의 ID를 먼저 변경 해보겠습니다 `TextBox2` 를 `EditUnitPrice`합니다. 이 변경 후 CompareValidator, 추가 설정 해당 `ControlToValidate` 속성을 `EditUnitPrice`, 해당 `ErrorMessage` "가격 보다 크거나 0 이어야 하며 통화 기호를 포함할 수 없습니다", 속성 및 해당 `Text` 속성을 "\*".
 
-해당는 `UnitPrice` 값 해야 0 보다 크거나, CompareValidator의 설정 [연산자 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.comparevalidator.operator(VS.80).aspx) 를 `GreaterThanEqual`, 해당 [ValueToCompare 속성](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.comparevalidator.valuetocompare(VS.80).aspx) "0"과 해당 [ Type 속성](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.basecomparevalidator.type.aspx) 를 `Currency`합니다. 선언적 구문에서는 다음의 `UnitPrice` TemplateField의 `EditItemTemplate` 이러한 변경이 이루어진 후:
+해당는 `UnitPrice` 값 해야 0 보다 크거나, CompareValidator의 설정 [연산자 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.comparevalidator.operator(VS.80).aspx) 를 `GreaterThanEqual`, 해당 [ValueToCompare 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.comparevalidator.valuetocompare(VS.80).aspx) "0"과 해당 [ Type 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.basecomparevalidator.type.aspx) 를 `Currency`합니다. 선언적 구문에서는 다음의 `UnitPrice` TemplateField의 `EditItemTemplate` 이러한 변경이 이루어진 후:
 
 [!code-aspx[Main](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/samples/sample3.aspx)]
 
@@ -197,9 +197,9 @@ CompareValidator를 추가 하기 전에 `UnitPrice` `EditItemTemplate`에서 Te
 
 ## <a name="step-4-summarizing-data-entry-problems"></a>4 단계: 데이터 입력 문제 요약
 
-ASP.NET 5 개의 유효성 검사 컨트롤 외에도 포함 되어는 [ValidationSummary 컨트롤](https://msdn.microsoft.com/en-US/library/f9h59855(VS.80).aspx)를 표시 하는 `ErrorMessage` 잘못 된 데이터를 검색 하는 이러한 유효성 검사 컨트롤의 s입니다. 웹 페이지에서 또는 모달, 클라이언트 쪽 messagebox를 통해 텍스트로이 요약 데이터를 표시할 수 있습니다. 유효성 검사 문제를 요약 하는 클라이언트 쪽 messagebox를 포함 하려면이 자습서를 향상 시킬 보겠습니다.
+ASP.NET 5 개의 유효성 검사 컨트롤 외에도 포함 되어는 [ValidationSummary 컨트롤](https://msdn.microsoft.com/library/f9h59855(VS.80).aspx)를 표시 하는 `ErrorMessage` 잘못 된 데이터를 검색 하는 이러한 유효성 검사 컨트롤의 s입니다. 웹 페이지에서 또는 모달, 클라이언트 쪽 messagebox를 통해 텍스트로이 요약 데이터를 표시할 수 있습니다. 유효성 검사 문제를 요약 하는 클라이언트 쪽 messagebox를 포함 하려면이 자습서를 향상 시킬 보겠습니다.
 
-이를 위해 디자이너 도구 상자에서 ValidationSummary 컨트롤을 끕니다. 이후만 messagebox로의 요약을 표시 하도록 구성 하 여 유효성 검사 컨트롤의 위치 실제로 문제가 되지 않습니다. 설정 된 컨트롤을 추가한 후 해당 [ShowSummary 속성](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.validationsummary.showsummary(VS.80).aspx) 를 `false` 및 해당 [ShowMessageBox 속성](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.validationsummary.showmessagebox(VS.80).aspx) 를 `true`합니다. 이 추가 된 유효성 검사 오류는 클라이언트 쪽 messagebox에 요약 되어 있습니다.
+이를 위해 디자이너 도구 상자에서 ValidationSummary 컨트롤을 끕니다. 이후만 messagebox로의 요약을 표시 하도록 구성 하 여 유효성 검사 컨트롤의 위치 실제로 문제가 되지 않습니다. 설정 된 컨트롤을 추가한 후 해당 [ShowSummary 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.validationsummary.showsummary(VS.80).aspx) 를 `false` 및 해당 [ShowMessageBox 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.validationsummary.showmessagebox(VS.80).aspx) 를 `true`합니다. 이 추가 된 유효성 검사 오류는 클라이언트 쪽 messagebox에 요약 되어 있습니다.
 
 
 [![유효성 검사 오류는 클라이언트 쪽 Messagebox에 요약 되어 있습니다.](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image32.png)](adding-validation-controls-to-the-editing-and-inserting-interfaces-cs/_static/image31.png)

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/caching-data/using-sql-cache-dependencies-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 46521f48d31414ffff2707986d6f869ca2f9bc9a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: af302d67b009fc25e38fb33a5e2a623f7200bcd5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-sql-cache-dependencies-vb"></a>SQL 캐시 종속성 (VB)를 사용 하 여
 ====================
@@ -33,7 +33,7 @@ ms.lasthandoff: 11/10/2017
 
 데이터베이스 데이터 캐싱, 시간 기반 만료 종종 해당 사용 편의성을 위해 선택한 되지만 자주 부적절 한 솔루션입니다. 이상적으로 데이터베이스 데이터는 데이터베이스;에서 내부 데이터가 수정 될 때까지 캐시 된 유지 만 후 캐시를 제거 합니다. 이 방법은 캐싱의 성능 이점을 극대화 하 고 오래 된 데이터의 기간을 최소화 합니다. 그러나 다음과 같은이 이점을 활용 하려면 기본 데이터베이스 데이터 수정 되었습니다 하 고 캐시에서 해당 항목을 제거 하는 경우 알 수 있는 일부 시스템 되어야 합니다. ASP.NET 2.0 이전 페이지 개발자가이 시스템을 구현 해야 했습니다.
 
-ASP.NET 2.0에서는 제공 된 [ `SqlCacheDependency` 클래스](https://msdn.microsoft.com/en-us/library/system.web.caching.sqlcachedependency.aspx) 및 캐시 된 항목을 해당 하는 데이터베이스에서 변경이 발생 했을 때 결정 하는 데 필요한 인프라를 제거할 수 있습니다. 기본 데이터가 변경 되었을 때 확인 하기 위한 두 가지 방법이: 알림 및 폴링 합니다. 알림 및 폴링 간의 차이점에 논의 후 만들겠습니다 인프라 폴링을 지원 한 다음 사용 하는 방법을 탐색 하는 데 필요한는 `SqlCacheDependency` 선언에서 클래스 및 프로그래밍 방식으로 시나리오입니다.
+ASP.NET 2.0에서는 제공 된 [ `SqlCacheDependency` 클래스](https://msdn.microsoft.com/library/system.web.caching.sqlcachedependency.aspx) 및 캐시 된 항목을 해당 하는 데이터베이스에서 변경이 발생 했을 때 결정 하는 데 필요한 인프라를 제거할 수 있습니다. 기본 데이터가 변경 되었을 때 확인 하기 위한 두 가지 방법이: 알림 및 폴링 합니다. 알림 및 폴링 간의 차이점에 논의 후 만들겠습니다 인프라 폴링을 지원 한 다음 사용 하는 방법을 탐색 하는 데 필요한는 `SqlCacheDependency` 선언에서 클래스 및 프로그래밍 방식으로 시나리오입니다.
 
 ## <a name="understanding-notification-and-polling"></a>이해 알림 및 폴링
 
@@ -55,7 +55,7 @@ ASP.NET 런타임 추적 현재 `changeId` 사용 하 여 데이터를 캐시할
 [!code-console[Main](using-sql-cache-dependencies-vb/samples/sample1.cmd)]
 
 > [!NOTE]
-> 지정 된 데이터베이스 로그인에 있어야 합니다. 이러한 명령을 실행 하는 [ `db_securityadmin` ](https://msdn.microsoft.com/en-us/library/ms188685.aspx) 및 [ `db_ddladmin` ](https://msdn.microsoft.com/en-us/library/ms190667.aspx) 역할입니다. 검사 하 여 데이터베이스에 전송 하는 T-SQL은 `aspnet_regsql.exe` 줄 프로그램 명령에서 참조 [이 블로그 항목](http://scottonwriting.net/sowblog/posts/10709.aspx)합니다.
+> 지정 된 데이터베이스 로그인에 있어야 합니다. 이러한 명령을 실행 하는 [ `db_securityadmin` ](https://msdn.microsoft.com/library/ms188685.aspx) 및 [ `db_ddladmin` ](https://msdn.microsoft.com/library/ms190667.aspx) 역할입니다. 검사 하 여 데이터베이스에 전송 하는 T-SQL은 `aspnet_regsql.exe` 줄 프로그램 명령에서 참조 [이 블로그 항목](http://scottonwriting.net/sowblog/posts/10709.aspx)합니다.
 
 
 예를 들어 라는 폴링에 대 한 인프라는 Microsoft SQL Server 데이터베이스를 추가 하려면 `pubs` 이라는 데이터베이스 서버에 `ScottsServer` Windows 인증을 사용 하 고 해당 디렉터리 이동한, 명령줄에서 다음을 입력 합니다.
@@ -77,7 +77,7 @@ ASP.NET 런타임 추적 현재 `changeId` 사용 하 여 데이터를 캐시할
 
 ## <a name="step-2-referencing-a-microsoft-sql-server-2005-express-edition-database-inappdata"></a>2 단계: 참조에서 Microsoft SQL Server 2005 Express Edition 데이터베이스`App_Data`
 
-`aspnet_regsql.exe` 명령줄 프로그램 필요한 폴링 인프라를 추가 하려면 데이터베이스 및 서버 이름을 입력 해야 합니다. 에 있는 Microsoft SQL Server 2005 Express 데이터베이스에 대 한 데이터베이스 및 서버 이름을 하지만 `App_Data` 폴더? 데이터베이스 및 서버 이름이 이란를 검색 하는 것이 아니라 I 했습니다 않음을 발견 가장 간단한 방법은 데이터베이스를 연결 하는 `localhost\SQLExpress` 데이터베이스 인스턴스 및 사용 하 여 데이터의 이름을 바꿀 [SQL Server Management Studio](https://msdn.microsoft.com/en-us/library/ms174173.aspx)합니다. 컴퓨터에 설치 된 SQL Server 2005의 전체 버전 중 하나를 해야 하는 경우 다음 가능성이 이미 컴퓨터에 설치 된 SQL Server Management Studio 합니다. Express edition만 있는 경우 무료 다운로드할 수 [Microsoft SQL Server Management Studio Express Edition](https://www.microsoft.com/downloads/details.aspx?displaylang=en&amp;FamilyID=C243A5AE-4BD1-4E3D-94B8-5A0F62BF7796)합니다.
+`aspnet_regsql.exe` 명령줄 프로그램 필요한 폴링 인프라를 추가 하려면 데이터베이스 및 서버 이름을 입력 해야 합니다. 에 있는 Microsoft SQL Server 2005 Express 데이터베이스에 대 한 데이터베이스 및 서버 이름을 하지만 `App_Data` 폴더? 데이터베이스 및 서버 이름이 이란를 검색 하는 것이 아니라 I 했습니다 않음을 발견 가장 간단한 방법은 데이터베이스를 연결 하는 `localhost\SQLExpress` 데이터베이스 인스턴스 및 사용 하 여 데이터의 이름을 바꿀 [SQL Server Management Studio](https://msdn.microsoft.com/library/ms174173.aspx)합니다. 컴퓨터에 설치 된 SQL Server 2005의 전체 버전 중 하나를 해야 하는 경우 다음 가능성이 이미 컴퓨터에 설치 된 SQL Server Management Studio 합니다. Express edition만 있는 경우 무료 다운로드할 수 [Microsoft SQL Server Management Studio Express Edition](https://www.microsoft.com/downloads/details.aspx?displaylang=en&amp;FamilyID=C243A5AE-4BD1-4E3D-94B8-5A0F62BF7796)합니다.
 
 Visual Studio를 닫고 시작 합니다. 다음으로, SQL Server Management Studio를 연에 연결 하도록 선택 된 `localhost\SQLExpress` Windows 인증을 사용 하 여 서버입니다.
 
@@ -186,7 +186,7 @@ ObjectDataSource 사용 하도록 구성 된 `ProductsBLL` 클래스 및 드롭 
 **그림 8**: The ObjectDataSource s `Selecting` 페이징 되는 GridView 이벤트 발생 합니다. 각 시간, 편집, 또는 Sorted ([전체 크기 이미지를 보려면 클릭](using-sql-cache-dependencies-vb/_static/image10.png))
 
 
-설명한 것 처럼는 [는 ObjectDataSource 사용 하 여 데이터 캐싱을](caching-data-with-the-objectdatasource-vb.md) 설정 자습서는 `EnableCaching` 속성을 `True` 로 지정 된 기간에 대 한 해당 데이터를 캐시 하도록 ObjectDataSource 하면 해당 `CacheDuration` 속성입니다. ObjectDataSource 역시는 [ `SqlCacheDependency` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.sqlcachedependency.aspx), 캐시 된 데이터의 패턴을 사용 하 여 하나 이상의 SQL 캐시 종속성을 추가:
+설명한 것 처럼는 [는 ObjectDataSource 사용 하 여 데이터 캐싱을](caching-data-with-the-objectdatasource-vb.md) 설정 자습서는 `EnableCaching` 속성을 `True` 로 지정 된 기간에 대 한 해당 데이터를 캐시 하도록 ObjectDataSource 하면 해당 `CacheDuration` 속성입니다. ObjectDataSource 역시는 [ `SqlCacheDependency` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.sqlcachedependency.aspx), 캐시 된 데이터의 패턴을 사용 하 여 하나 이상의 SQL 캐시 종속성을 추가:
 
 
 [!code-css[Main](using-sql-cache-dependencies-vb/samples/sample9.css)]
@@ -282,7 +282,7 @@ GridView의 몇 가지 페이지를 통해 페이징, 후 두 번째 브라우�
 
 또한 SQL 캐시 종속성을 작업할 때 종속성으로 여러 데이터베이스 테이블을 연결 해야 할 수도 있습니다. 예를 들어는 `ProductsDataTable` 에서 캐시 된는 `ProductsCL` 클래스에는 각 제품에 대 한 범주 및 공급자 이름이 포함 되지만 `AddCacheItem` 메서드 종속성에 대해서만 사용 `Products`합니다. 이 상황에서 사용자 범주 또는 공급 업체의 이름을 업데이트 하는 경우 캐시 된 제품 데이터 캐시에 유지 되며 기간이 만료 합니다. 따라서 캐시 제품 데이터에 종속 되 게 하려고 뿐만 아니라는 `Products` 테이블에서 `Categories` 및 `Suppliers` 테이블도 합니다.
 
-[ `AggregateCacheDependency` 클래스](https://msdn.microsoft.com/en-us/library/system.web.caching.aggregatecachedependency.aspx) 캐시 항목이 여러 개이면 종속성 연결에 대 한는 수단을 제공 합니다. 만들어 시작 프로그램 `AggregateCacheDependency` 인스턴스. 다음으로 사용 하 여 종속성 집합을 추가 `AggregateCacheDependency` s `Add` 메서드. 데이터 캐시에 항목을 이후 삽입할 때 전달 된 `AggregateCacheDependency` 인스턴스. 때 *모든* 의 `AggregateCacheDependency` 인스턴스의 종속성이 변경, 캐시 된 항목이 제거 됩니다.
+[ `AggregateCacheDependency` 클래스](https://msdn.microsoft.com/library/system.web.caching.aggregatecachedependency.aspx) 캐시 항목이 여러 개이면 종속성 연결에 대 한는 수단을 제공 합니다. 만들어 시작 프로그램 `AggregateCacheDependency` 인스턴스. 다음으로 사용 하 여 종속성 집합을 추가 `AggregateCacheDependency` s `Add` 메서드. 데이터 캐시에 항목을 이후 삽입할 때 전달 된 `AggregateCacheDependency` 인스턴스. 때 *모든* 의 `AggregateCacheDependency` 인스턴스의 종속성이 변경, 캐시 된 항목이 제거 됩니다.
 
 다음 테이블에 대 한 업데이트 된 코드에 나와 `ProductsCL` s 클래스 `AddCacheItem` 메서드. 메서드는 `MasterCacheKeyArray` 종속성과 함께 캐시 `SqlCacheDependency` 에 대 한 개체는 `Products`, `Categories`, 및 `Suppliers` 테이블. 모든 결합 되 하나로 `AggregateCacheDependency` 라는 개체 `aggregateDependencies`에 전달 되는 `Insert` 메서드.
 
@@ -292,7 +292,7 @@ GridView의 몇 가지 페이지를 통해 페이징, 후 두 번째 브라우�
 이 새 코드를 테스트 합니다. 이제 변경는 `Products`, `Categories`, 또는 `Suppliers` 테이블 입력 될 캐시 된 데이터를 발생 합니다. 또한는 `ProductsCL` s 클래스 `UpdateProduct` GridView 통해 제품을 편집할 때 호출 되는 메서드를 제거는 `MasterCacheKeyArray` 캐시는 캐시 된 종속성 `ProductsDataTable` 제거할와 다음 다시 검색할 데이터 요청입니다.
 
 > [!NOTE]
-> SQL 캐시 종속성으로 사용할 수도 있습니다 [출력 캐싱을](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/caching/output.aspx)합니다. 이 기능의 데모를 보려면 참조: [SQL Server에 ASP.NET 출력 캐싱을 사용 하 여](https://msdn.microsoft.com/en-us/library/e3w8402y(VS.80).aspx)합니다.
+> SQL 캐시 종속성으로 사용할 수도 있습니다 [출력 캐싱을](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/caching/output.aspx)합니다. 이 기능의 데모를 보려면 참조: [SQL Server에 ASP.NET 출력 캐싱을 사용 하 여](https://msdn.microsoft.com/library/e3w8402y(VS.80).aspx)합니다.
 
 
 ## <a name="summary"></a>요약
@@ -305,10 +305,10 @@ GridView의 몇 가지 페이지를 통해 페이징, 후 두 번째 브라우�
 
 이 자습서에 설명 된 항목에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
-- [Microsoft SQL Server 2005에서에서 쿼리 알림 사용](https://msdn.microsoft.com/en-us/library/ms175110.aspx)
-- [쿼리 알림 생성](https://msdn.microsoft.com/en-us/library/ms188669.aspx)
-- [에 `SqlCacheDependency` 클래스](https://msdn.microsoft.com/en-us/library/ms178604(VS.80).aspx)
-- [ASP.NET SQL Server 등록 도구 (`aspnet_regsql.exe`)](https://msdn.microsoft.com/en-us/library/ms229862(vs.80).aspx)
+- [Microsoft SQL Server 2005에서에서 쿼리 알림 사용](https://msdn.microsoft.com/library/ms175110.aspx)
+- [쿼리 알림 생성](https://msdn.microsoft.com/library/ms188669.aspx)
+- [에 `SqlCacheDependency` 클래스](https://msdn.microsoft.com/library/ms178604(VS.80).aspx)
+- [ASP.NET SQL Server 등록 도구 (`aspnet_regsql.exe`)](https://msdn.microsoft.com/library/ms229862(vs.80).aspx)
 - [개요`SqlCacheDependency`](http://www.aspnetresources.com/blog/sql_cache_depedency_overview.aspx)
 
 ## <a name="about-the-author"></a>작성자 정보
