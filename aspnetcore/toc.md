@@ -28,6 +28,21 @@
 ### [세부 정보 및 삭제 메서드 검사](tutorials/first-mvc-app/details.md)
 
 ## [플랫폼 간 자습서](xref:tutorials/xplat)
+### [Mac의 Razor 페이지 웹앱](xref:tutorials/razor-pages-mac/index)
+#### [Razor 페이지 시작](xref:tutorials/razor-pages-mac/razor-pages-start)
+#### [모델 추가](xref:tutorials/razor-pages-mac/model)
+#### [스캐폴드된 Razor 페이지](xref:tutorials/razor-pages-mac/page)
+#### [SQLite 사용](xref:tutorials/razor-pages-mac/sql)
+#### [페이지 업데이트](xref:tutorials/razor-pages-mac/da1)
+#### [검색 추가](xref:tutorials/razor-pages-mac/search)
+
+
+### [VS Code를 사용하는 Razor 페이지 웹앱](xref:tutorials/razor-pages-vsc/index)
+#### [Razor 페이지 시작](xref:tutorials/razor-pages-vsc/razor-pages-start)
+#### [모델 추가](xref:tutorials/razor-pages-vsc/model)
+#### [스캐폴드된 Razor 페이지](xref:tutorials/razor-pages-vsc/page)
+#### [SQLite 사용](xref:tutorials/razor-pages-vsc/sql)
+#### [페이지 업데이트](xref:tutorials/razor-pages-vsc/da1)
 
 ### [Mac용 Visual Studio를 사용하는 MVC 웹앱](xref:tutorials/first-mvc-app-mac/index)
 #### [시작](xref:tutorials/first-mvc-app-mac/start-mvc)
@@ -41,7 +56,7 @@
 #### [유효성 검사 추가](xref:tutorials/first-mvc-app-mac/validation)
 #### [세부 정보 및 삭제 메서드 검사](xref:tutorials/first-mvc-app/details)
 
-### [Mac 또는 Linux에서 Visual Studio Code를 사용하는 웹앱](xref:tutorials/first-mvc-app-xplat/index)
+### [Mac 또는 Linux에서 Visual Studio Code를 사용하는 MVC 웹앱](xref:tutorials/first-mvc-app-xplat/index)
 #### [시작](tutorials/first-mvc-app-xplat/start-mvc.md)
 #### [컨트롤러 추가](tutorials/first-mvc-app-xplat/adding-controller.md)
 #### [보기 추가](tutorials/first-mvc-app-xplat/adding-view.md)
@@ -52,15 +67,6 @@
 #### [새 필드 추가](tutorials/first-mvc-app-xplat/new-field.md)
 #### [유효성 검사 추가](tutorials/first-mvc-app-xplat/validation.md)
 #### [세부 정보 및 삭제 메서드 검사](tutorials/first-mvc-app/details.md)
-
-
-### [Mac의 Razor 페이지 웹앱](xref:tutorials/razor-pages-mac/index)
-#### [Razor 페이지 시작](xref:tutorials/razor-pages-mac/razor-pages-start)
-#### [모델 추가](xref:tutorials/razor-pages-mac/model)
-#### [스캐폴드된 Razor 페이지](xref:tutorials/razor-pages-mac/page)
-### [VS Code를 사용하는 Razor 페이지 웹앱](xref:tutorials/razor-pages-vsc/index)
-#### [Razor 페이지 시작](xref:tutorials/razor-pages-vsc/razor-pages-start)
-#### [모델 추가](xref:tutorials/razor-pages-vsc/model)
 
 ### [Mac용 Visual Studio를 사용하는 Web API](xref:tutorials/first-web-api-mac)
 ### [Visual Studio Code를 사용하는 Web API](xref:tutorials/web-api-vsc)
@@ -244,6 +250,7 @@
 ### [Azure Active Directory](xref:security/authentication/azure-active-directory/index)
 #### [ASP.NET Core 웹앱에 Azure AD 통합](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)
 #### [Azure AD B2C를 고객 지향 ASP.NET Core 웹앱에 통합](xref:security/authentication/azure-ad-b2c)
+#### [ASP.NET Core Web API에 Azure AD B2C 통합](xref:security/authentication/azure-ad-b2c-webapi)
 #### [Azure AD를 사용하여 WPF 앱에서 ASP.NET Core Web API 호출](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore/)
 #### [Azure AD를 사용하여 ASP.NET Core 웹앱에서 Web API 호출](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore/)
 ### [IdentityServer4를 사용하여 ASP.NET Core 앱 보호](https://identityserver4.readthedocs.io/)

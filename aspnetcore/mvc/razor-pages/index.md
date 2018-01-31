@@ -2,18 +2,18 @@
 title: "ASP.NET Core의 Razor 페이지 소개"
 author: Rick-Anderson
 description: "Razor 페이지에 대한 ASP.NET Core 자습서입니다. MVC Core, ASP.NET Core 2.x, 웹 개발 소개 및 Visual Studio 2017을 포함합니다. 이 문서는 ASP.NET Core의 Razor 페이지를 사용하여 페이지에 초점을 맞춘 시나리오의 손쉬운 개발에 관한 개요를 제공합니다."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 09/12/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: mvc/razor-pages/index
-ms.openlocfilehash: a08c1b59c7be3a27fc11e6737a1cb4b4208f2901
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c16959189448337b12dc4902300516b25c200eee
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core의 Razor 페이지 소개
 
@@ -76,7 +76,7 @@ Razor 페이지는 *Startup.cs*에서 사용하도록 설정됩니다.
 
 [!code-cshtml[main](index/sample/RazorPagesIntro/Pages/Index2.cshtml)]
 
-*Pages/Index2.cshtml.cs* "코드 숨김" 파일:
+*Pages/Index2.cshtml.cs* 페이지 모델:
 
 [!code-cs[main](index/sample/RazorPagesIntro/Pages/Index2.cshtml.cs)]
 
@@ -116,7 +116,7 @@ db 컨텍스트:
 
 [!code-cshtml[main](index/sample/RazorPagesContacts/Pages/Create.cshtml)]
 
-뷰에 대한 *Pages/Create.cshtml.cs* 코드 숨김 파일:
+*Pages/Create.cshtml.cs* 페이지 모델:
 
 [!code-cs[main](index/sample/RazorPagesContacts/Pages/Create.cshtml.cs?name=snippet_ALL)]
 
@@ -332,7 +332,7 @@ ASP.NET Core는 [TempData](https://docs.microsoft.com/en-us/dotnet/api/microsoft
 <h3>Msg: @Model.Message</h3>
 ```
 
-*Pages/Customers/Index.cshtml.cs* 코드 숨김 파일은 `[TempData]` 특성을 `Message` 속성에 적용합니다.
+*Pages/Customers/Index.cshtml.cs* 페이지 모델은 `[TempData]` 특성을 `Message` 속성에 적용합니다.
 
 ```cs
 [TempData]
@@ -352,7 +352,7 @@ public string Message { get; set; }
 
 이전 예제의 폼에는 두 개의 제출 단추가 있고, 각 단추는 `FormActionTagHelper`를 사용하여 다른 URL에 제출됩니다. `asp-page-handler` 특성은 `asp-page`와 함께 사용됩니다. `asp-page-handler`는 페이지에서 정의된 각 처리기 메서드에 제출되는 URL을 생성합니다. 샘플이 현재 페이지에 연결되어 있으므로 `asp-page`가 지정되지 않습니다.
 
-코드 숨김 파일:
+페이지 모델:
 
 [!code-cs[main](index/sample/RazorPagesContacts2/Pages/Customers/CreateFATH.cshtml.cs?highlight=20,32)]
 

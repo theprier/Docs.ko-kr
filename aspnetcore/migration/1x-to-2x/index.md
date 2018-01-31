@@ -2,18 +2,18 @@
 title: "ASP.NET Core 1.x에서 2.0으로 마이그레이션"
 author: scottaddie
 description: "이 문서에서는 ASP.NET Core 1.x 프로젝트에서 ASP.NET Core 2.0으로 마이그레이션하기 위한 필수 구성 요소 및 일반적인 단계를 설명합니다."
-ms.author: scaddie
 manager: wpickett
+ms.author: scaddie
 ms.date: 10/03/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: migration/1x-to-2x/index
-ms.openlocfilehash: 2ab6d72ca57332eb25435a144d77ea43203a7b4c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: a88d22c88689d20376fec748b05fc4b5ecca3510
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="migrating-from-aspnet-core-1x-to-aspnet-core-20"></a>ASP.NET Core 1.x에서 ASP.NET Core 2.0으로 마이그레이션
 
@@ -146,7 +146,7 @@ EF Core 2.0을 사용하는 2.0 프로젝트에서는 응용 프로그램 서비
 
 <a name="view-compilation"></a>
 
-## <a name="review-your-razor-view-compilation-setting"></a>Razor 보기 컴파일 설정 검토
+## <a name="review-razor-view-compilation-setting"></a>Razor 보기 컴파일 설정 검토
 빠른 응용 프로그램 시작 시간 및 보다 작은 게시된 번들은 무엇보다도 중요합니다. 이러한 이유로 [Razor 보기 컴파일](xref:mvc/views/view-compilation)은 ASP.NET Core 2.0에서 기본적으로 활성화됩니다.
 
 `MvcRazorCompileOnPublish` 속성을 true로 설정하는 것은 더 이상 필요하지 않습니다. 보기 컴파일을 비활성화하는 경우가 아니면 *.csproj* 파일에서 속성을 제거할 수 있습니다.
@@ -178,8 +178,9 @@ Application Insights SDK를 직접 사용하는 경우 계속 진행합니다. 2
 
 <a name="auth-and-identity"></a>
 
-## <a name="adopt-authentication--identity-improvements"></a>인증 / ID 기능 향상 도입
+## <a name="adopt-authenticationidentity-improvements"></a>인증/ID 기능 향상 도입
 ASP.NET Core 2.0에는 새 인증 모델 및 ASP.NET Core ID에 대한 몇 가지 주요 변경 사항이 있습니다. 개별 사용자 계정을 활성화하여 프로젝트를 만들거나 인증 또는 ID를 수동으로 추가한 경우 [ASP.NET Core 2.0으로 인증 및 ID 마이그레이션](xref:migration/1x-to-2x/identity-2x)을 참조하세요.
 
 ## <a name="additional-resources"></a>추가 리소스
-- [ASP.NET Core 2.0의 주요 변경 내용](https://github.com/aspnet/announcements/issues?page=1&q=is%3Aissue+is%3Aopen+label%3A2.0.0+label%3A%22Breaking+change%22&utf8=%E2%9C%93)
+
+* [ASP.NET Core 2.0의 주요 변경 내용](https://github.com/aspnet/announcements/issues?page=1&q=is%3Aissue+is%3Aopen+label%3A2.0.0+label%3A%22Breaking+change%22&utf8=%E2%9C%93)

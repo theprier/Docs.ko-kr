@@ -1,19 +1,19 @@
 ---
 title: "ASP.NET에서 ASP.NET Core 2.0으로 마이그레이션"
 author: isaac2004
-description: "이 참조 문서에서는 기존 ASP.NET MVC 또는 Web API 응용 프로그램을 ASP.NET Core 2.0으로 마이그레이션하기 위한 지침을 제공합니다."
-ms.author: scaddie
+description: "기존 ASP.NET MVC 또는 Web API 앱을 ASP.NET Core 2.0으로 마이그레이션하기 위한 지침을 받습니다."
 manager: wpickett
+ms.author: scaddie
 ms.date: 08/27/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: migration/proper-to-2x/index
-ms.openlocfilehash: 2263f8e9936389cf8cf18ff0c6d1d07018650e14
-ms.sourcegitcommit: 09b342b45e7372ba9ebf17f35eee331e5a08fb26
+ms.openlocfilehash: d6050c7946aa45b4c1b878b96baa1b082d0c8f71
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="migrating-from-aspnet-to-aspnet-core-20"></a>ASP.NET에서 ASP.NET Core 2.0으로 마이그레이션
 
@@ -148,4 +148,5 @@ ASP.NET Core에서 정적 파일은 별도로 구성되지 않는 한 “웹 루
 **참고:** ASP.NET Core의 정적 파일 지원에 대한 자세한 내용은 [ASP.NET Core에서 정적 파일 사용 소개](xref:fundamentals/static-files)를 참조하세요.
 
 ## <a name="additional-resources"></a>추가 리소스
-* [.NET Core로 라이브러리 이식](https://docs.microsoft.com/dotnet/core/porting/libraries)
+
+* [.NET Core로 라이브러리 이식](/dotnet/core/porting/libraries)
