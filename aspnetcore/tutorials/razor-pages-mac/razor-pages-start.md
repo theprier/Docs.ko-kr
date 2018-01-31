@@ -2,18 +2,18 @@
 title: "Mac의 ASP.NET Core에서 Razor 페이지 시작"
 author: rick-anderson
 description: "Mac용 Visual Studio를 사용하여 ASP.NET Core에서 Razor 페이지 시작"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 07/27/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: aspnet-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: tutorials/razor-pages-mac/razor-pages-start
-ms.openlocfilehash: d4d8c7c543273aa38d1599b51d00a348df7182de
-ms.sourcegitcommit: 09b342b45e7372ba9ebf17f35eee331e5a08fb26
+ms.openlocfilehash: 9e7d1db47e4cc9d753b1629e20345ca1f4403b2f
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/26/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="getting-started-with-razor-pages-in-aspnet-core-with-visual-studio-for-mac"></a>Mac용 Visual Studio를 사용하여 ASP.NET Core에서 Razor 페이지 시작
 

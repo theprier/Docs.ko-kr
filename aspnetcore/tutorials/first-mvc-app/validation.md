@@ -2,18 +2,18 @@
 title: "유효성 검사 추가"
 author: rick-anderson
 description: "ASP.NET Core 앱에 유효성 검사를 추가하는 방법."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 04/13/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: tutorials/first-mvc-app/validation
-ms.openlocfilehash: c23631b9bccc6dccdaf2f8c8206317540e70b81f
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: b8ce36df29800f452cf72fd76b33a28efa4e5eb7
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/30/2018
 ---
 [!INCLUDE[validation](../../includes/mvc-intro/validation.md)]
 

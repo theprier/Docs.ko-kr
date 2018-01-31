@@ -2,18 +2,18 @@
 title: "ASP.NET 및 ASP.NET Core 중에서 선택"
 author: rick-anderson
 description: "ASP.NET 및 ASP.NET Core 중에서 선택하는 방법을 알아보세요."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 09/30/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: fundamentals/choose-between-aspnet-and-aspnetcore
-ms.openlocfilehash: c909c9a852549577c4a9fbc461aaf3f710b301ef
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 232e82ed66ff2363230ff09d435db1074c02b53b
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="choose-between-aspnet-and-aspnet-core"></a>ASP.NET 및 ASP.NET Core 중에서 선택 
 
