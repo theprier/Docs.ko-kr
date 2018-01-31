@@ -2,18 +2,18 @@
 title: "소비자 API"
 author: rick-anderson
 description: "이 문서는 다양한 ASP.NET Core 소비자 API 데이터 보호 항목에 대한 목차로 사용됩니다."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/data-protection/consumer-apis/index
-ms.openlocfilehash: 8ffba0079ce0ab4139115d9876e16a174685398d
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: a36dbaa7c34ed0cd99bfb2b27a9d59b81ffccbcf
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="consumer-apis"></a>소비자 API
 

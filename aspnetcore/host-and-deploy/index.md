@@ -2,19 +2,19 @@
 title: "ASP.NET Core 호스트 및 배포"
 author: tdykstra
 description: "호스팅 환경을 설정하고 ASP.NET Core 앱을 배포하는 방법을 알아봅니다."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.custom: mvc
 ms.date: 08/07/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: host-and-deploy/index
-ms.openlocfilehash: 4681316a2ab90c83f3e62e16f02566092d72f356
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7d8ba912da4c0e543bd4dd56632cdc41706814d1
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="host-and-deploy-aspnet-core"></a>ASP.NET Core 호스트 및 배포
 

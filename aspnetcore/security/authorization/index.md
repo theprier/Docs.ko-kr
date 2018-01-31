@@ -2,18 +2,18 @@
 title: "ASP.NET Core의 권한 부여"
 author: rick-anderson
 description: "이 문서는 다양한 ASP.NET Core 권한 부여 항목에 대한 목차로 사용됩니다."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/authorization/index
-ms.openlocfilehash: 3aa690138730ec45f4b6c6fad8ff534e0c11f888
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: ee408afab55a80d28291a3a44e0fd1513ff34e45
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="authorization-in-aspnet-core-simple-role-claims-based-and-custom"></a>ASP.NET Core에서 권한 부여: 단순, 역할, 클레임 기반 및 사용자 지정
 

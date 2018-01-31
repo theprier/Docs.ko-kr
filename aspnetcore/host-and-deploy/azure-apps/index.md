@@ -2,19 +2,19 @@
 title: "Azure App Service에서 ASP.NET Core 호스트"
 author: guardrex
 description: "Azure App Service에서 ASP.NET Core 앱을 호스트하는 방법을 학습하기 위한 리소스 링크를 검색합니다."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.custom: mvc
 ms.date: 01/08/2018
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: 9e35d06081d857375001f59cd4887604a8b1a58c
-ms.sourcegitcommit: 12e5194936b7e820efc5505a2d5d4f84e88eb5ef
+ms.openlocfilehash: cc3066c22422d8c4b045425805dec619a32a4936
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/11/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="host-aspnet-core-on-azure-app-service"></a>Azure App Service에서 ASP.NET Core 호스트
 
