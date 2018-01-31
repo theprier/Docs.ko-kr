@@ -2,20 +2,18 @@
 title: "Swagger를 사용한 ASP.NET Core Web API 도움말 페이지"
 author: spboyer
 description: "이 자습서에서는 Swagger를 추가하여 Web API 응용 프로그램에 대한 설명서 및 도움말 페이지를 생성하는 연습을 제공합니다."
-keywords: "ASP.NET Core, Swagger, Swashbuckle, 도움말 페이지, Web API"
 ms.author: spboyer
 manager: wpickett
 ms.date: 09/01/2017
 ms.topic: article
-ms.assetid: 54bb961d-29d9-4dee-8e2c-a93fc33c16f2
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/web-api-help-pages-using-swagger
-ms.openlocfilehash: 08503b724aaea64ad2d32eaa710378ec77b9a1fe
-ms.sourcegitcommit: 2d23ea501e0213bbacf65298acf1c8bd17209540
+ms.openlocfilehash: 302199bb0b32d4f6610e04455bb28372095e9873
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="aspnet-core-web-api-help-pages-using-swagger"></a>Swagger를 사용한 ASP.NET Core Web API 도움말 페이지
 

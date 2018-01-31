@@ -9,14 +9,12 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/publish-to-azure-webapp-using-vs
-ms.openlocfilehash: dd31e3a9583a0c152e97ae7cf6b215389298a20c
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: d0e64c967ff332365981338809a47faf35d499ab
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/24/2018
 ---
-/ko-kr
-
 # <a name="publish-an-aspnet-core-web-app-to-azure-app-service-using-visual-studio"></a>Visual Studio를 사용하여 Azure App Service에 ASP.NET Core 웹앱 게시
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT), [Cesar Blum Silveira](https://github.com/cesarbs) 및 [Rachel Appel](https://twitter.com/rachelappel)
@@ -184,6 +182,6 @@ Visual Studio는 Azure에서 웹앱 및 SQL Server를 만듭니다. 이 단계�
 
 ## <a name="additonal-resources"></a>추가 리소스
 
-* [Azure App Service](https://docs.microsoft.com/en-us/azure/app-service/app-service-web-overview)
-* [Azure 리소스 그룹](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#resource-groups)
-* [Azure SQL Database](https://docs.microsoft.com/en-us/azure/sql-database/)
+* [Azure App Service](https://docs.microsoft.com/azure/app-service/app-service-web-overview)
+* [Azure 리소스 그룹](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups)
+* [Azure SQL Database](https://docs.microsoft.com/azure/sql-database/)
