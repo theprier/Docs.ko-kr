@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-test-environment-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 008b9cd081152e6a378d0fa2e08497a6771fd9b5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 23e317c6e0b6daf2d7937b73738e5cb6fa32cde2
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="scenario-configuring-a-test-environment-for-web-deployment"></a>시나리오: 웹 배포를 위한 테스트 환경 구성
 ====================
@@ -49,7 +49,7 @@ ms.lasthandoff: 11/10/2017
 - 웹 배포 처리기를 사용 하 여 배포를 지원 하기 위해 테스트 웹 서버를 구성 합니다.
 
 > [!NOTE]
-> 사용 해도 [주문형 웹 배포](https://technet.microsoft.com/en-us/library/ee517345(WS.10).aspx) ("임시 에이전트"). 요구 사항 및 제약 조건을 기준으로 원격 에이전트 방식을 사용 하는 것과 비슷합니다.
+> 사용 해도 [주문형 웹 배포](https://technet.microsoft.com/library/ee517345(WS.10).aspx) ("임시 에이전트"). 요구 사항 및 제약 조건을 기준으로 원격 에이전트 방식을 사용 하는 것과 비슷합니다.
 
 
 이 경우 개발자를 대상 서버에서 관리자 권한이 있어야 하 고 테스트 환경 아니므로 엄격한 보안 제약 조건에 따라 원격 에이전트를 사용 하 여 배포를 지원 하기 위해 테스트 웹 서버를 구성 하는 것이 좋습니다. 이것은 덜 복잡 하며 웹 배포 처리기의 접근 방법 보다 덜 초기 구성을 수행 해야 합니다. 원격 액세스 및 배포를 지원 하기 위해 데이터베이스 서버를 구성 해야 합니다.

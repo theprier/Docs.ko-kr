@@ -12,17 +12,17 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/creating-a-basic-web-forms-page
 msc.type: authoredcontent
-ms.openlocfilehash: 20e920ff63444c0d69cecb972619b07fe6d23097
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6b699cc939292b7ab0167dba7cfa6a00b681ef3a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-basic-aspnet-45-web-forms-page-in-visual-studio-2013"></a>기본 ASP.NET 4.5 Web Forms 만들기 페이지에서 Visual Studio 2013
 ====================
 으로 [Erik Reitan](https://github.com/Erikre)
 
-이 연습에서 웹 개발 환경에 대 한 소개를 제공 [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/en-us/downloads#vs) 및 [Microsoft Visual Studio Express 2013 for Web](https://www.microsoft.com/visualstudio/11/en-us/downloads#express-web)합니다. 이 연습에서는 간단한 ASP.NET Web Forms 페이지를 만드는 과정을 안내 하 고 새 페이지를 만드는 컨트롤을 추가 하 고 코드를 작성 하는 기본적인 기술을 보여 줍니다.
+이 연습에서 웹 개발 환경에 대 한 소개를 제공 [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/downloads#vs) 및 [Microsoft Visual Studio Express 2013 for Web](https://www.microsoft.com/visualstudio/11/downloads#express-web)합니다. 이 연습에서는 간단한 ASP.NET Web Forms 페이지를 만드는 과정을 안내 하 고 새 페이지를 만드는 컨트롤을 추가 하 고 코드를 작성 하는 기본적인 기술을 보여 줍니다.
 
 이 연습에서 설명하는 작업은 다음과 같습니다.
 
@@ -38,7 +38,7 @@ ms.lasthandoff: 11/10/2017
 
 이 연습을 완료하려면 다음 사항이 필요합니다.
 
-- [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/en-us/downloads#vs) 또는 [Microsoft Visual Studio Express 2013 for Web](https://www.microsoft.com/visualstudio/11/en-us/downloads#express-web)합니다. .NET Framework는 자동으로 설치 됩니다. 
+- [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/downloads#vs) 또는 [Microsoft Visual Studio Express 2013 for Web](https://www.microsoft.com/visualstudio/11/downloads#express-web)합니다. .NET Framework는 자동으로 설치 됩니다. 
 
     > [!NOTE] 
     > 
@@ -83,7 +83,7 @@ ms.lasthandoff: 11/10/2017
 
  Visual Studio 환경
 
-![Visual Studio 환경](creating-a-basic-web-forms-page/_static/image5.png)
+![Visual Studio Environment](creating-a-basic-web-forms-page/_static/image5.png)
 
 ### <a name="familiarize-yourself-with-the-web-designer"></a>웹 디자이너를 파악
 
@@ -247,7 +247,7 @@ Visual Studio는 페이지에 있는 컨트롤의 속성을 설정 하는 다양
 
     [!code-vb[Main](creating-a-basic-web-forms-page/samples/sample2.vb?highlight=2)]
 5. 보기로 다시 전환는 **소스** 마우스 오른쪽 단추로 클릭 하 여 HTML 태그의 보기 *FirstWebPage.aspx* 에 **솔루션 탐색기** 선택 하 고 **보기 태그**합니다.
-6. 스크롤하여는  **&lt;p: Button&gt;**  요소입니다.  **&lt;p: Button&gt;**  이제 특성이 요소 **onclick =&quot;Button1\_클릭&quot;**합니다.
+6. 스크롤하여는  **&lt;p: Button&gt;**  요소입니다. **&lt;p: Button&gt;**  이제 특성이 요소 **onclick =&quot;Button1\_클릭&quot;**합니다.
 
     이 특성 단추의 바인딩합니다 [클릭](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.click.aspx) 이전 단계에서 코딩 된 처리기 메서드를 이벤트입니다.
 

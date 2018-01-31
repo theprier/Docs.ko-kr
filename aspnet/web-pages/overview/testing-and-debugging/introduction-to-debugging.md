@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/testing-and-debugging/introduction-to-debugging
 msc.type: authoredcontent
-ms.openlocfilehash: 2bc1f096540d17095ef760eed67b458fcd4e1372
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0b6b5a886efe515b434948dade1ae840ddaecd42
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introduction-to-debugging-aspnet-web-pages-razor-sites"></a>소개 디버깅 ASP.NET 웹 페이지 (Razor) 사이트
 ====================
@@ -71,7 +71,7 @@ ms.lasthandoff: 11/10/2017
     - HTTP 런타임 정보입니다. 이 섹션에서는의 웹 페이지에서 실행 되는 Microsoft.NET Framework, 경로, 캐시, 등에 대 한 세부 정보 버전에 대해서는 자세히 설명 합니다. (에서 살펴본 것 처럼 [ASP.NET 웹 프로그래밍 구문을 사용 하 여 Razor 소개](https://go.microsoft.com/fwlink/?LinkId=202890), ASP.NET 웹 페이지 Razor 구문을 기반으로 하는 광범위 한 소프트웨어는 Microsoft의 ASP.NET 웹 서버 기술, 기반을 사용 하 여 개발 라이브러리는.NET Framework를 호출 합니다.)
     - 환경 변수입니다. 이 섹션에서는 웹 서버의 모든 로컬 환경 변수 및 값의 목록을 제공 합니다.
 
-    모든 서버 및 요청 정보에 대 한 전체 설명은이 문서의 범위를 벗어납니다. 하지만 함을 확인할 수 있습니다는 `ServerInfo` 도우미 많은 진단 정보를 반환 합니다. 값에 대 한 자세한 내용은 하는 `ServerInfo` 반환 참조 [인식 환경 변수](https://technet.microsoft.com/en-us/library/dd560744(WS.10).aspx) Microsoft TechNet 웹 사이트 및 [IIS 서버 변수](https://msdn.microsoft.com/en-us/library/ms524602(VS.90).aspx) MSDN 웹 사이트입니다.
+    모든 서버 및 요청 정보에 대 한 전체 설명은이 문서의 범위를 벗어납니다. 하지만 함을 확인할 수 있습니다는 `ServerInfo` 도우미 많은 진단 정보를 반환 합니다. 값에 대 한 자세한 내용은 하는 `ServerInfo` 반환 참조 [인식 환경 변수](https://technet.microsoft.com/library/dd560744(WS.10).aspx) Microsoft TechNet 웹 사이트 및 [IIS 서버 변수](https://msdn.microsoft.com/library/ms524602(VS.90).aspx) MSDN 웹 사이트입니다.
 
 ## <a name="embedding-output-expressions-to-display-page-values"></a>포함 출력 식 페이지 값을 표시 하려면
 
@@ -139,5 +139,5 @@ ASP.NET Razor 페이지를 디버깅 하려면 Visual Studio에서 통합 된 �
 ## <a name="additional-resources"></a>추가 리소스
 
 - [Visual Studio를 사용 하 여 ASP.NET 웹 페이지 (Razor) 프로그래밍](https://go.microsoft.com/fwlink/?LinkId=205854)
-- [IIS 서버 변수](https://msdn.microsoft.com/en-us/library/ms524602(VS.90).aspx) (MSDN)
-- [환경 변수를 인식](https://technet.microsoft.com/en-us/library/dd560744(WS.10).aspx) (TechNet)
+- [IIS 서버 변수](https://msdn.microsoft.com/library/ms524602(VS.90).aspx) (MSDN)
+- [환경 변수를 인식](https://technet.microsoft.com/library/dd560744(WS.10).aspx) (TechNet)

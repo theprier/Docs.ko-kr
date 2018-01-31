@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/server-controls
 msc.type: authoredcontent
-ms.openlocfilehash: 09f1a2e4de024e5778e69fdd691d9cb0040459f3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 72e9cac7cf9a01791c30783fa56ad7ea205a5a11
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="server-controls"></a>서버 컨트롤
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > ASP.NET 2.0에는 여러 가지 방법으로 서버 컨트롤을 향상 시킵니다. 이 단원에서는 ASP.NET 2.0 하는 방법에 대 한 아키텍처 변경 사항 중 일부 다루게 될 것 및 Visual Studio 2005 서버 컨트롤을 처리 합니다.
 
@@ -224,7 +224,7 @@ Localize 컨트롤 리터럴 제어 하는 것과 비슷합니다. 그러나 Loc
 | **모드** | **설명** |
 | --- | --- |
 | 변형 | 태그는 요청 하는 브라우저의 프로토콜에 따라 변환 됩니다. |
-| 통과 연결 | 로 태그를 렌더링할-됩니다. |
+| PassThrough | 로 태그를 렌더링할-됩니다. |
 | 인코딩 | 컨트롤에 추가 되는 태그는 HtmlEncode를 사용 하 여 인코딩됩니다. |
 
 ## <a name="multiview-and-view-controls"></a>MultiView 및 뷰 컨트롤
@@ -307,7 +307,7 @@ LoginName 컨트롤 후 ASP.NET 응용 프로그램에 로그인 하는 사용�
 
 CreateUserWizard는 사용자가 ASP.NET 응용 프로그램에서 사용 하기 위해 ASP.NET 멤버 자격 계정을 만들 수 있도록 구성할 수 있는 마법사입니다. 이후 단원에서 자세히 다룹니다.
 
-## <a name="changepassword"></a>암호 변경
+## <a name="changepassword"></a>ChangePassword
 
 ChangePassword 컨트롤을 사용 하면 ASP.NET 응용 프로그램에 대 한 암호를 변경할 수 있습니다. 이후 단원에서 자세히 다룹니다.
 

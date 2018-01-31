@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/code-editing-in-web-forms-pages
 msc.type: authoredcontent
-ms.openlocfilehash: dfcddb4373fbf17ca29c5ab94c6ab3387ed6b526
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8714f673cb0434189ca23d2dda14035d8652a051
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="code-editing-aspnet-web-forms-in-visual-studio-2013"></a>Visual Studio 2013에서 코드 편집 ASP.NET Web Forms
 ====================
@@ -38,7 +38,7 @@ ms.lasthandoff: 11/10/2017
 
 이 연습을 완료하려면 다음 사항이 필요합니다.
 
-- [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/en-us/downloads#vs) 또는 [Microsoft Visual Studio Express 2013 for Web](https://www.microsoft.com/visualstudio/11/en-us/downloads#express-web)합니다. .NET Framework는 자동으로 설치 됩니다. 
+- [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/downloads#vs) 또는 [Microsoft Visual Studio Express 2013 for Web](https://www.microsoft.com/visualstudio/11/downloads#express-web)합니다. .NET Framework는 자동으로 설치 됩니다. 
 
     > [!NOTE] 
     > 
@@ -132,8 +132,8 @@ Visual Studio의 코드 편집기를 사용 하면 코드를 작성 하 고 오�
 ### <a name="to-extract-a-method-in-a-c-page"></a>C# 페이지의 메서드를 추출 하려면
 
 1. 로 전환 **디자인** 보기.
-2. 에 **도구 상자**에서 **표준** 탭을 끌어는 [단추](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.button.aspx) 컨트롤을 페이지로 끌어옵니다.
-3. 두 번 클릭은 **단추** 에 대 한 처리기를 만들 컨트롤을 해당 [클릭](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.button.click.aspx) 이벤트를 다음 강조 표시 된 코드를 추가:
+2. 에 **도구 상자**에서 **표준** 탭을 끌어는 [단추](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx) 컨트롤을 페이지로 끌어옵니다.
+3. 두 번 클릭은 **단추** 에 대 한 처리기를 만들 컨트롤을 해당 [클릭](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.click.aspx) 이벤트를 다음 강조 표시 된 코드를 추가:
 
     [!code-csharp[Main](code-editing-in-web-forms-pages/samples/sample2.cs?highlight=3-16)]
 
@@ -185,13 +185,13 @@ Visual Studio의 코드 편집기를 사용 하면 코드를 작성 하 고 오�
 
 Web Forms 개발자가 자주 수행 해야 하는 많은 코딩 작업 때문에 코드 편집기의 코드 조각, 또는 미리 작성 된 코드 블록을 라이브러리를 제공 합니다. 페이지에 이러한 조각을 삽입할 수 있습니다.
 
-Visual Studio에서 사용 하는 각 언어에 코드 조각을 삽입 하는 방법에 약간의 차이가 있습니다. 코드 조각을 삽입 하는 방법에 대 한 정보를 참조 하십시오. [Visual Basic IntelliSense 코드 조각](https://msdn.microsoft.com/en-us/library/18yz4be4.aspx)합니다. 코드 조각을 Visual C#에서 삽입 하는 방법에 대 한 정보를 참조 하십시오. [Visual C# 코드 조각](https://msdn.microsoft.com/en-us/library/z41h7fat.aspx)합니다.
+Visual Studio에서 사용 하는 각 언어에 코드 조각을 삽입 하는 방법에 약간의 차이가 있습니다. 코드 조각을 삽입 하는 방법에 대 한 정보를 참조 하십시오. [Visual Basic IntelliSense 코드 조각](https://msdn.microsoft.com/library/18yz4be4.aspx)합니다. 코드 조각을 Visual C#에서 삽입 하는 방법에 대 한 정보를 참조 하십시오. [Visual C# 코드 조각](https://msdn.microsoft.com/library/z41h7fat.aspx)합니다.
 
 ## <a name="next-steps"></a>다음 단계
 
 이 연습에서는 코드에서 오류를 수정, 리팩터링 코드, 변수, 이름 바꾸기 및 코드에 코드 조각을 삽입에 대 한 Visual Studio 2010 코드 편집기의 기본 기능에 설명 했습니다. 편집기에서 추가 기능 응용 프로그램을 쉽고 빠르게 개발을 가능 합니다. 예를 들어, 다음을 수행합니다.
 
-- IntelliSense 옵션 수정, 코드 조각, 관리 및 코드 조각을 온라인 검색 같은 IntelliSense의 기능에 대해 알아보십시오. 자세한 내용은 [IntelliSense 사용](https://msdn.microsoft.com/en-us/library/hcw1s69b.aspx)을 참조하세요.
-- 사용자 고유의 코드 조각을 만드는 방법을 알아봅니다. 자세한 내용은 참조 [만들기 및 사용 하 여 IntelliSense 코드 조각](https://msdn.microsoft.com/en-us/library/ms165392.aspx)
-- IntelliSense 코드 조각, 코드 조각은 사용자 지정 하 고 문제 해결 등의 Visual Basic 관련 기능에 대해 자세히 알아보기 자세한 내용은 참조 [Visual Basic IntelliSense 코드 조각](https://msdn.microsoft.com/en-us/library/18yz4be4.aspx)
-- C#에 대 한 자세한-리팩터링 및 코드 조각 같은 IntelliSense의 특정 기능입니다. 자세한 내용은 참조 [Visual C# IntelliSense](https://msdn.microsoft.com/en-us/library/43f44291.aspx)합니다.
+- IntelliSense 옵션 수정, 코드 조각, 관리 및 코드 조각을 온라인 검색 같은 IntelliSense의 기능에 대해 알아보십시오. 자세한 내용은 [IntelliSense 사용](https://msdn.microsoft.com/library/hcw1s69b.aspx)을 참조하세요.
+- 사용자 고유의 코드 조각을 만드는 방법을 알아봅니다. 자세한 내용은 참조 [만들기 및 사용 하 여 IntelliSense 코드 조각](https://msdn.microsoft.com/library/ms165392.aspx)
+- IntelliSense 코드 조각, 코드 조각은 사용자 지정 하 고 문제 해결 등의 Visual Basic 관련 기능에 대해 자세히 알아보기 자세한 내용은 참조 [Visual Basic IntelliSense 코드 조각](https://msdn.microsoft.com/library/18yz4be4.aspx)
+- C#에 대 한 자세한-리팩터링 및 코드 조각 같은 IntelliSense의 특정 기능입니다. 자세한 내용은 참조 [Visual C# IntelliSense](https://msdn.microsoft.com/library/43f44291.aspx)합니다.

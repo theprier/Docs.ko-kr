@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: b80332487e52930f3a75973f714d2532068ed012
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d588ff6ed03178ac8dc6934162252c1749cc9124
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="examining-the-edit-methods-and-edit-view-c"></a>편집 메서드 및 편집 보기 (C#) 검사
 ====================
@@ -69,7 +69,7 @@ ms.lasthandoff: 11/10/2017
 
 템플릿 보기에는 어떻게는 `@model MvcMovie.Models.Movie` 문을 파일의 맨-이 여부를 지정 된 보기 형식으로 템플릿 보기에 대 한 모델 `Movie`합니다.
 
-스 캐 폴드 코드가 사용 하는 여러 *도우미 메서드* HTML 태그를 간소화할 수 있습니다. [ `Html.LabelFor` ](https://msdn.microsoft.com/en-us/library/gg401864(VS.98).aspx) 도우미 필드 (예: "제목", "ReleaseDate", "장르" 또는 "Price")의 이름을 표시 합니다. [ `Html.EditorFor` ](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.editorextensions.editorfor(VS.98).aspx) HTML을 표시 하는 도우미 `<input>` 요소입니다. [ `Html.ValidationMessageFor` ](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.validationextensions.validationmessagefor(VS.98).aspx) 도우미 해당 속성과 관련 된 유효성 검사 메시지를 표시 합니다.
+스 캐 폴드 코드가 사용 하는 여러 *도우미 메서드* HTML 태그를 간소화할 수 있습니다. [ `Html.LabelFor` ](https://msdn.microsoft.com/library/gg401864(VS.98).aspx) 도우미 필드 (예: "제목", "ReleaseDate", "장르" 또는 "Price")의 이름을 표시 합니다. [ `Html.EditorFor` ](https://msdn.microsoft.com/library/system.web.mvc.html.editorextensions.editorfor(VS.98).aspx) HTML을 표시 하는 도우미 `<input>` 요소입니다. [ `Html.ValidationMessageFor` ](https://msdn.microsoft.com/library/system.web.mvc.html.validationextensions.validationmessagefor(VS.98).aspx) 도우미 해당 속성과 관련 된 유효성 검사 메시지를 표시 합니다.
 
 응용 프로그램을 실행 하 고 탐색 하 고 */Movies* URL입니다. **편집** 링크를 클릭합니다. 브라우저에서 페이지에 대한 소스를 봅니다. HTML 페이지에서 다음 예제와 유사 합니다. (메뉴 태그는 명확한 설명을 위해 제외 되었습니다.)
 
@@ -89,7 +89,7 @@ ASP.NET 프레임 워크 모델 바인더는 게시 된 양식 값을 만들고�
 
 [![abcNotValid](examining-the-edit-methods-and-edit-view/_static/image8.png)](examining-the-edit-methods-and-edit-view/_static/image7.png)
 
-> **로캘에 대 한 참고** 영어가 아닌 로캘로 일반적으로 작업 하는 경우 참조 [영어가 아닌 로캘로 ASP.NET MVC 3 유효성 지원 합니다.](https://msdn.microsoft.com/en-us/library/gg674880(VS.98).aspx)
+> **로캘에 대 한 참고** 영어가 아닌 로캘로 일반적으로 작업 하는 경우 참조 [영어가 아닌 로캘로 ASP.NET MVC 3 유효성 지원 합니다.](https://msdn.microsoft.com/library/gg674880(VS.98).aspx)
 
 
 ## <a name="making-the-edit-method-more-robust"></a>Edit 메서드 보다 강력한 만들기
@@ -116,7 +116,7 @@ ASP.NET 프레임 워크 모델 바인더는 게시 된 양식 값을 만들고�
 
 [!code-csharp[Main](examining-the-edit-methods-and-edit-view/samples/sample7.cs)]
 
-첫 번째 줄은 `SearchIndex` 메서드 다음 항목을 만듭니다 [LINQ](https://msdn.microsoft.com/en-us/library/bb397926.aspx) 쿼리는 영화를 선택 하려면:
+첫 번째 줄은 `SearchIndex` 메서드 다음 항목을 만듭니다 [LINQ](https://msdn.microsoft.com/library/bb397926.aspx) 쿼리는 영화를 선택 하려면:
 
 [!code-csharp[Main](examining-the-edit-methods-and-edit-view/samples/sample8.cs)]
 
@@ -126,7 +126,7 @@ ASP.NET 프레임 워크 모델 바인더는 게시 된 양식 값을 만들고�
 
 [!code-csharp[Main](examining-the-edit-methods-and-edit-view/samples/sample9.cs)]
 
-정의 된 또는 같은 메서드를 호출 하 여 수정 된 경우에 LINQ 쿼리 실행 되지 않습니다 `Where` 또는 `OrderBy`합니다. 대신, 쿼리 실행이 지연, 즉, 실제로 실현된 값 반복 될 때까지 식의 계산이 지연 되는지 또는 [ `ToList` ](https://msdn.microsoft.com/en-us/library/bb342261.aspx) 메서드를 호출 합니다. 에 `SearchIndex` 샘플 SearchIndex 보기에서 쿼리가 실행 됩니다. 지연된 쿼리 실행에 대한 자세한 내용은 [쿼리 실행](https://msdn.microsoft.com/en-us/library/bb738633.aspx)을 참조하세요.
+정의 된 또는 같은 메서드를 호출 하 여 수정 된 경우에 LINQ 쿼리 실행 되지 않습니다 `Where` 또는 `OrderBy`합니다. 대신, 쿼리 실행이 지연, 즉, 실제로 실현된 값 반복 될 때까지 식의 계산이 지연 되는지 또는 [ `ToList` ](https://msdn.microsoft.com/library/bb342261.aspx) 메서드를 호출 합니다. 에 `SearchIndex` 샘플 SearchIndex 보기에서 쿼리가 실행 됩니다. 지연된 쿼리 실행에 대한 자세한 내용은 [쿼리 실행](https://msdn.microsoft.com/library/bb738633.aspx)을 참조하세요.
 
 이제 구현할 수는 `SearchIndex` 보기를 사용자에 게 폼을 표시 합니다. 마우스 오른쪽 단추로 클릭는 `SearchIndex` 메서드와 클릭 **뷰 추가**합니다. 에 **뷰 추가** 대화 상자를 전달 하려는 지정는 `Movie` 개체 모델 클래스와 템플릿 보기입니다. 에 **스 캐 폴드 템플릿이** 목록에서 선택 **목록**, 클릭 **추가**합니다.
 

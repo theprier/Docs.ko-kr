@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/security/16-adding-security-and-membership
 msc.type: authoredcontent
-ms.openlocfilehash: f0cee96005416bd9ef8befaf34890f415cf5ff3c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: af2eeb128cff554e7ae3d903e2117861087344e9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-security-and-membership-to-an-aspnet-web-pages-razor-site"></a>ASP.NET 웹 페이지 (Razor) 사이트에 보안 및 구성원 추가
 ====================
@@ -119,7 +119,7 @@ WebMatrix에서 사용할 수 있습니다는 **시작 사이트** 템플릿을�
 11. 전자 메일 프로그램으로 이동한 사이트에 인증 코드 및 하이퍼링크를 포함 하는 메시지를 찾을 합니다.
 12. 계정을 활성화 하려면 하이퍼링크를 클릭 합니다. 확인 하이퍼링크가 등록 확인 페이지를 엽니다.
 
-    ![보안-멤버 자격-5](16-adding-security-and-membership/_static/image4.png)
+    ![security-membership-5](16-adding-security-and-membership/_static/image4.png)
 - 클릭는 **로그인** 링크를 선택한 다음 등록 하는 계정을 사용 하 여 로그인 합니다.
 
     로그인 한 후는 **로그인** 및 **등록** 링크로 대체 됩니다는 **로그 아웃** 링크 합니다. 사용자의 로그인 이름 링크로 표시 됩니다. (링크 하면 페이지로 이동 하는 암호를 변경할 수 있습니다.)
@@ -170,7 +170,7 @@ WebMatrix에서 사용할 수 있습니다는 **시작 사이트** 템플릿을�
 여러 페이지에 대 한 액세스를 보호 하려면이 수행할 수 있습니다.
 
 - 각 페이지에 보안 검사를 추가 합니다.
-- 만들기는  *\_PageStart.cshtml* 보호 되는 페이지를 유지 하 고는 보안 검사를 추가할 수 있는 폴더의 페이지에에서 있습니다.  *\_PageStart.cshtml* 페이지는 역할을 폴더에 있는 모든 페이지에 대 한 전역 페이지의 종류입니다. 이 방법은에서 더 자세하게 설명 [사이트 전체의 동작을 사용자 지정 ASP.NET 웹 페이지에 대 한](https://go.microsoft.com/fwlink/?LinkId=202906#Using__PageStart.cshtml_to_Restrict_Folder_Access)합니다.
+- 만들기는  *\_PageStart.cshtml* 보호 되는 페이지를 유지 하 고는 보안 검사를 추가할 수 있는 폴더의 페이지에에서 있습니다. *\_PageStart.cshtml* 페이지는 역할을 폴더에 있는 모든 페이지에 대 한 전역 페이지의 종류입니다. 이 방법은에서 더 자세하게 설명 [사이트 전체의 동작을 사용자 지정 ASP.NET 웹 페이지에 대 한](https://go.microsoft.com/fwlink/?LinkId=202906#Using__PageStart.cshtml_to_Restrict_Folder_Access)합니다.
 
 ## <a name="creating-security-for-groups-of-users-roles"></a>사용자 (역할)의 그룹에 대 한 보안 만들기
 
@@ -254,20 +254,20 @@ ASP.NET 멤버 자격 시스템에서는 역할을 지원 합니다. 그러나 �
 
 블로그 게시물에 설명 하는 기본 프로세스 [ASP.NET Razor 보안을 구현 하는 가장 기본적인 방법은](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2240)합니다. 대부분의 작업이 수행 되는 다음의 메서드와 속성을 사용 하는 `WebSecurity` 도우미:
 
-- [WebSecurty.UserExists](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity.userexists(v=vs.99).aspx), [WebSecurity.CreateUserAndAccount](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity.createuserandaccount(v=vs.99).aspx)합니다. 이러한 메서드를 사용 하면 누군가가 등록 이미 되어 있는지 여부를 확인 하 고를 등록 합니다.
-- [WebSecurty.IsAuthenticated](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity.isauthenticated(v=vs.99).aspx)합니다. 이 속성에는 현재 사용자가 로그인 하는지 여부를 결정할 수 있습니다. 이러한가 이미 로그인 하지 않은 경우 사용자는 로그인 페이지를 리디렉션하려면 유용 합니다.
-- [WebSecurity.Login](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity.login(v=vs.99).aspx), [WebSecurity.Logout](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity.logout(v=vs.99).aspx)합니다. 이러한 메서드 또는 out 사용자를 로그인합니다.
-- [WebSecurity.CurrentUserName](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity.currentusername(v=vs.99).aspx)합니다. 이 속성은 현재 사용자의 로그인 이름 (사용자가 로그인 하 고) 하는 경우이 표시 하는 데 유용 합니다.
-- [WebSecurity.ConfirmAccount](https://msdn.microsoft.com/en-us/library/gg569286(v=vs.99).aspx)합니다. 이 메서드는 등록에 대 한 전자 메일 확인을 설정 하는 경우에 유용 합니다. (세부 블로그 게시물에 설명 되어 [확인 기능을 사용 하 여 ASP.NET 웹 페이지 보안용](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2267).)
+- [WebSecurty.UserExists](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity.userexists(v=vs.99).aspx), [WebSecurity.CreateUserAndAccount](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity.createuserandaccount(v=vs.99).aspx). 이러한 메서드를 사용 하면 누군가가 등록 이미 되어 있는지 여부를 확인 하 고를 등록 합니다.
+- [WebSecurty.IsAuthenticated](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity.isauthenticated(v=vs.99).aspx)합니다. 이 속성에는 현재 사용자가 로그인 하는지 여부를 결정할 수 있습니다. 이러한가 이미 로그인 하지 않은 경우 사용자는 로그인 페이지를 리디렉션하려면 유용 합니다.
+- [WebSecurity.Login](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity.login(v=vs.99).aspx), [WebSecurity.Logout](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity.logout(v=vs.99).aspx). 이러한 메서드 또는 out 사용자를 로그인합니다.
+- [WebSecurity.CurrentUserName](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity.currentusername(v=vs.99).aspx). 이 속성은 현재 사용자의 로그인 이름 (사용자가 로그인 하 고) 하는 경우이 표시 하는 데 유용 합니다.
+- [WebSecurity.ConfirmAccount](https://msdn.microsoft.com/library/gg569286(v=vs.99).aspx)합니다. 이 메서드는 등록에 대 한 전자 메일 확인을 설정 하는 경우에 유용 합니다. (세부 블로그 게시물에 설명 되어 [확인 기능을 사용 하 여 ASP.NET 웹 페이지 보안용](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2267).)
 
-역할을 관리 하려면 사용할 수 있습니다는 [역할](https://msdn.microsoft.com/en-us/library/gg538398(v=vs.99).aspx) 및 [구성원](https://msdn.microsoft.com/en-us/library/gg569035(v=vs.99).aspx) 블로그 항목에 설명 된 대로 클래스입니다.
+역할을 관리 하려면 사용할 수 있습니다는 [역할](https://msdn.microsoft.com/library/gg538398(v=vs.99).aspx) 및 [구성원](https://msdn.microsoft.com/library/gg569035(v=vs.99).aspx) 블로그 항목에 설명 된 대로 클래스입니다.
 
 ## <a name="additional-resources"></a>추가 리소스
 
 - [사이트 전체 동작 사용자 지정](https://go.microsoft.com/fwlink/?LinkId=202906)
 - [웹 통신을 보호: 인증서, SSL 및 https://](https://go.microsoft.com/fwlink/?LinkId=208660)
 - [ASP.NET Razor 보안을 구현 하는 가장 기본적인 방법은](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2240) 및 [확인 기능을 사용 하 여 ASP.NET 웹 페이지 보안용](http://mikepope.com/blog/DisplayBlog.aspx?permalink=2267)합니다. 다음은 사용 하지 않고 ASP.NET 멤버 자격 기능을 구현 하는 방법을 설명 하는 블로그 게시물은 **시작 사이트** 서식 파일입니다.
-- [ASP.NET 웹 페이지 사이트에서 외부 사이트에서 로그인을 사용 하도록 설정](https://go.microsoft.com/fwlink/?LinkId=251969)
-- [WebSecurity 클래스 API 참조](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.websecurity(v=vs.99)) (MSDN)
-- [SimpleRoleProvider 클래스 API 참조](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.simpleroleprovider(v=vs.99)) (MSDN)
-- [SimpleMembershipProvider 클래스 API 참조](https://msdn.microsoft.com/en-us/library/webmatrix.webdata.simplemembershipprovider(v=vs.99)) (MSDN)
+- [ASP.NET 웹 페이지 사이트에서 외부 사이트 로그인 사용](https://go.microsoft.com/fwlink/?LinkId=251969)
+- [WebSecurity 클래스 API 참조](https://msdn.microsoft.com/library/webmatrix.webdata.websecurity(v=vs.99)) (MSDN)
+- [SimpleRoleProvider 클래스 API 참조](https://msdn.microsoft.com/library/webmatrix.webdata.simpleroleprovider(v=vs.99)) (MSDN)
+- [SimpleMembershipProvider 클래스 API 참조](https://msdn.microsoft.com/library/webmatrix.webdata.simplemembershipprovider(v=vs.99)) (MSDN)

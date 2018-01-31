@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create_the_data_access_layer
 msc.type: authoredcontent
-ms.openlocfilehash: ebace10dc8a861ab38bd5c834c2225e3373f13fe
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 809609155b06c4632bd4f450082d84c432c7a46f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="create-the-data-access-layer"></a>데이터 액세스 계층 만들기
 ====================
@@ -43,7 +43,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="creating-the-data-models"></a>데이터 모델 만들기
 
-[Entity Framework](https://msdn.microsoft.com/en-us/data/aa937723) (ORM) 개체-관계형 매핑 프레임 워크입니다. 관계형 데이터를 쓰려고 일반적으로 해야 하는 데이터 액세스 코드의 대부분 제거 개체로 작업할 수 있습니다. Entity Framework를 사용 하 여 사용 하 여 쿼리를 실행할 수 [LINQ](https://msdn.microsoft.com/en-us/library/bb397926.aspx), 다음 검색 및 강력한 형식의 개체로 데이터를 조작 합니다. LINQ 쿼리 및 데이터를 업데이트 하기 위한 패턴을 제공 합니다. Entity Framework를 사용 하 여 액세스 기초를 데이터에 집중 하는 대신 응용 프로그램의 나머지 부분을 만드는 데 집중할 수 있습니다. 이 자습서 시리즈의 뒷부분에 나오는 데이터 탐색 및 제품 쿼리를 채우는 데 사용 하는 방법을 살펴보겠습니다.
+[Entity Framework](https://msdn.microsoft.com/data/aa937723) (ORM) 개체-관계형 매핑 프레임 워크입니다. 관계형 데이터를 쓰려고 일반적으로 해야 하는 데이터 액세스 코드의 대부분 제거 개체로 작업할 수 있습니다. Entity Framework를 사용 하 여 사용 하 여 쿼리를 실행할 수 [LINQ](https://msdn.microsoft.com/library/bb397926.aspx), 다음 검색 및 강력한 형식의 개체로 데이터를 조작 합니다. LINQ 쿼리 및 데이터를 업데이트 하기 위한 패턴을 제공 합니다. Entity Framework를 사용 하 여 액세스 기초를 데이터에 집중 하는 대신 응용 프로그램의 나머지 부분을 만드는 데 집중할 수 있습니다. 이 자습서 시리즈의 뒷부분에 나오는 데이터 탐색 및 제품 쿼리를 채우는 데 사용 하는 방법을 살펴보겠습니다.
 
 Entity Framework를 호출 하는 개발 패러다임 지원 *Code First*합니다. 먼저 코드에서는 클래스를 사용 하 여 데이터 모델을 정의할 수 있습니다. 클래스는 고유한 사용자 지정 형식을 다른 형식, 메서드 및 이벤트 변수를 함께 그룹화 하 여 만들 수 있도록 하는 구문입니다. 클래스는 기존 데이터베이스에 매핑하거나 데이터베이스를 생성 하는 데 사용할 수 있습니다. 이 자습서에서는 데이터 모델 클래스를 작성 하 여 데이터 모델 만듭니다. 그런 다음 이러한 새 클래스에서 즉석에서 데이터베이스를 생성 하는 Entity Framework 해보겠습니다.
 
@@ -181,11 +181,11 @@ Entity Framework Code First는 생성 하지만 데이터베이스를 기본 위
 
 ## <a name="additional-resources"></a>추가 리소스
 
-[Entity Framework 개요](https://msdn.microsoft.com/en-us/library/bb399567.aspx)   
-[ADO.NET Entity Framework에 대 한 기본 설명](https://msdn.microsoft.com/en-us/data/ee712907)   
+[Entity Framework 개요](https://msdn.microsoft.com/library/bb399567.aspx)   
+[ADO.NET Entity Framework에 대 한 기본 설명](https://msdn.microsoft.com/data/ee712907)   
 [Entity Framework와 함께 첫 번째 개발 코드](http://www.msteched.com/2010/Europe/DEV212) (비디오)   
-[코드 첫 번째 관계 Fluent API](https://msdn.microsoft.com/en-us/data/hh134698)   
-[코드의 첫 번째 데이터 주석](https://msdn.microsoft.com/en-us/data/gg193958)  
+[코드 첫 번째 관계 Fluent API](https://msdn.microsoft.com/data/hh134698)   
+[코드의 첫 번째 데이터 주석](https://msdn.microsoft.com/data/gg193958)  
 [Entity Framework에 대 한 성능 향상 기능](https://blogs.msdn.com/b/efdesign/archive/2010/06/21/productivity-improvements-for-the-entity-framework.aspx?wa=wsignin1.0)
 
 >[!div class="step-by-step"]

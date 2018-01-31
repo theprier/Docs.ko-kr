@@ -2,20 +2,18 @@
 title: "마이그레이션 인증 및 Id"
 author: ardalis
 description: 
-keywords: ASP.NET Core,
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.assetid: 0db145cb-41a5-448a-b889-72e2d789ad7f
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: migration/identity
-ms.openlocfilehash: 6972329e3d434e1b67131843118f2f18229807b9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f02d9472ea0aa1dceae3f53c812776aab85ab54e
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="migrating-authentication-and-identity"></a>마이그레이션 인증 및 Id
 

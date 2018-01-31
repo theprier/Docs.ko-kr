@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/database-driven-site-maps/building-a-custom-database-driven-site-map-provider-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f09d8d24cea43e80e66b0d8ce50911fcb978c85e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cc0de856cb1ae2cf8e1f18a29ae29a3b226c12ab
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="building-a-custom-database-driven-site-map-provider-c"></a>빌드 사용자 지정 데이터베이스 기반의 사이트 맵 공급자 (C#)
 ====================
@@ -29,7 +29,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="introduction"></a>소개
 
-ASP.NET 2.0의 사이트 맵 기능을 사용 하면 페이지 개발자는 XML 파일에서와 같은 일부 영구 미디어에 웹 응용 프로그램의 사이트 맵을 정의 합니다. 사이트 맵 데이터를 통해 프로그래밍 방식으로 액세스할 수를 정의 고 [ `SiteMap` 클래스](https://msdn.microsoft.com/en-us/library/system.web.sitemap.aspx) 에 [ `System.Web` 네임 스페이스](https://msdn.microsoft.com/en-us/library/system.web.aspx) 또는 탐색의 다양 한을 통해 컨트롤을와 같은 웹는 SiteMapPath, 메뉴 및 TreeView를 제어 합니다. 사이트 맵 시스템에서 사용 하 여 [공급자 모델](http://aspnet.4guysfromrolla.com/articles/101905-1.aspx) 다른 사이트 맵 serialization 구현 만들고 웹 응용 프로그램에 연결할 수 있도록 합니다. ASP.NET 2.0과 함께 제공 되는 기본 사이트 맵 공급자는 XML 파일에 사이트 맵 구조를 유지 합니다. 에 [마스터 페이지 및 사이트 탐색](../introduction/master-pages-and-site-navigation-cs.md) 자습서 라는 파일을 만들었습니다 `Web.sitemap` 이 구조를 포함 하 고 각 새 자습서 섹션으로 해당 XML 업데이트 되었습니다.
+ASP.NET 2.0의 사이트 맵 기능을 사용 하면 페이지 개발자는 XML 파일에서와 같은 일부 영구 미디어에 웹 응용 프로그램의 사이트 맵을 정의 합니다. 사이트 맵 데이터를 통해 프로그래밍 방식으로 액세스할 수를 정의 고 [ `SiteMap` 클래스](https://msdn.microsoft.com/library/system.web.sitemap.aspx) 에 [ `System.Web` 네임 스페이스](https://msdn.microsoft.com/library/system.web.aspx) 또는 탐색의 다양 한을 통해 컨트롤을와 같은 웹는 SiteMapPath, 메뉴 및 TreeView를 제어 합니다. 사이트 맵 시스템에서 사용 하 여 [공급자 모델](http://aspnet.4guysfromrolla.com/articles/101905-1.aspx) 다른 사이트 맵 serialization 구현 만들고 웹 응용 프로그램에 연결할 수 있도록 합니다. ASP.NET 2.0과 함께 제공 되는 기본 사이트 맵 공급자는 XML 파일에 사이트 맵 구조를 유지 합니다. 에 [마스터 페이지 및 사이트 탐색](../introduction/master-pages-and-site-navigation-cs.md) 자습서 라는 파일을 만들었습니다 `Web.sitemap` 이 구조를 포함 하 고 각 새 자습서 섹션으로 해당 XML 업데이트 되었습니다.
 
 기본 XML 기반 사이트 맵 공급자 사이트 맵의 구조는이 자습서에 대 한 비교적 정적와 같은 경우에 적합 합니다. 그러나 대부분의 시나리오에서 보다 동적 사이트 맵 필요 합니다. 사이트 맵 그림 1에서 각 범주 및 제품 웹 사이트의 구조에 대 한 섹션으로 표시 하는 위치에 표시 된 것을 고려 합니다. 이 사이트 맵을 사용 하 여 루트 노드에 해당 하는 웹 페이지 방문 나열 될 수 있습니다 모든 범주, 특정 제품의 웹 페이지 보기는 해당 제품 s 세부 정보 표시 하 고 특정 범주의의 웹 페이지를 방문 하면 해당 범주의 제품 나열 됩니다.
 
@@ -194,7 +194,7 @@ ObjectDataSource를 만들고 GridView의 필드 사용자 지정 후 두 개의
 
 ## <a name="step-5-understanding-the-inner-workings-of-a-site-map-provider"></a>5 단계: 사이트 맵 공급자의 내부 작동 방식을 이해
 
-사이트 맵은 컬렉션으로 웹 서버의 메모리에 표현 `SiteMapNode` 인스턴스를 계층 구조를 형성 합니다. 정확히 하나의 루트 여야 합니다, 모든 루트가 아닌 노드 정확히 하나의 부모 노드가 있고 모든 노드는 임의 개수의 자식 있을 수 있습니다. 각 `SiteMapNode` 개체 s 웹 사이트 구조의 섹션을 나타냅니다; 이러한 섹션에는 일반적으로 해당 웹 페이지는 합니다. 따라서는 [ `SiteMapNode` 클래스](https://msdn.microsoft.com/en-us/library/system.web.sitemapnode.aspx) 같은 속성이 `Title`, `Url`, 및 `Description`, 섹션에 대 한 정보를 제공는 `SiteMapNode` 나타냅니다. 또한는 `Key` 각각 고유 하 게 식별 하는 속성 `SiteMapNode` 이 계층 구조를 설정 하는 데 사용 된 속성 뿐만 아니라 계층 구조에서 `ChildNodes`, `ParentNode`, `NextSibling`, `PreviousSibling`, 등입니다.
+사이트 맵은 컬렉션으로 웹 서버의 메모리에 표현 `SiteMapNode` 인스턴스를 계층 구조를 형성 합니다. 정확히 하나의 루트 여야 합니다, 모든 루트가 아닌 노드 정확히 하나의 부모 노드가 있고 모든 노드는 임의 개수의 자식 있을 수 있습니다. 각 `SiteMapNode` 개체 s 웹 사이트 구조의 섹션을 나타냅니다; 이러한 섹션에는 일반적으로 해당 웹 페이지는 합니다. 따라서는 [ `SiteMapNode` 클래스](https://msdn.microsoft.com/library/system.web.sitemapnode.aspx) 같은 속성이 `Title`, `Url`, 및 `Description`, 섹션에 대 한 정보를 제공는 `SiteMapNode` 나타냅니다. 또한는 `Key` 각각 고유 하 게 식별 하는 속성 `SiteMapNode` 이 계층 구조를 설정 하는 데 사용 된 속성 뿐만 아니라 계층 구조에서 `ChildNodes`, `ParentNode`, `NextSibling`, `PreviousSibling`, 등입니다.
 
 그림 15 나타나지만 일반 사이트 맵 구조 그림 1에서 보다 자세히 살펴본 구현 세부 정보를 사용 합니다.
 
@@ -204,13 +204,13 @@ ObjectDataSource를 만들고 GridView의 필드 사용자 지정 후 두 개의
 **그림 15**: 각 `SiteMapNode` 에 속성 예 `Title`, `Url`, `Key`등 ([전체 크기 이미지를 보려면 클릭](building-a-custom-database-driven-site-map-provider-cs/_static/image17.gif))
 
 
-사이트 맵은 통해 액세스할 수는 [ `SiteMap` 클래스](https://msdn.microsoft.com/en-us/library/system.web.sitemap.aspx) 에 [ `System.Web` 네임 스페이스](https://msdn.microsoft.com/en-us/library/system.web.aspx)합니다. 이 클래스 s `RootNode` 사이트 맵의 루트를 반환 하는 속성 `SiteMapNode` 인스턴스이거나 `CurrentNode` 반환 된 `SiteMapNode` 인 `Url` 속성에는 현재 요청 된 페이지의 URL과 일치 합니다. 이 클래스는 ASP.NET 2.0의 탐색 웹 컨트롤에서 내부적으로 사용 됩니다.
+사이트 맵은 통해 액세스할 수는 [ `SiteMap` 클래스](https://msdn.microsoft.com/library/system.web.sitemap.aspx) 에 [ `System.Web` 네임 스페이스](https://msdn.microsoft.com/library/system.web.aspx)합니다. 이 클래스 s `RootNode` 사이트 맵의 루트를 반환 하는 속성 `SiteMapNode` 인스턴스이거나 `CurrentNode` 반환 된 `SiteMapNode` 인 `Url` 속성에는 현재 요청 된 페이지의 URL과 일치 합니다. 이 클래스는 ASP.NET 2.0의 탐색 웹 컨트롤에서 내부적으로 사용 됩니다.
 
-경우는 `SiteMap`의 클래스 속성에 액세스, 메모리에 일부 영구적인 매체에서 사이트 맵 구조를 serialize 해야 합니다. 그러나 사이트 맵 직렬화 논리 않습니다 하드에 코딩 된 `SiteMap` 클래스입니다. 대신, 런타임에 `SiteMap` 클래스 결정 어떤 사이트 맵 *공급자* serialization에 사용할 합니다. 기본적으로는 [ `XmlSiteMapProvider` 클래스](https://msdn.microsoft.com/en-us/library/system.web.xmlsitemapprovider.aspx) 을 사용 하는 사이트 맵의 구조 형식이 잘못 된 XML 파일에서 읽습니다. 그러나 약간의 작업에서는 고유한 사용자 지정 사이트 맵 공급자를 만들 수 있습니다.
+경우는 `SiteMap`의 클래스 속성에 액세스, 메모리에 일부 영구적인 매체에서 사이트 맵 구조를 serialize 해야 합니다. 그러나 사이트 맵 직렬화 논리 않습니다 하드에 코딩 된 `SiteMap` 클래스입니다. 대신, 런타임에 `SiteMap` 클래스 결정 어떤 사이트 맵 *공급자* serialization에 사용할 합니다. 기본적으로는 [ `XmlSiteMapProvider` 클래스](https://msdn.microsoft.com/library/system.web.xmlsitemapprovider.aspx) 을 사용 하는 사이트 맵의 구조 형식이 잘못 된 XML 파일에서 읽습니다. 그러나 약간의 작업에서는 고유한 사용자 지정 사이트 맵 공급자를 만들 수 있습니다.
 
-파생 해야 하는 모든 사이트 맵 공급자는 [ `SiteMapProvider` 클래스](https://msdn.microsoft.com/en-us/library/system.web.sitemapprovider.aspx), 필수 메서드를 포함 하 고 사이트에 필요한 속성 공급자, 매핑하지만 많은 구현 세부 사항을 생략 합니다. 두 번째 클래스인 [ `StaticSiteMapProvider` ](https://msdn.microsoft.com/en-us/library/system.web.staticsitemapprovider.aspx), 확장 된 `SiteMapProvider` 클래스 하 고 필요한 기능을 구현 하는 보다 강력한 포함 합니다. 내부적으로 `StaticSiteMapProvider` 저장는 `SiteMapNode` 에 매핑하는 사이트의 인스턴스는 `Hashtable` 와 같은 메서드를 제공 하 고 `AddNode(child, parent)`, `RemoveNode(siteMapNode),` 및 `Clear()` 추가 및 제거 하는 `SiteMapNode` 내부 s `Hashtable`합니다. `XmlSiteMapProvider`는 `StaticSiteMapProvider`에서 파생됩니다.
+파생 해야 하는 모든 사이트 맵 공급자는 [ `SiteMapProvider` 클래스](https://msdn.microsoft.com/library/system.web.sitemapprovider.aspx), 필수 메서드를 포함 하 고 사이트에 필요한 속성 공급자, 매핑하지만 많은 구현 세부 사항을 생략 합니다. 두 번째 클래스인 [ `StaticSiteMapProvider` ](https://msdn.microsoft.com/library/system.web.staticsitemapprovider.aspx), 확장 된 `SiteMapProvider` 클래스 하 고 필요한 기능을 구현 하는 보다 강력한 포함 합니다. 내부적으로 `StaticSiteMapProvider` 저장는 `SiteMapNode` 에 매핑하는 사이트의 인스턴스는 `Hashtable` 와 같은 메서드를 제공 하 고 `AddNode(child, parent)`, `RemoveNode(siteMapNode),` 및 `Clear()` 추가 및 제거 하는 `SiteMapNode` 내부 s `Hashtable`합니다. `XmlSiteMapProvider`는 `StaticSiteMapProvider`에서 파생됩니다.
 
-확장 하는 사용자 지정 사이트 맵 공급자를 만들 때 `StaticSiteMapProvider`를 재정의 해야 하는 두 가지 추상 메서드는: [ `BuildSiteMap` ](https://msdn.microsoft.com/en-us/library/system.web.staticsitemapprovider.buildsitemap.aspx) 및 [ `GetRootNodeCore` ](https://msdn.microsoft.com/en-us/library/system.web.sitemapprovider.getrootnodecore.aspx)합니다. `BuildSiteMap`이름에서 알 수 있듯이 영구 저장소에서 사이트 맵 구조를 로드 하 고 메모리에 생성 하는 일을 담당 합니다. `GetRootNodeCore`사이트 맵의 루트 노드를 반환합니다.
+확장 하는 사용자 지정 사이트 맵 공급자를 만들 때 `StaticSiteMapProvider`를 재정의 해야 하는 두 가지 추상 메서드는: [ `BuildSiteMap` ](https://msdn.microsoft.com/library/system.web.staticsitemapprovider.buildsitemap.aspx) 및 [ `GetRootNodeCore` ](https://msdn.microsoft.com/library/system.web.sitemapprovider.getrootnodecore.aspx)합니다. `BuildSiteMap`이름에서 알 수 있듯이 영구 저장소에서 사이트 맵 구조를 로드 하 고 메모리에 생성 하는 일을 담당 합니다. `GetRootNodeCore`사이트 맵의 루트 노드를 반환합니다.
 
 웹 되기 전 까지의 응용 응용 프로그램의 구성에 등록 해야 하는 사이트 맵 공급자를 사용할 수 있습니다. 기본적으로는 `XmlSiteMapProvider` 클래스 이름을 사용 하 여 등록 `AspNetXmlSiteMapProvider`합니다. 추가 사이트 맵 공급자를 등록 하려면 다음 태그를 추가 `Web.config`:
 
@@ -224,7 +224,7 @@ ObjectDataSource를 만들고 GridView의 필드 사용자 지정 후 두 개의
 성능 및 확장성 때문에 대 한 것 s 메모리 내 사이트를 캐시 하는 것이 중요 한 구조를 매핑한 될 때마다 다시 만드는 것이 아니라 구조 캐시이 반환할는 `BuildSiteMap` 메서드가 호출 됩니다. `BuildSiteMap`페이지와 사이트 맵 구조의 깊이에서 사용 중인 탐색 컨트롤에 따라 사용자 단위 페이지 요청에 따라 여러 번 호출할 수 있습니다. 사이트 맵 구조에 캐시 되지 않는 하면 사례에서 `BuildSiteMap` 를 호출할 때마다 해야 다시 아키텍처 (즉 쿼리에서 데이터베이스)에서 제품 테이블과 범주 정보를 검색 합니다. 이전 캐싱 자습서에서 설명한 대로 캐시 된 데이터 부실 해질 수 있습니다. 이 해결 하려면 시간-또는 SQL 캐시 종속성 기반 expiries 중 하나를 사용할 수 있습니다.
 
 > [!NOTE]
-> 사이트 맵 공급자를 선택적으로 재정의할 수 있습니다는 [ `Initialize` 메서드](https://msdn.microsoft.com/en-us/library/system.web.sitemapprovider.initialize.aspx)합니다. `Initialize`사이트 맵 공급자가 처음 인스턴스화 및에서 공급자에 할당 된 모든 사용자 지정 특성에 전달 될 때 호출 되 `Web.config` 에 `<add>` 와 같은 요소가: `<add name="name" type="type" customAttribute="value" />`합니다. 공급자의 코드를 수정 하지 않고도 다양 한 사이트 맵 공급자 관련 설정을 지정 하려면 페이지 개발자 허용 하려는 경우에 유용 합니다. 예를 들어 가능성이 반대인 d 우리 아키텍처를 통해 데이터베이스에서 직접 범주 및 제품 데이터를 읽는 것 म 경우 활용할 수 있도록 하려면 통해 데이터베이스 연결 문자열을 지정 하면 페이지 개발자 `Web.config` 하드 코드를 사용 하는 대신 공급자의 코드 값입니다. 6 단계에서에서 구축 하 게 하는 사용자 지정 사이트 맵 공급자가 재정의 하지 않는 `Initialize` 메서드. 사용 하는 예제에 대 한는 `Initialize` 메서드를 가리키는 [부분](http://www.wintellect.com/Weblogs/CategoryView,category,Jeff%20Prosise.aspx) s [SQL Server에서 사이트 맵 저장](https://msdn.microsoft.com/msdnmag/issues/05/06/WickedCode/) 문서.
+> 사이트 맵 공급자를 선택적으로 재정의할 수 있습니다는 [ `Initialize` 메서드](https://msdn.microsoft.com/library/system.web.sitemapprovider.initialize.aspx)합니다. `Initialize`사이트 맵 공급자가 처음 인스턴스화 및에서 공급자에 할당 된 모든 사용자 지정 특성에 전달 될 때 호출 되 `Web.config` 에 `<add>` 와 같은 요소가: `<add name="name" type="type" customAttribute="value" />`합니다. 공급자의 코드를 수정 하지 않고도 다양 한 사이트 맵 공급자 관련 설정을 지정 하려면 페이지 개발자 허용 하려는 경우에 유용 합니다. 예를 들어 가능성이 반대인 d 우리 아키텍처를 통해 데이터베이스에서 직접 범주 및 제품 데이터를 읽는 것 म 경우 활용할 수 있도록 하려면 통해 데이터베이스 연결 문자열을 지정 하면 페이지 개발자 `Web.config` 하드 코드를 사용 하는 대신 공급자의 코드 값입니다. 6 단계에서에서 구축 하 게 하는 사용자 지정 사이트 맵 공급자가 재정의 하지 않는 `Initialize` 메서드. 사용 하는 예제에 대 한는 `Initialize` 메서드를 가리키는 [부분](http://www.wintellect.com/Weblogs/CategoryView,category,Jeff%20Prosise.aspx) s [SQL Server에서 사이트 맵 저장](https://msdn.microsoft.com/msdnmag/issues/05/06/WickedCode/) 문서.
 
 
 ## <a name="step-6-creating-the-custom-site-map-provider"></a>6 단계: 사용자 지정 사이트 맵 공급자 만들기
@@ -234,13 +234,13 @@ ObjectDataSource를 만들고 GridView의 필드 사용자 지정 후 두 개의
 
 [!code-csharp[Main](building-a-custom-database-driven-site-map-provider-cs/samples/sample6.cs)]
 
-이 클래스 s 탐색부터 시작 하는 s `BuildSiteMap` 메서드 시작 되는 [ `lock` 문을](https://msdn.microsoft.com/en-us/library/c5kehkcz.aspx)합니다. `lock` 문은 함으로써 해당 코드에 대 한 액세스를 직렬화 하 고 두 개의 동시 스레드 서로 s 거의 없었으나에서 단계별 실행 하지 못하도록를 입력 하려면 한 번에 스레드를 하나씩만 허용 합니다.
+이 클래스 s 탐색부터 시작 하는 s `BuildSiteMap` 메서드 시작 되는 [ `lock` 문을](https://msdn.microsoft.com/library/c5kehkcz.aspx)합니다. `lock` 문은 함으로써 해당 코드에 대 한 액세스를 직렬화 하 고 두 개의 동시 스레드 서로 s 거의 없었으나에서 단계별 실행 하지 못하도록를 입력 하려면 한 번에 스레드를 하나씩만 허용 합니다.
 
 클래스 수준 `SiteMapNode` 변수 `root` 사이트 맵 구조를 캐시 하는 데 사용 됩니다. 처음으로 또는 기본 데이터를 수정한 후 처음으로 사이트 맵 생성 될 때 `root` 됩니다 `null` 이며 사이트 맵 구조를 생성 합니다. 에 할당 된 사이트 맵의 루트 노드 `root` 생성 하는 동안 프로세스를 다음에이 메서드를 호출할 `root` 됩니다 `null`합니다. 결과적으로 `root` 않습니다 `null` 다시 만들 필요 없이 사이트 맵 구조를 호출자에 게 반환 됩니다.
 
 루트 이면 `null`, 범주 및 제품 정보에서 사이트 맵 구조 만들어집니다. 사이트 맵을 만들어 빌드될는 `SiteMapNode` 인스턴스 및 다음 호출을 통해 계층을 형성는 `StaticSiteMapProvider` s 클래스 `AddNode` 메서드. `AddNode`저장 된 다양 한 내부 정리 작업을 수행 `SiteMapNode` 인스턴스에 `Hashtable`합니다. 호출 하 여 시작 계층 구조 생성을 시작 하기 전에 `Clear` 메서드 내부에서 요소를 지우는 `Hashtable`합니다. 다음으로 `ProductsBLL` s 클래스 `GetProducts` 메서드와 그 결과 `ProductsDataTable` 지역 변수에 저장 합니다.
 
-루트 노드를 만들고 할당 하 여 사이트 맵의 구성 시작 `root`합니다. 오버 로드는 [ `SiteMapNode` s 생성자](https://msdn.microsoft.com/en-us/library/system.web.sitemapnode.sitemapnode.aspx) 여기 또는이 사용 `BuildSiteMap` 다음 정보를 전달 됩니다.
+루트 노드를 만들고 할당 하 여 사이트 맵의 구성 시작 `root`합니다. 오버 로드는 [ `SiteMapNode` s 생성자](https://msdn.microsoft.com/library/system.web.sitemapnode.sitemapnode.aspx) 여기 또는이 사용 `BuildSiteMap` 다음 정보를 전달 됩니다.
 
 - 사이트 맵 공급자에 대 한 참조 (`this`).
 - `SiteMapNode` s `Key`합니다. 이 값은 각각에 대해 고유 해야 합니다. 필수 `SiteMapNode`합니다.
@@ -253,7 +253,7 @@ ObjectDataSource를 만들고 GridView의 필드 사용자 지정 후 두 개의
 > 데이터베이스 없는 제품을 `NULL` 에 대 한 값 자신의 `CategoryID` 범주 아래에 그룹화 됩니다 `SiteMapNode` 인 `Title` 속성이 None이 고 `Url` 속성이 빈 문자열로 설정 되어 있습니다. 설정 하기로 `Url` 이후 빈 문자열로 `ProductBLL` s 클래스 `GetProductsByCategory(categoryID)` 메서드는 현재 해당 제품을 반환 하는 기능에는 `NULL` `CategoryID` 값입니다. 또한, 탐색 컨트롤 렌더링 되는 방식을 보여 줍니다. 하고자 합니다.는 `SiteMapNode` 에 있는 값이 없는 해당 `Url` 속성입니다. 이 자습서에서는 확장을 확인해 보십시오 있도록 없음 `SiteMapNode` s `Url` 속성이 가리키는 `ProductsByCategory.aspx`, 제품을 아직만 표시 `NULL` `CategoryID` 값.
 
 
-사이트 맵을 생성 한 후 임의 개체에서 SQL 캐시 종속성을 사용 하 여 데이터 캐시에 추가 됩니다는 `Categories` 및 `Products` 를 통해 테이블는 `AggregateCacheDependency` 개체입니다. SQL 캐시 종속성을 사용 하 여 이전 자습서에서에서 살펴본 *를 사용 하 여 SQL 캐시 종속성*합니다. 하지만 사용자 지정 사이트 맵 공급자의 데이터 캐시 s 오버 로드를 사용 `Insert` 메서드 것 아직를 탐색 했습니다. 이 오버 로드는 캐시에서 개체가 제거 될 때 호출 되는 대리자의 마지막 입력된 매개 변수로 허용 합니다. 새 전달 특히 [ `CacheItemRemovedCallback` 위임](https://msdn.microsoft.com/en-us/library/system.web.caching.cacheitemremovedcallback.aspx) 가리키는 `OnSiteMapChanged` 메서드가 아래에 정의 `NorthwindSiteMapProvider` 클래스입니다.
+사이트 맵을 생성 한 후 임의 개체에서 SQL 캐시 종속성을 사용 하 여 데이터 캐시에 추가 됩니다는 `Categories` 및 `Products` 를 통해 테이블는 `AggregateCacheDependency` 개체입니다. SQL 캐시 종속성을 사용 하 여 이전 자습서에서에서 살펴본 *를 사용 하 여 SQL 캐시 종속성*합니다. 하지만 사용자 지정 사이트 맵 공급자의 데이터 캐시 s 오버 로드를 사용 `Insert` 메서드 것 아직를 탐색 했습니다. 이 오버 로드는 캐시에서 개체가 제거 될 때 호출 되는 대리자의 마지막 입력된 매개 변수로 허용 합니다. 새 전달 특히 [ `CacheItemRemovedCallback` 위임](https://msdn.microsoft.com/library/system.web.caching.cacheitemremovedcallback.aspx) 가리키는 `OnSiteMapChanged` 메서드가 아래에 정의 `NorthwindSiteMapProvider` 클래스입니다.
 
 > [!NOTE]
 > 사이트 맵의 메모리 내 표현을 클래스 수준 변수를 통해 캐시 된 `root`합니다. 웹 응용 프로그램에서 해당 인스턴스는 모든 스레드에서 공유 하는 이후 및 사용자 지정 사이트 맵 공급자 클래스의 인스턴스를 하나만 이므로이 클래스 변수에 캐시로 사용 됩니다. `BuildSiteMap` 만 하는 것은 기본 데이터베이스 데이터에 때 알림을 받으려면 메서드도 사용 하 여 데이터 캐시는 `Categories` 또는 `Products` 변경 내용 테이블입니다. 참고가 현재 날짜 및 시간 데이터 캐시에 추가할 값입니다. 실제 사이트 맵 데이터는 *하지* 데이터 캐시에 위치 합니다.
@@ -298,7 +298,7 @@ SiteMapPath 컨트롤 사이트 맵 내에서 현재 페이지의 위치를 나�
 **그림 17**: 된 이동 경로 기본 사이트 맵 공급자를 사용 하 여 ([전체 크기 이미지를 보려면 클릭](building-a-custom-database-driven-site-map-provider-cs/_static/image23.gif))
 
 
-6 단계에서에서 만든 사용자 지정 사이트 맵 공급자를 사용 하 여 그림 16에서 추가 SiteMapPath, 설정 해당 [ `SiteMapProvider` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.sitemappath.sitemapprovider.aspx) northwind에에서는 할당 된 이름에는 `NorthwindSiteMapProvider` 에서 `Web.config`합니다. 안타깝게도, 디자이너 기본 사이트 맵 공급자를 사용 하 여 계속 하지만 속성 변경 후 브라우저를 통해 페이지를 방문 하는 경우 표시 된 이동 경로 이제는 사용자 지정 사이트 맵 공급자를 사용 합니다.
+6 단계에서에서 만든 사용자 지정 사이트 맵 공급자를 사용 하 여 그림 16에서 추가 SiteMapPath, 설정 해당 [ `SiteMapProvider` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sitemappath.sitemapprovider.aspx) northwind에에서는 할당 된 이름에는 `NorthwindSiteMapProvider` 에서 `Web.config`합니다. 안타깝게도, 디자이너 기본 사이트 맵 공급자를 사용 하 여 계속 하지만 속성 변경 후 브라우저를 통해 페이지를 방문 하는 경우 표시 된 이동 경로 이제는 사용자 지정 사이트 맵 공급자를 사용 합니다.
 
 
 [![지금 사용 하 여 사용자 지정 사이트 맵 공급자 NorthwindSiteMapProvider 경로 기록](building-a-custom-database-driven-site-map-provider-cs/_static/image25.gif)](building-a-custom-database-driven-site-map-provider-cs/_static/image24.gif)
@@ -327,7 +327,7 @@ SiteMapPath이 컨트롤은 표시의 기능적 사용자 인터페이스는 `Pr
 
 [!code-csharp[Main](building-a-custom-database-driven-site-map-provider-cs/samples/sample8.cs)]
 
-이후는 `AspNetXmlSiteMapProvider` 기본 공급자가이 응용 프로그램에 대 한 위의 코드에 정의 된 루트 노드를 반환 합니다 `Web.sitemap`합니다. 사용 하 여 기본이 아닌 다른 사이트 맵 공급자를 참조 하려면는 `SiteMap` s 클래스 [ `Providers` 속성](https://msdn.microsoft.com/en-us/library/system.web.sitemap.providers.aspx) 같이:
+이후는 `AspNetXmlSiteMapProvider` 기본 공급자가이 응용 프로그램에 대 한 위의 코드에 정의 된 루트 노드를 반환 합니다 `Web.sitemap`합니다. 사용 하 여 기본이 아닌 다른 사이트 맵 공급자를 참조 하려면는 `SiteMap` s 클래스 [ `Providers` 속성](https://msdn.microsoft.com/library/system.web.sitemap.providers.aspx) 같이:
 
 
 [!code-csharp[Main](building-a-custom-database-driven-site-map-provider-cs/samples/sample9.cs)]
@@ -357,7 +357,7 @@ ASP.NET 2.0의 사이트 맵 기능에 포함 되어는 `SiteMap` 클래스, 다
 
 - [SQL Server에 사이트 맵 저장](https://msdn.microsoft.com/msdnmag/issues/05/06/WickedCode/) 및 [적 기다리고 SQL 사이트 맵 공급자](https://msdn.microsoft.com/msdnmag/issues/06/02/wickedcode/default.aspx)
 - [살펴보면 ASP.NET 2.0의 공급자 모델](http://aspnet.4guysfromrolla.com/articles/101905-1.aspx)
-- [공급자 도구 키트](https://msdn.microsoft.com/en-us/asp.net/aa336558.aspx)
+- [공급자 도구 키트](https://msdn.microsoft.com/asp.net/aa336558.aspx)
 - [ASP.NET 2.0 검사 s 사이트 탐색 기능](http://aspnet.4guysfromrolla.com/articles/111605-1.aspx)
 
 ## <a name="about-the-author"></a>작성자 정보

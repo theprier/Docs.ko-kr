@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/role-based-authorization-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 973e5705fc36b13e5e6ec861dd2ca6adfc0f50fe
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 331282dfa3c05dd4bd6fef19dcfe7e5c0adad84d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="role-based-authorization-vb"></a>역할 기반 권한 부여 (VB)
 ====================
@@ -39,11 +39,11 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="understanding-how-roles-are-associated-with-a-users-security-context"></a>어떻게 역할 이해 연관 된 사용자의 보안 컨텍스트
 
-ASP.NET 파이프라인에 들어갈 때마다 요청자를 식별 하는 정보를 포함 하는 보안 컨텍스트를와 연결 됩니다. 폼 인증을 사용할 때는 인증 티켓 id 토큰으로 사용 됩니다. 설명한 것 처럼는 <a id="_msoanchor_2"> </a> [ *폼 인증의 개요는* ](../introduction/an-overview-of-forms-authentication-vb.md) 및 <a id="_msoanchor_3"> </a> [ *폼 인증 구성 및 고급 항목* ](../introduction/forms-authentication-configuration-and-advanced-topics-vb.md) 자습서는 `FormsAuthenticationModule` 결정 하는 동안에 요청자의 id는 [ `AuthenticateRequest` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.authenticaterequest.aspx).
+ASP.NET 파이프라인에 들어갈 때마다 요청자를 식별 하는 정보를 포함 하는 보안 컨텍스트를와 연결 됩니다. 폼 인증을 사용할 때는 인증 티켓 id 토큰으로 사용 됩니다. 설명한 것 처럼는 <a id="_msoanchor_2"> </a> [ *폼 인증의 개요는* ](../introduction/an-overview-of-forms-authentication-vb.md) 및 <a id="_msoanchor_3"> </a> [ *폼 인증 구성 및 고급 항목* ](../introduction/forms-authentication-configuration-and-advanced-topics-vb.md) 자습서는 `FormsAuthenticationModule` 결정 하는 동안에 요청자의 id는 [ `AuthenticateRequest` 이벤트](https://msdn.microsoft.com/library/system.web.httpapplication.authenticaterequest.aspx).
 
 유효 하 고 만료 되지 않은 인증 티켓을이 없으면는 `FormsAuthenticationModule` 디코딩 요청자의 id를 확인 합니다. 만드는 새 `GenericPrincipal` 개체를 할당 하려면이 옵션은 `HttpContext.User` 개체입니다. 보안 주체가의 용도 같은 `GenericPrincipal`, 인증된 된 사용자의 이름 및 기능을 식별 하는 역할에 속하는 영업 관리자입니다. 이 용도로 확실할 모든 주 개체에 `Identity` 속성 및 `IsInRole(roleName)` 메서드. 그러나 `FormsAuthenticationModule`, 않습니다 역할 정보를 기록 하는 데 관심이 및 `GenericPrincipal` 개체 생성 된 모든 역할을 지정 하지 않습니다.
 
-역할 프레임 워크를 사용 하는 경우는 [ `RoleManagerModule` ](https://msdn.microsoft.com/en-us/library/system.web.security.rolemanagermodule.aspx) HTTP 모듈에서 다음 단계는 `FormsAuthenticationModule` 하는 동안 인증된 된 사용자의 역할을 설명 하 고는 [ `PostAuthenticateRequest` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.postauthenticaterequest.aspx)이며 후에 발생는 `AuthenticateRequest` 이벤트입니다. 인증된 된 사용자에서 요청이 시작 된 경우는 `RoleManagerModule` 덮어씁니다는 `GenericPrincipal` 하 여 만든 개체는 `FormsAuthenticationModule` 바꿉니다는 [ `RolePrincipal` 개체](https://msdn.microsoft.com/en-us/library/system.web.security.roleprincipal.aspx)합니다. `RolePrincipal` 클래스 역할 API를 사용 하 여 사용자가 속한 역할을 결정 합니다.
+역할 프레임 워크를 사용 하는 경우는 [ `RoleManagerModule` ](https://msdn.microsoft.com/library/system.web.security.rolemanagermodule.aspx) HTTP 모듈에서 다음 단계는 `FormsAuthenticationModule` 하는 동안 인증된 된 사용자의 역할을 설명 하 고는 [ `PostAuthenticateRequest` 이벤트](https://msdn.microsoft.com/library/system.web.httpapplication.postauthenticaterequest.aspx)이며 후에 발생는 `AuthenticateRequest` 이벤트입니다. 인증된 된 사용자에서 요청이 시작 된 경우는 `RoleManagerModule` 덮어씁니다는 `GenericPrincipal` 하 여 만든 개체는 `FormsAuthenticationModule` 바꿉니다는 [ `RolePrincipal` 개체](https://msdn.microsoft.com/library/system.web.security.roleprincipal.aspx)합니다. `RolePrincipal` 클래스 역할 API를 사용 하 여 사용자가 속한 역할을 결정 합니다.
 
 그림 1에서는 폼 인증 및 역할 프레임 워크를 사용 하는 경우 ASP.NET 파이프라인 워크플로를 보여 줍니다. `FormsAuthenticationModule` , 먼저 실행 하 고, 그녀의 인증 티켓을 통해 사용자를 식별 하 고, 새 `GenericPrincipal` 개체입니다. 다음으로 `RoleManagerModule` 의 단계를 하 고 덮어씁니다는 `GenericPrincipal` 개체는 `RolePrincipal` 개체입니다.
 
@@ -59,7 +59,7 @@ ASP.NET 파이프라인에 들어갈 때마다 요청자를 식별 하는 정보
 
 `RolePrincipal` 개체의 `IsInRole(roleName)` 메서드 호출 `Roles`합니다.`GetRolesForUser` 사용자의 멤버 인지를 확인 하기 위해 사용자에 대 한 역할을 가져올 *roleName*합니다. 사용 하는 경우는 `SqlRoleProvider`,이 인해 쿼리 역할 저장소 데이터베이스에 있습니다. 역할 기반 URL 권한 부여 규칙을 사용 하는 경우는 `RolePrincipal`의 `IsInRole` 메서드가 역할 기반 URL 권한 부여 규칙에 의해 보호 되는 페이지를 요청할 때마다 호출 됩니다. 모든 요청에서 데이터베이스에 역할 정보를 조회 하는 것 보다는 `Roles` 프레임 워크를 쿠키에 사용자의 역할을 캐시 하는 옵션을 포함 합니다.
 
-역할 프레임 워크를 쿠키에 사용자의 역할을 캐시 하도록 구성 된 경우는 `RoleManagerModule` ASP.NET 파이프라인 하는 동안 쿠키 만듭니다 [ `EndRequest` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.endrequest.aspx)합니다. 후속 요청에서이 쿠키를 사용 하는 `PostAuthenticateRequest`때 되는 `RolePrincipal` 개체가 만들어집니다. 쿠키의 데이터를 구문 분석 되 고 사용자의 역할을 줄여줍니다를 채우는 데 사용할 경우 쿠키가 유효 하 고 만료 되지 않았는지는 `RolePrincipal` 에 대 한 호출을 만드는 것은 `Roles` 사용자의 역할을 확인 하려면 클래스입니다. 그림 2는이 워크플로 보여 줍니다.
+역할 프레임 워크를 쿠키에 사용자의 역할을 캐시 하도록 구성 된 경우는 `RoleManagerModule` ASP.NET 파이프라인 하는 동안 쿠키 만듭니다 [ `EndRequest` 이벤트](https://msdn.microsoft.com/library/system.web.httpapplication.endrequest.aspx)합니다. 후속 요청에서이 쿠키를 사용 하는 `PostAuthenticateRequest`때 되는 `RolePrincipal` 개체가 만들어집니다. 쿠키의 데이터를 구문 분석 되 고 사용자의 역할을 줄여줍니다를 채우는 데 사용할 경우 쿠키가 유효 하 고 만료 되지 않았는지는 `RolePrincipal` 에 대 한 호출을 만드는 것은 `Roles` 사용자의 역할을 확인 하려면 클래스입니다. 그림 2는이 워크플로 보여 줍니다.
 
 
 [![성능 향상을 위해 쿠키에 사용자의 역할 정보를 저장할 수 있습니다.](role-based-authorization-vb/_static/image5.png)](role-based-authorization-vb/_static/image4.png)
@@ -67,7 +67,7 @@ ASP.NET 파이프라인에 들어갈 때마다 요청자를 식별 하는 정보
 **그림 2**: 사용자 역할 정보에에서 저장할 수 성능 개선 하는 쿠키 ([전체 크기 이미지를 보려면 클릭](role-based-authorization-vb/_static/image6.png))
 
 
-역할 캐시 쿠키 메커니즘은 기본적으로 비활성화 됩니다. 통해 사용할 수 있습니다는 `<roleManager>`;에서 구성 태그 `Web.config`합니다. 사용 하 여 논의 [ `<roleManager>` 요소](https://msdn.microsoft.com/en-us/library/ms164660.aspx) 의 역할 공급자를 지정 하는 <a id="_msoanchor_4"> </a> [ *만들기 및 역할 관리* ](creating-and-managing-roles-vb.md) 자습서 이 요소 응용 프로그램에 이미 있어야 하므로 `Web.config` 파일입니다. 특성으로 지정 된 역할 캐시 쿠키 설정은 `<roleManager>`; 표 1에 대 한 요소를 요약 합니다.
+역할 캐시 쿠키 메커니즘은 기본적으로 비활성화 됩니다. 통해 사용할 수 있습니다는 `<roleManager>`;에서 구성 태그 `Web.config`합니다. 사용 하 여 논의 [ `<roleManager>` 요소](https://msdn.microsoft.com/library/ms164660.aspx) 의 역할 공급자를 지정 하는 <a id="_msoanchor_4"> </a> [ *만들기 및 역할 관리* ](creating-and-managing-roles-vb.md) 자습서 이 요소 응용 프로그램에 이미 있어야 하므로 `Web.config` 파일입니다. 특성으로 지정 된 역할 캐시 쿠키 설정은 `<roleManager>`; 표 1에 대 한 요소를 요약 합니다.
 
 > [!NOTE]
 > 표 1에 나와 있는 구성 설정이 결과 역할 캐시 쿠키의 속성을 지정 합니다. 에 대 한 자세한 내용은 쿠키, 작동 방법 및 다양 한 속성을 [이 쿠키 자습서](http://www.quirksmode.org/js/cookies.html)합니다.
@@ -97,12 +97,12 @@ ASP.NET 파이프라인에 들어갈 때마다 요청자를 식별 하는 정보
 그을 마쳤습니다. 예측이 역할 프레임 워크는 쿠키에 사용자의 역할을 캐시 합니다. 사용자의 브라우저에서 쿠키를 지원 하지 않거나 해당 쿠키에서 삭제 되거나 분실 하는 경우 어떻게 하 든,를 간단 –는 `RolePrincipal` 개체를 사용 합니다는 `Roles` 쿠키가 없는 (또는 잘못 되었거나 만료 된 하나)은 사용할 수 있는 경우에는 클래스입니다.
 
 > [!NOTE]
-> Microsoft의 Patterns &amp; 사례 그룹 영구적 역할 캐시 쿠키를 사용할 수 없게 합니다. 해커가 유효한 사용자의 쿠키에 액세스할 될 수 있는 경우 역할 캐시 쿠키를 소유한 역할 멤버 자격 증명에 충분 한 이므로 해당 사용자를 가장할 수 그 합니다. 이 문제가 발생할 가능성 쿠키는 사용자의 브라우저에 유지 하는 경우에 증가 합니다. 기타 보안 고려 사항:이 보안 권장 사항에 대 한 자세한 내용은 참조는 [ASP.NET 2.0에 대 한 보안 질문 목록](https://msdn.microsoft.com/en-us/library/ms998375.aspx)합니다.
+> Microsoft의 Patterns &amp; 사례 그룹 영구적 역할 캐시 쿠키를 사용할 수 없게 합니다. 해커가 유효한 사용자의 쿠키에 액세스할 될 수 있는 경우 역할 캐시 쿠키를 소유한 역할 멤버 자격 증명에 충분 한 이므로 해당 사용자를 가장할 수 그 합니다. 이 문제가 발생할 가능성 쿠키는 사용자의 브라우저에 유지 하는 경우에 증가 합니다. 기타 보안 고려 사항:이 보안 권장 사항에 대 한 자세한 내용은 참조는 [ASP.NET 2.0에 대 한 보안 질문 목록](https://msdn.microsoft.com/library/ms998375.aspx)합니다.
 
 
 ## <a name="step-1-defining-role-based-url-authorization-rules"></a>1 단계: 역할 기반 URL 권한 부여 규칙 정의
 
-에 설명 된 대로 <a id="_msoanchor_6"> </a> [ *사용자 기반 권한 부여* ](../membership/user-based-authorization-vb.md) 자습서, URL 권한 부여-사용자 또는 역할에서 역할에는 페이지 집합에 대 한 액세스를 제한 하는 수단을 제공 합니다 기초로 사용 됩니다. URL 권한 부여 규칙에 명시 된 `Web.config` 를 사용 하는 [ `<authorization>` 요소](https://msdn.microsoft.com/en-us/library/8d82143t.aspx) 와 `<allow>` 및 `<deny>` 자식 요소입니다. 이전 자습서에서 설명 하는 사용자와 관련 된 권한 부여 규칙 외에 각 `<allow>` 및 `<deny>` 자식 요소가 포함 될 수도 있습니다.
+에 설명 된 대로 <a id="_msoanchor_6"> </a> [ *사용자 기반 권한 부여* ](../membership/user-based-authorization-vb.md) 자습서, URL 권한 부여-사용자 또는 역할에서 역할에는 페이지 집합에 대 한 액세스를 제한 하는 수단을 제공 합니다 기초로 사용 됩니다. URL 권한 부여 규칙에 명시 된 `Web.config` 를 사용 하는 [ `<authorization>` 요소](https://msdn.microsoft.com/library/8d82143t.aspx) 와 `<allow>` 및 `<deny>` 자식 요소입니다. 이전 자습서에서 설명 하는 사용자와 관련 된 권한 부여 규칙 외에 각 `<allow>` 및 `<deny>` 자식 요소가 포함 될 수도 있습니다.
 
 - 특정 역할
 - 역할의 쉼표로 구분 된 목록
@@ -202,7 +202,7 @@ GridView에 시스템에 사용자 계정을 모두 나열 하는 페이지를 �
 
 
 > [!NOTE]
-> `UserGrid` GridView 비페이징 인터페이스에 사용자를 모두 나열 합니다. 이 간단한 모눈 인터페이스 시나리오에 적합 하지 않은 있는 여러 가지 이상의 합니다. 한 가지 옵션 페이징을 사용 하도록 설정 하 여 GridView를 구성 하는 것입니다. `Membership.GetAllUsers` 메서드에 두 개의 오버 로드가: 하나 입력된 된 매개 변수를 허용 하 고 페이지 크기와 인덱스 페이지에 대 한 정수 값 고를 반환 하는 사용자의 하위 집합에 지정 된 하나 및 모든 사용자가 반환 합니다. 두 번째 오버 로드에 사용할 수 보다 효율적으로 페이지에서 사용자가 사용자 계정의 정확한 하위 집합만 반환 하므로 보다는 *모든* 그 중입니다. 수천 개의 사용자 계정이 있는 경우에 예를 들어 선택한 문자로 시작 했는데 사용자는 해당 사용자만 표시 하는 필터 기반 인터페이스를 고려 하는 것이 좋습니다. [ `Membership.FindUsersByName` 메서드](https://msdn.microsoft.com/en-us/library/system.web.security.membership.findusersbyname.aspx) 필터 기반 사용자 인터페이스 빌드에 적합 합니다. 이러한 인터페이스는 이후 자습서에서 빌드 살펴보겠습니다.
+> `UserGrid` GridView 비페이징 인터페이스에 사용자를 모두 나열 합니다. 이 간단한 모눈 인터페이스 시나리오에 적합 하지 않은 있는 여러 가지 이상의 합니다. 한 가지 옵션 페이징을 사용 하도록 설정 하 여 GridView를 구성 하는 것입니다. `Membership.GetAllUsers` 메서드에 두 개의 오버 로드가: 하나 입력된 된 매개 변수를 허용 하 고 페이지 크기와 인덱스 페이지에 대 한 정수 값 고를 반환 하는 사용자의 하위 집합에 지정 된 하나 및 모든 사용자가 반환 합니다. 두 번째 오버 로드에 사용할 수 보다 효율적으로 페이지에서 사용자가 사용자 계정의 정확한 하위 집합만 반환 하므로 보다는 *모든* 그 중입니다. 수천 개의 사용자 계정이 있는 경우에 예를 들어 선택한 문자로 시작 했는데 사용자는 해당 사용자만 표시 하는 필터 기반 인터페이스를 고려 하는 것이 좋습니다. [ `Membership.FindUsersByName` 메서드](https://msdn.microsoft.com/library/system.web.security.membership.findusersbyname.aspx) 필터 기반 사용자 인터페이스 빌드에 적합 합니다. 이러한 인터페이스는 이후 자습서에서 빌드 살펴보겠습니다.
 
 
 GridView 컨트롤은 기본 제공를 편집 및 컨트롤이 SqlDataSource 또는 ObjectDataSource 같은 올바르게 구성 된 데이터 소스 제어에 바인딩되어 있을 때 지원 삭제를 제공 합니다. 그러나 `UserGrid` GridView에 프로그래밍 방식으로 바인딩된 데이터에 있습니다; 따라서 이러한 두 작업을 수행 하는 코드를 작성 해야 합니다. 특히를 수집 해야 GridView의에 대 한 이벤트 처리기를 만들 `RowEditing`, `RowCancelingEdit`, `RowUpdating`, 및 `RowDeleting` 방문자 GridView의 클릭 될 때 발생 하는 이벤트와 편집 취소, 업데이트 또는 삭제 단추입니다.
@@ -213,13 +213,13 @@ GridView의에 대 한 이벤트 처리기를 만들어 시작 `RowEditing`, `Ro
 
 `RowEditing` 및 `RowCancelingEdit` 설정 하면 이벤트 처리기입니다. GridView의 `EditIndex` 속성과 다음 rebind 모눈에 계정을 사용자의 목록입니다. 관심 있는 항목에서 발생 하는 `RowUpdating` 이벤트 처리기입니다. 이 이벤트 처리기 데이터 유효 하 고 다음 가져와 하 여 시작는 `UserName` 에서 편집 된 사용자 계정의 값은 `DataKeys` 컬렉션입니다. `Email` 및 `Comment` 텍스트 상자에 두 개의 TemplateFields' `EditItemTemplate` s 프로그래밍 방식으로 참조 합니다. 자신의 `Text` 속성 편집 된 전자 메일 주소와 메모를 포함 합니다.
 
-먼저 호출을 통해 작업을 수행 하기는 사용자의 정보를 가져와야 하는 멤버 API를 통해 사용자에 대 한 계정 업데이트 하기 위해 `Membership.GetUser(userName)`합니다. 반환 된 `MembershipUser` 개체의 `Email` 및 `Comment` 속성 그런 다음 편집 인터페이스에서 두 개의 텍스트 상자에 입력 된 값으로 업데이트 됩니다. 이러한 수정에 대 한 호출 함께 저장 되므로 마지막으로, [ `Membership.UpdateUser` ](https://msdn.microsoft.com/en-us/library/system.web.security.membership.updateuser.aspx)합니다. `RowUpdating` 를 미리 편집 인터페이스에 GridView 되돌리면 이벤트 처리기를 완료 합니다.
+먼저 호출을 통해 작업을 수행 하기는 사용자의 정보를 가져와야 하는 멤버 API를 통해 사용자에 대 한 계정 업데이트 하기 위해 `Membership.GetUser(userName)`합니다. 반환 된 `MembershipUser` 개체의 `Email` 및 `Comment` 속성 그런 다음 편집 인터페이스에서 두 개의 텍스트 상자에 입력 된 값으로 업데이트 됩니다. 이러한 수정에 대 한 호출 함께 저장 되므로 마지막으로, [ `Membership.UpdateUser` ](https://msdn.microsoft.com/library/system.web.security.membership.updateuser.aspx)합니다. `RowUpdating` 를 미리 편집 인터페이스에 GridView 되돌리면 이벤트 처리기를 완료 합니다.
 
 다음으로 만듭니다는 `RowDeleting` RowDeleting 이벤트 처리기는 다음 코드를 추가 합니다.
 
 [!code-vb[Main](role-based-authorization-vb/samples/sample8.vb)]
 
-밖으로 시작 되는 위의 이벤트 처리기는 `UserName` GridView의에서 값 `DataKeys` 컬렉션;이 `UserName` 다음 값은 멤버 자격 클래스에 [ `DeleteUser` 메서드](https://msdn.microsoft.com/en-us/library/system.web.security.membership.deleteuser.aspx)합니다. `DeleteUser` 메서드 (예: 어떤 역할이이 사용자가 속한) 관련된 멤버 자격 데이터를 포함 하 여 시스템에서 사용자 계정을 삭제 합니다. 사용자, 모눈의 삭제 한 후 `EditIndex` (경우에 사용자 편집 모드에서 다른 행 되는 동안 삭제를 클릭)-1로 설정 및 `BindUserGrid` 메서드를 호출 합니다.
+밖으로 시작 되는 위의 이벤트 처리기는 `UserName` GridView의에서 값 `DataKeys` 컬렉션;이 `UserName` 다음 값은 멤버 자격 클래스에 [ `DeleteUser` 메서드](https://msdn.microsoft.com/library/system.web.security.membership.deleteuser.aspx)합니다. `DeleteUser` 메서드 (예: 어떤 역할이이 사용자가 속한) 관련된 멤버 자격 데이터를 포함 하 여 시스템에서 사용자 계정을 삭제 합니다. 사용자, 모눈의 삭제 한 후 `EditIndex` (경우에 사용자 편집 모드에서 다른 행 되는 동안 삭제를 클릭)-1로 설정 및 `BindUserGrid` 메서드를 호출 합니다.
 
 > [!NOTE]
 > 삭제 단추는 모든 종류의 사용자 로부터 사용자 계정을 삭제 하기 전에 확인 필요 하지 않습니다. 확인해 추가할 특정 형태의 사용자에 게 확인을 실수로 삭제 되는 계정의 가능성을 줄일 수 있습니다. 작업을 확인 하는 가장 쉬운 방법 중 하나는 클라이언트 쪽 확인 대화 상자입니다. 이 방법에 대 한 자세한 내용은 참조 하십시오. [추가 클라이언트 쪽 확인 때 삭제](https://asp.net/learn/data-access/tutorial-42-vb.aspx)합니다.
@@ -305,7 +305,7 @@ GridView에서 레코드를 열거 데이터 GridView에 바인딩될, 때마다
 편집 하며 삭제할 링크 단추가 참조 편집 모드에 있지 않은 데이터 행을 다루는 하는 경우 및 해당 `Visible` 속성에서 반환 하는 부울 값에 따라 설정 됩니다는 `User` 개체의 `IsInRole(roleName)` 메서드. `User` 개체가 참조 하 여 만든 사용자는 `RoleManagerModule`; 따라서는 `IsInRole(roleName)` 메서드 역할 API를 사용 하 여 현재 방문자에 속하는지 여부를 결정 *roleName*합니다.
 
 > [!NOTE]
-> 사용할 수도 역할 클래스를 직접 호출을 대체 `User.IsInRole(roleName)` 을 호출 하 여는 [ `Roles.IsUserInRole(roleName)` 메서드](https://msdn.microsoft.com/en-us/library/system.web.security.roles.isuserinrole.aspx)합니다. Principal 개체를 사용 하기로 `IsInRole(roleName)` 메서드이 예제에서 직접 역할 API를 사용 하 여 보다 더 효율적 이므로 합니다. 이 자습서의 앞부분에서 역할 관리자 캐시를 쿠키에 사용자의 역할을 구성 했습니다. 이 캐시 된 쿠키 데이터만 사용 하면 보안 주체의 `IsInRole(roleName)` 메서드는; 역할 API를 직접 호출에는 항상 역할 저장소에 이동 포함 합니다. 역할이 쿠키에 캐시 되지 않으므로 경우에 주 개체 호출 `IsInRole(roleName)` 요청 하는 동안 처음으로 결과 캐시에 대 한 호출 된 메서드가 일반적으로 더 효율적입니다. 역할 API을 반면에 캐싱을 수행 하지 않습니다. 때문에 `RowCreated` 이벤트는 GridView의 모든 행에 대해 한 번 발생를 사용 하 여 `User.IsInRole(roleName)` 반면 역할 저장소에 한 번만 포함 `Roles.IsUserInRole(roleName)` 필요 *N* 줄어들며, 여기서 *N* 은 눈금에 표시 하는 사용자 계정 수를 지정 합니다.
+> 사용할 수도 역할 클래스를 직접 호출을 대체 `User.IsInRole(roleName)` 을 호출 하 여는 [ `Roles.IsUserInRole(roleName)` 메서드](https://msdn.microsoft.com/library/system.web.security.roles.isuserinrole.aspx)합니다. Principal 개체를 사용 하기로 `IsInRole(roleName)` 메서드이 예제에서 직접 역할 API를 사용 하 여 보다 더 효율적 이므로 합니다. 이 자습서의 앞부분에서 역할 관리자 캐시를 쿠키에 사용자의 역할을 구성 했습니다. 이 캐시 된 쿠키 데이터만 사용 하면 보안 주체의 `IsInRole(roleName)` 메서드는; 역할 API를 직접 호출에는 항상 역할 저장소에 이동 포함 합니다. 역할이 쿠키에 캐시 되지 않으므로 경우에 주 개체 호출 `IsInRole(roleName)` 요청 하는 동안 처음으로 결과 캐시에 대 한 호출 된 메서드가 일반적으로 더 효율적입니다. 역할 API을 반면에 캐싱을 수행 하지 않습니다. 때문에 `RowCreated` 이벤트는 GridView의 모든 행에 대해 한 번 발생를 사용 하 여 `User.IsInRole(roleName)` 반면 역할 저장소에 한 번만 포함 `Roles.IsUserInRole(roleName)` 필요 *N* 줄어들며, 여기서 *N* 은 눈금에 표시 하는 사용자 계정 수를 지정 합니다.
 
 
 편집 단추 `Visible` 속성이 `True` 이 페이지를 방문 하는 사용자가 관리자 또는 감독자 역할;에 그렇지 않으면 설정은 `False`합니다. 삭제 단추 `Visible` 속성이 `True` 관리자 역할에 사용자가 경우에 합니다.
@@ -341,7 +341,7 @@ GridView에서 레코드를 열거 데이터 GridView에 바인딩될, 때마다
 
 삭제만 관리자에 게 기능을 제한 하는 단계 2에서 감독자 및 관리자 역할에 사용자에 게 기능을 편집 합니다. 이 프로그래밍 기술을 통해 권한이 없는 사용자가 연결 된 사용자 인터페이스 요소 숨기는 방식으로 수행 되었습니다. 이러한 측정값 권한이 없는 사용자 권한 있는 작업을 수행할 수 됩니다 수 있는지를 보장 하지 않습니다. 나중에 추가 된 사용자 인터페이스 요소 또는 권한이 없는 사용자가 숨기려는 잊어버린 있을 수 있습니다. 또는 해커가 원하는 메서드를 실행 하 여 ASP.NET 페이지에 다른 방법으로 검색할 수 있습니다.
 
-해당 클래스 또는 메서드를 장식 하는 기능의 특정 부분 권한이 없는 사용자가 액세스할 수 없도록 하는 쉬운 방법을 [ `PrincipalPermission` 특성](https://msdn.microsoft.com/en-us/library/system.security.permissions.principalpermissionattribute.aspx)합니다. .NET 런타임 클래스를 사용 하 여 또는 메서드 중 하나를 실행 하는 경우 현재 보안 컨텍스트에 사용 권한을 확인 합니다. `PrincipalPermission` 특성은 이러한 규칙을 정의할 수 있습니다 하는 메커니즘을 제공 합니다.
+해당 클래스 또는 메서드를 장식 하는 기능의 특정 부분 권한이 없는 사용자가 액세스할 수 없도록 하는 쉬운 방법을 [ `PrincipalPermission` 특성](https://msdn.microsoft.com/library/system.security.permissions.principalpermissionattribute.aspx)합니다. .NET 런타임 클래스를 사용 하 여 또는 메서드 중 하나를 실행 하는 경우 현재 보안 컨텍스트에 사용 권한을 확인 합니다. `PrincipalPermission` 특성은 이러한 규칙을 정의할 수 있습니다 하는 메커니즘을 제공 합니다.
 
 사용 하 여 살펴보았습니다는 `PrincipalPermission` 다시 특성는 <a id="_msoanchor_9"> </a> [ *사용자 기반 권한 부여* ](../membership/user-based-authorization-vb.md) 자습서입니다. 특히 여 GridView를 장식 하는 방법에 대해 살펴보았습니다 `SelectedIndexChanged` 및 `RowDeleting` 이벤트 처리기 것만 통해 이루어집니다 인증 된 사용자와 Tito, 각각 되도록 합니다. `PrincipalPermission` 특성의 역할과 마찬가지로 작동 합니다.
 
@@ -382,8 +382,8 @@ ASP.NET 페이지 외에도 많은 응용 프로그램은 레이블에도 비즈
 
 - [비즈니스 및 데이터 계층을 사용 하 여 권한 부여 규칙 추가`PrincipalPermissionAttributes`](https://weblogs.asp.net/scottgu/archive/2006/10/04/Tip_2F00_Trick_3A00_-Adding-Authorization-Rules-to-Business-and-Data-Layers-using-PrincipalPermissionAttributes.aspx)
 - [ASP.NET 2.0의 검사 멤버 자격, 역할 및 프로필: 역할 작업](http://aspnet.4guysfromrolla.com/articles/121405-1.aspx)
-- [ASP.NET 2.0에 대 한 보안 질문 목록](https://msdn.microsoft.com/en-us/library/ms998375.aspx)
-- [에 대 한 기술 문서는 `<roleManager>` 요소](https://msdn.microsoft.com/en-us/library/ms164660.aspx)
+- [ASP.NET 2.0에 대 한 보안 질문 목록](https://msdn.microsoft.com/library/ms998375.aspx)
+- [에 대 한 기술 문서는 `<roleManager>` 요소](https://msdn.microsoft.com/library/ms164660.aspx)
 
 ### <a name="about-the-author"></a>작성자 정보
 

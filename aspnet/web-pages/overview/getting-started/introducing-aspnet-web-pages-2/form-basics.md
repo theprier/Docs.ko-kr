@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/form-basics
 msc.type: authoredcontent
-ms.openlocfilehash: 97e4a2a1794dbdccf80f0b44c1246c743fa23019
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 68056759b2e80230e5fd2c0f9b2d2a89b549cf37
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introducing-aspnet-web-pages---html-form-basics"></a>HTML 양식 기본 ASP.NET 웹 페이지-소개
 ====================
@@ -220,7 +220,7 @@ SQL 문은 본다면, 하는 경우 대/소문자 구분 하지 않습니다 &md
 > 
 > **기억해 야 합니다.** 자리 표시자를 사용 하 여 (같은 `@0`)는 SQL 명령에 값을 전달할 *매우 중요* 보안에 대 한 합니다. 변수 데이터에 대 한 자리 표시자와 여기에서 보이는 방식은 유일한 방법은 SQL 명령 생성 해야 합니다.
 > 
-> (연결) 리터럴 텍스트와 사용자에 게 서 얻을 값을 함께 배치 하 여 SQL 문을 생성 하지 않습니다. 사이트를 열고 SQL 문으로 사용자 입력을 연결 하는 *SQL 주입 공격* 악의적인 사용자 페이지에 데이터베이스 hack 하는 값을 제출 하는 경우. (읽어볼 수 있는 문서에 [SQL 주입](https://msdn.microsoft.com/en-us/library/ms161953.aspx) MSDN 웹 사이트입니다.)
+> (연결) 리터럴 텍스트와 사용자에 게 서 얻을 값을 함께 배치 하 여 SQL 문을 생성 하지 않습니다. 사이트를 열고 SQL 문으로 사용자 입력을 연결 하는 *SQL 주입 공격* 악의적인 사용자 페이지에 데이터베이스 hack 하는 값을 제출 하는 경우. (읽어볼 수 있는 문서에 [SQL 주입](https://msdn.microsoft.com/library/ms161953.aspx) MSDN 웹 사이트입니다.)
 
 
 ## <a name="updating-the-movies-page-with-search-code"></a>검색 코드와 함께 동영상 페이지를 업데이트합니다.

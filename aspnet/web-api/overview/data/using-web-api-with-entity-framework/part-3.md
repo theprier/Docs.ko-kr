@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-3
 msc.type: authoredcontent
-ms.openlocfilehash: df75a69644033cc76fee86b5a9692ab65beb4d01
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1ca627397f0f100d13388f9afc27ff481886e098
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="use-code-first-migrations-to-seed-the-database"></a>Code First 마이그레이션을 사용 하 여 데이터베이스의 초기값
 ====================
@@ -24,7 +24,7 @@ ms.lasthandoff: 11/10/2017
 
 [완료 된 프로젝트를 다운로드 합니다.](https://github.com/MikeWasson/BookService)
 
-이 섹션을 사용 하 여 [Code First 마이그레이션을](https://msdn.microsoft.com/en-us/data/jj591621) 를 테스트 데이터로 데이터베이스를 시드하는 EF에 있습니다.
+이 섹션을 사용 하 여 [Code First 마이그레이션을](https://msdn.microsoft.com/data/jj591621) 를 테스트 데이터로 데이터베이스를 시드하는 EF에 있습니다.
 
 **도구** 메뉴 선택 **라이브러리 패키지 관리자**을 선택한 후 **패키지 관리자 콘솔**합니다. 패키지 관리자 콘솔 창에서 다음 명령을 입력 합니다.
 
@@ -46,7 +46,7 @@ Configuration.cs 파일을 엽니다. 다음 추가 **를 사용 하 여** 문.
 
 [!code-console[Main](part-3/samples/sample4.cmd)]
 
-첫 번째 명령은 데이터베이스가 생성 하는 코드를 생성 하 고 두 번째 명령은 해당 코드를 실행 합니다. 데이터베이스를 로컬로 사용 하 여 만들어집니다 [LocalDB](https://msdn.microsoft.com/en-us/library/hh510202.aspx)합니다.
+첫 번째 명령은 데이터베이스가 생성 하는 코드를 생성 하 고 두 번째 명령은 해당 코드를 실행 합니다. 데이터베이스를 로컬로 사용 하 여 만들어집니다 [LocalDB](https://msdn.microsoft.com/library/hh510202.aspx)합니다.
 
 ![](part-3/_static/image2.png)
 
@@ -75,10 +75,10 @@ API를 통해 데이터베이스에 대해 CRUD 작업 합니다. 다음은 API�
 | 설명서 |  |
 | --- | -- |
 | /Api/books 가져오기 | 모든 책을 가져옵니다. |
-| 가져오기 /api/설명서 / {id} | 책 id 가져오기 |
+| GET /api/books/{id} | 책 id 가져오기 |
 | 게시/api/설명서 | 새 책을 만듭니다. |
-| PUT /api/설명서 / {id} | 기존 책을 업데이트 합니다. |
-| 삭제 /api/설명서 / {id} | 책을 삭제 합니다. |
+| PUT /api/books/{id} | 기존 책을 업데이트 합니다. |
+| DELETE /api/books/{id} | 책을 삭제 합니다. |
 
 ## <a name="view-the-database-optional"></a>(선택 사항) 데이터베이스 보기
 

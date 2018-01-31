@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/signalr-1x-hubs-api-guide-javascript-client
 msc.type: authoredcontent
-ms.openlocfilehash: 56931827a1a1edf003d2662b2d36964b9b6f3761
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f92470b2022f343cfd6d822abb255dc19947b4d1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="signalr-1x-hubs-api-guide---javascript-client"></a>SignalR 1.x 허브 API 가이드-JavaScript 클라이언트
 ====================
@@ -61,7 +61,7 @@ ms.lasthandoff: 11/10/2017
 - [SignalR 허브 API 가이드-서버](../guide-to-the-api/hubs-api-guide-server.md)
 - [SignalR 허브 API 가이드-.NET 클라이언트](../guide-to-the-api/hubs-api-guide-net-client.md)
 
-API 참조 항목의 링크를.NET 4.5 버전의 API 되도록합니다. .NET 4를 사용 하 여 참조 [.NET 4 버전의 API 항목](https://msdn.microsoft.com/en-us/library/jj891075(v=vs.100).aspx)합니다.
+API 참조 항목의 링크를.NET 4.5 버전의 API 되도록합니다. .NET 4를 사용 하 여 참조 [.NET 4 버전의 API 항목](https://msdn.microsoft.com/library/jj891075(v=vs.100).aspx)합니다.
 
 <a id="genproxy"></a>
 
@@ -125,7 +125,7 @@ ASP.NET Web Forms 응용 프로그램에서 사용 하 여 `ResolveClientUrl` �
 
 [!code-aspx[Main](signalr-1x-hubs-api-guide-javascript-client/samples/sample7.aspx)]
 
-일반적으로 CSS 또는 JavaScript 파일에 대 한 사용 하는 "/ signalr/허브" URL을 지정 하는 데 동일한 방법을 사용 합니다. 물결표를 사용 하지 않고 URL을 지정 하는 경우 일부 시나리오에서는 응용 프로그램은 제대로 경우 작동 IIS Express를 사용 하 여 Visual Studio에서 테스트 되었지만 전체 IIS를 배포할 때 404 오류와 함께 실패 합니다. 자세한 내용은 참조 **루트 수준 리소스에 대 한 참조를 확인** 에 [ASP.NET 웹 프로젝트에 대 한 Visual Studio의 웹 서버](https://msdn.microsoft.com/en-us/library/58wxa9w5.aspx) MSDN 사이트입니다.
+일반적으로 CSS 또는 JavaScript 파일에 대 한 사용 하는 "/ signalr/허브" URL을 지정 하는 데 동일한 방법을 사용 합니다. 물결표를 사용 하지 않고 URL을 지정 하는 경우 일부 시나리오에서는 응용 프로그램은 제대로 경우 작동 IIS Express를 사용 하 여 Visual Studio에서 테스트 되었지만 전체 IIS를 배포할 때 404 오류와 함께 실패 합니다. 자세한 내용은 참조 **루트 수준 리소스에 대 한 참조를 확인** 에 [ASP.NET 웹 프로젝트에 대 한 Visual Studio의 웹 서버](https://msdn.microsoft.com/library/58wxa9w5.aspx) MSDN 사이트입니다.
 
 디버그 모드에서 Visual Studio 2012에서 웹 프로젝트를 실행 하 고 Internet Explorer를 사용 하 여 브라우저로 프록시 파일에서 확인할 수 있습니다 때 **솔루션 탐색기** 아래 **스크립트 문서**에 나타난 것 처럼는 다음 그림입니다.
 
@@ -287,7 +287,7 @@ ASP.NET Web Forms 응용 프로그램에서 사용 하 여 `ResolveClientUrl` �
 
 전송 메서드를 지정 하기 위한 다음 값을 사용할 수 있습니다.
 
-- "Websocket"
+- "webSockets"
 - "foreverFrame"
 - "serverSentEvents"
 - "longPolling"

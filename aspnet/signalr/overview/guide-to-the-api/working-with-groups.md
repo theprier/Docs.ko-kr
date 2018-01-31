@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/guide-to-the-api/working-with-groups
 msc.type: authoredcontent
-ms.openlocfilehash: 3befcdbbc735dc4f64c714ba583e026c0c19465d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 11f5be1ac4e74b692f0db3daac971a2c9d74a64c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="working-with-groups-in-signalr"></a>SignalR에서 그룹 사용
 ====================
@@ -64,7 +64,7 @@ SignalR에서 그룹 연결 된 클라이언트의 지정 된 하위 집합에 �
 
 ## <a name="adding-and-removing-users"></a>사용자 추가 및 제거
 
-호출을 추가 하거나 그룹에서 사용자를 제거 하려면는 [추가](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.igroupmanager.add(v=vs.111).aspx) 또는 [제거](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.igroupmanager.remove(v=vs.111).aspx) 메서드 및 사용자의 연결 id와 그룹의 이름을 매개 변수로 전달 합니다. 연결이 끝나면 그룹에서 사용자를 수동으로 제거 하 고 필요가 없습니다.
+호출을 추가 하거나 그룹에서 사용자를 제거 하려면는 [추가](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.igroupmanager.add(v=vs.111).aspx) 또는 [제거](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.igroupmanager.remove(v=vs.111).aspx) 메서드 및 사용자의 연결 id와 그룹의 이름을 매개 변수로 전달 합니다. 연결이 끝나면 그룹에서 사용자를 수동으로 제거 하 고 필요가 없습니다.
 
 다음 예제와 `Groups.Add` 및 `Groups.Remove` 허브 메서드에서 사용 하는 방법입니다.
 

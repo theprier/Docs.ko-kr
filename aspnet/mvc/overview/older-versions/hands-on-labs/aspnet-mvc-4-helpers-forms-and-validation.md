@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-helpers-forms-and-validation
 msc.type: authoredcontent
-ms.openlocfilehash: 4dd10430778dc51fef1199315ee02eb2cd4970ba
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 925d659f42496045089ba056e194ac977c37a8de
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4-helpers-forms-and-validation"></a>ASP.NET MVC 4 도우미, 폼 및 유효성 검사
 ====================
@@ -36,7 +36,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > 이 랩에서 원본 폴더에 제공 된 샘플 웹 응용 프로그램에 사소한 변경 내용을 적용 하 여 이전에 설명 된 새로운 기능 및 향상 된 기능을 통해 설명 합니다.
 > 
-> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [https://www.microsoft.com/en-us/download/29843](https://www.microsoft.com/en-us/download/29843)합니다.
+> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843)합니다.
 
 
 <a id="Objectives"></a>
@@ -228,7 +228,7 @@ StoreManager 인덱스 페이지에 하나 이상의 잠재적인 문제가: 제
 이 태스크에서는 새 메서드 추가 **Truncate** 에 **HTML** ASP.NET MVC 뷰 내에서 노출 된 개체입니다. 이 수행 하려면 구현 합니다는 **확장 메서드** 기본 제공 되 **System.Web.Mvc.HtmlHelper** ASP.NET MVC에서 제공 하는 클래스입니다.
 
 > [!NOTE]
-> 에 대 한 자세한 내용은 **확장 메서드**,이 msdn 문서를 참조 하십시오. [https://msdn.microsoft.com/en-us/library/bb383977.aspx](https://msdn.microsoft.com/en-us/library/bb383977.aspx)합니다.
+> 에 대 한 자세한 내용은 **확장 메서드**,이 msdn 문서를 참조 하십시오. [https://msdn.microsoft.com/library/bb383977.aspx](https://msdn.microsoft.com/library/bb383977.aspx).
 
 
 1. 열기는 **시작** 솔루션에 있는 **소스/e x 2-AddingAnHTMLHelper/시작/** 폴더입니다. 그렇지 않은 경우 계속 사용할 수도 있습니다는 **끝** 솔루션, 이전 연습을 완료 하 여 가져옵니다.
@@ -745,7 +745,7 @@ StoreManager 인덱스 페이지에 하나 이상의 잠재적인 문제가: 제
     > 각 클라이언트 유효성 검사 규칙에 대해 비 가시적인 jQuery 추가 데이터를 사용 하 여 특성-val-*rulename*=&quot;*메시지*&quot;합니다. 아래 해당 Unobtrusive는 태그의 목록 jQuery 클라이언트 유효성 검사를 수행 하려면 html 입력된 필드에 삽입 합니다.
     > 
     > - 데이터 val
-    > - 데이터-val 수
+    > - Data-val-number
     > - 데이터 val 범위
     > - 데이터 val-범위 min/데이터 val-범위 최대값
     > - 데이터 val 필요

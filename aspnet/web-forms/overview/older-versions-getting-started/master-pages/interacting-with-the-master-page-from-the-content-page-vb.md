@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-master-page-from-the-content-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2f5cb1712922c355c99bde9f8252dc84f1f590ec
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a9020115e6348d30350f8fff493efe88bd0d4c37
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="interacting-with-the-master-page-from-the-content-page-vb"></a>콘텐츠 페이지 (VB)에서 마스터 페이지와 상호 작용
 ====================
@@ -192,9 +192,9 @@ Label 컨트롤은 마스터 페이지 내에서 보호 된 멤버 변수로 구
 
 ### <a name="using-the-loosely-typedpagemasterproperty"></a>자유로운 형식의 사용 하 여`Page.Master`속성
 
-모든 ASP.NET 웹 페이지에서 파생 되어야 합니다는 `Page` 에 있는 클래스는 `System.Web.UI` 네임 스페이스입니다. `Page` 클래스를 포함 한 [ `Master` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.page.master.aspx) 페이지의 마스터 페이지에 대 한 참조를 반환 하 합니다. 마스터 페이지의 페이지에 없는 경우 `Master` 반환 `Nothing`합니다.
+모든 ASP.NET 웹 페이지에서 파생 되어야 합니다는 `Page` 에 있는 클래스는 `System.Web.UI` 네임 스페이스입니다. `Page` 클래스를 포함 한 [ `Master` 속성](https://msdn.microsoft.com/library/system.web.ui.page.master.aspx) 페이지의 마스터 페이지에 대 한 참조를 반환 하 합니다. 마스터 페이지의 페이지에 없는 경우 `Master` 반환 `Nothing`합니다.
 
-`Master` 형식의 개체를 반환 [ `MasterPage` ](https://msdn.microsoft.com/en-us/library/system.web.ui.masterpage.aspx) (에 `System.Web.UI` 네임 스페이스)가 모든 마스터 페이지에서 파생 되는 기본 유형입니다. 따라서를 공용 속성을 사용 하거나 캐스팅 해야 했습니다 웹 사이트의 마스터 페이지에 정의 된 메서드는 `MasterPage` 에서 반환 된 개체는 `Master` 속성을 적절 한 형식입니다. 이 마스터 페이지 파일 이름을 때문에 `Site.master`, 코드 숨김 클래스 이름이 `Site`합니다. 따라서 다음 코드 캐스트는 `Page.Master` 의 인스턴스에 대 한 속성은 `Site` 클래스입니다.
+`Master` 형식의 개체를 반환 [ `MasterPage` ](https://msdn.microsoft.com/library/system.web.ui.masterpage.aspx) (에 `System.Web.UI` 네임 스페이스)가 모든 마스터 페이지에서 파생 되는 기본 유형입니다. 따라서를 공용 속성을 사용 하거나 캐스팅 해야 했습니다 웹 사이트의 마스터 페이지에 정의 된 메서드는 `MasterPage` 에서 반환 된 개체는 `Master` 속성을 적절 한 형식입니다. 이 마스터 페이지 파일 이름을 때문에 `Site.master`, 코드 숨김 클래스 이름이 `Site`합니다. 따라서 다음 코드 캐스트는 `Page.Master` 의 인스턴스에 대 한 속성은 `Site` 클래스입니다.
 
 
 [!code-vb[Main](interacting-with-the-master-page-from-the-content-page-vb/samples/sample8.vb)]
@@ -217,7 +217,7 @@ Label 컨트롤은 마스터 페이지 내에서 보호 된 멤버 변수로 구
 
 ASP.NET 페이지를 열어 볼 때마다 발생 하는 자동 코드 생성을 사용 하면 일부 대신 흥미롭고 유용한 가능성에 대 한 어 합니다. 마스터 페이지의 경우 어떤 마스터 페이지 콘텐츠 페이지에서 사용 되 고 ASP.NET 엔진 위치도 제공 하는 경우 생성 강력한 형식의 `Master` 속성을 수행해 줍니다.
 
-사용 하 여는 [ `@MasterType` 지시문](https://msdn.microsoft.com/en-us/library/ms228274.aspx) 콘텐츠 페이지의 마스터 페이지 형식의 ASP.NET 엔진에 알릴 수 있습니다. `@MasterType` 지시문 마스터 페이지의 유형 이름 또는 해당 파일 경로 사용할 수 있습니다. 지정 하는 `AddProduct.aspx` 사용 하 여 페이지 `Site.master` 의 마스터 페이지의 맨 위에 다음 지시문을 추가 `AddProduct.aspx`:
+사용 하 여는 [ `@MasterType` 지시문](https://msdn.microsoft.com/library/ms228274.aspx) 콘텐츠 페이지의 마스터 페이지 형식의 ASP.NET 엔진에 알릴 수 있습니다. `@MasterType` 지시문 마스터 페이지의 유형 이름 또는 해당 파일 경로 사용할 수 있습니다. 지정 하는 `AddProduct.aspx` 사용 하 여 페이지 `Site.master` 의 마스터 페이지의 맨 위에 다음 지시문을 추가 `AddProduct.aspx`:
 
 
 [!code-aspx[Main](interacting-with-the-master-page-from-the-content-page-vb/samples/sample9.aspx)]

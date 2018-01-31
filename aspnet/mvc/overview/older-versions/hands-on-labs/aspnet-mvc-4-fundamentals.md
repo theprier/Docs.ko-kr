@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-fundamentals
 msc.type: authoredcontent
-ms.openlocfilehash: 086084b63cceca1c2d4e0bd4e5b654aaad6637a9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 468f6d5dabb645b1c005680dc5a1ffc4debd63b6
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4-fundamentals"></a>ASP.NET MVC 4 기본 사항
 ====================
@@ -32,7 +32,7 @@ ms.lasthandoff: 11/10/2017
 > > 이 실습 랩에서 개발자가의 HTML 및 JavaScript 등의 웹 개발 기술을 경험 가정 합니다.
 > 
 > 
-> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [https://www.microsoft.com/en-us/download/29843](https://www.microsoft.com/en-us/download/29843)합니다.
+> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843)합니다.
 
 
 <a id="The_Music_Store_application"></a>
@@ -319,7 +319,7 @@ MVC 프레임 워크를 사용 하지 않는 ASP.NET 응용 프로그램에서 �
     > [!NOTE]
     > 사용 하는 **HttpUtility.HtmlEncode** 같은 링크와 보기에 Javascript 주입에서 사용자가 방지 하는 유틸리티 메서드를   **/저장소/찾아보기? 장르 =&lt;스크립트&gt;window.location='[http://hackersite.com](http://hackersite.com)'&lt;/script&gt;**합니다.
     > 
-    > 자세한 내용을 보려면 방문 하세요 [이 msdn 문서](https://msdn.microsoft.com/en-us/library/a2a4yykt(v=VS.80).aspx)합니다.
+    > 자세한 내용을 보려면 방문 하세요 [이 msdn 문서](https://msdn.microsoft.com/library/a2a4yykt(v=VS.80).aspx)합니다.
 
 <a id="Ex3Task2"></a>
 
@@ -594,7 +594,7 @@ MVC 프레임 워크를 사용 하지 않는 ASP.NET 응용 프로그램에서 �
 
     ![뷰 추가](aspnet-mvc-4-fundamentals/_static/image23.png "뷰 추가")
 
-    *뷰 추가*
+    *보기 추가*
 3. 때문에 **보기 대화 상자 추가** 에서 호출 되었습니다는 **StoreController**, 템플릿 보기에 기본적으로 추가 되는 **\Views\Store\Index.cshtml** 파일입니다. 확인은 **보기를 만들 강력한-입력 한-** 확인란을 선택한 후 **StoreIndexViewModel** 으로 **모델 클래스**합니다. 또한 선택한 뷰 엔진을 반드시 **Razor**합니다. **추가**를 클릭합니다.
 
     ![뷰 추가 대화 상자](aspnet-mvc-4-fundamentals/_static/image24.png "뷰 추가 대화 상자")
@@ -964,7 +964,7 @@ ViewBag 동적 컬렉션의 목록을 전달 하는 데 사용할 이제 &quot; 
         *SimpleMembership 솔루션에 포함*
 
         > [!NOTE]
-        > 에 대 한 자세한 내용을 보려면 [OAuthWebSecurity](https://msdn.microsoft.com/en-us/library/jj158393(v=vs.111).aspx) MSDN에 있습니다.
+        > 에 대 한 자세한 내용을 보려면 [OAuthWebSecurity](https://msdn.microsoft.com/library/jj158393(v=vs.111).aspx) MSDN에 있습니다.
 
 > [!NOTE]
 > 다음 Windows Azure 웹 사이트에이 응용 프로그램을 배포할 수는 또한 [부록 b: 게시 웹 배포를 사용 하 여 ASP.NET MVC 4 응용 프로그램](#AppendixB)합니다.

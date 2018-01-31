@@ -11,11 +11,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/advanced/calling-a-web-api-from-a-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: 41f014e1d23d46ed28c8c1be5ee92f1a6d878ad9
-ms.sourcegitcommit: f1436107b4c022b26f5235dddef103cec5aa6bff
+ms.openlocfilehash: 8156bd1c7cfc111a6a121a89d845ca284ee1b7af
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/15/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="call-a-web-api-from-a-net-client-c"></a>.NET 클라이언트 (C#)에서 Web API를 호출 합니다.
 ====================
@@ -23,16 +23,16 @@ ms.lasthandoff: 12/15/2017
 
 [완료 된 프로젝트를 다운로드 합니다.](https://github.com/aspnet/Docs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample)
 
-.NET 응용 프로그램에서 web API를 호출 하는 방법을 보여 주는이 자습서를 사용 하 여 [System.Net.Http.HttpClient 합니다.](https://msdn.microsoft.com/en-us/library/system.net.http.httpclient(v=vs.110).aspx)
+.NET 응용 프로그램에서 web API를 호출 하는 방법을 보여 주는이 자습서를 사용 하 여 [System.Net.Http.HttpClient 합니다.](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx)
 
 이 자습서에서는 다음 web API를 사용 하는 클라이언트 응용 프로그램 작성 됩니다.
 
 | 작업 | HTTP 메서드 | 상대 URI |
 | --- | --- | --- |
-| 제품을 ID 별로 가져옵니다. | 가져오기 | /api/제품/*id* |
+| 제품을 ID 별로 가져옵니다. | 가져오기 | /api/products/*id* |
 | 새 제품 만들기 | 올리기 | / api/제품 |
-| 제품 업데이트 | PUT | /api/제품/*id* |
-| 제품 삭제 | Delete | /api/제품/*id* |
+| 제품 업데이트 | PUT | /api/products/*id* |
+| 제품 삭제 | Delete | /api/products/*id* |
 
 ASP.NET Web API를 사용 하 여이 API를 구현 하는 방법을 알아보려면 참조 [CRUD 작업을 지원 합니다. 해당 웹 API를 만드는](xref:web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 )합니다.
@@ -109,7 +109,7 @@ Json.NET은.NET을 위한 인기 있는 고성능 JSON 프레임 워크입니다
 
 **GetAsync** 메서드 HTTP GET 요청을 보냅니다. 메서드가 완료 될 때 반환 된 **HttpResponseMessage** HTTP 응답이 들어 있는입니다. 응답에 상태 코드가 성공 코드 이면 응답 본문에는 제품의 JSON 표현을 포함 합니다. 호출 **ReadAsAsync** JSON 페이로드를 deserialize 하는 데는 `Product` 인스턴스. **ReadAsAsync** 응답 본문은 임의로 큰 수 있기 때문에 메서드는 비동기입니다.
 
-**HttpClient** HTTP 응답에 오류 코드가 포함 되어 있으면 예외를 throw 하지 않습니다. 대신,는 **IsSuccessStatusCode** 속성은 **false** 면 상태는 오류 코드입니다. HTTP 오류 코드 예외를 처리 하는 것을 선호 하는 경우 호출 [HttpResponseMessage.EnsureSuccessStatusCode](https://msdn.microsoft.com/en-us/library/system.net.http.httpresponsemessage.ensuresuccessstatuscode(v=vs.110).aspx) 응답 개체에서 합니다. `EnsureSuccessStatusCode`상태 코드 200 범위를 벗어나는 경우 예외를 throw&ndash;299 합니다. **HttpClient** 다른 이유로 예외를 throw 할 수 &mdash; 요청 시간이 초과 하는 경우 등입니다.
+**HttpClient** HTTP 응답에 오류 코드가 포함 되어 있으면 예외를 throw 하지 않습니다. 대신,는 **IsSuccessStatusCode** 속성은 **false** 면 상태는 오류 코드입니다. HTTP 오류 코드 예외를 처리 하는 것을 선호 하는 경우 호출 [HttpResponseMessage.EnsureSuccessStatusCode](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.ensuresuccessstatuscode(v=vs.110).aspx) 응답 개체에서 합니다. `EnsureSuccessStatusCode`상태 코드 200 범위를 벗어나는 경우 예외를 throw&ndash;299 합니다. **HttpClient** 다른 이유로 예외를 throw 할 수 &mdash; 요청 시간이 초과 하는 경우 등입니다.
 
 <a id="MediaTypeFormatters"></a>
 ### <a name="media-type-formatters-to-deserialize"></a>미디어 유형 포맷터를 역직렬화
@@ -167,7 +167,7 @@ GET, 처럼 DELETE 요청은 요청 본문이 필요가 없습니다. DELETE로 
 
 클라이언트 앱을 테스트 합니다.
 
-1. [다운로드](https://github.com/aspnet/Docs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample/server) 및 서버 응용 프로그램을 실행 합니다. [다운로드 지침](https://docs.microsoft.com/en-us/aspnet/core/tutorials/#how-to-download-a-sample)합니다. 서버 응용 프로그램 작동을 확인 합니다. Exaxmple에 대 한 `http://localhost:64195/api/products` 제품 목록이 반환 해야 합니다.
+1. [다운로드](https://github.com/aspnet/Docs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample/server) 및 서버 응용 프로그램을 실행 합니다. [다운로드 지침](https://docs.microsoft.com/aspnet/core/tutorials/#how-to-download-a-sample)합니다. 서버 응용 프로그램 작동을 확인 합니다. Exaxmple에 대 한 `http://localhost:64195/api/products` 제품 목록이 반환 해야 합니다.
 2. HTTP 요청에 대 한 기본 URI를 설정 합니다. 서버 응용 프로그램에서 사용 되는 포트를 포트 번호를 변경 합니다.
     [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet5&highlight=2)]
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-model
 msc.type: authoredcontent
-ms.openlocfilehash: 1d066e4bab866a2195647f43aa886279fee941db
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 304c428b0d787e902f30c1989471c476f54d3b39
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-a-model"></a>모델 추가
 ====================
@@ -28,7 +28,7 @@ ms.lasthandoff: 11/10/2017
 
 이 섹션에서는 데이터베이스에서 영화를 관리 하기 위한 몇 가지 클래스를 추가 합니다. 이러한 클래스 됩니다는 &quot;모델&quot; ASP.NET MVC 응용 프로그램의 일부입니다.
 
-라고 하는.NET Framework 데이터 액세스 기술 사용의 [Entity Framework](https://msdn.microsoft.com/en-us/library/bb399572(VS.110).aspx) 정의 하 고 이러한 모델 클래스를 사용 합니다. Entity Framework (EF 라고도 함)에서 지 원하는 개발 패러다임 호출 *Code First*합니다. 먼저 코드에서는 간단한 클래스를 작성 하 여 모델 개체를 만들 수 있습니다. (이러한 라 하 고 POCO 클래스에서 &quot;old CLR 개체입니다.&quot;) 다음 클래스에서는 매우 명확 하 고 신속 하 게 개발 워크플로 매핑함으로써 즉석에서 생성 된 데이터베이스를 사용할 수 있습니다.
+라고 하는.NET Framework 데이터 액세스 기술 사용의 [Entity Framework](https://msdn.microsoft.com/library/bb399572(VS.110).aspx) 정의 하 고 이러한 모델 클래스를 사용 합니다. Entity Framework (EF 라고도 함)에서 지 원하는 개발 패러다임 호출 *Code First*합니다. 먼저 코드에서는 간단한 클래스를 작성 하 여 모델 개체를 만들 수 있습니다. (이러한 라 하 고 POCO 클래스에서 &quot;old CLR 개체입니다.&quot;) 다음 클래스에서는 매우 명확 하 고 신속 하 게 개발 워크플로 매핑함으로써 즉석에서 생성 된 데이터베이스를 사용할 수 있습니다.
 
 ## <a name="adding-model-classes"></a>모델 클래스를 추가합니다.
 

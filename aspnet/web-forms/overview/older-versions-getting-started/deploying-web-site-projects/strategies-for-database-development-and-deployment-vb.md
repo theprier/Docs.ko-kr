@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/strategies-for-database-development-and-deployment-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8632ed2fe5c1a296747a0206de1c6f5c5bb59dd1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 877056dc74e0b5a64d6e0f11d63ed9f642b0a2cd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="strategies-for-database-development-and-deployment-vb"></a>데이터베이스 개발 및 배포 (VB)에 대 한 전략
 ====================
@@ -79,7 +79,7 @@ ms.lasthandoff: 11/10/2017
 
 문서의 내용에 대 한 변경 로그를 유지 관리 작업의 주요 단점은 자동화 부족 합니다. 이상적으로 배포 시 프로덕션 데이터베이스를 데이터베이스 변경을 구현 지침 목록을 수동으로 수행 하는 대신 스크립트를 실행 하는 단추를 클릭 하는 것 처럼 쉽게 것입니다. 데이터 모델을 변경 하는 데 사용 된 SQL 명령을 포함 하는 변경 로그를 유지 관리 하 여 이러한 자동화 불가능 합니다.
 
-SQL 구문에는 다양 한 만들고 다양 한 데이터베이스 개체를 수정 하기 위한 문 포함 됩니다. 예를 들어는 [ *CREATE TABLE 문을*](https://msdn.microsoft.com/en-us/library/ms174979.aspx)실행 되 면, 지정 된 열 및 제약 조건을 사용 하 여 새 테이블을 만듭니다. [ *ALTER TABLE 문을* ](https://msdn.microsoft.com/en-us/library/ms190273.aspx) 수정 하는 기존 테이블을 추가, 제거 또는 해당 열 또는 제약 조건을 수정 합니다. 문을 생성, 수정 및 삭제, 인덱스, 뷰, 사용자 정의 함수, 저장된 프로시저, 트리거 및 기타 데이터베이스 개체에도 있습니다.
+SQL 구문에는 다양 한 만들고 다양 한 데이터베이스 개체를 수정 하기 위한 문 포함 됩니다. 예를 들어는 [ *CREATE TABLE 문을*](https://msdn.microsoft.com/library/ms174979.aspx)실행 되 면, 지정 된 열 및 제약 조건을 사용 하 여 새 테이블을 만듭니다. [ *ALTER TABLE 문을* ](https://msdn.microsoft.com/library/ms190273.aspx) 수정 하는 기존 테이블을 추가, 제거 또는 해당 열 또는 제약 조건을 수정 합니다. 문을 생성, 수정 및 삭제, 인덱스, 뷰, 사용자 정의 함수, 저장된 프로시저, 트리거 및 기타 데이터베이스 개체에도 있습니다.
 
 새 열을 추가 하는 이미 배포 된 응용 프로그램을 개발 하는 동안 이미지 반환 이전 예의 경우에 `Employees` 테이블, 열을 제거는 `Orders` 새 테이블을 추가 하 고 테이블, (`ProductCategories`). 다음 SQL 명령 사용 하 여 변경 로그 파일 등의 작업 만들어집니다.
 

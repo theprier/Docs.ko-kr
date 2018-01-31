@@ -6,16 +6,14 @@ ms.author: riande
 ms.date: 09/18/2017
 ms.topic: get-started-article
 ms.technology: aspnet
-keywords: "ASP.NET Core, WebAPI, Web API, REST, Mac, Linux, HTTP, 서비스, HTTP 서비스, VS Code"
 ms.prod: asp.net-core
 manager: wpickett
-ms.assetid: 8dc28498-eeee-4666-b903-b593059e9f39
 uid: tutorials/first-mvc-app-xplat/adding-model
-ms.openlocfilehash: 70aa344ca4ceafacf53907c925fd595e47104d7e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 32677b8232e907e8431e05a3727fe7a2e5717ec4
+ms.sourcegitcommit: 83b5a4715fd25e4eb6f7c8427c0ef03850a7fa07
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/25/2018
 ---
 [!INCLUDE[adding-model1](../../includes/mvc-intro/adding-model1.md)]
 
@@ -59,10 +57,6 @@ ms.lasthandoff: 11/10/2017
 dotnet restore
 dotnet aspnet-codegenerator controller -name MoviesController -m Movie -dc MvcMovieContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries 
 ```
-
-> [!NOTE]
-> 스캐폴딩 명령이 실행될 때 오류가 발생할 경우 해결 방법은 [issue 444 in the scaffolding repository](https://github.com/aspnet/scaffolding/issues/444)(스캐폴딩 리포지토리의 문제 444)를 참조하세요.
-
 스캐폴딩 엔진은 다음을 만듭니다.
 
 * 동영상 컨트롤러(*Controllers/MoviesController.cs*)

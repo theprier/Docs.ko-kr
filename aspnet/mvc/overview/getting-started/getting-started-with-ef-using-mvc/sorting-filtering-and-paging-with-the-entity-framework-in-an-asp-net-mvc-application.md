@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 8d11bf47f8c43040ef30d7132f0bb756748dbacd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d54c0e133bc2f6f2021821dc16cdf86cc23a5667
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="sorting-filtering-and-paging-with-the-entity-framework-in-an-aspnet-mvc-application"></a>정렬, 필터링 및 ASP.NET MVC 응용 프로그램에서 Entity Framework와 함께 페이징
 ====================
@@ -60,7 +60,7 @@ ms.lasthandoff: 11/10/2017
 | 오름차순 날짜 | ascending | descending |
 | 내림차순 날짜 | ascending | ascending |
 
-메서드에서 사용 [LINQ to Entities](https://msdn.microsoft.com/en-us/library/bb386964.aspx) 기준으로 정렬 하려면 열을 지정 합니다. 코드를 만듭니다는 [IQueryable](https://msdn.microsoft.com/en-us/library/bb351562.aspx) 하기 전에 변수는 `switch` 문을 수정에 `switch` 문 및 호출은 `ToList` 후 메서드는 `switch` 문. 생성 및 수정할 `IQueryable` 변수 쿼리가 없는 데이터베이스에 전송 됩니다. 변환 될 때까지 쿼리가 실행 되지 않습니다는 `IQueryable` 개체와 같은 메서드를 호출 하 여 컬렉션에 `ToList`합니다. 따라서이 코드 발생 되어야 실행 하는 단일 쿼리는 `return View` 문.
+메서드에서 사용 [LINQ to Entities](https://msdn.microsoft.com/library/bb386964.aspx) 기준으로 정렬 하려면 열을 지정 합니다. 코드를 만듭니다는 [IQueryable](https://msdn.microsoft.com/library/bb351562.aspx) 하기 전에 변수는 `switch` 문을 수정에 `switch` 문 및 호출은 `ToList` 후 메서드는 `switch` 문. 생성 및 수정할 `IQueryable` 변수 쿼리가 없는 데이터베이스에 전송 됩니다. 변환 될 때까지 쿼리가 실행 되지 않습니다는 `IQueryable` 개체와 같은 메서드를 호출 하 여 컬렉션에 `ToList`합니다. 따라서이 코드 발생 되어야 실행 하는 단일 쿼리는 `return View` 문.
 
 각 정렬 순서에 대 한 다른 LINQ 문을 작성 하는 대신, LINQ 명령문을 동적으로 만들 수 있습니다. 동적 LINQ에 대 한 정보를 참조 하십시오. [동적 LINQ](https://go.microsoft.com/fwlink/?LinkID=323957)합니다.
 
@@ -90,7 +90,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample4.cs?highlight=1,7-11)]
 
-사용자가 추가한는 `searchString` 매개 변수는 `Index` 메서드. 검색 문자열 값이 인덱스 뷰를 추가 하는 텍스트 상자가에서 수신 합니다. 또한 LINQ 명령문을 추가 했으므로 `where` 해당 이름 또는 성을 검색 문자열을 포함 하는 학생만을 선택 하는 절. 추가 하는 문에 [여기서](https://msdn.microsoft.com/en-us/library/bb535040.aspx) 절이 검색 하려면 값이 있는 경우에 실행 됩니다.
+사용자가 추가한는 `searchString` 매개 변수는 `Index` 메서드. 검색 문자열 값이 인덱스 뷰를 추가 하는 텍스트 상자가에서 수신 합니다. 또한 LINQ 명령문을 추가 했으므로 `where` 해당 이름 또는 성을 검색 문자열을 포함 하는 학생만을 선택 하는 절. 추가 하는 문에 [여기서](https://msdn.microsoft.com/library/bb535040.aspx) 절이 검색 하려면 값이 있는 경우에 실행 됩니다.
 
 > [!NOTE]
 > 대부분의 경우에서 Entity Framework 엔터티 집합 또는 메모리 내 컬렉션에 대 한 확장 메서드이기 같은 메서드를 호출할 수 있습니다. 결과 일반적으로 동일 하지만 경우에 따라 다를 수 있습니다.
@@ -160,7 +160,7 @@ A `ViewBag` 속성은이 페이징 하는 동안 동일한 정렬 순서를 유�
 
 [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample11.cs)]
 
-`ToPagedList` 메서드는 페이지 번호를 사용 합니다. 물음표는 두 개의 나타냅니다는 [null 병합 연산자](https://msdn.microsoft.com/en-us/library/ms173224.aspx)합니다. Null 병합 연산자는 null 허용 형식에 대 한 기본값을 정의 식 `(page ?? 1)` 의 값을 반환 하는 수단 `page` 값을 가진 또는 이면 1을 반환 하는 경우 `page` null입니다.
+`ToPagedList` 메서드는 페이지 번호를 사용 합니다. 물음표는 두 개의 나타냅니다는 [null 병합 연산자](https://msdn.microsoft.com/library/ms173224.aspx)합니다. Null 병합 연산자는 null 허용 형식에 대 한 기본값을 정의 식 `(page ?? 1)` 의 값을 반환 하는 수단 `page` 값을 가진 또는 이면 1을 반환 하는 경우 `page` null입니다.
 
 ### <a name="add-paging-links-to-the-student-index-view"></a>학생 인덱스 뷰를 페이징 링크 추가
 
@@ -172,11 +172,11 @@ A `ViewBag` 속성은이 페이징 하는 동안 동일한 정렬 순서를 유�
 
 `using` 문을 `PagedList.Mvc` 페이징 단추에 대 한 MVC 도우미에 대 한 액세스를 제공 합니다.
 
-코드의 오버 로드를 사용 하 여 [BeginForm](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx) 지정 하도록 허용 하는 [FormMethod.Get](https://msdn.microsoft.com/en-us/library/system.web.mvc.formmethod(v=vs.100).aspx/css)합니다.
+코드의 오버 로드를 사용 하 여 [BeginForm](https://msdn.microsoft.com/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx) 지정 하도록 허용 하는 [FormMethod.Get](https://msdn.microsoft.com/library/system.web.mvc.formmethod(v=vs.100).aspx/css)합니다.
 
 [!code-cshtml[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample13.cshtml?highlight=1)]
 
-기본 [BeginForm](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx) 매개 변수가 URL 아니라 HTTP 메시지 본문에 쿼리 문자열로 전달 하는 POST 사용 하 여 양식 데이터를 전송 합니다. HTTP GET을 지정 하면 양식 데이터 변수로 전달 됩니다 URL에 쿼리 문자열, URL에 책갈피를 있습니다. [HTTP GET 사용에 대 한 W3C 지침](http://www.w3.org/2001/tag/doc/whenToUseGet.html) 작업이 업데이트 되지 않습니다 때 GET 사용 해야 하는 것이 좋습니다.
+기본 [BeginForm](https://msdn.microsoft.com/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx) 매개 변수가 URL 아니라 HTTP 메시지 본문에 쿼리 문자열로 전달 하는 POST 사용 하 여 양식 데이터를 전송 합니다. HTTP GET을 지정 하면 양식 데이터 변수로 전달 됩니다 URL에 쿼리 문자열, URL에 책갈피를 있습니다. [HTTP GET 사용에 대 한 W3C 지침](http://www.w3.org/2001/tag/doc/whenToUseGet.html) 작업이 업데이트 되지 않습니다 때 GET 사용 해야 하는 것이 좋습니다.
 
 입력란은 새 페이지를 클릭 하면 현재 검색 문자열을 볼 수 있도록 현재 검색 문자열으로 초기화 됩니다.
 

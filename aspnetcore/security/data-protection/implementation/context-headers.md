@@ -2,20 +2,18 @@
 title: "컨텍스트 헤더"
 author: rick-anderson
 description: "이 문서에는 ASP.NET Core 데이터 보호 컨텍스트 헤더의 구현 세부 사항을 설명합니다."
-keywords: "ASP.NET Core, 데이터 보호, 컨텍스트 헤더"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.assetid: d026a58c-67f4-411e-a410-c35f29c2c517
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/data-protection/implementation/context-headers
-ms.openlocfilehash: eb8e4c9ad67d3046648aea1b45f4a675b41b3ec0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c047c54efdcdb6192e4d38d2822c1077ee0a73e1
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="context-headers"></a>컨텍스트 헤더
 
@@ -55,7 +53,7 @@ ms.lasthandoff: 11/10/2017
 
 대신, NIST SP800 108 KDF 카운터 모드로 사용 (참조 [NIST SP800-108](http://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-108.pdf), 초 5.1) 된 길이가 0 인 키, 레이블 및 컨텍스트 및 기본 PRF로 HMACSHA512 합니다. 개체를 파생할 | K_E | + | K_H | 바이트의 출력을 다음 분해 결과 K_E 및 K_H 자체입니다. 수학적으로 다음과 같이 표시 됩니다.
 
-(K_E | | K_H) SP800_108_CTR = (prf HMACSHA512 = 키 = ""을 label = "", 컨텍스트 = "")
+( K_E || K_H ) = SP800_108_CTR(prf = HMACSHA512, key = "", label = "", context = "")
 
 ### <a name="example-aes-192-cbc--hmacsha256"></a>예: AES-192-CBC + HMACSHA256
 
@@ -72,11 +70,11 @@ B7 92 3D BF 59 90 00 A9
 
 다음으로, Enc_CBC 계산 (K_E, IV, "") AES-192-CBC IV 제공 = 0 * 및 위와 같은 K_E 합니다.
 
-결과: F474B1872B3B53E4721DE19C0841DB6F =
+result := F474B1872B3B53E4721DE19C0841DB6F
 
 다음으로 MAC을 계산 (K_H, "") HMACSHA256 위와 같은 K_H 제공에 대 한 합니다.
 
-결과: D4791184B996092EE1202F36E8608FA8FBD98ABDFF5402F264B1D7211536220C =
+result := D4791184B996092EE1202F36E8608FA8FBD98ABDFF5402F264B1D7211536220C
 
 아래 전체 컨텍스트 헤더를 생성합니다.
 
@@ -123,7 +121,7 @@ D1 F7 5A 34 EB 28 3E D7 D4 67 B4 64
 
 다음으로 MAC을 계산 (K_H, "") HMACSHA1 위와 같은 K_H 제공에 대 한 합니다.
 
-결과: 76EB189B35CF03461DDF877CD9F4B1B4D63A7555 =
+result := 76EB189B35CF03461DDF877CD9F4B1B4D63A7555
 
 이렇게 하면 인증 된 사용자의 지문 인 전체 컨텍스트 헤더 생성 아래에 표시 된 암호화 알고리즘 쌍 (3DES-192-CBC 암호화 + HMACSHA1 유효성 검사):
 
@@ -167,17 +165,17 @@ D1 F7 5A 34 EB 28 3E D7 D4 67 B4 64
 
 K_E는 CBC 암호화 + HMAC 인증 시나리오에서와 같이 동일한 메커니즘을 사용 하 여 파생 됩니다. 그러나 플레이 여기에 없는 K_H 이므로 기본적으로 있는 | K_H | = 0, 알고리즘을 축소 하 고는 아래 폼입니다.
 
-K_E SP800_108_CTR = (prf HMACSHA512 = 키 = ""을 label = "", 컨텍스트 = "")
+K_E = SP800_108_CTR(prf = HMACSHA512, key = "", label = "", context = "")
 
 ### <a name="example-aes-256-gcm"></a>예: AES 256 GCM
 
 첫째, K_E 수 있도록 SP800_108_CTR = (prf HMACSHA512 = 키 = "", 레이블 = "", 컨텍스트 = ""), 여기서 | K_E | = 256 비트입니다.
 
-K_E: 22BC6F1B171C08C4AE2F27444AF8FC8B3087A90006CAEA91FDCFB47C1B8733B8 =
+K_E := 22BC6F1B171C08C4AE2F27444AF8FC8B3087A90006CAEA91FDCFB47C1B8733B8
 
 다음으로 Enc_GCM의 인증 태그가 계산 (K_E, nonce, "") AES-256-GCM nonce 제공 = 096 및 K_E 위와 같이 합니다.
 
-결과: E7DCCE66DF855A323A6BB7BD7A59BE45 =
+result := E7DCCE66DF855A323A6BB7BD7A59BE45
 
 아래 전체 컨텍스트 헤더를 생성합니다.
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/unlocking-and-approving-user-accounts-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5f4977c4ad88d6f32fb682c841d0e5bdd8aeb7e6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f4444e566a760ef3beda4af5fba62dd349a8bba9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="unlocking-and-approving-user-accounts-vb"></a>사용자 계정 (VB)이 잠금 해제 또는 승인
 ====================
@@ -57,7 +57,7 @@ HyperLinkField GridView를 추가한 후 잠시 볼 수는 `ManageUsers.aspx` �
 **그림 1**: 각 사용자 계정에 대 한 "Manage" 링크를 추가 하는 HyperLinkField ([전체 크기 이미지를 보려면 클릭](unlocking-and-approving-user-accounts-vb/_static/image3.png))
 
 
-사용자 인터페이스 만들어져에 대 한 코드는 `UserInformation.aspx` 보겠습니다 talk 잠시 있지만 첫 번째 페이지에 대 한 프로그래밍 방식으로 사용자를 변경 하는 방법의 잠기며 상태를 승인 합니다. [ `MembershipUser` 클래스](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.aspx) 가 [ `IsLockedOut` ](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.islockedout.aspx) 및 [ `IsApproved` 속성](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.isapproved.aspx)합니다. `IsLockedOut` 속성은 읽기 전용입니다. 프로그래밍 방식으로 사용자를 잠그려면는; 메커니즘이 없습니다. 사용자의 잠금을 해제 하려면 사용 된 `MembershipUser` 클래스의 [ `UnlockUser` 메서드](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.unlockuser.aspx)합니다. `IsApproved` 속성은 읽기 및 쓰기 가능 합니다. 이 속성을 변경 내용을 저장 하려면 호출 해야는 `Membership` 클래스의 [ `UpdateUser` 메서드](https://msdn.microsoft.com/en-us/library/system.web.security.membership.updateuser.aspx)을 수정 된 전달 `MembershipUser` 개체입니다.
+사용자 인터페이스 만들어져에 대 한 코드는 `UserInformation.aspx` 보겠습니다 talk 잠시 있지만 첫 번째 페이지에 대 한 프로그래밍 방식으로 사용자를 변경 하는 방법의 잠기며 상태를 승인 합니다. [ `MembershipUser` 클래스](https://msdn.microsoft.com/library/system.web.security.membershipuser.aspx) 가 [ `IsLockedOut` ](https://msdn.microsoft.com/library/system.web.security.membershipuser.islockedout.aspx) 및 [ `IsApproved` 속성](https://msdn.microsoft.com/library/system.web.security.membershipuser.isapproved.aspx)합니다. `IsLockedOut` 속성은 읽기 전용입니다. 프로그래밍 방식으로 사용자를 잠그려면는; 메커니즘이 없습니다. 사용자의 잠금을 해제 하려면 사용 된 `MembershipUser` 클래스의 [ `UnlockUser` 메서드](https://msdn.microsoft.com/library/system.web.security.membershipuser.unlockuser.aspx)합니다. `IsApproved` 속성은 읽기 및 쓰기 가능 합니다. 이 속성을 변경 내용을 저장 하려면 호출 해야는 `Membership` 클래스의 [ `UpdateUser` 메서드](https://msdn.microsoft.com/library/system.web.security.membership.updateuser.aspx)을 수정 된 전달 `MembershipUser` 개체입니다.
 
 때문에 `IsApproved` 속성을 읽고 쓸, CheckBox 컨트롤은이 속성을 구성 하기 위한 최상의 사용자 인터페이스 요소 때문일 수 있습니다. 그러나 CheckBox 적합 하지 것입니다는 `IsLockedOut` 속성 관리자는 사용자를 잠글 수 없으면 때문에 그녀 수만 사용자의 잠금을 해제 합니다. 에 대 한 적절 한 사용자 인터페이스는 `IsLockedOut` 속성은 단추를 클릭 하면 사용자 계정 잠금 해제 합니다. 이 단추는 사용자가 잠겨 하는 경우에 활성화 해야 합니다.
 
@@ -88,7 +88,7 @@ HyperLinkField GridView를 추가한 후 잠시 볼 수는 `ManageUsers.aspx` �
 
 `MembershipUser` 개체의 `UserName` 값은 다음에 표시 되는 `UserNameLabel` 및 `IsApproved` 확인란에 따라는 `IsApproved` 속성 값입니다.
 
-`MembershipUser` 개체의 [ `LastLockoutDate` 속성](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.lastlockoutdate.aspx) 반환는 `DateTime` 잠겼습니다 사용자가 마지막를 나타내는 값입니다. 사용자가 되지 잠긴, 하는 경우 반환 되는 값에는 멤버 자격 공급자에 따라 다릅니다. 새 계정을 만든 경우의 `SqlMembershipProvider` 설정는 `aspnet_Membership` 테이블의 `LastLockoutDate` 필드를 `1754-01-01 12:00:00 AM`합니다. 위의 코드에 빈 문자열을 표시 합니다.는 `LastLockoutDateLabel` 경우는 `LastLockoutDate` 속성이 발생 해 전에 고, 그렇지 않으면 2000의 날짜 부분은 `LastLockoutDate` 레이블의에 속성이 표시 됩니다. `UnlockUserButton`의 `Enabled` 속성이 사용자의 잠긴 상태, 즉 사용자 잠겨 있으면이 단추가 활성화만 됩니다.
+`MembershipUser` 개체의 [ `LastLockoutDate` 속성](https://msdn.microsoft.com/library/system.web.security.membershipuser.lastlockoutdate.aspx) 반환는 `DateTime` 잠겼습니다 사용자가 마지막를 나타내는 값입니다. 사용자가 되지 잠긴, 하는 경우 반환 되는 값에는 멤버 자격 공급자에 따라 다릅니다. 새 계정을 만든 경우의 `SqlMembershipProvider` 설정는 `aspnet_Membership` 테이블의 `LastLockoutDate` 필드를 `1754-01-01 12:00:00 AM`합니다. 위의 코드에 빈 문자열을 표시 합니다.는 `LastLockoutDateLabel` 경우는 `LastLockoutDate` 속성이 발생 해 전에 고, 그렇지 않으면 2000의 날짜 부분은 `LastLockoutDate` 레이블의에 속성이 표시 됩니다. `UnlockUserButton`의 `Enabled` 속성이 사용자의 잠긴 상태, 즉 사용자 잠겨 있으면이 단추가 활성화만 됩니다.
 
 테스트 하는 `UserInformation.aspx` 브라우저를 통해 페이지입니다. 시작 해야 물론, 합니다, `ManageUsers.aspx` 하 고 관리 하려면 사용자 계정을 선택 합니다. 에 도착 시 `UserInformation.aspx`는 `IsApproved` 확인란은 사용자 승인 된 경우에 확인 됩니다. 사용자가 계속 잠긴, 날짜 잠겨 마지막으로 표시 됩니다. 사용자 잠금 해제 단추는 사용자가 현재 잠겨 있는 경우에 활성화 됩니다. 선택 하거나 선택을 취소는 `IsApproved` 확인란을 선택 하거나 사용자의 잠금을 해제 단추를 클릭 하는 포스트백이 발생 하지만 아직를 이유임 때문에 사용자 계정에 없는 수정 내용이 이러한 이벤트에 대 한 이벤트 처리기를 만듭니다.
 
@@ -146,7 +146,7 @@ HyperLinkField GridView를 추가한 후 잠시 볼 수는 `ManageUsers.aspx` �
 
 ### <a name="sending-a-verification-email-to-new-users"></a>새 사용자에 게 확인 전자 메일 보내기
 
-CreateUserWizard 컨트롤에서 전자 메일을 보내려면 구성 해당 `MailDefinition` 속성 적절 하 게 합니다. 에 설명 된 대로 <a id="Tutorial13"> </a> [이전 자습서](recovering-and-changing-passwords-vb.md), ChangePassword 및 PasswordRecovery 컨트롤에는 한 [ `MailDefinition` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.createuserwizard.maildefinition.aspx) 같은 방식으로 작동 하는 CreateUserWizard 컨트롤의 합니다.
+CreateUserWizard 컨트롤에서 전자 메일을 보내려면 구성 해당 `MailDefinition` 속성 적절 하 게 합니다. 에 설명 된 대로 <a id="Tutorial13"> </a> [이전 자습서](recovering-and-changing-passwords-vb.md), ChangePassword 및 PasswordRecovery 컨트롤에는 한 [ `MailDefinition` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.maildefinition.aspx) 같은 방식으로 작동 하는 CreateUserWizard 컨트롤의 합니다.
 
 > [!NOTE]
 > 사용 하 여 `MailDefinition` 메일 배달 지정 해야 하는 속성의 옵션 `Web.config`합니다. 자세한 내용은를 참조 [ASP.NET에서 전자 메일 보내기](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx)합니다.
@@ -160,7 +160,7 @@ CreateUserWizard 컨트롤에서 전자 메일을 보내려면 구성 해당 `Ma
 
 `CreateUserWizard.txt` 전자 메일 템플릿을 포함 한 `<%VerificationUrl%>` 자리 표시자입니다. 여기에에 대 한 URL의 `Verification.aspx` 페이지에 표시 됩니다. CreateUserWizard 자동으로 대체는 `<%UserName%>` 및 `<%Password%>` 자리 표시자를로 새 계정의 사용자 이름과 암호를 기본 제공 되지 않습니다 이지만 `<%VerificationUrl%>` 자리 표시자입니다. 수동으로 적절 한 확인 URL로 대체 해야 합니다.
 
-CreateUserWizard의에 대 한 이벤트 처리기를 만들고이를 위해 [ `SendingMail` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.createuserwizard.sendingmail.aspx) 다음 코드를 추가 합니다.
+CreateUserWizard의에 대 한 이벤트 처리기를 만들고이를 위해 [ `SendingMail` 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.sendingmail.aspx) 다음 코드를 추가 합니다.
 
 [!code-vb[Main](unlocking-and-approving-user-accounts-vb/samples/sample4.vb)]
 

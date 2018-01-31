@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/request-validation
 msc.type: content
-ms.openlocfilehash: 61a96b75fdc29bdd1510ed689ee0356ef30e03fc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0b24fe2193d2c7a858667505bad9ed0b1d70a328
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="request-validation---preventing-script-attacks"></a>요청 유효성 검사-스크립트 공격 방지
 ====================
@@ -27,7 +27,7 @@ ms.lasthandoff: 11/10/2017
 
 ASP.NET의 버전 1.1에서 이후 기능 요청 유효성 검사를 포함 하는 콘텐츠 인코딩되지 않은 HTML으로 서버를 방지 합니다. 이 기능은 그에 따라 클라이언트 스크립트 코드 또는 HTML 수 될 서버에 제출 하지 못하도록 저장 하 고 다른 사용자에 게 표시 한 다음 몇 가지 스크립트 삽입 공격을 방지 하도록 설계 되었습니다. 여전히이 모든 입력된 데이터를 유효성 검사 및 HTML 인코딩으로 적절 한 시기.
 
-예를 들어 사용자의 전자 메일 주소를 요청 하 고 다음 데이터베이스에 해당 전자 메일 주소를 저장 하는 웹 페이지를 만들 있습니다. 사용자가 입력 &lt;스크립트&gt;경고 ("스크립트에서 hello")&lt;/script&gt; 유효한 전자 메일 주소 대신 해당 데이터가 제공 될 때이 스크립트 경우 실행할 수 있습니다 콘텐츠가 제대로 인코딩되지 않았습니다. 요청 유효성 검사 기능을 ASP.NET의 상황이 발생 하면 수 없습니다.
+예를 들어 사용자의 전자 메일 주소 및 저장소 데이터베이스에서 전자 메일 주소를 요청 하는 웹 페이지를 만들 있습니다. 사용자가 입력 &lt;스크립트&gt;경고 ("스크립트에서 hello")&lt;/script&gt; 유효한 전자 메일 주소 대신 해당 데이터가 제공 될 때이 스크립트 경우 실행할 수 있습니다 콘텐츠가 제대로 인코딩되지 않았습니다. 요청 유효성 검사 기능을 ASP.NET의 상황이 발생 하면 수 없습니다.
 
 ## <a name="why-this-feature-is-useful"></a>이 기능은 유용
 

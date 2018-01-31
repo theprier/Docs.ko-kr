@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/guide-to-the-api/handling-connection-lifetime-events
 msc.type: authoredcontent
-ms.openlocfilehash: 7a0a549f73ea303ec5694bb69d4eac52beb54098
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2fd9cafd8d7706807998793c3c39377fe9604266
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="understanding-and-handling-connection-lifetime-events-in-signalr"></a>이해 하 고 SignalR에서 연결 수명 이벤트를 처리 합니다.
 ====================
@@ -61,7 +61,7 @@ ms.lasthandoff: 11/10/2017
 - [제한 시간 및 keepalive 설정](#timeoutkeepalive)
 
     - [ConnectionTimeout](#connectiontimeout)
-    - [Disconnecttimeout은](#disconnecttimeout)
+    - [DisconnectTimeout](#disconnecttimeout)
     - [KeepAlive](#keepalive)
     - [제한 시간 및 keepalive 설정을 변경 하는 방법](#changetimeout)
 - [연결 끊김에 대 한 사용자에 게 하는 방법](#notifydisconnect)
@@ -69,7 +69,7 @@ ms.lasthandoff: 11/10/2017
 - [서버 코드에서 클라이언트 연결을 끊을 하는 방법](#disconnectclientfromserver)
 - [연결 해제에 대 한 이유를 검색합니다.](#detectingreasonfordisconnection)
 
-API 참조 항목의 링크를.NET 4.5 버전의 API 되도록합니다. .NET 4를 사용 하 여 참조 [.NET 4 버전의 API 항목](https://msdn.microsoft.com/en-us/library/jj891075(v=vs.100).aspx)합니다.
+API 참조 항목의 링크를.NET 4.5 버전의 API 되도록합니다. .NET 4를 사용 하 여 참조 [.NET 4 버전의 API 항목](https://msdn.microsoft.com/library/jj891075(v=vs.100).aspx)합니다.
 
 <a id="terminology"></a>
 
@@ -192,7 +192,7 @@ API 참조 항목의 링크를.NET 4.5 버전의 API 되도록합니다. .NET 4�
 
 <a id="disconnecttimeout"></a>
 
-### <a name="disconnecttimeout"></a>Disconnecttimeout은
+### <a name="disconnecttimeout"></a>DisconnectTimeout
 
 이 설정은 발생 하기 전에 전송 연결이 끊긴 후 대기 하는 시간의 양을 나타냅니다는 `Disconnected` 이벤트입니다. 기본값은 30초입니다. 설정 하는 경우 `DisconnectTimeout`, `KeepAlive` 의 1/3로 자동 설정 됩니다는 `DisconnectTimeout` 값입니다.
 

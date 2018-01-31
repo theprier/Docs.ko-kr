@@ -9,11 +9,11 @@ ms.topic: article
 ms.technology: dotnet-mvc
 ms.prod: .net-framework
 uid: mvc/overview/getting-started/introduction/adding-a-view
-ms.openlocfilehash: cf0bb7984ad3460f8784193f7bb407c9b0ad50db
-ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
+ms.openlocfilehash: 86887f0dafa31ff3eb6597284c469c4b3053b6b7
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-a-view"></a>뷰 추가
 ====================
@@ -29,9 +29,9 @@ ms.lasthandoff: 01/03/2018
 
 [!code-csharp[Main](adding-a-view/samples/sample1.cs?highlight=1,3)]
 
-`Index` 위의 방법을 템플릿 보기를 사용 하 여 브라우저에 대 한 HTML 응답을 생성 합니다. 컨트롤러 메서드 (라고도 [작업 메서드](http://rachelappel.com/asp.net-mvc-actionresults-explained))와 같은 `Index` 위의 메서드는 일반적으로 반환 된 [ActionResult](https://msdn.microsoft.com/en-us/library/system.web.mvc.actionresult.aspx) (또는 클래스에서 파생 된 [ActionResult](https://msdn.microsoft.com/en-us/library/system.web.mvc.actionresult.aspx))와 같은 문자열 하지 기본 형식입니다.
+`Index` 위의 방법을 템플릿 보기를 사용 하 여 브라우저에 대 한 HTML 응답을 생성 합니다. 컨트롤러 메서드 (라고도 [작업 메서드](http://rachelappel.com/asp.net-mvc-actionresults-explained))와 같은 `Index` 위의 메서드는 일반적으로 반환 된 [ActionResult](https://msdn.microsoft.com/library/system.web.mvc.actionresult.aspx) (또는 클래스에서 파생 된 [ActionResult](https://msdn.microsoft.com/library/system.web.mvc.actionresult.aspx))와 같은 문자열 하지 기본 형식입니다.
 
-마우스 오른쪽 단추로 클릭는 *Views\HelloWorld* 폴더 **추가**, 클릭 **MVC 5 뷰 페이지 (Razor 레이아웃)**합니다.
+마우스 오른쪽 단추로 클릭는 *Views\HelloWorld* 폴더 **추가**, 클릭 **(Razor) 레이아웃이 있는 MVC 5 뷰 페이지**합니다.
   
 ![](adding-a-view/_static/image1.png)   
   
@@ -73,7 +73,7 @@ ms.lasthandoff: 01/03/2018
 
 레이아웃 서식 파일을 사용 하면 한 곳에서 사이트의 HTML 컨테이너 레이아웃을 지정 하 고 다음 사이트에서 여러 페이지에 걸쳐 적용 수 있도록 합니다. `@RenderBody()` 줄을 찾습니다. `RenderBody`는 사용자가 만드는 모든 보기 전용 페이지가 표시되는 자리 표시자이며 레이아웃 페이지에서 &quot;래핑됩니다&quot;. 예를 들어, 선택 하는 경우는 **에 대 한** 링크를는 *Views\Home\About.cshtml* 내 뷰가 렌더링 되는 `RenderBody` 메서드.
 
-제목 요소의 콘텐츠를 변경합니다. 변경 된 [ActionLink](https://msdn.microsoft.com/en-us/library/dd504972(v=vs.108).aspx) 레이아웃 서식 파일에 &quot;응용 프로그램 이름&quot; 를 &quot;MVC 영화&quot; 와 컨트롤러에서 `Home` 를 `Movies`합니다. 전체 레이아웃 파일은 다음과 같습니다.
+제목 요소의 콘텐츠를 변경합니다. 변경 된 [ActionLink](https://msdn.microsoft.com/library/dd504972(v=vs.108).aspx) 레이아웃 서식 파일에 &quot;응용 프로그램 이름&quot; 를 &quot;MVC 영화&quot; 와 컨트롤러에서 `Home` 를 `Movies`합니다. 전체 레이아웃 파일은 다음과 같습니다.
 
 [!code-cshtml[Main](adding-a-view/samples/sample3.cshtml?highlight=6,20)]
 
@@ -85,7 +85,7 @@ ms.lasthandoff: 01/03/2018
 
 [!code-cshtml[Main](adding-a-view/samples/sample4.cshtml)]
 
-위의 Razor 코드 페이지 레이아웃 페이지 명시적으로 설정 합니다. 검사는 *뷰\\_viewstart.vbhtml* 파일을 정확 하 게 동일한 Razor 태그를 포함 합니다.  *[뷰\\_viewstart.vbhtml](https://weblogs.asp.net/scottgu/archive/2010/10/22/asp-net-mvc-3-layouts.aspx)*  모든 보기에서 사용할 일반적인 레이아웃을 정의 하는 파일, out 또는 해당 코드에서 제거를 설명할 수 있도록 따라서는 *Views\HelloWorld\ Index.cshtml* 파일입니다.
+위의 Razor 코드 페이지 레이아웃 페이지 명시적으로 설정 합니다. 검사는 *뷰\\_viewstart.vbhtml* 파일을 정확 하 게 동일한 Razor 태그를 포함 합니다. *[뷰\\_viewstart.vbhtml](https://weblogs.asp.net/scottgu/archive/2010/10/22/asp-net-mvc-3-layouts.aspx)*  모든 보기에서 사용할 일반적인 레이아웃을 정의 하는 파일, out 또는 해당 코드에서 제거를 설명할 수 있도록 따라서는 *Views\HelloWorld\ Index.cshtml* 파일입니다.
 
 [!code-cshtml[Main](adding-a-view/samples/sample5.cshtml?highlight=1-3)]
 
@@ -93,7 +93,7 @@ ms.lasthandoff: 01/03/2018
 
 이제 인덱스 보기의 제목을 변경 해보겠습니다.
 
-열기 *MvcMovie\Views\HelloWorld\Index.cshtml*합니다. 변경 하는 두 곳: 먼저 텍스트 표시 되는 브라우저의 제목에 찾은 다음 보조 헤더에서 (의 `<h2>` 요소). 어떤 코드에서 어떤 앱의 부분을 변경하는지 볼 수 있도록 약간 다르게 할 수 있습니다.
+Open *MvcMovie\Views\HelloWorld\Index.cshtml*. 변경 하는 두 곳: 먼저 텍스트 표시 되는 브라우저의 제목에 찾은 다음 보조 헤더에서 (의 `<h2>` 요소). 어떤 코드에서 어떤 앱의 부분을 변경하는지 볼 수 있도록 약간 다르게 할 수 있습니다.
 
 [!code-cshtml[Main](adding-a-view/samples/sample6.cshtml?highlight=2,5)]
 

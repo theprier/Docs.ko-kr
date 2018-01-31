@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/accessing-your-models-data-from-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: d0c6976519f4f4bae10fabf4cbf85401de4f58e7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f1a1db907aa1d0a62af9b363fabfc74ac11acc68
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="accessing-your-models-data-from-a-controller-vb"></a>컨트롤러 (VB)에서 모델의 데이터에 액세스
 ====================
@@ -89,7 +89,7 @@ ASP.NET MVC 3 스 캐 폴딩 메커니즘 자동으로 생성 됩니다는 CRUD 
 
 또한 ASP.NET MVC는 강력 하 게 전달 하는 기능 입력 한 데이터 또는 개체 템플릿 보기를 제공 합니다. 이 접근 방식을 사용 하면 더 나은 컴파일 타임 검사 코드 및 Visual Web Developer 편집기에서 다양 한 IntelliSense의 강력한 형식입니다. 이 방법을 사용 하 여는 `MoviesController` 클래스 및 *Index.vbhtml* 템플릿 보기.
 
-코드 만드는 방법을 확인할 수는 [ `List` ](https://msdn.microsoft.com/en-us/library/6sh2ey19.aspx) 호출 되 면 개체는 `View` 의 도우미 메서드는 `Index` 동작 메서드. 그런 다음이 `Movies` 보기에는 컨트롤러에서 목록:
+코드 만드는 방법을 확인할 수는 [ `List` ](https://msdn.microsoft.com/library/6sh2ey19.aspx) 호출 되 면 개체는 `View` 의 도우미 메서드는 `Index` 동작 메서드. 그런 다음이 `Movies` 보기에는 컨트롤러에서 목록:
 
 [!code-vb[Main](accessing-your-models-data-from-a-controller/samples/sample3.vb)]
 

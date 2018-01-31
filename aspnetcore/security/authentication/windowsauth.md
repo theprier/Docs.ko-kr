@@ -2,20 +2,18 @@
 title: "ASP.NET Core에 Windows 인증을 구성 합니다."
 author: ardalis
 description: "이 문서에서는 IIS Express, IIS, HTTP.sys 및 WebListener를 사용 하 여 ASP.NET Core에 Windows 인증을 구성 하는 방법을 설명 합니다."
-keywords: "ASP.NET Core, Windows 인증, 권한 부여 속성, AllowAnonymous 특성"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/24/2017
-ms.topic: article
-ms.assetid: cf119f21-1a2b-49a2-b052-548ccb66ee83
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/authentication/windowsauth
-ms.openlocfilehash: 703f924d049a267cb8bee22e63e6669b13099c53
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aaa14e2f2704a7cfa836c5524642d2138a3ae7c8
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="configure-windows-authentication-in-an-aspnet-core-app"></a>ASP.NET Core 응용 프로그램의 Windows 인증 구성
 
@@ -80,7 +78,7 @@ Visual Studio 또는.NET Core CLI를 사용 하 여 대상 폴더에 응용 프�
 
 ![Visual Studio 게시 대화 상자](windowsauth/_static/vs-publish-app.png)
 
-에 대 한 자세한 내용은 [를 IIS에 게시](xref:publishing/iis)합니다.
+에 대 한 자세한 내용은 [를 IIS에 게시](xref:host-and-deploy/iis/index)합니다.
 
 Windows 인증 작동 확인 응용 프로그램을 실행 합니다.
 

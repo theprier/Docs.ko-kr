@@ -5,17 +5,17 @@ description: "묶음 및 축소 기술을 적용 하 여 ASP.NET Core 웹 응용
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 12/01/2017
+ms.date: 01/10/2018
 ms.devlang: csharp
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bundling-and-minification
-ms.openlocfilehash: c271b7ef386bacedbd45fbe9f62c9c486db55b36
-ms.sourcegitcommit: 05e798c9bac7b9e9983599afb227ef393905d023
+ms.openlocfilehash: 6c233d0957ce9974adbc6112e6194c072aab0b41
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="bundling-and-minification"></a>묶음 및 축소
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 12/05/2017
 
 묶음 및 축소는 두 가지 고유한 성능 최적화가 웹 응용 프로그램에 적용할 수 있습니다. 함께 사용할 묶음 및 축소 성능을 향상 시킬 서버 요청 수를 줄이면 및 정적 요청 된 자산의 크기를 줄이십시오.
 
-묶음 및 축소는 주로 첫 번째 페이지 요청 부하 시간을 개선 합니다. 웹 페이지를 요청 되 면 브라우저 정적 자산 (JavaScript, CSS 및 이미지)를 캐시 합니다. 따라서 묶음 및 축소 하지 때 성능을 향상 시킬 동일한 페이지 또는 같은 자산을 요청 하는 동일한 사이트에서 페이지를 요청 합니다. 설정 하지 않으면는 사용자의 자산에서 올바르게 헤더 만료 되 고 묶음 및 축소를 사용 하지 않는 경우 브라우저의 새로 고침 추론 표시 자산 부실 몇 일 후 합니다. 또한 브라우저 각 자산에 대 한 유효성 검사 요청을 해야 합니다. 이 경우 묶음 및 축소 첫 번째 페이지 요청 후에 뛰어난 성능을 제공합니다.
+묶음 및 축소는 주로 첫 번째 페이지 요청 부하 시간을 개선 합니다. 웹 페이지를 요청 되 면 브라우저 정적 자산 (JavaScript, CSS 및 이미지)를 캐시 합니다. 따라서 묶음 및 축소 하지 때 성능을 향상 시킬 동일한 페이지 또는 같은 자산을 요청 하는 동일한 사이트에서 페이지를 요청 합니다. 경우는 만료 된 헤더는 자산에 올바르게 설정 되지 않았습니다 고 묶음 및 축소 사용 하지 않을 경우 브라우저의 새로 고침 추론 표시 자산 부실 몇 일 후 합니다. 또한 브라우저 각 자산에 대 한 유효성 검사 요청을 해야 합니다. 이 경우 묶음 및 축소 첫 번째 페이지 요청 후에 뛰어난 성능을 제공합니다.
 
 ### <a name="bundling"></a>번들
 
@@ -75,11 +75,11 @@ MVC 및 Razor 페이지 프로젝트 템플릿에 *bundleconfig.json* 구성 파
 
 [!code-json[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/bundleconfig.json)]
 
-번들 옵션은 다음과 같습니다.
+구성 옵션은 다음과 같습니다.
 
-* `outputFileName`: 출력 번들 파일의 이름입니다. 상대 경로 포함할 수 있습니다는 *bundleconfig.json* 파일입니다. **필수**
+* `outputFileName`: 출력 번들 파일의 이름입니다. 상대 경로 포함할 수 있습니다는 *bundleconfig.json* 파일입니다. **required**
 * `inputFiles`: 함께 번들로 묶는 파일의 배열입니다. 이들은 구성 파일에 상대 경로입니다. **선택적**, * 빈 출력 파일에 빈 값이 발생 합니다. [와일드 카드 사용](http://www.tldp.org/LDP/abs/html/globbingref.html) 패턴이 지원 됩니다.
-* `minify`: 출력 형식에 대 한 축소 옵션입니다. **선택적**, *기본값-`minify: { enabled: true }`*
+* `minify`: 출력 형식에 대 한 축소 옵션입니다. **optional**, *default - `minify: { enabled: true }`*
   * 구성 옵션은 출력 파일 형식을 사용할 수 있습니다.
     * [CSS Minifier입니다.](https://github.com/madskristensen/BundlerMinifier/wiki/cssminifier)
     * [JavaScript Minifier입니다.](https://github.com/madskristensen/BundlerMinifier/wiki/JavaScript-Minifier-settings)
@@ -91,6 +91,9 @@ MVC 및 Razor 페이지 프로젝트 템플릿에 *bundleconfig.json* 구성 파
 ## <a name="build-time-execution-of-bundling-and-minification"></a>빌드 타임 실행 묶음 및 축소
 
 [BuildBundlerMinifier](https://www.nuget.org/packages/BuildBundlerMinifier/) 번들로 실행 및 축소 빌드 시 NuGet 패키지에 사용 하도록 설정 합니다. 패키지를 삽입 합니다. [MSBuild 대상](/visualstudio/msbuild/msbuild-targets) 를 빌드 및 정리 시간에 실행 합니다. *bundleconfig.json* 파일 정의 된 구성에 따라 출력 파일을 생성 하는 빌드 프로세스에 의해 분석 됩니다.
+
+> [!NOTE]
+> BuildBundlerMinifier는 Microsoft 지원 되지 않습니다 제공 하는 GitHub의 커뮤니티 기반 프로젝트에 속해 있습니다. 문제를 제출 해야 [여기](https://github.com/madskristensen/BundlerMinifier/issues)합니다.
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio) 
 
@@ -176,6 +179,9 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 
 [!code-xml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/BuildBundlerMinifierApp.csproj?range=10)]
 
+> [!NOTE]
+> BundlerMinifier.Core는 Microsoft 지원 되지 않습니다 제공 하는 GitHub의 커뮤니티 기반 프로젝트에 속해 있습니다. 문제를 제출 해야 [여기](https://github.com/madskristensen/BundlerMinifier/issues)합니다.
+
 .NET Core CLI 포함 하도록 확장 하는이 패키지는 *dotnet 번들* 도구입니다. 패키지 관리자 콘솔 (PMC) 창이 나 명령 셸에서 다음 명령을 실행할 수 있습니다.
 
 ```console
@@ -243,6 +249,9 @@ dotnet bundle
 ### <a name="use-the-bundler--minifier-extension"></a>번들러 & Minifier 확장을 사용 하 여
 
 Visual Studio [번들러 & Minifier](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.BundlerMinifier) 확장 처리 Gulp로 변환 합니다.
+
+> [!NOTE]
+> 번들러 & Minifier 확장을 Microsoft 지원을 제공 하지는 GitHub의 커뮤니티 기반 프로젝트에 속해 있습니다. 문제를 제출 해야 [여기](https://github.com/madskristensen/BundlerMinifier/issues)합니다.
 
 마우스 오른쪽 단추로 클릭는 *bundleconfig.json* 솔루션 탐색기에서 파일을 선택 **번들러 & Minifier** > **Gulp 변환...** :
 

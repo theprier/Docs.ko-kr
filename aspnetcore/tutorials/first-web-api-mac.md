@@ -9,13 +9,12 @@ ms.prod: asp.net-core
 uid: tutorials/first-web-api-mac
 helpviewer_heywords: ASP.NET Core, WebAPI, Web API, REST, mac, macOS, HTTP, Service, HTTP Service
 ms.technology: aspnet
-keywords: "ASP.NET Core, WebAPI, Web API, REST, mac, macOS, HTTP, 서비스, HTTP 서비스"
 manager: wpickett
-ms.openlocfilehash: 6bbd5e332e395928d8f79888ecf190f7f59a4bbc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4f2643a91e1523008b68df670a9734e3d4dea5a8
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="create-a-web-api-with-aspnet-core-mvc-and-visual-studio-for-mac"></a>ASP.NET Core MVC 및 Mac용 Visual Studio를 사용하여 Web API 만들기
 
@@ -197,7 +196,7 @@ public IActionResult GetById(string id)
 ## <a name="next-steps"></a>다음 단계
 
 * [컨트롤러 작업에 라우팅](xref:mvc/controllers/routing)
-* API 배포에 대한 자세한 내용은 [게시 및 배포](../publishing/index.md)를 참조하세요.
+* API 배포에 대한 자세한 내용은 [호스트 및 배포](xref:host-and-deploy/index)를 참조하세요.
 * [샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-web-api/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 * [Postman](https://www.getpostman.com/)
 * [Fiddler](https://www.telerik.com/download/fiddler)

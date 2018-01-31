@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-new-field
 msc.type: authoredcontent
-ms.openlocfilehash: c10eb343259b58052fd1f2411dbdc2196eafc858
-ms.sourcegitcommit: d1d8071d4093bf2444b5ae19d6e45c3d187e338b
+ms.openlocfilehash: 7339f6658ede16e79d19762bd6636917fe4de85f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/19/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="adding-a-new-field"></a>새 필드 추가
 ====================
@@ -42,7 +42,7 @@ ms.lasthandoff: 11/19/2017
 
 에 **패키지 관리자 콘솔** 창에는 `PM>` 입력 프롬프트
 
-Enable-migrations-ContextTypeName MvcMovie.Models.MovieDBContext
+Enable-Migrations -ContextTypeName MvcMovie.Models.MovieDBContext
 
 ![](adding-a-new-field/_static/image3.png)
 
@@ -66,13 +66,13 @@ Visual Studio가 열릴는 *Configuration.cs* 파일입니다. 대체는 `Seed` 
 > 
 > First 마이그레이션이 호출 코드의 `Seed` 모든 마이그레이션 후 메서드 (즉, 호출 **데이터베이스 업데이트** 패키지 관리자 콘솔에서),이 메서드는 이미 삽입 되었거나 경우 삽입 된 행을 업데이트 하 고 있습니다 아직 존재 하지 마십시오.
 > 
-> [AddOrUpdate](https://msdn.microsoft.com/en-us/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx) 다음 코드에서 메서드는 "upsert" 작업을 수행 합니다.
+> [AddOrUpdate](https://msdn.microsoft.com/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx) 다음 코드에서 메서드는 "upsert" 작업을 수행 합니다.
 > 
 > [!code-csharp[Main](adding-a-new-field/samples/sample3.cs)]
 > 
-> 때문에 [시드](https://msdn.microsoft.com/en-us/library/hh829453(v=vs.103).aspx) 모든 마이그레이션을 사용 하 여 메서드 실행, 때문에 추가 하려고 하는 행 이미 있는 데이터베이스를 만드는 첫 번째 마이그레이션 후에 데이터를 삽입할 수 없습니다. "[upsert](http://en.wikipedia.org/wiki/Upsert)" 작업이 이미 존재 하는 행을 삽입 하려고 할 경우 수행 하는 오류를 방지할 수 있지만 응용 프로그램을 테스트 하는 동안 실행 한 데이터 변경 내용 보다 우선 합니다. 테스트 테이블의에서 데이터 일부 원하지 않을 수 있습니다이 위해서는: 경우에 따라 테스트 하는 동안 데이터를 변경 하면 원하는 변경 내용을 데이터베이스 업데이트 후 하 게 유지 합니다. 조건부 삽입 작업을 수행 하려는 경우: 존재 하지 않는 경우에 행을 삽입 합니다.   
+> 때문에 [시드](https://msdn.microsoft.com/library/hh829453(v=vs.103).aspx) 모든 마이그레이션을 사용 하 여 메서드 실행, 때문에 추가 하려고 하는 행 이미 있는 데이터베이스를 만드는 첫 번째 마이그레이션 후에 데이터를 삽입할 수 없습니다. "[upsert](http://en.wikipedia.org/wiki/Upsert)" 작업이 이미 존재 하는 행을 삽입 하려고 할 경우 수행 하는 오류를 방지할 수 있지만 응용 프로그램을 테스트 하는 동안 실행 한 데이터 변경 내용 보다 우선 합니다. 테스트 테이블의에서 데이터 일부 원하지 않을 수 있습니다이 위해서는: 경우에 따라 테스트 하는 동안 데이터를 변경 하면 원하는 변경 내용을 데이터베이스 업데이트 후 하 게 유지 합니다. 조건부 삽입 작업을 수행 하려는 경우: 존재 하지 않는 경우에 행을 삽입 합니다.   
 >   
-> 에 전달 된 첫 번째 매개 변수는 [AddOrUpdate](https://msdn.microsoft.com/en-us/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx) 메서드 행 이미 존재 하는지 확인 하는 데 속성을 지정 합니다. 제공 하는 테스트 동영상 데이터에는 `Title` 속성 각 타이틀 목록에는 고유 하므로이 용도로 사용할 수 있습니다.
+> 에 전달 된 첫 번째 매개 변수는 [AddOrUpdate](https://msdn.microsoft.com/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx) 메서드 행 이미 존재 하는지 확인 하는 데 속성을 지정 합니다. 제공 하는 테스트 동영상 데이터에는 `Title` 속성 각 타이틀 목록에는 고유 하므로이 용도로 사용할 수 있습니다.
 > 
 > [!code-csharp[Main](adding-a-new-field/samples/sample4.cs)]
 > 
@@ -80,7 +80,7 @@ Visual Studio가 열릴는 *Configuration.cs* 파일입니다. 대체는 `Seed` 
 >   
 >  *시퀀스에 요소가 둘 이상*  
 >   
-> 에 대 한 자세한 내용은 [AddOrUpdate](https://msdn.microsoft.com/en-us/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx) 메서드를 참조 [EF 4.3 AddOrUpdate 메서드로 주의](http://thedatafarm.com/blog/data-access/take-care-with-ef-4-3-addorupdate-method/)...
+> 에 대 한 자세한 내용은 [AddOrUpdate](https://msdn.microsoft.com/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx) 메서드를 참조 [EF 4.3 AddOrUpdate 메서드로 주의](http://thedatafarm.com/blog/data-access/take-care-with-ef-4-3-addorupdate-method/)...
 
 
 **CTRL-SHIFT-B를 눌러 프로젝트를 빌드합니다.** (다음 단계 못합니다이 시점에서 작성 하지 않아도 됩니다.)
@@ -161,7 +161,7 @@ Seed 메서드를 업데이트 하는 새 열에 대 한 값을 제공 합니다
 
 `add-migration` 명령 마이그레이션 프레임 워크에 현재 영화 DB 스키마와 현재 영화 모델을 점검 하 여 DB 새 모델을 마이그레이션하는 데 필요한 코드를 만들 지시 합니다. 이름을 *등급* 은 임의로 지정 하 고 마이그레이션 파일 이름을 지정 하는 데 사용 됩니다. 마이그레이션 단계에 대 한 의미 있는 이름을 사용 하는 것이 좋습니다.
 
-Visual Studio 새 정의 하는 클래스 파일을 엽니다이 명령이 완료 되 면 `DbMIgration` 파생 클래스를 및는 `Up` 메서드 새 열을 만드는 코드를 볼 수 있습니다.
+Visual Studio 새 정의 하는 클래스 파일을 엽니다이 명령이 완료 되 면 `DbMigration` 파생 클래스를 및는 `Up` 메서드 새 열을 만드는 코드를 볼 수 있습니다.
 
 [!code-csharp[Main](adding-a-new-field/samples/sample11.cs)]
 
@@ -179,8 +179,7 @@ Visual Studio 새 정의 하는 클래스 파일을 엽니다이 명령이 완�
 
 ![7_CreateRioII](adding-a-new-field/_static/image13.png)
 
-
-              **만들기**를 클릭합니다. 등급을 포함 하 여 새 동영상은 이제 나열 영화에서 표시:
+**만들기**를 클릭합니다. 등급을 포함 하 여 새 동영상은 이제 나열 영화에서 표시:
 
 ![7_ourNewMovie_SM](adding-a-new-field/_static/image14.png)
 

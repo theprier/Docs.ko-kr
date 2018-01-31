@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 18c3825c58e7cfe0a73817a8431593c661c5fa4f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f9b68abeba19561a327bad5ee4be80d79af1a550
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="sorting-filtering-and-paging-with-the-entity-framework-in-an-aspnet-mvc-application-3-of-10"></a>정렬, 필터링 및 (3 / 10) ASP.NET MVC 응용 프로그램에서 Entity Framework와 함께 페이징
 ====================
@@ -64,7 +64,7 @@ ms.lasthandoff: 11/10/2017
 | 오름차순 날짜 | ascending | descending |
 | 내림차순 날짜 | ascending | ascending |
 
-메서드에서 사용 [LINQ to Entities](https://msdn.microsoft.com/en-us/library/bb386964.aspx) 기준으로 정렬 하려면 열을 지정 합니다. 코드를 만듭니다는 [IQueryable](https://msdn.microsoft.com/en-us/library/bb351562.aspx) 하기 전에 변수는 `switch` 문을 수정에 `switch` 문 및 호출은 `ToList` 후 메서드는 `switch` 문. 생성 및 수정할 `IQueryable` 변수 쿼리가 없는 데이터베이스에 전송 됩니다. 변환 될 때까지 쿼리가 실행 되지 않습니다는 `IQueryable` 개체와 같은 메서드를 호출 하 여 컬렉션에 `ToList`합니다. 따라서이 코드 발생 되어야 실행 하는 단일 쿼리는 `return View` 문.
+메서드에서 사용 [LINQ to Entities](https://msdn.microsoft.com/library/bb386964.aspx) 기준으로 정렬 하려면 열을 지정 합니다. 코드를 만듭니다는 [IQueryable](https://msdn.microsoft.com/library/bb351562.aspx) 하기 전에 변수는 `switch` 문을 수정에 `switch` 문 및 호출은 `ToList` 후 메서드는 `switch` 문. 생성 및 수정할 `IQueryable` 변수 쿼리가 없는 데이터베이스에 전송 됩니다. 변환 될 때까지 쿼리가 실행 되지 않습니다는 `IQueryable` 개체와 같은 메서드를 호출 하 여 컬렉션에 `ToList`합니다. 따라서이 코드 발생 되어야 실행 하는 단일 쿼리는 `return View` 문.
 
 ### <a name="add-column-heading-hyperlinks-to-the-student-index-view"></a>열 머리글을 학생 인덱스 보기에 대 한 하이퍼링크를 추가 합니다.
 
@@ -92,7 +92,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample4.cs?highlight=1,7-11)]
 
-사용자가 추가한는 `searchString` 매개 변수는 `Index` 메서드. 또한 LINQ 명령문을 추가 했으므로 `where` clausethat 해당 이름 또는 성을 검색 문자열을 포함 하는 학생만을 선택 합니다. 검색 문자열 값이 인덱스 뷰를 추가 하는 텍스트 상자가에서 수신 합니다. 추가 하는 문에 [여기서](https://msdn.microsoft.com/en-us/library/bb535040.aspx) 절이 검색 하려면 값이 있는 경우에 실행 됩니다.
+사용자가 추가한는 `searchString` 매개 변수는 `Index` 메서드. 또한 LINQ 명령문을 추가 했으므로 `where` clausethat 해당 이름 또는 성을 검색 문자열을 포함 하는 학생만을 선택 합니다. 검색 문자열 값이 인덱스 뷰를 추가 하는 텍스트 상자가에서 수신 합니다. 추가 하는 문에 [여기서](https://msdn.microsoft.com/library/bb535040.aspx) 절이 검색 하려면 값이 있는 경우에 실행 됩니다.
 
 > [!NOTE]
 > 대부분의 경우에서 Entity Framework 엔터티 집합 또는 메모리 내 컬렉션에 대 한 확장 메서드이기 같은 메서드를 호출할 수 있습니다. 결과 일반적으로 동일 하지만 경우에 따라 다를 수 있습니다. 예를 들어의.NET Framework 구현은 `Contains` 메서드, 빈 문자열을 전달 있지만 Entity Framework provider for SQL Server Compact 4.0 빈 문자열에 대 한 행이 반환 하는 경우 모든 행을 반환 합니다. 따라서 예제의 코드 (배치는 `Where` 내 문을 `if` 문)는 모든 버전의 SQL Server에 대 한 동일한 결과 얻었는지 확인 합니다. 또한의.NET Framework 구현은 `Contains` 메서드는 기본적으로 대/소문자 구분 비교를 수행 하지만 엔터티 프레임 워크 SQL Server 공급자는 기본적으로 대/소문자 구분 비교를 수행 합니다. 따라서 호출는 `ToUpper` 테스트를 만들려면 명시적으로 대/소문자 구분 메서드를 사용 하면 결과가 반환 하는 저장소를 사용 하 여 나중에 코드를 변경할 때 변경 되지 않습니다는 `IEnumerable` 컬렉션 대신 한 `IQueryable` 개체입니다. (호출 하는 경우는 `Contains` 에서 메서드는 `IEnumerable` .NET Framework 구현은 가져올 컬렉션을; 호출 하는 경우 그에 `IQueryable` 개체, 데이터베이스 공급자 구현을 가져옵니다.)
@@ -158,7 +158,7 @@ NuGet **PagedList.Mvc** 패키지는 자동으로 설치 된 **PagedList** 종�
 
 [!code-csharp[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample11.cs)]
 
-`ToPagedList` 메서드는 페이지 번호를 사용 합니다. 물음표는 두 개의 나타냅니다는 [null 병합 연산자](https://msdn.microsoft.com/en-us/library/ms173224.aspx)합니다. Null 병합 연산자는 null 허용 형식에 대 한 기본값을 정의 식 `(page ?? 1)` 의 값을 반환 하는 수단 `page` 값을 가진 또는 이면 1을 반환 하는 경우 `page` null입니다.
+`ToPagedList` 메서드는 페이지 번호를 사용 합니다. 물음표는 두 개의 나타냅니다는 [null 병합 연산자](https://msdn.microsoft.com/library/ms173224.aspx)합니다. Null 병합 연산자는 null 허용 형식에 대 한 기본값을 정의 식 `(page ?? 1)` 의 값을 반환 하는 수단 `page` 값을 가진 또는 이면 1을 반환 하는 경우 `page` null입니다.
 
 ### <a name="add-paging-links-to-the-student-index-view"></a>학생 인덱스 뷰를 페이징 링크 추가
 
@@ -170,11 +170,11 @@ NuGet **PagedList.Mvc** 패키지는 자동으로 설치 된 **PagedList** 종�
 
 `using` 문을 `PagedList.Mvc` 페이징 단추에 대 한 MVC 도우미에 대 한 액세스를 제공 합니다.
 
-코드의 오버 로드를 사용 하 여 [BeginForm](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx) 지정 하도록 허용 하는 [FormMethod.Get](https://msdn.microsoft.com/en-us/library/system.web.mvc.formmethod(v=vs.100).aspx/css)합니다.
+코드의 오버 로드를 사용 하 여 [BeginForm](https://msdn.microsoft.com/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx) 지정 하도록 허용 하는 [FormMethod.Get](https://msdn.microsoft.com/library/system.web.mvc.formmethod(v=vs.100).aspx/css)합니다.
 
 [!code-cshtml[Main](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample13.cshtml?highlight=1)]
 
-기본 [BeginForm](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx) 매개 변수가 URL 아니라 HTTP 메시지 본문에 쿼리 문자열로 전달 하는 POST 사용 하 여 양식 데이터를 전송 합니다. HTTP GET을 지정 하면 양식 데이터 변수로 전달 됩니다 URL에 쿼리 문자열, URL에 책갈피를 있습니다. [HTTP GET 사용에 대 한 W3C 지침](http://www.w3.org/2001/tag/doc/whenToUseGet.html) 작업이 업데이트 되지 않습니다는 경우 GET을 사용 하도록 지정 합니다.
+기본 [BeginForm](https://msdn.microsoft.com/library/system.web.mvc.html.formextensions.beginform(v=vs.108).aspx) 매개 변수가 URL 아니라 HTTP 메시지 본문에 쿼리 문자열로 전달 하는 POST 사용 하 여 양식 데이터를 전송 합니다. HTTP GET을 지정 하면 양식 데이터 변수로 전달 됩니다 URL에 쿼리 문자열, URL에 책갈피를 있습니다. [HTTP GET 사용에 대 한 W3C 지침](http://www.w3.org/2001/tag/doc/whenToUseGet.html) 작업이 업데이트 되지 않습니다는 경우 GET을 사용 하도록 지정 합니다.
 
 입력란은 새 페이지를 클릭 하면 현재 검색 문자열을 볼 수 있도록 현재 검색 문자열으로 초기화 됩니다.
 
@@ -291,7 +291,7 @@ Windows Azure SQL 데이터베이스는 SQL Server 기술을 기반으로 하는
 7. 오른쪽 상자의 맨 아래에 있는 화살표를 클릭 합니다. 마법사 열립니다는 **데이터베이스 설정** 단계입니다.
 8. 에 **이름** 상자에 입력 *ContosoUniversityDB*합니다.
 9. 에 **서버** 상자 **새 SQL 데이터베이스 서버**합니다. 또는 이전에 서버를 만든 경우 드롭다운 목록에서 해당 서버를 선택할 수 있습니다.
-10. 관리자가 입력 **로그인 이름** 및 **암호**합니다. 선택한 경우 **새 SQL 데이터베이스 서버** 기존 이름 및 암호를 여기 입력 되지, 새 이름 및 데이터베이스에 액세스할 때 나중에 다시 사용할 이제 정의 하는 암호를 입력 합니다. 이전에 만든 서버를 선택한 경우에 해당 서버에 대 한 자격 증명을 입력 합니다. 이 자습서에 대 한 선택 되지 않습니다는 ***고급*** 확인란 합니다. ***고급*** 옵션을 사용 하면 데이터베이스를 설정 하려면 [데이터 정렬](https://msdn.microsoft.com/en-us/library/aa174903(v=SQL.80).aspx)합니다.
+10. 관리자가 입력 **로그인 이름** 및 **암호**합니다. 선택한 경우 **새 SQL 데이터베이스 서버** 기존 이름 및 암호를 여기 입력 되지, 새 이름 및 데이터베이스에 액세스할 때 나중에 다시 사용할 이제 정의 하는 암호를 입력 합니다. 이전에 만든 서버를 선택한 경우에 해당 서버에 대 한 자격 증명을 입력 합니다. 이 자습서에 대 한 선택 되지 않습니다는 ***고급*** 확인란 합니다. ***고급*** 옵션을 사용 하면 데이터베이스를 설정 하려면 [데이터 정렬](https://msdn.microsoft.com/library/aa174903(v=SQL.80).aspx)합니다.
 11. 지점과 같은 **지역** 웹 사이트에 대해 선택한 합니다.
 12. 작업이 완료 되 나타내려면 상자의 오른쪽 맨 아래에 있는 확인 표시를 클릭 합니다.   
   
@@ -367,7 +367,7 @@ Windows Azure SQL 데이터베이스는 SQL Server 기술을 기반으로 하는
   
     ![Students_index_page_with_paging](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image32.png)
 
-이 시점에서 프로그램 *SchoolContext* 데이터베이스 선택 했기 때문에 Windows Azure SQL 데이터베이스에 생성 되었음을 **실행 Code First 마이그레이션을 (응용 프로그램 시작 시 실행)**합니다. *Web.config* 배포 된 웹 사이트의 파일이 변경 되어 있도록는 [MigrateDatabaseToLatestVersion](https://msdn.microsoft.com/en-us/library/hh829476(v=vs.103).aspx) 이니셜라이저 코드에서 읽거나 데이터베이스에 데이터를 쓸 처음으로 실행 됩니다 ( 발생 한 선택한 경우에 **학생** 탭):
+이 시점에서 프로그램 *SchoolContext* 데이터베이스 선택 했기 때문에 Windows Azure SQL 데이터베이스에 생성 되었음을 **실행 Code First 마이그레이션을 (응용 프로그램 시작 시 실행)**합니다. *Web.config* 배포 된 웹 사이트의 파일이 변경 되어 있도록는 [MigrateDatabaseToLatestVersion](https://msdn.microsoft.com/library/hh829476(v=vs.103).aspx) 이니셜라이저 코드에서 읽거나 데이터베이스에 데이터를 쓸 처음으로 실행 됩니다 ( 발생 한 선택한 경우에 **학생** 탭):
 
 ![](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image33.png)
 
@@ -387,7 +387,7 @@ Windows Azure SQL 데이터베이스는 SQL Server 기술을 기반으로 하는
 
 ## <a name="code-first-initializers"></a>코드의 첫 번째 이니셜라이저
 
-배포 섹션에서 언급 했 듯이 [MigrateDatabaseToLatestVersion](https://msdn.microsoft.com/en-us/library/hh829476(v=vs.103).aspx) 이니셜라이저를 사용 하 고 있습니다. 먼저 또한 제공 등을 사용할 수 있는 다른 이니셜라이저 [CreateDatabaseIfNotExists](https://msdn.microsoft.com/en-us/library/gg679221(v=vs.103).aspx) (기본값) 이면 [DropCreateDatabaseIfModelChanges](https://msdn.microsoft.com/en-us/library/gg679604(v=VS.103).aspx) 및 [ DropCreateDatabaseAlways](https://msdn.microsoft.com/en-us/library/gg679506(v=VS.103).aspx)합니다. `DropCreateAlways` 이니셜라이저는 단위 테스트에 대 한 조건을 설정 하는 데 유용할 수 있습니다. 사용자 고유의 이니셜라이저를 작성할 수 있습니다 및 응용 프로그램에서 읽거나 데이터베이스에 기록 될 때까지 대기 하지 않을 경우 이니셜라이저를 명시적으로 호출할 수 있습니다. 책의 6 장 참조에 대 한 이니셜라이저는 포괄적인 설명은 [프로그래밍 Entity Framework: Code First](http://shop.oreilly.com/product/0636920022220.do) Julie Lerman 및 Rowan Miller 합니다.
+배포 섹션에서 언급 했 듯이 [MigrateDatabaseToLatestVersion](https://msdn.microsoft.com/library/hh829476(v=vs.103).aspx) 이니셜라이저를 사용 하 고 있습니다. 먼저 또한 제공 등을 사용할 수 있는 다른 이니셜라이저 [CreateDatabaseIfNotExists](https://msdn.microsoft.com/library/gg679221(v=vs.103).aspx) (기본값) 이면 [DropCreateDatabaseIfModelChanges](https://msdn.microsoft.com/library/gg679604(v=VS.103).aspx) 및 [ DropCreateDatabaseAlways](https://msdn.microsoft.com/library/gg679506(v=VS.103).aspx)합니다. `DropCreateAlways` 이니셜라이저는 단위 테스트에 대 한 조건을 설정 하는 데 유용할 수 있습니다. 사용자 고유의 이니셜라이저를 작성할 수 있습니다 및 응용 프로그램에서 읽거나 데이터베이스에 기록 될 때까지 대기 하지 않을 경우 이니셜라이저를 명시적으로 호출할 수 있습니다. 책의 6 장 참조에 대 한 이니셜라이저는 포괄적인 설명은 [프로그래밍 Entity Framework: Code First](http://shop.oreilly.com/product/0636920022220.do) Julie Lerman 및 Rowan Miller 합니다.
 
 ## <a name="summary"></a>요약
 

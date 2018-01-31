@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/updating-and-deleting-existing-binary-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 55128faa3752a43902c17525dde3543a4a8c3997
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f2fca1e91720fba0215e12b1a1894a3a31e86b5c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="updating-and-deleting-existing-binary-data-c"></a>기존 이진 데이터 (C#) 업데이트 및 삭제
 ====================
@@ -150,7 +150,7 @@ Delete 워크플로에서 테스트 범주 레코드를 성공적으로 제거 �
 
 데이터베이스 외부의 이진 데이터를 저장할 경우의 단점은 중 하나는 관련된 데이터베이스 레코드가 삭제 될 때 이러한 파일을 정리 하려면 추가 단계를 수행 해야 하입니다. GridView 및 ObjectDataSource 전과 delete 명령의 수행 된 후 실행 하는 이벤트를 제공 합니다. 빌드 전 및 작업 후 이벤트에 대 한 이벤트 처리기를 만드는 실제로 필요 합니다. 전에 `Categories` 레코드가 삭제 되 PDF의 파일 경로 결정 해야 하지만 t 하려는 경우 몇 가지 예외 이며 범주는 삭제 되지 않습니다는 범주를 삭제 하기 전에 PDF를 삭제 하지 않는 것입니다.
 
-GridView s [ `RowDeleting` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.rowdeleting.aspx) 발생 전에 ObjectDataSource의 삭제 명령을 실행 하는 동안 해당 [ `RowDeleted` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.rowdeleted.aspx) 후에 발생 합니다. 다음 코드를 사용 하 여 이러한 두 개의 이벤트에 대 한 이벤트 처리기를 만듭니다.
+GridView s [ `RowDeleting` 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rowdeleting.aspx) 발생 전에 ObjectDataSource의 삭제 명령을 실행 하는 동안 해당 [ `RowDeleted` 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rowdeleted.aspx) 후에 발생 합니다. 다음 코드를 사용 하 여 이러한 두 개의 이벤트에 대 한 이벤트 처리기를 만듭니다.
 
 
 [!code-csharp[Main](updating-and-deleting-existing-binary-data-cs/samples/sample5.cs)]

@@ -2,20 +2,18 @@
 title: "ASP.NET Core MVC 개요"
 author: ardalis
 description: "ASP.NET Core MVC 웹 응용 프로그램을 빌드하기 위한 풍부한 프레임 워크는 방법과 모델-뷰-컨트롤러를 사용 하 여 Api 디자인 패턴에 알아봅니다."
-keywords: ASP.NET Core,
 ms.author: riande
 manager: wpickett
-ms.date: 10/14/2016
+ms.date: 01/08/2018
 ms.topic: article
-ms.assetid: 89af38d1-52e0-4db7-b791-dbce909b0714
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/overview
-ms.openlocfilehash: 2492b6aa4602dbbf3b9cd3dca00d40690c640cab
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3c3279e7d25704f5e70bbd83cf9feebda8319203
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="overview-of-aspnet-core-mvc"></a>ASP.NET Core MVC 개요
 
@@ -38,7 +36,7 @@ ASP.NET Core MVC는 웹 앱을 빌드하기 위한 풍부한 프레임 워크 �
 
 ### <a name="model-responsibilities"></a>모델의 책임
 
-MVC 응용 프로그램에서 모델은 응용 프로그램 및 모든 비즈니스 논리 또는 것을 통해 수행 해야 하는 작업의 상태를 나타냅니다. 응용 프로그램의 상태를 유지 하기 위한 모든 구현 논리와 함께 모델에 비즈니스 논리를 캡슐화 해야 합니다. 강력한 형식의 뷰 데이터를 포함 하도록 특별히 설계 된 ViewModel 형식; 해당 보기에 표시 하려면 일반적으로 사용 합니다. 컨트롤러를 만들고 모델에서 이러한 ViewModel 인스턴스를 채웁니다.
+MVC 응용 프로그램에서 모델은 응용 프로그램 및 모든 비즈니스 논리 또는 것을 통해 수행 해야 하는 작업의 상태를 나타냅니다. 응용 프로그램의 상태를 유지 하기 위한 모든 구현 논리와 함께 모델에 비즈니스 논리를 캡슐화 해야 합니다. 강력한 형식의 뷰는 일반적으로 해당 보기에 표시할 데이터를 포함 하도록 디자인 된 ViewModel 형식을 사용 합니다. 컨트롤러를 만들고 모델에서 이러한 ViewModel 인스턴스 정보를 표시 합니다.
 
 > [!NOTE]
 > MVC 아키텍처 패턴을 사용 하는 응용 프로그램에서 모델을 구성 하는 방법은 여러 가지가 있습니다. 일부에 대 한 자세한 [여러 가지 모델 유형에](http://deviq.com/kinds-of-models/)합니다.
@@ -52,7 +50,7 @@ MVC 응용 프로그램에서 모델은 응용 프로그램 및 모든 비즈니
 컨트롤러는 사용자 상호 작용 처리, 모델로 작업 하 고, 궁극적으로에 렌더링할 뷰를 선택 하는 구성 요소입니다. MVC 응용 프로그램에서 뷰 정보만 표시 됩니다. 컨트롤러 처리 하며 사용자 입력 및 상호 작용에 응답 합니다. MVC 패턴에서 컨트롤러는 초기 진입점 하 고 모델을 사용 하려면 형식 및 렌더링 하는 보기를 선택 (따라서 이름-제어 응용 프로그램 요청에 응답 하는 방법을).
 
 > [!NOTE]
-> 너무 많은 책임으로 컨트롤러를 지나치게 복잡 수 해야 합니다. 컨트롤러 논리를 지나치게 복잡 되는 것을 유지 하기 위해 사용 하 여는 [단일 책임 원칙](http://deviq.com/single-responsibility-principle/) 푸시 비즈니스 논리는 컨트롤러를 도메인 모델입니다.
+> 너무 많은 책임으로 컨트롤러를 지나치게 복잡 하지 않아야 합니다. 컨트롤러 논리를 지나치게 복잡 되는 것을 유지 하기 위해 사용 하 여는 [단일 책임 원칙](http://deviq.com/single-responsibility-principle/) 푸시 비즈니스 논리는 컨트롤러를 도메인 모델입니다.
 
 >[!TIP]
 > 컨트롤러 작업 같은 종류의 작업을 자주 수행를 찾을 경우 참고할 수는 [직접 원칙 반복 안 함](http://deviq.com/don-t-repeat-yourself/) 이러한 일반적인 작업을 이동 하 여 [필터](#filters)합니다.
@@ -142,12 +140,12 @@ public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = 
     {
       // work with the model
     }
-    // If we got this far, something failed, redisplay form
+    // At this point, something failed, redisplay form
     return View(model);
 }
 ```
 
-프레임 워크 클라이언트 및 서버에서 요청 데이터 유효성 검사를 처리 합니다. 모델 유형에 대해 지정 된 유효성 검사 논리 비간섭 주석으로 렌더링 된 보기에 추가 되 고 사용 하 여 브라우저에 적용 됩니다 [jQuery 유효성 검사](https://jqueryvalidation.org/)합니다.
+프레임 워크와 서버 모두 클라이언트에 유효성 검사 요청 데이터를 처리합니다. 모델 유형에 대해 지정 된 유효성 검사 논리 비간섭 주석으로 렌더링 된 보기에 추가 되 고 사용 하 여 브라우저에 적용 됩니다 [jQuery 유효성 검사](https://jqueryvalidation.org/)합니다.
 
 ### <a name="dependency-injection"></a>종속성 주입
 
@@ -181,11 +179,11 @@ ASP.NET Core에서 기본적으로 지원 [종속성 주입 (DI)](../fundamental
 
 ### <a name="areas"></a>영역
 
-[영역](controllers/areas.md) 큰 ASP.NET Core MVC 웹 응용 프로그램 여러 개의 작은 기능 그룹으로 분할 하는 방법을 제공 합니다. 실질적으로 영역은 응용 프로그램 내의 MVC 구조입니다. MVC 프로젝트에서 모델, 컨트롤러 및 보기와 같은 논리적 구성 요소는 서로 다른 폴더에 저장 하는 및 MVC 명명 규칙을 사용 하 여 이러한 구성 요소 간의 관계를 만들 수 있습니다. 규모가 큰 앱에 대 한 별도 높은 수준의 기능 영역을를 응용 프로그램을 분할 하는 것이 도움이 수도 있습니다. 예를 들어, 체크 아웃, 청구 및 검색 등과 같은 여러 비즈니스 단위를 사용 하 여 전자 상거래 앱입니다. 각 이러한 단위가 있는 자신의 논리적 구성 요소 뷰, 컨트롤러 및 모델입니다.
+[영역](controllers/areas.md) 큰 ASP.NET Core MVC 웹 응용 프로그램 여러 개의 작은 기능 그룹으로 분할 하는 방법을 제공 합니다. 영역은 응용 프로그램 내의 MVC 구조입니다. MVC 프로젝트에서 모델, 컨트롤러 및 보기와 같은 논리적 구성 요소는 서로 다른 폴더에 저장 하는 및 MVC 명명 규칙을 사용 하 여 이러한 구성 요소 간의 관계를 만들 수 있습니다. 규모가 큰 앱에 대 한 별도 높은 수준의 기능 영역을를 응용 프로그램을 분할 하는 것이 도움이 수도 있습니다. 예를 들어, 체크 아웃, 청구 및 검색 등과 같은 여러 비즈니스 단위를 사용 하 여 전자 상거래 앱입니다. 각 이러한 단위가 있는 자신의 논리적 구성 요소 뷰, 컨트롤러 및 모델입니다.
 
 ### <a name="web-apis"></a>Web API
 
-웹 사이트를 구축 하기 위한 훌륭한 플랫폼 않도록, ASP.NET Core MVC는 웹 Api를 구축 하기 위한 훌륭한 지원 합니다. 다양 한 브라우저 및 모바일 장치를 포함 하 여 클라이언트를 연결할 수 있는 서비스를 작성할 수 있습니다.
+웹 사이트를 구축 하기 위한 훌륭한 플랫폼 않도록, ASP.NET Core MVC는 웹 Api를 구축 하기 위한 훌륭한 지원 합니다. 다양 한 범위의 브라우저 및 모바일 장치를 포함 하 여 클라이언트에 도달 하는 서비스를 작성할 수 있습니다.
 
 프레임 워크에서는 기본적으로 지 원하는 HTTP 콘텐츠 협상을 지원 [데이터 서식 지정](models/formatting.md) JSON 또는 XML입니다. 쓰기 [사용자 지정 포맷터](advanced/custom-formatters.md) 사용자의 고유 형식에 대 한 지원을 추가 합니다.
 
@@ -213,7 +211,7 @@ Razor 뷰 엔진을 정의할 수 있습니다를 사용 하 여 [레이아웃](
 
 Mvc에서 razor 뷰 수 강력한 형식 모델에 따라 합니다. 컨트롤러 형식 검사 및 IntelliSense 지원을 보기를 사용 하도록 설정 하는 보기에는 강력한 형식의 모델을 전달할 수 있습니다.
 
-다음 보기 형식의 모델을 정의 하는 예를 들어 `IEnumerable<Product>`:
+다음 뷰 형식의 모델을 렌더링 하는 예를 들어 `IEnumerable<Product>`:
 
 ```cshtml
 @model IEnumerable<Product>

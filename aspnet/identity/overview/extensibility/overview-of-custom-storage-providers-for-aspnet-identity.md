@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 1ea779cb10661512690e3fec16ae73be0f40d15a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f43f0a2dd80e26ecff15e5742e18264ddb5b26aa
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="overview-of-custom-storage-providers-for-aspnet-identity"></a>ASP.NET Id에 대 한 사용자 지정 저장소 공급자 개요
 ====================
@@ -73,7 +73,7 @@ ASP.NET Id에 대 한 사용자 지정 된 저장소 공급자를 만들려면�
 
 | 데이터 | 설명 |
 | --- | --- |
-| Users | 웹 사이트의 등록 된 사용자입니다. 사용자 Id 및 사용자 이름을 포함합니다. 사용자가 사이트에만 적용 되는 자격 증명으로 로그인 하는 경우에 해시 된 암호를 포함 될 수 있습니다 (아님 Facebook 등의 외부 사이트에서 자격 증명을 사용 하 여), 및 보안 스탬프 아무 것도 사용자 자격 증명에 변경 되었는지 여부를 나타냅니다. 전자 메일 주소를 포함할 수도, 전화 번호를 실패 한 로그인을 현재 수가 2 단계 인증이 사용 되는지 여부를 수도 있습니다 이며 계정이 잠겨 있는지 여부. |
+| 사용자 | 웹 사이트의 등록 된 사용자입니다. 사용자 Id 및 사용자 이름을 포함합니다. 사용자가 사이트에만 적용 되는 자격 증명으로 로그인 하는 경우에 해시 된 암호를 포함 될 수 있습니다 (아님 Facebook 등의 외부 사이트에서 자격 증명을 사용 하 여), 및 보안 스탬프 아무 것도 사용자 자격 증명에 변경 되었는지 여부를 나타냅니다. 전자 메일 주소를 포함할 수도, 전화 번호를 실패 한 로그인을 현재 수가 2 단계 인증이 사용 되는지 여부를 수도 있습니다 이며 계정이 잠겨 있는지 여부. |
 | 사용자 클레임 | 사용자의 id를 나타내는 사용자에 대 한 문 (또는 클레임)의 집합입니다. 더 나은 식의 역할을 통해 액세스가 가능 보다는 사용자의 id 사용 하도록 설정할 수 있습니다. |
 | 사용자 로그인 | 외부 인증 공급자 (예: Facebook)에 대 한 정보는 사용자를 로그인 할 때 사용 하도록 합니다. |
 | 역할 | 사이트에 대 한 권한 부여 그룹입니다. 역할 Id 및 역할 이름 (예: "Admin" 또는 "Employee")를 포함합니다. |
@@ -89,7 +89,7 @@ ASP.NET Identity 2.0에 대 한 데이터 저장소는 MySQL 구현을 참조 [M
 
 데이터 액세스 계층에서 데이터 원본에 ASP.NET Identity에서 데이터를 저장 하는 논리를 제공할 수 있습니다. 사용자 지정 된 저장소 공급자에 대 한 데이터 액세스 계층에는 사용자 및 역할 정보를 저장 하는 다음 클래스가 포함 될 수 있습니다.
 
-| 클래스 | 설명 | 예제 |
+| 클래스 | 설명 | 예 |
 | --- | --- | --- |
 | 컨텍스트 | 지 속성 메커니즘에 연결 하 고 쿼리를 실행 하는 정보를 캡슐화 합니다. 이 클래스는 핵심 데이터 액세스 계층입니다. 다른 데이터 클래스는 해당 작업을 수행 하려면이 클래스의 인스턴스를 해야 합니다. 또한이 클래스의 인스턴스와 저장소 클래스를 초기화 합니다. | [MySQLDatabase](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/AspNet.Identity.MySQL/MySQLDatabase.cs) |
 | 사용자 저장소 | 저장 하 고 사용자 정보 (예: 사용자 이름 및 암호 해시)를 검색 합니다. | [UserTable (MySQL)](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/AspNet.Identity.MySQL/UserTable.cs) |
@@ -109,15 +109,15 @@ ASP.NET Identity 2.0에 대 한 데이터 저장소는 MySQL 구현을 참조 [M
 <a id="user"></a>
 ## <a name="customize-the-user-class"></a>사용자 클래스를 사용자 지정
 
-에 해당 하는 사용자 클래스를 만들어야 사용자 고유의 저장소 공급자를 구현할 때는 [IdentityUser](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.identity.entityframework.identityuser(v=vs.108).aspx) 클래스에 [Microsoft.ASP.NET.Identity.EntityFramework](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.identity.entityframework(v=vs.108).aspx) 네임 스페이스:
+에 해당 하는 사용자 클래스를 만들어야 사용자 고유의 저장소 공급자를 구현할 때는 [IdentityUser](https://msdn.microsoft.com/library/microsoft.aspnet.identity.entityframework.identityuser(v=vs.108).aspx) 클래스에 [Microsoft.ASP.NET.Identity.EntityFramework](https://msdn.microsoft.com/library/microsoft.aspnet.identity.entityframework(v=vs.108).aspx) 네임 스페이스:
 
 다음 다이어그램에서는 만들어야 하는 IdentityUser 클래스 및이 클래스에서 구현 하는 인터페이스를 보여 줍니다.
 
 ![](overview-of-custom-storage-providers-for-aspnet-identity/_static/image2.png)
 
-[IUser&lt;TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613291(v=vs.108).aspx) 인터페이스 usermanager가 요청 된 작업을 수행 하는 때를 호출 하려고 하는 속성을 정의 합니다. 인터페이스에는 두 개의 속성-Id와 사용자 이름이 포함 되어 있습니다. [IUser&lt;TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613291(v=vs.108).aspx) 인터페이스를 사용 하면 제네릭을 통해 사용자에 대 한 키의 형식을 지정할 수 **TKey** 매개 변수입니다. Id 속성의 유형을 TKey 매개 변수의 값을 찾습니다.
+[IUser&lt;TKey&gt; ](https://msdn.microsoft.com/library/dn613291(v=vs.108).aspx) 인터페이스 usermanager가 요청 된 작업을 수행 하는 때를 호출 하려고 하는 속성을 정의 합니다. 인터페이스에는 두 개의 속성-Id와 사용자 이름이 포함 되어 있습니다. [IUser&lt;TKey&gt; ](https://msdn.microsoft.com/library/dn613291(v=vs.108).aspx) 인터페이스를 사용 하면 제네릭을 통해 사용자에 대 한 키의 형식을 지정할 수 **TKey** 매개 변수입니다. Id 속성의 유형을 TKey 매개 변수의 값을 찾습니다.
 
-Id 프레임 워크 또한 제공 된 [IUser](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.identity.iuser(v=vs.108).aspx) (제네릭 매개 변수) 없이 인터페이스 키에는 문자열 값을 사용 하려는 경우.
+Id 프레임 워크 또한 제공 된 [IUser](https://msdn.microsoft.com/library/microsoft.aspnet.identity.iuser(v=vs.108).aspx) (제네릭 매개 변수) 없이 인터페이스 키에는 문자열 값을 사용 하려는 경우.
 
 IdentityUser 클래스 IUser 구현 및 추가 속성 또는 웹 사이트에서 사용자에 대 한 생성자를 포함 합니다. 다음 예제에서는 정수를 사용 하 여 키에 대 한 IdentityUser 클래스를 보여 줍니다. Id 필드로 설정 되어 **int** 제네릭 매개 변수의 값과 일치 하도록 합니다. 
 
@@ -128,7 +128,7 @@ IdentityUser 클래스 IUser 구현 및 추가 속성 또는 웹 사이트에서
 <a id="userstore"></a>
 ## <a name="customize-the-user-store"></a>사용자 저장소에 사용자 지정
 
-또한 사용자에 대 한 모든 데이터 작업에 대 한 메서드를 제공 하는 UserStore 클래스를 만듭니다. 이 클래스는 해당 하는 [UserStore&lt;s e r&gt; ](https://msdn.microsoft.com/en-us/library/dn315446(v=vs.108).aspx) 클래스에 [Microsoft.ASP.NET.Identity.EntityFramework](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.identity.entityframework(v=vs.108).aspx) 네임 스페이스입니다. UserStore 클래스에서 구현 하는 [IUserStore&lt;TKey, s e r&gt; ](https://msdn.microsoft.com/en-us/library/dn613276(v=vs.108).aspx) 및 선택적 인터페이스입니다. 응용 프로그램에서 제공 하려는 기능에 따라 구현 해야 하는 선택적 인터페이스를 선택 합니다.
+또한 사용자에 대 한 모든 데이터 작업에 대 한 메서드를 제공 하는 UserStore 클래스를 만듭니다. 이 클래스는 해당 하는 [UserStore&lt;s e r&gt; ](https://msdn.microsoft.com/library/dn315446(v=vs.108).aspx) 클래스에 [Microsoft.ASP.NET.Identity.EntityFramework](https://msdn.microsoft.com/library/microsoft.aspnet.identity.entityframework(v=vs.108).aspx) 네임 스페이스입니다. UserStore 클래스에서 구현 하는 [IUserStore&lt;TKey, s e r&gt; ](https://msdn.microsoft.com/library/dn613276(v=vs.108).aspx) 및 선택적 인터페이스입니다. 응용 프로그램에서 제공 하려는 기능에 따라 구현 해야 하는 선택적 인터페이스를 선택 합니다.
 
 다음 이미지는 만들어야 UserStore 클래스 및 관련 인터페이스를 표시 합니다.
 
@@ -153,27 +153,27 @@ UserStore 클래스 내에서 작업을 수행 하기 위해 만든 데이터 �
 ![](overview-of-custom-storage-providers-for-aspnet-identity/_static/image4.png)
 
 - **IUserStore**  
- [IUserStore&lt;s e r, TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613278(v=vs.108).aspx) 인터페이스는 인터페이스에서 사용자 저장소를 구현 해야 합니다. 만들기, 업데이트, 삭제 및 사용자를 검색 하기 위한 메서드를 정의 합니다.
+ [IUserStore&lt;s e r, TKey&gt; ](https://msdn.microsoft.com/library/dn613278(v=vs.108).aspx) 인터페이스는 인터페이스에서 사용자 저장소를 구현 해야 합니다. 만들기, 업데이트, 삭제 및 사용자를 검색 하기 위한 메서드를 정의 합니다.
 - **IUserClaimStore**  
- [IUserClaimStore&lt;s e r, TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613265(v=vs.108).aspx) 인터페이스 메서드를 정의 합니다. 사용자 클레임을 사용 하도록 설정 하려면 사용자 저장소에서 구현 해야 합니다. 메서드 또는 추가, 제거 및 사용자 클레임을 검색을 포함 합니다.
+ [IUserClaimStore&lt;s e r, TKey&gt; ](https://msdn.microsoft.com/library/dn613265(v=vs.108).aspx) 인터페이스 메서드를 정의 합니다. 사용자 클레임을 사용 하도록 설정 하려면 사용자 저장소에서 구현 해야 합니다. 메서드 또는 추가, 제거 및 사용자 클레임을 검색을 포함 합니다.
 - **IUserLoginStore**  
- [IUserLoginStore&lt;s e r, TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613272(v=vs.108).aspx) 메서드 정의 외부 인증 공급자를 사용 하도록 설정 하려면 사용자 저장소에서 구현 해야 합니다. 추가, 제거 및 사용자 로그인 및 로그인 정보에 따라 사용자를 검색 하기 위한 메서드를 검색 하기 위한 메서드를 포함 합니다.
+ [IUserLoginStore&lt;s e r, TKey&gt; ](https://msdn.microsoft.com/library/dn613272(v=vs.108).aspx) 메서드 정의 외부 인증 공급자를 사용 하도록 설정 하려면 사용자 저장소에서 구현 해야 합니다. 추가, 제거 및 사용자 로그인 및 로그인 정보에 따라 사용자를 검색 하기 위한 메서드를 검색 하기 위한 메서드를 포함 합니다.
 - **IUserRoleStore**  
- [IUserRoleStore&lt;TKey, s e r&gt; ](https://msdn.microsoft.com/en-us/library/dn613276(v=vs.108).aspx) 메서드를 정의 하는 인터페이스 역할에 사용자를 매핑할 사용자 저장소에서 구현 해야 합니다. 추가, 제거 및 사용자의 역할 및 사용자를 역할에 할당 된 경우를 확인 하는 메서드를 검색 하는 메서드를 포함 합니다.
-- **S w**  
- [s w&lt;s e r, TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613273(v=vs.108).aspx) 인터페이스를 유지 하 여 사용자 저장소에서 구현 해야 하는 메서드를 정의 합니다. 해시 된 암호입니다. 가져오기 및 해시 된 암호와 사용자가 암호를 설정 하는지 여부를 나타내는 방법을 설정 하는 메서드를 포함 합니다.
+ [IUserRoleStore&lt;TKey, s e r&gt; ](https://msdn.microsoft.com/library/dn613276(v=vs.108).aspx) 메서드를 정의 하는 인터페이스 역할에 사용자를 매핑할 사용자 저장소에서 구현 해야 합니다. 추가, 제거 및 사용자의 역할 및 사용자를 역할에 할당 된 경우를 확인 하는 메서드를 검색 하는 메서드를 포함 합니다.
+- **IUserPasswordStore**  
+ [s w&lt;s e r, TKey&gt; ](https://msdn.microsoft.com/library/dn613273(v=vs.108).aspx) 인터페이스를 유지 하 여 사용자 저장소에서 구현 해야 하는 메서드를 정의 합니다. 해시 된 암호입니다. 가져오기 및 해시 된 암호와 사용자가 암호를 설정 하는지 여부를 나타내는 방법을 설정 하는 메서드를 포함 합니다.
 - **IUserSecurityStampStore**  
- [IUserSecurityStampStore&lt;s e r, TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613277(v=vs.108).aspx) 사용자의 계정 정보가 변경 되었는지 여부를 나타내는에 보안 스탬프를 사용 하 여 사용자 저장소에서 구현 해야 하는 메서드를 정의 하는 인터페이스 . 사용자의 암호 변경 또는 추가 하거나 로그인을 제거 하는 경우이 스탬프 업데이트 됩니다. 가져오기 및 설정의 보안 스탬프에 대 한 메서드를 포함 합니다.
-- **T w**  
- [t w&lt;s e r, TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613279(v=vs.108).aspx) 인터페이스 구현에 구현 2 단계 인증을 해야 하는 메서드를 정의 합니다. 가져오기 및 사용자에 대해 2 단계 인증이 사용 되는지 여부를 설정 하는 메서드를 포함 합니다.
-- **E r p h**  
- [p h&lt;s e r, TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613275(v=vs.108).aspx) 인터페이스 사용자 전화 번호를 저장 하기 위해 구현 해야 하는 메서드를 정의 합니다. 가져오기 및 전화 번호와 전화 번호가 확인 되었는지 여부를 설정 하는 메서드를 포함 합니다.
-- **O r e**  
- [o r e&lt;s e r, TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613143(v=vs.108).aspx) 인터페이스 사용자 전자 메일 주소를 저장 하기 위해 구현 해야 하는 메서드를 정의 합니다. 가져오기 및 전자 메일 주소 및 전자 메일이 확인 여부를 설정 하는 메서드를 포함 합니다.
-- **O r e**  
- [o r e&lt;s e r, TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613271(v=vs.108).aspx) 인터페이스 계정 잠금에 대 한 정보를 저장 하기 위해 구현 해야 하는 메서드를 정의 합니다. 현재 실패 한 액세스 시도 수를 가져오는, 가져오기 설정 여부는 계정을 잠글 수 있는, 가져오기 및 시도 실패 수가 증가 하는 잠금 종료 날짜를 설정 하 고 실패 한 시도 횟수를 다시 설정에 대 한 메서드를 포함 합니다.
-- **I q**  
- [i q&lt;s e r, TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613267(v=vs.108).aspx) 인터페이스 쿼리 가능한 사용자 저장소를 제공 하도록 구현 해야 하는 멤버를 정의 합니다. 쿼리 가능한 사용자가 포함 하는 속성을 포함 합니다.
+ [IUserSecurityStampStore&lt;s e r, TKey&gt; ](https://msdn.microsoft.com/library/dn613277(v=vs.108).aspx) 사용자의 계정 정보가 변경 되었는지 여부를 나타내는에 보안 스탬프를 사용 하 여 사용자 저장소에서 구현 해야 하는 메서드를 정의 하는 인터페이스 . 사용자의 암호 변경 또는 추가 하거나 로그인을 제거 하는 경우이 스탬프 업데이트 됩니다. 가져오기 및 설정의 보안 스탬프에 대 한 메서드를 포함 합니다.
+- **IUserTwoFactorStore**  
+ [t w&lt;s e r, TKey&gt; ](https://msdn.microsoft.com/library/dn613279(v=vs.108).aspx) 인터페이스 구현에 구현 2 단계 인증을 해야 하는 메서드를 정의 합니다. 가져오기 및 사용자에 대해 2 단계 인증이 사용 되는지 여부를 설정 하는 메서드를 포함 합니다.
+- **IUserPhoneNumberStore**  
+ [p h&lt;s e r, TKey&gt; ](https://msdn.microsoft.com/library/dn613275(v=vs.108).aspx) 인터페이스 사용자 전화 번호를 저장 하기 위해 구현 해야 하는 메서드를 정의 합니다. 가져오기 및 전화 번호와 전화 번호가 확인 되었는지 여부를 설정 하는 메서드를 포함 합니다.
+- **IUserEmailStore**  
+ [o r e&lt;s e r, TKey&gt; ](https://msdn.microsoft.com/library/dn613143(v=vs.108).aspx) 인터페이스 사용자 전자 메일 주소를 저장 하기 위해 구현 해야 하는 메서드를 정의 합니다. 가져오기 및 전자 메일 주소 및 전자 메일이 확인 여부를 설정 하는 메서드를 포함 합니다.
+- **IUserLockoutStore**  
+ [o r e&lt;s e r, TKey&gt; ](https://msdn.microsoft.com/library/dn613271(v=vs.108).aspx) 인터페이스 계정 잠금에 대 한 정보를 저장 하기 위해 구현 해야 하는 메서드를 정의 합니다. 현재 실패 한 액세스 시도 수를 가져오는, 가져오기 설정 여부는 계정을 잠글 수 있는, 가져오기 및 시도 실패 수가 증가 하는 잠금 종료 날짜를 설정 하 고 실패 한 시도 횟수를 다시 설정에 대 한 메서드를 포함 합니다.
+- **IQueryableUserStore**  
+ [i q&lt;s e r, TKey&gt; ](https://msdn.microsoft.com/library/dn613267(v=vs.108).aspx) 인터페이스 쿼리 가능한 사용자 저장소를 제공 하도록 구현 해야 하는 멤버를 정의 합니다. 쿼리 가능한 사용자가 포함 하는 속성을 포함 합니다.
 
  사용자 응용 프로그램에서 필요한 인터페이스를 구현 와 같은, IUserClaimStore, IUserLoginStore, IUserRoleStore, s w, 및 IUserSecurityStampStore 아래와 같이 인터페이스입니다. 
 
@@ -183,22 +183,22 @@ UserStore 클래스 내에서 작업을 수행 하기 위해 만든 데이터 �
 
 ### <a name="identityuserclaim-identityuserlogin-and-identityuserrole"></a>IdentityUserClaim, IdentityUserLogin, 및 IdentityUserRole
 
-Microsoft.AspNet.Identity.EntityFramework 네임 스페이스에 구현 된 [IdentityUserClaim](https://msdn.microsoft.com/en-us/library/dn613250(v=vs.108).aspx), [IdentityUserLogin](https://msdn.microsoft.com/en-us/library/dn613251(v=vs.108).aspx), 및 [IdentityUserRole](https://msdn.microsoft.com/en-us/library/dn613252(v=vs.108).aspx) 클래스입니다. 이러한 기능을 사용 하는 경우에 이러한 클래스의 사용자가 자체 버전을 만들고 응용 프로그램에 대 한 속성을 정의 하는 것이 좋습니다. 그러나 때로는 것이 효율적 기본 작업 (예: 추가 또는 제거 하는 사용자의 클레임)를 수행할 때 이러한 엔터티를 메모리에 로드 하지 않도록 합니다. 대신, 백 엔드 저장소 클래스는 데이터 원본에 직접 이러한 작업을 실행할 수 있습니다. 예를 들어 UserStore.GetClaimsAsync() 메서드는 userClaimTable.FindByUserId(user.를 호출할 수 있습니다. 직접 테이블 및 클레임의 목록을 반환 하는에서 쿼리를 실행 하려면 id) 메서드.
+Microsoft.AspNet.Identity.EntityFramework 네임 스페이스에 구현 된 [IdentityUserClaim](https://msdn.microsoft.com/library/dn613250(v=vs.108).aspx), [IdentityUserLogin](https://msdn.microsoft.com/library/dn613251(v=vs.108).aspx), 및 [IdentityUserRole](https://msdn.microsoft.com/library/dn613252(v=vs.108).aspx) 클래스입니다. 이러한 기능을 사용 하는 경우에 이러한 클래스의 사용자가 자체 버전을 만들고 응용 프로그램에 대 한 속성을 정의 하는 것이 좋습니다. 그러나 때로는 것이 효율적 기본 작업 (예: 추가 또는 제거 하는 사용자의 클레임)를 수행할 때 이러한 엔터티를 메모리에 로드 하지 않도록 합니다. 대신, 백 엔드 저장소 클래스는 데이터 원본에 직접 이러한 작업을 실행할 수 있습니다. 예를 들어 UserStore.GetClaimsAsync() 메서드는 userClaimTable.FindByUserId(user.를 호출할 수 있습니다. 직접 테이블 및 클레임의 목록을 반환 하는에서 쿼리를 실행 하려면 id) 메서드.
 
 [!code-csharp[Main](overview-of-custom-storage-providers-for-aspnet-identity/samples/sample6.cs)]
 
 <a id="role"></a>
 ## <a name="customize-the-role-class"></a>Role 클래스를 사용자 지정
 
-에 해당 하는 역할 클래스 만들어야 사용자 고유의 저장소 공급자를 구현할 때는 [IdentityRole](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.identity.entityframework.identityrole(v=vs.108).aspx) 클래스에 [Microsoft.ASP.NET.Identity.EntityFramework](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.identity.entityframework(v=vs.108).aspx) 네임 스페이스:
+에 해당 하는 역할 클래스 만들어야 사용자 고유의 저장소 공급자를 구현할 때는 [IdentityRole](https://msdn.microsoft.com/library/microsoft.aspnet.identity.entityframework.identityrole(v=vs.108).aspx) 클래스에 [Microsoft.ASP.NET.Identity.EntityFramework](https://msdn.microsoft.com/library/microsoft.aspnet.identity.entityframework(v=vs.108).aspx) 네임 스페이스:
 
 다음 다이어그램에서는 만들어야 하는 IdentityRole 클래스 및이 클래스에서 구현 하는 인터페이스를 보여 줍니다.
 
 ![](overview-of-custom-storage-providers-for-aspnet-identity/_static/image5.png)
 
-[IRole&lt;TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613268(v=vs.108).aspx) 인터페이스는 RoleManager 요청 된 작업을 수행 하는 때를 호출 하려고 하는 속성을 정의 합니다. 인터페이스에는 두 개의 속성-Id와 이름을 포함합니다. [IRole&lt;TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613268(v=vs.108).aspx) 인터페이스를 사용 하면 제네릭을 통해 역할에 대 한 키의 형식을 지정할 수 **TKey** 매개 변수입니다. Id 속성의 유형을 TKey 매개 변수의 값을 찾습니다.
+[IRole&lt;TKey&gt; ](https://msdn.microsoft.com/library/dn613268(v=vs.108).aspx) 인터페이스는 RoleManager 요청 된 작업을 수행 하는 때를 호출 하려고 하는 속성을 정의 합니다. 인터페이스에는 두 개의 속성-Id와 이름을 포함합니다. [IRole&lt;TKey&gt; ](https://msdn.microsoft.com/library/dn613268(v=vs.108).aspx) 인터페이스를 사용 하면 제네릭을 통해 역할에 대 한 키의 형식을 지정할 수 **TKey** 매개 변수입니다. Id 속성의 유형을 TKey 매개 변수의 값을 찾습니다.
 
-Id 프레임 워크 또한 제공 된 [IRole](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.identity.irole(v=vs.108).aspx) (제네릭 매개 변수) 없이 인터페이스 키에는 문자열 값을 사용 하려는 경우.
+Id 프레임 워크 또한 제공 된 [IRole](https://msdn.microsoft.com/library/microsoft.aspnet.identity.irole(v=vs.108).aspx) (제네릭 매개 변수) 없이 인터페이스 키에는 문자열 값을 사용 하려는 경우.
 
 다음 예제에서는 정수를 사용 하 여 키에 대 한 IdentityRole 클래스를 보여 줍니다. Id 필드는 제네릭 매개 변수의 값과 일치 하도록 int로 설정 됩니다. 
 
@@ -209,7 +209,7 @@ Id 프레임 워크 또한 제공 된 [IRole](https://msdn.microsoft.com/en-us/l
 <a id="rolestore"></a>
 ## <a name="customize-the-role-store"></a>역할 저장소의 사용자 지정
 
-역할에 대 한 모든 데이터 작업에 대 한 메서드를 제공 하는 RoleStore 클래스를 만들 수도 있습니다. 이 클래스는 해당 하는 [RoleStore&lt;TRole&gt; ](https://msdn.microsoft.com/en-us/library/dn468181(v=vs.108).aspx) Microsoft.ASP.NET.Identity.EntityFramework 네임 스페이스의 클래스입니다. RoleStore 클래스에서 구현 하는 [IRoleStore&lt;TRole, TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613266(v=vs.108).aspx) 및 필요에 따라는 [r e&lt;TRole, TKey&gt; ](https://msdn.microsoft.com/en-us/library/dn613262(v=vs.108).aspx) 인터페이스입니다.
+역할에 대 한 모든 데이터 작업에 대 한 메서드를 제공 하는 RoleStore 클래스를 만들 수도 있습니다. 이 클래스는 해당 하는 [RoleStore&lt;TRole&gt; ](https://msdn.microsoft.com/library/dn468181(v=vs.108).aspx) Microsoft.ASP.NET.Identity.EntityFramework 네임 스페이스의 클래스입니다. RoleStore 클래스에서 구현 하는 [IRoleStore&lt;TRole, TKey&gt; ](https://msdn.microsoft.com/library/dn613266(v=vs.108).aspx) 및 필요에 따라는 [r e&lt;TRole, TKey&gt; ](https://msdn.microsoft.com/library/dn613262(v=vs.108).aspx) 인터페이스입니다.
 
 ![](overview-of-custom-storage-providers-for-aspnet-identity/_static/image6.png)
 
@@ -218,7 +218,7 @@ Id 프레임 워크 또한 제공 된 [IRole](https://msdn.microsoft.com/en-us/l
 [!code-csharp[Main](overview-of-custom-storage-providers-for-aspnet-identity/samples/sample8.cs)]
 
 - **IRoleStore&lt;TRole&gt;**  
- [IRoleStore](https://msdn.microsoft.com/en-us/library/dn468195.aspx) 인터페이스 역할 저장소 클래스에서 구현 하는 메서드를 정의 합니다. 만들기, 업데이트, 삭제 및 역할을 검색 하는 메서드를 포함 합니다.
+ [IRoleStore](https://msdn.microsoft.com/library/dn468195.aspx) 인터페이스 역할 저장소 클래스에서 구현 하는 메서드를 정의 합니다. 만들기, 업데이트, 삭제 및 역할을 검색 하는 메서드를 포함 합니다.
 - **RoleStore&lt;TRole&gt;**  
  RoleStore를 사용자 지정 하려면 IRoleStore 인터페이스를 구현 하는 클래스를 만듭니다. 경우에이 클래스를 구현 하기만 하면 시스템에서 역할을 사용 하려면. 명명 된 매개 변수를 사용 하는 생성자를 *데이터베이스* 형식이 ExampleDatabase가만의 사용자 데이터 액세스 클래스에 전달 하는 방법 보여 줍니다. 예를 들어 MySQL 구현에서는이 생성자는 MySQLDatabase 형식의 매개 변수를 사용 합니다.  
   

@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/web-development-best-practices/what-not-to-do-in-aspnet-and-what-to-do-instead
 msc.type: authoredcontent
-ms.openlocfilehash: 6790cd0deb36c9fb297ccd4df371f763dba17844
-ms.sourcegitcommit: 17b025bd33f4474f0deaafc6d0447a4e72bcad87
+ms.openlocfilehash: 829f3a024bc15bec8b60b91193ba9bca37b78009
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/27/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="what-not-to-do-in-aspnet-and-what-to-do-instead"></a>ASP.NET 및 대신 수행할 작업에서 작업을 수행 하지 않의 사항을
 ====================
@@ -94,7 +94,7 @@ ms.lasthandoff: 12/27/2017
 
 권장 사항: 페이지 및 컨트롤 콜백을 사용 중지 하 고 대신 다음 중 하나를 사용 하 여: AJAX, UpdatePanel, MVC 동작 메서드, 웹 API 또는 SignalR 합니다.
 
-이전 버전의 ASP.NET 페이지 및 컨트롤 콜백 메서드를 사용 전체 페이지를 새로 고치지 않고는 웹 페이지의 일부를 업데이트할 수 있습니다. 이제 부분 페이지 업데이트를 통해 수행할 수 있는 [AJAX](../../../ajax/index.md), [UpdatePanel](https://msdn.microsoft.com/en-US/library/bb386454.aspx), [MVC](../../../mvc/index.md), [웹 API](../../../web-api/index.md) 또는 [SignalR](../../../signalr/index.md). 친화적 Url로 문제가 발생할 수 있으므로 콜백 메서드를 사용 하 여 및 라우팅 중지 해야 합니다. 기본적으로 컨트롤에 콜백 메서드를 사용 하지 않는 있지만 컨트롤에서이 기능을 사용 하도록 설정한 경우 파일을 비활성화 해야 합니다.
+이전 버전의 ASP.NET 페이지 및 컨트롤 콜백 메서드를 사용 전체 페이지를 새로 고치지 않고는 웹 페이지의 일부를 업데이트할 수 있습니다. 이제 부분 페이지 업데이트를 통해 수행할 수 있는 [AJAX](../../../ajax/index.md), [UpdatePanel](https://msdn.microsoft.com/library/bb386454.aspx), [MVC](../../../mvc/index.md), [웹 API](../../../web-api/index.md) 또는 [SignalR](../../../signalr/index.md). 친화적 Url로 문제가 발생할 수 있으므로 콜백 메서드를 사용 하 여 및 라우팅 중지 해야 합니다. 기본적으로 컨트롤에 콜백 메서드를 사용 하지 않는 있지만 컨트롤에서이 기능을 사용 하도록 설정한 경우 파일을 비활성화 해야 합니다.
 
 <a id="browsercap"></a>
 
@@ -138,7 +138,7 @@ HTML 수 사용 하 여 태그에 값을 인코드는 &lt;%: %&gt; 아래와 같
 
 [!code-csharp[Main](what-not-to-do-in-aspnet-and-what-to-do-instead/samples/sample7.cs)]
 
-SQL 명령에 대 한 값을 안전 하 게 인코딩하려면 명령 매개 변수 사용 등의 [SqlParameter](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlparameter.aspx)합니다. <a id="cookieless"></a>
+SQL 명령에 대 한 값을 안전 하 게 인코딩하려면 명령 매개 변수 사용 등의 [SqlParameter](https://msdn.microsoft.com/library/system.data.sqlclient.sqlparameter.aspx)합니다. <a id="cookieless"></a>
 
 ### <a name="cookieless-forms-authentication-and-session"></a>Cookieless 폼 인증 및 세션
 
@@ -180,15 +180,15 @@ SQL 명령에 대 한 값을 안전 하 게 인코딩하려면 명령 매개 변
 
 AppSettings 요소는 보안 업데이트에 필요한 많은 값을 포함 합니다. 하지 변경 하거나 이러한 값을 사용 하지 않도록 설정 해야 합니다. 업데이트를 배포할 때 이러한 값을 해제 해야 하는 경우 즉시 다시 설정 배포를 완료 한 후 합니다.
 
-자세한 내용은 참조 [ASP.NET appSettings 요소](https://msdn.microsoft.com/en-us/library/hh975440.aspx)합니다.
+자세한 내용은 참조 [ASP.NET appSettings 요소](https://msdn.microsoft.com/library/hh975440.aspx)합니다.
 
 <a id="urlpathencode"></a>
 
 ### <a name="urlpathencode"></a>UrlPathEncode
 
-권장 사항: 사용 [UrlEncode](https://msdn.microsoft.com/en-us/library/zttxte6w.aspx) 대신 합니다.
+권장 사항: 사용 [UrlEncode](https://msdn.microsoft.com/library/zttxte6w.aspx) 대신 합니다.
 
-UrlPathEncode 메서드는 매우 구체적인 브라우저 호환성 문제를 해결 하려면.NET Framework에 대 한 추가 되었습니다. 적절 한 URL를 인코딩하지 않습니다 하 고 사이트 간 스크립팅에서 응용 프로그램을 보호 하지 않습니다. 하지 응용 프로그램에서 사용 해야 합니다. 대신를 사용 하 여 [UrlEncode](https://msdn.microsoft.com/en-us/library/zttxte6w.aspx)합니다.
+UrlPathEncode 메서드는 매우 구체적인 브라우저 호환성 문제를 해결 하려면.NET Framework에 대 한 추가 되었습니다. 적절 한 URL를 인코딩하지 않습니다 하 고 사이트 간 스크립팅에서 응용 프로그램을 보호 하지 않습니다. 하지 응용 프로그램에서 사용 해야 합니다. 대신를 사용 하 여 [UrlEncode](https://msdn.microsoft.com/library/zttxte6w.aspx)합니다.
 
 다음 예제에서는 인코딩된 URL 하이퍼링크 컨트롤에 대 한 쿼리 문자열 매개 변수로 전달 하는 방법을 보여 줍니다.
 
@@ -202,9 +202,9 @@ UrlPathEncode 메서드는 매우 구체적인 브라우저 호환성 문제를 
 
 ### <a name="presendrequestheaders-and-presendrequestcontent"></a>PreSendRequestHeaders 및 PreSendRequestContent
 
-권장 사항: 관리 되는 모듈 함께 이러한 이벤트를 사용 하지 마십시오. 대신, 필요한 작업을 수행 하는 네이티브 IIS 모듈을 작성 합니다. 참조 [네이티브 코드 HTTP 모듈을 만들고](https://msdn.microsoft.com/en-us/library/ms693629.aspx)합니다.
+권장 사항: 관리 되는 모듈 함께 이러한 이벤트를 사용 하지 마십시오. 대신, 필요한 작업을 수행 하는 네이티브 IIS 모듈을 작성 합니다. 참조 [네이티브 코드 HTTP 모듈을 만들고](https://msdn.microsoft.com/library/ms693629.aspx)합니다.
 
-사용할 수는 [PreSendRequestHeaders](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.presendrequestheaders.aspx) 및 [PreSendRequestContent](https://msdn.microsoft.com/en-us/library/system.web.httpapplication.presendrequestcontent.aspx) 네이티브 IIS 모듈을 사용 하 여 이벤트입니다.
+사용할 수는 [PreSendRequestHeaders](https://msdn.microsoft.com/library/system.web.httpapplication.presendrequestheaders.aspx) 및 [PreSendRequestContent](https://msdn.microsoft.com/library/system.web.httpapplication.presendrequestcontent.aspx) 네이티브 IIS 모듈을 사용 하 여 이벤트입니다.
 > [!WARNING]
 > 사용 하지 마십시오 `PreSendRequestHeaders` 및 `PreSendRequestContent` 구현 하는 관리 되는 모듈 `IHttpModule`합니다. 이러한 속성을 설정 비동기 요청에 문제가 발생할 수 있습니다. 응용 프로그램 요청 라우팅 (ARR)와 websocket 조합 w3wp 충돌을 일으킬 수 있는 액세스 위반 예외 발생할 수 있습니다. 예를 들어 iiscore! W3_CONTEXT_BASE::GetIsLastNotification + iiscore.dll에 68 (의 0xC0000005)에서 액세스 위반이 예외가 발생 했습니다.
 
@@ -212,7 +212,7 @@ UrlPathEncode 메서드는 매우 구체적인 브라우저 호환성 문제를 
 
 ### <a name="asynchronous-page-events-with-web-forms"></a>Web Forms 사용 하 여 비동기 페이지 이벤트
 
-권장 사항: Web Forms에서 하지 않도록 비동기 페이지 수명 주기 이벤트에 대 한 void 메서드를 작성 하 고 대신 사용 하 여 [Page.RegisterAsyncTask](https://msdn.microsoft.com/en-us/library/system.web.ui.page.registerasynctask.aspx) 비동기 코드에 대 한 합니다.
+권장 사항: Web Forms에서 하지 않도록 비동기 페이지 수명 주기 이벤트에 대 한 void 메서드를 작성 하 고 대신 사용 하 여 [Page.RegisterAsyncTask](https://msdn.microsoft.com/library/system.web.ui.page.registerasynctask.aspx) 비동기 코드에 대 한 합니다.
 
 포함 된 페이지 이벤트를 표시 하는 경우 **비동기** 및 **void**,이 비동기 코드를 완료할 때 확인할 수 없습니다. 대신, Page.RegisterAsyncTask를 사용 하 여 완료를 추적할 수 있도록 하는 방법에서 비동기 코드를 실행 합니다.
 
@@ -244,15 +244,15 @@ ASP.NET 내에서이 작업을 수행 해야 하는 경우 호출 하는 Nuget �
 
 가능한 한 빨리 Request.Form 또는 Request.InputStream에서 읽어야 하는 처리기에서 이벤트를 실행할 합니다. MVC 컨트롤러 처리기 이며 동작 메서드가 실행 될 때 execute 이벤트입니다. Web Forms 페이지가 처리기 고 Page.Init 이벤트가 발생할 때의 execute 이벤트입니다. Execute 이벤트 이전에 요청 엔터티 본문을 읽는 경우 방해 하는 요청을 처리 합니다.
 
-Execute 이벤트 이전에 요청 엔터티 본문을 읽는 데 필요한 경우 사용 하 여 [Request.GetBufferlessInputStream](https://msdn.microsoft.com/en-us/library/ff406798.aspx) 또는 [Request.GetBufferedInputStream](https://msdn.microsoft.com/en-us/library/system.web.httprequest.getbufferedinputstream.aspx)합니다. GetBufferlessInputStream를 사용 하면 원시 스트림을 요청에서 가져오고 전체 요청을 처리 하는 것에 대 한 책임 합니다. GetBufferlessInputStream를 호출한 후 Request.Form 및 Request.InputStream 사용할 수 없는 채워지지 않은 ASP.NET에서 때문에 있습니다. GetBufferedInputStream를 사용 하는 경우 요청에서 스트림의 복사본을 가져옵니다. ASP.NET 다른 복사본을 채우므로 Request.Form 및 Request.InputStream 요청에서 나중에 사용할 수 있습니다.
+Execute 이벤트 이전에 요청 엔터티 본문을 읽는 데 필요한 경우 사용 하 여 [Request.GetBufferlessInputStream](https://msdn.microsoft.com/library/ff406798.aspx) 또는 [Request.GetBufferedInputStream](https://msdn.microsoft.com/library/system.web.httprequest.getbufferedinputstream.aspx)합니다. GetBufferlessInputStream를 사용 하면 원시 스트림을 요청에서 가져오고 전체 요청을 처리 하는 것에 대 한 책임 합니다. GetBufferlessInputStream를 호출한 후 Request.Form 및 Request.InputStream 사용할 수 없는 채워지지 않은 ASP.NET에서 때문에 있습니다. GetBufferedInputStream를 사용 하는 경우 요청에서 스트림의 복사본을 가져옵니다. ASP.NET 다른 복사본을 채우므로 Request.Form 및 Request.InputStream 요청에서 나중에 사용할 수 있습니다.
 
 <a id="redirect"></a>
 
 ### <a name="responseredirect-and-responseend"></a>명확한 Response.Redirect 및 Response.End
 
-권장 사항: 호출한 후 스레드가 처리 하는 방법을의 차이에 주의 [Response.Redirect(String)](https://msdn.microsoft.com/en-us/library/t9dwyts4.aspx)합니다.
+권장 사항: 호출한 후 스레드가 처리 하는 방법을의 차이에 주의 [Response.Redirect(String)](https://msdn.microsoft.com/library/t9dwyts4.aspx)합니다.
 
-[Response.Redirect(String)](https://msdn.microsoft.com/en-us/library/t9dwyts4.aspx) 메서드 Response.End 메서드를 호출 합니다. 동기 프로세스 Request.Redirect를 호출 하면 현재 스레드를 즉시 중단 됩니다. 그러나 비동기 프로세스에서 Response.Redirect를 호출 하면 중단 되지 않는 현재 스레드 코드 실행이 요청에 대해 계속 하도록 합니다. 비동기 프로세스에서 코드 실행을 중지 하는 메서드의 작업을 반환 해야 합니다.
+[Response.Redirect(String)](https://msdn.microsoft.com/library/t9dwyts4.aspx) 메서드 Response.End 메서드를 호출 합니다. 동기 프로세스 Request.Redirect를 호출 하면 현재 스레드를 즉시 중단 됩니다. 그러나 비동기 프로세스에서 Response.Redirect를 호출 하면 중단 되지 않는 현재 스레드 코드 실행이 요청에 대해 계속 하도록 합니다. 비동기 프로세스에서 코드 실행을 중지 하는 메서드의 작업을 반환 해야 합니다.
 
 MVC 프로젝트 Response.Redirect를 호출 하지 않아야 합니다. 된 RedirectResult를 반환 합니다.
 
@@ -286,7 +286,7 @@ EnableViewState Page 지시문에서 false로 설정한 경우 뷰 상태 페이
 
 ### <a name="long-running-requests-110-seconds"></a>장기 실행 요청 (> 110 초)
 
-권장 사항: 사용 [Websocket](https://msdn.microsoft.com/en-us/library/system.net.websockets.websocket.aspx) 또는 [SignalR](../../../signalr/index.md) 연결 된 클라이언트 및 사용 하 여 비동기 I/O 작업에 대 한 합니다.
+권장 사항: 사용 [Websocket](https://msdn.microsoft.com/library/system.net.websockets.websocket.aspx) 또는 [SignalR](../../../signalr/index.md) 연결 된 클라이언트 및 사용 하 여 비동기 I/O 작업에 대 한 합니다.
 
 장기 실행 요청 웹 응용 프로그램에서 예기치 않은 결과 및 성능 저하를 발생할 수 있습니다. 요청에 대 한 기본 시간 제한 설정을 110 초입니다. 세션 상태를 사용 하는 장기 실행 요청으로, ASP.NET 세션 개체에 대 한 잠금을 110 초 후 해제 됩니다. 그러나 잠금이 해제 되 고 작업을 성공적으로 완료 되지 않을 수 있습니다 때 세션 개체에 대 한 작업 중에 응용 프로그램 수 있습니다. 첫 번째 요청이 실행 되는 동안 사용자의 두 번째 요청을 차단 된 경우 두 번째 요청 일관성 없는 상태로 세션 개체를 액세스할 수 있습니다.
 

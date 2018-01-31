@@ -2,20 +2,18 @@
 title: "키 저장소 형식"
 author: tdykstra
 description: "이 문서에서는 ASP.NET Core 데이터 보호 키 저장소 형식 사용 하면의 구현 세부 사항을 설명 합니다."
-keywords: "ASP.NET Core, 데이터 보호, 키 저장소"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.assetid: e8996478-f7bf-4b58-bab4-7fdb5d8556c5
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/data-protection/implementation/key-storage-format
-ms.openlocfilehash: 4ebad05f7d55e954463ce5e277b419a7d6f773c0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 66783eb7264a4551eafdd9d5c7d99b014701a6de
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="key-storage-format"></a>키 저장소 형식
 

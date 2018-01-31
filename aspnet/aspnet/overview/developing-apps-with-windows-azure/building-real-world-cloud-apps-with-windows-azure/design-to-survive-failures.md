@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/design-to-survive-failures
 msc.type: authoredcontent
-ms.openlocfilehash: a0ee790da07c99cdb1279a6bca637a4ce8076e84
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 62a16e9a99cd1298b0db5f8099092212f9f6850b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="design-to-survive-failures-building-real-world-cloud-apps-with-azure"></a>에 오류가 발생 했습니다 (Azure로 응용 프로그램 빌딩 실제 클라우드)에 동등한 존속 디자인
 ====================
@@ -117,14 +117,14 @@ Sla 보고 하는 경우에 대해 생각 하는 중요 한 점은 응용 프로
 
 설명서:
 
-- [Failsafe: 복원 력 있는 클라우드 아키텍처에 대 한 지침](https://msdn.microsoft.com/en-us/library/windowsazure/jj853352.aspx)합니다. 백서: Marc Mercuri, Ulrich Homann 및 Andrew Townhill 합니다. FailSafe 비디오 시리즈의 웹 페이지 버전입니다.
-- [Azure 클라우드 서비스에서 대규모 서비스를 디자인에 대 한 유용한](https://msdn.microsoft.com/en-us/library/windowsazure/jj717232.aspx)합니다. 백서: Mark Simms 및 Michael Thomassy 합니다.
-- [Azure 비즈니스 연속성 기술 지침](https://msdn.microsoft.com/en-us/library/windowsazure/hh873027.aspx)합니다. 백서: Patrick Wickline 및 Jason Roth 합니다.
-- [Azure 응용 프로그램에 대 한 고가용성 및 재해 복구](https://msdn.microsoft.com/en-us/library/windowsazure/dn251004.aspx)합니다. Michael McKeown, Hanu Kommalapati, 및 Jason Roth 백서에 나와 있습니다.
-- [Microsoft Patterns and Practices-Azure 지침](https://msdn.microsoft.com/en-us/library/dn568099.aspx)합니다. 회로 차단기 패턴을 여러 데이터 센터 배포 지침을 참조 하십시오.
+- [Failsafe: 복원 력 있는 클라우드 아키텍처에 대 한 지침](https://msdn.microsoft.com/library/windowsazure/jj853352.aspx)합니다. 백서: Marc Mercuri, Ulrich Homann 및 Andrew Townhill 합니다. FailSafe 비디오 시리즈의 웹 페이지 버전입니다.
+- [Azure 클라우드 서비스에서 대규모 서비스를 디자인에 대 한 유용한](https://msdn.microsoft.com/library/windowsazure/jj717232.aspx)합니다. 백서: Mark Simms 및 Michael Thomassy 합니다.
+- [Azure 비즈니스 연속성 기술 지침](https://msdn.microsoft.com/library/windowsazure/hh873027.aspx)합니다. 백서: Patrick Wickline 및 Jason Roth 합니다.
+- [Azure 응용 프로그램에 대 한 고가용성 및 재해 복구](https://msdn.microsoft.com/library/windowsazure/dn251004.aspx)합니다. Michael McKeown, Hanu Kommalapati, 및 Jason Roth 백서에 나와 있습니다.
+- [Microsoft Patterns and Practices-Azure 지침](https://msdn.microsoft.com/library/dn568099.aspx)합니다. 회로 차단기 패턴을 여러 데이터 센터 배포 지침을 참조 하십시오.
 - [Azure 지원-서비스 수준 계약](https://azure.microsoft.com/support/legal/sla/)합니다.
-- [Azure SQL 데이터베이스의 비즈니스 연속성](https://msdn.microsoft.com/en-us/library/windowsazure/hh852669.aspx)합니다. SQL 데이터베이스 높은 가용성 및 재해 복구 기능에 대 한 설명서입니다.
-- [고가용성 및 재해 복구 Azure 가상 컴퓨터에서 SQL Server에 대 한](https://msdn.microsoft.com/en-us/library/windowsazure/jj870962.aspx)합니다.
+- [Azure SQL 데이터베이스의 비즈니스 연속성](https://msdn.microsoft.com/library/windowsazure/hh852669.aspx)합니다. SQL 데이터베이스 높은 가용성 및 재해 복구 기능에 대 한 설명서입니다.
+- [고가용성 및 재해 복구 Azure 가상 컴퓨터에서 SQL Server에 대 한](https://msdn.microsoft.com/library/windowsazure/jj870962.aspx)합니다.
 
 비디오:
 

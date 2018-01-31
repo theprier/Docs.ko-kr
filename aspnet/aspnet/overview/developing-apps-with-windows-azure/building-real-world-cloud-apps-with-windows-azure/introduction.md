@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: 5054f932d05fb612a6e18a81274719d7e249b77b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4de0b52e0b4ae7ce00e7b07bce2decfc5068964a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="building-real-world-cloud-apps-with-azure"></a>Azure와 실제 클라우드 앱 빌드
 ====================
@@ -103,7 +103,7 @@ Scott Guthrie의 감시 하는 모든 사람이 *실제 세계 클라우드로 �
     - 항상 사용 하도록 설정 하 고 느슨하게 웹 및 작업자 계층을 결합 하 여 확장성이 개선 합니다.
     - 데모: 수정 응용 프로그램에서 Azure 저장소 큐.
 - [응용 프로그램 패턴 및 지침은 클라우드 더](more-patterns-and-guidance.md)합니다.
-- [부록: 수정 샘플 응용 프로그램](the-fix-it-sample-application.md)
+- [부록: Fix It 응용 프로그램 예제](the-fix-it-sample-application.md)
 
     - 알려진 문제
     - 모범 사례
@@ -155,7 +155,7 @@ Scott Guthrie의 감시 하는 모든 사람이 *실제 세계 클라우드로 �
 
 이 모든 자동으로 수행이 됩니다. 하기만 하면은 웹 사이트를 만들고 Windows PowerShell, Visual Studio 또는 Azure 관리 포털을 사용 하 여, 응용 프로그램을 배포 합니다.
 
-참조는 쉽고 빠르게 단계별 자습서는 Visual Studio에서 웹 응용 프로그램을 만들고 Azure 웹 사이트를 배포 하는 방법을 보여 주는, [Azure 및 ASP.NET 시작](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-get-started/)합니다.
+참조는 쉽고 빠르게 단계별 자습서는 Visual Studio에서 웹 응용 프로그램을 만들고 Azure 웹 사이트를 배포 하는 방법을 보여 주는, [Azure 및 ASP.NET 시작](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/)합니다.
 
 <a id="summary"></a>
 ## <a name="summary"></a>요약
@@ -168,13 +168,13 @@ Scott Guthrie의 감시 하는 모든 사람이 *실제 세계 클라우드로 �
 
 설명서:
 
-- [Azure 앱 서비스에서 앱을 웹](https://azure.microsoft.com/en-us/services/app-service/web/)합니다. 웹 앱에 대 한 Azure 설명서 포털 페이지입니다.
-- [웹 앱, 클라우드 서비스 및 Vm:를 사용 하는 경우?](https://azure.microsoft.com/en-us/documentation/articles/choose-web-site-cloud-service-vm/) WAWS이이 장의에 나와 있는 것 처럼 Azure에서 웹 앱을 실행할 수 있는 세 가지 방법 중 하나일 뿐입니다. 이 문서는 세 가지 방법 간의 차이점을 설명 하 고 어떤 솔루션이 시나리오에 적합 한지를 선택 하는 방법에 지침을 제공 합니다. 웹 사이트와 같은 클라우드 서비스의 Azure PaaS 기능입니다. Vm은는 IaaS 기능입니다. 참조에 대 한 설명은 IaaS와 PaaS의 [데이터 옵션](data-storage-options.md#paasiaas) 장 합니다.
+- [Azure 앱 서비스에서 앱을 웹](https://azure.microsoft.com/services/app-service/web/)합니다. 웹 앱에 대 한 Azure 설명서 포털 페이지입니다.
+- [웹 앱, 클라우드 서비스 및 Vm:를 사용 하는 경우?](https://azure.microsoft.com/documentation/articles/choose-web-site-cloud-service-vm/) WAWS이이 장의에 나와 있는 것 처럼 Azure에서 웹 앱을 실행할 수 있는 세 가지 방법 중 하나일 뿐입니다. 이 문서는 세 가지 방법 간의 차이점을 설명 하 고 어떤 솔루션이 시나리오에 적합 한지를 선택 하는 방법에 지침을 제공 합니다. 웹 사이트와 같은 클라우드 서비스의 Azure PaaS 기능입니다. Vm은는 IaaS 기능입니다. 참조에 대 한 설명은 IaaS와 PaaS의 [데이터 옵션](data-storage-options.md#paasiaas) 장 합니다.
 
 비디오:
 
-- [Scott Guthrie 시작 단계 0-Azure 클라우드 OS는 무엇입니까?](https://azure.microsoft.com/en-us/documentation/videos/what-is-the-cloud-os-scottgu/)
-- [Stefan Schackow와 웹 사이트 아키텍처-](https://azure.microsoft.com/en-us/documentation/videos/why-azure-web-sites-plus-architecture/)합니다.
+- [Scott Guthrie 시작 단계 0-Azure 클라우드 OS는 무엇입니까?](https://azure.microsoft.com/documentation/videos/what-is-the-cloud-os-scottgu/)
+- [Stefan Schackow와 웹 사이트 아키텍처-](https://azure.microsoft.com/documentation/videos/why-azure-web-sites-plus-architecture/)합니다.
 - [Nir Mashkowski와 azure 웹 사이트 내부](https://channel9.msdn.com/Shows/Web+Camps+TV/Windows-Azure-Web-Sites-Internals-with-Nir-Mashkowski)합니다.
 
 >[!div class="step-by-step"]

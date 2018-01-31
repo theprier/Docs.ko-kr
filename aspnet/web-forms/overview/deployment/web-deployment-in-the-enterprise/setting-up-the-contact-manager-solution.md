@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/setting-up-the-contact-manager-solution
 msc.type: authoredcontent
-ms.openlocfilehash: 85468949ee61504d6076a191b70a96e8018c67aa
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b8176b3b8622e21187a91647323322e55582373c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="setting-up-the-contact-manager-solution"></a>Contact Manager 솔루션 설정
 ====================
@@ -33,7 +33,7 @@ Contact Manager 솔루션을 로컬로 실행 하 고이 자습서에 설명 된
 
 - Visual Studio 2010 서비스 팩 1, Premium 또는 Ultimate Edition
 - 인터넷 정보 서비스 (IIS) 7.5 Express
-- SQL Server 2008 R2 Express
+- SQL Server Express 2008 R2
 - IIS 웹 배포 도구 (웹 배포) 2.1 이상
 - ASP.NET 4.0
 - ASP.NET MVC 3
@@ -71,7 +71,7 @@ MSDN 코드 갤러리에서 않아 예제 응용 프로그램을 다운로드할
     ![](setting-up-the-contact-manager-solution/_static/image1.png)
 
 > [!NOTE]
-> Aspnet 대 한 자세한 내용은\_regsql 유틸리티 참조 [ASP.NET SQL Server 등록 도구 (Aspnet\_regsql.exe)](https://msdn.microsoft.com/en-us/library/ms229862(v=vs.100).aspx)합니다.
+> Aspnet 대 한 자세한 내용은\_regsql 유틸리티 참조 [ASP.NET SQL Server 등록 도구 (Aspnet\_regsql.exe)](https://msdn.microsoft.com/library/ms229862(v=vs.100).aspx)합니다.
 
 
 연결 문자열 Contact Manager 솔루션에 SQL Server Express의 로컬 인스턴스를 가리키는지 확인 하는 다음 단계가입니다.

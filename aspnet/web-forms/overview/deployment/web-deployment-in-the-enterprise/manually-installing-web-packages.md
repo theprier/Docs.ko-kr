@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/manually-installing-web-packages
 msc.type: authoredcontent
-ms.openlocfilehash: 0ab0b4c24c1771a21c45bac011b5f156cb15d28a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e06d37c01ab66f0723b687f4ed1ee72561099aef
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="manually-installing-web-packages"></a>웹 패키지를 수동으로 설치
 ====================
@@ -131,7 +131,7 @@ IIS 웹 사이트에 웹 배포 패키지를 로컬 파일 시스템에서 가�
 
 ## <a name="further-reading"></a>추가 정보
 
-웹 패키지를 수동으로 가져오는 지원 하기 위해 IIS 웹 서버를 구성 하는 방법에 대 한 지침을 참조 하십시오. [웹 배포 게시 (오프 라인 배포)에 대 한 웹 서버를 구성](../configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md)합니다. 웹 패키지를 배포 하는 방법에 대 한 보다 일반적인 지침을 참조 하십시오. [연습: 웹 배포 패키지 (파트 1/4)를 사용 하 여 웹 응용 프로그램 프로젝트 배포](https://msdn.microsoft.com/en-us/library/dd483479.aspx)합니다.
+웹 패키지를 수동으로 가져오는 지원 하기 위해 IIS 웹 서버를 구성 하는 방법에 대 한 지침을 참조 하십시오. [웹 배포 게시 (오프 라인 배포)에 대 한 웹 서버를 구성](../configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md)합니다. 웹 패키지를 배포 하는 방법에 대 한 보다 일반적인 지침을 참조 하십시오. [연습: 웹 배포 패키지 (파트 1/4)를 사용 하 여 웹 응용 프로그램 프로젝트 배포](https://msdn.microsoft.com/library/dd483479.aspx)합니다.
 
 >[!div class="step-by-step"]
 [이전](creating-and-running-a-deployment-command-file.md)

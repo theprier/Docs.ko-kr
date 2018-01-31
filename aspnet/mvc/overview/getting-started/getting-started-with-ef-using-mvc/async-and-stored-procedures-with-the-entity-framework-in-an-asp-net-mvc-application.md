@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 5b4904037838441942ea266ce71d735642d0a717
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7412b32ac29179dfa319544781d4c7165c58196b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="async-and-stored-procedures-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Async 및 ASP.NET MVC 응용 프로그램에서 Entity Framework와 함께 저장된 프로시저
 ====================
@@ -128,11 +128,11 @@ Entity Framework를 사용한 비동기 프로그래밍을 사용할 때 알아�
 
     ![부서 삽입 SP](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image6.png)
 
-코드는 먼저 기본 저장 프로시저 이름을 만듭니다. 기존 데이터베이스를 사용 하는 경우에 데이터베이스에 이미 정의 된 저장된 프로시저를 사용 하려면 저장된 프로시저 이름을 사용자 지정 해야 합니다. 작업을 수행 하는 방법에 대 한 정보를 참조 하십시오. [엔터티 프레임 워크 코드 첫 번째 Insert/Update/Delete 저장 프로시저](https://msdn.microsoft.com/en-us/data/dn468673)합니다.
+코드는 먼저 기본 저장 프로시저 이름을 만듭니다. 기존 데이터베이스를 사용 하는 경우에 데이터베이스에 이미 정의 된 저장된 프로시저를 사용 하려면 저장된 프로시저 이름을 사용자 지정 해야 합니다. 작업을 수행 하는 방법에 대 한 정보를 참조 하십시오. [엔터티 프레임 워크 코드 첫 번째 Insert/Update/Delete 저장 프로시저](https://msdn.microsoft.com/data/dn468673)합니다.
 
 어떤 생성 저장된 프로시저를 수행 하는 사용자 지정 하려는 경우은 마이그레이션에 대 한 스 캐 폴드 코드를 편집할 수 있습니다 `Up` 저장된 프로시저를 만드는 방식입니다. 이런 방식으로 변경 내용을 반영 됩니다 때마다 마이그레이션 실행 되 고 마이그레이션 배포 된 후 프로덕션에서 자동으로 실행 될 때 프로덕션 데이터베이스에 적용 됩니다.
 
-Add-migration 명령을 사용 하 여 빈 마이그레이션을 생성 하 고 호출 하는 코드를 수동으로 작성 수 이전 마이그레이션이에서 만든 기존 저장된 프로시저를 변경 하려는 경우는 [AlterStoredProcedure](https://msdn.microsoft.com/en-us/library/system.data.entity.migrations.dbmigration.alterstoredprocedure.aspx) 메서드 .
+Add-migration 명령을 사용 하 여 빈 마이그레이션을 생성 하 고 호출 하는 코드를 수동으로 작성 수 이전 마이그레이션이에서 만든 기존 저장된 프로시저를 변경 하려는 경우는 [AlterStoredProcedure](https://msdn.microsoft.com/library/system.data.entity.migrations.dbmigration.alterstoredprocedure.aspx) 메서드 .
 
 ## <a name="deploy-to-azure"></a>Azure에 배포
 

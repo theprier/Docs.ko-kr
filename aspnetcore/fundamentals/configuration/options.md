@@ -10,17 +10,17 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: fundamentals/configuration/options
-ms.openlocfilehash: 7d89416626433bf737b63eda4b17e65b089ae142
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: aab96b5313a8632950e51f5586612c1d0d3d176e
+ms.sourcegitcommit: 83b5a4715fd25e4eb6f7c8427c0ef03850a7fa07
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/25/2018
 ---
 # <a name="options-pattern-in-aspnet-core"></a>ASP.NET Core에서 옵션 패턴
 
 [Luke Latham](https://github.com/guardrex)으로
 
-옵션 패턴 옵션 클래스를 사용 하 여 관련된 설정의 그룹을 나타냅니다. 구성 설정은 별도 옵션 클래스에 기능에 의해 격리 됩니다, 있을 때 응용 프로그램 두 가지 중요 한 소프트웨어 엔지니어링 원칙을 따릅니다.
+옵션 패턴은 옵션 클래스를 사용하여 관련 설정 그룹을 나타냅니다. 구성 설정은 별도 옵션 클래스에 기능에 의해 격리 됩니다, 있을 때 응용 프로그램 두 가지 중요 한 소프트웨어 엔지니어링 원칙을 따릅니다.
 
 * [인터페이스 분리 원칙 (ISP)](http://deviq.com/interface-segregation-principle/): 구성 설정에 종속 된 기능 (클래스)만 사용 하는 구성 설정에 따라 달라 집니다.
 * [문제의 분리](http://deviq.com/separation-of-concerns/): 종속 또는 서로 결합 된 응용 프로그램의 다른 부분에 대 한 설정 되지 않습니다.
@@ -258,6 +258,12 @@ services.PostConfigureAll<MyOptions>("named_options_1", myOptions =>
 [IOptionsFactory&lt;TOptions&gt; ](/dotnet/api/microsoft.extensions.options.ioptionsfactory-1) (ASP.NET 코어 2.0 이상)는 인스턴스 옵션 새로 만들기에 대해 책임이 있습니다. 에 단일 [만들기](/dotnet/api/microsoft.extensions.options.ioptionsfactory-1.create) 메서드. 기본 구현에서는 등록 된 모든 `IConfigureOptions` 및 `IPostConfigureOptions` 모두 실행 하 고는 먼저 구성 하며, 그는 후 구성 합니다. 구별해 `IConfigureNamedOptions` 및 `IConfigureOptions` 만 적절 한 인터페이스를 호출 합니다.
 
 [IOptionsMonitorCache&lt;TOptions&gt; ](/dotnet/api/microsoft.extensions.options.ioptionsmonitorcache-1) (ASP.NET 코어 2.0 이상) ´ â `IOptionsMonitor` 캐시에 `TOptions` 인스턴스. `IOptionsMonitorCache` 모니터에서 인스턴스 옵션을 무효화 하는 값을 다시 계산 됩니다 ([TryRemove](/dotnet/api/microsoft.extensions.options.ioptionsmonitorcache-1.tryremove)). 값 수동으로 쿼리도 [TryAdd](/dotnet/api/microsoft.extensions.options.ioptionsmonitorcache-1.tryadd)합니다. [지우기](/dotnet/api/microsoft.extensions.options.ioptionsmonitorcache-1.clear) 메서드는 필요에 따라 모든 명명 된 인스턴스를 다시 만들어야 하는 경우 사용 합니다.
+
+## <a name="accessing-options-during-startup"></a>시작 하는 동안 액세스 옵션
+
+`IOptions`사용할 수 있습니다 `Configure`이므로 서비스 이전에 작성 되는 `Configure` 메서드가 실행 합니다. 서비스 공급자에 기본 제공 되는 경우 `ConfigureServices` 옵션에 액세스 하려면 그가 사용할 서비스 공급자가 작성 한 후 제공 하는 구성을 옵션 합니다. 따라서 서비스 등록의 순서 지정으로 인해 일관성 없는 옵션 상태 있을 수 있습니다.
+
+구성 옵션 구성에서 일반적으로 로드 되 면 때문에 둘 다 시작에 사용할 수 있습니다 `Configure` 및 `ConfigureServices`합니다. 구성을 시작 하는 동안 사용 하 여의 예 참조는 [응용 프로그램 시작](xref:fundamentals/startup) 항목입니다.
 
 ## <a name="see-also"></a>참고 항목
 

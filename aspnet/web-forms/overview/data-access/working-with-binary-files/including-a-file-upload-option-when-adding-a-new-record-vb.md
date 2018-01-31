@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/including-a-file-upload-option-when-adding-a-new-record-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4f49c201c71ca8f98d7e15b29f1df9a6bcd1b12e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: eb462a0e8ce88037855ea12d00c1afc0419fa04e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="including-a-file-upload-option-when-adding-a-new-record-vb"></a>새 레코드 (VB)를 추가할 때 파일 업로드 옵션을 포함 하 여
 ====================
@@ -176,7 +176,7 @@ DetailsView s 스마트 태그에서 템플릿 편집 옵션을 선택 하 고 �
 
 ## <a name="step-6-saving-the-uploaded-brochure-to-the-web-server-s-file-system"></a>6 단계: 웹 서버의 파일 시스템에 업로드 된 브로슈어 저장
 
-사용자는 새 범주에 대 한 값을 입력 하 고 삽입 단추를 클릭, 포스트백이 발생할 고 삽입 워크플로 펼칩니다. 먼저, DetailsView s [ `ItemInserting` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.detailsview.iteminserting.aspx) 발생 합니다. 다음, ObjectDataSource s `Insert()` 메서드가 호출 되 면 새 레코드에 추가 되 고 결과 `Categories` 테이블입니다. DetailsView s 그 후 [ `ItemInserted` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.detailsview.iteminserted.aspx) 발생 합니다.
+사용자는 새 범주에 대 한 값을 입력 하 고 삽입 단추를 클릭, 포스트백이 발생할 고 삽입 워크플로 펼칩니다. 먼저, DetailsView s [ `ItemInserting` 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.detailsview.iteminserting.aspx) 발생 합니다. 다음, ObjectDataSource s `Insert()` 메서드가 호출 되 면 새 레코드에 추가 되 고 결과 `Categories` 테이블입니다. DetailsView s 그 후 [ `ItemInserted` 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.detailsview.iteminserted.aspx) 발생 합니다.
 
 ObjectDataSource s 하기 전에 `Insert()` 메서드가 호출 되 면 먼저 적절 한 파일 형식을 사용자가 업로드 한을 확인 하 고 다음 브로슈어 PDF 웹 서버의 파일 시스템에 저장 해야 했습니다. DetailsView s에 대 한 이벤트 처리기를 만들고 `ItemInserting` 이벤트를 다음 코드를 추가 합니다.
 
@@ -191,7 +191,7 @@ ObjectDataSource s 하기 전에 `Insert()` 메서드가 호출 되 면 먼저 �
 
 에 설명 된 대로 [파일 업로드](uploading-files-vb.md) 자습서, 파일 시스템에 저장 파일을 해당 사용자의 업로드 다른 s를 덮어쓰지 않습니다 하므로 때 주의 해야 합니다. 이 자습서와 업로드 된 파일은 동일한 이름을 사용 하려고 합니다. 그러나 파일에 이미 존재 하는 경우는 `~/Brochures` 같은 이름의 파일을 디렉터리 고유 이름을 발견 될 때까지 끝에 번호를 추가 합니다 했습니다. 예를 들어, 사용자 라는 브로슈어 파일을 업로드 하는 경우 `Meats.pdf`, 라는 파일은 이미 있지만 `Meats.pdf` 에 `~/Brochures` 폴더에 저장 된 파일 이름을 변경 합니다 `Meats-1.pdf`합니다. 존재 하는 경우 새 해 `Meats-2.pdf`, 등의 고유한 파일 이름이 발견 될 때까지 합니다.
 
-다음 코드에서는 [ `File.Exists(path)` 메서드](https://msdn.microsoft.com/en-us/library/system.io.file.exists.aspx) 지정 된 파일 이름의 파일이 이미 있는지 확인 하려면. 이 경우 계속 충돌이 발생 하지 발견 될 때까지 브로슈어에 대 한 새 파일 이름을 시도 합니다.
+다음 코드에서는 [ `File.Exists(path)` 메서드](https://msdn.microsoft.com/library/system.io.file.exists.aspx) 지정 된 파일 이름의 파일이 이미 있는지 확인 하려면. 이 경우 계속 충돌이 발생 하지 발견 될 때까지 브로슈어에 대 한 새 파일 이름을 시도 합니다.
 
 
 [!code-vb[Main](including-a-file-upload-option-when-adding-a-new-record-vb/samples/sample7.vb)]

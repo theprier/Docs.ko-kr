@@ -2,19 +2,18 @@
 title: "EF 코어-를 사용 하 여 razor 페이지 관련된 데이터 읽기-8 6"
 author: rick-anderson
 description: "이 자습서에서는 읽기 및 관련된 데이터-Entity Framework 탐색 속성에 로드 하는 데이터를 표시 합니다."
-keywords: "ASP.NET Core, Entity Framework Core 관련된 데이터를 조인"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 11/05/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: ba9b17ecdcb605d39117d03230b1db37e8e4d0dd
-ms.sourcegitcommit: 05e798c9bac7b9e9983599afb227ef393905d023
+ms.openlocfilehash: ccb1e95ae2b43fd0a4c4b1ac9ed58a4d474ab3b6
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="reading-related-data---ef-core-with-razor-pages-6-of-8"></a>관련 데이터-EF 코어 Razor 페이지 (8 6)에 읽기
 
@@ -55,7 +54,7 @@ ms.lasthandoff: 12/05/2017
 
  ![명시적 로드 예제](read-related-data/_static/explicit-loading.png)
 
-* [지연 로드](https://docs.microsoft.com/ef/core/querying/related-data#lazy-loading)합니다. [EF 코어 현재 지연 로딩을 지원 하지 않는](https://github.com/aspnet/EntityFrameworkCore/issues/3797)합니다. 먼저 엔터티를 읽으면 관련된 데이터가 검색 되지 않습니다. 탐색 속성에 액세스 하는 처음으로 해당 탐색 속성에 필요한 데이터가 자동으로 검색 됩니다. 쿼리 될 때마다 처음에 대 한 탐색 속성에 액세스 하 여 DB에 전송 됩니다.
+* [지연 로드](https://docs.microsoft.com/ef/core/querying/related-data#lazy-loading)합니다. [EF 코어 현재 지연 로드를 지원 하지 않습니다](https://github.com/aspnet/EntityFrameworkCore/issues/3797)합니다. 먼저 엔터티를 읽으면 관련된 데이터가 검색 되지 않습니다. 탐색 속성에 액세스 하는 처음으로 해당 탐색 속성에 필요한 데이터가 자동으로 검색 됩니다. 쿼리 될 때마다 처음에 대 한 탐색 속성에 액세스 하 여 DB에 전송 됩니다.
 
 * `Select` 연산자 필요한 관련된 데이터를 로드 합니다.
 
@@ -68,7 +67,7 @@ ms.lasthandoff: 12/05/2017
 * 가져오기는 `Name` 에서 속성의 `Department` 엔터티.
 * `Department` 에서 제공 되는 엔터티는 `Course.Department` 탐색 속성입니다.
 
-![ourse 합니다. 부서](read-related-data/_static/dep-crs.png)
+![ourse.Department](read-related-data/_static/dep-crs.png)
 
 <a name="scaffold"></a>
 ### <a name="scaffold-the-course-model"></a>스 캐 폴드 과정 모델
@@ -94,13 +93,13 @@ dotnet aspnet-codegenerator razorpage -m Course -dc SchoolContext -udl -outDir P
 
 열기 *Pages/Courses/Index.cshtml.cs* 검사는 `OnGetAsync` 메서드. 스 캐 폴딩 엔진 지정에 대 한 즉시 로드는 `Department` 탐색 속성입니다. `Include` 메서드 즉시 로드를 지정 합니다.
 
-응용 프로그램을 실행 하 고 선택 된 **Courses** 링크 합니다. Department 열에 표시 됩니다는 `DepartmentID`, 유용 하지 않습니다.
+응용 프로그램을 실행 하 고 선택 된 **Courses** 링크 합니다. Department 열에 표시 됩니다는 `DepartmentID`는 도움이 되지 않습니다.
 
 `OnGetAsync` 메서드를 다음 코드로 업데이트합니다.
 
 [!code-csharp[Main](intro/samples/cu/Pages/Courses/Index.cshtml.cs?name=snippet_RevisedIndexMethod)]
 
-앞의 코드를 추가 `AsNoTracking`합니다. `AsNoTracking`반환 되는 엔터티 추적 되지 않으므로 성능이 향상 됩니다. 현재 컨텍스트에서 업데이트 되지 않기 때문에 엔터티를 추적 되지 않습니다.
+앞의 코드를 추가 `AsNoTracking`합니다. `AsNoTracking`반환 되는 엔터티 추적 되지 않으므로 성능이 향상 됩니다. 현재 컨텍스트에서 업데이트 되지 하는 엔터티를 추적 되지 않습니다.
 
 업데이트 *Views/Courses/Index.cshtml* 강조 표시 된 다음 태그로:
 
@@ -109,7 +108,7 @@ dotnet aspnet-codegenerator razorpage -m Course -dc SchoolContext -udl -outDir P
 스 캐 폴드 코드에 다음과 같은 변경은 적용 했습니다.
 
 * 인덱스에서 제목 Courses로 변경 합니다.
-* 추가 **번호** 보여 주는 열은 `CourseID` 속성 값입니다. 기본적으로 기본 키 이므로 일반적으로 최종 사용자에 게 의미가 스 캐 폴드 되지 않습니다. 그러나이 경우 기본 키가 의미 합니다.
+* 추가 **번호** 보여 주는 열은 `CourseID` 속성 값입니다. 기본적으로 기본 키 있기 때문에 일반적으로 최종 사용자에 게 의미가 스 캐 폴드 되지 않습니다. 그러나이 경우 기본 키가 의미 합니다.
 * 변경 된 **부서** 부서 이름을 표시 하는 열입니다. 코드 표시는 `Name` 의 속성은 `Department` 에 로드 된 엔터티는 `Department` 탐색 속성:
 
   ```html
@@ -211,7 +210,7 @@ dotnet aspnet-codegenerator razorpage -m Instructor -dc SchoolContext -udl -outD
     `http://localhost:1234/Instructors/2`
 
 * 페이지 제목은 **강사**합니다.
-* 추가 **Office** 표시 하는 열 `item.OfficeAssignment.Location` 경우에만 `item.OfficeAssignment` null입니다. 0 또는 1을 한 관계 이기 때문에 있을 수 있습니다 하지 관련된 OfficeAssignment 엔터티.
+* 추가 **Office** 표시 하는 열 `item.OfficeAssignment.Location` 경우에만 `item.OfficeAssignment` 이 null이 아닌 합니다. 0 또는 1을 한 관계 이기 때문에 있을 수 있습니다 하지 관련된 OfficeAssignment 엔터티.
 
   ```html
   @if (item.OfficeAssignment != null)

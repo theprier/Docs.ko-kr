@@ -2,20 +2,18 @@
 title: "ASP.NET Core 2.0 시작"
 author: rick-anderson
 description: "ASP.NET Core를 사용하여 간단한 Hello World 앱을 만들고 실행하는 빠른 자습서입니다."
-keywords: "ASP.NET Core, 자습서, 시작"
 ms.author: riande
 manager: wpickett
 ms.date: 10/18/2017
 ms.topic: get-started-article
-ms.assetid: 73543e9d-d9d5-47d6-9664-17a9beea6cd3
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: getting-started
-ms.openlocfilehash: e944f0f5a3da6d1686ca8a3036666d8dadc9a0f8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b5f1fb0de2776177374b8b4d5ea6041b0fc653a9
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="get-started-with-aspnet-core"></a>ASP.NET Core 시작
 
@@ -26,7 +24,7 @@ ms.lasthandoff: 11/10/2017
 
 2. 새 .NET Core 프로젝트를 만듭니다.
 
-   macOS 및 Linux에서 터미널 창을 엽니다. Windows에서 명령 프롬프트를 엽니다.
+   macOS 및 Linux에서 터미널 창을 엽니다. Windows에서 명령 프롬프트를 엽니다. 다음 명령을 입력합니다.
 
     ```terminal
     dotnet new razor -o aspnetcoreapp
@@ -43,7 +41,7 @@ ms.lasthandoff: 11/10/2017
 
 5. [http://localhost:5000](http://localhost:5000)으로 이동합니다.
 
-6. *Pages/About.cshtml*을 열고 페이지를 수정하여 “Hello, world! The time on the server is @DateTime.Now.” 메시지를 표시합니다.
+6. *Pages/About.cshtml*을 열고 페이지를 수정하여 “Hello, world! 서버 시간은 @DateTime.Now입니다.” 메시지를 표시합니다.
 
     [!code-html[Main](getting-started/sample/getting-started/about.cshtml?highlight=9&range=1-9)]
 

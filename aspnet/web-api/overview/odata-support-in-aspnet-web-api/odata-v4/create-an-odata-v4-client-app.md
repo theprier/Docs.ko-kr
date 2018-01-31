@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/create-an-odata-v4-client-app
 msc.type: authoredcontent
-ms.openlocfilehash: daa39fbbb4ff17d61f71bf2a642a9c2260b353e4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 51a3c7b9c5b6525d6d82b9a45910f58b71268b7f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="create-an-odata-v4-client-app-c"></a>OData v4 클라이언트 앱 (C#) 만들기
 ====================
@@ -50,7 +50,7 @@ Visual Studio에서 ProductService 프로젝트를 실행 합니다. 기본적�
 
 ## <a name="generate-the-service-proxy"></a>서비스 프록시를 생성 합니다.
 
-서비스 프록시는 OData 서비스에 액세스 하기 위한 메서드를 정의 하는.NET 클래스입니다. 프록시는 HTTP 요청에 대 한 메서드 호출으로 변환합니다. 실행 하 여 프록시 클래스를 만듭니다는 [T4 템플릿](https://msdn.microsoft.com/en-us/library/bb126445.aspx)합니다.
+서비스 프록시는 OData 서비스에 액세스 하기 위한 메서드를 정의 하는.NET 클래스입니다. 프록시는 HTTP 요청에 대 한 메서드 호출으로 변환합니다. 실행 하 여 프록시 클래스를 만듭니다는 [T4 템플릿](https://msdn.microsoft.com/library/bb126445.aspx)합니다.
 
 프로젝트를 마우스 오른쪽 단추로 클릭 합니다. 선택 **추가** &gt; **새 항목**합니다.
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: 5a852ec2301e63bde9a5ce99db80224dad7fb258
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ae2fddc81f6f4da866ec0719a0e74516bdd2a4d1
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms"></a>먼저 Entity Framework 4.0 데이터베이스와 시작 및 ASP.NET 4 Web Forms
 ====================
@@ -28,7 +28,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > ## <a name="database-first"></a>먼저 데이터베이스
 > 
-> 세 가지 방법으로 데이터 Entity Framework에서 사용할 수 있습니다: *Database First*, *Model First*, 및 *Code First*합니다. 첫 번째 데이터베이스에 대 한이 자습서가입니다. 이러한 워크플로 지침 간의 차이점에 대 한 사용자 시나리오에 가장 적합 한 선택 하는 방법에 정보를 참조 하십시오. [Entity Framework 개발 워크플로에](https://msdn.microsoft.com/en-us/library/ms178359.aspx#dbfmfcf)합니다.
+> 세 가지 방법으로 데이터 Entity Framework에서 사용할 수 있습니다: *Database First*, *Model First*, 및 *Code First*합니다. 첫 번째 데이터베이스에 대 한이 자습서가입니다. 이러한 워크플로 지침 간의 차이점에 대 한 사용자 시나리오에 가장 적합 한 선택 하는 방법에 정보를 참조 하십시오. [Entity Framework 개발 워크플로에](https://msdn.microsoft.com/library/ms178359.aspx#dbfmfcf)합니다.
 > 
 > ## <a name="web-forms"></a>Web Forms
 > 
@@ -45,7 +45,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > ## <a name="questions"></a>질문
 > 
-> 자습서를 직접 관련 되지 않는 질문 해야 하도록를 게시할 수 있습니다는 [ASP.NET Entity Framework 포럼](https://forums.asp.net/1227.aspx), [Entity Framework와 LINQ to Entities 포럼](https://social.msdn.microsoft.com/forums/en-US/adodotnetentityframework/threads/), 또는 [ StackOverflow.com](http://stackoverflow.com/)합니다.
+> 자습서를 직접 관련 되지 않는 질문 해야 하도록를 게시할 수 있습니다는 [ASP.NET Entity Framework 포럼](https://forums.asp.net/1227.aspx), [Entity Framework와 LINQ to Entities 포럼](https://social.msdn.microsoft.com/forums/adodotnetentityframework/threads/), 또는 [ StackOverflow.com](http://stackoverflow.com/)합니다.
 
 
 ## <a name="overview"></a>개요
@@ -96,7 +96,7 @@ ms.lasthandoff: 11/10/2017
 
 이 자습서에 사용 된 데이터베이스를 첫 번째 방법의 경우 다음 단계를 사이트 데이터베이스를 추가 하려면입니다. 가장 쉬운 방법은 먼저이 자습서와 함께 이동 하는 프로젝트를 다운로드 하는 것입니다. 마우스 오른쪽 단추로 클릭 한 다음는 *앱\_데이터* 폴더를 **기존 항목 추가**, 선택 하 고는 *School.mdf* 다운로드 한 프로젝트에서 데이터베이스 파일입니다.
 
-지침에 따라 해는 [School 샘플 데이터베이스 만들기](https://msdn.microsoft.com/en-us/library/bb399731.aspx)합니다. 데이터베이스를 다운로드 하거나 만들 복사는 *School.mdf* 응용 프로그램에 다음 폴더에서 파일 *앱\_데이터* 폴더:
+지침에 따라 해는 [School 샘플 데이터베이스 만들기](https://msdn.microsoft.com/library/bb399731.aspx)합니다. 데이터베이스를 다운로드 하거나 만들 복사는 *School.mdf* 응용 프로그램에 다음 폴더에서 파일 *앱\_데이터* 폴더:
 
 `%PROGRAMFILES%\Microsoft SQL Server\MSSQL10.SQLEXPRESS\MSSQL\DATA`
 

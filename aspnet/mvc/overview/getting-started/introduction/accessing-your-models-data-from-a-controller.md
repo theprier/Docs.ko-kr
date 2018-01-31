@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/accessing-your-models-data-from-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: b60913cef4b62745cf167e6074834bf7d0c228d1
-ms.sourcegitcommit: d1d8071d4093bf2444b5ae19d6e45c3d187e338b
+ms.openlocfilehash: 91bfa5fe3c5bd3029b7d7c12c8831e1653fb1d2b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/19/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="accessing-your-models-data-from-a-controller"></a>컨트롤러에서 모델의 데이터에 액세스
 ====================
@@ -87,7 +87,7 @@ Visual Studio에서 자동으로 작성 된 [CRUD](http://en.wikipedia.org/wiki/
 
 이 자습서의 앞부분에서 언급 했 듯이 어떻게 컨트롤러를 전달할 수 데이터 나 개체를 사용 하 여 뷰 서식 파일은 `ViewBag` 개체입니다. `ViewBag` 정보 보기를 전달 하는 편리한 런타임에 바인딩된 방법을 제공 하는 동적 개체입니다.
 
-MVC 전달 하는 기능도 제공 *강력한* 템플릿 보기에 개체를 입력 합니다. 이 강력한 형식의 방법을 더 나은 컴파일 타임 검사 코드 및 다양 한를 사용 하면 [IntelliSense](https://msdn.microsoft.com/en-us/library/hcw1s69b(v=vs.120).aspx) Visual Studio 편집기에서. Visual Studio에서 스 캐 폴딩 메커니즘이이 방법을 사용 하는 (즉, 전달는 *강력한* 형식화 된 모델)와 `MoviesController` 메서드 및 뷰를 만들 때 클래스와 보기 템플릿.
+MVC 전달 하는 기능도 제공 *강력한* 템플릿 보기에 개체를 입력 합니다. 이 강력한 형식의 방법을 더 나은 컴파일 타임 검사 코드 및 다양 한를 사용 하면 [IntelliSense](https://msdn.microsoft.com/library/hcw1s69b(v=vs.120).aspx) Visual Studio 편집기에서. Visual Studio에서 스 캐 폴딩 메커니즘이이 방법을 사용 하는 (즉, 전달는 *강력한* 형식화 된 모델)와 `MoviesController` 메서드 및 뷰를 만들 때 클래스와 보기 템플릿.
 
 에 *Controllers\MoviesController.cs* 생성 된 파일 검사 `Details` 메서드. `Details` 메서드는 다음과 같습니다.
 
@@ -109,9 +109,9 @@ MVC 전달 하는 기능도 제공 *강력한* 템플릿 보기에 개체를 입
 
 [!code-cshtml[Main](accessing-your-models-data-from-a-controller/samples/sample6.cshtml)]
 
-이 `@model` 지시문을 사용하면 강력한 형식인 `Model` 개체를 사용하여 컨트롤러가 뷰에 전달된 영화에 액세스할 수 있습니다. 예를 들어는 *Details.cshtml* 서식 파일을 코드는 각 영화 필드를 전달는 `DisplayNameFor` 및 [DisplayFor](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.displayextensions.displayfor(VS.98).aspx) HTML 도우미와 강력한 형식의 `Model` 개체입니다. `Create` 및 `Edit` 메서드 및 템플릿 보기 동영상 모델 개체를 전달할 수도 있습니다.
+이 `@model` 지시문을 사용하면 강력한 형식인 `Model` 개체를 사용하여 컨트롤러가 뷰에 전달된 영화에 액세스할 수 있습니다. 예를 들어는 *Details.cshtml* 서식 파일을 코드는 각 영화 필드를 전달는 `DisplayNameFor` 및 [DisplayFor](https://msdn.microsoft.com/library/system.web.mvc.html.displayextensions.displayfor(VS.98).aspx) HTML 도우미와 강력한 형식의 `Model` 개체입니다. `Create` 및 `Edit` 메서드 및 템플릿 보기 동영상 모델 개체를 전달할 수도 있습니다.
 
-검사는 *Index.cshtml* 템플릿 보기 및 `Index` 에서 메서드는 *MoviesController.cs* 파일입니다. 코드 만드는 방법을 확인할 수는 [ `List` ](https://msdn.microsoft.com/en-us/library/6sh2ey19.aspx) 호출 되 면 개체는 `View` 의 도우미 메서드는 `Index` 동작 메서드. 그런 다음이 `Movies` 에서 나열 된 `Index` 보기로 동작 메서드:
+검사는 *Index.cshtml* 템플릿 보기 및 `Index` 에서 메서드는 *MoviesController.cs* 파일입니다. 코드 만드는 방법을 확인할 수는 [ `List` ](https://msdn.microsoft.com/library/6sh2ey19.aspx) 호출 되 면 개체는 `View` 의 도우미 메서드는 `Index` 동작 메서드. 그런 다음이 `Movies` 에서 나열 된 `Index` 보기로 동작 메서드:
 
 [!code-csharp[Main](accessing-your-models-data-from-a-controller/samples/sample7.cs?highlight=3)]
 

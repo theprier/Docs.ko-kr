@@ -2,19 +2,18 @@
 title: "Windows에서 ASP.NET Core MVC를 사용하여 웹앱 만들기"
 author: rick-anderson
 description: "Windows에서 Visual Studio를 사용하여 ASP.NET Core MVC로 웹앱을 만드는 방법에 대한 소개 목차입니다."
-keywords: "ASP.NET Core, MVC, 자습서, 소개"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/26/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: tutorials/first-mvc-app/index
-ms.openlocfilehash: 9b4525d64b4d5bb309cb0708e36a152863a51ae8
-ms.sourcegitcommit: 037d3900f739dbaa2ba14158e3d7dc81478952ad
+ms.openlocfilehash: 76b3125b452fa3de8e19cd884a24ab6a3bbc0d42
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="create-a-web-app-with-aspnet-core-mvc-using-visual-studio"></a>Visual Studio를 사용하여 ASP.NET Core MVC로 웹앱 만들기
 

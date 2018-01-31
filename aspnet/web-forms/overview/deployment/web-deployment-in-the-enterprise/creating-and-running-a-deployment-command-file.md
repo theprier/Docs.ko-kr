@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/creating-and-running-a-deployment-command-file
 msc.type: authoredcontent
-ms.openlocfilehash: 729b4fa4c461eedbd0447371102010451eb51586
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: bc31bf55b29661816e0ca9a50b51b0abc3eb2c98
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-and-running-a-deployment-command-file"></a>만들기 및 배포 명령 파일을 실행 합니다.
 ====================
@@ -116,7 +116,7 @@ MSBuild 지침이 포함 된 명령 파일 만들기의 구축 및 특정 대상
 > 사용자 고유의 서버 환경에 대 한 환경 관련 프로젝트 파일 사용자 지정 하는 방법에 대 한 지침을 참조 하십시오. [대상 환경에 대 한 배포 속성 구성](../configuring-server-environments-for-web-deployment/configuring-deployment-properties-for-a-target-environment.md)합니다.
 
 
-또한 속성을 재정의 하거나 MSBuild 명령에 다른 다양 한 스위치를 설정 하 여 각 환경에 대 한 빌드 프로세스를 사용자 지정할 수 있습니다. 자세한 내용은 참조 [MSBuild 명령줄 참조](https://msdn.microsoft.com/en-us/library/ms164311.aspx)합니다.
+또한 속성을 재정의 하거나 MSBuild 명령에 다른 다양 한 스위치를 설정 하 여 각 환경에 대 한 빌드 프로세스를 사용자 지정할 수 있습니다. 자세한 내용은 참조 [MSBuild 명령줄 참조](https://msdn.microsoft.com/library/ms164311.aspx)합니다.
 
 >[!div class="step-by-step"]
 [이전](deploying-database-projects.md)

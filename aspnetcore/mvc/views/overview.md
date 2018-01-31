@@ -2,7 +2,6 @@
 title: "ASP.NET Core MVC에서 뷰"
 author: ardalis
 description: "보기에서 응용 프로그램의 데이터 표시 및 ASP.NET Core MVC에서 사용자 상호 작용을 처리 하는 방법을 알아봅니다."
-keywords: "ASP.NET Core MVC, razor, viewmodel, viewdata, viewbag을 보려면"
 ms.author: riande
 manager: wpickett
 ms.date: 12/12/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/overview
-ms.openlocfilehash: 2562d4e5fb85159e6ccb47990f54448ddc188077
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: dc36c76dbd7d82a926e39d8a8ab3a2a53b65d954
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="views-in-aspnet-core-mvc"></a>ASP.NET Core MVC에서 뷰
 
@@ -93,8 +92,8 @@ ASP.NET Core MVC 뷰는 *.cshtml* 사용 하는 파일의 [C# 프로그래밍 �
 
 암시적으로 반환 하는 경우 문제가 되지 않습니다는 `ViewResult` 와 `return View();` 에 보기 이름을 명시적으로 전달 하거나는 `View` 메서드 `return View("<ViewName>");`합니다. 두 경우 모두 뷰의 검색이이 순서에서 일치 하는 파일의 보기에 대 한 검색합니다.
 
-   1. *뷰 /\[ControllerName]\[ViewName].cshtml*
-   1. *뷰/공유/\[ViewName].cshtml*
+   1. *Views/\[ControllerName]\[ViewName].cshtml*
+   1. *Views/Shared/\[ViewName].cshtml*
 
 뷰 이름 대신 뷰 파일 경로 제공할 수 있습니다. 응용 프로그램 루트에서 시작 하는 절대 경로 사용 하는 경우 (필요에 따라부터 "/" 또는 "~ /"), *.cshtml* 확장을 지정 해야 합니다.
 
@@ -187,11 +186,11 @@ namespace WebApplication1.ViewModels
 
 ### <a name="weakly-typed-data-viewdata-and-viewbag"></a>약한 형식의 데이터 (ViewData 및 ViewBag)
 
-참고: `ViewBag` Razor 페이지에서 사용할 수 있습니다.
+참고: `ViewBag` Razor 페이지에서 사용할 수 없습니다.
 
 강력한 형식의 뷰 외에도 뷰는에 대 한 액세스는 *약한 형식의* (호출 또한 *자유로운 형식의*) 데이터의 컬렉션입니다. 강력한 종류와 달리 *약한 형식* (또는 *형식 느슨한*)를 사용 하는 데이터 형식에 있는 명시적으로 선언 하지 않는 것을 의미 합니다. 적은 양의 컨트롤러와 뷰 간에 데이터를 전달 하기 위한 약한 형식의 데이터의 컬렉션을 사용할 수 있습니다.
 
-| 데이터 전달는 중...                        | 예제                                                                        |
+| 데이터 전달는 중...                        | 예                                                                        |
 | ------------------------------------------------- | ------------------------------------------------------------------------------ |
 | 컨트롤러와 뷰                             | 드롭다운 목록을 데이터를 채웁니다.                                          |
 | 보기 및 [레이아웃 보기](xref:mvc/views/layout)   | 설정의  **\<제목 >** 보기 파일에서는 레이아웃 보기의 요소 내용입니다.  |
@@ -246,7 +245,7 @@ public IActionResult SomeAction()
 
 **ViewBag**
 
-참고: `ViewBag` Razor 페이지에서 사용할 수 있습니다.
+참고: `ViewBag` Razor 페이지에서 사용할 수 없습니다.
 
 `ViewBag`이 [DynamicViewData](/aspnet/core/api/microsoft.aspnetcore.mvc.viewfeatures.internal.dynamicviewdata) 에 저장 된 개체에 대 한 동적 액세스를 제공 하는 개체 `ViewData`합니다. `ViewBag`캐스팅 필요 하지 않으므로 작업할 더 편리할 수 있습니다. 다음 예제에서는 사용 하는 방법을 보여 줍니다. `ViewBag` 사용 하 여 동일한 결과 함께 `ViewData` 위에:
 
@@ -279,7 +278,7 @@ public IActionResult SomeAction()
 
 **ViewData 및 ViewBag를 동시에 사용 하 여**
 
-참고: `ViewBag` Razor 페이지에서 사용할 수 있습니다.
+참고: `ViewBag` Razor 페이지에서 사용할 수 없습니다.
 
 이후 `ViewData` 및 `ViewBag` 동일한 기본 참조 `ViewData` 컬렉션을 모두 사용할 수 있습니다 `ViewData` 및 `ViewBag` 혼합 및 경우에 읽기 및 쓰기 값 사이 일치 합니다.
 
@@ -319,7 +318,7 @@ public IActionResult SomeAction()
 
 **ViewBag ViewData 사이의 차이 요약**
 
- `ViewBag`Razor 페이지에서 사용할 수 없는 경우
+ `ViewBag`Razor 페이지에서 사용할 수 없습니다.
 
 * `ViewData`
   * 파생 [ViewDataDictionary](/aspnet/core/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary)는와 같은 유용할 수 있는 사전 속성이 있으므로 `ContainsKey`, `Add`, `Remove`, 및 `Clear`합니다.

@@ -2,20 +2,18 @@
 title: "임시 데이터 보호 공급자"
 author: rick-anderson
 description: "이 문서에서는 ASP.NET Core 임시 데이터 보호 공급자의 구현 세부 사항을 설명 합니다."
-keywords: "ASP.NET Core, 데이터 보호, 임시 공급자"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.assetid: af6ea1d0-0d9d-41df-a870-5dda24978e2f
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/data-protection/implementation/key-storage-ephemeral
-ms.openlocfilehash: 51d4aaa3a669763c2e388a8186ebeaec6b57e77a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fe8a020c77bfe614691bfd0f5d403c7d25a0df56
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="ephemeral-data-protection-providers"></a>임시 데이터 보호 공급자
 

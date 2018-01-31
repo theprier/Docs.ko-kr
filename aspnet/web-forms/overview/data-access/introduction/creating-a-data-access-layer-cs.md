@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-data-access-layer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c610f84cfb82f38f9c67b757aa341c7a1497369c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 927b2490b5c539a79bb9939b88942499b23cc464
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-data-access-layer-c"></a>데이터 액세스 계층 (C#)을 만들려면
 ====================
@@ -79,17 +79,17 @@ ms.lasthandoff: 11/10/2017
 
 - **GetCategories(),** 하는 모든 범주에 대 한 정보를 반환
 - **GetProducts()**, 하는 모든 제품에 대 한 정보를 반환
-- **GetProductsByCategoryID (*categoryID*) * *는 지정된 된 범주에 속하는 모든 제품을 반환 합니다
-- **GetProductByProductID (*productID*) * *, 하는 특정 제품에 대 한 정보를 반환
+- **GetProductsByCategoryID (*categoryID*)**는 지정된 된 범주에 속하는 모든 제품을 반환 합니다
+- **GetProductByProductID (*productID*)**, 하는 특정 제품에 대 한 정보를 반환
 
 이러한 메서드를 호출 하는 경우 데이터베이스에 연결 하 고 적절 한 쿼리를 실행 하 고 결과 반환 됩니다. 이러한 결과 반환 하는 것이 중요 합니다. 데이터 집합 또는 DataReader 데이터베이스 쿼리를 사용해 이러한 메서드를 반환 하기만 하면 수 있지만 이상적으로 이러한 결과 반환할지를 사용 하 여 *강력한 형식의 개체*합니다. 강력한 형식의 개체는 스키마는 컴파일 타임에 엄격 하 게 정의 된 반면 반대 자유로운 형식의 개체는 스키마 런타임이 될 때까지 알 수 없는 하나.
 
-예를 들어 DataReader와 기본적으로 데이터 집합은 자유로운 형식의 개체 스키마를 채우는 데 사용 되는 데이터베이스 쿼리에서 반환 된 열에 의해 정의 된 이후입니다. 같은 구문을 사용 해야 하는 느슨한 형 DataTable에서 특정 열에 액세스 하려면:   ***DataTable*합니다. 행 [*인덱스*] ["*columnName*"]**합니다. 이 예에서 DataTable의 느슨한 입력 문자열 또는 서 수 인덱스를 사용 하 여 열 이름에 액세스 해야 하는 팩트에서 발생 합니다. 강력한 형식의 DataTable 반면에 갖습니다의 각 열 속성으로 구현 되기 때문에 다음과 같은 코드를:   ***DataTable*합니다. 행 [*인덱스*].* columnName** *입니다.
+예를 들어 DataReader와 기본적으로 데이터 집합은 자유로운 형식의 개체 스키마를 채우는 데 사용 되는 데이터베이스 쿼리에서 반환 된 열에 의해 정의 된 이후입니다. 같은 구문을 사용 해야 하는 느슨한 형 DataTable에서 특정 열에 액세스할 수: ***DataTable*합니다. 행 [*인덱스*] ["*columnName *"]**합니다. 이 예에서 DataTable의 느슨한 입력 문자열 또는 서 수 인덱스를 사용 하 여 열 이름에 액세스 해야 하는 팩트에서 발생 합니다. 강력한 형식의 DataTable 반면에 갖습니다의 각 열 속성으로 구현 되기 때문에 다음과 같은 코드를: ***DataTable*합니다. 행 [*인덱스*].* columnName***합니다.
 
 강력한 형식의 개체를 반환 하려면 개발자가 자신의 사용자 지정 비즈니스 개체를 만들 하거나 형식화 된 데이터 집합을 사용 합니다. 비즈니스 개체 속성은 일반적으로 비즈니스 개체의 기본 데이터베이스 테이블의 열을 반영 하는 클래스를 나타내는 대로 개발자가 구현 됩니다. 형식화 된 데이터 집합은 데이터베이스 스키마 및 해당 멤버는이 스키마에 따라 강력한 형식에 따라 Visual Studio에서 자동으로 생성 하는 클래스. ADO.NET DataSet, DataTable 및 DataRow 클래스를 확장 하는 클래스의 형식화 된 데이터 집합 자체 구성 됩니다. 뿐만 아니라 강력한 형식의 Datatable 형식화 된 데이터 집합 이제 포함 하는 데이터 집합의 Datatable 채우기 및 수정은 Datatable 내에서 데이터베이스에 다시 전파 하기 위한 메서드를 사용 하 여 클래스입니다.
 
 > [!NOTE]
-> 형식화 된 데이터 집합을 사용 하 여 사용자 지정 비즈니스 개체와의 장단점에 자세한 내용은를 참조 [데이터 계층 구성 요소를 디자인 하 고 계층 간 데이터 전달](https://msdn.microsoft.com/en-us/library/ms978496.aspx)합니다.
+> 형식화 된 데이터 집합을 사용 하 여 사용자 지정 비즈니스 개체와의 장단점에 자세한 내용은를 참조 [데이터 계층 구성 요소를 디자인 하 고 계층 간 데이터 전달](https://msdn.microsoft.com/library/ms978496.aspx)합니다.
 
 
 이 자습서의이 아키텍처에 대 한 강력한 형식의 데이터 집합을 사용 합니다. 그림 3에서는 형식화 된 데이터 집합을 사용 하는 응용 프로그램의 다른 계층 간에 워크플로 보여 줍니다.
@@ -114,7 +114,7 @@ ms.lasthandoff: 11/10/2017
 
 데이터의 강력한 형식의 컬렉션으로 형식화 된 데이터 집합 사용 강력한 형식의 DataRow 인스턴스의 구성 되어 있으며 각 DataTable 인스턴스 강력한 형식으로 구성 됩니다. 이 자습서 시리즈의 작업할 해야 하는 기본 데이터베이스 테이블의 각 항목에 대 한 강력한 형식의 DataTable를 만듭니다. 에 대 한 데이터 테이블을 만드는 것부터 시작 하겠습니다는 **제품** 테이블입니다.
 
-강력한 형식의 Datatable의 기본 데이터베이스 테이블에서 데이터에 액세스 하는 방법에는 정보를 포함 하지 않는 것을 명심 하십시오. DataTable을 채우는 데 데이터를 검색 하기 위해 데이터 액세스 계층으로 작동 하는 TableAdapter 클래스를 사용 합니다. 에 대 한 우리의 **제품** DataTable TableAdapter에는 메서드가 포함 됩니다 **GetProducts()**,  **GetProductByCategoryID (*categoryID*) * * 등 프레젠테이션 계층에서 호출한입니다. DataTable의 역할은 계층 간에 데이터를 전달 하는 데 사용 하는 강력한 형식의 개체 역할을 합니다.
+강력한 형식의 Datatable의 기본 데이터베이스 테이블에서 데이터에 액세스 하는 방법에는 정보를 포함 하지 않는 것을 명심 하십시오. DataTable을 채우는 데 데이터를 검색 하기 위해 데이터 액세스 계층으로 작동 하는 TableAdapter 클래스를 사용 합니다. 에 대 한 우리의 **제품** DataTable TableAdapter에는 메서드가 포함 됩니다 **GetProducts()**, **GetProductByCategoryID (*categoryID*)**등 프레젠테이션 계층에서 호출한입니다. DataTable의 역할은 계층 간에 데이터를 전달 하는 데 사용 하는 강력한 형식의 개체 역할을 합니다.
 
 TableAdapter 구성 마법사 사용 하는 데이터베이스를 선택 하 여 시작 합니다. 드롭 다운 목록 서버 탐색기에서 해당 데이터베이스에 나타납니다. 서버 탐색기에 Northwind 데이터베이스를 추가 하지 않은 경우 웹 페이지 그러려면이 이번에 새 연결 단추를 클릭 합니다.
 
@@ -217,7 +217,7 @@ AllProducts.aspx.cs
 
 이 시점에서 우리의 **ProductsTableAdapter** 클래스에는 한 가지 방법은 하지만 **GetProducts()**, 데이터베이스의 모든 제품을 반환 하는입니다. 모든 제품을 사용 하기 위해서는 확실히 유용 하지만, 특정 제품 또는 특정 범주에 속하는 모든 제품에 대 한 정보를 검색할 하고자 하는 경우 경우가 있습니다. 데이터 액세스 계층에 이러한 기능을 추가 하려면 TableAdapter에 매개 변수가 있는 메서드를 추가할 수 있습니다.
 
-추가  **GetProductsByCategoryID (*categoryID*) * * 메서드. 데이터 집합 디자이너 돌아가서 DAL에 새 메서드를 추가 하려면 마우스 오른쪽 단추로 클릭는 **ProductsTableAdapter** 섹션을 추가 하는 쿼리를 선택 합니다.
+추가 **GetProductsByCategoryID (*categoryID*)** 메서드. 데이터 집합 디자이너 돌아가서 DAL에 새 메서드를 추가 하려면 마우스 오른쪽 단추로 클릭는 **ProductsTableAdapter** 섹션을 추가 하는 쿼리를 선택 합니다.
 
 
 ![TableAdapter를 마우스 오른쪽 단추로 클릭 하 고 선택 쿼리 추가](creating-a-data-access-layer-cs/_static/image38.png)
@@ -233,7 +233,7 @@ AllProducts.aspx.cs
 **그림 15**: 만들기 하기로 결정 한 **선택** 문에 반환 행 ([전체 크기 이미지를 보려면 클릭](creating-a-data-access-layer-cs/_static/image41.png))
 
 
-다음 단계에서는 데이터에 액세스 하는 데 사용 하는 SQL 쿼리를 정의 하는 것입니다. 특정 범주에 속해 있는 제품만 반환할 할 것 이므로 동일한 사용 **선택** 에서 문을 **GetProducts()**, 다음 코드를 추가 하지만 **여기서** 절: **여기서 CategoryID = @CategoryID** 합니다.  **@CategoryID**  만들려는 메서드 (즉, nullable 정수)에서 해당 유형의 입력된 매개 변수는 매개 변수 TableAdapter 마법사를 나타냅니다.
+다음 단계에서는 데이터에 액세스 하는 데 사용 하는 SQL 쿼리를 정의 하는 것입니다. 특정 범주에 속해 있는 제품만 반환할 할 것 이므로 동일한 사용 **선택** 에서 문을 **GetProducts()**, 다음 코드를 추가 하지만 **여기서** 절: **여기서 CategoryID = @CategoryID** 합니다. **@CategoryID**  만들려는 메서드 (즉, nullable 정수)에서 해당 유형의 입력된 매개 변수는 매개 변수 TableAdapter 마법사를 나타냅니다.
 
 
 [![만 지정된 된 범주에서 제품을 반환 하는 쿼리를 입력 합니다.](creating-a-data-access-layer-cs/_static/image43.png)](creating-a-data-access-layer-cs/_static/image42.png)
@@ -241,7 +241,7 @@ AllProducts.aspx.cs
 **그림 16**: 지정 된 범주에만 반환 제품에 쿼리를 입력 하십시오 ([전체 크기 이미지를 보려면 클릭](creating-a-data-access-layer-cs/_static/image44.png))
 
 
-마지막 단계에서 선택할 수 있습니다 데이터 액세스를 사용할 수 있을 뿐만 아니라 생성 된 메서드 이름을 사용자 지정 하는 패턴입니다. 채우기 패턴에 대 한 바꿔보겠습니다 이름을 **FillByCategoryID** DataTable 반환에 대 한 패턴을 반환 하 고 (의  **가져오기*X** * 메서드), 사용 하 여 보겠습니다  **GetProductsByCategoryID**합니다.
+마지막 단계에서 선택할 수 있습니다 데이터 액세스를 사용할 수 있을 뿐만 아니라 생성 된 메서드 이름을 사용자 지정 하는 패턴입니다. 채우기 패턴 이름을 변경해 보겠습니다 **FillByCategoryID** DataTable 반환에 대 한 패턴을 반환 하 고 (의 **가져오기 * X*** 메서드), 사용 하 여 보겠습니다 **GetProductsByCategoryID**.
 
 
 [![TableAdapter 메서드는에 대 한 이름을 선택합니다](creating-a-data-access-layer-cs/_static/image46.png)](creating-a-data-access-layer-cs/_static/image45.png)
@@ -257,7 +257,7 @@ AllProducts.aspx.cs
 **그림 18**:의 제품 수 이제 범주별으로 쿼리할 수
 
 
-추가 하는  **GetProductByProductID (*productID*) * * 동일한 기법을 사용 하는 방법입니다.
+추가 하는 **GetProductByProductID (*productID*)** 동일한 기법을 사용 하는 방법입니다.
 
 데이터 집합 디자이너에서 직접 이러한 매개 변수가 있는 쿼리를 테스트할 수 있습니다. TableAdapter의 메서드에 단추로 클릭 하 고 데이터 미리 보기를 선택 합니다. 다음으로 매개 변수를 사용 하 고 미리 보기를 클릭 하는 값을 입력 합니다.
 
@@ -267,7 +267,7 @@ AllProducts.aspx.cs
 **그림 19**: 음료 범주에 있는 제품 속하는 표시 됩니다 ([전체 크기 이미지를 보려면 클릭](creating-a-data-access-layer-cs/_static/image51.png))
 
 
-와  **GetProductsByCategoryID (*categoryID*) * * 우리의 DAL에 메서드,에서는 지정 된 범주의 제품만 표시 하는 ASP.NET 페이지가 이제 만들 수 있습니다. 다음 예제를 포함 하는 음료 범주에 있는 모든 제품을 **CategoryID** 1입니다.
+와 **GetProductsByCategoryID (*categoryID*)** 우리의 DAL에 메서드,에서는 지정 된 범주의 제품만 표시 하는 ASP.NET 페이지가 이제 만들 수 있습니다. 다음 예제를 포함 하는 음료 범주에 있는 모든 제품을 **CategoryID** 1입니다.
 
 Beverages.asp
 
@@ -293,7 +293,7 @@ Beverages.aspx.cs
 **그림 21**: 각 삽입, 업데이트 및 삭제 요청에 즉시 데이터베이스에 전송 됩니다 ([전체 크기 이미지를 보려면 클릭](creating-a-data-access-layer-cs/_static/image57.png))
 
 
-참조 업데이트 패턴에 따라 일괄 처리 하는 것을 다른 패턴은 전체 데이터 집합, DataTable, 또는 한 메서드 호출에서 Datarow의 컬렉션을 업데이트 하기 위해서입니다. 이 패턴으로 개발자 삭제, 삽입 및 수정 DataTable에 Datarow 하 고 update 메서드를 이러한 Datarow 또는 DataTable을 전달 합니다. 이 메서드를 다음에 전달 된 Datarow를 열거, 확인 여부은 한 수정, 추가 되거나 삭제 (DataRow의 통해 [RowState 속성](https://msdn.microsoft.com/en-us/library/system.data.datarow.rowstate.aspx) 값), 각 레코드에 대 한 적절 한 데이터베이스 요청을 실행 하 고 있습니다.
+참조 업데이트 패턴에 따라 일괄 처리 하는 것을 다른 패턴은 전체 데이터 집합, DataTable, 또는 한 메서드 호출에서 Datarow의 컬렉션을 업데이트 하기 위해서입니다. 이 패턴으로 개발자 삭제, 삽입 및 수정 DataTable에 Datarow 하 고 update 메서드를 이러한 Datarow 또는 DataTable을 전달 합니다. 이 메서드를 다음에 전달 된 Datarow를 열거, 확인 여부은 한 수정, 추가 되거나 삭제 (DataRow의 통해 [RowState 속성](https://msdn.microsoft.com/library/system.data.datarow.rowstate.aspx) 값), 각 레코드에 대 한 적절 한 데이터베이스 요청을 실행 하 고 있습니다.
 
 
 [![Update 메서드를 호출 하면 모든 변경 내용이 데이터베이스와 동기화](creating-a-data-access-layer-cs/_static/image59.png)](creating-a-data-access-layer-cs/_static/image58.png)
@@ -339,7 +339,7 @@ TableAdapter 일괄 처리 업데이트 패턴을 사용 하 여 기본적으로
 **그림 25**: 새 행을 추가 하는 메서드 만들기는 **제품** 테이블 ([전체 크기 이미지를 보려면 클릭](creating-a-data-access-layer-cs/_static/image69.png))
 
 
-다음 화면에서의 **InsertCommand**의 **CommandText** 나타납니다. 추가 하 여이 쿼리를 보강할 **범위 선택\_IDENTITY()** 쿼리의 끝에 삽입 된 마지막 id 값을 반환 합니다는 **IDENTITY** 같은 범위에 있는 열입니다. (참조는 [기술 문서](https://msdn.microsoft.com/en-us/library/ms190315.aspx) 에 대 한 자세한 내용은 **범위\_IDENTITY()** 하고자 하는 이유 및 [범위를 사용 하 여\_대신 IDENTITY() @ @IDENTITY](http://weblogs.sqlteam.com/travisl/archive/2003/10/29/405.aspx).) 끝낼 때는 **삽입** 문을 세미콜론으로 추가 하기 전에 **선택** 문.
+다음 화면에서의 **InsertCommand**의 **CommandText** 나타납니다. 추가 하 여이 쿼리를 보강할 **범위 선택\_IDENTITY()** 쿼리의 끝에 삽입 된 마지막 id 값을 반환 합니다는 **IDENTITY** 같은 범위에 있는 열입니다. (참조는 [기술 문서](https://msdn.microsoft.com/library/ms190315.aspx) 에 대 한 자세한 내용은 **범위\_IDENTITY()** 하고자 하는 이유 및 [범위를 사용 하 여\_대신 IDENTITY() @ @IDENTITY](http://weblogs.sqlteam.com/travisl/archive/2003/10/29/405.aspx).) 끝낼 때는 **삽입** 문을 세미콜론으로 추가 하기 전에 **선택** 문.
 
 
 [![Scope_identity () 값을 반환 하도록 쿼리를 확장 합니다.](creating-a-data-access-layer-cs/_static/image71.png)](creating-a-data-access-layer-cs/_static/image70.png)
@@ -391,7 +391,7 @@ TableAdapter 일괄 처리 업데이트 패턴을 사용 하 여 기본적으로
 **그림 30**:는 **제품** DataTable에 새 열 두 개
 
 
-업데이트 하는 **선택** 절에는  **GetProductsByCategoryID (*categoryID*) * * 메서드도 있습니다.
+업데이트 하는 **선택** 절에는 **GetProductsByCategoryID (*categoryID*)** 메서드도 있습니다.
 
 업데이트 하는 경우는 **GetProducts()** **선택** 를 사용 하 여 **조인** 데이터 집합 디자이너 구문을 삽입, 업데이트 및 삭제에 대 한 메서드를 자동으로 생성할 수 없습니다 DB를 사용 하 여 데이터베이스 데이터 직접 패턴입니다. 수동으로 만든 훨씬와 동일한 방식 처럼 해야 하는 대신,는 **InsertProduct** 이 자습서의 앞부분에 나오는 메서드. 또한 해야 합니다. 수동으로 제공 하는 **InsertCommand**, **UpdateCommand**, 및 **DeleteCommand** 패턴을 업데이트 하는 일괄 처리를 사용 하려는 값을 속성입니다.
 
@@ -399,7 +399,7 @@ TableAdapter 일괄 처리 업데이트 패턴을 사용 하 여 기본적으로
 
 지금까지 단일 데이터베이스 테이블에 대 한 단일 TableAdapter 작업 알아보았습니다만 합니다. 그러나 Northwind 데이터베이스는이 웹 응용 프로그램에서 작업할 해야 하는 여러 관련된 테이블을 포함 합니다. Datatable을 관련 형식화 된 데이터 집합을 여러 개 포함 될 수 있습니다. 따라서 우리의 DAL을 완료 하려면 추가 해야 Datatable이이 자습서에 사용할 다른 테이블에 대 한 합니다. 새 TableAdapter를 형식화 된 데이터 집합을 추가 하려면 데이터 집합 디자이너를 열려면 마우스 오른쪽 단추로 클릭 디자이너에서 추가 선택 / TableAdapter. 새 DataTable 및 TableAdapter를 만들고이 자습서의 앞부분에 나오는 검사 했습니다 마법사 과정을 안내 합니다.
 
-몇 분 정도 걸릴 다음 Tableadapter와 다음 쿼리를 사용 하 여 메서드를 만듭니다. 쿼리는 **ProductsTableAdapter** 각 제품 범주와 공급 업체 이름을 가져올 하위 쿼리가 포함 됩니다. 또한 작업을 수행 했다면, 이미 추가한 경우는 **ProductsTableAdapter** 클래스의 **GetProducts()** 및  **GetProductsByCategoryID (*categoryID*) * * 메서드.
+몇 분 정도 걸릴 다음 Tableadapter와 다음 쿼리를 사용 하 여 메서드를 만듭니다. 쿼리는 **ProductsTableAdapter** 각 제품 범주와 공급 업체 이름을 가져올 하위 쿼리가 포함 됩니다. 또한 작업을 수행 했다면, 이미 추가한 경우는 **ProductsTableAdapter** 클래스의 **GetProducts()** 및 **GetProductsByCategoryID (*categoryID* )** 메서드.
 
 - **ProductsTableAdapter**
 
@@ -520,18 +520,18 @@ SuppliersAndProducts.aspx.cs
 이 자습서에 설명 된 항목에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
 - [강력한 형식의 Tableadapter 및 Datatable VS 2005와 ASP.NET 2.0을 사용 하 여 DAL 작성](https://weblogs.asp.net/scottgu/435498)
-- [데이터 계층 구성 요소를 디자인 하 고 계층을 통한 데이터 전달](https://msdn.microsoft.com/en-us/library/ms978496.aspx)
+- [데이터 계층 구성 요소를 디자인 하 고 계층을 통한 데이터 전달](https://msdn.microsoft.com/library/ms978496.aspx)
 - [Visual Studio 2005 데이터 집합 디자이너로 데이터 액세스 계층을 구축](http://www.theserverside.net/articles/showarticle.tss?id=DataSetDesigner)
 - [ASP.NET 2.0에서에서 구성 정보 암호화 응용 프로그램](http://aspnet.4guysfromrolla.com/articles/021506-1.aspx)
-- [TableAdapter 개요](https://msdn.microsoft.com/en-us/library/bz9tthwx.aspx)
-- [형식화 된 데이터 집합으로 작업](https://msdn.microsoft.com/en-us/library/esbykkzb.aspx)
+- [TableAdapter 개요](https://msdn.microsoft.com/library/bz9tthwx.aspx)
+- [형식화 된 데이터 집합으로 작업](https://msdn.microsoft.com/library/esbykkzb.aspx)
 - [Visual Studio 2005와 ASP.NET 2.0에서 강력한 형식의 데이터 액세스를 사용 하 여](http://aspnet.4guysfromrolla.com/articles/020806-1.aspx)
 - [TableAdapter 메서드를 확장 하는 방법](https://blogs.msdn.com/vbteam/archive/2005/05/04/ExtendingTableAdapters.aspx)
 - [저장된 프로시저에서 스칼라 데이터 검색](http://aspnet.4guysfromrolla.com/articles/062905-1.aspx)
 
 ### <a name="video-training-on-topics-contained-in-this-tutorial"></a>이 자습서에 포함 된 항목에 대 한 비디오 교육
 
-- [ASP.NET 응용 프로그램에서 데이터 액세스 계층](../../../videos/data-access/adonet-data-services/data-access-layers-in-aspnet-applications.md)
+- [ASP.NET 응용 프로그램의 데이터 액세스 레이어](../../../videos/data-access/adonet-data-services/data-access-layers-in-aspnet-applications.md)
 - [수동으로 Datagrid에 데이터 집합을 바인딩하는 방법](../../../videos/data-access/adonet-data-services/how-to-manually-bind-a-dataset-to-a-datagrid.md)
 - [ASP 응용 프로그램에서 데이터 집합 및 필터와 함께 작동 하는 방법](../../../videos/data-access/adonet-data-services/how-to-work-with-datasets-and-filters-from-an-asp-application.md)
 

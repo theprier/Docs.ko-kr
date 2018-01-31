@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/performing-batch-updates-vb
 msc.type: authoredcontent
-ms.openlocfilehash: cc7b90c06b2d99b6c540e9650bb4d8515f5c3702
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: df22a7c4aedb5e5fef183817e9d2b1e4c4a919ee
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="performing-batch-updates-vb"></a>일괄 처리 업데이트 (VB)를 수행합니다.
 ====================
@@ -116,7 +116,7 @@ DataList 창과 집합 위로 단추 웹 컨트롤을 추가 하 여 시작 해�
 
 모든 DataList의 항목 편집 인터페이스를 표시 하 고 모든 업데이트 단추를 추가 하 여 계속이 일괄 처리 업데이트를 수행 하는 코드를 기록 하는 모든 있습니다. 특히, 해야 DataList의 항목 및 호출을 반복 하는 `SuppliersBLL` s 클래스 `UpdateSupplierAddress` 메서드 각각에 대 한 합니다.
 
-컬렉션 `DataListItem` DataList의 DataList를 통해 액세스할 수는 해당 구성을 인스턴스 [ `Items` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datalist.items.aspx)합니다. 에 대 한 참조는 `DataListItem`, 해당을 잡고 수 `SupplierID` 에서 `DataKeys` 컬렉션 및 프로그래밍 방식으로 텍스트 웹 컨트롤 내 참조는 `ItemTemplate` 다음 코드와 같이:
+컬렉션 `DataListItem` DataList의 DataList를 통해 액세스할 수는 해당 구성을 인스턴스 [ `Items` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.items.aspx)합니다. 에 대 한 참조는 `DataListItem`, 해당을 잡고 수 `SupplierID` 에서 `DataKeys` 컬렉션 및 프로그래밍 방식으로 텍스트 웹 컨트롤 내 참조는 `ItemTemplate` 다음 코드와 같이:
 
 
 [!code-vb[Main](performing-batch-updates-vb/samples/sample4.vb)]
@@ -131,7 +131,7 @@ DataList 창과 집합 위로 단추 웹 컨트롤을 추가 하 여 시작 해�
 
 이 자습서 호출에 사용 되는 일괄 처리 업데이트 알고리즘은 `UpdateSupplierAddress` 방법을 *모든* 자신의 주소 정보가 변경 되었는지 여부에 관계 없이 DataList의 공급 업체. 이러한 blind 클라우드에 없는 t 일반적으로 성능 문제를 업데이트 하는 동안 감사 된 데이터베이스 테이블에 변경 되 면 불필요 한 레코드를 발생할 수 있습니다. 예를 들어, 트리거를 사용 하 여 모든 기록 `UPDATE` s는 `Suppliers` 사용자 모든 했는지 여부에 관계 없이 시스템의 각 공급 업체에 대 한 새 감사 레코드를 만들 수는 모두 업데이트 단추를 클릭할 때마다 감사 테이블에 변경합니다.
 
-ADO.NET DataTable 및 데이터 어댑터 클래스는 여기서만 수정, 삭제 및 새 레코드 데이터베이스 통신으로 인해 일괄 처리 업데이트를 지원 하도록 설계 되었습니다. DataTable의 각 행에는 [ `RowState` 속성](https://msdn.microsoft.com/en-us/library/system.data.datarow.rowstate.aspx) 하는 행에서 수정, 삭제 하는 DataTable에 추가 되었습니다 그대로 유지 하는지 여부를 나타냅니다. 처음 DataTable 채워지면, 모든 행 변경 되지 않은 상태로 표시 됩니다. 수정 된 행을 표시 행 s 열의 모든 값을 변경 합니다.
+ADO.NET DataTable 및 데이터 어댑터 클래스는 여기서만 수정, 삭제 및 새 레코드 데이터베이스 통신으로 인해 일괄 처리 업데이트를 지원 하도록 설계 되었습니다. DataTable의 각 행에는 [ `RowState` 속성](https://msdn.microsoft.com/library/system.data.datarow.rowstate.aspx) 하는 행에서 수정, 삭제 하는 DataTable에 추가 되었습니다 그대로 유지 하는지 여부를 나타냅니다. 처음 DataTable 채워지면, 모든 행 변경 되지 않은 상태로 표시 됩니다. 수정 된 행을 표시 행 s 열의 모든 값을 변경 합니다.
 
 에 `SuppliersBLL` 클래스에 단일 공급 업체 레코드에 대 한 첫 번째 읽기 하 여 지정 된 공급자의 주소 정보 업데이트는 `SuppliersDataTable` 로 설정한는 `Address`, `City`, 및 `Country` 다음 코드를 사용 하 여 열 값:
 

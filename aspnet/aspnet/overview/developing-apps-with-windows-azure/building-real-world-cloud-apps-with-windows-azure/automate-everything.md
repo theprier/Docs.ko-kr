@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
 msc.type: authoredcontent
-ms.openlocfilehash: cf1cb7b07ffe8750724e58e4fb66854c9a033a54
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aa8bb895ed6eaa0ef4c5752f475ea7c911544ef2
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="automate-everything-building-real-world-cloud-apps-with-azure"></a>(Azure 사용 하 여 실제 클라우드 앱 빌드) 모든 것 자동화
 ====================
@@ -29,7 +29,7 @@ ms.lasthandoff: 11/10/2017
 
 살펴보게 처음 세 가지 패턴에는 실제로 소프트웨어 개발 프로젝트에 있지만 특히 클라우드 프로젝트에 적용 됩니다. 이 방법은 개발 작업을 자동화 하는 방법에 대 한 것입니다. 중요 한 항목 이므로 수동 프로세스 속도가 느리고 오류가 발생 하기 쉽습니다. 가능한 쉽게 빠르고 안정적 이며 agile 워크플로 설정할 수 만큼으로 자동화 합니다. 되므로 클라우드 개발에 대 한 고유 하 게 중요 한 온-프레미스 환경에서 자동화 하기 어렵거나 있는 많은 작업을 쉽게 자동화할 수 있습니다. 전체 테스트를 설정할 수는 예를 들어 새 웹 서버와 백 엔드 Vm을 포함 하 여 환경, 데이터베이스, blob 저장소 (파일 저장소), 큐 등입니다.
 
-## <a name="devops-workflow"></a>DevOps 워크플로
+## <a name="devops-workflow"></a>DevOps Workflow
 
 "DevOps." 라는 용어 들은 점점 더 용어를 개발 및 운영 작업을 통합 소프트웨어를 효율적으로 개발 해야 인식 부족 개발. 사용 하도록 설정 하려는 워크플로 유형은 하나 있습니다 수 있는 응용 프로그램을 개발, 배포의 프로덕션 사용에서 배울, 학습 한 내용에 대 한 응답에서 변경할와 빠르고 안정적으로 주기를 반복 합니다.
 
@@ -45,7 +45,7 @@ ms.lasthandoff: 11/10/2017
 
 에 [이 전자책 소개](introduction.md), Azure 관리 포털-웹 기반 콘솔 에서도 언급 했 합니다. 관리 포털을 사용 하면 모니터링 하 고 모든 Azure에 배포 하는 리소스를 관리할 수 있습니다. 만들기 및 삭제와 같은 웹 앱 및 Vm 서비스, 해당 서비스를 구성, 서비스 작업을 모니터링 및 등을 쉬운 방법입니다. 좋은 도구 이지만 사용 하는 수동 프로세스입니다. 모든 규모의 프로덕션 응용 프로그램을 개발 하려는 경우 특히 팀 환경에서에서 권장 하는 UI 알아보고 Azure를 탐색 하려면 포털을 통해 이동 하 고 있습니다 수행할 반복적인 프로세스를 자동화 합니다.
 
-관리 포털에서 또는 Visual Studio에서 수동으로 수행할 수 있는 거의 모든 나머지 관리 API를 호출 하 여 수행할 수도 있습니다. 사용 하 여 스크립트를 작성할 수 있습니다 [Windows PowerShell](https://msdn.microsoft.com/en-us/library/windowsazure/jj156055.aspx), 같은 오픈 소스 프레임 워크를 사용할 수 있습니다 또는 [Chef](http://www.opscode.com/chef/) 또는 [Puppet](http://puppetlabs.com/puppet/what-is-puppet)합니다. 또한 Mac 또는 Linux 환경에서 Bash 명령줄 도구를 사용할 수 있습니다. Azure은 서로 다른 이러한 모든 환경에 대 한 Api 스크립트는 [.NET 관리 API](http://www.hanselman.com/blog/PennyPinchingInTheCloudAutomatingEverythingWithTheWindowsAzureManagementLibrariesAndNET.aspx) 스크립트 대신 코드를 작성 하려는 경우.
+관리 포털에서 또는 Visual Studio에서 수동으로 수행할 수 있는 거의 모든 나머지 관리 API를 호출 하 여 수행할 수도 있습니다. 사용 하 여 스크립트를 작성할 수 있습니다 [Windows PowerShell](https://msdn.microsoft.com/library/windowsazure/jj156055.aspx), 같은 오픈 소스 프레임 워크를 사용할 수 있습니다 또는 [Chef](http://www.opscode.com/chef/) 또는 [Puppet](http://puppetlabs.com/puppet/what-is-puppet)합니다. 또한 Mac 또는 Linux 환경에서 Bash 명령줄 도구를 사용할 수 있습니다. Azure은 서로 다른 이러한 모든 환경에 대 한 Api 스크립트는 [.NET 관리 API](http://www.hanselman.com/blog/PennyPinchingInTheCloudAutomatingEverythingWithTheWindowsAzureManagementLibrariesAndNET.aspx) 스크립트 대신 코드를 작성 하려는 경우.
 
 수정 앱에 대 한 테스트 환경을 직접 만들어 해당 환경에 프로젝트를 배포 및 프로세스를 자동화 하는 일부 Windows PowerShell 스크립트를 만들고 및 일부 이러한 스크립트의 내용을 검토 합니다.
 
@@ -76,7 +76,7 @@ Azure 서비스를 관리 하는 PowerShell 스크립트를 실행 하려면 Azu
 
 스크립트가 완료 된 후 나타나면 관리 포털에서 만들어진 합니다. 두 개의 데이터베이스를 찾을 수 있습니다.
 
-![데이터베이스](automate-everything/_static/image3.png)
+![Databases](automate-everything/_static/image3.png)
 
 저장소 계정:
 

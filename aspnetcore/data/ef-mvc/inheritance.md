@@ -2,20 +2,18 @@
 title: "ASP.NET Core MVC EF 코어 상속-9 / 10 인"
 author: tdykstra
 description: "이 자습서에서는 ASP.NET Core 응용 프로그램에서 Entity Framework Core를 사용 하 여 데이터 모델에서 상속을 구현 하는 방법을 보여줍니다."
-keywords: "ASP.NET Core, Entity Framework Core 상속"
-ms.author: tdykstra
 manager: wpickett
+ms.author: tdykstra
 ms.date: 03/15/2017
-ms.topic: get-started-article
-ms.assetid: 41dc0db7-6f17-453e-aba6-633430609c74
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-mvc/inheritance
-ms.openlocfilehash: 10bde121dac3bdbbf0e55f2d146d91dea0f0210f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 985cc38b10ef830b8274e40ad5f7050157fd4d86
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="inheritance---ef-core-with-aspnet-core-mvc-tutorial-9-of-10"></a>상속-EF 코어 ASP.NET Core MVC 자습서 (9 / 10)
 
@@ -108,7 +106,7 @@ dotnet ef migrations add Inheritance
 
 * 학생 행 고용 날짜 되지 않았으므로 HireDate null을 허용 하면 있습니다.
 
-* 학생을 가리키는 외래 키를 업데이트 하는 임시 필드를 추가 합니다. 학생 Person 테이블에 복사 하는 경우 새 기본 키 값을 볼 수 있습니다.
+* 학생을 가리키는 외래 키를 업데이트 하는 임시 필드를 추가 합니다. 학생 Person 테이블에 복사할 때 새 기본 키 값 받게 됩니다.
 
 * Person 테이블에 학생 테이블에서 데이터를 복사 합니다. 이렇게 하면 새 기본 키 값도 할당에 대해 학습 합니다.
 

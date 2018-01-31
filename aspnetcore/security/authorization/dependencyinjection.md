@@ -2,20 +2,18 @@
 title: "요구 사항 처리기의 종속성 주입"
 author: rick-anderson
 description: "이 문서에서는 종속성 주입을 사용 하 여 ASP.NET Core 응용 프로그램에 권한 부여 요구 사항을 처리기를 삽입 하는 방법에 설명 합니다."
-keywords: "ASP.NET 필수 요소 종속성 주입, 권한 부여 처리기"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.assetid: 5fb6625c-173a-4feb-8380-73c9844dc23c
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/authorization/dependencyinjection
-ms.openlocfilehash: b5e590cc63387553af7385b611cdf8cd6b255db7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1b7506b49109264a8c628ea2e39ded9f5ace95d3
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="dependency-injection-in-requirement-handlers"></a>요구 사항 처리기의 종속성 주입
 

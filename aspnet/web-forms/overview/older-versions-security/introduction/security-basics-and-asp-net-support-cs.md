@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/security-basics-and-asp-net-support-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 02c352c6fa1fcd1f60ebfc7b7ebf95151fe8de8c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4080e3ccaffefd02c76b89a77e320e963f854961
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="security-basics-and-aspnet-support-c"></a>보안 기본 사항 및 ASP.NET 지원 (C#)
 ====================
@@ -102,7 +102,7 @@ Windows 인증 워크플로 다음 인증 방법 중 하나를 사용 합니다.
 **그림 2**: 폼 인증 워크플로
 
 
-다음 두 자습서에서 훨씬 더 자세히 폼 인증에 읽기[폼 인증의 개요는](an-overview-of-forms-authentication-cs.md) 및 [폼 인증 구성 및 고급 항목](forms-authentication-configuration-and-advanced-topics-cs.md)합니다. 에 대 한 자세한 ASP 합니다. NET의 인증 옵션 참조 [ASP.NET 인증](https://msdn.microsoft.com/en-us/library/eeyk640h.aspx)합니다.
+다음 두 자습서에서 훨씬 더 자세히 폼 인증에 읽기[폼 인증의 개요는](an-overview-of-forms-authentication-cs.md) 및 [폼 인증 구성 및 고급 항목](forms-authentication-configuration-and-advanced-topics-cs.md)합니다. 에 대 한 자세한 ASP 합니다. NET의 인증 옵션 참조 [ASP.NET 인증](https://msdn.microsoft.com/library/eeyk640h.aspx)합니다.
 
 ## <a name="limiting-access-to-web-pages-directories-and-page-functionality"></a>웹 페이지, 디렉터리 및 페이지 기능에 대 한 액세스를 제한합니다.
 
@@ -113,9 +113,9 @@ ASP.NET에서 특정 사용자가 특정 파일 또는 디렉터리 액세스 �
 
 파일 권한 부여 및 URL 권한 부여는 특정 디렉터리에서 모든 ASP.NET 페이지 또는 특정 ASP.NET 페이지에 액세스 하기 위한 권한 부여 규칙을 정의 합니다. 이러한 기술을 사용 하 여 우리, 특정 사용자에 대 한 특정 페이지에 대 한 요청 거부 또는 일련의 사용자에 대 한 액세스를 허용 하 고 다른 모든 사용자에 대 한 액세스를 거부 하기 위해 ASP.NET 지시할 수 있습니다. 사용자의 모든 페이지에 액세스할 수 있었지만 페이지의 기능은 사용자에 따라 달라 집니다 시나리오의 경우는 어떨까요? 예를 들어 사용자 계정을 지 원하는 많은 사이트 내용이 나 다른 인증 된 사용자 또는 익명 사용자에 대 한 데이터를 표시 하는 페이지에는. 익명 사용자 인증된 된 사용자는 대신 다시 시작, 등과 같은 메시지가 표시 되는 반면에 로그인 하는 사이트에 대 한 링크를 표시 될 수 *Username* 를 로그 아웃 링크와 함께 합니다. 또 다른 예:는 입찰 파일 또는 항목 auctioning 여부에 따라 다양 한 정보를 볼 경매 사이트에 있는 항목을 볼 때.
 
-페이지 수준의 조정은 이러한 선언적으로 또는 프로그래밍 방식으로 수행할 수 있습니다. 에 대 한 여러 콘텐츠를 표시 익명 인증 된 사용자가 끌어서 보다는 [LoginView 컨트롤](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.loginview.aspx) 페이지에 해당 AnonymousTemplate 및 LoggedInTemplate 서식 파일에 적절 한 콘텐츠를 입력 합니다. 또는 확인할 수 있습니다 프로그래밍 방식으로 현재 요청이 인증 되는지 여부, 사용자를 역할 (있는 경우)에 속해 있습니다. 이 정보를 표시 하거나 숨길 페이지에서 표 또는 패널의 열을 사용할 수 있습니다.
+페이지 수준의 조정은 이러한 선언적으로 또는 프로그래밍 방식으로 수행할 수 있습니다. 에 대 한 여러 콘텐츠를 표시 익명 인증 된 사용자가 끌어서 보다는 [LoginView 컨트롤](https://msdn.microsoft.com/library/system.web.ui.webcontrols.loginview.aspx) 페이지에 해당 AnonymousTemplate 및 LoggedInTemplate 서식 파일에 적절 한 콘텐츠를 입력 합니다. 또는 확인할 수 있습니다 프로그래밍 방식으로 현재 요청이 인증 되는지 여부, 사용자를 역할 (있는 경우)에 속해 있습니다. 이 정보를 표시 하거나 숨길 페이지에서 표 또는 패널의 열을 사용할 수 있습니다.
 
-이 시리즈 권한 부여에 집중 하는 세 개의 자습서가 포함 되어 있습니다. ***사용자 기반 권한 부여***; 특정 사용자 계정에 대 한 하나 이상의 디렉터리에 있는 페이지에 대 한 액세스를 제한 하는 방법을 검사 합니다. ***역할 기반 권한 부여*** 수준이; 마지막으로, 역할에서 권한 부여 규칙을 제공에 ***는 현재 로그온 한 사용자에 따라 콘텐츠 표시*** 자습서 탐색 하는 특정 수정 페이지의 내용 및 기능 페이지를 방문 하는 사용자를 기반 합니다. 에 대 한 자세한 ASP 합니다. NET의 권한 부여 옵션 참조 [ASP.NET 권한 부여](https://msdn.microsoft.com/en-us/library/wce3kxhd.aspx)합니다.
+이 시리즈 권한 부여에 집중 하는 세 개의 자습서가 포함 되어 있습니다. ***사용자 기반 권한 부여***; 특정 사용자 계정에 대 한 하나 이상의 디렉터리에 있는 페이지에 대 한 액세스를 제한 하는 방법을 검사 합니다. ***역할 기반 권한 부여*** 수준이; 마지막으로, 역할에서 권한 부여 규칙을 제공에 ***는 현재 로그온 한 사용자에 따라 콘텐츠 표시*** 자습서 탐색 하는 특정 수정 페이지의 내용 및 기능 페이지를 방문 하는 사용자를 기반 합니다. 에 대 한 자세한 ASP 합니다. NET의 권한 부여 옵션 참조 [ASP.NET 권한 부여](https://msdn.microsoft.com/library/wce3kxhd.aspx)합니다.
 
 
 ## <a name="user-accounts-and-roles"></a>사용자 계정 및 역할
@@ -124,21 +124,21 @@ ASP입니다. NET의 폼 인증에서는 사용자가 사이트에 로그인 하
 
 ASP.NET 2.0 이전 개발자가 자신의 사용자 및 역할 저장소 작성을 담당 했습니다. 에 있는 것도 사용자 인터페이스를 설계 하 고 필수적인 사용자에 대 한 코드는 로그인 페이지와 다른 규칙 으로부터 새 계정을 만들려면 페이지와 같은 계정 관련 페이지를 쓰는 데 필요한 후크입니다. Asp.net에서는, 다음과 같은 질문에 자신의 디자인 결정에 도달 하 게 구현 사용자 계정에 각 개발자는 기본 제공 사용자 계정 프레임 워크 없이 저장 하는 방법 암호나 다른 중요 한 정보가 있습니까? 하 고 어떤 지침 암호 길이 및 강도 관한 적용 해야 합니까?
 
-오늘날 훨씬 간편 하 게 감사 하는 ASP.NET 응용 프로그램에서 사용자 계정을 구현는 *구성원 프레임 워크* 및 로그인 웹을 제어 하는 기본 제공 합니다. 멤버 자격 프레임 워크는 클래스에는 소수의 [System.Web.Security 네임 스페이스](https://msdn.microsoft.com/en-us/library/system.web.security.aspx) 필수 사용자 계정 관련 작업을 수행 하기 위한 기능을 제공 합니다. 멤버 자격 framework의 주요 클래스는는 [멤버 자격 클래스](https://msdn.microsoft.com/en-us/library/system.web.security.membership.aspx), 같은 메서드가 있는:
+오늘날 훨씬 간편 하 게 감사 하는 ASP.NET 응용 프로그램에서 사용자 계정을 구현는 *구성원 프레임 워크* 및 로그인 웹을 제어 하는 기본 제공 합니다. 멤버 자격 프레임 워크는 클래스에는 소수의 [System.Web.Security 네임 스페이스](https://msdn.microsoft.com/library/system.web.security.aspx) 필수 사용자 계정 관련 작업을 수행 하기 위한 기능을 제공 합니다. 멤버 자격 framework의 주요 클래스는는 [멤버 자격 클래스](https://msdn.microsoft.com/library/system.web.security.membership.aspx), 같은 메서드가 있는:
 
 - CreateUser
 - DeleteUser
 - GetAllUsers
 - GetUser
-- 하기 위한
+- UpdateUser
 - ValidateUser
 
 멤버 자격 프레임 워크 사용 하는 [공급자 모델](http://aspnet.4guysfromrolla.com/articles/101905-1.aspx), 멤버 자격 프레임 워크의 API 구현에서 명확 하 게 구분 하 합니다. 이 공용 API를 사용 하는 개발자가 사용할 수 있지만 자율적 이며 해당 응용 프로그램의 사용자 지정 요구를 충족 하는 구현을 사용 하도록 합니다. 즉, 멤버 자격 클래스 (메서드, 속성 및 이벤트), 프레임 워크의 필수 기능을 정의 하지만 실제로 구현 세부 정보를 제공 하지 않습니다. 대신, 멤버 자격 클래스의 메서드는 실제 작업을 수행 하는 구성 된 공급자를 호출 합니다. 예를 들어, 멤버 자격 클래스 CreateUser 메서드가 호출 되 면 멤버 자격 클래스는 사용자 저장소의 세부 정보 모릅니다. 있는지 알 수 없으므로 경우 사용자가 유지 관리 되는 XML 파일 또는 다른 저장소 또는 데이터베이스입니다. 통화를 위임 하려면 어떤 공급자를 확인 하려면 웹 응용 프로그램의 구성을 검사 하는 멤버 자격 클래스 및 해당 공급자 클래스는 실제로 새 사용자 계정의 적절 한 사용자 저장소에 만듭니다. 그림 3이 상호이 작용을 보여 줍니다.
 
 Microsoft은.NET Framework에 두 개의 멤버 자격 공급자 클래스를 제공:
 
-- [ActiveDirectoryMembershipProvider](https://msdn.microsoft.com/en-us/library/system.web.security.activedirectorymembershipprovider.aspx) -Active Directory 및 Active Directory ADAM (Application Mode) 서버에서 멤버 API를 구현 합니다.
-- [SqlMembershipProvider](https://msdn.microsoft.com/en-us/library/system.web.security.sqlmembershipprovider.aspx) -SQL Server 데이터베이스에 멤버 API를 구현 합니다.
+- [ActiveDirectoryMembershipProvider](https://msdn.microsoft.com/library/system.web.security.activedirectorymembershipprovider.aspx) -Active Directory 및 Active Directory ADAM (Application Mode) 서버에서 멤버 API를 구현 합니다.
+- [SqlMembershipProvider](https://msdn.microsoft.com/library/system.web.security.sqlmembershipprovider.aspx) -SQL Server 데이터베이스에 멤버 API를 구현 합니다.
 
 이 자습서 시리즈의 SqlMembershipProvider에만 중점을 둡니다.
 
@@ -148,17 +148,17 @@ Microsoft은.NET Framework에 두 개의 멤버 자격 공급자 클래스를 �
 **그림 03**: The 공급자 모델 사용 하면 다른 구현을를 원활 하 게 연결에 프레임 워크 ([전체 크기 이미지를 보려면 클릭](security-basics-and-asp-net-support-cs/_static/image5.png))
 
 
-공급자 모델의 이점은 대체 구현을 Microsoft, 공급 업체 또는 개별 개발자가 개발 및 원활 하 게 멤버 자격 프레임 워크에 연결 될 수입니다. 예를 들어 Microsoft는 출시 했습니다 [Microsoft Access 데이터베이스에 대 한 멤버 자격 공급자](https://download.microsoft.com/download/5/5/b/55bc291f-4316-4fd7-9269-dbf9edbaada8/sampleaccessproviders.vsi)합니다. 멤버 자격 공급자에 대 한 자세한 내용은 참조는 [공급자 Toolkit](https://msdn.microsoft.com/en-us/asp.net/aa336558.aspx), 100 개 이상의 페이지의 공급자 모델에 대 한 설명서, 샘플 사용자 지정 공급자, 멤버 자격 공급자의 연습을 포함 하 고 기본 제공 멤버 자격 공급자 (즉, ActiveDirectoryMembershipProvider 및 SqlMembershipProvider)에 대 한 소스 코드를 완료 합니다.
+공급자 모델의 이점은 대체 구현을 Microsoft, 공급 업체 또는 개별 개발자가 개발 및 원활 하 게 멤버 자격 프레임 워크에 연결 될 수입니다. 예를 들어 Microsoft는 출시 했습니다 [Microsoft Access 데이터베이스에 대 한 멤버 자격 공급자](https://download.microsoft.com/download/5/5/b/55bc291f-4316-4fd7-9269-dbf9edbaada8/sampleaccessproviders.vsi)합니다. 멤버 자격 공급자에 대 한 자세한 내용은 참조는 [공급자 Toolkit](https://msdn.microsoft.com/asp.net/aa336558.aspx), 100 개 이상의 페이지의 공급자 모델에 대 한 설명서, 샘플 사용자 지정 공급자, 멤버 자격 공급자의 연습을 포함 하 고 기본 제공 멤버 자격 공급자 (즉, ActiveDirectoryMembershipProvider 및 SqlMembershipProvider)에 대 한 소스 코드를 완료 합니다.
 
-ASP.NET 2.0에는 또한 역할 프레임 워크가 추가 되었습니다. 멤버 자격 프레임 워크와 같은 역할 framework 공급자 모델 기반 만들어집니다. 해당 API를 통해 노출 되는 [역할 클래스](https://msdn.microsoft.com/en-us/library/system.web.security.roles.aspx) 세 개의 공급자 클래스와 함께 제공 되는.NET Framework 및:
+ASP.NET 2.0에는 또한 역할 프레임 워크가 추가 되었습니다. 멤버 자격 프레임 워크와 같은 역할 framework 공급자 모델 기반 만들어집니다. 해당 API를 통해 노출 되는 [역할 클래스](https://msdn.microsoft.com/library/system.web.security.roles.aspx) 세 개의 공급자 클래스와 함께 제공 되는.NET Framework 및:
 
-- [AuthorizationStoreRoleProvider](https://msdn.microsoft.com/en-us/library/system.web.security.authorizationstoreroleprovider.aspx) -Active Directory 또는 ADAM 같은 권한 부여 관리자 정책 저장소, 역할 정보를 관리 합니다.
-- [SqlRoleProvider](https://msdn.microsoft.com/en-us/library/system.web.security.sqlroleprovider.aspx) -SQL Server 데이터베이스에서 역할을 구현 합니다.
-- [WindowsTokenRoleProvider](https://msdn.microsoft.com/en-us/library/system.web.security.windowstokenroleprovider.aspx) -방문자의 Windows 그룹에 따라 역할 정보를 연결 합니다. 이 메서드는 일반적으로 Windows 인증과 함께 사용 됩니다.
+- [AuthorizationStoreRoleProvider](https://msdn.microsoft.com/library/system.web.security.authorizationstoreroleprovider.aspx) -Active Directory 또는 ADAM 같은 권한 부여 관리자 정책 저장소, 역할 정보를 관리 합니다.
+- [SqlRoleProvider](https://msdn.microsoft.com/library/system.web.security.sqlroleprovider.aspx) -SQL Server 데이터베이스에서 역할을 구현 합니다.
+- [WindowsTokenRoleProvider](https://msdn.microsoft.com/library/system.web.security.windowstokenroleprovider.aspx) -방문자의 Windows 그룹에 따라 역할 정보를 연결 합니다. 이 메서드는 일반적으로 Windows 인증과 함께 사용 됩니다.
 
 이 자습서 시리즈 SqlRoleProvider에만 중점을 둡니다.
 
-공급자 모델은 단일 정방향 웹 API (멤버 자격 및 역할 클래스)를 포함 하는 이후 구현 세부 정보에 걱정할 필요 없이 해당 API와 관련 된 기능을 빌드할 수-페이지에서 선택한 공급자에 의해 처리 되는 것 개발자입니다. 이 통합된 API Microsoft 및 타사 공급 업체 웹 컨트롤 멤버 자격 및 역할 프레임 워크와 함께 해당 인터페이스를 작성할 수 있습니다. ASP.NET의 수와 함께 제공 [로그인 웹 컨트롤](https://msdn.microsoft.com/en-us/library/ms178329.aspx) 일반적인 사용자 계정 사용자 인터페이스를 구현 합니다. 예를 들어는 [Login 컨트롤](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.login.aspx) , 유효성을 검사 하 고 폼 인증을 통해 로그에 사용자가 자격 증명을 입력 합니다. [LoginView 컨트롤](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.loginview.aspx) 인증 된 사용자 또는 익명 사용자에 게 다른 태그 또는 사용자의 역할에 따라 다른 태그를 표시 하기 위한 템플릿을 제공 합니다. 및 [CreateUserWizard 컨트롤](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.createuserwizard.aspx) 새 사용자 계정을 만들기 위한 단계별 사용자 인터페이스를 제공 합니다.
+공급자 모델은 단일 정방향 웹 API (멤버 자격 및 역할 클래스)를 포함 하는 이후 구현 세부 정보에 걱정할 필요 없이 해당 API와 관련 된 기능을 빌드할 수-페이지에서 선택한 공급자에 의해 처리 되는 것 개발자입니다. 이 통합된 API Microsoft 및 타사 공급 업체 웹 컨트롤 멤버 자격 및 역할 프레임 워크와 함께 해당 인터페이스를 작성할 수 있습니다. ASP.NET의 수와 함께 제공 [로그인 웹 컨트롤](https://msdn.microsoft.com/library/ms178329.aspx) 일반적인 사용자 계정 사용자 인터페이스를 구현 합니다. 예를 들어는 [Login 컨트롤](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.aspx) , 유효성을 검사 하 고 폼 인증을 통해 로그에 사용자가 자격 증명을 입력 합니다. [LoginView 컨트롤](https://msdn.microsoft.com/library/system.web.ui.webcontrols.loginview.aspx) 인증 된 사용자 또는 익명 사용자에 게 다른 태그 또는 사용자의 역할에 따라 다른 태그를 표시 하기 위한 템플릿을 제공 합니다. 및 [CreateUserWizard 컨트롤](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.aspx) 새 사용자 계정을 만들기 위한 단계별 사용자 인터페이스를 제공 합니다.
 
 내부적 다양 한 로그인 컨트롤 멤버 자격 및 역할 프레임 워크와 상호 작용 합니다. 한 줄의 코드를 작성할 필요 없이 대부분의 로그인 컨트롤을 구현할 수 있습니다. 이후 자습서에서을 확장 하 고 해당 기능을 사용자 지정 기술을 포함 하 여 이러한 컨트롤을 더 자세히 살펴보겠습니다.
 
@@ -175,16 +175,16 @@ ASP.NET 2.0에는 또한 역할 프레임 워크가 추가 되었습니다. 멤�
 이 자습서에 설명 된 항목에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
 - [ASP.NET 2.0 멤버 자격, 역할, 폼 인증 및 보안 리소스](https://weblogs.asp.net/scottgu/ASP.NET-2.0-Membership_2C00_-Roles_2C00_-Forms-Authentication_2C00_-and-Security-Resources-)
-- [ASP.NET 2.0 보안 지침](https://msdn.microsoft.com/en-us/library/ms998258.aspx)
-- [ASP.NET 인증](https://msdn.microsoft.com/en-us/library/eeyk640h.aspx)
-- [ASP.NET 권한 부여](https://msdn.microsoft.com/en-us/library/wce3kxhd.aspx)
-- [ASP.NET Login 컨트롤 개요](https://msdn.microsoft.com/en-us/library/ms178329.aspx)
+- [ASP.NET 2.0 보안 지침](https://msdn.microsoft.com/library/ms998258.aspx)
+- [ASP.NET 인증](https://msdn.microsoft.com/library/eeyk640h.aspx)
+- [ASP.NET 권한 부여](https://msdn.microsoft.com/library/wce3kxhd.aspx)
+- [ASP.NET Login 컨트롤 개요](https://msdn.microsoft.com/library/ms178329.aspx)
 - [ASP.NET 2.0의 검사 멤버 자격, 역할 및 프로필](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx)
 - [어떻게 할까요?: 보호 멤버 자격 및 역할을 사용 하 여 내 사이트?](https://asp.net/learn/videos/video-45.aspx) (비디오)
-- [멤버 자격 소개](https://msdn.microsoft.com/en-us/library/yh26yfzy.aspx)
-- [MSDN 보안 개발자 센터](https://msdn.microsoft.com/en-us/security/default.aspx)
+- [멤버 자격 소개](https://msdn.microsoft.com/library/yh26yfzy.aspx)
+- [MSDN 보안 개발자 센터](https://msdn.microsoft.com/security/default.aspx)
 - [전문 ASP.NET 2.0 보안, 구성원 자격 및 역할 관리](http://www.wrox.com/WileyCDA/WroxTitle/productCd-0764596985.html) (ISBN: 978-0-7645-9698-8)
-- [공급자 도구 키트](https://msdn.microsoft.com/en-us/asp.net/aa336558.aspx)
+- [공급자 도구 키트](https://msdn.microsoft.com/asp.net/aa336558.aspx)
 
 ## <a name="about-the-author"></a>작성자 정보
 

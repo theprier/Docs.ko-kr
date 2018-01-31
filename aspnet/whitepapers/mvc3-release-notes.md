@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/mvc3-release-notes
 msc.type: content
-ms.openlocfilehash: a86fae5698c54a71cb598f508aa91e7d96d1b409
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c1fa5d31f68b44bfdfda61c870a6825eeba18647
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 ====================
@@ -91,7 +91,7 @@ ms.lasthandoff: 11/10/2017
     - [버그 수정](#0.1__Toc274034228)
     - [주요 변경 내용](#0.1__Toc274034229)
     - [알려진 문제](#0.1__Toc274034230)
-- [고 지 사항](#0.1__Toc274034231)
+- [Disclaimer](#0.1__Toc274034231)
 
 <a id="overview"></a>
 ## <a name="overview"></a>개요
@@ -144,7 +144,7 @@ ASP.NET MVC에 대 한 설명서는 다음 URL에서 MSDN 웹 사이트에서 �
 [https://www.asp.net/mvc/](../mvc/index.md)
 
 <a id="support"></a>
-## <a name="support"></a>지원
+## <a name="support"></a>Support(지원)
 
 이 완전히 지원 되는 릴리스입니다. 기술 지원을 받는 방법에 대 한 정보를 찾을 수 있습니다는 [Microsoft 지원 웹 사이트](https://support.microsoft.com/)합니다.
 
@@ -179,7 +179,7 @@ ASP.NET MVC 3 ASP.NET MVC 3을 ASP.NET MVC 2 응용 프로그램을 업그레이
 7. System.Web.WebPages.dll 및 System.Web.Helpers.dll에 대 한 참조를 추가 합니다. 이러한 어셈블리는 다음 폴더에 있습니다. 
 
     - %ProgramFiles%\ Microsoft ASP.NET\ASP.NET MVC 3\Assemblies
-    - %ProgramFiles%\ Microsoft ASP.NET\ASP.NET 웹 Pages\v1.0\Assemblies
+    - %ProgramFiles%\ Microsoft ASP.NET\ASP.NET Web Pages\v1.0\Assemblies
 8. 솔루션 탐색기에서 프로젝트 이름을 마우스 오른쪽 단추로 클릭 하 고 프로젝트 언로드를 선택 합니다. 그런 다음 프로젝트 이름을 다시 마우스 오른쪽 단추로 클릭 하 고 편집 선택 *ProjectName*.csproj 합니다.
 9. 찾을 *ProjectTypeGuids* 요소 및 {F85E285D-A4E0-4152-9332-AB1D724D3325} {E53F8FEA-EAE0-44A6-8774-FFD645390401}로 대체 합니다.
 10. 변경 내용을 저장, 프로젝트를 마우스 오른쪽 단추로 클릭 하 고 프로젝트 다시 로드를 선택 합니다.
@@ -251,7 +251,7 @@ ASP.NET MVC 3 ASP.NET MVC 3을 ASP.NET MVC 2 응용 프로그램을 업그레이
 
 프로젝트 템플릿 목록에는 새 인트라넷 응용 프로그램 템플릿이 포함 됩니다. 이 템플릿에 폼 인증 대신 Windows 인증을 사용 하 여 웹 응용 프로그램에 대 한 설정을 포함 합니다. 인트라넷 응용 프로그램 프로젝트 템플릿에서 캡슐화 할 수 없는 일부 IIS 설정이 필요로 하므로 서식 파일에는 추가 정보 파일을 IIS에서 프로젝트 템플릿을 만드는 방법에 대 한 지침이 포함 됩니다. 에 대 한 설명서는 새 인트라넷 응용 프로그램 서식 파일은 다음 URL의 MSDN 웹 사이트에서 사용할 수 있습니다.
 
-[https://msdn.microsoft.com/en-us/library/gg703322 (VS.98).aspx](https://msdn.microsoft.com/en-us/library/gg703322(VS.98).aspx)
+[https://msdn.microsoft.com/library/gg703322(VS.98).aspx](https://msdn.microsoft.com/library/gg703322(VS.98).aspx)
 
 #### <a name="project-templates-are-now-html5-enabled"></a>프로젝트 템플릿에 HTML5 사용 하도록 설정 됩니다.
 
@@ -465,7 +465,7 @@ ASP.NET MVC 3 용 프로젝트 템플릿을 포함 최신 버전의 jQuery, jQue
 - 이전 버전의 ASP.NET MVC에서는 작업 필터 몇 가지 경우에서를 제외 하 고 요청에 따라 만들어졌습니다. 이 동작은 되지 보장 된 동작은 하지만 단순히 구현 정보 이며 필터에 대 한 계약 상태 비저장 고려 합니다. ASP.NET MVC 3에서 필터는 보다 적극적으로 캐시 됩니다. 따라서 잘못 인스턴스 상태를 저장 하는 모든 사용자 지정 작업 필터는 손상 될 수 있습니다.
 - 동일한 예외 필터에 대 한 예외 필터에 대 한 실행 순서가 변경 된 *순서* 값입니다. 예외 필터를 동일한 컨트롤러에서 ASP.NET MVC 2 및 이전 버전에서는 *순서* 는 작업 메서드의 예외 필터 전에 실행의 동작 메서드 같이 합니다. 일반적으로 경우가이 예외가 필터가 적용 된 경우 지정 된 없이 *순서* 값입니다. ASP.NET MVC 3에서이 순서가 반대로 변경 되었습니다 가장 구체적인 예외 처리기는 먼저 실행 되도록 합니다. 이전 버전과 달리 하는 경우는 *순서* 속성을 명시적으로 지정, 필터는 지정 된 순서로 실행 됩니다.
 - 라는 새 속성이 *FileExtensions* 에 추가 된는 *VirtualPathProviderViewEngine* 기본 클래스입니다. ASP.NET에서는 보기를 경로 의해 (이름)가 아니라을 때 뷰만이 새 속성으로 지정 된 목록에 포함 된 파일 확장명으로 간주 됩니다. 웹 폼 보기에 대 한 사용자 지정 파일 확장명을 사용 하도록 설정 하려면 사용자 지정 빌드 공급자가 등록 된와 공급자는 이름이 아니라 전체 경로 사용 하 여 이러한 뷰를 참조 하는 경우 응용 프로그램의 주요 변경 내용입니다. 해결 하는 값을 수정 하는 *FileExtensions* 속성을 사용자 지정 파일 확장명을 포함 합니다.
-- 직접 구현 하는 사용자 지정 컨트롤러 팩터리 구현을 *IControllerFactory* 인터페이스의 새 구현을 제공 해야 *GetControllerSessionBehavior*  *이 릴리스에서 인터페이스에 추가 된 메서드*합니다. 일반적으로 것이 좋습니다 수행 하지이 인터페이스를 직접 구현 하는 대신에서 클래스를 파생 *DefaultControllerFactory*합니다.
+- 직접 구현 하는 사용자 지정 컨트롤러 팩터리 구현을 *IControllerFactory* 인터페이스의 새 구현을 제공 해야 *GetControllerSessionBehavior * *에 추가 된 메서드는 이 릴리스에서 인터페이스*합니다. 일반적으로 것이 좋습니다 수행 하지이 인터페이스를 직접 구현 하는 대신에서 클래스를 파생 *DefaultControllerFactory*합니다.
 
 <a id="_Toc2_KI"></a>
 ## <a name="known-issues"></a>알려진 문제
@@ -519,7 +519,7 @@ NuGet에 대 한 자세한 내용은 참조는 [Nuget 설명서](https://docs.mi
 <a id="_Toc276711788"></a>
 ### <a name="sessionless-controllers"></a>Sessionless 컨트롤러
 
-새 *ControllerSessionStateAttribute* 더 제어할 세션 상태 동작을 통해 컨트롤러에 대 한 지정 하 여 한 [System.Web.SessionState.SessionStateBehavior](https://msdn.microsoft.com/en-us/library/system.web.sessionstate.sessionstatebehavior.aspx) 열거형 값입니다.
+새 *ControllerSessionStateAttribute* 더 제어할 세션 상태 동작을 통해 컨트롤러에 대 한 지정 하 여 한 [System.Web.SessionState.SessionStateBehavior](https://msdn.microsoft.com/library/system.web.sessionstate.sessionstatebehavior.aspx) 열거형 값입니다.
 
 다음 예제에는 컨트롤러에 대 한 모든 요청에 대 한 세션 상태를 해제 하는 방법을 보여 줍니다.
 
@@ -669,7 +669,7 @@ NuGet에 대 한 자세한 내용은 참조는 [NuGet 설명서](https://docs.mi
 
 새 ASP.NET 웹 페이지 기술을 뷰 및 컨트롤러에 일반적으로 사용 되는 기능을 추가 하는 데 도움이 되는 도우미 메서드 집합이 포함 되어 있습니다. ASP.NET MVC 3에서는 이러한 도우미 메서드를 컨트롤러와 뷰 내에서 사용할 수 (필요한 경우). 이러한 메서드는 System.Web.Helpers 어셈블리에 포함 되어 있습니다. 다음 표에서 몇 가지 ASP.NET 웹 페이지 도우미 메서드를 나열합니다.
 
-| **도우미** | **설명** |
+| **Helper** | **설명** |
 | --- | --- |
 | 차트 | 보기 내에서 차트를 렌더링합니다. Chart.ToWebImage, Chart.Save, Chart.Write 등 메서드를 포함합니다. |
 | 암호화 | 해시를 올바르게 만들려면 알고리즘을 사용 하 여 솔트된 및 해시 된 암호입니다. |
@@ -743,7 +743,7 @@ ASP.NET MVC Ajax 도우미 메서드를 다음과 같은 포함 되어 있습니
 
 이러한 메서드는 JavaScript를 사용 하 여 전체 포스트백을 사용 하는 대신 서버에서 작업 메서드를 호출 합니다. 이 기능은 방식으로 비 가시적인 jQuery을 활용 하려면 업데이트 되었습니다. 영향을 주지 않고 내보내기 인라인 클라이언트 스크립트 하는 대신 이러한 도우미 메서드 동작에서에서 분리 태그를 사용 하 여 HTML5 특성을 생성 함으로써는 *데이터 ajax* 접두사입니다. 동작에서는 적절 한 JavaScript 파일을 참조 하 여 태그에 적용 됩니다. 다음 JavaScript 파일이 참조 되 고 있는지 확인 합니다.
 
-- jquery 1.4.1.js
+- jquery-1.4.1.js
 - jquery.unobtrusive.ajax.js
 
 이 기능은 ASP.NET MVC 3 새 프로젝트 템플릿이에서 Web.config 파일에서 기본적으로 설정 되어 있지만 기존 프로젝트에 기본적으로 비활성화 됩니다. 자세한 내용은 참조 [클라이언트 유효성 검사 및 비간섭 JavaScript에 대 한 응용 프로그램 수준 플래그를 추가](#0.1_AddedApplicationWideFlagsForClientValida) 이 문서의 뒷부분에 나오는 합니다.
@@ -760,7 +760,7 @@ ASP.NET MVC Ajax 도우미 메서드를 다음과 같은 포함 되어 있습니
 
 또한 다음 JavaScript 파일이 참조를 확인 합니다.
 
-- jquery 1.4.1.js
+- jquery-1.4.1.js
 - jquery.validate.js
 - jquery.validate.unobtrusive.js
 
@@ -862,8 +862,8 @@ ASP.NET MVC 2 프로젝트를 ASP.NET MVC 3으로 업그레이드 하는 경우�
 
 [!code-xml[Main](mvc3-release-notes/samples/sample43.xml)]
 
-## <a id="0.1__Toc274034231"></a>고 지 사항
+## <a id="0.1__Toc274034231"></a>  Disclaimer
 
-© 2011 Microsoft Corporation입니다. All rights reserved. 이 설명서는 제공 "로-됩니다." URL 및 기타 인터넷 웹 사이트 참조를 포함 한이 문서의 내용과 관점은 예 고 없이 변경 될 수 있습니다. 정보의 사용으로 발생하는 위험은 귀하의 책임입니다.
+© 2011 Microsoft Corporation. All rights reserved. 이 설명서는 제공 "로-됩니다." URL 및 기타 인터넷 웹 사이트 참조를 포함 한이 문서의 내용과 관점은 예 고 없이 변경 될 수 있습니다. 정보의 사용으로 발생하는 위험은 귀하의 책임입니다.
 
 이 문서는 귀하에게 Microsoft 제품의 어떠한 지적 재산에 대한 법적 권리도 부여하지 않습니다. 귀하는 참조를 위해 내부적으로 이 문서를 복사하고 사용할 수 있습니다.

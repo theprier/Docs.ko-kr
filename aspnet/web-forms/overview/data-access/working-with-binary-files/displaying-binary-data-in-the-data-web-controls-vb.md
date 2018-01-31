@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/displaying-binary-data-in-the-data-web-controls-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1b9dadbfb82790a08a25a5c0f759b733cb59eb60
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: df79748bf5734ffcb9eb81ca089aeded0e63bdc5
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="displaying-binary-data-in-the-data-web-controls-vb"></a>웹 컨트롤 (VB) 데이터에서에서 이진 데이터 표시
 ====================
@@ -129,7 +129,7 @@ GridView의 디자이너 도구 상자에서 끌어 시작는 `DisplayOrDownload
 
 [!code-vb[Main](displaying-binary-data-in-the-data-web-controls-vb/samples/sample3.vb)]
 
-이 메서드를 확인 하는 경우 전달에서 `Object` 값은 데이터베이스 `NULL` 및 그렇다면 범주에는 브로슈어 부족을 나타내는 메시지를 반환 합니다. 그렇지 않은 경우는 `BrochurePath` 값을 해당 하이퍼링크에 표시 되 합니다. 되는 경우는 `BrochurePath` 값은 s에 전달 된 표시는 [ `ResolveUrl(url)` 메서드](https://msdn.microsoft.com/en-us/library/system.web.ui.control.resolveurl.aspx)합니다. 이 메서드는 전달 기능을 확인 *url*, 대체는 `~` 문자 적절 한 가상 경로 사용 합니다. 예를 들어, 응용 프로그램에서 시작 하는 경우 `/Tutorial55`, `ResolveUrl("~/Brochures/Meats.pdf")` 돌아갑니다 `/Tutorial55/Brochures/Meat.pdf`합니다.
+이 메서드를 확인 하는 경우 전달에서 `Object` 값은 데이터베이스 `NULL` 및 그렇다면 범주에는 브로슈어 부족을 나타내는 메시지를 반환 합니다. 그렇지 않은 경우는 `BrochurePath` 값을 해당 하이퍼링크에 표시 되 합니다. 되는 경우는 `BrochurePath` 값은 s에 전달 된 표시는 [ `ResolveUrl(url)` 메서드](https://msdn.microsoft.com/library/system.web.ui.control.resolveurl.aspx)합니다. 이 메서드는 전달 기능을 확인 *url*, 대체는 `~` 문자 적절 한 가상 경로 사용 합니다. 예를 들어, 응용 프로그램에서 시작 하는 경우 `/Tutorial55`, `ResolveUrl("~/Brochures/Meats.pdf")` 돌아갑니다 `/Tutorial55/Brochures/Meat.pdf`합니다.
 
 그림 10 이러한 변경 내용을 적용 한 후 페이지를 보여줍니다. Seafood 범주의 `BrochurePath` 필드 이제 아니요 브로슈어 사용할 수 있는 텍스트에 표시 됩니다.
 
@@ -164,7 +164,7 @@ GridView의 디자이너 도구 상자에서 끌어 시작는 `DisplayOrDownload
 
 [!code-vb[Main](displaying-binary-data-in-the-data-web-controls-vb/samples/sample6.vb)]
 
-이 코드에 대 한 읽기에서 시작 하는 `CategoryID` querystring 값을 변수에 라는 `categoryID`합니다. 에 대 한 호출을 통해 그림 데이터를 검색 하는 다음으로 `CategoriesBLL` s 클래스 `GetCategoryWithBinaryDataByCategoryID(categoryID)` 메서드. 이 데이터를 사용 하 여 클라이언트에 반환 되는 `Response.BinaryWrite(data)` 메서드 전에이 메서드가 호출 되는 `Picture` 열 값의 OLE 머리글을 제거 해야 합니다. 만들어 이렇게는 `Byte` 라는 배열을 `strippedImageData` 정확 하 게 78 보유 하는 기능을 보다 작은 문자는 `Picture` 열. [ `Array.Copy` 메서드](https://msdn.microsoft.com/en-us/library/z50k9bft.aspx) 에서 데이터를 복사 하는 데 사용 `category.Picture` 를 통해 78 위치에서 시작 `strippedImageData`합니다.
+이 코드에 대 한 읽기에서 시작 하는 `CategoryID` querystring 값을 변수에 라는 `categoryID`합니다. 에 대 한 호출을 통해 그림 데이터를 검색 하는 다음으로 `CategoriesBLL` s 클래스 `GetCategoryWithBinaryDataByCategoryID(categoryID)` 메서드. 이 데이터를 사용 하 여 클라이언트에 반환 되는 `Response.BinaryWrite(data)` 메서드 전에이 메서드가 호출 되는 `Picture` 열 값의 OLE 머리글을 제거 해야 합니다. 만들어 이렇게는 `Byte` 라는 배열을 `strippedImageData` 정확 하 게 78 보유 하는 기능을 보다 작은 문자는 `Picture` 열. [ `Array.Copy` 메서드](https://msdn.microsoft.com/library/z50k9bft.aspx) 에서 데이터를 복사 하는 데 사용 `category.Picture` 를 통해 78 위치에서 시작 `strippedImageData`합니다.
 
 `Response.ContentType` 속성 지정는 [MIME 형식을](http://en.wikipedia.org/wiki/MIME) 브라우저에 렌더링 하는 방법을 알 수 있도록 반환 되는 콘텐츠의 합니다. 이후는 `Categories` 테이블의 `Picture` 열이 비트맵 이미지, 비트맵 MIME 형식 사용은 여기 (이미지/bmp). MIME 형식을 생략 하면 대부분의 브라우저는 여전히 이미지 올바르게 표시할 이미지 파일 s 이진 데이터의 내용에 따라 형식을 유추할 수 있습니다. 그러나 해당 MIME을 포함 하는 것이 좋습니다 s 가능한 경우 입력 합니다. 참조는 [Internet Assigned Numbers Authority 웹 사이트](http://www.iana.org/) 의 전체 목록을 보려면 [MIME 미디어 형식](http://www.iana.org/assignments/media-types/)합니다.
 

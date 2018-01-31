@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/testing-and-debugging/enabling-signalr-tracing
 msc.type: authoredcontent
-ms.openlocfilehash: 2f01ab5d66e44cd82634f1b3df1ca6c78b7fd9d5
-ms.sourcegitcommit: c07fb5cb5df0a12f9fe6735fcbc90964608fa687
+ms.openlocfilehash: ac979acf162084a195bb769f842e77ad2498c7f3
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/14/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="enabling-signalr-tracing"></a>SignalR 추적 사용
 ====================
@@ -61,7 +61,7 @@ ms.lasthandoff: 11/14/2017
 <a id="server"></a>
 ## <a name="enabling-tracing-on-the-server"></a>서버에서 추적을 사용 하도록 설정
 
-응용 프로그램의 구성 파일 (App.config 또는 Web.config 프로젝트의 유형에 따라.) 서버에서 추적을 사용 하도록 설정 기록 하려는 이벤트의 범주를 지정 합니다. 구성 파일도 지정 텍스트 파일, Windows 이벤트 로그 또는의 구현을 사용 하 여 사용자 지정 로그에 이벤트를 기록할 것인지 [TraceListener](https://msdn.microsoft.com/en-us/library/system.diagnostics.tracelistener(v=vs.110).aspx)합니다.
+응용 프로그램의 구성 파일 (App.config 또는 Web.config 프로젝트의 유형에 따라.) 서버에서 추적을 사용 하도록 설정 기록 하려는 이벤트의 범주를 지정 합니다. 구성 파일도 지정 텍스트 파일, Windows 이벤트 로그 또는의 구현을 사용 하 여 사용자 지정 로그에 이벤트를 기록할 것인지 [TraceListener](https://msdn.microsoft.com/library/system.diagnostics.tracelistener(v=vs.110).aspx)합니다.
 
 서버 이벤트 범주에는 다음과 같은 메시지
 
@@ -87,7 +87,7 @@ ms.lasthandoff: 11/14/2017
 
 [!code-html[Main](enabling-signalr-tracing/samples/sample1.html)]
 
-위의 코드에서는 `SignalRSwitch` 항목 지정는 [TraceLevel](https://msdn.microsoft.com/en-us/library/system.diagnostics.tracelevel(v=vs.110).aspx) 지정 된 로그로 전송 하는 이벤트에 사용 합니다. 이 경우 설정 되어 `Verbose` 즉, 모든 디버깅 및 추적 메시지가 기록 됩니다.
+위의 코드에서는 `SignalRSwitch` 항목 지정는 [TraceLevel](https://msdn.microsoft.com/library/system.diagnostics.tracelevel(v=vs.110).aspx) 지정 된 로그로 전송 하는 이벤트에 사용 합니다. 이 경우 설정 되어 `Verbose` 즉, 모든 디버깅 및 추적 메시지가 기록 됩니다.
 
 다음과 같은 출력 항목을 보여 줍니다.는 `transports.log.txt` 위의 구성 파일을 사용 하 여 응용 프로그램에 대 한 파일입니다. 새 표시 연결, 제거 된 연결 및 전송 하트 비트 이벤트입니다.
 
@@ -112,9 +112,9 @@ ms.lasthandoff: 11/14/2017
 <a id="net_client"></a>
 ## <a name="enabling-tracing-in-the-net-client-windows-desktop-apps"></a>.NET 클라이언트 (Windows 바탕 화면 앱)에서 추적 설정
 
-.NET 클라이언트는 콘솔에 텍스트 파일 또는의 구현을 사용 하 여 사용자 지정 로그에 이벤트를 기록할 수 있습니다 [TextWriter](https://msdn.microsoft.com/en-us/library/system.io.textwriter.aspx)합니다.
+.NET 클라이언트는 콘솔에 텍스트 파일 또는의 구현을 사용 하 여 사용자 지정 로그에 이벤트를 기록할 수 있습니다 [TextWriter](https://msdn.microsoft.com/library/system.io.textwriter.aspx)합니다.
 
-.NET 클라이언트 로그인을 사용 하려면 연결의 설정 `TraceLevel` 속성을 한 [TraceLevels](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.client.tracelevels(v=vs.118).aspx) 값 및 `TraceWriter` 속성을 유효한 [TextWriter](https://msdn.microsoft.com/en-us/library/system.io.textwriter.aspx) 인스턴스.
+.NET 클라이언트 로그인을 사용 하려면 연결의 설정 `TraceLevel` 속성을 한 [TraceLevels](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.tracelevels(v=vs.118).aspx) 값 및 `TraceWriter` 속성을 유효한 [TextWriter](https://msdn.microsoft.com/library/system.io.textwriter.aspx) 인스턴스.
 
 <a id="desktop_console"></a>
 ### <a name="logging-desktop-client-events-to-the-console"></a>콘솔에 데스크톱 클라이언트 이벤트 로깅
@@ -137,23 +137,23 @@ ms.lasthandoff: 11/14/2017
 <a id="phone"></a>
 ## <a name="enabling-tracing-in-windows-phone-8-clients"></a>Windows Phone 8 클라이언트에서 추적 설정
 
-Windows Phone 앱 용 SignalR 응용 프로그램 같은.NET 클라이언트를 사용 하 여 데스크톱 응용 프로그램으로 하지만 [Console.Out](https://msdn.microsoft.com/en-us/library/system.console.out(v=vs.110).aspx) 및 사용 하 여 파일 쓰기 [StreamWriter](https://msdn.microsoft.com/en-us/library/system.io.streamwriter(v=vs.110).aspx) 는 사용할 수 없습니다. 대신, 사용자 지정 구현을 만들 해야 [TextWriter](https://msdn.microsoft.com/en-us/library/system.io.textwriter(v=vs.110).aspx) 추적에 대 한 합니다. 
+Windows Phone 앱 용 SignalR 응용 프로그램 같은.NET 클라이언트를 사용 하 여 데스크톱 응용 프로그램으로 하지만 [Console.Out](https://msdn.microsoft.com/library/system.console.out(v=vs.110).aspx) 및 사용 하 여 파일 쓰기 [StreamWriter](https://msdn.microsoft.com/library/system.io.streamwriter(v=vs.110).aspx) 는 사용할 수 없습니다. 대신, 사용자 지정 구현을 만들 해야 [TextWriter](https://msdn.microsoft.com/library/system.io.textwriter(v=vs.110).aspx) 추적에 대 한 합니다. 
 
 <a id="phone_ui"></a>
 ### <a name="logging-windows-phone-client-events-to-the-ui"></a>UI에 Windows Phone 클라이언트 이벤트 로깅
 
-[SignalR 코드 베이스](https://github.com/SignalR/SignalR/archive/master.zip) 추적 출력을 작성 하는 Windows Phone 샘플이 포함 되어는 [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) 사용자 지정을 사용 하 여 [TextWriter](https://msdn.microsoft.com/en-us/library/system.io.textwriter(v=vs.110).aspx) 호출 구현 `TextBlockWriter`합니다. 이 클래스에서 확인할 수 있습니다는 **samples/Microsoft.AspNet.SignalR.Client.WP8.Samples** 프로젝트. 인스턴스를 만들 때 `TextBlockWriter`, 현재에서 전달 [SynchronizationContext](https://msdn.microsoft.com/en-us/library/system.threading.synchronizationcontext(v=vs.110).aspx), 및 [StackPanel](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.stackpanel.aspx) 생성 됩니다는 [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) 추적에 사용할 출력:
+[SignalR 코드 베이스](https://github.com/SignalR/SignalR/archive/master.zip) 추적 출력을 작성 하는 Windows Phone 샘플이 포함 되어는 [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) 사용자 지정을 사용 하 여 [TextWriter](https://msdn.microsoft.com/library/system.io.textwriter(v=vs.110).aspx) 호출 구현 `TextBlockWriter`합니다. 이 클래스에서 확인할 수 있습니다는 **samples/Microsoft.AspNet.SignalR.Client.WP8.Samples** 프로젝트. 인스턴스를 만들 때 `TextBlockWriter`, 현재에서 전달 [SynchronizationContext](https://msdn.microsoft.com/library/system.threading.synchronizationcontext(v=vs.110).aspx), 및 [StackPanel](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.aspx) 생성 됩니다는 [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) 추적에 사용할 출력:
 
 [!code-csharp[Main](enabling-signalr-tracing/samples/sample7.cs)]
 
-그런 다음 새에 추적 출력을 기록 됩니다 [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) 에서 만든는 [StackPanel](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.stackpanel.aspx) 에 전달 합니다.
+그런 다음 새에 추적 출력을 기록 됩니다 [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) 에서 만든는 [StackPanel](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.aspx) 에 전달 합니다.
 
 ![](enabling-signalr-tracing/_static/image2.png)
 
 <a id="phone_debug"></a>
 ### <a name="logging-windows-phone-client-events-to-the-debug-console"></a>디버그 콘솔에 Windows Phone 클라이언트 이벤트 로깅
 
-UI가 아닌 디버그 콘솔에 출력을 보내려면의 구현을 만드는 [TextWriter](https://msdn.microsoft.com/en-us/library/system.io.textwriter(v=vs.110).aspx) 디버그 창에 기록 하 고이 연결의 할당 [TraceWriter](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.client.connection.tracewriter(v=vs.118).aspx) 속성:
+UI가 아닌 디버그 콘솔에 출력을 보내려면의 구현을 만드는 [TextWriter](https://msdn.microsoft.com/library/system.io.textwriter(v=vs.110).aspx) 디버그 창에 기록 하 고이 연결의 할당 [TraceWriter](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.connection.tracewriter(v=vs.118).aspx) 속성:
 
 [!code-csharp[Main](enabling-signalr-tracing/samples/sample8.cs)]
 

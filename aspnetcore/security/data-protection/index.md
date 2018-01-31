@@ -2,20 +2,18 @@
 title: "ASP.NET Core에서 데이터 보호"
 author: rick-anderson
 description: "이 문서는 다양한 ASP.NET Core 데이터 보호 항목에 대한 목차로 사용됩니다."
-keywords: "ASP.NET Core,데이터 보호"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.assetid: 1f402da8-1052-4970-9835-9f9f16a02dbc
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/data-protection/index
-ms.openlocfilehash: 8b42e65bb6121355120a6f4fbe8cd4d1fea153de
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b846fb7cb28eeceb8c0bdb47135e1cf014ae08a7
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="data-protection-in-aspnet-core-consumer-apis-configuration-extensibility-apis-and-implementation"></a>ASP.NET Core에서 데이터 보호: 소비자 API, 구성, 확장성 API 및 구현
 
@@ -43,7 +41,7 @@ ms.lasthandoff: 11/10/2017
 
   * [기본 설정](configuration/default-settings.md)
 
-  * [컴퓨터 수준 정책](configuration/machine-wide-policy.md)
+  * [컴퓨터 수준의 정책](configuration/machine-wide-policy.md)
 
   * [비 DI 인식 시나리오](configuration/non-di-scenarios.md)
 
@@ -77,6 +75,6 @@ ms.lasthandoff: 11/10/2017
 
 * [호환성](compatibility/index.md)
 
-  * [응용프로그램 쿠키 공유](compatibility/cookie-sharing.md)
+  * [앱 간 쿠키 공유](xref:security/data-protection/compatibility/cookie-sharing)
 
-  * [ASP.NET에서 <machineKey> 바꾸기](compatibility/replacing-machinekey.md)
+  * [ASP.NET에서 <machineKey> 바꾸기](xref:security/data-protection/compatibility/replacing-machinekey)

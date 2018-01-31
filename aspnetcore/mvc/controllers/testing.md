@@ -2,20 +2,18 @@
 title: "ASP.NET Core에서 컨트롤러 논리를 테스트합니다."
 author: ardalis
 description: "ASP.NET Core Moq, xUnit와에서 컨트롤러 논리를 테스트 하는 방법에 알아봅니다."
-keywords: "ASP.NET Core, 컨트롤러, 테스트, 테스트, 단위 테스트, 단위 테스트, 통합 테스트, 통합 테스트, xUnit"
 ms.author: riande
 manager: wpickett
 ms.date: 10/14/2016
 ms.topic: article
-ms.assetid: dd4135ec-2b15-410c-b3fb-3d12eed4a1ac
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/testing
-ms.openlocfilehash: aa60912e06946bd0df4936d33c88d3bf7b69984c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f27e7ec43cd17e249dd646a7dfbce5df69d59664
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="testing-controller-logic-in-aspnet-core"></a>ASP.NET Core에서 컨트롤러 논리를 테스트합니다.
 
@@ -42,7 +40,7 @@ ASP.NET MVC 응용 프로그램의 컨트롤러는 작고 사용자 인터페이
 
 ## <a name="unit-testing"></a>유닛 테스트
 
-[단위 테스트](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test) 는 인프라와 종속성에서 격리 된 상태에서 응용 프로그램의 일부를 테스트 해야 합니다. 단위 테스트 컨트롤러 논리를 단일 작업의 내용만 검사 될 때, 프레임 워크 자체 또는 해당 종속 항목의 동작 하지 않습니다. 테스트 컨트롤러 작업 하면 단위로 동작에만 집중 있는지 확인 합니다. 등을 방지 하는 컨트롤러 단위 테스트 [필터](filters.md), [라우팅](../../fundamentals/routing.md), 또는 [모델 바인딩](../models/model-binding.md)합니다. 테스트 한 것에 초점을 맞추면, 단위 테스트는 일반적으로 쓰려고 쉽고 빠르게 실행 하는. 많은 오버 헤드 없이 자주 잘 작성 된 일련의 단위 테스트를 실행할 수 있습니다. 그러나 단위 테스트 문제 검색 하지 않는 구성 요소 간의 상호 작용의 용도 [통합 테스트](xref:mvc/controllers/testing#integration-testing)합니다.
+[단위 테스트](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test) 는 인프라와 종속성에서 격리 된 상태에서 응용 프로그램의 일부를 테스트 해야 합니다. 단위 테스트 컨트롤러 논리를 단일 작업의 내용만 검사 될 때, 프레임 워크 자체 또는 해당 종속 항목의 동작 하지 않습니다. 테스트 컨트롤러 작업 하면 단위로 동작에만 집중 있는지 확인 합니다. 등을 방지 하는 컨트롤러 단위 테스트 [필터](filters.md), [라우팅](../../fundamentals/routing.md), 또는 [모델 바인딩](../models/model-binding.md)합니다. 테스트 한 것에 초점을 맞추면, 단위 테스트는 일반적으로 쓰려고 쉽고 빠르게 실행 하는. 많은 오버 헤드 없이 자주 잘 작성 된 일련의 단위 테스트를 실행할 수 있습니다. 그러나 단위 테스트 문제를 검색 하지 않고 구성 요소 간의 상호 작용의 용도 [통합 테스트](xref:mvc/controllers/testing#integration-testing)합니다.
 
 단위 테스트를 사용자 지정 필터, 경로 등을 작성 하는 경우, 되지만 특정 컨트롤러 작업에서 테스트의 일부로 되지는 않습니다. 격리 된 상태에서 테스트 해야 합니다.
 
@@ -67,9 +65,9 @@ ASP.NET MVC 응용 프로그램의 컨트롤러는 작고 사용자 인터페이
 
 [!code-csharp[Main](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/HomeControllerTests.cs?highlight=8,15-16,37-39&range=35-75)]
 
-첫 번째 테스트를 확인 하는 경우 `ModelState` 유효 하지 않을 경우 동일한 `ViewResult` 에 대 한 반환 되는 `GET` 요청 합니다. 테스트 하지 않는 잘못 된 모델에 전달 하려고 하는 참고 합니다. 작동 하지 않습니다 모델 바인딩 실행 되 고 있지 않습니다 (경우에 [통합 테스트](xref:mvc/controllers/testing#integration-testing) 연습 모델 바인딩을 사용). 이 경우 모델 바인딩을 테스트 중입니다. 이러한 단위 테스트 작업 메서드의 코드에서에서 수행 하는 작업 테스트만 합니다.
+첫 번째 테스트를 확인 하는 경우 `ModelState` 유효 하지 동일한 `ViewResult` 에 대 한 반환 되는 `GET` 요청 합니다. 테스트 하지 않는 잘못 된 모델에 전달 하려고 하는 참고 합니다. 작동 하지 않습니다 모델 바인딩 실행 되 고 있지 않습니다 (경우에 [통합 테스트](xref:mvc/controllers/testing#integration-testing) 연습 모델 바인딩을 사용). 이 경우 모델 바인딩 테스트 중인 되지 않습니다. 이러한 단위 테스트 작업 메서드의 코드에서에서 수행 하는 작업 테스트만 합니다.
 
-두 번째 테스트 확인 때 `ModelState` 올바른지, 새 `BrainstormSession` (리포지토리)를 통해 추가 메서드에서 반환는 `RedirectToActionResult` 예상된 속성을 사용 합니다. 모의 호출 되지 호출은 일반적으로 무시 되었지만 호출 `Verifiable` 설치 프로그램의 끝에 호출 수 있도록 테스트에서 확인할 수 있습니다. 호출 하 여 그렇게 `mockRepo.Verify`, 예상 되는 메서드를 호출 하지 않았습니다 테스트가 실패 합니다.
+두 번째 테스트 확인 때 `ModelState` 올바른지, 새 `BrainstormSession` (리포지토리)를 통해 추가 메서드에서 반환는 `RedirectToActionResult` 예상된 속성을 사용 합니다. 모의 호출 되지 호출은 일반적으로 무시 되었지만 호출 `Verifiable` 설치 프로그램의 끝에 호출 수 있도록 테스트에서 확인할 수 있습니다. 호출 하 여 그렇게 `mockRepo.Verify`, 예상 되는 메서드 호출 되지 않은 경우 테스트가 실패 합니다.
 
 > [!NOTE]
 > 이 샘플에 사용 된 Moq 라이브러리를 사용 비안정형 모의 개체 ("느슨한" mocks 또는 스텁 라고도 함)를 사용한 확인할 또는 "strict" mocks 혼합할 수 있습니다. 에 대 한 자세한 내용은 [Moq 모의 동작을 사용자 지정](https://github.com/Moq/moq4/wiki/Quickstart#customizing-mock-behavior)합니다.
@@ -123,7 +121,7 @@ ASP.NET MVC 응용 프로그램의 컨트롤러는 작고 사용자 인터페이
 각 통합 테스트 클래스에 구성 된 `TestServer` ASP.NET Core 응용 프로그램 실행 합니다. 기본적으로 `TestServer` 실행 중인 위치-이 경우 테스트 프로젝트 폴더는 폴더에 웹 응용 프로그램 호스트 합니다. 따라서 하려고 하면 테스트 컨트롤러 작업을 반환 하는 `ViewResult`,이 오류가 표시 될 수 있습니다.
 
 ```
-The view 'Index' was not found. The following locations were searched:
+The view 'Index' wasn't found. The following locations were searched:
 (list of locations)
 ```
 

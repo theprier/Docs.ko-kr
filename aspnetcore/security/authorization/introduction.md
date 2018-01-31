@@ -2,20 +2,18 @@
 title: "권한 부여 소개"
 author: rick-anderson
 description: "이 문서 권한 부여의 기본적인 설명 하 고 권한 부여 ASP.NET Core에 연결 되는 방법을 설명 합니다."
-keywords: "ASP.NET Core, 권한 부여"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.assetid: a6a556ed-ba59-4107-9358-44cf20e5931b
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/authorization/introduction
-ms.openlocfilehash: 192cc494c2378f77207a4b1c17b0b0a73ca642ed
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a6bd81a4e5796c1d0a0033c2b8d5a6ba9282564c
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="introduction"></a>소개
 

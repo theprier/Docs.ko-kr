@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/running-windows-powershell-scripts-from-msbuild-project-files
 msc.type: authoredcontent
-ms.openlocfilehash: 5f6ba0655f5dc1d043b905428a3797ed141b0fed
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: afee7b0621df42a8bc70fc6f7c4a8fd0383fa83a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="running-windows-powershell-scripts-from-msbuild-project-files"></a>MSBuild 프로젝트 파일에서 Windows PowerShell 스크립트를 실행합니다.
 ====================
@@ -137,10 +137,10 @@ MSBuild에서이 명령을 호출할 때 몇 가지 추가 고려 사항이 있�
 
 ## <a name="executing-a-windows-powershell-script-on-a-remote-computer"></a>원격 컴퓨터에서 Windows PowerShell 스크립트를 실행합니다.
 
-Windows PowerShell은 스크립트를 통해 원격 컴퓨터에서 실행할 수 있는 [Windows 원격 관리](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426.aspx) (WinRM). 이 작업을 수행 하려면 사용 하는 [Invoke-command](https://technet.microsoft.com/en-us/library/dd347578.aspx) cmdlet. 이렇게 하면 원격 컴퓨터에 스크립트를 복사 하지 않고 하나 이상의 원격 컴퓨터에 대 한 스크립트를 실행할 수 있습니다. 스크립트를 실행 하 여 로컬 컴퓨터에 모든 결과가 반환 됩니다.
+Windows PowerShell은 스크립트를 통해 원격 컴퓨터에서 실행할 수 있는 [Windows 원격 관리](https://msdn.microsoft.com/library/windows/desktop/aa384426.aspx) (WinRM). 이 작업을 수행 하려면 사용 하는 [Invoke-command](https://technet.microsoft.com/library/dd347578.aspx) cmdlet. 이렇게 하면 원격 컴퓨터에 스크립트를 복사 하지 않고 하나 이상의 원격 컴퓨터에 대 한 스크립트를 실행할 수 있습니다. 스크립트를 실행 하 여 로컬 컴퓨터에 모든 결과가 반환 됩니다.
 
 > [!NOTE]
-> 사용 하기 전에 **Invoke-command** 원격 컴퓨터에서 스크립트를 실행할 Windows PowerShell cmdlet, 원격 메시지를 수신 하도록 WinRM 수신기를 구성 해야 합니다. 명령을 실행 하 여 이렇게 하려면 **winrm quickconfig** 원격 컴퓨터에 있습니다. 자세한 내용은 참조 [설치 및 구성에 대 한 Windows 원격 관리](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384372(v=vs.85).aspx)합니다.
+> 사용 하기 전에 **Invoke-command** 원격 컴퓨터에서 스크립트를 실행할 Windows PowerShell cmdlet, 원격 메시지를 수신 하도록 WinRM 수신기를 구성 해야 합니다. 명령을 실행 하 여 이렇게 하려면 **winrm quickconfig** 원격 컴퓨터에 있습니다. 자세한 내용은 참조 [설치 및 구성에 대 한 Windows 원격 관리](https://msdn.microsoft.com/library/windows/desktop/aa384372(v=vs.85).aspx)합니다.
 
 
 Windows PowerShell 창에서이 구문을 사용 실행 하는 **LogDeploy.ps1** 원격 컴퓨터에서 스크립트:
@@ -179,7 +179,7 @@ Windows PowerShell 스크립트에 지정 된 컴퓨터에서 실행 됩니다�
 
 ## <a name="further-reading"></a>추가 정보
 
-Windows PowerShell 스크립트에 서명을 하 고 실행 정책을 관리에 대 한 지침을 참조 하십시오. [Windows PowerShell 스크립트 실행](https://technet.microsoft.com/en-us/library/ee176949.aspx)합니다. 원격 컴퓨터에서 Windows PowerShell 명령 실행에 대 한 지침을 참조 하십시오. [원격 명령 실행](https://technet.microsoft.com/en-us/library/dd819505.aspx)합니다.
+Windows PowerShell 스크립트에 서명을 하 고 실행 정책을 관리에 대 한 지침을 참조 하십시오. [Windows PowerShell 스크립트 실행](https://technet.microsoft.com/library/ee176949.aspx)합니다. 원격 컴퓨터에서 Windows PowerShell 명령 실행에 대 한 지침을 참조 하십시오. [원격 명령 실행](https://technet.microsoft.com/library/dd819505.aspx)합니다.
 
 배포 프로세스 제어 기능을 사용자 지정 MSBuild 프로젝트 파일 사용에 대 한 자세한 내용은 참조 하십시오. [프로젝트 파일 이해](../web-deployment-in-the-enterprise/understanding-the-project-file.md) 및 [빌드 프로세스를 이해](../web-deployment-in-the-enterprise/understanding-the-build-process.md)합니다.
 

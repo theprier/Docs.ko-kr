@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/debugging-stored-procedures-cs
 msc.type: authoredcontent
-ms.openlocfilehash: eda544d72fe3449c8d701fc579f2f26d37090f24
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3c5f797691a6920c65db7e3906aa5fd3b348b54b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="debugging-stored-procedures-c"></a>저장된 프로시저 디버깅 (C#)
 ====================
@@ -39,7 +39,7 @@ Visual Studio는 풍부한 디버깅 환경을 제공 합니다. 몇 가지 키 
 
 ## <a name="sql-server-debugging-concepts"></a>SQL Server 디버깅 개념
 
-Microsoft SQL Server 2005와의 통합을 제공 하도록 디자인 된는 [공용 언어 런타임 (CLR)](https://msdn.microsoft.com/en-us/netframework/aa497266.aspx), 하는 모든.NET 어셈블리에서 사용 하는 런타임입니다. 따라서 SQL Server 2005 관리 되는 데이터베이스 개체를 지원합니다. 즉, C# 클래스의 메서드로 저장된 프로시저 및 사용자 정의 함수 (Udf)와 같은 데이터베이스 개체를 만들 수 있습니다. 이렇게 하면 이러한 저장된 프로시저 및 사용자 지정 클래스와.NET Framework의 기능을 활용 하는 Udf 수 있습니다. 물론, SQL Server 2005는 또한 T-SQL 데이터베이스 개체에 대 한 지원을 제공합니다.
+Microsoft SQL Server 2005와의 통합을 제공 하도록 디자인 된는 [공용 언어 런타임 (CLR)](https://msdn.microsoft.com/netframework/aa497266.aspx), 하는 모든.NET 어셈블리에서 사용 하는 런타임입니다. 따라서 SQL Server 2005 관리 되는 데이터베이스 개체를 지원합니다. 즉, C# 클래스의 메서드로 저장된 프로시저 및 사용자 정의 함수 (Udf)와 같은 데이터베이스 개체를 만들 수 있습니다. 이렇게 하면 이러한 저장된 프로시저 및 사용자 지정 클래스와.NET Framework의 기능을 활용 하는 Udf 수 있습니다. 물론, SQL Server 2005는 또한 T-SQL 데이터베이스 개체에 대 한 지원을 제공합니다.
 
 SQL Server 2005는 T-SQL와 관리 되는 데이터베이스 개체를 모두 디버깅 지원 합니다. 그러나 이러한 개체는 팀 시스템 및 Visual Studio 2005 Professional edition을 통해만 디버그할 수 있습니다. 이 자습서에서는 디버깅 T-SQL 데이터베이스 개체를 살펴보겠습니다. 이후의 자습서는 관리 되는 데이터베이스 개체 디버깅 살펴봅니다.
 
@@ -53,7 +53,7 @@ Visual Studio는 로컬 및 원격 SQL Server 인스턴스에서 저장된 프�
 
 로컬 SQL Server 인스턴스를 사용 하는 경우 단계 1부터 시작 하 고 끝에이 자습서를 통해 작업 수 있습니다. 그러나 원격 SQL Server 인스턴스를 사용 하는 경우 할 수 있습니다를 디버깅할 때 되어 있는지 확인 하는 첫 번째 필요가 원격 인스턴스에서 SQL Server 로그인을 갖고 있는 Windows 사용자 계정으로 개발 컴퓨터에 기록 됩니다. Moveover,이 데이터베이스 로그인 및 실행 중인 ASP.NET 응용 프로그램에서 데이터베이스에 연결 하는 데 사용 되는 데이터베이스 로그인을 모두의 구성원 이어야 합니다.는 `sysadmin` 역할입니다. 원격 인스턴스에 섹션에 맞춰져 있으며 원격 인스턴스를 디버깅 하려면 Visual Studio 및 SQL Server 구성에 대 한 자세한 내용은이 자습서의 끝에서 T-SQL 디버깅 데이터베이스 개체를 참조 하십시오.
 
-마지막으로, T-SQL 데이터베이스 개체에 대 한 지원을 디버깅 아닌지 디버깅.NET 응용 프로그램에 대 한 지원으로 다양 한 기능을 이해 합니다. 예를 들어, 중단점 조건 및 필터 지원 되지 않으며, 디버깅 창의 하위 집합을 사용할 수 있는 편집 하며 계속 하기를 사용할 수 없습니다, 쓸모와 같은 직접 실행 창 렌더링 됩니다. 참조 [디버거 명령 및 기능에 대 한 제한](https://msdn.microsoft.com/en-us/library/ms165035(VS.80).aspx) 자세한 정보에 대 한 합니다.
+마지막으로, T-SQL 데이터베이스 개체에 대 한 지원을 디버깅 아닌지 디버깅.NET 응용 프로그램에 대 한 지원으로 다양 한 기능을 이해 합니다. 예를 들어, 중단점 조건 및 필터 지원 되지 않으며, 디버깅 창의 하위 집합을 사용할 수 있는 편집 하며 계속 하기를 사용할 수 없습니다, 쓸모와 같은 직접 실행 창 렌더링 됩니다. 참조 [디버거 명령 및 기능에 대 한 제한](https://msdn.microsoft.com/library/ms165035(VS.80).aspx) 자세한 정보에 대 한 합니다.
 
 ## <a name="step-1-directly-stepping-into-a-stored-procedure"></a>저장된 프로시저를 직접 한 단계씩 실행 1 단계:
 
@@ -172,10 +172,10 @@ Visual Studio와 동일한 컴퓨터에 SQL Server 데이터베이스 인스턴�
 
 [!code-console[Main](debugging-stored-procedures-cs/samples/sample2.cmd)]
 
-이 프로세스에 대 한 자세한 내용은 참조 하십시오. [William 오른쪽 Vaughn](http://betav.com/BLOG/billva/) s *Hitchhiker s Visual Studio 및 SQL Server, 일곱 번째 버전 가이드* 으로 [방법: SQL Server 사용 권한 설정 디버깅을 위해](https://msdn.microsoft.com/en-us/library/w1bhybwz(VS.80).aspx)합니다.
+이 프로세스에 대 한 자세한 내용은 참조 하십시오. [William 오른쪽 Vaughn](http://betav.com/BLOG/billva/) s *Hitchhiker s Visual Studio 및 SQL Server, 일곱 번째 버전 가이드* 으로 [방법: SQL Server 사용 권한 설정 디버깅을 위해](https://msdn.microsoft.com/library/w1bhybwz(VS.80).aspx)합니다.
 
 > [!NOTE]
-> 개발 컴퓨터에서 Windows XP 서비스 팩 2를 실행 중인 경우 인터넷 연결 방화벽 원격 디버깅을 허용 하도록 구성 해야 합니다. [방법에: SQL Server 2005 디버깅 사용](https://msdn.microsoft.com/en-us/library/s0fk6z6e(VS.80).aspx) 문서 정보는이 두 단계: (a)에서 Visual Studio 호스트 컴퓨터를 추가 해야 `Devenv.exe` 열어야 예외 목록 및 TCP 135 포트를 열기 및 (b)에서 원격 컴퓨터 (SQL) TCP 135 포트 사용 되 고 추가 `sqlservr.exe` 예외 목록에 있습니다. 도메인 정책에 따라 IPSec을 통해 수행 해야 하는 네트워크 통신을 필요한 경우 UDP 4500 및 UDP 500 포트를 열어야 합니다.
+> 개발 컴퓨터에서 Windows XP 서비스 팩 2를 실행 중인 경우 인터넷 연결 방화벽 원격 디버깅을 허용 하도록 구성 해야 합니다. [방법에: SQL Server 2005 디버깅 사용](https://msdn.microsoft.com/library/s0fk6z6e(VS.80).aspx) 문서 정보는이 두 단계: (a)에서 Visual Studio 호스트 컴퓨터를 추가 해야 `Devenv.exe` 열어야 예외 목록 및 TCP 135 포트를 열기 및 (b)에서 원격 컴퓨터 (SQL) TCP 135 포트 사용 되 고 추가 `sqlservr.exe` 예외 목록에 있습니다. 도메인 정책에 따라 IPSec을 통해 수행 해야 하는 네트워크 통신을 필요한 경우 UDP 4500 및 UDP 500 포트를 열어야 합니다.
 
 
 ## <a name="summary"></a>요약

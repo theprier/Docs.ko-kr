@@ -2,20 +2,18 @@
 title: "ASP.NET Core Identity 없이 쿠키 인증을 사용 하 여"
 author: rick-anderson
 description: "ASP.NET Core Id 없이 쿠키 인증을 사용 하 여 설명"
-keywords: "ASP.NET Core, 쿠키"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/11/2017
-ms.topic: article
-ms.assetid: 2bdcbf95-8d9d-4537-a4a0-a5ee439dcb62
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/authentication/cookie
-ms.openlocfilehash: 6279d3b4ac3be102449089dc66eeeb0495cfc4c0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5b2f70b1f1fc9805025d6fa2256fcfcecf808b9a
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="using-cookie-authentication-without-aspnet-core-identity"></a>ASP.NET Core Identity 없이 쿠키 인증을 사용 하 여
 
@@ -39,11 +37,11 @@ ASP.NET Core에서 마이그레이션 쿠키 기반 인증에 대 한 내용은 
 
 `AuthenticationScheme`에 전달 된 `AddAuthentication` 응용 프로그램에 대 한 기본 인증 체계를 설정 합니다. `AuthenticationScheme`쿠키 인증의 여러 인스턴스가 있고 하려는 경우 유용 [특정 스키마를 가진 권한 부여](xref:security/authorization/limitingidentitybyscheme)합니다. 설정의 `AuthenticationScheme` 를 `CookieAuthenticationDefaults.AuthenticationScheme` 체계 "쿠키"의 값을 제공 합니다. 체계를 구별 하는 임의의 문자열 값을 제공할 수 있습니다.
 
-에 `Configure` 메서드를 사용 하 여는 `UseAuthentication` 설정 하는 인증 미들웨어를 호출 하는 메서드는 `HttpContext.User` 속성입니다. 호출 된 `UseAuthentication` 메서드 호출 하기 전에 `AddMvcWithDefaultRoute` MVC 응용 프로그램 또는 `AddMvc` Razor 페이지 응용 프로그램에서:
+에 `Configure` 메서드를 사용 하 여는 `UseAuthentication` 설정 하는 인증 미들웨어를 호출 하는 메서드는 `HttpContext.User` 속성입니다. 호출 된 `UseAuthentication` 메서드 호출 하기 전에 `UseMvcWithDefaultRoute` 또는 `UseMvc`:
 
 [!code-csharp[Main](cookie/sample/Startup.cs?name=snippet2)]
 
-**AddCookie 옵션**
+**AddCookie Options**
 
 [CookieAuthenticationOptions](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions?view=aspnetcore-2.0) 클래스는 인증 공급자 옵션을 구성 하는 데 사용 됩니다.
 

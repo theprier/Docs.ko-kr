@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/performance/scaleout-with-windows-azure-service-bus
 msc.type: authoredcontent
-ms.openlocfilehash: 857fc8baa61549e2fabbb8da012b1fa23950237d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7cb68d578fee8d6ee036f8fb096ba45e0c8ef3d6
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="signalr-scaleout-with-azure-service-bus"></a>Azure 서비스 버스에 SignalR 확장
 ====================
@@ -32,7 +32,7 @@ ms.lasthandoff: 11/10/2017
 - [Windows Azure SDK](https://go.microsoft.com/fwlink/?linkid=254364&amp;clcid=0x409)합니다.
 - Visual Studio 2012 또는 2013입니다.
 
-서비스 버스 백플레인에서 호환 이기도 [Service Bus for Windows Server](https://msdn.microsoft.com/en-us/library/windowsazure/dn282144.aspx), 버전 1.1. 그러나 Service Bus for Windows Server의 버전 1.0과 호환 되지 않습니다.
+서비스 버스 백플레인에서 호환 이기도 [Service Bus for Windows Server](https://msdn.microsoft.com/library/windowsazure/dn282144.aspx), 버전 1.1. 그러나 Service Bus for Windows Server의 버전 1.0과 호환 되지 않습니다.
 
 ## <a name="pricing"></a>가격
 
@@ -52,7 +52,7 @@ ms.lasthandoff: 11/10/2017
 
     [!code-csharp[Main](scaleout-with-windows-azure-service-bus/samples/sample1.cs)]
 
-이 코드에 대 한 기본 값으로 백플레인에서 구성 [TopicCount](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.servicebusscaleoutconfiguration.topiccount(v=vs.118).aspx) 및 [MaxQueueLength](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.messaging.scaleoutconfiguration.maxqueuelength(v=vs.118).aspx)합니다. 변경 된 이러한 값에 대 한 정보를 참조 하십시오. [SignalR 성능: 확장 메트릭](signalr-performance.md#scaleout_metrics)합니다.
+이 코드에 대 한 기본 값으로 백플레인에서 구성 [TopicCount](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.servicebusscaleoutconfiguration.topiccount(v=vs.118).aspx) 및 [MaxQueueLength](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.scaleoutconfiguration.maxqueuelength(v=vs.118).aspx)합니다. 변경 된 이러한 값에 대 한 정보를 참조 하십시오. [SignalR 성능: 확장 메트릭](signalr-performance.md#scaleout_metrics)합니다.
 
 각 응용 프로그램에 대 한 "앱 이름"에 대 한 다른 값을 선택 합니다. 여러 응용 프로그램에서 동일한 값을 사용 하지 마십시오.
 

@@ -2,20 +2,18 @@
 title: "기타 API"
 author: rick-anderson
 description: "이 문서에서는 ASP.NET Core 데이터 보호 ISecret 인터페이스에 설명 합니다."
-keywords: "ASP.NET Core, ISecret 데이터 보호"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.assetid: 512c6ba7-88ec-47e4-a656-6b30350b34e6
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/data-protection/extensibility/misc-apis
-ms.openlocfilehash: f5d6920f9f229bd480a76c952dab30efb7d9eff5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 26474de3a1c681a8c7f8b7812e9ef859f5d448bb
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="miscellaneous-apis"></a>기타 API
 

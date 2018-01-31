@@ -2,21 +2,19 @@
 title: "ASP.NET Core에서 Bower를 사용 하 여"
 author: rick-anderson
 description: "Bower 사용 하 여 클라이언트 패키지를 관리 합니다."
-keywords: ASP.NET Core,Bower
-ms.author: riande
 manager: wpickett
-ms.date: 02/14/2017
-ms.topic: article
-ms.assetid: df7c43da-280e-4df6-86cb-eecec8f12bfc
-ms.technology: aspnet
-ms.prod: asp.net-core
-uid: client-side/bower
+ms.author: riande
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: aa329002f78ea48755d65a662f54425013b9a30e
-ms.sourcegitcommit: f273cc3b7409cde063140aa0bd7a81aa50f00571
+ms.date: 02/14/2017
+ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
+uid: client-side/bower
+ms.openlocfilehash: 0205eb34ac7f8b10720b0aa3a19bbdc3a74b545b
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="manage-client-side-packages-with-bower-in-aspnet-core"></a>ASP.NET Core에서 Bower 사용 하 여 클라이언트 패키지를 관리 합니다.
 

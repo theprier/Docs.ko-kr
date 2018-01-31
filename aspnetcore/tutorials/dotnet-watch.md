@@ -2,20 +2,18 @@
 title: "dotnet watch를 사용하여 ASP.NET Core 앱 개발"
 author: rick-anderson
 description: "이 자습서에서는 ASP.NET Core 응용 프로그램에서 .NET Core CLI 파일 감시자(dotnet 감시자) 도구를 사용하는 방법을 보여줍니다."
-keywords: "ASP.NET Core, dotnet watch 사용"
 ms.author: riande
 manager: wpickett
 ms.date: 10/05/2017
 ms.topic: article
-ms.assetid: 563ffb3f-d369-4aa5-bf0a-7300b4e7832c
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/dotnet-watch
-ms.openlocfilehash: 9baf2ce2a1270a728616a8a2ab45deca9a9cde6f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cadd4a6a78c29e2213c39a02729b5c32a2b93ebd
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="developing-aspnet-core-apps-using-dotnet-watch"></a>dotnet watch를 사용하여 ASP.NET Core 앱 개발
 
@@ -111,6 +109,6 @@ public static int Product(int a, int b)
 
 ## <a name="dotnet-watch-in-github"></a>GitHub에서 dotnet-watch
 
-dotnet-watch는 GitHub [DotNetTools 리포지토리](https://github.com/aspnet/DotNetTools/tree/dev/src/Microsoft.DotNet.Watcher.Tools)의 일부입니다.
+dotnet-watch는 GitHub [DotNetTools 리포지토리](https://github.com/aspnet/DotNetTools/tree/dev/src/dotnet-watch)의 일부입니다.
 
-[dotnet-watch 추가 정보](https://github.com/aspnet/DotNetTools/blob/dev/src/Microsoft.DotNet.Watcher.Tools/README.md)의 [MSBuild 섹션](https://github.com/aspnet/DotNetTools/blob/dev/src/Microsoft.DotNet.Watcher.Tools/README.md#msbuild)은 dotnet-watch가 조사되는 MSBuild 프로젝트 파일에서 구성될 수 있는 방법을 설명합니다. [dotnet-watch 추가 정보](https://github.com/aspnet/DotNetTools/blob/dev/src/Microsoft.DotNet.Watcher.Tools/README.md)는 이 자습서에서 다루지 않는 dotnet-watch에 대한 정보를 포함합니다.
+[dotnet-watch 추가 정보](https://github.com/aspnet/DotNetTools/blob/dev/src/dotnet-watch/README.md)의 [MSBuild 섹션](https://github.com/aspnet/DotNetTools/tree/dev/src/dotnet-watch#msbuild)은 dotnet-watch가 조사되는 MSBuild 프로젝트 파일에서 구성될 수 있는 방법을 설명합니다. [dotnet-watch 추가 정보](https://github.com/aspnet/DotNetTools/blob/dev/src/dotnet-watch/README.md)는 이 자습서에서 다루지 않는 dotnet-watch에 대한 정보를 포함합니다.

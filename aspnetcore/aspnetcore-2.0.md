@@ -2,20 +2,18 @@
 title: "ASP.NET Core 2.0의 새로운 기능"
 author: rick-anderson
 description: "ASP.NET Core 2.0의 새로운 기능"
-keywords: "ASP.NET Core, 릴리스 정보, 새로운 기능"
 ms.author: riande
 manager: wpickett
 ms.date: 07/10/2017
 ms.topic: article
-ms.assetid: 08c9f457-9c24-40f9-a08b-47dc251e4cec
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: aspnetcore-2.0
-ms.openlocfilehash: 98af3788652e87f6222551cb4a8e5427b312660c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ca02de7954002dcbc125898c9f570438f88db818
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="whats-new-in-aspnet-core-20"></a>ASP.NET Core 2.0의 새로운 기능
 
@@ -142,7 +140,7 @@ C# 7.1 기능 상태에 대한 자세한 내용은 [the Roslyn GitHub repository
 
 ## <a name="other-documentation-updates-for-20"></a>2.0에 대한 기타 문서 업데이트
 
-* [Visual Studio 및 MSBuild에 대한 게시 프로필을 만들어 ASP.NET Core 앱 배포](xref:publishing/web-publishing-vs)
+* [ASP.NET Core 앱 배포용 Visual Studio 게시 프로필](xref:host-and-deploy/visual-studio-publish-profiles)
 * [키 관리](xref:security/data-protection/implementation/key-management)
 * [Facebook 인증 구성](xref:security/authentication/facebook-logins)
 * [Twitter 인증 구성](xref:security/authentication/twitter-logins)

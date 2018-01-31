@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/testing-and-debugging/aspnet-web-pages-razor-troubleshooting-guide
 msc.type: authoredcontent
-ms.openlocfilehash: e507d97903583c7233456e9139e1a869f8bf75bd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2e25e9c7cea937016301e0f11919adb9647ca216
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="aspnet-web-pages-razor-troubleshooting-guide"></a>ASP.NET 웹 페이지 (Razor) 문제 해결 가이드
 ====================
@@ -60,7 +60,7 @@ WebMatrix에서 작업 하는 동안이 문제를 로컬로 표시를 클릭는 
 
 웹 서버가 원격 서버에 있으면이 오류를 표시 되 면 서버 관리자를 게 문의 하십시오. 서버에.NET Framework 4 이상을 설치 되어 있는지 확인 합니다. 또한.net Framework의 해당 버전을 사용 하도록 구성 된 응용 프로그램 풀에서 응용 프로그램이 실행 되 고 있는지 확인 합니다.
 
-서버에 대 한 제어를 사용 하는 경우 올바른 버전의.NET Framework 실행 중인지 확인 합니다. 실행 하 여 설치를 복구 해 보십시오는 `aspnet_regiis -iru` 명령입니다. (예를 들어.NET Framework를 설치한 후 IIS를 설치한 경우 IIS 구성 되지 않습니다 수 올바르게 ASP.NET 페이지를 실행 하도록.) 자세한 내용은 참조 [ASP.NET IIS 등록 도구 (Aspnet\_regiis.exe)](https://msdn.microsoft.com/en-US/library/k6h9cz8h(v=vs.100).aspx)합니다.
+서버에 대 한 제어를 사용 하는 경우 올바른 버전의.NET Framework 실행 중인지 확인 합니다. 실행 하 여 설치를 복구 해 보십시오는 `aspnet_regiis -iru` 명령입니다. (예를 들어.NET Framework를 설치한 후 IIS를 설치한 경우 IIS 구성 되지 않습니다 수 올바르게 ASP.NET 페이지를 실행 하도록.) 자세한 내용은 참조 [ASP.NET IIS 등록 도구 (Aspnet\_regiis.exe)](https://msdn.microsoft.com/library/k6h9cz8h(v=vs.100).aspx)합니다.
 
 ### <a name="http-error-40314---forbidden"></a>HTTP 오류 403.14-사용 권한 없음
 
@@ -158,6 +158,6 @@ HTTP 오류 404.17에 대 한 이전 설명을 참조 하십시오.
 <a id="AdditionalResources"></a>
 ## <a name="additional-resources"></a>추가 리소스
 
-[ASP.NET 웹 페이지 (Razor) FAQ](https://go.microsoft.com/fwlink/?LinkId=253000)
+[ASP.NET 웹 페이지(Razor) FAQ](https://go.microsoft.com/fwlink/?LinkId=253000)
 
 [WebMatrix 및 ASP.NET 웹 페이지](https://forums.asp.net/1224.aspx/1?WebMatrix) ASP.NET 웹 사이트에 대 한 포럼

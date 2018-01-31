@@ -2,20 +2,18 @@
 title: "ASP.NET Core MVC EF 코어-5/10-데이터 모델"
 author: tdykstra
 description: "이 자습서에서는 더 많은 엔터티 및 관계를 추가 및 서식 지정, 유효성 검사 및 데이터베이스 매핑 규칙을 지정 하 여 데이터 모델을 사용자 지정 합니다."
-keywords: "ASP.NET Core, Entity Framework Core 데이터 주석"
-ms.author: tdykstra
 manager: wpickett
+ms.author: tdykstra
 ms.date: 03/15/2017
-ms.topic: get-started-article
-ms.assetid: 0dd63913-a041-48b6-96a4-3aeaedbdf5d0
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-mvc/complex-data-model
-ms.openlocfilehash: cacb23441e5f5ab06c6be27f3068276f21ff4ed9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ac30d9ae5531934ba5163a8d9114b11ac54af8d2
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="creating-a-complex-data-model---ef-core-with-aspnet-core-mvc-tutorial-5-of-10"></a>복잡 한 데이터 모델-EF 코어 ASP.NET Core MVC 자습서 (5/10) 만들기
 
@@ -41,9 +39,9 @@ Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework Core 및 Vi
 
 [!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_DataType&highlight=3,12-13)]
 
-`DataType` 특성은 데이터베이스 내장 형식보다 구체적인 데이터 형식을 지정하는 데 사용됩니다. 이 경우에 포함 하려고 날짜와 시간에서 날짜를 추적 하 합니다. `DataType` 날짜, 시간, 전화 번호, 통화, EmailAddress, 등과 같은 많은 데이터 형식의 열거형을 제공 합니다. `DataType` 특성을 통해 응용 프로그램에서 자동으로 유형별 기능을 제공하도록 설정할 수도 있습니다. 예를 들어, `DataType.EmailAddress`에 대해 `mailto:` 링크를 만들고 HTML5를 지원하는 브라우저에서 `DataType.Date`에 대해 날짜 선택기를 제공할 수 있습니다. `DataType` 특성 내보냅니다 HTML 5 `data-` (커맨드 데이터 대시) 특성을 HTML 5 브라우저 이해할 수 있습니다. `DataType` 특성 유효성을 검사 하지 않습니다.
+`DataType` 특성 데이터베이스 내장 형식 보다 구체적인 데이터 형식을 지정 하는 데 사용 됩니다. 이 경우에 포함 하려고 날짜와 시간에서 날짜를 추적 하 합니다. `DataType` 날짜, 시간, 전화 번호, 통화, EmailAddress, 등과 같은 많은 데이터 형식의 열거형을 제공 합니다. `DataType` 특성을 통해 응용 프로그램에서 자동으로 유형별 기능을 제공하도록 설정할 수도 있습니다. 예를 들어, `DataType.EmailAddress`에 대해 `mailto:` 링크를 만들고 HTML5를 지원하는 브라우저에서 `DataType.Date`에 대해 날짜 선택기를 제공할 수 있습니다. `DataType` 특성 내보냅니다 HTML 5 `data-` (커맨드 데이터 대시) 특성을 HTML 5 브라우저 이해할 수 있습니다. `DataType` 특성 유효성을 검사 하지 않습니다.
 
-`DataType.Date`는 표시되는 날짜의 서식을 지정하지 않습니다. 기본적으로 서버의 CultureInfo에 따라 기본 형식에 따라 데이터 필드가 표시 됩니다.
+`DataType.Date`표시 되는 날짜의 형식을 지정 하지 않습니다. 기본적으로 서버의 CultureInfo에 따라 기본 형식에 따라 데이터 필드가 표시 됩니다.
 
 `DisplayFormat` 특성은 날짜 형식을 명시적으로 지정하는 데 사용됩니다.
 
@@ -76,7 +74,7 @@ Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework Core 및 Vi
 `StringLength` 특성 이름에 공백을 입력에서 사용자를 금지 되지는 않습니다. 사용할 수는 `RegularExpression` 특성을 입력에 제한을 적용 합니다. 예를 들어 다음 코드는 첫 번째 문자를 대문자로 변환 하 고 나머지 문자를 사전순으로 필요 합니다.
 
 ```csharp
-[RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]
+[RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
 ```
 
 `MaxLength` 특성 비슷한 기능을 제공는 `StringLength` 특성 하지만 클라이언트 쪽을 제공 하지 않는 유효성 검사 합니다.
@@ -105,7 +103,7 @@ dotnet ef database update
 
 클래스 및 속성을 데이터베이스에 매핑되는 방법을 제어 하려면 특성을 사용할 수도 있습니다. 이름을 사용한 경우를 가정해 볼 `FirstMidName` 첫 번째 이름에 대 한 필드 중간 이름 포함도 될 수 있으므로 필드입니다. 이름을 지정 하는 데이터베이스 열을 원하는 하지만 `FirstName`해당 이름에는 데이터베이스에 대 한 임시 쿼리를 작성 하는 사용자는 대개 때문에 있습니다. 이 매핑은를 사용할 수 있습니다는 `Column` 특성입니다.
 
-`Column` 특성을 지정 하는 데이터베이스를 만들 때의 열은 `Student` 테이블에 매핑되는 `FirstMidName` 속성 이름이 지정 됩니다 `FirstName`합니다. 즉 때 코드 참조 `Student.FirstMidName`, 데이터에서 옵니다 또는에서 업데이트할 수는 `FirstName` 의 열은 `Student` 테이블입니다. 열 이름을 지정 하지 않으면, 속성 이름과 같은 이름이 주어 집니다.
+`Column` 특성을 지정 하는 데이터베이스를 만들 때의 열은 `Student` 테이블에 매핑되는 `FirstMidName` 속성 이름이 지정 됩니다 `FirstName`합니다. 즉 때 코드 참조 `Student.FirstMidName`, 데이터에서 옵니다 또는에서 업데이트할 수는 `FirstName` 의 열은 `Student` 테이블입니다. 열 이름을 지정 하지 않으면, 이름이 같은 속성 이름으로 지정 된 합니다.
 
 에 *Student.cs* 파일에서 추가 `using` 문을 `System.ComponentModel.DataAnnotations.Schema` 열 이름 특성을 추가 하 고는 `FirstMidName` 속성을 다음 강조 표시 된 코드에 나와 있는 것 처럼:
 
@@ -127,7 +125,7 @@ dotnet ef database update
 
 ![마이그레이션 후에 SSOX 학생 테이블](complex-data-model/_static/ssox-after-migration.png)
 
-처음 두 마이그레이션을 적용 하기 전에 이름 열 형식 nvarchar (max) 되었습니다. Nvarchar (50)은 이제 및 열 이름을 FirstName로 FirstMidName에서 변경 되었습니다.
+처음 두 마이그레이션을 적용 하기 전에 이름 열 형식 nvarchar (max) 되었습니다. 자신이 이제 nvarchar (50) 및 열 이름을 FirstMidName에서 이름으로 변경 되었습니다.
 
 > [!Note]
 > 다음 섹션의 모든 엔터티 클래스를 만든 후 전에 컴파일 하려고 하면 컴파일러 오류가 발생할 수 있습니다.
@@ -142,7 +140,7 @@ dotnet ef database update
 
 ### <a name="the-required-attribute"></a>필수 특성
 
-`Required` 특성 필드에 필수 이름 속성을 사용 합니다. `Required` nullable이 아닌 형식 예: 값 형식에 대 한 특성은 필요 하지 않습니다 (DateTime, int, 두 번, float 등.). Null 일 수 없는 형식 필수 필드로 자동으로 처리 됩니다.
+`Required` 특성 필드에 필수 이름 속성을 사용 합니다. `Required` nullable이 아닌 형식 예: 값 형식에 대 한 특성이 필요 하지 않습니다 (int, DateTime, 두 번, float 등.). Null 일 수 없는 형식 필수 필드로 자동으로 처리 됩니다.
 
 제거할 수는 `Required` 특성 및에 대 한 최소 길이 매개 변수 바꾸기는 `StringLength` 특성:
 
@@ -233,7 +231,7 @@ Instructor 엔터티는 null을 허용 `OfficeAssignment` 탐색 속성 (강사 
 
 과정 엔터티에 포함 된 외래 키 속성이 `DepartmentID` 가 관련된 부서 엔터티를 가리키는 `Department` 탐색 속성입니다.
 
-Entity Framework 관련된 엔터티에 대 한 탐색 속성을 사용 하는 경우 데이터 모델에 외래 키 속성을 추가할 수 필요 하지 않습니다.  EF에서 자동으로 필요할 때마다 데이터베이스에 외래 키를 생성 하 고 만듭니다 [숨기](https://docs.microsoft.com/ef/core/modeling/shadow-properties) 하 합니다. 하지만 데이터 모델에 외래 키가 있는 업데이트를 수행할 수 쉽고 효율적으로. 예를 들어, 편집 하는 과정 엔터티를 가져올 때 Department 엔터티는 null을 로드 하지 않는 경우 하므로 과정 엔터티를 업데이트할 때 해야 먼저 Department 엔터티를 인출 합니다. 때 외래 키 속성 `DepartmentID` 포함 된 데이터 모델에서 업데이트 하기 전에 Department 엔터티를 가져올 필요가 없습니다.
+Entity Framework 관련된 엔터티에 대 한 탐색 속성을 사용 하는 경우 데이터 모델에 외래 키 속성을 추가할 수 필요 하지 않습니다.  EF에서 자동으로 필요한 경우 항상 데이터베이스에 외래 키를 생성 하 고 만듭니다 [숨기](https://docs.microsoft.com/ef/core/modeling/shadow-properties) 하 합니다. 하지만 데이터 모델에 외래 키가 있는 업데이트를 수행할 수 쉽고 효율적으로. 예를 들어, 편집 하는 과정 엔터티를 가져올 때 Department 엔터티는 null을 로드 하지 않는 경우 하므로 과정 엔터티를 업데이트할 때 해야 먼저 Department 엔터티를 인출 합니다. 때 외래 키 속성 `DepartmentID` 포함 된 데이터 모델에서 업데이트 하기 전에 Department 엔터티를 가져올 필요가 없습니다.
 
 ### <a name="the-databasegenerated-attribute"></a>DatabaseGenerated 특성
 
@@ -310,7 +308,7 @@ public ICollection<Course> Courses { get; set; }
 ```
 
 > [!NOTE]
-> 규칙에 따라 Entity Framework에는 null을 허용 하지는 외래 키 및 다 대 다 관계에 대 한 하위 삭제를 수 있습니다. 이 마이그레이션을 추가 하려고 하면 예외가 발생 하는 순환 cascade delete 규칙을 발생할 수 있습니다. 예를 들어, null 허용으로 Department.InstructorID 속성을 정의 하지 않은 경우 EF 부서, 그렇지 않은 사용자를 삭제 하면 강의 삭제 하려면 cascade delete 규칙을 구성 합니다. 비즈니스 규칙에 필요한 경우는 `InstructorID` 비 nullable 속성 관계에 cascade delete를 사용 하지 않도록 설정 하려면 다음 fluent API 문을 사용 해야 합니다.
+> 규칙에 따라 Entity Framework에는 null을 허용 하지는 외래 키 및 다 대 다 관계에 대 한 하위 삭제를 수 있습니다. 이 마이그레이션을 추가 하려고 하면 예외가 발생 하는 순환 cascade delete 규칙을 발생할 수 있습니다. 예를 들어, null 허용으로 Department.InstructorID 속성을 정의 하지 않은 경우 EF를 원하는 결과가 아닙니다 부서, 삭제 하는 경우 강의 삭제 하려면 cascade delete 규칙을 구성 합니다. 비즈니스 규칙에 필요한 경우는 `InstructorID` 비 nullable 속성 관계에 cascade delete를 사용 하지 않도록 설정 하려면 다음 fluent API 문을 사용 해야 합니다.
 > ```csharp
 > modelBuilder.Entity<Department>()
 >    .HasOne(d => d.Administrator)
@@ -356,7 +354,7 @@ public Student Student { get; set; }
 
 Enrollment 테이블 등급 정보를 포함 하지 않은 경우 CourseID 및 StudentID 두 개의 외래 키를 포함 해야만 합니다. 이 경우 것 처럼 페이로드 없이 다 대 다 조인 테이블 (또는 순수 조인 테이블)는 데이터베이스입니다. 강사 및 과정 엔터티 종류 다 대 다 관계의 있고 페이로드 없이 조인 테이블으로 기능 하도록 엔터티 클래스를 만들려면 다음 단계는 합니다.
 
-(EF 6.x 지원 다 대 다 관계가 되지만 EF 코어에 대 한 암시적 조인 테이블은 그렇지 않습니다. 자세한 내용은 참조는 [EF 코어 GitHub 리포지토리에 토론](https://github.com/aspnet/EntityFramework/issues/1368).) 
+(EF 6.x 지원 다 대 다 관계가 되지만 EF 코어에 대 한 테이블 암시적 조인 하지 않습니다. 자세한 내용은 참조는 [EF 코어 GitHub 리포지토리에 토론](https://github.com/aspnet/EntityFramework/issues/1368).) 
 
 ## <a name="the-courseassignment-entity"></a>CourseAssignment 엔터티
 

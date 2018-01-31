@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: 
 msc.type: content
-ms.openlocfilehash: e54c5e2a0188f3ef8288c191517bd632254cfa00
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3d4c34a35e2e34ed78f481c759eda3718edb4da6
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="aspnet-overview"></a>ASP.NET 개요
 
@@ -38,8 +38,8 @@ ASP.NET은 뛰어난 웹 사이트 및 HTML, CSS 및 JavaScript를 사용 하 �
 
 |   | 환경에 있는 경우 | 개발 스타일 | 전문 지식 | 
 |-----------|----------------------|-----------------------------------------------------|----------------|
-| Web Forms | Forms, WPF,.NET win | HTML 태그를 캡슐화 하는 컨트롤의 풍부한 라이브러리를 사용 하 여 신속 하 게 개발 | 표준은 중간 수준의 고급 RAD |
-| MVC       | 레일에.NET에 ruby  | HTML 태그, 코드 및 태그, 분리 되 고 테스트를 작성 하기가 대 한 모든 권한을 합니다. 모바일 및 단일 페이지 응용 프로그램 (SPA)에 적합 합니다. | 표준은 중간 수준의 고급 |
+| Web Forms | Win Forms, WPF, .NET | HTML 태그를 캡슐화 하는 컨트롤의 풍부한 라이브러리를 사용 하 여 신속 하 게 개발 | 표준은 중간 수준의 고급 RAD |
+| MVC       | 레일에.NET에 ruby  | HTML 태그, 코드 및 태그, 분리 되 고 테스트를 작성 하기가 대 한 모든 권한을 합니다. 모바일 및 단일 페이지 응용 프로그램 (SPA)에 적합 합니다. | Mid-Level, Advanced |
 | 웹 페이지  | 클래식 ASP, PHP     | HTML 태그와 같은 파일에 함께 코드 | 새, 중간 수준 |
 
 ### <a name="web-forms"></a>Web Forms
@@ -113,9 +113,9 @@ Create Deployment TOC based on https://www.asp.net/aspnet/overview/deployment
 Copy deployment content map to MVC, WebForms, Web Pages, Web API sections.
 Copy Web Deployment in Enterprise from WebForms to MVC
 Move under ASP.NET Best practices
-    What not to do in ASP.NET, and what to do instead https://review.docs.microsoft.com/en-us/aspnet/aspnet/overview/web-development-best-practices/what-not-to-do-in-aspnet-and-what-to-do-instead
+    What not to do in ASP.NET, and what to do instead https://review.docs.microsoft.cus/aspnet/aspnet/overview/web-development-best-practices/what-not-to-do-in-aspnet-and-what-to-do-instead
     Async and await https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/async-and-await
-    Building Real World Cloud Apps with Azure https://review.docs.microsoft.com/en-us/aspnet/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
-    Hands on Lab: Maintainable Azure Websites: Managing Change and Scale https://review.docs.microsoft.com/en-us/aspnet/aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
+    Building Real World Cloud Apps with Azure https://review.docs.microsoft.com/aspnet/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
+    Hands on Lab: Maintainable Azure Websites: Managing Change and Scale https://review.docs.microsoft.com/aspnet/aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
 
 -->

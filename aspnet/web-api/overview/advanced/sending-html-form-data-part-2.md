@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/advanced/sending-html-form-data-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: 3df59aab2a0c43f4a4f5c59530b0655f68d95cc7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 331d0e520a1fd8ec84aecd09a9c9e6d286c5893b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="sending-html-form-data-in-aspnet-web-api-file-upload-and-multipart-mime"></a>ASP.NET Web API의에서 HTML 폼 데이터 보내기: 파일 업로드 및 다중 파트 MIME
 ====================
@@ -72,7 +72,7 @@ ms.lasthandoff: 11/10/2017
 - **MultipartFileData.FileName** 저장 된 파일 서버에서 로컬 파일 이름입니다.
 - **MultipartFileData.Headers** 파트 헤더가 포함 되어 (*하지* 요청 헤더). 콘텐츠에 액세스 하는 데 사용할 수 있습니다\_Disposition 및 콘텐츠 형식 헤더입니다.
 
-이름에서 알 수 있듯이 **ReadAsMultipartAsync** 비동기 메서드입니다. 사용 하 여 파일을 메서드가 완료 된 후 작업을 수행 하는 [연속 작업](https://msdn.microsoft.com/en-us/library/ee372288.aspx) (.NET 4.0) 또는 **await** 키워드 (.NET 4.5).
+이름에서 알 수 있듯이 **ReadAsMultipartAsync** 비동기 메서드입니다. 사용 하 여 파일을 메서드가 완료 된 후 작업을 수행 하는 [연속 작업](https://msdn.microsoft.com/library/ee372288.aspx) (.NET 4.0) 또는 **await** 키워드 (.NET 4.5).
 
 .NET Framework 4.0 버전의 이전 코드는 다음과 같습니다.
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: aaa061e61b9bab5b33083851624f0487b2cf6473
-ms.sourcegitcommit: ccf08615ad59bc6f654560de33b93396113a2eb0
+ms.openlocfilehash: ccf4329e6684d07570bfaabfaa1a570664fb2ca3
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/11/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="create-an-aspnet-mvc-5-app-with-facebook-twitter-linkedin-and-google-oauth2-sign-on-c"></a>Facebook, Twitter, LinkedIn 및 Google OAuth2 로그온 (C#)으로 ASP.NET MVC 5 앱 만들기
 ====================
@@ -95,7 +95,7 @@ NuGet 패키지 관리자를 사용 하 여 업데이트 하는 [OWIN 미들웨�
 6. 선택 된 **웹** 탭을 클릭 한 다음에 SSL URL을 붙여는 **프로젝트 Url** 상자입니다. 파일 저장 합니다 (Ctl + S). 이 URL을 Facebook 및 Google 인증 앱을 구성 해야 합니다.  
   
     ![](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image10.png)
-7. 추가 [RequireHttps](https://msdn.microsoft.com/en-us/library/system.web.mvc.requirehttpsattribute.aspx) 특성을 `Home` 모든 요청을 요구 하도록 컨트롤러는 HTTPS를 사용 해야 합니다. 추가 하는 것 보다 안전한 방법은 [RequireHttps](https://msdn.microsoft.com/en-us/library/system.web.mvc.requirehttpsattribute.aspx) 응용 프로그램에는 필터입니다. 섹션을 참조 &quot;SSL과 인증 특성을 사용 응용 프로그램을 보호&quot; tutoral 내에서 [인증 및 SQL DB ASP.NET MVC 응용 프로그램 만들기 및 Azure 앱 서비스 배포](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data)합니다. Home 컨트롤러의 일부는 다음과 같습니다.
+7. 추가 [RequireHttps](https://msdn.microsoft.com/library/system.web.mvc.requirehttpsattribute.aspx) 특성을 `Home` 모든 요청을 요구 하도록 컨트롤러는 HTTPS를 사용 해야 합니다. 추가 하는 것 보다 안전한 방법은 [RequireHttps](https://msdn.microsoft.com/library/system.web.mvc.requirehttpsattribute.aspx) 응용 프로그램에는 필터입니다. 섹션을 참조 &quot;SSL과 인증 특성을 사용 응용 프로그램을 보호&quot; tutoral 내에서 [인증 및 SQL DB ASP.NET MVC 응용 프로그램 만들기 및 Azure 앱 서비스 배포](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data)합니다. Home 컨트롤러의 일부는 다음과 같습니다.
 
     [!code-csharp[Main](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/samples/sample1.cs?highlight=1)]
 8. Ctrl+F5를 눌러 응용 프로그램을 실행합니다. 이전에 인증서를 설치한 경우이 섹션의 나머지 부분을 건너뛰고 이동할 [OAuth 2에 대 한 Google 앱을 만들고 응용 프로그램 프로젝트에 연결할](#goog), 그렇지 않으면 자체 서명 된 신뢰 하도록 지시에 따라 IIS Express에서 생성 하는 인증서입니다.  
@@ -286,7 +286,7 @@ Facebook, 사용 하 여 앱에 로그온 하 고 다음 로그 아웃 및 로�
 
 1. Azure에 응용 프로그램을 배포 하는 방법입니다.
 2. 역할과 응용 프로그램을 보호 하는 방법입니다.
-3. 응용 프로그램을 보호 하는 방법의 [RequireHttps](https://msdn.microsoft.com/en-us/library/system.web.mvc.requirehttpsattribute(v=vs.108).aspx) 및 [Authorize](https://msdn.microsoft.com/en-us/library/system.web.mvc.authorizeattribute(v=vs.100).aspx) 필터입니다.
+3. 응용 프로그램을 보호 하는 방법의 [RequireHttps](https://msdn.microsoft.com/library/system.web.mvc.requirehttpsattribute(v=vs.108).aspx) 및 [Authorize](https://msdn.microsoft.com/library/system.web.mvc.authorizeattribute(v=vs.100).aspx) 필터입니다.
 4. 사용자 및 역할에 추가할 구성원 API를 사용 하는 방법.
 
 이 자습서를 연결 하는 방법 및 향상 될 수 있습니다에 의견을 남겨 주세요. 새 항목을 요청할 수도 있습니다 [Me 방법으로 코드 보기](http://aspnet.uservoice.com/forums/228522-show-me-how-with-code)합니다. 에 게 요청 하 고 ASP.NET에 추가할 수 있는 새로운 기능에 대해 투표도 있습니다. 예를 들어를 도구에 대 한 투표 수 [만들고 사용자 및 역할을 관리 합니다.](http://aspnet.uservoice.com/forums/41199-general-asp-net/suggestions/5646857-asp-net-identity-membership-db-tool-to-mangage-use)

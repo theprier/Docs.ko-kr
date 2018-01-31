@@ -2,20 +2,18 @@
 title: "작은 Sass, 및 ASP.NET 코어의 놀라운 글꼴"
 author: ardalis
 description: "ASP.NET Core 응용 프로그램의 작은 Sass, 한 글꼴을 사용 하는 방법에 알아봅니다."
-keywords: "ASP.NET Core Sass, 글꼴 놀라운, 전처리기 덜"
-ms.author: tdykstra
 manager: wpickett
+ms.author: tdykstra
 ms.date: 10/14/2016
-ms.topic: article
-ms.assetid: 94c988f9-95fd-425d-b37e-7f846598c6d4
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: client-side/less-sass-fa
-ms.openlocfilehash: 159377300d33e98393fd6705d0fec578f8f6b735
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7ef82d15de64ef62b952b6c757cb9c35fd40e788
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="introduction-to-styling-applications-with-less-sass-and-font-awesome-in-aspnet-core"></a>더 적은 노력으로 응용 프로그램 스타일 지정, Sass, 및 ASP.NET 코어에서 글꼴 놀라운 소개
 
@@ -99,7 +97,7 @@ body {
 .bgDark2    {color:@darker2}
 ```
 
-`@base`다른 @-prefixed 항목은 변수입니다. 각각의 색을 나타냅니다. 제외 하 고 `@base`, 색 함수를 사용 하 여 설정 된: 밝게, 어둡게, 및 회전 합니다. 밝게 및 어둡게 거의 예상 대로; 수행 스핀 (색상표) 중심으로 다양 한 색의 색상을 조정합니다. 작은 프로세서는 때문에 이러한 변수 작동 하는 방법을 설명 하기 위해 어딘가에 사용법이 사용 되지 않는 변수를 무시 합니다. 클래스 `.baseColor`, 등에서는 변수가 생성 되는 CSS 파일에 각각의 계산된 된 값을 보여 줍니다.
+`@base`다른 @-prefixed 항목은 변수입니다. 각각의 색을 나타냅니다. 제외 하 고 `@base`, 색 함수를 사용 하 여 설정 하는 것: 밝게, 어둡게, 및 회전 합니다. 밝게 및 어둡게 거의 예상 대로; 수행 스핀 (색상표) 중심으로 다양 한 색의 색상을 조정합니다. 작은 프로세서는 때문에 이러한 변수 작동 하는 방법을 설명 하기 위해 어딘가에 사용법이 사용 되지 않는 변수를 무시 합니다. 클래스 `.baseColor`, 등에서는 변수가 생성 되는 CSS 파일에 각각의 계산된 된 값을 보여 줍니다.
 
 ### <a name="getting-started"></a>시작
 
@@ -248,7 +246,7 @@ nav {
 }
 ```
 
-이 경우의 모든 하위 요소 사항에 유의 `nav` 해당 범위 내에 포함 됩니다. 모든 반복의 부모 요소를 더 이상 (`nav`, `li`, `a`), 총 줄 수 삭제도 (하지만 중 일부를 두 번째 예에 있는 동일한 줄에 배치 하는 값의 결과). 것을 쉽게 조직으로,이 경우 명시적으로 제한 된 범위 내에서 지정된 된 UI 요소에 대 한 규칙을 모두 보려면을 off로 설정 파일의 나머지 부분에서 중괄호.
+이 경우의 모든 하위 요소 사항에 유의 `nav` 해당 범위 내에 포함 됩니다. 모든 반복의 부모 요소를 더 이상 (`nav`, `li`, `a`), 총 줄 수도 삭제 (하지만 일부 하는 두 번째 예에 있는 동일한 줄에 배치 하는 값의 결과). 것을 쉽게 조직으로,이 경우 명시적으로 제한 된 범위 내에서 지정된 된 UI 요소에 대 한 규칙을 모두 보려면을 off로 설정 파일의 나머지 부분에서 중괄호.
 
 `&` 구문으로는 적은 선택기 기능, 및 현재 선택기 부모를 나타내는입니다. 따라서 내에서 {...} 블록 `&` 나타냅니다는 `a` 태그 이므로 `&:link` 같습니다 `a:link`합니다.
 
@@ -323,7 +321,7 @@ nav {
 
 ## <a name="sass"></a>Sass
 
-Sass는 약간 다른 구문을 하면서도 동일한 기능을 대부분에 대 한 지원을 제공 하는, 비슷합니다. JavaScript 대신 Ruby를 사용 하 여 빌드하 있으며 다른 설치 요구 사항만 요구 하므로입니다. 원래 Sass 언어 중괄호 또는 세미콜론을 사용 하지 않고 있지만 대신 공백 및 들여쓰기를 사용 하 여 범위를 정의 합니다. Sass 버전 3에서에서 새로운 구문 도입 되기 **SCSS** "Sassy CSS ("). SCSS는 CSS 비슷합니다 수준 들여쓰기 및 공백 무시 하 고 대신 중괄호와 세미콜론을 사용 합니다.
+Sass는 약간 다른 구문을 하면서도 동일한 기능을 대부분에 대 한 지원을 제공 하는, 비슷합니다. JavaScript 대신 Ruby를 사용 하 여 빌드하 있으며 다른 설치 요구 사항만 요구 하므로입니다. 원래 Sass 언어 중괄호 또는 세미콜론을 사용 하지 않은 하지만 대신 공백 및 들여쓰기를 사용 하 여 범위를 정의 합니다. Sass 버전 3에서에서 새로운 구문 도입 되기 **SCSS** "Sassy CSS ("). SCSS는 CSS 비슷합니다 수준 들여쓰기 및 공백 무시 하 고 대신 중괄호와 세미콜론을 사용 합니다.
 
 Sass를 설치 하려면 일반적으로 사용자는 Ruby (사전 설치 Mac에서)를 먼저 설치을 실행 합니다.
 

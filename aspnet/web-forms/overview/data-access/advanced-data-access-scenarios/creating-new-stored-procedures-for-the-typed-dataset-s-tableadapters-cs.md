@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4e8b4e6a12c010b227ee9a236130cbfd26d75657
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 715f7e3fae89e773b686faa7c49522c587693eec
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-new-stored-procedures-for-the-typed-datasets-tableadapters-c"></a>형식화 된 데이터 집합의 Tableadapter (C#)에 대 한 새로운 저장 프로시저
 ====================
@@ -47,7 +47,7 @@ Tableadapter에서 실행 되는 SQL 명령 중 하나가 임시 SQL 문이 같�
 > 저장된 프로시저는 종종 sprocs 또는 Sp 라고 합니다.
 
 
-저장된 프로시저를 사용 하 여 만들어집니다는 [ `CREATE PROCEDURE` ](https://msdn.microsoft.com/en-us/library/aa258259(SQL.80).aspx) T-SQL 문입니다. 예를 들어 다음 T-SQL 스크립트 저장된 프로시저를 만듭니다 `GetProductsByCategoryID` 라는 단일 매개 변수를 사용 하 `@CategoryID` 반환는 `ProductID`, `ProductName`, `UnitPrice`, 및 `Discontinued` 필드의 열에는 `Products` 일치 하는 테이블 `CategoryID` 값:
+저장된 프로시저를 사용 하 여 만들어집니다는 [ `CREATE PROCEDURE` ](https://msdn.microsoft.com/library/aa258259(SQL.80).aspx) T-SQL 문입니다. 예를 들어 다음 T-SQL 스크립트 저장된 프로시저를 만듭니다 `GetProductsByCategoryID` 라는 단일 매개 변수를 사용 하 `@CategoryID` 반환는 `ProductID`, `ProductName`, `UnitPrice`, 및 `Discontinued` 필드의 열에는 `Products` 일치 하는 테이블 `CategoryID` 값:
 
 
 [!code-sql[Main](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs/samples/sample1.sql)]
@@ -384,7 +384,7 @@ ObjectDataSource 마법사를 완료 한 후 Visual Studio 제품 데이터 필�
 
 이 자습서에 설명 된 항목에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
-- [저장 프로시저를 만들고 유지 관리](https://msdn.microsoft.com/en-us/library/aa214299(SQL.80).aspx)
+- [저장 프로시저를 만들고 유지 관리](https://msdn.microsoft.com/library/aa214299(SQL.80).aspx)
 - [저장된 프로시저에서 스칼라 데이터 검색](http://aspnet.4guysfromrolla.com/articles/062905-1.aspx)
 - [SQL Server 저장 프로시저 기본 사항](http://www.awprofessional.com/articles/article.asp?p=25288&amp;rl=1)
 - [저장된 프로시저: 개요](http://www.sqlteam.com/item.asp?ItemID=563)

@@ -2,7 +2,6 @@
 title: "ASP.NET Core에서 Razor 페이지에 파일 업로드"
 author: guardrex
 description: "Razor 페이지에 파일을 업로드하는 방법을 알아봅니다."
-keywords: "ASP.NET Core, Razor, Razor 페이지, IFormFile, 파일 업로드, 파일 업로드"
 ms.author: riande
 manager: wpickett
 ms.date: 09/12/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: tutorials/razor-pages/uploading-files
-ms.openlocfilehash: 3b54bf0b40c396c8c141966219f65231fb362ca4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a29043ac5d28ae8efcbbd6919e73e3774ba22699
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="uploading-files-to-a-razor-page-in-aspnet-core"></a>ASP.NET Core에서 Razor 페이지에 파일 업로드
 

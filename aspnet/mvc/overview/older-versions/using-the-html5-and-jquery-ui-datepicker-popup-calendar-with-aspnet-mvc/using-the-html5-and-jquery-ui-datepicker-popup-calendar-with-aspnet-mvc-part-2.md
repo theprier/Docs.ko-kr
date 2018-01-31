@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: 271c244ab0b9e2524a33ea6ff4d41893ce22472f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 69fbaa7761c97895ffee770f6feb9ce6b745d186
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-2"></a>ASP.NET MVC-2 부에서 HTML5 및 jQuery UI Datepicker 팝업 일정 사용
 ====================
@@ -27,15 +27,15 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="adding-an-automatic-datetime-template"></a>자동 DateTime 템플릿 추가
 
-이 자습서의 첫 번째 부분을 명시적으로 서식을 지정 하려면 모델에 특성을 추가할 수 및 모델을 렌더링 하는 데 사용 하는 템플릿을 명시적으로 지정 하는 방법을 살펴보았습니다. 예를 들어는 [DisplayFormat](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.displayformatattribute.aspx) 에 다음 코드 명시적 특성에 대 한 서식을 지정는 `ReleaseDate` 속성입니다.
+이 자습서의 첫 번째 부분을 명시적으로 서식을 지정 하려면 모델에 특성을 추가할 수 및 모델을 렌더링 하는 데 사용 하는 템플릿을 명시적으로 지정 하는 방법을 살펴보았습니다. 예를 들어는 [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) 에 다음 코드 명시적 특성에 대 한 서식을 지정는 `ReleaseDate` 속성입니다.
 
 [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2/samples/sample1.cs)]
 
-다음 예제에서는 [DataType](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx) 특성을 사용 하는 `Date` 열거형, 모델을 렌더링 하는 날짜 템플릿을 쓰일 수를 지정 합니다. 프로젝트에서 date 템플릿이 없는 경우 기본 제공 된 날짜 템플릿이 사용 됩니다.
+다음 예제에서는 [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) 특성을 사용 하는 `Date` 열거형, 모델을 렌더링 하는 날짜 템플릿을 쓰일 수를 지정 합니다. 프로젝트에서 date 템플릿이 없는 경우 기본 제공 된 날짜 템플릿이 사용 됩니다.
 
 [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2/samples/sample2.cs)]
 
-그러나 ASP 합니다. MVC 형식 일치 규칙-조치-구성 형식의 이름을 일치 하는 템플릿을 검색 하 여 사용 하 여 수행할 수 있습니다. 이렇게 하면 자동으로 모든 특성이 나 코드를 전혀 사용 하지 않고 데이터의 형식을 지정 하는 템플릿을 만들 수 있습니다. 자습서의이 부분에 대 한 형식의 모델 속성에 자동으로 적용 되는 템플릿을 만듭니다 [DateTime](https://msdn.microsoft.com/en-us/library/system.datetime.aspx)합니다. 형식의 모든 모델 속성을 렌더링 하는 템플릿 쓰일 수를 지정 하는 특성 또는 다른 구성을 사용할 필요가 없습니다 [DateTime](https://msdn.microsoft.com/en-us/library/system.datetime.aspx)합니다.
+그러나 ASP 합니다. MVC 형식 일치 규칙-조치-구성 형식의 이름을 일치 하는 템플릿을 검색 하 여 사용 하 여 수행할 수 있습니다. 이렇게 하면 자동으로 모든 특성이 나 코드를 전혀 사용 하지 않고 데이터의 형식을 지정 하는 템플릿을 만들 수 있습니다. 자습서의이 부분에 대 한 형식의 모델 속성에 자동으로 적용 되는 템플릿을 만듭니다 [DateTime](https://msdn.microsoft.com/library/system.datetime.aspx)합니다. 형식의 모든 모델 속성을 렌더링 하는 템플릿 쓰일 수를 지정 하는 특성 또는 다른 구성을 사용할 필요가 없습니다 [DateTime](https://msdn.microsoft.com/library/system.datetime.aspx)합니다.
 
 또한 개별 속성 또는 개별 필드의 표시를 사용자 지정 하는 방법을 알아봅니다.
 
@@ -83,7 +83,7 @@ Ctrl+F5를 눌러 응용 프로그램을 실행합니다.
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2/_static/image3.png)
 
-열기는 *Views\Shared\DisplayTemplates\DateTime.cshtml* 파일을 사용 하 여 다음 태그를 추가 [String.Format](https://msdn.microsoft.com/en-us/library/system.string.format.aspx) 메서드는 시간을 제외한 날짜가으로 속성을 지정 하려면. (의 `{0:d}` 형식은 간단한 날짜 서식을 지정 합니다.)
+열기는 *Views\Shared\DisplayTemplates\DateTime.cshtml* 파일을 사용 하 여 다음 태그를 추가 [String.Format](https://msdn.microsoft.com/library/system.string.format.aspx) 메서드는 시간을 제외한 날짜가으로 속성을 지정 하려면. (의 `{0:d}` 형식은 간단한 날짜 서식을 지정 합니다.)
 
 [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2/samples/sample5.cs)]
 
@@ -113,7 +113,7 @@ Ctrl+F5를 눌러 응용 프로그램을 실행합니다.
 
 ### <a name="using-uihint-to-specify-a-display-template"></a>UIHint를 사용 하 여 디스플레이 템플릿을 지정 하려면
 
-웹 응용 프로그램에 많은 경우 `DateTime` 필드 전체 또는 대부분의 날짜 전용으로 표시 하려면 기본적으로는 *DateTime.cshtml* 서식 파일에 있는 좋은 방법입니다. 하지만 훨씬 쉽게 몇 가지 날짜 전체 날짜 및 시간을 표시 하 시겠습니까? 이전 버전도 계속 사용할 수 있습니다. 추가 템플릿을 만들고 사용 하는 [UIHint](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.uihintattribute.uihint.aspx) 전체 날짜 및 시간에 대 한 서식을 지정 하는 특성입니다. 그런 다음 해당 템플릿을 선택적으로 적용할 수 있습니다. 사용할 수는 [UIHint](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.uihintattribute.uihint.aspx) 이거나 모델 수준에서 특성 보기 내 파일을 지정할 수 있습니다. 이 섹션에 사용 하는 방법을 표시 됩니다는 `UIHint` 특성을 선택적으로 날짜-시간 필드의 일부 인스턴스에 대 한 서식을 변경 합니다.
+웹 응용 프로그램에 많은 경우 `DateTime` 필드 전체 또는 대부분의 날짜 전용으로 표시 하려면 기본적으로는 *DateTime.cshtml* 서식 파일에 있는 좋은 방법입니다. 하지만 훨씬 쉽게 몇 가지 날짜 전체 날짜 및 시간을 표시 하 시겠습니까? 이전 버전도 계속 사용할 수 있습니다. 추가 템플릿을 만들고 사용 하는 [UIHint](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.uihintattribute.uihint.aspx) 전체 날짜 및 시간에 대 한 서식을 지정 하는 특성입니다. 그런 다음 해당 템플릿을 선택적으로 적용할 수 있습니다. 사용할 수는 [UIHint](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.uihintattribute.uihint.aspx) 이거나 모델 수준에서 특성 보기 내 파일을 지정할 수 있습니다. 이 섹션에 사용 하는 방법을 표시 됩니다는 `UIHint` 특성을 선택적으로 날짜-시간 필드의 일부 인스턴스에 대 한 서식을 변경 합니다.
 
 열기는 *Views\Movies\DisplayTemplates\LoudDateTime.cshtml* 파일 및 기존 코드를 다음과 같이 바꿉니다.
 
@@ -121,7 +121,7 @@ Ctrl+F5를 눌러 응용 프로그램을 실행합니다.
 
 전체 날짜 및 시간을 표시할 하면 녹색과 큰 텍스트를 호출 하는 CSS 클래스를 추가 합니다.
 
-열기는 *Movie.cs* 파일을 추가 [UIHint](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.uihintattribute.uihint.aspx) 특성을 `ReleaseDate` 속성을 다음 예제와 같이:
+열기는 *Movie.cs* 파일을 추가 [UIHint](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.uihintattribute.uihint.aspx) 특성을 `ReleaseDate` 속성을 다음 예제와 같이:
 
 [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2/samples/sample8.cs)]
 
@@ -133,7 +133,7 @@ Ctrl+F5를 눌러 응용 프로그램을 실행합니다.
 
 으로 돌아와서는 `UIHint` 특성에 *Movie.cs* 파일을 주석으로 처리 하므로 *LoudDateTime.cshtml* 서식 파일 사용 되지 않습니다. 응용 프로그램을 다시 실행합니다. 릴리스 날짜 광범위 하 고 녹색 표시 되지 않습니다. 이 확인은 *Views\Shared\DisplayTemplates\DateTime.cshtml* 템플릿은 인덱스 및 세부 정보 보기에 사용 됩니다.
 
-앞서 언급 했 듯이 개별 인스턴스의 일부 데이터에 템플릿을 적용할 수 있는 보기에서 서식 파일을 적용할 수도 있습니다. 열기는 *Views\Movies\Details.cshtml* 보기. 추가 `"LoudDateTime"` 의 두 번째 매개 변수로 [Html.DisplayFor](https://msdn.microsoft.com/en-us/library/ee407420.aspx) 에 대 한 호출에서 `ReleaseDate` 필드입니다. 완성 된 코드는 다음과 같습니다.
+앞서 언급 했 듯이 개별 인스턴스의 일부 데이터에 템플릿을 적용할 수 있는 보기에서 서식 파일을 적용할 수도 있습니다. 열기는 *Views\Movies\Details.cshtml* 보기. 추가 `"LoudDateTime"` 의 두 번째 매개 변수로 [Html.DisplayFor](https://msdn.microsoft.com/library/ee407420.aspx) 에 대 한 호출에서 `ReleaseDate` 필드입니다. 완성 된 코드는 다음과 같습니다.
 
 [!code-cshtml[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2/samples/sample9.cshtml)]
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-the-production-web-application-to-use-the-production-database-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5b193fa3256e5886481c7b36d88aa09c1fa7017c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 60ef1f93efea777e9309ad8c664a2c6645f1ce80
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-the-production-web-application-to-use-the-production-database-vb"></a>프로덕션 데이터베이스 (VB)를 사용 하 여 프로덕션 웹 응용 프로그램 구성
 ====================
@@ -37,7 +37,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="examining-the-connection-string-information"></a>연결 문자열 정보를 검토합니다.
 
-책 검토 웹 응용 프로그램에서 사용 하는 연결 문자열은 응용 프로그램의 구성 파일에 저장 `Web.config`합니다. `Web.config`연결 문자열에 적절 하 게 저장 하기 위한 특별 한 섹션이 포함 되어 [ &lt;connectionStrings&gt;](https://msdn.microsoft.com/en-us/library/bf7sd233.aspx)합니다. `Web.config` 책 검토 웹 사이트에이 섹션에 정의 된 하나의 연결 문자열에 대 한 파일 `ReviewsConnectionString`:
+책 검토 웹 응용 프로그램에서 사용 하는 연결 문자열은 응용 프로그램의 구성 파일에 저장 `Web.config`합니다. `Web.config`연결 문자열에 적절 하 게 저장 하기 위한 특별 한 섹션이 포함 되어 [ &lt;connectionStrings&gt;](https://msdn.microsoft.com/library/bf7sd233.aspx)합니다. `Web.config` 책 검토 웹 사이트에이 섹션에 정의 된 하나의 연결 문자열에 대 한 파일 `ReviewsConnectionString`:
 
 [!code-xml[Main](configuring-the-production-web-application-to-use-the-production-database-vb/samples/sample1.xml)]
 
@@ -46,7 +46,7 @@ ms.lasthandoff: 11/10/2017
 - `Data Source`-(있는 경우) 데이터베이스 서버 및 데이터베이스 서버 인스턴스 이름의 위치를 지정 합니다. 값을 `.\SQLEXPRESS`, 한 예로 데이터베이스 서버 및 인스턴스 이름입니다. 기간 응용 프로그램;와 같은 컴퓨터에 데이터베이스 서버를 지정 합니다. 인스턴스 이름이 `SQLEXPRESS`합니다.
 - `AttachDbFilename`-데이터베이스 파일의 위치를 지정 합니다. 자리 표시자를 포함 하는 값 `|DataDirectory|`, 응용 프로그램 s의 전체 경로 됨 `App_Data` 런타임 시 폴더입니다.
 - `Integrated Security`-계정 자격 증명 (true) (false) 데이터베이스 또는 현재 Windows에 연결할 때 지정 된 사용자 이름/암호를 사용할지 여부를 나타내는 부울 값입니다.
-- `User Instance`-SQL Server Express Edition 비관리 사용자에 게 로컬 컴퓨터에 연결 하 고 SQL Server Express Edition 데이터베이스에 연결할 수 있도록 할지 여부를 나타내는 관련 구성 옵션입니다. 참조 [SQL Server Express 사용자 인스턴스](https://msdn.microsoft.com/en-us/library/ms254504.aspx) 이 설정에 대 한 자세한 내용은 합니다.
+- `User Instance`-SQL Server Express Edition 비관리 사용자에 게 로컬 컴퓨터에 연결 하 고 SQL Server Express Edition 데이터베이스에 연결할 수 있도록 할지 여부를 나타내는 관련 구성 옵션입니다. 참조 [SQL Server Express 사용자 인스턴스](https://msdn.microsoft.com/library/ms254504.aspx) 이 설정에 대 한 자세한 내용은 합니다.
   
 
 허용 가능한 연결 문자열 옵션에 연결 하는 데이터베이스에 종속 및 [ADO.NET](http://ADO.NET) 데이터베이스 공급자를 사용 하 고 있습니다. 예를 들어 Oracle 데이터베이스에 연결 하는 데 사용 되는 데이터베이스에서와 다른 Microsoft SQL Server에 연결 하기 위한 연결 문자열입니다. 마찬가지로, SqlClient 공급자를 사용 하 여 Microsoft SQL Server 데이터베이스에 연결 하는 OLE DB 공급자를 사용할 때 보다 다른 연결 문자열을 사용 합니다.
@@ -71,7 +71,7 @@ Visual Studio를 열고 서버 탐색기 창으로 이동 합니다 (Visual Web 
 
 이제 프로덕션 환경 데이터베이스 서버 탐색기에 나열 됩니다. 서버 탐색기에서 데이터베이스를 선택 하 고 속성 창으로 이동 합니다. 있습니다 라는 데이터베이스의 연결 문자열과 함께 연결 문자열 속성을 찾을 수 있습니다. 프로덕션 및 SqlClient 공급자는 Microsoft SQL Server 데이터베이스를 사용할 경우 연결 문자열이 다음과 비슷하게 표시 됩니다.
 
-**데이터 원본 =*serverName*; 초기 카탈로그 =*databaseName*; 보안 정보 유지 = True; 사용자 ID =*username*; 암호 =*암호***
+**데이터 원본 =*serverName*; 초기 카탈로그 =*databaseName*; 보안 정보 유지 = True; 사용자 ID =*username*; 암호 = * 암호***
 
 여기서 *serverName*, *databaseName*, *username*, 및 *암호* 데이터베이스 서버 이름, 데이터베이스에 대 한 값으로는 이름 및 사용자 이름 및 암호 웹 호스트 귀사에 게 제공 합니다.
 
@@ -147,10 +147,10 @@ DatabaseConnectionStrings.dev.config 파일의 복사본을 만들고 databaseCo
 
 이 자습서에 설명 된 항목에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
-- [연결 문자열 및 구성 파일](https://msdn.microsoft.com/en-us/library/ms254494.aspx)
+- [연결 문자열 및 구성 파일](https://msdn.microsoft.com/library/ms254494.aspx)
 - [데이터베이스 구성 정보 @ ConnectionStrings.com 문자열](http://www.connectionstrings.com/)
 - [Web.config 파일에서 설정 이동](http://www.asp101.com/tips/index.asp?id=154)
-- [에 대 한 기술 문서는 &lt;connectionStrings&gt; 요소](https://msdn.microsoft.com/en-us/library/bf7sd233.aspx)
+- [에 대 한 기술 문서는 &lt;connectionStrings&gt; 요소](https://msdn.microsoft.com/library/bf7sd233.aspx)
 
 >[!div class="step-by-step"]
 [이전](deploying-a-database-vb.md)

@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/mobile-clients/calling-web-api-from-a-windows-phone-8-application
 msc.type: authoredcontent
-ms.openlocfilehash: 1637af40613f1384bd4adec707a5b1a8a07c704b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6e5a936decb27fd2e3b8cdcea44db8db822c98eb
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="calling-web-api-from-a-windows-phone-8-application-c"></a>Windows Phone 8 응용 프로그램 (C#)에서 Web API를 호출합니다.
 ====================
@@ -37,7 +37,7 @@ ASP.NET Web API와 같은 rESTful 서비스 서버 쪽 및 클라이언트 쪽 �
 
 - Windows Phone 8 SDK가 설치 된 visual Studio 2013
 - Windows 8 또는 나중에 Hyper-v 설치와 함께 64 비트 시스템
-- 목록이 추가 요구 사항에 대 한 참조는 *시스템 요구 사항* 섹션에서 [Windows Phone SDK 8.0](https://www.microsoft.com/en-us/download/details.aspx?id=35471) 페이지를 다운로드 합니다.
+- 목록이 추가 요구 사항에 대 한 참조는 *시스템 요구 사항* 섹션에서 [Windows Phone SDK 8.0](https://www.microsoft.com/download/details.aspx?id=35471) 페이지를 다운로드 합니다.
 
 > [!NOTE]
 > Web API 및 로컬 시스템에서 Windows Phone 8 프로젝트 간의 연결을 테스트 하려는 경우의 지침에 따라 해야 합니다는  *[로컬 웹 API 응용 프로그램에 연결 하는 Windows Phone 8 에뮬레이터 컴퓨터](https://go.microsoft.com/fwlink/?LinkId=324014)*  테스트 환경의를 설정 하는 문서입니다.

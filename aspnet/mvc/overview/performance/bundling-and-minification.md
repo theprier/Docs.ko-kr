@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/performance/bundling-and-minification
 msc.type: authoredcontent
-ms.openlocfilehash: e83be2446ef1e3ff1275d06d5b743fb5b9444a6a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7192481de46c36f7de71164766e68afdbba74f6d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="bundling-and-minification"></a>묶음 및 축소
 ====================
@@ -27,7 +27,7 @@ ms.lasthandoff: 11/10/2017
 
 수를 제한 하는 대부분의 현재 주요 브라우저 [동시 연결](http://www.browserscope.org/?category=network) 당 6 개의 각 호스트 이름입니다. 즉, 처리 되는 6 개의 요청 하는 동안 호스트에는 자산에 대 한 추가 요청은 브라우저에서 대기 됩니다. 아래 그림에서는 IE F12 개발자 도구 네트워크 탭에서는 샘플 응용 프로그램의 정보 보기에 필요한 자산에 대 한 타이밍을 보여 줍니다.
 
-![M B /](bundling-and-minification/_static/image1.png)
+![B/M](bundling-and-minification/_static/image1.png)
 
 회색 막대는 6 개 연결 제한에서 대기 하는 브라우저에서 요청은 큐에 대기 시간을 표시 합니다. 노란색 막대는 첫 번째 바이트에는 요청 시간 즉, 요청을 보내고 서버에서 첫 번째 응답을 수신 하는 데 걸린 시간입니다. 파란색 막대는 서버에서 응답 데이터를 수신 하는 데 걸린 시간을 표시 합니다. 자세한 타이밍 정보를 얻으려면 자산에 대해 두 번 클릭 수 있습니다. 다음 이미지는 로드에 대 한 타이밍 정보를 표시 하는 예를 들어는 */Scripts/MyScripts/JavaScript6.js* 파일입니다.
 
@@ -55,19 +55,19 @@ ms.lasthandoff: 11/10/2017
 
 주석 및 불필요 한 공백을 제거 하는 것 외에도 다음 매개 변수 및 변수 이름은 열의 이름을 (축약 됨) 다음과 같습니다.
 
-| **원문 언어** | **이름이 변경** |
+| **Original** | **이름이 변경** |
 | --- | --- |
 | imageTagAndImageID | n |
-| 이미지 컨텍스트 | t |
+| imageContext | t |
 | imageElement | i |
 
 ## <a name="impact-of-bundling-and-minification"></a>번들의 영향 및 축소
 
 다음 표에서 모든 자산을 개별적으로 나열 하 고 샘플 프로그램에서 묶음 및 축소 (B/M)를 사용 하 여 간의 몇 가지 중요 한 차이점을 보여 줍니다.
 
-|  | **M B/를 사용 하 여** | **M B/없이** | **변경** |
+|  | **M B/를 사용 하 여** | **M B/없이** | **Change** |
 | --- | --- | --- | --- |
-| **파일 요청** | 9 | 34 | 256% |
+| **파일 요청** | 10 | 34 | 256% |
 | **보낸 KB** | 3.26 | 11.92 | 266% |
 | **받은 KB** | 388.51 | 530 | 36% |
 | **로드 시간** | 510 MS | 780 MS | 53% |
@@ -76,7 +76,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="debugging-bundled-and-minified-javascript"></a>번들로 제공 하 고 축소 JavaScript 디버깅
 
-개발 환경에서 JavaScript를 디버깅 하는 것이 쉽습니다 (여기서는 [compilation 요소](https://msdn.microsoft.com/en-us/library/s10awwz0.aspx) 에 *Web.config* 파일으로 설정 되어 `debug="true"` ) JavaScript 파일은 하지 번들로 묶여 있으므로 또는 축소 합니다. JavaScript 파일은 번들로 제공 하 고 축소 릴리스 빌드를 디버그할 수 있습니다. 다음 방법을 사용 하 여 축소 된 번들에 포함 된 JavaScript 함수를 디버깅 IE F12 개발자 도구를 사용 하 여:
+개발 환경에서 JavaScript를 디버깅 하는 것이 쉽습니다 (여기서는 [compilation 요소](https://msdn.microsoft.com/library/s10awwz0.aspx) 에 *Web.config* 파일으로 설정 되어 `debug="true"` ) JavaScript 파일은 하지 번들로 묶여 있으므로 또는 축소 합니다. JavaScript 파일은 번들로 제공 하 고 축소 릴리스 빌드를 디버그할 수 있습니다. 다음 방법을 사용 하 여 축소 된 번들에 포함 된 JavaScript 함수를 디버깅 IE F12 개발자 도구를 사용 하 여:
 
 1. 선택 된 **스크립트** 탭을 선택한 다음는 **디버깅을 시작** 단추입니다.
 2. 자산 단추를 사용 하 여 디버깅 하려면 JavaScript 함수를 포함 하는 번들을 선택 합니다.  
@@ -85,11 +85,11 @@ ms.lasthandoff: 11/10/2017
 4. 에 **검색 스크립트** t 입력된 상자에서 디버깅할 함수 이름을 선택 합니다. 다음 그림에 **AddAltToImg** 에 입력 된는 **검색 스크립트** t 입력된 상자.  
     ![](bundling-and-minification/_static/image6.png)
 
-F12 개발자 도구를 사용 하 여 디버깅에 대 한 자세한 내용은 MSDN 문서를 참조 하십시오. [JavaScript 오류 디버그를 F12 개발자 도구를 사용 하 여](https://msdn.microsoft.com/en-us/library/ie/gg699336(v=vs.85).aspx)합니다.
+F12 개발자 도구를 사용 하 여 디버깅에 대 한 자세한 내용은 MSDN 문서를 참조 하십시오. [JavaScript 오류 디버그를 F12 개발자 도구를 사용 하 여](https://msdn.microsoft.com/library/ie/gg699336(v=vs.85).aspx)합니다.
 
 ## <a name="controlling-bundling-and-minification"></a>제어 묶음 및 축소
 
-묶음 및 축소를 사용 하도록 설정 하거나에서 디버그 특성의 값을 설정 하 여 사용할 수는 [compilation 요소](https://msdn.microsoft.com/en-us/library/s10awwz0.aspx) 에 *Web.config* 파일입니다. 다음 xml에서 `debug` 가 있으므로 true로 설정 묶음 및 축소를 사용 하지 않도록 설정 합니다.
+묶음 및 축소를 사용 하도록 설정 하거나에서 디버그 특성의 값을 설정 하 여 사용할 수는 [compilation 요소](https://msdn.microsoft.com/library/s10awwz0.aspx) 에 *Web.config* 파일입니다. 다음 xml에서 `debug` 가 있으므로 true로 설정 묶음 및 축소를 사용 하지 않도록 설정 합니다.
 
 [!code-xml[Main](bundling-and-minification/samples/sample3.xml?highlight=2)]
 
@@ -98,7 +98,7 @@ F12 개발자 도구를 사용 하 여 디버깅에 대 한 자세한 내용은 
 [!code-csharp[Main](bundling-and-minification/samples/sample4.cs?highlight=7)]
 
 > [!NOTE]
-> 하지 않는 한 `EnableOptimizations` 은 `true` 또는 디버그 특성에는 [compilation 요소](https://msdn.microsoft.com/en-us/library/s10awwz0.aspx) 에 *Web.config* 파일으로 설정 되어 `false`, 파일을 번들로 제공 되거나 축소 되지 것입니다. 또한.min 버전의 파일 사용 되지 않습니다, 그리고 전체 디버그 버전을 선택 됩니다. `EnableOptimizations`디버그 특성이 재정의 [compilation 요소](https://msdn.microsoft.com/en-us/library/s10awwz0.aspx) 에 *Web.config* 파일
+> 하지 않는 한 `EnableOptimizations` 은 `true` 또는 디버그 특성에는 [compilation 요소](https://msdn.microsoft.com/library/s10awwz0.aspx) 에 *Web.config* 파일으로 설정 되어 `false`, 파일을 번들로 제공 되거나 축소 되지 것입니다. 또한.min 버전의 파일 사용 되지 않습니다, 그리고 전체 디버그 버전을 선택 됩니다. `EnableOptimizations`디버그 특성이 재정의 [compilation 요소](https://msdn.microsoft.com/library/s10awwz0.aspx) 에 *Web.config* 파일
 
 
 ## <a name="using-bundling-and-minification-with-aspnet-web-forms-and-web-pages"></a>번들을 사용 하 여 및 ASP.NET Web Forms 및 웹 페이지 축소
@@ -137,11 +137,11 @@ F12 개발자 도구를 사용 하 여 디버깅에 대 한 자세한 내용은 
 
 ## <a name="creating-a-bundle"></a>번들 만들기
 
-[번들](https://msdn.microsoft.com/en-us/library/system.web.optimization.bundle(v=VS.110).aspx) 클래스 `Include` 메서드 여기서 각 문자열은 리소스의 가상 경로 문자열의 배열을 사용 합니다. RegisterBundles 메서드에서 다음 코드는 *앱\_Start\BundleConfig.cs* 파일에 여러 개의 파일은 번들에 추가 표시:
+[번들](https://msdn.microsoft.com/library/system.web.optimization.bundle(v=VS.110).aspx) 클래스 `Include` 메서드 여기서 각 문자열은 리소스의 가상 경로 문자열의 배열을 사용 합니다. RegisterBundles 메서드에서 다음 코드는 *앱\_Start\BundleConfig.cs* 파일에 여러 개의 파일은 번들에 추가 표시:
 
 [!code-csharp[Main](bundling-and-minification/samples/sample8.cs)]
 
-[번들](https://msdn.microsoft.com/en-us/library/system.web.optimization.bundle(v=VS.110).aspx) 클래스 `IncludeDirectory` 메서드 검색 패턴과 일치 하는 디렉터리 (및 필요에 따라 모든 하위 디렉터리)의 모든 파일을 추가 하기 위해 제공 됩니다. [번들](https://msdn.microsoft.com/en-us/library/system.web.optimization.bundle(v=VS.110).aspx) 클래스 `IncludeDirectory` API는 다음과 같습니다.
+[번들](https://msdn.microsoft.com/library/system.web.optimization.bundle(v=VS.110).aspx) 클래스 `IncludeDirectory` 메서드 검색 패턴과 일치 하는 디렉터리 (및 필요에 따라 모든 하위 디렉터리)의 모든 파일을 추가 하기 위해 제공 됩니다. [번들](https://msdn.microsoft.com/library/system.web.optimization.bundle(v=VS.110).aspx) 클래스 `IncludeDirectory` API는 다음과 같습니다.
 
 [!code-csharp[Main](bundling-and-minification/samples/sample9.cs)]
 
@@ -170,17 +170,17 @@ Render 메서드 코드 한 줄에 여러 번들을 추가할 수 있도록 문�
 
 | **Call** | **추가 된 파일 또는 예외 발생** |
 | --- | --- |
-| 포함 ("~/Scripts/Common/\*.js") | *AddAltToImg.js, ToggleDiv.js, ToggleImg.js* |
-| 포함 ("~/Scripts/Common/T\*.js") | 잘못 된 패턴 예외입니다. 와일드 카드 문자는 접두사 또는 접미사에만 사용할 수 있습니다. |
-| 포함 ("~/Scripts/Common/\*og.\*") | 잘못 된 패턴 예외입니다. 하나의 와일드 카드 문자는 사용할 수 있습니다. |
-| "포함 (" ~/Scripts/Common/T\*") | *ToggleDiv.js, ToggleImg.js* |
-| "포함 (" ~/Scripts/Common/\*") | 잘못 된 패턴 예외입니다. 순수 와일드 카드 세그먼트가 잘못 되었습니다. |
-| IncludeDirectory ("~/Scripts/Common", "T\*") | *ToggleDiv.js, ToggleImg.js* |
-| IncludeDirectory ("~/Scripts/Common", "T\*", true) | *ToggleDiv.js, ToggleImg.js, ToggleLinks.js* |
+| Include("~/Scripts/Common/\*.js") | *AddAltToImg.js, ToggleDiv.js, ToggleImg.js* |
+| Include("~/Scripts/Common/T\*.js") | 잘못 된 패턴 예외입니다. 와일드 카드 문자는 접두사 또는 접미사에만 사용할 수 있습니다. |
+| Include("~/Scripts/Common/\*og.\*") | 잘못 된 패턴 예외입니다. 하나의 와일드 카드 문자는 사용할 수 있습니다. |
+| "Include("~/Scripts/Common/T\*") | *ToggleDiv.js, ToggleImg.js* |
+| "Include("~/Scripts/Common/\*") | 잘못 된 패턴 예외입니다. 순수 와일드 카드 세그먼트가 잘못 되었습니다. |
+| IncludeDirectory("~/Scripts/Common", "T\*") | *ToggleDiv.js, ToggleImg.js* |
+| IncludeDirectory("~/Scripts/Common", "T\*",true) | *ToggleDiv.js, ToggleImg.js, ToggleLinks.js* |
 
 각 파일 번들을 명시적으로 추가 하는 것이 일반적으로 좋습니다 통해 다음과 같은 이유로 파일의 와일드 카드 로드 합니다.
 
-- 일반적으로 결과 원하지는 알파벳 순서로 로드 하기 와일드 카드 기본적으로 스크립트에 추가 합니다. 자주 CSS 및 JavaScript 파일 (-알파벳 이외의)은 특정 순서에 추가 해야 합니다. 사용자 지정을 추가 하 여이 위험을 줄일 수 있습니다 [IBundleOrderer](https://msdn.microsoft.com/en-us/library/system.web.optimization.ibundleorderer(VS.110).aspx) 구현 하지만 각 파일은 오류 발생 가능성을 명시적으로 추가 합니다. 예를 들어 나중에 폴더를 수정 해야 할 수 있는 새 자산을 추가할 수 있습니다 프로그램 [IBundleOrderer](https://msdn.microsoft.com/en-us/library/system.web.optimization.ibundleorderer(VS.110).aspx) 구현 합니다.
+- 일반적으로 결과 원하지는 알파벳 순서로 로드 하기 와일드 카드 기본적으로 스크립트에 추가 합니다. 자주 CSS 및 JavaScript 파일 (-알파벳 이외의)은 특정 순서에 추가 해야 합니다. 사용자 지정을 추가 하 여이 위험을 줄일 수 있습니다 [IBundleOrderer](https://msdn.microsoft.com/library/system.web.optimization.ibundleorderer(VS.110).aspx) 구현 하지만 각 파일은 오류 발생 가능성을 명시적으로 추가 합니다. 예를 들어 나중에 폴더를 수정 해야 할 수 있는 새 자산을 추가할 수 있습니다 프로그램 [IBundleOrderer](https://msdn.microsoft.com/library/system.web.optimization.ibundleorderer(VS.110).aspx) 구현 합니다.
 - 특정 파일 보기를 로드 하는 와일드 카드를 사용 하 여 디렉터리에 추가 된 해당 번들 참조 하는 모든 보기에 포함할 수 있습니다. 번들에 특정 스크립트 보기를 추가 하는 경우 뷰를 다른 뷰에 번들을 참조 하는 JavaScript 오류가 발생할 수 있습니다.
 - CSS 파일에 다른 파일을 두 번 로드 하는 가져온 파일에서 발생 합니다. 예를 들어 다음 코드는 대부분 두 번 로드 jQuery UI 테마 CSS 파일의 번들을 만듭니다. 
 
@@ -209,10 +209,10 @@ IE9 F12 개발자 도구를 실행 하 고 이전에 로드 된 페이지를 탐
 1. 덜 콘텐츠에 대 한 폴더를 만듭니다. 다음 예제에서는 *Content\MyLess* 폴더입니다.
 2. 추가 [.less](http://www.dotlesscss.org/) NuGet 패키지 **점이 없는** 프로젝트에 있습니다.  
     ![NuGet 점이 없는 설치](bundling-and-minification/_static/image9.png)
-3. 구현 하는 클래스를 추가 [IBundleTransform](https://msdn.microsoft.com/en-us/library/system.web.optimization.ibundletransform(VS.110).aspx) 인터페이스입니다. .Less 변환에 대 한 프로젝트에 다음 코드를 추가 합니다.
+3. 구현 하는 클래스를 추가 [IBundleTransform](https://msdn.microsoft.com/library/system.web.optimization.ibundletransform(VS.110).aspx) 인터페이스입니다. .Less 변환에 대 한 프로젝트에 다음 코드를 추가 합니다.
 
     [!code-csharp[Main](bundling-and-minification/samples/sample13.cs)]
-4. 덜 사용 하 여 파일의 번들을 만든는 `LessTransform` 및 [CssMinify](https://msdn.microsoft.com/en-us/library/system.web.optimization.cssminify(VS.110).aspx) 변환 합니다. 다음 코드를 추가 하는 `RegisterBundles` 에서 메서드는 *앱\_Start\BundleConfig.cs* 파일입니다.
+4. 덜 사용 하 여 파일의 번들을 만든는 `LessTransform` 및 [CssMinify](https://msdn.microsoft.com/library/system.web.optimization.cssminify(VS.110).aspx) 변환 합니다. 다음 코드를 추가 하는 `RegisterBundles` 에서 메서드는 *앱\_Start\BundleConfig.cs* 파일입니다.
 
     [!code-csharp[Main](bundling-and-minification/samples/sample14.cs)]
 5. 덜 번들 참조 하는 모든 보기에 다음 코드를 추가 합니다.

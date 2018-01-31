@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 5fa7b6227eb88aa6766ab8776bc8a3cc1111b942
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 548baaaa06980fb793c079b66b6edc34422eb579
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="account-confirmation-and-password-recovery-with-aspnet-identity-c"></a>계정 확인 및 암호 복구 ASP.NET Identity (C#)
 ====================
@@ -78,7 +78,7 @@ ms.lasthandoff: 11/10/2017
 
 1. 새 ASP.NET 웹 프로젝트를 만들고 MVC 템플릿을 선택 합니다. Web Forms web forms 응용 프로그램에서 비슷한 단계를 반영할 수 있도록 ASP.NET Id를도 지원 합니다.
 2. 기본 인증을 두고 **개별 사용자 계정**합니다.
-3. 응용 프로그램 실행을 클릭는 **등록** 에 연결 하 고 사용자를 등록 합니다. 전자 메일에만 유효성 검사와는 시점에서 [[EmailAddress]](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.emailaddressattribute(v=vs.110).aspx) 특성입니다.
+3. 응용 프로그램 실행을 클릭는 **등록** 에 연결 하 고 사용자를 등록 합니다. 전자 메일에만 유효성 검사와는 시점에서 [[EmailAddress]](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.emailaddressattribute(v=vs.110).aspx) 특성입니다.
 4. 서버 탐색기에서로 이동 **데이터 Connections\DefaultConnection\Tables\AspNetUsers**를 마우스 오른쪽 단추로 클릭 하 고 **테이블 정의 열고**합니다.
 
     다음 그림에서는 `AspNetUsers` 스키마:
@@ -94,7 +94,7 @@ ASP.NET Id에 대 한 기본 데이터 저장소는 Entity Framework 하지만 �
 
 [OWIN 시작 클래스](../../../aspnet/overview/owin-and-katana/owin-startup-class-detection.md) ( *Startup.cs* ) 응용 프로그램 시작 및 호출 될 때 호출 되는 `ConfigureAuth` 에서 메서드 *앱\_Start\Startup.Auth.cs*, OWIN 파이프라인을 구성 하 고 ASP.NET Identity를 초기화 합니다. 검사는 `ConfigureAuth` 메서드. 각 `CreatePerOwinContext` 호출 콜백을 등록 (에 저장 된 `OwinContext`) 지정 된 형식의 인스턴스를 만드는 요청당 한 번 호출 될 합니다. 생성자에 중단점을 설정할 수 있습니다 및 `Create` 각 유형의 메서드 (`ApplicationDbContext, ApplicationUserManager`)은 각 요청에서 호출을 확인 합니다. 인스턴스 `ApplicationDbContext` 및 `ApplicationUserManager` 응용 프로그램을 통해 액세스할 수 있는 OWIN 컨텍스트로 저장 됩니다. 쿠키 미들웨어를 통해 OWIN 파이프라인에 연결 하는 ASP.NET Identity입니다. 자세한 내용은 참조 [ASP.NET Identity에서 UserManager 클래스에 대 한 요청 수명 관리 당](https://blogs.msdn.com/b/webdev/archive/2014/02/12/per-request-lifetime-management-for-usermanager-class-in-asp-net-identity.aspx)합니다.
 
-새 보안 스탬프를 생성 되 고에 저장 된 보안 프로필을 변경 하면는 `SecurityStamp` 필드는 *AspNetUsers* 테이블입니다. 단는 `SecurityStamp` 필드는 보안 쿠키와에서 다릅니다. 보안 쿠키에 저장 되지 않습니다는 `AspNetUsers` 테이블 (또는 Identity DB의 다른 곳). 사용 하 여 보안 쿠키 토큰 자체 서명 [DPAPI](https://msdn.microsoft.com/en-us/library/system.security.cryptography.protecteddata.aspx) 와 만들어집니다는 `UserId, SecurityStamp` 및 만료 시간 정보입니다.
+새 보안 스탬프를 생성 되 고에 저장 된 보안 프로필을 변경 하면는 `SecurityStamp` 필드는 *AspNetUsers* 테이블입니다. 단는 `SecurityStamp` 필드는 보안 쿠키와에서 다릅니다. 보안 쿠키에 저장 되지 않습니다는 `AspNetUsers` 테이블 (또는 Identity DB의 다른 곳). 사용 하 여 보안 쿠키 토큰 자체 서명 [DPAPI](https://msdn.microsoft.com/library/system.security.cryptography.protecteddata.aspx) 와 만들어집니다는 `UserId, SecurityStamp` 및 만료 시간 정보입니다.
 
 쿠키 미들웨어 각 요청에 대해 쿠키를 확인합니다. `SecurityStampValidator` 에서 메서드는 `Startup` 클래스 DB에 도달 하 고 보안 스탬프를 주기적으로 확인 된 지정 된 대로 `validateInterval`합니다. 이 보안 프로필을 변경 하지 않는 한 (샘플)에서 30 분 마다만 발생 합니다. 30 분 간격 데이터베이스에 대 한 왕복을 최소화 하기 위해 선택 되었습니다. 참조 내 [자습서 2 단계 인증](index.md) 내용을 확인 합니다.
 
@@ -117,7 +117,7 @@ Id 시스템 구성할 수 있도록 앱 하므로 사용자가 보안 프로필
 - 2 단계 인증 (2FA)입니다. 사항이 2FA 및 SMS 다른 자습서입니다.
 - 전자 메일 및 SMS 서비스를 연결 합니다. (하겠습니다 SMS 다른 자습서에).
 
-`ApplicationUserManager` 제네릭에서 클래스 파생 `UserManager<ApplicationUser>` 클래스입니다. `ApplicationUser`파생 [IdentityUser](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.identity.entityframework.identityuser.aspx)합니다. `IdentityUser`원본에서 파생 `IdentityUser` 클래스:
+`ApplicationUserManager` 제네릭에서 클래스 파생 `UserManager<ApplicationUser>` 클래스입니다. `ApplicationUser`파생 [IdentityUser](https://msdn.microsoft.com/library/microsoft.aspnet.identity.entityframework.identityuser.aspx)합니다. `IdentityUser`원본에서 파생 `IdentityUser` 클래스:
 
 [!code-csharp[Main](account-confirmation-and-password-recovery-with-aspnet-identity/samples/sample1.cs)]
 
@@ -131,7 +131,7 @@ Id 시스템 구성할 수 있도록 앱 하므로 사용자가 보안 프로필
 
 [!code-csharp[Main](account-confirmation-and-password-recovery-with-aspnet-identity/samples/sample2.cs?highlight=8-9)]
 
-위의 강조 표시 된 코드를 생성 한 [ClaimsIdentity](https://msdn.microsoft.com/en-us/library/system.security.claims.claimsidentity.aspx)합니다. ASP.NET Identity OWIN 쿠키 인증 되며 클레임 기반, 프레임 워크 하므로 응용 프로그램에서 생성 한 `ClaimsIdentity` 사용자에 대 한 합니다. `ClaimsIdentity`정보가 사용자의 이름과 같은 사용자에 대 한 모든 클레임에 대 한 기간 및 해당 사용자가 역할에 속해 있습니다. 또한이 단계에서 사용자에 대 한 더 많은 클레임을 추가할 수 있습니다.
+위의 강조 표시 된 코드를 생성 한 [ClaimsIdentity](https://msdn.microsoft.com/library/system.security.claims.claimsidentity.aspx)합니다. ASP.NET Identity OWIN 쿠키 인증 되며 클레임 기반, 프레임 워크 하므로 응용 프로그램에서 생성 한 `ClaimsIdentity` 사용자에 대 한 합니다. `ClaimsIdentity`정보가 사용자의 이름과 같은 사용자에 대 한 모든 클레임에 대 한 기간 및 해당 사용자가 역할에 속해 있습니다. 또한이 단계에서 사용자에 대 한 더 많은 클레임을 추가할 수 있습니다.
 
 OWIN `AuthenticationManager.SignIn` 메서드에 전달 된 `ClaimsIdentity` 사용자가 로그인:
 
@@ -179,13 +179,13 @@ OWIN `AuthenticationManager.SignIn` 메서드에 전달 된 `ClaimsIdentity` 사
 
 [!code-csharp[Main](account-confirmation-and-password-recovery-with-aspnet-identity/samples/sample6.cs)]
 
-위의 코드 모델 데이터를 사용 하 여 전자 메일 및 입력 한 암호를 사용 하 여 새 사용자 계정을 만듭니다. 전자 메일 별칭 데이터 저장소에 있으면 계정 만들기가 실패 하 고 양식을 다시 표시 됩니다. `GenerateEmailConfirmationTokenAsync` 메서드 보안 확인 토큰을 만드는 데 ASP.NET Identity 데이터 저장소에 저장 합니다. [Url.Action](https://msdn.microsoft.com/en-us/library/dd505232(v=vs.118).aspx) 메서드를 포함 하는 링크 만듭니다는 `UserId` 및 확인 토큰입니다. 이 링크는 사용자에 게 메일로 다음, 해당 계정을 확인 하는 전자 메일 앱의 링크에서 클릭할 수 있습니다.
+위의 코드 모델 데이터를 사용 하 여 전자 메일 및 입력 한 암호를 사용 하 여 새 사용자 계정을 만듭니다. 전자 메일 별칭 데이터 저장소에 있으면 계정 만들기가 실패 하 고 양식을 다시 표시 됩니다. `GenerateEmailConfirmationTokenAsync` 메서드 보안 확인 토큰을 만드는 데 ASP.NET Identity 데이터 저장소에 저장 합니다. [Url.Action](https://msdn.microsoft.com/library/dd505232(v=vs.118).aspx) 메서드를 포함 하는 링크 만듭니다는 `UserId` 및 확인 토큰입니다. 이 링크는 사용자에 게 메일로 다음, 해당 계정을 확인 하는 전자 메일 앱의 링크에서 클릭할 수 있습니다.
 
 <a id="email"></a>
 
 ## <a name="set-up-email-confirmation"></a>전자 메일 확인 설정
 
-이동 하는 [Azure SendGrid 등록 페이지](https://azure.microsoft.com/en-us/gallery/store/sendgrid/sendgrid-azure/) 무료 계정을 등록 하 고 있습니다. SendGrid를 구성 하려면 다음과 유사한 코드를 추가 합니다.
+이동 하는 [Azure SendGrid 등록 페이지](https://azure.microsoft.com/gallery/store/sendgrid/sendgrid-azure/) 무료 계정을 등록 하 고 있습니다. SendGrid를 구성 하려면 다음과 유사한 코드를 추가 합니다.
 
 [!code-csharp[Main](account-confirmation-and-password-recovery-with-aspnet-identity/samples/sample7.cs?highlight=5)]
 
@@ -193,7 +193,7 @@ OWIN `AuthenticationManager.SignIn` 메서드에 전달 된 `ClaimsIdentity` 사
 > 전자 메일 클라이언트에는 자주 텍스트 메시지 (HTML)만 허용 합니다. 메시지 텍스트와 HTML에 제공 해야 합니다. 위의 SendGrid 예제에서 이러한 용도로 `myMessage.Text` 및 `myMessage.Html` 위에 표시 된 코드입니다.
 
 
-다음 코드를 사용 하 여 전자 메일을 전송 하는 방법을 보여 줍니다는 [MailMessage](https://msdn.microsoft.com/en-us/library/system.net.mail.mailmessage.aspx) 클래스 `message.Body` 링크만 반환 합니다.
+다음 코드를 사용 하 여 전자 메일을 전송 하는 방법을 보여 줍니다는 [MailMessage](https://msdn.microsoft.com/library/system.net.mail.mailmessage.aspx) 클래스 `message.Body` 링크만 반환 합니다.
 
 [!code-csharp[Main](account-confirmation-and-password-recovery-with-aspnet-identity/samples/sample8.cs)]
 
@@ -238,8 +238,8 @@ SendGrid 자격 증명을 입력 앱을 실행 된 전자 메일 별칭 레지�
 
 ## <a name="additional-resources"></a>추가 리소스
 
-- [ASP.NET Id에 대 한 사용자 지정 저장소 공급자 개요](../extensibility/overview-of-custom-storage-providers-for-aspnet-identity.md)
+- [ASP.NET ID에 대한 사용자 지정 저장소 공급자 개요](../extensibility/overview-of-custom-storage-providers-for-aspnet-identity.md)
 - [Facebook, Twitter, LinkedIn 및 Google OAuth2 로그온 된 MVC 5 앱](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md) 사용자 테이블에 프로필 정보를 추가 하는 방법도 설명 합니다.
 - [ASP.NET MVC 및 Id 2.0: 기본 사항을 이해](http://typecastexception.com/post/2014/04/20/ASPNET-MVC-and-Identity-20-Understanding-the-Basics.aspx) John Atten 여 합니다.
-- [ASP.NET Id 소개](../getting-started/introduction-to-aspnet-identity.md)
+- [ASP.NET ID 소개](../getting-started/introduction-to-aspnet-identity.md)
 - [ASP.NET Identity 2.0.0의 RTM 발표](https://blogs.msdn.com/b/webdev/archive/2014/03/20/test-announcing-rtm-of-asp-net-identity-2-0-0.aspx) Pranav Rastogi 여 합니다.

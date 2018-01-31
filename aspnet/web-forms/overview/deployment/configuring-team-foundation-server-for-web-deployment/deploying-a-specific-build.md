@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/deploying-a-specific-build
 msc.type: authoredcontent
-ms.openlocfilehash: afac083c96c1396ad60275fcb55a0ec9c4c0bd44
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: be1000f0cbc2f509f5014789c2bc47ce2b12fb2f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-a-specific-build"></a>특정 빌드를 배포합니다.
 ====================
@@ -131,7 +131,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="further-reading"></a>추가 정보
 
-빌드 정의 만드는 방법에 대 한 자세한 내용은 참조 하십시오. [기본 빌드 정의 만들기](https://msdn.microsoft.com/en-us/library/ms181716.aspx) 및 [빌드 프로세스 정의](https://msdn.microsoft.com/en-us/library/ms181715.aspx)합니다. 빌드를 큐에 대 한 자세한 지침을 참조 하십시오. [빌드 큐에 대기](https://msdn.microsoft.com/en-us/library/ms181722.aspx)합니다.
+빌드 정의 만드는 방법에 대 한 자세한 내용은 참조 하십시오. [기본 빌드 정의 만들기](https://msdn.microsoft.com/library/ms181716.aspx) 및 [빌드 프로세스 정의](https://msdn.microsoft.com/library/ms181715.aspx)합니다. 빌드를 큐에 대 한 자세한 지침을 참조 하십시오. [빌드 큐에 대기](https://msdn.microsoft.com/library/ms181722.aspx)합니다.
 
 >[!div class="step-by-step"]
 [이전](creating-a-build-definition-that-supports-deployment.md)

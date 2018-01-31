@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/displaying-maps-in-an-aspnet-web-pages-site
 msc.type: authoredcontent
-ms.openlocfilehash: a802e4fed81fadca195c8aa83c37c7100ac5cbec
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6f3e6a0cfb8c08cd971e88986d0f059dd8237aab
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="displaying-maps-in-an-aspnet-web-pages-razor-site"></a>ASP.NET 웹 페이지 (Razor) 사이트에 지도 표시합니다.
 ====================
@@ -70,7 +70,7 @@ ms.lasthandoff: 11/10/2017
     에 대 한 키를 사용 하도록 지정할 수 있습니다 **평가/테스트**합니다. 이동 컴퓨터에 IIS Express 및 WebMatrix를 사용 하 여 매핑 함수를 테스트 하는 경우는 **사이트** 작업 영역을 참고 하면 사이트의 URL (예를 들어 `http://localhost:50408`, 포트 번호는 다르지만 것). 이 사용 하 여 *localhost* 등록할 때 사이트와 주소입니다.
 2. 을 계정에 등록 한 후 Bing Maps 계정 센터 이동 하 고 클릭 **만들기 또는 뷰 키**:
 
-    ![매핑-2](displaying-maps-in-an-aspnet-web-pages-site/_static/image1.png)
+    ![mapping-2](displaying-maps-in-an-aspnet-web-pages-site/_static/image1.png)
 3. Bing 만드는 키를 기록 합니다.
 
 ## <a name="creating-a-map-based-on-an-address-using-google"></a>주소 (사용 하 여 Google)에 따라 맵 만들기
@@ -91,7 +91,7 @@ ms.lasthandoff: 11/10/2017
     - 에 대 한 호출에서 `@Maps.GetGoogleHtml` 페이지의 본문에 있습니다. 주소를 매핑하려면 주소 문자열을 전달 해야 합니다. 비슷한 방법으로 다른 맵 엔진에 대 한 메서드는 작동 (`@Maps.GetYahooHtml`, `@Maps.GetMapQuestHtml`).
 - 페이지를 실행 하 고 주소를 입력 합니다. 사용자가 지정한 위치를 표시 하는 Google 맵에 따라 지도 페이지에 표시 됩니다.
 
-    ![매핑-1](displaying-maps-in-an-aspnet-web-pages-site/_static/image2.png)
+    ![mapping-1](displaying-maps-in-an-aspnet-web-pages-site/_static/image2.png)
 
 ## <a name="creating-a-map-based-on-latitude-and-longitude-coordinates-using-bing"></a>위도 및 경도에 따라 맵 만들기 좌표를 (Bing 사용)
 
@@ -104,14 +104,14 @@ ms.lasthandoff: 11/10/2017
 3. 실행 된 *MapCoordinates.cshtml* 페이지 위도 및 경도 좌표를 입력 한 다음 클릭는 **Map It!** 클릭합니다. (모든 좌표를 모르는 경우 다음을 시도 합니다. 이 Microsoft 레드먼드 본사에 있습니다.)
 
     - 위도: 47.6781005859375
-    - 경도:-122.158317565918
+    - Longitude: -122.158317565918
 
     지정한 좌표를 사용 하는 페이지가 표시 됩니다.
 
-    ![매핑-3](displaying-maps-in-an-aspnet-web-pages-site/_static/image3.png)
+    ![mapping-3](displaying-maps-in-an-aspnet-web-pages-site/_static/image3.png)
 
 <a id="Additional_Resources"></a>
 ## <a name="additional-resources"></a>추가 리소스
 
 
-[Microsoft.Maps API 참조](https://msdn.microsoft.com/en-us/library/gg427611.aspx)
+[Microsoft.Maps API 참조](https://msdn.microsoft.com/library/gg427611.aspx)

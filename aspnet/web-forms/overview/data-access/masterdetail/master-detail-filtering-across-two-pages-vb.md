@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-across-two-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c34476f89677fb51abc17bd64602c41dfea8f9c7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d8d43475ae2f05d83d51c53d76de4f07db70ca7a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="masterdetail-filtering-across-two-pages-vb"></a>마스터/세부 정보 (VB)의 두 페이지에 걸쳐 필터링
 ====================
@@ -71,7 +71,7 @@ ms.lasthandoff: 11/10/2017
 
 링크를 포함 해야 라는 제품 보기 각 GridView 행에는 클릭 하면 해당 사용자 `ProductsForSupplierDetails.aspx` 선택된 된 행에 전달 `SupplierID` querystring 통해 값입니다. 예를 들어, 도쿄 Traders 공급 업체에 대 한 제품 보기 링크를 클릭 (있으며 그는 `SupplierID` 값 4)에 전송 되 `ProductsForSupplierDetails.aspx?SupplierID=4`합니다.
 
-이를 위해 추가 [HyperLinkField](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.hyperlinkfield.aspx) 하이퍼링크 각 GridView 행에 추가 하는 GridView에 있습니다. GridView의 스마트 태그에서 열 편집 링크를 클릭 하 여 시작 합니다. 다음으로 HyperLinkField을 왼쪽 위에 있는 목록에서 선택한는 HyperLinkField GridView의 필드 목록에 포함할 추가 클릭 합니다.
+이를 위해 추가 [HyperLinkField](https://msdn.microsoft.com/library/system.web.ui.webcontrols.hyperlinkfield.aspx) 하이퍼링크 각 GridView 행에 추가 하는 GridView에 있습니다. GridView의 스마트 태그에서 열 편집 링크를 클릭 하 여 시작 합니다. 다음으로 HyperLinkField을 왼쪽 위에 있는 목록에서 선택한는 HyperLinkField GridView의 필드 목록에 포함할 추가 클릭 합니다.
 
 
 [![HyperLinkField GridView에 추가](master-detail-filtering-across-two-pages-vb/_static/image9.png)](master-detail-filtering-across-two-pages-vb/_static/image8.png)
@@ -212,7 +212,7 @@ Visual Studio FormView의을 자동으로 만들어집니다 FormView 디자인 
 
 마스터/세부 정보 보고서는 단일 페이지에 마스터 및 세부 정보 레코드를 표시할 수, 하는 동안 여러 웹 사이트에서 구분 됩니다 두 웹 페이지에 걸쳐 있습니다. 이 자습서에서는 "마스터" 웹 페이지에 GridView에 나열 된 공급자와 연결 된 제품을 "details" 페이지에 나열 하 여 마스터/세부 정보 보고서를 구현 하는 방법을 찾았습니다. 마스터 웹 페이지에 각 공급 업체 행의 행을 따라 전달 하는 세부 정보 페이지에 대 한 링크 포함 `SupplierID` 값입니다. GridView의 HyperLinkField를 사용 하 여 이러한 행에 지정 링크를 쉽게 추가할 수 있습니다.
 
-세부 정보 페이지에서 호출 하 여 수행 된 지정 된 공급자에 대 한 해당 제품을 검색 하는 `ProductsBLL` 클래스의 `GetProductsBySupplierID(supplierID)` 메서드.  *`supplierID`*  querystring 매개 변수 원본으로 사용 하 여 매개 변수 값이 지정 되었습니다. 또한 살펴보았습니다는 FormView를 사용 하 여 세부 정보 페이지에 공급자 세부 정보를 표시 하는 방법.
+세부 정보 페이지에서 호출 하 여 수행 된 지정 된 공급자에 대 한 해당 제품을 검색 하는 `ProductsBLL` 클래스의 `GetProductsBySupplierID(supplierID)` 메서드. *`supplierID`*  querystring 매개 변수 원본으로 사용 하 여 매개 변수 값이 지정 되었습니다. 또한 살펴보았습니다는 FormView를 사용 하 여 세부 정보 페이지에 공급자 세부 정보를 표시 하는 방법.
 
 우리의 [다음 자습서](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb.md) 마스터/세부 정보 보고서에 최종 라는 것입니다. 각 행에 선택 단추는 GridView에 제품의 목록을 표시 하는 방법을 살펴보겠습니다. Select 버튼을 클릭 하면 DetailsView 컨트롤 같은 페이지에 있는 해당 제품의 세부 정보가 표시 됩니다.
 

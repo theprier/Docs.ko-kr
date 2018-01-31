@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
 msc.type: authoredcontent
-ms.openlocfilehash: 470b8a5f4a004c85f603c9c5d0766e5826c96e38
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c98e79bf8e9a1fe0899ed6d952c3e411ca472f7e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>부록: 수정 프로그램 것 샘플 응용 프로그램 (Azure 사용 하 여 실제 클라우드 앱 빌드)
 ====================
@@ -62,10 +62,10 @@ ms.lasthandoff: 11/10/2017
 
 큐 메시지 수정 응용 프로그램에서 처리는 최소한의 코드를 사용 하 여 큐 중심 작업 패턴을 보여 주기 위해 간단한 되도록 설계 되었습니다. 이 간단한 코드는 실제 생산 응용 프로그램에 대 한 적절 한 수 없습니다.
 
-- 코드는 각 큐 메시지를 한 번만 처리할 수는 보장 하지 않습니다. 큐에서 메시지를 받아야 하는 경우에 다음과 같은 다른 큐 수신기에 표시 되지 않는 메시지는 특정 제한 시간 기간. 제한 시간 메시지를 삭제 하기 전에 만료 되 면 메시지가 다시 표시 됩니다. 따라서 작업자 역할 인스턴스 메시지를 처리 하는 오랜 시간이 소요, 경우 논리적으로 동일한 메시지를 두 번 처리 가능 데이터베이스에 중복 된 작업에서으로 인해 발생 합니다. 이 문제에 대 한 자세한 내용은 참조 [Azure 저장소 큐를 사용 하 여](https://msdn.microsoft.com/en-us/library/ff803365.aspx#sec7)합니다.
-- 메시지 검색 일괄 처리 하 여 큐 폴링 논리 더 비용 효율적일 수 있습니다. 호출할 때마다 [CloudQueue.GetMessageAsync](https://msdn.microsoft.com/en-us/library/microsoft.windowsazure.storage.queue.cloudqueue.getmessageasync.aspx), 트랜잭션 비용이 발생 합니다. 대신, 호출 수 [CloudQueue.GetMessagesAsync](https://msdn.microsoft.com/en-us/library/microsoft.windowsazure.storage.queue.cloudqueue.getmessagesasync.aspx) (복수로 참고 ')는 단일 트랜잭션 내에서 여러 메시지를 가져옵니다. Azure 저장소 큐에 대 한 트랜잭션 비용이 매우 낮은 되므로 비용에 미치는 영향에 대부분의 시나리오에서 크지 않습니다.
+- 코드는 각 큐 메시지를 한 번만 처리할 수는 보장 하지 않습니다. 큐에서 메시지를 받아야 하는 경우에 다음과 같은 다른 큐 수신기에 표시 되지 않는 메시지는 특정 제한 시간 기간. 제한 시간 메시지를 삭제 하기 전에 만료 되 면 메시지가 다시 표시 됩니다. 따라서 작업자 역할 인스턴스 메시지를 처리 하는 오랜 시간이 소요, 경우 논리적으로 동일한 메시지를 두 번 처리 가능 데이터베이스에 중복 된 작업에서으로 인해 발생 합니다. 이 문제에 대 한 자세한 내용은 참조 [Azure 저장소 큐를 사용 하 여](https://msdn.microsoft.com/library/ff803365.aspx#sec7)합니다.
+- 메시지 검색 일괄 처리 하 여 큐 폴링 논리 더 비용 효율적일 수 있습니다. 호출할 때마다 [CloudQueue.GetMessageAsync](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.queue.cloudqueue.getmessageasync.aspx), 트랜잭션 비용이 발생 합니다. 대신, 호출 수 [CloudQueue.GetMessagesAsync](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.queue.cloudqueue.getmessagesasync.aspx) (복수로 참고 ')는 단일 트랜잭션 내에서 여러 메시지를 가져옵니다. Azure 저장소 큐에 대 한 트랜잭션 비용이 매우 낮은 되므로 비용에 미치는 영향에 대부분의 시나리오에서 크지 않습니다.
 - 큐 메시지 처리 코드에서 루프 멀티 코어 Vm을 효율적으로 사용 하지 않는 CPU 선호도 사용 하면 합니다. 더 나은 디자인 병렬로 여러 비동기 작업을 실행 하려면 작업 병렬 처리를 사용 합니다.
-- 큐 메시지 처리만 기초적인 예외 처리를 있습니다. 코드 처리 되지 않습니다. 예를 들어 [포이즌 메시지](https://msdn.microsoft.com/en-us/library/ms789028.aspx)합니다. (메시지 처리 예외를 발생 시키는 경우 하 여 오류를 기록 하 고 메시지를 삭제 해야 또는 작업자 역할에서 다시 처리 하려고 및 루프가 무기한 계속 됩니다.)
+- 큐 메시지 처리만 기초적인 예외 처리를 있습니다. 코드 처리 되지 않습니다. 예를 들어 [포이즌 메시지](https://msdn.microsoft.com/library/ms789028.aspx)합니다. (메시지 처리 예외를 발생 시키는 경우 하 여 오류를 기록 하 고 메시지를 삭제 해야 또는 작업자 역할에서 다시 처리 하려고 및 루프가 무기한 계속 됩니다.)
 
 ### <a name="sql-queries-are-unbounded"></a>SQL 쿼리 바인딩되지 않습니다.
 
@@ -85,7 +85,7 @@ ms.lasthandoff: 11/10/2017
 
 ### <a name="special-handling-for-html-codes-in-user-input"></a>사용자 입력에 있는 HTML 코드에 대 한 특수 처리
 
-ASP.NET에는 자동으로 사용자 입력된 텍스트 상자에 스크립트를 입력 하 여 악의적인 사용자가 사이트 간 스크립팅 공격이 시도할 수 있습니다는 여러 가지 방법으로 방지 합니다. 와 MVC `DisplayFor` 작업을 표시 하는 데 사용 되는 도우미 제목의 브라우저로 전송 되는 HTML로 인코딩하고 값을 자동으로 인식 합니다. 하지만 추가 조치를 취해야 할 프로덕션 응용 프로그램. 자세한 내용은 참조 [ASP.NET에서 유효성 검사 요청](https://msdn.microsoft.com/en-us/library/hh882339.aspx)합니다.
+ASP.NET에는 자동으로 사용자 입력된 텍스트 상자에 스크립트를 입력 하 여 악의적인 사용자가 사이트 간 스크립팅 공격이 시도할 수 있습니다는 여러 가지 방법으로 방지 합니다. 와 MVC `DisplayFor` 작업을 표시 하는 데 사용 되는 도우미 제목의 브라우저로 전송 되는 HTML로 인코딩하고 값을 자동으로 인식 합니다. 하지만 추가 조치를 취해야 할 프로덕션 응용 프로그램. 자세한 내용은 참조 [ASP.NET에서 유효성 검사 요청](https://msdn.microsoft.com/library/hh882339.aspx)합니다.
 
 <a id="bestpractices"></a>
 ## <a name="best-practices"></a>최선의 구현 방법
@@ -146,13 +146,13 @@ AutoFac를 자동으로 삭제 하는 `FixItTaskRepository` 인스턴스를 명�
 
 ### <a name="mark-private-members-as-readonly-when-they-arent-expected-to-change"></a>변경 하려면 예상 하지 못한 경우 읽기 전용으로 전용 멤버 표시
 
-예를 들어는 `DashboardController` 클래스의 인스턴스 `FixItTaskRepository` 만들어지고로 정의한 하므로 변경 하려면 예상 되지 않습니다 [readonly](https://msdn.microsoft.com/en-us/library/acdd6hb7.aspx)합니다.
+예를 들어는 `DashboardController` 클래스의 인스턴스 `FixItTaskRepository` 만들어지고로 정의한 하므로 변경 하려면 예상 되지 않습니다 [readonly](https://msdn.microsoft.com/library/acdd6hb7.aspx)합니다.
 
 [!code-csharp[Main](the-fix-it-sample-application/samples/sample9.cs?highlight=3)]
 
-### <a name="use-listany-instead-of-listcount-gt-0"></a>목록을 사용 합니다. 목록 대신 any ()입니다. Count () &gt; 0
+### <a name="use-listany-instead-of-listcount-gt-0"></a>Use list.Any() instead of list.Count() &gt; 0
 
-모든 중요 한 하면 하나 이상의 항목 목록에 지정된 된 조건에 맞는지 사용 중인 경우는 [모든](https://msdn.microsoft.com/en-us/library/bb534972.aspx) 메서드를 반환 하기 때문에으로 기준에 맞는 항목을 찾을 수 있지만 `Count` 메서드는 항상 반복 하는 통해 모든 항목입니다. 대시보드 *Index.cshtml* 파일에는 원래이 코드에:
+모든 중요 한 하면 하나 이상의 항목 목록에 지정된 된 조건에 맞는지 사용 중인 경우는 [모든](https://msdn.microsoft.com/library/bb534972.aspx) 메서드를 반환 하기 때문에으로 기준에 맞는 항목을 찾을 수 있지만 `Count` 메서드는 항상 반복 하는 통해 모든 항목입니다. 대시보드 *Index.cshtml* 파일에는 원래이 코드에:
 
 [!code-cshtml[Main](the-fix-it-sample-application/samples/sample10.cshtml)]
 
@@ -166,13 +166,13 @@ AutoFac를 자동으로 삭제 하는 `FixItTaskRepository` 인스턴스를 명�
 
 [!code-cshtml[Main](the-fix-it-sample-application/samples/sample12.cshtml)]
 
-다음과 같은 보기/작업 링크는 것이 좋습니다 사용 하는 [Url.Action](https://msdn.microsoft.com/en-us/library/system.web.mvc.urlhelper.action.aspx) HTML 도우미, 예:
+다음과 같은 보기/작업 링크는 것이 좋습니다 사용 하는 [Url.Action](https://msdn.microsoft.com/library/system.web.mvc.urlhelper.action.aspx) HTML 도우미, 예:
 
 [!code-cshtml[Main](the-fix-it-sample-application/samples/sample13.cshtml)]
 
 ### <a name="use-taskdelay-instead-of-threadsleep-in-worker-role"></a>Thread.Sleep 대신 Task.Delay를 사용 하 여 작업자 역할에서
 
-새 프로젝트 템플릿은 배치 `Thread.Sleep` 스레드가 중지 배정만 작업자 역할에 대 한 코드 샘플에서 추가 불필요 한 스레드를 생성 하는 스레드 풀 발생할 수 있습니다. 사용 하 여 방지할 수 있습니다 [Task.Delay](https://msdn.microsoft.com/en-us/library/hh139096.aspx) 대신 합니다.
+새 프로젝트 템플릿은 배치 `Thread.Sleep` 스레드가 중지 배정만 작업자 역할에 대 한 코드 샘플에서 추가 불필요 한 스레드를 생성 하는 스레드 풀 발생할 수 있습니다. 사용 하 여 방지할 수 있습니다 [Task.Delay](https://msdn.microsoft.com/library/hh139096.aspx) 대신 합니다.
 
 [!code-csharp[Main](the-fix-it-sample-application/samples/sample14.cs?highlight=11)]
 
@@ -184,11 +184,11 @@ AutoFac를 자동으로 삭제 하는 `FixItTaskRepository` 인스턴스를 명�
 
 [!code-csharp[Main](the-fix-it-sample-application/samples/sample15.cs)]
 
-사용 해야 `async void` 최상위 이벤트 처리기에 대 한 합니다. 메서드를 정의 하는 경우 `async void`, 호출자에 게 없습니다 **await** 메서드는 메서드가 throw 하는 모든 예외를 catch 합니다. 자세한 내용은 참조 [비동기 프로그래밍에 대 한 모범 사례](https://msdn.microsoft.com/en-us/magazine/jj991977.aspx)합니다. 
+사용 해야 `async void` 최상위 이벤트 처리기에 대 한 합니다. 메서드를 정의 하는 경우 `async void`, 호출자에 게 없습니다 **await** 메서드는 메서드가 throw 하는 모든 예외를 catch 합니다. 자세한 내용은 참조 [비동기 프로그래밍에 대 한 모범 사례](https://msdn.microsoft.com/magazine/jj991977.aspx)합니다. 
 
 ### <a name="use-a-cancellation-token-to-break-from-worker-role-loop"></a>취소 토큰을 사용 하 여 작업자 역할 루프 분해
 
-일반적으로 **실행** 작업자 역할에서 메서드는 무한 루프를 포함 합니다. 작업자 역할을 중지 하는 경우는 [RoleEntryPoint.OnStop](https://msdn.microsoft.com/en-us/library/windowsazure/microsoft.windowsazure.serviceruntime.roleentrypoint.onstop.aspx) 메서드를 호출 합니다. 내부 수행 되는 작업을 취소 하는이 메서드를 사용 해야는 **실행** 메서드와 종료 적절 하 게 합니다. 그렇지 않으면 작업 중간에 프로세스가 종료 될 수 있습니다.
+일반적으로 **실행** 작업자 역할에서 메서드는 무한 루프를 포함 합니다. 작업자 역할을 중지 하는 경우는 [RoleEntryPoint.OnStop](https://msdn.microsoft.com/library/windowsazure/microsoft.windowsazure.serviceruntime.roleentrypoint.onstop.aspx) 메서드를 호출 합니다. 내부 수행 되는 작업을 취소 하는이 메서드를 사용 해야는 **실행** 메서드와 종료 적절 하 게 합니다. 그렇지 않으면 작업 중간에 프로세스가 종료 될 수 있습니다.
 
 ### <a name="opt-out-of-automatic-mime-sniffing-procedure"></a>MIME 스니핑 프로시저 자동 취소
 
@@ -219,7 +219,7 @@ Visual Studio에서 새 웹 프로젝트를 만들 때 묶음 및 축소 JavaScr
 <a id="runbase"></a>
 ### <a name="run-the-base-application"></a>기본 응용 프로그램 실행
 
-1. 설치 [Visual Studio 2013 또는 Visual Studio 2013 Express for Web](https://www.visualstudio.com/en-us/downloads)합니다.
+1. 설치 [Visual Studio 2013 또는 Visual Studio 2013 Express for Web](https://www.visualstudio.com/downloads)합니다.
 2. 설치는 [Azure SDK for.NET Visual Studio 2013 용입니다.](https://go.microsoft.com/fwlink/p/?linkid=323510&amp;clcid=0x409)
 3. .zip 파일을 다운로드는 [MSDN 코드 갤러리](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)합니다.
 4. 파일 탐색기에서.zip 파일을 마우스 오른쪽 단추로 클릭 하 고 속성을 클릭 한 다음 속성 창에서 차단 해제를 클릭 합니다.
@@ -228,7 +228,7 @@ Visual Studio에서 새 웹 프로젝트를 만들 때 묶음 및 축소 JavaScr
 7. 도구 메뉴에서 라이브러리 패키지 관리자 차례로 패키지 관리자 콘솔을 클릭 합니다.
 8. 패키지 관리자 콘솔 (PMC)에서 복원을 클릭 합니다.
 9. Visual Studio를 종료 합니다.
-10. 시작 된 [Azure 저장소 에뮬레이터](https://msdn.microsoft.com/en-us/library/windowsazure/hh403989.aspx)합니다.
+10. 시작 된 [Azure 저장소 에뮬레이터](https://msdn.microsoft.com/library/windowsazure/hh403989.aspx)합니다.
 11. 이전 단계에서 닫은 솔루션 파일을 열면 Visual Studio를 다시 시작 합니다.
 12. FixIt 프로젝트가 시작 프로젝트로 설정 되어 있는지 확인 하 고 CTRL + f 5를 눌러 프로젝트를 실행 합니다.
 
@@ -240,7 +240,7 @@ Visual Studio에서 새 웹 프로젝트를 만들 때 묶음 및 축소 JavaScr
 3. 응용 프로그램에서 *Web.config* 파일에 *MyFixIt* 프로젝트 (웹 프로젝트)의 값을 변경 하세요 `appSettings/UseQueues` "true"로: 
 
     [!code-console[Main](the-fix-it-sample-application/samples/sample19.cmd?highlight=3)]
-4. 경우는 [Azure 저장소 에뮬레이터](https://msdn.microsoft.com/en-us/library/windowsazure/hh403989.aspx) 여전히 실행 되지 않습니다. 다시 시작 합니다.
+4. 경우는 [Azure 저장소 에뮬레이터](https://msdn.microsoft.com/library/windowsazure/hh403989.aspx) 여전히 실행 되지 않습니다. 다시 시작 합니다.
 5. FixIt 웹 프로젝트와 MyFixItCloudService 프로젝트를 동시에 실행 합니다.
 
     Visual Studio 2013을 사용 합니다.
@@ -397,7 +397,7 @@ MyFixItCloudService\ServiceConfiguration.Cloud.cscfg, Azure 저장소 계정에 
 
 [!code-xml[Main](the-fix-it-sample-application/samples/sample34.xml?highlight=3)]
 
-이제 클라우드 서비스를 배포할 준비가 되었습니다. 솔루션 탐색기 MyFixItCloudService 프로젝트를 마우스 오른쪽 단추로 클릭 하 고 선택 **게시**합니다. 자세한 내용은 참조 하십시오. "[Azure에 응용 프로그램을 배포](https://www.windowsazure.com/en-us/develop/net/tutorials/multi-tier-web-site/2-download-and-run/#deployAz)", 2 부에 [이 자습서](https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36)합니다.
+이제 클라우드 서비스를 배포할 준비가 되었습니다. 솔루션 탐색기 MyFixItCloudService 프로젝트를 마우스 오른쪽 단추로 클릭 하 고 선택 **게시**합니다. 자세한 내용은 참조 하십시오. "[Azure에 응용 프로그램을 배포](https://www.windowsazure.com/develop/net/tutorials/multi-tier-web-site/2-download-and-run/#deployAz)", 2 부에 [이 자습서](https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36)합니다.
 
 >[!div class="step-by-step"]
 [이전](more-patterns-and-guidance.md)

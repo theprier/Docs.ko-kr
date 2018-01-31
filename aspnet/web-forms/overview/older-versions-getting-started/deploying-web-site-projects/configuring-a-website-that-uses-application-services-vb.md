@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-a-website-that-uses-application-services-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7fb212638765589b998c4eca8265dfeb2910082f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5f908eb6c6b2d18c6c41870a38bb618737949b0a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-a-website-that-uses-application-services-vb"></a>응용 프로그램 서비스 (VB)를 사용 하는 웹 사이트를 구성 합니다.
 ====================
@@ -35,7 +35,7 @@ ASP.NET 버전 2.0에는 일련의 도입 *응용 프로그램 서비스*,.NET F
 - **역할** -사용자가 그룹으로 분류 하기 위한 API입니다.
 - **프로필** -사용자 지정, 사용자 고유의 콘텐츠를 저장 하기 위한 API입니다.
 - **사이트 맵** -예: 메뉴 및 이동 경로 탐색 컨트롤을 통해 표시 될 수 있는 계층의 형태로 사이트 s 논리 구조를 정의 하기 위한 API입니다.
-- **개인 설정** -가장 흔히 사용 되는 사용자 지정 기본 설정을 유지 관리 하기 위한 API [ *WebParts*](https://msdn.microsoft.com/en-us/library/e0s9t4ck.aspx)합니다.
+- **개인 설정** -가장 흔히 사용 되는 사용자 지정 기본 설정을 유지 관리 하기 위한 API [ *WebParts*](https://msdn.microsoft.com/library/e0s9t4ck.aspx)합니다.
 - **상태 모니터링** -성능, 보안, 오류 및 기타 시스템 상태 메트릭을 실행 중인 웹 응용 프로그램에 대 한 모니터링을 위한 API입니다.
   
 
@@ -71,7 +71,7 @@ SQL Server 데이터베이스와 응용 프로그램 서비스를 사용 하려�
 
 가능 하면 및를 만들려면 일반적으로 이상적인 응용 프로그램 서비스 웹 사이트의 응용 프로그램별 데이터가 저장 되는 동일한 데이터베이스에 데이터베이스 개체. 라는 도구와 함께 제공 되는.NET Framework `aspnet_regsql.exe` 지정된 된 데이터베이스에 데이터베이스 개체를 설치 하는 합니다. 미리 gone를 있으며 이러한 개체를 추가 하려면이 도구를 사용 하 여 `Reviews.mdf` 여기에 데이터베이스는 `App_Data` 폴더 (개발 데이터베이스). 이러한 개체는 프로덕션 데이터베이스를 추가 하는 경우이 자습서의 뒷부분에서이 도구를 사용 하는 방법을 살펴보겠습니다.
 
-응용 프로그램 데이터베이스에 데이터베이스 개체를 이외의 다른 서비스를 추가 하는 경우 `ASPNETDB` 사용자 지정 해야 합니다는 `SqlMembershipProvider` 및 `SqlRoleProvider` 공급자 클래스 구성을 적절 한 데이터베이스를 사용할 수 있도록 합니다. 사용자 지정 하려면 멤버 자격 공급자 추가 [  *&lt;구성원&gt; 요소* ](https://msdn.microsoft.com/en-us/library/1b9hw62f.aspx) 내에서 `<system.web>` 섹션 `Web.config`; 사용 하 여는 [  *&lt;roleManager&gt; 요소* ](https://msdn.microsoft.com/en-us/library/ms164660.aspx) 역할 공급자를 구성할 수 있습니다. 다음 코드 조각은 책 검토 응용 프로그램 s에서 가져온 것 `Web.config` 멤버 자격 및 역할 Api에 대 한 구성 설정을 보여 줍니다. 참고-새 공급자를 등록 모두 `ReviewMembership` 및 `ReviewRole` -사용 하는 `SqlMembershipProvider` 및 `SqlRoleProvider` 공급자, 각각.
+응용 프로그램 데이터베이스에 데이터베이스 개체를 이외의 다른 서비스를 추가 하는 경우 `ASPNETDB` 사용자 지정 해야 합니다는 `SqlMembershipProvider` 및 `SqlRoleProvider` 공급자 클래스 구성을 적절 한 데이터베이스를 사용할 수 있도록 합니다. 사용자 지정 하려면 멤버 자격 공급자 추가 [  *&lt;구성원&gt; 요소* ](https://msdn.microsoft.com/library/1b9hw62f.aspx) 내에서 `<system.web>` 섹션 `Web.config`; 사용 하 여는 [  *&lt;roleManager&gt; 요소* ](https://msdn.microsoft.com/library/ms164660.aspx) 역할 공급자를 구성할 수 있습니다. 다음 코드 조각은 책 검토 응용 프로그램 s에서 가져온 것 `Web.config` 멤버 자격 및 역할 Api에 대 한 구성 설정을 보여 줍니다. 참고-새 공급자를 등록 모두 `ReviewMembership` 및 `ReviewRole` -사용 하는 `SqlMembershipProvider` 및 `SqlRoleProvider` 공급자, 각각.
 
 [!code-xml[Main](configuring-a-website-that-uses-application-services-vb/samples/sample1.xml)]
 
@@ -94,7 +94,7 @@ ASP.NET의 URL 권한 부여 기능 및 사용자와 역할에 대 한 권한 �
 
 또 다른 문제는 프로덕션 환경으로 개발 환경에서 만든 사용자 계정을 복제 하려는 경우 응용 프로그램 서비스를 사용 하는 웹 사이트를 배포할 때 발생할 수 있습니다. 멤버 자격 및 역할 구성에 따라 있기 프로덕션 데이터베이스를 개발 환경에서 생성 된 사용자 계정, 성공적으로 복사 하는 경우에 프로덕션 환경에서 웹 응용 프로그램에 이러한 사용자가 로그인 수 없습니다. 이 문제의 원인을 살펴봅니다 알아보고를 방지 하는 방법에 설명 하겠습니다.
 
-좋은와 함께 제공 ASP.NET [ *웹 사이트 관리 도구 (WSAT)* ](https://msdn.microsoft.com/en-us/library/yy40ytx0.aspx) Visual Studio에서 시작할 수 있는 및 사용자 계정, 역할 및 권한 부여 규칙을 통해 웹 기반 관리 하도록 허용 인터페이스입니다. 안타깝게도,는 WSAT 에서만 작동 로컬 웹 사이트에 대 한 사용자 계정, 역할 및 프로덕션 환경에서 웹 응용 프로그램에 대 한 권한 부여 규칙을 원격으로 관리 하는 데 사용할 수 없습니다. 프로덕션 웹 사이트에서 WSAT 비슷한 동작을 구현 하 여 여러 가지 방법을 살펴보겠습니다.
+좋은와 함께 제공 ASP.NET [ *웹 사이트 관리 도구 (WSAT)* ](https://msdn.microsoft.com/library/yy40ytx0.aspx) Visual Studio에서 시작할 수 있는 및 사용자 계정, 역할 및 권한 부여 규칙을 통해 웹 기반 관리 하도록 허용 인터페이스입니다. 안타깝게도,는 WSAT 에서만 작동 로컬 웹 사이트에 대 한 사용자 계정, 역할 및 프로덕션 환경에서 웹 응용 프로그램에 대 한 권한 부여 규칙을 원격으로 관리 하는 데 사용할 수 없습니다. 프로덕션 웹 사이트에서 WSAT 비슷한 동작을 구현 하 여 여러 가지 방법을 살펴보겠습니다.
 
 ### <a name="adding-the-database-objects-using-aspnetregsqlexe"></a>데이터베이스 개체를 사용 하 여 aspnet 추가\_regsql.exe
 
@@ -192,13 +192,13 @@ WSAT 체크 아웃의 모든 기능이 필요한 경우 [ *롤링 Your 직접 �
 
 이 자습서에 설명 된 항목에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
-- [*ASP.NET SQL Server 등록 도구 (aspnet_regsql.exe)*](https://msdn.microsoft.com/en-us/library/ms229862.aspx)
-- [*SQL Server에 대 한 응용 프로그램 서비스 데이터베이스 만들기*](https://msdn.microsoft.com/en-us/library/x28wfk74.aspx)
+- [*ASP.NET SQL Server 등록 도구 (aspnet_regsql.exe)*](https://msdn.microsoft.com/library/ms229862.aspx)
+- [*SQL Server에 대 한 응용 프로그램 서비스 데이터베이스 만들기*](https://msdn.microsoft.com/library/x28wfk74.aspx)
 - [*SQL Server에서 멤버 자격 스키마 만들기*](../../older-versions-security/membership/creating-the-membership-schema-in-sql-server-vb.md)
 - [*검사 하는 중 ASP.NET s 멤버 자격, 역할 및 프로필*](http://aspnet.4guysfromrolla.com/articles/120705-1.aspx)
 - [*자신의 웹 사이트 관리 도구를 롤링합니다.*](http://aspnet.4guysfromrolla.com/articles/052307-1.aspx)
 - [*웹 사이트 보안 자습서*](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)
-- [*웹 사이트 관리 도구 개요*](https://msdn.microsoft.com/en-us/library/yy40ytx0.aspx)
+- [*웹 사이트 관리 도구 개요*](https://msdn.microsoft.com/library/yy40ytx0.aspx)
 
 >[!div class="step-by-step"]
 [이전](configuring-the-production-web-application-to-use-the-production-database-vb.md)

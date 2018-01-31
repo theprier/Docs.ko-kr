@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/testing-and-debugging/unit-testing-controllers-in-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 167cd24d27977c3652f6a8903054654f5edf7756
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: bda5148a4c1553d70f3173de66371fbb8576e83f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="unit-testing-controllers-in-aspnet-web-api-2"></a>에서 단위 테스트 컨트롤러 ASP.NET Web API 2
 ====================
@@ -68,7 +68,7 @@ Web API 컨트롤러에 단위 테스트를 해야 하는 일부의 원인 다�
 
 [!code-csharp[Main](unit-testing-controllers-in-web-api/samples/sample3.cs)]
 
-**UrlHelper** 클래스 이므로이 대 한 값을 설정 하는 테스트 요청 URL 및 경로 데이터를 필요 합니다. 또 다른 옵션은 모의 또는 스텁 **UrlHelper**합니다. 기본값을 바꾸는이 접근 방식 [ApiController.Url](https://msdn.microsoft.com/en-us/library/system.web.http.apicontroller.url.aspx) 모의 또는 스텁 버전은 고정된 값을 반환 합니다.
+**UrlHelper** 클래스 이므로이 대 한 값을 설정 하는 테스트 요청 URL 및 경로 데이터를 필요 합니다. 또 다른 옵션은 모의 또는 스텁 **UrlHelper**합니다. 기본값을 바꾸는이 접근 방식 [ApiController.Url](https://msdn.microsoft.com/library/system.web.http.apicontroller.url.aspx) 모의 또는 스텁 버전은 고정된 값을 반환 합니다.
 
 사용 하 여 테스트를 다시 작성해 보겠습니다는 [Moq](https://github.com/Moq) 프레임 워크입니다. 설치는 `Moq` 테스트 프로젝트에서 NuGet 패키지 합니다.
 

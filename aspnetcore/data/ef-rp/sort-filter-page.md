@@ -2,18 +2,17 @@
 title: "EF 코어-정렬, 필터, 페이징-8 3 razor 페이지"
 author: rick-anderson
 description: "이 자습서에서는 정렬, 필터링 및 페이징을 ASP.NET 코어 및 Entity Framework 코어를 사용 하 여 페이지 기능을 추가 합니다."
-keywords: "ASP.NET Core, Entity Framework Core, 정렬, 필터, 페이징, 그룹화"
 ms.author: riande
 ms.date: 10/22/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: 5e17663b88a622101245228e9372db55e4e874be
-ms.sourcegitcommit: 703593d5fd14076e79be2ba75a5b8da12a60ab15
+ms.openlocfilehash: 9c1ee6f8c00f3cd501ea86fbf73f51ae540a010a
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="sorting-filtering-paging-and-grouping---ef-core-with-razor-pages-3-of-8"></a>정렬, 필터링, 페이징 및 그룹화-EF 코어 Razor 페이지 (3 / 8)
 
@@ -72,7 +71,7 @@ ms.lasthandoff: 12/05/2017
 
 [!code-csharp[Main](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortOnly&highlight=6-)]
 
- 경우는`IQueryable` 를 만들거나 수정 하 고, 데이터베이스에 쿼리가 전송 됩니다. 쿼리 될 때까지 실행 되지 않습니다는 `IQueryable` 개체 컬렉션으로 변환 됩니다. `IQueryable`와 같은 메서드를 호출 하 여 컬렉션으로 변환 됩니다 `ToListAsync`합니다. 따라서는 `IQueryable` 되어야 다음 문을 실행 하는 단일 쿼리 결과 코드:
+ 경우는`IQueryable` 를 만들거나 수정 하 고, 데이터베이스에 쿼리가 전송 됩니다. 쿼리 될 때까지 실행 하지 않으면는 `IQueryable` 개체 컬렉션으로 변환 됩니다. `IQueryable`와 같은 메서드를 호출 하 여 컬렉션으로 변환 됩니다 `ToListAsync`합니다. 따라서는 `IQueryable` 되어야 다음 문을 실행 하는 단일 쿼리 결과 코드:
 
 [!code-csharp[Main](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortOnlyRtn)]
 
@@ -108,7 +107,7 @@ ms.lasthandoff: 12/05/2017
 필터링을 추가 하려면 학생 인덱스 페이지에:
 
 * 텍스트 상자 및 전송 단추가 Razor 페이지에 추가 됩니다. 텍스트 상자에서 첫 번째 또는 마지막 이름에 검색 문자열을 제공합니다.
-* 코드 숨김 파일은 텍스트 상자 값을 사용 하도록 업데이트 됩니다.
+* 페이지 모델이 텍스트 상자 값을 사용 하도록 업데이트 됩니다.
 
 ### <a name="add-filtering-functionality-to-the-index-method"></a>Index 메서드에 필터링 기능 추가
 
@@ -140,9 +139,9 @@ ms.lasthandoff: 12/05/2017
 
 [!code-html[](intro/samples/cu/Pages/Students/Index3.cshtml?highlight=14-23&range=1-25)]
 
-앞의 코드를 사용 하 여는 `<form>` [태그 도우미](xref:mvc/views/tag-helpers/intro) 검색 텍스트 상자 및 단추를 추가 합니다. 기본적으로는 `<form>` 태그 도우미는 POST로 양식 데이터를 전송 합니다. Post, 매개 변수는 URL 및 HTTP 메시지 본문에 전달 됩니다. HTTP GET을 사용 하는 양식 데이터 URL에 쿼리 문자열로 전달 됩니다. URL에 책갈피를 사용 하면 쿼리 문자열을 사용 하 여 데이터를 전달 합니다. [W3C 지침](https://www.w3.org/2001/tag/doc/whenToUseGet.html) 작업이 업데이트 되지 않습니다 경우 GET를 사용 해야 하는 것이 좋습니다.
+앞의 코드를 사용 하 여는 `<form>` [태그 도우미](xref:mvc/views/tag-helpers/intro) 검색 텍스트 상자 및 단추를 추가 합니다. 기본적으로는 `<form>` 태그 도우미는 POST로 양식 데이터를 전송 합니다. Post, 매개 변수는 URL 및 HTTP 메시지 본문에 전달 됩니다. HTTP GET을 사용 하는 양식 데이터 URL에 쿼리 문자열로 전달 됩니다. URL에 책갈피를 사용 하면 쿼리 문자열을 사용 하 여 데이터를 전달 합니다. [W3C 지침](https://www.w3.org/2001/tag/doc/whenToUseGet.html) 동작 하지 않는 업데이트 될 경우 GET에 사용 해야 하는 것이 좋습니다.
 
-앱을 테스트 합니다.
+앱을 테스트합니다.
 
 * 선택 된 **학생** 탭 하 고 검색 문자열을 입력 합니다.
 * 선택 **검색**합니다.
@@ -202,7 +201,7 @@ http://localhost:5000/Students?SearchString=an
 검색 문자열 페이징 하는 동안 변경 되 면 페이지 1로 다시 설정 됩니다. 페이지에서 표시할 다른 데이터를 새 필터 발생할 수 있기 때문에 1로 다시 사용 해야 합니다. 검색 값을 입력 하는 경우 및 **전송** 을 선택 합니다.
 
 * 검색 문자열이 변경 됩니다.
-* `searchString` 매개 변수는 null입니다.
+* `searchString` null이 아닌 매개 변수입니다.
 
 [!code-csharp[Main](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage3)]
 
@@ -246,7 +245,7 @@ http://localhost:5000/Students?SearchString=an
 이 단계에서는 *Pages/About.cshtml* 각 등록 날짜에 대해 등록 한 학생 수를 표시 하도록 업데이트 됩니다. 업데이트는 그룹화를 사용 하며 다음 단계로 구성 됩니다.
 
 * 사용 되는 데이터에 대 한 보기 모델 클래스 만들기는 **에 대 한** 페이지.
-* Razor 페이지에 대 한 및 코드 숨김 파일을 수정 합니다.
+* 에 대 한 Razor 페이지와 페이지 모델을 수정 합니다.
 
 ### <a name="create-the-view-model"></a>뷰 모델 만들기
 
@@ -256,7 +255,7 @@ http://localhost:5000/Students?SearchString=an
 
 [!code-csharp[Main](intro/samples/cu/Models/SchoolViewModels/EnrollmentDateGroup.cs)]
 
-### <a name="update-the-about-code-behind-page"></a>업데이트 정보 코드 숨김 페이지
+### <a name="update-the-about-page-model"></a>정보 페이지 모델 업데이트
 
 업데이트는 *Pages/About.cshtml.cs* 를 다음 코드로 파일:
 

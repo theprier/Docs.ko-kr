@@ -12,28 +12,28 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/aspnet-mvc-4-mobile-features
 msc.type: authoredcontent
-ms.openlocfilehash: e660595d66d81069fa47b77387509e73b1ec834e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d47d8f61dc7af6e1dc5887338be862ea81d7bb17
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4-mobile-features"></a>ASP.NET MVC 4 모바일 기능
 ====================
 으로 [Rick Anderson](https://github.com/Rick-Anderson)
 
-> 이제이 자습서에서 샘플 코드의 MVC 5 버전 [ASP.NET MVC 5 모바일 웹 응용 프로그램 배포 Azure 웹 사이트에](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/)합니다.
+> 이제이 자습서에서 샘플 코드의 MVC 5 버전 [ASP.NET MVC 5 모바일 웹 응용 프로그램 배포 Azure 웹 사이트에](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/)합니다.
 
 
-이 자습서에서는 모바일 ASP.NET MVC 4 웹 응용 프로그램 기능을 사용 하는 방법의 기본 사항 설명 합니다. 이 자습서에서는 사용할 수 있습니다 [Visual Studio Express 2012](https://www.microsoft.com/visualstudio/11/en-us/products/express) 또는 Visual Web Developer 2010 Express 서비스 팩 1 (&quot;Visual Web Developer 또는 VWD&quot;). 이미 있는 경우 Visual studio professional 버전을 사용할 수 있습니다.
+이 자습서에서는 모바일 ASP.NET MVC 4 웹 응용 프로그램 기능을 사용 하는 방법의 기본 사항 설명 합니다. 이 자습서에서는 사용할 수 있습니다 [Visual Studio Express 2012](https://www.microsoft.com/visualstudio/11/products/express) 또는 Visual Web Developer 2010 Express 서비스 팩 1 (&quot;Visual Web Developer 또는 VWD&quot;). 이미 있는 경우 Visual studio professional 버전을 사용할 수 있습니다.
 
 시작 하기 전에 아래에 나열 된 필수 구성 요소가 설치 되어 있는지 확인 합니다.
 
-- [Visual Studio Express 2012](https://www.microsoft.com/visualstudio/11/en-us/products/express) (권장) 또는 Visual Studio Web Developer Express SP1. Visual Studio 2012에 ASP.NET MVC 4 포함 되어 있습니다. Visual Web Developer 2010를 사용 하는 경우 설치 해야 [ASP.NET MVC 4](https://go.microsoft.com/fwlink/?LinkId=243392)합니다.
+- [Visual Studio Express 2012](https://www.microsoft.com/visualstudio/11/products/express) (권장) 또는 Visual Studio Web Developer Express SP1. Visual Studio 2012에 ASP.NET MVC 4 포함 되어 있습니다. Visual Web Developer 2010를 사용 하는 경우 설치 해야 [ASP.NET MVC 4](https://go.microsoft.com/fwlink/?LinkId=243392)합니다.
 
 모바일 브라우저 에뮬레이터에서 앱을 해야 합니다. 다음 중 하나를 작동 합니다.
 
-- [Windows 7 Phone 에뮬레이터](https://msdn.microsoft.com/en-us/library/ff402563(VS.92).aspx)합니다. (이 자습서에서는 대부분의 스크린 샷에 사용 되는 에뮬레이터입니다.)
+- [Windows 7 Phone 에뮬레이터](https://msdn.microsoft.com/library/ff402563(VS.92).aspx)합니다. (이 자습서에서는 대부분의 스크린 샷에 사용 되는 에뮬레이터입니다.)
 - IPhone을 에뮬레이션 하기 위해 사용자 에이전트 문자열을 변경 합니다. 참조 [이](http://www.howtogeek.com/113439/how-to-change-your-browsers-user-agent-without-installing-any-extensions/) 블로그 항목입니다.
 - [Opera Mobile Emulator](http://www.opera.com/developer/tools/mobile/)
 - [Apple Safari](http://www.apple.com/safari/download/) iPhone로 설정 하 고 사용자 에이전트와 합니다. Safari에서 "iPhone"로 사용자 에이전트를 설정 하는 방법에 지침은 [Safari 있다고 생각 IE 되 게 하는 방법](http://www.davidalison.com/2008/05/how-to-let-safari-pretend-its-ie.html) David Alison 블로그.
@@ -45,7 +45,7 @@ C# 소스 코드를 visual Studio 프로젝트는이 항목을 함께 사용할 
 
 ### <a name="what-youll-build"></a>만들 것인지
 
-이 자습서에서는 모바일 기능에 추가할 간단한 회의 목록 응용 프로그램에 제공 되는 [시작 프로젝트](https://go.microsoft.com/fwlink/?LinkId=228307)합니다. 다음 스크린 샷에서 같이 완성된 된 응용 프로그램 태그 페이지가 나와 [Windows 7 Phone Emulator](https://msdn.microsoft.com/en-us/library/ff402563(VS.92).aspx)합니다. 참조 [키보드 매핑에 대 한 Windows Phone 에뮬레이터](https://msdn.microsoft.com/en-us/library/ff754352(v=vs.92).aspx) 키보드 입력을 간소화 하기 위해 합니다.
+이 자습서에서는 모바일 기능에 추가할 간단한 회의 목록 응용 프로그램에 제공 되는 [시작 프로젝트](https://go.microsoft.com/fwlink/?LinkId=228307)합니다. 다음 스크린 샷에서 같이 완성된 된 응용 프로그램 태그 페이지가 나와 [Windows 7 Phone Emulator](https://msdn.microsoft.com/library/ff402563(VS.92).aspx)합니다. 참조 [키보드 매핑에 대 한 Windows Phone 에뮬레이터](https://msdn.microsoft.com/library/ff754352(v=vs.92).aspx) 키보드 입력을 간소화 하기 위해 합니다.
 
 [![p1_Tags_CompletedProj](aspnet-mvc-4-mobile-features/_static/image2.png)](aspnet-mvc-4-mobile-features/_static/image1.png)
 
@@ -215,7 +215,7 @@ ASP.NET MVC 4의 중요 한 새로운 기능은 개별 모바일 브라우저에
 [!code-csharp[Main](aspnet-mvc-4-mobile-features/samples/sample11.cs?highlight=26)]
 
 > [!NOTE]
-> Internet Explorer 9를 사용 하 고 표시 되지 않는 경우는 `BundleMobileConfig` 노란색 강조 표시에 위의 줄, 클릭는 [호환성 보기 단추](https://windows.microsoft.com/en-US/windows7/How-to-use-Compatibility-View-in-Internet-Explorer-9)![(off) 호환성 보기 단추 그림] (http://res2.windows.microsoft.com/resbox/en/Windows 7/main/f080e77f-9b66-4ac8-9af0-803c4f8a859c_15.jpg " (Off) 호환성 보기 단추 그림") 개요에서 변경 아이콘을 확인 하는 IE의 ![(off) 호환성 보기 단추 그림](http://res2.windows.microsoft.com/resbox/en/Windows 7/main/f080e77f-9b66-4ac8-9af0-803c4f8a859c_15.jpg "(해제) 호환성 보기 단추 그림 ") 단색 ![(on) 호환성 보기 단추 그림](http://res1.windows.microsoft.com/resbox/en/Windows 7/main/156805ff-3130-481b-a12d-4d3a96470f36_14.jpg "(on) 호환성 보기 단추 그림")합니다. 또는 FireFox 또는 Chrome에서이 자습서를 확인할 수 있습니다.
+> Internet Explorer 9를 사용 하 고 표시 되지 않는 경우는 `BundleMobileConfig` 노란색 강조 표시에 위의 줄, 클릭는 [호환성 보기 단추](https://windows.microsoft.com/windows7/How-to-use-Compatibility-View-in-Internet-Explorer-9)![(off) 호환성 보기 단추 그림] (http://res2.windows.microsoft.com/resbox/en/Windows 7/main/f080e77f-9b66-4ac8-9af0-803c4f8a859c_15.jpg " (Off) 호환성 보기 단추 그림") 개요에서 변경 아이콘을 확인 하는 IE의 ![(off) 호환성 보기 단추 그림](http://res2.windows.microsoft.com/resbox/en/Windows 7/main/f080e77f-9b66-4ac8-9af0-803c4f8a859c_15.jpg "(해제) 호환성 보기 단추 그림 ") 단색 ![(on) 호환성 보기 단추 그림](http://res1.windows.microsoft.com/resbox/en/Windows 7/main/156805ff-3130-481b-a12d-4d3a96470f36_14.jpg "(on) 호환성 보기 단추 그림")합니다. 또는 FireFox 또는 Chrome에서이 자습서를 확인할 수 있습니다.
 
 
 열기는 *MvcMobile\Views\Shared\\_Layout.Mobile.cshtml* 파일을 다음 태그 바로 뒤에 추가 된 `Html.Partial` 호출:
@@ -270,7 +270,7 @@ ASP.NET MVC 4의 중요 한 새로운 기능은 개별 모바일 브라우저에
 
 [!code-cshtml[Main](aspnet-mvc-4-mobile-features/samples/sample17.cshtml)]
 
-때 `RequireConsistentDisplayMode` 로 설정 된 `true`, 모바일 레이아웃 (*\_Layout.Mobile.cshtml*) 모바일 보기에만 사용 됩니다. (즉, 파일 보기 된 형식인  ***ViewName**합니다. Mobile.cshtml*.) 설정 하려는 경우 `RequireConsistentDisplayMode` 를 `true` 모바일 레이아웃 비모바일 보기와 잘 작동 하지 않는 경우. 다음 스크린샷에서 방법을 *스피커* 페이지를 렌더링 하는 경우 `RequireConsistentDisplayMode` 로 설정 된 `true`합니다.
+때 `RequireConsistentDisplayMode` 로 설정 된 `true`, 모바일 레이아웃 (*\_Layout.Mobile.cshtml*) 모바일 보기에만 사용 됩니다. (즉, 파일 보기 된 형식인 ***ViewName**합니다. Mobile.cshtml*입니다.) 설정 하려는 경우 `RequireConsistentDisplayMode` 를 `true` 모바일 레이아웃 비모바일 보기와 잘 작동 하지 않는 경우. 다음 스크린샷에서 방법을 *스피커* 페이지를 렌더링 하는 경우 `RequireConsistentDisplayMode` 로 설정 된 `true`합니다.
 
 [![p3_speakersConsistent](aspnet-mvc-4-mobile-features/_static/image33.png)](aspnet-mvc-4-mobile-features/_static/image32.png)
 

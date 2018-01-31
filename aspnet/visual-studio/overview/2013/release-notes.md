@@ -12,15 +12,15 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/release-notes
 msc.type: authoredcontent
-ms.openlocfilehash: 10835c39d3bca752ed3068a23fecaaab56449e41
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7f38a0f2693aeb2a4884b9c03719b583423957a8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-and-web-tools-for-visual-studio-2013-release-notes"></a>ASP.NET 및 Web Tools for Visual Studio 2013 릴리스 정보
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 이 문서에서는 Visual Studio 2013 용 ASP.NET 및 웹 도구 릴리스를 설명 합니다.
 
@@ -137,8 +137,8 @@ Azure SDK for.NET 2.2와 Visual Studio 2013에서 사용할 수 있습니다 **�
 
 자세한 내용은 다음 리소스를 참조하세요.
 
-- [Azure 앱 서비스에서 ASP.NET 웹 앱 만들기](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-get-started/)
-- [Visual Studio를 사용 하 여 Azure 앱 서비스의 웹 응용 프로그램 문제 해결](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
+- [Azure 앱 서비스에서 ASP.NET 웹 앱 만들기](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-get-started/)
+- [Visual Studio를 사용 하 여 Azure 앱 서비스의 웹 응용 프로그램 문제 해결](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
 
 <a id="publish"></a>
 ## <a name="web-publish-enhancements"></a>향상 된 기능으로 웹 게시
@@ -185,7 +185,7 @@ MVC 5로 MVC 4 프로젝트 업그레이드에 대 한 자세한 내용은 참�
 
 ### <a name="aspnet-identity"></a>ASP.NET ID
 
-MVC 프로젝트 템플릿 인증 및 id 관리에 대 한 ASP.NET Id를 사용 하도록 업데이트 되었습니다. Facebook 및 Google 인증 및 새로운 구성원 API 자습서에서 찾을 수 있습니다 [Facebook, Google OAuth2 및 OpenID 로그온 ASP.NET MVC 5 응용 프로그램을 만들](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md) 및 [auth ASP.NET MVC 응용 프로그램 만들기 및 SQL DB Azure 앱 서비스를 배포 하 고](https://azure.microsoft.com/en-us/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)합니다.
+MVC 프로젝트 템플릿 인증 및 id 관리에 대 한 ASP.NET Id를 사용 하도록 업데이트 되었습니다. Facebook 및 Google 인증 및 새로운 구성원 API 자습서에서 찾을 수 있습니다 [Facebook, Google OAuth2 및 OpenID 로그온 ASP.NET MVC 5 응용 프로그램을 만들](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md) 및 [auth ASP.NET MVC 응용 프로그램 만들기 및 SQL DB Azure 앱 서비스를 배포 하 고](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)합니다.
 
 ### <a name="bootstrap"></a>부트스트랩
 
@@ -531,7 +531,7 @@ OWIN 및 Katana에 대 한 자세한 내용은 참조 [OWIN 및 Katana 새로운
 
 이 릴리스에서 새 구성 요소는 자체 호스트 시나리오를 사용 하도록 설정에 추가 되었습니다. 이러한 구성 요소는 다음과 같은 NuGet 패키지를 같습니다.
 
-- **Microsoft.Owin.Host.HttpListener**합니다. 사용 하는 OWIN 서버 제공 **HttpListener** 하 OWIN 파이프라인에 지시 하 고 HTTP 요청을 수신 합니다.
+- **Microsoft.Owin.Host.HttpListener**. 사용 하는 OWIN 서버 제공 **HttpListener** 하 OWIN 파이프라인에 지시 하 고 HTTP 요청을 수신 합니다.
 - **Microsoft.Owin.Hosting** 자체 콘솔 응용 프로그램 또는 Windows 서비스와 같은 사용자 지정 프로세스에서 OWIN 파이프라인을 호스트 하려는 개발자가 있는 라이브러리를 제공 합니다.
 - **OwinHost**합니다. 래핑하는 독립 실행형 실행 파일을 제공 `Microsoft.Owin.Hosting` 자체 사용자 지정 호스트 응용 프로그램을 작성 하지 않고도 OWIN 파이프라인을 호스팅할 수 있습니다.
 
@@ -553,13 +553,13 @@ OWIN 사양에서 함수 및 유형 정의 사용 하는 OWIN 구성 요소를 �
 
 다음 인증 구성 요소가 사용할 수 있습니다.
 
-- **Microsoft.Owin.Security.ActiveDirectory**합니다. 온-프레미스 또는 클라우드 기반 디렉터리 서비스를 사용 하 여 인증을 사용 하도록 설정 합니다.
+- **Microsoft.Owin.Security.ActiveDirectory**. 온-프레미스 또는 클라우드 기반 디렉터리 서비스를 사용 하 여 인증을 사용 하도록 설정 합니다.
 - **Microsoft.Owin.Security.Cookies** 쿠키를 사용 하 여 사용 하면 인증 합니다. 이 패키지 변수의 이름이 이전에 `Microsoft.Owin.Security.Forms`합니다.
 - **Microsoft.Owin.Security.Facebook** Facebook의 OAuth 기반 서비스를 사용 하 여 사용 하면 인증 합니다.
 - **Microsoft.Owin.Security.Google** Google의 OpenID 기반 서비스를 사용 하 여 사용 하면 인증 합니다.
 - **Microsoft.Owin.Security.Jwt** JWT 토큰을 사용 하 여 사용 하면 인증 합니다.
 - **Microsoft.Owin.Security.MicrosoftAccount** Microsoft 계정을 사용 하 여 사용 하면 인증 합니다.
-- **Microsoft.Owin.Security.OAuth**합니다. 전달자 토큰을 인증 하기 위한에서는 OAuth 권한 부여 서버는 물론 미들웨어를 제공 합니다.
+- **Microsoft.Owin.Security.OAuth**. 전달자 토큰을 인증 하기 위한에서는 OAuth 권한 부여 서버는 물론 미들웨어를 제공 합니다.
 - **Microsoft.Owin.Security.Twitter** Twitter의 OAuth 기반 서비스를 사용 하 여 사용 하면 인증 합니다.
 
 또한이 릴리스는는 `Microsoft.Owin.Cors` 크로스-원본 HTTP 요청 처리에 대 한 미들웨어를 포함 하는 패키지입니다.
@@ -643,7 +643,7 @@ ASP.NET 앱 일시 중단에는 사용자 환경 및 많은 수의 단일 컴퓨
     그러면 다음 릴리스에 대 한 수정 됩니다.
 2. Mvc 4 응용 m v c 5로 업그레이드 한 후 솔루션을 빌드하고 응용 프로그램을 시작 합니다. 다음과 같은 오류가 나타납니다.
 
-    [A] System.Web.WebPages.Razor.Configuration.HostSection [B]System.Web.WebPages.Razor.Configuration.HostSection으로 캐스팅할 수 없습니다. A 형식 발생 ' System.Web.WebPages.Razor, Version = 2.0.0.0, Culture = neutral, PublicKeyToken = 31bf3856ad364e35' 컨텍스트에서 'Default' 위치에 ' C:\windows\Microsoft.Net\assembly\GAC\_MSIL\System.Web.WebPages.Razor\ v4.0\_2.0.0.0\_\_31bf3856ad364e35\System.Web.WebPages.Razor.dll'. B 형식 발생 ' System.Web.WebPages.Razor, Version 3.0.0.0, Culture = neutral, PublicKeyToken = = 31bf3856ad364e35' 컨텍스트의 'Default' 위치에 ' C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\6d05bbd0\ e8b5908e\assembly\dl3\c9cbca63\f8910382\_6273ce01\System.Web.WebPages.Razor.dll'.
+    [A] System.Web.WebPages.Razor.Configuration.HostSection [B]System.Web.WebPages.Razor.Configuration.HostSection으로 캐스팅할 수 없습니다. Type A originates from 'System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35' in the context 'Default' at location 'C:\windows\Microsoft.Net\assembly\GAC\_MSIL\System.Web.WebPages.Razor\v4.0\_2.0.0.0\_\_31bf3856ad364e35\System.Web.WebPages.Razor.dll'. B 형식 발생 ' System.Web.WebPages.Razor, Version 3.0.0.0, Culture = neutral, PublicKeyToken = = 31bf3856ad364e35' 컨텍스트의 'Default' 위치에 ' C:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\6d05bbd0\ e8b5908e\assembly\dl3\c9cbca63\f8910382\_6273ce01\System.Web.WebPages.Razor.dll'.
 
     위의 오류를 해결 하려면 열고 *모든* 프로젝트 및 다음을 수행에 Web.config 파일 (Views 폴더에 있는 구성을 포함):
 
@@ -666,7 +666,7 @@ ASP.NET 앱 일시 중단에는 사용자 환경 및 많은 수의 단일 컴퓨
     대상:
 
     `@Html.TextBoxFor(person => person.Age)`
-4. ASP.NET MVC 5 부분 신뢰를 더 이상 지원합니다. MVC 또는 WebAPI 바이너리에 연결 하는 프로젝트를 제거 해야는 [SecurityTransparent](https://msdn.microsoft.com/en-us/library/system.security.securitytransparentattribute.aspx) 특성 및 [AllowPartiallyTrustedCallers](https://msdn.microsoft.com/en-us/library/system.security.allowpartiallytrustedcallersattribute.aspx) 특성입니다. 이러한 특성을 제거 하면 다음과 같은 컴파일러 오류 제거 됩니다.
+4. ASP.NET MVC 5 부분 신뢰를 더 이상 지원합니다. MVC 또는 WebAPI 바이너리에 연결 하는 프로젝트를 제거 해야는 [SecurityTransparent](https://msdn.microsoft.com/library/system.security.securitytransparentattribute.aspx) 특성 및 [AllowPartiallyTrustedCallers](https://msdn.microsoft.com/library/system.security.allowpartiallytrustedcallersattribute.aspx) 특성입니다. 이러한 특성을 제거 하면 다음과 같은 컴파일러 오류 제거 됩니다.
 
     `Attempt by security transparent method ‘MyComponent' to access security critical type 'System.Web.Mvc.MvcHtmlString' failed. Assembly 'PagedList.Mvc, Version=4.3.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1' is marked with the AllowPartiallyTrustedCallersAttribute, and uses the level 2 security transparency model. Level 2 transparency causes all methods in AllowPartiallyTrustedCallers assemblies to become security transparent by default, which may be the cause of this exception.`
 

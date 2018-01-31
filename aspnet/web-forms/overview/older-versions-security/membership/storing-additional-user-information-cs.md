@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/storing-additional-user-information-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0d3c622dc352c804ddfea072bf3d52496c719ea6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 63aa9dce45ce7ac3e33f542f549b2ec620191d50
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="storing-additional-user-information-c"></a>추가 사용자 정보를 저장 하는 (C#)
 ====================
@@ -29,7 +29,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="introduction"></a>소개
 
-ASP입니다. NET의 멤버 자격 프레임 워크는 사용자가 관리 하기 위한 유연한 인터페이스를 제공 합니다. 멤버 API에는 자격 증명 유효성 검사, 현재 로그온된 한 사용자에 대 한 정보를 검색, 새 사용자 계정을 만들고 삭제 하기 위한 사용자 계정에 다른 규칙 으로부터 메서드도 포함 됩니다. 멤버 자격 프레임 워크에서 각 사용자 계정 자격 증명 유효성 검사 및 필수 사용자 계정 관련 작업 수행에 필요한 속성에만 포함 되어 있습니다. 메서드 및 속성을이 확인 되는 [ `MembershipUser` 클래스](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.aspx), 사용자 계정에 멤버 자격 프레임 워크를 모델링 하 합니다. 이 클래스와 같은 속성에 [ `UserName` ](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.username.aspx), [ `Email` ](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.email.aspx), 및 [ `IsLockedOut` ](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.islockedout.aspx)와 같은 메서드 및 [ `GetPassword` ](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.getpassword.aspx) 및 [ `UnlockUser` ](https://msdn.microsoft.com/en-us/library/system.web.security.membershipuser.unlockuser.aspx)합니다.
+ASP입니다. NET의 멤버 자격 프레임 워크는 사용자가 관리 하기 위한 유연한 인터페이스를 제공 합니다. 멤버 API에는 자격 증명 유효성 검사, 현재 로그온된 한 사용자에 대 한 정보를 검색, 새 사용자 계정을 만들고 삭제 하기 위한 사용자 계정에 다른 규칙 으로부터 메서드도 포함 됩니다. 멤버 자격 프레임 워크에서 각 사용자 계정 자격 증명 유효성 검사 및 필수 사용자 계정 관련 작업 수행에 필요한 속성에만 포함 되어 있습니다. 메서드 및 속성을이 확인 되는 [ `MembershipUser` 클래스](https://msdn.microsoft.com/library/system.web.security.membershipuser.aspx), 사용자 계정에 멤버 자격 프레임 워크를 모델링 하 합니다. 이 클래스와 같은 속성에 [ `UserName` ](https://msdn.microsoft.com/library/system.web.security.membershipuser.username.aspx), [ `Email` ](https://msdn.microsoft.com/library/system.web.security.membershipuser.email.aspx), 및 [ `IsLockedOut` ](https://msdn.microsoft.com/library/system.web.security.membershipuser.islockedout.aspx)와 같은 메서드 및 [ `GetPassword` ](https://msdn.microsoft.com/library/system.web.security.membershipuser.getpassword.aspx) 및 [ `UnlockUser` ](https://msdn.microsoft.com/library/system.web.security.membershipuser.unlockuser.aspx)합니다.
 
 종종 응용 프로그램 구성원 프레임 워크에 없는 추가 사용자 정보를 저장 해야 합니다. 예를 들어 온라인 상점 각 사용자가 배송 및 대금 청구 주소, 결제 정보, 배달 기본 설정을 저장 하 고 연락처 전화 번호를 사용 해야 합니다. 또한 각 주문 시스템에는 특정 사용자 계정와 관련이 있습니다.
 
@@ -71,7 +71,7 @@ ASP입니다. NET의 멤버 자격 프레임 워크는 사용자가 관리 하�
 
 추가한 후의 `UserId` 저장 도구 모음에 저장 아이콘을 클릭 하 여 테이블 열입니다. 새 테이블의 이름을 `GuestbookComments`합니다.
 
-와 참석 한 가지 마지막 문제 했으므로 `GuestbookComments` 테이블: 만들어야 하는 [foreign key 제약 조건을](https://msdn.microsoft.com/en-us/library/ms175464.aspx) 간에 `GuestbookComments.UserId` 열 및 `aspnet_Users.UserId` 열입니다. 이 위해 외래 키 관계 대화 상자를 시작 하려면 도구 모음에 있는 관계 아이콘을 클릭 합니다. (또는 시작할 수 있습니다이 대화 상자 테이블 디자이너 메뉴로 이동 하 고 관계를 선택 하 여.)
+와 참석 한 가지 마지막 문제 했으므로 `GuestbookComments` 테이블: 만들어야 하는 [foreign key 제약 조건을](https://msdn.microsoft.com/library/ms175464.aspx) 간에 `GuestbookComments.UserId` 열 및 `aspnet_Users.UserId` 열입니다. 이 위해 외래 키 관계 대화 상자를 시작 하려면 도구 모음에 있는 관계 아이콘을 클릭 합니다. (또는 시작할 수 있습니다이 대화 상자 테이블 디자이너 메뉴로 이동 하 고 관계를 선택 하 여.)
 
 외래 키 관계 대화 상자 왼쪽된 아래에서 추가 단추를 클릭 합니다. 이 관계에 참여 하는 테이블을 정의 해야 하지만 새 외래 키 제약을 추가 됩니다.
 
@@ -231,7 +231,7 @@ SqlDataSource 컨트롤의 매개 변수를 만드는 "매개 변수 새로 고�
 **그림 14**: SqlDataSource의 지정 `UpdateCommand` 및 `UpdateParameters` ([전체 크기 이미지를 보려면 클릭](storing-additional-user-information-cs/_static/image42.png))
 
 
-추가 된 항목으로 인해 이제를 지원할 수 있는 편집 DetailsView SqlDataSource 컨트롤에 만들었습니다. DetailsView의 스마트 태그에서 확인 "편집 사용" 확인란을 선택 합니다. 컨트롤의 한 CommandField 추가 `Fields` 사용 하 여 컬렉션의 `ShowEditButton` 속성이 True로 설정 합니다. 이 읽기 전용 모드 및 업데이트에 DetailsView 표시 되 고 취소 단추에 표시 될 때 편집 모드로 편집 단추를 렌더링 합니다. 편집을 클릭 하 여 사용자를 요구 하는 대신 하지만 수 DetailsView 렌더링에에서 있는 "편집 가능한 항상" 상태 DetailsView 컨트롤을 설정 하 여 [ `DefaultMode` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.detailsview.defaultmode.aspx) 를 `Edit`합니다.
+추가 된 항목으로 인해 이제를 지원할 수 있는 편집 DetailsView SqlDataSource 컨트롤에 만들었습니다. DetailsView의 스마트 태그에서 확인 "편집 사용" 확인란을 선택 합니다. 컨트롤의 한 CommandField 추가 `Fields` 사용 하 여 컬렉션의 `ShowEditButton` 속성이 True로 설정 합니다. 이 읽기 전용 모드 및 업데이트에 DetailsView 표시 되 고 취소 단추에 표시 될 때 편집 모드로 편집 단추를 렌더링 합니다. 편집을 클릭 하 여 사용자를 요구 하는 대신 하지만 수 DetailsView 렌더링에에서 있는 "편집 가능한 항상" 상태 DetailsView 컨트롤을 설정 하 여 [ `DefaultMode` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.detailsview.defaultmode.aspx) 를 `Edit`합니다.
 
 이러한 변경 내용으로 DetailsView 컨트롤의 선언적 태그는 다음과 비슷하게 표시 됩니다.
 
@@ -380,7 +380,7 @@ ListView의 스마트 태그를 열고 데이터 소스 선택 드롭다운 목�
 
 물론, 디자인으로 인해 사용 해야 하는 멤버 자격 시스템의 모든 사용자 계정을 일치 하는 의사 결정에 기록 된 `UserProfiles` 테이블입니다. 에 추가할 수 있는 해당 레코드에는 원하는 `UserProfiles` 은 CreateUserWizard를 통해 새 멤버 자격 사용자 계정이 생성 될 때마다 합니다.
 
-에 설명 된 대로 [ *사용자 계정 만들기* ](creating-user-accounts-cs.md) 자습서에서는 새 멤버 자격 사용자 계정을 CreateUserWizard 컨트롤을 만든 후 발생 해당 [ `CreatedUser` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.createuserwizard.createduser.aspx). 이 이벤트에 대 한 이벤트 처리기를 만든, 방금 만든 사용자에 대 한 사용자 Id를 가져오기 하에 레코드를 삽입 한 다음 수는 `UserProfiles` 테이블에 대 한 기본 값으로는 `HomeTown`, `HomepageUrl`, 및 `Signature` 열입니다. 게다가 것 말하도록 하기 위해 이러한 값에 대 한 추가 텍스트 상자를 포함 하도록 CreateUserWizard 컨트롤의 인터페이스를 사용자 지정 하 여 가능 합니다.
+에 설명 된 대로 [ *사용자 계정 만들기* ](creating-user-accounts-cs.md) 자습서에서는 새 멤버 자격 사용자 계정을 CreateUserWizard 컨트롤을 만든 후 발생 해당 [ `CreatedUser` 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.createduser.aspx). 이 이벤트에 대 한 이벤트 처리기를 만든, 방금 만든 사용자에 대 한 사용자 Id를 가져오기 하에 레코드를 삽입 한 다음 수는 `UserProfiles` 테이블에 대 한 기본 값으로는 `HomeTown`, `HomepageUrl`, 및 `Signature` 열입니다. 게다가 것 말하도록 하기 위해 이러한 값에 대 한 추가 텍스트 상자를 포함 하도록 CreateUserWizard 컨트롤의 인터페이스를 사용자 지정 하 여 가능 합니다.
 
 새 행을 추가 하는 방법부터 알아보겠습니다는 `UserProfiles` 테이블에 `CreatedUser` 기본 값으로 이벤트 처리기입니다. 그런 다음, 새 사용자의 홈 동, 홈 페이지 및 서명을 수집 하도록 추가 양식 필드를 포함 하려면 CreateUserWizard 컨트롤의 사용자 인터페이스 사용자 지정 하는 방법을 살펴봅니다.
 
@@ -390,7 +390,7 @@ ListView의 스마트 태그를 열고 데이터 소스 선택 드롭다운 목�
 
 열기는 `EnhancedCreateUserWizard.aspx` Visual Studio에서 페이지 및 페이지 도구 상자에서 CreateUserWizard 컨트롤을 끕니다. CreateUserWizard 컨트롤 설정 `ID` 속성을 `NewUserWizard`합니다. 설명한 것 처럼는 <a id="_msoanchor_5"> </a> [ *사용자 계정 만들기* ](creating-user-accounts-cs.md) 자습서, CreateUserWizard의 기본 사용자 인터페이스에서 묻는 메시지를 표시 하는 데 필요한 정보에 대 한 방문자입니다. 이 정보를 제공한 후 컨트롤 내부적으로 만들며 새 사용자 계정을 멤버 자격 프레임 워크에서 모든 필요 없이 한 줄의 코드를 작성 합니다.
 
-CreateUserWizard 컨트롤의 워크플로 중 다양을 한 이벤트를 발생 시킵니다. CreateUserWizard 컨트롤 처음 발생 한 후 방문자 요청 정보를 제공가 양식을 전송를 해당 [ `CreatingUser` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.createuserwizard.creatinguser.aspx)합니다. 하지만 만들기 프로세스 중에 문제가 있으면는 [ `CreateUserError` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.createuserwizard.createusererror.aspx) ; 발생 사용자가 정상적으로 작성 하는 경우, 하면 [ `CreatedUser` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.createuserwizard.createduser.aspx) 발생 합니다. 에 <a id="_msoanchor_6"> </a> [ *사용자 계정 만들기* ](creating-user-accounts-cs.md) 자습서에 대 한 이벤트 처리기에서 만든는 `CreatingUser` 제공된 된 사용자는 선행 포함 되지 않은 이벤트 또는 후행 공백이 있는 경우와 사용자 이름 암호에 아무 곳 이나 표시 않았습니다 되지 않습니다.
+CreateUserWizard 컨트롤의 워크플로 중 다양을 한 이벤트를 발생 시킵니다. CreateUserWizard 컨트롤 처음 발생 한 후 방문자 요청 정보를 제공가 양식을 전송를 해당 [ `CreatingUser` 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.creatinguser.aspx)합니다. 하지만 만들기 프로세스 중에 문제가 있으면는 [ `CreateUserError` 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.createusererror.aspx) ; 발생 사용자가 정상적으로 작성 하는 경우, 하면 [ `CreatedUser` 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.createduser.aspx) 발생 합니다. 에 <a id="_msoanchor_6"> </a> [ *사용자 계정 만들기* ](creating-user-accounts-cs.md) 자습서에 대 한 이벤트 처리기에서 만든는 `CreatingUser` 제공된 된 사용자는 선행 포함 되지 않은 이벤트 또는 후행 공백이 있는 경우와 사용자 이름 암호에 아무 곳 이나 표시 않았습니다 되지 않습니다.
 
 행을 추가 하기 위해는 `UserProfiles` 테이블에 대 한 이벤트 처리기를 만들고 해야 방금 만든 사용자에 대 한는 `CreatedUser` 이벤트입니다. 시간순으로는 `CreatedUser` 수 있어 계정의 사용자 Id 값을 검색 하는 멤버 자격 프레임 워크에 사용자 계정이 이미 만들어져, 이벤트가 발생 합니다.
 
@@ -398,9 +398,9 @@ CreateUserWizard 컨트롤의 워크플로 중 다양을 한 이벤트를 발생
 
 [!code-csharp[Main](storing-additional-user-information-cs/samples/sample11.cs)]
 
-방금 추가 된 사용자 계정의 사용자 Id를 검색 하 여 위의 코드 존재 합니다. 사용 하 여 이렇게는 `Membership.GetUser(username)` , 특정 사용자 및 사용 하 여 다음에 대 한 정보를 반환 하는 메서드는 `ProviderUserKey` 속성의 사용자 Id를 검색 합니다. CreateUserWizard 컨트롤에 사용자가 입력 한 사용자 이름을 통해 사용할 수는 [ `UserName` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.createuserwizard.username.aspx)합니다.
+방금 추가 된 사용자 계정의 사용자 Id를 검색 하 여 위의 코드 존재 합니다. 사용 하 여 이렇게는 `Membership.GetUser(username)` , 특정 사용자 및 사용 하 여 다음에 대 한 정보를 반환 하는 메서드는 `ProviderUserKey` 속성의 사용자 Id를 검색 합니다. CreateUserWizard 컨트롤에 사용자가 입력 한 사용자 이름을 통해 사용할 수는 [ `UserName` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.username.aspx)합니다.
 
-연결 문자열에서 검색 되는 다음으로, `Web.config` 및 `INSERT` 문을 지정 합니다. 필요한 ADO.NET 개체 인스턴스화되고 명령을 실행 합니다. 코드에서 할당 한 [ `DBNull` ](https://msdn.microsoft.com/en-us/library/system.dbnull.aspx) 인스턴스를 `@HomeTown`, `@HomepageUrl`, 및 `@Signature` 매개 변수를 데이터베이스에 삽입 하는 효과가 `NULL` 에 대 한 값의 `HomeTown`, `HomepageUrl`, 및 `Signature` 필드입니다.
+연결 문자열에서 검색 되는 다음으로, `Web.config` 및 `INSERT` 문을 지정 합니다. 필요한 ADO.NET 개체 인스턴스화되고 명령을 실행 합니다. 코드에서 할당 한 [ `DBNull` ](https://msdn.microsoft.com/library/system.dbnull.aspx) 인스턴스를 `@HomeTown`, `@HomepageUrl`, 및 `@Signature` 매개 변수를 데이터베이스에 삽입 하는 효과가 `NULL` 에 대 한 값의 `HomeTown`, `HomepageUrl`, 및 `Signature` 필드입니다.
 
 방문는 `EnhancedCreateUserWizard.aspx` 브라우저를 통해 페이지 하 고 새 사용자 계정을 만듭니다. 이렇게 하면 Visual Studio로 반환 하 고의 내용 검사는 `aspnet_Users` 및 `UserProfiles` 테이블 (같이 다시 그림 12). 새 사용자 계정에 표시 되어야 `aspnet_Users` 및 해당 `UserProfiles` 행 (으로 `NULL` 에 대 한 값 `HomeTown`, `HomepageUrl`, 및 `Signature`).
 
@@ -412,7 +412,7 @@ CreateUserWizard 컨트롤의 워크플로 중 다양을 한 이벤트를 발생
 
 방문자가 자신의 새 계정 정보를 제공 하 고 "사용자 만들기" 단추를 클릭 한, 사용자 계정 생성 후에 행이 추가 `UserProfiles` 테이블입니다. CreateUserWizard 표시 한 다음 해당 `CompleteWizardStep`, 성공 메시지 및 계속 단추를 표시 하는 합니다. 포스트백 단추를 클릭 하면 되지만 아무 작업도 수행에 고정 사용자는 `EnhancedCreateUserWizard.aspx` 페이지.
 
-URL을 사용자에 게 보낼 CreateUserWizard 컨트롤을 통해 단추를 클릭할 때를 지정할 수 있습니다 [ `ContinueDestinationPageUrl` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.createuserwizard.continuedestinationpageurl.aspx)합니다. 설정의 `ContinueDestinationPageUrl` 속성을 "~ / Membership/AdditionalUserInfo.aspx"입니다. 이 작업을 수행 하려면 새 사용자 `AdditionalUserInfo.aspx`, 여기서을 확인 하 고 해당 설정을 업데이트 합니다.
+URL을 사용자에 게 보낼 CreateUserWizard 컨트롤을 통해 단추를 클릭할 때를 지정할 수 있습니다 [ `ContinueDestinationPageUrl` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.continuedestinationpageurl.aspx)합니다. 설정의 `ContinueDestinationPageUrl` 속성을 "~ / Membership/AdditionalUserInfo.aspx"입니다. 이 작업을 수행 하려면 새 사용자 `AdditionalUserInfo.aspx`, 여기서을 확인 하 고 해당 설정을 업데이트 합니다.
 
 ### <a name="customizing-the-createuserwizards-interface-to-prompt-for-the-new-users-home-town-homepage-and-signature"></a>새 사용자의 홈 동, 홈 페이지 및 서명 확인으로 CreateUserWizard의 인터페이스를 사용자 지정
 
@@ -473,7 +473,7 @@ CreateUserWizard 컨트롤의 스마트 태그에서 선택 된 "추가/제거 `
 새 확인 `<asp:WizardStep>` 요소입니다. 새 사용자의 홈 동, 홈 페이지 및 여기에 서명을 수집 하는 사용자 인터페이스를 추가 해야 합니다. 이 콘텐츠는 디자이너를 사용 하거나 선언적 구문에서 입력할 수 있습니다. 디자이너를 사용 하려면 디자이너의 단계를 참조 하도록 스마트 태그에서 드롭 다운 목록에서 "Your 설정" 단계를 선택 합니다.
 
 > [!NOTE]
-> CreateUserWizard 컨트롤의 스마트 태그의 드롭다운 목록을 통해 단계를 선택 하면 업데이트 [ `ActiveStepIndex` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.createuserwizard.activestepindex.aspx), 시작 단계 인덱스를 지정 하는 합니다. 따라서이 드롭 다운 목록을 사용 하 여 디자이너에서 "Your 설정" 단계를 편집 하는 경우 반드시 사용자가 처음 방문 하는 경우이 단계는 표시 되도록 다시 "Sign Up for Your 새 Account"로 설정 하는 `EnhancedCreateUserWizard.aspx` 페이지.
+> CreateUserWizard 컨트롤의 스마트 태그의 드롭다운 목록을 통해 단계를 선택 하면 업데이트 [ `ActiveStepIndex` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.createuserwizard.activestepindex.aspx), 시작 단계 인덱스를 지정 하는 합니다. 따라서이 드롭 다운 목록을 사용 하 여 디자이너에서 "Your 설정" 단계를 편집 하는 경우 반드시 사용자가 처음 방문 하는 경우이 단계는 표시 되도록 다시 "Sign Up for Your 새 Account"로 설정 하는 `EnhancedCreateUserWizard.aspx` 페이지.
 
 
 라는 3 개의 TextBox 컨트롤을 포함 하는 "Your 설정" 단계 내에서 사용자 인터페이스 만들기 `HomeTown`, `HomepageUrl`, 및 `Signature`합니다. 이 인터페이스를 생성 한 후 CreateUserWizard의 선언적 태그는 다음과 비슷하게 표시 됩니다.
@@ -482,7 +482,7 @@ CreateUserWizard 컨트롤의 스마트 태그에서 선택 된 "추가/제거 `
 
 계속 하 고 브라우저를 통해이 페이지를 방문를 홈 동, 홈 페이지 및 서명을 대 한 값을 지정 하는 새 사용자 계정을 만들 합니다. 완료 한 후의 `CreateUserWizardStep` 사용자 계정이 멤버 자격 프레임 워크에서 생성 및 `CreatedUser` 새 행을 추가 하는 이벤트 처리기 실행 `UserProfiles`, 하지만 데이터베이스와 `NULL` 값 `HomeTown`, `HomepageUrl`, 및 `Signature`. 홈 동, 홈 페이지 및 서명을 입력 된 값이 사용 되지 않습니다 됩니다. 그 결과 새 사용자 계정에는 `UserProfiles` 갖는 기록 `HomeTown`, `HomepageUrl`, 및 `Signature` 필드 아직만 지정 해야 합니다.
 
-사용자가 입력 한 홈 동, honepage, 및 서명을 값을 사용 하 고 적절 한 업데이트 하는 "Your 설정" 단계를 수행한 후 코드를 실행 해야 `UserProfiles` 레코드입니다. 마법사의 마법사의 단계 사이 이동할 때마다 컨트롤 [ `ActiveStepChanged` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.wizard.activestepchanged.aspx) 발생 합니다. 이 이벤트와 업데이트에 대 한 이벤트 처리기를 만들 수 있습니다는 `UserProfiles` "Your 설정" 단계 완료 되 면 테이블입니다.
+사용자가 입력 한 홈 동, honepage, 및 서명을 값을 사용 하 고 적절 한 업데이트 하는 "Your 설정" 단계를 수행한 후 코드를 실행 해야 `UserProfiles` 레코드입니다. 마법사의 마법사의 단계 사이 이동할 때마다 컨트롤 [ `ActiveStepChanged` 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.wizard.activestepchanged.aspx) 발생 합니다. 이 이벤트와 업데이트에 대 한 이벤트 처리기를 만들 수 있습니다는 `UserProfiles` "Your 설정" 단계 완료 되 면 테이블입니다.
 
 CreateUserWizard의에 대 한 이벤트 처리기를 추가 `ActiveStepChanged` 이벤트를 다음 코드를 추가 합니다.
 

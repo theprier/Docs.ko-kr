@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0db9bf25ce61c31dd8258aaebadf42e7738473ab
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: eae9c07eff7780aab18346815ca410d687789d17
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="masterdetail-using-a-selectable-master-gridview-with-a-details-detailview-vb"></a>마스터/세부 정보 DetailView (VB)는 선택 가능한 마스터 GridView 사용
 ====================
@@ -39,7 +39,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="step-1-creating-a-selectable-gridview"></a>1 단계: 선택 가능한 GridView 만들기
 
-회수 마스터/세부 두 페이지에에서는 마스터 각 레코드는 하이퍼링크를 포함 하는 보고 하는 클릭 하면 클릭 한 행을 전달 하는 세부 정보 페이지에 사용자를 전송 `SupplierID` 쿼리 문자열의 값입니다. 이러한 하이퍼링크는 HyperLinkField를 사용 하 여 각 GridView 행에 추가 되었습니다. 필요한 단일 페이지 마스터/세부 정보 보고서에 대 한 단추를 클릭 하면 각 GridView 행는 대 한 세부 정보를 표시 합니다. GridView 컨트롤에서 포스트백이 발생 하 고 해당 행 GridView의으로 표시 되는 각 행에 대 한 선택 단추를 포함 하도록 구성할 수 있습니다 [SelectedRow](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.selectedrow.aspx)합니다.
+회수 마스터/세부 두 페이지에에서는 마스터 각 레코드는 하이퍼링크를 포함 하는 보고 하는 클릭 하면 클릭 한 행을 전달 하는 세부 정보 페이지에 사용자를 전송 `SupplierID` 쿼리 문자열의 값입니다. 이러한 하이퍼링크는 HyperLinkField를 사용 하 여 각 GridView 행에 추가 되었습니다. 필요한 단일 페이지 마스터/세부 정보 보고서에 대 한 단추를 클릭 하면 각 GridView 행는 대 한 세부 정보를 표시 합니다. GridView 컨트롤에서 포스트백이 발생 하 고 해당 행 GridView의으로 표시 되는 각 행에 대 한 선택 단추를 포함 하도록 구성할 수 있습니다 [SelectedRow](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selectedrow.aspx)합니다.
 
 GridView 컨트롤을 추가 하 여 시작 된 `DetailsBySelecting.aspx` 페이지에 `Filtering` 폴더를 설정 해당 `ID` 속성을 `ProductsGrid`합니다. 다음으로 명명 된 새 ObjectDataSource 추가 `AllProductsDataSource` 를 호출 하는 `ProductsBLL` 클래스의 `GetProducts()` 메서드.
 
@@ -85,7 +85,7 @@ GridView에 대 한 최종 태그는입니다.
 
 [!code-aspx[Main](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/samples/sample2.aspx)]
 
-포스트백 계속 GridView 행의 선택 단추를 클릭할 때 및 GridView의 `SelectedRow` 속성이 업데이트 됩니다. 이외에 `SelectedRow` 속성, GridView 제공는 [SelectedIndex](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.selectedindex%28VS.80%29.aspx), [SelectedValue](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.selectedvalue%28VS.80%29.aspx), 및 [SelectedDataKey](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.selecteddatakey%28VS.80%29.aspx) 속성입니다. `SelectedIndex` 속성이 선택된 된 행의 인덱스를 반환 하지만 `SelectedValue` 및 `SelectedDataKey` 속성 GridView의 기준 값을 반환 [DataKeyNames 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.datakeynames%28VS.80%29.aspx)합니다.
+포스트백 계속 GridView 행의 선택 단추를 클릭할 때 및 GridView의 `SelectedRow` 속성이 업데이트 됩니다. 이외에 `SelectedRow` 속성, GridView 제공는 [SelectedIndex](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selectedindex%28VS.80%29.aspx), [SelectedValue](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selectedvalue%28VS.80%29.aspx), 및 [SelectedDataKey](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.selecteddatakey%28VS.80%29.aspx) 속성입니다. `SelectedIndex` 속성이 선택된 된 행의 인덱스를 반환 하지만 `SelectedValue` 및 `SelectedDataKey` 속성 GridView의 기준 값을 반환 [DataKeyNames 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.datakeynames%28VS.80%29.aspx)합니다.
 
 `DataKeyNames` 하나 연결할 속성은 사용 또는 더 많은 데이터 필드 값 각 행을 포함 하는 특성 각 GridView 행은 데이터의 정보를 고유 하 게 식별 하는 데 주로 사용 합니다. `SelectedValue` 속성이 첫 번째 값을 반환 `DataKeyNames` 데이터 필드에 선택된 된 행으로 where는 `SelectedDataKey` 속성 선택된 된 행을 반환 `DataKey` 지정 된 데이터 키 필드에 대 한 값이 모두 들어 있는 개체를 해당 행입니다.
 

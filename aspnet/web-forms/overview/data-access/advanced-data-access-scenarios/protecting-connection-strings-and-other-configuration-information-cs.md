@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/protecting-connection-strings-and-other-configuration-information-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e57886250fa98af95b61103d67481f747f44c390
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e3782e3d4acc2db0e744128dad64fdfae1e8766d
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="protecting-connection-strings-and-other-configuration-information-c"></a>연결 문자열 및 기타 구성 정보 (C#)를 보호합니다.
 ====================
@@ -60,10 +60,10 @@ ASP.NET 2.0에는 보호 되는 구성 시스템 암호화 및 해독 구성 정
 
 .NET Framework는 두 명의 보호 되는 구성 공급자와 함께 제공:
 
-- [`RSAProtectedConfigurationProvider`](https://msdn.microsoft.com/en-us/library/system.configuration.rsaprotectedconfigurationprovider.aspx)-비대칭를 사용 하 여 [RSA 알고리즘](http://en.wikipedia.org/wiki/Rsa) 암호화 및 암호 해독 합니다.
-- [`DPAPIProtectedConfigurationProvider`](https://msdn.microsoft.com/en-us/system.configuration.dpapiprotectedconfigurationprovider.aspx)-Windows를 사용 하 여 [데이터 보호 API (DPAPI)](https://msdn.microsoft.com/en-us/library/ms995355.aspx) 암호화 및 암호 해독 합니다.
+- [`RSAProtectedConfigurationProvider`](https://msdn.microsoft.com/library/system.configuration.rsaprotectedconfigurationprovider.aspx)-비대칭를 사용 하 여 [RSA 알고리즘](http://en.wikipedia.org/wiki/Rsa) 암호화 및 암호 해독 합니다.
+- [`DPAPIProtectedConfigurationProvider`](https://msdn.microsoft.com/system.configuration.dpapiprotectedconfigurationprovider.aspx)-Windows를 사용 하 여 [데이터 보호 API (DPAPI)](https://msdn.microsoft.com/library/ms995355.aspx) 암호화 및 암호 해독 합니다.
 
-이기 때문에 공급자 디자인 패턴을 구현 하는 보호 되는 구성 시스템, 응용 프로그램에 연결 하 고 보호 되는 구성 공급자를 만들 수 있습니다. 참조 [보호 구성 공급자를 구현](https://msdn.microsoft.com/en-us/library/wfc2t3az(VS.80).aspx) 이 프로세스에 대 한 자세한 내용은 합니다.
+이기 때문에 공급자 디자인 패턴을 구현 하는 보호 되는 구성 시스템, 응용 프로그램에 연결 하 고 보호 되는 구성 공급자를 만들 수 있습니다. 참조 [보호 구성 공급자를 구현](https://msdn.microsoft.com/library/wfc2t3az(VS.80).aspx) 이 프로세스에 대 한 자세한 내용은 합니다.
 
 DPAPI 및 RSA 공급자의 암호화 및 암호 해독 루틴에 대 한 키를 사용 하 고 이러한 키에는 컴퓨터 또는 사용자 수준을 저장할 수 있습니다. 암호화 된 정보를 공유 해야 하는 서버에서 여러 응용 프로그램이 있는 경우 또는 컴퓨터 수준 키가 자체 전용된 서버에서 웹 응용 프로그램이 실행 되는 시나리오에 적합 합니다. 사용자 수준 키가 없는 동일한 서버의 다른 응용 프로그램 프로그램 응용 프로그램 보호 s 구성 섹션을 암호 해독할 수 해야 하는 공유 호스팅 환경에서 보다 안전한 옵션입니다.
 
@@ -96,20 +96,20 @@ DPAPI 및 RSA 공급자의 암호화 및 암호 해독 루틴에 대 한 키를 
 
 [!code-csharp[Main](protecting-connection-strings-and-other-configuration-information-cs/samples/sample1.cs)]
 
-`DisplayWebConfig` 메서드는 [ `File` 클래스](https://msdn.microsoft.com/en-us/library/system.io.file.aspx) 응용 프로그램 s 열려는 `Web.config` 파일을는 [ `StreamReader` 클래스](https://msdn.microsoft.com/en-us/library/system.io.streamreader.aspx) 문자열과 로해당내용을읽어[ `Path` 클래스](https://msdn.microsoft.com/en-us/library/system.io.path.aspx) 실제 경로를 생성 하는 `Web.config` 파일입니다. 이러한 세 클래스 모두에서 발견 되는 [ `System.IO` 네임 스페이스](https://msdn.microsoft.com/en-us/library/system.io.aspx)합니다. 따라서 추가 해야 합니다는 `using` `System.IO` 는 코드 숨김 클래스 하거나, 이러한 클래스와 이름은 접두사의 맨 위에 문을 `System.IO.` 합니다.
+`DisplayWebConfig` 메서드는 [ `File` 클래스](https://msdn.microsoft.com/library/system.io.file.aspx) 응용 프로그램 s 열려는 `Web.config` 파일을는 [ `StreamReader` 클래스](https://msdn.microsoft.com/library/system.io.streamreader.aspx) 문자열과 로해당내용을읽어[ `Path` 클래스](https://msdn.microsoft.com/library/system.io.path.aspx) 실제 경로를 생성 하는 `Web.config` 파일입니다. 이러한 세 클래스 모두에서 발견 되는 [ `System.IO` 네임 스페이스](https://msdn.microsoft.com/library/system.io.aspx)합니다. 따라서 추가 해야 합니다는 `using` `System.IO` 는 코드 숨김 클래스 하거나, 이러한 클래스와 이름은 접두사의 맨 위에 문을 `System.IO.` 합니다.
 
 다음으로, 두 개의 단추 컨트롤에 대 한 이벤트 처리기를 추가 해야 `Click` 이벤트 암호화 및 해독 하는 데 필요한 코드를 추가 하 고는 `<connectionStrings>` DPAPI 공급자와 함께 컴퓨터 수준 키를 사용 하 여 섹션. 디자이너에서 두 번 클릭 각 단추를 추가 하려면는 `Click` 코드 숨김의 이벤트 처리기 클래스 및 다음 코드를 추가 합니다.
 
 
 [!code-csharp[Main](protecting-connection-strings-and-other-configuration-information-cs/samples/sample2.cs)]
 
-두 개의 이벤트 처리기에 사용 되는 코드는 거의 동일 합니다. 현재 응용 프로그램 s에 대 한 정보를 가져와서 시작 모두 `Web.config` 를 통해 파일의 [ `WebConfigurationManager` 클래스](https://msdn.microsoft.com/en-us/library/system.web.configuration.webconfigurationmanager.aspx) s [ `OpenWebConfiguration` 메서드](https://msdn.microsoft.com/en-us/library/system.web.configuration.webconfigurationmanager.openwebconfiguration.aspx)합니다. 이 메서드는 지정된 된 가상 경로 대 한 웹 구성 파일을 반환합니다. 다음으로 `Web.config` 파일 s `<connectionStrings>` 섹션을 통해 액세스 되는 [ `Configuration` 클래스](https://msdn.microsoft.com/en-us/library/system.configuration.configuration.aspx) s [ `GetSection(sectionName)` 메서드](https://msdn.microsoft.com/en-us/library/system.configuration.configuration.getsection.aspx)를 반환 하는 [ `ConfigurationSection` ](https://msdn.microsoft.com/en-us/library/system.configuration.configurationsection.aspx) 개체입니다.
+두 개의 이벤트 처리기에 사용 되는 코드는 거의 동일 합니다. 현재 응용 프로그램 s에 대 한 정보를 가져와서 시작 모두 `Web.config` 를 통해 파일의 [ `WebConfigurationManager` 클래스](https://msdn.microsoft.com/library/system.web.configuration.webconfigurationmanager.aspx) s [ `OpenWebConfiguration` 메서드](https://msdn.microsoft.com/library/system.web.configuration.webconfigurationmanager.openwebconfiguration.aspx)합니다. 이 메서드는 지정된 된 가상 경로 대 한 웹 구성 파일을 반환합니다. 다음으로 `Web.config` 파일 s `<connectionStrings>` 섹션을 통해 액세스 되는 [ `Configuration` 클래스](https://msdn.microsoft.com/library/system.configuration.configuration.aspx) s [ `GetSection(sectionName)` 메서드](https://msdn.microsoft.com/library/system.configuration.configuration.getsection.aspx)를 반환 하는 [ `ConfigurationSection` ](https://msdn.microsoft.com/library/system.configuration.configurationsection.aspx) 개체입니다.
 
-`ConfigurationSection` 개체를 포함 한 [ `SectionInformation` 속성](https://msdn.microsoft.com/en-us/library/system.configuration.configurationsection.sectioninformation.aspx) 추가 정보 및 구성 섹션에 대 한 기능을 제공 하는 합니다. 구성 섹션 확인 하 여 암호화 되는지 여부를 확인할 수 있습니다 위의 코드로 `SectionInformation` 속성의 `IsProtected` 속성입니다. 섹션 수 암호화 하거나 해독할 통해 또한는 `SectionInformation` 속성 s `ProtectSection(provider)` 및 `UnprotectSection` 메서드.
+`ConfigurationSection` 개체를 포함 한 [ `SectionInformation` 속성](https://msdn.microsoft.com/library/system.configuration.configurationsection.sectioninformation.aspx) 추가 정보 및 구성 섹션에 대 한 기능을 제공 하는 합니다. 구성 섹션 확인 하 여 암호화 되는지 여부를 확인할 수 있습니다 위의 코드로 `SectionInformation` 속성의 `IsProtected` 속성입니다. 섹션 수 암호화 하거나 해독할 통해 또한는 `SectionInformation` 속성 s `ProtectSection(provider)` 및 `UnprotectSection` 메서드.
 
 `ProtectSection(provider)` 메서드 암호화할 때 사용할 보호 되는 구성 공급자의 이름을 지정 하는 문자열 입력으로 받아들입니다. 에 `EncryptConnString` 에 DataProtectionConfigurationProvider 전달 s 단추 이벤트 처리기는 `ProtectSection(provider)` 메서드 DPAPI 공급자가 사용 되도록 합니다. `UnprotectSection` 메서드는 구성 섹션 암호화에 사용 된 하 고 따라서 필요 하지 않습니다는 입력 매개 변수는 공급자를 확인할 수 있습니다.
 
-호출한 후의 `ProtectSection(provider)` 또는 `UnprotectSection` 호출 해야 합니다는 `Configuration` 개체 s [ `Save` 메서드](https://msdn.microsoft.com/en-us/library/system.configuration.configuration.save.aspx) 의 변경 사항을 유지 합니다. 이라고 변경 사항을 저장 하 고 구성 정보 암호화 되었거나 암호가 해독 된 `DisplayWebConfig` 업데이트 된 로드 `Web.config` TextBox 컨트롤의 내용입니다.
+호출한 후의 `ProtectSection(provider)` 또는 `UnprotectSection` 호출 해야 합니다는 `Configuration` 개체 s [ `Save` 메서드](https://msdn.microsoft.com/library/system.configuration.configuration.save.aspx) 의 변경 사항을 유지 합니다. 이라고 변경 사항을 저장 하 고 구성 정보 암호화 되었거나 암호가 해독 된 `DisplayWebConfig` 업데이트 된 로드 `Web.config` TextBox 컨트롤의 내용입니다.
 
 위의 코드를 입력 하 고 나면 방문 하 여 테스트는 `EncryptingConfigSections.aspx` 브라우저를 통해 페이지입니다. 콘텐츠를 나열 하는 페이지가 처음 나타납니다 `Web.config` 와 `<connectionStrings>` 일반 텍스트에 표시 되는 섹션 (그림 3 참조).
 
@@ -155,7 +155,7 @@ DPAPI 및 RSA 공급자의 암호화 및 암호 해독 루틴에 대 한 키를 
 
 ## <a name="step-3-encrypting-configuration-sections-usingaspnetregiisexe"></a>사용 하 여 구성 섹션을 암호화 하는 3 단계:`aspnet_regiis.exe`
 
-.NET Framework는 다양 한의 명령줄 도구는 `$WINDOWS$\Microsoft.NET\Framework\version\` 폴더입니다. 에 [를 사용 하 여 SQL 캐시 종속성](../caching-data/using-sql-cache-dependencies-cs.md) 자습서, 예를 들어, 살펴보았습니다를 사용 하는 `aspnet_regsql.exe` SQL 캐시 종속성에 필요한 인프라를 추가 하려면 명령줄 도구입니다. 이 폴더에 또 다른 유용한 명령줄 도구는는 [ASP.NET IIS 등록 도구 (`aspnet_regiis.exe`)](https://msdn.microsoft.com/en-us/library/k6h9cz8h(VS.80).aspx)합니다. 이름에서 알 수 있듯이 ASP.NET IIS 등록 도구는 Microsoft의 전문가 용 웹 서버를 IIS와 ASP.NET 2.0 응용 프로그램을 등록에 주로 사용 됩니다. IIS 관련 기능 외에도 ASP.NET IIS 등록 도구 사용할 수도 있습니다를 암호화 하거나 해독의 지정 된 구성 섹션 `Web.config`합니다.
+.NET Framework는 다양 한의 명령줄 도구는 `$WINDOWS$\Microsoft.NET\Framework\version\` 폴더입니다. 에 [를 사용 하 여 SQL 캐시 종속성](../caching-data/using-sql-cache-dependencies-cs.md) 자습서, 예를 들어, 살펴보았습니다를 사용 하는 `aspnet_regsql.exe` SQL 캐시 종속성에 필요한 인프라를 추가 하려면 명령줄 도구입니다. 이 폴더에 또 다른 유용한 명령줄 도구는는 [ASP.NET IIS 등록 도구 (`aspnet_regiis.exe`)](https://msdn.microsoft.com/library/k6h9cz8h(VS.80).aspx)합니다. 이름에서 알 수 있듯이 ASP.NET IIS 등록 도구는 Microsoft의 전문가 용 웹 서버를 IIS와 ASP.NET 2.0 응용 프로그램을 등록에 주로 사용 됩니다. IIS 관련 기능 외에도 ASP.NET IIS 등록 도구 사용할 수도 있습니다를 암호화 하거나 해독의 지정 된 구성 섹션 `Web.config`합니다.
 
 다음 문을 사용 하는 구성 섹션을 암호화 하는 데 사용 되는 일반 구문을 보여 줍니다는 `aspnet_regiis.exe` 명령줄 도구:
 
@@ -203,7 +203,7 @@ DPAPI 및 RSA 공급자의 암호화 및 암호 해독 루틴에 대 한 키를 
 공격자가 응용 프로그램 s 볼 수 있게 가정해 보세요. `Web.config` 파일입니다. SQL 인증을 사용 하 여 인터넷을 통해 액세스할 수 있는 데이터베이스에 연결할 공격자가이 연결 문자열을 사용 하 여 자신의 웹 사이트에서 ASP.NET 페이지 또는 SQL Management Studio를 통해 데이터베이스에 연결할 수 있습니다. 이 위협을 완화 하려면의 연결 문자열 정보를 암호화 `Web.config` 보호 되는 구성 시스템을 사용 합니다.
 
 > [!NOTE]
-> SQL Server에서 사용할 수 있는 인증의 서로 다른 형식에 대 한 자세한 내용은 참조 하십시오. [보안 ASP.NET 응용 프로그램: 인증, 권한 부여 및 보안 통신](https://msdn.microsoft.com/en-us/library/aa302392.aspx)합니다. 추가 연결 문자열의 Windows 및 SQL 인증 구문 차이점을 보여 주는 예제를 보려면 참조 [ConnectionStrings.com](http://www.connectionstrings.com/)합니다.
+> SQL Server에서 사용할 수 있는 인증의 서로 다른 형식에 대 한 자세한 내용은 참조 하십시오. [보안 ASP.NET 응용 프로그램: 인증, 권한 부여 및 보안 통신](https://msdn.microsoft.com/library/aa302392.aspx)합니다. 추가 연결 문자열의 Windows 및 SQL 인증 구문 차이점을 보여 주는 예제를 보려면 참조 [ConnectionStrings.com](http://www.connectionstrings.com/)합니다.
 
 
 ## <a name="summary"></a>요약
@@ -218,13 +218,13 @@ DPAPI 및 RSA 공급자의 암호화 및 암호 해독 루틴에 대 한 키를 
 
 이 자습서에 설명 된 항목에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
-- [보안 ASP.NET 응용 프로그램 빌드: 인증, 권한 부여 및 보안 통신](https://msdn.microsoft.com/en-us/library/aa302392.aspx)
+- [보안 ASP.NET 응용 프로그램 빌드: 인증, 권한 부여 및 보안 통신](https://msdn.microsoft.com/library/aa302392.aspx)
 - [ASP.NET 2.0에서에서 구성 정보 암호화 응용 프로그램](http://aspnet.4guysfromrolla.com/articles/021506-1.aspx)
 - [암호화 `Web.config` ASP.NET 2.0의에서 값](https://weblogs.asp.net/scottgu/archive/2006/01/09/434893.aspx)
-- [방법: ASP.NET 2.0에서에서 구성 섹션 암호화 DPAPI를 사용 하 여](https://msdn.microsoft.com/en-us/library/ms998280.aspx)
-- [방법: ASP.NET 2.0에서에서 구성 섹션을 암호화 하 RSA를 사용 하 여](https://msdn.microsoft.com/en-us/library/ms998283.aspx)
+- [방법: ASP.NET 2.0에서에서 구성 섹션 암호화 DPAPI를 사용 하 여](https://msdn.microsoft.com/library/ms998280.aspx)
+- [방법: ASP.NET 2.0에서에서 구성 섹션을 암호화 하 RSA를 사용 하 여](https://msdn.microsoft.com/library/ms998283.aspx)
 - [.NET 2.0 구성 API](http://www.odetocode.com/Articles/418.aspx)
-- [Windows 데이터 보호](https://msdn.microsoft.com/en-us/library/ms995355.aspx)
+- [Windows 데이터 보호](https://msdn.microsoft.com/library/ms995355.aspx)
 
 ## <a name="about-the-author"></a>작성자 정보
 

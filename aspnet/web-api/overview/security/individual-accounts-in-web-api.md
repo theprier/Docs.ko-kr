@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/individual-accounts-in-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 8207df79c1e915b33a0ba095d917a6dc69550173
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e2056e769edf972cba830b31cf37f6418148ca73
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="secure-a-web-api-with-individual-accounts-and-local-login-in-aspnet-web-api-22"></a>개별 계정 및 로컬 로그인 ASP.NET Web API 2.2의에서 웹 API 보안
 ====================
@@ -31,7 +31,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > - [Visual Studio 2013 업데이트 3](https://www.microsoft.com/visualstudio/eng/2013-downloads)
 > - [Web API 2.2](../releases/whats-new-in-aspnet-web-api-22.md)
-> - [ASP.NET Id 2.1](../../../identity/index.md)
+> - [ASP.NET Identity 2.1](../../../identity/index.md)
 
 
 Visual Studio 2013의 웹 API 프로젝트 템플릿을 제공 인증에 대 한 세 가지 옵션:
@@ -148,9 +148,9 @@ Visual Studio에서 응용 프로그램을 로컬로 실행 하는 경우 사용
 
 **로그인** 단추 토큰 끝점에 요청을 보냅니다. 요청 본문에는 다음과 같은 양식 url로 인코딩된 데이터가 포함 됩니다.
 
-- 부여\_유형: "password"
+- grant\_type: "password"
 - 사용자 이름: &lt;사용자의 전자 메일&gt;
-- 암호: &lt;암호&gt;
+- password: &lt;password&gt;
 
 AJAX 요청을 전송 하는 JavaScript 코드는 다음과 같습니다.
 
@@ -204,8 +204,8 @@ HTTP 응답:
 
 - `AccountController`. 사용자 계정을 관리 하기 위한 Web API 끝점을 제공 합니다. `Register` 동작은이 자습서에서 사용한 유일한 노드입니다. 클래스의 다른 메서드는 암호 재설정, 소셜 로그인 및 기타 기능을 지원합니다.
 - `ApplicationUser`/Models/IdentityModels.cs에 정의 되어 있습니다. 이 클래스는 멤버 자격 데이터베이스의 사용자 계정에 대 한 EF 모델.
-- `ApplicationUserManager`/App에 정의 된\_이 클래스에서 파생 Start/IdentityConfig.cs [UserManager](https://msdn.microsoft.com/en-us/library/dn613290.aspx) 및 암호 등을 확인 하는 새 사용자 만들기와 같은 사용자 계정에 대 한 작업을 수행 하 고 자동으로 유지 데이터베이스를 변경 합니다.
-- `ApplicationOAuthProvider`. 이 개체는 OWIN 미들웨어에 연결 하 고 미들웨어에서 발생 한 이벤트를 처리 합니다. 파생 [OAuthAuthorizationServerProvider](https://msdn.microsoft.com/en-us/library/microsoft.owin.security.oauth.oauthauthorizationserverprovider.aspx)합니다.
+- `ApplicationUserManager`/App에 정의 된\_이 클래스에서 파생 Start/IdentityConfig.cs [UserManager](https://msdn.microsoft.com/library/dn613290.aspx) 및 암호 등을 확인 하는 새 사용자 만들기와 같은 사용자 계정에 대 한 작업을 수행 하 고 자동으로 유지 데이터베이스를 변경 합니다.
+- `ApplicationOAuthProvider`. 이 개체는 OWIN 미들웨어에 연결 하 고 미들웨어에서 발생 한 이벤트를 처리 합니다. 파생 [OAuthAuthorizationServerProvider](https://msdn.microsoft.com/library/microsoft.owin.security.oauth.oauthauthorizationserverprovider.aspx)합니다.
 
 ![](individual-accounts-in-web-api/_static/image14.png)
 

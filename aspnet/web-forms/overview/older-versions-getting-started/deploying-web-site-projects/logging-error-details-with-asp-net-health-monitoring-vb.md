@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6a1533b80828532b756940d0b08fe4c6dab2d5dd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 83f7504e3aeb02ed222712e7e51f612f7ffd5744
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="logging-error-details-with-aspnet-health-monitoring-vb"></a>ASP.NET 상태 모니터링 (VB)를 사용 하 여 오류 세부 정보를 로깅
 ====================
@@ -43,13 +43,13 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="exploring-the-health-monitoring-systems-configuration"></a>상태 시스템의 구성을 모니터링 탐색
 
-상태 시스템의 동작 모니터링에 있는 해당 구성 정보에 의해 정의 됩니다는 [ `<healthMonitoring>` 요소](https://msdn.microsoft.com/en-us/library/2fwh2ss9.aspx) 에서 `Web.config`합니다. 이 구성 섹션의 정보는 다음 세 가지 중요 한 부분 무엇 보다도 정의합니다.
+상태 시스템의 동작 모니터링에 있는 해당 구성 정보에 의해 정의 됩니다는 [ `<healthMonitoring>` 요소](https://msdn.microsoft.com/library/2fwh2ss9.aspx) 에서 `Web.config`합니다. 이 구성 섹션의 정보는 다음 세 가지 중요 한 부분 무엇 보다도 정의합니다.
 
 1. 상태 모니터링 이벤트를 기록해 야, 발생 하는 경우
 2. 로그 원본 및
 3. 각 상태 모니터링 (1)에 정의 된 이벤트 로그 소스에 매핑하는 방법을 (2)에서 정의 합니다.
 
-이 정보는 세 명의 하위 구성 요소를 통해 지정 되어: [ `<eventMappings>` ](https://msdn.microsoft.com/en-us/library/yc5yk01w.aspx), [ `<providers>` ](https://msdn.microsoft.com/en-us/library/zaa41kz1.aspx), 및 [ `<rules>` ](https://msdn.microsoft.com/en-us/library/fe5wyxa0.aspx)각각.
+이 정보는 세 명의 하위 구성 요소를 통해 지정 되어: [ `<eventMappings>` ](https://msdn.microsoft.com/library/yc5yk01w.aspx), [ `<providers>` ](https://msdn.microsoft.com/library/zaa41kz1.aspx), 및 [ `<rules>` ](https://msdn.microsoft.com/library/fe5wyxa0.aspx)각각.
 
 기본 상태 시스템 구성 정보를 모니터링에서 확인할 수 있습니다는 `Web.config` 파일 `%WINDIR%\Microsoft.NET\Framework\version\CONFIG` 폴더입니다. 이 기본 구성 정보를 간단 하 게 나타내기에 대 한 제거 일부 태그와 함께 아래 나와 있습니다.
 
@@ -104,17 +104,17 @@ ms.lasthandoff: 11/10/2017
 > 이후의 자습서 ELMAH 라는 대체 오류 로깅 및 알림 시스템을 탐색 합니다. ELMAH는 RSS 피드로 웹 페이지에서 오류 로그를 볼 수 있는 기본 제공 메커니즘을 포함 합니다.
 
 
-## <a name="logging-events-to-e-mail"></a>전자 메일에 이벤트 기록을
+## <a name="logging-events-to-email"></a>전자 메일에 이벤트 로깅
 
 상태 시스템 모니터링 이벤트를 전자 메일 메시지에 "기록" 하는 로그 소스 공급자가 포함 되어 있습니다. 로그 원본 데이터베이스 전자 메일 메시지 본문에 기록 되는 동일한 정보를 포함 합니다. 특정 상태 모니터링 이벤트가 발생할 때 개발자에 알리기 위해이 로그 소스를 사용할 수 있습니다.
 
 웹 사이트의 구성에서는 예외가 발생할 때마다 전자 메일을 받을 수 있도록 발생 책 검토를 업데이트 해 보겠습니다. 이렇게 하려면 세 가지 작업을 수행 해야 합니다.
 
-1. 전자 메일을 보낼 ASP.NET 웹 응용 프로그램을 구성 합니다. 전자 메일 메시지를 통해 전송 되는 방법을 지정 하 여 이렇게는 `<system.net>` 구성 요소입니다. 전자 메일을 보내는 방법에 대 한 자세한 내용은 ASP.NET 응용 프로그램에서 메시지를 참조 [ASP.NET에서 전자 메일 보내기](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx) 및 [System.Net.Mail FAQ](http://systemnetmail.com/)합니다.
+1. 전자 메일을 보내는 ASP.NET 웹 응용 프로그램을 구성 합니다. 전자 메일 메시지를 통해 전송 되는 방법을 지정 하 여 이렇게는 `<system.net>` 구성 요소입니다. 전자 메일을 보내는 방법에 대 한 자세한 내용은 ASP.NET 응용 프로그램에서 메시지를 참조 [ASP.NET에서 전자 메일 보내기](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx) 및 [System.Net.Mail FAQ](http://systemnetmail.com/)합니다.
 2. 등록에서 전자 메일 로그 소스 공급자는 `<providers>` 요소 및
 3. 항목을 추가 `<rules>` "모든 오류가" 이벤트 로그 소스 공급자 (2) 단계에서 추가한에 매핑하는 요소입니다.
 
-두 개의 전자 메일 로그 소스 공급자 클래스를 포함 하는 상태 시스템 모니터링: `SimpleMailWebEventProvider` 및 `TemplatedMailWebEventProvider`합니다. [ `SimpleMailWebEventProvider` 클래스](https://msdn.microsoft.com/en-us/library/system.web.management.simplemailwebeventprovider.aspx) 자세히 설명 하 고 전자 메일 본문의 사용자 지정이 거의 제공 하는 이벤트를 포함 하는 일반 텍스트 전자 메일 메시지를 보냅니다. 와 [ `TemplatedMailWebEventProvider` 클래스](https://msdn.microsoft.com/en-us/library/system.web.management.templatedmailwebeventprovider.aspx) 렌더링 된 피드백 전자 메일 메시지 본문으로 사용 되는 ASP.NET 페이지를 지정 합니다. [ `TemplatedMailWebEventProvider` 클래스](https://msdn.microsoft.com/en-us/library/system.web.management.templatedmailwebeventprovider.aspx) 내용과 전자 메일 메시지의 서식을 통해 보다 광범위 제어를 제공 하지만 전자 메일 메시지의 본문을 생성 하는 ASP.NET 페이지를 만들어야 할 때 좀 더 선행 작업이 필요 하지 않습니다. 이 자습서를 사용 하 여 중점적는 `SimpleMailWebEventProvider` 클래스입니다.
+두 개의 전자 메일 로그 소스 공급자 클래스를 포함 하는 상태 시스템 모니터링: `SimpleMailWebEventProvider` 및 `TemplatedMailWebEventProvider`합니다. [ `SimpleMailWebEventProvider` 클래스](https://msdn.microsoft.com/library/system.web.management.simplemailwebeventprovider.aspx) 자세히 설명 하 고 전자 메일 본문의 사용자 지정이 거의 제공 하는 이벤트를 포함 하는 일반 텍스트 전자 메일 메시지를 보냅니다. 와 [ `TemplatedMailWebEventProvider` 클래스](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) 렌더링 된 피드백 전자 메일 메시지의 본문으로 사용 되는 ASP.NET 페이지를 지정 합니다. [ `TemplatedMailWebEventProvider` 클래스](https://msdn.microsoft.com/library/system.web.management.templatedmailwebeventprovider.aspx) 내용과 전자 메일 메시지의 서식을 통해 보다 광범위 제어를 제공 하지만 전자 메일 메시지의 본문을 생성 하는 ASP.NET 페이지를 만들어야 할 때 좀 더 선행 작업이 필요 하지 않습니다. 이 자습서를 사용 하 여 중점적는 `SimpleMailWebEventProvider` 클래스입니다.
 
 상태 시스템의 모니터링 업데이트 `<providers>` 요소에는 `Web.config` 파일에 대 한 로그 소스를 포함 하는 `SimpleMailWebEventProvider` 클래스:
 
@@ -126,20 +126,20 @@ ms.lasthandoff: 11/10/2017
 
 [!code-xml[Main](logging-error-details-with-asp-net-health-monitoring-vb/samples/sample4.xml)]
 
-`<rules>` 섹션에는 이제 두 개의 규칙이 포함 됩니다. "모든 오류에 전자 메일"을 명명 된 첫 번째 "EmailWebEventProvider" 로그 소스를 모든 처리 되지 않은 예외를 보냅니다. 이 규칙에 지정 된 웹 사이트에서 오류에 대 한 세부 정보를 보내는 효과가 주소입니다. 모든 오류에 "데이터베이스" 규칙은 사이트의 데이터베이스에 오류 세부 정보를 기록합니다. 따라서 세부 정보는 사이트에서 처리 되지 않은 예외가 발생할 때마다 모두 되 데이터베이스에 로깅되 고 지정 된 전자 메일 주소로 전송 합니다.
+`<rules>` 섹션에는 이제 두 개의 규칙이 포함 됩니다. "모든 오류에 전자 메일", 명명 된 첫 번째 "EmailWebEventProvider" 로그 소스를 모든 처리 되지 않은 예외를 보냅니다. 이 규칙에 지정 된 웹 사이트에서 오류에 대 한 세부 정보를 보내는 효과가 주소입니다. 모든 오류에 "데이터베이스" 규칙은 사이트의 데이터베이스에 오류 세부 정보를 기록합니다. 따라서 세부 정보는 사이트에서 처리 되지 않은 예외가 발생할 때마다 모두 되 데이터베이스에 로깅되 고 지정 된 전자 메일 주소로 전송 합니다.
 
 **그림 2** 에 의해 생성 된 전자 메일을 보여 줍니다는 `SimpleMailWebEventProvider` 을 방문할 때 클래스 `Genre.aspx?ID=foo`합니다.
 
 [![](logging-error-details-with-asp-net-health-monitoring-vb/_static/image5.png)](logging-error-details-with-asp-net-health-monitoring-vb/_static/image4.png)
 
-**그림 2**: 오류 세부 정보 전자 메일 메시지에 보내집니다.  
+**그림 2**: 오류 세부 정보는 전자 메일 메시지에 보내집니다.  
 ([전체 크기 이미지를 보려면 클릭](logging-error-details-with-asp-net-health-monitoring-vb/_static/image6.png))
 
 ## <a name="summary"></a>요약
 
 ASP.NET 상태 모니터링 시스템은 관리자가 배포 된 웹 응용 프로그램의 상태를 모니터링할 수 있도록 설계 되었습니다. 상태 모니터링 이벤트 응용 프로그램 중지 시 때 사용자 성공적으로 사이트에 로그온을 같은 특정 작업 펼침 또는 처리 되지 않은 예외가 발생할 때 발생 합니다. 이러한 이벤트는 임의 개수의 원본 로그에 기록할 수 있습니다. 이 자습서에는 데이터베이스에 및 전자 메일 메시지를 통해 처리 되지 않은 예외의 세부 정보를 기록 하는 방법을 배웠습니다.
 
-이 자습서에 처리 되지 않은 예외를 기록 하지만 상태 모니터링은 배포 된 ASP.NET 응용 프로그램의 전반적인 상태를 측정 하도록 설계 된 및 다양 한 상태 모니터링 이벤트만 포함 되어 염두에 둬야 및 소스를 하지 로그 모니터링 상태를 사용 하 여에 집중 여기를 탐색 합니다. 더구나 고유한 상태 모니터링 이벤트 및 로그 소스를 만들 수 필요한 발생 합니다. 좋은 파악 하는 상태 모니터링에 대 한 더 자세히 알고 싶은 경우 [Erik Reitan](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)의 [상태 모니터링 FAQ](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)합니다. 그런 다음, 참조 [방법: ASP.NET 2.0에서 사용 하 여 상태 모니터링](https://msdn.microsoft.com/en-us/library/ms998306.aspx)합니다.
+이 자습서에 처리 되지 않은 예외를 기록 하지만 상태 모니터링은 배포 된 ASP.NET 응용 프로그램의 전반적인 상태를 측정 하도록 설계 된 및 다양 한 상태 모니터링 이벤트만 포함 되어 염두에 둬야 및 소스를 하지 로그 모니터링 상태를 사용 하 여에 집중 여기를 탐색 합니다. 더구나 고유한 상태 모니터링 이벤트 및 로그 소스를 만들 수 필요한 발생 합니다. 좋은 파악 하는 상태 모니터링에 대 한 더 자세히 알고 싶은 경우 [Erik Reitan](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)의 [상태 모니터링 FAQ](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)합니다. 그런 다음, 참조 [방법: ASP.NET 2.0에서 사용 하 여 상태 모니터링](https://msdn.microsoft.com/library/ms998306.aspx)합니다.
 
 만족도 매우 프로그래밍!
 
@@ -147,11 +147,11 @@ ASP.NET 상태 모니터링 시스템은 관리자가 배포 된 웹 응용 프�
 
 이 자습서에 설명 된 항목에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
-- [ASP.NET 상태 모니터링 개요](https://msdn.microsoft.com/en-us/library/bb398933.aspx)
+- [ASP.NET 상태 모니터링 개요](https://msdn.microsoft.com/library/bb398933.aspx)
 - [구성 및 상태 모니터링 시스템의 ASP.NET 사용자 지정](http://dotnetslackers.com/articles/aspnet/ConfiguringAndCustomizingTheHealthMonitoringSystemOfASPNET.aspx)
 - [FAQ-상태 모니터링 ASP.NET 2.0에서](https://blogs.msdn.com/erikreitan/archive/2006/05/22/603586.aspx)
-- [방법: 상태 모니터링 알림을 위한 전자 메일 보내기](https://msdn.microsoft.com/en-us/library/ms227553.aspx)
-- [방법: ASP.NET에서 상태 모니터링 사용](https://msdn.microsoft.com/en-us/library/ms998306.aspx)
+- [방법: 상태 모니터링 알림을 위한 전자 메일 보내기](https://msdn.microsoft.com/library/ms227553.aspx)
+- [방법: ASP.NET에서 상태 모니터링 사용](https://msdn.microsoft.com/library/ms998306.aspx)
 - [ASP.NET에서 모니터링 하는 상태](http://aspnet.4guysfromrolla.com/articles/031407-1.aspx)
 
 >[!div class="step-by-step"]

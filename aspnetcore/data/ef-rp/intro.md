@@ -2,19 +2,18 @@
 title: "Entity Framework Core-8 자습서 1 사용 하 여 razor 페이지"
 author: rick-anderson
 description: "Entity Framework Core를 사용 하 여 Razor 페이지 앱을 만드는 방법을 보여 줍니다."
-keywords: "ASP.NET Core, Entity Framework Core 자습서"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 11/15/2017
-ms.topic: get-started-article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-rp/intro
-ms.openlocfilehash: acbd987438edeea13f29547dc471f9a211e87b04
-ms.sourcegitcommit: 1de159820a572c08955ee77cc8b1caa3d7aa938c
+ms.openlocfilehash: 091f34da347d52ba8e3e87779ddc4aeb790c2800
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/23/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="getting-started-with-razor-pages-and-entity-framework-core-using-visual-studio-1-of-8"></a>Razor 페이지 및 Visual Studio (1 / 8)를 사용 하 여 Entity Framework Core 시작
 
@@ -34,7 +33,7 @@ Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework (EF) 코어
 
 ## <a name="troubleshooting"></a>문제 해결
 
-솔루션에 코드를 비교 하 여 일반적으로 찾을 수 문제를 해결할 수 없는 실행 하는 경우는 [단계 완료](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots) 또는 [완료 된 프로젝트](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/cu-final)합니다. 일반적인 오류 및 해결 방법을 목록은 참조 하십시오. [계열의 마지막 자습서의 문제 해결 섹션](xref:data/ef-mvc/advanced#common-errors)합니다. 에 대 한 StackOverflow.com에 질문을 게시할 수 필요한 있습니다을 찾지 못한 경우 [ASP.NET Core](https://stackoverflow.com/questions/tagged/asp.net-core) 또는 [EF 코어](https://stackoverflow.com/questions/tagged/entity-framework-core)합니다.
+솔루션에 코드를 비교 하 여 일반적으로 찾을 수 문제를 해결할 수 없는 실행 하는 경우는 [단계 완료](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots) 또는 [완료 된 프로젝트](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/cu-final)합니다. 일반적인 오류 및 해결 방법을 목록은 참조 하십시오. [계열의 마지막 자습서의 문제 해결 섹션](xref:data/ef-mvc/advanced#common-errors)합니다. 필요한 있습니다을 찾지 못한 경우 질문을 게시할 수 있습니다 [StackOverflow.com](https://stackoverflow.com/questions/tagged/asp.net-core) 에 대 한 [ASP.NET Core](https://stackoverflow.com/questions/tagged/asp.net-core) 또는 [EF 코어](https://stackoverflow.com/questions/tagged/entity-framework-core)합니다.
 
 > [!TIP]
 > 이 일련의 자습서 이전 자습서에서 수행 되는 동작과 기반으로 합니다. 각 자습서 완료 후 프로젝트의 복사본을 저장 하는 것이 좋습니다. 문제를 실행 하는 경우 시작 부분으로 다시 이동 하지 않고도 이전 자습서에서를 통해 시작할 수 있습니다. 다운로드할 수 있습니다는 [단계 완료](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots) 고 완료 된 단계를 사용 하 여 다시 시작 합니다.
@@ -71,7 +70,7 @@ Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework (EF) 코어
 
 * 메뉴 항목에 대 한 추가 **학생**, **Courses**, **강사**, 및 **부서**, 및 삭제는 **연락처** 메뉴 항목입니다.
 
-변경 내용은 강조 표시 됩니다.
+변경 내용은 강조 표시 됩니다. (모든 태그는 *하지* 표시 합니다.)
 
 [!code-html[](intro/samples/cu/Pages/_Layout.cshtml?highlight=6,29,35-38,47&range=1-50)]
 
@@ -180,7 +179,7 @@ ASP.NET Core 포함 [종속성 주입](xref:fundamentals/dependency-injection)�
 
 ### <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
 
-연결 문자열에는 SQL Server LocalDB DB 지정합니다. LocalDB는 SQL Server Express 데이터베이스 엔진의 경량 버전 하며 응용 프로그램 개발의 경우 프로덕션 환경에서 사용 되지 않습니다. LocalDB는 요청 시 시작하고 사용자 모드에서 실행되므로 복잡한 구성이 없습니다. 기본적으로 LocalDB 만듭니다 *.mdf* DB 파일에 `C:/Users/<user>` 디렉터리입니다.
+연결 문자열에는 SQL Server LocalDB DB 지정합니다. LocalDB는 SQL Server Express 데이터베이스 엔진의 경량 버전 하며 응용 프로그램 개발의 경우 프로덕션 환경에서 사용 되지 않습니다. LocalDB 요청 시 시작 하 고 사용자 모드에서 실행 되므로 복잡 한 구성이 없습니다. 기본적으로 LocalDB 만듭니다 *.mdf* DB 파일에 `C:/Users/<user>` 디렉터리입니다.
 
 ## <a name="add-code-to-initialize-the-db-with-test-data"></a>테스트 데이터로 DB 초기화 코드를 추가
 
@@ -272,7 +271,7 @@ No executable found matching command "dotnet-aspnet-codegenerator"
  <a name="test"></a>
 ### <a name="test-the-app"></a>앱 테스트
 
-응용 프로그램을 실행 하 고 선택 된 **학생** 링크 합니다. 브라우저 너비에 따라는 **학생** 링크 페이지의 맨 위에 나타납니다. 경우는 **학생** 링크가 표시 되지 않는, 오른쪽 위 모서리에서 탐색 아이콘을 클릭 합니다.
+응용 프로그램을 실행 하 고 선택 된 **학생** 링크 합니다. 브라우저 너비에 따라는 **학생** 링크 페이지의 맨 위에 나타납니다. 경우는 **학생** 링크는 표시 되지 않으면, 오른쪽 위 모서리에서 탐색 아이콘을 클릭 합니다.
 
 ![좁은 Contoso 대학 홈 페이지](intro/_static/home-page-narrow.png)
 
@@ -338,9 +337,9 @@ SSOX, 클릭 **(localdb) \MSSQLLocalDB > 데이터베이스 > ContosoUniversity1
 
 EF 코어를 사용 하는 비동기 코드를 작성 하는 경우 고려해 야 할 몇 가지 사항은 다음과 같습니다.
 
-* 쿼리 또는 여 DB에 보내야 하는 명령을 발생 하는 명령문만 비동기적으로 실행 됩니다. 포함 된 `ToListAsync`, `SingleOrDefaultAsync`, `FirstOrDefaultAsync`, 및 `SaveChangesAsync`합니다. 방금 변경 하는 문을 포함 하지 않습니다는 `IQueryable`와 같은 `var students = context.Students.Where(s => s.LastName == "Davolio")`합니다.
+* 쿼리 또는 여 DB에 보내야 하는 명령을 발생 하는 명령문만 비동기적으로 실행 됩니다. 포함 된 `ToListAsync`, `SingleOrDefaultAsync`, `FirstOrDefaultAsync`, 및 `SaveChangesAsync`합니다. 방금 변경 하는 문을 포함 되지 않습니다는 `IQueryable`와 같은 `var students = context.Students.Where(s => s.LastName == "Davolio")`합니다.
 
-* EF 코어 컨텍스트는 스레드 안전 하지 않습니다: 동시에 여러 작업을 수행 하지 마세요. 
+* EF 코어 컨텍스트 스레드로부터 안전 하지: 동시에 여러 작업을 수행 하지 마세요. 
 
 * 비동기 코드의 성능 이점을 활용 하려면 있는지 라이브러리 패키지 (예: 페이징) 비동기 메서드를 사용 DB에 쿼리를 전송 하는 EF 코어 메서드를 호출 하는 경우를 확인 합니다.
 

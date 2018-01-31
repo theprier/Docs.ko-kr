@@ -2,20 +2,18 @@
 title: "Visual Studio Code를 사용하여 ASP.NET Core MVC 앱 만들기"
 author: rick-anderson
 description: "Visual Studio Code를 사용하여 첫 번째 ASP.NET Core MVC 앱에 대한 인덱스 페이지"
-keywords: ASP.NET Core, MVC, Entity Framework, Visual Studio Code, VS Code
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 05/17/2017
-ms.topic: get-started-article
-ms.assetid: 959ff4ca-be2d-1638-ac04-789e7f7146ff
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: tutorials/first-mvc-app-xplat/index
-ms.openlocfilehash: 4083dea74548099ee3ba8d963110bb2c3c8ae00a
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: 443a48510c382f3ab9e4bddfe0afe6be3a7983bb
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="create-an-aspnet-core-mvc-app-with-visual-studio-code"></a>Visual Studio Code를 사용하여 ASP.NET Core MVC 앱 만들기
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/configuring-the-data-access-layer-s-connection-and-command-level-settings-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 5675c1c2a1c8987412ae79707e4c20e29e0e0df6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: be81bde63d66c3a7070f31be830f7d10ba3a5f8e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-the-data-access-layers-connection--and-command-level-settings-c"></a>데이터 액세스 계층 연결 및 명령 수준 설정 (C#) 구성
 ====================
@@ -37,7 +37,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="working-with-data-using-adonet"></a>ADO.NET을 사용 하 여 데이터 작업
 
-Microsoft.NET Framework는 다량의 데이터와 함께 작동 하도록 특별히 설계 된 클래스를 포함 합니다. 내에 있는이 클래스는 [ `System.Data` 네임 스페이스](https://msdn.microsoft.com/en-us/library/system.data.aspx)는 라고 하는 *ADO.NET* 클래스입니다. 특정에 연결 된 일부 ADO.NET 포괄적인 아래 클래스 *데이터 공급자*합니다. 데이터 공급자의 정보는 ADO.NET 클래스 및 기본 데이터 저장소 간에 전달 될 수 있는 통신 채널으로 생각할 수 있습니다. 특정 데이터베이스 시스템에 대해 특별히 고안 된 공급자 뿐만 아니라 OleDb는 ODBC와 같은 일반화 된 공급자가 있습니다. 예를 들어 ole Db 공급자를 사용 하 여 Microsoft SQL Server 데이터베이스에 연결할 수 있지만 SqlClient 공급자는 훨씬 더 효율적을 설계 하 고 SQL Server에 대해 특히 최적화.
+Microsoft.NET Framework는 다량의 데이터와 함께 작동 하도록 특별히 설계 된 클래스를 포함 합니다. 내에 있는이 클래스는 [ `System.Data` 네임 스페이스](https://msdn.microsoft.com/library/system.data.aspx)는 라고 하는 *ADO.NET* 클래스입니다. 특정에 연결 된 일부 ADO.NET 포괄적인 아래 클래스 *데이터 공급자*합니다. 데이터 공급자의 정보는 ADO.NET 클래스 및 기본 데이터 저장소 간에 전달 될 수 있는 통신 채널으로 생각할 수 있습니다. 특정 데이터베이스 시스템에 대해 특별히 고안 된 공급자 뿐만 아니라 OleDb는 ODBC와 같은 일반화 된 공급자가 있습니다. 예를 들어 ole Db 공급자를 사용 하 여 Microsoft SQL Server 데이터베이스에 연결할 수 있지만 SqlClient 공급자는 훨씬 더 효율적을 설계 하 고 SQL Server에 대해 특히 최적화.
 
 데이터를 프로그래밍 방식으로 액세스할 때 다음 패턴은 일반적으로 사용 됩니다.
 
@@ -45,7 +45,7 @@ Microsoft.NET Framework는 다량의 데이터와 함께 작동 하도록 특별
 - 명령을 실행 합니다.
 - 에 대 한 `SELECT` 쿼리 결과 레코드를 사용 합니다.
 
-이러한 각 단계를 수행 하기 위한 별도 ADO.NET 클래스가 있습니다. SqlClient 공급자를 사용 하는 데이터베이스에 연결할 사용 예를 들어는 [ `SqlConnection` 클래스](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlconnection(VS.80).aspx)합니다. 문제에는 `INSERT`, `UPDATE`, `DELETE`, 또는 `SELECT` 명령을 사용 하 여 데이터베이스에는 [ `SqlCommand` 클래스](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlcommand.aspx)합니다.
+이러한 각 단계를 수행 하기 위한 별도 ADO.NET 클래스가 있습니다. SqlClient 공급자를 사용 하는 데이터베이스에 연결할 사용 예를 들어는 [ `SqlConnection` 클래스](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection(VS.80).aspx)합니다. 문제에는 `INSERT`, `UPDATE`, `DELETE`, 또는 `SELECT` 명령을 사용 하 여 데이터베이스에는 [ `SqlCommand` 클래스](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.aspx)합니다.
 
 제외 하 고는 [트랜잭션 내에서 데이터베이스 수정 내용을 래핑](../working-with-batched-data/wrapping-database-modifications-within-a-transaction-cs.md) 자습서에서는 발생 하지 Tableadapter 자동 생성 된 코드는 데 필요한 기능을 포함 하기 때문에 직접 하위 수준 ADO.NET 코드 작성 데이터베이스에 연결 명령을 실행 데이터를 검색 및 Datatable에 해당 데이터를 채웁니다. 그러나 이러한 하위 수준 설정을 사용자 지정 해야 우리는 경우가 있을 수 있습니다. 다음 몇 단계를 통해 Tableadapter에서 내부적으로 사용 하는 경우 ADO.NET 개체에 간단 하는 방법을 살펴보겠습니다.
 
@@ -121,7 +121,7 @@ TableAdapter 클래스의 인스턴스가 만들어질 때, 멤버 변수 `_conn
 
 ## <a name="step-3-examining-the-command-related-properties"></a>3 단계: 명령 관련 속성 검사
 
-기본적으로는 자동으로 생성 하는 주 쿼리의 TableAdapter 구성 `INSERT`, `UPDATE`, 및 `DELETE` 문. 이 주 쿼리 s `INSERT`, `UPDATE`, 및 `DELETE` 문을 통해 ADO.NET 데이터 어댑터 개체로 TableAdapter의 코드에서 구현 됩니다는 `Adapter` 속성입니다. 와 함께 해당 `Connection` 속성에는 `Adapter`의 속성 데이터 형식이 사용 되는 데이터 공급자에 의해 결정 됩니다. 이 자습서에는 SqlClient 공급자를 사용 하므로 `Adapter` 형식의 속성은 [ `SqlDataAdapter` ](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqldataadapter(VS.80).aspx)합니다.
+기본적으로는 자동으로 생성 하는 주 쿼리의 TableAdapter 구성 `INSERT`, `UPDATE`, 및 `DELETE` 문. 이 주 쿼리 s `INSERT`, `UPDATE`, 및 `DELETE` 문을 통해 ADO.NET 데이터 어댑터 개체로 TableAdapter의 코드에서 구현 됩니다는 `Adapter` 속성입니다. 와 함께 해당 `Connection` 속성에는 `Adapter`의 속성 데이터 형식이 사용 되는 데이터 공급자에 의해 결정 됩니다. 이 자습서에는 SqlClient 공급자를 사용 하므로 `Adapter` 형식의 속성은 [ `SqlDataAdapter` ](https://msdn.microsoft.com/library/system.data.sqlclient.sqldataadapter(VS.80).aspx)합니다.
 
 TableAdapter s `Adapter` 속성에는 세 가지 속성 형식의 `SqlCommand` 위해 사용 하는 문제는 `INSERT`, `UPDATE`, 및 `DELETE` 문:
 
@@ -129,7 +129,7 @@ TableAdapter s `Adapter` 속성에는 세 가지 속성 형식의 `SqlCommand` �
 - `UpdateCommand`
 - `DeleteCommand`
 
-A `SqlCommand` 개체를 데이터베이스에 특정 쿼리를 보내는 같은 속성이: [ `CommandText` ](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlcommand.commandtext.aspx), 임시 SQL 문 또는 저장된 프로시저는 실행를 포함 하 고 [ `Parameters` ](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlcommand.parameters.aspx)의 컬렉션인 `SqlParameter` 개체입니다. 다시에서 설명한 것 처럼는 [데이터 액세스 계층을 만들려면](../introduction/creating-a-data-access-layer-cs.md) 자습서에서는이 명령은 속성 창을 통해 개체를 사용자 지정할 수 있습니다.
+A `SqlCommand` 개체를 데이터베이스에 특정 쿼리를 보내는 같은 속성이: [ `CommandText` ](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.commandtext.aspx), 임시 SQL 문 또는 저장된 프로시저는 실행를 포함 하 고 [ `Parameters` ](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.parameters.aspx)의 컬렉션인 `SqlParameter` 개체입니다. 다시에서 설명한 것 처럼는 [데이터 액세스 계층을 만들려면](../introduction/creating-a-data-access-layer-cs.md) 자습서에서는이 명령은 속성 창을 통해 개체를 사용자 지정할 수 있습니다.
 
 TableAdapter의 주 쿼리에서 외에도 다양 한 수의 메서드를 포함할 수는 호출 되 면 데이터베이스에 지정된 된 명령을 디스패치합니다. 주 쿼리의 명령 개체 및 모든 추가 방법에 대해 명령 개체는 tableadapter에 저장 됩니다 `CommandCollection` 속성입니다.
 
@@ -146,7 +146,7 @@ Let s 보십시오에 의해 생성 된 코드는 `ProductsTableAdapter` 에 `No
 
 TableAdapter는 단일은만 되므로 `Connection` 속성을 연결 수준의 설정은 노출 하기 위한 코드는 매우 간단 합니다. TableAdapter에 여러 개의 명령 개체-있을 수 있으므로 명령 수준 설정을 수정 하는 경우 작업은 조금 더 복잡 한 `InsertCommand`, `UpdateCommand`, 및 `DeleteCommand`, 가변 개수의의 명령 개체와 함께 `CommandCollection` 속성입니다. 명령 수준 설정으로 업데이트할 때 이러한 설정은 모든 명령 개체에 전파 해야 합니다.
 
-예를 들어, 실행 하는 특별 한 오랜 시간이 걸린 TableAdapter에 특정 쿼리 내용이 한다고 가정 합니다. TableAdapter를 사용 하 여 해당 쿼리 중 하나를 실행할를 우리 늘려야 할 수 명령 개체 s [ `CommandTimeout` 속성](https://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlcommand.commandtimeout.aspx)합니다. 이 속성 명령이 실행 될 때까지 기다리는 시간 (초)의 수를 지정 하 고 기본값은 30입니다.
+예를 들어, 실행 하는 특별 한 오랜 시간이 걸린 TableAdapter에 특정 쿼리 내용이 한다고 가정 합니다. TableAdapter를 사용 하 여 해당 쿼리 중 하나를 실행할를 우리 늘려야 할 수 명령 개체 s [ `CommandTimeout` 속성](https://msdn.microsoft.com/library/system.data.sqlclient.sqlcommand.commandtimeout.aspx)합니다. 이 속성 명령이 실행 될 때까지 기다리는 시간 (초)의 수를 지정 하 고 기본값은 30입니다.
 
 허용 하는 `CommandTimeout` 는 BLL으로 조정 해야 하는 속성에 다음 추가 `public` 메서드를는 `ProductsDataTable` 2 단계에서에서 만든 partial 클래스 파일을 사용 하 여 (`ProductsTableAdapter.ConnectionAndCommandSettings.cs`):
 

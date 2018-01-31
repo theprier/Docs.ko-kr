@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript
 msc.type: authoredcontent
-ms.openlocfilehash: 68870caf1608e596962650cf653e5b455b82382a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 29b45c07b5498542abbf22c4c3001b1cee41edc9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript"></a>만드는 MVC 3 Application with Razor and Unobtrusive JavaScript
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 사용자 목록 예제 웹 응용 프로그램 Razor 뷰 엔진을 사용 하 여 ASP.NET MVC 3 응용 프로그램을 만드는 간단한 방법을 보여 줍니다. 샘플 응용 프로그램 만들기, 표시, 편집 및 삭제 하는 중 사용자가 같은 기능을 포함 하는 가상의 사용자 목록 웹 사이트를 만드는 ASP.NET MVC 버전 3와 새로운 Razor 뷰 엔진 및 Visual Studio 2010을 사용 하는 방법을 보여 줍니다.
 > 
@@ -68,7 +68,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample2.cs)]
 
-`UserModel` 클래스는 사용자가 나타냅니다. 클래스의 각 멤버는 주석을 [필요한](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.requiredattribute.aspx) 에서 특성의 [DataAnnotations](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx) 네임 스페이스입니다. 에 있는 특성의 [DataAnnotations](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx) 네임 스페이스 웹 응용 프로그램에 대 한 자동 클라이언트 및 서버 쪽 유효성 검사를 제공 합니다.
+`UserModel` 클래스는 사용자가 나타냅니다. 클래스의 각 멤버는 주석을 [필요한](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx) 에서 특성의 [DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) 네임 스페이스입니다. 에 있는 특성의 [DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) 네임 스페이스 웹 응용 프로그램에 대 한 자동 클라이언트 및 서버 쪽 유효성 검사를 제공 합니다.
 
 열기는 `HomeController` 클래스 및 추가 `using` 액세스할 수 있도록 지시문은 `UserModel` 및 `Users` 클래스:
 
@@ -116,19 +116,19 @@ ms.lasthandoff: 11/10/2017
 
 다음 단계를 추가 하는 것을 `Details` 동작 메서드 및 사용자 세부 정보를 표시 하기 위해 보기.
 
-![세부 정보](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image10.png)
+![설명](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image10.png)
 
 다음 추가 `Details` 메서드를 home 컨트롤러:
 
 [!code-csharp[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample8.cs)]
 
-마우스 오른쪽 단추로 클릭는 `Details` 메서드와 선택 **뷰 추가**합니다. 되어 있는지 확인은 **데이터 클래스 보기** 상자에 **Mvc3Razor.Models.UserModel***합니다.* 설정 **콘텐츠를 볼** 를 **세부 정보** 클릭 하 고 **추가**합니다.
+마우스 오른쪽 단추로 클릭는 `Details` 메서드와 선택 **뷰 추가**합니다. 되어 있는지 확인은 **데이터 클래스 보기** 상자에 **Mvc3Razor.Models.UserModel*** 합니다.* 설정 **콘텐츠를 볼** 를 **세부 정보** 클릭 하 고 **추가**합니다.
 
 ![추가 세부 정보 보기](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image11.png)
 
 응용 프로그램을 실행 하 고 세부 정보 링크를 선택 합니다. 자동 스 캐 폴딩 모델의 각 속성을 보여 줍니다.
 
-![세부 정보](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image12.png)
+![설명](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image12.png)
 
 ## <a name="creating-the-edit-view"></a>편집 뷰 만들기
 
@@ -172,7 +172,7 @@ ASP.NET MVC 3의 클라이언트 쪽 유효성 검사를 사용 하도록 설정
 
 처음 두 jQuery 스크립트에서의 Microsoft Ajax CDN 콘텐츠 배달 네트워크 ()에 호스트 됩니다. Microsoft Ajax CDN을 활용 하 여 응용 프로그램의 최초로 성능을 크게 개선할 수 있습니다.
 
-응용 프로그램을 실행 하 고 편집 링크를 클릭 합니다. 브라우저에서 페이지의 소스를 검토 합니다. 폼의 많은 특성을 표시 하는 브라우저 소스 `data-val` (에 대해 데이터 유효성 검사). 클라이언트 유효성 검사 규칙으로 입력된 필드를 포함 하는 클라이언트 유효성 검사 및 비간섭 JavaScript를 사용 하는 경우는 `data-val="true"` 비 가시적인 클라이언트 유효성 검사 트리거 특성입니다. 예를 들어는 `City` 모델의 필드로 데코레이팅 되었습니다는 [필요한](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.requiredattribute.aspx) 그 결과 다음 예제에 표시 된 HTML 특성:
+응용 프로그램을 실행 하 고 편집 링크를 클릭 합니다. 브라우저에서 페이지의 소스를 검토 합니다. 폼의 많은 특성을 표시 하는 브라우저 소스 `data-val` (에 대해 데이터 유효성 검사). 클라이언트 유효성 검사 규칙으로 입력된 필드를 포함 하는 클라이언트 유효성 검사 및 비간섭 JavaScript를 사용 하는 경우는 `data-val="true"` 비 가시적인 클라이언트 유효성 검사 트리거 특성입니다. 예를 들어는 `City` 모델의 필드로 데코레이팅 되었습니다는 [필요한](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx) 그 결과 다음 예제에 표시 된 HTML 특성:
 
 [!code-cshtml[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample15.cshtml)]
 
@@ -180,7 +180,7 @@ ASP.NET MVC 3의 클라이언트 쪽 유효성 검사를 사용 하도록 설정
 
 ![필요 시](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image14.png)
 
-마찬가지로, 클라이언트 유효성 검사 규칙의 각 매개 변수에 대해 특성이 추가 되는 형식을 포함 하는 `data-val-rulename-paramname=paramvalue`합니다. 예를 들어는 `FirstName` 속성으로 추적이 [StringLength](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) 특성 및 3의 최소 길이 및 최대 길이가 8 지정 합니다. 명명 된 데이터 유효성 검사 규칙 `length` 매개 변수 이름이 `max` 및 매개 변수 값은 8입니다. 다음 테이블에 대해 생성 되는 HTML 나와 `FirstName` 사용자 중 하나를 편집 하는 경우 필드:
+마찬가지로, 클라이언트 유효성 검사 규칙의 각 매개 변수에 대해 특성이 추가 되는 형식을 포함 하는 `data-val-rulename-paramname=paramvalue`합니다. 예를 들어는 `FirstName` 속성으로 추적이 [StringLength](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) 특성 및 3의 최소 길이 및 최대 길이가 8 지정 합니다. 명명 된 데이터 유효성 검사 규칙 `length` 매개 변수 이름이 `max` 및 매개 변수 값은 8입니다. 다음 테이블에 대해 생성 되는 HTML 나와 `FirstName` 사용자 중 하나를 편집 하는 경우 필드:
 
 [!code-cshtml[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample16.cshtml)]
 

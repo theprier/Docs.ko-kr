@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/testing-and-debugging/troubleshooting
 msc.type: authoredcontent
-ms.openlocfilehash: d7a1dcc04baaa5ab27aecf95936d943f5a9b3f0c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2394ee81f4592417a034e47db6eefd3e4b91a9af
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="signalr-troubleshooting"></a>SignalR 문제 해결
 ====================
@@ -50,7 +50,7 @@ ms.lasthandoff: 11/10/2017
 - [컴파일 및 서버 쪽 오류](#server)
 - [Visual Studio 문제](#vs)
 - [인터넷 정보 서비스 문제](#iis)
-- [Microsoft Azure 문제](#azure)
+- [Microsoft Azure issues](#azure)
 
 <a id="connection"></a>
 
@@ -192,7 +192,7 @@ SignalR의 서버 클라이언트는 작동 하지 않는 또는 not이 고 의�
 
 - **허브 프록시 주소 참조 형식이 잘못:** 생성 된 허브 프록시 주소에 대 한 참조 올바르게 포맷 되어 있지 않으면이 오류는 일반적으로 표시 됩니다. 허브 주소에 대 한 참조가 제대로 적용 하 고 있는지 확인 합니다. 참조 [동적으로 생성 된 프록시를 참조 하는 방법을](../guide-to-the-api/hubs-api-guide-javascript-client.md#dynamicproxy) 대 한 자세한 내용은 합니다.
 - **허브 경로 추가 하기 전에 응용 프로그램에 경로 추가:** 응용 프로그램에서 다른 경로 사용 하는 경우 추가 하는 첫 번째 경로에 대 한 호출 인지 확인 `MapSignalR`합니다.
-- **확장명 없는 Url에 대 한 업데이트가 없는 7.5 또는 IIS 7을 사용 하 여:** 를 사용 하 여 IIS 7 또는 7.5를 업데이트 해야 확장명 없는 Url에 대 한 서버에서의 허브 정의에 대 한 액세스를 제공할 수 있도록 `/signalr/hubs`합니다. 업데이트를 찾을 수 [여기](https://support.microsoft.com/kb/980368/en-us)합니다.
+- **확장명 없는 Url에 대 한 업데이트가 없는 7.5 또는 IIS 7을 사용 하 여:** 를 사용 하 여 IIS 7 또는 7.5를 업데이트 해야 확장명 없는 Url에 대 한 서버에서의 허브 정의에 대 한 액세스를 제공할 수 있도록 `/signalr/hubs`합니다. 업데이트를 찾을 수 [여기](https://support.microsoft.com/kb/980368)합니다.
 - **IIS 캐시 만료 됨 또는 손상 되어:** 캐시 내용 만료 됨 없는지를 확인 하려면 캐시를 지우는 PowerShell 창에서 다음 명령을 입력 합니다.
 
     [!code-powershell[Main](troubleshooting/samples/sample11.ps1)]
@@ -363,7 +363,7 @@ SignalR ASP.NET (ASP.NET가 IIS에 기본적으로 설치 되지) 서버에 설�
 
 <a id="azure"></a>
 
-## <a name="microsoft-azure-issues"></a>Microsoft Azure 문제
+## <a name="microsoft-azure-issues"></a>Microsoft Azure issues
 
 이 섹션에는 Microsoft Azure 문제가 포함 되어 있습니다.
 

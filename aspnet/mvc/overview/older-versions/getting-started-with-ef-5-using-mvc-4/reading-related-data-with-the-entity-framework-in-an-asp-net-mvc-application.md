@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: f455c3656c9120f4d7e6fccdba8f705e0a1c7d35
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9093fb90a52b297f173c5cddb6f332d2d1a25135
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="reading-related-data-with-the-entity-framework-in-an-aspnet-mvc-application-5-of-10"></a>읽기 (5/10) ASP.NET MVC 응용 프로그램에서 Entity Framework 사용 하 여 데이터 관련
 ====================
@@ -68,7 +68,7 @@ ms.lasthandoff: 11/10/2017
 
     [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample1.cs)]
 
-지연 로드로 인해 성능 문제가 발생 하는 코드를 마스킹할 수 있습니다. 예를 들어 eager 또는 명시적 로드를 지정 하지 않으면 하지만 많은 양의 엔터티를 처리 하 고 각 반복에서 몇 가지 탐색 속성을 사용 하 여 코드를 수 없습니다 효율적이 지 (때문에 데이터베이스에 여러 번 왕복). 온-프레미스 SQL server를 사용 하 여 개발을 수행 하는 응용 프로그램에는 대기 시간이 증가 및 지연 로드로 인해 Azure SQL 데이터베이스를 이동할 때 성능 문제가 있을 수 있습니다. 데이터베이스 쿼리는 실제 테스트 한 부하를 프로 파일링 한 지연 로딩이 적합 한지 결정 하는 데 도움이 됩니다. 자세한 내용은 참조 [Entity Framework 전략 제공: 관련 데이터를 로드](https://msdn.microsoft.com/en-us/magazine/hh205756.aspx) 및 [SQL Azure로 네트워크 대기 시간 줄이기를 Entity Framework를 사용 하 여](https://msdn.microsoft.com/en-us/magazine/gg309181.aspx)합니다.
+지연 로드로 인해 성능 문제가 발생 하는 코드를 마스킹할 수 있습니다. 예를 들어 eager 또는 명시적 로드를 지정 하지 않으면 하지만 많은 양의 엔터티를 처리 하 고 각 반복에서 몇 가지 탐색 속성을 사용 하 여 코드를 수 없습니다 효율적이 지 (때문에 데이터베이스에 여러 번 왕복). 온-프레미스 SQL server를 사용 하 여 개발을 수행 하는 응용 프로그램에는 대기 시간이 증가 및 지연 로드로 인해 Azure SQL 데이터베이스를 이동할 때 성능 문제가 있을 수 있습니다. 데이터베이스 쿼리는 실제 테스트 한 부하를 프로 파일링 한 지연 로딩이 적합 한지 결정 하는 데 도움이 됩니다. 자세한 내용은 참조 [Entity Framework 전략 제공: 관련 데이터를 로드](https://msdn.microsoft.com/magazine/hh205756.aspx) 및 [SQL Azure로 네트워크 대기 시간 줄이기를 Entity Framework를 사용 하 여](https://msdn.microsoft.com/magazine/gg309181.aspx)합니다.
 
 ## <a name="create-a-courses-index-page-that-displays-department-name"></a>해당 표시 부서 이름 과정 인덱스 페이지 만들기
 
@@ -155,10 +155,10 @@ ms.lasthandoff: 11/10/2017
 > 
 > 경로 데이터는 모델 바인더는 라우팅 테이블에 지정 된 URL 세그먼트에 있는 데이터입니다. 예를 들어 기본 경로가 지정 `controller`, `action`, 및 `id` 세그먼트:
 > 
-> 경로입니다. MapRoute 드 (  
+> routes.MapRoute(  
 >  이름: "Default",  
->  url: "{controller} / {action} / {id}",  
->  기본값: new {컨트롤러 동작 = "Home", "Index" = id UrlParameter.Optional =}  
+>  url: "{controller}/{action}/{id}",  
+>  defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }  
 > );
 > 
 > 다음 URL에 기본 경로 매핑합니다 `Instructor` 로 `controller`, `Index` 로 `action` 1을 `id`; 이러한 속성은 경로 데이터 값입니다.
@@ -194,7 +194,7 @@ ms.lasthandoff: 11/10/2017
 
 `Where` 메서드 컬렉션을 반환 하지만 조건 하나만에서 해당 메서드 결과에 전달 되는 경우 `Instructor` 엔터티를 반환 합니다. `Single` 메서드 컬렉션을 단일 `Instructor` 해당 엔터티에 액세스할 수 있는 엔터티 `Courses` 속성입니다.
 
-사용 된 [단일](https://msdn.microsoft.com/en-us/library/system.linq.enumerable.single.aspx) 메서드 컬렉션을 알고 있는 경우 컬렉션에 항목을 하나만 갖습니다. `Single` 메서드는 전달 된 컬렉션은 비어 있거나 둘 이상의 항목이 없는 경우 예외를 throw 합니다. 대신 [SingleOrDefault](https://msdn.microsoft.com/en-us/library/bb342451.aspx), 기본 값을 반환 하 (`null` 이 예제의) 컬렉션이 비어 있는 경우. 그러나이 경우에 여전히 초래 예외 (찾으려고 시도에서 `Courses` 속성에는 `null` 참조), 예외 메시지는 문제의 원인을 477860 덜 명확 하 게 하 고 있습니다. 호출 하는 경우는 `Single` 메서드를 전달할 수도 있습니다에 `Where` 조건을 호출 하는 대신는 `Where` 메서드 별도로:
+사용 된 [단일](https://msdn.microsoft.com/library/system.linq.enumerable.single.aspx) 메서드 컬렉션을 알고 있는 경우 컬렉션에 항목을 하나만 갖습니다. `Single` 메서드는 전달 된 컬렉션은 비어 있거나 둘 이상의 항목이 없는 경우 예외를 throw 합니다. 대신 [SingleOrDefault](https://msdn.microsoft.com/library/bb342451.aspx), 기본 값을 반환 하 (`null` 이 예제의) 컬렉션이 비어 있는 경우. 그러나이 경우에 여전히 초래 예외 (찾으려고 시도에서 `Courses` 속성에는 `null` 참조), 예외 메시지는 문제의 원인을 477860 덜 명확 하 게 하 고 있습니다. 호출 하는 경우는 `Single` 메서드를 전달할 수도 있습니다에 `Where` 조건을 호출 하는 대신는 `Where` 메서드 별도로:
 
 [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample15.cs)]
 

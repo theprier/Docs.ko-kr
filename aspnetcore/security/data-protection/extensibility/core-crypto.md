@@ -2,19 +2,18 @@
 title: "핵심 암호화 확장성"
 author: rick-anderson
 description: "IAuthenticatedEncryptor, IAuthenticatedEncryptorDescriptor, IAuthenticatedEncryptorDescriptorDeserializer, 및 최상위 팩터리에 설명합니다."
-keywords: ASP.NET Core, IAuthenticatedEncryptor, IAuthenticatedEncryptorDescriptor, IAuthenticatedEncryptorDescriptorDeserializer
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 8/11/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/data-protection/extensibility/core-crypto
-ms.openlocfilehash: 69839562c39ab83531085e20dac1bd56e8d13d3f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ead4012236244d88cff0b0520d000d89f93f3355
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="core-cryptography-extensibility"></a>핵심 암호화 확장성
 
@@ -76,9 +75,9 @@ byte[] roundTripped = encryptor2.Decrypt(new ArraySegment<byte>(ciphertext), aad
 
 **IAuthenticatedEncryptorDescriptor** 인터페이스를 만드는 방법을 알고 있는 형식을 나타냅니다는 [IAuthenticatedEncryptor](xref:security/data-protection/extensibility/core-crypto#data-protection-extensibility-core-crypto-iauthenticatedencryptor) 인스턴스. API는 다음과 같습니다.
 
-* CreateEncryptorInstance(): IAuthenticatedEncryptor
+* CreateEncryptorInstance() : IAuthenticatedEncryptor
 
-* ExportToXml(): XmlSerializedDescriptorInfo
+* ExportToXml() : XmlSerializedDescriptorInfo
 
 IAuthenticatedEncryptor, 처럼 IAuthenticatedEncryptorDescriptor의 인스턴스는 하나의 특정 키 래핑 간주 됩니다. 즉, 모든 지정된 IAuthenticatedEncryptorDescriptor 인스턴스에 대 한 해당 CreateEncryptorInstance 메서드에 의해 만들어진 모든 인증 된 암호기 고려 않아야 함을에서 같이 해당는 아래 코드 샘플입니다.
 
@@ -110,7 +109,7 @@ byte[] roundTripped = encryptor2.Decrypt(new ArraySegment<byte>(ciphertext), aad
 
 **IAuthenticatedEncryptorDescriptor** 인터페이스 자신을 XML로 내보낼 수 있는 형식을 나타냅니다. API는 다음과 같습니다.
 
-* ExportToXml(): XmlSerializedDescriptorInfo
+* ExportToXml() : XmlSerializedDescriptorInfo
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
@@ -129,7 +128,7 @@ Serialize 된 설명자는 암호화 키 자료 같은 중요 한 정보를 포�
 >[!TIP]
 > 이 특성을 설정 하기 위한 도우미 API 있습니다. XElement.MarkAsRequiresEncryption() Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel 네임 스페이스에 있는 확장 메서드를 호출 합니다.
 
-Serialize 된 설명자 중요 한 정보를 포함 하지 않는 경우 수도 있습니다. HSM에 저장 된 암호화 키의 경우 다시 생각해 보세요. 설명자는 HSM 자료 일반 텍스트 형식으로 노출 되지는 않습니다 이후 자체 직렬화 할 때 키 자료 쓸 수 없습니다. 대신, 설명자 (HSM이 방식으로 내보낼 수 있음) 하는 경우 키 또는 키에 대 한 HSM의 고유 식별자의 키 래핑된 버전 기록 될 수 있습니다.
+Serialize 된 설명자 중요 한 정보를 포함 하지 않는 경우 수도 있습니다. HSM에 저장 된 암호화 키의 경우 다시 생각해 보세요. 설명자는 HSM 자료 일반 텍스트 형식으로 노출 하지 않습니다 이후 자체 직렬화 할 때 키 자료 쓸 수 없습니다. 대신, 설명자 (HSM이 방식으로 내보낼 수 있음) 하는 경우 키 또는 키에 대 한 HSM의 고유 식별자의 키 래핑된 버전 기록 될 수 있습니다.
 
 <a name="data-protection-extensibility-core-crypto-iauthenticatedencryptordescriptordeserializer"></a>
 
@@ -156,9 +155,9 @@ IAuthenticatedEncryptorDescriptorDeserializer를 구현 하는 형식에는 다�
 
 **AlgorithmConfiguration** 클래스를 만드는 방법을 알고 있는 형식을 나타내는 [IAuthenticatedEncryptorDescriptor](xref:security/data-protection/extensibility/core-crypto#data-protection-extensibility-core-crypto-iauthenticatedencryptordescriptor) 인스턴스. 단일 API를 노출합니다.
 
-* CreateNewDescriptor(): IAuthenticatedEncryptorDescriptor
+* CreateNewDescriptor() : IAuthenticatedEncryptorDescriptor
 
-AlgorithmConfiguration 최상위 팩터리 라고 생각 됩니다. 구성을 템플릿으로 사용 합니다. 래핑 알고리즘 정보 (예:이 구성을 생성 하는 AES-128-GCM 마스터 키로 설명자) 아직 특정 키와 연결 되지 않았습니다.
+AlgorithmConfiguration 최상위 팩터리 라고 생각 됩니다. 구성을 템플릿으로 사용 합니다. 래핑 알고리즘 정보 (예:이 구성을 생성 하는 AES-128-GCM 마스터 키로 설명자) 되었지만 특정 키와 연관 된 아직 하지 않았습니다.
 
 CreateNewDescriptor 라고, 새로운 키 자료가이 호출에만 만들어지고 새 IAuthenticatedEncryptorDescriptor 생성 되는 자료를 사용 하는 데 필요한 정보를 알고리즘 및이 키 자료 래핑합니다. 키 자료 될 수 있습니다 소프트웨어에서 만든 (고 메모리에 보관), 만들고가 HSM을 내 보유할 수 없습니다. 중요 한 점은 CreateNewDescriptor 두 번 호출 된 해당 IAuthenticatedEncryptorDescriptor 인스턴스를 만들지 마십시오입니다.
 
@@ -168,9 +167,9 @@ CreateNewDescriptor 라고, 새로운 키 자료가이 호출에만 만들어지
 
 **IAuthenticatedEncryptorConfiguration** 인터페이스를 만드는 방법을 알고 있는 형식을 나타냅니다 [IAuthenticatedEncryptorDescriptor](xref:security/data-protection/extensibility/core-crypto#data-protection-extensibility-core-crypto-iauthenticatedencryptordescriptor) 인스턴스. 단일 API를 노출합니다.
 
-* CreateNewDescriptor(): IAuthenticatedEncryptorDescriptor
+* CreateNewDescriptor() : IAuthenticatedEncryptorDescriptor
 
-IAuthenticatedEncryptorConfiguration 최상위 팩터리 라고 생각 됩니다. 구성을 템플릿으로 사용 합니다. 래핑 알고리즘 정보 (예:이 구성을 생성 하는 AES-128-GCM 마스터 키로 설명자) 아직 특정 키와 연결 되지 않았습니다.
+IAuthenticatedEncryptorConfiguration 최상위 팩터리 라고 생각 됩니다. 구성을 템플릿으로 사용 합니다. 래핑 알고리즘 정보 (예:이 구성을 생성 하는 AES-128-GCM 마스터 키로 설명자) 되었지만 특정 키와 연관 된 아직 하지 않았습니다.
 
 CreateNewDescriptor 라고, 새로운 키 자료가이 호출에만 만들어지고 새 IAuthenticatedEncryptorDescriptor 생성 되는 자료를 사용 하는 데 필요한 정보를 알고리즘 및이 키 자료 래핑합니다. 키 자료 될 수 있습니다 소프트웨어에서 만든 (고 메모리에 보관), 만들고가 HSM을 내 보유할 수 없습니다. 중요 한 점은 CreateNewDescriptor 두 번 호출 된 해당 IAuthenticatedEncryptorDescriptor 인스턴스를 만들지 마십시오입니다.
 

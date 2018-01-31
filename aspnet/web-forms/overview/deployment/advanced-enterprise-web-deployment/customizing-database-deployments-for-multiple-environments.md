@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/customizing-database-deployments-for-multiple-environments
 msc.type: authoredcontent
-ms.openlocfilehash: 449c448d1be237f3f95a437bb2c0415bd8ed0d99
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f3ca344c2466d9d538f55cd8ff0a5bf5b7bac808
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="customizing-database-deployments-for-multiple-environments"></a>사용자 지정 된 여러 환경에 대 한 데이터베이스 배포
 ====================
@@ -82,7 +82,7 @@ ms.lasthandoff: 11/10/2017
   
 
 > [!NOTE]
-> 데이터베이스 배포 속성 및 환경 고려 사항에 대 한 자세한 내용은 참조 하십시오. [는 개요의 데이터베이스 프로젝트 설정이](https://msdn.microsoft.com/en-us/library/aa833291(v=VS.100).aspx), [하는 방법: 배포 세부 정보에 대 한 구성 속성](https://msdn.microsoft.com/en-us/library/dd172125.aspx), [ 빌드 및 격리 된 개발 환경에 데이터베이스 배포](https://msdn.microsoft.com/en-us/library/dd193409.aspx), 및 [스테이징 또는 프로덕션 환경에 데이터베이스를 빌드하여](https://msdn.microsoft.com/en-us/library/dd193413.aspx)합니다.
+> 데이터베이스 배포 속성 및 환경 고려 사항에 대 한 자세한 내용은 참조 하십시오. [는 개요의 데이터베이스 프로젝트 설정이](https://msdn.microsoft.com/library/aa833291(v=VS.100).aspx), [하는 방법: 배포 세부 정보에 대 한 구성 속성](https://msdn.microsoft.com/library/dd172125.aspx), [ 빌드 및 격리 된 개발 환경에 데이터베이스 배포](https://msdn.microsoft.com/library/dd193409.aspx), 및 [스테이징 또는 프로덕션 환경에 데이터베이스를 빌드하여](https://msdn.microsoft.com/library/dd193413.aspx)합니다.
 
 
 여러 대상에 데이터베이스 프로젝트의 배포를 지원 하려면 각 대상 환경에 배포 구성 파일을 만들어야 합니다.
@@ -94,7 +94,7 @@ ms.lasthandoff: 11/10/2017
 
     ![](customizing-database-deployments-for-multiple-environments/_static/image1.png)
 3. 에 **새 배포 구성 파일** 대화 상자에서 파일에 의미 있는 이름을 지정 (예를 들어 **TestEnvironment.sqldeployment**)를 클릭 하 고 **저장**합니다.
-4. 에 *[Filename]***.sqldeployment** 페이지 대상 환경의 요구 사항에 맞게 배포 속성을 설정 하 고 다음 파일을 저장 합니다.
+4. 에 *[Filename] * * *.sqldeployment** 페이지, 대상 환경의 요구 사항에 맞게 배포 속성을 설정 하 고 다음 파일을 저장 합니다.
 
     ![](customizing-database-deployments-for-multiple-environments/_static/image2.png)
 5. 공지 새 파일이 데이터베이스 프로젝트의 Properties 폴더에 추가 됩니다.
@@ -141,10 +141,10 @@ VSDBCMD.exe를 사용 하 여 데이터베이스 프로젝트를 배포 하는 �
 
 MSDN에서 이러한 문서에 데이터베이스 배포 보다 일반적인 지침을 제공합니다.
 
-- [데이터베이스 프로젝트 설정의 개요](https://msdn.microsoft.com/en-us/library/aa833291(v=VS.100).aspx)
-- [방법: 배포 세부 정보에 대 한 속성을 구성 합니다.](https://msdn.microsoft.com/en-us/library/dd172125.aspx)
-- [빌드 및 격리 된 개발 환경에 데이터베이스 배포](https://msdn.microsoft.com/en-us/library/dd193409.aspx)
-- [빌드 및 스테이징 또는 프로덕션 환경에 데이터베이스 배포](https://msdn.microsoft.com/en-us/library/dd193413.aspx)
+- [데이터베이스 프로젝트 설정의 개요](https://msdn.microsoft.com/library/aa833291(v=VS.100).aspx)
+- [방법: 배포 세부 정보에 대 한 속성을 구성 합니다.](https://msdn.microsoft.com/library/dd172125.aspx)
+- [빌드 및 격리 된 개발 환경에 데이터베이스 배포](https://msdn.microsoft.com/library/dd193409.aspx)
+- [빌드 및 스테이징 또는 프로덕션 환경에 데이터베이스 배포](https://msdn.microsoft.com/library/dd193413.aspx)
 
 >[!div class="step-by-step"]
 [이전](performing-a-what-if-deployment.md)

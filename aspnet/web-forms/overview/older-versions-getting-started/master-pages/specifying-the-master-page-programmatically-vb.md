@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/specifying-the-master-page-programmatically-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 090d0777b9d541003c3115d0da7cd974820c2939
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 191de7546e2ba913fda0c8c8a8bfd3531b53336e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="specifying-the-master-page-programmatically-vb"></a>마스터 페이지를 프로그래밍 방식으로 지정 (VB)
 ====================
@@ -34,7 +34,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-aspx[Main](specifying-the-master-page-programmatically-vb/samples/sample1.aspx)]
 
-[ `Page` 클래스](https://msdn.microsoft.com/en-us/library/system.web.ui.page.aspx) 에 `System.Web.UI` 네임 스페이스는 포함 된 [ `MasterPageFile` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.page.masterpagefile.aspx) 콘텐츠 페이지의 마스터 페이지 경로 반환 하는 즉,이 속성은 로설정된`@Page` 지시문입니다. 프로그래밍 방식으로 콘텐츠 페이지의 마스터 페이지를 지정이 속성을 사용할 수도 있습니다. 이 방법은 페이지를 방문 하는 사용자와 같은 외부 요인에 따라 마스터 페이지를 동적으로 할당 하려는 경우에 유용 합니다.
+[ `Page` 클래스](https://msdn.microsoft.com/library/system.web.ui.page.aspx) 에 `System.Web.UI` 네임 스페이스는 포함 된 [ `MasterPageFile` 속성](https://msdn.microsoft.com/library/system.web.ui.page.masterpagefile.aspx) 콘텐츠 페이지의 마스터 페이지 경로 반환 하는 즉,이 속성은 로설정된`@Page` 지시문입니다. 프로그래밍 방식으로 콘텐츠 페이지의 마스터 페이지를 지정이 속성을 사용할 수도 있습니다. 이 방법은 페이지를 방문 하는 사용자와 같은 외부 요인에 따라 마스터 페이지를 동적으로 할당 하려는 경우에 유용 합니다.
 
 이 자습서에서는 웹 사이트에 두 번째 마스터 페이지를 추가 하 고 런타임 시 사용 하는 마스터 페이지를 동적으로 결정 합니다.
 
@@ -54,7 +54,7 @@ ASP.NET 엔진 페이지의 퓨즈 해야 콘텐츠 페이지는 ASP.NET 페이�
 
 값에 따라이 fusion에서 어떤 마스터 페이지 partakes는 `Page` 개체의 `MasterPageFile` 속성입니다. 설정의 `MasterPageFile` 특성에 `@Page` 지시문은 할당 작업의 결과 `Page`의 `MasterPageFile` 초기화 단계는 페이지의 수명 주기의 첫 번째 단계는 속성입니다. 또는이 속성을 프로그래밍 방식으로 설정할 수 있습니다. 그러나 반드시 그림 1에 fusion를 수행 하기 전에이 속성을 설정 한다고 합니다.
 
-PreInit 스테이지의 시작 부분에 `Page` 발생 시키는 개체의 [ `PreInit` 이벤트](https://msdn.microsoft.com/en-us/library/system.web.ui.page.preinit.aspx) 를 호출 하 고 해당 [ `OnPreInit` 메서드](https://msdn.microsoft.com/en-us/library/system.web.ui.page.onpreinit.aspx)합니다. 마스터 페이지를 프로그래밍 방식으로 설정 하려면 다음을 만들 수 있습니다 하거나에 대 한 이벤트 처리기는 `PreInit` 이벤트 또는 재정의 `OnPreInit` 메서드. 두 방법 모두를 살펴보겠습니다.
+PreInit 스테이지의 시작 부분에 `Page` 발생 시키는 개체의 [ `PreInit` 이벤트](https://msdn.microsoft.com/library/system.web.ui.page.preinit.aspx) 를 호출 하 고 해당 [ `OnPreInit` 메서드](https://msdn.microsoft.com/library/system.web.ui.page.onpreinit.aspx)합니다. 마스터 페이지를 프로그래밍 방식으로 설정 하려면 다음을 만들 수 있습니다 하거나에 대 한 이벤트 처리기는 `PreInit` 이벤트 또는 재정의 `OnPreInit` 메서드. 두 방법 모두를 살펴보겠습니다.
 
 열어 시작 `Default.aspx.vb`,이 사이트의 홈 페이지에 대 한 코드 숨김 클래스 파일입니다. 페이지의에 대 한 이벤트 처리기를 추가 `PreInit` 다음 코드에서를 입력 하 여 이벤트:
 
@@ -275,8 +275,8 @@ PreInit 스테이지의 시작 부분에 `Page` 발생 시키는 개체의 [ `Pr
 이 자습서에 설명 된 항목에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
 - [ASP.NET 페이지 수명 주기 다이어그램](http://emanish.googlepages.com/Asp.Net2.0Lifecycle.PNG)
-- [ASP.NET 페이지 수명 주기 개요](https://msdn.microsoft.com/en-us/library/ms178472.aspx)
-- [ASP.NET 테마 및 스킨 개요](https://msdn.microsoft.com/en-us/library/ykzx33wh.aspx)
+- [ASP.NET 페이지 수명 주기 개요](https://msdn.microsoft.com/library/ms178472.aspx)
+- [ASP.NET 테마 및 스킨 개요](https://msdn.microsoft.com/library/ykzx33wh.aspx)
 - [마스터 페이지: 팁, 요령 및 트랩](http://www.odetocode.com/articles/450.aspx)
 - [Asp.net 테마](http://www.odetocode.com/articles/423.aspx)
 

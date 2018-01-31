@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/getting-started
 msc.type: authoredcontent
-ms.openlocfilehash: 615ddc31d0d857e5bf9a7f372b7efcf67d185905
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a6789ee75b4ca6e9443681cc7ec0bd3ab94cedcd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introducing-aspnet-web-pages---getting-started"></a>ASP.NET 웹 페이지-시작 소개
 ====================
@@ -43,7 +43,7 @@ ms.lasthandoff: 11/10/2017
 > 기능/기술을 설명 합니다.
 > 
 > - Microsoft 웹 플랫폼 설치 관리자입니다.
-> - WebMatrix 합니다.
+> - WebMatrix.
 > - *.cshtml* 페이지
 >   
 > 
@@ -60,7 +60,7 @@ ms.lasthandoff: 11/10/2017
 
 에 익숙할 것으로 가정 합니다.
 
-- **HTML**합니다. 없음 심층 전문 지식이 필요 합니다. HTML, 설명 하지 않겠습니다에서는 또한 사용 하지 마십시오 복잡 한 것입니다. 여기서 한다고 생각 유용 HTML 자습서의 링크를 제공 합니다.
+- **HTML**. 없음 심층 전문 지식이 필요 합니다. HTML, 설명 하지 않겠습니다에서는 또한 사용 하지 마십시오 복잡 한 것입니다. 여기서 한다고 생각 유용 HTML 자습서의 링크를 제공 합니다.
 - **Css 스타일 시트 ()**합니다. 와 동일 html 합니다.
 - **Basic 데이터베이스 아이디어**합니다. 스프레드시트 데이터에 사용 되 고 정렬 되었으며 전문 지식 수준을 아닌 데이터를 필터링 하는 경우 일반적으로 있으리라이 자습서 집합에 대 한 합니다.
 
@@ -124,8 +124,8 @@ WebMatrix는 웹 페이지 편집기, 데이터베이스 유틸리티, 페이지
 
 Azure에이 솔루션을 배포 하려면 Azure 계정이 필요 합니다. 계정이 아직 없는 경우 다음 옵션:
 
-- [무료 Azure 계정을 개설](https://azure.microsoft.com/en-us/pricing/free-trial/?WT.mc_id=A443DD604) -크레딧을 얻게 유료 Azure 서비스를 실행 해 사용할 수 있으며, 사용 후에 최대 계정 등에 사용 가능한 Azure 서비스입니다.
-- [MSDN 구독자 혜택을 활성화](https://azure.microsoft.com/en-us/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604) -Your MSDN을 구독 하면 크레딧 매달 유료 Azure 서비스에 사용할 수 있습니다.
+- [무료 Azure 계정을 개설](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A443DD604) -크레딧을 얻게 유료 Azure 서비스를 실행 해 사용할 수 있으며, 사용 후에 최대 계정 등에 사용 가능한 Azure 서비스입니다.
+- [MSDN 구독자 혜택을 활성화](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604) -Your MSDN을 구독 하면 크레딧 매달 유료 Azure 서비스에 사용할 수 있습니다.
 
 ## <a name="installing-everything"></a>설치 하는 모든 항목
 
@@ -155,7 +155,7 @@ WebMatrix를 설치 하기 전에 개인정보취급방침 사용 조건에 동�
 
 완료 되 면 설치 프로세스는 WebMatrix를 자동으로 시작할 수 있습니다. 그렇지 않은 경우 windows에서에서 **시작** 메뉴에서 **Microsoft WebMatrix**합니다.
 
-처음으로 WebMatrix를 시작할 때 Microsoft 계정으로 Microsoft Azure에 로그인 하 여 제공 됩니다. 에 로그인 하면 Azure 통해 무료 웹 앱을 10 받게 됩니다. 이러한 무료 웹 앱에 앱을 테스트 하는 편리한 방법을 제공 합니다. Azure 계정이 아직 없는 MSDN 구독이 있는 경우 다음을 할 수 있습니다 [MSDN 구독 혜택을 활성화](https://www.windowsazure.com/en-us/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604)합니다. 그렇지 않은 경우 몇 분에서에서 무료 평가판 계정을 만들 수 있습니다. 자세한 내용은 참조 [Azure 무료 평가판](https://azure.microsoft.com/free/?WT.mc_id=A443DD604)합니다.
+처음으로 WebMatrix를 시작할 때 Microsoft 계정으로 Microsoft Azure에 로그인 하 여 제공 됩니다. 에 로그인 하면 Azure 통해 무료 웹 앱을 10 받게 됩니다. 이러한 무료 웹 앱에 앱을 테스트 하는 편리한 방법을 제공 합니다. Azure 계정이 아직 없는 MSDN 구독이 있는 경우 다음을 할 수 있습니다 [MSDN 구독 혜택을 활성화](https://www.windowsazure.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604)합니다. 그렇지 않은 경우 몇 분에서에서 무료 평가판 계정을 만들 수 있습니다. 자세한 내용은 참조 [Azure 무료 평가판](https://azure.microsoft.com/free/?WT.mc_id=A443DD604)합니다.
 
 이 자습서와 함께 계속 하려면 지금 바로 로그인 필요가 없습니다. 사용자 로그인 하지 않는 이제,는 여전히 경우 나중에 로그인 하는 옵션입니다. 마지막 [항목](publishing.md) 해당 항목을 완료 하려면 로그인 해야 하는 따라서; 시리즈가이 자습서에서는 Azure에 웹 사이트를 배포 하는 방법에 설명 합니다.
 

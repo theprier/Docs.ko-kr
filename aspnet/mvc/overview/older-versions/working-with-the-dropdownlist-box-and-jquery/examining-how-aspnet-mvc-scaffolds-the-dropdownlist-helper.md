@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper
 msc.type: authoredcontent
-ms.openlocfilehash: b5210f9a29f82fbadd0e6dd2d81bd85e7f23ae7e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 737773ab424b3ec3b6139b8c238a60ca23de2e69
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="examining--how--aspnet-mvc-scaffolds-the-dropdownlist-helper"></a>ASP.NET MVC DropDownList 도우미 scaffolds 하는 방법을 검사 합니다.
 ====================
@@ -60,7 +60,7 @@ Ctrl+F5를 눌러 응용 프로그램을 실행합니다. 선택는 **Admin** �
 
 ### <a name="the-html-select-tag"></a>HTML 선택 태그
 
-HTML `<select>` 요소 (HTML에서 만든 [DropDownList](https://msdn.microsoft.com/en-us/library/dd492948.aspx) 도우미) 값 (예: 장르 목록)의 전체 목록을 표시 하는 데 사용 됩니다. 편집 폼에 대 한 select 목록의 현재 값을 확인 하면 현재 값을 표시할 수 있습니다. 에 대해 살펴보았습니다이 이전에 선택한 값을 설정 했습니다 **코미디**합니다. Select 목록 범주 또는 외래 키 데이터를 표시 하기 위해 가장 좋습니다. `<select>` 장르 외래 키에 대 한 요소 표시 가능한 장르 이름의 목록을 하지만 양식을 저장 된 장르 외래 키 값으로 표시 된 장르 이름이 아니라 장르 속성이 업데이트 됩니다. 아래 그림에서는 선택한 genre가 **Disco** 음악가 이며 **Donna 여름**합니다.
+HTML `<select>` 요소 (HTML에서 만든 [DropDownList](https://msdn.microsoft.com/library/dd492948.aspx) 도우미) 값 (예: 장르 목록)의 전체 목록을 표시 하는 데 사용 됩니다. 편집 폼에 대 한 select 목록의 현재 값을 확인 하면 현재 값을 표시할 수 있습니다. 에 대해 살펴보았습니다이 이전에 선택한 값을 설정 했습니다 **코미디**합니다. Select 목록 범주 또는 외래 키 데이터를 표시 하기 위해 가장 좋습니다. `<select>` 장르 외래 키에 대 한 요소 표시 가능한 장르 이름의 목록을 하지만 양식을 저장 된 장르 외래 키 값으로 표시 된 장르 이름이 아니라 장르 속성이 업데이트 됩니다. 아래 그림에서는 선택한 genre가 **Disco** 음악가 이며 **Donna 여름**합니다.
 
 ![](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/_static/image4.png)
 
@@ -70,11 +70,11 @@ HTML `<select>` 요소 (HTML에서 만든 [DropDownList](https://msdn.microsoft.
 
 [!code-csharp[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample5.cs)]
 
-`Create` 메서드 두 개를 추가 [SelectList](https://msdn.microsoft.com/en-us/library/system.web.mvc.selectlist.aspx) 개체는 `ViewBag`, 음악가 정보를 포함 하도록 여러 개 있는 장르 정보를 포함 하도록 한 합니다. [SelectList](https://msdn.microsoft.com/en-us/library/dd505286.aspx) 위에서 사용한 생성자 오버 로드는 세 개의 인수를 사용 합니다.
+`Create` 메서드 두 개를 추가 [SelectList](https://msdn.microsoft.com/library/system.web.mvc.selectlist.aspx) 개체는 `ViewBag`, 음악가 정보를 포함 하도록 여러 개 있는 장르 정보를 포함 하도록 한 합니다. [SelectList](https://msdn.microsoft.com/library/dd505286.aspx) 위에서 사용한 생성자 오버 로드는 세 개의 인수를 사용 합니다.
 
 [!code-csharp[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample6.cs)]
 
-1. *항목*:는 [IEnumerable](https://msdn.microsoft.com/en-us/library/system.collections.ienumerable.aspx) 목록에 항목을 포함 하 합니다. 반환 된 장르 목록 위의 예에서 `db.Genres`합니다.
+1. *항목*:는 [IEnumerable](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx) 목록에 항목을 포함 하 합니다. 반환 된 장르 목록 위의 예에서 `db.Genres`합니다.
 2. *dataValueField*:에 속성의 이름은 **IEnumerable** 키 값이 포함 된 목록입니다. 위의 예에서 `GenreId` 및 `ArtistId`합니다.
 3. *dataTextField*:에 속성의 이름은 **IEnumerable** 표시할 정보를 포함 하는 목록입니다. 예술가 장르 테이블에는 `name` 필드가 사용 됩니다.
 
@@ -84,7 +84,7 @@ HTML `<select>` 요소 (HTML에서 만든 [DropDownList](https://msdn.microsoft.
 
 첫 번째 줄 만들기 뷰를 사용 한다고 표시는 `Album` 모델입니다. 에 `Create` 위에 표시 된 모델이 전달 된 보기 가져옵니다 하므로 메서드는 **null** `Album` 모델입니다. 이 시점에서 만드므로 새 앨범 모든 사항이 `Album` 것에 대 한 데이터입니다.
 
-[Html.DropDownList](https://msdn.microsoft.com/en-us/library/dd492948.aspx) 위에 표시 된 오버 로드를 모델 바인딩할 필드의 이름입니다. 또한 사용 하 여이 이름을 찾습니다는 **ViewBag** 포함 된 개체는 [SelectList](https://msdn.microsoft.com/en-us/library/dd505286.aspx) 개체입니다. 이 오버 로드를 사용 해야 하는 이름을 **ViewBag SelectList** 개체 `GenreId`합니다. 두 번째 매개 변수 (`String.Empty`)은 선택 된 항목이 때 표시할 텍스트입니다. 이 새 앨범을 만들 때 원하는 대로 정확 하 게 합니다. 두 번째 매개 변수를 제거 하 고 다음 코드를 사용:
+[Html.DropDownList](https://msdn.microsoft.com/library/dd492948.aspx) 위에 표시 된 오버 로드를 모델 바인딩할 필드의 이름입니다. 또한 사용 하 여이 이름을 찾습니다는 **ViewBag** 포함 된 개체는 [SelectList](https://msdn.microsoft.com/library/dd505286.aspx) 개체입니다. 이 오버 로드를 사용 해야 하는 이름을 **ViewBag SelectList** 개체 `GenreId`합니다. 두 번째 매개 변수 (`String.Empty`)은 선택 된 항목이 때 표시할 텍스트입니다. 이 새 앨범을 만들 때 원하는 대로 정확 하 게 합니다. 두 번째 매개 변수를 제거 하 고 다음 코드를 사용:
 
 [!code-cshtml[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample8.cshtml)]
 

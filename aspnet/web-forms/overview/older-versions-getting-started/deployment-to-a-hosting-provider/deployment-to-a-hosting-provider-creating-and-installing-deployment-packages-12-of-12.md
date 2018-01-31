@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 50de8473d1fd77de4b221f0c96fc7f184621d4b6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d8c4931a1d26af49ee61c896897fa6ddf12fccea
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-troubleshooting-12-of-12"></a>SQL Server Compact Visual Studio 또는 Visual Web Developer를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: (12는 12 자) 문제 해결
 ====================
@@ -164,7 +164,7 @@ IIS에서 ASP.NET 4 설치 되지 않았습니다. 에 배포 하는 서버는 �
 
 ### <a name="possible-cause-and-solution"></a>가능한 원인 및 해결
 
-이름에서 *.mdf* 파일 삭제 한 경우에 컴퓨터에서 현재까지 존재 하는 모든 SQL Server Express 데이터베이스의 이름을 일치할 수 없습니다는 *.mdf* 에 기존 데이터베이스의 파일입니다. 이름을 변경는 *.mdf* 데이터베이스 이름 및 변경에 따라 사용 되지 않은 이름으로 파일은 *Web.config* 파일을 새 이름을 사용 합니다. 사용할 수 있습니다 [SQL Server Management Studio Express](https://www.microsoft.com/en-us/download/details.aspx?displaylang=en&amp;id=7593) 데이터베이스에 기존 SQL Server Express를 삭제 하려면.
+이름에서 *.mdf* 파일 삭제 한 경우에 컴퓨터에서 현재까지 존재 하는 모든 SQL Server Express 데이터베이스의 이름을 일치할 수 없습니다는 *.mdf* 에 기존 데이터베이스의 파일입니다. 이름을 변경는 *.mdf* 데이터베이스 이름 및 변경에 따라 사용 되지 않은 이름으로 파일은 *Web.config* 파일을 새 이름을 사용 합니다. 사용할 수 있습니다 [SQL Server Management Studio Express](https://www.microsoft.com/download/details.aspx?displaylang=en&amp;id=7593) 데이터베이스에 기존 SQL Server Express를 삭제 하려면.
 
 ## <a name="model-compatibility-cannot-be-checked"></a>검사할 모델 호환성 수 없습니다.
 
@@ -176,7 +176,7 @@ IIS에서 ASP.NET 4 설치 되지 않았습니다. 에 배포 하는 서버는 �
 
 ### <a name="possible-cause-and-solution"></a>가능한 원인 및 해결
 
-컴퓨터에 데이터베이스 이미 존재할 수 일부 테이블과 전에 Web.config 파일에 두면 데이터베이스 이름을 사용 적이 되었습니다. 변경 및 하기 전에 컴퓨터에 사용 하지 않은 새 이름 선택는 *Web.config* 이 새 데이터베이스 이름을 사용 하 여 가리키도록 파일입니다. 사용할 수 있습니다 [SQL Server Express 유틸리티](https://www.microsoft.com/en-us/download/details.aspx?DisplayLang=en&amp;id=3990) 또는 [SQL Server Management Studio Express](https://www.microsoft.com/en-us/download/details.aspx?displaylang=en&amp;id=7593) 기존 데이터베이스를 삭제 합니다.
+컴퓨터에 데이터베이스 이미 존재할 수 일부 테이블과 전에 Web.config 파일에 두면 데이터베이스 이름을 사용 적이 되었습니다. 변경 및 하기 전에 컴퓨터에 사용 하지 않은 새 이름 선택는 *Web.config* 이 새 데이터베이스 이름을 사용 하 여 가리키도록 파일입니다. 사용할 수 있습니다 [SQL Server Express 유틸리티](https://www.microsoft.com/download/details.aspx?DisplayLang=en&amp;id=3990) 또는 [SQL Server Management Studio Express](https://www.microsoft.com/download/details.aspx?displaylang=en&amp;id=7593) 기존 데이터베이스를 삭제 합니다.
 
 ## <a name="sql-error-when-a-script-attempts-to-create-users-or-roles"></a>SQL 오류는 스크립트가 사용자 또는 역할을 만들려고 시도 하는 경우
 
@@ -194,7 +194,7 @@ IIS에서 ASP.NET 4 설치 되지 않았습니다. 에 배포 하는 서버는 �
 
 [!code-console[Main](deployment-to-a-hosting-provider-creating-and-installing-deployment-packages-12-of-12/samples/sample17.cmd)]
 
-편집 하는 방법에 대 한 내용은 `PreSource` 프로젝트 파일의 요소 참조 [하는 방법: 프로젝트 파일에서 배포 설정을 편집](https://msdn.microsoft.com/en-us/library/ff398069(v=vs.100).aspx)합니다. 사용자 또는 역할 개발 데이터베이스의 대상 데이터베이스에 저장할 필요가, 호스팅 제공 업체를에 문의 하십시오.
+편집 하는 방법에 대 한 내용은 `PreSource` 프로젝트 파일의 요소 참조 [하는 방법: 프로젝트 파일에서 배포 설정을 편집](https://msdn.microsoft.com/library/ff398069(v=vs.100).aspx)합니다. 사용자 또는 역할 개발 데이터베이스의 대상 데이터베이스에 저장할 필요가, 호스팅 제공 업체를에 문의 하십시오.
 
 ## <a name="sql-server-timeout-error-when-running-custom-scripts-during-deployment"></a>배포 하는 동안 사용자 지정 스크립트를 실행 하는 경우 SQL Server 시간 초과 오류
 
@@ -204,7 +204,7 @@ IIS에서 ASP.NET 4 설치 되지 않았습니다. 에 배포 하는 서버는 �
 
 ### <a name="possible-cause-and-solution"></a>가능한 원인 및 해결
 
-다른 트랜잭션 모드에 있는 여러 스크립트를 실행 하면 시간 초과 오류가 발생할 수 있습니다. 기본적으로 자동으로 생성 된 스크립트는 트랜잭션에서 실행 되지만 사용자 지정 스크립트는 그렇지 않습니다. 선택 하는 경우는 **데이터 및/또는 기존 데이터베이스에서 스키마 가져오기** 옵션에 **SQL 패키지 및 게시** 탭 사용자 지정 SQL 스크립트를 추가 하는 경우에 일부 스크립트의 트랜잭션 설정을 변경 해야 하 고 있도록 모든 스크립트에서 동일한 트랜잭션 설정을 사용 합니다. 자세한 내용은 참조 [하는 방법: 한 데이터베이스와 웹 응용 프로그램 프로젝트를 배포](https://msdn.microsoft.com/en-us/library/dd465343.aspx)합니다.
+다른 트랜잭션 모드에 있는 여러 스크립트를 실행 하면 시간 초과 오류가 발생할 수 있습니다. 기본적으로 자동으로 생성 된 스크립트는 트랜잭션에서 실행 되지만 사용자 지정 스크립트는 그렇지 않습니다. 선택 하는 경우는 **데이터 및/또는 기존 데이터베이스에서 스키마 가져오기** 옵션에 **SQL 패키지 및 게시** 탭 사용자 지정 SQL 스크립트를 추가 하는 경우에 일부 스크립트의 트랜잭션 설정을 변경 해야 하 고 있도록 모든 스크립트에서 동일한 트랜잭션 설정을 사용 합니다. 자세한 내용은 참조 [하는 방법: 한 데이터베이스와 웹 응용 프로그램 프로젝트를 배포](https://msdn.microsoft.com/library/dd465343.aspx)합니다.
 
 모든 있도록 동일한 트랜잭션 설정을 구성 해도이 오류가 여전히 발생 하는 경우 가능한 해결 방법은 개별적으로 스크립트를 실행 하는 것입니다. 에 **데이터베이스 스크립트** 표에 **패키지/게시** SQL 탭을 선택 취소는 **Include** 제한 시간 오류를 발생 하는 스크립트에 대 한 확인란은 다음 프로젝트를 게시 합니다. 다시으로 이동한 다음는 **데이터베이스 스크립트** 표에서 해당 스크립트를 선택 **Include** 확인란을 선택한의 선택을 취소는 **Include** 다른 스크립트에 대 한 확인란 합니다. 그런 다음 프로젝트를 다시 게시 합니다. 이 이번에 게시할 때, 선택한 사용자 지정 스크립트를 실행 합니다.
 
@@ -290,7 +290,7 @@ Entity Framework Code First 마이그레이션 및 DBMS를 사용 하 여 SQL Se
 
 ### <a name="possible-cause-and-solution"></a>가능한 원인 및 해결
 
-기본적으로 Visual Studio 집합 사이트의 루트 폴더에 읽기 권한 및 앱에 대 한 쓰기 권한이\_데이터 폴더. 이 동작을 사용 하지 않도록 추가 하 여 사이트 폴더에 대 한 기본 권한을 올바르고 설정할 필요가 없습니다 하는지 알고 있는 경우  **&lt;IncludeSetACLProviderOn 대상&gt;False&lt;/ IncludeSetACLProviderOnDestination&gt;**  게시 프로필 파일 (영향을 줄 단일 프로필) 또는 (모든 프로필에 영향을)를 wpp.targets 파일입니다. 이러한 파일을 편집 하는 방법에 대 한 정보를 참조 하십시오. [하는 방법: 프로 파일 (.pubxml) 파일에서 배포 설정을 편집](https://msdn.microsoft.com/en-us/library/ff398069.aspx)합니다. 
+기본적으로 Visual Studio 집합 사이트의 루트 폴더에 읽기 권한 및 앱에 대 한 쓰기 권한이\_데이터 폴더. 이 동작을 사용 하지 않도록 추가 하 여 사이트 폴더에 대 한 기본 권한을 올바르고 설정할 필요가 없습니다 하는지 알고 있는 경우  **&lt;IncludeSetACLProviderOn 대상&gt;False&lt;/ IncludeSetACLProviderOnDestination&gt;**  게시 프로필 파일 (영향을 줄 단일 프로필) 또는 (모든 프로필에 영향을)를 wpp.targets 파일입니다. 이러한 파일을 편집 하는 방법에 대 한 정보를 참조 하십시오. [하는 방법: 프로 파일 (.pubxml) 파일에서 배포 설정을 편집](https://msdn.microsoft.com/library/ff398069.aspx)합니다. 
 
 ## <a name="access-denied-errors-when-the-application-tries-to-write-to-an-application-folder"></a>응용 프로그램에서 응용 프로그램 폴더에 기록 하려고 할 때 액세스 거부 오류
 
@@ -300,7 +300,7 @@ Entity Framework Code First 마이그레이션 및 DBMS를 사용 하 여 SQL Se
 
 ### <a name="possible-cause-and-solution"></a>가능한 원인 및 해결
 
-기본적으로 Visual Studio 집합 사이트의 루트 폴더에 읽기 권한 및 앱에 대 한 쓰기 권한이\_데이터 폴더. 응용 프로그램은 하위 폴더에 대 한 쓰기에 필요한 경우에 표시 된 대로 해당 폴더에 대 한 권한을 설정할 수 있습니다는 [폴더 사용 권한 설정](deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12.md) 및 [프로덕션 환경에 배포](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12.md) 자습서입니다. 루트 폴더에 추가 하 여 읽기 전용 액세스를 설정 하지 못하도록 해야 응용 프로그램에 사이트의 루트 폴더에 대 한 쓰기 권한이 필요한 경우  **&lt;IncludeSetACLProviderOn 대상&gt;False&lt;/ IncludeSetACLProviderOnDestination&gt;**  게시 프로필 파일 (영향을 줄 단일 프로필) 또는 (모든 프로필에 영향을)를 wpp.targets 파일입니다. 이러한 파일을 편집 하는 방법에 대 한 정보를 참조 하십시오. [하는 방법: 프로 파일 (.pubxml) 파일에서 배포 설정을 편집](https://msdn.microsoft.com/en-us/library/ff398069.aspx)합니다. <a id="aspnet45error"></a>
+기본적으로 Visual Studio 집합 사이트의 루트 폴더에 읽기 권한 및 앱에 대 한 쓰기 권한이\_데이터 폴더. 응용 프로그램은 하위 폴더에 대 한 쓰기에 필요한 경우에 표시 된 대로 해당 폴더에 대 한 권한을 설정할 수 있습니다는 [폴더 사용 권한 설정](deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12.md) 및 [프로덕션 환경에 배포](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12.md) 자습서입니다. 루트 폴더에 추가 하 여 읽기 전용 액세스를 설정 하지 못하도록 해야 응용 프로그램에 사이트의 루트 폴더에 대 한 쓰기 권한이 필요한 경우  **&lt;IncludeSetACLProviderOn 대상&gt;False&lt;/ IncludeSetACLProviderOnDestination&gt;**  게시 프로필 파일 (영향을 줄 단일 프로필) 또는 (모든 프로필에 영향을)를 wpp.targets 파일입니다. 이러한 파일을 편집 하는 방법에 대 한 정보를 참조 하십시오. [하는 방법: 프로 파일 (.pubxml) 파일에서 배포 설정을 편집](https://msdn.microsoft.com/library/ff398069.aspx)합니다. <a id="aspnet45error"></a>
 
 ## <a name="configuration-error---targetframework-attribute-references-a-version-that-is-later-than-the-installed-version-of-the-net-framework"></a>구성 오류-targetFramework 특성 참조의.NET Framework 설치 된 버전 보다 최신인 버전
 
@@ -318,7 +318,7 @@ ASP.NET 4.5를 대상으로 하는 웹 프로젝트를 성공적으로 게시 �
 
 서버에서 ASP.NET 4.5를 지원 하지 않습니다. 시기 및 ASP.NET 4.5에 대 한 지원을 추가할 수 있는지 확인 하려면 호스팅 공급자를 게 문의 하십시오. ASP.NET 4 또는 이전 버전을 대상으로 하는 웹 프로젝트를 배포 해야 하는 서버를 업그레이드 하는 옵션을 없으면 대신 합니다. 동일한 대상에는 ASP.NET 4 또는 이전 웹 프로젝트를 배포 하는 경우 선택 된 **대상에서 추가 파일 제거** 확인란은 **설정** 탭은 **웹에게시**마법사. 선택 하지 않으면 **대상에서 추가 파일 제거**, 구성 오류 페이지를 가져오는 데 계속 됩니다.
 
-프로젝트 **속성** windows 대상 프레임 워크 드롭다운 목록에 포함 되어 있지만 변경 하 여이 문제를 해결할 수 없는 **.NET Framework 4.5** 를 **.NETFramework4**. 이전 프레임 워크 버전으로 대상 프레임 워크를 변경 하는 경우 프로젝트는 최신 프레임 워크 버전의 어셈블리에 대 한 참조 및 여전히 실행 되지 않습니다. 수동으로 해당 참조를 변경 하거나.NET Framework 4 또는 이전 버전을 대상으로 하는 새 프로젝트 만들기 해야 합니다. 자세한 내용은 참조 [웹 사이트에 대 한.NET Framework 대상 지정](https://msdn.microsoft.com/en-us/library/bb398791(v=vs.100).aspx)합니다.
+프로젝트 **속성** windows 대상 프레임 워크 드롭다운 목록에 포함 되어 있지만 변경 하 여이 문제를 해결할 수 없는 **.NET Framework 4.5** 를 **.NETFramework4**. 이전 프레임 워크 버전으로 대상 프레임 워크를 변경 하는 경우 프로젝트는 최신 프레임 워크 버전의 어셈블리에 대 한 참조 및 여전히 실행 되지 않습니다. 수동으로 해당 참조를 변경 하거나.NET Framework 4 또는 이전 버전을 대상으로 하는 새 프로젝트 만들기 해야 합니다. 자세한 내용은 참조 [웹 사이트에 대 한.NET Framework 대상 지정](https://msdn.microsoft.com/library/bb398791(v=vs.100).aspx)합니다.
 
 >[!div class="step-by-step"]
 [이전](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12.md)

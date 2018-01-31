@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler
 msc.type: authoredcontent
-ms.openlocfilehash: 2127a98a0abf2c94e32b907d945c9b4d36fb2360
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 81848c683fb9ddaa8942f030a520847a3c89fde0
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler"></a>배포 게시를 웹에 대 한 웹 서버 구성 (웹 처리기를 배포 하는 데 사용)
 ====================
@@ -67,7 +67,7 @@ ContactManager 샘플 솔루션을 구체적으로 호스트 하려면 또한 �
 - 서버에 고정 IP 주소입니다.
 
 > [!NOTE]
-> 참조 컴퓨터는 도메인에 가입에 대 한 자세한 내용은 [도메인 및 로그온에 컴퓨터 가입](https://technet.microsoft.com/en-us/library/cc725618(v=WS.10).aspx)합니다. 고정 IP 주소를 구성 하는 방법에 대 한 자세한 내용은 참조 하십시오. [고정 IP 주소 구성](https://technet.microsoft.com/en-us/library/cc754203(v=ws.10).aspx)합니다.
+> 참조 컴퓨터는 도메인에 가입에 대 한 자세한 내용은 [도메인 및 로그온에 컴퓨터 가입](https://technet.microsoft.com/library/cc725618(v=WS.10).aspx)합니다. 고정 IP 주소를 구성 하는 방법에 대 한 자세한 내용은 참조 하십시오. [고정 IP 주소 구성](https://technet.microsoft.com/library/cc754203(v=ws.10).aspx)합니다.
 
 
 ## <a name="install-products-and-components"></a>제품 및 구성 요소 설치
@@ -80,7 +80,7 @@ ContactManager 샘플 솔루션을 구체적으로 호스트 하려면 또한 �
 - **IIS: 관리 서비스**합니다. IIS에서 웹 관리 서비스 (WMSvc)를 설치 합니다. 이 서비스는 IIS 웹 사이트를 원격으로 관리할 수 있습니다 및 클라이언트에 웹 배포 처리기 끝점을 노출 합니다.
 - **IIS: 기본 인증**합니다. IIS 기본 인증 모듈을 설치합니다. 이 그러면 웹 관리 서비스 (WMSvc) 인증 자격 증명을 제공 합니다.
 - **웹 배포 도구 2.1 이상**합니다. 서버에 웹 배포 (및 해당 기본 실행 파일, MSDeploy.exe)를 설치합니다. 이 과정의 일환으로,이 클래스는 웹 배포 처리기를 설치 및 관리 웹 서비스와 통합 합니다.
-- **.NET framework 4.0**합니다. 이 버전의.NET Framework에 작성 된 응용 프로그램을 실행 해야 합니다.
+- **.NET Framework 4.0**. 이 버전의.NET Framework에 작성 된 응용 프로그램을 실행 해야 합니다.
 - **ASP.NET MVC 3**합니다. MVC 3 응용 프로그램을 실행 해야 하는 어셈블리를 설치 합니다.
 
 > [!NOTE]
@@ -114,7 +114,7 @@ ContactManager 샘플 솔루션을 구체적으로 호스트 하려면 또한 �
 13. 라이선스 조건을 검토 하 고 사용자가 약관에 동의 하는 경우 클릭 **동의**합니다.
 14. 설치가 완료 되 면 클릭 **마침**, 한 다음 닫습니다는 **웹 플랫폼 설치 관리자 3.0** 창.
 
-IIS를 설치 하기 전에.NET Framework 4.0을 설치한 경우 실행 해야 합니다는 [ASP.NET IIS 등록 도구](https://msdn.microsoft.com/en-us/library/k6h9cz8h(v=VS.100).aspx) (aspnet\_regiis.exe)를 IIS와 함께 최신 버전의 ASP.NET 등록 합니다. 이렇게 하지 않으면, 아무 문제 없이 IIS 정적 콘텐츠 (예: HTML 파일)에서 처리를 찾을 수 있지만 반환 됩니다 **찾을 수 없음 – HTTP 오류 404.0** ASP.NET 콘텐츠를 검색 하려고 하면 합니다. ASP.NET 4.0이 등록 되었는지 확인 하려면 다음 절차를 사용할 수 있습니다.
+IIS를 설치 하기 전에.NET Framework 4.0을 설치한 경우 실행 해야 합니다는 [ASP.NET IIS 등록 도구](https://msdn.microsoft.com/library/k6h9cz8h(v=VS.100).aspx) (aspnet\_regiis.exe)를 IIS와 함께 최신 버전의 ASP.NET 등록 합니다. 이렇게 하지 않으면, 아무 문제 없이 IIS 정적 콘텐츠 (예: HTML 파일)에서 처리를 찾을 수 있지만 반환 됩니다 **찾을 수 없음 – HTTP 오류 404.0** ASP.NET 콘텐츠를 검색 하려고 하면 합니다. ASP.NET 4.0이 등록 되었는지 확인 하려면 다음 절차를 사용할 수 있습니다.
 
 **IIS와 ASP.NET 4.0을 등록 하려면**
 
@@ -210,7 +210,7 @@ IIS를 설치 하기 전에.NET Framework 4.0을 설치한 경우 실행 해야 
     ![](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler/_static/image11.png)
 
     > [!NOTE]
-    > 프로덕션 환경에서 가능성이 싶어하는 포트 80에서 웹 사이트를 호스트 하 고 일치 하는 DNS 레코드와 함께 호스트 헤더를 구성 합니다. IIS 7에서 호스트 헤더를 구성 하는 방법에 대 한 자세한 내용은 참조 하십시오. [웹 사이트 (IIS 7)에 대 한 호스트 헤더 구성](https://technet.microsoft.com/en-us/library/cc753195(WS.10).aspx)합니다. Windows Server 2008 r 2에서 DNS 서버 역할에 대 한 자세한 내용은 참조 하십시오. [DNS 서버 개요](https://technet.microsoft.com/en-gb/library/cc770392.aspx) 및 [DNS 서버](https://technet.microsoft.com/en-us/windowsserver/dd448607)합니다.
+    > 프로덕션 환경에서 가능성이 싶어하는 포트 80에서 웹 사이트를 호스트 하 고 일치 하는 DNS 레코드와 함께 호스트 헤더를 구성 합니다. IIS 7에서 호스트 헤더를 구성 하는 방법에 대 한 자세한 내용은 참조 하십시오. [웹 사이트 (IIS 7)에 대 한 호스트 헤더 구성](https://technet.microsoft.com/library/cc753195(WS.10).aspx)합니다. Windows Server 2008 r 2에서 DNS 서버 역할에 대 한 자세한 내용은 참조 하십시오. [DNS 서버 개요](https://technet.microsoft.com/en-gb/library/cc770392.aspx) 및 [DNS 서버](https://technet.microsoft.com/windowsserver/dd448607)합니다.
 9. **작업** 창의 **사이트 편집**에서 **바인딩**을 클릭합니다.
 10. 에 **사이트 바인딩** 대화 상자를 클릭 **추가**합니다.
 
@@ -254,8 +254,8 @@ IIS를 설치 하기 전에.NET Framework 4.0을 설치한 경우 실행 해야 
 
     ![](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler/_static/image15.png)
 5. 에 **사용자 또는 그룹 선택** 대화 상자에서 **IIS\_IUSRS**, 클릭 **이름 확인**, 클릭 하 고 **확인**합니다.
-6. 에 **에 대 한 권한을***[폴더 이름]* 대화 상자, 새 그룹에 할당 된 통지는 **읽기 &amp; 실행**, **폴더 목록 내용을**, 및 **읽기** 권한은 기본적으로 합니다. 이 변경 되지 않은 상태로 두고 클릭 **확인**합니다.
-7. 클릭 **확인** 를 닫으려면는 *[폴더 이름]***속성** 대화 상자.
+6. 에 **에 대 한 권한을 * * * [폴더 이름]* 대화 상자, 새 그룹에 할당 된 통지는 **읽기 &amp; 실행**, **폴더 내용 보기**, 및 **읽기** 권한은 기본적으로 합니다. 이 변경 되지 않은 상태로 두고 클릭 **확인**합니다.
+7. 클릭 **확인** 를 닫으려면는 *[폴더 이름] * * * 속성** 대화 상자.
 
 마지막 작업으로 콘텐츠를 배포 하는 데 사용할 자격 증명에 관리자가 아닌 사용자에 게 적절 한 사용 권한을 부여 해야 합니다. 이 사용자는 웹 사이트에 콘텐츠를 원격으로 배포할 수 있는 권한이 필요 합니다.
 
@@ -288,7 +288,7 @@ IIS를 설치 하기 전에.NET Framework 4.0을 설치한 경우 실행 해야 
 | 아웃 바운드 | 8172 | 임의의 값 | TCP |
   
 
-Windows 방화벽의 규칙 구성에 대 한 자세한 내용은 참조 하십시오. [방화벽 규칙 구성](https://technet.microsoft.com/en-us/library/dd448559(WS.10).aspx)합니다. 타사 방화벽에 대 한 제품 설명서를 참조 하십시오.
+Windows 방화벽의 규칙 구성에 대 한 자세한 내용은 참조 하십시오. [방화벽 규칙 구성](https://technet.microsoft.com/library/dd448559(WS.10).aspx)합니다. 타사 방화벽에 대 한 제품 설명서를 참조 하십시오.
 
 ## <a name="conclusion"></a>결론
 

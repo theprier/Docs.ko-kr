@@ -1,21 +1,19 @@
 ---
-title: "ASP.NET Core 응용 프로그램에서 열려 리디렉션 공격 방지 | Microsoft Docs"
+title: "ASP.NET Core 응용 프로그램에서 열려 리디렉션 공격 방지"
 author: ardalis
 description: "ASP.NET Core 응용 프로그램에 대 한 열기 리디렉션 공격을 방지 하는 방법을 보여 줍니다."
-keywords: "ASP.NET Core, 보안, 열기 리디렉션 공격"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 07/07/2017
-ms.topic: article
-ms.assetid: 4604e563-e91a-4ecd-b7ed-00b3f1eee2b5
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/preventing-open-redirects
-ms.openlocfilehash: 4083845a77eb19d9ba9beb389a92ceb5c14edbde
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d6cd65a2516c4d5e41428f0c1f2dbbe913ac2123
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="preventing-open-redirect-attacks-in-an-aspnet-core-app"></a>ASP.NET Core 응용 프로그램에서 열려 리디렉션 공격 방지
 
@@ -25,7 +23,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="what-is-an-open-redirect-attack"></a>열린 리디렉션 공격 무엇입니까?
 
-자주 웹 응용 프로그램 인증을 요구 하는 리소스에 액세스할 때 사용자가 로그인 페이지에 게 리디렉션합니다. 리디렉션 typlically 포함 한 `returnUrl` querystring 매개 변수 사용자 성공적으로 로그인 한 후 원래 요청 된 url 반환 될 수 있도록 합니다. 사용자가 인증 한 후에 원래 요청 했던 URL로 리디렉션됩니다.
+자주 웹 응용 프로그램 인증을 요구 하는 리소스에 액세스할 때 사용자가 로그인 페이지에 게 리디렉션합니다. 리디렉션 typlically 포함 한 `returnUrl` querystring 매개 변수 사용자 성공적으로 로그인 한 후 원래 요청 된 url 반환 될 수 있도록 합니다. 사용자가 인증에 원래 요청 했던 URL로 리디렉션됩니다 하는 합니다.
 
 대상 URL 요청 쿼리 문자열에 지정 되어 있으므로 악의적인 사용자는 쿼리 문자열 변조할 수 있습니다. 변조 된 querystring 사이트 사용자를 외부, 악성 사이트로 리디렉션할를 허용할 수 있습니다. 이 기술은 열려 리디렉션 (또는 리디렉션) 공격을 이라고 합니다.
 
@@ -38,7 +36,7 @@ ms.lasthandoff: 11/10/2017
 3. 사용자가을 (사이트)에 의해 리디렉션되 ``http://nerddiner.com/Account/LogOn`` (실제 사이트 처럼 보이는 악성 사이트).
 4. 사용자가 다시 로그인 (자격 증명 사이트 악의적인 제공)을 실제 사이트로 다시 리디렉션됩니다.
 
-사용자는 가능성이 생각 로그인의 첫 번째 시도가 실패와 두 번째 식의 성공 합니다. 됩니다 가능성이 인식 하지 않는 유지 자격 증명 노출 되었다고 합니다.
+사용자는 가능성이 생각 로그인의 첫 번째 시도가 실패와 두 번째 식의 성공 합니다. 대개 남지만 인식 하지 않는 자격 증명 노출 되었다고 합니다.
 
 ![열기 리디렉션 공격 프로세스](preventing-open-redirects/_static/open-redirection-attack-process.png)
 

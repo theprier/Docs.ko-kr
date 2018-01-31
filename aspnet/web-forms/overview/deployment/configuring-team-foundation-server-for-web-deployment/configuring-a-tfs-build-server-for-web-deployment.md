@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-a-tfs-build-server-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 505cca303b5569b2f676adab767d742cb5cd21a7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: de31a9dffb95b863a4ec38b74fd2c6e03f287a7f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="configuring-a-tfs-build-server-for-web-deployment"></a>웹 배포를 위한 TFS 빌드 서버 구성
 ====================
@@ -58,13 +58,13 @@ ms.lasthandoff: 11/10/2017
 - 만들기는 *빌드 컨트롤러* 와 하나 이상의 *빌드 에이전트*합니다. 각 빌드 컨트롤러는 빌드 에이전트 집합을 관리합니다. 한 빌드를 큐 빌드 컨트롤러의 빌드 작업은 사용 가능한 빌드 에이전트에 할당 합니다. TFS에서 각 팀 프로젝트 컬렉션을 단일 빌드 컨트롤러에 매핑됩니다.
 - 빌드 출력에 대 한 드롭 폴더를 구성 합니다. 네트워크 공유입니다. 모든 빌드 출력이 웹 배포 패키지와 마찬가지로, 드롭 폴더로 전송 됩니다.
 
-[Team Foundation Build 관리](https://msdn.microsoft.com/en-us/library/ms252495.aspx) 장 MSDN에서 이러한 작업을 수행 하는 데 필요한 모든 리소스가 포함 되어 있습니다.
+[Team Foundation Build 관리](https://msdn.microsoft.com/library/ms252495.aspx) 장 MSDN에서 이러한 작업을 수행 하는 데 필요한 모든 리소스가 포함 되어 있습니다.
 
-- 빌드 서비스, 빌드 컨트롤러 및 빌드 에이전트 참조를 포함 하 여 Team Foundation Build의 개념적인 개요를 위한 [Team Foundation 빌드 시스템을 이해](https://msdn.microsoft.com/en-us/library/dd793166.aspx)합니다.
-- 빌드 서비스 설치 및 구성에 대 한 정보를 참조 하십시오. [빌드 컴퓨터를 구성](https://msdn.microsoft.com/en-us/library/ms181712.aspx)합니다.
-- 빌드 컨트롤러를 만드는 방법에 대 한 정보를 참조 하십시오. [작업 만들기 및 빌드 컨트롤러 사용](https://msdn.microsoft.com/en-us/library/ee330987.aspx)합니다.
-- 빌드 에이전트를 만드는 방법에 대 한 정보를 참조 하십시오. [작업 만들기 및 빌드 에이전트 사용](https://msdn.microsoft.com/en-us/library/bb399135.aspx)합니다.
-- 작성 및 구성 저장 폴더에 대 한 정보를 참조 하십시오. [저장 폴더 설정](https://msdn.microsoft.com/en-us/library/bb778394.aspx)합니다.
+- 빌드 서비스, 빌드 컨트롤러 및 빌드 에이전트 참조를 포함 하 여 Team Foundation Build의 개념적인 개요를 위한 [Team Foundation 빌드 시스템을 이해](https://msdn.microsoft.com/library/dd793166.aspx)합니다.
+- 빌드 서비스 설치 및 구성에 대 한 정보를 참조 하십시오. [빌드 컴퓨터를 구성](https://msdn.microsoft.com/library/ms181712.aspx)합니다.
+- 빌드 컨트롤러를 만드는 방법에 대 한 정보를 참조 하십시오. [작업 만들기 및 빌드 컨트롤러 사용](https://msdn.microsoft.com/library/ee330987.aspx)합니다.
+- 빌드 에이전트를 만드는 방법에 대 한 정보를 참조 하십시오. [작업 만들기 및 빌드 에이전트 사용](https://msdn.microsoft.com/library/bb399135.aspx)합니다.
+- 작성 및 구성 저장 폴더에 대 한 정보를 참조 하십시오. [저장 폴더 설정](https://msdn.microsoft.com/library/bb778394.aspx)합니다.
 
 ## <a name="install-required-products-and-components"></a>필요한 제품 및 구성 요소 설치
 
@@ -72,7 +72,7 @@ ms.lasthandoff: 11/10/2017
 
 사용 하는 일반적인 웹 플랫폼 구성 요소를 설치 하는 가장 좋은 방법은 [웹 플랫폼 설치 관리자](https://go.microsoft.com/?linkid=9805118)합니다. 이렇게 하면 각 제품의 최신 버전을 설치 하 고 자동으로 감지 하 고 각 제품에 대 한 모든 필수 구성 요소를 설치 합니다. 경우에 [않아](../web-deployment-in-the-enterprise/the-contact-manager-solution.md) 솔루션을 이러한 제품 및 구성 요소를 설치 하려면 웹 플랫폼 설치 관리자를 사용 해야 합니다.
 
-- **.NET framework 4.0**합니다. 이 버전의.NET Framework에 작성 된 응용 프로그램을 실행 해야 합니다.
+- **.NET Framework 4.0**. 이 버전의.NET Framework에 작성 된 응용 프로그램을 실행 해야 합니다.
 - **웹 배포 도구 2.1 이상**합니다. 서버에 웹 배포 (및 해당 기본 실행 파일, MSDeploy.exe)를 설치합니다. 이 과정의 일환으로, 설치 및 웹 배포 에이전트 서비스를 시작 합니다. 이 서비스는 원격 컴퓨터에서 웹 패키지를 배포할 수 있습니다.
 - **ASP.NET MVC 3**합니다. ASP.NET MVC 3 응용 프로그램을 실행 해야 하는 어셈블리를 설치 합니다.
 
@@ -114,7 +114,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="further-reading"></a>추가 정보
 
-팀 빌드를 사용한 작업에는 보다 일반적인 지침을 참조 하십시오. [Team Foundation Build 관리](https://msdn.microsoft.com/en-us/library/ms252495.aspx)합니다.
+팀 빌드를 사용한 작업에는 보다 일반적인 지침을 참조 하십시오. [Team Foundation Build 관리](https://msdn.microsoft.com/library/ms252495.aspx)합니다.
 
 >[!div class="step-by-step"]
 [이전](adding-content-to-source-control.md)

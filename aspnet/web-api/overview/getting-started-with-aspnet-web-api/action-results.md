@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/action-results
 msc.type: authoredcontent
-ms.openlocfilehash: 68b82661b97434795e1c306b168033dfcde529bc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d0db5c6d45020861d7295ab1db989caee525fff9
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="action-results-in-web-api-2"></a>Web API 2의에서 작업 결과
 ====================
@@ -56,7 +56,7 @@ HTTP 응답:
 
 ## <a name="httpresponsemessage"></a>HttpResponseMessage
 
-작업에서 반환 하는 경우는 [HttpResponseMessage](https://msdn.microsoft.com/en-us/library/system.net.http.httpresponsemessage.aspx), 웹 API 변환 반환 값은 HTTP 응답 메시지에 직접 속성을 사용 하는 **HttpResponseMessage** 을 채우기 위해 개체는 응답입니다.
+작업에서 반환 하는 경우는 [HttpResponseMessage](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.aspx), 웹 API 변환 반환 값은 HTTP 응답 메시지에 직접 속성을 사용 하는 **HttpResponseMessage** 을 채우기 위해 개체는 응답입니다.
 
 이 옵션을 많이 응답 메시지에 대 한 제어를 제공합니다. 예를 들어 컨트롤러 동작 캐시 제어 헤더를 설정합니다.
 
@@ -98,9 +98,9 @@ Web API 요청의 Accept 헤더를 사용 하 여 포맷터를 선택 합니다.
 
 [!code-console[Main](action-results/samples/sample9.cmd)]
 
-사용할 더 자주는 **IHttpActionResult** 에 정의 된 구현은  **[System.Web.Http.Results](https://msdn.microsoft.com/en-us/library/system.web.http.results.aspx)**  네임 스페이스입니다. **ApiController** 클래스는 이러한 기본 제공 작업 결과 반환 하는 도우미 메서드를 정의 합니다.
+사용할 더 자주는 **IHttpActionResult** 에 정의 된 구현은  **[System.Web.Http.Results](https://msdn.microsoft.com/library/system.web.http.results.aspx)**  네임 스페이스입니다. **ApiController** 클래스는 이러한 기본 제공 작업 결과 반환 하는 도우미 메서드를 정의 합니다.
 
-다음 예제에서 요청은 기존 제품 ID와 일치 하지 않으면 컨트롤러 호출 [ApiController.NotFound](https://msdn.microsoft.com/en-us/library/system.web.http.apicontroller.notfound.aspx) 404 (찾을 수 없음) 응답을 만들려고 합니다. 그렇지 않으면 컨트롤러 호출 [ApiController.OK](https://msdn.microsoft.com/en-us/library/dn314591.aspx), 제품을 포함 하는 200 (OK) 응답을 만듭니다.
+다음 예제에서 요청은 기존 제품 ID와 일치 하지 않으면 컨트롤러 호출 [ApiController.NotFound](https://msdn.microsoft.com/library/system.web.http.apicontroller.notfound.aspx) 404 (찾을 수 없음) 응답을 만들려고 합니다. 그렇지 않으면 컨트롤러 호출 [ApiController.OK](https://msdn.microsoft.com/library/dn314591.aspx), 제품을 포함 하는 200 (OK) 응답을 만듭니다.
 
 [!code-csharp[Main](action-results/samples/sample10.cs)]
 

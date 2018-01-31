@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: e6ee3f9c055a15b13c27f94675006b9a7e804f1b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 118233338112a71216b909b1dabed2333bfa235e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="implementing-inheritance-with-the-entity-framework-6-in-an-aspnet-mvc-5-application-11-of-12"></a>ASP.NET MVC 5 (11/12) 응용 프로그램에서 Entity Framework 6 사용 하 여 상속 구현
 ====================
@@ -43,13 +43,13 @@ ms.lasthandoff: 11/10/2017
 
 여러 가지 방법으로 데이터베이스에이 상속 구조를 나타낼 수 있습니다. 있을 수 있습니다는 `Person` 학생과 단일 테이블에서 강사에 대 한 정보를 포함 하는 테이블입니다. 강사에만 적용할 수는 일부 열의 (`HireDate`), 학생에만 일부 (`EnrollmentDate`), 일부에 모두 (`LastName`, `FirstName`). 일반적으로, 한 *판별자* 는 형식을 각 행 표시 열을 나타냅니다. 예를 들어 판별자 열 학생용 강사 및 "학생"에 대 한 "강사"를 할 수 있습니다.
 
-![Hierarchy_example 당 테이블](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image3.png)
+![Table-per-hierarchy_example](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image3.png)
 
 이 패턴의 단일 데이터베이스 테이블에서 엔터티 상속 구조를 생성 하 라고 *테이블 계층당* TPH () 상속 합니다.
 
 대신 좀 더 상속 구조 처럼 보이도록 하는 데이터베이스입니다. 예를 들어 이름 필드에만 있을 수 있습니다는 `Person` 테이블 있고 별도 `Instructor` 및 `Student` 날짜 필드가 있는 테이블입니다.
 
-![Type_inheritance 당 테이블](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image4.png)
+![Table-per-type_inheritance](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image4.png)
 
 이 패턴의 각 엔터티 클래스에 대 한 데이터베이스 테이블을 만드는 *형식당 하나의 테이블* (TPT) 상속 합니다.
 
@@ -57,7 +57,7 @@ ms.lasthandoff: 11/10/2017
 
 TPC 및 TPH 상속 패턴 일반적으로 더 나은 성능을 제공 TPT 상속 패턴 보다 Entity Framework에서 복잡 한 조인 쿼리에서 TPT 패턴 발생할 수 있기 때문입니다.
 
-이 자습서에서는 TPH 상속 구현 하는 방법을 설명 합니다. TPH는 Entity Framework에서 기본 상속 패턴 만들기만 하면 이므로 `Person` 클래스, 변경의 `Instructor` 및 `Student` 클래스에서 상속할 수 `Person`에 새 클래스 추가 `DbContext`를 만들고는 마이그레이션입니다. (다른 상속 패턴을 구현 하는 방법에 대 한 정보를 참조 하십시오. [형식당 하나의 테이블 (TPT) 상속 매핑](https://msdn.microsoft.com/en-us/data/jj591617#2.5) 및 [테이블 구체적 클래스 (TPC) 상속 매핑](https://msdn.microsoft.com/en-us/data/jj591617#2.6) MSDN에서 Entity Framework 설명서입니다.)
+이 자습서에서는 TPH 상속 구현 하는 방법을 설명 합니다. TPH는 Entity Framework에서 기본 상속 패턴 만들기만 하면 이므로 `Person` 클래스, 변경의 `Instructor` 및 `Student` 클래스에서 상속할 수 `Person`에 새 클래스 추가 `DbContext`를 만들고는 마이그레이션입니다. (다른 상속 패턴을 구현 하는 방법에 대 한 정보를 참조 하십시오. [형식당 하나의 테이블 (TPT) 상속 매핑](https://msdn.microsoft.com/data/jj591617#2.5) 및 [테이블 구체적 클래스 (TPC) 상속 매핑](https://msdn.microsoft.com/data/jj591617#2.6) MSDN에서 Entity Framework 설명서입니다.)
 
 ## <a name="create-the-person-class"></a>Person 클래스 만들기
 
@@ -159,7 +159,7 @@ Person 테이블을 마우스 오른쪽 단추로 누른 **테이블 데이터 �
 
 ## <a name="summary"></a>요약
 
-에 대 한 계층당 하나의 테이블 상속을 구현한는 `Person`, `Student`, 및 `Instructor` 클래스입니다. 이 및 다른 상속 구조에 대 한 자세한 내용은 참조 [TPT 상속 패턴](https://msdn.microsoft.com/en-us/data/jj618293) 및 [TPH 상속 패턴](https://msdn.microsoft.com/en-us/data/jj618292) msdn 합니다. 다음 자습서에서는 다양 한 고급 비교적 Entity Framework 시나리오를 처리 하는 방법을 볼 수 있습니다.
+에 대 한 계층당 하나의 테이블 상속을 구현한는 `Person`, `Student`, 및 `Instructor` 클래스입니다. 이 및 다른 상속 구조에 대 한 자세한 내용은 참조 [TPT 상속 패턴](https://msdn.microsoft.com/data/jj618293) 및 [TPH 상속 패턴](https://msdn.microsoft.com/data/jj618292) msdn 합니다. 다음 자습서에서는 다양 한 고급 비교적 Entity Framework 시나리오를 처리 하는 방법을 볼 수 있습니다.
 
 다른 Entity Framework 리소스에 대 한 링크에서 확인할 수 있습니다는 [ASP.NET 데이터 액세스-권장 리소스](../../../../whitepapers/aspnet-data-access-content-map.md)합니다.
 

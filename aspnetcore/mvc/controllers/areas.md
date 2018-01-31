@@ -2,20 +2,18 @@
 title: "영역"
 author: rick-anderson
 description: "영역을 사용 하는 방법을 보여 줍니다."
-keywords: "ASP.NET Core, 영역, 라우팅, 뷰"
 ms.author: riande
 manager: wpickett
 ms.date: 02/14/2017
 ms.topic: article
-ms.assetid: 5e16d5e8-5696-4cb2-8ec7-d36be305c922
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/areas
-ms.openlocfilehash: cd0302fa1668979df9bbd6cb36f82742d325c5e9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 87bf2eaad1c13d21412051be769992411f685e2e
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="areas"></a>영역
 
@@ -101,7 +99,7 @@ services.Configure<RazorViewEngineOptions>(options =>
    });
    ```
 
-한 가지 주의할 점은의 구조는 *뷰* 폴더는 유일 하 게 여기 중요 한 선호 되 고 나머지 폴더의 콘텐츠 형식 *컨트롤러* 및 *모델* 않습니다 **하지** 중요 합니다. 예를 들어 필요 하면는 *컨트롤러* 및 *모델* 전혀 폴더입니다. 하므로이 작업이 내용의 *컨트롤러* 및 *모델* 는의 내용으로 작업 하는 경우.dll으로 컴파일 가져옵니다 정당한 코드는 *뷰* 가 요청을 하는 되어야만 보기는 다음과 같이 변경 되었습니다.
+한 가지 주의할 점은의 구조는 *뷰* 폴더는 유일 하 게 여기 중요 한 선호 되 고 나머지 폴더의 콘텐츠 형식 *컨트롤러* 및 *모델* 않습니다 **하지** 중요 합니다. 예를 들어 필요 하면는 *컨트롤러* 및 *모델* 전혀 폴더입니다. 하므로이 작업이의 내용을 *컨트롤러* 및 *모델* 는의 내용으로 작업 하는 경우.dll으로 컴파일 가져옵니다 정당한 코드는 *뷰* 되도록 요청 될 때까지 되지 않습니다. 보기는 다음과 같이 변경 되었습니다.
 
 폴더 계층 구조를 정의 하 고 나면 영역 연결 된 각 컨트롤러에 MVC를 지시 해야 합니다. 그렇게 하려면 사용 하 여 컨트롤러 이름을 데코레이팅하여는 `[Area]` 특성입니다.
 
@@ -155,7 +153,7 @@ services.Configure<RazorViewEngineOptions>(options =>
 
   TagHelper 구문을 사용 하십시오.`<a asp-action="Index">Go to Product's Home Page</a>`
 
-  '영역' 및 'controller' 값 제공 하지 않아도 म 참고 여기에 현재 요청의 컨텍스트에서 사용할 수 있는 이미 있습니다. 이러한 종류의 값 이라고 `ambient` 값입니다.
+  '영역' 및 'controller' 값 제공 하지 않아도 म 참고 여기 이미 현재 요청의 컨텍스트에서 사용할 수 있습니다. 이러한 종류의 값 이라고 `ambient` 값입니다.
 
 * 컨트롤러를 다른 컨트롤러에 다른 작업을 기반으로 작업 영역 내에서 링크를 생성 합니다.
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/data/working-with-files
 msc.type: authoredcontent
-ms.openlocfilehash: b3497ee17809070227115db197093c9cd0ca6c70
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0f119f8fb4873e55292203f21a2efd8f26793ae4
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="working-with-files-in-an-aspnet-web-pages-razor-site"></a>ASP.NET 웹 페이지 (Razor) 사이트에 대 한 파일 작업
 ====================
@@ -262,4 +262,4 @@ ms.lasthandoff: 11/10/2017
 
 [ASP.NET 웹 페이지 사이트에 이미지 작업](https://go.microsoft.com/fwlink/?LinkId=202897)
 
-[CSV 파일로 내보내기](https://msdn.microsoft.com/en-us/library/ms155919.aspx)
+[CSV 파일로 내보내기](https://msdn.microsoft.com/library/ms155919.aspx)

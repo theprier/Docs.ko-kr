@@ -2,20 +2,18 @@
 title: "ASP.NET Core MVC 컨트롤러와의 요청 처리"
 author: ardalis
 description: 
-keywords: ASP.NET Core
 ms.author: riande
 manager: wpickett
 ms.date: 07/03/2017
 ms.topic: article
-ms.assetid: 9da9eb52-8583-4069-af91-155ba3529d7f
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/controllers/actions
-ms.openlocfilehash: 5dc6c7dc70027bb79875f389d535119a2543b873
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 99dcf1bd4f0dc4fcb6169f48bd398c9e40c21a35
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="handling-requests-with-controllers-in-aspnet-core-mvc"></a>ASP.NET Core MVC 컨트롤러와의 요청 처리
 
@@ -44,7 +42,7 @@ ms.lasthandoff: 11/10/2017
 
 컨트롤러는 모델의 처리 (있는 경우)의 결과 사용해 하 고 적절 한 보기와 관련 된 보기 데이터 또는 API 호출의 결과 반환 합니다. 자세한 내용 [ASP.NET Core MVC 개요](xref:mvc/overview) 및 [ASP.NET Core MVC 및 Visual Studio 시작](xref:tutorials/first-mvc-app/start-mvc)합니다.
 
-컨트롤러는는 *UI 수준* 추상화 합니다. 해당 사항이 요청 데이터가 올바른지 확인 하 고 어떤 보기 (또는 API에 대 한 결과)를 반환 해야 선택 합니다. 잘 구성 된 앱에서이 포함 되지 않습니다 직접 데이터 액세스 또는 비즈니스 논리. 대신, 컨트롤러 이러한 책임을 처리 하는 서비스에 위임 합니다.
+컨트롤러는는 *UI 수준* 추상화 합니다. 해당 사항이 요청 데이터가 올바른지 확인 하 고 어떤 보기 (또는 API에 대 한 결과)를 반환 해야 선택 합니다. 잘 구성 된 앱에서 직접 데이터 액세스 또는 비즈니스 논리를 포함 되지 않습니다. 대신, 컨트롤러 이러한 책임을 처리 하는 서비스에 위임 합니다.
 
 ## <a name="defining-actions"></a>동작 정의
 
@@ -56,7 +54,7 @@ Public 메서드를 컨트롤러에서로 데코레이팅 된 문을 제외한�
 
 ### <a name="controller-helper-methods"></a>컨트롤러 도우미 메서드
 
-컨트롤러에서 일반적으로 상속 [컨트롤러](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controller)않더라도이 필요 하지 않습니다. 파생 된 `Controller` 도우미 메서드의 세 가지 범주에 대 한 액세스를 제공 합니다.
+컨트롤러에서 일반적으로 상속 [컨트롤러](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controller)있지만 필요 하지 않습니다. 파생 된 `Controller` 도우미 메서드의 세 가지 범주에 대 한 액세스를 제공 합니다.
 
 #### <a name="1-methods-resulting-in-an-empty-response-body"></a>1. 빈 응답 본문에으로 인해 발생 하는 방법
 

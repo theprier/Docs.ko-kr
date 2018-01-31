@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/security/hub-authorization
 msc.type: authoredcontent
-ms.openlocfilehash: f1538c933ff9e8e680d70ce1e63d24b189be47e5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cb0f06a3ca2b39a4a952c33cea70136c7c5af7a8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="authentication-and-authorization-for-signalr-hubs"></a>인증 및 권한 부여 SignalR 허브에 대 한
 ====================
@@ -55,13 +55,13 @@ ms.lasthandoff: 11/10/2017
     - [폼 인증 쿠키](#cookie)
     - [Windows 인증](#windows)
     - [연결 헤더](#header)
-    - [인증서](#certificate)
+    - [Certificate](#certificate)
 
 <a id="authorizeattribute"></a>
 
 ## <a name="authorize-attribute"></a>특성을 권한 부여
 
-SignalR 제공는 [Authorize](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.authorizeattribute(v=vs.111).aspx) 특성을 허브 또는 메서드에 있는 권한이 있는 사용자 또는 역할을 지정 합니다. 이 특성에는 `Microsoft.AspNet.SignalR` 네임 스페이스입니다. 적용는 `Authorize` 특성을 허브 또는 허브의 특정 메서드 중 하나입니다. 적용 하는 경우는 `Authorize` 허브에서 메서드의 모든 특성을 허브 클래스를 지정 된 인증 요구 사항에 적용 됩니다. 이 항목에서는 다양 한 유형의 권한 부여 요구 사항 적용할 수 있는 몇 가지 제공 합니다. 없이 `Authorize` 특성, 연결 된 클라이언트 허브의 모든 public 메서드를 액세스할 수 있습니다.
+SignalR 제공는 [Authorize](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.authorizeattribute(v=vs.111).aspx) 특성을 허브 또는 메서드에 있는 권한이 있는 사용자 또는 역할을 지정 합니다. 이 특성에는 `Microsoft.AspNet.SignalR` 네임 스페이스입니다. 적용는 `Authorize` 특성을 허브 또는 허브의 특정 메서드 중 하나입니다. 적용 하는 경우는 `Authorize` 허브에서 메서드의 모든 특성을 허브 클래스를 지정 된 인증 요구 사항에 적용 됩니다. 이 항목에서는 다양 한 유형의 권한 부여 요구 사항 적용할 수 있는 몇 가지 제공 합니다. 없이 `Authorize` 특성, 연결 된 클라이언트 허브의 모든 public 메서드를 액세스할 수 있습니다.
 
 웹 응용 프로그램에서 이름이 "Admin" 역할을 정의 하면 해당 역할의 사용자만를 다음 코드로 허브에 액세스할 수 있도록 지정할 수 있습니다.
 
@@ -82,7 +82,7 @@ SignalR 제공는 [Authorize](https://msdn.microsoft.com/en-us/library/microsoft
 
 ## <a name="require-authentication-for-all-hubs"></a>모든 허브에 대 한 인증을 요구 합니다.
 
-호출 하 여 응용 프로그램에서 인증 모든 허브 및 허브 메서드에 대 한 필요할 수 있습니다는 [RequireAuthentication](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.hubpipelineextensions.requireauthentication(v=vs.111).aspx) 메서드 응용 프로그램이 시작 합니다. 여러 허브 있고 모두에 대 한 인증 요구를 적용 하려는 경우이 메서드를 사용할 수 있습니다. 이 메서드로 역할, 사용자 또는 나가는 권한 부여에 대 한 요구 사항을 지정할 수 없습니다. 허브 메서드에 대 한 액세스는 인증 된 사용자로 제한만 지정할 수 있습니다. 그러나 권한 부여 속성 허브 또는 추가 요구 사항을 지정 하는 메서드를 여전히 적용할 수 있습니다. 특성에 지정 하는 모든 요구 사항 인증의 기본 요구 사항에 추가 됩니다.
+호출 하 여 응용 프로그램에서 인증 모든 허브 및 허브 메서드에 대 한 필요할 수 있습니다는 [RequireAuthentication](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.hubpipelineextensions.requireauthentication(v=vs.111).aspx) 메서드 응용 프로그램이 시작 합니다. 여러 허브 있고 모두에 대 한 인증 요구를 적용 하려는 경우이 메서드를 사용할 수 있습니다. 이 메서드로 역할, 사용자 또는 나가는 권한 부여에 대 한 요구 사항을 지정할 수 없습니다. 허브 메서드에 대 한 액세스는 인증 된 사용자로 제한만 지정할 수 있습니다. 그러나 권한 부여 속성 허브 또는 추가 요구 사항을 지정 하는 메서드를 여전히 적용할 수 있습니다. 특성에 지정 하는 모든 요구 사항 인증의 기본 요구 사항에 추가 됩니다.
 
 다음 예제에서는 인증 된 사용자에 게 모든 허브 메서드를 제한 하는 시작 파일을 보여 줍니다.
 
@@ -94,7 +94,7 @@ SignalR 제공는 [Authorize](https://msdn.microsoft.com/en-us/library/microsoft
 
 ## <a name="customized-authorization"></a>사용자 지정된 권한 부여
 
-권한 부여를 결정 하는 방법을 사용자 지정 해야 할 경우에서 파생 되는 클래스를 만들 수 있습니다 `AuthorizeAttribute` 재정의 [UserAuthorized](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.authorizeattribute.userauthorized(v=vs.111).aspx) 메서드. SignalR 각 요청에 대 한 사용자에 게 요청을 완료할 수 있는 권한이 있는지 여부를 확인 하려면이 메서드를 호출 합니다. 재정의 된 메서드에서 권한 부여 시나리오에 필요한 논리를 제공합니다. 다음 예제에서는 클레임 기반 id 통해 권한 부여를 적용 하는 방법을 보여 줍니다.
+권한 부여를 결정 하는 방법을 사용자 지정 해야 할 경우에서 파생 되는 클래스를 만들 수 있습니다 `AuthorizeAttribute` 재정의 [UserAuthorized](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.authorizeattribute.userauthorized(v=vs.111).aspx) 메서드. SignalR 각 요청에 대 한 사용자에 게 요청을 완료할 수 있는 권한이 있는지 여부를 확인 하려면이 메서드를 호출 합니다. 재정의 된 메서드에서 권한 부여 시나리오에 필요한 논리를 제공합니다. 다음 예제에서는 클레임 기반 id 통해 권한 부여를 적용 하는 방법을 보여 줍니다.
 
 [!code-csharp[Main](hub-authorization/samples/sample4.cs)]
 
@@ -122,7 +122,7 @@ SignalR 제공는 [Authorize](https://msdn.microsoft.com/en-us/library/microsoft
 
 ### <a name="cookie"></a>쿠키
 
-.NET 클라이언트는 ASP.NET 폼 인증을 사용 하는 허브와 상호 작용을 하는 경우 연결에서 인증 쿠키를 수동으로 설정 해야 합니다. 쿠키를 추가 `CookieContainer` 속성에는 [HubConnection](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.client.hubs.hubconnection(v=vs.111).aspx) 개체입니다. 다음 예제에서는 웹 페이지에서 인증 쿠키를 검색 하 고 연결에 해당 쿠키를 추가 하는 콘솔 응용 프로그램을 보여 줍니다.
+.NET 클라이언트는 ASP.NET 폼 인증을 사용 하는 허브와 상호 작용을 하는 경우 연결에서 인증 쿠키를 수동으로 설정 해야 합니다. 쿠키를 추가 `CookieContainer` 속성에는 [HubConnection](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.client.hubs.hubconnection(v=vs.111).aspx) 개체입니다. 다음 예제에서는 웹 페이지에서 인증 쿠키를 검색 하 고 연결에 해당 쿠키를 추가 하는 콘솔 응용 프로그램을 보여 줍니다.
 
 [!code-csharp[Main](hub-authorization/samples/sample7.cs)]
 
@@ -134,7 +134,7 @@ SignalR 제공는 [Authorize](https://msdn.microsoft.com/en-us/library/microsoft
 
 ### <a name="windows-authentication"></a>Windows 인증
 
-Windows 인증을 사용할 경우 현재 사용자의 자격 증명을 사용 하 여 전달할 수 있습니다는 [DefaultCredentials](https://msdn.microsoft.com/en-us/library/system.net.credentialcache.defaultcredentials.aspx) 속성입니다. DefaultCredentials의 값에는 연결에 대 한 자격 증명을 설정 합니다.
+Windows 인증을 사용할 경우 현재 사용자의 자격 증명을 사용 하 여 전달할 수 있습니다는 [DefaultCredentials](https://msdn.microsoft.com/library/system.net.credentialcache.defaultcredentials.aspx) 속성입니다. DefaultCredentials의 값에는 연결에 대 한 자격 증명을 설정 합니다.
 
 [!code-csharp[Main](hub-authorization/samples/sample9.cs?highlight=6)]
 
@@ -152,6 +152,6 @@ Windows 인증을 사용할 경우 현재 사용자의 자격 증명을 사용 �
 
 ### <a name="certificate"></a>인증서
 
-사용자를 확인 하는 클라이언트 인증서를 전달할 수 있습니다. 연결을 만들 때 인증서를 추가 합니다. 다음 예제에서는 연결;로 클라이언트 인증서를 추가 하는 방법에 대해서만 보여 줍니다. 전체 콘솔 응용 프로그램은 표시 되지 않습니다. 사용 하 여는 [X509Certificate](https://msdn.microsoft.com/en-us/library/system.security.cryptography.x509certificates.x509certificate.aspx) 클래스 인증서를 만드는 여러 가지 방법으로 제공 합니다.
+사용자를 확인 하는 클라이언트 인증서를 전달할 수 있습니다. 연결을 만들 때 인증서를 추가 합니다. 다음 예제에서는 연결;로 클라이언트 인증서를 추가 하는 방법에 대해서만 보여 줍니다. 전체 콘솔 응용 프로그램은 표시 되지 않습니다. 사용 하 여는 [X509Certificate](https://msdn.microsoft.com/library/system.security.cryptography.x509certificates.x509certificate.aspx) 클래스 인증서를 만드는 여러 가지 방법으로 제공 합니다.
 
 [!code-csharp[Main](hub-authorization/samples/sample11.cs?highlight=6)]

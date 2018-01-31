@@ -2,20 +2,18 @@
 title: "Nano Server의 ASP.NET Core"
 author: shirhatti
 description: "기존 ASP.NET Core 앱을 사용하고 IIS가 실행되는 Nano Server 인스턴스에 배포하는 방법을 알아봅니다."
-keywords: ASP.NET Core, nano server
 ms.author: riande
 manager: wpickett
 ms.date: 11/04/2016
 ms.topic: article
-ms.assetid: 50922cf1-ca58-4006-9236-99b7ff2dd0cf
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/nano-server
-ms.openlocfilehash: 337cc69ef522452c17cdd6ea4a5e71cd122035dc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d9b55fb42088b447451326b7ee573d9bfa5f5941
+ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/19/2018
 ---
 # <a name="aspnet-core-with-iis-on-nano-server"></a>Nano Server의 ASP.NET Core 및 IIS
 
@@ -37,7 +35,7 @@ Nano Server를 사용해 볼 수 있는 세 가지 간편한 방법이 있습니
 
 이 자습서에서는 두 번째 옵션인 Windows Server 2016에서 미리 빌드된 Nano Server VHD를 사용합니다.
 
-이 자습서를 진행하기 전에 기존 ASP.NET Core 응용 프로그램의 [게시된 출력](xref:hosting/directory-structure)이 필요합니다. 응용 프로그램이 **64비트** 프로세스에서 실행되도록 빌드되는지를 확인합니다.
+이 자습서를 진행하기 전에 기존 ASP.NET Core 응용 프로그램의 [게시된 출력](xref:host-and-deploy/directory-structure)이 필요합니다. 응용 프로그램이 **64비트** 프로세스에서 실행되도록 빌드되는지를 확인합니다.
 
 ## <a name="setting-up-the-nano-server-instance"></a>Nano Server 인스턴스 설정
 
@@ -191,7 +189,7 @@ dotnet-install.ps1 -Version 2.0.0
 </configuration>
 ```
 
-원격 세션에서 다음 명령을 실행하여 기본 웹 사이트와는 다른 포트에서 게시된 앱에 대한 새 사이트를 IIS에서 만듭니다. 웹에 액세스하려면 해당 포트를 열어야 합니다. 이 스크립트에서는 간단한 설명을 위해 `DefaultAppPool`을 사용합니다. 응용 프로그램 풀에서 실행할 경우의 추가 고려 사항은 [응용 프로그램 풀](xref:publishing/iis#application-pools)을 참조하세요.
+원격 세션에서 다음 명령을 실행하여 기본 웹 사이트와는 다른 포트에서 게시된 앱에 대한 새 사이트를 IIS에서 만듭니다. 웹에 액세스하려면 해당 포트를 열어야 합니다. 이 스크립트에서는 간단한 설명을 위해 `DefaultAppPool`을 사용합니다. 응용 프로그램 풀에서 실행할 경우의 추가 고려 사항은 [응용 프로그램 풀](xref:host-and-deploy/iis/index#application-pools)을 참조하세요.
 
 ```PowerShell
 Import-module IISAdministration
@@ -205,4 +203,4 @@ New-NetFirewallRule -Name "AspNetCore Port 81 IIS" -DisplayName "Allow HTTP on T
 
 ## <a name="running-the-application"></a>응용 프로그램 실행
 
-게시된 웹앱은 브라우저를 통해 `http://192.168.1.10:8000`에서 액세스할 수 있습니다. [로그 만들기 및 리디렉션](xref:hosting/aspnet-core-module#log-creation-and-redirection)에 설명된 대로 로깅을 설정한 경우 *C:\PublishedApps\AspNetCoreSampleForNano\logs*에서 로그를 확인할 수 있습니다.
+게시된 웹앱은 브라우저를 통해 `http://192.168.1.10:8000`에서 액세스할 수 있습니다. [로그 만들기 및 리디렉션](xref:host-and-deploy/aspnet-core-module#log-creation-and-redirection)에 설명된 대로 로깅을 설정한 경우 *C:\PublishedApps\AspNetCoreSampleForNano\logs*에서 로그를 확인할 수 있습니다.

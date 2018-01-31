@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-configuring-project-properties-4-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 2ba202a1a0d0ba752576e8906b739cc9e83fde2a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5632b801586c13084f887c4c414fc8686731094c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-configuring-project-properties---4-of-12"></a>SQL Server Compact Visual Studio 또는 Visual Web Developer를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: 프로젝트 속성 구성-4/12
 ====================
@@ -47,10 +47,10 @@ ms.lasthandoff: 11/10/2017
 
 와 **활성 (Release)** 또는 **릴리스** 릴리스 빌드 구성을 사용 하 여 배포할 때 적용 되는 값이 표시를 선택 합니다.
 
-- 에 **배포할 항목** 상자 **응용 프로그램을 실행 하는 데 필요한 파일만** 을 선택 합니다. 다른 옵션은 **이 프로젝트의 모든 파일** 또는 **이 프로젝트 폴더의 모든 파일**합니다. 변경 되지 않은 기본 선택 하지 않고 예를 들어 소스 코드 파일을 배포 하지 마십시오. 이 설정은 SQL Server Compact 이진 파일이 있는 폴더를 프로젝트에 포함 해야 하는 이유는 이유입니다. 이 설정에 대 한 자세한 내용은 참조 **이유 하지 않는 프로젝트 폴더 내에 있는 파일의 모든 배포?** 에 [ASP.NET 웹 응용 프로그램 프로젝트 배포 FAQ](https://msdn.microsoft.com/en-us/library/ee942158.aspx)합니다.
+- 에 **배포할 항목** 상자 **응용 프로그램을 실행 하는 데 필요한 파일만** 을 선택 합니다. 다른 옵션은 **이 프로젝트의 모든 파일** 또는 **이 프로젝트 폴더의 모든 파일**합니다. 변경 되지 않은 기본 선택 하지 않고 예를 들어 소스 코드 파일을 배포 하지 마십시오. 이 설정은 SQL Server Compact 이진 파일이 있는 폴더를 프로젝트에 포함 해야 하는 이유는 이유입니다. 이 설정에 대 한 자세한 내용은 참조 **이유 하지 않는 프로젝트 폴더 내에 있는 파일의 모든 배포?** 에 [ASP.NET 웹 응용 프로그램 프로젝트 배포 FAQ](https://msdn.microsoft.com/library/ee942158.aspx)합니다.
 - **디버그 기호 생성 제외** 을 선택 합니다. 이 빌드 구성을 사용 하면 디버깅 수 없습니다.
 - **응용 프로그램에서 파일을 제외\_데이터 폴더** 선택 하지 않으면 합니다. 멤버 자격 데이터베이스에 대 한 SQL Server Compact 파일은 해당 폴더에 있으며 배포 해야 합니다. 데이터베이스 변경 내용을 포함 하지 않는 업데이트를 배포할 때이 확인란을 선택 합니다.
-- **이 응용 프로그램을 게시 하기 전에 미리 컴파일할** 선택 하지 않으면 합니다. 대부분의 시나리오에서 웹 응용 프로그램 프로젝트를 미리 컴파일하 않아도가 됩니다. 이 옵션에 대 한 자세한 내용은 참조 [웹 패키지 및 게시 탭, 프로젝트 속성](https://msdn.microsoft.com/en-us/library/dd410108(v=vs.110).aspx) 및 [미리 컴파일할 설정 대화 상자 고급](https://msdn.microsoft.com/en-us/library/hh475319(v=vs.110).aspx)합니다.
+- **이 응용 프로그램을 게시 하기 전에 미리 컴파일할** 선택 하지 않으면 합니다. 대부분의 시나리오에서 웹 응용 프로그램 프로젝트를 미리 컴파일하 않아도가 됩니다. 이 옵션에 대 한 자세한 내용은 참조 [웹 패키지 및 게시 탭, 프로젝트 속성](https://msdn.microsoft.com/library/dd410108(v=vs.110).aspx) 및 [미리 컴파일할 설정 대화 상자 고급](https://msdn.microsoft.com/library/hh475319(v=vs.110).aspx)합니다.
 - **SQL 패키지 및 게시 탭에서 구성 된 모든 데이터베이스가 포함** 을 선택 하면이 옵션은 효과가 없습니다 지금 구성 하지 때문에 있지만 **SQL 패키지 및 게시** 탭 합니다. SQL Server 데이터베이스를 배포 하기 위한 유일한 옵션으로 사용 되는 이전 버전의 데이터베이스 배포 방법에 대 한 해당 탭이 있습니다. 사용 하 여는 **SQL 패키지 및 게시** 탭에 [SQL Server로 마이그레이션](deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12.md) 자습서입니다.
 - **Web Deployment 패키지 설정** 섹션에는 한 번의 클릭을 사용 중 이므로 적용 되지 않습니다이 자습서에 게시 합니다.
 
@@ -64,7 +64,7 @@ ms.lasthandoff: 11/10/2017
 
 배포에서 특정 파일이 나 폴더를 제외 하는 일반적인; 또 다른 예로 사용자가 파일을 업로드할 수 있는 폴더 것입니다. 로그 파일을 원하지 또는 프로덕션에 배포 하 여 개발 환경에서 생성 된 파일을 업로드 합니다. 프로덕션 환경에 대 한 업데이트를 배포 하는 경우 하지 않고를 프로덕션에 있는 파일을 삭제 하려면 배포 프로세스입니다. (설정한에 따라 배포 옵션을 배포할 때 대상 사이트는 원본 사이트에 파일이 있는 경우, 웹 배포에서 삭제 대상.)
 
-이 자습서의 앞부분에서 본 것 처럼는 **배포할 항목** 옵션에 **웹 패키지 및 게시** 탭으로 설정 되어 **만이 응용 프로그램을 실행 하는 데 필요한 파일이**합니다. 결과적으로, 개발에서 Elmah에 의해 만들어진 로그 파일 배포 되지 않습니다가 원하는 발생 합니다. (¹ è æ ÷, 문서를 업로드 하려면 프로젝트에 포함할 수 및 해당 **빌드 작업** 속성으로 설정 해야 합니다. **콘텐츠**합니다. 자세한 내용은 참조 **이유 하지 않는 프로젝트 폴더 내에 있는 파일의 모든 배포?** 에 [ASP.NET 웹 응용 프로그램 프로젝트 배포 FAQ](https://msdn.microsoft.com/en-us/library/ee942158.aspx)). 그러나 웹 배포 되지 폴더가 만들어집니다 대상 사이트에서 하나 이상의 파일을 복사할 경우를 제외 합니다. 따라서 추가한는 *.txt* 파일을 복사할 폴더를 자리 표시자 역할을 폴더입니다.
+이 자습서의 앞부분에서 본 것 처럼는 **배포할 항목** 옵션에 **웹 패키지 및 게시** 탭으로 설정 되어 **만이 응용 프로그램을 실행 하는 데 필요한 파일이**합니다. 결과적으로, 개발에서 Elmah에 의해 만들어진 로그 파일 배포 되지 않습니다가 원하는 발생 합니다. (¹ è æ ÷, 문서를 업로드 하려면 프로젝트에 포함할 수 및 해당 **빌드 작업** 속성으로 설정 해야 합니다. **콘텐츠**합니다. 자세한 내용은 참조 **이유 하지 않는 프로젝트 폴더 내에 있는 파일의 모든 배포?** 에 [ASP.NET 웹 응용 프로그램 프로젝트 배포 FAQ](https://msdn.microsoft.com/library/ee942158.aspx)). 그러나 웹 배포 되지 폴더가 만들어집니다 대상 사이트에서 하나 이상의 파일을 복사할 경우를 제외 합니다. 따라서 추가한는 *.txt* 파일을 복사할 폴더를 자리 표시자 역할을 폴더입니다.
 
 **솔루션 탐색기**를 마우스 오른쪽 단추로 클릭는 *Elmah* 폴더를 **새 항목 추가**, 명명 된 파일을 만듭니다 *Placeholder.txt*합니다. 다음 텍스트 모드로: "폴더 가져옵니다 배포 되는지 확인 하려면 자리 표시자 파일입니다." 한 파일을 저장 합니다. Visual Studio 때문에이 파일 및 컴퓨터가 폴더에 배포 되었는지 확인 하기 위해 수행 해야 그는 **빌드 작업** 속성 *.txt* 파일으로 설정 되어 **콘텐츠**기본적으로 합니다.
 

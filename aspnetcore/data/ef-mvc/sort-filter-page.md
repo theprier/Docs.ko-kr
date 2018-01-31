@@ -2,19 +2,17 @@
 title: "ASP.NET Core MVC EF 코어-정렬, 필터, 페이징-3 / 10 인"
 author: tdykstra
 description: "이 자습서에서는 정렬, 필터링 및 페이징을 ASP.NET 코어 및 Entity Framework 코어를 사용 하 여 페이지 기능을 추가 합니다."
-keywords: "ASP.NET Core, Entity Framework Core, 정렬, 필터, 페이징, 그룹화"
 ms.author: tdykstra
 ms.date: 03/15/2017
-ms.topic: get-started-article
-ms.assetid: e6c1ff3c-5673-43bf-9c2d-077f6ada1f29
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-mvc/sort-filter-page
-ms.openlocfilehash: 59fff4dbf4736f0776aac4072f3f4e2d40119842
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: feb4a50c9e5602064e7d493b6991485949903f47
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="sorting-filtering-paging-and-grouping---ef-core-with-aspnet-core-mvc-tutorial-3-of-10"></a>정렬, 필터링, 페이징 및 그룹화-EF 코어 ASP.NET Core MVC 자습서 (3 / 10)
 
@@ -94,7 +92,7 @@ Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework Core 및 Vi
 
 [!code-html[](intro/samples/cu/Views/Students/Index3.cshtml?range=9-23&highlight=5-13)]
 
-이 코드에서는 사용는 `<form>` [태그 도우미](xref:mvc/views/tag-helpers/intro) 검색 텍스트 상자 및 단추를 추가 합니다. 기본적으로는 `<form>` 태그 도우미 즉, 매개 변수가 URL 아니라 HTTP 메시지 본문에 쿼리 문자열로 전달 하는 POST로 양식 데이터를 전송 합니다. HTTP GET을 지정 하면 양식 데이터 변수로 전달 됩니다 URL에 쿼리 문자열, URL에 책갈피를 있습니다. 작업 업데이트 되지 않습니다 때 전달 되는 사용 해야 하는 W3C 지침 좋습니다.
+이 코드에서는 사용는 `<form>` [태그 도우미](xref:mvc/views/tag-helpers/intro) 검색 텍스트 상자 및 단추를 추가 합니다. 기본적으로는 `<form>` 태그 도우미 즉, 매개 변수가 URL 아니라 HTTP 메시지 본문에 쿼리 문자열로 전달 하는 POST로 양식 데이터를 전송 합니다. HTTP GET을 지정 하면 양식 데이터 변수로 전달 됩니다 URL에 쿼리 문자열, URL에 책갈피를 있습니다. 동작 하지 않는 업데이트 될 때 전달 되는 사용 해야 하는 W3C 지침 좋습니다.
 
 응용 프로그램을 실행, 선택는 **학생** 탭 검색 문자열을 입력 하 고 필터링이 작동 하는지 확인 하는 검색을 클릭 합니다.
 
@@ -146,7 +144,7 @@ public async Task<IActionResult> Index(
 
 `ViewData` 현재 필터 라는 요소를 현재 필터 문자열을 사용 하 여 뷰를 제공 합니다. 이 값, 페이징 하는 동안 필터 설정을 유지 하기 위해 페이징 링크에 포함 되어야 하며 페이지 다시 표시 하는 경우 텍스트 상자에 복원 해야 합니다.
 
-검색 문자열 페이징 하는 동안 변경 되 면 표시할 다른 데이터를 새 필터 발생할 수 있기 때문 1로 다시 설정 되는 페이지에 있습니다. 검색 문자열 값이 텍스트 상자에 입력 하 고 전송 단추를 누를 때 변경 됩니다. 이 경우에 `searchString` 매개 변수는 null입니다.
+검색 문자열 페이징 하는 동안 변경 되 면 표시할 다른 데이터를 새 필터 발생할 수 있기 때문 1로 다시 설정 되는 페이지에 있습니다. 검색 문자열 값이 텍스트 상자에 입력 하 고 전송 단추를 누를 때 변경 됩니다. 이 경우에 `searchString` null이 아닌 매개 변수입니다.
 
 ```csharp
 if (searchString != null)

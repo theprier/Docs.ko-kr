@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/showing-multiple-records-per-row-with-the-datalist-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: be0b831477e8f68768f1f9a0b52cbe90b3936d3f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e9f04089afdbeb1b13725536c9fe97951ee8ca5c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="showing-multiple-records-per-row-with-the-datalist-control-c"></a>DataList 컨트롤 (C#)와 행당 여러 레코드를 표시합니다.
 ====================
@@ -67,7 +67,7 @@ Visual Studio에서 자동으로 만들고 새 ObjectDataSource DataList 바인�
 
 ## <a name="step-2-changing-the-datalist-s-layout-direction"></a>2 단계: DataList의 레이아웃 방향 변경
 
-기본 동작 하는 동안 DataList 레이아웃 단일 열, 다중 행 테이블 열에서 해당 항목을 지정 하는 것이 동작은 쉽게 변경할 수 있습니다 DataList s 통해 [ `RepeatDirection` 속성](https://msdn.microsoft.com/en-us/system.web.ui.webcontrols.datalist.repeatdirection.aspx)합니다. `RepeatDirection` 속성이 가능한 두 값 중 하나를 허용할 수: `Horizontal` 또는 `Vertical` (기본값).
+기본 동작 하는 동안 DataList 레이아웃 단일 열, 다중 행 테이블 열에서 해당 항목을 지정 하는 것이 동작은 쉽게 변경할 수 있습니다 DataList s 통해 [ `RepeatDirection` 속성](https://msdn.microsoft.com/system.web.ui.webcontrols.datalist.repeatdirection.aspx)합니다. `RepeatDirection` 속성이 가능한 두 값 중 하나를 허용할 수: `Horizontal` 또는 `Vertical` (기본값).
 
 변경 하 여는 `RepeatDirection` 속성 `Vertical` 를 `Horizontal`, DataList 단일 행에는 레코드 데이터 원본 항목 마다 하나의 열을 만들어 렌더링 합니다. 이 효과 보여 주기 위해 디자이너에서 DataList에서을 클릭 한 다음 속성 창에서 변경 된 `RepeatDirection` 속성 `Vertical` 를 `Horiztonal`합니다. 즉시 이렇게 되 면 디자이너 조정 DataList의 레이아웃 단일 행, 다중 열 인터페이스 만들기 (그림 3 참조).
 
@@ -87,7 +87,7 @@ Visual Studio에서 자동으로 만들고 새 ObjectDataSource DataList 바인�
 
 ## <a name="step-3-displaying-data-in-a-multi-column-multi-row-table"></a>3 단계: 여러 열, 다중 행 테이블에 데이터를 표시합니다.
 
-여러 열, 다중 행 DataList을 만들려면 설정 해야는 [ `RepeatColumns` 속성](https://msdn.microsoft.com/en-us/system.web.ui.webcontrols.datalist.repeatcolumns.aspx) 표시할 열의 수입니다. 기본적으로는 `RepeatColumns` 속성 단일 행 이나 열에 해당 항목이 모두 표시 하려면 DataList 발생할 수 있는 0으로 설정 됩니다 (값에 따라는 `RepeatDirection` 속성).
+여러 열, 다중 행 DataList을 만들려면 설정 해야는 [ `RepeatColumns` 속성](https://msdn.microsoft.com/system.web.ui.webcontrols.datalist.repeatcolumns.aspx) 표시할 열의 수입니다. 기본적으로는 `RepeatColumns` 속성 단일 행 이나 열에 해당 항목이 모두 표시 하려면 DataList 발생할 수 있는 0으로 설정 됩니다 (값에 따라는 `RepeatDirection` 속성).
 
 이 예에서는 테이블 행당 세 가지 제품을 전시 s를 사용 합니다. 따라서 설정 하는 `RepeatColumns` 속성을 3입니다. 이 변경 후 결과를 보려면 브라우저에서 보십시오. 그림 5에서 볼 수 있듯이 제품 이제는 3 개의 열, 다중 행 테이블에 나와 있습니다.
 

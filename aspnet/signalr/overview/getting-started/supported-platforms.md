@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/getting-started/supported-platforms
 msc.type: authoredcontent
-ms.openlocfilehash: 7f41017a2a8c058c01fe6f89a2503eb5fa77048e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1379b9fb638f67896d88d7aa4312d95280ef7318
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="supported-platforms"></a>지원되는 플랫폼
 ====================
@@ -41,6 +41,7 @@ SignalR 서버 구성 요소는 다음과 같은 서버 또는 클라이언트 �
 
 - Windows Server 2012
 - Windows Server 2008 r2
+- Windows 10
 - Windows 8
 - Windows 7
 - Windows Azure
@@ -113,8 +114,8 @@ SignalR 동안 *수* 적극적으로 SignalR에 테스트 하지 않습니다 �
 | --- | --- | --- |
 | 웹 소켓 | Windows 8 + 및.NET 4.5 이상 | N/A |
 | 영원히 프레임 | N/A | N/A |
-| 서버에서 전송 이벤트 | .NET 4 + | 5+ |
-| 긴 폴링 | .NET 4 + | 5+ |
+| 서버에서 전송 이벤트 | .NET 4+ | 5+ |
+| 긴 폴링 | .NET 4+ | 5+ |
 
 <a id="android"></a>
 
@@ -126,10 +127,10 @@ SignalR은 Windows 스토어 응용 프로그램 및 Windows Phone 8 응용 프�
 
 | 전송 | Windows 스토어 /.NET | Windows 스토어 / JavaScript | Windows Phone / IE | Windows Phone /.NET |
 | --- | --- | --- | --- | --- |
-| WebSocket | N/A | Win8 + | 8+ | N/A |
-| 영원히 프레임 | N/A | Win8 + | 7.5+ | N/A |
-| 서버에서 전송 이벤트 | Win8 + | N/A | N/A | 8+ |
-| 긴 폴링 | Win8 + | Win8 + | 7.5+ | 8+ |
+| WebSocket | N/A | Win8+ | 8+ | N/A |
+| 영원히 프레임 | N/A | Win8+ | 7.5+ | N/A |
+| 서버에서 전송 이벤트 | Win8+ | N/A | N/A | 8+ |
+| 긴 폴링 | Win8+ | Win8+ | 7.5+ | 8+ |
 
 <a id="updates"></a>
 

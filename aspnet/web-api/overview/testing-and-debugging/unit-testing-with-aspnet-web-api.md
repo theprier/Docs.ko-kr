@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/testing-and-debugging/unit-testing-with-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 13211ee4543e17a4bfb2f83495f4041880f37df2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4d6102dd81589e41894d8ecd95bf9ddd761a65bd
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="unit-testing-aspnet-web-api-2"></a>단위 테스트 ASP.NET Web API 2
 ====================
@@ -118,7 +118,7 @@ Controllers 폴더를 마우스 오른쪽 단추로 클릭 하 고 선택 **추�
 
 [!code-csharp[Main](unit-testing-with-aspnet-web-api/samples/sample2.cs)]
 
-인스턴스를 반환 하는 GetProduct 메서드는 **IHttpActionResult** 인터페이스입니다. IHttpActionResult Web API 2의 새로운 기능 중 하나 이며 단위 테스트 개발을 간소화 합니다. IHttpActionResult 인터페이스를 구현 하는 클래스에서 발견 되는 [System.Web.Http.Results](https://msdn.microsoft.com/en-us/library/system.web.http.results.aspx) 네임 스페이스입니다. 이러한 클래스 동작 요청에 대 한 가능한 응답을 나타내고 HTTP 상태 코드에 해당 합니다.
+인스턴스를 반환 하는 GetProduct 메서드는 **IHttpActionResult** 인터페이스입니다. IHttpActionResult Web API 2의 새로운 기능 중 하나 이며 단위 테스트 개발을 간소화 합니다. IHttpActionResult 인터페이스를 구현 하는 클래스에서 발견 되는 [System.Web.Http.Results](https://msdn.microsoft.com/library/system.web.http.results.aspx) 네임 스페이스입니다. 이러한 클래스 동작 요청에 대 한 가능한 응답을 나타내고 HTTP 상태 코드에 해당 합니다.
 
 솔루션을 빌드합니다.
 

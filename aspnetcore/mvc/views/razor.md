@@ -2,7 +2,6 @@
 title: "ASP.NET Core에 대 한 razor 구문 참조"
 author: rick-anderson
 description: "웹 페이지에 서버 기반 코드를 포함 하는 것에 대 한 Razor 태그 구문에 알아봅니다."
-keywords: "ASP.NET Core, Razor, Razor 지시문"
 ms.author: riande
 manager: wpickett
 ms.date: 10/18/2017
@@ -10,11 +9,11 @@ ms.topic: article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: mvc/views/razor
-ms.openlocfilehash: e3c3149254d602db1fcc6d42360690be026189a5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: abdbb8112533d42f81180abad52f5ee86e3b280f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="razor-syntax-for-aspnet-core"></a>ASP.NET Core에 대 한 razor 구문
 
@@ -24,7 +23,7 @@ Razor은 웹 페이지에 서버 기반 코드를 포함 하는 것에 대 한 �
 
 ## <a name="rendering-html"></a>HTML 렌더링
 
-기본 Razor 언어 HTML입니다. 렌더링 HTML Razor 태그에서이 HTML 파일에서 HTML을 렌더링 하는 방법과 다르지 않습니다.  HTML 태그에서 *.cshtml* Razor 파일은 변경 하지 않고 서버에서 렌더링 됩니다.
+기본 Razor 언어 HTML입니다. 렌더링 HTML Razor 태그에서이 HTML 파일에서 HTML을 렌더링 하는 방법과 다르지 않습니다. HTML 태그에서 *.cshtml* Razor 파일은 변경 하지 않고 서버에서 렌더링 됩니다.
 
 ## <a name="razor-syntax"></a>Razor 구문
 
@@ -73,10 +72,10 @@ C# 제외 하 고 `await` 키워드, 암시적 식 공백을 포함 해서는 �
 
 위의 코드에서는 다음 중 하 나와 비슷한 컴파일러 오류가 생성 됩니다.
 
- * "Int" 요소가 닫히지 않았습니다.  모든 요소가 하나 있어야 자체 닫거나는 짝이 되는 끝 태그가 있습니다.
+ * "Int" 요소 종료 되지 않았습니다. 모든 요소가 하나 있어야 자체 닫거나는 짝이 되는 끝 태그가 있습니다.
  *  메서드 그룹을 비 대리자 형식 'object' ' GenericMethod'으로 변환할 수 없습니다. 메서드를 호출 하 시겠습니까?' 
  
-제네릭 메서드 호출에 래핑되어야는 [명시적 Razor 식](#explicit-razor-expressions) 또는 [Razor 코드 블록](#razor-code-blocks)합니다. 이 제한에 적용 되지 않습니다 *.vbhtml* Razor Visual Basic 구문의 대괄호 대신 제네릭 형식 매개 변수 주위에 괄호를 배치 하기 때문에 파일입니다.
+제네릭 메서드 호출에 래핑되어야는 [명시적 Razor 식](#explicit-razor-expressions) 또는 [Razor 코드 블록](#razor-code-blocks)합니다.
 
 ## <a name="explicit-razor-expressions"></a>명시적 Razor 식
 
@@ -119,16 +118,14 @@ Razor 식은 명시적으로 구성 될는 `@` 균형 잡힌 괄호 기호입니
 
 위의 코드에서는 다음 중 하 나와 비슷한 컴파일러 오류가 생성 됩니다.
 
- * "Int" 요소가 닫히지 않았습니다.  모든 요소가 하나 있어야 자체 닫거나는 짝이 되는 끝 태그가 있습니다.
+ * "Int" 요소 종료 되지 않았습니다. 모든 요소가 하나 있어야 자체 닫거나는 짝이 되는 끝 태그가 있습니다.
  *  메서드 그룹을 비 대리자 형식 'object' ' GenericMethod'으로 변환할 수 없습니다. 메서드를 호출 하 시겠습니까?' 
  
- 다음 태그는 올바른 방법은 쓰기가이 코드를 보여 줍니다.  명시적 식으로 코드를 작성 합니다.
+ 다음 태그는 올바른 방법은 쓰기가이 코드를 보여 줍니다. 명시적 식으로 코드를 작성 합니다.
 
 ```cshtml
 <p>@(GenericMethod<int>())</p>
 ```
-
-참고:이 제한에 적용 되지 않습니다 *.vbhtml* Razor 파일입니다.  와 *.vbhtml* Razor 파일, Visual Basic 구문의 대괄호 대신 제네릭 형식 매개 변수 주위에 괄호를 배치 합니다.
 
 ## <a name="expression-encoding"></a>식 인코딩
 
@@ -215,7 +212,7 @@ HTML 렌더링 해야 하는 코드 블록의 하위 섹션을 정의 하려면 
 
 HTML 태그로 묶인 없는 HTML 렌더링 하기 위한이 방법을 사용 합니다. HTML 또는 Razor 태그가 없는 Razor 런타임 오류가 발생합니다.
 
- **\<텍스트 >** 태그는 콘텐츠를 렌더링할 때 공백을 제어 하는 데 유용 합니다.
+**\<텍스트 >** 태그는 콘텐츠를 렌더링할 때 공백을 제어 하는 데 유용 합니다.
 
 * 사이 있는 내용을는  **\<텍스트 >** 태그를 렌더링 합니다. 
 * 앞 이나 뒤에 공백이 없어야는  **\<텍스트 >** 태그가 HTML 출력에 나타납니다.
@@ -234,7 +231,7 @@ HTML 태그로 묶인 없는 HTML 렌더링 하기 위한이 방법을 사용 �
 
 없이 `@:` 코드에서는 Razor 런타임 오류가 생성 됩니다.
 
-경고: 추가 `@` Razor 파일의 문자는 블록의 뒷부분에 나오는 문에서 발생 한 컴파일러 오류 원인 발생할 수 있습니다. 이러한 컴파일러 오류 보고 된 오류 하기 전에 실제 오류가 발생 하기 때문에 이해 하기 어려울 수 있습니다.  이 오류는 단일 코드 블록으로 여러 암시적/명시적 식을 결합 이후에 자주 발생 합니다.
+경고: 추가 `@` Razor 파일의 문자는 블록의 뒷부분에 나오는 문에서 발생 한 컴파일러 오류 원인 발생할 수 있습니다. 이러한 컴파일러 오류 보고 된 오류 하기 전에 실제 오류가 발생 하기 때문에 이해 하기 어려울 수 있습니다. 이 오류는 단일 코드 블록으로 여러 암시적/명시적 식을 결합 이후에 자주 발생 합니다.
 
 ## <a name="control-structures"></a>제어 구조
 
@@ -287,7 +284,7 @@ else
 
 ### <a name="looping-for-foreach-while-and-do-while"></a>반복 @for, @foreach, @while, 및 @do 동안
 
-템플릿 기반 HTML 제어 문을 반복 해 렌더링할 수 있습니다.  사람 목록이 렌더링 합니다.
+템플릿 기반 HTML 제어 문을 반복 해 렌더링할 수 있습니다. 사람 목록이 렌더링 합니다.
 
 ```cshtml
 @{
@@ -498,7 +495,7 @@ Razor를 노출 한 `Model` 보기에 전달 된 모델에 액세스 하기 위�
 <div>Custom text: Gardyloo! - A Scottish warning yelled from a window before dumping a slop bucket on the street below.</div>
 ```
 
- `@model`및 `@inherits` 동일한 보기에 사용할 수 있습니다.  `@inherits`에 있을 수 있습니다는 *_ViewImports.cshtml* 파일을 가져오므로 보기:
+ `@model`및 `@inherits` 동일한 보기에 사용할 수 있습니다. `@inherits`에 있을 수 있습니다는 *_ViewImports.cshtml* 파일을 가져오므로 보기:
 
 [!code-cshtml[Main](razor/sample/Views/_ViewImportsModel.cshtml)]
 

@@ -2,20 +2,18 @@
 title: "데이터 보호에 대 한 키 관리 및 ASP.NET Core 수명"
 author: rick-anderson
 description: "데이터 보호 키 관리 및 ASP.NET 코어의 수명에 알아봅니다."
-keywords: "ASP.NET Core 키 관리, DPAPI, 데이터 보호 키 수명"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.assetid: ef7dad2a-7029-4ae5-8f06-1fbebedccaa4
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/data-protection/configuration/default-settings
-ms.openlocfilehash: 4f5409acf4d934ced828153ccfd945834d0f1718
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b43c14af015d5e03f46200c51a1218a581b1de0c
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="data-protection-key-management-and-lifetime-in-aspnet-core"></a>데이터 보호에 대 한 키 관리 및 ASP.NET Core 수명
 

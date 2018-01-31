@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-a-more-complex-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: fc21857d5017799536f153dac3ee54ba2f8f5778
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9a89aa8e7dd3b2f6ac18e0b1a9c2a9d64d27189c
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="creating-a-more-complex-data-model-for-an-aspnet-mvc-application"></a>ASP.NET MVC 응용 프로그램에 대 한 보다 복잡 한 데이터 모델 만들기
 ====================
@@ -45,9 +45,9 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample1.cs?highlight=3,12-13)]
 
-[DataType](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatypeattribute.aspx) 특성 데이터베이스 내장 형식 보다 구체적인 데이터 형식을 지정 하는 데 사용 됩니다. 이 경우에 포함 하려고 날짜와 시간에서 날짜를 추적 하 합니다. [DataType 열거형](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx) 와 같은 대부분의 데이터 형식이에 제공 *날짜 "," 시간 "," PhoneNumber "," 통화 "," EmailAddress* 등입니다. `DataType` 특성을 통해 응용 프로그램에서 자동으로 유형별 기능을 제공하도록 설정할 수도 있습니다. 예를 들어 한 `mailto:` 에 대 한 링크를 만들 수 [DataType.EmailAddress](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx), 날짜 선택 기가 제공 될 수 있습니다 및 [DataType.Date](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx) 지 원하는 브라우저에서 [HTML5](http://html5.org/). [DataType](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatypeattribute.aspx) 특성 내보냅니다 HTML 5 [데이터-](http://ejohn.org/blog/html-5-data-attributes/) (발음 *데이터 대시*) HTML 5 브라우저 이해할 수 있는 특성입니다. [DataType](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatypeattribute.aspx) 특성 유효성을 검사 하지 않습니다.
+[DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) 특성 데이터베이스 내장 형식 보다 구체적인 데이터 형식을 지정 하는 데 사용 됩니다. 이 경우에 포함 하려고 날짜와 시간에서 날짜를 추적 하 합니다. [DataType 열거형](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) 와 같은 대부분의 데이터 형식이에 제공 *날짜 "," 시간 "," PhoneNumber "," 통화 "," EmailAddress* 등입니다. `DataType` 특성을 통해 응용 프로그램에서 자동으로 유형별 기능을 제공하도록 설정할 수도 있습니다. 예를 들어 한 `mailto:` 에 대 한 링크를 만들 수 [DataType.EmailAddress](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx), 날짜 선택 기가 제공 될 수 있습니다 및 [DataType.Date](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) 지 원하는 브라우저에서 [HTML5](http://html5.org/). [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) 특성 내보냅니다 HTML 5 [데이터-](http://ejohn.org/blog/html-5-data-attributes/) (발음 *데이터 대시*) HTML 5 브라우저 이해할 수 있는 특성입니다. [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) 특성 유효성을 검사 하지 않습니다.
 
-`DataType.Date`는 표시되는 날짜의 서식을 지정하지 않습니다. 기본적으로 데이터 필드에서 서버에 따라 기본 형식에 따라 표시 [CultureInfo](https://msdn.microsoft.com/en-us/library/vstudio/system.globalization.cultureinfo(v=vs.110).aspx)합니다.
+`DataType.Date`는 표시되는 날짜의 서식을 지정하지 않습니다. 기본적으로 데이터 필드에서 서버에 따라 기본 형식에 따라 표시 [CultureInfo](https://msdn.microsoft.com/library/vstudio/system.globalization.cultureinfo(v=vs.110).aspx)합니다.
 
 `DisplayFormat` 특성은 날짜 형식을 명시적으로 지정하는 데 사용됩니다.
 
@@ -57,11 +57,11 @@ ms.lasthandoff: 11/10/2017
 
 `ApplyFormatInEditMode` 설정은 지정 된 형식에서 적용 해야 하는지도 값 편집을 위해 텍스트 상자에 표시 되 면을 지정 합니다. (않을 수 있는 일부 필드에 대 한-예를 들어 통화 값에 대 한 있습니다 하지 않을 텍스트 상자에 통화 기호 편집 합니다.)
 
-사용할 수는 [DisplayFormat](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.displayformatattribute.aspx) 하지만 자체를 기준으로 특성은 일반적으로 사용 하는 것이 좋습니다는 [DataType](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatypeattribute.aspx) 도 특성입니다. `DataType` 특성에 전달 된 *의미 체계* 데이터의 화면에 렌더링 하는 방법을 반대로과를으로 볼 수 없는 다음과 같은 이점을 제공 `DisplayFormat`:
+사용할 수는 [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) 하지만 자체를 기준으로 특성은 일반적으로 사용 하는 것이 좋습니다는 [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) 도 특성입니다. `DataType` 특성에 전달 된 *의미 체계* 데이터의 화면에 렌더링 하는 방법을 반대로과를으로 볼 수 없는 다음과 같은 이점을 제공 `DisplayFormat`:
 
 - 브라우저는 HTML5 기능을 활성화할 수 (calendar 컨트롤, 로캘에 적합 한 통화 기호, 전자 메일 링크를 표시 하는 등 일부 클라이언트 쪽 입력 유효성 검사, 등입니다.).
-- 기본적으로 브라우저에 따라 올바른 형식을 사용 하 여 데이터를 렌더링 합니다 프로그램 [로캘](https://msdn.microsoft.com/en-us/library/vstudio/wyzd2bce.aspx)합니다.
-- [DataType](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatypeattribute.aspx) 특성 데이터를 렌더링 하는 오른쪽 필드 템플릿을 선택 하는 MVC 사용 하도록 설정할 수 (의 [DisplayFormat](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.displayformatattribute.aspx) 문자열 서식 파일을 사용 하 여). 자세한 내용은 Brad Wilson의을 참조 하십시오. [ASP.NET MVC 2 Templates](http://bradwilson.typepad.com/blog/2009/10/aspnet-mvc-2-templates-part-1-introduction.html)합니다. (하지만 MVC 2 용으로 작성 된,이 문서 여전히에 적용 됩니다 ASP.NET MVC의 현재 버전입니다.)
+- 기본적으로 브라우저에 따라 올바른 형식을 사용 하 여 데이터를 렌더링 합니다 프로그램 [로캘](https://msdn.microsoft.com/library/vstudio/wyzd2bce.aspx)합니다.
+- [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) 특성 데이터를 렌더링 하는 오른쪽 필드 템플릿을 선택 하는 MVC 사용 하도록 설정할 수 (의 [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) 문자열 서식 파일을 사용 하 여). 자세한 내용은 Brad Wilson의을 참조 하십시오. [ASP.NET MVC 2 Templates](http://bradwilson.typepad.com/blog/2009/10/aspnet-mvc-2-templates-part-1-introduction.html)합니다. (하지만 MVC 2 용으로 작성 된,이 문서 여전히에 적용 됩니다 ASP.NET MVC의 현재 버전입니다.)
 
 사용 하는 경우는 `DataType` 특성을 지정 해야 날짜 필드와는 `DisplayFormat` 필드 Chrome 브라우저에서 올바르게 렌더링 하려면 또한 특성입니다. 자세한 내용은 참조 [이 StackOverflow 스레드](http://stackoverflow.com/questions/12633471/mvc4-datatype-date-editorfor-wont-display-date-value-in-chrome-fine-in-ie)합니다.
 
@@ -73,23 +73,23 @@ MVC에서 다른 날짜 형식을 처리 하는 방법에 대 한 자세한 내�
 
 ### <a name="the-stringlengthattribute"></a>StringLengthAttribute
 
-데이터 유효성 검사 규칙 및 유효성 검사 오류 메시지 특성을 사용 하 여 지정할 수 있습니다. [StringLength 특성](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) 데이터베이스의 최대 길이 설정 하 고 클라이언트측 및 서버측 제공 ASP.NET MVC에 대 한 유효성을 검사 합니다. 이 특성에는 최소 문자열 길이 지정할 수도 있습니다 수 있지만 최소값 데이터베이스 스키마에 대 한 영향을 주지 않습니다.
+데이터 유효성 검사 규칙 및 유효성 검사 오류 메시지 특성을 사용 하 여 지정할 수 있습니다. [StringLength 특성](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) 데이터베이스의 최대 길이 설정 하 고 클라이언트측 및 서버측 제공 ASP.NET MVC에 대 한 유효성을 검사 합니다. 이 특성에는 최소 문자열 길이 지정할 수도 있습니다 수 있지만 최소값 데이터베이스 스키마에 대 한 영향을 주지 않습니다.
 
-사용자가을 이름에 대 한 50 개 이상의 문자를 입력 하지 마세요 되도록 한다고 가정 합니다. 이 제한 사항은 추가 하려면 추가 [StringLength](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) 특성에 `LastName` 및 `FirstMidName` 다음 예제와 같이 속성:
+사용자가을 이름에 대 한 50 개 이상의 문자를 입력 하지 마세요 되도록 한다고 가정 합니다. 이 제한 사항은 추가 하려면 추가 [StringLength](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) 특성에 `LastName` 및 `FirstMidName` 다음 예제와 같이 속성:
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample3.cs?highlight=10,12)]
 
-[StringLength](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) 특성 이름에 공백을 입력에서 사용자를 금지 되지는 않습니다. 사용할 수는 [정규식으로](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.regularexpressionattribute.aspx) 특성을 입력에 제한을 적용 합니다. 예를 들어 다음 코드는 첫 번째 문자를 대문자로 변환 하 고 나머지 문자를 사전순으로 필요 합니다.
+[StringLength](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) 특성 이름에 공백을 입력에서 사용자를 금지 되지는 않습니다. 사용할 수는 [정규식으로](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.regularexpressionattribute.aspx) 특성을 입력에 제한을 적용 합니다. 예를 들어 다음 코드는 첫 번째 문자를 대문자로 변환 하 고 나머지 문자를 사전순으로 필요 합니다.
 
-`[RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]`
+`[RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]`
 
-[MaxLength](https://msdn.microsoft.com/en-us/library/System.ComponentModel.DataAnnotations.MaxLengthAttribute.aspx) 특성은 유사한 기능을 제공는 [StringLength](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) 특성 하지만 클라이언트 쪽을 제공 하지 않는 유효성 검사 합니다.
+[MaxLength](https://msdn.microsoft.com/library/System.ComponentModel.DataAnnotations.MaxLengthAttribute.aspx) 특성은 유사한 기능을 제공는 [StringLength](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) 특성 하지만 클라이언트 쪽을 제공 하지 않는 유효성 검사 합니다.
 
 응용 프로그램을 실행 하 고 클릭는 **학생** 탭 합니다. 다음과 같은 오류가 있습니다.
 
 *'SchoolContext' 컨텍스트를 백업 하는 모델 데이터베이스를 만든 후에 변경 되었습니다. Code First 마이그레이션을 사용 하 여 데이터베이스를 업데이트 하는 것이 좋습니다 ([https://go.microsoft.com/fwlink/?LinkId=238269](https://go.microsoft.com/fwlink/?LinkId=238269)).*
 
-데이터베이스 모델 데이터베이스 스키마를 변경 해야 하는 방식으로 변경 되었습니다 및 Entity Framework에서 검색 되었습니다. UI를 사용 하 여 데이터베이스에 추가 하는 데이터 손실 없이 스키마를 업데이트 하려면 마이그레이션을 사용 합니다. 만들어진 데이터를 변경한 경우에 `Seed` 때문에 원래 상태로 변경할 수 있는 메서드는 [AddOrUpdate](https://msdn.microsoft.com/en-us/library/hh846520(v=vs.103).aspx) 에서 사용 하는 메서드는 `Seed` 메서드. ([AddOrUpdate](https://msdn.microsoft.com/en-us/library/hh846520(v=vs.103).aspx) 데이터베이스 용어에서는 "upsert" 작업에 해당 합니다.)
+데이터베이스 모델 데이터베이스 스키마를 변경 해야 하는 방식으로 변경 되었습니다 및 Entity Framework에서 검색 되었습니다. UI를 사용 하 여 데이터베이스에 추가 하는 데이터 손실 없이 스키마를 업데이트 하려면 마이그레이션을 사용 합니다. 만들어진 데이터를 변경한 경우에 `Seed` 때문에 원래 상태로 변경할 수 있는 메서드는 [AddOrUpdate](https://msdn.microsoft.com/library/hh846520(v=vs.103).aspx) 에서 사용 하는 메서드는 `Seed` 메서드. ([AddOrUpdate](https://msdn.microsoft.com/library/hh846520(v=vs.103).aspx) 데이터베이스 용어에서는 "upsert" 작업에 해당 합니다.)
 
 패키지 관리자 콘솔 (PMC)에서 다음 명령을 입력 합니다.
 
@@ -109,11 +109,11 @@ MVC에서 다른 날짜 형식을 처리 하는 방법에 대 한 자세한 내�
 
 `Column` 특성을 지정 하는 데이터베이스를 만들 때의 열은 `Student` 테이블에 매핑되는 `FirstMidName` 속성 이름이 지정 됩니다 `FirstName`합니다. 즉 때 코드 참조 `Student.FirstMidName`, 데이터에서 옵니다 또는에서 업데이트할 수는 `FirstName` 의 열은 `Student` 테이블입니다. 열 이름을 지정 하지 않으면, 속성 이름과 같은 이름이 주어 집니다.
 
-에 *Student.cs* 파일에서 추가 `using` 문을 [System.ComponentModel.DataAnnotations.Schema](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.aspx) 열 이름 특성을 추가 하 고는 `FirstMidName` 속성에 표시 된 대로 다음 코드를 강조 표시.
+에 *Student.cs* 파일에서 추가 `using` 문을 [System.ComponentModel.DataAnnotations.Schema](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.aspx) 열 이름 특성을 추가 하 고는 `FirstMidName` 속성에 표시 된 대로 다음 코드를 강조 표시.
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample5.cs?highlight=4,14)]
 
-추가 [열 특성](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.columnattribute.aspx) 하므로 데이터베이스 일치 하지 않습니다는 SchoolContext 백업 모델을 변경 합니다. 다른 마이그레이션 만들려면 PMC에서 다음 명령을 입력 합니다.
+추가 [열 특성](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.columnattribute.aspx) 하므로 데이터베이스 일치 하지 않습니다는 SchoolContext 백업 모델을 변경 합니다. 다른 마이그레이션 만들려면 PMC에서 다음 명령을 입력 합니다.
 
 [!code-console[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample6.cmd)]
 
@@ -125,7 +125,7 @@ MVC에서 다른 날짜 형식을 처리 하는 방법에 대 한 자세한 내�
 
 ![](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image5.png)
 
-만들 수도 있습니다 데이터베이스를 사용 하 여 매핑 변경 시에만 [Fluent API](https://msdn.microsoft.com/en-us/data/jj591617)와이 자습서의 뒷부분에 나오는 표시 됩니다.
+만들 수도 있습니다 데이터베이스를 사용 하 여 매핑 변경 시에만 [Fluent API](https://msdn.microsoft.com/data/jj591617)와이 자습서의 뒷부분에 나오는 표시 됩니다.
 
 > [!NOTE]
 > 다음 섹션의 모든 엔터티 클래스를 만든 후 전에 컴파일 하려고 하면 컴파일러 오류가 발생할 수 있습니다.
@@ -141,7 +141,7 @@ MVC에서 다른 날짜 형식을 처리 하는 방법에 대 한 자세한 내�
 
 ### <a name="the-required-attribute"></a>필수 특성
 
-[필수 특성](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.requiredattribute.aspx) 이름 속성 필수 필드를 만듭니다. `Required attribute` float 및 double, DateTime, int, 예: 값 형식에 필요 하지 않습니다. 값 형식은 필수 필드도 처리 되어 기본적으로 null 값을 할당할 수 없습니다. 제거할 수는 [필수 특성](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.requiredattribute.aspx) 하 고 교체에 대 한 최소 길이 매개 변수는 `StringLength` 특성:
+[필수 특성](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx) 이름 속성 필수 필드를 만듭니다. `Required attribute` float 및 double, DateTime, int, 예: 값 형식에 필요 하지 않습니다. 값 형식은 필수 필드도 처리 되어 기본적으로 null 값을 할당할 수 없습니다. 제거할 수는 [필수 특성](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx) 하 고 교체에 대 한 최소 길이 매개 변수는 `StringLength` 특성:
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample8.cs?highlight=2)]
 
@@ -169,7 +169,7 @@ MVC에서 다른 날짜 형식을 처리 하는 방법에 대 한 자세한 내�
 
 ### <a name="the-courses-and-officeassignment-navigation-properties"></a>과정 및 OfficeAssignment 탐색 속성
 
-`Courses` 및 `OfficeAssignment` 속성은 탐색 속성입니다. 가 이전에 설명한 대로 일반적으로 정의 된 [가상](https://msdn.microsoft.com/en-us/library/9fkccyh4(v=vs.110).aspx) 를 호출 하는 Entity Framework 기능을 가지도록 수 [한 지연 로딩이](https://msdn.microsoft.com/en-us/magazine/hh205756.aspx)합니다. 또한 탐색 속성에는 여러 엔터티 보유할 수, 하는 경우 해당 형식이 구현 해야 합니다는 [ICollection&lt;T&gt; ](https://msdn.microsoft.com/en-us/library/92t2ye13.aspx) 인터페이스입니다. 예를 들어 [IList&lt;T&gt; ](https://msdn.microsoft.com/en-us/library/5y536ey6.aspx) 잘못 한정 [a b l e&lt;T&gt; ](https://msdn.microsoft.com/en-us/library/9eekhta0.aspx) 때문에 `IEnumerable<T>` 구현 하지 않는 [추가 ](https://msdn.microsoft.com/en-us/library/63ywd54z.aspx).
+`Courses` 및 `OfficeAssignment` 속성은 탐색 속성입니다. 가 이전에 설명한 대로 일반적으로 정의 된 [가상](https://msdn.microsoft.com/library/9fkccyh4(v=vs.110).aspx) 를 호출 하는 Entity Framework 기능을 가지도록 수 [한 지연 로딩이](https://msdn.microsoft.com/magazine/hh205756.aspx)합니다. 또한 탐색 속성에는 여러 엔터티 보유할 수, 하는 경우 해당 형식이 구현 해야 합니다는 [ICollection&lt;T&gt; ](https://msdn.microsoft.com/library/92t2ye13.aspx) 인터페이스입니다. 예를 들어 [IList&lt;T&gt; ](https://msdn.microsoft.com/library/5y536ey6.aspx) 잘못 한정 [a b l e&lt;T&gt; ](https://msdn.microsoft.com/library/9eekhta0.aspx) 때문에 `IEnumerable<T>` 구현 하지 않는 [추가 ](https://msdn.microsoft.com/library/63ywd54z.aspx).
 
 강사 courses 개수에 관계 없이 배울 수 하므로 `Courses` 의 컬렉션으로 정의 `Course` 엔터티.
 
@@ -199,7 +199,7 @@ MVC에서 다른 날짜 형식을 처리 하는 방법에 대 한 자세한 내�
 
 ### <a name="the-foreignkey-attribute"></a>ForeignKey 특성
 
-0 또는 1을 한 관계 또는 두 엔터티 간의 한 일 관계 없을 때 (사이 이러한 `OfficeAssignment` 및 `Instructor`), EF 관계의 끝은 주 서버와 종속 끝 작동 하지 않습니다. 한 일 관계에서 각 클래스는 다른 클래스를 참조 탐색 속성을 가집니다. [ForeignKey 특성](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.foreignkeyattribute.aspx) 관계를 설정 하는 종속 클래스에 적용할 수 있습니다. 생략 하면는 [ForeignKey 특성](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.foreignkeyattribute.aspx), 마이그레이션을 만들려고 할 때 다음과 같은 오류가:
+0 또는 1을 한 관계 또는 두 엔터티 간의 한 일 관계 없을 때 (사이 이러한 `OfficeAssignment` 및 `Instructor`), EF 관계의 끝은 주 서버와 종속 끝 작동 하지 않습니다. 한 일 관계에서 각 클래스는 다른 클래스를 참조 탐색 속성을 가집니다. [ForeignKey 특성](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.foreignkeyattribute.aspx) 관계를 설정 하는 종속 클래스에 적용할 수 있습니다. 생략 하면는 [ForeignKey 특성](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.foreignkeyattribute.aspx), 마이그레이션을 만들려고 할 때 다음과 같은 오류가:
 
 *'ContosoUniversity.Models.OfficeAssignment' 'ContosoUniversity.Models.Instructor' 형식 간 연결의 주 끝을 확인할 수 없습니다. 이 연결의 주 끝 관계 fluent API 나 데이터 주석을 사용 하 여 명시적으로 구성 되어야 합니다.*
 
@@ -223,7 +223,7 @@ MVC에서 다른 날짜 형식을 처리 하는 방법에 대 한 자세한 내�
 
 ### <a name="the-databasegenerated-attribute"></a>DatabaseGenerated 특성
 
-[DatabaseGenerated 특성](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.databasegeneratedattribute.aspx) 와 [None](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.databasegeneratedoption(v=vs.110).aspx) 에 매개 변수는 `CourseID` 기본 키 값은 사용자가 제공 하지 않고 하는 데이터베이스에서 생성 된 속성을 지정 합니다.
+[DatabaseGenerated 특성](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.databasegeneratedattribute.aspx) 와 [None](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.databasegeneratedoption(v=vs.110).aspx) 에 매개 변수는 `CourseID` 기본 키 값은 사용자가 제공 하지 않고 하는 데이터베이스에서 생성 된 속성을 지정 합니다.
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample16.cs)]
 
@@ -253,11 +253,11 @@ MVC에서 다른 날짜 형식을 처리 하는 방법에 대 한 자세한 내�
 
 ### <a name="the-column-attribute"></a>Column 특성
 
-사용 하는 이전는 [열 특성](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.schema.columnattribute.aspx) 열 이름 매핑을 변경할 수 있습니다. 에 대 한 코드에서는 `Department` 엔터티에 `Column` 특성은 SQL 데이터 형식 매핑 SQL Server를 사용 하 여 열 정의할 수 있도록 변경 하는 데 사용 되 고 [money](https://msdn.microsoft.com/en-us/library/ms179882.aspx) 데이터베이스:
+사용 하는 이전는 [열 특성](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.columnattribute.aspx) 열 이름 매핑을 변경할 수 있습니다. 에 대 한 코드에서는 `Department` 엔터티에 `Column` 특성은 SQL 데이터 형식 매핑 SQL Server를 사용 하 여 열 정의할 수 있도록 변경 하는 데 사용 되 고 [money](https://msdn.microsoft.com/library/ms179882.aspx) 데이터베이스:
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample21.cs)]
 
-열 매핑 일반적으로 필요 하지 않은, Entity Framework는 일반적으로 속성에 대해 정의 하는 CLR 형식에 따라 적절 한 SQL Server 데이터 형식을 선택 합니다. CLR `decimal` SQL Server에 매핑됩니다 `decimal` 유형입니다. 하지만,이 경우 있습니다 열 통화 금액 보유 수 및 [money](https://msdn.microsoft.com/en-us/library/ms179882.aspx) 데이터 형식이 하는 데 보다 적합 합니다. CLR 데이터 형식 및 SQL Server 데이터 형식에 일치 하는 방법에 대 한 자세한 내용은 참조 [Entity FrameworkTypes 용 SqlClient](https://msdn.microsoft.com/en-us/library/bb896344.aspx)합니다.
+열 매핑 일반적으로 필요 하지 않은, Entity Framework는 일반적으로 속성에 대해 정의 하는 CLR 형식에 따라 적절 한 SQL Server 데이터 형식을 선택 합니다. CLR `decimal` SQL Server에 매핑됩니다 `decimal` 유형입니다. 하지만,이 경우 있습니다 열 통화 금액 보유 수 및 [money](https://msdn.microsoft.com/library/ms179882.aspx) 데이터 형식이 하는 데 보다 적합 합니다. CLR 데이터 형식 및 SQL Server 데이터 형식에 일치 하는 방법에 대 한 자세한 내용은 참조 [Entity FrameworkTypes 용 SqlClient](https://msdn.microsoft.com/library/bb896344.aspx)합니다.
 
 ### <a name="foreign-key-and-navigation-properties"></a>외래 키 속성 및 탐색 속성
 
@@ -301,17 +301,17 @@ MVC에서 다른 날짜 형식을 처리 하는 방법에 대 한 자세한 내�
 
 다음 그림은 엔터티 다이어그램에서 이러한 관계 모양을 보여 줍니다. (이 다이어그램을 사용 하 여 만들어졌습니다는 [Entity Framework 파워 도구](https://visualstudiogallery.msdn.microsoft.com/72a60b14-1581-4b9b-89f2-846072eff19d); 자습서의 일부가 아닌는 다이어그램을 만들어만 사용 되 고로 보여 줍니다.)
 
-![Many_relationship를 학생 Course_many](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image12.png)
+![Student-Course_many-to-many_relationship](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image12.png)
 
 각 관계 선을 값은 1에서 한쪽 끝에 별표 (\*)에, 일 대 다 관계를 나타내는입니다.
 
 경우는 `Enrollment` 테이블 등급 정보를 포함 하지 않은, 두 개의 외래 키를 포함 시키기만 하면 `CourseID` 및 `StudentID`합니다. 다 대 다 조인 테이블에 해당 하는 경우 *페이로드 없이* (또는 *순수 조인 테이블*) 데이터베이스에 전혀에 대 한 모델 클래스를 만들 필요가 없게 되 고 있습니다. `Instructor` 및 `Course` 엔터티에 이러한 종류의 다 대 다 관계 및 간에 엔터티 클래스가 없습니다.이 볼 수 있습니다.
 
-![Many_relationship를 강사 Course_many](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image13.png)
+![Instructor-Course_many-to-many_relationship](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image13.png)
 
 그러나 조인 테이블에는 데이터베이스 필요는 다음 데이터베이스 다이어그램에 표시 된 것 처럼:
 
-![Many_relationship_tables를 강사 Course_many](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image14.png)
+![Instructor-Course_many-to-many_relationship_tables](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image14.png)
 
 Entity Framework를 자동으로 만듭니다는 `CourseInstructor` 테이블 및 있습니다 읽고 하지 직접 하 여 업데이트를 읽고 업데이트는 `Instructor.Courses` 및 `Course.Instructors` 탐색 속성입니다.
 
@@ -325,7 +325,7 @@ Entity Framework를 자동으로 만듭니다는 `CourseInstructor` 테이블 �
 
 ## <a name="customize-the-data-model-by-adding-code-to-the-database-context"></a>데이터베이스 컨텍스트를 코드를 추가 하 여 데이터 모델을 사용자 지정
 
-다음에 새 엔터티 추가 `SchoolContext` 클래스 및 일부 사용 하 여 매핑을 사용자 지정할 [fluent API](https://msdn.microsoft.com/en-us/data/jj591617) 호출 합니다. API "fluent" 이므로 가설 일련의 다음 예제와 같이 단일 문으로 함께 메서드 호출에서 주로 사용 됩니다.
+다음에 새 엔터티 추가 `SchoolContext` 클래스 및 일부 사용 하 여 매핑을 사용자 지정할 [fluent API](https://msdn.microsoft.com/data/jj591617) 호출 합니다. API "fluent" 이므로 가설 일련의 다음 예제와 같이 단일 문으로 함께 메서드 호출에서 주로 사용 됩니다.
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample28.cs)]
 
@@ -337,7 +337,7 @@ Entity Framework를 자동으로 만듭니다는 `CourseInstructor` 테이블 �
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample29.cs)]
 
-새 문을 [OnModelCreating](https://msdn.microsoft.com/en-us/library/system.data.entity.dbcontext.onmodelcreating(v=vs.103).aspx) 다 대 다 조인 테이블을 구성 하는 메서드:
+새 문을 [OnModelCreating](https://msdn.microsoft.com/library/system.data.entity.dbcontext.onmodelcreating(v=vs.103).aspx) 다 대 다 조인 테이블을 구성 하는 메서드:
 
 - 다 대 다 관계에 대 한는 `Instructor` 및 `Course` 엔터티를 코드 조인 테이블에 대 한 테이블 및 열 이름을 지정 합니다. 코드 먼저 다 대 다 관계에 대해 구성할 수 있습니다이 코드를 사용 하지 않고 있지만 호출 하지 않는 경우 기본 이름을 같은 `InstructorInstructorID` 에 대 한는 `InstructorID` 열입니다.
 

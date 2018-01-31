@@ -2,19 +2,18 @@
 title: "SMS와 2 단계 인증"
 author: rick-anderson
 description: "ASP.NET Core와 2 단계 인증 (2FA)을 설정 하는 방법을 보여 줍니다."
-keywords: "ASP.NET Core, SMS, 인증, 2FA, 2 단계 인증, 2 단계 인증"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 08/15/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/authentication/2fa
-ms.openlocfilehash: 15620d89c4db2e74dbcec4707bb2ebc6df916e03
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: 7bca1c6249bebe84b532b652ab736186f35c50ee
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="two-factor-authentication-with-sms"></a>SMS와 2 단계 인증
 

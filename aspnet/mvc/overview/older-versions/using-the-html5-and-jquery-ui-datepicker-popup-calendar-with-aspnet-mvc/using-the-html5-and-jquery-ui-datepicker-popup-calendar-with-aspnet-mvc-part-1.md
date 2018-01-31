@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: 9320c8a2aadb3b3c5bd6cd90b59d8a72db384c0c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4b5507021af47d96c29809c9830d0558f5501f87
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-1"></a>ASP.NET MVC-1 부 HTML5 및 jQuery UI Datepicker 팝업 일정 사용
 ====================
@@ -51,7 +51,7 @@ C# 및 Visual Basic 소스 코드를 Visual Studio 프로젝트는이 항목에 
 
 학습할 다음과 같습니다.
 
-- 특성을 사용 하는 방법의 [DataAnnotations](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.aspx) 표시 되는 데이터의 형식을 제어 하 고 편집 모드에 있을 때 네임 스페이스입니다.
+- 특성을 사용 하는 방법의 [DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) 표시 되는 데이터의 형식을 제어 하 고 편집 모드에 있을 때 네임 스페이스입니다.
 - 템플릿을 만드는 방법 (편집 및 템플릿을 표시) 데이터의 서식을 제어할 수 있습니다.
 - 추가 하는 방법의 [jQuery UI datepicker](http://jqueryui.com/demos/datepicker/) 날짜 필드를 입력 하는 방법으로 합니다.
 
@@ -67,7 +67,7 @@ C# 및 Visual Basic 소스 코드를 Visual Studio 프로젝트는이 항목에 
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1/_static/image3.png)
 
-사용 하 여 결과은 날짜 및 가격에 대 한 서식을 [DisplayFormat](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.displayformatattribute.aspx) 특성의 속성에는 `Movie` 클래스입니다.
+사용 하 여 결과은 날짜 및 가격에 대 한 서식을 [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) 특성의 속성에는 `Movie` 클래스입니다.
 
 열기는 *Movie.cs* 파일을 주석으로 처리는 `DisplayFormat` 특성에 `ReleaseDate` 및 `Price` 속성입니다. 그 결과 `Movie` 클래스는 다음과 같습니다.
 
@@ -79,11 +79,11 @@ C# 및 Visual Basic 소스 코드를 Visual Studio 프로젝트는이 항목에 
 
 ### <a name="using-the-dataannotations-datatype-attribute-to-specify-the-data-type"></a>DataAnnotations 데이터 형식 특성을 사용 하 여 데이터 형식을 지정 하려면
 
-주석 처리를 대체 `DisplayFormat` 특성에 대 한는 `ReleaseDate` 속성을는 [DataType](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx) 특성을 사용 하 여는 `Date` 열거형입니다. 대체는 `DisplayFormat` 특성에 대 한는 `Price` 속성을는 [DataType](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx) 특성 다시 사용 하 여이 시간은 `Currency` 열거형입니다. 다음은 완성 된 코드의 모양을입니다.
+주석 처리를 대체 `DisplayFormat` 특성에 대 한는 `ReleaseDate` 속성을는 [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) 특성을 사용 하 여는 `Date` 열거형입니다. 대체는 `DisplayFormat` 특성에 대 한는 `Price` 속성을는 [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) 특성 다시 사용 하 여이 시간은 `Currency` 열거형입니다. 다음은 완성 된 코드의 모양을입니다.
 
 [!code-csharp[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1/samples/sample2.cs)]
 
-응용 프로그램을 실행합니다. 이제 릴리스 날짜 및 가격 속성은 형식이 잘못 (사용 하 여 적절 한 날짜 및 통화 형식). [DataType](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.datatype.aspx) 특성 형식 메타 데이터를 제공 기본 제공 ASP.NET MVC에 대 한 서식 파일 필드를 올바른 형식으로 렌더링 되도록 합니다. 사용 하는 `DataType` 특성은 사용 하는 것이 좋습니다는 `DisplayFormat` 때문에 코드에서는 원래 특성의 `DataType` 깔끔하고 국제화 등의 목적에 대해 더 융통성이 특성 모델을 사용 합니다.
+응용 프로그램을 실행합니다. 이제 릴리스 날짜 및 가격 속성은 형식이 잘못 (사용 하 여 적절 한 날짜 및 통화 형식). [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) 특성 형식 메타 데이터를 제공 기본 제공 ASP.NET MVC에 대 한 서식 파일 필드를 올바른 형식으로 렌더링 되도록 합니다. 사용 하는 `DataType` 특성은 사용 하는 것이 좋습니다는 `DisplayFormat` 때문에 코드에서는 원래 특성의 `DataType` 깔끔하고 국제화 등의 목적에 대해 더 융통성이 특성 모델을 사용 합니다.
 
 다음 섹션의 날짜 필드를 표시할 사용자 지정 서식 파일을 확인 하는 방법을 배웁니다.
 

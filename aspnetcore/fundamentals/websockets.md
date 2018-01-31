@@ -2,20 +2,18 @@
 title: "ASP.NET Core에서 Websocket을 지원합니다."
 author: tdykstra
 description: "ASP.NET Core에서 Websocket을 시작 하는 방법을 알아봅니다."
-keywords: ASP.NET Core, WebSockets
 ms.author: tdykstra
 manager: wpickett
 ms.date: 03/25/2017
 ms.topic: article
-ms.assetid: 0e0fedcd-a7b4-4479-8ae0-36eab0229d7e
 ms.technology: aspnet
 ms.prod: aspnet-core
 uid: fundamentals/websockets
-ms.openlocfilehash: 114d52d831668e5facd1142b5f9e5f68e7456f7e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6f335376c72cd0c68f4667cf0e661a25bf448980
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="introduction-to-websockets-in-aspnet-core"></a>ASP.NET Core에서 Websocket 소개
 
@@ -28,12 +26,12 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="prerequisites"></a>필수 구성 요소
 
-* ASP.NET Core 1.1 (1.0에 실행 되지 않습니다)
+* ASP.NET Core 1.1 (1.0에서 실행 되지 않으므로)
 * ASP.NET Core에서 실행 되는 모든 운영 체제:
   
   * Windows 7 / Windows Server 2008 이상
   * Linux
-  * MacOS
+  * macOS
 
 * **예외**: iis에서 Windows에서 앱 실행 되거나 WebListener를 사용 해야 하는 경우:
 
@@ -56,7 +54,7 @@ SignalR Core 기다려야 않으려면 이제 사용할 수 있습니다 Websock
 * 서버에서 또는 그 반대로 메서드를 호출 하는 클라이언트에 대해 지원 합니다.
 * 여러 서버에 맞게 크기 조정 지원 합니다.
 
-## <a name="how-to-use-it"></a>사용 하는 방법
+## <a name="how-to-use-it"></a>사용 방법
 
 * 설치는 [Microsoft.AspNetCore.WebSockets](https://www.nuget.org/packages/Microsoft.AspNetCore.WebSockets/) 패키지 합니다.
 * 미들웨어를 구성 합니다.

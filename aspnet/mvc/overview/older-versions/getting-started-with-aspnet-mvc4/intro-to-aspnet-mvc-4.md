@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 41efda63026c9d17cb9dceb92b5efc87490a722d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 92d9e583b6c26fa8c928d33e14593d280702a269
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="intro-to-aspnet-mvc-4"></a>ASP.NET MVC 4 소개
 ====================
@@ -24,7 +24,7 @@ ms.lasthandoff: 11/10/2017
 
 > 이 자습서를 사용할 수 있는 경우 업데이트 된 버전 [여기](../../getting-started/introduction/getting-started.md) 를 사용 하 여 [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)합니다. 새 자습서는이 자습서를 통해 많은 향상 된 기능을 제공 하는 ASP.NET MVC 5를 사용 합니다.
 > 
-> 이 자습서는 Microsoft를 사용 하 여 ASP.NET MVC 4 웹 응용 프로그램을 구축 하는 기초 업무량이 [Visual Studio Express 2012](https://www.microsoft.com/visualstudio/11/en-us/products/express) 또는 Visual Web Developer 2010 Express 서비스 팩 1입니다. 이 자습서를 완료 하려면 어떤 항목도 설치 하지 않아도 visual Studio 2012 좋습니다. Visual Studio 2010을 사용 하는 경우에 아래 구성 요소를 설치 해야 합니다. 다음 링크를 클릭 하 여 모두를 설치할 수 있습니다.
+> 이 자습서는 Microsoft를 사용 하 여 ASP.NET MVC 4 웹 응용 프로그램을 구축 하는 기초 업무량이 [Visual Studio Express 2012](https://www.microsoft.com/visualstudio/11/products/express) 또는 Visual Web Developer 2010 Express 서비스 팩 1입니다. 이 자습서를 완료 하려면 어떤 항목도 설치 하지 않아도 visual Studio 2012 좋습니다. Visual Studio 2010을 사용 하는 경우에 아래 구성 요소를 설치 해야 합니다. 다음 링크를 클릭 하 여 모두를 설치할 수 있습니다.
 > 
 > - [Visual Studio Web Developer Express SP1 필수 구성 요소](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)
 > - [ASP.NET MVC 4 용 WPI 설치 관리자](https://go.microsoft.com/fwlink/?LinkId=243392)
@@ -35,7 +35,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > 이 항목에 수반 C# 소스 코드를 사용 하 여 Visual Web Developer 프로젝트 ´ ù. [C# 버전을 다운로드](https://code.msdn.microsoft.com/Intro-to-ASPNET-MVC-4-61d0219d/file/114480/1/MvcMovie.zip)합니다.
 > 
-> 자습서에서 Visual Studio에서 응용 프로그램을 실행 합니다. 또한 가능 응용 프로그램 사용 가능한 인터넷을 통해 호스팅 공급자에 게 배포 하 여 합니다. Microsoft에서 제공 하는 최대 10 개의 웹 사이트의 무료 웹 호스팅는 [Windows Azure 평가판 계정 무료](https://www.windowsazure.com/en-us/pricing/free-trial/?WT.mc_id=A443DD604)합니다. Visual Studio 웹 프로젝트는 Windows Azure 웹 사이트를 배포 하는 방법에 대 한 정보를 참조 하십시오. [만들기 및 배포는 ASP.NET 웹 사이트 및 Visual Studio와 함께 SQL 데이터베이스](https://docs.microsoft.com/dotnet/azure/)합니다. 또한 해당 자습서는 Windows Azure SQL 데이터베이스 (이전의 SQL Azure)에 SQL Server 데이터베이스를 배포 하려면 Entity Framework Code First 마이그레이션을 사용 하는 방법을 보여 줍니다.
+> 자습서에서 Visual Studio에서 응용 프로그램을 실행 합니다. 또한 가능 응용 프로그램 사용 가능한 인터넷을 통해 호스팅 공급자에 게 배포 하 여 합니다. Microsoft에서 제공 하는 최대 10 개의 웹 사이트의 무료 웹 호스팅는 [Windows Azure 평가판 계정 무료](https://www.windowsazure.com/pricing/free-trial/?WT.mc_id=A443DD604)합니다. Visual Studio 웹 프로젝트는 Windows Azure 웹 사이트를 배포 하는 방법에 대 한 정보를 참조 하십시오. [만들기 및 배포는 ASP.NET 웹 사이트 및 Visual Studio와 함께 SQL 데이터베이스](https://docs.microsoft.com/dotnet/azure/)합니다. 또한 해당 자습서는 Windows Azure SQL 데이터베이스 (이전의 SQL Azure)에 SQL Server 데이터베이스를 배포 하려면 Entity Framework Code First 마이그레이션을 사용 하는 방법을 보여 줍니다.
 > 
 > 이 자습서는 Rick Anderson에 의해 작성 되었으므로 ( [ @RickAndMSFT ](https://twitter.com/#!/RickAndMSFT) ).
 

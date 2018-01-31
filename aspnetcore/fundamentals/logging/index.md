@@ -2,19 +2,18 @@
 title: "ASP.NET Core에 로그인"
 author: ardalis
 description: "ASP.NET Core의 로깅 프레임워크에 대해 알아봅니다. 기본 제공 로깅 공급자를 살펴보고 인기 있는 타사 공급자에 대해 알아봅니다."
-keywords: "ASP.NET Core,로깅,로깅 공급자,Microsoft.Extensions.Logging,ILogger,ILoggerFactory,LogLevel,WithFilter,TraceSource,EventLog,EventSource,범위"
-ms.author: tdykstra
 manager: wpickett
+ms.author: tdykstra
 ms.date: 12/15/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: fundamentals/logging/index
-ms.openlocfilehash: 737de614625ce560df1c3d7cfd9810f9433c153d
-ms.sourcegitcommit: f1436107b4c022b26f5235dddef103cec5aa6bff
+ms.openlocfilehash: c8152b94311acb672e9810828b634c744cb46eae
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/15/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="introduction-to-logging-in-aspnet-core"></a>ASP.NET Core에 로그인 소개
 
@@ -56,7 +55,7 @@ ASP.NET Core는 비동기 로거 메서드를 제공하지 않습니다. 비동�
 
 [!code-csharp[](index/sample2/Program.cs?name=snippet_ExpandDefault&highlight=16,17)]
 
-기본 프로젝트 템플릿은 이전 코드에서 살펴본 방식에 따라 로깅을 설정하지만, `ConfigureLogging` 호출은 `CreateDefaultBuilder` 메서드를 통해 수행됩니다. 다음은 프로젝트 템플릿으로 만든 *Program.cs*의 코드입니다.
+기본 프로젝트 템플릿을 사용하면 [CreateDefaultBuilder](https://docs.microsoft.com/ dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder?view=aspnetcore-2.0#Microsoft_AspNetCore_WebHost_CreateDefaultBuilder_System_String___) 메서드를 사용하여 로깅할 수 있습니다.
 
 [!code-csharp[](index/sample2/Program.cs?name=snippet_TemplateCode&highlight=7)]
 
@@ -302,11 +301,11 @@ System.Exception: Item not found exception.
 | 1      | 디버그         | 모든 범주                          | 정보       |
 | 2      | 콘솔       | Microsoft.AspNetCore.Mvc.Razor.Internal | 경고           |
 | 3      | 콘솔       | Microsoft.AspNetCore.Mvc.Razor.Razor    | 디버그             |
-| 4      | 콘솔       | Microsoft.AspNetCore.Mvc.Razor          | 오류             |
+| 4      | 콘솔       | Microsoft.AspNetCore.Mvc.Razor          | Error             |
 | 5      | 콘솔       | 모든 범주                          | 정보       |
 | 6      | 모든 공급자 | 모든 범주                          | 디버그             |
 | 7      | 모든 공급자 | 시스템                                  | 디버그             |
-| 9      | 디버그         | Microsoft                               | 추적             |
+| 8      | 디버그         | Microsoft                               | 추적             |
 
 로그를 쓰는 `ILogger` 개체를 만들 때 `ILoggerFactory` 개체는 공급자마다 해당 로거에 적용할 단일 규칙을 선택합니다. `ILogger` 개체를 통해 작성된 모든 메시지는 선택한 규칙을 기반으로 필터링됩니다. 사용 가능한 규칙 중에서 각 공급자 및 범주 쌍에 적용 가능한 가장 구체적인 규칙이 선택됩니다.
 
@@ -357,7 +356,7 @@ System.Exception: Item not found exception.
 
 [!code-csharp[](index/sample/Startup.cs?name=snippet_AddConsoleAndDebugWithFilter&highlight=6-7)]
 
-`AddEventLog` 메서드는 `EventLogSettings` 인스턴스를 사용하는 오버로드를 갖고 있으며, 이 인스턴스의 `Filter` 속성에는 필터링 함수가 포함될 수 있습니다. TraceSource 공급자는 오버로드를 제공하지 않습니다. 로깅 수준 및 기타 매개가 사용하는 `SourceSwitch` 및 `TraceListener`를 기반으로 하기 때문입니다.
+`AddEventLog` 메서드는 `EventLogSettings` 인스턴스를 사용하는 오버로드를 갖고 있으며, 이 인스턴스의 `Filter` 속성에는 필터링 함수가 포함될 수 있습니다. TraceSource 공급자는 오버로드를 제공하지 않습니다. 로깅 수준 및 기타 매개 변수가 사용하는 `SourceSwitch` 및 `TraceListener`를 기반으로 하기 때문입니다.
 
 `WithFilter` 확장 메서드를 사용하여 `ILoggerFactory` 인스턴스에 등록된 모든 공급자에 대한 필터링 규칙을 설정할 수 있습니다. 아래 예제는 프레임워크 로그(범주가 "Microsoft" 또는 "시스템"으로 시작)를 경고로 제한하고 디버그 수준에서 앱 로그를 허용합니다.
 
@@ -611,7 +610,7 @@ App Service 앱에 배포할 때 응용 프로그램은 Azure Portal **App Servi
 
 로그 파일의 기본 위치는 *D:\\home\\LogFiles\\Application* 폴더이며, 기본 파일 이름은 *diagnostics-yyyymmdd.txt*입니다. 기본 파일 크기 제한은 10MB이고, 보존되는 기본 최대 파일 수는 2입니다. 기본 BLOB 이름은 *{app-name}{timestamp}/yyyy/mm/dd/hh/{guid}-applicationLog.txt*입니다. 기본 동작에 대한 자세한 내용은 [AzureAppServicesDiagnosticsSettings](https://github.com/aspnet/Logging/blob/c7d0b1b88668ff4ef8a86ea7d2ebb5ca7f88d3e0/src/Microsoft.Extensions.Logging.AzureAppServices/AzureAppServicesDiagnosticsSettings.cs)를 참조하세요.
 
-공급자는 프로젝트가 Azure 환경에서 실행되는 경우에만 작동합니다. 로컬로 실행하는 경우에는 아무 영향도 없습니다. BLOB에 대한 로컬 파일 또는 로컬 개발 저장소에 기록하지 않습니다.
+공급자는 프로젝트가 Azure 환경에서 실행되는 경우에만 작동합니다. 로컬로 실행하는 경우에는 아무 영향도 없습니다. Blob에 대한 로컬 파일 또는 로컬 개발 저장소에 기록하지 않습니다.
 
 ## <a name="third-party-logging-providers"></a>타사 로깅 공급자
 

@@ -7,15 +7,13 @@ ms.date: 09/22/2017
 ms.topic: get-started-article
 ms.prod: asp.net-core
 ms.technology: aspnet
-keywords: "ASP.NET Core, WebAPI, Web API, REST, Mac, Linux, HTTP, 서비스, HTTP 서비스, VS Code"
 manager: wpickett
-ms.assetid: 830b4bf5-dd14-423e-9f59-764a6f13a8f6
 uid: tutorials/web-api-vsc
-ms.openlocfilehash: caf40ee1c2d45d2fbf33b07d707fa4f1be98d31c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9fec8904cf05fc486160c0641731c6336fe2766a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="create-a-web-api-with-aspnet-core-mvc-and-visual-studio-code-on-linux-macos-and-windows"></a>Linux, macOS 및 Windows에서 ASP.NET Core MVC 및 Visual Studio Code를 사용하여 Web API 만들기
 
@@ -57,7 +55,7 @@ VS Code(Visual Studio Code)에서 *TodoApi* 폴더를 열고 *Startup.cs* 파일
 
 <!-- uid: tutorials/first-mvc-app-xplat/start-mvc uses the pic below. If you change it, make sure it's consistent -->
 
-![빌드 및 디버그에 필요한 자산이 ‘TodoApi’에서 누락되었습니다. 경고가 있는 VS Code 추가할까요? 다시 표시 안 함, 지금 아님, 예 및 정보 표시 - 확인되지 않은 종속성이 있음 - 복원 - 닫기](web-api-vsc/_static/vsc_restore.png)
+![빌드 및 디버그에 필요한 자산이 ‘TodoApi’에서 누락되었습니다. 경고가 있는 VS Code 추가할까요?” 다시 묻지 않음, 나중에, 예](web-api-vsc/_static/vsc_restore.png)
 
 **디버그**(F5) 키를 눌러 프로그램을 빌드하고 실행합니다. 브라우저에서 http://localhost:5000/api/값으로 이동합니다. 다음이 표시됩니다.
 
@@ -67,11 +65,9 @@ VS Code 사용에 대한 팁은 [Visual Studio Code 도움말](#visual-studio-co
 
 ## <a name="add-support-for-entity-framework-core"></a>Entity Framework Core에 대한 지원 추가
 
-*TodoApi.csproj* 파일을 편집하여 [Entity Framework Core InMemory](https://docs.microsoft.com/ef/core/providers/in-memory/) 데이터베이스 공급자를 설치합니다. 이 데이터베이스 공급자를 설치하면 Entity Framework Core를 메모리 내 데이터베이스에서 사용할 수 있습니다.
+.NET Core 2.0에서 새 프로젝트를 만들면 *TodoApi.csproj* 파일에 'Microsoft.AspNetCore.All' 공급자를 추가합니다. [Entity Framework Core InMemory](https://docs.microsoft.com/ef/core/providers/in-memory/) 데이터베이스 공급자를 별도로 설치할 필요가 없습니다. 이 데이터베이스 공급자를 설치하면 Entity Framework Core를 메모리 내 데이터베이스에서 사용할 수 있습니다.
 
 [!code-xml[Main](web-api-vsc/sample/TodoApi/TodoApi.csproj?highlight=12)]
-
-`dotnet restore`를 실행하여 다운로드하고 EF Core InMemory DB 공급자를 설치합니다. 터미널에서 `dotnet restore`를 실행하거나 VS Code에 `⌘⇧P`(macOS) 또는 `Ctrl+Shift+P`(Linux)를 입력한 다음 **.NET**을 입력합니다. **.NET: 복원 패키지**를 선택합니다.
 
 ## <a name="add-a-model-class"></a>모델 클래스 추가
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
 msc.type: authoredcontent
-ms.openlocfilehash: 9ecc233e595716a167ad800a0a21a6162b051648
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c1d0b3e1644ef7f9ebb4be74c3fdf3df90cf3537
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="create-a-rest-api-with-attribute-routing-in-aspnet-web-api-2"></a>ASP.NET Web API 2에서에서의 라우팅 특성으로 REST API 만들기
 ====================
@@ -26,7 +26,7 @@ Web API 2는 새로운 형식을 지 원하는 라우팅 이라고 *특성 라�
 
 | 작업 | 예제 URI |
 | --- | --- |
-| 모든 책 목록을 가져옵니다. | / api/설명서 |
+| 모든 책 목록을 가져옵니다. | /api/books |
 | 책 id 가져오기 | /api/books/1 |
 | 책의 세부 정보를 가져옵니다. | /api/books/1/details |
 | 장르별로 책의 목록을 가져옵니다. | /api/books/fantasy |
@@ -141,7 +141,7 @@ Ctrl+Shift+B를 눌러 프로젝트를 빌드합니다. Entity Framework 리플�
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample8.cs)]
 
-다음을 업데이트 하는 `BooksController` 반환 하기 `BookDto` 인스턴스. 에서는 [Queryable.Select](https://msdn.microsoft.com/en-us/library/system.linq.queryable.select.aspx) 메서드를 프로젝트 `Book` 인스턴스 `BookDto` 인스턴스. 컨트롤러 클래스에 대 한 업데이트 된 코드는 다음과 같습니다.
+다음을 업데이트 하는 `BooksController` 반환 하기 `BookDto` 인스턴스. 에서는 [Queryable.Select](https://msdn.microsoft.com/library/system.linq.queryable.select.aspx) 메서드를 프로젝트 `Book` 인스턴스 `BookDto` 인스턴스. 컨트롤러 클래스에 대 한 업데이트 된 코드는 다음과 같습니다.
 
 [!code-csharp[Main](create-a-rest-api-with-attribute-routing/samples/sample9.cs)]
 
@@ -168,7 +168,7 @@ Ctrl+Shift+B를 눌러 프로젝트를 빌드합니다. Entity Framework 리플�
 | 메서드 | 경로 템플릿 | 예제 URI |
 | --- | --- | --- |
 | `GetBooks` | "api/books" | `http://localhost/api/books` |
-| `GetBook` | "api/설명서 / {id: int}" | `http://localhost/api/books/5` |
+| `GetBook` | "api/books/{id:int}" | `http://localhost/api/books/5` |
 
 ## <a name="get-book-details"></a>책 세부 정보 가져오기
 

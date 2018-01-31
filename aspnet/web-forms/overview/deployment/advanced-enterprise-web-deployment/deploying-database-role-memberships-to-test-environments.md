@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/deploying-database-role-memberships-to-test-environments
 msc.type: authoredcontent
-ms.openlocfilehash: ac780c6cd522f9216cafe3b5f23772ef6ebf5d11
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 226c28622f76e866fba1fc33cf9b9b7a01e5295b
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-database-role-memberships-to-test-environments"></a>데이터베이스 역할 멤버 자격이 테스트 환경에 배포
 ====================
@@ -87,7 +87,7 @@ ms.lasthandoff: 11/10/2017
 
 
 > [!NOTE]
-> Sqlcmd 명령줄 옵션에 대 한 자세한 내용은 참조 하십시오. [sqlcmd 유틸리티](https://msdn.microsoft.com/en-us/library/ms162773.aspx)합니다.
+> Sqlcmd 명령줄 옵션에 대 한 자세한 내용은 참조 하십시오. [sqlcmd 유틸리티](https://msdn.microsoft.com/library/ms162773.aspx)합니다.
 
 
 이 명령은 MSBuild 대상에 포함 하기 전에 스크립트를 실행 하려는 조건을 고려해 야 합니다.
@@ -130,7 +130,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="further-reading"></a>추가 정보
 
-데이터베이스 프로젝트를 배포 하 VSDBCMD 사용에 대 한 자세한 내용은 참조 하십시오. [데이터베이스 프로젝트 배포](../web-deployment-in-the-enterprise/deploying-database-projects.md)합니다. 사용자 지정 된 다른 대상 환경에 대 한 배포 데이터베이스에 대 한 지침을 참조 하십시오. [여러 환경에 대 한 사용자 지정 데이터베이스 배포](customizing-database-deployments-for-multiple-environments.md)합니다. 배포 프로세스 제어 기능을 사용자 지정 MSBuild 프로젝트 파일 사용에 대 한 자세한 내용은 참조 하십시오. [프로젝트 파일 이해](../web-deployment-in-the-enterprise/understanding-the-project-file.md) 및 [빌드 프로세스를 이해](../web-deployment-in-the-enterprise/understanding-the-build-process.md)합니다. Sqlcmd 명령줄 옵션에 대 한 자세한 내용은 참조 하십시오. [sqlcmd 유틸리티](https://msdn.microsoft.com/en-us/library/ms162773.aspx)합니다.
+데이터베이스 프로젝트를 배포 하 VSDBCMD 사용에 대 한 자세한 내용은 참조 하십시오. [데이터베이스 프로젝트 배포](../web-deployment-in-the-enterprise/deploying-database-projects.md)합니다. 사용자 지정 된 다른 대상 환경에 대 한 배포 데이터베이스에 대 한 지침을 참조 하십시오. [여러 환경에 대 한 사용자 지정 데이터베이스 배포](customizing-database-deployments-for-multiple-environments.md)합니다. 배포 프로세스 제어 기능을 사용자 지정 MSBuild 프로젝트 파일 사용에 대 한 자세한 내용은 참조 하십시오. [프로젝트 파일 이해](../web-deployment-in-the-enterprise/understanding-the-project-file.md) 및 [빌드 프로세스를 이해](../web-deployment-in-the-enterprise/understanding-the-build-process.md)합니다. Sqlcmd 명령줄 옵션에 대 한 자세한 내용은 참조 하십시오. [sqlcmd 유틸리티](https://msdn.microsoft.com/library/ms162773.aspx)합니다.
 
 >[!div class="step-by-step"]
 [이전](customizing-database-deployments-for-multiple-environments.md)

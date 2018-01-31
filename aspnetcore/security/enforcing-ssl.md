@@ -2,19 +2,18 @@
 title: "ASP.NET Core 응용 프로그램에서 SSL을 강제 적용"
 author: rick-anderson
 description: "웹 응용 프로그램에서 ASP.NET Core SSL을 요구 하는 방법을 보여 줍니다."
-keywords: ASP.NET Core, SSL, HTTPS, RequireHttpsAttribute, IIS Express
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 07/19/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/enforcing-ssl
-ms.openlocfilehash: 6f2755a606000717ca8a57f045b1ef613c7f14f6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2e0a2f4732e574c80ceef8fd21a530a11aef254c
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="enforcing-ssl-in-an-aspnet-core-app"></a>ASP.NET Core 응용 프로그램에서 SSL을 강제 적용
 
@@ -39,4 +38,4 @@ ms.lasthandoff: 11/10/2017
 
 참조 [URL 다시 쓰기 미들웨어](xref:fundamentals/url-rewriting) 자세한 정보에 대 한 합니다.
 
-HTTPS를 전역적으로 요구 (`options.Filters.Add(new RequireHttpsAttribute());`) 보안 모범 사례입니다. 적용 된 `[RequireHttps]` 모든 컨트롤러에는 특성을 전역으로 HTTPS를 요구 하는 것 만큼 안전 간주 되지 않습니다. 보장할 수 없습니다 적용할 저장 되므로 응용 프로그램에 추가 하는 새로운 컨트롤러는 `[RequireHttps]` 특성입니다.
+HTTPS를 전역적으로 요구 (`options.Filters.Add(new RequireHttpsAttribute());`) 보안 모범 사례입니다. 적용 된 `[RequireHttps]` 모든 컨트롤러에는 특성으로 전체적으로 HTTPS를 필요로 하는 컨트롤로 안전 하다 고 간주 되지 않습니다. 보장할 수 없습니다 적용할 저장 되므로 응용 프로그램에 추가 하는 새로운 컨트롤러는 `[RequireHttps]` 특성입니다.

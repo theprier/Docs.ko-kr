@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/mvc3
 msc.type: content
-ms.openlocfilehash: 1aa059e92b5637b9ba7ce488da4b44322dab6d8e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c7eee987b28a5d7f8b40fe89a7bf7517ec06646f
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 ====================
@@ -165,7 +165,7 @@ Razor에 대 한 자세한 내용은 다음 리소스를 참조 합니다.
 작업 메서드 실행 이전 또는 작업 메서드가 실행 된 이후에 논리를 수행 하려는 경우가 있습니다. ASP.NET MVC 2를 지원 하기 위해 작업 필터를 제공 합니다. 작업 필터는 특정 컨트롤러 작업 메서드에 이전 및 이후 작업 동작을 추가 하는 선언적 수단을 제공 하는 사용자 지정 특성입니다. 하지만, 경우에 따라 모든 작업 메서드에 적용 되는 사전 동작 또는 작업 후 동작을 지정 하려면 필요할 수 있습니다. MVC 3에 추가 하 여 전역 필터를 지정할 수 있습니다는 `GlobalFilters` 컬렉션입니다. 전역 작업 필터에 대 한 자세한 내용은 다음 리소스를 참조 합니다.
 
 - [MVC 3 Preview에서 Scott Guthrie의 블로그](https://weblogs.asp.net/scottgu/archive/2010/07/27/introducing-asp-net-mvc-3-preview-1.aspx)
-- [ASP.NET MVC의 필터링](https://msdn.microsoft.com/en-us/library/gg416513(VS.98).aspx)
+- [ASP.NET MVC의 필터링](https://msdn.microsoft.com/library/gg416513(VS.98).aspx)
 
 ### <a name="new-viewbag-property"></a>새 "ViewBag" 속성
 
@@ -175,9 +175,9 @@ MVC 2 컨트롤러 지원은 `ViewData` 데이터를 전달 하는 런타임에 
 
 다음 `ActionResult` 형식 및 해당 도우미 메서드는 새로운 기능과 향상 된 MVC 3에서:
 
-- [HttpNotFoundResult](https://msdn.microsoft.com/en-us/library/system.web.mvc.httpnotfoundresult(v=vs.98).aspx)합니다. 404 HTTP 상태 코드를 클라이언트에 반환합니다.
-- [된 RedirectResult](https://msdn.microsoft.com/en-us/library/system.web.mvc.redirectresult(v=VS.98).aspx)합니다. 임시 리디렉션 (HTTP 302 상태 코드) 또는 부울 매개 변수에 따라 영구 리디렉션 (301 HTTP 상태 코드)를 반환합니다. 이러한 변경으로 인해 함께에서 [컨트롤러](https://msdn.microsoft.com/en-us/library/system.web.mvc.controller(v=VS.98).aspx) 클래스에는 이제 영구 리디렉션을 수행 하는 3 가지 방법은: `RedirectPermanent`, `RedirectToRoutePermanent`, 및 `RedirectToActionPermanent`합니다. 인스턴스를 반환 하는 이러한 메서드 `RedirectResult` 와 `Permanent` 속성이로 설정 `true`합니다.
-- [HttpStatusCodeResult](https://msdn.microsoft.com/en-us/library/system.web.mvc.httpstatuscoderesult(v=VS.98).aspx)합니다. 사용자 지정 HTTP 상태 코드를 반환합니다.
+- [HttpNotFoundResult](https://msdn.microsoft.com/library/system.web.mvc.httpnotfoundresult(v=vs.98).aspx). 404 HTTP 상태 코드를 클라이언트에 반환합니다.
+- [RedirectResult](https://msdn.microsoft.com/library/system.web.mvc.redirectresult(v=VS.98).aspx). 임시 리디렉션 (HTTP 302 상태 코드) 또는 부울 매개 변수에 따라 영구 리디렉션 (301 HTTP 상태 코드)를 반환합니다. 이러한 변경으로 인해 함께에서 [컨트롤러](https://msdn.microsoft.com/library/system.web.mvc.controller(v=VS.98).aspx) 클래스에는 이제 영구 리디렉션을 수행 하는 3 가지 방법은: `RedirectPermanent`, `RedirectToRoutePermanent`, 및 `RedirectToActionPermanent`합니다. 인스턴스를 반환 하는 이러한 메서드 `RedirectResult` 와 `Permanent` 속성이로 설정 `true`합니다.
+- [HttpStatusCodeResult](https://msdn.microsoft.com/library/system.web.mvc.httpstatuscoderesult(v=VS.98).aspx). 사용자 지정 HTTP 상태 코드를 반환합니다.
 
 <a id="BM_JavaScript_and_Ajax_Improvements"></a>
 
@@ -199,7 +199,7 @@ MVC 2 컨트롤러 지원은 `ViewData` 데이터를 전달 하는 런타임에 
 
 ### <a name="remote-validator"></a>원격 유효성 검사기
 
-ASP.NET MVC 3 새 지원 [RemoteAttribute](https://msdn.microsoft.com/en-us/library/system.web.mvc.remoteattribute(v=VS.98).aspx) 플러그 인에서 jQuery 유효성 검사 기능을 활용할 수 있도록 하는 클래스의 원격 유효성 검사기 지원 합니다. 이 통해 자동으로 서버 쪽만 수행할 수 있는 유효성 검사 논리를 수행 하기 위해 서버에서 정의 하는 사용자 지정 메서드를 호출 하는 클라이언트 쪽 유효성 검사 라이브러리.
+ASP.NET MVC 3 새 지원 [RemoteAttribute](https://msdn.microsoft.com/library/system.web.mvc.remoteattribute(v=VS.98).aspx) 플러그 인에서 jQuery 유효성 검사 기능을 활용할 수 있도록 하는 클래스의 원격 유효성 검사기 지원 합니다. 이 통해 자동으로 서버 쪽만 수행할 수 있는 유효성 검사 논리를 수행 하기 위해 서버에서 정의 하는 사용자 지정 메서드를 호출 하는 클라이언트 쪽 유효성 검사 라이브러리.
 
 다음 예제에서는 `Remote` 특성 지정 클라이언트 유효성 검사는 작업을 호출 합니다 `UserNameAvailable` 에 `UsersController` 올바른지 확인 하기 위해 클래스는 `UserName` 필드입니다.
 
@@ -209,7 +209,7 @@ ASP.NET MVC 3 새 지원 [RemoteAttribute](https://msdn.microsoft.com/en-us/libr
 
 [!code-csharp[Main](mvc3/samples/sample2.cs)]
 
-사용 하는 방법에 대 한 자세한 내용은 `Remote` 특성을 참조 하십시오. [하는 방법: ASP.NET MVC에서 원격 유효성 검사 구현](https://msdn.microsoft.com/en-us/library/gg508808(VS.98).aspx) MSDN 라이브러리에서.
+사용 하는 방법에 대 한 자세한 내용은 `Remote` 특성을 참조 하십시오. [하는 방법: ASP.NET MVC에서 원격 유효성 검사 구현](https://msdn.microsoft.com/library/gg508808(VS.98).aspx) MSDN 라이브러리에서.
 
 ### <a name="json-binding-support"></a>JSON 바인딩 지원
 
@@ -231,9 +231,9 @@ ASP.NET MVC 3 지원 `DataAnnotations` 메타 데이터와 같은 특성 `Displa
 
 ### <a name="validation-interfaces"></a>유효성 검사 인터페이스
 
-[IValidatableObject](https://msdn.microsoft.com/en-us/library/system.componentmodel.dataannotations.ivalidatableobject.aspx) 인터페이스를 사용 하면 모델 수준 유효성 검사를 수행 하 고 유효성 검사 모델 내에서 두 개의 속성 사이 또는 전체 모델의 상태에만 적용 되는 오류 메시지를 제공할 수 있도록 . MVC 3에서 오류를 검색 이제는 `IValidatableObject` 플래그 또는 밝은 자동으로 모델 바인딩 및 기본 제공 HTML 양식 도우미를 사용 하 여 뷰 내에서 필드 영향을 받는 경우 인터페이스입니다.
+[IValidatableObject](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.ivalidatableobject.aspx) 인터페이스를 사용 하면 모델 수준 유효성 검사를 수행 하 고 유효성 검사 모델 내에서 두 개의 속성 사이 또는 전체 모델의 상태에만 적용 되는 오류 메시지를 제공할 수 있도록 . MVC 3에서 오류를 검색 이제는 `IValidatableObject` 플래그 또는 밝은 자동으로 모델 바인딩 및 기본 제공 HTML 양식 도우미를 사용 하 여 뷰 내에서 필드 영향을 받는 경우 인터페이스입니다.
 
-[IClientValidatable](https://msdn.microsoft.com/en-us/library/system.web.mvc.iclientvalidatable(v=VS.98).aspx) 인터페이스를 ASP.NET MVC 유효성 검사기가 클라이언트 유효성 검사에 대 한 지원 여부를 런타임에 검색할 수 있습니다. 이 인터페이스는 다양 한 유효성 검사 프레임 워크와 통합 될 수 있도록 설계 되었습니다.
+[IClientValidatable](https://msdn.microsoft.com/library/system.web.mvc.iclientvalidatable(v=VS.98).aspx) 인터페이스를 ASP.NET MVC 유효성 검사기가 클라이언트 유효성 검사에 대 한 지원 여부를 런타임에 검색할 수 있습니다. 이 인터페이스는 다양 한 유효성 검사 프레임 워크와 통합 될 수 있도록 설계 되었습니다.
 
 유효성 검사 인터페이스에 대 한 자세한 내용은 참조는 **모델 유효성 검사 향상** 섹션 [Scott Guthrie의 MVC 3 Preview 블로그 게시물](https://weblogs.asp.net/scottgu/archive/2010/07/27/introducing-asp-net-mvc-3-preview-1.aspx)합니다. 그러나 (note 블로그의 "IValidateObject"에 대 한 참조 "IValidatableObject" 되어야 함을.)
 
@@ -278,7 +278,7 @@ ASP.NET MVC 버전 1 이후 페이지 전체 응답의 출력 캐싱을 지원 �
 
 ### <a name="granular-control-over-request-validation"></a>요청 유효성 검사 세부적으로 제어
 
-ASP.NET MVC에 기본 제공 요청 유효성 검사를 자동으로 XSS 및 HTML 삽입 공격 으로부터 보호 하도록 도와줍니다. 그러나 명시적으로 사용 안 함 요청 유효성 검사를 찾으려는 경우가 경우와 같이 해도 사용자가 HTML 콘텐츠 (예를 들어의 블로그 항목 또는 CMS 콘텐츠) 게시할 수 있도록 합니다. 이제 추가할 수 있습니다는 [AllowHtml](https://msdn.microsoft.com/en-us/library/system.web.mvc.allowhtmlattribute(v=VS.98).aspx) 특성을 모델 또는 모델 바인딩 중 속성별 별로 요청 유효성 검사를 사용 하지 않도록 설정 하는 모델을 보고 합니다. 요청 유효성 검사에 대 한 자세한 내용은 다음 리소스를 참조 합니다.
+ASP.NET MVC에 기본 제공 요청 유효성 검사를 자동으로 XSS 및 HTML 삽입 공격 으로부터 보호 하도록 도와줍니다. 그러나 명시적으로 사용 안 함 요청 유효성 검사를 찾으려는 경우가 경우와 같이 해도 사용자가 HTML 콘텐츠 (예를 들어의 블로그 항목 또는 CMS 콘텐츠) 게시할 수 있도록 합니다. 이제 추가할 수 있습니다는 [AllowHtml](https://msdn.microsoft.com/library/system.web.mvc.allowhtmlattribute(v=VS.98).aspx) 특성을 모델 또는 모델 바인딩 중 속성별 별로 요청 유효성 검사를 사용 하지 않도록 설정 하는 모델을 보고 합니다. 요청 유효성 검사에 대 한 자세한 내용은 다음 리소스를 참조 합니다.
 
 - **비 가시적인 JavaScript 및 유효성 검사** 섹션 [Scott Guthrie의 블로그 게시물에 MVC 3 release candidate](https://weblogs.asp.net/scottgu/archive/2010/11/09/announcing-the-asp-net-mvc-3-release-candidate.aspx)합니다.
 - [MVC 3 릴리스 정보](../whitepapers/mvc3-release-notes.md)
@@ -303,7 +303,7 @@ ASP.NET MVC 3 세션 상태를 사용 하는 컨트롤러 클래스 하려는 �
 
 ### <a name="new-additionalmetadataattribute-class"></a>새 "AdditionalMetadataAttribute" 클래스
 
-사용할 수는 [AdditionalMetadata](https://msdn.microsoft.com/en-us/library/system.web.mvc.additionalmetadataattribute(v=VS.98).aspx) 특성을 채우는 `ModelMetadata.AdditionalValues` 모델 속성에 대 한 사전입니다. 예를 들어 보기 모델에만 관리자에 게 표시 되어야 하는 속성, 다음 예제에 나와 있는 것 처럼 해당 속성을 주석을 지정할 수 있습니다.
+사용할 수는 [AdditionalMetadata](https://msdn.microsoft.com/library/system.web.mvc.additionalmetadataattribute(v=VS.98).aspx) 특성을 채우는 `ModelMetadata.AdditionalValues` 모델 속성에 대 한 사전입니다. 예를 들어 보기 모델에만 관리자에 게 표시 되어야 하는 속성, 다음 예제에 나와 있는 것 처럼 해당 속성을 주석을 지정할 수 있습니다.
 
 [!code-csharp[Main](mvc3/samples/sample4.cs)]
 

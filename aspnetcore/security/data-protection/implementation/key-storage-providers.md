@@ -2,20 +2,18 @@
 title: "키 저장소 공급자"
 author: rick-anderson
 description: "키 저장소 공급자"
-keywords: "encryption,ASP.NET 코어"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 01/14/2017
-ms.topic: article
-ms.assetid: 423e0a79-2f34-44c4-aaf3-146a53c39251
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/data-protection/implementation/key-storage-providers
-ms.openlocfilehash: d4b286dc47f8d66e6d09c3e0f48e6326139c8e1e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4f0e29a94593cd1cbb9890d7ee8bd09cddb4f69c
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="key-storage-providers"></a>키 저장소 공급자
 
@@ -24,7 +22,7 @@ ms.lasthandoff: 11/10/2017
 기본적으로 데이터 보호 시스템 [경험적 접근을 사용](xref:security/data-protection/configuration/default-settings) 암호화 키 자료 유지할지를 결정 하 합니다. 개발자는 추론은 무시 하 고 수동으로 위치를 지정할 수도 있습니다.
 
 > [!NOTE]
-> 키 지 속성을 명시적 위치를 지정 하는 경우 데이터 보호 시스템은 추론은 제공 하는 rest 메커니즘에 기본 키 암호화 등록 해제 미사용에 더 이상 키를 암호화 됩니다. 것을 또한 [명시적 키 암호화 메커니즘을 지정](key-encryption-at-rest.md#data-protection-implementation-key-encryption-at-rest-providers) 프로덕션 응용 프로그램에 대 한 합니다.
+> 키 지 속성을 명시적 위치를 지정 하는 경우 데이터 보호 시스템은 추론은 제공 하는 rest 메커니즘에 기본 키 암호화 등록 해제 미사용에 더 이상 키를 암호화 됩니다. 하는 것이 좋습니다 있습니다 또한 [명시적 키 암호화 메커니즘을 지정](key-encryption-at-rest.md#data-protection-implementation-key-encryption-at-rest-providers) 프로덕션 응용 프로그램에 대 한 합니다.
 
 데이터 보호 시스템 여러 기본 키 저장소 공급자와 함께 제공 됩니다.
 
@@ -73,7 +71,7 @@ public void ConfigureServices(IServiceCollection services)
 자세한 내용은 다음을 참조하세요.
 
 - [StackExchange.Redis ConnectionMultiplexer](https://github.com/StackExchange/StackExchange.Redis/blob/master/docs/Basics.md)
-- [Azure Redis 캐시](https://docs.microsoft.com/azure/redis-cache/cache-dotnet-how-to-use-azure-redis-cache#connect-to-the-cache)
+- [Azure Redis Cache](https://docs.microsoft.com/azure/redis-cache/cache-dotnet-how-to-use-azure-redis-cache#connect-to-the-cache)
 - [테스트 코드 redis](https://github.com/aspnet/DataProtection/blob/rel/1.1.0/samples/Redis/Program.cs)합니다.
 
 ## <a name="registry"></a>레지스트리

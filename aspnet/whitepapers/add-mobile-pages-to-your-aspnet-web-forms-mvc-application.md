@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/add-mobile-pages-to-your-aspnet-web-forms-mvc-application
 msc.type: content
-ms.openlocfilehash: c7d893fb9633aaa8628f2f46a8db7f2c09f81830
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aac359b26c508784793a67260dc2e65c30db687a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="how-to-add-mobile-pages-to-your-aspnet-web-forms--mvc-application"></a>방법: ASP.NET Web Forms에 모바일 페이지를 추가 / MVC 응용 프로그램
 ====================
@@ -118,7 +118,7 @@ ASP.NET Web Forms 및 MVC 개발자의 속성을 검사 하 여 방문 브라우
 - Request.Browser.SupportsXmlHttp
 - ... 및 다른 많은
 
-내부적으로 ASP.NET 플랫폼 일치 들어오는 *사용자 에이전트* (UA) HTTP 헤더의 브라우저 정의 XML 파일 집합에 정규식에 대 한 합니다. 기본적으로는 플랫폼 많은 일반적인 모바일 장치에 대 한 정의 포함 하 고 인식 하려면 다른 사용자에 대 한 사용자 지정 브라우저 정의 파일을 추가할 수 있습니다. 자세한 내용은 MSDN 페이지를 참조 하십시오. [ASP.NET 웹 서버 컨트롤 및 브라우저 기능](https://msdn.microsoft.com/en-us/library/x3k2ssx2.aspx)합니다.
+내부적으로 ASP.NET 플랫폼 일치 들어오는 *사용자 에이전트* (UA) HTTP 헤더의 브라우저 정의 XML 파일 집합에 정규식에 대 한 합니다. 기본적으로는 플랫폼 많은 일반적인 모바일 장치에 대 한 정의 포함 하 고 인식 하려면 다른 사용자에 대 한 사용자 지정 브라우저 정의 파일을 추가할 수 있습니다. 자세한 내용은 MSDN 페이지를 참조 하십시오. [ASP.NET 웹 서버 컨트롤 및 브라우저 기능](https://msdn.microsoft.com/library/x3k2ssx2.aspx)합니다.
 
 ### <a name="using-the-wurfl-device-database-via-51degreesmobi-foundation"></a>51Degrees.mobi Foundation 통해 WURFL 장치 데이터베이스를 사용 하 여
 
@@ -213,9 +213,9 @@ ASP while입니다. NET의 기본 제공 브라우저 검색 지원이 많은 �
 
 모델-뷰-컨트롤러 패턴에서는 프레젠테이션 논리 보기의에서 (컨트롤러)에서 응용 프로그램 논리를 분리 하므로 모바일 지원 서버 쪽 코드에서 처리 하는 다음 방법 중 하나에서 선택할 수 있습니다.
 
-1. ***데스크톱 및 모바일 브라우저에 대 한 동일한 컨트롤러와 뷰를 사용 하지만 장치 유형에 따라 다른 Razor 레이아웃으로 뷰를 렌더링할*합니다.** 이 옵션 모든 장치에서 동일한 데이터를 표시 하는 하지만 서로 다른 CSS 스타일 시트를 제공 하거나 모바일용 최상위 HTML 요소를 몇 가지를 변경 하려는 경우에 가장 적합 합니다.
+1. ***데스크톱 및 모바일 브라우저에 대 한 동일한 컨트롤러와 뷰를 사용 하 하지만 다른 Razor 레이아웃에 따라 장치 유형 *를 사용 하 여 뷰를 렌더링 합니다.** 이 옵션 모든 장치에서 동일한 데이터를 표시 하는 하지만 서로 다른 CSS 스타일 시트를 제공 하거나 모바일용 최상위 HTML 요소를 몇 가지를 변경 하려는 경우에 가장 적합 합니다.
 2. ***데스크톱 및 모바일 브라우저에 대해 같은 컨트롤러를 사용 하지만 장치 유형에 따라 서로 다른 뷰를 렌더링***합니다. 표시와 거의 동일한 데이터와 최종 사용자에 대 한 동일한 워크플로 제공 하는 경우이 옵션은 가장 잘 작동 하지만 사용 중인 장치에 맞게 매우 다른 HTML 태그를 렌더링 합니다.
-3. ***각각에 대 한 독립적인 컨트롤러와 뷰 구현 데스크톱 및 모바일 브라우저에 대 한 별도 영역을 만들어*합니다.** 이 옵션 매우 다른 화면을 표시, 다른 정보가 포함 된와 앞에 자신의 장치 유형에 대 한 액세스에 최적화 된 다양 한 워크플로 통해 사용자는 경우에 가장 적합 합니다. 일부 반복 되는 코드의 의미 하지만 일반적인 논리를 기본 계층 또는 서비스 하 여를 최소화할 수 있습니다.
+3. ***각각에 대 한 독립적인 컨트롤러와 뷰 구현 데스크톱 및 모바일 브라우저에 대 한 별도 영역을 만들어 * 합니다.** 이 옵션 매우 다른 화면을 표시, 다른 정보가 포함 된와 앞에 자신의 장치 유형에 대 한 액세스에 최적화 된 다양 한 워크플로 통해 사용자는 경우에 가장 적합 합니다. 일부 반복 되는 코드의 의미 하지만 일반적인 논리를 기본 계층 또는 서비스 하 여를 최소화할 수 있습니다.
 
 수행 하려는 경우는 **첫 번째** 옵션 및 Razor 레이아웃만 달라 장치 유형 마다 매우 쉽습니다. 수정 프로그램 \_ViewStart.cshtml 다음과 같이 파일:
 

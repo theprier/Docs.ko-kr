@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/paging-report-data-in-a-datalist-or-repeater-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5cb469252dc36ced98357dd984d36668af1c430b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 66f1065c41352f355dd5f1be43443165df909b93
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="paging-report-data-in-a-datalist-or-repeater-control-vb"></a>DataList 또는 반복기 컨트롤 (VB)에서 보고서 데이터를 페이징
 ====================
@@ -80,7 +80,7 @@ ms.lasthandoff: 11/10/2017
 
 *사용자 지정 페이징* 요청된 된 페이지에 표시할 레코드의 하위 집합에 정확한 밖으로 기본 페이징의 성능 문제를 해결 합니다. 사용자 지정 페이징을 구현할 때 효율적으로 레코드의 올바른 집합에만 반환 하는 SQL 쿼리를 작성 해야 합니다. 새 SQL Server 2005 s를 사용 하 여 이러한 쿼리를 만드는 방법에 살펴보았습니다 [ `ROW_NUMBER()` 키워드](http://www.4guysfromrolla.com/webtech/010406-1.shtml) 다시는 [효율적으로 페이징 통해 많은 양의의 데이터](../paging-and-sorting/efficiently-paging-through-large-amounts-of-data-vb.md) 자습서입니다.
 
-DataList 또는 반복기 컨트롤에서 기본 페이징을 구현 하려면 사용할 수는 [ `PagedDataSource` 클래스](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.pageddatasource.aspx) 주위에서 래퍼로 `ProductsDataTable` 내용이 호출이 전달 됩니다. `PagedDataSource` 클래스에는 `DataSource` 열거 가능한 개체에 할당할 수 있는 속성 및 [ `PageSize` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.pageddatasource.pagesize.aspx) 및 [ `CurrentPageIndex` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.pageddatasource.currentpageindex.aspx) 레코드 수를 나타내는 속성 페이지당 표시 및 현재 페이지 인덱스입니다. 이러한 속성을 설정는 `PagedDataSource` 모든 데이터 웹 컨트롤의 데이터 원본으로 사용할 수 있습니다. `PagedDataSource`열거 하는 경우 해당 내부 레코드의 적절 한 하위 집합만 반환 됩니다 `DataSource` 기반는 `PageSize` 및 `CurrentPageIndex` 속성입니다. 그림 4의 기능을 보여주고는 `PagedDataSource` 클래스입니다.
+DataList 또는 반복기 컨트롤에서 기본 페이징을 구현 하려면 사용할 수는 [ `PagedDataSource` 클래스](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pageddatasource.aspx) 주위에서 래퍼로 `ProductsDataTable` 내용이 호출이 전달 됩니다. `PagedDataSource` 클래스에는 `DataSource` 열거 가능한 개체에 할당할 수 있는 속성 및 [ `PageSize` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pageddatasource.pagesize.aspx) 및 [ `CurrentPageIndex` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pageddatasource.currentpageindex.aspx) 레코드 수를 나타내는 속성 페이지당 표시 및 현재 페이지 인덱스입니다. 이러한 속성을 설정는 `PagedDataSource` 모든 데이터 웹 컨트롤의 데이터 원본으로 사용할 수 있습니다. `PagedDataSource`열거 하는 경우 해당 내부 레코드의 적절 한 하위 집합만 반환 됩니다 `DataSource` 기반는 `PageSize` 및 `CurrentPageIndex` 속성입니다. 그림 4의 기능을 보여주고는 `PagedDataSource` 클래스입니다.
 
 
 ![PagedDataSource 페이징할 수 있는 인터페이스를 열거 가능한 개체를 래핑합니다.](paging-report-data-in-a-datalist-or-repeater-control-vb/_static/image6.png)
@@ -204,7 +204,7 @@ DataList 및 반복기에 대 한 결정을 내리기 페이징 인터페이스�
 
 ## <a name="determining-the-total-number-of-records-being-paged-through"></a>통해 호출이 전달 하는 레코드의 총 수를 결정 합니다.
 
-`PagedDataSource` ObjectDataSource s에서 반환 된 개체 `Select()` 메서드에 그 안에 *모든* 제품 레코드의 경우에만 이들의 하위 집합에에서 표시 됩니다 DataList 합니다. `PagedDataSource` s [ `Count` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.pageddatasource.count.aspx) DataList;에 표시 되는 항목의 수만 반환는 [ `DataSourceCount` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.pageddatasource.datasourcecount.aspx) 내에서 항목의 총 수를 반환 합니다.는 `PagedDataSource`. 따라서 ASP.NET의 페이지를 할당 해야 `TotalRowCount` 속성 값의는 `PagedDataSource` s `DataSourceCount` 속성입니다.
+`PagedDataSource` ObjectDataSource s에서 반환 된 개체 `Select()` 메서드에 그 안에 *모든* 제품 레코드의 경우에만 이들의 하위 집합에에서 표시 됩니다 DataList 합니다. `PagedDataSource` s [ `Count` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pageddatasource.count.aspx) DataList;에 표시 되는 항목의 수만 반환는 [ `DataSourceCount` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pageddatasource.datasourcecount.aspx) 내에서 항목의 총 수를 반환 합니다.는 `PagedDataSource`. 따라서 ASP.NET의 페이지를 할당 해야 `TotalRowCount` 속성 값의는 `PagedDataSource` s `DataSourceCount` 속성입니다.
 
 ObjectDataSource s에 대 한 이벤트 처리기를 만들고이를 위해 `Selected` 이벤트입니다. 에 `Selected` ObjectDataSource s의 반환 값에 액세스할 수 있는 이벤트 처리기 `Select()` 이 경우 메서드는 `PagedDataSource`합니다.
 
@@ -224,7 +224,7 @@ ObjectDataSource s에 대 한 이벤트 처리기를 만들고이를 위해 `Sel
 
 ## <a name="disabling-paging-interface-controls"></a>인터페이스 컨트롤 페이징 사용 하지 않도록 설정
 
-현재 표시 되는 페이지에 관계 없이 모든 네 개의 단추가 활성화 됩니다. 그러나 마지막 페이지를 표시할 때 다음 및 마지막 단추, 데이터의 첫 번째 페이지를 표시 하는 경우 첫 번째 및 이전 단추를 사용 하지 않도록 설정 하려고 합니다. `PagedDataSource` ObjectDataSource s에 의해 반환 된 개체 `Select()` 메서드 속성이 [ `IsFirstPage` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.pageddatasource.isfirstpage.aspx) 및 [ `IsLastPage` ](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.pageddatasource.islastpage.aspx) 여기서 보고 있는 결정을 조사할 수 있습니다는 데이터의 첫 번째 또는 마지막 페이지입니다.
+현재 표시 되는 페이지에 관계 없이 모든 네 개의 단추가 활성화 됩니다. 그러나 마지막 페이지를 표시할 때 다음 및 마지막 단추, 데이터의 첫 번째 페이지를 표시 하는 경우 첫 번째 및 이전 단추를 사용 하지 않도록 설정 하려고 합니다. `PagedDataSource` ObjectDataSource s에 의해 반환 된 개체 `Select()` 메서드 속성이 [ `IsFirstPage` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pageddatasource.isfirstpage.aspx) 및 [ `IsLastPage` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pageddatasource.islastpage.aspx) 여기서 보고 있는 결정을 조사할 수 있습니다는 데이터의 첫 번째 또는 마지막 페이지입니다.
 
 ObjectDataSource s에 다음 추가 `Selected` 이벤트 처리기.
 

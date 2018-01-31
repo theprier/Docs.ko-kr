@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/readme/beta3
 msc.type: content
-ms.openlocfilehash: 5fad4b659dafe5470aeb84d320ff711b8840d1e0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: def2f4b3e54c8de539e10c1b526a1dababeca8fb
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="web-matrix-and-aspnet-web-pages-razor-beta-3-release-readme"></a>웹 매트릭스 및 ASP.NET 웹 페이지 (Razor) Beta 3 릴리스에 추가 정보
 ====================
@@ -162,9 +162,9 @@ ms.lasthandoff: 11/10/2017
 > 에 `@{ }` 도우미에서 초기 코드의 바깥쪽 문자가 더 이상 사용 합니다. 즉, 기본적으로는 도우미의 내용을 코드 블록으로 처리 됩니다. 열기와 시작 태그를 렌더링 하는 도우미 `<a>` 태그입니다. 일반 텍스트 또는 닫는 태그가 포함 되지 않은 태그 도우미 렌더링 해야 하는 경우 (예를 들어 `<meta>` 태그)에 콘텐츠를 렌더링할 수 있어야 합니다. `<text></text>` 태그입니다.
 
 
-#### <a name="change-webpagecontexthttpcontext-removed"></a>변경 사항: "WebPageContext.HttpContext" 제거
+#### <a name="change-webpagecontexthttpcontext-removed"></a>Change: "WebPageContext.HttpContext" removed
 
-> `WebPageContext.HttpContext` 속성은 제거 되었습니다. 대신 `HttpContext.Current` 를 사용하세요. (의 `WebPageContext.HttpContext` 속성에이 항목을 단순히 래핑됩니다.)
+> `WebPageContext.HttpContext` 속성은 제거 되었습니다. 대신 `HttpContext.Current`를 사용하세요. (의 `WebPageContext.HttpContext` 속성에이 항목을 단순히 래핑됩니다.)
 
 
 #### <a name="change-facebook-helper-moved-to-new-package"></a>새 패키지를 이동 하는 변경 사항: "Facebook" 도우미
@@ -265,7 +265,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > [!code-xml[Main](beta3/samples/sample5.xml)]
 > 
-> 프록시 서버를 구성 하는 방법에 대 한 자세한 내용은 참조 [ &lt;프록시&gt; 요소 (네트워크 설정)](https://msdn.microsoft.com/en-us/library/sa91de1e.aspx) MSDN 웹 사이트에 있습니다.
+> 프록시 서버를 구성 하는 방법에 대 한 자세한 내용은 참조 [ &lt;프록시&gt; 요소 (네트워크 설정)](https://msdn.microsoft.com/library/sa91de1e.aspx) MSDN 웹 사이트에 있습니다.
 
 
 #### <a name="issue-microsoftwebinfrastructuredll-cannot-be-loaded-error"></a>문제: "Microsoft.Web.Infrastructure.dll를 로드할 수 없습니다." 오류
@@ -340,9 +340,9 @@ ms.lasthandoff: 11/10/2017
 > 
 > 1. 데이터베이스 엔진 어셈블리를 복사는 *Bin* 대상 컴퓨터에 응용 프로그램의 폴더 (및 하위 폴더): 
 > 
->     - 복사 *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Desktop\System.Data.SqlServerCe.dll* **를** *\Bin*
->     - 복사 *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\** **를** *\Bin\x86*
->     - 복사 *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\** **를** *\Bin\amd64*
+>     - Copy *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Desktop\System.Data.SqlServerCe.dll* **to** *\Bin*
+>     - Copy *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\** **to** *\Bin\x86*
+>     - Copy *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\** **to** *\Bin\amd64*
 > 2. 웹 사이트의 루트 폴더에 작성 하거나 열을 *Web.config* 파일입니다. (이 파일 형식이 WebMatrix 베타 3에서 클릭 하면 표시 되 **모든** 에 **파일 형식을 선택** 대화 상자.)
 > 3. 다음 요소를 자식으로 추가  **&lt;구성&gt;**  요소 (에 포함 되지 않은  **&lt;system.web&gt;**  요소):
 > 
@@ -553,4 +553,4 @@ WebMatrix Beta 3에 대 한 자세한 내용은 다음 웹 사이트를 참조 �
 
 * * *
 
-© 2010 Microsoft Corporation입니다. All Rights Reserved. [사용 약관](https://msdn.microsoft.com/en-us/cc300389.aspx)합니다.
+© 2010 Microsoft Corporation. All Rights Reserved. [사용 약관](https://msdn.microsoft.cos/cc300389.aspx)합니다.

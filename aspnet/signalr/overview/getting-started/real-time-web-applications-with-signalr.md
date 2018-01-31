@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/getting-started/real-time-web-applications-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 96d3b8b82f78d8f6da85012aac8a1411cf297e26
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 22123a9c61e6830f3f9f66a45182e1e923950341
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="hands-on-lab-real-time-web-applications-with-signalr"></a>SignalR과 실습 랩: 실시간 웹 응용 프로그램
 ====================
@@ -260,10 +260,10 @@ SignalR 지원 **서버 푸시** 또는 **브로드캐스트** 기능을 자동�
 현재 세 가지 유형의 SignalR에 대 한 백플레인
 
 - **Windows Azure 서비스 버스**합니다. 서비스 버스는 메시징 인프라 느슨하게 결합 된 메시지를 보내는 구성 요소입니다.
-- **SQL Server**합니다. SQL Server 백플레인에서 SQL 테이블에 메시지를 씁니다. 백플레인에서 효율적인 메시징에 대 한 Service Broker를 사용 합니다. 그러나 해당 Service Broker를 사용 하지 않는 경우에 작동 합니다.
+- **SQL Server**. SQL Server 백플레인에서 SQL 테이블에 메시지를 씁니다. 백플레인에서 효율적인 메시징에 대 한 Service Broker를 사용 합니다. 그러나 해당 Service Broker를 사용 하지 않는 경우에 작동 합니다.
 - **Redis**합니다. Redis는 메모리에 키-값 저장소입니다. Redis는 메시지를 보내기 위한 게시/구독 ("pub/sub") 패턴을 지원 합니다.
 
-모든 메시지가 메시지 버스를 통해 전송 됩니다. 메시지 버스 구현 하는 [IMessageBus](https://msdn.microsoft.com/en-us/library/microsoft.aspnet.signalr.messaging.imessagebus(v=vs.100).aspx) 인터페이스에는 게시/구독 추상화를 제공 합니다. 기본 대체 하 여 작업의 백플레인 **IMessageBus** 는 버스 해당 백플레인에서 위한 것입니다.
+모든 메시지가 메시지 버스를 통해 전송 됩니다. 메시지 버스 구현 하는 [IMessageBus](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.imessagebus(v=vs.100).aspx) 인터페이스에는 게시/구독 추상화를 제공 합니다. 기본 대체 하 여 작업의 백플레인 **IMessageBus** 는 버스 해당 백플레인에서 위한 것입니다.
 
 버스를 통해 백플레인에서에 각 서버 인스턴스에 연결합니다. 메시지를 보낼 때를 백플레인에 이동 하 고 백플레인에서 모든 서버에 보냅니다. 서버 백플레인에서 메시지를 받으면 해당 로컬 캐시에서 메시지를 저장 합니다. 서버는 다음 로컬 캐시에서 클라이언트에 메시지를 배달 합니다.
 

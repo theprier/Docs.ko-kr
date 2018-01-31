@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/introduction-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: a66e2a80668dbf291b9cc34f205b546b72d92bcc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7c7dcb7903b0d0772acc560161ff39c6869c599a
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="introduction-to-aspnet-identity"></a>ASP.NET Id 소개
 ====================
@@ -31,7 +31,7 @@ ms.lasthandoff: 11/10/2017
 
 ### <a name="aspnet-membership"></a>ASP.NET 멤버 자격
 
-[ASP.NET 멤버 자격](https://msdn.microsoft.com/en-us/library/yh26yfzy(v=VS.100).aspx) 일반적 2005 폼 인증 및 사용자 이름, 암호 및 프로 파일 데이터에 대 한 SQL Server 데이터베이스에서에서 사용 되 던 사이트 구성원 자격 요구 사항을 해결 하도록 설계 되었습니다. 현재는 웹 응용 프로그램에 대 한 데이터 저장소 옵션의 훨씬 더 광범위 한 배열 및 대부분의 개발자가 인증 및 권한 부여 기능에 대 한 소셜 id 공급자를 사용 하도록 해당 사이트를 사용 하도록 설정 하려면. ASP.NET 멤버 자격의 디자인 제한 어려운 이러한 전환을 수행 합니다.
+[ASP.NET 멤버 자격](https://msdn.microsoft.com/library/yh26yfzy(v=VS.100).aspx) 일반적 2005 폼 인증 및 사용자 이름, 암호 및 프로 파일 데이터에 대 한 SQL Server 데이터베이스에서에서 사용 되 던 사이트 구성원 자격 요구 사항을 해결 하도록 설계 되었습니다. 현재는 웹 응용 프로그램에 대 한 데이터 저장소 옵션의 훨씬 더 광범위 한 배열 및 대부분의 개발자가 인증 및 권한 부여 기능에 대 한 소셜 id 공급자를 사용 하도록 해당 사이트를 사용 하도록 설정 하려면. ASP.NET 멤버 자격의 디자인 제한 어려운 이러한 전환을 수행 합니다.
 
 - 데이터베이스 스키마는 SQL Server에 맞게 디자인 하 고 변경할 수 없습니다. 프로필 정보를 추가할 수는 있지만 어렵습니다 액세스 프로필 공급자 API를 통해 제외 하 고 어떤 방법으로 다른 테이블에 추가 데이터가 압축 됩니다.
 - 공급자 시스템을 통해 백업 데이터 저장소를 변경할 수 있지만 시스템 관계형 데이터베이스에 대 한 적절 한 가정을 기반으로 설계 되었습니다. Azure 저장소 테이블 등의 비 관계형 저장소 메커니즘에 멤버 등록 정보를 저장 하는 공급자를 작성할 수 있지만 관계형 디자인 많은 코드와 많이 작성 하 여 해결 해야 `System.NotImplementedException` 하지 않는 메서드에 대 한 예외 NoSQL 데이터베이스에 적용 됩니다.
@@ -47,7 +47,7 @@ ms.lasthandoff: 11/10/2017
 - OWIN과 사용할 수 없습니다.
 - 기존 ASP.NET 멤버 자격 공급자와 잘 작동 하지 않는 하 고 확장할 수는 없습니다.
 
-### <a name="aspnet-universal-providers"></a>ASP.NET Universal Providers
+### <a name="aspnet-universal-providers"></a>ASP.NET 범용 공급자
 
 [ASP.NET Universal Providers](http://www.hanselman.com/blog/IntroducingSystemWebProvidersASPNETUniversalProvidersForSessionMembershipRolesAndUserProfileOnSQLCompactAndSQLAzure.aspx) 있으며 Azure SQL 데이터베이스, SQL Server Compact와 확대할 Microsoft에서 멤버 자격 정보를 유지할 수 있도록 하기 위해 개발 되었습니다. Universal Providers 된 Entity Framework Code First, EF에서 지 원하는 모든 저장소에 데이터를 유지 하는 범용 공급자를 사용할 수 있다는 의미를 기반으로 합니다. Universal Providers 데이터베이스 스키마는 매우 큰도 정리 되었습니다. 합니다.
 
@@ -132,7 +132,7 @@ ASP.NET Id는 다음 절차를 사용 하 여 구현 됩니다. 이 문서의 �
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample3.cs?highlight=5-6)]
 
- 위의 강조 표시 된 코드는 `SignInAsync` 메서드를 생성 한 [ClaimsIdentity](https://msdn.microsoft.com/en-us/library/system.security.claims.claimsidentity.aspx)합니다. ASP.NET Id 및 OWIN 쿠키 인증 클레임 기반 시스템 이므로 응용 프로그램에서 사용자에 대 한 ClaimsIdentity를 생성 하면 프레임 워크에 필요 합니다. ClaimsIdentity에 사용자가 속한 역할 같은 사용자에 대 한 모든 클레임에 대 한 정보가 있습니다. 또한이 단계에서 사용자에 대 한 더 많은 클레임을 추가할 수 있습니다.  
+ 위의 강조 표시 된 코드는 `SignInAsync` 메서드를 생성 한 [ClaimsIdentity](https://msdn.microsoft.com/library/system.security.claims.claimsidentity.aspx)합니다. ASP.NET Id 및 OWIN 쿠키 인증 클레임 기반 시스템 이므로 응용 프로그램에서 사용자에 대 한 ClaimsIdentity를 생성 하면 프레임 워크에 필요 합니다. ClaimsIdentity에 사용자가 속한 역할 같은 사용자에 대 한 모든 클레임에 대 한 정보가 있습니다. 또한이 단계에서 사용자에 대 한 더 많은 클레임을 추가할 수 있습니다.  
   
  아래에 강조 표시 된 코드는 `SignInAsync` 메서드 호출 및 OWIN AuthenticationManager를 사용 하 여 사용자 로그인 `SignIn` 는 ClaimsIdentity를 전달 합니다.  
 
@@ -142,7 +142,7 @@ ASP.NET Id는 다음 절차를 사용 하 여 구현 됩니다. 이 문서의 �
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample5.cs?highlight=6)]
 
- 강조 표시 된 코드 위의 OWIN `AuthenticationManager.SignOut` 메서드. 이 방법은 유사 [FormsAuthentication.SignOut](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthentication.signout.aspx) 사용 하는 방법의 [FormsAuthentication](https://msdn.microsoft.com/en-us/library/system.web.security.formsauthenticationmodule.aspx) Web Forms에는 모듈입니다.
+ 강조 표시 된 코드 위의 OWIN `AuthenticationManager.SignOut` 메서드. 이 방법은 유사 [FormsAuthentication.SignOut](https://msdn.microsoft.com/library/system.web.security.formsauthentication.signout.aspx) 사용 하는 방법의 [FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx) Web Forms에는 모듈입니다.
 
 ## <a name="components-of-aspnet-identity"></a>ASP.NET Id의 구성 요소
 

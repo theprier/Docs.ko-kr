@@ -2,20 +2,18 @@
 title: "Mac에서 ASP.NET Core MVC를 사용하여 웹앱 만들기"
 author: rick-anderson
 description: "Mac용 Visual Studio를 사용하여 ASP.NET Core MVC/Entity Framework 앱 만들기"
-keywords: ASP.NET Core, MVC, Entity Framework, Visual Studio
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 06/26/2017
-ms.topic: article
-ms.assetid: 959ff4ca-be2d-4444-acac-789e787146f3
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: tutorials/first-mvc-app-mac/index
-ms.openlocfilehash: 6cb8f1b8daa0417b6e02efcf5a6c4e37a54e79d0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b69eb67cedbc90c319e5bd07556001daed43c005
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="create-a-web-app-with-aspnet-core-mvc-using-visual-studio-for-mac"></a>Mac용 Visual Studio를 사용하여 ASP.NET Core MVC로 웹앱 만들기
 

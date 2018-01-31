@@ -2,20 +2,18 @@
 title: "인증 된 암호화 정보"
 author: rick-anderson
 description: "이 문서 윤곽선 ASP.NET Core 데이터 보호의 구현 세부 정보는 암호화를 인증합니다."
-keywords: "ASP.NET Core, 데이터 보호 인증 암호화"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.assetid: 826e6d5d-9620-44e6-ad93-3b1d9969b70b
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/data-protection/implementation/authenticated-encryption-details
-ms.openlocfilehash: dc96412f6578e612a39e86ce00e1dc5a20cf84e9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b58f36a5f0353da69d6f1ef4db542aba8267027a
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="authenticated-encryption-details"></a>인증 된 암호화 정보
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/sorting-custom-paged-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f171929da3610f70f3641030d9a5fdb88f610f7f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a71405bc84304bf7c47f400dfa9886208316d223
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="sorting-custom-paged-data-c"></a>사용자 지정 정렬 하는 것 페이징 데이터 (C#)
 ====================
@@ -51,7 +51,7 @@ ms.lasthandoff: 11/10/2017
 
 - 각; 사용할 수 있는 정렬 식에 대 한 하드 코딩 된 쿼리를 작성 합니다. 다음을 사용 하 여 `IF/ELSE` T-SQL 문을 실행할 쿼리를 결정 합니다.
 - 사용 하 여 한 `CASE` 동적 제공 하는 문을 `ORDER BY` 식을 기반으로 `@sortExpressio` n 입력 매개 변수; 동적으로 쿼리 결과 정렬 섹션에 사용 된 참조 [SQL의 전원 `CASE` 문을](http://www.4guysfromrolla.com/webtech/102704-1.shtml) 자세한 내용은 합니다.
-- 저장된 프로시저에서 문자열로 적절 한 쿼리를 작성할 하 고 사용 하 여 [는 `sp_executesql` 시스템 저장 프로시저](https://msdn.microsoft.com/en-us/library/ms188001.aspx) 동적 쿼리를 실행 합니다.
+- 저장된 프로시저에서 문자열로 적절 한 쿼리를 작성할 하 고 사용 하 여 [는 `sp_executesql` 시스템 저장 프로시저](https://msdn.microsoft.com/library/ms188001.aspx) 동적 쿼리를 실행 합니다.
 
 이러한 해결 방법을 각각의 몇 가지 단점이 있습니다. 첫 번째 옵션은 각 가능한 정렬 식에 대 한 쿼리를 만드는 해야 하므로 다른 두 가지로 유지 관리가 없습니다. 따라서 나중 GridView에 새, 정렬 가능한 필드를 추가 해야 합니다 되돌아가서 저장된 프로시저를 업데이트 합니다. 두 번째 방법은 첫 같은 유지 관리 문제에서 마찬가지로 것도 쉽지 문자열이 아닌 데이터베이스 열을 기준으로 정렬할 때 성능 문제를 소개 하는 몇 가지 미묘한에 있습니다. 고 동적 SQL을 사용 하는 세 번째 선택 공격자가 선택한 입력된 매개 변수 값에서 전달 저장된 프로시저를 실행할 수 있는 경우 SQL 삽입 공격에 대 한 위험을 도입 합니다.
 
@@ -126,7 +126,7 @@ ms.lasthandoff: 11/10/2017
 
 DAL 및 BLL 활용 하는 메서드를 포함 하도록 확장할 필요는 `GetProductsPagedAndSorted` 상태를 유지 하는 모든 저장된 프로시저에서 ObjectDataSource를 구성 하는 것은 `SortParameter.aspx` 페이지 새 BLL 메서드를 사용 하 고 전달 하는 `SortExpression` 매개 변수를 기반으로 사용자가 요청 하 여 결과 정렬 하는 열입니다.
 
-ObjectDataSource s 변경 하 여 시작 `SelectMethod` 에서 `GetProductsPaged` 를 `GetProductsPagedAndSorted`합니다. 속성 창에서 데이터 소스 구성 마법사를 통해 또는 직접 선언 구문을 통해 수행할 수 있습니다. 다음으로, ObjectDataSource s에 대 한 값을 제공 해야 [ `SortParameterName` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.objectdatasource.sortparametername.aspx)합니다. ObjectDataSource GridView s에 전달 하려고 시도할 경우이 속성이 설정 되어 `SortExpression` 속성을는 `SelectMethod`합니다. 특히,는 ObjectDataSource 이름인의 값과 같은 입력된 매개 변수를 찾습니다는 `SortParameterName` 속성입니다. BLL s 이후 `GetProductsPagedAndSorted` 메서드에 정렬 식 라는 입력된 매개 변수는 `sortExpression`, ObjectDataSource s 설정 `SortExpression` 속성 sortExpression 합니다.
+ObjectDataSource s 변경 하 여 시작 `SelectMethod` 에서 `GetProductsPaged` 를 `GetProductsPagedAndSorted`합니다. 속성 창에서 데이터 소스 구성 마법사를 통해 또는 직접 선언 구문을 통해 수행할 수 있습니다. 다음으로, ObjectDataSource s에 대 한 값을 제공 해야 [ `SortParameterName` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.sortparametername.aspx)합니다. ObjectDataSource GridView s에 전달 하려고 시도할 경우이 속성이 설정 되어 `SortExpression` 속성을는 `SelectMethod`합니다. 특히,는 ObjectDataSource 이름인의 값과 같은 입력된 매개 변수를 찾습니다는 `SortParameterName` 속성입니다. BLL s 이후 `GetProductsPagedAndSorted` 메서드에 정렬 식 라는 입력된 매개 변수는 `sortExpression`, ObjectDataSource s 설정 `SortExpression` 속성 sortExpression 합니다.
 
 이러한 두 가지 변경에 확인 한 후 ObjectDataSource s 선언적 구문 다음과 비슷하게 표시 됩니다.
 
@@ -139,7 +139,7 @@ ObjectDataSource s 변경 하 여 시작 `SelectMethod` 에서 `GetProductsPaged
 
 GridView에서 정렬 기능을 사용 하면 확인란을 정렬 사용 GridView s 스마트 태그를 설정 하는 GridView s `AllowSorting` 속성을 `true` 못하여 LinkButton로 렌더링을 각 열에 대 한 헤더 텍스트입니다. 링크 단추가 헤더 중 하나에서 최종 사용자가 포스트백 계속 하 고 다음 단계 동안 실행 합니다.
 
-1. GridView 업데이트 해당 [ `SortExpression` 속성](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.gridview.sortexpression.aspx) 의 값에는 `SortExpression` 헤더 링크 클릭 필드의
+1. GridView 업데이트 해당 [ `SortExpression` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sortexpression.aspx) 의 값에는 `SortExpression` 헤더 링크 클릭 필드의
 2. ObjectDataSource BLL s 호출 `GetProductsPagedAndSorted` GridView s 전달 메서드를 `SortExpression` s 메서드에 대 한 값으로 속성 `sortExpression` 입력된 매개 변수 (적절 한 함께 `startRowIndex` 및 `maximumRows` 입력 매개 변수 값)
 3. BLL DAL s 호출 `GetProductsPagedAndSorted` 메서드
 4. DAL 실행는 `GetProductsPagedAndSorted` 저장 프로시저를 시작 전달에 `@sortExpression` 매개 변수 (함께 `@startRowIndex` 및 `@maximumRows` 입력 매개 변수 값)

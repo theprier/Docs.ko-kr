@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-updating-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 02df858a7ad2ccefce4717e9bb7b08fc4c8d6ace
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: bcfdf734de0b4a4aa0a11f35bd6e40d6b97719cf
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="batch-updating-vb"></a>일괄 업데이트 (VB)
 ====================
@@ -47,7 +47,7 @@ Let s가 시작 되었습니다.
 
 ## <a name="examining-the-steps-for-making-all-gridview-rows-editable"></a>모든 GridView 행 편집 가능으로 설정 하는 단계를 검토 합니다.
 
-에 설명 된 대로 [는 개요의 삽입, 업데이트 및 삭제 데이터](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb.md) 자습서에서는 GridView는 행 단위로에 원본 데이터를 편집 하기 위한 기본 제공 지원을 제공 합니다. GridView의 어떤 행이를 통해 편집할 수 있는 정보 내부적으로 해당 [ `EditIndex` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.editindex(VS.80).aspx)합니다. 각 행을 행의 인덱스의 값이 같은 경우 참조 확인 GridView 되 고 해당 데이터 원본에 바인딩되어 처럼 `EditIndex`합니다. 이 경우 해당 행의 필드가 렌더링 되는 편집을 사용 하는 인터페이스입니다. BoundFields, 편집 인터페이스는 TextBox 인 `Text` 속성 BoundField s로 지정 된 데이터 필드의 값이 할당은 `DataField` 속성입니다. TemplateFields에 대 한는 `EditItemTemplate` 대신에 사용 되는 `ItemTemplate`합니다.
+에 설명 된 대로 [는 개요의 삽입, 업데이트 및 삭제 데이터](../editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb.md) 자습서에서는 GridView는 행 단위로에 원본 데이터를 편집 하기 위한 기본 제공 지원을 제공 합니다. GridView의 어떤 행이를 통해 편집할 수 있는 정보 내부적으로 해당 [ `EditIndex` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.editindex(VS.80).aspx)합니다. 각 행을 행의 인덱스의 값이 같은 경우 참조 확인 GridView 되 고 해당 데이터 원본에 바인딩되어 처럼 `EditIndex`합니다. 이 경우 해당 행의 필드가 렌더링 되는 편집을 사용 하는 인터페이스입니다. BoundFields, 편집 인터페이스는 TextBox 인 `Text` 속성 BoundField s로 지정 된 데이터 필드의 값이 할당은 `DataField` 속성입니다. TemplateFields에 대 한는 `EditItemTemplate` 대신에 사용 되는 `ItemTemplate`합니다.
 
 행의 편집 단추를 클릭 하면 편집 워크플로 시작 됨을 기억 하십시오. 이러한 포스트백 응용 프로그램, 설정 하는 GridView의 `EditIndex` 속성을 클릭 한 행의 인덱스 표에 데이터를 다시 바인딩 횟수입니다. 다시 게시 될 때 행의 취소 단추 클릭 시는 `EditIndex` 의 값으로 설정 되어 `-1` 표에 데이터를 다시 바인딩하기 전에 합니다. 설정 하는 인덱스가 0부터 시작 하는 GridView의 행, 하므로 `EditIndex` 를 `-1` GridView 읽기 전용 모드에서 표시 하는 효과가 있습니다.
 
@@ -240,7 +240,7 @@ GridView s 이후 편집 인터페이스에에서 정의 되어 있는 해당 Te
 
 [!code-vb[Main](batch-updating-vb/samples/sample5.vb)]
 
-이 메서드는 제품의 모든 시작에 `ProductsDataTable` BLL s에 대 한 호출을 통해 `GetProducts` 메서드. 그런 다음 열거는 `ProductGrid` GridView s [ `Rows` 컬렉션](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.rows(VS.80).aspx)합니다. `Rows` 컬렉션에 포함 된 [ `GridViewRow` 인스턴스](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridviewrow.aspx) GridView에 표시 된 각 행에 대 한 합니다. 최대 10 개의 행 한 페이지에 GridView s 보여 주는 이후 `Rows` 컬렉션 10 개 미만의 항목이 포함 됩니다.
+이 메서드는 제품의 모든 시작에 `ProductsDataTable` BLL s에 대 한 호출을 통해 `GetProducts` 메서드. 그런 다음 열거는 `ProductGrid` GridView s [ `Rows` 컬렉션](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.rows(VS.80).aspx)합니다. `Rows` 컬렉션에 포함 된 [ `GridViewRow` 인스턴스](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridviewrow.aspx) GridView에 표시 된 각 행에 대 한 합니다. 최대 10 개의 행 한 페이지에 GridView s 보여 주는 이후 `Rows` 컬렉션 10 개 미만의 항목이 포함 됩니다.
 
 각 행에 대해는 `ProductID` 에서 잡을 `DataKeys` 컬렉션과 적절 한 `ProductsRow` 에서 선택한는 `ProductsDataTable`합니다. 4 개의 TemplateField 입력된 컨트롤 프로그래밍 방식으로 참조 되 고 해당 값에 할당 된는 `ProductsRow` 인스턴스 s 속성입니다. 각 GridView 행의 값이 사용 된 후 업데이트 하는 `ProductsDataTable`, 것 BLL s에 전달 된 s `UpdateWithTransaction` 호출 하는 메서드에, 이전 자습서에서 살펴본 것 처럼 단순히 DAL의 `UpdateWithTransaction` 메서드.
 
@@ -257,7 +257,7 @@ GridView s 이후 편집 인터페이스에에서 정의 되어 있는 해당 Te
 
 [!code-vb[Main](batch-updating-vb/samples/sample6.vb)]
 
-호출할 먼저 `BatchUpdate`합니다. 다음으로 [ `ClientScript` 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.page.clientscript(VS.80).aspx) 업데이트 되었습니다. 제품을 읽을 수 있는 messagebox를 표시 하는 JavaScript를 삽입 하는 데 사용 됩니다.
+호출할 먼저 `BatchUpdate`합니다. 다음으로 [ `ClientScript` 속성](https://msdn.microsoft.com/library/system.web.ui.page.clientscript(VS.80).aspx) 업데이트 되었습니다. 제품을 읽을 수 있는 messagebox를 표시 하는 JavaScript를 삽입 하는 데 사용 됩니다.
 
 이 코드를 테스트 하는 데 1 분을 소요 됩니다. 방문 `BatchUpdate.aspx` 브라우저를 통해 된 수의 행을 편집 하 고 업데이트 제품 단추 중 하나를 클릭 합니다. 입력된 유효성 검사 오류가 없는 경우 업데이트 된 제품을 읽을 수 있는 messagebox를 볼 수 있습니다. 업데이트의 원자성을 확인 하려면을 고려해 야 임의 `CHECK` 제약 조건을 허용 하지 않는 것 처럼 `UnitPrice` 1234.56의 값입니다. 다음 `BatchUpdate.aspx`, 다양 한 s 제품 중 하나를 설정 해야 하는 레코드를 편집 `UnitPrice` 값을 사용할 수 없는 값 (1234.56). 원래 값으로 롤백될 일괄 처리 작업을 해당 하는 동안 다른 변경 내용과 업데이트 제품을 클릭 하면 때 오류가 발생 해야 합니다.
 
@@ -270,7 +270,7 @@ GridView s 이후 편집 인터페이스에에서 정의 되어 있는 해당 Te
 
 [!code-vb[Main](batch-updating-vb/samples/sample7.vb)]
 
-`BatchMethodAlternate`비어 있는 새를 만들어 시작 `ProductsDataTable` 라는 `products`합니다. 다음 단계를 통해 GridView s `Rows` 컬렉션의 각 행 BLL s를 사용 하 여 특정 제품 정보를 가져옵니다 `GetProductByProductID(productID)` 메서드. 검색 된 `ProductsRow` 인스턴스에 해당 속성을 동일한 방식으로 업데이트는 `BatchUpdate`, 하지만에 가져온 행을 업데이트 한 후의 `products` `ProductsDataTable` DataTable s 통해 [ `ImportRow(DataRow)` 메서드](https://msdn.microsoft.com/en-us/library/system.data.datatable.importrow(VS.80).aspx).
+`BatchMethodAlternate`비어 있는 새를 만들어 시작 `ProductsDataTable` 라는 `products`합니다. 다음 단계를 통해 GridView s `Rows` 컬렉션의 각 행 BLL s를 사용 하 여 특정 제품 정보를 가져옵니다 `GetProductByProductID(productID)` 메서드. 검색 된 `ProductsRow` 인스턴스에 해당 속성을 동일한 방식으로 업데이트는 `BatchUpdate`, 하지만에 가져온 행을 업데이트 한 후의 `products` `ProductsDataTable` DataTable s 통해 [ `ImportRow(DataRow)` 메서드](https://msdn.microsoft.com/library/system.data.datatable.importrow(VS.80).aspx).
 
 이후에 `For Each` 루프 완료 `products` 하나가 포함 된 `ProductsRow` GridView의 각 행에 대 한 인스턴스. 각각의 이후는 `ProductsRow` 에 추가 된 인스턴스는 `products` (대신 업데이트)를 맹목적으로 전달 하는 경우는 `UpdateWithTransaction` 메서드는 `ProductsTableAdatper` 레코드의 각 데이터베이스에 삽입 하려고 합니다. 대신, 각이 행의 수정 되었다는 사실을 (추가 됨)을 지정 해야 합니다.
 

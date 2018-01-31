@@ -2,20 +2,18 @@
 title: "ASP.NET Core MVC 및 EF Core - 자습서 시리즈"
 author: tdykstra
 description: 
-keywords: ASP.NET Core,
-ms.author: tdykstra
 manager: wpickett
+ms.author: tdykstra
 ms.date: 10/15/2017
-ms.topic: get-started-article
-ms.assetid: 9918be4c-2096-404f-9b2a-ed5cde90042a
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: get-started-article
 uid: data/ef-mvc/index
-ms.openlocfilehash: 8111f01488468470722e0734d59b18e10cebf416
-ms.sourcegitcommit: 198fb0488e961048bfa376cf58cb853ef1d1cb91
+ms.openlocfilehash: 4666148edcf77fa7b3dec40f1672d491998c870a
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="getting-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio"></a>Visual Studio를 사용하여 ASP.NET Core MVC 및 Entity Framework Core 시작
 

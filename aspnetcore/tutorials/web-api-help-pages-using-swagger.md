@@ -2,20 +2,18 @@
 title: "Swagger를 사용한 ASP.NET Core Web API 도움말 페이지"
 author: spboyer
 description: "이 자습서에서는 Swagger를 추가하여 Web API 응용 프로그램에 대한 설명서 및 도움말 페이지를 생성하는 연습을 제공합니다."
-keywords: "ASP.NET Core, Swagger, Swashbuckle, 도움말 페이지, Web API"
 ms.author: spboyer
 manager: wpickett
 ms.date: 09/01/2017
 ms.topic: article
-ms.assetid: 54bb961d-29d9-4dee-8e2c-a93fc33c16f2
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/web-api-help-pages-using-swagger
-ms.openlocfilehash: 8a87972a7394246ece2af3485d93739975ba5383
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 302199bb0b32d4f6610e04455bb28372095e9873
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="aspnet-core-web-api-help-pages-using-swagger"></a>Swagger를 사용한 ASP.NET Core Web API 도움말 페이지
 
@@ -222,7 +220,13 @@ XML 주석은 다음 방법으로 사용하도록 설정할 수 있습니다.
 
 [!code-xml[Main](../tutorials/web-api-help-pages-using-swagger/sample/TodoApi/TodoApi.csproj?range=7-9)]
 
+# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
+
+Visual Studio Code를 참조하세요.
+
 ---
+
+XML 주석을 사용하면 문서화되지 않은 public 형식과 멤버에 대한 디버그 정보를 제공합니다. 문서화되지 않은 형식과 멤버는 *공개된 형식 또는 멤버에 대한 XML 주석이 없습니다.*라는 경고 메시지로 표시됩니다.
 
 생성된 XML 파일을 사용하도록 Swagger를 구성합니다. Linux 또는 Windows가 아닌 운영 체제의 경우 파일 이름 및 경로는 대/소문자를 구분할 수 있습니다. 예를 들어 *ToDoApi.XML* 파일은 Windows에는 있지만 CentOS에는 없습니다.
 

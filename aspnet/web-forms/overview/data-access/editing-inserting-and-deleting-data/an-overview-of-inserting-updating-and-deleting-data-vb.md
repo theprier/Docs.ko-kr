@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 99d6b98bb7efa2f63e0c19b8623fd42ed92bdbaf
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e7552abb30aa26d3aaceb3312c00661c6d4d6cf8
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="an-overview-of-inserting-updating-and-deleting-data-vb"></a>삽입, 업데이트 및 삭제 (VB)의 개요
 ====================
@@ -140,7 +140,7 @@ UPDATE, INSERT 및 DELETE 탭에 있는 드롭 다운 목록에 이미 선택 �
 
 각 목록은 마찬가지로 해당 관련된 메서드에 대 한 입력된 매개 변수에 매개 변수를 포함 하는 ObjectDataSource `SelectParameter` s는 입력된 매개 변수를 예상 하는 select 메서드를 호출 하는 ObjectDataSource 하도록 구성 된 경우 현재 ( 같은`GetProductsByCategoryID(categoryID)`). 값은 곧, 볼 수 있겠지만 `DeleteParameters`, `UpdateParameters`, 및 `InsertParameters` ObjectDataSource의 호출 하기 전에 GridView, DetailsView, 및 FormView에서 자동으로 설정 `Insert()`, `Update()`, 또는 `Delete()` 메서드입니다. 이러한 값에 대 한 이후 자습서에서 설명 하겠지만도 필요에 따라 프로그래밍 방식으로 설정할 수 있습니다.
 
-ObjectDataSource를 구성 하려면 마법사를 사용 하 여 한 가지 부작용은 Visual Studio를 설정 하는 [OldValuesParameterFormatString 속성](https://msdn.microsoft.com/en-US/library/system.web.ui.webcontrols.objectdatasource.oldvaluesparameterformatstring(VS.80).aspx) 를 `original_{0}`합니다. 이 속성 값 편집 중인 데이터의 원래 값을 포함 하는 데 사용 되 고 두 가지 시나리오에서 유용:
+ObjectDataSource를 구성 하려면 마법사를 사용 하 여 한 가지 부작용은 Visual Studio를 설정 하는 [OldValuesParameterFormatString 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.oldvaluesparameterformatstring(VS.80).aspx) 를 `original_{0}`합니다. 이 속성 값 편집 중인 데이터의 원래 값을 포함 하는 데 사용 되 고 두 가지 시나리오에서 유용:
 
 - 경우 레코드를 편집할 때 사용자의 기본 키 값을 변경할 수 있습니다. 이 경우 새 기본 키 값과 원래 기본 키 값이 모두 제공 되어야 합니다 원래 기본 키 값을 가진 레코드를 찾을 수를 해당 값이에 따라 업데이트 수 있습니다.
 - 낙관적 동시성을 사용할 때 낙관적 동시성은 두 개의 있는지를 확인 하는 기술을 동시 사용자 서로 변경 내용을 덮어쓰지 및 이후 자습서에 대 한 항목은입니다.
@@ -168,8 +168,8 @@ GridView 디자이너 도구 상자에서 끌어 시작 합니다. 다음으로 
 
 스마트 태그를 통해 ObjectDataSource에 GridView 바인딩 두 가지 이점이 있습니다.
 
-- BoundFields 및 CheckBoxFields 각는 ObjectDataSource에서 반환 된 필드에 대해 자동으로 만들어집니다. 또한, BoundField 및 CheckBoxField의 속성에 기본 필드의 메타 데이터에 따라 설정 됩니다. 예를 들어는 `ProductID`, `CategoryName`, 및 `SupplierName` 필드의 읽기 전용으로 표시 됩니다는 `ProductsDataTable` 안 수 있으므로 업데이트할 수 있는 편집 하는 경우. 이, 이러한 BoundFields'를 수용 하기 위해 [ReadOnly 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.boundfield.readonly(VS.80).aspx) 로 설정 `True`합니다.
-- [DataKeyNames 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.gridview.datakeynames(VS.80).aspx) 내부 개체의 기본 키 필드에 할당 됩니다. 이 필수적인 경우이 속성 필드 (또는 필드 집합)으로 GridView 편집 하거나 데이터를 삭제 하기 위해 사용 하 여 고유한 각 레코드를 식별 합니다. 대 한 자세한 내용은 `DataKeyNames` 속성을 다시 참조는 [마스터/세부 정보 DetailView 선택 가능한 마스터 GridView 사용에 대해 자세히 설명](../masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs.md) 자습서입니다.
+- BoundFields 및 CheckBoxFields 각는 ObjectDataSource에서 반환 된 필드에 대해 자동으로 만들어집니다. 또한, BoundField 및 CheckBoxField의 속성에 기본 필드의 메타 데이터에 따라 설정 됩니다. 예를 들어는 `ProductID`, `CategoryName`, 및 `SupplierName` 필드의 읽기 전용으로 표시 됩니다는 `ProductsDataTable` 안 수 있으므로 업데이트할 수 있는 편집 하는 경우. 이, 이러한 BoundFields'를 수용 하기 위해 [ReadOnly 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.boundfield.readonly(VS.80).aspx) 로 설정 `True`합니다.
+- [DataKeyNames 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.datakeynames(VS.80).aspx) 내부 개체의 기본 키 필드에 할당 됩니다. 이 필수적인 경우이 속성 필드 (또는 필드 집합)으로 GridView 편집 하거나 데이터를 삭제 하기 위해 사용 하 여 고유한 각 레코드를 식별 합니다. 대 한 자세한 내용은 `DataKeyNames` 속성을 다시 참조는 [마스터/세부 정보 DetailView 선택 가능한 마스터 GridView 사용에 대해 자세히 설명](../masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs.md) 자습서입니다.
 
 GridView 속성 창이 나 선언 구문을 통해 ObjectDataSource에 바인딩될 수, 하는 동안 이렇게에 수동으로 추가 해야 적절 한 BoundField 및 `DataKeyNames` 태그입니다.
 
@@ -327,7 +327,7 @@ GridView의 데이터 수정 기능을 보여 주기 위해 DetailsView에 추�
 
 GridView에서와 마찬가지로 이벤트의 동일한 시퀀스를 시작 삭제 단추를 클릭 하면: 포스트백; a DetailsView의 ObjectDataSource 채우기 뒤 `DeleteParameters` 에 따라는 `DataKeyNames` 값 및 해당 ObjectDataSource를 호출 하 여 완료 `Delete()` 실제로 데이터베이스에서 제품을 제거 하는 메서드. DetailsView에서 편집도 하 고 있는 GridView의 동일한 방식으로 작동 합니다.
 
-삽입에 대 한 최종 사용자는 새로 표시 됩니다 단추를 클릭 하면 "삽입 모드입니다." DetailsView를 렌더링 합니다. 삽입 및 취소 단추와 해당 BoundFields만으로 바뀝니다 새 단추 "삽입 모드" 인 `InsertVisible` 속성이로 설정 되어 `True` (기본값) 표시 됩니다. 와 같은 자동 증분 필드로 식별 된 데이터 필드 `ProductID`, 있어야 해당 [InsertVisible 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.datacontrolfield.insertvisible(VS.80).aspx) 로 설정 `False` DetailsView 스마트 태그를 통해 데이터 소스에 바인딩하는 경우.
+삽입에 대 한 최종 사용자는 새로 표시 됩니다 단추를 클릭 하면 "삽입 모드입니다." DetailsView를 렌더링 합니다. 삽입 및 취소 단추와 해당 BoundFields만으로 바뀝니다 새 단추 "삽입 모드" 인 `InsertVisible` 속성이로 설정 되어 `True` (기본값) 표시 됩니다. 와 같은 자동 증분 필드로 식별 된 데이터 필드 `ProductID`, 있어야 해당 [InsertVisible 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datacontrolfield.insertvisible(VS.80).aspx) 로 설정 `False` DetailsView 스마트 태그를 통해 데이터 소스에 바인딩하는 경우.
 
 스마트 태그를 통해 DetailsView에 데이터 소스를 바인딩, Visual Studio 설정에서 `InsertVisible` 속성을 `False` 자동 증가 필드에 대해서만 합니다. 읽기 전용 필드와 같은 `CategoryName` 및 `SupplierName`, 하지 않는 한 "삽입 모드" 사용자 인터페이스에 표시 될 자신의 `InsertVisible` 속성이 명시적으로로 설정 된 `False`합니다. 이 두 필드를 설정 하려면 잠시 `InsertVisible` 속성을 `False`, 필드 편집 또는 DetailsView의 선언적 구문에서 스마트 태그에 연결 합니다. 그림 19 설정이 표시는 `InsertVisible` 속성을 `False` 필드 편집을 클릭 하 여 연결 합니다.
 
@@ -354,7 +354,7 @@ GridView에서와 마찬가지로 이벤트의 동일한 시퀀스를 시작 삭
 
 
 > [!NOTE]
-> DetailsView의 [CurrentMode 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.detailsview.currentmode(VS.80).aspx) 표시 되는 인터페이스를 나타내며 다음 값 중 하나일 수 있습니다: `Edit`, `Insert`, 또는 `ReadOnly`합니다. [DefaultMode 속성](https://msdn.microsoft.com/en-us/library/system.web.ui.webcontrols.detailsview.defaultmode(VS.80).aspx) 나타내고 DetailsView 편집 후를 반환 하거나 삽입 모드 완료 되는 영구적으로 편집 하거나 삽입 모드 DetailsView를 표시할 때 유용 합니다.
+> DetailsView의 [CurrentMode 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.detailsview.currentmode(VS.80).aspx) 표시 되는 인터페이스를 나타내며 다음 값 중 하나일 수 있습니다: `Edit`, `Insert`, 또는 `ReadOnly`합니다. [DefaultMode 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.detailsview.defaultmode(VS.80).aspx) 나타내고 DetailsView 편집 후를 반환 하거나 삽입 모드 완료 되는 영구적으로 편집 하거나 삽입 모드 DetailsView를 표시할 때 유용 합니다.
 
 
 GridView과 동일한 제한 사항이에서 저하 가리키고 클릭 삽입 및 DetailsView의 기능을 편집: 기존 사용자를 입력 해야 `CategoryID` 및 `SupplierID` textbox 통해 값; 인터페이스에 유효성 검사 논리, 모든 허용 하지 않는 제품 필드 `NULL` 값 또는 기본값이 없는 데이터베이스 수준에서 지정 된 값이 삽입 인터페이스에 포함 되어야 합니다.

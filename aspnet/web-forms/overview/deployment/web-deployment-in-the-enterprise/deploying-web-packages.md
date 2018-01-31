@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/deploying-web-packages
 msc.type: authoredcontent
-ms.openlocfilehash: db24fbf4a3486a1349ac47e55cfa495fdf1a166c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cd2bfa07262155b68ac4605fc7e9748d276d3193
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="deploying-web-packages"></a>웹 패키지 배포
 ====================
@@ -70,13 +70,13 @@ ms.lasthandoff: 11/10/2017
 | **/U** | 사용자 이름을 지정합니다. 기본 인증을 사용 하는 경우에 적용 됩니다. |
 | **/P** | 암호를 지정합니다. 기본 인증을 사용 하는 경우에 적용 됩니다. |
 | **/L** | 로컬 IIS Express 인스턴스에 패키지를 배포 해야 나타냅니다. |
-| **/G** | 패키지를 사용 하 여 배포 된 지정 된 [tempAgent 공급자 설정을](https://technet.microsoft.com/en-us/library/ee517345(WS.10).aspx)합니다. 생략 하면는 **/G** 플래그를 기본값인 **false**합니다. |
+| **/G** | 패키지를 사용 하 여 배포 된 지정 된 [tempAgent 공급자 설정을](https://technet.microsoft.com/library/ee517345(WS.10).aspx)합니다. 생략 하면는 **/G** 플래그를 기본값인 **false**합니다. |
 
 > [!NOTE]
 > 명명 된 파일도 만듭니다 빌드 프로세스 웹 패키지를 만들 때마다 *[프로젝트 이름].deploy readme.txt* 하는 이러한 배포 옵션에 설명 합니다.
 
 
-이러한 플래그 외에도 웹 배포 작업 설정을 추가으로 지정할 수 있습니다 *. deploy.cmd* 매개 변수입니다. 추가 설정은 지정 하면 단순히 기본 MSDeploy.exe 명령에 통과 됩니다. 이러한 설정에 대 한 자세한 내용은 참조 하십시오. [웹 배포 작업이 설정](https://technet.microsoft.com/en-us/library/dd569089(WS.10).aspx)합니다.
+이러한 플래그 외에도 웹 배포 작업 설정을 추가으로 지정할 수 있습니다 *. deploy.cmd* 매개 변수입니다. 추가 설정은 지정 하면 단순히 기본 MSDeploy.exe 명령에 통과 됩니다. 이러한 설정에 대 한 자세한 내용은 참조 하십시오. [웹 배포 작업이 설정](https://technet.microsoft.com/library/dd569089(WS.10).aspx)합니다.
 
 ContactManager.Mvc 웹 응용 프로그램 프로젝트를 실행 하 여 테스트 환경에 배포 하려는 경우 다음과 같이 *. deploy.cmd* 파일입니다. 에 설명 된 대로 테스트 환경이 웹 배포 원격 에이전트 서비스를 사용 하도록 구성 된 [웹 배포 게시 (원격 에이전트)에 대 한 웹 서버를 구성](../configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-remote-agent.md)합니다. 웹 응용 프로그램을 배포 하려면 다음 단계를 완료 해야 합니다.
 
@@ -101,7 +101,7 @@ ContactManager.Mvc 웹 응용 프로그램 프로젝트를 실행 하 여 테스
 [!code-console[Main](deploying-web-packages/samples/sample3.cmd)]
 
 
-사용 하 여 대 한 자세한 내용은 *. deploy.cmd* 웹 패키지를 배포, 참조 파일을 [하는 방법: 설치 된 배포 패키지를 사용 하 여 파일 deploy.cmd](https://msdn.microsoft.com/en-us/library/ff356104.aspx)합니다.
+사용 하 여 대 한 자세한 내용은 *. deploy.cmd* 웹 패키지를 배포, 참조 파일을 [하는 방법: 설치 된 배포 패키지를 사용 하 여 파일 deploy.cmd](https://msdn.microsoft.com/library/ff356104.aspx)합니다.
 
 ## <a name="using-msdeployexe"></a>MSDeploy.exe를 사용 하 여
 
@@ -115,21 +115,21 @@ MSDeploy.exe를 사용 하면 세 가지 주요 정보를 제공 해야 합니�
 
 - A **– 소스** 데이터에서 온 것인지를 나타내는 매개 변수입니다.
 - A **-dest** 데이터 하려는 위치를 나타내는 매개 변수입니다.
-- A **– 동사** 나타내는 매개 변수는 [작업](https://technet.microsoft.com/en-us/library/dd568989(WS.10).aspx) 수행 하려는 합니다.
+- A **– 동사** 나타내는 매개 변수는 [작업](https://technet.microsoft.com/library/dd568989(WS.10).aspx) 수행 하려는 합니다.
 
-MSDeploy.exe 의존 [웹 배포 공급자](https://technet.microsoft.com/en-us/library/dd569040(WS.10).aspx) 원본 및 대상 데이터를 처리 하 합니다. 웹 배포를 사용 하려면 응용 프로그램 및 데이터 원본 & #x 2014의 범위를 나타내는 공급자 많이 포함 됩니다. 예를 들어 SQL Server 데이터베이스, IIS 웹 서버, 인증서, 전역 어셈블리 캐시 (GAC) 어셈블리에 대 한 공급자가 다양 한 다른 구성 파일 및 다른 종류의 데이터를 많이 합니다. 두는 **– 소스** 매개 변수 및 **-dest** 형태로 매개 변수는 공급자를 지정 해야 **– 소스**: [*providerName*] [=*위치*]. IIS 웹 사이트에 웹 패키지를 배포할 때 이러한 값을 사용 해야 합니다.
+MSDeploy.exe 의존 [웹 배포 공급자](https://technet.microsoft.com/library/dd569040(WS.10).aspx) 원본 및 대상 데이터를 처리 하 합니다. 웹 배포를 사용 하려면 응용 프로그램 및 데이터 원본 & #x 2014의 범위를 나타내는 공급자 많이 포함 됩니다. 예를 들어 SQL Server 데이터베이스, IIS 웹 서버, 인증서, 전역 어셈블리 캐시 (GAC) 어셈블리에 대 한 공급자가 다양 한 다른 구성 파일 및 다른 종류의 데이터를 많이 합니다. 두는 **– 소스** 매개 변수 및 **-dest** 형태로 매개 변수는 공급자를 지정 해야 **– 소스**: [*providerName*] [=*위치*]. IIS 웹 사이트에 웹 패키지를 배포할 때 이러한 값을 사용 해야 합니다.
 
-- **– 소스** 공급자는 항상 [패키지](https://technet.microsoft.com/en-us/library/dd569019(WS.10).aspx)합니다. 예:
+- **– 소스** 공급자는 항상 [패키지](https://technet.microsoft.com/library/dd569019(WS.10).aspx)합니다. 예:
 
     [!code-console[Main](deploying-web-packages/samples/sample4.cmd)]
-- **-dest** 공급자는 항상 [자동](https://technet.microsoft.com/en-us/library/dd569016(WS.10).aspx)합니다. 예:
+- **-dest** 공급자는 항상 [자동](https://technet.microsoft.com/library/dd569016(WS.10).aspx)합니다. 예:
 
     [!code-console[Main](deploying-web-packages/samples/sample5.cmd)]
 - **– 동사** 항상 **동기화**합니다.
 
     [!code-console[Main](deploying-web-packages/samples/sample6.cmd)]
 
-또한 사용자 지정 해야 다양 한 다른 [공급자별 설정](https://technet.microsoft.com/en-us/library/dd569001(WS.10).aspx) 하 고 일반적인 [운영 설정](https://technet.microsoft.com/en-us/library/dd569089(WS.10).aspx)합니다. 예를 들어 ContactManager.Mvc 웹 응용 프로그램을 스테이징 환경에 배포 한다고 가정 합니다. 배포를 대상 웹 배포 처리기 및 기본 인증을 사용 해야 합니다. 웹 응용 프로그램을 배포 하려면 다음 단계를 완료 해야 합니다.
+또한 사용자 지정 해야 다양 한 다른 [공급자별 설정](https://technet.microsoft.com/library/dd569001(WS.10).aspx) 하 고 일반적인 [운영 설정](https://technet.microsoft.com/library/dd569089(WS.10).aspx)합니다. 예를 들어 ContactManager.Mvc 웹 응용 프로그램을 스테이징 환경에 배포 한다고 가정 합니다. 배포를 대상 웹 배포 처리기 및 기본 인증을 사용 해야 합니다. 웹 응용 프로그램을 배포 하려면 다음 단계를 완료 해야 합니다.
 
 **MSDeploy.exe를 사용 하 여 웹 응용 프로그램을 배포 하려면**
 
@@ -145,7 +145,7 @@ MSDeploy.exe 의존 [웹 배포 공급자](https://technet.microsoft.com/en-us/l
 - **– 소스** 매개 변수를 지정 된 **패키지** 공급자 웹 패키지의 위치를 나타냅니다.
 - **-dest** 매개 변수는 지정 된 **자동** 공급자입니다. **computerName** 설정은 대상 서버에 웹 배포 처리기의 서비스 URL을 제공 합니다. **인증 유형** 설정은 기본 인증을 사용 하려면와 같이 제공 해야 나타냅니다는 **username** 및 **암호**합니다. 마지막으로 **includeAcls = "False"** 설정은 대상 서버에 소스 웹 응용 프로그램에서 파일의 액세스 제어 목록 (Acl)을 복사 하려는 하지 나타냅니다.
 - **– 동사: 동기화** 인수 대상 서버에서 원본 콘텐츠를 복제할 것인지를 나타냅니다.
-- **– disableLink** 인수 응용 프로그램 풀, 가상 디렉터리 구성 또는 대상 서버에서 Secure Sockets Layer (SSL) 인증서를 복제 하 고 않은 있는지를 나타냅니다. 자세한 내용은 참조 [링크 확장을 배포 하는 웹](https://technet.microsoft.com/en-us/library/dd569028(WS.10).aspx)합니다.
+- **– disableLink** 인수 응용 프로그램 풀, 가상 디렉터리 구성 또는 대상 서버에서 Secure Sockets Layer (SSL) 인증서를 복제 하 고 않은 있는지를 나타냅니다. 자세한 내용은 참조 [링크 확장을 배포 하는 웹](https://technet.microsoft.com/library/dd569028(WS.10).aspx)합니다.
 - **– setParamFile** 의 위치를 제공 하는 매개 변수는 *SetParameters.xml* 파일입니다.
 - **– allowUntrusted** 스위치 나타냅니다 웹 배포 SSL 인증서를 신뢰할 수 있는 인증 기관에서 발급 되지 않은 허용 해야 합니다. 웹 배포 처리기에 배포 하는 서비스 URL을 보호 하는 자체 서명 된 인증서를 사용한 경우이 스위치를 포함 해야 합니다.
 

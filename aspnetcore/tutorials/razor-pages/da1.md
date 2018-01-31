@@ -2,7 +2,6 @@
 title: "생성된 페이지 업데이트"
 author: rick-anderson
 description: "향상된 표시로 생성된 페이지를 업데이트합니다."
-keywords: "ASP.NET Core, Razor 페이지"
 ms.author: riande
 manager: wpickett
 ms.date: 08/07/2017
@@ -10,11 +9,11 @@ ms.topic: get-started-article
 ms.technology: aspnet
 ms.prod: asp.net-core
 uid: tutorials/razor-pages/da1
-ms.openlocfilehash: e0b09860e7dc871e0a554ddeac9e8d2c31702fb0
-ms.sourcegitcommit: 9ecd4e9fb0c40c3693dab079eab1ff94b461c922
+ms.openlocfilehash: abf6839536150f29eaa2d07dafbe0d0c1a08e280
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 01/24/2018
 ---
 # <a name="updating-the-generated-pages"></a>생성된 페이지 업데이트
 
@@ -95,7 +94,7 @@ ms.lasthandoff: 11/28/2017
 * 다른 브라우저 창에서 동일한 동영상에 대한 **삭제** 링크를 선택한 다음 동영상을 삭제합니다.
 * 이전 브라우저 창에서 동영상에 변경 내용을 게시합니다.
 
-프로덕션 코드는 일반적으로 둘 이상의 클라이언트가 동시에 레코드를 업데이트한 경우 동시성 충돌을 검색합니다. 자세한 내용은 [동시성 충돌 처리](xref:data/ef-mvc/concurrency)를 참조하세요.
+프로덕션 코드는 일반적으로 둘 이상의 클라이언트가 동시에 레코드를 업데이트한 경우 동시성 충돌을 검색합니다. 자세한 내용은 [동시성 충돌 처리](xref:data/ef-rp/concurrency)를 참조하세요.
 
 ### <a name="posting-and-binding-review"></a>검토 게시 및 바인딩
 

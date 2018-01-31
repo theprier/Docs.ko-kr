@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-elmah-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3aef1c2c2357d948a49787c9dd039d4529479357
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 26d40d17447b3b03d17265f291b8ac246a449966
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/30/2018
 ---
 <a name="logging-error-details-with-elmah-c"></a>오류 세부 정보 ELMAH (C#)를 사용 하 여 로깅
 ====================
@@ -29,7 +29,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="introduction"></a>소개
 
-[이전 자습서](logging-error-details-with-asp-net-health-monitoring-cs.md) ASP를 검사 합니다. NET의 상태를 모니터링의 다양 한 종류의 웹 이벤트 기록에 대 한 상자 라이브러리를 제공 하는 시스템입니다. 대부분의 개발자는 상태 로그온 하 고 처리 되지 않은 예외의 세부 정보를 전자 메일로 보내는 모니터링을 사용 합니다. 그러나이 시스템에 몇 가지 문제점 있습니다. 무엇 보다도 모든 종류 기록 된 이벤트에 대 한 정보를 보기 위한 사용자 인터페이스의 부족이입니다. 데이터베이스를 통해 어느 poke 해야 10 마지막 오류의 요약을 볼 또는 지난주에 발생 한 오류의 세부 정보를 확인 하려는 경우, 전자 메일 받은 편지함을 통해 검색 또는 정보를 표시 하는 웹 페이지는 `aspnet_WebEvent_Events` 테이블입니다.
+[이전 자습서](logging-error-details-with-asp-net-health-monitoring-cs.md) ASP를 검사 합니다. NET의 상태를 모니터링의 다양 한 종류의 웹 이벤트 기록에 대 한 상자 라이브러리를 제공 하는 시스템입니다. 대부분의 개발자 상태 로그온 하 고 처리 되지 않은 예외의 세부 정보를 전자 메일로 보내기 모니터링을 사용 합니다. 그러나이 시스템에 몇 가지 문제점 있습니다. 무엇 보다도 모든 종류 기록 된 이벤트에 대 한 정보를 보기 위한 사용자 인터페이스의 부족이입니다. 데이터베이스를 통해 어느 poke 해야 10 마지막 오류의 요약을 볼 또는 지난주에 발생 한 오류의 세부 정보를 확인 하려는 경우, 전자 메일 받은 편지함을 통해 검색 또는 정보를 표시 하는 웹 페이지는 `aspnet_WebEvent_Events` 테이블입니다.
 
 다른 창 지점 상태 모니터링의 복잡성 중심으로 진행 합니다. 상태 모니터링도 사용할 수 있으므로 다양 한 다른 이벤트를 기록 하 고 다양 한 이벤트는 기록 하는 방법 및 시기를 지정 하는 것에 대 한 옵션 때문에 상태 시스템 모니터링을 올바르게 구성 성가실 태스크 수 있습니다. 마지막으로, 호환성 문제가 있습니다. ASP.NET 버전을 사용 하 여 작성 하는 오래 된 웹 응용 프로그램에 사용할 수 없는 상태 모니터링 먼저.NET Framework 버전 2.0에 추가 되었으므로, 1.x 합니다. 또한는 `SqlWebEventProvider` 클래스를 사용 하기 위해 데이터베이스에 오류 정보를 로그 이전 자습서에는 Microsoft SQL Server 데이터베이스 에서만 작동 합니다. 필요한 경우에 오류를 기록 하는 XML 파일 또는 Oracle 데이터베이스와 같은 대체 데이터 저장소에는 사용자 지정 로그 공급자 클래스를 만들 해야 합니다.
 
@@ -149,7 +149,7 @@ ELMAH는 콘텐츠 처리 되지 않은 예외가 발생할 때 사용자에 게
 **그림 3**: `Elmah.axd` 웹 페이지에서 오류 로그를 표시 합니다.  
 ([전체 크기 이미지를 보려면 클릭](logging-error-details-with-elmah-cs/_static/image7.png))
 
-오류 로그인 **그림 3** 6 개 오류 항목을 포함 합니다. 각 항목에는 HTTP 상태 코드 (404 또는 이러한 오류에 대 한 500), 유형, 설명, 오류가 발생할 때 로그온된 한 사용자의 이름 및 날짜 및 시간 포함 됩니다. 세부 정보 링크를 클릭 하는 오류 세부 정보 노란색 화면의 사망에 표시 된 동일한 오류 메시지가 포함 된 페이지가 표시 됩니다. (참조 **그림 4**)는 오류 발생 시 서버 변수 값과 함께 (참조  **그림 5**). 또한 HTTP POST 헤더에 값과 같은 추가 정보를 포함 하는 오류 정보가 저장 되는 원시 XML을 볼 수 있습니다.
+오류 로그인 **그림 3** 6 개 오류 항목을 포함 합니다. 각 항목에는 HTTP 상태 코드 (404 또는 이러한 오류에 대 한 500), 유형, 설명, 오류가 발생할 때 로그온된 한 사용자의 이름 및 날짜 및 시간 포함 됩니다. 세부 정보 링크를 클릭 하는 오류 세부 정보 노란색 화면의 사망에 표시 된 동일한 오류 메시지가 포함 된 페이지가 표시 됩니다. (참조 **그림 4**)는 오류 발생 시 서버 변수 값과 함께 (참조 ** 그림 5**). 또한 HTTP POST 헤더에 값과 같은 추가 정보를 포함 하는 오류 정보가 저장 되는 원시 XML을 볼 수 있습니다.
 
 [![](logging-error-details-with-elmah-cs/_static/image9.png)](logging-error-details-with-elmah-cs/_static/image8.png)
 
@@ -203,19 +203,19 @@ ELMAH의 `ErrorLogModule` HTTP 모듈 지정 된 로그 소스를 자동으로 �
 
 [!code-csharp[Main](logging-error-details-with-elmah-cs/samples/sample6.cs)]
 
-## <a name="error-notification-via-e-mail"></a>전자 메일 알림 오류
+## <a name="error-notification-via-email"></a>전자 메일을 통해 오류 알림
 
-데이터베이스에 오류와 함께 ELMAH 오류 세부 정보 지정 된 받는 사람에 게 전자 메일에 구성할 수도 있습니다. 이 기능을 제공 된 `ErrorMailModule` HTTP 모듈에서이 HTTP 모듈을 등록 해야 따라서 `Web.config` 전자 메일을 통해 오류 정보를 전송 하기 위해 합니다.
+데이터베이스에 오류와 함께 ELMAH 오류 세부 정보 지정 된 받는 사람에 게 전자 메일을 구성할 수도 있습니다. 이 기능을 제공는 `ErrorMailModule` HTTP 모듈에서이 HTTP 모듈을 등록 해야 따라서 `Web.config` 전자 메일을 통해 오류 정보를 전송 하기 위해.
 
 [!code-xml[Main](logging-error-details-with-elmah-cs/samples/sample7.xml)]
 
-그런 다음에 있는 오류 전자 메일에 대 한 정보를 지정는 `<elmah>` 요소의 `<errorMail>` 섹션에서 전자 메일의 보낸 사람과 받는 사람, 제목, 나타내는 여부 전자 메일 비동기적으로 전송 됩니다.
+그런 다음 오류 메일에 대 한 정보를 지정는 `<elmah>` 요소의 `<errorMail>` 메일의 보낸 사람과 받는 사람, 제목, 나타내는 섹션 여부는 전자 메일 비동기적으로 전송 됩니다.
 
 [!code-xml[Main](logging-error-details-with-elmah-cs/samples/sample8.xml)]
 
-위치에 위의 설정을 사용 하면 런타임 오류가 발생할 때마다 ELMAH 전자 메일을 보냅니다 support@example.com 오류 세부 정보를 사용 합니다. ELMAH의 오류 전자 메일 오류 메시지, 스택 추적 및 서버 변수 즉 오류 세부 정보 웹 페이지에 표시 된 것 같은 정보가 포함 됩니다 (다시 참조 **그림 4** 및 **5**). 오류 전자 메일 첨부 파일로 예외 세부 정보 노란색 화면의 사망 콘텐츠가 포함 되어 (`YSOD.html`).
+위치에 위의 설정을 사용 하면 런타임 오류가 발생할 때마다 ELMAH 메일을 보냅니다 support@example.com 오류 세부 정보를 사용 합니다. ELMAH의 오류 전자 메일 오류 메시지, 스택 추적 및 서버 변수 즉 오류 세부 정보 웹 페이지에 표시 된 것 같은 정보가 포함 됩니다 (다시 참조 **그림 4** 및 **5**). 오류 전자 메일 첨부 파일로 예외 세부 정보 노란색 화면의 사망 콘텐츠가 포함 되어 (`YSOD.html`).
 
-**그림 8** 방문 하 여 생성 된 ELMAH의 오류 전자 메일을 보여 줍니다 `Genre.aspx?ID=foo`합니다. 반면 **그림 8** 서버 변수도 복사 추가 아래로 전자 메일의 본문에만 오류 메시지 및 스택 추적을 보여 줍니다.
+**그림 8** ELMAH의 오류 방문 하 여 생성 된 전자 메일을 보여 줍니다 `Genre.aspx?ID=foo`합니다. 반면 **그림 8** 서버 변수도 복사 추가 아래로 메일의 본문에만 오류 메시지 및 스택 추적을 보여 줍니다.
 
 [![](logging-error-details-with-elmah-cs/_static/image21.png)](logging-error-details-with-elmah-cs/_static/image20.png)
 
@@ -254,7 +254,7 @@ ELMAH는 ASP.NET 웹 응용 프로그램에서 오류를 기록 하는 단순 �
 - [ELMAH 프로젝트 페이지](https://code.google.com/p/elmah/) (소스 코드, 샘플, wiki)
 - [ELMAH에는 웹 응용 프로그램 처리 되지 않은 예외를 Catch 연결](http://screencastaday.com/ScreenCasts/43_Plugging_Elmah_into_Web_Application_to_Catch_Unhandled_Exceptions.aspx) (비디오)
 - [보안 오류 로그 페이지](https://code.google.com/p/elmah/wiki/SecuringErrorLogPages)
-- [HTTP 모듈 및 처리기를 사용 하 여 플러그형 ASP.NET 구성 요소 만들기](https://msdn.microsoft.com/en-us/library/aa479332.aspx)
+- [HTTP 모듈 및 처리기를 사용 하 여 플러그형 ASP.NET 구성 요소 만들기](https://msdn.microsoft.com/library/aa479332.aspx)
 - [웹 사이트 보안 자습서](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)
 
 >[!div class="step-by-step"]

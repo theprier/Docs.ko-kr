@@ -2,19 +2,18 @@
 title: "ASP.NET Core에서 개발 하는 동안 앱 암호의 안전한 저장소"
 author: rick-anderson
 description: "안전 하 게 개발 하는 동안 암호를 저장 하는 방법을 보여 줍니다."
-keywords: ASP.NET Core,
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 09/15/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/app-secrets
-ms.openlocfilehash: 897d9b360ceeb5fbb0863ff1c1fcec039e1a8b8f
-ms.sourcegitcommit: 8f42ab93402c1b8044815e1e48d0bb84c81f8b59
+ms.openlocfilehash: 337782a0530a37916b04aa562174b5921ddbc46b
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/29/2017
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="safe-storage-of-app-secrets-during-development-in-aspnet-core"></a>ASP.NET Core에서 개발 하는 동안 앱 암호의 안전한 저장소
 
@@ -38,7 +37,7 @@ ms.lasthandoff: 11/29/2017
 암호 관리자 도구는 프로젝트 트리 외부의 개발 작업에 대 한 중요 한 데이터를 저장합니다. 암호 관리자 도구는에 대 한 기밀 정보를 사용할 수 있는 프로젝트 도구는 [.NET Core](https://www.microsoft.com/net/core) 개발 중 프로젝트. 암호 관리자 도구를 사용 특정 프로젝트와 앱 암호를 연결 하 고 여러 프로젝트 간에 공유할 수 있습니다.
 
 >[!WARNING]
-> 암호 관리자 도구 저장 된 암호를 암호화 하지 않습니다 하 고 신뢰할 수 있는 저장소로 처리 되지 해야 합니다. 개발 용도로입니다. 키와 값은 사용자 프로필 디렉터리에는 JSON 구성 파일에 저장 됩니다.
+> 암호 관리자 도구 저장 된 암호를 암호화 하지 않습니다 하 고 신뢰할 수 있는 저장소로 처리 하지 않아야 합니다. 개발 용도로입니다. 키와 값은 사용자 프로필 디렉터리에는 JSON 구성 파일에 저장 됩니다.
 
 ## <a name="installing-the-secret-manager-tool"></a>암호 관리자 도구를 설치합니다.
 
@@ -115,15 +114,15 @@ dotnet user-secrets set MySecret ValueOfMySecret --project c:\work\WebApp1\src\w
 
 암호 관리자 도구 값을 저장 하는 위치와 방법을 같은 구현 세부 정보를 추상화 합니다. 이러한 구현 정보를 알 필요 없이 도구를 사용할 수 있습니다. 현재 버전의 값에 저장 됩니다는 [JSON](http://json.org/) 사용자 프로필 디렉터리에 구성 파일:
 
-* Windows:`%APPDATA%\microsoft\UserSecrets\<userSecretsId>\secrets.json`
+* Windows: `%APPDATA%\microsoft\UserSecrets\<userSecretsId>\secrets.json`
 
-* Linux:`~/.microsoft/usersecrets/<userSecretsId>/secrets.json`
+* Linux: `~/.microsoft/usersecrets/<userSecretsId>/secrets.json`
 
-* Mac:`~/.microsoft/usersecrets/<userSecretsId>/secrets.json`
+* Mac: `~/.microsoft/usersecrets/<userSecretsId>/secrets.json`
 
 값 `userSecretsId` 에 지정 된 값에서 가져온 *.csproj* 파일입니다.
 
-이러한 구현 정보 변경 될 수 있으므로 위치 또는 보안 관리자 도구와 함께 저장 된 데이터의 형식에 의존 하는 코드를 작성 하지 말아야 합니다. 예를 들어 비밀 값은 현재 *하지* 오늘 암호화 되지만 언젠가 수 있습니다.
+이러한 구현 정보 변경 될 수 있으므로 위치나 암호 관리자 도구와 함께 저장 된 데이터의 형식에 따라 달라 지 코드를 작성 하지 않아야 합니다. 예를 들어 비밀 값은 현재 *하지* 오늘 암호화 되지만 언젠가 수 있습니다.
 
 ## <a name="additional-resources"></a>추가 리소스
 

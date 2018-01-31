@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: af4967f642ba4615f3392c0c404d2ec62edaaae8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 48a7d7fdb670aebb72450fc4eb12a364ef595c53
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="aspnet-mvc-4-dependency-injection"></a>ASP.NET MVC 4 종속성 주입
 ====================
@@ -25,7 +25,7 @@ ms.lasthandoff: 11/10/2017
 > [!NOTE]
 > 이 실습 랩 대 한 기본 지식이 있다고 가정 하 고 **ASP.NET MVC** 및 **필터링 하는 ASP.NET MVC 4**합니다. 사용 하지 않은 경우 **필터링 하는 ASP.NET MVC 4** 를 권장 앞, **ASP.NET MVC 사용자 지정 작업 필터** 실습 랩입니다.
 > 
-> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [https://www.microsoft.com/en-us/download/29843](https://www.microsoft.com/en-us/download/29843)합니다.
+> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843)합니다.
 
 
 **개체 지향 프로그래밍** 패러다임을 개체가 함께 동작 하는 공동 작업 모델에 없는 다음 참가자와 소비자입니다. 당연히이 통신 모델 개체 및 복잡성이 증가 하는 경우 관리 하기 어려운 되 고 구성 요소 간의 종속성을 생성 합니다.
@@ -474,7 +474,7 @@ ms.lasthandoff: 11/10/2017
 
     ![Music Store](aspnet-mvc-4-dependency-injection/_static/image11.png "음악 스토어")
 
-    *음악 스토어*
+    *Music Store*
 3. 찾아 **/Trace.axd** 을 클릭 한 다음 응용 프로그램 추적을 보려면 **세부 정보 보기**합니다.
 
     ![응용 프로그램 추적 로그](aspnet-mvc-4-dependency-injection/_static/image12.png "응용 프로그램 추적 로그")

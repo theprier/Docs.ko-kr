@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/introduction-and-overview
 msc.type: authoredcontent
-ms.openlocfilehash: 6ee3e244c4ed29384d11c7acc1440692d3f9b23e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6ae398f94c0ac3872601bdc8fd935f6d285793db
+ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 01/24/2018
 ---
 <a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2013"></a>ASP.NET 4.5 Web Forms 및 Visual Studio 2013 시작
 ====================
@@ -60,7 +60,7 @@ ms.lasthandoff: 11/10/2017
 위에 나열 된 영역을 검토 하려는 경우 다음 콘텐츠를 검토 하는 것이 좋습니다.
 
 - [Visual C# 시작](https://msdn.microsoft.com/library/a72418yk.aspx)
-- [웹 개발](https://msdn.microsoft.com/beginner/bb308760.aspx), [HTML, CSS, JavaScript, SQL, PHP, JQuery](http://w3schools.com/)
+- [Web Development](https://msdn.microsoft.com/beginner/bb308760.aspx), [HTML, CSS, JavaScript, SQL, PHP, JQuery](http://w3schools.com/)
 - [관계형 데이터베이스](http://en.wikipedia.org/wiki/Relational_database)
 - [다중 계층 아키텍처](http://en.wikipedia.org/wiki/Multitier_architecture)
 
@@ -150,7 +150,7 @@ PayPal을 통한 반환한 검토 하 고 주문을 완료 수 있습니다.
 
 시작 하기 전에 다음 소프트웨어가 컴퓨터에 설치 되어 있는지 확인 합니다.
 
-- [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/en-us/downloads#vs) 또는 [Microsoft Visual Studio Express 2013 for Web](https://www.microsoft.com/visualstudio/11/en-us/downloads#express-web)합니다. .NET Framework는 자동으로 설치 됩니다.
+- [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/downloads#vs) 또는 [Microsoft Visual Studio Express 2013 for Web](https://www.microsoft.com/visualstudio/11/downloads#express-web)합니다. .NET Framework는 자동으로 설치 됩니다.
 
 이 자습서 시리즈 웹에 대 한 Microsoft Visual Studio Express 2013을 사용합니다. 이 자습서 시리즈를 완료 하려면 Microsoft Visual Studio Express 2013 for Web 또는 Microsoft Visual Studio 2013을 사용할 수 있습니다.
 
@@ -163,7 +163,7 @@ PayPal을 통한 반환한 검토 하 고 주문을 완료 수 있습니다.
 
 > [!NOTE] 
 > 
-> 이 연습에서는 선택 했다고 가정은 *웹 개발* 설정의 컬렉션 서 처음으로 Visual Studio를 시작 하면 됩니다. 자세한 내용은 참조 [하는 방법: 웹 개발 환경 설정 선택](https://msdn.microsoft.com/en-us/library/ff521558.aspx)합니다.
+> 이 연습에서는 선택 했다고 가정은 *웹 개발* 설정의 컬렉션 서 처음으로 Visual Studio를 시작 하면 됩니다. 자세한 내용은 참조 [하는 방법: 웹 개발 환경 설정 선택](https://msdn.microsoft.com/library/ff521558.aspx)합니다.
 
 
 ## <a name="download-the-sample-application"></a>샘플 응용 프로그램 다운로드
@@ -179,7 +179,7 @@ PayPal을 통한 반환한 검토 하 고 주문을 완료 수 있습니다.
 
 다운로드 되는 *.zip* 파일입니다. 이 자습서 시리즈 만듭니다 완료 된 프로젝트, 찾기 및 선택은 *C#*폴더에는 *.zip* 파일입니다. 저장 된 *C#* folderto Visual Studio 2013 프로젝트 작업에 사용할 폴더입니다. 기본적으로 Visual Studio 2013 프로젝트 폴더는 다음입니다.
 
-**C:\Users\*****&lt;username&gt;* * * \Documents\Visual Studio 2013\Projects**
+**C:\Users\*****&lt;username&gt;*****\Documents\Visual Studio 2013\Projects**
 
 이름 바꾸기는 ***C#*** 폴더를 ***WingtipToys***합니다.
 
