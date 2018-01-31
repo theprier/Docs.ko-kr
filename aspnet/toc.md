@@ -936,7 +936,7 @@
 #### [차트](web-forms/videos/net-4/chart/index.md)
 ##### [Chart 컨트롤](web-forms/videos/net-4/chart/aspnet-4-quick-hit-chart-control.md)
 ##### [Visual Studio 2010의 새 차트 컨트롤 소개](web-forms/videos/net-4/chart/aspnet-4-how-do-i-introducing-the-new-chart-control-in-visual-studio-2010.md)
-#### [핵심](web-forms/videos/net-4/core/index.md)
+#### [코어](web-forms/videos/net-4/core/index.md)
 ##### [자동 시작](web-forms/videos/net-4/core/aspnet-4-quick-hit-auto-start.md)
 ##### [Web.Config 파일 정리](web-forms/videos/net-4/core/aspnet-4-quick-hit-clean-webconfig-files.md)
 ##### [예측 가능한 클라이언트 ID](web-forms/videos/net-4/core/aspnet-4-quick-hit-predictable-client-ids.md)
