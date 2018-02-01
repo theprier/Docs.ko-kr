@@ -19,7 +19,7 @@ ms.lasthandoff: 01/09/2018
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>ASP.NET Core Identity 소개
 
-작성자: [Pranav Rastogi](https://github.com/rustd), [Rick Anderson](https://twitter.com/RickAndMSFT), [Tom Dykstra](https://github.com/tdykstra), Jon Galloway, [Erik Reitan](https://github.com/Erikre), 및 [Steve Smith](https://ardalis.com/)
+작성자: [Pranav Rastogi](https://github.com/rustd), [Rick Anderson](https://twitter.com/RickAndMSFT), [Tom Dykstra](https://github.com/tdykstra), Jon Galloway, [Erik Reitan](https://github.com/Erikre), [Steve Smith](https://ardalis.com/)
 
 ASP.NET Core Identity는 응용 프로그램에 로그인 기능을 추가할 수 있는 멤버십 시스템입니다. 사용자는 계정을 생성한 다음 사용자 이름과 비밀번호를 사용해서 로그인하거나 Facebook, Google, Microsoft Account, Twitter 같은 외부 로그인 공급자를 사용할 수 있습니다.
 
@@ -39,7 +39,7 @@ ASP.NET Core Identity는 SQL Server 데이터베이스에 사용자 이름, 비�
 
     ![새 프로젝트 대화 상자](identity/_static/01-new-project.png)
 
-    계속해서 ASP.NET Core 2.x 용 ASP.NET Core **웹 응용 프로그램 (모델-뷰-컨트롤러)**을 선택하고 **인증 변경**을 선택합니다.
+    ASP.NET Core 2.x 용 ASP.NET Core 웹 응용 프로그램 (모델-뷰-컨트롤러)을 선택한 다음 인증 변경을 선택합니다.
 
     ![새 프로젝트 대화 상자](identity/_static/02-new-project.png)
 
@@ -67,7 +67,7 @@ ASP.NET Core Identity는 SQL Server 데이터베이스에 사용자 이름, 비�
     
     이 서비스들은 응용 프로그램에서 [종속성 주입](xref:fundamentals/dependency-injection)을 통해서 사용할 수 있습니다.
     
-    `Configure` 메서드에서 `UseAuthentication` 메서드를 호출하면 응용 프로그램에서 Identity가 활성화됩니다. `UseAuthentication`는 요청 파이프라인에 인증 [미들웨어](xref:fundamentals/middleware)를 추가합니다.
+    `Configure` 메서드에서 `UseAuthentication` 메서드를 호출하면 응용 프로그램에서 Identity가 활성화됩니다. `UseAuthentication`은 요청 파이프라인에 인증 [미들웨어](xref:fundamentals/middleware)를 추가합니다.
     
     [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configure&highlight=17)]
     
@@ -89,22 +89,22 @@ ASP.NET Core Identity는 SQL Server 데이터베이스에 사용자 이름, 비�
 
     응용 프로그램을 실행한 다음, **Register** 링크를 클릭합니다.
 
-    이 작업을 처음하는 경우, 마이그레이션을 수행해야 할 수도 있습니다. 그럴 경우, 응용 프로그램이 **마이그레이션을 수행**하라는 메시지를 출력합니다. 필요에 따라 페이지를 새로 고칩니다.
+    이 작업을 처음 수행하는 경우, 마이그레이션을 실행해야 할 수도 있습니다. 그럴 경우, **마이그레이션을 수행**하라는 메시지가 응용 프로그램에 표시됩니다. 필요한 경우 페이지를 새로 고침합니다.
     
     ![마이그레이션 웹 페이지를 적용합니다.](identity/_static/apply-migrations.png)
     
-    또는 영구적인 데이터베이스 없이 메모리 내 데이터베이스를 이용해서 응용 프로그램과 ASP.NET Core Identity를 테스트 할 수도 있습니다. 메모리 내 데이터베이스를 사용하려면 응용 프로그램에 `Microsoft.EntityFrameworkCore.InMemory` 패키지를 추가하고, 응용 프로그램이 `ConfigureServices`에서 `AddDbContext`를 호출하는 부분을 다음과 같이 수정합니다:
+    또는 영구적인 데이터베이스 없이 메모리 내 데이터베이스를 이용해서 응용 프로그램과 ASP.NET Core Identity를 테스트할 수도 있습니다. 메모리 내 데이터베이스를 사용하려면 응용 프로그램에 `Microsoft.EntityFrameworkCore.InMemory` 패키지를 추가하고, 응용 프로그램이 `ConfigureServices`에서 `AddDbContext`를 호출하는 부분을 다음과 같이 수정합니다:
 
     ```csharp
     services.AddDbContext<ApplicationDbContext>(options =>
         options.UseInMemoryDatabase(Guid.NewGuid().ToString()));
     ```
     
-    사용자가 **Register** 버튼을 클릭하면 `AccountController`의 `Register` 액션이 호출됩니다. `Register` 액션은 `_userManager` 개체의 (종속성 주입으로 `AccountController`에 제공된) `CreateAsync`를 호출해서 사용자를 생성합니다:
+    사용자가 **Register** 링크를 클릭하면 `AccountController'에서 `Register` 액션이 호출됩니다. `Register` 액션은 `_userManager` 개체의 (종속성 주입으로 `AccountController`에 제공된) `CreateAsync`를 호출해서 사용자를 생성합니다:
  
     [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_register&highlight=11)]
 
-    사용자가 정상적으로 생성되면 `_signInManager.SignInAsync`가 호출되어 사용자가 즉시 로그인 됩니다.
+    사용자가 정상적으로 생성되면 `_signInManager.SignInAsync`가 호출되어 사용자가 즉시 로그인됩니다.
 
     **참고:** 사용자 등록 즉시 로그인을 방지하는 방법은 [계정 확인](xref:security/authentication/accconfirm#prevent-login-at-registration)을 참고하시기 바랍니다.
  
@@ -128,7 +128,7 @@ ASP.NET Core Identity는 SQL Server 데이터베이스에 사용자 이름, 비�
  
 6.  구성
 
-    Identity는 응용 프로그램의 시작 클래스에서 재지정할 수 있는 몇 가지 기본적인 동작을 갖고 있습니다. 기본 동작을 사용하고자 하는 경우에는 `IdentityOptions`를 구성할 필요가 없습니다.
+    Identity에 응용 프로그램의 시작 클래스에서 재지정할 수 있는 몇 가지 기본 동작이 있습니다. 기본 동작을 사용하고자 하는 경우에는 `IdentityOptions`를 구성할 필요가 없습니다.
 
     # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
     
@@ -146,7 +146,7 @@ ASP.NET Core Identity는 SQL Server 데이터베이스에 사용자 이름, 비�
  
 7.  데이터베이스 살펴보기
 
-    응용 프로그램에서 SQL Server 데이터베이스를 사용할 경우 (Windows 및 Visual Studio 사용자에 대한 기본값입니다), 응용 프로그램이 생성한 데이터베이스를 직접 살펴볼 수 있습니다.
+    응용 프로그램에서 SQL Server 데이터베이스를 사용할 경우 (Windows 및 Visual Studio 사용자에 대한 기본값), 응용 프로그램이 생성한 데이터베이스를 확인할 수 있습니다.
     이때 **SQL Server Management Studio**를 사용할 수 있습니다.
     또는 Visual Studio에서 **보기** > **SQL Server 개체 탐색기**를 선택합니다.
     그리고 **(localdb) \MSSQLLocalDB**에 연결합니다.
@@ -197,17 +197,17 @@ ASP.NET Core 응용 프로그램에서 Identity 시스템을 사용하려면 다
 
 * `Microsoft.AspNetCore.Identity.EntityFrameworkCore` - Entity Framework Core로 Identity를 사용하는데 필요한 형식들을 포함하고 있습니다.
 
-* `Microsoft.EntityFrameworkCore.SqlServer` - Entity Framework는 관계형 데이터베이스에 대한 Microsoft의 권장 데이터 접근 기술입니다. 테스트  목적으로 대신 `Microsoft.EntityFrameworkCore.InMemory`를 사용할 수도 있습니다.
+* `Microsoft.EntityFrameworkCore.SqlServer` - Entity Framework Core는 SQL Server와 같은 관계형 데이터베이스에 대한 Microsoft의 권장 데이터 액세스 기술입니다. 테스트 목적으로 대신 `Microsoft.EntityFrameworkCore.InMemory`를 사용할 수도 있습니다.
 
 * `Microsoft.AspNetCore.Authentication.Cookies` - 응용 프로그램이 쿠키 기반의 인증을 사용할 수 있게 해주는 미들웨어입니다.
 
 ## <a name="migrating-to-aspnet-core-identity"></a>ASP.NET Identity로 마이그레이션하기
 
-기존 Identity 저장소를 마이그레이션하는 방법에 대한 위한 추가적인 정보와 지침은 [인증 및 Identity 마이그레이션하기](xref:migration/identity)를 참고하시기 바랍니다.
+기존 Identity 저장소를 마이그레이션하는 방법에 대한 추가적인 정보와 지침은 [인증 및 Identity 마이그레이션하기](xref:migration/identity)를 참고하시기 바랍니다.
 
 ## <a name="next-steps"></a>다음 단계
 
 * [인증 및 Identity 마이그레이션하기](xref:migration/identity)
 * [계정 확인 및 비밀번호 복구](xref:security/authentication/accconfirm)
 * [SMS를 이용한 2단계 인증](xref:security/authentication/2fa)
-* [Facebook, Google 및 기타 외부 공급자를 이용한 인증 활성화시키기](xref:security/authentication/social/index)
+* [Facebook, Google 및 기타 외부 공급자를 이용한 인증 활성화](xref:security/authentication/social/index)
