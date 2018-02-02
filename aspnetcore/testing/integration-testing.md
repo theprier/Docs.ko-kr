@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: testing/integration-testing
-ms.openlocfilehash: ebae76da01e1b24466174179a9d4bbe826202cc3
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 4a5f14e11de6ed91f67808c3ea8c78a7b1d43b03
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="integration-testing-in-aspnet-core"></a>ASP.NET Core에서 통합 테스트
 
@@ -127,7 +127,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 
 고려해 야 할 한 가지 옵션을 추가 하는 것 [MVC](xref:mvc/overview) 프라임 검사를 처리 하는 응용 프로그램 및 컨트롤러 만들기. 그러나 현재 하지 않는 것으로 간주 해야 다른 MVC 기능, 비트를 overkill 합니다.
 
-그러나 ASP.NET Core 활용을 진행할 수 있습니다 [미들웨어](xref:fundamentals/middleware), 검사 논리는 자체 클래스에서 해 소수만 캡슐화 하 고 보다 잘 달성 하는 데 도움이 됩니다는 [문제의 분리](http://deviq.com/separation-of-concerns/) 에 `Configure` 메서드입니다.
+그러나 ASP.NET Core 활용을 진행할 수 있습니다 [미들웨어](xref:fundamentals/middleware/index), 검사 논리는 자체 클래스에서 해 소수만 캡슐화 하 고 보다 잘 달성 하는 데 도움이 됩니다는 [문제의 분리](http://deviq.com/separation-of-concerns/) 에 `Configure` 메서드입니다.
 
 미들웨어 매개 변수로 지정할 미들웨어 클래스 예상 있으므로를 사용 하 여 경로 허용 하려는 `RequestDelegate` 및 `PrimeCheckerOptions` 생성자의 인스턴스. 이 미들웨어 란 요청의 경로 일치 하지 않으면, 사용 하도록 구성을 하기만 하면 체인의 다음 미들웨어를 호출 하지 않습니다. 에 있는 구현 코드의 나머지 부분 `Configure` 되어 이제는 `Invoke` 메서드.
 
@@ -150,5 +150,5 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 ## <a name="resources"></a>리소스
 
 * [유닛 테스트](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
-* [미들웨어](xref:fundamentals/middleware)
+* [미들웨어](xref:fundamentals/middleware/index)
 * [컨트롤러 테스트](xref:mvc/controllers/testing)

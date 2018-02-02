@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/http-modules
-ms.openlocfilehash: f104c9116cfaa4a82ac88e4a83b4b6f172eb2aa1
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 8aac6c649b22dc8f6cfc916aa78d56efad7821a0
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="migrating-http-handlers-and-modules-to-aspnet-core-middleware"></a>HTTP 처리기 및 ASP.NET Core 미들웨어 모듈을 마이그레이션하는 방법 
 
 으로 [Matt Perdeck](https://www.linkedin.com/in/mattperdeck)
 
-이 문서에서는 기존 ASP.NET 마이그레이션하는 방법을 보여 줍니다. [HTTP 모듈 및 처리기 system.webserver에서](https://docs.microsoft.com/iis/configuration/system.webserver/) ASP.NET Core로 [미들웨어](../fundamentals/middleware.md)합니다.
+이 문서에서는 기존 ASP.NET 마이그레이션하는 방법을 보여 줍니다. [HTTP 모듈 및 처리기 system.webserver에서](https://docs.microsoft.com/iis/configuration/system.webserver/) ASP.NET Core로 [미들웨어](xref:fundamentals/middleware/index)합니다.
 
 ## <a name="modules-and-handlers-revisited"></a>모듈 및 revisited 처리기
 
@@ -65,7 +65,7 @@ ASP.NET Core 미들웨어를 계속 하기 전에 먼저 요약해 보면 HTTP �
 
    * 코드를 사용 하 여 미들웨어 구성 대신 *Web.config*
 
-   * [파이프라인 분기](../fundamentals/middleware.md#middleware-run-map-use) 뿐만 아니라 요청 헤더, 쿼리 문자열 등에서 뿐만 아니라 URL을 기반으로 하는 특정 미들웨어에 요청을 보낼 수 있습니다.
+   * [파이프라인 분기](xref:fundamentals/middleware/index#middleware-run-map-use) 뿐만 아니라 요청 헤더, 쿼리 문자열 등에서 뿐만 아니라 URL을 기반으로 하는 특정 미들웨어에 요청을 보낼 수 있습니다.
 
 **미들웨어 모듈 매우 비슷합니다.**
 
@@ -81,7 +81,7 @@ ASP.NET Core 미들웨어를 계속 하기 전에 먼저 요약해 보면 HTTP �
 
    * 응답에 대 한 미들웨어의 순서는 모듈의 순서는 요청 및 응답에 대해 동일 하 게 하는 동안 요청에 대 한는 반대
 
-   * 참조 [IApplicationBuilder 미들웨어 파이프라인 만들기](../fundamentals/middleware.md#creating-a-middleware-pipeline-with-iapplicationbuilder)
+   * 참조 [IApplicationBuilder 미들웨어 파이프라인 만들기](xref:fundamentals/middleware/index#creating-a-middleware-pipeline-with-iapplicationbuilder)
 
 ![미들웨어](http-modules/_static/middleware.png)
 
@@ -93,13 +93,13 @@ ASP.NET Core 미들웨어를 계속 하기 전에 먼저 요약해 보면 HTTP �
 
 [!code-csharp[Main](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Modules/MyModule.cs?highlight=6,8,24,31)]
 
-에 나와 있는 것 처럼는 [미들웨어](../fundamentals/middleware.md) 페이지, ASP.NET Core 미들웨어는 노출 하는 클래스는 `Invoke` 메서드 만들기는 `HttpContext` 반환 하 고는 `Task`합니다. 새 미들웨어는 다음과 같이 표시 됩니다.
+에 나와 있는 것 처럼는 [미들웨어](xref:fundamentals/middleware/index) 페이지, ASP.NET Core 미들웨어는 노출 하는 클래스는 `Invoke` 메서드 만들기는 `HttpContext` 반환 하 고는 `Task`합니다. 새 미들웨어는 다음과 같이 표시 됩니다.
 
 <a name="http-modules-usemiddleware"></a>
 
 [!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddleware.cs?highlight=9,13,20,24,28,30,32)]
 
-위의 미들웨어 서식 파일에서 섹션에서 만들어졌다면 [미들웨어를 작성](../fundamentals/middleware.md#middleware-writing-middleware)합니다.
+이전 미들웨어 템플릿 섹션에서 만들어졌다면 [미들웨어를 작성](xref:fundamentals/middleware/index#middleware-writing-middleware)합니다.
 
 *MyMiddlewareExtensions* 도우미 클래스를 사용 하면 쉽게에 미들웨어를 구성 하 여 `Startup` 클래스입니다. `UseMyMiddleware` 메서드 요청 파이프라인에 미들웨어 클래스를 추가 합니다. 미들웨어에서 필요한 서비스 미들웨어의 생성자에 지정 된 가져오기.
 
@@ -121,7 +121,7 @@ HTTP 모듈은 일반적으로 사용 하 여 요청 파이프라인에 추가 �
 
 [!code-xml[Main](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Web.config?highlight=6&range=1-3,32-33,36,43,50,101)]
 
-이 변환 [새 미들웨어를 추가](../fundamentals/middleware.md#creating-a-middleware-pipeline-with-iapplicationbuilder) 요청 파이프라인에 프로그램 `Startup` 클래스:
+이 변환 [새 미들웨어를 추가](xref:fundamentals/middleware/index#creating-a-middleware-pipeline-with-iapplicationbuilder) 요청 파이프라인에 프로그램 `Startup` 클래스:
 
 [!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Configure&highlight=16)]
 
@@ -383,4 +383,4 @@ public async Task Invoke(HttpContext httpContext)
 * [HTTP 처리기 및 HTTP 모듈 개요](/iis/configuration/system.webserver/)
 * [구성](xref:fundamentals/configuration/index)
 * [응용 프로그램 시작](xref:fundamentals/startup)
-* [미들웨어](xref:fundamentals/middleware)
+* [미들웨어](xref:fundamentals/middleware/index)

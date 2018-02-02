@@ -10,11 +10,11 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 ms.custom: mvc
 uid: security/authentication/azure-ad-b2c-webapi
-ms.openlocfilehash: c79f1152afd2f55f53bf5deb9208fa5b4d5ef64d
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: a63bfc26bb6b0f5ea1c64641d6f57a3555d7f401
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="cloud-authentication-in-web-apis-with-azure-active-directory-b2c"></a>웹 Api와 Azure Active Directory B2C에에서 대 한 클라우드 인증
 
@@ -101,7 +101,8 @@ Visual Studio 라는 컨트롤러와 web API 만듭니다 *ValuesController.cs* 
 
 Visual Studio에서 API를 실행 합니다. Visual Studio는 API 루트 URL을 가리키는 브라우저를 시작 합니다. 주소 표시줄에는 URL을 확인 하 고 백그라운드에서 실행 되는 API를 그대로 둡니다.
 
-> [!NOTE] 루트 URL에 대해 정의 된 컨트롤러 없음 이므로 브라우저 404 (찾을 수 없음 페이지) 오류를 표시 합니다. 이는 예상된 동작입니다.
+> [!NOTE]
+> 루트 URL에 대해 정의 된 컨트롤러 없음 이므로 브라우저 404 (찾을 수 없음 페이지) 오류를 표시 합니다. 이는 예상된 동작입니다.
 
 ## <a name="use-postman-to-get-a-token-and-test-the-api"></a>우체부를 사용 하 여 테스트 하는 토큰을 가져오는 API
 

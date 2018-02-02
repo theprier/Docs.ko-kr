@@ -90,7 +90,3 @@ Genres = new SelectList(await genreQuery.Distinct().ToListAsync());
 [!code-cshtml[Main](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Pages/Movies/IndexFormGenreNoRating.cshtml?highlight=16-18&range=1-26)]
 
 장르별, 동영상 제목별 및 둘 다로 검색하여 앱을 테스트합니다.
-
->[!div class="step-by-step"]
-[이전: 페이지 업데이트](xref:tutorials/razor-pages/da1)
-[다음: 새 필드 추가](xref:tutorials/razor-pages/new-field)
