@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/claims
-ms.openlocfilehash: 76b6566df4a427836eb5060f7d80e1039e479884
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 608aaa469c5ca20fab8250025804e28e7808122d
+ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="claims-based-authorization"></a>클레임 기반 권한 부여
 
 <a name="security-authorization-claims-based"></a>
 
-Id를 만들 때 신뢰할 수 있는 당사자가 발급 하는 하나 이상의 클레임 할당할 수 있습니다. 클레임은 어떤 주제를 나타내는 쌍은 이름 값, 하지 어떤 주체 작업을 수행할 수 있습니다. 예를 들어 로컬 구동 라이선스 기관에서 발급 하는 운전 면허증을 할 수 있습니다. 드라이버의 라이선스 생년월일 갖고 있습니다. 이 경우 클레임 이름이 표시 됩니다 `DateOfBirth`, 클레임 값과 수 생년월일, 예를 들어 `8th June 1970` 발급자 구동 라이선스 기관 될 수 있습니다. 가장 간단한 클레임 기반 권한 부여 클레임의 값을 확인 하 고 해당 값에 따라 리소스에 대 한 액세스를 허용 합니다. 에 권한 부여 프로세스 밤 클럽에 액세스 하려는 경우를 예로 들 수 있습니다.
+Id를 만들 때 신뢰할 수 있는 당사자가 발급 하는 하나 이상의 클레임 할당할 수 있습니다. 클레임은 어떤 주제를 나타내는 이름 값 쌍이, 하지 어떤 주체 작업을 수행할 수 있습니다. 예를 들어 로컬 구동 라이선스 기관에서 발급 하는 운전 면허증을 할 수 있습니다. 드라이버의 라이선스 생년월일 갖고 있습니다. 이 경우 클레임 이름이 표시 됩니다 `DateOfBirth`, 클레임 값과 수 생년월일, 예를 들어 `8th June 1970` 발급자 구동 라이선스 기관 될 수 있습니다. 가장 간단한 클레임 기반 권한 부여 클레임의 값을 확인 하 고 해당 값에 따라 리소스에 대 한 액세스를 허용 합니다. 에 권한 부여 프로세스 밤 클럽에 액세스 하려는 경우를 예로 들 수 있습니다.
 
 문 보안 책임자 출생 클레임 및 액세스 권한을 부여 하기 전에 (구동 라이선스 기관) 발급자 서로 신뢰 하는지 여부의 날짜 값을 평가 됩니다.
 

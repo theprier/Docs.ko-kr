@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-enable-qrcodes
-ms.openlocfilehash: ae2d8eb938c00a26cf7ffb5f2fff0b9e0d22148b
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: cf941314d54aa4a7bd1724805dc62c763ca71dfb
+ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="enabling-qr-code-generation-for-authenticator-apps-in-aspnet-core"></a>ASP.NET Core에서 인증자 앱에 대 한 QR 코드를 생성 하도록 설정
 
@@ -86,8 +86,6 @@ QR 코드에 대 한 올바른 형식의 URL은에서 사용할 수는 있습니
 
 * `AuthenticatorUri`모델의 속성입니다.
 * `data-url`속성에는 `qrCodeData` 요소입니다. 
-
-사용 하 여 `@Html.Raw` 뷰에서 모델 속성에 액세스 (url에서 앰퍼샌드 double 인코딩할 및 QR 코드의 레이블 매개 변수는 무시 합니다. 그렇지 않은 경우).
 
 ## <a name="totp-client-and-server-time-skew"></a>TOTP 클라이언트 및 서버 시간 차가
 
