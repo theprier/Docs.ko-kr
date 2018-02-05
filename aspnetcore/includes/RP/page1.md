@@ -106,9 +106,9 @@ Razor는 HTML에서 C# 또는 Razor 관련 태그로 전환될 수 있습니다.
 
 변경 내용을 저장하고 **RpMovie** 링크를 클릭하여 앱을 테스트합니다. GitHub에서 [_Layout.cshtml](https://github.com/aspnet/Docs/blob/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Pages/_Layout.cshtml) 파일을 참조하세요.
 
-### <a name="the-create-code-behind-page"></a>만들기 코드 숨김 페이지
+### <a name="the-create-page-model"></a>Create 페이지 모델
 
-*Pages/Movies/Create.cshtml.cs* 코드 숨김 파일을 살펴봅니다.
+*Pages/Movies/Create.cshtml.cs* 페이지 모델을 살펴봅니다. 
 
 [!code-csharp[Main](../../tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Create.cshtml.cs?name=snippetALL)]
 

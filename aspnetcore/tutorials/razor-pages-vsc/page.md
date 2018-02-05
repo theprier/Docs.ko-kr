@@ -8,9 +8,9 @@ ms.date: 1/27/2018
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
-uid: tutorials/razor-pages-mac/page
-ms.openlocfilehash: 0fc23148cd40764b618d340f349ca4882b292dfb
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+uid: tutorials/razor-pages-vsc/page
+ms.openlocfilehash: bc155e898974d46714629ac53f2ca6feec19ae96
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/30/2018
@@ -22,5 +22,5 @@ ms.lasthandoff: 01/30/2018
 다음 자습서에서는 SQLite 및 데이터베이스 시딩에 대해 설명합니다.
 
 >[!div class="step-by-step"]
-[이전: 모델 추가](xref:tutorials/razor-pages-mac/model)
-[다음: SQLite ](xref:tutorials/razor-pages-mac/sql)
+[이전: 모델 추가](xref:tutorials/razor-pages-vsc/model)
+[다음: SQLite](xref:tutorials/razor-pages-vsc/sql)

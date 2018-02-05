@@ -2,18 +2,18 @@
 title: "Nano Server의 ASP.NET Core"
 author: shirhatti
 description: "기존 ASP.NET Core 앱을 사용하고 IIS가 실행되는 Nano Server 인스턴스에 배포하는 방법을 알아봅니다."
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 11/04/2016
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: tutorials/nano-server
-ms.openlocfilehash: d9b55fb42088b447451326b7ee573d9bfa5f5941
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
+ms.openlocfilehash: 4fc5f6874f86130da9f66d13778516d984ff8b46
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="aspnet-core-with-iis-on-nano-server"></a>Nano Server의 ASP.NET Core 및 IIS
 
@@ -31,7 +31,7 @@ Nano Server를 사용해 볼 수 있는 세 가지 간편한 방법이 있습니
 
 2. Nano Server VHD를 다운로드합니다.
 
-3. Azure 갤러리에서 Nano Server 이미지를 사용하여 Azure에서 VM을 만듭니다. Azure 계정이 없는 경우 30일 평가판을 다운로드할 수 있습니다.
+3. Azure 갤러리에서 Nano Server 이미지를 사용하여 Azure에서 VM을 만듭니다. Azure 평가판을 사용할 수 있습니다.
 
 이 자습서에서는 두 번째 옵션인 Windows Server 2016에서 미리 빌드된 Nano Server VHD를 사용합니다.
 

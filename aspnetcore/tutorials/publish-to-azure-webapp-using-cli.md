@@ -1,22 +1,22 @@
 ---
-title: "명령줄 도구를 사용하여 Azure에 ASP.NET Core 앱 게시 | Microsoft Docs"
-description: "Git 명령줄 클라이언트를 사용하여 Azure App Service에 ASP.NET Core 앱을 게시하는 방법을 알아봅니다."
-services: multiple
+title: "명령줄 도구를 사용하여 Azure에 ASP.NET Core 앱 게시"
 author: camsoper
-ms.author: casoper
+description: "Git 명령줄 클라이언트를 사용하여 Azure App Service에 ASP.NET Core 앱을 게시하는 방법을 알아봅니다."
 manager: wpickett
+ms.author: casoper
+ms.custom: mvc
 ms.date: 11/03/2017
-ms.topic: get-started-article
+ms.devlang: dotnet
 ms.prod: asp.net-core
 ms.technology: aspnet
-ms.custom: mvc
-ms.devlang: dotnet
+ms.topic: get-started-article
+services: multiple
 uid: tutorials/publish-to-azure-webapp-using-cli
-ms.openlocfilehash: de05c1688d7de6126434395042103d803ee3064e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 0418a2695d3afb6dc2c55b8f694a97d62239835f
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="deploy-an-aspnet-core-application-to-azure-app-service-from-the-command-line"></a>명령줄에서 Azure App Service에 ASP.NET Core 응용 프로그램 배포
 

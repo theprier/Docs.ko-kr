@@ -2,18 +2,18 @@
 title: "ASP.NET Core 2.0의 새로운 기능"
 author: rick-anderson
 description: "ASP.NET Core 2.0의 새로운 기능"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 07/10/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: aspnet-core
+ms.technology: aspnet
+ms.topic: article
 uid: aspnetcore-2.0
-ms.openlocfilehash: ca02de7954002dcbc125898c9f570438f88db818
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 35d57abd07e83cd5b190572962fbf43aef03a534
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="whats-new-in-aspnet-core-20"></a>ASP.NET Core 2.0의 새로운 기능
 
@@ -82,7 +82,7 @@ Angular, Aurelia, Knockout.js, React.js 및 React.js에 대한 SPA(단일 페이
 
 ## <a name="kestrel-improvements"></a>Kestrel 기능 향상
 
-Kestrel 웹 서버에는 인터넷 연결 서버로서 더 적합하도록 도와주는 새로운 기능이 있습니다. `KestrelServerOptions` 클래스의 새 `Limits` 속성에 다양한 서버 제약 조건 구성 옵션이 추가되었습니다. 이제 다음에 대한 제한을 추가할 수 있습니다.
+Kestrel 웹 서버에는 인터넷 연결 서버로서 더 적합하도록 도와주는 새로운 기능이 있습니다. 다양한 서버 제약 조건 구성 옵션이 `KestrelServerOptions` 클래스의 새 `Limits` 속성에 추가됩니다. 다음에 대한 제한을 추가합니다.
 
 - 최대 클라이언트 연결
 - 최대 요청 본문 크기
@@ -120,7 +120,7 @@ ASP.NET Core 2.0에서 이 기능은 Visual Studio에서 디버그할 경우 및
 
 ## <a name="automatic-use-of-anti-forgery-tokens"></a>위조 방지 토큰 자동 사용
 
-ASP.NET Core는 언제나 기본적으로 콘텐츠를 HTML 인코딩하는 기능을 제공했지만, 새 버전에서는 교차 사이트 요청 위조(XSRF) 공격을 방지할 수 있도록 추가 조치를 취합니다. 이제 ASP.NET Core는 기본적으로 위조 방지 토큰을 내보내고 추가 구성없이 폼 POST 작업 및 페이지에서 토큰의 유효성을 검사합니다.
+ASP.NET Core는 언제나 기본적으로 콘텐츠를 HTML 인코딩하는 기능을 제공했지만, 새 버전에서는 XSRF(교차 사이트 요청 위조) 공격을 방지할 수 있도록 추가 조치를 취합니다. 이제 ASP.NET Core는 기본적으로 위조 방지 토큰을 내보내고 추가 구성없이 폼 POST 작업 및 페이지에서 토큰의 유효성을 검사합니다.
 
 자세한 내용은 [ASP.NET Core에서 교차 사이트 요청 위조(XSRF/CSRF) 공격 방지](xref:security/anti-request-forgery)를 참조하세요.
 
@@ -158,4 +158,4 @@ ASP.NET Core 1.x 응용 프로그램을 ASP.NET Core 2.0으로 마이그레이�
 
 전체 변경 내용 목록을 보려면 [ASP.NET Core 2.0 Release Notes](https://github.com/aspnet/Home/releases/tag/2.0.0)(ASP.NET Core 2.0 릴리스 정보)를 참조하세요.
 
-ASP.NET Core 개발 팀의 진행 상황 및 계획과 연결하려면 매주 [ASP.NET Community Standup](https://live.asp.net/)(ASP.NET 커뮤니티 스탠드업)을 시청하세요.
+ASP.NET Core 개발팀의 진행 상황 및 계획과 연결하려면 [ASP.NET 커뮤니티 스탠드업](https://live.asp.net/)을 시청하세요.
