@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/anti-request-forgery
-ms.openlocfilehash: e076e301004c04b5c516d775353a4b6e50a3f36e
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 079c36535b8c9e7229952a2f7bcd53174effa6af
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="preventing-cross-site-request-forgery-xsrfcsrf-attacks-in-aspnet-core"></a>ASP.NET Core에서 교차 사이트 요청 위조 (XSRF/CSRF) 공격 방지
 
@@ -345,7 +345,7 @@ CSRF 공격 도메인과 해당 도메인에 대 한 모든 요청 연관 된 �
 
 ### <a name="cookie-based-authentication"></a>쿠키 기반 인증
 
-사용자가 자신의 사용자 이름과 암호를 사용 하 여 인증가 식별 하 고 인증 되었는지 유효성을 검사 하는 데 사용할 수 있는 토큰을 발급 하는 합니다. 토큰이는 클라이언트는 모든 요청을 함께 제공 되는 쿠키 함에 따라 저장 됩니다. 생성 하 고이 쿠키를 유효성 검사 쿠키 인증 미들웨어에서 수행 됩니다. ASP.NET Core 쿠키를 제공 합니다. [미들웨어](../fundamentals/middleware.md) 주 서버를 다시 만들어 암호화 된 쿠키에 사용자 계정 또는 그 반대로 serialize 하 고 그런 다음 이후 요청에서 쿠키를 유효성을 검사에 할당 합니다는 `User` 속성 `HttpContext`.
+사용자가 자신의 사용자 이름과 암호를 사용 하 여 인증가 식별 하 고 인증 되었는지 유효성을 검사 하는 데 사용할 수 있는 토큰을 발급 하는 합니다. 토큰이는 클라이언트는 모든 요청을 함께 제공 되는 쿠키 함에 따라 저장 됩니다. 생성 하 고이 쿠키를 유효성 검사 쿠키 인증 미들웨어에서 수행 됩니다. ASP.NET Core 쿠키를 제공 합니다. [미들웨어](xref:fundamentals/middleware/index) 주 서버를 다시 만들어 암호화 된 쿠키에 사용자 계정 또는 그 반대로 serialize 하 고 그런 다음 이후 요청에서 쿠키를 유효성을 검사에 할당 합니다는 `User` 속성 `HttpContext`.
 
 쿠키를 사용 하면 인증 쿠키가 단순한 폼 인증 티켓에 대 한 컨테이너입니다. 티켓 각 요청과 함께 폼 인증 쿠키의 값으로 전달 되 고 인증된 된 사용자를 식별 하는 서버에서 폼 인증에서 사용 됩니다.
 

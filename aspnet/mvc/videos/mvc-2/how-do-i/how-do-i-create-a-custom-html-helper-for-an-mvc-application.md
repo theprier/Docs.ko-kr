@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/how-do-i-create-a-custom-html-helper-for-an-mvc-application
 msc.type: video
-ms.openlocfilehash: 96e58c706101c8b304636947b723fc50cae7f3bc
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 50a03799336636a8ba622b4ee3e8da99dcbc2708
+ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/03/2018
 ---
 <a name="how-do-i-create-a-custom-html-helper-for-an-mvc-application"></a>I: MVC 응용 프로그램에 대 한 사용자 지정 HTML 도우미를 만드는 방법
 ====================
 으로 [Chris Pels](https://twitter.com/chrispels)
 
-이 비디오에서는 Chris Pels에 MVC 응용 프로그램의 표준 집합에서 사용할 수 있는 사용자 지정 HtmlHelper를 만드는 방법을 보여 줍니다. 먼저 예제 MVC 응용 프로그램 데모 컨트롤러와 뷰 사용자 지정 HtmlHelper 테스트를 생성 합니다. 그런 다음 확장 메서드를 나타내는 사용자 지정 HtmlHelper 구현 하는 공개 함수 모듈을 만듭니다. 만들기 위한 사용자 지정 도우미는 &amp;lt; img&amp;gt; 페이지에서 태그를 삽입 하 고 id, url 및 이미지 태그에 대 한 대체 텍스트를 포함 하 여 여러 인바운드 매개 변수를 받습니다. 논리 함수는 전체 반환 하는 데에 추가 되 &amp;lt; img&amp;gt; 지정 된 정보로 태그 지정 합니다. 그런 다음 사용자 지정 HtmlHelper 이미지를 표시 하는 데모 페이지에서 사용 됩니다. 사용자 지정 HtmlHelper 정보 쉽게 다른를 만들기에 대 한 유연성을 제공 하는 생성자 재정의 여러 개 포함 하도록 확장 되는 마지막으로, &amp;lt; img&amp;gt; 태그입니다.
+이 비디오에서는 Chris Pels에 MVC 응용 프로그램의 표준 집합에서 사용할 수 있는 사용자 지정 HtmlHelper를 만드는 방법을 보여 줍니다. 먼저 예제 MVC 응용 프로그램 데모 컨트롤러와 뷰 사용자 지정 HtmlHelper 테스트를 생성 합니다. 그런 다음 확장 메서드를 나타내는 사용자 지정 HtmlHelper 구현 하는 공개 함수 모듈을 만듭니다. 사용자 지정 도우미를 만들기 위한는 `<img>` 페이지에 태그를 삽입 하 고 id, url 및 이미지 태그에 대 한 대체 텍스트를 포함 하 여 여러 인바운드 매개 변수를 받습니다. 논리 함수는 전체 반환 하는 데에 추가 되 `<img>` 지정 된 정보로 태그 지정 합니다. 그런 다음 사용자 지정 HtmlHelper 이미지를 표시 하는 데모 페이지에서 사용 됩니다. 사용자 지정 HtmlHelper 정보 쉽게 다른를 만들기에 대 한 유연성을 제공 하는 생성자 재정의 여러 개 포함 하도록 확장 되는 마지막으로, `<img>` 태그입니다.
 
 [&#9654; (18 분) 비디오를 시청 하세요](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-create-a-custom-html-helper-for-an-mvc-application)
 

@@ -9,11 +9,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/secure-data
-ms.openlocfilehash: 944886a7d55af8966dc51424d16bec5ff58dbc05
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 6333082a2b2b4f6d3f1ce2afc600b4203a0f5dca
+ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>권한 부여에 의해 보호 되는 사용자 데이터와 ASP.NET Core 응용 프로그램 만들기
 
@@ -65,7 +65,7 @@ ms.lasthandoff: 01/30/2018
 * [권한 부여](xref:security/authorization/index)
 * [Entity Framework Core](xref:data/ef-mvc/intro)
 
-이 자습서의 ASP.NET Core 1.1 버전은에 [이](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data) 폴더입니다. ASP.NET Core 예제에는 1.1는 [샘플](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/final2)합니다.
+참조 [이 PDF 파일](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/asp.net_repo_pdf_1-16-18.pdf) ASP.NET Core MVC 버전에 대 한 합니다. 이 자습서의 ASP.NET Core 1.1 버전은에 [이](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data) 폴더입니다. ASP.NET Core 예제에는 1.1는 [샘플](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/samples/final2)합니다.
 
 ## <a name="the-starter-and-completed-app"></a>시작 및 완료 된 앱
 
@@ -85,7 +85,7 @@ ms.lasthandoff: 01/30/2018
 
 ASP.NET을 사용 하 여 [Identity](xref:security/authentication/identity) 가 데이터를 하지만 다른 사용자가 데이터가 아닌 사용자 ID 사용자를 편집할 수 있습니다. 추가 `OwnerID` 및 `ContactStatus` 에 `Contact` 모델:
 
-[!code-csharp[Main](secure-data/samples/final2/Models/Contact.cs?name=snippet1&highlight=5-6,16-)]
+[!code-csharp[Main](secure-data/samples/final2/Models/Contact.cs?name=snippet1&highlight=5-6,16-999)]
 
 `OwnerID`사용자의 id는 `AspNetUser` 테이블에 [Identity](xref:security/authentication/identity) 데이터베이스입니다. `Status` 필드 연락처 일반 사용자가 볼 수 있는지 여부를 결정 합니다.
 
@@ -104,7 +104,7 @@ dotnet ef database update
 
 에 `ConfigureServices` 의 메서드는 *Startup.cs* 파일에서 추가 된 [RequireHttpsAttribute](/aspnet/core/api/microsoft.aspnetcore.mvc.requirehttpsattribute) 권한 부여 필터:
 
-[!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=snippet_SSL&highlight=19-)]
+[!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=snippet_SSL&highlight=19-999)]
 
 Visual Studio를 사용 하는 경우에 SSL을 사용 하도록 설정 합니다.
 
@@ -116,7 +116,7 @@ Visual Studio를 사용 하는 경우에 SSL을 사용 하도록 설정 합니�
 
 사용자를 인증 하도록 요구 하는 기본 인증 정책을 설정 합니다. 인증을 통해 Razor 페이지, 컨트롤러 또는 동작 메서드 수준에서 옵트아웃을 선택할 수 있습니다는 `[AllowAnonymous]` 특성입니다. 새로 추가 된 Razor 페이지와 컨트롤러 보호 사용자를 인증 하도록 요구 하는 기본 인증 정책을 설정 합니다. 기본적으로 필요한 인증은 새로운 컨트롤러와 Razor 페이지를 포함 하도록 이용 보다 더 안전한 것은 `[Authorize]` 특성입니다. 다음을 추가 `ConfigureServices` 의 메서드는 *Startup.cs* 파일:
 
-[!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=snippet_defaultPolicy&highlight=31-)]
+[!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=snippet_defaultPolicy&highlight=31-999)]
 
 추가 [AllowAnonymous](/dotnet/api/microsoft.aspnetcore.authorization.allowanonymousattribute) 인덱스 및 연락처 정보, 페이지 익명 사용자가 등록 하기 전에 사이트에 대 한 정보를 가져올 수 있도록 합니다. 
 
@@ -177,7 +177,7 @@ dotnet user-secrets set SeedUserPW <PW>
 
 Entity Framework Core를 사용 하 여 서비스를 위해 등록 되어야 [종속성 주입](xref:fundamentals/dependency-injection) 를 사용 하 여 [AddScoped](/aspnet/core/api/microsoft.extensions.dependencyinjection.servicecollectionserviceextensions)합니다. `ContactIsOwnerAuthorizationHandler` ASP.NET Core를 사용 하 여 [Identity](xref:security/authentication/identity), Entity Framework Core 기반입니다. 가 사용할 수 있도록 서비스 컬렉션에 처리기를 등록 된 `ContactsController` 통해 [종속성 주입](xref:fundamentals/dependency-injection)합니다. 다음 코드의 끝에 추가 `ConfigureServices`:
 
-[!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=ConfigureServices&highlight=41-)]
+[!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=ConfigureServices&highlight=41-999)]
 
 `ContactAdministratorsAuthorizationHandler`및 `ContactManagerAuthorizationHandler` 단일 항목으로 추가 됩니다. EF를 사용 하지 않는 하 고 필요한 모든 정보는 되므로 singleton 하기가 `Context` 의 매개 변수는 `HandleRequirementAsync` 메서드.
 
@@ -246,7 +246,7 @@ Delete 페이지 모델 사용자에 게 연락처에 delete 권한을 확인 �
 
 업데이트는 **편집** 및 **삭제** 에서는 정적으로 연결 *Pages/Contacts/Index.cshtml* 적절 한 사용 권한 가진 사용자만 렌더링 될 있도록:
 
-[!code-cshtml[Main](secure-data/samples/final2/Pages/Contacts/Index.cshtml?highlight=34-36,64-)]
+[!code-cshtml[Main](secure-data/samples/final2/Pages/Contacts/Index.cshtml?highlight=34-36,64-999)]
 
 > [!WARNING]
 > 데이터를 변경할 수 있는 권한이 없는 사용자 로부터 링크 숨기기 응용 프로그램 보안을 설정 하지 않습니다. 링크 숨기기 하면 유효한 링크를 표시 하 여 응용 프로그램 보다 사용자 친화적인 있습니다. 사용자가 편집을 호출 하 고 자신이 소유 하지 않는 데이터에 대 한 작업을 삭제 하도록 생성 된 Url 해킹 수 있습니다. Razor 페이지 또는 컨트롤러는 데이터 보호를 위해 액세스 검사를 적용 해야 합니다.
@@ -255,7 +255,7 @@ Delete 페이지 모델 사용자에 게 연락처에 delete 권한을 확인 �
 
 관리자 승인 또는 연락처를 거부할 수 있도록 자세히 보기를 업데이트 합니다.
 
-[!code-cshtml[Main](secure-data/samples/final2/Pages/Contacts/Details.cshtml?range=48-)]
+[!code-cshtml[Main](secure-data/samples/final2/Pages/Contacts/Details.cshtml?range=48-999)]
 
 세부 정보 페이지 모델을 업데이트 합니다.
 

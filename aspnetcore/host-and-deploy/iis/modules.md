@@ -10,11 +10,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/modules
-ms.openlocfilehash: 1b5391c113ca0b980eb3c47bcce0717d4a4739ed
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: b7c81f2851a932cd12553af4a2655eb9f1f7bc64
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="using-iis-modules-with-aspnet-core"></a>IIS 모듈을 사용 하 여 ASP.NET 코어
 
@@ -44,8 +44,8 @@ Module | .NET Core Active | ASP.NET Core 옵션
 **HTTP 리디렉션**<br>`HttpRedirectionModule` | 예 | [URL 재작성 미들웨어](xref:fundamentals/url-rewriting)
 **IIS 클라이언트 인증서 매핑 인증**<br>`IISCertificateMappingAuthenticationModule` | 예 | 
 **IP 및 도메인 제한**<br>`IpRestrictionModule` | 예 | 
-**ISAPI 필터**<br>`IsapiFilterModule` | 예 | [미들웨어](xref:fundamentals/middleware)
-**ISAPI**<br>`IsapiModule` | 예 | [미들웨어](xref:fundamentals/middleware)
+**ISAPI 필터**<br>`IsapiFilterModule` | 예 | [미들웨어](xref:fundamentals/middleware/index)
+**ISAPI**<br>`IsapiModule` | 예 | [미들웨어](xref:fundamentals/middleware/index)
 **프로토콜 지원**<br>`ProtocolSupportModule` | 예 | 
 **요청 필터링**<br>`RequestFilteringModule` | 예 | [URL 다시 쓰기 미들웨어`IRule`](xref:fundamentals/url-rewriting#irule-based-rule)
 **요청 모니터**<br>`RequestMonitorModule` | 예 | 

@@ -11,21 +11,21 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/resourcebased
-ms.openlocfilehash: 708f306da740870b106cbeeb96879480f8745439
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 723e371e0d0b4877f96898c68cd59b433fa97dc1
+ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="resource-based-authorization"></a>리소스 기반 권한 부여
-
-작성자: [Scott Addie](https://twitter.com/Scott_Addie)
 
 권한 부여 전략 액세스 되는 리소스에 따라 달라 집니다. Author 속성에 문서를 가정 합니다. 작성자만 문서를 업데이트할 수 있습니다. 따라서 문서 권한 부여 평가 하기 전에 데이터 저장소에서 검색 해야 합니다.
 
 특성 평가 데이터 바인딩 전에 페이지 처리기 또는 문서를 로드 하는 작업의 실행 하기 전에 발생 합니다. 이러한 이유로, 사용한 선언적 권한 부여는 `[Authorize]` 특성으로 충분 하지 않습니다. 대신, 사용자 지정 권한 부여 메서드를 호출할 수 있습니다&mdash;스타일 명령적 권한 부여 라고 합니다.
 
 사용 하 여는 [앱 샘플](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/resourcebased/samples) ([다운로드 하는 방법](xref:tutorials/index#how-to-download-a-sample))이이 항목에서 설명 하는 기능을 탐색할 수 있습니다.
+
+[권한 부여에 의해 보호 되는 사용자 데이터와 ASP.NET Core 응용 프로그램 만들기](xref:security/authorization/secure-data) 리소스 기반 권한 부여를 사용 하는 샘플 앱을 포함 합니다.
 
 ## <a name="use-imperative-authorization"></a>필수 권한 부여를 사용 하 여
 
