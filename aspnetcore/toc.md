@@ -36,13 +36,13 @@
 #### [페이지 업데이트](xref:tutorials/razor-pages-mac/da1)
 #### [검색 추가](xref:tutorials/razor-pages-mac/search)
 
-
 ### [VS Code를 사용하는 Razor 페이지 웹앱](xref:tutorials/razor-pages-vsc/index)
 #### [Razor 페이지 시작](xref:tutorials/razor-pages-vsc/razor-pages-start)
 #### [모델 추가](xref:tutorials/razor-pages-vsc/model)
 #### [스캐폴드된 Razor 페이지](xref:tutorials/razor-pages-vsc/page)
 #### [SQLite 사용](xref:tutorials/razor-pages-vsc/sql)
 #### [페이지 업데이트](xref:tutorials/razor-pages-vsc/da1)
+#### [검색 추가](xref:tutorials/razor-pages-vsc/search)
 
 ### [Mac용 Visual Studio를 사용하는 MVC 웹앱](xref:tutorials/first-mvc-app-mac/index)
 #### [시작](xref:tutorials/first-mvc-app-mac/start-mvc)
@@ -102,7 +102,9 @@
 # [기본 사항](fundamentals/index.md)
 ## [응용 프로그램 시작](fundamentals/startup.md)
 ## [종속성 주입(서비스)](fundamentals/dependency-injection.md)
-## [미들웨어](fundamentals/middleware.md)
+## [미들웨어](xref:fundamentals/middleware/index)
+### [미들웨어](xref:fundamentals/middleware/index)
+### [팩터리 기반 미들웨어](xref:fundamentals/middleware/extensibility)
 ## [정적 파일 사용](fundamentals/static-files.md)
 ## [라우팅](fundamentals/routing.md)
 ## [URL 재작성 미들웨어](fundamentals/url-rewriting.md)
