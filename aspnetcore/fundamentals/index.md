@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: fundamentals/index
-ms.openlocfilehash: 946ccc80915c5de60976a98cbbb253cb8dfacaca
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 7f0e30b3ac7f9cc3a32bd96f45d83ba13505a475
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="aspnet-core-fundamentals"></a>ASP.NET Core 기본 사항
 
@@ -71,7 +71,7 @@ public class Startup
 }
 ```
 
-`ConfigureServices`는 앱에서 사용되는 [서비스](#dependency-injection-services)를 정의합니다(예: ASP.NET Core MVC, Entity Framework Core, ID). `Configure`는 요청 파이프라인의 [미들웨어](xref:fundamentals/middleware)를 정의합니다.
+`ConfigureServices`는 앱에서 사용되는 [서비스](#dependency-injection-services)를 정의합니다(예: ASP.NET Core MVC, Entity Framework Core, ID). `Configure`는 요청 파이프라인의 [미들웨어](xref:fundamentals/middleware/index)를 정의합니다.
 
 자세한 내용은 [응용 프로그램 시작](xref:fundamentals/startup)을 참조하세요.
 
@@ -91,9 +91,9 @@ public class Startup
 
 ## <a name="middleware"></a>미들웨어
 
-ASP.NET Core에서 [미들웨어](xref:fundamentals/middleware)를 사용하여 요청 파이프라인을 작성합니다. ASP.NET Core 미들웨어는 `HttpContext`에서 비동기 논리를 수행하고 나서 시퀀스에서 다음 미들웨어를 호출하거나 요청을 직접 종료합니다. "XYZ"라는 미들웨어 구성 요소는 `Configure` 메서드에서 `UseXYZ` 확장 메서드를 호출하여 추가됩니다.
+ASP.NET Core에서 [미들웨어](xref:fundamentals/middleware/index)를 사용하여 요청 파이프라인을 작성합니다. ASP.NET Core 미들웨어는 `HttpContext`에서 비동기 논리를 수행하고 나서 시퀀스에서 다음 미들웨어를 호출하거나 요청을 직접 종료합니다. "XYZ"라는 미들웨어 구성 요소는 `Configure` 메서드에서 `UseXYZ` 확장 메서드를 호출하여 추가됩니다.
 
-ASP.NET Core는 다양한 기본 제공 미들웨어 집합이 함께 제공됩니다.
+ASP.NET Core는 다양한 기본 제공 미들웨어 집합을 포함합니다.
 
 * [정적 파일](xref:fundamentals/static-files)
 * [라우팅](xref:fundamentals/routing)
@@ -103,7 +103,7 @@ ASP.NET Core는 다양한 기본 제공 미들웨어 집합이 함께 제공됩�
 
 ASP.NET Core 앱에서 [OWIN](http://owin.org) 기반 미들웨어를 사용할 수 있고 고유한 사용자 지정 미들웨어를 작성할 수 있습니다.
 
-자세한 내용은 [미들웨어](xref:fundamentals/middleware) 및 [OWIN(Open Web Interface for .NET)](xref:fundamentals/owin)을 참조하세요.
+자세한 내용은 [미들웨어](xref:fundamentals/middleware/index) 및 [OWIN(Open Web Interface for .NET)](xref:fundamentals/owin)을 참조하세요.
 
 ## <a name="environments"></a>환경
 
