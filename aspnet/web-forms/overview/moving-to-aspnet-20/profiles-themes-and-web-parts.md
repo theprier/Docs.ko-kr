@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/profiles-themes-and-web-parts
 msc.type: authoredcontent
-ms.openlocfilehash: c9fe97dbd5fe10cbde25b9daf5ddd35b2d7eaab5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2c6ba11799a5a9be3d8c0037fad5d79d8177c0e8
+ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/05/2018
 ---
 <a name="profiles-themes-and-web-parts"></a>프로필, 테마 및 웹 파트
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 구성의 주요 변경 사항 및 ASP.NET 2.0의 계측 됩니다. 새 ASP.NET 구성 API 구성 변경 내용을 프로그래밍 방식으로 만들 수 있습니다. 또한 다양 한 새 구성 설정을 존재 새 구성 및 계측을 허용 합니다.
 
@@ -118,7 +118,7 @@ ASP.NET 프로필 공급자 모델을 사용합니다. 앱에서 SQL Server Expr
 | GetAllProfiles 메서드 | 입력으로 사용 된 **ProfileAuthenticationOption** 값, 페이지 인덱스를 지정 하는 정수, 페이지 크기와 프로필의 총 수로 설정 하는 정수에 대 한 참조를 지정 하는 정수입니다. 포함 된 ProfileInfoCollection 반환 **ProfileInfo** 일치 하는 응용 프로그램 이름이 데이터 원본에 있는 모든 프로필에 대 한 개체는 **ApplicationName** 속성 값입니다. **ProfileAuthenticationOption** 매개 변수 익명 프로필 프로필에만 인증 되었는지 여부를 지정 합니다. 모든 프로필을 반환할 또는 합니다. 반환 된 결과 **GetAllProfiles** 메서드 페이지 인덱스 및 페이지 크기 값에 의해 제한 됩니다. 최대 수를 지정 하는 페이지 크기 값 **ProfileInfo** 에서 반환 하는 개체는 **ProfileInfoCollection**합니다. 페이지 인덱스 값은 1에서 첫 번째 페이지를 식별 하는 위치를 반환 하려면 결과 페이지를 지정 합니다. 총 레코드에 대 한 매개 변수는 out 매개 변수입니다 (사용할 수 있습니다 **ByRef** Visual basic에서) 프로필의 총 수로 설정 되어 있는 합니다. 예를 들어 13 응용 프로그램 프로필을 포함 하는 데이터 저장소 및 페이지 인덱스 값은 5, 페이지 크기가 2는 **ProfileInfoCollection** 반환에 6 번째부터 10 번째까지의 프로필이 포함 합니다. 총 레코드 값의 메서드가 반환 될 때 13으로 설정 됩니다. |
 | GetAllInactiveProfiles 메서드 | 입력으로 사용 된 **ProfileAuthenticationOption** 값은 **DateTime** 개체, 페이지 인덱스를 지정 하는 정수, 페이지 크기 및 설정 되는 정수에 대 한 참조를 지정 하는 정수 프로필의 총 개수입니다. 반환 된 **ProfileInfoCollection** 포함 된 **ProfileInfo** 보다 작거나 지정 된 마지막 작업 날짜는 데이터 원본에 있는 모든 프로필에 대 한 개체 **날짜/시간**  일치 하는 응용 프로그램 이름이 고는 **ApplicationName** 속성 값입니다. **ProfileAuthenticationOption** 매개 변수 익명 프로필 프로필에만 인증 되었는지 여부를 지정 합니다. 모든 프로필을 반환할 또는 합니다. 반환 된 결과 **GetAllInactiveProfiles** 메서드 페이지 인덱스 및 페이지 크기 값에 의해 제한 됩니다. 최대 수를 지정 하는 페이지 크기 값 **ProfileInfo** 에서 반환 하는 개체는 **ProfileInfoCollection**합니다. 페이지 인덱스 값은 1에서 첫 번째 페이지를 식별 하는 위치를 반환 하려면 결과 페이지를 지정 합니다. 총 레코드에 대 한 매개 변수는 out 매개 변수입니다 (사용할 수 있습니다 **ByRef** Visual basic에서) 프로필의 총 수로 설정 되어 있는 합니다. 예를 들어 13 응용 프로그램 프로필을 포함 하는 데이터 저장소 및 페이지 인덱스 값은 5, 페이지 크기가 2는 **ProfileInfoCollection** 반환에 6 번째부터 10 번째까지의 프로필이 포함 합니다. 총 레코드 값의 메서드가 반환 될 때 13으로 설정 됩니다. |
 | FindProfilesByUserName 메서드 | 입력으로 사용 된 **ProfileAuthenticationOption** 사용자 이름, 페이지 인덱스를 지정 하는 정수, 페이지 크기와의 총 수로 설정 하는 정수에 대 한 참조를 지정 하는 정수를 포함 하는 문자열 값 프로필입니다. 반환 된 **ProfileInfoCollection** 포함 된 **ProfileInfo** 지정된 된 사용자 이름과 일치 하는 사용자 이름이 고 일치 하는 응용 프로그램 이름이 모든 프로필에는 데이터 원본에 대 한 개체는 **ApplicationName** 속성 값입니다. **ProfileAuthenticationOption** 매개 변수 익명 프로필 프로필에만 인증 되었는지 여부를 지정 합니다. 모든 프로필을 반환할 또는 합니다. 데이터 원본에 와일드 카드 문자 등의 추가 검색 기능을 지 원하는 경우 사용자 이름에 대 한 보다 광범위 한 검색 기능을 제공할 수 있습니다. 반환 된 결과 **FindProfilesByUserName** 메서드 페이지 인덱스 및 페이지 크기 값에 의해 제한 됩니다. 최대 수를 지정 하는 페이지 크기 값 **ProfileInfo** 에서 반환 하는 개체는 **ProfileInfoCollection**합니다. 페이지 인덱스 값은 1에서 첫 번째 페이지를 식별 하는 위치를 반환 하려면 결과 페이지를 지정 합니다. 총 레코드에 대 한 매개 변수는 out 매개 변수입니다 (사용할 수 있습니다 **ByRef** Visual basic에서) 프로필의 총 수로 설정 되어 있는 합니다. 예를 들어 13 응용 프로그램 프로필을 포함 하는 데이터 저장소 및 페이지 인덱스 값은 5, 페이지 크기가 2는 **ProfileInfoCollection** 반환에 6 번째부터 10 번째까지의 프로필이 포함 합니다. 총 레코드 값의 메서드가 반환 될 때 13으로 설정 됩니다. |
-| FindInactiveProfilesByUserName 메서드 | 입력으로 사용 된 **ProfileAuthenticationOption** 값, 사용자 이름을 포함 하는 문자열은 **DateTime** 개체, 페이지 인덱스를 지정 하는 정수, 페이지 크기를 지정 하는 정수 및 프로필의 총 수로 설정 하는 정수에 대 한 참조입니다. 반환 된 **ProfileInfoCollection** 포함 된 **ProfileInfo** 여기서 마지막 작업 날짜는 지정한 사용자 이름이 일치 하는 사용자 이름이 데이터 원본에 있는 모든 프로필에 대 한 개체 보다 작거나 또는 지정 된 같음 **DateTime**, 일치 하는 응용 프로그램 이름이 고는 **ApplicationName** 속성 값입니다. **ProfileAuthenticationOption** 매개 변수 익명 프로필 프로필에만 인증 되었는지 여부를 지정 합니다. 모든 프로필을 반환할 또는 합니다. 데이터 원본에 와일드 카드 문자 등의 추가 검색 기능을 지 원하는 경우 사용자 이름에 대 한 보다 광범위 한 검색 기능을 제공할 수 있습니다. 반환 된 결과 **FindInactiveProfilesByUserName** 메서드 페이지 인덱스 및 페이지 크기 값에 의해 제한 됩니다. 최대 수를 지정 하는 페이지 크기 값 **ProfileInfo** 에서 반환 하는 개체는 **ProfileInfoCollection**합니다. 페이지 인덱스 값은 1에서 첫 번째 페이지를 식별 하는 위치를 반환 하려면 결과 페이지를 지정 합니다. 총 레코드에 대 한 매개 변수는 out 매개 변수입니다 (사용할 수 있습니다 **ByRef** Visual basic에서) 프로필의 총 수로 설정 되어 있는 합니다. 예를 들어 13 응용 프로그램 프로필을 포함 하는 데이터 저장소 및 페이지 인덱스 값은 5, 페이지 크기가 2는 **ProfileInfoCollection** 반환에 6 번째부터 10 번째까지의 프로필이 포함 합니다. 총 레코드 값의 메서드가 반환 될 때 13으로 설정 됩니다. |
+| FindInactiveProfilesByUserName method | 입력으로 사용 된 **ProfileAuthenticationOption** 값, 사용자 이름을 포함 하는 문자열은 **DateTime** 개체, 페이지 인덱스를 지정 하는 정수, 페이지 크기를 지정 하는 정수 및 프로필의 총 수로 설정 하는 정수에 대 한 참조입니다. 반환 된 **ProfileInfoCollection** 포함 된 **ProfileInfo** 여기서 마지막 작업 날짜는 지정한 사용자 이름이 일치 하는 사용자 이름이 데이터 원본에 있는 모든 프로필에 대 한 개체 보다 작거나 또는 지정 된 같음 **DateTime**, 일치 하는 응용 프로그램 이름이 고는 **ApplicationName** 속성 값입니다. **ProfileAuthenticationOption** 매개 변수 익명 프로필 프로필에만 인증 되었는지 여부를 지정 합니다. 모든 프로필을 반환할 또는 합니다. 데이터 원본에 와일드 카드 문자 등의 추가 검색 기능을 지 원하는 경우 사용자 이름에 대 한 보다 광범위 한 검색 기능을 제공할 수 있습니다. 반환 된 결과 **FindInactiveProfilesByUserName** 메서드 페이지 인덱스 및 페이지 크기 값에 의해 제한 됩니다. 최대 수를 지정 하는 페이지 크기 값 **ProfileInfo** 에서 반환 하는 개체는 **ProfileInfoCollection**합니다. 페이지 인덱스 값은 1에서 첫 번째 페이지를 식별 하는 위치를 반환 하려면 결과 페이지를 지정 합니다. 총 레코드에 대 한 매개 변수는 out 매개 변수입니다 (사용할 수 있습니다 **ByRef** Visual basic에서) 프로필의 총 수로 설정 되어 있는 합니다. 예를 들어 13 응용 프로그램 프로필을 포함 하는 데이터 저장소 및 페이지 인덱스 값은 5, 페이지 크기가 2는 **ProfileInfoCollection** 반환에 6 번째부터 10 번째까지의 프로필이 포함 합니다. 총 레코드 값의 메서드가 반환 될 때 13으로 설정 됩니다. |
 | GetNumberOfInActiveProfiles 메서드 | 입력으로 사용 된 **ProfileAuthenticationOption** 값 및 **DateTime** 개체 하 고 마지막 작업 날짜가 지정 된 보다작거나같은데이터원본의모든프로필의수를반환합니다. **날짜/시간** 일치 하는 응용 프로그램 이름이 고는 **ApplicationName** 속성 값입니다. **ProfileAuthenticationOption** 매개 변수 익명 프로필 프로필에만 인증 되었는지 여부를 지정 합니다. 모든 프로필을 계산 또는 합니다. |
 
 ### <a name="applicationname"></a>ApplicationName
@@ -139,14 +139,14 @@ ASP.NET 프로필 공급자 모델을 사용합니다. 앱에서 SQL Server Expr
 
 `C:\WINDOWS\Microsoft.NET\Framework\v2.x.xxxxx\ASP.NETClientFiles\Themes\<Theme_Name>`
 
-특정 응용 프로그램에만 적용 되는 테마는 응용 프로그램에 저장 된\_테마\&lt; 테마\_이름&gt; 디렉터리에서 웹 사이트의 루트입니다.
+특정 응용 프로그램에만 적용 되는 테마에 저장 되는 `App\_Themes\<Theme\_Name>` 디렉터리에서 웹 사이트의 루트입니다.
 
 > [!NOTE]
 > 스킨 파일 모양에 영향을 주는 서버 컨트롤 속성 수정만 해야 합니다.
 
 전역 테마는 응용 프로그램 또는 웹 서버에서 실행 중인 웹 사이트에 적용할 수 있는 테마입니다. 이러한 테마는 기본적으로 v2.x.xxxxx 디렉터리 내에 있는 ASP.NETClientfiles\Themes 디렉터리에 저장 됩니다. Aspnet에 테마 파일을 이동할 수 또는\_클라이언트/시스템\_웹 / [버전] /Themes/ [테마\_이름]에서 웹 사이트의 루트 폴더입니다.
 
-응용 프로그램별 테마 파일 위치는 응용 프로그램에만 적용할 수 있습니다. 앱에서 이러한 파일은 저장\_테마 /&lt;테마\_이름&gt; 디렉터리에서 웹 사이트의 루트입니다.
+응용 프로그램별 테마 파일 위치는 응용 프로그램에만 적용할 수 있습니다. 이러한 파일에 저장 되는 `App\_Themes/<theme\_name>` 디렉터리에서 웹 사이트의 루트입니다.
 
 ## <a name="the-components-of-a-theme"></a>테마의 구성 요소
 
@@ -258,7 +258,7 @@ ASP.NET 프로필 공급자 모델을 사용합니다. 앱에서 SQL Server Expr
 
 테마의 스킨 파일에서 정의 된 속성을 무시할 수 있게 되기를 원하는 경우 속성에에서 지정 된 디자이너를 사용할 수 있습니다는 **StyleSheetTheme** 테마 속성 대신 합니다. StyleSheetTheme 속성은 테마 속성 같이 모든 명시적 속성 설정을 재정의 하지 않으므로 제외 하 고 테마 속성과 동일 합니다.
 
-이 작업에서을 보려면을 연습 1에서에서 프로젝트의 web.config 파일을 열고 변경는 &lt;페이지&gt; 요소에서 다음:
+이 작업에서을 보려면을 연습 1에서에서 프로젝트의 web.config 파일을 열고 변경는 `<pages>` 요소에서 다음:
 
 [!code-xml[Main](profiles-themes-and-web-parts/samples/sample19.xml)]
 
@@ -338,11 +338,11 @@ UI 구조적 구성 요소는 개인 설정에 의존 하 고는 핵심 구조 �
 1. 기본 페이지를 닫고 WebPartsDemo.aspx 이라는 사이트를 새 페이지를 추가 합니다.
 2. 로 전환 **디자인** 보기.
 3. **보기** 메뉴에서 다음 사항을 확인는 **비시각적 컨트롤** 및 **세부 정보** 레이아웃 태그 및 UI를 갖지 않는 컨트롤을 볼 수 있도록 옵션을 선택 합니다.
-4. 앞에 삽입 포인터를 배치할는  **&lt;div&gt;**  다음 enter 키를 눌러 새 줄을 추가 하 고 디자인 화면에 태그를 삽입 합니다. 줄 바꿈 문자 앞에 삽입 포인터를 놓고 클릭는 **블록 형식을** 드롭 다운 목록 메뉴에서 제어 하 고 선택 된 **제목 1** 옵션입니다. 머리글에서 텍스트를 추가 **웹 파트 데모 페이지**합니다.
-5. **WebParts** 끌어서 도구 상자 탭은 **WebPartManager** 컨트롤을 줄 바꿈 문자 바로 뒤와 앞에 배치 페이지로  **&lt;div&gt;**  태그입니다.   
+4. 앞에 삽입 포인터를 배치할는 `<div>` 다음 enter 키를 눌러 새 줄을 추가 하 고 디자인 화면에 태그를 삽입 합니다. 줄 바꿈 문자 앞에 삽입 포인터를 놓고 클릭는 **블록 형식을** 드롭 다운 목록 메뉴에서 제어 하 고 선택 된 **제목 1** 옵션입니다. 머리글에서 텍스트를 추가 **웹 파트 데모 페이지**합니다.
+5. **WebParts** 끌어서 도구 상자 탭은 **WebPartManager** 컨트롤을 줄 바꿈 문자 바로 뒤와 앞에 배치 페이지로 `<div>`태그입니다.   
   
  **WebPartManager** 디자이너 화면에는 회색 상자로 표시 되도록 컨트롤에 출력을 렌더링 하지 않습니다.
-6. 내에서 커서는  **&lt;div&gt;**  태그입니다.
+6. 내에서 커서는 `<div>` 태그입니다.
 7. 에 **레이아웃** 메뉴를 클릭 **표 삽입**, 3 개의 열과 한 행이 있는 새 테이블을 만듭니다. 클릭는 **셀 속성** 단추를 선택 **top** 에서 **세로 맞춤** 드롭 다운 목록에서 클릭 **확인**, 클릭**확인** 다시 테이블을 만들 수 있습니다.
 8. 왼쪽된 테이블 열에는 WebPartZone 컨트롤을 끌어 놓습니다. 마우스 오른쪽 단추로 클릭는 **WebPartZone** 컨트롤을 선택 **속성**, 다음 속성을 설정 합니다.   
   
@@ -358,13 +358,13 @@ UI 구조적 구성 요소는 개인 설정에 의존 하 고는 핵심 구조 �
 
 이제 페이지에는 개별적으로 제어할 수 있는 두 개의 영역이 포함 되어 있습니다. 그러나 두 영역에 콘텐츠를 없으므로 다음 단계를 콘텐츠를 만듭니다. 이 연습에서는 정적 콘텐츠만 표시 하는 웹 파트 컨트롤을 사용 하 여 작업할 합니다.
 
-웹 파트 영역의 레이아웃으로 지정 된  **&lt;zonetemplate&gt;**  요소입니다. 영역 템플릿 내의 모든 ASP.NET 컨트롤을 사용자 지정 웹 파트 컨트롤, 사용자 정의 컨트롤 또는 기존 서버 컨트롤을 추가할 수 있습니다. Label 컨트롤을 사용 하는 여기에 단순히 추가 하는 정적 텍스트에 유의 하십시오. 에 일반 서버 컨트롤을 배치 하는 경우는 **WebPartZone** 영역 ASP.NET 컨트롤로 처리 웹 파트 컨트롤을 컨트롤에 웹 파트 기능을 사용할 수 있는 런타임 시.
+웹 파트 영역의 레이아웃으로 지정 된 &lt;zonetemplate&gt; 요소입니다. 영역 템플릿 내의 모든 ASP.NET 컨트롤을 사용자 지정 웹 파트 컨트롤, 사용자 정의 컨트롤 또는 기존 서버 컨트롤을 추가할 수 있습니다. Label 컨트롤을 사용 하는 여기에 단순히 추가 하는 정적 텍스트에 유의 하십시오. 에 일반 서버 컨트롤을 배치 하는 경우는 **WebPartZone** 영역 ASP.NET 컨트롤로 처리 웹 파트 컨트롤을 컨트롤에 웹 파트 기능을 사용할 수 있는 런타임 시.
 
 **주요 영역에 대 한 콘텐츠를 만들려면**
 
 1. **디자인** 보기, 끌어는 **레이블** 에서 제어는 **표준** 영역의 콘텐츠 영역으로 도구 상자 탭 인 **ID** 속성 MainZone로 설정 됩니다.
-2. 로 전환 **소스** 보기. 다음에 유의  **&lt;zonetemplate&gt;**  요소가 줄 바꿈에 추가 **레이블** 는 MainZone에서 제어 합니다.
-3. 명명 된 특성을 추가 **제목** 에  **&lt;p: label&gt;**  요소, 콘텐츠를 해당 값을 설정 합니다. 텍스트를 제거 =에서 "Label" 특성은  **&lt;p: label&gt;**  요소입니다. 여는 태그와 닫는 태그 사이  **&lt;p: label&gt;**  요소를 일부 텍스트와 같은 추가 **내 홈 페이지 시작** 쌍 안의  **&lt;h2 &gt;**  요소 태그입니다. 코드는 다음과 같이 표시 됩니다. 
+2. 로 전환 **소스** 보기. 다음에 유의 &lt;zonetemplate&gt; 요소가 줄 바꿈에 추가 **레이블** 는 MainZone에서 제어 합니다.
+3. 명명 된 특성을 추가 **제목** 에 &lt;p: label&gt; 요소, 콘텐츠를 해당 값을 설정 합니다. 텍스트를 제거 =에서 "Label" 특성은 &lt;p: label&gt; 요소입니다. 여는 태그와 닫는 태그 사이 &lt;p: label&gt; 요소를 일부 텍스트와 같은 추가 **홈 페이지 내에 시작** 쌍 안의 &lt;h2&gt; 요소 태그입니다. 코드는 다음과 같이 표시 됩니다. 
 
     [!code-aspx[Main](profiles-themes-and-web-parts/samples/sample21.aspx)]
 4. 파일을 저장합니다.
@@ -396,7 +396,7 @@ UI 구조적 구성 요소는 개인 설정에 의존 하 고는 핵심 구조 �
 3. 사용자 컨트롤 만든 페이지, SearchUserControl.ascx를 끌어 **솔루션 탐색기** 영역으로 해당 **ID** 속성 SidebarZone로 설정 되 고 있는 삭제 합니다.
 4. WebPartsDemo.aspx 페이지를 저장 합니다.
 5. 로 전환 **소스** 보기.
-6. 내에서  **&lt;asp: webpartzone&gt;**  추가 사용자 정의 컨트롤에 대 한 참조 바로 위에 SidebarZone에 대 한 요소는  **&lt;p: label&gt;**  다음 예제에서와 같이 포함 된 링크가 있는 요소입니다. 또한 추가 **제목** 특성을 사용자 정의 컨트롤 태그의 값을 가진 **검색**표시 된 것 처럼 합니다. 
+6. 내에서 &lt;asp: webpartzone&gt; 추가 사용자 정의 컨트롤에 대 한 참조 바로 위에 SidebarZone에 대 한 요소는 &lt;p: label&gt; 요소를 다음 예제와 같이, 링크를 포함 합니다. 또한 추가 **제목** 특성을 사용자 정의 컨트롤 태그의 값을 가진 **검색**표시 된 것 처럼 합니다. 
 
     [!code-aspx[Main](profiles-themes-and-web-parts/samples/sample23.aspx)]
 7. 파일을 저장한 후 닫습니다.
@@ -417,7 +417,7 @@ UI 구조적 구성 요소는 개인 설정에 의존 하 고는 핵심 구조 �
 
 웹 파트 한 영역에서 다른 위치로 끌어서 웹 파트 컨트롤의 레이아웃을 변경 하는 사용자에 대 한 기능을 제공 합니다. 사용자가 이동 하도록 허용 하는 것 외에도 **WebPart** 한 영역에서 다른 컨트롤의 모양, 레이아웃 및 동작을 포함 하 여 컨트롤의 다양 한 특성을 편집 하려면 사용자가 허용할 수 있습니다. 웹 파트 컨트롤 집합에 대 한 기본 편집 기능을 제공 **WebPart** 컨트롤입니다. 기능을 편집할 수 있도록 하는 사용자 지정 편집기 컨트롤을 만들 수도 수 하므로이 연습에서 수행 하지는 않지만 **WebPart** 컨트롤입니다. 위치를 변경 하는 것과 마찬가지로 **WebPart** , 컨트롤의 속성 편집에 의존 하 여 사용자가 변경 내용을 저장 하려면 ASP.NET 개인 설정 합니다.
 
-이 연습 부분에서는 사용자가 모든 기본 특성을 편집할 수 있는 기능을 추가 하면 **WebPart** 페이지에서 제어 합니다. 이러한 기능을 사용 하려면 다른 사용자 지정 사용자 정의 컨트롤을 추가한 페이지와 함께  **&lt;e&gt;**  요소와 두 개의 편집 컨트롤과 합니다.
+이 연습 부분에서는 사용자가 모든 기본 특성을 편집할 수 있는 기능을 추가 하면 **WebPart** 페이지에서 제어 합니다. 이러한 기능을 사용 하려면 다른 사용자 지정 사용자 정의 컨트롤을 추가한 페이지와 함께 &lt;e&gt; 요소와 두 개의 편집 컨트롤과 합니다.
 
 ### <a name="to-create-a-user-control-that-enables-changing-page-layout"></a>페이지 레이아웃을 변경할 수 있도록 하는 사용자 정의 컨트롤을 만들려면
 
@@ -501,7 +501,7 @@ UI 구조적 구성 요소는 개인 설정에 의존 하 고는 핵심 구조 �
 4. **WebParts** 섹션 도구 상자의 DeclarativeCatalogPart 컨트롤의 콘텐츠 영역으로 끕니다는 **CatalogZone** 제어 합니다.
 5. 오른쪽 위 모서리에 있는 화살표를 클릭 합니다.는 **DeclarativeCatalogPart** 해당 작업 메뉴를 노출 하도록 제어 하 고 다음 선택 **템플릿 편집**합니다.
 6. **표준** 끌어서 도구 상자의 섹션은 **파일 업로드** 제어 및 **달력** 컨트롤을 **WebPartsTemplate** 섹션은 **DeclarativeCatalogPart** 제어 합니다.
-7. 로 전환 **소스** 보기. 소스 코드 검사는  **&lt;asp: catalogzone&gt;**  요소입니다. 다음에 유의 **DeclarativeCatalogPart** 컨트롤에 포함 된  **&lt;webpartstemplate&gt;**  요소를 페이지에 추가할 수 있는 두 개의 포함 된 서버 컨트롤 카탈로그입니다.
+7. 로 전환 **소스** 보기. 소스 코드 검사는 &lt;asp: catalogzone&gt; 요소입니다. 에 **DeclarativeCatalogPart** 컨트롤에 포함 되어는 &lt;webpartstemplate&gt; 카탈로그에서 페이지에 추가할 수 있는 두 개의 포함 된 서버 컨트롤 요소입니다.
 8. 추가 **제목** 속성을 아래 코드 예제에서는 각 타이틀에 대해 표시 되는 문자열 값을 사용 하 여 카탈로그에 추가 된 컨트롤의 각 합니다. 제목 속성인 경우에 설정할 수 있습니다 일반적으로 이러한 두 명의 서버 컨트롤에는 사용자 이러한 컨트롤을 추가 하는 경우 디자인 타임에는 **WebPartZone** 영역 런타임 시 카탈로그에서 각각 래핑되고와  **GenericWebPart** 제어 합니다. 이 통해 역할 웹 파트 컨트롤을 되므로 책 제목은 표시할 수 있습니다.   
   
  에 포함 된 두 컨트롤에 대 한 코드는 **DeclarativeCatalogPart** 컨트롤이 다음과 같이 표시 됩니다. 

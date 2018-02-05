@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/caching/memory
-ms.openlocfilehash: 8256240b46873d53bf1a6f6616ea5b520cfadf2e
-ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
+ms.openlocfilehash: 7c6d629ea94dd7c79a2f4e24fd4d0ff797f7e516
+ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 02/05/2018
 ---
 # <a name="in-memory-caching-in-aspnet-core"></a>ASP.NET Core의 메모리 내 캐싱
 
@@ -30,7 +30,7 @@ ASP.NET Core 몇 가지 다른 캐시를 지원합니다. 가장 간단한 캐�
 
 웹 팜에서 아닌 고정 세션 필요는 [분산 캐시](distributed.md) 캐시 일관성 문제가 발생 하지 않도록 합니다. 일부 응용 프로그램에 대 한 분산된 캐시 메모리에 캐시 보다 더 높은 규모 확장을 지원할 수 있습니다. 분산된 캐시를 사용 하 여 외부 프로세스에 캐시 메모리 오프 로드 합니다. 
 
-`IMemoryCache` 하지 않는 한 캐시의 메모리 캐시 항목을 제거 하는 [우선 순위를 캐시](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheitempriority) 로 설정 된 `CacheItemPriority.NeverRemove`합니다. 설정할 수 있습니다는 `CacheItemPriority` 캐시를 우선 순위를 조정 하려면 메모리가 중에서 항목을 제거 합니다.
+`IMemoryCache` 하지 않는 한 캐시의 메모리 캐시 항목을 제거 하는 [우선 순위를 캐시](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheitempriority) 로 설정 된 `CacheItemPriority.NeverRemove`합니다. 설정할 수 있습니다는 `CacheItemPriority` 캐시를 사용할 메모리가 중에서 항목을 제거 하는 우선 순위를 조정 해야 합니다.
 
 메모리 내 캐시는 모든 개체를 저장할 수 있습니다. 분산된 캐시 인터페이스는 제한 `byte[]`합니다.
 

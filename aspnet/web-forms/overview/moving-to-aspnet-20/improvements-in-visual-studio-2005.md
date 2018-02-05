@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/improvements-in-visual-studio-2005
 msc.type: authoredcontent
-ms.openlocfilehash: 2c1f9a7291d8eab675bac3e1c37d6922131e3761
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: aafc59980e807677d6023110d324365ce92bb5fc
+ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/05/2018
 ---
 <a name="improvements-in-visual-studio-2005"></a>Visual Studio 2005의 향상 된 기능
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > Visual Studio 2005 웹 응용 프로그램 개발자에 향상 된 기능 및 향상 된 웹 프로젝트에 긴 목록 제공합니다.
 
@@ -79,10 +79,10 @@ Visual Studio 2005에서 웹 프로젝트를 만드는 연습 동영상을 보�
 동영상 연습에서 살펴본 것 처럼 또는 로컬 컴퓨터에서 파일 공유를 통해 원격 위치에서 파일 시스템에 웹 사이트를 만들 수도 있습니다. 파일 시스템에서 생성 된 웹 사이트를 찾는 및 ASP.NET 개발 서버를 사용 하 여 디버깅 합니다.
 
 > [!NOTE]
-> ASP.NET 개발 서버는 고객에 대 한 일부 혼란이 발생할 수 있습니다. 웹 프로젝트를 IISs 디렉터리 구조 (예: c:\inetpub\wwwroot)에 파일 시스템에 생성 하는 경우 웹 사이트 여전히 Visual Studio 2005 내에서 시작 하는 경우 ASP.NET 개발 서버를 통해 검색할 수 있습니다. 따라서 모든 IIS 구성 (즉, 인증 방법) 적용 되지 않습니다.
+> ASP.NET 개발 서버는 고객에 대 한 일부 혼란이 발생할 수 있습니다. 웹 프로젝트를 IISs 디렉터리 구조 (예: c: / inetpub/wwwroot)에 파일 시스템에 생성 하는 경우 웹 사이트 여전히 Visual Studio 2005 내에서 시작 하는 경우 ASP.NET 개발 서버를 통해 검색할 수 있습니다. 따라서 모든 IIS 구성 (즉, 인증 방법) 적용 되지 않습니다.
 
 
-기본 웹 프로젝트도 많이 제거 하 여 오버 헤드의 포함 Default.aspx 페이지, default.cs 파일 및 앱\_데이터 폴더. Web.config 및 특수 폴더 (예: 앱\_코드) 필요에 따라 추가 됩니다. 웹 프로젝트 파일 및 필요한 폴더에만 포함 됩니다.
+기본 웹 프로젝트도 많이 제거 하 여 오버 헤드와 같이 Default.aspx 페이지, default.cs 파일 및 응용 프로그램/_Data 폴더 포함 됩니다. Web.config 및 특수 폴더 (예: 응용 프로그램/_code)는 필요에 따라 추가 됩니다. 웹 프로젝트 파일 및 필요한 폴더에만 포함 됩니다.
 
 ### <a name="http-projects"></a>HTTP 프로젝트
 
@@ -91,7 +91,7 @@ HTTP 프로젝트 원격 웹 사이트 또는 로컬 IIS 웹 사이트에서 만
 로컬 IIS 옵션 로컬 컴퓨터에서 메타 베이스에서 사이트 정보를 읽고 및 파일 시스템을 사용 하 여 파일이 복사 됩니다. 원격 사이트 옵션 FrontPage Server Extensions 이름과 사이트 정보를 사용 하 고 HTTP를 사용 하 여 파일은 복사 하 고 FrontPage Server Extensions RPC 호출 합니다.
 
 > [!NOTE]
-> Vs #\_tmp.htm 파일 및 get\_aspx\_ver.aspx는 더 이상 버전 정보를 확인 하는 데 사용 됩니다.
+> Get/_aspx/_ver.aspx 있고 vs###/_tmp.htm 파일 버전 정보를 확인 하려면 더 이상 사용 됩니다.
 
 
 기본 HTTP 방법은 로컬 IIS입니다. 이 옵션을 사용할 수 있는 사이트를 확인 하려면 IIS 메타 베이스 및 콘텐츠 생성 될 위치 읽습니다. 트리 뷰에서 선택 하 여 다른 폴더 또는 가상 디렉터리를 선택할 수 있습니다. 있습니다 수도 새 가상 디렉터리 만들기, 폴더, 응용 프로그램으로 표시으로이 대화 상자에서 기존 가상 디렉터리를 삭제 합니다.
@@ -137,7 +137,7 @@ HTTP 프로젝트 원격 웹 사이트 또는 로컬 IIS 웹 사이트에서 만
 Visual Studio 2005에서는 FTP 통해 웹 사이트를 만드는 옵션을 제공 합니다. 이 옵션을 사용 하면 IDE는 사용자가 임시 폴더에 파일을 로컬로 만듭니다 하 고 FTP를 사용 하 여 FTP 위치에 파일을 이동 합니다.
 
 > [!NOTE]
-> 임시 폴더 위치는 c:\Documents and Settings\&lt; 사용자&gt;\Local Settings\Temp\VWDWebCache\&lt; 서버&gt;\_&lt;응용 프로그램 이름&gt;
+> 임시 폴더 위치가 c: / Documents and Settings /&lt;사용자&gt;로컬/설정/Temp/VWDWebCache/&lt;서버&gt;/_&lt;응용 프로그램 이름&gt;
 
 
 FTP 옵션을 사용할 경우 위치 선택 대화 상자가 나타납니다. 아래와 같이이 대화 상자에 필요한 FTP 연결 정보를 입력 합니다.
@@ -161,7 +161,7 @@ FTP 옵션을 사용할 경우 위치 선택 대화 상자가 나타납니다. �
 
 ### <a name="create-a-new-folder-for-content"></a>콘텐츠에 대 한 새 폴더 만들기
 
-1. Windows 탐색기에서 라는 새 폴더를 만든 **User1** c:\inetpub\wwwroot 안에 있습니다.
+1. Windows 탐색기에서 라는 새 폴더를 만들 **User1** c: / inetpub/wwwroot 안에 있습니다.
 
 #### <a name="configure-folders-and-permissions-on-folders"></a>폴더에서 폴더와 사용 권한을 구성 합니다.
 
@@ -169,7 +169,7 @@ FTP 옵션을 사용할 경우 위치 선택 대화 상자가 나타납니다. �
 2. 확장 **FTP 사이트**합니다.
 3. 마우스 오른쪽 단추로 클릭는 **기본 FTP 사이트**선택, **새로**, 다음 **가상 디렉터리**, 클릭 **다음**합니다.
 4. 입력 **User1** 가상 디렉터리 이름과 클릭에 대 한 **다음**합니다.
-5. 입력 **c:\inetpub\wwwroot\User1** 경로 클릭에 대 한 **다음**합니다.
+5. 입력 **c: / inetpub/wwwroot/User1** 경로 클릭에 대 한 **다음**합니다.
 6. 클릭 **다음** 차례로 **마침** 마법사를 완료 합니다.
 7. 마우스 오른쪽 단추로 클릭는 **User1** 선택한 기본 FTP 사이트 가상 디렉터리 **속성**합니다.
 8. 확인의 **쓰기** 확인란을 클릭 하 고 **확인** 는 대화 상자를 닫습니다.
@@ -200,7 +200,7 @@ FTP 옵션을 사용할 경우 위치 선택 대화 상자가 나타납니다. �
 13. 웹 사이트 URL 필요 대화 상자에 입력 `http://localhost/user1` URL 및 클릭 **확인**합니다.
 
 > [!NOTE]
-> 형식을 로드할 수 없음을 나타내는 오류가 발생 하는 경우 \_Default, ASP.NET 2.0를 웹 사이트와 이전 버전에서 실행 되 고 있는지 확인 합니다. 인터넷 정보 서비스에서 ASP.NET 탭에서 시작할 수 있습니다.
+> 형식 /_Default 로드할 수 없음을 나타내는 오류가 발생할 경우 ASP.NET 2.0를 웹 사이트와 이전 버전에서 실행 되 고 있는지 확인 합니다. 인터넷 정보 서비스에서 ASP.NET 탭에서 시작할 수 있습니다.
 
 
 ## <a name="opening-web-projects"></a>웹 프로젝트 열기
@@ -223,11 +223,11 @@ FTP 옵션을 사용할 경우 위치 선택 대화 상자가 나타납니다. �
 
 Visual Studio만을 만들기 때문에 필요한 경우 추가 파일 및 폴더에 추가 파일이 나 폴더가 없기 열 위치에 추가 됩니다. 이 아키텍처의 부작용을 파일 시스템에 웹 사이트를 중첩에서 하지 있습니다. 예를 들어 다음과 같은 디렉터리 구조를 것이 좋습니다.
 
-C:\MyWebSite에 웹 프로젝트
+에 c: / 입력 하면 MyWebSite 웹 프로젝트
 
-C:\MyWebSite\Nested에 다른 웹 프로젝트
+C: / 입력 하면 MyWebSite/Nested에 다른 웹 프로젝트
 
-C:\MyWebSite에서 웹 사이트를 열 때 중첩 된 폴더는 해당 응용 프로그램의 하위 폴더로 표시 됩니다.
+c: / 입력 하면 MyWebSite 웹 사이트를 열 때 중첩 된 폴더는 해당 응용 프로그램의 하위 폴더로 표시 됩니다.
 
 <a id="_Toc116100246"></a>
 
@@ -249,7 +249,7 @@ Visual Studio IDE 내에서 현재 열려 있는 응용 프로그램 아래에 �
 
 FTP 통해 사이트를 열 때 파일은 모두 로컬로 복사 임시 폴더에 있습니다. 로컬 저장소 위치에 대 한 전체 경로 프로젝트에 대 한 속성 창에 표시 되 고 다음 형식을 사용 하 여 만들어집니다.
 
-C:\Documents and Settings\&lt; 사용자&gt;\Local Settings\Temp\VWDWebCache\&lt; 서버&gt;\_&lt;응용 프로그램 이름&gt;
+C: / Documents and Settings /&lt;사용자&gt;로컬/설정/Temp/VWDWebCache/&lt;서버&gt;/_&lt;응용 프로그램 이름&gt;
 
 FTP를 사용 하면 Visual Studio를 아래와 같이 찾아볼 수 있도록 프로젝트에 대 한 기본 URL을 지정 해야 합니다. 기본 URL을 지정 하지 않으면 Visual Studio 라는 나타납니다에 대 한 웹 사이트의 페이지를 탐색 하려고 처음으로 합니다.
 
@@ -263,7 +263,7 @@ FTP를 사용 하면 Visual Studio를 아래와 같이 찾아볼 수 있도록 �
 
 작업에서 Visual Studio 2005 웹 응용 프로그램을 이전 버전 보다 훨씬 빠릅니다. 이 수는 없는 일부만 컴파일 아키텍처의 변경 내용에 있습니다.
 
-Visual Studio 2002 및 2003에서 웹 응용 프로그램으로 /bin 폴더에 있는 하나의 주 어셈블리로 컴파일 되었습니다. Visual Studio 2005 응용 프로그램에서\_코드 폴더에 추가 되었습니다. 클래스 및 기타 UI가 아닌 코드 응용 프로그램에 추가 됩니다\_코드 폴더입니다. Visual Studio는 프로젝트를 응용 프로그램의 모든 파일을 작성 하는 경우\_코드 폴더는 단일 앱으로 컴파일되는\_Code.dll 파일입니다. 이러한 변경의 결과 후속 빌드는 이전 버전 보다 훨씬 빠릅니다.
+Visual Studio 2002 및 2003에서 웹 응용 프로그램으로 /bin 폴더에 있는 하나의 주 어셈블리로 컴파일 되었습니다. Visual Studio 2005에서 응용 프로그램/_Code 폴더 추가 되었습니다. 클래스 및 기타 UI가 아닌 코드는 응용 프로그램/_Code 폴더에 추가 됩니다. Visual Studio에서 프로젝트를 빌드할 때 응용 프로그램/_Code 폴더의 모든 파일은 단일 App/_Code.dll 파일로 컴파일됩니다. 이러한 변경의 결과 후속 빌드는 이전 버전 보다 훨씬 빠릅니다.
 
 > [!NOTE]
 > ASP.NET 웹 응용 프로그램을 빌드하 MSBuild 명령줄 유틸리티를 사용할 수도 있습니다. 모듈 9에에서 해당 도구를 설명 합니다.
@@ -307,7 +307,7 @@ Visual Studio 및 ASP.NET 아키텍처에 향상 된 또 다른 훌륭한 기능
 > 사용자 정의 컨트롤은 페이지에서 제거 되 면는 @Register 지시문을 태그에 상태를 유지 하 고 웹 사이트에서 사용자 정의 컨트롤을 삭제 하는 파서 오류를 방지 하려면 수동으로 제거 해야 합니다.
 
 
-다른 향상 된 Visual Studio 컴파일 모델은 웹 사이트 게시 기능입니다. 게시 기능 웹 사이트를 미리 컴파일하고, 때문에 개발자가 요청에 있는 모든 내용을 컴파일할 필요가 없으므로 때문에 성능이 향상된 누릴 수 있습니다. 앱에서 모든 소스 코드 미리 컴파일하고 사용자도\_소스 코드가 없는를 배포할 수 있도록 폴더를 DLL로 코드입니다.
+다른 향상 된 Visual Studio 컴파일 모델은 웹 사이트 게시 기능입니다. 게시 기능 웹 사이트를 미리 컴파일하고, 때문에 개발자가 요청에 있는 모든 내용을 컴파일할 필요가 없으므로 때문에 성능이 향상된 누릴 수 있습니다. 것도 미리 컴파일한 앱/_Code 폴더의 모든 소스 코드를 DLL로 소스 코드가 없는를 배포할 수 있도록 합니다.
 
 
 ![게시 웹 사이트 대화 상자](improvements-in-visual-studio-2005/_static/image7.jpg)
@@ -316,10 +316,10 @@ Visual Studio 및 ASP.NET 아키텍처에 향상 된 또 다른 훌륭한 기능
 
 
 > [!NOTE]
-> Aspnet\_compile.exe 유틸리티 미리 ASP.NET 웹 응용 프로그램을 컴파일하는 데 사용할 수도 있습니다. 모듈 9에에서 해당 도구를 설명 합니다.
+> ASP.NET 웹 응용 프로그램을 미리 컴파일 aspnet/_compile.exe 유틸리티를 사용할 수도 있습니다. 모듈 9에에서 해당 도구를 설명 합니다.
 
 
-경우 아래와 같이 Temporary ASP.NET Files 폴더에 저장 됩니다 게시 웹 사이트를 미리 컴파일된 파일 있습니다. 사용 하 여 파일을 *.compiled* 파일 확장명은 특정 Dll에 대 한 종속성을 정의 하는 XML 파일입니다. 모든 Webform 또는 사용자 정의 컨트롤으로 시작 하는 임의의 Dll로 컴파일되는 *앱\_웹\_*합니다.
+경우 아래와 같이 Temporary ASP.NET Files 폴더에 저장 됩니다 게시 웹 사이트를 미리 컴파일된 파일 있습니다. 사용 하 여 파일을 *.compiled* 파일 확장명은 특정 Dll에 대 한 종속성을 정의 하는 XML 파일입니다. 모든 Webform 또는 사용자 정의 컨트롤으로 시작 하는 임의의 Dll로 컴파일되는 *응용 프로그램 /_웹 /_*합니다.
 
 두면는 *미리 컴파일된이 사이트를 업데이트할 수 있도록 허용* checkbox가 선택 태그 Webforms 및 사용자 컨트롤 내에서 배포 후 변경할 수 있도록 하는 DLL로 미리 컴파일된 되지 것입니다. 배포 된 콘텐츠에 대 한 변경이 허용 되지 않습니다 수 있도록 태그 고정 하지 않으려면이 확인란의 선택을 취소 합니다.
 
@@ -408,7 +408,7 @@ Msvsmon.exe를 실행 하면 원격 디버깅 차단 되 고 포트에 대 한 �
 
 에 원격으로 FTP를 통해 열린 웹 응용 프로그램을 디버깅할 수 이기도 합니다. 단계 이전에 설명 된와 동일 합니다. 그러나이 모듈의 앞부분에 설명 된 대로 FTP 프로젝트 검색에 대 한 기본 URL을 지정 해야 합니다.
 
-## <a name="lab-2"></a>랩 2
+## <a name="lab-2"></a>Lab 2
 
 ## <a name="remote-debugging-with-visual-studio-2005"></a>Visual Studio 2005를 사용 하 여 원격 디버깅
 
@@ -432,9 +432,9 @@ Msvsmon.exe를 실행 하면 원격 디버깅 차단 되 고 포트에 대 한 �
 
 
 1. 원격 웹 서버에서 UNC 경로 사용 하 여 개발 컴퓨터에서 msvsmon.exe를 찾아 실행 합니다.  
- Msvsmon.exe의 기본 위치는 \\server\c$ files\microsoft Visual Studio 8\Common7\IDE\Remote Debugger\x86 합니다.
+ Msvsmon.exe의 기본 위치는 //server/c$/Program 파일/Microsoft Visual Studio 8/Common7/IDE/원격 디버거/x86 합니다.
 2. 원격 디버깅을 위해 포트 차단을 해제 하 라는 메시지가 나타나면 그렇게 합니다.
-3. 개발 컴퓨터에서 Default.aspx에 대 한 코드 숨김 열고 페이지에 중단점을 설정\_메서드를 로드 합니다.
+3. 개발 컴퓨터에서 Default.aspx에 대 한 코드 숨김 열고 페이지 / (_l) 메서드에 중단점을 설정 합니다.
 4. 개발 컴퓨터에서 디버깅을 시작 합니다.
 
 예상 대로 중단점이 적중 되어야 합니다.
@@ -445,7 +445,7 @@ Msvsmon.exe를 실행 하면 원격 디버깅 차단 되 고 포트에 대 한 �
 
 ASP.NET 개발 서버는 제한 된 웹 서버. 원격 연결을 허용 하지 않습니다, 그리고 웹 서버를 시작한 사용자 이외의 모든 사용자의 모든 요청을 허용 하지 않습니다. ASP 페이지를 처리 하는 기능이 있는 되지 않습니다. ASP.NET 리소스 및 HTML 리소스 (이미지, CSS 파일 등 포함)만 제공 됩니다.
 
-C:\Windows\Microsoft.NET\Framework\v2.0에 있는 WebDev.WebServer.exe 파일을 실행 하 여 명령줄을 통해 ASP.NET 개발 서버를 시작할 수 있습니다. \*\*\*\*\*. 다음과 같은 대화 상자가 사용할 수 있는 매개 변수를 표시 합니다.
+C:/Windows/Microsoft.NET/Framework/v2.0./에 있는 WebDev.WebServer.exe 파일을 실행 하 여 명령줄을 통해 ASP.NET 개발 서버를 시작할 수 */*  /  */*/*. 다음과 같은 대화 상자가 사용할 수 있는 매개 변수를 표시 합니다.
 
 
 ![](improvements-in-visual-studio-2005/_static/image11.jpg)

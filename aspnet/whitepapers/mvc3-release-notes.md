@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/mvc3-release-notes
 msc.type: content
-ms.openlocfilehash: c1fa5d31f68b44bfdfda61c870a6825eeba18647
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 92a6dee24b8942d721e3537a712be141155e61df
+ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/05/2018
 ---
 <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 ====================
@@ -232,7 +232,7 @@ ASP.NET MVC 3 ASP.NET MVC 3을 ASP.NET MVC 2 응용 프로그램을 업그레이
 
 에 대 한 *데이터 컨텍스트 클래스*, 이러한 선택 항목을 만들 수 있습니다.
 
-- Code First 사용 하 여 않으며 없는 기존 데이터 컨텍스트 클래스를 선택 하려는 경우  *&lt;새 데이터 컨텍스트에... &gt;*". 데이터 컨텍스트 클래스를 다음 생성 됩니다.
+- Code First 사용 하 여 않으며 없는 기존 데이터 컨텍스트 클래스를 선택 하려는 경우 * * 새 데이터 컨텍스트에 * *입니다. 데이터 컨텍스트 클래스를 다음 생성 됩니다.
 - Code First를 사용 하 여 기존 데이터 컨텍스트 클래스가 하려는 경우 여기에서 선택한 것입니다. 선택한 모델 클래스를 유지 하도록 업데이트 됩니다.
 - Database First 또는 Model First를 사용 하는 경우 여기서 개체 컨텍스트 클래스를 선택 합니다.
 
@@ -255,7 +255,7 @@ ASP.NET MVC 3 ASP.NET MVC 3을 ASP.NET MVC 2 응용 프로그램을 업그레이
 
 #### <a name="project-templates-are-now-html5-enabled"></a>프로젝트 템플릿에 HTML5 사용 하도록 설정 됩니다.
 
-새 프로젝트 대화 상자에 이제 프로젝트 템플릿에 HTML5 특정 기능을 추가할 수 있는 옵션이 포함 되어 있습니다. 옵션을 선택 하면 새 HTML5를 포함 하는 뷰가 생성 될  *&lt;헤더&gt;*,  *&lt;바닥글&gt;*, 및  *&lt;탐색&gt;*  요소입니다.
+새 프로젝트 대화 상자에 이제 프로젝트 템플릿에 HTML5 특정 기능을 추가할 수 있는 옵션이 포함 되어 있습니다. 옵션을 선택 하면 새 HTML5를 포함 하는 뷰가 생성 될 `<header>`, `<footer>`, 및 `<navigation>` 요소입니다. 요소입니다.
 
 참고가 이전 버전의 브라우저 HTML5 특정 태그를 지원 하지 않습니다. 이 한계를 해결 하기 위해 HTML5 프로젝트 템플릿에 Modernizr 라이브러리에 대 한 참조를 포함 합니다. (다음 섹션 참조).
 
@@ -293,7 +293,7 @@ ADO.NET Entity Framework 4.1 Code First 기능이 포함 되어 있습니다. �
 
 예를 들어 새 jQuery 릴리스 빈도가 제공 프로젝트 템플릿에 포함 된 jQuery 버전은 특정 시점에 됩니다 만료. 그러나 jQuery가 설치 된 NuGet 패키지로 포함 하기 때문에 알려 NuGet 대화 상자에서 최신 버전의 jQuery 사용할 수 없는 경우.
 
-JQuery 파일 이름에 버전 번호를 포함 하므로 jQuery를 최신 버전으로 업데이트 하려면 업데이트 해야는  *&lt;스크립트&gt;*  새 파일 이름을 사용 하기 위해 jQuery 파일을 참조 하는 태그입니다. 다른 포함된 스크립트 라이브러리 스크립트 이름을 할 버전 번호를 포함 하지 않으므로 최신 버전으로 더 쉽게 업데이트할 수 있습니다.
+JQuery 파일 이름에 버전 번호를 포함 하므로 jQuery를 최신 버전으로 업데이트 하려면 업데이트 해야는 `<script>` 새 파일 이름을 사용 하기 위해 jQuery 파일을 참조 하는 태그입니다. 다른 포함된 스크립트 라이브러리 스크립트 이름을 할 버전 번호를 포함 하지 않으므로 최신 버전으로 더 쉽게 업데이트할 수 있습니다.
 
 <a id="tu-KI"></a>
 ## <a name="known-issues"></a>알려진 문제
@@ -353,7 +353,7 @@ ASP.NET MVC 3의 시험판 버전에서는 Razor 파일에 공백이 포함 된 
 - ReSharper가 설치 된 경우에 IntelliSense for Razor 구문 작동 하지 않습니다. ReSharper가 설치 되어 ASP.NET MVC 3의 Razor IntelliSense 지원을 활용 하려고 하는 경우 항목을 참조 [Razor Intellisense and ReSharper](http://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/) Hadi Hariri 블로그에서 함께 사용 하는 방법을 설명 하는 합니다.
 - ASP.NET MVC 3의 베타 버전을 사용 하 여 만든 CCSHTML 및 VBHTML 뷰 빌드 작업이 제대로 설정 하지 않은, 이러한 보기에서 결과로 형식 프로젝트를 게시할 때 생략 됩니다. 이러한 파일에 대 한 빌드 작업 값 "콘텐츠"를 설정 해야 합니다. ASP.NET MVC 3 RTM 새 파일에 대해이 문제를 해결할 수 있지만 시험판 버전을 사용 하 여 만든 프로젝트에 대 한 기존 파일에 대 한 설정을 수정 하지 않습니다.
 - ![](mvc3-release-notes/_static/image3.png)
-- 설치 하는 동안 EULA 동의 대화 상자 의도 보다 작은 창에서 사용 약관을 표시 / li&gt;
+- 설치 하는 동안 EULA 동의 대화 상자 예정 보다 작은 창에서 사용 약관을 표시 합니다.
 - Razor 뷰 (.cshtml 파일)를 편집 하는 경우 Visual Studio에서 컨트롤러 이동 메뉴 항목을 사용할 수 없으며 되며 코드 조각이 없습니다.
 - 여기서 Visual Studio 설치 되지 않은 컴퓨터에 Visual Web Developer Express에 대 한 ASP.NET MVC 3을 설치 하 고 다음 나중에 Visual Studio를 설치 하는 경우에 ASP.NET MVC 3를 다시 설치 해야 합니다. Visual Studio 및 Visual Web Developer Express는 ASP.NET MVC 3 설치 관리자가 업그레이드 하는 구성 요소를 공유 합니다. Visual Web Developer Express가 되지 않으며 다음 나중에 Visual Web Developer Express를 설치 하는 컴퓨터에서 Visual Studio에 대 한 ASP.NET MVC 3을 설치 하는 경우 동일한 문제에 적용 됩니다.
 
@@ -398,7 +398,7 @@ ASP.NET MVC 3 용 프로젝트 템플릿을 포함 최신 버전의 jQuery, jQue
 <a id="_Toc2_4"></a>
 ### <a name="added-htmlraw-method"></a>추가 된 Html.Raw 메서드
 
-기본적으로 Razor 모든 값을 HTML로 인코딩하고 엔진을 봅니다. 와 페이지에 표시 되도록 다음 코드 조각의 인사말 변수 내부 HTML를 인코딩하는 예를 들어 &amp;lt; 강력한&amp;gt; 전 세계 여러분 안녕하세요! &amp;lt; 강력한 /&amp;gt;.
+기본적으로 Razor 모든 값을 HTML로 인코딩하고 엔진을 봅니다. 와 페이지에 표시 되도록 다음 코드 조각의 인사말 변수 내부 HTML를 인코딩하는 예를 들어 `<strong>Hello World!</strong>`합니다.
 
 [!code-cshtml[Main](mvc3-release-notes/samples/sample10.cshtml)]
 
@@ -621,7 +621,7 @@ Namespace.ClassName
 - 설치 관리자는 이전 버전의 Visual Studio 2010의 구성 요소를 업데이트 하기 때문에 완료 하려면 ASP.NET MVC 보다 훨씬 더 오래 걸릴 수 있습니다.
 - 뷰 추가 폴딩을 보기 스 캐 폴드 입력 강력한 "Edit"를 선택 했을 때 읽기 전용 속성입니다. 마찬가지로, 쓰기 전용 속성은 "" 보기에 대 한 스 캐 폴드 됩니다.
 - 설치 하는 동안 EULA 동의 대화 상자 예정 보다 작은 창에서 사용 약관을 표시 합니다.
-- 설치는 [Visual Studio 비동기 CTP](https://www.microsoft.com/downloads/en/details.aspx?FamilyID=18712f38-fcd2-4e9f-9028-8373dc5732b2&amp;displaylang=en) ASP.NET MVC 3 도구 설치의 일부분으로 포함 된 Razor 릴리스로으로 인해 충돌이 발생 합니다. Visual Studio 비동기 CTP와 Razor 릴리스를 모두 동일한 컴퓨터에 설치 하려고 하지 마십시오 있는지 확인 합니다.
+- ASP.NET MVC 3 도구 설치의 일부분으로 포함 된 Razor 릴리스로 충돌이 발생 Visual Studio 비동기 CTP를 설치 합니다. Visual Studio 비동기 CTP와 Razor 릴리스를 모두 동일한 컴퓨터에 설치 하려고 하지 마십시오 있는지 확인 합니다.
 - Razor 뷰 (.cshtml 파일)를 편집 하는 경우 Visual Studio에서 컨트롤러 이동 메뉴 항목을 사용할 수 없으며 되며 코드 조각이 없습니다.
 
 <a id="TOC_ASP_NET_3_Beta"></a>
@@ -852,7 +852,7 @@ Razor 뷰 (CSHTML 파일)를 편집 하는 경우는 <a id="0.1__Toc224729061"> 
 
 사용 하는 경우는 @model 강력한 형식의 CSHTML 지정 하려면 다음 구문을 사용 보기, 형식에 대 한 언어별 바로 가기를 인식 되지 않습니다. 예를 들어 @model int 작동 하지 것입니다 되지만 @model Int32 작동 합니다. 이 버그에 대 한 해결 방법은 모델 유형을 지정 하는 경우 실제 형식 이름을 사용 하는 것입니다.
 
-사용 하는 경우는 @model 강력한 형식의 CSHTML 뷰를 지정 하는 구문 (또는 @ModelType VBHTML 강력한 형식의 뷰를 지정 하려면), nullable 형식 및 배열 선언과 지원 되지 않습니다. 예를 들어 @model int? 지원 되지 않습니다. 대신를 사용 하 여 @model Nullable&lt;Int32&gt;합니다. 구문을 @model string 지원 되지 않습니다; 대신, @model IList&lt;문자열&gt;합니다.
+사용 하는 경우는 @model 강력한 형식의 CSHTML 뷰를 지정 하는 구문 (또는 @ModelType VBHTML 강력한 형식의 뷰를 지정 하려면), nullable 형식 및 배열 선언과 지원 되지 않습니다. 예를 들어 @model int? 지원 되지 않습니다. 대신를 사용 하 여 `@model Nullable<Int32>`합니다. 구문을 @model string 지원 되지 않습니다; 대신, `@model IList<string>`합니다.
 
 ASP.NET MVC 2 프로젝트를 ASP.NET MVC 3으로 업그레이드 하는 경우에 다음 Web.config 파일의 appSettings 섹션을 추가 해야 합니다.
 

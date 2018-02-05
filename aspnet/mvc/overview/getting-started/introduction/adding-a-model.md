@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-model
 msc.type: authoredcontent
-ms.openlocfilehash: 13aab58e86829a8d4accd1d304420dcb34ffa472
-ms.sourcegitcommit: ec9371e2fbfcb8d62e7e7cae69e7752f3f205385
+ms.openlocfilehash: 79f136257119a8600a65e8d7c5f6e99cb9abceae
+ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/23/2017
+ms.lasthandoff: 02/05/2018
 ---
 <a name="adding-a-model"></a>모델 추가
 ====================
@@ -58,7 +58,7 @@ ms.lasthandoff: 11/23/2017
 
 ![](adding-a-model/_static/image2.png)
 
-참고: 일부 사용 되지 않는 `using` 문이 제거 되었습니다. Visual Studio 회색으로 사용 하지 않는 종속성이 표시 됩니다. 회색 종속성 위로 이동 하 여 unnused 종속성을 제거, 클릭 수 `Show potential fixes` 클릭 **사용 하지 않는 Using 제거 합니다.**
+참고: 일부 사용 되지 않는 `using` 문이 제거 되었습니다. Visual Studio 회색으로 사용 하지 않는 종속성이 표시 됩니다. 회색 종속성 위로 이동 하 여 사용 하지 않는 종속성을 제거, 클릭 수 `Show potential fixes` 클릭 **사용 하지 않는 Using 제거 합니다.**
 
 ![](adding-a-model/_static/image3.png)
 
