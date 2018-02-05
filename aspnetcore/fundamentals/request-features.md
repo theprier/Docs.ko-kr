@@ -1,79 +1,77 @@
 ---
-title: "ASP.NET Core에서 기능을 요청"
+title: "ASP.NET Core의 요청 기능"
 author: ardalis
-description: "HTTP 요청 및 응답 ASP.NET Core에 대 한 인터페이스에 정의 되어 있는 관련 된 웹 서버 구현 정보에 알아봅니다."
-ms.author: riande
+description: "ASP.NET Core용 인터페이스에 정의된 HTTP 요청 및 응답과 관련된 웹 서버 구현 세부 사항에 대해 알아봅니다."
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: fundamentals/request-features
-ms.openlocfilehash: f0e371f5ea6c6688ef32adcacf667a412e4625e5
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
-ms.translationtype: MT
+ms.openlocfilehash: c79ad6001e106a3e3104b0f804a386fe8b0ee30a
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/01/2018
 ---
-# <a name="request-features-in-aspnet-core"></a><span data-ttu-id="5e1a7-103">ASP.NET Core에서 기능을 요청</span><span class="sxs-lookup"><span data-stu-id="5e1a7-103">Request Features in ASP.NET Core</span></span>
+# <a name="request-features-in-aspnet-core"></a><span data-ttu-id="bb226-103">ASP.NET Core의 요청 기능</span><span class="sxs-lookup"><span data-stu-id="bb226-103">Request Features in ASP.NET Core</span></span>
 
-<span data-ttu-id="5e1a7-104">으로 [Steve Smith](https://ardalis.com/)</span><span class="sxs-lookup"><span data-stu-id="5e1a7-104">By [Steve Smith](https://ardalis.com/)</span></span>
+<span data-ttu-id="bb226-104">작성자 [Steve Smith](https://ardalis.com/)</span><span class="sxs-lookup"><span data-stu-id="bb226-104">By [Steve Smith](https://ardalis.com/)</span></span>
 
-<span data-ttu-id="5e1a7-105">웹 서버 구현은 HTTP 요청과 관련하여 설명되고 응답은 인터페이스에서 정의됩니다.</span><span class="sxs-lookup"><span data-stu-id="5e1a7-105">Web server implementation details related to HTTP requests and responses are defined in interfaces.</span></span> <span data-ttu-id="5e1a7-106">이러한 인터페이스를 생성 및 호스팅 응용 프로그램의 파이프라인을 수정할 서버 구현 및 미들웨어에서 사용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="5e1a7-106">These interfaces are used by server implementations and middleware to create and modify the application's hosting pipeline.</span></span>
+<span data-ttu-id="bb226-105">웹 서버 구현은 HTTP 요청과 관련하여 설명되고 응답은 인터페이스에서 정의됩니다.</span><span class="sxs-lookup"><span data-stu-id="bb226-105">Web server implementation details related to HTTP requests and responses are defined in interfaces.</span></span> <span data-ttu-id="bb226-106">이러한 인터페이스는 서버 구현 및 미들웨어에서 응용 프로그램의 호스팅 파이프라인을 만들고 수정하는 데 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="bb226-106">These interfaces are used by server implementations and middleware to create and modify the application's hosting pipeline.</span></span>
 
-## <a name="feature-interfaces"></a><span data-ttu-id="5e1a7-107">기능 인터페이스</span><span class="sxs-lookup"><span data-stu-id="5e1a7-107">Feature interfaces</span></span>
+## <a name="feature-interfaces"></a><span data-ttu-id="bb226-107">기능 인터페이스</span><span class="sxs-lookup"><span data-stu-id="bb226-107">Feature interfaces</span></span>
 
-<span data-ttu-id="5e1a7-108">HTTP 기능 인터페이스의 수를 정의 하는 ASP.NET Core `Microsoft.AspNetCore.Http.Features` 는 하는 데 서버에서 지 원하는 기능을 식별 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e1a7-108">ASP.NET Core defines a number of HTTP feature interfaces in `Microsoft.AspNetCore.Http.Features` which are used by servers to identify the features they support.</span></span> <span data-ttu-id="5e1a7-109">요청을 처리 하 고 응답을 반환 하는 다음과 같은 기능 인터페이스:</span><span class="sxs-lookup"><span data-stu-id="5e1a7-109">The following feature interfaces handle requests and return responses:</span></span>
+<span data-ttu-id="bb226-108">ASP.NET Core는 `Microsoft.AspNetCore.Http.Features`에서 서버가 지원하는 기능을 식별하기 위해 사용하는 다수의 HTTP 기능 인터페이스를 정의합니다.</span><span class="sxs-lookup"><span data-stu-id="bb226-108">ASP.NET Core defines a number of HTTP feature interfaces in `Microsoft.AspNetCore.Http.Features` which are used by servers to identify the features they support.</span></span> <span data-ttu-id="bb226-109">다음 기능 인터페이스는 요청을 처리하고 응답을 반환합니다.</span><span class="sxs-lookup"><span data-stu-id="bb226-109">The following feature interfaces handle requests and return responses:</span></span>
 
-<span data-ttu-id="5e1a7-110">`IHttpRequestFeature`프로토콜, 경로, 쿼리 문자열, 헤더 및 본문을 포함 하 여 HTTP 요청을의 구조를 정의 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e1a7-110">`IHttpRequestFeature` Defines the structure of an HTTP request, including the protocol, path, query string, headers, and body.</span></span>
+<span data-ttu-id="bb226-110">`IHttpRequestFeature`는 프로토콜, 경로, 쿼리 문자열, 헤더 및 본문을 포함하여 HTTP 요청의 구조를 정의합니다.</span><span class="sxs-lookup"><span data-stu-id="bb226-110">`IHttpRequestFeature` Defines the structure of an HTTP request, including the protocol, path, query string, headers, and body.</span></span>
 
-<span data-ttu-id="5e1a7-111">`IHttpResponseFeature`상태 코드, 헤더 및 응답의 본문을 포함 하 여 HTTP 응답의 구조를 정의 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e1a7-111">`IHttpResponseFeature` Defines the structure of an HTTP response, including the status code, headers, and body of the response.</span></span>
+<span data-ttu-id="bb226-111">`IHttpResponseFeature`는 상태 코드, 헤더 및 응답 본문을 포함하여 HTTP 응답 구조를 정의합니다.</span><span class="sxs-lookup"><span data-stu-id="bb226-111">`IHttpResponseFeature` Defines the structure of an HTTP response, including the status code, headers, and body of the response.</span></span>
 
-<span data-ttu-id="5e1a7-112">`IHttpAuthenticationFeature`에 따라 사용자를 식별 하기 위한 지원을 정의 `ClaimsPrincipal` 인증 처리기를 지정 하 고 있습니다.</span><span class="sxs-lookup"><span data-stu-id="5e1a7-112">`IHttpAuthenticationFeature` Defines support for identifying users based on a `ClaimsPrincipal` and specifying an authentication handler.</span></span>
+<span data-ttu-id="bb226-112">`IHttpAuthenticationFeature`는 `ClaimsPrincipal`을 기반으로 사용자를 식별하고 인증 처리기를 지정하기 위한 지원을 정의합니다.</span><span class="sxs-lookup"><span data-stu-id="bb226-112">`IHttpAuthenticationFeature` Defines support for identifying users based on a `ClaimsPrincipal` and specifying an authentication handler.</span></span>
 
-<span data-ttu-id="5e1a7-113">`IHttpUpgradeFeature`에 대 한 지원을 정의 [HTTP 업그레이드](https://tools.ietf.org/html/rfc2616.html#section-14.42), 서버 프로토콜을 전환 하려는 경우 사용 하려는 클라이언트 프로토콜 추가 지정할 수 있도록 허용 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e1a7-113">`IHttpUpgradeFeature` Defines support for [HTTP Upgrades](https://tools.ietf.org/html/rfc2616.html#section-14.42), which allow the client to specify which additional protocols it would like to use if the server wishes to switch protocols.</span></span>
+<span data-ttu-id="bb226-113">`IHttpUpgradeFeature`는 서버가 프로토콜을 전환하려는 경우 사용할 추가 프로토콜을 지정하는 클라이언트를 허용하는 [HTTP 업그레이드](https://tools.ietf.org/html/rfc2616.html#section-14.42)에 대한 지원을 정의합니다. </span><span class="sxs-lookup"><span data-stu-id="bb226-113">`IHttpUpgradeFeature` Defines support for [HTTP Upgrades](https://tools.ietf.org/html/rfc2616.html#section-14.42), which allow the client to specify which additional protocols it would like to use if the server wishes to switch protocols.</span></span>
 
-<span data-ttu-id="5e1a7-114">`IHttpBufferingFeature`요청 및/또는 응답 버퍼링을 사용 하지 않도록 설정 하기 위한 메서드를 정의 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e1a7-114">`IHttpBufferingFeature` Defines methods for disabling buffering of requests and/or responses.</span></span>
+<span data-ttu-id="bb226-114">`IHttpBufferingFeature`는 요청 및/또는 응답의 버퍼링을 사용하지 않도록 메서드를 정의합니다.</span><span class="sxs-lookup"><span data-stu-id="bb226-114">`IHttpBufferingFeature` Defines methods for disabling buffering of requests and/or responses.</span></span>
 
-<span data-ttu-id="5e1a7-115">`IHttpConnectionFeature`로컬 및 원격 주소 및 포트에 대 한 속성을 정의합니다.</span><span class="sxs-lookup"><span data-stu-id="5e1a7-115">`IHttpConnectionFeature` Defines properties for local and remote addresses and ports.</span></span>
+<span data-ttu-id="bb226-115">`IHttpConnectionFeature`는 로컬과 원격 주소 및 포트에 대한 속성을 정의합니다.</span><span class="sxs-lookup"><span data-stu-id="bb226-115">`IHttpConnectionFeature` Defines properties for local and remote addresses and ports.</span></span>
 
-<span data-ttu-id="5e1a7-116">`IHttpRequestLifetimeFeature`연결을 중지 하거나 검색 하는 경우 요청이 갑자기 중단 등으로가 종료 클라이언트 연결 끊기에 대 한 지원을 정의 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e1a7-116">`IHttpRequestLifetimeFeature` Defines support for aborting connections, or detecting if a request has been terminated prematurely, such as by a client disconnect.</span></span>
+<span data-ttu-id="bb226-116">`IHttpRequestLifetimeFeature`는 연결을 중단하는 기능 또는 클라이언트 연결 끊김과 같이 요청이 너무 일찍 종료되었는지를 감지하는 기능에 대한 지원을 정의합니다.</span><span class="sxs-lookup"><span data-stu-id="bb226-116">`IHttpRequestLifetimeFeature` Defines support for aborting connections, or detecting if a request has been terminated prematurely, such as by a client disconnect.</span></span>
 
-<span data-ttu-id="5e1a7-117">`IHttpSendFileFeature`비동기적으로 파일을 보내는 방법을 정의 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e1a7-117">`IHttpSendFileFeature` Defines a method for sending files asynchronously.</span></span>
+<span data-ttu-id="bb226-117">`IHttpSendFileFeature`는 파일을 비동기적으로 보내는 메서드를 정의합니다.</span><span class="sxs-lookup"><span data-stu-id="bb226-117">`IHttpSendFileFeature` Defines a method for sending files asynchronously.</span></span>
 
-<span data-ttu-id="5e1a7-118">`IHttpWebSocketFeature`Websocket을 지원 하기 위한 API를 정의 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e1a7-118">`IHttpWebSocketFeature` Defines an API for supporting web sockets.</span></span>
+<span data-ttu-id="bb226-118">`IHttpWebSocketFeature`는 웹 소켓을 지원하기 위한 API를 정의합니다.</span><span class="sxs-lookup"><span data-stu-id="bb226-118">`IHttpWebSocketFeature` Defines an API for supporting web sockets.</span></span>
 
-<span data-ttu-id="5e1a7-119">`IHttpRequestIdentifierFeature`요청을 고유 하 게 식별 하는 구현 될 수 있는 속성을 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e1a7-119">`IHttpRequestIdentifierFeature` Adds a property that can be implemented to uniquely identify requests.</span></span>
+<span data-ttu-id="bb226-119">`IHttpRequestIdentifierFeature`는 요청을 고유하게 식별하기 위해 구현할 수 있는 속성을 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="bb226-119">`IHttpRequestIdentifierFeature` Adds a property that can be implemented to uniquely identify requests.</span></span>
 
-<span data-ttu-id="5e1a7-120">`ISessionFeature`정의 `ISessionFactory` 및 `ISession` 사용자 세션을 지원 하기 위한 추상화입니다.</span><span class="sxs-lookup"><span data-stu-id="5e1a7-120">`ISessionFeature` Defines `ISessionFactory` and `ISession` abstractions for supporting user sessions.</span></span>
+<span data-ttu-id="bb226-120">`ISessionFeature`는 사용자 세션을 지원하기 위한 `ISessionFactory` 및 `ISession` 추상화를 정의합니다.</span><span class="sxs-lookup"><span data-stu-id="bb226-120">`ISessionFeature` Defines `ISessionFactory` and `ISession` abstractions for supporting user sessions.</span></span>
 
-<span data-ttu-id="5e1a7-121">`ITlsConnectionFeature`클라이언트 인증서를 검색 하기 위한 API를 정의 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e1a7-121">`ITlsConnectionFeature` Defines an API for retrieving client certificates.</span></span>
+<span data-ttu-id="bb226-121">`ITlsConnectionFeature`는 클라이언트 인증서를 검색하기 위한 API를 정의합니다.</span><span class="sxs-lookup"><span data-stu-id="bb226-121">`ITlsConnectionFeature` Defines an API for retrieving client certificates.</span></span>
 
-<span data-ttu-id="5e1a7-122">`ITlsTokenBindingFeature`TLS 토큰 바인딩 매개 변수를 사용 하기 위한 메서드를 정의 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e1a7-122">`ITlsTokenBindingFeature` Defines methods for working with TLS token binding parameters.</span></span>
+<span data-ttu-id="bb226-122">`ITlsTokenBindingFeature`는 TLS 토큰 바인딩 매개 변수 작업을 위한 메서드를 정의합니다.</span><span class="sxs-lookup"><span data-stu-id="bb226-122">`ITlsTokenBindingFeature` Defines methods for working with TLS token binding parameters.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="5e1a7-123">`ISessionFeature`서버 기능이 아니지만 의해 구현 되는 `SessionMiddleware` (참조 [관리 응용 프로그램 상태](app-state.md)).</span><span class="sxs-lookup"><span data-stu-id="5e1a7-123">`ISessionFeature` isn't a server feature, but is implemented by the `SessionMiddleware` (see [Managing Application State](app-state.md)).</span></span>
+> <span data-ttu-id="bb226-123">`ISessionFeature`는 서버 기능이 아니지만 `SessionMiddleware`로 구현됩니다([응용 프로그램 상태 관리](app-state.md) 참조).</span><span class="sxs-lookup"><span data-stu-id="bb226-123">`ISessionFeature` isn't a server feature, but is implemented by the `SessionMiddleware` (see [Managing Application State](app-state.md)).</span></span>
 
-## <a name="feature-collections"></a><span data-ttu-id="5e1a7-124">컬렉션 기능</span><span class="sxs-lookup"><span data-stu-id="5e1a7-124">Feature collections</span></span>
+## <a name="feature-collections"></a><span data-ttu-id="bb226-124">기능 컬렉션</span><span class="sxs-lookup"><span data-stu-id="bb226-124">Feature collections</span></span>
 
-<span data-ttu-id="5e1a7-125">`Features` 속성 `HttpContext` 가져오고 현재 요청에 대 한 사용 가능한 HTTP 기능을 설정 하기 위한 인터페이스를 제공 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e1a7-125">The `Features` property of `HttpContext` provides an interface for getting and setting the available HTTP features for the current request.</span></span> <span data-ttu-id="5e1a7-126">요청 컨텍스트 내 에서도 변경할 수 있는 기능 컬렉션 이므로 미들웨어 데 사용할 수는 컬렉션을 수정 하 고 추가 기능에 대 한 지원을 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e1a7-126">Since the feature collection is mutable even within the context of a request, middleware can be used to modify the collection and add support for additional features.</span></span>
+<span data-ttu-id="bb226-125">`HttpContext`의 `Features` 속성은 현재 요청에 사용 가능한 HTTP 기능을 가져오고 설정하기 위한 인터페이스를 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="bb226-125">The `Features` property of `HttpContext` provides an interface for getting and setting the available HTTP features for the current request.</span></span> <span data-ttu-id="bb226-126">기능 컬렉션은 요청 컨텍스트 내에서도 변경할 수 있기 때문에, 미들웨어를 사용하여 콜렉션을 수정하고 추가 기능에 대한 지원을 추가할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="bb226-126">Since the feature collection is mutable even within the context of a request, middleware can be used to modify the collection and add support for additional features.</span></span>
 
-## <a name="middleware-and-request-features"></a><span data-ttu-id="5e1a7-127">미들웨어 및 요청 기능</span><span class="sxs-lookup"><span data-stu-id="5e1a7-127">Middleware and request features</span></span>
+## <a name="middleware-and-request-features"></a><span data-ttu-id="bb226-127">미들웨어 및 요청 기능</span><span class="sxs-lookup"><span data-stu-id="bb226-127">Middleware and request features</span></span>
 
-<span data-ttu-id="5e1a7-128">서버 기능 컬렉션을 만드는 책임이 상태인 미들웨어 수 모두이 컬렉션에 추가할 및 컬렉션에서 기능을 사용 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e1a7-128">While servers are responsible for creating the feature collection, middleware can both add to this collection and consume features from the collection.</span></span> <span data-ttu-id="5e1a7-129">예를 들어는 `StaticFileMiddleware` 액세스는 `IHttpSendFileFeature` 기능입니다.</span><span class="sxs-lookup"><span data-stu-id="5e1a7-129">For example, the `StaticFileMiddleware` accesses the `IHttpSendFileFeature` feature.</span></span> <span data-ttu-id="5e1a7-130">기능이 설치 된 경우, 실제 경로가에서 요청된 된 정적 파일을 보낼 수 ´ ù.</span><span class="sxs-lookup"><span data-stu-id="5e1a7-130">If the feature exists, it's used to send the requested static file from its physical path.</span></span> <span data-ttu-id="5e1a7-131">그렇지는 더 느린 대체 방법은 파일을 보내려면 사용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="5e1a7-131">Otherwise, a slower alternative method is used to send the file.</span></span> <span data-ttu-id="5e1a7-132">사용 가능한 경우는 `IHttpSendFileFeature` 운영 시스템이 직접 커널 모드 네트워크 카드에 복사를 수행 하 고 파일을 열 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="5e1a7-132">When available, the `IHttpSendFileFeature` allows the operating system to open the file and perform a direct kernel mode copy to the network card.</span></span>
+<span data-ttu-id="bb226-128">서버가 기능 컬렉션을 만드는 동안 미들웨어는 이 컬렉션에 추가할 수 있고 컬렉션의 기능을 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="bb226-128">While servers are responsible for creating the feature collection, middleware can both add to this collection and consume features from the collection.</span></span> <span data-ttu-id="bb226-129">예를 들어 `StaticFileMiddleware`는 `IHttpSendFileFeature` 기능에 액세스합니다. </span><span class="sxs-lookup"><span data-stu-id="bb226-129">For example, the `StaticFileMiddleware` accesses the `IHttpSendFileFeature` feature.</span></span> <span data-ttu-id="bb226-130">이는 해당 기능이 존재하는 경우 실제 경로에서 요청된 고정 파일을 보내는 데 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="bb226-130">If the feature exists, it's used to send the requested static file from its physical path.</span></span> <span data-ttu-id="bb226-131">그렇지 않으면 느린 대체 메서드를 사용하여 파일을 보냅니다.</span><span class="sxs-lookup"><span data-stu-id="bb226-131">Otherwise, a slower alternative method is used to send the file.</span></span> <span data-ttu-id="bb226-132">사용 가능한 경우 `IHttpSendFileFeature`는 운영 체제가 파일을 열고 네트워크 카드로 직접 커널 모드 복사를 수행할 수 있게 해줍니다.</span><span class="sxs-lookup"><span data-stu-id="bb226-132">When available, the `IHttpSendFileFeature` allows the operating system to open the file and perform a direct kernel mode copy to the network card.</span></span>
 
-<span data-ttu-id="5e1a7-133">또한 미들웨어는 서버에서 설정한 기능 컬렉션에 추가할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="5e1a7-133">Additionally, middleware can add to the feature collection established by the server.</span></span> <span data-ttu-id="5e1a7-134">도 서버의 기능을 보완할 미들웨어 허용 미들웨어에서 기존 기능을 바꿀 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="5e1a7-134">Existing features can even be replaced by middleware, allowing the middleware to augment the functionality of the server.</span></span> <span data-ttu-id="5e1a7-135">컬렉션에 추가 기능은 다른 미들웨어 또는 내부 응용 프로그램 자체 요청 파이프라인의 뒷부분에 나오는에 즉시 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="5e1a7-135">Features added to the collection are available immediately to other middleware or the underlying application itself later in the request pipeline.</span></span>
+<span data-ttu-id="bb226-133">또한 미들웨어는 서버에 의해 설정된 기능 컬렉션에 추가할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="bb226-133">Additionally, middleware can add to the feature collection established by the server.</span></span> <span data-ttu-id="bb226-134">기존 기능을 미들웨어로 대체할 수 있으므로, 미들웨어가 서버의 기능을 향상할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="bb226-134">Existing features can even be replaced by middleware, allowing the middleware to augment the functionality of the server.</span></span> <span data-ttu-id="bb226-135">컬렉션에 추가된 기능은 다른 미들웨어에서 즉시 사용하거나 나중에 요청 파이프라인의 기본 응용 프로그램 자체에서 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="bb226-135">Features added to the collection are available immediately to other middleware or the underlying application itself later in the request pipeline.</span></span>
 
-<span data-ttu-id="5e1a7-136">사용자 지정 서버 구현 및 특정 미들웨어의 향상 된 기능을 결합 함으로써 정확한 응용 프로그램에 필요한 기능 집합을 생성할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="5e1a7-136">By combining custom server implementations and specific middleware enhancements, the precise set of features an application requires can be constructed.</span></span> <span data-ttu-id="5e1a7-137">그러면 누락 된 서버에서 변경 하지 않고도 추가할 기능 및 보장 공격을 제한할 수는 최소한의 기능만 노출 되 영역 및 성능 향상을 노출 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e1a7-137">This allows missing features to be added without requiring a change in server, and ensures only the minimal amount of features are exposed, thus limiting attack surface area and improving performance.</span></span>
+<span data-ttu-id="bb226-136">사용자 지정 서버 구현 및 특정 미들웨어의 향상 기능을 결합하면 응용 프로그램에 필요한 정확한 기능 집합을 구성할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="bb226-136">By combining custom server implementations and specific middleware enhancements, the precise set of features an application requires can be constructed.</span></span> <span data-ttu-id="bb226-137">이를 통해 서버를 변경하지 않고 누락된 기능을 추가할 수 있으며, 최소한의 기능만 노출되도록 하여 공격 영역을 제한하고 성능을 개선할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="bb226-137">This allows missing features to be added without requiring a change in server, and ensures only the minimal amount of features are exposed, thus limiting attack surface area and improving performance.</span></span>
 
-## <a name="summary"></a><span data-ttu-id="5e1a7-138">요약</span><span class="sxs-lookup"><span data-stu-id="5e1a7-138">Summary</span></span>
+## <a name="summary"></a><span data-ttu-id="bb226-138">요약</span><span class="sxs-lookup"><span data-stu-id="bb226-138">Summary</span></span>
 
-<span data-ttu-id="5e1a7-139">기능 인터페이스를 지 원하는 지정된 된 요청 특정 HTTP 기능 정의 합니다.</span><span class="sxs-lookup"><span data-stu-id="5e1a7-139">Feature interfaces define specific HTTP features that a given request may support.</span></span> <span data-ttu-id="5e1a7-140">서버 기능, 컬렉션 및 해당 서버에서 지 원하는 기능의 초기 집합을 정의 하지만 미들웨어를 사용 하 여 이러한 기능을 향상 시킬 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="5e1a7-140">Servers define collections of features, and the initial set of features supported by that server, but middleware can be used to enhance these features.</span></span>
+<span data-ttu-id="bb226-139">기능 인터페이스는 특정 요청이 지원할 수 있는 특정 HTTP 기능을 정의합니다.</span><span class="sxs-lookup"><span data-stu-id="bb226-139">Feature interfaces define specific HTTP features that a given request may support.</span></span> <span data-ttu-id="bb226-140">서버는 기능 컬렉션 및 해당 서버에서 지원하는 초기 기능 집합을 정의하지만, 미들웨어를 사용하여 이러한 기능을 향상할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="bb226-140">Servers define collections of features, and the initial set of features supported by that server, but middleware can be used to enhance these features.</span></span>
 
-## <a name="additional-resources"></a><span data-ttu-id="5e1a7-141">추가 리소스</span><span class="sxs-lookup"><span data-stu-id="5e1a7-141">Additional Resources</span></span>
+## <a name="additional-resources"></a><span data-ttu-id="bb226-141">추가 리소스</span><span class="sxs-lookup"><span data-stu-id="bb226-141">Additional resources</span></span>
 
-* [<span data-ttu-id="5e1a7-142">서버</span><span class="sxs-lookup"><span data-stu-id="5e1a7-142">Servers</span></span>](servers/index.md)
-
-* [<span data-ttu-id="5e1a7-143">미들웨어</span><span class="sxs-lookup"><span data-stu-id="5e1a7-143">Middleware</span></span>](middleware.md)
-
-* [<span data-ttu-id="5e1a7-144">OWIN(Open Web Interface for .NET)</span><span class="sxs-lookup"><span data-stu-id="5e1a7-144">Open Web Interface for .NET (OWIN)</span></span>](owin.md)
+* [<span data-ttu-id="bb226-142">서버</span><span class="sxs-lookup"><span data-stu-id="bb226-142">Servers</span></span>](xref:fundamentals/servers/index)
+* [<span data-ttu-id="bb226-143">미들웨어</span><span class="sxs-lookup"><span data-stu-id="bb226-143">Middleware</span></span>](xref:fundamentals/middleware/index)
+* [<span data-ttu-id="bb226-144">OWIN(Open Web Interface for .NET)</span><span class="sxs-lookup"><span data-stu-id="bb226-144">Open Web Interface for .NET (OWIN)</span></span>](xref:fundamentals/owin)
