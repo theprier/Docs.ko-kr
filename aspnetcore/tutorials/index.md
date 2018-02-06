@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/index
-ms.openlocfilehash: 01a804151ad813dbf47ab4b2415076a4e01bf1d9
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: bcfd20fcea1e683bcbef00a9e67bb28add4f23be
+ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="aspnet-core-tutorials"></a>ASP.NET Core 자습서
 
@@ -52,9 +52,10 @@ ASP.NET Core 응용 프로그램을 개발하기 위해 다음 단계별 가이�
 * [네이티브 모바일 앱에 대한 백 엔드 웹 서비스 만들기](../mobile/native-mobile-backend.md)
 
 ## <a name="data-access-and-storage"></a>데이터 액세스 및 저장소
-* [Visual Studio를 사용하여 ASP.NET Core 및 Entity Framework Core 시작](../data/ef-mvc/index.md)
-* [ASP.NET Core with EF Core - new database](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db)(ASP.NET Core 및 EF Core - 새로운 데이터베이스)
-* [ASP.NET Core with EF Core - existing database](https://docs.microsoft.com/ef/core/get-started/aspnetcore/existing-db)(ASP.NET Core 및 EF Core - 기존 데이터베이스)
+* [Visual Studio를 사용하여 Razor 페이지 및 Entity Core 시작](xref:data/ef-rp/intro)
+* [Visual Studio를 사용하여 ASP.NET Core MVC 및 Entity Core 시작](../data/ef-mvc/index.md)
+* [ASP.NET Core MVC 및 EF Core - 새 데이터베이스](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db)
+* [ASP.NET Core MVC 및 EF Core - 기존 데이터베이스](https://docs.microsoft.com/ef/core/get-started/aspnetcore/existing-db)
 
 ## <a name="authentication-and-authorization"></a>인증 및 권한 부여
 * [Facebook, Google 및 기타 외부 공급자를 통해 인증 사용](../security/authentication/social/index.md)
