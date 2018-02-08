@@ -2,60 +2,60 @@
 title: "레이아웃"
 author: ardalis
 description: 
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: mvc/views/layout
-ms.openlocfilehash: e268f045e39188e9cc1e759ff7e6c553662dd669
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
-ms.translationtype: MT
+ms.openlocfilehash: 3e9e5949d8940a33508e24f0da015b49b7ba468c
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="layout"></a>레이아웃
 
-으로 [Steve Smith](https://ardalis.com/)
+작성자: [Steve Smith](https://ardalis.com/)
 
-뷰는 자주 visual 및 프로그래밍 요소를 공유합니다. 이 문서에서는 일반적인 레이아웃을 사용 하 여 지시문을 공유 하 고 ASP.NET 응용 프로그램에서 뷰 렌더링 하기 전에 일반적인 코드를 실행 하는 방법에 알아봅니다.
+뷰는 시각적 개체 및 프로그래밍 요소를 자주 공유합니다. 이 문서에서는 ASP.NET 앱에서 뷰를 렌더링하기 전에 일반적인 레이아웃을 사용하고, 지시문을 공유하며, 공용 코드를 실행하는 방법에 대해 알아봅니다.
 
-## <a name="what-is-a-layout"></a>레이아웃 무엇입니까
+## <a name="what-is-a-layout"></a>레이아웃이란
 
-대부분의 웹 응용 프로그램은 사용자가 페이지를 탐색 하면서 일관 된 환경을 제공 하는 일반적인 레이아웃이 있습니다. 레이아웃에는 일반적으로 응용 프로그램, 탐색 또는 메뉴 요소 머리글과 바닥글을 같은 공통 사용자 인터페이스 요소가 포함 됩니다.
+대부분의 웹앱에는 사용자가 페이지를 탐색하는 동안 일관된 환경을 제공하는 일반적인 레이아웃이 있습니다. 일반적으로 레이아웃에는 앱 헤더, 탐색 또는 메뉴 요소, 바닥글과 같은 공통 사용자 인터페이스 요소가 포함됩니다.
 
 ![페이지 레이아웃 예제](layout/_static/page-layout.png)
 
-스크립트 및 스타일 시트와 같은 일반적인 HTML 구조는 응용 프로그램 내에서 여러 페이지에 의해 자주 사용 됩니다. 이러한 공유 요소를 모두 정의 되어 있을 수는 *레이아웃* 파일에는 앱 내에서 사용 되는 모든 보기에서 참조할 수 있습니다. 레이아웃에 따라 든이 터 뷰에서 중복 코드를 줄이기는 [하지 반복 직접 (드라이) 원칙](http://deviq.com/don-t-repeat-yourself/)합니다.
+스크립트 및 스타일시트와 같은 공통 HTML 구조는 앱 내에서 여러 페이지에서도 자주 사용됩니다. 이러한 모든 공유 요소를 *레이아웃* 파일에 정의한 후 앱 내에 사용된 모든 뷰에서 참조할 수 있습니다. 레이아웃은 뷰에서 중복 코드를 줄여 [DRY(반복 금지) 원칙](http://deviq.com/don-t-repeat-yourself/)을 따르도록 도와줍니다.
 
-ASP.NET 응용 프로그램에 대 한 기본 레이아웃 규칙에 따라 라는 `_Layout.cshtml`합니다. Visual Studio ASP.NET Core MVC 프로젝트 템플릿은 포함이 레이아웃 파일에는 `Views/Shared` 폴더:
+규칙에 따라, ASP.NET 앱의 기본 레이아웃 이름을 `_Layout.cshtml`로 지정합니다. Visual Studio ASP.NET Core MVC 프로젝트 템플릿은 `Views/Shared` 폴더에 이 레이아웃 파일을 포함합니다.
 
-![솔루션 탐색기에서 views 폴더](layout/_static/web-project-views.png)
+![솔루션 탐색기의 뷰 폴더](layout/_static/web-project-views.png)
 
-이 레이아웃 앱의 뷰에 대 한 최상위 수준 템플릿을 정의합니다. 앱 레이아웃을 필요가 없는 경우 그리고 앱 다양 한 레이아웃을 지정 하는 다른 뷰를 둘 이상의 레이아웃을 정의할 수 있습니다.
+이 레이아웃은 앱의 뷰에 대한 최상위 수준 템플릿을 정의합니다. 앱에는 레이아웃이 필요하지 않으며, 앱은 다른 레이아웃을 지정하는 서로 다른 뷰를 포함하는 둘 이상의 레이아웃을 정의할 수 있습니다.
 
-예로 `_Layout.cshtml`:
+`_Layout.cshtml` 예:
 
 [!code-html[Main](../../common/samples/WebApplication1/Views/Shared/_Layout.cshtml?highlight=42,66)]
 
-## <a name="specifying-a-layout"></a>레이아웃을 지정합니다.
+## <a name="specifying-a-layout"></a>레이아웃 지정
 
-Razor 보기에 `Layout` 속성입니다. 이 속성을 설정 하 여 레이아웃을 지정 하는 개별 보기:
+Razor 뷰는 `Layout` 속성을 포함합니다. 이 속성을 설정하여 레이아웃을 지정하는 개별 뷰:
 
 [!code-html[Main](../../common/samples/WebApplication1/Views/_ViewStart.cshtml?highlight=2)]
 
-지정한 레이아웃 전체 경로 사용할 수 있습니다 (예: `/Views/Shared/_Layout.cshtml`) 또는 이름의 일부 (예: `_Layout`). 이름의 일부 제공 되 면 해당 표준 검색 프로세스를 사용 하 여 레이아웃 파일에 대 한 Razor 보기 엔진이 검색 됩니다. 컨트롤러 관련 폴더를 먼저 검색, 뒤의 `Shared` 폴더입니다. 이 검색 프로세스는 검색에 사용 되는 컬렉션과 동일한 [부분 뷰](partial.md)합니다.
+지정한 레이아웃은 전체 경로(예: `/Views/Shared/_Layout.cshtml`) 또는 부분 이름(예: `_Layout`)을 사용할 수 있습니다. 부분 이름이 제공되면 Razor 뷰 엔진이 표준 검색 프로세스를 사용하여 레이아웃 파일을 검색합니다. 컨트롤러 관련 폴더를 먼저 검색한 후 `Shared` 폴더를 검색합니다. 이 검색 프로세스는 [부분 뷰](partial.md)를 검색하는 데 사용된 것과 동일합니다.
 
-기본적으로 모든 레이아웃 호출 해야 `RenderBody`합니다. 모든 위치에 대 한 호출 `RenderBody` 은 배치 하는 보기의 내용을 렌더링 됩니다.
+기본적으로 모든 레이아웃에서 `RenderBody`를 호출해야 합니다. `RenderBody` 호출이 배치될 때마다 뷰의 내용이 렌더링됩니다.
 
 <a name="layout-sections-label"></a>
 
 ### <a name="sections"></a>섹션
 
-하나 이상의 레이아웃을 참조할 필요에 따라 수 *섹션*를 호출 하 여 `RenderSection`합니다. 섹션에서는 특정 페이지 요소를 배치할 위치를 구성 하는 방법을 제공 합니다. 호출할 때마다 `RenderSection` 않은 필수 또는 선택 여부를 지정할 수 있습니다. 필수 세션을 찾을 수 없으면 예외가 throw 됩니다. 사용 하 여 섹션 내에서 렌더링할 콘텐츠를 지정 하는 개별 뷰에 `@section` Razor 구문입니다. 뷰 섹션을 정의 하는 경우 렌더링 해야 하거나 오류가 발생 합니다.
+레이아웃은 `RenderSection`을 호출하여 필요에 따라 하나 이상의 *섹션*을 참조합니다. 섹션에서는 특정 페이지 요소를 배치할 위치를 구성하는 방법을 제공합니다. `RenderSection` 호출 때마다 섹션이 필수 또는 옵션인지 여부를 지정할 수 있습니다. 필수 섹션이 없는 경우 예외가 throw됩니다. 개별 뷰는 `@section` Razor 구문을 사용하여 섹션 내에 렌더링될 콘텐츠를 지정합니다. 뷰에서 섹션을 정의하는 경우 렌더링되어야 합니다(그렇지 않은 경우 오류 발생).
 
-예 `@section` 뷰의 정의:
+뷰에서 `@section` 정의 예:
 
 ```html
 @section Scripts {
@@ -63,23 +63,23 @@ Razor 보기에 `Layout` 속성입니다. 이 속성을 설정 하 여 레이아
    }
    ```
 
-위의 코드에서 유효성 검사 스크립트에 추가 됩니다는 `scripts` 폼을 포함 하는 보기에는 섹션입니다. 동일한 응용 프로그램에서 다른 보기에는 추가 스크립트, 필요 하지 않은 스크립트 섹션을 정의 하려면 필요 하므로.
+위의 코드에서는 유효성 검사 스크립트가 양식을 포함하는 뷰의 `scripts` 섹션에 추가됩니다. 동일한 응용 프로그램의 다른 뷰에는 추가 스크립트가 필요하지 않을 수 있으므로 스크립트 섹션을 정의할 필요가 없습니다.
 
-뷰에 정의 된 섹션은 있으며 즉시 레이아웃 페이지 에서만 사용할 수 있습니다. 부분, 구성 요소 보기 또는 보기 시스템의 다른 부분에서 참조할 수 없습니다.
+뷰에 정의된 섹션은 즉시 레이아웃 페이지에서만 사용할 수 있습니다. 이들은 부분 뷰, 뷰 구성 요소 또는 뷰 시스템의 다른 부분에서 참조할 수 없습니다.
 
-### <a name="ignoring-sections"></a>섹션을 무시합니다.
+### <a name="ignoring-sections"></a>섹션 무시
 
-기본적으로 본문 및 콘텐츠 페이지의 모든 섹션 모두 렌더링 해야 합니다는 레이아웃 페이지에서. Razor 뷰 엔진 본문과 각 섹션 렌더링 될 지 여부를 추적 하 여이 적용 합니다.
+기본적으로 콘텐츠 페이지 본문 및 모든 섹션은 레이아웃 페이지에서 모두 렌더링되어야 합니다. Razor 뷰 엔진은 본문과 각 섹션이 렌더링되었는지 여부를 추적하여 이를 적용합니다.
 
-에 대 한 본문 또는 섹션을 무시 하는 뷰 엔진이 명령, 호출의 `IgnoreBody` 및 `IgnoreSection` 메서드.
+뷰 엔진이 본문 또는 섹션을 무시하도록 지시하려면 `IgnoreBody` 및 `IgnoreSection` 메서드를 호출합니다.
 
-본문 및 Razor 페이지에서 모든 섹션 렌더링 하거나 무시 됩니다.
+Razor 페이지의 본문 및 모든 섹션은 렌더링되거나 무시되어야 합니다.
 
 <a name="viewimports"></a>
 
 ## <a name="importing-shared-directives"></a>공유 지시문 가져오기
 
-뷰 또는 네임 스페이스 가져오기 등의 많은 작업을 Razor 지시문을 사용할 수 있습니다 [종속성 주입](dependency-injection.md)합니다. 일반적인 많은 보기에서 공유 하는 지시문을 지정할 수 있습니다 `_ViewImports.cshtml` 파일입니다. `_ViewImports` 파일은 다음 지시문을 지원 합니다.
+뷰는 Razor 지시문을 사용하여 네임스페이스 가져오기 또는 [종속성 주입](dependency-injection.md) 수행과 같은 많은 작업을 수행할 수 있습니다. 많은 뷰에서 공유된 지시문은 공용 `_ViewImports.cshtml` 파일에 지정할 수 있습니다. `_ViewImports` 파일은 다음 지시문을 지원합니다.
 
 * `@addTagHelper`
 
@@ -95,41 +95,41 @@ Razor 보기에 `Layout` 속성입니다. 이 속성을 설정 하 여 레이아
 
 * `@inject`
 
-파일 섹션 정의 함수 등의 다른 Razor 기능을 지원 하지 않습니다.
+이 파일은 다른 Razor 기능(예: 함수 및 섹션 정의)을 지원하지 않습니다.
 
 샘플 `_ViewImports.cshtml` 파일:
 
 [!code-html[Main](../../common/samples/WebApplication1/Views/_ViewImports.cshtml)]
 
-`_ViewImports.cshtml` 파일 ASP.NET Core MVC 응용 프로그램에 일반적으로 배치 되는 `Views` 폴더입니다. A `_ViewImports.cshtml` 경우에만 적용 됩니다 뷰는 해당 폴더와 하위 폴더 내에서 각 폴더에서 파일을 배치할 수 있습니다. `_ViewImports`루트 수준에서 시작 파일은 처리 있으며 다음 최대 선행 각 폴더에 대 한 뷰 자체의 위치 루트 수준에서 설정을 지정할 수 있습니다 재정의할 수 폴더 수준에서.
+ASP.NET Core MVC 앱에 대한 `_ViewImports.cshtml` 파일은 일반적으로 `Views` 폴더에 배치됩니다. `_ViewImports.cshtml` 파일은 모든 폴더 내에 배치할 수 있으며, 이 경우 해당 폴더 및 해당 하위 폴더 내의 뷰에만 적용됩니다. `_ViewImports` 파일은 루트 수준에서부터 처리된 다음, 각 폴더에 대해 뷰 자체의 위치까지 처리되므로 루트 수준에서 지정된 설정이 폴더 수준에서 재정의될 수 있습니다.
 
-예를 들어 루트 수준 `_ViewImports.cshtml` 파일 지정 `@model` 및 `@addTagHelper`, 또 다른 `_ViewImports.cshtml` 파일 보기의 컨트롤러 관련 폴더를 다른 지정 `@model` 다른 추가 `@addTagHelper`, 보기 두 태그 도우미에 액세스할 수 있는 및 후자 ´ ֲ `@model`합니다.
+예를 들어 루트 수준 `_ViewImports.cshtml` 파일이 `@model` 및 `@addTagHelper`를 지정하고, 뷰의 컨트롤러 관련 폴더에서 다른 `_ViewImports.cshtml` 파일이 다른 `@model`을 지정하며 다른 `@addTagHelper`를 추가하면, 뷰는 두 태그 도우미에 액세스할 수 있고 후자 `@model`을 사용합니다.
 
-여러 개인 경우 `_ViewImports.cshtml` 파일 보기에 대 한 실행에 포함 된 지시문의 동작을 결합 된 `ViewImports.cshtml` 파일이 다음과 같이 됩니다.
+뷰에 대해 여러 `_ViewImports.cshtml` 파일이 실행되는 경우 `ViewImports.cshtml` 파일에 포함된 지시문의 결합된 동작은 다음과 같습니다.
 
-* `@addTagHelper``@removeTagHelper`: 순서로 모든 실행
+* `@addTagHelper`, `@removeTagHelper`: 순서대로 모두 실행
 
-* `@tagHelperPrefix`: 모든 다른 보기에 가장 가까운 스택을 재정의
+* `@tagHelperPrefix`: 뷰에 가장 가까운 것이 다른 것보다 우선함
 
-* `@model`: 모든 다른 보기에 가장 가까운 스택을 재정의
+* `@model`: 뷰에 가장 가까운 것이 다른 것보다 우선함
 
-* `@inherits`: 모든 다른 보기에 가장 가까운 스택을 재정의
+* `@inherits`: 뷰에 가장 가까운 것이 다른 것보다 우선함
 
-* `@using`: 모든 포함 됩니다. 중복 항목은 무시 됩니다.
+* `@using`: 모두 포함됨. 중복 항목은 무시됨
 
-* `@inject`: 각 속성에 대 한 보기에 가장 가까운 스택을 속성 이름이 같은 다른 재정의
+* `@inject`: 각 속성에 대해 뷰에 가장 가까운 것이 같은 속성 이름의 다른 것보다 우선함
 
 <a name="viewstart"></a>
 
-## <a name="running-code-before-each-view"></a>각 보기 전에 코드를 실행합니다.
+## <a name="running-code-before-each-view"></a>각 뷰 이전에 코드 실행
 
-모든 보기 전에 실행 해야 할 코드가 있으면에 배치 해야는 `_ViewStart.cshtml` 파일입니다. 일반적으로는 `_ViewStart.cshtml` 파일은 `Views` 폴더입니다. 에 나열 된 문을 `_ViewStart.cshtml` 마다 전체 보기 (하지 레이아웃 및 아님 뷰) 보다 먼저 실행 됩니다. 마찬가지로 [ViewImports.cshtml](xref:mvc/views/layout#viewimports), `_ViewStart.cshtml` 계층적입니다. 경우는 `_ViewStart.cshtml` 파일 보기 컨트롤러 관련 폴더에 정의 되어의 루트에 정의 된 후 실행 됩니다는 `Views` 폴더 (있는 경우).
+모든 뷰 이전에 실행해야 하는 코드가 있는 경우 `_ViewStart.cshtml` 파일에 배치해야 합니다. 규칙에 따라 `_ViewStart.cshtml` 파일은 `Views` 폴더에 있습니다. `_ViewStart.cshtml`에 나열된 문은 모든 전체 뷰(레이아웃 및 부분 뷰가 아님) 이전에 실행됩니다. [ViewImports.cshtml](xref:mvc/views/layout#viewimports)처럼 `_ViewStart.cshtml`은 계층적입니다. `_ViewStart.cshtml` 파일이 컨트롤러 관련 뷰 폴더에 정의된 경우 `Views` 폴더의 루트에 정의된 항목 뒤에 실행됩니다(있는 경우).
 
 샘플 `_ViewStart.cshtml` 파일:
 
 [!code-html[Main](../../common/samples/WebApplication1/Views/_ViewStart.cshtml)]
 
-위의 파일 모든 보기에서 사용 되도록 지정 된 `_Layout.cshtml` 레이아웃 합니다.
+위의 파일은 모든 뷰가 `_Layout.cshtml` 레이아웃을 사용하도록 지정합니다.
 
 > [!NOTE]
-> 모두 `_ViewStart.cshtml` 나 `_ViewImports.cshtml` 에 일반적으로 배치 되는 `/Views/Shared` 폴더입니다. 이러한 파일의 버전을 앱 수준에서 직접 배치 해야는 `/Views` 폴더입니다.
+> 일반적으로 `_ViewStart.cshtml` 또는 `_ViewImports.cshtml`은 `/Views/Shared` 폴더에 배치되지 않습니다. 이러한 파일의 앱 수준 버전은 `/Views` 폴더에 직접 배치해야 합니다.

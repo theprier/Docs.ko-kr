@@ -1,107 +1,107 @@
 ---
-title: "ASP.NET Core MVC 컨트롤러와의 요청 처리"
+title: "ASP.NET Core MVC에서 컨트롤러를 사용한 요청 처리"
 author: ardalis
 description: 
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 07/03/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: mvc/controllers/actions
-ms.openlocfilehash: 99dcf1bd4f0dc4fcb6169f48bd398c9e40c21a35
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
-ms.translationtype: MT
+ms.openlocfilehash: 1c6bf5ad92a43274af351652d240e2fa8873a956
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
-# <a name="handling-requests-with-controllers-in-aspnet-core-mvc"></a>ASP.NET Core MVC 컨트롤러와의 요청 처리
+# <a name="handling-requests-with-controllers-in-aspnet-core-mvc"></a>ASP.NET Core MVC에서 컨트롤러를 사용한 요청 처리
 
-여 [Steve Smith](https://ardalis.com/) 및 [Scott Addie](https://github.com/scottaddie)
+작성자: [Steve Smith](https://ardalis.com/) 및 [Scott Addie](https://github.com/scottaddie)
 
-컨트롤러, 작업 및 작업 결과 개발자가 ASP.NET Core MVC를 사용 하 여 앱을 구축 하는 방법의 핵심 부분입니다.
+컨트롤러, 작업 및 작업 결과는 개발자가 ASP.NET Core MVC를 사용하여 앱을 구축하는 방법에서 기본적인 부분입니다.
 
-## <a name="what-is-a-controller"></a>컨트롤러는 무엇입니까?
+## <a name="what-is-a-controller"></a>컨트롤러란?
 
-컨트롤러를 정의 하 고 일련의 작업을 그룹화에 사용 됩니다. 작업 (또는 *동작 메서드가*) 요청을 처리 하는 컨트롤러에 메서드가 만들어집니다. 컨트롤러를 논리적으로 그룹화와 유사한 동작입니다. 이 집계 작업의 라우팅, 캐싱 및 권한 부여를 전체적으로 적용할 수 등의 규칙의 공통 집합을 허용 합니다. 요청을 통해 작업에 매핑된 [라우팅](xref:mvc/controllers/routing)합니다.
+컨트롤러는 일련의 작업을 정의하고 그룹화하는 데 사용됩니다. 작업(또는 *작업 메서드*)은 요청을 처리하는 컨트롤러의 메서드입니다. 컨트롤러는 논리적으로 유사한 작업을 함께 그룹화합니다. 이 작업 집계를 통해 라우팅, 캐싱 및 권한 부여와 같은 일반적인 규칙 집합을 전체적으로 적용할 수 있습니다. 요청은 [라우팅](xref:mvc/controllers/routing)을 통해 작업에 매핑됩니다.
 
-규칙에 따라 컨트롤러 클래스:
-* 프로젝트의 루트 수준에 있는 *컨트롤러* 폴더
-* 상속`Microsoft.AspNetCore.Mvc.Controller`
+규칙에 따른 컨트롤러 클래스:
+* 프로젝트의 루트 수준 *Controllers* 폴더에 있음
+* `Microsoft.AspNetCore.Mvc.Controller`에서 상속
 
-컨트롤러는 다음 조건 중 하나 이상 true는 인스턴스화할 수 있는 클래스입니다.
-* 클래스 이름은 "Controller"로 그 뒤에
-* 이름이 "Controller" 접미사는 클래스에서 클래스 상속
-* 로 데코레이팅된 클래스는 `[Controller]` 특성
+컨트롤러는 다음 조건 중 하나 이상이 true인 인스턴스화할 수 있는 클래스입니다.
+* 클래스 이름에 접미사 “Controller”가 붙음
+* 클래스가 이름에 접미사 “Controller”가 붙는 클래스에서 상속
+* 클래스가 `[Controller]` 특성으로 데코레이트됨
 
-컨트롤러 클래스는 연결 된 있어야 `[NonController]` 특성입니다.
+컨트롤러 클래스에는 연결된 `[NonController]` 특성이 있어야 합니다.
 
-컨트롤러 따라야는 [명시적 종속성 원칙](http://deviq.com/explicit-dependencies-principle/)합니다. 이 원칙을 구현 하는 방법은 몇 가지가 있습니다. 동일한 서비스를 필요로 하는 여러 컨트롤러 작업을 하는 경우를 사용해 [생성자 삽입](xref:mvc/controllers/dependency-injection#constructor-injection) 해당 종속성을 요청할 수 있습니다. 서비스가 단일 동작 메서드에서 필요한 경우 사용 하십시오 [작업 삽입](xref:mvc/controllers/dependency-injection#action-injection-with-fromservices) 종속성을 요청할 수 있습니다.
+컨트롤러는 [명시적 종속성 원칙](http://deviq.com/explicit-dependencies-principle/)을 따라야 합니다. 이 원칙을 구현하는 방법에는 몇 가지가 있습니다. 여러 컨트롤러 작업에서 동일한 서비스가 필요한 경우 해당 종속성을 요청하는 데 [생성자 주입](xref:mvc/controllers/dependency-injection#constructor-injection)을 사용하는 것을 고려합니다. 서비스가 단일 작업 메서드에 필요한 경우에는 종속성을 요청하는 데 [작업 주입](xref:mvc/controllers/dependency-injection#action-injection-with-fromservices)을 사용하는 것을 고려합니다.
 
-내에서 **M**odel-**V**뷰-**C**ontroller 패턴은 컨트롤러에 대 한 책임이 초기 요청 처리와 모델의 인스턴스화입니다. 일반적으로 비즈니스 의사 결정 모델 내에서 수행 되어야 합니다.
+**M**odel-**V**iew-**C**ontroller(모델 뷰 컨트롤러) 패턴 내에서 컨트롤러는 초기 요청 처리 및 모델의 인스턴스화를 담당합니다. 일반적으로 비즈니스 의사 결정은 모델 내에서 수행되어야 합니다.
 
-컨트롤러는 모델의 처리 (있는 경우)의 결과 사용해 하 고 적절 한 보기와 관련 된 보기 데이터 또는 API 호출의 결과 반환 합니다. 자세한 내용 [ASP.NET Core MVC 개요](xref:mvc/overview) 및 [ASP.NET Core MVC 및 Visual Studio 시작](xref:tutorials/first-mvc-app/start-mvc)합니다.
+컨트롤러는 모델의 처리 결과(있는 경우)를 사용하고, 적절한 보기와 관련된 보기 데이터 또는 API 호출의 결과를 반환합니다. 자세한 내용은 [ASP.NET Core MVC 개요](xref:mvc/overview) 및 [ASP.NET Core MVC 및 Visual Studio 시작](xref:tutorials/first-mvc-app/start-mvc)을 참조하세요.
 
-컨트롤러는는 *UI 수준* 추상화 합니다. 해당 사항이 요청 데이터가 올바른지 확인 하 고 어떤 보기 (또는 API에 대 한 결과)를 반환 해야 선택 합니다. 잘 구성 된 앱에서 직접 데이터 액세스 또는 비즈니스 논리를 포함 되지 않습니다. 대신, 컨트롤러 이러한 책임을 처리 하는 서비스에 위임 합니다.
+컨트롤러는 *UI 수준* 추상화입니다. 해당 업무는 요청 데이터가 올바른지 확인하고 어떤 보기(또는 API에 대한 결과)를 반환해야 하는지 선택하는 것입니다. 잘 구성된 앱에서는 데이터 액세스 또는 비즈니스 논리를 직접 포함하지 않습니다. 대신, 컨트롤러는 이러한 책임을 처리하는 서비스에 위임합니다.
 
-## <a name="defining-actions"></a>동작 정의
+## <a name="defining-actions"></a>작업 정의하기
 
-Public 메서드를 컨트롤러에서로 데코레이팅 된 문을 제외한는 `[NonAction]` 특성을 가지 작업입니다. 동작에 매개 변수는 데이터를 요청에 바인딩되고를 사용 하 여 [모델 바인딩](xref:mvc/models/model-binding)합니다. 모델 유효성 검사는 모델 바인딩 있는 모든 작업에 대해 발생 합니다. `ModelState.IsValid` 속성 값을 바인딩하는 모델 및 유효성 검사의 성공 여부를 나타냅니다.
+컨트롤러의 공용 메서드는 `[NonAction]` 특성으로 데코레이트된 경우 이외에는, 작업입니다. 작업에서의 매개 변수는 요청 데이터에 바인딩되며 [모델 바인딩](xref:mvc/models/model-binding)을 사용하여 유효성 검사가 수행됩니다. 모델 유효성 검사는 모델 바인딩되는 모든 작업에 대해 발생합니다. `ModelState.IsValid` 속성 값은 모델 바인딩 및 유효성 검사의 성공 여부를 나타냅니다.
 
-작업 메서드는 비즈니스 문제에 요청을 매핑하는 것에 대 한 논리를 포함 해야 합니다. 비즈니스 문제나 일반적으로 컨트롤러를 통해 액세스 하는 서비스로 표시 되어야 [종속성 주입](xref:mvc/controllers/dependency-injection)합니다. 작업은 비즈니스 작업의 결과 응용 프로그램 상태에 매핑됩니다.
+작업 메서드는 비즈니스 문제에 요청을 매핑하는 것에 대한 논리를 포함해야 합니다. 비즈니스 문제는 일반적으로 컨트롤러가 [종속성 주입](xref:mvc/controllers/dependency-injection)을 통해 액세스하는 서비스로 표시되어야 합니다. 그런 다음 작업은 비즈니스 작업의 결과를 응용 프로그램 상태에 매핑합니다.
 
-작업, 모든 항목을 반환할 수 있지만 자주의 인스턴스를 반환 `IActionResult` (또는 `Task<IActionResult>` 비동기 메서드에 대 한) 응답을 생성 하는 합니다. 동작 메서드는 선택에 대 한 *응답의 종류*합니다. 작업 결과 *는 응답 하지 않는*합니다.
+작업은 모든 항목을 반환할 수 있지만, 응답을 생성하는 `IActionResult`(또는 비동기 메서드에 대한 `Task<IActionResult>`)의 인스턴스를 자주 반환합니다. 작업 메서드는 *응답의 종류*를 선택합니다. 작업 결과는 *응답을 수행*합니다.
 
 ### <a name="controller-helper-methods"></a>컨트롤러 도우미 메서드
 
-컨트롤러에서 일반적으로 상속 [컨트롤러](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controller)있지만 필요 하지 않습니다. 파생 된 `Controller` 도우미 메서드의 세 가지 범주에 대 한 액세스를 제공 합니다.
+컨트롤러는 일반적으로 [Controller](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controller)에서 상속합니다. 단, 이는 필수가 아닙니다. `Controller`에서의 파생은 도우미 메서드의 세 범주에 대한 액세스를 제공합니다.
 
-#### <a name="1-methods-resulting-in-an-empty-response-body"></a>1. 빈 응답 본문에으로 인해 발생 하는 방법
+#### <a name="1-methods-resulting-in-an-empty-response-body"></a>1. 빈 응답 본문으로 이어지는 메서드
 
-더 `Content-Type` HTTP 응답 헤더는 응답 본문을 설명 하는 콘텐츠 없으므로 포함 되어 있습니다.
+응답 본문에 설명할 콘텐츠가 없으므로 `Content-Type` HTTP 응답 헤더가 포함되지 않습니다.
 
-이 범주 내의 결과 형식은 두 가지가: 리디렉션 및 HTTP 상태 코드입니다.
+이 범주 내에는 리디렉션 및 HTTP 상태 코드의 두 가지 결과 형식이 있습니다.
 
 * **HTTP 상태 코드**
 
-    이 형식은 HTTP 상태 코드를 반환합니다. 이러한 종류의 몇 가지 도우미 메서드는 `BadRequest`, `NotFound`, 및 `Ok`합니다. 예를 들어 `return BadRequest();` 400 상태 코드가 실행 될 때을 생성 합니다. 때와 같은 메서드 `BadRequest`, `NotFound`, 및 `Ok` 는 오버 로드를 더 이상 자격이 HTTP 상태 코드 응답자도 콘텐츠 협상 수행 되 고 있으므로 합니다.
+    이 형식은 HTTP 상태 코드를 반환합니다. 이러한 형식의 몇 가지 도우미 메서드는 `BadRequest`, `NotFound` 및 `Ok`입니다. 예를 들어 `return BadRequest();`는 실행될 때 400 상태 코드를 생성합니다. `BadRequest`, `NotFound` 및 `Ok`와 같은 메서드가 오버로드되는 경우 콘텐츠 협상이 수행되고 있으므로 더 이상 HTTP 상태 코드 응답자로의 자격이 없습니다.
 
 * **리디렉션**
 
-    이 이와 같은 작업이 나 대상에 리디렉션이 반환 (사용 하 여 `Redirect`, `LocalRedirect`, `RedirectToAction`, 또는 `RedirectToRoute`). 예를 들어 `return RedirectToAction("Complete", new {id = 123});` 리디렉션합니다 `Complete`, 익명 개체를 전달 합니다.
+    이 형식은 작업 또는 대상에 리디렉션을 반환합니다(`Redirect`, `LocalRedirect`, `RedirectToAction` 또는 `RedirectToRoute` 사용). 예를 들어 `return RedirectToAction("Complete", new {id = 123});`은 `Complete`로 리디렉션하여 익명 개체를 전달합니다.
 
-    리디렉션 결과 형식이 주로 추가 HTTP 상태 코드 형식에서 다른 한 `Location` HTTP 응답 헤더입니다.
+    리디렉션 결과 형식은 주로 `Location` HTTP 응답 헤더와 더불어 HTTP 상태 코드 형식에 따라 다릅니다.
 
-#### <a name="2-methods-resulting-in-a-non-empty-response-body-with-a-predefined-content-type"></a>2. 미리 정의 된 콘텐츠 형식과 비어 있지 않은 응답 본문에으로 인해 발생 하는 방법
+#### <a name="2-methods-resulting-in-a-non-empty-response-body-with-a-predefined-content-type"></a>2. 미리 정의된 콘텐츠 형식의 비어 있지 않은 응답 본문으로 이어지는 메서드
 
-이 항목의 대부분의 도우미 메서드를 포함 한 `ContentType` 속성을 설정할 수는 `Content-Type` 응답 본문을 설명 하기 위해 응답 헤더입니다.
+이 범주의 도우미 메서드 대부분은 `ContentType` 속성을 포함하므로 응답 본문을 설명하도록 `Content-Type` 응답 헤더를 설정할 수 있습니다.
 
-이 범주 내의 결과 형식은 두 가지가: [보기](xref:mvc/views/overview) 및 [서식이 지정 된 응답](xref:mvc/models/formatting)합니다.
+이 범주 내의 결과 형식은 [보기](xref:mvc/views/overview) 및 [서식 있는 응답](xref:mvc/models/formatting)의 두 가지가 있습니다.
 
 * **보기**
 
-    이 형식은 HTML을 렌더링 하는 모델을 사용 하는 뷰를 반환 합니다. 예를 들어 `return View(customer);` 보기에 데이터 바인딩 모델을 전달 합니다.
+    이 형식은 HTML을 렌더링하는 모델을 사용하는 보기를 반환합니다. 예를 들어 `return View(customer);`는 데이터 바인딩을 위한 보기에 모델을 전달합니다.
 
-* **서식이 지정 된 응답**
+* **서식 있는 응답**
 
-    이 형식은 JSON 또는 비슷한 데이터 교환 형식인 개체를 나타내는 지정 된 방식으로 반환 합니다. 예를 들어 `return Json(customer);` JSON 형식에 제공된 된 개체를 serialize 합니다.
+    이 형식은 JSON 또는 비슷한 데이터 교환 형식을 반환하여 개체를 지정된 방식으로 표시합니다. 예를 들어 `return Json(customer);`은 JSON 형식에 제공된 개체를 직렬화합니다.
     
-    이 형식의 다른 일반적인 방법 `File`, `PhysicalFile`, 및 `VirtualFile`합니다. 예를 들어 `return PhysicalFile(customerFilePath, "text/xml");` 에서 설명 하는 XML 파일을 반환 합니다.는 `Content-Type` 응답 헤더 값에 "text/xml"입니다.
+    이 형식의 다른 일반적인 방법에는 `File`, `PhysicalFile` 및 `VirtualFile`이 포함됩니다. 예를 들어 `return PhysicalFile(customerFilePath, "text/xml");`은 “text/xml”의 `Content-Type` 응답 헤더 값으로 설명되는 XML 파일을 반환합니다.
 
-#### <a name="3-methods-resulting-in-a-non-empty-response-body-formatted-in-a-content-type-negotiated-with-the-client"></a>3. 클라이언트와 협상 콘텐츠 형식으로 서식이 지정 된 비어 있지 않은 응답 본문에으로 인해 발생 하는 방법
+#### <a name="3-methods-resulting-in-a-non-empty-response-body-formatted-in-a-content-type-negotiated-with-the-client"></a>3. 클라이언트와 협상된 콘텐츠 형식으로 서식이 지정된 비어 있지 않은 응답 본문으로 이어지는 메서드
 
-이 범주는 더 잘 알려져 **콘텐츠 협상**합니다. [콘텐츠 협상](xref:mvc/models/formatting#content-negotiation) 동작 반환 될 때마다 적용 되는 [ObjectResult](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.objectresult) 형식 또는 이외의 이와 [IActionResult](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.iactionresult) 구현 합니다. 비-반환 하는 동작`IActionResult` 구현 (예를 들어 `object`)도 서식이 지정 된 응답을 반환 합니다.
+이 범주는 **콘텐츠 협상**으로 더 잘 알려져 있습니다. [콘텐츠 협상](xref:mvc/models/formatting#content-negotiation)은 작업이 [ObjectResult](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.objectresult) 형식 또는 [IActionResult](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.iactionresult) 구현 외 항목을 반환할 때마다 적용됩니다. 비`IActionResult` 구현을 반환하는 작업(예: `object`)도 서식 있는 응답을 반환합니다.
 
-이러한 종류의 일부 도우미 메서드를 포함 `BadRequest`, `CreatedAtRoute`, 및 `Ok`합니다. 이러한 방법의 예로 `return BadRequest(modelState);`, `return CreatedAtRoute("routename", values, newobject);`, 및 `return Ok(value);`각각. `BadRequest` 및 `Ok` 값으로 전달 하는 경우에 콘텐츠 협상을 수행 합니다; 값을 전달 하지 않고 대신으로 사용 HTTP 상태 코드의 결과 형식입니다. `CreatedAtRoute` 메서드, 반면에 항상 콘텐츠 협상을 수행 이후의 메서드의 오버 로드 된 값을 전달할 수 모두 필요 합니다.
+이 형식의 몇 가지 도우미 메서드에는 `BadRequest`, `CreatedAtRoute` 및 `Ok`가 포함됩니다. 이러한 메서드의 예에는 각각 `return BadRequest(modelState);`, `return CreatedAtRoute("routename", values, newobject);` 및 `return Ok(value);`가 있습니다. `BadRequest` 및 `Ok`는 값이 전달될 때만 콘텐츠 협상을 수행합니다. 값을 전달하지 않으면 대신 HTTP 상태 코드 결과 형식으로 제공합니다. 반면, `CreatedAtRoute` 메서드는 해당 오버로드에서는 모두 값이 전달되어야 하므로 항상 콘텐츠 협상을 수행합니다.
 
-### <a name="cross-cutting-concerns"></a>일반적인 문제
+### <a name="cross-cutting-concerns"></a>교차 편집 문제
 
-일반적으로 응용 프로그램의 워크플로 부분을 공유합니다. 쇼핑 카트를 액세스할 때 인증을 요구 하는 응용 프로그램 또는 일부 페이지에 데이터를 캐시 하는 응용 프로그램을 예로 들 수 있습니다. 를 앞 이나 뒤 동작 메서드의 논리를 수행 하려면 사용 하 여 한 *필터*합니다. 사용 하 여 [필터](xref:mvc/controllers/filters) 일반적인 문제에 따라 수 있으므로 중복 줄일 수는 [하지 반복 직접 (드라이) 원칙](http://deviq.com/don-t-repeat-yourself/)합니다.
+응용 프로그램은 일반적으로 해당 워크플로의 일부를 공유합니다. 예를 들어 쇼핑 카트 액세스를 위해 인증이 필요한 앱이나 일부 페이지에서 데이터를 캐시하는 앱이 있습니다. 작업 메서드 전후로 논리를 수행하려면 *필터*를 사용합니다. 교차 편집 문제에서 [필터](xref:mvc/controllers/filters)를 사용하면 중복을 줄일 수 있으므로 [DRY(반복 금지) 원칙](http://deviq.com/don-t-repeat-yourself/)을 따르도록 할 수 있습니다.
 
-필터 가장와 같은 특성을 `[Authorize]`, 원하는 수준의 세분성에 따라 컨트롤러 또는 동작 수준에 적용할 수 있습니다.
+`[Authorize]`와 같은 대부분의 필터 특성은 원하는 세분성 수준에 따라 컨트롤러 또는 작업 수준에 적용할 수 있습니다.
 
-오류 처리 및 응답 캐시는 종종 일반적인 문제:
+오류 처리 및 응답 캐시는 종종 교차 편집 문제입니다.
    * [오류 처리](xref:mvc/controllers/filters#exception-filters)
    * [응답 캐싱](xref:performance/caching/response)
 
-필터 또는 사용자 지정을 사용 하 여 많은 일반적인 문제를 처리할 수 있습니다 [미들웨어](xref:fundamentals/middleware)합니다.
+많은 교차 편집 문제는 필터 또는 사용자 지정 [미들웨어](xref:fundamentals/middleware)를 사용하여 처리할 수 있습니다.

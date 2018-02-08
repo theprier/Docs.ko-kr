@@ -1,35 +1,35 @@
 ---
-title: "ASP.NET Core에서 환경 태그 도우미"
+title: "ASP.NET Core의 환경 태그 도우미"
 author: pkellner
-description: "ASP.NET Core 환경 태그 도우미 정의 된 모든 속성을 포함 하 여"
-ms.author: riande
+description: "모든 속성을 비롯하여 정의된 ASP.NET Core 환경 태그 도우미"
 manager: wpickett
+ms.author: riande
 ms.date: 07/14/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: aspnet-core
+ms.technology: aspnet
+ms.topic: article
 uid: mvc/views/tag-helpers/builtin-th/environment-tag-helper
-ms.openlocfilehash: 32646f1fdaf840f796da1ec573459157a41a86d1
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
-ms.translationtype: MT
+ms.openlocfilehash: 7a99ee0e59c7f49a3208d2c86c11cabce4294889
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/30/2018
 ---
-# <a name="environment-tag-helper-in-aspnet-core"></a>ASP.NET Core에서 환경 태그 도우미
+# <a name="environment-tag-helper-in-aspnet-core"></a>ASP.NET Core의 환경 태그 도우미
 
-여 [Peter Kellner](http://peterkellner.net) 및 [Hisham Bin Ateya](https://twitter.com/hishambinateya)
+작성자: [Peter Kellner](http://peterkellner.net) 및 [Hisham Bin Ateya](https://twitter.com/hishambinateya)
 
-환경 태그 도우미 조건에 따라 현재 호스팅 환경에 따라 포함된 된 콘텐츠에 렌더링 합니다. 단일 특성 `names` 쉼표로 구분 된 목록이 환경 이름, 하는 모든 포함 된 콘텐츠를 렌더링할 수를 트리거할 현재 환경에 일치 하는 경우.
+환경 태그 도우미는 조건부로 현재 호스팅 환경에 따라 포함된 콘텐츠를 렌더링합니다. 단일 특성 `names`는 쉼표로 구분된 환경 이름 목록이며 현재 환경과 일치하는 경우 포함된 콘텐츠가 렌더링되도록 트리거합니다.
 
 ## <a name="environment-tag-helper-attributes"></a>환경 태그 도우미 특성
 
 ### <a name="names"></a>이름
 
-단일 호스팅 환경 이름 또는 호스팅 환경 이름의 포함 된 콘텐츠를 렌더링을 트리거하는 쉼표로 구분 된 목록을 허용 합니다.
+포함된 콘텐츠를 렌더링하도록 트리거하는 단일 호스팅 환경 이름 또는 쉼표로 구분된 호스팅 환경 이름 목록을 허용합니다.
 
-이러한 값은 ASP.NET Core 정적 속성에서 반환 된 현재 값과 비교할 `HostingEnvironment.EnvironmentName`합니다.  이 값은 다음 중 하나: **준비**; **개발** 또는 **프로덕션**합니다. 비교는 대/소문자를 무시합니다.
+이러한 값은 ASP.NET Core 고정 속성 `HostingEnvironment.EnvironmentName`에서 반환된 현재 값과 비교됩니다.  이 값은 **준비**, **개발** 또는 **프로덕션** 중 하나입니다. 비교는 대/소문자를 무시합니다.
 
-유효한의 예로 `environment` 태그 도우미는:
+유효한 `environment` 태그 도우미의 예는 다음과 같습니다.
 
 ```cshtml
 <environment names="Staging,Production">
@@ -37,13 +37,13 @@ ms.lasthandoff: 01/19/2018
 </environment>
 ```
 
-## <a name="include-and-exclude-attributes"></a>include 및 exclude 특성
+## <a name="include-and-exclude-attributes"></a>특성 포함 및 제외
 
-ASP.NET Core 2.x 추가 `include`  &  `exclude` 특성입니다. 포함 또는 제외 호스팅 환경 이름을 기반으로 포함 된 콘텐츠를 렌더링 하 이러한 특성 제어 합니다.
+ASP.NET Core 2.x는 `include` & `exclude` 특성을 추가합니다. 이러한 특성은 포함 또는 제외 호스팅 환경 이름을 기반으로 포함된 콘텐츠를 렌더링하는 작업을 제어합니다.
 
-### <a name="include-aspnet-core-20-and-later"></a>2.0 이상 ASP.NET Core를 포함 합니다.
+### <a name="include-aspnet-core-20-and-later"></a>ASP.NET Core 2.0 이상 포함
 
-`include` 의 비슷한 동작을 포함 하는 속성은 `names` ASP.NET Core 1.0의 특성입니다.
+`include` 속성에는 ASP.NET Core 1.0의 `names` 특성과 비슷한 동작이 포함됩니다.
 
 ```cshtml
 <environment include="Staging,Production">
@@ -53,7 +53,7 @@ ASP.NET Core 2.x 추가 `include`  &  `exclude` 특성입니다. 포함 또는 �
 
 ### <a name="exclude-aspnet-core-20-and-later"></a>ASP.NET Core 2.0 이상 제외
 
-반면,는 `exclude` 속성을 사용은 `EnvironmentTagHelper` 지정한 유형 제외한 모든 호스팅 환경 이름에 대해 포함 된 콘텐츠를 렌더링 합니다.
+반면 `exclude` 속성을 통해 `EnvironmentTagHelper`가 지정된 콘텐츠를 제외한 모든 호스팅 환경 이름에 대해 포함된 콘텐츠를 렌더링할 수 있습니다.
 
 ```cshtml
 <environment exclude="Development">

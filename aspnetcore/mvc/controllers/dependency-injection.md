@@ -1,51 +1,51 @@
 ---
-title: "컨트롤러에 대 한 종속성 주입"
+title: "컨트롤러에 종속성 주입"
 author: ardalis
 description: 
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: mvc/controllers/dependency-injection
-ms.openlocfilehash: 946d695c572379c3ebc2eda1569f186f25ab9bfc
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
-ms.translationtype: MT
+ms.openlocfilehash: 118f504311b58258b5a0510477280505135dd2d9
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
-# <a name="dependency-injection-into-controllers"></a>컨트롤러에 대 한 종속성 주입
+# <a name="dependency-injection-into-controllers"></a>컨트롤러에 종속성 주입
 
 <a name="dependency-injection-controllers"></a>
 
-으로 [Steve Smith](https://ardalis.com/)
+작성자: [Steve Smith](https://ardalis.com/)
 
-ASP.NET Core MVC 컨트롤러의 생성자를 통해 명시적으로 해당 종속성을 요청 해야 합니다. 경우에 따라 개별 컨트롤러 작업에는 서비스 필요할 수 있습니다 및 컨트롤러 수준에서 요청할 수 있는 적합할 수 있습니다. 이 경우에 작업 메서드의 매개 변수로 서비스를 삽입할 수도 있습니다.
+ASP.NET Core MVC 컨트롤러는 해당 생성자를 통해 명시적으로 해당 종속성을 요청해야 합니다. 경우에 따라 개별 컨트롤러 작업에는 서비스가 필요할 수 있으며, 컨트롤러 수준에서 요청하지 못할 수 있습니다. 이 경우에 작업 메서드의 매개 변수로 서비스를 주입할 수도 있습니다.
 
 [샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/controllers/dependency-injection/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="dependency-injection"></a>종속성 주입
 
-종속성 주입은 뒤에 기술에서 [종속성 반전 원칙](http://deviq.com/dependency-inversion-principle/), 응용 프로그램을 느슨하게 결합 된 모듈의 구성 될 수 있도록 합니다. ASP.NET Core에서 기본적으로 지원 [종속성 주입](../../fundamentals/dependency-injection.md), 그러면 응용 프로그램 쉽게 테스트 하 고 유지 관리 합니다.
+종속성 주입은 [종속성 반전 원칙](http://deviq.com/dependency-inversion-principle/)을 따르는 기술로, 응용 프로그램을 느슨하게 결합된 모듈로 구성할 수 있습니다. ASP.NET Core는 [종속성 주입](../../fundamentals/dependency-injection.md)을 기본적으로 지원하므로 응용 프로그램을 더 쉽게 테스트하고 유지 관리할 수 있습니다.
 
-## <a name="constructor-injection"></a>생성자 삽입
+## <a name="constructor-injection"></a>생성자 주입
 
-ASP.NET Core 기본적으로 지원 되는 생성자 기반 종속성 주입 MVC 컨트롤러까지 확장 됩니다. 서비스 종류를 생성자 매개 변수로 컨트롤러에 단순히 추가 ASP.NET Core 서비스 컨테이너에서 기본 제공를 사용 하 여 해당 형식을 확인 하려고 합니다. 서비스는 항상 그렇지는 않지만 일반적으로 정의 된 인터페이스를 사용 하 여 합니다. 예를 들어 현재 시간에 따라 달라 지는 비즈니스 논리가 응용 프로그램에 설정된 된 시간을 사용 하는 구현에 전달 하 여 테스트 수 있는 시간 (아니라 하드 코딩 것)를 검색 하는 서비스를 삽입할 수 있습니다.
+생성자 기반 종속성 주입을 위한 ASP.NET Core의 기본 지원은 MVC 컨트롤러까지 확장합니다. 컨트롤러에 서비스 형식을 생성자 매개 변수로 추가하기만 하면 ASP.NET Core는 서비스 컨테이너의 기본 기능을 사용하여 해당 형식을 확인하려고 시도합니다. 서비스는 항상 그렇지는 않지만 일반적으로 인터페이스를 사용하여 정의됩니다. 예를 들어 현재 시간에 따라 달라지는 비즈니스 논리가 응용 프로그램에 있는 경우, 설정된 시간을 사용하는 구현에서 테스트가 통과될 수 있도록 시간을 검색하는(하드코딩이 아님) 서비스를 주입할 수 있습니다.
 
 [!code-csharp[Main](dependency-injection/sample/src/ControllerDI/Interfaces/IDateTime.cs)]
 
 
-런타임 시 시스템 클록을 사용 하는 이와 같은 인터페이스를 구현 하는 매우 간단 합니다.
+런타임 시 시스템 클록을 사용하도록 이와 같은 인터페이스를 구현하는 것은 매우 간단합니다.
 
 [!code-csharp[Main](dependency-injection/sample/src/ControllerDI/Services/SystemDateTime.cs)]
 
 
-이 위치에 컨트롤러에서 서비스를 사용할 수 있습니다. 이 경우 일부 논리를 추가 했습니다는 `HomeController` `Index` 하루 중 시간을 기반으로 하는 메서드를 사용자에 게 인사말을 표시 합니다.
+준비된 이 항목을 통해 컨트롤러에서 서비스를 사용할 수 있습니다. 이 경우 시간에 따라 사용자에게 인사말을 표시하도록 일부 논리를 `HomeController` `Index` 메서드에 추가하였습니다.
 
 [!code-csharp[Main](./dependency-injection/sample/src/ControllerDI/Controllers/HomeController.cs?highlight=8,10,12,17,18,19,20,21,22,23,24,25,26,27,28,29,30&range=1-31,51-52)]
 
-지금 응용 프로그램을 실행 하는 경우 오류를 발생 가능성이 합니다.
+지금 응용 프로그램을 실행하는 경우 오류가 발생할 가능성이 있습니다.
 
 ```
 An unhandled exception occurred while processing the request.
@@ -54,21 +54,21 @@ InvalidOperationException: Unable to resolve service for type 'ControllerDI.Inte
 Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
 ```
 
-म에서 서비스를 구성 하지 않은 경우이 오류가 발생는 `ConfigureServices` 메서드에서 우리의 `Startup` 클래스입니다. 에 대 한 요청을 지정 하려면 `IDateTime` 의 인스턴스를 사용 하 여 해결 해야 `SystemDateTime`, 하려면 아래 목록에서 강조 표시 된 줄을 추가 하면 `ConfigureServices` 메서드:
+이 오류는 `Startup` 클래스의 `ConfigureServices` 메서드에서 서비스를 구성하지 않은 경우에 발생합니다. `IDateTime`에 대한 요청이 `SystemDateTime`의 인스턴스를 사용하여 확인되도록 지정하려면 아래 목록에서 강조 표시된 줄을 `ConfigureServices` 메서드에 추가합니다.
 
 [!code-csharp[Main](./dependency-injection/sample/src/ControllerDI/Startup.cs?highlight=4&range=26-27,42-44)]
 
 > [!NOTE]
-> 여러 가지 다른 수명 옵션 중 하나를 사용 하 여이 특정 서비스를 구현할 수 있습니다 (`Transient`, `Scoped`, 또는 `Singleton`). 참조 [종속성 주입](../../fundamentals/dependency-injection.md) 각 범위 옵션 내용이 미치는 영향을 서비스의 동작을 이해할 수 있습니다.
+> 이 특정 서비스는 여러 가지 다른 수명 옵션 중 하나를 사용하여 구현할 수 있습니다(`Transient`, `Scoped` 또는 `Singleton`). 각 범위 옵션이 서비스의 동작에 미치는 영향을 이해하려면 [종속성 주입](../../fundamentals/dependency-injection.md)을 참조하세요.
 
-서비스를 구성한 후 응용 프로그램을 실행 하 고 홈 페이지로 이동 해야 시간 기반 메시지 예상 대로 표시 합니다.
+서비스를 한 번 구성하면 응용 프로그램을 실행하고 홈 페이지로 이동할 때 시간 기반 메시지가 예상대로 표시되어야 합니다.
 
 ![서버 인사말](dependency-injection/_static/server-greeting.png)
 
 >[!TIP]
-> 참조 [테스트 컨트롤러 논리](testing.md) 종속성을 명시적으로 요청 하는 방법에 알아보려면 [http://deviq.com/explicit-dependencies-principle/](http://deviq.com/explicit-dependencies-principle/) 컨트롤러에 더 쉽게 코드를 테스트 합니다.
+> [http://deviq.com/explicit-dependencies-principle/](http://deviq.com/explicit-dependencies-principle/) 컨트롤러에서 종속성을 명시적으로 요청하여 코드를 더 쉽게 테스트할 수 있는 방법을 알아보려면 [컨트롤러 논리 테스트](testing.md)를 참조하세요.
 
-ASP.NET Core 기본 종속성 주입 서비스를 요청 하는 클래스에 대 한 단일 생성자만 지원 합니다. 둘 이상의 생성자가 있으면 내용의 된 예외가 나타날 수 있습니다.
+ASP.NET Core의 기본 제공 종속성 주입은 클래스 요청 서비스에 대해 단일 생성자만 있어야 합니다. 생성자가 둘 이상인 경우 다음과 같은 예외가 나타날 수 있습니다.
 
 ```
 An unhandled exception occurred while processing the request.
@@ -77,31 +77,31 @@ InvalidOperationException: Multiple constructors accepting all given argument ty
 Microsoft.Extensions.DependencyInjection.ActivatorUtilities.FindApplicableConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& parameterMap)
 ```
 
-오류 메시지에서 설명 하는 대로 단일 생성자만이 문제를 해결할 수 있습니다. 수도 있습니다 [제 3 자 구현은 기본 종속성 주입 지원 바꿉니다](../../fundamentals/dependency-injection.md#replacing-the-default-services-container)지 원하는 여러 명의 생성자의 여러 합니다.
+오류 메시지에 나타난 대로 생성자가 하나여야 이 문제를 해결할 수 있습니다. 또한 [기본 종속성 주입 지원을 제3자 구현으로 대체](../../fundamentals/dependency-injection.md#replacing-the-default-services-container)할 수 있습니다. 다수는 여러 생성자를 지원합니다.
 
-## <a name="action-injection-with-fromservices"></a>FromServices와 삽입 작업
+## <a name="action-injection-with-fromservices"></a>FromServices로 작업 삽입
 
-경우에 따라 컨트롤러 내에서 둘 이상의 작업에 대 한 서비스를 필요 하지 않습니다. 이 경우 서비스 작업 메서드에 매개 변수로 삽입을 하면 됩니다. 특성으로 매개 변수를 표시 하 여 이렇게 `[FromServices]` 다음과 같이 합니다.
+경우에 따라 컨트롤러 내에서 둘 이상의 작업에 서비스가 필요하지 않습니다. 이 경우 서비스를 매개 변수로 작업 메서드에 삽입을 하는 것이 적절할 수 있습니다. 이는 다음과 같이 `[FromServices]` 특성으로 매개 변수를 표시하여 수행됩니다.
 
 [!code-csharp[Main](./dependency-injection/sample/src/ControllerDI/Controllers/HomeController.cs?highlight=1&range=33-38)]
 
 ## <a name="accessing-settings-from-a-controller"></a>컨트롤러에서 설정 액세스
 
-컨트롤러 내에서 응용 프로그램 또는 구성 설정에 액세스 하는 일반적인 패턴입니다. 이 액세스에 설명 된 옵션 패턴을 사용 해야 [구성](xref:fundamentals/configuration/index)합니다. 일반적으로 종속성 주입을 사용 하 여 컨트롤러에서 직접 설정 요청 하지 않아야 합니다. 하는 것이 좋습니다 요청은 `IOptions<T>` 인스턴스, 여기서 `T` 필요한 구성 클래스입니다.
+컨트롤러 내에서 응용 프로그램 또는 구성 설정에 액세스하는 것은 일반적인 패턴입니다. 이 액세스는 [구성](xref:fundamentals/configuration/index)에 설명된 옵션 패턴을 사용해야 합니다. 일반적으로 종속성 주입을 사용하여 컨트롤러에서 직접 설정을 요청해서는 안 됩니다. 더 나은 방법은 `IOptions<T>` 인스턴스를 요청하는 것입니다. 여기서 `T`란 필요한 구성 클래스입니다.
 
-옵션 패턴을 사용 하려면이 다음과 같은 옵션을 나타내는 클래스를 만들려면:
+옵션 패턴을 사용하려면 다음과 같은 옵션을 나타내는 클래스를 만들어야 합니다.
 
 [!code-csharp[Main](dependency-injection/sample/src/ControllerDI/Model/SampleWebSettings.cs)]
 
-옵션 모델을 사용 하며 구성 클래스는 서비스 컬렉션에 추가 응용 프로그램을 구성 해야 `ConfigureServices`:
+그런 다음, 옵션 모델을 사용하도록 응용 프로그램을 구성하고, 구성 클래스를 `ConfigureServices`의 서비스 컬렉션에 추가해야 합니다.
 
 [!code-csharp[Main](./dependency-injection/sample/src/ControllerDI/Startup.cs?highlight=3,4,5,6,9,16,19&range=14-44)]
 
 > [!NOTE]
-> 위의 목록에서 구성 하는 중 응용 프로그램을 JSON 형식 파일에서 설정을 읽습니다. 또한 위의 주석 처리 된 코드에 표시 된 대로 코드에서 완전히 설정을 구성할 수 있습니다. 참조 [구성](xref:fundamentals/configuration/index) 추가 구성 옵션에 대 한 합니다.
+> 위의 목록에서 JSON 형식 파일에서 설정을 읽도록 응용 프로그램을 구성하는 중 입니다. 또한 위의 주석으로 처리된 코드에 표시된 대로 코드에서 완전히 설정을 구성할 수 있습니다. 추가 구성 옵션은 [구성](xref:fundamentals/configuration/index)을 참조하세요.
 
-강력한 형식의 구성 개체를 지정한 후 (이 경우 `SampleWebSettings`) 추가할 서비스 컬렉션 요청할 수 있습니다이 모든 컨트롤러 또는 동작 메서드에서 인스턴스를 요청 하 여 `IOptions<T>` (이 경우 `IOptions<SampleWebSettings>`) . 다음 코드는 컨트롤러에서 설정을 요청 것 하나를 보여 줍니다.
+강력한 형식의 구성 개체를 지정하고(이 경우 `SampleWebSettings`) 서비스 컬렉션에 추가하고 나면, `IOptions<T>`의 인스턴스(이 경우 `IOptions<SampleWebSettings>`)를 요청하여 모든 컨트롤러 또는 작업 메서드에서 이를 요청할 수 있습니다 . 다음 코드는 컨트롤러에서 설정을 요청하는 방법 중 하나를 보여 줍니다.
 
 [!code-csharp[Main](./dependency-injection/sample/src/ControllerDI/Controllers/SettingsController.cs?highlight=3,5,7&range=7-22)]
 
-옵션 패턴을 설정 및 구성을 서로 분리할 수를 허용 하 고 되도록 컨트롤러 팔 로우 [문제의 분리](http://deviq.com/separation-of-concerns/)방법 또는 위치를 알 필요가 없으므로 않아야 하므로 설정을 찾을 수 정보입니다. 하기가 컨트롤러 단위 테스트를 쉽게 [테스트 컨트롤러 논리](testing.md)있기 때문에, 없습니다 [정적 문에 붙이는](http://deviq.com/static-cling/) 또는 컨트롤러 클래스 내에서 설정 클래스의 직접 인스턴스화입니다.
+옵션 패턴을 따르면 설정 및 구성을 서로 분리할 수 있으며, 컨트롤러가 [문제의 분리](http://deviq.com/separation-of-concerns/)를 따르고 있는지 확인합니다. 컨트롤러는 설정 정보를 찾는 방법이나 위치를 알 필요가 없기 때문입니다. 또한 컨트롤러가 더 쉽게 [컨트롤러 논리 테스트](testing.md)를 단위 테스트할 수 있습니다. 컨트롤러 클래스 내 설정 클래스의 [정적 집착](http://deviq.com/static-cling/) 또는 직접 인스턴스화가 없기 때문입니다.

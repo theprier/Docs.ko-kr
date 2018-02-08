@@ -1,127 +1,127 @@
 ---
-title: "ASP.NET Core MVC에서 모델 유효성 검사"
+title: "ASP.NET Core MVC의 모델 유효성 검사"
 author: rachelappel
-description: "ASP.NET Core MVC에서 모델 유효성 검사에 알아봅니다."
-ms.author: riande
+description: "ASP.NET Core MVC의 모델 유효성 검사에 대해 알아봅니다."
 manager: wpickett
+ms.author: riande
 ms.date: 12/18/2016
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: mvc/models/validation
-ms.openlocfilehash: 56928c61ae47d313145afadf3e0fa93a078b681b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
-ms.translationtype: MT
+ms.openlocfilehash: dfb24a4c72b15737295b7aea406be24160fc6674
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
-# <a name="introduction-to-model-validation-in-aspnet-core-mvc"></a>ASP.NET Core MVC에서 모델 유효성 검사 소개
+# <a name="introduction-to-model-validation-in-aspnet-core-mvc"></a>ASP.NET Core MVC의 모델 유효성 검사 소개
 
-으로 [Rachel Appel](https://github.com/rachelappel)
+작성자: [Rachel Appel](https://github.com/rachelappel)
 
 ## <a name="introduction-to-model-validation"></a>모델 유효성 검사 소개
 
-응용 프로그램 데이터베이스에 데이터를 저장 하기 전에 응용 프로그램 데이터를 확인 해야 합니다. 데이터 유형 및 크기로 적절 하 게 서식이 지정을 여 규칙을 준수 해야 하는 잠재적 보안 위협을 확인 해야 합니다. 중복 되 고 구현 하기 번거로운 울 수 있지만 유효성 검사는 필요 합니다. Mvc에서 유효성 검사는 클라이언트와 서버 모두에서 발생합니다.
+앱은 데이터베이스에 데이터를 저장하기 전에 데이터를 확인해야 합니다. 데이터는 잠재적 보안 위협을 확인하고, 형식 및 크기별로 적절하게 서식이 지정되었는지 확인하고, 규칙을 준수해야 합니다. 유효성 검사는 중복되고 구현되기 번거로울 수 있지만 필요합니다. MVC에서 유효성 검사는 클라이언트와 서버 모두에서 발생합니다.
 
-다행히.NET에 유효성 검사 특성에 대 한 유효성 검사를 추상화 합니다. 이러한 특성에는 유효성 검사 코드를 작성 해야 하는 코드의 양을 줄이는 포함 합니다.
+다행히 .NET는 유효성 검사를 유효성 검사 특성으로 추상화했습니다. 이러한 특성에는 유효성 검사 코드가 포함되어 작성해야 하는 코드의 양을 감소시킵니다.
 
-[보기 또는 GitHub에서 샘플을 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/models/validation/sample)합니다.
+[GitHub에서 샘플 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/models/validation/sample)
 
 ## <a name="validation-attributes"></a>유효성 검사 특성
 
-유효성 검사 특성은 데이터베이스 테이블의 필드에 유효성 검사를 개념적으로 유사 하므로 모델 유효성 검사를 구성 하는 방법입니다. 데이터 형식이 나 필수 필드를 할당 하는 등 제약 조건을 포함 됩니다. 다른 종류의 유효성 검사 전자 메일 주소 또는 전화 번호, 신용 카드와 같은 비즈니스 규칙을 적용 하는 데이터 패턴을 적용 하는 합니다. 유효성 검사 특성 확인 훨씬 간단 하 고 사용 하기 쉽게 이러한 요구 사항을 적용 합니다.
+유효성 검사 특성은 모델 유효성 검사를 구성하는 방법이므로 데이터베이스 테이블의 필드에 대한 유효성 검사와 개념적으로 유사합니다. 데이터 형식이나 필수 필드를 할당하는 등 제약 조건이 포함됩니다. 다른 종류의 유효성 검사에는 신용 카드, 전화 번호 또는 이메일 주소와 같은 비즈니스 규칙을 적용하기 위해 데이터에 대한 패턴을 적용하는 것이 포함됩니다. 유효성 검사 특성을 통해 훨씬 간단하고 사용하기 쉽게 이러한 요구 사항을 적용할 수 있습니다.
 
-다음은 이러한는 주석이 추가 된 `Movie` 동영상과 TV 프로그램에 대 한 정보를 저장 하는 응용 프로그램에서 모델입니다. 대부분의 속성 필요 하며 여러 문자열 속성에는 길이 요구 사항이입니다. 또한는에 대 한 숫자 범위 제한이 `Price` 속성을 0에서 $999.99, 사용자 지정 유효성 검사 특성을 합니다.
+영화 및 TV 프로그램에 대 한 정보를 저장하는 앱에서 주석이 추가된 `Movie` 모델은 다음과 같습니다. 대부분의 속성은 필수이며 여러 문자열 속성에는 길이 요구 사항이 적용됩니다. 또한 사용자 지정 유효성 검사 특성과 함께 `Price` 속성 대신에 0~$999.99 사이라는 숫자 범위 제한이 있습니다.
 
 [!code-csharp[Main](validation/sample/Movie.cs?range=6-29)]
 
-단순히 모델을 통해 읽을 쉽게 코드를 유지 하기 위해이 앱에 대 한 데이터에 대 한 규칙이 표시 됩니다. 다음은 여러 인기 있는 기본 제공 유효성 검사 특성입니다.
+단순히 모델을 통해 읽으면 이 앱에서 데이터에 대한 규칙을 표시하여 코드를 쉽게 유지할 수 있습니다. 널리 사용되는 여러 기본 제공 유효성 검사 특성은 다음과 같습니다.
 
-* `[CreditCard]`: 유효성을 검사 속성에는 신용 카드 형식입니다.
+* `[CreditCard]`: 속성에 신용 카드 형식이 있는지 유효성을 검사합니다.
 
-* `[Compare]`: 일치 하는 모델 항목에 두 속성의 유효성을 검사 합니다.
+* `[Compare]`: 모델의 두 속성이 일치하는지 유효성을 검사합니다.
 
-* `[EmailAddress]`: 유효성을 검사 속성에는 전자 메일 형식입니다.
+* `[EmailAddress]`: 속성에 이메일 형식이 있는지 유효성을 검사합니다.
 
-* `[Phone]`: 유효성을 검사 속성에는 전화 형식입니다.
+* `[Phone]`: 속성에 전화 번호 형식이 있는지 유효성을 검사합니다.
 
-* `[Range]`: 지정된 된 범위 내에서 속성 값 변경의 유효성을 검사 합니다.
+* `[Range]`: 지정된 범위 내에서 속성 값이 포함되는지 유효성을 검사합니다.
 
-* `[RegularExpression]`: 데이터에 지정된 된 정규식과 일치 하는지 확인 합니다.
+* `[RegularExpression]`: 데이터가 지정된 정규식과 일치하는지 유효성을 검사합니다.
 
-* `[Required]`: 필수 속성으로 설정 합니다.
+* `[Required]`: 필수 속성으로 설정합니다.
 
-* `[StringLength]`: 문자열 속성에 지정 된 최대 길이 최대 있는지 확인 합니다.
+* `[StringLength]`: 문자열 속성에 지정된 최대 길이가 있는지 유효성을 검사합니다.
 
-* `[Url]`: 유효성을 검사 속성이 URL 형식입니다.
+* `[Url]`: 속성에 URL 형식이 있는지 유효성을 검사합니다.
 
-MVC에서 파생 된 모든 특성을 지원 `ValidationAttribute` 유효성 검사를 위해서입니다. 많은 유용한 유효성 검사 특성에서 확인할 수 있습니다는 [System.ComponentModel.DataAnnotations](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations) 네임 스페이스입니다.
+MVC는 유효성 검사를 위해 `ValidationAttribute`에서 파생된 모든 특성을 지원합니다. 많은 유용한 유효성 검사 특성을 [System.ComponentModel.DataAnnotations](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations) 네임스페이스에서 확인할 수 있습니다.
 
-제공 하는 기본 제공 특성 보다 더 많은 기능을 할 수 있는 인스턴스가 있을 수 있습니다. 해당 시간에 대 한 사용자 지정 유효성 검사 특성에서 파생 하 여 만들 수 있습니다 `ValidationAttribute` 구현 하 여 모델을 변경 하거나 `IValidatableObject`합니다.
+제공되는 기본 제공 특성보다 더 많은 기능이 필요한 인스턴스가 있을 수 있습니다. 이 경우에 `ValidationAttribute`에서 파생하거나 `IValidatableObject`를 구현하도록 모델을 변경하여 사용자 지정 유효성 검사 특성을 만들 수 있습니다.
 
-## <a name="notes-on-the-use-of-the-required-attribute"></a>필수 특성의 사용에 대 한 참고 사항
+## <a name="notes-on-the-use-of-the-required-attribute"></a>필수 특성 사용에 대한 참고
 
-nullable 형식이 아닌 [값 형식](/dotnet/csharp/language-reference/keywords/value-types)(`decimal`, `int`, `float`,`DateTime`)은 기본적으로 필요하며 `Required` 특성은 필요하지 않습니다. 표시 된 null이 아닌 형식에 대 한 없는 서버 쪽 유효성 검사를 수행 하는 응용 프로그램 `Required`합니다.
+nullable 형식이 아닌 [값 형식](/dotnet/csharp/language-reference/keywords/value-types)(`decimal`, `int`, `float`,`DateTime`)은 기본적으로 필요하며 `Required` 특성은 필요하지 않습니다. 앱은 `Required`으로 표시된 null이 아닌 형식에 서버 쪽 유효성 검사를 수행하지 않습니다.
 
-MVC 모델 바인딩 유효성 검사 및 유효성 검사 특성으로 관련 되지 않습니다는 누락 값 또는 공백 nullable이 아닌 형식에 대 한 포함 된 양식 필드 전송을 거부 합니다. 없는 경우에는 `BindRequired` 특성 모델 바인딩 대상 속성에 양식 필드 없는 nullable이 아닌 형식에 대 한 누락 된 데이터를 무시에서 들어오는 양식 데이터입니다.
+유효성 검사 및 유효성 검사 특성과 관련되지 않는 MVC 모델 바인딩은 null이 아닌 형식에 누락 값 또는 공백을 포함하는 형식 필드 전송을 거부합니다. 대상 속성에 `BindRequired` 특성이 없는 경우에 모델 바인딩은 null이 아닌 형식에 대한 누락 데이터를 무시합니다. 여기서 들어오는 형식 데이터에서 형식 필드는 비어 있습니다.
 
-[BindRequired 특성](/aspnet/core/api/microsoft.aspnetcore.mvc.modelbinding.bindrequiredattribute) (참조도 [특성으로 모델 바인딩 동작 사용자 지정](xref:mvc/models/model-binding#customize-model-binding-behavior-with-attributes))는 양식 데이터를 완료 하는 데 유용 합니다. 속성에 적용 하는 경우 모델 바인딩 시스템이 해당 속성에 대 한 값이 필요 합니다. 형식에 적용 하는 경우 모델 바인딩 시스템이 모든 해당 형식의 속성에 대 한 값이 필요 합니다.
+[BindRequired 특성](/aspnet/core/api/microsoft.aspnetcore.mvc.modelbinding.bindrequiredattribute)([특성을 포함한 모델 바인딩 동작 사용자 지정](xref:mvc/models/model-binding#customize-model-binding-behavior-with-attributes) 참조)은 형식 데이터를 완료하는 데 유용합니다. 속성에 적용하는 경우 모델 바인딩 시스템에는 해당 속성에 대한 값이 필요합니다. 형식에 적용하는 경우 모델 바인딩 시스템에는 해당 형식의 모든 속성에 대한 값이 필요합니다.
 
-사용 하는 경우는 [Nullable\<T > 형식](/dotnet/csharp/programming-guide/nullable-types/) (예를 들어 `decimal?` 또는 `System.Nullable<decimal>`) 하 고 표시 `Required`, 속성 (nullable 표준 형식인 경우 처럼 서버 쪽 유효성 검사가 수행 됩니다 예제에서는 한 `string`).
+[Nullable\<T > 형식](/dotnet/csharp/programming-guide/nullable-types/)(예: `decimal?` 또는 `System.Nullable<decimal>`)을 사용하고 `Required`으로 표시하는 경우 속성이 표준 null 형식인 것처럼 서버 쪽 유효성 검사가 수행됩니다(예: `string`).
 
-클라이언트 쪽 유효성 검사 모델 속성을 표시 한에 해당 하는 양식 필드의 값이 필요 `Required` 하 고 nullable이 아닌 형식 속성으로 표시 하지 않은 `Required`합니다. `Required`클라이언트 쪽 유효성 검사 오류 메시지를 제어 하 사용할 수 있습니다.
+클라이언트 쪽 유효성 검사에는 `Required`로 표시한 모델 속성에 해당하는 형식 필드에 대한 값 및 `Required`로 표시하지 않은 null이 아닌 형식 속성에 대한 값이 필요합니다. `Required`는 클라이언트 쪽 유효성 검사 오류 메시지를 제어하는 데 사용할 수 있습니다.
 
 ## <a name="model-state"></a>모델 상태
 
-모델 상태 제출 된 HTML 폼 값의 유효성 검사 오류를 나타냅니다.
+모델 상태는 제출된 HTML 형식 값으로 유효성 검사 오류를 나타냅니다.
 
-MVC는 계속 필드에 도달할 때까지 유효성 검사 오류 (기본적으로 200)의 최대 수입니다. 다음 코드를 삽입 하 여이 번호를 구성할 수 있습니다는 `ConfigureServices` 에서 메서드는 *Startup.cs* 파일:
+MVC는오류의 최대 수(기본적으로 200개)에 도달할 때까지 필드를 계속 유효성 검사합니다. *Startup.cs* 파일의 `ConfigureServices` 메서드에 다음 코드를 삽입하여 이 번호를 구성할 수 있습니다.
 
 [!code-csharp[Main](validation/sample/Startup.cs?range=27)]
 
-## <a name="handling-model-state-errors"></a>처리 모델 상태 오류
+## <a name="handling-model-state-errors"></a>모델 상태 오류 처리
 
-모델 유효성 검사가 호출 되는 각 컨트롤러 동작 하기 전에 발생 하 고 검사 해야 하는 작업 메서드의 `ModelState.IsValid` 하 고 적절 하 게 대처 합니다. 대부분의 경우에서 적합 한 반응 이상적 모델 유효성 검사에 실패 한 이유를 자세히 보여 주는 오류 응답을 반환 하는 것입니다.
+모델 유효성 검사는 각 컨트롤러 작업을 호출하기 전에 발생하며, `ModelState.IsValid`를 검사하고 적절하게 반응하는 것은 작업 메서드의 책임입니다. 대부분의 경우 적합한 반응은 이상적으로 모델 유효성 검사에 실패한 이유를 자세히 보여주는 오류 응답을 반환하는 것입니다.
 
-모델 유효성 검사 오류,이 경우 필터 수 이어야 이러한 정책을 구현 하는 적절 한 위치를 처리 하기 위한 표준 규칙을 따르는 일부 응용 프로그램을 선택 합니다. 유효 하지 않은 모델 상태와 작업을 수행할 때 동작 하는 방법을 테스트 해야 합니다.
+필터가 이러한 정책을 구현하기에 적절한 경우에 일부 앱은 모델 유효성 검사 오류를 처리하는 표준 규칙을 따르도록 선택합니다. 유효한 모델 및 잘못된 모델 상태일 때 작업 동작 방식을 테스트해야 합니다.
 
 ## <a name="manual-validation"></a>수동 유효성 검사
 
-모델 바인딩 및 유효성 검사 완료 되 면 일부를 반복 하는 것이 좋습니다. 예를 들어, 사용자, 정수가 필요한 필드에 텍스트 입력 한 수 또는 모델의 속성에 대 한 값을 계산 해야 할 수 있습니다.
+모델 바인딩 및 유효성 검사가 완료되면 일부를 반복하는 것이 좋습니다. 예를 들어 사용자는 정수가 필요한 필드에 텍스트를 입력하거나 모델의 속성에 대한 값을 계산해야 할 수 있습니다.
 
-유효성 검사를 수동으로 실행 해야 합니다. 이렇게 하려면 호출 된 `TryValidateModel` 메서드를 다음과 같이 합니다.
+유효성 검사를 수동으로 실행해야 합니다. 이렇게 하려면 다음과 같이 `TryValidateModel` 메서드를 호출합니다.
 
 [!code-csharp[Main](validation/sample/MoviesController.cs?range=52)]
 
 ## <a name="custom-validation"></a>사용자 지정 유효성 검사
 
-유효성 검사 특성에 대 한 대부분의 유효성 검사 요구 사항을 사용 됩니다. 그러나 일부 유효성 검사 규칙은 비즈니스 관련이 있습니다. 규칙을 직접 만들 필드를 확인 하는 것이 필요 하거나 값의 범위를 준수와 같은 일반적인 데이터 유효성 검사 방법 아닐 수 있습니다. 이러한 시나리오에 대 한 사용자 지정 유효성 검사 특성은이 가장 좋은 방법입니다. MVC에서 사용자 고유의 사용자 지정 유효성 검사 특성을 만들기 쉽습니다. 상속 하는 것은 `ValidationAttribute`, 재정의 `IsValid` 메서드. `IsValid` 메서드는 두 개의 매개 변수를 첫 번째는 라는 개체 *값* 고 두 번째는 `ValidationContext` 라는 개체 *validationContext*합니다. *값* 지정 유효성 검사기의 유효성을 검사할 필드의 실제 값을 나타냅니다.
+유효성 검사 특성은 대부분의 유효성 검사 요구 사항에 적용됩니다. 그러나 일부 유효성 검사 규칙은 비즈니스에 따라 다릅니다. 규칙은 필드가 필요하거나 값의 범위를 준수하는지 확인하는 등 일반적인 데이터 유효성 검사 기술이 아닐 수 있습니다. 이러한 시나리오에서 사용자 지정 유효성 검사 특성을 사용하는 것이 좋습니다. MVC에서 고유한 사용자 지정 유효성 검사 특성을 쉽게 만들 수 있습니다. `ValidationAttribute`에서 상속하고, `IsValid` 메서드를 재정의합니다. `IsValid` 메서드는 *value*라는 개체 및 *validationContext*라는 `ValidationContext` 개체 등 두 개의 매개 변수를 허용합니다. *값*은 사용자 지정 유효성 검사기의 유효성을 검사하는 필드의 실제 값을 나타냅니다.
 
-다음 샘플에서는 비즈니스 규칙에 따르면 사용자가 장르를 설정 하지 않을 수 있습니다 *클래식* 1960 이후에 출시 동영상에 대 한 합니다. `[ClassicMovie]` 특성 장르를 먼저 확인 하 고 기존 인 경우 다음 검사 릴리스 날짜 이후 1960 중인지 확인 합니다. 1960 후 해제 되 면 유효성 검사가 실패 합니다. 특성은 데이터 유효성을 검사 하는 데 사용할 수 있는 연도 나타내는 정수 매개 변수를 허용 합니다. 다음과 같이 특성의 생성자에서 매개 변수의 값을 캡처할 수 있습니다.
+다음 샘플에서 비즈니스 규칙에 따르면 사용자가 1960년 이후에 출시된 영화에 대해 장르를 *클래식*으로 설정하지 않을 수 있습니다. `[ClassicMovie]` 특성은 장르를 먼저 확인하고, 클래식인 경우 출시 날짜를 확인하여 1960년보다 이후인지를 확인합니다. 1960년 이후에 출시되었다면 유효성 검사에 실패합니다. 특성은 데이터 유효성을 검사하는 데 사용할 수 있는 연도를 나타내는 정수 매개 변수를 허용합니다. 다음과 같이 특성의 생성자에서 매개 변수의 값을 캡처할 수 있습니다.
 
 [!code-csharp[Main](validation/sample/ClassicMovieAttribute.cs?range=9-29)]
 
-`movie` 나타냅니다 위에 변수는 `Movie` 유효성을 검사할 양식 전송에서 데이터를 포함 하는 개체입니다. 이 경우 유효성 검사를 확인 하는 날짜에 장르는 `IsValid` 의 메서드는 `ClassicMovieAttribute` 규칙에 따라 클래스입니다. 유효성을 검사 `IsValid` 반환는 `ValidationResult.Success` 코드 시점과 유효성 검사에 실패 한 `ValidationResult` 오류 메시지와 함께 합니다. 사용자가 수정 하는 경우는 `Genre` 필드에서 폼을 전송 하 고는 `IsValid` 의 메서드는 `ClassicMovieAttribute` 영화 기존 인지 확인 합니다. 기본 제공 특성과 마찬가지로 적용 된 `ClassicMovieAttribute` 와 같은 속성에 `ReleaseDate` 앞의 코드 예제에 표시 된 대로 발생 하는 유효성 검사를 진행 하려면. 이 예제 에서만 작동 하므로 `Movie` 형식, 더 나은 옵션은 사용 하 `IValidatableObject` 다음 단락에서 표시 된 것 처럼 합니다.
+위의 `movie` 변수는 유효성을 검사할 형식 전송의 데이터를 포함하는 `Movie` 개체를 나타냅니다. 이 경우에 유효성 검사 코드는 규칙에 따라 `ClassicMovieAttribute` 클래스의 `IsValid` 메서드에서 날짜 및 장르를 확인합니다. 유효성 검사에 성공하면 `IsValid`는 `ValidationResult.Success` 코드를 반환하고, 유효성 검사에 실패하면 오류 메시지와 함께 `ValidationResult` 코드를 반환합니다. 사용자가 `Genre` 필드를 수정하고 형식을 제출하는 경우 `ClassicMovieAttribute`의 `IsValid` 메서드는 영화가 클래식인지 확인합니다. 기본 제공 특성과 마찬가지로 `ClassicMovieAttribute`을 `ReleaseDate`와 같은 속성에 적용하여 앞의 코드 샘플에 표시된 대로 유효성 검사를 진행합니다. 이 예제가 `Movie` 형식에서만 작동하므로 더 나은 옵션은 다음 단락에 표시된 대로 `IValidatableObject`를 사용하는 것입니다.
 
-구현 하 여 모델에이 동일한 코드에 배치 수는 또는 `Validate` 에서 메서드는 `IValidatableObject` 인터페이스입니다. 사용자 지정 유효성 검사 특성을 개별 속성 유효성 검사 잘 작동 하는 동안 구현 `IValidatableObject` 는 다음 그림과 같이 클래스 수준 유효성 검사를 구현 하는 데 사용할 수 있습니다.
+또는 `IValidatableObject` 인터페이스에서 `Validate` 메서드를 구현하여 모델에서 이 동일한 코드를 배치할 수 있습니다. 사용자 지정 유효성 검사 특성이 개별 속성 유효성 검사에서 잘 작동하는 반면 `IValidatableObject`를 구현하는 작업은 다음과 같이 클래스 수준 유효성 검사를 구현하는 데 사용될 수 있습니다.
 
 [!code-csharp[Main](validation/sample/MovieIValidatable.cs?range=32-40)]
 
 ## <a name="client-side-validation"></a>클라이언트 쪽 유효성 검사
 
-클라이언트 쪽 유효성 검사는 사용자에 대 한 매우 편리 합니다. 시간을 절약 그렇지 않은 경우 많은 비용이 들어가는지는 왕복에 대 한 대기 중인 서버. 비즈니스 관계에서 몇 초 부분을 곱한 수백 번 매일 추가 최대 많은 시간과 비용, 노력 합니다. 간단 하 고 즉시 유효성 검사를 사용 하면 보다 효율적으로 작동 하 고 더 좋은 품질 입력 및 출력을 생성할 수 있습니다.
+클라이언트 쪽 유효성 검사는 사용자에게 매우 편리합니다. 그렇지 않은 경우 서버에 대한 왕복을 기다리는 데 드는 시간을 절약할 수 있습니다. 비즈니스 용어로 몇 초를 매일 수백 번 반복하게 되면 많은 시간과 비용, 노력이 추가됩니다. 간단하고 즉각적인 유효성 검사를 사용하면 사용자는 보다 효율적으로 작업하고 더 좋은 품질의 입력 및 출력을 생성할 수 있습니다.
 
-여기에 표시 된 대로 작동 하도록 클라이언트 쪽 유효성 검사에 대 한 위치에서 적절 한 JavaScript 스크립트 참조 하 여 뷰에 있어야 합니다.
+다음에 표시된 대로 사용할 클라이언트 쪽 유효성 검사 대신 적절한 JavaScript 스크립트 참조를 사용하는 보기가 있어야 합니다.
 
 [!code-cshtml[Main](validation/sample/Views/Shared/_Layout.cshtml?range=37)]
 
 [!code-cshtml[Main](validation/sample/Views/Shared/_ValidationScriptsPartial.cshtml)]
 
-[유효성 검사 비 가시적인 jQuery](https://github.com/aspnet/jquery-validation-unobtrusive) 스크립트는 인기 있는에 작성 되는 사용자 지정 Microsoft 프런트 엔드 라이브러리 [jQuery 유효성 검사](https://jqueryvalidation.org/) 플러그 인 합니다. JQuery 비간섭 유효성 검사 없이 두 위치에서 동일한 유효성 검사 논리를 코딩 해야: 모델 속성에 대 한 서버 쪽 유효성 검사 특성에 두 번 한 다음 클라이언트 쪽 스크립트에서 다시 (jQuery 유효성 검사의에 대 한 예제 [ `validate()` ](https://jqueryvalidation.org/validate/) 메서드 표시 하 고 복잡 한 정도이 될 수 있습니다). 대신, MVC의 [태그 도우미](xref:mvc/views/tag-helpers/intro) 및 [HTML 도우미](xref:mvc/views/overview) HTML 5 렌더링 하는 모델 속성의 메타 데이터를 입력 하 고 유효성 검사 특성을 사용 하 여 [데이터 특성](http://w3c.github.io/html/dom.html#embedding-custom-non-visible-data-with-the-data-attributes) 에서 유효성 검사는 폼 요소입니다. MVC에서는 오류가 발생 하는 `data-` 기본 제공 및 사용자 지정 특성에 대 한 특성입니다. jQuery 비간섭 유효성 검사 후 구문 분석 하 thes `data-` 특성 및 jQuery 유효성 검사를 효과적으로 "복사" 서버 쪽 유효성 검사 논리를 클라이언트에는 논리를 전달 합니다. 다음과 같이 관련 태그 도우미를 사용 하 여 클라이언트에서 유효성 검사 오류를 표시할 수 있습니다.
+[jQuery 비간섭 유효성 검사](https://github.com/aspnet/jquery-validation-unobtrusive) 스크립트는 널리 사용되는 [jQuery 유효성 검사](https://jqueryvalidation.org/) 플러그 인에 기반한 사용자 지정 Microsoft 프런트 엔드 라이브러리입니다. jQuery 비간섭 유효성 검사를 사용하지 않고 두 위치(모델 속성에 대한 서버 쪽 유효성 검사 특성에서 한 번 및 클라이언트 쪽 스크립트에서 다시 한 번)에서 동일한 유효성 검사 논리를 코딩해야 합니다. (jQuery 유효성 검사의 [`validate()`](https://jqueryvalidation.org/validate/) 메서드에 대한 예제는 복잡함을 보여줍니다.) 대신 MVC의 [태그 도우미](xref:mvc/views/tag-helpers/intro) 및 [HTML 도우미](xref:mvc/views/overview)는 모델 속성의 유효성 검사 특성 및 형식 메타데이터를 사용하여 유효성 검사가 필요한 형식 요소에서 HTML 5 [데이터 특성](http://w3c.github.io/html/dom.html#embedding-custom-non-visible-data-with-the-data-attributes)을 렌더링할 수 있습니다. MVC에서는 기본 제공 및 사용자 지정 특성에 대한 `data-` 특성을 생성합니다. jQuery 비간섭 유효성 검사는 `data-` 특성을 구문 분석한 다음, jQuery 유효성 검사에 대한 논리를 전달하여 효과적으로 서버 쪽 유효성 검사 논리를 클라이언트에 "복사"합니다. 다음과 같이 관련 태그 도우미를 사용하여 클라이언트에서 유효성 검사 오류를 표시할 수 있습니다.
 
 [!code-cshtml[Main](validation/sample/Views/Movies/Create.cshtml?highlight=4,5&range=19-25)]
 
-위의 태그 도우미 아래 HTML을 렌더링합니다. 다음에 유의 `data-` HTML의 특성에 대 한 유효성 검사 특성에 해당 출력은 `ReleaseDate` 속성입니다. `data-val-required` 특성 아래 릴리스 날짜 필드에 사용자 이름을 입력 하지 않는 경우를 표시 하려면 오류 메시지를 포함 합니다. jQuery 유효성 검사 비 가시적인 jQuery 유효성 검사에이 값을 전달 [ `required()` ](https://jqueryvalidation.org/required-method/) 다음 함께 제공 되의 해당 메시지를 표시 하는 메서드를  **\<걸쳐 >** 요소입니다.
+위의 태그 도우미는 아래의 HTML을 렌더링합니다. HTML의 `data-` 특성 출력은 `ReleaseDate` 속성에 대한 유효성 검사 특성에 해당합니다. 아래의 `data-val-required` 특성은 사용자가 릴리스 날짜 필드를 입력하지 않았음을 표시하는 오류 메시지를 포함합니다. jQuery 비간섭 유효성 검사는 jQuery 유효성 검사 [`required()`](https://jqueryvalidation.org/required-method/) 메서드에 이 값을 전달합니다. 그러면**\<span>** 요소와 함께 해당 메시지를 표시합니다.
 
 ```html
 <form action="/Movies/Create" method="post">
@@ -142,13 +142,13 @@ MVC는 계속 필드에 도달할 때까지 유효성 검사 오류 (기본적�
 </form>
 ```
 
-폼이 유효한 될 때까지 전송을 방지 하는 클라이언트 쪽 유효성 검사 합니다. 제출 단추가 양식을 전송 또는 오류 메시지를 표시 하는 JavaScript를 실행 합니다.
+클라이언트 쪽 유효성 검사는 형식이 유효할 때까지 전송을 방지합니다. 제출 단추는 형식을 전송하거나 오류 메시지를 표시하는 JavaScript를 실행합니다.
 
-MVC 유형 특성 값을 사용 하 여를 재정의할 수 있는 속성의.NET 데이터 형식을 기반으로 결정 `[DataType]` 특성입니다. 기본 `[DataType]` 특성 실제 서버 쪽 유효성 검사가 수행 되지 않습니다. 그러나 브라우저 자신의 오류 메시지를 선택 하 고 만들려는, jQuery 유효성 검사 비간섭 패키지는 메시지를 무시 하 고 다른 사용자와 일관 되 게 표시 수도 있지만 이러한 오류를 표시 합니다. 사용자를 적용할 때 가장 분명 이런 `[DataType]` 하위 클래스와 같은 `[EmailAddress]`합니다.
+MVC는 속성의 .NET 데이터 형식에 따라 형식 특성 값을 결정하고 `[DataType]` 특성을 사용하여 재정의할 수 있습니다. 기본 `[DataType]` 특성은 실제 서버 쪽 유효성 검사를 수행하지 않습니다. 브라우저는 고유한 오류 메시지를 선택하고 원하는 대로 해당 오류를 표시하려고 하지만 jQuery 유효성 검사 비간섭 패키지는 이 메시지를 재정의하고 다른 사용자와 일관되게 표시할 수 있습니다. 사용자가 `[EmailAddress]`와 같은 `[DataType]` 하위 클래스를 적용할 때 가장 분명하게 발생합니다.
 
-### <a name="add-validation-to-dynamic-forms"></a>동적 양식을에 유효성 검사 추가
+### <a name="add-validation-to-dynamic-forms"></a>동적 형식에 유효성 검사 추가
 
-유효성 검사 비 가시적인 jQuery 유효성 검사 논리 및 매개 변수 jQuery 유효성 검사 페이지 처음 로드 될 때를 전달 하기 때문에 동적으로 생성 된 양식 유효성 검사를 자동으로 발생 되지 않습니다. 대신, jQuery 비간섭 유효성 검사 만든 후 즉시 동적 폼의 구문 분석을 알려야 합니다. 예를 들어 아래 코드는 AJAX를 통해 추가 폼의 클라이언트 쪽 유효성 검사를 설정할 수 있는 방법을 보여 줍니다.
+페이지가 처음 로드될 때 jQuery 비간섭 유효성 검사가 유효성 검사 논리 및 매개 변수를 jQuery 유효성 검사에 전달하기 때문에 동적으로 생성된 형식은 유효성 검사를 자동으로 표시하지 않습니다. 대신 jQuery 비간섭 유효성 검사에서 동적 폼을 만든 후에 즉시 구문 분석하도록 지시합니다. 예를 들어 아래 코드에서는 AJAX를 통해 추가된 형식에서 클라이언트 쪽 유효성 검사를 설정할 수 있는 방법을 보여줍니다.
 
 ```js
 $.get({
@@ -167,11 +167,11 @@ $.get({
 })
 ```
 
-`$.validator.unobtrusive.parse()` 메서드는 하나의 인수에 필요한 jQuery 선택기를 허용 합니다. 이 메서드는 jQuery의 구문 분석을 비 가시적인 유효성 검사를 지시는 `data-` 해당 선택기 내 폼의 특성입니다. 이러한 특성의 값을 양식에서 원하는 클라이언트 쪽 유효성 검사 규칙을 보여 줍니다.에 다음 jQuery 유효성 검사 플러그 인에 전달 됩니다.
+`$.validator.unobtrusive.parse()` 메서드는 하나의 인수에 대해 jQuery 선택기를 허용합니다. 이 메서드는 jQuery 비간섭 유효성 검사에서 해당 선택기 내에 있는 형식의 `data-` 특성을 구문 분석하도록 지시합니다. 이러한 특성의 값은 jQuery 유효성 검사 플러그 인에 전달되므로 형식은 원하는 클라이언트 쪽 유효성 검사 규칙을 나타냅니다.
 
 ### <a name="add-validation-to-dynamic-controls"></a>동적 컨트롤에 유효성 검사 추가
 
-등의 개별 컨트롤 때에 폼에 대 한 유효성 검사 규칙을 업데이트할 수 있습니다 `<input/>`s 및 `<select/>`s, 동적으로 생성 됩니다. 이러한 요소에 대 한 선택기를 전달할 수 없습니다는 `parse()` 메서드를 직접 주변 폼 이미 구문 분석 하 고 업데이트 되지 않습니다. 대신, 있습니다 먼저 기존 유효성 검사 데이터를 제거한 다음 아래와 같이 전체 폼 재분석:
+`<input/>` 및 `<select/>` 등의 개별 컨트롤이 동적으로 생성될 경우 형식에 대한 유효성 검사 규칙을 업데이트할 수도 있습니다. 주변 형식이 이미 구문 분석되고 업데이트되지 않았기 때문에 이러한 요소에 대한 선택기를 `parse()` 메서드로 직접 전달할 수 없습니다. 대신 먼저 기존 유효성 검사 데이터를 제거한 다음, 아래와 같이 전체 형식을 다시 구문 분석합니다.
 
 ```js
 $.get({
@@ -192,11 +192,11 @@ $.get({
 
 ## <a name="iclientmodelvalidator"></a>IClientModelValidator
 
-사용자 지정 특성에 대 한 클라이언트 쪽 논리를 만들 수 있습니다 및 [비간섭 유효성 검사](http://jqueryvalidation.org/documentation/) 클라이언트에 유효성 검사의 일부로 자동으로 실행 됩니다. 첫 번째 단계를 구현 하 여 어떤 데이터 특성 추가 제어 하는 것은 `IClientModelValidator` 다음과 같이 인터페이스:
+사용자 지정 특성에 대한 클라이언트 쪽 논리를 만들 수 있습니다. [비간섭 유효성 검사](http://jqueryvalidation.org/documentation/)는 자동으로 클라이언트에서 유효성 검사의 일부로 이를 실행합니다. 첫 번째 단계는 다음과 같이 `IClientModelValidator` 인터페이스를 구현하여 추가할 데이터 특성을 제어하는 것입니다.
 
 [!code-csharp[Main](validation/sample/ClassicMovieAttribute.cs?range=30-42)]
 
-이 인터페이스를 구현 하는 특성이 생성 된 필드를 HTML 특성을 추가할 수 있습니다. 에 대 한 출력을 검사 하는 `ReleaseDate` 요소는 이전 예제와 비슷하지만 이제는 HTML을 표시는 `data-val-classicmovie` 에 정의 된 특성의 `AddValidation` 방식의 `IClientModelValidator`합니다.
+이 인터페이스를 구현하는 특성은 생성된 필드에 HTML 특성을 추가할 수 있습니다. `ReleaseDate` 요소에 대한 출력을 검사하면 이전 예제와 비슷한 HTML을 표시합니다. 단지 이제는 `data-val-classicmovie` 특성이 `IClientModelValidator`라는 `AddValidation` 메서드에서 정의됩니다.
 
 ```html
 <input class="form-control" type="datetime"
@@ -207,49 +207,49 @@ $.get({
     id="ReleaseDate" name="ReleaseDate" value="" />
 ```
 
-비 가시적인 유효성 검사에서 데이터를 사용 하는 `data-` 특성 오류 메시지를 표시 합니다. 그러나 jQuery 규칙을 인식 하지 못합니다 또는 jQuery의에 추가 될 때까지 메시지 `validator` 개체입니다. 라는 메서드를 추가 하는 아래 예제에서이 확인할 `classicmovie` jQuery로 사용자 지정 클라이언트 유효성 검사 코드가 포함 된 `validator` 개체입니다.
+비간섭 유효성 검사는 `data-` 특성에서 데이터를 사용하여 오류 메시지를 표시합니다. 그러나 jQuery는 jQuery의 `validator` 개체에 추가될 때까지 규칙 또는 메시지를 인식하지 못합니다. 아래 예제에서 jQuery `validator` 개체에 대한 사용자 지정 클라이언트 유효성 검사 코드가 포함된 `classicmovie`라는 메서드를 추가합니다.
 
 [!code-javascript[Main](validation/sample/Views/Movies/Create.cshtml?range=71-93)]
 
-이제 jQuery 유효성 검사 코드는 false를 반환 하는 경우 표시할 오류 메시지 뿐 아니라 사용자 지정 JavaScript 유효성 검사를 실행 하는 정보를 있습니다.
+이제 jQuery에는 유효성 검사 코드가 false를 반환하는 경우 표시할 오류 메시지뿐만 아니라 사용자 지정 JavaScript 유효성 검사를 실행하는 정보도 포함됩니다.
 
 ## <a name="remote-validation"></a>원격 유효성 검사
 
-원격 유효성 검사는 서버에서 데이터에 대 한 클라이언트에서 데이터의 유효성을 검사 해야 할 때 사용할 수 있는 유용한 기능입니다. 예를 들어 앱 여부는 전자 메일 또는 사용자 이름이 이미 사용에서 되 고 많은 양의 데이터를 쿼리해야 할 수 있습니다. 하나는 유효성 검사에 대 한 데이터 집합 다운로드 큰 또는 할 필드가 단 몇 너무 많은 리소스를 소비 합니다. 중요 한 정보를 노출할 수 있습니다. 필드의 유효성을 검사 하는 왕복 요청 하는 대신이입니다.
+원격 유효성 검사는 서버의 데이터에 대한 클라이언트의 데이터 유효성을 검사해야 할 경우에 사용할 수 있는 유용한 기능입니다. 예를 들어 앱은 이메일 또는 사용자 이름을 이미 사용 중인지 확인해야 하고, 이를 위해 많은 양의 데이터를 쿼리해야 합니다. 하나 이상의 필드에 대한 유효성을 검사하는 대규모 데이터 집합을 다운로드하면 너무 많은 리소스를 소비하게 됩니다. 또한 중요한 정보를 노출할 수 있습니다. 대안은 필드의 유효성을 검사하는 왕복 요청을 수행하는 것입니다.
 
-2 단계 프로세스에서 원격 유효성 검사를 구현할 수 있습니다. 첫째, 주석으로 처리 해야 사용 하 여 모델의 `[Remote]` 특성입니다. `[Remote]` 특성 직접 클라이언트 쪽 JavaScript는 해당 코드를 호출 하는 데 사용할 수 있는 여러 오버 로드를 허용 합니다. 다음 예제에서는 가리키는 `VerifyEmail` 의 동작 메서드는 `Users` 컨트롤러입니다.
+2단계 프로세스에서 원격 유효성 검사를 구현할 수 있습니다. 먼저 `[Remote]` 특성을 사용하여 모델을 주석으로 처리해야 합니다. `[Remote]` 특성은 클라이언트 쪽 JavaScript를 적절한 코드를 호출하는 데 사용할 수 있는 여러 오버로드를 허용합니다. 다음 예제에서는 `Users` 컨트롤러의 `VerifyEmail` 작업 메서드를 가리킵니다.
 
 [!code-csharp[Main](validation/sample/User.cs?range=7-8)]
 
-두 번째 단계는 지정 하는 것 유효성 검사 코드는 해당 작업 메서드에서 정의 된 대로 `[Remote]` 특성입니다. JQuery 유효성 검사에 따라 [ `remote()` ](https://jqueryvalidation.org/remote-method/) 메서드 설명서:
+두 번째 단계는 `[Remote]` 특성에 정의된 대로 해당 작업 메서드에서 유효성 검사 코드를 지정하는 것입니다. jQuery 유효성 검사 [`remote()`](https://jqueryvalidation.org/remote-method/) 메서드 설명서에 따라:
 
-> Serverside 응답 해야 하는 JSON 문자열 이어야 합니다. `"true"` 유효한 요소에 대 한 일 수 있습니다 및 `"false"`, `undefined`, 또는 `null` 잘못 된 요소에 대 한 기본 오류 메시지를 사용 하 여 합니다. Serverside 응답 문자열인 경우를 제외 합니다. `"That name is already taken, try peter123 instead"`이 문자열의 기본 대신 사용자 지정 오류 메시지로 표시 됩니다.
+> 서버 쪽 응답은 기본 오류 메시지를 사용하며 유효한 요소에 대해 `"true"`인 JSON 문자열이며 잘못된 요소에 대해 `"false"`, `undefined` 또는 `null`일 수 있습니다. 서버 쪽 응답이 문자열인 경우(예: `"That name is already taken, try peter123 instead"`) 이 문자열은 기본값 대신 사용자 지정 오류 메시지로 표시됩니다.
 
-정의 `VerifyEmail()` 메서드 아래 표시 된 대로 다음이 규칙을 따릅니다. 유효성 검사 오류가 반환 전자 메일 사용 된 경우 메시지 또는 `true` 전자 메일 것은 무료 이며 사용 하는지를 확인 하 고 결과를 래핑하는 `JsonResult` 개체입니다. 클라이언트 쪽 계속 필요한 경우 오류를 표시 하려면 반환된 된 값을 유도할 수 있습니다.
+`VerifyEmail()` 메서드의 정의는 아래 표시된 대로 이러한 규칙을 따릅니다. 이메일을 사용한 경우 유효성 검사 오류 메시지가 반환됩니다. 또는 이메일이 무료인 경우 `true`이며 `JsonResult` 개체에서 결과를 래핑합니다. 클라이언트 쪽은 반환 값을 계속 사용하거나 필요한 경우 오류를 표시할 수 있습니다.
 
 [!code-csharp[Main](validation/sample/UsersController.cs?range=19-28)]
 
-이제 사용자가 전자 메일을 입력 하면 보기에는 JavaScript에서는 한 원격 호출을 참조 하는 경우 해당 전자 메일 작업이 수행 되 고,이 경우 오류 메시지를 표시 합니다. 그렇지 않으면 사용자는 일반적으로 폼을 제출할 수 있습니다.
+이제 사용자가 이메일을 입력하면 보기의 JavaScript에서는 해당 이메일을 사용하는지 확인하기 위해 원격 호출을 수행하고, 해당하는 경우 오류 메시지를 표시합니다. 그렇지 않으면 사용자는 일반적으로 형식을 제출할 수 있습니다.
 
-`AdditionalFields` 의 속성은 `[Remote]` 특성은 조합에 서버에서 데이터에 대 한 유효성을 검사 하는 데 유용 합니다. 예를 들어 경우는 `User` 위쪽에서 모델에 라는 두 개의 추가 속성 `FirstName` 및 `LastName`, 기존 사용자가 이미 있는 해당 쌍의 이름 확인 해야 할 수 있습니다. 다음 코드 에서처럼 새 속성을 정의 합니다.
+`[Remote]` 특성의 `AdditionalFields` 속성은 서버에서 데이터에 대한 필드 조합의 유효성을 검사하는 데 유용합니다. 예를 들어 위의 `User` 모델에 `FirstName` 및 `LastName`라는 두 개의 추가 속성이 있는 경우 기존 사용자가 해당 쌍의 이름을 사용하지 않는지 확인하는 것이 좋습니다. 다음 코드와 같이 새로운 속성을 정의합니다.
 
 [!code-csharp[Main](validation/sample/User.cs?range=10-13)]
 
-`AdditionalFields`수 했으므로 명시적으로 설정 된 문자열에 `"FirstName"` 및 `"LastName"`, 하지만 사용 하 여는 [ `nameof` ](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/nameof) 리팩터링 나중에 다음과 같은 연산자를 간소화 합니다. 유효성 검사를 수행 하는 작업 메서드를 다음의 값에 대해 하나씩 두 개의 인수를 받아들여야 `FirstName` 및의 값에 대해 하나씩 `LastName`합니다.
+`AdditionalFields`는 명시적으로 `"FirstName"` 및 `"LastName"` 문자열로 설정될 수 있지만 다음과 같은 [`nameof`](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/nameof) 연산자를 사용하면 나중에 리팩터링을 간소화할 수 있습니다. 유효성 검사를 수행하는 작업 메서드는 `FirstName` 값 및 `LastName` 값에 대해 하나씩 두 개의 인수를 허용해야 합니다.
 
 [!code-csharp[Main](validation/sample/UsersController.cs?range=30-39)]
 
-이제 때 사용자가 입력 한 이름과 성, JavaScript:
+이제 사용자가 이름과 성을 입력할 때 JavaScript:
 
-* 해당 쌍의 이름 사용 중인 경우를 확인 하려면 원격 호출을 수행 합니다.
-* 쌍은 수행 된 경우 오류 메시지가 표시 됩니다. 
-* 되지 않은 경우, 사용자는 양식을 전송할 수 있습니다.
+* 해당 쌍의 이름을 사용 중인지 확인하기 위해 원격 호출을 수행합니다.
+* 쌍이 사용 중인 경우 오류 메시지가 표시됩니다. 
+* 그렇지 않은 경우 사용자는 형식을 전송할 수 있습니다.
 
-두 개 이상의 추가 필드와 유효성을 검사 해야 하는 경우는 `[Remote]` 특성을 제공 하는 쉼표로 구분 된 목록으로 합니다. 예를 들어, 추가 하는 `MiddleName` 모델에 속성이 설정는 `[Remote]` 다음 코드와 같이 특성:
+`[Remote]` 특성을 포함하는 두 개 이상의 추가 필드 유효성을 검사해야 하는 경우 쉼표로 구분된 목록으로 제공합니다. 예를 들어 `MiddleName` 특성을 메서드에 추가하고, 다음 코드에 표시된 대로 `[Remote]` 특성을 설정합니다.
 
 ```cs
 [Remote(action: "VerifyName", controller: "Users", AdditionalFields = nameof(FirstName) + "," + nameof(LastName))]
 public string MiddleName { get; set; }
 ```
 
-`AdditionalFields`모든 특성 인수가 같은 상수 식 이어야 합니다. 따라서 사용 하면 안는 [문자열 보간](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/interpolated-strings) 호출 또는 [ `string.Join()` ](https://msdn.microsoft.com/library/system.string.join(v=vs.110).aspx) 초기화 `AdditionalFields`합니다. 에 추가 하는 모든 추가 필드에는 `[Remote]` 특성을 해당 컨트롤러 동작 메서드에 다른 인수를 추가 해야 합니다.
+모든 특성 인수와 같은 `AdditionalFields`은 상수 식이어야 합니다. 따라서 [보간된 문자열](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/interpolated-strings)을 사용하거나 [`string.Join()`](https://msdn.microsoft.com/library/system.string.join(v=vs.110).aspx)를 호출하여 `AdditionalFields`을 초기화하지 않아야 합니다. `[Remote]` 특성에 추가한 모든 추가 필드의 경우 해당하는 컨트롤러 작업 메서드에 다른 인수를 추가해야 합니다.

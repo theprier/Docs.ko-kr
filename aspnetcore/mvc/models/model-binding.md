@@ -1,50 +1,50 @@
 ---
 title: "모델 바인딩"
 author: rachelappel
-description: "ASP.NET Core mvc에서 모델 바인딩 방법에 대 한 정보"
-ms.author: rachelap
+description: "ASP.NET Core MVC에서 모델 바인딩에 대한 정보"
 manager: wpickett
-ms.date: 01/22/2018
-ms.topic: article
-ms.technology: aspnet
-ms.prod: asp.net-core
 ms.assetid: 0be164aa-1d72-4192-bd6b-192c9c301164
+ms.author: rachelap
+ms.date: 01/22/2018
+ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: mvc/models/model-binding
-ms.openlocfilehash: 26c4c016548cc3e465991c5ebf16893d4022145d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
-ms.translationtype: MT
+ms.openlocfilehash: d64d2792d7c682f9112133be1b9d129b2fc8a048
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="model-binding"></a>모델 바인딩
 
-으로 [Rachel Appel](https://github.com/rachelappel)
+작성자: [Rachel Appel](https://github.com/rachelappel)
 
 ## <a name="introduction-to-model-binding"></a>모델 바인딩 소개
 
-ASP.NET Core mvc에서 모델 바인딩 동작 메서드 매개 변수를 HTTP 요청에서 데이터를 매핑합니다. 매개 변수 문자열, 정수, float, 등 단순 형식일 수 있습니다 또는 복합 형식이 될 수 있습니다. 크기 또는 데이터의 복잡성에 관계 없이 자주 반복 되는 시나리오는 들어오는 데이터를 해당 하는 도구에 매핑 때문에 이것이 MVC의 유용한 기능입니다. MVC는 하므로 개발자는 약간 다른 버전의 모든 응용 프로그램에서 같은 코드를 다시 작성 유지할 필요가 없습니다 바인딩을 도외시 함으로써이 문제를 해결 합니다. 사용자 고유의 텍스트 형식 변환기 코드를 작성 하는 것은 지루한, 오류가 발생할 가능성이 있습니다.
+ASP.NET Core MVC에서 모델 바인딩은 작업 메서드 매개 변수에 HTTP 요청의 데이터를 자동으로 매핑합니다. 매개 변수는 문자열, 정수, float 등과 같은 단순 형식이거나 복합 형식일 수 있습니다. 들어오는 데이터를 대상에 매핑하는 것은 데이터의 크기나 복잡성에 관계없이 자주 반복되는 시나리오이므로 MVC의 훌륭한 기능입니다. MVC는 바인딩을 추상화하여 이 문제를 해결하므로 개발자는 모든 앱에서 동일한 코드의 약간 다른 버전을 다시 작성하지 않아도 됩니다. 형식 변환기 코드에 사용자 고유의 텍스트를 작성하는 것은 지루하고 오류가 발생하기 쉽습니다.
 
-## <a name="how-model-binding-works"></a>모델 바인딩 작동 방식
+## <a name="how-model-binding-works"></a>모델 바인딩의 작동 방식
 
-MVC는 HTTP 요청을 받으면 컨트롤러의 특정 동작 메서드에 라우팅합니다 것입니다. 동작 메서드는 경로 데이터에 포함 된 내용에 따라 실행를 결정 한 후 값 HTTP 요청에서 해당 작업 메서드의 매개 변수를 바인딩합니다. 예를 들어 다음 URL:
+MVC는 HTTP 요청을 받으면 이를 컨트롤러의 특정 작업 메서드에 라우팅합니다. 경로 데이터에 기반하여 실행할 작업 메서드를 결정한 다음, HTTP 요청의 값을 해당 작업 메서드의 매개 변수에 바인드합니다. 예를 들어 다음 URL을 가정해 봅니다.
 
 `http://contoso.com/movies/edit/2`
 
-경로 템플릿을 다음과 같은, 이후 `{controller=Home}/{action=Index}/{id?}`, `movies/edit/2` 라우팅하는 `Movies` 컨트롤러 및 해당 `Edit` 작업 메서드. 또한 호출 하는 선택적 매개 변수 허용 `id`합니다. 동작 메서드에 대 한 코드는 코드는 다음과 같아야 합니다.
+경로 템플릿은 `{controller=Home}/{action=Index}/{id?}`와 같으므로, `movies/edit/2`는 `Movies` 컨트롤러와 해당 `Edit` 작업 메서드로 라우팅합니다. 또한 `id`라는 선택적 매개 변수를 허용합니다. 작업 메서드의 코드는 다음과 같아야 합니다.
 
 ```csharp
 public IActionResult Edit(int? id)
    ```
 
-참고: URL 경로에 있는 문자열은 대/소문자 구분.
+참고: URL 경로에 있는 문자열은 대/소문자를 구분하지 않습니다.
 
-MVC 요청 데이터를 이름으로 작업 매개 변수를 바인딩할 하려고 합니다. MVC는 매개 변수 이름 및 설정 가능한 공용 속성의 이름을 사용 하 여 각 매개 변수에 값을 찾습니다. 위의 예제에서 유일한 action 매개 변수 이름은 `id`는 MVC 경로 값에 같은 이름의 값에 바인딩합니다. 경로 값 외에도 MVC는 데이터 요청의 다양 한 부분에서 바인딩한 집합 순서로 작업을 수행 합니다. 다음은 모델 바인딩 표시가 보이는 순서로 데이터 원본의 목록이입니다.
+MVC는 이름을 기준으로 요청 데이터를 작업 매개 변수에 바인딩하려고 시도합니다. MVC는 매개 변수 이름과 설정 가능한 공용 속성 이름을 사용하여 각 매개 변수의 값을 찾습니다. 위의 예에서 유일한 작업 매개 변수의 이름은 `id`이며 MVC는 경로 값에서 같은 이름의 값에 바인딩합니다. 경로 값 외에도, MVC는 요청의 여러 부분에서 설정된 순서대로 데이터를 바인딩합니다. 아래는 모델 바인딩이 보이는 순서대로 나열된 데이터 원본 목록입니다.
 
-1. `Form values`: 이들은 POST 메서드를 사용 하 여 HTTP 요청에서 이동 하는 폼 값입니다. (jQuery POST 요청 포함).
+1. `Form values`: POST 메서드를 사용하여 HTTP 요청에 포함되는 양식 값입니다. (jQuery POST 요청 포함).
 
-2. `Route values`:에서 제공 하는 경로 값 집합이 [라우팅](xref:fundamentals/routing)
+2. `Route values`: [라우팅](xref:fundamentals/routing)에서 제공한 경로 값 집합
 
-3. `Query strings`쿼리 문자열: URI의 부분입니다.
+3. `Query strings`: URI의 쿼리 문자열 부분입니다.
 
 <!-- DocFX BUG
 The link works but generates an error when building with DocFX
@@ -52,67 +52,67 @@ The link works but generates an error when building with DocFX
 [Routing](xref:fundamentals/routing)
 -->
 
-참고: 폼 값, 경로 데이터 및 쿼리 문자열은 모두 이름 값 쌍으로 저장 됩니다.
+참고: 양식 값, 경로 데이터 및 쿼리 문자열은 모두 이름-값 쌍으로 저장됩니다.
 
-명명 된 키에 대 한 모델 바인딩 요청 이후 `id` 되어 있으므로 없습니다 라는 `id` 폼 값에 그 이후에 이동 해당 키를 찾고 경로 값에 있습니다. 이 예제에서 일치 하는 것입니다. 바인딩이 일어나기 및 값 2 정수로 변환 됩니다. 편집 (문자열 id)를 사용 하 여 동일한 요청 "2" 문자열로 변환 합니다.
+모델 바인딩에서는 `id`라는 이름의 키를 요청했고 양식 값에 `id`라는 항목이 없으므로 해당 키를 찾는 경로 값으로 이동했습니다. 이 예제에서는 일치 항목입니다. 바인딩이 발생하고 값이 정수 2로 변환됩니다. 편집(문자열 ID)을 사용하는 동일한 요청이 문자열 "2"로 변환됩니다.
 
-지금까지 예에서는 단순 형식을 사용합니다. MVC에서 단순 유형은 모든.NET 기본 형식 또는 문자열 형식 변환기는 형식입니다. 동작 메서드 매개 변수가 클래스와 같은 경우는 `Movie` 속성, MVC의 모델 바인딩을 원활 하 게 처리 처럼 단순 및 복합 유형이 포함 되어 있는 형식입니다. 일치 하는 항목을 찾고 복합 형식의 속성을 이동 하 리플렉션 및 재귀를 사용 합니다. 모델 바인딩 패턴을 찾고 *parameter_name.property_name* 속성에 값을 바인딩할 합니다. 이 폼의 일치 하는 값을 찾지 못하는 경우 속성 이름만 사용 하 여 바인딩하려면 시도 합니다. 와 같은 이러한 형식에 대 한 `Collection` 에 일치 하는 항목 형식, 모델 바인딩 찾습니다 *p a r a [index]* 또는 그냥 *[index]*합니다. 모델 바인딩에서는 `Dictionary` 요청 마찬가지로, 형식 *p a r a [key]* 또는 그냥 *[key]*키 모두 간단한 유형으로, 합니다. HTML 필드 이름 및 동일한 모델 유형에 대해 생성 된 태그 도우미 지원 되는 키가 일치 합니다. 이렇게 하면 양식 필드에 계속의 편의 위해 사용자의 입력으로 채워진 예를 들어 만들기 또는 편집에서 바인딩된 데이터 유효성 검사를 통과 하지 않은 경우 라운드트립 값.
+지금까지 예에서는 단순 형식을 사용합니다. MVC에서 단순 형식은 모든 .NET 기본 형식 또는 문자열 형식 변환기를 사용한 형식입니다. 작업 메서드의 매개 변수가 `Movie` 형식과 같은 클래스이고 속성으로 단순 및 복합 형식을 모두 포함하는 경우, MVC의 모델 바인딩에서 이를 원활하게 처리합니다. 리플렉션 및 재귀를 사용하여 복합 형식의 속성을 검색하고 일치하는 항목을 찾습니다. 모델 바인딩은 값을 속성에 바인딩하기 위해 *parameter_name.property_name* 패턴을 찾습니다. 이 양식의 일치하는 값을 찾지 못하면 속성 이름만 사용하여 바인딩을 시도합니다. `Collection` 형식과 같은 형식에 대해, 모델 바인딩에서는 *parameter_name[index]* 또는 *[index]*에 대해 일치 항목을 찾습니다. 모델 바인딩에서는 `Dictionary` 형식을 유사하게 처리하며 키가 단순 형식인 경우, *parameter_name[key]* 또는 *[key]*를 요청합니다. 지원되는 키는 동일한 모델 형식에 대해 생성된 필드 이름 HTML 및 태그 도우미와 일치합니다. 이렇게 하면 라운드트립 값이 가능해지므로 생성 또는 편집에서 바인딩된 데이터가 유효성 검사를 통과하지 못했을 때와 같이, 사용자 편의를 위해 양식 필드는 사용자 입력으로 채워져 있습니다.
 
-클래스 작업이 발생 하는 바인딩에 대 한 순서 대로 공용 기본 생성자가 있어야 하 고 바인딩되어야 멤버에는 쓰기 가능한 공용 속성 이어야 합니다. 클래스는 인스턴스화할 수 공용 기본 생성자를 사용 하 여 모델 바인딩 경우에 속성을 설정할 수 있습니다.
+바인딩이 발생하려면 클래스에 공용 기본 생성자가 있어야 하며 바인딩할 멤버는 쓰기 가능한 공용 속성이어야 합니다. 모델 바인딩이 발생하면 클래스는 공용 기본 생성자를 사용하여 인스턴스화된 후 속성을 설정할 수 있습니다.
 
-매개 변수가 바인딩되면 모델 바인딩을 찾고 해당 이름 가진 값에 대 한 중지 하 고에 대해 다음 매개 변수를 바인딩합니다. 그렇지 않은 경우 기본 모델 바인딩 동작 매개 변수를 해당 유형에 따라 해당 기본값으로 설정:
+매개 변수가 바인딩되면 모델 바인딩은 해당 이름의 값을 찾는 것을 중지하고 다음 매개 변수를 바인딩하도록 이동합니다. 그렇지 않은 경우 기본 모델 바인딩 동작은 해당 형식에 따라 매개 변수를 기본값으로 설정합니다.
 
-* `T[]`:를 형식의 배열을 `byte[]`, 형식의 매개 변수를 설정 하는 바인딩 `T[]` 를 `Array.Empty<T>()`합니다. 형식의 배열 `byte[]` 로 설정 `null`합니다.
+* `T[]`: `byte[]` 형식의 배열을 제외하고, 바인딩은 `T[]` 형식의 매개 변수를 `Array.Empty<T>()`로 설정합니다. `byte[]` 형식의 배열은 `null`로 설정됩니다.
 
-* 참조 형식: 바인딩 인스턴스를 만듭니다 클래스의 기본 생성자로 속성을 설정 하지 않고 있습니다. 그러나 바인딩 집합을 모델 `string` 매개 변수를 `null`합니다.
+* 참조 형식: 바인딩은 속성을 설정하지 않고 기본 생성자를 사용하여 클래스의 인스턴스를 만듭니다. 그러나 모델 바인딩에서는 `string` 매개 변수를 `null`로 설정합니다.
 
-* Nullable 형식: Nullable 형식으로 설정 됩니다 `null`합니다. 위의 예제에서는 바인딩 집합을 모델 `id` 를 `null` 형식 이므로 `int?`합니다.
+* Nullable 형식: Nullable 형식은 `null`로 설정됩니다. 위의 예제에서 모델 바인딩은 `int?` 형식이므로 `id`를 `null`로 설정합니다.
 
-* 값 유형: 형식이 nullable이 아닌 값 형식 `T` 로 설정 `default(T)`합니다. 모델 바인딩은 매개 변수를 설정 하는 예를 들어 `int id` 0입니다. 기본값에 의존 하지 않고 모델 유효성 검사 또는 nullable 형식을 사용 하는 것이 좋습니다.
+* 값 형식: Null을 허용하지 않는 값 형식 `T`는 `default(T)`로 설정됩니다. 예를 들어 모델 바인딩은 `int id` 매개 변수를 0으로 설정합니다. 기본값에 의존하지 않고 모델 유효성 검사 또는 nullable 형식을 사용하는 것이 좋습니다.
 
-바인딩 실패, MVC 오류를 throw 하지 않습니다. 사용자 입력을 허용 하는 모든 작업을 확인 하는 `ModelState.IsValid` 속성입니다.
+바인딩에 실패하는 경우 MVC는 오류를 throw하지 않습니다. 사용자 입력을 허용하는 모든 작업에서 `ModelState.IsValid` 속성을 확인해야 합니다.
 
-참고: 각 항목에는 컨트롤러의 `ModelState` 속성은 한 `ModelStateEntry` 포함 하는 `Errors` 속성입니다. 것은이 컬렉션을 직접 쿼리할 필요가 거의 없습니다. 대신 `ModelState.IsValid`를 사용하세요.
+참고: 컨트롤러의 `ModelState` 속성에 있는 각 항목은 `Errors` 속성이 포함된 `ModelStateEntry`입니다. 이 컬렉션을 직접 쿼리할 필요는 거의 없습니다. 대신 `ModelState.IsValid`를 사용하세요.
 
-또한 MVC 모델 바인딩 수행할 때 고려해 야 하는 특수 데이터 형식도 있습니다.
+또한 모델 바인딩을 수행할 때 MVC가 고려해야 하는 몇 가지 특수 데이터 형식이 있습니다.
 
-* `IFormFile``IEnumerable<IFormFile>`: HTTP 요청의 일부인 하나 이상의 업로드 된 파일입니다.
+* `IFormFile`, `IEnumerable<IFormFile>`: HTTP 요청의 일부인 하나 이상의 업로드된 파일입니다.
 
-* `CancellationToken`: 비동기 컨트롤러의 작업을 취소 하는 데 사용 합니다.
+* `CancellationToken`: 비동기 컨트롤러에서 작업을 취소하는 데 사용됩니다.
 
-이러한 형식은 클래스 형식에 액션 매개 변수 또는 속성에 바인딩할 수 있습니다.
+이러한 형식은 작업 매개 변수 또는 클래스 형식의 속성에 바인딩할 수 있습니다.
 
-모델 바인딩을 완료 되 면 [유효성 검사](validation.md) 발생 합니다. 기본 모델 바인딩 대부분의 개발 시나리오에 대 한 간단 하 게 합니다. 또한 하므로 기본 제공 동작을 사용자 지정할 수 고유한 요구 사항이 있는 경우에 확장입니다.
+모델 바인딩이 완료되면 [유효성 검사](validation.md)가 발생합니다. 기본 모델 바인딩은 대부분의 개발 시나리오에서 잘 작동합니다. 또한 확장 가능하므로 고유한 요구 사항이 있는 경우 기본 제공 동작을 사용자 지정할 수 있습니다.
 
-## <a name="customize-model-binding-behavior-with-attributes"></a>모델 바인딩 동작 특성으로 사용자 지정
+## <a name="customize-model-binding-behavior-with-attributes"></a>특성으로 모델 바인딩 동작 사용자 지정
 
-MVC에는 다른 소스에 해당 기본 모델 바인딩 동작을 직접 사용할 수 있는 몇 가지 특성이 포함 되어 있습니다. 예를 들어, 바인딩이 속성에 대해 필요한 지 여부 또는 것 전혀 사용 하 여 발생 해서는 안 되는 경우를 지정할 수 있습니다는 `[BindRequired]` 또는 `[BindNever]` 특성입니다. 또는 기본 데이터 원본을 무시 하 고 모델 바인더의 데이터 원본을 지정할 수도 있습니다. 다음은 모델 바인딩 특성의 목록:
+MVC에는 기본 모델 바인딩 동작을 다른 원본으로 전달하는 데 사용할 수 있는 몇 가지 특성이 포함되어 있습니다. 예를 들어 속성에 바인딩이 필요한지, `[BindRequired]` 또는 `[BindNever]` 특성을 사용하여 아예 바인딩이 발생하지 않아야 하는지 여부를 지정할 수 있습니다. 또는 기본 데이터 원본을 재정의하고 모델 바인더의 데이터 원본을 지정할 수 있습니다. 다음은 모델 바인딩 특성 목록입니다.
 
-* `[BindRequired]`:이 특성 바인딩이 발생 수 없는 경우 모델 상태 오류를 추가 합니다.
+* `[BindRequired]`: 이 특성은 바인딩이 발생할 수 없는 경우 모델 상태 오류를 추가합니다.
 
-* `[BindNever]`:이 매개 변수에 하지 바인딩할 모델 바인더를 나타냅니다.
+* `[BindNever]`: 모델 바인더에게 이 매개 변수에 바인딩하지 않도록 지시합니다.
 
-* `[FromHeader]``[FromQuery]`, `[FromRoute]`, `[FromForm]`: 이러한를 사용 하 여 적용 하려는 정확한 바인딩 소스를 지정 합니다.
+* `[FromHeader]`, `[FromQuery]`, `[FromRoute]`, `[FromForm]`: 적용하려는 정확한 바인딩 소스를 지정할 때 사용합니다.
 
-* `[FromServices]`:이 특성은 [종속성 주입](../../fundamentals/dependency-injection.md) 서비스에서 매개 변수를 바인딩합니다.
+* `[FromServices]`: 이 특성은 [종속성 주입](../../fundamentals/dependency-injection.md)을 사용하여 서비스에서 매개 변수를 바인딩합니다.
 
-* `[FromBody]`: 요청 본문에서 데이터를 바인딩할 구성 된 포맷터를 사용 합니다. 포맷터 요청의 콘텐츠 형식에 따라 선택 됩니다.
+* `[FromBody]`: 구성된 포맷터를 사용하여 요청 본문에서 데이터를 바인딩합니다. 포맷터는 요청의 콘텐츠 형식에 따라 선택됩니다.
 
-* `[ModelBinder]`: 기본 모델 바인더, 바인딩 소스 및 이름을 재정의 하는 데 사용 합니다.
+* `[ModelBinder]`: 기본 모델 바인더, 바인딩 소스 및 이름을 재정의하는 데 사용됩니다.
 
-특성은 모델 바인딩의 기본 동작을 재정의 해야 할 매우 유용한 도구입니다.
+특성은 모델 바인딩의 기본 동작을 재정의해야 할 때 매우 유용한 도구입니다.
 
-## <a name="bind-formatted-data-from-the-request-body"></a>요청 본문에서 형식이 지정 된 데이터 바인딩
+## <a name="bind-formatted-data-from-the-request-body"></a>요청 본문에서 형식이 지정된 데이터 바인딩
 
-요청 데이터는 다양 한 형식의 JSON, XML 및 다른 많은 요인을 포함 하 여 가져올 수 있습니다. [FromBody] 특성을 사용 하 여 데이터 요청 본문에는 매개 변수를 바인딩할 것인지 지정 MVC 포맷터의 구성 된 집합을 사용 하 여 해당 콘텐츠 형식에 따라 요청 데이터를 처리 합니다. MVC에는 기본적으로는 `JsonInputFormatter` XML 및 다른 사용자 지정 형식도 처리 하기 위한 추가 포맷터 추가할 수 있지만 JSON 데이터를 처리에 대 한 클래스입니다.
-
-> [!NOTE]
-> 있을 수 최대로 데코레이팅 동작 마다 하나의 매개 변수 `[FromBody]`합니다. ASP.NET Core MVC 런타임에 포맷터에 요청 스트림의 읽을의 책임을 위임 합니다. 요청 스트림을 매개 변수에 대해 읽기, 되 면 일반적으로 수 없으면 다른 바인딩에 대 한 다시 요청 스트림의 읽을 `[FromBody]` 매개 변수입니다.
+요청 데이터는 JSON, XML 및 기타 여러 가지 형식으로 제공될 수 있습니다. [FromBody] 특성을 사용하여 매개 변수를 요청 본문의 데이터에 바인딩하려는 것을 표시하는 경우, MVC는 구성된 포맷터 집합을 사용하여 해당 콘텐츠 형식을 기반으로 요청 데이터를 처리합니다. 기본적으로 MVC에는 JSON 데이터를 처리하기 위한 `JsonInputFormatter` 클래스가 포함되어 있지만 XML 및 기타 사용자 지정 형식을 처리하기 위한 포맷터를 더 추가할 수 있습니다.
 
 > [!NOTE]
-> `JsonInputFormatter` 기반을 기본 포맷터가 [Json.NET](https://www.newtonsoft.com/json)합니다.
+> `[FromBody]`로 데코레이팅된 작업당 최대 하나의 매개 변수가 있을 수 있습니다. ASP.NET Core MVC 런타임은 요청 스트림을 읽는 책임을 포맷터에 위임합니다. 매개 변수에 대해 요청 스트림을 읽은 후에는, 일반적으로 다른 `[FromBody]` 매개 변수를 바인딩하기 위해 요청 스트림을 다시 읽을 수 없습니다.
 
-ASP.NET 선택에 따라 입력된 포맷터는 [Content-type](https://www.w3.org/Protocols/rfc1341/4_Content-Type.html) 헤더 및 매개 변수의 형식 있으면 다음을 지정 하지 않으면 적용 되는 특성입니다. XML을 사용 하 시겠습니까 아니면 다른 형식 구성 해야에서 하는 경우는 *Startup.cs* 파일인 없지만 년 5 월 첫 번째가에 대 한 참조를 얻으려고 `Microsoft.AspNetCore.Mvc.Formatters.Xml` NuGet을 사용 하 여 합니다. 시작 코드는 코드는 다음과 같아야 합니다.
+> [!NOTE]
+> `JsonInputFormatter`은 기본 포맷터이며 [Json.NET](https://www.newtonsoft.com/json)을 기반으로 합니다.
+
+ASP.NET은 다르게 지정되는 특성이 적용되지 않는 한, [Content-Type](https://www.w3.org/Protocols/rfc1341/4_Content-Type.html) 헤더와 매개 변수의 형식을 기반으로 입력 포맷터를 선택합니다. XML 또는 다른 형식을 사용하려면 *Startup.cs* 파일에서 구성해야 하지만 NuGet을 사용하여 먼저 `Microsoft.AspNetCore.Mvc.Formatters.Xml`에 대한 참조를 얻어야 할 수도 있습니다. 시작 코드는 다음과 비슷합니다.
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -122,8 +122,8 @@ public void ConfigureServices(IServiceCollection services)
    }
 ```
 
-코드에서 *Startup.cs* 파일에 포함 되어는 `ConfigureServices` 메서드는 `services` 인수 ASP.NET 응용 프로그램에 대 한 서비스를 만드는 데 사용할 수 있습니다. 이 샘플에서는 XML 포맷터 MVC는이 응용 프로그램에 제공 하는 서비스로 추가 됩니다. `options` 에 전달 된 인수는 `AddMvc` 메서드 추가 하 고 응용 프로그램 시작 시 MVC에서 필터, 포맷터 및 기타 시스템 옵션을 관리할 수 있습니다. 다음 적용 하는 `Consumes` 특성을 컨트롤러 클래스 또는 작업 메서드를 원하는 형식으로 작동 합니다.
+*Startup.cs* 파일의 코드에는 ASP.NET 앱용 서비스를 빌드하는 데 사용할 수 있는 `services` 인수가 있는 `ConfigureServices` 메서드가 포함되어 있습니다. 이 샘플에서는 MVC가 이 앱에 대해 제공할 서비스로 XML 포맷터를 추가하고 있습니다. `AddMvc` 메서드에 전달된 `options` 인수를 통해 앱 시작 시 MVC의 필터, 포맷터 및 기타 시스템 옵션을 추가하고 관리할 수 있습니다. 그런 다음, 컨트롤러 클래스나 작업 메서드에 `Consumes` 특성을 적용하여 원하는 형식으로 작업합니다.
 
 ### <a name="custom-model-binding"></a>사용자 지정 모델 바인딩
 
-모델 바인딩을 고유의 사용자 지정 모델 바인더를 작성 하 여 확장할 수 있습니다. 에 대 한 자세한 내용은 [사용자 지정 모델 바인딩](../advanced/custom-model-binding.md)합니다.
+사용자 고유의 사용자 지정 모델 바인더를 작성하여 모델 바인딩을 확장할 수 있습니다. [사용자 모델 바인딩](../advanced/custom-model-binding.md)에 대해 자세히 알아보세요.

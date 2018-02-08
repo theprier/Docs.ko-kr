@@ -1,42 +1,42 @@
 ---
 title: OWIN(Open Web Interface for .NET)
 author: ardalis
-description: "ASP.NET Core 지 원하는 방법 열린 웹 인터페이스에 대 한.NET (OWIN), 웹 응용 프로그램 웹 서버에서 분리 될 수 있는 검색 합니다."
-ms.author: riande
+description: "ASP.NET Core에서 웹앱이 웹 서버에서 분리될 수 있도록 하는 OWIN(Open Web Interface for .NET)을 지원하는 방법을 알아봅니다."
 manager: wpickett
-ms.date: 10/14/2016
-ms.topic: article
-ms.technology: aspnet
-ms.prod: asp.net-core
-uid: fundamentals/owin
+ms.author: riande
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 42ffa01745b7a492b3b8cb2778805f254863b890
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
-ms.translationtype: MT
+ms.date: 10/14/2016
+ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
+uid: fundamentals/owin
+ms.openlocfilehash: 91e59d8568434867e10869b4db22bce9935ce573
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
-# <a name="introduction-to-open-web-interface-for-net-owin"></a>.NET (OWIN)에 대 한 웹 인터페이스를 열려면 소개
+# <a name="introduction-to-open-web-interface-for-net-owin"></a>OWIN(Open Web Interface for .NET)에 대한 소개
 
-여 [Steve Smith](https://ardalis.com/) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
+작성자: [Steve Smith](https://ardalis.com/) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-ASP.NET Core는 OWIN(Open Web Interface for .NET)을 지원합니다. OWIN을 사용하면 웹앱을 웹 서버에서 분리할 수 있습니다. 요청과 관련된 응답을 처리 하는 파이프라인에 사용할 미들웨어에 대 한 표준 방법을 정의 합니다. ASP.NET Core 응용 프로그램 및 미들웨어 OWIN 기반 응용 프로그램, 서버 및 미들웨어와 상호 운용이 가능 합니다.
+ASP.NET Core는 OWIN(Open Web Interface for .NET)을 지원합니다. OWIN을 사용하면 웹앱을 웹 서버에서 분리할 수 있습니다. 미들웨어를 파이프라인에서 사용하고 요청 및 관련된 응답을 처리하기 위한 표준 방법을 정의합니다. ASP.NET Core 응용 프로그램 및 미들웨어는 OWIN 기반 응용 프로그램, 서버 및 미들웨어와 상호 운용할 수 있습니다.
 
-OWIN 두 프레임 워크를 함께 사용할 수 있는 서로 다른 개체 모델을 허용 하는 분리 계층을 제공 합니다. `Microsoft.AspNetCore.Owin` 패키지는 두 개의 어댑터 구현을 제공 합니다.
-- OWIN에 대 한 ASP.NET Core 
-- ASP.NET Core에는 OWIN
+OWIN은 서로 다른 개체 모델이 있는 두 프레임워크를 함께 사용할 수 있도록 허용하는 분리 계층을 제공합니다. `Microsoft.AspNetCore.Owin` 패키지는 두 개의 어댑터 구현을 제공합니다.
+- ASP.NET Core에서 OWIN으로 
+- OWIN에서 ASP.NET Core로
 
-이렇게 하면 ASP.NET Core를 호스트/OWIN 호환 서버를 기반으로 또는 ASP.NET Core를 기반으로 실행 되도록 다른 OWIN 호환 가능한 구성 요소에 대해 호스팅할 수 있습니다.
+이렇게 하면 ASP.NET Core를 OWIN 호환 가능한 서버/호스트를 기반으로 호스팅하거나 다른 OWIN 호환 가능한 구성 요소를 ASP.NET Core를 기반으로 실행되도록 할 수 있습니다.
 
-참고: 이러한 어댑터를 사용 하 여 성능 비용이 수반 됩니다. Owin 패키지 또는 어댑터만 ASP.NET Core 구성 요소를 사용 하 여 응용 프로그램 사용 하지 않아야 합니다.
+참고: 이러한 어댑터를 사용하면 성능 비용이 수반됩니다. ASP.NET Core 구성 요소만을 사용하는 응용 프로그램은 Owin 패키지 또는 어댑터를 사용하면 안 됩니다.
 
 [샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/owin/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
-## <a name="running-owin-middleware-in-the-aspnet-pipeline"></a>ASP.NET 파이프라인에서 OWIN 미들웨어를 실행합니다.
+## <a name="running-owin-middleware-in-the-aspnet-pipeline"></a>ASP.NET 파이프라인에서 OWIN 미들웨어 실행
 
-ASP.NET Core OWIN 지원의 일부로 배포 되는 `Microsoft.AspNetCore.Owin` 패키지 합니다. 이 패키지를 설치 하 여 OWIN 지원 하 여 프로젝트에 가져올 수 있습니다.
+ASP.NET Core의 OWIN 지원은 `Microsoft.AspNetCore.Owin` 패키지의 일부로 배포됩니다. 이 패키지를 설치하여 OWIN 지원을 프로젝트로 가져올 수 있습니다.
 
-OWIN 미들웨어를 준수 하는 [OWIN 사양](http://owin.org/spec/spec/owin-1.0.0.html), 요구 하는 `Func<IDictionary<string, object>, Task>` 인터페이스 및 특정 키 설정 (같은 `owin.ResponseBody`). 다음과 같은 간단한 OWIN 미들웨어 "Hello World"를 표시합니다.
+OWIN 미들웨어는 `Func<IDictionary<string, object>, Task>` 인터페이스 및 특정 키 설정(예: `owin.ResponseBody`)이 필요한 [OWIN 사양](http://owin.org/spec/spec/owin-1.0.0.html)을 준수합니다. 다음과 같은 간단한 OWIN 미들웨어는 "Hello World"를 표시합니다.
 
 ```csharp
 public Task OwinHello(IDictionary<string, object> environment)
@@ -55,9 +55,9 @@ public Task OwinHello(IDictionary<string, object> environment)
 }
 ```
 
-샘플 서명을 반환는 `Task` 수락 하 고는 `IDictionary<string, object>` OWIN에 필요 합니다.
+샘플 서명은 `Task`를 반환하고 OWIN에 필요한 `IDictionary<string, object>`를 수락합니다.
 
-다음 코드를 추가 하는 방법을 보여 줍니다는 `OwinHello` (위에 표시 된)으로 ASP.NET 파이프라인에 미들웨어는 `UseOwin` 확장 메서드.
+다음 코드는 `UseOwin` 확장 메서드로 `OwinHello` 미들웨어(위에 표시된)를 ASP.NET 파이프라인에 추가하는 방법을 보여 줍니다.
 
 ```csharp
 public void Configure(IApplicationBuilder app)
@@ -69,13 +69,13 @@ public void Configure(IApplicationBuilder app)
 }
 ```
 
-OWIN 파이프라인 내에서 수행 하는 기타 작업을 구성할 수 있습니다.
+OWIN 파이프라인 내에서 수행하도록 기타 작업을 구성할 수 있습니다.
 
 > [!NOTE]
-> 응답 헤더 응답 스트림에 최초 쓰기 전에 수정 되어야 합니다.
+> 응답 헤더는 응답 스트림에 대한 최초 작성 전에 수정되어야 합니다.
 
 > [!NOTE]
-> 여러 번 호출 `UseOwin` 은 성능상의 이유로 권장 되지 않음. OWIN 구성 요소는 함께 그룹화 하는 경우 가장 잘 작동 합니다.
+> `UseOwin`에 대한 여러 번의 호출은 성능상의 이유로 권장되지 않습니다. OWIN 구성 요소는 함께 그룹화하는 경우 가장 잘 작동합니다.
 
 ```csharp
 app.UseOwin(pipeline =>
@@ -91,17 +91,17 @@ app.UseOwin(pipeline =>
 
 <a name="hosting-on-owin"></a>
 
-## <a name="using-aspnet-hosting-on-an-owin-based-server"></a>OWIN 기반 서버에서 ASP.NET 호스팅를 사용 하 여
+## <a name="using-aspnet-hosting-on-an-owin-based-server"></a>OWIN 기반 서버에서 호스팅하는 ASP.NET 사용
 
-OWIN 기반 서버 ASP.NET 응용 프로그램을 호스팅할 수 있습니다. 이러한 서버도 [Nowin](https://github.com/Bobris/Nowin),.NET OWIN 웹 서버. 이 문서에 대 한 샘플에서는 Nowin 참조 하 고 만드는 데 사용 하는 프로젝트를 추가 했습니다는 `IServer` ASP.NET Core를 자체 호스트할 수 있습니다.
+OWIN 기반 서버는 ASP.NET 응용 프로그램을 호스팅할 수 있습니다. 이러한 서버는 [Nowin](https://github.com/Bobris/Nowin), .NET OWIN 웹 서버입니다. 이 문서에 대한 샘플에서는 Nowin을 참조하고 자체 호스팅 ASP.NET Core가 가능한 `IServer`를 만드는 데 사용하는 프로젝트를 추가했습니다.
 
 [!code-csharp[Main](owin/sample/src/NowinSample/Program.cs?highlight=15)]
 
-`IServer`필요로 하는 인터페이스는 `Features` 속성 및 `Start` 메서드.
+`IServer`는 `Features` 속성 및 `Start` 메서드가 필요한 인터페이스입니다.
 
-`Start`구성 하 고이 경우에 일련의 구문 분석 하는 주소는 IServerAddressesFeature 설정 하는 fluent API 호출을 통해 수행 된 서버를 시작 하는 일을 담당 합니다. fluent 구성을 `_builder` 요청에서 처리 되는 변수를 지정는 `appFunc` 메서드 이전에 정의 된 합니다. 이 `Func` 들어오는 요청을 처리할을 요청할 때마다 호출 됩니다.
+`Start`는 서버 구성 및 시작을 담당하며 이 경우 IServerAddressesFeature에서 구문 분석된 주소를 설정하는 일련의 흐름 API 호출을 통해 수행됩니다. `_builder` 변수의 흐름 구성은 요청이 메서드의 앞부분에서 정의된 `appFunc`에 의해 처리되도록 지정합니다. 이 `Func`는 들어오는 요청을 처리하도록 각 요청마다 호출됩니다.
 
-추가 `IWebHostBuilder` 확장을 쉽게 추가 하 고 Nowin 서버를 구성 합니다.
+Nowin 서버를 쉽게 추가하고 구성하도록 `IWebHostBuilder` 확장도 추가합니다.
 
 ```csharp
 using System;
@@ -134,7 +134,7 @@ namespace Microsoft.AspNetCore.Hosting
 }
 ```
 
-이 위치를에서 확장을 호출 하 여 사용자 지정이 서버를 사용 하 여 ASP.NET 응용 프로그램을 실행 하는 데 필요한에 있는 모든 *Program.cs*:
+*Program.cs*에서 확장을 호출하는 데 이 사용자 지정 서버를 사용하여 ASP.NET 응용 프로그램을 실행하는 데 필요한 모든 것이 준비됩니다.
 
 ```csharp
 
@@ -165,11 +165,11 @@ namespace NowinSample
 
 ```
 
-ASP.NET에 대 한 자세한 [서버](servers/index.md)합니다.
+ASP.NET [서버](servers/index.md)에 대해 자세히 알아봅니다.
 
-## <a name="run-aspnet-core-on-an-owin-based-server-and-use-its-websockets-support"></a>OWIN 기반 서버에서 ASP.NET Core를 실행 하 고 해당 Websocket 지원 사용
+## <a name="run-aspnet-core-on-an-owin-based-server-and-use-its-websockets-support"></a>OWIN 기반 서버에서 ASP.NET Core 실행 및 해당 WebSocket 지원 사용
 
-OWIN 기반 서버의 기능의 또 다른 예를 활용 하 여 ASP.NET 코어는 Websocket 같은 기능에 액세스 합니다. 이전 예제에서 사용 되는.NET OWIN 웹 서버에 ASP.NET Core 응용 프로그램에서 사용할 수 있는 기본 제공 되는 웹 소켓에 대 한 지원. 다음 예제에서는 Websocket을 지원 하 고 Websocket 통해 서버에 보낸 모든 항목이 다시 에코 하는 단순한 웹 앱을 보여 줍니다.
+ASP.NET Core에서 OWIN 기반 서버 기능을 활용할 수 있는 방법의 또 다른 예는 WebSocket과 같은 기능에 대한 액세스입니다. 이전 예제에서 사용되는 .NET OWIN 웹 서버에는 ASP.NET Core 응용 프로그램에서 활용할 수 있는 기본 제공되는 웹 소켓에 대한 지원이 있습니다. 다음 예제에서는 웹 소켓을 지원하고 WebSocket을 통해 서버에 전송된 모든 항목을 다시 표시하는 단순한 웹앱을 보여 줍니다.
 
 ```csharp
 public class Startup
@@ -217,13 +217,13 @@ public class Startup
 }
 ```
 
-이 [샘플](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/owin/sample) 동일한을 사용 하도록 구성 `NowinServer` 는 이전 쿼리에서와-응용 프로그램의 구성 되는 방식에서 유일한 차이점은 해당 `Configure` 메서드. 사용 하 여 테스트 [간단한 websocket 클라이언트가](https://chrome.google.com/webstore/detail/simple-websocket-client/pfdhoblngboilpfeibdedpjgfnlcodoo?hl=en) 응용 프로그램을 보여 줍니다.
+이 [샘플](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/owin/sample)은 이전 것과 동일한 `NowinServer`를 사용하여 구성됩니다. 유일한 차이점은 응용 프로그램이 해당 `Configure` 메서드에서 구성되는 방식에 있습니다. [간단한 websocket 클라이언트](https://chrome.google.com/webstore/detail/simple-websocket-client/pfdhoblngboilpfeibdedpjgfnlcodoo?hl=en)를 사용하는 테스트는 다음 응용 프로그램을 보여 줍니다.
 
 ![웹 소켓 테스트 클라이언트](owin/_static/websocket-test.png)
 
-## <a name="owin-environment"></a>OWIN 환경입니다.
+## <a name="owin-environment"></a>OWIN 환경
 
-사용 하 여 OWIN 환경을 구성할 수는 `HttpContext`합니다.
+`HttpContext`를 사용하여 OWIN 환경을 구성할 수 있습니다.
 
 ```csharp
 
@@ -233,11 +233,11 @@ public class Startup
 
 ## <a name="owin-keys"></a>OWIN 키
 
-OWIN에 따라 달라 집니다는 `IDictionary<string,object>` HTTP 요청/응답 exchange 전체에서 정보를 전달 하는 개체입니다. ASP.NET Core 아래에 나열 된 키를 구현 합니다. 참조는 [기본 사양, 확장명](http://owin.org/#spec), 및 [OWIN 키 지침 및 공통 키](http://owin.org/spec/spec/CommonKeys.html)합니다.
+OWIN은 HTTP 요청/응답 교환 전체에서 정보를 전달하는 `IDictionary<string,object>` 개체에 따라 달라집니다. ASP.NET Core는 아래에 나열된 키를 구현합니다. [기본 사양, 확장](http://owin.org/#spec) 및 [OWIN 키 지침 및 공통 키](http://owin.org/spec/spec/CommonKeys.html)를 참조하세요.
 
-### <a name="request-data-owin-v100"></a>요청 데이터 (OWIN v1.0.0)
+### <a name="request-data-owin-v100"></a>요청 데이터(OWIN v1.0.0)
 
-| Key               | 값 (형식) | 설명 |
+| Key               | 값(형식) | 설명 |
 | ----------------- | ------------ | ----------- |
 | owin.RequestScheme | `String` |  |
 | owin.RequestMethod  | `String` | |    
@@ -248,15 +248,15 @@ OWIN에 따라 달라 집니다는 `IDictionary<string,object>` HTTP 요청/응�
 | owin.RequestHeaders | `IDictionary<string,string[]>`  | |
 | owin.RequestBody | `Stream`  | |
 
-### <a name="request-data-owin-v110"></a>요청 데이터 (OWIN v1.1.0)
+### <a name="request-data-owin-v110"></a>요청 데이터(OWIN v1.1.0)
 
-| Key               | 값 (형식) | 설명 |
+| Key               | 값(형식) | 설명 |
 | ----------------- | ------------ | ----------- |
 | owin.RequestId | `String` | Optional |
 
-### <a name="response-data-owin-v100"></a>응답 데이터 (OWIN v1.0.0)
+### <a name="response-data-owin-v100"></a>응답 데이터(OWIN v1.0.0)
 
-| Key               | 값 (형식) | 설명 |
+| Key               | 값(형식) | 설명 |
 | ----------------- | ------------ | ----------- |
 | owin.ResponseStatusCode | `int` | Optional |
 | owin.ResponseReasonPhrase | `String` | Optional |
@@ -264,9 +264,9 @@ OWIN에 따라 달라 집니다는 `IDictionary<string,object>` HTTP 요청/응�
 | owin.ResponseBody | `Stream`  | |
 
 
-### <a name="other-data-owin-v100"></a>다른 데이터 (OWIN v1.0.0)
+### <a name="other-data-owin-v100"></a>기타 데이터(OWIN v1.0.0)
 
-| Key               | 값 (형식) | 설명 |
+| Key               | 값(형식) | 설명 |
 | ----------------- | ------------ | ----------- |
 | owin.CallCancelled | `CancellationToken` |  |
 | owin.Version  | `String` | |   
@@ -274,7 +274,7 @@ OWIN에 따라 달라 집니다는 `IDictionary<string,object>` HTTP 요청/응�
 
 ### <a name="common-keys"></a>공통 키
 
-| Key               | 값 (형식) | 설명 |
+| Key               | 값(형식) | 설명 |
 | ----------------- | ------------ | ----------- |
 | ssl.ClientCertificate | `X509Certificate` |  |
 | ssl.LoadClientCertAsync  | `Func<Task>` | |    
@@ -288,39 +288,37 @@ OWIN에 따라 달라 집니다는 `IDictionary<string,object>` HTTP 요청/응�
 
 ### <a name="sendfiles-v030"></a>SendFiles v0.3.0
 
-| Key               | 값 (형식) | 설명 |
+| Key               | 값(형식) | 설명 |
 | ----------------- | ------------ | ----------- |
-| sendfile.SendAsync | 참조 [대리자 시그니처](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm) | 요청에 따라 |
+| sendfile.SendAsync | [대리자 시그니처](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm) 참조 | 요청당 |
 
 
 ### <a name="opaque-v030"></a>불투명 v0.3.0
 
-| Key               | 값 (형식) | 설명 |
+| Key               | 값(형식) | 설명 |
 | ----------------- | ------------ | ----------- |
 | opaque.Version | `String` |  |
-| opaque.Upgrade | `OpaqueUpgrade` | 참조 [대리자 시그니처](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm) |
+| opaque.Upgrade | `OpaqueUpgrade` | [대리자 시그니처](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm) 참조 |
 | opaque.Stream | `Stream` |  |
 | opaque.CallCancelled | `CancellationToken` |  |
 
 
 ### <a name="websocket-v030"></a>WebSocket v0.3.0
 
-| Key               | 값 (형식) | 설명 |
+| Key               | 값(형식) | 설명 |
 | ----------------- | ------------ | ----------- |
 | websocket.Version | `String` |  |
-| websocket.Accept | `WebSocketAccept` | 참조 [대리자 시그니처](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm) |
+| websocket.Accept | `WebSocketAccept` | [대리자 시그니처](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm) 참조 |
 | websocket.AcceptAlt |  | 비-사양 |
-| websocket.SubProtocol | `String` | 참조 [RFC6455 섹션 4.2.2](https://tools.ietf.org/html/rfc6455#section-4.2.2) 5.5 단계 |
-| websocket.SendAsync | `WebSocketSendAsync` | 참조 [대리자 시그니처](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm)  |
-| websocket.ReceiveAsync | `WebSocketReceiveAsync` | 참조 [대리자 시그니처](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm)  |
-| websocket.CloseAsync | `WebSocketCloseAsync` | 참조 [대리자 시그니처](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm)  |
+| websocket.SubProtocol | `String` | [RFC6455 Section 4.2.2](https://tools.ietf.org/html/rfc6455#section-4.2.2) 5.5단계 참조 |
+| websocket.SendAsync | `WebSocketSendAsync` | [대리자 시그니처](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm) 참조  |
+| websocket.ReceiveAsync | `WebSocketReceiveAsync` | [대리자 시그니처](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm) 참조  |
+| websocket.CloseAsync | `WebSocketCloseAsync` | [대리자 시그니처](http://owin.org/spec/extensions/owin-SendFile-Extension-v0.3.0.htm) 참조  |
 | websocket.CallCancelled | `CancellationToken` |  |
 | websocket.ClientCloseStatus | `int` | Optional |
 | websocket.ClientCloseDescription | `String` | Optional |
 
-
 ## <a name="additional-resources"></a>추가 리소스
 
-* [미들웨어](middleware.md)
-
-* [서버](servers/index.md)
+* [미들웨어](xref:fundamentals/middleware)
+* [서버](xref:fundamentals/servers/index)
