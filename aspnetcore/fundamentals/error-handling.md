@@ -1,59 +1,59 @@
 ---
-title: "ASP.NET Core의 오류 처리"
+title: "ASP.NET Core에서 오류 처리"
 author: ardalis
-description: "ASP.NET Core 응용 프로그램에서 오류를 처리 하는 방법을 알아봅니다."
-ms.author: tdykstra
+description: "ASP.NET Core 응용 프로그램에서 오류를 처리하는 방법을 알아봅니다."
 manager: wpickett
-ms.date: 11/30/2016
-ms.topic: article
-ms.technology: aspnet
-ms.prod: asp.net-core
-uid: fundamentals/error-handling
+ms.author: tdykstra
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 019e31fa749a950db48575e1f4e8d4d26d1cde75
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
-ms.translationtype: MT
+ms.date: 11/30/2016
+ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
+uid: fundamentals/error-handling
+ms.openlocfilehash: 5b0cda7b79b8a9523d1ba6a9b321d22d3ccc753a
+ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
-# <a name="introduction-to-error-handling-in-aspnet-core"></a><span data-ttu-id="10e15-103">ASP.NET Core의 오류 처리 소개</span><span class="sxs-lookup"><span data-stu-id="10e15-103">Introduction to Error Handling in ASP.NET Core</span></span>
+# <a name="introduction-to-error-handling-in-aspnet-core"></a><span data-ttu-id="1a3c0-103">ASP.NET Core에서 오류 처리 소개</span><span class="sxs-lookup"><span data-stu-id="1a3c0-103">Introduction to Error Handling in ASP.NET Core</span></span>
 
-<span data-ttu-id="10e15-104">작성자: [Steve Smith](https://ardalis.com/) 및 [Tom Dykstra](https://github.com/tdykstra/)</span><span class="sxs-lookup"><span data-stu-id="10e15-104">By [Steve Smith](https://ardalis.com/) and [Tom Dykstra](https://github.com/tdykstra/)</span></span>
+<span data-ttu-id="1a3c0-104">작성자: [Steve Smith](https://ardalis.com/) 및 [Tom Dykstra](https://github.com/tdykstra/)</span><span class="sxs-lookup"><span data-stu-id="1a3c0-104">By [Steve Smith](https://ardalis.com/) and [Tom Dykstra](https://github.com/tdykstra/)</span></span>
 
-<span data-ttu-id="10e15-105">이 문서에서는 일반적인 appoaches ASP.NET Core 응용 프로그램의 오류 처리를 다룹니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-105">This article covers common appoaches to handling errors in ASP.NET Core apps.</span></span>
+<span data-ttu-id="1a3c0-105">이 문서에서는 ASP.NET Core 앱에서 오류를 처리하기 위한 일반적인 접근법을 다룹니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-105">This article covers common appoaches to handling errors in ASP.NET Core apps.</span></span>
 
-<span data-ttu-id="10e15-106">[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/error-handling/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))</span><span class="sxs-lookup"><span data-stu-id="10e15-106">[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/error-handling/sample) ([how to download](xref:tutorials/index#how-to-download-a-sample))</span></span>
+<span data-ttu-id="1a3c0-106">[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/error-handling/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))</span><span class="sxs-lookup"><span data-stu-id="1a3c0-106">[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/error-handling/sample) ([how to download](xref:tutorials/index#how-to-download-a-sample))</span></span>
 
-## <a name="the-developer-exception-page"></a><span data-ttu-id="10e15-107">개발자 예외 페이지</span><span class="sxs-lookup"><span data-stu-id="10e15-107">The developer exception page</span></span>
+## <a name="the-developer-exception-page"></a><span data-ttu-id="1a3c0-107">개발자 예외 페이지</span><span class="sxs-lookup"><span data-stu-id="1a3c0-107">The developer exception page</span></span>
 
-<span data-ttu-id="10e15-108">예외에 대 한 자세한 정보를 표시 하는 페이지를 표시 하는 응용 프로그램을 구성 하려면 설치는 `Microsoft.AspNetCore.Diagnostics` NuGet 패키지 하 고 행을 추가 하는 [시작 클래스에서 메서드를 구성](startup.md):</span><span class="sxs-lookup"><span data-stu-id="10e15-108">To configure an app to display a page that shows detailed information about exceptions, install the `Microsoft.AspNetCore.Diagnostics` NuGet package and add a line to the [Configure method in the Startup class](startup.md):</span></span>
+<span data-ttu-id="1a3c0-108">예외에 대한 자세한 정보가 있는 페이지를 표시하도록 응용 프로그램을 구성하려면 `Microsoft.AspNetCore.Diagnostics` NuGet 패키지를 설치하고 줄을 [시작 클래스에서 메서드를 구성](startup.md)에 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-108">To configure an app to display a page that shows detailed information about exceptions, install the `Microsoft.AspNetCore.Diagnostics` NuGet package and add a line to the [Configure method in the Startup class](startup.md):</span></span>
 
 [!code-csharp[Main](error-handling/sample/Startup.cs?name=snippet_DevExceptionPage&highlight=7)]
 
-<span data-ttu-id="10e15-109">배치 `UseDeveloperExceptionPage` 와 같은 예외를 catch 하려는 모든 미들웨어 전에 `app.UseMvc`합니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-109">Put `UseDeveloperExceptionPage` before any middleware you want to catch exceptions in, such as `app.UseMvc`.</span></span>
+<span data-ttu-id="1a3c0-109">`app.UseMvc`와 같은 예외를 catch하려는 모든 미들웨어 앞에 `UseDeveloperExceptionPage`를 배치합니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-109">Put `UseDeveloperExceptionPage` before any middleware you want to catch exceptions in, such as `app.UseMvc`.</span></span>
 
 >[!WARNING]
-> <span data-ttu-id="10e15-110">개발자 예외 페이지를 사용 하도록 설정 **응용 프로그램 개발 환경에서 실행 중인 경우에**합니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-110">Enable the developer exception page **only when the app is running in the Development environment**.</span></span> <span data-ttu-id="10e15-111">프로덕션 환경에서 앱을 실행할 때 자세한 예외 정보를 공개적으로 공유 하는 것이 않으려는 합니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-111">You don't want to share detailed exception information publicly when the app runs in production.</span></span> <span data-ttu-id="10e15-112">[환경 구성에 대 한 자세한](environments.md)합니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-112">[Learn more about configuring environments](environments.md).</span></span>
+> <span data-ttu-id="1a3c0-110">**앱이 개발 환경에서 실행 중인 경우에만** 개발자 예외 페이지를 사용하도록 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-110">Enable the developer exception page **only when the app is running in the Development environment**.</span></span> <span data-ttu-id="1a3c0-111">프로덕션 환경에서 앱을 실행할 때 자세한 예외 정보를 공개적으로 공유하지 않을 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-111">You don't want to share detailed exception information publicly when the app runs in production.</span></span> <span data-ttu-id="1a3c0-112">[구성 환경에 대해 자세히 알아보세요](environments.md).</span><span class="sxs-lookup"><span data-stu-id="1a3c0-112">[Learn more about configuring environments](environments.md).</span></span>
 
-<span data-ttu-id="10e15-113">개발자 예외 페이지를 보려면 샘플 응용 프로그램 설정 된 환경으로 실행 `Development`, 추가 `?throw=true` 응용 프로그램의 기본 URL에 있습니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-113">To see the developer exception page, run the sample application with the environment set to `Development`, and add `?throw=true` to the base URL of the app.</span></span> <span data-ttu-id="10e15-114">예외 및 요청에 대 한 정보로 여러 탭 페이지에 포함 됩니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-114">The page includes several tabs with information about the exception and the request.</span></span> <span data-ttu-id="10e15-115">첫 번째 탭에는 스택 추적에 포함 됩니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-115">The first tab includes a stack trace.</span></span> 
+<span data-ttu-id="1a3c0-113">개발자 예외 페이지를 보려면 샘플 응용 프로그램을 `Development`로 설정된 환경으로 실행하고, `?throw=true`를 앱의 기본 URL에 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-113">To see the developer exception page, run the sample application with the environment set to `Development`, and add `?throw=true` to the base URL of the app.</span></span> <span data-ttu-id="1a3c0-114">페이지에는 예외 및 요청에 대한 정보가 있는 여러 탭이 포함되어 있습니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-114">The page includes several tabs with information about the exception and the request.</span></span> <span data-ttu-id="1a3c0-115">첫 번째 탭에는 스택 추적이 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-115">The first tab includes a stack trace.</span></span> 
 
 ![스택 추적](error-handling/_static/developer-exception-page.png)
 
-<span data-ttu-id="10e15-117">다음 탭 있는 경우는 쿼리 문자열 매개 변수를 나타냅니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-117">The next tab shows the query string parameters, if any.</span></span>
+<span data-ttu-id="1a3c0-117">쿼리 문자열 매개 변수가 있는 경우 다음 탭에 표시됩니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-117">The next tab shows the query string parameters, if any.</span></span>
 
 ![쿼리 문자열 매개 변수](error-handling/_static/developer-exception-page-query.png)
 
-<span data-ttu-id="10e15-119">이 요청 된 쿠키를 포함 하지 않은 있지만에 표시 되는 경우는 **쿠키** 탭 합니다. 마지막으로 탭에 전달 된 헤더를 볼 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-119">This request didn't have any cookies, but if it did, they would appear on the **Cookies** tab. You can see the headers that were passed in the last tab.</span></span>
+<span data-ttu-id="1a3c0-119">이 요청에는 쿠키가 없지만, 만약 있는 경우 **쿠키** 탭에 표시됩니다. 마지막 탭에서 전달된 헤더를 볼 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-119">This request didn't have any cookies, but if it did, they would appear on the **Cookies** tab. You can see the headers that were passed in the last tab.</span></span>
 
 ![헤더](error-handling/_static/developer-exception-page-headers.png)
 
-## <a name="configuring-a-custom-exception-handling-page"></a><span data-ttu-id="10e15-121">페이지를 처리 하는 사용자 지정 예외를 구성 합니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-121">Configuring a custom exception handling page</span></span>
+## <a name="configuring-a-custom-exception-handling-page"></a><span data-ttu-id="1a3c0-121">사용자 지정 예외 처리 페이지 구성</span><span class="sxs-lookup"><span data-stu-id="1a3c0-121">Configuring a custom exception handling page</span></span>
 
-<span data-ttu-id="10e15-122">응용 프로그램 실행 되 고 있지 때 사용 하는 예외 처리기 페이지를 구성 하는 것이 좋습니다는 `Development` 환경입니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-122">It's a good idea to configure an exception handler page to use when the app isn't running in the `Development` environment.</span></span>
+<span data-ttu-id="1a3c0-122">앱이 `Development` 환경에서 실행되고 있지 않는 경우 사용할 예외 처리기 페이지를 구성하는 것이 좋습니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-122">It's a good idea to configure an exception handler page to use when the app isn't running in the `Development` environment.</span></span>
 
 [!code-csharp[Main](error-handling/sample/Startup.cs?name=snippet_DevExceptionPage&highlight=11)]
 
-<span data-ttu-id="10e15-123">MVC 응용 프로그램의 안 함 명시적으로 데코 레이트 HTTP 메서드 특성을 사용 하 여 오류 처리기 작업 메서드 같은 `HttpGet`합니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-123">In an MVC app, don't explicitly decorate the error handler action method with HTTP method attributes, such as `HttpGet`.</span></span> <span data-ttu-id="10e15-124">명시적 동사를 사용 하 여 메서드에서 일부 요청 하지 못하도록 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-124">Using explicit verbs could prevent some requests from reaching the method.</span></span>
+<span data-ttu-id="1a3c0-123">MVC 앱에서는 `HttpGet`과 같은 HTTP 메서드 특성을 사용하여 오류 처리기 작업 메서드를 명시적으로 데코레이트하지 마십시오.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-123">In an MVC app, don't explicitly decorate the error handler action method with HTTP method attributes, such as `HttpGet`.</span></span> <span data-ttu-id="1a3c0-124">명시적 동사를 사용하면 일부 요청이 메서드에 도달하지 못할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-124">Using explicit verbs could prevent some requests from reaching the method.</span></span>
 
 ```csharp
 [Route("/Error")]
@@ -63,19 +63,19 @@ public IActionResult Index()
 }
 ```
 
-## <a name="configuring-status-code-pages"></a><span data-ttu-id="10e15-125">상태 코드 페이지를 구성합니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-125">Configuring status code pages</span></span>
+## <a name="configuring-status-code-pages"></a><span data-ttu-id="1a3c0-125">상태 코드 페이지 구성</span><span class="sxs-lookup"><span data-stu-id="1a3c0-125">Configuring status code pages</span></span>
 
-<span data-ttu-id="10e15-126">기본적으로 앱 500 (내부 서버 오류) 또는 404 (찾을 수 없음) 등의 HTTP 상태 코드에 대 한 다양 한 상태 코드 페이지를 제공 하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-126">By default, your app won't provide a rich status code page for HTTP status codes such as 500 (Internal Server Error) or 404 (Not Found).</span></span> <span data-ttu-id="10e15-127">구성할 수는 `StatusCodePagesMiddleware` 줄을 추가 하 여는 `Configure` 메서드:</span><span class="sxs-lookup"><span data-stu-id="10e15-127">You can configure the `StatusCodePagesMiddleware` by adding a line to the `Configure` method:</span></span>
+<span data-ttu-id="1a3c0-126">기본적으로 앱은 500(내부 서버 오류) 또는 404(찾을 수 없음)와 같은 HTTP 상태 코드에 대한 다양한 상태 코드 페이지를 제공하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-126">By default, your app won't provide a rich status code page for HTTP status codes such as 500 (Internal Server Error) or 404 (Not Found).</span></span> <span data-ttu-id="1a3c0-127">`Configure` 메서드에 줄을 추가하여 `StatusCodePagesMiddleware`를 구성할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-127">You can configure the `StatusCodePagesMiddleware` by adding a line to the `Configure` method:</span></span>
 
 ```csharp
 app.UseStatusCodePages();
 ```
 
-<span data-ttu-id="10e15-128">기본적으로이 미들웨어 404 등의 일반적인 상태 코드에 대 한 간단 하 고 텍스트 전용 처리기를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-128">By default, this middleware adds simple, text-only handlers for common status codes, such as 404:</span></span>
+<span data-ttu-id="1a3c0-128">기본적으로 이 미들웨어는 404와 같이 일반적인 상태 코드에 대한 간단한 텍스트 전용 처리기를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-128">By default, this middleware adds simple, text-only handlers for common status codes, such as 404:</span></span>
 
 ![404 페이지](error-handling/_static/default-404-status-code.png)
 
-<span data-ttu-id="10e15-130">미들웨어는 일부의 확장 메서드를 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-130">The middleware supports several different extension methods.</span></span> <span data-ttu-id="10e15-131">람다 식에서 바라볼, 다른 콘텐츠 형식 및 형식 문자열을 사용 합니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-131">One takes a lambda expression, another takes a content type and format string.</span></span>
+<span data-ttu-id="1a3c0-130">미들웨어는 몇 가지 다양한 확장 메서드를 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-130">The middleware supports several different extension methods.</span></span> <span data-ttu-id="1a3c0-131">람다 식에서 사용하기도 하고, 콘텐츠 형식 및 형식 문자열을 사용하기도 합니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-131">One takes a lambda expression, another takes a content type and format string.</span></span>
 
 [!code-csharp[Main](error-handling/sample/Startup.cs?name=snippet_StatusCodePages)]
 
@@ -83,7 +83,7 @@ app.UseStatusCodePages();
 app.UseStatusCodePages("text/plain", "Status code page, status code: {0}");
 ```
 
-<span data-ttu-id="10e15-132">리디렉션 확장 메서드가 있습니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-132">There are also redirect extension methods.</span></span> <span data-ttu-id="10e15-133">하나 302 상태 코드를 클라이언트에 보내고 하나 클라이언트에는 원래 상태 코드를 반환 하지만 또한 리디렉션 URL에 대 한 처리기를 실행 합니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-133">One sends a 302 status code to the client, and one returns the original status code to the client but also executes the handler for the redirect URL.</span></span>
+<span data-ttu-id="1a3c0-132">리디렉션 확장 메서드도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-132">There are also redirect extension methods.</span></span> <span data-ttu-id="1a3c0-133">302 상태 코드를 클라이언트에 보내기도 하고, 클라이언트에 원래 상태 코드를 반환하면서 리디렉션 URL에 대한 처리기를 실행하기도 합니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-133">One sends a 302 status code to the client, and one returns the original status code to the client but also executes the handler for the redirect URL.</span></span>
 
 [!code-csharp[Main](error-handling/sample/Startup.cs?name=snippet_StatusCodePagesWithRedirect)]
 
@@ -91,7 +91,7 @@ app.UseStatusCodePages("text/plain", "Status code page, status code: {0}");
 app.UseStatusCodePagesWithReExecute("/error/{0}");
 ```
 
-<span data-ttu-id="10e15-134">특정 요청에 대 한 상태 코드 페이지를 사용 하지 않도록 설정 해야 할 경우이 수행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-134">If you need to disable status code pages for certain requests, you can do so:</span></span>
+<span data-ttu-id="1a3c0-134">특정 요청에 대한 상태 코드 페이지를 사용하지 않도록 설정해야 하는 경우 그렇게 할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-134">If you need to disable status code pages for certain requests, you can do so:</span></span>
 
 ```csharp
 var statusCodePagesFeature = context.Features.Get<IStatusCodePagesFeature>();
@@ -101,38 +101,38 @@ if (statusCodePagesFeature != null)
 }
 ```
 
-## <a name="exception-handling-code"></a><span data-ttu-id="10e15-135">예외 처리 코드</span><span class="sxs-lookup"><span data-stu-id="10e15-135">Exception-handling code</span></span>
+## <a name="exception-handling-code"></a><span data-ttu-id="1a3c0-135">예외 처리 코드</span><span class="sxs-lookup"><span data-stu-id="1a3c0-135">Exception-handling code</span></span>
 
-<span data-ttu-id="10e15-136">예외 처리 페이지의에서 코드는 예외가 발생할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-136">Code in exception handling pages can throw exceptions.</span></span> <span data-ttu-id="10e15-137">종종 완전 한 정적 콘텐츠의 구성 프로덕션 오류 페이지에 대 한는 것이 좋습니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-137">It's often a good idea for production error pages to consist of purely static content.</span></span>
+<span data-ttu-id="1a3c0-136">예외 처리 페이지의 코드는 예외를 throw할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-136">Code in exception handling pages can throw exceptions.</span></span> <span data-ttu-id="1a3c0-137">종종 프로덕션 오류 페이지에 대해 완전한 정적 콘텐츠를 구성하는 것이 좋습니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-137">It's often a good idea for production error pages to consist of purely static content.</span></span>
 
-<span data-ttu-id="10e15-138">또한 유의 하십시오를 응답에 대 한 헤더를 보낸 응답의 상태 코드를 변경할 수 없습니다 및 예외 페이지 또는 처리기 실행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-138">Also, be aware that once the headers for a response have been sent, you can't change the response's status code, nor can any exception pages or handlers run.</span></span> <span data-ttu-id="10e15-139">응답을 완료 해야 하거나 연결이 중단 합니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-139">The response must be completed or the connection aborted.</span></span>
+<span data-ttu-id="1a3c0-138">또한 일단 응답에 대한 헤더를 보내고 나면 응답의 상태 코드, 예외 페이지 또는 처리기 실행을 변경할 수 없다는 점에 유의하세요.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-138">Also, be aware that once the headers for a response have been sent, you can't change the response's status code, nor can any exception pages or handlers run.</span></span> <span data-ttu-id="1a3c0-139">응답을 완료하거나 연결이 중단되어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-139">The response must be completed or the connection aborted.</span></span>
 
-## <a name="server-exception-handling"></a><span data-ttu-id="10e15-140">서버 예외 처리</span><span class="sxs-lookup"><span data-stu-id="10e15-140">Server exception handling</span></span>
+## <a name="server-exception-handling"></a><span data-ttu-id="1a3c0-140">서버 예외 처리</span><span class="sxs-lookup"><span data-stu-id="1a3c0-140">Server exception handling</span></span>
 
-<span data-ttu-id="10e15-141">응용 프로그램에서 논리를 처리 하는 예외 뿐 아니라는 [서버](servers/index.md) 응용 프로그램 호스팅 몇 가지 예외 처리를 수행 합니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-141">In addition to the exception handling logic in your app, the [server](servers/index.md) hosting your app performs some exception handling.</span></span> <span data-ttu-id="10e15-142">헤더를 보내기 전에 된 예외를 catch 하는 서버를 하는 경우 서버 본문이 없는 500 내부 서버 오류 응답을 보냅니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-142">If the server catches an exception before the headers are sent, the server sends a 500 Internal Server Error response with no body.</span></span> <span data-ttu-id="10e15-143">헤더를 보낸 후에 예외를 catch 하는 서버를 서버 연결을 닫습니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-143">If the server catches an exception after the headers have been sent, the server closes the connection.</span></span> <span data-ttu-id="10e15-144">응용 프로그램으로 처리 되지 요청은 서버에서 처리 됩니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-144">Requests that aren't handled by your app are handled by the server.</span></span> <span data-ttu-id="10e15-145">서버의 예외 발생 하는 모든 예외를 처리를 처리 합니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-145">Any exception that occurs is handled by the server's exception handling.</span></span> <span data-ttu-id="10e15-146">구성 된 모든 사용자 지정 오류 페이지 또는 예외 처리 미들웨어 또는 필터 안 함이 동작에 영향을이 있습니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-146">Any configured custom error pages or exception handling middleware or filters don't affect this behavior.</span></span>
+<span data-ttu-id="1a3c0-141">앱에서 논리를 처리하는 예외뿐 아니라 앱을 호스팅하는 [서버](servers/index.md)는 몇 가지 예외 처리를 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-141">In addition to the exception handling logic in your app, the [server](servers/index.md) hosting your app performs some exception handling.</span></span> <span data-ttu-id="1a3c0-142">헤더를 보내기 전에 서버가 예외를 catch하는 경우 서버는 본문이 없는 500 내부 서버 오류 응답을 보냅니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-142">If the server catches an exception before the headers are sent, the server sends a 500 Internal Server Error response with no body.</span></span> <span data-ttu-id="1a3c0-143">헤더를 보낸 후에 서버가 예외를 catch하는 경우 서버는 연결을 닫습니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-143">If the server catches an exception after the headers have been sent, the server closes the connection.</span></span> <span data-ttu-id="1a3c0-144">앱으로 처리되지 않는 요청은 서버에서 처리됩니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-144">Requests that aren't handled by your app are handled by the server.</span></span> <span data-ttu-id="1a3c0-145">발생하는 모든 예외는 서버의 예외 처리에 의해 처리됩니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-145">Any exception that occurs is handled by the server's exception handling.</span></span> <span data-ttu-id="1a3c0-146">구성된 모든 사용자 지정 오류 페이지 또는 예외 처리 미들웨어 또는 필터는 이 동작에 영향을 미치지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-146">Any configured custom error pages or exception handling middleware or filters don't affect this behavior.</span></span>
 
-## <a name="startup-exception-handling"></a><span data-ttu-id="10e15-147">시작 예외 처리</span><span class="sxs-lookup"><span data-stu-id="10e15-147">Startup exception handling</span></span>
+## <a name="startup-exception-handling"></a><span data-ttu-id="1a3c0-147">시작 예외 처리</span><span class="sxs-lookup"><span data-stu-id="1a3c0-147">Startup exception handling</span></span>
 
-<span data-ttu-id="10e15-148">호스팅 계층에만 응용 프로그램 시작 시 수행 되는 예외를 처리할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-148">Only the hosting layer can handle exceptions that take place during app startup.</span></span> <span data-ttu-id="10e15-149">할 수 있습니다 [호스트 오류에 대 한 응답으로 시작 하는 동안 작동 하는 방법을 구성할](hosting.md#detailed-errors) 를 사용 하 여 `captureStartupErrors` 및 `detailedErrors` 키입니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-149">You can [configure how the host behaves in response to errors during startup](hosting.md#detailed-errors) using `captureStartupErrors` and the `detailedErrors` key.</span></span>
+<span data-ttu-id="1a3c0-148">호스팅 계층만 앱 시작 시 발생하는 예외를 처리할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-148">Only the hosting layer can handle exceptions that take place during app startup.</span></span> <span data-ttu-id="1a3c0-149">`captureStartupErrors` 및 `detailedErrors` 키를 사용하여 [시작 시 오류에 대해 응답의 호스트가 동작하는 방법을 구성](hosting.md#detailed-errors)할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-149">You can [configure how the host behaves in response to errors during startup](hosting.md#detailed-errors) using `captureStartupErrors` and the `detailedErrors` key.</span></span>
 
-<span data-ttu-id="10e15-150">호스트 주소/포트 바인딩 후에 오류가 발생 하는 경우 호스팅 캡처된 시작 오류에 대 한 오류 페이지만 표시할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-150">Hosting can only show an error page for a captured startup error if the error occurs after host address/port binding.</span></span> <span data-ttu-id="10e15-151">어떤 이유로 든 실패 하면 모든 바인딩에 호스팅 계층 dotnet 프로세스가 충돌할 중요 한 예외를 기록 하 고 없음 오류 페이지가 표시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-151">If any binding fails for any reason, the hosting layer logs a critical exception, the dotnet process crashes, and no error page is displayed.</span></span>
+<span data-ttu-id="1a3c0-150">호스팅은 호스트 주소/포트 바인딩 후에 오류가 발생하는 경우 캡처된 시작 오류에 대한 오류 페이지만 표시할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-150">Hosting can only show an error page for a captured startup error if the error occurs after host address/port binding.</span></span> <span data-ttu-id="1a3c0-151">어떤 이유로 바인딩이 실패한 경우 호스팅 계층은 중요한 예외를 로그하고, dotnet 프로세스가 충돌하며, 오류 페이지가 표시되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-151">If any binding fails for any reason, the hosting layer logs a critical exception, the dotnet process crashes, and no error page is displayed.</span></span>
 
-## <a name="aspnet-mvc-error-handling"></a><span data-ttu-id="10e15-152">ASP.NET MVC 오류 처리</span><span class="sxs-lookup"><span data-stu-id="10e15-152">ASP.NET MVC error handling</span></span>
+## <a name="aspnet-mvc-error-handling"></a><span data-ttu-id="1a3c0-152">ASP.NET MVC 오류 처리</span><span class="sxs-lookup"><span data-stu-id="1a3c0-152">ASP.NET MVC error handling</span></span>
 
-<span data-ttu-id="10e15-153">[MVC](../mvc/index.md) 앱은 예외 필터를 구성 하 고 모델 유효성 검사를 수행 하는 등의 오류를 처리 하기 위한 몇 가지 추가 옵션이 있습니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-153">[MVC](../mvc/index.md) apps have some additional options for handling errors, such as configuring exception filters and performing model validation.</span></span>
+<span data-ttu-id="1a3c0-153">[MVC](xref:mvc/overview) 앱에는 예외 필터 구성 및 모델 유효성 검사 수행과 같이 오류를 처리하기 위한 몇 가지 추가 옵션이 있습니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-153">[MVC](xref:mvc/overview) apps have some additional options for handling errors, such as configuring exception filters and performing model validation.</span></span>
 
-### <a name="exception-filters"></a><span data-ttu-id="10e15-154">예외 필터</span><span class="sxs-lookup"><span data-stu-id="10e15-154">Exception Filters</span></span>
+### <a name="exception-filters"></a><span data-ttu-id="1a3c0-154">예외 필터</span><span class="sxs-lookup"><span data-stu-id="1a3c0-154">Exception Filters</span></span>
 
-<span data-ttu-id="10e15-155">전역으로 또는 MVC 응용 프로그램에서-컨트롤러 또는 동작 당 기준 예외 필터를 구성할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-155">Exception filters can be configured globally or on a per-controller or per-action basis in an MVC app.</span></span> <span data-ttu-id="10e15-156">이러한 필터 컨트롤러 작업 또는 다른 필터를 실행 하는 동안 발생 하는 처리 되지 않은 예외를 처리 하며 그렇지 않으면 호출 되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-156">These filters handle any unhandled exception that occurs during the execution of a controller action or another filter, and are not called otherwise.</span></span> <span data-ttu-id="10e15-157">예외 필터에 대 한 자세한 [필터](../mvc/controllers/filters.md)합니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-157">Learn more about exception filters in [Filters](../mvc/controllers/filters.md).</span></span>
+<span data-ttu-id="1a3c0-155">전역으로 또는 MVC 앱에서 컨트롤러당 또는 작업당 기준으로 예외 필터를 구성할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-155">Exception filters can be configured globally or on a per-controller or per-action basis in an MVC app.</span></span> <span data-ttu-id="1a3c0-156">이러한 필터는 컨트롤러 작업 또는 다른 필터를 실행하는 동안 발생하는 처리되지 않은 예외를 처리하며, 그 외에는 호출되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-156">These filters handle any unhandled exception that occurs during the execution of a controller action or another filter, and are not called otherwise.</span></span> <span data-ttu-id="1a3c0-157">[필터](../mvc/controllers/filters.md)에서 예외 필터에 대해 자세히 알아보세요.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-157">Learn more about exception filters in [Filters](../mvc/controllers/filters.md).</span></span>
 
 >[!TIP]
-> <span data-ttu-id="10e15-158">예외 필터는 MVC 동작 내에서 발생 하는 예외를 트래핑 하는 데 유용 하지만 유연 하 게 오류 미들웨어를 처리 하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-158">Exception filters are good for trapping exceptions that occur within MVC actions, but they're not as flexible as error handling middleware.</span></span> <span data-ttu-id="10e15-159">일반적인 경우에 대 한 미들웨어를 선호 하 고만 해야 하는 필터를 사용 하 여 오류 처리 작업을 수행할 *다르게* MVC 작업 선택에 따라 합니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-159">Prefer middleware for the general case, and use filters only where you need to do error handling *differently* based on which MVC action was chosen.</span></span>
+> <span data-ttu-id="1a3c0-158">예외 필터는 MVC 작업 내에서 발생하는 예외를 트래핑하는 데 유용하지만 오류 처리 미들웨어만큼 유연하지는 않습니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-158">Exception filters are good for trapping exceptions that occur within MVC actions, but they're not as flexible as error handling middleware.</span></span> <span data-ttu-id="1a3c0-159">일반적인 경우에는 미들웨어를 선호하고, 선택한 MVC 작업에 따라 오류 처리를 *다르게* 수행해야 하는 경우에만 필터를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-159">Prefer middleware for the general case, and use filters only where you need to do error handling *differently* based on which MVC action was chosen.</span></span>
 
-### <a name="handling-model-state-errors"></a><span data-ttu-id="10e15-160">처리 모델 상태 오류</span><span class="sxs-lookup"><span data-stu-id="10e15-160">Handling Model State Errors</span></span>
+### <a name="handling-model-state-errors"></a><span data-ttu-id="1a3c0-160">처리 모델 상태 오류</span><span class="sxs-lookup"><span data-stu-id="1a3c0-160">Handling Model State Errors</span></span>
 
-<span data-ttu-id="10e15-161">[유효성 검사 모델](../mvc/models/validation.md) 호출 되는 각 컨트롤러 동작 하기 전에 발생 하 고 검사 해야 하는 작업 메서드의 `ModelState.IsValid` 하 고 적절 하 게 대처 합니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-161">[Model validation](../mvc/models/validation.md) occurs prior to each controller action being invoked, and it's the action method’s responsibility to inspect `ModelState.IsValid` and react appropriately.</span></span>
+<span data-ttu-id="1a3c0-161">[모델 유효성 검사](../mvc/models/validation.md)는 각 컨트롤러 작업을 호출하기 전에 발생하며, `ModelState.IsValid`를 검사하고 적절하게 반응하는 것은 작업 메서드의 책임입니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-161">[Model validation](../mvc/models/validation.md) occurs prior to invoking each controller action, and it's the action method's responsibility to inspect `ModelState.IsValid` and react appropriately.</span></span>
 
-<span data-ttu-id="10e15-162">일부 응용 프로그램 모델 유효성 검사 오류를 처리 하기 위한 표준 규칙에는 쿼리에서 수행 하도록 선택 하는 [필터](../mvc/controllers/filters.md) 이러한 정책을 구현 하는 적절 한 위치 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-162">Some apps will choose to follow a standard convention for dealing with model validation errors, in which case a [filter](../mvc/controllers/filters.md) may be an appropriate place to implement such a policy.</span></span> <span data-ttu-id="10e15-163">잘못 된 모델 상태와 작업을 수행할 때 동작 하는 방법을 테스트 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-163">You should test how your actions behave with invalid model states.</span></span> <span data-ttu-id="10e15-164">자세한 내용을 알아보세요 [컨트롤러 논리를 테스트](../mvc/controllers/testing.md)합니다.</span><span class="sxs-lookup"><span data-stu-id="10e15-164">Learn more in [Testing controller logic](../mvc/controllers/testing.md).</span></span>
+<span data-ttu-id="1a3c0-162">[필터](../mvc/controllers/filters.md)가 그러한 정책을 구현하기에 적절한 경우에 일부 앱은 모델 유효성 검사 오류를 처리하는 데 표준 규칙을 따르도록 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-162">Some apps will choose to follow a standard convention for dealing with model validation errors, in which case a [filter](../mvc/controllers/filters.md) may be an appropriate place to implement such a policy.</span></span> <span data-ttu-id="1a3c0-163">잘못된 모델 상태일 때 작업 동작 방식을 테스트해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-163">You should test how your actions behave with invalid model states.</span></span> <span data-ttu-id="1a3c0-164">[컨트롤러 논리 테스트](../mvc/controllers/testing.md)에서 자세히 알아보세요.</span><span class="sxs-lookup"><span data-stu-id="1a3c0-164">Learn more in [Testing controller logic](../mvc/controllers/testing.md).</span></span>
 
 
 
