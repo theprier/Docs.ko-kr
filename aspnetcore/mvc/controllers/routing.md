@@ -1,33 +1,33 @@
 ---
-title: "컨트롤러 작업에 대 한 라우팅을"
+title: "컨트롤러 작업에 라우팅"
 author: rick-anderson
 description: 
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 03/14/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: mvc/controllers/routing
-ms.openlocfilehash: 497ce47fa567f163cb7b1eb891408f0100d15b8a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
-ms.translationtype: MT
+ms.openlocfilehash: ca4f40766b4ec3d59587109ec9d5a412e834e3ce
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
-# <a name="routing-to-controller-actions"></a>컨트롤러 작업에 대 한 라우팅을
+# <a name="routing-to-controller-actions"></a>컨트롤러 작업에 라우팅
 
-여 [사람인 Ryan Nowak](https://github.com/rynowak) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
+작성자: [Ryan Nowak](https://github.com/rynowak) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-ASP.NET Core MVC 라우팅 사용 하 여 [미들웨어](../../fundamentals/middleware.md) 를 들어오는 요청의 Url을 일치 시키고 작업에 매핑합니다. 경로 시작 코드 또는 특성에 정의 됩니다. 경로는 URL 경로 동작에 일치 해야 하는 방법을 설명 합니다. 경로 응답에 전송 (링크)에 대 한 Url을 생성 하도 사용 됩니다. 
+ASP.NET Core MVC는 라우팅 [미들웨어](../../fundamentals/middleware.md)를 사용하여 들어오는 요청의 URL을 작업과 매칭 및 매핑합니다. 경로는 시작 코드 또는 특성에서 정의됩니다. 경로는 URL 경로를 동작과 매칭하는 방법을 설명합니다. 경로는 응답에서 전송되는 URL(링크인 경우)을 생성하는 데에도 사용됩니다. 
 
-작업은 일반적으로 라우팅됩니다 하거나 또는 특성 라우팅됩니다. 컨트롤러 또는 작업에 대 한 경로 배치를 사용 하면 특성 라우팅됩니다. 참조 [라우팅 혼합](#routing-mixed-ref-label) 자세한 정보에 대 한 합니다.
+작업은 일반적인 방식으로 라우팅되거나 특성 라우팅됩니다. 컨트롤러 또는 작업에 경로를 배치하면 해당 경로가 특성 라우팅됩니다. 자세한 내용은 [혼합 라우팅](#routing-mixed-ref-label)을 참조하세요.
 
-이 문서에서는 MVC 라우팅 및 MVC 응용 프로그램 만들기 어떻게 일반적인 간의 상호 작용에 설명 라우팅 기능을 사용 합니다. 참조 [라우팅](xref:fundamentals/routing) 고급 라우팅에 대 한 내용은 합니다.
+이 문서에는 MVC와 라우팅 사이의 상호 작용과 일반 MVC 앱이 라우팅 기능을 사용하는 방식에 대해 설명되어 있습니다. 고급 라우팅에 대한 자세한 내용은 [라우팅](xref:fundamentals/routing)을 참조하세요.
 
-## <a name="setting-up-routing-middleware"></a>미들웨어 라우팅 설정
+## <a name="setting-up-routing-middleware"></a>라우팅 미들웨어 설정
 
-사용자 *구성* 메서드 유사한 코드가 표시 될 수 있습니다.
+*구성된* 메서드에서 다음과 비슷한 코드를 볼 수 있습니다.
 
 ```csharp
 app.UseMvc(routes =>
@@ -36,9 +36,9 @@ app.UseMvc(routes =>
 });
 ```
 
-에 대 한 호출 안에 `UseMvc`, `MapRoute` 으로 지칭 하는 단일 경로 만드는 데 사용 되는 `default` 경로입니다. 대부분의 MVC 응용 프로그램 경로 사용 하 여 비슷한 템플릿을 사용 하 여는 `default` 경로입니다.
+`UseMvc` 호출 내부에서, `MapRoute`는 `default` 경로라고 부르는 단일 경로를 만드는 데 사용됩니다. 대부분의 MVC 앱은 `default` 경로와 비슷한 템플릿이 포함된 경로를 사용합니다.
 
-경로 템플릿을 `"{controller=Home}/{action=Index}/{id?}"` 과 같은 URL 경로 일치 시킬 수 `/Products/Details/5` 및 경로 값을 추출 합니다 `{ controller = Products, action = Details, id = 5 }` 경로 토큰화 하 여 합니다. MVC는 라는 컨트롤러를 찾으려고 시도 `ProductsController` 동작을 실행 하 고 `Details`:
+`"{controller=Home}/{action=Index}/{id?}"` 경로 템플릿은 경로를 토큰화하여 `/Products/Details/5` 같은 URL 경로를 매칭하고 `{ controller = Products, action = Details, id = 5 }` 경로 값을 추출합니다. MVC는 `ProductsController`라는 컨트롤러를 찾아 `Details` 작업을 실행하려고 시도합니다.
 
 ```csharp
 public class ProductsController : Controller
@@ -47,25 +47,25 @@ public class ProductsController : Controller
 }
 ```
 
-이 예제에서는 모델 바인딩이 사용 하 여 값 `id = 5` 설정 하는 `id` 매개 변수를 `5` 이 작업을 호출할 때입니다. 참조는 [모델 바인딩](../models/model-binding.md) 내용을 확인 합니다.
+이 예제에서 모델 바인딩은 이 작업을 호출할 때 `id = 5` 값을 사용하여 `id` 매개 변수를 `5`로 설정합니다. 자세한 내용은 [모델 바인딩](../models/model-binding.md)을 참조하세요.
 
-사용 하 여 `default` 경로:
+`default` 경로 사용:
 
 ```csharp
 routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
 ```
 
-경로 템플릿.
+경로 템플릿:
 
-* `{controller=Home}`정의 `Home` 기본값으로`controller`
+* `{controller=Home}`은 `Home`을 기본 `controller`로 정의
 
-* `{action=Index}`정의 `Index` 기본값으로`action`
+* `{action=Index}`는 `Index`를 기본 `action`으로 정의
 
-* `{id?}`정의 `id` 옵션으로
+* `{id?}`는 `id`를 선택 사항으로 정의
 
-기본 및 선택적 경로 매개 변수에 일치 하는 항목에 대 한 URL 경로에 있이 필요가 없습니다. 참조 [경로 템플릿 참조](../../fundamentals/routing.md#route-template-reference) 경로 템플릿 구문에 대 한 자세한 설명은 합니다.
+기본 및 선택적 경로 매개 변수는 매칭을 위해 URL 경로에 꼭 있어야 하는 것은 아닙니다. 경로 템플릿 구문에 대한 자세한 설명은 [경로 템플릿 참조](../../fundamentals/routing.md#route-template-reference)를 참조하세요.
 
-`"{controller=Home}/{action=Index}/{id?}"`URL 경로 일치 시킬 수 `/` 및 경로 값이 생성 됩니다 `{ controller = Home, action = Index }`합니다. 에 대 한 값 `controller` 및 `action` 확인의 기본값을 사용 하 여 `id` URL 경로에 해당 하는 세그먼트 없기 때문에 값을 생성 하지 않습니다. MVC를 사용 하 여 이러한 경로 값을 선택 된 `HomeController` 및 `Index` 동작:
+`"{controller=Home}/{action=Index}/{id?}"`는 URL 경로 `/`를 매칭할 수 있으며 `{ controller = Home, action = Index }` 경로 값을 생성합니다. `controller` 및 `action`의 값으로 기본값이 사용되며, URL 경로에 해당 세그먼트 없기 때문에 `id`가 값을 생성하지 않습니다. MVC는 이러한 경로 값을 사용하여 `HomeController` 및 `Index` 작업을 선택합니다.
 
 ```csharp
 public class HomeController : Controller
@@ -74,7 +74,7 @@ public class HomeController : Controller
 }
 ```
 
-이 컨트롤러 정의 경로 템플릿을 사용 하는 `HomeController.Index` 다음 URL 경로 대 한 작업을 실행할 수는 있습니다.
+이 컨트롤러 정의와 경로 템플릿을 사용하면 다음 URL 경로에 대해 `HomeController.Index` 작업이 실행됩니다.
 
 * `/Home/Index/17`
 
@@ -90,7 +90,7 @@ public class HomeController : Controller
 app.UseMvcWithDefaultRoute();
 ```
 
-사용할 수 바꾸려면:
+다음을 바꾸는 데 사용됩니다.
 
 ```csharp
 app.UseMvc(routes =>
@@ -99,7 +99,7 @@ app.UseMvc(routes =>
 });
 ```
 
-`UseMvc`및 `UseMvcWithDefaultRoute` 의 인스턴스를 추가 `RouterMiddleware` 미들웨어 파이프라인을 합니다. MVC는 미들웨어와 직접 상호 작용 하지 않고 및 라우팅을 사용 하 여 요청을 처리 합니다. MVC의 인스턴스를 통해 경로에 연결 되어 `MvcRouteHandler`합니다. 내부 코드 `UseMvc` 다음과 유사 합니다.
+`UseMvc` 및 `UseMvcWithDefaultRoute`는 `RouterMiddleware` 인스턴스를 미들웨어 파이프라인에 추가합니다. MVC는 미들웨어와 직접 상호 작용하지 않고 라우팅을 사용하여 요청을 처리합니다. MVC는 `MvcRouteHandler` 인스턴스를 통해 경로에 연결됩니다. `UseMvc` 내부의 코드는 다음과 비슷합니다.
 
 ```csharp
 var routes = new RouteBuilder(app);
@@ -114,11 +114,11 @@ routes.DefaultHandler = new MvcRouteHandler(...);
 app.UseRouter(routes.Build());
 ```
 
-`UseMvc`모든 경로 직접 정의 하지 않는 자리 표시자에 대 한 경로 컬렉션에 추가 `attribute` 경로입니다. 오버 로드 `UseMvc(Action<IRouteBuilder>)` 직접 경로 추가할 수 있습니다 하 고도 특성 라우팅을 지원 합니다.  `UseMvc`특성 경로 대 한 자리 표시자를 추가 하는 모든 해당 변형 중-특성 라우팅을 항상 구성 하는 방법에 관계 없이 사용할 수 및 `UseMvc`합니다. `UseMvcWithDefaultRoute`기본 경로 정의 하 고 특성 라우팅을 지원 합니다. [특성 라우팅을](#attribute-routing-ref-label) 특성 라우팅을 대 한 자세한 내용은 섹션에 포함 되어 있습니다.
+`UseMvc`는 경로를 직접 정의하지 않고, `attribute` 경로에 대한 경로 컬렉션에 자리 표시자를 추가합니다. `UseMvc(Action<IRouteBuilder>)` 오버로드를 사용하여 고유의 경로를 추가하고 특성 라우팅도 지원할 수 있습니다.  `UseMvc` 및 모든 변형은 특성 경로에 대한 자리 표시자를 추가합니다. 특성 라우팅은 `UseMvc`를 구성하는 방법에 관계없이 항상 사용할 수 있습니다. `UseMvcWithDefaultRoute`는 기본 경로를 정의하고 특성 라우팅을 지원합니다. [특성 라우팅](#attribute-routing-ref-label) 섹션에는 특성 라우팅에 대한 자세한 내용이 포함되어 있습니다.
 
 <a name="routing-conventional-ref-label"></a>
 
-## <a name="conventional-routing"></a>기존 라우팅
+## <a name="conventional-routing"></a>규칙 기반 라우팅
 
 `default` 경로:
 
@@ -126,25 +126,25 @@ app.UseRouter(routes.Build());
 routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
 ```
 
-예로 *기존의 라우팅은*합니다. 이 스타일 이라고 *기존의 라우팅은* 을 설정 하기 때문에 *규칙* URL 경로 대 한:
+*규칙 기반 라우팅*의 예입니다. URL 경로에 대한 *규칙*을 설정하기 때문에 이 스타일을 *규칙 기반 라우팅*이라고 부릅니다.
 
-* 컨트롤러 이름에 매핑됩니다 첫 번째 경로 세그먼트
+* 첫 번째 경로 세그먼트는 컨트롤러 이름에 매핑됩니다.
 
-* 두 번째 작업 이름에 매핑됩니다.
+* 두 번째는 작업 이름에 매핑됩니다.
 
-* 세 번째 세그먼트 사용 되는 선택적 `id` 모델 요소에 매핑하는 데 사용
+* 세 번째 세그먼트는 모델 엔터티에 매핑하는 데 사용되는 선택적 `id`에 사용됩니다.
 
-이 사용 하 여 `default` 경로, URL path `/Products/List` 매핑되는 `ProductsController.List` 동작을 및 `/Blog/Article/17` 에 매핑됩니다 `BlogController.Article`합니다. 이 매핑은 컨트롤러 및 작업 이름을 기준 **만** 네임 스페이스, 소스 파일 위치 또는 메서드 매개 변수 기반 되지 않습니다.
+이 `default` 경로를 사용하면 URL 경로 `/Products/List`는 `ProductsController.List` 작업에 매핑되고 `/Blog/Article/17`은 `BlogController.Article`에 매핑됩니다. 이 매핑은 **오직** 컨트롤러 및 작업 이름만을 기준으로 하며 네임스페이스, 원본 파일 위치 또는 메서드 매개 변수를 기준으로 하지 않습니다.
 
 > [!TIP]
-> 기본 경로와 기존 라우팅을 사용 하 여 정의한 각 작업에 대 한 새 URL 패턴을 제공 하지 않고 응용 프로그램을 신속 하 게 만들 수 있습니다. CRUD 스타일 동작이 포함 된 응용 프로그램에 대 한 컨트롤러를 통해 Url에 대 한 일관성 있는 유용 코드를 단순화 하 고 예측 가능성이 더욱 뛰어난 UI를 확인 합니다.
+> 규칙 기반 라우팅을 기본 경로와 함께 사용하면 정의하는 각 작업에 대한 새 URL 패턴 없이도 신속하게 응용 프로그램을 빌드할 수 있습니다. CRUD 스타일 작업이 있는 응용 프로그램의 경우 컨트롤러 전체에서 URL을 일관적으로 유지하면 코드를 단순화하고 UI의 예측 가능성을 높이는 데 도움이 됩니다.
 
 > [!WARNING]
-> `id` 작업을 수행할 때 URL의 일부분으로 제공 하는 ID 않고 실행할 수 있는 즉 경로 템플릿에 의해 선택적으로 정의 됩니다. 일반적으로 어떤 동작이 발생 하는 경우 `id` URL에서 생략로 설정 됩니다 것은 `0` 모델 바인딩에서 그 엔터티가 일치 하는 데이터베이스에 나타나게 됩니다 결과로 `id == 0`합니다. 특성 라우팅을 확인만 하 고 일부 동작에 필요한 ID에 대 한 세분화 된 제어를 제공할 수 있습니다. 선택적 매개 변수는 설명서에는 일반적으로 같은 `id` 올바른 사용법에 나타날 가능성이 있는 경우.
+> `id`는 경로 템플릿에서 선택 사항으로 정의됩니다. 즉, URL의 일부로 제공되는 ID 없이도 작업을 실행할 수 있습니다. 일반적으로 URL에서 `id`가 생략되면 모델 바인딩에 의해 `0`으로 설정되고, 그 결과 `id == 0`과 일치하는 데이터베이스에서 엔터티를 찾을 수 없습니다. 특성 라우팅을 사용하면 일부 작업에만 필요하고 다른 작업에는 필요하지 않은 ID를 세밀하게 제어할 수 있습니다. `id` 같은 선택적 매개 변수가 올바른 사용법에 표시될 가능성이 있는 경우 전통적으로 설명서에 이러한 선택적 매개 변수가 포함됩니다.
 
 ## <a name="multiple-routes"></a>여러 경로
 
-내 여러 경로 추가할 수 `UseMvc` 에 대 한 더 많은 호출을 추가 하 여 `MapRoute`합니다. 이렇게 하면 여러 규칙을 정의 하거나와 같은 특정 작업을 지정 된 규칙에 따른 경로를 추가할 수 있습니다.
+`MapRoute`에 더 많은 호출을 추가하여 `UseMvc` 내부에 여러 경로를 추가할 수 있습니다. 이렇게 하면 여러 규칙을 정의하거나 다음과 같은 특정 작업에만 사용되는 규칙 기반 경로를 추가할 수 있습니다.
 
 ```csharp
 app.UseMvc(routes =>
@@ -155,20 +155,20 @@ app.UseMvc(routes =>
 });
 ```
 
-`blog` 경로 여기는 *전용된 규칙에 따른 경로*,이 규칙에 따른 라우팅 시스템을 사용 하지만 특정 작업의 전용를 의미 합니다. 이후 `controller` 및 `action` 매개 변수로 경로 템플릿을에 나타나지 않습니다, 기본값을 하나만 사용할 수 있습니다 및 따라서이 경로 작업에 매핑됩니다 항상 `BlogController.Article`합니다.
+여기서 `blog` 경로는 규칙 기반 라우팅 시스템을 사용하지만 특정 작업에만 활용되는 *전용 규칙 기반 경로*입니다. `controller` 및 `action`은 경로 템플릿에 매개 변수로 표시되지 않기 때문에 기본값만 가질 수 있으며, 따라서 이 경로는 항상 `BlogController.Article` 작업에 매핑됩니다.
 
-경로 컬렉션에 대 한 경로 정렬 하 고 추가 하는 순서 대로 처리 됩니다. 이 예제에는 `blog` 하기 전에 경로 시도 합니다는 `default` 경로입니다.
+경로 컬렉션의 경로는 순서가 지정되며 추가된 순서대로 처리됩니다. 따라서 이 예제의 `blog` 경로는 `default` 경로보다 먼저 시도됩니다.
 
 > [!NOTE]
-> *규칙에 따른 경로 전용* 종종 같은 범용 경로 매개 변수를 사용 하 여 `{*article}` URL 경로의 나머지 부분 캡처를 합니다. 이 수 없게 경로 '너무 greedy' 다른 경로 일치 하도록 하는 Url 일치 하는 것을 의미 합니다. 이 문제를 해결 하려면 경로 테이블의 뒷부분에 나오는 'greedy' 경로 넣습니다.
+> *전용 규칙 기반 경로*는 종종 `{*article}` 같은 범용 경로 매개 변수를 사용하여 URL 경로의 나머지 부분을 캡처합니다. 이 경우 경로가 '너무 많은 욕심'을 부리게 됩니다. 즉, 다른 경로와 매칭하려는 URL과 매칭됩니다. 이 '욕심 많은' 경로를 경로 테이블의 뒷부분에 배치하면 이 문제를 해결할 수 있습니다.
 
-### <a name="fallback"></a>대체 (fallback)
+### <a name="fallback"></a>대체
 
-요청 처리의 일부로, MVC 응용 프로그램의 컨트롤러 및 작업을 찾을 경로 값을 사용할 수 있는지 확인 합니다. 경로 값의 동작에 일치 하지 않는 경우 경로 일치 하는 것으로 간주 되지 않습니다는 다음 및 다음 경로 시도 합니다. 이 라고 *대체*, 규칙에 따른 경로 겹치는 경우 단순화 하기 위한 것이 고 합니다.
+요청 처리의 일부로, MVC는 경로 값을 사용하여 응용 프로그램의 컨트롤러 및 작업을 찾을 수 있는지 확인합니다. 경로 값이 작업과 일치하지 않으면 해당 경로는 불일치하는 것으로 간주되고, 그 다음 경로를 시도합니다. 이것을 *대체*라고 부르며, 규칙 기반 경로가 겹치는 상황을 단순화하는 것이 목적입니다.
 
 ### <a name="disambiguating-actions"></a>작업을 명확히 구분
 
-두 가지 동작 라우팅을 통해 일치 MVC 명확 하 '가장' 후보를 선택 합니다. 그렇지 않으면 예외를 throw 하 게 해야 합니다. 예:
+두 작업이 라우팅을 통해 일치하는 경우 MVC는 작업을 명확히 구분하여 '최적의' 후보를 선택해야 하며, 그렇지 못하면 예외가 throw됩니다. 예:
 
 ```csharp
 public class ProductsController : Controller
@@ -180,19 +180,19 @@ public class ProductsController : Controller
 }
 ```
 
-일치 하는 URL 경로 두 가지 동작을 정의 하는이 컨트롤러 `/Products/Edit/17` 및 데이터 경로 `{ controller = Products, action = Edit, id = 17 }`합니다. 이 MVC 컨트롤러에 대 한 일반적인 패턴은 여기서 `Edit(int)` 제품을 편집할 수 있는 폼을 표시 및 `Edit(int, Product)` 게시 된 폼을 처리 합니다. MVC 선택 해야 할 것이 가능 하 게 하려면 `Edit(int, Product)` 경우 요청은 HTTP `POST` 및 `Edit(int)` HTTP 동사 80 이외 인 경우.
+이 컨트롤러는 URL 경로 `/Products/Edit/17` 및 경로 데이터 `{ controller = Products, action = Edit, id = 17 }`과 일치하는 두 작업을 정의합니다. 이것은 MVC 컨트롤러의 일반적인 패턴으로, `Edit(int)` 는 제품을 편집할 양식을 보여주고 `Edit(int, Product)`는 게시된 양식을 처리합니다. 이것을 가능하게 만들려면 요청이 HTTP `POST`이면 MVC가 `Edit(int, Product)`를 선택해야 하고, HTTP 동사가 그 외의 다른 것이면 MVC가 `Edit(int)`를 선택해야 합니다.
 
-`HttpPostAttribute` ( `[HttpPost]` )는의 구현 `IActionConstraint` HTTP 동사가 때 선택할 동작 수만 `POST`합니다. 존재는 `IActionConstraint` 만듭니다는 `Edit(int, Product)` '더' 보다 일치 `Edit(int)`하므로 `Edit(int, Product)` 먼저 시도 됩니다.
+`HttpPostAttribute`(`[HttpPost]`)는 HTTP 동사가 `POST`인 경우 작업을 선택하는 것만 가능한 `IActionConstraint` 구현입니다. `IActionConstraint`가 있으면 `Edit(int, Product)`가 `Edit(int)`보다 '더' 정확하게 일치하므로 `Edit(int, Product)`를 가장 먼저 시도합니다.
 
-사용자 지정 작성 하기만 됩니다 `IActionConstraint` 같은 특성의 역할을 이해 하는 것이 중요 하지만 특별 한 시나리오의 구현을 `HttpPostAttribute` -다른 HTTP 동사에 유사한 속성이 정의 됩니다. 기존 라우팅의 일부로 표시 하는 경우 동일한 작업 이름을 사용 하는 작업에 대 한 일반적 이기는 `show form -> submit form` 워크플로 합니다. 이 패턴에서 편리 하 게 검토 하 고 나면 더 분명 하 게 될는 [이해 IActionConstraint](#understanding-iactionconstraint) 섹션.
+개발자는 특별한 시나리오의 사용자 지정 `IActionConstraint` 구현을 작성하기만 하면 되지만, `HttpPostAttribute` 같은 특성 역할을 이해하는 것이 중요합니다. 다른 HTTP 동사에 대해 비슷한 특성이 정의됩니다. 규칙 기반 라우팅에서는 작업이 `show form -> submit form` 워크플로의 일부인 경우 작업에서 동일한 작업을 사용하는 것이 일반적입니다. [IActionConstraint 이해](#understanding-iactionconstraint) 섹션을 검토하시면 이 패턴의 편리함을 보다 명확하게 이해할 수 있습니다.
 
-일치 하는 여러 경로가 및 MVC '최적의' 경로 찾을 수 없습니다, 예외를 throw 한 `AmbiguousActionException`합니다.
+여러 경로가 일치하고 MVC가 '최적의' 경로를 찾을 수 없는 경우 MVC는 `AmbiguousActionException`을 throw합니다.
 
 <a name="routing-route-name-ref-label"></a>
 
 ### <a name="route-names"></a>경로 이름
 
-문자열 `"blog"` 및 `"default"` 다음 예제에는 경로 이름:
+다음 예제의 `"blog"` 및 `"default"` 문자열은 경로 이름입니다.
 
 
 ```csharp
@@ -204,15 +204,15 @@ app.UseMvc(routes =>
 });
 ```
 
-경로 이름은 URL 생성을 위한 명명 된 경로 사용할 수 있도록 논리 이름 경로 지정 합니다. 이 복잡 한 URL 생성을 만들 수의 경로 순서 지정 하는 경우 URL을 만들 크게 간소화 합니다. 경로 이름은 응용 프로그램 전체에서 고유 해야 합니다.
+경로 이름은 명명된 경로를 URL 생성에 사용할 수 있도록 경로에 논리 이름을 제공합니다. 이렇게 하면 경로 순서를 지정하면 URL 생성이 복잡해질 수 있는 상황에서 URL 생성 방법이 매우 간소화됩니다. 경로 이름은 응용 프로그램 전체에서 고유해야 합니다.
 
-경로 이름은 URL 일치 또는; 요청 처리에 영향을 미치지 않습니다 URL 생성에만 사용 합니다. [라우팅](xref:fundamentals/routing) 에 대 한 상세 정보가 MVC 관련 도우미에서 URL 생성을 포함 하 여 URL 생성 합니다.
+경로 이름은 URL 일치 또는 요청 처리에 영향을 미치지 않으며, URL 생성에만 사용됩니다. [라우팅](xref:fundamentals/routing)은 MVC 관련 도우미에서 URL 생성을 포함하여 URL 생성에 대한 구체적인 정보를 갖고 있습니다.
 
 <a name="attribute-routing-ref-label"></a>
 
 ## <a name="attribute-routing"></a>특성 라우팅
 
-특성 라우팅을 작업 경로의 서식 파일에 직접 매핑할 특성 집합을 사용 합니다. 다음 예에서 `app.UseMvc();` 에 사용 되는 `Configure` 메서드와 경로가 없는 전달 됩니다. `HomeController` 기본 경로 유사한 Url 집합과 일치 됩니다 `{controller=Home}/{action=Index}/{id?}` 과 일치 합니다.
+특성 라우팅은 특성 집합을 사용하여 작업을 경로 템플릿에 직접 매핑합니다. 다음 예에서 `app.UseMvc();`는 `Configure` 메서드에 사용되며 경로가 전달되지 않습니다. `HomeController`는 기본 경로 `{controller=Home}/{action=Index}/{id?}`의 일치 항목과 비슷한 URL 집합과 매핑됩니다.
 
 ```csharp
 public class HomeController : Controller
@@ -237,12 +237,12 @@ public class HomeController : Controller
 }
 ```
 
-`HomeController.Index()` 된 URL 경로 대 한 작업을 실행할지 `/`, `/Home`, 또는 `/Home/Index`합니다.
+`HomeController.Index()` 작업은 URL 경로 `/`, `/Home` 또는 `/Home/Index`에 대해 실행됩니다.
 
 > [!NOTE]
-> 이 예제에서는 특성 라우팅 및 라우팅 규칙에 따른 주요 프로그래밍 차이점을 강조 표시합니다. 추가 정보를 입력 한 경로;를 지정 하려면 특성 라우팅이 필요 기존의 기본 경로 경로 보다 간결 하 게 처리합니다. 그러나 특성 라우팅을 허용 (및 필요)는 경로 템플릿을 각 작업에 적용 되는 정확 하 게 제어 합니다.
+> 이 예제에서는 특성 라우팅과 규칙 기반 라우팅의 주요 프로그래밍 차이점을 강조합니다. 특성 라우팅은 경로를 지정하기 위한 더 많은 입력이 필요하고, 규칙 기반 기본 경로는 경로를 보다 간결하게 처리합니다. 그러나 특성 라우팅은 각 작업에 적용되는 경로 템플릿을 정확하게 제어할 수 있습니다(또 그래야 합니다).
 
-라우팅 컨트롤러 이름 및 작업 이름 특성으로 재생 **없는** 역할 작업 선택 합니다. 이 예에서는 앞의 예제와 동일한 Url과 일치 합니다.
+특성 라우팅을 사용하면 컨트롤러 이름 및 작업 이름은 작업 선택에 있어서 아무 역할도 하지 **않습니다**. 이 예제는 이전 예제와 동일한 URL을 매칭합니다.
 
 ```csharp
 public class MyDemoController : Controller
@@ -268,11 +268,11 @@ public class MyDemoController : Controller
 ```
 
 > [!NOTE]
-> 경로 템플릿을 위의 대 한 경로 매개 변수를 정의 하지 않은 `action`, `area`, 및 `controller`합니다. 실제로 이러한 경로 매개 변수 특성 경로에 허용 되지 않습니다. 경로 템플릿을 액션에 연결할 이미 있으므로 내 맞지 URL에서 작업 이름을 구문 분석할 수 있습니다.
+> 위의 경로 템플릿은 `action`, `area` 및 `controller`에 대한 경로 매개 변수를 정의하지 않습니다. 사실, 이러한 경로 매개 변수는 특성 경로에 허용되지 않습니다. 경로 템플릿은 이미 작업에 연결되어 있기 때문에 URL에서 작업 이름을 구문 분석할 수 없습니다.
 
-## <a name="attribute-routing-with-httpverb-attributes"></a>Http [동사] 특성으로 라우팅 특성
+## <a name="attribute-routing-with-httpverb-attributes"></a>Http[동사] 특성을 포함한 라우팅 특성
 
-특성 라우팅을 수행할 수도의 사용은 `Http[Verb]` 와 같은 특성 `HttpPostAttribute`합니다. 이러한 특성의 모든 경로 템플릿을 사용할 수 있습니다. 이 예에서는 동일한 경로 템플릿을 일치 하는 두 가지 동작을 보여 줍니다.
+특성 라우팅은 `HttpPostAttribute` 같은 `Http[Verb]`도 사용할 수 있습니다. 이러한 특성은 모두 경로 템플릿을 허용합니다. 이 예에서는 동일한 경로 템플릿과 일치하는 두 가지 작업을 보여줍니다.
 
 ```csharp
 [HttpGet("/products")]
@@ -288,12 +288,12 @@ public IActionResult CreateProduct(...)
 }
 ```
 
-과 같은 URL 경로 대 한 `/products` 는 `ProductsApi.ListProducts` HTTP 동사가 때 동작이 실행 됩니다 `GET` 및 `ProductsApi.CreateProduct` HTTP 동사가 때 실행할 `POST`합니다. 특성을 먼저 라우팅 경로 특성에 정의 된 경로 템플릿의 집합에 대해 URL과 일치 합니다. 경로 템플릿을 일치 하지 않게, `IActionConstraint` 제한은 실행할 수 있는 작업 확인에 적용 됩니다.
+`/products` 같은 URL 경로의 경우 HTTP 동사가 `GET`이면 `ProductsApi.ListProducts` 작업이 실행되고 HTTP 동사가 `POST`이면 `ProductsApi.CreateProduct`가 실행됩니다. 특성 라우팅은 URL을 경로 특성에 정의된 경로 템플릿 집합과 가장 먼저 매칭합니다. 경로 템플릿이 일치하면 `IActionConstraint` 제약 조건을 적용하여 실행 가능한 작업을 확인합니다.
 
 > [!TIP]
-> REST API를 작성할 때 경우는 거의 사용 하려는 됩니다 `[Route(...)]` 동작 메서드의 합니다. 보다 구체적인을 사용 하는 것이 좋습니다 `Http*Verb*Attributes` API에서 지 원하는 작업에 대 한 정확 하 게 합니다. REST Api의 클라이언트는 어떤 경로 및 HTTP 동사를 매핑할 특정 논리 작업에 알아야 예상 됩니다.
+> REST API를 빌드할 때 작업 메서드에 `[Route(...)]`를 사용하려는 경우는 거의 없습니다. 보다 구체적인 `Http*Verb*Attributes`를 사용하여 API에서 지원하는 항목을 정확하게 지정하는 것이 좋습니다. REST API의 클라이언트는 특정 논리 작업에 어떤 경로 및 HTTP 동사가 매핑되는지 알아야 합니다.
 
-특정 작업에 있는 특성 경로 적용 됨, 이후 경로 템플릿 정의의 일환으로 필요한 매개 변수를 확인 하기 쉽습니다. 이 예제에서는 `id` 는 URL 경로 포함 되어야 합니다.
+특성 경로는 특정 작업에 적용되므로 경로 템플릿 정의의 일환으로 필요한 매개 변수를 간단하게 만들 수 있습니다. 이 예에서 `id`는 URL 경로에 포함되어야 합니다.
 
 ```csharp
 public class ProductsApiController : Controller
@@ -303,11 +303,11 @@ public class ProductsApiController : Controller
 }
 ```
 
-`ProductsApi.GetProduct(int)` 과 같은 URL 경로 대 한 작업을 실행할지 `/products/3` 과 같은 URL 경로 대해서가 아니라 `/products`합니다. 참조 [라우팅](../../fundamentals/routing.md) 에 대 한 전체 설명은 경로 템플릿 및 관련된 옵션입니다.
+`ProductsApi.GetProduct(int)` 작업은 `/products/3` 같은 URL 경로에 대해 실행되지만 `/products` 같은 URL 경로에 대해서는 실행되지 않습니다. 경로 템플릿 및 관련 옵션에 대한 전체 설명은 [라우팅](../../fundamentals/routing.md)을 참조하세요.
 
 ## <a name="route-name"></a>경로 이름
 
-다음 코드 정의 *경로 이름* 의 `Products_List`:
+다음 코드는 `Products_List`의 *경로 이름*을 정의합니다.
 
 ```csharp
 public class ProductsApiController : Controller
@@ -317,16 +317,16 @@ public class ProductsApiController : Controller
 }
 ```
 
-특정 경로에 따라 URL을 생성 하 경로 이름은 사용할 수 있습니다. 경로 이름은 URL 일치 라우팅의 동작에 영향을 미치지 되며 URL 생성에만 사용 됩니다. 경로 이름은 응용 프로그램 전체에서 고유 해야 합니다.
+경로 이름을 사용하여 특정 경로 기반의 URL을 생성할 수 있습니다. 경로 이름은 라우팅의 URL 매칭 동작에 영향을 미치지 않으며 URL 생성에만 사용됩니다. 경로 이름은 응용 프로그램 전체에서 고유해야 합니다.
 
 > [!NOTE]
-> 이와 반대로 기존의 *기본 경로*, 정의 하는 `id` 매개 변수를 선택적으로 (`{id?}`). Api를 정확 하 게 지정 하는이 기능에 허용 하는 등의 이점도 `/products` 및 `/products/5` 를 다른 동작에 디스패치할 수 있습니다.
+> `id` 매개 변수를 선택 사항(`{id?}`)으로 정의하는 규칙 기반 *기본 경로*와는 대조적입니다. API를 정확하게 지정하는 이 기능은 `/products` 및 `/products/5`를 다른 작업에 디스패치할 수 있는 등의 장점이 있습니다.
 
 <a name="routing-combining-ref-label"></a>
 
-### <a name="combining-routes"></a>조합 경로
+### <a name="combining-routes"></a>경로 결합
 
-특성 라우팅을 덜 반복적인를 하려면 컨트롤러에서 경로 특성 경로 특성에는 개별 작업와 결합 됩니다. 컨트롤러에 정의 된 경로 템플릿은 모든 작업에 대 한 경로 템플릿에 앞에 추가 됩니다. 컨트롤러에서 경로 특성을 배치 하면 **모든** 컨트롤러의 동작 특성 라우팅을 사용 합니다.
+특성 라우팅의 반복 횟수를 줄이기 위해 컨트롤러의 경로 특성이 개별 작업의 경로 특성과 결합됩니다. 컨트롤러에 정의된 경로 템플릿은 작업의 경로 템플릿에 앞에 추가됩니다. 경로 특성을 컨트롤러에 배치하면 컨트롤러의 **모든** 작업에서 특성 라우팅을 사용합니다.
 
 ```csharp
 [Route("products")]
@@ -340,9 +340,9 @@ public class ProductsApiController : Controller
 }
 ```
 
-이 예에서 URL 경로 `/products` 일치 시킬 수 `ProductsApi.ListProducts`, 및 URL 경로 `/products/5` 맞는지 `ProductsApi.GetProduct(int)`합니다. HTTP만 일치 두이 작업은 `GET` 로 데코레이팅 중인 때문에 `HttpGetAttribute`합니다.
+이 예에서 URL 경로 `/products`는 `ProductsApi.ListProducts`를 매칭할 수 있고, URL 경로 `/products/5`는 `ProductsApi.GetProduct(int)`를 매칭할 수 있습니다. 두 작업은 모두 `HttpGetAttribute`로 데코레이팅되기 때문에 HTTP `GET`만 매칭합니다.
 
-로 시작 하는 작업에 적용할 템플릿 경로 `/` 컨트롤러에 적용 하는 경로 템플릿을 함께 가져올 하지 않습니다. 이 예제와 비슷한 URL 경로 집합과 일치는 *기본 경로*합니다.
+`/`로 시작하는 작업에 적용되는 경로 템플릿은 컨트롤러에 적용되는 경로 템플릿과 결합되지 않습니다. 이 예제는 *기본 경로*와 비슷한 URL 경로 집합을 매칭합니다.
 
 ```csharp
 [Route("Home")]
@@ -371,28 +371,28 @@ public class HomeController : Controller
 
 ### <a name="ordering-attribute-routes"></a>특성 경로 순서 지정
 
-정의 된 순서로 실행 되는 규칙에 따른 경로 달리 특성 라우팅을 트리를 작성 및 동시에 모든 경로 일치 합니다. 이 역할-에 이상적인 정렬이; 배치 되는 경로 항목 가장 구체적인 경로는 보다 일반적인 경로 보다 실행 기회를 해야 합니다.
+정의된 순서대로 실행되는 규칙 기반 경로와는 달리, 특성 라우팅은 트리를 만들고 모든 경로를 동시에 매칭합니다. 이 동작은 경로 전체가 이상적인 순서로 정렬된 것처럼 수행됩니다. 가장 구체적인 경로는 일반적인 경로보다 먼저 실행될 가능성이 있습니다.
 
-예를 들어 경로 같은 `blog/search/{topic}` 경로 같은 보다 구체적인 `blog/{*article}`합니다. 논리적으로 말해는 `blog/search/{topic}` 경로 '실행' 먼저 기본적으로 붙여 구분이 가능한만 순서 지정 하기 때문에 있습니다. 규칙에 따른 라우팅을 사용 하 여, 개발자는 경로 원하는 순서로 배치할 담당 합니다.
+예를 들어 `blog/search/{topic}` 같은 경로는 `blog/{*article}` 같은 경로보다 구체적입니다. 논리적으로 말해서, 기본적으로 `blog/search/{topic}` 경로가 가장 먼저 '실행'됩니다. 유일하게 합리적인 순서이기 때문입니다. 규칙 기반 라우팅을 사용하면 개발자는 원하는 순서대로 경로를 배치해야 합니다.
 
-특성 경로 순서를 구성할 수를 사용 하 여 `Order` 제공 프레임 워크 경로 특성의 모든 속성. 경로 오름차순 따라 처리 되는 일종의 `Order` 속성입니다. 기본 순서는 `0`합니다. 사용 하 여 경로 설정 `Order = -1` 경로 순서를 설정 하지 않은 전에 실행 됩니다. 사용 하 여 경로 설정 `Order = 1` 기본 경로 순서를 지정한 후 실행 됩니다.
+특성 경로는 경로 특성에서 제공하는 모든 프레임워크의 `Order` 속성을 사용하여 순서를 구성할 수 있습니다. 경로는 `Order` 속성의 오름차순 정렬에 따라 처리됩니다. 기본 순서는 `0`입니다. `Order = -1`을 사용한 경로 설정은 순서를 설정하지 않는 경로보다 먼저 실행됩니다. `Order = 1`을 사용한 경로 설정은 기본 경로 순서보다 늦게 실행됩니다.
 
 > [!TIP]
-> 에 따라 방지 `Order`합니다. URL-스페이스를 올바르게 라우팅할 명시적 순서 값이 필요한 경우 됩니다 클라이언트 에서도 혼동 가능성이 높습니다. 일반적 특성 라우팅을 URL 일치 하는 올바른 경로 선택 합니다. URL 생성에 사용 되는 기본 순서 작동 하지 않는 경우 사용 하 여 경로 이름 재정의 적용할 때 보다 더 간단 일반적으로 `Order` 속성입니다.
+> `Order`를 사용하지 마세요. URL 공간에 올바른 라우팅을 위한 명시적 순서 값이 필요한 경우 클라이언트에서도 혼란이 발생할 수 있습니다. 일반적으로 특성 라우팅은 URL이 일치하는 올바른 경로를 선택합니다. URL 생성에 사용되는 기본 순서가 작동하지 않는 경우 일반적으로 경로 이름을 재정의로 사용하는 것이 `Order` 속성을 적용하는 것보다 간단합니다.
 
 <a name="routing-token-replacement-templates-ref-label"></a>
 
-## <a name="token-replacement-in-route-templates-controller-action-area"></a>경로 템플릿에서 토큰을 바꾸지 ([컨트롤러] [action] [지역])
+## <a name="token-replacement-in-route-templates-controller-action-area"></a>경로 템플릿에서 토큰 바꾸기([컨트롤러] [작업] [지역])
 
-편의 위해 특성 경로 지원 *토큰을 바꾸지* 정사각형 중괄호에는 토큰을 포함 하 여 (`[`, `]`). 토큰 `[action]`, `[area]`, 및 `[controller]` 작업 이름, 영역 이름 및 경로가 정의 된 작업에서 컨트롤러 이름을 값으로 바뀝니다. 이 예에서는 설명에 설명 된 대로 작업 URL 경로 찾을 수 있습니다.
+편의를 위해 특성 경로는 토큰을 대괄호(`[`, `]`)로 묶어서 *토큰 바꾸기*를 지원합니다. `[action]`, `[area]` 및 `[controller]` 토큰은 경로가 정의된 작업의 작업 이름, 영역 이름 및 컨트롤러 이름으로 바뀝니다. 이 예의 작업은 주석에 설명된 대로 URL 경로를 매칭할 수 있습니다.
 
 [!code-csharp[Main](routing/sample/main/Controllers/ProductsController.cs?range=7-11,13-17,20-22)]
 
-토큰 교체 특성 경로 빌드 과정의 마지막 단계로 발생 합니다. 위의 예에서는 다음 코드와 동일 하 게 동작 합니다.
+토큰 교체는 특성 경로 빌드 과정의 마지막 단계로 발생합니다. 위의 예는 다음 코드와 동일하게 동작합니다.
 
 [!code-csharp[Main](routing/sample/main/Controllers/ProductsController2.cs?range=7-11,13-17,20-22)]
 
-특성 경로 상속와 함께 사용할 수도 있습니다. 이 기능은 토큰 교체를 함께 특히 유용 합니다.
+특성 경로를 상속과 결합할 수도 있습니다. 특히 토큰 교체와 결합하면 더욱 강력합니다.
 
 ```csharp
 [Route("api/[controller]")]
@@ -408,15 +408,15 @@ public class ProductsController : MyBaseController
 }
 ```
 
-토큰 교체 특성 경로에 정의 된 경로 이름에도 적용 됩니다. `[Route("[controller]/[action]", Name="[controller]_[action]")]`각 작업에 대 한 고유한 경로 이름이 생성 됩니다.
+토큰 교체는 특성 경로에 정의된 경로 이름에도 적용됩니다. `[Route("[controller]/[action]", Name="[controller]_[action]")]`는 각 작업에 대한 고유의 경로 이름을 생성합니다.
 
-리터럴 토큰 대체 구분 기호에 맞게 `[` 또는 `]`, 문자를 반복 하 여 이스케이프 (`[[` 또는 `]]`).
+리터럴 토큰 교체 구분 기호 `[` 또는 `]`와 매칭하려면 문자(`[[` 또는 `]]`)를 반복하여 이스케이프합니다.
 
 <a name="routing-multiple-routes-ref-label"></a>
 
 ### <a name="multiple-routes"></a>여러 경로
 
-동일한 작업에 도달 하는 여러 경로 정의 하는 라우팅 지원 특성입니다. 가장 일반적인 사용의 동작을 모방 하는 것은 *기본 규칙에 따른 경로* 다음 예제와 같이:
+특성 경로는 동일한 작업에 도달하는 여러 경로를 정의하는 것을 지원합니다. 가장 일반적인 사용 방법은 다음 예제와 같이 *기본 규칙 기반 경로*의 동작을 모방하는 것입니다.
 
 ```csharp
 [Route("[controller]")]
@@ -428,7 +428,7 @@ public class ProductsController : Controller
 }
 ```
 
-다중 경로 특성은 컨트롤러에 배치 하는 각 작업 메서드에 대 한 경로 특성와 결합 합니다. 각 의미 합니다.
+컨트롤러에 여러 경로 특성을 배치하면 각 경로 특성이 작업 메서드의 각 경로 특성과 결합됩니다.
 
 ```csharp
 [Route("Store")]
@@ -441,7 +441,7 @@ public class ProductsController : Controller
 }
 ```
 
-경우 다중 경로 특성 (구현 하는 `IActionConstraint`) 각 작업 제약 조건 정의 된 특성에서 경로 템플릿을 사용 하 여 결합 한 다음 동작을에 배치 됩니다.
+여러 경로 특성(`IActionConstraint`를 구현하는)이 작업에 배치되면 각 작업 제약 조건은 제약 조건을 정의한 특성의 경로 템플릿과 결합됩니다.
 
 ```csharp
 [Route("api/[controller]")]
@@ -454,13 +454,13 @@ public class ProductsController : Controller
 ```
 
 > [!TIP]
-> 작업에서 여러 경로 사용 하 여 강력한 보일 수를 간단 하 고 잘 정의 된 응용 프로그램의 URL 공간을 유지 하는 것이 좋습니다. 예를 들어 기존 클라이언트를 지원 하기 위해 필요한 경우에 작업에서 여러 경로 사용 합니다.
+> 작업에 여러 경로를 사용하는 것이 좋아 보일 수 있지만, 응용 프로그램의 URL 공간을 간단하고 잘 정의된 상태로 유지하는 것이 좋습니다. 기존 클라이언트를 지원하려는 경우처럼 꼭 필요한 경우에만 작업에 여러 경로를 사용합니다.
 
 <a name="routing-attr-options"></a>
 
 ### <a name="specifying-attribute-route-optional-parameters-default-values-and-constraints"></a>특성 경로 선택적 매개 변수, 기본값 및 제약 조건 지정
 
-특성 경로는 선택적 매개 변수, 기본값 및 제약 조건을 지정 하려면 기본 경로와 같은 인라인 구문을 지원 합니다.
+특성 경로는 선택적 매개 변수, 기본값 및 제약 조건을 지정할 수 있는 규칙 기반 경로와 동일한 인라인 구문을 지원합니다.
 
 ```csharp
 [HttpPost("product/{id:int}")]
@@ -470,15 +470,15 @@ public IActionResult ShowProduct(int id)
 }
 ```
 
-참조 [경로 템플릿 참조](../../fundamentals/routing.md#route-template-reference) 경로 템플릿 구문에 대 한 자세한 설명은 합니다.
+경로 템플릿 구문에 대한 자세한 설명은 [경로 템플릿 참조](../../fundamentals/routing.md#route-template-reference)를 참조하세요.
 
 <a name="routing-cust-rt-attr-irt-ref-label"></a>
 
-### <a name="custom-route-attributes-using-iroutetemplateprovider"></a>사용 하 여 사용자 지정 경로 특성`IRouteTemplateProvider`
+### <a name="custom-route-attributes-using-iroutetemplateprovider"></a>`IRouteTemplateProvider`를 사용하는 사용자 지정 경로 특성
 
-프레임 워크에서 제공 하는 경로 특성의 모든 ( `[Route(...)]`, `[HttpGet(...)]` 등) 구현에서 `IRouteTemplateProvider` 인터페이스입니다. 앱을 시작 하 고 구현 하는 것을 사용 하 여 MVC 동작 메서드 및 컨트롤러 클래스에서 특성을 찾고 `IRouteTemplateProvider` 경로의 초기 집합을 빌드할 수 있습니다.
+프레임워크에서 제공하는 모든 경로 특성(`[Route(...)]`, `[HttpGet(...)]` 등)은 `IRouteTemplateProvider` 인터페이스를 구현합니다. 앱이 시작되면 MVC는 컨트롤러 클래스 및 작업 메서드에서 특성을 찾아 `IRouteTemplateProvider`를 구현하는 특성을 사용하여 초기 경로 집합을 빌드합니다.
 
-구현할 수 있습니다 `IRouteTemplateProvider` 직접 경로 특성을 정의할 수 있습니다. 각 `IRouteTemplateProvider` 순서와 이름 사용자 지정 경로 템플릿 사용 하 여 단일 경로 정의할 수 있습니다.
+개발자 고유의 경로 특성을 정의하는 `IRouteTemplateProvider`를 구현할 수 있습니다. 각 `IRouteTemplateProvider`를 사용하여 사용자 지정 경로 템플릿, 순서 및 이름으로 단일 경로를 정의할 수 있습니다.
 
 ```csharp
 public class MyApiControllerAttribute : Attribute, IRouteTemplateProvider
@@ -491,40 +491,40 @@ public class MyApiControllerAttribute : Attribute, IRouteTemplateProvider
 }
 ```
 
-위의 예제에서이 특성을 자동으로 설정 된 `Template` 를 `"api/[controller]"` 때 `[MyApiController]` 적용 됩니다.
+위의 예제에 나오는 특성은 `[MyApiController]`가 적용되면 자동으로 `Template`을 `"api/[controller]"`로 설정합니다.
 
 <a name="routing-app-model-ref-label"></a>
 
-### <a name="using-application-model-to-customize-attribute-routes"></a>응용 프로그램 모델을 사용 하 여 특성 경로 사용자 지정 하려면
+### <a name="using-application-model-to-customize-attribute-routes"></a>응용 프로그램 모델을 사용하여 특성 경로 사용자 지정
 
-*응용 프로그램 모델* 은 시작 시 모든 라우팅 및 작업을 수행할 때 실행 MVC에서 사용 하는 메타 데이터를 사용 하 여 만든 개체 모델입니다. *응용 프로그램 모델* 경로 특성에서 수집 되는 데이터를 모두 포함 (통해 `IRouteTemplateProvider`). 작성할 수 있습니다 *규칙* 라우팅 동작 하는 방법을 사용자 지정 하려면 시작 시 응용 프로그램 모델을 수정할 수 있습니다. 이 섹션에서는 응용 프로그램 모델을 사용 하 여 라우팅 사용자 지정의 간단한 예를 보여 줍니다.
+*응용 프로그램 모델*은 시작 시 MVC가 작업을 라우팅하고 실행하는 데 사용되는 메타데이터를 이용하여 만들어지는 개체 모델입니다. *응용 프로그램 모델*은 `IRouteTemplateProvider`를 통해 경로 특성에서 수집되는 모든 데이터를 포함합니다. 개발자는 라우팅 동작을 사용자 지정하는 시작 시간에 응용 프로그램 모델을 수정하는 *규칙*을 작성할 수 있습니다. 이 섹션에서는 응용 프로그램 모델을 사용하여 라우팅을 사용자 지정하는 간단한 예를 보여줍니다.
 
 [!code-csharp[Main](routing/sample/main/NamespaceRoutingConvention.cs)]
 
 <a name="routing-mixed-ref-label"></a>
 
-## <a name="mixed-routing-attribute-routing-vs-conventional-routing"></a>라우팅 혼합: 라우팅 vs 기존의 라우팅은 특성
+## <a name="mixed-routing-attribute-routing-vs-conventional-routing"></a>혼합 라우팅: 특성 라우팅 및 규칙 기반 라우팅
 
-MVC 응용 프로그램에 기존의 라우팅은 및 특성 라우팅을 사용 하는 혼합할 수 있습니다. 일반적으로 브라우저에 대 한 HTML 페이지를 처리 하는 컨트롤러에 대 한 규칙에 따른 경로 사용 하 고 REST Api를 제공 하는 컨트롤러에 대 한 라우팅 특성은 합니다.
+MVC 응용 프로그램은 규칙 기반 라우팅과 특성 라우팅을 혼합해서 사용할 수 있습니다. 일반적으로 브라우저의 HTML 페이지를 처리하는 컨트롤러에는 규칙 기반 경로를 사용하고 REST API를 제공하는 컨트롤러에는 특성 라우팅을 사용합니다.
 
-작업은 일반적으로 라우팅됩니다 하거나 또는 특성 라우팅됩니다. 컨트롤러 또는 작업에 대 한 경로 배치를 사용 하면 특성 라우팅됩니다. 기본 경로 반대로 통해 특성 경로 정의 하는 동작을 연결할 수 없습니다. **모든** 컨트롤러에서 경로 특성 라우팅된 컨트롤러 특성의 모든 작업을 사용 합니다.
+작업은 일반적인 방식으로 라우팅되거나 특성 라우팅됩니다. 컨트롤러 또는 작업에 경로를 배치하면 해당 경로가 특성 라우팅됩니다. 특성 경로를 정의하는 동작은 규칙 기반 경로를 통해 도달할 수 없으며 그 반대도 마찬가지입니다. 컨트롤러의 **모든** 경로 특성은 컨트롤러에 있는 모든 작업에서 특성 라우팅을 사용하게 만듭니다.
 
 > [!NOTE]
-> URL 경로 템플릿과 일치 한 후에 적용 하는 프로세스는 두 가지 유형의 라우팅 시스템을 구별 합니다. 기본 라우팅 경로 값을 일치 하는 모든 규칙에 따른 라우트된 동작의 조회 테이블에서 작업 및 컨트롤러 선택 사용 됩니다. 특성 라우팅을에서 각 템플릿에 이미 연결 되어 작업을 하 고 조회가 없습니다. 더 이상 필요 합니다.
+> 두 라우팅 시스템의 차이는 URL이 경로 템플릿과 일치한 후 적용되는 프로세스입니다. 규칙 기반 라우팅에서는 일치 항목의 경로 값을 사용하여 모든 규칙 기반 라우팅된 작업의 조회 테이블에서 작업 및 컨트롤러를 선택합니다. 특성 라우팅에서 각 템플릿은 이미 작업과 연결되어 있으며, 더 이상의 조회가 필요 없습니다.
 
 <a name="routing-url-gen-ref-label"></a>
 
 ## <a name="url-generation"></a>URL 생성
 
-MVC 응용 프로그램 동작에 대 한 URL 링크를 생성 하 라우팅의 URL 생성 기능을 사용할 수 있습니다. Url을 생성할 보다 강력 하 고 유지 관리 가능한 코드를 작성 하는 하드 코딩 Url을 제거 합니다. 이 섹션 MVC에서 제공 하는 URL 생성 기능을 중점적으로 다루며 URL 생성 작동 하는 방법에 대 한 기본 사항 설명만 합니다. 참조 [라우팅](../../fundamentals/routing.md) 에 대 한 자세한 설명은 URL 생성 합니다.
+MVC 응용 프로그램은 라우팅의 URL 생성 기능을 사용하여 작업에 대한 URL 링크를 생성할 수 있습니다. URL을 생성하면 하드 코딩 URL이 제거되어 코드를 더욱 견고하게 유지할 수 있습니다. 이 섹션에서는 MVC에서 제공하는 URL 생성 기능을 중심으로 기본적인 URL 생성 원리에 대해서만 다룰 것입니다. URL 생성에 대한 자세한 설명은 [라우팅](../../fundamentals/routing.md)을 참조하세요.
 
-`IUrlHelper` 인터페이스는 MVC 및 URL 생성에 대 한 라우팅 사이의 인프라의 기본 부분입니다. 인스턴스를 찾을 수 `IUrlHelper` 를 통해 사용할 수는 `Url` 컨트롤러, 뷰 및 구성 요소 보기에서 속성입니다.
+`IUrlHelper` 인터페이스는 MVC와 URL 생성을 위한 라우팅 사이에 있는 기본 인프라입니다. 컨트롤러, 보기 및 보기 구성 요소의 `Url` 속성을 통해 제공되는 `IUrlHelper` 인스턴스를 찾을 수 있습니다.
 
-이 예제는 `IUrlHelper` 인터페이스를 통해 사용는 `Controller.Url` 다른 작업에 대 한 URL을 생성 하는 속성입니다.
+이 예에서 `IUrlHelper` 인터페이스는 `Controller.Url` 속성을 통해 다른 작업에 대한 URL을 생성하는 데 사용됩니다.
 
 [!code-csharp[Main](routing/sample/main/Controllers/UrlGenerationController.cs?name=snippet_1)]
 
-응용 프로그램에는 규칙에 따른 기본 사용 하는 경우를 라우팅할의 값은 `url` 변수가 URL 경로 문자열 됩니다 `/UrlGeneration/Destination`합니다. 이 URL 경로에 전달 된 값이 포함 된 현재 요청 (앰비언트 값)의 경로 값을 결합 하 여 라우팅에 의해 만들어집니다 `Url.Action` 경로 서식 파일에 해당 값을 대체 합니다.
+응용 프로그램에서 기본 규칙 기반 경로를 사용하는 경우 `url` 변수의 값은 URL 경로 문자열 `/UrlGeneration/Destination`입니다. 이 URL 경로는 현재 요청의 경로 값(앰비언트 값)을 `Url.Action`에 전달된 값과 결합하고 그 값을 경로 템플릿에 대체하여 생성됩니다.
 
 ```
 ambient values: { controller = "UrlGeneration", action = "Source" }
@@ -534,62 +534,62 @@ route template: {controller}/{action}/{id?}
 result: /UrlGeneration/Destination
 ```
 
-각 경로 매개 변수를 경로 템플릿에 일치 하는 이름 값과 앰비언트 값을 사용 하 여 대체 값을 있습니다. 경로 매개 변수 값이 없는 경우 선택 사항이 기는 건너뛸 수 또는 하나, 된 경우 기본값을 사용할 수 (의 경우 마찬가지로 `id` 이 예에서). URL 생성에 필요한 경로 매개 변수가 해당 값이 없는 경우 실패 합니다. 경로 대 한 URL 생성 실패 하면 다음 경로 모든 경로 시도할 때까지 일치 하는 시도 됩니다.
+경로 템플릿에 있는 각 경로 매개 변수의 값은 이름을 값 및 앰비언트 값과 매칭한 값으로 바뀝니다. 값이 없는 경로 매개 변수는 기본값이 있는 경우 기본값을 사용할 수 있고, 값이 선택 사항인 경우 건너뛰어도 됩니다(이 예의 `id`처럼). 필요한 경로 매개 변수에 해당 값이 없는 경우 URL 생성이 실패합니다. 경로에 대한 URL 생성이 실패하면 모든 경로를 시도하거나 일치 항목을 찾을 때까지 그 다음 경로를 시도합니다.
 
-예 `Url.Action` 위에 개념은 다르지만 기존의 라우팅은 하지만 URL 생성 작동 하는 비슷한 특성 라우팅을 가정 합니다. 규칙에 따른 라우팅을 사용 하 여 경로 값 하는 데는 서식 파일 및 경로 값에 대 한 확장 `controller` 및 `action` 일반적으로 라우팅에 의해 일치 되는 Url을 준수 하므로이 작업이 해당 템플릿에-나타날는 *규칙*. 에 대 한 값 경로 특성 라우팅에 `controller` 및 `action` 대신 사용 하는 서식 파일을 조회 하는 데 사용-템플릿에 나타날 수 없습니다.
+위의 `Url.Action` 예에서는 규칙 기반 라우팅으로 가정했습니다. 개념은 다르지만 URL 생성 원리는 특성 라우팅과 비슷합니다. 규칙 기반 라우팅에서 경로 값은 템플릿을 확장하는 데 사용되고, `controller` 및 `action`의 경로 값은 일반적으로 해당 템플릿에 표시됩니다. 라우팅에서 매핑된 URL이 *규칙*을 따르기 때문입니다. 특성 라우팅에서는 `controller` 및 `action`의 경로 값이 템플릿에 표시되지 않는 대신, 사용할 템플릿을 조회하는 데 사용됩니다.
 
-이 예제에서는 특성 라우팅을 사용합니다.
+이 예에서는 특성 라우팅을 사용합니다.
 
 [!code-csharp[Main](routing/sample/main/StartupUseMvc.cs?name=snippet_1)]
 
 [!code-csharp[Main](routing/sample/main/Controllers/UrlGenerationControllerAttr.cs?name=snippet_1)]
 
-MVC 라우팅 특성의 모든 동작의 조회 테이블을 작성 및 일치시킬지는 `controller` 및 `action` 값을 URL 생성에 사용할 경로 템플릿을 선택 합니다. 위의 샘플에서 `custom/url/to/destination` 생성 됩니다.
+MVC는 모든 특성 라우팅 작업의 조회 테이블을 작성하고 `controller` 및 `action` 값을 매칭하여 URL 생성에 사용할 경로 템플릿을 선택합니다. 위의 샘플에서는 `custom/url/to/destination`이 생성됩니다.
 
-### <a name="generating-urls-by-action-name"></a>작업 이름으로 Url을 생성합니다.
+### <a name="generating-urls-by-action-name"></a>작업 이름으로 URL 생성
 
-`Url.Action` (`IUrlHelper` . `Action`)과 관련 된 모든 컨트롤러 이름과 작업 이름을 지정 하 여 연결할 무엇을 지정 하려면 해당 아이디어를 기반으로 모든 오버 로드 합니다.
+`Url.Action`(`IUrlHelper`. `Action`) 및 모든 관련 오버로드는 개발자가 컨트롤러 이름과 작업 이름을 지정하여 연결 대상을 지정하려 한다는 생각을 바탕으로 합니다.
 
 > [!NOTE]
-> 사용 하는 경우 `Url.Action`, 현재 경로 대 한 값 `controller` 및 `action` 있습니다-의 값에 대해 지정 된 `controller` 및 `action` 둘 다의 일부인 *앰비언트 값* **및** *값*합니다. 메서드가 `Url.Action`, 항상의 현재 값을 사용 하 여 `action` 및 `controller` 현재 작업에 라우트하는 URL 경로 생성 합니다.
+> `Url.Action`을 사용하면 `controller` 및 `action`의 현재 경로 값이 자동으로 지정됩니다. `controller` 및 `action`의 값은 *앰비언트 값* **및** *값*의 일부입니다. `Url.Action` 메서드는 항상 `action` 및 `controller`의 현재 값을 사용하며 현재 작업에 라우팅하는 URL 경로를 생성합니다.
 
-라우팅 URL을 생성 하는 경우를 지정 하지 않은 정보를 입력 앰비언트 값에서 값을 사용 하려고 합니다. 와 같은 경로 사용 하 여 `{a}/{b}/{c}/{d}` 및 앰비언트 값 `{ a = Alice, b = Bob, c = Carol, d = David }`, 충분 한 정보가 추가 값이 없는 URL을 생성 하는 바가-모든 경로 매개 변수는 값입니다. 값을 추가한 경우 `{ d = Donovan }`, 값 `{ d = David }` 는 무시 하 고 생성 된 URL 경로 `Alice/Bob/Carol/Donovan`합니다.
+라우팅에서는 앰비언트 값의 값을 사용하여 개발자가 URL을 생성할 때 제공하지 않은 정보를 채웁니다. `{a}/{b}/{c}/{d}` 같은 경로와 `{ a = Alice, b = Bob, c = Carol, d = David }` 앰비언트 값을 사용하면 모든 경로 매개 변수가 값을 갖기 때문에 추가 값이 없어도 라우팅에서 URL을 생성하기에 충분한 정보가 제공됩니다. `{ d = Donovan }` 값을 추가하면 `{ d = David }` 값이 무시되고 `Alice/Bob/Carol/Donovan` URL 경로가 생성됩니다.
 
 > [!WARNING]
-> URL 경로 계층적입니다. 위의 예에서에서 값 추가 `{ c = Cheryl }`, 두 값 모두 `{ c = Carol, d = David }` 가 무시 됩니다. 이 경우에 없는 값에 대 한 `d` 및 URL 생성에 실패 합니다. 원하는 값을 지정 해야 `c` 및 `d`합니다.  기본 경로와이 문제가 발생 하는 데 하려는 경우가 있습니다 (`{controller}/{action}/{id?}`)-이 동작으로 실제로 거의 하지만 `Url.Action` 항상 명시적으로 지정 됩니다는 `controller` 및 `action` 값입니다.
+> URL 경로는 계층적입니다. 위의 예에서 `{ c = Cheryl }` 값을 추가하면 두 `{ c = Carol, d = David }` 값이 모두 무시됩니다. 이 경우 `d`의 값이 없기 때문에 URL 생성이 실패합니다. 원하는 `c` 및 `d` 값을 지정해야 합니다.  기본 경로(`{controller}/{action}/{id?}`)를 사용해도 이 문제가 발생할 가능성은 있지만, `Url.Action`이 항상 `controller` 및 `action` 값을 명시적으로 지정하기 때문에 실제로 이 동작이 발생하는 경우는 극히 드뭅니다.
 
-오버 로드는 더 긴 `Url.Action` 추가 수행할 수도 *경로 값* 아닌 다른 경로 매개 변수의 값을 제공 하는 개체 `controller` 및 `action`합니다. 표시 됩니다. 가장 일반적으로 함께 사용할 `id` 같은 `Url.Action("Buy", "Products", new { id = 17 })`합니다. 일반적으로는 *경로 값* 개체는 일반적으로 익명 형식의 개체 하지만 수도 있습니다는 `IDictionary<>` 또는 *일반 이전.NET 개체*합니다. 경로 매개 변수에 일치 하지 않는 모든 추가 경로 값은 쿼리 문자열에 저장 됩니다.
+또한 `Url.Action` 오버로드가 길면 `controller` 및 `action`이 아닌 경로 매개 변수의 값을 제공하기 위해 추가 *경로 값* 개체가 사용됩니다. `Url.Action("Buy", "Products", new { id = 17 })`처럼 `id`와 함께 사용되는 것을 흔히 볼 수 있습니다. 관례상 *경로 값* 개체는 일반적으로 무명 형식의 개체지만, `IDictionary<>` 또는 *오래된 일반 .NET 개체*일 수도 있습니다. 경로 매개 변수와 일치하지 않는 추가 경로 값은 쿼리 문자열에 포함됩니다.
 
 [!code-csharp[Main](routing/sample/main/Controllers/TestController.cs)]
 
 > [!TIP]
-> 절대 URL을 만들려면 사용을 허용 하는 오버 로드는 `protocol`:`Url.Action("Buy", "Products", new { id = 17 }, protocol: Request.Scheme)`
+> 절대 URL을 만들려면 `protocol`: `Url.Action("Buy", "Products", new { id = 17 }, protocol: Request.Scheme)`를 수락하는 오버로드를 사용합니다.
 
 <a name="routing-gen-urls-route-ref-label"></a>
 
-### <a name="generating-urls-by-route"></a>Url 경로 의해 생성
+### <a name="generating-urls-by-route"></a>경로로 URL 생성
 
-위의 코드 설명 컨트롤러 및 작업 이름 전달 하 여 URL을 생성 합니다. `IUrlHelper`또한 제공 된 `Url.RouteUrl` 메서드 패밀리를 합니다. 이러한 메서드는 비슷합니다 `Url.Action`의 현재 값을 복사 하지 않는 있지만 `action` 및 `controller` 경로 값을 합니다. 일반적으로 URL을 생성 하는 특정 경로 사용 하는 경로 이름을 지정 하는 가장 일반적인 사용 *없이* 컨트롤러나 작업 이름을 지정 합니다.
+위의 코드에서는 컨트롤러 및 작업 이름을 전달하여 URL을 생성하는 방법을 보여주었습니다. `IUrlHelper`는 메서드 `Url.RouteUrl` 패밀리도 제공합니다. 이 메서드는 `Url.Action`과 비슷하지만, `action` 및 `controller`의 현재 값을 경로 값에 복사하지 않습니다. 가장 일반적인 사용법은 특정 경로를 사용하여 URL을 생성하도록 경로 이름을 지정하는 것이며, 일반적으로 컨트롤러 또는 작업 이름을 지정하지 *않습니다*.
 
 [!code-csharp[Main](routing/sample/main/Controllers/UrlGenerationControllerRouting.cs?name=snippet_1)]
 
 <a name="routing-gen-urls-html-ref-label"></a>
 
-### <a name="generating-urls-in-html"></a>HTML에 Url을 생성합니다.
+### <a name="generating-urls-in-html"></a>HTML에서 URL 생성
 
-`IHtmlHelper`제공 된 `HtmlHelper` 메서드 `Html.BeginForm` 및 `Html.ActionLink` 생성 하 `<form>` 및 `<a>` 요소 각각. 이러한 메서드를 사용 하 여는 `Url.Action` 는 URL을 생성 하는 메서드 비슷한 인수를 수락 합니다. `Url.RouteUrl` 보조 도구에 대 한 `HtmlHelper` 는 `Html.BeginRouteForm` 및 `Html.RouteLink` 충족 하는 유사한 기능을 합니다.
+`IHtmlHelper`는 각각 `<form>` 및 `<a>` 요소를 생성하는 `HtmlHelper` 메서드 `Html.BeginForm` 및 `Html.ActionLink`를 제공합니다. 이러한 메서드는 `Url.Action` 메서드를 사용하여 URL을 생성하며 비슷한 인수를 수락합니다. `HtmlHelper`에 대한 `Url.RouteUrl` 보조 도구는 `Html.BeginRouteForm` 및 `Html.RouteLink`이며 서로 기능이 비슷합니다.
 
-TagHelpers Url을 통해 생성 된 `form` TagHelper 및 `<a>` TagHelper 합니다. 둘 다 사용 하 여 `IUrlHelper` 의 구현에 대 한 합니다. 참조 [양식 작업](../views/working-with-forms.md) 자세한 정보에 대 한 합니다.
+TagHelper는 `form` TagHelper 및 `<a>` TagHelper를 통해 URL을 생성합니다. 둘 다 구현에 `IUrlHelper`를 사용합니다. 자세한 내용은 [양식 작업](../views/working-with-forms.md)을 참조하세요.
 
-뷰 내에서 `IUrlHelper` 를 통해 사용할 수는 `Url` 위의에서 포함 하지 않는 모든 임시 URL 생성에 대 한 속성.
+보기 내에서, `IUrlHelper`는 위에서 다루지 않은 임시 URL 생성에 대한 `Url` 속성을 통해 사용할 수 있습니다.
 
 <a name="routing-gen-urls-action-ref-label"></a>
 
-### <a name="generating-urls-in-action-results"></a>작업 결과에 URL을 생성합니다.
+### <a name="generating-urls-in-action-results"></a>작업 결과에 URL 생성
 
-위 예제를 사용 하 여 이루었습니다 `IUrlHelper` 는 컨트롤러의 가장 일반적인 사용 하는 작업 결과의 일부분으로 URL을 생성 하는 동안에 컨트롤러에 있습니다.
+위의 예에서는 컨트롤러에 `IUrlHelper`를 사용하는 방법을 보여주었으며, 컨트롤러에서 가장 일반적인 사용법은 URL을 작업 결과의 일부로 생성하는 것입니다.
 
-`ControllerBase` 및 `Controller` 기본 클래스는 다른 작업을 참조 하는 작업 결과 대 한 편의 메서드를 제공 합니다. 하나의 일반적인 사용법은 사용자 입력을 적용 하면 리디렉션됩니다.
+`ControllerBase` 및 `Controller` 기본 클래스는 다른 작업을 참조하는 작업 결과에 대한 편의 메서드를 제공합니다. 한 가지 일반적인 사용법은 사용자 입력을 수락한 후 리디렉션하는 것입니다.
 
 ```csharp
 public Task<IActionResult> Edit(int id, Customer customer)
@@ -602,13 +602,13 @@ public Task<IActionResult> Edit(int id, Customer customer)
 }
 ```
 
-작업 결과 팩터리 메서드는 메서드는 유사한 패턴에 따라 `IUrlHelper`합니다.
+작업 결과 팩터리 메서드는 `IUrlHelper`의 메서드와 비슷한 패턴을 따릅니다.
 
 <a name="routing-dedicated-ref-label"></a>
 
-### <a name="special-case-for-dedicated-conventional-routes"></a>전용된 기본 경로 대 한 특별 한 경우
+### <a name="special-case-for-dedicated-conventional-routes"></a>전용 규칙 기반 경로의 특별한 사례
 
-기존의 라우팅은 라고 하는 경로 정의의 특별 한 종류를 사용할 수는 *전용된 규칙에 따른 경로*합니다. 아래 예제에서는 경로 이름은 `blog` 는 전용된 규칙에 따른 경로입니다.
+규칙 기반 라우팅은 *전용 규칙 기반 경로*라고 하는 특별한 경로 정의를 사용할 수 있습니다. 아래 예에서, `blog` 경로는 전용 규칙 기반 경로입니다.
 
 ```csharp
 app.UseMvc(routes =>
@@ -619,34 +619,34 @@ app.UseMvc(routes =>
 });
 ```
 
-이러한 경로 정의 사용 하 여 `Url.Action("Index", "Home")` URL 경로가 생성 됩니다 `/` 와 `default` 이유 하지만 경로? 경로 값을 추측할 수 `{ controller = Home, action = Index }` 사용 될 수는 URL을 생성할 수 있을 만큼 `blog`, 하 고 결과 `/blog?action=Index&controller=Home`합니다.
+이러한 경로 정의를 사용하면 `Url.Action("Index", "Home")`에서 `default` 경로를 사용하여 URL 경로 `/`를 생성합니다. 그런데 그 이유는 무엇일까요? `{ controller = Home, action = Index }` 경로 값이면 `blog`를 사용하여 URL을 생성하기에 충분하고, 그 결과는 `/blog?action=Index&controller=Home`가 될 것이라 추측할 수 있습니다.
 
-규칙에 따른 전용된 경로 해당 경로 되지 않도록 하는 경로 매개 변수 없는 기본 값의 특별 한 동작에 의존 "너무 greedy"으로 URL 생성 합니다. 이 경우에 기본값은 `{ controller = Blog, action = Article }`, 않으며 `controller` 나 `action` 경로 매개 변수도 나타납니다. 라우팅 URL 생성을 수행할 때 제공 된 값 기본 값이 일치 해야 합니다. 사용 하 여 URL 생성 `blog` 실패 하 게 값 `{ controller = Home, action = Index }` 일치 하지 않습니다. `{ controller = Blog, action = Article }`합니다. 시도로 대체 다음 라우팅 `default`, 성공입니다.
+전용 규칙 기반 경로는 URL 생성과 관련하여 경로의 "지나친 욕심"을 방지하는 해당 경로 매개 변수가 없는 기본 값의 특별한 동작을 사용합니다. 이 예에서 기본값은 `{ controller = Blog, action = Article }`이고, `controller` 및 `action`이 경로 매개 변수로 표시되지 않습니다. 라우팅에서 URL 생성을 수행할 때 입력한 값이 기본값과 일치해야 합니다. `{ controller = Home, action = Index }` 값이 `{ controller = Blog, action = Article }`과 일치하지 않기 때문에 `blog`를 사용한 URL 생성은 실패합니다. 그 후 라우팅이 `default`로 대체되고, 이것은 성공합니다.
 
 <a name="routing-areas-ref-label"></a>
 
 ## <a name="areas"></a>영역
 
-[영역](areas.md) 는 별도 라우팅-네임 스페이스 (예: 컨트롤러 동작) 및 (views)에 대 한 폴더 구조 그룹으로 관련된 기능을 구성 하는 데 사용 되는 MVC 기능입니다. 영역을 사용 하면 같은 이름의 컨트롤러가 여러 개 있는에 응용 프로그램으로 서로 다른 *영역*합니다. 영역을 사용 하 여 다른 경로 매개 변수를 추가 하 여 라우팅 목적으로 계층 구조를 만듭니다 `area` 를 `controller` 및 `action`합니다. 라우팅와 상호 작용 방법 영역-이 섹션에 설명 합니다 참조 [영역](areas.md) 영역 보기와 사용 방법에 대 한 세부 정보에 대 한 합니다.
+[영역](areas.md)은 관련 기능을 별도의 라우팅-네임스페이스(컨트롤러 작업용) 및 폴더 구조(보기용)로 그룹화하는 데 사용되는 MVC 기능입니다. 영역을 사용하면 컨트롤러의 *영역*이 서로 다른 한, 응용 프로그램 하나에 이름이 같은 컨트롤러를 여러 개 사용할 수 있습니다. 영역을 사용하면 다른 경로 매개 변수 `area`를 `controller` 및 `action`에 추가하여 라우팅을 위한 계층 구조가 생성됩니다. 이 섹션에서는 라우팅이 영역과 상호 작용하는 방법을 설명합니다. 보기에 영역을 사용하는 자세한 방법은 [영역](areas.md)을 참조하세요.
 
-다음 예제에서는 구성 기본 규칙에 따른 경로 사용 하는 MVC 및 *영역 경로* 명명 된 영역에 대 한 `Blog`:
+다음 예에서는 `Blog`라는 영역에 기본 규칙 기반 경로와 *영역 경로*를 사용하도록 MVC를 구성합니다.
 
 [!code-csharp[Main](routing/sample/AreasRouting/Startup.cs?name=snippet1)]
 
-과 같은 URL 경로 일치 시킬 때 `/Manage/Users/AddUser`, 첫 번째 경로 경로 값이 생성 됩니다 `{ area = Blog, controller = Users, action = AddUser }`합니다. `area` 여에 대 한 기본값을 경로 값이 생성 `area`, 사실에서 만든 경로 `MapAreaRoute` 다음과 같습니다.
+`/Manage/Users/AddUser` 같은 URL 경로를 매칭할 때, 첫 번째 경로는 `{ area = Blog, controller = Users, action = AddUser }` 경로 값을 생성합니다. `area` 경로 값은 `area`의 기본값을 사용하여 생성되며, 사실 `MapAreaRoute`를 통해 생성되는 경로는 다음과 같습니다.
 
 [!code-csharp[Main](routing/sample/AreasRouting/Startup.cs?name=snippet2)]
 
-`MapAreaRoute`기본값 및 제약 조건을 사용 하 여 경로 만듭니다 `area` 이 경우 제공 된 영역 이름을 사용 하 여 `Blog`합니다. 기본 값을 입력 하면 경로 항상 생성 `{ area = Blog, ... }`, 제약 조건 값이 필요한 `{ area = Blog, ... }` URL 생성에 대 한 합니다.
+`MapAreaRoute`는 입력된 영역 이름을 사용하는 `area`의 기본값 및 제약 조건을 모두 사용하는 경로로, 이 예에서는 `Blog`입니다. 기본값은 경로가 항상 `{ area = Blog, ... }`를 생성하게 하고, 제약 조건은 URL 생성을 위한 `{ area = Blog, ... }` 값이 필요합니다.
 
 > [!TIP]
-> 기존의 라우팅은 순서가 중요 합니다. 일반적으로 경로 영역에 배치 해야 경로 테이블의 앞부분에 나오는 영역 없이 경로 보다 더 구체적인 하기가 합니다.
+> 규칙 기반 라우팅은 순서를 따릅니다. 일반적으로 영역이 있는 경로는 영역이 없는 경로에 비해 구체적이기 때문에 경로 테이블의 앞부분에 배치되어야 합니다.
 
-위의 예제를 사용 하 여 경로 값 다음 동작과 일치 합니다.
+위의 예제를 사용하면 경로 값이 다음 작업과 매칭됩니다.
 
 [!code-csharp[Main](routing/sample/AreasRouting/Areas/Blog/Controllers/UsersController.cs)]
 
-`AreaAttribute` 어떤 나타냅니다는 컨트롤러는 영역의 일환으로,이 컨트롤러 인지 테는 `Blog` 영역입니다. 없는 컨트롤러는 `[Area]` 영역으로의 구성원이 아닌 특성과 됩니다 **하지** 일치 하는 경우는 `area` 라우팅하여 경로 값을 제공 합니다. 다음 예제에서는 나열 된 첫 번째 컨트롤러에 경로 값과 일치 수 `{ area = Blog, controller = Users, action = AddUser }`합니다.
+`AreaAttribute`는 컨트롤러를 영역의 일부로 나타내며, 이때 이 컨트롤러가 `Blog` 영역에 있다고 표현합니다. `[Area]` 특성이 없는 컨트롤러는 어떤 영역의 구성원도 아니며, 라우팅에서 `area` 경로 값을 제공해도 매칭되지 **않습니다**. 다음 예에서는 나열된 첫 번째 컨트롤러만 `{ area = Blog, controller = Users, action = AddUser }` 경로 값과 매칭됩니다.
 
 [!code-csharp[Main](routing/sample/AreasRouting/Areas/Blog/Controllers/UsersController.cs)]
 
@@ -655,14 +655,14 @@ app.UseMvc(routes =>
 [!code-csharp[Main](routing/sample/AreasRouting/Controllers/UsersController.cs)]
 
 > [!NOTE]
-> 완전성을 위해 각 컨트롤러의 네임 스페이스는 여기에 표시 하는-그렇지 않으면 컨트롤러 갖기 명명 충돌 및 컴파일러 오류가 발생 합니다. 클래스의 네임 스페이스에 MVC의 라우팅 효과가 없습니다.
+> 각 컨트롤러의 네임스페이스는 완전성을 위해 여기에 사용되었습니다. 네임스페이스가 없으면 컨트롤러에서 이름 충돌이 발생하고 컴파일러 오류가 생성됩니다. 클래스 네임스페이스는 MVC의 라우팅에 영향을 주지 않습니다.
 
-처음 두 명의 컨트롤러 영역의 구성원이 며 해당 해당 영역 이름을 제공 하는 경우에 일치는 `area` 값 라우팅합니다. 세 번째 컨트롤러에는 모든 영역과 수 있는 유일한 일치에 대 한 값이 없는 경우의 구성원이 아닙니다 `area` 라우팅에 의해 제공 됩니다.
+처음 두 컨트롤러는 영역의 구성원이며, `area` 경로 값에서 해당 영역 이름을 제공하는 경우에만 매칭됩니다. 세 번째 컨트롤러는 어떤 영역의 구성원도 아니며, 라우팅에서 `area`에 대한 값을 제공하지 않을 때에만 매칭됩니다.
 
 > [!NOTE]
-> 일치를 기준으로 *값이 없는*, 없는 경우는 `area` 값은 동일 처럼 값에 대 한 `area` null 또는 빈 문자열입니다.
+> *값 없음* 매칭에서 `area` 값이 없는 것은 `area`의 값이 null 또는 빈 문자열인 경우와 동일합니다.
 
-경로 대 한 값 영역 내에서 동작을 실행할 때는 `area` 을으로 사용할 수는 *앰비언트 값* URL 생성에 사용할 라우팅에 대 한 합니다. 즉, 기본적으로 영역 헤드 하도록 *스티커* 다음 샘플에 표시 된 대로 URL 생성에 대 한 합니다.
+영역 내에서 작업을 실행하면 `area`의 경로 값은 라우팅에서 URL을 생성하는 데 사용되는 *앰비언트 값*으로 제공됩니다. 즉, 기본적으로 영역은 다음 샘플에서 볼 수 있듯이 URL 생성을 위한 *sticky* 역할을 합니다.
 
 [!code-csharp[Main](routing/sample/AreasRouting/Startup.cs?name=snippet3)]
 
@@ -673,9 +673,9 @@ app.UseMvc(routes =>
 ## <a name="understanding-iactionconstraint"></a>IActionConstraint 이해
 
 > [!NOTE]
-> 이 섹션은 프레임 워크 내부 구조 및 MVC 실행 하는 작업을 선택 하는 방법에 심층적입니다. 일반적인 응용 프로그램에 사용자 지정 필요 하지는 않습니다.`IActionConstraint`
+> 이 섹션에서는 프레임워크의 내부 구조 및 MVC가 실행할 작업을 선택하는 원리를 자세히 알아보겠습니다. 일반적인 응용 프로그램에는 사용자 지정 `IActionConstraint`가 필요 없습니다.
 
-이미 사용 가능성이 `IActionConstraint` 인터페이스와 모르는 경우에 합니다. `[HttpGet]` 특성 및 유사한 항목과 `[Http-VERB]` 특성 구현 `IActionConstraint` 작업 메서드의 실행은 가급적 제한 하기 위해 합니다.
+인터페이스에 익숙하지 않은 분들도 이미 `IActionConstraint`를 사용해 보셨을 것입니다. `[HttpGet]` 특성 그리고 그와 비슷한 `[Http-VERB]` 특성은 `IActionConstraint`를 구현하여 작업 메서드 실행을 제한합니다.
 
 ```csharp
 public class ProductsController : Controller
@@ -687,19 +687,19 @@ public class ProductsController : Controller
 }
 ```
 
-기본 규칙에 따른 경로 URL 경로 가정 `/Products/Edit` 값을 생성 합니다 `{ controller = Products, action = Edit }`, 일치는 **둘 다** 여기에 표시 된 작업 중입니다. `IActionConstraint` 용어 것 말할 후보-하는 것은 두이 작업은 모두 일치 하는 경로 데이터입니다.
+기본 규칙 기반 경로를 사용한다고 가정할 때, URL 경로 `/Products/Edit`는 여기에 보이는 두 작업을 **모두** 매칭하는 `{ controller = Products, action = Edit }` 값을 생성합니다. `IActionConstraint` 용어에서는 두 작업이 경로 데이터와 매칭되므로 두 작업을 후보로 간주합니다.
 
-때는 `HttpGetAttribute` 실행 되 면 그에 해당 내용이 명시 *Edit()* 에 대 한 일치 하는 항목이 *가져오기* 와 다른 HTTP 동사에 대 한 일치 하는 항목이 없습니다. `Edit(...)` 작업 정의 된 모든 제약 조건이 없는 경우 및 되므로 모든 HTTP 동사를 일치 됩니다. 따라서 가정는 `POST` -만 `Edit(...)` 일치 합니다. 그러나 하지만 대 한는 `GET` 두 가지 동작 모두과 일치할 수 있습니다-작업과 `IActionConstraint` 항상 간주 *더 나은* 하지 않고 작업 보다 합니다. 따라서 때문에 `Edit()` 가 `[HttpGet]` 보다 구체적인으로 간주 하 고 두 가지 동작 수와 일치 하는 경우 선택 됩니다.
+`HttpGetAttribute`가 실행되면 *Edit()*는 *GET*의 일치 항목이지만 다른 HTTP 동사의 일치 항목은 아닙니다. `Edit(...)` 작업은 정의된 제약 조건이 없으므로 모든 HTTP 동사와 매칭됩니다. 따라서 `POST`를 가정하면 `Edit(...)`만 일치합니다. 하지만 `GET`의 경우 두 작업이 여전히 매칭될 수 있지만, `IActionConstraint`가 포함된 작업은 포함되지 않은 작업보다 항상 *더 좋은* 것으로 간주됩니다. 따라서 `Edit()`에는 `[HttpGet]`가 있으므로 보다 구체적인 것으로 간주되며, 두 작업이 매칭될 수 있는 경우에 선택됩니다.
 
-개념적으로 `IActionConstraint` 는 형태의 *오버 로드*, 하지만 동일한 URL 일치 하는 작업 간 오버은 동일한 이름 가진 메서드를 오버 로드를 대신 합니다. 또한 특성 라우팅을 사용 하 여 `IActionConstraint` 모두 고려 하 고 후보 다른 컨트롤러에서 작업에서 발생할 수 있습니다.
+`IActionConstraint`는 개념적으로는 *오버로딩* 형태지만, 메서드를 같은 이름으로 오버로딩하는 대신, 동일한 URL을 매칭하는 작업 사이에서 오버로딩합니다. 특성 라우팅에서도 `IActionConstraint`를 사용하며, 다른 두 컨트롤러의 작업이 후보로 간주될 수 있습니다.
 
 <a name="iactionconstraint-impl-ref-label"></a>
 
 ### <a name="implementing-iactionconstraint"></a>IActionConstraint 구현
 
-구현 하는 가장 간단한 방법은 `IActionConstraint` 에서 파생 된 클래스를 만드는 `System.Attribute` 작업 및 컨트롤러에 배치 합니다. MVC이 자동으로 검색 된 `IActionConstraint` 특성으로 적용 되는 합니다. 응용 프로그램 모델을 사용 하 여 제약 조건 적용 및 즉 아마도 가장 융통성이 높은 방법은 metaprogram 어떻게 적용 될 수 있습니다.
+`IActionConstraint`를 구현하는 가장 간단한 방법은 `System.Attribute`에서 파생된 클래스를 만들어서 작업 및 컨트롤러에 배치하는 것입니다. MVC는 특성으로 적용된 `IActionConstraint`를 자동으로 검색합니다. 응용 프로그램 모델을 사용하여 제약 조건을 적용할 수 있으며, 제약 조건이 적용되는 방식을 개발자가 메타프로그래밍할 수 있는 가장 유연한 접근 방식일 것입니다.
 
-다음 예제는 제약 조건에 따라 작업을 선택는 *국가 코드* 에서 경로 데이터입니다. [GitHub에서 전체 샘플](https://github.com/aspnet/Entropy/blob/dev/samples/Mvc.ActionConstraintSample.Web/CountrySpecificAttribute.cs)합니다.
+다음 예의 제약 조건은 경로 데이터의 *국가 코드*를 기반으로 작업을 선택합니다. [GitHub의 전체 샘플](https://github.com/aspnet/Entropy/blob/dev/samples/Mvc.ActionConstraintSample.Web/CountrySpecificAttribute.cs).
 
 ```csharp
 public class CountrySpecificAttribute : Attribute, IActionConstraint
@@ -729,9 +729,9 @@ public class CountrySpecificAttribute : Attribute, IActionConstraint
 }
 ```
 
-구현 해야 하는 `Accept` 메서드와 'Order' 제약 조건에 대 한 실행 하려면 선택 합니다. 이 경우는 `Accept` 메서드가 반환 되 `true` 를 일치 하는 항목을 마우스 오른쪽 단추로 동작은 나타내는 때는 `country` 값 일치 항목을 라우팅합니다. 이 다른는 `RouteValueAttribute` 대체 특성을 사용 비에서 수행한 작업을 허용 하 합니다. 이 샘플을 보여 줍니다 정의 하는 경우는 `en-US` 작업 후 같은 국가 코드 `fr-FR` 없는 하는 보다 일반적인 컨트롤러도 대체 됩니다 `[CountrySpecific(...)]` 적용 합니다.
+개발자는 `Accept` 메서드를 구현하고 제약 조건이 실행되는 '순서'를 지정해야 합니다. 이 예에서 `Accept` 메서드는 `country` 경로 값이 일치하면 작업이 일치한다는 것을 나타내기 위해 `true`를 반환합니다. 비-특성 작업으로 대체할 수 있다는 점에서 `RouteValueAttribute`와 다릅니다. 이 샘플은 `en-US` 작업을 정의하면 `fr-FR` 같은 국가 코드는 `[CountrySpecific(...)]`이 적용되지 않은 보다 일반적인 컨트롤러로 대체되는 것을 보여줍니다.
 
-`Order` 속성 결정 *단계* 제약 조건의 일부입니다. 액션 제약 조건에 따라 그룹에서 실행 된 `Order`합니다. 예를 들어 프레임 워크의 모든 제공 된 HTTP 메서드 특성을 사용 하 여 동일한 `Order` 값 단계에서 실행할 수 있도록 합니다. 원하는 정책을 구현 하는 데 필요한 만큼 많은 단계를 포함할 수 있습니다.
+`Order` 속성은 제약 조건이 소속되는 *단계*를 결정합니다. 작업 제약 조건은 `Order`에 따라 그룹으로 실행됩니다. 예를 들어 프레임워크에서 제공하는 모든 HTTP 메서드 특성은 같은 단계에서 실행될 수 있도록 동일한 `Order` 값을 사용합니다. 원하는 정책을 구현하는 데 필요한 만큼 단계를 포함할 수 있습니다.
 
 > [!TIP]
-> 에 대 한 값을 결정 하려면 `Order` HTTP 메서드보다 먼저 제약 조건 적용 해야 할지 여부에 대해 고려 합니다. 숫자가 낮을수록 먼저 실행 됩니다.
+> `Order`에 대한 값을 결정하려면 HTTP 메서드보다 제약 조건을 먼저 적용해야 하는지 생각해야 합니다. 숫자가 낮을수록 먼저 실행됩니다.

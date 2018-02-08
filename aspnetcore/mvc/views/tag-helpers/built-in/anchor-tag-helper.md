@@ -1,27 +1,27 @@
 ---
-title: "앵커 태그 도우미 | Microsoft Docs"
+title: "ASP.NET Core의 앵커 태그 도우미"
 author: pkellner
-description: "앵커 태그 도우미를 사용 하는 방법을 보여 줍니다."
-ms.author: riande
+description: "앵커 태그 도우미 사용 방법 소개"
 manager: wpickett
+ms.author: riande
 ms.date: 12/20/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: aspnet-core
+ms.technology: aspnet
+ms.topic: article
 uid: mvc/views/tag-helpers/builtin-th/anchor-tag-helper
-ms.openlocfilehash: 74609b515936ec7da8bfc133c27cb69f51311924
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
-ms.translationtype: MT
+ms.openlocfilehash: 404fc7bc3b35114066f035e1ac28d10a8279ccbc
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 01/30/2018
 ---
 # <a name="anchor-tag-helper"></a>앵커 태그 도우미
 
 작성자: [Peter Kellner](http://peterkellner.net) 
 
-앵커 태그 도우미 향상 HTML 앵커 (`<a ... ></a>`) 새 특성을 추가 하 여는 태그입니다. 생성 된 링크 (에 `href` 태그) 새 특성을 사용 하 여 만들어집니다. 해당 URL에 https와 같은 선택적 프로토콜은 포함할 수 있습니다.
+앵커 태그 도우미는 새 특성을 추가하여 HTML 앵커(`<a ... ></a>`) 태그를 강화합니다. 생성되는(`href` 태그에서) 링크는 새 특성을 사용하여 만들어집니다. 해당 URL은 https 같은 선택적 프로토콜을 포함할 수 있습니다.
 
-다음 스피커 컨트롤러는이 문서에는 샘플에서 사용 됩니다.
+아래의 스피커 컨트롤러는 이 문서의 샘플에 사용됩니다.
 
 **SpeakerController.cs** 
 
@@ -32,19 +32,19 @@ ms.lasthandoff: 01/24/2018
 
 ### <a name="asp-controller"></a>asp-controller
 
-`asp-controller`URL을 생성 하는 컨트롤러를 연결 하는 데 사용 됩니다. 지정 된 컨트롤러는 현재 프로젝트에 존재 해야 합니다. 다음 코드는 모든 스피커를 나열합니다. 
+`asp-controller`는 URL을 생성하는 데 사용할 컨트롤러를 연결하는 데 사용됩니다. 지정된 컨트롤러가 현재 프로젝트에 있어야 합니다. 다음 코드는 모든 스피커를 나열합니다. 
 
 ```cshtml
 <a asp-controller="Speaker" asp-action="Index">All Speakers</a>
 ```
 
-생성된 된 태그가 됩니다.
+생성된 태그는 다음과 같습니다.
 
 ```html
 <a href="/Speaker">All Speakers</a>
 ```
 
-경우는 `asp-controller` 지정 및 `asp-action` 하지 않으면 기본 `asp-action` 현재 실행 중인 뷰의 기본 컨트롤러 메서드가 됩니다. 위 예에서 경우 `asp-action` 생략이 앵커 태그 도우미에서 생성 되 고 *HomeController*의 `Index` 보기 (**/홈**), 생성된 된 태그 됩니다:
+`asp-controller`를 지정하고 `asp-action`을 지정하지 않으면 기본 `asp-action`이 현재 실행 중인 보기의 기본 컨트롤러 메서드가 됩니다. 즉, 위의 예에서 `asp-action`을 생략하면 이 앵커 태그 도우미는 *HomeController*의 `Index` 보기(**/Home**)에서 생성되고, 생성된 태그는 다음과 같습니다.
 
 ```html
 <a href="/Home">All Speakers</a>
@@ -52,56 +52,56 @@ ms.lasthandoff: 01/24/2018
 
 ### <a name="asp-action"></a>asp-action
 
-`asp-action`포함할 컨트롤러의 동작 메서드의 이름으로 생성 된 `href`합니다. 예를 들어 다음 코드는 생성 된 설정 `href` 스피커 세부 정보 페이지를 가리키도록 합니다.
+`asp-action`은 생성되는 `href`에 포함할 컨트롤러의 작업 메서드 이름입니다. 예를 들어 다음 코드는 생성된 `href`가 스피커 세부 정보 페이지를 가리키도록 설정합니다.
 
 ```html
 <a asp-controller="Speaker" asp-action="Detail">Speaker Detail</a>
 ```
 
-생성된 된 태그가 됩니다.
+생성된 태그는 다음과 같습니다.
 
 ```html
 <a href="/Speaker/Detail">Speaker Detail</a>
 ```
 
-되지 않은 경우 `asp-controller` 특성 지정, 호출 현재 뷰를 실행 하는 보기 기본 컨트롤러가 사용 됩니다.  
+`asp-controller` 특성을 지정하지 않으면 현재 보기를 실행 중인 보기를 호출하는 기본 컨트롤러가 사용됩니다.  
  
-경우 특성 `asp-action` 은 `Index`, 아무 작업도 앞에 기본 URL에 추가 됩니다 `Index` 메서드를 호출 합니다. 작업이 지정 된 (또는 기본 설정)에서 참조 되는 컨트롤러에 있어야 `asp-controller`합니다.
+`asp-action` 특성이 `Index`이면 URL에 아무 작업도 추가되지 않고, 기본 `Index` 메서드가 호출됩니다. 지정된(또는 기본값으로 설정된) 작업은 `asp-controller`에서 참조되는 컨트롤러에 있어야 합니다.
 
 ### <a name="asp-page"></a>asp-page
 
-사용 하 여는 `asp-page` 특정 페이지를 가리키도록 해당 URL을 설정 하는 앵커 태그의 특성입니다. 슬래시를 사용 하 여 페이지 이름을 접두사로 사용 "/" URL을 만듭니다. 현재 디렉터리에 "스피커" 페이지를 가리키고 아래의 예제에 대 한 URL입니다.
+앵커 태그에 `asp-page` 특성을 사용하여 특정 페이지를 가리키도록 URL을 설정합니다. 페이지 이름에 슬래시("/")를 접두사로 사용하여 URL을 만듭니다. 아래 샘플의 URL은 현재 디렉터리의 "스피커" 페이지를 가리킵니다.
 
 ```cshtml
 <a asp-page="/Speakers">All Speakers</a>
 ```
 
-`asp-page` 특성 앞의 코드 예제에 다음 코드 조각에서와 비슷한 뷰에서 HTML 출력을 렌더링 합니다.
+이전 코드 샘플의 `asp-page` 특성은 보기에서 다음 코드 조각과 비슷한 HTML 출력을 렌더링합니다.
 
 ```html
 <a href="/items?page=%2FSpeakers">Speakers</a>
 ```
 
-`asp-page` 특성은 함께 사용할 수 없습니다는 `asp-route`, `asp-controller`, 및 `asp-action` 특성입니다. 그러나 `asp-page` 와 함께 사용할 수 `asp-route-id` 다음 코드 샘플에서 보여 주듯이 라우팅을 제어할 수 있습니다.
+`asp-page` 특성은 `asp-route`, `asp-controller` 및 `asp-action` 특성과 함께 사용할 수 없습니다. 그러나 다음 코드 샘플에서 보여주듯이, `asp-page`는 `asp-route-id`와 함께 사용하여 라우팅을 제어할 수 있습니다.
 
 ```cshtml
 <a asp-page="/Speaker" asp-route-id="@speaker.Id">View Speaker</a>
 ```
 
-`asp-route-id` 는 다음과 같은 출력을 생성 합니다.
+`asp-route-id`는 다음 출력을 생성합니다.
 
 ```html
 https://localhost:44399/Speakers/Index/2?page=%2FSpeaker
 ```
 
 > [!NOTE]
-> 사용 하는 `asp-page` 의 특성 Razor 페이지, Url 해야 상대 경로 예를 들어 `"./Speaker"`합니다. 상대 경로 `asp-page` 특성에서에서 사용할 수 없는 MVC 뷰. 대신 MVC 뷰에 대 한 "/" 구문을 사용 합니다.
+> `asp-page` 특성을 Razor 페이지에 사용하려면 URL이 상대 경로(예: `"./Speaker"`)여야 합니다. `asp-page` 특성의 상대 경로는 MVC 보기에서 사용할 수 없습니다. MVC 보기에는 "/" 구문을 사용합니다.
 
 ### <a name="asp-route-value"></a>asp-route-{value}
 
-`asp-route-`와일드 카드 경로 접두사입니다. 모든 값을 추가한 후 뒤에 오는 대시 잠재적 경로 매개 변수로 해석 됩니다. 기본 경로 찾을 수 없으면,이 경로 접두사 요청 매개 변수 및 값으로 생성 된 href에 추가 됩니다. 그렇지 않은 경우에 경로 템플릿을 대체 됩니다.
+`asp-route-`는 와일드 카드 경로 접두사입니다. 후행 대시 뒤에 배치되는 모든 값은 잠재적 경로 매개 변수로 해석됩니다. 기본 경로를 찾을 수 없는 경우 이 경로 접두사는 생성되는 href에 요청 매개 변수 및 값으로 추가됩니다. 그렇지 않은 경우 이 경로 접두사는 경로 템플릿에서 대체됩니다.
 
-가정 하 고 있는 컨트롤러 메서드가 다음과 같이 정의.
+다음과 같이 정의된 컨트롤러 메서드가 있다고 가정하겠습니다.
 
 ```csharp
 public IActionResult AnchorTagHelper(string id)
@@ -114,7 +114,7 @@ public IActionResult AnchorTagHelper(string id)
 }
 ```
 
-에 정의 된 기본 경로 템플릿을 있고 프로그램 *Startup.cs* 다음과 같습니다.
+그리고 *Startup.cs*에 다음과 같은 기본 경로 템플릿이 정의되어 있습니다.
 
 ```csharp
 app.UseMvc(routes =>
@@ -126,7 +126,7 @@ app.UseMvc(routes =>
 
 ```
 
-**cshtml** 앵커 태그 도우미를 사용 하는 데 필요한 포함 된 파일의 **스피커** 보기에는 컨트롤러에서 전달 하는 모델 매개 변수는 다음과 같습니다.
+컨트롤러에서 보기로 전달된 **스피커** 모델 매개 변수를 사용하는 데 필요한 앵커 태그 도우미를 포함하고 있는 **cshtml** 파일은 다음과 같습니다.
 
 ```cshtml
 @model SpeakerData
@@ -136,13 +136,13 @@ app.UseMvc(routes =>
 <body></html>
 ```
 
-생성 된 HTML 때문에 다음과 같이 높아집니다 다음 **id** 기본 경로에서 찾았습니다.
+**id**가 기본 경로에서 발견되었기 때문에 다음과 같은 HTML이 생성됩니다.
 
 ```html
 <a href='/Speaker/Detail/12'>SpeakerId: 12</a>
 ```
 
-다음의 경우 경로 접두사 부분에서는 라우팅 템플릿 찾을 수 없으면 **cshtml** 파일:
+경로 접두사가 발견된 라우팅 템플릿의 일부가 아닌 경우 **cshtml** 파일은 다음과 같습니다.
 
 ```cshtml
 @model SpeakerData
@@ -152,25 +152,25 @@ app.UseMvc(routes =>
 <body></html>
 ```
 
-생성 된 HTML 때문에 다음과 같이 높아집니다 다음 **speakerid** 일치 경로에서 찾을 수 없습니다.
+매칭된 경로에서 **speakerid**를 찾지 못했기 때문에 다음과 같은 HTML이 생성됩니다.
 
 ```html
 <a href='/Speaker/Detail?speakerid=12'>SpeakerId: 12</a>
 ```
 
-어느 경우 `asp-controller` 또는 `asp-action` 는 지정 하지 않으면 되 고 뒤에 동일한 기본 처리는 `asp-route` 특성입니다.
+`asp-controller` 또는 `asp-action`을 지정하지 않으면 동일한 기본 처리가 `asp-route` 특성에 있는 그대로 이어집니다.
 
 ### <a name="asp-route"></a>asp-route
 
-`asp-route`명명 된 경로에 직접 연결 되는 URL을 만들 방법을 제공 합니다. 라우팅 특성을 사용 하는 경로 이름을 지정할 수 있습니다에 표시 된 대로 `SpeakerController` 에서 사용 하 고 해당 `Evaluations` 메서드.
+`asp-route`는 명명된 경로에 직접 연결되는 URL을 만드는 방법을 제공합니다. 라우팅 특성을 사용하면 `SpeakerController`에서 보여주는 것처럼 이름을 지정하고 해당 `Evaluations` 메서드에서 사용할 수 있습니다.
 
-`Name = "speakerevals"`URL을 사용 하 여 해당 컨트롤러 메서드에 대 한 직접 경로 생성 하는 앵커 태그 도우미 지시 `/Speaker/Evaluations`합니다. 경우 `asp-controller` 또는 `asp-action` 외에 지정 `asp-route`, 예상 대로 경로가 생성 되지 않을 수 있습니다. `asp-route`특성 중 하나를 사용 하면 안 `asp-controller` 또는 `asp-action` 경로 충돌 하지 않도록 합니다.
+`Name = "speakerevals"`는 `/Speaker/Evaluations` URL을 사용하여 해당 컨트롤러 메서드에 직접 연결되는 경로를 생성하라고 앵커 태그 도우미에 알립니다. `asp-route` 외에 `asp-controller` 또는 `asp-action`을 지정하면 예상과 다른 경로가 생성될 수 있습니다. 경로 충돌을 방지하기 위해 `asp-route`를 `asp-controller` 또는 `asp-action` 특성과 함께 사용하면 안 됩니다.
 
 ### <a name="asp-all-route-data"></a>asp-all-route-data
 
-`asp-all-route-data`키/값 쌍에 키가 매개 변수 이름 및 값은 해당 키와 연결 된 값의 사전을 만들 수 있습니다.
+`asp-all-route-data`를 사용하면 키가 매개 변수이고 값은 그 키와 연결된 값인 키 값 쌍 사전을 만들 수 있습니다.
 
-다음 예제와 인라인 사전이 만들어지고 razor 보기에 데이터가 전달 됩니다. 대신 데이터 모델을 사용 하 여 전달할 수도 있습니다.
+아래 예제처럼 인라인 사전이 만들어지고 razor 보기에 데이터가 전달됩니다. 모델을 사용하여 데이터를 전달하는 방법도 있습니다.
 
 ```cshtml
 @{
@@ -185,28 +185,28 @@ app.UseMvc(routes =>
 asp-all-route-data="dict">SpeakerEvals</a>
 ```
 
-위의 코드에서는 다음 URL을 생성 합니다: http://localhost/Speaker/EvaluationsCurrent?speakerId=11&currentYear=true
+위의 코드는 http://localhost/Speaker/EvaluationsCurrent?speakerId=11&currentYear=true URL을 생성합니다.
 
-링크를 클릭할 때, 컨트롤러 메서드에 `EvaluationsCurrent` 호출 됩니다. 해당 컨트롤러에서 생성 된 어떤 일치 하는 두 개의 문자열 매개 변수를에 있기 때문에 호출 되는 `asp-all-route-data` 사전입니다.
+링크를 클릭하면 컨트롤러 메서드 `EvaluationsCurrent`가 호출됩니다. 해당 컨트롤러에는 `asp-all-route-data` 사전에서 만들어진 항목과 일치하는 두 개의 문자열 매개 변수가 있기 때문에 이 메서드가 호출됩니다.
 
-사전 일치 항목의 키는 매개 변수를 라우팅할 적절 하 게 경로에 해당 값이 대체 됩니다 및 요청 매개 변수도 생성 됩니다. 다른 일치 하지 않는 값입니다.
+사전에 있는 아무 키가 경로 매개 변수와 일치하는 경우 경로에서 해당 값이 적절하게 대체되고 일치하지 않는 다른 값은 요청 매개 변수로 생성됩니다.
 
 ### <a name="asp-fragment"></a>asp-fragment
 
-`asp-fragment`URL에 추가할 URL 조각을 정의 합니다. 앵커 태그 도우미 해시 문자를 추가 합니다 (#). 태그를 만들면:
+`asp-fragment`는 URL에 추가할 URL 조각을 정의합니다. 앵커 태그 도우미는 해시 문자(#)를 추가합니다. 태그를 만들면:
 
 ```cshtml
 <a asp-action="Evaluations" asp-controller="Speaker"  
    asp-fragment="SpeakerEvaluations">About Speaker Evals</a>
 ```
 
-생성 된 URL 됩니다: http://localhost/Speaker/Evaluations#SpeakerEvaluations
+http://localhost/Speaker/Evaluations#SpeakerEvaluations URL이 생성됩니다.
 
-해시 태그는 클라이언트 쪽 응용 프로그램을 작성할 때 유용 합니다. 쉽게 표시 하 고 예를 들어 JavaScript에서 검색에 사용할 수 있습니다.
+해시 태그는 클라이언트 쪽 응용 프로그램을 빌드할 때 유용합니다. 다음과 같이 JavaScript에서 손쉽게 만들고 검색하는 데 사용할 수 있습니다.
 
-### <a name="asp-area"></a>asp 영역
+### <a name="asp-area"></a>asp-area
 
-`asp-area`ASP.NET Core 사용 하 여 적절 한 경로 설정 하는 영역 이름을 설정 합니다. 어떻게 영역 특성으로 인해 경로 다시 매핑하여의 예는 다음과 같습니다. 설정 `asp-area` 블로그에 디렉터리 접두사 `Areas/Blogs` 관련된 컨트롤러와이 앵커 태그에 대 한 뷰 경로에 있습니다.
+`asp-area`는 ASP.NET Core에서 적절한 경로를 설정하기 위해 사용하는 영역 이름을 설정합니다. 아래는 영역 특성으로 인해 경로가 다시 매핑되는 원리를 보여주는 예입니다. `asp-area`를 Blogs로 설정하면 이 앵커 태그에 대해 연결된 컨트롤러 및 보기의 경로에 `Areas/Blogs` 디렉터리가 접두사로 붙습니다.
 
 * 프로젝트 이름
   * wwwroot
@@ -220,32 +220,32 @@ asp-all-route-data="dict">SpeakerEvals</a>
           * AboutBlog.cshtml
   * 컨트롤러
 
-와 같은 유효한 영역 태그 지정 ```area="Blogs"``` 참조 하는 경우는 ```AboutBlog.cshtml``` 파일은 다음과 같습니다 앵커 태그 도우미를 사용 하 여 합니다.
+```AboutBlog.cshtml``` 파일을 참조할 때 ```area="Blogs"``` 같은 유효한 영역 태그를 지정하면 앵커 태그 도우미를 사용하여 다음 예처럼 표시됩니다.
 
 ```cshtml
 <a asp-action="AboutBlog" asp-controller="Home" asp-area="Blogs">Blogs About</a>
 ```
 
-생성 된 HTML 영역 세그먼트를 포함 됩니다 및 다음과 같습니다.
+생성된 HTML에는 영역 세그먼트가 포함되며 다음과 같습니다.
 
 ```html
 <a href="/Blogs/Home/AboutBlog">Blogs About</a>
 ```
 
 > [!TIP]
-> 웹 응용 프로그램에서 작동 하도록 MVC 영역 경로 템플릿이 있는 경우 영역에 대 한 참조가 포함 되어야 합니다. 두 번째 매개 변수는 해당 서식 파일의는 `routes.MapRoute` 메서드 호출으로 표시 됩니다.`template: '"{area:exists}/{controller=Home}/{action=Index}"'`
+> MVC 영역이 웹 응용 프로그램에서 작동하려면 경로 템플릿에 영역의 참조가 포함되어야 합니다(있는 경우). `routes.MapRoute` 메서드 호출의 두 번째 매개 변수인 이 템플릿은 `template: '"{area:exists}/{controller=Home}/{action=Index}"'`와 비슷하게 표시됩니다.
 
 ### <a name="asp-protocol"></a>asp-protocol
 
-`asp-protocol` 프로토콜을 지정 하는 (예: `https`) URL에서 합니다. 앵커 태그 도우미 프로토콜을 포함 하는 예제는 다음과 같이 표시 됩니다.
+`asp-protocol`은 URL에서 프로토콜(예: `https`)을 지정하는 데 사용됩니다. 프로토콜을 포함하는 앵커 태그 도우미 예제는 다음과 같습니다.
 
 ```<a asp-protocol="https" asp-action="About" asp-controller="Home">About</a>```
 
-및 HTML을 다음과 같이 생성 됩니다.
+그리고 다음과 같은 HTML을 생성합니다.
 
 ```<a href="https://localhost/Home/About">About</a>```
 
-예제에서 도메인 localhost, 하지만 앵커 태그 도우미의 URL을 생성 하는 경우 웹 사이트의 공용 도메인 사용 하 여 합니다.
+이 예제의 도메인인 localhost이지만, 앵커 태그 도우미는 URL을 생성할 때 웹 사이트의 공용 도메인을 사용합니다.
 
 ## <a name="additional-resources"></a>추가 리소스
 

@@ -1,51 +1,51 @@
 ---
-title: "분산 캐시 태그 도우미 | Microsoft Docs"
+title: "ASP.NET Core의 분산 캐시 태그 도우미"
 author: pkellner
-description: "캐시 태그 도우미를 사용 하는 방법을 보여 줍니다."
-ms.author: riande
+description: "캐시 태그 도우미 사용 방법 소개"
 manager: wpickett
+ms.author: riande
 ms.date: 02/14/2017
-ms.topic: article
-ms.technology: aspnet
 ms.prod: aspnet-core
+ms.technology: aspnet
+ms.topic: article
 uid: mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper
-ms.openlocfilehash: f5844dade218fdba1169a55fe3ce251a9cc03db2
-ms.sourcegitcommit: 3e303620a125325bb9abd4b2d315c106fb8c47fd
-ms.translationtype: MT
+ms.openlocfilehash: 710477732b865e2e3821102d34545bbd4e0a5919
+ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/19/2018
+ms.lasthandoff: 01/30/2018
 ---
-# <a name="distributed-cache-tag-helper"></a>분산된 캐시 태그 도우미
+# <a name="distributed-cache-tag-helper"></a>분산 캐시 태그 도우미
 
 작성자: [Peter Kellner](http://peterkellner.net) 
 
 
-분산 캐시 태그 도우미 분산된 캐시 원본에 해당 콘텐츠를 캐시 하 여 ASP.NET Core 응용 프로그램의 성능이 크게 향상 하는 기능을 제공 합니다.
+분산 캐시 태그 도우미는 콘텐츠를 분산 캐시 원본에 캐싱하여 ASP.NET Core 앱 성능을 획기적으로 개선하는 기능을 제공합니다.
 
-분산 캐시 태그 도우미 캐시 태그 도우미와 같은 기본 클래스에서 상속합니다.  캐시 태그 도우미에 연결 된 모든 특성은 Distributed 태그 도우미 에서도 작동 합니다.
+분산 캐시 태그 도우미는 캐시 태그 도우미와 동일한 기본 클래스에서 상속합니다.  캐시 태그 도우미와 연결된 모든 특성은 분산 태그 도우미에서도 작동합니다.
 
 
-분산 캐시 태그 도우미 뒤에 오는 **명시적 종속성 원칙** 라고 **생성자 삽입**합니다.  특히,는 `IDistributedCache` 인터페이스 컨테이너 분산 캐시 태그 도우미의 생성자에 전달 됩니다.  구체적 구현 없는 경우 `IDistributedCache` 에 생성 되었음을 `ConfigureServices`startup.cs에서 일반적으로 발견 차례로 분산 캐시 태그 도우미 기본 캐시 태그 도우미와 캐시 된 데이터를 저장 하기 위한 동일한 메모리 내 공급자를 사용 합니다.
+분산 캐시 태그 도우미는 **생성자 주입**이라고도 하는 **명시적 종속성 원칙**을 따릅니다.  특히 `IDistributedCache` 인터페이스 컨테이너는 분산 캐시 태그 도우미의 생성자에 전달됩니다.  `IDistributedCache`의 구체적인 구현이 `ConfigureServices`에 생성되지 않은 경우(주로 startup.cs에서 발견됨) 분산 캐시 태그 도우미는 동일한 메모리 내 공급자를 사용하여 캐시된 데이터를 기본 캐시 태그 도우미로 저장합니다.
 
 ## <a name="distributed-cache-tag-helper-attributes"></a>분산 캐시 태그 도우미 특성
 
 - - -
 
-### <a name="enabled-expires-on-expires-after-expires-sliding-vary-by-header-vary-by-query-vary-by-route-vary-by-cookie-vary-by-user-vary-by-priority"></a>만료 된 이후에 만료 만료-슬라이딩 활성화 vary 헤더 다 쿼리 다 경로 다 쿠키 다 사용자 다 by 우선 순위
+### <a name="enabled-expires-on-expires-after-expires-sliding-vary-by-header-vary-by-query-vary-by-route-vary-by-cookie-vary-by-user-vary-by-priority"></a>설정된 expires-on expires-after expires-sliding vary-by-header vary-by-query vary-by-route vary-by-cookie vary-by-user vary-by priority
 
-정의 대 한 캐시 태그 도우미를 참조 하십시오. 분산된 캐시 태그 도우미 있으므로 이러한 모든 특성은 캐시 태그 도우미에서 일반적인 캐시 태그 도우미와 같은 클래스에서 상속 합니다.
+정의는 캐시 태그 도우미를 참조하세요. 분산 캐시 태그 도우미는 캐시 태그 도우미와 동일한 클래스에서 상속하므로 이 모든 특성이 캐시 태그 도우미에서 공통입니다.
 
 - - -
 
-### <a name="name-required"></a>이름 (필수)
+### <a name="name-required"></a>이름(필수)
 
 | 특성 유형    | 예제 값     |
 |----------------   |----------------   |
 | string    | "my-distributed-cache-unique-key-101"     |
 
-필요한 `name` 특성은 분산 캐시 태그 도우미의 각 인스턴스에 대해 저장 된 캐시에 키로 사용 합니다.  기본 캐시 태그 도우미 Razor 페이지 이름 및 razor 페이지의 태그 도우미의 위치에 따라 각 캐시 태그 도우미 인스턴스 키를 할당 하는와 달리 Distributed 캐시 태그 도우미만 기반 키 특성`name`
+필수 `name` 특성은 분산 캐시 태그 도우미의 각 인스턴스에 대해 저장된 캐시의 키로 사용됩니다.  razor 페이지의 Razor 페이지 이름 및 태그 도우미 위치를 기준으로 각 캐시 태그 도우미 인스턴스에 키를 할당하는 기본 캐시 태그 도우미와는 달리, 분산 캐시 태그 도우미는 `name` 특성의 키만을 기준으로 합니다.
 
-사용 예제를 보려면:
+사용 예제:
 
 ```cshtml
 <distributed-cache name="my-distributed-cache-unique-key-101">
@@ -55,9 +55,9 @@ ms.lasthandoff: 01/19/2018
 
 ## <a name="distributed-cache-tag-helper-idistributedcache-implementations"></a>분산 캐시 태그 도우미 IDistributedCache 구현
 
-두 개의 구현이 없는 `IDistributedCache` ASP.NET Core에서 기본적으로 제공 합니다.  에 따라 하나 **Sql Server** 기반 다른 **Redis**합니다. 명명 된 "작업 분산된 캐시" 아래에 참조 된 리소스의이 구현은 세부 정보를 찾을 수 있습니다. 두 구현 모두의 인스턴스를 설정할 포함 `IDistributedCache` 에서 ASP.NET Core **startup.cs**합니다.
+ASP.NET Core에 두 가지 `IDistributedCache` 구현이 기본적으로 제공됩니다.  하나는 **Sql Server** 기반이고 다른 하나는 **Redis** 기반입니다. 이러한 구현의 세부 정보는 아래에서 참조하는 "분산 캐시 작업"이라는 리소스에서 찾을 수 있습니다. 두 구현 모두 ASP.NET Core의 **startup.cs**에서 `IDistributedCache` 인스턴스를 설정해야 합니다.
 
-특정 구현을 사용과 특별히 관련 된 태그 특성이 없으면 `IDistributedCache`합니다.
+특정 `IDistributedCache` 구현 사용과 특별히 관련된 태그 특성은 없습니다.
 
 
 
