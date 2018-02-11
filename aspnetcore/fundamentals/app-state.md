@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/app-state
-ms.openlocfilehash: 7aa200d3612f766ab633ccab807421b9c5393975
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: f4ed38f7395e3f4fe939584c1f3f5b0dba93724c
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="introduction-to-session-and-application-state-in-aspnet-core"></a>ASP.NET Core에서 세션 및 응용 프로그램 상태 소개
 
@@ -84,7 +84,7 @@ TempData 공급자를 선택하는 데는 다음과 같은 몇 가지 고려 사
 
 ---
 
-순서 지정은 미들웨어 구성 요소에 중요합니다. 위의 예에서 `UseMvcWithDefaultRoute` 후에 `UseSession`이 호출되는 경우 형식 `InvalidOperationException`의 예외가 발생합니다. 자세한 내용은 [미들웨어 순서 지정](xref:fundamentals/middleware#ordering)을 참조하세요.
+순서 지정은 미들웨어 구성 요소에 중요합니다. 위의 예에서 `UseMvcWithDefaultRoute` 후에 `UseSession`이 호출되는 경우 형식 `InvalidOperationException`의 예외가 발생합니다. 자세한 내용은 [미들웨어 순서 지정](xref:fundamentals/middleware/index#ordering)을 참조하세요.
 
 > [!IMPORTANT]
 > .NET Framework를 대상으로 하고 세션 기반 공급자를 사용하는 경우 [Microsoft.AspNetCore.Session](https://www.nuget.org/packages/Microsoft.AspNetCore.Session) NuGet 패키지를 프로젝트에 추가합니다.
@@ -189,7 +189,7 @@ ASP.NET Core에서 기본 세션 공급자는 [ISession.LoadAsync](https://docs.
 
 `HttpContext` 추상화는 `Items`라는 형식 `IDictionary<object, object>`의 사전 컬렉션에 대한 지원을 제공합니다. 이 컬렉션은 *HttpRequest*의 시작부터 사용할 수 있으며 각 요청의 끝에서 삭제됩니다. 키가 지정된 항목에 값을 지정하거나 특정 키에 대한 값을 요청하여 액세스할 수 있습니다.
 
-아래 샘플에서 [미들웨어](middleware.md)는 `Items` 컬렉션에 `isVerified`를 추가합니다.
+다음 샘플에서 [미들웨어](xref:fundamentals/middleware/index)는 `Items` 컬렉션에 `isVerified`를 추가합니다.
 
 ```csharp
 app.Use(async (context, next) =>

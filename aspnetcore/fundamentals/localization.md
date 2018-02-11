@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/localization
-ms.openlocfilehash: 794abf628beff7e5c78f9ca04309694d46910373
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 766cec5dd00b7b464eef31a3bc1721f522697608
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>ASP.NET Core에서 세계화 및 지역화
 
@@ -198,7 +198,7 @@ Razor 보기에서 `@inject IViewLocalizer`를 사용하는 리소스 파일은 
 
 ### <a name="localization-middleware"></a>지역화 미들웨어
 
-요청에서 현재 문화권은 지역화 [미들웨어](middleware.md)에서 설정됩니다. 지역화 미들웨어는 *Program.cs* 파일의 `Configure` 메서드에서 활성화됩니다. 지역화 미들웨어는 요청 문화권을 확인할 수 있는 모든 미들웨어 전에 구성되어야 합니다(예: `app.UseMvcWithDefaultRoute()`).
+요청에서 현재 문화권은 지역화 [미들웨어](xref:fundamentals/middleware/index)에서 설정됩니다. 지역화 미들웨어는 `Configure` 메서드에서 활성화됩니다. 지역화 미들웨어는 요청 문화권을 확인할 수 있는 모든 미들웨어 전에 구성되어야 합니다(예: `app.UseMvcWithDefaultRoute()`).
 
 [!code-csharp[Main](localization/sample/Localization/Program.cs?name=snippet2)]
 

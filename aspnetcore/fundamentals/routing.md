@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/routing
-ms.openlocfilehash: 2897eb3a756654c61e38e847f5a8e1f8ca4f0b7c
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: d35c24347e8e06ed85e2af8addcc1f8cf28dc47a
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="routing-in-aspnet-core"></a>ASP.NET Core에서 라우팅
 
@@ -36,7 +36,7 @@ ms.lasthandoff: 01/30/2018
 
 일반적으로 앱은 단일 경로의 컬렉션을 갖습니다. 요청이 도착하면 경로 컬렉션이 순서대로 처리됩니다. 들어오는 요청은 경로 컬렉션에서 사용 가능한 각 경로의 `RouteAsync` 메서드를 호출하여 요청 URL과 일치하는 경로를 찾습니다. 이와 반대로 응답은 라우팅을 사용하여 경로 정보에 따라 URL(예: 리디렉션 또는 링크용)을 생성할 수 있으므로 하드 코딩 URL을 갖는 것을 방지합니다. 이는 유지 관리에 도움이 됩니다.
 
-라우팅은 `RouterMiddleware` 클래스에 의해 [미들웨어](middleware.md) 파이프라인에 연결되어 있습니다. [ASP.NET MVC](../mvc/overview.md)는 해당 구성의 일부분으로 라우팅을 미들웨어 파이프라인에 추가합니다. 독립 실행형 구성 요소로 라우팅 사용에 대한 자세한 내용은 [라우팅 미들웨어 사용](#using-routing-middleware)을 참조하세요.
+라우팅은 `RouterMiddleware` 클래스에 의해 [미들웨어](xref:fundamentals/middleware/index) 파이프라인에 연결되어 있습니다. [ASP.NET Core MVC](xref:mvc/overview)는 해당 구성의 일부분으로 라우팅을 미들웨어 파이프라인에 추가합니다. 독립 실행형 구성 요소로 라우팅 사용에 대한 자세한 내용은 [라우팅 미들웨어 사용](#using-routing-middleware)을 참조하세요.
 
 <a name="url-matching-ref"></a>
 
