@@ -8,11 +8,11 @@ ms.date: 09/20/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: performance/caching/response
-ms.openlocfilehash: c38f9b9a1bf1c523951e2cf1f3070858fe5daf04
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 37592c3b2099c2cb74dc42ad4a7937b32c281f65
+ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/11/2018
 ---
 # <a name="response-caching-in-aspnet-core"></a>ASP.NET Core의 응답 캐싱
 
@@ -68,7 +68,7 @@ ms.lasthandoff: 01/30/2018
 
 ### <a name="distributed-cache"></a>분산된 캐시
 
-분산된 캐시를 사용 하 여 응용 프로그램 클라우드 또는 서버 팜에서 호스트 될 때 메모리에 데이터를 저장 합니다. 캐시 요청을 처리 하는 서버 간에 공유 됩니다. 그룹의 모든 서버에서 처리 하 고 클라이언트에 대 한 데이터를 캐시 하는 요청은 사용할 수 있는 클라이언트를 제출할 수 있습니다. ASP.NET Core에서는 SQL Server 및 분산 Redis 캐시를 제공합니다.
+분산된 캐시를 사용 하 여 응용 프로그램 클라우드 또는 서버 팜에서 호스트 될 때 메모리에 데이터를 저장 합니다. 캐시 요청을 처리 하는 서버 간에 공유 됩니다. 클라이언트는 클라이언트에 대 한 캐시 된 데이터를 사용할 수 있는 경우 그룹의 모든 서버에서 처리 하는 요청을 제출할 수 있습니다. ASP.NET Core에서는 SQL Server 및 분산 Redis 캐시를 제공합니다.
 
 자세한 내용은 참조 [분산된 캐시 작업](xref:performance/caching/distributed)합니다.
 
@@ -78,7 +78,7 @@ ms.lasthandoff: 01/30/2018
 
 자세한 내용은 참조 [캐시 태그 도우미 ASP.NET Core mvc에서](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)합니다.
 
-### <a name="distributed-cache-tag-helper"></a>분산된 캐시 태그 도우미
+### <a name="distributed-cache-tag-helper"></a>분산 캐시 태그 도우미
 
 분산 캐시 태그 도우미와 MVC 뷰 또는 분산된 클라우드 또는 웹 팜 시나리오에 대 한 Razor 페이지 콘텐츠를 캐시할 수 있습니다. 분산 캐시 태그 도우미를 사용 하 여 SQL Server 또는 Redis 데이터를 저장 합니다.
 
@@ -86,12 +86,14 @@ ms.lasthandoff: 01/30/2018
 
 ## <a name="responsecache-attribute"></a>ResponseCache 특성
 
-`ResponseCacheAttribute` 응답 캐시에서 적절 한 헤더를 설정 하는 데 필요한 매개 변수를 지정 합니다. 참조 [ResponseCacheAttribute](/aspnet/core/api/microsoft.aspnetcore.mvc.responsecacheattribute) 에 대 한 설명은 매개 변수입니다.
+[ResponseCacheAttribute](/dotnet/api/Microsoft.AspNetCore.Mvc.ResponseCacheAttribute) 응답 캐시에서 적절 한 헤더를 설정 하는 데 필요한 매개 변수를 지정 합니다.
 
 > [!WARNING]
-> 인증 된 클라이언트에 대 한 정보를 포함 하는 콘텐츠에 대 한 캐싱을 사용 하지 않도록 설정 합니다. 사용자의 id 또는 사용자의 로그인 여부에 따라 변경 되지 않는 콘텐츠에 대 한 캐싱만 설정 해야 합니다.
+> 인증 된 클라이언트에 대 한 정보를 포함 하는 콘텐츠에 대 한 캐싱을 사용 하지 않도록 설정 합니다. 사용자의 id 또는 사용자 로그인 여부에 따라 변경 되지 않는 콘텐츠에 대 한 캐싱만 설정 해야 합니다.
 
-`VaryByQueryKeys string[]`(ASP.NET Core 1.1 이상 필요):으로 설정 하면 응답 캐싱 미들웨어 저장된 응답이 변경 쿼리 키의 지정 된 목록 값에 의해 합니다. 응답의 캐싱 미들웨어를 설정 하려면 설정 해야 합니다는 `VaryByQueryKeys` 속성; 그렇지 않으면 런타임 예외가 throw 됩니다. 에 대 한 해당 HTTP 헤더가 없으면는 `VaryByQueryKeys` 속성입니다. 이 속성은 응답 캐싱 미들웨어가 처리 하는 HTTP 기능. 캐시 된 응답을 제공 하도록 미들웨어에 대 한 쿼리 문자열 및 쿼리 문자열 값을 이전 요청을 일치 해야 합니다. 요청 및 결과 다음 표에 표시 된 순서를 예로 들 수 있습니다.
+[VaryByQueryKeys](/dotnet/api/microsoft.aspnetcore.mvc.responsecacheattribute.varybyquerykeys) 저장된 응답 하는 쿼리 키의 지정 된 목록 값에 따라 다릅니다. 단일 값 `*` 쿼리 문자열 매개 변수를 요청 하는 모든 응답을 제공 하면 미들웨어 달라 집니다. `VaryByQueryKeys`ASP.NET Core 1.1 이상 필요합니다.
+
+응답의 캐싱 미들웨어를 설정 하려면 설정 해야 합니다는 `VaryByQueryKeys` 속성; 그렇지 않으면 런타임 예외가 throw 됩니다. 에 대 한 해당 HTTP 헤더가 없는 `VaryByQueryKeys` 속성입니다. 속성이 응답 캐싱 미들웨어가 처리 하는 HTTP 기능입니다. 캐시 된 응답을 제공 하도록 미들웨어에 대 한 쿼리 문자열 및 쿼리 문자열 값을 이전 요청을 일치 해야 합니다. 요청 및 결과 다음 표에 표시 된 순서를 예로 들 수 있습니다.
 
 | 요청                          | 결과                   |
 | -------------------------------- | ------------------------ |
@@ -101,7 +103,7 @@ ms.lasthandoff: 01/30/2018
 
 첫 번째 요청이 서버에서 반환 하 고 미들웨어에 캐시 합니다. 이전 요청과 일치 하는 쿼리 문자열 때문에 두 번째 요청 미들웨어에서 반환 됩니다. 세 번째 요청 쿼리 문자열 값에는 이전 요청 일치 하지 않으므로 미들웨어 캐시에 없습니다. 
 
-`ResponseCacheAttribute` 는 구성 하 고 만드는 데 사용 됩니다 (통해 `IFilterFactory`)는 `ResponseCacheFilter`합니다. `ResponseCacheFilter` 적절 한 HTTP 헤더 및 응답의 기능을 업데이트 하는 작업을 수행 합니다. 필터:
+`ResponseCacheAttribute` 는 구성 하 고 만드는 데 사용 됩니다 (통해 `IFilterFactory`)는 [ResponseCacheFilter](/dotnet/api/microsoft.aspnetcore.mvc.internal.responsecachefilter)합니다. `ResponseCacheFilter` 적절 한 HTTP 헤더 및 응답의 기능을 업데이트 하는 작업을 수행 합니다. 필터:
 
 * 에 대 한 모든 기존 헤더를 제거 `Vary`, `Cache-Control`, 및 `Pragma`합니다. 
 * 에 설정 된 속성에 따라 적절 한 헤더를 작성은 `ResponseCacheAttribute`합니다. 

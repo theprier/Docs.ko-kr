@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-new-field-to-the-movie-model-and-table
 msc.type: authoredcontent
-ms.openlocfilehash: 0c094c4d4c99702a5b513717126872a254ca3e5a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9965c8a755857a8e8cb8ecbc6c467a6c856aa83d
+ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/11/2018
 ---
 <a name="adding-a-new-field-to-the-movie-model-and-table"></a>영화 모델 및 테이블에 새 필드 추가
 ====================
@@ -81,7 +81,7 @@ Visual Studio가 열릴는 *Configuration.cs* 파일입니다. 대체는 `Seed` 
 
 ![](adding-a-new-field-to-the-movie-model-and-table/_static/image7.png)
 
-Code First 마이그레이션을에 다른 클래스 파일을 만듭니다는 *마이그레이션* 폴더 (이름의 *{날짜 스탬프}\_Initial.cs* ),이 클래스는 데이터베이스 스키마를 만드는 코드를 포함 합니다. 마이그레이션 filename 미리 타임 스탬프가 순서 지정에 도움이 되도록 고정 됩니다. 검사는 *{날짜 스탬프}\_Initial.cs* 를 영화 DB에 대 한 동영상 테이블을 만드는 지침 포함 파일입니다. 이 아래 지침에 설명 된 데이터베이스를 업데이트 하는 경우 *{날짜 스탬프}\_Initial.cs* 파일에서는 실행 하 고 만듭니다는 DB 스키마입니다. 그런 다음 **시드** DB 테스트 데이터로 채우는 메서드가 실행 됩니다.
+Code First 마이그레이션을에 다른 클래스 파일을 만듭니다는 *마이그레이션* 폴더 (이름의 *{날짜 스탬프}\_Initial.cs* ),이 클래스는 데이터베이스 스키마를 만드는 코드를 포함 합니다. 마이그레이션 filename 미리 타임 스탬프가 순서 지정에 도움이 되도록 고정 됩니다. 검사는 *{날짜 스탬프}\_Initial.cs* 를 영화 DB에 대 한 동영상 테이블을 만드는 지침 포함 파일입니다. 이 아래 지침에 설명 된 데이터베이스를 업데이트 하는 경우 *{날짜 스탬프}\_Initial.cs* 파일은 실행 된 후 DB 스키마를 만듭니다. 그런 다음 **시드** DB 테스트 데이터로 채우는 메서드가 실행 됩니다.
 
 에 **패키지 관리자 콘솔**, 명령 "업데이트-데이터베이스 입력" 데이터베이스를 만들고 실행 하는 **시드** 메서드.
 
@@ -163,8 +163,7 @@ Visual Studio 새 정의 하는 클래스 파일을 엽니다이 명령이 완�
 
 ![7_CreateRioII](adding-a-new-field-to-the-movie-model-and-table/_static/image14.png)
 
-
-              **만들기**를 클릭합니다. 등급을 포함 하 여 새 동영상은 이제 나열 영화에서 표시:
+**만들기**를 클릭합니다. 등급을 포함 하 여 새 동영상은 이제 나열 영화에서 표시:
 
 ![7_ourNewMovie_SM](adding-a-new-field-to-the-movie-model-and-table/_static/image15.png)
 

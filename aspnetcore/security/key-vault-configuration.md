@@ -8,11 +8,11 @@ ms.date: 08/09/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: security/key-vault-configuration
-ms.openlocfilehash: 1318ae855154dd8fc91ff0c19b0ab111d86c71e6
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 1a91a87fb90d4d4651e07f32415e4364c8e2d993
+ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/11/2018
 ---
 # <a name="azure-key-vault-configuration-provider"></a>Azure 키 자격 증명 모음 구성 공급자
 
@@ -77,7 +77,7 @@ ms.lasthandoff: 01/30/2018
 `AddAzureKeyVault`또한 구현을 허용 하는 오버 로드를 제공 `IKeyVaultSecretManager`, 구성 키로 변환 하는 주요 자격 증명 모음 암호를 제어할 수 있습니다. 예를 들어 앱을 시작할 때 제공 되는 접두사 값에 따라 보안 값을 로드 하는 인터페이스를 구현할 수 있습니다. 이렇게 하면 응용 프로그램의 버전에 따라 암호를 로드 예를 들어 있습니다.
 
 > [!WARNING]
-> 같은 키 자격 증명 모음에 여러 앱에 대 한 암호를 배치 하려면 또는 환경 비밀을 주요 자격 증명 모음 암호에 접두사를 사용 하지 않습니다 (예를 들어 *개발* verus *프로덕션* 비밀)를 동일한 자격 증명 모음입니다. 다른 앱과 개발/프로덕션 환경 가장 높은 보안 수준에 대 한 응용 프로그램 환경을 격리할 때 별도 주요 자격 증명 모음 사용 하는 것이 좋습니다.
+> 같은 키 자격 증명 모음에 여러 앱에 대 한 암호를 배치 하려면 또는 환경 비밀을 주요 자격 증명 모음 암호에 접두사를 사용 하지 않습니다 (예를 들어 *개발* 비교 *프로덕션* 비밀)를 동일한 자격 증명 모음입니다. 다른 앱과 개발/프로덕션 환경 가장 높은 보안 수준에 대 한 응용 프로그램 환경을 격리할 때 별도 주요 자격 증명 모음 사용 하는 것이 좋습니다.
 
 두 번째 샘플 응용 프로그램을 사용 하면 만들 되는 암호에 대 한 주요 자격 증명 모음에 `5000-AppSecret` (마침표 비밀 키 자격 증명 모음 이름에 허용 되지) 5.0.0.0 응용 프로그램의 버전에 대 한 앱 암호를 나타내는입니다. 에 대 한 암호를 만들면 다른 버전의 경우, 5.1.0.0 `5100-AppSecret`합니다. 각 응용 프로그램 버전으로 해당 구성에는 자체 비밀 값 로드 `AppSecret`, 비밀 로드 된 버전에서 제거 합니다. 샘플의 구현은 다음과 같습니다.
 

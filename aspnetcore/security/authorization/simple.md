@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/simple
-ms.openlocfilehash: 3299a8fcbd8d8e089d8d7f95e46551c102bcc054
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 503ebc665efd460a85f49844ddc847eb12114308
+ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/11/2018
 ---
 # <a name="simple-authorization"></a>단순 권한 부여
 
@@ -55,7 +55,7 @@ public class AccountController : Controller
 
 이제 인증 된 사용자만 액세스할 수는 `Logout` 함수입니다.
 
-사용할 수도 있습니다는 `AllowAnonymousAttribute` 특성 개별 작업에 대 한 인증 되지 않은 사용자가 액세스할 수 있도록 합니다. 예:
+사용할 수도 있습니다는 `AllowAnonymous` 특성 개별 작업에 대 한 인증 되지 않은 사용자가 액세스할 수 있도록 합니다. 예:
 
 ```csharp
 [Authorize]

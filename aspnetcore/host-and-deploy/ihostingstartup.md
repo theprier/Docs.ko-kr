@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/ihostingstartup
-ms.openlocfilehash: bd2446d6133e0c06dc14509271c2d17be4c95b63
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: e4b6293aff9fa39b70af40507a2cf5b7efcb295b
+ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/11/2018
 ---
 # <a name="add-app-features-from-an-external-assembly-using-ihostingstartup-in-aspnet-core"></a>ASP.NET Core에서 IHostingStartup를 사용 하 여 외부 어셈블리의 응용 프로그램 기능을 추가 합니다.
 
@@ -28,7 +28,7 @@ ms.lasthandoff: 01/30/2018
 
 응용 프로그램에서 또는 라이브러리를 통해 로드 호스팅 시작 어셈블리를 검색 하려면 로깅을 사용 하도록 설정 하 고 응용 프로그램 로그를 확인 합니다. 어셈블리를 로드할 때 발생 하는 오류가 기록 됩니다. 로드 된 호스팅 시작 어셈블리 디버그 수준에서 로깅됩니다 및 모든 오류가 기록 됩니다.
 
-샘플 앱 읽기는는 [HostingStartupAssembliesKey](/dotnet/api/microsoft.aspnetcore.hosting.webhostdefaults.hostingstartupassemblieskey) 에 `string` 배열 하 고 응용 프로그램의 인덱스 페이지에 결과 표시 합니다.
+샘플 응용 프로그램 읽기는 [HostingStartupAssembliesKey](/dotnet/api/microsoft.aspnetcore.hosting.webhostdefaults.hostingstartupassemblieskey) 에 `string` 배열 하 고 응용 프로그램의 인덱스 페이지에 결과 표시 합니다.
 
 [!code-csharp[Main](ihostingstartup/sample/HostingStartupSample/Pages/Index.cshtml.cs?name=snippet1&highlight=14-16)]
 

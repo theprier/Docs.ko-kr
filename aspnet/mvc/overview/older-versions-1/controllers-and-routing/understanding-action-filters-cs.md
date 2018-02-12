@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/understanding-action-filters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1f469894022e39048154ec1915237e448104b4b6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 86d5d429d9900d4c04391804598626705e6c88b4
+ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/11/2018
 ---
 <a name="understanding-action-filters-c"></a>작업 필터 (C#) 이해
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [PDF 다운로드](http://download.microsoft.com/download/e/f/3/ef3f2ff6-7424-48f7-bdaa-180ef64c3490/ASPNET_MVC_Tutorial_14_CS.pdf)
 
@@ -82,7 +82,7 @@ ASP.NET MVC 프레임 워크에서는 네 가지 형식의 필터를 지원합�
 
 필터의 각 유형 마다 특정 한 순서로 실행 됩니다. 같은 유형의 필터가 실행 되는 순서를 제어 하려는 경우 필터의 순서 속성을 설정할 수 있습니다.
 
-모든 작업 필터에 대 한 기본 클래스는는 `System.Web.Mvc.FilterAttribute` 클래스입니다. 특정 형식의 필터를 구현 하려면 다음 기본 필터 클래스에서 상속 하 고 중 하나 이상을 구현 하는 클래스를 만들어야 하는 경우는 `IAuthorizationFilter`, `IActionFilter`, `IResultFilter`, 또는 `ExceptionFilter` 인터페이스입니다.
+모든 작업 필터에 대 한 기본 클래스는는 `System.Web.Mvc.FilterAttribute` 클래스입니다. 특정 형식의 필터를 구현 하려면 다음 기본 필터 클래스에서 상속 하 고 중 하나 이상을 구현 하는 클래스를 만들어야 하는 경우는 `IAuthorizationFilter`, `IActionFilter`, `IResultFilter`, 또는 `IExceptionFilter` 인터페이스입니다.
 
 ### <a name="the-base-actionfilterattribute-class"></a>기본 ActionFilterAttribute 클래스
 

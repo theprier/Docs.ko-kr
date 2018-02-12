@@ -11,11 +11,11 @@ ms.prod: .net-framework
 ms.technology: dotnet-mvc
 ms.devlang: dotnet
 ms.assetid: c9f1d52c-b4bd-4b5d-b7f9-8f9ceaf778c4
-ms.openlocfilehash: badc1c9b10ac27c3d876e3331c855a9d5904d27d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7a580c6c6236b375ea54ef4e9978fff6993d885a
+ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/11/2018
 ---
 # <a name="migrating-aspnet-mvc-applications-to-windows-containers"></a>ASP.NET MVC 응용 프로그램을 Windows 컨테이너로 마이그레이션
 
@@ -73,7 +73,7 @@ Docker 이미지로 로드해야 하는 자산을 모두 한 곳에 수집합니
 
 Dockerfile에서 Docker 이미지를 정의합니다. Dockerfile에는 기본 이미지, 추가 구성 요소, 실행할 앱 및 기타 구성 이미지에 대한 지침이 포함되어 있습니다.  Dockerfile은 이미지를 만드는 `docker build` 명령에 대한 입력입니다.
 
-[Docker 허브](https://hub.docker.com/r/microsoft/aspnet/)에 있는 `microsft/aspnet` 이미지를 기반으로 해서 이미지를 빌드합니다.
+[Docker 허브](https://hub.docker.com/r/microsoft/aspnet/)에 있는 `microsoft/aspnet` 이미지를 기반으로 해서 이미지를 빌드합니다.
 기본 이미지인 `microsoft/aspnet`은 Windows Server 이미지입니다. Windows Server Core, IIS 및 ASP.NET 4.6.2 포함 됩니다. 컨테이너에서 이 이미지를 실행하면 IIS 및 설치된 웹 사이트가 자동으로 시작됩니다.
 
 이미지를 만드는 Dockerfile은 다음과 같이 표시됩니다.
