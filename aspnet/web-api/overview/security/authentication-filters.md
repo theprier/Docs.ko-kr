@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/authentication-filters
 msc.type: authoredcontent
-ms.openlocfilehash: 7c704cc351876b49ec143a49b25cc0ca83876e06
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 16e451f52799625983368bc938091eff47019b52
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="authentication-filters-in-aspnet-web-api-2"></a>ASP.NET Web API 2의에서 인증 필터
 ====================
@@ -160,7 +160,7 @@ Web API 2 파이프라인에서 흐름은 다음과 같습니다.
 
 "호스트 수준" 인증은 (예: IIS), 호스트에서 수행 하는 인증 요청에 도달 Web API 프레임 워크 하기 전에입니다.
 
-종종 하려는 경우에 응용 프로그램의 나머지 부분에 대 한 호스트 수준 인증을 사용 하도록 설정 하지만 Web API 컨트롤러에 대 한 사용 하지 않도록 설정 합니다. 예를 들어 호스트 수준에서 폼 인증을 사용 하도록 설정 하지만 웹 API에 대 한 토큰 기반 인증을 사용 하는 일반적인 시나리오가입니다.
+대개 다음 응용 프로그램의 나머지 부분에 대 한 호스트 수준 인증을 사용 하도록 설정 하지만 Web API 컨트롤러에 대 한 사용 하지 않도록 설정 하는 것이 좋습니다. 예를 들어 호스트 수준에서 폼 인증을 사용 하도록 설정 하지만 웹 API에 대 한 토큰 기반 인증을 사용 하는 일반적인 시나리오가입니다.
 
 Web API 파이프라인 내 호스트 수준의 인증을 사용 하지 않으려면 호출 `config.SuppressHostPrincipal()` 구성에서 합니다. 이 인해 웹 API를 제거 하는 **IPrincipal** Web API 파이프라인이 입력 하는 모든 요청에서. 효과적으로 그 &quot;취소-인증&quot; 요청 합니다.
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-5
 msc.type: authoredcontent
-ms.openlocfilehash: 7200899d54585cd09e0a648e3aaaf839db2649e0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5efc5ff367d5da5df060eba0028399af898a69fa
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-5"></a>먼저 Entity Framework 4.0 데이터베이스와 시작 및 ASP.NET 4 Web Forms-5 부
 ====================
@@ -77,7 +77,7 @@ ID, 제목, 다양 한 크레딧, 입력 한 부서를 선택한 다음 클릭 *
 
 ## <a name="working-with-many-to-many-relationships"></a>다 대 다 관계 작업
 
-간의 관계는 `Courses` 엔터티 집합 및 `People` 엔터티 집합은 다 대 다 관계입니다. A `Course` 엔터티 탐색 라는 속성이 `People` 0 개 이상의 관련 포함 될 수 있는 `Person` 엔터티 (해당 과정에 지정할 할당 강사를 나타냄). 및 `Person` 엔터티 탐색 라는 속성이 `Courses` 0 개 이상의 관련 포함 될 수 있는 `Course` 엔터티 (해당 강사에 게 할당 된 과정을 나타냄). 하나의 강사 여러 과정에 지정할 수 있습니다 및 한 과정으로 여러 강사 뿐만 아니라 수 있습니다. 이 연습 섹션에서는 추가 하 고 간의 관계를 제거할 `Person` 및 `Course` 관련 엔터티의 탐색 속성을 업데이트 하 여 엔터티.
+간의 관계는 `Courses` 엔터티 집합 및 `People` 엔터티 집합은 다 대 다 관계입니다. A `Course` 엔터티 탐색 라는 속성이 `People` 0 개 이상의 관련 포함 될 수 있는 `Person` 엔터티 (해당 과정에 지정할 할당 강사를 나타냄). 및 `Person` 엔터티 탐색 라는 속성이 `Courses` 0 개 이상의 관련 포함 될 수 있는 `Course` 엔터티 (courses 나타내는 해당 강사에 게 할당 된). 하나의 강사 여러 과정에 지정할 수 있습니다 및 한 과정으로 여러 강사 뿐만 아니라 수 있습니다. 이 연습 섹션에서는 추가 하 고 간의 관계를 제거할 `Person` 및 `Course` 관련 엔터티의 탐색 속성을 업데이트 하 여 엔터티.
 
 라는 새 웹 페이지 생성 *InstructorsCourses.aspx* 를 사용 하는 *Site.Master* 마스터 페이지, 다음 태그를 추가 하 고는 `Content` 라는 컨트롤 `Content2`:
 
@@ -123,7 +123,7 @@ ID, 제목, 다양 한 크레딧, 입력 한 부서를 선택한 다음 클릭 *
 
 [![Image01](the-entity-framework-and-aspnet-getting-started-part-5/_static/image10.png)](the-entity-framework-and-aspnet-getting-started-part-5/_static/image9.png)
 
-강사를 선택 합니다. **과정 할당** 드롭다운 목록에서 강사 설명 하지 않는 하는 강의 표시 됩니다 및 **제거 과정** 드롭다운 목록에서 강사에 이미 할당 되어 있는 강의 표시 됩니다. 에 **과정 할당** 섹션 과정을 선택한 다음 클릭 **할당**합니다. 과정을 이동는 **제거 과정** 드롭 다운 목록입니다. 과정 선택는 **제거 과정** 섹션 및 클릭 **제거***합니다.* 과정을 이동는 **과정 할당** 드롭 다운 목록입니다.
+강사를 선택 합니다. **과정 할당** 드롭다운 목록에서 강사 설명 하지 않는 하는 강의 표시 됩니다 및 **제거 과정** 드롭다운 목록에서 강사에 이미 할당 되어 있는 강의 표시 됩니다. 에 **과정 할당** 섹션 과정을 선택한 다음 클릭 **할당**합니다. 과정을 이동는 **제거 과정** 드롭 다운 목록입니다. 과정 선택는 **제거 과정** 섹션 및 클릭 **제거 * * * 합니다.* 과정을 이동는 **과정 할당** 드롭 다운 목록입니다.
 
 관련된 데이터에 사용할 수 있는 몇 가지 다른 방법을 살펴 보았습니다. 다음 자습서에서는 응용 프로그램의 관리 효율을 개선 하기 위해 데이터 모델에서 상속을 사용 하는 방법을 설명 합니다.
 

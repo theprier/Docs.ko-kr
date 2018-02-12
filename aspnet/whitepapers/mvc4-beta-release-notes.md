@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/mvc4-beta-release-notes
 msc.type: content
-ms.openlocfilehash: 58ae178a0e6578d8353e1a4e9d67fc1026e99f55
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d6797d1dbacff7503f74782d325ff5a9598970c0
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="aspnet-mvc-4"></a>ASP.NET MVC 4
 ====================
@@ -295,7 +295,7 @@ ASP.NET MVC 4 베타의 Windows Azure SDK 1.5 2011 년 9 월 릴리스를 지원
     - *MvcCSharpRazorCodeParser.ParseInheritsStatement(System.Web.Razor.Parser.CodeBlockInfo)*
     - *MvcWebPageRazorHost.DecorateCodeGenerator(System.Web.Razor.Generator.RazorCodeGenerator)*
     - *MvcVBRazorCodeParser.ParseInheritsStatement(System.Web.Razor.Parser.CodeBlockInfo)*
-- **WebMatrix.WebData.dll에는 ASP.NET MVC 4 응용 프로그램의 /bin 디렉터리에 포함 되어 있으면, 폼 인증에 대 한 URL를 인계 받습니다.** / 계정/로그온에 대 한 인증 로그인 리디렉션을 무시 됩니다 (예를 들어 선택 하 여 "Razor 구문이 있는 ASP.NET 웹 페이지" 배포 가능 종속성 추가 대화 상자를 사용 하는 경우) 응용 프로그램에 WebMatrix.WebData.dll 어셈블리를 추가 하지 않고 / ASP.NET MVC 계정 컨트롤러 기본적으로 예상 대로 계정/로그인입니다. 이 문제를 방지 하 고 인증 섹션에서 web.config에 이미 지정 된 URL을 사용 하려면 PreserveLoginUrl를 호출 하는 appSetting을 추가 하 고 true로 설정: 
+- **WebMatrix.WebData.dll /bin 디렉터리는 ASP.NET MVC 4 응용 프로그램에 포함 되어 있으면, 폼 인증에 대 한 URL를 인계 받습니다.** / 계정/로그온에 대 한 인증 로그인 리디렉션을 무시 됩니다 (예를 들어 선택 하 여 "Razor 구문이 있는 ASP.NET 웹 페이지" 배포 가능 종속성 추가 대화 상자를 사용 하는 경우) 응용 프로그램에 WebMatrix.WebData.dll 어셈블리를 추가 하지 않고 / ASP.NET MVC 계정 컨트롤러 기본적으로 예상 대로 계정/로그인입니다. 이 문제를 방지 하 고 인증 섹션에서 web.config에 이미 지정 된 URL을 사용 하려면 PreserveLoginUrl를 호출 하는 appSetting을 추가 하 고 true로 설정: 
 
     [!code-xml[Main](mvc4-beta-release-notes/samples/sample13.xml)]
 - **NuGet 패키지 관리자 Visual Studio 2010 및 Visual Web Developer 2010의 병렬 설치에 대 한 ASP.NET MVC 4를 설치 하려고 하면 설치 되지 않습니다.** Visual Studio 2010과 Visual Web Developer 2010 ASP.NET MVC 4와 함께 실행 하려면 두 버전의 Visual Studio 설치 된 후 ASP.NET MVC 4를 설치 해야 합니다.

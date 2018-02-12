@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-introduction-1-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 9c0edb301de85d15b9a3527382b72211f6f3d3ec
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: a0f38c83bd9231dbd37d3d505c90316af521b336
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-introduction---1-of-12"></a>SQL Server Compact Visual Studio를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: 1 / 12-소개
 ====================
@@ -137,7 +137,7 @@ Visual Studio를 시작 하 고 프로젝트를 열고 실행 하려면 CTRL + f
 - 응용 프로그램 데이터는 응용 프로그램 데이터베이스에 액세스 하는 Entity Framework 5.0을 사용 합니다. Entity Framework 5.0을 포함 하는 어셈블리는 응용 프로그램과 함께 배포 되어야 합니다.
 - 응용 프로그램 공급 업체 오류 로깅 및 보고 유틸리티를 사용 합니다. 이 유틸리티는 응용 프로그램과 함께 배포 되어야 하는 어셈블리에 제공 됩니다.
 - 오류 로깅 유틸리티 파일 폴더에 XML 파일에 오류 정보를 기록 합니다. ASP.NET에 배포 된 사이트에서 실행 되는 계정에이 폴더에 대 한 쓰기 권한이 있고 배포에서이 폴더를 제외 해야 있는지 확인 해야 합니다. (그렇지 않은 경우 오류 로그 데이터는 테스트 환경에서 프로덕션에 배포할 수 있으며 및/또는 프로덕션 오류 로그 파일을 삭제 될 수 있습니다.)
-- 응용 프로그램에 배포 된에서 변경 되어야 하는 일부 설정을 포함 *Web.config* 대상 환경 (테스트 또는 프로덕션) 및 빌드에 따라 변경 해야 하는 기타 설정에 따라 파일 구성 (디버그 또는 릴리스)입니다.
+- 응용 프로그램에 일부 설정을 변경 해야 하는 배포에서 *Web.config* 대상 환경 (테스트 또는 프로덕션) 및 빌드에 따라 변경 해야 하는 기타 설정에 따라 파일 구성 (디버그 또는 릴리스)입니다.
 - Visual Studio 솔루션에는 클래스 라이브러리 프로젝트에 포함 됩니다. 이 프로젝트에서 생성 하는 어셈블리에만 배포할지 프로젝트 자체입니다.
 
 이 시리즈의 첫 번째 자습서에서는 샘플 Visual Studio 프로젝트를 다운로드 한 있고 응용 프로그램을 배포 하는 방법에 영향을 주는 사이트 기능을 검토 합니다. 다음 자습서에서 자동으로 처리 되도록 이러한 기능 중 일부를 설정 하 여 배포를 위해 준비할 수 있습니다. 다른 수동으로 처리할 수 있습니다.

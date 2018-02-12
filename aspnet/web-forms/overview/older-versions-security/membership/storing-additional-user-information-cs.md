@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/storing-additional-user-information-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 63aa9dce45ce7ac3e33f542f549b2ec620191d50
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 38dfdab395b6b3559d293c5b1488ede2e88bfe91
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="storing-additional-user-information-c"></a>추가 사용자 정보를 저장 하는 (C#)
 ====================
@@ -353,7 +353,7 @@ ListView의 스마트 태그를 열고 데이터 소스 선택 드롭다운 목�
 
 `LayoutTemplate` 태그를 정의 하는 동안 컨트롤에 의해 생성 되는 `ItemTemplate` SqlDataSource에서 반환 된 각 항목을 렌더링 합니다. `ItemTemplate`의 결과 태그에 배치 되는 `LayoutTemplate`의 `itemPlaceholder` 제어 합니다. 이외에 `itemPlaceholder`, `LayoutTemplate` ListView 페이지 (기본값) 당 10 개만 방명록 주석 표시를 제한 하는 한 DataPager 컨트롤을 포함 하 고 페이징 인터페이스를 렌더링 합니다.
 
-내 `ItemTemplate` 각 방명록 메모 주제에 표시 됩니다는 `<h4>` 요소를 본문 제목 아래에 위치 합니다. 본문을 표시 하는 데 해당 구문을 사용 하 여 반환 되는 데이터는 `Eval("Body")` databinding 문에서 문자열, 변환 및와 대체 줄 바꿈는 `<br />` 요소입니다. 이 변환은 HTML에서 공백 무시 하므로 주석으로 처리를 전송할 때 입력 한 줄 바꿈 표시 하기 위해 필요 합니다. 사용자의 서명은 그의 홈 페이지, 메모를 만든 날짜 및 시간과 주석을 유지 하는 사용자의 사용자 이름에 대 한 링크는 사용자의 홈 동 이어서 기울임꼴로 본문 아래에 표시 됩니다.
+내 `ItemTemplate` 각 방명록 메모 주제에 표시 됩니다는 `<h4>` 요소를 본문 제목 아래에 위치 합니다. 구문 본문을 표시 하는 데 사용 하 여 반환 되는 데이터는 `Eval("Body")` databinding 문에서 문자열, 변환 및와 대체 줄 바꿈는 `<br />` 요소입니다. 이 변환은 HTML에서 공백 무시 하므로 주석으로 처리를 전송할 때 입력 한 줄 바꿈 표시 하기 위해 필요 합니다. 사용자의 서명은 그의 홈 페이지, 메모를 만든 날짜 및 시간과 주석을 유지 하는 사용자의 사용자 이름에 대 한 링크는 사용자의 홈 동 이어서 기울임꼴로 본문 아래에 표시 됩니다.
 
 브라우저를 통해 페이지를 보려면 잠시 시간. 여기에 표시 된 5 단계에서에서 방명록에 추가 하는 주석을 표시 되어야 합니다.
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-validation-to-the-model
 msc.type: authoredcontent
-ms.openlocfilehash: a58b4a4893fca66800c012bebae4a8bbfedf7a6a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: cac86760b90c90a0ea2fad16268f60b5ccf61299
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="adding-validation-to-the-model-vb"></a>유효성 검사 (VB) 모델에 추가
 ====================
@@ -97,7 +97,7 @@ ASP.NET MVC 및 Entity Framework Code First 제공 하는 유효성 검사 지�
 
 이 방법에 대 한 훌륭한은 컨트롤러도 아니고 만들기 보기 템플릿이 알고 있는 아무 것도 표시 되는 특정 오류 메시지 또는 적용을 실제 유효성 검사 규칙에 대 한입니다. 유효성 검사 규칙 및 오류 문자열은 `Movie` 클래스에서만 지정됩니다.
 
-유효성 검사 논리를 나중에 변경 하려는 경우 정확 하 게 한 곳에서 그렇게 할 수 있습니다. 모든 유효성 검사 논리가 한 곳에 정의되어 모든 곳에서 사용되므로 응용 프로그램의 서로 다른 부분이 규칙 적용 방법에 부합하는지 우려하지 않아도 됩니다. 이렇게 하면 코드가 매우 깔끔해지고 유지 관리 및 확장이 간편합니다. 수 있음을 의미 하 고 완전히 건조 원칙을 적용 합니다.
+유효성 검사 논리를 나중에 변경 하려는 경우 정확 하 게 한 곳에서 그렇게 할 수 있습니다. 모든 유효성 검사 논리가 한 곳에 정의되어 모든 곳에서 사용되므로 응용 프로그램의 서로 다른 부분이 규칙 적용 방법에 부합하는지 우려하지 않아도 됩니다. 이렇게 하면 코드가 매우 깔끔해지고 유지 관리 및 확장이 간편합니다. 또한 반복 금지 원칙에 완전히 부합하게 됩니다.
 
 ## <a name="adding-formatting-to-the-movie-model"></a>영화 모델에 서식 추가
 

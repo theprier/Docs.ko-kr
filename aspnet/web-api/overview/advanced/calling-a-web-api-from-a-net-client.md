@@ -11,11 +11,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/advanced/calling-a-web-api-from-a-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: 8156bd1c7cfc111a6a121a89d845ca284ee1b7af
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 44e02888b53ee372ab93db5f90acb691f26b7519
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="call-a-web-api-from-a-net-client-c"></a>.NET 클라이언트 (C#)에서 Web API를 호출 합니다.
 ====================
@@ -116,7 +116,7 @@ Json.NET은.NET을 위한 인기 있는 고성능 JSON 프레임 워크입니다
 
 때 **ReadAsAsync** 라고 매개 변수 없이 사용 하 여 일련의 기본 *미디어 포맷터* 응답 본문을 읽을 수 있습니다. 기본 포맷터 JSON, XML 및 양식 url로 인코딩된 데이터를 지원합니다.
 
-기본 포맷터를 사용 하는 대신에 포맷터의 목록을 제공할 수 있습니다는 **ReadAsAsync** 메서드.  사용 하는 포맷터의 목록은 사용자 지정 미디어 유형 포맷터를가 하는 경우에 유용 합니다.
+기본 포맷터를 사용 하는 대신에 포맷터의 목록을 제공할 수 있습니다는 **ReadAsAsync** 메서드.  포맷터의 목록을 사용 하 여 하는 것은 사용자 지정 미디어 유형 포맷터를가 하는 경우에 유용 합니다.
 
 ```csharp
 var formatters = new List<MediaTypeFormatter>() {

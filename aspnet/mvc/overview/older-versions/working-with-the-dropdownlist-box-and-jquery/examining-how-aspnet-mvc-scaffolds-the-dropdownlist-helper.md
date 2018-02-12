@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper
 msc.type: authoredcontent
-ms.openlocfilehash: 737773ab424b3ec3b6139b8c238a60ca23de2e69
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: abd9b5c09e942b966eb3eaaebe1b315c30b8e0c0
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="examining--how--aspnet-mvc-scaffolds-the-dropdownlist-helper"></a>ASP.NET MVC DropDownList 도우미 scaffolds 하는 방법을 검사 합니다.
 ====================
@@ -26,7 +26,7 @@ ms.lasthandoff: 01/24/2018
 
 ![](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/_static/image1.png)
 
-편집 된 *StoreManager\Index.cshtml* 확인 하 여 제거 `AlbumArtUrl`합니다. 제거 `AlbumArtUrl` 프레젠테이션을 가독성을 향상 됩니다. 완성 된 코드는 다음과 같습니다.
+편집 된 *StoreManager\Index.cshtml* 확인 하 여 제거 `AlbumArtUrl`합니다. 제거 `AlbumArtUrl` 프레젠테이션을 가독성을 향상 됩니다. 완성된 코드는 다음과 같습니다.
 
 [!code-cshtml[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample1.cshtml)]
 
@@ -112,7 +112,7 @@ Genre 및 아티스트를 추가 하려면 새 메서드를 만들 **SelectList*
 
 [!code-csharp[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample10.cs)]
 
-설정 두 줄을 바꿀는 `ViewBag` 각는 `Create` 및 `Edit` 메서드를 호출 하 여는 `SetGenreArtistViewBag` 메서드. 완성 된 코드는 다음과 같습니다.
+설정 두 줄을 바꿀는 `ViewBag` 각는 `Create` 및 `Edit` 메서드를 호출 하 여는 `SetGenreArtistViewBag` 메서드. 완성된 코드는 다음과 같습니다.
 
 [!code-csharp[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample11.cs)]
 
@@ -168,7 +168,7 @@ Create view는 SelectList 첫 번째 항목 표시 되지 않도록 방지 하�
 
 프로젝트 빌드 하므로 `AlbumSelectListViewModel` 를 다음 단계에서 뷰를 만들 때 사용할 수 있습니다.
 
-추가 `EditVM` 메서드는 `StoreManagerController`합니다. 완성 된 코드는 다음과 같습니다.
+추가 `EditVM` 메서드는 `StoreManagerController`합니다. 완성된 코드는 다음과 같습니다.
 
 [!code-csharp[Main](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper/samples/sample20.cs)]
 
@@ -202,7 +202,7 @@ Create view는 SelectList 첫 번째 항목 표시 되지 않도록 방지 하�
 
 표시 된 세 방법 모두 acceptible 됩니다. Explictily 패스에는 개발자가 많습니다는 `SelectList` 에 `DropDownList` 를 사용 하는 `ViewBag`합니다. 이 방법에 컬렉션에 대 한 보다 적절 한 이름을 사용 하 여의 유연성을 제공 하는 추가 이점이 있습니다. 한 가지 주의할 점은 이름을 지정할 수 없습니다는 `ViewBag SelectList` 모델 속성 이름이 같은 개체입니다.
 
-ViewModel 접근 방식을 선호 하는 개발자도 있습니다. 다른 고려 더 자세한 정보 표시 태그 및 생성 된 HTML ViewModel의 단점은 접근 합니다.
+ViewModel 접근 방식을 선호 하는 개발자도 있습니다. 다른 태그를 더 자세한 정보를 고려 하 고 HTML ViewModel 접근 방법의 단점은 생성 합니다.
 
 이 섹션에는 이전에 배운 것 세 가지 방법을 사용 하는 **DropDownList** 범주 데이터를 사용 합니다. 다음 섹션에서는 새 범주를 추가 하는 방법을 보여줍니다.
 

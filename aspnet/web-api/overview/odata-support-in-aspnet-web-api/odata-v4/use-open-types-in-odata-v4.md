@@ -12,15 +12,15 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/use-open-types-in-odata-v4
 msc.type: authoredcontent
-ms.openlocfilehash: c2d7454534ff0e9e0a80365793800ab7c45d3b6e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fe67b9a11a82b55d5f3e0e5f1b0cee10a58833d2
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="open-types-in-odata-v4-with-aspnet-web-api"></a>ASP.NET web API OData v4에서 형식을 열합니다
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > OData v 4에는 *형식을 열* stuctured 형식이 형식 정의에 선언 된 모든 속성과 함께 동적 속성을 포함 하 합니다. 개방형 형식이 데이터 모델에 유연성을 추가할 수 있습니다. 이 자습서에는 ASP.NET Web API OData에서 열기 형식을 사용 하는 방법을 보여 줍니다.
 > 
@@ -100,11 +100,11 @@ OData 메타 데이터 문서를 가져오려면에 GET 요청을 보내고 `~/$
 
 - 에 대 한는 `Book` 및 `Press` 형식, 값은 `OpenType` 특성은 true입니다. `Customer` 및 `Address` 형식이이 특성이 없습니다.
 - `Book` 엔터티 형식에 선언 된 속성을 3 개의: ISBN, 제목 및 키를 누릅니다. OData 메타 데이터 포함 되지 않습니다는 `Book.Properties` CLR 클래스에서 속성입니다.
-- 마찬가지로,는 `Press` 복합 형식에 선언 된 두 개의 속성: 이름 및 범주입니다. 메타 데이터가 없으면 하지는 `Press.DynamicProperties` CLR 클래스에서 속성입니다.
+- 마찬가지로,는 `Press` 복합 형식에 선언 된 두 개의 속성: 이름 및 범주입니다. 메타 데이터가 포함 되지 않습니다는 `Press.DynamicProperties` CLR 클래스에서 속성입니다.
 
 ## <a name="query-an-entity"></a>엔터티 쿼리
 
-ISBN 가진 책을 "978-0-7356-7942-9" 같음 가져오려면 송신에 GET 요청을 보내고 `~/Books('978-0-7356-7942-9')`합니다. 응답 본문은 다음과 비슷합니다. 들여쓰기 더 쉽게 읽을 수 있도록 합니다.
+책 ISBN와 같은 "978-0-7356-7942-9"을 가져오려면에 GET 요청을 보내고 `~/Books('978-0-7356-7942-9')`합니다. 응답 본문은 다음과 비슷합니다. 들여쓰기 더 쉽게 읽을 수 있도록 합니다.
 
 [!code-console[Main](use-open-types-in-odata-v4/samples/sample7.cmd?highlight=8-13,15-23)]
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-9
 msc.type: authoredcontent
-ms.openlocfilehash: 71f87043be064d24bdfb203380fb6cf651527e30
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 1caf836f8c92cbc9ab95e0aa990f81493e577a27
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="part-9-registration-and-checkout"></a>9 단계: 등록 및 체크 아웃
 ====================
@@ -119,7 +119,7 @@ CheckoutController 다음 컨트롤러 작업에 적용 됩니다.
 
 ## <a name="adding-the-addressandpayment-view"></a>AddressAndPayment 뷰 추가
 
-이제 AddressAndPayment 보기를 만들어 보겠습니다. 중 하나를 마우스 오른쪽 단추로 클릭는 AddressAndPayment 컨트롤러 작업 하 고 아래와 같이 AddressAndPayment 순서로 강력한 형식이 며 편집 템플릿을 사용 하 여 명명 된 뷰를 추가 합니다.
+이제 AddressAndPayment 보기를 만들어 보겠습니다. AddressAndPayment 컨트롤러 작업 중 하나를 마우스 오른쪽 단추로 클릭 하 고 아래와 같이 AddressAndPayment 순서로 강력한 형식이 며 편집 템플릿을 사용 하 여 명명 된 뷰를 추가 합니다.
 
 ![](mvc-music-store-part-9/_static/image6.png)
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/using-dynamicpopulate-with-a-user-control-and-javascript-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3f78da3898d44cc2cf1db6623ebcaf6a73ebbf3e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0d98177561b72ffbe05455f785e156f91e450d36
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="using-dynamicpopulate-with-a-user-control-and-javascript-c"></a>DynamicPopulate를 사용 하 여 사용자 정의 컨트롤 및 JavaScript (C#)
 ====================
@@ -67,7 +67,7 @@ A &lt; `label` &gt; 요소는 서버에서 가져온 데이터를 표시 하는 
 
 [!code-aspx[Main](using-dynamicpopulate-with-a-user-control-and-javascript-cs/samples/sample8.aspx)]
 
-됐습니다! 예상 대로 동작 하는 페이지: 사용자가 클릭에서 라디오 단추, 도구 키트에서 컨트롤 웹 서비스를 호출 하 고 원하는 형식으로 현재 날짜를 표시 합니다.
+됐습니다! 예상 대로 동작 하는 페이지: 라디오 단추 중 하나에 사용자가 클릭, 제어 도구 키트에 웹 서비스를 호출 하 고 원하는 형식으로 현재 날짜를 표시 합니다.
 
 
 [![사용자 정의 컨트롤에 있는 라디오 단추](using-dynamicpopulate-with-a-user-control-and-javascript-cs/_static/image2.png)](using-dynamicpopulate-with-a-user-control-and-javascript-cs/_static/image1.png)

@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/mvc3-release-notes
 msc.type: content
-ms.openlocfilehash: 92a6dee24b8942d721e3537a712be141155e61df
-ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
+ms.openlocfilehash: 058b7c6fe6eeeea4403e7e5fdc05bb44d2ba1300
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/05/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 ====================
@@ -255,7 +255,7 @@ ASP.NET MVC 3 ASP.NET MVC 3을 ASP.NET MVC 2 응용 프로그램을 업그레이
 
 #### <a name="project-templates-are-now-html5-enabled"></a>프로젝트 템플릿에 HTML5 사용 하도록 설정 됩니다.
 
-새 프로젝트 대화 상자에 이제 프로젝트 템플릿에 HTML5 특정 기능을 추가할 수 있는 옵션이 포함 되어 있습니다. 옵션을 선택 하면 새 HTML5를 포함 하는 뷰가 생성 될 `<header>`, `<footer>`, 및 `<navigation>` 요소입니다. 요소입니다.
+새 프로젝트 대화 상자에 이제 프로젝트 템플릿에 HTML5 특정 기능을 추가할 수 있는 옵션이 포함 되어 있습니다. 옵션을 선택 하면 새 HTML5를 포함 하는 뷰가 생성 될 `<header>`, `<footer>`, 및 `<navigation>` 요소입니다.
 
 참고가 이전 버전의 브라우저 HTML5 특정 태그를 지원 하지 않습니다. 이 한계를 해결 하기 위해 HTML5 프로젝트 템플릿에 Modernizr 라이브러리에 대 한 참조를 포함 합니다. (다음 섹션 참조).
 
@@ -608,7 +608,7 @@ Namespace.ClassName
 ## <a name="breaking-changes"></a>주요 변경 사항
 
 - 동일한 예외 필터에 대 한 예외 필터에 대 한 실행 순서가 변경 된 *순서* 값입니다. 예외 필터를 동일한 컨트롤러에서 ASP.NET MVC 2 및 이전 버전에서는 *순서* 는 작업 메서드의 예외 필터 전에 실행의 동작 메서드 같이 합니다. 일반적으로 경우가이 예외가 필터가 적용 된 경우 지정 된 없이 *순서* 값입니다. ASP.NET MVC 3에서이 순서가 반대로 변경 되었습니다 가장 구체적인 예외 처리기는 먼저 실행 되도록 합니다. 이전 버전과 달리 하는 경우는 *순서* 속성을 명시적으로 지정, 필터는 지정 된 순서로 실행 됩니다.
-- 라는 새 속성이 추가 *FileExtensions* 에 *VirtualPathProviderViewEngine* 기본 클래스입니다. 조회할 때 뷰 경로 의해 (및 이름으로)에 포함 된 파일 확장명을 가진 뷰만이 새 속성으로 지정 된 목록으로 간주 됩니다. 웹 폼 보기에 대 한 사용자 지정 파일 확장명을 사용 하도록 설정 하려면 공급자를 빌드하는 사용자 지정 등록 사용자에 게 이것은 주요 변경 내용 및 보기는 이름이 아니라 전체 경로 사용 하 여 참조 해 합니다. 해결 하는 값을 수정 하는 *FileExtensions* 속성을 사용자 지정 파일 확장명을 포함 합니다.
+- 라는 새 속성이 추가 *FileExtensions* 에 *VirtualPathProviderViewEngine* 기본 클래스입니다. 조회할 때 뷰 경로 의해 (및 이름으로)에 포함 된 파일 확장명을 가진 뷰만이 새 속성으로 지정 된 목록으로 간주 됩니다. 사용자에 게 웹 폼 보기에 대 한 사용자 지정 파일 확장명을 사용 하도록 설정 하려면 사용자 지정 빌드 공급자를 등록 하 고 이름을 아닌 전체 경로 사용 하 여 해당 뷰를 참조 하는 주요 변경 내용입니다. 해결 하는 값을 수정 하는 *FileExtensions* 속성을 사용자 지정 파일 확장명을 포함 합니다.
 
 <a id="_Toc276711795"></a>
 ## <a name="known-issues"></a>알려진 문제

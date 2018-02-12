@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-validation-to-the-model
 msc.type: authoredcontent
-ms.openlocfilehash: 93b4df5fcbde8d87866d00dffda8a241d0dd596b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 6de7d279677c7bbf220b956767a97aaaff8da9a1
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="adding-validation-to-the-model"></a>모델에 유효성 검사 추가
 ====================
@@ -26,7 +26,7 @@ ms.lasthandoff: 01/24/2018
 > > 이 자습서의 업데이트 된 버전은 사용할 수 있는 [여기](../../getting-started/introduction/getting-started.md) ASP.NET MVC 5 및 Visual Studio 2013을 사용 하 합니다. 더 안전 하 고 따라 하기 쉽고 이며 더 많은 기능을 보여 줍니다.
 
 
-에서는이 여기서 추가 유효성 검사 논리를는 `Movie` 모델과 하면 사용자가 만들거나 응용 프로그램을 사용 하 여 동영상을 편집 하는 언제 든 지 유효성 검사 규칙이 적용 되도록 유지 됩니다.
+이 섹션에서는 유효성 검사 논리를 추가 합니다는 `Movie` 모델과 하면 사용자가 만들거나 응용 프로그램을 사용 하 여 동영상을 편집 하는 언제 든 지 유효성 검사 규칙이 적용 되도록 유지 됩니다.
 
 ## <a name="keeping-things-dry"></a>건조 구성을
 
@@ -133,7 +133,7 @@ Visual Studio 새 정의 하는 클래스 파일을 엽니다이 명령이 완�
 
 이 방법에 대 한 훌륭한은 컨트롤러도 아니고 만들기 보기 템플릿이 알고 있는 아무 것도 표시 되는 특정 오류 메시지 또는 적용을 실제 유효성 검사 규칙에 대 한입니다. 유효성 검사 규칙 및 오류 문자열은 `Movie` 클래스에서만 지정됩니다. 이 동일한 유효성 검사 규칙 편집 보기 및 모든 다른 뷰 템플릿을 만들 수 있습니다 모델을 편집 하는 자동으로 적용 됩니다.
 
-나중에 유효성 검사 논리를 변경 하려는 경우 후 그렇게 정확 하 게 한 곳에서 모델에 유효성 검사 특성을 추가 하 여 (이 예제는 `movie` 클래스). 모든 유효성 검사 논리가 한 곳에 정의되어 모든 곳에서 사용되므로 응용 프로그램의 서로 다른 부분이 규칙 적용 방법에 부합하는지 우려하지 않아도 됩니다. 이렇게 하면 코드가 매우 깔끔해지고 유지 관리 및 확장이 간편합니다. 수 있음을 의미 하 고 완전히 건조 원칙을 적용 합니다.
+나중에 유효성 검사 논리를 변경 하려는 경우 후 그렇게 정확 하 게 한 곳에서 모델에 유효성 검사 특성을 추가 하 여 (이 예제는 `movie` 클래스). 모든 유효성 검사 논리가 한 곳에 정의되어 모든 곳에서 사용되므로 응용 프로그램의 서로 다른 부분이 규칙 적용 방법에 부합하는지 우려하지 않아도 됩니다. 이렇게 하면 코드가 매우 깔끔해지고 유지 관리 및 확장이 간편합니다. 또한 반복 금지 원칙에 완전히 부합하게 됩니다.
 
 ## <a name="adding-formatting-to-the-movie-model"></a>영화 모델에 서식 추가
 

@@ -10,17 +10,17 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 ms.custom: mvc
 uid: security/authentication/azure-ad-b2c-webapi
-ms.openlocfilehash: a63bfc26bb6b0f5ea1c64641d6f57a3555d7f401
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: d768e2daf2464b282b097e935ef6c5f85e8705f5
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/12/2018
 ---
 # <a name="cloud-authentication-in-web-apis-with-azure-active-directory-b2c"></a>웹 Api와 Azure Active Directory B2C에에서 대 한 클라우드 인증
 
 작성자: [Cam Soper](https://twitter.com/camsoper)
 
-[Azure Active Directory B2C](/azure/active-directory-b2c/active-directory-b2c-overview) (Azure AD B2C)는 웹 및 모바일 앱에 대 한 클라우드 id 관리 솔루션입니다. 서비스는 클라우드 및 온-프레미스에서 호스트 되는 앱에 대 한 인증을 제공 합니다. 인증 형식에는 엔터프라이즈 계정을 페더레이션 및 개별 계정, 소셜 네트워크 계정을 포함 합니다. 또한 Azure AD B2C 최소 구성으로 다단계 인증을 제공할 수 있습니다.
+[Azure Active Directory B2C](/azure/active-directory-b2c/active-directory-b2c-overview) (Azure AD B2C)는 웹 및 모바일 앱에 대 한 클라우드 id 관리 솔루션입니다. 서비스는 클라우드 및 온-프레미스에서 호스트 되는 앱에 대 한 인증을 제공 합니다. 인증 유형을 개별 계정, 소셜 네트워크 계정 등 엔터프라이즈 계정을 페더레이션 합니다. 또한 Azure AD B2C 최소 구성으로 다단계 인증을 제공할 수 있습니다.
 
 > [!TIP]
 > Azure Active Directory (Azure AD) Azure AD B2C 별도 제품이 제공 됩니다. Azure AD 테 넌 트 조직을 나타내고 Azure AD B2C 테 넌 트를 신뢰 당사자 응용 프로그램과 함께 사용할 id의 컬렉션을 나타냅니다. 자세한 내용은 참고 [Azure AD B2C: 질문과 대답 (FAQ)](/azure/active-directory-b2c/active-directory-b2c-faqs)합니다.

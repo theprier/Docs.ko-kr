@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/external-authentication-services
 msc.type: authoredcontent
-ms.openlocfilehash: 5d6e6727f387d047e7b41a6efa0d2dadf467558e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 744396cb0c95d1887f259b1e2e890bd06ef7d049
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="external-authentication-services-with-aspnet-web-api-c"></a>외부 인증 서비스가 ASP.NET web API (C#)
 ====================
@@ -263,7 +263,7 @@ OAuth 및 OpenID를 사용 하는 응용 프로그램을 만드는 방법에 대
     1. 창에서 관리자 권한 명령 프롬프트를 엽니다.
     2. 다음 명령을 입력합니다.
 
-        <kbd>메모장 %WinDir%\system32\drivers\etc\hosts</kbd>
+        <kbd>notepad %WinDir%\system32\drivers\etc\hosts</kbd>
     3. 호스트 파일에 다음과 같은 항목을 추가 합니다.
 
         <kbd>127.0.0.1 www.wingtiptoys.com</kbd>
@@ -281,7 +281,7 @@ OAuth 및 OpenID를 사용 하는 응용 프로그램을 만드는 방법에 대
         <kbd>cd /d &quot;%ProgramFiles%\IIS Express&quot;</kbd>
     3. 응용 프로그램에 FQDN을 추가 하려면 다음 명령을 입력 합니다.
 
-        <kbd>appcmd.exe 설정 구성-section:system.applicationHost/sites / +&quot;[이름 = 'WebApplication1'].bindings. [ 프로토콜 bindingInformation'http ', = ='*:80:www.wingtiptoys.com']&quot; /commit:apphost</kbd>
+        <kbd>appcmd.exe set config -section:system.applicationHost/sites /+&quot;[name='WebApplication1'].bindings.[protocol='http',bindingInformation='*:80:www.wingtiptoys.com']&quot; /commit:apphost</kbd>
 
  여기서 **WebApplication1** 프로젝트의 이름 및 **bindingInformation** 테스트에 사용할 포트 번호 및 FQDN을 포함 합니다.
 
@@ -303,7 +303,7 @@ Microsoft 인증에 대 한 Windows Live에 응용 프로그램을 연결 하는
 <a id="DISABLE"></a>
 ### <a name="optional-disable-local-registration"></a>로컬 등록을 사용 하지 않도록 선택 사항:
 
-현재 ASP.NET 로컬 등록 기능 자동된 프로그램 (bot) 계정; 멤버를 만드는 하는 것을 금지 하지 않습니다. 예를 들어 봇 방지 및 유효성 검사와 같은 기술을 사용 하 여 [CAPTCHA](../../../web-pages/overview/security/16-adding-security-and-membership.md)합니다. 이 인해 로그인 페이지에 로컬 로그인 폼과 등록 링크를 제거 해야 합니다. 이 위해 엽니다는  *\_Login.cshtml* 프로젝트에서 페이지 한 다음 로컬 로그인 패널 및 등록 링크에 대 한 줄을 설명 합니다. 다음 코드 예제와 같은 결과 페이지와 같은 모습:
+현재 ASP.NET 로컬 등록 기능 자동된 프로그램 (bot) 계정; 멤버를 만드는 하는 것을 금지 하지 않습니다. 예를 들어 봇 방지 및 유효성 검사와 같은 기술을 사용 하 여 [CAPTCHA](../../../web-pages/overview/security/16-adding-security-and-membership.md)합니다. 이 인해 로그인 페이지에 로컬 로그인 폼과 등록 링크를 제거 해야 합니다. 이 위해 엽니다는  *\_Login.cshtml* 프로젝트에서 페이지 한 다음 로컬 로그인 패널 및 등록 링크에 대 한 줄을 설명 합니다. 결과 페이지는 다음 코드 예제와 같습니다.
 
 [!code-html[Main](external-authentication-services/samples/sample10.html)]
 

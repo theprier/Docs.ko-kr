@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/testing-and-debugging/mocking-entity-framework-when-unit-testing-aspnet-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: 2d8a3df94c91d2fac79006916375764c2b90dc85
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: abfde7edec85812de3560f4edefb110c3e374580
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="mocking-entity-framework-when-unit-testing-aspnet-web-api-2"></a>Entity Framework를 모의 때 단위 테스트 ASP.NET Web API 2
 ====================
@@ -149,7 +149,7 @@ StoreApp.Tests 프로젝트를 마우스 오른쪽 단추로 클릭 하 고 선�
 
 ![패키지 관리](mocking-entity-framework-when-unit-testing-aspnet-web-api-2/_static/image4.png)
 
-온라인 패키지를 찾아 EntityFramework 패키지 (버전 6.0 이상)를 설치 합니다. EntityFramework 패키지가 이미 설치 되어 있는지, 표시 되는 경우 수 없으면 선택한 대신 StoreApp 프로젝트는 StoreApp.Tests 프로젝트.
+온라인 패키지를 찾아 EntityFramework 패키지 (버전 6.0 이상)를 설치 합니다. EntityFramework 패키지가 이미 설치 되어 있는지, 표시 되는 경우 StoreApp.Tests 프로젝트 대신 StoreApp 프로젝트를 선택 있을 수 있습니다.
 
 ![엔터티 프레임 워크 추가](mocking-entity-framework-when-unit-testing-aspnet-web-api-2/_static/image5.png)
 

@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider
 msc.type: authoredcontent
-ms.openlocfilehash: ac254abcb756d048d159a9b67967a581f35ac871
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 82341724286a53f7883df324a391beeae3a9e2bd
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider-c"></a>: ASP.NET Identity EntityFramework MySQL 공급자 (C#) MySQL 저장소 사용
 ====================
@@ -83,7 +83,7 @@ ms.lasthandoff: 11/10/2017
 
 ### <a name="update-the-entity-framework-assembly-for-your-project"></a>프로젝트에 대 한 Entity Framework 어셈블리를 업데이트 합니다.
 
-Visual Studio 2013 서식 파일에서 만든 MVC 응용 프로그램에 대 한 참조를 포함 된 [EntityFramework 6.0.0](http://www.nuget.org/packages/EntityFramework) 있어야 하지만 패키지 하 고, 업데이트를 해당 릴리스 이후 해당 어셈블리에 포함 된 중요 한 되었습니다 성능 향상입니다. 응용 프로그램에서 이러한 최신 업데이트를 사용 하려면 다음 단계를 사용 합니다.
+Visual Studio 2013 서식 파일에서 만든 MVC 응용 프로그램에 대 한 참조를 포함 합니다.는 [EntityFramework 6.0.0](http://www.nuget.org/packages/EntityFramework) 패키지 하 고, 있어야 하지만 해당 릴리스 이후 해당 어셈블리에 포함 된 업데이트를 중요 한 되었습니다 성능 향상입니다. 응용 프로그램에서 이러한 최신 업데이트를 사용 하려면 다음 단계를 사용 합니다.
 
 1. Visual Studio 2013에서 MVC 프로젝트를 엽니다.
 2. 클릭 **도구**, 클릭 **라이브러리 패키지 관리자**, 클릭 하 고 **패키지 관리자 콘솔**:  
@@ -139,7 +139,7 @@ MySQL 데이터베이스에 연결 하는 EntityFramework MySQL 공급자를 설
 
 ### <a name="creating-a-custom-entityframework-initializer-for-applicationdbcontext"></a>ApplicationDbContext에 대 한 사용자 지정 EntityFramework 이니셜라이저 만들기
 
-데이터베이스에 연결 하기 위해 모델 이니셜라이저를 사용 해야이 자습서에서는 추천 목록에 MySQL 공급자 Entity Framework 마이그레이션의 현재 지원 하지 않습니다. 이 자습서에서는 Azure에서 MySQL 인스턴스를 사용 하는, 때문에 사용자 지정 Entity Framework 이니셜라이저 만들 해야 필요 합니다.
+데이터베이스에 연결 하기 위해 모델 이니셜라이저를 사용 해야이 자습서에서는 추천 목록에 MySQL 공급자 Entity Framework 마이그레이션의 현재 지원 하지 않습니다. 이 자습서에서는 Azure에서 MySQL 인스턴스를 사용 하는, 때문에 사용자 지정 Entity Framework 이니셜라이저 만들 해야 합니다.
 
 > [!NOTE]
 > Azure 또는 온-프레미스에서 호스트 된 데이터베이스를 사용 하는 경우에 SQL Server 인스턴스에 연결 하는 경우에이 단계가 필요 하지 않습니다.

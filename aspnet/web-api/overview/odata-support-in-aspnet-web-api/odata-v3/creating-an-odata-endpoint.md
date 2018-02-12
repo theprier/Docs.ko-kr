@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/creating-an-odata-endpoint
 msc.type: authoredcontent
-ms.openlocfilehash: cb466124aacf6b13c1ade22ad8b865b83e6351e2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 33fe4d764bf9bf64c852f1269255925b5cc42536
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="creating-an-odata-v3-endpoint-with-web-api-2"></a>Web API 2 OData v3 끝점 만들기
 ====================
@@ -95,7 +95,7 @@ ID 속성은 엔터티 키를 됩니다. 클라이언트 id는 제품을 쿼리�
 
 A *컨트롤러* 는 HTTP 요청을 처리 하는 클래스입니다. OData 서비스에서 설정 하는 각 엔터티에 대 한 별도 컨트롤러를 정의 합니다. 이 자습서에서는 단일 컨트롤러를 만들겠습니다.
 
-솔루션 탐색기에서 마우스 오른쪽 단추로 클릭에서 Controllers 폴더입니다. 선택 **추가** 선택한 후 **컨트롤러**합니다.
+솔루션 탐색기에서 Controllers 폴더를 마우스 오른쪽 단추로 클릭 합니다. 선택 **추가** 선택한 후 **컨트롤러**합니다.
 
 ![](creating-an-odata-endpoint/_static/image5.png)
 

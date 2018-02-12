@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/creating-a-web-api-that-supports-crud-operations
 msc.type: authoredcontent
-ms.openlocfilehash: a91bf065c9ce0fc5bd9b7115340edabea975a7e0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 69b7d5453b6ff36d6e28a69428b016cb8cfd06e9
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="enabling-crud-operations-in-aspnet-web-api-1"></a>ASP.NET Web API 1의에서 CRUD 작업을 사용 하도록 설정
 ====================
@@ -42,11 +42,11 @@ ms.lasthandoff: 11/10/2017
 | 작업 | HTTP 메서드 | 상대 URI |
 | --- | --- | --- |
 | 모든 제품 목록 가져오기 | 가져오기 | / api/제품 |
-| 제품을 ID 별로 가져옵니다. | 가져오기 | /api/제품/*id* |
-| 제품 범주별으로 가져오기 | 가져오기 | 제품/api /? category =*범주* |
+| 제품을 ID 별로 가져옵니다. | 가져오기 | /api/products/*id* |
+| 제품 범주별으로 가져오기 | 가져오기 | /api/products?category=*category* |
 | 새 제품 만들기 | 올리기 | / api/제품 |
-| 제품 업데이트 | PUT | /api/제품/*id* |
-| 제품 삭제 | Delete | /api/제품/*id* |
+| 제품 업데이트 | PUT | /api/products/*id* |
+| 제품 삭제 | Delete | /api/products/*id* |
 
 경로 있는 제품 ID를 포함 된 Uri의 일부를 확인 합니다. 예를 들어 제품 ID가 28을 가져오려면 클라이언트 보냅니다 GET 요청에 대 한 `http://hostname/api/products/28`합니다.
 
@@ -57,7 +57,7 @@ API 제품 두 개의 리소스 유형에 대 한 Uri를 정의 합니다.
 | 리소스 | URI |
 | --- | --- |
 | 모든 제품의 목록입니다. | / api/제품 |
-| 개별 제품입니다. | /api/제품/*id* |
+| 개별 제품입니다. | /api/products/*id* |
 
 ### <a name="methods"></a>메서드
 
@@ -127,7 +127,7 @@ ASP.NET MVC와 함께 작업 하는 경우 다음 이미 잘 알고 있다면 �
 
 솔루션 탐색기에서 파일을 마우스 오른쪽 단추로 클릭 하 고 선택 하 여 ValuesController, 삭제 **삭제 합니다.** 이제 다음과 같이 새로운 컨트롤러를 추가 합니다.
 
-**솔루션 탐색기**를 마우스 오른쪽 단추로 클릭에서 Controllers 폴더입니다. 선택 **추가** 선택한 후 **컨트롤러**합니다.
+**솔루션 탐색기**, Controllers 폴더를 마우스 오른쪽 단추로 클릭 합니다. 선택 **추가** 선택한 후 **컨트롤러**합니다.
 
 ![](creating-a-web-api-that-supports-crud-operations/_static/image6.png)
 
@@ -158,8 +158,8 @@ ProductStore API 몇 가지를 노출 하는 &quot;읽을&quot; HTTP GET 메서�
 | 작업 | HTTP 메서드 | 상대 URI |
 | --- | --- | --- |
 | 모든 제품 목록 가져오기 | 가져오기 | / api/제품 |
-| 제품을 ID 별로 가져옵니다. | 가져오기 | /api/제품/*id* |
-| 제품 범주별으로 가져오기 | 가져오기 | 제품/api /? category =*범주* |
+| 제품을 ID 별로 가져옵니다. | 가져오기 | /api/products/*id* |
+| 제품 범주별으로 가져오기 | 가져오기 | /api/products?category=*category* |
 
 모든 제품의 목록을 얻으려면 추가 하려면이 메서드는 `ProductsController` 클래스:
 

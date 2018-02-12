@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: 9a933324b48d4117d5d4c806920f1691a7ef7849
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 25ba5887a9fd179e75a45d4e140592d0ea66184a
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="examining-the-edit-methods-and-edit-view-vb"></a>편집 메서드 및 편집 보기 (VB) 검사
 ====================
@@ -57,7 +57,7 @@ ms.lasthandoff: 01/24/2018
 
 [!code-vb[Main](examining-the-edit-methods-and-edit-view/samples/sample3.vb)]
 
-두 번째 `Edit` 작업 메서드는 `HttpPost` 특성 뒤에 옵니다. 이 특성을 지정 하는 오버 로드는 `Edit` POST 요청에 대 한 메서드를 호출할 수 있습니다. 적용할 수는 `HttpGet` 첫 번째 특성 편집 메서드를 사용할 수 있지만 필요한 기본값 이기 때문에 있습니다. (암시적으로 할당 된 작업 메서드를 지칭는 `HttpGet` 특성은 `HttpGet` 메서드.)
+두 번째 `Edit` 작업 메서드는 `HttpPost` 특성 뒤에 옵니다. 이 특성의 오버 로드 하는 지정 된 `Edit` POST 요청에 대 한 메서드를 호출할 수 있습니다. 적용할 수는 `HttpGet` 첫 번째 특성 편집 메서드를 사용할 수 있지만 필요한 기본값 이기 때문에 있습니다. (암시적으로 할당 된 작업 메서드를 지칭는 `HttpGet` 특성은 `HttpGet` 메서드.)
 
 `HttpGet` `Edit` 메서드 영화 ID 매개 변수를 조회 하는 Entity Framework를 사용 하 여 동영상 `Find` 메서드를 선택한 동영상 편집 뷰를 반환 합니다. 편집 보기에서 스캐폴딩 시스템이 만들어질 때 `Movie` 클래스를 조사하고 클래스의 각 속성에 대해 `<label>` 및 `<input>` 요소를 렌더링하기 위한 코드를 만들었습니다. 다음 예제에서는 생성 된 편집 뷰를 보여 줍니다.
 

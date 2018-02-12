@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/10-working-with-video
 msc.type: authoredcontent
-ms.openlocfilehash: a14659997d86d1b5cf5381e21e997c1a03a3f57c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 4e7dc50fb60546d1e1f10a16ed863c0b812ec82b
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="displaying-video-in-an-aspnet-web-pages-razor-site"></a>ASP.NET 웹 페이지 (Razor) 사이트에서 비디오를 표시합니다.
 ====================
@@ -82,7 +82,7 @@ ms.lasthandoff: 01/24/2018
 - 이 비디오는 페이지가 로드 될 때 자동으로 재생 됩니다.
 - 한 번 재생 (해당 하지 않는 반복) 합니다.
 - 플레이어는 사용자 인터페이스에서 컨트롤의 전체 집합을 표시합니다.
-- 창에서 비디오에서 담당합니다.
+- 창에서 비디오를 재생합니다.
 
 ### <a name="the-silverlight-player"></a>Silverlight 플레이어
 

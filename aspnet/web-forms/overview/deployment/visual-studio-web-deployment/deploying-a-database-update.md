@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-database-update
 msc.type: authoredcontent
-ms.openlocfilehash: 3fd29a5b26c564d88e4128d1904fab00b57a3b7c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8e875a4282df78ec647579e74c3fbeabd2495fc2
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-a-database-update"></a>Visual Studio를 사용 하 여 ASP.NET 웹 배포: 데이터베이스 업데이트를 배포 합니다.
 ====================
@@ -90,7 +90,7 @@ ms.lasthandoff: 11/10/2017
 6. 에 **한 번 클릭으로 웹 게시** 도구 모음에서 클릭 된 **프로덕션** 게시 프로필을 클릭 하 고 **웹 게시**합니다.
 7. 실행 된 **강사** 업데이트가 제대로 배포 되었는지 확인 하려면 프로덕션 환경에서 페이지.
 
-    에 데이터베이스 변경 내용을 포함 하는 실제 프로덕션 응용 프로그램 업데이트는 일반적으로 수행한 배포 하는 동안 오프 라인 응용을 사용 하 여 *앱\_offline.htm*이전 자습서에서 볼 수 있듯이, 합니다.
+    데이터베이스 변경 내용을 포함 하는 실제 프로덕션 응용 프로그램 업데이트에 대 한 것은 일반적으로 수행한 배포 하는 동안 오프 라인 응용을 사용 하 여 *앱\_offline.htm*이전 자습서에서 볼 수 있듯이, 합니다.
 
 ## <a name="deploy-a-database-update-by-using-the-dbdacfx-provider"></a>DbDacFx 공급자를 사용 하 여 데이터베이스 업데이트를 배포
 

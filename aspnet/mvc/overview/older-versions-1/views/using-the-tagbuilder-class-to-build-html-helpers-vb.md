@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/views/using-the-tagbuilder-class-to-build-html-helpers-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8d0b3665e9bac6856a3fe1b50b05215f2747e354
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 92c003cf929448d0b03f9de76330e9495ac51d20
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="using-the-tagbuilder-class-to-build-html-helpers-vb"></a>HTML 도우미 (VB)를 TagBuilder 클래스를 사용 하 여
 ====================
@@ -53,17 +53,17 @@ TagBuilder 클래스의 인스턴스를 만들 때 TagBuilder 생성자를 작�
 
 예를 들어 목록 1 이미지 HTML 도우미를 포함합니다. 이미지 도우미와 HTML을 나타내는 TagBuilder 내부적으로 구현 됩니다 &lt;img&gt; 태그입니다.
 
-**1 – Helpers\ImageHelper.vb 나열**
+**Listing 1 – Helpers\ImageHelper.vb**
 
 [!code-vb[Main](using-the-tagbuilder-class-to-build-html-helpers-vb/samples/sample1.vb)]
 
 모듈 목록 1에 Image() 라는 두 개의 오버 로드 된 메서드를 포함 합니다. Image() 메서드를 호출할 때 또는 HTML 특성의 집합을 나타내는 개체를 전달할 수 있습니다.
 
-TagBuilder.MergeAttribute() 메서드를 사용 하 여 TagBuilder에 src 특성 등의 개별 특성을 추가 하는 방법을 확인 합니다. 또한 알 TagBuilder.MergeAttributes() 메서드를 사용 하 여 TagBuilder에 특성의 컬렉션을 추가 하는 방법을 합니다. MergeAttributes() 메서드에 사전&lt;문자열, o b j&gt; 매개 변수입니다. The RouteValueDictionary 클래스는 리소스를 사전에 특성의 컬렉션을 나타내는 개체를 변환 하는 데 사용&lt;문자열, o b j&gt;합니다.
+TagBuilder.MergeAttribute() 메서드를 사용 하 여 TagBuilder에 src 특성 등의 개별 특성을 추가 하는 방법을 확인 합니다. 또한 알 TagBuilder.MergeAttributes() 메서드를 사용 하 여 TagBuilder에 특성의 컬렉션을 추가 하는 방법을 합니다. MergeAttributes() 메서드에 사전&lt;문자열, o b j&gt; 매개 변수입니다. RouteValueDictionary 클래스는 리소스를 사전에 특성의 컬렉션을 나타내는 개체를 변환 하는 데 사용&lt;문자열, o b j&gt;합니다.
 
 이미지 도우미를 만든 후에 다른 표준 HTML 도우미 중 하나라도 마찬가지로 사용해 ASP.NET MVC 뷰에 도우미를 사용할 수 있습니다. 보기 목록 2에 이미지 도우미를 사용 하 여 Xbox의 동일한 이미지를 두 번 표시 (그림 1 참조). Image() 도우미를 사용 하거나 사용 된 HTML 특성 컬렉션이 없으면 라고 합니다.
 
-**2 – Home\Index.aspx 나열**
+**Listing 2 – Home\Index.aspx**
 
 [!code-aspx[Main](using-the-tagbuilder-class-to-build-html-helpers-vb/samples/sample2.aspx)]
 

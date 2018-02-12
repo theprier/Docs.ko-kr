@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-10
 msc.type: authoredcontent
-ms.openlocfilehash: af08039de2d810948b9ab64974111b0346c7fa0f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2a65e4b793b615c45cdf31166e0a000ae72ee534
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="part-10-final-updates-to-navigation-and-site-design-conclusion"></a>10 단계: 탐색 및 사이트 설계, 결론에 대 한 마지막 업데이트
 ====================
@@ -135,7 +135,7 @@ HomeController 업데이트에 대 한 전체 코드는 아래와 같습니다.
 
 ## <a name="conclusion"></a>결론
 
-ASP.NET MVC를 사용 하면 쉽게 버퍼 오버런 등의 데이터베이스 액세스 권한이 있으면 멤버 자격, AJAX 정교한 웹 사이트를 만들려고 합니다. 매우 신속 하 게 합니다. 다행히이 자습서가 제공한 사용자 고유의 ASP.NET MVC 응용 프로그램을 구축 하는 데 필요한 도구!
+ASP.NET MVC 쉽게 버퍼 오버런 등의 데이터베이스 액세스 권한이 있으면 멤버 자격, AJAX 정교한 웹 사이트를 만들려고 합니다. 매우 신속 하 게 합니다. 다행히이 자습서가 제공한 사용자 고유의 ASP.NET MVC 응용 프로그램을 구축 하는 데 필요한 도구!
 
 
 >[!div class="step-by-step"]

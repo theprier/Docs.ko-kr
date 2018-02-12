@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: 51344535e7ff42f1bd6641aeaaf043be6423f1b7
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: a7c5b348e44a88a56680237b0cac75c999901ec3
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-introduction"></a>Visual Studio를 사용 하 여 ASP.NET 웹 배포: 소개
 ====================
@@ -195,7 +195,7 @@ SDK 종속성의 개수를 이미 있는 컴퓨터에 따라 Azure SDK를 설치
 - 응용 프로그램이 SQL Server 데이터베이스의 사용자 계정 정보를 저장 하는 ASP.NET 멤버 자격 시스템을 사용 합니다. 응용 프로그램에는 몇 가지 제한 된 정보에 대 한 액세스 권한이 있는 관리자가 사용자를 정의 합니다. 멤버 자격 데이터베이스 테스트 계정 없이 하지만 관리자 계정으로 배포 해야 합니다.
 - 응용 프로그램 공급 업체 오류 로깅 및 보고 유틸리티를 사용 합니다. 이 유틸리티는 응용 프로그램과 함께 배포 되어야 하는 어셈블리에 제공 됩니다.
 - 오류 로깅 유틸리티 파일 폴더에 XML 파일에 오류 정보를 기록 합니다. ASP.NET에 배포 된 사이트에서 실행 되는 계정에이 폴더에 대 한 쓰기 권한이 있고 배포에서이 폴더를 제외 해야 있는지 확인 해야 합니다. (그렇지 않은 경우 오류 로그 데이터는 테스트 환경에서 프로덕션에 배포할 수 있으며 및/또는 프로덕션 오류 로그 파일을 삭제 될 수 있습니다.)
-- 응용 프로그램에 배포 된에서 변경 되어야 하는 일부 설정을 포함 *Web.config* 대상 환경 (테스트, 준비 또는 프로덕션) 및 빌드에 따라 변경 해야 하는 기타 설정에 따라 파일 구성 (디버그 또는 릴리스)입니다.
+- 응용 프로그램에 일부 설정을 변경 해야 하는 배포에서 *Web.config* 대상 환경 (테스트, 준비 또는 프로덕션) 및 빌드에 따라 변경 해야 하는 기타 설정에 따라 파일 구성 (디버그 또는 릴리스)입니다.
 - Visual Studio 솔루션에는 클래스 라이브러리 프로젝트에 포함 됩니다. 이 프로젝트에서 생성 하는 어셈블리에만 배포할지 프로젝트 자체입니다.
 
 ## <a name="summary"></a>요약

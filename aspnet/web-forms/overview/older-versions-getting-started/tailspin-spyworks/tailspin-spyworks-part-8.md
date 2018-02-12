@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: 0dd1717ff1051f18a78fe77402c7603008b9b486
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fce1a20f9d1093b6c60542d8a786ddf54fdc922c
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/12/2018
 ---
 <a name="part-8-final-pages-exception-handling-and-conclusion"></a>8 단계: 최종 페이지, 예외 처리 및 결론
 ====================
@@ -31,7 +31,7 @@ ms.lasthandoff: 11/10/2017
 
 ContactUs.aspx 라는 새 페이지 만들기
 
-디자이너를 사용 하면 다음과 같은 형식은 ToolkitScriptManager 및는 AjaxdControlToolkit에서 편집기 컨트롤을 포함 하도록 특별 한 접근을 만듭니다. 입니다.
+디자이너를 사용 하면 다음과 같은 형식은 ToolkitScriptManager 및는 AjaxdControlToolkit에서 편집기 컨트롤을 포함 하도록 특별 한 접근을 만듭니다. 이어야 합니다.
 
 ![](tailspin-spyworks-part-8/_static/image1.jpg)
 
@@ -43,11 +43,11 @@ ContactUs.aspx 라는 새 페이지 만들기
 
 [!code-xml[Main](tailspin-spyworks-part-8/samples/sample2.xml)]
 
-## <a id="_Toc260221681"></a>페이지 정보
+## <a id="_Toc260221681"></a>  About Page
 
 AboutUs.aspx 라는 페이지를 만들고 원하는 모든 콘텐츠를 추가 합니다.
 
-## <a id="_Toc260221682"></a>전역 예외 처리기
+## <a id="_Toc260221682"></a>  Global Exception Handler
 
 마지막으로, 응용 프로그램에 걸쳐 우리는 throw 된 예외 한 경우가 콜드는 예측할 수 없는 상황이 웹 응용 프로그램에서 처리 되지 않은 원인 예외입니다.
 
@@ -75,9 +75,9 @@ AboutUs.aspx 라는 페이지를 만들고 원하는 모든 콘텐츠를 추가 
 
 [!code-csharp[Main](tailspin-spyworks-part-8/samples/sample6.cs)]
 
-## <a id="_Toc260221683"></a>결론
+## <a id="_Toc260221683"></a>  Conclusion
 
-해당 ASP.NET WebForms 쉽게 버퍼 오버런 등의 데이터베이스 액세스 권한이 있으면 멤버 자격, AJAX 정교한 웹 사이트를 만들려고 합니다. 매우 신속 하 게 합니다.
+ASP.NET WebForms 쉽게 버퍼 오버런 등의 데이터베이스 액세스 권한이 있으면 멤버 자격, AJAX 정교한 웹 사이트를 만들려고 합니다. 매우 신속 하 게 합니다.
 
 다행히이 자습서가 제공한 사용자 고유의 ASP.NET WebForms 응용 프로그램을 구축 하는 데 필요한 도구!
 

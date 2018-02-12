@@ -9,19 +9,19 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: 8541fe47207c0af232ca81ae45da6af201d94799
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 8cadb550eaa2dbc4541f945dc8d8d49fa757d4d3
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/12/2018
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>ASP.NET Core Id에 대 한 사용자 지정 저장소 공급자
 
-으로 [Steve Smith](https://ardalis.com/)
+작성자: [Steve Smith](https://ardalis.com/)
 
 ASP.NET Core Id는 사용자 지정 저장소 공급자를 만들고 응용 프로그램에 연결할 수 있도록 하는 확장 가능한 시스템입니다. 이 항목에서는 ASP.NET Core Id에 대 한 사용자 지정 된 저장소 공급자를 만드는 방법을 설명 합니다. 저장소 공급자를 만들기 위한 중요 한 개념을 다루지만 단계별 연습 되지 않습니다.
 
-[보기 또는 GitHub에서 샘플을 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample)합니다.
+[GitHub에서 샘플 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample)
 
 ## <a name="introduction"></a>소개
 

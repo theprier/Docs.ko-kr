@@ -1,5 +1,5 @@
 ---
-uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-mvc-storefront-part-19-processing-orders-with-windows-workflow
+uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19-processing-orders-with-windows-workflow
 title: "ASP.NET MVC MVC Storefront 단계 19: Windows 워크플로 주문 처리 | Microsoft Docs"
 author: robconery
 description: "이 에피소드 I Windows 워크플로 소개 하 고 사이트의 여러 프로세스에 사용할 수는 얼마나 잘 알아 보려고으로 가끔 치솟는 합니다."
@@ -10,10 +10,10 @@ ms.topic: article
 ms.assetid: 3d08b4c5-a92f-4f75-aa10-5c2e9da8c114
 ms.technology: dotnet-mvc
 ms.prod: .net-framework
-msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-mvc-storefront-part-19-processing-orders-with-windows-workflow
+msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19-processing-orders-with-windows-workflow
 msc.type: video
-ms.openlocfilehash: 56d2802b571561cb31f45bc7ed118eb33a4641bb
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: 10cbb024938932d5478a54bb2b2d03be1ed11329
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 02/12/2018
