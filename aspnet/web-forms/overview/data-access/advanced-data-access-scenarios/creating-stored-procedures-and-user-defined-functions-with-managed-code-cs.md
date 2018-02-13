@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-stored-procedures-and-user-defined-functions-with-managed-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: be3e3d61a6567da3c2cd696c01661146f2da7131
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 6daa0dec764e2e9248cac97ba7d7b6df0da3208f
+ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/12/2018
 ---
 <a name="creating-stored-procedures-and-user-defined-functions-with-managed-code-c"></a>저장 프로시저와 관리 코드 (C#)와 사용자 정의 함수 만들기
 ====================
@@ -420,7 +420,7 @@ UDF의 메서드에 입력된 매개 변수는 해당 SQL 형식의: `SqlMoney` 
 
 ## <a name="step-11-deploying-the-managed-udf"></a>11 단계: 관리 되는 UDF를 배포합니다.
 
-이제 관리 되는 UDF를 만든, Northwind 데이터베이스에 배포할 준비가 됩니다. 4 단계에서에서 설명한 것 처럼 SQL Server 프로젝트에서 관리 되는 개체에서 솔루션 탐색기에서 프로젝트 이름을 마우스 오른쪽 단추로 클릭 하 고 상황에 맞는 메뉴에서 배포 옵션을 선택 하 여 배포 됩니다.
+관리 되는 UDF를 만든 후, Northwind 데이터베이스에 배포할 준비가 됩니다. 4 단계에서에서 설명한 것 처럼 SQL Server 프로젝트에서 관리 되는 개체에서 솔루션 탐색기에서 프로젝트 이름을 마우스 오른쪽 단추로 클릭 하 고 상황에 맞는 메뉴에서 배포 옵션을 선택 하 여 배포 됩니다.
 
 프로젝트를 배포한 후에 SQL Server Management Studio로 반환 하 고 스칼라 반환 함수 폴더를 새로 고칩니다. 이제 두 개의 항목이 나타납니다.
 
