@@ -1289,7 +1289,7 @@
 ##### [ASP.NET MVC Storefront 16부: OpenID로 멤버 자격 다시 실행](mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-16-membership-redo-with-openid.md)
 ##### [ASP.NET MVC Storefront 17부: Jeff Atwood로 체크 아웃](mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood.md)
 ##### [ASP.NET MVC Storefront 18부: 환경 만들기](mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-18-creating-an-experience.md)
-##### [ASP.NET MVC Storefront 19부: Windows 워크플로를 사용하여 주문 처리](mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-mvc-storefront-part-19-processing-orders-with-windows-workflow.md)
+##### [ASP.NET MVC Storefront 19부: Windows 워크플로를 사용하여 주문 처리](mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19-processing-orders-with-windows-workflow.md)
 ##### [ASP.NET MVC Storefront 19a: Windows 워크플로 후속 작업](mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19a-windows-workflow-followup.md)
 ##### [ASP.NET MVC Storefront 20부: 로깅](mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-20-logging.md)
 ##### [ASP.NET MVC Storefront 21부: 주문 관리자 및 개인 설정](mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-21-order-manager-and-personalization.md)
