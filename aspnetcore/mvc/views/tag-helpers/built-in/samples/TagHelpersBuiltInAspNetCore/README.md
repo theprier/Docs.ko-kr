@@ -1,0 +1,19 @@
+# <a name="aspnet-core-anchor-tag-helper-sample"></a><span data-ttu-id="b68c9-101">ASP.NET Core 앵커 태그 도우미 샘플</span><span class="sxs-lookup"><span data-stu-id="b68c9-101">ASP.NET Core Anchor Tag Helper Sample</span></span>
+
+<span data-ttu-id="b68c9-102">이 샘플에는 MVC 및 Razor 페이지를 모두 사용한 기본 제공 앵커 태그 도우미의 사용이 나와 있습니다.</span><span class="sxs-lookup"><span data-stu-id="b68c9-102">This sample illustrates the use of the built-in Anchor Tag Helper with both MVC and Razor Pages.</span></span> <span data-ttu-id="b68c9-103">이 샘플은 [앵커 태그 도우미](https://docs.microsoft.com/aspnet/core/mvc/views/tag-helpers/built-in/anchor-tag-helper) 항목에서 설명된 기능을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="b68c9-103">This sample demonstrates the features described in the [Anchor Tag Helper](https://docs.microsoft.com/aspnet/core/mvc/views/tag-helpers/built-in/anchor-tag-helper) topic.</span></span>
+
+## <a name="examples-in-this-sample"></a><span data-ttu-id="b68c9-104">이 샘플의 예제</span><span class="sxs-lookup"><span data-stu-id="b68c9-104">Examples in this sample</span></span>
+
+<span data-ttu-id="b68c9-105">다음과 같은 앵커 태그 도우미 특성이 나와 있습니다.</span><span class="sxs-lookup"><span data-stu-id="b68c9-105">The following Anchor Tag Helper attributes are demonstrated:</span></span>
+
+- [<span data-ttu-id="b68c9-106">asp-action</span><span class="sxs-lookup"><span data-stu-id="b68c9-106">asp-action</span></span>](https://docs.microsoft.com/aspnet/core/mvc/views/tag-helpers/built-in/anchor-tag-helper#asp-action)
+- [<span data-ttu-id="b68c9-107">asp-all-route-data</span><span class="sxs-lookup"><span data-stu-id="b68c9-107">asp-all-route-data</span></span>](https://docs.microsoft.com/aspnet/core/mvc/views/tag-helpers/built-in/anchor-tag-helper#asp-all-route-data)
+- [<span data-ttu-id="b68c9-108">asp-area</span><span class="sxs-lookup"><span data-stu-id="b68c9-108">asp-area</span></span>](https://docs.microsoft.com/aspnet/core/mvc/views/tag-helpers/built-in/anchor-tag-helper#asp-area)
+- [<span data-ttu-id="b68c9-109">asp-controller</span><span class="sxs-lookup"><span data-stu-id="b68c9-109">asp-controller</span></span>](https://docs.microsoft.com/aspnet/core/mvc/views/tag-helpers/built-in/anchor-tag-helper#asp-controller)
+- [<span data-ttu-id="b68c9-110">asp-fragment</span><span class="sxs-lookup"><span data-stu-id="b68c9-110">asp-fragment</span></span>](https://docs.microsoft.com/aspnet/core/mvc/views/tag-helpers/built-in/anchor-tag-helper#asp-fragment)
+- [<span data-ttu-id="b68c9-111">asp-host</span><span class="sxs-lookup"><span data-stu-id="b68c9-111">asp-host</span></span>](https://docs.microsoft.com/aspnet/core/mvc/views/tag-helpers/built-in/anchor-tag-helper#asp-host)
+- [<span data-ttu-id="b68c9-112">asp-page</span><span class="sxs-lookup"><span data-stu-id="b68c9-112">asp-page</span></span>](https://docs.microsoft.com/aspnet/core/mvc/views/tag-helpers/built-in/anchor-tag-helper#asp-page)
+- [<span data-ttu-id="b68c9-113">asp-page-handler</span><span class="sxs-lookup"><span data-stu-id="b68c9-113">asp-page-handler</span></span>](https://docs.microsoft.com/aspnet/core/mvc/views/tag-helpers/built-in/anchor-tag-helper#asp-page-handler)
+- [<span data-ttu-id="b68c9-114">asp-protocol</span><span class="sxs-lookup"><span data-stu-id="b68c9-114">asp-protocol</span></span>](https://docs.microsoft.com/aspnet/core/mvc/views/tag-helpers/built-in/anchor-tag-helper#asp-protocol)
+- [<span data-ttu-id="b68c9-115">asp-route</span><span class="sxs-lookup"><span data-stu-id="b68c9-115">asp-route</span></span>](https://docs.microsoft.com/aspnet/core/mvc/views/tag-helpers/built-in/anchor-tag-helper#asp-route)
+- [<span data-ttu-id="b68c9-116">asp-route-{value}</span><span class="sxs-lookup"><span data-stu-id="b68c9-116">asp-route-{value}</span></span>](https://docs.microsoft.com/aspnet/core/mvc/views/tag-helpers/built-in/anchor-tag-helper#asp-route-value)

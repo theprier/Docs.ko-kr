@@ -1,7 +1,7 @@
 ---
-title: "EF 코어 8-동시성-8 사용 하 여 razor 페이지"
+title: "EF Core를 사용한 Razor 페이지 - 동시성 - 8/8"
 author: rick-anderson
-description: "이 자습서에는 여러 사용자가 동시에 같은 엔터티를 업데이트 하는 경우 충돌을 처리 하는 방법을 보여 줍니다."
+description: "이 자습서에는 여러 사용자가 동시에 같은 엔터티를 업데이트하는 경우 충돌을 처리하는 방법을 보여 줍니다."
 manager: wpickett
 ms.author: riande
 ms.date: 11/15/2017
@@ -10,106 +10,106 @@ ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/concurrency
 ms.openlocfilehash: 1c6cdefa1410839606711d7460a8f4d0f1d6c72b
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
-ms.translationtype: MT
+ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 01/31/2018
 ---
-<span data-ttu-id="b5062-103">en-us/</span><span class="sxs-lookup"><span data-stu-id="b5062-103">en-us/</span></span>
+<span data-ttu-id="ff17f-103">ko-kr/</span><span class="sxs-lookup"><span data-stu-id="ff17f-103">en-us/</span></span>
 
-# <a name="handling-concurrency-conflicts---ef-core-with-razor-pages-8-of-8"></a><span data-ttu-id="b5062-104">동시성 충돌-EF 코어 Razor 페이지 (8의 8)에 처리</span><span class="sxs-lookup"><span data-stu-id="b5062-104">Handling concurrency conflicts - EF Core with Razor Pages (8 of 8)</span></span>
+# <a name="handling-concurrency-conflicts---ef-core-with-razor-pages-8-of-8"></a><span data-ttu-id="ff17f-104">동시성 충돌 처리 - Razor 페이지를 사용한 EF Core(8/8)</span><span class="sxs-lookup"><span data-stu-id="ff17f-104">Handling concurrency conflicts - EF Core with Razor Pages (8 of 8)</span></span>
 
-<span data-ttu-id="b5062-105">여 [Rick Anderson](https://twitter.com/RickAndMSFT), [Tom Dykstra](https://github.com/tdykstra), 및 [Jon P Smith](https://twitter.com/thereformedprog)</span><span class="sxs-lookup"><span data-stu-id="b5062-105">By [Rick Anderson](https://twitter.com/RickAndMSFT), [Tom Dykstra](https://github.com/tdykstra), and  [Jon P Smith](https://twitter.com/thereformedprog)</span></span>
+<span data-ttu-id="ff17f-105">작성자: [Rick Anderson](https://twitter.com/RickAndMSFT), [Tom Dykstra](https://github.com/tdykstra) 및 [Jon P Smith](https://twitter.com/thereformedprog)</span><span class="sxs-lookup"><span data-stu-id="ff17f-105">By [Rick Anderson](https://twitter.com/RickAndMSFT), [Tom Dykstra](https://github.com/tdykstra), and  [Jon P Smith](https://twitter.com/thereformedprog)</span></span>
 
 [!INCLUDE[about the series](../../includes/RP-EF/intro.md)]
 
-<span data-ttu-id="b5062-106">이 자습서에는 여러 사용자가 동시에 (동시에) 엔터티를 업데이트 하는 경우 충돌을 처리 하는 방법을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-106">This tutorial shows how to handle conflicts when multiple users update an entity concurrently (at the same time).</span></span> <span data-ttu-id="b5062-107">문제를 해결할 수 없는를 실행 하는 경우 다운로드는 [이 단계에 대 한 완성 된 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part8)합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-107">If you run into problems you can't solve, download the [completed app for this stage](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part8).</span></span>
+<span data-ttu-id="ff17f-106">이 자습서에는 여러 사용자가 동시에(같은 시간에) 엔터티를 업데이트하는 경우 충돌을 처리하는 방법을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-106">This tutorial shows how to handle conflicts when multiple users update an entity concurrently (at the same time).</span></span> <span data-ttu-id="ff17f-107">해결할 수 없는 문제가 발생한 경우 [이 단계에 완성된 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part8)을 다운로드합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-107">If you run into problems you can't solve, download the [completed app for this stage](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part8).</span></span>
 
-## <a name="concurrency-conflicts"></a><span data-ttu-id="b5062-108">동시성 충돌</span><span class="sxs-lookup"><span data-stu-id="b5062-108">Concurrency conflicts</span></span>
+## <a name="concurrency-conflicts"></a><span data-ttu-id="ff17f-108">동시성 충돌</span><span class="sxs-lookup"><span data-stu-id="ff17f-108">Concurrency conflicts</span></span>
 
-<span data-ttu-id="b5062-109">동시성 충돌이 발생 한 경우:</span><span class="sxs-lookup"><span data-stu-id="b5062-109">A concurrency conflict occurs when:</span></span>
+<span data-ttu-id="ff17f-109">동시성 충돌이 발생한 경우:</span><span class="sxs-lookup"><span data-stu-id="ff17f-109">A concurrency conflict occurs when:</span></span>
 
-* <span data-ttu-id="b5062-110">사용자는 엔터티에 대 한 편집 페이지를 탐색합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-110">A user navigates to the edit page for an entity.</span></span>
-* <span data-ttu-id="b5062-111">다른 사용자는 db 첫 번째 사용자의 변경 내용을 기록 하기 전에 동일한 엔터티를 업데이트 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-111">Another user updates the same entity before the first user's change is written to the DB.</span></span>
+* <span data-ttu-id="ff17f-110">사용자는 엔터티에 대한 편집 페이지를 탐색합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-110">A user navigates to the edit page for an entity.</span></span>
+* <span data-ttu-id="ff17f-111">첫 번째 사용자가 DB에 변경 내용을 기록하기 전에 다른 사용자가 동일한 엔터티를 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-111">Another user updates the same entity before the first user's change is written to the DB.</span></span>
 
-<span data-ttu-id="b5062-112">동시 업데이트 수행 시 동시성 검색이 설정 되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-112">If concurrency detection isn't enabled, when concurrent updates occur:</span></span>
+<span data-ttu-id="ff17f-112">동시성 감지가 활성화되지 않으면 동시 업데이트 시 다음이 발생합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-112">If concurrency detection isn't enabled, when concurrent updates occur:</span></span>
 
-* <span data-ttu-id="b5062-113">마지막 업데이트 우선 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-113">The last update wins.</span></span> <span data-ttu-id="b5062-114">즉, 마지막 값 업데이트 DB에 저장 됩니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-114">That is, the last update values are saved to the DB.</span></span>
-* <span data-ttu-id="b5062-115">현재 업데이트 중 첫 번째 작업은 손실 됩니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-115">The first of the current updates are lost.</span></span>
+* <span data-ttu-id="ff17f-113">마지막 업데이트가 적용됩니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-113">The last update wins.</span></span> <span data-ttu-id="ff17f-114">즉, 마지막 업데이트 값이 DB에 저장됩니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-114">That is, the last update values are saved to the DB.</span></span>
+* <span data-ttu-id="ff17f-115">현재 업데이트 중 첫 번째 작업이 손실됩니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-115">The first of the current updates are lost.</span></span>
 
-### <a name="optimistic-concurrency"></a><span data-ttu-id="b5062-116">낙관적 동시성</span><span class="sxs-lookup"><span data-stu-id="b5062-116">Optimistic concurrency</span></span>
+### <a name="optimistic-concurrency"></a><span data-ttu-id="ff17f-116">낙관적 동시성</span><span class="sxs-lookup"><span data-stu-id="ff17f-116">Optimistic concurrency</span></span>
 
-<span data-ttu-id="b5062-117">업데이트를 동시성 충돌을 허용 하는 낙관적 동시성 및 반응 적절 하 게 때 않습니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-117">Optimistic concurrency allows concurrency conflicts to happen, and then reacts appropriately when they do.</span></span> <span data-ttu-id="b5062-118">예를 들어, Jane 부서 편집 페이지를 방문 하 고 $0.00 달러 350,000.00에서 영어 부서에 대 한 할당으로 변경 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-118">For example, Jane visits the Department edit page and changes the budget for the English department from $350,000.00 to $0.00.</span></span>
+<span data-ttu-id="ff17f-117">낙관적 동시성은 동시성 충돌 발생을 허용하고, 이에 적절하게 반응합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-117">Optimistic concurrency allows concurrency conflicts to happen, and then reacts appropriately when they do.</span></span> <span data-ttu-id="ff17f-118">예를 들어, Jane이 부서 편집 페이지를 방문하여 영어 부서 예산을 $350,000.00에서 $0.00으로 변경합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-118">For example, Jane visits the Department edit page and changes the budget for the English department from $350,000.00 to $0.00.</span></span>
 
-![예산 0으로 변경](concurrency/_static/change-budget.png)
+![예산을 0으로 변경](concurrency/_static/change-budget.png)
 
-<span data-ttu-id="b5062-120">Jane은 클릭 하기 전에 **저장**, John 동일한 페이지를 방문 하 고 2007 년 9 월 1에서에서 2013 년 9 월 1 일 시작 날짜 필드를 변경 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-120">Before Jane clicks **Save**, John visits the same page and changes the Start Date field from 9/1/2007 to 9/1/2013.</span></span>
+<span data-ttu-id="ff17f-120">Jane이 **저장**을 클릭하기 전에, John이 동일한 페이지를 방문하여 시작 날짜 필드를 2007년 9월 1일에서 2013년 9월 1일로 변경합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-120">Before Jane clicks **Save**, John visits the same page and changes the Start Date field from 9/1/2007 to 9/1/2013.</span></span>
 
-![2013을 시작 날짜를 변경합니다.](concurrency/_static/change-date.png)
+![시작 날짜를 2013으로 변경](concurrency/_static/change-date.png)
 
-<span data-ttu-id="b5062-122">Jane은 클릭 **저장** 첫 번째 및 브라우저 인덱스 페이지를 표시할 때 변경 자신에 게 표시 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-122">Jane clicks **Save** first and sees her change when the browser displays the Index page.</span></span>
+<span data-ttu-id="ff17f-122">Jane이 먼저 **저장**을 클릭하여 브라우저에 인덱스 페이지가 표시될 때 변경 사항을 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-122">Jane clicks **Save** first and sees her change when the browser displays the Index page.</span></span>
 
-![예산 0으로 변경 합니다.](concurrency/_static/budget-zero.png)
+![0으로 변경된 예산](concurrency/_static/budget-zero.png)
 
-<span data-ttu-id="b5062-124">John 클릭 **저장** $350,000.00의 예산에 여전히 표시 하는 편집 페이지가에 있습니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-124">John clicks **Save** on an Edit page that still shows a budget of $350,000.00.</span></span> <span data-ttu-id="b5062-125">다음은 동시성 충돌을 처리 하는 방법을 따라 결정 됩니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-125">What happens next is determined by how you handle concurrency conflicts.</span></span>
+<span data-ttu-id="ff17f-124">John이 예산이 여전히 $350,000.00인 편집 페이지에서 **저장**을 클릭합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-124">John clicks **Save** on an Edit page that still shows a budget of $350,000.00.</span></span> <span data-ttu-id="ff17f-125">다음 작업은 동시성 충돌을 처리하는 방법에 따라 결정됩니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-125">What happens next is determined by how you handle concurrency conflicts.</span></span>
 
-<span data-ttu-id="b5062-126">낙관적 동시성에는 다음과 같은 옵션이 포함 됩니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-126">Optimistic concurrency includes the following options:</span></span>
+<span data-ttu-id="ff17f-126">낙관적 동시성에는 다음과 같은 옵션이 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-126">Optimistic concurrency includes the following options:</span></span>
 
-* <span data-ttu-id="b5062-127">한 사용자가 수정 되는 속성을 추적 하 고 데이터베이스에서 해당 열만 업데이트할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-127">You can keep track of which property a user has modified and update only the corresponding columns in the DB.</span></span>
+* <span data-ttu-id="ff17f-127">사용자가 수정한 속성을 추적하고 DB에서 해당하는 열만 업데이트할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-127">You can keep track of which property a user has modified and update only the corresponding columns in the DB.</span></span>
 
- <span data-ttu-id="b5062-128">이 시나리오에서는 데이터가 손실 됩니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-128">In the scenario, no data would be lost.</span></span> <span data-ttu-id="b5062-129">서로 다른 속성 두 사용자가 업데이트 되었습니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-129">Different properties were updated by the two users.</span></span> <span data-ttu-id="b5062-130">다음에 영어 부서 이동 Jane의와 John의 변경 내용을 볼 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-130">The next time someone browses the English department, they will see both Jane's and John's changes.</span></span> <span data-ttu-id="b5062-131">이 메서드를 업데이트 하는 충돌 데이터가 손실 될 수 있는 횟수를 줄일 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-131">This method of updating can reduce the number of conflicts that could result in data loss.</span></span> <span data-ttu-id="b5062-132">이 방법은: \* 같은 속성 경쟁 변경 되 면 데이터 손실을 방지할 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-132">This approach: \* Can't avoid data loss if competing changes are made to the same property.</span></span>
-        <span data-ttu-id="b5062-133">\*는 일반적으로 불가능 웹 앱입니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-133">\* Is generally not practical in a web app.</span></span> <span data-ttu-id="b5062-134">모든 인출 된 값과 새 값의 추적을 유지 하기 위해 중요 한 상태를 유지 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-134">It requires maintaining significant state in order to keep track of all fetched values and new values.</span></span> <span data-ttu-id="b5062-135">많은 양의 상태를 유지 관리 응용 프로그램 성능이 떨어질 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-135">Maintaining large amounts of state can affect app performance.</span></span>
-        <span data-ttu-id="b5062-136">\* 엔터티에 대해 동시성 검색에 비해 앱 복잡성이 증가 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-136">\* Can increase app complexity compared to concurrency detection on an entity.</span></span>
+ <span data-ttu-id="ff17f-128">이 시나리오에서는 데이터가 손실되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-128">In the scenario, no data would be lost.</span></span> <span data-ttu-id="ff17f-129">다른 속성이 두 사용자에 의해 업데이트되었습니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-129">Different properties were updated by the two users.</span></span> <span data-ttu-id="ff17f-130">다음에 누군가가 영어 부서를 찾아볼 때는 Jane과 John의 변경 내용을 모두 볼 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-130">The next time someone browses the English department, they will see both Jane's and John's changes.</span></span> <span data-ttu-id="ff17f-131">이 업데이트 메서드는 데이터 손실로 이어질 수 있는 충돌 횟수를 줄일 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-131">This method of updating can reduce the number of conflicts that could result in data loss.</span></span> <span data-ttu-id="ff17f-132">이 방법은: \* 같은 속성에 변경 사항이 적용된 경우 데이터 손실을 방지할 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-132">This approach: \* Can't avoid data loss if competing changes are made to the same property.</span></span>
+        <span data-ttu-id="ff17f-133">\* 일반적으로 웹앱에서는 실현할 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-133">\* Is generally not practical in a web app.</span></span> <span data-ttu-id="ff17f-134">페치된 값과 새 값을 모두 추적하기 위해 유효한 상태를 유지해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-134">It requires maintaining significant state in order to keep track of all fetched values and new values.</span></span> <span data-ttu-id="ff17f-135">많은 양의 상태를 유지하는 것은 응용 프로그램 성능에 영향을 미칠 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-135">Maintaining large amounts of state can affect app performance.</span></span>
+        <span data-ttu-id="ff17f-136">\* 엔터티에 대한 동시성 감지에 비해 앱 복잡성이 증가할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-136">\* Can increase app complexity compared to concurrency detection on an entity.</span></span>
 
-* <span data-ttu-id="b5062-137">Jane의 내용으로 덮어쓰게 이한일의 변경 하도록 할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-137">You can let John's change overwrite Jane's change.</span></span>
+* <span data-ttu-id="ff17f-137">Jane의 변경 사항을 John의 변경 사항으로 덮어쓸 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-137">You can let John's change overwrite Jane's change.</span></span>
 
- <span data-ttu-id="b5062-138">다음에 영어 부서 이동, 2013 년 9 월 1 일 표시 되는 경우 인출 된 $350,000.00 값입니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-138">The next time someone browses the English department, they will see 9/1/2013 and the fetched $350,000.00 value.</span></span> <span data-ttu-id="b5062-139">이 방법은 라고는 *클라이언트 우선* 또는 *최신으로* 시나리오입니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-139">This approach is called a *Client Wins* or *Last in Wins* scenario.</span></span> <span data-ttu-id="b5062-140">(클라이언트에서 모든 값 보다 우선 데이터 저장소에 포함 된 내용입니다.) 동시성 처리에 대 한 코딩이 이렇게 하지 않으면 자동으로 이루어짐 클라이언트 우선 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-140">(All values from the client take precedence over what's in the data store.) If you don't do any coding for concurrency handling, Client Wins happens automatically.</span></span>
+ <span data-ttu-id="ff17f-138">다음에 누군가가 영어 부서를 찾아볼 때 2013년 9월 1일과 페치된 $350,000.00 값을 볼 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-138">The next time someone browses the English department, they will see 9/1/2013 and the fetched $350,000.00 value.</span></span> <span data-ttu-id="ff17f-139">이 방법을 *클라이언트 우선* 또는 *최종 우선* 시나리오라고 합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-139">This approach is called a *Client Wins* or *Last in Wins* scenario.</span></span> <span data-ttu-id="ff17f-140">(클라이언트의 모든 값은 데이터 저장소에 포함된 값에 우선합니다.) 동시성 처리에 대한 코딩을 수행하지 않은 경우 클라이언트 우선이 자동으로 발생합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-140">(All values from the client take precedence over what's in the data store.) If you don't do any coding for concurrency handling, Client Wins happens automatically.</span></span>
 
-* <span data-ttu-id="b5062-141">데이터베이스에서 업데이트할 이한일의 변경을 방지할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-141">You can prevent John's change from being updated in the DB.</span></span> <span data-ttu-id="b5062-142">응용 프로그램은 일반적으로: \* 오류 메시지를 표시 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-142">Typically, the app would: \* Display an error message.</span></span>
-        <span data-ttu-id="b5062-143">\* 데이터의 현재 상태를 표시 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-143">\* Show the current state of the data.</span></span>
-        <span data-ttu-id="b5062-144">\* 사용자 변경 내용을 다시 적용 하도록 허용 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-144">\* Allow the user to reapply the changes.</span></span>
+* <span data-ttu-id="ff17f-141">John의 변경 내용이 DB에서 업데이트되지 않도록 할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-141">You can prevent John's change from being updated in the DB.</span></span> <span data-ttu-id="ff17f-142">일반적으로 앱은: \* 오류 메시지를 표시합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-142">Typically, the app would: \* Display an error message.</span></span>
+        <span data-ttu-id="ff17f-143">\* 데이터의 현재 상태를 표시합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-143">\* Show the current state of the data.</span></span>
+        <span data-ttu-id="ff17f-144">\* 사용자가 변경 내용을 다시 적용하도록 허용합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-144">\* Allow the user to reapply the changes.</span></span>
 
- <span data-ttu-id="b5062-145">이 라고는 *저장소 Wins* 시나리오입니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-145">This is called a *Store Wins* scenario.</span></span> <span data-ttu-id="b5062-146">(데이터 저장소 값 보다 우선 적용 클라이언트에서 전송한 값.) 이 자습서에서는 저장소 Wins 시나리오를 구현 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-146">(The data-store values take precedence over the values submitted by the client.) You implement the Store Wins scenario in this tutorial.</span></span> <span data-ttu-id="b5062-147">이 메서드를 사용 하면 변경 내용이 없습니다에 경고가 표시 되 고 사용자가 없어도 덮어쓰도록 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-147">This method ensures that no changes are overwritten without a user being alerted.</span></span>
+ <span data-ttu-id="ff17f-145">이를 *저장소 우선* 시나리오라고 합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-145">This is called a *Store Wins* scenario.</span></span> <span data-ttu-id="ff17f-146">(데이터 저장소 값은 클라이언트가 전송한 값에 우선합니다.) 이 자습서에서는 저장소 우선 시나리오를 구현합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-146">(The data-store values take precedence over the values submitted by the client.) You implement the Store Wins scenario in this tutorial.</span></span> <span data-ttu-id="ff17f-147">이 메서드는 사용자 알림 없이 덮어쓴 변경 내용이 없는지 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-147">This method ensures that no changes are overwritten without a user being alerted.</span></span>
 
-## <a name="handling-concurrency"></a><span data-ttu-id="b5062-148">동시성 처리</span><span class="sxs-lookup"><span data-stu-id="b5062-148">Handling concurrency</span></span> 
+## <a name="handling-concurrency"></a><span data-ttu-id="ff17f-148">동시성 처리</span><span class="sxs-lookup"><span data-stu-id="ff17f-148">Handling concurrency</span></span> 
 
-<span data-ttu-id="b5062-149">속성으로 구성 된 경우는 [동시성 토큰](https://docs.microsoft.com/ef/core/modeling/concurrency):</span><span class="sxs-lookup"><span data-stu-id="b5062-149">When a property is configured as a [concurrency token](https://docs.microsoft.com/ef/core/modeling/concurrency):</span></span>
+<span data-ttu-id="ff17f-149">속성이 [동시성 토큰](https://docs.microsoft.com/ef/core/modeling/concurrency)으로 구성되는 경우:</span><span class="sxs-lookup"><span data-stu-id="ff17f-149">When a property is configured as a [concurrency token](https://docs.microsoft.com/ef/core/modeling/concurrency):</span></span>
 
-* <span data-ttu-id="b5062-150">EF 코어가 인출 된 후 수정 되지 않은 속성을 확인 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-150">EF Core verifies that property has not been modified after it was fetched.</span></span> <span data-ttu-id="b5062-151">확인이 수행 때 [SaveChanges](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechanges?view=efcore-2.0#Microsoft_EntityFrameworkCore_DbContext_SaveChanges) 또는 [SaveChangesAsync](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechangesasync?view=efcore-2.0#Microsoft_EntityFrameworkCore_DbContext_SaveChangesAsync_System_Threading_CancellationToken_) 호출 됩니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-151">The check occurs when [SaveChanges](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechanges?view=efcore-2.0#Microsoft_EntityFrameworkCore_DbContext_SaveChanges) or [SaveChangesAsync](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechangesasync?view=efcore-2.0#Microsoft_EntityFrameworkCore_DbContext_SaveChangesAsync_System_Threading_CancellationToken_) is called.</span></span>
-* <span data-ttu-id="b5062-152">이 인출 된 후 속성을 변경한 경우 한 [DbUpdateConcurrencyException](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbupdateconcurrencyexception?view=efcore-2.0) throw 됩니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-152">If the property has been changed after it was fetched, a [DbUpdateConcurrencyException](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbupdateconcurrencyexception?view=efcore-2.0) is thrown.</span></span> 
+* <span data-ttu-id="ff17f-150">EF Core는 속성이 페치된 후 수정되지 않았는지 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-150">EF Core verifies that property has not been modified after it was fetched.</span></span> <span data-ttu-id="ff17f-151">확인 작업은 [SaveChanges](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechanges?view=efcore-2.0#Microsoft_EntityFrameworkCore_DbContext_SaveChanges) 또는 [SaveChangesAsync](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechangesasync?view=efcore-2.0#Microsoft_EntityFrameworkCore_DbContext_SaveChangesAsync_System_Threading_CancellationToken_)가 호출될 때 발생합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-151">The check occurs when [SaveChanges](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechanges?view=efcore-2.0#Microsoft_EntityFrameworkCore_DbContext_SaveChanges) or [SaveChangesAsync](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechangesasync?view=efcore-2.0#Microsoft_EntityFrameworkCore_DbContext_SaveChangesAsync_System_Threading_CancellationToken_) is called.</span></span>
+* <span data-ttu-id="ff17f-152">속성이 페치된 후 변경된 경우 [DbUpdateConcurrencyException](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbupdateconcurrencyexception?view=efcore-2.0)이 throw됩니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-152">If the property has been changed after it was fetched, a [DbUpdateConcurrencyException](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbupdateconcurrencyexception?view=efcore-2.0) is thrown.</span></span> 
 
-<span data-ttu-id="b5062-153">DB 및 데이터 모델 throw 지원 하도록 구성 해야 `DbUpdateConcurrencyException`합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-153">The DB and data model must be configured to support throwing `DbUpdateConcurrencyException`.</span></span>
+<span data-ttu-id="ff17f-153">`DbUpdateConcurrencyException`의 throw를 지원하도록 DB 및 데이터 모델을 구성해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-153">The DB and data model must be configured to support throwing `DbUpdateConcurrencyException`.</span></span>
 
-### <a name="detecting-concurrency-conflicts-on-a-property"></a><span data-ttu-id="b5062-154">속성에 대 한 동시성 충돌 검색</span><span class="sxs-lookup"><span data-stu-id="b5062-154">Detecting concurrency conflicts on a property</span></span>
+### <a name="detecting-concurrency-conflicts-on-a-property"></a><span data-ttu-id="ff17f-154">속성에서 동시성 충돌 감지</span><span class="sxs-lookup"><span data-stu-id="ff17f-154">Detecting concurrency conflicts on a property</span></span>
 
-<span data-ttu-id="b5062-155">사용 속성 수준에서 동시성 충돌을 검색할 수는 [ConcurrencyCheck](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.concurrencycheckattribute?view=netcore-2.0) 특성입니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-155">Concurrency conflicts can be detected at the property level with the [ConcurrencyCheck](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.concurrencycheckattribute?view=netcore-2.0) attribute.</span></span> <span data-ttu-id="b5062-156">특성은 모델에 여러 속성에 적용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-156">The attribute can be applied to multiple properties on the model.</span></span> <span data-ttu-id="b5062-157">자세한 내용은 참조 [데이터 주석 ConcurrencyCheck](https://docs.microsoft.com/ef/core/modeling/concurrency#data-annotations)합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-157">For more information, see [Data Annotations-ConcurrencyCheck](https://docs.microsoft.com/ef/core/modeling/concurrency#data-annotations).</span></span>
+<span data-ttu-id="ff17f-155">동시성 충돌은 [ConcurrencyCheck](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.concurrencycheckattribute?view=netcore-2.0) 특성을 사용하여 속성 수준에서 감지될 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-155">Concurrency conflicts can be detected at the property level with the [ConcurrencyCheck](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.concurrencycheckattribute?view=netcore-2.0) attribute.</span></span> <span data-ttu-id="ff17f-156">특성은 모델에서 여러 속성에 적용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-156">The attribute can be applied to multiple properties on the model.</span></span> <span data-ttu-id="ff17f-157">자세한 내용은 [데이터 주석 - ConcurrencyCheck](https://docs.microsoft.com/ef/core/modeling/concurrency#data-annotations)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="ff17f-157">For more information, see [Data Annotations-ConcurrencyCheck](https://docs.microsoft.com/ef/core/modeling/concurrency#data-annotations).</span></span>
 
-<span data-ttu-id="b5062-158">`[ConcurrencyCheck]` 특성은이 자습서에서 사용 되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-158">The `[ConcurrencyCheck]` attribute isn't used in this tutorial.</span></span>
+<span data-ttu-id="ff17f-158">`[ConcurrencyCheck]` 특성은 이 자습서에서 사용되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-158">The `[ConcurrencyCheck]` attribute isn't used in this tutorial.</span></span>
 
-### <a name="detecting-concurrency-conflicts-on-a-row"></a><span data-ttu-id="b5062-159">행에 대해 동시성 충돌 확인</span><span class="sxs-lookup"><span data-stu-id="b5062-159">Detecting concurrency conflicts on a row</span></span>
+### <a name="detecting-concurrency-conflicts-on-a-row"></a><span data-ttu-id="ff17f-159">행에서 동시성 충돌 감지</span><span class="sxs-lookup"><span data-stu-id="ff17f-159">Detecting concurrency conflicts on a row</span></span>
 
-<span data-ttu-id="b5062-160">동시성 충돌을 검색 하는 [rowversion](https://docs.microsoft.com/sql/t-sql/data-types/rowversion-transact-sql) 는 모델에 추가 된 열을 추적 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-160">To detect concurrency conflicts, a [rowversion](https://docs.microsoft.com/sql/t-sql/data-types/rowversion-transact-sql) tracking column is added to the model.</span></span>  <span data-ttu-id="b5062-161">`rowversion` :</span><span class="sxs-lookup"><span data-stu-id="b5062-161">`rowversion` :</span></span>
+<span data-ttu-id="ff17f-160">동시성 충돌을 감지하기 위해 [rowversion](https://docs.microsoft.com/sql/t-sql/data-types/rowversion-transact-sql) 추적 열이 모델에 추가됩니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-160">To detect concurrency conflicts, a [rowversion](https://docs.microsoft.com/sql/t-sql/data-types/rowversion-transact-sql) tracking column is added to the model.</span></span>  <span data-ttu-id="ff17f-161">`rowversion`은:</span><span class="sxs-lookup"><span data-stu-id="ff17f-161">`rowversion` :</span></span>
 
-* <span data-ttu-id="b5062-162">특정 SQL Server입니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-162">Is SQL Server specific.</span></span> <span data-ttu-id="b5062-163">다른 데이터베이스 유사한 기능을 제공 하지 않을 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-163">Other databases may not provide a similar feature.</span></span>
-* <span data-ttu-id="b5062-164">DB에서 인출 된 이후로 변경 되지 않은 엔터티를 확인 하는 데 사용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-164">Is used to determine that an entity has not been changed since it was fetched from the DB.</span></span> 
+* <span data-ttu-id="ff17f-162">SQL Server 한정적입니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-162">Is SQL Server specific.</span></span> <span data-ttu-id="ff17f-163">다른 데이터베이스는 유사한 기능을 제공하지 않을 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-163">Other databases may not provide a similar feature.</span></span>
+* <span data-ttu-id="ff17f-164">DB에서 페치된 이후로 엔터티가 변경되지 않았는지를 확인하는 데 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-164">Is used to determine that an entity has not been changed since it was fetched from the DB.</span></span> 
 
-<span data-ttu-id="b5062-165">DB 생성 순차적 `rowversion` 가 증가 될 때마다 행 개수 업데이트 됩니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-165">The DB generates a sequential `rowversion` number that's incremented each time the row is updated.</span></span> <span data-ttu-id="b5062-166">에 `Update` 또는 `Delete` 명령에는 `Where` 절 인출 된 값이 포함 됩니다 `rowversion`합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-166">In an `Update` or `Delete` command, the `Where` clause includes the fetched value of `rowversion`.</span></span> <span data-ttu-id="b5062-167">행이 업데이트 될 경우 변경 되었습니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-167">If the row being updated has changed:</span></span>
+<span data-ttu-id="ff17f-165">DB는 행이 업데이트될 때마다 증가되는 순차적 `rowversion` 번호를 생성합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-165">The DB generates a sequential `rowversion` number that's incremented each time the row is updated.</span></span> <span data-ttu-id="ff17f-166">`Update` 또는 `Delete` 명령에서 `Where` 절은 `rowversion`의 페치된 값을 포함합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-166">In an `Update` or `Delete` command, the `Where` clause includes the fetched value of `rowversion`.</span></span> <span data-ttu-id="ff17f-167">업데이트되는 행이 변경되는 경우:</span><span class="sxs-lookup"><span data-stu-id="ff17f-167">If the row being updated has changed:</span></span>
 
- * <span data-ttu-id="b5062-168">`rowversion`인출 된 값을 일치 하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-168">`rowversion` doesn't match the fetched value.</span></span>
- * <span data-ttu-id="b5062-169">`Update` 또는 `Delete` 명령 때문에 행을 찾지 못한는 `Where` 절 포함 하 여 인출 된 `rowversion`합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-169">The `Update` or `Delete` commands don't find a row because the `Where` clause includes the fetched `rowversion`.</span></span>
- * <span data-ttu-id="b5062-170">A `DbUpdateConcurrencyException` throw 됩니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-170">A `DbUpdateConcurrencyException` is thrown.</span></span>
+ * <span data-ttu-id="ff17f-168">`rowversion`은 페치된 값에 일치하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-168">`rowversion` doesn't match the fetched value.</span></span>
+ * <span data-ttu-id="ff17f-169">`Update` 또는 `Delete` 명령은 `Where` 절이 페치된 `rowversion`을 포함하므로 행을 찾지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-169">The `Update` or `Delete` commands don't find a row because the `Where` clause includes the fetched `rowversion`.</span></span>
+ * <span data-ttu-id="ff17f-170">`DbUpdateConcurrencyException`이 throw됩니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-170">A `DbUpdateConcurrencyException` is thrown.</span></span>
 
-<span data-ttu-id="b5062-171">EF 코어, 행이 없는으로 업데이트 한 후에 `Update` 또는 `Delete` 명령, 동시성 예외가 throw 됩니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-171">In EF Core, when no rows have been updated by an `Update` or `Delete` command, a concurrency exception is thrown.</span></span>
+<span data-ttu-id="ff17f-171">EF Core에서 `Update` 또는 `Delete` 명령에 의해 업데이트된 행이 없는 경우 동시성 예외가 throw됩니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-171">In EF Core, when no rows have been updated by an `Update` or `Delete` command, a concurrency exception is thrown.</span></span>
 
-### <a name="add-a-tracking-property-to-the-department-entity"></a><span data-ttu-id="b5062-172">추적 속성 부서 엔터티에 추가</span><span class="sxs-lookup"><span data-stu-id="b5062-172">Add a tracking property to the Department entity</span></span>
+### <a name="add-a-tracking-property-to-the-department-entity"></a><span data-ttu-id="ff17f-172">추적 속성을 부서 엔터티에 추가</span><span class="sxs-lookup"><span data-stu-id="ff17f-172">Add a tracking property to the Department entity</span></span>
 
-<span data-ttu-id="b5062-173">*Models/Department.cs*, RowVersion 라는 추적 속성을 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-173">In *Models/Department.cs*, add a tracking property named RowVersion:</span></span>
+<span data-ttu-id="ff17f-173">*Models/Department.cs*에서 RowVersion으로 명명된 추적 속성을 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-173">In *Models/Department.cs*, add a tracking property named RowVersion:</span></span>
 
 [!code-csharp[Main](intro/samples/cu/Models/Department.cs?name=snippet_Final&highlight=26,27)]
 
-<span data-ttu-id="b5062-174">[타임 스탬프](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.timestampattribute) 특성 지정이 열에 포함 되어 있는지는 `Where` 절 `Update` 및 `Delete` 명령입니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-174">The [Timestamp](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.timestampattribute) attribute specifies that this column is included in the `Where` clause of `Update` and `Delete` commands.</span></span> <span data-ttu-id="b5062-175">이 특성 이라고 `Timestamp` 이전 버전의 SQL Server는 SQL을 사용 하기 때문에 `timestamp` SQL 전에 데이터 형식 `rowversion` 형식 대체 했습니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-175">The attribute is called `Timestamp` because previous versions of SQL Server used a SQL `timestamp` data type before the SQL `rowversion` type replaced it.</span></span>
+<span data-ttu-id="ff17f-174">[타임스탬프](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.timestampattribute) 특성은 이 열이 `Update` 및 `Delete` 명령의 `Where` 절에 포함되어 있음을 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-174">The [Timestamp](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.timestampattribute) attribute specifies that this column is included in the `Where` clause of `Update` and `Delete` commands.</span></span> <span data-ttu-id="ff17f-175">SQL `rowversion` 형식이 대체하기 전에 이전 버전의 SQL Server가 SQL `timestamp` 데이터 형식을 사용했으므로 특성은 `Timestamp`라고 합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-175">The attribute is called `Timestamp` because previous versions of SQL Server used a SQL `timestamp` data type before the SQL `rowversion` type replaced it.</span></span>
 
-<span data-ttu-id="b5062-176">Fluent API 추적 속성을 지정할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-176">The fluent API can also specify the tracking property:</span></span>
+<span data-ttu-id="ff17f-176">또한 흐름 API가 추적 속성을 지정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-176">The fluent API can also specify the tracking property:</span></span>
 
 ```csharp
 modelBuilder.Entity<Department>()
@@ -117,196 +117,196 @@ modelBuilder.Entity<Department>()
   .IsRowVersion();
 ```
 
-<span data-ttu-id="b5062-177">다음 코드에서는 부서 이름 업데이트 될 때 EF 코어에서 생성 된 T-SQL의 일부를 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-177">The following code shows a portion of the T-SQL generated by EF Core when the Department name is updated:</span></span>
+<span data-ttu-id="ff17f-177">다음 코드는 부서 이름이 업데이트될 때 EF Core에서 생성된 T-SQL의 일부를 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-177">The following code shows a portion of the T-SQL generated by EF Core when the Department name is updated:</span></span>
 
 [!code-sql[](intro/samples/sql.txt?highlight=2-3)]
 
-<span data-ttu-id="b5062-178">위의 코드에서 보여 주는 강조 표시 됩니다는 `WHERE` 절이 포함 된 `RowVersion`합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-178">The preceding highlighted code shows the `WHERE` clause containing `RowVersion`.</span></span> <span data-ttu-id="b5062-179">경우 DB `RowVersion` 와 같지 않습니다는 `RowVersion` 매개 변수 (`@p2`), 아무 행도 업데이트 됩니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-179">If the DB `RowVersion` doesn't equal the `RowVersion` parameter (`@p2`), no rows are updated.</span></span>
+<span data-ttu-id="ff17f-178">위에 강조 표시된 코드는 `RowVersion`을 포함하는 `WHERE` 절을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-178">The preceding highlighted code shows the `WHERE` clause containing `RowVersion`.</span></span> <span data-ttu-id="ff17f-179">DB `RowVersion`이 `RowVersion` 매개 변수(`@p2`)와 다를 경우 행은 업데이트되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-179">If the DB `RowVersion` doesn't equal the `RowVersion` parameter (`@p2`), no rows are updated.</span></span>
 
-<span data-ttu-id="b5062-180">다음 강조 표시 된 코드에는 정확히 한 개의 행이 업데이트를 확인 하는 T-SQL 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-180">The following highlighted code shows the T-SQL that verifies exactly one row was updated:</span></span>
+<span data-ttu-id="ff17f-180">다음 강조 표시된 코드는 정확히 한 개의 행이 업데이트되었음을 확인하는 T-SQL을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-180">The following highlighted code shows the T-SQL that verifies exactly one row was updated:</span></span>
 
 [!code-sql[](intro/samples/sql.txt?highlight=4-6)]
 
-<span data-ttu-id="b5062-181">[@@ROWCOUNT ](https://docs.microsoft.com/sql/t-sql/functions/rowcount-transact-sql) 마지막 문의 영향을 받는 행 수를 반환 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-181">[@@ROWCOUNT](https://docs.microsoft.com/sql/t-sql/functions/rowcount-transact-sql) returns the number of rows affected by the last statement.</span></span> <span data-ttu-id="b5062-182">아무에서 행이 업데이트 되, EF 코어를 throw 한 `DbUpdateConcurrencyException`합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-182">In no rows are updated, EF Core throws a `DbUpdateConcurrencyException`.</span></span>
+<span data-ttu-id="ff17f-181">[@@ROWCOUNT](https://docs.microsoft.com/sql/t-sql/functions/rowcount-transact-sql)는 마지막 명령문의 영향을 받는 행 수를 반환합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-181">[@@ROWCOUNT](https://docs.microsoft.com/sql/t-sql/functions/rowcount-transact-sql) returns the number of rows affected by the last statement.</span></span> <span data-ttu-id="ff17f-182">행이 업데이트되지 않은 경우 EF Core는 `DbUpdateConcurrencyException`을 throw합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-182">In no rows are updated, EF Core throws a `DbUpdateConcurrencyException`.</span></span>
 
-<span data-ttu-id="b5062-183">Visual Studio의 출력 창에 T-SQL EF 코어 생성을 확인할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-183">You can see the T-SQL EF Core generates in the output window of Visual Studio.</span></span>
+<span data-ttu-id="ff17f-183">Visual Studio의 출력 창에서 T-SQL EF Core 생성을 확인할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-183">You can see the T-SQL EF Core generates in the output window of Visual Studio.</span></span>
 
-### <a name="update-the-db"></a><span data-ttu-id="b5062-184">DB 업데이트</span><span class="sxs-lookup"><span data-stu-id="b5062-184">Update the DB</span></span>
+### <a name="update-the-db"></a><span data-ttu-id="ff17f-184">DB 업데이트</span><span class="sxs-lookup"><span data-stu-id="ff17f-184">Update the DB</span></span>
 
-<span data-ttu-id="b5062-185">추가 `RowVersion` 속성이 변경 되는 마이그레이션 마이그레이션해야 하는 DB 모델입니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-185">Adding the `RowVersion` property changes the DB model, which requires a migration.</span></span>
+<span data-ttu-id="ff17f-185">`RowVersion` 속성을 추가하면 마이그레이션이 필요한 DB 모델이 변경됩니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-185">Adding the `RowVersion` property changes the DB model, which requires a migration.</span></span>
 
-<span data-ttu-id="b5062-186">프로젝트를 빌드합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-186">Build the project.</span></span> <span data-ttu-id="b5062-187">명령 창에서 다음을 입력 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-187">Enter the following in a command window:</span></span>
+<span data-ttu-id="ff17f-186">프로젝트를 빌드합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-186">Build the project.</span></span> <span data-ttu-id="ff17f-187">명령 창에서 다음을 입력합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-187">Enter the following in a command window:</span></span>
 
 ```console
 dotnet ef migrations add RowVersion
 dotnet ef database update
 ```
 
-<span data-ttu-id="b5062-188">이전 명령:</span><span class="sxs-lookup"><span data-stu-id="b5062-188">The preceding commands:</span></span>
+<span data-ttu-id="ff17f-188">이전 명령은:</span><span class="sxs-lookup"><span data-stu-id="ff17f-188">The preceding commands:</span></span>
 
-* <span data-ttu-id="b5062-189">추가 *마이그레이션 / {시간 stamp}_RowVersion.cs* 마이그레이션 파일입니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-189">Adds the *Migrations/{time stamp}_RowVersion.cs* migration file.</span></span>
-* <span data-ttu-id="b5062-190">업데이트는 *Migrations/SchoolContextModelSnapshot.cs* 파일입니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-190">Updates the *Migrations/SchoolContextModelSnapshot.cs* file.</span></span> <span data-ttu-id="b5062-191">다음 강조 표시 된 코드를 추가 하는 업데이트는 `BuildModel` 메서드:</span><span class="sxs-lookup"><span data-stu-id="b5062-191">The update adds the following highlighted code to the `BuildModel` method:</span></span>
+* <span data-ttu-id="ff17f-189">*Migrations/{time stamp}_RowVersion.cs* 마이그레이션 파일을 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-189">Adds the *Migrations/{time stamp}_RowVersion.cs* migration file.</span></span>
+* <span data-ttu-id="ff17f-190">*Migrations/SchoolContextModelSnapshot.cs* 파일을 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-190">Updates the *Migrations/SchoolContextModelSnapshot.cs* file.</span></span> <span data-ttu-id="ff17f-191">업데이트는 다음 강조 표시된 코드를 `BuildModel` 메서드에 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-191">The update adds the following highlighted code to the `BuildModel` method:</span></span>
 
 [!code-csharp[Main](intro/samples/cu/Migrations/SchoolContextModelSnapshot2.cs?name=snippet&highlight=14-16)]
 
-* <span data-ttu-id="b5062-192">마이그레이션 DB 업데이트를 실행 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-192">Runs migrations to update the DB.</span></span>
+* <span data-ttu-id="ff17f-192">마이그레이션을 실행하여 DB를 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-192">Runs migrations to update the DB.</span></span>
 
 <a name="scaffold"></a>
-## <a name="scaffold-the-departments-model"></a><span data-ttu-id="b5062-193">스 캐 폴드 부서 모델</span><span class="sxs-lookup"><span data-stu-id="b5062-193">Scaffold the Departments model</span></span>
+## <a name="scaffold-the-departments-model"></a><span data-ttu-id="ff17f-193">부서 모델 스캐폴드</span><span class="sxs-lookup"><span data-stu-id="ff17f-193">Scaffold the Departments model</span></span>
 
-* <span data-ttu-id="b5062-194">Visual Studio를 종료 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-194">Exit Visual Studio.</span></span>
-* <span data-ttu-id="b5062-195">프로젝트 디렉터리(*Program.cs*, *Startup.cs* 및 *.csproj* 파일이 포함된 디렉터리)에서 명령 창을 엽니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-195">Open a command window in the project directory (The directory that contains the *Program.cs*, *Startup.cs*, and *.csproj* files).</span></span>
-* <span data-ttu-id="b5062-196">다음 명령을 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-196">Run the following command:</span></span>
+* <span data-ttu-id="ff17f-194">Visual Studio를 끝냅니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-194">Exit Visual Studio.</span></span>
+* <span data-ttu-id="ff17f-195">프로젝트 디렉터리(*Program.cs*, *Startup.cs* 및 *.csproj* 파일이 포함된 디렉터리)에서 명령 창을 엽니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-195">Open a command window in the project directory (The directory that contains the *Program.cs*, *Startup.cs*, and *.csproj* files).</span></span>
+* <span data-ttu-id="ff17f-196">다음 명령을 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-196">Run the following command:</span></span>
 
  ```console
 dotnet aspnet-codegenerator razorpage -m Department -dc SchoolContext -udl -outDir Pages\Departments --referenceScriptLibraries
  ```
 
-<span data-ttu-id="b5062-197">위의 명령은 스 캐 폴드 된 `Department` 모델입니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-197">The preceding command scaffolds the `Department` model.</span></span> <span data-ttu-id="b5062-198">Visual Studio에서 프로젝트를 엽니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-198">Open the project in Visual Studio.</span></span>
+<span data-ttu-id="ff17f-197">위의 명령은 `Department` 모델을 스캐폴드합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-197">The preceding command scaffolds the `Department` model.</span></span> <span data-ttu-id="ff17f-198">Visual Studio에서 프로젝트를 엽니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-198">Open the project in Visual Studio.</span></span>
 
-<span data-ttu-id="b5062-199">프로젝트를 빌드합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-199">Build the project.</span></span> <span data-ttu-id="b5062-200">빌드에서는 다음과 같은 오류를 생성합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-200">The build generates errors like the following:</span></span>
+<span data-ttu-id="ff17f-199">프로젝트를 빌드합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-199">Build the project.</span></span> <span data-ttu-id="ff17f-200">빌드는 다음과 같은 오류를 생성합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-200">The build generates errors like the following:</span></span>
 
 `1>Pages/Departments/Index.cshtml.cs(26,37,26,43): error CS1061: 'SchoolContext' does not
  contain a definition for 'Department' and no extension method 'Department' accepting a first
  argument of type 'SchoolContext' could be found (are you missing a using directive or
  an assembly reference?)`
 
- <span data-ttu-id="b5062-201">전역으로 변경 `_context.Department` 를 `_context.Departments` (즉, "s"에 추가 `Department`).</span><span class="sxs-lookup"><span data-stu-id="b5062-201">Globally change `_context.Department` to `_context.Departments` (that is, add an "s" to `Department`).</span></span> <span data-ttu-id="b5062-202">7 번 발견 되 고 업데이트 됩니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-202">7 occurrences are found and updated.</span></span>
+ <span data-ttu-id="ff17f-201">전체적으로 `_context.Department`를 `_context.Departments`로 변경합니다(즉, “s”를 `Department`에 추가).</span><span class="sxs-lookup"><span data-stu-id="ff17f-201">Globally change `_context.Department` to `_context.Departments` (that is, add an "s" to `Department`).</span></span> <span data-ttu-id="ff17f-202">7개 항목이 발견되어 업데이트됩니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-202">7 occurrences are found and updated.</span></span>
 
-### <a name="update-the-departments-index-page"></a><span data-ttu-id="b5062-203">부서 인덱스 페이지를 업데이트 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-203">Update the Departments Index page</span></span>
+### <a name="update-the-departments-index-page"></a><span data-ttu-id="ff17f-203">부서 인덱스 페이지 업데이트</span><span class="sxs-lookup"><span data-stu-id="ff17f-203">Update the Departments Index page</span></span>
 
-<span data-ttu-id="b5062-204">만든 스 캐 폴딩 엔진은 `RowVersion` 인덱스 페이지 이지만 해당 필드에 대 한 열을 표시 하지 않아야 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-204">The scaffolding engine created a `RowVersion` column for the Index page, but that field shouldn't be displayed.</span></span> <span data-ttu-id="b5062-205">이 자습서의 마지막 바이트는 `RowVersion` 동시성 이해 하기 위해 표시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-205">In this tutorial, the last byte of the `RowVersion` is displayed to help understand concurrency.</span></span> <span data-ttu-id="b5062-206">마지막 바이트 고유 하 게 보장 되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-206">The last byte isn't guaranteed to be unique.</span></span> <span data-ttu-id="b5062-207">실제 앱 없게 표시 `RowVersion` 또는의 마지막 바이트 `RowVersion`합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-207">A real app wouldn't display `RowVersion` or the last byte of `RowVersion`.</span></span>
+<span data-ttu-id="ff17f-204">스캐폴딩 엔진은 인덱스 페이지에 대한 `RowVersion` 열을 만들지만, 해당 필드는 표시되지 않아야 합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-204">The scaffolding engine created a `RowVersion` column for the Index page, but that field shouldn't be displayed.</span></span> <span data-ttu-id="ff17f-205">이 자습서에서는 동시성을 이해하는 데 도움을 주기 위해 `RowVersion`의 마지막 바이트가 표시됩니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-205">In this tutorial, the last byte of the `RowVersion` is displayed to help understand concurrency.</span></span> <span data-ttu-id="ff17f-206">마지막 바이트는 고유하게 보장되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-206">The last byte isn't guaranteed to be unique.</span></span> <span data-ttu-id="ff17f-207">실제 앱에서는 `RowVersion` 또는 `RowVersion`의 마지막 바이트가 표시되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-207">A real app wouldn't display `RowVersion` or the last byte of `RowVersion`.</span></span>
 
-<span data-ttu-id="b5062-208">인덱스 페이지를 업데이트 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-208">Update the Index page:</span></span>
+<span data-ttu-id="ff17f-208">인덱스 페이지를 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-208">Update the Index page:</span></span>
 
-* <span data-ttu-id="b5062-209">인덱스를 부서 바꿉니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-209">Replace Index with Departments.</span></span>
-* <span data-ttu-id="b5062-210">포함 하는 태그 대체 `RowVersion` 의 마지막 바이트와 `RowVersion`합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-210">Replace the markup containing `RowVersion` with the last byte of `RowVersion`.</span></span>
-* <span data-ttu-id="b5062-211">FullName FirstMidName 대체 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-211">Replace FirstMidName with FullName.</span></span>
+* <span data-ttu-id="ff17f-209">인덱스를 부서로 바꿉니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-209">Replace Index with Departments.</span></span>
+* <span data-ttu-id="ff17f-210">`RowVersion`을 포함하는 표시를 `RowVersion`의 마지막 바이트로 바꿉니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-210">Replace the markup containing `RowVersion` with the last byte of `RowVersion`.</span></span>
+* <span data-ttu-id="ff17f-211">FirstMidName을 FullName으로 바꿉니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-211">Replace FirstMidName with FullName.</span></span>
 
-<span data-ttu-id="b5062-212">다음 태그 업데이트 페이지를 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-212">The following markup shows the updated page:</span></span>
+<span data-ttu-id="ff17f-212">다음 표시는 업데이트된 페이지를 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-212">The following markup shows the updated page:</span></span>
 
 [!code-html[](intro/samples/cu/Pages/Departments/Index.cshtml?highlight=5,8,29,47,50)]
 
-### <a name="update-the-edit-page-model"></a><span data-ttu-id="b5062-213">편집 페이지 모델 업데이트</span><span class="sxs-lookup"><span data-stu-id="b5062-213">Update the Edit page model</span></span>
+### <a name="update-the-edit-page-model"></a><span data-ttu-id="ff17f-213">편집 페이지 모델 업데이트</span><span class="sxs-lookup"><span data-stu-id="ff17f-213">Update the Edit page model</span></span>
 
-<span data-ttu-id="b5062-214">업데이트 *pages\departments\edit.cshtml.cs* 를 다음 코드로:</span><span class="sxs-lookup"><span data-stu-id="b5062-214">Update *pages\departments\edit.cshtml.cs* with the following code:</span></span>
+<span data-ttu-id="ff17f-214">*pages\departments\edit.cshtml.cs*를 다음 코드로 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-214">Update *pages\departments\edit.cshtml.cs* with the following code:</span></span>
 
 [!code-csharp[](intro/samples/cu/Pages/Departments/Edit.cshtml.cs?name=snippet)]
 
-<span data-ttu-id="b5062-215">동시성 문제를 감지 하는 [OriginalValue](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.changetracking.propertyentry.originalvalue?view=efcore-2.0#Microsoft_EntityFrameworkCore_ChangeTracking_PropertyEntry_OriginalValue) 으로 업데이트는 `rowVersion` 값이 인출 된 엔터티에서 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-215">To detect a concurrency issue, the [OriginalValue](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.changetracking.propertyentry.originalvalue?view=efcore-2.0#Microsoft_EntityFrameworkCore_ChangeTracking_PropertyEntry_OriginalValue) is updated with the `rowVersion` value from the entity it was fetched.</span></span> <span data-ttu-id="b5062-216">EF 코어 원본이 포함 된 WHERE 절과 함께 SQL UPDATE 명령과 생성 `RowVersion` 값입니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-216">EF Core generates a SQL UPDATE command with a WHERE clause containing the original `RowVersion` value.</span></span> <span data-ttu-id="b5062-217">UPDATE 명령 영향을 받는 행이 없는 경우 (행이 없는 원래 `RowVersion` 값), 즉 `DbUpdateConcurrencyException` 예외가 throw 됩니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-217">If no rows are affected by the UPDATE command (no rows have the original `RowVersion` value), a `DbUpdateConcurrencyException` exception is thrown.</span></span>
+<span data-ttu-id="ff17f-215">동시성 문제를 감지하기 위해 [OriginalValue](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.changetracking.propertyentry.originalvalue?view=efcore-2.0#Microsoft_EntityFrameworkCore_ChangeTracking_PropertyEntry_OriginalValue)가 페치된 엔터티의 `rowVersion` 값으로 업데이트됩니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-215">To detect a concurrency issue, the [OriginalValue](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.changetracking.propertyentry.originalvalue?view=efcore-2.0#Microsoft_EntityFrameworkCore_ChangeTracking_PropertyEntry_OriginalValue) is updated with the `rowVersion` value from the entity it was fetched.</span></span> <span data-ttu-id="ff17f-216">EF Core는 원본 `RowVersion` 값을 포함하는 WHERE 절과 함께 SQL UPDATE 명령을 생성합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-216">EF Core generates a SQL UPDATE command with a WHERE clause containing the original `RowVersion` value.</span></span> <span data-ttu-id="ff17f-217">UPDATE 명령의 영향을 받는 행이 없는 경우(행에 원래 `RowVersion` 값이 없음) `DbUpdateConcurrencyException` 예외가 throw됩니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-217">If no rows are affected by the UPDATE command (no rows have the original `RowVersion` value), a `DbUpdateConcurrencyException` exception is thrown.</span></span>
 
 [!code-csharp[](intro/samples/cu/Pages/Departments/Edit.cshtml.cs?name=snippet_rv&highlight=24-)]
 
-<span data-ttu-id="b5062-218">위의 코드에서 `Department.RowVersion` 엔터티를 인출할 때 값입니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-218">In the preceding code, `Department.RowVersion` is the value when the entity was fetched.</span></span> <span data-ttu-id="b5062-219">`OriginalValue`DB에 값이 때 `FirstOrDefaultAsync` 이 메서드의 호출 되었습니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-219">`OriginalValue` is the value in the DB when `FirstOrDefaultAsync` was called in this method.</span></span>
+<span data-ttu-id="ff17f-218">위의 코드에서 `Department.RowVersion`은 엔터티가 페치될 때 값입니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-218">In the preceding code, `Department.RowVersion` is the value when the entity was fetched.</span></span> <span data-ttu-id="ff17f-219">`OriginalValue`는 `FirstOrDefaultAsync`가 이 메서드에서 호출될 때 DB의 값입니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-219">`OriginalValue` is the value in the DB when `FirstOrDefaultAsync` was called in this method.</span></span>
 
-<span data-ttu-id="b5062-220">다음 코드는 클라이언트 값 (이 메서드에 게시 된 값) 및 DB 값을 가져옵니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-220">The following code gets the client values (the values posted to this method) and the DB values:</span></span>
+<span data-ttu-id="ff17f-220">다음 코드는 클라이언트 값(이 메서드에 게시된 값) 및 DB 값을 가져옵니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-220">The following code gets the client values (the values posted to this method) and the DB values:</span></span>
 
 [!code-csharp[](intro/samples/cu/Pages/Departments/Edit.cshtml.cs?name=snippet_try&highlight=9,18)]
 
-<span data-ttu-id="b5062-221">DB가 있는 각 열에 게시 된 작업에서 다른 값에 대 한 사용자 지정 오류 메시지를 추가 하는 다음 코드 `OnPostAsync`:</span><span class="sxs-lookup"><span data-stu-id="b5062-221">The follwing code adds a custom error message for each column that has DB values different from what was posted to `OnPostAsync`:</span></span>
+<span data-ttu-id="ff17f-221">다음 코드는 DB 값이 `OnPostAsync`에 게시된 값과 다른 각 열에 대한 사용자 오류 메시지를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-221">The follwing code adds a custom error message for each column that has DB values different from what was posted to `OnPostAsync`:</span></span>
 
 [!code-csharp[](intro/samples/cu/Pages/Departments/Edit.cshtml.cs?name=snippet_err)]
 
-<span data-ttu-id="b5062-222">다음 코드 집합을 강조 표시는 `RowVersion` DB에서 검색 된 값을 새 값입니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-222">The following highlighted code sets the `RowVersion` value to the new value retrieved from the DB.</span></span> <span data-ttu-id="b5062-223">다음에 사용자가 클릭 **저장**, 이후 편집 페이지의 마지막 디스플레이 찾아낼 수는 발생 하는 동시성 오류만 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-223">The next time the user clicks **Save**, only concurrency errors that happen since the last display of the Edit page will be caught.</span></span>
+<span data-ttu-id="ff17f-222">다음 강조 표시된 코드는 `RowVersion` 값을 DB에서 검색된 새 값으로 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-222">The following highlighted code sets the `RowVersion` value to the new value retrieved from the DB.</span></span> <span data-ttu-id="ff17f-223">다음에 사용자가 **저장**을 클릭하면, 편집 페이지의 마지막 표시 이후 발생한 동시성 오류만 catch됩니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-223">The next time the user clicks **Save**, only concurrency errors that happen since the last display of the Edit page will be caught.</span></span>
 
 [!code-csharp[](intro/samples/cu/Pages/Departments/Edit.cshtml.cs?name=snippet_try&highlight=23)]
 
-<span data-ttu-id="b5062-224">`ModelState.Remove` 때문에 문이 필요 않습니다 `ModelState` 이전에 `RowVersion` 값입니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-224">The `ModelState.Remove` statement is required because `ModelState` has the old `RowVersion` value.</span></span> <span data-ttu-id="b5062-225">Razor 페이지에는 `ModelState` 필드 우선 모델 속성 값은 둘 다 있는 경우에 대 한 값입니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-225">In the Razor Page, the `ModelState` value for a field takes precedence over the model property values when both are present.</span></span>
+<span data-ttu-id="ff17f-224">`ModelState`에 이전 `RowVersion` 값이 있으므로 `ModelState.Remove` 문이 필요합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-224">The `ModelState.Remove` statement is required because `ModelState` has the old `RowVersion` value.</span></span> <span data-ttu-id="ff17f-225">Razor 페이지에서 필드에 대한 `ModelState` 값은 모델 속성 값에 우선합니다(모두 있는 경우).</span><span class="sxs-lookup"><span data-stu-id="ff17f-225">In the Razor Page, the `ModelState` value for a field takes precedence over the model property values when both are present.</span></span>
 
-## <a name="update-the-edit-page"></a><span data-ttu-id="b5062-226">업데이트 편집 페이지</span><span class="sxs-lookup"><span data-stu-id="b5062-226">Update the Edit page</span></span>
+## <a name="update-the-edit-page"></a><span data-ttu-id="ff17f-226">편집 페이지 업데이트</span><span class="sxs-lookup"><span data-stu-id="ff17f-226">Update the Edit page</span></span>
 
-<span data-ttu-id="b5062-227">업데이트 *Pages/Departments/Edit.cshtml* 다음 태그로:</span><span class="sxs-lookup"><span data-stu-id="b5062-227">Update *Pages/Departments/Edit.cshtml* with the following markup:</span></span>
+<span data-ttu-id="ff17f-227">*Pages/Departments/Edit.cshtml*을 다음 표시로 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-227">Update *Pages/Departments/Edit.cshtml* with the following markup:</span></span>
 
 [!code-html[](intro/samples/cu/Pages/Departments/Edit.cshtml?highlight=1,14,16-17,37-39)]
 
-<span data-ttu-id="b5062-228">위의 태그:</span><span class="sxs-lookup"><span data-stu-id="b5062-228">The preceding markup:</span></span>
+<span data-ttu-id="ff17f-228">위의 표시는:</span><span class="sxs-lookup"><span data-stu-id="ff17f-228">The preceding markup:</span></span>
 
-* <span data-ttu-id="b5062-229">업데이트는 `page` 지시어를 `@page` 를 `@page "{id:int}"`합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-229">Updates the `page` directive from `@page` to `@page "{id:int}"`.</span></span>
-* <span data-ttu-id="b5062-230">숨겨진된 행 버전을 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-230">Adds a hidden row version.</span></span> <span data-ttu-id="b5062-231">`RowVersion`다시 게시 값을 연결 하므로 추가 되어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-231">`RowVersion` must be added so post back binds the value.</span></span>
-* <span data-ttu-id="b5062-232">마지막 바이트 표시 `RowVersion` 디버깅 목적으로 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-232">Displays the last byte of `RowVersion` for debugging purposes.</span></span>
-* <span data-ttu-id="b5062-233">대체 `ViewData` 강력한 형식의와 `InstructorNameSL`합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-233">Replaces `ViewData` with the strongly-typed `InstructorNameSL`.</span></span>
+* <span data-ttu-id="ff17f-229">`page` 지시어를 `@page`에서 `@page "{id:int}"`로 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-229">Updates the `page` directive from `@page` to `@page "{id:int}"`.</span></span>
+* <span data-ttu-id="ff17f-230">숨겨진 행 버전을 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-230">Adds a hidden row version.</span></span> <span data-ttu-id="ff17f-231">포스트백은 값을 바인딩하므로 `RowVersion`을 추가해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-231">`RowVersion` must be added so post back binds the value.</span></span>
+* <span data-ttu-id="ff17f-232">디버깅을 위해 `RowVersion`의 마지막 바이트를 표시합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-232">Displays the last byte of `RowVersion` for debugging purposes.</span></span>
+* <span data-ttu-id="ff17f-233">`ViewData`를 강력한 형식의 `InstructorNameSL`로 바꿉니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-233">Replaces `ViewData` with the strongly-typed `InstructorNameSL`.</span></span>
 
-## <a name="test-concurrency-conflicts-with-the-edit-page"></a><span data-ttu-id="b5062-234">동시성 충돌 편집 페이지를 테스트 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-234">Test concurrency conflicts with the Edit page</span></span>
+## <a name="test-concurrency-conflicts-with-the-edit-page"></a><span data-ttu-id="ff17f-234">편집 페이지로 동시성 충돌 테스트</span><span class="sxs-lookup"><span data-stu-id="ff17f-234">Test concurrency conflicts with the Edit page</span></span>
 
-<span data-ttu-id="b5062-235">영어 부서에 있는 편집의 두 브라우저 인스턴스를 엽니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-235">Open two browsers instances of Edit on the English department:</span></span>
+<span data-ttu-id="ff17f-235">영어 부서에 있는 편집의 두 브라우저 인스턴스를 엽니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-235">Open two browsers instances of Edit on the English department:</span></span>
 
-* <span data-ttu-id="b5062-236">응용 프로그램을 실행 하 고 부서를 선택 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-236">Run the app and select Departments.</span></span>
-* <span data-ttu-id="b5062-237">마우스 오른쪽 단추로 클릭는 **편집** 영어 부서 및 선택에 대 한 하이퍼링크 **새 탭에서 열기**합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-237">Right-click the **Edit** hyperlink for the English department and select **Open in new tab**.</span></span>
-* <span data-ttu-id="b5062-238">첫 번째 탭을 클릭는 **편집** 영어 부서에 대 한 하이퍼링크입니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-238">In the first tab, click the **Edit** hyperlink for the English department.</span></span>
+* <span data-ttu-id="ff17f-236">앱을 실행하고 부서를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-236">Run the app and select Departments.</span></span>
+* <span data-ttu-id="ff17f-237">영어 부서에 대한 **편집** 하이퍼링크를 마우스 오른쪽 단추로 클릭하고 **새 탭에서 열기**를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-237">Right-click the **Edit** hyperlink for the English department and select **Open in new tab**.</span></span>
+* <span data-ttu-id="ff17f-238">첫 번째 탭에서 영어 부서에 대한 **편집** 하이퍼링크를 클릭합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-238">In the first tab, click the **Edit** hyperlink for the English department.</span></span>
 
-<span data-ttu-id="b5062-239">두 개의 브라우저 탭 동일한 정보를 표시 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-239">The two browser tabs display the same information.</span></span>
+<span data-ttu-id="ff17f-239">두 개의 브라우저 탭에 동일한 정보가 표시됩니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-239">The two browser tabs display the same information.</span></span>
 
-<span data-ttu-id="b5062-240">첫 번째 브라우저 탭에서 이름을 변경 하 고 클릭 **저장**합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-240">Change the name in the first browser tab and click **Save**.</span></span>
+<span data-ttu-id="ff17f-240">첫 번째 브라우저 탭의 이름을 변경하고 **저장**을 클릭합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-240">Change the name in the first browser tab and click **Save**.</span></span>
 
-![부서 편집 페이지 1 변경 후](concurrency/_static/edit-after-change-1.png)
+![변경 후 부서 편집 페이지 1](concurrency/_static/edit-after-change-1.png)
 
-<span data-ttu-id="b5062-242">브라우저에서는 변경 된 값과 업데이트 된 rowVersion 표시기 인 인덱스 페이지를 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-242">The browser shows the Index page with the changed value and updated rowVersion indicator.</span></span> <span data-ttu-id="b5062-243">업데이트 된 rowVersion 표시기 참고 기타 탭에 두 번째 포스트백에 표시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-243">Note the updated rowVersion indicator, it's displayed on the second postback in the other tab.</span></span>
+<span data-ttu-id="ff17f-242">브라우저에 변경된 값과 업데이트된 rowVersion 표시기가 있는 인덱스 페이지가 표시됩니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-242">The browser shows the Index page with the changed value and updated rowVersion indicator.</span></span> <span data-ttu-id="ff17f-243">업데이트된 rowVersion 표시기는 다른 탭의 두 번째 포스트백에 표시됩니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-243">Note the updated rowVersion indicator, it's displayed on the second postback in the other tab.</span></span>
 
-<span data-ttu-id="b5062-244">두 번째 브라우저 탭에서 다른 필드를 변경 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-244">Change a different field in the second browser tab.</span></span>
+<span data-ttu-id="ff17f-244">두 번째 브라우저 탭에서 다른 필드를 변경합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-244">Change a different field in the second browser tab.</span></span>
 
-![부서 편집 변경 후 2 페이지](concurrency/_static/edit-after-change-2.png)
+![변경 후 부서 편집 페이지 2](concurrency/_static/edit-after-change-2.png)
 
-<span data-ttu-id="b5062-246">**저장**을 클릭합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-246">Click **Save**.</span></span> <span data-ttu-id="b5062-247">DB 값과 일치 하지 않는 모든 필드에 대 한 오류 메시지 표시:</span><span class="sxs-lookup"><span data-stu-id="b5062-247">You see error messages for all fields that don't match the DB values:</span></span>
+<span data-ttu-id="ff17f-246">**저장**을 클릭합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-246">Click **Save**.</span></span> <span data-ttu-id="ff17f-247">DB 값과 일치하지 않는 모든 필드에 대한 오류 메시지가 표시됩니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-247">You see error messages for all fields that don't match the DB values:</span></span>
 
 ![부서 편집 페이지 오류 메시지](concurrency/_static/edit-error.png)
 
-<span data-ttu-id="b5062-249">이 브라우저 창 의도 하지 않았던 Name 필드를 변경 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-249">This browser window didn't intend to change the Name field.</span></span> <span data-ttu-id="b5062-250">복사 하 고 현재 값 (언어)의 이름 필드에 붙여넣습니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-250">Copy and paste the current value (Languages) into the Name field.</span></span> <span data-ttu-id="b5062-251">탭 합니다. 클라이언트 쪽 유효성 검사 오류 메시지를 제거합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-251">Tab out. Client-side validation removes the error message.</span></span>
+<span data-ttu-id="ff17f-249">이 브라우저 창은 Name 필드 변경용으로 의도되지 않았습니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-249">This browser window didn't intend to change the Name field.</span></span> <span data-ttu-id="ff17f-250">현재 값(Languages)을 복사하여 Name 필드에 붙여넣습니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-250">Copy and paste the current value (Languages) into the Name field.</span></span> <span data-ttu-id="ff17f-251">필드 밖을 탭합니다. 클라이언트 쪽 유효성 검사가 오류 메시지를 제거합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-251">Tab out. Client-side validation removes the error message.</span></span>
 
 ![부서 편집 페이지 오류 메시지](concurrency/_static/cv.png)
 
-<span data-ttu-id="b5062-253">클릭 **저장** 다시 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-253">Click **Save** again.</span></span> <span data-ttu-id="b5062-254">두 번째 브라우저 탭에 입력 한 값이 저장 됩니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-254">The value you entered in the second browser tab is saved.</span></span> <span data-ttu-id="b5062-255">인덱스 페이지에 저장된 된 값을 표시 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-255">You see the saved values in the Index page.</span></span>
+<span data-ttu-id="ff17f-253">**저장**을 다시 클릭합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-253">Click **Save** again.</span></span> <span data-ttu-id="ff17f-254">두 번째 브라우저 탭에 입력한 값이 저장됩니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-254">The value you entered in the second browser tab is saved.</span></span> <span data-ttu-id="ff17f-255">인덱스 페이지에 저장된 값이 표시됩니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-255">You see the saved values in the Index page.</span></span>
 
-## <a name="update-the-delete-page"></a><span data-ttu-id="b5062-256">업데이트 페이지 삭제</span><span class="sxs-lookup"><span data-stu-id="b5062-256">Update the Delete page</span></span>
+## <a name="update-the-delete-page"></a><span data-ttu-id="ff17f-256">삭제 페이지 업데이트</span><span class="sxs-lookup"><span data-stu-id="ff17f-256">Update the Delete page</span></span>
 
-<span data-ttu-id="b5062-257">다음 코드로 Delete 페이지 모델을 업데이트 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-257">Update the Delete page model with the following code:</span></span>
+<span data-ttu-id="ff17f-257">다음 코드로 삭제 페이지 모델을 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-257">Update the Delete page model with the following code:</span></span>
 
 [!code-csharp[](intro/samples/cu/Pages/Departments/Delete.cshtml.cs)]
 
-<span data-ttu-id="b5062-258">페이지 삭제 된 엔터티가 인출 된 후 변경 될 때 동시성 충돌을 감지 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-258">The Delete page detects concurrency conflicts when the entity has changed after it was fetched.</span></span> <span data-ttu-id="b5062-259">`Department.RowVersion`엔터티를 인출할 때 행 버전이입니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-259">`Department.RowVersion` is the row version when the entity was fetched.</span></span> <span data-ttu-id="b5062-260">WHERE 절을 포함 EF 핵심 SQL DELETE 명령과 만들면 `RowVersion`합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-260">When EF Core creates the SQL DELETE command, it includes a WHERE clause with `RowVersion`.</span></span> <span data-ttu-id="b5062-261">SQL DELETE 명령 결과가 0 인 행에 영향을 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-261">If the SQL DELETE command results in zero rows affected:</span></span>
+<span data-ttu-id="ff17f-258">페이지 삭제는 엔터티가 페치된 후 변경될 때 동시성 충돌을 감지합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-258">The Delete page detects concurrency conflicts when the entity has changed after it was fetched.</span></span> <span data-ttu-id="ff17f-259">`Department.RowVersion`은 엔터티가 페치될 때 행 버전입니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-259">`Department.RowVersion` is the row version when the entity was fetched.</span></span> <span data-ttu-id="ff17f-260">EF Core가 SQL DELETE 명령을 만들 때 `RowVersion`과 함께 WHERE 절이 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-260">When EF Core creates the SQL DELETE command, it includes a WHERE clause with `RowVersion`.</span></span> <span data-ttu-id="ff17f-261">SQL DELETE 명령의 영향을 받는 행이 없는 경우:</span><span class="sxs-lookup"><span data-stu-id="ff17f-261">If the SQL DELETE command results in zero rows affected:</span></span>
 
-* <span data-ttu-id="b5062-262">`RowVersion` SQL DELETE 명령을 일치 하지 않습니다 `RowVersion` DB에 있습니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-262">The `RowVersion` in the SQL DELETE command doesn't match `RowVersion` in the DB.</span></span>
-* <span data-ttu-id="b5062-263">DbUpdateConcurrencyException 예외가 throw 됩니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-263">A DbUpdateConcurrencyException exception is thrown.</span></span>
-* <span data-ttu-id="b5062-264">`OnGetAsync`사용 하 여 호출 된 `concurrencyError`합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-264">`OnGetAsync` is called with the `concurrencyError`.</span></span>
+* <span data-ttu-id="ff17f-262">SQL DELETE 명령의 `RowVersion`이 DB의 `RowVersion`과 일치하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-262">The `RowVersion` in the SQL DELETE command doesn't match `RowVersion` in the DB.</span></span>
+* <span data-ttu-id="ff17f-263">DbUpdateConcurrencyException 예외가 throw됩니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-263">A DbUpdateConcurrencyException exception is thrown.</span></span>
+* <span data-ttu-id="ff17f-264">`OnGetAsync`가 `concurrencyError`를 사용하여 호출됩니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-264">`OnGetAsync` is called with the `concurrencyError`.</span></span>
 
-### <a name="update-the-delete-page"></a><span data-ttu-id="b5062-265">업데이트 페이지 삭제</span><span class="sxs-lookup"><span data-stu-id="b5062-265">Update the Delete page</span></span>
+### <a name="update-the-delete-page"></a><span data-ttu-id="ff17f-265">삭제 페이지 업데이트</span><span class="sxs-lookup"><span data-stu-id="ff17f-265">Update the Delete page</span></span>
 
-<span data-ttu-id="b5062-266">업데이트 *Pages/Departments/Delete.cshtml* 를 다음 코드로:</span><span class="sxs-lookup"><span data-stu-id="b5062-266">Update *Pages/Departments/Delete.cshtml* with the following code:</span></span>
+<span data-ttu-id="ff17f-266">*Pages/Departments/Delete.cshtml*을 다음 코드로 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-266">Update *Pages/Departments/Delete.cshtml* with the following code:</span></span>
 
 [!code-html[](intro/samples/cu/Pages/Departments/Delete.cshtml?highlight=1,10,36,51)]
 
 
-<span data-ttu-id="b5062-267">위의 태그에서는 다음과 같이 변경 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-267">The preceding markup makes the following changes:</span></span>
+<span data-ttu-id="ff17f-267">위의 표시는 다음과 같이 변경합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-267">The preceding markup makes the following changes:</span></span>
 
-* <span data-ttu-id="b5062-268">업데이트는 `page` 지시어를 `@page` 를 `@page "{id:int}"`합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-268">Updates the `page` directive from `@page` to `@page "{id:int}"`.</span></span>
-* <span data-ttu-id="b5062-269">오류 메시지를 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-269">Adds an error message.</span></span>
-* <span data-ttu-id="b5062-270">FullName FirstMidName 바꿉니다는 **관리자** 필드입니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-270">Replaces FirstMidName with FullName in the **Administrator** field.</span></span>
-* <span data-ttu-id="b5062-271">변경 내용을 `RowVersion` 마지막 바이트를 표시 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-271">Changes `RowVersion` to display the last byte.</span></span>
-* <span data-ttu-id="b5062-272">숨겨진된 행 버전을 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-272">Adds a hidden row version.</span></span> <span data-ttu-id="b5062-273">`RowVersion`다시 게시 값을 연결 하므로 추가 되어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-273">`RowVersion` must be added so post back binds the value.</span></span>
+* <span data-ttu-id="ff17f-268">`page` 지시어를 `@page`에서 `@page "{id:int}"`로 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-268">Updates the `page` directive from `@page` to `@page "{id:int}"`.</span></span>
+* <span data-ttu-id="ff17f-269">오류 메시지를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-269">Adds an error message.</span></span>
+* <span data-ttu-id="ff17f-270">**Administrator** 필드의 FirstMidName을 FullName으로 바꿉니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-270">Replaces FirstMidName with FullName in the **Administrator** field.</span></span>
+* <span data-ttu-id="ff17f-271">마지막 바이트를 표시하도록 `RowVersion`을 변경합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-271">Changes `RowVersion` to display the last byte.</span></span>
+* <span data-ttu-id="ff17f-272">숨겨진 행 버전을 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-272">Adds a hidden row version.</span></span> <span data-ttu-id="ff17f-273">포스트백은 값을 바인딩하므로 `RowVersion`을 추가해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-273">`RowVersion` must be added so post back binds the value.</span></span>
 
-### <a name="test-concurrency-conflicts-with-the-delete-page"></a><span data-ttu-id="b5062-274">Delete 페이지와 테스트 동시성 충돌</span><span class="sxs-lookup"><span data-stu-id="b5062-274">Test concurrency conflicts with the Delete page</span></span>
+### <a name="test-concurrency-conflicts-with-the-delete-page"></a><span data-ttu-id="ff17f-274">삭제 페이지로 동시성 충돌 테스트</span><span class="sxs-lookup"><span data-stu-id="ff17f-274">Test concurrency conflicts with the Delete page</span></span>
 
-<span data-ttu-id="b5062-275">테스트 부서를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-275">Create a test department.</span></span>
+<span data-ttu-id="ff17f-275">테스트 부서를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-275">Create a test department.</span></span>
 
-<span data-ttu-id="b5062-276">테스트 부서에 Delete의 두 브라우저 인스턴스를 엽니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-276">Open two browsers instances of Delete on the test department:</span></span>
+<span data-ttu-id="ff17f-276">테스트 부서에 있는 삭제의 두 브라우저 인스턴스를 엽니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-276">Open two browsers instances of Delete on the test department:</span></span>
 
-* <span data-ttu-id="b5062-277">응용 프로그램을 실행 하 고 부서를 선택 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-277">Run the app and select Departments.</span></span>
-* <span data-ttu-id="b5062-278">마우스 오른쪽 단추로 클릭는 **삭제** 테스트 부서 및 선택에 대 한 하이퍼링크 **새 탭에서 열기**합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-278">Right-click the **Delete** hyperlink for the test department and select **Open in new tab**.</span></span>
-* <span data-ttu-id="b5062-279">클릭는 **편집** 테스트 부서에 대 한 하이퍼링크입니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-279">Click the **Edit** hyperlink for the test department.</span></span>
+* <span data-ttu-id="ff17f-277">앱을 실행하고 부서를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-277">Run the app and select Departments.</span></span>
+* <span data-ttu-id="ff17f-278">테스트 부서에 대한 **삭제** 하이퍼링크를 마우스 오른쪽 단추로 클릭하고 **새 탭에서 열기**를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-278">Right-click the **Delete** hyperlink for the test department and select **Open in new tab**.</span></span>
+* <span data-ttu-id="ff17f-279">테스트 부서에 대한 **편집** 하이퍼링크를 클릭합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-279">Click the **Edit** hyperlink for the test department.</span></span>
 
-<span data-ttu-id="b5062-280">두 개의 브라우저 탭 동일한 정보를 표시 합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-280">The two browser tabs display the same information.</span></span>
+<span data-ttu-id="ff17f-280">두 개의 브라우저 탭에 동일한 정보가 표시됩니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-280">The two browser tabs display the same information.</span></span>
 
-<span data-ttu-id="b5062-281">첫 번째 브라우저 탭에서 할당을 변경 하 고 클릭 **저장**합니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-281">Change the budget in the first browser tab and click **Save**.</span></span>
+<span data-ttu-id="ff17f-281">첫 번째 브라우저 탭의 예산을 변경하고 **저장**을 클릭합니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-281">Change the budget in the first browser tab and click **Save**.</span></span>
 
-<span data-ttu-id="b5062-282">브라우저에서는 변경 된 값과 업데이트 된 rowVersion 표시기 인 인덱스 페이지를 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-282">The browser shows the Index page with the changed value and updated rowVersion indicator.</span></span> <span data-ttu-id="b5062-283">업데이트 된 rowVersion 표시기 참고 기타 탭에 두 번째 포스트백에 표시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-283">Note the updated rowVersion indicator, it's displayed on the second postback in the other tab.</span></span>
+<span data-ttu-id="ff17f-282">브라우저에 변경된 값과 업데이트된 rowVersion 표시기가 있는 인덱스 페이지가 표시됩니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-282">The browser shows the Index page with the changed value and updated rowVersion indicator.</span></span> <span data-ttu-id="ff17f-283">업데이트된 rowVersion 표시기는 다른 탭의 두 번째 포스트백에 표시됩니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-283">Note the updated rowVersion indicator, it's displayed on the second postback in the other tab.</span></span>
 
-<span data-ttu-id="b5062-284">두 번째 탭에서 테스트 부서를 삭제 합니다. 동시성 오류는 DB의 현재 값으로 표시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-284">Delete the test department from the second tab. A concurrency error is display with the current values from the DB.</span></span> <span data-ttu-id="b5062-285">클릭 하면 **삭제** 되지 않는 한 엔터티를 삭제 `RowVersion` updated.department가 삭제 되었습니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-285">Clicking **Delete** deletes the entity, unless `RowVersion` has been updated.department has been deleted.</span></span>
+<span data-ttu-id="ff17f-284">두 번째 탭에서 테스트 부서를 삭제합니다. 동시성 오류는 DB의 현재 값으로 표시됩니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-284">Delete the test department from the second tab. A concurrency error is display with the current values from the DB.</span></span> <span data-ttu-id="ff17f-285">`RowVersion`이 업데이트되고 부서가 삭제되지 않는 한 **삭제**를 클릭하면 엔터티가 삭제됩니다.</span><span class="sxs-lookup"><span data-stu-id="ff17f-285">Clicking **Delete** deletes the entity, unless `RowVersion` has been updated.department has been deleted.</span></span>
 
-<span data-ttu-id="b5062-286">참조 [상속](xref:data/ef-mvc/inheritance) 데이터 모델을 상속 하는 방법에 있습니다.</span><span class="sxs-lookup"><span data-stu-id="b5062-286">See [Inheritance](xref:data/ef-mvc/inheritance) on how to inherit a data model.</span></span>
+<span data-ttu-id="ff17f-286">데이터 모델을 상속하는 방법은 [상속](xref:data/ef-mvc/inheritance)을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="ff17f-286">See [Inheritance](xref:data/ef-mvc/inheritance) on how to inherit a data model.</span></span>
 
-### <a name="additional-resources"></a><span data-ttu-id="b5062-287">추가 리소스</span><span class="sxs-lookup"><span data-stu-id="b5062-287">Additional resources</span></span>
+### <a name="additional-resources"></a><span data-ttu-id="ff17f-287">추가 리소스</span><span class="sxs-lookup"><span data-stu-id="ff17f-287">Additional resources</span></span>
 
-* [<span data-ttu-id="b5062-288">EF 코어의 동시성 토큰</span><span class="sxs-lookup"><span data-stu-id="b5062-288">Concurrency Tokens in EF Core</span></span>](https://docs.microsoft.com/ef/core/modeling/concurrency)
-* [<span data-ttu-id="b5062-289">EF 코어에서 동시성 처리</span><span class="sxs-lookup"><span data-stu-id="b5062-289">Handling concurrency in EF Core</span></span>](https://docs.microsoft.com/ef/core/saving/concurrency)
+* [<span data-ttu-id="ff17f-288">EF Core의 동시성 토큰</span><span class="sxs-lookup"><span data-stu-id="ff17f-288">Concurrency Tokens in EF Core</span></span>](https://docs.microsoft.com/ef/core/modeling/concurrency)
+* [<span data-ttu-id="ff17f-289">EF Core의 동시성 처리</span><span class="sxs-lookup"><span data-stu-id="ff17f-289">Handling concurrency in EF Core</span></span>](https://docs.microsoft.com/ef/core/saving/concurrency)
 
 >[!div class="step-by-step"]
-[<span data-ttu-id="b5062-290">이전</span><span class="sxs-lookup"><span data-stu-id="b5062-290">Previous</span></span>](xref:data/ef-rp/update-related-data)
+[<span data-ttu-id="ff17f-290">이전</span><span class="sxs-lookup"><span data-stu-id="ff17f-290">Previous</span></span>](xref:data/ef-rp/update-related-data)
