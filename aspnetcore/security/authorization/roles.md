@@ -23,9 +23,9 @@ ms.lasthandoff: 01/30/2018
 
 ## <a name="adding-role-checks"></a>추가 역할 검사
 
-역할 기반 권한 부여의 검사는 선언적으로 구성됩니다. 개발자는 컨트롤러나 컨트롤러 내의 개별 액션에 대해 현재 사용자가 요청한 리소스에 접근하기 위해 반드시 속해 있어야만 하는 역할을 지정해서 이를 코드 내부에 포함시킵니다.
+역할 기반 권한 부여의 검사는 선언적으로 구성됩니다 &mdash;. 개발자는 컨트롤러나 컨트롤러 내의 개별 액션에 대해 현재 사용자가 요청한 리소스에 접근하기 위해 반드시 속해 있어야만 하는 역할을 지정해서 이를 코드 내부에 포함시킵니다.
 
-예를 들어, 다음 코드는 `Administrator` 역할에 속한 사용자만 `AdministrationController`의 모든 액션에 접근할 수 있도록 제한합니다.
+예를 들어, 다음 코드는 `Administrator` 역할에 속한 사용자만 `AdministrationController` 의 모든 액션에 접근할 수 있도록 제한합니다.
 
 ```csharp
 [Authorize(Roles = "Administrator")]
@@ -95,7 +95,7 @@ public class ControlPanelController : Controller
 
 ## <a name="policy-based-role-checks"></a>정책 기반 역할 검사
 
-역할 요구 사항은 응용 프로그램 시작 시 개발자가 Authorization 서비스 구성의 일부로 정책을 등록하는 새로운 Policy 구문을 사용해서 표현할 수도 있습니다. 일반적으로 이 작업은 *Startup.cs* 파일의 `ConfigureServices()`에서 수행됩니다.
+역할 요구 사항은 개발자가 처음에 Authorization 서비스 구성의 일부로 정책을 등록하는 새로운 Policy 구문을 사용해서 표현할 수도 있습니다. 일반적으로 이 작업은 *Startup.cs* 파일의 `ConfigureServices()` 에서 수행됩니다.
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -109,7 +109,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-정책은 `Authorize` 특성의 `Policy` 속성을 통해서 적용됩니다.
+정책은 `AuthorizeAttribute` 특성의 `Policy` 속성을 통해서 적용됩니다.
 
 ```csharp
 [Authorize(Policy = "RequireAdministratorRole")]
