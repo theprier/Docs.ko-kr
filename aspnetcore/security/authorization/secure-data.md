@@ -1,7 +1,7 @@
 ---
 title: "권한 부여에 의해 보호 되는 사용자 데이터와 ASP.NET Core 응용 프로그램 만들기"
 author: rick-anderson
-description: "권한 부여에 의해 보호 되는 사용자 데이터와 함께 Razor 페이지 앱을 만드는 방법에 알아봅니다. SSL, 인증, 보안, ASP.NET Core Id를 포함합니다."
+description: "권한 부여에 의해 보호 되는 사용자 데이터와 함께 Razor 페이지 앱을 만드는 방법에 알아봅니다. HTTPS, 인증, 보안, ASP.NET Core Id를 포함합니다."
 manager: wpickett
 ms.author: riande
 ms.date: 01/24/2018
@@ -9,11 +9,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/secure-data
-ms.openlocfilehash: 6333082a2b2b4f6d3f1ce2afc600b4203a0f5dca
-ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
+ms.openlocfilehash: e186adef2e72f852543a92ddce0e82be2a3bcd12
+ms.sourcegitcommit: 809ee4baf8bf7b4cae9e366ecae29de1037d2bbb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 02/15/2018
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>권한 부여에 의해 보호 되는 사용자 데이터와 ASP.NET Core 응용 프로그램 만들기
 
@@ -87,7 +87,7 @@ ASP.NET을 사용 하 여 [Identity](xref:security/authentication/identity) 가 
 
 [!code-csharp[Main](secure-data/samples/final2/Models/Contact.cs?name=snippet1&highlight=5-6,16-999)]
 
-`OwnerID`사용자의 id는 `AspNetUser` 테이블에 [Identity](xref:security/authentication/identity) 데이터베이스입니다. `Status` 필드 연락처 일반 사용자가 볼 수 있는지 여부를 결정 합니다.
+`OwnerID` 사용자의 id는 `AspNetUser` 테이블에 [Identity](xref:security/authentication/identity) 데이터베이스입니다. `Status` 필드 연락처 일반 사용자가 볼 수 있는지 여부를 결정 합니다.
 
 새 마이그레이션 만들고 데이터베이스를 업데이트 합니다.
 
@@ -96,7 +96,7 @@ dotnet ef migrations add userID_Status
 dotnet ef database update
 ```
 
-### <a name="require-ssl-and-authenticated-users"></a>SSL 및 인증 된 사용자가 필요 합니다.
+### <a name="require-https-and-authenticated-users"></a>HTTPS 및 인증 된 사용자가 필요 합니다.
 
 추가 [IHostingEnvironment](/dotnet/api/microsoft.aspnetcore.hosting.ihostingenvironment) 를 `Startup`:
 
@@ -104,19 +104,26 @@ dotnet ef database update
 
 에 `ConfigureServices` 의 메서드는 *Startup.cs* 파일에서 추가 된 [RequireHttpsAttribute](/aspnet/core/api/microsoft.aspnetcore.mvc.requirehttpsattribute) 권한 부여 필터:
 
-[!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=snippet_SSL&highlight=19-999)]
+[!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=snippet_SSL&highlight=10-999)]
 
-Visual Studio를 사용 하는 경우에 SSL을 사용 하도록 설정 합니다.
+Visual Studio를 사용 하는 경우에 HTTPS를 활성화 합니다.
 
-참조를 HTTPS로 HTTP 요청을 리디렉션할 [URL 다시 쓰기 미들웨어](xref:fundamentals/url-rewriting)합니다. Visual Studio 코드를 사용 하 여 이거나 로컬 테스트 인증서를 SSL에 대 한 포함 되지 않은 플랫폼에 대 한 테스트:
+참조를 HTTPS로 HTTP 요청을 리디렉션할 [URL 다시 쓰기 미들웨어](xref:fundamentals/url-rewriting)합니다. Visual Studio 코드를 사용 하 여 이거나 HTTPS에 대 한 테스트 인증서를 포함 되지 않은 로컬 플랫폼에 대 한 테스트:
 
   설정 `"LocalTest:skipSSL": true` 에 *appsettings 합니다. Developement.json* 파일입니다.
 
 ### <a name="require-authenticated-users"></a>인증 된 사용자가 필요 합니다.
 
-사용자를 인증 하도록 요구 하는 기본 인증 정책을 설정 합니다. 인증을 통해 Razor 페이지, 컨트롤러 또는 동작 메서드 수준에서 옵트아웃을 선택할 수 있습니다는 `[AllowAnonymous]` 특성입니다. 새로 추가 된 Razor 페이지와 컨트롤러 보호 사용자를 인증 하도록 요구 하는 기본 인증 정책을 설정 합니다. 기본적으로 필요한 인증은 새로운 컨트롤러와 Razor 페이지를 포함 하도록 이용 보다 더 안전한 것은 `[Authorize]` 특성입니다. 다음을 추가 `ConfigureServices` 의 메서드는 *Startup.cs* 파일:
+사용자를 인증 하도록 요구 하는 기본 인증 정책을 설정 합니다. 인증을 통해 Razor 페이지, 컨트롤러 또는 동작 메서드 수준에서 옵트아웃을 선택할 수 있습니다는 `[AllowAnonymous]` 특성입니다. 새로 추가 된 Razor 페이지와 컨트롤러 보호 사용자를 인증 하도록 요구 하는 기본 인증 정책을 설정 합니다. 기본적으로 필요한 인증은 새로운 컨트롤러와 Razor 페이지를 포함 하도록 이용 보다 더 안전한 것은 `[Authorize]` 특성입니다. 
 
-[!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=snippet_defaultPolicy&highlight=31-999)]
+인증 되 면 모든 사용자의 요구 사항에서 [AuthorizeFolder](/dotnet/api/microsoft.extensions.dependencyinjection.pageconventioncollectionextensions.authorizefolder?view=aspnetcore-2.0#Microsoft_Extensions_DependencyInjection_PageConventionCollectionExtensions_AuthorizeFolder_Microsoft_AspNetCore_Mvc_ApplicationModels_PageConventionCollection_System_String_System_String_) 및 [AuthorizePage](/dotnet/api/microsoft.extensions.dependencyinjection.pageconventioncollectionextensions.authorizepage?view=aspnetcore-2.0) 호출이 필요 하지 않습니다.
+
+업데이트 `ConfigureServices` 다음과 같이 변경 된:
+
+* 주석으로 처리 `AuthorizeFolder` 및 `AuthorizePage`합니다.
+* 사용자를 인증 하도록 요구 하는 기본 인증 정책을 설정 합니다.
+
+[!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=snippet_defaultPolicy&highlight=23-27,31-999)]
 
 추가 [AllowAnonymous](/dotnet/api/microsoft.aspnetcore.authorization.allowanonymousattribute) 인덱스 및 연락처 정보, 페이지 익명 사용자가 등록 하기 전에 사이트에 대 한 정보를 가져올 수 있도록 합니다. 
 
@@ -155,11 +162,11 @@ dotnet user-secrets set SeedUserPW <PW>
 `ContactIsOwnerAuthorizationHandler` 호출 [컨텍스트. 성공](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext.succeed#Microsoft_AspNetCore_Authorization_AuthorizationHandlerContext_Succeed_Microsoft_AspNetCore_Authorization_IAuthorizationRequirement_) 현재 인증 된 사용자가 연락처 소유자 인 경우. 권한 부여 처리기 일반적으로:
 
 * 반환할 `context.Succeed` 에서 요구 사항이 충족 합니다.
-* 반환할 `Task.CompletedTask` 요구 사항이 충족 되지 않으면 경우. `Task.CompletedTask`모두 성공 또는 실패는&mdash;다른 권한 부여 처리기 실행할 수 있습니다.
+* 반환할 `Task.CompletedTask` 요구 사항이 충족 되지 않으면 경우. `Task.CompletedTask` 모두 성공 또는 실패는&mdash;다른 권한 부여 처리기 실행할 수 있습니다.
 
 명시적으로 실패 해야 할 경우 반환 [컨텍스트. 실패](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext.fail)합니다.
 
-응용 프로그램 자체 데이터 연락처 소유자가 데이터를 편집/삭제/만들기를 허용합니다. `ContactIsOwnerAuthorizationHandler`요구 사항 매개 변수에서 전달 하 고 작업을 확인 하려면 필요 하지 않습니다.
+응용 프로그램 자체 데이터 연락처 소유자가 데이터를 편집/삭제/만들기를 허용합니다. `ContactIsOwnerAuthorizationHandler` 요구 사항 매개 변수에서 전달 하 고 작업을 확인 하려면 필요 하지 않습니다.
 
 ### <a name="create-a-manager-authorization-handler"></a>관리자 권한 부여 처리기 만들기
 
@@ -179,7 +186,7 @@ Entity Framework Core를 사용 하 여 서비스를 위해 등록 되어야 [�
 
 [!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=ConfigureServices&highlight=41-999)]
 
-`ContactAdministratorsAuthorizationHandler`및 `ContactManagerAuthorizationHandler` 단일 항목으로 추가 됩니다. EF를 사용 하지 않는 하 고 필요한 모든 정보는 되므로 singleton 하기가 `Context` 의 매개 변수는 `HandleRequirementAsync` 메서드.
+`ContactAdministratorsAuthorizationHandler` 및 `ContactManagerAuthorizationHandler` 단일 항목으로 추가 됩니다. EF를 사용 하지 않는 하 고 필요한 모든 정보는 되므로 singleton 하기가 `Context` 의 매개 변수는 `HandleRequirementAsync` 메서드.
 
 ## <a name="support-authorization"></a>권한 부여를 지원 합니다.
 
@@ -263,9 +270,9 @@ Delete 페이지 모델 사용자에 게 연락처에 delete 권한을 확인 �
 
 ## <a name="test-the-completed-app"></a>완성 된 응용 프로그램 테스트
 
-Visual Studio 코드를 사용 하 여 이거나 로컬 테스트 인증서를 SSL에 대 한 포함 되지 않은 플랫폼에 대 한 테스트:
+Visual Studio 코드를 사용 하 여 이거나 HTTPS에 대 한 테스트 인증서를 포함 되지 않은 로컬 플랫폼에 대 한 테스트:
 
-* 설정 `"LocalTest:skipSSL": true` 에 *appsettings 합니다. Developement.json* SSL 요구 사항을 건너뛸 파일입니다. 개발 컴퓨터에만 SSL을 건너뜁니다.
+* 설정 `"LocalTest:skipSSL": true` 에 *appsettings 합니다. Developement.json* HTTPS 요구 사항이 하 파일입니다. 개발 컴퓨터에만 Skip HTTPS입니다.
 
 응용 프로그램에 연락처 하는 경우:
 
@@ -300,7 +307,7 @@ Visual Studio 코드를 사용 하 여 이거나 로컬 테스트 인증서를 S
   dotnet new razor -o ContactManager -au Individual -uld
   ```
 
-  * `-uld`SQLite는 대신 LocalDB를 지정합니다.
+  * `-uld` SQLite는 대신 LocalDB를 지정합니다.
 
 * 다음 추가 `Contact` 모델:
 

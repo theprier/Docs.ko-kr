@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: testing/razor-pages-testing
-ms.openlocfilehash: 5891b236306cd3790cbba14919796d6aa894ad53
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 6f9e986c34f41fe96beb492680106f725bc1e2f9
+ms.sourcegitcommit: 809ee4baf8bf7b4cae9e366ecae29de1037d2bbb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/15/2018
 ---
 # <a name="razor-pages-unit-and-integration-testing-in-aspnet-core"></a>Razor 페이지 단위 및 ASP.NET Core에서 통합 테스트
 
@@ -71,7 +71,7 @@ dotnet test
 | ------------------ | ----------- |
 | *IntegrationTests* | <ul><li>*IndexPageTest.cs* 인덱스 페이지에 대 한 통합 테스트를 포함 합니다.</li><li>*TestFixture.cs* 메시지 앱을 테스트 하려면 테스트 호스트를 만듭니다.</li></ul> |
 | *UnitTests*        | <ul><li>*DataAccessLayerTest.cs* DAL에 대 한 단위 테스트를 포함 합니다.</li><li>*IndexPageTest.cs* 인덱스 페이지 모델에 대 한 단위 테스트를 포함 합니다.</li></ul> |
-| *유틸리티*        | *Utilities.cs* 포함 된:<ul><li>`TestingDbContextOptions`새 데이터베이스를 만들 각 DAL 단위 테스트에 대 한 상황에 맞는 옵션 데이터베이스를 각 테스트에 대 한 초기 상태로 다시 설정 되도록 사용 방법입니다.</li><li>`GetRequestContentAsync`준비 하는 데 사용 되는 메서드는 `HttpClient` 및 통합 테스트 하는 동안 메시지 응용 프로그램에 보내는 요청에 대 한 콘텐츠입니다.</li></ul>
+| *유틸리티*        | *Utilities.cs* 포함 된:<ul><li>`TestingDbContextOptions` 새 데이터베이스를 만들 각 DAL 단위 테스트에 대 한 상황에 맞는 옵션 데이터베이스를 각 테스트에 대 한 초기 상태로 다시 설정 되도록 사용 방법입니다.</li><li>`GetRequestContentAsync` 준비 하는 데 사용 되는 메서드는 `HttpClient` 및 통합 테스트 하는 동안 메시지 응용 프로그램에 보내는 요청에 대 한 콘텐츠입니다.</li></ul>
 
 테스트 프레임 워크는 [xUnit](https://xunit.github.io/)합니다. 프레임 워크를 모의 개체는 [Moq](https://github.com/moq/moq4)합니다. 통합 테스트를 사용 하 여 수행 되는 [ASP.NET Core 테스트 호스트](xref:testing/integration-testing#the-test-host)합니다.
 
@@ -102,7 +102,7 @@ using (var db = new AppDbContext(optionsBuilder.Options))
 
 [!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/Utilities/Utilities.cs?name=snippet1)]
 
-사용 하는 `DbContextOptions` DAL 단위 테스트를 개별적으로 실행 하려면 각 테스트를 통해는 새 데이터베이스 인스턴스:
+사용 하 여 `DbContextOptions` DAL 단위 테스트는 새 데이터베이스 인스턴스와 개별적으로 실행 하려면 각 테스트를 수 있습니다.:
 
 ```csharp
 using (var db = new AppDbContext(Utilities.TestingDbContextOptions()))
@@ -176,7 +176,7 @@ using (var db = new AppDbContext(Utilities.TestingDbContextOptions()))
 
 [!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/IndexPageTest.cs?name=snippet2)]
 
-`IndexPage`페이지 모델 `OnGetAsync` 메서드 (*src/RazorPagesTestingSample/Pages/Index.cshtml.cs*):
+`IndexPage` 페이지 모델 `OnGetAsync` 메서드 (*src/RazorPagesTestingSample/Pages/Index.cshtml.cs*):
 
 [!code-csharp[Main](razor-pages-testing/sample/src/RazorPagesTestingSample/Pages/Index.cshtml.cs?name=snippet1&highlight=3)]
 
@@ -212,7 +212,7 @@ using (var db = new AppDbContext(Utilities.TestingDbContextOptions()))
 * 응용 프로그램에 POST 요청을 만듭니다.
 * 응답은 인덱스 페이지에 다시 리디렉션 확인 합니다.
 
-`Post_AddMessageHandler_ReturnsRedirectToRoot `메서드 (*tests/RazorPagesTestingSample.Tests/IntegrationTests/IndexPageTest.cs*):
+`Post_AddMessageHandler_ReturnsRedirectToRoot ` 메서드 (*tests/RazorPagesTestingSample.Tests/IntegrationTests/IndexPageTest.cs*):
 
 [!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/IntegrationTests/IndexPageTest.cs?name=snippet2)]
 
