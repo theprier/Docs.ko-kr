@@ -233,7 +233,7 @@
 ## [Visual Studio 게시 프로필](xref:host-and-deploy/visual-studio-publish-profiles)
 ## [디렉터리 구조](xref:host-and-deploy/directory-structure)
 ## [Azure App Service 및 IIS에 대한 일반적인 오류 참조](xref:host-and-deploy/azure-iis-errors-reference)
-## [IHostingStartup을 사용하여 외부 어셈블리의 앱 기능 추가](xref:host-and-deploy/ihostingstartup)
+## [플랫폼별 구성을 사용하여 앱 기능 추가](xref:host-and-deploy/platform-specific-configuration)
 
 # [보안](xref:security/index)
 ## [인증](xref:security/authentication/index)
