@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: fundamentals/index
-ms.openlocfilehash: 7f0e30b3ac7f9cc3a32bd96f45d83ba13505a475
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 85d3eaf033eafbd24c71110ccd7f21ffcc8b0c82
+ms.sourcegitcommit: 9f758b1550fcae88ab1eb284798a89e6320548a5
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="aspnet-core-fundamentals"></a>ASP.NET Core 기본 사항
 
@@ -180,6 +180,12 @@ ASP.NET Core를 사용하여 다국어 웹 사이트를 만들면 더 광범위�
 웹 서버 구현은 HTTP 요청과 관련하여 설명되고 응답은 인터페이스에서 정의됩니다. 서버 구현 및 미들웨어에서 이러한 인터페이스를 사용하여 앱의 호스팅 파이프라인을 만들고 수정합니다.
 
 자세한 내용은 [요청 기능](xref:fundamentals/request-features)을 참조하세요.
+
+## <a name="background-tasks"></a>백그라운드 작업
+
+백그라운드 작업은 *호스티드 서비스*로 구현됩니다. 호스티드 서비스는 [IHostedService](/dotnet/api/microsoft.extensions.hosting.ihostedservice) 인터페이스를 구현하는 백그라운드 작업 논리가 있는 클래스입니다.
+
+자세한 내용은 [호스티드 서비스를 사용하는 백그라운드 작업](xref:fundamentals/hosted-services)을 참조하세요.
 
 ## <a name="open-web-interface-for-net-owin"></a>OWIN(Open Web Interface for .NET)
 

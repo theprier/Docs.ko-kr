@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 6b9dcfcc2fa380b601eee56095f2e6a6dbe07732
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 5acae4de56e3f714f0cda2c00d5446d2dcddaf36
+ms.sourcegitcommit: 9f758b1550fcae88ab1eb284798a89e6320548a5
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="configure-an-aspnet-core-app"></a>ASP.NET Core 앱 구성
 
@@ -390,9 +390,9 @@ MachineName: ChadPC
 Left: 1988
 ```
 
-## <a name="the-webconfig-file"></a>web.config 파일
+## <a name="webconfig-file"></a>web.config 파일
 
-IIS 또는 IIS Express에서 앱을 호스트하는 경우 *web.config* 파일이 필요합니다. *web.config*의 설정은 IIS의 [ASP.NET Core Module](xref:fundamentals/servers/aspnet-core-module)이 앱을 시작하고 다른 IIS 설정 및 모듈을 구성할 수 있게 합니다. *web.config* 파일이 없고 프로젝트 파일에 `<Project Sdk="Microsoft.NET.Sdk.Web">`이 포함되어 있는 경우 프로젝트를 게시하면 게시된 출력에 *web.config* 파일이 만들어집니다(*게시* 폴더). 자세한 내용은 [IIS가 있는 Windows에서 ASP.NET Core 호스팅](xref:host-and-deploy/iis/index#webconfig)을 참조하세요.
+IIS 또는 IIS Express에서 앱을 호스트하는 경우 *web.config* 파일이 필요합니다. *web.config*의 설정은 IIS의 [ASP.NET Core Module](xref:fundamentals/servers/aspnet-core-module)이 앱을 시작하고 다른 IIS 설정 및 모듈을 구성할 수 있게 합니다. *web.config* 파일이 없고 프로젝트 파일에 `<Project Sdk="Microsoft.NET.Sdk.Web">`이 포함되어 있는 경우 프로젝트를 게시하면 게시된 출력에 *web.config* 파일이 만들어집니다(*게시* 폴더). 자세한 내용은 [IIS가 있는 Windows에서 ASP.NET Core 호스팅](xref:host-and-deploy/iis/index#webconfig-file)을 참조하세요.
 
 ## <a name="accessing-configuration-during-startup"></a>시작하는 동안 구성에 액세스
 
