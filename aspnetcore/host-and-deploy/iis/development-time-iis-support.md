@@ -1,7 +1,7 @@
 ---
 title: "ASP.NET Core용 Visual Studio의 개발 시간 IIS 지원"
 author: shirhatti
-description: "Windows Server에서 IIS 배후에서 실행 중인 경우 ASP.NET Core 응용 프로그램 디버깅에 대한 지원을 확인해 보세요."
+description: "Windows Server에서 IIS 뒤에서 실행 하는 경우 ASP.NET Core 응용 프로그램 디버깅에 대 한 지원이 검색 합니다."
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,17 +10,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/development-time-iis-support
-ms.openlocfilehash: a5f727dd21ac0c6702691df2215c42f4adc0ec27
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: a8bdf4c0c0399c62666e6e61e70c0298a42c2c12
+ms.sourcegitcommit: 9f758b1550fcae88ab1eb284798a89e6320548a5
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="development-time-iis-support-in-visual-studio-for-aspnet-core"></a>ASP.NET Core용 Visual Studio의 개발 시간 IIS 지원
 
 작성자: [Sourabh Shirhatti](https://twitter.com/sshirhatti)
 
-이 문서에서는 Windows Server에서 IIS 배후에서 실행 중인 ASP.NET Core 응용 프로그램 디버깅에 대한 [Visual Studio](https://www.visualstudio.com/vs/) 지원을 설명합니다. 이 항목에서는이 기능을 사용 하도록 설정 하 고 프로젝트를 설정 합니다.
+이 문서에서는 설명 [Visual Studio](https://www.visualstudio.com/vs/) Windows 서버에서 IIS 뒤에서 실행 되는 ASP.NET Core 응용 프로그램 디버깅에 대 한 지원. 이 항목에서는이 기능을 사용 하도록 설정 하 고 프로젝트를 설정 합니다.
 
 ## <a name="prerequisites"></a>필수 구성 요소
 
@@ -33,11 +33,11 @@ IIS를 사용 하도록 설정 합니다. **제어판** > **프로그램** > **�
 
 ![인터넷 정보 서비스가 검은 사각형(확인 표시 아님)으로 표시되어 있고 IIS 기능 중 일부가 활성화되었음을 보여 주는 Windows 기능](development-time-iis-support/_static/enable_iis.png)
 
-IIS 설치를 다시 부팅 해야, 시스템을 재부팅 합니다.
+IIS 설치를 다시 시작이 필요한 경우 시스템 다시 시작 합니다.
 
 ## <a name="enable-development-time-iis-support"></a>개발 시간 IIS 지원 활성화
 
-IIS가 설치 되 면 기존 Visual Studio 설치를 수정 하려면 Visual Studio 설치 관리자를 시작 합니다. 설치 관리자에서 **개발 시간 IIS 지원** 구성 요소를 선택합니다. 이 구성 요소는 **ASP.NET 및 웹 개발** 워크로드에 대한 **요약** 패널에 선택적 구성 요소로 나열됩니다. 그러면 ASP.NET Core 애플리케이션을 실행하는 데 필요한 네이티브 IIS 모듈인 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)이 설치됩니다.
+Visual Studio 설치 관리자를 시작 합니다. 선택 된 **IIS 지원 개발 시간** 구성 요소입니다. 구성 요소에 옵션으로 나열 됩니다는 **요약** 패널에 대 한는 **ASP.NET 및 웹 개발** 작업 합니다. 이 설치는 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)는 ASP.NET Core 응용 프로그램을 실행 하는 데 필요한 네이티브 IIS 모듈입니다.
 
 ![Visual Studio 기능 수정: 워크로드 탭이 선택되어 있습니다. 웹 및 클라우드 섹션에는 ASP.NET 및 웹 개발 패널이 선택되어 있습니다. 요약 패널의 선택적 영역의 오른쪽에 IIS를 지 원하는 개발 시간 확인란은 있습니다.](development-time-iis-support/_static/development_time_support.png)
 
@@ -73,8 +73,6 @@ IIS가 설치 되 면 기존 Visual Studio 설치를 수정 하려면 Visual Stu
 ```
 
 관리자 권한으로 실행 되 고 있지 visual Studio를 다시 시작을 경우도 있습니다. 메시지가 표시되면 Visual Studio를 다시 시작합니다.
-
-지금까지 이 시점에서 개발 시 IIS 지원에 대 한 프로젝트 구성 됩니다. 
 
 ## <a name="additional-resources"></a>추가 리소스
 

@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/aspnet-core-module
-ms.openlocfilehash: c1a05c3e40e6aab0f2e4a97c0b3bb9eca8a08a41
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 5addaada33364d044d89359196bd1d316590c517
+ms.sourcegitcommit: 9f758b1550fcae88ab1eb284798a89e6320548a5
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="aspnet-core-module-configuration-reference"></a>ASP.NET Core 모듈 구성 참조
 
@@ -41,7 +41,7 @@ ASP.NET Core 모듈 사이트 또는 응용 프로그램을 통해 구성 된 *w
 </configuration>
 ```
 
-*web.config* 입니다. 아래 예제는 [자체 포함된 배포](https://docs.microsoft.com/dotnet/articles/core/deploying/#self-contained-deployments-scd) 에 [Azure 앱 서비스](https://azure.microsoft.com/services/app-service/)합니다. 자세한 내용은 참조 [Windows iis에서 호스트](xref:host-and-deploy/iis/index)합니다. 참조 [하위 응용 프로그램의 구성을](xref:host-and-deploy/iis/index#configuration-of-sub-applications) 의 구성에 관련 된 중요 정보에 대 한 *web.config* 하위 응용 프로그램의에서 파일입니다.
+*web.config* 입니다. 아래 예제는 [자체 포함된 배포](https://docs.microsoft.com/dotnet/articles/core/deploying/#self-contained-deployments-scd) 에 [Azure 앱 서비스](https://azure.microsoft.com/services/app-service/)합니다. 자세한 내용은 참조 [Windows iis에서 호스트](xref:host-and-deploy/iis/index)합니다. 참조 [하위 응용 프로그램의 구성을](xref:host-and-deploy/iis/index#sub-application-configuration) 의 구성에 관련 된 중요 정보에 대 한 *web.config* 하위 응용 프로그램의에서 파일입니다.
 
 ```xml
 <configuration>
@@ -75,7 +75,7 @@ ASP.NET Core 모듈 사이트 또는 응용 프로그램을 통해 구성 된 *w
 
 ASP.NET Core 모듈에 지정 된 프로세스에 대 한 환경 변수를 지정할 수 있습니다는 `processPath` 하나 이상 지정 하 여 특성 `environmentVariable` 의 자식 요소는 `environmentVariables` 아래 컬렉션 요소는 `aspNetCore` 요소입니다. 이 섹션에 설정 된 환경 변수 보다 우선 시스템 환경 변수는 프로세스에 대 한 합니다.
 
-다음 예제에서는 두 개의 환경 변수를 설정합니다. `ASPNETCORE_ENVIRONMENT`응용 프로그램의 환경을 구성 합니다 `Development`합니다. 개발자에 일시적으로이 값을 설정할 수 있습니다는 *web.config* 강제 파일은 [개발자 예외 페이지](xref:fundamentals/error-handling) 를 응용 프로그램 예외를 디버깅 하는 경우 로드 합니다. `CONFIG_DIR`사용자 정의 환경 변수의 예 개발자는 경로 구성 하는 응용 프로그램의 구성 파일을 로드 하는 시작 값을 읽을 코드를 기록 했습니다.
+다음 예제에서는 두 개의 환경 변수를 설정합니다. `ASPNETCORE_ENVIRONMENT` 응용 프로그램의 환경을 구성 합니다 `Development`합니다. 개발자에 일시적으로이 값을 설정할 수 있습니다는 *web.config* 강제 파일은 [개발자 예외 페이지](xref:fundamentals/error-handling) 를 응용 프로그램 예외를 디버깅 하는 경우 로드 합니다. `CONFIG_DIR` 사용자 정의 환경 변수의 예 개발자는 경로 구성 하는 응용 프로그램의 구성 파일을 로드 하는 시작 값을 읽을 코드를 기록 했습니다.
 
 ```xml
 <aspNetCore processPath="dotnet"
