@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-configuration
-ms.openlocfilehash: cf7dcdb80f5edf9e10960cb08957793c36829a69
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 0ec223ce06ff116c36182b8de507138e96a277a4
+ms.sourcegitcommit: d43c84c4c80527c85e49d53691b293669557a79d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/20/2018
 ---
 # <a name="configure-identity"></a>Id 구성
 
@@ -35,7 +35,7 @@ ASP.NET Core 추가 2.0는 `RequiredUniqueChars` 속성입니다. 그렇지 않�
 
 ---
 
-`IdentityOptions.Password`에 다음과 같은 속성이 있습니다.
+`IdentityOptions.Password` 에 다음과 같은 속성이 있습니다.
 
 | 속성                | 설명                       | 기본 |
 | ----------------------- | --------------------------------- | ------- |
@@ -51,7 +51,7 @@ ASP.NET Core 추가 2.0는 `RequiredUniqueChars` 속성입니다. 그렇지 않�
 
 [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo-Configuration/Startup.cs?range=29-30,39-42,50-52)]
 
-`IdentityOptions.Lockout`에 다음과 같은 속성이 있습니다.
+`IdentityOptions.Lockout` 에 다음과 같은 속성이 있습니다.
 
 | 속성                | 설명                       | 기본 |
 | ----------------------- | --------------------------------- | ------- |
@@ -63,7 +63,7 @@ ASP.NET Core 추가 2.0는 `RequiredUniqueChars` 속성입니다. 그렇지 않�
 
 [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo-Configuration/Startup.cs?range=29-30,44-46,50-52)]
 
-`IdentityOptions.SignIn`에 다음과 같은 속성이 있습니다.
+`IdentityOptions.SignIn` 에 다음과 같은 속성이 있습니다.
 
 | 속성                | 설명                       | 기본 |
 | ----------------------- | --------------------------------- | ------- |
@@ -74,7 +74,7 @@ ASP.NET Core 추가 2.0는 `RequiredUniqueChars` 속성입니다. 그렇지 않�
 
 [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo-Configuration/Startup.cs?range=29-30,48-52)]
 
-`IdentityOptions.User`에 다음과 같은 속성이 있습니다.
+`IdentityOptions.User` 에 다음과 같은 속성이 있습니다.
 
 | 속성                | 설명                       | 기본 |
 | ----------------------- | --------------------------------- | ------- |
@@ -98,7 +98,7 @@ ASP.NET Core 추가 2.0는 `RequiredUniqueChars` 속성입니다. 그렇지 않�
 
 ---
 
-`CookieAuthenticationOptions`에 다음과 같은 속성이 있습니다.
+`CookieAuthenticationOptions` 에 다음과 같은 속성이 있습니다.
 
 | 속성                | 설명                       | 기본 |
 | ----------------------- | --------------------------------- | ------- |
@@ -107,8 +107,8 @@ ASP.NET Core 추가 2.0는 `RequiredUniqueChars` 속성입니다. 그렇지 않�
 | `ExpireTimeSpan`  | 쿠키에 저장 된 인증 티켓 시간 유효 하 게 유지에서 만들어진 시점을 제어 합니다.  | 14 일  |
 | `LoginPath`  | 사용자 권한이 없는 경우 로그인에이 경로로 이동 합니다. | / 계정/로그인  |
 | `LogoutPath`  | 사용자 로그 아웃 하는 경우이 경로로 이동 합니다.  | /Account/Logout  |
-| `AccessDeniedPath`  | 사용자 권한 확인에 실패 하면이 경로로 이동 합니다.  |   |
-| `SlidingExpiration`  | True 인 경우 새 만료 시간 현재 쿠키 만료 창을 통해 중간 부분 이상으로 새로운 쿠키를 발급 합니다.  | /Account/AccessDenied |
-| `ReturnUrlParameter`  | 미들웨어는 401 권한이 없음된 상태 코드가 302 로그인 경로로 리디렉션으로 변경 되 면 추가 되는 쿼리 문자열 매개 변수의 이름을 결정 합니다.  |  true |
+| `AccessDeniedPath`  | 사용자 권한 확인에 실패 하면이 경로로 이동 합니다.  |  /Account/AccessDenied |
+| `SlidingExpiration`  | True 인 경우 새 만료 시간 현재 쿠키 만료 창을 통해 중간 부분 이상으로 새로운 쿠키를 발급 합니다.  | true |
+| `ReturnUrlParameter`  | 미들웨어는 401 권한이 없음된 상태 코드가 302 로그인 경로로 리디렉션으로 변경 되 면 추가 되는 쿼리 문자열 매개 변수의 이름을 결정 합니다.  | ReturnUrl |
 | `AuthenticationScheme`  | 이 ASP.NET Core에 대 한 관련만 1.x 합니다. 특정 인증 체계에 대 한 논리적 이름입니다. |  |
 | `AutomaticAuthenticate`  | 이 플래그는 ASP.NET Core에 대 한 관련만 1.x 합니다. True 인 경우 쿠키 인증 모든 요청에서 실행 하 고 유효성 검사 하 고 자신이 만든 직렬화 된 모든 보안 주체를 다시 생성 해야 합니다.  |  |
