@@ -19,11 +19,11 @@ ms.lasthandoff: 01/30/2018
 
 <a name="security-authorization-di"></a>
 
-권한 부여 처리기는 구성 중 서비스 컬렉션에 [등록](policies.md#handler-registration)되어야 합니다 ([종속성 주입](../../fundamentals/dependency-injection.md#fundamentals-dependency-injection)을 통해서).
+권한 부여 처리기는 구성 중 서비스 컬렉션에 [등록](policies.md#handler-registration)되어야 합니다([종속성 주입](../../fundamentals/dependency-injection.md#fundamentals-dependency-injection) 사용).
 
-권한 부여 처리기 내부에서 평가해야 하는 규칙들의 리포지터리가 존재하며, 해당 리포지터리가 서비스 컬렉션에 등록되어 있다고 가정해보겠습니다. 그러면 권한 부여가 이 종속성을 해결해서 생성자에 주입하게 됩니다.
+권한 부여 처리기 내부에서 평가해야 하는 규칙의 리포지토리가 존재하며, 해당 리포지토리가 서비스 컬렉션에 등록되어 있다고 가정해보겠습니다. 그러면 권한 부여가 이 종속성을 해결해서 생성자에 주입하게 됩니다.
 
-예를 들어, 처리기에서 ASP.NET의 로깅 인프라를 사용하려면 처리기에 ILoggerFactory를 주입해야 합니다. 이 경우, 처리기의 코드는 다음과 비슷할 것입니다:
+예를 들어, 처리기에서 ASP.NET의 로깅 인프라를 사용하려면 처리기에 ILoggerFactory를 주입해야 합니다. 이 경우, 처리기의 코드는 다음과 같을 수 있습니다.
 
 ```csharp
 public class LoggingAuthorizationHandler : AuthorizationHandler<MyRequirement>
@@ -44,7 +44,7 @@ public class LoggingAuthorizationHandler : AuthorizationHandler<MyRequirement>
 }
 ```
 
-그리고 `services.AddSingleton()`를 이용해서 처리기를 등록합니다:
+그리고 `services.AddSingleton()`를 이용해서 처리기를 등록합니다.
 
 ```csharp
 services.AddSingleton<IAuthorizationHandler, LoggingAuthorizationHandler>();
@@ -53,4 +53,4 @@ services.AddSingleton<IAuthorizationHandler, LoggingAuthorizationHandler>();
 그러면 응용 프로그램이 시작될 때 처리기의 인스턴스가 생성되고, DI가 등록된 `ILoggerFactory`를 생성자에 주입합니다.
 
 > [!NOTE]
-> Entity Framework를 사용하는 처리기는 싱글톤으로 등록하면 안됩니다.
+> Entity Framework를 사용하는 처리기는 싱글톤(singleton)으로 등록하면 안됩니다.
