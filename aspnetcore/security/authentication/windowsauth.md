@@ -9,15 +9,15 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/windowsauth
-ms.openlocfilehash: aaa14e2f2704a7cfa836c5524642d2138a3ae7c8
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: c229537e7f533eea2173dbc51b8d0d0e097d434a
+ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="configure-windows-authentication-in-an-aspnet-core-app"></a>ASP.NET Core 응용 프로그램의 Windows 인증 구성
 
-여 [Steve Smith](https://ardalis.com) 및 [Scott Addie](https://twitter.com/Scott_Addie)
+작성자: [Steve Smith](https://ardalis.com) 및 [Scott Addie](https://twitter.com/Scott_Addie)
 
 Iis에서 호스팅되는 ASP.NET Core 응용 프로그램에 대 한 Windows 인증을 구성할 수 있습니다 [HTTP.sys](xref:fundamentals/servers/httpsys), 또는 [WebListener](xref:fundamentals/servers/weblistener)합니다.
 
@@ -111,6 +111,9 @@ Windows 인증을 사용 하 고 익명 액세스를 비활성화 하는 경우�
 사용 하 여 Windows 인증 및 익명 액세스를 모두 설정 된 경우는 `[Authorize]` 및 `[AllowAnonymous]` 특성입니다. `[Authorize]` 특성을 사용 하면 Windows 인증 필요 진정으로 응용 프로그램의 부분을 보호할 수 있습니다. `[AllowAnonymous]` 특성 재정의 `[Authorize]` 특성 익명 액세스를 허용 하는 앱 내에서 사용 합니다. 참조 [간단한 인증](xref:security/authorization/simple) 특성 사용 정보에 대 한 합니다.
 
 ASP.NET Core에서 2.x는 `[Authorize]` 특성 추가 구성이 필요 *Startup.cs* Windows 인증에 대 한 익명 요청을 보도록 하기 위해서입니다. 권장된 구성을 사용 하 고 웹 서버에 따라 약간 다릅니다.
+
+> [!NOTE]
+> 기본적으로 빈 문서 페이지에 액세스할 수 있는 인증 부족 한 사용자 표시 됩니다. [StatusCodePages 미들웨어](xref:fundamentals/error-handling#configuring-status-code-pages) "액세스 거부" 더 나은 환경을 제공 하기 위해 구성할 수 있습니다.
 
 #### <a name="iis"></a>IIS
 

@@ -1,34 +1,34 @@
 ---
 title: "각 프로젝트 템플릿을 사용 하 여"
 author: SteveSandersonMS
-description: "각도 CLI 및 각 핵심 단일 페이지 응용 프로그램 (SPA) 릴리스 후보 프로젝트 템플릿으로 시작 하는 방법에 알아봅니다."
+description: "각 및 각도 CLI에 대 한 ASP.NET Core 단일 페이지 응용 프로그램 (SPA) 프로젝트 템플릿으로 시작 하는 방법에 알아봅니다."
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 12/06/2017
+ms.date: 02/21/2018
 ms.devlang: csharp
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/angular
-ms.openlocfilehash: 4162b1c26e9d278c811f691c4277d4de25adb204
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: f81130b67d61ee063b697f19862449c3054d547d
+ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/23/2018
 ---
-# <a name="use-the-angular-project-template-release-candidate"></a>각 프로젝트 템플릿 (릴리스 후보)를 사용 하 여
+# <a name="use-the-angular-project-template"></a>각 프로젝트 템플릿을 사용 하 여
 
 > [!NOTE]
-> 이 설명서는 릴리스된 각도 프로젝트 템플릿에 대 한 하지 않습니다. **각 서식 파일의 릴리스 후보에 대 한이 설명서는 합니다.** 에 초기 2018 릴리스 버전을 출시 하시기 바랍니다.
+> 이 설명서 포함 되지 않습니다 각도 프로젝트 템플릿에 대 한 ASP.NET 코어 2.0. 최신 각도 서식 파일을 수동으로 업데이트할 수 있습니다. 서식 파일은 기본적으로 ASP.NET Core 2.1에 포함 됩니다.
 
-업데이트 된 각 프로젝트 템플릿은 있는 편리 하 게 시작 지점을 제공 ASP.NET Core에 대 한 각도 5 및 각도 CLI를 사용 하는 다양 하 고 클라이언트 쪽 UI (사용자 인터페이스)를 구현 하는 앱입니다.
+업데이트 된 각 프로젝트 템플릿은 있는 편리 하 게 시작 지점을 제공 ASP.NET Core에 대 한 각 및 각도 CLI를 사용 하는 다양 하 고 클라이언트 쪽 UI (사용자 인터페이스)를 구현 하는 앱입니다.
 
 템플릿에 API 백 엔드 역할을 하는 ASP.NET Core 프로젝트 및는 각도 CLI 프로젝트의 역할을 하는 UI를 만드는 것과 같습니다. 서식 파일은 단일 응용 프로그램 프로젝트의 두 프로젝트 형식 호스팅의 편의 제공 합니다. 따라서 응용 프로그램 프로젝트 빌드 및 단일 단위로 게시 수입니다.
 
 ## <a name="create-a-new-app"></a>새 앱 만들기
 
-시작 하려면 확인 했습니다. [설치 된 업데이트 된 각 프로젝트 템플릿](xref:spa/index#installation)합니다. 이러한 지침은.NET Core에 포함 된 이전 각도 프로젝트 템플릿에 적용 되지 SDK 2.0. x.
+ASP.NET Core 2.0을 사용 하는 경우 확인 했습니다. [설치 된 업데이트 된 각 프로젝트 템플릿](xref:spa/index#installation)합니다. ASP.NET Core 2.1 있을 경우 설치할 필요가 없습니다.
 
 명령을 사용 하 여 명령 프롬프트에서 새 프로젝트 만들기 `dotnet new angular` 빈 디렉터리에 있습니다. 예를 들어 다음 명령에서 응용 프로그램을 만듭니다는 *내-새-app* 디렉터리와 해당 디렉터리에 스위치:
 

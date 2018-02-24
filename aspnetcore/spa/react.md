@@ -1,26 +1,26 @@
 ---
 title: "React 프로젝트 템플릿을 사용 하 여"
 author: SteveSandersonMS
-description: "React 및 반응 만들기-앱에 대 한 ASP.NET Core 단일 페이지 응용 프로그램 (SPA) 릴리스 후보 프로젝트 템플릿으로 시작 하는 방법에 알아봅니다."
+description: "React 및 반응 만들기-앱에 대 한 ASP.NET Core 단일 페이지 응용 프로그램 (SPA) 프로젝트 템플릿으로 시작 하는 방법에 알아봅니다."
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 12/06/2017
+ms.date: 02/21/2018
 ms.devlang: csharp
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/react
-ms.openlocfilehash: 5978094083a098a771f5dca103434ea8fcce7777
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: e093a47159fd8278ff3705bb2c53571a8e27fab8
+ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 02/23/2018
 ---
-# <a name="use-the-react-project-template-release-candidate"></a>React 프로젝트 템플릿 (릴리스 후보)를 사용 하 여
+# <a name="use-the-react-project-template"></a>React 프로젝트 템플릿을 사용 하 여
 
 > [!NOTE]
-> 이 문서는 릴리스된 React 프로젝트 템플릿에 대 한 하지 않습니다. **이 설명서는 React 서식 파일의 릴리스 후보에 대 한 합니다.** 에 초기 2018 릴리스 버전을 출시 하시기 바랍니다.
+> 이 설명서 포함 되지 않습니다 React 프로젝트 템플릿에 대 한 ASP.NET 코어 2.0. 최신 React 서식 파일을 수동으로 업데이트할 수 있습니다. 서식 파일은 기본적으로 ASP.NET Core 2.1에 포함 됩니다.
 
 업데이트 된 React 프로젝트 템플릿은 제공 편리한 시작점을 ASP.NET Core에 대 한 반응을 사용 하 여 앱 및 [react 만들기-app](https://github.com/facebookincubator/create-react-app) (CRA)는 다양 하 고 클라이언트 쪽 UI (사용자 인터페이스)를 구현 하는 규칙입니다.
 
@@ -28,7 +28,7 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="create-a-new-app"></a>새 앱 만들기
 
-시작 하려면 확인 했습니다. [업데이트 React 프로젝트 템플릿을 설치](xref:spa/index#installation)합니다. 이러한 지침은.NET Core에 포함 된 이전 React 프로젝트 템플릿에 적용 되지 SDK 2.0. x.
+ASP.NET Core 2.0을 사용 하는 경우 확인 했습니다. [업데이트 React 프로젝트 템플릿을 설치](xref:spa/index#installation)합니다. ASP.NET Core 2.1 있을 경우 설치할 필요가 없습니다.
 
 명령을 사용 하 여 명령 프롬프트에서 새 프로젝트 만들기 `dotnet new react` 빈 디렉터리에 있습니다. 예를 들어 다음 명령에서 응용 프로그램을 만듭니다는 *내-새-app* 디렉터리와 해당 디렉터리에 스위치:
 
