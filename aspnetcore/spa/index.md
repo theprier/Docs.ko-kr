@@ -1,42 +1,42 @@
 ---
 title: "단일 페이지 응용 프로그램 템플릿 사용"
 author: SteveSandersonMS
-description: "ASP.NET Core SPA(단일 페이지 응용 프로그램) 릴리스 후보 프로젝트 템플릿을 설치하고 시작하는 방법에 대해 알아봅니다."
+description: "ASP.NET Core SPA(단일 페이지 응용 프로그램) 프로젝트 템플릿을 설치하고 시작하는 방법에 대해 알아봅니다."
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 12/06/2017
+ms.date: 02/21/2018
 ms.devlang: csharp
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/index
-ms.openlocfilehash: 2017c2ada835eb7206dcfd195f6e2c032909f9ef
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: 63b56de101199e9ea0d66d89d2dd7288e47902f6
+ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 02/23/2018
 ---
-# <a name="use-the-single-page-application-templates-release-candidate"></a><span data-ttu-id="0f191-103">단일 페이지 응용 프로그램 템플릿(릴리스 후보) 사용</span><span class="sxs-lookup"><span data-stu-id="0f191-103">Use the Single-Page Application templates (release candidate)</span></span>
+# <a name="use-the-single-page-application-templates"></a><span data-ttu-id="74160-103">단일 페이지 응용 프로그램 템플릿 사용</span><span class="sxs-lookup"><span data-stu-id="74160-103">Use the Single Page Application templates</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="0f191-104">릴리스된 .NET Core 2.0.x SDK에는 Angular, React, React with Redux에 대한 프로젝트 템플릿이 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="0f191-104">The released .NET Core 2.0.x SDK includes project templates for Angular, React, and React with Redux.</span></span> <span data-ttu-id="0f191-105">**이 문서는 그러한 릴리스된 프로젝트 템플릿에 대한 내용이 아닙니다.**</span><span class="sxs-lookup"><span data-stu-id="0f191-105">**This documentation isn't about those released project templates.**</span></span> <span data-ttu-id="0f191-106">이 문서는 2018년 초에 출시 예정인 다음 버전의 Angular, React, React with Redux 템플릿용입니다.</span><span class="sxs-lookup"><span data-stu-id="0f191-106">This documentation is for the next version of the Angular, React, and React with Redux templates, which we hope to ship in early 2018.</span></span>
+> <span data-ttu-id="74160-104">릴리스된 .NET Core 2.0.x SDK에는 Angular, React 및 React with Redux에 대한 이전 프로젝트 템플릿이 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="74160-104">The released .NET Core 2.0.x SDK includes older project templates for Angular, React, and React with Redux.</span></span> <span data-ttu-id="74160-105">이 문서는 그러한 이전 프로젝트 템플릿에 대한 내용이 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="74160-105">This documentation isn't about those older project templates.</span></span> <span data-ttu-id="74160-106">이 설명서는 ASP.NET 코어 2.0에 수동으로 설치할 수 있는 최신 Angular, React 및 React with Redux 템플릿용 입니다.</span><span class="sxs-lookup"><span data-stu-id="74160-106">This documentation is for the latest Angular, React, and React with Redux templates, which can be installed manually into ASP.NET Core 2.0.</span></span> <span data-ttu-id="74160-107">템플릿은 기본적으로 ASP.NET Core 2.1에 포함되어 있습니다.</span><span class="sxs-lookup"><span data-stu-id="74160-107">The templates are included by default with ASP.NET Core 2.1.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="0f191-107">필수 구성 요소</span><span class="sxs-lookup"><span data-stu-id="0f191-107">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="74160-108">필수 구성 요소</span><span class="sxs-lookup"><span data-stu-id="74160-108">Prerequisites</span></span>
 
-* <span data-ttu-id="0f191-108">[.NET Core SDK](https://www.microsoft.com/net/download), 버전 2.0.0 이상</span><span class="sxs-lookup"><span data-stu-id="0f191-108">[.NET Core SDK](https://www.microsoft.com/net/download), version 2.0.0 or later</span></span>
-* <span data-ttu-id="0f191-109">[Node.js](https://nodejs.org), 버전 6 이상</span><span class="sxs-lookup"><span data-stu-id="0f191-109">[Node.js](https://nodejs.org), version 6 or later</span></span>
+* <span data-ttu-id="74160-109">[.NET Core SDK](https://www.microsoft.com/net/download), 버전 2.0.0 이상</span><span class="sxs-lookup"><span data-stu-id="74160-109">[.NET Core SDK](https://www.microsoft.com/net/download), version 2.0.0 or later</span></span>
+* <span data-ttu-id="74160-110">[Node.js](https://nodejs.org), 버전 6 이상</span><span class="sxs-lookup"><span data-stu-id="74160-110">[Node.js](https://nodejs.org), version 6 or later</span></span>
 
-## <a name="installation"></a><span data-ttu-id="0f191-110">설치</span><span class="sxs-lookup"><span data-stu-id="0f191-110">Installation</span></span>
+## <a name="installation"></a><span data-ttu-id="74160-111">설치</span><span class="sxs-lookup"><span data-stu-id="74160-111">Installation</span></span>
 
-<span data-ttu-id="0f191-111">다음 명령을 실행하여 Angular, React, React with Redux에 대한 ASP.NET Core 템플릿의 **릴리스 후보**를 설치합니다.</span><span class="sxs-lookup"><span data-stu-id="0f191-111">Run the following command to install the **release candidate** of the ASP.NET Core templates for Angular, React, and React with Redux:</span></span>
+<span data-ttu-id="74160-112">ASP.NET Core 2.0이 있는 경우 다음 명령을 실행하여 Angular, React 및 React with Redux에 대해 업데이트된 ASP.NET Core 템플릿을 설치합니다.</span><span class="sxs-lookup"><span data-stu-id="74160-112">If you have ASP.NET Core 2.0, run the following command to install the updated ASP.NET Core templates for Angular, React, and React with Redux:</span></span>
 
 ```console
-dotnet new --install Microsoft.DotNet.Web.Spa.ProjectTemplates::2.0.0-rc2-final
+dotnet new --install Microsoft.DotNet.Web.Spa.ProjectTemplates::2.0.0
 ```
 
-## <a name="use-the-templates"></a><span data-ttu-id="0f191-112">템플릿 사용</span><span class="sxs-lookup"><span data-stu-id="0f191-112">Use the templates</span></span>
+## <a name="use-the-templates"></a><span data-ttu-id="74160-113">템플릿 사용</span><span class="sxs-lookup"><span data-stu-id="74160-113">Use the templates</span></span>
 
-- [<span data-ttu-id="0f191-113">Angular 프로젝트 템플릿 사용</span><span class="sxs-lookup"><span data-stu-id="0f191-113">Use the Angular project template</span></span>](xref:spa/angular)
-- [<span data-ttu-id="0f191-114">React 프로젝트 템플릿 사용</span><span class="sxs-lookup"><span data-stu-id="0f191-114">Use the React project template</span></span>](xref:spa/react)
-- [<span data-ttu-id="0f191-115">React with Redux 프로젝트 템플릿 사용</span><span class="sxs-lookup"><span data-stu-id="0f191-115">Use the React with Redux project template</span></span>](xref:spa/react-with-redux)
+- [<span data-ttu-id="74160-114">Angular 프로젝트 템플릿 사용</span><span class="sxs-lookup"><span data-stu-id="74160-114">Use the Angular project template</span></span>](xref:spa/angular)
+- [<span data-ttu-id="74160-115">React 프로젝트 템플릿 사용</span><span class="sxs-lookup"><span data-stu-id="74160-115">Use the React project template</span></span>](xref:spa/react)
+- [<span data-ttu-id="74160-116">React with Redux 프로젝트 템플릿 사용</span><span class="sxs-lookup"><span data-stu-id="74160-116">Use the React with Redux project template</span></span>](xref:spa/react-with-redux)

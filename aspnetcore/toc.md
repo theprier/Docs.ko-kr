@@ -204,7 +204,7 @@
 ## [번들 및 축소](xref:client-side/bundling-and-minification)
 ## [브라우저 링크 사용](xref:client-side/using-browserlink)
 ## [SPA에 JavaScriptServices 사용](xref:client-side/spa-services)
-## [SPA 프로젝트 템플릿(RC) 사용](xref:spa/index)
+## [SPA 프로젝트 템플릿 사용](xref:spa/index)
 ### [Angular 프로젝트 템플릿](xref:spa/angular)
 ### [React 프로젝트 템플릿](xref:spa/react)
 ### [React with Redux 프로젝트 템플릿](xref:spa/react-with-redux)
