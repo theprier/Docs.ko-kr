@@ -2,26 +2,24 @@
 title: "클레임 기반 권한 부여"
 author: rick-anderson
 description: "이 문서에서는 ASP.NET Core 응용 프로그램에서 권한 부여에 대한 클레임 검사를 추가하는 방법을 설명합니다."
-keywords: "ASP.NET Core, 권한 부여 클레임"
-ms.author: riande
 manager: wpickett
+ms.author: riande
 ms.date: 10/14/2016
-ms.topic: article
-ms.assetid: 737be5cd-3511-4f1c-b0ce-65403fb5eed3
-ms.technology: aspnet
 ms.prod: asp.net-core
+ms.technology: aspnet
+ms.topic: article
 uid: security/authorization/claims
-ms.openlocfilehash: eebaddabdd360f34b6ff44e8f4f9f1f10fda6406
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 608aaa469c5ca20fab8250025804e28e7808122d
+ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="claims-based-authorization"></a>클레임 기반 권한 부여
 
 <a name="security-authorization-claims-based"></a>
 
-신원(Identity)을 생성할 때 신뢰할 수 있는 당사자가 발급하는 하나 이상의 클레임을 부여할 수 있습니다. 클레임(Claim)은 주체가 수행할 수 있는 작업이 아닌, 주체가 무엇인지를 표현하는 이름 값의 쌍입니다. 예를 들어, 여러분은 지역 운전면허 발급기관이 발급한 운전 면허증을 갖고 있을 수 있습니다. 운전 면허증에는 생년월일이 기재되어 있을 것입니다. 이 경우, 클레임 이름은 `DateOfBirth`이고, 클레임 값은 `8th June 1970` 같은 생년월일, 그리고 발급자는 운전면허 발급기관입다. 간단한 방식의 클레임 기반 권한 부여에서는 클레임 값을 검사한 다음, 그 값을 기반으로 리소스에 대한 접근을 허용합니다. 예를 들어, 나이트 클럽에 들어가려고 하면 권한 부여 절차가 진행될 것입니다.
+신원(Identity)을 생성할 때 신뢰할 수 있는 당사자가 발급하는 하나 이상의 클레임을 부여할 수 있습니다. 클레임(Claim)은 주체가 수행할 수 있는 작업이 아닌, 주체가 무엇인지를 표현하는 이름 값의 쌍입니다. 예를 들어, 여러분은 지역 운전면허 발급기관이 발급한 운전 면허증을 갖고 있을 수 있습니다. 운전 면허증에는 생년월일이 기재되어 있을 것입니다. 이 경우, 클레임 이름은 `DateOfBirth`이고, 클레임 값은 `8th June 1970` 같은 생년월일, 그리고 발급자는 운전면허 발급기관입니다. 간단한 방식의 클레임 기반 권한 부여에서는 클레임 값을 검사한 다음, 그 값을 기반으로 리소스에 대한 접근을 허용합니다. 예를 들어, 나이트 클럽에 들어가려고 하면 다음 절차가 진행될 것입니다.
 
 나이트 클럽의 출입문 보안 담당자는 접근을 허용하기 전에, 먼저 생년월일 클레임의 값과 발급자(운전면허 발급기관)를 신뢰할 수 있는지 여부부터 평가합니다.
 
@@ -71,7 +69,7 @@ public class VacationController : Controller
 }
 ```
 
-`AuthorizeAttribute` 특성으로 보호받는 컨트롤러가 존재하지만, 특정 액션에 대한 익명 접근은 허용하고 싶다면, 해당 액션에 `AllowAnonymousAttribute` 특성을 적용합니다.
+`AuthorizeAttribute` 특성으로 보호되는 컨트롤러가 존재하지만, 특정 액션에 대한 익명 접근은 허용하고 싶다면, 해당 액션에 `AllowAnonymousAttribute` 특성을 적용합니다.
 
 ```csharp
 [Authorize(Policy = "EmployeeOnly")]
