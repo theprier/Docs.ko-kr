@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 5acae4de56e3f714f0cda2c00d5446d2dcddaf36
-ms.sourcegitcommit: 9f758b1550fcae88ab1eb284798a89e6320548a5
+ms.openlocfilehash: 12635c66bacdeed7360a9d6c689212bba81439e3
+ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 02/23/2018
 ---
 # <a name="configure-an-aspnet-core-app"></a>ASP.NET Core 앱 구성
 
@@ -63,6 +63,25 @@ Console.Write($"{Configuration["wizards:0:Name"]}");
 
 이전 샘플은 구성 인덱서를 사용하여 값을 읽습니다. `Startup` 외부에서 구성에 액세스하려면 *옵션 패턴*을 사용합니다. 자세한 내용은 [옵션](xref:fundamentals/configuration/options) 항목을 참조하세요.
 
+## <a name="xml-configuration"></a>XML 구성 
+
+XML 형식 구성 소스의 배열을 작업하려면 각 요소에 `name` 인덱스를 제공합니다. 인덱스를 사용하여 값에 액세스합니다.
+
+```xml
+<wizards>
+  <wizard name="Gandalf">
+    <age>1000</age>
+  </wizard>
+  <wizard name="Harry">
+    <age>17</age>
+  </wizard>
+</wizards>
+```
+
+```csharp
+Console.Write($"{Configuration["wizard:Harry:age"]}");
+// Output: 17
+```
 
 ## <a name="configuration-by-environment"></a>환경별 구성
 
