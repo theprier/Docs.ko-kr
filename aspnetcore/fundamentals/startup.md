@@ -10,19 +10,19 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/startup
-ms.openlocfilehash: cf9e6a25f5b9cc8395c803a11c15622349620a07
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: c324918b33af82b619bb2251f32308e4a57c27e5
+ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 02/01/2018
 ---
 # <a name="application-startup-in-aspnet-core"></a>ASP.NET Core에서 응용 프로그램 시작
 
 작성자: [Steve Smith](https://ardalis.com), [Tom Dykstra](https://github.com/tdykstra) 및 [Luke Latham](https://github.com/guardrex)
 
-`Startup` 클래스는 서비스 및 앱의 요청 파이프라인을 구성합니다.
+`Startup` 클래스는 서비스와 응용 프로그램의 요청 파이프라인을 구성합니다.
 
-## <a name="the-startup-class"></a>시작 클래스
+## <a name="the-startup-class"></a>Startup 클래스
 
 ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startup` 클래스를 사용합니다. `Startup` 클래스:
 
@@ -70,7 +70,7 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 
 ## <a name="the-configure-method"></a>Configure 메서드
 
-[Configure](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure) 메서드는 앱이 HTTP 요청에 응답하는 방식을 지정하는 데 사용됩니다. 요청 파이프라인은 [미들웨어](xref:fundamentals/middleware) 구성 요소를 [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder) 인스턴스에 추가하여 구성됩니다. `IApplicationBuilder`는 `Configure` 메서드에 사용할 수 있지만 서비스 컨테이너에 등록되지 않습니다. 호스팅은 `IApplicationBuilder`를 만들고 `Configure`에 직접 전달합니다([참조 원본](https://github.com/aspnet/Hosting/blob/release/2.0.0/src/Microsoft.AspNetCore.Hosting/Internal/WebHost.cs#L179-L192)).
+[Configure](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure) 메서드는 앱이 HTTP 요청에 응답하는 방식을 지정하는 데 사용됩니다. 요청 파이프라인은 [미들웨어](xref:fundamentals/middleware/index) 구성 요소를 [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder) 인스턴스에 추가하여 구성됩니다. `IApplicationBuilder`는 `Configure` 메서드에 사용할 수 있지만 서비스 컨테이너에 등록되지 않습니다. 호스팅은 `IApplicationBuilder`를 만들고 `Configure`에 직접 전달합니다([참조 원본](https://github.com/aspnet/Hosting/blob/release/2.0.0/src/Microsoft.AspNetCore.Hosting/Internal/WebHost.cs#L179-L192)).
 
 [ASP.NET Core 템플릿](/dotnet/core/tools/dotnet-new)은 개발자 예외 페이지, [BrowserLink](http://vswebessentials.com/features/browserlink), 오류 페이지, 정적 파일 및 ASP.NET MVC에 대한 지원으로 파이프라인을 구성합니다.
 
@@ -80,7 +80,7 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 
 `IHostingEnvironment` 및 `ILoggerFactory`와 같은 추가 서비스는 메서드 서명에서 지정될 수도 있습니다. 지정되면 사용 가능한 경우 추가 서비스가 삽입됩니다.
 
-`IApplicationBuilder`를 사용하는 방법에 대한 자세한 내용은 [미들웨어](xref:fundamentals/middleware)를 참조하세요.
+`IApplicationBuilder`를 사용하는 방법에 대한 자세한 내용은 [미들웨어](xref:fundamentals/middleware/index)를 참조하세요.
 
 ## <a name="convenience-methods"></a>편리한 메서드
 
@@ -92,7 +92,7 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 
 [IStartupFilter](/dotnet/api/microsoft.aspnetcore.hosting.istartupfilter)를 사용하여 앱의 [구성](#the-configure-method) 미들웨어 파이프라인의 시작 또는 끝에 미들웨어를 구성합니다. `IStartupFilter`는 미들웨어가 앱의 요청 처리 파이프라인의 시작 또는 끝에 라이브러리에 의해 추가되는 미들웨어 전이나 후에 실행되도록 하는데 유용합니다.
 
-`IStartupFilter`는 `Action<IApplicationBuilder>`를 받고 반환하는 단일 메서드, [Configure](/dotnet/api/microsoft.aspnetcore.hosting.istartupfilter.configure)를 구성합니다. [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder)는 앱의 요청 파이프라인을 구성하는 클래스를 정의합니다. 자세한 내용은 [IApplicationBuilder로 미들웨어 파이프라인 만들기](xref:fundamentals/middleware#creating-a-middleware-pipeline-with-iapplicationbuilder)를 참조하세요.
+`IStartupFilter`는 `Action<IApplicationBuilder>`를 받고 반환하는 단일 메서드, [Configure](/dotnet/api/microsoft.aspnetcore.hosting.istartupfilter.configure)를 구성합니다. [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder)는 앱의 요청 파이프라인을 구성하는 클래스를 정의합니다. 자세한 내용은 [IApplicationBuilder로 미들웨어 파이프라인 만들기](xref:fundamentals/middleware/index#creating-a-middleware-pipeline-with-iapplicationbuilder)를 참조하세요.
 
 각 `IStartupFilter`는 요청 파이프라인에서 하나 이상의 미들웨어를 구현합니다. 필터는 서비스 컨테이너에 추가된 순서 대로 호출됩니다. 필터는 다음 필터에 컨트롤을 전달하기 전이나 후에 미들웨어를 추가할 수 있으므로 앱 파이프라인의 시작 또는 끝에 추가합니다.
 
@@ -121,7 +121,7 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 
 * [호스팅](xref:fundamentals/hosting)
 * [여러 환경 사용](xref:fundamentals/environments)
-* [미들웨어](xref:fundamentals/middleware)
+* [미들웨어](xref:fundamentals/middleware/index)
 * [로깅](xref:fundamentals/logging/index)
 * [구성](xref:fundamentals/configuration/index)
 * [StartupLoader 클래스: FindStartupType 메서드(참조 원본)](https://github.com/aspnet/Hosting/blob/rel/2.0.0/src/Microsoft.AspNetCore.Hosting/Internal/StartupLoader.cs#L66-L116)

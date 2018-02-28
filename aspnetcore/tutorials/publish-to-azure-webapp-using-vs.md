@@ -1,5 +1,5 @@
 ---
-title: "Visual Studio를 사용하여 Azure에 ASP.NET Core 앱 게시"
+title: "Visual Studio를 사용해서 Azure 앱 서비스에 ASP.NET Core 앱 게시하기"
 author: rick-anderson
 description: "Visual Studio를 사용하여 Azure App Service에 ASP.NET Core 앱을 게시하는 방법을 알아봅니다."
 manager: wpickett

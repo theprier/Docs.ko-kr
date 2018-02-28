@@ -1,5 +1,5 @@
 ---
-title: "ASP.NET Core에서 정적 파일 사용"
+title: "ASP.NET Core에서 정적 파일 작업하기"
 author: rick-anderson
 description: "ASP.NET Core 웹앱에서 정적 파일을 제공 및 보호하고 정적 파일 호스팅 미들웨어 동작을 구성하는 방법을 알아봅니다."
 manager: wpickett
@@ -17,7 +17,7 @@ ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 02/01/2018
 ---
-# <a name="work-with-static-files-in-aspnet-core"></a>ASP.NET Core에서 정적 파일 사용
+# <a name="work-with-static-files-in-aspnet-core"></a>ASP.NET Core에서 정적 파일 작업하기
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT) 및 [Scott Addie](https://twitter.com/Scott_Addie)
 
