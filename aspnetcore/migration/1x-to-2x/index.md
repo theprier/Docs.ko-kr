@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/1x-to-2x/index
-ms.openlocfilehash: a88d22c88689d20376fec748b05fc4b5ecca3510
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 42906e95d17f76f69dddc40f351b41e6cbdd087c
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="migrating-from-aspnet-core-1x-to-aspnet-core-20"></a>ASP.NET Core 1.x에서 ASP.NET Core 2.0으로 마이그레이션
 
@@ -33,11 +33,11 @@ ms.lasthandoff: 01/30/2018
 ## <a name="update-target-framework-moniker-tfm"></a>TFM(대상 프레임워크 모니커) 업데이트
 .NET Core를 대상으로 하는 프로젝트는 .NET Core 2.0보다 크거나 같은 버전의 [TFM](/dotnet/standard/frameworks#referring-to-frameworks)을 사용해야 합니다. *.csproj* 파일에서 `<TargetFramework>` 노드를 검색하고 해당 내부 텍스트를 `netcoreapp2.0`으로 바꿉니다.
 
-[!code-xml[Main](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App.csproj?range=3)]
+[!code-xml[](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App.csproj?range=3)]
 
 .NET Framework를 대상으로 하는 프로젝트는 .NET Framework 4.6.1보다 크거나 같은 버전의 TFM을 사용해야 합니다. *.csproj* 파일에서 `<TargetFramework>` 노드를 검색하고 해당 내부 텍스트를 `net461`로 바꿉니다.
 
-[!code-xml[Main](../1x-to-2x/samples/AspNetCoreDotNetFx2.0App/AspNetCoreDotNetFx2.0App/AspNetCoreDotNetFx2.0App.csproj?range=4)]
+[!code-xml[](../1x-to-2x/samples/AspNetCoreDotNetFx2.0App/AspNetCoreDotNetFx2.0App/AspNetCoreDotNetFx2.0App.csproj?range=4)]
 
 > [!NOTE]
 > .NET Core 2.0은 .NET Core 1.x보다 훨씬 더 큰 노출 영역을 제공합니다. .NET Core 1.x에 API가 없기 때문에 전적으로 .NET Framework를 대상으로 하는 경우 .NET Core 2.0을 대상으로 하는 것은 작동할 가능성이 있습니다.
@@ -47,7 +47,7 @@ ms.lasthandoff: 01/30/2018
 ## <a name="update-net-core-sdk-version-in-globaljson"></a>global.json에서 .NET Core SDK 버전 업데이트
 솔루션이 특정 .NET Core SDK 버전을 대상으로 하기 위해 [*global.json*](https://docs.microsoft.com/dotnet/core/tools/global-json) 파일에 의존하는 경우 해당 `version` 속성을 컴퓨터에 설치된 2.0 버전을 사용하도록 업데이트합니다.
 
-[!code-json[Main](../1x-to-2x/samples/AspNetCoreDotNetCore2App/global.json?highlight=3)]
+[!code-json[](../1x-to-2x/samples/AspNetCoreDotNetCore2App/global.json?highlight=3)]
 
 <a name="package-reference"></a>
 
@@ -56,7 +56,7 @@ ms.lasthandoff: 01/30/2018
 
 .NET Core 2.0을 대상으로 하는 ASP.NET Core 2.0 프로젝트에서 *.csproj* 파일의 단일 [metapackage](xref:fundamentals/metapackage) 참조는 패키지의 컬렉션을 대체합니다.
 
-[!code-xml[Main](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App.csproj?range=8-10)]
+[!code-xml[](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App.csproj?range=8-10)]
 
 ASP.NET Core 2.0 및 Entity Framework Core 2.0의 모든 기능은 metapackage에 포함됩니다.
 
@@ -64,7 +64,7 @@ ASP.NET Core 2.0 및 Entity Framework Core 2.0의 모든 기능은 metapackage�
 
 예를 들어 다음은 .NET Framework를 대상으로 하는 일반적인 ASP.NET Core 2.0 프로젝트에 사용되는 `<PackageReference />` 노드의 목록입니다.
 
-[!code-xml[Main](../1x-to-2x/samples/AspNetCoreDotNetFx2.0App/AspNetCoreDotNetFx2.0App/AspNetCoreDotNetFx2.0App.csproj?range=9-22)]
+[!code-xml[](../1x-to-2x/samples/AspNetCoreDotNetFx2.0App/AspNetCoreDotNetFx2.0App/AspNetCoreDotNetFx2.0App.csproj?range=9-22)]
 
 <a name="dot-net-cli-tool-reference"></a>
 
@@ -73,29 +73,29 @@ ASP.NET Core 2.0 및 Entity Framework Core 2.0의 모든 기능은 metapackage�
 
 예를 들어 다음은 .NET Core 2.0을 대상으로 하는 일반적인 ASP.NET Core 2.0 프로젝트에 사용되는 CLI 도구의 목록입니다.
 
-[!code-xml[Main](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App.csproj?range=12-16)]
+[!code-xml[](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App.csproj?range=12-16)]
 
 <a name="package-target-fallback"></a>
 
 ## <a name="rename-package-target-fallback-property"></a>패키지 대상 대체 속성의 이름 바꾸기
 `PackageTargetFallback` 노드 및 변수에서 사용되는 1.x 프로젝트의 *.csproj* 파일:
 
-[!code-xml[Main](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App.csproj?range=5)]
+[!code-xml[](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App.csproj?range=5)]
 
 노드 및 변수의 이름을 모두 `AssetTargetFallback`으로 바꾸기:
 
-[!code-xml[Main](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App.csproj?range=4)]
+[!code-xml[](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App.csproj?range=4)]
 
 <a name="program-cs"></a>
 
 ## <a name="update-main-method-in-programcs"></a>Program.cs의 Main 메서드 업데이트
 1.x 프로젝트에서 *Program.cs*의 `Main` 메서드는 다음과 같았습니다.
 
-[!code-csharp[Main](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Program.cs?name=snippet_ProgramCs&highlight=8-19)]
+[!code-csharp[](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Program.cs?name=snippet_ProgramCs&highlight=8-19)]
 
 2.0 프로젝트에서 *Program.cs*의 `Main` 메서드는 간소화되었습니다.
 
-[!code-csharp[Main](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/Program.cs?highlight=8-11)]
+[!code-csharp[](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/Program.cs?highlight=8-11)]
 
 이 새로운 2.0 패턴의 도입은 적극 권장되며 [EF(Entity Framework) Core 마이그레이션](xref:data/ef-mvc/migrations)과 같은 제품 기능을 작동하는 데 필요합니다. 예를 들어 패키지 관리자 콘솔 창에서 `Update-Database` 또는 명령줄(ASP.NET Core 2.0으로 변환되는 프로젝트에서)에서 `dotnet ef database update` 실행은 다음 오류를 생성합니다.
 
@@ -108,17 +108,17 @@ Unable to create an object of type '<Context>'. Add an implementation of 'IDesig
 ## <a name="add-configuration-providers"></a>구성 공급자 추가
 1.x 프로젝트에서는 `Startup` 생성자를 통해 앱에 구성 공급자를 추가했습니다. 이 단계에는 `ConfigurationBuilder`의 인스턴스 만들기, 해당 공급자(환경 변수, 앱 설정 등) 로드 및 `IConfigurationRoot`의 멤버 초기화와 같은 작업이 포함되었습니다.
 
-[!code-csharp[Main](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Startup.cs?name=snippet_1xStartup)]
+[!code-csharp[](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Startup.cs?name=snippet_1xStartup)]
 
 위의 예제에서는 `IHostingEnvironment.EnvironmentName` 속성과 일치하는 *appsettings.\<EnvironmentName\>.json* 파일뿐만 아니라 *appsettings.json*의 구성 설정을 사용하여 `Configuration` 멤버를 로드합니다. 이러한 파일의 위치는 *Startup.cs*와 동일한 경로에 있습니다.
 
 2.0 프로젝트에서 1.x 프로젝트에 포함된 기본 구성 코드는 백그라운드에서 실행됩니다. 예를 들어 환경 변수 및 앱 설정은 시작 시 로드됩니다. 동일한 *Startup.cs* 코드는 삽입된 인스턴스를 사용하여 `IConfiguration` 초기화로 축소됩니다.
 
-[!code-csharp[Main](../1x-to-2x/samples/AspNetCoreDotNetFx2.0App/AspNetCoreDotNetFx2.0App/Startup.cs?name=snippet_2xStartup)]
+[!code-csharp[](../1x-to-2x/samples/AspNetCoreDotNetFx2.0App/AspNetCoreDotNetFx2.0App/Startup.cs?name=snippet_2xStartup)]
 
 `WebHostBuilder.CreateDefaultBuilder`를 추가하여 기본 공급자를 제거하려면 `ConfigureAppConfiguration` 내부의 `IConfigurationBuilder.Sources` 속성에서 `Clear` 메서드를 호출합니다. 다시 공급자를 추가하려면 *Program.cs*에서 `ConfigureAppConfiguration` 메서드를 활용합니다.
 
-[!code-csharp[Main](../1x-to-2x/samples/AspNetCoreDotNetFx2.0App/AspNetCoreDotNetFx2.0App/Program.cs?name=snippet_ProgramMainConfigProviders&highlight=9-14)]
+[!code-csharp[](../1x-to-2x/samples/AspNetCoreDotNetFx2.0App/AspNetCoreDotNetFx2.0App/Program.cs?name=snippet_ProgramMainConfigProviders&highlight=9-14)]
 
 이전 코드 조각의 `CreateDefaultBuilder` 메서드에서 사용하는 구성은 [여기](https://github.com/aspnet/MetaPackages/blob/rel/2.0.0/src/Microsoft.AspNetCore/WebHost.cs#L152)에서 확인할 수 있습니다.
 
@@ -136,11 +136,11 @@ EF Core 2.0을 사용하는 2.0 프로젝트에서는 응용 프로그램 서비
 
 *Startup.cs*의 `Configure` 메서드에서 다음 1.x 시드 초기화 코드를 고려하세요.
 
-[!code-csharp[Main](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Startup.cs?name=snippet_ConfigureSeedData&highlight=8)]
+[!code-csharp[](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Startup.cs?name=snippet_ConfigureSeedData&highlight=8)]
 
 2.0 프로젝트에서 `SeedData.Initialize` 호출을 *Program.cs*의 `Main` 메서드로 이동합니다.
 
-[!code-csharp[Main](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/Program2.cs?name=snippet_Main2Code&highlight=10)]
+[!code-csharp[](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/Program2.cs?name=snippet_Main2Code&highlight=10)]
 
 2.0부터 `BuildWebHost`에서 웹 호스트를 빌드하고 구성하는 작업 외에 다른 작업을 수행하는 것은 바람직하지 않습니다. 응용 프로그램 실행과 관련된 모든 작업은 `BuildWebHost` 외부(보통 *Program.cs*의 `Main` 메서드)에서 처리해야 합니다.
 
@@ -153,7 +153,7 @@ EF Core 2.0을 사용하는 2.0 프로젝트에서는 응용 프로그램 서비
 
 .NET Framework를 대상으로 하는 경우 여전히 명시적으로 *.csproj* 파일에서 [Microsoft.AspNetCore.Mvc.Razor.ViewCompilation](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Razor.ViewCompilation) NuGet 패키지를 참조해야 합니다.
 
-[!code-xml[Main](../1x-to-2x/samples/AspNetCoreDotNetFx2.0App/AspNetCoreDotNetFx2.0App/AspNetCoreDotNetFx2.0App.csproj?range=15)]
+[!code-xml[](../1x-to-2x/samples/AspNetCoreDotNetFx2.0App/AspNetCoreDotNetFx2.0App/AspNetCoreDotNetFx2.0App.csproj?range=15)]
 
 <a name="app-insights"></a>
 
@@ -164,15 +164,15 @@ Visual Studio 2017에서 만든 ASP.NET Core 1.1 프로젝트는 기본적으로
 
 1. .NET Core를 대상으로 하는 경우 *.csproj* 파일에서 다음 `<PackageReference />` 노드를 제거합니다.
     
-    [!code-xml[Main](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App.csproj?range=10)]
+    [!code-xml[](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App.csproj?range=10)]
 
 2. .NET Core를 대상으로 하는 경우 *Program.cs*에서 `UseApplicationInsights` 확장 메서드 호출을 제거합니다.
 
-    [!code-csharp[Main](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Program.cs?name=snippet_ProgramCsMain&highlight=8)]
+    [!code-csharp[](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Program.cs?name=snippet_ProgramCsMain&highlight=8)]
 
 3. *_Layout.cshtml*에서 Application Insights 클라이언트 쪽 API 호출을 제거합니다. 다음 두 코드 줄을 구성합니다.
 
-    [!code-cshtml[Main](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Views/Shared/_Layout.cshtml?range=1,19&dedent=4)]
+    [!code-cshtml[](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Views/Shared/_Layout.cshtml?range=1,19&dedent=4)]
 
 Application Insights SDK를 직접 사용하는 경우 계속 진행합니다. 2.0 [metapackage](xref:fundamentals/metapackage)에는 최신 버전의 Application Insights가 포함되어 있으므로 이전 버전을 참조하는 경우 패키지 다운그레이드 오류가 나타납니다.
 

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/proper-to-2x/index
-ms.openlocfilehash: d6050c7946aa45b4c1b878b96baa1b082d0c8f71
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 877bcdbe5c5fb43e280800b2b843f2dfacb5bb45
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="migrating-from-aspnet-to-aspnet-core-20"></a>ASP.NET에서 ASP.NET Core 2.0으로 마이그레이션
 
@@ -51,17 +51,17 @@ ASP.NET Core 2.0 프로젝트를 사용하면 개발자가 유연하게 .NET Cor
 ## <a name="globalasax-file-replacement"></a>Global.asax 파일 바꾸기
 ASP.NET Core에는 앱을 부트스트랩하기 위한 새로운 메커니즘이 도입되었습니다. ASP.NET 응용 프로그램의 진입점은 *Global.asax* 파일입니다. 경로 구성 및 필터/영역 등록과 같은 작업은 *Global.asax* 파일에서 처리됩니다.
 
-[!code-csharp[Main](samples/globalasax-sample.cs)]
+[!code-csharp[](samples/globalasax-sample.cs)]
 
 이 방법은 구현을 방해하는 방식으로 응용 프로그램 및 응용 프로그램이 배포되는 서버를 결합합니다. 분리 작업 시 여러 프레임워크를 함께 사용할 수 있는 더 분명한 방식을 제공하도록 [OWIN](http://owin.org/)이 도입되었습니다. OWIN은 필요한 모듈만 추가하기 위한 파이프라인을 제공합니다. 호스팅 환경에서는 [Startup](xref:fundamentals/startup) 함수를 사용하여 서비스 및 앱 요청 파이프라인을 구성합니다. `Startup`은 미들웨어 집합을 응용 프로그램에 등록합니다. 각 요청에 대해 응용 프로그램은 기존 처리기 집합에 대한 연결된 목록의 head 포인터를 사용하여 각 미들웨어 구성 요소를 호출합니다. 각 미들웨어 구성 요소는 요청 처리 파이프라인에 하나 이상의 처리기를 추가할 수 있습니다. 이 작업을 수행하려면 목록의 새 헤드인 처리기에 참조를 반환합니다. 각 처리기는 목록의 다음 처리기를 기억하고 호출해야 합니다. ASP.NET Core에서는 응용 프로그램에 대한 진입점이 `Startup`이고 더 이상 *Global.asax*에 대한 종속성을 포함하지 않습니다. .NET Framework에서 OWIN을 사용할 경우 다음과 같은 항목을 파이프라인으로 사용합니다.
 
-[!code-csharp[Main](samples/webapi-owin.cs)]
+[!code-csharp[](samples/webapi-owin.cs)]
 
 이렇게 하면 기본 경로가 구성되고 기본적으로 JSON을 통한 XmlSerialization으로 설정됩니다. 필요에 따라 이 파이프라인에 다른 미들웨어를 추가합니다(로딩 서비스, 구성 설정, 정적 파일 등).
 
 ASP.NET Core는 비슷한 방법을 사용하지만 항목을 처리하는 데 OWIN을 사용하지 않습니다. 대신에 이 작업에는 *Program.cs* `Main` 메서드(콘솔 응용 프로그램과 비슷함)가 사용되고 `Startup`도 이 작업을 통해 로드됩니다.
 
-[!code-csharp[Main](samples/program.cs)]
+[!code-csharp[](samples/program.cs)]
 
 `Startup`에는 `Configure` 메서드가 포함되어야 합니다. `Configure`에서 파이프라인에 필요한 미들웨어를 추가합니다. 기본 웹 사이트 템플릿을 기반으로 한 다음 예제에서는 여러 확장 메서드를 사용하여 다음 지원을 통해 파이프라인을 구성합니다.
 
@@ -71,7 +71,7 @@ ASP.NET Core는 비슷한 방법을 사용하지만 항목을 처리하는 데 O
 * ASP.NET Core MVC
 * 클레임
 
-[!code-csharp[Main](../../common/samples/WebApplication1/Startup.cs?highlight=8,9,10,14,17,19,21&start=58&end=84)]
+[!code-csharp[](../../common/samples/WebApplication1/Startup.cs?highlight=8,9,10,14,17,19,21&start=58&end=84)]
 
 호스트와 응용 프로그램이 분리되었으므로 나중에 유연하게 다른 플랫폼으로 이동할 수 있습니다.
 
@@ -80,23 +80,23 @@ ASP.NET Core는 비슷한 방법을 사용하지만 항목을 처리하는 데 O
 ## <a name="storing-configurations"></a>구성 저장
 ASP.NET은 정렬 설정을 지원합니다. 예를 들어 이러한 설정은 응용 프로그램이 배포된 환경을 지원하는 데 사용됩니다. 일반적으로 모든 사용자 지정 키 값 쌍은 *Web.config* 파일의 `<appSettings>` 섹션에 저장됩니다.
 
-[!code-xml[Main](samples/webconfig-sample.xml)]
+[!code-xml[](samples/webconfig-sample.xml)]
 
 응용 프로그램은 `System.Configuration` 네임스페이스의 `ConfigurationManager.AppSettings` 컬렉션을 사용하여 이러한 설정을 읽습니다.
 
-[!code-csharp[Main](samples/read-webconfig.cs)]
+[!code-csharp[](samples/read-webconfig.cs)]
 
 ASP.NET Core는 응용 프로그램에 대한 구성 데이터를 파일에 저장하고 미들웨어 부트스트래핑의 일부로 로드할 수 있습니다. 프로젝트 템플릿에 사용되는 기본 파일은 *appsettings.json*입니다.
 
-[!code-json[Main](samples/appsettings-sample.json)]
+[!code-json[](samples/appsettings-sample.json)]
 
 파일을 응용 프로그램 내부의 `IConfiguration` 인스턴스로 로드하는 작업은 *Startup.cs*에서 수행됩니다.
 
-[!code-csharp[Main](samples/startup-builder.cs)]
+[!code-csharp[](samples/startup-builder.cs)]
 
 앱은 `Configuration`을 읽어서 설정을 가져옵니다.
 
-[!code-csharp[Main](samples/read-appsettings.cs)]
+[!code-csharp[](samples/read-appsettings.cs)]
 
 DI([종속성 주입](xref:fundamentals/dependency-injection))를 사용하여 이러한 값으로 서비스를 로드하는 것과 같이 이 방법을 확장하여 프로세스를 더 강력하게 만들 수 있습니다. DI 방법은 강력한 형식의 구성 개체 집합을 제공합니다.
 
@@ -114,19 +114,19 @@ ASP.NET 응용 프로그램에서 개발자는 타사 라이브러리를 사용�
 
 Unity를 사용한 종속성 주입 설정의 예로는 `UnityContainer`를 래핑하는 `IDependencyResolver`를 구현하는 것입니다.
 
-[!code-csharp[Main](../../../aspnet/web-api/overview/advanced/dependency-injection/samples/sample8.cs)]
+[!code-csharp[](../../../aspnet/web-api/overview/advanced/dependency-injection/samples/sample8.cs)]
 
 `UnityContainer`의 인스턴스를 만들고, 서비스를 등록하고, `HttpConfiguration`의 종속성 확인자를 컨테이너에 대한 `UnityResolver`의 새 인스턴스로 설정합니다.
 
-[!code-csharp[Main](../../../aspnet/web-api/overview/advanced/dependency-injection/samples/sample9.cs)]
+[!code-csharp[](../../../aspnet/web-api/overview/advanced/dependency-injection/samples/sample9.cs)]
 
 필요한 경우 `IProductRepository`를 삽입합니다.
 
-[!code-csharp[Main](../../../aspnet/web-api/overview/advanced/dependency-injection/samples/sample5.cs)]
+[!code-csharp[](../../../aspnet/web-api/overview/advanced/dependency-injection/samples/sample5.cs)]
 
 종속성 주입은 ASP.NET Core의 일부이므로 *Startup.cs*의 `ConfigureServices` 메서드에서 서비스를 추가할 수 있습니다.
 
-[!code-csharp[Main](samples/configure-services.cs)]
+[!code-csharp[](samples/configure-services.cs)]
 
 Unity에서 삽입한 것처럼 리포지토리는 어디든지 삽입될 수 있습니다.
 
@@ -139,7 +139,7 @@ ASP.NET에서 정적 파일은 다양한 디렉터리에 저장되고 뷰에서 
 
 ASP.NET Core에서 정적 파일은 별도로 구성되지 않는 한 “웹 루트”(*&lt;content root&gt;/wwwroot*)에 저장됩니다. 파일은 `Startup.Configure`에서 `UseStaticFiles` 확장 메서드를 호출하는 방식으로 요청 파이프라인에 로드됩니다.
 
-[!code-csharp[Main](../../fundamentals/static-files/samples/1x/StartupStaticFiles.cs?highlight=3&name=snippet_ConfigureMethod)]
+[!code-csharp[](../../fundamentals/static-files/samples/1x/StartupStaticFiles.cs?highlight=3&name=snippet_ConfigureMethod)]
 
 **참고:** .NET Framework를 대상으로 지정할 경우 NuGet 패키지 `Microsoft.AspNetCore.StaticFiles`를 설치합니다.
 

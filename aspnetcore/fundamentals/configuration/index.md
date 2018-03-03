@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 12635c66bacdeed7360a9d6c689212bba81439e3
-ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
+ms.openlocfilehash: 8f52f2dc9515761510de870f10ad0975401db74a
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="configure-an-aspnet-core-app"></a>ASP.NET Core 앱 구성
 
@@ -42,15 +42,15 @@ ms.lasthandoff: 02/23/2018
 
 다음 콘솔 앱은 JSON 구성 공급자를 사용합니다.
 
-[!code-csharp[Main](index/sample/ConfigJson/Program.cs)]
+[!code-csharp[](index/sample/ConfigJson/Program.cs)]
 
 앱은 다음 구성 설정을 읽고 표시합니다.
 
-[!code-json[Main](index/sample/ConfigJson/appsettings.json)]
+[!code-json[](index/sample/ConfigJson/appsettings.json)]
 
 구성은 콜론으로 노드를 구분하는 이름-값 쌍의 계층적 목록으로 이루어집니다. 값을 검색하려면 해당 항목의 키를 사용하여 `Configuration` 인덱서에 액세스합니다.
 
-[!code-csharp[Main](index/sample/ConfigJson/Program.cs?range=21-22)]
+[!code-csharp[](index/sample/ConfigJson/Program.cs?range=21-22)]
 
 JSON 형식 구성 소스의 배열을 작업하려면 배열 인덱스를 콜론으로 구분된 문자열의 일부로 사용합니다. 다음 예제는 앞에서 나온 `wizards` 배열의 첫 번째 항목 이름을 가져옵니다.
 
@@ -99,11 +99,11 @@ ASP.NET Core 1.x 앱은 `AddJsonFile` 및 [AddEnvironmentVariables](/dotnet/api/
 
 다음 *appsettings.Staging.json* 파일을 고려해 보세요.
 
-[!code-json[Main](index/sample/appsettings.Staging.json)]
+[!code-json[](index/sample/appsettings.Staging.json)]
 
 환경이 `Staging`으로 설정되면 다음 `Configure` 메서드가 `MyConfig` 값을 읽습니다.
 
-[!code-csharp[Main](index/sample/StartupConfig.cs?name=snippet&highlight=3,4)]
+[!code-csharp[](index/sample/StartupConfig.cs?name=snippet&highlight=3,4)]
 
 
 환경은 일반적으로 `Development`, `Staging` 또는 `Production`으로 설정됩니다. 자세한 내용은 [여러 환경 사용](xref:fundamentals/environments)을 참조하세요.
@@ -119,7 +119,7 @@ ASP.NET Core 1.x 앱은 `AddJsonFile` 및 [AddEnvironmentVariables](/dotnet/api/
 
 다음 샘플은 메모리 내 공급자를 사용하고 클래스에 바인딩하는 방법을 보여 줍니다.
 
-[!code-csharp[Main](index/sample/InMemory/Program.cs)]
+[!code-csharp[](index/sample/InMemory/Program.cs)]
 
 구성 값이 문자열로 반환되지만, 바인딩을 통해 개체를 생성할 수 있게 됩니다. 바인딩을 사용하면 POCO 개체 또는 심지어 전체 개체 그래프를 검색할 수 있습니다.
 
@@ -127,7 +127,7 @@ ASP.NET Core 1.x 앱은 `AddJsonFile` 및 [AddEnvironmentVariables](/dotnet/api/
 
 다음 샘플은 [GetValue&lt;T&gt;](/dotnet/api/microsoft.extensions.configuration.configurationbinder.get?view=aspnetcore-2.0#Microsoft_Extensions_Configuration_ConfigurationBinder_Get__1_Microsoft_Extensions_Configuration_IConfiguration_) 확장 메서드를 보여줍니다.
 
-[!code-csharp[Main](index/sample/InMemoryGetValue/Program.cs?highlight=31)]
+[!code-csharp[](index/sample/InMemoryGetValue/Program.cs?highlight=31)]
 
 ConfigurationBinder의 `GetValue<T>` 메서드를 사용하여 기본값을 지정할 수 있습니다(이 샘플에서는 80). `GetValue<T>`는 간단한 시나리오에 사용되며 전체 섹션에 바인딩되지 않습니다. `GetValue<T>`는 특정 형식으로 변환된 `GetSection(key).Value`에서 스칼라 값을 가져옵니다.
 
@@ -135,11 +135,11 @@ ConfigurationBinder의 `GetValue<T>` 메서드를 사용하여 기본값을 지�
 
 클래스의 각 개체를 재귀적으로 바인딩할 수 있습니다. 다음 `AppSettings` 클래스를 살펴보세요.
 
-[!code-csharp[Main](index/sample/ObjectGraph/AppSettings.cs)]
+[!code-csharp[](index/sample/ObjectGraph/AppSettings.cs)]
 
 다음 샘플은 `AppSettings` 클래스에 바인딩합니다.
 
-[!code-csharp[Main](index/sample/ObjectGraph/Program.cs?highlight=15-16)]
+[!code-csharp[](index/sample/ObjectGraph/Program.cs?highlight=15-16)]
 
 **ASP.NET Core 1.1** 이상은 전체 섹션에서 작동하는 `Get<T>`를 사용할 수 있습니다. `Get<T>`가 `Bind`을 사용하는 것보다 편리할 수 있습니다. 다음 코드는 이전 샘플에 `Get<T>`를 사용하는 방법을 보여 줍니다.
 
@@ -149,7 +149,7 @@ var appConfig = config.GetSection("App").Get<AppSettings>();
 
 다음 *appsettings.json* 파일 사용:
 
-[!code-json[Main](index/sample/ObjectGraph/appsettings.json)]
+[!code-json[](index/sample/ObjectGraph/appsettings.json)]
 
 프로그램에서는 `Height 11`을 표시합니다.
 
@@ -188,35 +188,35 @@ public void CanBindObjectTree()
 
 데이터베이스에 구성 값을 저장하는 `ConfigurationValue` 엔터티를 정의합니다.
 
-[!code-csharp[Main](index/sample/CustomConfigurationProvider/ConfigurationValue.cs)]
+[!code-csharp[](index/sample/CustomConfigurationProvider/ConfigurationValue.cs)]
 
 구성된 값을 저장 및 액세스하는 `ConfigurationContext`를 추가합니다.
 
-[!code-csharp[Main](index/sample/CustomConfigurationProvider/ConfigurationContext.cs?name=snippet1)]
+[!code-csharp[](index/sample/CustomConfigurationProvider/ConfigurationContext.cs?name=snippet1)]
 
 [IConfigurationSource](/dotnet/api/Microsoft.Extensions.Configuration.IConfigurationSource)를 구현하는 클래스를 만듭니다.
 
-[!code-csharp[Main](index/sample/CustomConfigurationProvider/EntityFrameworkConfigurationSource.cs?highlight=7)]
+[!code-csharp[](index/sample/CustomConfigurationProvider/EntityFrameworkConfigurationSource.cs?highlight=7)]
 
 [ConfigurationProvider](/dotnet/api/Microsoft.Extensions.Configuration.ConfigurationProvider)에서 상속하여 사용자 지정 구성 공급자를 만듭니다. 구성 공급자는 비어 있는 데이터베이스를 초기화합니다.
 
-[!code-csharp[Main](index/sample/CustomConfigurationProvider/EntityFrameworkConfigurationProvider.cs?highlight=9,18-31,38-39)]
+[!code-csharp[](index/sample/CustomConfigurationProvider/EntityFrameworkConfigurationProvider.cs?highlight=9,18-31,38-39)]
 
 샘플이 실행되면 데이터베이스의 강조 표시된 값("value_from_ef_1" 및 "value_from_ef_2")이 표시됩니다.
 
 구성 소스를 추가하기 위한 `EFConfigSource` 확장 메서드를 사용할 수 있습니다.
 
-[!code-csharp[Main](index/sample/CustomConfigurationProvider/EntityFrameworkExtensions.cs?highlight=12)]
+[!code-csharp[](index/sample/CustomConfigurationProvider/EntityFrameworkExtensions.cs?highlight=12)]
 
 다음 코드는 사용자 지정 `EFConfigProvider`를 사용하는 방법을 보여 줍니다.
 
-[!code-csharp[Main](index/sample/CustomConfigurationProvider/Program.cs?highlight=21-26)]
+[!code-csharp[](index/sample/CustomConfigurationProvider/Program.cs?highlight=21-26)]
 
 이 샘플은 JSON 공급자 뒤에 사용자 지정 `EFConfigProvider`를 추가하므로 데이터베이스의 모든 설정이 *appsettings.json* 파일의 설정을 재정의합니다.
 
 다음 *appsettings.json* 파일 사용:
 
-[!code-json[Main](index/sample/CustomConfigurationProvider/appsettings.json)]
+[!code-json[](index/sample/CustomConfigurationProvider/appsettings.json)]
 
 다음 출력이 표시됩니다.
 
@@ -238,7 +238,7 @@ key3=value_from_json_3
 
 명령줄 구성을 활성화하려면 [ConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.configurationbuilder) 인스턴스에서 `AddCommandLine` 확장 메서드를 호출합니다.
 
-[!code-csharp[Main](index/sample_snapshot//CommandLine/Program.cs?highlight=18,21)]
+[!code-csharp[](index/sample_snapshot//CommandLine/Program.cs?highlight=18,21)]
 
 코드를 실행하면 다음 출력이 표시됩니다.
 
@@ -262,13 +262,13 @@ Left: 1979
 
 다른 구성 공급자가 제공한 구성을 명령줄 구성으로 재정의하려면 `ConfigurationBuilder`의 마지막에서 `AddCommandLine`을 호출합니다.
 
-[!code-csharp[Main](index/sample_snapshot//CommandLine/Program2.cs?range=11-16&highlight=1,5)]
+[!code-csharp[](index/sample_snapshot//CommandLine/Program2.cs?range=11-16&highlight=1,5)]
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 일반적인 ASP.NET Core 2.x 앱은 고정적인 편의 메서드를 사용하여 `CreateDefaultBuilder`를 빌드합니다.
 
-[!code-csharp[Main](index/sample_snapshot//Program.cs?highlight=12)]
+[!code-csharp[](index/sample_snapshot//Program.cs?highlight=12)]
 
 `CreateDefaultBuilder`는 *appsettings.json*, *appsettings.{Environment}.json*, [사용자 비밀](xref:security/app-secrets)(`Development` 환경의 경우), 환경 변수 및 명령줄 인수에서 선택적 구성을 로드합니다. CommandLine 구성 공급자는 마지막에 호출됩니다. 공급자가 마지막에 호출되기 때문에 다른 구성 공급자가 이전에 설정한 구성을 런타임에 전달되는 명령줄 인수가 재정의할 수 있습니다.
 
@@ -286,7 +286,7 @@ ASP.NET Core 2.x 앱은 `CreateDefaultBuilder` 대신 [WebHostBuilder](/dotnet/a
 
 [ConfigurationBuilder](/api/microsoft.extensions.configuration.configurationbuilder)를 만들고 `AddCommandLine` 메서드를 호출하여 CommandLine 구성 공급자를 사용합니다. 공급자가 마지막에 호출되기 때문에 다른 구성 공급자가 이전에 설정한 구성을 런타임에 전달되는 명령줄 인수가 재정의할 수 있습니다. `UseConfiguration` 메서드를 사용하여 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder)에 구성을 적용합니다.
 
-[!code-csharp[Main](index/sample_snapshot//CommandLine/Program2.cs?highlight=11,15,19)]
+[!code-csharp[](index/sample_snapshot//CommandLine/Program2.cs?highlight=11,15,19)]
 
 ---
 
@@ -361,7 +361,7 @@ dotnet run -key1 value1 --key2 value2 /key3 value3
 
 다음 예제의 `GetSwitchMappings` 메서드는 명령줄 인수가 단일 대시(`-`) 키 접두사를 사용하고 선행 하위 키 접두사를 사용하지 않는 것을 허용합니다.
 
-[!code-csharp[Main](index/sample/CommandLine/Program.cs?highlight=10-19,32)]
+[!code-csharp[](index/sample/CommandLine/Program.cs?highlight=10-19,32)]
 
 `AddInMemoryCollection`에 제공된 사전은 명령줄 인수를 제공하지 않고 구성 값을 설정합니다. 다음 명령을 사용하여 앱을 실행합니다.
 
