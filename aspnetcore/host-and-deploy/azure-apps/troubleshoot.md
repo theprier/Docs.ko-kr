@@ -10,15 +10,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-apps/troubleshoot
-ms.openlocfilehash: 150603d17f3bed983f9871fe7665748a70177f89
-ms.sourcegitcommit: 9f758b1550fcae88ab1eb284798a89e6320548a5
+ms.openlocfilehash: 27a46446e9bf63e96eecc392e6d6863e27b34730
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="troubleshoot-aspnet-core-on-azure-app-service"></a>Azure 앱 서비스에서 ASP.NET Core 문제 해결
 
 [Luke Latham](https://github.com/guardrex)으로
+
+[!INCLUDE[Azure App Service Preview Notice](../../includes/azure-apps-preview-notice.md)]
 
 이 문서에서는 설명 ASP.NET Core를 진단 하는 방법에 Azure 앱 서비스의 진단 도구를 사용 하 여 응용 프로그램 시작 문제입니다. 추가 문제 해결 권장 사항을 참조 하세요. [Azure 앱 서비스 진단 개요](/azure/app-service/app-service-diagnostics) 및 [하는 방법: Azure 앱 서비스 앱 모니터링](/azure/app-service/web-sites-monitor) Azure 설명서에서.
 
@@ -96,14 +98,14 @@ ASP.NET Core 모듈 stdout 로그는 종종 응용 프로그램 이벤트 로그
 1. 검사는 **Modified** 최신 수정 날짜를 사용 하 여 로그인의 stdout 편집 하려면 연필 아이콘을 선택 합니다.
 1. 로그 파일을 열 때 오류가 표시 됩니다.
 
-**기억해 야 합니다.** Stdout 문제 해결이 완료 될 때의 로깅이 사용 안 함
+**중요!** Stdout 문제 해결이 완료 될 때의 로깅이 사용 안 함
 
 1. Kudu는에서 **진단 콘솔**, 경로에 return **사이트** > **wwwroot** 표시 하기 위해는 *web.config* 파일입니다. 열기는 **web.config** 연필 아이콘을 선택 하 여 다시 파일입니다.
 1. 설정 **stdoutLogEnabled** 를 `false`합니다.
 1. 선택 **저장** 파일을 저장 합니다.
 
 > [!WARNING]
-> Stdout 로그를 사용 하지 않도록 설정 하지 않으면 응용 프로그램 또는 서버 오류가 발생할 수 있습니다. 로그 파일 크기에 제한이 없음을 또는 로그 파일을 만들 수 있습니다.
+> Stdout 로그를 사용 하지 않도록 설정 하지 않으면 응용 프로그램 또는 서버 오류가 발생할 수 있습니다. 로그 파일 크기 또는 생성되는 로그 파일 수에 대한 제한은 없습니다.
 >
 > ASP.NET Core 응용 프로그램의 일상적인 로깅에 대 한 로그 파일 크기를 제한 하 고 로그를 회전 하는 로깅 라이브러리를 사용 합니다. 자세한 내용은 참조 [제 3 자 로깅 공급자](xref:fundamentals/logging/index#third-party-logging-providers)합니다.
 
@@ -158,7 +160,7 @@ Stdout 로깅을 활성화 하지 않으면 다음이 단계를 따르십시오.
 1. 응용 프로그램에 요청을 수행 합니다.
 1. 로그 스트림 데이터 내에서 오류 원인을 표시 됩니다.
 
-**기억해 야 합니다.** Stdout 문제 해결이 완료 될 때의 로깅이 사용 하지 않도록 설정 해야 합니다. 지침 참조는 [ASP.NET Core 모듈 stdout 로그](#aspnet-core-module-stdout-log) 섹션.
+**중요!** Stdout 문제 해결이 완료 될 때의 로깅이 사용 하지 않도록 설정 해야 합니다. 지침 참조는 [ASP.NET Core 모듈 stdout 로그](#aspnet-core-module-stdout-log) 섹션.
 
 실패 한 요청 추적 로그 (FREB 로그)를 보려면:
 
@@ -170,7 +172,7 @@ Stdout 로깅을 활성화 하지 않으면 다음이 단계를 따르십시오.
 자세한 내용은 참조 [Azure 앱 서비스의 웹 앱에 대 한 진단 로깅 사용](/azure/app-service/web-sites-enable-diagnostic-log)합니다.
 
 > [!WARNING]
-> Stdout 로그를 사용 하지 않도록 설정 하지 않으면 응용 프로그램 또는 서버 오류가 발생할 수 있습니다. 로그 파일 크기에 제한이 없음을 또는 로그 파일을 만들 수 있습니다.
+> Stdout 로그를 사용 하지 않도록 설정 하지 않으면 응용 프로그램 또는 서버 오류가 발생할 수 있습니다. 로그 파일 크기 또는 생성되는 로그 파일 수에 대한 제한은 없습니다.
 >
 > ASP.NET Core 응용 프로그램의 일상적인 로깅에 대 한 로그 파일 크기를 제한 하 고 로그를 회전 하는 로깅 라이브러리를 사용 합니다. 자세한 내용은 참조 [제 3 자 로깅 공급자](xref:fundamentals/logging/index#third-party-logging-providers)합니다.
 

@@ -9,11 +9,11 @@ ms.date: 01/26/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: performance/caching/middleware
-ms.openlocfilehash: 29ef3cf3d8bcd6b4ebbf08d831dc146e830fa1ac
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: e9a74d8f6c3945b1bc8c62d0ab21145a7c5717fb
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="response-caching-middleware-in-aspnet-core"></a>ASP.NET Core의 미들웨어 캐싱 응답
 
@@ -31,11 +31,11 @@ ms.lasthandoff: 02/11/2018
 
 `ConfigureServices`, 미들웨어 서비스 컬렉션에 추가 합니다.
 
-[!code-csharp[Main](middleware/sample/Startup.cs?name=snippet1&highlight=3)]
+[!code-csharp[](middleware/sample/Startup.cs?name=snippet1&highlight=3)]
 
 사용 하 여 미들웨어를 사용 하도록 응용 프로그램 구성에서 `UseResponseCaching` 요청 처리 파이프라인에 미들웨어를 추가 하는 확장 메서드를 합니다. 샘플 응용 프로그램 추가 [ `Cache-Control` ](https://tools.ietf.org/html/rfc7234#section-5.2) 헤더를 최대 10 초 동안 캐시 가능한 응답을 캐시 하는 응답입니다. 샘플에서 보내기는 [ `Vary` ](https://tools.ietf.org/html/rfc7231#section-7.1.4) 를 경우에만 캐시 된 응답을 처리 하는 미들웨어를 구성 하는 헤더는 [ `Accept-Encoding` ](https://tools.ietf.org/html/rfc7231#section-5.3.4) 이후의 요청 헤더의 일치 하는 원래 요청 합니다.
 
-[!code-csharp[Main](middleware/sample/Startup.cs?name=snippet2&highlight=3,7-12)]
+[!code-csharp[](middleware/sample/Startup.cs?name=snippet2&highlight=3,7-12)]
 
 응답의 캐싱 미들웨어는만 200 (정상) 상태 코드가 서버 응답을 캐시 합니다. 포함 하 여 모든 다른 응답 [오류 페이지](xref:fundamentals/error-handling), 미들웨어에서 무시 됩니다.
 
@@ -125,10 +125,10 @@ if (responseCachingFeature != null)
 * 요청 메서드가 GET 또는 HEAD 이어야 합니다.
 * 터미널 미들웨어와 같은 [정적 파일 미들웨어](xref:fundamentals/static-files), 응답 캐싱 미들웨어 하기 전에 응답을 처리 해야 합니다.
 * `Authorization` 헤더 없어야 합니다.
-* `Cache-Control`헤더 매개 변수는 유효 해야 하 고 응답을 표시 되어야 합니다 `public` 표시 되어 있지 `private`합니다.
+* `Cache-Control` 헤더 매개 변수는 유효 해야 하 고 응답을 표시 되어야 합니다 `public` 표시 되어 있지 `private`합니다.
 * `Pragma: no-cache` 헤더 없어야 하는 경우는 `Cache-Control` 헤더로 존재 하지는 `Cache-Control` 헤더 재정의 `Pragma` 있는 경우 헤더입니다.
 * `Set-Cookie` 헤더 없어야 합니다.
-* `Vary`헤더 매개 변수는 유효 하 고 같지 않음 이어야 `*`합니다.
+* `Vary` 헤더 매개 변수는 유효 하 고 같지 않음 이어야 `*`합니다.
 * `Content-Length` 헤더 값 (하는 경우 설정)는 응답 본문의 크기와 일치 해야 합니다.
 * [IHttpSendFileFeature](/aspnet/core/api/microsoft.aspnetcore.http.features.ihttpsendfilefeature) 사용 되지 않습니다.
 * 응답에 지정 된 대로 오래 된 않아야는 `Expires` 헤더 및 `max-age` 및 `s-maxage` 지시문을 캐시 합니다.

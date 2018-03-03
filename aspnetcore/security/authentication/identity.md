@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity
-ms.openlocfilehash: 0c05c636a991371b1a1feec88b5393724a6dc629
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 8cbf002a9280650a08ae8d49b5b6d23bafb8be18
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>ASP.NET Core에 Id 소개
 
@@ -61,23 +61,23 @@ ASP.NET Core Id 사용자 이름, 암호 및 프로필 데이터를 저장 하�
 
     # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
     
-    [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,11-28,30-39)]
+    [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,11-28,30-39)]
     
     이러한 서비스를 통해 응용 프로그램에서 사용할 수 [종속성 주입](xref:fundamentals/dependency-injection)합니다.
     
-    Identity를 호출 하 여 응용 프로그램에 대해 사용할 `UseAuthentication` 에 `Configure` 메서드. `UseAuthentication`인증 추가 [미들웨어](xref:fundamentals/middleware/index) 요청 파이프라인을 합니다.
+    Identity를 호출 하 여 응용 프로그램에 대해 사용할 `UseAuthentication` 에 `Configure` 메서드. `UseAuthentication` 인증 추가 [미들웨어](xref:fundamentals/middleware/index) 요청 파이프라인을 합니다.
     
-    [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configure&highlight=17)]
+    [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configure&highlight=17)]
     
     # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
     
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,13-34)]
+    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,13-34)]
     
     이러한 서비스를 통해 응용 프로그램에서 사용할 수 [종속성 주입](xref:fundamentals/dependency-injection)합니다.
     
-    Identity를 호출 하 여 응용 프로그램에 대해 사용할 `UseIdentity` 에 `Configure` 메서드. `UseIdentity`쿠키 기반 인증 추가 [미들웨어](xref:fundamentals/middleware/index) 요청 파이프라인을 합니다.
+    Identity를 호출 하 여 응용 프로그램에 대해 사용할 `UseIdentity` 에 `Configure` 메서드. `UseIdentity` 쿠키 기반 인증 추가 [미들웨어](xref:fundamentals/middleware/index) 요청 파이프라인을 합니다.
         
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configure&highlight=21)]
+    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configure&highlight=21)]
     
     ---
      
@@ -100,7 +100,7 @@ ASP.NET Core Id 사용자 이름, 암호 및 프로필 데이터를 저장 하�
     
     사용자가 클릭할 때는 **등록** 링크는 ``Register`` 에서 동작이 호출 될 ``AccountController``합니다. ``Register`` 동작 호출 하 여 사용자를 만듭니다 `CreateAsync` 에 `_userManager` 개체 (제공 된 ``AccountController`` 종속성 주입 하 여):
  
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_register&highlight=11)]
+    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_register&highlight=11)]
 
     에 대 한 호출 사용자가 로그인 된 사용자가 성공적으로 만들어진 경우 ``_signInManager.SignInAsync``합니다.
 
@@ -112,7 +112,7 @@ ASP.NET Core Id 사용자 이름, 암호 및 프로필 데이터를 저장 하�
 
     ``Login`` 동작 호출 ``PasswordSignInAsync`` 에 ``_signInManager`` 개체 (제공 된 ``AccountController`` 종속성 주입 하 여).
 
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_login&highlight=13-14)]
+    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_login&highlight=13-14)]
  
     기본 ``Controller`` 클래스가 노출 한 ``User`` 컨트롤러 메서드에서 액세스할 수 있는 속성입니다. 예를 들어, 열거할 수 있습니다 `User.Claims` 을 권한 부여 결정을 내립니다. 자세한 내용은 참조 [권한 부여](xref:security/authorization/index)합니다.
  
@@ -120,22 +120,22 @@ ASP.NET Core Id 사용자 이름, 암호 및 프로필 데이터를 저장 하�
  
     클릭 하 고 **로그 아웃** 호출 연결는 `LogOut` 동작 합니다.
  
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_logout&highlight=7)]
+    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_logout&highlight=7)]
  
     앞의 코드 호출 위에 `_signInManager.SignOutAsync` 메서드. `SignOutAsync` 메서드 쿠키에 저장 하는 사용자의 클레임을 지웁니다.
  
 <a name="pw"></a>
 6.  구성입니다.
 
-    Id는 응용 프로그램의 시작 클래스에서 재정의 될 수 있는 몇 가지 기본 동작에 있습니다. `IdentityOptions`기본 동작을 사용 하는 경우 구성할 필요가 없습니다. 다음 코드는 여러 가지 암호 강도 옵션을 설정합니다.
+    Id는 응용 프로그램의 시작 클래스에서 재정의 될 수 있는 몇 가지 기본 동작에 있습니다. `IdentityOptions` 기본 동작을 사용 하는 경우 구성할 필요가 없습니다. 다음 코드는 여러 가지 암호 강도 옵션을 설정합니다.
 
     # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
     
-    [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,11-28,30-39)]
+    [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,11-28,30-39)]
     
     # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
     
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=13-34)]
+    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=13-34)]
 
     ---
     
@@ -170,13 +170,13 @@ ASP.NET Core Id 사용자 이름, 암호 및 프로필 데이터를 저장 하�
 
     # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 
-    명령 창을 열고 프로젝트의 루트 디렉터리로 이동 포함 된 디렉터리는 `.csproj` 파일입니다. 실행 된 `dotnet run` 명령을 앱을 실행 하려면:
+    명령 창을 열고 프로젝트의 루트 디렉터리로 이동 포함 된 디렉터리는 `.csproj` 파일입니다. 실행의 [실행 dotnet](/dotnet/core/tools/dotnet-run) 명령을 앱을 실행 하려면:
 
     ```cs
     dotnet run 
     ```
 
-    검색의 출력에 지정 된 URL의 `dotnet run` 명령입니다. URL 가리키는 `localhost` 생성 된 포트 번호를 사용 합니다. 탐색 하 고 **에 대 한** 페이지. 인증 된 사용자만 액세스할 수 있습니다는 **에 대 한** 페이지 이제 하므로 ASP.NET에 로그인 하거나 등록 로그인 페이지로 리디렉션됩니다.
+    검색의 출력에 지정 된 URL의 [dotnet 실행](/dotnet/core/tools/dotnet-run) 명령입니다. URL 가리키는 `localhost` 생성 된 포트 번호를 사용 합니다. 탐색 하 고 **에 대 한** 페이지. 인증 된 사용자만 액세스할 수 있습니다는 **에 대 한** 페이지 이제 하므로 ASP.NET에 로그인 하거나 등록 로그인 페이지로 리디렉션됩니다.
 
     ---
 
@@ -186,11 +186,11 @@ Id 시스템에 대 한 기본 참조 어셈블리는 `Microsoft.AspNetCore.Iden
 
 이러한 종속성 ASP.NET Core 응용 프로그램의 Id 시스템을 사용 하려면 필요 합니다.
 
-* `Microsoft.AspNetCore.Identity.EntityFrameworkCore`-Identity Entity Framework Core 사용 시 필요한 형식을 포함 합니다.
+* `Microsoft.AspNetCore.Identity.EntityFrameworkCore` -Identity Entity Framework Core 사용 시 필요한 형식을 포함 합니다.
 
-* `Microsoft.EntityFrameworkCore.SqlServer`-Entity Framework Core는 SQL Server와 같은 관계형 데이터베이스에 대 한 Microsoft의 권장 되는 데이터 액세스 기술입니다. 테스트를 위해 사용할 수 있습니다 `Microsoft.EntityFrameworkCore.InMemory`합니다.
+* `Microsoft.EntityFrameworkCore.SqlServer` -Entity Framework Core는 SQL Server와 같은 관계형 데이터베이스에 대 한 Microsoft의 권장 되는 데이터 액세스 기술입니다. 테스트를 위해 사용할 수 있습니다 `Microsoft.EntityFrameworkCore.InMemory`합니다.
 
-* `Microsoft.AspNetCore.Authentication.Cookies`-앱이 쿠키 기반 인증을 사용할 수 있도록 하는 미들웨어입니다.
+* `Microsoft.AspNetCore.Authentication.Cookies` -앱이 쿠키 기반 인증을 사용할 수 있도록 하는 미들웨어입니다.
 
 ## <a name="migrating-to-aspnet-core-identity"></a>ASP.NET Core Id로 마이그레이션
 
@@ -205,4 +205,4 @@ Id 시스템에 대 한 기본 참조 어셈블리는 `Microsoft.AspNetCore.Iden
 * [인증 및 ID 마이그레이션](xref:migration/identity)
 * [계정 확인 및 암호 복구](xref:security/authentication/accconfirm)
 * [SMS를 사용한 2단계 인증](xref:security/authentication/2fa)
-* [Facebook, Google 및 기타 외부 공급자를 통해 인증 사용](xref:security/authentication/social/index)
+* [Facebook, Google, 및 외부 공급자 인증](xref:security/authentication/social/index)

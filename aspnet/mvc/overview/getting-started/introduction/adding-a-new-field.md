@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-new-field
 msc.type: authoredcontent
-ms.openlocfilehash: 7339f6658ede16e79d19762bd6636917fe4de85f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 453fbf68aa2f3a1d9ea708355c06c53d4f1eabd0
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/02/2018
 ---
 <a name="adding-a-new-field"></a>새 필드 추가
 ====================
@@ -76,7 +76,7 @@ Visual Studio가 열릴는 *Configuration.cs* 파일입니다. 대체는 `Seed` 
 > 
 > [!code-csharp[Main](adding-a-new-field/samples/sample4.cs)]
 > 
-> 이 코드에서는 titiles는 고유한 것을 가정 합니다. 중복 된 제목에 수동으로 추가한 경우에 마이그레이션을 수행 하는 다음에 다음과 같은 예외를 얻을 수 있습니다.   
+> 이 코드는 타이틀은 고유한 것을 가정 합니다. 중복 된 제목에 수동으로 추가한 경우에 마이그레이션을 수행 하는 다음에 다음과 같은 예외를 얻을 수 있습니다.   
 >   
 >  *시퀀스에 요소가 둘 이상*  
 >   
@@ -144,7 +144,7 @@ Code First 마이그레이션을에 다른 클래스 파일을 만듭니다는 *
 
 오류를 해결하는 몇 가지 방법이 있습니다.
 
-1. Entity Framework에서 새 모델 클래스 스키마에 따라 데이터베이스를 자동으로 삭제하고 다시 만들도록 합니다. 이 방법은 테스트 데이터베이스에서 활발한 개발을 수행할 때 개발 주기의 초기 단계에서 매우 편리하며 신속하게 모델 및 데이터베이스 스키마를 함께 개발할 수 있습니다. 데이터베이스의 기존 데이터 손실의 단점은 하지만입니다-하므로 있습니다 *하지 않는* 는 프로덕션 데이터베이스에서이 방법을 사용! 응용 프로그램을 개발 하는 효율적인 방법으로 방식은를 자동으로 테스트 데이터로 데이터베이스를 시드하는 이니셜라이저를 사용 합니다. Entity Framework 데이터베이스 이니셜라이저에 대 한 자세한 내용은 참조 하십시오. [ASP.NET MVC/엔터티 프레임 워크 자습서](../getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)합니다.
+1. Entity Framework에서 새 모델 클래스 스키마에 따라 데이터베이스를 자동으로 삭제하고 다시 만들도록 합니다. 이 방법은 테스트 데이터베이스에서 활발한 개발을 수행할 때 개발 주기의 초기 단계에서 매우 편리하며 신속하게 모델 및 데이터베이스 스키마를 함께 개발할 수 있습니다. 데이터베이스의 기존 데이터 손실의 단점은 하지만입니다-하므로 있습니다 *하지 않는* 는 프로덕션 데이터베이스에서이 방법을 사용! 테스트 데이터로 데이터베이스를 자동으로 시드하는 데 이니셜라이저를 사용하는 것은 종종 응용 프로그램을 개발하는 효율적인 방법입니다. Entity Framework 데이터베이스 이니셜라이저에 대 한 자세한 내용은 참조 하십시오. [ASP.NET MVC/엔터티 프레임 워크 자습서](../getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)합니다.
 2. 모델 클래스와 일치하도록 기존 데이터베이스의 스키마를 명시적으로 수정합니다. 이 방법의 장점은 데이터를 유지한다는 점입니다. 이러한 변경을 수동으로 수행하거나 데이터베이스 변경 스크립트를 만들어 수행할 수 있습니다.
 3. Code First 마이그레이션을 사용하여 데이터베이스 스키마를 업데이트합니다.
 

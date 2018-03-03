@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/configuration
-ms.openlocfilehash: f258e12a95770909bff24fd5dd3611324179596f
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: e1ee582072c88542565c5cb860e157afe137f9f0
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="migrating-configuration"></a>구성 마이그레이션
 
@@ -31,7 +31,7 @@ ASP.NET Core 더 이상 사용 하지는 *Global.asax* 및 *web.config* 이전 �
 
 ASP.NET Core 일부만 마이그레이션된 프로젝트와 시작 되며이 문서에 대 한 [이전 문서](mvc.md)합니다. 구성 설정, 다음 생성자 및 속성을 추가 하는 *Startup.cs* 프로젝트의 루트에 있는 파일:
 
-[!code-csharp[Main](configuration/samples/WebApp1/src/WebApp1/Startup.cs?range=11-21)]
+[!code-csharp[](configuration/samples/WebApp1/src/WebApp1/Startup.cs?range=11-21)]
 
 이 시점에서 즉 참고는 *Startup.cs* 파일에 다음 추가 해야 하는 대로 컴파일되지 않습니다 `using` 문:
 
@@ -47,7 +47,7 @@ using Microsoft.Extensions.Configuration;
 
 ASP.NET MVC 프로젝트 진행에 필요한 데이터베이스 연결 문자열을 포함 *web.config*에 `<connectionStrings>` 요소입니다. ASP.NET Core 프로젝트 진행에 하겠습니다에이 정보를 저장 하는 *appsettings.json* 파일입니다. 열기 *appsettings.json*, 다음을 이미 포함 하는 것을 확인 합니다.
 
-[!code-json[Main](../migration/configuration/samples/WebApp1/src/WebApp1/appsettings.json?highlight=4)]
+[!code-json[](../migration/configuration/samples/WebApp1/src/WebApp1/appsettings.json?highlight=4)]
 
 
 위에 표시 하는 강조 표시 된 줄에서 데이터베이스의 이름을 변경 **_CHANGE_ME** 데이터베이스의 이름입니다.

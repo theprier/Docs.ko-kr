@@ -1,7 +1,7 @@
 ---
 title: "ASP.NET Core의 razor 페이지 권한 부여 규칙"
 author: guardrex
-description: "시작 시 사용자가 권한을 부여 하 고 익명 사용자가 개별 페이지나 페이지의 하위 폴더에 액세스할 수 있도록 하는 규칙을 사용 하 여 페이지에 대 한 액세스를 제어 하는 방법에 알아봅니다."
+description: "사용자가 권한을 부여 하 고 익명 사용자가 페이지나 페이지의 하위 폴더에 액세스할 수 있도록 하는 규칙을 사용 하 여 페이지에 대 한 액세스를 제어 하는 방법에 알아봅니다."
 manager: wpickett
 ms.author: riande
 ms.date: 10/27/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/razor-pages-authorization
-ms.openlocfilehash: 2bad6e1cc654b972206af03f99160628f81e026f
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: bbef653c6cf968527e753df9c853f5972640cc03
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="razor-pages-authorization-conventions-in-aspnet-core"></a>ASP.NET Core의 razor 페이지 권한 부여 규칙
 
@@ -27,7 +27,7 @@ Razor 페이지 응용 프로그램에서 액세스를 제어 하는 한 가지 
 
 사용 하 여는 [AuthorizePage](/dotnet/api/microsoft.extensions.dependencyinjection.pageconventioncollectionextensions.authorizepage) 규칙을 통해 [AddRazorPagesOptions](/dotnet/api/microsoft.extensions.dependencyinjection.mvcrazorpagesmvcbuilderextensions.addrazorpagesoptions) 추가 하는 [AuthorizeFilter](/dotnet/api/microsoft.aspnetcore.mvc.authorization.authorizefilter) 지정된 된 경로에 대 한 페이지에:
 
-[!code-csharp[Main](razor-pages-authorization/sample/Startup.cs?name=snippet1&highlight=2,4)]
+[!code-csharp[](razor-pages-authorization/sample/Startup.cs?name=snippet1&highlight=2,4)]
 
 지정한 경로가 뷰 엔진 경로 슬래시를 포함 하 고 확장명 없이 Razor 페이지 루트 상대 경로 보여 줍니다.
 
@@ -37,7 +37,7 @@ Razor 페이지 응용 프로그램에서 액세스를 제어 하는 한 가지 
 
 사용 하 여는 [AuthorizeFolder](/dotnet/api/microsoft.extensions.dependencyinjection.pageconventioncollectionextensions.authorizefolder) 규칙을 통해 [AddRazorPagesOptions](/dotnet/api/microsoft.extensions.dependencyinjection.mvcrazorpagesmvcbuilderextensions.addrazorpagesoptions) 추가 하는 [AuthorizeFilter](/dotnet/api/microsoft.aspnetcore.mvc.authorization.authorizefilter) 의 모든 페이지에 지정된 된 경로에 폴더:
 
-[!code-csharp[Main](razor-pages-authorization/sample/Startup.cs?name=snippet1&highlight=2,5)]
+[!code-csharp[](razor-pages-authorization/sample/Startup.cs?name=snippet1&highlight=2,5)]
 
 지정한 경로가 뷰 엔진 경로 Razor 페이지 루트의 상대 경로 보여 줍니다.
 
@@ -47,7 +47,7 @@ Razor 페이지 응용 프로그램에서 액세스를 제어 하는 한 가지 
 
 사용 하 여는 [AllowAnonymousToPage](/dotnet/api/microsoft.extensions.dependencyinjection.pageconventioncollectionextensions.allowanonymoustopage) 규칙을 통해 [AddRazorPagesOptions](/dotnet/api/microsoft.extensions.dependencyinjection.mvcrazorpagesmvcbuilderextensions.addrazorpagesoptions) 추가 하는 [AllowAnonymousFilter](/dotnet/api/microsoft.aspnetcore.mvc.authorization.allowanonymousfilter) 지정된 된 경로에 페이지에:
 
-[!code-csharp[Main](razor-pages-authorization/sample/Startup.cs?name=snippet1&highlight=2,6)]
+[!code-csharp[](razor-pages-authorization/sample/Startup.cs?name=snippet1&highlight=2,6)]
 
 지정한 경로가 뷰 엔진 경로 슬래시를 포함 하 고 확장명 없이 Razor 페이지 루트 상대 경로 보여 줍니다.
 
@@ -55,7 +55,7 @@ Razor 페이지 응용 프로그램에서 액세스를 제어 하는 한 가지 
 
 사용 하 여는 [AllowAnonymousToFolder](/dotnet/api/microsoft.extensions.dependencyinjection.pageconventioncollectionextensions.allowanonymoustofolder) 규칙을 통해 [AddRazorPagesOptions](/dotnet/api/microsoft.extensions.dependencyinjection.mvcrazorpagesmvcbuilderextensions.addrazorpagesoptions) 추가 하는 [AllowAnonymousFilter](/dotnet/api/microsoft.aspnetcore.mvc.authorization.allowanonymousfilter) 의 모든 페이지에 지정된 된 경로에 폴더:
 
-[!code-csharp[Main](razor-pages-authorization/sample/Startup.cs?name=snippet1&highlight=2,7)]
+[!code-csharp[](razor-pages-authorization/sample/Startup.cs?name=snippet1&highlight=2,7)]
 
 지정한 경로가 뷰 엔진 경로 Razor 페이지 루트의 상대 경로 보여 줍니다.
 

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/1x-to-2x/identity-2x
-ms.openlocfilehash: dd48b2b027d22b570aa182e748ca91738e935f49
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: f0c29e6b4faa5c9d574726fc960f0c7c60092757
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="migrating-authentication-and-identity-to-aspnet-core-20"></a>마이그레이션 인증 및 ASP.NET 코어 2.0 Id
 
@@ -271,11 +271,11 @@ services.AddAuthentication(options =>
 
 예를 들어 1.x 프로젝트 참조는 `Authentication` 속성:
 
-[!code-csharp[Main](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Controllers/AccountController.cs?name=snippet_AuthenticationProperty)]
+[!code-csharp[](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Controllers/AccountController.cs?name=snippet_AuthenticationProperty)]
 
 2.0 프로젝트에서 가져올는 `Microsoft.AspNetCore.Authentication` 네임 스페이스를 삭제 하 고는 `Authentication` 속성 참조:
 
-[!code-csharp[Main](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/Controllers/AccountController.cs?name=snippet_AuthenticationProperty)]
+[!code-csharp[](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/Controllers/AccountController.cs?name=snippet_AuthenticationProperty)]
 
 <a name="windows-auth-changes"></a>
 
@@ -301,15 +301,15 @@ services.AddAuthentication(IISDefaults.AuthenticationScheme);
 
 예를 들어 1.x 프로젝트 사용 [생성자 삽입](xref:mvc/controllers/dependency-injection#constructor-injection) 전달 하는 `IdentityCookieOptions` 매개 변수를 *AccountController.cs*합니다. 외부 쿠키 인증 체계는에서 제공된 된 인스턴스에 액세스 합니다.
 
-[!code-csharp[Main](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Controllers/AccountController.cs?name=snippet_AccountControllerConstructor&highlight=4,11)]
+[!code-csharp[](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Controllers/AccountController.cs?name=snippet_AccountControllerConstructor&highlight=4,11)]
 
 앞에서 언급 한 생성자 삽입 2.0 프로젝트에서 불필요 하 게 만드는 및 `_externalCookieScheme` 필드를 삭제할 수 있습니다.
 
-[!code-csharp[Main](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/Controllers/AccountController.cs?name=snippet_AccountControllerConstructor)]
+[!code-csharp[](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/Controllers/AccountController.cs?name=snippet_AccountControllerConstructor)]
 
 `IdentityConstants.ExternalScheme` 상수를 직접 사용할 수 있습니다.
 
-[!code-csharp[Main](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/Controllers/AccountController.cs?name=snippet_AuthenticationProperty)]
+[!code-csharp[](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/Controllers/AccountController.cs?name=snippet_AuthenticationProperty)]
 
 <a name="navigation-properties"></a>
 
@@ -371,30 +371,30 @@ protected override void OnModelCreating(ModelBuilder builder)
 ## <a name="replace-getexternalauthenticationschemes"></a>GetExternalAuthenticationSchemes 바꾸기
 동기 메서드로 `GetExternalAuthenticationSchemes` 비동기 버전 제거 되었습니다. 1.x 프로젝트 다음 코드를 있는 *ManageController.cs*:
 
-[!code-csharp[Main](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Controllers/ManageController.cs?name=snippet_GetExternalAuthenticationSchemes)]
+[!code-csharp[](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Controllers/ManageController.cs?name=snippet_GetExternalAuthenticationSchemes)]
 
 이 메서드의 나타납니다 *Login.cshtml* 너무:
 
-[!code-cshtml[Main](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Views/Account/Login.cshtml?range=62,75-84)]
+[!code-cshtml[](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Views/Account/Login.cshtml?range=62,75-84)]
 
 2.0 프로젝트에서 사용 하 여는 `GetExternalAuthenticationSchemesAsync` 메서드:
 
-[!code-csharp[Main](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/Controllers/ManageController.cs?name=snippet_GetExternalAuthenticationSchemesAsync)]
+[!code-csharp[](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/Controllers/ManageController.cs?name=snippet_GetExternalAuthenticationSchemesAsync)]
 
 *Login.cshtml*, `AuthenticationScheme` 액세스 속성은 `foreach` 루프 변경 `Name`:
 
-[!code-cshtml[Main](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/Views/Account/Login.cshtml?range=62,75-84)]
+[!code-cshtml[](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/Views/Account/Login.cshtml?range=62,75-84)]
 
 <a name="property-change"></a>
 
 ## <a name="manageloginsviewmodel-property-change"></a>ManageLoginsViewModel 속성 변경
 A `ManageLoginsViewModel` 개체가 사용 되는 `ManageLogins` 의 동작 *ManageController.cs*합니다. 1.x 프로젝트에서 개체의 `OtherLogins` 속성 반환 형식이 `IList<AuthenticationDescription>`합니다. 이 반환 형식은 가져오기를 `Microsoft.AspNetCore.Http.Authentication`:
 
-[!code-csharp[Main](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Models/ManageViewModels/ManageLoginsViewModel.cs?name=snippet_ManageLoginsViewModel&highlight=2,11)]
+[!code-csharp[](../1x-to-2x/samples/AspNetCoreDotNetCore1App/AspNetCoreDotNetCore1App/Models/ManageViewModels/ManageLoginsViewModel.cs?name=snippet_ManageLoginsViewModel&highlight=2,11)]
 
 2.0 프로젝트에서 반환 형식으로 변경 `IList<AuthenticationScheme>`합니다. 이 새로운 반환 형식을 바꿀 필요는 `Microsoft.AspNetCore.Http.Authentication` 를 가져오려면는 `Microsoft.AspNetCore.Authentication` 가져오기.
 
-[!code-csharp[Main](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/Models/ManageViewModels/ManageLoginsViewModel.cs?name=snippet_ManageLoginsViewModel&highlight=2,11)]
+[!code-csharp[](../1x-to-2x/samples/AspNetCoreDotNetCore2App/AspNetCoreDotNetCore2App/Models/ManageViewModels/ManageLoginsViewModel.cs?name=snippet_ManageLoginsViewModel&highlight=2,11)]
 
 <a name="additional-resources"></a>
 

@@ -9,11 +9,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/secure-data
-ms.openlocfilehash: e186adef2e72f852543a92ddce0e82be2a3bcd12
-ms.sourcegitcommit: 809ee4baf8bf7b4cae9e366ecae29de1037d2bbb
+ms.openlocfilehash: 5acb65be078fd39b9e7a17ce2d8167b8f7b7db22
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>권한 부여에 의해 보호 되는 사용자 데이터와 ASP.NET Core 응용 프로그램 만들기
 
@@ -47,7 +47,7 @@ ms.lasthandoff: 02/15/2018
 
 응용 프로그램에서 만들어진 [스 캐 폴딩](xref:tutorials/first-mvc-app-xplat/adding-model#scaffold-the-moviecontroller) 다음 `Contact` 모델:
 
-[!code-csharp[Main](secure-data/samples/starter2/Models/Contact.cs?name=snippet1)]
+[!code-csharp[](secure-data/samples/starter2/Models/Contact.cs?name=snippet1)]
 
 이 샘플에 다음 권한 부여 처리기를 포함 되어 있습니다.
 
@@ -85,7 +85,7 @@ ms.lasthandoff: 02/15/2018
 
 ASP.NET을 사용 하 여 [Identity](xref:security/authentication/identity) 가 데이터를 하지만 다른 사용자가 데이터가 아닌 사용자 ID 사용자를 편집할 수 있습니다. 추가 `OwnerID` 및 `ContactStatus` 에 `Contact` 모델:
 
-[!code-csharp[Main](secure-data/samples/final2/Models/Contact.cs?name=snippet1&highlight=5-6,16-999)]
+[!code-csharp[](secure-data/samples/final2/Models/Contact.cs?name=snippet1&highlight=5-6,16-999)]
 
 `OwnerID` 사용자의 id는 `AspNetUser` 테이블에 [Identity](xref:security/authentication/identity) 데이터베이스입니다. `Status` 필드 연락처 일반 사용자가 볼 수 있는지 여부를 결정 합니다.
 
@@ -100,11 +100,11 @@ dotnet ef database update
 
 추가 [IHostingEnvironment](/dotnet/api/microsoft.aspnetcore.hosting.ihostingenvironment) 를 `Startup`:
 
-[!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=snippet_env)]
+[!code-csharp[](secure-data/samples/final2/Startup.cs?name=snippet_env)]
 
 에 `ConfigureServices` 의 메서드는 *Startup.cs* 파일에서 추가 된 [RequireHttpsAttribute](/aspnet/core/api/microsoft.aspnetcore.mvc.requirehttpsattribute) 권한 부여 필터:
 
-[!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=snippet_SSL&highlight=10-999)]
+[!code-csharp[](secure-data/samples/final2/Startup.cs?name=snippet_SSL&highlight=10-999)]
 
 Visual Studio를 사용 하는 경우에 HTTPS를 활성화 합니다.
 
@@ -123,11 +123,11 @@ Visual Studio를 사용 하는 경우에 HTTPS를 활성화 합니다.
 * 주석으로 처리 `AuthorizeFolder` 및 `AuthorizePage`합니다.
 * 사용자를 인증 하도록 요구 하는 기본 인증 정책을 설정 합니다.
 
-[!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=snippet_defaultPolicy&highlight=23-27,31-999)]
+[!code-csharp[](secure-data/samples/final2/Startup.cs?name=snippet_defaultPolicy&highlight=23-27,31-999)]
 
 추가 [AllowAnonymous](/dotnet/api/microsoft.aspnetcore.authorization.allowanonymousattribute) 인덱스 및 연락처 정보, 페이지 익명 사용자가 등록 하기 전에 사이트에 대 한 정보를 가져올 수 있도록 합니다. 
 
-[!code-csharp[Main](secure-data/samples/final2/Pages/Index.cshtml.cs?name=snippet&highlight=2)]
+[!code-csharp[](secure-data/samples/final2/Pages/Index.cshtml.cs?name=snippet&highlight=2)]
 
 추가 `[AllowAnonymous]` 에 [LoginModel 및 RegisterModel](https://github.com/aspnet/templating/issues/238)합니다.
 
@@ -141,23 +141,23 @@ dotnet user-secrets set SeedUserPW <PW>
 
 업데이트 `Main` 테스트 암호를 사용 합니다.
 
-[!code-csharp[Main](secure-data/samples/final2/Program.cs?name=snippet)]
+[!code-csharp[](secure-data/samples/final2/Program.cs?name=snippet)]
 
 ### <a name="create-the-test-accounts-and-update-the-contacts"></a>테스트 계정을 만들고 연락처를 업데이트 합니다.
 
 업데이트는 `Initialize` 에서 메서드는 `SeedData` 테스트 계정을 만들 클래스:
 
-[!code-csharp[Main](secure-data/samples/final2/Data/SeedData.cs?name=snippet_Initialize)]
+[!code-csharp[](secure-data/samples/final2/Data/SeedData.cs?name=snippet_Initialize)]
 
 관리자 사용자 ID를 추가 하 고 `ContactStatus` 연락처에 있습니다. "제출 됨" 및 "Rejected" 하나의 연락처 중 하나를 확인 합니다. 사용자 ID 및 상태에 있는 모든 연락처를 추가 합니다. 하나만 표시 됩니다.
 
-[!code-csharp[Main](secure-data/samples/final2/Data/SeedData.cs?name=snippet1&highlight=17,18)]
+[!code-csharp[](secure-data/samples/final2/Data/SeedData.cs?name=snippet1&highlight=17,18)]
 
 ## <a name="create-owner-manager-and-administrator-authorization-handlers"></a>소유자, 관리자 및 관리자 권한 부여 처리기 만들기
 
 만들기는 `ContactIsOwnerAuthorizationHandler` 클래스에 *권한 부여* 폴더입니다. `ContactIsOwnerAuthorizationHandler` 리소스에 대해 작동 하는 사용자 리소스를 소유 하는지 확인 합니다.
 
-[!code-csharp[Main](secure-data/samples/final2/Authorization/ContactIsOwnerAuthorizationHandler.cs)]
+[!code-csharp[](secure-data/samples/final2/Authorization/ContactIsOwnerAuthorizationHandler.cs)]
 
 `ContactIsOwnerAuthorizationHandler` 호출 [컨텍스트. 성공](/dotnet/api/microsoft.aspnetcore.authorization.authorizationhandlercontext.succeed#Microsoft_AspNetCore_Authorization_AuthorizationHandlerContext_Succeed_Microsoft_AspNetCore_Authorization_IAuthorizationRequirement_) 현재 인증 된 사용자가 연락처 소유자 인 경우. 권한 부여 처리기 일반적으로:
 
@@ -172,19 +172,19 @@ dotnet user-secrets set SeedUserPW <PW>
 
 만들기는 `ContactManagerAuthorizationHandler` 클래스에 *권한 부여* 폴더입니다. `ContactManagerAuthorizationHandler` 리소스에 대해 작동 하는 사용자는 관리자를 확인 합니다. 관리자만 승인 하거나 (새롭거나 변경 된) 콘텐츠 변경 내용을 거부할 수 있습니다.
 
-[!code-csharp[Main](secure-data/samples/final2/Authorization/ContactManagerAuthorizationHandler.cs)]
+[!code-csharp[](secure-data/samples/final2/Authorization/ContactManagerAuthorizationHandler.cs)]
 
 ### <a name="create-an-administrator-authorization-handler"></a>관리자 권한 부여 처리기 만들기
 
 만들기는 `ContactAdministratorsAuthorizationHandler` 클래스에 *권한 부여* 폴더입니다. `ContactAdministratorsAuthorizationHandler` 리소스에 대해 작동 하는 사용자가 관리자를 확인 합니다. 관리자는 모든 작업을 수행할 수 있습니다.
 
-[!code-csharp[Main](secure-data/samples/final2/Authorization/ContactAdministratorsAuthorizationHandler.cs)]
+[!code-csharp[](secure-data/samples/final2/Authorization/ContactAdministratorsAuthorizationHandler.cs)]
 
 ## <a name="register-the-authorization-handlers"></a>인증 처리기를 등록 합니다.
 
 Entity Framework Core를 사용 하 여 서비스를 위해 등록 되어야 [종속성 주입](xref:fundamentals/dependency-injection) 를 사용 하 여 [AddScoped](/aspnet/core/api/microsoft.extensions.dependencyinjection.servicecollectionserviceextensions)합니다. `ContactIsOwnerAuthorizationHandler` ASP.NET Core를 사용 하 여 [Identity](xref:security/authentication/identity), Entity Framework Core 기반입니다. 가 사용할 수 있도록 서비스 컬렉션에 처리기를 등록 된 `ContactsController` 통해 [종속성 주입](xref:fundamentals/dependency-injection)합니다. 다음 코드의 끝에 추가 `ConfigureServices`:
 
-[!code-csharp[Main](secure-data/samples/final2/Startup.cs?name=ConfigureServices&highlight=41-999)]
+[!code-csharp[](secure-data/samples/final2/Startup.cs?name=ConfigureServices&highlight=41-999)]
 
 `ContactAdministratorsAuthorizationHandler` 및 `ContactManagerAuthorizationHandler` 단일 항목으로 추가 됩니다. EF를 사용 하지 않는 하 고 필요한 모든 정보는 되므로 singleton 하기가 `Context` 의 매개 변수는 `HandleRequirementAsync` 메서드.
 
@@ -196,13 +196,13 @@ Entity Framework Core를 사용 하 여 서비스를 위해 등록 되어야 [�
 
 검토는 `ContactOperations` 클래스입니다. 이 클래스는 요구 사항이 포함 되어 응용 프로그램이 지 원하는:
 
-[!code-csharp[Main](secure-data/samples/final2/Authorization/ContactOperations.cs)]
+[!code-csharp[](secure-data/samples/final2/Authorization/ContactOperations.cs)]
 
 ### <a name="create-a-base-class-for-the-razor-pages"></a>Razor 페이지에 대 한 기본 클래스를 만들으십시오
 
 Razor 페이지에 있는 연락처에 사용 되는 서비스를 포함 하는 기본 클래스를 만듭니다. 해당 초기화 코드가 한 위치에 배치 하는 기본 클래스:
 
-[!code-csharp[Main](secure-data/samples/final2/Pages/Contacts/DI_BasePageModel.cs)]
+[!code-csharp[](secure-data/samples/final2/Pages/Contacts/DI_BasePageModel.cs)]
 
 위의 코드:
 
@@ -214,32 +214,32 @@ Razor 페이지에 있는 연락처에 사용 되는 서비스를 포함 하는 
 
 사용 하도록 만들기 페이지 모델 생성자를 업데이트는 `DI_BasePageModel` 기본 클래스:
 
-[!code-csharp[Main](secure-data/samples/final2/Pages/Contacts/Create.cshtml.cs?name=snippetCtor)]
+[!code-csharp[](secure-data/samples/final2/Pages/Contacts/Create.cshtml.cs?name=snippetCtor)]
 
 업데이트는 `CreateModel.OnPostAsync` 메서드:
 
 * 사용자 ID를 추가 `Contact` 모델입니다.
 * 사용자에 게 연락처를 만들 수 있는 권한을 확인 하는 권한 부여 처리기를 호출 합니다.
 
-[!code-csharp[Main](secure-data/samples/final2/Pages/Contacts/Create.cshtml.cs?name=snippet_Create)]
+[!code-csharp[](secure-data/samples/final2/Pages/Contacts/Create.cshtml.cs?name=snippet_Create)]
 
 ### <a name="update-the-indexmodel"></a>업데이트는 IndexModel
 
 업데이트는 `OnGetAsync` 메서드 연락처만 승인 된 일반 사용자에 게 표시 됩니다.
 
-[!code-csharp[Main](secure-data/samples/final2/Pages/Contacts/Index.cshtml.cs?name=snippet)]
+[!code-csharp[](secure-data/samples/final2/Pages/Contacts/Index.cshtml.cs?name=snippet)]
 
 ### <a name="update-the-editmodel"></a>업데이트는 EditModel
 
 연락처를 소유 하 고 확인 하기 위해 인증 처리기를 추가 합니다. 리소스 권한 부여가 유효성을 검사 하기 때문에 `[Authorize]` 특성 충분 하지 않습니다. 앱에 특성 평가 되는 경우 리소스에 액세스할 수 없는 합니다. 리소스 기반 권한 부여는 명령적 이어야 합니다. 페이지 모델에 로드 하 여 또는 자체 처리기 내에서 로드 하 여 응용 프로그램에는 리소스에 대 한 액세스 검사를 수행 해야 합니다. 리소스 키를 전달 하 여 리소스에 액세스할 자주 있습니다.
 
-[!code-csharp[Main](secure-data/samples/final2/Pages/Contacts/Edit.cshtml.cs?name=snippet)]
+[!code-csharp[](secure-data/samples/final2/Pages/Contacts/Edit.cshtml.cs?name=snippet)]
 
 ### <a name="update-the-deletemodel"></a>업데이트는 DeleteModel
 
 Delete 페이지 모델 사용자에 게 연락처에 delete 권한을 확인 하려면 권한 부여 처리기를 사용 하도록 업데이트 합니다.
 
-[!code-csharp[Main](secure-data/samples/final2/Pages/Contacts/Delete.cshtml.cs?name=snippet)]
+[!code-csharp[](secure-data/samples/final2/Pages/Contacts/Delete.cshtml.cs?name=snippet)]
 
 ## <a name="inject-the-authorization-service-into-the-views"></a>인증 서비스는 뷰에 삽입
 
@@ -247,13 +247,13 @@ Delete 페이지 모델 사용자에 게 연락처에 delete 권한을 확인 �
 
 권한 부여 서비스를 주입는 *Views/_ViewImports.cshtml* 모든 보기에 사용할 수 있도록 파일:
 
-[!code-cshtml[Main](secure-data/samples/final2/Pages/_ViewImports.cshtml?highlight=6-9)]
+[!code-cshtml[](secure-data/samples/final2/Pages/_ViewImports.cshtml?highlight=6-9)]
 
 위의 태그 몇 개 추가 `using` 문.
 
 업데이트는 **편집** 및 **삭제** 에서는 정적으로 연결 *Pages/Contacts/Index.cshtml* 적절 한 사용 권한 가진 사용자만 렌더링 될 있도록:
 
-[!code-cshtml[Main](secure-data/samples/final2/Pages/Contacts/Index.cshtml?highlight=34-36,64-999)]
+[!code-cshtml[](secure-data/samples/final2/Pages/Contacts/Index.cshtml?highlight=34-36,64-999)]
 
 > [!WARNING]
 > 데이터를 변경할 수 있는 권한이 없는 사용자 로부터 링크 숨기기 응용 프로그램 보안을 설정 하지 않습니다. 링크 숨기기 하면 유효한 링크를 표시 하 여 응용 프로그램 보다 사용자 친화적인 있습니다. 사용자가 편집을 호출 하 고 자신이 소유 하지 않는 데이터에 대 한 작업을 삭제 하도록 생성 된 Url 해킹 수 있습니다. Razor 페이지 또는 컨트롤러는 데이터 보호를 위해 액세스 검사를 적용 해야 합니다.
@@ -262,11 +262,11 @@ Delete 페이지 모델 사용자에 게 연락처에 delete 권한을 확인 �
 
 관리자 승인 또는 연락처를 거부할 수 있도록 자세히 보기를 업데이트 합니다.
 
-[!code-cshtml[Main](secure-data/samples/final2/Pages/Contacts/Details.cshtml?range=48-999)]
+[!code-cshtml[](secure-data/samples/final2/Pages/Contacts/Details.cshtml?range=48-999)]
 
 세부 정보 페이지 모델을 업데이트 합니다.
 
-[!code-csharp[Main](secure-data/samples/final2/Pages/Contacts/Details.cshtml.cs?name=snippet)]
+[!code-csharp[](secure-data/samples/final2/Pages/Contacts/Details.cshtml.cs?name=snippet)]
 
 ## <a name="test-the-completed-app"></a>완성 된 응용 프로그램 테스트
 
@@ -311,7 +311,7 @@ Visual Studio 코드를 사용 하 여 이거나 HTTPS에 대 한 테스트 인�
 
 * 다음 추가 `Contact` 모델:
 
-  [!code-csharp[Main](secure-data/samples/starter2/Models/Contact.cs?name=snippet1)]
+  [!code-csharp[](secure-data/samples/starter2/Models/Contact.cs?name=snippet1)]
 
 * 스 캐 폴드 된 `Contact` 모델:
 
@@ -340,7 +340,7 @@ dotnet ef database update
 
 호출 `SeedData.Initialize` 에서 `Main`:
 
-[!code-csharp[Main](secure-data/samples/starter2/Program.cs?name=snippet)]
+[!code-csharp[](secure-data/samples/starter2/Program.cs?name=snippet)]
 
 응용 프로그램 데이터베이스 시드 있는지 테스트 합니다. DB 연락처의 모든 행이 있는 경우에 초기값 메서드 실행 되지 않습니다.
 

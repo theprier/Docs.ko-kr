@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-primary-key-configuration
-ms.openlocfilehash: 66631e46640e294c934aa563518509b96f5cd158
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: ff1c3aff3ea833081a25ea5fc4f2c2b65823f536
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="configure-the-aspnet-core-identity-primary-key-data-type"></a>ASP.NET Core Id 기본 키 데이터 형식 구성
 
@@ -23,15 +23,15 @@ ASP.NET Core Identity를 사용 하면 기본 키를 나타내는 데 사용 되
 
 1. 사용자 지정 구현을 만듭니다는 [IdentityUser](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.entityframeworkcore.identityuser-1) 클래스입니다. 사용자 개체를 만드는 데 사용할 유형을 나타냅니다. 다음 예제에서는 기본 `string` 형식으로 대체 됩니다 `Guid`합니다.
 
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Models/ApplicationUser.cs?highlight=4&range=7-13)]
+    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Models/ApplicationUser.cs?highlight=4&range=7-13)]
 
 1. 사용자 지정 구현을 만듭니다는 [IdentityRole](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.entityframeworkcore.identityrole-1) 클래스입니다. 역할 개체를 만드는 데 사용할 유형을 나타냅니다. 다음 예제에서는 기본 `string` 형식으로 대체 됩니다 `Guid`합니다.
     
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Models/ApplicationRole.cs?highlight=3&range=7-12)]
+    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Models/ApplicationRole.cs?highlight=3&range=7-12)]
     
 1. 사용자 지정 데이터베이스 컨텍스트 클래스를 만듭니다. Id에 사용 되는 Entity Framework 데이터베이스 컨텍스트 클래스에서 상속 합니다. `TUser` 및 `TRole` 인수는 각각 이전 단계에서 만든 사용자 지정 사용자 및 역할의 클래스를 참조 합니다. `Guid` 기본 키에 대 한 데이터 형식을 정의 합니다.
 
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Data/ApplicationDbContext.cs?highlight=3&range=9-26)]
+    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Data/ApplicationDbContext.cs?highlight=3&range=9-26)]
     
 1. 응용 프로그램의 시작 클래스에서 Id 서비스를 추가할 때 사용자 지정 데이터베이스 컨텍스트 클래스를 등록 합니다.
 
@@ -39,13 +39,13 @@ ASP.NET Core Identity를 사용 하면 기본 키를 나타내는 데 사용 되
     
     `AddEntityFrameworkStores` 이 메서드를 사용 하지 않는 한 `TKey` ASP.NET Core에서 수행한 것으로 인수 1.x 합니다. 분석 하 여 기본 키의 데이터 형식을 유추할는 `DbContext` 개체입니다.
     
-    [!code-csharp[Main](identity/sample/src/ASPNETv2-IdentityDemo-PrimaryKeysConfig/Startup.cs?highlight=6-8&range=25-37)]
+    [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo-PrimaryKeysConfig/Startup.cs?highlight=6-8&range=25-37)]
     
     # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
     
     `AddEntityFrameworkStores` 메서드에 `TKey` 기본 키의 데이터 형식을 나타내는 인수입니다.
     
-    [!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Startup.cs?highlight=9-11&range=39-55)]
+    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Startup.cs?highlight=9-11&range=39-55)]
     
     ---
 
@@ -53,4 +53,4 @@ ASP.NET Core Identity를 사용 하면 기본 키를 나타내는 데 사용 되
 
 구성 변경으로 완료 되 면 기본 키를 나타내는 속성에는 새 데이터 형식을 반영 합니다. 다음 예제에서는 MVC 컨트롤러의 속성에 액세스 하는 방법을 보여 줍니다.
 
-[!code-csharp[Main](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Controllers/AccountController.cs?name=snippet_GetCurrentUserId&highlight=6)]
+[!code-csharp[](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Controllers/AccountController.cs?name=snippet_GetCurrentUserId&highlight=6)]

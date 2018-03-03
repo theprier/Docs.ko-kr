@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-iis-errors-reference
-ms.openlocfilehash: 53b59045751153cd858e13769b5b42d5700e26d4
-ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
+ms.openlocfilehash: cd9f8fc310ba0258477db51aa416c03debadeffe
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="common-errors-reference-for-azure-app-service-and-iis-with-aspnet-core"></a>Azure 앱 서비스 및 ASP.NET 코어는 IIS에 대 한 일반적인 오류 참조
 
@@ -29,6 +29,8 @@ ms.lasthandoff: 02/03/2018
 * ASP.NET Core 모듈 stdout 로그 항목
 
 다음과 같은 일반적인 오류에 대 한 정보를 비교 합니다. 일치 하는 항목이 없는 경우 문제 해결 지시를 따릅니다.
+
+[!INCLUDE[Azure App Service Preview Notice](../includes/azure-apps-preview-notice.md)]
 
 ## <a name="installer-unable-to-obtain-vc-redistributable"></a>설치 관리자에서 VC++ 재배포 가능 패키지를 가져올 수 없음
 
@@ -186,7 +188,7 @@ ms.lasthandoff: 02/03/2018
 
 * **응용 프로그램 로그:** 응용 프로그램 ' MACHINE/WEBROOT/APPHOST / {어셈블리 (를) ' 실제 루트와 ' c:\\{PATH}\' 명령줄을 사용 하 여 프로세스를 만든 ' "c:\\{PATH}\{어셈블리}. { exe | dll} "' 하지만 충돌 또는 응답 하지 않았습니다 또는 ErrorCode 지정한 포트 '{PORT}'에서 수신 하지 않은 '0x800705b4' =
 
-* **ASP.NET Core 모듈 로그:**  로그 파일이 만들어졌고 정상 작동을 보여 줍니다.
+*  **ASP.NET Core 모듈 로그:**  로그 파일이 만들어졌고 정상 작동을 보여 줍니다.
 
 문제 해결
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/authentication-and-authorization-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 2a4b5ed8a712b061b4afdf5a3adc9378dd72b37f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9d7cbb9505afb6461ba4c2087d57e9ea0da38ede
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/02/2018
 ---
 <a name="authentication-and-authorization-in-aspnet-web-api"></a>인증 및 ASP.NET Web API의에서 권한 부여
 ====================
@@ -80,7 +80,7 @@ Web API에 인증 하는 호스트에서 발생 하는 가정 합니다. 웹 호
 
 기본 제공 권한 부여 필터를 제공 하는 web API [AuthorizeAttribute](https://msdn.microsoft.com/library/system.web.http.authorizeattribute.aspx)합니다. 이 필터는 사용자가 인증 여부를 확인 합니다. 그렇지 않으면 다음 작업을 호출 하지 않고 HTTP 상태 코드 401 (권한 없음)를 반환 합니다.
 
-컨트롤러 수준에서 전역적으로 또는 inidivual 작업 수준에서 필터를 적용할 수 있습니다.
+컨트롤러 수준에서 전역적으로 또는 개별 작업 수준에서 필터를 적용할 수 있습니다.
 
 **전역으로**: 모든 Web API 컨트롤러에 대 한 액세스를 제한 하려면 추가 **AuthorizeAttribute** 필터를 전역 필터 목록:
 

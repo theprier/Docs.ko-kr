@@ -12,24 +12,26 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-entity-framework-scaffolding-and-migrations
 msc.type: authoredcontent
-ms.openlocfilehash: 15db1589eb90739458b430c35cea38e93e3dec5a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 396859463446d95c58271c4b00fc950bcd0d539a
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/02/2018
 ---
-<a name="aspnet-mvc-4-entity-framework-scaffolding-and-migrations"></a>ASP.NET MVC 4 Entity Framework 스 캐 폴딩 및 마이그레이션
-====================
+# <a name="aspnet-mvc-4-entity-framework-scaffolding-and-migrations"></a>ASP.NET MVC 4 Entity Framework 스 캐 폴딩 및 마이그레이션
+
 으로 [웹 캠프 팀](https://twitter.com/webcamps)
 
-> ASP.NET MVC 4 컨트롤러 메서드에 익숙한 경우 또는 완료에서 &quot;도우미, 폼 및 유효성 검사&quot; 실습 랩 수 있는지, 만들 논리를 다양 한 업데이트, 목록 및 반복 되는 데이터 엔터티를 제거 합니다. 간에 응용 프로그램입니다. 있음은 물론, 하는 모델을 조작 하는 여러 클래스에 있으면 각 엔터티 작업 뿐만 아니라 각 보기에 대 한 POST 및 GET 작업 메서드를 작성 하는 시간이 많이 소요 될 수 있습니다.
-> 
-> 이 랩에서 자동으로 응용 프로그램의 CRUD (만들기, 읽기, 업데이트 및 삭제)의 기준선을 생성 하는 ASP.NET MVC 4 기반 구조를 사용 하는 방법에 설명 합니다. 시작 간단한 모델 클래스에서 코드의 한 줄도 작성 하지 않고, 만듭니다으로 모든 CRUD 작업의 모든 필요한 뷰를 포함 하는 컨트롤러. 빌드하고 간단한 솔루션을 실행 한 후 응용 프로그램 데이터베이스의 MVC 논리 및 데이터 조작에 대 한 보기와 함께 생성 해야 합니다.
-> 
-> 또한 전체 응용 프로그램 전반에 걸쳐 모델 업데이트를 수행 하려면 Entity Framework 마이그레이션을 사용 하는 것이 얼마나 쉬운지에 대해 설명 합니다. Entity Framework 마이그레이션 간단한 단계만 거치면 모델 변경 된 후 데이터베이스를 수정할 수 있습니다. 이러한 모든 염두에서,와 됩니다 구축 하 고 웹 응용 프로그램을 보다 효율적으로 관리할 수 ASP.NET MVC 4의 최신 기능을 활용 하기 위해.
+[웹 캠프 학습 키트를 다운로드 합니다.](https://aka.ms/webcamps-training-kit)
 
+ASP.NET MVC 4 컨트롤러 메서드에 익숙한 경우 또는 완료에서 &quot;도우미, 폼 및 유효성 검사&quot; 실습 랩 수 있는지, 만들 논리를 다양 한 업데이트, 목록 및 반복 되는 데이터 엔터티를 제거 합니다. 간에 응용 프로그램입니다. 있음은 물론, 하는 모델을 조작 하는 여러 클래스에 있으면 각 엔터티 작업 뿐만 아니라 각 보기에 대 한 POST 및 GET 작업 메서드를 작성 하는 시간이 많이 소요 될 수 있습니다.
 
-<a id="Objectives"></a>
+이 랩에서 자동으로 응용 프로그램의 CRUD (만들기, 읽기, 업데이트 및 삭제)의 기준선을 생성 하는 ASP.NET MVC 4 기반 구조를 사용 하는 방법에 설명 합니다. 시작 간단한 모델 클래스에서 코드의 한 줄도 작성 하지 않고, 만듭니다으로 모든 CRUD 작업의 모든 필요한 뷰를 포함 하는 컨트롤러. 빌드하고 간단한 솔루션을 실행 한 후 응용 프로그램 데이터베이스의 MVC 논리 및 데이터 조작에 대 한 보기와 함께 생성 해야 합니다.
+
+또한 전체 응용 프로그램 전반에 걸쳐 모델 업데이트를 수행 하려면 Entity Framework 마이그레이션을 사용 하는 것이 얼마나 쉬운지에 대해 설명 합니다. Entity Framework 마이그레이션 간단한 단계만 거치면 모델 변경 된 후 데이터베이스를 수정할 수 있습니다. 이러한 모든 염두에서,와 됩니다 구축 하 고 웹 응용 프로그램을 보다 효율적으로 관리할 수 ASP.NET MVC 4의 최신 기능을 활용 하기 위해.
+
+> [!NOTE]
+> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [Microsoft-웹/WebCampTrainingKit 릴리스](https://aka.ms/webcamps-training-kit)합니다. 이 랩에 특정 프로젝트에서 사용할 수는 [ASP.NET MVC 4 Entity Framework 스 캐 폴딩 및 마이그레이션을](https://github.com/Microsoft-Web/HOL-EntityFrameworkScaffoldingAndMigrations)합니다.
 
 <a id="Objectives"></a>
 ### <a name="objectives"></a>목표
@@ -291,7 +293,7 @@ ASP.NET MVC 스 캐 폴딩 데이터베이스 계층 상호 작용 하는 응용
 
     ![사용 조건 동의](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image23.png)
 
-    *사용 조건 동의*
+    사용 조건 동의
 5. 다운로드 및 설치 프로세스가 완료 될 때까지 기다립니다.
 
     ![설치 진행률](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image24.png)
@@ -301,13 +303,13 @@ ASP.NET MVC 스 캐 폴딩 데이터베이스 계층 상호 작용 하는 응용
 
     ![설치 완료](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image25.png)
 
-    *설치 완료*
+    설치 완료
 7. 클릭 **종료** 를 웹 플랫폼 설치 관리자를 닫습니다.
 8. Visual Studio Express for Web을 열려면로 이동는 **시작** 화면를 쓰기 시작할 &quot; **VS Express**&quot;, 클릭는 **VS Express for Web** 바둑판식 배열입니다.
 
     ![웹 타일에 대 한 VS Express](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image26.png)
 
-    *웹 타일에 대 한 VS Express*
+    웹 타일에 대 한 VS Express
 
 <a id="AppendixB"></a>
 

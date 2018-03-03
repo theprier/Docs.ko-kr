@@ -1,7 +1,7 @@
 ---
 title: "ASP.NET Core에서 분산된 캐시 사용"
 author: ardalis
-description: "클라우드 또는 서버 팜 환경에서 호스팅되는 경우에 특히 성능 및 ASP.NET Core 응용 프로그램의 확장성을 개선 하기 위해 분산 캐시를 사용 하는 방법에 알아봅니다."
+description: "ASP.NET Core 분산 응용 프로그램의 성능 및 확장성, 특히 클라우드 또는 서버 팜 환경 개선을 위한 캐싱을 사용 하는 방법에 알아봅니다."
 manager: wpickett
 ms.author: riande
 ms.date: 02/14/2017
@@ -9,15 +9,15 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/caching/distributed
-ms.openlocfilehash: 877a3e1f8c3282fdd67a389ddf5b4ff49dea3b42
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 635c61cbb72a6a9eb822307bbc80936ee73bedc8
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="working-with-a-distributed-cache-in-aspnet-core"></a>ASP.NET Core에서 분산된 캐시 사용
 
-으로 [Steve Smith](https://ardalis.com/)
+작성자: [Steve Smith](https://ardalis.com/)
 
 분산 된 캐시 클라우드 또는 서버 팜 환경에서 호스팅되는 경우에 특히 성능 및 ASP.NET Core 응용 프로그램의 확장성을 개선할 수 있습니다. 이 문서에서는 ASP.NET Core 기본 제공 분산된 캐시 추상화 및 구현 작업 하는 방법을 설명 합니다.
 
@@ -73,13 +73,13 @@ ms.lasthandoff: 02/01/2018
 
 인스턴스를 사용 하는 방법을 보여 주는 다음 예제 `IDistributedCache` 간단한 미들웨어 구성 요소에서:
 
-[!code-csharp[Main](./distributed/sample/src/DistCacheSample/StartTimeHeader.cs?highlight=15,18,21,27,28,29,30,31)]
+[!code-csharp[](./distributed/sample/src/DistCacheSample/StartTimeHeader.cs?highlight=15,18,21,27,28,29,30,31)]
 
 위의 코드에서 캐시 된 값이 읽고 이지만 작성 되지 않습니다. 이 샘플에서는 값은 경우에 설정 하는 서버, 시작 되 고 변경 되지 않습니다. 다중 서버 시나리오에서 가장 최근 시작 하도록 서버에 다른 서버에서 설정 된 모든 이전 값을 덮어쓰게 됩니다. `Get` 및 `Set` 메서드 사용은 `byte[]` 형식입니다. 따라서 문자열 값을 변환 해야 `Encoding.UTF8.GetString` (에 대 한 `Get`) 및 `Encoding.UTF8.GetBytes` (에 대 한 `Set`).
 
 다음 코드에서 *Startup.cs* 설정 되는 값을 보여 줍니다.
 
-[!code-csharp[Main](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=2,4,5,6&range=58-66)]
+[!code-csharp[](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=2,4,5,6&range=58-66)]
 
 > [!NOTE]
 > 이후 `IDistributedCache` 에 구성 된는 `ConfigureServices` 은 사용할 수 있는 메서드를는 `Configure` 메서드에 매개 변수로 합니다. 매개 변수로 추가 하면 DI를 통해 제공 되는 구성 된 인스턴스.
@@ -92,7 +92,7 @@ Redis 구현을 구성 `ConfigureServices` 의 인스턴스를 요청 하 여 �
 
 샘플 코드에서는 `RedisCache` 구현이 위해 서버를 구성할 때 사용 됩니다는 `Staging` 환경입니다. 따라서는 `ConfigureStagingServices` 메서드 구성는 `RedisCache`:
 
-[!code-csharp[Main](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=8,9,10,11,12,13&range=27-40)]
+[!code-csharp[](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=8,9,10,11,12,13&range=27-40)]
 
 > [!NOTE]
 > Redis를 로컬 컴퓨터에 설치 하려면 chocolatey 패키지 설치 [https://chocolatey.org/packages/redis-64/](https://chocolatey.org/packages/redis-64/) 실행 `redis-server` 명령 프롬프트에서 합니다.
@@ -103,7 +103,7 @@ SqlServerCache 구현 하면 해당 백업 저장소로 SQL Server 데이터베�
 
 Sql 캐시 도구를 사용 하려면 추가 `SqlConfig.Tools` 에 `<ItemGroup>` 의 요소는 *.csproj* 파일 고 dotnet 복원을 실행 합니다.
 
-[!code-xml[Main](./distributed/sample/src/DistCacheSample/DistCacheSample.csproj?range=23-25)]
+[!code-xml[](./distributed/sample/src/DistCacheSample/DistCacheSample.csproj?range=23-25)]
 
 다음 명령을 실행 하 여 SqlConfig.Tools 테스트
 
@@ -125,7 +125,7 @@ C:\DistCacheSample\src\DistCacheSample>dotnet sql-cache create "Data Source=(loc
 
 모든 캐시 구현와 같은 응용 프로그램 해야 get 및 set의 인스턴스를 사용 하 여 캐시 값 `IDistributedCache`이 아니라는 `SqlServerCache`합니다. 이 샘플 구현 `SqlServerCache` 에 `Production` 환경 (에 구성 되어 있으므로 `ConfigureProductionServices`).
 
-[!code-csharp[Main](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=7,8,9,10,11,12&range=42-56)]
+[!code-csharp[](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=7,8,9,10,11,12&range=42-56)]
 
 > [!NOTE]
 > `ConnectionString` (및 필요에 따라 `SchemaName` 및 `TableName`) 일반적으로 저장 되어야 합니다 (예: UserSecrets) 소스 제어를 벗어나야 자격 증명을 포함 될 수 있습니다.

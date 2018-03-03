@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/linux-apache
-ms.openlocfilehash: 61827f456ba01ffa726f3446401156409b29111d
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: b11bc811b6aefce22b60a28afd72c2a2d0b26955
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="host-aspnet-core-on-linux-with-apache"></a>Apache를 사용하여 Linux에서 ASP.NET Core 호스트
 
@@ -232,7 +232,7 @@ sudo journalctl -fu kestrel-hellomvc.service --since "2016-10-18" --until "2016-
 
 ### <a name="configure-firewall"></a>방화벽 구성
 
-*Firewalld* 네트워크 영역에 대 한 지원과 함께 방화벽을 관리 하는 동적 디먼은 합니다. 포트 및 패킷 필터링 여전히 iptables 하 여 관리할 수 있습니다. *Firewalld* 기본적으로 설치 해야 합니다. `yum`패키지를 설치 하거나 설치 되었는지 확인 데 사용할 수 있습니다.
+*Firewalld* 네트워크 영역에 대 한 지원과 함께 방화벽을 관리 하는 동적 디먼은 합니다. 포트 및 패킷 필터링 여전히 iptables 하 여 관리할 수 있습니다. *Firewalld* 기본적으로 설치 해야 합니다. `yum` 패키지를 설치 하거나 설치 되었는지 확인 데 사용할 수 있습니다.
 
 ```bash
 sudo yum install firewalld -y
@@ -339,7 +339,7 @@ sudo nano /etc/httpd/conf/httpd.conf
 
 #### <a name="mime-type-sniffing"></a>MIME 형식 검색
 
-`X-Content-Type-Options` 헤더에서 Internet Explorer 방지 *MIME 스니핑* (파일의 확인 `Content-Type` 파일의 내용을 사용). 서버를 설정 하는 경우는 `Content-Type` 헤더를 `text/html` 와 `nosniff` 으로 콘텐츠를 렌더링 하는 옵션 집합, Internet Explorer `text/html` 파일의 내용에 관계 없이 합니다.
+`X-Content-Type-Options` 헤더에서 Internet Explorer를 방지 *MIME 스니핑* (파일의 결정 `Content-Type` 파일의 내용을 사용). 서버를 설정 하는 경우는 `Content-Type` 헤더를 `text/html` 와 `nosniff` 으로 콘텐츠를 렌더링 하는 옵션 집합, Internet Explorer `text/html` 파일의 내용에 관계 없이 합니다.
 
 편집 된 *httpd.conf* 파일:
 
@@ -351,7 +351,7 @@ sudo nano /etc/httpd/conf/httpd.conf
 
 ### <a name="load-balancing"></a>부하 분산 
 
-이 예제에서는 동일한 인스턴스 컴퓨터에서 CentOS 7와 Kestrel의 Apache를 설정하고 구성하는 방법을 보여줍니다. 단일 실패 지점이 없는. 사용 하 여 *mod_proxy_balancer* 및 수정 된 **VirtualHost** Apache 프록시 서버 뒤에서 웹 앱의 여러 인스턴스를 관리 하기 위한 허용 합니다.
+이 예제에서는 동일한 인스턴스 컴퓨터에서 CentOS 7와 Kestrel의 Apache를 설정하고 구성하는 방법을 보여줍니다. 단일 실패 지점이 없는. 사용 하 여 *mod_proxy_balancer* 및 수정 된 **VirtualHost** Apache 프록시 서버 뒤에 있는 웹 응용 프로그램의 여러 인스턴스를 관리 하기 위한 허용 합니다.
 
 ```bash
 sudo yum install mod_proxy_balancer

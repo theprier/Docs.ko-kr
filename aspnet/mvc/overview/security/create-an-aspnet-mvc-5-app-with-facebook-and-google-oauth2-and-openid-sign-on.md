@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: ccf4329e6684d07570bfaabfaa1a570664fb2ca3
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 8dc2221ea19a33f1d34ba3aae8c60e365423e140
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/02/2018
 ---
 <a name="create-an-aspnet-mvc-5-app-with-facebook-twitter-linkedin-and-google-oauth2-sign-on-c"></a>Facebook, Twitter, LinkedIn 및 Google OAuth2 로그온 (C#)으로 ASP.NET MVC 5 앱 만들기
 ====================
@@ -114,6 +114,9 @@ NuGet 패키지 관리자를 사용 하 여 업데이트 하는 [OWIN 미들웨�
 <a id="goog"></a>
 ## <a name="creating-a-google-app-for-oauth-2-and-connecting-the-app-to-the-project"></a>OAuth 2에 대 한 Google 앱 만들기 및 앱 프로젝트 연결
 
+> [!WARNING]
+> 현재 Google OAuth 지침은 [에서 ASP.NET Core 구성 Google 인증](/aspnet/core/security/authentication/social/google-logins)합니다.
+
 1. 탐색 하 고 [Google 개발자 콘솔](https://console.developers.google.com/)합니다.
 1. 이전 프로젝트를 만들지 않은 경우 선택 **자격 증명** 왼쪽된 탭 한 다음 선택에서 **만들기**합니다.
 1. 왼쪽된 탭에서 클릭 **자격 증명**합니다.
@@ -158,6 +161,9 @@ NuGet 패키지 관리자를 사용 하 여 업데이트 하는 [OWIN 미들웨�
 
 <a id="fb"></a>
 ## <a name="creating-the-app-in-facebook-and-connecting-the-app-to-the-project"></a>Facebook에서 앱을 만들기 및 앱 프로젝트에 연결
+
+> [!WARNING]
+> 현재 Facebook OAuth2 인증 지침은 [구성 Facebook 인증](/aspnet/core/security/authentication/social/facebook-logins)
 
 Facebook OAuth2 인증에 대 한 Facebook에서 만드는 응용 프로그램에서 일부 설정의 프로젝트에 복사 해야 합니다.
 

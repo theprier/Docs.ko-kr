@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/windowsauth
-ms.openlocfilehash: c229537e7f533eea2173dbc51b8d0d0e097d434a
-ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
+ms.openlocfilehash: f6efd838d7b6c837c75f36591a49eab812f9d54c
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="configure-windows-authentication-in-an-aspnet-core-app"></a>ASP.NET Core 응용 프로그램의 Windows 인증 구성
 
@@ -56,7 +56,7 @@ Visual Studio 프로젝트 **속성** 페이지의 **디버그** 탭은 Windows 
 
 ## <a name="enable-windows-authentication-with-iis"></a>Iis Windows 인증을 사용 하도록 설정
 
-IIS에서 사용 하는 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module) ASP.NET Core 응용 프로그램을 호스트할 (ANCM). ANCM 흐름 Windows 인증을 IIS에 기본적으로입니다. Windows 인증의 구성이 IIS에서 응용 프로그램 프로젝트 내에서 수행 됩니다. 다음 섹션에서는 Windows 인증을 사용 하도록 ASP.NET Core 응용 프로그램을 구성 하려면 IIS 관리자를 사용 하는 방법을 보여 줍니다.
+IIS에서 사용 하는 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module) ASP.NET Core 응용 프로그램 호스트에 있습니다. 모듈 흐름 Windows 인증을 IIS에 기본적으로입니다. Iis에서 응용 프로그램이 아닌 Windows 인증이 구성 됩니다. 다음 섹션에서는 Windows 인증을 사용 하도록 ASP.NET Core 응용 프로그램을 구성 하려면 IIS 관리자를 사용 하는 방법을 보여 줍니다.
 
 ### <a name="create-a-new-iis-site"></a>새 IIS 사이트 만들기
 
@@ -113,7 +113,7 @@ Windows 인증을 사용 하 고 익명 액세스를 비활성화 하는 경우�
 ASP.NET Core에서 2.x는 `[Authorize]` 특성 추가 구성이 필요 *Startup.cs* Windows 인증에 대 한 익명 요청을 보도록 하기 위해서입니다. 권장된 구성을 사용 하 고 웹 서버에 따라 약간 다릅니다.
 
 > [!NOTE]
-> 기본적으로 빈 문서 페이지에 액세스할 수 있는 인증 부족 한 사용자 표시 됩니다. [StatusCodePages 미들웨어](xref:fundamentals/error-handling#configuring-status-code-pages) "액세스 거부" 더 나은 환경을 제공 하기 위해 구성할 수 있습니다.
+> 기본적으로 빈 403 HTTP 응답을 페이지에 액세스할 수 있는 권한 부족 한 사용자 표시 됩니다. [StatusCodePages 미들웨어](xref:fundamentals/error-handling#configuring-status-code-pages) "액세스 거부" 더 나은 환경을 제공 하기 위해 구성할 수 있습니다.
 
 #### <a name="iis"></a>IIS
 

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: 8cadb550eaa2dbc4541f945dc8d8d49fa757d4d3
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 559c5c58b416912b1caef1964ff8d7532bd98439
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>ASP.NET Core Id에 대 한 사용자 지정 저장소 공급자
 
@@ -112,7 +112,7 @@ ASP.NET Core Id 관리자와 저장소를 호출 하는 클래스로 구성 됩�
 
 데이터 액세스 클래스에서 지 속성 메커니즘에 대 한 데이터 작업을 수행 하는 코드를 제공 합니다. 예를 들어 사용자 지정 공급자 내에서 할 수 있습니다에 새 사용자를 만들려면 다음 코드는 *저장* 클래스:
 
-[!code-csharp[Main](identity-custom-storage-providers/sample/CustomIdentityProviderSample/CustomProvider/CustomUserStore.cs?name=createuser&highlight=7)]
+[!code-csharp[](identity-custom-storage-providers/sample/CustomIdentityProviderSample/CustomProvider/CustomUserStore.cs?name=createuser&highlight=7)]
 
 사용자 만들기에 대 한 구현 논리에는 ``_usersTable.CreateAsync`` 메서드를 아래에 표시 합니다.
 
@@ -133,7 +133,7 @@ ASP.NET Core Id 관리자와 저장소를 호출 하는 클래스로 구성 됩�
 - IUserRoleStore https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.iuserrolestore-1
 - IUserClaimStore https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.iuserclaimstore-1
 - IUserPasswordStore https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.iuserpasswordstore-1
-- IUserSecurityStampStore<!-- make these all links and remove / -->
+- IUserSecurityStampStore <!-- make these all links and remove / -->
 - IUserEmailStore
 - IPhoneNumberStore
 - IQueryableUserStore
@@ -145,7 +145,7 @@ ASP.NET Core Id 관리자와 저장소를 호출 하는 클래스로 구성 됩�
 
 내에서 `UserStore` 작업을 수행 하기 위해 만든 데이터 액세스 클래스를 사용할 클래스입니다. 이러한 종속성 주입을 사용 하 여 전달 됩니다. 예를 들어 Dapper 구현으로 SQL Server에에서는 `UserStore` 클래스에는 `CreateAsync` 의 인스턴스를 사용 하는 메서드 `DapperUsersTable` 새 레코드를 삽입:
 
-[!code-csharp[Main](identity-custom-storage-providers/sample/CustomIdentityProviderSample/CustomProvider/DapperUsersTable.cs?name=createuser&highlight=7)]
+[!code-csharp[](identity-custom-storage-providers/sample/CustomIdentityProviderSample/CustomProvider/DapperUsersTable.cs?name=createuser&highlight=7)]
 
 ### <a name="interfaces-to-implement-when-customizing-user-store"></a>사용자 저장소에 사용자 지정 하는 경우 구현 하는 인터페이스
 
@@ -196,7 +196,7 @@ public class UserStore : IUserStore<IdentityUser>,
 
 다음은 예제 역할 클래스입니다.
 
-[!code-csharp[Main](identity-custom-storage-providers/sample/CustomIdentityProviderSample/CustomProvider/ApplicationRole.cs)]
+[!code-csharp[](identity-custom-storage-providers/sample/CustomIdentityProviderSample/CustomProvider/ApplicationRole.cs)]
 
 ## <a name="customize-the-role-store"></a>역할 저장소의 사용자 지정
 

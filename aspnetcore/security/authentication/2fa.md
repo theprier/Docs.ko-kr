@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/2fa
-ms.openlocfilehash: 7bca1c6249bebe84b532b652ab736186f35c50ee
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 721c4c20234c7232b509a0cff444538c2cfeb166
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="two-factor-authentication-with-sms"></a>SMS와 2 단계 인증
 
@@ -60,7 +60,7 @@ Twilio 계정 대시보드 탭에서 복사 된 **계정 SID** 및 **인증 토�
 
    * 보안 SMS 키를 인출 하는 클래스를 만듭니다. 이 샘플은 `SMSoptions` 클래스에 만들어집니다는 *Services/SMSoptions.cs* 파일입니다.
 
-[!code-csharp[Main](2fa/sample/Web2FA/Services/SMSoptions.cs)]
+[!code-csharp[](2fa/sample/Web2FA/Services/SMSoptions.cs)]
 
 설정의 `SMSAccountIdentification`, `SMSAccountPassword` 및 `SMSAccountFrom` 와 [암호 관리자 도구](xref:security/app-secrets)합니다. 예:
 
@@ -81,16 +81,16 @@ info: Successfully saved SMSAccountIdentification = 12345 to the secret store.
 
 
 **Twilio:**  
-[!code-csharp[Main](2fa/sample/Web2FA/Services/MessageServices_twilio.cs)]
+[!code-csharp[](2fa/sample/Web2FA/Services/MessageServices_twilio.cs)]
 
 **ASPSMS:**  
-[!code-csharp[Main](2fa/sample/Web2FA/Services/MessageServices_ASPSMS.cs)]
+[!code-csharp[](2fa/sample/Web2FA/Services/MessageServices_ASPSMS.cs)]
 
-### <a name="configure-startup-to-use-smsoptions"></a>사용 하는 시작 구성`SMSoptions`
+### <a name="configure-startup-to-use-smsoptions"></a>사용 하는 시작 구성 `SMSoptions`
 
 추가 `SMSoptions` 서비스 컨테이너에 `ConfigureServices` 에서 메서드는 *Startup.cs*:
 
-[!code-csharp[Main](2fa/sample/Web2FA/Startup.cs?name=snippet1&highlight=4)]
+[!code-csharp[](2fa/sample/Web2FA/Startup.cs?name=snippet1&highlight=4)]
 
 ### <a name="enable-two-factor-authentication"></a>2 단계 인증을 사용 하도록 설정
 
@@ -144,4 +144,4 @@ info: Successfully saved SMSAccountIdentification = 12345 to the secret store.
 
 계정 잠금 2FA 사용 하는 것이 좋습니다. 사용자가 로컬 계정 또는 소셜 계정) (통해 로그인 하 고 2FA에서 연결 시도가 실패할된 때마다 저장 됩니다 (기본값은 5)는 최대 시도 횟수에 도달 하면 사용자가 잠길 5 분 (잠금 시간 초과 설정할 수 있습니다 `DefaultAccountLockoutTimeSpan`). 다음에서는 10 번 실패 후 10 분 동안 잠길 수 계정을 구성 합니다.
 
-[!code-csharp[Main](2fa/sample/Web2FA/Startup.cs?name=snippet2&highlight=13-17)] 
+[!code-csharp[](2fa/sample/Web2FA/Startup.cs?name=snippet2&highlight=13-17)] 

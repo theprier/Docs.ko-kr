@@ -12,25 +12,26 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-custom-action-filters
 msc.type: authoredcontent
-ms.openlocfilehash: 103cd68c576463d87d0077cc149f9b89c6e028e8
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 639815cc92b7cb5f3dfb4e1a198f6b4c2476dc90
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/02/2018
 ---
-<a name="aspnet-mvc-4-custom-action-filters"></a>ASP.NET MVC 4 사용자 지정 작업 필터
-====================
+# <a name="aspnet-mvc-4-custom-action-filters"></a>ASP.NET MVC 4 사용자 지정 작업 필터
+
 으로 [웹 캠프 팀](https://twitter.com/webcamps)
 
-> ASP.NET MVC 이전 또는 작업 메서드가 호출 된 후 필터링 논리를 실행 하기 위한 작업 필터를 제공 합니다. 작업 필터는 이전 및 이후 작업의 동작을 추가할 컨트롤러의 작업 메서드에 선언적 수단을 제공 하는 사용자 지정 특성입니다.
-> 
-> 이 실습 랩에서 MvcMusicStore 컨트롤러의 요청을 catch 하 고 데이터베이스 테이블에는 사이트의 활동을 기록 하는 솔루션에 사용자 지정 작업 필터 특성을 만듭니다. 모든 컨트롤러 또는 동작에 삽입 하 여 로깅 필터를 추가할 수 됩니다. 마지막으로 방문자의 목록을 보여 주는 로그 보기를 표시 됩니다.
-> 
-> > [!NOTE]
-> > 이 실습 랩 대 한 기본 지식이 있다고 가정 하 고 **ASP.NET MVC**합니다. 사용 하지 않은 경우 **ASP.NET MVC** 를 권장 앞, **ASP.NET MVC 4 기초** 실습 랩입니다.
+[웹 캠프 학습 키트를 다운로드 합니다.](https://aka.ms/webcamps-training-kit)
 
+ASP.NET MVC 이전 또는 작업 메서드가 호출 된 후 필터링 논리를 실행 하기 위한 작업 필터를 제공 합니다. 작업 필터는 이전 및 이후 작업의 동작을 추가할 컨트롤러의 작업 메서드에 선언적 수단을 제공 하는 사용자 지정 특성입니다.
 
-<a id="Objectives"></a>
+이 실습 랩에서 MvcMusicStore 컨트롤러의 요청을 catch 하 고 데이터베이스 테이블에는 사이트의 활동을 기록 하는 솔루션에 사용자 지정 작업 필터 특성을 만듭니다. 모든 컨트롤러 또는 동작에 삽입 하 여 로깅 필터를 추가할 수 됩니다. 마지막으로 방문자의 목록을 보여 주는 로그 보기를 표시 됩니다.
+
+이 실습 랩 대 한 기본 지식이 있다고 가정 하 고 **ASP.NET MVC**합니다. 사용 하지 않은 경우 **ASP.NET MVC** 를 권장 앞, **ASP.NET MVC 4 기초** 실습 랩입니다.
+
+> [!NOTE]
+> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [Microsoft-웹/WebCampTrainingKit 릴리스](https://aka.ms/webcamps-training-kit)합니다. 이 랩에 특정 프로젝트에서 사용할 수는 [ASP.NET MVC 4 사용자 지정 작업 필터](https://github.com/Microsoft-Web/HOL-MVC4CustomActionFilters)합니다.
 
 <a id="Objectives"></a>
 ### <a name="objectives"></a>목표
@@ -332,7 +333,7 @@ ms.lasthandoff: 01/24/2018
 1. **StoreController** 클래스, 제거 **[MyNewCustomActionFilter]** 특성 및 순서 속성에서 **[CustomActionFilter]**합니다. 다음과 같은 같아야 합니다.
 
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample13.cs)]
-2. 열기 **Global.asax** 파일를 찾습니다는 **응용 프로그램\_시작** 메서드. 공지는 각 thime 응용 프로그램을 시작 하기를 호출 하 여 전역 필터 등록 **RegisterGlobalFilters** 메서드 내에서 **FilterConfig** 클래스입니다.
+2. 열기 **Global.asax** 파일를 찾습니다는 **응용 프로그램\_시작** 메서드. 표시 될 때마다 응용 프로그램 시작 됨이 호출 하 여 전역 필터 등록 **RegisterGlobalFilters** 메서드 내에서 **FilterConfig** 클래스입니다.
 
     ![전역 필터 Global.asax에 등록](aspnet-mvc-4-custom-action-filters/_static/image10.png "전역 필터 Global.asax에 등록 하는 중")
 
@@ -398,13 +399,13 @@ ms.lasthandoff: 01/24/2018
 
     ![설치 완료](aspnet-mvc-4-custom-action-filters/_static/image15.png)
 
-    *설치 완료*
+    설치 완료
 7. 클릭 **종료** 를 웹 플랫폼 설치 관리자를 닫습니다.
 8. Visual Studio Express for Web을 열려면로 이동는 **시작** 화면를 쓰기 시작할 &quot; **VS Express**&quot;, 클릭는 **VS Express for Web** 바둑판식 배열입니다.
 
     ![웹 타일에 대 한 VS Express](aspnet-mvc-4-custom-action-filters/_static/image16.png)
 
-    *웹 타일에 대 한 VS Express*
+    웹 타일에 대 한 VS Express
 
 <a id="AppendixB"></a>
 
@@ -484,12 +485,12 @@ ms.lasthandoff: 01/24/2018
 
     ![클라이언트 IP 주소를 추가합니다.](aspnet-mvc-4-custom-action-filters/_static/image27.png)
 
-    *클라이언트 IP 주소를 추가합니다.*
+    클라이언트 IP 주소를 추가합니다.
 3. 한 번는 **클라이언트 IP 주소** 허용된 된 IP 주소에 추가 됩니다 목록에서 클릭 **저장** 하 여 변경 사항을 확인 합니다.
 
     ![변경 확인](aspnet-mvc-4-custom-action-filters/_static/image28.png)
 
-    *변경 확인*
+    변경 확인
 
 <a id="ApxBTask3"></a>
 

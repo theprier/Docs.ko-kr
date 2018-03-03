@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bootstrap
-ms.openlocfilehash: dfed5c7a8e103973048295b7607008ecc7e90eeb
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: e2ade6223cdc56a4f0f00ff0b985ceda4ab5484a
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="building-beautiful-responsive-sites-with-bootstrap"></a>부트스트랩을 사용한 beautiful 및 응답성이 뛰어난 사이트 구축
 
 <a name="bootstrap-index"></a>
 
-으로 [Steve Smith](https://ardalis.com/)
+작성자: [Steve Smith](https://ardalis.com/)
 
 부트스트랩 현재 응답성이 뛰어난 웹 응용 프로그램을 개발 하기 위한 가장 인기 있는 웹 프레임 워크입니다. 프런트 엔드 디자인 및 개발 또는 전문가 초보자에 관계 없이 다양 한 기능 및 웹 사이트와 사용자의 경험을 향상 시킬 수 있는 혜택을 제공 합니다. 부트스트랩은 CSS 및 JavaScript 파일의 집합으로 배포 되 고 태블릿에 데스크톱을 효율적으로 휴대폰에서 웹 사이트 또는 응용 프로그램 눈금을 도움이 되도록 설계 되었습니다.
 
@@ -31,7 +31,7 @@ ms.lasthandoff: 01/30/2018
 
 ASP.NET Core를 부트스트랩 추가 프로젝트는 단순히 추가 하는 방법의 *bower.json* 종속성으로:
 
-[!code-json[Main](../common/samples/WebApplication1/bower.json?highlight=5)]
+[!code-json[](../common/samples/WebApplication1/bower.json?highlight=5)]
 
 이 부트스트랩 ASP.NET Core 프로젝트에 추가 하는 것이 좋습니다.
 
@@ -60,7 +60,7 @@ Install-Package bootstrap
 
 부트스트랩의 고유한 로컬 버전을 참조 하는 경우 사용 하는 모든 페이지에서이 참조 해야 합니다. 프로덕션 환경에서 부트스트랩 CDN을 사용 하 여 참조 해야 합니다. 기본 ASP.NET 사이트 서식 파일에는 *_Layout.cshtml* 파일 다음과 같이 되므로 않습니다:
 
-[!code-html[Main](../common/samples/WebApplication1/Views/Shared/_Layout.cshtml?highlight=9,13,51,59)]
+[!code-html[](../common/samples/WebApplication1/Views/Shared/_Layout.cshtml?highlight=9,13,51,59)]
 
 > [!NOTE]
 > 부트스트랩의 jQuery 플러그 사용 하려는 경우에 jQuery 참조 해야 합니다.

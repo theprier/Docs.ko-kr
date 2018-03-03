@@ -9,15 +9,15 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/webapi
-ms.openlocfilehash: 6325bdf602485b42d8193a05ede00ae275bf0a90
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 9eb5f4dfec82ec1c60d33bff94d35857a4c0cfd6
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="migrating-from-aspnet-web-api"></a>ASP.NET Web API에서 마이그레이션
 
-여 [Steve Smith](https://ardalis.com/) 및 [Scott Addie](https://scottaddie.com)
+작성자: [Steve Smith](https://ardalis.com/) 및 [Scott Addie](https://scottaddie.com)
 
 웹 Api는 다양 한 브라우저 및 모바일 장치를 포함 한 클라이언트를 연결할 HTTP 서비스입니다. ASP.NET Core MVC 웹 응용 프로그램의 단일 방법을 제공 하는 Web Api 작성에 대 한 지원이 포함 되어 있습니다. 이 문서에서 ASP.NET Core mvc 웹 API 구현 ASP.NET Web API에서 마이그레이션하는 데 필요한 단계 보여 줍니다.
 
@@ -29,22 +29,22 @@ ms.lasthandoff: 01/30/2018
 
 *Global.asax.cs*, 하도록 호출 `WebApiConfig.Register`:
 
-[!code-csharp[Main](../migration/webapi/sample/ProductsApp/Global.asax.cs?highlight=14)]
+[!code-csharp[](../migration/webapi/sample/ProductsApp/Global.asax.cs?highlight=14)]
 
-`WebApiConfig`에 정의 된 *App_Start*, 하나의 정적 있으며 `Register` 메서드:
+`WebApiConfig` 에 정의 된 *App_Start*, 하나의 정적 있으며 `Register` 메서드:
 
-[!code-csharp[Main](../migration/webapi/sample/ProductsApp/App_Start/WebApiConfig.cs?highlight=15,16,17,18,19,20)]
+[!code-csharp[](../migration/webapi/sample/ProductsApp/App_Start/WebApiConfig.cs?highlight=15,16,17,18,19,20)]
 
 
 이 클래스를 구성 [특성 라우팅을](https://docs.microsoft.com/aspnet/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2)프로젝트에 사용 되 고 실제로 하지 않지만, 합니다. 또한 ASP.NET Web API에서 사용 되는 라우팅 테이블을 구성 합니다. 이 경우 ASP.NET Web API는 것을 예상 형식과 일치 하도록 Url */api/ {controller} / {id}*와 *{id}* 선택 사항입니다.
 
 *ProductsApp* 프로젝트에서 상속 하는 하나의 simple 컨트롤러에 `ApiController` 두 메서드를 노출 합니다.
 
-[!code-csharp[Main](../migration/webapi/sample/ProductsApp/Controllers/ProductsController.cs?highlight=19,24)]
+[!code-csharp[](../migration/webapi/sample/ProductsApp/Controllers/ProductsController.cs?highlight=19,24)]
 
 모델을 마지막으로, *제품*여는 데 사용 되는 *ProductsApp*, 간단한 클래스입니다.
 
-[!code-csharp[Main](webapi/sample/ProductsApp/Models/Product.cs)]
+[!code-csharp[](webapi/sample/ProductsApp/Models/Product.cs)]
 
 시작 하는 간단한 프로젝트를 만들었으므로 이제 해당 ASP.NET Core mvc이 웹 API 프로젝트를 마이그레이션하는 방법에 보여줄 수 있습니다.
 
@@ -66,11 +66,11 @@ ms.lasthandoff: 01/30/2018
 
 ASP.NET Core 더 이상 사용 되지 *Global.asax*, *web.config*, 또는 *App_Start* 폴더입니다. 모든 시작 작업을 수행 하는 대신, *Startup.cs* 프로젝트의 루트에 (참조 [응용 프로그램 시작](../fundamentals/startup.md)). ASP.NET Core MVC에서 라우팅 특성 기반 이제 기본적으로 포함 됩니다 때 `UseMvc()` 가 호출 되 고 이것은 웹 API 경로 구성 하는 데 권장 되는 방법 (이며 라우팅 Web API 시작 프로젝트를 처리 하는 방법).
 
-[!code-none[Main](../migration/webapi/sample/ProductsCore/Startup.cs?highlight=40)]
+[!code-none[](../migration/webapi/sample/ProductsCore/Startup.cs?highlight=40)]
 
 특성 라우팅을 앞으로 프로젝트에 사용 하려는 경우 추가 구성이 필요 하지 않습니다. 샘플 에서처럼 컨트롤러 및 작업을 하는 데 필요한 특성을 적용 하기만 하면 `ValuesController` Web API 시작 프로젝트에 포함 된 클래스:
 
-[!code-csharp[Main](../migration/webapi/sample/ProductsCore/Controllers/ValuesController.cs?highlight=9,13,20,27,33,39)]
+[!code-csharp[](../migration/webapi/sample/ProductsCore/Controllers/ValuesController.cs?highlight=9,13,20,27,33,39)]
 
 있다는 사실에 주의 *[컨트롤러]* 8입니다. 이제 특성 기반 라우팅와 같은 특정 토큰, 지원 *[컨트롤러]* 및 *[작업]*합니다. 이러한 토큰은 런타임에 교체 됨 컨트롤러 또는 동작의 이름으로 각각 특성이 적용 되었습니다. 프로젝트에서 매직 문자열의 수를 줄이기 위해이 처리 되 고 확인 하는 경로 동기화 되어야 해당 컨트롤러 및 작업 항목과 함께 자동 이름 바꾸기 리팩터링 적용 되는 경우.
 
@@ -113,7 +113,7 @@ ASP.NET Core 더 이상 사용 되지 *Global.asax*, *web.config*, 또는 *App_S
 
 이러한 변경에 수행 하 고 사용 하지 않는 된 문을 사용 하 여 면 제거 마이그레이션된 *ProductsController* 클래스는 다음과 같습니다.
 
-[!code-csharp[Main](../migration/webapi/sample/ProductsCore/Controllers/ProductsController.cs?highlight=1,2,6,8,9,27)]
+[!code-csharp[](../migration/webapi/sample/ProductsCore/Controllers/ProductsController.cs?highlight=1,2,6,8,9,27)]
 
 마이그레이션된 프로젝트를 실행 하 고를 이제 있어야 */api/제품*; 및 3 제품의 전체 목록을 표시 되어야 합니다. 찾아 */api/products/1* 첫 번째 제품 표시 되어야 합니다.
 

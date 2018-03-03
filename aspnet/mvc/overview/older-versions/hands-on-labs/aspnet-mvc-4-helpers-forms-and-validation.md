@@ -12,34 +12,32 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-helpers-forms-and-validation
 msc.type: authoredcontent
-ms.openlocfilehash: 925d659f42496045089ba056e194ac977c37a8de
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 243db3708ac4311d423c4c137f503f072f5553e6
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/02/2018
 ---
-<a name="aspnet-mvc-4-helpers-forms-and-validation"></a>ASP.NET MVC 4 도우미, 폼 및 유효성 검사
-====================
+# <a name="aspnet-mvc-4-helpers-forms-and-validation"></a>ASP.NET MVC 4 도우미, 폼 및 유효성 검사
+
 으로 [웹 캠프 팀](https://twitter.com/webcamps)
 
-> **ASP.NET MVC 4 모델 및 데이터 액세스** 실습 랩 되었습니다 로드 하 고 데이터베이스에서 데이터를 표시 합니다. 에 추가 합니다이 실습 랩에서 **Music Store** 응용 프로그램이 해당 데이터를 편집할 수 있는 기능입니다.
-> 
-> 해당 목표를 염두에서에 두고 앨범의 만들기, 읽기, 업데이트 및 삭제 (CRUD) 작업을 지 원하는 컨트롤러는 먼저 만듭니다. HTML 표에 앨범 속성을 표시 하려면 ASP.NET MVC 스 캐 폴딩 기능을 활용 하는 인덱스 뷰 서식 파일을 생성 합니다. 해당 보기를 강화 하려면 긴 설명을 잘립니다 하는 사용자 지정 HTML 도우미를 추가 합니다.
-> 
-> 그 후에 편집 하며 수 있는 뷰 만들기 alter 앨범 드롭다운 같은 폼 요소를 사용 하 여 데이터베이스에 추가 합니다.
-> 
-> 마지막으로, 앨범을 삭제 하는 사용자 수와 있습니다 됩니다 수 없게 입력을 확인 하 여 잘못 된 데이터를 입력 합니다.
-> 
-> > [!NOTE]
-> > 이 실습 랩 대 한 기본 지식이 있다고 가정 하 고 **ASP.NET MVC**합니다. 사용 하지 않은 경우 **ASP.NET MVC** 를 권장 앞, **ASP.NET MVC의 기본 사항** 실습 랩입니다.
-> 
-> 
-> 이 랩에서 원본 폴더에 제공 된 샘플 웹 응용 프로그램에 사소한 변경 내용을 적용 하 여 이전에 설명 된 새로운 기능 및 향상 된 기능을 통해 설명 합니다.
-> 
-> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843)합니다.
+[웹 캠프 학습 키트를 다운로드 합니다.](https://aka.ms/webcamps-training-kit)
 
+**ASP.NET MVC 4 모델 및 데이터 액세스** 실습 랩 되었습니다 로드 하 고 데이터베이스에서 데이터를 표시 합니다. 에 추가 합니다이 실습 랩에서 **Music Store** 응용 프로그램이 해당 데이터를 편집할 수 있는 기능입니다.
 
-<a id="Objectives"></a>
+해당 목표를 염두에서에 두고 앨범의 만들기, 읽기, 업데이트 및 삭제 (CRUD) 작업을 지 원하는 컨트롤러는 먼저 만듭니다. HTML 표에 앨범 속성을 표시 하려면 ASP.NET MVC 스 캐 폴딩 기능을 활용 하는 인덱스 뷰 서식 파일을 생성 합니다. 해당 보기를 강화 하려면 긴 설명을 잘립니다 하는 사용자 지정 HTML 도우미를 추가 합니다.
+
+그 후에 편집 하며 수 있는 뷰 만들기 alter 앨범 드롭다운 같은 폼 요소를 사용 하 여 데이터베이스에 추가 합니다.
+
+마지막으로, 앨범을 삭제 하는 사용자 수와 있습니다 됩니다 수 없게 입력을 확인 하 여 잘못 된 데이터를 입력 합니다.
+
+이 실습 랩 대 한 기본 지식이 있다고 가정 하 고 **ASP.NET MVC**합니다. 사용 하지 않은 경우 **ASP.NET MVC** 를 권장 앞, **ASP.NET MVC의 기본 사항** 실습 랩입니다.
+
+이 랩에서 원본 폴더에 제공 된 샘플 웹 응용 프로그램에 사소한 변경 내용을 적용 하 여 이전에 설명 된 새로운 기능 및 향상 된 기능을 통해 설명 합니다.
+
+> [!NOTE]
+> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [Microsoft-웹/WebCampTrainingKit 릴리스](https://aka.ms/webcamps-training-kit)합니다. 이 랩에 특정 프로젝트에서 사용할 수는 [ASP.NET MVC 4 도우미, 폼 및 유효성 검사](https://github.com/Microsoft-Web/HOL-MVC4HelpersFormsAndValidation)합니다.
 
 <a id="Objectives"></a>
 ### <a name="objectives"></a>목표
@@ -659,7 +657,7 @@ StoreManager 인덱스 페이지에 하나 이상의 잠재적인 문제가: 제
 
     ![편집 페이지의 유효성이 검사 된 필드](aspnet-mvc-4-helpers-forms-and-validation/_static/image19.png)
 
-    *편집 페이지의 유효성이 검사 된 필드*
+    편집 페이지의 유효성이 검사 된 필드
 
 <a id="Exercise7"></a>
 

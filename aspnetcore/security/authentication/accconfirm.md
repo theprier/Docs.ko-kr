@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/accconfirm
-ms.openlocfilehash: e8f73d58bdf626910b2101ef310385f588315e26
-ms.sourcegitcommit: 725cb18ad23013e15d3dbb527958481dee79f9f8
+ms.openlocfilehash: b236b4e5d3a4fa7212453f2aec209d145f5f5e32
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/13/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a>계정 확인 및 ASP.NET 코어에서 암호 복구
 
@@ -102,7 +102,7 @@ Visual studio의 경우:
 
 업데이트 `ConfigureServices` 확인 된 전자 메일을 요구 하도록 합니다.
 
-[!code-csharp[Main](accconfirm/sample/WebPWrecover/Startup.cs?name=snippet1&highlight=12-17)]
+[!code-csharp[](accconfirm/sample/WebPWrecover/Startup.cs?name=snippet1&highlight=12-17)]
 
 `config.SignIn.RequireConfirmedEmail = true;` 등록된 한 사용자의 전자 메일이 확인 될 때까지에 로그인 하지 못하도록 방지 합니다.
 
@@ -114,7 +114,7 @@ Visual studio의 경우:
 
 전자 메일 보안 키를 인출 하는 클래스를 만듭니다. 이 샘플은 `AuthMessageSenderOptions` 클래스에 만들어집니다는 *Services/AuthMessageSenderOptions.cs* 파일:
 
-[!code-csharp[Main](accconfirm/sample/WebPWrecover/Services/AuthMessageSenderOptions.cs?name=snippet1)]
+[!code-csharp[](accconfirm/sample/WebPWrecover/Services/AuthMessageSenderOptions.cs?name=snippet1)]
 
 설정의 `SendGridUser` 및 `SendGridKey` 와 [암호 관리자 도구](xref:security/app-secrets)합니다. 예:
 
@@ -140,11 +140,11 @@ Windows에서는 암호 관리자에 있는 키/값 쌍을 저장 한 *secrets.j
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-[!code-csharp[Main](accconfirm/sample/WebPWrecover/Startup.cs?name=snippet2&highlight=28)]
+[!code-csharp[](accconfirm/sample/WebPWrecover/Startup.cs?name=snippet2&highlight=28)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-[!code-csharp[Main](accconfirm/sample/WebApp1/Startup.cs?name=snippet1&highlight=26)]
+[!code-csharp[](accconfirm/sample/WebApp1/Startup.cs?name=snippet1&highlight=26)]
 
 ---
 
@@ -170,12 +170,12 @@ Windows에서는 암호 관리자에 있는 키/값 쌍을 저장 한 *secrets.j
 
 SendGrid를 구성 하려면 코드에서 다음과 같은 추가 *Services/EmailSender.cs*:
 
-[!code-csharp[Main](accconfirm/sample/WebPWrecover/Services/EmailSender.cs)]
+[!code-csharp[](accconfirm/sample/WebPWrecover/Services/EmailSender.cs)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 * 에 코드를 추가 *Services/MessageServices.cs* SendGrid를 구성 하는 다음과 비슷합니다.
 
-[!code-csharp[Main](accconfirm/sample/WebApp1/Services/MessageServices.cs)]
+[!code-csharp[](accconfirm/sample/WebApp1/Services/MessageServices.cs)]
 
 ---
 
@@ -193,13 +193,13 @@ await _signInManager.SignInAsync(user, isPersistent: false);
 
 전체 메서드 강조 표시 하는 변경 된 줄으로 표시 됩니다.
 
-[!code-csharp[Main](accconfirm/sample/WebPWrecover/Pages/Account/Register.cshtml.cs?highlight=16&name=snippet_Register)]
+[!code-csharp[](accconfirm/sample/WebPWrecover/Pages/Account/Register.cshtml.cs?highlight=16&name=snippet_Register)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 계정 확인을 사용 하려면 다음 코드를 주석 처리 제거:
 
-[!code-csharp[Main](accconfirm/sample/WebApp1/Controllers/AccountController.cs?highlight=16-25&name=snippet_Register)]
+[!code-csharp[](accconfirm/sample/WebApp1/Controllers/AccountController.cs?highlight=16-25&name=snippet_Register)]
 
 **참고:** 코드 때문에 새로 등록 된 사용자의 다음 줄을 주석 처리에 자동으로 로그온 합니다.
 
@@ -209,11 +209,11 @@ await _signInManager.SignInAsync(user, isPersistent: false);
 
 코드의 주석 처리 하 여 암호 복구를 사용 하도록 설정 된 `ForgotPassword` 의 동작 *Controllers/AccountController.cs*:
 
-[!code-csharp[Main](accconfirm/sample/WebApp1/Controllers/AccountController.cs?highlight=17-23&name=snippet_ForgotPassword)]
+[!code-csharp[](accconfirm/sample/WebApp1/Controllers/AccountController.cs?highlight=17-23&name=snippet_ForgotPassword)]
 
 Form 요소에 주석 처리 제거 *Views/Account/ForgotPassword.cshtml*합니다. 제거 하려는 경우도 `<p> For more information on how to enable reset password ... </p>` 이 문서에 대 한 링크를 포함 하는 요소입니다.
 
-[!code-cshtml[Main](accconfirm/sample/WebApp1/Views/Account/ForgotPassword.cshtml?highlight=7-10,12,28)]
+[!code-cshtml[](accconfirm/sample/WebApp1/Views/Account/ForgotPassword.cshtml?highlight=7-10,12,28)]
 
 ---
 
@@ -274,7 +274,7 @@ Form 요소에 주석 처리 제거 *Views/Account/ForgotPassword.cshtml*합니�
 
 ## <a name="combine-social-and-local-login-accounts"></a>공유 및 로컬 로그인 계정을 결합합니다
 
-이 섹션을 완료 하려면 외부 인증 공급자를 먼저 활성화 해야 합니다. 참조 [Facebook, Google, 및 다른 외부 공급자를 사용 하 여 사용 하도록 설정 하면 인증](social/index.md)합니다.
+이 섹션을 완료 하려면 외부 인증 공급자를 먼저 활성화 해야 합니다. 참조 [Facebook, Google, 및 외부 공급자 인증](xref:security/authentication/social/index)합니다.
 
 사용자 전자 메일 링크를 클릭 하 여 로컬 및 소셜 계정을 결합할 수 있습니다. 그러나 다음 순서로 "RickAndMSFT@gmail.com"; 로컬 로그인으로 처음 만들어질를 만들어 계정을 소셜 로그인으로 먼저, 다음 로컬 로그인을 추가 합니다.
 

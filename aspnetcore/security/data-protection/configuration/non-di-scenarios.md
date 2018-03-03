@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/configuration/non-di-scenarios
-ms.openlocfilehash: eccf914d20e04adbb113f17e262766ed2dd1a554
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: d878bd20489876f919f2a8e0149f3f000cbf72d8
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="non-di-aware-scenarios-for-data-protection-in-aspnet-core"></a>ASP.NET Core 데이터 보호에 대한 비-DI 인식 시나리오
 
@@ -23,7 +23,7 @@ ASP.NET Core, 데이터 보호, 종속성 주입, DataProtectionProvider [서비
 
 이러한 시나리오를 지원 하도록는 [Microsoft.AspNetCore.DataProtection.Extensions](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.Extensions/) 패키지는 구체적인 형식이 제공 [DataProtectionProvider](/dotnet/api/Microsoft.AspNetCore.DataProtection.DataProtectionProvider), 데이터 보호를 사용 하는 간단한 방법을 제공 DI에 의존 하지 않고 합니다. `DataProtectionProvider` 구현 입력 [IDataProtectionProvider](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotectionprovider)합니다. 생성 `DataProtectionProvider` 하기만 제공 하는 [DirectoryInfo](/dotnet/api/system.io.directoryinfo) 다음 코드 예제와 같이 공급자의 암호화 키 저장 될 위치를 나타냅니다.
 
-[!code-none[Main](non-di-scenarios/_static/nodisample1.cs)]
+[!code-none[](non-di-scenarios/_static/nodisample1.cs)]
 
 기본적으로는 `DataProtectionProvider` 구체적인 형식 원시 키 자료를 암호화 하지 않습니다 전에 파일 시스템에 유지 합니다. 이 시나리오를 네트워크 공유 및 데이터 보호 시스템 개발자 포인트 추론할 수 없습니다. 자동으로 적절 한 휴지 키 암호화 메커니즘을 지 원하는입니다.
 
@@ -31,7 +31,7 @@ ASP.NET Core, 데이터 보호, 종속성 주입, DataProtectionProvider [서비
 
 [DataProtectionProvider](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionprovider) 생성자가 시스템의 동작을 조정 하는 데 사용할 수 있는 선택적 구성 콜백 허용 합니다. 다음 예제를 명시적으로 호출 된 복원 격리를 보여 줍니다. [SetApplicationName](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.setapplicationname)합니다. 이 샘플에는 자동으로 보관 되는 Windows DPAPI를 사용 하 여 키를 암호화 하는 시스템 구성 보여 줍니다. 관련 된 모든 컴퓨터에 공유 인증서를 배포 하 고 시스템을 호출 하 여 인증서 기반 암호화를 사용 하도록 구성 하는 디렉터리는 UNC 공유를 가리키는 경우 지정할 수 있습니다 [ProtectKeysWithCertificate](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.protectkeyswithcertificate)합니다.
 
-[!code-none[Main](non-di-scenarios/_static/nodisample2.cs)]
+[!code-none[](non-di-scenarios/_static/nodisample2.cs)]
 
 > [!TIP]
 > `DataProtectionProvider` 구체 형식의 인스턴스를 생성하는 것은 비용이 많이 드는 작업입니다. 만약, 응용 프로그램이 이 형식의 인스턴스를 여러 개 관리하지만 모든 인스턴스가 동일한 키 저장소 디렉터리를 가리킨다면 응용 프로그램의 성능이 저하될 수 있습니다.  `DataProtectionProvider` 형식을 사용할 때 권장되는 방식은 응용 프로그램 개발자가 이 형식의 인스턴스를 한 번만 생성한 다음, 해당 단일 참조를 가능한 여러 번 재사용하는 것입니다. `DataProtectionProvider` 형식 및 이 형식으로부터 생성된 모든 [IDataProtector](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotector) 의 인스턴스는 다중 호출자에 대해 스레드로부터 안전(Thread-Safe)합니다.

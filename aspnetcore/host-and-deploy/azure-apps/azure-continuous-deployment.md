@@ -10,15 +10,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-apps/azure-continuous-deployment
-ms.openlocfilehash: 78f4eed188323f2f43fafbb69d3fca9b59129ad2
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: ea4788b5daead9e355e13b963c025dd110eb2bff
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="continuous-deployment-to-azure-for-aspnet-core-with-visual-studio-and-git"></a>Visual Studio 및 Git에 ASP.NET Core에 대 한 Azure로 지속적인 배포
 
 작성자: [Erik Reitan](https://github.com/Erikre)
+
+[!INCLUDE[Azure App Service Preview Notice](../../includes/azure-apps-preview-notice.md)]
 
 이 자습서 연속 배포를 사용 하 여 Visual Studio를 사용 하 여 ASP.NET Core 웹 앱을 만들고 Visual Studio에서 Azure 앱 서비스에 배포 하는 방법을 보여 줍니다.
 

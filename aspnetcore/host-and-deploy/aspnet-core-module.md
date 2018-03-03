@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/aspnet-core-module
-ms.openlocfilehash: c01abed767a226eae68725c1c53d922eac2f705e
-ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
+ms.openlocfilehash: 5aac5cf2b8fd4bc53ba7201645b9bb02a5d1ecae
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="aspnet-core-module-configuration-reference"></a>ASP.NET Core 모듈 구성 참조
 
@@ -128,6 +128,12 @@ ASP.NET Core 모듈 리디렉션합니다 `stdout` 및 `stderr` 로그 디스크
 ```
 
 참조 [web.config 사용 하 여 구성을](#configuration-with-webconfig) 의 예는 `aspNetCore` 요소에는 *web.config* 파일입니다.
+
+## <a name="proxy-configuration-uses-http-protocol-and-a-pairing-token"></a>프록시 구성은 HTTP 프로토콜 및 페어링 토큰을 사용합니다.
+
+ASP.NET Core 모듈와 Kestrel 사이 프록시는 HTTP 프로토콜을 사용 합니다. HTTP를 사용 하는 성능 최적화 있는 모듈 및 Kestrel 간 트래픽을 수행 되 루프백 주소에 네트워크 인터페이스 오프. 모듈 및 위치는 서버에서 분리에서 Kestrel 간 트래픽을 도청의 위험은 없습니다.
+
+페어링 토큰은 Kestrel에서 받은 요청이 IIS에서 프록시되었으며 다른 원본에서 오지 않았다는 것을 보장하는 데 사용됩니다. 페어링 토큰 생성 되어 환경 변수로 설정 (`ASPNETCORE_TOKEN`) 모듈에 의해 합니다. 페어링 토큰은 프록시된 모든 요청에서 헤더(`MSAspNetCoreToken`)로도 설정됩니다. IIS 미들웨어는 수신하는 각 요청을 검사하여 페어링 토큰 헤더 값이 환경 변수 값과 일치하는지 확인합니다. 토큰 값이 일치하지 않는 경우 요청이 기록되고 거부됩니다. 페어링 토큰 환경 변수와 모듈 및 Kestrel 간 트래픽을 서버에서 분리 된 위치에서 액세스할 수 없습니다. 페어링 토큰 값을 알지 못하면 공격자는 IIS 미들웨어에서 검사를 무시하는 요청을 전송할 수 없습니다.
 
 ## <a name="aspnet-core-module-with-an-iis-shared-configuration"></a>IIS 사용 하 여 ASP.NET Core 모듈 구성 공유
 

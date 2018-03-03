@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/consumer-apis/dangerous-unprotect
-ms.openlocfilehash: 584dbb545c15add4401086b9160d4bf30caf41b5
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 37332dda794f898fb866424b38394f5d4441e166
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="unprotecting-payloads-whose-keys-have-been-revoked"></a>해당 레지스트리 키가 해지 한 보호 해제 페이로드
 
@@ -30,7 +30,7 @@ ASP.NET Core 데이터 보호 Api는 주로 없습니다 기밀 페이로드의 
 > [!NOTE]
 > 일부 `IDataProtector` 인스턴스를 캐스팅할 수 있습니다 `IPersistedDataProtector`합니다. As 연산자는 C# 개발자가 사용 해야 하거나 런타임 예외를 방지 하기 위해 잘못 된 캐스팅 하 여 발생 한 되어야 할 유사한 처리할 준비가 실패 하는 경우 적절 하 게 합니다.
 
-`IPersistedDataProtector`다음 API 화면을 노출합니다.
+`IPersistedDataProtector` 다음 API 화면을 노출합니다.
 
 ```csharp
 DangerousUnprotect(byte[] protectedData, bool ignoreRevocationErrors,
@@ -46,4 +46,4 @@ DangerousUnprotect(byte[] protectedData, bool ignoreRevocationErrors,
 >[!WARNING]
 > 전달 하는 경우 각별히 주의 해 `ignoreRevocationErrors: true` 에 `DangerousUnprotect` 메서드. 이 메서드를 호출한 경우에는 `wasRevoked` 값이 true 이면이 페이로드를 보호 하기 위해 사용 되는 키가 해지 되 고 페이로드의 신뢰성 주의 대상으로 처리 되어야 합니다. 이 경우에 작업을 계속 보호 되지 않는 페이로드에 임을 인증, 예를 들어 일부 별도 보증을 사용 하는 경우 신뢰할 수 없는 웹 클라이언트에서 전송 되는 것이 아니라 보안 데이터베이스에서 온 것인지 합니다.
 
-[!code-csharp[Main](dangerous-unprotect/samples/dangerous-unprotect.cs)]
+[!code-csharp[](dangerous-unprotect/samples/dangerous-unprotect.cs)]

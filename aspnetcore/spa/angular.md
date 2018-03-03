@@ -11,11 +11,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/angular
-ms.openlocfilehash: f81130b67d61ee063b697f19862449c3054d547d
-ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
+ms.openlocfilehash: 07cfd20809acb67bdae6561b6ccd6edf1e70a3fe
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="use-the-angular-project-template"></a>각 프로젝트 템플릿을 사용 하 여
 
@@ -49,9 +49,9 @@ Visual Studio 또는.NET Core CLI에서 응용 프로그램을 실행 합니다.
 
 라는 환경 변수 해야 `ASPNETCORE_Environment` 값 `Development`합니다. (비 PowerShell 프롬프트)의 Windows에서는 실행 `SET ASPNETCORE_Environment=Development`합니다. Linux 또는 macOS 실행 `export ASPNETCORE_Environment=Development`합니다.
 
-실행 `dotnet build` 응용 프로그램을 확인 하기 올바르게를 작성 합니다. 첫 번째 실행에서 빌드 프로세스 몇 분 정도 걸릴 수 있는 npm 종속성을 복원 합니다. 후속 빌드는 훨씬 빠릅니다.
+실행 [dotnet 빌드](/dotnet/core/tools/dotnet-build) 응용 프로그램을 확인 하기 올바르게를 작성 합니다. 첫 번째 실행에서 빌드 프로세스 몇 분 정도 걸릴 수 있는 npm 종속성을 복원 합니다. 후속 빌드는 훨씬 빠릅니다.
 
-실행 `dotnet run` 앱을 시작 합니다. 다음과 비슷한 메시지가 기록 됩니다.
+실행 [실행 dotnet](/dotnet/core/tools/dotnet-run) 앱을 시작 합니다. 다음과 비슷한 메시지가 기록 됩니다.
 
 ```console
 Now listening on: http://localhost:<port>

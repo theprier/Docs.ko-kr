@@ -8,11 +8,11 @@ ms.date: 09/20/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: performance/caching/response
-ms.openlocfilehash: 37592c3b2099c2cb74dc42ad4a7937b32c281f65
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: c654cfd7c2d291849067bfd3297f940018ccb3d8
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="response-caching-in-aspnet-core"></a>ASP.NET Core의 응답 캐싱
 
@@ -91,7 +91,7 @@ ms.lasthandoff: 02/11/2018
 > [!WARNING]
 > 인증 된 클라이언트에 대 한 정보를 포함 하는 콘텐츠에 대 한 캐싱을 사용 하지 않도록 설정 합니다. 사용자의 id 또는 사용자 로그인 여부에 따라 변경 되지 않는 콘텐츠에 대 한 캐싱만 설정 해야 합니다.
 
-[VaryByQueryKeys](/dotnet/api/microsoft.aspnetcore.mvc.responsecacheattribute.varybyquerykeys) 저장된 응답 하는 쿼리 키의 지정 된 목록 값에 따라 다릅니다. 단일 값 `*` 쿼리 문자열 매개 변수를 요청 하는 모든 응답을 제공 하면 미들웨어 달라 집니다. `VaryByQueryKeys`ASP.NET Core 1.1 이상 필요합니다.
+[VaryByQueryKeys](/dotnet/api/microsoft.aspnetcore.mvc.responsecacheattribute.varybyquerykeys) 저장된 응답 하는 쿼리 키의 지정 된 목록 값에 따라 다릅니다. 단일 값 `*` 쿼리 문자열 매개 변수를 요청 하는 모든 응답을 제공 하면 미들웨어 달라 집니다. `VaryByQueryKeys` ASP.NET Core 1.1 이상 필요합니다.
 
 응답의 캐싱 미들웨어를 설정 하려면 설정 해야 합니다는 `VaryByQueryKeys` 속성; 그렇지 않으면 런타임 예외가 throw 됩니다. 에 대 한 해당 HTTP 헤더가 없는 `VaryByQueryKeys` 속성입니다. 속성이 응답 캐싱 미들웨어가 처리 하는 HTTP 기능입니다. 캐시 된 응답을 제공 하도록 미들웨어에 대 한 쿼리 문자열 및 쿼리 문자열 값을 이전 요청을 일치 해야 합니다. 요청 및 결과 다음 표에 표시 된 순서를 예로 들 수 있습니다.
 
@@ -113,7 +113,7 @@ ms.lasthandoff: 02/11/2018
 
 이 헤더가 작성만 되 고 `VaryByHeader` 속성을 설정 합니다. 로 설정 되 고 `Vary` 속성의 값입니다. 다음 샘플에서는 `VaryByHeader` 속성:
 
-[!code-csharp[Main](response/sample/Controllers/HomeController.cs?name=snippet_VaryByHeader&highlight=1)]
+[!code-csharp[](response/sample/Controllers/HomeController.cs?name=snippet_VaryByHeader&highlight=1)]
 
 브라우저의 네트워크 도구를 사용 하 여 응답 헤더를 볼 수 있습니다. 다음 이미지에서 출력 가장자리 f12 키를 보여 줍니다.는 **네트워크** 때 탭는 `About2` 동작 메서드가 새로 고쳐집니다.
 
@@ -121,7 +121,7 @@ ms.lasthandoff: 02/11/2018
 
 ### <a name="nostore-and-locationnone"></a>NoStore 및 Location.None
 
-`NoStore`대부분의 다른 속성을 재정의합니다. 이 속성이로 설정 된 경우 `true`, `Cache-Control` 헤더가로 설정 되 `no-store`합니다. 경우 `Location` 로 설정 된 `None`:
+`NoStore` 대부분의 다른 속성을 재정의합니다. 이 속성이로 설정 된 경우 `true`, `Cache-Control` 헤더가로 설정 되 `no-store`합니다. 경우 `Location` 로 설정 된 `None`:
 
 * `Cache-Control`이 `no-store,no-cache`로 설정됩니다.
 * `Pragma`이 `no-cache`로 설정됩니다.
@@ -130,7 +130,7 @@ ms.lasthandoff: 02/11/2018
 
 일반적으로 설정 `NoStore` 를 `true` 오류 페이지에 있습니다. 예:
 
-[!code-csharp[Main](response/sample/Controllers/HomeController.cs?name=snippet1&highlight=1)]
+[!code-csharp[](response/sample/Controllers/HomeController.cs?name=snippet1&highlight=1)]
 
 그 결과 다음과 같은 헤더가 같습니다.
 
@@ -148,7 +148,7 @@ Pragma: no-cache
 
 다음을 설정 하 여 생성 된 헤더를 보여 주는 예제는 `Duration` 기본 들어오거나 `Location` 값:
 
-[!code-csharp[Main](response/sample/Controllers/HomeController.cs?name=snippet_duration&highlight=1)]
+[!code-csharp[](response/sample/Controllers/HomeController.cs?name=snippet_duration&highlight=1)]
 
 다음 헤더를 생성합니다.
 
@@ -162,11 +162,11 @@ Cache-Control: public,max-age=60
 
 캐시 프로필을 설정 합니다.
 
-[!code-csharp[Main](response/sample/Startup.cs?name=snippet1)] 
+[!code-csharp[](response/sample/Startup.cs?name=snippet1)] 
 
 캐시 프로필을 참조 합니다.
 
-[!code-csharp[Main](response/sample/Controllers/HomeController.cs?name=snippet_controller&highlight=1,4)]
+[!code-csharp[](response/sample/Controllers/HomeController.cs?name=snippet_controller&highlight=1,4)]
 
 `ResponseCache` 모두 작업 (메서드) 및 컨트롤러 (클래스)에 특성을 적용할 수 있습니다. 메서드 수준 특성 클래스 수준 특성에 지정 된 설정을 무시 합니다.
 

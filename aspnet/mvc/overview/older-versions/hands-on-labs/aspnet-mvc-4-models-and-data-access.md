@@ -12,23 +12,24 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
 msc.type: authoredcontent
-ms.openlocfilehash: 076fa87eff140a3e7ff6855e4876abac40419c57
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 353419077422516761df56f730352b19b5db5ff2
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/02/2018
 ---
-<a name="aspnet-mvc-4-models-and-data-access"></a>ASP.NET MVC 4 모델 및 데이터 액세스
-====================
+# <a name="aspnet-mvc-4-models-and-data-access"></a>ASP.NET MVC 4 모델 및 데이터 액세스
+
 으로 [웹 캠프 팀](https://twitter.com/webcamps)
 
-> [!NOTE]
-> 이 실습 랩 대 한 기본 지식이 있다고 가정 하 고 **ASP.NET MVC**합니다. 사용 하지 않은 경우 **ASP.NET MVC** 를 권장 앞, **ASP.NET MVC 4 기초** 실습 랩입니다.
-> 
-> 이 랩에서 원본 폴더에 제공 된 샘플 웹 응용 프로그램에 사소한 변경 내용을 적용 하 여 이전에 설명 된 새로운 기능 및 향상 된 기능을 통해 설명 합니다.
-> 
-> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843)합니다.
+[웹 캠프 학습 키트를 다운로드 합니다.](https://aka.ms/webcamps-training-kit)
 
+이 실습 랩 대 한 기본 지식이 있다고 가정 하 고 **ASP.NET MVC**합니다. 사용 하지 않은 경우 **ASP.NET MVC** 를 권장 앞, **ASP.NET MVC 4 기초** 실습 랩입니다.
+
+이 랩에서 원본 폴더에 제공 된 샘플 웹 응용 프로그램에 사소한 변경 내용을 적용 하 여 이전에 설명 된 새로운 기능 및 향상 된 기능을 통해 설명 합니다.
+
+> [!NOTE]
+> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [Microsoft-웹/WebCampTrainingKit 릴리스](https://aka.ms/webcamps-training-kit)합니다. 이 랩에 특정 프로젝트에서 사용할 수는 [ASP.NET MVC 4 모델 및 데이터 액세스](https://github.com/Microsoft-Web/HOL-MVC4ModelsAndDataAccess)합니다.
 
 **ASP.NET MVC의 기본 사항** 실습 랩 있습니다 전달 했기 하드 코드 된 데이터는 컨트롤러에서 템플릿 보기에 있습니다. 그러나 실제 웹 응용 프로그램을 작성 하기 위해 실제 데이터베이스를 사용 수 있습니다.
 
@@ -38,7 +39,7 @@ ms.lasthandoff: 01/24/2018
 
 ![데이터베이스의 첫 번째 vs입니다. 첫 번째 모델](aspnet-mvc-4-models-and-data-access/_static/image1.png "Database First vs. 먼저 모델")
 
-*데이터베이스의 첫 번째 vs입니다. 먼저 모델*
+*데이터베이스의 첫 번째 vs입니다. 먼저 모델
 
 모델을 생성 하 고 나면 StoreController 하드 코드 된 데이터를 사용 하는 대신 데이터베이스에서 가져온 데이터와 함께 저장소 보기를 제공 하기에 적절 한 조정 생성 됩니다. 어떠한 변경 템플릿 보기에는 StoreController 반품할 동일한 Viewmodel 보기 템플릿 때문에이 시간 데이터가 데이터베이스에서 나올지 있지만 않아도 됩니다.
 
@@ -325,7 +326,7 @@ Code First 접근 방식은 일반적으로 프레임 워크와 연결 되어 �
 
     ![Web.config 파일 위치](aspnet-mvc-4-models-and-data-access/_static/image19.png "Web.config 파일 위치")
 
-    *Web.config 파일 위치*
+    *web.config 파일 위치*
 
 
     [!code-xml[Main](aspnet-mvc-4-models-and-data-access/samples/sample7.xml)]

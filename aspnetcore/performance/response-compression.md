@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/response-compression
-ms.openlocfilehash: c10f94b40fec00e7533cc3a6e88daa3f3da614ed
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: d05256af4e62834b8d43689786a7b8bb3a5e58fb
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="response-compression-middleware-for-aspnet-core"></a>ASP.NET Core에 대 한 응답 압축 미들웨어
 
@@ -41,7 +41,7 @@ IIS, Apache 또는 Nginx 응답 서버 기반 압축 기술을 사용 합니다.
 
 클라이언트 전송 하 여 해당 기능의 서버를 알려야 클라이언트가 압축 된 콘텐츠를 처리할 수 있는 경우는 `Accept-Encoding` 헤더를 요청 합니다. 에 정보를 포함 해야 하는 서버 압축 된 콘텐츠를 보내는 `Content-Encoding` 헤더에 압축 된 응답 인코딩 되는 방식입니다. 미들웨어에서 지 원하는 콘텐츠 인코딩 명칭은 다음 표에 표시 됩니다.
 
-| `Accept-Encoding`헤더 값 | 지원 되는 미들웨어 | 설명                                                 |
+| `Accept-Encoding` 헤더 값 | 지원 되는 미들웨어 | 설명                                                 |
 | :-----------------------------: | :------------------: | ----------------------------------------------------------- |
 | `br`                            | 아니요                   | Brotli 압축 된 데이터 형식                               |
 | `compress`                      | 아니요                   | UNIX "압축" 데이터 형식                                 |
@@ -83,11 +83,11 @@ IIS, Apache 또는 Nginx 응답 서버 기반 압축 기술을 사용 합니다.
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-[!code-csharp[Main](response-compression/samples/2.x/StartupBasic.cs?name=snippet1&highlight=4,8)]
+[!code-csharp[](response-compression/samples/2.x/StartupBasic.cs?name=snippet1&highlight=4,8)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-[!code-csharp[Main](response-compression/samples/1.x/StartupBasic.cs?name=snippet1&highlight=3,8)]
+[!code-csharp[](response-compression/samples/1.x/StartupBasic.cs?name=snippet1&highlight=3,8)]
 
 ---
 
@@ -117,11 +117,11 @@ Gzip 압축 공급자 기본적으로 가장 빠른 압축 수준 (`CompressionL
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-[!code-csharp[Main](response-compression/samples/2.x/Program.cs?name=snippet1&highlight=3,8-11)]
+[!code-csharp[](response-compression/samples/2.x/Program.cs?name=snippet1&highlight=3,8-11)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-[!code-csharp[Main](response-compression/samples/1.x/Startup.cs?name=snippet2&highlight=5,10-13)]
+[!code-csharp[](response-compression/samples/1.x/Startup.cs?name=snippet2&highlight=5,10-13)]
 
 ---
 
@@ -140,11 +140,11 @@ Gzip 압축 공급자 기본적으로 가장 빠른 압축 수준 (`CompressionL
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-[!code-csharp[Main](response-compression/samples/2.x/Program.cs?name=snippet1&highlight=5)]
+[!code-csharp[](response-compression/samples/2.x/Program.cs?name=snippet1&highlight=5)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-[!code-csharp[Main](response-compression/samples/1.x/Startup.cs?name=snippet2&highlight=7)]
+[!code-csharp[](response-compression/samples/1.x/Startup.cs?name=snippet2&highlight=7)]
 
 ---
 
@@ -155,15 +155,15 @@ Gzip 압축 공급자 기본적으로 가장 빠른 압축 수준 (`CompressionL
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-[!code-csharp[Main](response-compression/samples/2.x/Program.cs?name=snippet1&highlight=4)]
+[!code-csharp[](response-compression/samples/2.x/Program.cs?name=snippet1&highlight=4)]
 
-[!code-csharp[Main](response-compression/samples/2.x/CustomCompressionProvider.cs?name=snippet1)]
+[!code-csharp[](response-compression/samples/2.x/CustomCompressionProvider.cs?name=snippet1)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-[!code-csharp[Main](response-compression/samples/1.x/Startup.cs?name=snippet2&highlight=6)]
+[!code-csharp[](response-compression/samples/1.x/Startup.cs?name=snippet2&highlight=6)]
 
-[!code-csharp[Main](response-compression/samples/1.x/CustomCompressionProvider.cs?name=snippet1)]
+[!code-csharp[](response-compression/samples/1.x/CustomCompressionProvider.cs?name=snippet1)]
 
 ---
 
@@ -179,7 +179,7 @@ Gzip 압축 공급자 기본적으로 가장 빠른 압축 수준 (`CompressionL
 
 **ASP.NET Core 1.x만**
 
-[!code-csharp[Main](response-compression/samples/1.x/Startup.cs?name=snippet1)]
+[!code-csharp[](response-compression/samples/1.x/Startup.cs?name=snippet1)]
 
 ## <a name="middleware-issue-when-behind-an-nginx-reverse-proxy"></a>Nginx 역방향 프록시 뒤에 있을 때는 미들웨어 문제
 요청에서 Nginx, 프록시 되 고 `Accept-Encoding` 헤더를 제거 합니다. 이렇게 하면 미들웨어를에서 응답을 압축지 않습니다. 자세한 내용은 참조 [NGINX: 압축 및 압축 풀기](https://www.nginx.com/resources/admin-guide/compression-and-decompression/)합니다. 이 문제를 추적 하 여 [Nginx (BasicMiddleware #123)에 대 한 통과 압축 파악](https://github.com/aspnet/BasicMiddleware/issues/123)합니다.

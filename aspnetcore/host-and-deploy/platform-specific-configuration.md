@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/platform-specific-configuration
-ms.openlocfilehash: 2663cd1e05be9e8695966df959082e6e574d0b4a
-ms.sourcegitcommit: 809ee4baf8bf7b4cae9e366ecae29de1037d2bbb
+ms.openlocfilehash: c36b8acd6f7fcb4e4d11e43013ccaf5ca6d1b0ab
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="add-app-features-using-a-platform-specific-configuration-in-aspnet-core"></a>ASP.NET Core에서 플랫폼 관련 구성을 사용 하 여 앱 기능 추가
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 02/15/2018
 
 샘플 응용 프로그램 읽기는 [HostingStartupAssembliesKey](/dotnet/api/microsoft.aspnetcore.hosting.webhostdefaults.hostingstartupassemblieskey) 에 `string` 배열 하 고 응용 프로그램의 인덱스 페이지에 결과 표시 합니다.
 
-[!code-csharp[Main](platform-specific-configuration/sample/HostingStartupSample/Pages/Index.cshtml.cs?name=snippet1&highlight=14-16)]
+[!code-csharp[](platform-specific-configuration/sample/HostingStartupSample/Pages/Index.cshtml.cs?name=snippet1&highlight=14-16)]
 
 ## <a name="disable-automatic-loading-of-hosting-startup-assemblies"></a>호스팅 시작 어셈블리의 자동 로드 사용 안 함
 
@@ -49,19 +49,19 @@ ms.lasthandoff: 02/15/2018
 
 `IHostingStartup` 기능은 진입점 하지 않고 콘솔 응용 프로그램에 따라 어셈블리도 배포 합니다. 어셈블리 참조는 [Microsoft.AspNetCore.Hosting.Abstractions](https://www.nuget.org/packages/Microsoft.AspNetCore.Hosting.Abstractions/) 패키지:
 
-[!code-xml[Main](platform-specific-configuration/snapshot_sample/StartupFeature.csproj)]
+[!code-xml[](platform-specific-configuration/snapshot_sample/StartupFeature.csproj)]
 
 A [HostingStartup](/dotnet/api/microsoft.aspnetcore.hosting.hostingstartupattribute) 의 구현으로 클래스를 식별 하는 특성 `IHostingStartup` 로드 및 빌드할 때 실행을 위한는 [IWebHost](/dotnet/api/microsoft.aspnetcore.hosting.iwebhost)합니다. 다음 예제에서는 네임 스페이스는 `StartupFeature`, 고 클래스는 `StartupFeatureHostingStartup`:
 
-[!code-csharp[Main](platform-specific-configuration/snapshot_sample/StartupFeature.cs?name=snippet1)]
+[!code-csharp[](platform-specific-configuration/snapshot_sample/StartupFeature.cs?name=snippet1)]
 
 클래스가 구현 하는 `IHostingStartup`합니다. 클래스의 [구성](/dotnet/api/microsoft.aspnetcore.hosting.ihostingstartup.configure) 메서드는 [IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder) 기능 응용 프로그램을 추가 하려면:
 
-[!code-csharp[Main](platform-specific-configuration/snapshot_sample/StartupFeature.cs?name=snippet2&highlight=3,5)]
+[!code-csharp[](platform-specific-configuration/snapshot_sample/StartupFeature.cs?name=snippet2&highlight=3,5)]
 
 빌드할 때는 `IHostingStartup` 프로젝트, 종속성 파일 (*\*. deps.json*) 설정 하는 `runtime` 어셈블리의 위치는 *bin* 폴더:
 
-[!code-json[Main](platform-specific-configuration/snapshot_sample/StartupFeature1.deps.json?range=2-13&highlight=8)]
+[!code-json[](platform-specific-configuration/snapshot_sample/StartupFeature1.deps.json?range=2-13&highlight=8)]
 
 파일의 일부만 표시 됩니다. 이 예제에 어셈블리 이름이 `StartupFeature`합니다.
 
@@ -69,7 +69,7 @@ A [HostingStartup](/dotnet/api/microsoft.aspnetcore.hosting.hostingstartupattrib
 
 에 지정 된 런타임 위치는  *\*. deps.json* 파일입니다. 기능을 활성는 `runtime` 요소 기능의 런타임 어셈블리의 위치를 지정 해야 합니다. 접두사는 `runtime` 위치 `lib/netcoreapp2.0/`:
 
-[!code-json[Main](platform-specific-configuration/snapshot_sample/StartupFeature2.deps.json?range=2-13&highlight=8)]
+[!code-json[](platform-specific-configuration/snapshot_sample/StartupFeature2.deps.json?range=2-13&highlight=8)]
 
 샘플 응용 프로그램의 수정 된  *\*. deps.json* 파일에 의해 수행 됩니다는 [PowerShell](/powershell/scripting/powershell-scripting) 스크립트입니다. PowerShell 스크립트는 프로젝트 파일의 빌드 대상에서 자동으로 트리거됩니다.
 

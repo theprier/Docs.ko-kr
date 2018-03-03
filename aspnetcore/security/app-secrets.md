@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/app-secrets
-ms.openlocfilehash: 337782a0530a37916b04aa562174b5921ddbc46b
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 489c53c066af87e02e43ab0b42b0712d80d5ee5a
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="safe-storage-of-app-secrets-during-development-in-aspnet-core"></a>ASP.NET Core에서 개발 하는 동안 앱 암호의 안전한 저장소
 
@@ -45,11 +45,11 @@ ms.lasthandoff: 01/30/2018
 
 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭 하 고 선택 **편집 \<project_name\>.csproj** 상황에 맞는 메뉴입니다. 강조 표시 된 줄을 추가 *.csproj* 파일과 연결 된 NuGet 패키지를 복원 하려면 저장:
 
-[!code-xml[Main](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
+[!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
 
 솔루션 탐색기에서 프로젝트를 다시 마우스 오른쪽 단추로 클릭 하 고 선택 **관리 사용자의 비밀** 상황에 맞는 메뉴입니다. 이 제스처를 새로 추가 `UserSecretsId` 내에서 노드는 `PropertyGroup` 의 *.csproj* 다음 샘플에 강조 표시 된 대로 파일:
 
-[!code-xml[Main](app-secrets/sample/UserSecrets/UserSecrets-after.csproj?highlight=4)]
+[!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-after.csproj?highlight=4)]
 
 수정 된 저장 *.csproj* 파일도 열립니다는 `secrets.json` 파일 텍스트 편집기에서. 내용을 대체는 `secrets.json` 를 다음 코드로 파일:
 
@@ -61,9 +61,9 @@ ms.lasthandoff: 01/30/2018
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 
-추가 `Microsoft.Extensions.SecretManager.Tools` 에 *.csproj* 파일을 실행 `dotnet restore`합니다. 명령줄을 사용 하 여 암호 관리자 도구를 설치 하려면 동일한 단계를 사용할 수 있습니다.
+추가 `Microsoft.Extensions.SecretManager.Tools` 에 *.csproj* 파일을 실행 [dotnet 복원](/dotnet/core/tools/dotnet-restore)합니다. 명령줄을 사용 하 여 암호 관리자 도구를 설치 하려면 동일한 단계를 사용할 수 있습니다.
 
-[!code-xml[Main](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
+[!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
 
 다음 명령을 실행 하 여 암호 관리자 도구를 테스트 합니다.
 
@@ -80,7 +80,7 @@ dotnet user-secrets -h
 
 추가 `UserSecretsId` 에서 프로젝트에 대 한는 *.csproj* 파일:
 
-[!code-xml[Main](app-secrets/sample/UserSecrets/UserSecrets-after.csproj?highlight=4)]
+[!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-after.csproj?highlight=4)]
 
 암호 관리자 도구를 사용 하 여 암호를 설정할 수 있습니다. 예를 들어 프로젝트 디렉터리에서 명령 창에서 다음을 입력 합니다.
 
@@ -100,15 +100,15 @@ dotnet user-secrets set MySecret ValueOfMySecret --project c:\work\WebApp1\src\w
 
 ## <a name="accessing-user-secrets-via-configuration"></a>구성을 통해 사용자의 비밀 정보에 액세스
 
-구성 시스템을 통해 보안 관리자 암호에 액세스 합니다. 추가 `Microsoft.Extensions.Configuration.UserSecrets` 패키지 및 실행 `dotnet restore`합니다.
+구성 시스템을 통해 보안 관리자 암호에 액세스 합니다. 추가 `Microsoft.Extensions.Configuration.UserSecrets` 패키지 및 실행 [dotnet 복원](/dotnet/core/tools/dotnet-restore)합니다.
 
 사용자 암호 구성 소스를 추가 `Startup` 메서드:
 
-[!code-csharp[Main](app-secrets/sample/UserSecrets/Startup.cs?highlight=16-19)]
+[!code-csharp[](app-secrets/sample/UserSecrets/Startup.cs?highlight=16-19)]
 
 구성 API 통해 사용자의 비밀을 액세스할 수 있습니다.
 
-[!code-csharp[Main](app-secrets/sample/UserSecrets/Startup.cs?highlight=26-29)]
+[!code-csharp[](app-secrets/sample/UserSecrets/Startup.cs?highlight=26-29)]
 
 ## <a name="how-the-secret-manager-tool-works"></a>암호 관리자 도구 작동 방식
 

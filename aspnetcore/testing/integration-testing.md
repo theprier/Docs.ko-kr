@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: testing/integration-testing
-ms.openlocfilehash: 4a5f14e11de6ed91f67808c3ea8c78a7b1d43b03
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 8c28f1b4f66433eaebd9e474e784ecf3f1ac271b
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="integration-testing-in-aspnet-core"></a>ASP.NET Core에서 통합 테스트
 
-으로 [Steve Smith](https://ardalis.com/)
+작성자: [Steve Smith](https://ardalis.com/)
 
-통합 테스트 함께 어셈블되어 때 응용 프로그램의 구성 요소가 제대로 작동 하는지 확인 합니다. ASP.NET Core 지원 통합 단위 테스트 프레임 워크 및 네트워크 오버 헤드 없이 요청을 처리 하는 데 사용할 수 있는 기본 제공 테스트 웹 호스트를 사용 하 여 테스트 합니다.
+통합 테스트 함께 어셈블되어 때 응용 프로그램의 구성 요소가 제대로 작동 하는지 확인 합니다. ASP.NET Core는 네트워크 오버헤드 없이 요청을 처리하는 데 사용할 수 있는 기본 테스트 웹 호스트 및 단위 테스트 프레임 워크를 사용하는 통합 테스트를 지원합니다.
 
 [샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/testing/integration-testing/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
@@ -47,7 +47,7 @@ ASP.NET Core 통합 테스트 프로젝트에 추가할 수 있으며, 호스팅
 
 한 번의 `Microsoft.AspNetCore.TestHost` 패키지는 프로젝트에 포함 된를 만들고 구성할 수 있습니다는 `TestServer` 테스트에서 합니다. 다음 테스트에는 사이트의 루트에 대 한 요청 "Hello World!"을 반환 하는지 확인 하는 방법을 보여 줍니다. 고 해야 성공적으로 실행 된 기본값에 대 한 Visual Studio에서 만든 ASP.NET Core 빈 웹 템플릿.
 
-[!code-csharp[Main](../testing/integration-testing/sample/test/PrimeWeb.IntegrationTests/PrimeWebDefaultRequestShould.cs?name=snippet_WebDefault&highlight=7,16,22)]
+[!code-csharp[](../testing/integration-testing/sample/test/PrimeWeb.IntegrationTests/PrimeWebDefaultRequestShould.cs?name=snippet_WebDefault&highlight=7,16,22)]
 
 이 테스트 정렬 Act Assert 패턴을 사용 합니다. 인스턴스를 만드는 생성자에서 정렬 단계는 수행 `TestServer`합니다. 구성 된 `WebHostBuilder` 만드는 데 사용할 수는 `TestHost`이 예에서 `Configure` 테스트 (SUT)의 대상 시스템에 있는 메서드의 `Startup` 클래스에 전달 됩니다는 `WebHostBuilder`합니다. 이 메서드는의 요청 파이프라인을 구성 하는 `TestServer` SUT 서버 구성 하는 방법에 동일 하 게 합니다.
 
@@ -55,7 +55,7 @@ ASP.NET Core 통합 테스트 프로젝트에 추가할 수 있으며, 호스팅
 
 이제 웹 응용 프로그램을 통해 확인 기능 prime 작동 하는지 확인 하려면 몇 가지 추가 통합 테스트를 추가할 수 있습니다.
 
-[!code-csharp[Main](../testing/integration-testing/sample/test/PrimeWeb.IntegrationTests/PrimeWebCheckPrimeShould.cs?name=snippet_CheckPrime)]
+[!code-csharp[](../testing/integration-testing/sample/test/PrimeWeb.IntegrationTests/PrimeWebCheckPrimeShould.cs?name=snippet_CheckPrime)]
 
 참고 웹 응용 프로그램이 예상 대로 수행 하는 대신 하지만 이러한 테스트를 소수 검사기의 정확성을 테스트 하려면 다음 시도 하는 것은 아닙니다. 이미의 신뢰도 제공 하는 단위 테스트 검사 `PrimeService`여기에서 볼 수 있듯이,:
 
@@ -134,13 +134,13 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 > [!NOTE]
 > 미들웨어에 의존 하므로 `PrimeService` 서비스는 생성자와 함께이 서비스의 인스턴스 수도 요청 합니다. 프레임 워크를 통해이 서비스를 제공 합니다 [종속성 주입](xref:fundamentals/dependency-injection), 구성 된, 즉 가정 `ConfigureServices`합니다.
 
-[!code-csharp[Main](../testing/integration-testing/sample/src/PrimeWeb/Middleware/PrimeCheckerMiddleware.cs?highlight=39-63)]
+[!code-csharp[](../testing/integration-testing/sample/src/PrimeWeb/Middleware/PrimeCheckerMiddleware.cs?highlight=39-63)]
 
 이 미들웨어 경로 일치 하는 경우 요청 대리자 체인에 끝점 역할 이므로에 대 한 호출이 `_next.Invoke` 이 미들웨어에서 요청을 처리 하는 경우.
 
 이 미들웨어 있어야 하며 몇 가지 유용한 확장 메서드 생성을 보다 쉽게 구성 하는 리팩터링된와 `Configure` 메서드는 다음과 같습니다.
 
-[!code-csharp[Main](../testing/integration-testing/sample/src/PrimeWeb/Startup.cs?highlight=9&range=19-33)]
+[!code-csharp[](../testing/integration-testing/sample/src/PrimeWeb/Startup.cs?highlight=9&range=19-33)]
 
 이 리팩터링 다음 통합 테스트 모두 전달 하는 이후 계속 웹 응용 프로그램이 이전 처럼 작동 하는지 시킨다 고 확신 것입니다.
 

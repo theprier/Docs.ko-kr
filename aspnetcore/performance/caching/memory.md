@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/caching/memory
-ms.openlocfilehash: 7c6d629ea94dd7c79a2f4e24fd4d0ff797f7e516
-ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
+ms.openlocfilehash: ef5dba655a8b6332bf0b6f21c678481a1c55aecf
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/05/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="in-memory-caching-in-aspnet-core"></a>ASP.NET Core의 메모리 내 캐싱
 
@@ -38,21 +38,21 @@ ASP.NET Core 몇 가지 다른 캐시를 지원합니다. 가장 간단한 캐�
 
 메모리 내 캐시는 *서비스* 사용 하 여 응용 프로그램에서 참조 되는 [종속성 주입](../../fundamentals/dependency-injection.md)합니다. 호출 `AddMemoryCache` 에 `ConfigureServices`:
 
-[!code-csharp[Main](memory/sample/WebCache/Startup.cs?highlight=8)] 
+[!code-csharp[](memory/sample/WebCache/Startup.cs?highlight=8)] 
 
 요청 된 `IMemoryCache` 생성자에 대 한 인스턴스:
 
-[!code-csharp[Main](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_ctor&highlight=3,5-999)] 
+[!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_ctor&highlight=3,5-999)] 
 
-`IMemoryCache`NuGet 패키지 "Microsoft.Extensions.Caching.Memory" 필요합니다.
+`IMemoryCache` NuGet 패키지 "Microsoft.Extensions.Caching.Memory" 필요합니다.
 
 다음 코드에서는 [TryGetValue](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.imemorycache#Microsoft_Extensions_Caching_Memory_IMemoryCache_TryGetValue_System_Object_System_Object__) 을 현재 시간 캐시에 있는지 확인 하십시오. 새 항목이 만들어지고과 함께 캐시에 추가 항목이 캐시 되지 않을 경우 [설정](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_Set__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object___0_)합니다.
 
-[!code-csharp[Main](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet1)]
+[!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet1)]
 
 캐시 된 시간과 현재 시간 표시 됩니다.
 
-[!code-html[Main](memory/sample/WebCache/Views/Home/Cache.cshtml)]
+[!code-html[](memory/sample/WebCache/Views/Home/Cache.cshtml)]
 
 캐시 된 `DateTime` 있을 때는 요청 제한 시간 (및 메모리 부족으로 인해 없는 제거) 내에서 값이 캐시에 유지 됩니다. 다음 이미지는 현재 시간 및 캐시에서 검색 하는 이전 시간을 보여 줍니다.
 
@@ -60,11 +60,11 @@ ASP.NET Core 몇 가지 다른 캐시를 지원합니다. 가장 간단한 캐�
 
 다음 코드에서는 [GetOrCreate](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_GetOrCreate__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object_System_Func_Microsoft_Extensions_Caching_Memory_ICacheEntry___0__) 및 [GetOrCreateAsync](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_GetOrCreateAsync__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object_System_Func_Microsoft_Extensions_Caching_Memory_ICacheEntry_System_Threading_Tasks_Task___0___) 데이터를 캐시 합니다. 
 
-[!code-csharp[Main](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet2&highlight=3-7,14-19)]
+[!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet2&highlight=3-7,14-19)]
 
 다음 호출 코드 [가져오기](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_Get__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object_) 를 캐시 된 시간을 가져옵니다.
 
-[!code-csharp[Main](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_gct)]
+[!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_gct)]
 
 참조 [IMemoryCache 메서드](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.imemorycache) 및 [CacheExtensions 메서드](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheextensions) 에 대 한 설명은 캐시 메서드.
 
@@ -77,13 +77,13 @@ ASP.NET Core 몇 가지 다른 캐시를 지원합니다. 가장 간단한 캐�
 - 캐시 우선 순위 설정 `CacheItemPriority.NeverRemove`합니다. 
 - 집합은 [PostEvictionDelegate](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.postevictiondelegate) 하는 후에 호출 됩니다는 엔트리를 캐시에서 제거 합니다. 콜백 캐시에서 항목을 제거 하는 코드에서 다른 스레드에서 실행 됩니다.
 
-[!code-csharp[Main](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_et&highlight=14-20)]
+[!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_et&highlight=14-20)]
 
 ## <a name="cache-dependencies"></a>캐시 종속성
 
 다음 예제에는 종속 항목을 만료 하는 경우 캐시 항목을 만료 하는 방법을 보여 줍니다. A `CancellationChangeToken` 캐시 된 항목에 추가 됩니다. 때 `Cancel` 라고 하는 `CancellationTokenSource`, 캐시 항목이 모두 제거 됩니다. 
 
-[!code-csharp[Main](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_ed)]
+[!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_ed)]
 
 사용 하는 `CancellationTokenSource` 여러 캐시 항목이 그룹으로 제거할 수 있습니다. 와 `using` 내에 만들어진 위의 코드에서 패턴, 캐시 항목의 `using` 블록 트리거 및 만료 설정을 상속 합니다.
 

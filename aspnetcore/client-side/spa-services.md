@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/spa-services
-ms.openlocfilehash: bd18d342de7c147e3588bd6daa3aebd68aa81c36
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: c617f1a563b0eeccea0ab313bba8b90a4c947e28
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="using-javascriptservices-for-creating-single-page-applications-with-aspnet-core"></a>ASP.NET Core 사용 단일 페이지 응용 프로그램을 만들기 위한 JavaScriptServices를 사용 하 여
 
@@ -96,37 +96,37 @@ ASP.NET Core [태그 도우미](xref:mvc/views/tag-helpers/intro) 제공한 SpaS
 
 태그 도우미 프로젝트의 네임 스페이스 등록을 통해 검색 가능한 내용이 *_ViewImports.cshtml* 파일:
 
-[!code-cshtml[Main](../client-side/spa-services/sample/SpaServicesSampleApp/Views/_ViewImports.cshtml?highlight=3)]
+[!code-cshtml[](../client-side/spa-services/sample/SpaServicesSampleApp/Views/_ViewImports.cshtml?highlight=3)]
 
 이러한 태그 도우미 Razor 뷰 내에 HTML 형식의 구문을 활용 하 여 하위 수준 Api와 직접 통신 하는 복잡 한을 추상화 합니다.
 
-[!code-cshtml[Main](../client-side/spa-services/sample/SpaServicesSampleApp/Views/Home/Index.cshtml?range=5)]
+[!code-cshtml[](../client-side/spa-services/sample/SpaServicesSampleApp/Views/Home/Index.cshtml?range=5)]
 
 ### <a name="the-asp-prerender-module-tag-helper"></a>`asp-prerender-module` 태그 도우미
 
 `asp-prerender-module` 태그 도우미, 앞의 코드 예제에 사용 된 실행 *ClientApp/dist/main-server.js* Node.js 통해 서버에서 합니다. 확실히 하기 위해서 *main server.js* 파일은 JavaScript를 TypeScript transpilation 작업 아티팩트는 [시스템용](http://webpack.github.io/) 빌드 프로세스입니다. 한 항목이 지점 별칭을 정의 하는 시스템용 `main-server`;에서이 별칭에 대 한 종속성 그래프의 순회를 시작 및는 *ClientApp/부팅-server.ts* 파일:
 
-[!code-javascript[Main](../client-side/spa-services/sample/SpaServicesSampleApp/webpack.config.js?range=53)]
+[!code-javascript[](../client-side/spa-services/sample/SpaServicesSampleApp/webpack.config.js?range=53)]
 
 다음 각 예제에서는 *ClientApp/부팅-server.ts* 파일에서 사용는 `createServerRenderer` 함수 및 `RenderResult` 유형의 `aspnet-prerendering` npm 구성 하려면 패키지 Node.js 통해 서버 렌더링 합니다. 보내는 서버 쪽 렌더링을 강력한 형식의 JavaScript에 겹쳐서 표시 하는 해결 함수 호출에 전달 되는 HTML 태그 `Promise` 개체입니다. `Promise` 개체의 중요 한 이유는 DOM의 자리 표시자 요소에는 삽입에 대 한 페이지에는 HTML 태그를 비동기적으로 제공 합니다.
 
-[!code-typescript[Main](../client-side/spa-services/sample/SpaServicesSampleApp/ClientApp/boot-server.ts?range=6,10-34,79-)]
+[!code-typescript[](../client-side/spa-services/sample/SpaServicesSampleApp/ClientApp/boot-server.ts?range=6,10-34,79-)]
 
 ### <a name="the-asp-prerender-data-tag-helper"></a>`asp-prerender-data` 태그 도우미
 
 함께 사용 하면는 `asp-prerender-module` 태그 도우미의 `asp-prerender-data` Razor 보기에서 서버 쪽 JavaScript를 컨텍스트 정보를 전달 하 태그 도우미를 사용할 수 있습니다. 다음 태그를 사용자 데이터를 전달 하는 예를 들어는 `main-server` 모듈:
 
-[!code-cshtml[Main](../client-side/spa-services/sample/SpaServicesSampleApp/Views/Home/Index.cshtml?range=9-12)]
+[!code-cshtml[](../client-side/spa-services/sample/SpaServicesSampleApp/Views/Home/Index.cshtml?range=9-12)]
 
 받은 `UserName` 인수 기본 제공 JSON 직렬 변환기를 사용 하 여 직렬화 되 고에 저장 되는 `params.data` 개체입니다. 다음 각 예제에서 데이터 내에서 개인 설정 된 인사말을 생성 하는 데 사용 된 `h1` 요소:
 
-[!code-typescript[Main](../client-side/spa-services/sample/SpaServicesSampleApp/ClientApp/boot-server.ts?range=6,10-21,38-52,79-)]
+[!code-typescript[](../client-side/spa-services/sample/SpaServicesSampleApp/ClientApp/boot-server.ts?range=6,10-21,38-52,79-)]
 
 참고: 태그 도우미에 전달 된 속성 이름으로 표시 됩니다 **표시 방법이 PascalCase** 표기법입니다. JavaScript에서 동일한 속성 이름으로 표시 됩니다는 여기서 즉 **camelCase**합니다. 기본 JSON serialization 구성은 이러한 차이 담당 합니다.
 
 연장 하 여 이전 코드 예제, 데이터 전달할 수 있습니다는 서버에서 보기에 hydrating 여는 `globals` 속성에 제공 되는 `resolve` 함수:
 
-[!code-typescript[Main](../client-side/spa-services/sample/SpaServicesSampleApp/ClientApp/boot-server.ts?range=6,10-21,57-77,79-)]
+[!code-typescript[](../client-side/spa-services/sample/SpaServicesSampleApp/ClientApp/boot-server.ts?range=6,10-21,57-77,79-)]
 
 `postList` 배열 내에 정의 된는 `globals` 개체는 글로벌 브라우저의 연결 된 `window` 개체입니다. 전역 범위에이 변수 호이스팅와 특히 서버에서 한 번를 다시 클라이언트에 동일한 데이터를 로드 하 관련해 서 작업이, 중복을 제거 합니다.
 
@@ -138,7 +138,7 @@ ASP.NET Core [태그 도우미](xref:mvc/views/tag-helpers/intro) 제공한 SpaS
 
 [시스템용 Dev 미들웨어](https://webpack.github.io/docs/webpack-dev-middleware.html) 에서는 시스템용 필요에 따라 리소스를 작성 하는 그에 따라 효율적인된 개발 워크플로 제공 합니다. 미들웨어가 자동으로 컴파일하고 브라우저에서 페이지를 다시 로드 하는 경우 클라이언트 쪽 리소스를 사용 합니다. 타사 종속성 또는 사용자 지정 코드 변경 될 때 프로젝트의 npm 빌드 스크립트를 통해 시스템용을 수동으로 호출할 하는 대체 방법이입니다. npm에서 스크립트를 작성은 *package.json* 파일은 다음 예제에 표시 됩니다.
 
-[!code-json[Main](../client-side/spa-services/sample/SpaServicesSampleApp/package.json?range=5)]
+[!code-json[](../client-side/spa-services/sample/SpaServicesSampleApp/package.json?range=5)]
 
 ### <a name="prerequisites"></a>필수 구성 요소
 
@@ -153,13 +153,13 @@ ASP.NET Core [태그 도우미](xref:mvc/views/tag-helpers/intro) 제공한 SpaS
 
 시스템용 Dev 미들웨어에 다음 코드를 통해 HTTP 요청 파이프라인에 등록 되 고 *Startup.cs* 파일의 `Configure` 메서드:
 
-[!code-csharp[Main](../client-side/spa-services/sample/SpaServicesSampleApp/Startup.cs?name=webpack-middleware-registration&highlight=4)]
+[!code-csharp[](../client-side/spa-services/sample/SpaServicesSampleApp/Startup.cs?name=webpack-middleware-registration&highlight=4)]
 
 `UseWebpackDevMiddleware` 하기 전에 확장 메서드를 호출 해야 [정적 파일 호스팅 등록](xref:fundamentals/static-files) 통해는 `UseStaticFiles` 확장 메서드. 보안상의 이유로 응용 프로그램 개발 모드에서 실행 하는 경우에 미들웨어를 등록 합니다.
 
 *webpack.config.js* 파일의 `output.publicPath` 속성이 있으면 조사할 미들웨어는 `dist` 변경에 대 한 폴더:
 
-[!code-javascript[Main](../client-side/spa-services/sample/SpaServicesSampleApp/webpack.config.js?range=6,13-16)]
+[!code-javascript[](../client-side/spa-services/sample/SpaServicesSampleApp/webpack.config.js?range=6,13-16)]
 
 <a name="hot-module-replacement"></a>
 
@@ -190,7 +190,7 @@ app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions {
 
 *webpack.config.js* 파일 정의 해야 합니다는 `plugins` 빈 상태일 경우에 배열:
 
-[!code-javascript[Main](../client-side/spa-services/sample/SpaServicesSampleApp/webpack.config.js?range=6,25)]
+[!code-javascript[](../client-side/spa-services/sample/SpaServicesSampleApp/webpack.config.js?range=6,25)]
 
 브라우저에서 응용 프로그램을 로드 한 후 개발자 도구 콘솔 탭 HMR 정품 인증에 대 한 확인을 제공 합니다.
 
@@ -217,7 +217,7 @@ app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions {
 
 라는 확장 메서드 `MapSpaFallbackRoute` 에 사용 되는 `Configure` 메서드:
 
-[!code-csharp[Main](../client-side/spa-services/sample/SpaServicesSampleApp/Startup.cs?name=mvc-routing-table&highlight=7-9)]
+[!code-csharp[](../client-side/spa-services/sample/SpaServicesSampleApp/Startup.cs?name=mvc-routing-table&highlight=7-9)]
 
 팁: 경로 구성 하는 순서로 평가 됩니다. 따라서는 `default` 패턴 일치를 위해 이전 코드 예제에서 경로 먼저 사용 합니다.
 
@@ -244,7 +244,7 @@ dotnet new --install Microsoft.AspNetCore.SpaTemplates::*
 | MVC ASP.NET Core React.js 및 Redux  | reactredux | [C#]     | Web/MVC/SPA |
 | MVC ASP.NET Core Vue.js와              | vue        | [C#]     | Web/MVC/SPA | 
 
-SPA 템플릿 중 하나를 사용 하 여 새 프로젝트를 만들려면 포함는 **약식 이름** 에 서식 파일의는 `dotnet new` 명령입니다. 다음 명령은 서버 측에 대해 구성 된 ASP.NET Core MVC와 함께 각 응용 프로그램를 만듭니다.
+SPA 템플릿 중 하나를 사용 하 여 새 프로젝트를 만들려면 포함는 **약식 이름** 에 서식 파일의는 [새 dotnet](/dotnet/core/tools/dotnet-new) 명령입니다. 다음 명령은 서버 측에 대해 구성 된 ASP.NET Core MVC와 함께 각 응용 프로그램를 만듭니다.
 
 ```console
 dotnet new angular
@@ -282,7 +282,7 @@ dotnet run
 
 ### <a name="running-with-visual-studio-2017"></a>Visual Studio 2017 함께 실행
 
-열기는 *.csproj* 에서 생성 된 파일은 `dotnet new` 명령입니다. 데 필요한 NuGet 및 npm 패키지는 프로젝트를 열고 시 자동으로 복원 됩니다. 이 복원 프로세스 최대 몇 분 정도 걸릴 수 있습니다 및 응용 프로그램은 작업이 완료 될 때 실행 하도록 준비 합니다. 녹색 실행된 단추 또는 키를 눌러 `Ctrl + F5`, 브라우저 응용 프로그램의 방문 페이지에 열립니다. 응용 프로그램에 따라 로컬 호스트에서 실행 되는 [런타임 구성 모드](#runtime-config-mode)합니다. 
+열기는 *.csproj* 에서 생성 된 파일의 [새 dotnet](/dotnet/core/tools/dotnet-new) 명령입니다. 데 필요한 NuGet 및 npm 패키지는 프로젝트를 열고 시 자동으로 복원 됩니다. 이 복원 프로세스 최대 몇 분 정도 걸릴 수 있습니다 및 응용 프로그램은 작업이 완료 될 때 실행 하도록 준비 합니다. 녹색 실행된 단추 또는 키를 눌러 `Ctrl + F5`, 브라우저 응용 프로그램의 방문 페이지에 열립니다. 응용 프로그램에 따라 로컬 호스트에서 실행 되는 [런타임 구성 모드](#runtime-config-mode)합니다. 
 
 <a name="app-testing"></a>
 
@@ -292,7 +292,7 @@ SpaServices 템플릿은 사용 하 여 클라이언트 쪽 테스트를 실행 
 
 각 응용 프로그램을 사용 하 여 예를 들어, 두 개의 자스민 테스트 사례가 이미 제공에 대 한는 `CounterComponent` 에 *counter.component.spec.ts* 파일:
 
-[!code-typescript[Main](../client-side/spa-services/sample/SpaServicesSampleApp/ClientApp/app/components/counter/counter.component.spec.ts?range=15-28)]
+[!code-typescript[](../client-side/spa-services/sample/SpaServicesSampleApp/ClientApp/app/components/counter/counter.component.spec.ts?range=15-28)]
 
 프로젝트 루트에 명령 프롬프트를 열고 다음 명령을 실행 합니다.
 
@@ -302,7 +302,7 @@ npm test
 
 스크립트에 정의 된 설정을 읽는 Karma test runner를 시작 합니다.는 *karma.conf.js* 파일입니다. 다른 설정 보다는 *karma.conf.js* 를 통해 실행할 테스트 파일을 식별 하는 `files` 배열:
 
-[!code-javascript[Main](../client-side/spa-services/sample/SpaServicesSampleApp/ClientApp/test/karma.conf.js?range=4-5,8-11)]
+[!code-javascript[](../client-side/spa-services/sample/SpaServicesSampleApp/ClientApp/test/karma.conf.js?range=4-5,8-11)]
 
 <a name="app-publishing"></a>
 
@@ -310,7 +310,7 @@ npm test
 
 생성 된 클라이언트 쪽 자산 및 게시 된 ASP.NET Core 아티팩트를 준비 하려면 배포 패키지에 결합은 복잡할 수 있습니다. 다행히도 SpaServices 라는 사용자 지정 MSBuild 대상을 사용 하 여 해당 전체 게시 프로세스를 조정 `RunWebpack`:
 
-[!code-xml[Main](../client-side/spa-services/sample/SpaServicesSampleApp/SpaServicesSampleApp.csproj?range=31-45)]
+[!code-xml[](../client-side/spa-services/sample/SpaServicesSampleApp/SpaServicesSampleApp.csproj?range=31-45)]
 
 MSBuild 대상에는 다음 책임이 있습니다.
 1. Npm 패키지를 복원 합니다.

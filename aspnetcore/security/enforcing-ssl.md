@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/enforcing-ssl
-ms.openlocfilehash: 636077ea21581716308384ebf8d47c1e417a256a
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: dc320faf0048200412f131ea816f33f29ac023e1
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="enforcing-https-in-an-aspnet-core-app"></a>ASP.NET Core 응용 프로그램에서 HTTPS를 적용합니다.
 
@@ -25,20 +25,20 @@ ms.lasthandoff: 02/11/2018
 - HTTPS에 대 한 모든 HTTP 요청을 리디렉션하십시오.
 
 > [!WARNING]
-> 수행 **하지** 사용 `RequireHttpsAttribute` 중요 한 정보를 수신 하는 웹 Api에 있습니다. `RequireHttpsAttribute`HTTP 상태 코드를 사용 하 여 HTTP에서 HTTPS로 브라우저를 리디렉션합니다. API 클라이언트 이해 하지 못하거나 리디렉션을 HTTP에서 HTTPS로 준수 수 있습니다. 이러한 클라이언트는 HTTP를 통해 정보를 보낼 수 있습니다. 웹 Api 하거나 수행 해야합니다.
+> 수행 **하지** 사용 `RequireHttpsAttribute` 중요 한 정보를 수신 하는 웹 Api에 있습니다. `RequireHttpsAttribute` HTTP 상태 코드를 사용 하 여 HTTP에서 HTTPS로 브라우저를 리디렉션합니다. API 클라이언트 이해 하지 못하거나 리디렉션을 HTTP에서 HTTPS로 준수 수 있습니다. 이러한 클라이언트는 HTTP를 통해 정보를 보낼 수 있습니다. 웹 Api 하거나 수행 해야합니다.
 >
 >* HTTP에서 수신 하지 않습니다.
 >* 상태 코드 400 (잘못 된 요청)와 연결을 닫고 요청을 처리 하지 마십시오.
 
 ## <a name="require-https"></a>HTTPS가 필요
 
-[RequireHttpsAttribute](/dotnet/api/Microsoft.AspNetCore.Mvc.RequireHttpsAttribute) HTTPS가 필요 하는 데 사용 됩니다. `[RequireHttpsAttribute]`컨트롤러 또는 메서드를 데코레이팅 할 수 있습니다 또는 전역으로 적용 될 수 있습니다. 특성을 전역으로 적용 하려면 다음 코드를 추가 `ConfigureServices` 에 `Startup`:
+[RequireHttpsAttribute](/dotnet/api/Microsoft.AspNetCore.Mvc.RequireHttpsAttribute) HTTPS가 필요 하는 데 사용 됩니다. `[RequireHttpsAttribute]` 컨트롤러 또는 메서드를 데코레이팅 할 수 있습니다 또는 전역으로 적용 될 수 있습니다. 특성을 전역으로 적용 하려면 다음 코드를 추가 `ConfigureServices` 에 `Startup`:
 
-[!code-csharp[Main](authentication/accconfirm/sample/WebApp1/Startup.cs?name=snippet2&highlight=4-999)]
+[!code-csharp[](authentication/accconfirm/sample/WebApp1/Startup.cs?name=snippet2&highlight=4-999)]
 
 앞의 강조 표시 된 코드에서는 모든 요청 사용 `HTTPS`이므로, HTTP 요청은 무시 됩니다. 다음 강조 표시 된 코드를 HTTPS로 모든 HTTP 요청을 리디렉션합니다.
 
-[!code-csharp[Main](authentication/accconfirm/sample/WebApp1/Startup.cs?name=snippet_AddRedirectToHttps&highlight=7-999)]
+[!code-csharp[](authentication/accconfirm/sample/WebApp1/Startup.cs?name=snippet_AddRedirectToHttps&highlight=7-999)]
 
 자세한 내용은 참조 [URL 다시 쓰기 미들웨어](xref:fundamentals/url-rewriting)합니다.
 

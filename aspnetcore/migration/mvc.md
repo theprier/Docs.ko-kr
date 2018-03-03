@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/mvc
-ms.openlocfilehash: 447b13eccf523cab81590405740bb194112b0dad
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: c9c9f63cd635f364d9b2e081dc051a46a44d3e4f
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="migrating-from-aspnet-mvc-to-aspnet-core-mvc"></a>ASP.NET MVC에서 ASP.NET Core MVC로 마이그레이션
 
@@ -48,17 +48,17 @@ ms.lasthandoff: 01/30/2018
 
 * 설치는 `Microsoft.AspNetCore.Mvc` 및 `Microsoft.AspNetCore.StaticFiles` NuGet 패키지 합니다.
 
-  `Microsoft.AspNetCore.Mvc`ASP.NET Core MVC 프레임 워크가입니다. `Microsoft.AspNetCore.StaticFiles`정적 파일 처리기입니다. ASP.NET 런타임은 모듈식 및 정적 파일을 제공 하려면에 명시적으로 선택 해야 합니다 (참조 [정적 파일 작업](../fundamentals/static-files.md)).
+  `Microsoft.AspNetCore.Mvc` ASP.NET Core MVC 프레임 워크가입니다. `Microsoft.AspNetCore.StaticFiles` 정적 파일 처리기입니다. ASP.NET 런타임은 모듈식 및 정적 파일을 제공 하려면에 명시적으로 선택 해야 합니다 (참조 [정적 파일 작업](../fundamentals/static-files.md)).
 
 * 열기는 *.csproj* 파일 (에서 프로젝트를 마우스 오른쪽 단추로 클릭 **솔루션 탐색기** 선택 **편집 WebApp1.csproj**) 추가 하 고는 `PrepareForPublish` 대상:
 
-  [!code-xml[Main](mvc/sample/WebApp1.csproj?range=21-23)]
+  [!code-xml[](mvc/sample/WebApp1.csproj?range=21-23)]
 
   `PrepareForPublish` 대상 Bower 통한 클라이언트 라이브러리를 획득 하기 위해 필요 합니다. 알아보겠습니다이 대해서는 나중에.
 
 * 열기는 *Startup.cs* 파일을 다음과 일치 하도록 코드를 변경 합니다.
 
-  [!code-csharp[Main](mvc/sample/Startup.cs?highlight=14,27-34)]
+  [!code-csharp[](mvc/sample/Startup.cs?highlight=14,27-34)]
 
   `UseStaticFiles` 확장 메서드는 정적 파일 처리기를 추가 합니다. ASP.NET 런타임이 모듈식 앞에서 설명한 대로 및 정적 파일을 제공 하려면에 명시적으로 선택 해야 합니다. `UseMvc` 라우팅 확장 메서드를 추가 합니다. 자세한 내용은 참조 [응용 프로그램 시작](../fundamentals/startup.md) 및 [라우팅](../fundamentals/routing.md)합니다.
 
@@ -114,7 +114,7 @@ ms.lasthandoff: 01/30/2018
 
 ## <a name="controllers-and-views"></a>컨트롤러와 뷰
 
-* ASP.NET MVC에서 복사 된 각 메서드의 `HomeController` 새 `HomeController`합니다. ASP.NET MVC에서 기본 제공 템플릿의 컨트롤러 동작 메서드 반환 형식은 [ActionResult](https://msdn.microsoft.com/library/system.web.mvc.actionresult(v=vs.118).aspx); ASP.NET Core mvc에서 반환 하는 작업 메서드 `IActionResult` 대신 합니다. `ActionResult`구현 `IActionResult`이므로 동작 메서드의 반환 형식을 변경할 필요가 없습니다.
+* ASP.NET MVC에서 복사 된 각 메서드의 `HomeController` 새 `HomeController`합니다. ASP.NET MVC에서 기본 제공 템플릿의 컨트롤러 동작 메서드 반환 형식은 [ActionResult](https://msdn.microsoft.com/library/system.web.mvc.actionresult(v=vs.118).aspx); ASP.NET Core mvc에서 반환 하는 작업 메서드 `IActionResult` 대신 합니다. `ActionResult` 구현 `IActionResult`이므로 동작 메서드의 반환 형식을 변경할 필요가 없습니다.
 
 * 복사는 *About.cshtml*, *Contact.cshtml*, 및 *Index.cshtml* Razor 파일 보기 ASP.NET MVC 프로젝트에서 ASP.NET Core 프로젝트에 있습니다.
 
@@ -126,7 +126,7 @@ ms.lasthandoff: 01/30/2018
 
 ![연락처 페이지](mvc/_static/contact-page.png)
 
-Note 스타일 지정 및 메뉴 항목의 부족 합니다. 다음 섹션에서이 문제를 해결 합니다 했습니다.
+Note 스타일 지정 및 메뉴 항목의 부족 합니다. 다음 섹션에서 이 문제를 해결합니다.
 
 ## <a name="static-content"></a>정적 콘텐츠
 
@@ -140,7 +140,7 @@ ASP.NET MVC 이전 프로젝트에서 사용 [부트스트랩](http://getbootstr
 
 * 추가 [Bower](https://bower.io/) 라는 구성 파일 *bower.json* 프로젝트 루트에 (에서 프로젝트를 마우스 오른쪽 단추로 클릭 한 다음 **추가 > 새 항목 > Bower 구성 파일**). 추가 [부트스트랩](http://getbootstrap.com/) 및 [jQuery](https://jquery.com/) 파일 (아래의 강조 표시 된 줄 참조).
 
-  [!code-json[Main](mvc/sample/bower.json?highlight=5-6)]
+  [!code-json[](mvc/sample/bower.json?highlight=5-6)]
 
 파일을 저장할 때 Bower에서는 자동으로 다운로드를 종속성의 *wwwroot/lib* 폴더입니다. 사용할 수는 **솔루션 탐색기 검색** 상자 자산의 경로 찾을 수 있습니다.
 
@@ -156,7 +156,7 @@ ASP.NET MVC 이전 프로젝트에서 사용 [부트스트랩](http://getbootstr
 
 * 만들기는 *뷰/공유* 폴더입니다.
 
-* *선택 사항:* 복사 *_ViewImports.cshtml* 에서 *FullAspNetCore* MVC 프로젝트의 *뷰* ASP.NET Core 프로젝트 폴더*뷰* 폴더입니다. 모든 네임 스페이스 선언을 제거는 *_ViewImports.cshtml* 파일입니다. *_ViewImports.cshtml* 파일 모든 보기 파일에 대 한 네임 스페이스를 제공 하 고는에서 [태그 도우미](xref:mvc/views/tag-helpers/intro)합니다. 태그 도우미 새 레이아웃 파일에 사용 됩니다. *_ViewImports.cshtml* ASP.NET Core에 대 한 새 파일을 합니다.
+* *선택 사항:* 복사 *_ViewImports.cshtml* 에서 *FullAspNetCore* MVC 프로젝트의 *뷰* ASP.NET Core 프로젝트에 폴더  *뷰* 폴더입니다. 모든 네임 스페이스 선언을 제거는 *_ViewImports.cshtml* 파일입니다. *_ViewImports.cshtml* 파일 모든 보기 파일에 대 한 네임 스페이스를 제공 하 고는에서 [태그 도우미](xref:mvc/views/tag-helpers/intro)합니다. 태그 도우미 새 레이아웃 파일에 사용 됩니다. *_ViewImports.cshtml* ASP.NET Core에 대 한 새 파일을 합니다.
 
 * 복사는 *_Layout.cshtml* 이전 ASP.NET MVC 프로젝트에서 파일 *뷰/공유* ASP.NET Core 프로젝트에 폴더 *뷰/공유* 폴더입니다.
 
@@ -187,7 +187,7 @@ ASP.NET MVC 이전 프로젝트에서 사용 [부트스트랩](http://getbootstr
 
 업데이트 된 *_Layout.cshtml* 파일은 다음과 같습니다.
 
-[!code-html[Main](mvc/sample/Views/Shared/_Layout.cshtml?highlight=7,27,39-40)]
+[!code-html[](mvc/sample/Views/Shared/_Layout.cshtml?highlight=7,27,39-40)]
 
 브라우저에서 사이트를 검토 합니다. 원위치에서 예상된 스타일과는 올바르게 로드 이제 해야 합니다.
 

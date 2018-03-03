@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core에서 교차 사이트 요청 위조 (XSRF/CSRF) 공격 방지"
+title: "ASP.NET Core 공격 방지 교차 사이트 요청 위조 XSRF/CSRF)"
 author: steve-smith
-description: "ASP.NET Core에서 교차 사이트 요청 위조 (XSRF/CSRF) 공격 방지"
+description: "악성 웹 사이트 클라이언트 브라우저와 응용 프로그램 간의 상호 작용에 적용할 수 있는 웹 응용 프로그램에 대 한 공격을 방지 하는 방법을 검색 합니다."
 manager: wpickett
 ms.author: riande
 ms.date: 7/14/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/anti-request-forgery
-ms.openlocfilehash: 079c36535b8c9e7229952a2f7bcd53174effa6af
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 80651a3c3e4c722e0cb96d7cc07de366819f8d1d
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/02/2018
 ---
-# <a name="preventing-cross-site-request-forgery-xsrfcsrf-attacks-in-aspnet-core"></a>ASP.NET Core에서 교차 사이트 요청 위조 (XSRF/CSRF) 공격 방지
+# <a name="prevent-cross-site-request-forgery-xsrfcsrf-attacks-in-aspnet-core"></a>ASP.NET Core 공격 방지 교차 사이트 요청 위조 XSRF/CSRF)
 
 [Steve Smith](https://ardalis.com/), [Fiyaz Hasan](https://twitter.com/FiyazBinHasan), 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -31,14 +31,14 @@ CSRF 공격의 예:
 
    악성 사이트 다음과 유사한 HTML 폼을 포함 되어 있습니다.
 
-```html
+   ```html
    <h1>You Are a Winner!</h1>
-     <form action="http://example.com/api/account" method="post">
-       <input type="hidden" name="Transaction" value="withdraw" />
-       <input type="hidden" name="Amount" value="1000000" />
-     <input type="submit" value="Click Me"/>
+   <form action="http://example.com/api/account" method="post">
+       <input type="hidden" name="Transaction" value="withdraw">
+       <input type="hidden" name="Amount" value="1000000">
+       <input type="submit" value="Click Me">
    </form>
-```
+   ```
 
 Form action에는 취약 한 사이트 악성 사이트에 게시 확인 합니다. CSRF의 "사이트 간" 부분입니다.
 
@@ -91,21 +91,21 @@ ASP.NET Core MVC 2.0에서는 [FormTagHelper](xref:mvc/views/working-with-forms#
 
 * 명시적으로 사용 하지 않도록 설정 `asp-antiforgery`합니다. 예
 
- ```html
+  ```html
   <form method="post" asp-antiforgery="false">
   </form>
   ```
 
 * 태그 도우미를 사용 하 여 태그 도우미 부족 form 요소를 선택할 [! 옵트아웃 기호](xref:mvc/views/tag-helpers/intro#opt-out)합니다.
 
- ```html
+  ```html
   <!form method="post">
   </!form>
   ```
 
 * 제거는 `FormTagHelper` 보기에서 합니다. 제거할 수는 `FormTagHelper` Razor 보기에는 다음 지시문을 추가 하 여 보기에서:
 
- ```html
+  ```html
   @removeTagHelper Microsoft.AspNetCore.Mvc.TagHelpers.FormTagHelper, Microsoft.AspNetCore.Mvc.TagHelpers
   ```
 
@@ -125,7 +125,7 @@ CSRF 공격 으로부터 보호 하는 데 가장 일반적인 방법은 동기�
 }
 ```
 
-Antiforgery 토큰을 명시적으로 추가할 수는 ``<form>`` HTML 도우미와 태그 도우미를 사용 하지 않고 요소 ``@Html.AntiForgeryToken``:
+Antiforgery 토큰을 명시적으로 추가할 수는 `<form>` HTML 도우미와 태그 도우미를 사용 하지 않고 요소 `@Html.AntiForgeryToken`:
 
 
 ```html
@@ -136,18 +136,16 @@ Antiforgery 토큰을 명시적으로 추가할 수는 ``<form>`` HTML 도우미
 
 위의 경우 중 각 ASP.NET Core 다음과 유사한 숨겨진된 양식 필드를 추가 합니다.
 ```html
-<input name="__RequestVerificationToken" type="hidden" value="CfDJ8NrAkSldwD9CpLRyOtm6FiJB1Jr_F3FQJQDvhlHoLNJJrLA6zaMUmhjMsisu2D2tFkAiYgyWQawJk9vNm36sYP1esHOtamBEPvSk1_x--Sg8Ey2a-d9CV2zHVWIN9MVhvKHOSyKqdZFlYDVd69XYx-rOWPw3ilHGLN6K0Km-1p83jZzF0E4WU5OGg5ns2-m9Yw" />
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8NrAkSldwD9CpLRyOtm6FiJB1Jr_F3FQJQDvhlHoLNJJrLA6zaMUmhjMsisu2D2tFkAiYgyWQawJk9vNm36sYP1esHOtamBEPvSk1_x--Sg8Ey2a-d9CV2zHVWIN9MVhvKHOSyKqdZFlYDVd69XYx-rOWPw3ilHGLN6K0Km-1p83jZzF0E4WU5OGg5ns2-m9Yw">
 ```
 
-ASP.NET Core 3 개 포함 [필터](xref:mvc/controllers/filters) antiforgery 토큰을 사용 하기 위한: ``ValidateAntiForgeryToken``, ``AutoValidateAntiforgeryToken``, 및 ``IgnoreAntiforgeryToken``합니다.
-
-<a name="vaft"></a>
+ASP.NET Core 3 개 포함 [필터](xref:mvc/controllers/filters) antiforgery 토큰을 사용 하기 위한: `ValidateAntiForgeryToken`, `AutoValidateAntiforgeryToken`, 및 `IgnoreAntiforgeryToken`합니다.
 
 ### <a name="validateantiforgerytoken"></a>ValidateAntiForgeryToken
 
-``ValidateAntiForgeryToken`` 는 개별 작업은 컨트롤러에 적용할 수 있는 작업 필터는 전역적으로 또는 합니다. 요청에 유효한 antiforgery 토큰에 포함 되지 않으면이 필터 적용이 영향을 주는 작업에 대 한 요청을 차단 됩니다.
+`ValidateAntiForgeryToken` 는 개별 작업은 컨트롤러에 적용할 수 있는 작업 필터는 전역적으로 또는 합니다. 요청에 유효한 antiforgery 토큰에 포함 되지 않으면이 필터 적용이 영향을 주는 작업에 대 한 요청을 차단 됩니다.
 
-```c#
+```csharp
 [HttpPost]
 [ValidateAntiForgeryToken]
 public async Task<IActionResult> RemoveLogin(RemoveLoginViewModel account)
@@ -167,25 +165,24 @@ public async Task<IActionResult> RemoveLogin(RemoveLoginViewModel account)
 }
 ```
 
-``ValidateAntiForgeryToken`` 특성 포함 하 여 데코레이팅되 작업 메서드에 요청에 대 한 토큰 요구 `HTTP GET` 요청 합니다. 광범위 하 게 적용 하는 경우 사용 하 여 재정의할 수 있습니다는 ``IgnoreAntiforgeryToken`` 특성입니다.
+`ValidateAntiForgeryToken` 특성 포함 하 여 데코레이팅되 작업 메서드에 요청에 대 한 토큰 요구 `HTTP GET` 요청 합니다. 광범위 하 게 적용 하는 경우 사용 하 여 재정의할 수 있습니다는 `IgnoreAntiforgeryToken` 특성입니다.
 
 ### <a name="autovalidateantiforgerytoken"></a>AutoValidateAntiforgeryToken
 
-ASP.NET Core 응용 프로그램은 일반적으로 HTTP는 안전 메서드 (GET, HEAD, 옵션 및 추적)에 대 한 antiforgery 토큰 생성 하지 않습니다. 광범위 하 게 적용 하는 대신는 ``ValidateAntiForgeryToken`` 특성과 다음 사용 하 여 재정의 ``IgnoreAntiforgeryToken`` 사용할 수 있습니다 특성은 ``AutoValidateAntiforgeryToken`` 특성입니다. 이 특성은 동일 하 게 작동는 ``ValidateAntiForgeryToken`` 특성을 제외 하 고 토큰에 대 한 다음과 같은 HTTP 메서드를 사용 하 여 요청 필요 하지 않습니다.
+ASP.NET Core 응용 프로그램은 일반적으로 HTTP는 안전 메서드 (GET, HEAD, 옵션 및 추적)에 대 한 antiforgery 토큰 생성 하지 않습니다. 광범위 하 게 적용 하는 대신는 `ValidateAntiForgeryToken` 특성과 다음 사용 하 여 재정의 `IgnoreAntiforgeryToken` 사용할 수 있습니다 특성은 ``AutoValidateAntiforgeryToken`` 특성입니다. 이 특성은 동일 하 게 작동는 `ValidateAntiForgeryToken` 특성을 제외 하 고 토큰에 대 한 다음과 같은 HTTP 메서드를 사용 하 여 요청 필요 하지 않습니다.
 
 * 가져오기
 * HEAD
 * 옵션
 * TRACE
 
-사용 하는 것이 좋습니다 ``AutoValidateAntiforgeryToken`` 비 API 시나리오에 대 한 광범위 하 게 합니다. 이렇게 하면 기본적으로 POST 작업 보호 됩니다. 대신 사용 하는 표시 되지 않으면 기본적으로 antiforgery 토큰을 무시 하도록 ``ValidateAntiForgeryToken`` 개별 작업 메서드에 적용 합니다. 되도록 POST 작업 메서드에 대 한이 시나리오에서 더 많이 왼쪽 보호 되지 CSRF 공격에 취약 한 응용 프로그램을 종료 합니다. 도 익명 게시물 antiforgery 토큰을 보내야 합니다.
+사용 하는 것이 좋습니다 `AutoValidateAntiforgeryToken` 비 API 시나리오에 대 한 광범위 하 게 합니다. 이렇게 하면 기본적으로 POST 작업 보호 됩니다. 대신 사용 하는 표시 되지 않으면 기본적으로 antiforgery 토큰을 무시 하도록 `ValidateAntiForgeryToken` 개별 작업 메서드에 적용 합니다. 되도록 POST 작업 메서드에 대 한이 시나리오에서 더 많이 왼쪽 보호 되지 CSRF 공격에 취약 한 응용 프로그램을 종료 합니다. 도 익명 게시물 antiforgery 토큰을 보내야 합니다.
 
 참고: Api 토큰;의 쿠키 일부로 보내기 위한 자동 메커니즘 없는 구현은 클라이언트 코드 구현에 따라 가능성이 높습니다. 몇 가지 예는 다음과 같습니다.
 
-
 예 (클래스 수준):
 
-```c#
+```csharp
 [Authorize]
 [AutoValidateAntiforgeryToken]
 public class ManageController : Controller
@@ -194,7 +191,7 @@ public class ManageController : Controller
 
 예 (전역):
 
-```c#
+```csharp
 services.AddMvc(options => 
     options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute()));
 ```
@@ -203,9 +200,9 @@ services.AddMvc(options =>
 
 ### <a name="ignoreantiforgerytoken"></a>IgnoreAntiforgeryToken
 
-``IgnoreAntiforgeryToken`` 필터는 지정 된 작업 (또는 컨트롤러)를 사용할 수는 antiforgery 토큰에 대 한 필요성을 제거 하는 데 사용 됩니다. 이 필터는 재정의 적용 하면 ``ValidateAntiForgeryToken`` 및/또는 ``AutoValidateAntiforgeryToken`` (전역적으로 또는 컨트롤러)는 더 높은 수준에서 지정 된 필터입니다.
+`IgnoreAntiforgeryToken` 필터는 지정 된 작업 (또는 컨트롤러)를 사용할 수는 antiforgery 토큰에 대 한 필요성을 제거 하는 데 사용 됩니다. 이 필터는 재정의 적용 하면 `ValidateAntiForgeryToken` 및/또는 `AutoValidateAntiforgeryToken` (전역적으로 또는 컨트롤러)는 더 높은 수준에서 지정 된 필터입니다.
 
-```c#
+```csharp
 [Authorize]
 [AutoValidateAntiforgeryToken]
 public class ManageController : Controller
@@ -225,14 +222,14 @@ public class ManageController : Controller
 
 ### <a name="angularjs"></a>AngularJS
 
-AngularJS는 CSRF 주소로 규칙을 사용합니다. 서버 이름으로 쿠키를 전송 하는 경우 ``XSRF-TOKEN``는 각 ``$http`` 서비스에서 값에서이 쿠키를 추가 헤더는이 서버에 요청을 보낼 때. 이 프로세스는 자동; 헤더를 명시적으로 설정할 필요가 없습니다. 헤더 이름이 ``X-XSRF-TOKEN``합니다. 서버는이 헤더를 검색 하 고 해당 내용의 유효성을 검사 해야 합니다.
+AngularJS는 CSRF 주소로 규칙을 사용합니다. 서버 이름으로 쿠키를 전송 하는 경우 `XSRF-TOKEN`는 각 `$http` 서비스에서 값에서이 쿠키를 추가 헤더는이 서버에 요청을 보낼 때. 이 프로세스는 자동; 헤더를 명시적으로 설정할 필요가 없습니다. 헤더 이름이 `X-XSRF-TOKEN`합니다. 서버는이 헤더를 검색 하 고 해당 내용의 유효성을 검사 해야 합니다.
 
 ASP.NET Core API에 대 한이 규칙을 통해 작동 합니다.
 
-* 호출 하는 쿠키에 토큰을 제공할 앱 구성``XSRF-TOKEN``
-* 라는 헤더 찾으려는 antiforgery 서비스 구성``X-XSRF-TOKEN``
+* 호출 하는 쿠키에 토큰을 제공할 앱 구성 `XSRF-TOKEN`
+* 라는 헤더 찾으려는 antiforgery 서비스 구성 `X-XSRF-TOKEN`
 
-```c#
+```csharp
 services.AddAntiforgery(options => options.HeaderName = "X-XSRF-TOKEN");
 ```
 
@@ -242,20 +239,22 @@ services.AddAntiforgery(options => options.HeaderName = "X-XSRF-TOKEN");
 
 JavaScript에서 뷰를 사용 하 여 보기 내에서 서비스를 사용 하 여 토큰을 만들 수 있습니다. 이 위해 삽입는 `Microsoft.AspNetCore.Antiforgery.IAntiforgery` 보기 및 호출 계층에 서비스 `GetAndStoreTokens`표시 된 것 처럼:
 
-[!code-csharp[Main](anti-request-forgery/sample/MvcSample/Views/Home/Ajax.cshtml?highlight=4-10,24)]
+[!code-csharp[](anti-request-forgery/sample/MvcSample/Views/Home/Ajax.cshtml?highlight=4-10,12-13,28)]
 
 이 방법은 서버에서 쿠키를 설정 하거나 클라이언트에서 읽기를 직접 사용 않아도 됩니다.
 
+앞의 예제 jQuery를 사용 하 여 AJAX POST 헤더에 대 한 숨겨진된 필드 값을 읽을 수 있습니다. 토큰의 값을 얻기 위해 JavaScript를 사용 하려면 사용 하 여 `document.getElementById('RequestVerificationToken').value`합니다.
+
 JavaScript 쿠키, 제공 된 토큰에 액세스할 수도 아래와 같이 쿠키의 내용이 토큰의 값을 가진 헤더를 만드는 데 사용할 수 있으며
 
-```c#
+```csharp
 context.Response.Cookies.Append("CSRF-TOKEN", tokens.RequestToken, 
   new Microsoft.AspNetCore.Http.CookieOptions { HttpOnly = false });
 ```
 
-그런 다음 스크립트를 작성 하는 것으로 가정 요청 헤더에 토큰을 보냅니다 ``X-CSRF-TOKEN``, antiforgery 서비스를 찾도록 구성 된 ``X-CSRF-TOKEN`` 헤더:
+그런 다음 스크립트를 작성 하는 것으로 가정 요청 헤더에 토큰을 보냅니다 `X-CSRF-TOKEN`, antiforgery 서비스를 찾도록 구성 된 `X-CSRF-TOKEN` 헤더:
 
-```c#
+```csharp
 services.AddAntiforgery(options => options.HeaderName = "X-CSRF-TOKEN");
 ```
 
@@ -277,10 +276,10 @@ $.ajax({
 
 ## <a name="configuring-antiforgery"></a>Antiforgery 구성
 
-`IAntiforgery`antiforgery 시스템을 구성 하는 API를 제공 합니다. 서비스를 요청할 수 있습니다는 `Configure` 의 메서드는 `Startup` 클래스입니다. 다음 예제에서는 응용 프로그램의 홈 페이지에서 미들웨어를 사용 하 여 antiforgery 토큰을 생성 하 고 쿠키 (기본 각도 명명 규칙 위에서 설명한 사용)으로 응답에 보냅니다.
+`IAntiforgery` antiforgery 시스템을 구성 하는 API를 제공 합니다. 서비스를 요청할 수 있습니다는 `Configure` 의 메서드는 `Startup` 클래스입니다. 다음 예제에서는 응용 프로그램의 홈 페이지에서 미들웨어를 사용 하 여 antiforgery 토큰을 생성 하 고 쿠키 (기본 각도 명명 규칙 위에서 설명한 사용)으로 응답에 보냅니다.
 
 
-```c#
+```csharp
 public void Configure(IApplicationBuilder app, 
     IAntiforgery antiforgery)
 {
@@ -308,16 +307,16 @@ public void Configure(IApplicationBuilder app,
 
 사용자 지정할 수 있습니다 [antiforgery 옵션](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.antiforgery.antiforgeryoptions#fields_summary) 에 `ConfigureServices`:
 
-```c#
+```csharp
 services.AddAntiforgery(options => 
 {
-  options.CookieDomain = "mydomain.com";
-  options.CookieName = "X-CSRF-TOKEN-COOKIENAME";
-  options.CookiePath = "Path";
-  options.FormFieldName = "AntiforgeryFieldname";
-  options.HeaderName = "X-CSRF-TOKEN-HEADERNAME";
-  options.RequireSsl = false;
-  options.SuppressXFrameOptionsHeader = false;
+    options.CookieDomain = "mydomain.com";
+    options.CookieName = "X-CSRF-TOKEN-COOKIENAME";
+    options.CookiePath = "Path";
+    options.FormFieldName = "AntiforgeryFieldname";
+    options.HeaderName = "X-CSRF-TOKEN-HEADERNAME";
+    options.RequireSsl = false;
+    options.SuppressXFrameOptionsHeader = false;
 });
 ```
 
@@ -331,7 +330,7 @@ services.AddAntiforgery(options =>
 |FormFieldName | 뷰에서 antiforgery 토큰을 렌더링 하는 antiforgery 시스템에서 사용 하는 숨겨진된 폼 필드의 이름입니다. |
 |HeaderName    | Antiforgery 시스템에서 사용 하는 헤더의 이름입니다. 경우 `null`, 시스템은만 양식 데이터를 고려 합니다. |
 |RequireSsl    | Antiforgery 시스템에서 SSL이 필요한 지 여부를 지정 합니다. 기본값은 `false`입니다. 경우 `true`, 비 SSL 요청이 실패 합니다. |
-|SuppressXFrameOptionsHeader  | 생성을 표시 하지 않을 것인지를 지정 된 `X-Frame-Options` 헤더입니다. 기본적으로 머리글은 "SAMEORIGIN"의 값으로 생성 됩니다. 기본값은 `false`입니다. |
+|SuppressXFrameOptionsHeader | 생성을 표시 하지 않을 것인지를 지정 된 `X-Frame-Options` 헤더입니다. 기본적으로 머리글은 "SAMEORIGIN"의 값으로 생성 됩니다. 기본값은 `false`입니다. |
 
 Https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.cookieauthenticationoptions 대 한 자세한 정보를 참조 하십시오.
 

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/cookie
-ms.openlocfilehash: 1f20a2f7cab123e5a41ee1d232271da9de4c9058
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 2c08c4810a1952cc4890d46593d55f558b6ed8e9
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="using-cookie-authentication-without-aspnet-core-identity"></a>ASP.NET Core Identity 없이 쿠키 인증을 사용 하 여
 
@@ -33,13 +33,13 @@ ASP.NET Core에서 마이그레이션 쿠키 기반 인증에 대 한 내용은 
 
 에 `ConfigureServices` 메서드를 사용 하 여 인증 미들웨어 서비스 만들기는 `AddAuthentication` 및 `AddCookie` 메서드:
 
-[!code-csharp[Main](cookie/sample/Startup.cs?name=snippet1)]
+[!code-csharp[](cookie/sample/Startup.cs?name=snippet1)]
 
-`AuthenticationScheme`에 전달 된 `AddAuthentication` 응용 프로그램에 대 한 기본 인증 체계를 설정 합니다. `AuthenticationScheme`쿠키 인증의 여러 인스턴스가 있고 하려는 경우 유용 [특정 스키마를 가진 권한 부여](xref:security/authorization/limitingidentitybyscheme)합니다. 설정의 `AuthenticationScheme` 를 `CookieAuthenticationDefaults.AuthenticationScheme` 체계 "쿠키"의 값을 제공 합니다. 체계를 구별 하는 임의의 문자열 값을 제공할 수 있습니다.
+`AuthenticationScheme` 에 전달 된 `AddAuthentication` 응용 프로그램에 대 한 기본 인증 체계를 설정 합니다. `AuthenticationScheme` 쿠키 인증의 여러 인스턴스가 있고 하려는 경우 유용 [특정 스키마를 가진 권한 부여](xref:security/authorization/limitingidentitybyscheme)합니다. 설정의 `AuthenticationScheme` 를 `CookieAuthenticationDefaults.AuthenticationScheme` 체계 "쿠키"의 값을 제공 합니다. 체계를 구별 하는 임의의 문자열 값을 제공할 수 있습니다.
 
 에 `Configure` 메서드를 사용 하 여는 `UseAuthentication` 설정 하는 인증 미들웨어를 호출 하는 메서드는 `HttpContext.User` 속성입니다. 호출 된 `UseAuthentication` 메서드 호출 하기 전에 `UseMvcWithDefaultRoute` 또는 `UseMvc`:
 
-[!code-csharp[Main](cookie/sample/Startup.cs?name=snippet2)]
+[!code-csharp[](cookie/sample/Startup.cs?name=snippet2)]
 
 **AddCookie Options**
 
@@ -59,11 +59,11 @@ ASP.NET Core에서 마이그레이션 쿠키 기반 인증에 대 한 내용은 
 | [DataProtectionProvider](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.dataprotectionprovider?view=aspnetcore-2.0) | 설정의 `DataProtectionProvider` 기본값을 만드는 데 사용 되는 `TicketDataFormat`합니다. 경우는 `TicketDataFormat` 속성이 설정 되어는 `DataProtectionProvider` 옵션 사용 되지 않습니다. 을 지정 하지 않으면 응용 프로그램의 기본 데이터 보호 공급자가 사용 됩니다. |
 | [이벤트](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.events?view=aspnetcore-2.0) | 특정 처리 시점에서 앱 제어를 제공 하는 공급자에서 메서드를 호출 하는 처리기. 경우 `Events` 는 메서드를 호출할 때 아무 작업도 수행 하는 기본 인스턴스가 제공이 제공 되지 않습니다. |
 | [EventsType](/dotnet/api/microsoft.aspnetcore.authentication.authenticationschemeoptions.eventstype?view=aspnetcore-2.0) | 서비스 유형으로 가져오는 데 사용 된 `Events` 속성 대신 인스턴스. |
-| [ExpireTimeSpan](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.expiretimespan?view=aspnetcore-2.0) | `TimeSpan` 쿠키 내부에 저장 된 인증 티켓이 만료 된 이후입니다. `ExpireTimeSpan`티켓에 대 한 만료 시간을 생성 하는 현재 시간에 추가 됩니다. `ExpiredTimeSpan` 항상 서버에 의해 확인 된 암호화 된 AuthTicket 값에 들어갑니다. 에 들어갈 수 있습니다는 [Set-cookie](https://tools.ietf.org/html/rfc6265#section-4.1) 헤더가 없지만 경우에만 `IsPersistent` 설정 됩니다. 설정 하려면 `IsPersistent` 를 `true`, 구성에서 [AuthenticationProperties](/dotnet/api/microsoft.aspnetcore.authentication.authenticationproperties) 에 전달 된 `SignInAsync`합니다. 기본값 `ExpireTimeSpan` 14 일입니다. |
+| [ExpireTimeSpan](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.expiretimespan?view=aspnetcore-2.0) | `TimeSpan` 쿠키 내부에 저장 된 인증 티켓이 만료 된 이후입니다. `ExpireTimeSpan` 티켓에 대 한 만료 시간을 생성 하는 현재 시간에 추가 됩니다. `ExpiredTimeSpan` 항상 서버에 의해 확인 된 암호화 된 AuthTicket 값에 들어갑니다. 에 들어갈 수 있습니다는 [Set-cookie](https://tools.ietf.org/html/rfc6265#section-4.1) 헤더가 없지만 경우에만 `IsPersistent` 설정 됩니다. 설정 하려면 `IsPersistent` 를 `true`, 구성에서 [AuthenticationProperties](/dotnet/api/microsoft.aspnetcore.authentication.authenticationproperties) 에 전달 된 `SignInAsync`합니다. 기본값 `ExpireTimeSpan` 14 일입니다. |
 | [LoginPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.loginpath?view=aspnetcore-2.0) | 302 있음 (URL 리디렉션)와 제공에 대 한 경로 제공 하 여 트리거되면 `HttpContext.ChallengeAsync`합니다. 생성 된 401는 현재 URL에 추가 되며는 `LoginPath` 의해 명명 된 쿼리 문자열 매개 변수로 `ReturnUrlParameter`합니다. 요청을 한 번의 `LoginPath` 부여 된 새 로그인 id는 `ReturnUrlParameter` 값 브라우저 원래 권한이 없음된 상태 코드를 발생 시킨 URL로 다시 리디렉션하는 데 사용 됩니다. 기본값은 `/Account/Login`입니다. |
 | [LogoutPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.logoutpath?view=aspnetcore-2.0) | 경우는 `LogoutPath` 해당 경로에 대 한 요청을 리디렉션합니다 처리기에 제공 된 값에 따라는 `ReturnUrlParameter`합니다. 기본값은 `/Account/Logout`입니다. |
-| [ReturnUrlParameter](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.returnurlparameter?view=aspnetcore-2.0) | 302 (URL 리디렉션) Found 응답에 대 한 처리기가 추가 되는 쿼리 문자열 매개 변수의 이름을 결정 합니다. `ReturnUrlParameter`에 요청이 도착할 때 사용 되는 `LoginPath` 또는 `LogoutPath` 로그인 또는 로그 아웃 작업을 수행한 후 원래 URL로 브라우저 돌아갑니다. 기본값은 `ReturnUrl`입니다. |
-| [SessionStore](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.sessionstore?view=aspnetcore-2.0) | 요청 간에 id를 저장 하는 데 사용 하는 선택적 컨테이너입니다. 을 사용 하는 세션 식별자만 클라이언트로 전송 됩니다. `SessionStore`큰 id와 잠재적 문제를 완화 하기 위해 사용할 수 있습니다. |
+| [ReturnUrlParameter](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.returnurlparameter?view=aspnetcore-2.0) | 302 (URL 리디렉션) Found 응답에 대 한 처리기가 추가 되는 쿼리 문자열 매개 변수의 이름을 결정 합니다. `ReturnUrlParameter` 에 요청이 도착할 때 사용 되는 `LoginPath` 또는 `LogoutPath` 로그인 또는 로그 아웃 작업을 수행한 후 원래 URL로 브라우저 돌아갑니다. 기본값은 `ReturnUrl`입니다. |
+| [SessionStore](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.sessionstore?view=aspnetcore-2.0) | 요청 간에 id를 저장 하는 데 사용 하는 선택적 컨테이너입니다. 을 사용 하는 세션 식별자만 클라이언트로 전송 됩니다. `SessionStore` 큰 id와 잠재적 문제를 완화 하기 위해 사용할 수 있습니다. |
 | [SlidingExpiration](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.slidingexpiration?view=aspnetcore-2.0) | 업데이트 된 만료 시간이 새 쿠키를 동적으로 발급 해야 하는 경우를 나타내는 플래그입니다. 이 현재 쿠키 만료 기간 50% 이상의 만료 된 모든 요청에서 발생할 수 있습니다. 새로운 만료 날짜로 앞으로 이동 하는 현재 날짜와 `ExpireTimespan`합니다. [절대 쿠키 만료 시간](xref:security/authentication/cookie#absolute-cookie-expiration) 를 사용 하 여 설정할 수는 `AuthenticationProperties` 클래스를 호출할 때 `SignInAsync`합니다. 절대 만료 시간 인증 쿠키가 유효 하다는 시간의 양을 제한 하 여 응용 프로그램의 보안을 향상 시킬 수 있습니다. 기본값은 `true`입니다. |
 | [TicketDataFormat](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.ticketdataformat?view=aspnetcore-2.0) | `TicketDataFormat` 보호 및 id 및 쿠키 값에 저장 되어 있는 기타 속성을 보호 해제 하는 데 사용 됩니다. 을 지정 하지 않으면는 `TicketDataFormat` 사용 하 여 만들어집니다는 [DataProtectionProvider](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.dataprotectionprovider?view=aspnetcore-2.0)합니다. |
 | [유효성 검사](/dotnet/api/microsoft.aspnetcore.authentication.authenticationschemeoptions.validate?view=aspnetcore-2.0) | 옵션은 유효한 지 확인 하는 메서드. |
@@ -103,7 +103,7 @@ app.UseCookieAuthentication(new CookieAuthenticationOptions()
 
 | 옵션 | 설명 |
 | ------ | ----------- |
-| [AuthenticationScheme](/dotnet/api/microsoft.aspnetcore.builder.authenticationoptions.authenticationscheme?view=aspnetcore-1.1) | 인증 체계를 설정합니다. `AuthenticationScheme`인증의 여러 인스턴스가 있는 하려는 경우 유용 [특정 스키마를 가진 권한 부여](xref:security/authorization/limitingidentitybyscheme)합니다. 설정의 `AuthenticationScheme` 를 `CookieAuthenticationDefaults.AuthenticationScheme` 체계 "쿠키"의 값을 제공 합니다. 체계를 구별 하는 임의의 문자열 값을 제공할 수 있습니다. |
+| [AuthenticationScheme](/dotnet/api/microsoft.aspnetcore.builder.authenticationoptions.authenticationscheme?view=aspnetcore-1.1) | 인증 체계를 설정합니다. `AuthenticationScheme` 인증의 여러 인스턴스가 있는 하려는 경우 유용 [특정 스키마를 가진 권한 부여](xref:security/authorization/limitingidentitybyscheme)합니다. 설정의 `AuthenticationScheme` 를 `CookieAuthenticationDefaults.AuthenticationScheme` 체계 "쿠키"의 값을 제공 합니다. 체계를 구별 하는 임의의 문자열 값을 제공할 수 있습니다. |
 | [AutomaticAuthenticate](/dotnet/api/microsoft.aspnetcore.builder.authenticationoptions.automaticauthenticate?view=aspnetcore-1.1) | 쿠키 인증 모든 요청에 대해 실행 및 유효성 검사 하 고 자신이 만든 직렬화 된 모든 보안 주체를 재구성 있는지를 나타내는 값을 설정 합니다. |
 | [AutomaticChallenge](/dotnet/api/microsoft.aspnetcore.builder.authenticationoptions.automaticchallenge?view=aspnetcore-1.1) | True 이면 인증 미들웨어 자동 문제를 처리 합니다. 경우 false 이면 인증 미들웨어만 변경 하 여 명시적으로 지정 하는 경우 응답은 `AuthenticationScheme`합니다. |
 | [ClaimsIssuer](/dotnet/api/microsoft.aspnetcore.builder.authenticationoptions.claimsissuer?view=aspnetcore-1.1) | 에 사용할 발급자는 [발급자](/dotnet/api/system.security.claims.claim.issuer) 쿠키 인증 미들웨어에서 만든 클레임의 속성입니다. |
@@ -171,7 +171,7 @@ var cookiePolicyOptions = new CookiePolicyOptions
 
 만들기는 [ClaimsIdentity](/dotnet/api/system.security.claims.claimsidentity) 와 모든 필수 [클레임](/dotnet/api/system.security.claims.claim)s 및 호출 [SignInAsync](/dotnet/api/microsoft.aspnetcore.authentication.authenticationhttpcontextextensions.signinasync?view=aspnetcore-2.0) 사용자 로그인:
 
-[!code-csharp[Main](cookie/sample/Pages/Account/Login.cshtml.cs?name=snippet1)]
+[!code-csharp[](cookie/sample/Pages/Account/Login.cshtml.cs?name=snippet1)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
@@ -185,7 +185,7 @@ await HttpContext.Authentication.SignInAsync(
 
 ---
 
-`SignInAsync`암호화 된 쿠키를 만들어 현재 응답에 추가 합니다. 지정 하지 않으면 프로그램 `AuthenticationScheme`, 기본 체계를 사용 합니다.
+`SignInAsync` 암호화 된 쿠키를 만들어 현재 응답에 추가 합니다. 지정 하지 않으면 프로그램 `AuthenticationScheme`, 기본 체계를 사용 합니다.
 
 내부적으로 사용 되는 암호화는 ASP.NET Core [데이터 보호](xref:security/data-protection/using-data-protection#security-data-protection-getting-started) 시스템입니다. 여러 컴퓨터, 앱, 부하 분산 또는 웹 팜을 사용 하 여 응용 프로그램을 호스트 하 고 있는 경우 다음을 수행 해야 [데이터 보호를 구성](xref:security/data-protection/configuration/overview) 동일한 키 링과 응용 프로그램 식별자를 사용 하도록 합니다.
 
@@ -195,7 +195,7 @@ await HttpContext.Authentication.SignInAsync(
 
 로그 아웃 현재 사용자를 해당 쿠키를 삭제 하려면 호출 [SignOutAsync](/dotnet/api/microsoft.aspnetcore.authentication.authenticationhttpcontextextensions.signoutasync?view=aspnetcore-2.0):
 
-[!code-csharp[Main](cookie/sample/Pages/Account/Login.cshtml.cs?name=snippet2)]
+[!code-csharp[](cookie/sample/Pages/Account/Login.cshtml.cs?name=snippet2)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 

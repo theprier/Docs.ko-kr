@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/consumer-apis/password-hashing
-ms.openlocfilehash: 536499687865b4e4d5b1d9c4076623b5ac1ffdbe
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 8e2796108be14ef382f46e6deb3d584517120d27
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="password-hashing"></a>암호 해시
 
@@ -27,6 +27,6 @@ ms.lasthandoff: 01/30/2018
 
 3. `KeyDerivation.Pbkdf2` 메서드에 필요한 모든 매개 변수를 지정 하려면 호출자 (솔트, PRF, 및 반복 횟수). `Rfc2898DeriveBytes` 유형 이들에 대 한 기본값을 제공 합니다.
 
-[!code-csharp[Main](password-hashing/samples/passwordhasher.cs)]
+[!code-csharp[](password-hashing/samples/passwordhasher.cs)]
 
 ASP.NET Core Id에 대 한 소스 코드 참조 `PasswordHasher` 실제 환경에 대 한 입력 사례를 사용 합니다.

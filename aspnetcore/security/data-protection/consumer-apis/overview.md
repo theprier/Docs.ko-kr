@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/consumer-apis/overview
-ms.openlocfilehash: 7f335681581b73e36e5b4deaf513255770900965
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 3aa0c4bc8d009147dd15571da4d7d63402e4c512
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="consumer-apis-overview"></a>소비자 API 개요
 
@@ -48,11 +48,11 @@ DI-인식 구성 요소의 경우, 구성 요소의 생성자에서 `IDataProtec
 
 3. `IDataProtectionProvider` 로부터 `IDataProtector` 의 인스턴스를 생성하고, 이를 이용해서 데이터를 보호하고 보호 해제하기.
 
-[!code-csharp[Main](../using-data-protection/samples/protectunprotect.cs?highlight=26,34,35,36,37,38,39,40)]
+[!code-csharp[](../using-data-protection/samples/protectunprotect.cs?highlight=26,34,35,36,37,38,39,40)]
 
 Microsoft.AspNetCore.DataProtection.Abstractions 패키지에는 개발자의 편의를 위한 `IServiceProvider.GetDataProtector` 확장 메서드가 포함되어 있습니다. 이 확장 메서드는 서비스 공급자에서 `IDataProtectionProvider` 를 얻고 `IDataProtectionProvider.CreateProtector` 를 호출하는 과정을 단일 작업으로 축약시켜줍니다. 다음 예제는 이 확장 메서드의 사용 방법을 보여줍니다.
 
-[!code-csharp[Main](./overview/samples/getdataprotector.cs?highlight=15)]
+[!code-csharp[](./overview/samples/getdataprotector.cs?highlight=15)]
 
 >[!TIP]
 > `IDataProtectionProvider` 및 `IDataProtector` 의 인스턴스는 다중 호출자에 대해 스레드로부터 안전(Thread-Safe)합니다. 구성 요소에서 `CreateProtector` 를 호출해서 `IDataProtector` 의 참조를 얻은 다음, 이 참조를 이용해서 `Protect` 및 `Unprotect` 를 반복적으로 호출할 수 있도록 만들어졌습니다. `Unprotect` 호출 시 보호된 페이로드를 검증하거나 판독할 수 없으면 `CryptographicException`이 던져집니다. 일부 구성 요소는 보호 해제 작업 중 발생하는 오류를 무시해야 하는 경우도 있는데, 가령 인증 쿠키를 읽는 구성 요소는 요청 자체를 실패시키는 대신 이 오류를 처리하여 쿠키가 아예 존재하지 않는 것처럼 동작할 수 있습니다. 이런 동작이 필요한 구성 요소는 모든 예외를 감춰버리는 대신 명확하게 `CryptographicException`만 잡아야 합니다.

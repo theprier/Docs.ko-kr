@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: testing/razor-pages-testing
-ms.openlocfilehash: 6f9e986c34f41fe96beb492680106f725bc1e2f9
-ms.sourcegitcommit: 809ee4baf8bf7b4cae9e366ecae29de1037d2bbb
+ms.openlocfilehash: 3f53924e0b36b7924d82f97a8702aa461d9ebd78
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/15/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="razor-pages-unit-and-integration-testing-in-aspnet-core"></a>Razor 페이지 단위 및 ASP.NET Core에서 통합 테스트
 
@@ -100,7 +100,7 @@ using (var db = new AppDbContext(optionsBuilder.Options))
 
 이 방법을 사용이 문제는 각 테스트에서 상태로 이전 테스트 된 상태로 남아 서 데이터베이스를 받습니다. 서로 간섭 하지 않는 원자성 단위 테스트를 작성 하려고 할 때 문제가 될 수 있습니다. 강제로 `AppDbContext` 제공할 각 테스트에 대 한 새 데이터베이스 컨텍스트를 사용 하는 `DbContextOptions` 새 서비스 공급자를 기반으로 하는 인스턴스. 테스트 응용 프로그램을 사용 하는 방법을 보여 줍니다 해당 `Utilities` 클래스 메서드에 `TestingDbContextOptions` (*tests/RazorPagesTestingSample.Tests/Utilities/Utilities.cs*):
 
-[!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/Utilities/Utilities.cs?name=snippet1)]
+[!code-csharp[](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/Utilities/Utilities.cs?name=snippet1)]
 
 사용 하 여 `DbContextOptions` DAL 단위 테스트는 새 데이터베이스 인스턴스와 개별적으로 실행 하려면 각 테스트를 수 있습니다.:
 
@@ -119,23 +119,23 @@ using (var db = new AppDbContext(Utilities.TestingDbContextOptions()))
 
 예를 들어는 `DeleteMessageAsync` 로 식별 되는 단일 메시지를 제거 하기 위한 메서드는 해당 `Id` (*src/RazorPagesTestingSample/Data/AppDbContext.cs*):
 
-[!code-csharp[Main](razor-pages-testing/sample/src/RazorPagesTestingSample/Data/AppDbContext.cs?name=snippet4)]
+[!code-csharp[](razor-pages-testing/sample/src/RazorPagesTestingSample/Data/AppDbContext.cs?name=snippet4)]
 
 이 메서드에 대 한 두 개의 테스트가 있습니다. 하나의 테스트 메서드는 메시지가 데이터베이스에 있는 경우 메시지를 삭제를 확인 합니다. 데이터베이스는 변경 되지 않습니다는 다른 메서드 테스트 메시지 `Id` 삭제 존재 하지 않습니다. `DeleteMessageAsync_MessageIsDeleted_WhenMessageIsFound` 메서드는 다음과 같습니다.
 
-[!code-csharp[Main](razor-pages-testing/sample_snapshot/tests/RazorPagesTestingSample.Tests/UnitTests/DataAccessLayerTest.cs?name=snippet1)]
+[!code-csharp[](razor-pages-testing/sample_snapshot/tests/RazorPagesTestingSample.Tests/UnitTests/DataAccessLayerTest.cs?name=snippet1)]
 
 먼저, 메서드는 작업 단계에 대 한 준비 일어나 정렬 단계를 수행 합니다. 시드 메시지를 얻고에 보관 `seedMessages`합니다. 시드 메시지는 데이터베이스에 저장 됩니다. 사용 하 여 메시지는 `Id` 의 `1` 삭제에 대해 설정 됩니다. 경우는 `DeleteMessageAsync` 메서드 실행 되 고, 필요한 메시지의 모든 메시지로 레코드를 제외 하 고 있어야는 `Id` 의 `1`합니다. `expectedMessages` 변수는이 예상된 결과 나타냅니다.
 
-[!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/DataAccessLayerTest.cs?name=snippet1)]
+[!code-csharp[](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/DataAccessLayerTest.cs?name=snippet1)]
 
 메서드는 역할:는 `DeleteMessageAsync` 전달 메서드가 실행 되는 `recId` 의 `1`:
 
-[!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/DataAccessLayerTest.cs?name=snippet2)]
+[!code-csharp[](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/DataAccessLayerTest.cs?name=snippet2)]
 
 마지막으로 메서드가 가져오면는 `Messages` 컨텍스트에서 비교는 `expectedMessages` 둘이 같으면 어설션하:
 
-[!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/DataAccessLayerTest.cs?name=snippet3)]
+[!code-csharp[](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/DataAccessLayerTest.cs?name=snippet3)]
 
 비교를 위해 두 `List<Message>` 동일 합니다.
 
@@ -144,7 +144,7 @@ using (var db = new AppDbContext(Utilities.TestingDbContextOptions()))
 
 비슷한 테스트 메서드, `DeleteMessageAsync_NoMessageIsDeleted_WhenMessageIsNotFound` 존재 하지 않는 메시지를 삭제 하는 결과 확인 합니다. 이 경우 데이터베이스에서 예상된 메시지 같아야 하 후 실제 메시지는 `DeleteMessageAsync` 메서드를 실행 합니다. 데이터베이스의 콘텐츠를 변경 해야 합니다.
 
-[!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/DataAccessLayerTest.cs?name=snippet4)]
+[!code-csharp[](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/DataAccessLayerTest.cs?name=snippet4)]
 
 ## <a name="unit-testing-the-page-model-methods"></a>단위 테스트 페이지 모델 메서드
 
@@ -168,27 +168,27 @@ using (var db = new AppDbContext(Utilities.TestingDbContextOptions()))
 
 `OnGetAsync_PopulatesThePageModel_WithAListOfMessages` 테스트 표시 방법을 `GetMessagesAsync` 페이지 모델에 대 한 메서드는 모의:
 
-[!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/IndexPageTest.cs?name=snippet1&highlight=3-4)]
+[!code-csharp[](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/IndexPageTest.cs?name=snippet1&highlight=3-4)]
 
 경우는 `OnGetAsync` 메서드는 동작 단계에서 실행 되 고, 페이지 모델 호출 `GetMessagesAsync` 메서드.
 
 단위 테스트에 Act 단계 (*tests/RazorPagesTestingSample.Tests/UnitTests/IndexPageTest.cs*):
 
-[!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/IndexPageTest.cs?name=snippet2)]
+[!code-csharp[](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/IndexPageTest.cs?name=snippet2)]
 
 `IndexPage` 페이지 모델 `OnGetAsync` 메서드 (*src/RazorPagesTestingSample/Pages/Index.cshtml.cs*):
 
-[!code-csharp[Main](razor-pages-testing/sample/src/RazorPagesTestingSample/Pages/Index.cshtml.cs?name=snippet1&highlight=3)]
+[!code-csharp[](razor-pages-testing/sample/src/RazorPagesTestingSample/Pages/Index.cshtml.cs?name=snippet1&highlight=3)]
 
 `GetMessagesAsync` DAL에서 메서드는이 메서드 호출에 대 한 결과 반환 하지 않습니다. 모의 버전의 메서드는 결과 반환합니다.
 
 에 `Assert` 단계, 실제 메시지 (`actualMessages`)에서 할당 되는 `Messages` 페이지 모델의 속성입니다. 형식 검사를 메시지에 할당 된 경우에 수행 됩니다. 예상 및 실제 메시지를 통해 비교 됩니다 자신의 `Text` 속성입니다. 테스트를 어설션하는 두 `List<Message>` 인스턴스 같은 메시지를 포함 합니다.
 
-[!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/IndexPageTest.cs?name=snippet3)]
+[!code-csharp[](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/IndexPageTest.cs?name=snippet3)]
 
 이 그룹의 다른 테스트 페이지를 포함 하는 모델 개체 만들기는 `DefaultHttpContext`, `ModelStateDictionary`, `ActionContext` 설정 하는 `PageContext`, `ViewDataDictionary`, 및 `PageContext`합니다. 이들은 테스트를 수행 하는 데 유용 합니다. 예를 들어 메시지 응용 프로그램 설정는 `ModelState` 오류로 `AddModelError` 있는지 여부를 확인 하는 유효한 `PageResult` 이 반환 됩니다 `OnPostAddMessageAsync` 실행 됩니다:
 
-[!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/IndexPageTest.cs?name=snippet4&highlight=11,26,29,32)]
+[!code-csharp[](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/UnitTests/IndexPageTest.cs?name=snippet4&highlight=11,26,29,32)]
 
 ## <a name="integration-testing-the-app"></a>통합 응용 프로그램 테스트
 
@@ -196,7 +196,7 @@ using (var db = new AppDbContext(Utilities.TestingDbContextOptions()))
 
 요청 하는 메시지 응용 프로그램의 인덱스 페이지의 결과 확인 하는 통합 예제는 샘플에서 테스트 (*tests/RazorPagesTestingSample.Tests/IntegrationTests/IndexPageTest.cs*):
 
-[!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/IntegrationTests/IndexPageTest.cs?name=snippet1)]
+[!code-csharp[](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/IntegrationTests/IndexPageTest.cs?name=snippet1)]
 
 정렬 단계가 없습니다. `GetAsync` 메서드가 호출 되는 `HttpClient` 를 끝점에 GET 요청을 보냅니다. 테스트 결과 200 OK 상태 코드를 어설션 합니다.
 
@@ -214,19 +214,19 @@ using (var db = new AppDbContext(Utilities.TestingDbContextOptions()))
 
 `Post_AddMessageHandler_ReturnsRedirectToRoot ` 메서드 (*tests/RazorPagesTestingSample.Tests/IntegrationTests/IndexPageTest.cs*):
 
-[!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/IntegrationTests/IndexPageTest.cs?name=snippet2)]
+[!code-csharp[](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/IntegrationTests/IndexPageTest.cs?name=snippet2)]
 
 `GetRequestContentAsync` 유틸리티 메서드 antiforgery 쿠키 및 요청 확인 토큰을 사용 하 여 클라이언트를 준비 하 고 관리 합니다. 메서드가 수신 하는 방법에 유의 `IDictionary` 호출 테스트 메서드가 요청 확인 토큰 함께 인코딩하는 데 요청에 대 한 데이터를 전달할 수 있는 (*tests/RazorPagesTestingSample.Tests/Utilities/Utilities.cs*):
 
-[!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/Utilities/Utilities.cs?name=snippet2&highlight=1-2,8-9,29)]
+[!code-csharp[](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/Utilities/Utilities.cs?name=snippet2&highlight=1-2,8-9,29)]
 
 통합 테스트 응용 프로그램의 응답 동작을 테스트 하려면 응용 프로그램에 잘못 된 데이터를 전달할 수도 있습니다. 메시지 앱 200 자로 메시지 길이 제한 (*src/RazorPagesTestingSample/Data/Message.cs*):
 
-[!code-csharp[Main](razor-pages-testing/sample/src/RazorPagesTestingSample/Data/Message.cs?name=snippet1&highlight=7)]
+[!code-csharp[](razor-pages-testing/sample/src/RazorPagesTestingSample/Data/Message.cs?name=snippet1&highlight=7)]
 
 `Post_AddMessageHandler_ReturnsSuccess_WhenMessageTextTooLong` 테스트 `Message` 201 "X" 문자로 텍스트에 명시적으로 전달 합니다. 이 인해는 `ModelState` 오류입니다. 게시물은 인덱스 페이지에 다시 리디렉션되지 않을 합니다. 200 OK와 반환 된 `null` `Location` 헤더 (*tests/RazorPagesTestingSample.Tests/IntegrationTests/IndexPageTest.cs*):
 
-[!code-csharp[Main](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/IntegrationTests/IndexPageTest.cs?name=snippet3&highlight=7,16-17)]
+[!code-csharp[](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/IntegrationTests/IndexPageTest.cs?name=snippet3&highlight=7,16-17)]
 
 ## <a name="see-also"></a>참고 항목
 

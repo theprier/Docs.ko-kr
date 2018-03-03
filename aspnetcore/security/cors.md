@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/cors
-ms.openlocfilehash: 1c0d87b61882f69dbf2aeb0a896d9294bd029374
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: ee61798fc1bde89ca3712eae9b7c4413e58cf70d
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="enabling-cross-origin-requests-cors"></a>크로스-원본 요청 (CORS)를 사용 하도록 설정
 
@@ -35,13 +35,13 @@ ms.lasthandoff: 01/30/2018
 
 이러한 Url 있는 두 이전 보다 다른 출처:
 
-* `http://example.net`-다른 도메인
+* `http://example.net` -다른 도메인
 
-* `http://www.example.com/foo.html`-다른 하위 도메인
+* `http://www.example.com/foo.html` -다른 하위 도메인
 
-* `https://example.com/foo.html`-다른 구성표
+* `https://example.com/foo.html` -다른 구성표
 
-* `http://example.com:9000/foo.html`-다른 포트
+* `http://example.com:9000/foo.html` -다른 포트
 
 > [!NOTE]
 > Origin을 비교할 때 Internet Explorer에서 포트를 고려 하지 않습니다.
@@ -52,7 +52,7 @@ ms.lasthandoff: 01/30/2018
 
 Startup.cs에 CORS 서비스를 추가 합니다.
 
-[!code-csharp[Main](cors/sample/CorsExample1/Startup.cs?name=snippet_addcors)]
+[!code-csharp[](cors/sample/CorsExample1/Startup.cs?name=snippet_addcors)]
 
 ## <a name="enabling-cors-with-middleware"></a>CORS 미들웨어와 사용
 
@@ -60,7 +60,7 @@ Startup.cs에 CORS 서비스를 추가 합니다.
 
 사용 하 여 CORS 미들웨어를 추가 하는 경우 크로스-원본 정책을 지정할 수 있습니다는 `CorsPolicyBuilder` 클래스입니다. 이렇게 하는 데는 두 가지 방법이 있습니다. 첫 번째 람다를 사용 하 여 UseCors 호출입니다.
 
-[!code-csharp[Main](cors/sample/CorsExample1/Startup.cs?highlight=11,12&range=22-38)]
+[!code-csharp[](cors/sample/CorsExample1/Startup.cs?highlight=11,12&range=22-38)]
 
 **참고:** 후행 슬래시가 없는 URL을 지정 해야 합니다 (`/`). URL로 종료 하는 경우 `/`가 반환 됩니다 `false` 헤더가 없으면 반환 됩니다.
 
@@ -68,11 +68,11 @@ Startup.cs에 CORS 서비스를 추가 합니다.
 
 메서드 호출을 체인화할 수 있도록 CorsPolicyBuilder fluent API에 있는지 참고:
 
-[!code-csharp[Main](../security/cors/sample/CorsExample3/Startup.cs?highlight=3&range=29-32)]
+[!code-csharp[](../security/cors/sample/CorsExample3/Startup.cs?highlight=3&range=29-32)]
 
 하나 이상의 명명 된 CORS 정책을 정의 하 고 런타임 시 이름별 정책을 선택 하는 두 번째 방법이입니다.
 
-[!code-csharp[Main](cors/sample/CorsExample2/Startup.cs?name=snippet_begin)]
+[!code-csharp[](cors/sample/CorsExample2/Startup.cs?name=snippet_begin)]
 
 이 예제에서는 "AllowSpecificOrigin" 라는 CORS 정책을 추가 합니다. 정책을 선택 하려면에 이름을 전달 `UseCors`합니다.
 
@@ -84,19 +84,19 @@ Startup.cs에 CORS 서비스를 추가 합니다.
 
 특정 작업에 대 한 CORS 정책을 지정 하려면 추가 `[EnableCors]` 특성 작업을 합니다. 정책 이름을 지정 합니다.
 
-[!code-csharp[Main](cors/sample/CorsMVC/Controllers/ValuesController.cs?name=EnableOnAction)]
+[!code-csharp[](cors/sample/CorsMVC/Controllers/ValuesController.cs?name=EnableOnAction)]
 
 ### <a name="per-controller"></a>컨트롤러당
 
 특정 컨트롤러에 대 한 CORS 정책을 지정 하려면 추가 `[EnableCors]` 특성을 컨트롤러 클래스입니다. 정책 이름을 지정 합니다.
 
-[!code-csharp[Main](cors/sample/CorsMVC/Controllers/ValuesController.cs?name=EnableOnController)]
+[!code-csharp[](cors/sample/CorsMVC/Controllers/ValuesController.cs?name=EnableOnController)]
 
 ### <a name="globally"></a>전역으로
 
 추가 하 여 위에 모든 컨트롤러에 대해 CORS를 전체적으로 사용할 수 있습니다는 `CorsAuthorizationFilterFactory` 필터를 전역 필터 컬렉션:
 
-[!code-csharp[Main](cors/sample/CorsMVC/Startup2.cs?name=snippet_configureservices)]
+[!code-csharp[](cors/sample/CorsMVC/Startup2.cs?name=snippet_configureservices)]
 
 우선 순위는: 작업, 컨트롤러, 전역 합니다. 작업 수준 정책 컨트롤러 수준 정책 보다 우선 적용 하 고 컨트롤러 수준 정책 글로벌 정책 보다 우선 적용 됩니다.
 
@@ -104,7 +104,7 @@ Startup.cs에 CORS 서비스를 추가 합니다.
 
 컨트롤러 또는 동작에 대 한 CORS를 해제 하려면 사용 하 여는 `[DisableCors]` 특성입니다.
 
-[!code-csharp[Main](cors/sample/CorsMVC/Controllers/ValuesController.cs?name=DisableOnAction)]
+[!code-csharp[](cors/sample/CorsMVC/Controllers/ValuesController.cs?name=DisableOnAction)]
 
 ## <a name="cors-policy-options"></a>CORS 정책 옵션
 
@@ -128,11 +128,11 @@ Startup.cs에 CORS 서비스를 추가 합니다.
 
 하나 이상의 특정 origin을 허용 합니다.
 
-[!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=19-23)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=19-23)]
 
 모든 원본을 허용 합니다.
 
-[!code-csharp[Main](cors/sample/CorsExample4/Startup.cs??range=27-31)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs??range=27-31)]
 
 모든 원본에서 요청을 허용 하기 전에 신중히 고려해 야 합니다. 모든 웹 사이트 API에 대 한 AJAX 호출을 만들 수 있음을 의미 합니다.
 
@@ -140,7 +140,7 @@ Startup.cs에 CORS 서비스를 추가 합니다.
 
 모든 HTTP 메서드를 허용 합니다.
 
-[!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=44-49)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=44-49)]
 
 전 요청 및 액세스 제어-허용-방법 헤더에 영향을 줍니다.
 
@@ -150,11 +150,11 @@ CORS 실행 전 요청에는 응용 프로그램에 의해 설정 된 HTTP 헤�
 
 특정 헤더를 허용 목록:
 
-[!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=53-58)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=53-58)]
 
 허용 하려면 요청 헤더를 작성 모든:
 
-[!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=62-67)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=62-67)]
 
 브라우저에서 액세스 제어-요청 헤더를 설정 하는 방법을 완전히 일치 하지 않습니다. 아닌 다른 헤더를 값으로 설정 하면 "*"를 포함 해야 이상 "동의", "콘텐츠 형식은" 및 "출처" + 지원 하 고 모든 사용자 지정 헤더입니다.
 
@@ -176,7 +176,7 @@ CORS 실행 전 요청에는 응용 프로그램에 의해 설정 된 HTTP 헤�
 
 이러한 호출 하는 CORS 사양 *간단한 응답 헤더*합니다. 다른 헤더를 사용할 수 있도록 응용 프로그램:
 
-[!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=71-76)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=71-76)]
 
 ### <a name="credentials-in-cross-origin-requests"></a>크로스-원본 요청에 자격 증명
 
@@ -203,7 +203,7 @@ $.ajax({
 
 또한 서버 자격 증명을 허용 해야 합니다. 크로스-원본 자격 증명을 허용 합니다.
 
-[!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=80-85)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=80-85)]
 
 이제 HTTP 응답에는 브라우저에 알려 서버 크로스-원본 요청에 대 한 자격 증명을 허용 하는 액세스-컨트롤--자격 증명 허용 헤더가 포함 됩니다.
 
@@ -215,7 +215,7 @@ $.ajax({
 
 액세스 제어-최대 기간 헤더 실행 전 요청에 대 한 응답을 캐시할 수 시간을 지정 합니다. 다음을 설정 하려면이 헤더
 
-[!code-csharp[Main](cors/sample/CorsExample4/Startup.cs?range=89-94)]
+[!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=89-94)]
 
 <a name="cors-how-cors-works"></a>
 

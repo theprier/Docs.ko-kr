@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/http-modules
-ms.openlocfilehash: 8aac6c649b22dc8f6cfc916aa78d56efad7821a0
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 7f08e155491b56933ae183818e9b9ee562ad8286
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="migrating-http-handlers-and-modules-to-aspnet-core-middleware"></a>HTTP 처리기 및 ASP.NET Core 미들웨어 모듈을 마이그레이션하는 방법 
 
@@ -91,13 +91,13 @@ ASP.NET Core 미들웨어를 계속 하기 전에 먼저 요약해 보면 HTTP �
 
 기존 HTTP 모듈은 다음과 같습니다.
 
-[!code-csharp[Main](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Modules/MyModule.cs?highlight=6,8,24,31)]
+[!code-csharp[](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Modules/MyModule.cs?highlight=6,8,24,31)]
 
 에 나와 있는 것 처럼는 [미들웨어](xref:fundamentals/middleware/index) 페이지, ASP.NET Core 미들웨어는 노출 하는 클래스는 `Invoke` 메서드 만들기는 `HttpContext` 반환 하 고는 `Task`합니다. 새 미들웨어는 다음과 같이 표시 됩니다.
 
 <a name="http-modules-usemiddleware"></a>
 
-[!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddleware.cs?highlight=9,13,20,24,28,30,32)]
+[!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddleware.cs?highlight=9,13,20,24,28,30,32)]
 
 이전 미들웨어 템플릿 섹션에서 만들어졌다면 [미들웨어를 작성](xref:fundamentals/middleware/index#middleware-writing-middleware)합니다.
 
@@ -107,11 +107,11 @@ ASP.NET Core 미들웨어를 계속 하기 전에 먼저 요약해 보면 HTTP �
 
 모듈에는 예를 들어 사용자에 게 권한이 없는 경우 요청을 종료 될 수 있습니다.
 
-[!code-csharp[Main](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Modules/MyTerminatingModule.cs?highlight=9,10,11,12,13&name=snippet_Terminate)]
+[!code-csharp[](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Modules/MyTerminatingModule.cs?highlight=9,10,11,12,13&name=snippet_Terminate)]
 
 미들웨어는이 호출 하지 않음으로써 처리 `Invoke` 파이프라인의 다음 미들웨어에 있습니다. 이전 middlewares 응답 파이프라인을 통해 다시 때에 호출 될 때문에 완벽 하 게 요청을 종료 하지 않는이 염두에서에 둬야 합니다.
 
-[!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyTerminatingMiddleware.cs?highlight=7,8&name=snippet_Terminate)]
+[!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyTerminatingMiddleware.cs?highlight=7,8&name=snippet_Terminate)]
 
 새 미들웨어를 모듈의 기능을 마이그레이션할 때 때문에 코드가 컴파일되지 않습니다 알 수 있습니다는 `HttpContext` 클래스 ASP.NET Core에서 크게 변경 되었습니다. [나중에](#migrating-to-the-new-httpcontext), 새 ASP.NET Core HttpContext를 마이그레이션하는 방법에 표시 됩니다.
 
@@ -119,11 +119,11 @@ ASP.NET Core 미들웨어를 계속 하기 전에 먼저 요약해 보면 HTTP �
 
 HTTP 모듈은 일반적으로 사용 하 여 요청 파이프라인에 추가 됩니다 *Web.config*:
 
-[!code-xml[Main](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Web.config?highlight=6&range=1-3,32-33,36,43,50,101)]
+[!code-xml[](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Web.config?highlight=6&range=1-3,32-33,36,43,50,101)]
 
 이 변환 [새 미들웨어를 추가](xref:fundamentals/middleware/index#creating-a-middleware-pipeline-with-iapplicationbuilder) 요청 파이프라인에 프로그램 `Startup` 클래스:
 
-[!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Configure&highlight=16)]
+[!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Configure&highlight=16)]
 
 새 미들웨어를 삽입 하면 파이프라인에서 정확한 지점 모듈로 처리 하는 이벤트에 따라 달라 집니다 (`BeginRequest`, `EndRequest`등)의 모듈 목록에서 해당 순서 및 *Web.config*합니다.
 
@@ -135,11 +135,11 @@ HTTP 모듈은 일반적으로 사용 하 여 요청 파이프라인에 추가 �
 
 HTTP 처리기는 다음과 같습니다.
 
-[!code-csharp[Main](../migration/http-modules/sample/Asp.Net4/Asp.Net4/HttpHandlers/ReportHandler.cs?highlight=5,7,13,14,15,16)]
+[!code-csharp[](../migration/http-modules/sample/Asp.Net4/Asp.Net4/HttpHandlers/ReportHandler.cs?highlight=5,7,13,14,15,16)]
 
 ASP.NET Core 프로젝트에는 번역할이 다음과 유사 하 게 되는 미들웨어:
 
-[!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Middleware/ReportHandlerMiddleware.cs?highlight=7,9,13,20,21,22,23,40,42,44)]
+[!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Middleware/ReportHandlerMiddleware.cs?highlight=7,9,13,20,21,22,23,40,42,44)]
 
 이 미들웨어는 모듈에 해당 하는 미들웨어와 매우 비슷합니다. 유일한 차이점은 다음과 같습니다에 대 한 호출이 `_next.Invoke(context)`합니다. 지도록 관점에서 처리기가 요청 파이프라인의 끝에가 있으므로 호출할 다음 미들웨어 없습니다.
 
@@ -147,15 +147,15 @@ ASP.NET Core 프로젝트에는 번역할이 다음과 유사 하 게 되는 미
 
 HTTP 처리기 구성 의해 이루어진다는 *Web.config* 다음과 같은 및:
 
-[!code-xml[Main](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Web.config?highlight=6&range=1-3,32,46-48,50,101)]
+[!code-xml[](../migration/http-modules/sample/Asp.Net4/Asp.Net4/Web.config?highlight=6&range=1-3,32,46-48,50,101)]
 
 새 처리기 미들웨어에서 요청 파이프라인에 추가 하 여 변환할 수 있습니다 프로그램 `Startup` 클래스, 모듈에서 변환 하는 미들웨어와 비슷합니다. 이 방법의 문제 새 처리기 미들웨어에 대 한 모든 요청을 보내는 것과 것입니다. 그러나만 원하는 미들웨어 연결할 지정된 된 확장 프로그램으로 요청 합니다. HTTP 처리기로 사용 했던 동일한 기능을 가질 것입니다.
 
 한 가지 해결 방법은 지정된 된 확장 프로그램을 사용 하 여 요청에 대 한 파이프라인 분기를 사용 하 여는 `MapWhen` 확장 메서드. 이렇게 하면 동일한 `Configure` 다른 미들웨어를 추가 하는 메서드:
 
-[!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Configure&highlight=27-34)]
+[!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Configure&highlight=27-34)]
 
-`MapWhen`이러한 매개 변수를 사용 합니다.
+`MapWhen` 이러한 매개 변수를 사용 합니다.
 
 1. 람다는는 `HttpContext` 반환 `true` 여 분기 요청이 전달 해야 하는 경우. 즉, 뿐 아니라 해당 확장명에 있지만 요청 헤더, 쿼리 문자열 매개 변수 등을 따라 요청을 분기할 수 있습니다.
 
@@ -175,13 +175,13 @@ HTTP 처리기 구성 의해 이루어진다는 *Web.config* 다음과 같은 �
 
 1.  예를 들어 미들웨어 옵션을 저장 하는 클래스를 만듭니다.
 
-    [!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_Options)]
+    [!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_Options)]
 
 2.  옵션 값을 저장 합니다.
 
     구성 시스템을 사용 하면 옵션 아무 곳 이나 원하는 값을 저장할 수 있습니다. 그러나 사용 하 여 가장 사이트 *appsettings.json*이므로 해당 접근 이동 합니다.
 
-    [!code-json[Main](http-modules/sample/Asp.Net.Core/appsettings.json?range=1,14-18)]
+    [!code-json[](http-modules/sample/Asp.Net.Core/appsettings.json?range=1,14-18)]
 
     *MyMiddlewareOptionsSection* 섹션 이름에는 다음과 같습니다. 옵션 클래스의 이름이 같이 필요는 없습니다.
 
@@ -193,19 +193,19 @@ HTTP 처리기 구성 의해 이루어진다는 *Web.config* 다음과 같은 �
 
     1.  사용 중인 경우 *appsettings.json*의 구성 작성기에 추가 `Startup` 생성자:
 
-      [!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Ctor&highlight=5-6)]
+      [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Ctor&highlight=5-6)]
 
     2.  옵션 서비스를 구성 합니다.
 
-      [!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_ConfigureServices&highlight=4)]
+      [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_ConfigureServices&highlight=4)]
 
     3.  옵션 클래스 옵션을 연결 합니다.
 
-      [!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_ConfigureServices&highlight=6-8)]
+      [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_ConfigureServices&highlight=6-8)]
 
 4.  미들웨어 생성자에 대 한 옵션을 삽입 합니다. 컨트롤러에 대 한 옵션을 삽입 하는 것과 비슷합니다.
 
-  [!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_MiddlewareWithParams&highlight=4,7,10,15-16)]
+  [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_MiddlewareWithParams&highlight=4,7,10,15-16)]
 
   [UseMiddleware](#http-modules-usemiddleware) 미들웨어를 추가 하는 확장 메서드는 `IApplicationBuilder` 종속성 주입 담당 합니다.
 
@@ -223,15 +223,15 @@ HTTP 처리기 구성 의해 이루어진다는 *Web.config* 다음과 같은 �
 
     옵션 중 두 번째 집합을 추가 하려면는 *appsettings.json* 파일을 고유 하 게 식별 하는 데 새 키를 사용 합니다.
 
-    [!code-json[Main](http-modules/sample/Asp.Net.Core/appsettings.json?range=1,10-18&highlight=2-5)]
+    [!code-json[](http-modules/sample/Asp.Net.Core/appsettings.json?range=1,10-18&highlight=2-5)]
 
 2.  옵션 값을 검색 하 고 미들웨어에 전달 합니다. `Use...` (파이프라인에 미들웨어를 추가)는 확장 메서드는 옵션 값을 전달할 수 있는 논리적 위치: 
 
-    [!code-csharp[Main](http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Configure&highlight=20-23)]
+    [!code-csharp[](http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Configure&highlight=20-23)]
 
 4.  미들웨어 옵션 매개 변수를 사용 하도록 설정 합니다. 오버 로드를 제공 된 `Use...` 확장 메서드 (옵션 매개 변수를 사용 하 고로 전달 `UseMiddleware`). 때 `UseMiddleware` 라고 매개 변수와 함께 전달 매개 변수 미들웨어 생성자에 미들웨어 개체를 인스턴스화할 때.
 
-    [!code-csharp[Main](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_Extensions&highlight=9-14)]
+    [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_Extensions&highlight=9-14)]
 
     이 옵션 개체에 배치 되는 방법을 확인 프로그램 `OptionsWrapper` 개체입니다. 이 구현 `IOptions`미들웨어 생성자가 예상 대로, 합니다.
 
@@ -243,76 +243,76 @@ HTTP 처리기 구성 의해 이루어진다는 *Web.config* 다음과 같은 �
 public async Task Invoke(HttpContext context)
 ```
 
-`HttpContext`ASP.NET Core 크게 변경 되었습니다. 이 섹션에서는의 가장 일반적으로 사용 되는 속성으로 변환 하는 방법을 보여 줍니다. [System.Web.HttpContext](https://docs.microsoft.com/dotnet/api/system.web.httpcontext) 새 `Microsoft.AspNetCore.Http.HttpContext`합니다.
+`HttpContext` ASP.NET Core 크게 변경 되었습니다. 이 섹션에서는의 가장 일반적으로 사용 되는 속성으로 변환 하는 방법을 보여 줍니다. [System.Web.HttpContext](https://docs.microsoft.com/dotnet/api/system.web.httpcontext) 새 `Microsoft.AspNetCore.Http.HttpContext`합니다.
 
 ### <a name="httpcontext"></a>HttpContext
 
 **HttpContext.Items** 로 변환 합니다.
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Items)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Items)]
 
 **고유한 요청 ID (System.Web.HttpContext 해당)**
 
 각 요청에 대 한 고유 id을 제공 합니다. 로그에 포함 하는 데 매우 유용 합니다.
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Trace)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Trace)]
 
 ### <a name="httpcontextrequest"></a>HttpContext.Request
 
 **HttpContext.Request.HttpMethod** 로 변환 합니다.
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Method)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Method)]
 
 **HttpContext.Request.QueryString** 로 변환 합니다.
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Query)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Query)]
 
 **HttpContext.Request.Url** 및 **HttpContext.Request.RawUrl** 로 변환 합니다.
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Url)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Url)]
 
 **HttpContext.Request.IsSecureConnection** 로 변환 합니다.
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Secure)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Secure)]
 
 **HttpContext.Request.UserHostAddress** 로 변환 합니다.
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Host)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Host)]
 
 **HttpContext.Request.Cookies** 로 변환 합니다.
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Cookies)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Cookies)]
 
 **HttpContext.Request.RequestContext.RouteData** 로 변환 합니다.
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Route)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Route)]
 
 **HttpContext.Request.Headers** 로 변환 합니다.
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Headers)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Headers)]
 
 **HttpContext.Request.UserAgent** 로 변환 합니다.
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Agent)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Agent)]
 
 **HttpContext.Request.UrlReferrer** 로 변환 합니다.
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Referrer)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Referrer)]
 
 **HttpContext.Request.ContentType** 로 변환 합니다.
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Type)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Type)]
 
 **HttpContext.Request.Form** 로 변환 합니다.
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Form)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Form)]
 
 > [!WARNING]
 > 콘텐츠 하위 형식이 경우 양식 값을 읽기 *x-www-형식-urlencoded* 또는 *양식 데이터*합니다.
 
 **HttpContext.Request.InputStream** 로 변환 합니다.
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Input)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Input)]
 
 > [!WARNING]
 > 이 코드는 파이프라인의 끝에 처리기 형식 미들웨어, 에서만 사용 합니다.
@@ -325,19 +325,19 @@ public async Task Invoke(HttpContext context)
 
 **HttpContext.Response.Status** 및 **HttpContext.Response.StatusDescription** 로 변환 합니다.
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Status)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Status)]
 
 **HttpContext.Response.ContentEncoding** 및 **HttpContext.Response.ContentType** 로 변환 합니다.
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_RespType)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_RespType)]
 
 **HttpContext.Response.ContentType** 에 자체도로 변환 합니다.
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_RespTypeOnly)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_RespTypeOnly)]
 
 **HttpContext.Response.Output** 로 변환 합니다.
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Output)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_Output)]
 
 **HttpContext.Response.TransmitFile**
 
@@ -360,7 +360,7 @@ public async Task Invoke(HttpContext httpContext)
 
 `SetHeaders` 콜백 메서드는 다음과 같습니다.
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_SetHeaders)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_SetHeaders)]
 
 **HttpContext.Response.Cookies**
 
@@ -376,7 +376,7 @@ public async Task Invoke(HttpContext httpContext)
 
 `SetCookies` 콜백 메서드는 다음과 같습니다.
 
-[!code-csharp[Main](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_SetCookies)]
+[!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_SetCookies)]
 
 ## <a name="additional-resources"></a>추가 리소스
 

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/consumer-apis/limited-lifetime-payloads
-ms.openlocfilehash: 812d0373d24c8578bae83db4876549246f189be3
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: d631851b5b933d75c37a308f492840e3442e6f1a
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="limiting-the-lifetime-of-protected-payloads"></a>보호 된 페이로드의 수명을 제한
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 01/30/2018
 
 `ITimeLimitedDataProtector` 인터페이스는 보호 하 고, 시간이 제한 된 / 자동으로 만료 되는 페이로드를 보호 해제에 대 한 핵심 인터페이스입니다. 인스턴스를 만드는 `ITimeLimitedDataProtector`, 일반의 인스턴스를 먼저 해야 [IDataProtector](overview.md) 특정 용도 사용 하 여 생성 합니다. 한 번의 `IDataProtector` 인스턴스를 사용할 수 있는 호출에서 `IDataProtector.ToTimeLimitedDataProtector` 기본 만료 기능 다시 보호기를 가져올 확장 메서드를 합니다.
 
-`ITimeLimitedDataProtector`다음과 같은 API 화면 및 확장 메서드를 노출합니다.
+`ITimeLimitedDataProtector` 다음과 같은 API 화면 및 확장 메서드를 노출합니다.
 
 * CreateProtector (문자열 용도): ITimeLimitedDataProtector-이 API는 기존 비슷합니다 `IDataProtectionProvider.CreateProtector` 만들기를 사용할 수 있다는 점에서 [체인의 용도 위해](purpose-strings.md) 루트 시간이 제한 된 보호기를 합니다.
 
@@ -58,4 +58,4 @@ ms.lasthandoff: 01/30/2018
 
 사용 하 여 아래 샘플은 [DI 아닌 코드 경로](../configuration/non-di-scenarios.md) 데이터 보호 시스템을 인스턴스화하기 위한 합니다. 이 샘플을 실행 하려면 먼저 Microsoft.AspNetCore.DataProtection.Extensions 패키지에 대 한 참조를 추가 했는지 확인 합니다.
 
-[!code-csharp[Main](limited-lifetime-payloads/samples/limitedlifetimepayloads.cs)]
+[!code-csharp[](limited-lifetime-payloads/samples/limitedlifetimepayloads.cs)]

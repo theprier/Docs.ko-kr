@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bower
-ms.openlocfilehash: ee628ee14aa38969cdb4443718c378fd36192596
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: 67695843846cfaf1619db11a7bffcc65802e0f69
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="manage-client-side-packages-with-bower-in-aspnet-core"></a>ASP.NET Core에서 Bower 사용 하 여 클라이언트 패키지를 관리 합니다.
 
@@ -67,13 +67,13 @@ ms.lasthandoff: 02/11/2018
 
 열기는 *Views\Shared\_Layout.cshtml* 파일 환경에 놀라운 글꼴 CSS 파일을 추가 및 [태그 도우미](xref:mvc/views/tag-helpers/intro) 에 대 한 `Development`합니다. 솔루션 탐색기에서 끌어서 놓기 *글꼴 awesome.css* 내에서 `<environment names="Development">` 요소입니다.
 
-[!code-html[Main](bower/sample/_Layout.cshtml?highlight=4&range=9-13)]
+[!code-html[](bower/sample/_Layout.cshtml?highlight=4&range=9-13)]
 
 프로덕션 응용 프로그램에 추가 *글꼴 awesome.min.css* 에 대 한 환경 태그 도우미를 `Staging,Production`합니다.
 
 내용을 대체는 *Views\Home\About.cshtml* 다음 태그로 Razor 파일:
 
-[!code-html[Main](bower/sample/About.cshtml)]
+[!code-html[](bower/sample/About.cshtml)]
 
 응용 프로그램을 실행 하 고 글꼴 놀라운 패키지 작동 하는지 확인 하는 정보 보기를 탐색 합니다.
 
@@ -96,7 +96,7 @@ Bower 클라이언트 쪽 빌드 프로세스를 사용 하는 일반적인 단�
 
 * 열기 *bower.json*, jquery를 추가 하 고 영역에 부트스트랩는 `dependencies` 섹션. 그 결과 *bower.json* 파일은 다음 예제와 같습니다. 버전은 시간이 지남에 따라 변경 되 고 아래 이미지 일치 하지 않을 수 있습니다.
 
-[!code-json[Main](bower/sample/bower.json?highlight=5,6)]
+[!code-json[](bower/sample/bower.json?highlight=5,6)]
 
 * 저장 된 *bower.json* 파일입니다.
 
@@ -109,7 +109,7 @@ Bower 클라이언트 쪽 빌드 프로세스를 사용 하는 일반적인 단�
 * 추가 `Microsoft.AspNetCore.StaticFiles` NuGet 패키지를 프로젝트입니다.
 * 와 제공에 정적 파일을 사용 하도록 설정 된 [정적 파일 미들웨어](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.staticfileextensions)합니다. 에 대 한 호출 추가 [UseStaticFiles](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.staticfileextensions) 에 `Configure` 메서드 `Startup`합니다.
 
-[!code-csharp[Main](bower/sample/Startup.cs?highlight=9)]
+[!code-csharp[](bower/sample/Startup.cs?highlight=9)]
 
 ### <a name="reference-packages"></a>참조 패키지
 
@@ -119,7 +119,7 @@ Bower 클라이언트 쪽 빌드 프로세스를 사용 하는 일반적인 단�
 
  내용을 대체 *Index.html* 다음 태그로:
 
-[!code-html[Main](bower/sample/Index.html)]
+[!code-html[](bower/sample/Index.html)]
 
 * 응용 프로그램을 실행 하 고 이동 `http://localhost:<port>/Index.html`합니다. 또는와 *Index.html* 열, 키를 눌러 `Ctrl+Shift+W`합니다. Jumbotron 스타일이 적용 되, jQuery 코드는 단추를 클릭할 때 응답 및 부트스트랩 단추 상태가 변경 되는지 확인 합니다.
 

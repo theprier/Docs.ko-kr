@@ -10,11 +10,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/modules
-ms.openlocfilehash: 5032c9f07af4f9291b44538cecbc310bfabc8e02
-ms.sourcegitcommit: 9f758b1550fcae88ab1eb284798a89e6320548a5
+ms.openlocfilehash: a6610e33abdc3eafb5908728b3299e95e6e7183f
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="using-iis-modules-with-aspnet-core"></a>IIS 모듈을 사용 하 여 ASP.NET 코어
 
@@ -159,6 +159,7 @@ ASP.NET Core 응용 프로그램을 실행 하는 데 필요한 유일한 모듈
 ## <a name="additional-resources"></a>추가 리소스
 
 * [IIS를 사용하여 Windows에서 호스트](xref:host-and-deploy/iis/index)
-* [IIS 모듈 개요](https://docs.microsoft.com/iis/get-started/introduction-to-iis/iis-modules-overview)
+* [IIS 아키텍처 소개: IIS에서 모듈](/iis/get-started/introduction-to-iis/introduction-to-iis-architecture#modules-in-iis)
+* [IIS 모듈 개요](/iis/get-started/introduction-to-iis/iis-modules-overview)
 * [IIS 7.0 역할 및 모듈을 사용자 지정](https://technet.microsoft.com/library/cc627313.aspx)
-* [IIS `<system.webServer>`](https://docs.microsoft.com/iis/configuration/system.webServer/)
+* [IIS `<system.webServer>`](/iis/configuration/system.webServer/)

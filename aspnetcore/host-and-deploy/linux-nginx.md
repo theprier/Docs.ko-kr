@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/linux-nginx
-ms.openlocfilehash: 1044a87a4dcc7636413078b0fc09ade206c97d0a
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: 5e85cf909c1a360f245bcc83233ccc1347735b26
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="host-aspnet-core-on-linux-with-nginx"></a>Nginx를 사용하여 Linux에서 ASP.NET Core 호스트
 
@@ -38,7 +38,7 @@ ms.lasthandoff: 02/11/2018
 
 ## <a name="copy-over-the-app"></a>응용 프로그램을 통해 복사
 
-개발 환경에서 `dotnet publish`를 실행하여 앱을 서버에서 실행될 수 있는 자체 포함된 디렉터리로 패키지합니다.
+실행 [dotnet 게시](/dotnet/core/tools/dotnet-publish) 서버에서 실행할 수 있는 자체 포함 된 디렉터리에 응용 프로그램을 패키징할 개발 환경에서 합니다.
 
 ASP.NET Core 응용 프로그램 (예: SCP, FTP) 조직의 워크플로로 통합 하는 어떤 도구를 사용 하 여 서버에 복사 합니다. 다음과 같이 앱을 테스트합니다.
 
@@ -53,7 +53,7 @@ ASP.NET Core 응용 프로그램 (예: SCP, FTP) 조직의 워크플로로 통�
 
 Kestrel은 ASP.NET Core에서 동적 콘텐츠를 처리 하기 위한 훌륭한입니다. 그러나 웹 서비스 기능으로 IIS, Apache 또는 Nginx 등의 서버 기능 풍부한으로 되지 않습니다. 역방향 프록시 서버는 정적 콘텐츠를 처리, 요청을 캐시 하 고, 요청, 및 HTTP 서버에서 SSL 종료를 압축 하는 등의 작업을 줄일 수 있습니다. 역방향 프록시 서버는 전용 컴퓨터에 있거나 HTTP 서버와 함께 배포될 수 있습니다.
 
-이 가이드에서는 Nginx의 단일 인스턴스가 사용됩니다. 이 인스턴스는 HTTP 서버와 함께 동일한 서버에서 실행됩니다. 다른 설치 요구 사항에 따라 선택한을 수 있습니다.
+이 가이드에서는 Nginx의 단일 인스턴스가 사용됩니다. 이 인스턴스는 HTTP 서버와 함께 동일한 서버에서 실행됩니다. 요구 사항에 따라 다른 설치 프로그램을 선택할 수 있습니다.
 
 전달 헤더 미들웨어를 사용 하 여 요청 역방향 프록시를 전달 하기 때문에 [Microsoft.AspNetCore.HttpOverrides](https://www.nuget.org/packages/Microsoft.AspNetCore.HttpOverrides/) 패키지 합니다. 미들웨어 업데이트는 `Request.Scheme`를 사용 하 여는 `X-Forwarded-Proto` 헤더로, 해당 리디렉션 Uri 및 기타 보안 정책을 올바르게 작동 하도록 합니다.
 
@@ -283,11 +283,11 @@ static char ngx_http_server_full_string[] = "Server: Web Server" CRLF;
 
 */etc/nginx/proxy.conf* 구성 파일을 추가합니다.
 
-[!code-nginx[Main](linux-nginx/proxy.conf)]
+[!code-nginx[](linux-nginx/proxy.conf)]
 
 */etc/nginx/nginx.conf* 구성 파일을 편집합니다. 예제에서는 `http` 및 `server` 섹션이 하나의 구성 파일에 포함됩니다.
 
-[!code-nginx[Main](linux-nginx/nginx.conf?highlight=2)]
+[!code-nginx[](linux-nginx/nginx.conf?highlight=2)]
 
 #### <a name="secure-nginx-from-clickjacking"></a>클릭재킹(clickjacking)으로부터 Nginx 보호
 클릭재킹은 감염된 사용자의 클릭을 수집하는 악의적인 기술입니다. 클릭재킹은 희생자(방문자)를 속여서 감염된 사이트를 클릭하게 합니다. X-프레임-옵션을 사용 사이트를 보호 합니다.

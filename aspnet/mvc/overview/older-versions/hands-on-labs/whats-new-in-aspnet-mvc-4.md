@@ -12,28 +12,26 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/whats-new-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 8b1bdae048afc78399ccc7b0eac7125d9b983c13
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 35f9402ad6090c0441425a23b2b8063350892210
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/02/2018
 ---
-<a name="whats-new-in-aspnet-mvc-4"></a>ASP.NET MVC 4의에서 새로운 기능
-====================
+# <a name="whats-new-in-aspnet-mvc-4"></a>ASP.NET MVC 4의에서 새로운 기능
+
 으로 [웹 캠프 팀](https://twitter.com/webcamps)
 
-[웹 캠프 학습 키트를 다운로드 합니다.](http://www.microsoft.com/download/29843)
+[웹 캠프 학습 키트를 다운로드 합니다.](https://aka.ms/webcamps-training-kit)
 
-> ASP.NET MVC 4는 ASP.NET 및.NET framework의 능력에 대 한 체계적인 디자인 패턴을 사용 하 여 확장 가능 하 고 표준 기반 웹 응용 프로그램을 구축 하기 위한 프레임 워크. 이 새로운, 네 번째 버전의 framework 모바일 웹 응용 프로그램 개발을 보다 쉽게에 중점을 둡니다.
-> 
-> 처음에 새 ASP.NET MVC 4 프로젝트를 만들 때 이제 되어 모바일 응용 프로그램 프로젝트 템플릿을 모바일 장치용으로 독립 실행형 응용 프로그램을 만드는 데 사용할 수 있습니다. 또한 ASP.NET MVC 4 jQuery Mobile jQuery.Mobile.MVC NuGet 패키지를 통해 통합합니다. jQuery Mobile 등의 Windows Phone, iPhone, Android를 포함 하 여 모든 인기 있는 모바일 장치 플랫폼에 호환 되는 웹 응용 프로그램을 개발 하기 위한 HTML5 기반 프레임 워크입니다. 그러나 특수화 해야 할 경우 ASP.NET MVC 4도 사용 하면 다양 한 장치에 대해 개별 보기를 처리 하 고 장치별 최적화를 제공 합니다.
-> 
-> ASP.NET MVC 4로 시작 됩니다이 실습 랩에서 &quot;인터넷 응용 프로그램&quot; 사진 갤러리 응용 프로그램을 만드는 프로젝트 템플릿을 합니다. JQuery Mobile 및 ASP.NET MVC 4의 새로운 기능을 사용 하 여 다양 한 모바일 장치 및 데스크톱 웹 브라우저와 호환 되도록 하려면 앱을 점진적으로 향상 됩니다. 코드 생성 및 ASP.NET MVC 4 사용을 쉽게 방법 작업을 지원 하 여 비동기 작업 메서드를 작성할 수에 대 한 새 코드 레시피에 대 한 배웁니다&lt;ActionResult&gt; 형식을 반환 합니다.
-> 
-> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843)합니다.
+ASP.NET MVC 4는 ASP.NET 및.NET framework의 능력에 대 한 체계적인 디자인 패턴을 사용 하 여 확장 가능 하 고 표준 기반 웹 응용 프로그램을 구축 하기 위한 프레임 워크. 이 새로운, 네 번째 버전의 framework 모바일 웹 응용 프로그램 개발을 보다 쉽게에 중점을 둡니다.
 
+처음에 새 ASP.NET MVC 4 프로젝트를 만들 때 이제 되어 모바일 응용 프로그램 프로젝트 템플릿을 모바일 장치용으로 독립 실행형 응용 프로그램을 만드는 데 사용할 수 있습니다. 또한 ASP.NET MVC 4 jQuery Mobile jQuery.Mobile.MVC NuGet 패키지를 통해 통합합니다. jQuery Mobile 등의 Windows Phone, iPhone, Android를 포함 하 여 모든 인기 있는 모바일 장치 플랫폼에 호환 되는 웹 응용 프로그램을 개발 하기 위한 HTML5 기반 프레임 워크입니다. 그러나 특수화 해야 할 경우 ASP.NET MVC 4도 사용 하면 다양 한 장치에 대해 개별 보기를 처리 하 고 장치별 최적화를 제공 합니다.
 
-<a id="Objectives"></a>
+ASP.NET MVC 4로 시작 됩니다이 실습 랩에서 &quot;인터넷 응용 프로그램&quot; 사진 갤러리 응용 프로그램을 만드는 프로젝트 템플릿을 합니다. JQuery Mobile 및 ASP.NET MVC 4의 새로운 기능을 사용 하 여 다양 한 모바일 장치 및 데스크톱 웹 브라우저와 호환 되도록 하려면 앱을 점진적으로 향상 됩니다. 코드 생성 및 ASP.NET MVC 4 사용을 쉽게 방법 작업을 지원 하 여 비동기 작업 메서드를 작성할 수에 대 한 새 코드 레시피에 대 한 배웁니다&lt;ActionResult&gt; 형식을 반환 합니다.
+
+> [!NOTE]
+> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [Microsoft-웹/WebCampTrainingKit 릴리스](https://aka.ms/webcamps-training-kit)합니다. 이 랩에 특정 프로젝트에서 사용할 수는 [What's New in ASP.NET 4.5에서 Web Forms](https://github.com/Microsoft-Web/HOL-ASPNETWebForms)합니다.
 
 <a id="Objectives"></a>
 ### <a name="objectives"></a>목표
@@ -146,7 +144,7 @@ ms.lasthandoff: 01/24/2018
 
     ![jQuery 유효성 검사](whats-new-in-aspnet-mvc-4/_static/image6.png)
 
-    *jQuery 유효성 검사*
+    jQuery 유효성 검사
 
     > [!NOTE]
     > 두 섹션에서는 첫 번째 섹션에 로그인 하는 예 고 두 번째 섹션 altenativelly google (기본적으로 해제 됨)와 같은 다른 인증 서비스를 사용 하 여 로그인 할 수 있습니다 및 사이트에서 registerd 계정을 사용 하 여 기록할 수 있습니다.
@@ -164,7 +162,7 @@ ms.lasthandoff: 01/24/2018
 
     ![서비스에서 로그를 선택합니다.](whats-new-in-aspnet-mvc-4/_static/image7.png)
 
-    *서비스에서 로그를 선택합니다.*
+    서비스에서 로그를 선택합니다.
 10. Google 계정을 사용 하 여 로그인 합니다.
 11. Google 계정에서 정보를 검색할 사이트 (localhost)를 허용 합니다.
 12. 마지막으로, Google 계정을 연결 하는 사이트에 등록 해야 합니다.
@@ -258,9 +256,9 @@ ASP.NET MVC 4 모바일 앱을 위해 웹 사이트 및 태블릿 브라우저�
 
 미디어 쿼리 예제: &gt;  **@media 모든 및 (최대 너비: 1000px) 및 (최소 너비: 700px) {}:** 700px 1000px 사이의 모든 해상도 대해 합니다.
 
-> **@media화면 및 (최소 너비: 400px) 및 (최대 너비: 700px) {...}:** 화면에 대 한 합니다. 해상도 400에서 700px 사이 여야 합니다.
+> **@media 화면 및 (최소 너비: 400px) 및 (최대 너비: 700px) {...}:** 화면에 대 한 합니다. 해상도 400에서 700px 사이 여야 합니다.
 > 
-> **@media핸드헬드 장치 및 (최소 너비: 20em), 화면 및 (최소 너비: 20em) {...}:** (모바일 및 장치) 휴대 장치 및 화면에 있습니다. 최소 너비 20em 보다 커야 합니다.
+> **@media 핸드헬드 장치 및 (최소 너비: 20em), 화면 및 (최소 너비: 20em) {...}:** (모바일 및 장치) 휴대 장치 및 화면에 있습니다. 최소 너비 20em 보다 커야 합니다.
 > 
 > 이 대 한 자세한 정보를 찾을 수 있습니다는 [W3C 사이트](http://www.w3.org/TR/css3-mediaqueries/)합니다.
 

@@ -12,28 +12,28 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-fundamentals
 msc.type: authoredcontent
-ms.openlocfilehash: 468f6d5dabb645b1c005680dc5a1ffc4debd63b6
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: f93f51219403cd5aeca2dd3648444a84690c3d25
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/02/2018
 ---
-<a name="aspnet-mvc-4-fundamentals"></a>ASP.NET MVC 4 기본 사항
-====================
+# <a name="aspnet-mvc-4-fundamentals"></a>ASP.NET MVC 4 기본 사항
+
 으로 [웹 캠프 팀](https://twitter.com/webcamps)
 
-> 이 실습 랩에서 MVC (모델 뷰 컨트롤러) 음악 스토어를 소개 하 고 ASP.NET MVC와 Visual Studio를 사용 하는 방법을 단계별로 설명 하는 자습서 응용 프로그램을 기반으로 합니다. 랩 전체은 단순 하기 때문에 설명 합니다 함께 이러한 기술을 사용 하 여의 전원 아직 합니다. 간단한 응용 프로그램으로 시작 하 고를 구성할 때까지 모든 기능을 갖춘 ASP.NET MVC 4 웹 응용 프로그램 작성 합니다.
-> 
-> 이 랩에서 ASP.NET MVC 4에서 작동합니다.
-> 
-> 찾을 수 자습서 응용 프로그램의 ASP.NET MVC 3 버전을 탐색 하려면 [MVC 음악 저장소](https://github.com/evilDave/MVC-Music-Store)합니다.
-> 
-> > [!NOTE]
-> > 이 실습 랩에서 개발자가의 HTML 및 JavaScript 등의 웹 개발 기술을 경험 가정 합니다.
-> 
-> 
-> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [https://www.microsoft.com/download/29843](https://www.microsoft.com/download/29843)합니다.
+[웹 캠프 학습 키트를 다운로드 합니다.](https://aka.ms/webcamps-training-kit)
 
+이 실습 랩에서 MVC (모델 뷰 컨트롤러) 음악 스토어를 소개 하 고 ASP.NET MVC와 Visual Studio를 사용 하는 방법을 단계별로 설명 하는 자습서 응용 프로그램을 기반으로 합니다. 랩 전체은 단순 하기 때문에 설명 합니다 함께 이러한 기술을 사용 하 여의 전원 아직 합니다. 간단한 응용 프로그램으로 시작 하 고를 구성할 때까지 모든 기능을 갖춘 ASP.NET MVC 4 웹 응용 프로그램 작성 합니다.
+
+이 랩에서 ASP.NET MVC 4에서 작동합니다.
+
+찾을 수 자습서 응용 프로그램의 ASP.NET MVC 3 버전을 탐색 하려면 [MVC 음악 저장소](https://github.com/evilDave/MVC-Music-Store)합니다.
+
+이 실습 랩에서 개발자가의 HTML 및 JavaScript 등의 웹 개발 기술을 경험 가정 합니다.
+
+> [!NOTE]
+> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [Microsoft-웹/WebCampTrainingKit 릴리스](https://aka.ms/webcamps-training-kit)합니다. 이 랩에 특정 프로젝트에서 사용할 수는 [ASP.NET MVC 4 기초](https://github.com/Microsoft-Web/HOL-MVC4Fundamentals)합니다.
 
 <a id="The_Music_Store_application"></a>
 ### <a name="the-music-store-application"></a>음악 스토어 응용 프로그램
@@ -51,7 +51,7 @@ ms.lasthandoff: 01/24/2018
 
 - **모델**: 모델 개체는 도메인 논리를 구현 하는 응용 프로그램의 구성 요소입니다. 종종, 모델 개체도 검색 및 모델 상태를 데이터베이스에 저장 합니다.
 - **보기:** 뷰는 응용 프로그램의 UI (사용자 인터페이스)를 표시 하는 구성 요소입니다. 일반적으로이 UI는 모델 데이터에서 만들어집니다. 텍스트 상자 및 앨범 개체의 현재 상태에 따라 드롭 다운 목록을 표시 하는 앨범의 편집 뷰 예로 들 수 있습니다.
-- **컨트롤러의 경우:** 컨트롤러는 사용자 상호 작용 처리는 모델을 조작 하 고 궁극적으로 UI를 렌더링 하는 뷰를 선택 하는 구성 요소입니다. MVC 응용 프로그램에서 뷰 정보만 표시 됩니다. 컨트롤러 처리 하며 사용자 입력 및 상호 작용에 응답 합니다.
+- **컨트롤러의 경우:** 컨트롤러는 사용자 상호 작용 처리는 모델을 조작 하 고 궁극적으로 UI를 렌더링 하는 뷰를 선택 하는 구성 요소입니다. MVC 응용 프로그램에서 보기는 정보만 표시합니다. 컨트롤러가 사용자 입력 및 상호 작용을 처리하고 응답합니다.
 
 MVC 패턴을 사용 하면 이러한 요소 간의 느슨한 결합을 제공 하는 동안 응용 프로그램 (입력된 논리, 비즈니스 논리 및 UI 논리)의 다양 한 측면을 구분 하는 응용 프로그램을 만들 수 있습니다. 이러한 분리 구현 시 한 번에 하나의 측면에 초점을 맞출 수 있으므로 응용 프로그램을 빌드할 때 복잡도 관리할 수 있습니다. 또한 MVC 패턴을 사용 하면 쉽게도 응용 프로그램을 만들기 위한 테스트 기반 개발 (TDD) 사용을 권장 하는 응용 프로그램을 테스트할 수 있습니다.
 
@@ -173,7 +173,7 @@ ASP.NET MVC 프레임 워크에는 MVC 패턴을 지 원하는 웹 응용 프로
 
 MVC 프레임 워크를 사용 하지 않는 ASP.NET 응용 프로그램에서 사용자 상호 작용을 발생 시키고 해당 페이지에서 이벤트를 처리 하 고 페이지를 중심 구성 됩니다. 반면, ASP.NET MVC 응용 프로그램의 사용자 상호 컨트롤러 및 해당 작업 메서드를 중심으로 구성 됩니다.
 
-반면에 ASP.NET MVC 프레임 워크는 컨트롤러로 참조 하는 클래스에 Url을 매핑합니다. 컨트롤러 들어오는 요청을 처리, 사용자 입력 및 상호 작용을 처리, 적절 한 응용 프로그램 논리를 실행 및 클라이언트에 다시 전송할 응답을 결정 (HTML을 표시, 파일을 다운로드, 등 다른 URL 리디렉션). HTML을 표시 하는 경우 컨트롤러 클래스는 일반적으로 요청에 대 한 HTML 태그를 생성 하는 별도 뷰 구성 요소를 호출 합니다. MVC 응용 프로그램에서 뷰 정보만 표시 됩니다. 컨트롤러 처리 하며 사용자 입력 및 상호 작용에 응답 합니다.
+반면에 ASP.NET MVC 프레임 워크는 컨트롤러로 참조 하는 클래스에 Url을 매핑합니다. 컨트롤러 들어오는 요청을 처리, 사용자 입력 및 상호 작용을 처리, 적절 한 응용 프로그램 논리를 실행 및 클라이언트에 다시 전송할 응답을 결정 (HTML을 표시, 파일을 다운로드, 등 다른 URL 리디렉션). HTML을 표시 하는 경우 컨트롤러 클래스는 일반적으로 요청에 대 한 HTML 태그를 생성 하는 별도 뷰 구성 요소를 호출 합니다. MVC 응용 프로그램에서 보기는 정보만 표시합니다. 컨트롤러가 사용자 입력 및 상호 작용을 처리하고 응답합니다.
 
 이 태스크에서는 Music Store 사이트의 홈 페이지 Url을 처리 하는 컨트롤러 클래스를 추가 합니다.
 
@@ -818,7 +818,7 @@ A **StoreBrowseViewModel** 선택한 장르와 일치 하는 앨범 표시 하�
     > [!NOTE]
     > 또 다른 방법은 다음과 같은 코드 페이지에 직접 연결 합니다.
     > 
-    > &lt;href =&quot;/저장소/찾아보기? 장르 =@genreName&quot;&gt;@genreName &lt; /a&gt;
+    > &lt;a href=&quot;/Store/Browse?genre=@genreName&quot;&gt;@genreName&lt;/a&gt;
     > 
     > 이 방법은 작동 하지만 하드 코드 된 문자열에 따라 다릅니다. 나중에 컨트롤러를 바꾸면이 명령을 수동으로 변경 해야 합니다. 사용 하는 것이 더 좋은 것는 **HTML 도우미** 메서드. ASP.NET MVC 등의 작업에 사용할 수 있는 HTML 도우미 메서드를 포함 합니다. **Html.ActionLink()** 도우미 메서드를 사용 하면 HTML 만들려는 쉽게  **&lt;는&gt;**  링크, URL 경로 URL로 인코딩된 제대로 확인 합니다.
     > 
@@ -895,7 +895,7 @@ ViewBag 동적 컬렉션의 목록을 전달 하는 데 사용할 이제 &quot; 
 #### <a name="task-1-exploring-the-aspnet-mvc-4-internet-application-template"></a>작업 1: 탐색 ASP.NET MVC 4 인터넷 응용 프로그램 템플릿
 
 1. 아직 열지 않은 경우 시작 **VS Express for Web**
-2. 선택 된 **파일 | 새로 만들기 | 프로젝트** 메뉴 명령입니다. 에 **새 프로젝트** 대화 상자에서 선택 된 **Visual C# | 웹** 서식 파일의 왼쪽된 창에서 트리를 선택 하 고는 **ASP.NET MVC 4 웹 응용 프로그램**합니다. **이름** 프로젝트 *MusicStore* 하 고 업데이트는 **솔루션 이름** 를 *시작*, 다음 위치를 선택 (또는 기본값을 그대로 적용) 클릭**확인**합니다.
+2. 선택 된 **파일 | 새로 만들기 | 프로젝트** 메뉴 명령입니다. 에 **새 프로젝트** 대화 상자에서 선택 된 **Visual C# | 웹** 서식 파일의 왼쪽된 창에서 트리를 선택 하 고는 **ASP.NET MVC 4 웹 응용 프로그램**합니다. **이름** 프로젝트 *MusicStore* 하 고 업데이트는 **솔루션 이름** 를 *시작*, 다음 위치를 선택 (또는 기본값을 그대로 적용)를 클릭 하 고 **확인** .
 
     ![새 ASP.NET MVC 4 프로젝트를 만드는](aspnet-mvc-4-fundamentals/_static/image36.png "새 ASP.NET MVC 4 프로젝트 만들기")
 

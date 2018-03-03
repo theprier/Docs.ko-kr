@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/visual-studio-publish-profiles
-ms.openlocfilehash: 138b60d0e7c2a3d8848d534ffed854feaf0f5661
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: d2c4ec317f235c6d042bd130dbf79f6cb5e2d47d
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="visual-studio-publish-profiles-for-aspnet-core-app-deployment"></a>Visual Studio ASP.NET Core 응용 프로그램 배포에 대 한 프로필 게시
 
@@ -109,7 +109,7 @@ ASP.NET Core 프로젝트가 참조 하는 경우 `Microsoft.NET.Sdk.Web` 프로
 
 ## <a name="basic-command-line-publishing"></a>기본 명령줄 게시
 
-명령줄 게시.NET Core 지원 되는 모든 플랫폼에서 작동 하며 Visual Studio 필요 하지 않습니다. 아래 샘플에서 `dotnet publish` 명령은 *.csproj* 파일이 포함된 프로젝트 디렉터리에서 실행됩니다. 그렇지 않으면 프로젝트 폴더의 프로젝트 파일 경로에 명시적으로 전달 합니다. 예:
+명령줄 게시.NET Core 지원 되는 모든 플랫폼에서 작동 하며 Visual Studio 필요 하지 않습니다. 아래 예제에는 [dotnet 게시](/dotnet/core/tools/dotnet-publish) 프로젝트 디렉터리에서 명령을 실행 (포함 하는 *.csproj* 파일). 그렇지 않으면 프로젝트 폴더의 프로젝트 파일 경로에 명시적으로 전달 합니다. 예:
 
 ```console
 dotnet publish c:/webs/web1
@@ -134,7 +134,7 @@ dotnet publish
 
 ---
 
-`dotnet publish`는 다음과 비슷한 출력을 생성합니다.
+[dotnet 게시](/dotnet/core/tools/dotnet-publish) 명령은 다음과 유사한 출력을 생성 합니다.
 
 ```console
 C:\Webs\Web1>dotnet publish
@@ -155,7 +155,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 dotnet publish -c Release -o C:/MyWebs/test
 ```
 
-`dotnet publish` 호출 하는 MSBuild를 호출 하는 명령에서 `Publish` 대상입니다. 모든 매개 변수가 전달 `dotnet publish` MSBuild에 전달 됩니다. `-c` 매개 변수는 `Configuration` MSBuild 속성에 매핑됩니다. `-o` 매개 변수는 `OutputPath`에 매핑됩니다.
+[dotnet 게시](/dotnet/core/tools/dotnet-publish) 호출 하는 MSBuild를 호출 하는 명령에서 `Publish` 대상입니다. 모든 매개 변수가 전달 `dotnet publish` MSBuild에 전달 됩니다. `-c` 매개 변수는 `Configuration` MSBuild 속성에 매핑됩니다. `-o` 매개 변수는 `OutputPath`에 매핑됩니다.
 
 MSBuild 속성 형식 중 하나를 사용 하 여 전달 될 수 있습니다.
 
@@ -196,20 +196,20 @@ MSBuild 속성 형식 중 하나를 사용 하 여 전달 될 수 있습니다.
 
 자세한 내용은 [내게 적합한 게시 옵션](https://docs.microsoft.com/visualstudio/ide/not-in-toc/web-publish-options)을 참조하세요.
 
-Visual Studio와 함께 게시 프로필을 만들 때 한 *속성/PublishProfiles/\<게시 이름입니다. >.pubxml* MSBuild 파일이 만들어집니다. 이 *.pubxml* 파일은 MSBuild 파일이고 게시 구성 설정을 포함합니다. 빌드 사용자 지정 및 프로세스를 게시 하려면이 파일을 변경할 수 있습니다. 게시 프로세스에서 이 파일을 읽습니다. `<LastUsedBuildConfiguration>`전역 속성을 빌드에 가져온 모든 파일에 되지 않아야 하기 때문에 특별 합니다. 자세한 내용은 [MSBuild: 구성 속성을 설정하는 방법](http://sedodream.com/2012/10/27/MSBuildHowToSetTheConfigurationProperty.aspx)을 참조하세요.
+Visual Studio와 함께 게시 프로필을 만들 때 한 *속성/PublishProfiles/\<게시 이름입니다. >.pubxml* MSBuild 파일이 만들어집니다. 이 *.pubxml* 파일은 MSBuild 파일이고 게시 구성 설정을 포함합니다. 빌드 사용자 지정 및 프로세스를 게시 하려면이 파일을 변경할 수 있습니다. 게시 프로세스에서 이 파일을 읽습니다. `<LastUsedBuildConfiguration>` 전역 속성을 빌드에 가져온 모든 파일에 되지 않아야 하기 때문에 특별 합니다. 자세한 내용은 [MSBuild: 구성 속성을 설정하는 방법](http://sedodream.com/2012/10/27/MSBuildHowToSetTheConfigurationProperty.aspx)을 참조하세요.
 *.pubxml* 있기 때문에 소스 제어에 파일을 체크 인할 수 해서는 안는 *.user* 파일입니다. *.user* 파일은 중요 정보를 포함할 수 있고 하나의 사용자 및 컴퓨터에 대해서만 유효하므로 소스 제어에 체크 인되면 안 됩니다.
 
 중요 정보(예: 게시 암호)는 사용자/컴퓨터 수준별로 암호화되고 *Properties/PublishProfiles/\<publish name>.pubxml.user* 파일에 저장됩니다. 이 파일에는 중요 정보가 포함될 수 있으므로 소스 제어에 체크 인되면 **안 됩니다**.
 
 ASP.NET core 웹 앱을 게시 하는 방법에 대 한 개요를 참조 하십시오. [호스트 하 고 배포](index.md)합니다. [호스트 및 배포](index.md) https://github.com/aspnet/websdk에서 오픈 소스 프로젝트입니다.
 
-`dotnet publish`폴더를 MSDeploy צ ְ ײ 및 [KUDU](https://github.com/projectkudu/kudu/wiki) 게시 프로필:
+`dotnet publish` 폴더를 MSDeploy צ ְ ײ 및 [KUDU](https://github.com/projectkudu/kudu/wiki) 게시 프로필:
  
-폴더 (플랫폼 간에 작동):`dotnet publish WebApplication.csproj /p:PublishProfile=<FolderProfileName>`
+폴더 (플랫폼 간에 작동): `dotnet publish WebApplication.csproj /p:PublishProfile=<FolderProfileName>`
 
-MSDeploy (현재는 기능만 MSDeploy 없는 플랫폼 간 이후 windows의):`dotnet publish WebApplication.csproj /p:PublishProfile=<MsDeployProfileName> /p:Password=<DeploymentPassword>`
+MSDeploy (현재는 기능만 MSDeploy 없는 플랫폼 간 이후 windows의): `dotnet publish WebApplication.csproj /p:PublishProfile=<MsDeployProfileName> /p:Password=<DeploymentPassword>`
 
-MSDeploy 패키지 (현재는 기능만 MSDeploy 없는 플랫폼 간 이후 windows의):`dotnet publish WebApplication.csproj /p:PublishProfile=<MsDeployPackageProfileName>`
+MSDeploy 패키지 (현재는 기능만 MSDeploy 없는 플랫폼 간 이후 windows의): `dotnet publish WebApplication.csproj /p:PublishProfile=<MsDeployPackageProfileName>`
 
 위의 샘플에서 **하지** 전달 `deployonbuild` 를 `dotnet publish`합니다.
 
@@ -244,7 +244,7 @@ MSDeploy 패키지 (현재는 기능만 MSDeploy 없는 플랫폼 간 이후 win
 * `dotnet build /p:DeployOnBuild=true /p:PublishProfile=FolderProfile`
 * `msbuild      /p:DeployOnBuild=true /p:PublishProfile=FolderProfile`
 
-호출할 때 `dotnet build`, 호출 `msbuild` 를 빌드를 실행 하 고 프로세스를 게시 합니다. 호출 `dotnet build` 또는 `msbuild` 폴더 프로 파일에 전달할 때 기본적으로 같습니다. MSBuild를 Windows에서 직접 호출할 때.NET Framework 버전의 MSBuild 사용 됩니다. MSDeploy는 현재 게시를 위해 Windows 컴퓨터로 제한됩니다. 폴더가 아닌 프로필에서 `dotnet build`를 호출하면 MSBuild가 호출되고 MSBuild는 폴더가 아닌 프로필에서 MSDeploy를 사용합니다. 폴더가 아닌 프로필에서 `dotnet build`를 호출하면 MSBuild가 호출되고(MSDeploy 사용) Windows 플랫폼에서 실행될 경우에도 오류가 발생합니다. 폴더가 아닌 프로필을 사용하여 게시하려면 MSBuild를 직접 호출합니다.
+호출할 때 [dotnet 빌드](/dotnet/core/tools/dotnet-build), 호출 `msbuild` 를 빌드를 실행 하 고 프로세스를 게시 합니다. 호출 `dotnet build` 또는 `msbuild` 폴더 프로 파일에 전달할 때 기본적으로 같습니다. MSBuild를 Windows에서 직접 호출할 때.NET Framework 버전의 MSBuild 사용 됩니다. MSDeploy는 현재 게시를 위해 Windows 컴퓨터로 제한됩니다. 폴더가 아닌 프로필에서 `dotnet build`를 호출하면 MSBuild가 호출되고 MSBuild는 폴더가 아닌 프로필에서 MSDeploy를 사용합니다. 폴더가 아닌 프로필에서 `dotnet build`를 호출하면 MSBuild가 호출되고(MSDeploy 사용) Windows 플랫폼에서 실행될 경우에도 오류가 발생합니다. 폴더가 아닌 프로필을 사용하여 게시하려면 MSBuild를 직접 호출합니다.
 
 다음 폴더 게시 프로필은 Visual Studio를 사용하여 만들어졌고 네트워크 공유에 게시됩니다.
 
@@ -294,7 +294,7 @@ MSBuild는 다음 구문을 사용합니다.
 
 `msbuild <path-to-project-file> /p:DeployOnBuild=true /p:PublishProfile=<Publish Profile> /p:Username=<USERNAME> /p:Password=<PASSWORD>`
 
-가져오기는 `Password` 에서 * \<게시 이름 >. PublishSettings* 파일입니다. 다운로드는 *합니다. PublishSettings* 파일 중 하나에서:
+가져오기는 `Password` 에서  *\<게시 이름 >. PublishSettings* 파일입니다. 다운로드는 *합니다. PublishSettings* 파일 중 하나에서:
 
 * 솔루션 탐색기: 웹 응용 프로그램을 마우스 오른쪽 단추로 클릭 하 고 선택 **게시 프로필 다운로드**합니다.
 * Azure 관리 포털: 선택 **Get 게시 프로필** 웹 앱 블레이드에서 합니다.
@@ -332,7 +332,7 @@ ASP.NET Core 웹앱을 게시할 경우 *wwwroot* 폴더의 빌드 아티팩트 
 </ItemGroup>
 ```
 
-`<MsDeploySkipRules>`삭제 되지 않습니다는 *건너뛸* 배포 사이트에서 대상으로 합니다. `<Content>`대상된 파일 및 폴더는 배포 사이트에서 삭제 됩니다. 예를 들어 배포 된 웹 응용 프로그램에는 다음 파일이 있다고 가정 합니다.
+`<MsDeploySkipRules>` 삭제 되지 않습니다는 *건너뛸* 배포 사이트에서 대상으로 합니다. `<Content>` 대상된 파일 및 폴더는 배포 사이트에서 삭제 됩니다. 예를 들어 배포 된 웹 응용 프로그램에는 다음 파일이 있다고 가정 합니다.
 
 * *Views/Home/About1.cshtml*
 * *Views/Home/About2.cshtml*
