@@ -21,7 +21,7 @@ ms.lasthandoff: 01/30/2018
 
 ASP.NET Core에서 파일 공급자를 사용하여 파일 시스템 액세스를 추상화합니다.
 
-[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/file-providers/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/file-providers/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="file-provider-abstractions"></a>파일 공급자 추상화
 
