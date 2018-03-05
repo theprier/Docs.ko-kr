@@ -103,9 +103,9 @@ var embeddedProvider = new EmbeddedFileProvider(Assembly.GetEntryAssembly());
 
 ![물리적 파일 및 폴더와 포함된 파일을 나열하는 파일 공급자 샘플 응용 프로그램](file-providers/_static/composite-directory-listing.png)
 
-## <a name="watching-for-changes"></a>변경 내용 감시
+## <a name="watching-for-changes"></a>변경 내용 감시하기
 
-`IFileProvider` `Watch` 메서드는 하나 이상의 파일 또는 디렉터리의 변경 내용을 감시하는 방법을 제공합니다. 이 메서드는 [와일드카드 사용 패턴](#globbing-patterns)을 사용하여 여러 파일을 지정할 수 있는 경로 문자열을 허용하고, `IChangeToken`을 반환합니다. 이 토큰은 조사될 수 있는 `HasChanged` 속성 및 지정된 경로 문자열에 변경 내용이 발견될 때 호출되는 `RegisterChangeCallback` 메서드를 노출합니다. 각 변경 토큰만 단일 변경에 대한 응답으로 연결된 해당 콜백을 호출합니다. 지속적인 모니터링을 활성화하기 위해 아래와 같이 `TaskCompletionSource`를 사용하거나 변경에 대한 응답으로 `IChangeToken` 인스턴스를 다시 만들 수 있습니다.
+`IFileProvider`의 `Watch` 메서드를 이용하면 여러 파일 및 디렉터리의 변경 사항을 감지할 수 있습니다. 이 메서드는 [Globbing 패턴](#globbing-patterns)을 이용해서 복수의 파일을 지정할 수 있는 경로 문자열을 전달받고 `IChangeToken`을 반환합니다. 이 토큰은 변경 여부 확인에 사용할 수 있는 `HasChanged` 속성과, 지정된 경로 문자열에서 변경 내용이 감지되면 호출되는 `RegisterChangeCallback` 메서드를 제공합니다. 각 변경 토큰은 단일 변경에 대한 응답으로 자신과 연결된 콜백만 호출한다는 점에 주의하시기 바랍니다. 모니터링을 지속적으로 수행하기 위해서는 다음 예제처럼 `TaskCompletionSource`를 활용하거나 변경 사항에 대한 응답에서 다시 `IChangeToken` 인스턴스를 생성해야 합니다.
 
 이 문서 샘플에서 콘솔 응용 프로그램은 텍스트 파일이 수정될 때마다 메시지를 표시하도록 구성됩니다.
 
@@ -116,21 +116,21 @@ var embeddedProvider = new EmbeddedFileProvider(Assembly.GetEntryAssembly());
 ![dotnet 실행을 실행한 후 명령 창은 변경 내용에 대한 quotes.txt 파일을 모니터링하는 응용 프로그램과 파일이 5번 변경된 것을 보여 줍니다.](file-providers/_static/watch-console.png)
 
 > [!NOTE]
-> Docker 컨테이너 및 네트워크 공유와 같은 일부 파일 시스템은 안정적으로 변경 알림을 보내지 않을 수도 있습니다. `DOTNET_USE_POLLINGFILEWATCHER` 환경 변수를 `1` 또는 `true`로 설정하여 4초마다 변경 내용에 대한 파일 시스템을 폴링합니다.
+> Docker 컨테이너나 네트워크 공유 같은 일부 파일 시스템은 변경 알림을 안정적으로 전송할 수 없습니다. 그러나 `DOTNET_USE_POLLINGFILEWATCHER` 환경 변수를 `1`이나 `true`로 설정하면 파일 시스템이 4초마다 폴링됩니다.
 
-## <a name="globbing-patterns"></a>와일드카드 사용 패턴
+## <a name="globbing-patterns"></a>Globbing 패턴
 
-파일 시스템 경로는 *와일드카드 사용 패턴*이라는 와일드카드 패턴을 사용합니다. 이러한 단순한 패턴은 파일의 그룹을 지정하는 데 사용될 수 있습니다. 두 개의 와일드카드 문자는 `*` 및 `**`입니다.
+파일 시스템 경로는 *Globbing 패턴*이라고도 부르는 와일드 카드 패턴을 사용합니다. 이 단순 패턴을 이용해서 파일 그룹을 지정할 수 있습니다. 두 개의 와일드 카드 문자는 `*`와 `**`입니다.
 
 **`*`**
 
-   현재 폴더 수준의 모든 것 또는 모든 파일 이름 또는 모든 파일 확장명을 일치시킵니다. 일치 항목은 파일 경로에서 `/` 및 `.` 문자로 종료됩니다.
+   현재 폴더 수준의 모든 항목, 모든 파일명 또는 모든 파일 확장자를 찾습니다 파일 경로의 `/` 및 `.` 문자에 의해서 일치가 중단됩니다.
 
 <strong><code>**</code></strong>
 
    여러 디렉터리 수준에서 모든 것을 일치시킵니다. 디렉터리 계층 구조 내의 여러 파일과 일치시키는 데 재귀적으로 사용될 수 있습니다.
 
-### <a name="globbing-pattern-examples"></a>와일드카드 사용 패턴 예
+### <a name="globbing-pattern-examples"></a>Globbing 패턴 예제
 
 **`directory/file.txt`**
 
@@ -150,7 +150,7 @@ var embeddedProvider = new EmbeddedFileProvider(Assembly.GetEntryAssembly());
 
 ## <a name="file-provider-usage-in-aspnet-core"></a>ASP.NET Core에서 파일 공급자 사용
 
-ASP.NET Core의 여러 부분에서 파일 공급자를 사용합니다. `IHostingEnvironment`는 `IFileProvider` 형식으로 앱의 콘텐츠 루트 및 웹 루트를 노출합니다. 정적 파일 미들웨어는 파일 공급자를 사용하여 정적 파일을 찾습니다. Razor는 보기 찾기에서 `IFileProvider`를 많이 사용합니다. Dotnet의 게시 기능은 파일 공급자 및 와일드카드 사용 패턴을 사용하여 게시되어야 하는 파일을 지정합니다.
+ASP.NET Core는 다양한 부분에서 파일 공급자를 활용합니다. 예를 들어,`IHostingEnvironment`는 응용 프로그램의 콘텐츠 루트와 웹 루트를 `IFileProvider` 형식으로 노출합니다. 정적 파일 미들웨어는 파일 공급자를 이용해서 정적 파일을 찾습니다. Razor는 뷰를 찾기 위해 `IFileProvider`를 빈번히 사용합니다. Dotnet의 게시 기능은 파일 공급자와 Globbing 패턴을 사용해서 게시해야 할 파일들을 지정합니다.
 
 ## <a name="recommendations-for-use-in-apps"></a>앱에서 사용에 대한 권장 사항
 
