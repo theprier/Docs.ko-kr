@@ -1,5 +1,5 @@
 ---
-title: "ASP.NET Core에서 오류 처리"
+title: "ASP.NET Core의 오류 처리"
 author: ardalis
 description: "ASP.NET Core 응용 프로그램에서 오류를 처리하는 방법을 알아봅니다."
 manager: wpickett

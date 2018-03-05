@@ -31,13 +31,13 @@ ASP.NET Core에서 파일 공급자를 사용하여 파일 시스템 액세스�
 
 ## <a name="file-provider-implementations"></a>파일 공급자 구현
 
-`IFileProvider`의 세 가지 구현, 물리적, 포함 및 복합을 사용할 수 있습니다. 물리적 공급자는 실제 시스템의 파일에 액세스하는 데 사용됩니다. 포함된 공급자는 어셈블리에 포함된 파일에 액세스하는 데 사용됩니다. 복합 공급자는 하나 이상의 다른 공급자에서 파일 및 디렉터리에 대한 결합된 액세스를 제공하는 데 사용됩니다.
+`IFileProvider` 의 구현으로 물리적 공급자, 임베디드 공급자 그리고 복합 공급자의 세 가지 공급자를 사용할 수 있습니다. 물리적 공급자는 시스템의 실제 파일에 접근하기 위해서 사용됩니다. 그리고 임베디드 공급자는 어셈블리에 포함된 파일에 접근하기 위해서 사용됩니다. 마지막으로 복합 공급자는 하나 이상의 개별 공급자로부터 얻어진 파일 및 디렉터리에 대한 복합적인 접근을 지원하기 위해서 사용됩니다.
 
 ### <a name="physicalfileprovider"></a>PhysicalFileProvider
 
-`PhysicalFileProvider`는 실제 파일 시스템에 대한 액세스를 제공합니다. 모든 경로를 디렉터리 및 해당 자식으로 범위를 지정하여 `System.IO.File` 형식(물리적 공급자용)을 래핑합니다. 이 범위 지정은 이 경계 외부의 파일 시스템에 대한 액세스를 방지하여 특정 디렉터리 및 해당 자식에 대한 액세스를 제한합니다. 이 공급자를 인스턴스화할 때 이 공급자에 대해 만들어진 모든 요청에 대한 기본 경로로 제공하는(및 이 경로 외부의 액세스 제한) 디렉터리 경로와 함께 제공해야 합니다. ASP.NET Core 앱에서 `PhysicalFileProvider` 공급자를 직접 인스턴스화하거나 [종속성 주입](dependency-injection.md)을 통해 컨트롤러 또는 서비스의 생성자에서 `IFileProvider`를 요청할 수 있습니다. 후자의 방법은 일반적으로 보다 유연하고 테스트 가능한 솔루션을 생성합니다.
+`PhysicalFileProvider` 는 실제 파일 시스템에 대한 접근을 제공합니다. `System.IO.File` 형식을 (물리적 공급자에 대해) 래핑하고, 특정 디렉터리와 그 하위 자식들에 대한 모든 경로를 대상 범위로 지정합니다. 이렇게 범위를 지정함으로써 특정 디렉터리 및 그 하위 자식들에 대한 접근만 허용해서 경계 외부의 파일 시스템에 대한 접근을 차단합니다. 이 공급자의 인스턴스를 생성하려면 이 공급자를 대상으로 하는 모든 요청에 대해 기본 경로 역할을 하는 (그리고 해당 경로 외부에 대한 접근은 차단하는) 디렉터리 경로를 반드시 제공해야 합니다. ASP.NET Core 응용 프로그램에서는 `PhysicalFileProvider` 공급자의 인스턴스를 직접 생성하거나, 컨트롤러 또는 서비스의 생성자에서 `IFileProvider`종속성 주입[ 을 통해서 ](dependency-injection.md) 를 요청할 수 있습니다. 일반적으로 후자의 접근 방식이 보다 유연하고 테스트 가능한 솔루션을 만들어줍니다.
 
-아래 샘플에서는 `PhysicalFileProvider`를 만드는 방법을 보여 줍니다.
+다음 예제는 `PhysicalFileProvider` 를 생성하는 방법을 보여줍니다.
 
 
 ```csharp
@@ -46,56 +46,56 @@ IDirectoryContents contents = provider.GetDirectoryContents(""); // the applicat
 IFileInfo fileInfo = provider.GetFileInfo("wwwroot/js/site.js"); // a file under applicationRoot
 ```
 
-해당 디렉터리 내용을 반복하거나 하위 경로를 제공하여 특정 파일의 정보를 얻을 수 있습니다.
+하위 경로를 지정해서 디렉터리의 내용을 반복 조회하거나 특정 파일의 정보를 가져올 수도 있습니다.
 
-컨트롤러에서 공급자를 요청하려면 컨트롤러의 생성자에서 지정하고 로컬 필드에 할당합니다. 작업 방법 중에서 로컬 인스턴스를 사용합니다.
+컨트롤러에서 공급자를 사용하려면 공급자를 컨트롤러의 생성자 매개 변수로 지정한 다음, 전달받은 공급자 개체를 필드에 할당합니다. 그리고 액션 메서드에서는 이 로컬 인스턴스를 사용합니다.
 
 [!code-csharp[Main](file-providers/sample/src/FileProviderSample/Controllers/HomeController.cs?highlight=5,7,12&range=6-19)]
 
-그런 다음, 앱의 `Startup` 클래스에서 공급자를 만듭니다.
+그런 다음, 응용 프로그램의 `Startup` 클래스에서 공급자를 생성합니다.
 
 [!code-csharp[Main](file-providers/sample/src/FileProviderSample/Startup.cs?highlight=35,40&range=1-43)]
 
-*Index.cshtml* 보기에서 제공된 `IDirectoryContents`를 반복합니다.
+다음 *Index.cshtml* 뷰는 전달된 `IDirectoryContents` 를 반복 조회합니다.
 
 [!code-html[Main](file-providers/sample/src/FileProviderSample/Views/Home/Index.cshtml?highlight=2,7,9,11,15)]
 
 그 결과는 다음과 같습니다.
 
-![물리적 파일 및 폴더를 나열하는 파일 공급자 샘플 응용 프로그램](file-providers/_static/physical-directory-listing.png)
+![파일 공급자 예제 응용 프로그램이 실제 파일 및 폴더의 목록을 출력합니다.](file-providers/_static/physical-directory-listing.png)
 
 ### <a name="embeddedfileprovider"></a>EmbeddedFileProvider
 
-`EmbeddedFileProvider`는 어셈블리에 포함된 파일에 액세스하는 데 사용됩니다. .NET Core에서 *.csproj* 파일의 `<EmbeddedResource>` 요소를 사용하여 어셈블리에 파일을 포함합니다.
+`EmbeddedFileProvider` 는 어셈블리에 포함된 파일에 접근하기 위한 용도로 사용됩니다. .NET Core에서는 *.csproj* 파일의 `<EmbeddedResource>` 요소에 지정된 파일들이 어셈블리에 포함됩니다.
 
 [!code-json[Main](file-providers/sample/src/FileProviderSample/FileProviderSample.csproj?range=13-18)]
 
-파일을 어셈블리에 포함하도록 지정할 때 [와일드카드 사용 패턴](#globbing-patterns)을 사용할 수 있습니다. 하나 이상의 파일에 맞게 이러한 패턴을 사용할 수 있습니다.
+어셈블리에 포함시킬 파일들을 지정할 때, [Globbing 패턴](#globbing-patterns) 을 사용할 수 있습니다. 이 패턴을 사용하면 하나 이상의 파일을 지정할 수 있습니다.
 
 > [!NOTE]
-> 실제로 해당 어셈블리의 프로젝트에 모든 .js 파일을 포함하려고 할 가능성은 낮습니다. 위의 샘플은 데모 목적입니다.
+> 실제로 프로젝트의 모든 .js 파일을 어셈블리에 포함시키는 일은 거의 없습니다. 위 예제는 단지 설명을 위한 것입니다.
 
-`EmbeddedFileProvider`를 만들 때 읽는 어셈블리를 해당 생성자에 전달합니다.
+`EmbeddedFileProvider` 를 생성할 때, 생성자에게 읽고자 하는 어셈블리를 전달해야 합니다.
 
 ```csharp
 var embeddedProvider = new EmbeddedFileProvider(Assembly.GetEntryAssembly());
 ```
 
-위의 코드 조각은 현재 실행 중인 어셈블리에 대한 액세스로 `EmbeddedFileProvider`를 만드는 방법을 보여 줍니다.
+위의 코드 조각은 현재 실행 중인 어셈블리에 접근하는 `EmbeddedFileProvider` 를 생성하는 방법을 보여줍니다.
 
-`EmbeddedFileProvider`를 사용하도록 샘플 앱을 업데이트하면 다음 출력과 같은 결과가 발생합니다.
+앞의 예제 응용 프로그램을 `EmbeddedFileProvider` 를 사용하도록 업데이트하면 다음과 같은 결과가 출력됩니다.
 
-![포함된 파일을 나열하는 파일 공급자 샘플 응용 프로그램](file-providers/_static/embedded-directory-listing.png)
+![파일 공급자 예제 응용 프로그램이 임베디드 파일들의 목록을 출력합니다.](file-providers/_static/embedded-directory-listing.png)
 
 > [!NOTE]
-> 포함된 리소스는 디렉터리를 공개하지 않습니다. 대신, 리소스에 대한 경로(해당 네임스페이스를 통해)는 `.` 구분 기호를 사용하여 해당 파일 이름에서 포함됩니다.
+> 어셈블리에 포함된 리소스는 디렉터리를 노출하지 않는 반면. 대신, 리소스에 대한 경로(해당 네임스페이스를 통해)는 `.` 구분 기호를 사용하여 해당 파일 이름에서 포함됩니다.
 
 > [!TIP]
 > `EmbeddedFileProvider` 생성자는 선택적 `baseNamespace` 매개 변수를 허용합니다. 이를 지정하면 `GetDirectoryContents`에 대한 호출을 제공된 네임스페이스 아래의 해당 리소스로 범위를 지정합니다.
 
 ### <a name="compositefileprovider"></a>CompositeFileProvider
 
-`CompositeFileProvider`는 여러 공급자에서 파일을 사용하기 위한 단일 인터페이스를 노출하여 `IFileProvider` 인스턴스를 결합합니다. `CompositeFileProvider`를 만들 때 하나 이상의 `IFileProvider` 인스턴스를 해당 생성자에 전달합니다.
+`CompositeFileProvider` 는 `IFileProvider` 의 인스턴스들을 결합해서 다수의 공급자를 이용한 파일 작업을 처리할 수 있는 단일 인터페이스를 제공합니다.  `CompositeFileProvider` 를 생성할 때는 생성자에 하나 이상의 `IFileProvider` 인스턴스를 전달합니다.
 
 [!code-csharp[Main](file-providers/sample/src/FileProviderSample/Startup.cs?highlight=3&range=35-37)]
 
