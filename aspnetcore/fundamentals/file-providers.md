@@ -25,7 +25,7 @@ ASP.NET Core에서 파일 공급자를 사용하여 파일 시스템 액세스�
 
 ## <a name="file-provider-abstractions"></a>파일 공급자 추상화
 
-파일 공급자는 파일 시스템에 대한 추상화입니다. 기본 인터페이스는 `IFileProvider`입니다. `IFileProvider`는 파일 정보(`IFileInfo`), 디렉터리 정보(`IDirectoryContents`)를 가져오고, 변경 알림을 설정하는(`IChangeToken` 사용) 메서드를 공개합니다.
+파일 공급자는 파일 시스템에 대한 추상화로. 기본 인터페이스는 `IFileProvider`입니다. `IFileProvider`는 파일 정보(`IFileInfo`)나 디렉터리 정보(`IDirectoryContents`)를 가져오고, 변경 알림을 설정(`IChangeToken` 을 사용) 하는 메서드를 노출합니다.
 
 `IFileInfo`는 개별 파일 또는 디렉터리에 대한 메서드 및 속성을 제공합니다. 두 개의 부울 속성, `Exists` 및 `IsDirectory`와 파일의 `Name`, `Length`(바이트) 및 `LastModified` 날짜를 설명하는 속성이 있습니다. 해당 `CreateReadStream` 메서드를 사용하여 파일에서 읽을 수 있습니다.
 
