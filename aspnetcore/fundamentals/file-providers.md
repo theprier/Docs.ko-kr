@@ -27,7 +27,7 @@ ASP.NET Core에서 파일 공급자를 사용하여 파일 시스템 액세스�
 
 파일 공급자는 파일 시스템에 대한 추상화로. 기본 인터페이스는 `IFileProvider`입니다. `IFileProvider`는 파일 정보(`IFileInfo`)나 디렉터리 정보(`IDirectoryContents`)를 가져오고, 변경 알림을 설정(`IChangeToken` 을 사용) 하는 메서드를 노출합니다.
 
-`IFileInfo`는 개별 파일 또는 디렉터리에 대한 메서드 및 속성을 제공합니다. 두 개의 부울 속성, `Exists` 및 `IsDirectory`와 파일의 `Name`, `Length`(바이트) 및 `LastModified` 날짜를 설명하는 속성이 있습니다. 해당 `CreateReadStream` 메서드를 사용하여 파일에서 읽을 수 있습니다.
+`IFileInfo`는 개별 파일 및 디렉터리에 대한 메서드와 속성을 제공합니다. 두 가지 불리언 속성인 `Exists` 속성과 `IsDirectory`속성을 비롯해서 파일 이름(`Name`), 크기(`Length`, 바이트) 및 마지막 수정 날짜(`LastModified`)를 기술하는 속성들을 갖고 있습니다. `CreateReadStream` 메서드를 사용해서 파일을 읽을 수도 있습니다.
 
 ## <a name="file-provider-implementations"></a>파일 공급자 구현
 
@@ -60,7 +60,7 @@ IFileInfo fileInfo = provider.GetFileInfo("wwwroot/js/site.js"); // a file under
 
 [!code-html[Main](file-providers/sample/src/FileProviderSample/Views/Home/Index.cshtml?highlight=2,7,9,11,15)]
 
-결과:
+그 결과는 다음과 같습니다.
 
 ![물리적 파일 및 폴더를 나열하는 파일 공급자 샘플 응용 프로그램](file-providers/_static/physical-directory-listing.png)
 
