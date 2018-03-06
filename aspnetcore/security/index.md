@@ -9,23 +9,23 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/index
-ms.openlocfilehash: e1aaae09fe69e6b65a917785b436f927fac5345d
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 7e5f6bc44241dc6fc11569a145a04340f1b3ee7f
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="aspnet-core-security-overview"></a>ASP.NET Core 보안 개요
 
-개발자는 ASP.NET Core를 사용하여 앱의 보안을 간편하게 구성 및 관리할 수 있습니다. ASP.NET Core는 인증, 권한 부여, 데이터 보호, SSL 적용, 앱 비밀, 요청 위조 방지 및 CORS 관리를 위한 기능을 포함하고 있습니다. 이러한 보안 기능을 사용하여 강력하면서도 안전한 ASP.NET Core 앱을 빌드할 수 있습니다. 
+개발자는 ASP.NET Core를 사용하여 앱의 보안을 간편하게 구성 및 관리할 수 있습니다. ASP.NET Core는 인증, 권한 부여, 데이터 보호, SSL 적용, 앱 비밀, 요청 위조 방지 및 CORS 관리를 위한 기능을 포함하고 있습니다. 이러한 보안 기능을 사용하여 강력하면서도 안전한 ASP.NET Core 앱을 빌드할 수 있습니다.
 
 ## <a name="aspnet-core-security-features"></a>ASP.NET Core 보안 기능
 
-ASP.NET Core는 기본 제공 ID 공급자를 포함하여 앱을 보호하는 여러 도구와 라이브러리를 제공하지만 Facebook, Twitter, LinkedIn 등의 타사 ID 서비스를 사용할 수도 있습니다. ASP.NET Core를 사용하면 기밀 정보를 코드에 노출할 필요 없이 저장하고 사용할 수 있는 방법인 앱 비밀을 간편하게 관리할 수 있습니다. 
+ASP.NET Core는 기본 제공 ID 공급자를 포함하여 앱을 보호하는 여러 도구와 라이브러리를 제공하지만 Facebook, Twitter, LinkedIn 등의 타사 ID 서비스를 사용할 수도 있습니다. ASP.NET Core를 사용하면 기밀 정보를 코드에 노출할 필요 없이 저장하고 사용할 수 있는 방법인 앱 비밀을 간편하게 관리할 수 있습니다.
 
 ## <a name="authentication-vs-authorization"></a>인증 vs. 권한 부여
 
-인증은 사용자가 자격 증명을 제공하면 운영 체제, 데이터베이스, 앱 또는 리소스에 저장된 자격 증명과 비교하는 프로세스입니다. 두 자격 증명이 일치하면 사용자 인증이 성공하고 사용자는 권한 부여 프로세스 동안 권한이 부여된 작업을 수행할 수 있습니다. 권한 부여는 사용자가 할 수 있는 작업을 결정하는 프로세스를 말합니다. 
+인증은 사용자가 자격 증명을 제공하면 운영 체제, 데이터베이스, 앱 또는 리소스에 저장된 자격 증명과 비교하는 프로세스입니다. 두 자격 증명이 일치하면 사용자 인증이 성공하고 사용자는 권한 부여 프로세스 동안 권한이 부여된 작업을 수행할 수 있습니다. 권한 부여는 사용자가 할 수 있는 작업을 결정하는 프로세스를 말합니다.
 
 인증을 이해하기 위한 또 다른 개념으로 서버, 데이터베이스, 앱, 리소스 등의 공간에 들어가는 것으로 생각할 수 있고, 권한 부여는 사용자가 해당 공간(서버, 데이터베이스 또는 앱) 내에서 어떤 개체에 대해 어떤 작업을 수행할 수 있는지 결정하는 것입니다.
 
@@ -38,16 +38,17 @@ ASP.NET Core 및 EF는 앱을 보호하고 보안 위반을 방지하는 기능�
 * [CSRF(사이트 간 요청 위조)](https://docs.microsoft.com/aspnet/core/security/anti-request-forgery)
 * [오픈 리디렉션 공격](https://docs.microsoft.com/aspnet/core/security/preventing-open-redirects)
 
-그 외에도 알고 계셔야 하는 취약점이 더 있습니다. 자세한 내용은 이 문서의 *ASP.NET 보안 설명서*에 대한 섹션을 참조하세요. 
+그 외에도 알고 계셔야 하는 취약점이 더 있습니다. 자세한 내용은 이 문서의 *ASP.NET 보안 설명서*에 대한 섹션을 참조하세요.
 
 ## <a name="aspnet-security-documentation"></a>ASP.NET 보안 설명서
 
 *   [인증](authentication/index.md)
     *   [ID 소개](authentication/identity.md)
     *   [Facebook, Google 및 기타 외부 공급자를 통해 인증 사용](authentication/social/index.md)
+    *   [WS-Federation을 사용하여 인증하도록 설정](authentication/ws-federation.md)
     * [Windows 인증 구성](authentication/windowsauth.md)
     *   [계정 확인 및 암호 복구](authentication/accconfirm.md)
-    *   [SMS를 사용한 2단계 인증](authentication/2fa.md) 
+    *   [SMS를 사용한 2단계 인증](authentication/2fa.md)
     *   [ID 없이 쿠키 인증 사용](authentication/cookie.md)
     *   [Azure Active Directory](authentication/azure-active-directory/index.md)
         *   [ASP.NET Core 웹앱에 Azure AD 통합](https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore/)

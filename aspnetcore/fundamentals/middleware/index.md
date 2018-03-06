@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/middleware/index
-ms.openlocfilehash: 158f11875f22f8f9dba6f7f109123717b9da8d18
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: 5d236c79120d79195c1970cc87d164002b56d0f1
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="aspnet-core-middleware"></a>ASP.NET Core 미들웨어
 
@@ -44,13 +44,13 @@ ASP.NET Core 요청 파이프라인은 이 다이어그램이 보여 주는 것�
 
 가장 간단한 가능한 ASP.NET Core 앱은 모든 요청을 처리하는 단일 요청 대리자를 설정합니다. 이 경우 실제 요청 파이프라인은 포함하지 않습니다. 대신, 단일 익명 함수가 모든 HTTP 요청에 대한 응답에 호출됩니다.
 
-[!code-csharp[Main](index/sample/Middleware/Startup.cs)]
+[!code-csharp[](index/sample/Middleware/Startup.cs)]
 
 첫 번째 [app.Run](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.runextensions) 대리자는 파이프라인을 종료합니다.
 
 [app.Use](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.useextensions)를 사용하여 여러 요청 대리자를 함께 연결할 수 있습니다. `next` 매개 변수는 파이프라인의 다음 대리자를 나타냅니다. (*next* 매개 변수를 호출하지 *않고* 파이프라인을 단락(short-circuit)할 수 있습니다.) 이 예제에서 설명하듯이 일반적으로 다음 대리자 전과 후 모두에서 작업을 수행할 수 있습니다.
 
-[!code-csharp[Main](index/sample/Chain/Startup.cs?name=snippet1)]
+[!code-csharp[](index/sample/Chain/Startup.cs?name=snippet1)]
 
 >[!WARNING]
 > 클라이언트에 응답을 전송한 후에 `next.Invoke`를 호출하지 마십시오. 응답이 시작된 후 `HttpResponse`로 변경하면 예외를 throw합니다. 예를 들어 헤더, 상태 코드 등을 설정하는 것 같은 변경은 예외를 throw합니다. `next`를 호출한 후 응답 본문에 작성하기:
@@ -142,7 +142,7 @@ public void Configure(IApplicationBuilder app)
 
 `Map*` 확장은 파이프라인 분기에 규칙으로 사용됩니다. [Map](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mapextensions)은 지정된 요청 경로의 일치를 기반으로 요청 파이프라인을 분기합니다. 요청 경로가 지정된 경로로 시작하는 경우 분기가 실행됩니다.
 
-[!code-csharp[Main](index/sample/Chain/StartupMap.cs?name=snippet1)]
+[!code-csharp[](index/sample/Chain/StartupMap.cs?name=snippet1)]
 
 다음 표는 앞의 코드를 사용하여 `http://localhost:1234`의 요청 및 응답을 보여 줍니다.
 
@@ -157,7 +157,7 @@ public void Configure(IApplicationBuilder app)
 
 [MapWhen](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mapwhenextensions)은 지정된 조건자의 결과를 기반으로 요청 파이프라인을 분기합니다. `Func<HttpContext, bool>` 형식의 조건자는 파이프라인의 새 분기에 요청을 매핑하는 데 사용될 수 있습니다. 다음 예제에서 조건자는 쿼리 문자열 변수 `branch`의 존재를 검색하는 데 사용됩니다.
 
-[!code-csharp[Main](index/sample/Chain/StartupMapWhen.cs?name=snippet1)]
+[!code-csharp[](index/sample/Chain/StartupMapWhen.cs?name=snippet1)]
 
 다음 표는 앞의 코드를 사용하여 `http://localhost:1234`의 요청 및 응답을 보여 줍니다.
 
@@ -212,7 +212,7 @@ ASP.NET Core는 다음 미들웨어 구성 요소 및 추가되어야 하는 순
 
 미들웨어는 일반적으로 클래스에서 캡슐화되고 확장 메서드로 노출됩니다. 쿼리 문자열에서 현재 요청에 대한 문화권을 설정하는 다음 미들웨어를 고려합니다.
 
-[!code-csharp[Main](index/sample/Culture/StartupCulture.cs?name=snippet1)]
+[!code-csharp[](index/sample/Culture/StartupCulture.cs?name=snippet1)]
 
 참고: 위의 샘플 코드는 미들웨어 구성 요소 만들기를 보여 주는 데 사용됩니다. ASP.NET Core의 기본 제공 지역화 지원은 [전역화 및 지역화](xref:fundamentals/localization)를 참조하세요.
 
@@ -220,15 +220,15 @@ ASP.NET Core는 다음 미들웨어 구성 요소 및 추가되어야 하는 순
 
 다음 코드는 미들웨어 대리자를 클래스로 이동합니다.
 
-[!code-csharp[Main](index/sample/Culture/RequestCultureMiddleware.cs)]
+[!code-csharp[](index/sample/Culture/RequestCultureMiddleware.cs)]
 
 다음 확장 메서드는 [IApplicationBuilder](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.iapplicationbuilder)를 통해 미들웨어를 공개합니다.
 
-[!code-csharp[Main](index/sample/Culture/RequestCultureMiddlewareExtensions.cs)]
+[!code-csharp[](index/sample/Culture/RequestCultureMiddlewareExtensions.cs)]
 
 다음 코드는 `Configure`에서 미들웨어를 호출합니다.
 
-[!code-csharp[Main](index/sample/Culture/Startup.cs?name=snippet1&highlight=5)]
+[!code-csharp[](index/sample/Culture/Startup.cs?name=snippet1&highlight=5)]
 
 미들웨어는 해당 생성자에서 해당 종속성을 노출하여 [명시적 종속성 원칙](http://deviq.com/explicit-dependencies-principle/)을 따라야 합니다. 미들웨어는 *응용 프로그램 수명*당 한 번 생성됩니다. 서비스를 요청 내의 미들웨어와 공유해야 하는 경우 아래 *요청당 종속성*을 참조하세요.
 
@@ -262,4 +262,4 @@ public class MyMiddleware
 * [응용 프로그램 시작](xref:fundamentals/startup)
 * [기능 요청](xref:fundamentals/request-features)
 * [팩터리 기반 미들웨어 활성화](xref:fundamentals/middleware/extensibility)
-* [타사 컨테이너를 사용하는 팩터리 기반 미들웨어 활성화](xref:fundamentals/middleware/extensibility-third-party-container)
+* [타사 컨테이너를 사용하여 미들웨어 활성화](xref:fundamentals/middleware/extensibility-third-party-container)

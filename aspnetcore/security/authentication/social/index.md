@@ -1,5 +1,5 @@
 ---
-title: "Facebook, Google 및 기타 외부 공급자를 통해 인증 사용"
+title: "ASP.NET Core에서 Facebook, Google 및 외부 공급자 인증"
 author: rick-anderson
 description: "이 자습서에는 외부 인증 공급자에 OAuth 2.0을 사용하여 ASP.NET Core 2.x 앱을 빌드하는 방법을 보여줍니다."
 manager: wpickett
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/social/index
-ms.openlocfilehash: 475656b03b0d1a3e79e78e6cf3816f091ccd640b
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 76433f814d6850a449434c29eb0bd27570ce193a
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
-# <a name="enabling-authentication-using-facebook-google-and-other-external-providers"></a>Facebook, Google 및 기타 외부 공급자를 통해 인증 사용
+# <a name="facebook-google-and-external-provider-authentication-in-aspnet-core"></a>ASP.NET Core에서 Facebook, Google 및 외부 공급자 인증
 
 <a name="security-authentication-social-logins"></a>
 

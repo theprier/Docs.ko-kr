@@ -1,7 +1,7 @@
 ---
 title: "ASP.NET Core의 웹 서버 구현"
 author: tdykstra
-description: "ASP.NET Core에 대한 웹 서버 Kestrel 및 WebListener를 소개합니다. 항목을 선택하는 방법 및 역방향 프록시 서버에서 항목을 사용할 시기에 대한 지침을 제공합니다."
+description: "ASP.NET Core의 웹 서버 Kestrel 및 HTTP.sys를 검색합니다. 항목을 선택하는 방법 및 역방향 프록시 서버에서 항목을 사용할 시기를 알아봅니다."
 manager: wpickett
 ms.author: tdykstra
 ms.date: 08/03/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/index
-ms.openlocfilehash: 9e2bea396e50615bd02affad93f0ee55255d299f
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: b9a7fa4e33c56a5973b4bc35f88ca0ebb3d67101
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="web-server-implementations-in-aspnet-core"></a>ASP.NET Core의 웹 서버 구현
 

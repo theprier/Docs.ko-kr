@@ -9,15 +9,15 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/tag-helpers/builtin-th/Index
-ms.openlocfilehash: 09024bf0d6c87fce9eba9b70bebefa11d2ff0a44
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 1d086bc0bc210fe19dda34d13008a49d48801607
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="aspnet-core-built-in-tag-helpers"></a>기본 제공 ASP.NET Core 태그 도우미
 
-작성자: [Peter Kellner](http://peterkellner.net) 
+작성자: [Peter Kellner](http://peterkellner.net)
 
 ASP.NET Core에는 생산성을 향상하기 위해 다양한 기본 제공 태그 도우미가 포함되어 있습니다. 이 섹션에서는 기본 제공 태그 도우미의 개요를 제공합니다.
 
@@ -49,6 +49,8 @@ ASP.NET Core에는 생산성을 향상하기 위해 다양한 기본 제공 태�
 [comment]: **[OptionTagHelper](xref:mvc/views/tag-helpers/builtin-th/option-tag-helper)**
 
 [comment]: **[ScriptTagHelper](xref:mvc/views/tag-helpers/builtin-th/script-tag-helper)**
+
+**[부분 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/partial-tag-helper)**
 
 **[선택 태그 도우미](xref:mvc/views/working-with-forms#the-select-tag-helper)**
 

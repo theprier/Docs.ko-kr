@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/index
-ms.openlocfilehash: fbef1545f3cdcbe3887a5dd9ceca0e9b420193f1
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: b9640e33043d452246f81b7968996bda1f7474ff
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="authentication"></a>인증
 
@@ -22,6 +22,8 @@ ms.lasthandoff: 01/30/2018
 * [ID 소개](identity.md)
 
 * [Facebook, Google 및 기타 외부 공급자를 통해 인증 사용](social/index.md)
+
+* [WS-Federation을 사용하여 인증하도록 설정](ws-federation.md)
 
 * [ID에서 QR 코드 생성 사용](identity-enable-qrcodes.md)
 

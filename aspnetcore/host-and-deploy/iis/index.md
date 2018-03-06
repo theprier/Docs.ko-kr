@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 620bfefa625f4b39cb2731b4f553caaa4526c71b
-ms.sourcegitcommit: 9f758b1550fcae88ab1eb284798a89e6320548a5
+ms.openlocfilehash: b1ca9303c620597f7844c401048129044e99d7be
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>IIS가 있는 Windows에서 ASP.NET Core 호스팅
 
@@ -45,6 +45,8 @@ public static IWebHost BuildWebHost(string[] args) =>
         ...
 ```
 
+ASP.NET Core 모듈은 동적 포트를 생성하여 백 엔드 프로세스에 할당합니다. `UseIISIntegration` 메서드는 동적 포트를 선택하고 `http://locahost:{dynamicPort}/`에서 수신 대기하도록 Kestrel을 구성합니다. 이는 `UseUrls` 또는 [Kestrel의 수신 API](xref:fundamentals/servers/kestrel#endpoint-configuration)에 대한 호출과 같은 다른 URL 구성을 재정의합니다. 따라서 모듈을 사용하는 경우 `UseUrls`에 대한 호출 또는 Kestrel의 `Listen` API가 필요하지 않습니다. `UseUrls` 또는 `Listen`을 호출하는 경우 Kestrel은 IIS 없이 앱을 실행할 때 지정된 포트에서 수신 대기합니다.
+
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 [Microsoft.AspNetCore.Server.IISIntegration](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.IISIntegration/) 패키지에 대한 종속성을 앱의 종속성에 포함합니다. [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration) 확장 메서드를 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder)에 추가하여 IIS 통합 미들웨어를 사용합니다.
@@ -57,6 +59,10 @@ var host = new WebHostBuilder()
 ```
 
 [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel) 및 [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration)이 둘 다 필요합니다. `UseIISIntegration`을 호출하는 코드는 코드 이식성에 영향을 주지 않습니다. 앱이 IIS 배후에서 실행되지 않는 경우(예를 들어 앱이 Kestrel에서 바로 실행되는 경우)에는 `UseIISIntegration`이 작동하지 않습니다.
+
+ASP.NET Core 모듈은 동적 포트를 생성하여 백 엔드 프로세스에 할당합니다. `UseIISIntegration` 메서드는 동적 포트를 선택하고 `http://locahost:{dynamicPort}/`에서 수신 대기하도록 Kestrel을 구성합니다. 이는 `UseUrls`에 대한 호출과 같은 다른 URL 구성을 재정의합니다. 따라서 모듈을 사용하는 경우 `UseUrls`에 대한 호출이 필요하지 않습니다. `UseUrls`를 호출하는 경우 Kestrel은 IIS 없이 앱을 실행할 때 지정된 포트에서 수신 대기합니다.
+
+`UseUrls`를 ASP.NET Core 1.0 앱에서 호출하는 경우 모듈 구성 포트를 덮어 쓰지 않도록 `UseIISIntegration`을 호출하기 **전에** 호출합니다. 모듈 설정이 `UseUrls`를 재정의하기 때문에 이 호출 순서는 ASP.NET Core 1.1에서 필요하지 않습니다.
 
 ---
 
@@ -129,7 +135,7 @@ services.Configure<IISOptions>(options =>
    Windows 인증을 사용하도록 설정하려면 **웹 서버** > **보안** 노드를 확장합니다. **Windows 인증** 기능을 선택합니다. 자세한 내용은 [Windows 인증 \<windowsAuthentication>](/iis/configuration/system.webServer/security/authentication/windowsAuthentication/) 및 [Windows 인증 구성](xref:security/authentication/windowsauth)을 참조하세요.
 
    **WebSockets(선택 사항)**  
-   WebSockets는 ASP.NET Core 1.1 이상에서 지원됩니다. WebSockets를 사용하도록 설정하려면 **웹 서버** > **응용 프로그램 개발** 노드를 확장합니다. **WebSocket 프로토콜** 기능을 선택합니다. 자세한 내용은 [WebSocket](xref:fundamentals/websockets)을 참조하세요.
+   WebSockets는 ASP.NET Core 1.1 이상에서 지원됩니다. WebSockets를 사용하도록 설정하려면 **웹 서버** > **응용 프로그램 개발** 노드를 확장합니다. **WebSocket 프로토콜** 기능을 선택합니다. 자세한 내용은 [WebSocket](xref:fundamentals/websockets)을 참고하시기 바랍니다.
 
 1. **확인** 단계를 진행하여 웹 서버 역할 및 서비스를 설치합니다. **웹 서버(IIS)** 역할을 설치한 후에 서버/IIS를 다시 시작할 필요는 없습니다.
 
@@ -151,7 +157,7 @@ services.Configure<IISOptions>(options =>
    Windows 인증을 사용하도록 설정하려면 **World Wide Web 서비스** > **보안** 노드를 확장합니다. **Windows 인증** 기능을 선택합니다. 자세한 내용은 [Windows 인증 \<windowsAuthentication>](/iis/configuration/system.webServer/security/authentication/windowsAuthentication/) 및 [Windows 인증 구성](xref:security/authentication/windowsauth)을 참조하세요.
 
    **WebSockets(선택 사항)**  
-   WebSockets는 ASP.NET Core 1.1 이상에서 지원됩니다. WebSockets를 사용하도록 설정하려면 **World Wide Web 서비스** > **응용 프로그램 개발 기능** 노드를 확장합니다. **WebSocket 프로토콜** 기능을 선택합니다. 자세한 내용은 [WebSocket](xref:fundamentals/websockets)을 참조하세요.
+   WebSockets는 ASP.NET Core 1.1 이상에서 지원됩니다. WebSockets를 사용하도록 설정하려면 **World Wide Web 서비스** > **응용 프로그램 개발 기능** 노드를 확장합니다. **WebSocket 프로토콜** 기능을 선택합니다. 자세한 내용은 [WebSocket](xref:fundamentals/websockets)을 참고하시기 바랍니다.
 
 1. IIS 설치 시 다시 시작해야 하는 경우 시스템을 다시 시작합니다.
 
@@ -164,6 +170,8 @@ services.Configure<IISOptions>(options =>
 1. 호스팅 시스템에 [.NET Core Windows Server 호스팅 번들](https://aka.ms/dotnetcore-2-windowshosting)을 설치합니다. 번들은 .NET Core 런타임, .NET Core 라이브러리 및 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)을 설치합니다. 이 모듈은 IIS와 Kestrel 서버 간에 역방향 프록시를 만듭니다. 시스템이 인터넷에 연결되지 않은 경우 [Microsoft Visual C++ 2015 재배포 가능 패키지](https://www.microsoft.com/download/details.aspx?id=53840)를 설치한 후에 .NET Core Windows Server 호스팅 번들을 설치합니다.
 
    **중요!** IIS 이전에 호스팅 번들이 설치된 경우 번들 설치를 복구해야 합니다. IIS를 설치한 후 호스팅 번들 설치 관리자를 다시 실행합니다.
+   
+   설치 관리자가 x64 OS에서 x86 패키지를 설치하지 않도록 방지하려면 `OPT_NO_X86=1` 스위치를 사용하여 관리자 명령 프롬프트에서 설치 관리자를 실행합니다.
 
 1. 시스템을 다시 시작하거나 명령 프롬프트에서 **net stop was /y**, **net start w3svc**를 차례로 실행합니다. IIS를 다시 시작하면 설치 관리자에 의한 시스템 PATH 변경 내용이 수집됩니다.
 
@@ -348,7 +356,7 @@ IIS 구성은 역방향 프록시 구성에 적용되는 IIS 기능에 대한 *w
 * **\<connectionStrings>**
 * **\<location>**
 
-ASP.NET Core 앱은 다른 구성 공급자를 사용하여 구성됩니다. 자세한 내용은 [구성](xref:fundamentals/configuration/index)을 참조하세요.
+ASP.NET Core 앱은 다른 구성 공급자를 사용하여 구성됩니다. 자세한 내용은 [구성](xref:fundamentals/configuration/index)을 참고하시기 바랍니다.
 
 ## <a name="application-pools"></a>응용 프로그램 풀
 
