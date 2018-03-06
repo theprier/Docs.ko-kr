@@ -21,7 +21,7 @@ ms.lasthandoff: 01/30/2018
 
 ASP.NET Core는 환경 변수를 통해 런타임 시 응용 프로그램 동작을 설정할 수 있는 지원을 제공합니다.
 
-[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/environments/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/environments/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="environments"></a>환경
 
@@ -95,7 +95,7 @@ Visual Studio **Debug** 탭은 *launchSettings.json* 파일을 편집할 수 있
 * 친숙한 오류 페이지를 사용하도록 설정합니다.
 * 프로덕션 로깅 및 모니터링을 사용합니다. 예: [Application Insights](/azure/application-insights/app-insights-asp-net-core).
 
-## <a name="setting-the-environment"></a>환경 설정
+## <a name="setting-the-environment"></a>환경 설정하기
 
 테스트를 위해 특정 환경을 설정하는 것이 유용합니다. 환경을 설정하지 않으면 대부분의 디버깅 기능을 사용하지 않는 `Production`으로 기본값이 지정됩니다.
 
@@ -130,11 +130,11 @@ $Env:ASPNETCORE_ENVIRONMENT = "Development"
 
 **web.config**
 
-[ASP.NET Core 모듈 구성 참조](xref:host-and-deploy/aspnet-core-module#setting-environment-variables) 항목의 *환경 변수 설정* 섹션을 참조하세요.
+[ASP.NET Core 모듈 구성 참조](xref:host-and-deploy/aspnet-core-module#setting-environment-variables) 주제의 *환경 변수 설정하기* 항목을 참고하시기 바랍니다
 
 **IIS 응용 프로그램 풀마다**
 
-격리된 응용 프로그램 풀(IIS 10.0 이상에서 지원됨)에서 실행되는 개별 앱에 대한 환경 변수를 설정하려면 [환경 변수\<environmentVariables>](/iis/configuration/system.applicationHost/applicationPools/add/environmentVariables/#appcmdexe) 항목의 *AppCmd.exe 명령* 섹션을 참조하세요.
+격리된 응용 프로그램 풀에서 실행되는 (IIS 10.0 이상에서 지원됨) 개별 응용 프로그램에 대한 환경 변수를 설정해야 할 경우, IIS 참조 문서의 [\<environmentVariables> 환경 변수](/iis/configuration/system.applicationHost/applicationPools/add/environmentVariables/#appcmdexe) 항목 중, *AppCmd.exe 명령* 섹션을 참고하시기 바랍니다.
 
 ### <a name="macos"></a>macOS
 macOS에 대한 현재 환경 설정은 응용 프로그램을 실행할 때 인라인에서 수행할 수 있습니다.
@@ -173,7 +173,7 @@ ASP.NET Core 앱이 시작되면 [시작 클래스](xref:fundamentals/startup)�
 
 [!code-csharp[Main](environments/sample/WebApp1/Startup.cs?name=snippet_all&highlight=15,37)]
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 * [응용 프로그램 시작](xref:fundamentals/startup)
 * [구성](xref:fundamentals/configuration/index)
