@@ -1,5 +1,5 @@
 ---
-title: "ASP.NET Core 미들웨어"
+title: "ASP.NET Core 미들웨어 기본 사항"
 author: rick-anderson
 description: "ASP.NET Core 미들웨어 및 요청 파이프라인에 대해 알아봅니다."
 manager: wpickett
@@ -21,7 +21,7 @@ ms.lasthandoff: 01/30/2018
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT) 및 [Steve Smith](https://ardalis.com/)
 
-[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/middleware/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/middleware/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="what-is-middleware"></a>미들웨어란?
 
@@ -56,12 +56,12 @@ ASP.NET Core 요청 파이프라인은 이 다이어그램이 보여 주는 것�
 
 >[!WARNING]
 > 클라이언트에 응답을 전송한 후에 `next.Invoke`를 호출하지 마십시오. 응답이 시작된 후 `HttpResponse`로 변경하면 예외를 throw합니다. 예를 들어 헤더, 상태 코드 등을 설정하는 것 같은 변경은 예외를 throw합니다. `next`를 호출한 후 응답 본문에 작성하기:
-> - 프로토콜 위반이 발생할 수 있습니다. 예를 들어 언급된 `content-length`보다 더 많이 작성하기.
+> - 프로토콜 위반이 발생할 수 있습니다. 예를 들어, 명시된 `content-length`보다 긴 내용이 작성될 수 있습니다.
 > - 본문 형식을 손상시킬 수 있습니다. 예를 들어 CSS 파일에 HTML 바닥글 작성하기.
 >
-> [HttpResponse.HasStarted](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.http.features.httpresponsefeature#Microsoft_AspNetCore_Http_Features_HttpResponseFeature_HasStarted)는 헤더가 전송되고 또는 본문이 작성되었는지 나타내는 데 유용한 힌트입니다.
+> [HttpResponse.HasStarted](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.http.features.httpresponsefeature#Microsoft_AspNetCore_Http_Features_HttpResponseFeature_HasStarted)는 헤더가 이미 전송됐는지 또는 본문이 이미 작성됐는지 여부를 나타내는 유용한 힌트를 제공해줍니다.
 
-## <a name="ordering"></a>정렬
+## <a name="ordering"></a>순서
 
 미들웨어 구성 요소가 `Configure` 메서드에 추가되는 순서는 요청에서 호출되는 순서와 응답에 대한 역순서를 정의합니다. 이 순서 지정은 보안, 성능 및 기능에 중요합니다.
 
@@ -258,9 +258,9 @@ public class MyMiddleware
 }
 ```
 
-## <a name="resources"></a>리소스
+## <a name="resources"></a>자료
 
 * [이 문서에 사용되는 샘플 코드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/middleware/sample)
 * [HTTP 모듈을 미들웨어로 마이그레이션](../migration/http-modules.md)
 * [응용 프로그램 시작](startup.md)
-* [기능 요청](request-features.md)
+* [요청 기능](request-features.md)
