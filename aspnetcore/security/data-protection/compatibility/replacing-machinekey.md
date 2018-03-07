@@ -1,7 +1,7 @@
 ---
-title: "교체 `<machineKey>` asp.net"
+title: "ASP.NET의 `<machineKey>` 대체하기"
 author: rick-anderson
-description: "교체 `<machineKey>` asp.net"
+description: "ASP.NET의 `<machineKey>` 대체하기"
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -15,7 +15,7 @@ ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/30/2018
 ---
-# <a name="replacing-machinekey-in-aspnet"></a>교체 `<machineKey>` asp.net
+# <a name="replacing-machinekey-in-aspnet"></a>ASP.NET의 `<machineKey>` 대체하기
 
 <a name="compatibility-replacing-machinekey"></a>
 
