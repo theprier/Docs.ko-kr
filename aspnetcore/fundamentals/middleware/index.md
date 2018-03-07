@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/middleware/index
-ms.openlocfilehash: 5d236c79120d79195c1970cc87d164002b56d0f1
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 186faa4c02275ae1f4be53f4a2dd4f8325397bd2
+ms.sourcegitcommit: c5ecda3c5b1674b62294cfddcb104e7f0b9ce465
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="aspnet-core-middleware"></a>ASP.NET Core 미들웨어
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT) 및 [Steve Smith](https://ardalis.com/)
 
-[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/middleware/index/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/middleware/index/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="what-is-middleware"></a>미들웨어란?
 
@@ -221,6 +221,9 @@ ASP.NET Core는 다음 미들웨어 구성 요소 및 추가되어야 하는 순
 다음 코드는 미들웨어 대리자를 클래스로 이동합니다.
 
 [!code-csharp[](index/sample/Culture/RequestCultureMiddleware.cs)]
+
+> [!NOTE]
+> ASP.NET Core 1.x에서 미들웨어 `Task` 메서드의 이름은 `Invoke`이어야 합니다. ASP.NET 코어 2.0 이상에서는 이름이 `Invoke` 또는 `InvokeAsync`일 수 있습니다.
 
 다음 확장 메서드는 [IApplicationBuilder](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.iapplicationbuilder)를 통해 미들웨어를 공개합니다.
 

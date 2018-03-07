@@ -1,184 +1,174 @@
 ---
 title: "ASP.NET Core에서 HTTP.sys 웹 서버 구현"
-author: rick-anderson
-description: "Windows의 ASP.NET Core에 대한 웹 서버인, HTTP.sys를 소개합니다. Http.Sys 커널 모드 드라이버를 기반으로 한 HTTP.sys는 IIS 없이 인터넷에 대한 직접 연결에 사용될 수 있는 Kestrel에 대한 대안입니다."
+author: tdykstra
+description: "Windows의 ASP.NET Core에 대한 웹 서버인 HTTP.sys에 대해 알아봅니다. HTTP.sys 커널 모드 드라이버를 기반으로 한 HTTP.sys는 IIS 없이 인터넷에 대한 직접 연결에 사용될 수 있는 Kestrel에 대한 대안입니다."
 manager: wpickett
-ms.author: riande
-ms.date: 08/07/2017
+ms.author: tdykstra
+ms.custom: mvc
+ms.date: 02/28/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: f36a86fc67e715165afd0c38992f9767f90cf3b4
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 730ecf12f718f6bbbdefb7cdc561481b126c995b
+ms.sourcegitcommit: c5ecda3c5b1674b62294cfddcb104e7f0b9ce465
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/05/2018
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>ASP.NET Core에서 HTTP.sys 웹 서버 구현
 
-작성자: [Tom Dykstra](https://github.com/tdykstra) 및 [Chris Ross](https://github.com/Tratcher)
+작성자: [Tom Dykstra](https://github.com/tdykstra), [Chris Ross](https://github.com/Tratcher), [Luke Latham](https://github.com/guardrex)
 
 > [!NOTE]
-> 이 주제는 ASP.NET Core 2.0 이상에만 적용됩니다. 이전 버전의 ASP.NET Core에서 HTTP.sys는 [WebListener](xref:fundamentals/servers/weblistener)라고 합니다.
+> 이 주제는 ASP.NET Core 2.0 이상에 적용됩니다. 이전 버전의 ASP.NET Core에서 HTTP.sys는 [WebListener](xref:fundamentals/servers/weblistener)라고 합니다.
 
-HTTP.sys는 Windows에서만 실행되는 [ASP.NET Core에 대한 웹 서버](index.md)입니다. [Http.Sys 커널 모드 드라이버](https://msdn.microsoft.com/library/windows/desktop/aa364510.aspx)를 기반으로 합니다. HTTP.sys는 Kestel이 하지 않는 일부 기능을 제공하는 [Kestrel](kestrel.md)에 대한 대안입니다. **HTTP.sys는 [ASP.NET Core 모듈](aspnet-core-module.md)과 호환되지 않으므로 IIS 또는 IIS Express와 함께 사용될 수 없습니다.**
+[HTTP.sys](/iis/get-started/introduction-to-iis/introduction-to-iis-architecture#hypertext-transfer-protocol-stack-httpsys)는 Windows에서만 실행되는 [ASP.NET Core에 대한 웹 서버](xref:fundamentals/servers/index)입니다. HTTP.sys는 [Kestrel](xref:fundamentals/servers/kestrel)에 대한 대안이며 Kestel이 제공하지 않는 일부 기능을 제공합니다.
+
+> [!IMPORTANT]
+> HTTP.sys는 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)과 호환되지 않으므로 IIS 또는 IIS Express와 함께 사용될 수 없습니다.
 
 HTTP.sys는 다음과 같은 기능을 지원합니다.
 
-- [Windows 인증](xref:security/authentication/windowsauth)
-- 포트 공유
-- SNI를 사용하는 HTTPS
-- TLS를 통한 HTTP/2(Windows 10)
-- 직접 파일 전송
-- 응답 캐싱
-- WebSockets(Windows 8)
+* [Windows 인증](xref:security/authentication/windowsauth)
+* 포트 공유
+* SNI를 사용하는 HTTPS
+* TLS를 통한 HTTP/2(Windows 10 이상)
+* 직접 파일 전송
+* 응답 캐싱
+* WebSockets(Windows 8 이상)
 
 지원되는 Windows 버전:
 
-- Windows 7 및 Windows Server 2008 R2 이상
+* Windows 7 이상
+* Windows Server 2008 R2 이상
 
-[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/httpsys/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/httpsys/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="when-to-use-httpsys"></a>HTTP.sys를 사용하는 경우
 
-HTTP.sys는 IIS를 사용하지 않고 인터넷에 서버를 직접 노출해야 하는 배포에 유용합니다.
+HTTP.sys는 다음과 같은 배포에 유용합니다.
 
-![HTTP.sys는 인터넷과 직접 통신합니다.](httpsys/_static/httpsys-to-internet.png)
+* IIS를 사용하지 않고 인터넷에 서버를 직접 노출해야 하는 경우
 
-Http.Sys를 기반으로 하기 때문에 HTTP.sys는 공격으로부터 보호하기 위한 역방향 프록시 서버가 필요하지 않습니다. Http.Sys는 많은 유형의 공격으로부터 보호하고 모든 기능을 갖춘 웹 서버의 견고성, 보안 및 확장성을 제공하는 완성도 높은 기술입니다. IIS 자체는 Http.Sys 위에 HTTP 수신기로 실행됩니다. 
+  ![HTTP.sys는 인터넷과 직접 통신합니다.](httpsys/_static/httpsys-to-internet.png)
 
-HTTP.sys는 Windows 인증과 같이 Kestrel에서 사용할 수 없는 기능이 필요한 경우 내부 배포에 적합한 선택입니다.
+* 내부 배포에는 [Windows 인증](xref:security/authentication/windowsauth)처럼 Kestrel에서 사용할 수 없는 기능이 필요합니다.
 
-![HTTP.sys는 내부 네트워크와 직접 통신합니다.](httpsys/_static/httpsys-to-internal.png)
+  ![HTTP.sys는 내부 네트워크와 직접 통신합니다.](httpsys/_static/httpsys-to-internal.png)
+
+HTTP.sys는 많은 유형의 공격으로부터 보호하고 모든 기능을 갖춘 웹 서버의 견고성, 보안 및 확장성을 제공하는 완성도 높은 기술입니다. IIS 자체는 HTTP.sys 위에 HTTP 수신기로 실행됩니다. 
 
 ## <a name="how-to-use-httpsys"></a>HTTP.sys 사용 방법
 
-호스트 OS 및 사용자의 ASP.NET Core 응용 프로그램에 대한 설치 작업의 개요입니다.
+### <a name="configure-the-aspnet-core-app-to-use-httpsys"></a>HTTP.sys를 사용하도록 ASP.NET Core 앱 구성
+
+1. [Microsoft.AspNetCore.All 메타패키지](xref:fundamentals/metapackage)([nuget.org](https://www.nuget.org/packages/Microsoft.AspNetCore.All/))(ASP.NET Core 2.0 이상)를 사용할 경우 프로젝트 파일의 패키지 참조가 필요하지 않습니다. `Microsoft.AspNetCore.All` 메타패키지를 사용하지 않는 경우 [Microsoft.AspNetCore.Server.HttpSys](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.HttpSys/)에 패키지 참조를 추가합니다.
+
+1. 웹 호스트를 빌드할 때 [UseHttpSys](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderhttpsysextensions.usehttpsys) 확장 메서드를 호출하여 필요한 [HTTP.sys 옵션](/dotnet/api/microsoft.aspnetcore.server.httpsys.httpsysoptions)을 지정합니다.
+
+   [!code-csharp[](httpsys/sample/Program.cs?name=snippet1&highlight=4-12)]
+
+   추가 HTTP.sys 구성은 [레지스트리 설정](https://support.microsoft.com/kb/820129)을 통해 처리됩니다.
+
+   **HTTP.sys 옵션**
+
+   | 속성 | 설명 | 기본 |
+   | -------- | ----------- | :-----: |
+   | [AllowSynchronousIO](/dotnet/api/microsoft.aspnetcore.server.httpsys.httpsysoptions.allowsynchronousio) | `HttpContext.Request.Body` 및 `HttpContext.Response.Body`에 대해 동기 입력/출력이 허용되는지 여부를 제어합니다. | `true` |
+   | [Authentication.AllowAnonymous](/dotnet/api/microsoft.aspnetcore.server.httpsys.authenticationmanager.allowanonymous) | 익명 요청을 허용합니다. | `true` |
+   | [Authentication.Schemes](/dotnet/api/microsoft.aspnetcore.server.httpsys.authenticationmanager.schemes) | 허용되는 인증 체계를 지정합니다. 수신기를 삭제하기 전에 언제든지 수정할 수 있습니다. 값은 [AuthenticationSchemes 열거형](/dotnet/api/microsoft.aspnetcore.server.httpsys.authenticationschemes): `Basic`, `Kerberos`, `Negotiate`, `None`, `NTLM`에서 제공됩니다. | `None` |
+   | [EnableResponseCaching](/dotnet/api/microsoft.aspnetcore.server.httpsys.httpsysoptions.enableresponsecaching) | 적합한 헤더가 있는 응답에 대해 [커널 모드](/windows-hardware/drivers/gettingstarted/user-mode-and-kernel-mode) 캐싱을 시도합니다. 응답에 `Set-Cookie`, `Vary` 또는 `Pragma` 헤더가 포함될 수 없습니다. `public` 및 `shared-max-age` 또는 `max-age` 값인 `Cache-Control` 헤더나 `Expires` 헤더가 포함되어야 합니다. | `true` |
+   | [MaxAccepts](/dotnet/api/microsoft.aspnetcore.server.httpsys.httpsysoptions.maxaccepts) | 최대 동시 승인 수입니다. | 5 &times; [Environment.<br>ProcessorCount](/dotnet/api/system.environment.processorcount) |
+   | [MaxConnections](/dotnet/api/microsoft.aspnetcore.server.httpsys.httpsysoptions.maxconnections) | 허용되는 최대 동시 연결 수입니다. 무한의 경우 `-1`을 사용합니다. 레지스트리의 시스템 수준 설정을 사용하려면 `null`을 사용합니다. | `null`<br>(제한 없음) |
+   | [MaxRequestBodySize](/dotnet/api/microsoft.aspnetcore.server.httpsys.httpsysoptions.maxrequestbodysize) | <a href="#maxrequestbodysize">MaxRequestBodySize</a> 섹션을 참조하세요. | 30000000바이트<br>(~28.6MB) |
+   | [RequestQueueLimit](/dotnet/api/microsoft.aspnetcore.server.httpsys.httpsysoptions.requestqueuelimit) | 큐에 대기할 수 있는 최대 요청 수입니다. | 1000 |
+   | [ThrowWriteExceptions](/dotnet/api/microsoft.aspnetcore.server.httpsys.httpsysoptions.throwwriteexceptions) | 클라이언트 연결 해제로 인해 실패한 응답 본문 쓰기가 예외를 throw하거나 정상적으로 완료되어야 하는지 여부를 나타납니다. | `false`<br>(정상적으로 완료) |
+   | [Timeouts](/dotnet/api/microsoft.aspnetcore.server.httpsys.httpsysoptions.timeouts) | 레지스트리에 구성될 수도 있는 HTTP.sys [TimeoutManager](/dotnet/api/microsoft.aspnetcore.server.httpsys.timeoutmanager) 구성을 표시합니다. API 링크를 따라 기본값을 포함하여 각 설정에 대해 자세히 알아보세요.<ul><li>[Timeouts.DrainEntityBody](/dotnet/api/microsoft.aspnetcore.server.httpsys.httpsysoptions.timeouts.drainentitybody) &ndash; HTTP 서버 API가 지속적 연결에서 엔터티 본문을 비우는 데 허용되는 시간입니다.</li><li>[Timeouts.EntityBody](/dotnet/api/microsoft.aspnetcore.server.httpsys.httpsysoptions.timeouts.entitybody) &ndash; 요청 엔터티가 도착하는 데 허용되는 시간입니다.</li><li>[Timeouts.HeaderWait](/dotnet/api/microsoft.aspnetcore.server.httpsys.httpsysoptions.timeouts.headerwait) &ndash; HTTP 서버 API가 요청 헤더를 구문 분석하는 데 허용되는 시간입니다.</li><li>[Timeouts.IdleConnection](/dotnet/api/microsoft.aspnetcore.server.httpsys.httpsysoptions.timeouts.idleconnection) &ndash; 유휴 연결에 허용되는 시간입니다.</li><li>[Timeouts.MinSendBytesPerSecond](/dotnet/api/microsoft.aspnetcore.server.httpsys.httpsysoptions.timeouts.minsendbytespersecond) &ndash; 응답에 대한 최소 전송 속도입니다.</li><li>[Timeouts.RequestQueue](/dotnet/api/microsoft.aspnetcore.server.httpsys.httpsysoptions.timeouts.requestqueue) &ndash; 앱이 선택하기 전에 요청이 요청 큐에 남아 있는 데 허용되는 시간입니다.</li></ul> |  |
+   | [UrlPrefixes](/dotnet/api/microsoft.aspnetcore.server.httpsys.httpsysoptions.urlprefixes) | [UrlPrefixCollection](/dotnet/api/microsoft.aspnetcore.server.httpsys.urlprefixcollection)을 지정하여 HTTP.sys를 등록합니다. 컬렉션에 접두사를 추가하는 데 사용되는 [UrlPrefixCollection.Add](/dotnet/api/microsoft.aspnetcore.server.httpsys.urlprefixcollection.add)가 가장 유용합니다. 이러한 API는 수신기를 삭제하기 전에 언제든지 수정할 수 있습니다. |  |
+
+   <a name="maxrequestbodysize"></a>
+   **MaxRequestBodySize**
+
+   요청 본문에 대해 허용되는 최대 크기(바이트)입니다. `null`로 설정하면 최대 요청 본문 크기는 무제한입니다. 항상 무제한인 업그레이드된 연결에는 이 제한이 영향을 미치지 않습니다.
+
+   단일 `IActionResult`에 대해 ASP.NET Core MVC 앱에서 제한을 재정의할 때는 작업 메서드에서 [RequestSizeLimitAttribute](/dotnet/api/microsoft.aspnetcore.mvc.requestsizelimitattribute) 특성을 사용하는 방법이 좋습니다.
+   
+   ```csharp
+   [RequestSizeLimit(100000000)]
+   public IActionResult MyActionMethod()
+   ```
+
+   앱에서 요청을 읽기 시작한 후 요청에 대한 제한을 구성하려고 하면 예외가 throw됩니다. `IsReadOnly` 속성을 사용하여 `MaxRequestBodySize` 속성이 제한을 구성하기에 너무 늦은, 읽기 전용 상태인지를 나타낼 수 있습니다.
+
+   앱에서 요청별로 [MaxRequestBodySize](/dotnet/api/microsoft.aspnetcore.server.httpsys.httpsysoptions.maxrequestbodysize)를 재정의해야 하는 경우 [IHttpMaxRequestBodySizeFeature](/dotnet/api/microsoft.aspnetcore.http.features.ihttpmaxrequestbodysizefeature)를 사용합니다.
+
+   [!code-csharp[](httpsys/sample/Startup.cs?name=snippet1&highlight=6-7)]
+
+1. Visual Studio를 사용하는 경우 앱이 IIS 또는 IIS Express를 실행하도록 구성되지 않았는지 확인합니다.
+
+   Visual Studio에서 기본 실행 프로필은 IIS Express용입니다. 프로젝트를 콘솔 앱으로 실행하려면 다음 스크린샷에 표시된 것처럼 선택한 프로필을 수동으로 변경합니다.
+
+   ![콘솔 앱 프로필 선택](httpsys/_static/vs-choose-profile.png)
 
 ### <a name="configure-windows-server"></a>Windows Server 구성
 
-* [.NET Core](https://www.microsoft.com/net/download/core) 또는 [.NET Framework](https://www.microsoft.com/net/download/framework)와 같은 응용 프로그램에 필요한 .NET 버전을 설치합니다.
+1. 앱이 [프레임워크 종속 배포](/dotnet/core/deploying/#framework-dependent-deployments-fdd)인 경우 .NET Core, .NET Framework 또는 둘 다(앱이 NET Framework를 대상으로 하는 .NET Core 앱인 경우)를 설치합니다.
 
-* HTTP.sys에 대해 바인딩하고 SSL 인증서를 설정하도록 URL 접두사 미리 등록
+   * **.NET Core** &ndash; 앱에 .NET Core가 필요한 경우 [.NET 다운로드](https://www.microsoft.com/net/download/windows)에서 .NET Core 설치 관리자를 가져와 실행합니다.
+   * **.NET Framework** &ndash; 앱에 .NET Framework가 필요한 경우 [.NET Framework: 설치 가이드](/dotnet/framework/install/)를 참조하여 설치 지침을 확인합니다. 필수 .NET Framework를 설치합니다. 최신 .NET Framework의 설치 관리자는 [.NET 다운로드](https://www.microsoft.com/net/download/windows)에서 찾을 수 있습니다.
 
-   Windows에서 URL 접두사를 미리 등록하지 않은 경우 관리자 권한으로 응용 프로그램을 실행해야 합니다. 유일한 예외는 포트 번호가 1024보다 큰 HTTP(HTTPS 아님)를 사용하여 로컬 호스트에 바인딩하는 경우로, 이 경우 관리자 권한은 필요하지 않습니다.
+1. 앱에 대한 URL 및 포트를 구성합니다.
 
-   자세한 내용은 이 문서의 뒷부분에 나오는 [접두사를 미리 등록하고 SSL을 구성하는 방법](#preregister-url-prefixes-and-configure-ssl)을 참조하세요.
+   기본적으로 ASP.NET Core는 `http://localhost:5000`으로 바인딩합니다. URL 접두사 및 포트를 구성하려면 다음을 사용하는 옵션이 포함됩니다.
 
-* 방화벽 포트를 열어 HTTP.sys에 도달하는 트래픽을 허용합니다.
+   * [UseUrls](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useurls)
+   * `urls` 명령줄 인수
+   * `ASPNETCORE_URLS`환경 변수
+   * [UrlPrefixes](/dotnet/api/microsoft.aspnetcore.server.httpsys.httpsysoptions.urlprefixes)
 
-   *netsh.exe* 또는 [PowerShell cmdlet](https://technet.microsoft.com/library/jj554906)을 사용할 수 있습니다.
+   다음 코드 예제에서는 [UrlPrefixes](/dotnet/api/microsoft.aspnetcore.server.httpsys.httpsysoptions.urlprefixes)를 사용하는 방법을 보여줍니다.
 
-[Http.Sys 레지스트리 설정](https://support.microsoft.com/kb/820129)도 있습니다.
+   [!code-csharp[](httpsys/sample/Program.cs?name=snippet1&highlight=11)]
 
-### <a name="configure-your-aspnet-core-application-to-use-httpsys"></a>HTTP.sys를 사용하도록 ASP.NET Core 응용 프로그램 구성
+   `UrlPrefixes`의 장점은 형식이 잘못된 접두사에 대해 오류 메시지가 즉시 생성된다는 점입니다.
 
-* [Microsoft.AspNetCore.All](xref:fundamentals/metapackage) 메타패키지를 사용하는 경우에는 패키지를 설치할 필요가 없습니다. [Microsoft.AspNetCore.Server.HttpSys](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.HttpSys/) 패키지는 메타패키지에 포함되어 있습니다.
+   `UrlPrefixes`의 설정은 `UseUrls`/`urls`/`ASPNETCORE_URLS` 설정을 재정의합니다. 따라서 `UseUrls`, `urls` 및 `ASPNETCORE_URLS` 환경 변수의 장점은 Kestrel과 HTTP.sys 간을 쉽게 전환할 수 있다는 점입니다. `UseUrls`, `urls` 및 `ASPNETCORE_URLS`에 대한 자세한 내용은 [호스팅](xref:fundamentals/hosting)을 참조하세요.
 
-* 다음 예제와 같이 필요한 [HTTP.sys 옵션](https://github.com/aspnet/HttpSysServer/blob/rel/2.0.0/src/Microsoft.AspNetCore.Server.HttpSys/HttpSysOptions.cs)을 지정하여 `Main` 메서드에서 `WebHostBuilder`의 `UseHttpSys` 확장 메서드를 호출합니다.
+   HTTP.sys는 [HTTP Server API UrlPrefix 문자열 형식](https://msdn.microsoft.com/library/windows/desktop/aa364698.aspx)을 사용합니다.
 
-  [!code-csharp[](httpsys/sample/Program.cs?name=snippet_Main&highlight=11-19)]
+1. URL 접두사를 미리 등록하여 HTTP.sys에 대해 바인딩하고 x.509 인증서를 설정합니다.
 
-### <a name="configure-httpsys-options"></a>HTTP.sys 옵션 구성
+   URL 접두사가 Windows에 미리 등록되어 있지 않은 경우 관리자 권한으로 앱을 실행합니다. 1024보다 큰 포트 번호로 HTTP(HTTPS 아님)를 사용하여 localhost에 바인딩하는 경우에만 관리자 권한이 필요하지 않습니다.
 
-다음은 몇 가지 구성 가능한 HTTP.sys 설정 및 제한입니다.
+   1. HTTP.sys 구성에 대한 기본 제공 도구는 *netsh.exe*입니다. *netsh.exe*는 URL 접두사를 예약하고 X.509 인증서를 할당하는 데 사용됩니다. 도구를 사용하려면 관리자 권한이 필요합니다.
 
-**최대 클라이언트 연결**
+      다음 예제에서는 포트 80 및 443에 대해 URL 접두사를 예약하는 명령을 보여줍니다.
 
-*Program.cs*의 다음 코드를 사용하여 전체 응용 프로그램에 대한 동시 개방 TCP 연결의 최대 수를 설정할 수 있습니다.
+      ```console
+      netsh http add urlacl url=http://+:80/ user=Users
+      netsh http add urlacl url=https://+:443/ user=Users
+      ```
 
-[!code-csharp[](httpsys/sample/Program.cs?name=snippet_Options&highlight=5)]
+      다음 예제에서는 X.509 인증서를 할당하는 방법을 보여줍니다.
 
-연결의 최대 수는 기본적으로 무제한(null)입니다.
+      ```console
+      netsh http add sslcert ipport=0.0.0.0:443 certhash=MyCertHash_Here appid={00000000-0000-0000-0000-000000000000}"
+      ```
 
-**최대 요청 본문 크기**
+      *netsh.exe*에 대한 참조 문서입니다.
 
-기본 최대 요청 본문 크기는 약 28.6MB인 30,000,000바이트입니다.
+      * [HTTP(Hypertext Transfer Protocol)에 대한 Netsh 명령](https://technet.microsoft.com/library/cc725882.aspx)
+      * [UrlPrefix 문자열](https://msdn.microsoft.com/library/windows/desktop/aa364698.aspx)
 
-ASP.NET Core MVC 앱에서 한도를 재정의할 때는 작업 메서드에서 [RequestSizeLimit](https://github.com/aspnet/Mvc/blob/rel/2.0.0/src/Microsoft.AspNetCore.Mvc.Core/RequestSizeLimitAttribute.cs) 특성을 사용하는 방법이 좋습니다.
+   1. 필요한 경우, 자체 서명 X.509 인증서를 생성합니다.
 
-```csharp
-[RequestSizeLimit(100000000)]
-public IActionResult MyActionMethod()
-```
+     [!INCLUDE[How to make an X.509 cert](../../includes/make-x509-cert.md)]
 
-다음 예제는 전체 응용 프로그램, 모든 요청에 대한 제약 조건을 구성하는 방법을 보여 줍니다.
+1. 방화벽 포트를 열어 HTTP.sys에 도달하는 트래픽을 허용합니다. *netsh.exe* 또는 [PowerShell cmdlet](https://technet.microsoft.com/library/jj554906)을 사용합니다.
 
-[!code-csharp[](httpsys/sample/Program.cs?name=snippet_Options&highlight=6)]
+## <a name="additional-resources"></a>추가 리소스
 
-*Startup.cs*에서 특정 요청에 대한 설정을 재정의할 수 있습니다.
-
-[!code-csharp[](httpsys/sample/Startup.cs?name=snippet_Configure&highlight=9-10)]
- 
-응용 프로그램에서 요청을 읽기 시작한 후 요청에 대한 제한을 구성하려고 하면 예외가 throw됩니다. `MaxRequestBodySize` 속성이 제한을 구성하기에 너무 늦은, 읽기 전용 상태인지를 알려주는 `IsReadOnly` 속성이 있습니다.
-
-다른 HTTP.sys 옵션에 대한 정보는 [HttpSysOptions](https://github.com/aspnet/HttpSysServer/blob/rel/2.0.0/src/Microsoft.AspNetCore.Server.HttpSys/HttpSysOptions.cs)를 참조하세요. 
-
-### <a name="configure-urls-and-ports-to-listen-on"></a>수신 대기하는 URL 및 포트 구성 
-
-기본적으로 ASP.NET Core는 `http://localhost:5000`으로 바인딩합니다. URL 접두사 및 포트를 구성하려면 [HttpSysOptions](https://github.com/aspnet/HttpSysServer/blob/rel/2.0.0/src/Microsoft.AspNetCore.Server.HttpSys/HttpSysOptions.cs)에서 `UseUrls` 확장 메서드, `urls` 명령줄 인수, ASPNETCORE_URLS 환경 변수 또는 `UrlPrefixes` 속성을 사용할 수 있습니다. 다음 코드 예제에서는 `UrlPrefixes`를 사용합니다.
-
-[!code-csharp[](httpsys/sample/Program.cs?name=snippet_Main&highlight=17)]
-
-`UrlPrefixes`의 이점은 서식이 잘못 지정된 접두사를 추가하려고 하면 오류 메시지가 즉시 표시된다는 점입니다. `UseUrls`(`urls` 및 ASPNETCORE_URLS과 공유)의 이점은 더 쉽게 Kestrel 및 HTTP.sys 간 전환이 가능하다는 점입니다.
-
-`UseUrls`(또는 `urls` 또는 ASPNETCORE_URLS) 및 `UrlPrefixes`를 모두 사용하는 경우 `UrlPrefixes`의 설정은 `UseUrls`의 설정을 재정의합니다. 자세한 내용은 [호스팅](xref:fundamentals/hosting)을 참조하세요.
-
-HTTP.sys는 [HTTP Server API UrlPrefix 문자열 형식](https://msdn.microsoft.com/library/windows/desktop/aa364698.aspx)을 사용합니다.
-
-> [!NOTE]
-> 서버에서 미리 등록한 동일한 접두사 문자열을 `UseUrls` 또는 `UrlPrefixes`에서 지정했는지 확인합니다. 
-
-### <a name="dont-use-iis"></a>IIS 사용 안 함
-
-응용 프로그램이 IIS 또는 IIS Express를 실행하도록 구성되지 않았는지 확인합니다.
-
-Visual Studio에서 기본 실행 프로필은 IIS Express용입니다. 프로젝트를 콘솔 응용 프로그램으로 실행하려면 다음 스크린샷에 표시된 것처럼 선택한 프로필을 수동으로 변경합니다.
-
-![콘솔 앱 프로필 선택](httpsys/_static/vs-choose-profile.png)
-
-## <a name="preregister-url-prefixes-and-configure-ssl"></a>URL 접두사 미리 등록 및 SSL 구성
-
-IIS와 HTTP.sys는 모두 기본 Http.Sys 커널 모드 드라이버를 사용하여 요청을 수신하고 초기 처리를 수행합니다. IIS에서 관리 UI는 모든 항목을 구성하는 상대적으로 쉬운 방법을 제공합니다. 그러나 Http.Sys는 직접 구성해야 합니다. 작업 수행을 위한 기본 도구는 *netsh.exe*입니다. 
-
-*netsh.exe*를 사용하면 URL 접두사를 예약하고 SSL 인증서를 할당할 수 있습니다. 도구를 사용하려면 관리 권한이 있어야 합니다.
-
-다음 예제에서는 포트 80 및 443에 대해 URL 접두사를 예약하는 데 필요한 최소한의 것을 보여 줍니다.
-
-```console
-netsh http add urlacl url=http://+:80/ user=Users
-netsh http add urlacl url=https://+:443/ user=Users
-```
-
-다음 예제에서는 SSL 인증서를 할당하는 방법을 보여 줍니다.
-
-```console
-netsh http add sslcert ipport=0.0.0.0:443 certhash=MyCertHash_Here appid={00000000-0000-0000-0000-000000000000}"
-```
-
-다음은 *netsh.exe*에 대한 참조 문서입니다.
-
-* [HTTP(Hypertext Transfer Protocol)에 대한 Netsh 명령](https://technet.microsoft.com/library/cc725882.aspx)
-* [UrlPrefix 문자열](https://msdn.microsoft.com/library/windows/desktop/aa364698.aspx)
-
-다음 리소스는 여러 시나리오에 대한 자세한 지침을 제공합니다. HttpListener를 참조하는 문서는 모두 Http.Sys를 기반으로 하므로 HTTP.sys에 동일하게 적용됩니다.
-
-* [방법: SSL 인증서로 포트 구성](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate)
-* [HTTPS 통신 - HttpListener 기반 호스팅 및 클라이언트 인증](http://sunshaking.blogspot.com/2012/11/https-communication-httplistener-based.html) 이는 타사 블로그이며 비교적 오래됐지만 여전히 유용한 정보가 있습니다.
-* [방법: SSL 단순 서버로 HttpListener 또는 Http 서버 비관리 코드(C++)를 사용한 연습](https://blogs.msdn.microsoft.com/jpsanders/2009/09/29/how-to-walkthrough-using-httplistener-or-http-server-unmanaged-code-c-as-an-ssl-simple-server/) 유용한 정보가 있는 오래된 블로그입니다.
-
-다음은 *netsh.exe* 명령줄보다 쉽게 사용할 수 있는 몇 가지 타사 도구입니다. 이러한 도구는 Microsoft에서 제공되거나 보증되지 않습니다. *netsh.exe* 자체는 관리자 권한이 필요하므로 도구는 기본적으로 관리자 권한으로 실행됩니다.
-
-* [http.sys 관리자](http://httpsysmanager.codeplex.com/)는 SSL 인증서 및 옵션, 접두사 예약 및 인증서 신뢰 목록의 나열 및 구성을 위한 UI를 제공합니다. 
-* [HttpConfig](http://www.stevestechspot.com/ABetterHttpcfg.aspx)를 통해 SSL 인증서와 URL 접두사를 나열하거나 구성할 수 있습니다. UI는 http.sys 관리자보다 성능이 우수하며 몇 가지 추가 구성 옵션을 노출하지만 그렇지 않은 경우 유사한 기능을 제공합니다. 새 CTL(인증서 신뢰 목록)을 만들 수 없지만 기존 것을 할당할 수 있습니다.
-
-[!INCLUDE[How to make an SSL cert](../../includes/make-ssl-cert.md)]
-
-## <a name="next-steps"></a>다음 단계
-
-자세한 내용은 다음 리소스를 참조하세요.
-
-* [이 문서에 대한 샘플 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/httpsys/sample)
-* [HTTP.sys 소스 코드](https://github.com/aspnet/HttpSysServer/)
+* [HTTP Server API](https://msdn.microsoft.com/library/windows/desktop/aa364510.aspx)(HTTP 서버 API)
+* [aspnet/HttpSysServer GitHub 리포지토리(소스 코드)](https://github.com/aspnet/HttpSysServer/)
 * [호스팅](xref:fundamentals/hosting)
