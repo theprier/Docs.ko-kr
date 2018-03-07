@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core에서 개발 하는 동안 앱 암호의 안전한 저장소"
+title: "ASP.NET Core 개발 중 앱의 보안 정보를 안전하게 저장하기"
 author: rick-anderson
-description: "안전 하 게 개발 하는 동안 암호를 저장 하는 방법을 보여 줍니다."
+description: "개발 중 보안 정보를 안전하게 저장하는 방법을 보여줍니다."
 manager: wpickett
 ms.author: riande
 ms.date: 09/15/2017
@@ -15,9 +15,9 @@ ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/02/2018
 ---
-# <a name="safe-storage-of-app-secrets-during-development-in-aspnet-core"></a>ASP.NET Core에서 개발 하는 동안 앱 암호의 안전한 저장소
+# <a name="safe-storage-of-app-secrets-during-development-in-aspnet-core"></a>ASP.NET Core 개발 중 앱의 보안 정보를 안전하게 저장하기
 
-여 [Rick Anderson](https://twitter.com/RickAndMSFT), [김 Roth](https://github.com/danroth27), 및 [Scott Addie](https://scottaddie.com) 
+작성자: [Rick Anderson](https://twitter.com/RickAndMSFT), [김 Roth](https://github.com/danroth27), 및 [Scott Addie](https://scottaddie.com) 
 
 이 문서 코드 나가기를 비밀을 유지 하려면 개발에서 암호 관리자 도구를 사용 하는 방법을 보여줍니다. 가장 중요 한 점은 소스 코드에서 암호 또는 기타 중요 한 데이터를 저장 하지 않으며 해야 하 고 개발 및 테스트 모드에서 프로덕션 암호를 사용 하지 않아야 합니다. 대신 사용할 수 있습니다는 [구성](xref:fundamentals/configuration/index) 시스템 환경 변수에서 이러한 값을 읽거나 암호 관리자를 사용 하 여 저장 된 값에서 도구입니다. 암호 관리자 도구에서 소스 제어에 체크 인 되 고 중요 한 데이터를 방지할 수 있습니다. [구성](xref:fundamentals/configuration/index) 시스템이이 문서에 설명 된 비밀 관리자 도구와 함께 저장 된 암호를 읽을 수 있습니다.
 
