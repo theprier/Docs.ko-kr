@@ -128,7 +128,7 @@ if (statusCodePagesFeature != null)
 >[!TIP]
 > 예외 필터는 MVC 작업 내에서 발생하는 예외를 트래핑하는 데 유용하지만 오류 처리 미들웨어만큼 유연하지는 않습니다. 일반적인 경우에는 미들웨어를 선호하고, 선택한 MVC 작업에 따라 오류 처리를 *다르게* 수행해야 하는 경우에만 필터를 사용합니다.
 
-### <a name="handling-model-state-errors"></a>처리 모델 상태 오류
+### <a name="handling-model-state-errors"></a>모델 상태 오류 처리
 
 [모델 유효성 검사](../mvc/models/validation.md)는 각 컨트롤러 작업을 호출하기 전에 발생하며, `ModelState.IsValid`를 검사하고 적절하게 반응하는 것은 작업 메서드의 책임입니다.
 
