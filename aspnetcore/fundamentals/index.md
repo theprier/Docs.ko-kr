@@ -1,7 +1,7 @@
 ---
 title: "ASP.NET Core 기본 사항"
 author: rick-anderson
-description: "ASP.NET Core 응용 프로그램을 빌드하기 위한 기본적인 개념을 검색합니다."
+description: "ASP.NET Core 응용 프로그램을 구축하기 위한 기본적인 개념을 알아봅니다."
 manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
@@ -18,13 +18,13 @@ ms.lasthandoff: 03/02/2018
 ---
 # <a name="aspnet-core-fundamentals"></a>ASP.NET Core 기본 사항
 
-ASP.NET Core 응용 프로그램은 `Main` 메서드에서 웹 서버를 만드는 콘솔 앱입니다.
+ASP.NET Core 응용 프로그램은 `Main` 메서드에서 웹 서버를 생성하는 콘솔 앱입니다.
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 [!code-csharp[](../getting-started/sample/aspnetcoreapp/Program2x.cs)]
 
-`Main` 메서드는 빌드 패턴에 따라 웹 응용 프로그램 호스트를 만드는 `WebHost.CreateDefaultBuilder`를 호출합니다. 이 빌더는 웹 서버를 정의하거나 (예: `UseKestrel`) 시작 클래스를 정의하는(`UseStartup`)메서드들을 제공합니다. 이전 예제에서 [Kestrel](xref:fundamentals/servers/kestrel) 웹 서버가 자동으로 할당됩니다. 사용 가능한 경우 ASP.NET Core의 웹 호스트는 IIS에서 실행하도록 시도합니다. [HTTP.sys](xref:fundamentals/servers/httpsys) 같은 다른 웹 서버는 해당하는 확장 메서드를 호출하여 사용할 수 있습니다. `UseStartup`에 관해서는 다음 섹션에서 더 자세히 살펴봅니다.
+`Main` 메서드는 빌드 패턴에 따라 웹 응용 프로그램 호스트를 생성하는 `WebHost.CreateDefaultBuilder` 를 호출합니다. 이 빌더는 웹 서버를 정의하거나 (예: `UseKestrel`) 시작 클래스를 정의하는 (`UseStartup`) 메서드들을 제공합니다. 위의 예제에서는 기본적으로 [Kestrel](xref:fundamentals/servers/kestrel) 웹 서버가 할당되며. 가능하다면 ASP.NET Core의 웹 호스트는 IIS에서 실행하려고 시도합니다. 그러나 적절한 확장 메서드를 호출해서 [HTTP.sys](xref:fundamentals/servers/httpsys) 같은 다른 웹 서버를 사용할 수도 있습니다. `UseStartup` 에 관해서는 다음 섹션에서 더 자세히 살펴봅니다.
 
 `WebHost.CreateDefaultBuilder` 호출로부터 반환되는 `IWebHostBuilder`형식은 다양한 선택적 메서드를 제공합니다. 이 메서드들 중에는 HTTP.sys에서 앱을 호스트하기 위한 `UseHttpSys` 및 루트 콘텐츠 디렉터리를 지정하기 위한 `UseContentRoot`도 포함되어 있습니다. `Build` 및 `Run` 메서드는 앱을 호스트하고 HTTP 요청의 수신 대기를 시작하는 `IWebHost` 개체를 빌드합니다.
 

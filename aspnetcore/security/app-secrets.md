@@ -19,15 +19,15 @@ ms.lasthandoff: 03/02/2018
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT), [김 Roth](https://github.com/danroth27), 및 [Scott Addie](https://scottaddie.com) 
 
-이 문서 코드 나가기를 비밀을 유지 하려면 개발에서 암호 관리자 도구를 사용 하는 방법을 보여줍니다. 가장 중요 한 점은 소스 코드에서 암호 또는 기타 중요 한 데이터를 저장 하지 않으며 해야 하 고 개발 및 테스트 모드에서 프로덕션 암호를 사용 하지 않아야 합니다. 대신 사용할 수 있습니다는 [구성](xref:fundamentals/configuration/index) 시스템 환경 변수에서 이러한 값을 읽거나 암호 관리자를 사용 하 여 저장 된 값에서 도구입니다. 암호 관리자 도구에서 소스 제어에 체크 인 되 고 중요 한 데이터를 방지할 수 있습니다. [구성](xref:fundamentals/configuration/index) 시스템이이 문서에 설명 된 비밀 관리자 도구와 함께 저장 된 암호를 읽을 수 있습니다.
+이 문서에서는 개발 중 Secret Manager 도구를 이용해서 코드 외부에 보안 정보를 저장하는 방법을 보여줍니다. 무엇보다 중요한 점은 절대로 소스 코드에 암호나 기타 중요한 데이터를 저장하면 안 될 뿐만 아니라, 프로덕션 환경의 보안 정보를 개발 및 테스트 모드에서 사용해서는 안 된다는 것입니다 대신, 이런 값들을 [구성](xref:fundamentals/configuration/index) 시스템을 이용해서 환경 변수로부터 읽거나, 또는 Secret Manager 도구를 이용해서 저장된 값으로부터 읽어올 수 있습니다. 암호 관리자 도구에서 소스 제어에 체크 인 되 고 중요 한 데이터를 방지할 수 있습니다. 이 문서에서 설명하는 Secret Manager 도구를 이용해서 저장된 보안 정보는 [구성](xref:fundamentals/configuration/index) 시스템으로 읽을 수 있습니다
 
-암호 관리자 도구 개발에만 사용 됩니다. 와 Azure 테스트 및 프로덕션 비밀을 보호할 수는 [Microsoft Azure Key Vault](https://azure.microsoft.com/services/key-vault/) 구성 공급자입니다. 참조 [Azure 키 자격 증명 모음 구성 공급자](https://docs.microsoft.com/aspnet/core/security/key-vault-configuration) 자세한 정보에 대 한 합니다.
+Secret Manager 도구는 개발 시에만 사용됩니다. Azure의 테스트 및 프로덕션 보안 데이터는 [Microsoft Azure Key Vault](https://azure.microsoft.com/services/key-vault/) 구성 공급자를 이용해서 보호할 수 있습니다. 보다 자세한 정보는 [Azure 키 자격 증명 모음 구성 공급자](https://docs.microsoft.com/aspnet/core/security/key-vault-configuration)를 참고하시기 바랍니다. 
 
 ## <a name="environment-variables"></a>환경 변수
 
-에 로컬 구성 파일 또는 코드에서 앱 암호를 저장 하지 않도록 하려면 환경 변수에서 암호를 저장 합니다. 설정할 수 있습니다는 [구성](xref:fundamentals/configuration/index) 프레임 워크를 호출 하 여 환경 변수에서 값을 읽을 `AddEnvironmentVariables`합니다. 그런 다음 환경 변수를 사용 하 여 모든 이전에 지정 된 구성 소스에 대 한 구성 값을 재정의 합니다.
+코드나 로컬 구성 파일에 응용 프로그램의 보안 정보를 저장하지 않으려면 환경 변수에 보안 정보를 저장합니다.  `AddEnvironmentVariables` 를 호출하면 환경 변수에서 값을 읽도록 [구성](xref:fundamentals/configuration/index) 프레임워크를 설정합니다. 그런 다음, 환경 변수를 사용해서 기존에 지정된 모든 구성 소스의 구성 값을 재지정 할 수 있습니다. 
 
-예를 들어, 개별 사용자 계정으로 새 ASP.NET Core 웹 앱을 만들면 기본 연결 문자열을 추가 되는 *appsettings.json* 키를 사용 하 여 프로젝트의 파일 `DefaultConnection`합니다. 기본 연결 문자열에는 사용자 모드에서 실행 되 고 암호가 필요 하지 않습니다는 LocalDB를 사용 하도록 설정 되어 있습니다. 테스트 또는 프로덕션 서버에 응용 프로그램을 배포할 때 재정의할 수 있습니다는 `DefaultConnection` 테스트 또는 프로덕션 데이터베이스에 대 한 연결 문자열 (잠재적으로 중요 한 자격 증명)을 포함 하는 환경 변수 설정을 사용 하 여 키 값 서버입니다.
+예를 들어, Visual Studio에서 개별 사용자 계정 옵션으로 새로운 ASP.NET Core 웹 응용 프로그램을 생성하면, 프로젝트의 *appsettings.json* 파일에 `DefaultConnection`이라는 키를 가진 기본 연결 문자열이 추가됩니다. 이 기본 연결 문자열은 사용자 모드에서 실행되고 암호를 요구하지 않는 LocalDB를 사용하도록 구성됩니다.  응용 프로그램을 테스트 서버나 프로덕션 서버에 배포할 때, `DefaultConnection` 키의 값을 테스트 또는 프로덕션 데이터베이스 서버의 연결 문자열이 지정된(민감한 자격 증명이 포함될 수 있는) 환경 변수 설정으로 재정의할 수 있습니다.
 
 >[!WARNING]
 > 환경 변수는 일반적으로 일반 텍스트로 저장 되며 암호화 되지 않습니다. 컴퓨터 또는 프로세스가 손상 된 환경 변수 신뢰할 수 없는 당사자가 액세스할 수 있습니다. 여전히 사용자 비밀 정보를 공개 하지 않도록 추가 조치가 필요할 수 있습니다.
