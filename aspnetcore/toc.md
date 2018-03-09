@@ -213,6 +213,9 @@
 # [모바일](xref:mobile/index)
 ## [네이티브 모바일 앱에 대한 백 엔드 서비스 만들기](xref:mobile/native-mobile-backend)
 
+# [SignalR](xref:signalr/index)
+## [시작](xref:signalr/get-started-signalr-core)
+
 # [호스트 및 배포](xref:host-and-deploy/index)
 ## [Azure App Service에서 호스트](xref:host-and-deploy/azure-apps/index)
 ### [Visual Studio를 사용하여 Azure에 게시](xref:tutorials/publish-to-azure-webapp-using-vs)

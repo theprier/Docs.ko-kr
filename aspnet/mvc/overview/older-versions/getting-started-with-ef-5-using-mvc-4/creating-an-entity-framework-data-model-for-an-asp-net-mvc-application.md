@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 223dd48bb996de527f20291e4701e7d1b60a539d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 8c9971ccc70cb4b966abb64086b1b5420fc6c72a
+ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/08/2018
 ---
 <a name="creating-an-entity-framework-data-model-for-an-aspnet-mvc-application-1-of-10"></a>ASP.NET MVC 응용 프로그램 (1 / 10)에 대 한 Entity Framework 데이터 모델 만들기
 ====================
@@ -29,7 +29,7 @@ ms.lasthandoff: 01/24/2018
 > > A [이 자습서 시리즈의 최신 버전](../../getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md) Visual Studio 2013, Entity Framework 6 MVC 5 숫자에 사용할 수 있습니다.
 > 
 > 
-> Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 5 및 Visual Studio 2012를 사용 하 여 ASP.NET MVC 4 응용 프로그램을 만드는 방법을 보여 줍니다. 샘플 응용 프로그램은 웹 사이트 가상 Contoso 대학입니다. 학생 진입, 과정 만들기 및 강사 할당 등의 기능을 포함합니다. 이 자습서 시리즈 Contoso 대학 샘플 응용 프로그램을 작성 하는 방법에 설명 합니다. 있습니다 수 [완성 된 응용 프로그램 다운로드](https://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)합니다.
+> Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 5 및 Visual Studio 2012를 사용 하 여 ASP.NET MVC 4 응용 프로그램을 만드는 방법을 보여 줍니다. 샘플 응용 프로그램은 가상 Contoso University의 웹 사이트입니다. 학생 입학, 강좌 개설 및 강사 할당과 같은 기능이 있습니다. 이 자습서 시리즈 Contoso 대학 샘플 응용 프로그램을 작성 하는 방법에 설명 합니다. 있습니다 수 [완성 된 응용 프로그램 다운로드](https://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)합니다.
 > 
 > ## <a name="code-first"></a>Code First
 > 
@@ -53,7 +53,7 @@ ms.lasthandoff: 01/24/2018
 > 
 > 자습서를 직접 관련 되지 않는 질문 해야 하도록를 게시할 수 있습니다는 [ASP.NET Entity Framework 포럼](https://forums.asp.net/1227.aspx), [Entity Framework와 LINQ to Entities 포럼](https://social.msdn.microsoft.com/forums/adodotnetentityframework/threads/), 또는 [ StackOverflow.com](http://stackoverflow.com/)합니다.
 > 
-> ## <a name="acknowledgments"></a>승인
+> ## <a name="acknowledgments"></a>감사의 글
 > 
 > 참조에 대 한 일련의 마지막 자습서 [승인 및 VB에 대 한 메모](advanced-entity-framework-scenarios-for-an-mvc-web-application.md#acknowledgments)합니다.
 > 
@@ -64,17 +64,17 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="the-contoso-university-web-application"></a>Contoso 대학 웹 응용 프로그램
 
-이 자습서에를 작성 하는 응용 프로그램은 간단한 대학 웹 사이트.
+이 자습서에서 빌드하는 응용 프로그램은 간단한 대학 웹 사이트입니다.
 
-사용자가 볼 수 있으며 학생과에서는 강사 정보 업데이트 됩니다. 다음은 몇 화면을 만듭니다.
+사용자는 학생, 강좌 및 강사 정보를 보고 업데이트할 수 있습니다. 다음은 만들 몇 가지 화면입니다.
 
 ![Students_Index_page](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image1.png)
 
 ![](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image2.png)
 
-이 자습서는 Entity Framework를 사용 하는 방법에 주로 초점을 맞출 수 있도록이 사이트의 사용자 인터페이스 스타일은 기본 제공 템플릿에서 생성 내용을 가까운 유지 되었습니다.
+자습서가 Entity Framework를 사용하는 방법에 주로 초점을 맞출 수 있도록 이 사이트의 UI 스타일은 기본 제공 템플릿에서 생성된 내용에 가깝게 유지되었습니다.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 사용 하는 경우 directions와이 자습서의 스크린 샷을 가정 [Visual Studio 2012](https://www.microsoft.com/visualstudio/eng/downloads) 또는 [Visual Studio 2012 Express for Web](https://go.microsoft.com/fwlink/?LinkID=275131), 최신 업데이트 및 Azure SDK for.NET 7 월을 기준으로 설치 2013입니다. 다음 링크를 통해이 모든를 얻을 수 있습니다.
 
@@ -98,13 +98,13 @@ Visual Studio를 열고 새 C# 프로젝트 만들기 "ContosoUniversity"를 사
 
 ## <a name="set-up-the-site-style"></a>사이트 스타일 설정
 
-몇 가지 간단한 변경 사항이 사이트 메뉴, 레이아웃 및 홈 페이지를 설정 합니다.
+몇 가지 간단한 변경 내용으로 사이트 메뉴, 레이아웃 및 홈 페이지를 설정합니다.
 
-열기 *Views\Shared\\_Layout.cshtml*, 파일의 내용을 다음 코드로 바꿉니다. 변경 내용은 강조 표시 됩니다.
+열기 *Views\Shared\\_Layout.cshtml*, 파일의 내용을 다음 코드로 바꿉니다. 변경 내용은 강조 표시되어 있습니다.
 
 [!code-cshtml[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample1.cshtml?highlight=5,15,25-28,43)]
 
-이 코드에서는 다음과 같이 변경 합니다.
+이 코드로 다음이 변경됩니다.
 
 - "Contoso 대학"으로 "내 ASP.NET MVC 응용 프로그램" 및 "사용자 로고는 여기"의 템플릿 인스턴스를 바꿉니다.
 - 이 자습서의 뒷부분에 나오는 사용할 수는 몇 가지 작업 링크를 추가 합니다.
@@ -123,13 +123,13 @@ Visual Studio를 열고 새 C# 프로젝트 만들기 "ContosoUniversity"를 사
 
 ## <a name="create-the-data-model"></a>데이터 모델 만들기
 
-다음 Contoso 대학교 응용 프로그램에 대 한 엔터티 클래스 만듭니다. 다음 세 가지 엔터티부터 시작 합니다.
+다음으로 Contoso University 응용 프로그램에 대한 엔터티 클래스를 만듭니다. 다음 세 가지 엔터티부터 시작 합니다.
 
 ![Class_diagram](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image6.png)
 
-간의 일 대 다 관계가 `Student` 및 `Enrollment` 엔터티 간의 일 대 다 관계 이며 `Course` 및 `Enrollment` 엔터티. 즉, 학생 과정을 개수에 관계 없이 등록 될 수 있습니다 및 과정에 학생에 등록 여러 개가 있을 수 있습니다.
+`Student` 및 `Enrollment` 엔터티 간에 일대다 관계가 있으며 `Course` 및 `Enrollment` 엔터티 간에 일대다 관계가 있습니다. 즉, 학생은 개수에 관계 없이 강좌에 등록될 수 있으며 강좌는 등록된 학생이 여러 명일 수 있습니다.
 
-다음 섹션에서는 각각에 대 한 이러한 엔터티의 클래스를 만듭니다.
+다음 섹션에서 이러한 엔터티 각각에 대한 클래스를 만듭니다.
 
 > [!NOTE]
 > 이러한 엔터티 클래스의 모든 만들기를 완료 하기 전에 프로젝트를 컴파일할 하려고 하면 컴파일러 오류가 발생 합니다.
@@ -143,27 +143,27 @@ Visual Studio를 열고 새 C# 프로젝트 만들기 "ContosoUniversity"를 사
 
 [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample4.cs)]
 
-`StudentID` 속성이이 클래스에 해당 하는 데이터베이스 테이블의 기본 키 열이 됩니다. Entity Framework를 기본적으로 명명 된 속성을 해석 `ID` 또는 *classname* `ID` 기본 키로 합니다.
+`StudentID` 속성은 이 클래스에 해당하는 데이터베이스 테이블의 기본 키 열이 됩니다. Entity Framework를 기본적으로 명명 된 속성을 해석 `ID` 또는 *classname* `ID` 기본 키로 합니다.
 
-`Enrollments` 속성은 한 *탐색 속성*합니다. 이 엔터티와 관련 된 다른 엔터티와 탐색 속성을 보유 합니다. 이 경우에 `Enrollments` 속성은 `Student` 의 모든 엔터티를 포함할는 `Enrollment` 엔터티는 관련 된 `Student` 엔터티. 즉, 하는 경우는 주어진 `Student` 데이터베이스의 행에는 관련 된 두 개의 `Enrollment` 행 (해당 학생의 기본 키를 포함 하는 행에서 값을 해당 `StudentID` 외래 키 열), 해당 `Student` 엔터티의 `Enrollments` 탐색 속성 이 두 들어갑니다 `Enrollment` 엔터티.
+`Enrollments` 속성은 한 *탐색 속성*합니다. 탐색 속성은 이 엔터티와 관련된 다른 엔터티를 포함합니다. 이 경우에 `Enrollments` 속성은 `Student` 의 모든 엔터티를 포함할는 `Enrollment` 엔터티는 관련 된 `Student` 엔터티. 즉, 하는 경우는 주어진 `Student` 데이터베이스의 행에는 관련 된 두 개의 `Enrollment` 행 (해당 학생의 기본 키를 포함 하는 행에서 값을 해당 `StudentID` 외래 키 열), 해당 `Student` 엔터티의 `Enrollments` 탐색 속성 이 두 들어갑니다 `Enrollment` 엔터티.
 
 탐색 속성은 일반적으로 정의 `virtual` 특정 Entity Framework 기능을 이용와 같은 많이 있도록 *한 지연 로딩이*합니다. (한 지연 로딩이 설명 되어 있습니다의 뒷부분에 나오는 [관련 데이터를 읽는](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md) 이 시리즈의 뒷부분에 나오는 자습서입니다.
 
-해당 형식은 항목 추가, 삭제 및 업데이트와 같은 될 수 있는 목록 이어야 합니다는 탐색 속성 (예: 다 대 다 또는 일 대 다 관계) 여러 엔터티를 보유할 수, 하는 경우 `ICollection`합니다.
+탐색 속성이 여러 엔터티를 포함할 수 있는 경우(다대다 또는 일대다 관계로), 해당 형식은 `ICollection`와 같이 항목이 추가, 삭제 및 업데이트될 수 있는 목록이어야 합니다.
 
 ### <a name="the-enrollment-entity"></a>등록 엔터티
 
 ![Enrollment_entity](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image8.png)
 
-에 *모델* 폴더를 만들 *Enrollment.cs* 기존 코드를 다음 코드로 바꿉니다.
+*Models* 폴더에서*Enrollment.cs*를 만들고 기존 코드를 다음 코드로 바꿉니다.
 
 [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample5.cs)]
 
 등급 속성은 한 [enum](https://msdn.microsoft.com/data/hh859576.aspx)합니다. 후 물음표는 `Grade` 형식 선언을 나타냅니다는 `Grade` 속성은 [nullable](https://msdn.microsoft.com/library/2cf62fcy.aspx)합니다. Null이 등급은 0 개 등급 다릅니다-의미 하는 등급 알려진 또는 아직 할당 되지 않았습니다.
 
-`StudentID` 속성은 외래 키 및 해당 탐색 속성은 `Student`합니다. `Enrollment` 엔터티는 하 나와 연결 `Student` 엔터티, 속성에는 단일만 포함할 수 있으므로 `Student` 엔터티 (달리는 `Student.Enrollments` 탐색 속성 했 듯이, 여러을 보유할 수 있는 `Enrollment` 엔터티)입니다.
+`StudentID` 속성은 외래 키로, 해당 탐색 속성은 `Student`입니다. `Enrollment` 엔터티는 하나의 `Student` 엔터티와 연결되어 있으므로 속성은 단일 `Student` 엔터티만 포함할 수 있습니다(이전에 살펴본 여러 `Enrollment` 엔터티를 포함할 수 있는 `Student.Enrollments` 탐색 속성과 달리).
 
-`CourseID` 속성은 외래 키 및 해당 탐색 속성은 `Course`합니다. `Enrollment` 엔터티는 하 나와 연결 `Course` 엔터티.
+`CourseID` 속성은 외래 키로, 해당 탐색 속성은 `Course`입니다. `Enrollment` 엔터티는 하나의 `Course` 엔터티와 연결됩니다.
 
 ### <a name="the-course-entity"></a>과정 엔터티
 
@@ -173,13 +173,13 @@ Visual Studio를 열고 새 C# 프로젝트 만들기 "ContosoUniversity"를 사
 
 [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample6.cs)]
 
-`Enrollments` 속성은 탐색 속성입니다. A `Course` 개수에 관계 없이 관련 될 수 있는 엔터티 `Enrollment` 엔터티.
+`Enrollments` 속성은 탐색 속성입니다. `Course` 엔터티는 `Enrollment` 엔터티의 개수와 관련이 있을 수 있습니다.
 
-에 대 한 내용은 라고는 [[DatabaseGenerated](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.databasegeneratedattribute(v=vs.110).aspx)([databasegeneratedoption입니다](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.databasegeneratedoption(v=vs.95).aspx)합니다. 다음 자습서의 특성 없음)]입니다. 기본적으로,이 특성 과정 대신 생성 하는 데이터베이스에 대 한 기본 키를 입력할 수 있습니다.
+에 대 한 내용은 라고는 [[DatabaseGenerated](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.databasegeneratedattribute(v=vs.110).aspx)([databasegeneratedoption입니다](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.databasegeneratedoption(v=vs.95).aspx)합니다. 다음 자습서의 특성 없음)]입니다. 기본적으로 이 특성을 통해 생성하는 데이터베이스를 갖는 대신 강좌에 대한 기본 키를 입력할 수 있습니다.
 
 ## <a name="create-the-database-context"></a>데이터베이스 컨텍스트 만들기
 
-지정된 된 데이터 모델에 대 한 Entity Framework 기능을 조정 하는 기본 클래스는는 *데이터베이스 컨텍스트* 클래스입니다. 이 클래스에서 파생 시켜 만들는 [System.Data.Entity.DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=VS.103).aspx) 클래스입니다. 코드에서 데이터 모델에 포함 된 엔터티 지정 합니다. 특정 Entity Framework 동작을 사용자 지정할 수 있습니다. 이 프로젝트에 클래스 이름은 `SchoolContext`합니다.
+지정된 된 데이터 모델에 대 한 Entity Framework 기능을 조정 하는 기본 클래스는는 *데이터베이스 컨텍스트* 클래스입니다. 이 클래스에서 파생 시켜 만들는 [System.Data.Entity.DbContext](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=VS.103).aspx) 클래스입니다. 코드에서 데이터 모델에 포함되는 엔터티를 지정합니다. 특정 Entity Framework 동작을 사용자 지정할 수도 있습니다. 이 프로젝트에서 클래스 이름은 `SchoolContext`로 지정됩니다.
 
 라는 폴더를 만듭니다 *DAL* (데이터 액세스 계층)에 대 한 합니다. 해당 폴더에 라는 새 클래스 파일을 만들 *SchoolContext.cs*, 기존 코드를 다음 코드로 바꿉니다.
 
@@ -277,7 +277,7 @@ Visual Studio 2012 이상 버전에서 LocalDB는 Visual Studio를 사용 하 �
 
     ![초기 마이그레이션 사용 하 여 migrations 폴더](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image14.png)
 
-    `Up` 의 메서드는 `InitialCreate` 클래스는 데이터 모델 엔터티 집합에 해당 하는 데이터베이스 테이블을 만듭니다 및 `Down` 메서드 삭제 합니다. 마이그레이션 호출은 `Up` 마이그레이션에 대 한 데이터 모델 변경 내용을 구현 하려면 메서드. Update, 마이그레이션 호출을 롤백해야 하는 명령을 입력할 때는 `Down` 메서드. 다음 코드의 내용을 보여 줍니다.는 `InitialCreate` 파일:
+    `Up` 의 메서드는 `InitialCreate` 클래스는 데이터 모델 엔터티 집합에 해당 하는 데이터베이스 테이블을 만듭니다 및 `Down` 메서드 삭제 합니다. 마이그레이션에서는 마이그레이션을 위한 데이터 모델 변경을 구현하기 위해 `Up` 메서드를 호출합니다. 업데이트를 롤백하는 명령을 입력하면 마이그레이션에서 `Down` 메서드를 호출합니다. 다음 코드의 내용을 보여 줍니다.는 `InitialCreate` 파일:
 
     [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample15.cs)]
 
@@ -340,7 +340,7 @@ Visual Studio 2012 이상 버전에서 LocalDB는 Visual Studio를 사용 하 �
 사용으로 인해 전체 데이터베이스를 만들 수도 수 있게 되기를 Entity Framework에 대 한 순서 대로 작성 해야 했습니다 코드의 양을 최소화 됩니다 *규칙*, 또는 Entity Framework에서는 가정 합니다. 그 중 일부를 이미 설명 되어 있습니다.
 
 - Pluralized 형태의 엔터티 클래스 이름은 테이블 이름으로 사용 됩니다.
-- 엔터티 속성 이름은 열 이름에 사용 됩니다.
+- 엔터티 속성 이름은 열 이름에 사용됩니다.
 - 명명 된 엔터티 속성 `ID` 또는 *classname* `ID` 기본 키 속성으로 인식 됩니다.
 
 지금까지 살펴본 규칙을 재정의할 수 있습니다 (예를 들어 사용자가 지정한 테이블 이름을 복수화 수 해서는 안) 있으며 규칙 및 재정의에 해당 하는 방법에 대해 자세히 배울 수 있습니다는 [더 복잡 한 데이터 모델을 만드는](creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md) 자습서 나중에 있습니다. 자세한 내용은 참조 [코드 첫 번째 규칙](https://msdn.microsoft.com/data/jj679962)합니다.

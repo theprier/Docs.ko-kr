@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: 
 msc.type: content
-ms.openlocfilehash: 3d4c34a35e2e34ed78f481c759eda3718edb4da6
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 0ba7814d4004b17e678eab9a2a41a6d6f34773e1
+ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="aspnet-overview"></a>ASP.NET 개요
 
@@ -26,7 +26,7 @@ ASP.NET은 뛰어난 웹 사이트 및 HTML, CSS 및 JavaScript를 사용 하 �
 
 ## <a name="get-started"></a>시작
 
-[Visual Studio 2015를 다운로드](https://go.microsoft.com/fwlink/?LinkId=826064), Windows에서 ASP.NET에 대 한 IDE를 해제 합니다.
+[Visual Studio 커뮤니티 2017](https://www.visualstudio.com/downloads/), Windows에서 ASP.NET에 대 한 IDE를 해제 합니다.
 
 ## <a name="websites-and-web-applications"></a>웹 사이트 및 웹 응용 프로그램
 

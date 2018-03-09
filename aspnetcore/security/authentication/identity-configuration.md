@@ -4,16 +4,16 @@ author: AdrienTorris
 description: "ASP.NET Core Id 기본값을 이해 하 고 사용자 지정 값을 사용 하도록 Id 속성을 구성 하는 방법에 알아봅니다."
 manager: wpickett
 ms.author: scaddie
-ms.date: 02/21/2018
+ms.date: 03/06/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-configuration
-ms.openlocfilehash: 6aeb85063b4b6f97822062b523a0c1f7ee6b595c
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 469068af2fc12627a0a5d1c5623eb60bef51cea0
+ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="configure-identity"></a>Id 구성
 
@@ -132,7 +132,7 @@ ASP.NET Core 추가 2.0는 [RequiredUniqueChars](/dotnet/api/microsoft.aspnetcor
 | [AutomaticChallenge](/dotnet/api/microsoft.aspnetcore.builder.authenticationoptions.automaticchallenge) | ASP.NET Core에만 적용 됩니다 1.x 합니다.<br><br> True 이면 인증 미들웨어 자동 문제를 처리 합니다. 경우 false 이면 인증 미들웨어만 변경 하 여 명시적으로 지정 하는 경우 응답은 `AuthenticationScheme`합니다. |
 | [ClaimsIssuer](/dotnet/api/microsoft.aspnetcore.authentication.authenticationschemeoptions.claimsissuer) | 생성 되는 모든 클레임을 사용 해야 하는 발급자를 가져오거나 설정 합니다. (에서 상속 되며, [AuthenticationSchemeOptions](/dotnet/api/microsoft.aspnetcore.authentication.authenticationschemeoptions)). |
 | [Cookie.Domain](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.domain) | 쿠키와 연결할 도메인입니다. |
-| [Cookie.Expiration](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.expiration) | 쿠키의 수명을 가져오거나 설정 합니다. |
+| [Cookie.Expiration](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.expiration) | HTTP 쿠키 (인증 쿠키 제외)의 수명을 가져오거나 설정 합니다. 이 속성을 재정의 하 여 [ExpireTimeSpan](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.expiretimespan)합니다. CookieAuthentication의 컨텍스트에서 사용할 수 없습니다. |
 | [Cookie.HttpOnly](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.httponly) | 쿠키는 클라이언트 쪽 스크립트에서 액세스할 수 있는지 여부를 나타냅니다.<br><br>기본값은 `true`입니다. |
 | [Cookie.Name](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.name) | 쿠키의 이름입니다.<br><br>기본값은 `.AspNetCore.Cookies`입니다. |
 | [Cookie.Path](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.path) | 쿠키 경로입니다. |

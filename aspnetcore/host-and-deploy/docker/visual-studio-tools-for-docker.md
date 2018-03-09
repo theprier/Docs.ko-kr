@@ -10,17 +10,17 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/docker/visual-studio-tools-for-docker
-ms.openlocfilehash: caf0e423d8e6f61fd2470d1f4ea2dd93909c3696
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 590d32342b1724a0cbc937655c35631938eb09b2
+ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/08/2018
 ---
 # <a name="visual-studio-tools-for-docker-with-aspnet-core"></a>Visual Studio Tools for Docker 및 ASP.NET Core
 
 [Visual Studio 2017](https://www.visualstudio.com/)은 .NET Framework 또는 .NET Core를 대상으로 하는 ASP.NET Core 앱의 빌드, 디버깅 및 실행을 지원합니다. Windows 및 Linux 컨테이너가 모두 지원됩니다.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 * **.NET Core 플랫폼 간 개발** 워크로드가 있는 [Visual Studio 2017](https://www.visualstudio.com/)
 * [Windows용 Docker](https://docs.docker.com/docker-for-windows/install/)
@@ -38,7 +38,7 @@ Windows용 Docker에서 **[공유 드라이브](https://docs.docker.com/docker-f
 
 ## <a name="add-docker-support-to-an-app"></a>앱에 Docker 지원 추가
 
-ASP.NET Core 프로젝트의 대상 프레임워크는 지원되는 컨테이너 형식을 결정합니다. .NET Core를 대상으로 하는 프로젝트는 Linux와 Windows 컨테이너를 지원합니다. .NET Framework를 대상으로 하는 프로젝트는 Windows 컨테이너만 지원합니다.
+ASP.NET Core 프로젝트에 Docker 지원을 추가 하기 위해 프로젝트.NET Core를 대상으로 해야 합니다. Linux 및 Windows 컨테이너를 모두 사용할 수 있습니다.
 
 Docker 지원에는 프로젝트를 추가할 때는 Windows 또는 Linux 컨테이너를 선택 합니다. Docker 호스트는 동일한 컨테이너 형식을 실행 중이어야 합니다. 실행 중인 Docker 인스턴스에서 컨테이너 형식을 변경하려면 시스템 트레이의 Docker 아이콘을 마우스 오른쪽 단추로 클릭하고 **Windows 컨테이너로 전환** 또는 **Linux 컨테이너로 전환**을 선택합니다.
 
@@ -67,7 +67,7 @@ Visual Studio Tools for Docker는 다음을 포함하여 솔루션에 *docker-co
 
 최종 Docker 이미지를 만들기 위한 레시피인 *Dockerfile*은 프로젝트 루트에 추가됩니다. 그 안의 명령을 이해하려면 [Dockerfile 참조](https://docs.docker.com/engine/reference/builder/)를 참조하세요. 이 특정 *Dockerfile*은 빌드 단계라는 네 개의 단계를 포함하는 [다단계 빌드](https://docs.docker.com/engine/userguide/eng-image/multistage-build/)를 사용합니다.
 
-[!code-text[](visual-studio-tools-for-docker/samples/HelloDockerTools/HelloDockerTools/Dockerfile?highlight=1,5,14,17)]
+[!code-dockerfile[](visual-studio-tools-for-docker/samples/HelloDockerTools/HelloDockerTools/Dockerfile?highlight=1,5,14,17)]
 
 *Dockerfile*은 [microsoft/aspnetcore](https://hub.docker.com/r/microsoft/aspnetcore) 이미지를 기반으로 합니다. 이 기본 이미지는 시작 성능을 개선하도록 prejit된 ASP.NET Core NuGet 패키지를 포함합니다.
 

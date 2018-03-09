@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/getting-started/introduction-to-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 27150d314b6861f1098e6ef4a7de94e7b371a78e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5bb49c9c2405d232ba5e067d99f8879b3bc99361
+ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/08/2018
 ---
 <a name="introduction-to-signalr"></a>SignalR 소개
 ====================
@@ -26,7 +26,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > ## <a name="questions-and-comments"></a>질문이 나 의견이
 > 
-> 이 자습서를 연결 하는 방법 및 페이지의 맨 아래에 주석에서 향상 될 수 있습니다 어떻게에 의견을 남겨 주세요. 자습서를 직접 관련 되지 않는 질문 해야 하도록를 게시할 수 있습니다는 [ASP.NET SignalR 포럼](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) 또는 [StackOverflow.com](http://stackoverflow.com/)합니다.
+> 이 자습서를 연결 하는 방법 및 페이지의 맨 아래에 주석에서 향상 될 수 있습니다 어떻게에 의견을 남겨 주세요. 자습서를 직접 관련 되지 않는 질문 해야 하도록를 게시할 수 있습니다는 [ASP.NET SignalR 포럼](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) 또는 [StackOverflow.com](https://stackoverflow.com/questions/tagged/signalr)합니다.
 
 
 ## <a name="what-is-signalr"></a>SignalR 란?
@@ -35,7 +35,7 @@ ASP.NET SignalR은 ASP.NET 개발자를 위한 간단 하 게 응용 프로그�
 
 SignalR은 ASP.NET 응용 프로그램에 모든 종류의 "실시간" 웹 기능을 추가 데 사용할 수 있습니다. 채팅은 일반적으로 예를 사용 하는 동안 더 많은 작업을 수행할 수 있습니다. 사용자는 언제 든 지 새 데이터를 보려면 웹 페이지를 새로 고칩니다. 또는 페이지를 구현 [긴 폴링](http://en.wikipedia.org/wiki/Push_technology#Long_polling) 새 데이터를 검색 하려면 SignalR을 사용 하기 위한 대상 인지 합니다. 예로 대시보드 및 진행 상황 업데이트 및 실시간 양식 (예: 동시 편집 문서), 공동 작업 응용 프로그램 작업 응용 프로그램을 모니터링 합니다.
 
-SignalR 해줍니다 완전히 새로운 유형의 웹 응용 프로그램 서버에서 자주 발생 하는 업데이트를 필요로 하는 예를 들어 실시간 게임. 이 좋은 예 참조는 [ShootR 게임.](http://shootr.signalr.net/)
+SignalR 해줍니다 완전히 새로운 유형의 웹 응용 프로그램 서버에서 자주 발생 하는 업데이트를 필요로 하는 예를 들어 실시간 게임.
 
 SignalR 서버 쪽.NET 코드에서 브라우저 (및 다른 클라이언트 플랫폼) 클라이언트에서 JavaScript 함수를 호출 하는 서버 클라이언트 원격 프로시저 호출 (RPC)을 만들기 위한 단순 API를 제공 합니다. SignalR API도 포함 되어 연결 관리를 위해 (예를 들어, 연결 및 연결 끊기 이벤트), 연결 그룹화 하 고 있습니다.
 
