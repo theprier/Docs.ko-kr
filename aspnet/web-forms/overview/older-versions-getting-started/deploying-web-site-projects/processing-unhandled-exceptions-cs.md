@@ -12,17 +12,17 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7be257faa350476bef9f6d372ea4f140fff8d136
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: dda73ca1878396e04b8ff04a255c25bf26ed4eff
+ms.sourcegitcommit: 9622bdc6326c28c3322c70000468a80ef21ad376
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/12/2018
 ---
 <a name="processing-unhandled-exceptions-c"></a>처리 되지 않은 예외 (C#)를 처리 합니다.
 ====================
 으로 [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[코드를 다운로드](http://download.microsoft.com/download/1/0/C/10CC829F-A808-4302-97D3-59989B8F9C01/ASPNET_Hosting_Tutorial_12_CS.zip) 또는 [PDF 다운로드](http://download.microsoft.com/download/5/C/5/5C57DB8C-5DEA-4B3A-92CA-4405544D313B/aspnet_tutorial12_ErrorHandling_cs.pdf)
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnet/web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-cs/samples)([다운로드 방법](/aspnet/core/tutorials/index#how-to-download-a-sample))
 
 > 프로덕션 환경에서 웹 응용 프로그램에서 런타임 오류가 발생할 때에 개발자에 게 시간에 나중에 진단할 수 수 있도록 오류를 기록 하려면 중요 합니다. 이 자습서에서는 ASP.NET 런타임 오류를 처리 하 고 때마다 ASP.NET 런타임에 처리 되지 않은 예외가 거품을 실행 하는 사용자 지정 코드가 있는 한 가지 방법은 조사 하는 방법을 대 한 개요를 제공 합니다.
 
@@ -62,7 +62,7 @@ ms.lasthandoff: 01/30/2018
 
 Visual Studio의 전역 응용 프로그램 클래스 템플릿으로 만든 이벤트 처리기 하지는 않습니다. 에 대 한 이벤트 처리기를 추가할 수 있습니다 `HttpApplication` 이벤트 처리기의 이름을 지정 하 여 이벤트 `Application_EventName`합니다. 예를 들어 다음 코드를 추가할 수 있습니다는 `Global.asax` 에 대 한 이벤트 처리기를 만들려는 파일의 [ `AuthorizeRequest` 이벤트](https://msdn.microsoft.com/library/system.web.httpapplication.authorizerequest.aspx):
 
-[!code-vb[Main](processing-unhandled-exceptions-cs/samples/sample1.vb)]
+[!code-cs[Main](processing-unhandled-exceptions-cs/samples/sample1.cs)]
 
 마찬가지로, 전역 응용 프로그램 클래스 템플릿으로 만든 필요 하지 않은 모든 이벤트 처리기를 제거할 수 있습니다. 이 자습서에서는 필요한에 대 한 이벤트 처리기는 `Error` 이벤트를 자유롭게 다른 이벤트 처리기를 제거 하 고 `Global.asax` 파일입니다.
 
@@ -159,7 +159,7 @@ ASP.NET 런타임에서 발생 하는 ASP.NET 웹 응용 프로그램에서 처�
 
 - [ASP.NET HTTP 모듈 및 HTTP 처리기 개요](https://support.microsoft.com/kb/307985)
 - [정상적으로 처리 되지 않은 예외를 처리 하는 처리 되지 않은 예외-에 응답](http://aspnet.4guysfromrolla.com/articles/091306-1.aspx)
-- [`HttpApplication`클래스 및 ASP.NET 응용 프로그램 개체](http://www.eggheadcafe.com/articles/20030211.asp)
+- [`HttpApplication` 클래스 및 ASP.NET 응용 프로그램 개체](http://www.eggheadcafe.com/articles/20030211.asp)
 - [HTTP 처리기 및 asp.net에서 HTTP 모듈](http://www.15seconds.com/Issue/020417.htm)
 - [ASP.NET에서 메일을 보내는 중](http://aspnet.4guysfromrolla.com/articles/072606-1.aspx)
 - [이해의 `Global.asax` 파일](http://aspalliance.com/1114_Understanding_the_Globalasax_file.all)
