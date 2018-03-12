@@ -10,15 +10,15 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/docker/visual-studio-tools-for-docker
-ms.openlocfilehash: 590d32342b1724a0cbc937655c35631938eb09b2
-ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
+ms.openlocfilehash: b2a3c369a22d50fcefdb96914f5bf84bfafab7cb
+ms.sourcegitcommit: 6fa546140575b3eb279eabae12d9acad966f70e0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/09/2018
 ---
 # <a name="visual-studio-tools-for-docker-with-aspnet-core"></a>Visual Studio Tools for Docker 및 ASP.NET Core
 
-[Visual Studio 2017](https://www.visualstudio.com/)은 .NET Framework 또는 .NET Core를 대상으로 하는 ASP.NET Core 앱의 빌드, 디버깅 및 실행을 지원합니다. Windows 및 Linux 컨테이너가 모두 지원됩니다.
+[Visual Studio 2017](https://www.visualstudio.com/) 빌드, 디버깅 및 실행 중인 컨테이너 화 된 ASP.NET Core.NET Core를 대상으로 하는 응용 프로그램을 지원 합니다. Windows 및 Linux 컨테이너가 모두 지원됩니다.
 
 ## <a name="prerequisites"></a>전제 조건
 
