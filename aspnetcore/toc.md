@@ -210,6 +210,9 @@
 ### [React 프로젝트 템플릿](xref:spa/react)
 ### [React with Redux 프로젝트 템플릿](xref:spa/react-with-redux)
 
+# [SignalR](xref:signalr/introduction-signalr-core)
+## [소개](xref:signalr/introduction-signalr-core)
+
 # [모바일](xref:mobile/index)
 ## [네이티브 모바일 앱에 대한 백 엔드 서비스 만들기](xref:mobile/native-mobile-backend)
 
