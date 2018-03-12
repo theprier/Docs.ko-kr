@@ -19,4 +19,4 @@ ms.lasthandoff: 01/30/2018
 
 * [앱 간 쿠키 공유](xref:security/data-protection/compatibility/cookie-sharing)
 
-* [ASP.NET에서 \<machineKey> 교체](xref:security/data-protection/compatibility/replacing-machinekey)
+* [ASP.NET의 \<machineKey> 대체하기](xref:security/data-protection/compatibility/replacing-machinekey)
