@@ -1,7 +1,7 @@
 ---
-title: "크로스-원본 요청 (CORS)를 사용 하도록 설정"
+title: "교차 원본 요청(CORS) 활성화시키기"
 author: rick-anderson
-description: "이 문서를 허용 하거나 거부 된 ASP.NET Core 응용 프로그램에 대 한 교차 원본 요청에 대 한 표준으로 CORS를 소개 합니다."
+description: "본문에서는 ASP.NET Core 응용 프로그램에서 교차-원본 요청을 허용하거나 거부하는 표준 CORS를 소개합니다."
 manager: wpickett
 ms.author: riande
 ms.date: 05/17/2017
@@ -15,152 +15,152 @@ ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/02/2018
 ---
-# <a name="enabling-cross-origin-requests-cors"></a>크로스-원본 요청 (CORS)를 사용 하도록 설정
+# <a name="enabling-cross-origin-requests-cors"></a>교차 원본 요청(CORS) 활성화시키기
 
-여 [Mike Wasson](https://github.com/mikewasson), [Shayne 보이 어](https://twitter.com/spboyer), 및 [Tom Dykstra](https://github.com/tdykstra)
+작성자: [Mike Wasson](https://github.com/mikewasson), [Shayne Boyer](https://twitter.com/spboyer), 및 [Tom Dykstra](https://github.com/tdykstra)
 
-브라우저 보안 다른 도메인에 대 한 AJAX 요청에서 웹 페이지를 방지 합니다. 이 제한은 라고는 *동일 원본 정책*, 악성 사이트를 다른 사이트에서 중요 한 데이터를 읽을 수 없도록 합니다. 하지만, 경우에 따라 다른 사이트 web API 대 크로스-원본 요청을 만들 수 있도록 필요할 수 있습니다.
+브라우저의 보안 기능은 웹 페이지에서 다른 도메인으로 AJAX 요청을 전송하는 것을 막습니다. 이 제약 사항을 *동일 원본 정책(Same-Origin Policy)*이라고 부르며, 악의적인 사이트가 다른 사이트의 민감한 데이터를 무차별적으로 읽는 것을 방지합니다. 그러나 경우에 따라서는 다른 사이트가 여러분의 Web API에 교차 원본 요청(Cross-Origin Requests)을 전송하는 것을 허용해야 할 수도 있습니다.
 
-[교차 원본 자원 공유](http://www.w3.org/TR/cors/) (CORS)는 동일 원본 정책을 완화 하도록 서버를 허용 하는 W3C 표준입니다. CORS를 사용 하는 서버는 다른 사용자를 거부 하는 동안 일부 크로스-원본 요청을 명시적으로 허용할 수 있습니다. 과 같은 CORS를 안전 하 고 이전 기술을 보다 좀 더 융통적 [JSONP](https://wikipedia.org/wiki/JSONP)합니다. 이 항목에서는 ASP.NET Core 응용 프로그램에서 CORS를 사용 하도록 설정 하는 방법을 보여 줍니다.
+[교차 원본 자원 공유](http://www.w3.org/TR/cors/) (CORS, Cross Origin Resource Sharing)는 서버 측에서 동일 원본 정책을 완화할 수 있게 해주는 W3C 표준입니다. CORS를 사용하면 서버가 명시적으로 특정 교차 원본 요청만 허용하고, 다른 요청은 거부할 수 있습니다. CORS는 [JSONP](https://wikipedia.org/wiki/JSONP) 같은 기존의 다른 기술보다 안전하고 유연합니다. 본문에서는 ASP.NET Core 응용 프로그램에서 CORS를 활성화시키는 방법을 알아봅니다.
 
-## <a name="what-is-same-origin"></a>"같은 출처" 이란?
+## <a name="what-is-same-origin"></a>"동일 원본"이란?
 
-두 Url에는 동일한 구성표, 호스트 및 포트 있는 경우 동일한 원본이 있어야 합니다. ([RFC 6454](http://tools.ietf.org/html/rfc6454))
+두 URL의 스키마, 호스트 및 포트가 모두 동일한 경우, 두 URL의 원본이 동일하다고 말합니다. ([RFC 6454](http://tools.ietf.org/html/rfc6454))
 
-이러한 두 Url에는 동일한 원본이 있어야 합니다.
+다음 두 URL은 동일한 원본입니다.
 
 * `http://example.com/foo.html`
 
 * `http://example.com/bar.html`
 
-이러한 Url 있는 두 이전 보다 다른 출처:
+반면, 다음 URL들은 위의 두 URL과는 다른 원본입니다.
 
-* `http://example.net` -다른 도메인
+* `http://example.net` -도메인이 다릅니다
 
-* `http://www.example.com/foo.html` -다른 하위 도메인
+* `http://www.example.com/foo.html` -하위 도메인이 다릅니다
 
-* `https://example.com/foo.html` -다른 구성표
+* `https://example.com/foo.html` -스키마가 다릅니다
 
-* `http://example.com:9000/foo.html` -다른 포트
+* `http://example.com:9000/foo.html` -포트가 다릅니다
 
 > [!NOTE]
-> Origin을 비교할 때 Internet Explorer에서 포트를 고려 하지 않습니다.
+> Internet Explorer는 원본을 비교할 때 포트를 고려하지 않습니다.
 
-## <a name="setting-up-cors"></a>CORS 설정
+## <a name="setting-up-cors"></a>CORS 설정하기
 
-응용 프로그램에 대 한 CORS 추가를 설정 하는 `Microsoft.AspNetCore.Cors` 프로젝트에 패키지 합니다.
+ASP.NET Core 응용 프로그램에 CORS를 설정하려면 프로젝트에 `Microsoft.AspNetCore.Cors` 패키지를 설치합니다.
 
-Startup.cs에 CORS 서비스를 추가 합니다.
+그리고 Startup.cs에 CORS 서비스를 추가합니다.
 
 [!code-csharp[](cors/sample/CorsExample1/Startup.cs?name=snippet_addcors)]
 
-## <a name="enabling-cors-with-middleware"></a>CORS 미들웨어와 사용
+## <a name="enabling-cors-with-middleware"></a>미들웨어를 이용해서 CORS 활성화시키기
 
-사용 하려면 전체 응용 프로그램에 대 한 CORS 사용 하 여 요청 파이프라인에 CORS 미들웨어를 추가 `UseCors` 확장 메서드. 참고는 CORS 미들웨어 앞에 야 정의 된 끝점 (예: 교차 원본 요청을 지원 하 고 응용 프로그램에서. 호출 하기 전에 `UseMvc`).
+전체 응용 프로그램에서 CORS를 활성화시키려면 `UseCors` 확장 메서드를 이용해서 요청 파이프라인에 CORS 미들웨어를 추가합니다. 참고로 교차 원본 요청을 지원하고자 하는 응용 프로그램 내의 모든 정의된 끝점보다  `UseMvc` 를 호출하기 전에 CORS 미들웨어를 먼저 파이프라인에 추가해야 합니다.
 
-사용 하 여 CORS 미들웨어를 추가 하는 경우 크로스-원본 정책을 지정할 수 있습니다는 `CorsPolicyBuilder` 클래스입니다. 이렇게 하는 데는 두 가지 방법이 있습니다. 첫 번째 람다를 사용 하 여 UseCors 호출입니다.
+CORS 미들웨어를 추가할 때, `CorsPolicyBuilder` 클래스를 이용해서 원본 간 정책을 지정할 수 있습니다. 구체적인 방법은 두 가지입니다. 먼저, 첫 번째 방법은 람다를 전달해서 `UseCors`를 호출하는 것입니다.
 
 [!code-csharp[](cors/sample/CorsExample1/Startup.cs?highlight=11,12&range=22-38)]
 
-**참고:** 후행 슬래시가 없는 URL을 지정 해야 합니다 (`/`). URL로 종료 하는 경우 `/`가 반환 됩니다 `false` 헤더가 없으면 반환 됩니다.
+**참고:** 반드시 후행 슬래시`/`가 없는 URL을 지정해야 합니다. 만약 URL이 `/` 로 끝나면, 비교 결과가 `false` 를 반환하여 아무런 헤더도 반환되지 않습니다.
 
-람다는는 `CorsPolicyBuilder` 개체입니다. 목록을 찾을 수 있습니다는 [구성 옵션](#cors-policy-options) 이 항목의 뒷부분에 나오는 합니다. 이 예제에서는 정책을 통해 크로스-원본 요청을 `http://example.com` 및 다른 원본이 없습니다.
+람다는 `CorsPolicyBuilder` 개체를 전달받습니다. [구성 옵션](#cors-policy-options) 의 목록은 잠시 후 다시 살펴봅니다. 이 예제 코드의 정책은 `http://example.com` 에서 전달된 교차 원본 요청은 허용하지만, 다른 원본의 요청은 허용하지 않습니다.
 
-메서드 호출을 체인화할 수 있도록 CorsPolicyBuilder fluent API에 있는지 참고:
+CorsPolicyBuilder는 Fluent API를 지원하므로 다음과 같이 메서드 호출을 연결할 수 있습니다.
 
 [!code-csharp[](../security/cors/sample/CorsExample3/Startup.cs?highlight=3&range=29-32)]
 
-하나 이상의 명명 된 CORS 정책을 정의 하 고 런타임 시 이름별 정책을 선택 하는 두 번째 방법이입니다.
+두 번째 방법은 미리 한 가지 이상의 명명된 CORS 정책을 정의한 다음, 런타임 시에 이름을 지정해서 정책을 선택하는 것입니다.
 
 [!code-csharp[](cors/sample/CorsExample2/Startup.cs?name=snippet_begin)]
 
-이 예제에서는 "AllowSpecificOrigin" 라는 CORS 정책을 추가 합니다. 정책을 선택 하려면에 이름을 전달 `UseCors`합니다.
+이 예제는 "AllowSpecificOrigin"이라는 CORS 정책을 추가합니다. 그리고 `UseCors` 메서드에 이름을 전달해서 정책을 선택합니다.
 
-## <a name="enabling-cors-in-mvc"></a>MVC에 CORS 사용
+## <a name="enabling-cors-in-mvc"></a>MVC에서 CORS 활성화시키기
 
-또는 MVC를 사용 하 여 특정 CORS 작업당: 컨트롤러 당 또는 모든 컨트롤러에 대해 전역으로 적용 합니다. CORS를 사용 하도록 MVC를 사용 하는 경우 동일한 CORS 서비스는 사용 되지 않지만 CORS 미들웨어 되지 않습니다.
+MVC를 이용해서 액션별, 컨트롤러별 또는 모든 컨트롤러에 대해 전역으로 특정 CORS를 적용할 수도 있습니다. MVC를 이용해서 CORS를 활성화시키는 경우에도 동일한 CORS 서비스가 사용되지만, 이 경우 CORS 미들웨어는 사용되지 않습니다.
 
-### <a name="per-action"></a>작업 마다
+### <a name="per-action"></a>액션 별
 
-특정 작업에 대 한 CORS 정책을 지정 하려면 추가 `[EnableCors]` 특성 작업을 합니다. 정책 이름을 지정 합니다.
+특정 액션에 CORS 정책을 지정하려면 해당 액션에 `[EnableCors]` 특성을 추가합니다. 이때 정책 이름을 전달합니다.
 
 [!code-csharp[](cors/sample/CorsMVC/Controllers/ValuesController.cs?name=EnableOnAction)]
 
-### <a name="per-controller"></a>컨트롤러당
+### <a name="per-controller"></a>컨트롤러 별
 
-특정 컨트롤러에 대 한 CORS 정책을 지정 하려면 추가 `[EnableCors]` 특성을 컨트롤러 클래스입니다. 정책 이름을 지정 합니다.
+특정 컨트롤러에 CORS 정책을 지정하려면 해당 컨트롤러에 `[EnableCors]` 특성을 추가합니다. 이때 정책 이름을 전달합니다.
 
 [!code-csharp[](cors/sample/CorsMVC/Controllers/ValuesController.cs?name=EnableOnController)]
 
 ### <a name="globally"></a>전역으로
 
-추가 하 여 위에 모든 컨트롤러에 대해 CORS를 전체적으로 사용할 수 있습니다는 `CorsAuthorizationFilterFactory` 필터를 전역 필터 컬렉션:
+모든 컨트롤러에서 전역으로 CORS를 활성화시키려면, 전역 필터 컬렉션에 `CorsAuthorizationFilterFactory` 필터를 추가합니다.
 
 [!code-csharp[](cors/sample/CorsMVC/Startup2.cs?name=snippet_configureservices)]
 
-우선 순위는: 작업, 컨트롤러, 전역 합니다. 작업 수준 정책 컨트롤러 수준 정책 보다 우선 적용 하 고 컨트롤러 수준 정책 글로벌 정책 보다 우선 적용 됩니다.
+특성의 우선 순위는 액션, 컨트롤러, 전역 순입니다. 다시 말해서, 액션 수준 정책은 컨트롤러 수준 정책보다 우선하며, 컨트롤러 수준 정책은 전역 정책보다 우선합니다.
 
-### <a name="disable-cors"></a>CORS를 사용 하지 않도록 설정
+### <a name="disable-cors"></a>CORS 비활성시키기
 
-컨트롤러 또는 동작에 대 한 CORS를 해제 하려면 사용 하 여는 `[DisableCors]` 특성입니다.
+컨트롤러나 액션의 CORS를 비활성화시키려면, `[DisableCors]` 특성을 적용합니다.
 
 [!code-csharp[](cors/sample/CorsMVC/Controllers/ValuesController.cs?name=DisableOnAction)]
 
 ## <a name="cors-policy-options"></a>CORS 정책 옵션
 
-이 섹션에서는 CORS 정책에서 설정할 수 있는 다양 한 옵션을 설명 합니다.
+이번 섹션에서는 CORS 정책에서 설정할 수 있는 다양한 옵션들을 살펴봅니다.
 
-* [허용 되는 원본을 설정 합니다.](#set-the-allowed-origins)
+* [허용되는 원본 설정하기](#set-the-allowed-origins)
 
-* [허용 된 HTTP 메서드 설정](#set-the-allowed-http-methods)
+* [허용되는 HTTP 메서드 설정하기](#set-the-allowed-http-methods)
 
-* [허용 된 요청 헤더 설정](#set-the-allowed-request-headers)
+* [허용되는 요청 헤더 설정하기](#set-the-allowed-request-headers)
 
-* [노출 된 응답 헤더 설정](#set-the-exposed-response-headers)
+* [노출되는 응답 헤더 설정하기](#set-the-exposed-response-headers)
 
-* [크로스-원본 요청에 자격 증명](#credentials-in-cross-origin-requests)
+* [교차 원본 요청의 자격 증명](#credentials-in-cross-origin-requests)
 
-* [실행 전 만료 시간 설정](#set-the-preflight-expiration-time)
+* [예비 요청 (Preflight Requests) 만료 시간 설정하기](#set-the-preflight-expiration-time)
 
-일부 옵션에 대 한 읽기 유용할 수 있습니다 [작동 하는 방법을 CORS](#how-cors-works) 첫 번째입니다.
+일부 옵션의 경우, [CORS의 동작 방식](#how-cors-works) 섹션을 먼저 읽어보는 것이 이해에 도움이 됩니다.
 
-### <a name="set-the-allowed-origins"></a>허용 되는 원본을 설정 합니다.
+### <a name="set-the-allowed-origins"></a>허용되는 원본 설정하기
 
-하나 이상의 특정 origin을 허용 합니다.
+하나 이상의 특정 원본을 허용하려면 다음과 같이 구성합니다.
 
 [!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=19-23)]
 
-모든 원본을 허용 합니다.
+모든 원본을 허용하려면 다음과 같이 구성합니다.
 
 [!code-csharp[](cors/sample/CorsExample4/Startup.cs??range=27-31)]
 
-모든 원본에서 요청을 허용 하기 전에 신중히 고려해 야 합니다. 모든 웹 사이트 API에 대 한 AJAX 호출을 만들 수 있음을 의미 합니다.
+모든 원본의 요청을 허용하기 전에 신중히 고민하시기 바랍니다. 이는 문자 그대로 모든 웹 사이트에서 응용 프로그램에 AJAX 호출을 전송할 수 있음을 뜻합니다.
 
-### <a name="set-the-allowed-http-methods"></a>허용 된 HTTP 메서드 설정
+### <a name="set-the-allowed-http-methods"></a>허용되는 HTTP 메서드 설정하기
 
-모든 HTTP 메서드를 허용 합니다.
+모든 HTTP 메서드를 허용하려면 다음과 같이 구성합니다.
 
 [!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=44-49)]
 
-전 요청 및 액세스 제어-허용-방법 헤더에 영향을 줍니다.
+이 옵션은 예비 요청과 Access-Control-Allow-Methods 헤더에 영향을 줍니다.
 
-### <a name="set-the-allowed-request-headers"></a>허용 된 요청 헤더 설정
+### <a name="set-the-allowed-request-headers"></a>허용되는 요청 헤더 설정하기
 
-CORS 실행 전 요청에는 응용 프로그램에 의해 설정 된 HTTP 헤더를 나열 하는 액세스 제어-요청 헤더 헤더가 포함 될 수 있습니다 (이라는 "요청 헤더 author").
+CORS의 예비 요청에는 클라이언트 응용 프로그램에서 설정한 HTTP 헤더들이 나열된 Access-Control-Request-Headers 헤더가 포함되어 있을 수 있습니다. 이를 일명 "사용자 지정 요청 헤더(Author Request Headers)"라고 부릅니다.
 
-특정 헤더를 허용 목록:
+특정 헤더들에 대한 허용 목록을 만들려면 다음과 같이 구성합니다.
 
 [!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=53-58)]
 
-허용 하려면 요청 헤더를 작성 모든:
+모든 사용자 지정 요청 헤더를 허용하려면 다음과 같이 구성합니다.
 
 [!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=62-67)]
 
-브라우저에서 액세스 제어-요청 헤더를 설정 하는 방법을 완전히 일치 하지 않습니다. 아닌 다른 헤더를 값으로 설정 하면 "*"를 포함 해야 이상 "동의", "콘텐츠 형식은" 및 "출처" + 지원 하 고 모든 사용자 지정 헤더입니다.
+브라우저가 Access-Control-Request-Headers를 설정하는 방법이 완전히 일관되지는 않습니다. 따라서, "*" 이외의 값으로 헤더를 설정할 때는, 지원하고자 하는 모든 사용자 정의 헤더 외에도 최소한 "accept", "content-type" 및 "origin"은 포함시켜야 합니다.
 
-### <a name="set-the-exposed-response-headers"></a>노출 된 응답 헤더 설정
+### <a name="set-the-exposed-response-headers"></a>노출되는 응답 헤더 설정하기
 
-브라우저는 기본적으로 모든 응용 프로그램에 대 한 응답 헤더를 노출 하지 않습니다. (See [http://www.w3.org/TR/cors/#simple-response-header](http://www.w3.org/TR/cors/#simple-response-header).) 기본적으로 사용할 수 있는 응답 헤더에는
+기본적으로 브라우저는 클라이언트 응용 프로그램에 모든 응답 헤더를 노출하지 않습니다. ([http://www.w3.org/TR/cors/#simple-response-header](http://www.w3.org/TR/cors/#simple-response-header) 참고). 기본적으로 사용 가능한 응답 헤더들은 다음과 같습니다.
 
 * Cache-Control
 
@@ -168,21 +168,21 @@ CORS 실행 전 요청에는 응용 프로그램에 의해 설정 된 HTTP 헤�
 
 * Content-Type
 
-* 만료
+* Expires
 
-* 마지막 수정
+* Last-Modified
 
 * Pragma
 
-이러한 호출 하는 CORS 사양 *간단한 응답 헤더*합니다. 다른 헤더를 사용할 수 있도록 응용 프로그램:
+CORS 명세에서는 이 헤더들을 *단순 응답 헤더(Simple Response Header)* 라고 부릅니다. 응용 프로그램에서 다른 헤더들을 사용할 수 있게 하려면 다음과 같이 구성합니다.
 
 [!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=71-76)]
 
-### <a name="credentials-in-cross-origin-requests"></a>크로스-원본 요청에 자격 증명
+### <a name="credentials-in-cross-origin-requests"></a>교차 원본 요청의 자격 증명
 
-자격 증명에는 CORS 요청에 대 한 특별 한 처리가 필요 합니다. 기본적으로 브라우저 크로스-원본 요청에 자격 증명을 보내지 않습니다. 자격 증명 쿠키 뿐만 아니라 HTTP 인증 스키마를 포함 합니다. 클라이언트는 크로스-원본 요청에 자격 증명을 보내려면 true로 XMLHttpRequest.withCredentials 설정 해야 합니다.
+CORS 요청에서 자격 증명(Credentials)은 특별한 처리를 해야 합니다. 교차 원본 요청 시, 기본적으로 브라우저는 어떠한 자격 증명도 전송하지 않습니다. 여기에서 말하는 자격 증명에는 쿠키뿐만 아니라 HTTP 인증 스킴도 포함됩니다. 교차 원본 요청 시 자격 증명을 함께 전송하려면, 클라이언트에서 XMLHttpRequest.withCredentials 속성을 true로 설정해야 합니다.
 
-직접 XMLHttpRequest를 사용 하 여:
+직접 XMLHttpRequest를 사용할 경우:
 
 ```javascript
 var xhr = new XMLHttpRequest();
@@ -190,7 +190,7 @@ xhr.open('get', 'http://www.example.com/api/test');
 xhr.withCredentials = true;
 ```
 
-jQuery:
+jQuery를 사용할 경우:
 
 ```jQuery
 $.ajax({
@@ -201,17 +201,17 @@ $.ajax({
 }
 ```
 
-또한 서버 자격 증명을 허용 해야 합니다. 크로스-원본 자격 증명을 허용 합니다.
+또한 서버에서도 자격 증명을 허용해야만 합니다. 교차 원본 자격 증명을 허용하려면 다음과 같이 구성합니다.
 
 [!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=80-85)]
 
-이제 HTTP 응답에는 브라우저에 알려 서버 크로스-원본 요청에 대 한 자격 증명을 허용 하는 액세스-컨트롤--자격 증명 허용 헤더가 포함 됩니다.
+이 구성이 적용되면 HTTP 응답에 Access-Control-Allow-Credentials 헤더가 포함됩니다. 이 헤더는 서버가 교차 원본 요청에 대한 자격 증명을 허용한다는 것을 브라우저에 알려줍니다.
 
-브라우저에서 자격 증명을 보내는 응답에는 한 유효한 액세스-컨트롤--자격 증명 허용 헤더가 포함 되지 않은 경우, 브라우저 응용 프로그램에 대 한 응답을 노출 하지 않습니다 및 AJAX 요청이 실패 합니다.
+브라우저가 자격 증명을 전송하지만, 응답에 유효한 Access-Control-Allow-Credentials 헤더가 포함되어 있지 않다면, 브라우저가 응용 프로그램에게 응답을 노출하지 않으므로 AJAX 요청은 실패하게 됩니다.
 
 크로스-원본 자격 증명을 허용할 때 주의 해야 합니다. 다른 도메인에서 웹 사이트에 로그인 한 사용자의 자격 증명에서 사용자 모르게 사용자 대신 응용 프로그램에 보낼 수 있습니다. CORS 사양에 해당 설정 설명과 함께 원본이 "*" (모든 원본을) 유효 하지 하는 경우는 `Access-Control-Allow-Credentials` 헤더가 있으면 헤더입니다.
 
-### <a name="set-the-preflight-expiration-time"></a>실행 전 만료 시간 설정
+### <a name="set-the-preflight-expiration-time"></a>예비 요청 (Preflight Requests) 만료 시간 설정하기
 
 액세스 제어-최대 기간 헤더 실행 전 요청에 대 한 응답을 캐시할 수 시간을 지정 합니다. 다음을 설정 하려면이 헤더
 
