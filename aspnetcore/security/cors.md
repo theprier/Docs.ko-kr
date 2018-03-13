@@ -120,7 +120,7 @@ MVC를 이용해서 액션별, 컨트롤러별 또는 모든 컨트롤러에 대
 
 * [교차 원본 요청의 자격 증명](#credentials-in-cross-origin-requests)
 
-* [예비 요청 (Preflight Requests) 만료 시간 설정하기](#set-the-preflight-expiration-time)
+* [예비 요청 만료 시간 설정하기](#set-the-preflight-expiration-time)
 
 일부 옵션의 경우, [CORS의 동작 방식](#how-cors-works) 섹션을 먼저 읽어보는 것이 이해에 도움이 됩니다.
 
@@ -211,19 +211,19 @@ $.ajax({
 
 크로스-원본 자격 증명을 허용할 때 주의 해야 합니다. 다른 도메인에서 웹 사이트에 로그인 한 사용자의 자격 증명에서 사용자 모르게 사용자 대신 응용 프로그램에 보낼 수 있습니다. CORS 사양에 해당 설정 설명과 함께 원본이 "*" (모든 원본을) 유효 하지 하는 경우는 `Access-Control-Allow-Credentials` 헤더가 있으면 헤더입니다.
 
-### <a name="set-the-preflight-expiration-time"></a>예비 요청 (Preflight Requests) 만료 시간 설정하기
+### <a name="set-the-preflight-expiration-time"></a>예비 요청 만료 시간 설정하기
 
-액세스 제어-최대 기간 헤더 실행 전 요청에 대 한 응답을 캐시할 수 시간을 지정 합니다. 다음을 설정 하려면이 헤더
+Access-Control-Max-Age 헤더는 예비 요청에 대한 응답을 캐시할 수 있는 기간을 지정합니다. 이 헤더를 설정하려면 다음과 같이 구성합니다.
 
 [!code-csharp[](cors/sample/CorsExample4/Startup.cs?range=89-94)]
 
 <a name="cors-how-cors-works"></a>
 
-## <a name="how-cors-works"></a>CORS가 작동 하는 방법
+## <a name="how-cors-works"></a>CORS의 동작 방식
 
-이 섹션의 CORS 요청은 HTTP 메시지 수준에서 수행 되는 작업을 설명 합니다. 예기치 않은 동작이 발생 하는 경우 CORS CORS 정책을 올바르게 구성할 수 있도록의 작동 원리와 troubleshooted를 이해 하는 것이 유용 합니다.
+이번 섹션에서는 CORS 요청 시 HTTP 메시지 수준에서 발생하는 일들을 살펴봅니다. CORS 정책을 올바르게 구성하기 위해서, 그리고 예상대로 동작하지 않는 경우 문제를 해결하기 위해서는 CORS가 동작하는 방식을 이해하는 것이 중요합니다.
 
-CORS 사양 교차 원본 요청을 사용 하도록 설정 하는 몇 가지 새 HTTP 헤더를 소개 합니다. 브라우저에서 CORS를 지 원하는 경우 이러한 헤더가 크로스-원본 요청에 대 한 자동으로 설정 합니다. CORS를 사용 하도록 사용자 지정 JavaScript 코드는 필요 하지 않습니다.
+CORS 명세에서는 교차 원본 요청을 활성화시키기 위한 용도로 몇 가지 새로운 HTTP 헤더들이 도입되었습니다. 그러나, 브라우저가 CORS를 지원할 경우, 교차 원본 요청 시 브라우저가 자동으로 이 헤더들을 설정해주므로 JavaScript 코드에서 직접 처리해줘야 할 작업은 전혀 없습니다.
 
 크로스-원본 요청의 예를 들면 다음과 같습니다. `Origin` 헤더는 요청을 수행 하는 사이트의 도메인을 제공 합니다.
 
