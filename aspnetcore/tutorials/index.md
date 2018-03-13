@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/index
-ms.openlocfilehash: bcfd20fcea1e683bcbef00a9e67bb28add4f23be
-ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
+ms.openlocfilehash: 45b00fbc15740fad60202bb7e5ab14beb9ebe495
+ms.sourcegitcommit: 9622bdc6326c28c3322c70000468a80ef21ad376
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 03/12/2018
 ---
 # <a name="aspnet-core-tutorials"></a>ASP.NET Core 자습서
 
@@ -47,12 +47,15 @@ ASP.NET Core 응용 프로그램을 개발하기 위해 다음 단계별 가이�
   * [Windows용 Visual Studio를 사용하는 Web API](first-web-api.md)
   * [Mac용 Visual Studio를 사용하는 Web API](xref:tutorials/first-web-api-mac)
   * [Visual Studio Code를 사용하는 Web API](web-api-vsc.md)
-  
-* [Swagger를 사용한 ASP.NET Core Web API 도움말 페이지](web-api-help-pages-using-swagger.md)
+
+* [Swagger를 사용한 ASP.NET Core Web API 도움말 페이지](xref:tutorials/web-api-help-pages-using-swagger)
+  * [NSwag 시작](xref:tutorials/get-started-with-nswag)
+  * [Swashbuckle 시작](xref:tutorials/get-started-with-swashbuckle)
+
 * [네이티브 모바일 앱에 대한 백 엔드 웹 서비스 만들기](../mobile/native-mobile-backend.md)
 
 ## <a name="data-access-and-storage"></a>데이터 액세스 및 저장소
-* [Visual Studio를 사용하여 Razor 페이지 및 Entity Core 시작](xref:data/ef-rp/intro)
+* [Visual Studio를 사용하여 Razor 페이지 및 EF Core 시작](xref:data/ef-rp/intro)
 * [Visual Studio를 사용하여 ASP.NET Core MVC 및 Entity Core 시작](../data/ef-mvc/index.md)
 * [ASP.NET Core MVC 및 EF Core - 새 데이터베이스](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db)
 * [ASP.NET Core MVC 및 EF Core - 기존 데이터베이스](https://docs.microsoft.com/ef/core/get-started/aspnetcore/existing-db)

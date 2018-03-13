@@ -29,7 +29,9 @@
 
 ## [웹 API 개발](mvc/web-api/index.md)
 ### [Mac에서 Web API 만들기](xref:tutorials/first-web-api-mac)
-### [Swagger를 사용한 ASP.NET Core Web API 도움말 페이지](tutorials/web-api-help-pages-using-swagger.md)
+### [Swagger를 사용한 ASP.NET Core Web API 도움말 페이지](xref:tutorials/web-api-help-pages-using-swagger)
+#### [NSwag 시작](xref:tutorials/get-started-with-nswag)
+#### [Swashbuckle 시작](xref:tutorials/get-started-with-swashbuckle)
 ### [네이티브 모바일 앱에 대한 백 엔드 서비스 만들기](mobile/native-mobile-backend.md)
 
 ## [데이터 액세스 - EF Core 사용](xref:data/index)
@@ -212,12 +214,10 @@
 
 # [SignalR](xref:signalr/introduction-signalr-core)
 ## [소개](xref:signalr/introduction-signalr-core)
+## [시작](xref:signalr/get-started-signalr-core)
 
 # [모바일](xref:mobile/index)
 ## [네이티브 모바일 앱에 대한 백 엔드 서비스 만들기](xref:mobile/native-mobile-backend)
-
-# [SignalR](xref:signalr/index)
-## [시작](xref:signalr/get-started-signalr-core)
 
 # [호스트 및 배포](xref:host-and-deploy/index)
 ## [Azure App Service에서 호스트](xref:host-and-deploy/azure-apps/index)
