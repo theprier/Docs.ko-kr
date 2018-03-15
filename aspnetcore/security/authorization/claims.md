@@ -19,7 +19,7 @@ ms.lasthandoff: 02/03/2018
 
 <a name="security-authorization-claims-based"></a>
 
-신원(Identity)을 생성할 때 신뢰할 수 있는 당사자가 발급하는 하나 이상의 클레임을 부여할 수 있습니다. 클레임(Claim)은 주체가 수행할 수 있는 작업이 아닌, 주체가 무엇인지를 표현하는 이름 값의 쌍입니다. 예를 들어, 여러분은 지역 운전면허 발급기관이 발급한 운전 면허증을 갖고 있을 수 있습니다. 운전 면허증에는 생년월일이 기재되어 있을 것입니다. 이 경우, 클레임 이름은 `DateOfBirth`이고, 클레임 값은 `8th June 1970` 같은 생년월일, 그리고 발급자는 운전면허 발급기관입니다. 간단한 방식의 클레임 기반 권한 부여에서는 클레임 값을 검사한 다음, 그 값을 기반으로 리소스에 대한 접근을 허용합니다. 예를 들어, 나이트 클럽에 들어가려고 하면 다음 절차가 진행될 것입니다.
+Id를 만들 때 신뢰할 수 있는 당사자가 발급 하는 하나 이상의 클레임 할당할 수 있습니다. 클레임은 어떤 주제를 나타내는 이름 값 쌍이, 하지 어떤 주체 작업을 수행할 수 있습니다. 예를 들어 로컬 구동 라이선스 기관에서 발급 하는 운전 면허증을 할 수 있습니다. 드라이버의 라이선스 생년월일 갖고 있습니다. 이 경우 클레임 이름이 표시 됩니다 `DateOfBirth`, 클레임 값과 수 생년월일, 예를 들어 `8th June 1970` 발급자 구동 라이선스 기관 될 수 있습니다. 가장 간단한 클레임 기반 권한 부여 클레임의 값을 확인 하 고 해당 값에 따라 리소스에 대 한 액세스를 허용 합니다. 에 권한 부여 프로세스 밤 클럽에 액세스 하려는 경우를 예로 들 수 있습니다.
 
 나이트 클럽의 출입문 보안 담당자는 접근을 허용하기 전에, 먼저 생년월일 클레임의 값과 발급자(운전면허 발급기관)를 신뢰할 수 있는지 여부부터 평가합니다.
 
@@ -47,7 +47,7 @@ public void ConfigureServices(IServiceCollection services)
 
 이 경우, `EmployeeOnly` 정책은 현재 신원에 `EmployeeNumber` 클레임이 존재하는지 여부를 확인합니다.
 
-그런 다음, `AuthorizeAttribute` 특성의 `Policy` 속성에 정책 이름을 지정해서 이 정책을 적용할 수 있습니다:
+그런 다음, `AuthorizeAttribute` 특성의 `Policy` 속성에 정책 이름을 지정해서 이 정책을 적용할 수 있습니다
 
 ```csharp
 [Authorize(Policy = "EmployeeOnly")]
@@ -57,7 +57,7 @@ public IActionResult VacationBalance()
 }
 ```
 
-컨트롤러 전체에 `AuthorizeAttribute` 특성을 적용할 수도 있으며, 이 경우 정책과 일치하는 신원들만 해당 컨트롤러의 모든 액션에 접근이 허용됩니다:
+컨트롤러 전체에 `AuthorizeAttribute` 특성을 적용할 수도 있으며, 이 경우 정책과 일치하는 신원들만 해당 컨트롤러의 모든 액션에 접근이 허용됩니다.
 
 ```csharp
 [Authorize(Policy = "EmployeeOnly")]
@@ -103,7 +103,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ## <a name="multiple-policy-evaluation"></a>다중 정책 평가
 
-만약 컨트롤러나 액션에 여러 정책을 적용했다면 모든 정책을 만족해야만 접근이 허용됩니다. 예를 들어;
+만약 컨트롤러나 액션에 여러 정책을 적용했다면 모든 정책을 만족해야만 접근이 허용됩니다. 예를 들어:
 
 ```csharp
 [Authorize(Policy = "EmployeeOnly")]
