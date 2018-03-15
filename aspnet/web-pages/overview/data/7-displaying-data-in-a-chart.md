@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/data/7-displaying-data-in-a-chart
 msc.type: authoredcontent
 ms.openlocfilehash: f252b74bc42d0ea65b8b1150973c4f3c50cc9cf4
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/15/2018
 ---
 <a name="displaying-data-in-a-chart-with-aspnet-web-pages-razor"></a>ASP.NET 웹 페이지 (Razor)와 차트에 데이터를 표시합니다.
 ====================
@@ -41,7 +41,7 @@ by [Microsoft](https://github.com/microsoft)
 <a id="The_Chart_Helper"></a>
 ## <a name="the-chart-helper"></a>차트 도우미
 
-그래픽 형식으로 데이터를 표시 하려는 경우 사용할 수 있습니다 `Chart` 도우미입니다. `Chart` 도우미 다양 한 차트 종류의에서 데이터를 표시 하는 이미지를 렌더링할 수 있습니다. 서식 및 레이블 지정에 대 한 다양 한 옵션을 지원 합니다. `Chart` 도우미 30 개 이상의 유형의 차트, Microsoft Excel 또는 다른 도구에서에 대해 잘 알고 있을 수 있다는 차트의 모든 형식 & # 8212를 포함 하 여 렌더링할 수; 영역형 차트에서 막대형 차트, 세로 막대형 차트 차트 및 원형 차트에 함께 있는 선 자세히 특수 차트 같은 주식형 차트입니다.
+그래픽 형식으로 데이터를 표시 하려는 경우 사용할 수 있습니다 `Chart` 도우미입니다. `Chart` 도우미 다양 한 차트 종류의에서 데이터를 표시 하는 이미지를 렌더링할 수 있습니다. 서식 및 레이블 지정에 대 한 다양 한 옵션을 지원 합니다. `Chart` 도우미 30 개 이상의 유형의 차트, Microsoft Excel 또는 다른 도구에서 사용 하 던 못할 수 있는 차트의 모든 형식을 포함 하 여 렌더링할 수 &#8212; 영역형 차트, 가로 막대형 차트, 세로 막대형 차트, 꺾은선형 차트 및 원형 차트는 자세히와 특수 차트 같은 주식형 차트입니다.
 
 | **영역형 차트** ![설명: 영역형 차트 종류의 그림](7-displaying-data-in-a-chart/_static/image1.jpg) | **가로 막대형 차트** ![설명: 가로 막대형 차트 종류의 그림](7-displaying-data-in-a-chart/_static/image2.jpg) |
 | --- | --- |
@@ -122,7 +122,7 @@ by [Microsoft](https://github.com/microsoft)
 
     코드는 먼저 만듭니다는 `DataSet` 개체입니다. 이 개체는 XML 파일에서 읽은 및 스키마 파일의 정보에 따라 구성 하는 데이터를 관리 하려면 사용 됩니다. (코드의 맨 위에 문을 포함 하는 예 고 `using SystemData`합니다. 이 작업을 수행할 수 있도록 하는 데 필요한는 `DataSet` 개체입니다. 자세한 내용은 참조 [ &quot;Using&quot; 문 및 정규화 된 이름](#SB_UsingStatements) 이 문서의 뒷부분에 나오는.)
 
-    그런 다음 코드는 만듭니다는 `DataView` 데이터 집합을 기반으로 하는 개체입니다. 데이터 뷰 차트에 바인딩할 수 있는 개체 &#8212;를 제공 합니다. 즉, 읽기 및 출력 합니다. 차트를 사용 하 여 데이터에 바인딩하는 `AddSeries` 메서드 때 설명 했 듯이 배열 데이터 점을 제외 하 고이 시간을 차트로 만들 때는 `xValue` 및 `yValues` 매개 변수를 설정는 `DataView` 개체입니다.
+    그런 다음 코드는 만듭니다는 `DataView` 데이터 집합을 기반으로 하는 개체입니다. 차트에 바인딩할 수 있는 개체를 제공 하는 데이터 뷰의 &#8212; 즉, 읽기 및 출력 합니다. 차트를 사용 하 여 데이터에 바인딩하는 `AddSeries` 메서드 때 설명 했 듯이 배열 데이터 점을 제외 하 고이 시간을 차트로 만들 때는 `xValue` 및 `yValues` 매개 변수를 설정는 `DataView` 개체입니다.
 
     이 예제는 특정 차트 종류를 지정 하는 방법을 보여줍니다. 데이터에 추가 된 경우는 `AddSeries` 메서드는 `chartType` 원형 차트를 표시 하려면 매개 변수 설정도 합니다.
 7. 브라우저에서 페이지를 실행 합니다. 
@@ -136,7 +136,7 @@ by [Microsoft](https://github.com/microsoft)
 > 
 > Razor 구문이 있는 ASP.NET 웹 페이지를 기반으로 하는.NET Framework 구성 요소 (클래스)의 수천 이루어져 있습니다. 으로 구성 하는 이러한 모든 클래스를 사용 하려면 관리할 수 있도록 하려면 *네임 스페이스*, 라이브러리와 비슷하게는 합니다. 예를 들어는 `System.Web` 브라우저/서버 통신을 지 원하는 클래스를 포함 하는 네임 스페이스는 `System.Xml` 만들고 XML 파일을 읽는 데 사용 되는 클래스를 포함 하는 네임 스페이스 및 `System.Data` 작업할 수 있도록 하는 클래스를 포함 하는 네임 스페이스 데이터입니다.
 > 
-> .NET Framework의 클래스에 액세스 하려면 코드 뿐 아니라 클래스 이름 뿐만 아니라 클래스가 있는 네임 스페이스를 알고 있어야 합니다. 예를 들어, 사용 하려면는 `Chart` 도우미, 코드 찾이 필요가 `System.Web.Helpers.Chart` 네임 스페이스를 결합 하는 클래스 (`System.Web.Helpers`)를 클래스 이름 (`Chart`). 클래스의로 알려져 *정식* 이름 &#8212;.NET Framework는 (광활) 내에서 완전 하 고 명확한 위치입니다. 코드에서이 다음과 같습니다.
+> .NET Framework의 클래스에 액세스 하려면 코드 뿐 아니라 클래스 이름 뿐만 아니라 클래스가 있는 네임 스페이스를 알고 있어야 합니다. 예를 들어, 사용 하려면는 `Chart` 도우미, 코드 찾이 필요가 `System.Web.Helpers.Chart` 네임 스페이스를 결합 하는 클래스 (`System.Web.Helpers`)를 클래스 이름 (`Chart`). 클래스의로 알려져 *정식* 이름 &#8212; .NET Framework는 (광활) 내에서 완전 하 고 명확한 위치입니다. 코드에서이 다음과 같습니다.
 > 
 > `var myChart = new System.Web.Helpers.Chart(width: 600, height: 400) // etc.`
 > 
@@ -235,11 +235,11 @@ by [Microsoft](https://github.com/microsoft)
 
     [!code-cshtml[Main](7-displaying-data-in-a-chart/samples/sample13.cshtml)]
 
-    코드는 먼저 쿼리 문자열의 키 값으로 전달 된 아무 것도 있는지 여부를 확인 합니다. 코드를 호출 하 여 캐시에서 차트를 읽을 하려고 하는 등의 `GetFromCache` 메서드와 키를 전달 합니다. 사실은 해당 키 (처음 차트를 요청 했을 때)에서 캐시에 아무것도 없는 경우 코드는 일반적으로 차트를 만듭니다. 차트 완료 되 면 코드에 저장 된 캐시를 호출 하 여 `SaveToCache`합니다. 해당 메서드는 키 (하므로 차트 나중에 요청 수) 및 차트를 캐시에 저장 해야 하는 시간의 양이 필요 합니다. (정확한 시간 차트를 캐시 하는 해당 데이터 변경 될 수 있습니다 생각 얼마나 자주에 의존 합니다.) `SaveToCache` 방법을 사용 하려면 한 `slidingExpiration` 매개 변수 및 #8212;이 설정 되어 있으면 true 이면 제한 시간 카운터는 다시 설정 될 때마다 차트에 액세스 하는 합니다. 이 경우 실제로 의미를 차트의 캐시 항목 만료 2 분 후에 마지막으로 다른 사람이 액세스 차트. (상대 만료를 대신 사용 하는 절대 만료, 캐시 엔트리를 얼마나 자주 액세스 했는지에 관계 없이 캐시에 추가 된 후 2 분 정확히 유효 기간이 만료 될 의미입니다.)
+    코드는 먼저 쿼리 문자열의 키 값으로 전달 된 아무 것도 있는지 여부를 확인 합니다. 코드를 호출 하 여 캐시에서 차트를 읽을 하려고 하는 등의 `GetFromCache` 메서드와 키를 전달 합니다. 사실은 해당 키 (처음 차트를 요청 했을 때)에서 캐시에 아무것도 없는 경우 코드는 일반적으로 차트를 만듭니다. 차트 완료 되 면 코드에 저장 된 캐시를 호출 하 여 `SaveToCache`합니다. 해당 메서드는 키 (하므로 차트 나중에 요청 수) 및 차트를 캐시에 저장 해야 하는 시간의 양이 필요 합니다. (정확한 시간 차트를 캐시 하는 해당 데이터 변경 될 수 있습니다 생각 얼마나 자주에 의존 합니다.) `SaveToCache` 방법을 사용 하려면는 `slidingExpiration` 매개 변수 &#8212; 이 설정 된 경우 true 이면 제한 시간 카운터를 차트에 액세스 하는 때마다 재설정 됩니다. 이 경우 실제로 의미를 차트의 캐시 항목 만료 2 분 후에 마지막으로 다른 사람이 액세스 차트. (상대 만료를 대신 사용 하는 절대 만료, 캐시 엔트리를 얼마나 자주 액세스 했는지에 관계 없이 캐시에 추가 된 후 2 분 정확히 유효 기간이 만료 될 의미입니다.)
 
     코드에서 사용 하는 마지막으로 `WriteFromCache` 메서드를 인출 하 고 캐시에서 차트를 렌더링 합니다. 이 메서드는 외부 참고는 `if` 가져오게 됩니다 차트 캐시에서 차트 처음에 있던 또는 생성 하 고 캐시에 저장 해야 하기 때문에 캐시를 확인 하는 블록입니다.
 
-    예제에서는 다음에 유의 `AddTitle` 메서드 타임 스탬프를 포함 합니다. (추가 현재 날짜 및 시간 &#8212; `DateTime.Now` &#8212; 제목입니다.)
+    예제에서는 다음에 유의 `AddTitle` 메서드 타임 스탬프를 포함 합니다. (현재 날짜 및 시간 추가 &#8212; `DateTime.Now` &#8212; 제목입니다.)
 5. 명명 된 새 페이지를 만들고 *ClearCache.cshtml* 해당 콘텐츠는 다음과 같이 바꿉니다.
 
     [!code-cshtml[Main](7-displaying-data-in-a-chart/samples/sample14.cshtml)]

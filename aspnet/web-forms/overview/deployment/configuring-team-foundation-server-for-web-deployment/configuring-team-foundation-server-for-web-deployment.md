@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment
 msc.type: authoredcontent
 ms.openlocfilehash: 72f60841a1381380c0ea6167077420f960180dc7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/15/2018
 ---
 <a name="configuring-team-foundation-server-for-web-deployment"></a>웹 배포에 대 한 Team Foundation Server 구성
 ====================
@@ -32,7 +32,7 @@ ms.lasthandoff: 11/10/2017
 > - 배포 논리를 포함 하는 빌드 정의 만드는 방법.
 > - 자동화 된 배포에 대 한 사용 권한을 구성 하는 방법.
 > 
-> 다음 자습서는 이탈리아어로 번역에 대 한 방문 [http://www.lucamorelli.it](http://www.lucamorelli.it)합니다.
+> 다음 자습서는 이탈리아어로 번역에 대 한 방문 [ http://www.lucamorelli.it ](http://www.lucamorelli.it)합니다.
 
 
 이 자습서에서는 TFS 2010을 설치 하 고 초기 구성 프로세스의 일부로 팀 프로젝트 컬렉션을 만든 했는지를 가정 합니다. [for Visual Studio 2010 Team Foundation 설치 가이드](https://go.microsoft.com/?linkid=9805132) 이러한 작업에 대 한 포괄적인 지침을 제공 합니다.

@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/advanced-enterprise-web-deployment
 msc.type: authoredcontent
 ms.openlocfilehash: c3cb7f63cf7c0246a0c4da6038a65a6ac43a7b59
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/15/2018
 ---
 <a name="advanced-enterprise-web-deployment"></a>고급 엔터프라이즈 웹 배포
 ====================
@@ -26,7 +26,7 @@ ms.lasthandoff: 11/10/2017
 
 > 이 자습서에서는 필요 없거나 에이전트 설치가 바람직하지 많은 엔터프라이즈 배포 시나리오는 다양 한 작업을 수행 하는 방법을 보여줍니다.
 > 
-> 다음 자습서는 이탈리아어로 번역에 대 한 방문 [http://www.lucamorelli.it](http://www.lucamorelli.it)합니다.
+> 다음 자습서는 이탈리아어로 번역에 대 한 방문 [ http://www.lucamorelli.it ](http://www.lucamorelli.it)합니다.
 
 
 이 Fabrikam, inc. 라는 가상 회사의 엔터프라이즈 배포 요구 사항을 바탕으로 하는 자습서 시리즈의 일부를 형성 이 자습서 시리즈 샘플 솔루션 & #x 2014;을 사용 하는 [않아](../web-deployment-in-the-enterprise/the-contact-manager-solution.md) 솔루션 & #x 2014; 현실적인 수준의 복잡성을 Windows ASP.NET MVC 3 응용 프로그램을 포함 하 여 웹 응용 프로그램을 나타내기 위해 Communication Foundation (WCF) 서비스 및 데이터베이스 프로젝트를 제공 합니다.

@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/web-deployment-in-the-enterprise
 msc.type: authoredcontent
 ms.openlocfilehash: 6210d01f65bcadf8ae4209e372d5aac68861bd7a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/15/2018
 ---
 <a name="web-deployment-in-the-enterprise"></a>기업에서 웹 배포
 ====================
@@ -26,7 +26,7 @@ ms.lasthandoff: 11/10/2017
 
 > 이 자습서에서는 다양 한 엔터프라이즈급 웹 응용 프로그램을 개발, 테스트, 스테이징 및 프로덕션 환경 배포를 관리 하는 경우 발생 하는 문제를 충족 하는 방법을 설명 합니다. 이 자습서의 개념 및 작업 기반 콘텐츠를 다양 한 일반 작업 및 절차를 안내 하는 혼합 함께 참조 솔루션에 포함 됩니다.
 > 
-> 다음 자습서는 이탈리아어로 번역에 대 한 방문 [http://www.lucamorelli.it](http://www.lucamorelli.it)합니다.
+> 다음 자습서는 이탈리아어로 번역에 대 한 방문 [ http://www.lucamorelli.it ](http://www.lucamorelli.it)합니다.
 
 
 ## <a name="enterprise-deployment-challenges"></a>엔터프라이즈 배포 문제
@@ -78,8 +78,8 @@ MSBuild 프로젝트 파일을 소개 하, 만들기 및 사용자 지정 프로
 
 이 항목에서는 웹 응용 프로그램 배포를 빌드 및 패키징 프로세스 작동 방식, 빌드 프로세스 웹 게시 파이프라인으로 통합 하는 방법, 배포 매개 변수를 수정 하는 방법 및 대상에 웹 패키지를 배포 하는 방법을 비롯 한 설명 환경:
 
-- [빌드 및 웹 응용 프로그램 프로젝트를 패키지](building-and-packaging-web-application-projects.md)
-- [웹 패키지 배포에 대 한 매개 변수를 구성합니다.](configuring-parameters-for-web-package-deployment.md)
+- [웹 응용 프로그램 프로젝트 빌드 및 패키징](building-and-packaging-web-application-projects.md)
+- [웹 패키지 배포용 매개 변수 구성](configuring-parameters-for-web-package-deployment.md)
 - [웹 패키지 배포](deploying-web-packages.md)
 
 - [데이터베이스 프로젝트 배포](deploying-database-projects.md) 각 방법의 장단점와 함께 Visual Studio 데이터베이스 프로젝트를 배포 하는 데 다양 한 기술을 설명 합니다. [만들기 및 배포 명령 파일을 실행](creating-and-running-a-deployment-command-file.md) 배포 논리를 캡슐화 하 고 단일 단계 프로세스로 복잡 한 솔루션을 배포할 수 있습니다 하는 간단한 명령 파일을 만드는 방법을 설명 합니다.

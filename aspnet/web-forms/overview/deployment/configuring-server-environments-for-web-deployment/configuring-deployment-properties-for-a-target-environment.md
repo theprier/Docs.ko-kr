@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-deployment-properties-for-a-target-environment
 msc.type: authoredcontent
 ms.openlocfilehash: f27b8376b332ff21185be0fd5c00ced7d40a20bd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/15/2018
 ---
 <a name="configuring-deployment-properties-for-a-target-environment"></a>대상 환경에 대 한 배포 속성 구성
 ====================
@@ -67,13 +67,13 @@ ms.lasthandoff: 11/10/2017
 
 샘플 환경별 프로젝트 파일의 각 속성의 용도 설명 하는이 테이블 *Env Dev.proj*를 제공 해야 하는 값에 몇 가지 지침을 제공 합니다.
 
-| 속성 이름 | 세부 정보 |
+| 속성 이름 | 설명 |
 | --- | --- |
 | **MSDeployComputerName** 대상 웹 서버 또는 서비스 끝점의 이름입니다. | 대상 웹 서버에서 원격 에이전트 서비스를 배포 하는 경우에 대상 컴퓨터 이름을 지정할 수 있습니다 (예를 들어 **TESTWEB1** 또는 **TESTWEB1.fabrikam.net**), 또는 원격을 지정할 수 있습니다 에이전트 끝점 (예를 들어 `http://TESTWEB1/MSDEPLOYAGENTSERVICE`). 배포는 각각의 경우에서 동일한 방식으로 작동합니다. 서비스 끝점을 지정 하 고 쿼리 문자열 매개 변수로 IIS 웹 사이트의 이름을 포함 하는지 대상 웹 서버에 웹 배포 처리기를 배포 하는 경우 (예를 들어 `https://STAGEWEB1:8172/MSDeploy.axd?site=DemoSite`). |
 | **MSDeployAuth** 웹 배포에서 원격 컴퓨터에 인증 하는 데 사용 해야 하는 메서드. | 이 값 설정 해야 **NTLM** 또는 **기본**합니다. 일반적으로 사용 합니다 **NTLM** 원격 에이전트 서비스에 배포 하는 경우 및 **기본** 웹 배포 처리기에 배포 하는 경우. 기본 인증을 사용 하는 경우 사용자 이름 및 배포를 수행 하기 위해 IIS 웹 배포 도구 (웹 배포)를 가장 해야 하는 암호를 지정 해야 하는 또한 합니다. 이 예제에서는 이러한 값을 통해 제공 된 **MSDeployUsername** 및 **MSDeployPassword** 속성입니다. NTLM 인증을 사용 하면 이러한 속성을 생략할 수도 있고 빈 상태로 둡니다. |
 | **MSDeployUsername** 웹 배포 기본 인증을 사용 하는 경우이 계정을 원격 컴퓨터에서 사용 합니다. | 형식을 따라야 *도메인*\*username * (예를 들어 **FABRIKAM\matt**). 기본 인증을 지정 하는 경우에이 값이 사용 됩니다. NTLM 인증을 사용 하는 경우에 속성을 생략할 수 있습니다. 값을 제공 하는 경우 무시 됩니다. |
 | **MSDeployPassword** 웹 배포 기본 인증을 사용 하는 경우이 암호는 원격 컴퓨터에 사용 됩니다. | 이것은에 지정 된 사용자 계정에 대 한 암호는 **MSDeployUsername** 속성입니다. 기본 인증을 지정 하는 경우에이 값이 사용 됩니다. NTLM 인증을 사용 하는 경우에 속성을 생략할 수 있습니다. 값을 제공 하는 경우 무시 됩니다. |
-| **ContactManagerIisPath** 않아 MVC 응용 프로그램을 배포 하려는 IIS 경로입니다. | IIS 관리자에서 폼에 표시 되는 경로 여야 하며이 [*IIS 웹 사이트 이름을*] / [*웹**응용 프로그램 이름*]. IIS 웹 사이트 응용 프로그램을 배포 하기 전에 존재 해야 한다는 것을 기억 합니다. 예를 들어 DemoSite 라는 IIS 웹 사이트를 만든 경우 DemoSite/ContactManager로 MVC 응용 프로그램에 대 한 IIS 경로 지정할 수 있습니다. |
+| **ContactManagerIisPath** 않아 MVC 응용 프로그램을 배포 하려는 IIS 경로입니다. | IIS 관리자에서 폼에 표시 되는 경로 여야 하며이 [*IIS 웹 사이트 이름을*] / [*웹 * * 응용 프로그램 이름*]. IIS 웹 사이트 응용 프로그램을 배포 하기 전에 존재 해야 한다는 것을 기억 합니다. 예를 들어 DemoSite 라는 IIS 웹 사이트를 만든 경우 DemoSite/ContactManager로 MVC 응용 프로그램에 대 한 IIS 경로 지정할 수 있습니다. |
 | **ContactManagerServiceIisPath** 않아 WCF 서비스를 배포 하려는 IIS 경로입니다. | 예를 들어 DemoSite 라는 IIS 웹 사이트를 만든 경우으로 WCF 서비스에 대 한 IIS 경로도 지정할 수 **DemoSite/ContactManagerService**합니다. |
 | **ContactManagerTargetUrl** WCF 서비스를 연결할 수 있는 URL입니다. | 형식을 따릅니다 [*IIS 웹 사이트 루트 URL*] / [*서비스 응용 프로그램 이름*] / [*서비스 끝점*]. 예를 들어, IIS 웹 사이트 포트 85에서 만든 경우 URL 수행 되는 폼 `http://localhost:85/ContactManagerService/ContactService.svc`합니다. MVC 응용 프로그램과 WCF 서비스는 동일한 서버에 배포 해야 합니다. 결과적으로,이 URL만 설치 된 컴퓨터에서 액세스 합니다. 이 때문에 URL에서 localhost 또는 IP 주소 대신 컴퓨터 이름 또는 호스트 헤더를 사용 하는 것이 좋습니다. 컴퓨터 이름 또는 호스트 헤더를 사용 하는 경우는 [루프백 확인](https://go.microsoft.com/?linkid=9805131) IIS의 보안 기능은 URL을 차단 하 고 반환 될 수 있습니다는 **HTTP 401.1-권한이 없음** 오류입니다. |
 | **CmDatabaseConnectionString** 데이터베이스 서버에 대 한 연결 문자열입니다. | 연결 문자열 모두 자격 증명을 사용 하 여 VSDBCMD 데이터베이스 서버에 연결 하는 데이터베이스를 만들고 사용 하 여 웹 서버 응용 프로그램 풀 데이터베이스 서버에 연결 하는 데이터베이스와 상호 작용 하는 자격 증명을 결정 합니다. 기본적으로 두 가지 선택 여기 합니다. 지정할 수 있습니다 **통합 보안 = true**, 통합된 Windows 인증을 사용 하는 경우: **데이터 원본 = TESTDB1; 통합 보안 = true** 사용 하 여 데이터베이스는 만든이 경우 실행 파일인 VSDBCMD를 실행 하는 사용자 및 응용 프로그램의 자격 증명에는 웹 서버 컴퓨터 계정의 id를 사용 하 여 데이터베이스를 액세스 합니다. 또는 사용자 이름 및 SQL Server 계정의 암호를 지정할 수 있습니다. 이 경우 SQL Server 자격 증명 VSDBCMD 데이터베이스를 만들려고 하 고 데이터베이스와 상호 작용 하는 응용 프로그램 풀에서 사용 됩니다: **데이터 원본 = TESTDB1; 사용자 Id = ASqlUser; 암호 = Pa$ $w0rd** 연습이이 항목에서는 Windows 통합된 인증을 사용 합니다 한다고 가정 합니다. |

@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/understanding-the-build-process
 msc.type: authoredcontent
 ms.openlocfilehash: 3efcefc40dc135ff42f55911036f8b38b5aa13b1
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/15/2018
 ---
 <a name="understanding-the-build-process"></a>빌드 프로세스 이해
 ====================
@@ -86,7 +86,7 @@ MSBuild의 실행을 시작, 로드이 시점에서 *Publish.proj* 파일 및 �
 [!code-xml[Main](understanding-the-build-process/samples/sample2.xml)]
 
 
-**TargetEnvPropsFile** 매개 변수 지정는 *Env Dev.proj* 파일 이기 때문에 MSBuild의 내용을 병합 하는 *Env Dev.proj* 파일는  *Publish.proj* 파일입니다.
+**TargetEnvPropsFile** 매개 변수 지정는 *Env Dev.proj* 파일 이기 때문에 MSBuild의 내용을 병합 하는 *Env Dev.proj* 파일는 * Publish.proj* 파일입니다.
 
 MSBuild에서 병합 된 프로젝트 파일에서 발생 하는 다음 요소는 속성 그룹입니다. 속성은 파일에 나타나는 순서 대로 처리 됩니다. MSBuild는 지정 된 조건을 충족 제공 각 속성에 대 한 키-값 쌍을 만듭니다. 나중에 파일에 정의 된 속성 이름이 같은 파일에 앞에서 정의한 속성을 덮어씁니다. 예를 들어는 **OutputRoot** 속성입니다.
 
@@ -132,7 +132,7 @@ MSBuild 항목 목록이 작성 하 여이 명령을 처리 **ProjectsToBuild**�
 [!code-xml[Main](understanding-the-build-process/samples/sample7.xml)]
 
 
-대상에 포함 된 통지는 **ItemGroup** 요소입니다. 속성 또는 내에서 항목을 정의 하는 경우는 **대상** 요소를 만드는 *동적* 속성 및 항목입니다. 즉, 속성 또는 항목 대상을 실행 될 때까지 처리 되지 않습니다. 출력 디렉터리 없거나 빌드할 수 있도록 빌드 프로세스가 시작 될 때까지 파일을 포함 하지 수는  **\_FilesToDelete** 정적 항목으로 나열; 실행이 진행 될 때까지 기다려야 합니다. 이와 같이 대상에서 동적 항목으로 목록을 작성 합니다.
+대상에 포함 된 통지는 **ItemGroup** 요소입니다. 속성 또는 내에서 항목을 정의 하는 경우는 **대상** 요소를 만드는 *동적* 속성 및 항목입니다. 즉, 속성 또는 항목 대상을 실행 될 때까지 처리 되지 않습니다. 출력 디렉터리 없거나 빌드할 수 있도록 빌드 프로세스가 시작 될 때까지 파일을 포함 하지 수는 ** \_FilesToDelete** 정적 항목으로 나열; 실행이 진행 될 때까지 기다려야 합니다. 이와 같이 대상에서 동적 항목으로 목록을 작성 합니다.
 
 > [!NOTE]
 > 이 경우 때문에 **Clean** 대상이 실행 될 첫 번째, 동적 항목 그룹을 사용 하려면 실제 않아도 됩니다. 그러나 이러한 유형의 시나리오에서는 동적 속성 및 항목을 사용 하 여 것이 좋습니다 이므로 특정 시점에 다른 순서로 대상을 실행 하는 것이 좋습니다.  
@@ -173,7 +173,7 @@ MSBuild 항목 목록이 작성 하 여이 명령을 처리 **ProjectsToBuild**�
 
 이러한 항목을 참조 될 때 생성 된 배포 패키지는 **BuildProjects** 대상이 실행 합니다. 있습니다 수 없습니다.이 항목을 정의 이러한 정적으로 프로젝트 파일에까지 존재 하지 않으므로 항목 참조는 파일 때문에 **BuildProjects** 대상이 실행 됩니다. 대신, 항목 정의 해야 동적으로 될 때까지 호출 되지 않는 대상 내에서 후의 **BuildProjects** 대상이 실행 됩니다.
 
-항목을이 대상 & #x 2014 내에서 사용 되지 않습니다;이 대상 항목 및 각 항목 값과 관련 된 메타 데이터를 단순히 작성. 이러한 요소를 처리 한 후의 **PublishPackages** 항목의 경로를 두 개의 값이 포함 됩니다는 *ContactManager.Mvc.deploy.cmd* 파일 및 경로를  *ContactManager.Service.deploy.cmd* 파일입니다. 이러한 파일은 호출 해야 하는 파일 및 웹 배포는 각 프로젝트에 대 한 웹 패키지의 일부로 이러한 파일을 만듭니다는 패키지를 배포 하기 위해 대상 서버에 있습니다. 이러한 파일 중 하나를 열면 기본적으로 MSDeploy.exe 명령은 다양 한 빌드 관련 매개 변수 값으로 표시 됩니다.
+항목을이 대상 & #x 2014 내에서 사용 되지 않습니다;이 대상 항목 및 각 항목 값과 관련 된 메타 데이터를 단순히 작성. 이러한 요소를 처리 한 후의 **PublishPackages** 항목의 경로를 두 개의 값이 포함 됩니다는 *ContactManager.Mvc.deploy.cmd* 파일 및 경로를 * ContactManager.Service.deploy.cmd* 파일입니다. 이러한 파일은 호출 해야 하는 파일 및 웹 배포는 각 프로젝트에 대 한 웹 패키지의 일부로 이러한 파일을 만듭니다는 패키지를 배포 하기 위해 대상 서버에 있습니다. 이러한 파일 중 하나를 열면 기본적으로 MSDeploy.exe 명령은 다양 한 빌드 관련 매개 변수 값으로 표시 됩니다.
 
 **DbPublishPackages** 항목의 경로를 단일 값을 포함 됩니다는 *ContactManager.Database.deploymanifest* 파일입니다.
 
@@ -193,7 +193,7 @@ MSBuild 항목 목록이 작성 하 여이 명령을 처리 **ProjectsToBuild**�
 [!code-xml[Main](understanding-the-build-process/samples/sample10.xml)]
 
 
-한 예로이 *대상 일괄 처리*합니다. MSBuild 프로젝트 파일의 일괄 처리는 컬렉션을 반복 하기 위한 기술입니다. 값은 **출력** 특성 **"% (DbPublishPackages.Identity)"**, 참조 하는 **Identity** 의 메타 데이터 속성은 **DbPublishPackages**  항목 목록입니다. 이 표기 **Outputs=%***(ItemList.ItemMetadataName)*,으로 변환 됩니다.
+한 예로이 *대상 일괄 처리*합니다. MSBuild 프로젝트 파일의 일괄 처리는 컬렉션을 반복 하기 위한 기술입니다. 값은 **출력** 특성 **"% (DbPublishPackages.Identity)"**, 참조 하는 **Identity** 의 메타 데이터 속성은 **DbPublishPackages ** 항목 목록입니다. 이 표기 **Outputs=%***(ItemList.ItemMetadataName)*,으로 변환 됩니다.
 
 - 에 있는 항목을 분할 **DbPublishPackages** 동일한 포함 된 항목의 일괄 처리로 **Identity** 메타 데이터 값입니다.
 - 대상 일괄 처리에 한 번씩 실행 합니다.
@@ -204,13 +204,13 @@ MSBuild 항목 목록이 작성 하 여이 명령을 처리 **ProjectsToBuild**�
 
 이 경우 동일한 경로 및 파일 이름으로 둘 이상의 항목이 없어야, 때문에 기본적으로 최선을 다하고 하나의 일괄 처리 크기를 사용 합니다. 대상 마다 데이터베이스 패키지를 한 번 실행 됩니다.
 
-비슷한 표기법을 볼 수는  **\_Cmd** 속성을 적절 한 스위치도 VSDBCMD 명령을 작성 합니다.
+비슷한 표기법을 볼 수는 ** \_Cmd** 속성을 적절 한 스위치도 VSDBCMD 명령을 작성 합니다.
 
 
 [!code-xml[Main](understanding-the-build-process/samples/sample11.xml)]
 
 
-이 경우 **%(DbPublishPackages.DatabaseConnectionString)**, **%(DbPublishPackages.TargetDatabase)**, 및 **%(DbPublishPackages.FullPath)** 를 모두 참조 메타 데이터 값은 **DbPublishPackages** 항목 컬렉션입니다. **\_Cmd** 속성은 사용 된 **Exec** 명령을 호출 하는 작업입니다.
+이 경우 **%(DbPublishPackages.DatabaseConnectionString)**, **%(DbPublishPackages.TargetDatabase)**, 및 **%(DbPublishPackages.FullPath)** 를 모두 참조 메타 데이터 값은 **DbPublishPackages** 항목 컬렉션입니다. ** \_Cmd** 속성은 사용 된 **Exec** 명령을 호출 하는 작업입니다.
 
 
 [!code-xml[Main](understanding-the-build-process/samples/sample12.xml)]

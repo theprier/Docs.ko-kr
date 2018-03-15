@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/the-contact-manager-solution
 msc.type: authoredcontent
 ms.openlocfilehash: b7f691a1ee855788f6a57616aea35d960e4c85c7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/15/2018
 ---
 <a name="the-contact-manager-solution"></a>Contact Manager 솔루션
 ====================
@@ -35,10 +35,10 @@ Contact Manager 솔루션 4 개의 개별 프로젝트가 이루어져 있습니
 
 ![](the-contact-manager-solution/_static/image1.png)
 
-- **ContactManager.Mvc**합니다. 이 ASP.NET MVC 3 웹 응용 프로그램 프로젝트를 솔루션에 대 한 진입점을 나타냅니다. 만들고 연락처 세부 정보를 볼 수 있는 사용자가 제공 하는 등 몇 가지 기본 웹 응용 프로그램 기능을 제공 합니다. 응용 프로그램 연락처와 인증 및 권한 부여를 관리 하는 ASP.NET 응용 프로그램 서비스 데이터베이스를 관리 하려면 Windows Communication Foundation (WCF) 서비스를 사용 합니다.
-- **ContactManager.Database**합니다. 이것이 Visual Studio 데이터베이스 프로젝트입니다. 프로젝트는 저장소 연락처 세부 정보는 데이터베이스에 대 한 스키마를 정의 합니다.
-- **ContactManager.Service**합니다. 이 WCF 웹 서비스 프로젝트입니다. 검색, 업데이트 및 삭제 (CRUD) 작업에서 수행 하는 호출자를 허용 하는 끝점을 만들려면 WCF 서비스 노출 된 **ContactManager** 데이터베이스입니다. 서비스는 **ContactManager** 데이터베이스 및 **ContactManager.Common.dll** 어셈블리입니다.
-- **ContactManager.Common**합니다. 이 클래스 라이브러리 프로젝트입니다. WCF 서비스는이 어셈블리에 정의 된 형식을 사용 합니다.
+- **ContactManager.Mvc**. 이 ASP.NET MVC 3 웹 응용 프로그램 프로젝트를 솔루션에 대 한 진입점을 나타냅니다. 만들고 연락처 세부 정보를 볼 수 있는 사용자가 제공 하는 등 몇 가지 기본 웹 응용 프로그램 기능을 제공 합니다. 응용 프로그램 연락처와 인증 및 권한 부여를 관리 하는 ASP.NET 응용 프로그램 서비스 데이터베이스를 관리 하려면 Windows Communication Foundation (WCF) 서비스를 사용 합니다.
+- **ContactManager.Database**. 이것이 Visual Studio 데이터베이스 프로젝트입니다. 프로젝트는 저장소 연락처 세부 정보는 데이터베이스에 대 한 스키마를 정의 합니다.
+- **ContactManager.Service**. 이 WCF 웹 서비스 프로젝트입니다. 검색, 업데이트 및 삭제 (CRUD) 작업에서 수행 하는 호출자를 허용 하는 끝점을 만들려면 WCF 서비스 노출 된 **ContactManager** 데이터베이스입니다. 서비스는 **ContactManager** 데이터베이스 및 **ContactManager.Common.dll** 어셈블리입니다.
+- **ContactManager.Common**. 이 클래스 라이브러리 프로젝트입니다. WCF 서비스는이 어셈블리에 정의 된 형식을 사용 합니다.
 
 솔루션에는 게시 라는 솔루션 폴더를 포함 됩니다. 다양 한 사용자 지정 프로젝트 파일 및 제어 빌드 및 배포 프로세스를 조작 하는 방법을 보여 주기는 명령 파일을 포함 합니다. 이 자습서의 뒷부분에서 좀 더 자세히 다룰는 이러한 합니다.
 

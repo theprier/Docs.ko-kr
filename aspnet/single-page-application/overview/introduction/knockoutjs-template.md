@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/introduction/knockoutjs-template
 msc.type: authoredcontent
 ms.openlocfilehash: e6c0c45bed098a8a1160ff11e4f77244bf55ffd3
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/15/2018
 ---
 <a name="single-page-application-knockoutjs-template"></a>단일 페이지 응용 프로그램: KnockoutJS 서식 파일
 ====================
@@ -94,7 +94,7 @@ Visual Studio 프로젝트 모델 폴더는 서버 쪽에서 사용 되는 모�
 
 **TodoItem, TodoList**
 
-이 Entity Framework Code First에 대 한 데이터베이스 모델입니다. 이러한 모델 서로를 가리키는 속성을 갖고 있는지 확인 합니다. `ToDoList`ToDoItems, 및 각의 컬렉션을 포함 `ToDoItem` 다시 ToDoList 부모에 대 한 참조가 있습니다. 이러한 속성은 탐색 속성을 라고 하 고 할 일 목록 및 해당 할 일 항목 대 다 관계를 나타냅니다.
+이 Entity Framework Code First에 대 한 데이터베이스 모델입니다. 이러한 모델 서로를 가리키는 속성을 갖고 있는지 확인 합니다. `ToDoList` ToDoItems, 및 각의 컬렉션을 포함 `ToDoItem` 다시 ToDoList 부모에 대 한 참조가 있습니다. 이러한 속성은 탐색 속성을 라고 하 고 할 일 목록 및 해당 할 일 항목 대 다 관계를 나타냅니다.
 
 `ToDoItem` 클래스도 사용 하는 **[ForeignKey]** 되도록 지정 하려면 특성 `ToDoListId` 는 외래 키에 `ToDoList` 테이블입니다. 데이터베이스에 외래 키 제약 조건을 추가할 EF를 인지를 나타냅니다.
 
@@ -162,7 +162,7 @@ CRUD 작업에 대해 웹 API를 사용 하는 방법에 대 한 자세한 참�
 
 ## <a name="mvc-controllers-and-views"></a>MVC 컨트롤러와 뷰
 
-MVC 컨트롤러도 솔루션의 컨트롤러 폴더에 있습니다. `HomeController`응용 프로그램에 대 한 기본 HTML을 렌더링합니다. 홈 컨트롤러에 대 한 보기 Views/Home/Index.cshtml에 정의 됩니다. 사용자 로그인 여부에 따라 다른 콘텐츠를 렌더링 하는 홈 보기:
+MVC 컨트롤러도 솔루션의 컨트롤러 폴더에 있습니다. `HomeController` 응용 프로그램에 대 한 기본 HTML을 렌더링합니다. 홈 컨트롤러에 대 한 보기 Views/Home/Index.cshtml에 정의 됩니다. 사용자 로그인 여부에 따라 다른 콘텐츠를 렌더링 하는 홈 보기:
 
 [!code-cshtml[Main](knockoutjs-template/samples/sample4.cshtml)]
 

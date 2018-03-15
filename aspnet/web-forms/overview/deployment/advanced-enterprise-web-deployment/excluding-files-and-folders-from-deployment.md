@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/excluding-files-and-folders-from-deployment
 msc.type: authoredcontent
 ms.openlocfilehash: 80810415bac473a58f60110fb9d08772e0627bd5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/15/2018
 ---
 <a name="excluding-files-and-folders-from-deployment"></a>배포에서 파일 및 폴더 제외
 ====================
@@ -95,7 +95,7 @@ Visual Studio에서 웹 응용 프로그램 프로젝트 속성을 구성할 때
 1. Visual Studio 2010에서 솔루션을 엽니다.
 2. 에 **솔루션 탐색기** 창 웹 응용 프로그램 프로젝트 노드를 마우스 오른쪽 단추로 클릭 (예를 들어 **ContactManager.Mvc**)를 가리키고 **추가**, 클릭하고**새 항목**합니다.
 3. 에 **새 항목 추가** 대화 상자는 **XML 파일** 템플릿.
-4. 에 **이름** 상자에 입력 합니다 *[프로젝트 이름]***. wpp.targets** (예를 들어 **ContactManager.Mvc.wpp.targets**), 를클릭한다음 **추가**합니다.
+4. 에 **이름** 상자에 입력 합니다 *[프로젝트 이름] * * *.wpp.targets** (예를 들어 **ContactManager.Mvc.wpp.targets**)를 클릭 하 고 **추가**.
 
     ![](excluding-files-and-folders-from-deployment/_static/image3.png)
 
