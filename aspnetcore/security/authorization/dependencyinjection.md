@@ -23,28 +23,28 @@ ms.lasthandoff: 01/30/2018
 
 권한 부여 처리기 내부에서 평가해야 하는 규칙의 리포지토리가 존재하며, 해당 리포지토리가 서비스 컬렉션에 등록되어 있다고 가정해보겠습니다. 그러면 권한 부여가 이 종속성을 해결해서 생성자에 주입하게 됩니다.
 
-예를 들어, 처리기에서 ASP.NET의 로깅 인프라를 사용하려면 처리기에 ILoggerFactory를 주입해야 합니다. 이 경우, 처리기의 코드는 다음과 같을 수 있습니다.
+예를 들어, 처리기에서 ASP.NET의 로깅 인프라를 사용하려면 처리기에 `ILoggerFactory`를 주입해야 합니다. 이 경우, 처리기의 코드는 다음과 같을 수 있습니다.
 
 ```csharp
 public class LoggingAuthorizationHandler : AuthorizationHandler<MyRequirement>
-{
-    ILogger _logger;
+   {
+       ILogger _logger;
 
-    public LoggingAuthorizationHandler(ILoggerFactory loggerFactory)
-    {
-        _logger = loggerFactory.CreateLogger(this.GetType().FullName);
-    }
+       public LoggingAuthorizationHandler(ILoggerFactory loggerFactory)
+       {
+           _logger = loggerFactory.CreateLogger(this.GetType().FullName);
+       }
 
-    protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, MyRequirement requirement)
-    {
-        _logger.LogInformation("Inside my handler");
-        // Check if the requirement is fulfilled.
-        return Task.CompletedTask;
-    }
-}
-```
+       protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, MyRequirement requirement)
+       {
+           _logger.LogInformation("Inside my handler");
+           // Check if the requirement is fulfilled.
+           return Task.CompletedTask;
+       }
+   }
+   ```
 
-그리고 `services.AddSingleton()`를 이용해서 처리기를 등록합니다.
+그리고 `services.AddSingleton()`를 이용해서 처리기를 등록합니다:
 
 ```csharp
 services.AddSingleton<IAuthorizationHandler, LoggingAuthorizationHandler>();

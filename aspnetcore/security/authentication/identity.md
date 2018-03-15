@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core에 Id 소개"
+title: "ASP.NET Core Identity 소개"
 author: rick-anderson
-description: "ASP.NET Core 응용 프로그램과 함께 Id를 사용 합니다. 암호 요구 사항 설정 (RequireDigit, RequiredLength, RequiredUniqueChars 등) 포함 되어 있습니다."
+description: "ASP.NET Core 응용 프로그램에서 Identity 사용하기 암호 요구 사항 설정 (RequireDigit, RequiredLength, RequiredUniqueChars 등) 포함 되어 있습니다."
 manager: wpickett
 ms.author: riande
 ms.date: 01/24/2018
@@ -11,11 +11,11 @@ ms.topic: article
 uid: security/authentication/identity
 ms.openlocfilehash: 8cbf002a9280650a08ae8d49b5b6d23bafb8be18
 ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/02/2018
 ---
-# <a name="introduction-to-identity-on-aspnet-core"></a>ASP.NET Core에 Id 소개
+# <a name="introduction-to-identity-on-aspnet-core"></a>ASP.NET Core Identity 소개
 
 여 [Pranav Rastogi](https://github.com/rustd), [Rick Anderson](https://twitter.com/RickAndMSFT), [Tom Dykstra](https://github.com/tdykstra), Jon Galloway [Erik Reitan](https://github.com/Erikre), 및 [Steve Smith](https://ardalis.com/)
 

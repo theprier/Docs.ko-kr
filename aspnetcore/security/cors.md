@@ -11,7 +11,7 @@ ms.topic: article
 uid: security/cors
 ms.openlocfilehash: ee61798fc1bde89ca3712eae9b7c4413e58cf70d
 ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/02/2018
 ---
@@ -238,7 +238,7 @@ User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6
 Host: myservice.azurewebsites.net
 ```
 
-서버 요청을 허용 하는 경우 응답에 대 한 액세스 제어-허용-원본 헤더를 설정 합니다. 이 헤더의 값은 요청에서 원본 헤더 마치도록 와일드 카드 값 "*", 모든 원본을 허용 되는 의미 합니다.
+서버는 요청을 허용하는 경우에 한해서 Access-Control-Allow-Origin 헤더를 지정해서 응답을 반환합니다. 이 헤더의 값은 Origin 헤더 값과 동일하거나, 모든 원본이 허용됨을 뜻하는 와일드카드 값인 "*" 이어야 합니다
 
 ```
 HTTP/1.1 200 OK
