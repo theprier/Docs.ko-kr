@@ -1,5 +1,5 @@
 ---
-title: "Visual Studio 및 Git을 사용하여 Azure에 연속 배포"
+title: "Visual Studio를 사용 하 여 Azure 및 ASP.NET Core를 사용 하 여 Git 연속 배포"
 author: rick-anderson
 description: "Visual Studio를 사용하여 ASP.NET Core 웹앱을 만들고 연속 배포를 위한 Git을 사용하여 Azure App Service에 배포하는 방법을 알아봅니다."
 manager: wpickett
@@ -10,13 +10,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-apps/azure-continuous-deployment
-ms.openlocfilehash: ea4788b5daead9e355e13b963c025dd110eb2bff
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 7302de1ace62dba53b317039aac7f4763314aa19
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="continuous-deployment-to-azure-for-aspnet-core-with-visual-studio-and-git"></a>Visual Studio 및 Git에 ASP.NET Core에 대 한 Azure로 지속적인 배포
+# <a name="continuous-deployment-to-azure-with-visual-studio-and-git-with-aspnet-core"></a>Visual Studio를 사용 하 여 Azure 및 ASP.NET Core를 사용 하 여 Git 연속 배포
 
 작성자: [Erik Reitan](https://github.com/Erikre)
 
@@ -29,7 +29,7 @@ ms.lasthandoff: 03/02/2018
 > [!NOTE]
 > 이 자습서를 완료 하려면 Microsoft Azure 계정은 필수입니다. 계정을 가져오려면 [MSDN 구독자 혜택을 활성화](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/?WT.mc_id=A261C142F) 또는 [무료 평가판에 등록](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)합니다.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 이 자습서에서는 다음 소프트웨어가 설치 되어 가정 합니다.
 
@@ -43,7 +43,7 @@ ms.lasthandoff: 03/02/2018
 
 1. **파일** 메뉴에서 **새로 만들기** > **프로젝트**를 선택합니다.
 
-1. **ASP.NET Core 웹 응용 프로그램** 프로젝트 템플릿을 선택합니다. **설치됨** > **템플릿** > **Visual C#** > **.NET Core** 아래에 표시됩니다. 프로젝트 이름을 `SampleWebAppDemo`로 지정합니다. **새 Git 리포지토리 만들기** 옵션을 선택하고 **확인**을 클릭합니다.
+1. **ASP.NET Core 웹 응용 프로그램** 프로젝트 템플릿을 선택합니다. **설치됨** > **템플릿** > **Visual C#** > **.NET Core** 아래에 표시됩니다. 프로젝트 이름을 `SampleWebAppDemo`로 지정합니다. 선택 된 **새 Git 리포지토리 만들기** 옵션 **확인**합니다.
 
    ![새 프로젝트 대화 상자](azure-continuous-deployment/_static/01-new-project.png)
 
@@ -229,7 +229,7 @@ Git는 Azure 앱 서비스 웹 앱을 배포 하는 데 사용할 수 있는 분
 
 업데이트 된 웹 응용 프로그램을 선택 하 여 볼 **찾아보기** Azure 포털에서 또는 브라우저를 열고 웹 앱에 대 한 URL을 입력 하 여 웹 앱 블레이드에서 합니다. 예: `http://SampleWebAppDemo.azurewebsites.net`
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 * [VSTS 연속 배포를 사용 하 여 Azure 웹 앱을 빌드하고 게시를 사용 하 여](/vsts/build-release/archive/apps/aspnet/aspnet-4-ci-cd-azure-automatic)
 * [프로젝트 Kudu](https://github.com/projectkudu/kudu/wiki)

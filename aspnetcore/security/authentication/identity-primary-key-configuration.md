@@ -1,7 +1,7 @@
 ---
-title: "구성 Id 기본 키 데이터 형식"
+title: "ASP.NET Core에서 Id 기본 키 데이터 형식 구성"
 author: AdrienTorris
-description: "이 문서에서는 ASP.NET Core Id 기본 키에 사용 되는 원하는 데이터 형식 구성 하기 위한 단계를 설명 합니다."
+description: "ASP.NET Core Id 기본 키에 사용 되는 원하는 데이터 형식 구성 하기 위한 단계에 알아봅니다."
 manager: wpickett
 ms.author: scaddie
 ms.date: 09/28/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-primary-key-configuration
-ms.openlocfilehash: ff1c3aff3ea833081a25ea5fc4f2c2b65823f536
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 02482b81faa64b01765a90c2c6ffe9cf92b1a7e7
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="configure-the-aspnet-core-identity-primary-key-data-type"></a>ASP.NET Core Id 기본 키 데이터 형식 구성
+# <a name="configure-identity-primary-key-data-type-in-aspnet-core"></a>ASP.NET Core에서 Id 기본 키 데이터 형식 구성
 
 ASP.NET Core Identity를 사용 하면 기본 키를 나타내는 데 사용 되는 데이터 형식을 구성할 수 있습니다. 사용 하 여 identity는 `string` 기본적으로 데이터 형식입니다. 이 동작을 재정의할 수 있습니다.
 

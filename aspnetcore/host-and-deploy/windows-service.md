@@ -1,5 +1,5 @@
 ---
-title: "Windows 서비스의 호스트"
+title: "Windows 서비스에서 ASP.NET Core 호스트"
 author: tdykstra
 description: "Windows 서비스에서 ASP.NET Core 응용 프로그램을 호스트 하는 방법을 알아봅니다."
 manager: wpickett
@@ -10,21 +10,21 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: c14a1f62bce4d06be3b8e6356f45cd5e330a0751
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: f3455e47cfc06a4492dc4e34871b348184c6ecfb
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="host-an-aspnet-core-app-in-a-windows-service"></a>Windows 서비스에서 ASP.NET Core 응용 프로그램 호스트
+# <a name="host-aspnet-core-in-a-windows-service"></a>Windows 서비스에서 ASP.NET Core 호스트
 
-으로 [Tom Dykstra](https://github.com/tdykstra)
+작성자: [Tom Dykstra](https://github.com/tdykstra)
 
 IIS를 사용 하 여 실행 하는 것 하지 않고 Windows에서 ASP.NET Core 응용 프로그램을 호스트 하는 권장된 방법은 [Windows 서비스](/dotnet/framework/windows-services/introduction-to-windows-service-applications)합니다. 응용 프로그램 자동으로 수행할 수는 Windows 서비스로 호스트 되는 경우 시작 후 다시 부팅 되 고 사용자의 개입 없이 충돌 합니다.
 
-[보거나 다운로드 샘플 코드](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/windows-service/sample) ([다운로드 하는 방법을](xref:tutorials/index#how-to-download-a-sample)). 에 대 한 샘플 응용 프로그램을 실행 하는 방법 참조 샘플의 *README.md* 파일입니다.
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/windows-service/sample) ([다운로드 방법](xref:tutorials/index#how-to-download-a-sample)). 에 대 한 샘플 응용 프로그램을 실행 하는 방법 참조 샘플의 *README.md* 파일입니다.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 * 앱을.NET Framework 런타임에 실행 해야 합니다. 에 *.csproj* 파일,이 대 한 적절 한 값을 지정 [TargetFramework](/nuget/schema/target-frameworks) 및 [RuntimeIdentifier](/dotnet/articles/core/rid-catalog)합니다. 예를 들면 다음과 같습니다.
 
@@ -34,7 +34,7 @@ IIS를 사용 하 여 실행 하는 것 하지 않고 Windows에서 ASP.NET Core
 
 * 사용 해야 합니다 (뿐 아니라 내부 네트워크)에서 인터넷을 통해 요청을 수신 하는 응용 프로그램을 하는 경우는 [HTTP.sys](xref:fundamentals/servers/httpsys) 웹 서버 (이전의 [WebListener](xref:fundamentals/servers/weblistener) ASP.NET Core 1.x 앱에 대 한) 대신[Kestrel](xref:fundamentals/servers/kestrel)합니다. IIS는 가장자리 배포에 Kestrel와 역방향 프록시 서버로 사용 하기 위한 권장 됩니다. 자세한 내용은 [Kestrel를 역방향 프록시와 함께 사용할 경우](xref:fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy)를 참조하세요.
 
-## <a name="getting-started"></a>시작
+## <a name="get-started"></a>시작
 
 이 섹션에서는 서비스에서 실행 되도록 기존 ASP.NET Core 프로젝트를 설정 하는 데 필요한 최소한의 내용을 설명 합니다.
 
@@ -117,7 +117,7 @@ IIS를 사용 하 여 실행 하는 것 하지 않고 Windows에서 ASP.NET Core
 
 [!code-csharp[](windows-service/sample/CustomWebHostService.cs?name=Logging&highlight=7)]
 
-## <a name="acknowledgments"></a>승인
+## <a name="acknowledgments"></a>감사의 글
 
 게시 된 원본의 도움을 받아이 문서의 작성 했습니다.
 

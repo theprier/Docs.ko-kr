@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-apps/troubleshoot
-ms.openlocfilehash: 27a46446e9bf63e96eecc392e6d6863e27b34730
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: e6a8404d3fe96a0136d7f874107b2cdf63e8e890
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="troubleshoot-aspnet-core-on-azure-app-service"></a>Azure 앱 서비스에서 ASP.NET Core 문제 해결
 
@@ -176,7 +176,7 @@ Stdout 로깅을 활성화 하지 않으면 다음이 단계를 따르십시오.
 >
 > ASP.NET Core 응용 프로그램의 일상적인 로깅에 대 한 로그 파일 크기를 제한 하 고 로그를 회전 하는 로깅 라이브러리를 사용 합니다. 자세한 내용은 참조 [제 3 자 로깅 공급자](xref:fundamentals/logging/index#third-party-logging-providers)합니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 * [ASP.NET Core의 오류 처리 소개](xref:fundamentals/error-handling)
 * [ASP.NET Core를 사용하는 Azure App Service 및 IIS에 대한 일반적인 오류 참조](xref:host-and-deploy/azure-iis-errors-reference)
@@ -184,4 +184,5 @@ Stdout 로깅을 활성화 하지 않으면 다음이 단계를 따르십시오.
 * ["502 잘못 된 게이트웨이" 및 "503 서비스를 사용할 수 없음" Azure 웹 앱에서 HTTP 오류 문제 해결](/app-service/app-service-web-troubleshoot-http-502-http-503)
 * [Azure 앱 서비스의 느린 웹 앱 성능 문제 해결](/azure/app-service/app-service-web-troubleshoot-performance-degradation)
 * [Azure에서 웹 앱에 대 한 응용 프로그램 성능 Faq](/azure/app-service/app-service-web-availability-performance-application-issues-faq)
+* [Azure 웹 앱 샌드박스 (앱 서비스 런타임 실행 제한)](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox)
 * [Azure Friday: Azure App Service 진단 및 문제 해결 환경(12분 비디오)](https://channel9.msdn.com/Shows/Azure-Friday/Azure-App-Service-Diagnostic-and-Troubleshooting-Experience)

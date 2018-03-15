@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-configuration
-ms.openlocfilehash: 469068af2fc12627a0a5d1c5623eb60bef51cea0
-ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
+ms.openlocfilehash: f8be8a555454a99a3e75b5cd3d42c11e1d7b2b7e
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="configure-identity"></a>Id 구성
 
@@ -36,7 +36,18 @@ ASP.NET Core Identity 쿠키 설정, 암호 정책 및 잠금 시간 등의 설�
 
 ### <a name="lockout"></a>잠금
 
+지정된 된 수의 실패 한 액세스 시도 후 일정 시간 동안에 대 한 사용자 잠그는 (기본값: 5 액세스 시도 실패 한 후 5 분 잠금). 실패 한 액세스 시도 횟수를 다시 설정 하 고 클록을 기본값으로 다시 설정 하는 성공적으로 인증 합니다.
+
+다음 예에서는 기본값을 보여 줍니다.
+
 [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo-Configuration/Startup.cs?range=29-30,39-42,50-52)]
+
+확인 [PasswordSignInAsync](/dotnet/api/microsoft.aspnetcore.identity.signinmanager-1.passwordsigninasync) 설정 `lockoutOnFailure` 를 `true`:
+
+```csharp
+var result = await _signInManager.PasswordSignInAsync(
+                 Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: true);
+```
 
 [IdentityOptions.Lockout](/dotnet/api/microsoft.aspnetcore.identity.identityoptions.lockout) 지정는 [LockoutOptions](/dotnet/api/microsoft.aspnetcore.identity.lockoutoptions) 표에 표시 된 속성을 사용 합니다.
 

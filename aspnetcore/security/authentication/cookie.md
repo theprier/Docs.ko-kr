@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/cookie
-ms.openlocfilehash: 2c08c4810a1952cc4890d46593d55f558b6ed8e9
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: bbc49a0d3ede66ad07ec3f1dea055cae5fec39ff
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="using-cookie-authentication-without-aspnet-core-identity"></a>ASP.NET Core Identity 없이 쿠키 인증을 사용 하 여
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 03/02/2018
 
 이전 인증 항목에 나와 있는 것 처럼 [ASP.NET Core Id](xref:security/authentication/identity) 만들고 로그인 유지 하기 위한 완전 한 완전 한 기능의 인증 공급자입니다. 그러나 다음 쿠키 기반 인증에 사용자 고유의 사용자 지정 인증 논리를 사용 하는 것이 좋습니다. ASP.NET Core Id 없이 독립 실행형 인증 공급자로 쿠키 기반 인증을 사용할 수 있습니다.
 
-[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/cookie/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/cookie/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ASP.NET Core에서 마이그레이션 쿠키 기반 인증에 대 한 내용은 2.0으로 1.x 참조 [마이그레이션 인증 및 ASP.NET 코어 2.0 (쿠키 기반 인증) 항목에 Id](xref:migration/1x-to-2x/identity-2x#cookie-based-authentication)합니다.
 
@@ -426,3 +426,5 @@ await HttpContext.Authentication.SignInAsync(
 
 * [Auth 2.0 변경 / 마이그레이션 알림](https://github.com/aspnet/Announcements/issues/262)
 * [구성표로 ID 제한](xref:security/authorization/limitingidentitybyscheme)
+* [클레임 기반 권한 부여](xref:security/authorization/claims)
+* [정책 기반 역할 검사](xref:security/authorization/roles#policy-based-role-checks)

@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/introduction-and-overview
 msc.type: authoredcontent
 ms.openlocfilehash: 6ae398f94c0ac3872601bdc8fd935f6d285793db
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/15/2018
 ---
 <a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2013"></a>ASP.NET 4.5 Web Forms 및 Visual Studio 2013 시작
 ====================
@@ -146,7 +146,7 @@ PayPal을 통한 반환한 검토 하 고 주문을 완료 수 있습니다.
 
 ![Wingtip Toys-순서 검토](introduction-and-overview/_static/image7.png)
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 시작 하기 전에 다음 소프트웨어가 컴퓨터에 설치 되어 있는지 확인 합니다.
 

@@ -5,16 +5,16 @@ author: spboyer
 manager: wpickett
 ms.author: spboyer
 ms.custom: mvc
-ms.date: 10/19/2016
+ms.date: 03/13/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/linux-apache
-ms.openlocfilehash: b11bc811b6aefce22b60a28afd72c2a2d0b26955
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 033adddc586b60c9f7453df5434617aa838737f8
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="host-aspnet-core-on-linux-with-apache"></a>Apache를 사용하여 Linux에서 ASP.NET Core 호스트
 
@@ -22,7 +22,7 @@ ms.lasthandoff: 03/02/2018
 
 설정 하는 방법은이 가이드를 사용 하 여 [Apache](https://httpd.apache.org/) 에 역방향 프록시 서버로 [CentOS 7](https://www.centos.org/) 에서 실행 되는 ASP.NET Core 웹 앱에 HTTP 트래픽을 리디렉션하기 위해 [Kestrel](xref:fundamentals/servers/kestrel)합니다. [mod_proxy 확장](http://httpd.apache.org/docs/2.4/mod/mod_proxy.html) 관련된 모듈 역방향 프록시 서버를 만듭니다.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 1. Sudo 권한으로 표준 사용자 계정을 사용 하 여 CentOS 7을 실행 하는 서버
 2. ASP.NET Core 응용 프로그램
@@ -112,27 +112,32 @@ Complete!
 ```
 
 > [!NOTE]
-> 이 예제에서는 출력 CentOS 7 버전은 64 비트 이후 httpd.86_64을 반영 합니다. Apache를 설치한 위치를 확인하려면 명령 프롬프트에서 `whereis httpd`를 실행합니다. 
+> 이 예제에서는 출력 CentOS 7 버전은 64 비트 이후 httpd.86_64을 반영 합니다. Apache를 설치한 위치를 확인하려면 명령 프롬프트에서 `whereis httpd`를 실행합니다.
 
 ### <a name="configure-apache-for-reverse-proxy"></a>역방향 프록시에 Apache 구성
 
 Apache의 구성 파일은 `/etc/httpd/conf.d/` 디렉터리 내에 위치합니다. 모든 파일이 *.conf* 확장은 모듈 구성 파일 뿐 아니라 알파벳 순서로 처리 `/etc/httpd/conf.modules.d/`, 구성이 포함 된 모듈을 로드 하는 데 필요한 파일입니다.
 
-명명 된 앱에 대 한 구성 파일을 만드는 `hellomvc.conf`:
+명명 된 구성 파일을 만드는 *hellomvc.conf*, 응용 프로그램:
 
 ```
 <VirtualHost *:80>
     ProxyPreserveHost On
     ProxyPass / http://127.0.0.1:5000/
     ProxyPassReverse / http://127.0.0.1:5000/
-    ErrorLog /var/log/httpd/hellomvc-error.log
-    CustomLog /var/log/httpd/hellomvc-access.log common
+    ServerName www.example.com
+    ServerAlias *.example.com
+    ErrorLog ${APACHE_LOG_DIR}hellomvc-error.log
+    CustomLog ${APACHE_LOG_DIR}hellomvc-access.log common
 </VirtualHost>
 ```
 
-**VirtualHost** 노드는 서버에서 하나 이상의 파일에 여러 번 나타날 수 있습니다. **VirtualHost** 포트 80을 사용 하 여 모든 IP 주소에서 수신 하도록 설정 되어 있습니다. 다음 두 줄은 포트 5000에서 루트에 있는 서버에 127.0.0.1에 프록시 요청으로 설정 됩니다. 양방향 통신을 위해 *ProxyPass* 및 *ProxyPassReverse* 필요 합니다.
+`VirtualHost` 블록은 서버에서 하나 이상의 파일에 여러 번 나타날 수 있습니다. 이전 구성 파일에서 Apache 포트 80에서 공용 트래픽을 허용합니다. 도메인 `www.example.com` 제공 하는 고 `*.example.com` 별칭 동일한 웹 사이트를 확인 합니다. 참조 [가상 호스트 이름 기반 지원](https://httpd.apache.org/docs/current/vhosts/name-based.html) 자세한 정보에 대 한 합니다. 요청은 127.0.0.1 서버 5000 포트로 루트에 프록시입니다. 양방향 통신을 위해 `ProxyPass` 및 `ProxyPassReverse` 필요 합니다.
 
-당 로깅을 구성할 수 있습니다 **VirtualHost** 를 사용 하 여 **ErrorLog** 및 **CustomLog** 지시문입니다. **ErrorLog** 서버가 오류를 기록 하는 위치 및 **CustomLog** 파일 이름 및 로그 파일의 형식을 설정 합니다. 이 경우 요청 정보를 기록 하는 위치입니다. 각 요청에 대 한 줄이 있습니다.
+> [!WARNING]
+> 적절 한 입력 하지 않으면 [ServerName 지시문](https://httpd.apache.org/docs/current/mod/core.html#servername) 에 **VirtualHost** 블록 보안 취약성이 있는 응용 프로그램을 노출 합니다. 와일드 카드 바인딩 하위 도메인 (예를 들어 `*.example.com`) 전체 부모 도메인을 제어 하는 경우이 보안 위험을 노출 하지 않습니다 (반대인 `*.com`, 취약 한 변수인). 참조 [rfc7230 섹션 5.4](https://tools.ietf.org/html/rfc7230#section-5.4) 자세한 정보에 대 한 합니다.
+
+당 로깅을 구성할 수 있습니다 `VirtualHost` 를 사용 하 여 `ErrorLog` 및 `CustomLog` 지시문입니다. `ErrorLog` 서버에서 오류를 기록 하는 위치는 위치 및 `CustomLog` 파일 이름 및 로그 파일의 형식을 설정 합니다. 이 경우 요청 정보를 기록 하는 위치입니다. 각 요청에 대 한 줄이 있습니다.
 
 파일을 저장 하 고 구성을 테스트 합니다. 모든 항목이 통과하는 경우 응답은 `Syntax [OK]`이어야 합니다.
 

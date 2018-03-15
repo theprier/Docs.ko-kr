@@ -1,5 +1,5 @@
 ---
-title: "웹 Api와 Azure Active Directory B2C에에서 대 한 클라우드 인증"
+title: "웹 Api와 ASP.NET 코어의 Azure Active Directory B2C에에서 대 한 클라우드 인증"
 author: camsoper
 description: "ASP.NET Core 웹 API와 Azure Active Directory B2C 인증을 설정 하는 방법을 알아봅니다. 인증 된 웹 우체부를 사용 하 여 API를 테스트 합니다."
 ms.author: casoper
@@ -10,13 +10,13 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 ms.custom: mvc
 uid: security/authentication/azure-ad-b2c-webapi
-ms.openlocfilehash: d768e2daf2464b282b097e935ef6c5f85e8705f5
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 1213f7eb25fb6525f98d83dff0956a841ae686a7
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="cloud-authentication-in-web-apis-with-azure-active-directory-b2c"></a>웹 Api와 Azure Active Directory B2C에에서 대 한 클라우드 인증
+# <a name="cloud-authentication-in-web-apis-with-azure-active-directory-b2c-in-aspnet-core"></a>웹 Api와 ASP.NET 코어의 Azure Active Directory B2C에에서 대 한 클라우드 인증
 
 작성자: [Cam Soper](https://twitter.com/camsoper)
 
@@ -36,7 +36,7 @@ ms.lasthandoff: 02/12/2018
 > * Azure AD B2C 테 넌 트의 동작을 제어 하는 정책을 구성 합니다.
 > * 사용 하 여 우체부는 로그인 대화 상자를 표시 하는 웹 앱을 시뮬레이션 하는 토큰을 검색 하 고 web API에 대 한 요청을 사용 하 여 합니다.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 다음은이 연습에 필요한입니다.
 

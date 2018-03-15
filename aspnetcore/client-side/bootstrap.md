@@ -1,7 +1,7 @@
 ---
-title: "부트스트랩을 사용한 beautiful 및 응답성이 뛰어난 사이트 구축"
+title: "부트스트랩 ASP.NET 코어와 아름 다운, 응답 사이트 구축"
 author: ardalis
-description: 
+description: "부트스트랩 ASP.NET 코어를 사용 하 여 응답성이 뛰어난 웹 응용 프로그램을 개발 하는 데 사용 하는 방법에 알아봅니다."
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bootstrap
-ms.openlocfilehash: e2ade6223cdc56a4f0f00ff0b985ceda4ab5484a
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: c3dfaa53e9e3277d025d014f65004e4c24a5acc4
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="building-beautiful-responsive-sites-with-bootstrap"></a>부트스트랩을 사용한 beautiful 및 응답성이 뛰어난 사이트 구축
+# <a name="building-beautiful-responsive-sites-with-bootstrap-and-aspnet-core"></a>부트스트랩 ASP.NET 코어와 아름 다운, 응답 사이트 구축
 
 <a name="bootstrap-index"></a>
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 03/02/2018
 
 부트스트랩 현재 응답성이 뛰어난 웹 응용 프로그램을 개발 하기 위한 가장 인기 있는 웹 프레임 워크입니다. 프런트 엔드 디자인 및 개발 또는 전문가 초보자에 관계 없이 다양 한 기능 및 웹 사이트와 사용자의 경험을 향상 시킬 수 있는 혜택을 제공 합니다. 부트스트랩은 CSS 및 JavaScript 파일의 집합으로 배포 되 고 태블릿에 데스크톱을 효율적으로 휴대폰에서 웹 사이트 또는 응용 프로그램 눈금을 도움이 되도록 설계 되었습니다.
 
-## <a name="getting-started"></a>시작
+## <a name="get-started"></a>시작
 
 부트스트랩을 시작 하는 방법은 여러 가지가 있습니다. Visual Studio에서 새 웹 응용 프로그램을 시작 하는 경우는 case 부트스트랩을 미리 설치 되어, ASP.NET Core에 대 한 기본 시작 템플릿을 선택할 수 있습니다.
 
@@ -190,7 +190,7 @@ Visual Studio 2012 또는 2013에서 기본 ASP.NET MVC 템플릿을 사용한 �
     <link rel="stylesheet" href="~/css/bootstrap.min.css" />
 ```
 
-사용자 고유의 대시보드 작성 하려는 경우에서 시작할 수 있습니다 사용할 수 있는 무료 예제의 여기: [http://getbootstrap.com/examples/dashboard/](http://getbootstrap.com/examples/dashboard/)합니다.
+대시보드를 직접 작성 하려는 경우에서 시작할 수 있습니다 사용할 수 있는 무료 예제 여기: [ http://getbootstrap.com/examples/dashboard/ ](http://getbootstrap.com/examples/dashboard/).
 
 ## <a name="components"></a>구성 요소
 
@@ -198,7 +198,7 @@ Visual Studio 2012 또는 2013에서 기본 ASP.NET MVC 템플릿을 사용한 �
 
 ### <a name="glyphicons"></a>Glyphicons
 
-부트스트랩 Glyphicons에서 아이콘 집합에 포함 됩니다 ([http://glyphicons.com](http://glyphicons.com)), 부트스트랩 사용 웹 응용 프로그램 내에서 사용 하기 위해 무료로 사용할 수는 200 개가 넘는 아이콘을 표시 합니다. 방금 일부 예제는 다음과 같습니다.
+Glyphicons에서 아이콘 집합을 포함 하는 부트스트랩 ([http://glyphicons.com](http://glyphicons.com))를 부트스트랩 사용 웹 응용 프로그램 내에서 자유롭게 사용할 수 있는 200 개 이상의 아이콘으로. 방금 일부 예제는 다음과 같습니다.
 
 ![Glyphicons](bootstrap/_static/theme-glyphicons.png)
 
@@ -214,7 +214,7 @@ Visual Studio 2012 또는 2013에서 기본 ASP.NET MVC 템플릿을 사용한 �
 
 ## <a name="javascript-support"></a>JavaScript가 지원
 
-부트스트랩의 JavaScript 라이브러리에는 응용 프로그램에서 프로그래밍 방식으로 동작을 제어 하는 포함 된 구성 요소에 대 한 API 지원을 포함 합니다. 또한 *bootstrap.js* 수십 개의 포함 전환, 모달 대화 상자와 같은 추가 기능을 제공 하는 사용자 지정 jQuery 플러그 인 (스타일 문서에 사용자 스크롤 위치에 따라 업데이트)를 감지, 스크롤 화면 밖 스크롤하여 하지 하도록 창에 동작과 컨베이어 벨트, 추가 메뉴를 축소 합니다. 부트스트랩 – 방문 하십시오 자세히 알아보려면에 기본 제공 JavaScript 추가 기능의 모든 처리 하려면 충분 한 공간이 없을 [http://getbootstrap.com/javascript/](http://getbootstrap.com/javascript/)합니다.
+부트스트랩의 JavaScript 라이브러리에는 응용 프로그램에서 프로그래밍 방식으로 동작을 제어 하는 포함 된 구성 요소에 대 한 API 지원을 포함 합니다. 또한 *bootstrap.js* 수십 개의 포함 전환, 모달 대화 상자와 같은 추가 기능을 제공 하는 사용자 지정 jQuery 플러그 인 (스타일 문서에 사용자 스크롤 위치에 따라 업데이트)를 감지, 스크롤 화면 밖 스크롤하여 하지 하도록 창에 동작과 컨베이어 벨트, 추가 메뉴를 축소 합니다. 충분 한 공간이 더 필요 하시면 대 한 자세한 내용은 부트스트랩-에 내장 된 JavaScript 추가 기능에 [ http://getbootstrap.com/javascript/ ](http://getbootstrap.com/javascript/).
 
 ## <a name="summary"></a>요약
 

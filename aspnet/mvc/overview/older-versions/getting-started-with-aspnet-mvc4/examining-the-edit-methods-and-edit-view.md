@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
 ms.openlocfilehash: 315914056c0a666fdf23cf82a314a999e03114b6
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 <a name="examining-the-edit-methods-and-edit-view"></a>편집 메서드 및 편집 보기 검사
 ====================
@@ -81,7 +81,7 @@ ms.lasthandoff: 02/12/2018
 ![abcNotValid](examining-the-edit-methods-and-edit-view/_static/image4.png)
 
 > [!NOTE]
-> 쉼표를 사용 하는 영어가 아닌 로캘의 jQuery 유효성 검사를 지원 하기 위해 (&quot;,&quot;) 소수점을 포함 해야 *globalize.js* 및 특정 *cultures/globalize.cultures.js* 파일 (에서 [https://github.com/jquery/globalize](https://github.com/jquery/globalize) ) 및 사용 하는 JavaScript `Globalize.parseFloat`합니다. 다음 코드와 작업할 Views\Movies\Edit.cshtml 파일을 수정 된 &quot;FR-FR&quot; 문화권:
+> 쉼표를 사용 하는 영어가 아닌 로캘의 jQuery 유효성 검사를 지원 하기 위해 (&quot;,&quot;) 소수점을 포함 해야 *globalize.js* 및 특정 *cultures/globalize.cultures.js* 파일 (에서 [ https://github.com/jquery/globalize ](https://github.com/jquery/globalize) ) 및 사용 하는 JavaScript `Globalize.parseFloat`합니다. 다음 코드와 작업할 Views\Movies\Edit.cshtml 파일을 수정 된 &quot;FR-FR&quot; 문화권:
 
 
 [!code-cshtml[Main](examining-the-edit-methods-and-edit-view/samples/sample7.cshtml)]

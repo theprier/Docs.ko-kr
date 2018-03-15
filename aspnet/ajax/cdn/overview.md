@@ -12,11 +12,11 @@ ms.technology:
 ms.prod: .net-framework
 msc.legacyurl: /ajax/cdn
 msc.type: content
-ms.openlocfilehash: f69f707ba64d13fc372b7bc44718c9dcf8cec6e2
-ms.sourcegitcommit: 3f491f887074310fc0f145cd01a670aa63b969e3
+ms.openlocfilehash: f1225f06e5218d893e3f49b2ccc67d56365b30e5
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/22/2018
+ms.lasthandoff: 03/15/2018
 ---
 <a name="microsoft-ajax-content-delivery-network"></a>Microsoft Ajax 콘텐츠 배달 네트워크
 ====================
@@ -25,7 +25,7 @@ ms.lasthandoff: 01/22/2018
 ## <a name="table-of-contents"></a>목차
 
 **[ajax.microsoft.com ajax.aspnetcdn.com로 변경](#ajaxmicrosoftcom_renamed_to_ajaxaspnetcdncom_18)**  
-**[Visual Studio.vsdoc 지원](#Visual_Studio_vsdoc_Support_19)**  
+**[Visual Studio .vsdoc Support](#Visual_Studio_vsdoc_Support_19)**  
 **[ASP.NET Ajax CDN에서 사용 하 여](#Using_ASPNET_Ajax_from_the_CDN_20)**  
 **[CDN에서 jQuery를 사용 하 여](#Using_jQuery_from_the_CDN_21)**  
 **[JQuery UI에서 CDN 사용 하 여](#Using_jQuery_UI_from_the_CDN_22)**  
@@ -64,7 +64,7 @@ CDN 업로드 된 및 해당 라이브러리의 소유자가 사용자에 게 �
 - jQuery Mobile (www.jquerymobile.com)
 - jQuery 유효성 검사 (www.jquery.com)
 - jQuery 주기 (www.malsup.com/jquery/cycle/)
-- jQuery Datatable (http://datatables.net/)
+- jQuery Datatable 드 (http://datatables.net/)
 
 Microsoft Ajax CDN는 Microsoft에서 업로드 한 다음 라이브러리를도 포함 되어 있습니다.
 
@@ -74,7 +74,7 @@ Microsoft Ajax CDN는 Microsoft에서 업로드 한 다음 라이브러리를도
 
 Microsoft는이 CDN에서 호스팅되는 모든 타사 라이브러리의 소유권을 주장 하지 않습니다. 저작권 소유자는 라이브러리에 이러한 라이브러리를 라이선스 됩니다. 해당 저작권 소유자가 단독으로 다운로드 하 고 이러한 라이브러리를 사용 해야 할 수 있는 모든 권한이 부여 됩니다. 이들은 Microsoft 라이브러리 Microsoft 지적 재산권 권한 라이선스 (묵시적된 특허 권한이 없음 포함) 없음이나 보증을이 CDN에서 호스트 되는 타사 라이브러리에 대 한 제공 합니다.
 
-JavaScript 라이브러리를 제출 하려면 고 라이브러리에는 위쪽 (http://trends.builtwith.com에 나열) 하는 대로 JavaScript 라이브러리 또는 확장/플러그 인은 이들 라이브러리 중 하나 (a) 인기 있는; 또는 (b)에 대 한 유용한 ASP.NET에서 사용 하 여 다음 문의 AjaxCDNSubmission@Microsoft.com합니다.
+JavaScript 라이브러리를 제출 하려면이 고 라이브러리에는 상위 JavaScript 라이브러리 중 하나 (에 나열 된 http://trends.builtwith.com) 또는 확장/플러그 인을 이러한 라이브러리는 (a) 인기 있는; 또는 (b) 유용한 ASP.NET에서 사용 하기 위해 다음에 게 문의 하십시오 AjaxCDNSubmission@Microsoft.com합니다.
 
 <a id="ajaxmicrosoftcom_renamed_to_ajaxaspnetcdncom_18"></a>
 
@@ -657,9 +657,9 @@ JQuery 모바일 라이브러리의 다음 릴리스에서이 CDN에서 호스�
 
 다음 릴리스에 jQuery 주기 플러그 인을이 CDN에서 호스트 됩니다. 파일의 실제 목록을 확인 하려면 각 링크를 클릭 합니다.
 
-- [jQuery 주기 2.99](jquery-cycle/cdnjquerycycle299.md "jQuery 주기 2.99")
-- [jQuery 주기 2.94](jquery-cycle/cdnjquerycycle294.md "jQuery 주기 2.94")
-- [jQuery 주기 2.88](jquery-cycle/cdnjquerycycle288.md "jQuery 주기 2.88")
+- [jQuery Cycle 2.99](jquery-cycle/cdnjquerycycle299.md "jQuery Cycle 2.99")
+- [jQuery Cycle 2.94](jquery-cycle/cdnjquerycycle294.md "jQuery Cycle 2.94")
+- [jQuery Cycle 2.88](jquery-cycle/cdnjquerycycle288.md "jQuery Cycle 2.88")
 
 <a id="jQuery_DataTables_Releases_on_the_CDN_7"></a>
 
@@ -748,7 +748,7 @@ JQuery 모바일 라이브러리의 다음 릴리스에서이 CDN에서 호스�
 - http://ajax.aspnetcdn.com/ajax/globalize/0.1.1/cultures/globalize.cultures.js
 
     - 모든 문화권
-- http://ajax.aspnetcdn.com/ajax/globalize/0.1.1/cultures/globalize.culture 합니다. {문화권 코드}.js
+- http://ajax.aspnetcdn.com/ajax/globalize/0.1.1/cultures/globalize.culture.{culture-code}.js
 
     - "{코드 문화권을 (를)"를 원하는 culture 코드로 바꿉니다, globalize.culture.en GB.js== Microsoft CDN에 예를 들어 파일을이 = = Microsoft에서 라이브러리가 업로드 합니다.
 
@@ -756,7 +756,7 @@ JQuery 모바일 라이브러리의 다음 릴리스에서이 CDN에서 호스�
 
 ### <a name="respond-releases-on-the-cdn"></a>CDN에서 릴리스 응답
 
-다음 릴리스의 [https://github.com/scottjehl/Respond](https://github.com/scottjehl/Respond "https://github.com/scottjehl/Respond") 응답 하는 CDN에 호스팅됩니다.
+다음 릴리스의 [ https://github.com/scottjehl/Respond ] (https://github.com/scottjehl/Respond " https://github.com/scottjehl/Respond ") 응답 하는 CDN에 호스팅됩니다.
 
 #### <a name="respond-version-142"></a>1.4.2 버전 응답
 
@@ -792,6 +792,19 @@ JQuery 모바일 라이브러리의 다음 릴리스에서이 CDN에서 호스�
 ### <a name="bootstrap-releases-on-the-cdn"></a>CDN에서 부트스트랩 릴리스
 
 다음 릴리스의 [getbootstrap.com](http://getbootstrap.com "getbootstrap.com") 부트스트랩 CDN에서 호스팅됩니다.
+
+#### <a name="bootstrap-version-400"></a>부트스트랩 버전 4.0.0
+
+- http://ajax.aspnetcdn.com/ajax/bootstrap/4.0.0/bootstrap.js
+- http://ajax.aspnetcdn.com/ajax/bootstrap/4.0.0/bootstrap.min.js
+- http://ajax.aspnetcdn.com/ajax/bootstrap/4.0.0/css/bootstrap.css
+- http://ajax.aspnetcdn.com/ajax/bootstrap/4.0.0/css/bootstrap.css.map
+- http://ajax.aspnetcdn.com/ajax/bootstrap/4.0.0/css/bootstrap.min.css
+- http://ajax.aspnetcdn.com/ajax/bootstrap/4.0.0/fonts/glyphicons-halflings-regular.eot
+- http://ajax.aspnetcdn.com/ajax/bootstrap/4.0.0/fonts/glyphicons-halflings-regular.svg
+- http://ajax.aspnetcdn.com/ajax/bootstrap/4.0.0/fonts/glyphicons-halflings-regular.ttf
+- http://ajax.aspnetcdn.com/ajax/bootstrap/4.0.0/fonts/glyphicons-halflings-regular.woff
+- http://ajax.aspnetcdn.com/ajax/bootstrap/4.0.0/fonts/glyphicons-halflings-regular.woff2
 
 #### <a name="bootstrap-version-337"></a>3.3.7 부트스트랩 버전
 
@@ -1026,7 +1039,7 @@ JQuery 모바일 라이브러리의 다음 릴리스에서이 CDN에서 호스�
 
 ### <a name="bootstrap-touchcarousel-releases-on-the-cdn"></a>CDN에서 부트스트랩 TouchCarousel 릴리스
 
-다음 릴리스의 [https://github.com/ixisio/bootstrap-touch-carousel](https://github.com/ixisio/bootstrap-touch-carousel "https://github.com/ixisio/bootstrap-touch-carousel") 부트스트랩 TouchCarousel 릴리스 CDN에서 호스팅됩니다. :
+다음 릴리스의 [ https://github.com/ixisio/bootstrap-touch-carousel ] (https://github.com/ixisio/bootstrap-touch-carousel " https://github.com/ixisio/bootstrap-touch-carousel ") 부트스트랩 TouchCarousel 릴리스 CDN에서 호스팅됩니다.
 
 #### <a name="bootstrap-touchcarousel-version-080"></a>부트스트랩 TouchCarousel 버전 0.8.0
 
@@ -1037,7 +1050,7 @@ JQuery 모바일 라이브러리의 다음 릴리스에서이 CDN에서 호스�
 
 ### <a name="hammerjs-releases-on-the-cdn"></a>CDN에서 Hammer.js 릴리스
 
-다음 버전의 [http://hammerjs.github.io/](http://hammerjs.github.io/ "http://hammerjs.github.io/") Hammer.js 릴리스 CDN에서 호스팅됩니다.
+다음 버전의 [ http://hammerjs.github.io/ ] (http://hammerjs.github.io/ " http://hammerjs.github.io/ ") Hammer.js 릴리스 CDN에서 호스팅됩니다.
 
 #### <a name="hammerjs-version-204"></a>2.0.4 Hammer.js 버전
 

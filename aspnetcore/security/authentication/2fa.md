@@ -1,7 +1,7 @@
 ---
-title: "SMS와 2 단계 인증"
+title: "ASP.NET Core에서 SMS로 2 단계 인증"
 author: rick-anderson
-description: "ASP.NET Core와 2 단계 인증 (2FA)을 설정 하는 방법을 보여 줍니다."
+description: "ASP.NET Core 응용 프로그램과 (2FA) 2 단계 인증을 설정 하는 방법을 알아봅니다."
 manager: wpickett
 ms.author: riande
 ms.date: 08/15/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/2fa
-ms.openlocfilehash: 721c4c20234c7232b509a0cff444538c2cfeb166
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: c328c6f4b674695dd1f2db8145a7ac1b8f12d36d
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="two-factor-authentication-with-sms"></a>SMS와 2 단계 인증
+# <a name="two-factor-authentication-with-sms-in-aspnet-core"></a>ASP.NET Core에서 SMS로 2 단계 인증
 
 여 [Rick Anderson](https://twitter.com/RickAndMSFT) 및 [스위스 빌드하도록](https://github.com/Swiss-Devs)
 
@@ -142,6 +142,13 @@ info: Successfully saved SMSAccountIdentification = 12345 to the secret store.
 
 ## <a name="account-lockout-for-protecting-against-brute-force-attacks"></a>무차별 암호 대입 공격 으로부터 보호 하기 위한 계정 잠금
 
-계정 잠금 2FA 사용 하는 것이 좋습니다. 사용자가 로컬 계정 또는 소셜 계정) (통해 로그인 하 고 2FA에서 연결 시도가 실패할된 때마다 저장 됩니다 (기본값은 5)는 최대 시도 횟수에 도달 하면 사용자가 잠길 5 분 (잠금 시간 초과 설정할 수 있습니다 `DefaultAccountLockoutTimeSpan`). 다음에서는 10 번 실패 후 10 분 동안 잠길 수 계정을 구성 합니다.
+계정 잠금은 2FA 것이 좋습니다. 사용자가 로컬 계정 또는 소셜 계정을 통해 로그인 2FA에서 연결 시도가 실패할된 때마다 저장 됩니다. 사용자를 잠그기 실패 한 최대 액세스 시도 횟수에 도달 하면 (기본값: 5에 대 한 액세스 시도가 실패 한 잠금 5 분)입니다. 실패 한 액세스 시도 횟수를 다시 설정 하 고 클록을 기본값으로 다시 설정 하는 성공적으로 인증 합니다. 최대 액세스 시도 하지 못했습니다. 잠금 시간으로 설정할 수 있습니다 및 [MaxFailedAccessAttempts](/dotnet/api/microsoft.aspnetcore.identity.lockoutoptions.maxfailedaccessattempts) 및 [DefaultLockoutTimeSpan](/dotnet/api/microsoft.aspnetcore.identity.lockoutoptions.defaultlockouttimespan)합니다. 다음 계정 잠금 10 액세스 시도 실패 한 후 10 분 동안으로 구성 합니다.
 
-[!code-csharp[](2fa/sample/Web2FA/Startup.cs?name=snippet2&highlight=13-17)] 
+[!code-csharp[](2fa/sample/Web2FA/Startup.cs?name=snippet2&highlight=13-17)]
+
+확인 [PasswordSignInAsync](/dotnet/api/microsoft.aspnetcore.identity.signinmanager-1.passwordsigninasync) 설정 `lockoutOnFailure` 를 `true`:
+
+```csharp
+var result = await _signInManager.PasswordSignInAsync(
+                 Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: true);
+```

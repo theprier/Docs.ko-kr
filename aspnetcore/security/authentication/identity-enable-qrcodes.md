@@ -1,7 +1,7 @@
 ---
 title: "ASP.NET Core에서 인증자 앱에 대 한 QR 코드를 생성 하도록 설정"
 author: rick-anderson
-description: "ASP.NET Core에서 인증자 앱에 대 한 QR 코드를 생성 하도록 설정"
+description: "ASP.NET Core 2 단계 인증을 사용 하는 인증자 앱에 대 한 QR 코드 생성을 활성화 하는 방법을 알아봅니다."
 manager: wpickett
 ms.author: riande
 ms.date: 09/24/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-enable-qrcodes
-ms.openlocfilehash: cf941314d54aa4a7bd1724805dc62c763ca71dfb
-ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
+ms.openlocfilehash: dd326bb32565b743d21e196bcb616a716d7994bf
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="enabling-qr-code-generation-for-authenticator-apps-in-aspnet-core"></a>ASP.NET Core에서 인증자 앱에 대 한 QR 코드를 생성 하도록 설정
 
@@ -25,7 +25,7 @@ ASP.NET Core 웹 응용 프로그램 템플릿 인증자를 지원 하지만 QRC
 
 ## <a name="adding-qr-codes-to-the-2fa-configuration-page"></a>2FA 구성 페이지에 QR 코드를 추가합니다.
 
-이 지침은 사용 *qrcode.js* https://davidshimjs.github.io/qrcodejs/ 리포지토리에서 합니다.
+이 지침은 사용 *qrcode.js* 에서 https://davidshimjs.github.io/qrcodejs/ 리 포 합니다.
 
 * 다운로드는 [qrcode.js javascript 라이브러리](https://davidshimjs.github.io/qrcodejs/) 에 `wwwroot\lib` 프로젝트의 폴더에에서 있습니다.
 
@@ -84,8 +84,8 @@ private string GenerateQrCodeUri(string email, string unformattedKey)
 
 QR 코드에 대 한 올바른 형식의 URL은에서 사용할 수는 있습니다.
 
-* `AuthenticatorUri`모델의 속성입니다.
-* `data-url`속성에는 `qrCodeData` 요소입니다. 
+* `AuthenticatorUri` 모델의 속성입니다.
+* `data-url` 속성에는 `qrCodeData` 요소입니다. 
 
 ## <a name="totp-client-and-server-time-skew"></a>TOTP 클라이언트 및 서버 시간 차가
 

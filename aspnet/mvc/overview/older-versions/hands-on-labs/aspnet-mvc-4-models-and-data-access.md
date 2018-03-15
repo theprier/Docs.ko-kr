@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
 msc.type: authoredcontent
 ms.openlocfilehash: 353419077422516761df56f730352b19b5db5ff2
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="aspnet-mvc-4-models-and-data-access"></a>ASP.NET MVC 4 모델 및 데이터 액세스
 
@@ -39,7 +39,7 @@ ms.lasthandoff: 03/02/2018
 
 ![데이터베이스의 첫 번째 vs입니다. 첫 번째 모델](aspnet-mvc-4-models-and-data-access/_static/image1.png "Database First vs. 먼저 모델")
 
-*데이터베이스의 첫 번째 vs입니다. 먼저 모델
+*데이터베이스의 첫 번째 vs입니다. 먼저 모델*
 
 모델을 생성 하 고 나면 StoreController 하드 코드 된 데이터를 사용 하는 대신 데이터베이스에서 가져온 데이터와 함께 저장소 보기를 제공 하기에 적절 한 조정 생성 됩니다. 어떠한 변경 템플릿 보기에는 StoreController 반품할 동일한 Viewmodel 보기 템플릿 때문에이 시간 데이터가 데이터베이스에서 나올지 있지만 않아도 됩니다.
 
@@ -60,7 +60,7 @@ Code First 접근 방식은 일반적으로 프레임 워크와 연결 되어 �
 <a id="Prerequisites"></a>
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>필수 구성 요소
+### <a name="prerequisites"></a>전제 조건
 
 이 랩을 완료 하려면 다음 항목이 있어야 합니다.
 
@@ -560,7 +560,7 @@ ASP.NET MVC 모델 및 데이터 액세스의 기본적인 사항을 배웠습�
 
 설치할 수 있습니다 **Microsoft Visual Studio Express 2012 for Web** 또는 다른 &quot;Express&quot; 버전을 사용 하 여  **[Microsoft 웹 플랫폼 설치 관리자](https://www.microsoft.com/web/downloads/platform.aspx)** . 다음 지침을 설치 하는 데 필요한 단계를 안내 하 *Visual studio Express 2012 for Web* 를 사용 하 여 *Microsoft 웹 플랫폼 설치 관리자*합니다.
 
-1. 로 이동 [ [https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169)합니다. 또는 이미 설치 된 웹 플랫폼 설치 관리자를 열 수 있습니다 및 제품에 대 한 검색 &quot; *Visual Studio Express 2012 for Web Windows Azure SDK와*&quot;합니다.
+1. 로 이동 [ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169)합니다. 또는 이미 설치 된 웹 플랫폼 설치 관리자를 열 수 있습니다 및 제품에 대 한 검색 &quot; *Visual Studio Express 2012 for Web Windows Azure SDK와*&quot;합니다.
 2. 클릭 **지금 설치**합니다. 없는 경우 **웹 플랫폼 설치 관리자** 를 다운로드 하 여 앱을 먼저 설치 이동 합니다.
 3. 한 번 **웹 플랫폼 설치 관리자** 열려 클릭 **설치** 는 설치 프로그램을 시작 합니다.
 

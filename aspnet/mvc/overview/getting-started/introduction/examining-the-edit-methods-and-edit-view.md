@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
 ms.openlocfilehash: d7e1ba503b8aa815cebf431d2f5ffc9436b3575b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/15/2018
 ---
 <a name="examining-the-edit-methods-and-edit-view"></a>편집 메서드 및 편집 보기 검사
 ====================
@@ -62,7 +62,7 @@ ms.lasthandoff: 01/24/2018
 
 [!code-cshtml[Main](examining-the-edit-methods-and-edit-view/samples/sample6.cshtml?highlight=9)]
 
-`@Html.AntiForgeryToken()`에 일치 하는 숨겨진된 폼 위조 방지 토큰을 생성 된 `Edit` 의 메서드는 `Movies` 컨트롤러입니다. 자세히 알아볼 수 있습니다에 대 한 사이트 간 요청 위조 (XSRF 또는 CSRF 라고도 함) 내 자습서에서 [mvc에서 XSRF/CSRF 방지](../../security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages.md)합니다.
+`@Html.AntiForgeryToken()` 에 일치 하는 숨겨진된 폼 위조 방지 토큰을 생성 된 `Edit` 의 메서드는 `Movies` 컨트롤러입니다. 자세히 알아볼 수 있습니다에 대 한 사이트 간 요청 위조 (XSRF 또는 CSRF 라고도 함) 내 자습서에서 [mvc에서 XSRF/CSRF 방지](../../security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages.md)합니다.
 
 `HttpGet` `Edit` 메서드 영화 ID 매개 변수를 조회 하는 Entity Framework를 사용 하 여 동영상 `Find` 메서드를 선택한 동영상 편집 뷰를 반환 합니다. 동영상을 찾을 수 없는 경우 [HttpNotFound](https://msdn.microsoft.com/library/gg453938(VS.98).aspx) 반환 됩니다. 편집 보기에서 스캐폴딩 시스템이 만들어질 때 `Movie` 클래스를 조사하고 클래스의 각 속성에 대해 `<label>` 및 `<input>` 요소를 렌더링하기 위한 코드를 만들었습니다. 다음 예제에서는 visual studio 스 캐 폴딩 시스템에서 생성 된 편집 뷰를 보여 줍니다.
 
@@ -100,7 +100,7 @@ ms.lasthandoff: 01/24/2018
 
 
 > [!NOTE]
-> 쉼표를 사용 하는 영어가 아닌 로캘의 jQuery 유효성 검사를 지원 하기 위해 (&quot;,&quot;) 소수점 및 미국 영어가 아닌 날짜 형식을 포함 해야 *globalize.js* 및 특정  *cultures/globalize.cultures.js* 파일 (에서 [https://github.com/jquery/globalize](https://github.com/jquery/globalize) ) 및 사용 하는 JavaScript `Globalize.parseFloat`합니다. NuGet에서 jQuery 영어가 아닌 유효성 검사를 가져올 수 있습니다. (설치 하지 마십시오 Globalize 영어 로캘의 사용 하는 경우.)
+> 쉼표를 사용 하는 영어가 아닌 로캘의 jQuery 유효성 검사를 지원 하기 위해 (&quot;,&quot;) 소수점 및 미국 영어가 아닌 날짜 형식을 포함 해야 *globalize.js* 및 특정  *cultures/globalize.cultures.js* 파일 (에서 [ https://github.com/jquery/globalize ](https://github.com/jquery/globalize) ) 및 사용 하는 JavaScript `Globalize.parseFloat`합니다. NuGet에서 jQuery 영어가 아닌 유효성 검사를 가져올 수 있습니다. (설치 하지 마십시오 Globalize 영어 로캘의 사용 하는 경우.)
 
 
 1. **도구** 메뉴 클릭 **NuGetLibrary 패키지 관리자**, 클릭 하 고 **솔루션에 대 한 NuGet 패키지 관리**합니다.  
@@ -109,7 +109,7 @@ ms.lasthandoff: 01/24/2018
 2. 왼쪽된 창에서 선택 **찾아보기*. * * * (아래 그림 참조).
 3. 입력된 상자에 입력 * Globalize * *입니다.  
   
-    ![](examining-the-edit-methods-and-edit-view/_static/image6.png)선택 `jQuery.Validation.Globalize`, 선택 `MvcMovie` 클릭 **설치**합니다. *Scripts\jquery.globalize\globalize.js* 파일을 프로젝트에 추가 됩니다. *Scripts\jquery.globalize\cultures\* 폴더 많은 문화권 JavaScript 파일에 포함 됩니다. Note:이 패키지를 설치 하는 데 5 분이 걸릴 수 있습니다.
+    ![](examining-the-edit-methods-and-edit-view/_static/image6.png) 선택 `jQuery.Validation.Globalize`, 선택 `MvcMovie` 클릭 **설치**합니다. *Scripts\jquery.globalize\globalize.js* 파일을 프로젝트에 추가 됩니다. *Scripts\jquery.globalize\cultures\* 폴더 많은 문화권 JavaScript 파일에 포함 됩니다. Note:이 패키지를 설치 하는 데 5 분이 걸릴 수 있습니다.
 
  다음 코드에서는 Views\Movies\Edit.cshtml 파일의 수정 내용을 보여 줍니다. 
 
@@ -123,7 +123,7 @@ ms.lasthandoff: 01/24/2018
 
 [!code-xml[Main](examining-the-edit-methods-and-edit-view/samples/sample11.xml)]
 
-<a id="gettingstarted"></a><a id="jQueryAjaxJSON"></a>다음 자습서에서에서는 검색 기능을 구현 합니다.
+<a id="gettingstarted"></a><a id="jQueryAjaxJSON"></a> 다음 자습서에서에서는 검색 기능을 구현 합니다.
 
 >[!div class="step-by-step"]
 [이전](accessing-your-models-data-from-a-controller.md)

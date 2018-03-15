@@ -1,7 +1,7 @@
 ---
-title: "마이그레이션 인증 및 Id"
+title: "마이그레이션 인증 및 ASP.NET 코어로 Id"
 author: ardalis
-description: 
+description: "ASP.NET Core MVC 프로젝트를 ASP.NET MVC 프로젝트에서 인증 및 id를 마이그레이션하는 방법에 알아봅니다."
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/identity
-ms.openlocfilehash: f02d9472ea0aa1dceae3f53c812776aab85ab54e
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: bf452ad3969863f8f058b29a31f19af13cb2fc6b
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="migrating-authentication-and-identity"></a>마이그레이션 인증 및 Id
+# <a name="migrating-authentication-and-identity-to-aspnet-core"></a>마이그레이션 인증 및 ASP.NET 코어로 Id
 
 <a name="migration-identity"></a>
 
-으로 [Steve Smith](https://ardalis.com/)
+작성자: [Steve Smith](https://ardalis.com/)
 
 이전 문서에서는 [ASP.NET MVC 프로젝트에서 ASP.NET Core MVC 구성을 마이그레이션할](configuration.md)합니다. 이 문서에서는 등록, 로그인 및 사용자 관리 기능을 마이그레이션할 했습니다.
 

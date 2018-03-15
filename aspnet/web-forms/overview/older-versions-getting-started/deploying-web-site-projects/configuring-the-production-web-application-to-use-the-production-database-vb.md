@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-the-production-web-application-to-use-the-production-database-vb
 msc.type: authoredcontent
 ms.openlocfilehash: 60ef1f93efea777e9309ad8c664a2c6645f1ce80
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/15/2018
 ---
 <a name="configuring-the-production-web-application-to-use-the-production-database-vb"></a>프로덕션 데이터베이스 (VB)를 사용 하 여 프로덕션 웹 응용 프로그램 구성
 ====================
@@ -37,16 +37,16 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="examining-the-connection-string-information"></a>연결 문자열 정보를 검토합니다.
 
-책 검토 웹 응용 프로그램에서 사용 하는 연결 문자열은 응용 프로그램의 구성 파일에 저장 `Web.config`합니다. `Web.config`연결 문자열에 적절 하 게 저장 하기 위한 특별 한 섹션이 포함 되어 [ &lt;connectionStrings&gt;](https://msdn.microsoft.com/library/bf7sd233.aspx)합니다. `Web.config` 책 검토 웹 사이트에이 섹션에 정의 된 하나의 연결 문자열에 대 한 파일 `ReviewsConnectionString`:
+책 검토 웹 응용 프로그램에서 사용 하는 연결 문자열은 응용 프로그램의 구성 파일에 저장 `Web.config`합니다. `Web.config` 연결 문자열에 적절 하 게 저장 하기 위한 특별 한 섹션이 포함 되어 [ &lt;connectionStrings&gt;](https://msdn.microsoft.com/library/bf7sd233.aspx)합니다. `Web.config` 책 검토 웹 사이트에이 섹션에 정의 된 하나의 연결 문자열에 대 한 파일 `ReviewsConnectionString`:
 
 [!code-xml[Main](configuring-the-production-web-application-to-use-the-production-database-vb/samples/sample1.xml)]
 
 데이터 원본 연결 문자열-=. \SQLEXPRESS; AttachDbFilename = | DataDirectory|\Reviews.mdf;Integrated 보안 = True; 사용자 인스턴스 = True-각 옵션 및 세미콜론으로 구분 하는 옵션/값 쌍 및 등호로 구분 된 값을 가진 다양 한 옵션 및 값으로 구성 됩니다. 이 연결 문자열에서 사용 되는 네 가지 옵션이 있습니다.
 
-- `Data Source`-(있는 경우) 데이터베이스 서버 및 데이터베이스 서버 인스턴스 이름의 위치를 지정 합니다. 값을 `.\SQLEXPRESS`, 한 예로 데이터베이스 서버 및 인스턴스 이름입니다. 기간 응용 프로그램;와 같은 컴퓨터에 데이터베이스 서버를 지정 합니다. 인스턴스 이름이 `SQLEXPRESS`합니다.
-- `AttachDbFilename`-데이터베이스 파일의 위치를 지정 합니다. 자리 표시자를 포함 하는 값 `|DataDirectory|`, 응용 프로그램 s의 전체 경로 됨 `App_Data` 런타임 시 폴더입니다.
-- `Integrated Security`-계정 자격 증명 (true) (false) 데이터베이스 또는 현재 Windows에 연결할 때 지정 된 사용자 이름/암호를 사용할지 여부를 나타내는 부울 값입니다.
-- `User Instance`-SQL Server Express Edition 비관리 사용자에 게 로컬 컴퓨터에 연결 하 고 SQL Server Express Edition 데이터베이스에 연결할 수 있도록 할지 여부를 나타내는 관련 구성 옵션입니다. 참조 [SQL Server Express 사용자 인스턴스](https://msdn.microsoft.com/library/ms254504.aspx) 이 설정에 대 한 자세한 내용은 합니다.
+- `Data Source` -(있는 경우) 데이터베이스 서버 및 데이터베이스 서버 인스턴스 이름의 위치를 지정 합니다. 값을 `.\SQLEXPRESS`, 한 예로 데이터베이스 서버 및 인스턴스 이름입니다. 기간 응용 프로그램;와 같은 컴퓨터에 데이터베이스 서버를 지정 합니다. 인스턴스 이름이 `SQLEXPRESS`합니다.
+- `AttachDbFilename` -데이터베이스 파일의 위치를 지정 합니다. 자리 표시자를 포함 하는 값 `|DataDirectory|`, 응용 프로그램 s의 전체 경로 됨 `App_Data` 런타임 시 폴더입니다.
+- `Integrated Security` -계정 자격 증명 (true) (false) 데이터베이스 또는 현재 Windows에 연결할 때 지정 된 사용자 이름/암호를 사용할지 여부를 나타내는 부울 값입니다.
+- `User Instance` -SQL Server Express Edition 비관리 사용자에 게 로컬 컴퓨터에 연결 하 고 SQL Server Express Edition 데이터베이스에 연결할 수 있도록 할지 여부를 나타내는 관련 구성 옵션입니다. 참조 [SQL Server Express 사용자 인스턴스](https://msdn.microsoft.com/library/ms254504.aspx) 이 설정에 대 한 자세한 내용은 합니다.
   
 
 허용 가능한 연결 문자열 옵션에 연결 하는 데이터베이스에 종속 및 [ADO.NET](http://ADO.NET) 데이터베이스 공급자를 사용 하 고 있습니다. 예를 들어 Oracle 데이터베이스에 연결 하는 데 사용 되는 데이터베이스에서와 다른 Microsoft SQL Server에 연결 하기 위한 연결 문자열입니다. 마찬가지로, SqlClient 공급자를 사용 하 여 Microsoft SQL Server 데이터베이스에 연결 하는 OLE DB 공급자를 사용할 때 보다 다른 연결 문자열을 사용 합니다.
@@ -125,7 +125,7 @@ DatabaseConnectionStrings.dev.config 파일의 복사본을 만들고 databaseCo
 **그림 4**: ConfigSections ([전체 크기 이미지를 보려면 클릭](configuring-the-production-web-application-to-use-the-production-database-vb/_static/image12.jpg))
 
 
-이제 하도록 지시 해야 `Web.config` 해당 연결 문자열 저장소에 대 한 databaseConnectionStrings.config 파일을 사용 하도록 합니다. 열기 `Web.config` 바꾸고 기존 `<connectionStrings>` 요소를 다음으로:
+이제 하도록 지시 해야 `Web.config` 해당 연결 문자열 저장소에 대 한 databaseConnectionStrings.config 파일을 사용 하도록 합니다. `Web.config`을 열고 기존 `<connectionStrings>` 요소를 다음과 같이 바꿉니다.
 
 [!code-xml[Main](configuring-the-production-web-application-to-use-the-production-database-vb/samples/sample4.xml)]
 

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: tutorials/first-mvc-app-mac/index
-ms.openlocfilehash: b69eb67cedbc90c319e5bd07556001daed43c005
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 554dda7ad7f20f90fd0a73b51eac508f99877683
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="create-a-web-app-with-aspnet-core-mvc-using-visual-studio-for-mac"></a>Mac용 Visual Studio를 사용하여 ASP.NET Core MVC로 웹앱 만들기
 
@@ -21,13 +21,13 @@ ms.lasthandoff: 01/30/2018
 
 [!INCLUDE[consider RP](../../includes/razor.md)]
 
-1. [시작](start-mvc.md)
-1. [컨트롤러 추가](adding-controller.md)
-1. [보기 추가](adding-view.md)
-1. [모델 추가](adding-model.md)
-1. [SQLite](working-with-sql.md)
-1. [컨트롤러 메서드 및 보기](controller-methods-views.md)
-1. [검색 추가](search.md)
-1. [새 필드 추가](new-field.md)
-1. [유효성 검사 추가](validation.md)
+1. [시작](xref:tutorials/first-mvc-app-mac/start-mvc)
+1. [컨트롤러 추가](xref:tutorials/first-mvc-app-mac/adding-controller)
+1. [보기 추가](xref:tutorials/first-mvc-app-mac/adding-view)
+1. [모델 추가](xref:tutorials/first-mvc-app-mac/adding-model)
+1. [SQLite](xref:tutorials/first-mvc-app-mac/working-with-sql)
+1. [컨트롤러 메서드 및 보기](xref:tutorials/first-mvc-app-mac/controller-methods-views)
+1. [검색 추가](xref:tutorials/first-mvc-app-mac/search)
+1. [새 필드 추가](xref:tutorials/first-mvc-app-mac/new-field)
+1. [유효성 검사 추가](xref:tutorials/first-mvc-app-mac/validation)
 1. [세부 정보 및 삭제 메서드 검사](xref:tutorials/first-mvc-app/details)

@@ -11,13 +11,13 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 6ff9fd279a03197f761454bba3f180d7428b1b1f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d881563cdb6449aada444ef0528061581113a925
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/15/2018
 ---
-<a name="getting-started-with-aspnet-web-api-2-c"></a>ASP.NET Web API 2 (C#) 시작
+<a name="get-started-with-aspnet-web-api-2-c"></a>ASP.NET Web API 2 (C#) 시작
 ====================
 으로 [Mike Wasson](https://github.com/MikeWasson)
 
@@ -134,7 +134,7 @@ Web API 컨트롤러 메서드를 HTTP 요청을 라우팅하 하는 방법에 �
 
 [!code-html[Main](tutorial-your-first-web-api/samples/sample3.html)]
 
-여러 가지 방법으로 jQuery를 가져올 수 있습니다. 이 예에서 사용 된 [Microsoft Ajax CDN](../../../ajax/cdn/overview.md)합니다. 다운로드할 수도 있습니다 [http://jquery.com/](http://jquery.com/), 및 "웹 API" ASP.NET 프로젝트 템플릿에 jQuery도 포함 됩니다.
+여러 가지 방법으로 jQuery를 가져올 수 있습니다. 이 예에서 사용 된 [Microsoft Ajax CDN](../../../ajax/cdn/overview.md)합니다. 다운로드할 수도 있습니다 [ http://jquery.com/ ](http://jquery.com/), 및 "웹 API" ASP.NET 프로젝트 템플릿에 jQuery도 포함 됩니다.
 
 ### <a name="getting-a-list-of-products"></a>제품 목록 가져오기
 

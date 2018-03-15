@@ -10,11 +10,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: signalr/introduction-signalr-core
-ms.openlocfilehash: d4ad9bb1910a3339ac8d0d8ff740417f4e7262b7
-ms.sourcegitcommit: 9622bdc6326c28c3322c70000468a80ef21ad376
+ms.openlocfilehash: 3fa70c957b246787d4e457c74f90ad797b3af766
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="introduction-to-signalr"></a>SignalR 소개
 
@@ -39,7 +39,7 @@ ASP.NET Core 용 SignalR:
 * 연결 된 모든 클라이언트에 동시에 메시지를 브로드캐스트를 사용 합니다. 예를 들어: 채트 방 합니다.
 * 특정 클라이언트 또는 그룹의 클라이언트에 메시지를 보낼 수 있습니다.
 * 오픈 소스는 [GitHub](https://github.com/aspnet/signalr)합니다.
-* 완벽 하 게 확장 합니다.
+* 확장 가능 합니다.
 
 클라이언트와 서버 간의 연결이 HTTP 연결과 달리 지속 됩니다.
 

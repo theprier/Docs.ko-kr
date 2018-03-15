@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/aspnet-error-handling
 msc.type: authoredcontent
 ms.openlocfilehash: 3f732ae6f1b7845bcae88912b4a4fe26574c10de
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/15/2018
 ---
 <a name="aspnet-error-handling"></a>ASP.NET 오류 처리
 ====================
@@ -250,7 +250,7 @@ Wingtip Toys 예제 응용 프로그램에서는 한 페이지 오류를 표시 
 
     [!code-csharp[Main](aspnet-error-handling/samples/sample13.cs?highlight=20,22-23)]
 
-위의 코드 호출은 `LogException` 에 포함 된 메서드는 `ExceptionUtility` 클래스입니다. 추가한는 *ExceptionUtility.cs* 클래스 파일을 여 *논리* 이 자습서의 앞부분에 나오는 폴더입니다. `LogException` 메서드는 두 개의 매개 변수를 사용 합니다. 첫 번째 매개 변수는 예외 개체입니다. 두 번째 오류의 출처를 인식 하는 데 사용 하는 문자열입니다.
+위의 코드 호출은 `LogException` 에 포함 된 메서드는 `ExceptionUtility` 클래스입니다. 추가한는 *ExceptionUtility.cs* 클래스 파일을 여 *논리* 이 자습서의 앞부분에 나오는 폴더입니다. `LogException` 메서드는 두 매개 변수를 사용합니다. 첫 번째 매개 변수는 예외 개체입니다. 두 번째 오류의 출처를 인식 하는 데 사용 하는 문자열입니다.
 
 ### <a name="inspecting-the-error-logging-information"></a>오류 로깅 정보를 검사합니다.
 
@@ -301,7 +301,7 @@ ELMAH 로그를 확인 하는 것은 간단 하지만 먼저 ELMAH 로그에 기
 
 1. 키를 눌러 **CTRL + f 5** Wingtip Toys 샘플 응용 프로그램을 실행 합니다.
 2. 처리 되지 않은 예외가 ELMAH 로그에 쓰려는 (포트 번호를 사용 하 여) 다음 URL 브라우저에서 이동 합니다.  
-    `https://localhost:44300/NoPage.aspx`오류 페이지가 표시 됩니다.
+    `https://localhost:44300/NoPage.aspx` 오류 페이지가 표시 됩니다.
 3. ELMAH 로그를 표시 하려면 (포트 번호를 사용 하 여) 다음 URL 브라우저에서 이동 합니다.  
     `https://localhost:44300/elmah.axd`
 

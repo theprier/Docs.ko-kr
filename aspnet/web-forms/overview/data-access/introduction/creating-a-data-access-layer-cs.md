@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-data-access-layer-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 927b2490b5c539a79bb9939b88942499b23cc464
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/15/2018
 ---
 <a name="creating-a-data-access-layer-c"></a>데이터 액세스 계층 (C#)을 만들려면
 ====================
@@ -233,7 +233,7 @@ AllProducts.aspx.cs
 **그림 15**: 만들기 하기로 결정 한 **선택** 문에 반환 행 ([전체 크기 이미지를 보려면 클릭](creating-a-data-access-layer-cs/_static/image41.png))
 
 
-다음 단계에서는 데이터에 액세스 하는 데 사용 하는 SQL 쿼리를 정의 하는 것입니다. 특정 범주에 속해 있는 제품만 반환할 할 것 이므로 동일한 사용 **선택** 에서 문을 **GetProducts()**, 다음 코드를 추가 하지만 **여기서** 절: **여기서 CategoryID = @CategoryID** 합니다. **@CategoryID**  만들려는 메서드 (즉, nullable 정수)에서 해당 유형의 입력된 매개 변수는 매개 변수 TableAdapter 마법사를 나타냅니다.
+다음 단계에서는 데이터에 액세스 하는 데 사용 하는 SQL 쿼리를 정의 하는 것입니다. 특정 범주에 속해 있는 제품만 반환할 할 것 이므로 동일한 사용 **선택** 에서 문을 **GetProducts()**, 다음 코드를 추가 하지만 **여기서** 절: **여기서 CategoryID = @CategoryID** 합니다.  **@CategoryID**  만들려는 메서드 (즉, nullable 정수)에서 해당 유형의 입력된 매개 변수는 매개 변수 TableAdapter 마법사를 나타냅니다.
 
 
 [![만 지정된 된 범주에서 제품을 반환 하는 쿼리를 입력 합니다.](creating-a-data-access-layer-cs/_static/image43.png)](creating-a-data-access-layer-cs/_static/image42.png)
@@ -308,7 +308,7 @@ TableAdapter 일괄 처리 업데이트 패턴을 사용 하 여 기본적으로
 
 [![TableAdapter에 InsertCommand, UpdateCommand, 및 DeleteCommand 속성](creating-a-data-access-layer-cs/_static/image62.png)](creating-a-data-access-layer-cs/_static/image61.png)
 
-**그림 23**: The TableAdapter에 **InsertCommand**, **UpdateCommand**, 및 **DeleteCommand** 속성 ([을 보려면 클릭 전체 크기 이미지](creating-a-data-access-layer-cs/_static/image63.png))
+**그림 23**: The TableAdapter에 **InsertCommand**, **UpdateCommand**, 및 **DeleteCommand** 속성 ([전체 크기 보기를 클릭 합니다. 이미지](creating-a-data-access-layer-cs/_static/image63.png))
 
 
 클릭을 검사 하거나 이러한 데이터베이스 명령 속성을 수정 하려면는 **CommandText** 하위 속성은 쿼리 작성기를 표시 합니다.
@@ -316,7 +316,7 @@ TableAdapter 일괄 처리 업데이트 패턴을 사용 하 여 기본적으로
 
 [![쿼리 작성기에서 INSERT, UPDATE 및 DELETE 문이 구성](creating-a-data-access-layer-cs/_static/image65.png)](creating-a-data-access-layer-cs/_static/image64.png)
 
-**그림 24**: 구성에서 **삽입**, **업데이트**, 및 **삭제** 쿼리 작성기에서 문 ([전체 크기 이미지를 보려면 클릭 ](creating-a-data-access-layer-cs/_static/image66.png))
+**그림 24**: 구성에서 **삽입**, **업데이트**, 및 **삭제** 쿼리 작성기에서 문 ([전체크기이미지를보려면클릭](creating-a-data-access-layer-cs/_static/image66.png))
 
 
 다음 코드 예제에서는 단종 되지 고 25 단위 이내 재고에 있는 모든 제품의 가격을 두 배로 일괄 처리 업데이트 패턴을 사용 하는 방법을 보여 줍니다.
@@ -537,7 +537,7 @@ SuppliersAndProducts.aspx.cs
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 

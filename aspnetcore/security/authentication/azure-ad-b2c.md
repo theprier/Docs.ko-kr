@@ -1,5 +1,5 @@
 ---
-title: "클라우드 인증을 Azure Active Directory B2C"
+title: "클라우드 인증을 ASP.NET 코어의 Azure Active Directory B2C"
 author: camsoper
 description: "ASP.NET Core와 Azure Active Directory B2C 인증을 설정 하는 방법을 알아봅니다."
 manager: wpickett
@@ -9,13 +9,13 @@ ms.technology: aspnet
 ms.prod: asp.net-core
 ms.custom: mvc
 uid: security/authentication/azure-ad-b2c
-ms.openlocfilehash: 65372020ef6554476fb95549f13d110a748b5863
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: a7bad452a68cf7fe7aa81645d79a0ee9e7719fe7
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="cloud-authentication-with-azure-active-directory-b2c"></a>클라우드 인증을 Azure Active Directory B2C
+# <a name="cloud-authentication-with-azure-active-directory-b2c-in-aspnet-core"></a>클라우드 인증을 ASP.NET 코어의 Azure Active Directory B2C
 
 작성자: [Cam Soper](https://twitter.com/camsoper)
 
@@ -32,7 +32,7 @@ ms.lasthandoff: 02/12/2018
 > * Visual Studio를 사용 하 여 인증을 위해 Azure AD B2C 테 넌 트를 사용 하도록 구성 된 ASP.NET Core 웹 응용 프로그램을 만들려면
 > * Azure AD B2C 테 넌 트의 동작을 제어 하는 정책 구성
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 다음은이 연습에 필요한입니다.
 

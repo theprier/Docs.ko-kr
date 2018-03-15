@@ -1,20 +1,20 @@
 ---
 title: "SignalR에서 ASP.NET Core 시작"
 author: rachelappel
-ms.author: rachelap
-description: "이 자습서에서는 ASP.NET Core 용 SignalR을 사용 하 여 응용 프로그램을 만듭니다."
+description: "ASP.NET Core 용 SignalR을 사용 하 여 실시간 앱 빌드 기본 사항에 알아봅니다."
 manager: wpickett
-ms.date: 03/06/2018
-ms.topic: tutorial
-ms.technology: dotnet-signalr
-ms.prod: aspnet-core
+ms.author: rachelap
 ms.custom: mvc
+ms.date: 03/06/2018
+ms.prod: aspnet-core
+ms.technology: dotnet-signalr
+ms.topic: tutorial
 uid: signalr/get-started-signalr-core
-ms.openlocfilehash: 4afb9785fc3d0f472226a745537acbc77adefb4c
-ms.sourcegitcommit: 9622bdc6326c28c3322c70000468a80ef21ad376
+ms.openlocfilehash: 79af59fc8c2ada71d764ada95a431e10f4f00f27
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="tutorial-get-started-with-signalr-for-aspnet-core"></a>ASP.NET Core 용 SignalR 시작 자습서:
 

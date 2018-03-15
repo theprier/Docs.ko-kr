@@ -1,7 +1,7 @@
 ---
-title: "구성 마이그레이션"
+title: "ASP.NET 코어로 구성 마이그레이션"
 author: ardalis
-description: 
+description: "ASP.NET MVC 프로젝트에서 ASP.NET Core MVC 프로젝트 구성을 마이그레이션하는 방법에 알아봅니다."
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,19 +9,19 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/configuration
-ms.openlocfilehash: e1ee582072c88542565c5cb860e157afe137f9f0
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 6c72b324de49a03a3b2c4e96ba8886d1ed249103
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="migrating-configuration"></a>구성 마이그레이션
+# <a name="migrating-configuration-to-aspnet-core"></a>ASP.NET 코어로 구성 마이그레이션
 
 작성자: [Steve Smith](https://ardalis.com/) 및 [Scott Addie](https://scottaddie.com)
 
 이전 문서에서는 하기 시작 [ASP.NET Core mvc ASP.NET MVC 프로젝트 마이그레이션](mvc.md)합니다. 이 문서에서는 구성을 마이그레이션 했습니다.
 
-[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/migration/configuration/samples)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/migration/configuration/samples)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="setup-configuration"></a>설치 구성
 

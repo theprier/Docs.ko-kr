@@ -9,15 +9,15 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/less-sass-fa
-ms.openlocfilehash: 7ef82d15de64ef62b952b6c757cb9c35fd40e788
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: e00a0929db9dff6c97c4b22468156f621a1a3820
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="introduction-to-styling-applications-with-less-sass-and-font-awesome-in-aspnet-core"></a>더 적은 노력으로 응용 프로그램 스타일 지정, Sass, 및 ASP.NET 코어에서 글꼴 놀라운 소개
 
-으로 [Steve Smith](https://ardalis.com/)
+작성자: [Steve Smith](https://ardalis.com/)
 
 전반적인 환경 및 스타일 지정에 관한는 웹 응용 프로그램의 사용자는 점점 더 높은 기대 합니다. 최신 웹 응용 프로그램에는 자주 풍부한 도구 및 프레임 워크 정의 하 고의 모양과 느낌을 일관 된 방식에서 관리에 대 한 활용 합니다. 같은 프레임 워크 [부트스트랩](http://getbootstrap.com/) 스타일 및 웹 사이트에 대 한 레이아웃 옵션의 공통 집합을 정의 하기 위한 이동할 수 있습니다. 그러나 대부분의 특수 사이트 혜택을 받을 사이트의 인터페이스를 더 적합 하 게 해 주는 이미지가 아닌 아이콘에 쉽게 액세스할 수 있을 뿐만 아니라 효과적으로 정의 하 고 스타일 및 연계 스타일 시트 (CSS) 파일을 유지 하기 위해서는. 정답입니다 언어와 도구를 지 원하는 [적은](http://lesscss.org/) 및 [Sass](http://sass-lang.com/), 라이브러리와 같은 및 [글꼴 놀라운](http://fontawesome.io/),와 야 합니다.
 
@@ -97,9 +97,9 @@ body {
 .bgDark2    {color:@darker2}
 ```
 
-`@base`다른 @-prefixed 항목은 변수입니다. 각각의 색을 나타냅니다. 제외 하 고 `@base`, 색 함수를 사용 하 여 설정 하는 것: 밝게, 어둡게, 및 회전 합니다. 밝게 및 어둡게 거의 예상 대로; 수행 스핀 (색상표) 중심으로 다양 한 색의 색상을 조정합니다. 작은 프로세서는 때문에 이러한 변수 작동 하는 방법을 설명 하기 위해 어딘가에 사용법이 사용 되지 않는 변수를 무시 합니다. 클래스 `.baseColor`, 등에서는 변수가 생성 되는 CSS 파일에 각각의 계산된 된 값을 보여 줍니다.
+`@base` 다른 @-prefixed 항목은 변수입니다. 각각의 색을 나타냅니다. 제외 하 고 `@base`, 색 함수를 사용 하 여 설정 하는 것: 밝게, 어둡게, 및 회전 합니다. 밝게 및 어둡게 거의 예상 대로; 수행 스핀 (색상표) 중심으로 다양 한 색의 색상을 조정합니다. 작은 프로세서는 때문에 이러한 변수 작동 하는 방법을 설명 하기 위해 어딘가에 사용법이 사용 되지 않는 변수를 무시 합니다. 클래스 `.baseColor`, 등에서는 변수가 생성 되는 CSS 파일에 각각의 계산된 된 값을 보여 줍니다.
 
-### <a name="getting-started"></a>시작
+### <a name="get-started"></a>시작
 
 만들기는 **npm 구성 파일** (*package.json*) 프로젝트 폴더에서 참조 하도록 편집 하 고 `gulp` 및 `gulp-less`:
 
@@ -290,7 +290,7 @@ nav {
 
 특히 대규모 사이트에 대 한 CSS 파일 (및 미디어 쿼리를 사용 하는 경우에 특히), 매우 커질 수 시간이 지남에 따라 작업을 반환 하는 경향이 있습니다. Less 파일 정의할 수 있습니다 별도로 사용 하 여 함께 끌어온 다음 `@import` 지시문입니다. 작은 데도 사용할 수 있습니다를 개별 CSS 파일을 가져오며도 필요한 경우.
 
-*Mixin* 수 매개 변수를 받아들이고 형태로 mixin 가드 특정 mixin 적용 시 정의 하는 선언적 방법을 제공 하는 조건부 논리를 지원 작습니다. Mixin 가드 사용 되는 일반적인 빛 방식에 따라 색을 조정 하려면 되거나 어두운 소스 색상입니다. Mixin 색에 대 한 매개 변수를 허용 하는 지정 된 경우 mixin 가드 해당 색에 기반 mixin 수정에 사용할 수 있습니다.
+*Mixin* 매개 변수를 받아들이고 mixin 가드 특정 mixin 적용 시기를 정의 하는 선언적 방법을 제공 하는 형태로 조건부 논리를 원하는 작은. Mixin 가드 사용 되는 일반적인 빛 방식에 따라 색을 조정 하려면 되거나 어두운 소스 색상입니다. Mixin 색에 대 한 매개 변수를 허용 하는 지정 된 경우 mixin 가드 해당 색에 기반 mixin 수정에 사용할 수 있습니다.
 
 ```less
 .box (@color) when (lightness(@color) >= 50%) {

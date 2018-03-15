@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/index
-ms.openlocfilehash: b846fb7cb28eeceb8c0bdb47135e1cf014ae08a7
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: e08dea63f012c4a758f2e5561c4930d09cfee0ac
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="data-protection-in-aspnet-core-consumer-apis-configuration-extensibility-apis-and-implementation"></a>ASP.NET Core에서 데이터 보호: 소비자 API, 구성, 확장성 API 및 구현
 
@@ -74,7 +74,5 @@ ms.lasthandoff: 01/30/2018
   * [삭제되는 데이터 보호 공급자](implementation/key-storage-ephemeral.md)
 
 * [호환성](compatibility/index.md)
-
-  * [앱 간 쿠키 공유](xref:security/data-protection/compatibility/cookie-sharing)
 
   * [ASP.NET에서 <machineKey> 바꾸기](xref:security/data-protection/compatibility/replacing-machinekey)

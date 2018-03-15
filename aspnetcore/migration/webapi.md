@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Web API에서 마이그레이션"
+title: "ASP.NET Web API에서에서 ASP.NET Core로 마이그레이션"
 author: ardalis
-description: 
+description: "ASP.NET Core mvc 웹 API 구현 ASP.NET Web API에서 마이그레이션하는 방법에 알아봅니다."
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,23 +9,23 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/webapi
-ms.openlocfilehash: 9eb5f4dfec82ec1c60d33bff94d35857a4c0cfd6
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 929fab90aa88745807761e824a2cf614f078ea36
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="migrating-from-aspnet-web-api"></a>ASP.NET Web API에서 마이그레이션
+# <a name="migrating-from-aspnet-web-api-to-aspnet-core"></a>ASP.NET Web API에서에서 ASP.NET Core로 마이그레이션
 
 작성자: [Steve Smith](https://ardalis.com/) 및 [Scott Addie](https://scottaddie.com)
 
 웹 Api는 다양 한 브라우저 및 모바일 장치를 포함 한 클라이언트를 연결할 HTTP 서비스입니다. ASP.NET Core MVC 웹 응용 프로그램의 단일 방법을 제공 하는 Web Api 작성에 대 한 지원이 포함 되어 있습니다. 이 문서에서 ASP.NET Core mvc 웹 API 구현 ASP.NET Web API에서 마이그레이션하는 데 필요한 단계 보여 줍니다.
 
-[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/migration/webapi/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/migration/webapi/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="review-aspnet-web-api-project"></a>ASP.NET Web API 프로젝트 검토
 
-이 문서에서는 샘플 프로젝트 *ProductsApp*문서에서 만든 [ASP.NET Web API 시작](https://docs.microsoft.com/aspnet/web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api) 기준으로 합니다. 해당 프로젝트에서 간단한 ASP.NET 웹 API 프로젝트는 다음과 같이 구성 됩니다.
+이 문서에서는 샘플 프로젝트 *ProductsApp*문서에서 만든 [ASP.NET Web API 2 시작](/aspnet/web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api) 기준으로 합니다. 해당 프로젝트에서 간단한 ASP.NET 웹 API 프로젝트는 다음과 같이 구성 됩니다.
 
 *Global.asax.cs*, 하도록 호출 `WebApiConfig.Register`:
 

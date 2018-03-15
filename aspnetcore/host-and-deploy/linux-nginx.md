@@ -5,16 +5,16 @@ description: "Ubuntu 16.04 Kestrel에서 실행 되는 ASP.NET Core 웹 앱에 �
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 08/21/2017
+ms.date: 03/13/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/linux-nginx
-ms.openlocfilehash: 5e85cf909c1a360f245bcc83233ccc1347735b26
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: a1de177fcd41c925a85e5aab9a0d236249b7da0b
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="host-aspnet-core-on-linux-with-nginx"></a>Nginx를 사용하여 Linux에서 ASP.NET Core 호스트
 
@@ -22,7 +22,8 @@ ms.lasthandoff: 03/02/2018
 
 이 가이드에서는 Ubuntu 16.04 Server에서 프로덕션 준비 ASP.NET Core 환경을 설정하는 방법을 설명합니다.
 
-**참고:** Ubuntu 14.04에 대 한 *supervisord* Kestrel 프로세스를 모니터링 하기 위한 솔루션으로 것이 좋습니다. *systemd* Ubuntu 14.04에서 사용할 수 없습니다. [이 문서의 이전 버전을 참조하세요](https://github.com/aspnet/Docs/blob/e9c1419175c4dd7e152df3746ba1df5935aaafd5/aspnetcore/publishing/linuxproduction.md).
+> [!NOTE]
+> Ubuntu 14.04에 대 한 *supervisord* Kestrel 프로세스를 모니터링 하기 위한 솔루션으로 것이 좋습니다. *systemd* Ubuntu 14.04에서 사용할 수 없습니다. [이 문서의 이전 버전 참조](https://github.com/aspnet/Docs/blob/e9c1419175c4dd7e152df3746ba1df5935aaafd5/aspnetcore/publishing/linuxproduction.md)합니다.
 
 이 가이드의 내용:
 
@@ -31,7 +32,7 @@ ms.lasthandoff: 03/02/2018
 * 디먼 시작 시에 실행 하는 웹 응용 프로그램을 확인 합니다.
 * 웹 앱을 다시 시작 하려면 프로세스 관리 도구를 구성 합니다.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 1. sudo 권한을 가진 표준 사용자 계정으로 Ubuntu 16.04 Server에 액세스
 1. 기존 ASP.NET Core 응용 프로그램
@@ -113,23 +114,37 @@ sudo service nginx start
 
 ### <a name="configure-nginx"></a>Nginx 구성
 
-요청을 전달 우리의 ASP.NET Core 응용 프로그램에 역방향 프록시로 Nginx을 구성 하려면 수정 `/etc/nginx/sites-available/default`합니다. 텍스트 편집기에서 해당 항목을 열고 콘텐츠를 다음으로 바꿉니다.
+요청을 전달 ASP.NET Core 응용 프로그램에 역방향 프록시로 Nginx을 구성 하려면 수정 */etc/nginx/sites-available/default*합니다. 텍스트 편집기에서 해당 항목을 열고 콘텐츠를 다음으로 바꿉니다.
 
-```
+```nginx
 server {
-    listen 80;
+    listen        80;
+    server_name   example.com *.example.com;
     location / {
-        proxy_pass http://localhost:5000;
+        proxy_pass         http://localhost:5000;
         proxy_http_version 1.1;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection keep-alive;
-        proxy_set_header Host $http_host;
+        proxy_set_header   Upgrade $http_upgrade;
+        proxy_set_header   Connection keep-alive;
+        proxy_set_header   Host $http_host;
         proxy_cache_bypass $http_upgrade;
     }
 }
 ```
 
-이 Nginx 구성 파일은 들어오는 공용 트래픽을 포트 `80`에서 포트 `5000`으로 전달합니다.
+No `server_name` 일치 Nginx 기본 서버를 사용 합니다. 기본 서버 정의 된 경우 구성 파일에서 첫 번째 서버는 기본 서버입니다. 모범 사례로, 구성 파일에 444의 상태 코드를 반환 하는 특정 기본 서버를 추가 합니다. 다음은 기본 서버 구성 예가입니다.
+
+```nginx
+server {
+    listen   80 default_server;
+    # listen [::]:80 default_server deferred;
+    return   444;
+}
+```
+
+위의 구성 파일 및 기본 서버와 Nginx 허용 호스트 헤더를 사용 하 여 포트 80에서 공용 트래픽을 `example.com` 또는 `*.example.com`합니다. 이러한 호스트와 일치 하지 않는 요청 Kestrel에 경고가 전달 되지 않습니다. 일치 하는 요청에 Kestrel을 전달 하는 Nginx `http://localhost:5000`합니다. 참조 [nginx 요청을 처리 하는 방법을](https://nginx.org/docs/http/request_processing.html) 자세한 정보에 대 한 합니다.
+
+> [!WARNING]
+> 적절 한 입력 하지 않으면 [server_name 지시문](https://nginx.org/docs/http/server_names.html) 보안 취약성이 있는 응용 프로그램을 노출 합니다. 와일드 카드 바인딩 하위 도메인 (예를 들어 `*.example.com`) 전체 부모 도메인을 제어 하는 경우이 보안 위험을 노출 하지 않습니다 (반대인 `*.com`, 취약 한 변수인). 참조 [rfc7230 섹션 5.4](https://tools.ietf.org/html/rfc7230#section-5.4) 자세한 정보에 대 한 합니다.
 
 Nginx 구성, 설정 되 면 실행 `sudo nginx -t` 구성 파일의 구문을 확인 합니다. 구성 파일 테스트에 성공한 경우 강제로 실행 하 여 변경 내용을 적용 하려면 Nginx `sudo nginx -s reload`합니다.
 

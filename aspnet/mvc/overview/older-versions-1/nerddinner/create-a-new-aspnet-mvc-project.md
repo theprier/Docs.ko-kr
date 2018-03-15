@@ -13,14 +13,14 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/create-a-new-aspnet-mvc-project
 msc.type: authoredcontent
 ms.openlocfilehash: 4d30a6803b1478014a2afb814ac317df27394446
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/15/2018
 ---
 <a name="create-a-new-aspnet-mvc-project"></a>새 ASP.NET MVC 프로젝트 만들기
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [PDF 다운로드](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
 
@@ -63,14 +63,14 @@ Visual Studio와 함께 새 ASP.NET MVC 응용 프로그램을 만들면 프로�
 
 기본적으로 ASP.NET MVC 프로젝트는 6 개의 최상위 디렉터리:
 
-| **디렉터리** | **용도** |
+| **Directory** | **용도** |
 | --- | --- |
-| **/ 컨트롤러** | URL 요청을 처리 하는 컨트롤러 클래스를 배치 하는 위치 |
-| **/ 모델** | 나타내고 데이터를 조작 하는 클래스를 배치 하는 위치 |
-| **/ 보기** | 렌더링 출력과 담당 하는 UI 템플릿 파일을 저장할 위치 |
-| **/ 스크립트** | JavaScript 라이브러리 파일 및 스크립트 (.js)을 저장할 위치 |
-| **/ 콘텐츠** | CSS 및 이미지 파일 및 기타 비-동적/비-JavaScript 콘텐츠를 배치 하는 위치 |
-| **/ 응용 프로그램\_데이터** | 데이터 파일을 저장 하는 경우 읽기/쓰기 하려고 합니다. |
+| **/Controllers** | URL 요청을 처리 하는 컨트롤러 클래스를 배치 하는 위치 |
+| **/Models** | 나타내고 데이터를 조작 하는 클래스를 배치 하는 위치 |
+| **/Views** | 렌더링 출력과 담당 하는 UI 템플릿 파일을 저장할 위치 |
+| **/Scripts** | JavaScript 라이브러리 파일 및 스크립트 (.js)을 저장할 위치 |
+| **/Content** | CSS 및 이미지 파일 및 기타 비-동적/비-JavaScript 콘텐츠를 배치 하는 위치 |
+| **/App\_Data** | 데이터 파일을 저장 하는 경우 읽기/쓰기 하려고 합니다. |
 
 ASP.NET MVC는이 구조를 필요 하지 않습니다. 사실, 대규모 응용 프로그램에서 작업 하는 개발자는 일반적으로 분할 응용 프로그램을 보다 잘 관리할 수 있도록 여러 프로젝트 (예: 데이터 모델 클래스 것으로 서 별도 클래스 라이브러리 프로젝트에서 웹 응용 프로그램에서). 그러나 기본 프로젝트 구조 म 새로 우리의 응용 프로그램 문제를 유지 하는 데 사용할 수 있는 좋은 기본 디렉터리 규칙을 제공지 않습니다.
 

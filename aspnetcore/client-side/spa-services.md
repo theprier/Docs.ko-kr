@@ -1,5 +1,5 @@
 ---
-title: "단일 페이지 응용 프로그램을 만들기 위한 JavaScriptServices를 사용 하 여"
+title: "JavaScriptServices를 사용 하 여 ASP.NET 코어의 단일 페이지 응용 프로그램을 만들려면"
 author: scottaddie
 description: "단일 페이지 응용 프로그램 (SPA) 뒷받침 되며 ASP.NET Core 만들려는 JavaScriptServices 사용의 이점에 알아봅니다."
 manager: wpickett
@@ -10,19 +10,19 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/spa-services
-ms.openlocfilehash: c617f1a563b0eeccea0ab313bba8b90a4c947e28
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: c962fc160cf39ad1c69f4269616c993fde420035
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="using-javascriptservices-for-creating-single-page-applications-with-aspnet-core"></a>ASP.NET Core 사용 단일 페이지 응용 프로그램을 만들기 위한 JavaScriptServices를 사용 하 여
+# <a name="use-javascriptservices-to-create-single-page-applications-in-aspnet-core"></a>JavaScriptServices를 사용 하 여 ASP.NET 코어의 단일 페이지 응용 프로그램을 만들려면
 
 여 [Scott Addie](https://github.com/scottaddie) 및 [Fiyaz Hasan](http://fiyazhasan.me/)
 
 단일 페이지 응용 프로그램 (SPA)에 내재 된 풍부한 사용자 환경이 때문에 웹 응용 프로그램의 인기 있는 형식입니다. 와 같은 클라이언트 쪽 SPA 프레임 워크 또는 라이브러리가, 통합 [각](https://angular.io/) 또는 [반응](https://facebook.github.io/react/), ASP.NET Core 것은 어려울 수와 같은 서버 쪽 프레임 워크입니다. [JavaScriptServices](https://github.com/aspnet/JavaScriptServices) 통합 프로세스에서 충돌을 줄이기 위해 개발 되었습니다. 다른 클라이언트와 서버 기술 스택 간에 원활 하 게 작업 수 있습니다.
 
-[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/client-side/spa-services/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/client-side/spa-services/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 <a name="what-is-js-services"></a>
 
@@ -83,7 +83,7 @@ SpaServices를 사용 하려면 다음을 설치 합니다.
 
 ASP.NET Core [태그 도우미](xref:mvc/views/tag-helpers/intro) 제공한 SpaServices 서버에서 JavaScript 함수를 호출 하 여 서버 쪽 사전 렌더링이의 구현을 단순화 합니다.
 
-### <a name="prerequisites"></a>필수 구성 요소
+### <a name="prerequisites"></a>전제 조건
 
 다음을 설치합니다.
 * [aspnet 사전 렌더링이](https://www.npmjs.com/package/aspnet-prerendering) npm 패키지:
@@ -140,7 +140,7 @@ ASP.NET Core [태그 도우미](xref:mvc/views/tag-helpers/intro) 제공한 SpaS
 
 [!code-json[](../client-side/spa-services/sample/SpaServicesSampleApp/package.json?range=5)]
 
-### <a name="prerequisites"></a>필수 구성 요소
+### <a name="prerequisites"></a>전제 조건
 
 다음을 설치합니다.
 * [aspnet 시스템용](https://www.npmjs.com/package/aspnet-webpack) npm 패키지:
@@ -167,7 +167,7 @@ ASP.NET Core [태그 도우미](xref:mvc/views/tag-helpers/intro) 제공한 SpaS
 
 시스템용의 간주할 [핫 모듈 교체](https://webpack.github.io/docs/hot-module-replacement-with-webpack.html) 의 진화 (HMR) 기능 [시스템용 Dev 미들웨어](#webpack-dev-middleware)합니다. HMR는 모두 같은 유용한 기능이 도입 되었지만 더 이상 자동으로 변경 내용을 컴파일한 후 페이지 콘텐츠를 업데이트 하 여 개발 워크플로 간소화 합니다. 현재 메모리 상태와는 SPA의 디버깅 세션을 방해 하 게 하는 브라우저의 새로 고침으로이 혼동 하지 마십시오. 변경 내용을 브라우저에 전달 되는 브라우저와 시스템용 Dev 미들웨어 서비스 간의 라이브 연결이 됩니다.
 
-### <a name="prerequisites"></a>필수 구성 요소
+### <a name="prerequisites"></a>전제 조건
 
 다음을 설치합니다.
 * [시스템용 핫 미들웨어](https://www.npmjs.com/package/webpack-hot-middleware) npm 패키지:
@@ -204,7 +204,7 @@ app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions {
 
 시나리오를 고려해 야의 확장명은 경로 `/some/page` 사용 됩니다. 해당 패턴 일치는 클라이언트 쪽 경로 않지만 요청 하지 않는 패턴 일치 한 서버 쪽 경로 가정 합니다. 에 대 한 들어오는 요청에 알아보겠습니다 `/images/user-512.png`, 일반적으로 서버에서 이미지 파일을 찾으려고 시도 합니다. 클라이언트 쪽 응용 프로그램에서 처리할 것 있음을 그럴 가능성은 해당 요청 된 리소스 경로는 모든 서버 쪽 경로 또는 정적 파일와 일치 하지 않으면,-404 HTTP 상태 코드를 반환 하려면 일반적으로 합니다.
 
-### <a name="prerequisites"></a>필수 구성 요소
+### <a name="prerequisites"></a>전제 조건
 
 다음을 설치합니다.
 * 클라이언트 쪽 라우팅 npm 패키지입니다. 예를 들어 각 사용:
@@ -324,6 +324,6 @@ MSBuild 대상 실행 하는 경우 호출 됩니다.
 dotnet publish -c Release
 ```
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 * [Angular Docs](https://angular.io/docs)

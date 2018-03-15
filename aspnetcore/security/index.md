@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/index
-ms.openlocfilehash: 7e5f6bc44241dc6fc11569a145a04340f1b3ee7f
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: e03256d7b8b442569b0b0126983732c10817e20f
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="aspnet-core-security-overview"></a>ASP.NET Core 보안 개요
 
@@ -97,7 +97,6 @@ ASP.NET Core 및 EF는 앱을 보호하고 보안 위반을 방지하는 기능�
         *   [키 저장소 형식](data-protection/implementation/key-storage-format.md)
         *   [삭제되는 데이터 보호 공급자](data-protection/implementation/key-storage-ephemeral.md)
     *   [호환성](data-protection/compatibility/index.md)
-        *   [앱 간 쿠키 공유](data-protection/compatibility/cookie-sharing.md)
         *   [ASP.NET에서 <machineKey> 바꾸기](data-protection/compatibility/replacing-machinekey.md)
 *   [권한 부여로 보호된 사용자 데이터를 사용하여 앱 만들기](xref:security/authorization/secure-data)
 *   [개발 중 안전한 앱 비밀 저장소](app-secrets.md)
@@ -107,3 +106,4 @@ ASP.NET Core 및 EF는 앱을 보호하고 보안 위반을 방지하는 기능�
 *   [오픈 리디렉션 공격 방지](preventing-open-redirects.md)
 *   [사이트 간 스크립팅 방지](cross-site-scripting.md)
 *   [원본 간 요청(CORS) 사용](cors.md)
+*   [앱 간 쿠키 공유](cookie-sharing.md)

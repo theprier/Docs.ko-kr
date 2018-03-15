@@ -313,7 +313,6 @@
 #### [키 저장소 형식](xref:security/data-protection/implementation/key-storage-format)
 #### [삭제되는 데이터 보호 공급자](xref:security/data-protection/implementation/key-storage-ephemeral)
 ### [호환성](xref:security/data-protection/compatibility/index)
-#### [앱 간 쿠키 공유](xref:security/data-protection/compatibility/cookie-sharing)
 #### [ASP.NET에서 <machineKey> 바꾸기](xref:security/data-protection/compatibility/replacing-machinekey)
 ## [HTTPS 적용](xref:security/enforcing-ssl)
 ## [개발 중 안전한 앱 비밀 저장소](xref:security/app-secrets)
@@ -322,6 +321,7 @@
 ## [오픈 리디렉션 공격 방지](xref:security/preventing-open-redirects)
 ## [사이트 간 스크립팅 방지](xref:security/cross-site-scripting)
 ## [원본 간 요청(CORS) 사용](xref:security/cors)
+## [앱 간 쿠키 공유](xref:security/cookie-sharing)
 
 # [성능](xref:performance/index)
 ## [캐싱](xref:performance/caching/index)

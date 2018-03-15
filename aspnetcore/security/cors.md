@@ -1,7 +1,7 @@
 ---
-title: "교차 원본 요청(CORS) 활성화시키기"
+title: "ASP.NET Core에서 크로스-원본 요청 (CORS)를 사용 하도록 설정"
 author: rick-anderson
-description: "본문에서는 ASP.NET Core 응용 프로그램에서 교차-원본 요청을 허용하거나 거부하는 표준 CORS를 소개합니다."
+description: "자세한 방법을 허용 또는 거부 된 ASP.NET Core 응용 프로그램에 대 한 교차 원본 요청에 대 한 표준으로 CORS 합니다."
 manager: wpickett
 ms.author: riande
 ms.date: 05/17/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/cors
-ms.openlocfilehash: ee61798fc1bde89ca3712eae9b7c4413e58cf70d
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
-ms.translationtype: HT
+ms.openlocfilehash: 64d939033fee14fad37a08c60da608898e20c01b
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="enabling-cross-origin-requests-cors"></a>교차 원본 요청(CORS) 활성화시키기
+# <a name="enabling-cross-origin-requests-cors-in-aspnet-core"></a>ASP.NET Core에서 크로스-원본 요청 (CORS)를 사용 하도록 설정
 
 작성자: [Mike Wasson](https://github.com/mikewasson), [Shayne Boyer](https://twitter.com/spboyer), 및 [Tom Dykstra](https://github.com/tdykstra)
 
@@ -56,7 +56,7 @@ ASP.NET Core 응용 프로그램에 CORS를 설정하려면 프로젝트에 `Mic
 
 ## <a name="enabling-cors-with-middleware"></a>미들웨어를 이용해서 CORS 활성화시키기
 
-전체 응용 프로그램에서 CORS를 활성화시키려면 `UseCors` 확장 메서드를 이용해서 요청 파이프라인에 CORS 미들웨어를 추가합니다. 참고로 교차 원본 요청을 지원하고자 하는 응용 프로그램 내의 모든 정의된 끝점보다  `UseMvc` 를 호출하기 전에 CORS 미들웨어를 먼저 파이프라인에 추가해야 합니다.
+전체 응용 프로그램에서 CORS를 활성화시키려면 `UseCors` 확장 메서드를 이용해서 요청 파이프라인에 CORS 미들웨어를 추가합니다. 참고는 CORS 미들웨어 앞에 야 정의 된 끝점 (예: 교차 원본 요청을 지원 하 고 응용 프로그램에서. 호출 하기 전에 `UseMvc`).
 
 CORS 미들웨어를 추가할 때, `CorsPolicyBuilder` 클래스를 이용해서 원본 간 정책을 지정할 수 있습니다. 구체적인 방법은 두 가지입니다. 먼저, 첫 번째 방법은 람다를 전달해서 `UseCors`를 호출하는 것입니다.
 
@@ -160,7 +160,7 @@ CORS의 예비 요청에는 클라이언트 응용 프로그램에서 설정한 
 
 ### <a name="set-the-exposed-response-headers"></a>노출되는 응답 헤더 설정하기
 
-기본적으로 브라우저는 클라이언트 응용 프로그램에 모든 응답 헤더를 노출하지 않습니다. ([http://www.w3.org/TR/cors/#simple-response-header](http://www.w3.org/TR/cors/#simple-response-header) 참고). 기본적으로 사용 가능한 응답 헤더들은 다음과 같습니다.
+기본적으로 브라우저는 클라이언트 응용 프로그램에 모든 응답 헤더를 노출하지 않습니다. (참조 [ http://www.w3.org/TR/cors/#simple-response-header ](http://www.w3.org/TR/cors/#simple-response-header).) 기본적으로 사용 가능한 응답 헤더들은 다음과 같습니다.
 
 * Cache-Control
 
@@ -223,7 +223,7 @@ Access-Control-Max-Age 헤더는 예비 요청에 대한 응답을 캐시할 수
 
 이번 섹션에서는 CORS 요청 시 HTTP 메시지 수준에서 발생하는 일들을 살펴봅니다. CORS 정책을 올바르게 구성하기 위해서, 그리고 예상대로 동작하지 않는 경우 문제를 해결하기 위해서는 CORS가 동작하는 방식을 이해하는 것이 중요합니다.
 
-CORS 명세에서는 교차 원본 요청을 활성화시키기 위한 용도로 몇 가지 새로운 HTTP 헤더들이 도입되었습니다. 그러나, 브라우저가 CORS를 지원할 경우, 교차 원본 요청 시 브라우저가 자동으로 이 헤더들을 설정해주므로 JavaScript 코드에서 직접 처리해줘야 할 작업은 전혀 없습니다.
+CORS 명세에서는 교차 원본 요청을 활성화시키기 위한 용도로 몇 가지 새로운 HTTP 헤더들이 도입되었습니다. 브라우저에서 CORS를 지 원하는 경우 이러한 헤더가 크로스-원본 요청에 대 한 자동으로 설정 합니다. CORS를 사용 하도록 사용자 지정 JavaScript 코드는 필요 하지 않습니다.
 
 크로스-원본 요청의 예를 들면 다음과 같습니다. `Origin` 헤더는 요청을 수행 하는 사이트의 도메인을 제공 합니다.
 

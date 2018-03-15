@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: testing/razor-pages-testing
-ms.openlocfilehash: 3f53924e0b36b7924d82f97a8702aa461d9ebd78
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: e4f87a8151e378717aa9198e4629711c4ea6ef77
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="razor-pages-unit-and-integration-testing-in-aspnet-core"></a>Razor 페이지 단위 및 ASP.NET Core에서 통합 테스트
 
@@ -34,7 +34,7 @@ ASP.NET Core 단위 및 Razor 페이지 응용 프로그램의 통합 테스트�
 * [에서 단위 테스트 C#.NET Core dotnet 테스트, xUnit를 사용 하 여](/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
 * [통합 테스트](xref:testing/integration-testing)
 
-[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/testing/razor-pages-testing/sample/)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/testing/razor-pages-testing/sample/)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 샘플 프로젝트에는 두 응용 프로그램이 구성 됩니다.
 
@@ -55,11 +55,11 @@ dotnet test
 
 * 응용 프로그램의 인덱스 페이지 (*Pages/Index.cshtml* 및 *Pages/Index.cshtml.cs*) UI 및 페이지를 추가, 삭제 및 메시지 (메시지 마다 평균 단어) 분석을 제어 하려면 모델 메서드 제공 .
 * 메시지에서 설명 된 `Message` 클래스 (*Data/Message.cs*) 두 개의 속성이 있는: `Id` (키) 및 `Text` (메시지). `Text` 속성 인수가 필요 하 고 200 자로 제한 됩니다.
-* 메시지를 사용 하 여 저장 된 [Entity Framework의 메모리 내 데이터베이스](/ef/core/providers/in-memory/)&#8224;.
+* 메시지를 사용 하 여 저장 된 [Entity Framework의 메모리 내 데이터베이스](/ef/core/providers/in-memory/)&#8224;합니다.
 * 앱의 데이터베이스 컨텍스트 클래스의 데이터 액세스 계층 (DAL)에 포함 되어 `AppDbContext` (*Data/AppDbContext.cs*). DAL 메서드는 표시 `virtual`, 테스트에서 사용 하기 위해 메서드를 모의 수 있습니다.
 * 데이터베이스 응용 프로그램 시작 시에 비어 있으면 메시지 저장소 세 가지 메시지와 함께 초기화 됩니다. 이러한 *메시지 시드* 테스트에 사용 됩니다.
 
-&#8224; EF 항목 [with InMemory 테스트](/ef/core/miscellaneous/testing/in-memory), MSTest를 사용 하 여 테스트에 대 한 메모리 내 데이터베이스를 사용 하는 방법에 설명 합니다. 이 항목에서는 [xUnit](https://xunit.github.io/) 테스트 프레임 워크입니다. 다양 한 테스트 프레임 워크에서 테스트 구현 및 테스트 개념은 유사 하지만 동일 하지는 않습니다.
+&#8224;EF 항목 [with InMemory 테스트](/ef/core/miscellaneous/testing/in-memory), MSTest를 사용 하 여 테스트에 대 한 메모리 내 데이터베이스를 사용 하는 방법에 설명 합니다. 이 항목에서는 [xUnit](https://xunit.github.io/) 테스트 프레임 워크입니다. 다양 한 테스트 프레임 워크에서 테스트 구현 및 테스트 개념은 유사 하지만 동일 하지는 않습니다.
 
 응용 프로그램을 사용 하지 않는 있지만 [리포지토리 패턴](http://martinfowler.com/eaaCatalog/repository.html) 와의 효율적인 예가 없습니다는 [작업 단위 (UoW) 패턴](https://martinfowler.com/eaaCatalog/unitOfWork.html), Razor 페이지 개발의 이러한 패턴을 지원 합니다. 자세한 내용은 참조 [인프라 지 속성 계층 디자인](/dotnet/standard/microservices-architecture/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design), [ASP.NET MVC 응용 프로그램에서 저장소 및 작업 단위 패턴을 구현](/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application), 및 [테스트 컨트롤러 논리](/aspnet/core/mvc/controllers/testing) (샘플 리포지토리 패턴을 구현 하는 데 사용).
 

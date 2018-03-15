@@ -1,5 +1,5 @@
 ---
-title: "Azure 키 자격 증명 모음 구성 공급자"
+title: "ASP.NET Core에 azure 키 자격 증명 모음 구성 공급자"
 author: guardrex
 description: "Azure 키 자격 증명 모음 구성 공급자를 사용 하 여 런타임에 로드 하는 이름-값 쌍을 사용 하 여 응용 프로그램을 구성 하는 방법에 알아봅니다."
 manager: wpickett
@@ -8,13 +8,13 @@ ms.date: 08/09/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: security/key-vault-configuration
-ms.openlocfilehash: 1a91a87fb90d4d4651e07f32415e4364c8e2d993
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: e1a4be77417f0a74182f1b123bfba429737d4330
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="azure-key-vault-configuration-provider"></a>Azure 키 자격 증명 모음 구성 공급자
+# <a name="azure-key-vault-configuration-provider-in-aspnet-core"></a>ASP.NET Core에 azure 키 자격 증명 모음 구성 공급자
 
 여 [Luke Latham](https://github.com/guardrex) 및 [Andrew Stanton 간호사](https://github.com/anurse)
 
@@ -74,7 +74,7 @@ ms.lasthandoff: 02/11/2018
 ![브라우저 창에는 Azure 키 자격 증명 모음 구성 공급자를 통해 로드 하는 비밀 값 표시](key-vault-configuration/_static/sample1.png)
 
 ## <a name="creating-prefixed-key-vault-secrets-and-loading-configuration-values-key-name-prefix-sample"></a>접두사가 지정 된 키 자격 증명 모음 암호 만들기 및 구성 값 (키-이름-접두사-샘플)를 로드 합니다.
-`AddAzureKeyVault`또한 구현을 허용 하는 오버 로드를 제공 `IKeyVaultSecretManager`, 구성 키로 변환 하는 주요 자격 증명 모음 암호를 제어할 수 있습니다. 예를 들어 앱을 시작할 때 제공 되는 접두사 값에 따라 보안 값을 로드 하는 인터페이스를 구현할 수 있습니다. 이렇게 하면 응용 프로그램의 버전에 따라 암호를 로드 예를 들어 있습니다.
+`AddAzureKeyVault` 또한 구현을 허용 하는 오버 로드를 제공 `IKeyVaultSecretManager`, 구성 키로 변환 하는 주요 자격 증명 모음 암호를 제어할 수 있습니다. 예를 들어 앱을 시작할 때 제공 되는 접두사 값에 따라 보안 값을 로드 하는 인터페이스를 구현할 수 있습니다. 이렇게 하면 응용 프로그램의 버전에 따라 암호를 로드 예를 들어 있습니다.
 
 > [!WARNING]
 > 같은 키 자격 증명 모음에 여러 앱에 대 한 암호를 배치 하려면 또는 환경 비밀을 주요 자격 증명 모음 암호에 접두사를 사용 하지 않습니다 (예를 들어 *개발* 비교 *프로덕션* 비밀)를 동일한 자격 증명 모음입니다. 다른 앱과 개발/프로덕션 환경 가장 높은 보안 수준에 대 한 응용 프로그램 환경을 격리할 때 별도 주요 자격 증명 모음 사용 하는 것이 좋습니다.
@@ -154,7 +154,7 @@ Configuration.Reload();
 * Azure AD 키 (`ClientSecret`) 만료 되었습니다.
 * 구성 키 (이름)을 로드 하려고 하는 값에 대 한 응용 프로그램에서 올바르지 않습니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 * [구성](xref:fundamentals/configuration/index)
 * [Microsoft Azure: 키 자격 증명 모음](https://azure.microsoft.com/services/key-vault/)
 * [Microsoft Azure: 키 자격 증명 모음 설명서](https://docs.microsoft.com/azure/key-vault/)
