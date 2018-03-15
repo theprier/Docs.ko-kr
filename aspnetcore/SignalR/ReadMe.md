@@ -1,1 +1,0 @@
-<span data-ttu-id="bb630-101">SignalR 콘텐츠에 대 한 경우이 폴더입니다.</span><span class="sxs-lookup"><span data-stu-id="bb630-101">This folder if for SignalR content.</span></span> <span data-ttu-id="bb630-102">첫 번째 파일이이 디렉터리에 추가 되 면이 파일을 삭제 합니다.</span><span class="sxs-lookup"><span data-stu-id="bb630-102">Delete this file when the first file is added to this directory.</span></span>
