@@ -9,14 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/compatibility/index
-ms.openlocfilehash: c5ef75c995c247d75103d38b9f8b4e137550d1fa
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 4f60f399c724a5f88e7fba3caa2c48f5cec6b137
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="compatibility-in-aspnet-core"></a><span data-ttu-id="c4ed5-103">ASP.NET Core의 호환성</span><span class="sxs-lookup"><span data-stu-id="c4ed5-103">Compatibility in ASP.NET Core</span></span>
+# <a name="compatibility-in-aspnet-core"></a><span data-ttu-id="03ea4-103">ASP.NET Core의 호환성</span><span class="sxs-lookup"><span data-stu-id="03ea4-103">Compatibility in ASP.NET Core</span></span>
 
-* [<span data-ttu-id="c4ed5-104">앱 간 쿠키 공유</span><span class="sxs-lookup"><span data-stu-id="c4ed5-104">Sharing cookies among apps</span></span>](xref:security/data-protection/compatibility/cookie-sharing)
-
-* [<span data-ttu-id="c4ed5-105">ASP.NET의 \<machineKey> 대체하기</span><span class="sxs-lookup"><span data-stu-id="c4ed5-105">Replacing \<machineKey> in ASP.NET</span></span>](xref:security/data-protection/compatibility/replacing-machinekey)
+* [<span data-ttu-id="03ea4-104">ASP.NET의 \<machineKey> 대체하기</span><span class="sxs-lookup"><span data-stu-id="03ea4-104">Replacing \<machineKey> in ASP.NET</span></span>](xref:security/data-protection/compatibility/replacing-machinekey)

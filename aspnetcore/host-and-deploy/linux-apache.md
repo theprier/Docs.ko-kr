@@ -5,48 +5,48 @@ author: spboyer
 manager: wpickett
 ms.author: spboyer
 ms.custom: mvc
-ms.date: 10/19/2016
+ms.date: 03/13/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/linux-apache
-ms.openlocfilehash: b11bc811b6aefce22b60a28afd72c2a2d0b26955
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 033adddc586b60c9f7453df5434617aa838737f8
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="host-aspnet-core-on-linux-with-apache"></a><span data-ttu-id="8d794-103">Apache를 사용하여 Linux에서 ASP.NET Core 호스트</span><span class="sxs-lookup"><span data-stu-id="8d794-103">Host ASP.NET Core on Linux with Apache</span></span>
+# <a name="host-aspnet-core-on-linux-with-apache"></a><span data-ttu-id="86cbc-103">Apache를 사용하여 Linux에서 ASP.NET Core 호스트</span><span class="sxs-lookup"><span data-stu-id="86cbc-103">Host ASP.NET Core on Linux with Apache</span></span>
 
-<span data-ttu-id="8d794-104">작성자: [Shayne Boyer](https://github.com/spboyer)</span><span class="sxs-lookup"><span data-stu-id="8d794-104">By [Shayne Boyer](https://github.com/spboyer)</span></span>
+<span data-ttu-id="86cbc-104">작성자: [Shayne Boyer](https://github.com/spboyer)</span><span class="sxs-lookup"><span data-stu-id="86cbc-104">By [Shayne Boyer](https://github.com/spboyer)</span></span>
 
-<span data-ttu-id="8d794-105">설정 하는 방법은이 가이드를 사용 하 여 [Apache](https://httpd.apache.org/) 에 역방향 프록시 서버로 [CentOS 7](https://www.centos.org/) 에서 실행 되는 ASP.NET Core 웹 앱에 HTTP 트래픽을 리디렉션하기 위해 [Kestrel](xref:fundamentals/servers/kestrel)합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-105">Using this guide, learn how to set up [Apache](https://httpd.apache.org/) as a reverse proxy server on [CentOS 7](https://www.centos.org/) to redirect HTTP traffic to an ASP.NET Core web app running on [Kestrel](xref:fundamentals/servers/kestrel).</span></span> <span data-ttu-id="8d794-106">[mod_proxy 확장](http://httpd.apache.org/docs/2.4/mod/mod_proxy.html) 관련된 모듈 역방향 프록시 서버를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-106">The [mod_proxy extension](http://httpd.apache.org/docs/2.4/mod/mod_proxy.html) and related modules create the server's reverse proxy.</span></span>
+<span data-ttu-id="86cbc-105">설정 하는 방법은이 가이드를 사용 하 여 [Apache](https://httpd.apache.org/) 에 역방향 프록시 서버로 [CentOS 7](https://www.centos.org/) 에서 실행 되는 ASP.NET Core 웹 앱에 HTTP 트래픽을 리디렉션하기 위해 [Kestrel](xref:fundamentals/servers/kestrel)합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-105">Using this guide, learn how to set up [Apache](https://httpd.apache.org/) as a reverse proxy server on [CentOS 7](https://www.centos.org/) to redirect HTTP traffic to an ASP.NET Core web app running on [Kestrel](xref:fundamentals/servers/kestrel).</span></span> <span data-ttu-id="86cbc-106">[mod_proxy 확장](http://httpd.apache.org/docs/2.4/mod/mod_proxy.html) 관련된 모듈 역방향 프록시 서버를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-106">The [mod_proxy extension](http://httpd.apache.org/docs/2.4/mod/mod_proxy.html) and related modules create the server's reverse proxy.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="8d794-107">필수 구성 요소</span><span class="sxs-lookup"><span data-stu-id="8d794-107">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="86cbc-107">전제 조건</span><span class="sxs-lookup"><span data-stu-id="86cbc-107">Prerequisites</span></span>
 
-1. <span data-ttu-id="8d794-108">Sudo 권한으로 표준 사용자 계정을 사용 하 여 CentOS 7을 실행 하는 서버</span><span class="sxs-lookup"><span data-stu-id="8d794-108">Server running CentOS 7 with a standard user account with sudo privilege</span></span>
-2. <span data-ttu-id="8d794-109">ASP.NET Core 응용 프로그램</span><span class="sxs-lookup"><span data-stu-id="8d794-109">ASP.NET Core app</span></span>
+1. <span data-ttu-id="86cbc-108">Sudo 권한으로 표준 사용자 계정을 사용 하 여 CentOS 7을 실행 하는 서버</span><span class="sxs-lookup"><span data-stu-id="86cbc-108">Server running CentOS 7 with a standard user account with sudo privilege</span></span>
+2. <span data-ttu-id="86cbc-109">ASP.NET Core 응용 프로그램</span><span class="sxs-lookup"><span data-stu-id="86cbc-109">ASP.NET Core app</span></span>
 
-## <a name="publish-the-app"></a><span data-ttu-id="8d794-110">앱 게시</span><span class="sxs-lookup"><span data-stu-id="8d794-110">Publish the app</span></span>
+## <a name="publish-the-app"></a><span data-ttu-id="86cbc-110">앱 게시</span><span class="sxs-lookup"><span data-stu-id="86cbc-110">Publish the app</span></span>
 
-<span data-ttu-id="8d794-111">해당 응용 프로그램을 게시 한 [자체 포함된 배포](/dotnet/core/deploying/#self-contained-deployments-scd) CentOS 7 런타임에 대 한 릴리스 구성에서 (`centos.7-x64`).</span><span class="sxs-lookup"><span data-stu-id="8d794-111">Publish the app as a [self-contained deployment](/dotnet/core/deploying/#self-contained-deployments-scd) in Release configuration for the CentOS 7 runtime (`centos.7-x64`).</span></span> <span data-ttu-id="8d794-112">내용을 복사 하는 *bin/Release/netcoreapp2.0/centos.7-x64/publish* SCP, FTP 또는 기타 파일 전송 방법을 사용 하 여 서버에는 폴더입니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-112">Copy the contents of the *bin/Release/netcoreapp2.0/centos.7-x64/publish* folder to the server using SCP, FTP, or other file transfer method.</span></span>
+<span data-ttu-id="86cbc-111">해당 응용 프로그램을 게시 한 [자체 포함된 배포](/dotnet/core/deploying/#self-contained-deployments-scd) CentOS 7 런타임에 대 한 릴리스 구성에서 (`centos.7-x64`).</span><span class="sxs-lookup"><span data-stu-id="86cbc-111">Publish the app as a [self-contained deployment](/dotnet/core/deploying/#self-contained-deployments-scd) in Release configuration for the CentOS 7 runtime (`centos.7-x64`).</span></span> <span data-ttu-id="86cbc-112">내용을 복사 하는 *bin/Release/netcoreapp2.0/centos.7-x64/publish* SCP, FTP 또는 기타 파일 전송 방법을 사용 하 여 서버에는 폴더입니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-112">Copy the contents of the *bin/Release/netcoreapp2.0/centos.7-x64/publish* folder to the server using SCP, FTP, or other file transfer method.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="8d794-113">프로덕션 배포 시나리오에서 연속 통합 워크플로 응용 프로그램을 게시 및 자산에서 서버로 복사 작업을 수행 합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-113">Under a production deployment scenario, a continuous integration workflow does the work of publishing the app and copying the assets to the server.</span></span> 
+> <span data-ttu-id="86cbc-113">프로덕션 배포 시나리오에서 연속 통합 워크플로 응용 프로그램을 게시 및 자산에서 서버로 복사 작업을 수행 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-113">Under a production deployment scenario, a continuous integration workflow does the work of publishing the app and copying the assets to the server.</span></span> 
 
-## <a name="configure-a-proxy-server"></a><span data-ttu-id="8d794-114">프록시 서버 구성</span><span class="sxs-lookup"><span data-stu-id="8d794-114">Configure a proxy server</span></span>
+## <a name="configure-a-proxy-server"></a><span data-ttu-id="86cbc-114">프록시 서버 구성</span><span class="sxs-lookup"><span data-stu-id="86cbc-114">Configure a proxy server</span></span>
 
-<span data-ttu-id="8d794-115">역방향 프록시는 동적 웹 앱을 처리 하기 위한 일반적인 설치.</span><span class="sxs-lookup"><span data-stu-id="8d794-115">A reverse proxy is a common setup for serving dynamic web apps.</span></span> <span data-ttu-id="8d794-116">역방향 프록시는 HTTP 요청을 종료 하 고 ASP.NET 응용 프로그램에 전달 합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-116">The reverse proxy terminates the HTTP request and forwards it to the ASP.NET app.</span></span>
+<span data-ttu-id="86cbc-115">역방향 프록시는 동적 웹 앱을 처리 하기 위한 일반적인 설치.</span><span class="sxs-lookup"><span data-stu-id="86cbc-115">A reverse proxy is a common setup for serving dynamic web apps.</span></span> <span data-ttu-id="86cbc-116">역방향 프록시는 HTTP 요청을 종료 하 고 ASP.NET 응용 프로그램에 전달 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-116">The reverse proxy terminates the HTTP request and forwards it to the ASP.NET app.</span></span>
 
-<span data-ttu-id="8d794-117">프록시 서버는 하나 자체 요청을 수행 하는 대신 다른 서버에 대 한 클라이언트 요청을 전달 합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-117">A proxy server is one which forwards client requests to another server instead of fulfilling requests itself.</span></span> <span data-ttu-id="8d794-118">역방향 프록시는 일반적으로 임의의 클라이언트 대신 고정 대상에 전달됩니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-118">A reverse proxy forwards to a fixed destination, typically on behalf of arbitrary clients.</span></span> <span data-ttu-id="8d794-119">이 가이드에서는 Apache Kestrel ASP.NET Core 응용 프로그램을 처리는 동일한 서버에서 실행 하는 역방향 프록시도 구성 됩니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-119">In this guide, Apache is configured as the reverse proxy running on the same server that Kestrel is serving the ASP.NET Core app.</span></span>
+<span data-ttu-id="86cbc-117">프록시 서버는 하나 자체 요청을 수행 하는 대신 다른 서버에 대 한 클라이언트 요청을 전달 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-117">A proxy server is one which forwards client requests to another server instead of fulfilling requests itself.</span></span> <span data-ttu-id="86cbc-118">역방향 프록시는 일반적으로 임의의 클라이언트 대신 고정 대상에 전달됩니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-118">A reverse proxy forwards to a fixed destination, typically on behalf of arbitrary clients.</span></span> <span data-ttu-id="86cbc-119">이 가이드에서는 Apache Kestrel ASP.NET Core 응용 프로그램을 처리는 동일한 서버에서 실행 하는 역방향 프록시도 구성 됩니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-119">In this guide, Apache is configured as the reverse proxy running on the same server that Kestrel is serving the ASP.NET Core app.</span></span>
 
-<span data-ttu-id="8d794-120">전달 헤더 미들웨어를 사용 하 여 요청 역방향 프록시를 전달 하기 때문에 [Microsoft.AspNetCore.HttpOverrides](https://www.nuget.org/packages/Microsoft.AspNetCore.HttpOverrides/) 패키지 합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-120">Because requests are forwarded by reverse proxy, use the Forwarded Headers Middleware from the [Microsoft.AspNetCore.HttpOverrides](https://www.nuget.org/packages/Microsoft.AspNetCore.HttpOverrides/) package.</span></span> <span data-ttu-id="8d794-121">미들웨어 업데이트는 `Request.Scheme`를 사용 하 여는 `X-Forwarded-Proto` 헤더로, 해당 리디렉션 Uri 및 기타 보안 정책을 올바르게 작동 하도록 합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-121">The middleware updates the `Request.Scheme`, using the `X-Forwarded-Proto` header, so that redirect URIs and other security policies work correctly.</span></span>
+<span data-ttu-id="86cbc-120">전달 헤더 미들웨어를 사용 하 여 요청 역방향 프록시를 전달 하기 때문에 [Microsoft.AspNetCore.HttpOverrides](https://www.nuget.org/packages/Microsoft.AspNetCore.HttpOverrides/) 패키지 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-120">Because requests are forwarded by reverse proxy, use the Forwarded Headers Middleware from the [Microsoft.AspNetCore.HttpOverrides](https://www.nuget.org/packages/Microsoft.AspNetCore.HttpOverrides/) package.</span></span> <span data-ttu-id="86cbc-121">미들웨어 업데이트는 `Request.Scheme`를 사용 하 여는 `X-Forwarded-Proto` 헤더로, 해당 리디렉션 Uri 및 기타 보안 정책을 올바르게 작동 하도록 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-121">The middleware updates the `Request.Scheme`, using the `X-Forwarded-Proto` header, so that redirect URIs and other security policies work correctly.</span></span>
 
-<span data-ttu-id="8d794-122">모든 종류의 인증 미들웨어를 사용 하 여 전달 헤더 미들웨어 첫 번째 실행 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-122">When using any type of authentication middleware, the Forwarded Headers Middleware must run first.</span></span> <span data-ttu-id="8d794-123">이 순서 지정 하면 인증 미들웨어 헤더 값을 사용 하 고 올바른 리디렉션 Uri를 생성할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-123">This ordering ensures that the authentication middleware can consume the header values and generate correct redirect URIs.</span></span>
+<span data-ttu-id="86cbc-122">모든 종류의 인증 미들웨어를 사용 하 여 전달 헤더 미들웨어 첫 번째 실행 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-122">When using any type of authentication middleware, the Forwarded Headers Middleware must run first.</span></span> <span data-ttu-id="86cbc-123">이 순서 지정 하면 인증 미들웨어 헤더 값을 사용 하 고 올바른 리디렉션 Uri를 생성할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-123">This ordering ensures that the authentication middleware can consume the header values and generate correct redirect URIs.</span></span>
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="8d794-124">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="8d794-124">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[<span data-ttu-id="86cbc-124">ASP.NET Core 2.x</span><span class="sxs-lookup"><span data-stu-id="86cbc-124">ASP.NET Core 2.x</span></span>](#tab/aspnetcore2x)
 
-<span data-ttu-id="8d794-125">호출 된 [UseForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders) 에서 메서드 `Startup.Configure` 호출 하기 전에 [UseAuthentication](/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication) 또는 유사한 인증 체계 미들웨어:</span><span class="sxs-lookup"><span data-stu-id="8d794-125">Invoke the [UseForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders) method in `Startup.Configure` before calling [UseAuthentication](/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication) or similar authentication scheme middleware:</span></span>
+<span data-ttu-id="86cbc-125">호출 된 [UseForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders) 에서 메서드 `Startup.Configure` 호출 하기 전에 [UseAuthentication](/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication) 또는 유사한 인증 체계 미들웨어:</span><span class="sxs-lookup"><span data-stu-id="86cbc-125">Invoke the [UseForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders) method in `Startup.Configure` before calling [UseAuthentication](/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication) or similar authentication scheme middleware:</span></span>
 
 ```csharp
 app.UseForwardedHeaders(new ForwardedHeadersOptions
@@ -57,9 +57,9 @@ app.UseForwardedHeaders(new ForwardedHeadersOptions
 app.UseAuthentication();
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="8d794-126">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="8d794-126">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[<span data-ttu-id="86cbc-126">ASP.NET Core 1.x</span><span class="sxs-lookup"><span data-stu-id="86cbc-126">ASP.NET Core 1.x</span></span>](#tab/aspnetcore1x)
 
-<span data-ttu-id="8d794-127">호출 된 [UseForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders) 에서 메서드 `Startup.Configure` 호출 하기 전에 [UseIdentity](/dotnet/api/microsoft.aspnetcore.builder.builderextensions.useidentity) 및 [UseFacebookAuthentication](/dotnet/api/microsoft.aspnetcore.builder.facebookappbuilderextensions.usefacebookauthentication) 또는 유사한 인증 체계 미들웨어:</span><span class="sxs-lookup"><span data-stu-id="8d794-127">Invoke the [UseForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders) method in `Startup.Configure` before calling [UseIdentity](/dotnet/api/microsoft.aspnetcore.builder.builderextensions.useidentity) and [UseFacebookAuthentication](/dotnet/api/microsoft.aspnetcore.builder.facebookappbuilderextensions.usefacebookauthentication) or similar authentication scheme middleware:</span></span>
+<span data-ttu-id="86cbc-127">호출 된 [UseForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders) 에서 메서드 `Startup.Configure` 호출 하기 전에 [UseIdentity](/dotnet/api/microsoft.aspnetcore.builder.builderextensions.useidentity) 및 [UseFacebookAuthentication](/dotnet/api/microsoft.aspnetcore.builder.facebookappbuilderextensions.usefacebookauthentication) 또는 유사한 인증 체계 미들웨어:</span><span class="sxs-lookup"><span data-stu-id="86cbc-127">Invoke the [UseForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders) method in `Startup.Configure` before calling [UseIdentity](/dotnet/api/microsoft.aspnetcore.builder.builderextensions.useidentity) and [UseFacebookAuthentication](/dotnet/api/microsoft.aspnetcore.builder.facebookappbuilderextensions.usefacebookauthentication) or similar authentication scheme middleware:</span></span>
 
 ```csharp
 app.UseForwardedHeaders(new ForwardedHeadersOptions
@@ -77,23 +77,23 @@ app.UseFacebookAuthentication(new FacebookOptions()
 
 ---
 
-<span data-ttu-id="8d794-128">없는 경우 [ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions) 전달 하도록 기본 헤더는 미들웨어를 지정 된 `None`합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-128">If no [ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions) are specified to the middleware, the default headers to forward are `None`.</span></span>
+<span data-ttu-id="86cbc-128">없는 경우 [ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions) 전달 하도록 기본 헤더는 미들웨어를 지정 된 `None`합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-128">If no [ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions) are specified to the middleware, the default headers to forward are `None`.</span></span>
 
-### <a name="install-apache"></a><span data-ttu-id="8d794-129">Apache 설치</span><span class="sxs-lookup"><span data-stu-id="8d794-129">Install Apache</span></span>
+### <a name="install-apache"></a><span data-ttu-id="86cbc-129">Apache 설치</span><span class="sxs-lookup"><span data-stu-id="86cbc-129">Install Apache</span></span>
 
-<span data-ttu-id="8d794-130">CentOS 패키지를 안정적인 최신 버전으로 업데이트 합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-130">Update CentOS packages to their latest stable versions:</span></span>
+<span data-ttu-id="86cbc-130">CentOS 패키지를 안정적인 최신 버전으로 업데이트 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-130">Update CentOS packages to their latest stable versions:</span></span>
 
 ```bash
 sudo yum update -y
 ```
 
-<span data-ttu-id="8d794-131">단일 CentOS에 Apache 웹 서버를 설치 `yum` 명령:</span><span class="sxs-lookup"><span data-stu-id="8d794-131">Install the Apache web server on CentOS with a single `yum` command:</span></span>
+<span data-ttu-id="86cbc-131">단일 CentOS에 Apache 웹 서버를 설치 `yum` 명령:</span><span class="sxs-lookup"><span data-stu-id="86cbc-131">Install the Apache web server on CentOS with a single `yum` command:</span></span>
 
 ```bash
 sudo yum -y install httpd mod_ssl
 ```
 
-<span data-ttu-id="8d794-132">명령을 실행 한 후 출력 샘플:</span><span class="sxs-lookup"><span data-stu-id="8d794-132">Sample output after running the command:</span></span>
+<span data-ttu-id="86cbc-132">명령을 실행 한 후 출력 샘플:</span><span class="sxs-lookup"><span data-stu-id="86cbc-132">Sample output after running the command:</span></span>
 
 ```bash
 Downloading packages:
@@ -112,55 +112,60 @@ Complete!
 ```
 
 > [!NOTE]
-> <span data-ttu-id="8d794-133">이 예제에서는 출력 CentOS 7 버전은 64 비트 이후 httpd.86_64을 반영 합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-133">In this example, the output reflects httpd.86_64 since the CentOS 7 version is 64 bit.</span></span> <span data-ttu-id="8d794-134">Apache를 설치한 위치를 확인하려면 명령 프롬프트에서 `whereis httpd`를 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-134">To verify where Apache is installed, run `whereis httpd` from a command prompt.</span></span> 
+> <span data-ttu-id="86cbc-133">이 예제에서는 출력 CentOS 7 버전은 64 비트 이후 httpd.86_64을 반영 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-133">In this example, the output reflects httpd.86_64 since the CentOS 7 version is 64 bit.</span></span> <span data-ttu-id="86cbc-134">Apache를 설치한 위치를 확인하려면 명령 프롬프트에서 `whereis httpd`를 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-134">To verify where Apache is installed, run `whereis httpd` from a command prompt.</span></span>
 
-### <a name="configure-apache-for-reverse-proxy"></a><span data-ttu-id="8d794-135">역방향 프록시에 Apache 구성</span><span class="sxs-lookup"><span data-stu-id="8d794-135">Configure Apache for reverse proxy</span></span>
+### <a name="configure-apache-for-reverse-proxy"></a><span data-ttu-id="86cbc-135">역방향 프록시에 Apache 구성</span><span class="sxs-lookup"><span data-stu-id="86cbc-135">Configure Apache for reverse proxy</span></span>
 
-<span data-ttu-id="8d794-136">Apache의 구성 파일은 `/etc/httpd/conf.d/` 디렉터리 내에 위치합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-136">Configuration files for Apache are located within the `/etc/httpd/conf.d/` directory.</span></span> <span data-ttu-id="8d794-137">모든 파일이 *.conf* 확장은 모듈 구성 파일 뿐 아니라 알파벳 순서로 처리 `/etc/httpd/conf.modules.d/`, 구성이 포함 된 모듈을 로드 하는 데 필요한 파일입니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-137">Any file with the *.conf* extension is processed in alphabetical order in addition to the module configuration files in `/etc/httpd/conf.modules.d/`, which contains any configuration files necessary to load modules.</span></span>
+<span data-ttu-id="86cbc-136">Apache의 구성 파일은 `/etc/httpd/conf.d/` 디렉터리 내에 위치합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-136">Configuration files for Apache are located within the `/etc/httpd/conf.d/` directory.</span></span> <span data-ttu-id="86cbc-137">모든 파일이 *.conf* 확장은 모듈 구성 파일 뿐 아니라 알파벳 순서로 처리 `/etc/httpd/conf.modules.d/`, 구성이 포함 된 모듈을 로드 하는 데 필요한 파일입니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-137">Any file with the *.conf* extension is processed in alphabetical order in addition to the module configuration files in `/etc/httpd/conf.modules.d/`, which contains any configuration files necessary to load modules.</span></span>
 
-<span data-ttu-id="8d794-138">명명 된 앱에 대 한 구성 파일을 만드는 `hellomvc.conf`:</span><span class="sxs-lookup"><span data-stu-id="8d794-138">Create a configuration file for the app named `hellomvc.conf`:</span></span>
+<span data-ttu-id="86cbc-138">명명 된 구성 파일을 만드는 *hellomvc.conf*, 응용 프로그램:</span><span class="sxs-lookup"><span data-stu-id="86cbc-138">Create a configuration file, named *hellomvc.conf*, for the app:</span></span>
 
 ```
 <VirtualHost *:80>
     ProxyPreserveHost On
     ProxyPass / http://127.0.0.1:5000/
     ProxyPassReverse / http://127.0.0.1:5000/
-    ErrorLog /var/log/httpd/hellomvc-error.log
-    CustomLog /var/log/httpd/hellomvc-access.log common
+    ServerName www.example.com
+    ServerAlias *.example.com
+    ErrorLog ${APACHE_LOG_DIR}hellomvc-error.log
+    CustomLog ${APACHE_LOG_DIR}hellomvc-access.log common
 </VirtualHost>
 ```
 
-<span data-ttu-id="8d794-139">**VirtualHost** 노드는 서버에서 하나 이상의 파일에 여러 번 나타날 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-139">The **VirtualHost** node can appear multiple times in one or more files on a server.</span></span> <span data-ttu-id="8d794-140">**VirtualHost** 포트 80을 사용 하 여 모든 IP 주소에서 수신 하도록 설정 되어 있습니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-140">**VirtualHost** is set to listen on any IP address using port 80.</span></span> <span data-ttu-id="8d794-141">다음 두 줄은 포트 5000에서 루트에 있는 서버에 127.0.0.1에 프록시 요청으로 설정 됩니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-141">The next two lines are set to proxy requests at the root to the server at 127.0.0.1 on port 5000.</span></span> <span data-ttu-id="8d794-142">양방향 통신을 위해 *ProxyPass* 및 *ProxyPassReverse* 필요 합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-142">For bi-directional communication, *ProxyPass* and *ProxyPassReverse* are required.</span></span>
+<span data-ttu-id="86cbc-139">`VirtualHost` 블록은 서버에서 하나 이상의 파일에 여러 번 나타날 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-139">The `VirtualHost` block can appear multiple times, in one or more files on a server.</span></span> <span data-ttu-id="86cbc-140">이전 구성 파일에서 Apache 포트 80에서 공용 트래픽을 허용합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-140">In the preceding configuration file, Apache accepts public traffic on port 80.</span></span> <span data-ttu-id="86cbc-141">도메인 `www.example.com` 제공 하는 고 `*.example.com` 별칭 동일한 웹 사이트를 확인 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-141">The domain `www.example.com` is being served, and the `*.example.com` alias resolves to the same website.</span></span> <span data-ttu-id="86cbc-142">참조 [가상 호스트 이름 기반 지원](https://httpd.apache.org/docs/current/vhosts/name-based.html) 자세한 정보에 대 한 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-142">See [Name-based virtual host support](https://httpd.apache.org/docs/current/vhosts/name-based.html) for more information.</span></span> <span data-ttu-id="86cbc-143">요청은 127.0.0.1 서버 5000 포트로 루트에 프록시입니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-143">Requests are proxied at the root to port 5000 of the server at 127.0.0.1.</span></span> <span data-ttu-id="86cbc-144">양방향 통신을 위해 `ProxyPass` 및 `ProxyPassReverse` 필요 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-144">For bi-directional communication, `ProxyPass` and `ProxyPassReverse` are required.</span></span>
 
-<span data-ttu-id="8d794-143">당 로깅을 구성할 수 있습니다 **VirtualHost** 를 사용 하 여 **ErrorLog** 및 **CustomLog** 지시문입니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-143">Logging can be configured per **VirtualHost** using **ErrorLog** and **CustomLog** directives.</span></span> <span data-ttu-id="8d794-144">**ErrorLog** 서버가 오류를 기록 하는 위치 및 **CustomLog** 파일 이름 및 로그 파일의 형식을 설정 합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-144">**ErrorLog** is the location where the server logs errors, and **CustomLog** sets the filename and format of log file.</span></span> <span data-ttu-id="8d794-145">이 경우 요청 정보를 기록 하는 위치입니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-145">In this case, this is where request information is logged.</span></span> <span data-ttu-id="8d794-146">각 요청에 대 한 줄이 있습니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-146">There's one line for each request.</span></span>
+> [!WARNING]
+> <span data-ttu-id="86cbc-145">적절 한 입력 하지 않으면 [ServerName 지시문](https://httpd.apache.org/docs/current/mod/core.html#servername) 에 **VirtualHost** 블록 보안 취약성이 있는 응용 프로그램을 노출 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-145">Failure to specify a proper [ServerName directive](https://httpd.apache.org/docs/current/mod/core.html#servername) in the **VirtualHost** block exposes your app to security vulnerabilities.</span></span> <span data-ttu-id="86cbc-146">와일드 카드 바인딩 하위 도메인 (예를 들어 `*.example.com`) 전체 부모 도메인을 제어 하는 경우이 보안 위험을 노출 하지 않습니다 (반대인 `*.com`, 취약 한 변수인).</span><span class="sxs-lookup"><span data-stu-id="86cbc-146">Subdomain wildcard binding (for example, `*.example.com`) doesn't pose this security risk if you control the entire parent domain (as opposed to `*.com`, which is vulnerable).</span></span> <span data-ttu-id="86cbc-147">참조 [rfc7230 섹션 5.4](https://tools.ietf.org/html/rfc7230#section-5.4) 자세한 정보에 대 한 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-147">See [rfc7230 section-5.4](https://tools.ietf.org/html/rfc7230#section-5.4) for more information.</span></span>
 
-<span data-ttu-id="8d794-147">파일을 저장 하 고 구성을 테스트 합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-147">Save the file and test the configuration.</span></span> <span data-ttu-id="8d794-148">모든 항목이 통과하는 경우 응답은 `Syntax [OK]`이어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-148">If everything passes, the response should be `Syntax [OK]`.</span></span>
+<span data-ttu-id="86cbc-148">당 로깅을 구성할 수 있습니다 `VirtualHost` 를 사용 하 여 `ErrorLog` 및 `CustomLog` 지시문입니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-148">Logging can be configured per `VirtualHost` using `ErrorLog` and `CustomLog` directives.</span></span> <span data-ttu-id="86cbc-149">`ErrorLog` 서버에서 오류를 기록 하는 위치는 위치 및 `CustomLog` 파일 이름 및 로그 파일의 형식을 설정 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-149">`ErrorLog` is the location where the server logs errors, and `CustomLog` sets the filename and format of log file.</span></span> <span data-ttu-id="86cbc-150">이 경우 요청 정보를 기록 하는 위치입니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-150">In this case, this is where request information is logged.</span></span> <span data-ttu-id="86cbc-151">각 요청에 대 한 줄이 있습니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-151">There's one line for each request.</span></span>
+
+<span data-ttu-id="86cbc-152">파일을 저장 하 고 구성을 테스트 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-152">Save the file and test the configuration.</span></span> <span data-ttu-id="86cbc-153">모든 항목이 통과하는 경우 응답은 `Syntax [OK]`이어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-153">If everything passes, the response should be `Syntax [OK]`.</span></span>
 
 ```bash
 sudo service httpd configtest
 ```
 
-<span data-ttu-id="8d794-149">Apache 다시 시작 합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-149">Restart Apache:</span></span>
+<span data-ttu-id="86cbc-154">Apache 다시 시작 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-154">Restart Apache:</span></span>
 
 ```bash
 sudo systemctl restart httpd
 sudo systemctl enable httpd
 ```
 
-## <a name="monitoring-the-app"></a><span data-ttu-id="8d794-150">응용 프로그램 모니터링</span><span class="sxs-lookup"><span data-stu-id="8d794-150">Monitoring the app</span></span>
+## <a name="monitoring-the-app"></a><span data-ttu-id="86cbc-155">응용 프로그램 모니터링</span><span class="sxs-lookup"><span data-stu-id="86cbc-155">Monitoring the app</span></span>
 
-<span data-ttu-id="8d794-151">Apache에 대 한 요청을 전달 하도록 설정 되어 이제 `http://localhost:80` 에 Kestrel에서 실행 중인 ASP.NET Core 응용 프로그램에 `http://127.0.0.1:5000`합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-151">Apache is now setup to forward requests made to `http://localhost:80` to the ASP.NET Core app running on Kestrel at `http://127.0.0.1:5000`.</span></span>  <span data-ttu-id="8d794-152">그러나 Apache Kestrel 프로세스를 관리할 수를 설정 되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-152">However, Apache isn't set up to manage the Kestrel process.</span></span> <span data-ttu-id="8d794-153">사용 하 여 *systemd* 을 시작 하 고 기본 웹 응용 프로그램 모니터링 서비스 파일을 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-153">Use *systemd* and create a service file to start and monitor the underlying web app.</span></span> <span data-ttu-id="8d794-154">*systemd*는 프로세스를 시작, 중지 및 관리하기 위한 다양하고 강력한 기능을 제공하는 init 시스템입니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-154">*systemd* is an init system that provides many powerful features for starting, stopping, and managing processes.</span></span> 
+<span data-ttu-id="86cbc-156">Apache에 대 한 요청을 전달 하도록 설정 되어 이제 `http://localhost:80` 에 Kestrel에서 실행 중인 ASP.NET Core 응용 프로그램에 `http://127.0.0.1:5000`합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-156">Apache is now setup to forward requests made to `http://localhost:80` to the ASP.NET Core app running on Kestrel at `http://127.0.0.1:5000`.</span></span>  <span data-ttu-id="86cbc-157">그러나 Apache Kestrel 프로세스를 관리할 수를 설정 되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-157">However, Apache isn't set up to manage the Kestrel process.</span></span> <span data-ttu-id="86cbc-158">사용 하 여 *systemd* 을 시작 하 고 기본 웹 응용 프로그램 모니터링 서비스 파일을 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-158">Use *systemd* and create a service file to start and monitor the underlying web app.</span></span> <span data-ttu-id="86cbc-159">*systemd*는 프로세스를 시작, 중지 및 관리하기 위한 다양하고 강력한 기능을 제공하는 init 시스템입니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-159">*systemd* is an init system that provides many powerful features for starting, stopping, and managing processes.</span></span> 
 
 
-### <a name="create-the-service-file"></a><span data-ttu-id="8d794-155">서비스 파일 만들기</span><span class="sxs-lookup"><span data-stu-id="8d794-155">Create the service file</span></span>
+### <a name="create-the-service-file"></a><span data-ttu-id="86cbc-160">서비스 파일 만들기</span><span class="sxs-lookup"><span data-stu-id="86cbc-160">Create the service file</span></span>
 
-<span data-ttu-id="8d794-156">서비스 정의 파일을 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-156">Create the service definition file:</span></span>
+<span data-ttu-id="86cbc-161">서비스 정의 파일을 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-161">Create the service definition file:</span></span>
 
 ```bash
 sudo nano /etc/systemd/system/kestrel-hellomvc.service
 ```
 
-<span data-ttu-id="8d794-157">응용 프로그램에 대 한 예제 서비스 파일:</span><span class="sxs-lookup"><span data-stu-id="8d794-157">An example service file for the app:</span></span>
+<span data-ttu-id="86cbc-162">응용 프로그램에 대 한 예제 서비스 파일:</span><span class="sxs-lookup"><span data-stu-id="86cbc-162">An example service file for the app:</span></span>
 
 ```
 [Unit]
@@ -181,15 +186,15 @@ WantedBy=multi-user.target
 ```
 
 > [!NOTE]
-> <span data-ttu-id="8d794-158">**사용자** &mdash; 경우 사용자 *apache* 는 사용 하지 않으며, 구성에서 사용자를 만든 다음 먼저 파일에 대 한 적절 한 소유권을 부여 합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-158">**User** &mdash; If the user *apache* isn't used by the configuration, the user must be created first and given proper ownership for files.</span></span>
+> <span data-ttu-id="86cbc-163">**사용자** &mdash; 경우 사용자 *apache* 는 사용 하지 않으며, 구성에서 사용자를 만든 다음 먼저 파일에 대 한 적절 한 소유권을 부여 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-163">**User** &mdash; If the user *apache* isn't used by the configuration, the user must be created first and given proper ownership for files.</span></span>
 
-<span data-ttu-id="8d794-159">파일을 저장 하 고 서비스를 활성화 합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-159">Save the file and enable the service:</span></span>
+<span data-ttu-id="86cbc-164">파일을 저장 하 고 서비스를 활성화 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-164">Save the file and enable the service:</span></span>
 
 ```bash
 systemctl enable kestrel-hellomvc.service
 ```
 
-<span data-ttu-id="8d794-160">서비스를 시작 하 고 실행 중인지 확인 합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-160">Start the service and verify that it's running:</span></span>
+<span data-ttu-id="86cbc-165">서비스를 시작 하 고 실행 중인지 확인 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-165">Start the service and verify that it's running:</span></span>
 
 ```bash
 systemctl start kestrel-hellomvc.service
@@ -203,7 +208,7 @@ Main PID: 9021 (dotnet)
             └─9021 /usr/local/bin/dotnet /var/aspnetcore/hellomvc/hellomvc.dll
 ```
 
-<span data-ttu-id="8d794-161">역방향 프록시 구성 및 통해 관리 되는 Kestrel *systemd*, 웹 응용 프로그램 구성 완벽 하 게 되 고 브라우저에서 로컬 컴퓨터에서 액세스할 수 `http://localhost`합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-161">With the reverse proxy configured and Kestrel managed through *systemd*, the web app is fully configured and can be accessed from a browser on the local machine at `http://localhost`.</span></span> <span data-ttu-id="8d794-162">응답 헤더를 검사 하는 **서버** 헤더 ASP.NET Core 응용 프로그램 Kestrel에 의해 제공 되는 나타냅니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-162">Inspecting the response headers, the **Server** header indicates that the ASP.NET Core app is served by Kestrel:</span></span>
+<span data-ttu-id="86cbc-166">역방향 프록시 구성 및 통해 관리 되는 Kestrel *systemd*, 웹 응용 프로그램 구성 완벽 하 게 되 고 브라우저에서 로컬 컴퓨터에서 액세스할 수 `http://localhost`합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-166">With the reverse proxy configured and Kestrel managed through *systemd*, the web app is fully configured and can be accessed from a browser on the local machine at `http://localhost`.</span></span> <span data-ttu-id="86cbc-167">응답 헤더를 검사 하는 **서버** 헤더 ASP.NET Core 응용 프로그램 Kestrel에 의해 제공 되는 나타냅니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-167">Inspecting the response headers, the **Server** header indicates that the ASP.NET Core app is served by Kestrel:</span></span>
 
 ```
 HTTP/1.1 200 OK
@@ -214,38 +219,38 @@ Connection: Keep-Alive
 Transfer-Encoding: chunked
 ```
 
-### <a name="viewing-logs"></a><span data-ttu-id="8d794-163">로그 보기</span><span class="sxs-lookup"><span data-stu-id="8d794-163">Viewing logs</span></span>
+### <a name="viewing-logs"></a><span data-ttu-id="86cbc-168">로그 보기</span><span class="sxs-lookup"><span data-stu-id="86cbc-168">Viewing logs</span></span>
 
-<span data-ttu-id="8d794-164">웹 앱 이후 Kestrel를 사용 하 여 관리를 사용 하 여 *systemd*, 이벤트 및 프로세스 중앙 집중식된 저널에 기록 됩니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-164">Since the web app using Kestrel is managed using *systemd*, events and processes are logged to a centralized journal.</span></span> <span data-ttu-id="8d794-165">이 저널 모든 서비스 및 관리 하는 프로세스에 대 한 항목을 포함 하는 반면 *systemd*합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-165">However, this journal includes entries for all of the services and processes managed by *systemd*.</span></span> <span data-ttu-id="8d794-166">`kestrel-hellomvc.service` 관련 항목을 보려면 다음 명령을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-166">To view the `kestrel-hellomvc.service`-specific items, use the following command:</span></span>
+<span data-ttu-id="86cbc-169">웹 앱 이후 Kestrel를 사용 하 여 관리를 사용 하 여 *systemd*, 이벤트 및 프로세스 중앙 집중식된 저널에 기록 됩니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-169">Since the web app using Kestrel is managed using *systemd*, events and processes are logged to a centralized journal.</span></span> <span data-ttu-id="86cbc-170">이 저널 모든 서비스 및 관리 하는 프로세스에 대 한 항목을 포함 하는 반면 *systemd*합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-170">However, this journal includes entries for all of the services and processes managed by *systemd*.</span></span> <span data-ttu-id="86cbc-171">`kestrel-hellomvc.service` 관련 항목을 보려면 다음 명령을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-171">To view the `kestrel-hellomvc.service`-specific items, use the following command:</span></span>
 
 ```bash
 sudo journalctl -fu kestrel-hellomvc.service
 ```
 
-<span data-ttu-id="8d794-167">시간 필터링에 대 한 명령을 사용 하 여 시간 옵션을 지정 합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-167">For time filtering, specify time options with the command.</span></span> <span data-ttu-id="8d794-168">사용 예를 들어 `--since today` 은 현재 날짜에 대 한 필터링 또는 `--until 1 hour ago` 이전 시간 항목을 볼 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-168">For example, use `--since today` to filter for the current day or `--until 1 hour ago` to see the previous hour's entries.</span></span> <span data-ttu-id="8d794-169">자세한 내용은 참조는 [journalctl 매뉴얼 페이지](https://www.unix.com/man-page/centos/1/journalctl/)합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-169">For more information, see the [man page for journalctl](https://www.unix.com/man-page/centos/1/journalctl/).</span></span>
+<span data-ttu-id="86cbc-172">시간 필터링에 대 한 명령을 사용 하 여 시간 옵션을 지정 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-172">For time filtering, specify time options with the command.</span></span> <span data-ttu-id="86cbc-173">사용 예를 들어 `--since today` 은 현재 날짜에 대 한 필터링 또는 `--until 1 hour ago` 이전 시간 항목을 볼 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-173">For example, use `--since today` to filter for the current day or `--until 1 hour ago` to see the previous hour's entries.</span></span> <span data-ttu-id="86cbc-174">자세한 내용은 참조는 [journalctl 매뉴얼 페이지](https://www.unix.com/man-page/centos/1/journalctl/)합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-174">For more information, see the [man page for journalctl](https://www.unix.com/man-page/centos/1/journalctl/).</span></span>
 
 ```bash
 sudo journalctl -fu kestrel-hellomvc.service --since "2016-10-18" --until "2016-10-18 04:00"
 ```
 
-## <a name="securing-the-app"></a><span data-ttu-id="8d794-170">응용 프로그램 보안 설정</span><span class="sxs-lookup"><span data-stu-id="8d794-170">Securing the app</span></span>
+## <a name="securing-the-app"></a><span data-ttu-id="86cbc-175">응용 프로그램 보안 설정</span><span class="sxs-lookup"><span data-stu-id="86cbc-175">Securing the app</span></span>
 
-### <a name="configure-firewall"></a><span data-ttu-id="8d794-171">방화벽 구성</span><span class="sxs-lookup"><span data-stu-id="8d794-171">Configure firewall</span></span>
+### <a name="configure-firewall"></a><span data-ttu-id="86cbc-176">방화벽 구성</span><span class="sxs-lookup"><span data-stu-id="86cbc-176">Configure firewall</span></span>
 
-<span data-ttu-id="8d794-172">*Firewalld* 네트워크 영역에 대 한 지원과 함께 방화벽을 관리 하는 동적 디먼은 합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-172">*Firewalld* is a dynamic daemon to manage the firewall with support for network zones.</span></span> <span data-ttu-id="8d794-173">포트 및 패킷 필터링 여전히 iptables 하 여 관리할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-173">Ports and packet filtering can still be managed by iptables.</span></span> <span data-ttu-id="8d794-174">*Firewalld* 기본적으로 설치 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-174">*Firewalld* should be installed by default.</span></span> <span data-ttu-id="8d794-175">`yum` 패키지를 설치 하거나 설치 되었는지 확인 데 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-175">`yum` can be used to install the package or verify it's installed.</span></span>
+<span data-ttu-id="86cbc-177">*Firewalld* 네트워크 영역에 대 한 지원과 함께 방화벽을 관리 하는 동적 디먼은 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-177">*Firewalld* is a dynamic daemon to manage the firewall with support for network zones.</span></span> <span data-ttu-id="86cbc-178">포트 및 패킷 필터링 여전히 iptables 하 여 관리할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-178">Ports and packet filtering can still be managed by iptables.</span></span> <span data-ttu-id="86cbc-179">*Firewalld* 기본적으로 설치 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-179">*Firewalld* should be installed by default.</span></span> <span data-ttu-id="86cbc-180">`yum` 패키지를 설치 하거나 설치 되었는지 확인 데 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-180">`yum` can be used to install the package or verify it's installed.</span></span>
 
 ```bash
 sudo yum install firewalld -y
 ```
 
-<span data-ttu-id="8d794-176">사용 하 여 `firewalld` 를 응용 프로그램에 필요한 포트만 엽니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-176">Use `firewalld` to open only the ports needed for the app.</span></span> <span data-ttu-id="8d794-177">이 경우에는 포트 80 및 443을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-177">In this case, port 80 and 443 are used.</span></span> <span data-ttu-id="8d794-178">다음 명령 포트 80 및 443이 열을 영구적으로 설정:</span><span class="sxs-lookup"><span data-stu-id="8d794-178">The following commands permanently set ports 80 and 443 to open:</span></span>
+<span data-ttu-id="86cbc-181">사용 하 여 `firewalld` 를 응용 프로그램에 필요한 포트만 엽니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-181">Use `firewalld` to open only the ports needed for the app.</span></span> <span data-ttu-id="86cbc-182">이 경우에는 포트 80 및 443을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-182">In this case, port 80 and 443 are used.</span></span> <span data-ttu-id="86cbc-183">다음 명령 포트 80 및 443이 열을 영구적으로 설정:</span><span class="sxs-lookup"><span data-stu-id="86cbc-183">The following commands permanently set ports 80 and 443 to open:</span></span>
 
 ```bash
 sudo firewall-cmd --add-port=80/tcp --permanent
 sudo firewall-cmd --add-port=443/tcp --permanent
 ```
 
-<span data-ttu-id="8d794-179">방화벽 설정을 다시 로드 합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-179">Reload the firewall settings.</span></span> <span data-ttu-id="8d794-180">사용 가능한 서비스 및 기본 영역에는 포트를 확인 합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-180">Check the available services and ports in the default zone.</span></span> <span data-ttu-id="8d794-181">검사 하 여 옵션을 사용할 수 `firewall-cmd -h`합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-181">Options are available by inspecting `firewall-cmd -h`.</span></span>
+<span data-ttu-id="86cbc-184">방화벽 설정을 다시 로드 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-184">Reload the firewall settings.</span></span> <span data-ttu-id="86cbc-185">사용 가능한 서비스 및 기본 영역에는 포트를 확인 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-185">Check the available services and ports in the default zone.</span></span> <span data-ttu-id="86cbc-186">검사 하 여 옵션을 사용할 수 `firewall-cmd -h`합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-186">Options are available by inspecting `firewall-cmd -h`.</span></span>
 
 ```bash 
 sudo firewall-cmd --reload
@@ -264,20 +269,20 @@ icmp-blocks:
 rich rules: 
 ```
 
-### <a name="ssl-configuration"></a><span data-ttu-id="8d794-182">SSL 구성</span><span class="sxs-lookup"><span data-stu-id="8d794-182">SSL configuration</span></span>
+### <a name="ssl-configuration"></a><span data-ttu-id="86cbc-187">SSL 구성</span><span class="sxs-lookup"><span data-stu-id="86cbc-187">SSL configuration</span></span>
 
-<span data-ttu-id="8d794-183">Apache ssl을 구성 하는 *mod_ssl* 모듈은 사용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-183">To configure Apache for SSL, the *mod_ssl* module is used.</span></span> <span data-ttu-id="8d794-184">경우는 *httpd* 모듈을 설치 하 되는 *mod_ssl* 모듈도 설치 되었습니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-184">When the *httpd* module was installed, the *mod_ssl* module was also installed.</span></span> <span data-ttu-id="8d794-185">사용 하 여 설치 되지 않은 경우 `yum` 구성에 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-185">If it wasn't installed, use `yum` to add it to the configuration.</span></span>
+<span data-ttu-id="86cbc-188">Apache ssl을 구성 하는 *mod_ssl* 모듈은 사용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-188">To configure Apache for SSL, the *mod_ssl* module is used.</span></span> <span data-ttu-id="86cbc-189">경우는 *httpd* 모듈을 설치 하 되는 *mod_ssl* 모듈도 설치 되었습니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-189">When the *httpd* module was installed, the *mod_ssl* module was also installed.</span></span> <span data-ttu-id="86cbc-190">사용 하 여 설치 되지 않은 경우 `yum` 구성에 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-190">If it wasn't installed, use `yum` to add it to the configuration.</span></span>
 
 ```bash
 sudo yum install mod_ssl
 ```
-<span data-ttu-id="8d794-186">SSL을 적용 하려면 설치는 `mod_rewrite` 모듈 URL 다시 쓰기를 사용 하도록 설정 하려면:</span><span class="sxs-lookup"><span data-stu-id="8d794-186">To enforce SSL, install the `mod_rewrite` module to enable URL rewriting:</span></span>
+<span data-ttu-id="86cbc-191">SSL을 적용 하려면 설치는 `mod_rewrite` 모듈 URL 다시 쓰기를 사용 하도록 설정 하려면:</span><span class="sxs-lookup"><span data-stu-id="86cbc-191">To enforce SSL, install the `mod_rewrite` module to enable URL rewriting:</span></span>
 
 ```bash
 sudo yum install mod_rewrite
 ```
 
-<span data-ttu-id="8d794-187">수정 된 *hellomvc.conf* URL 다시 쓰기를 사용 하도록 설정 하 고 포트 443에서 통신을 보호 하려면 파일:</span><span class="sxs-lookup"><span data-stu-id="8d794-187">Modify the *hellomvc.conf* file to enable URL rewriting and secure communication on port 443:</span></span>
+<span data-ttu-id="86cbc-192">수정 된 *hellomvc.conf* URL 다시 쓰기를 사용 하도록 설정 하 고 포트 443에서 통신을 보호 하려면 파일:</span><span class="sxs-lookup"><span data-stu-id="86cbc-192">Modify the *hellomvc.conf* file to enable URL rewriting and secure communication on port 443:</span></span>
 
 ```
 <VirtualHost *:80>
@@ -301,63 +306,63 @@ sudo yum install mod_rewrite
 ```
 
 > [!NOTE]
-> <span data-ttu-id="8d794-188">이 예에서는 로컬로 생성 된 인증서를 사용 하는 합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-188">This example is using a locally-generated certificate.</span></span> <span data-ttu-id="8d794-189">**SSLCertificateFile** 도메인 이름에 대 한 기본 인증서 파일 이어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-189">**SSLCertificateFile** should be the primary certificate file for the domain name.</span></span> <span data-ttu-id="8d794-190">**SSLCertificateKeyFile** 키 파일이 생성 되어야 CSR 만들어집니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-190">**SSLCertificateKeyFile** should be the key file generated when CSR is created.</span></span> <span data-ttu-id="8d794-191">**SSLCertificateChainFile** (있는 경우) 중간 인증서 파일이 있어야 인증 기관에서 제공 된 이름입니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-191">**SSLCertificateChainFile** should be the intermediate certificate file (if any) that was supplied by the certificate authority.</span></span>
+> <span data-ttu-id="86cbc-193">이 예에서는 로컬로 생성 된 인증서를 사용 하는 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-193">This example is using a locally-generated certificate.</span></span> <span data-ttu-id="86cbc-194">**SSLCertificateFile** 도메인 이름에 대 한 기본 인증서 파일 이어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-194">**SSLCertificateFile** should be the primary certificate file for the domain name.</span></span> <span data-ttu-id="86cbc-195">**SSLCertificateKeyFile** 키 파일이 생성 되어야 CSR 만들어집니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-195">**SSLCertificateKeyFile** should be the key file generated when CSR is created.</span></span> <span data-ttu-id="86cbc-196">**SSLCertificateChainFile** (있는 경우) 중간 인증서 파일이 있어야 인증 기관에서 제공 된 이름입니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-196">**SSLCertificateChainFile** should be the intermediate certificate file (if any) that was supplied by the certificate authority.</span></span>
 
-<span data-ttu-id="8d794-192">파일을 저장 하 고 구성을 테스트 합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-192">Save the file and test the configuration:</span></span>
+<span data-ttu-id="86cbc-197">파일을 저장 하 고 구성을 테스트 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-197">Save the file and test the configuration:</span></span>
 
 ```bash
 sudo service httpd configtest
 ```
 
-<span data-ttu-id="8d794-193">Apache 다시 시작 합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-193">Restart Apache:</span></span>
+<span data-ttu-id="86cbc-198">Apache 다시 시작 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-198">Restart Apache:</span></span>
 
 ```bash
 sudo systemctl restart httpd
 ```
 
-## <a name="additional-apache-suggestions"></a><span data-ttu-id="8d794-194">추가 Apache 제안</span><span class="sxs-lookup"><span data-stu-id="8d794-194">Additional Apache suggestions</span></span>
+## <a name="additional-apache-suggestions"></a><span data-ttu-id="86cbc-199">추가 Apache 제안</span><span class="sxs-lookup"><span data-stu-id="86cbc-199">Additional Apache suggestions</span></span>
 
-### <a name="additional-headers"></a><span data-ttu-id="8d794-195">추가 헤더</span><span class="sxs-lookup"><span data-stu-id="8d794-195">Additional headers</span></span>
+### <a name="additional-headers"></a><span data-ttu-id="86cbc-200">추가 헤더</span><span class="sxs-lookup"><span data-stu-id="86cbc-200">Additional headers</span></span>
 
-<span data-ttu-id="8d794-196">를 악의적인 공격 으로부터 보호 하기 위해 해야 수정 하거나 추가 헤더는 몇 가지가 있습니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-196">In order to secure against malicious attacks, there are a few headers that should either be modified or added.</span></span> <span data-ttu-id="8d794-197">확인 된 `mod_headers` 모듈은 설치:</span><span class="sxs-lookup"><span data-stu-id="8d794-197">Ensure that the `mod_headers` module is installed:</span></span>
+<span data-ttu-id="86cbc-201">를 악의적인 공격 으로부터 보호 하기 위해 해야 수정 하거나 추가 헤더는 몇 가지가 있습니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-201">In order to secure against malicious attacks, there are a few headers that should either be modified or added.</span></span> <span data-ttu-id="86cbc-202">확인 된 `mod_headers` 모듈은 설치:</span><span class="sxs-lookup"><span data-stu-id="86cbc-202">Ensure that the `mod_headers` module is installed:</span></span>
 
 ```bash
 sudo yum install mod_headers
 ```
 
-#### <a name="secure-apache-from-clickjacking-attacks"></a><span data-ttu-id="8d794-198">Apache clickjacking 공격 으로부터 보호</span><span class="sxs-lookup"><span data-stu-id="8d794-198">Secure Apache from clickjacking attacks</span></span>
+#### <a name="secure-apache-from-clickjacking-attacks"></a><span data-ttu-id="86cbc-203">Apache clickjacking 공격 으로부터 보호</span><span class="sxs-lookup"><span data-stu-id="86cbc-203">Secure Apache from clickjacking attacks</span></span>
 
-<span data-ttu-id="8d794-199">[Clickjacking](https://blog.qualys.com/securitylabs/2015/10/20/clickjacking-a-common-implementation-mistake-that-can-put-your-websites-in-danger)라고도 하는 *UI redress 공격*, 여기서 웹 사이트 방문자는 스크립트가 속아 서 현재 방문 하는 것 보다 링크 또는 다른 페이지에 단추를 클릭 하는 악의적인 공격에는 합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-199">[Clickjacking](https://blog.qualys.com/securitylabs/2015/10/20/clickjacking-a-common-implementation-mistake-that-can-put-your-websites-in-danger), also known as a *UI redress attack*, is a malicious attack where a website visitor is tricked into clicking a link or button on a different page than they're currently visiting.</span></span> <span data-ttu-id="8d794-200">사용 하 여 `X-FRAME-OPTIONS` 사이트 보호를 합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-200">Use `X-FRAME-OPTIONS` to secure the site.</span></span>
+<span data-ttu-id="86cbc-204">[Clickjacking](https://blog.qualys.com/securitylabs/2015/10/20/clickjacking-a-common-implementation-mistake-that-can-put-your-websites-in-danger)라고도 하는 *UI redress 공격*, 여기서 웹 사이트 방문자는 스크립트가 속아 서 현재 방문 하는 것 보다 링크 또는 다른 페이지에 단추를 클릭 하는 악의적인 공격에는 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-204">[Clickjacking](https://blog.qualys.com/securitylabs/2015/10/20/clickjacking-a-common-implementation-mistake-that-can-put-your-websites-in-danger), also known as a *UI redress attack*, is a malicious attack where a website visitor is tricked into clicking a link or button on a different page than they're currently visiting.</span></span> <span data-ttu-id="86cbc-205">사용 하 여 `X-FRAME-OPTIONS` 사이트 보호를 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-205">Use `X-FRAME-OPTIONS` to secure the site.</span></span>
 
-<span data-ttu-id="8d794-201">편집 된 *httpd.conf* 파일:</span><span class="sxs-lookup"><span data-stu-id="8d794-201">Edit the *httpd.conf* file:</span></span>
-
-```bash
-sudo nano /etc/httpd/conf/httpd.conf
-```
-
-<span data-ttu-id="8d794-202">줄 추가 `Header append X-FRAME-OPTIONS "SAMEORIGIN"`합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-202">Add the line `Header append X-FRAME-OPTIONS "SAMEORIGIN"`.</span></span> <span data-ttu-id="8d794-203">파일을 저장합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-203">Save the file.</span></span> <span data-ttu-id="8d794-204">Apache를 다시 시작합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-204">Restart Apache.</span></span>
-
-#### <a name="mime-type-sniffing"></a><span data-ttu-id="8d794-205">MIME 형식 검색</span><span class="sxs-lookup"><span data-stu-id="8d794-205">MIME-type sniffing</span></span>
-
-<span data-ttu-id="8d794-206">`X-Content-Type-Options` 헤더에서 Internet Explorer를 방지 *MIME 스니핑* (파일의 결정 `Content-Type` 파일의 내용을 사용).</span><span class="sxs-lookup"><span data-stu-id="8d794-206">The `X-Content-Type-Options` header prevents Internet Explorer from *MIME-sniffing* (determining a file's `Content-Type` from the file's content).</span></span> <span data-ttu-id="8d794-207">서버를 설정 하는 경우는 `Content-Type` 헤더를 `text/html` 와 `nosniff` 으로 콘텐츠를 렌더링 하는 옵션 집합, Internet Explorer `text/html` 파일의 내용에 관계 없이 합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-207">If the server sets the `Content-Type` header to `text/html` with the `nosniff` option set, Internet Explorer renders the content as `text/html` regardless of the file's content.</span></span>
-
-<span data-ttu-id="8d794-208">편집 된 *httpd.conf* 파일:</span><span class="sxs-lookup"><span data-stu-id="8d794-208">Edit the *httpd.conf* file:</span></span>
+<span data-ttu-id="86cbc-206">편집 된 *httpd.conf* 파일:</span><span class="sxs-lookup"><span data-stu-id="86cbc-206">Edit the *httpd.conf* file:</span></span>
 
 ```bash
 sudo nano /etc/httpd/conf/httpd.conf
 ```
 
-<span data-ttu-id="8d794-209">줄 추가 `Header set X-Content-Type-Options "nosniff"`합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-209">Add the line `Header set X-Content-Type-Options "nosniff"`.</span></span> <span data-ttu-id="8d794-210">파일을 저장합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-210">Save the file.</span></span> <span data-ttu-id="8d794-211">Apache를 다시 시작합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-211">Restart Apache.</span></span>
+<span data-ttu-id="86cbc-207">줄 추가 `Header append X-FRAME-OPTIONS "SAMEORIGIN"`합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-207">Add the line `Header append X-FRAME-OPTIONS "SAMEORIGIN"`.</span></span> <span data-ttu-id="86cbc-208">파일을 저장합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-208">Save the file.</span></span> <span data-ttu-id="86cbc-209">Apache를 다시 시작합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-209">Restart Apache.</span></span>
 
-### <a name="load-balancing"></a><span data-ttu-id="8d794-212">부하 분산</span><span class="sxs-lookup"><span data-stu-id="8d794-212">Load Balancing</span></span> 
+#### <a name="mime-type-sniffing"></a><span data-ttu-id="86cbc-210">MIME 형식 검색</span><span class="sxs-lookup"><span data-stu-id="86cbc-210">MIME-type sniffing</span></span>
 
-<span data-ttu-id="8d794-213">이 예제에서는 동일한 인스턴스 컴퓨터에서 CentOS 7와 Kestrel의 Apache를 설정하고 구성하는 방법을 보여줍니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-213">This example shows how to setup and configure Apache on CentOS 7 and Kestrel on the same instance machine.</span></span> <span data-ttu-id="8d794-214">단일 실패 지점이 없는. 사용 하 여 *mod_proxy_balancer* 및 수정 된 **VirtualHost** Apache 프록시 서버 뒤에 있는 웹 응용 프로그램의 여러 인스턴스를 관리 하기 위한 허용 합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-214">In order to not have a single point of failure; using *mod_proxy_balancer* and modifying the **VirtualHost** would allow for managing multiple instances of the web apps behind the Apache proxy server.</span></span>
+<span data-ttu-id="86cbc-211">`X-Content-Type-Options` 헤더에서 Internet Explorer를 방지 *MIME 스니핑* (파일의 결정 `Content-Type` 파일의 내용을 사용).</span><span class="sxs-lookup"><span data-stu-id="86cbc-211">The `X-Content-Type-Options` header prevents Internet Explorer from *MIME-sniffing* (determining a file's `Content-Type` from the file's content).</span></span> <span data-ttu-id="86cbc-212">서버를 설정 하는 경우는 `Content-Type` 헤더를 `text/html` 와 `nosniff` 으로 콘텐츠를 렌더링 하는 옵션 집합, Internet Explorer `text/html` 파일의 내용에 관계 없이 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-212">If the server sets the `Content-Type` header to `text/html` with the `nosniff` option set, Internet Explorer renders the content as `text/html` regardless of the file's content.</span></span>
+
+<span data-ttu-id="86cbc-213">편집 된 *httpd.conf* 파일:</span><span class="sxs-lookup"><span data-stu-id="86cbc-213">Edit the *httpd.conf* file:</span></span>
+
+```bash
+sudo nano /etc/httpd/conf/httpd.conf
+```
+
+<span data-ttu-id="86cbc-214">줄 추가 `Header set X-Content-Type-Options "nosniff"`합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-214">Add the line `Header set X-Content-Type-Options "nosniff"`.</span></span> <span data-ttu-id="86cbc-215">파일을 저장합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-215">Save the file.</span></span> <span data-ttu-id="86cbc-216">Apache를 다시 시작합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-216">Restart Apache.</span></span>
+
+### <a name="load-balancing"></a><span data-ttu-id="86cbc-217">부하 분산</span><span class="sxs-lookup"><span data-stu-id="86cbc-217">Load Balancing</span></span> 
+
+<span data-ttu-id="86cbc-218">이 예제에서는 동일한 인스턴스 컴퓨터에서 CentOS 7와 Kestrel의 Apache를 설정하고 구성하는 방법을 보여줍니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-218">This example shows how to setup and configure Apache on CentOS 7 and Kestrel on the same instance machine.</span></span> <span data-ttu-id="86cbc-219">단일 실패 지점이 없는. 사용 하 여 *mod_proxy_balancer* 및 수정 된 **VirtualHost** Apache 프록시 서버 뒤에 있는 웹 응용 프로그램의 여러 인스턴스를 관리 하기 위한 허용 합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-219">In order to not have a single point of failure; using *mod_proxy_balancer* and modifying the **VirtualHost** would allow for managing multiple instances of the web apps behind the Apache proxy server.</span></span>
 
 ```bash
 sudo yum install mod_proxy_balancer
 ```
 
-<span data-ttu-id="8d794-215">다른 인스턴스를 아래 표시 된 구성 파일에는 `hellomvc` 앱 5001이 고 포트에서 수행 되도록 설정 되어 있습니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-215">In the configuration file shown below, an additional instance of the `hellomvc` app is setup to run on port 5001.</span></span> <span data-ttu-id="8d794-216">*프록시* 섹션은 부하 분산을 위해 두 멤버가 포함 된 분산 장치 구성으로 설정 된 *byrequests*합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-216">The *Proxy* section is set with a balancer configuration with two members to load balance *byrequests*.</span></span>
+<span data-ttu-id="86cbc-220">다른 인스턴스를 아래 표시 된 구성 파일에는 `hellomvc` 앱 5001이 고 포트에서 수행 되도록 설정 되어 있습니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-220">In the configuration file shown below, an additional instance of the `hellomvc` app is setup to run on port 5001.</span></span> <span data-ttu-id="86cbc-221">*프록시* 섹션은 부하 분산을 위해 두 멤버가 포함 된 분산 장치 구성으로 설정 된 *byrequests*합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-221">The *Proxy* section is set with a balancer configuration with two members to load balance *byrequests*.</span></span>
 
 ```
 <VirtualHost *:80>
@@ -391,13 +396,13 @@ sudo yum install mod_proxy_balancer
 </VirtualHost>
 ```
 
-### <a name="rate-limits"></a><span data-ttu-id="8d794-217">속도 제한</span><span class="sxs-lookup"><span data-stu-id="8d794-217">Rate Limits</span></span>
-<span data-ttu-id="8d794-218">사용 하 여 *mod_ratelimit*에 포함 되어 있는 *httpd* 모듈의 클라이언트는 대역폭 제한 될 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-218">Using *mod_ratelimit*, which is included in the *httpd* module, the bandwidth of clients can be limited:</span></span>
+### <a name="rate-limits"></a><span data-ttu-id="86cbc-222">속도 제한</span><span class="sxs-lookup"><span data-stu-id="86cbc-222">Rate Limits</span></span>
+<span data-ttu-id="86cbc-223">사용 하 여 *mod_ratelimit*에 포함 되어 있는 *httpd* 모듈의 클라이언트는 대역폭 제한 될 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-223">Using *mod_ratelimit*, which is included in the *httpd* module, the bandwidth of clients can be limited:</span></span>
 
 ```bash
 sudo nano /etc/httpd/conf.d/ratelimit.conf
 ```
-<span data-ttu-id="8d794-219">예제 파일은 루트 위치 아래의 600 KB/sec로 대역폭을 제한합니다.</span><span class="sxs-lookup"><span data-stu-id="8d794-219">The example file limits bandwidth as 600 KB/sec under the root location:</span></span>
+<span data-ttu-id="86cbc-224">예제 파일은 루트 위치 아래의 600 KB/sec로 대역폭을 제한합니다.</span><span class="sxs-lookup"><span data-stu-id="86cbc-224">The example file limits bandwidth as 600 KB/sec under the root location:</span></span>
 
 ```
 <IfModule mod_ratelimit.c>
