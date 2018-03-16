@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/1x-to-2x/index
-ms.openlocfilehash: 42906e95d17f76f69dddc40f351b41e6cbdd087c
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: ebc4efdedd60c38280a0d37b20313e09671f7f9d
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="migrating-from-aspnet-core-1x-to-aspnet-core-20"></a>ASP.NET Core 1.x에서 ASP.NET Core 2.0으로 마이그레이션
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 03/02/2018
 
 <a name="prerequisites"></a>
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 [ASP.NET Core 시작](xref:getting-started)을 참조하세요.
 
 <a name="tfm"></a>
@@ -181,6 +181,6 @@ Application Insights SDK를 직접 사용하는 경우 계속 진행합니다. 2
 ## <a name="adopt-authenticationidentity-improvements"></a>인증/ID 기능 향상 도입
 ASP.NET Core 2.0에는 새 인증 모델 및 ASP.NET Core ID에 대한 몇 가지 주요 변경 사항이 있습니다. 개별 사용자 계정을 활성화하여 프로젝트를 만들거나 인증 또는 ID를 수동으로 추가한 경우 [ASP.NET Core 2.0으로 인증 및 ID 마이그레이션](xref:migration/1x-to-2x/identity-2x)을 참조하세요.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 * [ASP.NET Core 2.0의 주요 변경 내용](https://github.com/aspnet/announcements/issues?page=1&q=is%3Aissue+is%3Aopen+label%3A2.0.0+label%3A%22Breaking+change%22&utf8=%E2%9C%93)

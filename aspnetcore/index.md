@@ -1,7 +1,7 @@
 ---
 title: "ASP.NET Core 소개"
 author: rick-anderson
-description: "ASP.NET Core를 소개합니다."
+description: "클라우드 기반 인터넷에 연결된 최신 응용 프로그램을 빌드하기 위한 플랫폼 간 고성능 오픈 소스 프레임워크인 ASP.NET Core에 대한 소개를 가져옵니다."
 manager: wpickett
 ms.author: riande
 ms.date: 02/28/2018
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: index
-ms.openlocfilehash: 112e1e4dc4eed2cf0ee94741a52ce6625e1f42a6
-ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
+ms.openlocfilehash: 103b7862900e08488dcc0f5fc78c08fefcfa17f3
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="aspnet-core"></a>ASP.NET Core
+# <a name="introduction-to-aspnet-core"></a>ASP.NET Core 소개
 
 작성자: [Daniel Roth](https://github.com/danroth27), [Rick Anderson](https://twitter.com/RickAndMSFT) 및 [Shaun Luttin](https://twitter.com/dicshaunary)
 

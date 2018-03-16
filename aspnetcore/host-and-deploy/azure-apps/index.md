@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: 8da97b2148c0a784e3b1fdfe210db35e3fcceade
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: cefbc27c8091a2ed1441663e3779d67aae2c64dd
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="host-aspnet-core-on-azure-app-service"></a>Azure App Service에서 ASP.NET Core 호스트
 
@@ -45,6 +45,9 @@ Visual Studio를 사용하여 ASP.NET Core 웹앱을 만들고 연속 배포를 
 
 [Continuous deployment to Azure with VSTS](https://www.visualstudio.com/docs/build/aspnet/core/quick-to-azure)(VSTS를 사용하여 Azure에 연속 배포)  
 ASP.NET Core 앱에 대한 CI 빌드를 설정하고 Azure App Service에 대한 연속 배포 릴리스를 만듭니다.
+
+[Azure Web App 샌드박스](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox)  
+Azure 앱 플랫폼에서 적용하는 Azure App Service 런타임 실행 제한 사항을 알아봅니다.
 
 ## <a name="application-configuration"></a>응용 프로그램 구성
 
@@ -86,7 +89,7 @@ Azure App Service/IIS에서 호스트하는 앱의 일반적인 배포 구성 �
 
 자세한 내용은 [키 저장소 공급자](xref:security/data-protection/implementation/key-storage-providers)를 참조하세요.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 * [Web Apps 개요(5분 개요 비디오)](/azure/app-service/app-service-web-overview)
 * [Azure App Service: .NET 앱을 호스트하기에 가장 좋은 서비스(55분 개요 비디오)](https://channel9.msdn.com/events/dotnetConf/2017/T222)
@@ -99,4 +102,4 @@ Windows Server의 Azure App Service는 [IIS(인터넷 정보 서비스)](https:/
 * [ASP.NET Core 모듈 소개](xref:fundamentals/servers/aspnet-core-module)
 * [ASP.NET Core 모듈 구성 참조](xref:host-and-deploy/aspnet-core-module)
 * [ASP.NET Core와 함께 IIS 모듈 사용](xref:host-and-deploy/iis/modules)
-* [Microsoft TechNet 라이브러리: Windows Server](https://docs.microsoft.com/windows-server/windows-server-versions)
+* [Microsoft TechNet 라이브러리: Windows Server](/windows-server/windows-server-versions)

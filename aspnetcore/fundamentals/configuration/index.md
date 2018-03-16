@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 8f52f2dc9515761510de870f10ad0975401db74a
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 7c41621db835b452c9aad9463a9ffccdf0c06484
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="configure-an-aspnet-core-app"></a>ASP.NET Core 앱 구성
 
@@ -24,19 +24,19 @@ ms.lasthandoff: 03/02/2018
 
 다음에 대한 구성 공급자가 있습니다.
 
-* 파일 형식(INI, JSON 및 XML)
-* 명령줄 인수
-* 환경 변수
-* 메모리 내 .NET 개체
-* 암호화된 사용자 저장소
-* [Azure Key Vault](xref:security/key-vault-configuration)
-* 사용자 지정 공급자(설치 또는 생성된)
+* 파일 형식(INI, JSON 및 XML).
+* 명령줄 인수.
+* 환경 변수.
+* 메모리 내 .NET 개체.
+* 암호화되지 않은 [암호 관리자](xref:security/app-secrets) 저장소.
+* 암호화된 사용자 저장소(예:[Azure Key Vault](xref:security/key-vault-configuration)).
+* 사용자 지정 공급자(설치 또는 생성된).
 
 각 구성 값은 문자열 키에 매핑됩니다. 설정을 사용자 지정 [POCO](https://wikipedia.org/wiki/Plain_Old_CLR_Object) 개체(속성이 있는 간단한 .NET 클래스)로 deserialize하는 바인딩 지원이 기본적으로 제공됩니다.
 
 옵션 패턴은 옵션 클래스를 사용하여 관련 설정 그룹을 나타냅니다. 옵션 패턴 사용에 대한 자세한 내용은 [옵션](xref:fundamentals/configuration/options) 항목을 참조하세요.
 
-[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/docs/tree/master/aspnetcore/fundamentals/configuration/index/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/docs/tree/master/aspnetcore/fundamentals/configuration/index/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="json-configuration"></a>JSON 구성
 
@@ -426,7 +426,7 @@ IIS 또는 IIS Express에서 앱을 호스트하는 경우 *web.config* 파일�
   * `IConfigurationSection`은 구성 값의 섹션을 나타냅니다. `GetSection` 및 `GetChildren` 메서드는 `IConfigurationSection`을 반환합니다.
   * 구성을 다시 로드하는 경우 또는 각 공급자에 액세스하는 경우 [IConfigurationRoot](/dotnet/api/microsoft.extensions.configuration.iconfigurationroot)를 사용하세요. 이러한 상황은 일반적이지 않습니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 * [옵션](xref:fundamentals/configuration/options)
 * [여러 환경 사용](xref:fundamentals/environments)

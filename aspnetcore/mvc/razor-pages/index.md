@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: mvc/razor-pages/index
-ms.openlocfilehash: f24de7ab12a3bbd7915ce6c3c93a107eb47fe864
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: cb80c38fd0284d5153aebfe7bb515722623a4a34
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core의 Razor 페이지 소개
 
@@ -23,7 +23,7 @@ Razor 페이지는 더 쉽고 더 생산적으로 코딩 페이지에 초점을 
 
 모델-뷰-컨트롤러 방법을 사용하는 자습서를 검색할 경우 [ASP.NET Core MVC 시작](xref:tutorials/first-mvc-app/start-mvc)을 참조하세요.
 
-이 문서에서는 Razor 페이지를 소개합니다. 이 문서는 단계별 자습서가 아닙니다. 이해하기 어려운 섹션이 있는 경우 [Razor 페이지 시작](xref:tutorials/razor-pages/razor-pages-start)을 참조하세요.
+이 문서에서는 Razor 페이지를 소개합니다. 이 문서는 단계별 자습서가 아닙니다. 섹션이 너무 고급인 경우 [Razor 페이지 시작](xref:tutorials/razor-pages/razor-pages-start)을 참조하세요. ASP.NET Core의 개요는 [ASP.NET Core 소개](xref:index)를 참조하세요.
 
 <a name="prerequisites"></a>
 
@@ -151,6 +151,11 @@ db 컨텍스트:
 [!code-cs[](index/sample/RazorPagesContacts/Pages/Create.cshtml.cs?name=snippet_PageModel&highlight=10-11)]
 
 Razor 페이지는 기본적으로 GET이 아닌 동사에만 속성을 바인딩합니다. 속성에 바인딩하면 작성해야 하는 코드 양이 감소할 수 있습니다. 바인딩은 동일한 속성을 사용하여 폼 필드(`<input asp-for="Customer.Name" />`)를 렌더링하고 입력을 허용하는 방식으로 코드를 줄입니다.
+
+> [!NOTE]
+> 보안상의 이유로 페이지 모델 속성에 GET 요청 데이터를 바인딩하기 위해 옵트인해야 합니다. 속성에 매핑하기 전에 사용자 입력을 확인합니다. 쿼리 문자열이나 경로 값을 사용하는 기능을 빌드할 때 이 동작에 옵트인하면 유용합니다.
+>
+> GET 요청에 속성을 바인딩하려면 `[BindProperty]` 특성의 `SupportsGet` 속성을 `true`로 설정합니다. `[BindProperty(SupportsGet = true)]`
 
 홈페이지(*Index.cshtml*):
 
@@ -384,7 +389,7 @@ URL에서 쿼리 문자열 `?handler=JoinList`를 사용하지 않으려면 경�
 
 [샘플 코드를 다운로드하거나 봅니다](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/razor-pages/index/sample).
 
-이 소개에 따라 빌드되는 [ASP.NET Core의 Razor 페이지 시작](xref:tutorials/razor-pages/razor-pages-start)을 참조하세요.
+이 소개에 따라 빌드되는 [Razor 페이지 시작](xref:tutorials/razor-pages/razor-pages-start)을 참조하세요.
 
 ### <a name="specify-that-razor-pages-are-at-the-content-root"></a>Razor 페이지를 콘텐츠 루트로 지정
 
@@ -414,6 +419,7 @@ services.AddMvc()
 
 ## <a name="see-also"></a>참고 항목
 
+* [ASP.NET Core 소개](xref:index)
 * [Razor 페이지 시작](xref:tutorials/razor-pages/razor-pages-start)
 * [Razor 페이지 권한 부여 규칙](xref:security/authorization/razor-pages-authorization)
 * [Razor 페이지 사용자 지정 경로 및 페이지 모델 공급자](xref:mvc/razor-pages/razor-pages-convention-features)

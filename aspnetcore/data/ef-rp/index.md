@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/index
-ms.openlocfilehash: ea3a8d88a202028890cdf6ffbbd0151fba7e0a65
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 8ea847c760d2b09210ffc209b5331c6153f0a512
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="getting-started-with-razor-pages-and-entity-framework-core-using-visual-studio"></a>Visual Studio를 사용하여 Razor 페이지 및 Entity Framework Core 시작
+# <a name="get-started-with-razor-pages-and-entity-framework-core-using-visual-studio"></a>Visual Studio를 사용하여 Razor 페이지 및 Entity Framework Core 시작
 
 이 일련의 자습서에서는 데이터 액세스를 위해 Entity Framework(EF) Core를 사용하는 ASP.NET Core Razor Pages 웹앱을 만드는 방법을 설명합니다. 이 자습서에는 Visual Studio 2017이 필요합니다.
 

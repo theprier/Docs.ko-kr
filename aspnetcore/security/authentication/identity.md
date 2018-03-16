@@ -17,55 +17,55 @@ ms.lasthandoff: 03/15/2018
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>ASP.NET Core Identity 소개
 
-여 [Pranav Rastogi](https://github.com/rustd), [Rick Anderson](https://twitter.com/RickAndMSFT), [Tom Dykstra](https://github.com/tdykstra), Jon Galloway [Erik Reitan](https://github.com/Erikre), 및 [Steve Smith](https://ardalis.com/)
+작성자:[Pranav Rastogi](https://github.com/rustd), [Rick Anderson](https://twitter.com/RickAndMSFT), [Tom Dykstra](https://github.com/tdykstra), Jon Galloway [Erik Reitan](https://github.com/Erikre), [Steve Smith](https://ardalis.com/)
 
-ASP.NET Core Id는 응용 프로그램에 로그인 기능을 추가할 수 있는 멤버 자격 시스템입니다. 사용자 계정 및 로그인 사용자 이름으로 만들 수 있습니다 및 암호 또는 Facebook, Google, Microsoft 계정, Twitter 또는 다른 사용자와 같은 외부 로그인 공급자를 사용할 수 있습니다.
+ASP.NET Core Identity는 응용 프로그램에 로그인 기능을 추가할 수 있는 멤버십 시스템입니다. 사용자는 계정을 생성한 다음 사용자 이름과 비밀번호를 사용해서 로그인하거나 Facebook, Google, Microsoft Account, Twitter 같은 외부 로그인 공급자를 사용할 수 있습니다.
 
-ASP.NET Core Id 사용자 이름, 암호 및 프로필 데이터를 저장 하는 SQL Server 데이터베이스를 사용 하도록 구성할 수 있습니다. 또는 사용자 고유의 영구 저장소 예를 들어 Azure 테이블 저장소를 사용할 수 있습니다. 이 문서에는 Visual Studio는 CLI를 사용 하 여 위한 지침이 포함 되어 있습니다.
+ASP.NET Core Identity는 SQL Server 데이터베이스에 사용자 이름, 비밀번호 및 프로필 정보를 저장하도록 구성할 수 있습니다. 또는 Azure 테이블 저장소 같은 사용자 고유의 영구 저장소를 사용할 수도 있습니다. 이 문서는 Visual Studio 및 CLI를 사용하는 경우에 대한 지침을 모두 포함합니다.
 
-[보거나 샘플 코드를 다운로드 합니다.](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample/src/ASPNETCore-IdentityDemoComplete/) [(다운로드 하는 방법)](https://docs.microsoft.com/aspnet/core/tutorials/index#how-to-download-a-sample)
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample/src/ASPNETCore-IdentityDemoComplete/) [(다운로드 방법)](https://docs.microsoft.com/aspnet/core/tutorials/index#how-to-download-a-sample)
 
-## <a name="overview-of-identity"></a>Id의 개요
+## <a name="overview-of-identity"></a>Identity 개요
 
-이 항목에서는 등록, 로그인 하는 기능을 추가 하려면 ASP.NET Core Id를 사용 하 고 로그 아웃 한 사용자 합니다. ASP.NET Core Id를 사용 하 여 앱을 만드는 방법에 대해 더 자세한 내용은이 문서의 끝에 다음 단계 섹션을 참조 하십시오.
+본문에서는 ASP.NET Core Identity를 이용해서 사용자를 등록하고, 로그인하고, 로그아웃하는 기능을 추가하는 방법을 살펴봅니다. ASP.NET Core Identity를 이용해서 응용 프로그램을 생성하는 보다 상세한 지침은 본문의 마지막 섹션인 다음 단계 섹션을 참고하시기 바랍니다.
 
-1.  개별 사용자 계정을 가진 ASP.NET Core 웹 응용 프로그램 프로젝트를 만듭니다.
+1.  개별 사용자 계정으로 새로운 ASP.NET Core 웹 응용 프로그램 생성하기.
 
     # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-    Visual Studio에서 선택 **파일** > **새로** > **프로젝트**합니다. 선택 **ASP.NET Core 웹 응용 프로그램** 클릭 **확인**합니다.
+    Visual Studio에서 **파일** > **새로 만들기** > **프로젝트**를 선택합니다. 그리고 **ASP.NET Core 웹 응용 프로그램**을 선택한 다음,**확인**을 클릭합니다.
 
     ![새 프로젝트 대화 상자](identity/_static/01-new-project.png)
 
-    ASP.NET Core 선택 **웹 응용 프로그램 (모델-뷰-컨트롤러)** ASP.NET에 대 한 핵심 2.x를 선택한 다음 선택 **인증 변경**합니다.
+    ASP.NET Core 2.x 용 ASP.NET Core**웹 응용 프로그램 (모델-뷰-컨트롤러)**을 선택한 다음 **인증 변경**을 선택합니다.
 
     ![새 프로젝트 대화 상자](identity/_static/02-new-project.png)
 
-    제공 하는 대화 상자가 나타납니다 인증 선택 합니다. 선택 **개별 사용자 계정** 클릭 **확인** 이전 대화 상자로 돌아갑니다.
+    그러면 인증 방식을 선택할 수 있는 대화 상자가 나타납니다. **개별 사용자 계정**을 선택하고 **확인**을 클릭해서 이전 대화 상자로 돌아갑니다.
 
     ![새 프로젝트 대화 상자](identity/_static/03-new-project-auth.png)
 
-    선택 하면 **개별 사용자 계정** 모델, Viewmodel, 뷰, 컨트롤러 및 프로젝트 템플릿의 일부로 인증에 필요한 기타 자산을 만들려면 Visual Studio를 안내 합니다.
+    이렇게 **개별 사용자 계정**을 선택하면 Visual Studio에게 프로젝트 템플릿의 일부로 인증에 필요한 모델, 뷰 모델, 뷰, 컨트롤러 및 기타 자산을 생성하도록 지시합니다.
 
     # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 
-    .NET Core CLI를 사용 하는 경우 사용 하 여 새 프로젝트 만들기 ``dotnet new mvc --auth Individual``합니다. 이 명령은 Visual Studio 만듭니다 Identity 템플릿 코드와 새 프로젝트를 만듭니다.
+    .NET Core CLI를 사용하는 경우, ``dotnet new mvc --auth Individual`` 명령으로 새로운 프로젝트를 생성합니다. 이 명령은 Visual Studio가 생성하는 것과 동일한 Identity 템플릿 코드를 사용하는 새로운 프로젝트를 생성합니다.
 
-    만든된 프로젝트에 포함 되어는 `Microsoft.AspNetCore.Identity.EntityFrameworkCore` Id 데이터 및 스키마를 사용 하 여 SQL Server를 유지 하는 패키지 [Entity Framework Core](https://docs.microsoft.com/ef/)합니다.
+    생성된 프로젝트에는 [Entity Framework Core](https://docs.microsoft.com/ef/)를 이용해서 SQL Server에 Identity 데이터와 스키마를 저장하는 `Microsoft.AspNetCore.Identity.EntityFrameworkCore` 패키지가 포함되어 있습니다.
 
     ---
 
-2.  Id 서비스를 구성 하 고 미들웨어에서 추가 `Startup`합니다.
+2.  Identity 서비스를 구성하고 `Startup`에서 미들웨어 추가하기.
 
-    Id 서비스에서 응용 프로그램에 추가 되는 `ConfigureServices` 에서 메서드는 `Startup` 클래스:
+    Identity 서비스는 `Startup` 클래스의 `ConfigureServices` 메서드에서 응용 프로그램에 추가됩니다:
 
     # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
     
     [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,11-28,30-42)]
     
-    이러한 서비스를 통해 응용 프로그램에서 사용할 수 [종속성 주입](xref:fundamentals/dependency-injection)합니다.
+    이 서비스들은 응용 프로그램에서 [종속성 주입](xref:fundamentals/dependency-injection)을 통해서 사용할 수 있습니다.
     
-    Identity를 호출 하 여 응용 프로그램에 대해 사용할 `UseAuthentication` 에 `Configure` 메서드. `UseAuthentication` 인증 추가 [미들웨어](xref:fundamentals/middleware/index) 요청 파이프라인을 합니다.
+    `Configure` 메서드에서 `UseAuthentication` 메서드를 호출하면 응용 프로그램에서 Identity가 활성화됩니다. `UseAuthentication`은 요청 파이프라인에 인증 [미들웨어](xref:fundamentals/middleware/index)를 추가합니다.
     
     [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configure&highlight=17)]
     
@@ -73,17 +73,17 @@ ASP.NET Core Id 사용자 이름, 암호 및 프로필 데이터를 저장 하�
     
     [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,13-33)]
     
-    이러한 서비스를 통해 응용 프로그램에서 사용할 수 [종속성 주입](xref:fundamentals/dependency-injection)합니다.
+    이 서비스들은 응용 프로그램에서 [종속성 주입](xref:fundamentals/dependency-injection)을 통해서 사용할 수 있습니다.
     
-    Identity를 호출 하 여 응용 프로그램에 대해 사용할 `UseIdentity` 에 `Configure` 메서드. `UseIdentity` 쿠키 기반 인증 추가 [미들웨어](xref:fundamentals/middleware/index) 요청 파이프라인을 합니다.
+    `Configure` 메서드에서 `UseIdentity` 메서드를 호출하면 응용 프로그램에서 Identity가 활성화됩니다. `UseIdentity`는 요청 파이프라인에 쿠키 기반의 인증 [미들웨어](xref:fundamentals/middleware/index)를 추가합니다.
         
     [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configure&highlight=21)]
     
     ---
      
-    프로세스를 응용 프로그램 시작에 대 한 자세한 내용은 참조 [응용 프로그램 시작](xref:fundamentals/startup)합니다.
+    응용 프로그램 시작 과정에 대한 더 자세한 내용은 [응용 프로그램 시작](xref:fundamentals/startup)을 참고하시기 바랍니다.
 
-3.  사용자를 만듭니다.
+3.  사용자 생성.
 
     응용 프로그램을 시작 하 고을 클릭는 **등록** 링크 합니다.
 
