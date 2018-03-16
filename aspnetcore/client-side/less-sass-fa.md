@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/less-sass-fa
-ms.openlocfilehash: e00a0929db9dff6c97c4b22468156f621a1a3820
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 979f5639e382560d952df45ba6e0b8af3b132c2d
+ms.sourcegitcommit: 6548a3dd0cd1e3e92ac2310dee757ddad9fd6456
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="introduction-to-styling-applications-with-less-sass-and-font-awesome-in-aspnet-core"></a>더 적은 노력으로 응용 프로그램 스타일 지정, Sass, 및 ASP.NET 코어에서 글꼴 놀라운 소개
 
@@ -323,7 +323,7 @@ nav {
 
 Sass는 약간 다른 구문을 하면서도 동일한 기능을 대부분에 대 한 지원을 제공 하는, 비슷합니다. JavaScript 대신 Ruby를 사용 하 여 빌드하 있으며 다른 설치 요구 사항만 요구 하므로입니다. 원래 Sass 언어 중괄호 또는 세미콜론을 사용 하지 않은 하지만 대신 공백 및 들여쓰기를 사용 하 여 범위를 정의 합니다. Sass 버전 3에서에서 새로운 구문 도입 되기 **SCSS** "Sassy CSS ("). SCSS는 CSS 비슷합니다 수준 들여쓰기 및 공백 무시 하 고 대신 중괄호와 세미콜론을 사용 합니다.
 
-Sass를 설치 하려면 일반적으로 사용자는 Ruby (사전 설치 Mac에서)를 먼저 설치을 실행 합니다.
+Sass를 설치 하려면 일반적으로 사용자는 먼저 설치 (이전에 설치 되어 macOS), Ruby을 실행 합니다.
 
 ```console
 gem install sass
