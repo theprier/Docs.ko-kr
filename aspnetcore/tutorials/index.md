@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/index
-ms.openlocfilehash: 45b00fbc15740fad60202bb7e5ab14beb9ebe495
-ms.sourcegitcommit: 9622bdc6326c28c3322c70000468a80ef21ad376
+ms.openlocfilehash: fd58a6a3e35a706d503603790fa1c726e6c865d6
+ms.sourcegitcommit: 6548a3dd0cd1e3e92ac2310dee757ddad9fd6456
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="aspnet-core-tutorials"></a>ASP.NET Core 자습서
 
@@ -27,14 +27,14 @@ ASP.NET Core 응용 프로그램을 개발하기 위해 다음 단계별 가이�
 * ASP.NET Core를 사용하여 Razor 페이지 웹앱 만들기
 
    * [Windows의 Razor 페이지](xref:tutorials/razor-pages/index)
-   * [Mac의 Razor 페이지](xref:tutorials/razor-pages-mac/index)
+   * [macOS의 Razor 페이지](xref:tutorials/razor-pages-mac/index)
    * [VS Code를 사용하는 Razor 페이지](xref:tutorials/razor-pages-vsc/index)  
 
 * ASP.NET Core MVC 웹앱 만들기
 
    * [Windows용 Visual Studio를 사용하는 웹앱](first-mvc-app/index.md)
    * [Mac용 Visual Studio를 사용하는 웹앱](first-mvc-app-mac/index.md)
-   * [Mac 또는 Linux에서 Visual Studio Code를 사용하는 웹앱](first-mvc-app-xplat/index.md)
+   * [macOS 또는 Linux에서 Visual Studio Code를 사용하는 웹앱](first-mvc-app-xplat/index.md)
 
 * [Visual Studio를 사용하여 ASP.NET Core 및 Entity Framework Core 시작](../data/ef-mvc/index.md)
 * [태그 도우미 만들기](../mvc/views/tag-helpers/authoring.md)

@@ -9,15 +9,15 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages/index
-ms.openlocfilehash: 162fa4e0a6d5b6fdda7f043c9d106838a1c19954
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: a437d98c2229e69bd2b66a7c9c868bf221aea94a
+ms.sourcegitcommit: 6548a3dd0cd1e3e92ac2310dee757ddad9fd6456
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/16/2018
 ---
 # <a name="create-a-razor-pages-web-app-with-aspnet-core"></a>ASP.NET Core를 사용하여 Razor 페이지 웹앱 만들기
 
-이 시리즈는 Visual Studio를 사용하여 ASP.NET Core에서 Razor 페이지 웹앱을 빌드하는 작업의 기본 사항을 설명합니다. 이 시리즈의 다른 버전으로는 [Mac 버전](xref:tutorials/razor-pages-mac/index) 및 [Visual Studio Code 버전](xref:tutorials/razor-pages-vsc/index)이 있습니다.
+이 시리즈는 Visual Studio를 사용하여 ASP.NET Core에서 Razor 페이지 웹앱을 빌드하는 작업의 기본 사항을 설명합니다. 이 시리즈의 다른 버전으로는 [macOS 버전](xref:tutorials/razor-pages-mac/index) 및 [Visual Studio Code 버전](xref:tutorials/razor-pages-vsc/index)이 있습니다.
 
 1. [Razor 페이지 시작](xref:tutorials/razor-pages/razor-pages-start)
 1. [Razor 페이지 앱에 모델 추가](xref:tutorials/razor-pages/model)
