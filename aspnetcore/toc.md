@@ -28,7 +28,7 @@
 ### [세부 정보 및 삭제 메서드 검사](tutorials/first-mvc-app/details.md)
 
 ## [웹 API 개발](mvc/web-api/index.md)
-### [Mac에서 Web API 만들기](xref:tutorials/first-web-api-mac)
+### [macOS에서 Web API 만들기](xref:tutorials/first-web-api-mac)
 ### [Swagger를 사용한 ASP.NET Core Web API 도움말 페이지](xref:tutorials/web-api-help-pages-using-swagger)
 #### [NSwag 시작](xref:tutorials/get-started-with-nswag)
 #### [Swashbuckle 시작](xref:tutorials/get-started-with-swashbuckle)
@@ -59,7 +59,7 @@
 #### [고급 항목](data/ef-mvc/advanced.md)
 
 ## [플랫폼 간 자습서](xref:tutorials/xplat)
-### [Mac의 Razor 페이지 웹앱](xref:tutorials/razor-pages-mac/index)
+### [macOS의 Razor 페이지 웹앱](xref:tutorials/razor-pages-mac/index)
 #### [Razor 페이지 시작](xref:tutorials/razor-pages-mac/razor-pages-start)
 #### [모델 추가](xref:tutorials/razor-pages-mac/model)
 #### [스캐폴드된 Razor 페이지](xref:tutorials/razor-pages-mac/page)
@@ -87,7 +87,7 @@
 #### [유효성 검사 추가](xref:tutorials/first-mvc-app-mac/validation)
 #### [세부 정보 및 삭제 메서드 검사](xref:tutorials/first-mvc-app/details)
 
-### [Mac 또는 Linux에서 Visual Studio Code를 사용하는 MVC 웹앱](xref:tutorials/first-mvc-app-xplat/index)
+### [macOS 또는 Linux에서 Visual Studio Code를 사용하는 MVC 웹앱](xref:tutorials/first-mvc-app-xplat/index)
 #### [시작](tutorials/first-mvc-app-xplat/start-mvc.md)
 #### [컨트롤러 추가](tutorials/first-mvc-app-xplat/adding-controller.md)
 #### [보기 추가](tutorials/first-mvc-app-xplat/adding-view.md)
