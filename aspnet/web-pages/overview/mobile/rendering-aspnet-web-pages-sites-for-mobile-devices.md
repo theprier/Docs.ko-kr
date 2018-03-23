@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/mobile/rendering-aspnet-web-pages-sites-for-mobile-devices
-title: "모바일 장치를 위한 사이트 (Razor) 페이지를 렌더링 하는 ASP.NET 웹 | Microsoft Docs"
+title: 모바일 장치를 위한 사이트 (Razor) 페이지를 렌더링 하는 ASP.NET 웹 | Microsoft Docs
 author: tfitzmac
-description: "이 문서에는 모바일 장치에 적절 하 게 렌더링 하는 ASP.NET 웹 페이지 (Razor) 사이트에서 페이지를 만드는 방법을 설명 합니다. 학습할: 있습니다 하는 방법..."
+description: '이 문서에는 모바일 장치에 적절 하 게 렌더링 하는 ASP.NET 웹 페이지 (Razor) 사이트에서 페이지를 만드는 방법을 설명 합니다. 학습할: 있습니다 하는 방법...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/17/2014
@@ -40,7 +40,7 @@ ms.lasthandoff: 03/15/2018
 
 ASP.NET 웹 페이지를 사용 하면 모바일 또는 다른 장치에 대 한 콘텐츠 렌더링 방식을 사용자 지정할 수 있습니다.
 
-ASP.NET 웹 페이지 사이트에서 장치 관련 페이지를 만드는 가장 간단한 방법은 다음과 같이 파일 명명 패턴을 사용 하 여이: *파일 이름. **모바일**.cshtml*합니다. 페이지의 두 가지 버전을 만들 수 있습니다 (예를 들어 여러 개 이름은 *MyFile.cshtml* 고 이라는 하나 *MyFile.Mobile.cshtml*). 런타임 시 모바일 장치를 요청할 때 *MyFile.cshtml*, ASP.NET에서 콘텐츠를 렌더링 *MyFile.Mobile.cshtml*합니다. 그렇지 않으면 *MyFile.cshtml* 렌더링 됩니다.
+ASP.NET 웹 페이지 사이트에서 장치 관련 페이지를 만드는 가장 간단한 방법은 다음과 같이 파일 명명 패턴을 사용 하 여이: *파일 이름.**모바일**.cshtml*합니다. 페이지의 두 가지 버전을 만들 수 있습니다 (예를 들어 여러 개 이름은 *MyFile.cshtml* 고 이라는 하나 *MyFile.Mobile.cshtml*). 런타임 시 모바일 장치를 요청할 때 *MyFile.cshtml*, ASP.NET에서 콘텐츠를 렌더링 *MyFile.Mobile.cshtml*합니다. 그렇지 않으면 *MyFile.cshtml* 렌더링 됩니다.
 
 다음 예제에서는 모바일 장치에 대 한 콘텐츠 페이지를 추가 하 여 모바일 렌더링을 활성화 하는 방법을 보여 줍니다. *Page1.cshtml* 콘텐츠 및 탐색 세로 막대를 포함 합니다. *Page1.Mobile.cshtml* 동일한 콘텐츠를 포함 하지만 세로 막대를 생략 합니다.
 
