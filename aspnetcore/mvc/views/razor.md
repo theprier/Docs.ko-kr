@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core에 대한 Razor 구문 참조"
+title: ASP.NET Core에 대한 Razor 구문 참조
 author: rick-anderson
-description: "웹 페이지에 서버 기반 코드를 포함하는 Razor 태그 구문에 대해 알아봅니다."
+description: 웹 페이지에 서버 기반 코드를 포함하는 Razor 태그 구문에 대해 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 10/18/2017
@@ -573,7 +573,7 @@ Razor 키워드는 `@(Razor Keyword)`으로 이스케이프됩니다(예: `@(fun
 * foreach
 * if
 * else
-* 잠금
+* lock
 * switch
 * try
 * catch
