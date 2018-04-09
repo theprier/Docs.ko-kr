@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/popup/handling-postbacks-from-a-popup-control-without-an-updatepanel-cs
-title: "UpdatePanel (C#) 없이 Popup 컨트롤의 포스트백 처리 | Microsoft Docs"
+title: UpdatePanel (C#) 없이 Popup 컨트롤의 포스트백 처리 | Microsoft Docs
 author: wenz
-description: "에 들어 PopupControl extender 쉽게 다른 컨트롤이 활성화 될 때 팝업을 트리거할 수 있는 방법을 제공 합니다. 포스트백 su에서 발생 하면..."
+description: 에 들어 PopupControl extender 쉽게 다른 컨트롤이 활성화 될 때 팝업을 트리거할 수 있는 방법을 제공 합니다. 포스트백 su에서 발생 하면...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/popup/handling-postbacks-from-a-popup-control-without-an-updatepanel-cs
 msc.type: authoredcontent
-ms.openlocfilehash: df43052950b6186908fe1baf04808f40cb926f69
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 59ffa05945289de6e01e2c21dd5a0f82ca1fa374
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="handling-postbacks-from-a-popup-control-without-an-updatepanel-c"></a>UpdatePanel (C#) 없이 Popup 컨트롤에서 포스트백을 처리합니다.
 ====================
@@ -61,6 +61,6 @@ JavaScript 코드 두 텍스트 상자에 이벤트 처리기를 추가 하는 �
 
 날짜를 클릭 하면 텍스트 상자에 전환 ([전체 크기 이미지를 보려면 클릭](handling-postbacks-from-a-popup-control-without-an-updatepanel-cs/_static/image6.png))
 
->[!div class="step-by-step"]
-[이전](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs.md)
-[다음](using-multiple-popup-controls-vb.md)
+> [!div class="step-by-step"]
+> [이전](handling-postbacks-from-a-popup-control-with-an-updatepanel-cs.md)
+> [다음](using-multiple-popup-controls-vb.md)

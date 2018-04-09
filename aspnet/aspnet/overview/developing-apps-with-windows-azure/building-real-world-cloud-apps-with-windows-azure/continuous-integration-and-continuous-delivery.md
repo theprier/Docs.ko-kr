@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery
-title: "연속 통합 및 지속적인 업데이트 (Azure로 응용 프로그램 빌딩 실제 클라우드) | Microsoft Docs"
+title: 연속 통합 및 지속적인 업데이트 (Azure로 응용 프로그램 빌딩 실제 클라우드) | Microsoft Docs
 author: MikeWasson
-description: "실제 세계 클라우드로 응용 프로그램 빌딩 Azure 전자책 Scott Guthrie에서 개발 된 프레젠테이션을 기반으로 합니다. 13 패턴 및 그을 수 있는 방법에 설명..."
+description: 실제 세계 클라우드로 응용 프로그램 빌딩 Azure 전자책 Scott Guthrie에서 개발 된 프레젠테이션을 기반으로 합니다. 13 패턴 및 그을 수 있는 방법에 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: eaece9f5-f80c-428b-b771-5db66d275b7d
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery
 msc.type: authoredcontent
-ms.openlocfilehash: 4a5433a7dd70e27b59163822ba427b026c3f4ce0
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 4d482aaa0d25d6e6baaf196df4b4bb9335408e46
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="continuous-integration-and-continuous-delivery-building-real-world-cloud-apps-with-azure"></a>연속 통합 및 지속적인 업데이트 (Azure로 응용 프로그램 빌딩 실제 클라우드)
 ====================
@@ -63,7 +63,7 @@ VSTS는 다양 한 배포를 계획에서 응용 프로그램 개발에 도움�
 
 낮은 주기 시간을 사용 하는 반복 가능 하 고 예측 가능한 신뢰할 수 있는 개발 프로세스를 구현 하는 방법에 대 한 첫 번째 세 가지 클라우드 개발 패턴 되었습니다. 에 [다음 장에서](web-development-best-practices.md) 아키텍처 및 코딩 패턴을 검토 하기 시작 했습니다.
 
-## <a name="resources"></a>리소스
+## <a name="resources"></a>자료
 
 자세한 내용은 참조 [Azure 앱 서비스의 웹 앱을 배포](https://azure.microsoft.com/documentation/articles/web-sites-deploy/)합니다.
 
@@ -76,6 +76,6 @@ VSTS는 다양 한 배포를 계획에서 응용 프로그램 개발에 도움�
 - [지속적인 업데이트: 신뢰할 수 있는 소프트웨어를 빌드, 테스트 및 배포 자동화를 통해 해제](https://www.amazon.com/Continuous-Delivery-Deployment-Automation-Addison-Wesley/dp/0321601912/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1377126361)합니다. 미 천 한 Jez의 책입니다.
 - [해제! 디자인 및 프로덕션에 사용 가능한 소프트웨어 배포](https://www.amazon.com/Release-It-Production-Ready-Pragmatic-Programmers/dp/0978739213)합니다. Michael 화 Nygard의 책입니다.
 
->[!div class="step-by-step"]
-[이전](source-control.md)
-[다음](web-development-best-practices.md)
+> [!div class="step-by-step"]
+> [이전](source-control.md)
+> [다음](web-development-best-practices.md)

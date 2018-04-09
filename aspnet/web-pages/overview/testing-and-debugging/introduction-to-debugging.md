@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/testing-and-debugging/introduction-to-debugging
-title: "소개 디버깅 ASP.NET 웹 페이지 (Razor) 사이트 | Microsoft Docs"
+title: 소개 디버깅 ASP.NET 웹 페이지 (Razor) 사이트 | Microsoft Docs
 author: tfitzmac
-description: "디버깅 하는 것은 프로세스 오류 찾기 및 수정 하면 코드 페이지에서입니다. 이 장에서 몇 가지 도구와 기술을 디버그 하는 데 사용할 수 및 analyz..."
+description: 디버깅 하는 것은 프로세스 오류 찾기 및 수정 하면 코드 페이지에서입니다. 이 장에서 몇 가지 도구와 기술을 디버그 하는 데 사용할 수 및 analyz...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/testing-and-debugging/introduction-to-debugging
 msc.type: authoredcontent
-ms.openlocfilehash: 0b6b5a886efe515b434948dade1ae840ddaecd42
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c28d63acda6e585f4aa64f294049c1790faac850
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introduction-to-debugging-aspnet-web-pages-razor-sites"></a>소개 디버깅 ASP.NET 웹 페이지 (Razor) 사이트
 ====================
@@ -33,7 +33,7 @@ ms.lasthandoff: 01/24/2018
 > 다음은 문서에 도입 된 ASP.NET 기능입니다.
 > 
 > - `ServerInfo` 도우미입니다.
-> - `ObjectInfo`도우미입니다.
+> - `ObjectInfo` 도우미입니다.
 >   
 > 
 > ## <a name="software-versions"></a>소프트웨어 버전
@@ -66,12 +66,12 @@ ms.lasthandoff: 01/24/2018
 
     `ServerInfo` 도우미 페이지에 4 개의 테이블의 정보를 표시 합니다.
 
-    - 서버 구성입니다. 이 섹션에서는 호스팅 웹 서버 컴퓨터 이름, 버전을 실행 하는 ASP.NET, 도메인 이름 및 서버 시간을 포함 하는 방법에 대 한 정보를 제공 합니다.
-    - ASP.NET 서버 변수입니다. 이 섹션의 많은 HTTP 프로토콜 세부 정보 (호출된 HTTP 변수)에 대 한 세부 정보를 제공 하 고 있는 값이 각 웹 페이지 요청에 포함 됩니다.
-    - HTTP 런타임 정보입니다. 이 섹션에서는의 웹 페이지에서 실행 되는 Microsoft.NET Framework, 경로, 캐시, 등에 대 한 세부 정보 버전에 대해서는 자세히 설명 합니다. (에서 살펴본 것 처럼 [ASP.NET 웹 프로그래밍 구문을 사용 하 여 Razor 소개](https://go.microsoft.com/fwlink/?LinkId=202890), ASP.NET 웹 페이지 Razor 구문을 기반으로 하는 광범위 한 소프트웨어는 Microsoft의 ASP.NET 웹 서버 기술, 기반을 사용 하 여 개발 라이브러리는.NET Framework를 호출 합니다.)
-    - 환경 변수입니다. 이 섹션에서는 웹 서버의 모든 로컬 환경 변수 및 값의 목록을 제공 합니다.
+   - 서버 구성입니다. 이 섹션에서는 호스팅 웹 서버 컴퓨터 이름, 버전을 실행 하는 ASP.NET, 도메인 이름 및 서버 시간을 포함 하는 방법에 대 한 정보를 제공 합니다.
+   - ASP.NET 서버 변수입니다. 이 섹션의 많은 HTTP 프로토콜 세부 정보 (호출된 HTTP 변수)에 대 한 세부 정보를 제공 하 고 있는 값이 각 웹 페이지 요청에 포함 됩니다.
+   - HTTP 런타임 정보입니다. 이 섹션에서는의 웹 페이지에서 실행 되는 Microsoft.NET Framework, 경로, 캐시, 등에 대 한 세부 정보 버전에 대해서는 자세히 설명 합니다. (에서 살펴본 것 처럼 [ASP.NET 웹 프로그래밍 구문을 사용 하 여 Razor 소개](https://go.microsoft.com/fwlink/?LinkId=202890), ASP.NET 웹 페이지 Razor 구문을 기반으로 하는 광범위 한 소프트웨어는 Microsoft의 ASP.NET 웹 서버 기술, 기반을 사용 하 여 개발 라이브러리는.NET Framework를 호출 합니다.)
+   - 환경 변수입니다. 이 섹션에서는 웹 서버의 모든 로컬 환경 변수 및 값의 목록을 제공 합니다.
 
-    모든 서버 및 요청 정보에 대 한 전체 설명은이 문서의 범위를 벗어납니다. 하지만 함을 확인할 수 있습니다는 `ServerInfo` 도우미 많은 진단 정보를 반환 합니다. 값에 대 한 자세한 내용은 하는 `ServerInfo` 반환 참조 [인식 환경 변수](https://technet.microsoft.com/library/dd560744(WS.10).aspx) Microsoft TechNet 웹 사이트 및 [IIS 서버 변수](https://msdn.microsoft.com/library/ms524602(VS.90).aspx) MSDN 웹 사이트입니다.
+     모든 서버 및 요청 정보에 대 한 전체 설명은이 문서의 범위를 벗어납니다. 하지만 함을 확인할 수 있습니다는 `ServerInfo` 도우미 많은 진단 정보를 반환 합니다. 값에 대 한 자세한 내용은 하는 `ServerInfo` 반환 참조 [인식 환경 변수](https://technet.microsoft.com/library/dd560744(WS.10).aspx) Microsoft TechNet 웹 사이트 및 [IIS 서버 변수](https://msdn.microsoft.com/library/ms524602(VS.90).aspx) MSDN 웹 사이트입니다.
 
 ## <a name="embedding-output-expressions-to-display-page-values"></a>포함 출력 식 페이지 값을 표시 하려면
 
@@ -115,10 +115,10 @@ ms.lasthandoff: 01/24/2018
 
     이 예제는 `ObjectInfo` 도우미에는 두 개의 항목이 표시 됩니다.
 
-    - 형식입니다. 첫 번째 형식은 `DayOfWeek`합니다. 형식이 두 번째 변수의 `String`합니다.
-    - 값입니다. 이 경우 이미 페이지에서의 인사말 변수 값을 표시 하기 때문에 값이 다시 표시 변수를 전달 하는 경우 `ObjectInfo`합니다.
+   - 형식입니다. 첫 번째 형식은 `DayOfWeek`합니다. 형식이 두 번째 변수의 `String`합니다.
+   - 값입니다. 이 경우 이미 페이지에서의 인사말 변수 값을 표시 하기 때문에 값이 다시 표시 변수를 전달 하는 경우 `ObjectInfo`합니다.
 
-    더 복잡 한 개체에 대 한는 `ObjectInfo` 형식 및 값의 모든 개체의 속성을 표시할 수는 기본적으로, 자세한 내용은 &#8212;도우미를 표시할 수 있습니다.
+     더 복잡 한 개체에 대 한는 `ObjectInfo` 도우미 자세한 정보를 표시할 수 &#8212; 기본적으로, 형식 및 값의 모든 개체의 속성을 표시할 수 있습니다.
 
 ## <a name="using-debugging-tools-in-visual-studio"></a>Visual Studio에서 디버깅 도구를 사용 하 여
 
@@ -136,7 +136,7 @@ ms.lasthandoff: 01/24/2018
 
 ASP.NET Razor 페이지를 디버깅 하려면 Visual Studio에서 통합 된 디버거를 사용 하는 방법에 대 한 정보를 참조 하십시오. [프로그래밍 ASP.NET 웹 페이지 (Razor)를 사용 하 여 Visual Studio](https://go.microsoft.com/fwlink/?LinkId=205854)합니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 - [Visual Studio를 사용 하 여 ASP.NET 웹 페이지 (Razor) 프로그래밍](https://go.microsoft.com/fwlink/?LinkId=205854)
 - [IIS 서버 변수](https://msdn.microsoft.com/library/ms524602(VS.90).aspx) (MSDN)

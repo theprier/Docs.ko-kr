@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/customizing-the-data-modification-interface-vb
-title: "데이터 수정 인터페이스 (VB) 사용자 지정 | Microsoft Docs"
+title: 데이터 수정 인터페이스 (VB) 사용자 지정 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에서 살펴보게 표준 텍스트 상자를 대체 하 여 편집할 수는 GridView의 인터페이스를 사용자 지정 하는 방법을 사용 하 게 확인란 제어 alternati 중..."
+description: 이 자습서에서 살펴보게 표준 텍스트 상자를 대체 하 여 편집할 수는 GridView의 인터페이스를 사용자 지정 하는 방법을 사용 하 게 확인란 제어 alternati 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/17/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/customizing-the-data-modification-interface-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4f8023efd4d0b32e81dd3aab70e6e7521066fc84
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7d334a86fcf2fbd1069628527c6e89f3ab655dd5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="customizing-the-data-modification-interface-vb"></a>데이터 수정 인터페이스 (VB) 사용자 지정
 ====================
@@ -276,8 +276,8 @@ BoundField 및 CheckBoxField 자동으로 읽기 전용, 편집 및 삽입 인�
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
->[!div class="step-by-step"]
-[이전](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb.md)
-[다음](implementing-optimistic-concurrency-vb.md)
+> [!div class="step-by-step"]
+> [이전](adding-validation-controls-to-the-editing-and-inserting-interfaces-vb.md)
+> [다음](implementing-optimistic-concurrency-vb.md)

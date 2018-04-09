@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
-title: "ASP.NET MVC 4 모델 및 데이터 액세스 | Microsoft Docs"
+title: ASP.NET MVC 4 모델 및 데이터 액세스 | Microsoft Docs
 author: rick-anderson
-description: "참고:이 실습 랩 ASP.NET MVC에 대 한 기본 지식이 있다고 가정 합니다. 하기 전에 ASP.NET MVC를 사용 하지 않은 경우 좋습니다 ASP.NET MVC 4를 초과할 수 있습니다."
+description: 참고:이 실습 랩 ASP.NET MVC에 대 한 기본 지식이 있다고 가정 합니다. 하기 전에 ASP.NET MVC를 사용 하지 않은 경우 좋습니다 ASP.NET MVC 4를 초과할 수 있습니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
 msc.type: authoredcontent
-ms.openlocfilehash: 353419077422516761df56f730352b19b5db5ff2
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 081a71ef67a6eee6c84058c30f9e15301afbed23
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="aspnet-mvc-4-models-and-data-access"></a>ASP.NET MVC 4 모델 및 데이터 액세스
 
@@ -112,12 +112,12 @@ Code First 접근 방식은 일반적으로 프레임 워크와 연결 되어 �
 
 1. 열기는 **시작** 솔루션에 있는 **소스/e x 1-AddingADatabaseDBFirst/시작/** 폴더입니다.
 
-    1. 일부 누락 된 NuGet 패키지를 다운로드 해야 합니다 전에 계속 합니다. 이 작업을 수행 하려면는 **프로젝트** 메뉴와 선택 **NuGet 패키지 관리**합니다.
-    2. 에 **NuGet 패키지 관리** 대화 상자를 클릭 하 여 **복원** 누락 된 패키지를 다운로드 하려면.
-    3. 마지막으로,를 클릭 하 여 솔루션을 빌드합니다 **빌드** | **솔루션 빌드**합니다.
+   1. 일부 누락 된 NuGet 패키지를 다운로드 해야 합니다 전에 계속 합니다. 이 작업을 수행 하려면는 **프로젝트** 메뉴와 선택 **NuGet 패키지 관리**합니다.
+   2. 에 **NuGet 패키지 관리** 대화 상자를 클릭 하 여 **복원** 누락 된 패키지를 다운로드 하려면.
+   3. 마지막으로,를 클릭 하 여 솔루션을 빌드합니다 **빌드** | **솔루션 빌드**합니다.
 
-    > [!NOTE]
-    > NuGet을 사용 하 여의 장점 중 하나 없습니다 있는입니다 써 해당 프로젝트의 모든 라이브러리를 프로젝트 크기를 줄이면 합니다. NuGet 파워 도구 Packages.config 파일에서 패키지 버전을 지정 하 여 해야 합니다를 처음으로 프로젝트를 실행 하면 필요한 라이브러리를 다운로드할 수 있습니다. 이 때문에이 랩에서 기존 솔루션을 연 후 다음이 단계를 실행 해야 합니다.
+      > [!NOTE]
+      > NuGet을 사용 하 여의 장점 중 하나 없습니다 있는입니다 써 해당 프로젝트의 모든 라이브러리를 프로젝트 크기를 줄이면 합니다. NuGet 파워 도구 Packages.config 파일에서 패키지 버전을 지정 하 여 해야 합니다를 처음으로 프로젝트를 실행 하면 필요한 라이브러리를 다운로드할 수 있습니다. 이 때문에이 랩에서 기존 솔루션을 연 후 다음이 단계를 실행 해야 합니다.
 2. 추가 **MvcMusicStore** 데이터베이스 파일입니다. 이 실습 랩을 사용 하 여 호출 하는 이미 만들어진된 데이터베이스 **MvcMusicStore.mdf**합니다. 이렇게 하려면 마우스 오른쪽 단추로 클릭 **앱\_데이터** 폴더를 가리키도록 **추가** 클릭 하 고 **기존 항목**합니다. 찾아 **\Source\Assets** 선택 하 고는 **MvcMusicStore.mdf** 파일입니다.
 
     ![기존 항목 추가](aspnet-mvc-4-models-and-data-access/_static/image2.png "기존 항목 추가")
@@ -186,8 +186,8 @@ Code First 접근 방식은 일반적으로 프레임 워크와 연결 되어 �
 
     *엔터티 다이어그램*
 
-> [!NOTE]
-> T4 템플릿 (.tt) 엔터티 클래스를 생성 하는 코드를 실행 하 고 같은 이름의 기존 클래스를 덮어쓰게 됩니다. 이 예제에서는 클래스 &quot;앨범&quot;, &quot;장르&quot; 및 &quot;아티스트&quot; 생성 된 코드와 덮어쓴 합니다.
+    > [!NOTE]
+    > T4 템플릿 (.tt) 엔터티 클래스를 생성 하는 코드를 실행 하 고 같은 이름의 기존 클래스를 덮어쓰게 됩니다. 이 예제에서는 클래스 &quot;앨범&quot;, &quot;장르&quot; 및 &quot;아티스트&quot; 생성 된 코드와 덮어쓴 합니다.
 
 
 <a id="Ex1Task3"></a>
@@ -225,30 +225,38 @@ Code First 접근 방식은 일반적으로 프레임 워크와 연결 되어 �
     (코드 조각- *모델 데이터 액세스 및-e x 1 storeDB*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample1.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample1.cs)]
+~~~
 2. **MusicStoreEntities** 클래스는 데이터베이스의 각 테이블에 대 한 컬렉션 속성을 노출 합니다. 업데이트 **찾아보기** 모든 장르를 가져오려는 작업 메서드는 **앨범**합니다.
 
     (코드 조각- *모델 및 데이터 액세스-e x 1 저장소 찾아보기*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample2.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample2.cs)]
 
-    > [!NOTE]
-    > .NET 호출의 기능을 사용 하는 **LINQ** 프로그래밍할 수 있습니다 (통합 언어 쿼리)-이 데이터베이스에 대해 코드를 실행 하 고 반환 하는 이러한 컬렉션에 대 한 강력한 형식의 쿼리 식을 작성 하 개체 합니다.
-    > 
-    > LINQ에 대 한 자세한 내용은 참조 하십시오는 [msdn 사이트](https://msdn.microsoft.com/library/bb397926&amp;#040;v=vs.110&amp;#041;.aspx)합니다.
+> [!NOTE]
+> You are using a capability of .NET called **LINQ** (language-integrated query) to write strongly-typed query expressions against these collections - which will execute code against the database and return objects that you can program against.
+> 
+> For more information about LINQ, please visit the [msdn site](https://msdn.microsoft.com/library/bb397926&amp;#040;v=vs.110&amp;#041;.aspx).
+~~~
 3. 업데이트 **인덱스** 동작 메서드를 모든 장르를 검색 합니다.
 
     (코드 조각- *모델 및 데이터 액세스-e x 1 저장소 인덱스*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample3.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample3.cs)]
+~~~
 4. 업데이트 **인덱스** 동작 메서드의 모든 장르를 검색 하 고 목록에 컬렉션을 변환 합니다.
 
     (코드 조각- *모델 및 데이터 액세스-e x 1 저장소 GenreMenu*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample4.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample4.cs)]
+~~~
 
 <a id="Ex1Task5"></a>
 
@@ -291,12 +299,12 @@ Code First 접근 방식은 일반적으로 프레임 워크와 연결 되어 �
 
 1. 열기는 **시작** 솔루션에 있는 **소스/e x 2-CreatingADatabaseCodeFirst/시작/** 폴더입니다. 그렇지 않은 경우 계속 사용할 수도 있습니다는 **끝** 솔루션, 이전 연습을 완료 하 여 가져옵니다.
 
-    1. 제공 된 연 경우 **시작** 를 일부 누락 된 NuGet 패키지를 다운로드 해야 합니다 솔루션을 계속 하려면. 이 작업을 수행 하려면는 **프로젝트** 메뉴와 선택 **NuGet 패키지 관리**합니다.
-    2. 에 **NuGet 패키지 관리** 대화 상자를 클릭 하 여 **복원** 누락 된 패키지를 다운로드 하려면.
-    3. 마지막으로,를 클릭 하 여 솔루션을 빌드합니다 **빌드** | **솔루션 빌드**합니다.
+   1. 제공 된 연 경우 **시작** 를 일부 누락 된 NuGet 패키지를 다운로드 해야 합니다 솔루션을 계속 하려면. 이 작업을 수행 하려면는 **프로젝트** 메뉴와 선택 **NuGet 패키지 관리**합니다.
+   2. 에 **NuGet 패키지 관리** 대화 상자를 클릭 하 여 **복원** 누락 된 패키지를 다운로드 하려면.
+   3. 마지막으로,를 클릭 하 여 솔루션을 빌드합니다 **빌드** | **솔루션 빌드**합니다.
 
-    > [!NOTE]
-    > NuGet을 사용 하 여의 장점 중 하나 없습니다 있는입니다 써 해당 프로젝트의 모든 라이브러리를 프로젝트 크기를 줄이면 합니다. NuGet 파워 도구 Packages.config 파일에서 패키지 버전을 지정 하 여 해야 합니다를 처음으로 프로젝트를 실행 하면 필요한 라이브러리를 다운로드할 수 있습니다. 이 때문에이 랩에서 기존 솔루션을 연 후 다음이 단계를 실행 해야 합니다.
+      > [!NOTE]
+      > NuGet을 사용 하 여의 장점 중 하나 없습니다 있는입니다 써 해당 프로젝트의 모든 라이브러리를 프로젝트 크기를 줄이면 합니다. NuGet 파워 도구 Packages.config 파일에서 패키지 버전을 지정 하 여 해야 합니다를 처음으로 프로젝트를 실행 하면 필요한 라이브러리를 다운로드할 수 있습니다. 이 때문에이 랩에서 기존 솔루션을 연 후 다음이 단계를 실행 해야 합니다.
 2. 추가 **SampleData.cs** 파일을 여 **모델** 폴더입니다. 이렇게 하려면 마우스 오른쪽 단추로 클릭 **모델** 폴더를 가리키도록 **추가** 클릭 하 고 **기존 항목**합니다. 찾아 **\Source\Assets** 선택 하 고는 **SampleData.cs** 파일입니다.
 
     ![예제 데이터 코드를 채우는](aspnet-mvc-4-models-and-data-access/_static/image18.png "예제 데이터 코드 채우기")
@@ -307,13 +315,17 @@ Code First 접근 방식은 일반적으로 프레임 워크와 연결 되어 �
     (코드 조각- *모델 및 데이터 액세스-e x 2 글로벌 Asax Using*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample5.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample5.cs)]
+~~~
 4. 에 **응용 프로그램\_start ()** 메서드 데이터베이스 이니셜라이저를 설정 하려면 다음 줄을 추가 합니다.
 
     (코드 조각- *모델 및 데이터 액세스-e x 2 글로벌 Asax SetInitializer*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample6.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample6.cs)]
+~~~
 
 <a id="Ex2Task2"></a>
 
@@ -322,14 +334,16 @@ Code First 접근 방식은 일반적으로 프레임 워크와 연결 되어 �
 
 이 프로젝트에 데이터베이스를 이미 추가한 했으므로에서 작성할는 **Web.config** 파일 연결 문자열입니다.
 
-1. 연결 문자열에 추가 **Web.config**합니다. 이러한 파일을 열고 **Web.config** 프로젝트 루트 및 연결 문자열에서이 줄 DefaultConnection 라는 replace는  **&lt;connectionStrings&gt;**  섹션:
+1. 연결 문자열에 추가 **Web.config**합니다. 이러한 파일을 열고 **Web.config** 프로젝트 루트 및 연결 문자열에서이 줄 DefaultConnection 라는 replace는 **&lt;connectionStrings&gt;** 섹션:
 
     ![Web.config 파일 위치](aspnet-mvc-4-models-and-data-access/_static/image19.png "Web.config 파일 위치")
 
     *web.config 파일 위치*
 
 
-    [!code-xml[Main](aspnet-mvc-4-models-and-data-access/samples/sample7.xml)]
+~~~
+[!code-xml[Main](aspnet-mvc-4-models-and-data-access/samples/sample7.xml)]
+~~~
 
 <a id="Ex2Task3"></a>
 
@@ -338,7 +352,7 @@ Code First 접근 방식은 일반적으로 프레임 워크와 연결 되어 �
 
 이미 데이터베이스에 연결을 구성 했으므로 데이터베이스 테이블을 사용 하 여 모델을 연결 됩니다. 이 태스크에서는 Code First로 데이터베이스에 연결할 수 있는 클래스를 만듭니다. 수정 해야 하는 기존 POCO 모델 클래스 임을 기억 합니다.
 
-> [!NOTE]
+   > [!NOTE]
 > 연습 1을 완료 한 경우이 단계는 마법사에 의해 수행 된를 언급 합니다. Code First를 통해 수동으로 데이터 엔터티에 연결 하는 클래스 만듭니다.
 
 
@@ -347,24 +361,30 @@ Code First 접근 방식은 일반적으로 프레임 워크와 연결 되어 �
     (코드 조각- *모델 및 데이터 액세스-e x 2 코드 첫 번째 장르*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample8.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample8.cs)]
 
-    > [!NOTE]
-    > Code First 규칙을 사용 하려면 Genre 클래스에 자동으로 검색 하는 기본 키 속성이 있어야 합니다.
-    > 
-    > 자세한 내용은이 코드의 첫 번째 규칙에 대 한 [msdn 문서](https://msdn.microsoft.com/library/hh161541&amp;#040;v=vs.103&amp;#041;.aspx)합니다.
+> [!NOTE]
+> To work with Code First conventions, the class Genre must have a primary key property that will be automatically detected.
+> 
+> You can read more about Code First Conventions in this [msdn article](https://msdn.microsoft.com/library/hh161541&amp;#040;v=vs.103&amp;#041;.aspx).
+~~~
 2. 이제는 POCO 모델 클래스를 열 **앨범** 에서 **모델** 폴더를 프로젝트 및 외래 키를 포함를 이름으로 속성을 만들 **GenreId** 및  **ArtistId**합니다. 가 이미이 클래스는 **GenreId** 기본 키에 대 한 합니다.
 
     (코드 조각- *모델 및 데이터 액세스-e x 2 코드 첫 번째 앨범*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample9.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample9.cs)]
+~~~
 3. POCO 모델 클래스를 열고 **아티스트** 포함는 **ArtistId** 속성입니다.
 
     (코드 조각- *모델 및 데이터 액세스-e x 2 코드 첫 번째 아티스트*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample10.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample10.cs)]
+~~~
 4. 마우스 오른쪽 단추로 클릭는 **모델** 프로젝트 폴더를 선택 **추가 | 클래스**합니다. 파일 이름을 **MusicStoreEntities.cs**합니다. 클릭 **추가 합니다.**
 
     ![클래스 추가](aspnet-mvc-4-models-and-data-access/_static/image20.png "클래스 추가")
@@ -377,16 +397,20 @@ Code First 접근 방식은 일반적으로 프레임 워크와 연결 되어 �
 5. 방금 만든 클래스를 열고 **MusicStoreEntities.cs**, 네임 스페이스를 포함 하 고 **System.Data.Entity** 및 **System.Data.Entity.Infrastructure**합니다.
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample11.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample11.cs)]
+~~~
 6. 확장 하는 클래스 선언 대신는 **DbContext** 클래스: 공용 선언 **DBSet** 재정의 **OnModelCreating** 메서드. 이 단계에서는 Entity Framework를 사용 하 여 모델을 연결 하는 도메인 클래스를 받아볼 수 있습니다. 파일을 수집 하려면 클래스 코드를 다음으로 바꿉니다.
 
     (코드 조각- *모델 및 데이터 액세스-e x 2 코드 첫 번째 MusicStoreEntities*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample12.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample12.cs)]
 
-    > [!NOTE]
-    > Entity Framework와 함께 **DbContext** 및 **DBSet** POCO 클래스 장르를 쿼리할 수 있습니다. 확장 하 여 **OnModelCreating** 에서 지정 하는 메서드를는 **코드** 데이터베이스 테이블에 장르 매핑할 수는 방법입니다. 이 msdn 문서에서 DBContext 및 DBSet에 대 한 자세한 정보를 찾을 수 있습니다: [링크](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx)
+> [!NOTE]
+> With Entity Framework **DbContext** and **DBSet** you will be able to query the POCO class Genre. By extending **OnModelCreating** method, you are specifying in the **code** how Genre will be mapped to a database table. You can find more information about DBContext and DBSet in this msdn article: [link](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx)
+~~~
 
 <a id="Ex2Task4"></a>
 
@@ -406,30 +430,38 @@ Code First 접근 방식은 일반적으로 프레임 워크와 연결 되어 �
     (코드 조각- *모델 데이터 액세스 및-e x 1 storeDB*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample13.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample13.cs)]
+~~~
 2. **MusicStoreEntities** 클래스는 데이터베이스의 각 테이블에 대 한 컬렉션 속성을 노출 합니다. 업데이트 **찾아보기** 모든 장르를 가져오려는 작업 메서드는 **앨범**합니다.
 
     (코드 조각- *모델 및 데이터 액세스-e x 2 저장소 찾아보기*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample14.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample14.cs)]
 
-    > [!NOTE]
-    > .NET 호출의 기능을 사용 하는 **LINQ** 프로그래밍할 수 있습니다 (통합 언어 쿼리)-이 데이터베이스에 대해 코드를 실행 하 고 반환 하는 이러한 컬렉션에 대 한 강력한 형식의 쿼리 식을 작성 하 개체 합니다.
-    > 
-    > LINQ에 대 한 자세한 내용은 참조 하십시오는 [msdn 사이트](https://msdn.microsoft.com/library/bb397926(v=vs.110).aspx)합니다.
+> [!NOTE]
+> You are using a capability of .NET called **LINQ** (language-integrated query) to write strongly-typed query expressions against these collections - which will execute code against the database and return objects that you can program against.
+> 
+> For more information about LINQ, please visit the [msdn site](https://msdn.microsoft.com/library/bb397926(v=vs.110).aspx).
+~~~
 3. 업데이트 **인덱스** 동작 메서드를 모든 장르를 검색 합니다.
 
     (코드 조각- *모델 및 데이터 액세스-e x 2 저장소 인덱스*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample15.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample15.cs)]
+~~~
 4. 업데이트 **인덱스** 동작 메서드의 모든 장르를 검색 하 고 목록에 컬렉션을 변환 합니다.
 
     (코드 조각- *모델 및 데이터 액세스-e x 2 저장소 GenreMenu*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample16.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample16.cs)]
+~~~
 
 <a id="Ex2Task5"></a>
 
@@ -470,26 +502,28 @@ Code First 접근 방식은 일반적으로 프레임 워크와 연결 되어 �
 
 1. 열기는 **시작** 솔루션에 있는 **Source\Ex3 QueryingTheDatabaseWithParametersCodeFirst\Begin** 코드 중심 접근 방식을 사용 하려는 경우 폴더 또는 **Source\ Ex3 QueryingTheDatabaseWithParametersDBFirst\Begin** 폴더 데이터베이스 중심 접근 방식을 사용 하려는 경우. 그렇지 않은 경우 계속 사용할 수도 있습니다는 **끝** 솔루션, 이전 연습을 완료 하 여 가져옵니다.
 
-    1. 제공 된 연 경우 **시작** 를 일부 누락 된 NuGet 패키지를 다운로드 해야 합니다 솔루션을 계속 하려면. 이 작업을 수행 하려면는 **프로젝트** 메뉴와 선택 **NuGet 패키지 관리**합니다.
-    2. 에 **NuGet 패키지 관리** 대화 상자를 클릭 하 여 **복원** 누락 된 패키지를 다운로드 하려면.
-    3. 마지막으로,를 클릭 하 여 솔루션을 빌드합니다 **빌드** | **솔루션 빌드**합니다.
+   1. 제공 된 연 경우 **시작** 를 일부 누락 된 NuGet 패키지를 다운로드 해야 합니다 솔루션을 계속 하려면. 이 작업을 수행 하려면는 **프로젝트** 메뉴와 선택 **NuGet 패키지 관리**합니다.
+   2. 에 **NuGet 패키지 관리** 대화 상자를 클릭 하 여 **복원** 누락 된 패키지를 다운로드 하려면.
+   3. 마지막으로,를 클릭 하 여 솔루션을 빌드합니다 **빌드** | **솔루션 빌드**합니다.
 
-    > [!NOTE]
-    > NuGet을 사용 하 여의 장점 중 하나 없습니다 있는입니다 써 해당 프로젝트의 모든 라이브러리를 프로젝트 크기를 줄이면 합니다. NuGet 파워 도구 Packages.config 파일에서 패키지 버전을 지정 하 여 해야 합니다를 처음으로 프로젝트를 실행 하면 필요한 라이브러리를 다운로드할 수 있습니다. 이 때문에이 랩에서 기존 솔루션을 연 후 다음이 단계를 실행 해야 합니다.
+      > [!NOTE]
+      > NuGet을 사용 하 여의 장점 중 하나 없습니다 있는입니다 써 해당 프로젝트의 모든 라이브러리를 프로젝트 크기를 줄이면 합니다. NuGet 파워 도구 Packages.config 파일에서 패키지 버전을 지정 하 여 해야 합니다를 처음으로 프로젝트를 실행 하면 필요한 라이브러리를 다운로드할 수 있습니다. 이 때문에이 랩에서 기존 솔루션을 연 후 다음이 단계를 실행 해야 합니다.
 2. 열기는 **StoreController** 변경 하는 클래스는 **찾아보기** 동작 메서드가 있습니다. 이 수행 하는 **솔루션 탐색기**를 확장 하 고는 **컨트롤러** 폴더를 두 번 클릭 **StoreController.cs**합니다.
 3. 변경 된 **찾아보기** 동작 메서드를 앨범 특정 장르에 대 한 검색 합니다. 이렇게 하려면 다음 코드를 바꿉니다.
 
     (코드 조각- *모델 및 데이터 액세스-Ex3 StoreController BrowseMethod*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample17.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample17.cs)]
 
-    > [!NOTE]
-    > 엔터티 컬렉션을 채우려면 사용 해야는 **Include** 너무 앨범을 검색 하려면를 지정 하는 메서드. 사용할 수는 있습니다. **Single()** linq에서 확장 때문이 경우 하나의 장르 앨범에 대 한 합니다. **Single()** 메서드는이 경우 이름이 정의 된 값과 일치 되도록 단일 장르 개체를 지정 하는 매개 변수로 람다 식을 사용 합니다.
-    > 
-    > 장르 개체를 검색할 때도 로드를 원하는 다른 관련된 엔터티를 나타낼 수 있도록 하는 기능을 걸립니다. 라는이 기능은 **쿼리 결과 셰이핑**, 정보를 검색할 데이터베이스에 액세스 하는 데 필요한 시간 수를 줄일 수 있습니다. 이 시나리오에서는 검색할 장르에 대 한 앨범을 프리페치 하도록 합니다.
-    > 
-    > 쿼리에 포함 된 **Genres.Include (&quot;앨범&quot;)** 관련된 앨범도 지정할 수 있습니다. 이 값은 단일 데이터베이스 요청에서 Genre 및 앨범 모두 데이터를 검색 하므로 보다 효율적인 응용 프로그램에서 발생 합니다.
+> [!NOTE]
+> To populate a collection of the entity, you need to use the **Include** method to specify you want to retrieve the albums too. You can use the .**Single()** extension in LINQ because in this case only one genre is expected for an album. The **Single()** method takes a Lambda expression as a parameter, which in this case specifies a single Genre object such that its name matches the value defined.
+> 
+> You will take advantage of a feature that allows you to indicate other related entities you want loaded as well when the Genre object is retrieved. This feature is called **Query Result Shaping**, and enables you to reduce the number of times needed to access the database to retrieve information. In this scenario, you will want to pre-fetch the Albums for the Genre you retrieve.
+> 
+> The query includes **Genres.Include(&quot;Albums&quot;)** to indicate that you want related albums as well. This will result in a more efficient application, since it will retrieve both Genre and Album data in a single database request.
+~~~
 
 <a id="Ex3Task2"></a>
 
@@ -518,7 +552,9 @@ Code First 접근 방식은 일반적으로 프레임 워크와 연결 되어 �
     (코드 조각- *모델 및 데이터 액세스-Ex3 StoreController DetailsMethod*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample18.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample18.cs)]
+~~~
 
 <a id="Ex3Task4"></a>
 
@@ -558,9 +594,9 @@ ASP.NET MVC 모델 및 데이터 액세스의 기본적인 사항을 배웠습�
 <a id="Appendix_A_Installing_Visual_Studio_Express_2012_for_Web"></a>
 ## <a name="appendix-a-installing-visual-studio-express-2012-for-web"></a>부록 a: 설치 Visual Studio Express 2012 for Web
 
-설치할 수 있습니다 **Microsoft Visual Studio Express 2012 for Web** 또는 다른 &quot;Express&quot; 버전을 사용 하 여  **[Microsoft 웹 플랫폼 설치 관리자](https://www.microsoft.com/web/downloads/platform.aspx)** . 다음 지침을 설치 하는 데 필요한 단계를 안내 하 *Visual studio Express 2012 for Web* 를 사용 하 여 *Microsoft 웹 플랫폼 설치 관리자*합니다.
+설치할 수 있습니다 **Microsoft Visual Studio Express 2012 for Web** 또는 다른 &quot;Express&quot; 버전을 사용 하 여 **[Microsoft 웹 플랫폼 설치 관리자](https://www.microsoft.com/web/downloads/platform.aspx)**. 다음 지침을 설치 하는 데 필요한 단계를 안내 하 *Visual studio Express 2012 for Web* 를 사용 하 여 *Microsoft 웹 플랫폼 설치 관리자*합니다.
 
-1. 로 이동 [ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169)합니다. 또는 이미 설치 된 웹 플랫폼 설치 관리자를 열 수 있습니다 및 제품에 대 한 검색 &quot; *Visual Studio Express 2012 for Web Windows Azure SDK와*&quot;합니다.
+1. 로 이동 [ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169)합니다. 또는 이미 설치 된 웹 플랫폼 설치 관리자를 열 수 있습니다 및 제품에 대 한 검색 &quot; <em>Visual Studio Express 2012 for Web Windows Azure SDK와</em>&quot;합니다.
 2. 클릭 **지금 설치**합니다. 없는 경우 **웹 플랫폼 설치 관리자** 를 다운로드 하 여 앱을 먼저 설치 이동 합니다.
 3. 한 번 **웹 플랫폼 설치 관리자** 열려 클릭 **설치** 는 설치 프로그램을 시작 합니다.
 
@@ -704,14 +740,14 @@ ASP.NET MVC 모델 및 데이터 액세스의 기본적인 사항을 배웠습�
     *웹 배포 구성*
 5. 다음과 같이 데이터베이스 연결을 구성 합니다.
 
-    - 에 **서버 이름** SQL 데이터베이스 서버 URL 사용 하 여 입력 된 *tcp:* 접두사입니다.
-    - **사용자 이름** 서버 관리자 로그인 이름을 입력 합니다.
-    - **암호** 서버 관리자 로그인 암호를 입력 합니다.
-    - 새 데이터베이스 이름을 입력 합니다.
+   - 에 **서버 이름** SQL 데이터베이스 서버 URL 사용 하 여 입력 된 *tcp:* 접두사입니다.
+   - **사용자 이름** 서버 관리자 로그인 이름을 입력 합니다.
+   - **암호** 서버 관리자 로그인 암호를 입력 합니다.
+   - 새 데이터베이스 이름을 입력 합니다.
 
-    ![대상 연결 문자열 구성](aspnet-mvc-4-models-and-data-access/_static/image47.png "대상 연결 문자열 구성")
+     ![대상 연결 문자열 구성](aspnet-mvc-4-models-and-data-access/_static/image47.png "대상 연결 문자열 구성")
 
-    *대상 연결 문자열 구성*
+     *대상 연결 문자열 구성*
 6. 그런 다음 **확인**을 클릭합니다. 데이터베이스를 만들려는 대화 상자가 나타나면 **예**합니다.
 
     ![데이터베이스를 만드는](aspnet-mvc-4-models-and-data-access/_static/image48.png "데이터베이스 문자열 만들기")

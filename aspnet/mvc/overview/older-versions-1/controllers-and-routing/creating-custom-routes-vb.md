@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/creating-custom-routes-vb
-title: "사용자 지정 경로 (VB)를 만드는 | Microsoft Docs"
+title: 사용자 지정 경로 (VB)를 만드는 | Microsoft Docs
 author: microsoft
-description: "ASP.NET MVC 응용 프로그램에 사용자 지정 경로 추가 하는 방법에 알아봅니다. 이 자습서에서는 Global.asax 파일에 기본 경로 테이블을 수정 하는 방법에 설명 합니다."
+description: ASP.NET MVC 응용 프로그램에 사용자 지정 경로 추가 하는 방법에 알아봅니다. 이 자습서에서는 Global.asax 파일에 기본 경로 테이블을 수정 하는 방법에 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/16/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-custom-routes-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3d3161bd1bf74df425d3c53873875a1abcfbfa05
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e827725ab7ce54c86ae9f4193d0a8a7ef4af8512
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-custom-routes-vb"></a>사용자 지정 경로 (VB) 만들기
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > ASP.NET MVC 응용 프로그램에 사용자 지정 경로 추가 하는 방법에 알아봅니다. 이 자습서에서는 Global.asax 파일에 기본 경로 테이블을 수정 하는 방법에 설명 합니다.
 
@@ -73,6 +73,6 @@ ASP.NET MVC 응용 프로그램 기본 경로 테이블 문제 없이 작동 합
 
 이 자습서의 목표는 사용자 지정 경로 만드는 방법을 보여 주기 위해 했습니다. 블로그 항목을 표시 하는 Global.asax 파일에 경로 테이블에 사용자 지정 경로 추가 하는 방법을 배웠습니다. ArchiveController 라는 컨트롤러 및 컨트롤러 작업이 Entry() 라는 블로그 항목에 대 한 요청을 매핑하는 방법에 설명 했습니다.
 
->[!div class="step-by-step"]
-[이전](asp-net-mvc-controller-overview-vb.md)
-[다음](creating-a-route-constraint-vb.md)
+> [!div class="step-by-step"]
+> [이전](asp-net-mvc-controller-overview-vb.md)
+> [다음](creating-a-route-constraint-vb.md)

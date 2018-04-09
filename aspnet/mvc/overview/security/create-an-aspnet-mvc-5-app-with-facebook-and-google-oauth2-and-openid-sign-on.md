@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
-title: "MVC 5 만들기 Facebook, Twitter, LinkedIn 및 Google OAuth2 로그온 (C#)로 앱 | Microsoft Docs"
+title: MVC 5 만들기 Facebook, Twitter, LinkedIn 및 Google OAuth2 로그온 (C#)로 앱 | Microsoft Docs
 author: Rick-Anderson
-description: "이 자습서에서는 사용자가 OAuth 2.0을 사용 하 여 외부 인증의 자격 증명으로 로그인 할 수 있는 ASP.NET MVC 5 웹 응용 프로그램을 작성 하는 방법..."
+description: 이 자습서에서는 사용자가 OAuth 2.0을 사용 하 여 외부 인증의 자격 증명으로 로그인 할 수 있는 ASP.NET MVC 5 웹 응용 프로그램을 작성 하는 방법...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/03/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: 8dc2221ea19a33f1d34ba3aae8c60e365423e140
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: c289c209b50f0c2c1f2d8b15a3aedeaebf671d0b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="create-an-aspnet-mvc-5-app-with-facebook-twitter-linkedin-and-google-oauth2-sign-on-c"></a>Facebook, Twitter, LinkedIn 및 Google OAuth2 로그온 (C#)으로 ASP.NET MVC 5 앱 만들기
 ====================
@@ -34,7 +34,7 @@ ms.lasthandoff: 03/02/2018
 <a id="start"></a>
 ## <a name="getting-started"></a>시작
 
-설치 하 고 실행 하 여 시작 [Visual Studio Express 2013 for Web](https://go.microsoft.com/fwlink/?LinkId=299058) 또는 [Visual Studio 2013](https://go.microsoft.com/fwlink/?LinkId=306566)합니다. Visual Studio 설치 [2013 업데이트 3](https://go.microsoft.com/fwlink/?LinkId=390521) 이상. 이 참조에 대 한 도움말 Dropbox, GitHub, Linkedin, Instagram, 버퍼, salesforce, 스트림을, 스택 Exchange, Tripit, twitch, Twitter, Yahoo 등, [원스톱 가이드](http://www.oauthforaspnet.com/)합니다.
+설치 하 고 실행 하 여 시작 [Visual Studio Express 2013 for Web](https://go.microsoft.com/fwlink/?LinkId=299058) 또는 [Visual Studio 2013](https://go.microsoft.com/fwlink/?LinkId=306566)합니다. Visual Studio 설치 [2013 업데이트 3](https://go.microsoft.com/fwlink/?LinkId=390521) 이상. 이 참조에 대 한 도움말 Dropbox, GitHub, Linkedin, Instagram, 버퍼, Salesforce, 스트림을, 스택 Exchange, Tripit, Twitch, Twitter, yahoo! 등, [샘플 프로젝트](https://github.com/matthewdunsdon/oauthforaspnet)합니다.
 
 > [!NOTE]
 > Visual Studio를 설치 해야 [2013 업데이트 3](https://go.microsoft.com/fwlink/?LinkId=390521) 또는 Google OAuth 2를 사용 하 고 SSL 경고 없이 로컬로 디버깅할 이상.
@@ -118,9 +118,9 @@ NuGet 패키지 관리자를 사용 하 여 업데이트 하는 [OWIN 미들웨�
 > 현재 Google OAuth 지침은 [에서 ASP.NET Core 구성 Google 인증](/aspnet/core/security/authentication/social/google-logins)합니다.
 
 1. 탐색 하 고 [Google 개발자 콘솔](https://console.developers.google.com/)합니다.
-1. 이전 프로젝트를 만들지 않은 경우 선택 **자격 증명** 왼쪽된 탭 한 다음 선택에서 **만들기**합니다.
-1. 왼쪽된 탭에서 클릭 **자격 증명**합니다.
-1. 클릭 **자격 증명을 만들어** 다음 **OAuth 클라이언트 ID**합니다. 
+2. 이전 프로젝트를 만들지 않은 경우 선택 **자격 증명** 왼쪽된 탭 한 다음 선택에서 **만들기**합니다.
+3. 왼쪽된 탭에서 클릭 **자격 증명**합니다.
+4. 클릭 **자격 증명을 만들어** 다음 **OAuth 클라이언트 ID**합니다. 
 
     1. 에 **클라이언트 ID 만들기** 대화 상자에서 기본값을 그대로 두고 **웹 응용 프로그램** 응용 프로그램 종류에 대 한 합니다.
     2. 설정의 **권한이 JavaScript** 위에서 사용한 SSL URL 원본이 (`https://localhost:44300/` 다른 SSL 프로젝트 생성 하지 않는 한)
@@ -131,7 +131,7 @@ NuGet 패키지 관리자를 사용 하 여 업데이트 하는 [OWIN 미들웨�
   
     ![](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image15.png)  
   
- 아래 이미지에서는 활성화 된 Api를 보여 줍니다.  
+   아래 이미지에서는 활성화 된 Api를 보여 줍니다.  
   
     ![](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image16.png)
 7. Google Api API 관리자에서 참조 된 **자격 증명** 얻으려고 탭은 **클라이언트 ID**합니다. 응용 프로그램 암호 있는 JSON 파일을 저장 하려면 다운로드 하십시오. 복사 및 붙여넣기의 **ClientId** 및 **ClientSecret** 에 `UseGoogleAuthentication` 에 있는 메서드가 *Startup.Auth.cs* 파일에 *App_Start* 폴더입니다. **ClientId** 및 **ClientSecret** 아래 표시 된 값은 샘플 및 작동 하지 않습니다.
@@ -148,8 +148,8 @@ NuGet 패키지 관리자를 사용 하 여 업데이트 하는 [OWIN 미들웨�
     ![](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image18.png)
 
     > [!NOTE]
-    > 위의 단계를 수행 하지 HTTP 401 오류를 얻게 됩니다. 위의 단계를 다시 확인 합니다. 필수 설정 수행 되지 않은 경우 (예를 들어 **제품 이름**), 누락 된 항목 및 저장 추가, 인증이 작동 하려면 몇 분 정도 걸릴 수 있습니다.
-10. 자격 증명을 입력할 google 사이트로 이동 합니다.   
+    > 위의 단계를 수행 하지 HTTP 401 오류를 얻게 됩니다. 위의 단계를 다시 확인 합니다. 필수 설정 수행 되지 않은 경우 (예를 들어 **제품 이름**), 누락 된 항목을 추가 하 고 저장; 인증이 작동 하려면 몇 분 정도 걸릴 수 있습니다.
+10. 자격 증명을 입력할 Google 사이트로 이동 합니다.   
   
     ![](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image19.png)
 11. 자격 증명을 입력 한 후 방금 만든 웹 응용 프로그램에 권한을 부여 하 라는 메시지가 표시 됩니다.
@@ -167,14 +167,14 @@ NuGet 패키지 관리자를 사용 하 여 업데이트 하는 [OWIN 미들웨�
 
 Facebook OAuth2 인증에 대 한 Facebook에서 만드는 응용 프로그램에서 일부 설정의 프로젝트에 복사 해야 합니다.
 
-1. 브라우저에서로 이동 [https://developers.facebook.com/apps](https://developers.facebook.com/apps) Facebook 자격 증명을 입력 하 여 로그인 하십시오.
+1. 브라우저에서로 이동 [ https://developers.facebook.com/apps ](https://developers.facebook.com/apps) Facebook 자격 증명을 입력 하 여 로그인 하십시오.
 2. Facebook 개발자 아직 등록 되지 경우 클릭 **개발자 등록** 등록 지침을 따릅니다.
 3. 에 **앱** 탭을 클릭 **Create New App**합니다.
 
     ![새 앱 만들기](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image22.png)
 4. 입력 한 **응용 프로그램 이름** 및 **범주**, 클릭 **앱 만들기**합니다.
 
-    Facebook에서 고유 해야 합니다. **앱 Namespace** 앱 하는 인증 (예를 들어 https://apps.facebook.com/ {앱 Namespace})에 대 한 Facebook 응용 프로그램에 액세스 하는 데 사용할 URL의 일부입니다. 지정 하지 않으면는 **앱 Namespace**, **앱 ID** URL에 사용 됩니다. **앱 ID** 긴 시스템에서 생성 된 번호는 다음 단계에 표시 되는입니다.
+    Facebook에서 고유 해야 합니다. <strong>앱 Namespace</strong> 앱 하는 인증에 대 한 Facebook 응용 프로그램에 액세스 하는 데 사용할 URL의 일부 (예를 들어 https://apps.facebook.com/{App Namespace}). 지정 하지 않으면는 <strong>앱 Namespace</strong>, <strong>앱 ID</strong> URL에 사용 됩니다. <strong>앱 ID</strong> 긴 시스템에서 생성 된 번호는 다음 단계에 표시 되는입니다.
 
     ![새 응용 프로그램 대화 상자 만들기](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image23.png)
 5. 표준 보안 검사를 제출 합니다.

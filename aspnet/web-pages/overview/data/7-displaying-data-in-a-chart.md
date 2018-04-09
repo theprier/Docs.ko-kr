@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/data/7-displaying-data-in-a-chart
-title: "ASP.NET 웹 페이지 (Razor)와 차트에 데이터를 표시 합니다. | Microsoft Docs"
+title: ASP.NET 웹 페이지 (Razor)와 차트에 데이터를 표시 합니다. | Microsoft Docs
 author: microsoft
-description: "이 차트에 데이터를 표시 하는 방법을 설명 합니다. 이전 장에서 수동으로 및 표에서 데이터를 표시 하는 방법을 배웠습니다. 이 장에서 설명..."
+description: 이 차트에 데이터를 표시 하는 방법을 설명 합니다. 이전 장에서 수동으로 및 표에서 데이터를 표시 하는 방법을 배웠습니다. 이 장에서 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/22/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/data/7-displaying-data-in-a-chart
 msc.type: authoredcontent
-ms.openlocfilehash: f252b74bc42d0ea65b8b1150973c4f3c50cc9cf4
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 5cf17e54408d585e9a375b302b61b4e28d9b022a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="displaying-data-in-a-chart-with-aspnet-web-pages-razor"></a>ASP.NET 웹 페이지 (Razor)와 차트에 데이터를 표시합니다.
 ====================
@@ -129,7 +129,7 @@ by [Microsoft](https://github.com/microsoft)
 
     ![](7-displaying-data-in-a-chart/_static/image10.jpg)
 
-> [!TIP] 
+> [!TIP]
 > 
 > <a id="SB_UsingStatements"></a>
 > ### <a name="using-statements-and-fully-qualified-names"></a>"Using" 문 및 정규화 된 이름
@@ -292,7 +292,7 @@ by [Microsoft](https://github.com/microsoft)
 9. 실행 된 *ChartDisplayXMLChart.cshtml* 페이지를 한 번 더 합니다. 이 이번에 타임 스탬프가 업데이트 하기 때문에 `Chart` 도우미 XML 파일을 다시 만들 해야 했습니다. 원하는 경우 확인는  *\_ChartFiles* 폴더 및 XML 파일은 다시 합니다.
 
 <a id="Additional_Resources"></a>
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 - [ASP.NET 웹에서 데이터베이스 작업 소개 사이트 페이지](https://go.microsoft.com/fwlink/?LinkId=202893)
 - [성능 향상을 위해 사이트 페이지를 ASP.NET 웹에서 캐싱 사용](https://go.microsoft.com/fwlink/?LinkId=202903)

@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core의 미들웨어 캐싱 응답"
+title: ASP.NET Core의 미들웨어 캐싱 응답
 author: guardrex
-description: "구성 및 ASP.NET 코어에서 응답 캐싱 미들웨어를 사용 하는 방법을 알아봅니다."
+description: 구성 및 ASP.NET 코어에서 응답 캐싱 미들웨어를 사용 하는 방법을 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -9,17 +9,17 @@ ms.date: 01/26/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: performance/caching/middleware
-ms.openlocfilehash: e9a74d8f6c3945b1bc8c62d0ab21145a7c5717fb
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: ff92b032fe8bbbcb7bc26a34fdfbc56a0fcc0e2c
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="response-caching-middleware-in-aspnet-core"></a>ASP.NET Core의 미들웨어 캐싱 응답
 
 여 [Luke Latham](https://github.com/guardrex) 및 [John Luo](https://github.com/JunTaoLuo)
 
-[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/middleware/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/middleware/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 이 문서에서는 ASP.NET Core 응용 프로그램의 응답 캐싱 미들웨어를 구성 하는 방법에 설명 합니다. 미들웨어는 응답에 캐시할 수 있는 경우, 저장소 응답 및 캐시에서 응답 하는 데 사용 결정 합니다. HTTP 캐시에 대 한 소개 및 `ResponseCache` 특성을 참조 하십시오. [응답 캐시](xref:performance/caching/response)합니다.
 
@@ -88,11 +88,11 @@ if (responseCachingFeature != null)
 | Header | 설명 |
 | ------ | ------- |
 | 권한 부여 | 응답 헤더에 있는 경우 캐시 되지 않습니다. |
-| Cache-Control | 미들웨어로 표시 하는 응답을 캐시 고려는 `public` 캐시 지시문입니다. 매개 변수가 캐싱을 제어:<ul><li>max-age</li><li>max-stale&#8224;</li><li>최소 새로</li><li>must-revalidate</li><li>캐시 없음</li><li>저장소 아니요</li><li>전용-if-캐시</li><li>private</li><li>public</li><li>기간</li><li>proxy-revalidate&#8225;</li></ul>&#8224;에 제한이 없음을 지정 하는 경우 `max-stale`, 미들웨어 아무 작업도 수행 합니다.<br>&#8225; `proxy-revalidate` 것과 동일한 결과가 `must-revalidate`합니다.<br><br>자세한 내용은 참조 [RFC 7231: 캐시 제어 지시문 요청](https://tools.ietf.org/html/rfc7234#section-5.2.1)합니다. |
+| Cache-Control | 미들웨어로 표시 하는 응답을 캐시 고려는 `public` 캐시 지시문입니다. 매개 변수가 캐싱을 제어:<ul><li>max-age</li><li>max-stale&#8224;</li><li>최소 새로</li><li>must-revalidate</li><li>캐시 없음</li><li>저장소 아니요</li><li>전용-if-캐시</li><li>private</li><li>public</li><li>기간</li><li>proxy-revalidate&#8225;</li></ul>&#8224;에 제한이 없음을 지정 하는 경우 `max-stale`, 미들웨어 아무 작업도 수행 합니다.<br>&#8225;`proxy-revalidate`과 동일한 결과가 `must-revalidate`합니다.<br><br>자세한 내용은 참조 [RFC 7231: 캐시 제어 지시문 요청](https://tools.ietf.org/html/rfc7234#section-5.2.1)합니다. |
 | Pragma | A `Pragma: no-cache` 요청의 헤더 생성 한 것과 같습니다 `Cache-Control: no-cache`합니다. 이 헤더에 관련 지시문에 의해 재정의 되는 `Cache-Control` 헤더로, 있는 경우. HTTP/1.0과 함께 이전 버전과 호환성에 대 한 것으로 간주 합니다. |
 | Set-Cookie | 응답 헤더에 있는 경우 캐시 되지 않습니다. |
 | 변경 | `Vary` 헤더 다른 헤더에 의해 캐시 된 응답을 변경 하기 위해 사용 됩니다. 예를 들어, 포함 하 여 인코딩할 응답을 캐시는 `Vary: Accept-Encoding` 헤더와 요청에 대 한 응답을 캐시 하는 헤더 `Accept-Encoding: gzip` 및 `Accept-Encoding: text/plain` 별도로 합니다. 포함 된 응답의 헤더 값으로 `*` 저장 되지 않습니다. |
-| 만료 | 이 헤더에 의해 부실 하다 고 판단 하는 응답 저장 아니거나 다른 재정의 되지 않는 경우 검색 `Cache-Control` 헤더입니다. |
+| Expires | 이 헤더에 의해 부실 하다 고 판단 하는 응답 저장 아니거나 다른 재정의 되지 않는 경우 검색 `Cache-Control` 헤더입니다. |
 | None-If-match | 값이 없는 경우 캐시에서 제공 되는 전체 응답 `*` 및 `ETag` 응답의은 제공 된 값이 하나라도 일치 하지 않습니다. 그렇지 않으면 304 (수정 되지 않음) 응답 서비스 됩니다. |
 | If-수정-이후 | 경우는 `If-None-Match` 헤더 존재 하지, 캐시 된 응답 날짜에 제공 된 값 보다 최신인 경우 전체 응답 캐시에서 제공 됩니다. 그렇지 않으면 304 (수정 되지 않음) 응답 서비스 됩니다. |
 | 날짜 | 캐시에서 서비스를 제공할 때는 `Date` 원래 응답에 제공 되지 않은 경우 헤더는 미들웨어에서 설정 됩니다. |
@@ -105,7 +105,7 @@ if (responseCachingFeature != null)
 
 캐싱 동작 보다 자세히 제어 ASP.NET 코어의 다른 캐싱 기능을 탐색 합니다. 다음 항목을 참조하십시오.
 
-* [메모리 내 캐싱](xref:performance/caching/memory)
+* [메모리 내 캐시](xref:performance/caching/memory)
 * [분산 캐시 사용](xref:performance/caching/distributed)
 * [ASP.NET Core MVC에서에서 태그 도우미를 캐시 합니다.](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
 * [분산 캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
@@ -138,11 +138,11 @@ if (responseCachingFeature != null)
 > [!NOTE]
 > 교차 사이트 요청 위조 CSRF ()을 방지 하기 위해 보안 토큰을 생성 하기 위한 Antiforgery 시스템 공격 집합은 `Cache-Control` 및 `Pragma` 헤더를 `no-cache` 응답은 캐시 되지 않도록 합니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 * [응용 프로그램 시작](xref:fundamentals/startup)
 * [미들웨어](xref:fundamentals/middleware/index)
-* [메모리 내 캐싱](xref:performance/caching/memory)
+* [메모리 내 캐시](xref:performance/caching/memory)
 * [분산 캐시 사용](xref:performance/caching/distributed)
 * [변경 토큰을 사용하여 변경 내용 검색](xref:fundamentals/primitives/change-tokens)
 * [응답 캐싱](xref:performance/caching/response)

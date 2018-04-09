@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
-title: "실습 랩: Azure 웹 사이트를 유지 관리 가능한: 변경 및 크기 조정 관리 | Microsoft Docs"
+title: '실습 랩: Azure 웹 사이트를 유지 관리 가능한: 변경 및 크기 조정 관리 | Microsoft Docs'
 author: rick-anderson
-description: "이 랩에서 Microsoft Azure 손쉽게 방법을를 빌드 및 프로덕션 환경에 웹 사이트 배포에 대해 알아봅니다."
+description: 이 랩에서 Microsoft Azure 손쉽게 방법을를 빌드 및 프로덕션 환경에 웹 사이트 배포에 대해 알아봅니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/16/2014
 ms.topic: article
 ms.assetid: ecfd0eb4-c4ad-44e6-9db9-a2a66611ff6a
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
 msc.type: authoredcontent
-ms.openlocfilehash: 4bce02b2c592ff04e0dbce78d18004c69268e4fd
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: a79921681b4e742b5cd23f7119d19f4dd74c3f83
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a>실습 랩: Azure 웹 사이트를 유지 관리 가능한: 변경 및 크기 조정 관리
 ====================
@@ -34,7 +34,7 @@ ms.lasthandoff: 01/30/2018
 > 
 > SQL 데이터베이스와 새 버전의 응용 프로그램을 배포 하는 경우 생산성 데이터베이스를 최신 상태로 유지 해야 합니다. 에 감사 드립니다 **Entity Framework Code First 마이그레이션을**, 개발 및 배포 데이터 모델의 분에서 환경을 업데이트할 간소화 되었습니다. 이 실습 랩에서 Microsoft Azure에서 프로덕션 환경에 웹 앱을 배포할 때 발생할 수 있습니다 다른 항목에 표시 됩니다.
 > 
-> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [http://aka.ms/webcamps-training-kit](http://aka.ms/webcamps-training-kit)합니다.
+> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit)합니다.
 > 
 > 이 항목의 깊이 있는 자세한 검사에 대 한 참조는 [Azure 전자책으로 실제 클라우드 응용 프로그램 빌딩](building-real-world-cloud-apps-with-windows-azure/introduction.md)합니다.
 
@@ -56,7 +56,7 @@ ms.lasthandoff: 01/30/2018
 - 만들기 및 Visual Studio에서 부하 테스트 프로젝트 구성
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>필수 구성 요소
+### <a name="prerequisites"></a>전제 조건
 
 다음은이 실습 랩을 완료 하려면 필요 합니다.
 
@@ -281,13 +281,13 @@ ms.lasthandoff: 01/30/2018
     *새 웹 앱을 사용자 지정*
 5. 데이터베이스 설정에 대 한 다음 정보를 지정 합니다.
 
-    - 에 **이름** 텍스트 상자에 데이터베이스 이름을 입력 합니다 (예: *geekquiz\_db*)
-    - 서버에서 **드롭 다운** 목록에서 **새 SQL 데이터베이스 서버**합니다. 또는 기존 서버를 선택할 수 있습니다.
-    - 에 **데이터베이스 사용자 이름** 및 **데이터베이스 암호** 상자 SQL 데이터베이스 서버에 대 한 관리자 사용자 이름 및 암호를 입력 합니다. 서버를 선택 하면 이미 만든 경우 암호를 묻는 메시지가 표시 됩니다.
+   - 에 **이름** 텍스트 상자에 데이터베이스 이름을 입력 합니다 (예: *geekquiz\_db*)
+   - 서버에서 **드롭 다운** 목록에서 **새 SQL 데이터베이스 서버**합니다. 또는 기존 서버를 선택할 수 있습니다.
+   - 에 **데이터베이스 사용자 이름** 및 **데이터베이스 암호** 상자 SQL 데이터베이스 서버에 대 한 관리자 사용자 이름 및 암호를 입력 합니다. 서버를 선택 하면 이미 만든 경우 암호를 묻는 메시지가 표시 됩니다.
 
-    ![데이터베이스 설정 지정](maintainable-azure-websites-managing-change-and-scale/_static/image17.png)
+     ![데이터베이스 설정 지정](maintainable-azure-websites-managing-change-and-scale/_static/image17.png)
 
-    *데이터베이스 설정 지정*
+     *데이터베이스 설정 지정*
 6. **다음** 을 클릭하여 계속합니다.
 7. 선택 **로컬 Git 리포지토리** 사용 하 고 클릭 하 여 소스 제어에 대 한 **다음**합니다.
 
@@ -687,7 +687,7 @@ ms.lasthandoff: 01/30/2018
 
 이 태스크에서는 구성에서 **GeekQuiz** 이미지를 사용 하는 솔루션 Azure Blob 저장소에 업로드 (대신 웹 앱에 있는 이미지)에 ASP.NET URL 다시 쓰기 규칙을 추가 하 여는 **web.config**파일입니다.
 
-1. Visual Studio에서 엽니다는 **Web.config** 내 파일의 **GeekQuiz** 프로젝트를 찾습니다는  **&lt;system.webServer&gt;**  요소입니다.
+1. Visual Studio에서 엽니다는 **Web.config** 내 파일의 **GeekQuiz** 프로젝트를 찾습니다는 **&lt;system.webServer&gt;** 요소입니다.
 2. URL 재작성을 저장소 계정 이름 자리 표시자 업데이트 규칙을 추가 하려면 다음 코드를 추가 합니다.
 
     (코드 조각- *WebSitesInProduction-Ex4-UrlRewriteRule*)
@@ -785,7 +785,7 @@ ms.lasthandoff: 01/30/2018
     ![WebTest1에 요청 추가](maintainable-azure-websites-managing-change-and-scale/_static/image81.png "WebTest1에 요청 추가")
 
     *WebTest1에 요청 추가*
-4. 에 **속성** 창 새 요청 노드의 업데이트는 **Url** 웹 앱의 URL을 가리키도록 속성 (예:  *[http://geek-quiz.azurewebsites.net/](http://geek-quiz.azurewebsites.net/)* ).
+4. 에 **속성** 창 새 요청 노드의 업데이트는 **Url** 웹 앱의 URL을 가리키도록 속성 (예: *[ http://geek-quiz.azurewebsites.net/ ](http://geek-quiz.azurewebsites.net/)*).
 
     ![Url 속성을 변경](maintainable-azure-websites-managing-change-and-scale/_static/image82.png "Url 속성을 변경")
 
@@ -797,13 +797,13 @@ ms.lasthandoff: 01/30/2018
     *WebTest1에 루프 추가*
 6. 에 **루프에 조건부 규칙 추가 및 항목** 대화 상자는 **For 루프** 규칙 및 다음과 같은 속성을 수정 합니다.
 
-    1. **종료 하는 값:** 1000
-    2. **컨텍스트 매개 변수 이름:** 반복기
-    3. **증분 값:** 1
+   1. **종료 하는 값:** 1000
+   2. **컨텍스트 매개 변수 이름:** 반복기
+   3. **증분 값:** 1
 
-    ![For 루프 규칙을 선택 하 고 속성 업데이트](maintainable-azure-websites-managing-change-and-scale/_static/image84.png "For 루프 규칙을 선택 하 고 속성 업데이트")
+      ![For 루프 규칙을 선택 하 고 속성 업데이트](maintainable-azure-websites-managing-change-and-scale/_static/image84.png "For 루프 규칙을 선택 하 고 속성 업데이트")
 
-    *For 루프 규칙을 선택 하 고 속성 업데이트*
+      *For 루프 규칙을 선택 하 고 속성 업데이트*
 7. 아래는 **루프의 항목** 섹션에서 루프에 대 한 첫 번째 및 마지막 항목 하기 위해 이전에 만든 요청을 선택 합니다. 계속하려면 **확인** 을 클릭합니다.
 
     ![루프에 대 한 첫 번째 및 마지막 항목을 선택 하면](maintainable-azure-websites-managing-change-and-scale/_static/image85.png "루프에 대 한 첫 번째 및 마지막 항목 선택")

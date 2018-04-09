@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/dropshadow/manipulating-dropshadow-properties-from-client-code-cs
-title: "클라이언트 코드 (C#)에서 DropShadow 속성 조작 | Microsoft Docs"
+title: 클라이언트 코드 (C#)에서 DropShadow 속성 조작 | Microsoft Docs
 author: wenz
-description: "DataList의 편집 인터페이스 사용자 지정"
+description: DataList의 편집 인터페이스 사용자 지정
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dropshadow/manipulating-dropshadow-properties-from-client-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 59f7d4610ce610ef4357510f0e861f107278b5da
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 37a7784e1d42477e31938e1d15495993ac86fc56
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="manipulating-dropshadow-properties-from-client-code-c"></a>클라이언트 코드 (C#)에서 DropShadow 속성 조작
 ====================
@@ -62,6 +62,6 @@ JavaScript 함수 `changeOpacity()` 다음 먼저 찾아야는 `DropShadowExtend
 
 클라이언트 쪽에서 변경 되는 불투명도 ([전체 크기 이미지를 보려면 클릭](manipulating-dropshadow-properties-from-client-code-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[이전](adjusting-the-z-index-of-a-dropshadow-cs.md)
-[다음](adjusting-the-z-index-of-a-dropshadow-vb.md)
+> [!div class="step-by-step"]
+> [이전](adjusting-the-z-index-of-a-dropshadow-cs.md)
+> [다음](adjusting-the-z-index-of-a-dropshadow-vb.md)

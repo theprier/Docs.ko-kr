@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/specifying-the-master-page-programmatically-cs
-title: "마스터 페이지를 프로그래밍 방식으로 지정 (C#) | Microsoft Docs"
+title: 마스터 페이지를 프로그래밍 방식으로 지정 (C#) | Microsoft Docs
 author: rick-anderson
-description: "PreInit 이벤트 처리기를 통해 프로그래밍 방식으로 콘텐츠 페이지의 마스터 페이지를 설정 하는 방법을 살펴봅니다."
+description: PreInit 이벤트 처리기를 통해 프로그래밍 방식으로 콘텐츠 페이지의 마스터 페이지를 설정 하는 방법을 살펴봅니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/28/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/specifying-the-master-page-programmatically-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 15efb8e2f38b7a405da0c0e12e447e5c3146f025
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 2294ee2e58e55901d77958e7cf45dd74fc2a1187
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="specifying-the-master-page-programmatically-c"></a>마스터 페이지를 프로그래밍 방식으로 지정 (C#)
 ====================
@@ -139,7 +139,7 @@ PreInit 스테이지의 시작 부분에 `Page` 발생 시키는 개체의 [ `Pr
 
 ### <a name="testing-the-new-master-page"></a>새 마스터 페이지를 테스트합니다.
 
-이 새 마스터 페이지 업데이트를 테스트 하는 `BasePage` 클래스의 `OnPreInit` 메서드 있도록는 `MasterPageFile` 속성 값이 할당은 "~ / Alternate.maser" 한 후 웹 사이트를 방문 합니다. 모든 페이지는 두 가지를 제외한 오류 없이 작동 해야: `~/Admin/AddProduct.aspx` 및 `~/Admin/Products.aspx`합니다. 제품에 DetailsView을 추가할 `~/Admin/AddProduct.aspx` 결과 `NullReferenceException` 마스터 페이지의 설정 하려고 시도 하는 코드 줄에서 `GridMessageText` 속성입니다. 방문할 때 `~/Admin/Products.aspx` 는 `InvalidCastException` 메시지와 함께 페이지 로드에 throw 됩니다: "종류의 개체를 캐스팅할 수 없습니다. ' ASP.alternate\_마스터 ' 형식으로 ' ASP.site\_마스터 '."
+이 새 마스터 페이지 업데이트를 테스트 하는 `BasePage` 클래스의 `OnPreInit` 메서드 있도록는 `MasterPageFile` 속성 값이 할당은 "~ / Alternate.master" 한 후 웹 사이트를 방문 합니다. 모든 페이지는 두 가지를 제외한 오류 없이 작동 해야: `~/Admin/AddProduct.aspx` 및 `~/Admin/Products.aspx`합니다. 제품에 DetailsView을 추가할 `~/Admin/AddProduct.aspx` 결과 `NullReferenceException` 마스터 페이지의 설정 하려고 시도 하는 코드 줄에서 `GridMessageText` 속성입니다. 방문할 때 `~/Admin/Products.aspx` 는 `InvalidCastException` 메시지와 함께 페이지 로드에 throw 됩니다: "종류의 개체를 캐스팅할 수 없습니다. ' ASP.alternate\_마스터 ' 형식으로 ' ASP.site\_마스터 '."
 
 이러한 오류가 발생 하기 때문에 `Site.master` 코드 숨김 클래스를 공용 이벤트, 속성 및 메서드에 정의 되어 있지 않은 포함 `Alternate.master`합니다. 이러한 두 페이지의 태그 일부는 `@MasterType` 참조 하는 지시문은 `Site.master` 마스터 페이지입니다.
 
@@ -282,12 +282,12 @@ PreInit 스테이지의 시작 부분에 `Page` 발생 시키는 개체의 [ `Pr
 
 ### <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 작성자 여러 ASP/ASP.NET 설명서와 4GuysFromRolla.com의 창립자의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 3.5 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco)합니다. Scott에 도달할 수 [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) 또는에서 그의 블로그 통해 [http://ScottOnWriting.NET](http://scottonwriting.net/)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 작성자 여러 ASP/ASP.NET 설명서와 4GuysFromRolla.com의 창립자의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 3.5 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco)합니다. Scott에 도달할 수 [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) 또는에서 그의 블로그 통해 [ http://ScottOnWriting.NET ](http://scottonwriting.net/)합니다.
 
 ### <a name="special-thanks-to"></a>특별히 감사
 
-이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Suchi Banerjee 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Suchi Banerjee 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](master-pages-and-asp-net-ajax-cs.md)
-[다음](nested-master-pages-cs.md)
+> [!div class="step-by-step"]
+> [이전](master-pages-and-asp-net-ajax-cs.md)
+> [다음](nested-master-pages-cs.md)

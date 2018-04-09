@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/owin-and-katana/an-overview-of-project-katana
-title: "프로젝트 Katana의 개요 | Microsoft Docs"
+title: 프로젝트 Katana의 개요 | Microsoft Docs
 author: howarddierking
-description: "ASP.NET 프레임 워크 주위에 지난 10 년 동안 있었고 플랫폼이 많은 웹 사이트 및 서비스의 개발을 설정 합니다. 웹 응용 프로그램으로..."
+description: ASP.NET 프레임 워크 주위에 지난 10 년 동안 있었고 플랫폼이 많은 웹 사이트 및 서비스의 개발을 설정 합니다. 웹 응용 프로그램으로...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/30/2013
 ms.topic: article
 ms.assetid: 0ee21741-c1bf-4025-a9b0-24580cae24bc
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/an-overview-of-project-katana
 msc.type: authoredcontent
-ms.openlocfilehash: ceb7d3a7d1cb1685c0f1e62698f508c9a73e77c2
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 3c2bcbbc6e506af759f6d77af17d015278cc0bdf
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="an-overview-of-project-katana"></a>프로젝트 Katana의 개요
 ====================
@@ -144,7 +144,7 @@ Visual Studio를 사용 하 여이 매우 간단한 웹 서버를 실행할 수 
 - 기본 프로세스를 관리 합니다.
 - 서버를 선택 하 고 있는 요청을 통해 OWIN 파이프라인을 생성 하는 워크플로 오케스트레이션으로 처리 됩니다.
 
- 현재,는 Katana 기반 응용 프로그램에 대 한 3 주 호스팅 옵션이 있습니다.  
+  현재,는 Katana 기반 응용 프로그램에 대 한 3 주 호스팅 옵션이 있습니다.  
   
 **Iis/ASP.NET**: 표준 HttpModule 및 HttpHandler 종류를 사용 하 여 OWIN 파이프라인 실행할 수 IIS에서 ASP.NET 요청 흐름의 일환으로 합니다. 호스팅 지원 되는 ASP.NET 웹 응용 프로그램 프로젝트에 Microsoft.AspNet.Host.SystemWeb NuGet 패키지를 설치 하 여 활성화 됩니다. 또한 IIS 및 역할을 호스트 하는 서버, 때문에 OWIN 서버/호스트 구분은 혼합 SystemWeb 호스트를 사용 하는 경우 개발자 없습니다 대체 서버 구현을 대체 의미이 NuGet 패키지에 있습니다.  
   
@@ -221,7 +221,7 @@ Katana 2.0에 대 한 미들웨어 구성 요소는에 중점을 두고 다른 �
 
 ## <a name="for-more-information-about-katana"></a>Katana에 대 한 자세한 내용은
 
-- GitHub의 Katana 프로젝트: [https://github.com/aspnet/AspNetKatana/](https://github.com/aspnet/AspNetKatana/)합니다.
+- GitHub의 Katana 프로젝트: [ https://github.com/aspnet/AspNetKatana/ ](https://github.com/aspnet/AspNetKatana/)합니다.
 - 비디오: [Katana 프로젝트-ASP.NET에 대 한 OWIN](https://channel9.msdn.com/Shows/Web+Camps+TV/The-Katana-Project-OWIN-for-ASPNET), Howard Dierking 여 합니다.
 
 ## <a name="acknowledgements"></a>감사의 글

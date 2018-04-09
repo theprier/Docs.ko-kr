@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/animating-in-response-to-user-interaction-cs
-title: "사용자 상호 작용 (C#)에 대 한 응답에서 애니메이션이 | Microsoft Docs"
+title: 사용자 상호 작용 (C#)에 대 한 응답에서 애니메이션이 | Microsoft Docs
 author: wenz
-description: "ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트롤 뿐 아니라 애니메이션 컨트롤을 추가 하는 전체 프레임 워크. 애니메이션 별 있습니다..."
+description: ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트롤 뿐 아니라 애니메이션 컨트롤을 추가 하는 전체 프레임 워크. 애니메이션 별 있습니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/animating-in-response-to-user-interaction-cs
 msc.type: authoredcontent
-ms.openlocfilehash: efb9c34c317ec56b43c498f40a857a9b47fa50b2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 783563f4e33087e99a071cf829ca6bab246ba3b0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="animating-in-response-to-user-interaction-c"></a>사용자 상호 작용 (C#)에 대 한 응답으로 애니메이션 적용
 ====================
@@ -51,11 +51,11 @@ ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트�
 
 내에서 `<Animations>` 노드를 5 가지 방법으로 사용자 상호 작용을 통해 애니메이션을 시작 하려면 (누락 된 요소는 `<OnLoad>` 전체 페이지가 완전히 로드 되 면 실행 되는):
 
-- `<OnClick>`(컨트롤에서 마우스 클릭)
-- `<OnHoverOut>`(마우스 컨트롤을 리프)
-- `<OnHoverOver>`(중지 하는 컨트롤을 마우스로 `<OnHoverOut>` 애니메이션)
-- `<OnMouseOut>`(마우스가 컨트롤)
-- `<OnMouseOver>`(중지 되지 컨트롤을 마우스로 `<OnMouseOut>` 애니메이션)
+- `<OnClick>` (컨트롤에서 마우스 클릭)
+- `<OnHoverOut>` (마우스 컨트롤을 리프)
+- `<OnHoverOver>` (중지 하는 컨트롤을 마우스로 `<OnHoverOut>` 애니메이션)
+- `<OnMouseOut>` (마우스가 컨트롤)
+- `<OnMouseOver>` (중지 되지 컨트롤을 마우스로 `<OnMouseOut>` 애니메이션)
 
 이 시나리오에서는 `<OnClick>` 사용 됩니다. 패널에 사용자가 크기를 조정 하 고 동시에 페이드 아웃 합니다.
 
@@ -66,6 +66,6 @@ ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트�
 
 마우스 클릭 컨트롤은 애니메이션 시작 ([전체 크기 이미지를 보려면 클릭](animating-in-response-to-user-interaction-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[이전](picking-one-animation-out-of-a-list-cs.md)
-[다음](disabling-actions-during-animation-cs.md)
+> [!div class="step-by-step"]
+> [이전](picking-one-animation-out-of-a-list-cs.md)
+> [다음](disabling-actions-during-animation-cs.md)

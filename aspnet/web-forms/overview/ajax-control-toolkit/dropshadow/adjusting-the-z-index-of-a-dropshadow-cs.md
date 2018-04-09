@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/dropshadow/adjusting-the-z-index-of-a-dropshadow-cs
-title: "DropShadow (C#)의 Z 인덱스를 조정 | Microsoft Docs"
+title: DropShadow (C#)의 Z 인덱스를 조정 | Microsoft Docs
 author: wenz
-description: "들어의 DropShadow 컨트롤 그림자가 있는 패널을 확장합니다. 그러나이 그림자 insta에 대 한 다른 컨트롤과 경우에 따라 충돌 중..."
+description: 들어의 DropShadow 컨트롤 그림자가 있는 패널을 확장합니다. 그러나이 그림자 insta에 대 한 다른 컨트롤과 경우에 따라 충돌 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dropshadow/adjusting-the-z-index-of-a-dropshadow-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 161f02daa5dd1f0e21853c1b7c1a65c1a9aa5d03
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 82add8427c8e574b213b67315e69bb4c28846095
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adjusting-the-z-index-of-a-dropshadow-c"></a>DropShadow (C#)의 Z 인덱스를 조정합니다.
 ====================
@@ -68,5 +68,5 @@ ms.lasthandoff: 11/10/2017
 
 이후: 메뉴 항목 표시 ([전체 크기 이미지를 보려면 클릭](adjusting-the-z-index-of-a-dropshadow-cs/_static/image6.png))
 
->[!div class="step-by-step"]
-[다음](manipulating-dropshadow-properties-from-client-code-cs.md)
+> [!div class="step-by-step"]
+> [다음](manipulating-dropshadow-properties-from-client-code-cs.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/picking-one-animation-out-of-a-list-vb
-title: "선택 목록 (VB)에서 애니메이션 | Microsoft Docs"
+title: 선택 목록 (VB)에서 애니메이션 | Microsoft Docs
 author: wenz
-description: "ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트롤 뿐 아니라 애니메이션 컨트롤을 추가 하는 전체 프레임 워크. 프레임 워크 또한 허용..."
+description: ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트롤 뿐 아니라 애니메이션 컨트롤을 추가 하는 전체 프레임 워크. 프레임 워크 또한 허용...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/picking-one-animation-out-of-a-list-vb
 msc.type: authoredcontent
-ms.openlocfilehash: dd2cfd512b03fa1d1f7754d9f86d080c1977695d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f2bd1b3cc72595da7e8901786ea8415d7c1c524a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="picking-one-animation-out-of-a-list-vb"></a>선택 목록 (VB)에서 애니메이션
 ====================
@@ -45,7 +45,7 @@ ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트�
 
 [!code-css[Main](picking-one-animation-out-of-a-list-vb/samples/sample3.css)]
 
-그런 다음 추가 `AnimationExtender` 페이지에 제공 하는 `ID`, `TargetControlID` 특성과 참가`runat="server":`
+그런 다음 추가 `AnimationExtender` 페이지에 제공 하는 `ID`, `TargetControlID` 특성과 참가 `runat="server":`
 
 [!code-aspx[Main](picking-one-animation-out-of-a-list-vb/samples/sample4.aspx)]
 
@@ -60,6 +60,6 @@ ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트�
 
 가능한 세 가지 애니메이션 중 하나: 패널의 넓은 가져옵니다 ([전체 크기 이미지를 보려면 클릭](picking-one-animation-out-of-a-list-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[이전](animation-depending-on-a-condition-vb.md)
-[다음](animating-in-response-to-user-interaction-vb.md)
+> [!div class="step-by-step"]
+> [이전](animation-depending-on-a-condition-vb.md)
+> [다음](animating-in-response-to-user-interaction-vb.md)

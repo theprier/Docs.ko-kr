@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/troubleshooting
-title: "Visual Studio를 사용 하 여 ASP.NET 웹 배포: 문제 해결 | Microsoft Docs"
+title: 'Visual Studio를 사용 하 여 ASP.NET 웹 배포: 문제 해결 | Microsoft Docs'
 author: tdykstra
-description: "이 자습서 시리즈를 배포 하는 방법을 보여 줍니다. ASP.NET (게시) 실행 하 여 웹 응용 프로그램을 Azure 앱 서비스 웹 앱 또는 타사 호스팅 공급자 중..."
+description: 이 자습서 시리즈를 배포 하는 방법을 보여 줍니다. ASP.NET (게시) 실행 하 여 웹 응용 프로그램을 Azure 앱 서비스 웹 앱 또는 타사 호스팅 공급자 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/01/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/troubleshooting
 msc.type: authoredcontent
-ms.openlocfilehash: a7a66e7e67539e4b075da6fc054a7b53984b6ce1
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 15bda09c59afaf9e5449c68c5206bb28de245541
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-troubleshooting"></a>Visual Studio를 사용 하 여 ASP.NET 웹 배포: 문제 해결
 ====================
@@ -292,8 +292,8 @@ Entity Framework Code First 마이그레이션 및 DBMS를 사용 하 여 SQL Se
 
 성공적으로 된 응용 프로그램 배포를 게시 한 번의 클릭을 사용 하 고이 오류를 시작 합니다.
 
-Web deployment 작업에 실패 했습니다. (원격 에이전트 URL 'https://serverurl.com/msdeploy.axd?site=sitename'로 요청을 완료할 수 없습니다.)  
- 원격 에이전트 URL 'https://url/msdeploy.axd?site=sitename'로 요청을 완료할 수 없습니다.  
+Web deployment 작업에 실패 했습니다. (원격 에이전트 URL로 요청을 완료할 수 없습니다 '<https://serverurl.com/msdeploy.axd?site=sitename>'.)  
+ 원격 에이전트 URL로 요청을 완료할 수 없습니다 '<https://url/msdeploy.axd?site=sitename>'.  
 요청이 중단 되었습니다: 요청이 취소 되었습니다.  
 기본 RCW에서 분리 된 COM 개체를 사용할 수 없습니다.
 
@@ -309,7 +309,7 @@ Web deployment 작업에 실패 했습니다. (원격 에이전트 URL 'https://
 
 ### <a name="possible-cause-and-solution"></a>가능한 원인 및 해결
 
-기본적으로 Visual Studio 집합 사이트의 루트 폴더에 읽기 권한 및 앱에 대 한 쓰기 권한이\_데이터 폴더. 이 동작을 사용 하지 않도록 추가 하 여 사이트 폴더에 대 한 기본 권한을 올바르고 설정할 필요가 없습니다 하는지 알고 있는 경우  **&lt;IncludeSetACLProviderOn 대상&gt;False&lt;/ IncludeSetACLProviderOnDestination&gt;**  게시 프로필 파일 (영향을 줄 단일 프로필) 또는 (모든 프로필에 영향을)를 wpp.targets 파일입니다. 이러한 파일을 편집 하는 방법에 대 한 정보를 참조 하십시오. [하는 방법: 프로 파일 (.pubxml) 파일에서 배포 설정을 편집](https://msdn.microsoft.com/library/ff398069.aspx)합니다.
+기본적으로 Visual Studio 집합 사이트의 루트 폴더에 읽기 권한 및 앱에 대 한 쓰기 권한이\_데이터 폴더. 이 동작을 사용 하지 않도록 추가 하 여 사이트 폴더에 대 한 기본 권한을 올바르고 설정할 필요가 없습니다 하는지 알고 있는 경우 **&lt;IncludeSetACLProviderOn 대상&gt;False&lt;/ IncludeSetACLProviderOnDestination&gt;** 게시 프로필 파일 (영향을 줄 단일 프로필) 또는 (모든 프로필에 영향을)를 wpp.targets 파일입니다. 이러한 파일을 편집 하는 방법에 대 한 정보를 참조 하십시오. [하는 방법: 프로 파일 (.pubxml) 파일에서 배포 설정을 편집](https://msdn.microsoft.com/library/ff398069.aspx)합니다.
 
 ## <a name="access-denied-errors-when-the-application-tries-to-write-to-an-application-folder"></a>응용 프로그램에서 응용 프로그램 폴더에 기록 하려고 할 때 액세스 거부 오류
 
@@ -319,7 +319,7 @@ Web deployment 작업에 실패 했습니다. (원격 에이전트 URL 'https://
 
 ### <a name="possible-cause-and-solution"></a>가능한 원인 및 해결
 
-기본적으로 Visual Studio 집합 사이트의 루트 폴더에 읽기 권한 및 앱에 대 한 쓰기 권한이\_데이터 폴더. 응용 프로그램은 하위 폴더에 대 한 쓰기에 필요한 경우이 시리즈의 자습서에서는 프로덕션 환경에 폴더 사용 권한 설정 및 배포에 표시 된 대로 해당 폴더에 대 한 권한을 설정할 수 있습니다. 루트 폴더에 추가 하 여 읽기 전용 액세스를 설정 하지 못하도록 해야 응용 프로그램에 사이트의 루트 폴더에 대 한 쓰기 권한이 필요한 경우  **&lt;IncludeSetACLProviderOn 대상&gt;False&lt;/ IncludeSetACLProviderOnDestination&gt;**  게시 프로필 파일 (영향을 줄 단일 프로필) 또는 (모든 프로필에 영향을)를 wpp.targets 파일입니다. 이러한 파일을 편집 하는 방법에 대 한 정보를 참조 하십시오. [하는 방법: 프로 파일 (.pubxml) 파일에서 배포 설정을 편집](https://msdn.microsoft.com/library/ff398069.aspx)합니다.
+기본적으로 Visual Studio 집합 사이트의 루트 폴더에 읽기 권한 및 앱에 대 한 쓰기 권한이\_데이터 폴더. 응용 프로그램은 하위 폴더에 대 한 쓰기에 필요한 경우이 시리즈의 자습서에서는 프로덕션 환경에 폴더 사용 권한 설정 및 배포에 표시 된 대로 해당 폴더에 대 한 권한을 설정할 수 있습니다. 루트 폴더에 추가 하 여 읽기 전용 액세스를 설정 하지 못하도록 해야 응용 프로그램에 사이트의 루트 폴더에 대 한 쓰기 권한이 필요한 경우 **&lt;IncludeSetACLProviderOn 대상&gt;False&lt;/ IncludeSetACLProviderOnDestination&gt;** 게시 프로필 파일 (영향을 줄 단일 프로필) 또는 (모든 프로필에 영향을)를 wpp.targets 파일입니다. 이러한 파일을 편집 하는 방법에 대 한 정보를 참조 하십시오. [하는 방법: 프로 파일 (.pubxml) 파일에서 배포 설정을 편집](https://msdn.microsoft.com/library/ff398069.aspx)합니다.
 
 <a id="aspnet45error"></a>
 
@@ -377,5 +377,5 @@ HTTP 오류 404.17-찾을 수 없습니다
 
 컴퓨터에 ASP.NET 4.5를 설치할 수 있습니다. ASP.NET 4.5를 설치 하는 방법을 설명 하는이 시리즈의 테스트 환경 자습서로 IIS에 배포의 단계를 참조 하십시오.
 
->[!div class="step-by-step"]
-[이전](deploying-extra-files.md)
+> [!div class="step-by-step"]
+> [이전](deploying-extra-files.md)

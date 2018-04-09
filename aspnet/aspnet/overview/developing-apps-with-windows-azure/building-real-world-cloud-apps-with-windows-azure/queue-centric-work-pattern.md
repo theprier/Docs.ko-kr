@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern
-title: "큐 중심 작업 패턴 (Azure로 응용 프로그램 빌딩 실제 클라우드) | Microsoft Docs"
+title: 큐 중심 작업 패턴 (Azure로 응용 프로그램 빌딩 실제 클라우드) | Microsoft Docs
 author: MikeWasson
-description: "실제 세계 클라우드로 응용 프로그램 빌딩 Azure 전자책 Scott Guthrie에서 개발 된 프레젠테이션을 기반으로 합니다. 13 패턴 및 그을 수 있는 방법에 설명..."
+description: 실제 세계 클라우드로 응용 프로그램 빌딩 Azure 전자책 Scott Guthrie에서 개발 된 프레젠테이션을 기반으로 합니다. 13 패턴 및 그을 수 있는 방법에 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: cc1ad51b-40c3-4c68-8620-9aaa0fd1f6cf
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern
 msc.type: authoredcontent
-ms.openlocfilehash: ccfbaa26cbf610f847811e6f3c612458277046ed
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 124e673206ecea2eac5efb8c2802a32a690fa104
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="queue-centric-work-pattern-building-real-world-cloud-apps-with-azure"></a>큐 중심 작업 패턴 (Azure로 응용 프로그램 빌딩 실제 클라우드)
 ====================
@@ -177,7 +177,7 @@ ms.lasthandoff: 01/24/2018
 이것은이 전자책에서 다루는 13 패턴의 마지막 있고은 물론 다른 패턴을 다양 하 게 하는 사례 성공적인 클라우드 앱을 빌드할 합니다. [최종 장](more-patterns-and-guidance.md) 이러한 13 패턴에서 다뤄진 하지 않은 항목에 대 한 리소스 링크를 제공 합니다.
 
 <a id="resources"></a>
-## <a name="resources"></a>리소스
+## <a name="resources"></a>자료
 
 큐에 대 한 자세한 내용은 다음 리소스를 참조 합니다.
 
@@ -194,6 +194,6 @@ ms.lasthandoff: 01/24/2018
 
 - [FailSafe: 복원 력 있는 확장 가능한 클라우드 서비스를 만드는](https://channel9.msdn.com/Series/FailSafe)합니다. Marc Mercuri, Ulrich Homann, Mark Simms 하 여 비디오 시리즈를 9 개 부분으로 구성 합니다. 고급 개념 및 아키텍처 원칙 매우 액세스 가능 하 고 흥미로운 방법으로 스토리 실제 고객과 Microsoft 고객 자문 팀 (CAT) 환경에서 가져온 것으로 표시 합니다. Azure 저장소 서비스 및 큐 소개, 에피소드 5 35:13에서 시작을 참조 하십시오.
 
->[!div class="step-by-step"]
-[이전](distributed-caching.md)
-[다음](more-patterns-and-guidance.md)
+> [!div class="step-by-step"]
+> [이전](distributed-caching.md)
+> [다음](more-patterns-and-guidance.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/performance-and-caching/using-asynchronous-methods-in-aspnet-45
-title: "비동기 메서드를 사용 하 여 asp.net 4.5 | Microsoft Docs"
+title: 비동기 메서드를 사용 하 여 asp.net 4.5 | Microsoft Docs
 author: Rick-Anderson
-description: "이 자습서는 무료 웹에 대 한 Visual Studio Express 2012를 사용 하 여 비동기 ASP.NET Web Forms 응용 프로그램을 구축 하는 기초 알려 드리겠습니다 중..."
+description: 이 자습서는 무료 웹에 대 한 Visual Studio Express 2012를 사용 하 여 비동기 ASP.NET Web Forms 응용 프로그램을 구축 하는 기초 알려 드리겠습니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/06/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/performance-and-caching/using-asynchronous-methods-in-aspnet-45
 msc.type: authoredcontent
-ms.openlocfilehash: d3eb588aad592605a8e368d1af6e62ece34b79d0
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 839cfc39188a91b6674465b8ff8fe51804033295
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-asynchronous-methods-in-aspnet-45"></a>비동기 메서드를 사용 하 여 asp.net 4.5
 ====================
@@ -45,7 +45,7 @@ ms.lasthandoff: 02/12/2018
 - [Async/Await FAQ](https://blogs.msdn.com/b/pfxteam/archive/2012/04/12/10293335.aspx)
 - [Visual Studio 비동기 프로그래밍](https://msdn.microsoft.com/vstudio/gg316360)
 
-## <a id="HowRequestsProcessedByTP"></a>스레드 풀에서 요청을 처리 하는 방법
+## <a id="HowRequestsProcessedByTP"></a>  스레드 풀에서 요청을 처리 하는 방법
 
 웹 서버에서.NET Framework에는 ASP.NET 요청을 처리 하는 데 사용 되는 스레드 풀을 유지 관리 합니다. 요청이 도착 하면 해당 요청을 처리 하는 풀의 스레드가 디스패치 됩니다. 요청이 동기적으로 처리 하는 경우 요청을 처리 하는 스레드 이며 사용 중인 요청 하는 동안 처리 되는 동안 스레드 다른 요청을 처리할 수 없습니다.   
   
@@ -55,7 +55,7 @@ ms.lasthandoff: 02/12/2018
 
 많은 수의 시작 시 동시 요청을 보거나 돌발적 부하가 (여기서 동시성이 갑자기 증가)는 웹 응용 프로그램, 웹 서비스 호출을 비동기 만드는 응용 프로그램의 응답성을 증가 합니다. 비동기 요청 동기 요청으로 처리 하는 동일한 기간을 사용 합니다. 예를 들어 웹 서비스는 호출을 수행 하는 경우에 2 초를 완료 하려면 요청에서 수행 하는 2 초 동기적 또는 비동기적으로 수행 하는 것이 있는지 여부 필요 합니다. 그러나 비동기 호출 스레드가 첫 번째 요청을 완료를 기다리는 동안 다른 요청에 응답 하지 않도록 차단 되지 않습니다. 따라서 비동기 요청 장기 실행 작업을 호출 하는 많은 동시 요청이 없는 경우 요청 큐 및 스레드 풀 커지지를 않도록 합니다.
 
-## <a id="ChoosingSyncVasync"></a>동기 또는 비동기 메서드를 선택합니다.
+## <a id="ChoosingSyncVasync"></a>  동기 또는 비동기 메서드를 선택합니다.
 
 이 섹션에는 동기 또는 비동기 메서드를 사용 하는 경우에 대 한 지침이 나와 있습니다. 이러한 내용은 지침일 뿐입니다. 비동기 메서드가 성능에 도움이 될 수 있는지 여부를 결정을 개별적으로 각 응용 프로그램을 검사 합니다.
 
@@ -65,7 +65,7 @@ ms.lasthandoff: 02/12/2018
 - 단순성이 효율성 보다 더 중요 합니다.
 - 작업은 광범위 한 디스크 또는 네트워크 오버 헤드를 포함 하는 작업 아닌 주로 CPU 작업입니다. 비동기 메서드를 사용 하 여 CPU 바인딩 작업에서 이점은 없고 및 오버 헤드만 증가 합니다.
 
- 일반적으로 다음 조건에 대 한 비동기 메서드를 사용 합니다.
+  일반적으로 다음 조건에 대 한 비동기 메서드를 사용 합니다.
 
 - 비동기 메서드를 통해 사용할 수 있는 서비스를 호출 하 고.NET 4.5 이상을 사용 하는 합니다.
 - 작업에는 네트워크 또는 I/o-바인딩된 CPU 바인딩된 대신 합니다.
@@ -74,13 +74,13 @@ ms.lasthandoff: 02/12/2018
 - 때 아웃 스레드 전환의 이점은 컨텍스트 전환 비용에 가중치를 적용 합니다. 일반적으로 지정 해야 메서드에 비동기 경우 아무 작업도 수행 하는 동안 ASP.NET 요청 스레드를 차단 하는 동기 메서드입니다. 호출을 비동기 실행 하 여 ASP.NET 요청 스레드의 차단 되지 않습니다 웹 서비스 요청을 완료를 기다리는 동안 작업이 없습니다.
 - 테스트 차단 사이트 성능에 병목 현상이 되 게와 IIS가 차단 되는 이러한 호출에 대 한 비동기 메서드를 사용 하 여 더 많은 요청을 처리할 수 있음을 보여 줍니다.
 
- 다운로드 가능한 샘플에는 비동기 메서드를 효율적으로 사용 하는 방법을 보여 줍니다. 제공 된 샘플 ASP.NET 4.5의 비동기 프로그래밍의 간단한 데모를 제공 하도록 설계 되었습니다. 이 샘플은 ASP.NET의 비동기 프로그래밍에 대 한 참조 아키텍처 없습니다. 샘플 프로그램 호출 [ASP.NET Web API](../../../web-api/index.md) 메서드를 호출 하는 [Task.Delay](https://msdn.microsoft.com/library/hh139096(VS.110).aspx) 장기 실행 웹 서비스 호출을 시뮬레이션할 수 있습니다. 대부분의 프로덕션 응용 프로그램에는 비동기 메서드 사용으로 뚜렷한 이점을 표시 되지 않습니다.   
+  다운로드 가능한 샘플에는 비동기 메서드를 효율적으로 사용 하는 방법을 보여 줍니다. 제공 된 샘플 ASP.NET 4.5의 비동기 프로그래밍의 간단한 데모를 제공 하도록 설계 되었습니다. 이 샘플은 ASP.NET의 비동기 프로그래밍에 대 한 참조 아키텍처 없습니다. 샘플 프로그램 호출 [ASP.NET Web API](../../../web-api/index.md) 메서드를 호출 하는 [Task.Delay](https://msdn.microsoft.com/library/hh139096(VS.110).aspx) 장기 실행 웹 서비스 호출을 시뮬레이션할 수 있습니다. 대부분의 프로덕션 응용 프로그램에는 비동기 메서드 사용으로 뚜렷한 이점을 표시 되지 않습니다.   
   
 응용 프로그램은 거의 비동기적 모든 메서드에 필요 합니다. 대개 몇 가지 동기 메서드를 비동기 메서드로 변환 필요한 작업량는 것이 효율성 증대를 제공 합니다.
 
-## <a id="SampleApp"></a>샘플 응용 프로그램
+## <a id="SampleApp"></a>  샘플 응용 프로그램
 
-샘플 응용 프로그램을 다운로드할 수 있습니다 [https://github.com/RickAndMSFT/Async-ASP.NET](https://github.com/RickAndMSFT/Async-ASP.NET) 에 [GitHub](https://github.com/) 사이트입니다. 저장소는 다음의 세 프로젝트로 구성 됩니다.
+샘플 응용 프로그램을 다운로드할 수 있습니다 [ https://github.com/RickAndMSFT/Async-ASP.NET ](https://github.com/RickAndMSFT/Async-ASP.NET) 에 [GitHub](https://github.com/) 사이트입니다. 저장소는 다음의 세 프로젝트로 구성 됩니다.
 
 - *WebAppAsync*: Web API를 사용 하는 ASP.NET Web Forms 프로젝트 **WebAPIpwg** 서비스입니다. 이 자습서에서이 대 한 코드의 대부분 프로젝트.
 - *WebAPIpgw*: 구현 하는 ASP.NET MVC 4 Web API 프로젝트는 `Products, Gizmos and Widgets` 컨트롤러입니다. 에 대 한 데이터를 제공는 *WebAppAsync* 프로젝트 및 *Mvc4Async* 프로젝트.
@@ -101,7 +101,7 @@ ms.lasthandoff: 02/12/2018
 
 ![Gizmos](using-asynchronous-methods-in-aspnet-45/_static/image1.png)
 
-## <a id="CreatingAsynchGizmos"></a>비동기 Gizmos 페이지 만들기
+## <a id="CreatingAsynchGizmos"></a>  비동기 Gizmos 페이지 만들기
 
 샘플에서는 새 [비동기](https://msdn.microsoft.com/library/hh156513(VS.110).aspx) 및 [await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx) 키워드 (.NET 4.5 및 Visual Studio 2012에서 사용 가능) 하는 복잡 한 변환에 필요한 유지 관리 하는 일을 담당 하 고 컴파일러 비동기 프로그래밍 합니다. 컴파일러를 사용 하면 코드는 C#의 동기 제어 흐름을 생성 하는 사용 하 여 작성 하 고 컴파일러에 스레드를 차단 되지 않도록 하기 위해 콜백을 사용 하는 데 필요한 변환을 자동으로 적용 됩니다.
 
@@ -127,7 +127,7 @@ ASP.NET 비동기 페이지에 포함 해야 합니다는 [페이지](https://ms
 - [await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx) 키워드 웹 서비스 호출에 적용 되었습니다.
 - 비동기 웹 서비스 API를 호출 했습니다 (`GetGizmosAsync`).
 
-내부에 `GetGizmosSvcAsync` 메서드는 다른 비동기 메서드 본문 `GetGizmosAsync` 호출 됩니다. `GetGizmosAsync`즉시 반환는 `Task<List<Gizmo>>` 하는 데이터를 사용할 수 있는 경우을 결국 완료 됩니다. 코드 작업을 기다립니다 gizmo 데이터 구성할 때까지 다른 작업을 수행 하지 않으려면 때문에 (사용 하는 **await** 키워드)입니다. 사용할 수는 **await** 주석으로 추가 된 경우에 키워드는 **비동기** 키워드입니다.
+내부에 `GetGizmosSvcAsync` 메서드는 다른 비동기 메서드 본문 `GetGizmosAsync` 호출 됩니다. `GetGizmosAsync` 즉시 반환는 `Task<List<Gizmo>>` 하는 데이터를 사용할 수 있는 경우을 결국 완료 됩니다. 코드 작업을 기다립니다 gizmo 데이터 구성할 때까지 다른 작업을 수행 하지 않으려면 때문에 (사용 하는 **await** 키워드)입니다. 사용할 수는 **await** 주석으로 추가 된 경우에 키워드는 **비동기** 키워드입니다.
 
 **await** 키워드는 작업이 완료 될 때까지 스레드를 차단 하지 않습니다. 태스크에 대 한 콜백 메서드의 나머지 부분을 서명 하 고 즉시 반환 합니다. 대기 중인된 작업을 완료 하면 해당 콜백을 호출 되며 따라서 중단 메서드 오른쪽의 실행을 다시 시작 합니다. 사용 하 여 대 한 자세한 내용은 [await](https://msdn.microsoft.com/library/hh156528(VS.110).aspx) 및 [비동기](https://msdn.microsoft.com/library/hh156513(VS.110).aspx) 키워드 및 [작업](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) 네임 스페이스 참조는 [비동기 참조](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/async)합니다.
 
@@ -157,7 +157,7 @@ ASP.NET 비동기 페이지에 포함 해야 합니다는 [페이지](https://ms
 
 Async void 이벤트에 단점은 개발자가 완전히 제어할 이벤트 실행 하는 동안에 더 이상 없습니다. 예를 들어 두.aspx 및 합니다. 마스터 정의 `Page_Load` 이벤트 및 하나 또는 둘 다는 비동기 작업을 실행 순서를 보장할 수 없습니다. 비 이벤트 처리기에 대 한 동일한 indeterminiate 순서 (같은 `async void Button_Click` ) 적용 됩니다. 대부분의 개발자에 대 한이 수도 허용 될 수 있지만 같은 Api만 사용 해야 실행 순서에 대 한 모든 권한이 필요한 사용자에 게 `RegisterAsyncTask` 작업 개체를 반환 하는 메서드를 사용 하는 합니다.
 
-## <a id="Parallel"></a>동시에 여러 작업을 수행합니다.
+## <a id="Parallel"></a>  동시에 여러 작업을 수행합니다.
 
 비동기 메서드는 동작 여러 개의 독립적인 작업을 수행 해야 하는 때 동기 메서드를 통해 중요 한 장점입니다. 제공 된 샘플 동기 페이지 *PWG.aspx*(에 대 한 제품, Widget 및 Gizmos) 제품, widget 및 gizmos 목록을 가져오려면 세 가지 웹 서비스 호출의 결과 표시 합니다. [ASP.NET Web API](../../../web-api/index.md) 이러한 제공 하는 프로젝트 서비스 사용 하 여 [Task.Delay](https://msdn.microsoft.com/library/hh139096(VS.110).aspx) 시 지연 또는 느린 네트워크를 시뮬레이션 하기 위해 호출 합니다. 지연 비동기 500 밀리초로 설정 되 면 *PWGasync.aspx* 페이지가 소요 동기 동안 완료를 약간 넘는 500 밀리초 `PWG` 버전 1, 500 밀리초 보다 우선 합니다. 동기 *PWG.aspx* 다음 코드에 페이지가 표시 됩니다.
 
@@ -171,7 +171,7 @@ Async void 이벤트에 단점은 개발자가 완전히 제어할 이벤트 실
 
 ![](using-asynchronous-methods-in-aspnet-45/_static/image3.png)
 
-## <a id="CancelToken"></a>취소 토큰을 사용 하 여
+## <a id="CancelToken"></a>  취소 토큰을 사용 하 여
 
 반환 비동기 메서드 `Task`가지도록 되는 취소할 수 있는는 [CancellationToken](https://msdn.microsoft.com/library/system.threading.cancellationtoken(VS.110).aspx) 하나와 함께 제공 되는 경우 매개 변수는 `AsyncTimeout` 특성은 [페이지](https://msdn.microsoft.com/library/ydy4x04a.aspx) 지시문입니다. 다음 코드는 *GizmosCancelAsync.aspx* 페이지에 초 제한 시간입니다.
 
@@ -183,14 +183,14 @@ Async void 이벤트에 단점은 개발자가 완전히 제어할 이벤트 실
 
 제공 된 샘플 응용 프로그램에서 선택 하는 *GizmosCancelAsync* 호출 링크는 *GizmosCancelAsync.aspx* 페이지 및 비동기 호출의 시간 제한) (으로 취소를 보여 줍니다. 지연 시간 임의 범위 내에서 이기 때문에 시간 초과 오류 메시지가 페이지를 두 번 새로 고칠 할 수 있습니다.
 
-## <a id="ServerConfig"></a>높은 동시성/높은 대기 시간이 웹 서비스 호출에 대 한 서버 구성
+## <a id="ServerConfig"></a>  높은 동시성/높은 대기 시간이 웹 서비스 호출에 대 한 서버 구성
 
 비동기 웹 응용 프로그램의 이점을 실현 하려면 기본 서버 구성을 일부 변경 해야 할 수 있습니다. 스트레스 테스트 비동기 웹 응용 프로그램을 구성할 때 염두 다음에 유의 합니다.
 
 - Windows 7, Windows Vista, Window 8 및 Windows 클라이언트 운영 체제 최대 10 개의 동시 요청 했습니다. Windows Server 운영 체제를 과부하 상태에서 비동기 메서드의 이점을 활용 해야 합니다.
 - 다음 명령을 사용 하 여 관리자 권한 명령 프롬프트에서 IIS를.NET 4.5를 등록 합니다.  
- %windir%\Microsoft.NET\Framework64 \v4.0.30319\aspnet\_regiis -i  
- 참조 [ASP.NET IIS 등록 도구 (Aspnet\_regiis.exe)](https://msdn.microsoft.com/library/k6h9cz8h.aspx)
+  %windir%\Microsoft.NET\Framework64 \v4.0.30319\aspnet\_regiis -i  
+  참조 [ASP.NET IIS 등록 도구 (Aspnet\_regiis.exe)](https://msdn.microsoft.com/library/k6h9cz8h.aspx)
 - 늘려야 할 수는 [HTTP.sys](https://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture) 1000에서 5000 기본값에서 큐 제한 합니다. 표시 될 수 설정이 너무 낮으면 [HTTP.sys](https://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture) HTTP 503 상태와 함께 요청을 거부 합니다. 변경 하려면 HTTP.sys 큐 제한:
 
     - IIS 관리자를 열고 응용 프로그램 풀 창으로 이동 합니다.
@@ -199,7 +199,7 @@ Async void 이벤트에 단점은 개발자가 완전히 제어할 이벤트 실
     - 에 **고급 설정** 대화 상자에서 변경 *Queue Length* 5000 1000에서입니다.  
         ![큐 길이](using-asynchronous-methods-in-aspnet-45/_static/image5.png)  
   
- Note 위의 이미지는 응용 프로그램 풀에서.NET 4.5를 사용 하는 경우에.NET framework v 4.0으로 나열 됩니다. 이 처럼 시간의 불일치가이 확인을 이해 하려면 다음을 참조 합니다.
+  Note 위의 이미지는 응용 프로그램 풀에서.NET 4.5를 사용 하는 경우에.NET framework v 4.0으로 나열 됩니다. 이 처럼 시간의 불일치가이 확인을 이해 하려면 다음을 참조 합니다.
 
         - [.NET Versioning and Multi-Targeting - .NET 4.5 is an in-place upgrade to .NET 4.0](http://www.hanselman.com/blog/NETVersioningAndMultiTargetingNET45IsAnInplaceUpgradeToNET40.aspx)
         - [How to set an IIS Application or AppPool to use ASP.NET 3.5 rather than 2.0](http://www.hanselman.com/blog/HowToSetAnIISApplicationOrAppPoolToUseASPNET35RatherThan20.aspx)

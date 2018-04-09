@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/updating-data
-title: "Introducing ASP.NET 웹 페이지-데이터베이스 데이터 업데이트 | Microsoft Docs"
+title: Introducing ASP.NET 웹 페이지-데이터베이스 데이터 업데이트 | Microsoft Docs
 author: tfitzmac
-description: "이 자습서에서는 ASP.NET 웹 페이지 (Razor)를 사용 하는 경우 (변경) 기존 데이터베이스 항목을 업데이트 하는 방법을 보여 줍니다. 계열을 완료 한 것으로 가정 번째..."
+description: 이 자습서에서는 ASP.NET 웹 페이지 (Razor)를 사용 하는 경우 (변경) 기존 데이터베이스 항목을 업데이트 하는 방법을 보여 줍니다. 계열을 완료 한 것으로 가정 번째...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/02/2018
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/updating-data
 msc.type: authoredcontent
-ms.openlocfilehash: b016231975bf8d359f4c390b0b478edc383117d4
-ms.sourcegitcommit: df2157ae9aeea0075772719c29784425c783e82a
+ms.openlocfilehash: e889cd27e2267a08f7b6ea708c92e35edbdd7a1a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---updating-database-data"></a>Introducing ASP.NET 웹 페이지-데이터베이스 데이터 업데이트
 ====================
@@ -108,7 +108,7 @@ ms.lasthandoff: 01/10/2018
 
 열 구성 *만* 의 링크를 렌더링 하는 태그를 몇 가지 정보 (ID)와 하에서 추출 되는 행에 대 한 데이터베이스 레코드입니다.
 
-> [!TIP] 
+> [!TIP]
 > 
 > **명명 된 매개 변수 및 메서드에 대 한 위치 매개 변수**
 > 
@@ -120,7 +120,7 @@ ms.lasthandoff: 01/10/2018
 > 
 > 먼저이 코드를 표시 하지만 각각의 경우에서에 특정 순서로 관계 매개 변수를 전달 하는 경우 문제가 언급 하지 않은 &mdash; 메서드에 정의 되어 있는 매개 변수 순서 즉, 합니다. 에 대 한 `db.Execute` 및 `Validation.RequireFields`, 페이지를 실행할 때 오류 메시지가 나타나거나 이상한 결과 이상 얻을 전달 하는 값의 순서를 혼합 하는 경우. 명확 하 게 매개 변수를 전달 하는 순서를 파악 해야 합니다. (WebMatrix에서 IntelliSense 문의할 수 있습니다 이름, 형식 및 매개 변수의 순서를 확인 합니다.)
 > 
-> 을 순서 대로 값을 전달 하는 대신 사용 하 여 *명명 된 매개 변수*합니다. (사용 하 여 라고 순서로 매개 변수를 전달 *위치 매개 변수*.) 명명 된 매개 변수에 대 한 명시적으로 포함 매개 변수 이름을 해당 값을 전달 하는 경우. 명명 된 매개 변수가 이미 여러 번에서에서 사용한 이러한 자습서입니다. 예:
+> 을 순서 대로 값을 전달 하는 대신 사용 하 여 *명명 된 매개 변수*합니다. (사용 하 여 라고 순서로 매개 변수를 전달 *위치 매개 변수*.) 명명 된 매개 변수에 대 한 명시적으로 포함 매개 변수 이름을 해당 값을 전달 하는 경우. 명명 된 매개 변수가 이미 여러 번에서에서 사용한 이러한 자습서입니다. 예를 들어:
 > 
 > [!code-csharp[Main](updating-data/samples/sample8.cs)]
 > 
@@ -173,7 +173,7 @@ ms.lasthandoff: 01/10/2018
 
 이 코드에 정보의 유효성을 검사 하는 다른 방법을 보여 줍니다. 이전 자습서에서 사용한는 `Validation` 도우미입니다. 확인을 위해 필드를 등록 하 고 ASP.NET에서 자동으로 유효성 검사를가 하 고 사용 하 여 오류를 표시 `Html.ValidationMessage` 및 `Html.ValidationSummary`합니다. 그러나이 경우 있습니다 하는 것은 아닙니다 사용자 입력 유효성 검사 합니다. 대신, 다른 위치에서 페이지에 전달 된 값의 유효성 검사 중인 있습니다. `Validation` 도우미 하지는 않습니다.
 
-따라서 체크 값을 직접 사용 하 여 테스트 하 여 `if(!Request.QueryString["ID"].IsEmpty()`). 문제가 있는 경우 사용 하 여 오류를 표시할 수 있습니다 `Html.ValidationSummary`에서와 마찬가지로는 `Validation` 도우미입니다. 이러한 파일을 호출 하면 `Validation.AddFormError` 표시할 메시지를 전달 합니다. `Validation.AddFormError`익숙한 이미 유효성 검사 시스템을 사용 하 여 일치 하는 사용자 지정 메시지를 정의할 수 있도록 하는 기본 제공 메서드입니다. (이 자습서의 뒷부분에 나오는 알아보겠습니다이 유효성 검사 프로세스를 좀 더 강력 하 게 하는 방법에 대 한.)
+따라서 체크 값을 직접 사용 하 여 테스트 하 여 `if(!Request.QueryString["ID"].IsEmpty()`). 문제가 있는 경우 사용 하 여 오류를 표시할 수 있습니다 `Html.ValidationSummary`에서와 마찬가지로는 `Validation` 도우미입니다. 이러한 파일을 호출 하면 `Validation.AddFormError` 표시할 메시지를 전달 합니다. `Validation.AddFormError` 익숙한 이미 유효성 검사 시스템을 사용 하 여 일치 하는 사용자 지정 메시지를 정의할 수 있도록 하는 기본 제공 메서드입니다. (이 자습서의 뒷부분에 나오는 알아보겠습니다이 유효성 검사 프로세스를 좀 더 강력 하 게 하는 방법에 대 한.)
 
 동영상에 대 한 ID가 있는지에 확인 한 후 코드는 단일 데이터베이스 항목을 찾는 데이터베이스를 읽습니다. (아마도 데이터베이스 작업에 대 한 일반적인 패턴 보았을: 데이터베이스를 열고 SQL 문을 정의 하는 문을 실행 합니다.) 이 이번에는 SQL `Select` 문에 포함 `WHERE ID = @0`합니다. ID가 고유 하므로 하나의 레코드를 반환할 수 있습니다.
 
@@ -306,11 +306,11 @@ ms.lasthandoff: 01/10/2018
 
 [!code-cshtml[Main](updating-data/samples/sample21.cshtml)]
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 - [Razor 구문을 사용 하 여 ASP.NET 웹 프로그래밍 소개](../../getting-started/introducing-razor-syntax-c.md)
 - [SQL UPDATE 문을](http://www.w3schools.com/sql/sql_update.asp) W3Schools 사이트
 
->[!div class="step-by-step"]
-[이전](entering-data.md)
-[다음](deleting-data.md)
+> [!div class="step-by-step"]
+> [이전](entering-data.md)
+> [다음](deleting-data.md)

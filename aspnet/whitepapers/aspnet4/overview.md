@@ -1,22 +1,22 @@
 ---
 uid: whitepapers/aspnet4/overview
-title: "ASP.NET 4 및 Visual Studio 2010 웹 개발 개요 | Microsoft Docs"
+title: ASP.NET 4 및 Visual Studio 2010 웹 개발 개요 | Microsoft Docs
 author: rick-anderson
-description: "이 문서에서는.net Framework 4 및 Visual Studio 2010에 포함 된 ASP.NET에 대 한 다양 한 새로운 기능에 대 한 개요를 제공 합니다."
+description: 이 문서에서는.net Framework 4 및 Visual Studio 2010에 포함 된 ASP.NET에 대 한 다양 한 새로운 기능에 대 한 개요를 제공 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2010
 ms.topic: article
 ms.assetid: d7729af4-1eda-4ff2-8b61-dbbe4fc11d10
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/aspnet4
 msc.type: content
-ms.openlocfilehash: 29d5b2f4c04b899b900427ac202c0a4f57f8076f
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 6ce52c387ff835eda46bc1882b8b974889e2d4af
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>ASP.NET 4 및 Visual Studio 2010 웹 개발 개요
 ====================
@@ -27,7 +27,7 @@ ms.lasthandoff: 01/30/2018
 
 **목차**
 
-**[핵심 서비스](#0.2__Toc253429238 "_Toc253429238")**  
+**[Core Services](#0.2__Toc253429238 "_Toc253429238")**  
 [Web.config 파일 리팩터링](#0.2__Toc253429239 "_Toc253429239")  
 [확장 가능한 출력 캐싱](#0.2__Toc253429240 "_Toc253429240")  
 [웹 응용 프로그램 자동 시작](#0.2__Toc253429241 "_Toc253429241")  
@@ -38,7 +38,7 @@ ms.lasthandoff: 01/30/2018
 [개체 캐싱 및 캐싱 확장성 개체](#0.2__Toc253429246 "_Toc253429246")  
 [확장 가능한 HTML, URL 및 HTTP 헤더 인코딩을](#0.2__Toc253429247 "_Toc253429247")  
 [단일 작업자 프로세스에서 개별 응용 프로그램에 대 한 성능 모니터링](#0.2__Toc253429248 "_Toc253429248")  
-[멀티 타기 팅](#0.2__Toc253429249 "_Toc253429249")
+[Multi-Targeting](#0.2__Toc253429249 "_Toc253429249")
 
 **[Ajax](#0.2__Toc253429250 "_Toc253429250")**  
 [Web Forms 및 MVC에 포함 된 jQuery](#0.2__Toc253429251 "_Toc253429251")  
@@ -52,7 +52,7 @@ ms.lasthandoff: 01/30/2018
 [ASP.NET 4에서에서의 라우팅](#0.2__Toc253429260 "_Toc253429260")  
 [클라이언트 Id 설정](#0.2__Toc253429261 "_Toc253429261")  
 [데이터 컨트롤에서 행 선택 보관](#0.2__Toc253429262 "_Toc253429262")  
-[ASP.NET의 차트 컨트롤](#0.2__Toc253429263 "_Toc253429263")  
+[ASP.NET Chart Control](#0.2__Toc253429263 "_Toc253429263")  
 [QueryExtender 제어를 사용 하 여 데이터를 필터링](#0.2__Toc253429264 "_Toc253429264")  
 [Html 인코딩된 코드 식을](#0.2__Toc253429265 "_Toc253429265")  
 [프로젝트 템플릿 변경](#0.2__Toc253429266 "_Toc253429266")  
@@ -90,9 +90,9 @@ ms.lasthandoff: 01/30/2018
 [Web.config 변환](#0.2__Toc253429294 "_Toc253429294")  
 [데이터베이스 배포](#0.2__Toc253429295 "_Toc253429295")  
 [웹 응용 프로그램에 대 한 One-click 게시](#0.2__Toc253429296 "_Toc253429296")  
-[리소스](#0.2__Toc253429297 "_Toc253429297")
+[Resources](#0.2__Toc253429297 "_Toc253429297")
 
-**[고 지 사항](#0.2__Toc253429298 "_Toc253429298")**
+**[Disclaimer](#0.2__Toc253429298 "_Toc253429298")**
 
 <a id="0.2__Toc224729018"></a><a id="0.2__Toc253429238"></a><a id="0.2__Toc243304612"></a>
 
@@ -199,13 +199,13 @@ ASP.NET 4 응용 프로그램 Url의 크기를 확장 하는 것에 대 한 새 
 
 [!code-xml[Main](overview/samples/sample10.xml)]
 
-더 길거나 더 짧은 경로 (프로토콜, 서버 이름 및 쿼리 문자열을 포함 하지 않는 URL의 일부)를 허용 하려면 수정 된  *[maxUrlLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxurllength.aspx)*  특성입니다. 길거나 짧은 쿼리 문자열을 허용 하려면 값을 수정 된  *[maxQueryStringLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxquerystringlength.aspx)*  특성입니다.
+더 길거나 더 짧은 경로 (프로토콜, 서버 이름 및 쿼리 문자열을 포함 하지 않는 URL의 일부)를 허용 하려면 수정 된 *[maxUrlLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxurllength.aspx)* 특성입니다. 길거나 짧은 쿼리 문자열을 허용 하려면 값을 수정 된 *[maxQueryStringLength](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.maxquerystringlength.aspx)* 특성입니다.
 
 ASP.NET 4를 사용 하면 URL 문자 검사에서 사용 되는 문자를 구성할 수 있습니다. ASP.NET URL의 경로 부분에서 잘못 된 문자를 찾습니다, 요청을 거부 하 고 HTTP 400 오류를 발생 시킵니다. ASP.NET의 이전 버전에서는 URL 문자 검사 된 고정된 문자 집합으로 제한 합니다. ASP.NET 4에서 new를 사용 하는 유효한 문자 집합이 사용자 지정할 수 *requestPathInvalidChars* 특성에는 *httpRuntime* 다음 예제와 같이 구성 요소:
 
 [!code-xml[Main](overview/samples/sample11.xml)]
 
-기본적으로는 *requestPathInvalidChars* 특성은 8 자 잘못 된 것으로 정의 합니다. (에 할당 된 문자열에 *requestPathInvalidChars* 기본적으로*,*는 보다 작은 (&lt;), 보다 큼 (&gt;), 및 앰퍼샌드 (&amp;) 문자는 때문에 인코딩된는 `Web.config` 파일은 XML 파일입니다.) 필요에 따라 잘못 된 문자 집합을 사용자 지정할 수 있습니다.
+기본적으로는 <em>requestPathInvalidChars</em> 특성은 8 자 잘못 된 것으로 정의 합니다. (에 할당 된 문자열에 <em>requestPathInvalidChars</em> 기본적으로<em>,</em>는 보다 작은 (&lt;), 보다 큼 (&gt;), 및 앰퍼샌드 (&amp;) 문자는 때문에 인코딩된는 `Web.config` 파일은 XML 파일입니다.) 필요에 따라 잘못 된 문자 집합을 사용자 지정할 수 있습니다.
 
 > [!NOTE]
 > 참고의 IETF RFC 2396에 정의 된 대로 잘못 된 URL 문자는 항상 0x00-0x1f, ASCII 범위에 문자를 포함 하는 URL 경로 거부 ASP.NET 4 ([http://www.ietf.org/rfc/rfc2396.txt](http://www.ietf.org/rfc/rfc2396.txt)). IIS 6을 실행 하는 버전의 Windows Server에서 또는 이상 http.sys 프로토콜 장치 드라이버 자동으로 거부 Url이 문자로 합니다.
@@ -326,6 +326,8 @@ Microsoft Ajax CDN을 활용 하기 위해, Ajax 응용 프로그램의 성능�
 
 Microsoft Ajax 콘텐츠 배달 네트워크 Secure Sockets Layer를 사용 하 여 웹 페이지를 처리 해야 하는 경우 SSL (HTTPS)을 지원 합니다.
 
+CDN을 사용할 수 없는 경우에 대체를 구현 합니다. 대체 (fallback)를 테스트 합니다.
+
 Microsoft Ajax CDN에 대 한 자세한 내용은 다음 웹 사이트를 방문 합니다.
 
 [https://www.asp.net/ajaxlibrary/CDN.ashx](../../ajax/cdn/overview.md)
@@ -412,13 +414,13 @@ Web Forms ASP.NET 1.0의 릴리스 이후 ASP.NET의 핵심 기능은 되었습�
 
 이러한 설정의 효과 페이지를 처음으로 로드 하는 경우 브라우저에 다음 출력이 표시 됩니다.
 
-사용 안 함`: [DynamicValue]`
+사용 안 함 `: [DynamicValue]`
 
 사용 가능:`[DynamicValue]`
 
 하지만 포스트백 후 다음과 같은 출력이 표시 됩니다.
 
-사용 안 함`: [DeclaredValue]`
+사용 안 함 `: [DeclaredValue]`
 
 사용 가능:`[DynamicValue]`
 
@@ -629,7 +631,7 @@ ASP.NET이 자동으로 올바른 경로 작동 (즉, 올바른 URL 생성) 입�
 
 [!code-aspx[Main](overview/samples/sample46.aspx)]
 
-경로 매개 변수 지정 하려면 값에 사용할 경우에 @companyname 에서 매개 변수는 *선택* 문.
+경로 매개 변수 지정 하려면 값에 사용할 경우에 @companyname 에서 매개 변수는 <em>선택</em> 문.
 
 <a id="0.2__Toc224729037"></a><a id="0.2__Toc253429261"></a><a id="0.2__Toc243304635"></a>
 
@@ -985,7 +987,7 @@ ASP.NET 2.0 및 이후 버전에는 시스템 관련 숨겨진된 필드 렌더�
 - *FormView*
 - *로그인*
 - *PasswordRecovery*
-- *암호 변경*
+- *ChangePassword*
 - *마법사*
 - *CreateUserWizard*
 
@@ -1357,15 +1359,15 @@ Visual Studio 2010에서는 IIS 원격 관리 서비스를 사용 하 여 원격
 
 <a id="0.2__Toc224729060"></a><a id="0.2__Toc253429297"></a><a id="0.2__Toc243304668"></a>
 
-### <a name="resources"></a>리소스
+### <a name="resources"></a>자료
 
 다음 웹 사이트는 ASP.NET 4 및 Visual Studio 2010에 대 한 추가 정보를 제공 합니다.
 
 - [ASP.NET 4](https://msdn.microsoft.com/library/ee532866%28VS.100%29.aspx) -MSDN 웹 사이트에서 ASP.NET 4에 대 한 공식 설명서입니다.
 - [https://www.asp.net/](https://www.asp.net/) -ASP.NET 팀의 웹 사이트입니다.
 - [https://www.asp.net/dynamicdata/](https://msdn.microsoft.com/library/cc488545.aspx) 및 [ASP.NET 동적 데이터 콘텐츠 맵](https://msdn.microsoft.com/library/cc488545%28VS.100%29.aspx) -ASP.NET 팀 사이트 및 ASP.NET Dynamic Data에 대 한 공식 설명서의 온라인 리소스.
-- [https://www.asp.net/ajax/](../../ajax/index.md) -ASP.NET Ajax 개발에 대 한 기본 웹 리소스입니다.
-- [https://blogs.msdn.com/webdevtools/](https://blogs.msdn.com/webdevtools/) -Visual Studio 2010의 기능에 대 한 정보를 포함 하는 경우 Visual Web Developer 팀 블로그.
+- [https://www.asp.net/ajax/](../../ajax/index.md) ASP.NET Ajax 개발 — 주 웹 리소스입니다.
+- [https://blogs.msdn.com/webdevtools/](https://blogs.msdn.com/webdevtools/) Visual Studio 2010의 기능에 대 한 정보를 포함 하는 — Visual Web Developer 팀 블로그.
 - [ASP.NET WebStack](https://github.com/aspnet/AspNetWebStack) -ASP.NET의 미리 보기 릴리스에 대 한 기본 웹 리소스입니다.
 
 <a id="0.2__Toc224729061"></a><a id="0.2__Toc253429298"></a><a id="0.2__Toc243304669"></a>
@@ -1384,7 +1386,7 @@ Microsoft가 이 설명서 본안에 관련된 특허권, 상표권, 저작권 �
 
 다른 설명이 없는 한 예제 회사, 조직, 제품, 도메인 이름, 전자 메일 주소, 로고, 사람, 장소 및 이벤트 용례은 실제 데이터가 아닙니다과 연결 된 실제 회사, 조직, 제품, 도메인 이름, 전자 메일 주소, 로고, 사람, 장소 또는 이벤트 해서도 그렇게 유추 해서도 안 됩니다.
 
-© 2009 Microsoft Corporation입니다. All rights reserved.
+© 2009 Microsoft Corporation. All rights reserved.
 
 Microsoft 및 Windows는 미국 및/또는 기타 국가에서 Microsoft Corporation의 상표이거나 등록된 상표입니다.
 

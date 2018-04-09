@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populating-a-control-cs
-title: "동적으로 제어 (C#)를 채울 | Microsoft Docs"
+title: 동적으로 제어 (C#)를 채울 | Microsoft Docs
 author: wenz
-description: "ASP.NET AJAX 컨트롤 도구 키트에서 DynamicPopulate 제어 웹 서비스 (또는 페이지 메서드)를 호출 및 t 대상 컨트롤에 결과 값을 채우는 중..."
+description: ASP.NET AJAX 컨트롤 도구 키트에서 DynamicPopulate 제어 웹 서비스 (또는 페이지 메서드)를 호출 및 t 대상 컨트롤에 결과 값을 채우는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populating-a-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a1868a0e4cec4a95d4175ce255fea2e200692075
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 113b8c043c14e4ebc476b021884dd1430757452a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="dynamically-populating-a-control-c"></a>동적으로 채울 제어 (C#)
 ====================
@@ -55,12 +55,12 @@ HTML 컨트롤을 서버에 다시 게시 하지 않아도 म 때문) (같은 H
 
 끝으로 `DynamicPopulateExtender` 높이려면 통신을 제어 합니다. 다음과 같은 특성을 설정 합니다 (명백한 것 외에도 `ID` 및 `runat` = `"server"`):
 
-- `TargetControlID`웹 서비스 호출 로부터 결과 삽입 하는 위치
-- `ServicePath`웹 서비스에 대 한 경로 (페이지 메서드를 사용 하려는 경우 생략)
-- `ServiceMethod`웹 메서드 또는 페이지 메서드 이름
-- `ContextKey`컨텍스트 정보를 웹 서비스에 보내도록
-- `PopulateTriggerControlID`웹 서비스 호출을 트리거하는 요소
-- `ClearContentsDuringUpdate`웹 서비스 호출 하는 동안 대상 요소 비워지도록 여부
+- `TargetControlID` 웹 서비스 호출 로부터 결과 삽입 하는 위치
+- `ServicePath` 웹 서비스에 대 한 경로 (페이지 메서드를 사용 하려는 경우 생략)
+- `ServiceMethod` 웹 메서드 또는 페이지 메서드 이름
+- `ContextKey` 컨텍스트 정보를 웹 서비스에 보내도록
+- `PopulateTriggerControlID` 웹 서비스 호출을 트리거하는 요소
+- `ClearContentsDuringUpdate` 웹 서비스 호출 하는 동안 대상 요소 비워지도록 여부
 
 볼 수 있듯이 컨트롤 몇 가지 정보가 필요 하지만 매우 간단한 것은 모든 것을 제자리에 배치 합니다. 여기에 대 한 태그는는 `DynamicPopulateExtender` 현재 시나리오에는 제어:
 
@@ -73,5 +73,5 @@ HTML 컨트롤을 서버에 다시 게시 하지 않아도 म 때문) (같은 H
 
 서버에서 날짜를 검색 하는 단추 클릭 ([전체 크기 이미지를 보려면 클릭](dynamically-populating-a-control-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[다음](dynamically-populating-a-control-using-javascript-code-cs.md)
+> [!div class="step-by-step"]
+> [다음](dynamically-populating-a-control-using-javascript-code-cs.md)

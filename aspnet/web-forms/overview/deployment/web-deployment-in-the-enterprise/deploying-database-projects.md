@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/deploying-database-projects
-title: "데이터베이스 프로젝트 배포 | Microsoft Docs"
+title: 데이터베이스 프로젝트 배포 | Microsoft Docs
 author: jrjlee
-description: "참고: 많은 엔터프라이즈 배포 시나리오, 해야 배포 된 데이터베이스를 증분 업데이트를 게시할 수 있습니다. 대신을 다시 사용 하는 중..."
+description: '참고: 많은 엔터프라이즈 배포 시나리오, 해야 배포 된 데이터베이스를 증분 업데이트를 게시할 수 있습니다. 대신을 다시 사용 하는 중...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/deploying-database-projects
 msc.type: authoredcontent
-ms.openlocfilehash: 9b1f9a19c76e33b5d996cb4d562cf0c1a3e2f83b
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: a0b3871ea098b549271bce2b9d5f0c24f9ca8a9c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-database-projects"></a>데이터베이스 프로젝트 배포
 ====================
@@ -92,8 +92,8 @@ VSDBCMD 유틸리티를 사용 하면 데이터베이스 스키마 (.dbschema �
 
 - **/a** (또는 **/Action**) 스위치 작업을 수행 하는 VSDBCMD 사용할 항목을 지정 합니다. 이 설정할 수 있습니다 **가져오기** 또는 **배포**합니다. **가져오기** 옵션을 사용 하는 기존 데이터베이스에서.dbschema 파일을 생성 하 고 **배포** 옵션이.dbschema 파일 대상 데이터베이스에 배포 하는 데 사용 됩니다.
 - **/manifest** (또는 **/ManifestFile**) 스위치를 배포 하려는.deploymanifest 파일을 식별 합니다. .Dbschema 파일을 대신 사용 하려는 경우에 사용 된 **/모델** (또는 **/ModelFile**) 전환 합니다.
-- **/cs** (또는 **/ConnectionString**) 스위치는 대상 데이터베이스 서버에 대 한 연결 문자열을 제공 합니다. Note 여기 데이터베이스 & #x 2014;의 이름을 포함 되지 않습니다 VSDBCMD; 데이터베이스를 만들려면 서버에 연결 해야 합니다. 개별 데이터베이스에 연결 하는 데 필요 하지 않습니다. .Deploymanifest 파일에는 연결 문자열을 포함 하는 경우이 스위치를 생략할 수 있습니다. 그래도 스위치를 사용 하면 스위치 값.deploymanifest 값을 재정의 합니다.
-- **/p:TargetDatabase** 속성 작성할 대상 데이터베이스에 할당 하려는 이름을 제공 합니다. 값이 재정의 **TargetDatabase** .deploymanifest 파일의 속성입니다. 사용할 수는 **/p:** *[속성 이름]*.sqlcmdvars 파일에 선언 된 다양 한 배포 속성을 설정 하 고 모든 SQLCMD 변수를 재정의 하는 구문입니다.
+- **/cs** (또는 **/ConnectionString**) 스위치는 대상 데이터베이스 서버에 대 한 연결 문자열을 제공 합니다. 에 데이터베이스의 이름을 포함 하지 않는이&#x2014;VSDBCMD; 데이터베이스를 만들려면 서버에 연결 해야 합니다. 개별 데이터베이스에 연결 하는 데 필요 하지 않습니다. .Deploymanifest 파일에는 연결 문자열을 포함 하는 경우이 스위치를 생략할 수 있습니다. 그래도 스위치를 사용 하면 스위치 값.deploymanifest 값을 재정의 합니다.
+- <strong>/p:TargetDatabase</strong> 속성 작성할 대상 데이터베이스에 할당 하려는 이름을 제공 합니다. 값이 재정의 <strong>TargetDatabase</strong> .deploymanifest 파일의 속성입니다. 사용할 수는 <strong>/p:</strong> <em>[속성 이름]</em>.sqlcmdvars 파일에 선언 된 다양 한 배포 속성을 설정 하 고 모든 SQLCMD 변수를 재정의 하는 구문입니다.
 - **/dd+** (또는 **/DeployToDatabase+**) 스위치는 배포를 만들고 대상 환경에 배포 하려는 나타냅니다. 지정 하는 경우 **/dd-**, 또는 스위치를 생략 VSDBCMD 배포 스크립트를 생성 하는 있지만 대상 환경에 배포 되지 것입니다. 이 스위치는 혼동 소스 수 있으며 다음 섹션에서 더 자세하게 설명 됩니다.
 - **/script** (또는 **/DeploymentScriptFile**) 스위치는 배포 스크립트를 생성 하려면 지정 합니다. 이 값은 배포 프로세스에 영향을 주지 않습니다.
 
@@ -150,6 +150,6 @@ MSDN에서 이러한 항목 보다 광범위 한 지침 및 배경 정보는 Vis
 - [방법: VSDBCMD를 사용 하 여 명령 프롬프트에서 배포에 대 한 데이터베이스를 준비 합니다. EXE](https://msdn.microsoft.com/library/dd193258.aspx)
 - [데이터베이스 빌드 및 배포의 개요](https://msdn.microsoft.com/library/aa833165.aspx)
 
->[!div class="step-by-step"]
-[이전](deploying-web-packages.md)
-[다음](creating-and-running-a-deployment-command-file.md)
+> [!div class="step-by-step"]
+> [이전](deploying-web-packages.md)
+> [다음](creating-and-running-a-deployment-command-file.md)

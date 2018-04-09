@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/releases/running-v1-and-v2-sites-side-by-side
-title: "다른 버전의 ASP.NET 웹 페이지 (Razor) 나란히 실행 | Microsoft Docs"
+title: 다른 버전의 ASP.NET 웹 페이지 (Razor) 나란히 실행 | Microsoft Docs
 author: tfitzmac
-description: "이 문서에서는 웹 사이트는 서로 다른 버전을 사용 하도록 구성 된 경우 동일한 컴퓨터 또는 서버에서 ASP.NET 웹 페이지 (Razor) 웹 사이트를 실행 하는 방법에 설명..."
+description: 이 문서에서는 웹 사이트는 서로 다른 버전을 사용 하도록 구성 된 경우 동일한 컴퓨터 또는 서버에서 ASP.NET 웹 페이지 (Razor) 웹 사이트를 실행 하는 방법에 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/releases/running-v1-and-v2-sites-side-by-side
 msc.type: authoredcontent
-ms.openlocfilehash: c11399b0bde59d18fa378ed48c15844454c1f956
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1729f3201013926b221afc92d23416b0081d8efb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="running-different-versions-of-aspnet-web-pages-razor-side-by-side"></a>ASP.NET 웹 페이지 (Razor)의 서로 다른 버전을 Side-by-side 실행
 ====================
@@ -52,11 +52,11 @@ WebMatrix로 웹 페이지를 설치할 때 기억해 야 할 일부의 원인 �
 - 다른 버전의 ASP.NET 웹 페이지를 사용 하 여 사이트를 실행 하려는 경우에 작업을 수행 하는 사이트를 구성할 수 있습니다. 사이트에 지문이 아직 없으면는 *web.config* 사이트의 루트에서 파일을 새로 만들고 메서드를 다음과 같은 XML을 복사 기존 내용을 덮어씁니다. 사이트에 이미 포함 되어 있는 경우는 *web.config* 파일에서 추가 `<appSettings>` 에 다음과 같은 요소는 `<configuration>` 섹션.
 
     [!code-xml[Main](running-v1-and-v2-sites-side-by-side/samples/sample1.xml)]
-'-의 버전을 지정 하지 않는 경우는 *web.config* 파일, 한 사이트에서 최신 버전으로 배포 됩니다. (의 어셈블리에 복사 되는 *bin* 배포 된 사이트의 폴더입니다.)
+  '-의 버전을 지정 하지 않는 경우는 *web.config* 파일, 한 사이트에서 최신 버전으로 배포 됩니다. (의 어셈블리에 복사 되는 *bin* 배포 된 사이트의 폴더입니다.)
 - 사이트의 웹 페이지 버전 어셈블리를 포함 하는 웹 매트릭스에서 사이트 템플릿을 사용 하 여 만든 새 응용 프로그램 *bin* 폴더입니다.
 
 버전은 사이트에 적절 한 어셈블리를 설치 하려면 NuGet을 사용 하 여 사이트와 함께 사용할 웹 페이지에 항상 제어할 수는 일반적으로 *bin* 폴더입니다. 패키지를 찾으려고 방문 [NuGet.org](http://NuGet.org)합니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 [ASP.NET 웹 페이지 2에서에서 최상위 기능](top-features-in-web-pages-2.md)

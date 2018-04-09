@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2
-title: "ASP.NET MVC-2 부에서 HTML5 및 jQuery UI Datepicker 팝업 일정 사용 | Microsoft Docs"
+title: ASP.NET MVC-2 부에서 HTML5 및 jQuery UI Datepicker 팝업 일정 사용 | Microsoft Docs
 author: Rick-Anderson
-description: "이 자습서는 기본적인 편집기 템플릿과 표시 템플릿은 ASP.NET MV에서 jQuery UI datepicker 팝업 일정 사용 방법 알려 드리겠습니다 중..."
+description: 이 자습서는 기본적인 편집기 템플릿과 표시 템플릿은 ASP.NET MV에서 jQuery UI datepicker 팝업 일정 사용 방법 알려 드리겠습니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/29/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: 69fbaa7761c97895ffee770f6feb9ce6b745d186
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 84112316a9ace732cb7d75d7cbaeb071c72de822
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-2"></a>ASP.NET MVC-2 부에서 HTML5 및 jQuery UI Datepicker 팝업 일정 사용
 ====================
@@ -133,7 +133,7 @@ Ctrl+F5를 눌러 응용 프로그램을 실행합니다.
 
 으로 돌아와서는 `UIHint` 특성에 *Movie.cs* 파일을 주석으로 처리 하므로 *LoudDateTime.cshtml* 서식 파일 사용 되지 않습니다. 응용 프로그램을 다시 실행합니다. 릴리스 날짜 광범위 하 고 녹색 표시 되지 않습니다. 이 확인은 *Views\Shared\DisplayTemplates\DateTime.cshtml* 템플릿은 인덱스 및 세부 정보 보기에 사용 됩니다.
 
-앞서 언급 했 듯이 개별 인스턴스의 일부 데이터에 템플릿을 적용할 수 있는 보기에서 서식 파일을 적용할 수도 있습니다. 열기는 *Views\Movies\Details.cshtml* 보기. 추가 `"LoudDateTime"` 의 두 번째 매개 변수로 [Html.DisplayFor](https://msdn.microsoft.com/library/ee407420.aspx) 에 대 한 호출에서 `ReleaseDate` 필드입니다. 완성 된 코드는 다음과 같습니다.
+앞서 언급 했 듯이 개별 인스턴스의 일부 데이터에 템플릿을 적용할 수 있는 보기에서 서식 파일을 적용할 수도 있습니다. 열기는 *Views\Movies\Details.cshtml* 보기. 추가 `"LoudDateTime"` 의 두 번째 매개 변수로 [Html.DisplayFor](https://msdn.microsoft.com/library/ee407420.aspx) 에 대 한 호출에서 `ReleaseDate` 필드입니다. 완성된 코드는 다음과 같습니다.
 
 [!code-cshtml[Main](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2/samples/sample9.cshtml)]
 
@@ -147,6 +147,6 @@ Ctrl+F5를 눌러 응용 프로그램을 실행합니다.
 
 다음 섹션에서는 복합 유형에 대 한 서식 파일을 만듭니다.
 
->[!div class="step-by-step"]
-[이전](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1.md)
-[다음](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3.md)
+> [!div class="step-by-step"]
+> [이전](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1.md)
+> [다음](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3.md)

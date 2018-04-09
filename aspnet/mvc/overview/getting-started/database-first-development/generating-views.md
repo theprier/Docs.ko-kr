@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/generating-views
-title: "ASP.NET MVC를 사용 하 여 먼저 EF 데이터베이스: 뷰를 생성 | Microsoft Docs"
+title: 'ASP.NET MVC를 사용 하 여 먼저 EF 데이터베이스: 뷰를 생성 | Microsoft Docs'
 author: tfitzmac
-description: "MVC, Entity Framework 및 ASP.NET 스 캐 폴딩을 사용 하 여 기존 데이터베이스에 대 한 인터페이스를 제공 하는 웹 응용 프로그램을 만들 수 있습니다. 이 자습서 seri 중..."
+description: MVC, Entity Framework 및 ASP.NET 스 캐 폴딩을 사용 하 여 기존 데이터베이스에 대 한 인터페이스를 제공 하는 웹 응용 프로그램을 만들 수 있습니다. 이 자습서 seri 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/29/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/generating-views
 msc.type: authoredcontent
-ms.openlocfilehash: 5fccb3c56af0945ec448becff777a3e92dc160d7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b60e89a187a879255eb051dc87241714cef6fa63
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="ef-database-first-with-aspnet-mvc-generating-views"></a>ASP.NET MVC를 사용 하 여 먼저 EF 데이터베이스: 뷰 생성
 ====================
@@ -109,6 +109,6 @@ ActionLink 메서드 첫 번째 매개 변수는 링크에 표시할 텍스트�
 
 데이터베이스의 데이터로 작업 하는 사용자가 자동으로 생성 된 뷰를 사용 하면 있는지 확인 합니다. 이 시리즈의 다음 자습서에서는 데이터베이스를 업데이트 하 고 웹 응용 프로그램에서 해당 변경 됩니다.
 
->[!div class="step-by-step"]
-[이전](creating-the-web-application.md)
-[다음](changing-the-database.md)
+> [!div class="step-by-step"]
+> [이전](creating-the-web-application.md)
+> [다음](changing-the-database.md)

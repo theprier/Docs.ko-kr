@@ -1,7 +1,7 @@
 ---
-title: "컨텍스트 헤더"
+title: ASP.NET Core에서 컨텍스트 헤더
 author: rick-anderson
-description: "이 문서에는 ASP.NET Core 데이터 보호 컨텍스트 헤더의 구현 세부 사항을 설명합니다."
+description: ASP.NET Core 데이터 보호 컨텍스트 헤더의 구현 세부 정보에 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/implementation/context-headers
-ms.openlocfilehash: c047c54efdcdb6192e4d38d2822c1077ee0a73e1
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 5ba247a74e11408145e1f6e87c7cfa251c66707f
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="context-headers"></a>컨텍스트 헤더
+# <a name="context-headers-in-aspnet-core"></a>ASP.NET Core에서 컨텍스트 헤더
 
 <a name="data-protection-implementation-context-headers"></a>
 
@@ -27,7 +27,7 @@ ms.lasthandoff: 01/30/2018
 
 다시 실행, 잘못 된 방향에서 문제를 접근 된 म 결정 했습니다. OID 알려 알고리즘이 무엇 인지 하지만이에 실제로 우리는 크게 관심이 있습니다. 두 개의 서로 다른 알고리즘에는 단일 entropic 값을 안전 하 게 사용 해야 하는 경우 알고리즘은 실제로 알고 있어야 하기 위해 필요는 없습니다. 어떤 실제로 관심을 어떻게 동작 하는지입니다. 모든 대칭 괜찮은 블록 암호화 알고리즘은 강력한 의사 난수 순열 (PRP)도: 입력 (체인 모드, IV, 일반 텍스트 키)를 수정 하 고 암호 텍스트 출력은 확률 과도 하 게 많아지지와 다에서를 수 다른 대칭 블록 암호 알고리즘은 동일한 입력입니다. 마찬가지로, 모든 괜찮은 키 지정된 해시 함수는 강력한 의사 난수 함수 (PRF) 되며 고정된 된 입력된 집합에 지정 된 출력 가져다 구분 됩니다 다른 키 지정된 해시 함수.
 
-컨텍스트 헤더를 구축할의 강력한 PRPs 및 PRFs이이 개념을 사용 합니다. 이 컨텍스트 헤더 기본적으로 역할 안정적인 지문 주어진된 작업에 사용 중인 알고리즘을 통해 하며 데이터 보호 시스템에 필요한 암호화 유연성을 제공 합니다. 이 헤더를 재현할 수 이며의 일환으로 나중에 사용 되는 [파생 프로세스를 하위 키](subkeyderivation.md#data-protection-implementation-subkey-derivation)합니다. 기본 알고리즘의 작업 모드에 따라 컨텍스트 헤더를 작성 하는 두 가지 방법으로 있습니다.
+컨텍스트 헤더를 구축할의 강력한 PRPs 및 PRFs이이 개념을 사용 합니다. 이 컨텍스트 헤더 기본적으로 역할 안정적인 지문 주어진된 작업에 사용 중인 알고리즘을 통해 하며 데이터 보호 시스템에 필요한 암호화 유연성을 제공 합니다. 이 헤더를 재현할 수 이며의 일환으로 나중에 사용 되는 [파생 프로세스를 하위 키](xref:security/data-protection/implementation/subkeyderivation#data-protection-implementation-subkey-derivation)합니다. 기본 알고리즘의 작업 모드에 따라 컨텍스트 헤더를 작성 하는 두 가지 방법으로 있습니다.
 
 ## <a name="cbc-mode-encryption--hmac-authentication"></a>CBC 모드 암호화 + HMAC 인증
 

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-a-tfs-build-server-for-web-deployment
-title: "웹 배포에 대 한 빌드 서버 TFS 구성 | Microsoft Docs"
+title: 웹 배포에 대 한 빌드 서버 TFS 구성 | Microsoft Docs
 author: jrjlee
-description: "이 항목에서는 빌드하고 팀 빌드 및 인터넷 Informat를 사용 하 여 솔루션을 배포 하는 Team Foundation Server (TFS) 빌드 서버를 준비 하는 방법에 설명..."
+description: 이 항목에서는 빌드하고 팀 빌드 및 인터넷 Informat를 사용 하 여 솔루션을 배포 하는 Team Foundation Server (TFS) 빌드 서버를 준비 하는 방법에 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-a-tfs-build-server-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: de31a9dffb95b863a4ec38b74fd2c6e03f287a7f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7b3130ca7d36ffec457e1871fa62c1077b5e3174
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-a-tfs-build-server-for-web-deployment"></a>웹 배포를 위한 TFS 빌드 서버 구성
 ====================
@@ -27,9 +27,9 @@ ms.lasthandoff: 01/24/2018
 > 이 항목에서는 빌드하고 팀 빌드 및 인터넷 정보 서비스 (IIS) 웹 배포 도구 (웹 배포)를 사용 하 여 솔루션을 배포 하는 Team Foundation Server (TFS) 빌드 서버를 준비 하는 방법을 설명 합니다.
 
 
-이 항목의 Fabrikam, inc. 라는 가상 회사의 엔터프라이즈 배포 요구 사항을 바탕으로 하는 자습서 시리즈의 일부를 형성 합니다. 이 자습서 시리즈 샘플 솔루션 & #x 2014;을 사용 하는 [Contact Manager 솔루션](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; 현실적인 수준의 복잡성을 Windows ASP.NET MVC 3 응용 프로그램을 포함 하 여 웹 응용 프로그램을 나타내기 위해 Communication Foundation (WCF) 서비스 및 데이터베이스 프로젝트를 제공 합니다.
+이 항목의 Fabrikam, inc. 라는 가상 회사의 엔터프라이즈 배포 요구 사항을 바탕으로 하는 자습서 시리즈의 일부를 형성 합니다. 샘플 솔루션을 사용 하는 자습서 시리즈가&#x2014;는 [Contact Manager 솔루션](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;현실적인 수준의 복잡성, Windows Communication ASP.NET MVC 3 응용 프로그램을 포함 하 여 웹 응용 프로그램을 나타내기 위해 WCF (foundation) 서비스 및 데이터베이스 프로젝트.
 
-이 자습서의 핵심에는 배포 방법에 설명 된 분할 프로젝트 파일 접근 방식에 따라 [프로젝트 파일 이해](../web-deployment-in-the-enterprise/understanding-the-project-file.md), 빌드 프로세스에 의해 제어 되는 두 프로젝트에 파일 & #x 2014; 포함 환경 관련 빌드 및 배포 설정을 포함 하는 하나 및 모든 대상 환경에 적용 되는 지침을 빌드하십시오. 빌드 시 환경 관련 프로젝트 파일은 빌드 지침의 전체 집합을 구성 하기 위해 환경을 알 수 없는 프로젝트 파일에 병합 됩니다.
+이 자습서의 핵심에는 배포 방법에 설명 된 분할 프로젝트 파일 접근 방식에 따라 [프로젝트 파일 이해](../web-deployment-in-the-enterprise/understanding-the-project-file.md), 두 개의 프로젝트 파일에 빌드 프로세스에 의해 제어 되는&#x2014;포함 환경 관련 빌드 및 배포 설정을 포함 하는 하나 및 모든 대상 환경에 적용 되는 지침을 빌드하십시오. 빌드 시 환경 관련 프로젝트 파일은 빌드 지침의 전체 집합을 구성 하기 위해 환경을 알 수 없는 프로젝트 파일에 병합 됩니다.
 
 ## <a name="task-overview"></a>작업 개요
 
@@ -100,7 +100,7 @@ ms.lasthandoff: 01/24/2018
 7. 에 **ASP.NET MVC 3 (Visual Studio 2010)** 행에서 클릭 **추가**합니다.
 8. 탐색 창에서 클릭 **서버**합니다.
 9. 에 **웹 배포 도구 2.1** 행에서 클릭 **추가**합니다.
-10. **설치**를 클릭합니다. 웹 플랫폼 설치 관리자를 설치할 모든 관련 된 종속성 & #x 2014; 함께; 제품 & #x 2014의 목록이 표시 됩니다 및 사용 조건에 동의 하 라는 메시지가 나타납니다.
+10. **설치**를 클릭합니다. 웹 플랫폼 설치 관리자는 제품의 목록을 표시&#x2014;하 나와 함께 연결 된 종속성&#x2014;를 설치 및 사용 조건에 동의 하 라는 메시지가 나타납니다.
 11. 라이선스 조건을 검토 하 고 사용자가 약관에 동의 하는 경우 클릭 **동의**합니다.
 12. 설치가 완료 되 면 클릭 **마침**, 한 다음 닫습니다는 **웹 플랫폼 설치 관리자 3.0** 창.
 
@@ -116,6 +116,6 @@ ms.lasthandoff: 01/24/2018
 
 팀 빌드를 사용한 작업에는 보다 일반적인 지침을 참조 하십시오. [Team Foundation Build 관리](https://msdn.microsoft.com/library/ms252495.aspx)합니다.
 
->[!div class="step-by-step"]
-[이전](adding-content-to-source-control.md)
-[다음](creating-a-build-definition-that-supports-deployment.md)
+> [!div class="step-by-step"]
+> [이전](adding-content-to-source-control.md)
+> [다음](creating-a-build-definition-that-supports-deployment.md)

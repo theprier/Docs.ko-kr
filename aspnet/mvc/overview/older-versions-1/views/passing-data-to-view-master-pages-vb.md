@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/views/passing-data-to-view-master-pages-vb
-title: "데이터 뷰 마스터 페이지 (VB)를 전달 | Microsoft Docs"
+title: 데이터 뷰 마스터 페이지 (VB)를 전달 | Microsoft Docs
 author: microsoft
-description: "이 자습서의 목표 뷰 마스터 페이지에는 컨트롤러에서 데이터를 전달 하는 방법을 설명 하는 것입니다. 살펴볼 데이터 보기 m에 전달 하기 위한 두 가지 전략 중..."
+description: 이 자습서의 목표 뷰 마스터 페이지에는 컨트롤러에서 데이터를 전달 하는 방법을 설명 하는 것입니다. 살펴볼 데이터 보기 m에 전달 하기 위한 두 가지 전략 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/16/2008
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/views/passing-data-to-view-master-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d92a1afe46af124e835b3d59f2b2093402742bbd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fcd7c5baacc00490720d1f82252d81e40c097c88
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="passing-data-to-view-master-pages-vb"></a>마스터 페이지 보기 (VB)에 대 한 데이터 전달
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [PDF 다운로드](http://download.microsoft.com/download/e/f/3/ef3f2ff6-7424-48f7-bdaa-180ef64c3490/ASPNET_MVC_Tutorial_13_VB.pdf)
 
@@ -53,7 +53,7 @@ MVC 응용 프로그램에서 컨트롤러 작업에 의해 뷰 마스터 페이
 
 목록 1의 컨트롤러를 고려해 야 합니다. 라는 두 가지 동작을 노출 `Index()` 및 `Details()`합니다. `Index()` 작업 메서드가 영화 데이터베이스 테이블의 모든 동영상을 반환 합니다. `Details()` 작업 메서드가 특정 영화 범주에 있는 모든 동영상을 반환 합니다.
 
-**1 – 나열`Controllers\HomeController.vb`**
+**1 – 나열 `Controllers\HomeController.vb`**
 
 [!code-vb[Main](passing-data-to-view-master-pages-vb/samples/sample1.vb)]
 
@@ -69,13 +69,13 @@ MVC 응용 프로그램에서 컨트롤러 작업에 의해 뷰 마스터 페이
 
 인덱스 뷰 목록 2에 포함 됩니다. 단순히 데이터 보기에서에서 영화 항목으로 표시 하는 동영상 목록을 반복 합니다.
 
-**2 – 나열`Views\Home\Index.aspx`**
+**2 – 나열 `Views\Home\Index.aspx`**
 
 [!code-aspx[Main](passing-data-to-view-master-pages-vb/samples/sample2.aspx)]
 
 마스터 페이지 보기는 보기 3에 포함 됩니다. 마스터 페이지 보기 반복 하 고 모든 데이터 보기에서에서 범주 항목이 나타내는 영화 범주를 렌더링 합니다.
 
-**3 – 나열`Views\Shared\Site.master`**
+**3 – 나열 `Views\Shared\Site.master`**
 
 [!code-aspx[Main](passing-data-to-view-master-pages-vb/samples/sample3.aspx)]
 
@@ -91,7 +91,7 @@ ApplicationController 클래스 목록 4에 포함 됩니다.
 
 ApplicationController 클래스 목록 4에 포함 됩니다.
 
-**4 – 나열`Controllers\ApplicationController.vb`**
+**4 – 나열 `Controllers\ApplicationController.vb`**
 
 [!code-vb[Main](passing-data-to-view-master-pages-vb/samples/sample4.vb)]
 
@@ -103,7 +103,7 @@ ApplicationController 클래스 목록 4에 포함 됩니다.
 
 영화 컨트롤러 목록 5에는 응용 프로그램 컨트롤러에서 상속합니다.
 
-**5-나열`Controllers\MoviesController.vb`**
+**5-나열 `Controllers\MoviesController.vb`**
 
 [!code-vb[Main](passing-data-to-view-master-pages-vb/samples/sample5.vb)]
 
@@ -117,5 +117,5 @@ ApplicationController 클래스 목록 4에 포함 됩니다.
 
 다음으로 데이터를 보려면 보기 마스터 페이지에서 필요한 데이터를 추가 하는 데 훨씬 더 좋은 전략을 검사 했습니다. 각 컨트롤러 작업에서 데이터 보기를 추가 하는 대신 응용 프로그램 컨트롤러 내에서 한 번만 뷰 데이터를 추가 했습니다. 이런 방식으로 ASP.NET MVC 응용 프로그램의 뷰 마스터 페이지에 데이터를 전달 하는 경우 코드 중복을 방지할 수 있습니다.
 
->[!div class="step-by-step"]
-[이전](creating-page-layouts-with-view-master-pages-vb.md)
+> [!div class="step-by-step"]
+> [이전](creating-page-layouts-with-view-master-pages-vb.md)

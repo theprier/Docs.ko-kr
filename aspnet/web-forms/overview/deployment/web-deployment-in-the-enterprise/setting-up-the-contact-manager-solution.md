@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/setting-up-the-contact-manager-solution
-title: "Contact Manager 솔루션 설정 | Microsoft Docs"
+title: Contact Manager 솔루션 설정 | Microsoft Docs
 author: jrjlee
-description: "이 항목에는 다운로드 하 고 개발자 워크스테이션에서 로컬로 실행 하도록 않아 솔루션을 구성 하는 방법을 설명 합니다."
+description: 이 항목에는 다운로드 하 고 개발자 워크스테이션에서 로컬로 실행 하도록 않아 솔루션을 구성 하는 방법을 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/setting-up-the-contact-manager-solution
 msc.type: authoredcontent
-ms.openlocfilehash: b8176b3b8622e21187a91647323322e55582373c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: e8fb24f5b2d96d864d1aa6bc0f78644773de00ab
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="setting-up-the-contact-manager-solution"></a>Contact Manager 솔루션 설정
 ====================
@@ -125,6 +125,6 @@ MSDN 코드 갤러리에서 않아 예제 응용 프로그램을 다운로드할
 
 다음 항목인 [프로젝트 파일 이해](understanding-the-project-file.md), Contact Manager 솔루션 내에서 사용자 지정 Microsoft Build Engine (MSBuild) 프로젝트 파일을 사용 하 여 배포 프로세스를 제어 하는 방법을 설명 합니다.
 
->[!div class="step-by-step"]
-[이전](the-contact-manager-solution.md)
-[다음](understanding-the-project-file.md)
+> [!div class="step-by-step"]
+> [이전](the-contact-manager-solution.md)
+> [다음](understanding-the-project-file.md)

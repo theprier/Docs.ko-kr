@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application
-title: "Code First 마이그레이션 및 ASP.NET MVC 응용 프로그램에서 Entity Framework와 함께 배포 | Microsoft Docs"
+title: Code First 마이그레이션 및 ASP.NET MVC 응용 프로그램에서 Entity Framework와 함께 배포 | Microsoft Docs
 author: tdykstra
-description: "Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다 중..."
+description: Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/07/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 2294f2aba3f765d7849d1f407e85f424dc8b2518
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 04d393edca0469df140f06a7d083a48aa8f84b65
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="code-first-migrations-and-deployment-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Code First 마이그레이션 및 ASP.NET MVC 응용 프로그램에서 Entity Framework와 함께 배포
 ====================
@@ -24,7 +24,7 @@ ms.lasthandoff: 11/10/2017
 
 [완료 된 프로젝트를 다운로드](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8) 또는 [PDF 다운로드](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
 
-> Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio 2013을 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대 한 정보를 참조 하십시오. [시리즈의 첫 번째 자습서](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)합니다.
+> Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio 2013을 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)를 참조하세요.
 
 지금까지 응용 프로그램에 되었습니다에서 로컬로 실행 중 IIS Express에서 개발 컴퓨터. 실제 응용 프로그램을 인터넷을 통해 사용 하 여 다른 사람들이 사용할 수 있도록 하려면 웹 호스팅 공급자를 배포 해야 합니다. 이 자습서에서는 Azure에서 클라우드로 Contoso 대학교 응용 프로그램을 배포 합니다.
 
@@ -37,9 +37,9 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="enable-code-first-migrations"></a>Code First 마이그레이션을 사용 하도록 설정
 
-새 응용 프로그램을 개발 하는 경우 데이터 모델에 자주 및 변경 될 때마다 모델 변경, 데이터베이스와 동기화를 가져옵니다. 자동으로 삭제 하 고 데이터 모델을 변경할 때마다 데이터베이스를 다시 만드는 Entity Framework를 구성 했습니다. 추가, 제거 또는 엔터티 클래스를 변경 하거나 변경할 경우 프로그램 `DbContext` 클래스 다음에 응용 프로그램을 실행 하 고 자동으로 기존 데이터베이스를 삭제, 모델을 일치 시키고 테스트 데이터로 초기값을 설정 하는 새 브러시를 만듭니다.
+새 응용 프로그램을 개발하는 경우 데이터 모델은 자주 변경되며 모델이 변경될 때마다 데이터베이스와 동기화를 가져옵니다. 자동으로 삭제 하 고 데이터 모델을 변경할 때마다 데이터베이스를 다시 만드는 Entity Framework를 구성 했습니다. 추가, 제거 또는 엔터티 클래스를 변경 하거나 변경할 경우 프로그램 `DbContext` 클래스 다음에 응용 프로그램을 실행 하 고 자동으로 기존 데이터베이스를 삭제, 모델을 일치 시키고 테스트 데이터로 초기값을 설정 하는 새 브러시를 만듭니다.
 
-이 방법은 데이터베이스를 데이터 모델을 통해 동기화 유지 프로덕션 환경에 응용 프로그램을 배포할 때까지 잘 작동 합니다. 응용 프로그램이 프로덕션 환경에서 실행 중인 경우 것에서 일반적으로 데이터를 저장, 보관 하 고 새 열을 추가 하는 등 변경할 때마다 모든 내용을 손실 하지 않으려면입니다. [Code First 마이그레이션을](https://msdn.microsoft.com/data/jj591621) 삭제 하 고 데이터베이스를 다시 작성 하는 대신 데이터베이스 스키마를 업데이트 하려면 Code First를 사용 하 여이 문제를 해결 하는 기능입니다. 이 자습서에서는 응용 프로그램을 배포 합니다 및 해당 준비 마이그레이션을 설정 합니다.
+데이터베이스를 데이터 모델과 동기화된 상태로 유지하는 이 메서드는 응용 프로그램을 프로덕션 환경에 배포할 때까지 잘 작동합니다. 응용 프로그램이 프로덕션 환경에서 실행 중인 경우 것에서 일반적으로 데이터를 저장, 보관 하 고 새 열을 추가 하는 등 변경할 때마다 모든 내용을 손실 하지 않으려면입니다. [Code First 마이그레이션을](https://msdn.microsoft.com/data/jj591621) 삭제 하 고 데이터베이스를 다시 작성 하는 대신 데이터베이스 스키마를 업데이트 하려면 Code First를 사용 하 여이 문제를 해결 하는 기능입니다. 이 자습서에서는 응용 프로그램을 배포 합니다 및 해당 준비 마이그레이션을 설정 합니다.
 
 1. 이전 주석으로 처리 하거나 삭제 하 여 설정한 이니셜라이저를 사용 하지 않도록 설정 된 `contexts` 응용 프로그램 Web.config 파일에 추가 하는 요소입니다.
 
@@ -48,7 +48,7 @@ ms.lasthandoff: 11/10/2017
 
     [!code-xml[Main](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample2.xml?highlight=2)]
 
-    이러한 변경 하 여 첫 번째 마이그레이션 새 데이터베이스를 만드는 프로젝트를 설정 합니다. 에서는 필요 하지 않습니다 되지만 것이 좋습니다 나중에 표시 됩니다.
+    이러한 변경은 첫 번째 마이그레이션이 새 데이터베이스를 만드는 프로젝트를 설정합니다. 에서는 필요 하지 않습니다 되지만 것이 좋습니다 나중에 표시 됩니다.
 3. **도구** 메뉴를 클릭 하 여 **라이브러리 패키지 관리자** 차례로 **패키지 관리자 콘솔**합니다.
 
     ![Selecting_Package_Manager_Console](https://asp.net/media/4336350/1pm.png)
@@ -112,11 +112,11 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample8.cs)]
 
-마이그레이션 호출은 `Up` 마이그레이션에 대 한 데이터 모델 변경 내용을 구현 하려면 메서드. Update, 마이그레이션 호출을 롤백해야 하는 명령을 입력할 때는 `Down` 메서드.
+마이그레이션에서는 마이그레이션을 위한 데이터 모델 변경을 구현하기 위해 `Up` 메서드를 호출합니다. 업데이트를 롤백하는 명령을 입력하면 마이그레이션에서 `Down` 메서드를 호출합니다.
 
 이 입력 했을 때 만들어진 초기 마이그레이션은 `add-migration InitialCreate` 명령입니다. 매개 변수 (`InitialCreate` 예제에서) 파일에 사용; 단어 또는 구를 마이그레이션에서 수행 되는 것을 요약 하는 일반적으로 선택 하면 이름을 지정 하 고 원하는 작업이 무엇이 든 될 수 있습니다. 나중에 마이그레이션할 이름을 지정할 수 있습니다는 예를 들어 &quot;AddDepartmentTable&quot;합니다.
 
-데이터베이스가 이미 존재 하는 경우 초기 마이그레이션을 만든 경우 데이터베이스 만들기 코드 생성 되지만 데이터베이스는 이미 데이터 모델 일치 하기 때문에 실행할 필요는 없습니다. 여기서 데이터베이스가 아직 없는, 데이터베이스를 만들려면이 코드가 실행 되는 다른 환경에 앱을 배포할 때 하므로 이기 먼저 테스트 하는 것이 좋습니다. 바로 이러한 이유로 마이그레이션을 처음부터 다시 만들 수 있도록 이전-연결 문자열에 데이터베이스의 이름을 변경 합니다.
+데이터베이스가 이미 존재할 때 초기 마이그레이션을 만든 경우 데이터베이스 만들기 코드가 생성되지만 데이터베이스는 이미 데이터 모델과 일치하기 때문에 실행할 필요는 없습니다. 데이터베이스가 아직 없는 다른 환경에 앱을 배포하는 경우 이 코드를 실행하여 데이터베이스를 만들기 때문에 먼저 테스트하는 것이 좋습니다. 바로 이것이 앞서 연결 문자열의 데이터베이스 이름을 변경한 이유입니다. 따라서 해당 마이그레이션은 처음부터 새로운 데이터베이스를 만들 수 있습니다.
 
 1. 에 **패키지 관리자 콘솔** 창에서 다음 명령을 입력 합니다.
 
@@ -125,7 +125,7 @@ ms.lasthandoff: 11/10/2017
     ![](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image3.png)
 
     `update-database` 명령이 실행 되는 `Up` 데이터베이스를 만들고 해당 메서드를 실행 된 `Seed` 데이터베이스를 채우는 메서드. 동일한 프로세스가 실행 될 자동으로 프로덕션 환경에서 응용 프로그램을 배포한 후 다음 섹션에서 확인할 수 있습니다.
-- 사용 하 여 **서버 탐색기** 를 첫 번째 자습서에서와 같이 데이터베이스를 검사 하 고 작동 하는지 확인 하려면 모든 여전히 동일한 이전 처럼 응용 프로그램을 실행 합니다.
+2. 사용 하 여 **서버 탐색기** 를 첫 번째 자습서에서와 같이 데이터베이스를 검사 하 고 작동 하는지 확인 하려면 모든 여전히 동일한 이전 처럼 응용 프로그램을 실행 합니다.
 
 ## <a name="deploy-to-azure"></a>Azure에 배포
 
@@ -153,7 +153,7 @@ Azure SQL 데이터베이스에 데이터베이스를 배포 합니다. SQL 데�
 
     ![관리 포털에서 새로 만들기 단추](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/CreateWeb-Sql.png)
 
- **새 웹 응용 프로그램, SQL-만들** 마법사가 열립니다.
+   **새 웹 응용 프로그램, SQL-만들** 마법사가 열립니다.
 
 2. 블레이드에서 문자열을 입력에서 **응용 프로그램 이름** 상자 응용 프로그램에 대 한 고유 URL로 사용할 수 있습니다. 전체 URL을 입력 한 내용을 여기과 Azure 앱 서비스의 기본 도메인으로 구성 됩니다 (. azurewebsites.net). 경우는 **응용 프로그램 이름** 이미 수행 되지 않고 마법사는 알려주고이 빨간색 *응용 프로그램 이름을 사용할 수 없으면* 메시지입니다. 경우는 **응용 프로그램 이름** 은 사용할 수 있는 얻게 됩니다 녹색 확인 표시 합니다.
 
@@ -175,9 +175,9 @@ Azure SQL 데이터베이스에 데이터베이스를 배포 합니다. SQL 데�
 10. 수정 [데이터 정렬](https://docs.microsoft.com/sql/relational-databases/collations/collation-and-unicode-support) 필요에 따라 합니다.
 11. 관리자가 입력 **SQL 관리자 사용자 이름** 및 **SQL 관리자 암호**합니다. 선택한 경우 **새 SQL 데이터베이스 서버**, 기존 이름 및 암호를 입력 하지, 새 이름 및 데이터베이스에 액세스할 때 나중에 다시 사용할 이제 정의 하는 암호를 입력 합니다. 이전에 만든 서버를 선택한 경우에 해당 서버에 대 한 자격 증명을 입력 합니다.
 12. Application Insights를 사용 하 여 응용 프로그램 서비스에 대 한 원격 분석 수집을 사용할 수 있습니다. Application Insights 거의 구성 사용 하 여 중요 한 이벤트, 예외, 종속성, 요청 및 추적 정보를 수집 합니다. 시작 하려면 Application Insights에 대 한 자세한 내용은 [Azure Docs](https://azure.microsoft.com/services/application-insights/)합니다.
-12. 클릭 **만들기** 완료 되 나타내려면 블레이드 맨 아래에 있습니다.
+13. 클릭 **만들기** 완료 되 나타내려면 블레이드 맨 아래에 있습니다.
   
- 관리 포털의 대시보드 페이지에 반환 및 **알림** 블레이드 페이지 맨 위에 있는 사이트가 생성 되 고 있음을 보여 줍니다. 잠시 후 (일반적으로 보다 작음 1 분), 배포 성공 알림이 됩니다. 왼쪽 탐색 모음에서 새 **앱 서비스** 에 표시는 *응용 프로그램 서비스* 섹션과 새 **SQL 데이터베이스** 에 표시는 *SQL 데이터베이스*  섹션.
+    관리 포털의 대시보드 페이지에 반환 및 **알림** 블레이드 페이지 맨 위에 있는 사이트가 생성 되 고 있음을 보여 줍니다. 잠시 후 (일반적으로 보다 작음 1 분), 배포 성공 알림이 됩니다. 왼쪽 탐색 모음에서 새 **앱 서비스** 에 표시는 *응용 프로그램 서비스* 섹션과 새 **SQL 데이터베이스** 에 표시는 *SQL 데이터베이스*  섹션.
 
 ### <a name="deploy-the-application-to-azure"></a>Azure 응용 프로그램 배포
 
@@ -195,30 +195,30 @@ Azure SQL 데이터베이스에 데이터베이스를 배포 합니다. SQL 데�
 5. 프로필을 구성한 후의 **연결** 탭이 표시 됩니다. 클릭 **연결 유효성 검사** 설정이 정확한 지 확인 하려면
 
     ![연결 확인](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/Publish-Connection.png)
-7. 연결 검증 된 녹색 확인 표시가 옆에 표시 되는 **연결 유효성 검사** 단추입니다. **다음**을 클릭합니다.
+6. 연결 검증 된 녹색 확인 표시가 옆에 표시 되는 **연결 유효성 검사** 단추입니다. **다음**을 클릭합니다.
   
     ![성공적으로 유효성이 검사 된 연결](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/Publish-SettingsValidated.png)
-8. 열기는 **원격 연결 문자열** 드롭 다운 목록에서 **SchoolContext** 만든 데이터베이스에 대 한 연결 문자열을 선택 합니다.
-9. 선택 **데이터베이스 업데이트**합니다.
+7. 열기는 **원격 연결 문자열** 드롭 다운 목록에서 **SchoolContext** 만든 데이터베이스에 대 한 연결 문자열을 선택 합니다.
+8. 선택 **데이터베이스 업데이트**합니다.
 
     ![설정 탭](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/Publish-Settings.png)
 
     이 설정을 사용 하면 배포 프로세스를 자동으로 응용 프로그램을 구성할 *Web.config* Code First 사용 하 여 있도록 대상 서버에서 파일의 `MigrateDatabaseToLatestVersion` 이니셜라이저 클래스입니다.
-10. **다음**을 클릭합니다.
-11. 에 **미리 보기** 탭을 클릭 **미리 보기 시작**합니다.
+9. **다음**을 클릭합니다.
+10. 에 **미리 보기** 탭을 클릭 **미리 보기 시작**합니다.
   
     ![미리 보기 탭에서 미리 단추](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/Publish-Preview.png)
   
- 탭에는 서버에 복사 되는 파일의 목록이 표시 됩니다. 미리 보기를 표시할 응용 프로그램을 게시 하 필요 하지 않지만 알아두어야 하는 유용한 기능을 합니다. 이 경우 표시 되는 파일의 목록으로 아무 작업도 수행할 필요가 없습니다. 이 응용 프로그램을 배포한 다음에이 목록에 변경 된 파일만 됩니다.
+    탭에는 서버에 복사 되는 파일의 목록이 표시 됩니다. 미리 보기를 표시할 응용 프로그램을 게시 하 필요 하지 않지만 알아두어야 하는 유용한 기능을 합니다. 이 경우 표시 되는 파일의 목록으로 아무 작업도 수행할 필요가 없습니다. 이 응용 프로그램을 배포한 다음에이 목록에 변경 된 파일만 됩니다.
     ![미리 파일 출력](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/Publish-PreviewLoaded.png)
 
-12. **게시**를 클릭합니다.
- Visual Studio Azure 서버에 파일을 복사 프로세스를 시작 합니다.
-13. **출력** 창 수행 된 배포 작업을 표시 및 배포를 성공적으로 완료를 보고 합니다.
+11. **게시**를 클릭합니다.
+    Visual Studio Azure 서버에 파일을 복사 프로세스를 시작 합니다.
+12. **출력** 창 수행 된 배포 작업을 표시 및 배포를 성공적으로 완료를 보고 합니다.
   
     ![성공적인 배포를 보고 하는 출력 창](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/Publish-BuildOutput.png)
-14. 배포가 성공 하면 기본 브라우저가 자동으로 배포 된 웹 사이트의 URL로 열립니다.
- 만든 응용 프로그램은 클라우드에서 실행 됩니다. 
+13. 배포가 성공 하면 기본 브라우저가 자동으로 배포 된 웹 사이트의 URL로 열립니다.
+    만든 응용 프로그램은 클라우드에서 실행 됩니다. 
   
     ![Students_index_page_with_paging](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/Publish-Site.png)
 
@@ -258,6 +258,6 @@ Azure SQL 데이터베이스에 데이터베이스를 배포 합니다. SQL 데�
 
 다른 Entity Framework 리소스에 대 한 링크에서 확인할 수 있습니다 [ASP.NET 데이터 액세스-권장 리소스](xref:whitepapers/aspnet-data-access-content-map)합니다.
 
->[!div class="step-by-step"]
-[이전](xref:mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application)
-[다음](xref:mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-a-more-complex-data-model-for-an-asp-net-mvc-application)
+> [!div class="step-by-step"]
+> [이전](xref:mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application)
+> [다음](xref:mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-a-more-complex-data-model-for-an-asp-net-mvc-application)

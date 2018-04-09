@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/validating-with-the-idataerrorinfo-interface-cs
-title: "IDataErrorInfo 인터페이스 (C#)을 사용한 유효성 검사 | Microsoft Docs"
+title: IDataErrorInfo 인터페이스 (C#)을 사용한 유효성 검사 | Microsoft Docs
 author: StephenWalther
-description: "Stephen Walther IDataErrorInfo 인터페이스 모델 클래스에서 구현 하 여 사용자 지정 유효성 검사 오류 메시지를 표시 하는 방법을 보여 줍니다."
+description: Stephen Walther IDataErrorInfo 인터페이스 모델 클래스에서 구현 하 여 사용자 지정 유효성 검사 오류 메시지를 표시 하는 방법을 보여 줍니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/02/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validating-with-the-idataerrorinfo-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c04088c576481e4a91676d7e6962c03b56e7a8a4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b5028b2e07c4144efa59824885ce96cd8b037dff
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="validating-with-the-idataerrorinfo-interface-c"></a>IDataErrorInfo 인터페이스 (C#)을 사용한 유효성 검사
 ====================
@@ -37,8 +37,8 @@ ms.lasthandoff: 11/10/2017
 | **열 이름** | **데이터 형식** | **Null 허용** |
 | --- | --- | --- |
 | ID | Int | False |
-| 제목 | Nvarchar (100) | False |
-| 감독 | Nvarchar (100) | False |
+| 제목 | Nvarchar(100) | False |
+| 감독 | Nvarchar(100) | False |
 | DateReleased | DateTime | False |
 
 
@@ -85,7 +85,7 @@ IsValid 속성 유효성 검사 오류가 있을 때 false를 반환 합니다. 
 
 모델 폴더에 목록 2의 클래스를 추가 합니다.
 
-**2-Models\Movie.cs 나열**
+**Listing 2 - Models\Movie.cs**
 
 [!code-csharp[Main](validating-with-the-idataerrorinfo-interface-cs/samples/sample3.cs)]
 
@@ -161,6 +161,6 @@ DefaultModelBinder 클래스 IDataErrorInfo 인터페이스를 구현 하는지 
 
 이 자습서에서는 유효성 검사 오류 메시지를 생성 하려면 IDataErrorInfo 인터페이스를 사용 하는 방법을 배웠습니다. 먼저 Entity Framework에서 생성 되는 부분 영화 클래스의 기능을 확장 하는 부분 영화 클래스를 만들었는지 여부입니다. 다음으로 영화 클래스 OnTitleChanging() 및 OnDirectorChanging() 부분 메서드를 유효성 검사 논리를 추가 합니다. 마지막으로, ASP.NET MVC 프레임 워크를 이러한 유효성 검사 메시지를 노출 하려면 IDataErrorInfo 인터페이스 구현.
 
->[!div class="step-by-step"]
-[이전](performing-simple-validation-cs.md)
-[다음](validating-with-a-service-layer-cs.md)
+> [!div class="step-by-step"]
+> [이전](performing-simple-validation-cs.md)
+> [다음](validating-with-a-service-layer-cs.md)

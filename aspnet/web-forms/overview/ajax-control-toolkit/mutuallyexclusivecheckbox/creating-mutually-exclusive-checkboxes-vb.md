@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/mutuallyexclusivecheckbox/creating-mutually-exclusive-checkboxes-vb
-title: "상호 배타적인 확인란 (VB) 만들기 | Microsoft Docs"
+title: 상호 배타적인 확인란 (VB) 만들기 | Microsoft Docs
 author: wenz
-description: "일련의 옵션 중 하나에만 선택할 수 있습니다, 라디오 단추는 일반적으로 사용 합니다. 그러나 한 가지 단점으로는: 그룹에 하나의 라디오 단추를 선택 하면..."
+description: '일련의 옵션 중 하나에만 선택할 수 있습니다, 라디오 단추는 일반적으로 사용 합니다. 그러나 한 가지 단점으로는: 그룹에 하나의 라디오 단추를 선택 하면...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/mutuallyexclusivecheckbox/creating-mutually-exclusive-checkboxes-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 023ca0b145de8147a98e78f4dba20846dc344f06
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cdb93a080fb62cfdc7e3ff0604a1447e2bb99071
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-mutually-exclusive-checkboxes-vb"></a>상호 배타적인 확인란 (VB) 만들기
 ====================
@@ -54,5 +54,5 @@ ASP.NET AJAX 컨트롤 Toolkit MutuallyExclusiveCheckBox extender를 포함합�
 
 한 번에 하나씩만 확인할 수 있습니다 ([전체 크기 이미지를 보려면 클릭](creating-mutually-exclusive-checkboxes-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[이전](creating-mutually-exclusive-checkboxes-cs.md)
+> [!div class="step-by-step"]
+> [이전](creating-mutually-exclusive-checkboxes-cs.md)

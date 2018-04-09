@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-staging-environment-for-web-deployment
-title: "시나리오: 웹 배포에 대 한 스테이징 환경 구성 | Microsoft Docs"
+title: '시나리오: 웹 배포에 대 한 스테이징 환경 구성 | Microsoft Docs'
 author: jrjlee
-description: "스테이징 환경에 대 한 일반 웹 배포 시나리오를 설명 하 고 비슷한 env를 설정 하기 위해 완료 해야 할 작업에 설명 하는이 항목..."
+description: 스테이징 환경에 대 한 일반 웹 배포 시나리오를 설명 하 고 비슷한 env를 설정 하기 위해 완료 해야 할 작업에 설명 하는이 항목...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-staging-environment-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 683a0cf88225fee762e82925afe3785a2defd5bf
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 3864559b0599091beeacb87e90e80a51285039df
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="scenario-configuring-a-staging-environment-for-web-deployment"></a>시나리오: 웹 배포에 대 한 스테이징 환경 구성
 ====================
@@ -62,6 +62,6 @@ ms.lasthandoff: 01/24/2018
 
 일반적인 개발자 테스트 환경 구성에 대 한 지침을 참조 하십시오. [시나리오: 웹 배포를 위해 테스트 환경 구성](scenario-configuring-a-test-environment-for-web-deployment.md)합니다. 일반적인 프로덕션 환경 구성에 대 한 지침을 참조 하십시오. [시나리오: 웹 배포를 위해 프로덕션 환경 구성](scenario-configuring-a-production-environment-for-web-deployment.md)합니다.
 
->[!div class="step-by-step"]
-[이전](scenario-configuring-a-test-environment-for-web-deployment.md)
-[다음](scenario-configuring-a-production-environment-for-web-deployment.md)
+> [!div class="step-by-step"]
+> [이전](scenario-configuring-a-test-environment-for-web-deployment.md)
+> [다음](scenario-configuring-a-production-environment-for-web-deployment.md)
