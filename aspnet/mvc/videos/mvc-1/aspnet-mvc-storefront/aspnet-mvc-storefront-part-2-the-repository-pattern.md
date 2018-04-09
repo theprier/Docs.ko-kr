@@ -1,8 +1,8 @@
 ---
 uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-2-the-repository-pattern
-title: "ASP.NET MVC Storefront 2 부: 리포지토리 패턴 | Microsoft Docs"
+title: 'ASP.NET MVC Storefront 2 부: 리포지토리 패턴 | Microsoft Docs'
 author: robconery
-description: "Rob Conery 저장소 구현 안내를 첫 번째 주 단위 테스트 집합이 작성 합니다. 또한 초기 서비스 계층 metho를 구조는 그 중..."
+description: Rob Conery 저장소 구현 안내를 첫 번째 주 단위 테스트 집합이 작성 합니다. 또한 초기 서비스 계층 metho를 구조는 그 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/27/2008
@@ -12,21 +12,21 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-2-the-repository-pattern
 msc.type: video
-ms.openlocfilehash: 5efa80a6639fab433f921f7495336eeb58f58fdf
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 272a710d05e0d0dd2d358505f54d5fd595ffa41f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
-<a name="aspnet-mvc-storefront-part-2-the-repository-pattern"></a><span data-ttu-id="ba24f-104">ASP.NET MVC Storefront 2 부: 리포지토리 패턴</span><span class="sxs-lookup"><span data-stu-id="ba24f-104">ASP.NET MVC Storefront Part 2: The Repository Pattern</span></span>
+<a name="aspnet-mvc-storefront-part-2-the-repository-pattern"></a><span data-ttu-id="9d9a4-104">ASP.NET MVC Storefront 2 부: 리포지토리 패턴</span><span class="sxs-lookup"><span data-stu-id="9d9a4-104">ASP.NET MVC Storefront Part 2: The Repository Pattern</span></span>
 ====================
-<span data-ttu-id="ba24f-105">여 [Conery Rob](https://github.com/robconery)</span><span class="sxs-lookup"><span data-stu-id="ba24f-105">by [Rob Conery](https://github.com/robconery)</span></span>
+<span data-ttu-id="9d9a4-105">여 [Conery Rob](https://github.com/robconery)</span><span class="sxs-lookup"><span data-stu-id="9d9a4-105">by [Rob Conery](https://github.com/robconery)</span></span>
 
-<span data-ttu-id="ba24f-106">Rob Conery 저장소 구현 안내를 첫 번째 주 단위 테스트 집합이 작성 합니다.</span><span class="sxs-lookup"><span data-stu-id="ba24f-106">Rob Conery walks through Repository implementation and writes out the first main set of unit tests.</span></span> <span data-ttu-id="ba24f-107">그 또한 초기 서비스 레이어 메서드 및 인터페이스를 구성 합니다.</span><span class="sxs-lookup"><span data-stu-id="ba24f-107">He will also structure up the initial service layer methods and interfaces.</span></span>
+<span data-ttu-id="9d9a4-106">Rob Conery 저장소 구현 안내를 첫 번째 주 단위 테스트 집합이 작성 합니다.</span><span class="sxs-lookup"><span data-stu-id="9d9a4-106">Rob Conery walks through Repository implementation and writes out the first main set of unit tests.</span></span> <span data-ttu-id="9d9a4-107">그 또한 초기 서비스 레이어 메서드 및 인터페이스를 구성 합니다.</span><span class="sxs-lookup"><span data-stu-id="9d9a4-107">He will also structure up the initial service layer methods and interfaces.</span></span>
 
-[<span data-ttu-id="ba24f-108">&#9654; (10 분) 비디오를 시청 하세요</span><span class="sxs-lookup"><span data-stu-id="ba24f-108">&#9654; Watch video (10 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-2-the-repository-pattern)
+[<span data-ttu-id="9d9a4-108">&#9654;(10 분) 비디오를 시청 하세요</span><span class="sxs-lookup"><span data-stu-id="9d9a4-108">&#9654; Watch video (10 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-2-the-repository-pattern)
 
->[!div class="step-by-step"]
-<span data-ttu-id="ba24f-109">[이전](aspnet-mvc-storefront-part-1-architectural-discussion-and-overview.md)
-[다음](aspnet-mvc-storefront-part-3-pipes-and-filters.md)</span><span class="sxs-lookup"><span data-stu-id="ba24f-109">[Previous](aspnet-mvc-storefront-part-1-architectural-discussion-and-overview.md)
+> [!div class="step-by-step"]
+> <span data-ttu-id="9d9a4-109">[이전](aspnet-mvc-storefront-part-1-architectural-discussion-and-overview.md)
+> [다음](aspnet-mvc-storefront-part-3-pipes-and-filters.md)</span><span class="sxs-lookup"><span data-stu-id="9d9a4-109">[Previous](aspnet-mvc-storefront-part-1-architectural-discussion-and-overview.md)
 [Next](aspnet-mvc-storefront-part-3-pipes-and-filters.md)</span></span>

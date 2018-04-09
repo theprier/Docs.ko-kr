@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-20-applications/lesson-1-getting-started-with-visual-web-developer-express
-title: "[1 단원:] Visual 시작 Developer Express를 웹 | Microsoft Docs"
+title: '[1 단원:] Visual 시작 Developer Express를 웹 | Microsoft Docs'
 author: microsoft
-description: "이 단원에서는 Visual Web Developer Express Edition을 숙지 하 고 프로그램을 사용 하 여 dyn을에 관련 된 워크플로 확인을 시작 합니다..."
+description: 이 단원에서는 Visual Web Developer Express Edition을 숙지 하 고 프로그램을 사용 하 여 dyn을에 관련 된 워크플로 확인을 시작 합니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2005
@@ -12,19 +12,19 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/building-20-applications/lesson-1-getting-started-with-visual-web-developer-express
 msc.type: video
-ms.openlocfilehash: 4cef2ac50a2f20640f1869a4c99a183525d5345a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 273850d9d0605c70c366ba42b6d679a7c2be65e1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
-<a name="lesson-1-getting-started-with-visual-web-developer-express"></a><span data-ttu-id="2557c-103">[1 단원:] Visual 시작 Developer Express를 웹</span><span class="sxs-lookup"><span data-stu-id="2557c-103">[Lesson 1:] Getting Started with Visual Web Developer Express</span></span>
+<a name="lesson-1-getting-started-with-visual-web-developer-express"></a><span data-ttu-id="e12dc-103">[1 단원:] Visual 시작 Developer Express를 웹</span><span class="sxs-lookup"><span data-stu-id="e12dc-103">[Lesson 1:] Getting Started with Visual Web Developer Express</span></span>
 ====================
-<span data-ttu-id="2557c-104">여 [Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="2557c-104">by [Microsoft](https://github.com/microsoft)</span></span>
+<span data-ttu-id="e12dc-104">by [Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="e12dc-104">by [Microsoft](https://github.com/microsoft)</span></span>
 
-<span data-ttu-id="2557c-105">이 단원에서는 Visual Web Developer Express Edition을 숙지 하 고 프로그램을 사용 하 여 동적 ASP.NET 웹 사이트를 만드는 데 관련 된 워크플로 확인을 시작 합니다.</span><span class="sxs-lookup"><span data-stu-id="2557c-105">In this lesson, you will begin to get familiar with Visual Web Developer Express Edition, and look at the workflow involved in using the program to build dynamic ASP.NET Web sites.</span></span>
+<span data-ttu-id="e12dc-105">이 단원에서는 Visual Web Developer Express Edition을 숙지 하 고 프로그램을 사용 하 여 동적 ASP.NET 웹 사이트를 만드는 데 관련 된 워크플로 확인을 시작 합니다.</span><span class="sxs-lookup"><span data-stu-id="e12dc-105">In this lesson, you will begin to get familiar with Visual Web Developer Express Edition, and look at the workflow involved in using the program to build dynamic ASP.NET Web sites.</span></span>
 
-[<span data-ttu-id="2557c-106">&#9654; (28 분) 비디오를 시청 하세요</span><span class="sxs-lookup"><span data-stu-id="2557c-106">&#9654; Watch video (28 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/lesson-1-getting-started-with-visual-web-developer-express)
+[<span data-ttu-id="e12dc-106">&#9654;(28 분) 비디오를 시청 하세요</span><span class="sxs-lookup"><span data-stu-id="e12dc-106">&#9654; Watch video (28 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/lesson-1-getting-started-with-visual-web-developer-express)
 
->[!div class="step-by-step"]
-[<span data-ttu-id="2557c-107">다음</span><span class="sxs-lookup"><span data-stu-id="2557c-107">Next</span></span>](lesson-2-creating-a-web-forms-user-interface.md)
+> [!div class="step-by-step"]
+> [<span data-ttu-id="e12dc-107">다음</span><span class="sxs-lookup"><span data-stu-id="e12dc-107">Next</span></span>](lesson-2-creating-a-web-forms-user-interface.md)

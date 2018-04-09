@@ -1,8 +1,8 @@
 ---
 uid: web-pages/videos/aspnet-razor-pages/adding-email-to-your-web-site
-title: "웹 사이트에 전자 메일 추가 | Microsoft Docs"
+title: 웹 사이트에 전자 메일 추가 | Microsoft Docs
 author: JoeStagner
-description: "웹 사이트 (파트 1)에 전자 메일 추가"
+description: 웹 사이트 (파트 1)에 전자 메일 추가
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/25/2011
@@ -12,21 +12,21 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/videos/aspnet-razor-pages/adding-email-to-your-web-site
 msc.type: video
-ms.openlocfilehash: ccc419f0ffaf6b49ae642b6ed1c9457ab17ea600
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2516503658c178d5579311a9866edf61688d1427
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
-<a name="adding-email-to-your-web-site"></a><span data-ttu-id="8d2d6-103">웹 사이트에 전자 메일 추가</span><span class="sxs-lookup"><span data-stu-id="8d2d6-103">Adding Email to Your Web Site</span></span>
+<a name="adding-email-to-your-web-site"></a><span data-ttu-id="ce671-103">웹 사이트에 전자 메일 추가</span><span class="sxs-lookup"><span data-stu-id="ce671-103">Adding Email to Your Web Site</span></span>
 ====================
-<span data-ttu-id="8d2d6-104">으로 [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="8d2d6-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="ce671-104">으로 [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="ce671-104">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="8d2d6-105">웹 사이트 (파트 1)에 전자 메일 추가</span><span class="sxs-lookup"><span data-stu-id="8d2d6-105">Adding Email to Your Web Site (Part 1)</span></span>
+<span data-ttu-id="ce671-105">웹 사이트 (파트 1)에 전자 메일 추가</span><span class="sxs-lookup"><span data-stu-id="ce671-105">Adding Email to Your Web Site (Part 1)</span></span>
 
-[<span data-ttu-id="8d2d6-106">&#9654; (10 분) 비디오를 시청 하세요</span><span class="sxs-lookup"><span data-stu-id="8d2d6-106">&#9654; Watch video (10 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/adding-email-to-your-web-site)
+[<span data-ttu-id="ce671-106">&#9654;(10 분) 비디오를 시청 하세요</span><span class="sxs-lookup"><span data-stu-id="ce671-106">&#9654; Watch video (10 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/adding-email-to-your-web-site)
 
->[!div class="step-by-step"]
-<span data-ttu-id="8d2d6-107">[이전](working-with-video.md)
-[다음](adding-search-to-your-web-site.md)</span><span class="sxs-lookup"><span data-stu-id="8d2d6-107">[Previous](working-with-video.md)
+> [!div class="step-by-step"]
+> <span data-ttu-id="ce671-107">[이전](working-with-video.md)
+> [다음](adding-search-to-your-web-site.md)</span><span class="sxs-lookup"><span data-stu-id="ce671-107">[Previous](working-with-video.md)
 [Next](adding-search-to-your-web-site.md)</span></span>

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/iis/bit-rate-throttling
-title: "비트 전송률 제한 | Microsoft Docs"
+title: 비트 전송률 제한 | Microsoft Docs
 author: JoeStagner
-description: "이 비디오에서는 설치 하 고 있는 유용한 새 IIS7 기능 – 비트 전송률 제한을 구성 하는 방법에 설명 합니다. BRT 미디어 파일 또는 큰 다운로드 withou를 사용할 수 있습니다..."
+description: 이 비디오에서는 설치 하 고 있는 유용한 새 IIS7 기능 – 비트 전송률 제한을 구성 하는 방법에 설명 합니다. BRT 미디어 파일 또는 큰 다운로드 withou를 사용할 수 있습니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/09/2009
@@ -12,21 +12,21 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/iis/bit-rate-throttling
 msc.type: video
-ms.openlocfilehash: 0cf15f76ff0848cf637b699d95429d965da340b9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 65511ccc49bda216b422334787cc6e0e032117d4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
-<a name="bit-rate-throttling"></a><span data-ttu-id="fcf22-104">비트 전송률 제한</span><span class="sxs-lookup"><span data-stu-id="fcf22-104">Bit Rate Throttling</span></span>
+<a name="bit-rate-throttling"></a><span data-ttu-id="99729-104">비트 전송률 제한</span><span class="sxs-lookup"><span data-stu-id="99729-104">Bit Rate Throttling</span></span>
 ====================
-<span data-ttu-id="fcf22-105">으로 [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="fcf22-105">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="99729-105">으로 [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="99729-105">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="fcf22-106">이 비디오에서는 설치 하 고 있는 유용한 새 IIS7 기능 – 비트 전송률 제한을 구성 하는 방법에 설명 합니다.</span><span class="sxs-lookup"><span data-stu-id="fcf22-106">This video will teach how to install and configure a great new IIS7 feature – Bit Rate Throttling.</span></span> <span data-ttu-id="fcf22-107">BRT와 미디어 파일 또는 큰 다운로드 사이트 UI 성능 하다 없이 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="fcf22-107">With BRT you can serve media files or big downloads without ruining your sites UI performance.</span></span>
+<span data-ttu-id="99729-106">이 비디오에서는 설치 하 고 있는 유용한 새 IIS7 기능 – 비트 전송률 제한을 구성 하는 방법에 설명 합니다.</span><span class="sxs-lookup"><span data-stu-id="99729-106">This video will teach how to install and configure a great new IIS7 feature – Bit Rate Throttling.</span></span> <span data-ttu-id="99729-107">BRT와 미디어 파일 또는 큰 다운로드 사이트 UI 성능 하다 없이 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="99729-107">With BRT you can serve media files or big downloads without ruining your sites UI performance.</span></span>
 
-[<span data-ttu-id="fcf22-108">&#9654; (6 분) 비디오를 시청 하세요</span><span class="sxs-lookup"><span data-stu-id="fcf22-108">&#9654; Watch video (6 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/bit-rate-throttling)
+[<span data-ttu-id="99729-108">&#9654;(6 분) 비디오를 시청 하세요</span><span class="sxs-lookup"><span data-stu-id="99729-108">&#9654; Watch video (6 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/bit-rate-throttling)
 
->[!div class="step-by-step"]
-<span data-ttu-id="fcf22-109">[이전](installing-ftp7.md)
-[다음](iis7-playlists.md)</span><span class="sxs-lookup"><span data-stu-id="fcf22-109">[Previous](installing-ftp7.md)
+> [!div class="step-by-step"]
+> <span data-ttu-id="99729-109">[이전](installing-ftp7.md)
+> [다음](iis7-playlists.md)</span><span class="sxs-lookup"><span data-stu-id="99729-109">[Previous](installing-ftp7.md)
 [Next](iis7-playlists.md)</span></span>

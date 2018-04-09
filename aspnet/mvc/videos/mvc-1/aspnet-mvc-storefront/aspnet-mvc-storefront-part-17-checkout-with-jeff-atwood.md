@@ -1,8 +1,8 @@
 ---
 uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood
-title: "ASP.NET MVC Storefront 부 17: 제프 Atwood로 체크아웃 | Microsoft Docs"
+title: 'ASP.NET MVC Storefront 부 17: 제프 Atwood로 체크아웃 | Microsoft Docs'
 author: robconery
-description: "이 에피소드에서 체크 아웃 프로세스를 준비 했으며 Mr. CodingHorror Jeff Atwood 자신에 게 문의 합니다. 에서는 모든 종류의 작업에 설명 하지만 대부분 열기에 설명..."
+description: 이 에피소드에서 체크 아웃 프로세스를 준비 했으며 Mr. CodingHorror Jeff Atwood 자신에 게 문의 합니다. 에서는 모든 종류의 작업에 설명 하지만 대부분 열기에 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/16/2008
@@ -12,21 +12,21 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood
 msc.type: video
-ms.openlocfilehash: 76dfa285934578bb4fddb2defa6905c1fa7d6cc0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ccb6b6bb76598c1aef2321e22eb0cfc2846f53a4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
-<a name="aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood"></a><span data-ttu-id="42703-104">제프 Atwood와 ASP.NET MVC Storefront 부 17: 체크 아웃</span><span class="sxs-lookup"><span data-stu-id="42703-104">ASP.NET MVC Storefront Part 17: Checkout With Jeff Atwood</span></span>
+<a name="aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood"></a><span data-ttu-id="e757a-104">제프 Atwood와 ASP.NET MVC Storefront 부 17: 체크 아웃</span><span class="sxs-lookup"><span data-stu-id="e757a-104">ASP.NET MVC Storefront Part 17: Checkout With Jeff Atwood</span></span>
 ====================
-<span data-ttu-id="42703-105">여 [Conery Rob](https://github.com/robconery)</span><span class="sxs-lookup"><span data-stu-id="42703-105">by [Rob Conery](https://github.com/robconery)</span></span>
+<span data-ttu-id="e757a-105">여 [Conery Rob](https://github.com/robconery)</span><span class="sxs-lookup"><span data-stu-id="e757a-105">by [Rob Conery](https://github.com/robconery)</span></span>
 
-<span data-ttu-id="42703-106">이 에피소드에서 체크 아웃 프로세스를 준비 했으며 Mr. CodingHorror Jeff Atwood 자신에 게 문의 합니다.</span><span class="sxs-lookup"><span data-stu-id="42703-106">In this episode I ready up the checkout process and talk with Mr. CodingHorror himself, Jeff Atwood.</span></span> <span data-ttu-id="42703-107">에서는 모든 종류의 작업에 대해 설명 하는 있지만 주로 Openid, 토론 CardSpace, Jeff ु म क 이상적인 환경에서 작동 하는 체크 아웃 과정을 보려면.</span><span class="sxs-lookup"><span data-stu-id="42703-107">We talk about all kinds of things but mostly discuss Open ID, CardSpace, and how Jeff would like to see the checkout process work in an ideal world.</span></span> <span data-ttu-id="42703-108">하려면 다음 과정을 단계별로 로컬 컴퓨터에서 CardSpace를 설정 합니다.</span><span class="sxs-lookup"><span data-stu-id="42703-108">I then walk you through setting up CardSpace on your local machine.</span></span>
+<span data-ttu-id="e757a-106">이 에피소드에서 체크 아웃 프로세스를 준비 했으며 Mr. CodingHorror Jeff Atwood 자신에 게 문의 합니다.</span><span class="sxs-lookup"><span data-stu-id="e757a-106">In this episode I ready up the checkout process and talk with Mr. CodingHorror himself, Jeff Atwood.</span></span> <span data-ttu-id="e757a-107">에서는 모든 종류의 작업에 대해 설명 하는 있지만 주로 Openid, 토론 CardSpace, Jeff ु म क 이상적인 환경에서 작동 하는 체크 아웃 과정을 보려면.</span><span class="sxs-lookup"><span data-stu-id="e757a-107">We talk about all kinds of things but mostly discuss Open ID, CardSpace, and how Jeff would like to see the checkout process work in an ideal world.</span></span> <span data-ttu-id="e757a-108">하려면 다음 과정을 단계별로 로컬 컴퓨터에서 CardSpace를 설정 합니다.</span><span class="sxs-lookup"><span data-stu-id="e757a-108">I then walk you through setting up CardSpace on your local machine.</span></span>
 
-[<span data-ttu-id="42703-109">&#9654; (34 분만) 비디오를 시청 하세요</span><span class="sxs-lookup"><span data-stu-id="42703-109">&#9654; Watch video (34 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood)
+[<span data-ttu-id="e757a-109">&#9654;(34 분만) 비디오를 시청 하세요</span><span class="sxs-lookup"><span data-stu-id="e757a-109">&#9654; Watch video (34 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood)
 
->[!div class="step-by-step"]
-<span data-ttu-id="42703-110">[이전](aspnet-mvc-storefront-part-16-membership-redo-with-openid.md)
-[다음](aspnet-mvc-storefront-part-18-creating-an-experience.md)</span><span class="sxs-lookup"><span data-stu-id="42703-110">[Previous](aspnet-mvc-storefront-part-16-membership-redo-with-openid.md)
+> [!div class="step-by-step"]
+> <span data-ttu-id="e757a-110">[이전](aspnet-mvc-storefront-part-16-membership-redo-with-openid.md)
+> [다음](aspnet-mvc-storefront-part-18-creating-an-experience.md)</span><span class="sxs-lookup"><span data-stu-id="e757a-110">[Previous](aspnet-mvc-storefront-part-16-membership-redo-with-openid.md)
 [Next](aspnet-mvc-storefront-part-18-creating-an-experience.md)</span></span>

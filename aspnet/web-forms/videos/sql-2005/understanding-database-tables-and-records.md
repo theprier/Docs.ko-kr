@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/sql-2005/understanding-database-tables-and-records
-title: "데이터베이스 테이블 및 레코드 이해 | Microsoft Docs"
+title: 데이터베이스 테이블 및 레코드 이해 | Microsoft Docs
 author: microsoft
-description: "테이블 및 데이터 형식, 속성, 키,이 두 번째 비디오 등의 정의 대 한 SQL Server 초보자에 설명 합니다. 방법을 알아보려면 테이블 행, 열는 중..."
+description: 테이블 및 데이터 형식, 속성, 키,이 두 번째 비디오 등의 정의 대 한 SQL Server 초보자에 설명 합니다. 방법을 알아보려면 테이블 행, 열는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/29/2006
@@ -12,21 +12,21 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/sql-2005/understanding-database-tables-and-records
 msc.type: video
-ms.openlocfilehash: 301e7c52abbbf4e3408c1b794936fd3db7403930
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 97b2d8fa9e44e0cb0a1f3f720ee7d709509a340d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
-<a name="understanding-database-tables-and-records"></a><span data-ttu-id="e771c-104">데이터베이스 테이블 이해 및 레코드</span><span class="sxs-lookup"><span data-stu-id="e771c-104">Understanding Database Tables and Records</span></span>
+<a name="understanding-database-tables-and-records"></a><span data-ttu-id="e5128-104">데이터베이스 테이블 이해 및 레코드</span><span class="sxs-lookup"><span data-stu-id="e5128-104">Understanding Database Tables and Records</span></span>
 ====================
-<span data-ttu-id="e771c-105">여 [Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="e771c-105">by [Microsoft](https://github.com/microsoft)</span></span>
+<span data-ttu-id="e5128-105">by [Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="e5128-105">by [Microsoft](https://github.com/microsoft)</span></span>
 
-<span data-ttu-id="e771c-106">테이블 및 데이터 형식, 속성, 키,이 두 번째 비디오 등의 정의 대 한 SQL Server 초보자에 설명 합니다.</span><span class="sxs-lookup"><span data-stu-id="e771c-106">SQL Server beginners will learn about tables and definitions of data types, properties, keys, etc. in this second video.</span></span> <span data-ttu-id="e771c-107">열 비어 있을 수 있는지 여부 및 방법을 테이블 행, 열 및 필드 상호 연관 되어 있는지 확인 합니다.</span><span class="sxs-lookup"><span data-stu-id="e771c-107">Find out how table rows, columns, and fields interrelate and whether columns can be empty.</span></span>
+<span data-ttu-id="e5128-106">테이블 및 데이터 형식, 속성, 키,이 두 번째 비디오 등의 정의 대 한 SQL Server 초보자에 설명 합니다.</span><span class="sxs-lookup"><span data-stu-id="e5128-106">SQL Server beginners will learn about tables and definitions of data types, properties, keys, etc. in this second video.</span></span> <span data-ttu-id="e5128-107">열 비어 있을 수 있는지 여부 및 방법을 테이블 행, 열 및 필드 상호 연관 되어 있는지 확인 합니다.</span><span class="sxs-lookup"><span data-stu-id="e5128-107">Find out how table rows, columns, and fields interrelate and whether columns can be empty.</span></span>
 
-[<span data-ttu-id="e771c-108">&#9654; (24 시간 (분)) 비디오를 시청 하세요</span><span class="sxs-lookup"><span data-stu-id="e771c-108">&#9654; Watch video (24 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/understanding-database-tables-and-records)
+[<span data-ttu-id="e5128-108">&#9654;(24 시간 (분)) 비디오를 시청 하세요</span><span class="sxs-lookup"><span data-stu-id="e5128-108">&#9654; Watch video (24 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/understanding-database-tables-and-records)
 
->[!div class="step-by-step"]
-<span data-ttu-id="e771c-109">[이전](what-is-a-database.md)
-[다음](more-about-column-data-types-and-other-properties.md)</span><span class="sxs-lookup"><span data-stu-id="e771c-109">[Previous](what-is-a-database.md)
+> [!div class="step-by-step"]
+> <span data-ttu-id="e5128-109">[이전](what-is-a-database.md)
+> [다음](more-about-column-data-types-and-other-properties.md)</span><span class="sxs-lookup"><span data-stu-id="e5128-109">[Previous](what-is-a-database.md)
 [Next](more-about-column-data-types-and-other-properties.md)</span></span>
