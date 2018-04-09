@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/triggering-an-animation-in-another-control-vb
-title: "다른 컨트롤 (VB) 애니메이션 트리거 | Microsoft Docs"
+title: 다른 컨트롤 (VB) 애니메이션 트리거 | Microsoft Docs
 author: wenz
-description: "ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트롤 뿐 아니라 애니메이션 컨트롤을 추가 하는 전체 프레임 워크. 일반적으로 시작는 중..."
+description: ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트롤 뿐 아니라 애니메이션 컨트롤을 추가 하는 전체 프레임 워크. 일반적으로 시작는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/triggering-an-animation-in-another-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ce1d29cbd06ef8a470780ff4c7bda8039575d59f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 262a17e7521a8ea16c81e8dfdc6d3b6614c18eea
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="triggering-an-animation-in-another-control-vb"></a>다른 컨트롤 (VB) 애니메이션 트리거
 ====================
@@ -64,6 +64,6 @@ Note 개별 애니메이션이 표시 되는 특별 한 순서입니다. 우선,
 
 패널 애니메이션을 시작 하는 마우스 단추 클릭 ([전체 크기 이미지를 보려면 클릭](triggering-an-animation-in-another-control-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[이전](disabling-actions-during-animation-vb.md)
-[다음](modifying-animations-from-the-server-side-vb.md)
+> [!div class="step-by-step"]
+> [이전](disabling-actions-during-animation-vb.md)
+> [다음](modifying-animations-from-the-server-side-vb.md)

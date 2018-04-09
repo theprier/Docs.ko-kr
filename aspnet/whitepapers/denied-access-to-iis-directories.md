@@ -1,26 +1,26 @@
 ---
 uid: whitepapers/denied-access-to-iis-directories
-title: "ASP.NET IIS 디렉터리에 대 한 액세스가 거부 | Microsoft Docs"
+title: ASP.NET IIS 디렉터리에 대 한 액세스가 거부 | Microsoft Docs
 author: rick-anderson
-description: "이 백서에서는 ASP.NET 응용 프로그램에 요청 \"디렉터리 이름 디렉터리에 액세스 거부 오류를 반환 하는 경우 수행 해야 작업 설명 합니다. S를 못했습니다..."
+description: 이 백서에서는 ASP.NET 응용 프로그램에 요청 "디렉터리 이름 디렉터리에 액세스 거부 오류를 반환 하는 경우 수행 해야 작업 설명 합니다. S를 못했습니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2010
 ms.topic: article
 ms.assetid: 3cb27b8a-354f-4332-bfe0-232b13bbf8aa
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/denied-access-to-iis-directories
 msc.type: content
-ms.openlocfilehash: 64118ac7a5f280775106d2dc7636923b08f28d89
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d95423776a6b58fc67ae6c791685543dadd2480c
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/22/2018
 ---
 <a name="aspnet-denied-access-to-iis-directories"></a>ASP.NET은 IIS 디렉터리에 대 한 액세스가 거부
 ====================
-> 이 백서 작업을 설명 하는 오류를 반환 하는 ASP.NET 응용 프로그램에 요청 하는 경우 "에 대 한 액세스를 거부 *디렉터리 이름* 디렉터리입니다. 디렉터리 chaanges 모니터링을 시작 하지 못했습니다. "
+> 이 백서 작업을 설명 하는 오류를 반환 하는 ASP.NET 응용 프로그램에 요청 하는 경우 "에 대 한 액세스를 거부 *디렉터리 이름* 디렉터리입니다. 디렉터리 변경 모니터링을 시작 하지 못했습니다. "
 > 
 > ASP.NET 1.0 및 1.1 ASP.NET에 적용 됩니다.
 

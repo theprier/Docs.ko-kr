@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core로 마이그레이션"
+title: ASP.NET Core로 마이그레이션
 author: rick-anderson
-description: "ASP.NET 4.x 및 ASP.NET Core 2를 포함하여 ASP.NET에서 ASP.NET Core로 마이그레이션하는 방법 설명"
+description: ASP.NET 4.x 및 ASP.NET Core 2를 포함하여 ASP.NET에서 ASP.NET Core로 마이그레이션하는 방법 설명
 manager: wpickett
 ms.author: riande
 ms.date: 07/27/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/index
-ms.openlocfilehash: 6350dc43a2b5e63083a9e707dff74bf6407a0c94
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 9df5519dd8a48fcc246616afcdbf77ef5407616b
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="migration-to-aspnet-core-including-aspnet-4x-aspnet-core-2"></a>ASP.NET 4.x, ASP.NET Core 2를 포함하여 ASP.NET Core로 마이그레이션
+# <a name="migration-to-aspnet-core"></a>ASP.NET Core로 마이그레이션
 
 ### <a name="aspnet-to-aspnet-core-1x"></a>ASP.NET에서 ASP.NET Core 1.x로
 *   [ASP.NET MVC에서 ASP.NET Core MVC로 마이그레이션](xref:migration/mvc)

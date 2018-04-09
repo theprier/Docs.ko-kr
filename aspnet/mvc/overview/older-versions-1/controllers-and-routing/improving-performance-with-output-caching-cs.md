@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/improving-performance-with-output-caching-cs
-title: "출력으로 성능 향상 캐싱 (C#) | Microsoft Docs"
+title: 출력으로 성능 향상 캐싱 (C#) | Microsoft Docs
 author: microsoft
-description: "이 자습서에서는 출력 캐싱을 사용 하 여 ASP.NET MVC 웹 응용 프로그램의 성능을 크게 개선할 수 있습니다 방법을 배웁니다. 있습니다..."
+description: 이 자습서에서는 출력 캐싱을 사용 하 여 ASP.NET MVC 웹 응용 프로그램의 성능을 크게 개선할 수 있습니다 방법을 배웁니다. 있습니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/27/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/improving-performance-with-output-caching-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 47f0aa976c5876991ccc2406fb8f7402e59ec556
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8958caa5a0ccad669ca861bed261102625be5cb6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="improving-performance-with-output-caching-c"></a>출력 캐싱 (C#)를 통해 성능 향상
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 이 자습서에서는 출력 캐싱을 사용 하 여 ASP.NET MVC 웹 응용 프로그램의 성능을 크게 개선할 수 있습니다 방법을 배웁니다. 하 여 동일한 콘텐츠 매번 작업을 호출 하는 새 사용자를 만들 수 없습니다 필요가 컨트롤러 작업에서 반환 된 결과 캐시 하는 방법을 배웁니다.
 
@@ -39,7 +39,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-csharp[Main](improving-performance-with-output-caching-cs/samples/sample1.cs)]
 
-베타 버전의 ASP.NET MVC 출력 캐싱을 사용할 수 없습니다와 같은 URL에 대 한 [http://www.MySite.com/](http://www.mysite.com/)합니다. 같은 URL을 입력 해야 하는 대신, [http://www.MySite.com/Home/Index](http://www.mysite.com/Home/Index)합니다. 
+베타 버전의 ASP.NET MVC 출력 캐싱을 사용할 수 없습니다와 같은 URL에 대 한 [ http://www.MySite.com/ ](http://www.mysite.com/)합니다. 같은 URL을 입력 해야 하는 대신, [ http://www.MySite.com/Home/Index ](http://www.mysite.com/Home/Index)합니다. 
 
 목록 1의 index () 작업의 출력은 10 초 동안 캐시 됩니다. 원하는 경우에 훨씬 더 긴 캐시 기간을 지정할 수 있습니다. 예를 들어 1 일에 대 한 컨트롤러 작업의 출력을 캐시 하려는 경우 지정할 수 있습니다 캐시 지속 시간이 86, 400 초 (60 초 \* 60 분 \* 24 시간).
 
@@ -47,7 +47,7 @@ ms.lasthandoff: 11/10/2017
 
 목록 1의 Home 컨트롤러 목록 2의 인덱스 뷰를 반환합니다. 이 보기에 대 한 특별 합니다. 인덱스 보기에는 단순히 현재 시간이 표시 됩니다 (그림 1 참조).
 
-**2 – Views\Home\Index.aspx 나열**
+**Listing 2 – Views\Home\Index.aspx**
 
 [!code-aspx[Main](improving-performance-with-output-caching-cs/samples/sample2.aspx)]
 
@@ -132,7 +132,7 @@ Details() 동작 "Id" 값을 갖는 VaryByParam 속성을 포함합니다. Id �
 
 VaryByParam 속성은 다음 값으로 설정할 수 있습니다.
 
-> \*= 폼 또는 쿼리 문자열 매개 변수 변경 될 때마다 서로 다른 캐시 된 버전을 만듭니다.
+> \* = 폼 또는 쿼리 문자열 매개 변수 변경 될 때마다 서로 다른 캐시 된 버전을 만듭니다.
 > 
 > none = 사용 안 함 다양 한 캐시 된 버전을 만들려면
 > 
@@ -155,7 +155,7 @@ VaryByParam 속성은 다음 값으로 설정할 수 있습니다.
 
 목록 7의 컨트롤러 Cache1Hour 프로필 [OutputCache] 특성으로 컨트롤러 작업에 적용 하는 방법을 보여 줍니다.
 
-**7-Controllers\ProfileController.cs 나열**
+**Listing 7 – Controllers\ProfileController.cs**
 
 [!code-csharp[Main](improving-performance-with-output-caching-cs/samples/sample7.cs)]
 
@@ -165,6 +165,6 @@ VaryByParam 속성은 다음 값으로 설정할 수 있습니다.
 
 출력 캐싱을 현저 하 게 ASP.NET MVC 응용 프로그램의 성능을 향상 하는 매우 쉬운 방법을 제공 합니다. 이 자습서에서는 컨트롤러 작업의 출력을 캐시할 [OutputCache] 특성을 사용 하는 방법을 배웠습니다. 예: 콘텐츠 캐시를 가져옵니다는 방식을 수정 하려면 기간과 VaryByParam 속성 [OutputCache] 특성의 속성을 수정 하는 방법을 알아보았습니다. 마지막으로, 웹 구성 파일에서 캐시 프로필을 정의 하는 방법을 배웠습니다.
 
->[!div class="step-by-step"]
-[이전](understanding-action-filters-cs.md)
-[다음](adding-dynamic-content-to-a-cached-page-cs.md)
+> [!div class="step-by-step"]
+> [이전](understanding-action-filters-cs.md)
+> [다음](adding-dynamic-content-to-a-cached-page-cs.md)

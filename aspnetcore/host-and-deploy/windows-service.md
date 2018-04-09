@@ -1,7 +1,7 @@
 ---
-title: "Windows 서비스에서 ASP.NET Core 호스트"
+title: Windows 서비스에서 ASP.NET Core 호스트
 author: tdykstra
-description: "Windows 서비스에서 ASP.NET Core 응용 프로그램을 호스트 하는 방법을 알아봅니다."
+description: Windows 서비스에서 ASP.NET Core 응용 프로그램을 호스트 하는 방법을 알아봅니다.
 manager: wpickett
 ms.author: tdykstra
 ms.custom: mvc
@@ -10,11 +10,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: f3455e47cfc06a4492dc4e34871b348184c6ecfb
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: b0b27f274de1ca88b20bf582127132527b553ce0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="host-aspnet-core-in-a-windows-service"></a>Windows 서비스에서 ASP.NET Core 호스트
 
@@ -40,25 +40,23 @@ IIS를 사용 하 여 실행 하는 것 하지 않고 Windows에서 ASP.NET Core
 
 1. NuGet 패키지 설치 [Microsoft.AspNetCore.Hosting.WindowsServices](https://www.nuget.org/packages/Microsoft.AspNetCore.Hosting.WindowsServices/)합니다.
 
-1. 다음과 같이 변경 `Program.Main`:
-  
+2. 다음과 같이 변경 `Program.Main`:
+
    * 호출 `host.RunAsService` 대신 `host.Run`합니다.
-  
+
    * 코드에서 호출 하는 경우 `UseContentRoot`, 경로 아닌 게시 위치를 사용 하 여 `Directory.GetCurrentDirectory()`합니다.
 
-   # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+   #### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
    [!code-csharp[](windows-service/sample/Program.cs?name=ServiceOnly&highlight=3-4,7,12)]
 
-   # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+   #### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
    [!code-csharp[](windows-service/sample_snapshot/Program.cs?name=ServiceOnly&highlight=3-4,8,14)]
 
-   ---
+   * * *
 
-1. 폴더에 앱을 게시 합니다. 사용 하 여 [dotnet 게시](/dotnet/articles/core/tools/dotnet-publish) 또는 [Visual Studio 게시 프로필](xref:host-and-deploy/visual-studio-publish-profiles) 폴더에 게시 하는 합니다.
+3. 폴더에 앱을 게시 합니다. 사용 하 여 [dotnet 게시](/dotnet/articles/core/tools/dotnet-publish) 또는 [Visual Studio 게시 프로필](xref:host-and-deploy/visual-studio-publish-profiles) 폴더에 게시 하는 합니다.
 
-1. 만들고 서비스를 시작 하 여 테스트 합니다.
+4. 만들고 서비스를 시작 하 여 테스트 합니다.
 
    사용 하려면 관리자 권한으로 명령 셸을 열고는 [sc.exe](https://technet.microsoft.com/library/bb490995) 명령줄 도구를 만들고 서비스를 시작 합니다. MyService 서비스에 이름이 인 경우에 게시 `c:\svc`, 되며 AspNetCoreService 명명 된, 명령:
 
@@ -79,16 +77,13 @@ IIS를 사용 하 여 실행 하는 것 하지 않고 Windows에서 ASP.NET Core
 
 테스트 하 고 호출 하는 코드를 추가 하는 일반적인 것 이므로 외부 서비스를 실행 하는 경우 디버깅할 쉽게 `RunAsService` 특정 조건 에서만. 예를 들어, 응용 프로그램으로 콘솔 응용 프로그램으로 실행할 수는 `--console` 명령줄 인수나는 디버거가 연결 됩니다.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 [!code-csharp[](windows-service/sample/Program.cs?name=ServiceOrConsole)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 [!code-csharp[](windows-service/sample_snapshot/Program.cs?name=ServiceOrConsole)]
 
----
-
+* * *
 ## <a name="handle-stopping-and-starting-events"></a>중지 및 시작 이벤트를 처리 합니다.
 
 처리 하기 `OnStarting`, `OnStarted`, 및 `OnStopping` 이벤트를 다음과 같이 변경 추가:
@@ -97,25 +92,26 @@ IIS를 사용 하 여 실행 하는 것 하지 않고 Windows에서 ASP.NET Core
 
    [!code-csharp[](windows-service/sample/CustomWebHostService.cs?name=NoLogging)]
 
-1. 에 대 한 확장 메서드를 만들어 `IWebHost` 사용자 지정을 통과 하 `WebHostService` 를 `ServiceBase.Run`:
+2. 에 대 한 확장 메서드를 만들어 `IWebHost` 사용자 지정을 통과 하 `WebHostService` 를 `ServiceBase.Run`:
 
    [!code-csharp[](windows-service/sample/WebHostServiceExtensions.cs?name=ExtensionsClass)]
 
-1. `Program.Main`, 새 확장 메서드를 호출 `RunAsCustomService`, 대신 `RunAsService`:
+3. `Program.Main`, 새 확장 메서드를 호출 `RunAsCustomService`, 대신 `RunAsService`:
 
-   # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+   #### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
    [!code-csharp[](windows-service/sample/Program.cs?name=HandleStopStart&highlight=24)]
 
-   # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+   #### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
    [!code-csharp[](windows-service/sample_snapshot/Program.cs?name=HandleStopStart&highlight=26)]
 
-   ---
-
+   * * *
 하는 경우 사용자 지정 `WebHostService` 코드 (예:로 거) 종속성 주입에서 서비스를 실행 하려면에서 가져올는 `Services` 속성 `IWebHost`:
 
 [!code-csharp[](windows-service/sample/CustomWebHostService.cs?name=Logging&highlight=7)]
+
+## <a name="proxy-server-and-load-balancer-scenarios"></a>프록시 서버 및 부하 분산 장치 시나리오
+
+서비스는 인터넷 이나 회사 네트워크의 요청과 상호 작용 하 고 프록시 뒤 또는 부하 분산 장치를 추가 구성이 필요할 수 있습니다. 자세한 내용은 참조 [프록시 서버를 사용 하 고 부하 분산 장치를 ASP.NET Core 구성](xref:host-and-deploy/proxy-load-balancer)합니다.
 
 ## <a name="acknowledgments"></a>감사의 글
 

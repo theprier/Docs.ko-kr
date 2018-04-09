@@ -2,21 +2,21 @@
 uid: whitepapers/mvc4-beta-release-notes
 title: ASP.NET MVC 4 | Microsoft Docs
 author: rick-anderson
-description: "이 문서에서는 Visual Studio 2010 용 ASP.NET MVC 4 베타 출시에 설명 합니다."
+description: 이 문서에서는 Visual Studio 2010 용 ASP.NET MVC 4 베타 출시에 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/09/2011
 ms.topic: article
 ms.assetid: 666407bb-81de-4319-89ba-0302c382a208
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/mvc4-beta-release-notes
 msc.type: content
-ms.openlocfilehash: d6797d1dbacff7503f74782d325ff5a9598970c0
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: d29f09d726e835c1eb1fc38e643a4bfe7f00f61c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-mvc-4"></a>ASP.NET MVC 4
 ====================
@@ -139,7 +139,7 @@ ASP.NET Web API에는 다음과 같은 기능에 대 한 지원이 포함 됩니
 - **코드 기반 구성:** 파일 정리 config를 그대로 두고, Web API 구성을 전적으로 코드를 통해 수행 됩니다.
 - **자체 호스팅:** 경로의 모든 기능 및 Web API의 기타 기능을 계속 사용 하면서 IIS 외에도 사용자가 소유한 프로세스에서 Web Api를 호스팅할 수 있습니다.
 
-ASP.NET Web API에 대 한 자세한 내용은 링크 참조 [https://www.asp.net/web-api](../web-api/index.md)합니다.
+ASP.NET Web API에 대 한 자세한 내용은 링크 참조 [ https://www.asp.net/web-api ](../web-api/index.md)합니다.
 
 <a id="_Toc317096198"></a>
 ### <a name="aspnet-single-page-application"></a>ASP.NET 단일 페이지 응용 프로그램
@@ -150,7 +150,7 @@ ASP.NET MVC 4는 이제 상호 작용이 중요 한 클라이언트 쪽 JavaScri
 - 단위 작업 및 DAL 지원에 대 한 추가 웹 API 구성 요소
 - 빠르게 시작 하려면 스 캐 폴딩으로는 MVC 프로젝트 템플릿
 
-ASP.NET MVC 4의 단일 페이지 응용 프로그램에 대 한 자세한 내용은 지원에 대 한 방문 하십시오 [https://www.asp.net/single-page-application](../single-page-application/index.md)합니다.
+ASP.NET MVC 4의 단일 페이지 응용 프로그램에 대 한 자세한 내용은 지원에 대 한 방문 하십시오 [ https://www.asp.net/single-page-application ](../single-page-application/index.md)합니다.
 
 <a id="_Toc303253808"></a>
 ### <a name="enhancements-to-default-project-templates"></a>기본 프로젝트 템플릿의 향상 된 기능
@@ -185,7 +185,7 @@ ASP.NET MVC 4의 단일 페이지 응용 프로그램에 대 한 자세한 내�
 
 새 디스플레이 모드 기능을 사용 하는 응용 프로그램은 요청을 수행 하는 브라우저에 따라 보기를 선택 합니다. 예를 들어 데스크톱 브라우저 홈 페이지를 요청 하는 경우 응용 프로그램 Views\Home\Index.cshtml 템플릿을 사용 될 수 있습니다. 모바일 브라우저 홈 페이지를 요청 하는 경우 응용 프로그램 Views\Home\Index.mobile.cshtml 서식 파일을 반환할 수 있습니다.
 
-특정 브라우저 종류에 대 한 레이아웃 및 부분을 재정의할 수도 있습니다. 예:
+특정 브라우저 종류에 대 한 레이아웃 및 부분을 재정의할 수도 있습니다. 예를 들어:
 
 - Views\Shared 폴더 모두에 포함 된 경우는 \_Layout.cshtml 및 \_Layout.mobile.cshtml 템플릿, 응용 프로그램 사용은 기본적으로 \_모바일 브라우저와 의요청을하는동안Layout.mobile.cshtml\_다른 요청 하는 동안 Layout.cshtml 합니다.
 - 둘 다 포함 된 폴더 \_MyPartial.cshtml 및 \_MyPartial.mobile.cshtml, 명령 @Html.Partial("\_MyPartial")은 렌더링 \_MyPartial.mobile.cshtml 모바일에서 요청 하는 동안 브라우저 및 \_다른 요청 하는 동안 MyPartial.cshtml 합니다.
@@ -219,7 +219,7 @@ JQuery Mobile 및 다음을 비롯 한 일부 도우미 파일을 설치 합니�
 
 방문자가 링크를 클릭 하는 경우 동일한 페이지의 데스크톱 버전으로 전환 하는.
 
-데스크톱 레이아웃 기본적으로 뷰 전환기를 포함 하지 않습니다, 방문자 모바일 모드를 얻을 수 있는 방법이 없습니다. 이 작업이 가능 하도록 다음 참조를 추가  *\_ViewSwitcher* 내 just 데스크톱 레이아웃에는  *&lt;본문&gt;*  요소:
+데스크톱 레이아웃 기본적으로 뷰 전환기를 포함 하지 않습니다, 방문자 모바일 모드를 얻을 수 있는 방법이 없습니다. 이 작업이 가능 하도록 다음 참조를 추가  *\_ViewSwitcher* 내 just 데스크톱 레이아웃에는 *&lt;본문&gt;* 요소:
 
 [!code-cshtml[Main](mvc4-beta-release-notes/samples/sample7.cshtml)]
 
@@ -280,9 +280,9 @@ ASP.NET MVC 4 베타의 Windows Azure SDK 1.5 2011 년 9 월 릴리스를 지원
     수정 된 web.config에서 어셈블리 바인딩 요소는 다음과 같아야 합니다.
 
     [!code-xml[Main](mvc4-beta-release-notes/samples/sample12.xml)]
-- **Visual Basic 프로젝트에서 "컨트롤러 추가" 항목 템플릿을 호출할 때 잘못 된 네임 스페이스를 생성 합니다. * * *에서 영역 내입니다.** Visual Basic을 사용 하는 ASP.NET MVC 프로젝트의 영역에는 컨트롤러를 추가 하면 항목 템플릿을 컨트롤러에 잘못 된 네임 스페이스를 삽입 합니다. 결과 컨트롤러에 조치를 탐색할 때 "파일을 찾을 수 없음" 오류입니다.  
+- <strong>호출 될 때 잘못 된 네임 스페이스를 생성 하는 Visual Basic 프로젝트에서 "컨트롤러 추가" 항목 템플릿을</strong><strong>에서 영역 내입니다.</strong> Visual Basic을 사용 하는 ASP.NET MVC 프로젝트의 영역에는 컨트롤러를 추가 하면 항목 템플릿을 컨트롤러에 잘못 된 네임 스페이스를 삽입 합니다. 결과 컨트롤러에 조치를 탐색할 때 "파일을 찾을 수 없음" 오류입니다.  
   
- 생성 된 네임 스페이스의 루트 네임 스페이스 후 모든 항목을 생략합니다. 예를 들어 생성 된 네임 스페이스는 *RootNamespace* 수 있지만 *RootNamespace.Areas.AreaName.Controllers* 합니다.
+  생성 된 네임 스페이스의 루트 네임 스페이스 후 모든 항목을 생략합니다. 예를 들어 생성 된 네임 스페이스는 *RootNamespace* 수 있지만 *RootNamespace.Areas.AreaName.Controllers* 합니다.
 - **Razor 뷰 엔진의 주요 변경 내용입니다.** Razor 구문 분석기에서 다시 작성의 일부로, 다음 형식에서 제거 된 *System.Web.Mvc.Razor*: 
 
     - *ModelSpan*
@@ -290,7 +290,7 @@ ASP.NET MVC 4 베타의 Windows Azure SDK 1.5 2011 년 9 월 릴리스를 지원
     - *MvcCSharpRazorCodeGenerator*
     - *MvcVBRazorCodeParser*
 
- 다음 방법도 제거 되었습니다. 
+  다음 방법도 제거 되었습니다. 
 
     - *MvcCSharpRazorCodeParser.ParseInheritsStatement(System.Web.Razor.Parser.CodeBlockInfo)*
     - *MvcWebPageRazorHost.DecorateCodeGenerator(System.Web.Razor.Generator.RazorCodeGenerator)*
@@ -305,15 +305,15 @@ ASP.NET MVC 4 베타의 Windows Azure SDK 1.5 2011 년 9 월 릴리스를 지원
 
     **필수 업데이트**
 
-    1. 루트 Web.config 파일에는 새로운 추가  *&lt;appSettings&gt;*  항목 키와 *webPages:Version* 값 *1.0.0.0*합니다.
+  1. 루트 Web.config 파일에는 새로운 추가 *&lt;appSettings&gt;* 항목 키와 *webPages:Version* 값 *1.0.0.0*합니다.
 
-        [!code-xml[Main](mvc4-beta-release-notes/samples/sample14.xml)]
-    2. 솔루션 탐색기에서 프로젝트 이름을 마우스 오른쪽 단추로 클릭 하 고 프로젝트 언로드를 선택 합니다. 그런 다음 이름을 다시 마우스 오른쪽 단추로 클릭 하 고 편집 선택 *ProjectName*.csproj 합니다.
-    3. 다음 어셈블리 참조를 찾습니다. 
+      [!code-xml[Main](mvc4-beta-release-notes/samples/sample14.xml)]
+  2. 솔루션 탐색기에서 프로젝트 이름을 마우스 오른쪽 단추로 클릭 하 고 프로젝트 언로드를 선택 합니다. 그런 다음 이름을 다시 마우스 오른쪽 단추로 클릭 하 고 편집 선택 *ProjectName*.csproj 합니다.
+  3. 다음 어셈블리 참조를 찾습니다. 
 
-        [!code-xml[Main](mvc4-beta-release-notes/samples/sample15.xml)]
+      [!code-xml[Main](mvc4-beta-release-notes/samples/sample15.xml)]
 
-        다음으로 바꾸세요.
+      다음으로 바꾸세요.
 
-        [!code-xml[Main](mvc4-beta-release-notes/samples/sample16.xml)]
-    4. 변경 내용을 저장, 하면 편집 된 다음 마우스 오른쪽 단추로 클릭 프로젝트 다시 로드를 선택 하 고 프로젝트 (.csproj) 파일을 닫습니다.
+      [!code-xml[Main](mvc4-beta-release-notes/samples/sample16.xml)]
+  4. 변경 내용을 저장, 하면 편집 된 다음 마우스 오른쪽 단추로 클릭 프로젝트 다시 로드를 선택 하 고 프로젝트 (.csproj) 파일을 닫습니다.

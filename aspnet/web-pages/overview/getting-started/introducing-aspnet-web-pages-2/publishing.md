@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/publishing
-title: "ASP.NET 웹 페이지를 소개-WebMatrix를 사용 하 여 사이트를 게시 | Microsoft Docs"
+title: ASP.NET 웹 페이지를 소개-WebMatrix를 사용 하 여 사이트를 게시 | Microsoft Docs
 author: tfitzmac
-description: "이 자습서에서 Microsoft WebMatrix 및 ASP.NET 웹 페이지를 소개 하는 자습서 집합입니다. T 사이트를 게시 하는 방법에 설명..."
+description: 이 자습서에서 Microsoft WebMatrix 및 ASP.NET 웹 페이지를 소개 하는 자습서 집합입니다. T 사이트를 게시 하는 방법에 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/28/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/publishing
 msc.type: authoredcontent
-ms.openlocfilehash: 1e718c92a2f94df50fcf7af6859917746a4982ac
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7b9bffac5cc72e1bea3f1b211cc03be2ccb8e499
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---publishing-a-site-by-using-webmatrix"></a>WebMatrix를 사용 하 여 사이트를 게시 하는 ASP.NET 웹 페이지-소개
 ====================
@@ -32,7 +32,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="about-publishing-your-site"></a>사이트에 게시 하는 방법에 대 한
 
-지금 까지는 페이지 테스트를 비롯 하 여 로컬 컴퓨터에서 모든 작업 작업을 수행 하면 됩니다. 실행 하 여*.cshtml* 페이지를 사용한 적이 있다면 WebMatrix, IIS Express 즉에 기본 제공 되는 웹 서버입니다. 하지만 물론 온다는 점만 다릅니다 만든 사이트를 볼 수 사람이 없습니다. 사용자 사이트와 함께 작업을 수 있게 하려면 인터넷에 게시 해야 합니다.
+지금 까지는 페이지 테스트를 비롯 하 여 로컬 컴퓨터에서 모든 작업 작업을 수행 하면 됩니다. 실행 하 여<em>.cshtml</em> 페이지를 사용한 적이 있다면 WebMatrix, IIS Express 즉에 기본 제공 되는 웹 서버입니다. 하지만 물론 온다는 점만 다릅니다 만든 사이트를 볼 수 사람이 없습니다. 사용자 사이트와 함께 작업을 수 있게 하려면 인터넷에 게시 해야 합니다.
 
 게시 포함 된 계정을 보유 해야 한다는 의미는 공용 웹 서버에 대 한 액세스를 이미 있는 경우가 아니면는 *클라우드 플랫폼* 또는 *호스팅 공급자*합니다. Microsoft Azure 같은 클라우드 플랫폼 응용 프로그램에 대 한 주문형 인프라를 제공합니다. 호스팅 공급자는 공개적으로 액세스할 수 있는 웹 서버를 소유 하 고 있습니다 됩니다 대 여 회사 사이트에 대 한 공간. 호스팅 계획 한 달에 몇 달러 실행 (또는 심지어 무료) 한 달 대규모 상용 웹 사이트에 대 한 달러의 많은 수백 소규모 사이트입니다.
 
@@ -53,7 +53,7 @@ ms.lasthandoff: 11/10/2017
 <a id="defaultpage"></a>
 ## <a name="setting-up-the-default-page"></a>기본 페이지 설정
 
-사용자가 웹 사이트에 대 한 기본 주소를 탐색 하는 경우 사이트에 대 한 기본 페이지가 사용자에 게 표시 됩니다. 예를 들어 Default.htm www.contoso.com에는 사이트에 대 한 기본 페이지로 설정 되 면 다음로 이동 **www.contoso.com** 로 이동 하는 것과 같습니다 **www.contoso.com/Default.htm**합니다.
+사용자가 웹 사이트에 대 한 기본 주소를 탐색 하는 경우 사이트에 대 한 기본 페이지가 사용자에 게 표시 됩니다. 예를 들어 Default.htm www.contoso.com에는 사이트에 대 한 기본 페이지로 설정 되 면 다음로 이동 <strong>www.contoso.com</strong> 로 이동 하는 것과 같습니다 <strong>www.contoso.com/Default.htm</strong>합니다.
 
 사이트에서 사용 하는 현재 **Default.cshtml** 기본 페이지로 합니다. 이 페이지는 사용자의 기본 페이지에 대 한 세밀 하 게 하지만이 자습서에서는 추가 하지 않은 모든 콘텐츠 해당 페이지에는 빈 페이지를 표시 하도록 합니다. Default.cshtml 열고 콘텐츠를 다음 코드로 바꿉니다.
 
@@ -215,9 +215,9 @@ ASP.NET을 지 원하는 호스팅 공급자를 나열 하는 Microsoft 사이�
 > 원격 편집 및 다운로드 원격 기능을 WebMatrix 여기에 대 한 더 설명 하지 않습니다. 여러 사용자가 작업 서로 다른 컴퓨터에 동일한 사이트에서 수행 해야 하는 경우 매우 유용 합니다. 자세한 내용은 참조 [게시 및 WebMatrix 2 베타와 원격 사이트 편집](https://go.microsoft.com/fwlink/?LinkId=251591)합니다.
 
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 - [ASP.NET WebMatrix ASP.NET 웹 페이지 포럼](https://forums.asp.net/1224.aspx/1?WebMatrix+and+ASP+NET+Web+Pages), 게시 하는 좋은 장소 질문 및 답변 합니다.
 
->[!div class="step-by-step"]
-[이전](layouts.md)
+> [!div class="step-by-step"]
+> [이전](layouts.md)

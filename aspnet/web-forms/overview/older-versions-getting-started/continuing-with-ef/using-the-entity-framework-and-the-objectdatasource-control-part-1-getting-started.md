@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started
-title: "1 부 Entity Framework 4.0 및 ObjectDataSource 컨트롤을 사용 하 여,: 시작 | Microsoft Docs"
+title: '1 부 Entity Framework 4.0 및 ObjectDataSource 컨트롤을 사용 하 여,: 시작 | Microsoft Docs'
 author: tdykstra
-description: "이 자습서 시리즈의 Entity Framework 자습서 시리즈 시작 하기에 의해 만들어진 Contoso 대학 웹 응용 프로그램 기반으로 합니다. 경우 yo..."
+description: 이 자습서 시리즈의 Entity Framework 자습서 시리즈 시작 하기에 의해 만들어진 Contoso 대학 웹 응용 프로그램 기반으로 합니다. 경우 yo...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/26/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started
 msc.type: authoredcontent
-ms.openlocfilehash: 83fe815af9030aee10a5204718b00c79925e9126
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 6584767418c898913777b3b1549a816679c8430d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-1-getting-started"></a>1 부 Entity Framework 4.0 및 ObjectDataSource 컨트롤을 사용 하 여,: 시작 하기
 ====================
@@ -24,7 +24,7 @@ ms.lasthandoff: 01/24/2018
 
 > 에 의해 만들어진 Contoso 대학 웹 응용 프로그램을 기반으로 하는이 자습서 시리즈의 [Entity Framework 4.0이 있는 시작](../getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1.md) 자습서 시리즈 합니다. 이전 자습서를 완료 하지 않은 경우이 자습서에 대 한 시작 점으로 하면 [응용 프로그램을 다운로드](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a) 만들어졌을 것입니다. 수도 있습니다 [응용 프로그램을 다운로드](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa) 완료 하는 자습서 시리즈에서 만들어진 합니다.
 > 
-> Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 4.0 및 Visual Studio 2010을 사용 하 여 ASP.NET Web Forms 응용 프로그램을 만드는 방법을 보여 줍니다. 샘플 응용 프로그램은 가상의 Contoso 대학교에 대 한 웹 사이트입니다. 학생 진입, 과정 만들기 및 강사 할당 등의 기능을 포함합니다.
+> Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 4.0 및 Visual Studio 2010을 사용 하 여 ASP.NET Web Forms 응용 프로그램을 만드는 방법을 보여 줍니다. 샘플 응용 프로그램은 가상의 Contoso 대학교에 대 한 웹 사이트입니다. 학생 입학, 강좌 개설 및 강사 할당과 같은 기능이 있습니다.
 > 
 > 이 자습서는 C#의 예를 보여줍니다. [다운로드 가능한 샘플](https://code.msdn.microsoft.com/ASPNET-Web-Forms-6c7197aa) C# 및 Visual Basic 코드를 포함 합니다.
 > 
@@ -311,7 +311,7 @@ Visual Studio에서 만든 Contoso 대학 웹 응용 프로그램을 엽니다�
 사용 하 여는 *DepartmentsAdd.aspx* 실행 한 다음 새 부서를 추가 하려면 페이지는 *Departments.aspx* 페이지 클릭 하 여 **편집** 추가한 행에 있습니다.
 
 > [!NOTE]
-> 추가 하지 않은 행을 편집할 수 없습니다 (즉, 데이터베이스에 이미 있었던), 데이터베이스;에 잘못 된 데이터로 인해 데이터베이스를 사용 하 여 만든 행에 대 한 관리자 학생 됩니다. 와 같은 오류가 보고 된 오류 페이지를 받아볼 수 그 중 하나를 편집 하려고 하면`'InstructorsDropDownList' has a SelectedValue which is invalid because it does not exist in the list of items.`
+> 추가 하지 않은 행을 편집할 수 없습니다 (즉, 데이터베이스에 이미 있었던), 데이터베이스;에 잘못 된 데이터로 인해 데이터베이스를 사용 하 여 만든 행에 대 한 관리자 학생 됩니다. 와 같은 오류가 보고 된 오류 페이지를 받아볼 수 그 중 하나를 편집 하려고 하면 `'InstructorsDropDownList' has a SelectedValue which is invalid because it does not exist in the list of items.`
 
 
 [![Image10](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image36.png)](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started/_static/image35.png)
@@ -324,5 +324,5 @@ Visual Studio에서 만든 Contoso 대학 웹 응용 프로그램을 엽니다�
 
 이 사용 하 여 소개 작업이 완료 되는 `ObjectDataSource` 컨트롤에 대 한 기본적인 CRUD (만들기, 읽기, 업데이트, 삭제) Entity Framework를 사용 하 여 작업 합니다. 간단한 n 계층 응용 프로그램을 작성할 하지만 비즈니스 논리 계층은 자동화 된 단위 테스트 복잡 하 게 하는 데이터 액세스 계층에 여전히 밀접 하 게 결합 됩니다. 다음 자습서에서는 단위 테스트가 용이 하도록 리포지토리 패턴을 구현 하는 방법을 볼 수 있습니다.
 
->[!div class="step-by-step"]
-[다음](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)
+> [!div class="step-by-step"]
+> [다음](using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests.md)

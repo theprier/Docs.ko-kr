@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/numericupdown/creating-a-numeric-up-down-control-with-a-web-service-backend-vb
-title: "웹 서비스 백 엔드 (VB)를 사용 하 여 숫자 위로/아래로 컨트롤 만들기 | Microsoft Docs"
+title: 웹 서비스 백 엔드 (VB)를 사용 하 여 숫자 위로/아래로 컨트롤 만들기 | Microsoft Docs
 author: wenz
-description: "확인란에 값을 입력 하는 사용자를 게 하지 않고 숫자 위로/아래로 컨트롤 (Windows 및 다른 운영 체제에 있음)을 더 많은 c 중일 중..."
+description: 확인란에 값을 입력 하는 사용자를 게 하지 않고 숫자 위로/아래로 컨트롤 (Windows 및 다른 운영 체제에 있음)을 더 많은 c 중일 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/numericupdown/creating-a-numeric-up-down-control-with-a-web-service-backend-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5ceefd6c18761c2abe3f3a4298d340642a0951d6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 690fd89c552407ec5d77419aae2488e4832efe44
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-numeric-updown-control-with-a-web-service-backend-vb"></a>웹 서비스 백 엔드 (VB)를 사용 하 여 숫자 위로/아래로 컨트롤 만들기
 ====================
@@ -45,10 +45,10 @@ ASP.NET AJAX 컨트롤 Toolkit에 포함 되어는 `NumericUpDown` extender를 �
 
 마지막으로 새 ASP.NET 페이지를 만듭니다. 필요한 일반적으로 `ScriptManager` 컨트롤은 `TextBox` 제어 및 `NumericUpDownExtender` 컨트롤입니다. 후자의 경우 웹 서비스 정보를 제공 해야 합니다.
 
-- `ServiceDownMethod`웹 메서드 또는 메서드 페이지를 아래로의 이름
-- `ServiceDownPath`아래쪽 서비스 메서드로; 웹 서비스에 대 한 경로 페이지 메서드를 사용 하는 경우 생략
-- `ServiceUpMethod`위쪽의 이름을 웹 메서드 또는 메서드를 페이지
-- `ServiceUpPath`최신 서비스 메서드로; 웹 서비스에 대 한 경로 페이지 메서드를 사용 하는 경우 생략
+- `ServiceDownMethod` 웹 메서드 또는 메서드 페이지를 아래로의 이름
+- `ServiceDownPath` 아래쪽 서비스 메서드로; 웹 서비스에 대 한 경로 페이지 메서드를 사용 하는 경우 생략
+- `ServiceUpMethod` 위쪽의 이름을 웹 메서드 또는 메서드를 페이지
+- `ServiceUpPath` 최신 서비스 메서드로; 웹 서비스에 대 한 경로 페이지 메서드를 사용 하는 경우 생략
 
 페이지에 대 한 전체 태그는 다음과 같습니다.
 
@@ -61,5 +61,5 @@ ASP.NET AJAX 컨트롤 Toolkit에 포함 되어는 `NumericUpDown` extender를 �
 
 2의 거듭제곱 번호만 표시 ([전체 크기 이미지를 보려면 클릭](creating-a-numeric-up-down-control-with-a-web-service-backend-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[이전](creating-a-numeric-up-down-control-with-a-web-service-backend-cs.md)
+> [!div class="step-by-step"]
+> [이전](creating-a-numeric-up-down-control-with-a-web-service-backend-cs.md)

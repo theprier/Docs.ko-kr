@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-configuring-project-properties-4-of-12
-title: "SQL Server Compact Visual Studio 또는 Visual Web Developer를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: 프로젝트 속성 구성-4/12 | Microsoft Docs"
+title: 'SQL Server Compact Visual Studio 또는 Visual Web Developer를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: 프로젝트 속성 구성-4/12 | Microsoft Docs'
 author: tdykstra
-description: "이 일련의 자습서 배포 하는 방법을 보여 줍니다. (게시) ASP.NET Visual Stu를 사용 하 여 SQL Server Compact 데이터베이스를 포함 하는 웹 응용 프로그램 프로젝트..."
+description: 이 일련의 자습서 배포 하는 방법을 보여 줍니다. (게시) ASP.NET Visual Stu를 사용 하 여 SQL Server Compact 데이터베이스를 포함 하는 웹 응용 프로그램 프로젝트...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/17/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-configuring-project-properties-4-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 5632b801586c13084f887c4c414fc8686731094c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b8352c1832ffc79db93b6324dd673afaff6b0d74
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-configuring-project-properties---4-of-12"></a>SQL Server Compact Visual Studio 또는 Visual Web Developer를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: 프로젝트 속성 구성-4/12
 ====================
@@ -70,6 +70,6 @@ ms.lasthandoff: 01/24/2018
 
 이제 배포 설치 작업을 모두 완료 했습니다. 다음 자습서에서는 Contoso 대학 사이트 테스트 환경에 배포 하 고 테스트 합니다.
 
->[!div class="step-by-step"]
-[이전](deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12.md)
-[다음](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12.md)
+> [!div class="step-by-step"]
+> [이전](deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12.md)
+> [다음](deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12.md)

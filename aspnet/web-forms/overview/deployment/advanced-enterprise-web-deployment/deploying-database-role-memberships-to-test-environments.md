@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/deploying-database-role-memberships-to-test-environments
-title: "데이터베이스 역할 멤버 자격이 테스트 환경에 배포 | Microsoft Docs"
+title: 데이터베이스 역할 멤버 자격이 테스트 환경에 배포 | Microsoft Docs
 author: jrjlee
-description: "이 항목에서는 테스트 환경에 솔루션 배포의 일부로 데이터베이스 역할에 사용자 계정을 추가 하는 방법을 설명 합니다. 배포 하는 경우 포함 하는 솔루션 중..."
+description: 이 항목에서는 테스트 환경에 솔루션 배포의 일부로 데이터베이스 역할에 사용자 계정을 추가 하는 방법을 설명 합니다. 배포 하는 경우 포함 하는 솔루션 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/deploying-database-role-memberships-to-test-environments
 msc.type: authoredcontent
-ms.openlocfilehash: 226c28622f76e866fba1fc33cf9b9b7a01e5295b
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 4f635153213b0695d7d4b64d09adefaf8ee8e892
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-database-role-memberships-to-test-environments"></a>데이터베이스 역할 멤버 자격이 테스트 환경에 배포
 ====================
@@ -37,9 +37,9 @@ ms.lasthandoff: 03/15/2018
 > 핵심 요소는이 작업 해야 함을 조건부 대상 환경에 따라입니다. 준비 또는 프로덕션 환경에 배포 하는 경우 작업을 건너 뛰 려 합니다. 개발자에 게 배포 하는 하거나 테스트 환경을 추가 개입 없이 역할 멤버 자격을 배포 하려면. 이 항목에서는 한 가지 방법은 이러한 문제를 해결 하기 위해 사용할 수 있습니다.
 
 
-이 항목의 Fabrikam, inc. 라는 가상 회사의 엔터프라이즈 배포 요구 사항을 바탕으로 하는 자습서 시리즈의 일부를 형성 합니다. 이 자습서 시리즈 샘플 솔루션 & #x 2014;을 사용 하는 [Contact Manager 솔루션](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; 현실적인 수준의 복잡성을 Windows ASP.NET MVC 3 응용 프로그램을 포함 하 여 웹 응용 프로그램을 나타내기 위해 Communication Foundation (WCF) 서비스 및 데이터베이스 프로젝트를 제공 합니다.
+이 항목의 Fabrikam, inc. 라는 가상 회사의 엔터프라이즈 배포 요구 사항을 바탕으로 하는 자습서 시리즈의 일부를 형성 합니다. 샘플 솔루션을 사용 하는 자습서 시리즈가&#x2014;는 [Contact Manager 솔루션](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;현실적인 수준의 복잡성, Windows Communication ASP.NET MVC 3 응용 프로그램을 포함 하 여 웹 응용 프로그램을 나타내기 위해 WCF (foundation) 서비스 및 데이터베이스 프로젝트.
 
-이 자습서의 핵심에는 배포 방법에 설명 된 분할 프로젝트 파일 접근 방식에 따라 [프로젝트 파일 이해](../web-deployment-in-the-enterprise/understanding-the-project-file.md), 빌드 프로세스에 의해 제어 되는 두 프로젝트에 파일 & #x 2014; 포함 환경 관련 빌드 및 배포 설정을 포함 하는 하나 및 모든 대상 환경에 적용 되는 지침을 빌드하십시오. 빌드 시 환경 관련 프로젝트 파일은 빌드 지침의 전체 집합을 구성 하기 위해 환경을 알 수 없는 프로젝트 파일에 병합 됩니다.
+이 자습서의 핵심에는 배포 방법에 설명 된 분할 프로젝트 파일 접근 방식에 따라 [프로젝트 파일 이해](../web-deployment-in-the-enterprise/understanding-the-project-file.md), 두 개의 프로젝트 파일에 빌드 프로세스에 의해 제어 되는&#x2014;포함 환경 관련 빌드 및 배포 설정을 포함 하는 하나 및 모든 대상 환경에 적용 되는 지침을 빌드하십시오. 빌드 시 환경 관련 프로젝트 파일은 빌드 지침의 전체 집합을 구성 하기 위해 환경을 알 수 없는 프로젝트 파일에 병합 됩니다.
 
 ## <a name="task-overview"></a>작업 개요
 
@@ -94,7 +94,7 @@ ms.lasthandoff: 03/15/2018
 
 - 대상 데이터베이스의 역할 멤버 자격을 변경 하기 전에 있어야 합니다. 이 스크립트를 실행 해야 하는 이와 같이 *후* 데이터베이스 배포 합니다.
 - 스크립트를 테스트 환경에만 실행 하는 조건을 포함 해야 합니다.
-- 배포 "경우 어떻게" & #x 2014; 실행 하는 경우 즉, 배포 스크립트를 생성 하지만 이러한 & #x 2014; 실제로 실행 하는 경우 있습니다 안 SQL 스크립트를 실행 합니다.
+- "경우 어떻게" 배포를 실행 하는 경우&#x2014;즉, 배포 스크립트를 생성 하지만 실제로 실행 중인 하는 경우&#x2014;SQL 스크립트를 실행 하지 않아야 합니다.
 
 설명 하는 분할 프로젝트 파일 방식은 사용 중인 경우 [프로젝트 파일 이해](../web-deployment-in-the-enterprise/understanding-the-project-file.md), Contact Manager 샘플 솔루션에서 볼 수 있듯이, 다음과 같은 SQL 스크립트에 대 한 작성 지침을 분할할 수 있습니다.
 
@@ -132,6 +132,6 @@ ms.lasthandoff: 03/15/2018
 
 데이터베이스 프로젝트를 배포 하 VSDBCMD 사용에 대 한 자세한 내용은 참조 하십시오. [데이터베이스 프로젝트 배포](../web-deployment-in-the-enterprise/deploying-database-projects.md)합니다. 사용자 지정 된 다른 대상 환경에 대 한 배포 데이터베이스에 대 한 지침을 참조 하십시오. [여러 환경에 대 한 사용자 지정 데이터베이스 배포](customizing-database-deployments-for-multiple-environments.md)합니다. 배포 프로세스 제어 기능을 사용자 지정 MSBuild 프로젝트 파일 사용에 대 한 자세한 내용은 참조 하십시오. [프로젝트 파일 이해](../web-deployment-in-the-enterprise/understanding-the-project-file.md) 및 [빌드 프로세스를 이해](../web-deployment-in-the-enterprise/understanding-the-build-process.md)합니다. Sqlcmd 명령줄 옵션에 대 한 자세한 내용은 참조 하십시오. [sqlcmd 유틸리티](https://msdn.microsoft.com/library/ms162773.aspx)합니다.
 
->[!div class="step-by-step"]
-[이전](customizing-database-deployments-for-multiple-environments.md)
-[다음](deploying-membership-databases-to-enterprise-environments.md)
+> [!div class="step-by-step"]
+> [이전](customizing-database-deployments-for-multiple-environments.md)
+> [다음](deploying-membership-databases-to-enterprise-environments.md)

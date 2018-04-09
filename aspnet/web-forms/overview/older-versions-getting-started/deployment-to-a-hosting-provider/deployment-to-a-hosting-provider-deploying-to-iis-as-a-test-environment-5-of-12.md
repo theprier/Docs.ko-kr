@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12
-title: "SQL Server Compact Visual Studio 또는 Visual Web Developer를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: iis 5 / 12-테스트 환경으로 배포 | Microsoft Docs"
+title: 'SQL Server Compact Visual Studio 또는 Visual Web Developer를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: iis 5 / 12-테스트 환경으로 배포 | Microsoft Docs'
 author: tdykstra
-description: "이 일련의 자습서 배포 하는 방법을 보여 줍니다. (게시) ASP.NET Visual Stu를 사용 하 여 SQL Server Compact 데이터베이스를 포함 하는 웹 응용 프로그램 프로젝트..."
+description: 이 일련의 자습서 배포 하는 방법을 보여 줍니다. (게시) ASP.NET Visual Stu를 사용 하 여 SQL Server Compact 데이터베이스를 포함 하는 웹 응용 프로그램 프로젝트...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/17/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: a7995844ee6ed19efa130c4f6c019214d6652ea7
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 16050455c161c8ced1f954bfce9c2d9a44c522b4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-to-iis-as-a-test-environment---5-of-12"></a>SQL Server Compact Visual Studio 또는 Visual Web Developer를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: iis 5 / 12-테스트 환경으로 배포
 ====================
@@ -250,6 +250,6 @@ Visual Studio에서 IIS 또는 IIS Express를 실행 하는 방법에 대 한 �
 
 어떤 문제에 대 한 정보는 보통 신뢰 수준에서 응용 프로그램이 실행 될 때 발생할 수 있습니다, 참조 [보통 신뢰에서 ASP.NET 응용 프로그램 호스팅](http://www.4guysfromrolla.com/articles/100307-1.aspx) Rolla 사이트에서 4 Guy에 있습니다.
 
->[!div class="step-by-step"]
-[이전](deployment-to-a-hosting-provider-configuring-project-properties-4-of-12.md)
-[다음](deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12.md)
+> [!div class="step-by-step"]
+> [이전](deployment-to-a-hosting-provider-configuring-project-properties-4-of-12.md)
+> [다음](deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12.md)

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/examining-the-edit-methods-and-edit-view
-title: "편집 메서드 및 편집 보기 (C#) 검사 | Microsoft Docs"
+title: 편집 메서드 및 편집 보기 (C#) 검사 | Microsoft Docs
 author: Rick-Anderson
-description: "이 자습서에서는 Microsoft Visual Web Developer 2010 Express 서비스 팩 1, 즉를 사용 하 여 ASP.NET MVC 웹 응용 프로그램을 구축 하는 기초 설명..."
+description: 이 자습서에서는 Microsoft Visual Web Developer 2010 Express 서비스 팩 1, 즉를 사용 하 여 ASP.NET MVC 웹 응용 프로그램을 구축 하는 기초 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: 137254be69344f31e65e1b4d1318a107ff9d6d47
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 581138bb25b95ef9002a2bd97d1fa28797d96bfa
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="examining-the-edit-methods-and-edit-view-c"></a>편집 메서드 및 편집 보기 (C#) 검사
 ====================
@@ -220,6 +220,6 @@ ASP.NET 프레임 워크 모델 바인더는 게시 된 양식 값을 만들고�
 
 이 섹션의 CRUD 작업 메서드 및 프레임 워크에 의해 생성 된 뷰를 검사 합니다. 검색 작업 메서드와 뷰 사용자가 영화 제목 및 장르 하 여 검색할 수 있도록 만들었습니다. 다음 섹션에서 살펴보겠습니다 속성을 추가 하는 방법의 `Movie` 모델 및 테스트 데이터베이스에서 자동으로 만듭니다는 이니셜라이저를 추가 하는 방법입니다.
 
->[!div class="step-by-step"]
-[이전](accessing-your-models-data-from-a-controller.md)
-[다음](adding-a-new-field.md)
+> [!div class="step-by-step"]
+> [이전](accessing-your-models-data-from-a-controller.md)
+> [다음](adding-a-new-field.md)

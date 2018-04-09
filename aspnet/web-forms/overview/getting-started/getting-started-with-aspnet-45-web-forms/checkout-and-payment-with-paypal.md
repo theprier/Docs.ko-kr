@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/checkout-and-payment-with-paypal
-title: "체크 아웃 및 된 PayPal 결제 | Microsoft Docs"
+title: 체크 아웃 및 된 PayPal 결제 | Microsoft Docs
 author: Erikre
-description: "이 자습서 시리즈 것에 대 한 ASP.NET 4.5 및 Microsoft Visual Studio Express 2013을 사용 하 여 ASP.NET Web Forms 응용 프로그램을 구축 하는 기초 알려 드리겠습니다 중..."
+description: 이 자습서 시리즈 것에 대 한 ASP.NET 4.5 및 Microsoft Visual Studio Express 2013을 사용 하 여 ASP.NET Web Forms 응용 프로그램을 구축 하는 기초 알려 드리겠습니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/checkout-and-payment-with-paypal
 msc.type: authoredcontent
-ms.openlocfilehash: dd975850a3ed3e7b1746d5123572065675a88656
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0dba613594686a28b82bc6d7701cda6e24b82e2e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="checkout-and-payment-with-paypal"></a>체크 아웃 및 PayPal 지불
 ====================
@@ -55,7 +55,7 @@ ms.lasthandoff: 11/10/2017
 이 자습서 시리즈의 앞부분에 나오는 범주, 제품에 대 한 스키마를 정의 하 고 쇼핑 카트에 항목을 만들어는 `Category`, `Product`, 및 `CartItem` 에 있는 클래스는 *모델* 폴더입니다. 이제 제품 주문 및 주문 세부 정보에 대 한 스키마를 정의 하는 두 개의 새 클래스를 추가 합니다.
 
 1. 에 **모델** 폴더 라는 새 클래스를 추가 *Order.cs*합니다.   
- 새 클래스 파일은 편집기에 표시 됩니다.
+   새 클래스 파일은 편집기에 표시 됩니다.
 2. 기본 코드를 다음으로 바꿉니다.   
 
     [!code-csharp[Main](checkout-and-payment-with-paypal/samples/sample1.cs)]
@@ -107,7 +107,7 @@ Wingtip Toys 샘플 응용 프로그램에서는 익명 사용자가 검토 하 
 추가 하 여 *Web.config* 파일을 여 *체크 아웃* 폴더에 포함 된 모든 페이지에 액세스를 제한할 수 있는 폴더입니다.
 
 1. 마우스 오른쪽 단추로 클릭는 *체크 아웃* 폴더와 선택 **추가**  - &gt; **새 항목**합니다.  
- **새 항목 추가** 대화 상자가 표시됩니다.
+   **새 항목 추가** 대화 상자가 표시됩니다.
 2. 선택 된 **Visual C#**  - &gt; **웹** 왼쪽의 템플릿 그룹입니다. 그런 다음, 가운데 창에서 선택 **웹 구성 파일**의 기본 이름을 그대로 *Web.config*를 선택한 후 **추가**합니다.
 3. 기존 XML에 콘텐츠를 교체는 *Web.config* 다음 파일:  
 
@@ -133,7 +133,7 @@ ASP.NET 구성 계층을 따르는지를 확인 해야 여기서 각 *Web.config
 6. 변경 된 **프로젝트 Url** 사용 하는 **SSL URL** 이전에 저장 합니다.   
     ![프로젝트 웹 속성](checkout-and-payment-with-paypal/_static/image5.png)
 7. 키를 눌러 페이지를 저장 **CTRL + S**합니다.
-8. 키를 눌러 **Ctrl + f 5** 응용 프로그램을 실행 합니다. Visual Studio에는 SSL 경고를 방지할 수 있도록 하는 옵션이 표시 됩니다.
+8. **Ctrl+F5**를 눌러 응용 프로그램을 실행합니다. Visual Studio에는 SSL 경고를 방지할 수 있도록 하는 옵션이 표시 됩니다.
 9. 클릭 **예** IIS Express SSL 인증서를 신뢰 하 여 계속 합니다.   
     ![IIS Express SSL 인증서 정보](checkout-and-payment-with-paypal/_static/image6.png)  
  보안 경고가 표시 됩니다.
@@ -162,32 +162,32 @@ ASP.NET Web Forms 멤버 자격 및 인증에 대 한 향상 된 옵션을 제�
 
     [!code-csharp[Main](checkout-and-payment-with-paypal/samples/sample5.cs)]
 3. 탐색 하 고 [Google 개발자 콘솔](https://console.developers.google.com/)합니다. Google 개발자 전자 메일 계정 (gmail.com)를 사용 하 여 로그인을 해야 합니다. Google 계정 경우 선택 된 **계정 만들기** 링크 합니다.   
- 다음으로 표시 됩니다는 **Google 개발자 콘솔**합니다.   
+   다음으로 표시 됩니다는 **Google 개발자 콘솔**합니다.   
     ![Google 개발자 콘솔](checkout-and-payment-with-paypal/_static/image8.png)
 4. 클릭는 **프로젝트 만들기** 단추 하 고 프로젝트 이름 및 ID (기본 값을 사용할 수)를 입력 합니다. 클릭는 **계약 확인란** 및 **만들기** 단추입니다.  
 
     ![Google-새 프로젝트](checkout-and-payment-with-paypal/_static/image9.png)
 
- 몇 초 후에 새 프로젝트가 만들어집니다 및 브라우저가 새 프로젝트 페이지에 표시 됩니다.
+   몇 초 후에 새 프로젝트가 만들어집니다 및 브라우저가 새 프로젝트 페이지에 표시 됩니다.
 5. 왼쪽된 탭에서 클릭 **Api &amp; auth**, 클릭 하 고 **자격 증명**합니다.
 6. 클릭는 **새 클라이언트 ID 만들기** 아래 **OAuth**합니다.   
- **클라이언트 ID 만들기** 대화 상자가 표시 됩니다.   
+   **클라이언트 ID 만들기** 대화 상자가 표시 됩니다.   
     ![Google-클라이언트 ID 만들기](checkout-and-payment-with-paypal/_static/image10.png)
 7. 에 **클라이언트 ID 만들기** 대화 상자에서 기본값을 그대로 두고 **웹 응용 프로그램** 응용 프로그램 종류에 대 한 합니다.
 8. 설정의 **자바 스크립트 원본** 이 자습서의 앞부분에서 사용한 SSL URL에 (`https://localhost:44300/` 다른 SSL 프로젝트 생성 하지 않는 한).   
- 이 URL에는 응용 프로그램에 대 한 원본입니다. 이 샘플에 대 한만 localhost 테스트 URL을 입력 합니다. 그러나 여러 개의 Url이 localhost와 프로덕션에 대 한 설명 하기 위해 입력할 수 있습니다.
+   이 URL에는 응용 프로그램에 대 한 원본입니다. 이 샘플에 대 한만 localhost 테스트 URL을 입력 합니다. 그러나 여러 개의 Url이 localhost와 프로덕션에 대 한 설명 하기 위해 입력할 수 있습니다.
 9. 설정의 **리디렉션 URI 권한이** 다음과: 
 
     [!code-html[Main](checkout-and-payment-with-paypal/samples/sample6.html)]
 
- 이 값은 해당 ASP.NET OAuth URI google OAuth 서버와 통신할 수 있습니다. 위에서 사용한 SSL url ( `https://localhost:44300/` 다른 SSL 프로젝트 생성 하지 않는 한).
+   이 값은 해당 ASP.NET OAuth URI google OAuth 서버와 통신할 수 있습니다. 위에서 사용한 SSL url ( `https://localhost:44300/` 다른 SSL 프로젝트 생성 하지 않는 한).
 10. 클릭는 **클라이언트 ID 만들기** 단추입니다.
 11. Google 개발자 콘솔의 왼쪽된 메뉴에서 클릭는 **동의 화면** 메뉴 항목을 전자 메일 주소와 제품 이름을 설정 합니다. 폼을 완료 했으면 클릭 **저장**합니다.
 12. 클릭는 **Api** 메뉴 항목과 아래로 스크롤하여 클릭은 **오프** 단추 옆에 **Google + API**합니다.   
- 이 옵션을 수락 하면 Google + API.
+    이 옵션을 수락 하면 Google + API.
 13. 업데이트 해야는 **Microsoft.Owin** NuGet 패키지를 버전 3.0.0 합니다.   
- **도구** 메뉴 선택 **NuGet 패키지 관리자** 선택한 후 **솔루션에 대 한 NuGet 패키지 관리**합니다.  
- **NuGet 패키지 관리** 창, 찾기 및 업데이트는 **Microsoft.Owin** 3.0.0 버전에는 패키지입니다.
+    **도구** 메뉴 선택 **NuGet 패키지 관리자** 선택한 후 **솔루션에 대 한 NuGet 패키지 관리**합니다.  
+    **NuGet 패키지 관리** 창, 찾기 및 업데이트는 **Microsoft.Owin** 3.0.0 버전에는 패키지입니다.
 14. Visual Studio에서 업데이트 된 `UseGoogleAuthentication` 의 메서드는 *Startup.Auth.cs* 복사 및 붙여넣기 하 여 페이지는 **클라이언트 ID** 및 **클라이언트 암호** 메서드에 합니다. **클라이언트 ID** 및 **클라이언트 암호** 아래 표시 된 값은 샘플 및 작동 하지 것입니다. 
 
     [!code-csharp[Main](checkout-and-payment-with-paypal/samples/sample7.cs?highlight=64-65)]
@@ -293,11 +293,11 @@ PayPal 온라인 merchants 여 지불을 수락 하는 웹 기반 청구 플랫�
 단일 클래스로 PayPal 코드의 대부분을 배치 합니다. 이 클래스는 PayPal와 통신 하는 데 사용 하는 메서드를 포함 합니다. 또한이 클래스에는 PayPal 자격 증명을 추가 합니다.
 
 1. Visual Studio 내에서 Wingtip Toys 샘플 응용 프로그램을 마우스 오른쪽 단추로 클릭는 **논리** 폴더 및 다음 선택 **추가**  - &gt; **새 항목**합니다.   
- **새 항목 추가** 대화 상자가 표시됩니다.
+   **새 항목 추가** 대화 상자가 표시됩니다.
 2. 아래 **Visual C#** 에서 **설치 됨** 선택 왼쪽 창에서 **코드**합니다.
 3. 가운데 창에서 선택 **클래스**합니다. 이 새 클래스 이름을 **PayPalFunctions.cs**합니다.
 4. **추가**를 클릭합니다.  
- 새 클래스 파일은 편집기에 표시 됩니다.
+   새 클래스 파일은 편집기에 표시 됩니다.
 5. 기본 코드를 다음 코드로 바꿉니다.  
 
     [!code-csharp[Main](checkout-and-payment-with-paypal/samples/sample12.cs)]
@@ -312,9 +312,9 @@ PayPal 온라인 merchants 여 지불을 수락 하는 웹 기반 청구 플랫�
 
 NVPAPICaller 클래스에는 대부분의 PayPal 기능은 포함 되어 있습니다. 클래스의 코드 PayPal 테스트 환경에서 구입 하는 테스트를 만드는 데 필요한 메서드를 제공 합니다. 다음 세 가지 PayPal 함수 구매 하는 데 사용 됩니다.
 
-- `SetExpressCheckout`함수
-- `GetExpressCheckoutDetails`함수
-- `DoExpressCheckoutPayment`함수
+- `SetExpressCheckout` 함수
+- `GetExpressCheckoutDetails` 함수
+- `DoExpressCheckoutPayment` 함수
 
 `ShortcutExpressCheckout` 쇼핑 카트 및 호출에서 테스트 구매 정보 및 제품 세부 정보를 수집 하는 메서드는 `SetExpressCheckout` PayPal 함수입니다. `GetCheckoutDetails` 구매 정보 및 호출 메서드는 확인 된 `GetExpressCheckoutDetails` 테스트 구매 하기 전에 PayPal 함수입니다. `DoCheckoutPayment` 메서드를 호출 하 여 테스트 환경에서 테스트 구매를 완료 된 `DoExpressCheckoutPayment` PayPal 함수입니다. 코드의 나머지 부분에 PayPal 메서드 및 문자열 인코딩, 디코딩 문자열, 배열, 처리 및 자격 증명을 확인 하는 같은 프로세스를 지원 합니다.
 
@@ -359,14 +359,14 @@ Wingtip Toys 샘플 응용 프로그램 PayPal 테스트 사이트로 이동한 
     [!code-csharp[Main](checkout-and-payment-with-paypal/samples/sample18.cs?highlight=18)]
 6. 둘 다에 변경 내용을 저장는 *ShoppingCart.aspx* 파일 및 *ShoppingCart.aspx.cs* 파일입니다.
 7. 메뉴에서 선택 **디버그**-&gt;**빌드 WingtipToys**합니다.  
- 프로젝트를 다시 작성 됩니다 새로 추가 된 **ImageButton** 제어 합니다.
+   프로젝트를 다시 작성 됩니다 새로 추가 된 **ImageButton** 제어 합니다.
 
 ### <a name="send-purchase-details-to-paypal"></a>PayPal 구매 정보 보내기
 
 사용자가 클릭할 때는 **체크 아웃** 쇼핑 카트 페이지에서 단추 (*ShoppingCart.aspx*), 구매 프로세스를 시작 합니다. 다음 코드는 제품을 구매 하는 데 필요한 첫 번째 PayPal 함수를 호출 합니다.
 
 1. *체크 아웃* 이라는 폴더를 열고 코드 숨김 파일 *CheckoutStart.aspx.cs*합니다.   
- 코드 숨김 파일을 열 수 있어야 합니다.
+   코드 숨김 파일을 열 수 있어야 합니다.
 2. 기존 코드를 다음으로 바꿉니다.   
 
     [!code-csharp[Main](checkout-and-payment-with-paypal/samples/sample19.cs)]
@@ -439,20 +439,20 @@ PayPal에서 반환 된 후의 *CheckoutReview.aspx* Wingtip Toys 샘플 응용 
 제품을 구매 하는 방법을 보려면 응용 프로그램을 실행 합니다. Note 있습니다 실행 될 것으로 PayPal에서 테스트 환경. 실제 미지불 교환 되 고 있습니다.
 
 1. 모든 Visual Studio에서 파일을 저장 했는지 확인.
-2. 웹 브라우저를 열고 이동 [https://developer.paypal.com](https://developer.paypal.com/)합니다.
+2. 웹 브라우저를 열고 이동 [ https://developer.paypal.com ](https://developer.paypal.com/)합니다.
 3. 이 자습서의 앞부분에서 만든 PayPal 개발자 계정으로 로그인 합니다.  
- PayPal의 개발자 샌드박스에 대 한 동시에 로그인 해야 [https://developer.paypal.com](https://developer.paypal.com/) express 체크 아웃을 테스트 합니다. 이 PayPal의 샌드박스 하지 PayPal의 실제 환경에 테스트에 적용 됩니다.
+   PayPal의 개발자 샌드박스에 대 한 동시에 로그인 해야 [ https://developer.paypal.com ](https://developer.paypal.com/) express 체크 아웃을 테스트 합니다. 이 PayPal의 샌드박스 하지 PayPal의 실제 환경에 테스트에 적용 됩니다.
 4. 키를 눌러 Visual Studio에서 **F5** Wingtip Toys 샘플 응용 프로그램을 실행 합니다.  
- 데이터베이스 다시 작성 한 후 브라우저 열리며 표시는 *Default.aspx* 페이지.
+   데이터베이스 다시 작성 한 후 브라우저 열리며 표시는 *Default.aspx* 페이지.
 5. 3 가지 제품을 장바구니에 "Cars"와 같은 제품 범주를 선택 하 고 다음을 클릭 하 여 추가 **카트에 추가** 옆에 있는 각 제품입니다.  
- 쇼핑 카트는 선택한 제품을 표시 됩니다.
+   쇼핑 카트는 선택한 제품을 표시 됩니다.
 6. 클릭는 **PayPal** 단추를 체크 아웃 합니다. 
 
     ![체크 아웃 및 PayPal-카트 지불](checkout-and-payment-with-paypal/_static/image20.png)
 
- 체크 아웃 Wingtip Toys 샘플 응용 프로그램에 대 한 사용자 계정이 필요 합니다.
+   체크 아웃 Wingtip Toys 샘플 응용 프로그램에 대 한 사용자 계정이 필요 합니다.
 7. 클릭는 **Google** 기존 gmail.com 전자 메일 계정으로 로그인 페이지의 오른쪽에 링크 합니다.  
- gmail.com 계정이 없는 경우 테스트용으로에서 하나를 만들 수 있습니다 [www.gmail.com](https://www.gmail.com/)합니다. 또한 "등록"을 클릭 하 여 표준 로컬 계정을 사용할 수 있습니다. 
+   gmail.com 계정이 없는 경우 테스트용으로에서 하나를 만들 수 있습니다 [www.gmail.com](https://www.gmail.com/)합니다. 또한 "등록"을 클릭 하 여 표준 로컬 계정을 사용할 수 있습니다. 
 
     ![체크 아웃 및 PayPal-지불 로그인](checkout-and-payment-with-paypal/_static/image21.png)
 8. Gmail 계정 및 암호를 사용 하 여 로그인 합니다. 
@@ -465,7 +465,7 @@ PayPal에서 반환 된 후의 *CheckoutReview.aspx* Wingtip Toys 샘플 응용 
 
     ![체크 아웃 및 PayPal-PayPal 로그인으로 지불](checkout-and-payment-with-paypal/_static/image24.png)
 11. PayPal 정책에 동의 하 고 클릭는 **동 및 계속** 단추입니다.  
- 이 페이지는만 참고가 평가용 계정을 사용 하 여 처음으로 표시 합니다. 이것은 테스트 계정, 실제 미지불 교환 note 다시 합니다. 
+    이 페이지는만 참고가 평가용 계정을 사용 하 여 처음으로 표시 합니다. 이것은 테스트 계정, 실제 미지불 교환 note 다시 합니다. 
 
     ![체크 아웃 및 PayPal-PayPal 정책으로 지불](checkout-and-payment-with-paypal/_static/image25.png)
 12. 테스트 환경 검토 페이지 및 클릭 PayPal에서 주문 정보를 검토 **계속**합니다. 
@@ -508,7 +508,7 @@ PayPal에서 반환 된 후의 *CheckoutReview.aspx* Wingtip Toys 샘플 응용 
 
 이 자습서에서는 제품의 구매를 추적 하는 순서와 주문 정보 스키마를 추가 합니다. 또한 Wingtip Toys 샘플 응용 프로그램에 PayPal 기능을 통합 합니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 [ASP.NET 구성 개요](https://msdn.microsoft.com/library/ms178683(v=vs.100).aspx)  
 [Azure 앱 서비스에 멤버 자격, OAuth, SQL 데이터베이스와 보안 ASP.NET Web Forms 응용 프로그램 배포](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/)  
@@ -518,6 +518,6 @@ PayPal에서 반환 된 후의 *CheckoutReview.aspx* Wingtip Toys 샘플 응용 
 
 이 자습서는 샘플 코드를 포함합니다. 이러한 샘플 코드는 어떤 종류의 보증도 없이 "있는 그대로" 제공 됩니다. 따라서 Microsoft 정확도, 무결성 또는 샘플 코드의 품질을 보장 하지 않습니다. 위험은 사용자가 샘플 코드를 사용 하도록 동의 합니다. 어떤 경우에는 Microsoft 책임을 지지 않으며를 어떤 방식으로든에서 콘텐츠, 오류 또는 모든 샘플 코드, 콘텐츠, 또는 모든 손실이 나 손상의 모든 샘플 코드 사용으로 인해 발생 하는 어떤 종류의 누락에 제한 되지 않음 모든 샘플 코드에 대 한 합니다. 허 여 메시지가 표시 되며 면책 하 고 저장 한 입지 Microsoft에서 및 모든 손실, 손실, 부상 또는 손상 종류 포함 하 여, 제한 되지 않고 여 occasioned 또는 자료를 게시 하면는에서 발생 하는 클레임에 대해 동의 허 여 않으므로 전송 하 고 사용 하거나 그 안에 의견에 제한 되지 않음 등을 사용 합니다.
 
->[!div class="step-by-step"]
-[이전](shopping-cart.md)
-[다음](membership-and-administration.md)
+> [!div class="step-by-step"]
+> [이전](shopping-cart.md)
+> [다음](membership-and-administration.md)

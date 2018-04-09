@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/introduction/adding-a-model
-title: "모델 추가 | Microsoft Docs"
+title: 모델 추가 | Microsoft Docs
 author: Rick-Anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/28/2015
@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-model
 msc.type: authoredcontent
-ms.openlocfilehash: 79f136257119a8600a65e8d7c5f6e99cb9abceae
-ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
+ms.openlocfilehash: b3ef871c4d7627a03c8f0fd8cce9d3e97fc1a4ba
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/05/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-model"></a>모델 추가
 ====================
 으로 [Rick Anderson](https://github.com/Rick-Anderson)
 
-[!INCLUDE[Tutorial Note](sample/code-location.md)]
+[!INCLUDE [Tutorial Note](sample/code-location.md)]
 
 이 섹션에서는 데이터베이스에서 영화를 관리 하기 위한 몇 가지 클래스를 추가 합니다. 이러한 클래스 됩니다는 &quot;모델&quot; ASP.NET MVC 응용 프로그램의 일부입니다.
 
@@ -54,7 +54,7 @@ ms.lasthandoff: 02/05/2018
 
 [!code-csharp[Main](adding-a-model/samples/sample3.cs)]
 
-수동으로 using를 추가 하 여 이렇게 하려면 문이 빨간색의 구불구불한 선 위로 마우스를 가져가고 수, 클릭 `Show potential fixes` 클릭`using System.Data.Entity;`
+수동으로 using를 추가 하 여 이렇게 하려면 문이 빨간색의 구불구불한 선 위로 마우스를 가져가고 수, 클릭 `Show potential fixes` 클릭 `using System.Data.Entity;`
 
 ![](adding-a-model/_static/image2.png)
 
@@ -64,6 +64,6 @@ ms.lasthandoff: 02/05/2018
 
 마지막으로 모델 (MVC에서 M) 추가 했습니다. 다음 섹션에서 데이터베이스 연결 문자열이 작업할 수 있습니다.
 
->[!div class="step-by-step"]
-[이전](adding-a-view.md)
-[다음](creating-a-connection-string.md)
+> [!div class="step-by-step"]
+> [이전](adding-a-view.md)
+> [다음](creating-a-connection-string.md)

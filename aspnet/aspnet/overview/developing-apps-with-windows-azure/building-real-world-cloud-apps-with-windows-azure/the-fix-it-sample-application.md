@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
-title: "부록: 수정 프로그램 것 샘플 응용 프로그램 (Azure 사용 하 여 실제 클라우드 앱 빌드) | Microsoft Docs"
+title: '부록: 수정 프로그램 것 샘플 응용 프로그램 (Azure 사용 하 여 실제 클라우드 앱 빌드) | Microsoft Docs'
 author: MikeWasson
-description: "실제 세계 클라우드로 응용 프로그램 빌딩 Azure 전자책 Scott Guthrie에서 개발 된 프레젠테이션을 기반으로 합니다. 13 패턴 및 그을 수 있는 방법에 설명..."
+description: 실제 세계 클라우드로 응용 프로그램 빌딩 Azure 전자책 Scott Guthrie에서 개발 된 프레젠테이션을 기반으로 합니다. 13 패턴 및 그을 수 있는 방법에 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: 1bc333c5-f096-4ea7-b170-779accc21c1a
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
 msc.type: authoredcontent
-ms.openlocfilehash: c98e79bf8e9a1fe0899ed6d952c3e411ca472f7e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9a1fa36b34c4783b101bb27bc6931241e9251e10
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>부록: 수정 프로그램 것 샘플 응용 프로그램 (Azure 사용 하 여 실제 클라우드 앱 빌드)
 ====================
@@ -100,7 +100,7 @@ ASP.NET에는 자동으로 사용자 입력된 텍스트 상자에 스크립트�
 
 AutoFac를 자동으로 삭제 하는 `FixItTaskRepository` 인스턴스를 명시적으로를 삭제할 필요가 없습니다.
 
-또 다른 옵션은 제거 하는 `DbContext` 에서 멤버 변수 `FixItTaskRepository`, 로컬 만드는 `DbContext` 각 저장소 메서드 내에서 변수 내는 `using` 문. 예:
+또 다른 옵션은 제거 하는 `DbContext` 에서 멤버 변수 `FixItTaskRepository`, 로컬 만드는 `DbContext` 각 저장소 메서드 내에서 변수 내는 `using` 문. 예를 들어:
 
 [!code-csharp[Main](the-fix-it-sample-application/samples/sample2.cs)]
 
@@ -227,7 +227,7 @@ Visual Studio에서 새 웹 프로젝트를 만들 때 묶음 및 축소 JavaScr
 6. Visual Studio를 시작.sln 파일을 두 번 클릭 합니다.
 7. 도구 메뉴에서 라이브러리 패키지 관리자 차례로 패키지 관리자 콘솔을 클릭 합니다.
 8. 패키지 관리자 콘솔 (PMC)에서 복원을 클릭 합니다.
-9. Visual Studio를 종료 합니다.
+9. Visual Studio를 끝냅니다.
 10. 시작 된 [Azure 저장소 에뮬레이터](https://msdn.microsoft.com/library/windowsazure/hh403989.aspx)합니다.
 11. 이전 단계에서 닫은 솔루션 파일을 열면 Visual Studio를 다시 시작 합니다.
 12. FixIt 프로젝트가 시작 프로젝트로 설정 되어 있는지 확인 하 고 CTRL + f 5를 눌러 프로젝트를 실행 합니다.
@@ -245,18 +245,18 @@ Visual Studio에서 새 웹 프로젝트를 만들 때 묶음 및 축소 JavaScr
 
     Visual Studio 2013을 사용 합니다.
 
-    1. F5 키를 눌러 FixIt 프로젝트를 실행 합니다.
-    2. **솔루션 탐색기**MyFixItCloudService 프로젝트를 마우스 오른쪽 단추로 클릭 한 다음 클릭 **디버그** -- **새 인스턴스 시작**합니다.
+   1. F5 키를 눌러 FixIt 프로젝트를 실행 합니다.
+   2. **솔루션 탐색기**MyFixItCloudService 프로젝트를 마우스 오른쪽 단추로 클릭 한 다음 클릭 **디버그** -- **새 인스턴스 시작**합니다.
 
-    Visual Studio 2013 Express for Web 사용:
+      Visual Studio 2013 Express for Web 사용:
 
-    1. 솔루션 탐색기에서 FixIt 솔루션을 마우스 오른쪽 단추로 클릭 하 고 선택 **속성**합니다.
-    2. 선택 **여러 개의 시작 프로젝트**...
-    3. 에 **동작** MyFixIt 및 MyFixItCloudService, 아래의 드롭다운 목록 선택 **시작**합니다.
-    4. **확인**을 클릭합니다.
-    5. F5 키를 눌러 프로젝트를 모두 실행 합니다.
+   3. 솔루션 탐색기에서 FixIt 솔루션을 마우스 오른쪽 단추로 클릭 하 고 선택 **속성**합니다.
+   4. 선택 **여러 개의 시작 프로젝트**...
+   5. 에 **동작** MyFixIt 및 MyFixItCloudService, 아래의 드롭다운 목록 선택 **시작**합니다.
+   6. **확인**을 클릭합니다.
+   7. F5 키를 눌러 프로젝트를 모두 실행 합니다.
 
-    MyFixItCloudService 프로젝트를 실행할 때 Visual Studio는 Azure 계산 에뮬레이터를 시작 합니다. 방화벽 구성에 따라 방화벽을 통해 에뮬레이터를 허용 하도록 할 수 있습니다.
+      MyFixItCloudService 프로젝트를 실행할 때 Visual Studio는 Azure 계산 에뮬레이터를 시작 합니다. 방화벽 구성에 따라 방화벽을 통해 에뮬레이터를 허용 하도록 할 수 있습니다.
 
 <a id="deploybase"></a>
 ## <a name="how-to-deploy-the-base-app-to-azure-app-service-web-apps-by-using-the-windows-powershell-scripts"></a>Azure 앱 서비스 웹 앱을 Windows PowerShell 스크립트를 사용 하 여 기본 응용 프로그램을 배포 하는 방법
@@ -285,7 +285,7 @@ Visual Studio에서 새 웹 프로젝트를 만들 때 묶음 및 축소 JavaScr
     이러한 자격 증명 시간이 지나면 만료 되 고 다시 실행 해야는 `Add-AzureAccount` cmdlet. 자격 증명 만료 전에 시간 제한이이 전자책 작성 될 때 12 시간 합니다.
 5. 여러 구독이 있는 경우 테스트 환경에서 만들려는 구독을 지정 하려면 Select-azuresubscription cmdlet을 사용 합니다.
 6. 동일한 Azure 구독에 대 한 관리 인증서를 사용 하 여 가져오기는 `Get-AzurePublishSettingsFile` 및 `Import-AzurePublishSettingsFile` cmdlet. 이러한 cmdlet 중 첫 번째 인증서 파일을 다운로드 하 고 두 번째 것을 가져오려면 해당 파일의 위치 지정 합니다. > [!IMPORTANT]
- > 다운로드 한 파일을 안전한 위치에 보관 하거나 Azure 서비스를 관리 하는 데 사용할 수 있는 인증서를 포함 하기 때문에, 완료 되 면 삭제 됩니다.
+   > 다운로드 한 파일을 안전한 위치에 보관 하거나 Azure 서비스를 관리 하는 데 사용할 수 있는 인증서를 포함 하기 때문에, 완료 되 면 삭제 됩니다.
 
     [!code-console[Main](the-fix-it-sample-application/samples/sample22.cmd)]
 
@@ -326,7 +326,7 @@ Visual Studio에서 새 웹 프로젝트를 만들 때 묶음 및 축소 JavaScr
     스크립트 실패 하거나 "New-azurewebsite:: 호출 집합 AzureSubscription 및 Select-azuresubscription 첫 번째," 등의 오류를 생성 하는 경우 있습니다 수 완료 되지의 Azure PowerShell 구성 합니다.
 
     스크립트가 완료 된 후에 표시 된 대로 생성 된 리소스를 참조 하는 Azure 관리 포털을 사용할 수 있습니다는 [모든 자동화](automate-everything.md) 장 합니다.
-10. 새 Azure 환경에 FixIt 프로젝트를 배포 하려면 사용 된 *AzureWebsite.ps1* 스크립트입니다. 예:
+10. 새 Azure 환경에 FixIt 프로젝트를 배포 하려면 사용 된 *AzureWebsite.ps1* 스크립트입니다. 예를 들어:
 
     [!code-console[Main](the-fix-it-sample-application/samples/sample28.cmd)]
 
@@ -399,5 +399,5 @@ MyFixItCloudService\ServiceConfiguration.Cloud.cscfg, Azure 저장소 계정에 
 
 이제 클라우드 서비스를 배포할 준비가 되었습니다. 솔루션 탐색기 MyFixItCloudService 프로젝트를 마우스 오른쪽 단추로 클릭 하 고 선택 **게시**합니다. 자세한 내용은 참조 하십시오. "[Azure에 응용 프로그램을 배포](https://www.windowsazure.com/develop/net/tutorials/multi-tier-web-site/2-download-and-run/#deployAz)", 2 부에 [이 자습서](https://code.msdn.microsoft.com/Windows-Azure-Multi-Tier-eadceb36)합니다.
 
->[!div class="step-by-step"]
-[이전](more-patterns-and-guidance.md)
+> [!div class="step-by-step"]
+> [이전](more-patterns-and-guidance.md)

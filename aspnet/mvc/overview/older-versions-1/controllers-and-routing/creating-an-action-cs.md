@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/creating-an-action-cs
-title: "동작 (C#) 만들기 | Microsoft Docs"
+title: 동작 (C#) 만들기 | Microsoft Docs
 author: microsoft
-description: "ASP.NET MVC 컨트롤러에 새 동작을 추가 하는 방법에 알아봅니다. 메서드는 작업에 대 한 요구 사항에 알아봅니다."
+description: ASP.NET MVC 컨트롤러에 새 동작을 추가 하는 방법에 알아봅니다. 메서드는 작업에 대 한 요구 사항에 알아봅니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/02/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-an-action-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8b751dc7e34951be33e7c27a3429c383a3e1e1c7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7c6145902db59b07e96a5563b138c1a6323946b2
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-an-action-c"></a>만들기 동작 (C#)
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > ASP.NET MVC 컨트롤러에 새 동작을 추가 하는 방법에 알아봅니다. 메서드는 작업에 대 한 요구 사항에 알아봅니다.
 
@@ -53,7 +53,7 @@ ms.lasthandoff: 11/10/2017
 
 컨트롤러 클래스에는 공용 메서드를 만들어야 하 고 컨트롤러 작업으로 메서드를 노출 하지 않으려는 경우 [NonAction] 특성을 사용 하 여 호출 되지 메서드를 방지할 수 있습니다. 예를 들어 목록 2에 있는 컨트롤러 [NonAction] 특성으로 데코레이팅되 어 CompanySecrets() 라는 공용 메서드를 포함 합니다.
 
-**2-Controllers\WorkController.cs 나열**
+**Listing 2 - Controllers\WorkController.cs**
 
 [!code-csharp[Main](creating-an-action-cs/samples/sample2.cs)]
 
@@ -64,6 +64,6 @@ ms.lasthandoff: 11/10/2017
 
 **그림 01**: NonAction 메서드 호출 ([전체 크기 이미지를 보려면 클릭](creating-an-action-cs/_static/image2.png))
 
->[!div class="step-by-step"]
-[이전](creating-a-controller-cs.md)
-[다음](asp-net-mvc-routing-overview-vb.md)
+> [!div class="step-by-step"]
+> [이전](creating-a-controller-cs.md)
+> [다음](asp-net-mvc-routing-overview-vb.md)

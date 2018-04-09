@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/introduction/examining-the-edit-methods-and-edit-view
-title: "편집 메서드 및 편집 보기 검사 | Microsoft Docs"
+title: 편집 메서드 및 편집 보기 검사 | Microsoft Docs
 author: Rick-Anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/22/2015
@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: d7e1ba503b8aa815cebf431d2f5ffc9436b3575b
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: a3baa8e9af572d4c21813218ba394715a6db65cb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="examining-the-edit-methods-and-edit-view"></a>편집 메서드 및 편집 보기 검사
 ====================
 으로 [Rick Anderson](https://github.com/Rick-Anderson)
 
-[!INCLUDE[Tutorial Note](sample/code-location.md)]
+[!INCLUDE [Tutorial Note](sample/code-location.md)]
 
 이 섹션에서는 검토해 생성 된 `Edit` 작업 메서드 및 동영상 컨트롤러에 대 한 뷰. 하지만 먼저 더 보기 좋게 출시 날짜에 있도록 짧은 전환 소요 됩니다. 열기는 *Models\Movie.cs* 파일을 아래 표시 된 강조 표시 된 줄을 추가 합니다.
 
@@ -106,12 +106,12 @@ ms.lasthandoff: 03/15/2018
 1. **도구** 메뉴 클릭 **NuGetLibrary 패키지 관리자**, 클릭 하 고 **솔루션에 대 한 NuGet 패키지 관리**합니다.  
   
     ![](examining-the-edit-methods-and-edit-view/_static/image5.png)
-2. 왼쪽된 창에서 선택 **찾아보기*. * * * (아래 그림 참조).
+2. 왼쪽된 창에서 선택 <strong>찾아보기*.</strong>* (아래 그림 참조).
 3. 입력된 상자에 입력 * Globalize * *입니다.  
   
     ![](examining-the-edit-methods-and-edit-view/_static/image6.png) 선택 `jQuery.Validation.Globalize`, 선택 `MvcMovie` 클릭 **설치**합니다. *Scripts\jquery.globalize\globalize.js* 파일을 프로젝트에 추가 됩니다. *Scripts\jquery.globalize\cultures\* 폴더 많은 문화권 JavaScript 파일에 포함 됩니다. Note:이 패키지를 설치 하는 데 5 분이 걸릴 수 있습니다.
 
- 다음 코드에서는 Views\Movies\Edit.cshtml 파일의 수정 내용을 보여 줍니다. 
+   다음 코드에서는 Views\Movies\Edit.cshtml 파일의 수정 내용을 보여 줍니다. 
 
 [!code-cshtml[Main](examining-the-edit-methods-and-edit-view/samples/sample10.cshtml)]
 
@@ -125,6 +125,6 @@ ms.lasthandoff: 03/15/2018
 
 <a id="gettingstarted"></a><a id="jQueryAjaxJSON"></a> 다음 자습서에서에서는 검색 기능을 구현 합니다.
 
->[!div class="step-by-step"]
-[이전](accessing-your-models-data-from-a-controller.md)
-[다음](adding-search.md)
+> [!div class="step-by-step"]
+> [이전](accessing-your-models-data-from-a-controller.md)
+> [다음](adding-search.md)

@@ -1,7 +1,7 @@
 ---
-title: "Razor 페이지 단위 및 ASP.NET Core에서 통합 테스트"
+title: ASP.NET Core에서 razor 페이지 단위 및 통합 테스트
 author: guardrex
-description: "Razor 페이지 앱에 대 한 단위 및 통합 테스트를 만드는 방법에 알아봅니다."
+description: Razor 페이지 앱에 대 한 단위 및 통합 테스트를 만드는 방법에 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,13 +10,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: testing/razor-pages-testing
-ms.openlocfilehash: e4f87a8151e378717aa9198e4629711c4ea6ef77
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: dc5e8651f873b8e86aaa8fdf2527e461bb065424
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="razor-pages-unit-and-integration-testing-in-aspnet-core"></a>Razor 페이지 단위 및 ASP.NET Core에서 통합 테스트
+# <a name="razor-pages-unit-and-integration-tests-in-aspnet-core"></a>ASP.NET Core에서 razor 페이지 단위 및 통합 테스트
 
 [Luke Latham](https://github.com/guardrex)으로
 
@@ -228,11 +228,11 @@ using (var db = new AppDbContext(Utilities.TestingDbContextOptions()))
 
 [!code-csharp[](razor-pages-testing/sample/tests/RazorPagesTestingSample.Tests/IntegrationTests/IndexPageTest.cs?name=snippet3&highlight=7,16-17)]
 
-## <a name="see-also"></a>참고 항목
+## <a name="see-also"></a>참고자료
 
 * [에서 단위 테스트 C#.NET Core dotnet 테스트, xUnit를 사용 하 여](/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
 * [통합 테스트](xref:testing/integration-testing)
-* [컨트롤러 테스트](xref:mvc/controllers/testing)
+* [테스트 컨트롤러](xref:mvc/controllers/testing)
 * [단위 테스트 코드](/visualstudio/test/unit-test-your-code) (Visual Studio)
 * [xUnit.net](https://xunit.github.io/)
 * [시작 xUnit.net (.NET Core/ASP.NET 코어)](https://xunit.github.io/docs/getting-started-dotnet-core)

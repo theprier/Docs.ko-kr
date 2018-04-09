@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-view
-title: "뷰 추가 | Microsoft Docs"
+title: 뷰 추가 | Microsoft Docs
 author: Rick-Anderson
-description: "참고:이 자습서의 업데이트 된 버전은 ASP.NET MVC 5 및 Visual Studio 2013을 사용 하는 있습니다. 것이 더 안전 하 고 진행할 데모를 단순..."
+description: 참고:이 자습서의 업데이트 된 버전은 ASP.NET MVC 5 및 Visual Studio 2013을 사용 하는 있습니다. 것이 더 안전 하 고 진행할 데모를 단순...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/28/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-view
 msc.type: authoredcontent
-ms.openlocfilehash: 60374ddc6754f7e312ad08b420268308a9935bb4
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 61a93c1430e9e39543c69b84901a50ceb710a5ae
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-view"></a>뷰 추가
 ====================
@@ -116,7 +116,7 @@ Open *MvcMovie\Views\HelloWorld\Index.cshtml*. 변경 하는 두 곳: 먼저 텍
 
 현재는 `Welcome` 의 동작 메서드에 `HelloWorldController` 걸립니다 클래스는 `name` 및 `numTimes` 매개 변수 및 브라우저에 직접 값을 출력 합니다. 이 응답을 문자열로 렌더링 되는 컨트롤러를 갖는 대신 보기 서식 파일을 대신 사용 하는 컨트롤러를 변경해 보겠습니다. 보기 템플릿은 동적 응답을 생성합니다. 즉, 응답을 생성하기 위해 컨트롤러에서 보기로 일부 적절한 데이터를 전달해야 합니다. 컨트롤러 템플릿 보기에는 동적 데이터 (매개 변수)를 배치 하 여이 수행할 수는 `ViewBag` 템플릿 보기에 액세스할 수 있는 개체입니다.
 
-돌아가서는 *HelloWorldController.cs* 파일을 변경는 `Welcome` 를 추가 하려면 메서드는 `Message` 및 `NumTimes` 값을 `ViewBag` 개체입니다. `ViewBag`넣을 수 있습니다에 원하는 것을 의미 하는 동적 개체 `ViewBag` 내부 요소를 넣으면 될 때까지 개체에 정의 된 속성이 없습니다. [ASP.NET MVC 모델 바인딩 시스템이](http://odetocode.com/Blogs/scott/archive/2009/04/27/6-tips-for-asp-net-mvc-model-binding.aspx) 자동으로 명명 된 매개 변수를 매핑합니다 (`name` 및 `numTimes`) 메서드의 매개 변수에 주소 표시줄에 쿼리 문자열에서 합니다. 전체 *HelloWorldController.cs* 파일은 다음과 같습니다.
+돌아가서는 *HelloWorldController.cs* 파일을 변경는 `Welcome` 를 추가 하려면 메서드는 `Message` 및 `NumTimes` 값을 `ViewBag` 개체입니다. `ViewBag` 넣을 수 있습니다에 원하는 것을 의미 하는 동적 개체 `ViewBag` 내부 요소를 넣으면 될 때까지 개체에 정의 된 속성이 없습니다. [ASP.NET MVC 모델 바인딩 시스템이](http://odetocode.com/Blogs/scott/archive/2009/04/27/6-tips-for-asp-net-mvc-model-binding.aspx) 자동으로 명명 된 매개 변수를 매핑합니다 (`name` 및 `numTimes`) 메서드의 매개 변수에 주소 표시줄에 쿼리 문자열에서 합니다. 전체 *HelloWorldController.cs* 파일은 다음과 같습니다.
 
 [!code-csharp[Main](adding-a-view/samples/sample7.cs)]
 
@@ -148,6 +148,6 @@ Open *MvcMovie\Views\HelloWorld\Index.cshtml*. 변경 하는 두 곳: 먼저 텍
 
 하 한 종류의는 &quot;M&quot; 모델을 제외한 데이터베이스 종류 되지 않습니다. 지금까지 학습한 것을 살펴보고 동영상의 데이터베이스를 만들어 보겠습니다.
 
->[!div class="step-by-step"]
-[이전](adding-a-controller.md)
-[다음](adding-a-model.md)
+> [!div class="step-by-step"]
+> [이전](adding-a-controller.md)
+> [다음](adding-a-model.md)

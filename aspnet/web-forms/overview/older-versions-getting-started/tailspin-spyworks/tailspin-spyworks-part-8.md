@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-8
-title: "8 단계: 최종 페이지, 예외 처리 및 결론 | Microsoft Docs"
+title: '8 단계: 최종 페이지, 예외 처리 및 결론 | Microsoft Docs'
 author: JoeStagner
-description: "이 자습서 시리즈 모든 Tailspin Spyworks 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 8 부 페이지 및 예외에 대 한 연락처 페이지에 추가..."
+description: 이 자습서 시리즈 모든 Tailspin Spyworks 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 8 부 페이지 및 예외에 대 한 연락처 페이지에 추가...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/21/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: fce1a20f9d1093b6c60542d8a786ddf54fdc922c
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: f82294aab0616012393cf3e10f932f6d1ad0cdb6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-8-final-pages-exception-handling-and-conclusion"></a>8 단계: 최종 페이지, 예외 처리 및 결론
 ====================
@@ -27,7 +27,7 @@ ms.lasthandoff: 02/12/2018
 > 이 자습서 시리즈 모든 Tailspin Spyworks 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 8 부 페이지 및 예외 처리에 대 한 연락처 페이지에 추가 합니다. 계열의 결론입니다.
 
 
-## <a id="_Toc260221680"></a>페이지를 (ASP.NET에서 보내는 전자 메일)에 게 문의 하십시오.
+## <a id="_Toc260221680"></a>  페이지를 (ASP.NET에서 보내는 전자 메일)에 게 문의 하십시오.
 
 ContactUs.aspx 라는 새 페이지 만들기
 
@@ -81,5 +81,5 @@ ASP.NET WebForms 쉽게 버퍼 오버런 등의 데이터베이스 액세스 권
 
 다행히이 자습서가 제공한 사용자 고유의 ASP.NET WebForms 응용 프로그램을 구축 하는 데 필요한 도구!
 
->[!div class="step-by-step"]
-[이전](tailspin-spyworks-part-7.md)
+> [!div class="step-by-step"]
+> [이전](tailspin-spyworks-part-7.md)

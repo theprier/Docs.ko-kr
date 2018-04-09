@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-localization
-title: "ASP.NET AJAX 지역화 이해 | Microsoft Docs"
+title: ASP.NET AJAX 지역화 이해 | Microsoft Docs
 author: scottcate
-description: "지역화는 프로세스를 디자인 하 고 응용 프로그램 또는 응용 프로그램 구성 요소에는 특정 언어와 문화권에 대 한 지원을 통합입니다. Mic 중..."
+description: 지역화는 프로세스를 디자인 하 고 응용 프로그램 또는 응용 프로그램 구성 요소에는 특정 언어와 문화권에 대 한 지원을 통합입니다. Mic 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/14/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-localization
 msc.type: authoredcontent
-ms.openlocfilehash: 5b801586ea77af78284f780fe47fe09cafb984af
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 565b0294f57b784bc592b286b3d8b28504110415
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="understanding-aspnet-ajax-localization"></a>ASP.NET AJAX 지역화 이해
 ====================
@@ -65,8 +65,8 @@ Microsoft AJAX Framework 스크립트 관리 배포 및 스크립트의 테스�
 | --- | --- |
 | Script.js | 릴리스 버전 중립 문화권 스크립트입니다. |
 | Script.debug.js | 디버그 버전 중립 문화권 스크립트입니다. |
-| Script.en US.js | 릴리스 버전 영어 미국 스크립트입니다. |
-| Script.debug.es CO.js | 디버그 버전에 스페인어, 콜롬비아 스크립트입니다. |
+| Script.en-US.js | 릴리스 버전 영어 미국 스크립트입니다. |
+| Script.debug.es-CO.js | 디버그 버전에 스페인어, 콜롬비아 스크립트입니다. |
 
 ## <a name="walkthrough-create-an-localized-embedded-script"></a>연습: 지역화 된, 포함 된 스크립트를 만듭니다.
 
@@ -153,6 +153,6 @@ ScriptManager는 지역화 된 응용 프로그램에 대 한 몇 가지 자동 
 
 Scott 인증서의 근무 기간이 Microsoft 웹 기술을 1997 년부터 이며 myKB.com 부서장 ([www.myKB.com](http://www.myKB.com)) ASP.NET 작성 i 여기서 기반 응용 프로그램 기술 자료 소프트웨어 솔루션에 집중 합니다. Scott에 전자 메일을 통해 연결할 수 [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com) 또는에서 그의 블로그 [ScottCate.com](http://ScottCate.com)
 
->[!div class="step-by-step"]
-[이전](understanding-asp-net-ajax-authentication-and-profile-application-services.md)
-[다음](understanding-asp-net-ajax-web-services.md)
+> [!div class="step-by-step"]
+> [이전](understanding-asp-net-ajax-authentication-and-profile-application-services.md)
+> [다음](understanding-asp-net-ajax-web-services.md)

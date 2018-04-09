@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/reorderlist/using-postbacks-with-reorderlist-vb
-title: "포스트백 ReorderList (VB)를 사용 하 여 | Microsoft Docs"
+title: 포스트백 ReorderList (VB)를 사용 하 여 | Microsoft Docs
 author: wenz
-description: "끌어 놓기를 통해 사용자가 다시 정렬할 수 있는 목록을 제공 하는 들어에서 ReorderList 컨트롤입니다. 목록 순서를 변경할 때마다 po..."
+description: 끌어 놓기를 통해 사용자가 다시 정렬할 수 있는 목록을 제공 하는 들어에서 ReorderList 컨트롤입니다. 목록 순서를 변경할 때마다 po...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/reorderlist/using-postbacks-with-reorderlist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 971d060f2ee69e82ec574392a308754e015b0fd0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ef43471f7d8cc94c1a82a368e27acef05f474f81
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-postbacks-with-reorderlist-vb"></a>포스트백을 사용 하 여 ReorderList (VB)으로
 ====================
@@ -69,6 +69,6 @@ ms.lasthandoff: 11/10/2017
 
 포스트백 트리거합니다 각 순서 변경 ([전체 크기 이미지를 보려면 클릭](using-postbacks-with-reorderlist-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[이전](drag-and-drop-via-reorderlist-cs.md)
-[다음](drag-and-drop-via-reorderlist-vb.md)
+> [!div class="step-by-step"]
+> [이전](drag-and-drop-via-reorderlist-cs.md)
+> [다음](drag-and-drop-via-reorderlist-vb.md)

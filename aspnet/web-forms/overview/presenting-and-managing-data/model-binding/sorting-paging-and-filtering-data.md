@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/presenting-and-managing-data/model-binding/sorting-paging-and-filtering-data
-title: "정렬, 페이징 및 모델 바인딩 및 web forms를 사용 하 여 데이터를 필터링 합니다. | Microsoft Docs"
+title: 정렬, 페이징 및 모델 바인딩 및 web forms를 사용 하 여 데이터를 필터링 합니다. | Microsoft Docs
 author: tfitzmac
-description: "이 자습서 시리즈 모델 바인딩을 사용 하 여 ASP.NET Web Forms 프로젝트의 기본 사항을 보여 줍니다. 모델 바인딩 데이터 상호 작용 하 게 더 많은 직선-중..."
+description: 이 자습서 시리즈 모델 바인딩을 사용 하 여 ASP.NET Web Forms 프로젝트의 기본 사항을 보여 줍니다. 모델 바인딩 데이터 상호 작용 하 게 더 많은 직선-중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/27/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/sorting-paging-and-filtering-data
 msc.type: authoredcontent
-ms.openlocfilehash: 94fc84533be5fcbcf0612fcdcabea7dee738d89b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d63ebecadd392877e4cb1d1dffe9db2d1d231190
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="sorting-paging-and-filtering-data-with-model-binding-and-web-forms"></a>정렬, 페이징 및 모델 바인딩 및 web forms를 사용 하 여 데이터를 필터링 합니다.
 ====================
@@ -64,14 +64,14 @@ GridView에서 정렬 사용 하지 않는 것이 쉽습니다. Student.aspx 파
 
 모델 바인딩을 사용 하면 모델 바인딩 방법에는 매개 변수의 값을 설정 하는 방법을 지정 하는 몇 가지 특성을 추가 합니다. 이러한 특성은는 **System.Web.ModelBinding** 네임 스페이스입니다. 다음과 같은 변경 내용이 해당됩니다.
 
-- 컨트롤
+- Control
 - 쿠키
 - Form
 - 프로필
 - QueryString
 - RouteData
 - 세션
-- 사용자 프로필
+- UserProfile
 - ViewState
 
 이 자습서에서는 GridView에 표시 되는 레코드를 필터링 하는 컨트롤의 값을 사용 합니다. 추가한는 **제어** 특성을 쿼리 메서드에 이전에 만든 했습니다. 에 [나중](using-query-string-values-to-retrieve-data.md) 자습서를 적용 하는 **QueryString** 특성을 매개 변수 값은 쿼리 문자열 값의 하도록 지정 하는 매개 변수입니다.
@@ -100,6 +100,6 @@ GridView에서 정렬 사용 하지 않는 것이 쉽습니다. Student.aspx 파
 
 다음에서 [자습서](integrating-jquery-ui.md) JQuery UI 위젯 동적 데이터 서식 파일에 통합 하 여 UI를 향상 됩니다.
 
->[!div class="step-by-step"]
-[이전](updating-deleting-and-creating-data.md)
-[다음](integrating-jquery-ui.md)
+> [!div class="step-by-step"]
+> [이전](updating-deleting-and-creating-data.md)
+> [다음](integrating-jquery-ui.md)

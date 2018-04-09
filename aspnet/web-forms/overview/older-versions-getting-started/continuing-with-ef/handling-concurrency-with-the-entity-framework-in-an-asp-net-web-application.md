@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application
-title: "ASP.NET 4 웹 응용 프로그램에서 Entity Framework 4.0 사용 하 여 동시성 처리 | Microsoft Docs"
+title: ASP.NET 4 웹 응용 프로그램에서 Entity Framework 4.0 사용 하 여 동시성 처리 | Microsoft Docs
 author: tdykstra
-description: "이 자습서 시리즈의 Entity Framework 4.0 자습서 시리즈 시작 하기에 의해 만들어진 Contoso 대학 웹 응용 프로그램 기반으로 합니다. I 중..."
+description: 이 자습서 시리즈의 Entity Framework 4.0 자습서 시리즈 시작 하기에 의해 만들어진 Contoso 대학 웹 응용 프로그램 기반으로 합니다. I 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/26/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 7bdcf610458631749531ed1279d27e90572f0371
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f40695270006e4f8b0c9ad8e94049e5239f06e63
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="handling-concurrency-with-the-entity-framework-40-in-an-aspnet-4-web-application"></a>ASP.NET 4 웹 응용 프로그램에서 Entity Framework 4.0 사용 하 여 동시성 처리
 ====================
@@ -37,13 +37,13 @@ ms.lasthandoff: 11/10/2017
 
 ### <a name="pessimistic-concurrency-locking"></a>비관적 동시성 (잠금)
 
-응용 프로그램에서 동시성 시나리오에서 실수로 인 한 데이터 손실을 방지할 필요가 경우 작업을 수행 하는 한 가지 방법은 데이터베이스 잠금을 사용 하는 합니다. 이 라고 *비관적 동시성*합니다. 예를 들어 데이터베이스에서 행을 읽기 전에 요청에 대 한 잠금을 읽기 전용 이거나 업데이트 액세스 합니다. 업데이트 권한이 대 한 행을 잠그는 다른 사용자가 허용 되는 경우 행에 대해 잠글 읽기 전용 또는 변경 중인 데이터의 복사본을 가져오기 때문에 대 한 액세스를 업데이트 합니다. 읽기 전용 액세스에 대 한 행을 잠그는 경우 다른 사용자도 잠글 수 있지만 업데이트에 대 한 읽기 전용 액세스 합니다.
+응용 프로그램에서 동시성 시나리오에서 실수로 인한 데이터 손실을 방지할 필요가 있는 경우 해당 작업을 수행하는 한 가지 방법은 데이터베이스 잠금을 사용하는 것입니다. 이 라고 *비관적 동시성*합니다. 예를 들어 데이터베이스에서 행을 읽기 전에 읽기 전용 또는 업데이트 액세스에 대한 잠금을 요청합니다. 업데이트 액세스에 대한 행을 잠그는 경우 변경 중인 데이터의 복사본을 가져오기 때문에 다른 사용자는 읽기 전용 또는 업데이트 액세스에 대한 행을 잠그도록 허용되지 않습니다. 읽기 전용 액세스에 대한 행을 잠그는 경우 다른 사용자도 읽기 전용에 대해 잠글 수 있지만 업데이트에 대해서는 잠글 수 없습니다.
 
-잠금 관리에 몇 가지 단점이 있습니다. 프로그램으로 복잡할 수 있습니다. 중요 한 데이터베이스 관리 리소스 있어야 하며 응용 프로그램의 사용자의 수로 성능 문제가 생길 수 증가 (즉, 하기 쉽지 않습니다). 이러한 이유로 모든 데이터베이스 관리 시스템 비관적 동시성을 지원 합니다. Entity Framework,에 대 한 기본 제공 지원이 제공 하 고이 자습서에서는 구현 하는 방법을 표시 되지 않습니다.
+잠금 관리에 몇 가지 단점이 있습니다. 프로그램을 설정하는 데 복잡할 수 있습니다. 중요 한 데이터베이스 관리 리소스 있어야 하며 응용 프로그램의 사용자의 수로 성능 문제가 생길 수 증가 (즉, 하기 쉽지 않습니다). 이러한 이유로 모든 데이터베이스 관리 시스템은 비관적 동시성을 지원하지 않습니다. Entity Framework,에 대 한 기본 제공 지원이 제공 하 고이 자습서에서는 구현 하는 방법을 표시 되지 않습니다.
 
 ### <a name="optimistic-concurrency"></a>낙관적 동시성
 
-비관적 동시성을 대신 사용 하는 *낙관적 동시성*합니다. 낙관적 동시성 현상이 동시성 충돌을 허용 하 고 그럴 경우 적절 하 게 반응 의미 합니다. 예를 들어 John 실행는 *Department.aspx* 페이지를 클릭은 **편집** 시키고 기록 부서에 대 한 링크는 **예산** $ 1000, 000.00 달러에서 금액 125,000.00 합니다. (John을 관리 하는 경쟁 부서 자신의 부서에 대 한 비용을 확보 하려고 합니다.)
+비관적 동시성을 대신 사용 하는 *낙관적 동시성*합니다. 낙관적 동시성은 동시성 충돌 발생을 허용한 다음, 그럴 경우 적절하게 반응하는 것을 의미합니다. 예를 들어 John 실행는 *Department.aspx* 페이지를 클릭은 **편집** 시키고 기록 부서에 대 한 링크는 **예산** $ 1000, 000.00 달러에서 금액 125,000.00 합니다. (John을 관리 하는 경쟁 부서 자신의 부서에 대 한 비용을 확보 하려고 합니다.)
 
 [![Image07](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image6.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image5.png)
 
@@ -55,15 +55,15 @@ John 클릭 **업데이트** Jane이 클릭 한 다음 먼저 **업데이트**�
 
 이 시나리오에서 수행할 수 있는 작업 중 일부는 다음과 같습니다.
 
-- 한 사용자가 수정 되는 속성을 추적 하 고 데이터베이스의 해당 열만 업데이트할 수 있습니다. 예제 시나리오에서 데이터가 손실 될, 서로 다른 속성 두 사용자가 업데이트 되었기 때문에 합니다. 다음에 기록 부서 이동, 1/1/1999 표시 되는 경우 및 $125,000.00 합니다. 
+- 사용자가 수정한 속성의 추적을 유지하고 데이터베이스에서 해당하는 열만 업데이트할 수 있습니다. 예제 시나리오에서 서로 다른 속성이 두 사용자에 의해 업데이트되었기 때문에 데이터가 손실되지 않습니다. 다음에 기록 부서 이동, 1/1/1999 표시 되는 경우 및 $125,000.00 합니다. 
 
     이 Entity Framework에서 기본 동작이 며 데이터가 손실 될 수 있는 충돌 수를 줄일 수 있는 합니다. 그러나이 문제는 동일한 엔터티의 속성 경쟁 변경 되 면 데이터 손실을 방지 하지 않습니다. 또한이 동작은 항상 할 수 없습니다. 저장된 프로시저는 엔터티 형식에 매핑할 때는 모든 엔터티에 변경 될 때 데이터베이스의 엔터티 속성의 모두 업데이트 됩니다.
-- John의 내용으로 덮어쓰게 Jane의 변경 하도록 할 수 있습니다. Jane을 클릭 한 후 **업데이트**, **예산** 양 1000, 000.00 달러로 돌아갑니다. 이 라고는 *클라이언트 우선* 또는 *최신으로* 시나리오입니다. (클라이언트의 값 보다 우선 데이터 저장소에 포함 된 내용입니다.)
-- 데이터베이스에서 업데이트 되 고에서 Jane의 변경을 방지할 수 있습니다. 일반적으로 오류 메시지가 표시, 그녀는 데이터의 현재 상태를 표시 하는 그녀 여전히 있도록가 그녀의 변경 내용을 다시 입력 하는 수입니다. 그녀의 입력을 저장 하 고 다시 입력 하지 않고도 적용할 수 있는 옵션을 보려면 아래 제공 하 여 추가 프로세스를 자동화할 수 있습니다. 이 라고는 *저장소 Wins* 시나리오입니다. (데이터 저장소 값 보다 우선 적용 클라이언트에서 전송한 값.)
+- John의 내용으로 덮어쓰게 Jane의 변경 하도록 할 수 있습니다. Jane을 클릭 한 후 **업데이트**, **예산** 양 1000, 000.00 달러로 돌아갑니다. 이를 *클라이언트 우선* 또는 *최종 우선* 시나리오라고 합니다. (클라이언트의 값 보다 우선 데이터 저장소에 포함 된 내용입니다.)
+- 데이터베이스에서 업데이트 되 고에서 Jane의 변경을 방지할 수 있습니다. 일반적으로 오류 메시지가 표시, 그녀는 데이터의 현재 상태를 표시 하는 그녀 여전히 있도록가 그녀의 변경 내용을 다시 입력 하는 수입니다. 그녀의 입력을 저장 하 고 다시 입력 하지 않고도 적용할 수 있는 옵션을 보려면 아래 제공 하 여 추가 프로세스를 자동화할 수 있습니다. 이를 *저장소 우선* 시나리오라고 합니다. (데이터 저장소 값은 클라이언트가 전송한 값에 우선합니다.)
 
 ### <a name="detecting-concurrency-conflicts"></a>동시성 충돌 확인
 
-Entity Framework에서 처리 하 여 충돌을 해결할 수 있습니다 `OptimisticConcurrencyException` Entity Framework throw 하는 예외입니다. 이러한 예외를 throw 하는 시기를 확인 하기 위해 Entity Framework에서 충돌을 검색할 수 있어야 합니다. 따라서 구성 해야 데이터베이스와 데이터 모델 적절 하 게 합니다. 충돌 감지를 사용 하기 위한 몇 가지 옵션은 다음과 같습니다.
+Entity Framework에서 처리 하 여 충돌을 해결할 수 있습니다 `OptimisticConcurrencyException` Entity Framework throw 하는 예외입니다. 이러한 예외를 throw하는 시기를 확인하기 위해 Entity Framework에서 충돌을 검색할 수 있어야 합니다. 따라서 데이터베이스와 데이터 모델을 적절하게 구성해야 합니다. 충돌 검색을 활성화하기 위한 몇 가지 옵션은 다음과 같습니다.
 
 - 데이터베이스에 행이 변경 된 시기를 결정 하는 데 사용할 수 있는 테이블 열을 포함 합니다. Entity Framework의 해당 열을 포함 하도록 구성할 수 있습니다는 `Where` sql 절 `Update` 또는 `Delete` 명령입니다.
 
@@ -302,8 +302,8 @@ Entity Framework 호출 하는 경우는 `UpdateOfficeAssignment` 저장된 프�
 
 [![Image23](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image46.png)](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application/_static/image45.png)
 
-동시성 충돌 처리 소개를 완료 합니다. 다음 자습서는 Entity Framework를 사용 하는 웹 응용 프로그램의 성능을 향상 하는 방법에 지침을 제공 합니다.
+동시성 충돌 처리에 대한 소개를 완료합니다. 다음 자습서는 Entity Framework를 사용 하는 웹 응용 프로그램의 성능을 향상 하는 방법에 지침을 제공 합니다.
 
->[!div class="step-by-step"]
-[이전](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
-[다음](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)
+> [!div class="step-by-step"]
+> [이전](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
+> [다음](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)

@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core로 특정 구성표-권한 부여"
+title: ASP.NET Core에서 특정 스키마를 가진 권한 부여
 author: rick-anderson
-description: "이 문서에서는 여러 가지 인증 방법을 사용할 때 id는 특정 체계를 제한 하는 방법을 설명 합니다."
+description: 이 문서에서는 여러 가지 인증 방법을 사용할 때 id는 특정 체계를 제한 하는 방법을 설명 합니다.
 manager: wpickett
 ms.author: riande
 ms.date: 10/12/2017
@@ -9,19 +9,19 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/limitingidentitybyscheme
-ms.openlocfilehash: dd044a0829382f9f7f0c3256c6e669340f2d5240
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 81a01d7de8221fcb3bf90a108d9df6633ca2b696
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="authorize-with-a-specific-scheme"></a>특정 구성표로 권한 부여
+# <a name="authorize-with-a-specific-scheme-in-aspnet-core"></a>ASP.NET Core에서 특정 스키마를 가진 권한 부여
 
 단일 페이지 응용 프로그램 (SPAs)와 같은 일부 시나리오에서는 일반적으로 여러 인증 방법을 사용 하는 합니다. 예를 들어 응용 프로그램 JavaScript 요청에 대 한 로그인 쿠키 기반 인증 및 JWT 전달자 인증 사용할 수 있습니다. 경우에 따라 응용 프로그램 인증 처리기를 여러 개 있을 수 있습니다. 예를 들어 기본적인 id를 포함 한 두 명의 쿠키 처리기와 multi-factor authentication (MFA)가 트리거되면 생성 됩니다. 사용자 추가 보안을 필요로 하는 작업을 요청 했으므로 MFA 트리거될 수 있습니다.
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-인증 서비스를 인증 하는 동안 구성할 때 인증 체계 라고 합니다. 예:
+인증 서비스를 인증 하는 동안 구성할 때 인증 체계 라고 합니다. 예를 들어:
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -46,7 +46,7 @@ public void ConfigureServices(IServiceCollection services)
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-인증 체계는 인증 middlewares 인증 하는 동안 구성 된 경우 이름이 지정 됩니다. 예:
+인증 체계는 인증 middlewares 인증 하는 동안 구성 된 경우 이름이 지정 됩니다. 예를 들어:
 
 ```csharp
 public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
@@ -80,7 +80,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
 
 ## <a name="selecting-the-scheme-with-the-authorize-attribute"></a>권한 부여 특성을 가진 구성표 선택
 
-권한 부여, 지점에서 응용 프로그램에 사용할 처리기를 나타냅니다. 응용 프로그램에 인증 체계의 쉼표로 구분 된 목록을 전달 하 여 승인 된 처리기를 선택 `[Authorize]`합니다. `[Authorize]` 특성 인증 체계 또는 기본 구성 되어 있는지 여부에 관계 없이 사용 하는 구성표를 지정 합니다. 예:
+권한 부여, 지점에서 응용 프로그램에 사용할 처리기를 나타냅니다. 응용 프로그램에 인증 체계의 쉼표로 구분 된 목록을 전달 하 여 승인 된 처리기를 선택 `[Authorize]`합니다. `[Authorize]` 특성 인증 체계 또는 기본 구성 되어 있는지 여부에 관계 없이 사용 하는 구성표를 지정 합니다. 예를 들어:
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 

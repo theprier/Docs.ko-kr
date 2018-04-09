@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET MVC에서 ASP.NET Core MVC로 마이그레이션"
+title: ASP.NET MVC에서 ASP.NET Core MVC로 마이그레이션
 author: ardalis
-description: "ASP.NET Core mvc는 ASP.NET MVC 프로젝트 마이그레이션 시작 하는 방법에 알아봅니다."
+description: ASP.NET Core mvc는 ASP.NET MVC 프로젝트 마이그레이션 시작 하는 방법에 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 03/07/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/mvc
-ms.openlocfilehash: c9c9f63cd635f364d9b2e081dc051a46a44d3e4f
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: e249be06726b307a1c41a525a132f7e0ab8b50ee
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="migrating-from-aspnet-mvc-to-aspnet-core-mvc"></a>ASP.NET MVC에서 ASP.NET Core MVC로 마이그레이션
+# <a name="migrate-from-aspnet-mvc-to-aspnet-core-mvc"></a>ASP.NET MVC에서 ASP.NET Core MVC로 마이그레이션
 
 여 [Rick Anderson](https://twitter.com/RickAndMSFT), [김 Roth](https://github.com/danroth27), [Steve Smith](https://ardalis.com/), 및 [Scott Addie](https://scottaddie.com)
 
@@ -48,7 +48,7 @@ ms.lasthandoff: 03/02/2018
 
 * 설치는 `Microsoft.AspNetCore.Mvc` 및 `Microsoft.AspNetCore.StaticFiles` NuGet 패키지 합니다.
 
-  `Microsoft.AspNetCore.Mvc` ASP.NET Core MVC 프레임 워크가입니다. `Microsoft.AspNetCore.StaticFiles` 정적 파일 처리기입니다. ASP.NET 런타임은 모듈식 및 정적 파일을 제공 하려면에 명시적으로 선택 해야 합니다 (참조 [정적 파일 작업](../fundamentals/static-files.md)).
+  `Microsoft.AspNetCore.Mvc` ASP.NET Core MVC 프레임 워크가입니다. `Microsoft.AspNetCore.StaticFiles` 정적 파일 처리기입니다. ASP.NET 런타임은 모듈식 및 정적 파일을 제공 하려면에 명시적으로 선택 해야 합니다 (참조 [정적 파일로 작업할](../fundamentals/static-files.md)).
 
 * 열기는 *.csproj* 파일 (에서 프로젝트를 마우스 오른쪽 단추로 클릭 **솔루션 탐색기** 선택 **편집 WebApp1.csproj**) 추가 하 고는 `PrepareForPublish` 대상:
 
@@ -220,9 +220,9 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerF
 }
 ```
 
-참조 **개발자 예외 페이지를 사용 하 여** 에 [의 오류 처리](../fundamentals/error-handling.md) 자세한 정보에 대 한 합니다.
+참조 **개발자 예외 페이지를 사용 하 여** 에 [오류 처리](../fundamentals/error-handling.md) 자세한 정보에 대 한 합니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 * [클라이언트 쪽 개발](xref:client-side/index)
 * [태그 도우미](xref:mvc/views/tag-helpers/intro)

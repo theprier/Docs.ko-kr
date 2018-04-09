@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/use-ajax-to-deliver-dynamic-updates
-title: "AJAX를 사용 하 여 동적 업데이트를 제공 하도록 | Microsoft Docs"
+title: AJAX를 사용 하 여 동적 업데이트를 제공 하도록 | Microsoft Docs
 author: microsoft
-description: "자신의 관심사 dinner 세부 정보에 통합 하는 Ajax 기반 접근 방식을 사용 하는 dinner 참석 RSVP에 로그인 한 사용자에 대 한 지원을 10 단계 구현 중..."
+description: 자신의 관심사 dinner 세부 정보에 통합 하는 Ajax 기반 접근 방식을 사용 하는 dinner 참석 RSVP에 로그인 한 사용자에 대 한 지원을 10 단계 구현 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-ajax-to-deliver-dynamic-updates
 msc.type: authoredcontent
-ms.openlocfilehash: 7b75f8c6cf08112eb77d1a9a40222ed1425ef3a7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7cea3ee2ec52261521941efac484e91a53f6310b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="use-ajax-to-deliver-dynamic-updates"></a>AJAX를 사용 하 여 동적 업데이트를 제공 하려면
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [PDF 다운로드](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
 
@@ -115,9 +115,9 @@ JQuery를 사용 하려면 먼저 스크립트 참조를 추가 합니다. 사�
 
 [!code-html[Main](use-ajax-to-deliver-dynamic-updates/samples/sample9.html)]
 
-*팁: JavaScript 파일 (jQuery 포함)에 대 한 보다 다양 한 intellisense 지원을 VS 2008 s p 1에 대 한 JavaScript intellisense 핫픽스를 설치 했는지 확인 합니다. 다운로드할 수 있습니다: http://tinyurl.com/vs2008javascripthotfix*
+*팁: JavaScript 파일 (jQuery 포함)에 대 한 보다 다양 한 intellisense 지원을 VS 2008 s p 1에 대 한 JavaScript intellisense 핫픽스를 설치 했는지 확인 합니다. 다운로드할 수 있습니다. http://tinyurl.com/vs2008javascripthotfix*
 
-종종 JQuery를 사용 하 여 작성 된 코드는 전역 "$ ()"를 사용 하 여 CSS 선택기를 사용 하 여 하나 이상의 HTML 요소를 검색 하는 JavaScript 메서드. 예를 들어 *$("#rsvpmsg")* rsvpmsg id로 HTML 요소를 선택 하는 동안 *$(".something")* "어떤 항목" CSS 갖는 모든 요소 선택 클래스 이름입니다. "Return 모든 선택 된 라디오 단추"와 같은 보다 고급 수준의 쿼리를 작성할 수도 있습니다 같은 선택기 쿼리를 사용 하 여: *$("입력 [@type라디오 =] [@checked]")*합니다.
+종종 JQuery를 사용 하 여 작성 된 코드는 전역 "$ ()"를 사용 하 여 CSS 선택기를 사용 하 여 하나 이상의 HTML 요소를 검색 하는 JavaScript 메서드. 예를 들어 <em>$("#rsvpmsg")</em> rsvpmsg id로 HTML 요소를 선택 하는 동안 <em>$(".something")</em> "어떤 항목" CSS 갖는 모든 요소 선택 클래스 이름입니다. "Return 모든 선택 된 라디오 단추"와 같은 보다 고급 수준의 쿼리를 작성할 수도 있습니다 같은 선택기 쿼리를 사용 하 여: <em>$("입력 [@type라디오 =] [@checked]")</em>합니다.
 
 숨기기와 같은 작업을 수행할 수 있는 메서드를 호출할 수 요소를 선택한 후: *$("#rsvpmsg").hide();*
 
@@ -153,6 +153,6 @@ RSVP 시나리오에 대 한 "rsvpmsg" 선택 "AnimateRSVPMessage" 라는 간단
 
 이제 살펴보겠습니다 AJAX를 사용 하 여 더욱 해소를 응용 프로그램에 대화형 매핑 지원을 추가할 수 있습니다 어떻게.
 
->[!div class="step-by-step"]
-[이전](secure-applications-using-authentication-and-authorization.md)
-[다음](use-ajax-to-implement-mapping-scenarios.md)
+> [!div class="step-by-step"]
+> [이전](secure-applications-using-authentication-and-authorization.md)
+> [다음](use-ajax-to-implement-mapping-scenarios.md)

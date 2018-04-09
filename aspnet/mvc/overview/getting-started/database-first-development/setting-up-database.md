@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/setting-up-database
-title: "Entity Framework 6 Database First MVC 5를 사용 하 여 시작 | Microsoft Docs"
+title: Entity Framework 6 Database First MVC 5를 사용 하 여 시작 | Microsoft Docs
 author: tfitzmac
-description: "MVC, Entity Framework 및 ASP.NET 스 캐 폴딩을 사용 하 여 기존 데이터베이스에 대 한 인터페이스를 제공 하는 웹 응용 프로그램을 만들 수 있습니다. 이 자습서 seri 중..."
+description: MVC, Entity Framework 및 ASP.NET 스 캐 폴딩을 사용 하 여 기존 데이터베이스에 대 한 인터페이스를 제공 하는 웹 응용 프로그램을 만들 수 있습니다. 이 자습서 seri 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/01/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/setting-up-database
 msc.type: authoredcontent
-ms.openlocfilehash: cb979333131cc6ac87fd640bf7c96931054a1814
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: ae60b5c808d2522c66dc17ccf7d16fefdc65d552
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="getting-started-with-entity-framework-6-database-first-using-mvc-5"></a>Entity Framework 6 Database First MVC 5를 사용 하 여 시작 하기
 ====================
@@ -39,7 +39,7 @@ Code First 개발의 기본 예제를 보려면 [Getting Started with ASP.NET MV
 
 사용 하려면 Entity Framework 방식을 선택에 대 한 지침을 참조 하십시오. [Entity Framework 개발 방법](https://msdn.microsoft.com/library/ms178359.aspx#dbfmfcf)합니다.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 Visual Studio 2013 또는 Visual Studio Express 2013 for Web
 
@@ -111,5 +111,5 @@ Visual Studio를 시작 하 고 만듭니다는 **SQL Server 데이터베이스 
 
 이제 데이터베이스 설정 되며 데이터로 채워집니다. 다음 자습서는 데이터베이스에 대 한 웹 응용 프로그램에 만들어집니다.
 
->[!div class="step-by-step"]
-[다음](creating-the-web-application.md)
+> [!div class="step-by-step"]
+> [다음](creating-the-web-application.md)

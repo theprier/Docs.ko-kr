@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/18-customizing-site-wide-behavior
-title: "ASP.NET 웹 페이지 (Razor) 사이트에 대 한 사이트 전체 동작을 사용자 지정 | Microsoft Docs"
+title: ASP.NET 웹 페이지 (Razor) 사이트에 대 한 사이트 전체 동작을 사용자 지정 | Microsoft Docs
 author: tfitzmac
-description: "이 장의 페이지 뿐 아니라 전체 웹 사이트 또는 전체 폴더를 설정 하는 방법에 설명 합니다."
+description: 이 장의 페이지 뿐 아니라 전체 웹 사이트 또는 전체 폴더를 설정 하는 방법에 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/17/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/18-customizing-site-wide-behavior
 msc.type: authoredcontent
-ms.openlocfilehash: b1caa26a23517bd976addfefac89375ae965eb91
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4457318bcf1d2886eb8ed68fdd795eea7905368b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="customizing-site-wide-behavior-for-aspnet-web-pages-razor-sites"></a>ASP.NET 웹 페이지 (Razor) 사이트에 대 한 사이트 전체 동작을 사용자 지정
 ====================
@@ -93,20 +93,20 @@ ASP.NET 웹 페이지에서 작성 하는 코드의 대부분에 대 한 개별 
 
     수정 다음 전자 메일의 코드에서 관련된 설정:
 
-    - 설정 `your-SMTP-host` 에 액세스할 수 있는 SMTP 서버의 이름입니다.
-    - 설정 `your-user-name-here` SMTP 서버 계정의 사용자 이름에 있습니다.
-    - 설정 `your-account-password` 를 SMTP 서버 계정의 암호입니다.
-    - 설정 `your-email-address-here` 자신의 전자 메일 주소로 합니다. 메시지에서 보내는 전자 메일 주소입니다. (다른 지정할 수는 일부 전자 메일 공급자 주저 하지 마시기 바랍니다 `From` 주소 및 사용자 이름으로 사용 합니다는 `From` 주소입니다.)
+   - 설정 `your-SMTP-host` 에 액세스할 수 있는 SMTP 서버의 이름입니다.
+   - 설정 `your-user-name-here` SMTP 서버 계정의 사용자 이름에 있습니다.
+   - 설정 `your-account-password` 를 SMTP 서버 계정의 암호입니다.
+   - 설정 `your-email-address-here` 자신의 전자 메일 주소로 합니다. 메시지에서 보내는 전자 메일 주소입니다. (다른 지정할 수는 일부 전자 메일 공급자 주저 하지 마시기 바랍니다 `From` 주소 및 사용자 이름으로 사용 합니다는 `From` 주소입니다.)
 
-    SMTP 설정에 대 한 자세한 내용은 참조 [전자 메일 설정 구성](https://go.microsoft.com/fwlink/?LinkID=202899#configuring_email_settings) 문서의 [ASP.NET 웹 페이지 (Razor) 사이트에서 전자 메일 보내기](https://go.microsoft.com/fwlink/?LinkID=202899) 및 [보내는전자메일문제](https://go.microsoft.com/fwlink/?LinkId=253001#email)에 [ASP.NET 웹 페이지 (Razor) 문제 해결 가이드](https://go.microsoft.com/fwlink/?LinkId=253001)합니다.
-- 저장 된  *\_AppStart.cshtml* 파일을 닫습니다.
-- 웹 사이트의 루트 폴더에 명명 된 새 페이지를 만들 *TestEmail.cshtml*합니다.
-- 기존 콘텐츠를 다음으로 바꿉니다. 
+     SMTP 설정에 대 한 자세한 내용은 참조 [전자 메일 설정 구성](https://go.microsoft.com/fwlink/?LinkID=202899#configuring_email_settings) 문서의 [ASP.NET 웹 페이지 (Razor) 사이트에서 전자 메일 보내기](https://go.microsoft.com/fwlink/?LinkID=202899) 및 [보내는전자메일문제](https://go.microsoft.com/fwlink/?LinkId=253001#email)에 [ASP.NET 웹 페이지 (Razor) 문제 해결 가이드](https://go.microsoft.com/fwlink/?LinkId=253001)합니다.
+4. 저장 된  *\_AppStart.cshtml* 파일을 닫습니다.
+5. 웹 사이트의 루트 폴더에 명명 된 새 페이지를 만들 *TestEmail.cshtml*합니다.
+6. 기존 콘텐츠를 다음으로 바꿉니다. 
 
-    [!code-cshtml[Main](18-customizing-site-wide-behavior/samples/sample4.cshtml)]
-- 실행 된 *TestEmail.cshtml* 브라우저에서 페이지입니다.
-- 전자 메일 메시지를 보내봅니다 누른 다음 필드에 **보낼**합니다.
-- 메시지 참조 되도록 전자 메일을 확인 합니다.
+     [!code-cshtml[Main](18-customizing-site-wide-behavior/samples/sample4.cshtml)]
+7. 실행 된 *TestEmail.cshtml* 브라우저에서 페이지입니다.
+8. 전자 메일 메시지를 보내봅니다 누른 다음 필드에 **보낼**합니다.
+9. 메시지 참조 되도록 전자 메일을 확인 합니다.
 
 이 예제에서 중요 한 부분은 일반적으로 변경 하지 않는 설정을-SMTP 서버와 전자 메일 자격 증명의 이름이 마음에-에 설정 된는  *\_AppStart.cshtml* 파일입니다. 이런 방식으로 다시 설정 각 페이지에서 전자 메일을 전송 하는 위치 필요가 없습니다. (몇 가지 이유로 이러한 설정을 변경 해야 하는 경우 설정할 수 있지만 개별적으로 페이지에 있습니다.) 페이지에서 일반적으로 받는 사람 및 전자 메일 메시지의 본문 같이 각 시간을 변경 하는 값만 설정 합니다.
 
@@ -211,6 +211,6 @@ ASP.NET를 사용 하면 계층 구조를 만들  *\_PageStart.cshtml* 파일입
 7. 실행 *Page.cshtml* 브라우저에서 합니다. 코드는 로그인 페이지로 리디렉션됩니다. 로그인 하기 전에 등록 해야 합니다. 등록 로그인 한 후 페이지를 탐색 하 고 해당 내용을 볼 수 있습니다.
 
 <a id="Additional_Resources"></a>
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 [ASP.NET 웹 페이지 Razor 구문을 사용 하 여 프로그래밍 소개](https://go.microsoft.com/fwlink/?LinkID=251587)

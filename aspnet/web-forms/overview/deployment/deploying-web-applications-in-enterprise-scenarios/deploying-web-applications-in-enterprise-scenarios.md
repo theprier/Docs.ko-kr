@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios
-title: "Visual Studio 2010을 사용 하 여 엔터프라이즈 시나리오에서 웹 응용 프로그램 배포 | Microsoft Docs"
+title: Visual Studio 2010을 사용 하 여 엔터프라이즈 시나리오에서 웹 응용 프로그램 배포 | Microsoft Docs
 author: jrjlee
-description: "도구와 기술을 다양 한 엔터프라이즈 시나리오에서 웹 응용 프로그램을 배포 하는 데 자습서의이 집합에 설명 합니다. 최대한 활용 하는 방법에 설명..."
+description: 도구와 기술을 다양 한 엔터프라이즈 시나리오에서 웹 응용 프로그램을 배포 하는 데 자습서의이 집합에 설명 합니다. 최대한 활용 하는 방법에 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/03/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios
 msc.type: authoredcontent
-ms.openlocfilehash: 99bab371dd34b30f3554843e49bbec7f57c3f96c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 921b1ccd8a1f2109a51f3f75149588422fefb91d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-web-applications-in-enterprise-scenarios-using-visual-studio-2010"></a>Visual Studio 2010을 사용 하 여 엔터프라이즈 시나리오에서 웹 응용 프로그램 배포
 ====================
@@ -36,7 +36,7 @@ ms.lasthandoff: 11/10/2017
 > > 이러한 자습서 CI 서버로 사용할의 TFS 설명 하지만 지침 CI는 모든 서버에 맞게 쉽게 됩니다. Tfs를 이해 하 고이 자습서를 활용 한 세부 정보를 제공 하지 않아도 됩니다.
 > 
 > 
-> 다음 자습서는 이탈리아어로 번역에 대 한 방문 [http://www.lucamorelli.it](http://www.lucamorelli.it)합니다.
+> 다음 자습서는 이탈리아어로 번역에 대 한 방문 [ http://www.lucamorelli.it ](http://www.lucamorelli.it)합니다.
 
 
 ## <a name="about-the-authors"></a>저자 정보
@@ -54,11 +54,11 @@ Benjamin Curry와 주 기술자는 [콘텐츠 마스터](http://www.contentmaste
 연습을 수행 하 고이 자습서에서 설명 하는 작업을 수행 하려면 개발 컴퓨터에이 소프트웨어를 설치 해야 합니다.
 
 - Visual Studio 2010 Premium 또는 Ultimate Edition 서비스 팩 1
-- .NET framework 4.0
+- .NET Framework 4.0
 - .NET framework 3.5 서비스 팩 1
 - ASP.NET MVC 3.0
 - IIS 7.5 Express
-- SQL Server 2008 R2 Express
+- SQL Server Express 2008 R2
 
 이 연습에 설명 된 배포 단계를 수행 하려면 샘플 웹 응용 프로그램 배포 환경에 액세스 해야 합니다. 최상의 결과 이러한 환경에는 조직의 엔터프라이즈 배포 패턴을 반영 해야 합니다. 그런 다음 배포 환경 및 조직의 요구 사항을 반영 하기 위해이 설명서에서 제공 된 연습을 수정할 수 있습니다.
 
@@ -80,5 +80,5 @@ Benjamin Curry와 주 기술자는 [콘텐츠 마스터](http://www.contentmaste
 
 자습서의이 집합 참조 구현을 제공 하 고 작업 및 연습 일반적인 컨텍스트를 제공 하는 가상의 엔터프라이즈 배포 시나리오와 함께 복잡성 현실적인 수준으로 샘플 솔루션을 사용 합니다. 다음 항목인 [엔터프라이즈 웹 배포: 시나리오 개요](enterprise-web-deployment-scenario-overview.md), 시나리오와 샘플 솔루션을 소개 합니다. 여기에서 자습서 및 요구 사항에 가장 근접 하는 항목을 통해 사용할 수 있습니다.
 
->[!div class="step-by-step"]
-[다음](enterprise-web-deployment-scenario-overview.md)
+> [!div class="step-by-step"]
+> [다음](enterprise-web-deployment-scenario-overview.md)

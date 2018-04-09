@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-partial-page-updates-with-asp-net-ajax
-title: "ASP.NET AJAX와 함께 부분 페이지 업데이트 이해 | Microsoft Docs"
+title: ASP.NET AJAX와 함께 부분 페이지 업데이트 이해 | Microsoft Docs
 author: scottcate
-description: "아마도 가장 눈에 띄는 ASP.NET AJAX Extensions의 기능은 t에 대 한 전체 포스트백을 수행 하지 않고 증분 또는 부분 페이지 업데이트를 수행 하는 기능 중..."
+description: 아마도 가장 눈에 띄는 ASP.NET AJAX Extensions의 기능은 t에 대 한 전체 포스트백을 수행 하지 않고 증분 또는 부분 페이지 업데이트를 수행 하는 기능 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/28/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-partial-page-updates-with-asp-net-ajax
 msc.type: authoredcontent
-ms.openlocfilehash: 1d8d3009df0a264e466d3f7decfb65978d8ae7a4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 91a98bf1c9a71ae84c569f7ae40930422cb652e0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="understanding-partial-page-updates-with-aspnet-ajax"></a>ASP.NET AJAX와 함께 이해 부분 페이지 업데이트
 ====================
@@ -52,9 +52,9 @@ Microsoft의 ASP.NET AJAX 확장명을 입력 합니다. 에 AJAX **A** 동기 *
 ## <a name="walkthrough-integrating-partial-rendering-into-an-existing-project"></a>연습: 부분 렌더링을 기존 프로젝트에 통합
 
 
-1. Microsoft Visual Studio 2008에서으로 이동 하 여 새 ASP.NET 웹 사이트 프로젝트를 만듭니다 *파일*  *- &gt; 새로*  *- &gt; 웹사이트* 대화 상자에서 ASP.NET 웹 사이트를 선택 하 고 있습니다. 이름을 지정할 수 있습니다이 든 및 파일 시스템 또는 인터넷 정보 서비스 (IIS)에 설치할 수 있습니다.
+1. Microsoft Visual Studio 2008에서으로 이동 하 여 새 ASP.NET 웹 사이트 프로젝트를 만듭니다 <em>파일</em>  <em>- &gt; 새로</em>  <em>- &gt; 웹사이트</em> 대화 상자에서 ASP.NET 웹 사이트를 선택 하 고 있습니다. 이름을 지정할 수 있습니다이 든 및 파일 시스템 또는 인터넷 정보 서비스 (IIS)에 설치할 수 있습니다.
 2. 기본 ASP.NET 태그와 빈 기본 페이지가 표시 됩니다 (서버 쪽 폼 및 `@Page` 지시문). 라는 레이블을 삭제 `Label1` 단추 호출 `Button1` form 요소 안에 페이지로 끌어다 놓습니다. 원하는를 해당 텍스트 속성을 설정할 수 있습니다.
-3. 디자인 보기에서 두 번 클릭 `Button1` 코드 숨김 이벤트 처리기를 생성 합니다. 이 이벤트 처리기 내에서 설정할 `Label1.Text` 에 단추를 클릭 하면! 입니다.
+3. 디자인 보기에서 두 번 클릭 `Button1` 코드 숨김 이벤트 처리기를 생성 합니다. 이 이벤트 처리기 내에서 설정할 `Label1.Text` 에 단추를 클릭 하면! 이어야 합니다.
 
 **부분 렌더링이 활성화 하기 전에 default.aspx에 대 한 태그 목록 1:**
 
@@ -73,11 +73,11 @@ Microsoft의 ASP.NET AJAX 확장명을 입력 합니다. 에 AJAX **A** 동기 *
 ([전체 크기 이미지를 보려면 클릭](understanding-partial-page-updates-with-asp-net-ajax/_static/image3.png))
 
 
-1. *알려진된 문제:*ASP.NET 2.0 AJAX 확장와 함께 설치 된 Visual Studio 2005이 이미 있는 컴퓨터에 Visual Studio 2008을 설치 하는 경우 Visual Studio 2008에서 AJAX 확장 도구 상자 항목을 가져옵니다. 구성 요소;의 도구 설명을 검사 하 여 대/소문자 인지를 확인할 수 있습니다. 버전 3.5.0.0 이제 합니다. 버전 2.0.0.0 야 말로 하는 경우 다음가 오래 된 도구 상자 항목을 가져와서 Visual Studio에서 도구 상자 항목 선택 대화 상자를 사용 하 여이 수동으로 가져오는 필요 합니다. 디자이너를 통해 버전 2 컨트롤을 추가할 수 없습니다.
+1. <em>알려진된 문제:</em>ASP.NET 2.0 AJAX 확장와 함께 설치 된 Visual Studio 2005이 이미 있는 컴퓨터에 Visual Studio 2008을 설치 하는 경우 Visual Studio 2008에서 AJAX 확장 도구 상자 항목을 가져옵니다. 구성 요소;의 도구 설명을 검사 하 여 대/소문자 인지를 확인할 수 있습니다. 버전 3.5.0.0 이제 합니다. 버전 2.0.0.0 야 말로 하는 경우 다음가 오래 된 도구 상자 항목을 가져와서 Visual Studio에서 도구 상자 항목 선택 대화 상자를 사용 하 여이 수동으로 가져오는 필요 합니다. 디자이너를 통해 버전 2 컨트롤을 추가할 수 없습니다.
 
-1. 전에 `<asp:Label>` 태그 시작 공백, 줄 만들고 도구 상자에서 UpdatePanel 컨트롤을 두 번 클릭 합니다. 새 `@Register` 지시어를 사용 하 여 컨트롤 System.Web.UI 네임 스페이스 내에서 가져와야 하는지 나타내는 페이지의 맨 아래에 포함 되어는 `asp:` 접두사입니다.
-2. 닫는 끌어 `</asp:UpdatePanel>` 래핑된 레이블 및 단추 컨트롤 요소를 제대로 구성 된 있도록 Button 요소 끝을 지나서 태그입니다.
-3. 에서는 여 `<asp:UpdatePanel>` 태그, 여는 새 태그를 시작 합니다. 참고는 IntelliSense 묻는 메시지를 두 가지 옵션이 있습니다. 이 경우에 만듭니다는 `<ContentTemplate>` 태그입니다. 태그는 올바른 형식의 레이블 및 단추 주위이 태그를 줄 바꿈 해야 합니다.
+2. 전에 `<asp:Label>` 태그 시작 공백, 줄 만들고 도구 상자에서 UpdatePanel 컨트롤을 두 번 클릭 합니다. 새 `@Register` 지시어를 사용 하 여 컨트롤 System.Web.UI 네임 스페이스 내에서 가져와야 하는지 나타내는 페이지의 맨 아래에 포함 되어는 `asp:` 접두사입니다.
+3. 닫는 끌어 `</asp:UpdatePanel>` 래핑된 레이블 및 단추 컨트롤 요소를 제대로 구성 된 있도록 Button 요소 끝을 지나서 태그입니다.
+4. 에서는 여 `<asp:UpdatePanel>` 태그, 여는 새 태그를 시작 합니다. 참고는 IntelliSense 묻는 메시지를 두 가지 옵션이 있습니다. 이 경우에 만듭니다는 `<ContentTemplate>` 태그입니다. 태그는 올바른 형식의 레이블 및 단추 주위이 태그를 줄 바꿈 해야 합니다.
 
 
 [![](understanding-partial-page-updates-with-asp-net-ajax/_static/image5.png)](understanding-partial-page-updates-with-asp-net-ajax/_static/image4.png)
@@ -116,11 +116,11 @@ Visual Studio 2008는 ASP.NET AJAX 사용 웹 사이트에 대 한 미리 정의
 
 | **속성 이름** | **Type** | **설명** |
 | --- | --- | --- |
-| AllowCustomErrors 리디렉션 | Bool | 오류를 처리 하는 web.config 파일의 사용자 지정 오류 섹션이 사용할지 여부를 지정 합니다. |
-| AsyncPostBackError 메시지 | 문자열 | 오류가 발생 하는 경우 클라이언트에 보낸 오류 메시지를 가져오거나 설정 합니다. |
-| AsyncPostBack 제한 | Int32 | 완료에 대 한 비동기 요청에 대 한 클라이언트가 대기 해야 하는 한 번의 기본 시간을 가져오거나 설정 합니다. |
-| EnableScript 전역화 | Bool | 전역화 스크립트를 사용할지 여부를 나타내는 값을 가져오거나 설정 합니다. |
-| EnableScript 지역화 | Bool | 스크립트 지역화를 사용할지 여부를 나타내는 값을 가져오거나 설정 합니다. |
+| AllowCustomErrors-Redirect | Bool | 오류를 처리 하는 web.config 파일의 사용자 지정 오류 섹션이 사용할지 여부를 지정 합니다. |
+| AsyncPostBackError-Message | 문자열 | 오류가 발생 하는 경우 클라이언트에 보낸 오류 메시지를 가져오거나 설정 합니다. |
+| AsyncPostBack-Timeout | Int32 | 완료에 대 한 비동기 요청에 대 한 클라이언트가 대기 해야 하는 한 번의 기본 시간을 가져오거나 설정 합니다. |
+| EnableScript-Globalization | Bool | 전역화 스크립트를 사용할지 여부를 나타내는 값을 가져오거나 설정 합니다. |
+| EnableScript-Localization | Bool | 스크립트 지역화를 사용할지 여부를 나타내는 값을 가져오거나 설정 합니다. |
 | ScriptLoadTimeout | Int32 | 클라이언트에 스크립트를 로드 하기 위한 허용 하는 시간 (초) 수를 결정 |
 | ScriptMode | Enum (자동, 디버그, 릴리스, 상속) | 릴리스 버전의 스크립트를 렌더링할지 여부를 가져오거나 |
 | ScriptPath | 문자열 | 클라이언트에 보낼 스크립트 파일의 위치를 루트 경로 가져오거나 설정 합니다. |
@@ -129,10 +129,10 @@ Visual Studio 2008는 ASP.NET AJAX 사용 웹 사이트에 대 한 미리 정의
 
 | **속성 이름** | **Type** | **설명** |
 | --- | --- | --- |
-| AuthenticationService | AuthenticationService 관리자 | 클라이언트에 전송 될 ASP.NET 인증 서비스 프록시에 대 한 세부 정보를 가져옵니다. |
+| AuthenticationService | AuthenticationService-Manager | 클라이언트에 전송 될 ASP.NET 인증 서비스 프록시에 대 한 세부 정보를 가져옵니다. |
 | IsDebuggingEnabled | Bool | 여부 가져옵니다 스크립팅하고 코드 디버깅을 사용 합니다. |
 | IsInAsyncPostback | Bool | 페이지는 현재 비동기 다시 게시 요청에 있는지 여부를 가져옵니다. |
-| ProfileService | ProfileService 관리자 | 클라이언트에 전송 되는 ASP.NET 프로 파일링 서비스 프록시에 대 한 세부 정보를 가져옵니다. |
+| ProfileService | ProfileService-Manager | 클라이언트에 전송 되는 ASP.NET 프로 파일링 서비스 프록시에 대 한 세부 정보를 가져옵니다. |
 | 스크립트 | 컬렉션&lt;스크립트 참조&gt; | 클라이언트에 전송 되는 스크립트 참조의 컬렉션을 가져옵니다. |
 | 서비스 | 컬렉션&lt;서비스 참조&gt; | 클라이언트에 전송 되는 웹 서비스 프록시 참조의 컬렉션을 가져옵니다. |
 | SupportsPartialRendering | Bool | 현재 클라이언트 부분 렌더링을 지원 하는지 여부를 가져옵니다. 이 속성을 반환 하는 경우 **false**, 표준 포스트백이 페이지에 대 한 모든 요청 됩니다. |
@@ -150,9 +150,9 @@ Visual Studio 2008는 ASP.NET AJAX 사용 웹 사이트에 대 한 미리 정의
 | &lt;AuthenticationService&gt; | ASP.NET 인증 서비스에 대 한 프록시에 대 한 세부 정보를 제공합니다. |
 | &lt;ProfileService&gt; | ASP.NET 서비스를 프로 파일링 하는 프록시에 대 한 세부 정보를 제공 합니다. |
 | &lt;스크립트&gt; | 추가 스크립트 참조를 제공 합니다. |
-| &lt;asp: ScriptReference&gt; | 특정 스크립트 참조를 나타냅니다. |
-| &lt;서비스&gt; | 생성 된 프록시 클래스를 포함 하는 추가 웹 서비스 참조를 제공 합니다. |
-| &lt;asp: ServiceReference&gt; | 특정 웹 서비스 참조를 나타냅니다. |
+| &lt;asp:ScriptReference&gt; | 특정 스크립트 참조를 나타냅니다. |
+| &lt;Service&gt; | 생성 된 프록시 클래스를 포함 하는 추가 웹 서비스 참조를 제공 합니다. |
+| &lt;asp:ServiceReference&gt; | 특정 웹 서비스 참조를 나타냅니다. |
 
 ASP.NET AJAX 확장에 대 한 필수 코어 ScriptManager입니다. 스크립트 라이브러리 (클라이언트 쪽 스크립트 광범위 한 형식 시스템 포함)에 대 한 액세스를 제공, 부분 렌더링을 지원 하 고 추가 ASP.NET 서비스 (예: 인증 및 프로 파일링, 뿐만 아니라 다른 웹 서비스)에 대 한 포괄적인 지원을 제공 합니다. ScriptManager 컨트롤은 또한 전역화 및 지역화 클라이언트 스크립트에 대 한 지원 제공 합니다.
 
@@ -190,7 +190,7 @@ ScriptManager 컨트롤 지역화 스크립트 문자열 및 사용자 인터페
 
 | **속성 이름** | **Type** | **설명** |
 | --- | --- | --- |
-| 경우 ChildrenAsTriggers | bool | 자식 컨트롤이 포스트백에서 새로 고침을 자동으로 호출 여부를 지정 합니다. |
+| ChildrenAsTriggers | bool | 자식 컨트롤이 포스트백에서 새로 고침을 자동으로 호출 여부를 지정 합니다. |
 | RenderMode | enum (블록, 인라인) | 지정 방식으로 콘텐츠를 시각적으로 표시 됩니다. |
 | UpdateMode | enum (항상, 조건부) | UpdatePanel 부분 렌더링 하는 동안 새로 고침은 항상 여부 또는 경우만 새로 고쳐집니다 트리거 적중 될 때 지정 합니다. |
 
@@ -200,23 +200,23 @@ ScriptManager 컨트롤 지역화 스크립트 문자열 및 사용자 인터페
 | --- | --- | --- |
 | IsInPartialRendering | bool | UpdatePanel 현재 요청에 대 한 부분 렌더링을 지원 하는지 여부를 가져옵니다. |
 | ContentTemplate | ITemplate | 업데이트 요청에 대 한 태그 서식 파일을 가져옵니다. |
-| ContentTemplateContainer | 컨트롤 | 업데이트 요청에 대 한 프로그래밍 방식으로 서식 파일을 가져옵니다. |
-| 트리거 | UpdatePanel-TriggerCollection | 현재 UpdatePanel와 연결 된 트리거 목록을 가져옵니다. |
+| ContentTemplateContainer | Control | 업데이트 요청에 대 한 프로그래밍 방식으로 서식 파일을 가져옵니다. |
+| 트리거 | UpdatePanel- TriggerCollection | 현재 UpdatePanel와 연결 된 트리거 목록을 가져옵니다. |
 
 공용 코드 메서드:
 
 | **메서드 이름** | **Type** | **설명** |
 | --- | --- | --- |
-| Update) | Void | 지정 된 UpdatePanel을 프로그래밍 방식으로 업데이트합니다. 그렇지 않으면 트리거되지 UpdatePanel의 부분 렌더링을 트리거할 서버 요청을 허용 합니다. |
+| Update() | Void | 지정 된 UpdatePanel을 프로그래밍 방식으로 업데이트합니다. 그렇지 않으면 트리거되지 UpdatePanel의 부분 렌더링을 트리거할 서버 요청을 허용 합니다. |
 
 태그의 하위 항목:
 
 | **태그** | **설명** |
 | --- | --- |
 | &lt;ContentTemplate&gt; | 부분 렌더링 결과 렌더링 하는 데 사용할 태그를 지정 합니다. 자식 &lt;asp: UpdatePanel&gt;합니다. |
-| &lt;트리거&gt; | 컬렉션을 지정  *n*  이 UpdatePanel이 업데이트와 연관 된 컨트롤입니다. 자식 &lt;asp: UpdatePanel&gt;합니다. |
-| &lt;asp: AsyncPostBackTrigger&gt; | 주어진된 UpdatePanel에 대 한 부분 페이지 렌더링을 호출 하는 트리거를 지정 합니다. 있거나 해당 UpdatePanel의 하위 항목으로 컨트롤을 되지 않을 수 있습니다. 세분화 된 이벤트 이름입니다. 자식 &lt;트리거&gt;합니다. |
-| &lt;asp: PostBackTrigger&gt; | 전체 페이지를 새로 고칠을 발생 시키는 컨트롤을 지정 합니다. 있거나 해당 UpdatePanel의 하위 항목으로 컨트롤을 되지 않을 수 있습니다. 개체에 세분화 합니다. 자식 &lt;트리거&gt;합니다. |
+| &lt;트리거&gt; | 컬렉션을 지정 *n* 이 UpdatePanel이 업데이트와 연관 된 컨트롤입니다. 자식 &lt;asp: UpdatePanel&gt;합니다. |
+| &lt;asp:AsyncPostBackTrigger&gt; | 주어진된 UpdatePanel에 대 한 부분 페이지 렌더링을 호출 하는 트리거를 지정 합니다. 있거나 해당 UpdatePanel의 하위 항목으로 컨트롤을 되지 않을 수 있습니다. 세분화 된 이벤트 이름입니다. 자식 &lt;트리거&gt;합니다. |
+| &lt;asp:PostBackTrigger&gt; | 전체 페이지를 새로 고칠을 발생 시키는 컨트롤을 지정 합니다. 있거나 해당 UpdatePanel의 하위 항목으로 컨트롤을 되지 않을 수 있습니다. 개체에 세분화 합니다. 자식 &lt;트리거&gt;합니다. |
 
 `UpdatePanel` 컨트롤은 서버 쪽 콘텐츠 AJAX 확장의 부분 렌더링 기능에 관여 합니다를 구분 하는 컨트롤입니다. 페이지, 될 수 있는 UpdatePanel 컨트롤의 수에 제한이 없음을 의미 이며 중첩 될 수 있습니다. 각 수 독립적으로 작업할 수 있도록 각 UpdatePanel 격리 되 (해당 페이지의 다른 부분을 독립적으로 페이지의 포스트백 렌더링 같은 시간에 실행 중인 두 개의 적어지므로 있을 수 있습니다).
 
@@ -285,7 +285,7 @@ DOM의 재생성 추가 문제가 많이 트리거됩니다.
 
 | **속성 이름** | **Type** | **설명** |
 | --- | --- | --- |
-| AssociatedUpdate PanelID | 문자열 | 이 UpdateProgress에 대해 보고 해야 하는 UpdatePanel의 ID를 지정 합니다. |
+| AssociatedUpdate-PanelID | 문자열 | 이 UpdateProgress에 대해 보고 해야 하는 UpdatePanel의 ID를 지정 합니다. |
 | DisplayAfter | Int | 비동기 요청이 시작 된 후이 컨트롤이 표시 되기 전에 밀리초 단위로 제한 시간을 지정 합니다. |
 | DynamicLayout | bool | 진행 상황을 동적으로 렌더링 되는지 여부를 지정 합니다. |
 
@@ -317,5 +317,5 @@ UpdatePanel 컨트롤을 사용 하는 경우 개발자가 잠재적으로 발�
 
 Scott 인증서의 근무 기간이 Microsoft 웹 기술을 1997 년부터 이며 myKB.com 부서장 ([www.myKB.com](http://www.myKB.com)) ASP.NET 작성 i 여기서 기반 응용 프로그램 기술 자료 소프트웨어 솔루션에 집중 합니다. Scott에 전자 메일을 통해 연결할 수 [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com) 또는에서 그의 블로그 [ScottCate.com](http://ScottCate.com)
 
->[!div class="step-by-step"]
-[다음](understanding-asp-net-ajax-updatepanel-triggers.md)
+> [!div class="step-by-step"]
+> [다음](understanding-asp-net-ajax-updatepanel-triggers.md)

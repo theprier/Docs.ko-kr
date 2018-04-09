@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-code-update
-title: "Visual Studio를 사용 하 여 ASP.NET 웹 배포: 코드 업데이트 배포 | Microsoft Docs"
+title: 'Visual Studio를 사용 하 여 ASP.NET 웹 배포: 코드 업데이트 배포 | Microsoft Docs'
 author: tdykstra
-description: "이 자습서 시리즈를 배포 하는 방법을 보여 줍니다. ASP.NET (게시) 실행 하 여 웹 응용 프로그램을 Azure 앱 서비스 웹 앱 또는 타사 호스팅 공급자 중..."
+description: 이 자습서 시리즈를 배포 하는 방법을 보여 줍니다. ASP.NET (게시) 실행 하 여 웹 응용 프로그램을 Azure 앱 서비스 웹 앱 또는 타사 호스팅 공급자 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-a-code-update
 msc.type: authoredcontent
-ms.openlocfilehash: f6861c702c1ccb19e5a4eee484a622079e205f86
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: dd02b5c627fbfbb0034030f4c21207d24f6aabce
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-a-code-update"></a>Visual Studio를 사용 하 여 ASP.NET 웹 배포: 코드 업데이트 배포
 ====================
@@ -207,6 +207,6 @@ URL은 Azure 관리 포털에서 웹 사이트의 대시보드 페이지에 표�
 
 다음 자습서에서는 데이터베이스 변경 내용을 배포 하는 방법을 보여 줍니다: 데이터베이스를 강사 페이지를 birthdate 필드를 추가 합니다.
 
->[!div class="step-by-step"]
-[이전](deploying-to-production.md)
-[다음](deploying-a-database-update.md)
+> [!div class="step-by-step"]
+> [이전](deploying-to-production.md)
+> [다음](deploying-a-database-update.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/custom-formatting/displaying-summary-information-in-the-gridview-s-footer-cs
-title: "GridView의 바닥글 (C#)의 요약 정보를 표시 합니다. | Microsoft Docs"
+title: GridView의 바닥글 (C#)의 요약 정보를 표시 합니다. | Microsoft Docs
 author: rick-anderson
-description: "요약 정보는 종종 요약 행에 대 한 보고서의 맨 아래에 표시 됩니다. GridView 컨트롤에 해당 셀을 활용해 서 pr 바닥글 행을 포함할 수 있습니다..."
+description: 요약 정보는 종종 요약 행에 대 한 보고서의 맨 아래에 표시 됩니다. GridView 컨트롤에 해당 셀을 활용해 서 pr 바닥글 행을 포함할 수 있습니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/displaying-summary-information-in-the-gridview-s-footer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0d3df976181a4641dbfffe77875989c77ece059d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3bb00a41bee86090f71d6315d73037cd41b2c621
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="displaying-summary-information-in-the-gridviews-footer-c"></a>GridView의 바닥글 (C#)의 요약 정보를 표시합니다.
 ====================
@@ -101,7 +101,7 @@ DropDownList 했으므로 시점에서 (`Categories`) 시스템의 범주를 나
 
 [![선택한 범주 드롭다운 목록에서 매개 변수 값 categoryID 가져오기](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image23.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image22.png)
 
-**그림 8**: 가져오기는  *`categoryID`*  선택한 범주 드롭다운 목록에서 매개 변수 값 ([전체 크기 이미지를 보려면 클릭](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image24.png))
+**그림 8**: 가져오기는 *`categoryID`* 선택한 범주 드롭다운 목록에서 매개 변수 값 ([전체 크기 이미지를 보려면 클릭](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image24.png))
 
 
 마법사 완료 후 GridView 각 제품 속성에 대해 BoundField를 갖게 됩니다. 이제 이러한 BoundFields 있도록 정리는 `ProductName`, `UnitPrice`, `UnitsInStock`, 및 `UnitsOnOrder` BoundFields 표시 됩니다. 나머지 BoundFields에 모든 필드 수준 설정을 추가할 수 (예: 서식의 `UnitPrice` 통화로). 다음과 같이 변경한 후 GridView의 선언적 태그는 다음과 비슷하게 표시 됩니다.
@@ -114,7 +114,7 @@ DropDownList 했으므로 시점에서 (`Categories`) 시스템의 범주를 나
 
 [![선택한 범주 드롭다운 목록에서 매개 변수 값 categoryID 가져오기](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image26.png)](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image25.png)
 
-**그림 9**: 가져오기는  *`categoryID`*  선택한 범주 드롭다운 목록에서 매개 변수 값 ([전체 크기 이미지를 보려면 클릭](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image27.png))
+**그림 9**: 가져오기는 *`categoryID`* 선택한 범주 드롭다운 목록에서 매개 변수 값 ([전체 크기 이미지를 보려면 클릭](displaying-summary-information-in-the-gridview-s-footer-cs/_static/image27.png))
 
 
 ## <a name="step-2-displaying-a-footer-in-the-gridview"></a>2 단계: GridView의 바닥글 표시
@@ -177,10 +177,10 @@ GridView의 바닥글 표시 us를 연결 하면 다음 단계 된는 요약 데
 
 누적 합계를 유지 하기 위해 이벤트 처리기의 범위 외부의 변수를 정의 해야 합니다. 다음과 같은 네 개의 페이지 수준 변수를 만듭니다.
 
-- `_totalUnitPrice`형식`decimal`
-- `_totalNonNullUnitPriceCount`형식`int`
-- `_totalUnitsInStock`형식`int`
-- `_totalUnitsOnOrder`형식`int`
+- `_totalUnitPrice`형식 `decimal`
+- `_totalNonNullUnitPriceCount`형식 `int`
+- `_totalUnitsInStock`형식 `int`
+- `_totalUnitsOnOrder`형식 `int`
 
 다음으로에서 발생 한 각 데이터 행에 대해 이러한 세 개의 변수를 증가 하는 코드를 작성은 `RowDataBound` 이벤트 처리기입니다.
 
@@ -221,8 +221,8 @@ GridView의 바닥글 표시 us를 연결 하면 다음 단계 된는 요약 데
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
->[!div class="step-by-step"]
-[이전](using-the-formview-s-templates-cs.md)
-[다음](custom-formatting-based-upon-data-vb.md)
+> [!div class="step-by-step"]
+> [이전](using-the-formview-s-templates-cs.md)
+> [다음](custom-formatting-based-upon-data-vb.md)

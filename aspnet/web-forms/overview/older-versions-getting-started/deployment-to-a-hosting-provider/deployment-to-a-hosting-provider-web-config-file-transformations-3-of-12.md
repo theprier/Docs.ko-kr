@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12
-title: "SQL Server Compact Visual Studio 또는 Visual Web Developer를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: Web.Config 파일 변환-3 / 12 | Microsoft Docs"
+title: 'SQL Server Compact Visual Studio 또는 Visual Web Developer를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: Web.Config 파일 변환-3 / 12 | Microsoft Docs'
 author: tdykstra
-description: "이 일련의 자습서 배포 하는 방법을 보여 줍니다. (게시) ASP.NET Visual Stu를 사용 하 여 SQL Server Compact 데이터베이스를 포함 하는 웹 응용 프로그램 프로젝트..."
+description: 이 일련의 자습서 배포 하는 방법을 보여 줍니다. (게시) ASP.NET Visual Stu를 사용 하 여 SQL Server Compact 데이터베이스를 포함 하는 웹 응용 프로그램 프로젝트...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/17/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: ed78b55d2b0315cf428f137c56ad85b29a95e1c5
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 86eb74ca35e8804978127412e2276eeee9d615dc
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-webconfig-file-transformations---3-of-12"></a>SQL Server Compact Visual Studio 또는 Visual Web Developer를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: 3 / 12-Web.Config 파일 변환
 ====================
@@ -136,7 +136,7 @@ Contoso 대학 웹 페이지에서 설정 된 값을 읽기 `appSettings` 에 *W
 
 ## <a name="setting-connection-strings"></a>연결 문자열 설정
 
-대부분의 경우에서 필요가 없습니다 연결 문자열 변환을 설정 하려면 게시 프로필에 연결 문자열을 지정할 수 있으므로 합니다. 하지만 예외가 SQL Server Compact 데이터베이스를 배포 하는 경우 및 Entity Framework Code First 마이그레이션을 사용 하 여 대상 서버에서 데이터베이스를 업데이트 합니다. 이 시나리오에 대 한 데이터베이스 스키마를 업데이트 하기 위한 서버에서 사용 하는 추가 연결 문자열을 지정 해야 합니다. 이 변환은 설정 하려면 추가  **&lt;connectionStrings&gt;**  열기 바로 다음 요소  **&lt;구성&gt;**  둘 다에서 태그 *Web.Test.config* 및 *Web.Production.config* 변환 파일:
+대부분의 경우에서 필요가 없습니다 연결 문자열 변환을 설정 하려면 게시 프로필에 연결 문자열을 지정할 수 있으므로 합니다. 하지만 예외가 SQL Server Compact 데이터베이스를 배포 하는 경우 및 Entity Framework Code First 마이그레이션을 사용 하 여 대상 서버에서 데이터베이스를 업데이트 합니다. 이 시나리오에 대 한 데이터베이스 스키마를 업데이트 하기 위한 서버에서 사용 하는 추가 연결 문자열을 지정 해야 합니다. 이 변환은 설정 하려면 추가 **&lt;connectionStrings&gt;** 열기 바로 다음 요소 **&lt;구성&gt;** 둘 다에서 태그 *Web.Test.config* 및 *Web.Production.config* 변환 파일:
 
 [!code-xml[Main](deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12/samples/sample7.xml)]
 
@@ -148,6 +148,6 @@ Contoso 대학 웹 페이지에서 설정 된 값을 읽기 `appSettings` 에 *W
 
 이 자습서에서 다루는 항목에 대 한 자세한 내용은 Web.config 변환 시나리오를을 참조 하십시오. [ASP.NET 배포 콘텐츠 맵](https://msdn.microsoft.com/library/bb386521.aspx)합니다.
 
->[!div class="step-by-step"]
-[이전](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md)
-[다음](deployment-to-a-hosting-provider-configuring-project-properties-4-of-12.md)
+> [!div class="step-by-step"]
+> [이전](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md)
+> [다음](deployment-to-a-hosting-provider-configuring-project-properties-4-of-12.md)

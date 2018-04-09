@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/inserting-updating-and-deleting-data-with-the-sqldatasource-vb
-title: "삽입, 업데이트 및 삭제 (VB) SqlDataSource 사용 하 여 데이터 | Microsoft Docs"
+title: 삽입, 업데이트 및 삭제 (VB) SqlDataSource 사용 하 여 데이터 | Microsoft Docs
 author: rick-anderson
-description: "이전 자습서에서 삽입, 업데이트 및 데이터의 삭제에 대 한 ObjectDataSource 컨트롤을 허용 하는 방법을 배웠습니다. SqlDataSource 컨트롤 지원 t을 합니다..."
+description: 이전 자습서에서 삽입, 업데이트 및 데이터의 삭제에 대 한 ObjectDataSource 컨트롤을 허용 하는 방법을 배웠습니다. SqlDataSource 컨트롤 지원 t을 합니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/inserting-updating-and-deleting-data-with-the-sqldatasource-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4664e15ca6afa14f072e0840354c7f5a48d97ddf
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 92d195c3e1e349cd82e0625cf9a6c5a82644b5db
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="inserting-updating-and-deleting-data-with-the-sqldatasource-vb"></a>삽입, 업데이트 및 SqlDataSource (VB)를 사용 하 여 데이터를 삭제 합니다.
 ====================
@@ -213,8 +213,8 @@ ObjectDataSource에서 낙관적 동시성 사용을 검사 했습니다는 [낙
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
->[!div class="step-by-step"]
-[이전](using-parameterized-queries-with-the-sqldatasource-vb.md)
-[다음](implementing-optimistic-concurrency-with-the-sqldatasource-vb.md)
+> [!div class="step-by-step"]
+> [이전](using-parameterized-queries-with-the-sqldatasource-vb.md)
+> [다음](implementing-optimistic-concurrency-with-the-sqldatasource-vb.md)

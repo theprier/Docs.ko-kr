@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/form-basics
-title: "HTML 양식 기본 ASP.NET 웹 페이지-소개 | Microsoft Docs"
+title: HTML 양식 기본 ASP.NET 웹 페이지-소개 | Microsoft Docs
 author: tfitzmac
-description: "이 자습서는 기본적인 입력된 폼을 만드는 방법 및 ASP.NET 웹 페이지 (Razor)를 사용 하는 경우 사용자의 입력을 처리 하는 방법을 보여 줍니다. 및 이제 하는 중..."
+description: 이 자습서는 기본적인 입력된 폼을 만드는 방법 및 ASP.NET 웹 페이지 (Razor)를 사용 하는 경우 사용자의 입력을 처리 하는 방법을 보여 줍니다. 및 이제 하는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/28/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/form-basics
 msc.type: authoredcontent
-ms.openlocfilehash: 68056759b2e80230e5fd2c0f9b2d2a89b549cf37
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 6f44f74774c2fa6338524987779e15f3940d1830
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---html-form-basics"></a>HTML 양식 기본 ASP.NET 웹 페이지-소개
 ====================
@@ -88,11 +88,11 @@ ms.lasthandoff: 01/24/2018
 
 대부분의 사용자 입력된 요소는 HTML `<input>` 요소입니다. 같이 `<input type="type" name="name">,` 여기서 *형식* 원하는 사용자 입력된 컨트롤의 종류를 나타냅니다. 이러한 요소는 자주 이벤트:
 
-- 텍스트 상자:`<input type="text">`
-- 확인란:`<input type="check">`
-- 라디오 단추:`<input type="radio">`
-- Button:`<input type="button">`
-- 전송 단추:`<input type="submit">`
+- 텍스트 상자: `<input type="text">`
+- 확인란: `<input type="check">`
+- 라디오 단추: `<input type="radio">`
+- button: `<input type="button">`
+- 전송 단추: `<input type="submit">`
 
 사용할 수도 있습니다는 `<textarea>` 요소를 여러 줄 텍스트 상자 만들기 및 `<select>` 만들 드롭 다운 목록 또는 스크롤할 수 있는 목록 요소를 합니다. (요소를 구성 하는 HTML에 대 한 자세한 참조 [HTML 폼 및 입력](http://www.w3schools.com/html/html_forms.asp) W3Schools 사이트에 있습니다.)
 
@@ -167,11 +167,11 @@ WebMatrix에서에서 **파일** 작업 영역을 열고는 *Movies.cshtml* 페�
 > 
 > `var someValue = Request["name"];`
 > 
-> `Request` 개체는 실제로 여러 가지 하위 집합을 제공 합니다. 예:
+> `Request` 개체는 실제로 여러 가지 하위 집합을 제공 합니다. 예를 들어:
 > 
-> - `Request.Form`제출 된 내의 요소에서 값을 제공 `<form>` 요청인 경우 요소는 `POST` 요청 합니다.
-> - `Request.QueryString`사용 하면 값만의 URL의 쿼리 문자열입니다. (같은 URL에서 `http://mysite/myapp/page?searchGenre=action&page=2`, `?searchGenre=action&page=2` URL의 섹션은 쿼리 문자열입니다.)
-> - `Request.Cookies`컬렉션은 브라우저에 보내지는 쿠키에 액세스할 수 있습니다.
+> - `Request.Form` 제출 된 내의 요소에서 값을 제공 `<form>` 요청인 경우 요소는 `POST` 요청 합니다.
+> - `Request.QueryString` 사용 하면 값만의 URL의 쿼리 문자열입니다. (같은 URL에서 `http://mysite/myapp/page?searchGenre=action&page=2`, `?searchGenre=action&page=2` URL의 섹션은 쿼리 문자열입니다.)
+> - `Request.Cookies` 컬렉션은 브라우저에 보내지는 쿠키에 액세스할 수 있습니다.
 > 
 > 사용자가 알고 있는 값을 얻으려면는 제출 된 형태로 사용할 수 있습니다, `Request["name"]`합니다. 또는 특정 버전을 사용할 수 `Request.Form["name"]` (에 대 한 `POST` 요청) 또는 `Request.QueryString["name"]` (에 대 한 `GET` 요청)입니다. 물론, *이름* 가져올 항목의 이름입니다.
 > 
@@ -218,7 +218,7 @@ SQL 문은 본다면, 하는 경우 대/소문자 구분 하지 않습니다 &md
 
 > [!NOTE] 
 > 
-> **기억해 야 합니다.** 자리 표시자를 사용 하 여 (같은 `@0`)는 SQL 명령에 값을 전달할 *매우 중요* 보안에 대 한 합니다. 변수 데이터에 대 한 자리 표시자와 여기에서 보이는 방식은 유일한 방법은 SQL 명령 생성 해야 합니다.
+> **중요!** 자리 표시자를 사용 하 여 (같은 `@0`)는 SQL 명령에 값을 전달할 *매우 중요* 보안에 대 한 합니다. 변수 데이터에 대 한 자리 표시자와 여기에서 보이는 방식은 유일한 방법은 SQL 명령 생성 해야 합니다.
 > 
 > (연결) 리터럴 텍스트와 사용자에 게 서 얻을 값을 함께 배치 하 여 SQL 문을 생성 하지 않습니다. 사이트를 열고 SQL 문으로 사용자 입력을 연결 하는 *SQL 주입 공격* 악의적인 사용자 페이지에 데이터베이스 hack 하는 값을 제출 하는 경우. (읽어볼 수 있는 문서에 [SQL 주입](https://msdn.microsoft.com/library/ms161953.aspx) MSDN 웹 사이트입니다.)
 
@@ -357,12 +357,12 @@ WebMatrix에서 실행 된 *Movies.cshtml* 페이지. 페이지가 장르에 대
 
 [!code-cshtml[Main](form-basics/samples/sample13.cshtml)]
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 - [Razor 구문을 사용 하 여 ASP.NET 웹 프로그래밍 소개](https://go.microsoft.com/fwlink/?LinkID=202890)
 - [SQL WHERE 절](http://www.w3schools.com/sql/sql_where.asp) W3Schools 사이트
 - [메서드 정의](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html) W3C 사이트 문서
 
->[!div class="step-by-step"]
-[이전](displaying-data.md)
-[다음](entering-data.md)
+> [!div class="step-by-step"]
+> [이전](displaying-data.md)
+> [다음](entering-data.md)

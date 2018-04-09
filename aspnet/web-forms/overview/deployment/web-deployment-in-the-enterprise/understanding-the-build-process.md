@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/understanding-the-build-process
-title: "빌드 프로세스를 이해 | Microsoft Docs"
+title: 빌드 프로세스를 이해 | Microsoft Docs
 author: jrjlee
-description: "이 항목의 엔터프라이즈급 빌드 및 배포 프로세스의 연습을 제공 합니다. 이 항목에서 설명 하는 방식은 사용자 지정 Microsoft 빌드 Engin 사용..."
+description: 이 항목의 엔터프라이즈급 빌드 및 배포 프로세스의 연습을 제공 합니다. 이 항목에서 설명 하는 방식은 사용자 지정 Microsoft 빌드 Engin 사용...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/understanding-the-build-process
 msc.type: authoredcontent
-ms.openlocfilehash: 3efcefc40dc135ff42f55911036f8b38b5aa13b1
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 4544a5e6212ea9b1247062dc35edc135ff7ca354
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="understanding-the-build-process"></a>빌드 프로세스 이해
 ====================
@@ -30,9 +30,9 @@ ms.lasthandoff: 03/15/2018
 > > 이전 항목 [프로젝트 파일 이해](understanding-the-project-file.md), MSBuild 프로젝트 파일의 주요 구성 요소를 설명 하 고 여러 대상 환경에 배포를 지원 하도록 분할 프로젝트 파일의 개념이 도입 되었습니다. 검토 해야 모르겠으면 이미 이러한 개념을 이해, [프로젝트 파일 이해](understanding-the-project-file.md) 작업 수행 하기 전에이 항목을 통해.
 
 
-이 항목의 Fabrikam, inc. 라는 가상 회사의 엔터프라이즈 배포 요구 사항을 바탕으로 하는 자습서 시리즈의 일부를 형성 합니다. 이 자습서 시리즈 샘플 솔루션 & #x 2014;을 사용 하는 [Contact Manager 솔루션](the-contact-manager-solution.md)& #x 2014; 현실적인 수준의 복잡성을 Windows ASP.NET MVC 3 응용 프로그램을 포함 하 여 웹 응용 프로그램을 나타내기 위해 Communication Foundation (WCF) 서비스 및 데이터베이스 프로젝트를 제공 합니다.
+이 항목의 Fabrikam, inc. 라는 가상 회사의 엔터프라이즈 배포 요구 사항을 바탕으로 하는 자습서 시리즈의 일부를 형성 합니다. 샘플 솔루션을 사용 하는 자습서 시리즈가&#x2014;는 [Contact Manager 솔루션](the-contact-manager-solution.md)&#x2014;현실적인 수준의 복잡성, Windows Communication ASP.NET MVC 3 응용 프로그램을 포함 하 여 웹 응용 프로그램을 나타내기 위해 WCF (foundation) 서비스 및 데이터베이스 프로젝트.
 
-이 자습서의 핵심에는 배포 방법에 설명 된 분할 프로젝트 파일 접근 방식에 따라 [프로젝트 파일 이해](understanding-the-project-file.md), 빌드 프로세스에 의해 제어 되는 두 프로젝트에 파일 & #x 2014; 포함 환경 관련 빌드 및 배포 설정을 포함 하는 하나 및 모든 대상 환경에 적용 되는 지침을 빌드하십시오. 빌드 시 환경 관련 프로젝트 파일은 빌드 지침의 전체 집합을 구성 하기 위해 환경을 알 수 없는 프로젝트 파일에 병합 됩니다.
+이 자습서의 핵심에는 배포 방법에 설명 된 분할 프로젝트 파일 접근 방식에 따라 [프로젝트 파일 이해](understanding-the-project-file.md), 두 개의 프로젝트 파일에 빌드 프로세스에 의해 제어 되는&#x2014;포함 환경 관련 빌드 및 배포 설정을 포함 하는 하나 및 모든 대상 환경에 적용 되는 지침을 빌드하십시오. 빌드 시 환경 관련 프로젝트 파일은 빌드 지침의 전체 집합을 구성 하기 위해 환경을 알 수 없는 프로젝트 파일에 병합 됩니다.
 
 ## <a name="build-and-deployment-overview"></a>빌드 및 배포 개요
 
@@ -50,16 +50,16 @@ ms.lasthandoff: 03/15/2018
 
 ![](understanding-the-build-process/_static/image2.png)
 
-발생 하는 첫 번째 항목은 파일 & #x 2014; 프로젝트 두 유니버설 빌드 및 배포 지침 및 환경 관련 설정 & #x 2014; 개의 들어 하나 있는 단일 프로젝트 파일에 병합 합니다. 다음 MSBuild 프로젝트 파일의 지침을 통해 작동합니다. 각 프로젝트 파일을 사용 하 여 각 프로젝트에 대 한 솔루션에 프로젝트를 작성 합니다. 그런 다음 Web Deploy (MSDeploy.exe)와 같은 다른 도구 및 대상 환경에 웹 콘텐츠 및 데이터베이스를 배포 하는 VSDBCMD 유틸리티 호출 합니다.
+발생 하는 첫 번째 항목은 프로젝트 파일의 두&#x2014;유니버설 빌드 및 배포 지침이 포함 된 실행과 한 환경 관련 설정이 포함 된&#x2014;단일 프로젝트 파일에 병합 됩니다. 다음 MSBuild 프로젝트 파일의 지침을 통해 작동합니다. 각 프로젝트 파일을 사용 하 여 각 프로젝트에 대 한 솔루션에 프로젝트를 작성 합니다. 그런 다음 Web Deploy (MSDeploy.exe)와 같은 다른 도구 및 대상 환경에 웹 콘텐츠 및 데이터베이스를 배포 하는 VSDBCMD 유틸리티 호출 합니다.
 
 처음부터 끝까지 빌드 및 배포 프로세스에서는 이러한 작업을 수행 합니다.
 
 1. 새 빌드를 위한 준비를 출력 디렉터리의 내용을 삭제합니다.
 2. 솔루션의 각 프로젝트를 만듭니다.
 
-    1. 이 경우 웹 프로젝트 & #x 2014;에 대 한 ASP.NET MVC 웹 응용 프로그램 및 WCF 웹 서비스 & #x 2014; 빌드 프로세스는 각 프로젝트에 대해 웹 배포 패키지를 만듭니다.
+    1. 웹 프로젝트에 대 한&#x2014;ASP.NET MVC 웹 응용 프로그램 및 WCF 웹 서비스에이 예에서&#x2014;빌드 프로세스는 각 프로젝트에 대해 웹 배포 패키지를 만듭니다.
     2. 데이터베이스 프로젝트에 대 한 빌드 프로세스는 각 프로젝트에 대 한 배포 매니페스트 (.deploymanifest 파일)를 만듭니다.
-3. VSDBCMD.exe 유틸리티를 사용 하 여;.deploymanifest 파일과 함께 프로젝트 파일 & #x 2014; 대상 연결 문자열 및는 데이터베이스 이름 & #x 2014에서 다양 한 속성을 사용 하 여 솔루션의 각 데이터베이스 프로젝트를 배포 합니다.
+3. VSDBCMD.exe 유틸리티를 사용 하 여 프로젝트 파일에서 다양 한 속성을 사용 하 여 솔루션의 각 데이터베이스 프로젝트를 배포 하려면&#x2014;대상 연결 문자열 및 데이터베이스 이름을&#x2014;.deploymanifest 파일과 함께 합니다.
 4. MSDeploy.exe 유틸리티를 사용 하 여 프로젝트 파일에서 다양 한 속성을 사용 하 여 배포 프로세스를 제어 하는 솔루션의 각 웹 프로젝트를 배포 합니다.
 
 이 과정을 자세히 추적 하는 샘플 솔루션을 사용할 수 있습니다.
@@ -86,7 +86,7 @@ MSBuild의 실행을 시작, 로드이 시점에서 *Publish.proj* 파일 및 �
 [!code-xml[Main](understanding-the-build-process/samples/sample2.xml)]
 
 
-**TargetEnvPropsFile** 매개 변수 지정는 *Env Dev.proj* 파일 이기 때문에 MSBuild의 내용을 병합 하는 *Env Dev.proj* 파일는 * Publish.proj* 파일입니다.
+**TargetEnvPropsFile** 매개 변수 지정는 *Env Dev.proj* 파일 이기 때문에 MSBuild의 내용을 병합 하는 *Env Dev.proj* 파일는  *Publish.proj* 파일입니다.
 
 MSBuild에서 병합 된 프로젝트 파일에서 발생 하는 다음 요소는 속성 그룹입니다. 속성은 파일에 나타나는 순서 대로 처리 됩니다. MSBuild는 지정 된 조건을 충족 제공 각 속성에 대 한 키-값 쌍을 만듭니다. 나중에 파일에 정의 된 속성 이름이 같은 파일에 앞에서 정의한 속성을 덮어씁니다. 예를 들어는 **OutputRoot** 속성입니다.
 
@@ -102,9 +102,9 @@ MSBuild에서 발생 하는 다음 요소 라는 항목이 포함 된 단일 항
 [!code-xml[Main](understanding-the-build-process/samples/sample4.xml)]
 
 
-MSBuild 항목 목록이 작성 하 여이 명령을 처리 **ProjectsToBuild**합니다. 이 경우 단일 값 & #x 2014; 파일 경로 솔루션 파일의 항목 목록에 있습니다.
+MSBuild 항목 목록이 작성 하 여이 명령을 처리 **ProjectsToBuild**합니다. 이 경우 항목 목록에는 단일 값&#x2014;경로 솔루션 파일의 파일 이름입니다.
 
-이 시점에서 나머지 요소는 대상으로 합니다. 대상 속성 및 항목 & #x 2014에서 다르게 처리 됩니다; 기본적으로, 대상으로 처리 되지 않습니다는 명시적으로 사용자가 지정한 또는 다른 구문이 프로젝트 파일 내에서 호출 하지 않으면. 이전에 설명한 대로 열기 **프로젝트** 태그를 포함 한 **DefaultTargets** 특성입니다.
+이 시점에서 나머지 요소는 대상으로 합니다. 대상 속성 및 항목에서 다르게 처리&#x2014;기본적으로, 대상으로 처리 되지 않습니다는 명시적으로 사용자가 지정한 또는 다른 구문이 프로젝트 파일 내에서 호출 하지 않는 한 합니다. 이전에 설명한 대로 열기 **프로젝트** 태그를 포함 한 **DefaultTargets** 특성입니다.
 
 
 [!code-xml[Main](understanding-the-build-process/samples/sample5.xml)]
@@ -173,7 +173,7 @@ MSBuild 항목 목록이 작성 하 여이 명령을 처리 **ProjectsToBuild**�
 
 이러한 항목을 참조 될 때 생성 된 배포 패키지는 **BuildProjects** 대상이 실행 합니다. 있습니다 수 없습니다.이 항목을 정의 이러한 정적으로 프로젝트 파일에까지 존재 하지 않으므로 항목 참조는 파일 때문에 **BuildProjects** 대상이 실행 됩니다. 대신, 항목 정의 해야 동적으로 될 때까지 호출 되지 않는 대상 내에서 후의 **BuildProjects** 대상이 실행 됩니다.
 
-항목을이 대상 & #x 2014 내에서 사용 되지 않습니다;이 대상 항목 및 각 항목 값과 관련 된 메타 데이터를 단순히 작성. 이러한 요소를 처리 한 후의 **PublishPackages** 항목의 경로를 두 개의 값이 포함 됩니다는 *ContactManager.Mvc.deploy.cmd* 파일 및 경로를 *ContactManager.Service.deploy.cmd* 파일입니다. 이러한 파일은 호출 해야 하는 파일 및 웹 배포는 각 프로젝트에 대 한 웹 패키지의 일부로 이러한 파일을 만듭니다는 패키지를 배포 하기 위해 대상 서버에 있습니다. 이러한 파일 중 하나를 열면 기본적으로 MSDeploy.exe 명령은 다양 한 빌드 관련 매개 변수 값으로 표시 됩니다.
+이 대상 내의 항목 사용 되지 않는&#x2014;이 대상 단순히 항목 및 각 항목 값과 관련 된 메타 데이터를 작성 합니다. 이러한 요소를 처리 한 후의 **PublishPackages** 항목의 경로를 두 개의 값이 포함 됩니다는 *ContactManager.Mvc.deploy.cmd* 파일 및 경로를 *ContactManager.Service.deploy.cmd* 파일입니다. 이러한 파일은 호출 해야 하는 파일 및 웹 배포는 각 프로젝트에 대 한 웹 패키지의 일부로 이러한 파일을 만듭니다는 패키지를 배포 하기 위해 대상 서버에 있습니다. 이러한 파일 중 하나를 열면 기본적으로 MSDeploy.exe 명령은 다양 한 빌드 관련 매개 변수 값으로 표시 됩니다.
 
 **DbPublishPackages** 항목의 경로를 단일 값을 포함 됩니다는 *ContactManager.Database.deploymanifest* 파일입니다.
 
@@ -199,7 +199,7 @@ MSBuild 항목 목록이 작성 하 여이 명령을 처리 **ProjectsToBuild**�
 - 대상 일괄 처리에 한 번씩 실행 합니다.
 
 > [!NOTE]
-> **Identity** 중 하나는 [기본 제공 메타 데이터 값](https://msdn.microsoft.com/library/ms164313.aspx) 생성의 모든 항목에 할당 된 합니다. 값을 참조는 **Include** 특성에 **항목** 요소 & #x 2014; 즉, 파일 경로 항목의 합니다.
+> **Identity** 중 하나는 [기본 제공 메타 데이터 값](https://msdn.microsoft.com/library/ms164313.aspx) 생성의 모든 항목에 할당 된 합니다. 값을 참조는 **Include** 특성에 **항목** 요소&#x2014;즉, 파일 경로 항목의 합니다.
 
 
 이 경우 동일한 경로 및 파일 이름으로 둘 이상의 항목이 없어야, 때문에 기본적으로 최선을 다하고 하나의 일괄 처리 크기를 사용 합니다. 대상 마다 데이터베이스 패키지를 한 번 실행 됩니다.
@@ -210,7 +210,7 @@ MSBuild 항목 목록이 작성 하 여이 명령을 처리 **ProjectsToBuild**�
 [!code-xml[Main](understanding-the-build-process/samples/sample11.xml)]
 
 
-이 경우 **%(DbPublishPackages.DatabaseConnectionString)**, **%(DbPublishPackages.TargetDatabase)**, 및 **%(DbPublishPackages.FullPath)** 를 모두 참조 메타 데이터 값은 **DbPublishPackages** 항목 컬렉션입니다. ** \_Cmd** 속성은 사용 된 **Exec** 명령을 호출 하는 작업입니다.
+이 경우 **%(DbPublishPackages.DatabaseConnectionString)**, **%(DbPublishPackages.TargetDatabase)**, 및 **%(DbPublishPackages.FullPath)** 를 모두 참조 메타 데이터 값은 **DbPublishPackages** 항목 컬렉션입니다.  **\_Cmd** 속성은 사용 된 **Exec** 명령을 호출 하는 작업입니다.
 
 
 [!code-xml[Main](understanding-the-build-process/samples/sample12.xml)]
@@ -251,6 +251,6 @@ MSBuild 항목 목록이 작성 하 여이 명령을 처리 **ProjectsToBuild**�
 
 프로젝트 파일 및 WPP에 대 한 자세한 소개를 참조 하십시오. [Microsoft Build Engine 안에: MSBuild를 사용 하 여 및 Team Foundation Build](http://amzn.com/0735645248) Sayed Ibrahim Hashimi 및 William Bartholomew, ISBN: 978-0-7356-4524-0입니다.
 
->[!div class="step-by-step"]
-[이전](understanding-the-project-file.md)
-[다음](building-and-packaging-web-application-projects.md)
+> [!div class="step-by-step"]
+> [이전](understanding-the-project-file.md)
+> [다음](building-and-packaging-web-application-projects.md)

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/provide-crud-create-read-update-delete-data-form-entry-support
-title: "제공 CRUD (만들기, 읽기, 업데이트, 삭제) 데이터 항목 지원 구성 | Microsoft Docs"
+title: 제공 CRUD (만들기, 읽기, 업데이트, 삭제) 데이터 항목 지원 구성 | Microsoft Docs
 author: microsoft
-description: "5 단계 편집, 만들고도 함께 Dinners 삭제에 대 한 지원 활성화 여 DinnersController 클래스 추가 하는 방법을 보여 줍니다."
+description: 5 단계 편집, 만들고도 함께 Dinners 삭제에 대 한 지원 활성화 여 DinnersController 클래스 추가 하는 방법을 보여 줍니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/provide-crud-create-read-update-delete-data-form-entry-support
 msc.type: authoredcontent
-ms.openlocfilehash: 5a314a1761527d8a2273166a743e3deac012a557
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: bd906282db5c620476966ffbe09cecb5ade66ee4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="provide-crud-create-read-update-delete-data-form-entry-support"></a>제공 CRUD (만들기, 읽기, 업데이트, 삭제) 데이터 항목 지원 구성
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [PDF 다운로드](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
 
@@ -39,22 +39,22 @@ ms.lasthandoff: 11/10/2017
 
 두 Url에 대 한 지원을 구현 DinnersController에 작업 메서드 이전에 추가한: */Dinners* 및 */Dinners/세부 정보 / [id]*합니다.
 
-| **URL** | **동사** | **용도** |
+| **URL** | **VERB** | **용도** |
 | --- | --- | --- |
 | */Dinners/* | 가져오기 | 예정 된 dinners 목록이 있는 HTML을 표시 합니다. |
-| */Dinners/세부 정보 / [id]* | 가져오기 | 특정 저녁에 대 한 세부 정보를 표시 합니다. |
+| */Dinners/Details/[id]* | 가져오기 | 특정 저녁에 대 한 세부 정보를 표시 합니다. |
 
-이제 세 개의 추가 Url을 구현 하는 작업 메서드 추가 합니다: */Dinners/편집 / [id], / Dinners/만들기,*및*/Dinners/Delete / [id]*합니다. 이러한 Url 편집 기존 Dinners 새 Dinners을 만들고 Dinners 삭제 지원 하도록 설정 됩니다.
+이제 세 개의 추가 Url을 구현 하는 작업 메서드 추가 합니다: <em>/Dinners/편집 / [id], / Dinners/만들기,</em>및<em>/Dinners/Delete / [id]</em>합니다. 이러한 Url 편집 기존 Dinners 새 Dinners을 만들고 Dinners 삭제 지원 하도록 설정 됩니다.
 
 HTTP GET 및 HTTP POST 동사와의 상호 작용 새 Url이 지원 됩니다. 이러한 Url에 HTTP GET 요청 ("edit"의 경우 Dinner 데이터 입력 폼, "만들기"의 경우 새 양식 및 삭제 확인 화면이 "삭제"의 경우) 데이터의 초기 한 HTML 뷰가 표시 됩니다. 이러한 Url HTTP POST 요청 우리의 DinnerRepository (및 데이터베이스에는 여기에서) Dinner 데이터를 저장/업데이트/삭제 됩니다.
 
-| **URL** | **동사** | **용도** |
+| **URL** | **VERB** | **용도** |
 | --- | --- | --- |
-| */Dinners/편집 / [id]* | 가져오기 | 저녁 데이터로 채워진 편집 가능한 HTML 폼을 표시 합니다. |
+| */Dinners/Edit/[id]* | 가져오기 | 저녁 데이터로 채워진 편집 가능한 HTML 폼을 표시 합니다. |
 | 올리기 | 데이터베이스에 특정 저녁에 폼 변경 내용을 저장 합니다. |
-| */ Dinners/만들기* | 가져오기 | 사용자가 새 Dinners 정의할 수 있는 빈 HTML 폼을 표시 합니다. |
+| */Dinners/Create* | 가져오기 | 사용자가 새 Dinners 정의할 수 있는 빈 HTML 폼을 표시 합니다. |
 | 올리기 | 새 Dinner 만들고 데이터베이스에 저장 합니다. |
-| */Dinners/delete / [id]* | 가져오기 | 삭제 확인 화면을 표시 합니다. |
+| */Dinners/Delete/[id]* | 가져오기 | 삭제 확인 화면을 표시 합니다. |
 | 올리기 | 데이터베이스에서 지정 된 dinner를 삭제합니다. |
 
 ### <a name="edit-support"></a>편집 지원
@@ -97,7 +97,7 @@ HTTP GET 및 HTTP POST 동사와의 상호 작용 새 Url이 지원 됩니다. �
 
 템플릿 우리의 "Edit.aspx" 보기는 몇 가지 방법 "Html 도우미": Html.ValidationSummary(), Html.BeginForm(), Html.TextBox(), 및 Html.ValidationMessage() 합니다. Us에 대 한 HTML 태그를 생성, 외에도 이러한 도우미 메서드 제공 기본 제공 오류 처리 및 유효성 검사를 지원 합니다.
 
-##### <a name="htmlbeginform-helper-method"></a>Html.BeginForm() 도우미 메서드
+##### <a name="htmlbeginform-helper-method"></a>Html.BeginForm() helper method
 
 Html.BeginForm() 도우미 메서드는 HTML 출력 &lt;양식&gt; 우리의 태그 요소에에서 있습니다. 우리의 Edit.aspx 뷰 템플릿에 적용 중인 C# "using" 문을이 방법을 사용할 경우 알 수 있습니다. 왼쪽 중괄호의 시작을 나타냅니다는 &lt;양식&gt; 의 끝을 나타내는 작업은 콘텐츠 및 닫는 중괄호는 &lt;/f&gt; 요소:
 
@@ -107,7 +107,7 @@ Html.BeginForm() 도우미 메서드는 HTML 출력 &lt;양식&gt; 우리의 태
 
 [!code-aspx[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample4.aspx)]
 
-Html.BeginForm() 매개 변수 없이 호출 하면 현재 요청 URL에 HTTP POST를 수행 하는 폼 요소를 출력 합니다. 이 편집 보기 생성 이유 즉는  *&lt;양식 동작 = "/ 1/편집/Dinners" 메서드 "post" =&gt;*  요소입니다. म 수 또는 조건이 충족 명시적 매개 변수 Html.BeginForm()를 다른 URL에 게시 하 려 하는 경우.
+Html.BeginForm() 매개 변수 없이 호출 하면 현재 요청 URL에 HTTP POST를 수행 하는 폼 요소를 출력 합니다. 이 편집 보기 생성 이유 즉는 *&lt;양식 동작 = "/ 1/편집/Dinners" 메서드 "post" =&gt;* 요소입니다. म 수 또는 조건이 충족 명시적 매개 변수 Html.BeginForm()를 다른 URL에 게시 하 려 하는 경우.
 
 ##### <a name="htmltextbox-helper-method"></a>Html.TextBox() 도우미 메서드
 
@@ -115,7 +115,7 @@ Edit.aspx 시각 Html.TextBox() 도우미 메서드를 사용 하 여 출력에 
 
 [!code-aspx[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample5.aspx)]
 
-id/이름 특성을 지정 하는 데 사용 되는 단일 매개 변수-를 사용 하는 위의 Html.TextBox() 메서드는 &lt;type = "text" /&gt; 으로 출력에서 textbox 값을 채우기 위해 모델 속성에는 요소입니다. 예를 들어 편집 뷰에 전달에서는 Dinner 개체 ".NET 미래", "Title" 속성 값을 가지 며 없으므로 우리의 Html.TextBox("Title") 메서드 호출 출력:  *&lt;입력된 id = "제목" name = "제목" type = "text" value = ".NET 미래" /&gt;* .
+id/이름 특성을 지정 하는 데 사용 되는 단일 매개 변수-를 사용 하는 위의 Html.TextBox() 메서드는 &lt;type = "text" /&gt; 으로 출력에서 textbox 값을 채우기 위해 모델 속성에는 요소입니다. 예를 들어 편집 뷰에 전달에서는 Dinner 개체 ".NET 미래", "Title" 속성 값을 가지 며 없으므로 우리의 Html.TextBox("Title") 메서드 호출 출력: *&lt;입력된 id = "제목" name = "제목" type = "text" value = ".NET 미래" /&gt;*.
 
 또는 사용 하 여 첫 번째 Html.TextBox() 매개 변수는 요소의 id/이름을 지정 하 고 두 번째 매개 변수로 사용할 값에 명시적으로 전달:
 
@@ -141,7 +141,7 @@ HTTP POST 시나리오를 처리 하는 것을 나타내는 "AcceptVerbs" 특성
 
 [!code-csharp[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample9.cs)]
 
-오버 로드 된 작업 메서드에 [AcceptVerbs] 특성이 적용 되 면 ASP.NET MVC는 자동으로 들어오는 HTTP 동사에 따라 적절 한 동작 메서드에 디스패치 요청을 처리 합니다. HTTP POST 요청을 */Dinners/편집 / [id]* Url이 다른 모든 HTTP 동사 요청을 하는 동안 위의 Edit 메서드를 이동 합니다 */Dinners/편집 / [id]*Url은 이동 하는 첫 번째 편집 메서드를 구현 했습니다 (않은 있음 한 [AcceptVerbs] 특성).
+오버 로드 된 작업 메서드에 [AcceptVerbs] 특성이 적용 되 면 ASP.NET MVC는 자동으로 들어오는 HTTP 동사에 따라 적절 한 동작 메서드에 디스패치 요청을 처리 합니다. HTTP POST 요청을 <em>/Dinners/편집 / [id]</em> Url이 다른 모든 HTTP 동사 요청을 하는 동안 위의 Edit 메서드를 이동 합니다 <em>/Dinners/편집 / [id]</em>Url은 이동 하는 첫 번째 편집 메서드를 구현 했습니다 (않은 있음 한 [AcceptVerbs] 특성).
 
 | **HTTP 동사를 통해 쪽 주제: 이유 구분?** |
 | --- |
@@ -231,9 +231,9 @@ HTML 도우미 메서드-Html.TextBox()-같은 출력을 렌더링 하는 경우
 
 [!code-aspx[Main](provide-crud-create-read-update-delete-data-form-entry-support/samples/sample18.aspx)]
 
-위의 코드를 출력:  *&lt;/><span class = "필드 유효성 검사 오류"&gt;\*&lt;/s&gt;*기본 오류 텍스트에 대 한 오류가 있으면 대신는 EventDate 속성입니다.
+위의 코드를 출력:  <em>&lt;/><span class = "필드 유효성 검사 오류"&gt;\*&lt;/s&gt;</em>기본 오류 텍스트에 대 한 오류가 있으면 대신는 EventDate 속성입니다.
 
-##### <a name="htmlvalidationsummary-helper-method"></a>Html.ValidationSummary() 도우미 메서드
+##### <a name="htmlvalidationsummary-helper-method"></a>Html.ValidationSummary() Helper Method
 
 와 함께 요약 오류 메시지를 렌더링 하 Html.ValidationSummary() 도우미 메서드를 사용할 수는 &lt;ul&gt;&lt;li /&gt;&lt;/ul&gt; 의 목록은 모든 자세한 오류 메시지는 ModelState 컬렉션:
 
@@ -427,6 +427,6 @@ ASP.NET MVC에는 다양 한 폼 게시 시나리오를 구현 하는 데 도움
 
 이제 살펴보겠습니다 ViewData 및 ViewModel 클래스는 폼에도 다양 한 UI를 사용 하도록 설정 하려면 사용 하는 방법을.
 
->[!div class="step-by-step"]
-[이전](use-controllers-and-views-to-implement-a-listingdetails-ui.md)
-[다음](use-viewdata-and-implement-viewmodel-classes.md)
+> [!div class="step-by-step"]
+> [이전](use-controllers-and-views-to-implement-a-listingdetails-ui.md)
+> [다음](use-viewdata-and-implement-viewmodel-classes.md)
