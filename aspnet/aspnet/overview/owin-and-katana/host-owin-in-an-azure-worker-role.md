@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/owin-and-katana/host-owin-in-an-azure-worker-role
-title: "Azure 작업자 역할에는 OWIN 호스트 | Microsoft Docs"
+title: Azure 작업자 역할에는 OWIN 호스트 | Microsoft Docs
 author: MikeWasson
-description: "이 자습서에는 Microsoft Azure 작업자 역할에서 OWIN를 자체 호스트 하는 방법을 보여 줍니다. .NET 웹 서버 사이의 한 추상화를 정의 하는.NET (OWIN)에 대 한 open Web Interface..."
+description: 이 자습서에는 Microsoft Azure 작업자 역할에서 OWIN를 자체 호스트 하는 방법을 보여 줍니다. .NET 웹 서버 사이의 한 추상화를 정의 하는.NET (OWIN)에 대 한 open Web Interface...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/11/2014
 ms.topic: article
 ms.assetid: 07aa855a-92ee-4d43-ba66-5bfd7de20ee6
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/host-owin-in-an-azure-worker-role
 msc.type: authoredcontent
-ms.openlocfilehash: 8c0fdfdf60ff3bde34b6869adf3f8693b4d9615d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 13bccc4b2d6f1b22c94446deaf6795dab766275b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="host-owin-in-an-azure-worker-role"></a>Azure 작업자 역할에는 OWIN 호스트
 ====================
@@ -119,7 +119,7 @@ WorkerRole.cs에 대 한 전체 코드는 다음과 같습니다.
 
 [![](host-owin-in-an-azure-worker-role/_static/image10.png)](host-owin-in-an-azure-worker-role/_static/image9.png)
 
-서비스 배포, 배포 [id] 서비스 세부 정보 아래에 IP 주소를 찾습니다. 웹 브라우저를 열고 http:// 이동*주소*여기서 *주소* 는 계산 에뮬레이터에서 할당 된 IP 주소 예를 들어 `http://127.0.0.1:80`합니다. OWIN 시작 페이지가 나타납니다.
+서비스 배포, 배포 [id] 서비스 세부 정보 아래에 IP 주소를 찾습니다. 웹 브라우저를 열고 http:// 이동<em>주소</em>여기서 <em>주소</em> 는 계산 에뮬레이터에서 할당 된 IP 주소 예를 들어 `http://127.0.0.1:80`합니다. OWIN 시작 페이지가 나타납니다.
 
 ![](host-owin-in-an-azure-worker-role/_static/image11.png)
 
@@ -149,7 +149,7 @@ Azure 계정에 로그인 하지 않은 경우 클릭 **로그인**합니다.
 
 Azure 활동 로그 창에는 배포의 진행률이 표시 됩니다. 로 이동 하는 응용 프로그램을 배포할 때 `http://appname.cloudapp.net/`여기서 *appname* 클라우드 서비스의 이름입니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 - [프로젝트 Katana 개요](an-overview-of-project-katana.md)
 - [GitHub에서 Katana 프로젝트](https://github.com/aspnet/AspNetKatana/)

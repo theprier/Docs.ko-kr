@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/enhancing-data-validation
-title: "ASP.NET MVC를 사용 하 여 먼저 EF 데이터베이스: 데이터 유효성 검사 향상 | Microsoft Docs"
+title: 'ASP.NET MVC를 사용 하 여 먼저 EF 데이터베이스: 데이터 유효성 검사 향상 | Microsoft Docs'
 author: tfitzmac
-description: "MVC, Entity Framework 및 ASP.NET 스 캐 폴딩을 사용 하 여 기존 데이터베이스에 대 한 인터페이스를 제공 하는 웹 응용 프로그램을 만들 수 있습니다. 이 자습서 seri 중..."
+description: MVC, Entity Framework 및 ASP.NET 스 캐 폴딩을 사용 하 여 기존 데이터베이스에 대 한 인터페이스를 제공 하는 웹 응용 프로그램을 만들 수 있습니다. 이 자습서 seri 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/29/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/enhancing-data-validation
 msc.type: authoredcontent
-ms.openlocfilehash: 842496c2d3ec56fb81f2409dd7d05d800f83799b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 8ea2e94db7956b76c5ccf0a139ac024e38910b49
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="ef-database-first-with-aspnet-mvc-enhancing-data-validation"></a>ASP.NET MVC를 사용 하 여 먼저 EF 데이터베이스: 데이터 유효성 검사 향상
 ====================
@@ -87,6 +87,6 @@ Metadata.cs의 코드를 다음 코드로 바꿉니다.
 
 Student.cs 파일이 나 Enrollment.cs 파일을 열고 더 이상 이전에 적용 된 데이터 유효성 검사 특성 파일의 수입니다. 그러나 응용 프로그램을 실행 하 고 데이터를 입력할 때 유효성 검사 규칙 여전히 적용 됩니다.
 
->[!div class="step-by-step"]
-[이전](customizing-a-view.md)
-[다음](publish-to-azure.md)
+> [!div class="step-by-step"]
+> [이전](customizing-a-view.md)
+> [다음](publish-to-azure.md)

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6
-title: "6 단계: 데이터 주석 모델 유효성 검사에 사용 하 여 | Microsoft Docs"
+title: '6 단계: 데이터 주석 모델 유효성 검사에 사용 하 여 | Microsoft Docs'
 author: jongalloway
-description: "이 자습서 시리즈 모든 ASP.NET MVC Music Store 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 6 부 V 모델에 대 한 데이터 주석을 사용 하 여 설명..."
+description: 이 자습서 시리즈 모든 ASP.NET MVC Music Store 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 6 부 V 모델에 대 한 데이터 주석을 사용 하 여 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/21/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6
 msc.type: authoredcontent
-ms.openlocfilehash: b2083d5604741a0142f504f92779c9f931d0d6d9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 328eccb4324bb10a7e8dec819a70129fc14c42c4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-6-using-data-annotations-for-model-validation"></a>6 부: 모델 유효성 검사에 대 한 데이터 주석을 사용 하 여
 ====================
@@ -81,6 +81,6 @@ We're 발생 하는 동안 변경 했습니다 Genre 및 음악가 가상 속성
 ![](mvc-music-store-part-6/_static/image3.png)
 
 
->[!div class="step-by-step"]
-[이전](mvc-music-store-part-5.md)
-[다음](mvc-music-store-part-7.md)
+> [!div class="step-by-step"]
+> [이전](mvc-music-store-part-5.md)
+> [다음](mvc-music-store-part-7.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-security-guidance
-title: "ASP.NET Web API 2에 대 한 보안 지침 OData | Microsoft Docs"
+title: ASP.NET Web API 2에 대 한 보안 지침 OData | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/06/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-security-guidance
 msc.type: authoredcontent
-ms.openlocfilehash: 799e2a0c742b545acf3b5cd27531d734aa7def80
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 41b05f2a2f8247853d8358e6cc1246c8b438a6db
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="security-guidance-for-aspnet-web-api-2-odata"></a>ASP.NET Web API 2에 대 한 보안 지침 OData
 ====================
@@ -70,8 +70,8 @@ ASP.NET Web API에서 OData 쿼리 옵션을 사용 하는 방법에 대 한 자
     [!code-csharp[Main](odata-security-guidance/samples/sample9.cs)]
 - 데이터베이스에 대 한 사용자 지정 된 유효성 검사기를 작성 하 여 $filter 쿼리를 제한 하는 것이 좋습니다. 예를 들어,이 두 쿼리를 것이 좋습니다. 
 
-    - 'A'로 시작 하는 행위자와 모든 동영상 합니다.
-    - 모든 동영상 1994에 배포 합니다.
+  - 'A'로 시작 하는 행위자와 모든 동영상 합니다.
+  - 모든 동영상 1994에 배포 합니다.
 
     동영상은 행위자로 인덱싱하지 않을 경우 첫 번째 쿼리에서 동영상의 전체 목록을 검색 하려면 DB 엔진이 필요할 수 있습니다. 두 번째 쿼리에서 사용할 수도 있지만 되었다고 가정 하면 영화 릴리스 연도별 인덱싱됩니다.
 

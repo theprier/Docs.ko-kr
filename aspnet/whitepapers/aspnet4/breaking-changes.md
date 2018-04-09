@@ -1,22 +1,22 @@
 ---
 uid: whitepapers/aspnet4/breaking-changes
-title: "ASP.NET 4 주요 변경 내용 | Microsoft Docs"
+title: ASP.NET 4 주요 변경 내용 | Microsoft Docs
 author: rick-anderson
-description: "이 문서에 적용 된.NET Framework 버전에 대 한 사용 하 여 만든 응용 프로그램에 영향을 줄 수 있는 4 릴리스의 변경 내용에 설명..."
+description: 이 문서에 적용 된.NET Framework 버전에 대 한 사용 하 여 만든 응용 프로그램에 영향을 줄 수 있는 4 릴리스의 변경 내용에 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2010
 ms.topic: article
 ms.assetid: d601c540-f86b-4feb-890c-20c806b3da6c
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/aspnet4/breaking-changes
 msc.type: content
-ms.openlocfilehash: d68723b52ae1ee80142fb1aca3b0b10de34332d1
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 7eea51add6b05684357314e3d6aa5087383c6408
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-4-breaking-changes"></a>ASP.NET 4 주요 변경 내용
 ====================
@@ -180,7 +180,7 @@ ASP.NET은 암호화 및 해시 알고리즘을 모두 사용하여 양식 인�
 
 응용 프로그램 수준을 업데이트 하는 첫 번째 시나리오에 대 한 해결 `Web.config` 파일에서 구성 상용구 텍스트를 포함 하 여는 `Web.config` Visual Studio 2008에서 자동으로 생성 된 파일입니다.
 
-첫 번째 시나리오에 대 한 다른 해결 방법은 Vista 또는 Windows Server 2008 서비스 팩 2 컴퓨터에 설치 하거나 KB958854 핫픽스를 설치 하려면 ([https://support.microsoft.com/kb/958854](https://support.microsoft.com/kb/958854)) 올바른 해결 하려면 IIS 구성 시스템의 구성 병합 동작입니다. 그러나 이러한 작업 중 하나를 수행 하 고 나면 응용 프로그램 두 번째 시나리오에 대해 설명 하는 문제 때문에 구성 오류를 발생 가능성이 합니다.
+첫 번째 시나리오에 대 한 다른 해결 방법은 Vista 또는 Windows Server 2008 서비스 팩 2 컴퓨터에 설치 하거나 KB958854 핫픽스를 설치 하려면 ([https://support.microsoft.com/kb/958854](https://support.microsoft.com/kb/958854))를의 잘못 된 구성 병합 동작을 해결 하는 IIS 구성 시스템입니다. 그러나 이러한 작업 중 하나를 수행 하 고 나면 응용 프로그램 두 번째 시나리오에 대해 설명 하는 문제 때문에 구성 오류를 발생 가능성이 합니다.
 
 두 번째 시나리오에 대 한 해결 하는 삭제 하거나 모든 하는 **system.web.extensions** 구성 섹션 정 및 구성 섹션 그룹 응용 프로그램 수준에서 정의 `Web.config` 파일입니다. 이러한 정의 일반적으로 응용 프로그램 수준 맨 위에 있는 `Web.config` 파일을 식별할 수 있습니다는 **configSections** 요소와 해당 자식 요소입니다.
 
@@ -192,8 +192,8 @@ ASP.NET은 암호화 및 해시 알고리즘을 모두 사용하여 양식 인�
 
 이전 버전의 ASP.NET을 실행하는 응용 프로그램의 자식으로서 구성된 ASP.NET 4 응용 프로그램은 구성 또는 컴파일 오류로 인해 시작하지 못할 수 있습니다. 다음 예제에서는 영향을 받는 응용 프로그램에 대 한 디렉터리 구조를 보여 줍니다.
 
-`/parentwebapp`(ASP.NET 2.0 또는 ASP.NET 3.5를 사용 하도록 구성)  
-`/childwebapp`(ASP.NET 4에서 사용 하도록 구성 됨)
+`/parentwebapp` (ASP.NET 2.0 또는 ASP.NET 3.5를 사용 하도록 구성)  
+`/childwebapp` (ASP.NET 4에서 사용 하도록 구성 됨)
 
 응용 프로그램에는 `childwebapp` 폴더 IIS 7.5 또는 IIS 7에서 시작 하 고가 구성 오류를 보고 되지 것입니다. 오류 텍스트는 다음과 같은 메시지가 포함 됩니다.
 
@@ -323,13 +323,13 @@ ASP.NET 4을 웹 사이트를 실행 하는 데 필요한 경우 ASP.NET 2.0에 
 
 ## <a name="event-handlers-might-not-be-not-raised-in-a-default-document-in-iis-7-or-iis-75-integrated-mode"></a>IIS 7.5 또는 IIS 7에서 기본 문서에 이벤트 처리기 하지 발생 하지 않습니다 통합 모드
 
-ASP.NET 4를 변경 하는 수정 작업에 포함 되어 방법을 **동작** html 특성 **양식** 확장명 없는 URL 기본 문서를 확인할 때 요소가 렌더링 됩니다. 기본 문서를 확인 하는 확장명 없는 URL의 예로 들 수 [http://contoso.com/](http://contoso.com/)로 요청을 [http://contoso.com/Default.aspx](http://contoso.com/Default.aspx)합니다.
+ASP.NET 4를 변경 하는 수정 작업에 포함 되어 방법을 **동작** html 특성 **양식** 확장명 없는 URL 기본 문서를 확인할 때 요소가 렌더링 됩니다. 기본 문서를 확인 하는 확장명 없는 URL의 예로 들 수 [ http://contoso.com/ ](http://contoso.com/)로 요청을 [ http://contoso.com/Default.aspx ](http://contoso.com/Default.aspx)합니다.
 
-ASP.NET 4에는 이제 HTML 렌더링 **양식** 요소의 **동작** 에 매핑되는 기본 문서가 확장명 없는 URL에 요청이 있을 때 빈 문자열 특성 값입니다. 예를 들어, ASP.NET, 요청을의 이전 릴리스에서 [http://contoso.com](http://contoso.com) 요청을 초래 `Default.aspx`합니다. 해당 문서의 여 **양식** 태그는 다음 예제와 같이 렌더링 됩니다.
+ASP.NET 4에는 이제 HTML 렌더링 **양식** 요소의 **동작** 에 매핑되는 기본 문서가 확장명 없는 URL에 요청이 있을 때 빈 문자열 특성 값입니다. 예를 들어, ASP.NET, 요청을의 이전 릴리스에서 [ http://contoso.com ](http://contoso.com) 요청을 초래 `Default.aspx`합니다. 해당 문서의 여 **양식** 태그는 다음 예제와 같이 렌더링 됩니다.
 
 `<form action="Default.aspx" />`
 
-ASP.NET 4에서 요청을 [http://contoso.com](http://contoso.com) 또한 요청을 발생 `Default.aspx`합니다. 그러나 이제 ASP.NET: 여는 HTML을 렌더링 **양식** 다음 예제와 같이 태그:
+ASP.NET 4에서 요청을 [ http://contoso.com ](http://contoso.com) 또한 요청을 발생 `Default.aspx`합니다. 그러나 이제 ASP.NET: 여는 HTML을 렌더링 **양식** 다음 예제와 같이 태그:
 
 `<form action="" />`
 
@@ -370,7 +370,7 @@ ASP.NET 2.0 및 확장에 의해 3.5에 추가 된 ASP.NET 기능.NET Framework 
 - 단일 응용 프로그램 도메인에 여러 개의 서로 다른 권한 집합이 허용 됩니다.
 - 명시적 사용 권한을 어설션 스택에 ASP.NET 또는 다른.NET Framework 코드 때 호출 되는 GAC의 어셈블리에 대 한 필요 하지 않습니다.
 
-.NET Framework 4에 한 가지 시나리오를 되돌릴 수 없습니다: 비 웹 부분 신뢰 응용 프로그램 System.Web.dll 및 System.Web.Extensions.dll의 특정 Api를 더 이상 호출할 수 없습니다. 이전 버전의.NET Framework에서는 비 웹 부분 신뢰 응용 프로그램에서 명시적으로 부여 된 **AspNetHostingPermission** 사용 권한. 이러한 응용 프로그램에 사용 하 여 수 **System.Web.HttpUtility**에 **System.Web.ClientServices.\***  네임 스페이스 및 형식 멤버 자격, 역할 및 프로필 관련이 있습니다. 비 웹 부분 신뢰 응용 프로그램에서 이러한 형식을 호출 하는 더 이상.NET Framework 4에서 지원 됩니다.
+.NET Framework 4에 한 가지 시나리오를 되돌릴 수 없습니다: 비 웹 부분 신뢰 응용 프로그램 System.Web.dll 및 System.Web.Extensions.dll의 특정 Api를 더 이상 호출할 수 없습니다. 이전 버전의.NET Framework에서는 비 웹 부분 신뢰 응용 프로그램에서 명시적으로 부여 된 <strong>AspNetHostingPermission</strong> 사용 권한. 이러한 응용 프로그램에 사용 하 여 수 <strong>System.Web.HttpUtility</strong>에 <strong>System.Web.ClientServices.\< 강력한 / > * 네임 스페이스 및 형식 멤버 자격, 역할 및 프로필 관련이 있습니다. 비 웹 부분 신뢰 응용 프로그램에서 이러한 형식을 호출 하는 더 이상.NET Framework 4에서 지원 됩니다.
 
 > [!NOTE]
 > **HtmlEncode** 및 **HtmlDecode** 의 기능은 **System.Web.HttpUtility** 클래스 새.NET Framework 4로 옮겨진  **System.Net.WebUtility** 클래스입니다. 응용 프로그램의 코드에서 새를 수정 하는 유일한 ASP.NET 기능을 사용 하는 동안 있는 되었으면 **WebUtility** 클래스를 대신 합니다.

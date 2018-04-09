@@ -1,7 +1,7 @@
 ---
-title: "React와 Redux 프로젝트 템플릿을 사용 하 여"
+title: ASP.NET Core 반응으로 Redux 프로젝트 템플릿을 사용합니다
 author: SteveSandersonMS
-description: "React Redux 및 반응 만들기-앱에 대 한 ASP.NET Core 단일 페이지 응용 프로그램 (SPA) 프로젝트 템플릿으로 시작 하는 방법에 알아봅니다."
+description: React Redux 및 반응 만들기-앱에 대 한 ASP.NET Core 단일 페이지 응용 프로그램 (SPA) 프로젝트 템플릿으로 시작 하는 방법에 알아봅니다.
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
@@ -11,13 +11,13 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/react-with-redux
-ms.openlocfilehash: f52f4a866b8bb2adeee19548df32f3e7a91761d1
-ms.sourcegitcommit: 49fb3b7669b504d35edad34db8285e56b958a9fc
+ms.openlocfilehash: 9abfbfe5be69d3145de453d9d9e56ea35eec64ed
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/23/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="use-the-react-with-redux-project-template"></a>React와 Redux 프로젝트 템플릿을 사용 하 여
+# <a name="use-the-react-with-redux-project-template-with-aspnet-core"></a>ASP.NET Core 반응으로 Redux 프로젝트 템플릿을 사용합니다
 
 > [!NOTE]
 > 이 설명서 포함 되지 않습니다 반응으로 Redux 프로젝트 템플릿에 대 한 ASP.NET 코어 2.0. 최신 반응으로 Redux 서식 파일을 수동으로 업데이트할 수 있습니다. 서식 파일은 기본적으로 ASP.NET Core 2.1에 포함 됩니다.

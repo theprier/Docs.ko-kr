@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-new-field-to-the-movie-model-and-table
-title: "영화 모델 및 테이블에 새 필드 추가 | Microsoft Docs"
+title: 영화 모델 및 테이블에 새 필드 추가 | Microsoft Docs
 author: Rick-Anderson
-description: "참고:이 자습서의 업데이트 된 버전은 ASP.NET MVC 5 및 Visual Studio 2013을 사용 하는 있습니다. 것이 더 안전 하 고 진행할 데모를 단순..."
+description: 참고:이 자습서의 업데이트 된 버전은 ASP.NET MVC 5 및 Visual Studio 2013을 사용 하는 있습니다. 것이 더 안전 하 고 진행할 데모를 단순...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/28/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-new-field-to-the-movie-model-and-table
 msc.type: authoredcontent
-ms.openlocfilehash: 9965c8a755857a8e8cb8ecbc6c467a6c856aa83d
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: d8a42e9acdce687ab6e9742071dd2949f244622f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/11/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-new-field-to-the-movie-model-and-table"></a>영화 모델 및 테이블에 새 필드 추가
 ====================
@@ -107,7 +107,7 @@ Code First 마이그레이션을에 다른 클래스 파일을 만듭니다는 *
 
 업데이트 한 했으므로 `Model` 클래스도 업데이트 해야는 *\Views\Movies\Index.cshtml* 및 *\Views\Movies\Create.cshtml* 새 표시하기위해템플릿을보려면`Rating`브라우저 보기에는 속성입니다.
 
-열기는*\Views\Movies\Index.cshtml* 파일을 추가 `<th>Rating</th>` 열 머리글 바로 뒤의 **가격** 열입니다. 다음 추가 `<td>` 열을 렌더링 하는 서식 파일의 끝 부분에서 `@item.Rating` 값입니다. 다음은 이러한 어떤 업데이트 된 *Index.cshtml* 보기 템플릿은 보입니다.
+열기는<em>\Views\Movies\Index.cshtml</em> 파일을 추가 `<th>Rating</th>` 열 머리글 바로 뒤의 <strong>가격</strong> 열입니다. 다음 추가 `<td>` 열을 렌더링 하는 서식 파일의 끝 부분에서 `@item.Rating` 값입니다. 다음은 이러한 어떤 업데이트 된 <em>Index.cshtml</em> 보기 템플릿은 보입니다.
 
 [!code-cshtml[Main](adding-a-new-field-to-the-movie-model-and-table/samples/sample5.cshtml?highlight=26-28,46-48)]
 
@@ -173,6 +173,6 @@ Visual Studio 새 정의 하는 클래스 파일을 엽니다이 명령이 완�
 
 이 섹션에서는 모델 개체를 수정할 데이터베이스의 변경 내용과 동기화 된 상태로 유지 하는 방법을 표시 합니다. 또한 시나리오를 체험할 수 있도록 샘플 데이터로 새로 만든된 데이터베이스를 채우는 하는 방법을 배웠습니다. 다음으로, 다양 한 유효성 검사 논리 모델 클래스를 추가 적용 해야 할 몇 가지 비즈니스 규칙을 사용 하도록 설정 하는 방법에 대해 살펴보겠습니다.
 
->[!div class="step-by-step"]
-[이전](examining-the-edit-methods-and-edit-view.md)
-[다음](adding-validation-to-the-model.md)
+> [!div class="step-by-step"]
+> [이전](examining-the-edit-methods-and-edit-view.md)
+> [다음](adding-validation-to-the-model.md)

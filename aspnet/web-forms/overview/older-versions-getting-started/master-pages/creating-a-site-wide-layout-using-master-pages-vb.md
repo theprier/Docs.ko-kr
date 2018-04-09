@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/creating-a-site-wide-layout-using-master-pages-vb
-title: "마스터 페이지 (VB)를 사용 하는 사이트 전체 레이아웃 만들기 | Microsoft Docs"
+title: 마스터 페이지 (VB)를 사용 하는 사이트 전체 레이아웃 만들기 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서는 기본 사항 마스터 페이지를 표시 합니다. 즉, 마스터 페이지은 어떻게 하나는 마스터 페이지를 만들고, cr은 어떻게 콘텐츠 자리 표시자 이란..."
+description: 이 자습서는 기본 사항 마스터 페이지를 표시 합니다. 즉, 마스터 페이지은 어떻게 하나는 마스터 페이지를 만들고, cr은 어떻게 콘텐츠 자리 표시자 이란...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/21/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/creating-a-site-wide-layout-using-master-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 29671970dc6f53d0e14170cf6376c02634b7b08e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d18993af7159de552db0c622fbef58e814e36ebb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-site-wide-layout-using-master-pages-vb"></a>마스터 페이지 (VB)를 사용 하는 사이트 전체 레이아웃 만들기
 ====================
@@ -34,7 +34,7 @@ ms.lasthandoff: 01/24/2018
 
 [![모든 페이지에 걸쳐 일관 된 모양과 느낌을 사용 하는 www.asp.net 웹 사이트](creating-a-site-wide-layout-using-master-pages-vb/_static/image2.png)](creating-a-site-wide-layout-using-master-pages-vb/_static/image1.png)
 
-**그림 01**: 일관성 확인 및 모든 페이지에서 생각 될 www.asp.net 웹 사이트 사용 ([전체 크기 이미지를 보려면 클릭](creating-a-site-wide-layout-using-master-pages-vb/_static/image3.png))
+<strong>그림 01</strong>: 일관성 확인 및 모든 페이지에서 생각 될 www.asp.net 웹 사이트 사용 ([전체 크기 이미지를 보려면 클릭](creating-a-site-wide-layout-using-master-pages-vb/_static/image3.png))
 
 
 잘 설계 된 사이트의 다른 특성에는 사이트의 모양을 변경할 수 있는 편의성입니다. 그림 1 2008 년 3 월을 기준으로 www.asp.net 홈 페이지에 나와 있지만 고이 자습서의이 게시, 모양 및 느낌 변경 수 있습니다. 아마도 메뉴 항목 위에 MVC 프레임 워크에 대 한 새 섹션을 포함 하도록 확장 됩니다. 또는 미정 서로 다른 색, 글꼴 및 레이아웃와 근본적으로 새로운 디자인의 소개 해제 됩니다. 전체 사이트에 이러한 변경 내용을 적용 하면 수천 대 사이트를 구성 하는 웹 페이지를 수정 하지 않아도 되는 빠르고 단순 프로세스 이어야 합니다.
@@ -281,12 +281,12 @@ ASP.NET 엔진의 페이지를 퓨즈 해야 콘텐츠 페이지를 렌더링 �
 
 ### <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 작성자 여러 ASP/ASP.NET 설명서와 4GuysFromRolla.com의 창립자의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 3.5 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. Scott에 도달할 수 [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) 또는에서 그의 블로그 통해 [http://ScottOnWriting.NET](http://scottonwriting.net/)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 작성자 여러 ASP/ASP.NET 설명서와 4GuysFromRolla.com의 창립자의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 3.5 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. Scott에 도달할 수 [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) 또는에서 그의 블로그 통해 [ http://ScottOnWriting.NET ](http://scottonwriting.net/)합니다.
 
 ### <a name="special-thanks-to"></a>특별히 감사
 
 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)합니다.
 
->[!div class="step-by-step"]
-[이전](nested-master-pages-cs.md)
-[다음](multiple-contentplaceholders-and-default-content-vb.md)
+> [!div class="step-by-step"]
+> [이전](nested-master-pages-cs.md)
+> [다음](multiple-contentplaceholders-and-default-content-vb.md)

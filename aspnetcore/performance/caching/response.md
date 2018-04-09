@@ -1,18 +1,18 @@
 ---
-title: "ASP.NET Core의 응답 캐싱"
+title: ASP.NET Core의 응답 캐싱
 author: rick-anderson
-description: "낮은 대역폭 요구 사항에 캐싱 응답을 사용 하는 방법을 알아보고 ASP.NET Core 응용 프로그램의 성능을 향상 합니다."
+description: 낮은 대역폭 요구 사항에 캐싱 응답을 사용 하는 방법을 알아보고 ASP.NET Core 응용 프로그램의 성능을 향상 합니다.
 manager: wpickett
 ms.author: riande
 ms.date: 09/20/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: performance/caching/response
-ms.openlocfilehash: c654cfd7c2d291849067bfd3297f940018ccb3d8
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: cc1ec50155398ba4143a2bf697ca26435c228c49
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="response-caching-in-aspnet-core"></a>ASP.NET Core의 응답 캐싱
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 03/02/2018
 > [!NOTE]
 > 응답 캐시 [ASP.NET 코어 2.0과 함께 Razor 페이지에서 지원 되지 않거나](https://github.com/aspnet/Mvc/issues/6437)합니다. 이 기능에서 지원 됩니다는 [ASP.NET Core 2.1 릴리스](https://github.com/aspnet/Home/wiki/Roadmap)합니다.
   
-[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/response/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/response/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 응답 캐시 클라이언트 또는 프록시 웹 서버에 수행 된 요청 수가 줄어듭니다. 응답 캐시도 줄일 수 작업의 응답을 생성 하는 웹 서버 수행 합니다. 응답 캐시 클라이언트, 프록시 및 응답을 캐시 미들웨어 용도 지정 하는 헤더에 의해 제어 됩니다.
 
@@ -64,13 +64,13 @@ ms.lasthandoff: 03/02/2018
 
 메모리 내 캐싱 서버 메모리를 사용 하 여 캐시 된 데이터를 저장 합니다. 이러한 유형의 캐싱은 단일 서버 또는 여러 서버를 사용 하 여에 적합 한 *고정 세션*합니다. 고정 세션은 클라이언트에서 요청 처리를 위해 동일한 서버에 라우팅되 항상 의미 합니다.
 
-자세한 내용은 참조 [ASP.NET Core의 메모리 내 캐싱 소개](xref:performance/caching/memory)합니다.
+자세한 내용은 참조 [메모리에 캐시](xref:performance/caching/memory)합니다.
 
 ### <a name="distributed-cache"></a>분산된 캐시
 
 분산된 캐시를 사용 하 여 응용 프로그램 클라우드 또는 서버 팜에서 호스트 될 때 메모리에 데이터를 저장 합니다. 캐시 요청을 처리 하는 서버 간에 공유 됩니다. 클라이언트는 클라이언트에 대 한 캐시 된 데이터를 사용할 수 있는 경우 그룹의 모든 서버에서 처리 하는 요청을 제출할 수 있습니다. ASP.NET Core에서는 SQL Server 및 분산 Redis 캐시를 제공합니다.
 
-자세한 내용은 참조 [분산된 캐시 작업](xref:performance/caching/distributed)합니다.
+자세한 내용은 참조 [분산된 캐시 작업할](xref:performance/caching/distributed)합니다.
 
 ### <a name="cache-tag-helper"></a>캐시 태그 도우미
 
@@ -128,7 +128,7 @@ ms.lasthandoff: 03/02/2018
 
 경우 `NoStore` 은 `false` 및 `Location` 은 `None`, `Cache-Control` 및 `Pragma` 로 설정 `no-cache`합니다.
 
-일반적으로 설정 `NoStore` 를 `true` 오류 페이지에 있습니다. 예:
+일반적으로 설정 `NoStore` 를 `true` 오류 페이지에 있습니다. 예를 들어:
 
 [!code-csharp[](response/sample/Controllers/HomeController.cs?name=snippet1&highlight=1)]
 
@@ -178,11 +178,11 @@ Cache-Control: public,max-age=60
 Cache-Control: public,max-age=60
 ```
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
-* [사양에서 HTTP에서 캐싱](https://tools.ietf.org/html/rfc7234#section-3)
+* [캐시에 응답을 저장합니다.](https://tools.ietf.org/html/rfc7234#section-3)
 * [Cache-Control](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9)
-* [메모리 내 캐싱](xref:performance/caching/memory)
+* [메모리 내 캐시](xref:performance/caching/memory)
 * [분산 캐시 사용](xref:performance/caching/distributed)
 * [변경 토큰을 사용하여 변경 내용 검색](xref:fundamentals/primitives/change-tokens)
 * [응답 캐싱 미들웨어](xref:performance/caching/middleware)

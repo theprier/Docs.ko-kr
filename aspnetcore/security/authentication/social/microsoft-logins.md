@@ -1,7 +1,7 @@
 ---
-title: "Microsoft 계정 외부 로그인 설정"
+title: ASP.NET Core와 Microsoft 계정 외부 로그인 설정
 author: rick-anderson
-description: "이 자습서는 기존 ASP.NET Core 응용 프로그램에 Microsoft 계정 사용자 인증의 통합을 보여 줍니다."
+description: 이 자습서는 기존 ASP.NET Core 응용 프로그램에 Microsoft 계정 사용자 인증의 통합을 보여 줍니다.
 manager: wpickett
 ms.author: riande
 ms.date: 08/24/2017
@@ -9,21 +9,21 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/microsoft-logins
-ms.openlocfilehash: d57647da978f7edaaddedba7c9f4c1de8dc07405
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: aabbbe66aee8c8b93140bcc4181b432017cec1d7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="configuring-microsoft-account-authentication"></a>Microsoft 계정 인증 구성
+# <a name="microsoft-account-external-login-setup-with-aspnet-core"></a>ASP.NET Core와 Microsoft 계정 외부 로그인 설정
 
 작성자: [Valeriy Novytskyy](https://github.com/01binary) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-이 자습서에서 만든 샘플 ASP.NET 코어 2.0 프로젝트를 사용 하 여 자신의 Microsoft 계정으로 로그인 하 여 사용자가 사용할 수 있도록 하는 방법을 보여 줍니다.는 [이전 페이지](index.md)합니다.
+이 자습서에서 만든 샘플 ASP.NET 코어 2.0 프로젝트를 사용 하 여 자신의 Microsoft 계정으로 로그인 하 여 사용자가 사용할 수 있도록 하는 방법을 보여 줍니다.는 [이전 페이지](xref:security/authentication/social/index)합니다.
 
 ## <a name="create-the-app-in-microsoft-developer-portal"></a>Microsoft 개발자 포털에서 응용 프로그램 만들기
 
-* 로 이동 [https://apps.dev.microsoft.com](https://apps.dev.microsoft.com) 또는 Microsoft 계정으로 로그인을 만듭니다.
+* 로 이동 [ https://apps.dev.microsoft.com ](https://apps.dev.microsoft.com) 또는 Microsoft 계정으로 로그인을 만듭니다.
 
 ![대화 상자에 로그인](index/_static/MicrosoftDevLogin.png)
 
@@ -63,7 +63,7 @@ Microsoft 계정이 없는 경우 탭  **[만드세요!](https://signup.live.com
 
 ![새 암호가 생성 대화 상자](index/_static/MicrosoftDevPassword.png)
 
-Microsoft와 같은 중요 한 설정이 연결 `Application ID` 및 `Password` 사용 하 여 응용 프로그램 구성에는 [암호 관리자](../../app-secrets.md)합니다. 이 자습서에서는 이름을 토큰 `Authentication:Microsoft:ApplicationId` 및 `Authentication:Microsoft:Password`합니다.
+Microsoft와 같은 중요 한 설정이 연결 `Application ID` 및 `Password` 사용 하 여 응용 프로그램 구성에는 [암호 관리자](xref:security/app-secrets)합니다. 이 자습서에서는 이름을 토큰 `Authentication:Microsoft:ApplicationId` 및 `Authentication:Microsoft:Password`합니다.
 
 ## <a name="configure-microsoft-account-authentication"></a>Microsoft 계정 인증 구성
 
@@ -74,8 +74,7 @@ Microsoft와 같은 중요 한 설정이 연결 `Application ID` 및 `Password` 
 
    `dotnet add package Microsoft.AspNetCore.Authentication.MicrosoftAccount`
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 Microsoft 계정 서비스에 추가 `ConfigureServices` 메서드에서 *Startup.cs* 파일:
 
 ```csharp
@@ -90,10 +89,9 @@ services.AddAuthentication().AddMicrosoftAccount(microsoftOptions =>
 });
 ```
 
-[!INCLUDE[default settings configuration](includes/default-settings.md)]
+[!INCLUDE [default settings configuration](includes/default-settings.md)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 Microsoft 계정 미들웨어에서 추가 `Configure` 메서드에서 *Startup.cs* 파일:
 
 ```csharp
@@ -104,8 +102,7 @@ app.UseMicrosoftAccountAuthentication(new MicrosoftAccountOptions()
 });
 ```
 
----
-
+* * *
 하지만 Microsoft 개발자 포털에서 사용 되는 용어 이러한 토큰 이름을 `ApplicationId` 및 `Password`,으로 노출 하는 `ClientId` 및 `ClientSecret` 구성 API에 있습니다.
 
 참조는 [MicrosoftAccountOptions](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.microsoftaccountoptions) Microsoft 계정 인증에서 지 원하는 구성 옵션에 대 한 자세한 내용은 API 참조 합니다. 이 사용 하 여 사용자에 대 한 다른 정보를 요청할 수 수 있습니다.
@@ -136,7 +133,7 @@ Microsoft을 클릭할 때 리디렉션됩니다 Microsoft 인증에 대 한 합
 
 ## <a name="next-steps"></a>다음 단계
 
-* 이 문서를 Microsoft와 인증 방법에 대해 살펴보았습니다. 이와 비슷한 방식에 제시 된 다른 공급자를 사용 하 여 인증을 따를 수 있습니다는 [이전 페이지](index.md)합니다.
+* 이 문서를 Microsoft와 인증 방법에 대해 살펴보았습니다. 이와 비슷한 방식에 제시 된 다른 공급자를 사용 하 여 인증을 따를 수 있습니다는 [이전 페이지](xref:security/authentication/social/index)합니다.
 
 * 새 만들어야 Azure 웹 앱에 웹 사이트를 게시 한 `Password` Microsoft 개발자 포털에서 합니다.
 

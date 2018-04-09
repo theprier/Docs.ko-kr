@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/working-with-binary-files/including-a-file-upload-option-when-adding-a-new-record-vb
-title: "파일을 포함 하 여 업로드 옵션 (VB) 새 레코드를 추가 하는 경우 | Microsoft Docs"
+title: 파일을 포함 하 여 업로드 옵션 (VB) 새 레코드를 추가 하는 경우 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에는 텍스트 데이터를 모두 입력 한 이진 파일을 업로드할 수 있는 웹 인터페이스를 만드는 방법을 보여 줍니다. 옵션 사용 가능한 t 보여 주기 위해 중..."
+description: 이 자습서에는 텍스트 데이터를 모두 입력 한 이진 파일을 업로드할 수 있는 웹 인터페이스를 만드는 방법을 보여 줍니다. 옵션 사용 가능한 t 보여 주기 위해 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/27/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/including-a-file-upload-option-when-adding-a-new-record-vb
 msc.type: authoredcontent
-ms.openlocfilehash: eb462a0e8ce88037855ea12d00c1afc0419fa04e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 39608eef7cc88be56ef6e21820e4afcfaa4ffd8d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="including-a-file-upload-option-when-adding-a-new-record-vb"></a>새 레코드 (VB)를 추가할 때 파일 업로드 옵션을 포함 하 여
 ====================
@@ -280,12 +280,12 @@ Now, 데이터베이스가 오프 라인 상태 이면 어떤 일이 생기 또�
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자가 Dave Gardner, Teresa 머피 및 박 광 준 Leigh 합니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](displaying-binary-data-in-the-data-web-controls-vb.md)
-[다음](updating-and-deleting-existing-binary-data-vb.md)
+> [!div class="step-by-step"]
+> [이전](displaying-binary-data-in-the-data-web-controls-vb.md)
+> [다음](updating-and-deleting-existing-binary-data-vb.md)

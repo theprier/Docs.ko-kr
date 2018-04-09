@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/membership/storing-additional-user-information-cs
-title: "추가 사용자 정보 (C#)를 저장 합니다. | Microsoft Docs"
+title: 추가 사용자 정보 (C#)를 저장 합니다. | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에서는 매우 기초적인 수준 방명록 응용 프로그램을 구축 하 여이 질문에 대답 합니다 했습니다. 이 과정에서 살펴보겠습니다 modeli에 대 한 다른 옵션 중..."
+description: 이 자습서에서는 매우 기초적인 수준 방명록 응용 프로그램을 구축 하 여이 질문에 대답 합니다 했습니다. 이 과정에서 살펴보겠습니다 modeli에 대 한 다른 옵션 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/18/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/storing-additional-user-information-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 38dfdab395b6b3559d293c5b1488ede2e88bfe91
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: e484f63a82ad9ecf1f376143bdc1924e231e0801
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="storing-additional-user-information-c"></a>추가 사용자 정보를 저장 하는 (C#)
 ====================
@@ -107,13 +107,13 @@ ASP입니다. NET의 멤버 자격 프레임 워크는 사용자가 관리 하�
 
 이제 사용자의 홈 동, 홈 페이지 및 자신의 방명록 의견에 표시 됩니다는 서명을 저장 하려면 각 사용자 계정으로 세 개의 열을 연결 해야 합니다. 다양 한 방법으로이를 위해 숫자:
 
-- **새 열을 추가할는 * * *`aspnet_Users`* * * 또는 * * *`aspnet_Membership`* * * 테이블입니다.** 사용 하는 스키마를 수정 하기 때문에이 방법은 권장 하지 않을 필자는 `SqlMembershipProvider`합니다. 이와 같이이 결정 하면 향후 다닐 위험할 수 있습니다. 예를 들어 경우 이후 버전의 ASP.NET 사용 하 여 다른 `SqlMembershipProvider` 스키마입니다. Microsoft ASP.NET 2.0을 마이그레이션하는 도구를 포함 될 수 있습니다 `SqlMembershipProvider` ASP.NET 2.0을 수정한 경우 이지만 새 스키마로 데이터 `SqlMembershipProvider` 스키마에서 이러한 변환을 불가능할 수도 있습니다.
+- <strong>새 열을 추가할는</strong><strong>`aspnet_Users`</strong><strong>또는</strong><strong>`aspnet_Membership`</strong><strong>테이블입니다.</strong> 사용 하는 스키마를 수정 하기 때문에이 방법은 권장 하지 않을 필자는 `SqlMembershipProvider`합니다. 이와 같이이 결정 하면 향후 다닐 위험할 수 있습니다. 예를 들어 경우 이후 버전의 ASP.NET 사용 하 여 다른 `SqlMembershipProvider` 스키마입니다. Microsoft ASP.NET 2.0을 마이그레이션하는 도구를 포함 될 수 있습니다 `SqlMembershipProvider` ASP.NET 2.0을 수정한 경우 이지만 새 스키마로 데이터 `SqlMembershipProvider` 스키마에서 이러한 변환을 불가능할 수도 있습니다.
 
 - **ASP를 사용 합니다. NET의 프로필 framework, 홈 동, 홈 페이지 및 서명을에 프로필 속성을 정의 합니다.** ASP.NET 추가 사용자 관련 데이터를 저장 하도록 디자인 된 프레임 워크 프로필에 포함 되어 있습니다. 멤버 자격 프레임 워크와 같은 프로필 framework 공급자 모델 기반 만들어집니다. .NET Framework와 함께 제공 되는 `SqlProfileProvider` 된 경우 SQL Server 데이터베이스에 프로필 데이터를 저장 합니다. 데이터베이스에 이미 사용 하는 테이블이 실제로 `SqlProfileProvider` (`aspnet_Profile`)는 응용 프로그램 서비스를 다시 추가 하는 경우 추가 된는 <a id="_msoanchor_2"> </a> [ *SQL에서 멤버 자격 스키마 만들기 서버* ](creating-the-membership-schema-in-sql-server-cs.md) 자습서입니다.   
- 프로필 프레임 워크의 주요 장점은에서 프로필 속성을 정의 하는 개발자를 위한 수 있다는 점입니다 `Web.config` – 기본 데이터 저장소와 프로필 데이터를 직렬화 하는 데 작성 해야 할 코드가 없습니다. 간단히 프로필 속성 집합을 정의 하 고 코드에서 작업할 수를 쉽게 것입니다. 그러나 프로필 시스템 개선의 여지가 버전 관리에 관한 권장 될 응용 프로그램에서 새 사용자 고유의 속성을 나중 또는 제거 하거나 수정 하 고, 기존 세션에 추가할 수를 예상 다음 프로필 프레임 워크 되지 않을 수 있습니다 위치 하는 경우는  최상의 옵션입니다. 또한는 `SqlProfileProvider` 프로필 속성 (예:는 홈 동 뉴욕은 사용자 수) 프로필 데이터에 대해 직접 쿼리를 실행할 수 없도록 상태로 다음 하는 매우 비 정규화 된 방식으로 저장 합니다.   
- 프로필 프레임 워크에 대 한 자세한 내용은이 자습서의 끝에 "추가 정보" 섹션을 참조 하십시오.
+  프로필 프레임 워크의 주요 장점은에서 프로필 속성을 정의 하는 개발자를 위한 수 있다는 점입니다 `Web.config` – 기본 데이터 저장소와 프로필 데이터를 직렬화 하는 데 작성 해야 할 코드가 없습니다. 간단히 프로필 속성 집합을 정의 하 고 코드에서 작업할 수를 쉽게 것입니다. 그러나 프로필 시스템 개선의 여지가 버전 관리에 관한 권장 될 응용 프로그램에서 새 사용자 고유의 속성을 나중 또는 제거 하거나 수정 하 고, 기존 세션에 추가할 수를 예상 다음 프로필 프레임 워크 되지 않을 수 있습니다 위치 하는 경우는  최상의 옵션입니다. 또한는 `SqlProfileProvider` 프로필 속성 (예:는 홈 동 뉴욕은 사용자 수) 프로필 데이터에 대해 직접 쿼리를 실행할 수 없도록 상태로 다음 하는 매우 비 정규화 된 방식으로 저장 합니다.   
+  프로필 프레임 워크에 대 한 자세한 내용은이 자습서의 끝에 "추가 정보" 섹션을 참조 하십시오.
 
-- **데이터베이스에 새 테이블에 이러한 3 개의 열을 추가 하 고이 테이블 간에 일대일 관계를 설정 하 고 * * *`aspnet_Users`* * *입니다.** 이 방법은 프로필 프레임 워크와 보다 약간 더 많은 작업이 하지만 데이터베이스에서 추가 사용자 속성은 모델링 하는 방법의 최대 유연성을 제공 합니다. 이 자습서에 사용 될 옵션입니다.
+- <strong>데이터베이스에 새 테이블에 이러한 3 개의 열을 추가 하 고이 테이블 간에 일대일 관계를 설정 하 고</strong><strong>`aspnet_Users`</strong><strong>합니다.</strong> 이 방법은 프로필 프레임 워크와 보다 약간 더 많은 작업이 하지만 데이터베이스에서 추가 사용자 속성은 모델링 하는 방법의 최대 유연성을 제공 합니다. 이 자습서에 사용 될 옵션입니다.
 
 라는 새 테이블을 만들겠습니다 `UserProfiles` 홈 동, 홈 페이지 및 각 사용자에 대 한 서명을 저장 합니다. 데이터베이스 탐색기 창에서 테이블 폴더 단추로 클릭 하 고 새 테이블을 만들려면 선택 합니다. 첫 번째 열의 이름을 `UserId` 하 고 유형을 설정 하 고 `uniqueidentifier`합니다. Disallow `NULL` 값 및 기본 키로 열을 표시 합니다. 다음으로 명명 된 열을 추가: `HomeTown` 형식의 `nvarchar(50)`; `HomepageUrl` 형식의 `nvarchar(100)`; 및 형식 서명을 `nvarchar(500)`합니다. 수락할 수 있는 이러한 세 개의 열이 각각 한 `NULL` 값입니다.
 
@@ -131,7 +131,7 @@ ASP입니다. NET의 멤버 자격 프레임 워크는 사용자가 관리 하�
 
 다양 한 방법으로 현재 로그온된 한 사용자를 보고 그의 홈 동, 홈 페이지 및 시그니처 정보를 편집할 수 있도록 가지가 있습니다. 텍스트 상자와 사용자 인터페이스를 수동으로 만들 수 있습니다 및 데이터 DetailsView 컨트롤 등의 웹 컨트롤 중 하나는 레이블 컨트롤 또는에서는 사용할 수 있습니다. 데이터베이스를 수행 하려면 `SELECT` 및 `UPDATE` ADO.NET를 작성할 수 있습니다 페이지의 코드 숨김 클래스의 코드 문이나, 또는 SqlDataSource 하는 선언적 방법을 사용 합니다. 이상적으로 응용 프로그램에서는 하거나 호출할 수 프로그래밍 방식으로 페이지의 코드 숨김 클래스에서 또는 ObjectDataSource 컨트롤을 통해 선언적으로 하는 계층화 된 아키텍처를 포함 됩니다.
 
-이 자습서 시리즈는 폼 인증, 권한 부여, 사용자 계정 및 역할에 중점을 두고 있으므로 사용할 수 없으므로 이러한 다른 데이터 액세스 옵션 또는 SQL 문을 직접 실행 보다 선호 하는 계층화 된 아키텍처 됩니다 이유에 대 한 자세한 설명은 ASP.NET 페이지. DetailsView 및 – 빠르고 쉬운 옵션-SqlDataSource를 사용 하는 과정을 안내를 하겠습니다 하지만 설명 된 개념은 대체 웹 컨트롤 및 데이터 액세스 논리 확실히 적용할 수 있습니다. 자세한 내용은 ASP.NET의 데이터로 작업 하는 방법에 대 한 참조 내  *[ASP.NET 2.0에서 데이터 작업](../../data-access/index.md)*  자습서 시리즈 합니다.
+이 자습서 시리즈는 폼 인증, 권한 부여, 사용자 계정 및 역할에 중점을 두고 있으므로 사용할 수 없으므로 이러한 다른 데이터 액세스 옵션 또는 SQL 문을 직접 실행 보다 선호 하는 계층화 된 아키텍처 됩니다 이유에 대 한 자세한 설명은 ASP.NET 페이지. DetailsView 및 – 빠르고 쉬운 옵션-SqlDataSource를 사용 하는 과정을 안내를 하겠습니다 하지만 설명 된 개념은 대체 웹 컨트롤 및 데이터 액세스 논리 확실히 적용할 수 있습니다. 자세한 내용은 ASP.NET의 데이터로 작업 하는 방법에 대 한 참조 내 *[ASP.NET 2.0에서 데이터 작업](../../data-access/index.md)* 자습서 시리즈 합니다.
 
 열기는 `AdditionalUserInfo.aspx` 페이지에 `Membership` 폴더 설정 페이지에 DetailsView 컨트롤을 추가 하 고 해당 `ID` 속성을 `UserProfile` 정리 및 해당 `Width` 및 `Height` 속성입니다. DetailsView의 스마트 태그를 확장 하 고 새 데이터 소스 제어에 연결 하려면 선택 합니다. 데이터 소스 구성 마법사 시작 됩니다 (그림 7 참조). 첫 번째 단계 데이터 원본 유형을 지정할 수 있습니다. 에 직접 연결 해야 것 이므로 `SecurityTutorials` 데이터베이스, 데이터베이스 아이콘을 지정 하는 `ID` 으로 `UserProfileDataSource`합니다.
 
@@ -428,9 +428,9 @@ CreateUserWizard 컨트롤 확장 페이지 개발자 일련의 순서가 지정
 
 추가 양식 필드를 포함 하려면 CreateUserWizard 컨트롤의 인터페이스를 사용자 지정 하려면에서는 다음과 같은 작업을 수행할 수 있습니다.
 
-- **하나 이상의 새로 만들기 * * *`WizardStep`* * * 추가 사용자 인터페이스 요소를 포함 하는 s**합니다. 새 `WizardStep` 은 CreateUserWizard 클릭에서 "추가/제거 `WizardSteps`" 링크를 시작 하려면 스마트 태그에서는 `WizardStep` 컬렉션 편집기. 여기에서 추가, 제거 또는 마법사의 단계를 다시 정렬할 수 있습니다. 이 방법이이 자습서를 사용 합니다.
+- <strong>하나 이상의 새로 만들기</strong><strong>`WizardStep`</strong><strong>추가 사용자 인터페이스 요소를 포함 하는 s</strong>합니다. 새 `WizardStep` 은 CreateUserWizard 클릭에서 "추가/제거 `WizardSteps`" 링크를 시작 하려면 스마트 태그에서는 `WizardStep` 컬렉션 편집기. 여기에서 추가, 제거 또는 마법사의 단계를 다시 정렬할 수 있습니다. 이 방법이이 자습서를 사용 합니다.
 
-- **변환에서 * * *`CreateUserWizardStep`* * *에 편집 가능한 * * *`WizardStep`* * *입니다.** 이 대체는 `CreateUserWizardStep` 는 동일한 `WizardStep` 일치 하는 사용자 인터페이스를 정의 하는 피드백은 `CreateUserWizardStep`' s입니다. 변환 하 여는 `CreateUserWizardStep` 에 `WizardStep` 컨트롤의 위치를 변경 하거나이 단계를 추가 사용자 인터페이스 요소를 추가할 수 있습니다. 변환 하는 `CreateUserWizardStep` 또는 `CompleteWizardStep` 에 편집 가능한 `WizardStep`컨트롤의 스마트 태그에서 "사용자 지정 단계를 완료"의 링크 또는 "사용자 지정 사용자 만들기 단계"를 클릭 합니다.
+- <strong>변환 된</strong><strong>`CreateUserWizardStep`</strong><strong>에 편집 가능한</strong><strong>`WizardStep`</strong><strong>합니다.</strong> 이 대체는 `CreateUserWizardStep` 는 동일한 `WizardStep` 일치 하는 사용자 인터페이스를 정의 하는 피드백은 `CreateUserWizardStep`' s입니다. 변환 하 여는 `CreateUserWizardStep` 에 `WizardStep` 컨트롤의 위치를 변경 하거나이 단계를 추가 사용자 인터페이스 요소를 추가할 수 있습니다. 변환 하는 `CreateUserWizardStep` 또는 `CompleteWizardStep` 에 편집 가능한 `WizardStep`컨트롤의 스마트 태그에서 "사용자 지정 단계를 완료"의 링크 또는 "사용자 지정 사용자 만들기 단계"를 클릭 합니다.
 
 - **위의 두 옵션 중 일부 조합을 사용 합니다.**
 
@@ -527,12 +527,12 @@ CreateUserWizard의에 대 한 이벤트 처리기를 추가 `ActiveStepChanged`
 
 ### <a name="about-the-author"></a>작성자 정보
 
-여러 ASP/ASP.NET 책의 작성자 및 4GuysFromRolla.com의 창립자 Scott Mitchell의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은  *[Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*합니다. Scott에 도달할 수 [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) 또는에서 그의 블로그 통해 [http://ScottOnWriting.NET](http://scottonwriting.net/)합니다.
+여러 ASP/ASP.NET 책의 작성자 및 4GuysFromRolla.com의 창립자 Scott Mitchell의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은  *[Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*합니다. Scott에 도달할 수 [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) 또는에서 그의 블로그 통해 [ http://ScottOnWriting.NET ](http://scottonwriting.net/)합니다.
 
 ### <a name="special-thanks-to"></a>특히 감사 드립니다.
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)합니다.
 
->[!div class="step-by-step"]
-[이전](user-based-authorization-cs.md)
-[다음](creating-the-membership-schema-in-sql-server-vb.md)
+> [!div class="step-by-step"]
+> [이전](user-based-authorization-cs.md)
+> [다음](creating-the-membership-schema-in-sql-server-vb.md)

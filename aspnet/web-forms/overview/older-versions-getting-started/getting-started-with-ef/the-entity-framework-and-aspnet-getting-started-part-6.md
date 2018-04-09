@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-6
-title: "먼저 Entity Framework 4.0 데이터베이스와 시작 및 ASP.NET 4 Web Forms-6 부 | Microsoft Docs"
+title: 먼저 Entity Framework 4.0 데이터베이스와 시작 및 ASP.NET 4 Web Forms-6 부 | Microsoft Docs
 author: tdykstra
-description: "Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework를 사용 하 여 ASP.NET Web Forms 응용 프로그램을 만드는 방법을 보여 줍니다. 샘플 응용 프로그램은..."
+description: Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework를 사용 하 여 ASP.NET Web Forms 응용 프로그램을 만드는 방법을 보여 줍니다. 샘플 응용 프로그램은...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/03/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-6
 msc.type: authoredcontent
-ms.openlocfilehash: 164c2002a119420555d2c7065c5a79a5f433a725
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b76be25501275ba676c9a9acca8e73333439ee70
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-6"></a>먼저 Entity Framework 4.0 데이터베이스와 시작 및 ASP.NET 4 Web Forms-6 부
 ====================
@@ -27,7 +27,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="implementing-table-per-hierarchy-inheritance"></a>계층당 하나의 테이블 상속 구현
 
-이전 자습서에서 사용한 관련된 데이터를 추가 하 고 관계를 삭제 하 고 기존 엔터티에 대 한 관계 수 있었던 새 엔터티를 추가 하 여 합니다. 이 자습서에서는 데이터 모델에서 상속을 구현 하는 방법을 보여줍니다.
+이전 자습서에서 사용한 관련된 데이터를 추가 하 고 관계를 삭제 하 고 기존 엔터티에 대 한 관계 수 있었던 새 엔터티를 추가 하 여 합니다. 이 자습서에서는 데이터 모델에서 상속을 구현하는 방법을 보여 줍니다.
 
 개체 지향 프로그래밍 관련된 클래스를 사용 하 여 쉽게 수행할 수 있도록 상속을 사용할 수 있습니다. 만들 수는 예를 들어 `Instructor` 및 `Student` 에서 파생 된 클래스는 `Person` 기본 클래스입니다. Entity Framework에서 동일한 종류의 엔터티 간에 상속 구조를 만들 수 있습니다.
 
@@ -57,7 +57,7 @@ TPH 상속 패턴 일반적으로 더 나은 성능을 제공 TPT 상속 패턴 
 
 ## <a name="adding-instructor-and-student-entities"></a>강사 및 학생 엔터티 추가
 
-열기는 *SchoolModel.edmx* 파일, 선택 디자이너에서 빈된 영역을 마우스 오른쪽 단추로 클릭 **추가**을 선택한 후 **엔터티***합니다.*
+열기는 <em>SchoolModel.edmx</em> 파일, 선택 디자이너에서 빈된 영역을 마우스 오른쪽 단추로 클릭 <strong>추가</strong>을 선택한 후 <strong>엔터티</strong><em>합니다.</em>
 
 [![image01](the-entity-framework-and-aspnet-getting-started-part-6/_static/image6.png)](the-entity-framework-and-aspnet-getting-started-part-6/_static/image5.png)
 
@@ -161,6 +161,6 @@ Visual Studio 디자이너에서 지정할 수 있습니다 하는 엔터티 유
 
 이제 Entity Framework에서 한 상속 패턴을 구현 하는 방법을 살펴보았습니다. 다음 자습서에서는 Entity Framework 데이터베이스를 액세스 하는 방법을 보다 자세하게 제어 하기 위해 저장된 프로시저를 사용 하는 방법을 설명 합니다.
 
->[!div class="step-by-step"]
-[이전](the-entity-framework-and-aspnet-getting-started-part-5.md)
-[다음](the-entity-framework-and-aspnet-getting-started-part-7.md)
+> [!div class="step-by-step"]
+> [이전](the-entity-framework-and-aspnet-getting-started-part-5.md)
+> [다음](the-entity-framework-and-aspnet-getting-started-part-7.md)

@@ -1,7 +1,7 @@
 ---
-title: "키 저장소 공급자"
+title: ASP.NET Core의 키 저장소 공급자
 author: rick-anderson
-description: "ASP.NET Core 및 키 저장소 위치를 구성 하는 방법에 대 한 키 저장소 공급자에 알아봅니다."
+description: ASP.NET Core 및 키 저장소 위치를 구성 하는 방법에 대 한 키 저장소 공급자에 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 01/14/2017
@@ -9,20 +9,20 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/implementation/key-storage-providers
-ms.openlocfilehash: 83e02a19e465b3ff81a0c0c62c2c8b090bfab052
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: e8b7804e93b812c2e710ab15510c2fbaa7c4866d
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="key-storage-providers"></a>키 저장소 공급자
+# <a name="key-storage-providers-in-aspnet-core"></a>ASP.NET Core의 키 저장소 공급자
 
 <a name="data-protection-implementation-key-storage-providers"></a>
 
 기본적으로 데이터 보호 시스템 [경험적 접근을 사용](xref:security/data-protection/configuration/default-settings) 암호화 키 자료 유지할지를 결정 하 합니다. 개발자는 추론은 무시 하 고 수동으로 위치를 지정할 수도 있습니다.
 
 > [!NOTE]
-> 키 지 속성을 명시적 위치를 지정 하는 경우 데이터 보호 시스템은 추론은 제공 하는 rest 메커니즘에 기본 키 암호화 등록 해제 미사용에 더 이상 키를 암호화 됩니다. 하는 것이 좋습니다 있습니다 또한 [명시적 키 암호화 메커니즘을 지정](key-encryption-at-rest.md#data-protection-implementation-key-encryption-at-rest-providers) 프로덕션 응용 프로그램에 대 한 합니다.
+> 키 지 속성을 명시적 위치를 지정 하는 경우 데이터 보호 시스템은 추론은 제공 하는 rest 메커니즘에 기본 키 암호화 등록 해제 미사용에 더 이상 키를 암호화 됩니다. 하는 것이 좋습니다 있습니다 또한 [명시적 키 암호화 메커니즘을 지정](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest-providers) 프로덕션 응용 프로그램에 대 한 합니다.
 
 데이터 보호 시스템 여러 기본 키 저장소 공급자와 함께 제공 됩니다.
 
@@ -36,7 +36,7 @@ sc.AddDataProtection()
        .PersistKeysToFileSystem(new DirectoryInfo(@"c:\temp-keys\"));
    ```
 
-`DirectoryInfo` 로컬 컴퓨터에 디렉터리를 가리킬 수 있습니다 또는 네트워크 공유에 폴더를 가리킬 수 있습니다. 로컬 컴퓨터에 디렉터리를 가리키는 경우 (및 시나리오는 응용 프로그램에만 로컬 컴퓨터에서이 리포지토리를 사용 해야 합니다)를 사용 하는 것이 좋습니다 [Windows DPAPI](key-encryption-at-rest.md#data-protection-implementation-key-encryption-at-rest) 을 미사용 키를 암호화 합니다. 그렇지 않으면 사용 하는 것이 좋습니다는 [X.509 인증서](key-encryption-at-rest.md#data-protection-implementation-key-encryption-at-rest) 저장 된 상태의 키를 암호화 하 합니다.
+`DirectoryInfo` 로컬 컴퓨터에 디렉터리를 가리킬 수 있습니다 또는 네트워크 공유에 폴더를 가리킬 수 있습니다. 로컬 컴퓨터에 디렉터리를 가리키는 경우 (및 시나리오는 응용 프로그램에만 로컬 컴퓨터에서이 리포지토리를 사용 해야 합니다)를 사용 하는 것이 좋습니다 [Windows DPAPI](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest) 을 미사용 키를 암호화 합니다. 그렇지 않으면 사용 하는 것이 좋습니다는 [X.509 인증서](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest) 저장 된 상태의 키를 암호화 하 합니다.
 
 ## <a name="azure-and-redis"></a>Azure 및 Redis
 
@@ -84,7 +84,7 @@ public void ConfigureServices(IServiceCollection services)
        .PersistKeysToRegistry(Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Sample\keys"));
    ```
 
-시스템 레지스트리를 사용 하 여 지 속성 메커니즘으로 사용 하십시오 [Windows DPAPI](key-encryption-at-rest.md#data-protection-implementation-key-encryption-at-rest) 을 미사용 키를 암호화 합니다.
+시스템 레지스트리를 사용 하 여 지 속성 메커니즘으로 사용 하십시오 [Windows DPAPI](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest) 을 미사용 키를 암호화 합니다.
 
 ## <a name="custom-key-repository"></a>사용자 지정 키 저장소
 

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/introduction/an-overview-of-forms-authentication-vb
-title: "폼 인증 (VB)의 개요 | Microsoft Docs"
+title: 폼 인증 (VB)의 개요 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에서는 낮 단순한 토론에서 구현을 제공 합니다. 특히, 폼 인증을 구현 살펴봅니다. 웹 응용 프로그램 w 중..."
+description: 이 자습서에서는 낮 단순한 토론에서 구현을 제공 합니다. 특히, 폼 인증을 구현 살펴봅니다. 웹 응용 프로그램 w 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/14/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/an-overview-of-forms-authentication-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 90bcff91d0642e6af66f43fd807b253cc516d277
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 6482b10a470b50a1fc6f163ee2d59682e83f5a2b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="an-overview-of-forms-authentication-vb"></a>폼 인증 (VB)의 개요
 ====================
@@ -103,7 +103,7 @@ Visual Studio 2008의 Microsoft의 무료 버전으로 생성 됩니다이 시�
 **그림 03**: 마스터 페이지 라는 Site.master 웹 사이트에 추가 ([전체 크기 이미지를 보려면 클릭](an-overview-of-forms-authentication-vb/_static/image9.png))
 
 
-마스터 페이지의 여기 사이트 전체 페이지 레이아웃을 정의 합니다. 디자인 뷰를 사용 하 고 필요한 모든 레이아웃 또는 웹 컨트롤을 추가 하거나 직접 소스 뷰에서 태그를 수동으로 추가할 수 있습니다. 내 마스터 페이지의 레이아웃에 사용 되는 레이아웃을 모방 하기 위해 구조 합니까 내  *[ASP.NET 2.0에서 데이터 작업을](../../data-access/index.md)*  자습서 시리즈 (그림 4 참조). 마스터 페이지를 사용 하 여 [스타일 시트](http://www.w3schools.com/css/default.asp) 위치 지정 (이 자습서의 관련된 다운로드에 포함)이 표시 된 Style.css 파일에 정의 된 CSS 설정 사용 하 여 스타일에 대 한 합니다. CSS 규칙을 정의 하는 동안 아래에 표시 된 태그에서 알 수 없습니다, 되도록 탐색 &lt;div&gt;의 왼쪽에 나타나고이 200 픽셀의 고정된 폭 있도록 절대 콘텐츠 위치로 지정 합니다.
+마스터 페이지의 여기 사이트 전체 페이지 레이아웃을 정의 합니다. 디자인 뷰를 사용 하 고 필요한 모든 레이아웃 또는 웹 컨트롤을 추가 하거나 직접 소스 뷰에서 태그를 수동으로 추가할 수 있습니다. 내 마스터 페이지의 레이아웃에 사용 되는 레이아웃을 모방 하기 위해 구조 합니까 내 *[ASP.NET 2.0에서 데이터 작업을](../../data-access/index.md)* 자습서 시리즈 (그림 4 참조). 마스터 페이지를 사용 하 여 [스타일 시트](http://www.w3schools.com/css/default.asp) 위치 지정 (이 자습서의 관련된 다운로드에 포함)이 표시 된 Style.css 파일에 정의 된 CSS 설정 사용 하 여 스타일에 대 한 합니다. CSS 규칙을 정의 하는 동안 아래에 표시 된 태그에서 알 수 없습니다, 되도록 탐색 &lt;div&gt;의 왼쪽에 나타나고이 200 픽셀의 고정된 폭 있도록 절대 콘텐츠 위치로 지정 합니다.
 
 [!code-aspx[Main](an-overview-of-forms-authentication-vb/samples/sample1.aspx)]
 
@@ -221,7 +221,7 @@ Login.aspx로 두 개의 텍스트 상자를 추가 하 고 해당 ID 속성 이
 
 ASP.NET 2.0 이전 개발자가 자신의 사용자 저장소를 모두 구현 하 고 저장소에 대해 제공된 된 자격 증명의 유효성을 검사 하는 코드를 작성 하는 일을 담당 했습니다. 대부분의 개발자 명명 된 사용자 사용자 이름, 암호, 전자 메일, LastLoginDate, 등과 같은 열이 있는 테이블을 만드는 사용자 저장소에서 데이터베이스를 구현 합니다. 그런 다음이 테이블에서 사용자 계정 마다 하나의 레코드를 것입니다. 사용자의 제공 된 자격 증명을 확인 하는 일치 하는 사용자 이름에 대 한 데이터베이스를 쿼리 한 다음 데이터베이스에 암호가 제공 된 암호에 상응 하는 확인 포함 됩니다.
 
-ASP.NET 2.0에서는 개발자가 하나를 사용 해야 멤버 자격 공급자의 사용자 저장소를 관리 하 합니다. 이 자습서 시리즈의 사용자 저장소에 대 한 SQL Server 데이터베이스를 사용 하 여 SqlMembershipProvider를 사용 합니다. SqlMembershipProvider를 사용 하는 경우 테이블, 뷰 및 공급자가 예상 하는 저장된 프로시저를 포함 하는 특정 데이터베이스 스키마를 구현 해야 합니다. 이 스키마를 구현 하는 방법을 검토 합니다는  *[SQL Server에서 멤버 자격 스키마 만들기](../membership/creating-the-membership-schema-in-sql-server-vb.md)*  자습서입니다. 위치에 멤버 자격 공급자를 사용자의 자격 증명 유효성을 검사 하는 작업은 호출으로는 [멤버 자격 클래스](https://msdn.microsoft.com/library/system.web.security.membership.aspx)의 [ValidateUser (*username*, *암호*) 메서드](https://msdn.microsoft.com/library/system.web.security.membership.validateuser.aspx)를 나타내는 부울 값을 반환 하는 여부의 유효성을 검사는 *사용자 이름* 및 *암호* 조합 합니다. 것을 확인으로 SqlMembershipProvider 사용자 저장소를 아직 구현 하지 않았습니다 멤버 자격 클래스 ValidateUser 메서드이 이번에 사용할 수 없습니다.
+ASP.NET 2.0에서는 개발자가 하나를 사용 해야 멤버 자격 공급자의 사용자 저장소를 관리 하 합니다. 이 자습서 시리즈의 사용자 저장소에 대 한 SQL Server 데이터베이스를 사용 하 여 SqlMembershipProvider를 사용 합니다. SqlMembershipProvider를 사용 하는 경우 테이블, 뷰 및 공급자가 예상 하는 저장된 프로시저를 포함 하는 특정 데이터베이스 스키마를 구현 해야 합니다. 이 스키마를 구현 하는 방법을 검토 합니다는 *[SQL Server에서 멤버 자격 스키마 만들기](../membership/creating-the-membership-schema-in-sql-server-vb.md)* 자습서입니다. 위치에 멤버 자격 공급자를 사용자의 자격 증명 유효성을 검사 하는 작업은 호출으로는 [멤버 자격 클래스](https://msdn.microsoft.com/library/system.web.security.membership.aspx)의 [ValidateUser (*username*, *암호*) 메서드](https://msdn.microsoft.com/library/system.web.security.membership.validateuser.aspx)를 나타내는 부울 값을 반환 하는 여부의 유효성을 검사는 *사용자 이름* 및 *암호* 조합 합니다. 것을 확인으로 SqlMembershipProvider 사용자 저장소를 아직 구현 하지 않았습니다 멤버 자격 클래스 ValidateUser 메서드이 이번에 사용할 수 없습니다.
 
 만드는 대신 많은 시간을 고유한 사용자 지정 사용자가 데이터베이스 테이블 (만드는 것이 사용 되지 않는 SqlMembershipProvider를 구현한 후) 보겠습니다 대신 하드 코딩 유효한 자격 증명을 로그인에 자체 페이지입니다. LoginButton의 클릭 이벤트 처리기를 다음 코드를 추가 합니다.
 
@@ -241,7 +241,7 @@ Login.aspx?ReturnUrl=ProtectedPage.aspx
 
 - [GetAuthCookie (*username*, *persistCookie*)](https://msdn.microsoft.com/library/system.web.security.formsauthentication.getauthcookie.aspx) -제공 된 이름에 대 한 폼 인증 티켓을 만들어 *username*합니다. 다음으로,이 메서드가 만들고 인증 티켓의 콘텐츠를 보유 하는 HttpCookie 개체를 반환 합니다. 경우 *persistCookie* 은 True, 영구 쿠키 생성 됩니다.
 - [SetAuthCookie (*username*, *persistCookie*)](https://msdn.microsoft.com/library/system.web.security.formsauthentication.setauthcookie.aspx) -는 GetAuthCookie 호출 (*username*, *persistCookie*) 폼 인증 쿠키를 생성 하는 방법입니다. 이 메서드는 다음 (사용 되는, 그렇지 않으면 쿠키 기반 폼 인증 되 고,이 메서드는 쿠키 티켓 논리를 처리 하는 내부 클래스를 호출 한다고 가정) 쿠키 컬렉션에 GetAuthCookie에서 반환 된 쿠키를 추가 합니다.
-- [RedirectFromLoginPage (*username*, *persistCookie*)](https://msdn.microsoft.com/library/system.web.security.formsauthentication.redirectfromloginpage.aspx) -이 메서드를 호출 SetAuthCookie (*username*, *persistCookie* ), 한 다음 적절 한 페이지로 사용자를 리디렉션합니다.
+- [RedirectFromLoginPage (*username*, *persistCookie*)](https://msdn.microsoft.com/library/system.web.security.formsauthentication.redirectfromloginpage.aspx) -이 메서드를 호출 SetAuthCookie (*username*, *persistCookie*), 한 다음 적절 한 페이지로 사용자를 리디렉션합니다.
 
 GetAuthCookie 인증 티켓 쿠키 컬렉션에 쿠키를 쓰기 전에 수정 해야 할 때 유용 합니다. SetAuthCookie 쿠키 컬렉션에 추가 하 고 폼 인증 티켓 만들기를 이지만 적절 한 페이지로 사용자를 리디렉션할 하지 않으려는 경우에 유용 합니다. 로그인 페이지에 보관 하거나 일부 다른 페이지에 게 보낼 하려는 경우가 있을 것입니다.
 
@@ -470,12 +470,12 @@ LoginView 컨트롤 외부에서 LoginStatus 이므로 익명 및 인증 된 사
 
 ### <a name="about-the-author"></a>작성자 정보
 
-여러 ASP/ASP.NET 책의 작성자 및 4GuysFromRolla.com의 창립자 Scott Mitchell의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은  *[Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*합니다. Scott에 도달할 수 [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) 또는에서 그의 블로그 통해 [http://ScottOnWriting.NET](http://scottonwriting.net/)합니다.
+여러 ASP/ASP.NET 책의 작성자 및 4GuysFromRolla.com의 창립자 Scott Mitchell의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은  *[Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*합니다. Scott에 도달할 수 [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) 또는에서 그의 블로그 통해 [ http://ScottOnWriting.NET ](http://scottonwriting.net/)합니다.
 
 ### <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Alicja Maziarz, John Suru 및 Teresa 머피의 포함 됩니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com)합니다.
 
->[!div class="step-by-step"]
-[이전](security-basics-and-asp-net-support-vb.md)
-[다음](forms-authentication-configuration-and-advanced-topics-vb.md)
+> [!div class="step-by-step"]
+> [이전](security-basics-and-asp-net-support-vb.md)
+> [다음](forms-authentication-configuration-and-advanced-topics-vb.md)

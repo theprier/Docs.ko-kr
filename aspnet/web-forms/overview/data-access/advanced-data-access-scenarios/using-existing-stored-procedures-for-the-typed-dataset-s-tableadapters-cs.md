@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs
-title: "저장 프로시저의 이름을 형식화 된 데이터 집합의 Tableadapter (C#)에 대 한 기존 사용 | Microsoft Docs"
+title: 저장 프로시저의 이름을 형식화 된 데이터 집합의 Tableadapter (C#)에 대 한 기존 사용 | Microsoft Docs
 author: rick-anderson
-description: "이전 자습서에서는 TableAdapter 마법사를 사용 하 여 새 저장된 프로시저를 생성 하는 방법을 배웠습니다. 이 자습서에서는 배울 방법 같은 TableAdapter..."
+description: 이전 자습서에서는 TableAdapter 마법사를 사용 하 여 새 저장된 프로시저를 생성 하는 방법을 배웠습니다. 이 자습서에서는 배울 방법 같은 TableAdapter...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/18/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1f95a6868ccce8ce0dfa16a92486e705c42e1db4
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: df8a714325ce99db615eddc3d457da5c926919ba
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-existing-stored-procedures-for-the-typed-datasets-tableadapters-c"></a>형식화 된 데이터 집합의 Tableadapter (C#)에 대 한 기존 사용 하 여 저장 프로시저
 ====================
@@ -56,7 +56,7 @@ Visual Studio에서는 쉽게 데이터베이스에 새 저장된 프로시저�
 
 이 스크립트를 실행 하면 명명 된 Northwind 데이터베이스에 새 저장된 프로시저를 추가 합니다 `Products_SelectByCategoryID`합니다. 이 저장된 프로시저는 단일 입력된 매개 변수 (`@CategoryID`, 형식의 `int`) 하 고 일치 하는 해당 제품에 대 한 필드를 모두 반환 `CategoryID` 값입니다.
 
-이를 실행할 `CREATE PROCEDURE` 스크립트 및 데이터베이스에 저장된 프로시저에 추가 하 고 도구 모음에서 저장 아이콘을 클릭 하거나 Ctrl + S를 적중 합니다. 그런 다음, Stored Procedures 폴더 새로 고쳐지고 새로 만든 보여 주는 저장 프로시저입니다. 또한 창에서 스크립트에서 미묘한 바뀝니다 `CREATE PROCEDURE dbo.Products_SelectProductByCategoryID` 를 `ALTER PROCEDURE` `dbo.Products_SelectProductByCategoryID`합니다. `CREATE PROCEDURE`새 저장된 프로시저를 데이터베이스에 추가 하는 동안 `ALTER PROCEDURE` 기존을 업데이트 합니다. 스크립트의 시작에 변경 되었으므로 `ALTER PROCEDURE`, 입력 매개 변수 또는 SQL 문이 저장된 프로시저를 변경 하 고 저장 아이콘을 클릭 하면 이러한 변경 내용으로 저장된 프로시저를 업데이트 합니다.
+이를 실행할 `CREATE PROCEDURE` 스크립트 및 데이터베이스에 저장된 프로시저에 추가 하 고 도구 모음에서 저장 아이콘을 클릭 하거나 Ctrl + S를 적중 합니다. 그런 다음, Stored Procedures 폴더 새로 고쳐지고 새로 만든 보여 주는 저장 프로시저입니다. 또한 창에서 스크립트에서 미묘한 바뀝니다 `CREATE PROCEDURE dbo.Products_SelectProductByCategoryID` 를 `ALTER PROCEDURE` `dbo.Products_SelectProductByCategoryID`합니다. `CREATE PROCEDURE` 새 저장된 프로시저를 데이터베이스에 추가 하는 동안 `ALTER PROCEDURE` 기존을 업데이트 합니다. 스크립트의 시작에 변경 되었으므로 `ALTER PROCEDURE`, 입력 매개 변수 또는 SQL 문이 저장된 프로시저를 변경 하 고 저장 아이콘을 클릭 하면 이러한 변경 내용으로 저장된 프로시저를 업데이트 합니다.
 
 그림 2에 표시 한 후 Visual Studio는 `Products_SelectByCategoryID` 저장된 프로시저를 저장 합니다.
 
@@ -273,12 +273,12 @@ TableAdapter의 마법사 us에 대 한 저장된 프로시저를 자동으로 �
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자가 Hilton Geisenow, S ren 야곱의 Lauritsen 및 Teresa 머피의 합니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md)
-[다음](updating-the-tableadapter-to-use-joins-cs.md)
+> [!div class="step-by-step"]
+> [이전](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md)
+> [다음](updating-the-tableadapter-to-use-joins-cs.md)

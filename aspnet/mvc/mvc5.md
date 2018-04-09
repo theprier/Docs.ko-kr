@@ -2,7 +2,7 @@
 uid: mvc/mvc5
 title: ASP.NET MVC 5 | Microsoft Docs
 author: rick-anderson
-description: "ASP.NET MVC 5 ASP.NET MVC 5는 AS.의 능력에 대 한 체계적인 디자인 패턴을 사용 하 여 확장 가능 하 고 표준 기반 웹 응용 프로그램을 구축 하기 위한 프레임 워크..."
+description: ASP.NET MVC 5 ASP.NET MVC 5는 AS.의 능력에 대 한 체계적인 디자인 패턴을 사용 하 여 확장 가능 하 고 표준 기반 웹 응용 프로그램을 구축 하기 위한 프레임 워크...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/20/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/mvc5
 msc.type: content
-ms.openlocfilehash: e57163469ae4606df0fc17e3e054b7696782a084
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1b3f920b51a70757ec0e20e36fa8e7dc329e663d
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/22/2018
 ---
 <a name="aspnet-mvc-5"></a>ASP.NET MVC 5
 ====================
@@ -38,7 +38,7 @@ MVC 프로젝트 템플릿을 사용 하도록 업데이트 되었습니다 [부
 
 ### <a name="authentication-filters"></a>인증 필터
 
-[인증 필터](http://www.dotnetcurry.com/showarticle.aspx?ID=957) 새로운 종류의 ASP.NET MVC 파이프라인에서 권한 부여 필터 전에 실행 하 고 인증 논리 당-작업을 지정할 수 있도록 하는 ASP.NET MVC에서 필터는 컨트롤러 마다 또는 모든 컨트롤러에 대 한 전역적으로 합니다. 인증 필터 요청에 자격 증명을 처리 하 고 해당 보안 주체를 제공 합니다. 인증 필터 권한이 없는 요청에 부응 인증 챌린지에 추가할 수도 있습니다. 참조 [ASP.NET MVC 5 인증 필터](http://www.dotnetcurry.com/showarticle.aspx?ID=957), [ASP.NET MVC 5의 인증 필터](http://theshravan.net/blog/authentication-filters-in-asp-net-mvc-5/) 및 [마지막으로 새 ASP.NET MVC 5 인증 필터!](http://hackwebwith.net/finally-the-new-asp-net-mvc-5-authentication-filters/)합니다.
+[인증 필터](http://www.dotnetcurry.com/showarticle.aspx?ID=957) 새로운 종류의 ASP.NET MVC 파이프라인에서 권한 부여 필터 전에 실행 하 고 인증 논리 당-작업을 지정할 수 있도록 하는 ASP.NET MVC에서 필터는 컨트롤러 마다 또는 모든 컨트롤러에 대 한 전역적으로 합니다. 인증 필터 요청에 자격 증명을 처리 하 고 해당 보안 주체를 제공 합니다. 인증 필터 권한이 없는 요청에 부응 인증 챌린지에 추가할 수도 있습니다. 참조 [ASP.NET MVC 5 인증 필터](http://www.dotnetcurry.com/showarticle.aspx?ID=957), [ASP.NET MVC 5의에서 인증 필터](http://theshravan.net/blog/authentication-filters-in-asp-net-mvc-5/)합니다.
 
 ### <a name="filter-overrides"></a>필터 재정
 
@@ -46,7 +46,7 @@ MVC 프로젝트 템플릿을 사용 하도록 업데이트 되었습니다 [부
 
 ### <a name="attribute-routing"></a>특성 라우팅
 
-ASP.NET MVC에서 지 원하는 [특성 라우팅을](https://blogs.msdn.com/b/webdev/archive/2013/10/17/attribute-routing-in-asp-net-mvc-5.aspx), Tim McCall, 작성자에 의해 기여 덕분에 [http://attributerouting.net](http://attributerouting.net)합니다. 특성 라우팅을 사용 하 여 작업 및 컨트롤러를 주석을 달아 프로그램 경로 지정할 수 있습니다.
+ASP.NET MVC에서 지 원하는 [특성 라우팅을](https://blogs.msdn.com/b/webdev/archive/2013/10/17/attribute-routing-in-asp-net-mvc-5.aspx), Tim McCall, 작성자에 의해 기여 덕분에 [ http://attributerouting.net ](http://attributerouting.net)합니다. 특성 라우팅을 사용 하 여 작업 및 컨트롤러를 주석을 달아 프로그램 경로 지정할 수 있습니다.
 
 ## <a name="new-web-project-experience"></a>새 웹 프로젝트 경험
 

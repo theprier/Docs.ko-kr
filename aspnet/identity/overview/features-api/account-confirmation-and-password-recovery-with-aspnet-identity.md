@@ -1,22 +1,22 @@
 ---
 uid: identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity
-title: "계정 확인 및 ASP.NET Identity (C#) 사용 하 여 암호 복구 | Microsoft Docs"
+title: 계정 확인 및 ASP.NET Identity (C#) 사용 하 여 암호 복구 | Microsoft Docs
 author: HaoK
-description: "먼저 완료 해야이 자습서를 수행 하기 전에 전자 메일 확인 및 암호 재설정에 대 한 로그와 함께 보안 ASP.NET MVC 5 웹 응용 프로그램을 만듭니다. 이 자습서 중..."
+description: 먼저 완료 해야이 자습서를 수행 하기 전에 전자 메일 확인 및 암호 재설정에 대 한 로그와 함께 보안 ASP.NET MVC 5 웹 응용 프로그램을 만듭니다. 이 자습서 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/26/2015
 ms.topic: article
 ms.assetid: 8d54180d-f826-4df7-b503-7debf5ed9fb3
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 548baaaa06980fb793c079b66b6edc34422eb579
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 0167388cf6b488b72ca36f583a7794690dbf9900
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="account-confirmation-and-password-recovery-with-aspnet-identity-c"></a>계정 확인 및 암호 복구 ASP.NET Identity (C#)
 ====================
@@ -88,7 +88,7 @@ ms.lasthandoff: 01/24/2018
   
     ![](account-confirmation-and-password-recovery-with-aspnet-identity/_static/image10.png)  
   
- 이 시점에서 전자 메일 확인 되지 않았습니다.
+   이 시점에서 전자 메일 확인 되지 않았습니다.
 
 ASP.NET Id에 대 한 기본 데이터 저장소는 Entity Framework 하지만 다른 데이터 저장소를 사용 하 고 필드를 더 추가 하 고 구성할 수 있습니다. 참조 [추가 리소스](#addRes) 이 자습서의 마지막 부분에 있습니다.
 
@@ -117,7 +117,7 @@ Id 시스템 구성할 수 있도록 앱 하므로 사용자가 보안 프로필
 - 2 단계 인증 (2FA)입니다. 사항이 2FA 및 SMS 다른 자습서입니다.
 - 전자 메일 및 SMS 서비스를 연결 합니다. (하겠습니다 SMS 다른 자습서에).
 
-`ApplicationUserManager` 제네릭에서 클래스 파생 `UserManager<ApplicationUser>` 클래스입니다. `ApplicationUser`파생 [IdentityUser](https://msdn.microsoft.com/library/microsoft.aspnet.identity.entityframework.identityuser.aspx)합니다. `IdentityUser`원본에서 파생 `IdentityUser` 클래스:
+`ApplicationUserManager` 제네릭에서 클래스 파생 `UserManager<ApplicationUser>` 클래스입니다. `ApplicationUser` 파생 [IdentityUser](https://msdn.microsoft.com/library/microsoft.aspnet.identity.entityframework.identityuser.aspx)합니다. `IdentityUser` 원본에서 파생 `IdentityUser` 클래스:
 
 [!code-csharp[Main](account-confirmation-and-password-recovery-with-aspnet-identity/samples/sample1.cs)]
 
@@ -127,11 +127,11 @@ Id 시스템 구성할 수 있도록 앱 하므로 사용자가 보안 프로필
 
 ### <a name="applicationuser"></a>ApplicationUser
 
-`ApplicationUser`(`public class ApplicationUserManager : UserManager<ApplicationUser>`)에 정의 된 *Models\IdentityModels.cs* 로:
+`ApplicationUser` (`public class ApplicationUserManager : UserManager<ApplicationUser>`)에 정의 된 *Models\IdentityModels.cs* 로:
 
 [!code-csharp[Main](account-confirmation-and-password-recovery-with-aspnet-identity/samples/sample2.cs?highlight=8-9)]
 
-위의 강조 표시 된 코드를 생성 한 [ClaimsIdentity](https://msdn.microsoft.com/library/system.security.claims.claimsidentity.aspx)합니다. ASP.NET Identity OWIN 쿠키 인증 되며 클레임 기반, 프레임 워크 하므로 응용 프로그램에서 생성 한 `ClaimsIdentity` 사용자에 대 한 합니다. `ClaimsIdentity`정보가 사용자의 이름과 같은 사용자에 대 한 모든 클레임에 대 한 기간 및 해당 사용자가 역할에 속해 있습니다. 또한이 단계에서 사용자에 대 한 더 많은 클레임을 추가할 수 있습니다.
+위의 강조 표시 된 코드를 생성 한 [ClaimsIdentity](https://msdn.microsoft.com/library/system.security.claims.claimsidentity.aspx)합니다. ASP.NET Identity OWIN 쿠키 인증 되며 클레임 기반, 프레임 워크 하므로 응용 프로그램에서 생성 한 `ClaimsIdentity` 사용자에 대 한 합니다. `ClaimsIdentity` 정보가 사용자의 이름과 같은 사용자에 대 한 모든 클레임에 대 한 기간 및 해당 사용자가 역할에 속해 있습니다. 또한이 단계에서 사용자에 대 한 더 많은 클레임을 추가할 수 있습니다.
 
 OWIN `AuthenticationManager.SignIn` 메서드에 전달 된 `ClaimsIdentity` 사용자가 로그인:
 
@@ -152,7 +152,7 @@ OWIN `AuthenticationManager.SignIn` 메서드에 전달 된 `ClaimsIdentity` 사
 
     [!code-console[Main](account-confirmation-and-password-recovery-with-aspnet-identity/samples/sample4.cmd)]
 
- 이 자습서에서는 [SendGrid](http://sendgrid.com/) 전자 메일을 보내도록 합니다. `Identity.Samples` 패키지와 사용할 코드를 설치 합니다.
+   이 자습서에서는 [SendGrid](http://sendgrid.com/) 전자 메일을 보내도록 합니다. `Identity.Samples` 패키지와 사용할 코드를 설치 합니다.
 3. 설정의 [SSL을 사용 하도록 프로젝트](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)합니다.
 4. 로컬 계정 만들기를 클릭 하 여 앱을 실행 하 여 테스트는 **등록** 에 연결 하 고 등록 양식을 게시 합니다.
 5. 전자 메일 확인을 시뮬레이트하는 데모 전자 메일 링크를 클릭 합니다.
@@ -198,7 +198,7 @@ OWIN `AuthenticationManager.SignIn` 메서드에 전달 된 `ClaimsIdentity` 사
 [!code-csharp[Main](account-confirmation-and-password-recovery-with-aspnet-identity/samples/sample8.cs)]
 
 > [!WARNING]
-> 보안-소스 코드에서 중요 한 데이터 저장 되지 않습니다. 계정 및 자격 증명 appSetting에 저장 됩니다. Azure에서 안전 하 게에 저장할 수 있습니다 이러한 값은  **[구성](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)**  Azure 포털에서 탭 합니다. 참조 [ASP.NET 및 Azure에 암호 및 기타 중요 한 데이터 배포에 대 한 유용한](best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md)합니다.
+> 보안-소스 코드에서 중요 한 데이터 저장 되지 않습니다. 계정 및 자격 증명 appSetting에 저장 됩니다. Azure에서 안전 하 게에 저장할 수 있습니다 이러한 값은 **[구성](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)** Azure 포털에서 탭 합니다. 참조 [ASP.NET 및 Azure에 암호 및 기타 중요 한 데이터 배포에 대 한 유용한](best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md)합니다.
 
 
 SendGrid 자격 증명을 입력 앱을 실행 된 전자 메일 별칭 레지스터 수 링크를 클릭 하십시오 확인 전자 메일에 합니다. 이 작업을 수행 하는 방법을 보려면 프로그램 [Outlook.com](http://outlook.com) 전자 메일 계정, John Atten 참조 [Outlook.Com SMTP 호스트에 대 한 C# SMTP 구성](http://typecastexception.com/post/2013/12/20/C-SMTP-Configuration-for-OutlookCom-SMTP-Host.aspx) 및 이들의[ASP.NET Identity 2.0: 계정 구성 설정 유효성 검사 2 단계 인증 및](http://typecastexception.com/post/2014/04/20/ASPNET-Identity-20-Setting-Up-Account-Validation-and-Two-Factor-Authorization.aspx) 게시 합니다.
@@ -236,7 +236,7 @@ SendGrid 자격 증명을 입력 앱을 실행 된 전자 메일 별칭 레지�
  응용 프로그램을 보다 안전 하 게 ASP.NET Identity (2FA) 2 단계 인증을 지원 합니다. 참조 [ASP.NET Identity 2.0: 계정 유효성 검사 및 2 단계 인증을 설정](http://typecastexception.com/post/2014/04/20/ASPNET-Identity-20-Setting-Up-Account-Validation-and-Two-Factor-Authorization.aspx) John Atten 여 합니다. 로그인 암호 시도 실패에 계정 잠금에 설정할 수 있지만 해당 접근 방식을 통해 사용자의 로그인에 취약 [DOS](http://en.wikipedia.org/wiki/Denial-of-service_attack) 잠금을 수행 합니다. 계정 잠금 2FA에만 사용 하는 것이 좋습니다.  
 <a id="addRes"></a>
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 - [ASP.NET ID에 대한 사용자 지정 저장소 공급자 개요](../extensibility/overview-of-custom-storage-providers-for-aspnet-identity.md)
 - [Facebook, Twitter, LinkedIn 및 Google OAuth2 로그온 된 MVC 5 앱](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md) 사용자 테이블에 프로필 정보를 추가 하는 방법도 설명 합니다.

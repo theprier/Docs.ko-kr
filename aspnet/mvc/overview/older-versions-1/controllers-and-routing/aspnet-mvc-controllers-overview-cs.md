@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/aspnet-mvc-controllers-overview-cs
-title: "ASP.NET MVC 컨트롤러 개요 (C#) | Microsoft Docs"
+title: ASP.NET MVC 컨트롤러 개요 (C#) | Microsoft Docs
 author: StephenWalther
-description: "이 자습서에서는 Stephen Walther ASP.NET MVC 컨트롤러를 소개합니다. 새 컨트롤러를 만들고 다양 한 유형의 작업 res 반환 하는 방법을 배웁니다."
+description: 이 자습서에서는 Stephen Walther ASP.NET MVC 컨트롤러를 소개합니다. 새 컨트롤러를 만들고 다양 한 유형의 작업 res 반환 하는 방법을 배웁니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/16/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/aspnet-mvc-controllers-overview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9e4ca745fa068b1813e01b131d53a0199cc47d5a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 95e7c555a52c8c3b765a6fffab15276491cf5714
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-mvc-controller-overview-c"></a>ASP.NET MVC 컨트롤러 개요 (C#)
 ====================
@@ -37,7 +37,7 @@ MVC 컨트롤러는는 ASP.NET MVC 웹 사이트에 대 한 요청에 응답 해
 
 목록 1 ProductController 라는 간단한 컨트롤러를 포함 합니다.
 
-**Listing1-Controllers\ProductController.cs**
+**Listing1 - Controllers\ProductController.cs**
 
 [!code-csharp[Main](aspnet-mvc-controllers-overview-cs/samples/sample1.cs)]
 
@@ -118,6 +118,6 @@ Index () 동작 목록 5의 DateTime 개체를 반환합니다. ASP.NET MVC 프�
 
 이 자습서의 목적은 ASP.NET MVC 컨트롤러, 컨트롤러 작업 및 컨트롤러 작업 결과의 개념을 소개 하는 것 이었습니다. 첫 번째 섹션에서는 ASP.NET MVC 프로젝트에 새 컨트롤러를 추가 하는 방법을 알아보았습니다. 컨트롤러의 어떻게 공용 메서드를 학습 하는 다음으로 universe 컨트롤러 작업으로 노출 됩니다. 마지막으로, 다양 한 유형의 컨트롤러 작업에서 반환 될 수 있는 작업 결과 설명 했습니다. 특히, ViewResult, RedirectToActionResult, 및 ContentResult 컨트롤러 작업에서 반환 하는 방법에 설명 했습니다.
 
->[!div class="step-by-step"]
-[이전](creating-an-action-vb.md)
-[다음](creating-custom-routes-cs.md)
+> [!div class="step-by-step"]
+> [이전](creating-an-action-vb.md)
+> [다음](creating-custom-routes-cs.md)

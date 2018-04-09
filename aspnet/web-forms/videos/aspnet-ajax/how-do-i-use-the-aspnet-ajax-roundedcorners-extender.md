@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/aspnet-ajax/how-do-i-use-the-aspnet-ajax-roundedcorners-extender
-title: "[어떻게 할까요?] ASP.NET AJAX RoundedCorners Extender를 사용 합니까? | Microsoft 문서"
+title: '[어떻게 할까요?] ASP.NET AJAX RoundedCorners Extender를 사용 합니까? | Microsoft 문서'
 author: JoeStagner
-description: "이 비디오에서는 어떻게 RoundedCorner extender 컨트롤 수 웹 페이지에는 부드러운 모양과 느낌 매력적인 모서리가 둥근 콘텐츠 영역에 추가 하 여 보기..."
+description: 이 비디오에서는 어떻게 RoundedCorner extender 컨트롤 수 웹 페이지에는 부드러운 모양과 느낌 매력적인 모서리가 둥근 콘텐츠 영역에 추가 하 여 보기...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/01/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-use-the-aspnet-ajax-roundedcorners-extender
 msc.type: video
-ms.openlocfilehash: 7803234b6c8dce1a17b15cfe3c1a46a3c12dfa1c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 13a6faebcf60e87f1529850b1ed904f7c885e26f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-do-i-use-the-aspnet-ajax-roundedcorners-extender"></a>[어떻게 할까요?] ASP.NET AJAX RoundedCorners Extender를 사용 합니까?
 ====================
@@ -24,8 +24,8 @@ ms.lasthandoff: 11/10/2017
 
 이 비디오에서는 어떻게 RoundedCorner extender 컨트롤 수 웹 페이지에는 부드러운 모양과 느낌 매력적인 모서리가 둥근 콘텐츠 영역에 추가 하 여 표시 됩니다.
 
-[&#9654; 동영상 (2 분) 보기](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-roundedcorners-extender)
+[&#9654;동영상 (2 분) 보기](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-roundedcorners-extender)
 
->[!div class="step-by-step"]
-[이전](how-do-i-use-an-aspnet-ajax-scriptmanagerproxy.md)
-[다음](how-do-i-use-the-aspnet-ajax-timer-control.md)
+> [!div class="step-by-step"]
+> [이전](how-do-i-use-an-aspnet-ajax-scriptmanagerproxy.md)
+> [다음](how-do-i-use-the-aspnet-ajax-timer-control.md)

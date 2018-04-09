@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application
-title: "Async 및 ASP.NET MVC 응용 프로그램에서 Entity Framework와 함께 저장된 프로시저 | Microsoft Docs"
+title: Async 및 ASP.NET MVC 응용 프로그램에서 Entity Framework와 함께 저장된 프로시저 | Microsoft Docs
 author: tdykstra
-description: "Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다 중..."
+description: Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/07/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 7412b32ac29179dfa319544781d4c7165c58196b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 84cf427c7da7905444568ac34534e9ed98a7d8c8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="async-and-stored-procedures-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Async 및 ASP.NET MVC 응용 프로그램에서 Entity Framework와 함께 저장된 프로시저
 ====================
@@ -24,7 +24,7 @@ ms.lasthandoff: 01/24/2018
 
 [완료 된 프로젝트를 다운로드](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8) 또는 [PDF 다운로드](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
 
-> Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio 2013을 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대 한 정보를 참조 하십시오. [시리즈의 첫 번째 자습서](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)합니다.
+> Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio 2013을 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)를 참조하세요.
 
 
 이전 자습서에서 읽고 동기 프로그래밍 모델을 사용 하 여 데이터를 업데이트 하는 방법을 배웠습니다. 이 자습서에서는 비동기 프로그래밍 모델을 구현 하는 방법을 볼 수 있습니다. 비동기 코드는 응용 프로그램 성능이 향상 되므로 서버 리소스를 효과적으로 사용할 수 있습니다.
@@ -33,7 +33,7 @@ ms.lasthandoff: 01/24/2018
 
 마지막으로, 처음 배포한 이후 구현한 다음 데이터베이스 변경의 모든 Azure에 응용 프로그램 다시 배포할 수 있습니다.
 
-다음 그림은 사용 하는 페이지의 일부를 보여 줍니다.
+다음 그림에서는 사용할 일부 페이지를 보여 줍니다.
 
 ![부서 페이지](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image1.png)
 
@@ -41,7 +41,7 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="why-bother-with-asynchronous-code"></a>비동기 코드를 염려 하지
 
-웹 서버를 사용할 수 있는 스레드 수가 제한에 및 로드 양이 많으면 상황에서 모든 사용 가능한 스레드 수 사용. 이 경우 서버를 스레드가 해제 될 때까지 새 요청을 처리할 수 없습니다. I/O가 완료를 대기 하 고 있으므로 작업을 실제로 수행 되지 않습니다은 동안 많은 스레드가 동기 코드와 함께 하느라 정체 될 수 있습니다. 비동기 코드로 i/o가 완료를 대기 하는 프로세스 스레드에서 다른 요청을 처리에 사용할 서버에 대해 해제 됩니다. 따라서 비동기 코드에는 보다 효율적으로 사용 하 고 서버가 지연 없이 더 많은 트래픽을 처리 하도록 설정 되어 되도록 서버 리소스가 수 있습니다.
+웹 서버에는 사용할 수 있는 스레드 수가 제한적이며, 로드 양이 많은 상황에서는 사용 가능한 모든 스레드가 사용될 수 있습니다. 이 경우 서버는 스레드가 해제될 때까지 새 요청을 처리할 수 없습니다. 동기 코드를 사용하면 I/O 완료를 대기하느라 작업을 실제로 수행하지 않는 동안에 많은 스레드가 정체될 수 있습니다. 비동기 코드를 사용하면 프로세스가 I/O 완료를 대기할 때 다른 요청을 처리하는 데 사용하도록 해당 스레드가 서버에서 해제됩니다. 따라서 비동기 코드에는 보다 효율적으로 사용 하 고 서버가 지연 없이 더 많은 트래픽을 처리 하도록 설정 되어 되도록 서버 리소스가 수 있습니다.
 
 .NET의 이전 버전에서 작성 하 고 비동기 코드를 테스트 복잡 했습니다 오류 발생 하기 쉬우므로 및 디버깅 하기 어려울 합니다. .NET 4.5, 작성, 테스트 및 비동기 코드를 디버깅 훨씬 쉽습니다 한 이유가 없다면 아니라 비동기 코드 일반적으로 작성 해야 합니다. 비동기 코드에는 적은 양의 오버 헤드를 도입 하지만 성능에 미치는 영향은 매우 적습니다, 하는 동안 트래픽이 많은 상황에 대 한 트래픽이 적은 상황에 맞는 잠재적 성능 향상 됩니다.
 
@@ -99,7 +99,7 @@ ms.lasthandoff: 01/24/2018
 Entity Framework를 사용한 비동기 프로그래밍을 사용할 때 알아야 할 일부의 원인:
 
 - 비동기 코드는 스레드로부터 안전 하지 않습니다. 즉, 즉, 마세요 동일한 컨텍스트 인스턴스에 사용 하 여 병렬로 여러 작업을 수행할 수 있습니다.
-- 페이징 등 사용 중인 비동기 코드의 성능 이점을 활용, 라이브러리는 패키지에 있는지 확인 하려는 경우, 또한 비동기 때문에 쿼리가 데이터베이스에 전송 하는 Entity Framework 메서드를 호출 하는 경우 메서드를 사용 합니다.
+- 비동기 코드의 성능 이점을 활용하려는 경우 사용 중인(예: 페이징) 라이브러리 패키지 또한 쿼리를 데이터베이스에 전송하도록 하는 Entity Framework 메서드를 호출하는 경우 비동기를 사용하는지 확인합니다.
 
 ## <a name="use-stored-procedures-for-inserting-updating-and-deleting"></a>삽입, 업데이트 및 삭제에 대 한 저장된 프로시저를 사용 합니다.
 
@@ -117,16 +117,16 @@ Entity Framework를 사용한 비동기 프로그래밍을 사용할 때 알아�
     열기 *마이그레이션\&lt; 타임 스탬프&gt;\_DepartmentSP.cs* 의 코드를 참조 하는 `Up` 만드는 메서드를 Insert, Update 및 Delete 저장 프로시저:
 
     [!code-csharp[Main](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample8.cs?highlight=3-4,26-27,42-43)]
-- 패키지 관리 콘솔에서 다음 명령을 입력 합니다.
+3. 패키지 관리 콘솔에서 다음 명령을 입력 합니다.
 
-    `update-database`
-- 디버그 모드에서 응용 프로그램 실행을 클릭는 **부서** 탭을 클릭 한 다음 **새로 만들기**합니다.
-- 새 부서에 대 한 데이터를 입력 한 다음 클릭 **만들기**합니다.
+     `update-database`
+4. 디버그 모드에서 응용 프로그램 실행을 클릭는 **부서** 탭을 클릭 한 다음 **새로 만들기**합니다.
+5. 새 부서에 대 한 데이터를 입력 한 다음 클릭 **만들기**합니다.
 
-    ![부서 만들기](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image5.png)
-- Visual Studio에서의 로그를 검토는 **출력** 창 새 부서 행을 삽입 하는 저장된 프로시저를 사용 했는지 확인 합니다.
+     ![부서 만들기](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image5.png)
+6. Visual Studio에서의 로그를 검토는 **출력** 창 새 부서 행을 삽입 하는 저장된 프로시저를 사용 했는지 확인 합니다.
 
-    ![부서 삽입 SP](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image6.png)
+     ![부서 삽입 SP](async-and-stored-procedures-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image6.png)
 
 코드는 먼저 기본 저장 프로시저 이름을 만듭니다. 기존 데이터베이스를 사용 하는 경우에 데이터베이스에 이미 정의 된 저장된 프로시저를 사용 하려면 저장된 프로시저 이름을 사용자 지정 해야 합니다. 작업을 수행 하는 방법에 대 한 정보를 참조 하십시오. [엔터티 프레임 워크 코드 첫 번째 Insert/Update/Delete 저장 프로시저](https://msdn.microsoft.com/data/dn468673)합니다.
 
@@ -152,6 +152,6 @@ Add-migration 명령을 사용 하 여 빈 마이그레이션을 생성 하 고 
 
 다른 Entity Framework 리소스에 대 한 링크에서 확인할 수 있습니다는 [ASP.NET 데이터 액세스-권장 리소스](../../../../whitepapers/aspnet-data-access-content-map.md)합니다.
 
->[!div class="step-by-step"]
-[이전](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)
-[다음](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+> [!div class="step-by-step"]
+> [이전](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+> [다음](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-production
-title: "Visual Studio를 사용 하 여 ASP.NET 웹 배포: 프로덕션에 배포 | Microsoft Docs"
+title: 'Visual Studio를 사용 하 여 ASP.NET 웹 배포: 프로덕션에 배포 | Microsoft Docs'
 author: tdykstra
-description: "이 자습서 시리즈를 배포 하는 방법을 보여 줍니다. ASP.NET (게시) 실행 하 여 웹 응용 프로그램을 Azure 앱 서비스 웹 앱 또는 타사 호스팅 공급자 중..."
+description: 이 자습서 시리즈를 배포 하는 방법을 보여 줍니다. ASP.NET (게시) 실행 하 여 웹 응용 프로그램을 Azure 앱 서비스 웹 앱 또는 타사 호스팅 공급자 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-production
 msc.type: authoredcontent
-ms.openlocfilehash: abd3f3f78dd9a9e6394e2f61aa9bd692810ca875
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: f3b3898bd003ace100ba05619f2c45ca808462df
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-to-production"></a>Visual Studio를 사용 하 여 ASP.NET 웹 배포: 프로덕션에 배포
 ====================
@@ -144,10 +144,10 @@ Azure 계정이 없는 경우 몇 분에서에서 무료 평가판 계정을 만
 9. 1. 선택 **데이터베이스 업데이트**합니다.
 
         **원격 연결 문자열** 바로 아래의 상자 **DefaultConnection** .publishsettings 파일에서 연결 문자열을 사용 하 여 채워집니다. 연결 문자열에 일반 텍스트로 저장 되어 있는 SQL Server 자격 증명에 포함 되어는 *.pubxml* 파일입니다. 영구적으로 저장 하지 않으려는 경우에 데이터베이스를 배포한 후 게시 프로필에서 제거 하 및 대신 Azure에서 저장할 수 있습니다. 자세한 내용은 참조 [유지 하는 방법을 ASP.NET 데이터베이스 연결 문자열 보안 소스에서 Azure에 배포할 때](http://www.hanselman.com/blog/HowToKeepYourASPNETDatabaseConnectionStringsSecureWhenDeployingToAzureFromSource.aspx) Scott Hanselman의 블로그입니다.
-    2. 클릭 **데이터베이스 업데이트 구성**합니다.
-    3. 에 **데이터베이스 업데이트 구성** 대화 상자를 클릭 **SQL 스크립트 추가**합니다.
-    4. 에 **SQL 스크립트 추가** 상자는 *aspnet-데이터-prod.sql* 솔루션 폴더에 이전에 저장 하 고 클릭 한 다음 스크립트는 **열려**합니다.
-    5. 닫기는 **데이터베이스 업데이트 구성** 대화 상자.
+      2. 클릭 **데이터베이스 업데이트 구성**합니다.
+      3. 에 **데이터베이스 업데이트 구성** 대화 상자를 클릭 **SQL 스크립트 추가**합니다.
+      4. 에 **SQL 스크립트 추가** 상자는 *aspnet-데이터-prod.sql* 솔루션 폴더에 이전에 저장 하 고 클릭 한 다음 스크립트는 **열려**합니다.
+      5. 닫기는 **데이터베이스 업데이트 구성** 대화 상자.
 10. 아래 **SchoolContext** 에 **데이터베이스** 섹션에서 **실행 Code First 마이그레이션을 (응용 프로그램 시작 시 실행)**합니다.
 
     Visual Studio에서 표시 **Code First 마이그레이션 실행** 대신 **데이터베이스 업데이트** 에 대 한 `DbContext` 클래스입니다. 사용 하 여 액세스할 수 있는 데이터베이스를 배포 하려면 마이그레이션 대신 dbDacFx 공급자를 사용 하려는 경우는 `DbContext` 클래스를 참조 하십시오 [마이그레이션 없이 코드 첫 번째 데이터베이스를 어떻게 배포 합니까?](https://msdn.microsoft.com/library/ee942158.aspx#deploy_code_first_without_migrations) 에서 Visual Studio에 대 한 웹 배포 FAQ 및 MSDN에서 ASP.NET을 추가 합니다.
@@ -296,11 +296,11 @@ A *.pubxml* 파일에 특정 게시 프로필 관련 설정이 포함 됩니다.
 
 > [!NOTE]
 > 응용 프로그램은 프로덕션 환경에서 사용 중인 동안 복구 계획을 구현 해야 합니다. 즉, 있습니다 해야 정기적으로 백업 데이터베이스를 프로덕션 앱에서 보안 저장소 위치를 하 고 몇 가지 세대의 이러한 백업 유지 해야 합니다. 데이터베이스를 업데이트할 때 변경 직전의 백업 복사본을 확인 해야 합니다. 그런 다음 실수 하 고 프로덕션 환경에 배포한 후 때까지 검색 하지 않는 경우에 데이터베이스를 손상 되기 전의 상태로 복구할 수 계속 합니다. 자세한 내용은 참조 [Azure SQL 데이터베이스 백업 및 복원](https://msdn.microsoft.com/library/windowsazure/jj650016.aspx)합니다.
-
-
+> 
+> 
 > [!NOTE]
 > 이 자습서는 SQL Server에 배포 하는 버전은 Azure SQL 데이터베이스입니다. 배포 과정은 다른 버전의 SQL Server 비슷합니다를 실제 프로덕션 응용 프로그램은 일부 시나리오에서 특수 한 코드를 Azure SQL 데이터베이스에 대 한 필요할 수 있습니다. 자세한 내용은 참조 [Azure SQL 데이터베이스 작업을](../../../../whitepapers/aspnet-data-access-content-map.md#ssdb) 및 [SQL Server 및 Azure SQL 데이터베이스 중에서 선택](../../../../whitepapers/aspnet-data-access-content-map.md#ssdbchoosing)합니다.
-
->[!div class="step-by-step"]
-[이전](setting-folder-permissions.md)
-[다음](deploying-a-code-update.md)
+> 
+> [!div class="step-by-step"]
+> [이전](setting-folder-permissions.md)
+> [다음](deploying-a-code-update.md)

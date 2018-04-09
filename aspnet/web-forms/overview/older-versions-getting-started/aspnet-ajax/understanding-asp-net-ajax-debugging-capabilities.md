@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-debugging-capabilities
-title: "ASP.NET AJAX 디버깅 기능을 이해 | Microsoft Docs"
+title: ASP.NET AJAX 디버깅 기능을 이해 | Microsoft Docs
 author: scottcate
-description: "코드를 디버깅 하는 기능에서 사용 하는 기술에 관계 없이 해당 무기 모든 개발자 가져야 하는 기술입니다. 대부분의 개발자는 중..."
+description: 코드를 디버깅 하는 기능에서 사용 하는 기술에 관계 없이 해당 무기 모든 개발자 가져야 하는 기술입니다. 대부분의 개발자는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/28/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-debugging-capabilities
 msc.type: authoredcontent
-ms.openlocfilehash: 426d0182978faf7fc7516203fcc84ef0152790ba
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f082e2206f5e691579670e42634f30b57e3b3593
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="understanding-aspnet-ajax-debugging-capabilities"></a>ASP.NET AJAX 디버깅 기능 이해
 ====================
@@ -58,7 +58,7 @@ Internet Explorer를 사용 하 여 볼 하는 웹 사이트에서 발생 하는
 
 디버깅 설정 되어 있으면, 일단 라는 스크립트 디버거 보기 메뉴에 표시 되는 새 메뉴 항목을 볼 수 있습니다. 다음 문에서 열기 및 중단 비롯 하 여 사용할 수 있는 두 가지 옵션이 있습니다. 열을 선택 하는 메시지가 표시 됩니다 (참고는 Visual Web Developer Express 사용할 수도 있습니다 디버깅에) Visual Studio 2008에서 페이지를 디버그 하 합니다. Visual Studio.NET 현재 실행 중인 경우 새 인스턴스를 만들지 또는 해당 인스턴스를 사용 하도록 선택할 수 있습니다. 다음 문장에서 중단을 선택 하는 JavaScript 코드를 실행할 때 페이지를 디버그 하 라는 메시지가 표시 합니다. 페이지의 onLoad 이벤트에서 실행 되는 JavaScript 코드를 디버그 세션을 트리거하는 페이지를 새로 고칠 수 있습니다. JavaScript 코드는 단추를 클릭 한 후 실행 단추를 클릭 한 후에 즉시 디버거에서 실행 됩니다.
 
-> *>[!NOTE] 와 액세스 제어 UAC (사용자)을 사용 하는 Windows Vista에서 실행 하는 경우 관리자 권한으로 실행 되도록 설정 하는 Visual Studio 2008을 있으면 Visual Studio 연결 메시지가 표시 되는 경우 프로세스에 연결 되지 것입니다. 이 문제를 해결 하려면 먼저 Visual Studio를 시작 하 고 디버깅 하기 위해 해당 인스턴스를 사용 합니다.*
+> *> [!NOTE] 와 액세스 제어 UAC (사용자)을 사용 하는 Windows Vista에서 실행 하는 경우 관리자 권한으로 실행 되도록 설정 하는 Visual Studio 2008을 있으면 Visual Studio 연결 메시지가 표시 되는 경우 프로세스에 연결 되지 것입니다. 이 문제를 해결 하려면 먼저 Visual Studio를 시작 하 고 디버깅 하기 위해 해당 인스턴스를 사용 합니다.*
 
 
 다음 섹션에서는 Visual Studio 2008 내에서 직접는 ASP.NET AJAX 페이지를 디버깅 하는 방법을 보여 줍니다, 있지만 Internet Explorer 스크립트 디버거 옵션을 사용 하 여 유용 페이지가 이미 열려 있고 보다 완전 하 게 조사 하도록 하려는 경우 합니다.
@@ -101,7 +101,7 @@ Debugger 문 도달 되 면 Visual Studio.NET을 사용 하 여 페이지를 디
 
 이 대화 상자에 Visual Studio.NET 있는지 일부 페이지에서 참조 하는 스크립트의 소스 코드를 보는 방법에 표시 됩니다. 이 매우 번거로울 수 있지만, 처음에는 간단한 수정 프로그램. 디버그 세션을 시작 하 고 중단점에 도달 했으면, Visual Studio 2008 메뉴에서 Windows 스크립트 탐색기 디버그 창으로 이동 하거나 Ctrl + Alt + N 바로 가기 키를 사용 하 여 합니다.
 
-> *>[!NOTE] 도구에 나열 된 스크립트 탐색기 메뉴에 볼 수 없는 경우 이동* *사용자 지정* *VISUAL Studio 메뉴에서 명령입니다. 범주 섹션에서 디버그 항목을 찾아 모든 사용 가능한 메뉴 항목을 표시 하도록 클릭 합니다. 명령 목록에서 스크립트 탐색기 아래로 스크롤하여 다음으로 끌어와 디버그* *Windows 메뉴에 앞에서 언급 한 합니다. 이 작업을 수행 하면 스크립트 탐색기 메뉴 항목 사용 가능한 VISUAL Studio를 실행할 때마다 있습니다.*
+> *> [!NOTE] 나열 된 스크립트 탐색기 메뉴에 볼 수 없는 경우 도구를 이동* *사용자 지정* *VISUAL Studio 메뉴에서 명령입니다. 범주 섹션에서 디버그 항목을 찾아 모든 사용 가능한 메뉴 항목을 표시 하도록 클릭 합니다. 명령 목록에서 스크립트 탐색기 아래로 스크롤하여 다음으로 끌어와 디버그* *Windows 메뉴에 앞에서 언급 한 합니다. 이 작업을 수행 하면 스크립트 탐색기 메뉴 항목 사용 가능한 VISUAL Studio를 실행할 때마다 있습니다.*
 
 
 스크립트 탐색기를 사용 하 여를 페이지에 사용 되는 모든 스크립트를 보고 하 여 코드 편집기에서 열 수 있습니다. 스크립트 탐색기를 열면 코드 편집기 창에서 열려는 현재 디버깅 중인.aspx 페이지에서 두 번 클릭 합니다. 스크립트 탐색기에 표시 되는 다른 스크립트의 모든에 대해 같은 작업을 수행 합니다. 모든 스크립트 할 수 있습니다 코드 창에서 열려 있는 되 면 코드를 단계별로 실행 하려면 f 11 누릅니다 (및 다른 디버그 바로 가기 키 사용). 그림 3에는 스크립트 탐색기의 예가 나와 있습니다. 두 개의 사용자 지정 스크립트와 ASP.NET AJAX ScriptManager에서 동적으로 인해 페이지에 삽입 하는 두 개의 스크립트 뿐만 아니라 현재 디버깅 중인 파일 (Demo.aspx)를 나열 합니다.
@@ -116,11 +116,11 @@ Debugger 문 도달 되 면 Visual Studio.NET을 사용 하 여 페이지를 디
 
 디버거를 사용 하 여 코드를 단계별로 실행할 때 할당 된 값을 확인 하는 코드에서 변수 위에 마우스를 놓습니다. 그러나 스크립트 디버거 가끔 표시 되지 않습니다 아무 것도 지정 된 JavaScript 변수 위로 마우스를 이동할 때. 값을 보려면 문 또는 코드 편집기 창에 보고 한 다음 위로 마우스를 만들려고 하는 변수를 강조 표시 합니다. 이 기술은 모든 상황에서 작동 하지 않습니다, 하지만 여러 번 됩니다 지역 창과 같은 다른 디버그 창에서 검색 하지 않고도 값을 볼 수 있습니다.
 
-여기서 설명 하는 기능 중 일부를 보여 주는 비디오 자습서에서 볼 수 있습니다 [http://www.xmlforasp.net](http://www.xmlforasp.net)합니다.
+여기서 설명 하는 기능 중 일부를 보여 주는 비디오 자습서에서 볼 수 있습니다 [ http://www.xmlforasp.net ](http://www.xmlforasp.net)합니다.
 
 ## <a name="debugging-with-web-development-helper"></a>웹 개발 도우미를 사용 하 여 디버깅
 
-Visual Studio 2008 및 Visual Web Developer Express 2008는 매우 다양 한 디버깅 도구, 있지만 더 간단한 요소인도 사용할 수 있는 추가 옵션이 있습니다. 해제 될 수 있는 최신 도구 중 하나에 웹 개발 도우미입니다. (Microsoft는 주요 ASP.NET AJAX 설계자 중 하나)는 Microsoft의 Nikhil Kothari HTTP 요청 및 응답 메시지를 확인 하 여 간단한 디버깅에서 많은 다양 한 작업을 수행할 수 있도록이 우수한 도구를 썼습니다. 웹 개발 도우미에서 다운로드할 수 있습니다 [http://projects.nikhilk.net/Projects/WebDevHelper.aspx](http://projects.nikhilk.net/Projects/WebDevHelper.aspx)합니다.
+Visual Studio 2008 및 Visual Web Developer Express 2008는 매우 다양 한 디버깅 도구, 있지만 더 간단한 요소인도 사용할 수 있는 추가 옵션이 있습니다. 해제 될 수 있는 최신 도구 중 하나에 웹 개발 도우미입니다. (Microsoft는 주요 ASP.NET AJAX 설계자 중 하나)는 Microsoft의 Nikhil Kothari HTTP 요청 및 응답 메시지를 확인 하 여 간단한 디버깅에서 많은 다양 한 작업을 수행할 수 있도록이 우수한 도구를 썼습니다. 웹 개발 도우미에서 다운로드할 수 있습니다 [ http://projects.nikhilk.net/Projects/WebDevHelper.aspx ](http://projects.nikhilk.net/Projects/WebDevHelper.aspx)합니다.
 
 웹 개발 도우미 Internet Explorer를 사용 하는 데 편리를 직접 사용할 수 있습니다. Internet Explorer 메뉴에서 웹 개발 도우미 도구를 선택 하 여 시작 됩니다. HTTP 요청 및 응답 메시지 로깅 등 여러 가지 작업을 수행 하도록 브라우저를 없으므로 좋은 브라우저의 하단에서 도구가 열립니다. 그림 4는 작업의 웹 개발 도우미 모양을 보여 줍니다.
 
@@ -201,11 +201,11 @@ HTTP 로그 뷰어는 자동으로 JSON 개체를 구문 분석 하 고 빠르�
 **그림 8**: 응답 메시지는 UpdatePanel HTTP 로그 뷰어를 사용 하 여 볼 합니다.  ([전체 크기 이미지를 보려면 클릭](understanding-asp-net-ajax-debugging-capabilities/_static/image24.png))
 
 
-웹 개발 도우미 외에도 요청 및 응답 메시지를 보는 데 사용할 수 있는 다른 여러 도구가 있습니다. 또 다른 좋은 옵션은 Fiddler에서을 무료로 제공 되는 [http://www.fiddlertool.com](http://www.fiddlertool.com)합니다. Fiddler는 여기 언급 하지 것입니다, 있지만 것도 좋은 방법 철저 하 게 메시지 헤더 및 데이터를 검사 해야 할 때 합니다.
+웹 개발 도우미 외에도 요청 및 응답 메시지를 보는 데 사용할 수 있는 다른 여러 도구가 있습니다. 또 다른 좋은 옵션은 Fiddler에서을 무료로 제공 되는 [ http://www.fiddlertool.com ](http://www.fiddlertool.com)합니다. Fiddler는 여기 언급 하지 것입니다, 있지만 것도 좋은 방법 철저 하 게 메시지 헤더 및 데이터를 검사 해야 할 때 합니다.
 
 ## <a name="debugging-with-firefox-and-firebug"></a>Firefox 및 Firebug를 사용 하 여 디버깅
 
-Internet Explorer 가장 널리 사용 되는 브라우저 여전히 이지만, Firefox와 같은 다른 브라우저 매우 인기가 하 고 더 많은 사용 되는 합니다. 결과적으로, Firefox 뿐만 아니라 Internet Explorer 응용 프로그램을 제대로 작동 되도록에서 ASP.NET AJAX 페이지 디버그를 보고 합니다. Firefox 디버깅을 위해 Visual Studio 2008에 직접 연결할 수 없습니다, 있지만 호출 Firebug 페이지를 디버깅을 사용할 수 있는 확장을 있습니다. 로 이동 하 여 firebug를 무료로 다운로드할 [http://www.getfirebug.com](http://www.getfirebug.com)합니다.
+Internet Explorer 가장 널리 사용 되는 브라우저 여전히 이지만, Firefox와 같은 다른 브라우저 매우 인기가 하 고 더 많은 사용 되는 합니다. 결과적으로, Firefox 뿐만 아니라 Internet Explorer 응용 프로그램을 제대로 작동 되도록에서 ASP.NET AJAX 페이지 디버그를 보고 합니다. Firefox 디버깅을 위해 Visual Studio 2008에 직접 연결할 수 없습니다, 있지만 호출 Firebug 페이지를 디버깅을 사용할 수 있는 확장을 있습니다. 로 이동 하 여 firebug를 무료로 다운로드할 [ http://www.getfirebug.com ](http://www.getfirebug.com)합니다.
 
 Firebug 여 한 줄씩 코드를 단계별로, 페이지 내에서 사용 되는 모든 스크립트에 액세스 하 고 DOM 구조를 볼, CSS 스타일 및 발생 하는 추적 이벤트에도 페이지에 표시 하는 데 사용할 수 있는 모든 기능을 갖춘 디버깅 환경을 제공 합니다. 설치 되 면 Firebug 도구 Firebug 열려 Firebug Firefox 메뉴에서 선택 하 여 액세스할 수 있습니다. 독립 실행형 응용 프로그램으로도 사용 될 수 있지만 웹 개발 도우미와 같은 Firebug 브라우저에서 직접 사용 됩니다.
 
@@ -247,7 +247,7 @@ Sys.Debug 클래스는 추적, 코드 어설션 또는 실패로 인해 표 1에
 
 | **함수 이름** | **설명** |
 | --- | --- |
-| assert (조건, 메시지, displayCaller) | 조건 매개 변수가 true 인지를 어설션 합니다. 테스트 하는 조건이 false 이면 메시지 매개 변수 값을 표시 하는 메시지 상자가 사용 됩니다. DisplayCaller 매개 변수가 true 인 경우 메서드는 또한 호출자에 대 한 정보를 표시 합니다. |
+| assert(condition, message, displayCaller) | 조건 매개 변수가 true 인지를 어설션 합니다. 테스트 하는 조건이 false 이면 메시지 매개 변수 값을 표시 하는 메시지 상자가 사용 됩니다. DisplayCaller 매개 변수가 true 인 경우 메서드는 또한 호출자에 대 한 정보를 표시 합니다. |
 | clearTrace() | 문 작업의 결과를를 추적을 지웁니다. |
 | fail(message) | 프로그램을 실행을 중지 하 고 디버거를 중단 하면 됩니다. 실패 한 이유를 제공 하 메시지 매개 변수를 사용할 수 있습니다. |
 | trace(message) | 추적 출력을 메시지 매개 변수를 씁니다. |
@@ -355,5 +355,5 @@ Dan Wahlin (Microsoft 가장 중요 한 Professional ASP.NET 및 XML 웹 서비�
 
 Scott 인증서의 근무 기간이 Microsoft 웹 기술을 1997 년부터 이며 myKB.com 부서장 ([www.myKB.com](http://www.myKB.com)) ASP.NET 작성 i 여기서 기반 응용 프로그램 기술 자료 소프트웨어 솔루션에 집중 합니다. Scott에 전자 메일을 통해 연결할 수 [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com) 또는에서 그의 블로그 [ScottCate.com](http://ScottCate.com)
 
->[!div class="step-by-step"]
-[이전](understanding-asp-net-ajax-web-services.md)
+> [!div class="step-by-step"]
+> [이전](understanding-asp-net-ajax-web-services.md)

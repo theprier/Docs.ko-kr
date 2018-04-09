@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-new-field
-title: "영화 모델 및 데이터베이스 테이블 (VB)에 새 필드 추가 | Microsoft Docs"
+title: 영화 모델 및 데이터베이스 테이블 (VB)에 새 필드 추가 | Microsoft Docs
 author: Rick-Anderson
-description: "이 자습서에서는 Microsoft Visual Web Developer 2010 Express 서비스 팩 1, 즉를 사용 하 여 ASP.NET MVC 웹 응용 프로그램을 구축 하는 기초 설명..."
+description: 이 자습서에서는 Microsoft Visual Web Developer 2010 Express 서비스 팩 1, 즉를 사용 하 여 ASP.NET MVC 웹 응용 프로그램을 구축 하는 기초 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-new-field
 msc.type: authoredcontent
-ms.openlocfilehash: 377c667a56bb5c0d58ecef5c3550ca510ec52546
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5927b7d977e375881fe618b4b844cbd708023ba1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-new-field-to-the-movie-model-and-database-table-vb"></a>영화 모델 및 데이터베이스 테이블 (VB)에 새 필드 추가
 ====================
@@ -49,7 +49,7 @@ ms.lasthandoff: 11/10/2017
 
 업데이트 한 했으므로 `Model` 클래스도 업데이트 해야는 *\Views\Movies\Index.vbhtml* 및 *\Views\Movies\Create.vbhtml* 새 지원하기위해템플릿을보려면`Rating`속성입니다.
 
-열기는*\Views\Movies\Index.vbhtml* 파일을 추가 `<th>Rating</th>` 열 머리글 바로 뒤의 **가격** 열입니다. 다음 추가 `<td>` 열을 렌더링 하는 서식 파일의 끝 부분에서 `@item.Rating` 값입니다. 다음은 이러한 어떤 업데이트 된 *Index.vbhtml* 보기 템플릿은 보입니다.
+열기는<em>\Views\Movies\Index.vbhtml</em> 파일을 추가 `<th>Rating</th>` 열 머리글 바로 뒤의 <strong>가격</strong> 열입니다. 다음 추가 `<td>` 열을 렌더링 하는 서식 파일의 끝 부분에서 `@item.Rating` 값입니다. 다음은 이러한 어떤 업데이트 된 <em>Index.vbhtml</em> 보기 템플릿은 보입니다.
 
 [!code-vbhtml[Main](adding-a-new-field/samples/sample3.vbhtml)]
 
@@ -117,13 +117,12 @@ Code First 자동으로 삭제 하 고 응용 프로그램에 대 한 모델을 
 
 [![7_CreateRioII](adding-a-new-field/_static/image5.png)](adding-a-new-field/_static/image4.png)
 
-
-              **만들기**를 클릭합니다. 등급을 포함 하 여 새 동영상은 이제 나열 영화에서 표시:
+**만들기**를 클릭합니다. 등급을 포함 하 여 새 동영상은 이제 나열 영화에서 표시:
 
 ![7_ourNewMovie_SM](adding-a-new-field/_static/image6.png)
 
 이 섹션에서는 모델 개체를 수정할 데이터베이스의 변경 내용과 동기화 된 상태로 유지 하는 방법을 표시 합니다. 또한 시나리오를 체험할 수 있도록 샘플 데이터로 새로 만든된 데이터베이스를 채우는 하는 방법을 배웠습니다. 다음으로, 다양 한 유효성 검사 논리 모델 클래스를 추가 적용 해야 할 몇 가지 비즈니스 규칙을 사용 하도록 설정 하는 방법에 대해 살펴보겠습니다.
 
->[!div class="step-by-step"]
-[이전](examining-the-edit-methods-and-edit-view.md)
-[다음](adding-validation-to-the-model.md)
+> [!div class="step-by-step"]
+> [이전](examining-the-edit-methods-and-edit-view.md)
+> [다음](adding-validation-to-the-model.md)

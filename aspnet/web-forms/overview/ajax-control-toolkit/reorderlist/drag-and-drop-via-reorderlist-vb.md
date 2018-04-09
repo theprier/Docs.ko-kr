@@ -1,6 +1,6 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/reorderlist/drag-and-drop-via-reorderlist-vb
-title: "끌어서 놓기 ReorderList (VB)를 통해 | Microsoft Docs"
+title: 끌어서 놓기 ReorderList (VB)를 통해 | Microsoft Docs
 author: wenz
 description: /data-access/tutorials/master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb
 ms.author: aspnetcontent
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/reorderlist/drag-and-drop-via-reorderlist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e193a31fc86b7e8733d0b2fba371d99c62783d6c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 99f47b969dc75efeec8485254d311c93dc0b5d35
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="drag-and-drop-via-reorderlist-vb"></a>끌어 놓기를 통해 ReorderList (VB)
 ====================
@@ -35,16 +35,16 @@ ms.lasthandoff: 11/10/2017
 
 `ReorderList` 컨트롤은 목록에는 데이터베이스에서 데이터 바인딩 지원 합니다. 무엇 보다도 작성 변경 내용을 데이터 저장소 목록 요소 순서와 지원합니다.
 
-이 샘플에서는 데이터 저장소로 Microsoft SQL Server 2005 Express Edition을 사용 합니다. 데이터베이스에는 express edition을 포함 하는 Visual Studio 설치의 선택 사항 (및 무료) 부분입니다. 별도 다운로드로 제공 됩니다 [https://go.microsoft.com/fwlink/?LinkId=64064](https://go.microsoft.com/fwlink/?LinkId=64064)합니다. 이 샘플에 대 한 SQL Server 2005 Express Edition 인스턴스 라고 가정 `SQLEXPRESS` 웹 서버와 동일한 컴퓨터에 상주 하 고 기본 설정 이기도 합니다. 설정에 다른 경우 데이터베이스에 대 한 연결 정보를 조정 해야 합니다.
+이 샘플에서는 데이터 저장소로 Microsoft SQL Server 2005 Express Edition을 사용 합니다. 데이터베이스에는 express edition을 포함 하는 Visual Studio 설치의 선택 사항 (및 무료) 부분입니다. 별도 다운로드로 제공 됩니다 [ https://go.microsoft.com/fwlink/?LinkId=64064 ](https://go.microsoft.com/fwlink/?LinkId=64064)합니다. 이 샘플에 대 한 SQL Server 2005 Express Edition 인스턴스 라고 가정 `SQLEXPRESS` 웹 서버와 동일한 컴퓨터에 상주 하 고 기본 설정 이기도 합니다. 설정에 다른 경우 데이터베이스에 대 한 연결 정보를 조정 해야 합니다.
 
 Microsoft SQL Server Management Studio Express를 사용 하는 데이터베이스를 설정 하는 가장 쉬운 방법은 ([https://www.microsoft.com/downloads/details.aspx?FamilyID=c243a5ae-4bd1-4e3d-94b8-5a0f62bf7796&amp;4a83-b309-53b7b77edf78&displaylang = en](https://www.microsoft.com/downloads/details.aspx?FamilyID=c243a5ae-4bd1-4e3d-94b8-5a0f62bf7796&amp;DisplayLang=en) ). 서버에 연결, 두 번 클릭 `Databases` 새 데이터베이스를 만듭니다 (마우스 오른쪽 단추로 클릭 하 고 선택 `New Database`) 라는 `Tutorials`합니다.
 
 이 데이터베이스에서 라는 새 테이블을 만듭니다 `AJAX` 다음 4 개의 열을 포함 합니다.
 
-- `id`(기본 키, 정수 id에 NULL이 아님)
-- `char`(char(1), NULL)
-- `description`(varchar (50), NULL)
-- `position`(int, NULL)
+- `id` (기본 키, 정수 id에 NULL이 아님)
+- `char` (char(1), NULL)
+- `description` (varchar(50), NULL)
+- `position` (int, NULL)
 
 
 [![AJAX 테이블의 레이아웃](drag-and-drop-via-reorderlist-vb/_static/image2.png)](drag-and-drop-via-reorderlist-vb/_static/image1.png)
@@ -90,5 +90,5 @@ AJAX 테이블의 데이터를 초기 ([전체 크기 이미지를 보려면 클
 
 새 목록에 따라 데이터베이스 변경에서의 데이터 항목 순서 ([전체 크기 이미지를 보려면 클릭](drag-and-drop-via-reorderlist-vb/_static/image9.png))
 
->[!div class="step-by-step"]
-[이전](using-postbacks-with-reorderlist-vb.md)
+> [!div class="step-by-step"]
+> [이전](using-postbacks-with-reorderlist-vb.md)

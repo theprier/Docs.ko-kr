@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-server-environments-for-web-deployment
-title: "웹 배포에 대 한 서버 환경 구성 | Microsoft Docs"
+title: 웹 배포에 대 한 서버 환경 구성 | Microsoft Docs
 author: jrjlee
-description: "이 자습서에서는 한 번 클릭 하거나 자동화 된 지원, 웹 사이트 배포 및 다른 다양 한 시나리오에는 게시에 대 한 서버 환경을 설정 하는 방법을 설명..."
+description: 이 자습서에서는 한 번 클릭 하거나 자동화 된 지원, 웹 사이트 배포 및 다른 다양 한 시나리오에는 게시에 대 한 서버 환경을 설정 하는 방법을 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-server-environments-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 8a07d283e3e4344e5513152cf760ac90481d9f4b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ff6118be618a170ac76d66a9de24a7b5cc2d840a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-server-environments-for-web-deployment"></a>웹 배포에 대 한 서버 환경 구성
 ====================
@@ -28,21 +28,21 @@ ms.lasthandoff: 11/10/2017
 > 
 > 이 자습서에 설명 된 Fabrikam, Inc. 배포 시나리오를 사용 하 여 [엔터프라이즈 웹 배포: 시나리오 개요](../deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview.md) 예제 및 네트워크 인프라에 대 한 참조 지점으로 합니다.
 > 
-> 다음 자습서는 이탈리아어로 번역에 대 한 방문 [http://www.lucamorelli.it](http://www.lucamorelli.it)합니다.
+> 다음 자습서는 이탈리아어로 번역에 대 한 방문 [ http://www.lucamorelli.it ](http://www.lucamorelli.it)합니다.
 
 
 이 자습서는 이러한 항목을 다룹니다.
 
-- [웹 배포에 적합 한 접근 방식을 선택합니다.](choosing-the-right-approach-to-web-deployment.md)
-- [시나리오: 웹 배포를 위한 테스트 환경 구성](scenario-configuring-a-test-environment-for-web-deployment.md)
-- [시나리오: 웹 배포에 대 한 스테이징 환경 구성](scenario-configuring-a-staging-environment-for-web-deployment.md)
-- [시나리오: 웹 배포를 위한 프로덕션 환경 구성](scenario-configuring-a-production-environment-for-web-deployment.md)
-- [웹 배포 게시 (원격 에이전트)에 대 한 웹 서버를 구성 합니다.](configuring-a-web-server-for-web-deploy-publishing-remote-agent.md)
-- [배포 게시를 웹에 대 한 웹 서버 구성 (웹 처리기를 배포 하는 데 사용)](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler.md)
-- [웹 배포 게시 (오프 라인 배포의 경우)에 대 한 웹 서버를 구성 합니다.](configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md)
-- [웹 배포 게시에 대 한 데이터베이스 서버 구성](configuring-a-database-server-for-web-deploy-publishing.md)
-- [웹 팜 프레임 워크를 사용 하 여 서버 팜 만들기](creating-a-server-farm-with-the-web-farm-framework.md)
-- [대상 환경에 대 한 배포 속성 구성](configuring-deployment-properties-for-a-target-environment.md)
+- [웹 배포에 적합한 접근 방식 선택](choosing-the-right-approach-to-web-deployment.md)
+- [시나리오: 웹 배포용 테스트 환경 구성](scenario-configuring-a-test-environment-for-web-deployment.md)
+- [시나리오: 웹 배포용 스테이징 환경 구성](scenario-configuring-a-staging-environment-for-web-deployment.md)
+- [시나리오: 웹 배포용 프로덕션 환경 구성](scenario-configuring-a-production-environment-for-web-deployment.md)
+- [웹 배포 게시용 웹 서버 구성(원격 에이전트)](configuring-a-web-server-for-web-deploy-publishing-remote-agent.md)
+- [웹 배포 게시용 웹 서버 구성(웹 배포 처리기)](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler.md)
+- [웹 배포 게시용 웹 서버 구성(오프라인 배포)](configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md)
+- [웹 배포 게시용 데이터베이스 서버 구성](configuring-a-database-server-for-web-deploy-publishing.md)
+- [웹 팜 프레임워크를 사용하여 서버 팜 만들기](creating-a-server-farm-with-the-web-farm-framework.md)
+- [대상 환경의 배포 속성 구성](configuring-deployment-properties-for-a-target-environment.md)
 
 첫 번째 항목 [웹 배포에 대 한 오른쪽 접근 방식을 선택](choosing-the-right-approach-to-web-deployment.md), 인터넷 정보 서비스 (IIS) 웹 배포 도구 (웹 배포)를 사용 하 여 웹 응용 프로그램을 게시 하는 데 기본 방법에 설명 2.0. 또한 각 방법에 매핑되는 시나리오를 식별 합니다. 여기에서 각 시나리오 항목 완료 하는 데 필요한 작업의 높은 수준의 개요를 제공 하 고 이러한 작업을 완료할 수 있도록를 통해 작업 해야 하는 항목을 식별 합니다.
 
@@ -68,5 +68,5 @@ ms.lasthandoff: 11/10/2017
 - [웹 배포에 대 한 Team Foundation Server 구성](../configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment.md)합니다. 이 자습서에서는 Team Foundation Server (TFS) 및 특정 빌드의 배포를 수동으로 트리거되어 CI (연속 통합) 프로세스의 일부로 자동화 된 배포를 포함 하 여 다양 한 배포 시나리오를 지원 하도록 구성 하는 방법을 설명 합니다.
 - [고급 엔터프라이즈 웹 배포](../advanced-enterprise-web-deployment/advanced-enterprise-web-deployment.md)합니다. 이 자습서에서는 사용자 지정 된 여러 환경에 대 한 데이터베이스 배포, 배포에서 파일 및 폴더를 제외 하 고 배포 프로세스 중 웹 응용 프로그램을 오프 라인 등의 다양 한 고급 배포 작업을 수행 하는 방법을 설명합니다 .
 
->[!div class="step-by-step"]
-[다음](choosing-the-right-approach-to-web-deployment.md)
+> [!div class="step-by-step"]
+> [다음](choosing-the-right-approach-to-web-deployment.md)

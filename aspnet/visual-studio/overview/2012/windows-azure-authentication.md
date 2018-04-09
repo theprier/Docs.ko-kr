@@ -1,22 +1,22 @@
 ---
 uid: visual-studio/overview/2012/windows-azure-authentication
-title: "Windows Azure 인증 | Microsoft Docs"
+title: Windows Azure 인증 | Microsoft Docs
 author: Rick-Anderson
-description: "Windows Azure Active Directory 용 Microsoft ASP.NET 도구가 사용 하면 Windows Azure 웹 사이트에 호스팅된 웹 응용 프로그램에 대 한 인증을 사용 하도록 설정 하려면 단순..."
+description: Windows Azure Active Directory 용 Microsoft ASP.NET 도구가 사용 하면 Windows Azure 웹 사이트에 호스팅된 웹 응용 프로그램에 대 한 인증을 사용 하도록 설정 하려면 단순...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2013
 ms.topic: article
 ms.assetid: a3cef801-a54b-4ebd-93c3-55764e2e14b1
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2012/windows-azure-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: 4deb3536699f1ef3025f8858ee71a76a1c2def18
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 09cb37ceb0132958a48f5f3a5d52dc46c6f0a78d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="windows-azure-authentication"></a>Windows Azure 인증
 ====================
@@ -50,7 +50,7 @@ ms.lasthandoff: 01/24/2018
 
 1. 프로젝트 메뉴에서 선택 **Windows Azure 인증 사용**:  
   
- ![](windows-azure-authentication/_static/image2.png)
+   ![](windows-azure-authentication/_static/image2.png)
 
 2. 에 Windows Azure Active Directory 테 넌 트 (예: contoso.onmicrosoft.com)에 대 한 도메인을 입력 하 고 클릭 **사용**:
 
@@ -58,7 +58,7 @@ ms.lasthandoff: 01/24/2018
 
 3. 웹 인증 대화 상자에 있는 기호 Windows Azure Active Directory 테 넌 트의 관리자:  
   
- ![](windows-azure-authentication/_static/image4.png)
+   ![](windows-azure-authentication/_static/image4.png)
 
 ![](windows-azure-authentication/_static/image5.png)
 
@@ -159,7 +159,7 @@ Microsoft 계정 (예: hotmail.com, live.com, outlook.com)에 이미 로그인 �
 
 Azure 서비스 중 하나를 다른 Microsoft ID를 이미 로그인 하는 경우 발생할 수 있습니다. 사용 하 여 개인 브라우저 창을 IE에서 InPrivate 또는 Incognito 크롬에서 선택 하거나 모든 쿠키를 취소 합니다. <o:p></o:p>
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 - [Microsoft ASP.NET Windows 용 도구 Visual Studio 2012 Azure Active Directory –](https://blogs.msdn.com/b/vbertocci/archive/2013/02/18/microsoft-asp-net-tools-for-windows-azure-active-directory-visual-studio-2012.aspx) – Vittorio Bertocci
 - [Windows Azure 기능: Identity](https://docs.microsoft.com/azure/active-directory/)

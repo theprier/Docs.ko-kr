@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/displaying-data-with-the-datalist-and-repeater-controls-cs
-title: "DataList 및 반복기 컨트롤 (C#)를 사용 하 여 데이터를 표시 | Microsoft Docs"
+title: DataList 및 반복기 컨트롤 (C#)를 사용 하 여 데이터를 표시 | Microsoft Docs
 author: rick-anderson
-description: "이전 자습서에서 데이터를 표시 하는 GridView 컨트롤을 사용 했습니다. 와 일반적인 보고 패턴 작성 살펴보면이 자습서를 시작 중..."
+description: 이전 자습서에서 데이터를 표시 하는 GridView 컨트롤을 사용 했습니다. 와 일반적인 보고 패턴 작성 살펴보면이 자습서를 시작 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/13/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/displaying-data-with-the-datalist-and-repeater-controls-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 42203bdd7c22f3885eecab36dbd710d371107285
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: a329ff5d598156e613e3b5ef370d9d1147e4ea61
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="displaying-data-with-the-datalist-and-repeater-controls-c"></a>DataList 및 반복기 컨트롤 (C#)를 사용 하 여 데이터 표시
 ====================
@@ -161,12 +161,12 @@ DataList GridView 처럼 스타일 관련 속성의 숫자와 같은 제공 `Fon
 
 이외에 `ItemTemplate`, DataList는 6 개의 다른 옵션 템플릿을 지원 합니다.
 
-- `HeaderTemplate`제공 된 경우 출력에 머리글 행을 추가 하 고이 행을 렌더링 하는 데 사용
-- `AlternatingItemTemplate`대체 항목을 렌더링 하는 데 사용
-- `SelectedItemTemplate`선택한 항목을 렌더링 하는 데 사용 선택한 항목은 s DataList에 해당 하는 인덱스를 포함 하는 항목 [ `SelectedIndex` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.selectedindex.aspx)
-- `EditItemTemplate`편집 중인 항목을 렌더링 하는 데 사용
-- `SeparatorTemplate`제공 된 경우 각 항목 사이 구분 기호를 추가 하 고이 구분 기호를 렌더링 하는 데 사용
-- `FooterTemplate`-를 입력 하면 바닥글 행이 추가 되며이 행을 렌더링 하는 데 사용
+- `HeaderTemplate` 제공 된 경우 출력에 머리글 행을 추가 하 고이 행을 렌더링 하는 데 사용
+- `AlternatingItemTemplate` 대체 항목을 렌더링 하는 데 사용
+- `SelectedItemTemplate` 선택한 항목을 렌더링 하는 데 사용 선택한 항목은 s DataList에 해당 하는 인덱스를 포함 하는 항목 [ `SelectedIndex` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.selectedindex.aspx)
+- `EditItemTemplate` 편집 중인 항목을 렌더링 하는 데 사용
+- `SeparatorTemplate` 제공 된 경우 각 항목 사이 구분 기호를 추가 하 고이 구분 기호를 렌더링 하는 데 사용
+- `FooterTemplate` -를 입력 하면 바닥글 행이 추가 되며이 행을 렌더링 하는 데 사용
 
 지정 하는 경우는 `HeaderTemplate` 또는 `FooterTemplate`, DataList 렌더링된 된 출력에 추가 머리글 또는 바닥글 행을 추가 합니다. 마찬가지로 GridView의 머리글 및 바닥글 행, 머리글 및 바닥글 DataList에 바인딩되지 않습니다 데이터. 데이터 바인딩 구문이 따라서는 `HeaderTemplate` 또는 `FooterTemplate` 에 바인딩된 데이터에 액세스 하려고 하면 빈 문자열을 반환 합니다.
 
@@ -210,11 +210,11 @@ DataList GridView 처럼 스타일 관련 속성의 숫자와 같은 제공 `Fon
 
 HTML 내보내는 원하지 않는 경우 어떻게 `<table>`되지만? 총 및 완료를 효과적으로 제어 데이터 웹 컨트롤에 의해 생성 된 태그에서는 반복기 컨트롤을 사용 해야 합니다. DataList, 같은 반복기 서식 파일에 따라 생성 됩니다. 하지만 반복만 제공 다음과 같은 5 개의 템플릿:
 
-- `HeaderTemplate`제공 된 경우에서 항목 앞에 지정된 된 태그 추가
-- `ItemTemplate`항목을 렌더링 하는 데 사용
-- `AlternatingItemTemplate`제공 된 대체 항목을 렌더링 하는 데 사용
-- `SeparatorTemplate`제공 된 경우 각 항목 사이 지정된 된 태그 추가
-- `FooterTemplate`-제공 된 경우 지정된 된 태그 항목 뒤에 추가
+- `HeaderTemplate` 제공 된 경우에서 항목 앞에 지정된 된 태그 추가
+- `ItemTemplate` 항목을 렌더링 하는 데 사용
+- `AlternatingItemTemplate` 제공 된 대체 항목을 렌더링 하는 데 사용
+- `SeparatorTemplate` 제공 된 경우 각 항목 사이 지정된 된 태그 추가
+- `FooterTemplate` -제공 된 경우 지정된 된 태그 항목 뒤에 추가
 
 ASP.NET에서 제어 글머리 기호 목록의 일부 데이터 원본에서 가져온 데이터를 표시 하는 데 일반적으로 사용한 반복기 1.x 합니다. 이러한 경우는 `HeaderTemplate` 및 `FooterTemplates` 열기 및 닫기는 포함 `<ul>` 태그 각각 동안는 `ItemTemplate` 포함 됩니다 `<li>` databinding 구문 사용 하 여 요소입니다. 이 방법을 계속 사용할 수 있습니다 ASP.NET 2.0에서의 두 예제에서 살펴본 것 처럼는 [마스터 페이지 및 사이트 탐색](../introduction/master-pages-and-site-navigation-cs.md) 자습서:
 
@@ -312,11 +312,11 @@ DataList 및 반복기는 렌더링 된 출력에서 더 많은 융통성을 제
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Yaakov Ellis, Liz Shulok, Randy Schmidt 및 Stacy 공원 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[다음](formatting-the-datalist-and-repeater-based-upon-data-cs.md)
+> [!div class="step-by-step"]
+> [다음](formatting-the-datalist-and-repeater-based-upon-data-cs.md)

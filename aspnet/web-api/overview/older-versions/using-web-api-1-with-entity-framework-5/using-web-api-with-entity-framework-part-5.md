@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-5
-title: "5 단계: Knockout.js를 사용 하 여 동적 UI를 만들기 | Microsoft Docs"
+title: '5 단계: Knockout.js를 사용 하 여 동적 UI를 만들기 | Microsoft Docs'
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-5
 msc.type: authoredcontent
-ms.openlocfilehash: 20ebdb1b8ba710e0fbc6040f7cd4064b44658c53
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b63446d076fbb1143641dead788042967b996bf8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-5-creating-a-dynamic-ui-with-knockoutjs"></a>5 단계: Knockout.js와 동적 UI 만들기
 ====================
@@ -96,6 +96,6 @@ Admin.cshtml를 다음 Razor 섹션을 추가 합니다.
 
 응용 프로그램을 실행 하 고 관리자 계정으로 로그인 "Admin" 링크를 클릭 합니다. 제품 목록을 참조 하 고 만들기, 업데이트 또는 제품을 삭제 하는 작업을 할 수 해야 합니다.
 
->[!div class="step-by-step"]
-[이전](using-web-api-with-entity-framework-part-4.md)
-[다음](using-web-api-with-entity-framework-part-6.md)
+> [!div class="step-by-step"]
+> [이전](using-web-api-with-entity-framework-part-4.md)
+> [다음](using-web-api-with-entity-framework-part-6.md)

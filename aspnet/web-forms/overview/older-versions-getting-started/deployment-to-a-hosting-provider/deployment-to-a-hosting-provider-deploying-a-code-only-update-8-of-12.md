@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12
-title: "SQL Server Compact Visual Studio 또는 Visual Web Developer를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: Code-Only 업데이트-8/12 배포 | Microsoft Docs"
+title: 'SQL Server Compact Visual Studio 또는 Visual Web Developer를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: Code-Only 업데이트-8/12 배포 | Microsoft Docs'
 author: tdykstra
-description: "이 일련의 자습서 배포 하는 방법을 보여 줍니다. (게시) ASP.NET Visual Stu를 사용 하 여 SQL Server Compact 데이터베이스를 포함 하는 웹 응용 프로그램 프로젝트..."
+description: 이 일련의 자습서 배포 하는 방법을 보여 줍니다. (게시) ASP.NET Visual Stu를 사용 하 여 SQL Server Compact 데이터베이스를 포함 하는 웹 응용 프로그램 프로젝트...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/17/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: a07ac968482866ba9a4eca25722d99fd641080e6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6305a8cb87d9b00b6bb4c4f8fa6114bddc4eb89f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-a-code-only-update---8-of-12"></a>SQL Server Compact Visual Studio 또는 Visual Web Developer를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: Code-Only 업데이트-12 8을 배포 합니다.
 ====================
@@ -137,6 +137,6 @@ Visual Studio는 업데이트 된 응용 프로그램을 배포 하 고 브라�
 
 이제 데이터베이스 변경 내용을 포함 하지 않는 응용 프로그램 업데이트를 배포 했습니다. 다음 자습서에서는 데이터베이스 변경 내용을 배포 하는 방법을 보여 줍니다.
 
->[!div class="step-by-step"]
-[이전](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12.md)
-[다음](deployment-to-a-hosting-provider-deploying-a-database-update-9-of-12.md)
+> [!div class="step-by-step"]
+> [이전](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12.md)
+> [다음](deployment-to-a-hosting-provider-deploying-a-database-update-9-of-12.md)

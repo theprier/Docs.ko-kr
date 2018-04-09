@@ -1,7 +1,7 @@
 ---
-title: "계정 확인 및 ASP.NET 코어에서 암호 복구"
+title: 계정 확인 및 ASP.NET 코어에서 암호 복구
 author: rick-anderson
-description: "전자 메일 확인 및 암호 재설정으로 ASP.NET Core 응용 프로그램을 구축 하는 방법에 알아봅니다."
+description: 전자 메일 확인 및 암호 재설정으로 ASP.NET Core 응용 프로그램을 구축 하는 방법에 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 2/11/2018
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/accconfirm
-ms.openlocfilehash: b236b4e5d3a4fa7212453f2aec209d145f5f5e32
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 8ad2a63ce007a68eac3b607db454c6b4fc834444
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a>계정 확인 및 ASP.NET 코어에서 암호 복구
 
@@ -23,14 +23,14 @@ ms.lasthandoff: 03/02/2018
 
 * [ASP.NET Core](xref:tutorials/first-mvc-app/start-mvc)
 * [인증](xref:security/authentication/index)
-* [계정 확인 및 암호 복구](xref:security/authentication/accconfirm)
+* [계정 확인 및 비밀번호 복구](xref:security/authentication/accconfirm)
 * [Entity Framework Core](xref:data/ef-mvc/intro)
 
 참조 [이 PDF 파일](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/asp.net_repo_pdf_1-16-18.pdf) ASP.NET Core MVC 1.1 및 2.x 버전에 대 한 합니다.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
-[.NET core 2.1.4 SDK](https://www.microsoft.com/net/core) 이상.
+[!INCLUDE [](~/includes/net-core-prereqs.md)]
 
 ## <a name="create-a-new-aspnet-core-project-with-the-net-core-cli"></a>.NET Core CLI 인 새 ASP.NET Core 프로젝트를 만듭니다
 
@@ -74,7 +74,7 @@ dotnet new mvc --auth Individual
 
 ## <a name="view-the-identity-database"></a>Id 데이터베이스 보기
 
-참조 [SQLite ASP.NET Core MVC 프로젝트에서 작업](xref:tutorials/first-mvc-app-xplat/working-with-sql) SQLite 데이터베이스를 확인 하는 방법에 대 한 지침은 합니다.
+참조 [SQLite ASP.NET Core MVC 프로젝트에서 작업할](xref:tutorials/first-mvc-app-xplat/working-with-sql) SQLite 데이터베이스를 확인 하는 방법에 대 한 지침은 합니다.
 
 Visual studio의 경우:
 
@@ -116,7 +116,7 @@ Visual studio의 경우:
 
 [!code-csharp[](accconfirm/sample/WebPWrecover/Services/AuthMessageSenderOptions.cs?name=snippet1)]
 
-설정의 `SendGridUser` 및 `SendGridKey` 와 [암호 관리자 도구](xref:security/app-secrets)합니다. 예:
+설정의 `SendGridUser` 및 `SendGridKey` 와 [암호 관리자 도구](xref:security/app-secrets)합니다. 예를 들어:
 
 ```console
 C:\WebAppl\src\WebApp1>dotnet user-secrets set SendGridUser RickAndMSFT
@@ -138,16 +138,13 @@ Windows에서는 암호 관리자에 있는 키/값 쌍을 저장 한 *secrets.j
 
 추가 `AuthMessageSenderOptions` 끝날 때 서비스 컨테이너에는 `ConfigureServices` 에서 메서드는 *Startup.cs* 파일:
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 [!code-csharp[](accconfirm/sample/WebPWrecover/Startup.cs?name=snippet2&highlight=28)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 [!code-csharp[](accconfirm/sample/WebApp1/Startup.cs?name=snippet1&highlight=26)]
 
----
-
+* * *
 ### <a name="configure-the-authmessagesender-class"></a>AuthMessageSender 클래스 구성
 
 이 자습서에서는 통해 전자 메일 알림을 추가 하는 방법을 보여 줍니다. [SendGrid](https://sendgrid.com/), 하지만 SMTP 및 다른 메커니즘을 사용 하 여 메일을 보낼 수 있습니다.
@@ -160,31 +157,28 @@ Windows에서는 암호 관리자에 있는 키/값 쌍을 저장 한 *secrets.j
 
 * 패키지 관리자 콘솔에서 다음 명령을 입력 합니다.
 
- `Install-Package SendGrid`
+  `Install-Package SendGrid`
 
 참조 [SendGrid를 무료로 시작](https://sendgrid.com/free/) 무료 SendGrid 계정을 등록할 수 있습니다.
 
 #### <a name="configure-sendgrid"></a>SendGrid를 구성 합니다.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 SendGrid를 구성 하려면 코드에서 다음과 같은 추가 *Services/EmailSender.cs*:
 
 [!code-csharp[](accconfirm/sample/WebPWrecover/Services/EmailSender.cs)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 * 에 코드를 추가 *Services/MessageServices.cs* SendGrid를 구성 하는 다음과 비슷합니다.
 
 [!code-csharp[](accconfirm/sample/WebApp1/Services/MessageServices.cs)]
 
----
-
+* * *
 ## <a name="enable-account-confirmation-and-password-recovery"></a>계정 확인 및 암호 복구 사용
 
 서식 파일에는 계정 확인 및 암호 복구를 위한 코드가 있습니다. 찾을 `OnPostAsync` 메서드에서 *Pages/Account/Register.cshtml.cs*합니다.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 새로 등록 된 사용자가 있는 다음 줄을 주석 처리에 자동으로 로그온에서 함:
 
 ```csharp
@@ -195,8 +189,7 @@ await _signInManager.SignInAsync(user, isPersistent: false);
 
 [!code-csharp[](accconfirm/sample/WebPWrecover/Pages/Account/Register.cshtml.cs?highlight=16&name=snippet_Register)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 계정 확인을 사용 하려면 다음 코드를 주석 처리 제거:
 
 [!code-csharp[](accconfirm/sample/WebApp1/Controllers/AccountController.cs?highlight=16-25&name=snippet_Register)]
@@ -215,15 +208,14 @@ Form 요소에 주석 처리 제거 *Views/Account/ForgotPassword.cshtml*합니�
 
 [!code-cshtml[](accconfirm/sample/WebApp1/Views/Account/ForgotPassword.cshtml?highlight=7-10,12,28)]
 
----
-
+* * *
 ## <a name="register-confirm-email-and-reset-password"></a>등록 전자 메일을 확인 하 고 암호를 다시 설정
 
 웹 응용 프로그램을 실행 하 고 계정 확인 및 암호 복구 흐름을 테스트 합니다.
 
 * 응용 프로그램을 실행 하 고 새 사용자 등록
 
- ![웹 응용 프로그램 계정 등록 보기](accconfirm/_static/loginaccconfirm1.png)
+  ![웹 응용 프로그램 계정 등록 보기](accconfirm/_static/loginaccconfirm1.png)
 
 * 계정 확인 링크에 대 한 전자 메일을 확인 합니다. 참조 [전자 메일을 디버그](#debug) 전자 메일을 얻지 못한 경우.
 * 사용자의 전자 메일 확인에 대 한 링크를 클릭 합니다.

@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core에서 브라우저 링크"
+title: ASP.NET Core에서 브라우저 링크
 author: ncarandini
-description: "어떻게 브라우저 링크는 하나 이상의 웹 브라우저와 함께 개발 환경에 연결 하는 Visual Studio 기능에 설명 합니다."
+description: 어떻게 브라우저 링크는 하나 이상의 웹 브라우저와 함께 개발 환경에 연결 하는 Visual Studio 기능에 설명 합니다.
 manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
@@ -10,13 +10,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/using-browserlink
-ms.openlocfilehash: 3e62bdd180bb1f5e2ce0645a8cf13c9ffe76197e
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: a75a896dd7ebc488e3e9344ec705c24201924375
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="browser-link-in-aspnet-core"></a>ASP.NET Core에서 브라우저 링크 
+# <a name="browser-link-in-aspnet-core"></a>ASP.NET Core에서 브라우저 링크
 
 여 [Nicolò Carandini](https://github.com/ncarandini), [Mike Wasson](https://github.com/MikeWasson), 및 [Tom Dykstra](https://github.com/tdykstra)
 
@@ -66,7 +66,7 @@ if (env.IsDevelopment())
 }
 ```
 
-자세한 내용은 [여러 환경 사용](xref:fundamentals/environments)을 참조하세요.
+자세한 내용은 참조 [여러 환경 작업할](xref:fundamentals/environments)합니다.
 
 ## <a name="how-to-use-browser-link"></a>브라우저 링크를 사용 하는 방법
 

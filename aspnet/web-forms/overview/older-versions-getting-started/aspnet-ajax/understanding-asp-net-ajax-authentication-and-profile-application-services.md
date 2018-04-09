@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-authentication-and-profile-application-services
-title: "ASP.NET AJAX 인증 및 프로필 응용 프로그램 서비스 이해 | Microsoft Docs"
+title: ASP.NET AJAX 인증 및 프로필 응용 프로그램 서비스 이해 | Microsoft Docs
 author: scottcate
-description: "인증 서비스 사용자가 인증 쿠키를 수신 하려면 자격 증명을 제공할 수 있도록 하 고는 사용자 지정을 허용 하도록 게이트웨이 서비스..."
+description: 인증 서비스 사용자가 인증 쿠키를 수신 하려면 자격 증명을 제공할 수 있도록 하 고는 사용자 지정을 허용 하도록 게이트웨이 서비스...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/14/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-authentication-and-profile-application-services
 msc.type: authoredcontent
-ms.openlocfilehash: 182276f9f91b99beb1ce0fc40dcda1f19376669a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 0bf6538d0c4ae9488e6ac29ccba6d4b243cf070e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="understanding-aspnet-ajax-authentication-and-profile-application-services"></a>ASP.NET AJAX 인증 및 프로필 응용 프로그램 서비스 이해
 ====================
@@ -43,7 +43,7 @@ Microsoft ASP.NET 프로필 및 인증 서비스는 ASP.NET 폼 인증 시스템
 
 프로필 서비스를 자동으로 통합 및 멤버 자격에 따라 인증 서비스에서 제공 하는 사용자 데이터의 저장소를 수 있습니다. Web.config 파일에 저장 된 데이터는 지정 하 고 다양 한 프로 파일링 서비스 공급자, 데이터 관리를 처리 합니다. 인증 서비스와 마찬가지로 AJAX 프로필 서비스는 표준 ASP.NET 프로필 서비스와 호환 되므로 AJAX 지원을 포함 하 여 현재 ASP.NET 프로필 서비스의 기능을 통합 하는 페이지를 나눌 수 해야 합니다.
 
-응용 프로그램에 ASP.NET 인증 및 자체 프로 파일링 서비스를 통합 하는이 백서의 범위를 벗어났습니다. 항목에 대 한 자세한 내용은 MSDN Library를 참조 하십시오. 참조 문서에서 멤버를 사용 하 여 사용자 관리 [https://msdn.microsoft.com/library/tw292whz.aspx](https://msdn.microsoft.com/library/tw292whz.aspx)합니다. 또한 ASP.NET 멤버 자격 ASP.NET 멤버 자격에 대 한 기본 인증 서비스 공급자 인 SQL Server와 함께 자동으로 설정 하는 유틸리티를 포함 합니다. 자세한 내용은 문서 ASP.NET SQL Server 등록 도구 참조 (Aspnet\_regsql.exe)에서 [https://msdn.microsoft.com/library/ms229862(vs.80).aspx](https://msdn.microsoft.com/library/ms229862(vs.80).aspx).
+응용 프로그램에 ASP.NET 인증 및 자체 프로 파일링 서비스를 통합 하는이 백서의 범위를 벗어났습니다. 항목에 대 한 자세한 내용은 MSDN Library를 참조 하십시오. 참조 문서에서 멤버를 사용 하 여 사용자 관리 [ https://msdn.microsoft.com/library/tw292whz.aspx ](https://msdn.microsoft.com/library/tw292whz.aspx)합니다. 또한 ASP.NET 멤버 자격 ASP.NET 멤버 자격에 대 한 기본 인증 서비스 공급자 인 SQL Server와 함께 자동으로 설정 하는 유틸리티를 포함 합니다. 자세한 내용은 문서 ASP.NET SQL Server 등록 도구 참조 (Aspnet\_regsql.exe)에서 [ https://msdn.microsoft.com/library/ms229862(vs.80).aspx ](https://msdn.microsoft.com/library/ms229862(vs.80).aspx)합니다.
 
 ## <a name="using-the-aspnet-ajax-authentication-service"></a>*ASP.NET AJAX 인증 서비스를 사용 하 여*
 
@@ -131,7 +131,7 @@ Logout() 메서드는 자격 증명 쿠키를 제거 하 고 웹 응용 프로�
 
 | **매개 변수 이름** | **의미** |
 | --- | --- |
-| validCredentials | 사용자 올바른 자격 증명을 제공 하는지 여부를 지정 합니다. `true`사용자가 성공적으로;에 로그인 하는 경우 그렇지 않으면 `false`합니다. |
+| validCredentials | 사용자 올바른 자격 증명을 제공 하는지 여부를 지정 합니다. `true` 사용자가 성공적으로;에 로그인 하는 경우 그렇지 않으면 `false`합니다. |
 | userContext | 로그인 함수를 호출할 때 제공 하는 사용자 컨텍스트 정보를 지정 합니다. |
 | methodName | 호출 메서드의 이름입니다. |
 
@@ -345,6 +345,6 @@ ASP.NET 서비스-특히 프로 파일링, 구성원 자격 및 인증 서비스
 
 Scott 인증서의 근무 기간이 Microsoft 웹 기술을 1997 년부터 이며 myKB.com 부서장 ([www.myKB.com](http://www.myKB.com)) ASP.NET 작성 i 여기서 기반 응용 프로그램 기술 자료 소프트웨어 솔루션에 집중 합니다. Scott에 전자 메일을 통해 연결할 수 [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com) 또는에서 그의 블로그 [ScottCate.com](http://ScottCate.com)
 
->[!div class="step-by-step"]
-[이전](understanding-asp-net-ajax-updatepanel-triggers.md)
-[다음](understanding-asp-net-ajax-localization.md)
+> [!div class="step-by-step"]
+> [이전](understanding-asp-net-ajax-updatepanel-triggers.md)
+> [다음](understanding-asp-net-ajax-localization.md)

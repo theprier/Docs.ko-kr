@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/use-viewdata-and-implement-viewmodel-classes
-title: "사용 하 여 ViewData 및 구현 ViewModel 클래스 | Microsoft Docs"
+title: 사용 하 여 ViewData 및 구현 ViewModel 클래스 | Microsoft Docs
 author: microsoft
-description: "6 단계에서는 시나리오를 편집 하는 다양 한 형식에 대 한 지원을 어떻게 사용 하도록 설정 하 고 컨트롤러에서 뷰로 데이터를 전달 하는 데 사용할 수 있는 두 가지 방법에 대해서도 설명:..."
+description: 6 단계에서는 시나리오를 편집 하는 다양 한 형식에 대 한 지원을 어떻게 사용 하도록 설정 하 고 컨트롤러에서 뷰로 데이터를 전달 하는 데 사용할 수 있는 두 가지 방법에 대해서도 설명:...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-viewdata-and-implement-viewmodel-classes
 msc.type: authoredcontent
-ms.openlocfilehash: 36b9e87cc24f74f7f2cc592afb5102709b598f74
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9ba8758bd6524f3e300f3fd91ef68cfe8a3587a7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="use-viewdata-and-implement-viewmodel-classes"></a>사용 하 여 ViewData 및 구현 ViewModel 클래스
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [PDF 다운로드](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
 
@@ -127,6 +127,6 @@ ViewModel 클래스 사용자 지정 모양의 많은 유연성을 제공할 수
 
 이제 살펴보겠습니다 사용 하는 방법을 부분 및 마스터 페이지를 다시 사용 하 고 응용 프로그램에서 UI를 공유 합니다.
 
->[!div class="step-by-step"]
-[이전](provide-crud-create-read-update-delete-data-form-entry-support.md)
-[다음](re-use-ui-using-master-pages-and-partials.md)
+> [!div class="step-by-step"]
+> [이전](provide-crud-create-read-update-delete-data-form-entry-support.md)
+> [다음](re-use-ui-using-master-pages-and-partials.md)

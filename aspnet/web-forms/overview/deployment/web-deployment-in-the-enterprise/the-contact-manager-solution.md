@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/the-contact-manager-solution
-title: "Contact Manager 솔루션 | Microsoft Docs"
+title: Contact Manager 솔루션 | Microsoft Docs
 author: jrjlee
-description: "이 일련의 자습서는 샘플 솔루션 & #x 2014;는 Contact Manager 솔루션 & #x 2014; 현실적인 수준으로 엔터프라이즈 규모 응용 프로그램을 나타내는 데 사용 하 여..."
+description: 샘플 솔루션을 사용 하 여이 일련의 자습서&#x2014;Contact Manager 솔루션&#x2014;현실적인 수준으로 엔터프라이즈 규모 응용 프로그램을 나타내기 위해...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/the-contact-manager-solution
 msc.type: authoredcontent
-ms.openlocfilehash: b7f691a1ee855788f6a57616aea35d960e4c85c7
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: d7034f800df98747d10401d7e2c7297fea0e46d4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="the-contact-manager-solution"></a>Contact Manager 솔루션
 ====================
@@ -24,7 +24,7 @@ ms.lasthandoff: 03/15/2018
 
 [PDF 다운로드](https://msdnshared.blob.core.windows.net/media/MSDNBlogsFS/prod.evol.blogs.msdn.com/CommunityServer.Blogs.Components.WeblogFiles/00/00/00/63/56/8130.DeployingWebAppsInEnterpriseScenarios.pdf)
 
-> 이 [일련의 자습서](web-deployment-in-the-enterprise.md) 샘플 솔루션 & #x 2014;는 Contact Manager 솔루션 & #x 2014; 현실적인 수준의 복잡성으로 엔터프라이즈 규모 응용 프로그램을 나타내는 데 사용 합니다. 이 항목 Contact Manager 솔루션을 소개 하 고, 솔루션의 주요 구성 요소에 설명, 이러한 종류의 엔터프라이즈 환경에서 다양 한 대상 플랫폼에 응용 프로그램 배포에서 문제를 식별 합니다.
+> 이 [일련의 자습서](web-deployment-in-the-enterprise.md) 샘플 솔루션을 사용 하 여&#x2014;Contact Manager 솔루션&#x2014;현실적인 수준의 복잡성으로 엔터프라이즈 규모 응용 프로그램을 나타내기 위해. 이 항목 Contact Manager 솔루션을 소개 하 고, 솔루션의 주요 구성 요소에 설명, 이러한 종류의 엔터프라이즈 환경에서 다양 한 대상 플랫폼에 응용 프로그램 배포에서 문제를 식별 합니다.
 > 
 > 이 자습서에는 항목을 진행할 때는 특정 한 엔터프라이즈 배포 시나리오 요구를 충족할 수 있는 방법을 보여 주는 참조 구현으로 Contact Manager 솔루션을 사용할 수 있습니다. 다음 항목인 [the Contact Manager 솔루션 설정](setting-up-the-contact-manager-solution.md)를 다운로드 하 고 개발자 워크스테이션에서 솔루션을 실행 하는 방법을 설명 합니다.
 
@@ -67,6 +67,6 @@ Contact Manager 솔루션에서는 다양 한 엔터프라이즈 배포 시나�
 
 다음 항목인 [the Contact Manager 솔루션 설정](setting-up-the-contact-manager-solution.md)를 다운로드 하 고 개발자 워크스테이션에서 솔루션을 실행 하는 방법을 설명 합니다.
 
->[!div class="step-by-step"]
-[이전](web-deployment-in-the-enterprise.md)
-[다음](setting-up-the-contact-manager-solution.md)
+> [!div class="step-by-step"]
+> [이전](web-deployment-in-the-enterprise.md)
+> [다음](setting-up-the-contact-manager-solution.md)

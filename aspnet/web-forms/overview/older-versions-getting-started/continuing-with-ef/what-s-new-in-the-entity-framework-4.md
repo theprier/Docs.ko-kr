@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/what-s-new-in-the-entity-framework-4
-title: "Entity Framework 4.0의에서 새로운 기능 | Microsoft Docs"
+title: Entity Framework 4.0의에서 새로운 기능 | Microsoft Docs
 author: tdykstra
-description: "이 자습서 시리즈의 Entity Framework 4.0 자습서 시리즈 시작 하기에 의해 만들어진 Contoso 대학 웹 응용 프로그램 기반으로 합니다. I 중..."
+description: 이 자습서 시리즈의 Entity Framework 4.0 자습서 시리즈 시작 하기에 의해 만들어진 Contoso 대학 웹 응용 프로그램 기반으로 합니다. I 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/26/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/what-s-new-in-the-entity-framework-4
 msc.type: authoredcontent
-ms.openlocfilehash: c114627388217e892c84d6b76366d0fa96b0b70c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 04444ce98fa60045cf617a6c518dd55677258148
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="whats-new-in-the-entity-framework-40"></a>Entity Framework 4.0의에서 새로운 기능
 ====================
@@ -203,7 +203,7 @@ Entity Framework 4의 POCO 지원은 여전히 데이터 모델을 만들고 데
 - [MVC Music Store 자습서-4 부: 모델 및 데이터 액세스](../../../../mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-4.md)
 - [MVC 3-4 부 시작: Entity Framework 코드 중심 개발](../../../../mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-model.md)
 
-2011 년 봄에 게시 될 Contoso 대학 응용 프로그램과 유사한 응용 프로그램을 작성 하는 새 MVC Code-first 자습서 프로젝션은 또한 [https://asp.net/entity-framework/tutorials](../../../../entity-framework.md)
+2011 년 봄에 게시 될 Contoso 대학 응용 프로그램과 유사한 응용 프로그램을 작성 하는 새 MVC Code-first 자습서 추정 되는 또한 [https://asp.net/entity-framework/tutorials](../../../../entity-framework.md)
 
 ## <a name="more-information"></a>추가 정보
 
@@ -212,5 +212,5 @@ Entity Framework 4의 POCO 지원은 여전히 데이터 모델을 만들고 데
 - [ADO.NET의 새로운](https://msdn.microsoft.com/library/ex6y04yf.aspx) 의 Entity Framework 버전 4의에서 새로운 기능에 대 한 MSDN 항목.
 - [Entity Framework 4의 릴리스 발표](https://blogs.msdn.com/b/efdesign/archive/2010/04/12/announcing-the-release-of-entity-framework-4.aspx) 버전 4의에서 새로운 기능에 대 한 Entity Framework 개발 팀의 블로그 게시물입니다.
 
->[!div class="step-by-step"]
-[이전](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)
+> [!div class="step-by-step"]
+> [이전](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application.md)

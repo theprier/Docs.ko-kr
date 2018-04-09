@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/introduction/adding-a-new-field
-title: "새 필드 추가 | Microsoft Docs"
+title: 새 필드 추가 | Microsoft Docs
 author: Rick-Anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-new-field
 msc.type: authoredcontent
-ms.openlocfilehash: 453fbf68aa2f3a1d9ea708355c06c53d4f1eabd0
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 0dac798eba586cdcc232cedd262e610b954004df
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-new-field"></a>새 필드 추가
 ====================
 으로 [Rick Anderson](https://github.com/Rick-Anderson)
 
-[!INCLUDE[Tutorial Note](sample/code-location.md)]
+[!INCLUDE [Tutorial Note](sample/code-location.md)]
 
 이 섹션에서는 변경 내용이 데이터베이스에 적용 되므로 일부 변경 내용이 모델 클래스 마이그레이션할 Entity Framework Code First 마이그레이션을 사용 합니다.
 
@@ -62,7 +62,7 @@ Visual Studio가 열릴는 *Configuration.cs* 파일입니다. 대체는 `Seed` 
 
 [!code-csharp[Main](adding-a-new-field/samples/sample2.cs)]
 
-> [!NOTE] 
+> [!NOTE]
 > 
 > First 마이그레이션이 호출 코드의 `Seed` 모든 마이그레이션 후 메서드 (즉, 호출 **데이터베이스 업데이트** 패키지 관리자 콘솔에서),이 메서드는 이미 삽입 되었거나 경우 삽입 된 행을 업데이트 하 고 있습니다 아직 존재 하지 마십시오.
 > 
@@ -71,15 +71,15 @@ Visual Studio가 열릴는 *Configuration.cs* 파일입니다. 대체는 `Seed` 
 > [!code-csharp[Main](adding-a-new-field/samples/sample3.cs)]
 > 
 > 때문에 [시드](https://msdn.microsoft.com/library/hh829453(v=vs.103).aspx) 모든 마이그레이션을 사용 하 여 메서드 실행, 때문에 추가 하려고 하는 행 이미 있는 데이터베이스를 만드는 첫 번째 마이그레이션 후에 데이터를 삽입할 수 없습니다. "[upsert](http://en.wikipedia.org/wiki/Upsert)" 작업이 이미 존재 하는 행을 삽입 하려고 할 경우 수행 하는 오류를 방지할 수 있지만 응용 프로그램을 테스트 하는 동안 실행 한 데이터 변경 내용 보다 우선 합니다. 테스트 테이블의에서 데이터 일부 원하지 않을 수 있습니다이 위해서는: 경우에 따라 테스트 하는 동안 데이터를 변경 하면 원하는 변경 내용을 데이터베이스 업데이트 후 하 게 유지 합니다. 조건부 삽입 작업을 수행 하려는 경우: 존재 하지 않는 경우에 행을 삽입 합니다.   
->   
+> 
 > 에 전달 된 첫 번째 매개 변수는 [AddOrUpdate](https://msdn.microsoft.com/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx) 메서드 행 이미 존재 하는지 확인 하는 데 속성을 지정 합니다. 제공 하는 테스트 동영상 데이터에는 `Title` 속성 각 타이틀 목록에는 고유 하므로이 용도로 사용할 수 있습니다.
 > 
 > [!code-csharp[Main](adding-a-new-field/samples/sample4.cs)]
 > 
 > 이 코드는 타이틀은 고유한 것을 가정 합니다. 중복 된 제목에 수동으로 추가한 경우에 마이그레이션을 수행 하는 다음에 다음과 같은 예외를 얻을 수 있습니다.   
->   
+> 
 >  *시퀀스에 요소가 둘 이상*  
->   
+> 
 > 에 대 한 자세한 내용은 [AddOrUpdate](https://msdn.microsoft.com/library/system.data.entity.migrations.idbsetextensions.addorupdate(v=vs.103).aspx) 메서드를 참조 [EF 4.3 AddOrUpdate 메서드로 주의](http://thedatafarm.com/blog/data-access/take-care-with-ef-4-3-addorupdate-method/)...
 
 
@@ -135,7 +135,7 @@ Code First 마이그레이션을에 다른 클래스 파일을 만듭니다는 *
 
 ![](adding-a-new-field/_static/image9.png)  
   
-'MovieDBContext' 컨텍스트를 백업 하는 모델 데이터베이스를 만든 후에 변경 되었습니다. Code First 마이그레이션을 사용 하 여 (https://go.microsoft.com/fwlink/?LinkId=238269) 데이터베이스를 업데이트 하는 것이 좋습니다.
+'MovieDBContext' 컨텍스트를 백업 하는 모델 데이터베이스를 만든 후에 변경 되었습니다. Code First 마이그레이션을 사용 하 여 데이터베이스를 업데이트 하는 것이 좋습니다 (https://go.microsoft.com/fwlink/?LinkId=238269)합니다.
 
 ![](adding-a-new-field/_static/image10.png)
 
@@ -191,6 +191,6 @@ Visual Studio 새 정의 하는 클래스 파일을 엽니다이 명령이 완�
 
 이 섹션에서는 모델 개체를 수정할 데이터베이스의 변경 내용과 동기화 된 상태로 유지 하는 방법을 표시 합니다. 또한 시나리오를 체험할 수 있도록 샘플 데이터로 새로 만든된 데이터베이스를 채우는 하는 방법을 배웠습니다. 이 한 간단한 소개 Code First를 참조 하십시오. [ASP.NET MVC 응용 프로그램에 대 한 Entity Framework 데이터 모델을 만드는](../getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md) 주체에 대 한 자세한 자습서에 대 한 합니다. 다음으로, 다양 한 유효성 검사 논리 모델 클래스를 추가 적용 해야 할 몇 가지 비즈니스 규칙을 사용 하도록 설정 하는 방법에 대해 살펴보겠습니다.
 
->[!div class="step-by-step"]
-[이전](adding-search.md)
-[다음](adding-validation.md)
+> [!div class="step-by-step"]
+> [이전](adding-search.md)
+> [다음](adding-validation.md)

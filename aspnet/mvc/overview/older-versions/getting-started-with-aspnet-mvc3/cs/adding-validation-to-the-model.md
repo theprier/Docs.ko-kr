@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-validation-to-the-model
-title: "유효성 검사 (C#) 모델에 추가 | Microsoft Docs"
+title: 유효성 검사 (C#) 모델에 추가 | Microsoft Docs
 author: Rick-Anderson
-description: "컨트롤러 만들기"
+description: 컨트롤러 만들기
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-validation-to-the-model
 msc.type: authoredcontent
-ms.openlocfilehash: 1e1235972d1e16153faee113af09edaa676d70d8
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: cdfe76f440e34ca7356af193186f90d2231b9db6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-validation-to-the-model-c"></a>모델 (C#)에 유효성 검사 추가
 ====================
@@ -127,6 +127,6 @@ ASP.NET MVC 및 Entity Framework Code First 제공 하는 유효성 검사 지�
 
 이 시리즈의 다음 부분에서는 응용 프로그램을 검토하고 자동 생성된 `Details` 및 `Delete` 메서드를 몇 가지 개선합니다.
 
->[!div class="step-by-step"]
-[이전](adding-a-new-field.md)
-[다음](improving-the-details-and-delete-methods.md)
+> [!div class="step-by-step"]
+> [이전](adding-a-new-field.md)
+> [다음](improving-the-details-and-delete-methods.md)

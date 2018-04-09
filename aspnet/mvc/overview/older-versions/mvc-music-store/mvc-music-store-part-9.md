@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-9
-title: "9 단계: 등록 및 체크아웃 | Microsoft Docs"
+title: '9 단계: 등록 및 체크아웃 | Microsoft Docs'
 author: jongalloway
-description: "이 자습서 시리즈 모든 ASP.NET MVC Music Store 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 등록 및 체크아웃 9에 설명합니다."
+description: 이 자습서 시리즈 모든 ASP.NET MVC Music Store 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 등록 및 체크아웃 9에 설명합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/21/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-9
 msc.type: authoredcontent
-ms.openlocfilehash: 1caf836f8c92cbc9ab95e0aa990f81493e577a27
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: e7e83b70f2508b6dfc0c078b992747a76e4d0ff2
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-9-registration-and-checkout"></a>9 단계: 등록 및 체크 아웃
 ====================
@@ -163,6 +163,6 @@ Id입니다. 순서를 표시 하는 대로 체크 아웃 전체 뷰는 상당�
 [!code-cshtml[Main](mvc-music-store-part-9/samples/sample13.cshtml)]
 
 
->[!div class="step-by-step"]
-[이전](mvc-music-store-part-8.md)
-[다음](mvc-music-store-part-10.md)
+> [!div class="step-by-step"]
+> [이전](mvc-music-store-part-8.md)
+> [다음](mvc-music-store-part-10.md)

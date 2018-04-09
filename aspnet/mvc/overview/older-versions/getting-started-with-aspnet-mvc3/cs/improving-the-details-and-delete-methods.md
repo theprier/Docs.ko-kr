@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/improving-the-details-and-delete-methods
-title: "세부 정보 및 Delete 메서드 (C#) 개선 | Microsoft Docs"
+title: 세부 정보 및 Delete 메서드 (C#) 개선 | Microsoft Docs
 author: Rick-Anderson
-description: "이 자습서에서는 Microsoft Visual Web Developer 2010 Express 서비스 팩 1, 즉를 사용 하 여 ASP.NET MVC 웹 응용 프로그램을 구축 하는 기초 설명..."
+description: 이 자습서에서는 Microsoft Visual Web Developer 2010 Express 서비스 팩 1, 즉를 사용 하 여 ASP.NET MVC 웹 응용 프로그램을 구축 하는 기초 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/improving-the-details-and-delete-methods
 msc.type: authoredcontent
-ms.openlocfilehash: e46616d45ad0e4a0ab861e6fb53f33bc567cbdea
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 55945eb373c79fd6ae018fe8f896dc5e6bbe7744
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="improving-the-details-and-delete-methods-c"></a>세부 정보 및 Delete 메서드 (C#) 향상
 ====================
@@ -61,7 +61,7 @@ ms.lasthandoff: 01/24/2018
 
 공용 언어 런타임 (CLR) (동일한 이름, 매개 변수 목록이 서로 다른)에 고유의 시그니처가 있어야 하는 오버 로드 된 메서드를 필요 합니다. 그러나 여기 해야 두 삭제 메서드-각각에 대 한 GET-와 게시에 두 동일한 서명 해야 합니다. (모두 매개 변수로 단일 정수를 허용해야 합니다.)
 
-이 출력을 정렬 하려면 몇 가지 기능을 수행할 수 있습니다. 하나는 메서드를 서로 다른 이름을 지정입니다. 그 예에서는 앞에서 수행한 것입니다. 그러나 이는 작은 문제를 가져옵니다. ASP.NET은 URL의 세그먼트를 이름으로 작업 메서드에 매핑하고 메서드의 이름을 바꾸면 정상적으로 라우팅하여 해당 메서드를 찾을 수 없게 됩니다. 솔루션은 예제에서 확인한 것으로, `ActionName("Delete")` 특성을 `DeleteConfirmed` 메서드에 추가하는 것입니다. 포함 하는 URL 라우팅 시스템에 대 한 매핑을 효과적으로 수행 */Delete/*게시물에 대 한 요청 찾을 수는 `DeleteConfirmed` 메서드.
+이 출력을 정렬 하려면 몇 가지 기능을 수행할 수 있습니다. 하나는 메서드를 서로 다른 이름을 지정입니다. 그 예에서는 앞에서 수행한 것입니다. 그러나 이는 작은 문제를 가져옵니다. ASP.NET은 URL의 세그먼트를 이름으로 작업 메서드에 매핑하고 메서드의 이름을 바꾸면 정상적으로 라우팅하여 해당 메서드를 찾을 수 없게 됩니다. 솔루션은 예제에서 확인한 것으로, `ActionName("Delete")` 특성을 `DeleteConfirmed` 메서드에 추가하는 것입니다. 포함 하는 URL 라우팅 시스템에 대 한 매핑을 효과적으로 수행 <em>/Delete/</em>게시물에 대 한 요청 찾을 수는 `DeleteConfirmed` 메서드.
 
 동일한 이름 및 시그니처가 있는 메서드에서 문제를 방지 하는 다른 방법은 인위적으로 사용 되지 않는 매개 변수를 포함 하도록 POST 메서드의 시그니처를 변경 하는 것입니다. 예를 들어, 일부 개발자가 추가 매개 변수 형식 `FormCollection` POST 메서드에 전달 되는 다음 단순히 하지 않는 매개 변수를 사용 하 고 있습니다.
 
@@ -81,11 +81,11 @@ ms.lasthandoff: 01/24/2018
 - [IIS를 사용 하도록 설정 7.x](https://blogs.msdn.com/b/rickandy/archive/2011/03/14/enabling-iis-7-x-on-windows-7-vista-sp1-windows-2008-windows-2008-r2.aspx)
 - [웹 응용 프로그램 프로젝트 배포](https://msdn.microsoft.com/library/dd394698.aspx)
 
-이 중간 수준으로 이동 이제 확인해 [ASP.NET MVC 응용 프로그램에 대 한 Entity Framework 데이터 모델을 만드는](../../../getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md) 및 [MVC Music Store](../../mvc-music-store/mvc-music-store-part-1.md) 자습서 탐색 하는 [ASP.NET MSDN에 대 한 문서](https://msdn.microsoft.com/library/gg416514(VS.98).aspx), 많은 비디오 및 리소스에을 체크 아웃 하 고 [https://asp.net/mvc](https://asp.net/mvc) ASP.NET MVC에 대해 훨씬 더 자세한! [ASP.NET MVC 포럼](https://forums.asp.net/1146.aspx) 질문 하기에 적합 합니다.
+이 중간 수준으로 이동 이제 확인해 [ASP.NET MVC 응용 프로그램에 대 한 Entity Framework 데이터 모델을 만드는](../../../getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md) 및 [MVC Music Store](../../mvc-music-store/mvc-music-store-part-1.md) 자습서 탐색 하는 [ASP.NET MSDN에 대 한 문서](https://msdn.microsoft.com/library/gg416514(VS.98).aspx), 많은 비디오 및 리소스에을 체크 아웃 하 고 [ https://asp.net/mvc ](https://asp.net/mvc) ASP.NET MVC에 대해 훨씬 더 자세한! [ASP.NET MVC 포럼](https://forums.asp.net/1146.aspx) 질문 하기에 적합 합니다.
 
 즐겨보세요!
 
--Scott Hanselman ([http://hanselman.com](http://hanselman.com) 및 [ @shanselman ](http://twitter.com/shanselman) Twitter의) 및 Rick Anderson [blogs.msdn.com/rickAndy](https://blogs.msdn.com/rickAndy)
+-Scott Hanselman ([ http://hanselman.com ](http://hanselman.com) 및 [ @shanselman ](http://twitter.com/shanselman) Twitter의) 및 Rick Anderson [blogs.msdn.com/rickAndy](https://blogs.msdn.com/rickAndy)
 
->[!div class="step-by-step"]
-[이전](adding-validation-to-the-model.md)
+> [!div class="step-by-step"]
+> [이전](adding-validation-to-the-model.md)

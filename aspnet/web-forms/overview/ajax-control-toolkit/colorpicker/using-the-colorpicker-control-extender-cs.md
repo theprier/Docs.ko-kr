@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/colorpicker/using-the-colorpicker-control-extender-cs
-title: "ColorPicker 컨트롤 Extender (C#)를 사용 하 여 | Microsoft Docs"
+title: ColorPicker 컨트롤 Extender (C#)를 사용 하 여 | Microsoft Docs
 author: microsoft
-description: "ColorPicker는 popup 컨트롤의 UI를 사용한 클라이언트 쪽 색 선택 기능을 제공 하는 ASP.NET AJAX extender입니다. 모든 ASP.NET에는 연결할 수 있습니다..."
+description: ColorPicker는 popup 컨트롤의 UI를 사용한 클라이언트 쪽 색 선택 기능을 제공 하는 ASP.NET AJAX extender입니다. 모든 ASP.NET에는 연결할 수 있습니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/12/2009
@@ -12,17 +12,17 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/colorpicker/using-the-colorpicker-control-extender-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 5b3cde9552e8aecd5e7e651a825902fb79ae108c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4d44fc81305e668b545246cf044dce275563d81a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-the-colorpicker-control-extender-c"></a>ColorPicker 컨트롤 Extender (C#)를 사용 하 여
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
-> ColorPicker는 popup 컨트롤의 UI를 사용한 클라이언트 쪽 색 선택 기능을 제공 하는 ASP.NET AJAX extender입니다. ASP.NET TextBox 컨트롤에 연결 될 수 있습니다. 것입니다.
+> ColorPicker는 popup 컨트롤의 UI를 사용한 클라이언트 쪽 색 선택 기능을 제공 하는 ASP.NET AJAX extender입니다. ASP.NET TextBox 컨트롤에 연결 될 수 있습니다. It.
 
 
 이 자습서의 목표 AJAX 컨트롤 Toolkit ColorPicker 컨트롤 extender를 사용 하는 방법을 설명 하는 것입니다. ColorPicker 컨트롤 extender 색을 선택할 수 있는 팝업 대화 상자를 표시 합니다. ColorPicker 색을 선택 하는 사용자에 대 한 직관적인 사용자 인터페이스를 제공 하려는 경우 유용 합니다.
@@ -58,7 +58,7 @@ ms.lasthandoff: 11/10/2017
 
 ColorPicker를 사용 하려면 먼저 페이지에 ScriptManager를 추가 해야 합니다. 여는 서버 쪽 바로 아래 ScriptManager를 추가 하는 데는 &lt;양식&gt; 태그입니다. (ScriptManager AJAX 확장 탭에 있습니다.)를 도구 상자에서 ScriptManager 페이지 끌 수 있습니다. 또는 여는 서버측 form 태그 아래에 있는 소스 보기에는 다음과 같은 태그를 입력할 수 있습니다.
 
-&lt;asp: ScriptManager ID = "ScriptManager1" runat = "server" /&gt;
+&lt;asp:ScriptManager ID="ScriptManager1" runat="server" /&gt;
 
 디자인 뷰에서 페이지로 ColorPicker 컨트롤 extender를 추가 하는 가장 쉬운 방법은 됩니다. 스마트 작업 옵션을 사용 하면 표시 TextBox txtCardColor 위로 마우스를 가져가면 extender를 추가할 수 있습니다 (그림 3 참조). 이 옵션을 선택 하면 Extender 마법사 (그림 4 참조)가 나타납니다.
 
@@ -114,5 +114,5 @@ SampleControlID 속성은 ColorPicker와 선택한 색을 표시 하는 컨트�
 
 이 자습서에서는 팝업 색 선택 대화 상자를 표시 하려면 ColorPicker 컨트롤 extender를 사용 하는 방법을 배웠습니다. 첫째, TextBox 컨트롤에 포커스를 이동할 때 대화 상자에 표시 하는 방법을 검사 합니다. 다음으로 단추를 클릭 하면 색 선택 대화 상자를 표시 하는 단추를 만드는 방법을 배웠습니다.
 
->[!div class="step-by-step"]
-[다음](using-the-colorpicker-control-extender-vb.md)
+> [!div class="step-by-step"]
+> [다음](using-the-colorpicker-control-extender-vb.md)

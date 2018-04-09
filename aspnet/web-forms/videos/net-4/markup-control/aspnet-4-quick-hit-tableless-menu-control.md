@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/net-4/markup-control/aspnet-4-quick-hit-tableless-menu-control
-title: "Tableless Menu 컨트롤 | Microsoft Docs"
+title: Tableless Menu 컨트롤 | Microsoft Docs
 author: JoeStagner
-description: "이 비디오에서는 나타납니다 ASP.NET Menu 컨트롤 목록 요소 및 순서가 지정 되지 않은 목록으로 구성 된 의미 체계 태그를 사용 하 여 HTML을 렌더링 하는 방법"
+description: 이 비디오에서는 나타납니다 ASP.NET Menu 컨트롤 목록 요소 및 순서가 지정 되지 않은 목록으로 구성 된 의미 체계 태그를 사용 하 여 HTML을 렌더링 하는 방법
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/16/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/net-4/markup-control/aspnet-4-quick-hit-tableless-menu-control
 msc.type: video
-ms.openlocfilehash: 5ed45e6abdbd7c1385bb55a856da97d256b3d5f2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4c22b9ed8768239e39ad7ed11f8cfa4615c1df72
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-4-quick-hit--tableless-menu-control"></a>ASP.NET 4 "빠른 Hit" – Tableless Menu 컨트롤
 ====================
@@ -24,8 +24,8 @@ ms.lasthandoff: 11/10/2017
 
 이 비디오에서는 나타납니다 ASP.NET Menu 컨트롤 목록 요소 및 순서가 지정 되지 않은 목록으로 구성 된 의미 체계 태그를 사용 하 여 HTML을 렌더링 하는 방법 
 
-[&#9654; (5 분) 비디오를 시청 하세요](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-tableless-menu-control)
+[&#9654;(5 분) 비디오를 시청 하세요](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-4-quick-hit-tableless-menu-control)
 
->[!div class="step-by-step"]
-[이전](aspnet-4-quick-hit-table-free-templated-controls.md)
-[다음](aspnet-4-quick-hit-hidden-field-divs.md)
+> [!div class="step-by-step"]
+> [이전](aspnet-4-quick-hit-table-free-templated-controls.md)
+> [다음](aspnet-4-quick-hit-hidden-field-divs.md)

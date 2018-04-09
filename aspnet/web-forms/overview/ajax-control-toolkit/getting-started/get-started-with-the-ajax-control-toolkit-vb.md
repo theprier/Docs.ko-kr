@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/getting-started/get-started-with-the-ajax-control-toolkit-vb
-title: "시작 (VB) 들어 | Microsoft Docs"
+title: 시작 (VB) 들어 | Microsoft Docs
 author: microsoft
-description: "AJAX 컨트롤 도구 키트를 사용 하 여 시작 하기 전에 알아야 할 하기만 하면에 대해 알아봅니다."
+description: AJAX 컨트롤 도구 키트를 사용 하 여 시작 하기 전에 알아야 할 하기만 하면에 대해 알아봅니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/12/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/getting-started/get-started-with-the-ajax-control-toolkit-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0bbf6dc0be8a96ecd47b8620a6ba3220b50f10d4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 30653a147bd3bf581af27220e11cdecc2f89fc4a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="get-started-with-the-ajax-control-toolkit-vb"></a>시작 (VB) 들어
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > AJAX 컨트롤 도구 키트를 사용 하 여 시작 하기 전에 알아야 할 하기만 하면에 대해 알아봅니다.
 
@@ -89,6 +89,6 @@ AJAX 컨트롤 도구 키트를 사용 하는 가장 쉬운 방법은 Visual Stu
 - 이진 파일-웹 사이트 Bin 폴더에서 AjaxControlToolkit.dll 어셈블리의 이전 버전을 삭제 합니다.
 - 도구 상자 항목-들어 탭 삭제 및 다시 AjaxControlToolkit.dll 어셈블리의 새 버전을 사용 하 여 탭을 만드는 데 위의 단계를 수행 합니다.
 
->[!div class="step-by-step"]
-[이전](creating-a-custom-ajax-control-toolkit-control-extender-cs.md)
-[다음](using-ajax-control-toolkit-controls-and-control-extenders-vb.md)
+> [!div class="step-by-step"]
+> [이전](creating-a-custom-ajax-control-toolkit-control-extender-cs.md)
+> [다음](using-ajax-control-toolkit-controls-and-control-extenders-vb.md)

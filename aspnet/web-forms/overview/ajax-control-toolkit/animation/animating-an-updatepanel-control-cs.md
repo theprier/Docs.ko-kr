@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/animating-an-updatepanel-control-cs
-title: "애니메이션 UpdatePanel 컨트롤 (C#) | Microsoft Docs"
+title: 애니메이션 UpdatePanel 컨트롤 (C#) | Microsoft Docs
 author: wenz
-description: "ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트롤 뿐 아니라 애니메이션 컨트롤을 추가 하는 전체 프레임 워크. 내용에는 중..."
+description: ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트롤 뿐 아니라 애니메이션 컨트롤을 추가 하는 전체 프레임 워크. 내용에는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/animating-an-updatepanel-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7e6d8954d2ec886994cdd723121e540b471131f6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5d8d5b9c3f15b39045b5e01b455bdddfc9443a24
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="animating-an-updatepanel-control-c"></a>애니메이션 UpdatePanel 컨트롤 (C#)
 ====================
@@ -43,8 +43,8 @@ ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트�
 
 에 필요한 태그는 `UpdatePanelAnimationExtender` 컨트롤에 사용 되는 태그를 매우 비슷합니다는 `AnimationExtender`합니다. 에 `TargetControlID` 제공 특성은 `ID` 의 `UpdatePanel` ; 애니메이션 효과를 줄 내에서 `UpdatePanelAnimationExtender` 컨트롤은 `<Animations>` 요소 애니메이션에 대 한 XML 태그를 포함 합니다. 그러나 한 가지 차이가: 이벤트 및 이벤트 처리기의 용량은 제한 비해 `AnimationExtender`합니다. 에 대 한 `UpdatePanels`두 개의 그중에서 존재 합니다.
 
-- `<OnUpdated>`UpdatePanel이 업데이트 된 경우
-- `<OnUpdating>`UpdatePanel을 업데이트를 시작할 때
+- `<OnUpdated>` UpdatePanel이 업데이트 된 경우
+- `<OnUpdating>` UpdatePanel을 업데이트를 시작할 때
 
 이 시나리오에서는의 새 내용은 `UpdatePanel` (이후 포스트백)은 페이드 인 됩니다. 다음은 해당 하는 데 필요한 태그입니다.
 
@@ -57,6 +57,6 @@ ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트�
 
 다음 마법사 단계 페이딩 됩니다 ([전체 크기 이미지를 보려면 클릭](animating-an-updatepanel-control-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[이전](changing-an-animation-using-client-side-code-cs.md)
-[다음](dynamically-controlling-updatepanel-animations-cs.md)
+> [!div class="step-by-step"]
+> [이전](changing-an-animation-using-client-side-code-cs.md)
+> [다음](dynamically-controlling-updatepanel-animations-cs.md)

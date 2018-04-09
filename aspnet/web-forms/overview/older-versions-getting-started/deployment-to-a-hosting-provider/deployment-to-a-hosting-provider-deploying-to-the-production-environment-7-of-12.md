@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12
-title: "SQL Server Compact Visual Studio 또는 Visual Web Developer를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: 7/12-프로덕션 환경으로 배포 | Microsoft Docs"
+title: 'SQL Server Compact Visual Studio 또는 Visual Web Developer를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: 7/12-프로덕션 환경으로 배포 | Microsoft Docs'
 author: tdykstra
-description: "이 일련의 자습서 배포 하는 방법을 보여 줍니다. (게시) ASP.NET Visual Stu를 사용 하 여 SQL Server Compact 데이터베이스를 포함 하는 웹 응용 프로그램 프로젝트..."
+description: 이 일련의 자습서 배포 하는 방법을 보여 줍니다. (게시) ASP.NET Visual Stu를 사용 하 여 SQL Server Compact 데이터베이스를 포함 하는 웹 응용 프로그램 프로젝트...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/17/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 4aa6766c2c7765f499f5c5380962a5fe443e8c9d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: ab3b7ba332deddae7d04fc37c7aabc72bdb2d17e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-to-the-production-environment---7-of-12"></a>SQL Server Compact Visual Studio 또는 Visual Web Developer를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: 7/12-프로덕션 환경에 배포
 ====================
@@ -125,7 +125,7 @@ ASP.NET에서 변경 **2.0 통합된 파이프라인** 를 **4.0 (통합 파이�
 
 ![게시 웹 마법사 연결 탭](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image26.png)
 
-.Publishsettings 파일에는 대상 URL 상자에는 사이트에 대 한 계획 된 영구 URL을 배치 하지만 해당 도메인을 아직 구입 하지 않은 값을 임시 URL로 바꿉니다. 이 예제에 대 한 URL이  *[http://contosouniversity.com.vserver01.cytanium.com](http://contosouniversity.com.vserver01.cytanium.com)합니다.* 전용 모드입니다.이 상자를 보려면를 자동으로 후 성공적으로 배포 후 어느 URL을 지정 하는 것입니다. 두면 빈, 유일한 되어 브라우저 배포 후 자동으로 시작 되지 않습니다.
+.Publishsettings 파일에는 대상 URL 상자에는 사이트에 대 한 계획 된 영구 URL을 배치 하지만 해당 도메인을 아직 구입 하지 않은 값을 임시 URL로 바꿉니다. 이 예제에 대 한 URL이  *[ http://contosouniversity.com.vserver01.cytanium.com ](http://contosouniversity.com.vserver01.cytanium.com)합니다.* 전용 모드입니다.이 상자를 보려면를 자동으로 후 성공적으로 배포 후 어느 URL을 지정 하는 것입니다. 두면 빈, 유일한 되어 브라우저 배포 후 자동으로 시작 되지 않습니다.
 
 클릭 **연결 유효성 검사** 설정이 올바른지 하 고 서버에 연결할 수 있는지 확인 합니다. 앞서 살펴본 것 처럼 녹색 확인 표시가 성공적으로 연결 되었는지 확인 합니다.
 
@@ -137,9 +137,9 @@ ASP.NET에서 변경 **2.0 통합된 파이프라인** 를 **4.0 (통합 파이�
 
 에 **데이터베이스** 의 섹션은 **설정** 탭을 동일한 입력 테스트에 대 한 입력 값을 게시 프로필. 드롭다운 목록에 필요한 연결 문자열을 찾을 수 있습니다.
 
-- 에 대 한 연결 문자열 상자에서 **SchoolContext,** 선택`Data Source=|DataDirectory|School-Prod.sdf`
+- 에 대 한 연결 문자열 상자에서 **SchoolContext,** 선택 `Data Source=|DataDirectory|School-Prod.sdf`
 - 아래 **SchoolContext**선택, **Code First 마이그레이션을 적용**합니다.
-- 에 대 한 연결 문자열 상자에서 **DefaultConnection**선택`Data Source=|DataDirectory|aspnet-Prod.sdf`
+- 에 대 한 연결 문자열 상자에서 **DefaultConnection**선택 `Data Source=|DataDirectory|aspnet-Prod.sdf`
 - 아래 **DefaultConnection**, 둡니다 **데이터베이스 업데이트** 의 선택을 취소 합니다.
 
 ![게시 웹 마법사 설정 탭](deployment-to-a-hosting-provider-deploying-to-the-production-environment-7-of-12/_static/image28.png)
@@ -252,6 +252,6 @@ Elmah에 쓰기 권한을 갖는지 확인는 *Elmah* 오류가 발생 하 고 �
 
 다음 자습서에서는 응용 프로그램 코드를 업데이트 하 고 변경 내용을 테스트 및 프로덕션 환경에 배포 합니다.
 
->[!div class="step-by-step"]
-[이전](deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12.md)
-[다음](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12.md)
+> [!div class="step-by-step"]
+> [이전](deployment-to-a-hosting-provider-setting-folder-permissions-6-of-12.md)
+> [다음](deployment-to-a-hosting-provider-deploying-a-code-only-update-8-of-12.md)

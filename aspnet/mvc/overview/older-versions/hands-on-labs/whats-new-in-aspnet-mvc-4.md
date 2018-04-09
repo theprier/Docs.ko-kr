@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/hands-on-labs/whats-new-in-aspnet-mvc-4
-title: "ASP.NET MVC 4의에서 새로운 기능 | Microsoft Docs"
+title: ASP.NET MVC 4의에서 새로운 기능 | Microsoft Docs
 author: rick-anderson
-description: "ASP.NET MVC 4는 ASP.NET의 능력에 대 한 체계적인 디자인 패턴을 사용 하 여 확장 가능 하 고 표준 기반 웹 응용 프로그램을 구축 하기 위한 프레임 워크 및..."
+description: ASP.NET MVC 4는 ASP.NET의 능력에 대 한 체계적인 디자인 패턴을 사용 하 여 확장 가능 하 고 표준 기반 웹 응용 프로그램을 구축 하기 위한 프레임 워크 및...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/whats-new-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 35f9402ad6090c0441425a23b2b8063350892210
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 977a6b5a84825ebd087752dcc2ebc0c5410e1657
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="whats-new-in-aspnet-mvc-4"></a>ASP.NET MVC 4의에서 새로운 기능
 
@@ -48,7 +48,7 @@ ASP.NET MVC 4로 시작 됩니다이 실습 랩에서 &quot;인터넷 응용 프
 <a id="Prerequisites"></a>
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>필수 구성 요소
+### <a name="prerequisites"></a>전제 조건
 
 이 랩을 완료 하려면 다음 항목이 있어야 합니다.
 
@@ -144,7 +144,7 @@ ASP.NET MVC 4로 시작 됩니다이 실습 랩에서 &quot;인터넷 응용 프
 
     ![jQuery 유효성 검사](whats-new-in-aspnet-mvc-4/_static/image6.png)
 
-    jQuery 유효성 검사
+    *jQuery 유효성 검사*
 
     > [!NOTE]
     > 두 섹션에서는 첫 번째 섹션에 로그인 하는 예 고 두 번째 섹션 altenativelly google (기본적으로 해제 됨)와 같은 다른 인증 서비스를 사용 하 여 로그인 할 수 있습니다 및 사이트에서 registerd 계정을 사용 하 여 기록할 수 있습니다.
@@ -153,43 +153,45 @@ ASP.NET MVC 4로 시작 됩니다이 실습 랩에서 &quot;인터넷 응용 프
 7. 에 대 한 Google 클라이언트를 등록 하 고 마지막 줄에서 주석 제거 *OAuth* 인증 합니다.
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample1.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample1.cs)]
 
-    > [!NOTE]
-    > Facebook, Twitter, Microsoft 등과 같은 모든 OAuth 또는 OpenID 서비스를 사용 하 여 인증을 쉽게 사용할 수 있습니다를 확인 합니다.
+> [!NOTE]
+> Notice you can easily enable authentication using any OpenID or OAuth service like Facebook, Twitter, Microsoft, etc.
+~~~
 8. 키를 눌러 **F5** 하는 솔루션을 실행 하 고 로그인 페이지로 이동 합니다.
 9. 선택 **Google** 서비스에 로그인 합니다.
 
     ![서비스에서 로그를 선택합니다.](whats-new-in-aspnet-mvc-4/_static/image7.png)
 
-    서비스에서 로그를 선택합니다.
+    *서비스에서 로그를 선택합니다.*
 10. Google 계정을 사용 하 여 로그인 합니다.
 11. Google 계정에서 정보를 검색할 사이트 (localhost)를 허용 합니다.
 12. 마지막으로, Google 계정을 연결 하는 사이트에 등록 해야 합니다.
 
-    ![Google 계정 연결](whats-new-in-aspnet-mvc-4/_static/image8.png)
+   ![Google 계정 연결](whats-new-in-aspnet-mvc-4/_static/image8.png)
 
-    *Google 계정 연결*
+   *Google 계정 연결*
 13. 디버거를 중지 하려면 Visual Studio로 되돌아가려면 브라우저를 닫습니다.
 14. 이제 솔루션을 체크 아웃 프로젝트 템플릿에 있는 ASP.NET MVC 4에서 도입 된 몇 가지 다른 새로운 기능을 탐색 합니다.
 
-    ![ASP.NET MVC 4 인터넷 응용 프로그램 프로젝트 템플릿을](whats-new-in-aspnet-mvc-4/_static/image9.png "ASP.NET MVC 4 인터넷 응용 프로그램 프로젝트 템플릿을")
+   ![ASP.NET MVC 4 인터넷 응용 프로그램 프로젝트 템플릿을](whats-new-in-aspnet-mvc-4/_static/image9.png "ASP.NET MVC 4 인터넷 응용 프로그램 프로젝트 템플릿을")
 
-    *ASP.NET MVC 4 인터넷 응용 프로그램 프로젝트 템플릿*
+   *ASP.NET MVC 4 인터넷 응용 프로그램 프로젝트 템플릿*
 
-    - **HTML 5 태그**
+   - **HTML 5 태그**
 
-        새 테마 마크업 알아보려면 템플릿을 뷰를 찾습니다.
+       새 테마 마크업 알아보려면 템플릿을 뷰를 찾습니다.
 
-        ![Razor 및 HTML5 태그 About.cshtml를 사용 하 여 새 템플릿. ] (whats-new-in-aspnet-mvc-4/_static/image10.png "About.cshtml Razor 및 HTML5 태그를 사용 하 여 새 서식 파일입니다.")
+       ![Razor 및 HTML5 태그 About.cshtml를 사용 하 여 새 템플릿. ] (whats-new-in-aspnet-mvc-4/_static/image10.png "About.cshtml Razor 및 HTML5 태그를 사용 하 여 새 서식 파일입니다.")
 
-        *Razor 및 HTML5 태그 (About.cshtml)를 사용 하 여 새 템플릿.*
-    - **업데이트 된 JavaScript 라이브러리**
+       *Razor 및 HTML5 태그 (About.cshtml)를 사용 하 여 새 템플릿.*
+   - **업데이트 된 JavaScript 라이브러리**
 
-        ASP.NET MVC 4 기본 서식 파일에는 이제 KnockoutJS, 풍부한 만들 수 있는 JavaScript MVVM 프레임 워크 및 JavaScript 및 HTML을 사용 하 여 응답성이 높은 웹 응용 프로그램 포함 됩니다. 마찬가지로 mvc 3, jQuery 및 jQuery UI 라이브러리도 포함 되어 ASP.NET MVC 4입니다.
+       ASP.NET MVC 4 기본 서식 파일에는 이제 KnockoutJS, 풍부한 만들 수 있는 JavaScript MVVM 프레임 워크 및 JavaScript 및 HTML을 사용 하 여 응답성이 높은 웹 응용 프로그램 포함 됩니다. 마찬가지로 mvc 3, jQuery 및 jQuery UI 라이브러리도 포함 되어 ASP.NET MVC 4입니다.
 
-        > [!NOTE]
-        > 이 링크에 KnockOutJS 라이브러리에 대 한 자세한 정보를 얻을 수 있습니다: [ [http://learn.knockoutjs.com/](http://learn.knockoutjs.com/)](http://learn.knockoutjs.com/)합니다. 또한, jQuery 및 jQuery UI에 대해 알아볼 수 있습니다에 [ [http://docs.jquery.com/](http://docs.jquery.com/)](http://docs.jquery.com/)합니다.
+     > [!NOTE]
+     > 이 링크에 KnockOutJS 라이브러리에 대 한 자세한 정보를 얻을 수 있습니다: [ [ http://learn.knockoutjs.com/ ](http://learn.knockoutjs.com/) ](http://learn.knockoutjs.com/)합니다. 또한, jQuery 및 jQuery UI에 대해 알아볼 수 있습니다에 [ [ http://docs.jquery.com/ ](http://docs.jquery.com/) ](http://docs.jquery.com/)합니다.
 
 <a id="Task_2_-_Exploring_the_Mobile_Application_Template"></a>
 #### <a name="task-2---exploring-the-mobile-application-template"></a>작업 2-탐색 모바일 응용 프로그램 템플릿
@@ -228,16 +230,20 @@ ASP.NET MVC 4 모바일 앱을 위해 웹 사이트 및 태블릿 브라우저�
 9. 열기  **\_Layout.cshtml**에 있는 **보기 | 공유** 폴더 및 주석 뷰포트 메타 태그입니다. 응용 프로그램을 실행 하지 않은 경우 이미 열리고 차이 확인해 보세요.
 
 
-    [!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample2.cshtml)]
+~~~
+[!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample2.cshtml)]
 
-    ![뷰포트 메타 태그를 주석 처리 한 후 사이트](whats-new-in-aspnet-mvc-4/_static/image15.png "뷰포트 메타 태그를 주석 처리 한 후 사이트")
+![The site after commenting the viewport meta tag](whats-new-in-aspnet-mvc-4/_static/image15.png "The site after commenting the viewport meta tag")
 
-    *뷰포트 메타 태그를 주석 처리 한 후 사이트*
+*The site after commenting the viewport meta tag*
+~~~
 10. 키를 눌러 Visual Studio에서 **SHIFT** + **F5** 응용 프로그램 디버깅을 중지 합니다.
 11. 뷰포트 메타 태그 주석 처리를 제거 합니다.
 
 
-    [!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample3.cshtml)]
+~~~
+[!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample3.cshtml)]
+~~~
 
 <a id="Task_3_-_Using_Adaptive_Rendering"></a>
 #### <a name="task-3---using-adaptive-rendering"></a>작업 3-자동 선택 렌더링을 사용 하 여
@@ -254,11 +260,11 @@ ASP.NET MVC 4 모바일 앱을 위해 웹 사이트 및 태블릿 브라우저�
 > 미디어 쿼리의 기본 형식은: @media \[범위: 모든 | 핸드헬드 | 인쇄 | 프로젝션 | 화면\] ([속성: 값] 및... [속성: 값])
 
 
-미디어 쿼리 예제: &gt;  **@media 모든 및 (최대 너비: 1000px) 및 (최소 너비: 700px) {}:** 700px 1000px 사이의 모든 해상도 대해 합니다.
+미디어 쿼리 예제: &gt;  <strong>@media 모든 및 (최대 너비: 1000px) 및 (최소 너비: 700px) {}:</strong> 700px 1000px 사이의 모든 해상도 대해 합니다.
 
-> **@media 화면 및 (최소 너비: 400px) 및 (최대 너비: 700px) {...}:** 화면에 대 한 합니다. 해상도 400에서 700px 사이 여야 합니다.
+> <strong>@media 화면 및 (최소 너비: 400px) 및 (최대 너비: 700px) {...}:</strong> 화면에 대 한 합니다. 해상도 400에서 700px 사이 여야 합니다.
 > 
-> **@media 핸드헬드 장치 및 (최소 너비: 20em), 화면 및 (최소 너비: 20em) {...}:** (모바일 및 장치) 휴대 장치 및 화면에 있습니다. 최소 너비 20em 보다 커야 합니다.
+> <strong>@media 핸드헬드 장치 및 (최소 너비: 20em), 화면 및 (최소 너비: 20em) {...}:</strong> (모바일 및 장치) 휴대 장치 및 화면에 있습니다. 최소 너비 20em 보다 커야 합니다.
 > 
 > 이 대 한 자세한 정보를 찾을 수 있습니다는 [W3C 사이트](http://www.w3.org/TR/css3-mediaqueries/)합니다.
 
@@ -267,7 +273,7 @@ ASP.NET MVC 4 모바일 앱을 위해 웹 사이트 및 태블릿 브라우저�
 
 1. 열기는 **PhotoGallery.sln** 솔루션 작업 1에서 만든 하 고 선택 된 **PhotoGallery** 프로젝트. 키를 눌러 **F5** 솔루션을 실행 합니다.
 2. 브라우저의 너비 절반 또는 원래 크기의 1/4 보다 작은 창을 설정의 크기를 조정 합니다. 이 어떻게 바뀌는지 헤더의 항목과: 일부 요소 헤더의 표시 영역에 나타나지 것입니다.
-3. 열기 **Site.css** 파일에 있는 Visual Studio 솔루션 탐색기에서 **콘텐츠** 프로젝트 폴더입니다. 키를 눌러 **CTRL + F** Visual Studio 통합된 검색을 열고 쓸  **@media**  찾으려고는 **CSS 미디어 쿼리**합니다.
+3. 열기 <strong>Site.css</strong> 파일에 있는 Visual Studio 솔루션 탐색기에서 <strong>콘텐츠</strong> 프로젝트 폴더입니다. 키를 눌러 <strong>CTRL + F</strong> Visual Studio 통합된 검색을 열고 쓸 <strong>@media</strong> 찾으려고는 <strong>CSS 미디어 쿼리</strong>합니다.
 
     이 서식 파일에 정의 된 경우 미디어 쿼리 조건이이 방식으로 작동: 브라우저의 창 크기 미만인 **850 px**를 위해 CSS 규칙이 적용 되는이 미디어 블록 내에 정의 된 것입니다.
 
@@ -278,13 +284,13 @@ ASP.NET MVC 4 모바일 앱을 위해 웹 사이트 및 태블릿 브라우저�
 
     ![페이지 왼쪽에 적용 하는 @media 스타일 오른쪽에 스타일을 생략 하면](whats-new-in-aspnet-mvc-4/_static/image17.png "페이지 왼쪽에 적용 하는 @media 스타일을 스타일 오른쪽에서을 생략 하면")
 
-    *페이지 왼쪽에 적용 하는 @media 스타일을 스타일 오른쪽에서을 생략 하면*
+    <em>페이지 왼쪽에 적용 하는 @media 스타일을 스타일 오른쪽에서을 생략 하면</em>
 
     이제 모바일 장치에서 어떤 일이 생기 확인해 보겠습니다.
 
     ![페이지 왼쪽에 적용 하는 @media 스타일 오른쪽에 스타일을 생략 하면](whats-new-in-aspnet-mvc-4/_static/image18.png "페이지 왼쪽에 적용 하는 @media 스타일을 스타일 오른쪽에서을 생략 하면")
 
-    *페이지 왼쪽에 적용 하는 @media 스타일을 스타일 오른쪽에서을 생략 하면*
+    <em>페이지 왼쪽에 적용 하는 @media 스타일을 스타일 오른쪽에서을 생략 하면</em>
 
     모바일 장치를 사용 하는 경우 페이지는 웹 브라우저에서 렌더링 될 때 변경 내용을 매우 중요 한 없는지 확인할 수 있지만 차이점 더욱 명확 하 게 됩니다. 이미지의 왼쪽에 사용자 지정 스타일 가독성 향상 되었는지 확인할 수 있습니다.
 
@@ -321,7 +327,9 @@ ASP.NET MVC 4 모바일 앱을 위해 웹 사이트 및 태블릿 브라우저�
     (코드 조각- *ASP.NET MVC 4-Ex02-랩 갤러리 실행*)
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample4.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample4.cs)]
+~~~
 7. 키를 눌러 **F5** 솔루션을 실행 하 여 다음 모의 사진 서비스를 테스트 하려면 다음 URL로 이동: `http://localhost:[port]/photo/gallery` ([port] 값 응용 프로그램이 시작 된 현재 포트에 따라 다름). 이 URL로 요청 콘텐츠를 검색 해야는 **Photos.json** 파일입니다.
 
     ![모의 사진 서비스 테스트](whats-new-in-aspnet-mvc-4/_static/image20.png "모의 사진 서비스 테스트")
@@ -342,20 +350,26 @@ ASP.NET MVC 4 모바일 앱을 위해 웹 사이트 및 태블릿 브라우저�
     (코드 조각- *ASP.NET MVC 4 랩-Ex02-사진 모델*)
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample5.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample5.cs)]
+~~~
 4. **컨트롤러** 폴더에서 **HomeController.cs** 파일을 엽니다.
 5. 다음 using 문을 추가합니다.
 
     (코드 조각- *ASP.NET MVC 4-Ex02-랩 HomeController Using*)
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample6.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample6.cs)]
+~~~
 6. 업데이트는 **인덱스** 동작을 사용 하 여 **HttpClient** 갤러리 데이터 검색을 사용 하 여는 **JavaScriptSerializer** 뷰 모델을 deserialize 하는 데 있습니다.
 
     (코드 조각- *ASP.NET MVC 4-Ex02-랩 인덱스 동작*)
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample7.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample7.cs)]
+~~~
 7. 열기는 **Index.cshtml** 아래에 있는 파일의 **Views\Home** 폴더 및 모든 콘텐츠를 다음 코드로 바꿉니다.
 
     이 코드는 서비스에서 검색 된 모든 사진 하는 순서가 지정 되지 않은 목록으로 표시입니다.
@@ -363,7 +377,9 @@ ASP.NET MVC 4 모바일 앱을 위해 웹 사이트 및 태블릿 브라우저�
     (코드 조각- *ASP.NET MVC 4-Ex02-랩 사진 목록*)
 
 
-    [!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample8.cshtml)]
+~~~
+[!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample8.cshtml)]
+~~~
 8. 에 **솔루션 탐색기**를 마우스 오른쪽 단추로 클릭는 **콘텐츠** 프로젝트 및 선택의 폴더 **추가 | 기존 항목**합니다. 찾아는 **Source\Assets\Content** 이 랩의 폴더를 추가 하 고는 **Site.css** 파일입니다. 대체를 확인 해야 합니다. 있는 경우는 **Site.css** 파일을 열 수, 파일을 다시 로드할지도 확인 해야 합니다.
 9. 파일 탐색기를 열고 전체를 복사 **사진** 폴더 아래에 **Source\Assets** 솔루션 탐색기에서 프로젝트의 루트 폴더에이 랩의 폴더입니다.
 10. 응용 프로그램을 실행합니다. 이제 갤러리에는 사진 표시 홈 페이지가 나타납니다.
@@ -385,12 +401,12 @@ ASP.NET MVC 4에서 키 업데이트 중 하나에 모바일 개발에 대 한 �
 
 1. 열기는 **시작** 솔루션에 있는 **소스/Ex3-MobileSupport/시작/** 폴더입니다. 그렇지 않은 경우 계속 사용할 수도 있습니다는 **끝** 솔루션, 이전 연습을 완료 하 여 가져옵니다.
 
-    1. 제공 된 연 경우 **시작** 를 일부 누락 된 NuGet 패키지를 다운로드 해야 합니다 솔루션을 계속 하려면. 이 작업을 수행 하려면는 **프로젝트** 메뉴와 선택 **NuGet 패키지 관리**합니다.
-    2. 에 **NuGet 패키지 관리** 대화 상자를 클릭 하 여 **복원** 누락 된 패키지를 다운로드 하려면.
-    3. 마지막으로,를 클릭 하 여 솔루션을 빌드합니다 **빌드** | **솔루션 빌드**합니다.
+   1. 제공 된 연 경우 **시작** 를 일부 누락 된 NuGet 패키지를 다운로드 해야 합니다 솔루션을 계속 하려면. 이 작업을 수행 하려면는 **프로젝트** 메뉴와 선택 **NuGet 패키지 관리**합니다.
+   2. 에 **NuGet 패키지 관리** 대화 상자를 클릭 하 여 **복원** 누락 된 패키지를 다운로드 하려면.
+   3. 마지막으로,를 클릭 하 여 솔루션을 빌드합니다 **빌드** | **솔루션 빌드**합니다.
 
-    > [!NOTE]
-    > NuGet을 사용 하 여의 장점 중 하나 없습니다 있는입니다 써 해당 프로젝트의 모든 라이브러리를 프로젝트 크기를 줄이면 합니다. NuGet 파워 도구 Packages.config 파일에서 패키지 버전을 지정 하 여 해야 합니다를 처음으로 프로젝트를 실행 하면 필요한 라이브러리를 다운로드할 수 있습니다. 이 때문에이 랩에서 기존 솔루션을 연 후 다음이 단계를 실행 해야 합니다.
+      > [!NOTE]
+      > NuGet을 사용 하 여의 장점 중 하나 없습니다 있는입니다 써 해당 프로젝트의 모든 라이브러리를 프로젝트 크기를 줄이면 합니다. NuGet 파워 도구 Packages.config 파일에서 패키지 버전을 지정 하 여 해야 합니다를 처음으로 프로젝트를 실행 하면 필요한 라이브러리를 다운로드할 수 있습니다. 이 때문에이 랩에서 기존 솔루션을 연 후 다음이 단계를 실행 해야 합니다.
 2. 열기는 **패키지 관리자 콘솔** 클릭 하 여는 **도구** &gt; **라이브러리 패키지 관리자** &gt; **패키지 관리자 콘솔** 메뉴 옵션입니다.
 
     ![NuGet 패키지 관리자 콘솔을 열고](whats-new-in-aspnet-mvc-4/_static/image22.png "NuGet 패키지 관리자 콘솔을 열고")
@@ -419,7 +435,9 @@ ASP.NET MVC 4에서 키 업데이트 중 하나에 모바일 개발에 대 한 �
     (코드 조각- *ASP.NET MVC 4-Ex03-랩 레지스터 모바일 번들*)
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample10.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample10.cs)]
+~~~
 5. 데스크톱 웹 브라우저를 사용 하 여 응용 프로그램을 실행 합니다.
 6. 열기는 **Windows Phone 7 Emulator** 에 **시작 메뉴 | 모든 프로그램 | Windows Phone SDK 7.1 | Windows Phone 에뮬레이터입니다.**
 7. Phone 시작 화면에서 Internet Explorer를 엽니다. 응용 프로그램을 시작할 URL을 확인 하 고 전화 브라우저와 해당 URL로 이동 (예: `http://localhost:[PortNumber]/`).
@@ -445,19 +463,21 @@ ASP.NET MVC 4에서 키 업데이트 중 하나에 모바일 개발에 대 한 �
 2. 새 만든 열기 **Index.Mobile.cshtml** 보기 및 기존 바꾸기 &lt;ul&gt; 이 코드로 태그입니다. 이 통해 업데이트 됩니다.는 &lt;ul&gt; jQuery 모바일 데이터의 주석에서 jQuery 모바일 테마를 사용 하는 태그입니다.
 
 
-    [!code-html[Main](whats-new-in-aspnet-mvc-4/samples/sample11.html)]
+~~~
+[!code-html[Main](whats-new-in-aspnet-mvc-4/samples/sample11.html)]
 
-    > [!NOTE] 
-    > 
-    > 다음 사항을 참고하세요.
-    > 
-    > - **데이터 역할** 특성이로 설정 **listview** listview 스타일을 사용 하 여 목록을 렌더링 합니다.
-    > 
-    > - **데이터 inset** 특성이 true로 설정 둥근된 테두리 및 여백을 사용 하 여 목록에 표시 됩니다.
-    > 
-    > - **데이터 필터** 특성이로 설정 **true** 검색 상자를 생성 합니다.
-    > 
-    > JQuery 모바일 규칙 프로젝트 문서에 대해 자세히 알아볼 수 있습니다: [ [http://jquerymobile.com/demos/1.1.1/](http://jquerymobile.com/demos/1.1.1/)](http://jquerymobile.com/demos/1.1.1/)
+> [!NOTE] 
+> 
+> Notice that:
+> 
+> - The **data-role** attribute set to **listview** will render the list using the listview styles.
+> 
+> - The **data-inset** attribute set to true will show the list with rounded border and margin.
+> 
+> - The **data-filter** attribute set to **true** will generate a search box.
+> 
+> You can learn more about jQuery Mobile conventions in the project documentation: [[http://jquerymobile.com/demos/1.1.1/](http://jquerymobile.com/demos/1.1.1/)](http://jquerymobile.com/demos/1.1.1/)
+~~~
 3. 키를 눌러 **CTRL + S** 여 변경 내용을 저장 합니다.
 4. 전환 하는 **Windows Phone 에뮬레이터** 사이트를 새로 고칩니다. 갤러리 목록 뿐만 아니라 새로운 검색 상자 위쪽에 있는의 새로운 디자인을 확인 합니다. 그런 다음 검색 상자에 단어를 입력 (예를 들어, **Tulips**) 사진 갤러리에서 검색을 시작 하려면.
 
@@ -493,7 +513,9 @@ jQuery Mobile 기본 테마 문자 권한이 부여 된 5 견본 포함 (a, b, c
 3. 로 설정 하는 데이터-역할 div 요소를 찾은 &quot;페이지&quot; 하 고 업데이트는 **데이터 테마** 를 &quot; **e**&quot;합니다.
 
 
-    [!code-html[Main](whats-new-in-aspnet-mvc-4/samples/sample13.html)]
+~~~
+[!code-html[Main](whats-new-in-aspnet-mvc-4/samples/sample13.html)]
+~~~
 4. 키를 눌러 **CTRL + S** 여 변경 내용을 저장 합니다.
 5. 사이트 새로 고침의 **Windows Phone 에뮬레이터** 새 색 구성표를 확인 합니다.
 
@@ -549,14 +571,16 @@ jQuery Mobile 기본 테마 문자 권한이 부여 된 5 견본 포함 (a, b, c
 4. 로그인 섹션을 찾아 렌더링에 대 한 호출을 삽입의  **\_ViewSwitcher** 아래 부분 뷰는  **\_LogOnPartial** 부분 뷰입니다. 그런 다음 눌러 **CTRL + S** 여 변경 내용을 저장 합니다.
 
 
-    [!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample14.cshtml)]
+~~~
+[!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample14.cshtml)]
+~~~
 5. 키를 눌러 **CTRL + S** 여 변경 내용을 저장 합니다.
 6. Windows Phone 에뮬레이터에서 페이지를 새로 고치고 확대 하려면 화면을 두 번 클릭 합니다. 홈 페이지에 이제 표시에 **모바일 보기** 모바일에서 데스크톱 보기로 전환 하는 링크입니다.
 
     ![바탕 화면 보기에서 렌더링 전환기 볼](whats-new-in-aspnet-mvc-4/_static/image32.png "뷰 전환기 바탕 화면 보기에서 렌더링")
 
     *바탕 화면 보기에서 렌더링 된 뷰 전환기*
-7. 모바일 뷰로 다시 전환 하 고 찾아보기 **에 대 한** 페이지 (http://localhost [port] / Home/에 대 한). About.Mobile.cshtml 보기를 만들지 않은 경우에 정보 페이지 표시 되는지 확인 모바일 레이아웃을 사용 하 여 (\_Layout.Mobile.cshtml).
+7. 모바일 뷰로 다시 전환 하 고 찾아보기 <strong>에 대 한</strong> 페이지 (http://localhost[port] / Home/에 대 한). About.Mobile.cshtml 보기를 만들지 않은 경우에 정보 페이지 표시 되는지 확인 모바일 레이아웃을 사용 하 여 (\_Layout.Mobile.cshtml).
 
     ![페이지에 대 한](whats-new-in-aspnet-mvc-4/_static/image33.png "페이지에 대 한")
 
@@ -580,32 +604,38 @@ jQuery Mobile 기본 테마 문자 권한이 부여 된 5 견본 포함 (a, b, c
 2. 열기 **Global.asax.cs** 다음 추가 문을 사용 하 여 합니다.
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample15.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample15.cs)]
+~~~
 3. 응용 프로그램에 다음 강조 표시 된 코드를 추가\_메서드를 시작 합니다.
 
     (코드 조각- *ASP.NET MVC 4 랩-Ex03-iPhone DisplayMode*)
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample16.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample16.cs)]
 
-    새 등록 **라는 DefaultDisplayMode &quot;iPhone&quot;**, 정적 내 **DisplayModeProvider.Instance.Modes** 과 일치 하는 정적 목록 들어오는 각 요청 합니다. 들어오는 요청에는 문자열이 포함 되어 있으면 &quot;iPhone&quot;, ASP.NET MVC에서 이름이 포함 하는 뷰를 찾습니다는 &quot;iPhone&quot; 접미사입니다. 매개 변수 0 특정는 새 모드; 나타냅니다. 이 뷰는 일반적인 보다 구체적인 예를 들어, &quot;.mobile&quot; 모바일 장치의 요청을에서 일치 하는 규칙입니다.
+You have registered a new **DefaultDisplayMode named &quot;iPhone&quot;**, within the static **DisplayModeProvider.Instance.Modes** static list, that will be matched against each incoming request. If the incoming request contains the string &quot;iPhone&quot;, ASP.NET MVC will find the views whose name contain the &quot;iPhone&quot; suffix. The 0 parameter indicates how specific is the new mode; for instance, this view is more specific than the general &quot;.mobile&quot; rule that matches requests from mobile devices.
 
-    응용 프로그램을 사용 하는 iPhone 브라우저 요청을 생성 하는 경우이 코드가 실행 된 후 합니다는 **Views\Shared\\_Layout.iPhone.cshtml** 레이아웃에서 다음 단계를 만듭니다.
+After this code runs, when an iPhone browser generates a request, your application will use the **Views\Shared\\_Layout.iPhone.cshtml** layout you will create in the next steps.
 
-    > [!NOTE]
-    > 이러한 방식의 iPhone 데모 용도로 간소화 되었습니다 (예에서는 테스트는 대/소문자 구분) 예의 모든 iPhone 사용자 에이전트 문자열에 대해 예상 대로 작동 하지 않을 수에 대 한 요청을 테스트 합니다.
-4. 복사본을 만듭니다는  **\_Layout.Mobile.cshtml** 파일에 **Views\Shared** 폴더에 복사본의 이름을 바꾼 및 &quot;  **\_Layout.iPhone.csthml** &quot;.
+> [!NOTE]
+> This way of testing the request for iPhone has been simplified for demo purposes and might not work as expected for every iPhone user agent string (for example test is case sensitive).
+~~~
+4. 복사본을 만듭니다는  **\_Layout.Mobile.cshtml** 파일에 **Views\Shared** 폴더에 복사본의 이름을 바꾼 및 &quot; **\_Layout.iPhone.csthml**&quot;.
 5. 열기  **\_Layout.iPhone.csthml** 이전 단계에서 만든 합니다.
 6. 데이터 역할 특성 설정 하 여 div 요소를 찾아 **페이지** 변경 하 고는 **데이터 테마** 특성을 &quot; **는**&quot;합니다.
 
 
-    [!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample17.cshtml)]
+~~~
+[!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample17.cshtml)]
 
-    이제 ASP.NET MVC 4 응용 프로그램에서 3 레이아웃을 사용할 수 있습니다.
+Now you have 3 layouts in your ASP.NET MVC 4 application:
 
-    1. **\_Layout.cshtml**: 데스크톱 브라우저의 경우에 사용 되는 기본 레이아웃 합니다.
-    2. **\_Layout.mobile.cshtml**: 모바일 장치에 사용 되는 기본 레이아웃 합니다.
-    3. **\_Layout.iPhone.cshtml**: 구별 하기 위해 다른 색 구성표를 사용 하는 iPhone 장치에 대 한 특정 레이아웃 \_Layout.mobile.cshtml 합니다.
+1. **\_Layout.cshtml**: default layout used for desktop browsers.
+2. **\_Layout.mobile.cshtml**: default layout used for mobile devices.
+3. **\_Layout.iPhone.cshtml**: specific layout for iPhone devices, using a different color scheme to differentiate from \_Layout.mobile.cshtml.
+~~~
 7. 키를 눌러 **F5** 응용 프로그램을 실행 하 고 사이트에서 탐색 하 고 **Windows Phone 에뮬레이터**합니다.
 8. 열기는 **iPhone 시뮬레이터** (참조 [부록 C](#AppendixC) 설치 하 고 iPhone 시뮬레이터가 구성 하는 방법에 대 한 지침은), 너무 사이트를 찾습니다. 각 전화는 특정 템플릿을 사용 하 고 있는지 확인 합니다.
 
@@ -620,52 +650,62 @@ jQuery Mobile 기본 테마 문자 권한이 부여 된 5 견본 포함 (a, b, c
 
 Microsoft.NET Framework 4.5에서는 C# 및 Visual Basic로 비동기.NET 프로그래밍에 대 한 새 기초를 제공 하는 새로운 언어 기능을 소개 합니다. 이 새 foundation 비슷합니다-쉽고 약-동기 프로그래밍으로 간단한 비동기 프로그래밍을 사용 하십시오. ASP.NET MVC 4의 비동기 작업 메서드를 사용 하 여 쓸 수는 **AsyncController** 클래스입니다. 장기 실행에 대 한 비동기 작업 메서드를 사용할 수 있는데, CPU 바인딩되지 않은 요청 합니다. 이렇게 차단 하는 웹 서버의 요청 처리 되는 동안 작업을 수행 합니다. AsyncController 클래스는 일반적으로 장기 실행 웹 서비스 호출에 사용 됩니다.
 
-이 연습에서는 ASP.NET MVC 4의 비동기 작업의 기본 사항을 설명합니다. 심층 분석 하려는 경우 다음 문서 아웃 확인할 수 있습니다: [ [https://msdn.microsoft.com/library/ee728598%28v=vs.100%29.aspx](https://msdn.microsoft.com/library/ee728598%28v=vs.100%29.aspx)](https://msdn.microsoft.com/library/ee728598%28v=vs.100%29.aspx)
+이 연습에서는 ASP.NET MVC 4의 비동기 작업의 기본 사항을 설명합니다. 심층 분석 하려는 경우에 다음 문서 아웃 확인할 수 있습니다. [[https://msdn.microsoft.com/library/ee728598%28v=vs.100%29.aspx](https://msdn.microsoft.com/library/ee728598%28v=vs.100%29.aspx)](https://msdn.microsoft.com/library/ee728598%28v=vs.100%29.aspx)
 
 <a id="Task_1_-_Implementing_an_Asynchronous_Controller"></a>
 #### <a name="task-1---implementing-an-asynchronous-controller"></a>작업 1-비동기 컨트롤러를 구현 합니다.
 
 1. 열기는 **시작** 솔루션에 있는 **소스/Ex4-Async/시작/** 폴더입니다. 그렇지 않은 경우 계속 사용할 수도 있습니다는 **끝** 솔루션, 이전 연습을 완료 하 여 가져옵니다.
 
-    1. 제공 된 연 경우 **시작** 를 일부 누락 된 NuGet 패키지를 다운로드 해야 합니다 솔루션을 계속 하려면. 이 작업을 수행 하려면는 **프로젝트** 메뉴와 선택 **NuGet 패키지 관리**합니다.
-    2. 에 **NuGet 패키지 관리** 대화 상자를 클릭 하 여 **복원** 누락 된 패키지를 다운로드 하려면.
-    3. 마지막으로,를 클릭 하 여 솔루션을 빌드합니다 **빌드** | **솔루션 빌드**합니다.
+   1. 제공 된 연 경우 **시작** 를 일부 누락 된 NuGet 패키지를 다운로드 해야 합니다 솔루션을 계속 하려면. 이 작업을 수행 하려면는 **프로젝트** 메뉴와 선택 **NuGet 패키지 관리**합니다.
+   2. 에 **NuGet 패키지 관리** 대화 상자를 클릭 하 여 **복원** 누락 된 패키지를 다운로드 하려면.
+   3. 마지막으로,를 클릭 하 여 솔루션을 빌드합니다 **빌드** | **솔루션 빌드**합니다.
 
-    > [!NOTE]
-    > NuGet을 사용 하 여의 장점 중 하나 없습니다 있는입니다 써 해당 프로젝트의 모든 라이브러리를 프로젝트 크기를 줄이면 합니다. NuGet 파워 도구 Packages.config 파일에서 패키지 버전을 지정 하 여 해야 합니다를 처음으로 프로젝트를 실행 하면 필요한 라이브러리를 다운로드할 수 있습니다. 이 때문에이 랩에서 기존 솔루션을 연 후 다음이 단계를 실행 해야 합니다.
+      > [!NOTE]
+      > NuGet을 사용 하 여의 장점 중 하나 없습니다 있는입니다 써 해당 프로젝트의 모든 라이브러리를 프로젝트 크기를 줄이면 합니다. NuGet 파워 도구 Packages.config 파일에서 패키지 버전을 지정 하 여 해야 합니다를 처음으로 프로젝트를 실행 하면 필요한 라이브러리를 다운로드할 수 있습니다. 이 때문에이 랩에서 기존 솔루션을 연 후 다음이 단계를 실행 해야 합니다.
 2. 열기는 **HomeController.cs** 에서 클래스는 **컨트롤러** 폴더입니다.
 3. 다음 추가 문을 사용 하 여 합니다.
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample18.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample18.cs)]
+~~~
 4. 업데이트는 **HomeController** 클래스에서 상속 하도록 **AsyncController**합니다. 컨트롤러 AsyncController에서 파생 되는 비동기 요청을 처리 하는 ASP.NET을 사용 하 고 여전히 서비스 동기 작업 메서드 할 수 있습니다.
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample19.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample19.cs)]
+~~~
 5. 추가 **비동기** 키워드를는 **인덱스** 메서드 형식을 반환 하 고 **작업&lt;ActionResult&gt;**합니다.
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample20.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample20.cs)]
 
-    > [!NOTE]
-    > **비동기** 키워드를 사용 하면.NET Framework 4.5를 제공 하는 새 키워드 중 하나인;이 메서드에 비동기 코드를 포함 하는 컴파일러 표시 합니다. A **작업** 개체는 특정 시점에 나중에 완료할 수 있는 비동기 작업을 나타냅니다.
+> [!NOTE]
+> The **async** keyword is one of the new keywords the .NET Framework 4.5 provides; it tells the compiler that this method contains asynchronous code. A **Task** object represents an asynchronous operation that may complete at some point in the future.
+~~~
 6. 대체는 **클라이언트입니다. GetAsync()** 아래와 같이 await 키워드를 사용 하 여 전체 비동기 버전 사용 하 여 호출 합니다.
 
     (코드 조각- *ASP.NET MVC 4-Ex04-랩 GetAsync*)
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample21.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample21.cs)]
 
-    > [!NOTE]
-    > 사용 하 던 이전 버전에서의 **결과** 속성은 **작업** 결과 (동기화 버전)를 반환 될 때까지 스레드를 차단 하는 개체입니다.
-    > 
-    > 추가 **await** 키워드를 메서드 호출에서 반환 된 작업을 비동기적으로 기다리는 컴파일러에 알립니다. 즉, 코드의 나머지 대기 중이 던된 메서드가 완료 된 후에 콜백으로 실행 됩니다. 다른 눈에 띄는 것은이 작동 될 수 있도록 하기 위해 try / catch 블록을 변경할 필요가 없습니다: 프레임 워크에서 제공 된 처리기를 사용 하는 추가 작업 없이 포그라운드 또는 백그라운드에서 발생 하는 예외를 발생 계속 됩니다.
+> [!NOTE]
+> In the previous version, you were using the **Result** property from the **Task** object to block the thread until the result is returned (sync version).
+> 
+> Adding the **await** keyword tells the compiler to asynchronously wait for the task returned from the method call. This means that the rest of the code will be executed as a callback only after the awaited method completes. Another thing to notice is that you do not need to change your try-catch block in order to make this work: the exceptions that happen in background or in foreground will still be caught without any extra work using a handler provided by the framework.
+~~~
 7. 아래와 같이 새 코드 줄을 대체 하 여 비동기 구현의을 계속 하는 코드 변경
 
     (코드 조각- *ASP.NET MVC 4-Ex04-랩 ReadAsStringAsync*)
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample22.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample22.cs)]
+~~~
 8. 응용 프로그램을 실행합니다. 크게 변경 되지를 확인할 수 있지만 코드 스레드 풀은 서버 리소스의 더 나은 사용량 및 성능 향상에서 스레드를 차단 하지 않습니다.
 
     > [!NOTE]
@@ -680,31 +720,43 @@ Microsoft.NET Framework 4.5에서는 C# 및 Visual Basic로 비동기.NET 프로
 2. 다음 코드를 추가 하는 문을 사용 하는 **HomeController.cs** 파일입니다.
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample23.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample23.cs)]
+~~~
 3. 받을 인덱스 동작을 업데이트 한 **CancellationToken** 인수입니다.
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample24.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample24.cs)]
+~~~
 4. 업데이트는 **GetAsync** 호출 취소 토큰을 전달 합니다.
 
     (코드 조각- *CancellationToken과 함께 ASP.NET MVC 4-Ex04-랩 SendAsync*)
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample25.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample25.cs)]
+~~~
 5. 데코 레이트는 *인덱스* 메서드는 **AsyncTimeout** 특성이 500 밀리초로 설정 및 **HandleError** 처리 하도록 구성 하는 특성  **TaskCanceledException** 리디렉션하여는 **TimedOut** 보기.
 
     (코드 조각- *ASP.NET MVC 4-Ex04-랩 특성*)
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample26.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample26.cs)]
+~~~
 6. 열기는 **PhotoController** 클래스 및 업데이트는 **갤러리** 메서드를 장기 실행 작업을 시뮬레이션 하는 실행 1000 밀리초 (1 초)을 지연 합니다.
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample27.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample27.cs)]
+~~~
 7. 열기는 **Web.config** 파일을 다음 요소를 추가 하 여 사용자 지정 오류를 사용 합니다.
 
 
-    [!code-xml[Main](whats-new-in-aspnet-mvc-4/samples/sample28.xml)]
+~~~
+[!code-xml[Main](whats-new-in-aspnet-mvc-4/samples/sample28.xml)]
+~~~
 8. 새 보기 만들기 **Views\Shared** 라는 **TimedOut** 및 기본 레이아웃을 사용 합니다. 솔루션 탐색기에서 마우스 오른쪽 단추로 클릭는 **Views\Shared** 폴더를 선택 **추가 | 보기**합니다.
 
     ![각 모바일 장치에 대 한 서로 다른 뷰를 사용 하 여](whats-new-in-aspnet-mvc-4/_static/image36.png "서로 다른 뷰를 사용 하 여 각 모바일 장치에 대 한")
@@ -713,7 +765,9 @@ Microsoft.NET Framework 4.5에서는 C# 및 Visual Basic로 비동기.NET 프로
 9. 업데이트는 **TimedOut** 아래와 같이 콘텐츠를 보고 합니다.
 
 
-    [!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample29.cshtml)]
+~~~
+[!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample29.cshtml)]
+~~~
 10. 응용 프로그램을 실행 하 고 루트 URL로 이동 합니다. 추가한는 **Thread.Sleep** 1000 밀리초에서 생성 된 시간 제한 오류를 얻게 됩니다는 **AsyncTimeout** 특성과 여 catch는 **HandleError** 특성입니다.
 
     ![처리 시간 제한 예외](whats-new-in-aspnet-mvc-4/_static/image37.png "처리 시간 제한 예외")
@@ -788,9 +842,9 @@ Microsoft.NET Framework 4.5에서는 C# 및 Visual Basic로 비동기.NET 프로
 <a id="Appendix_B_Installing_Visual_Studio_Express_2012_for_Web"></a>
 ## <a name="appendix-b-installing-visual-studio-express-2012-for-web"></a>부록 b: 설치 Visual Studio Express 2012 for Web
 
-설치할 수 있습니다 **Microsoft Visual Studio Express 2012 for Web** 또는 다른 &quot;Express&quot; 버전을 사용 하 여  **[Microsoft 웹 플랫폼 설치 관리자](https://www.microsoft.com/web/downloads/platform.aspx)** . 다음 지침을 설치 하는 데 필요한 단계를 안내 하 *Visual studio Express 2012 for Web* 를 사용 하 여 *Microsoft 웹 플랫폼 설치 관리자*합니다.
+설치할 수 있습니다 **Microsoft Visual Studio Express 2012 for Web** 또는 다른 &quot;Express&quot; 버전을 사용 하 여 **[Microsoft 웹 플랫폼 설치 관리자](https://www.microsoft.com/web/downloads/platform.aspx)**. 다음 지침을 설치 하는 데 필요한 단계를 안내 하 *Visual studio Express 2012 for Web* 를 사용 하 여 *Microsoft 웹 플랫폼 설치 관리자*합니다.
 
-1. 로 이동 [ [https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169)합니다. 또는 이미 설치 된 웹 플랫폼 설치 관리자를 열 수 있습니다 및 제품에 대 한 검색 &quot; *Visual Studio Express 2012 for Web Windows Azure SDK와*&quot;합니다.
+1. 로 이동 [ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169)합니다. 또는 이미 설치 된 웹 플랫폼 설치 관리자를 열 수 있습니다 및 제품에 대 한 검색 &quot; <em>Visual Studio Express 2012 for Web Windows Azure SDK와</em>&quot;합니다.
 2. 클릭 **지금 설치**합니다. 없는 경우 **웹 플랫폼 설치 관리자** 를 다운로드 하 여 앱을 먼저 설치 이동 합니다.
 3. 한 번 **웹 플랫폼 설치 관리자** 열려 클릭 **설치** 는 설치 프로그램을 시작 합니다.
 
@@ -831,7 +885,7 @@ Microsoft.NET Framework 4.5에서는 C# 및 Visual Basic로 비동기.NET 프로
 <a id="Task_1_-_Installing_WebMatrix_2"></a>
 #### <a name="task-1---installing-webmatrix-2"></a>작업 1-WebMatrix 2 설치
 
-1. 로 이동 [ [https://go.microsoft.com/?linkid=9809776](https://go.microsoft.com/?linkid=9809776)](https://go.microsoft.com/?linkid=9810169)합니다. 또는 이미 설치 된 웹 플랫폼 설치 관리자를 열 수 있습니다 및 제품에 대 한 검색 &quot; *WebMatrix 2*&quot;합니다.
+1. 로 이동 [ [ https://go.microsoft.com/?linkid=9809776 ](https://go.microsoft.com/?linkid=9809776) ](https://go.microsoft.com/?linkid=9810169)합니다. 또는 이미 설치 된 웹 플랫폼 설치 관리자를 열 수 있습니다 및 제품에 대 한 검색 &quot; <em>WebMatrix 2</em>&quot;합니다.
 2. 클릭 **지금 설치**합니다. 없는 경우 **웹 플랫폼 설치 관리자** 를 다운로드 하 여 앱을 먼저 설치 이동 합니다.
 3. 한 번 **웹 플랫폼 설치 관리자** 열려 클릭 **설치** 는 설치 프로그램을 시작 합니다.
 
@@ -901,13 +955,13 @@ Microsoft.NET Framework 4.5에서는 C# 및 Visual Basic로 비동기.NET 프로
 3. 에 &quot;브라우저&quot; 대화 상자를 클릭 하 여 **추가**합니다.
 4. 에 &quot;프로그램 추가&quot; 대화 상자에서 다음 값을 사용 합니다.
 
-    - **프로그램**: C:\Users\*{CurrentUser}*\AppData\Local\Microsoft\WebMatrix\Extensions\20\iPhoneSimulator\ElectricMobileSim\ElectricMobileSim.exe *(경로 적절 하 게 업데이트)*
-    - **인수**: &quot;1&quot;
-    - **식별 이름**: iPhone 시뮬레이터
+   - <strong>프로그램</strong>: C:\Users\*{CurrentUser}<em>\AppData\Local\Microsoft\WebMatrix\Extensions\20\iPhoneSimulator\ElectricMobileSim\ElectricMobileSim.exe * (경로 적절 하 게 업데이트)</em>
+   - **인수**: &quot;1&quot;
+   - **식별 이름**: iPhone 시뮬레이터
 
-    ![프로그램 추가](whats-new-in-aspnet-mvc-4/_static/image59.png "프로그램 추가")
+     ![프로그램 추가](whats-new-in-aspnet-mvc-4/_static/image59.png "프로그램 추가")
 
-    *로 검색 하도록 프로그램 추가*
+     *로 검색 하도록 프로그램 추가*
 5. 클릭 **확인** 대화 상자를 닫습니다.
 6. 이제 Visual Studio 2012에서 iPhone 시뮬레이터에서 웹 응용 프로그램을 실행할 수 있습니다.
 
@@ -1030,14 +1084,14 @@ Microsoft.NET Framework 4.5에서는 C# 및 Visual Basic로 비동기.NET 프로
     *웹 배포 구성*
 5. 다음과 같이 데이터베이스 연결을 구성 합니다.
 
-    - 에 **서버 이름** SQL 데이터베이스 서버 URL 사용 하 여 입력 된 *tcp:* 접두사입니다.
-    - **사용자 이름** 서버 관리자 로그인 이름을 입력 합니다.
-    - **암호** 서버 관리자 로그인 암호를 입력 합니다.
-    - 예를 들어 새 데이터베이스 이름 입력: *MVC4SampleDB*합니다.
+   - 에 **서버 이름** SQL 데이터베이스 서버 URL 사용 하 여 입력 된 *tcp:* 접두사입니다.
+   - **사용자 이름** 서버 관리자 로그인 이름을 입력 합니다.
+   - **암호** 서버 관리자 로그인 암호를 입력 합니다.
+   - 예를 들어 새 데이터베이스 이름 입력: *MVC4SampleDB*합니다.
 
-    ![대상 연결 문자열 구성](whats-new-in-aspnet-mvc-4/_static/image77.png "대상 연결 문자열 구성")
+     ![대상 연결 문자열 구성](whats-new-in-aspnet-mvc-4/_static/image77.png "대상 연결 문자열 구성")
 
-    *대상 연결 문자열 구성*
+     *대상 연결 문자열 구성*
 6. 그런 다음 **확인**을 클릭합니다. 데이터베이스를 만들려는 대화 상자가 나타나면 **예**합니다.
 
     ![데이터베이스를 만드는](whats-new-in-aspnet-mvc-4/_static/image78.png "데이터베이스 문자열 만들기")

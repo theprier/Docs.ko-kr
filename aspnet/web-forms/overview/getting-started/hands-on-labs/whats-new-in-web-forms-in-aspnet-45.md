@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/hands-on-labs/whats-new-in-web-forms-in-aspnet-45
-title: "ASP.NET 4.5에에서 Forms 웹의 새로운 기능 | Microsoft Docs"
+title: ASP.NET 4.5에에서 Forms 웹의 새로운 기능 | Microsoft Docs
 author: rick-anderson
-description: "새 버전의 ASP.NET Web Forms 다양 한 기능이 향상 데이터로 작업할 때 사용자 환경을 개선 하는 데 초점을 소개 합니다. 이전 버전의..."
+description: 새 버전의 ASP.NET Web Forms 다양 한 기능이 향상 데이터로 작업할 때 사용자 환경을 개선 하는 데 초점을 소개 합니다. 이전 버전의...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/whats-new-in-web-forms-in-aspnet-45
 msc.type: authoredcontent
-ms.openlocfilehash: 560f949f79be8ba4936e4a6f8ee8ee32ef15acbf
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: db2658ff1feae1d4c20e4cfd19c36cfdf9492761
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="whats-new-in-web-forms-in-aspnet-45"></a>Asp.net 4.5 Web Forms의 새로운 기능
 ====================
@@ -42,7 +42,7 @@ ms.lasthandoff: 01/24/2018
 > 
 > 공식 ASP.NET 포털에서 ASP.NET WebForms 4.5의 새로운 기능 추가 예제를 찾을 수 있습니다: [ASP.NET 4.5 및 Visual Studio 2012의 새로운](../../../../whitepapers/whats-new-in-aspnet-45-and-visual-studio-2012.md#_Toc318097385)
 > 
-> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409)합니다.
+> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [ https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409 ](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409)합니다.
 
 
 <a id="Objectives"></a>
@@ -59,7 +59,7 @@ ms.lasthandoff: 01/24/2018
 - Web Forms에서 처리 하는 비동기 페이지를 구현 합니다.
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>필수 구성 요소
+### <a name="prerequisites"></a>전제 조건
 
 이 랩을 완료 하려면 다음 항목이 있어야 합니다.
 
@@ -103,12 +103,12 @@ ASP.NET Web Forms의 새 버전의 기능이 상당히 데이터로 작업할 �
 
 1. 열기는 **시작** 솔루션에 있는 **소스/e x 1-ModelBinding/시작/** 폴더입니다.
 
-    1. 일부 누락 된 NuGet 패키지를 다운로드 해야 합니다 전에 계속 합니다. 이 작업을 수행 하려면는 **프로젝트** 메뉴와 선택 **NuGet 패키지 관리**합니다.
-    2. 에 **NuGet 패키지 관리** 대화 상자를 클릭 하 여 **복원** 누락 된 패키지를 다운로드 하려면.
-    3. 마지막으로,를 클릭 하 여 솔루션을 빌드합니다 **빌드** | **솔루션 빌드**합니다.
+   1. 일부 누락 된 NuGet 패키지를 다운로드 해야 합니다 전에 계속 합니다. 이 작업을 수행 하려면는 **프로젝트** 메뉴와 선택 **NuGet 패키지 관리**합니다.
+   2. 에 **NuGet 패키지 관리** 대화 상자를 클릭 하 여 **복원** 누락 된 패키지를 다운로드 하려면.
+   3. 마지막으로,를 클릭 하 여 솔루션을 빌드합니다 **빌드** | **솔루션 빌드**합니다.
 
-    > [!NOTE]
-    > NuGet을 사용 하 여의 장점 중 하나 없습니다 있는입니다 써 해당 프로젝트의 모든 라이브러리를 프로젝트 크기를 줄이면 합니다. NuGet 파워 도구 Packages.config 파일에서 패키지 버전을 지정 하 여 해야 합니다를 처음으로 프로젝트를 실행 하면 필요한 라이브러리를 다운로드할 수 있습니다. 이 때문에이 랩에서 기존 솔루션을 연 후 다음이 단계를 실행 해야 합니다.
+      > [!NOTE]
+      > NuGet을 사용 하 여의 장점 중 하나 없습니다 있는입니다 써 해당 프로젝트의 모든 라이브러리를 프로젝트 크기를 줄이면 합니다. NuGet 파워 도구 Packages.config 파일에서 패키지 버전을 지정 하 여 해야 합니다를 처음으로 프로젝트를 실행 하면 필요한 라이브러리를 다운로드할 수 있습니다. 이 때문에이 랩에서 기존 솔루션을 연 후 다음이 단계를 실행 해야 합니다.
 2. 열기는 **Customers.aspx** 페이지. 주 제어에 번호가 없는 목록을 놓고 각 고객을 나열 하기 위한 내부 반복기 컨트롤을 포함 합니다. 반복기 이름을 설정 **customersRepeater** 다음 코드에 나와 있는 것 처럼 합니다.
 
     이전 버전의 Web Forms, 데이터 바인딩 하는 데이터 바인딩 개체에 멤버의 값을 내보내는 데 사용 하는 경우 하려면, 사용 Eval 메서드를 호출 하는 데이터 바인딩 식 전달 멤버 이름 문자열입니다.
@@ -207,7 +207,7 @@ ASP.NET Web Forms의 새 버전의 기능이 상당히 데이터로 작업할 �
 <a id="Task_3_-_Value_Providers_in_Model_Binding"></a>
 #### <a name="task-3---value-providers-in-model-binding"></a>작업 3-모델 바인딩에 대 한 값 공급자
 
-모델 바인딩 작업 하는 데이터 바인딩된 컨트롤에서 직접 데이터를 사용자 지정 메서드를 지정할 수 있도록 뿐만 아니라 이러한 방법 중에서 매개 변수를 페이지에서 데이터를 매핑할 수 있습니다. 메서드 매개 변수에서 값의 데이터 원본을 지정 하려면 값 공급자 특성을 사용할 수 있습니다. 예:
+모델 바인딩 작업 하는 데이터 바인딩된 컨트롤에서 직접 데이터를 사용자 지정 메서드를 지정할 수 있도록 뿐만 아니라 이러한 방법 중에서 매개 변수를 페이지에서 데이터를 매핑할 수 있습니다. 메서드 매개 변수에서 값의 데이터 원본을 지정 하려면 값 공급자 특성을 사용할 수 있습니다. 예를 들어:
 
 - 페이지에 있는 컨트롤
 - 쿼리 문자열 값
@@ -341,12 +341,12 @@ ASP.NET MVC 4를 사용한 모델 바인딩 지원은 유사한 것을 확인할
 
 1. 열고 **Visual Studio 2012** 엽니다는 **시작** 솔루션에 있는 **Source\Ex2 Validation\Begin** 이 랩의 폴더입니다. 또는 이전 연습에서 기존 솔루션에 작업을 계속할 수 있습니다.
 
-    1. 제공 된 연 경우 **시작** 를 일부 누락 된 NuGet 패키지를 다운로드 해야 합니다 솔루션을 계속 하려면. 솔루션 탐색기에서이 작업을 수행 하려면는 **WebFormsLab** 프로젝트 **NuGet 패키지 관리**합니다.
-    2. 에 **NuGet 패키지 관리** 대화 상자를 클릭 하 여 **복원** 누락 된 패키지를 다운로드 하려면.
-    3. 마지막으로,를 클릭 하 여 솔루션을 빌드합니다 **빌드** | **솔루션 빌드**합니다.
+   1. 제공 된 연 경우 **시작** 를 일부 누락 된 NuGet 패키지를 다운로드 해야 합니다 솔루션을 계속 하려면. 솔루션 탐색기에서이 작업을 수행 하려면는 **WebFormsLab** 프로젝트 **NuGet 패키지 관리**합니다.
+   2. 에 **NuGet 패키지 관리** 대화 상자를 클릭 하 여 **복원** 누락 된 패키지를 다운로드 하려면.
+   3. 마지막으로,를 클릭 하 여 솔루션을 빌드합니다 **빌드** | **솔루션 빌드**합니다.
 
-    > [!NOTE]
-    > NuGet을 사용 하 여의 장점 중 하나 없습니다 있는입니다 써 해당 프로젝트의 모든 라이브러리를 프로젝트 크기를 줄이면 합니다. NuGet 파워 도구 Packages.config 파일에서 패키지 버전을 지정 하 여 해야 합니다를 처음으로 프로젝트를 실행 하면 필요한 라이브러리를 다운로드할 수 있습니다. 이 때문에이 랩에서 기존 솔루션을 연 후 다음이 단계를 실행 해야 합니다.
+      > [!NOTE]
+      > NuGet을 사용 하 여의 장점 중 하나 없습니다 있는입니다 써 해당 프로젝트의 모든 라이브러리를 프로젝트 크기를 줄이면 합니다. NuGet 파워 도구 Packages.config 파일에서 패키지 버전을 지정 하 여 해야 합니다를 처음으로 프로젝트를 실행 하면 필요한 라이브러리를 다운로드할 수 있습니다. 이 때문에이 랩에서 기존 솔루션을 연 후 다음이 단계를 실행 해야 합니다.
 2. 키를 눌러 **F5** 웹 응용 프로그램을 시작 합니다. 고객에 게 페이지 클릭 하 여 이동 된 **새 고객을 추가** 링크 합니다.
 3. 브라우저 페이지를 마우스 오른쪽 단추로 클릭 하 고 선택 **소스 보기** 옵션 응용 프로그램에 의해 생성 된 HTML 코드를 엽니다.
 
@@ -535,12 +535,12 @@ Web Forms 4.5, ModelState 개체 일관 된 방식으로 페이지에서 모델 
 
 1. 열기 **Visual Studio 2012** 로드는 **시작** 솔루션에 있는 **Source\Ex3 Async\Begin** 이 랩의이 폴더에서 합니다. 또는 이전 연습에서 기존 솔루션에 작업을 계속할 수 있습니다.
 
-    1. 제공 된 연 경우 **시작** 를 일부 누락 된 NuGet 패키지를 다운로드 해야 합니다 솔루션을 계속 하려면. 솔루션 탐색기에서이 작업을 수행 하려면는 **WebFormsLab** 프로젝트를 마우스 선택 **NuGet 패키지 관리**합니다.
-    2. 에 **NuGet 패키지 관리** 대화 상자를 클릭 하 여 **복원** 누락 된 패키지를 다운로드 하려면.
-    3. 마지막으로,를 클릭 하 여 솔루션을 빌드합니다 **빌드** | **솔루션 빌드**합니다.
+   1. 제공 된 연 경우 **시작** 를 일부 누락 된 NuGet 패키지를 다운로드 해야 합니다 솔루션을 계속 하려면. 솔루션 탐색기에서이 작업을 수행 하려면는 **WebFormsLab** 프로젝트를 마우스 선택 **NuGet 패키지 관리**합니다.
+   2. 에 **NuGet 패키지 관리** 대화 상자를 클릭 하 여 **복원** 누락 된 패키지를 다운로드 하려면.
+   3. 마지막으로,를 클릭 하 여 솔루션을 빌드합니다 **빌드** | **솔루션 빌드**합니다.
 
-    > [!NOTE]
-    > NuGet을 사용 하 여의 장점 중 하나 없습니다 있는입니다 써 해당 프로젝트의 모든 라이브러리를 프로젝트 크기를 줄이면 합니다. NuGet 파워 도구 Packages.config 파일에서 패키지 버전을 지정 하 여 해야 합니다를 처음으로 프로젝트를 실행 하면 필요한 라이브러리를 다운로드할 수 있습니다. 이 때문에이 랩에서 기존 솔루션을 연 후 다음이 단계를 실행 해야 합니다.
+      > [!NOTE]
+      > NuGet을 사용 하 여의 장점 중 하나 없습니다 있는입니다 써 해당 프로젝트의 모든 라이브러리를 프로젝트 크기를 줄이면 합니다. NuGet 파워 도구 Packages.config 파일에서 패키지 버전을 지정 하 여 해야 합니다를 처음으로 프로젝트를 실행 하면 필요한 라이브러리를 다운로드할 수 있습니다. 이 때문에이 랩에서 기존 솔루션을 연 후 다음이 단계를 실행 해야 합니다.
 2. 열기는 **ProductDetails.aspx** 소스 페이지 하 고 제품 이미지를 표시 하도록 FormView의 ItemTemplate에서 필드를 추가 합니다.
 
     [!code-aspx[Main](whats-new-in-web-forms-in-aspnet-45/samples/sample30.aspx)]
@@ -562,7 +562,7 @@ Web Forms 4.5, ModelState 개체 일관 된 방식으로 페이지에서 모델 
     (코드 조각- *웹 양식 랩-Ex03-UpdateProductImage 호출*)
 
     [!code-csharp[Main](whats-new-in-web-forms-in-aspnet-45/samples/sample34.cs)]
-7. 응용 프로그램을 실행 하는 제품에 대 한 이미지를 업로드 하려고 합니다. 예를 들어 Office 클립 아트를 이미지 URL을 사용할 수 있습니다: [ [http://officeimg.vo.msecnd.net/images/MB900437099.jpg](http://officeimg.vo.msecnd.net/images/MB900437099.jpg)](http://officeimg.vo.msecnd.net/images/MB900437099.jpg)
+7. 응용 프로그램을 실행 하는 제품에 대 한 이미지를 업로드 하려고 합니다. 예를 들어 Office 클립 아트를 이미지 URL을 사용할 수 있습니다. [[http://officeimg.vo.msecnd.net/images/MB900437099.jpg](http://officeimg.vo.msecnd.net/images/MB900437099.jpg)](http://officeimg.vo.msecnd.net/images/MB900437099.jpg)
 
     ![제품에 대 한 이미지 설정](whats-new-in-web-forms-in-aspnet-45/_static/image23.png "제품에 대 한 이미지 설정")
 
@@ -580,7 +580,9 @@ Web Forms 4.5, ModelState 개체 일관 된 방식으로 페이지에서 모델 
 1. 열기는 **ProductDetails.aspx** 페이지. 추가 **비동기** 특성에 **페이지** 요소로 설정 하 고 **true**합니다. 이 특성은 IHttpAsyncHandler 인터페이스를 구현 하는 ASP.NET을 알려 줍니다.
 
 
-    [!code-aspx[Main](whats-new-in-web-forms-in-aspnet-45/samples/sample35.aspx)]
+~~~
+[!code-aspx[Main](whats-new-in-web-forms-in-aspnet-45/samples/sample35.aspx)]
+~~~
 2. 페이지를 실행 하는 스레드에 대 한 세부 정보를 표시 하려면 페이지 맨 아래에 레이블을 추가 합니다.
 
     [!code-aspx[Main](whats-new-in-web-forms-in-aspnet-45/samples/sample36.aspx)]
@@ -636,9 +638,9 @@ Web Forms 4.5, ModelState 개체 일관 된 방식으로 페이지에서 모델 
 <a id="Appendix_A_Installing_Visual_Studio_Express_2012_for_Web"></a>
 ## <a name="appendix-a-installing-visual-studio-express-2012-for-web"></a>부록 a: 설치 Visual Studio Express 2012 for Web
 
-설치할 수 있습니다 **Microsoft Visual Studio Express 2012 for Web** 또는 다른 &quot;Express&quot; 버전을 사용 하 여  **[Microsoft 웹 플랫폼 설치 관리자](https://www.microsoft.com/web/downloads/platform.aspx)** . 다음 지침을 설치 하는 데 필요한 단계를 안내 하 *Visual studio Express 2012 for Web* 를 사용 하 여 *Microsoft 웹 플랫폼 설치 관리자*합니다.
+설치할 수 있습니다 **Microsoft Visual Studio Express 2012 for Web** 또는 다른 &quot;Express&quot; 버전을 사용 하 여 **[Microsoft 웹 플랫폼 설치 관리자](https://www.microsoft.com/web/downloads/platform.aspx)**. 다음 지침을 설치 하는 데 필요한 단계를 안내 하 *Visual studio Express 2012 for Web* 를 사용 하 여 *Microsoft 웹 플랫폼 설치 관리자*합니다.
 
-1. 로 이동 [ [https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169)합니다. 또는 이미 설치 된 웹 플랫폼 설치 관리자를 열 수 있습니다 및 제품에 대 한 검색 &quot; *Visual Studio Express 2012 for Web Azure SDK와*&quot;합니다.
+1. 로 이동 [ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169)합니다. 또는 이미 설치 된 웹 플랫폼 설치 관리자를 열 수 있습니다 및 제품에 대 한 검색 &quot; <em>Visual Studio Express 2012 for Web Azure SDK와</em>&quot;합니다.
 2. 클릭 **지금 설치**합니다. 없는 경우 **웹 플랫폼 설치 관리자** 를 다운로드 하 여 앱을 먼저 설치 이동 합니다.
 3. 한 번 **웹 플랫폼 설치 관리자** 열려 클릭 **설치** 는 설치 프로그램을 시작 합니다.
 
@@ -782,14 +784,14 @@ Web Forms 4.5, ModelState 개체 일관 된 방식으로 페이지에서 모델 
     *웹 배포 구성*
 5. 다음과 같이 데이터베이스 연결을 구성 합니다.
 
-    - 에 **서버 이름** SQL 데이터베이스 서버 URL 사용 하 여 입력 된 *tcp:* 접두사입니다.
-    - **사용자 이름** 서버 관리자 로그인 이름을 입력 합니다.
-    - **암호** 서버 관리자 로그인 암호를 입력 합니다.
-    - 새 데이터베이스 이름을 입력 합니다.
+   - 에 **서버 이름** SQL 데이터베이스 서버 URL 사용 하 여 입력 된 *tcp:* 접두사입니다.
+   - **사용자 이름** 서버 관리자 로그인 이름을 입력 합니다.
+   - **암호** 서버 관리자 로그인 암호를 입력 합니다.
+   - 새 데이터베이스 이름을 입력 합니다.
 
-    ![대상 연결 문자열 구성](whats-new-in-web-forms-in-aspnet-45/_static/image46.png "대상 연결 문자열 구성")
+     ![대상 연결 문자열 구성](whats-new-in-web-forms-in-aspnet-45/_static/image46.png "대상 연결 문자열 구성")
 
-    *대상 연결 문자열 구성*
+     *대상 연결 문자열 구성*
 6. 그런 다음 **확인**을 클릭합니다. 데이터베이스를 만들려는 대화 상자가 나타나면 **예**합니다.
 
     ![데이터베이스를 만드는](whats-new-in-web-forms-in-aspnet-45/_static/image47.png "데이터베이스 문자열 만들기")

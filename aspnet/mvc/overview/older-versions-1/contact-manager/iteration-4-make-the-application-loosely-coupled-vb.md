@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-4-make-the-application-loosely-coupled-vb
-title: "반복 #4 – 응용 프로그램을 있도록 느슨하게 결합 된 (VB) | Microsoft Docs"
+title: '반복 #4 – 응용 프로그램을 있도록 느슨하게 결합 된 (VB) | Microsoft Docs'
 author: microsoft
-description: "이 세 번째 반복에서 우리 활용 여러 가지 소프트웨어 디자인 패턴을 쉽게 유지 관리 하 고 않아 응용 프로그램을 수정 합니다. For..."
+description: 이 세 번째 반복에서 우리 활용 여러 가지 소프트웨어 디자인 패턴을 쉽게 유지 관리 하 고 않아 응용 프로그램을 수정 합니다. For...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-4-make-the-application-loosely-coupled-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9c11c89710723c133a306aaf56cc8797cc036475
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d953a1b786c802c070619e553e27d88f2ded149c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="iteration-4--make-the-application-loosely-coupled-vb"></a>반복 #4 – 응용 프로그램을 있도록 느슨하게 결합 된 (VB)
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [코드 다운로드](iteration-4-make-the-application-loosely-coupled-vb/_static/contactmanager_4_vb1.zip)
 
@@ -82,13 +82,13 @@ ms.lasthandoff: 11/10/2017
 
 첫째, 모든 수행 해야 하 고 데이터 액세스 메서드를 설명 하는 인터페이스를 만드는 필요 합니다. IContactManagerRepository 인터페이스 목록 1에 포함 됩니다. 이 인터페이스는 5 개의 메서드를 설명: CreateContact(), DeleteContact(), EditContact(), GetContact, 및 ListContacts() 합니다.
 
-**1-Models\IContactManagerRepository.vb 나열**
+**Listing 1 - Models\IContactManagerRepository.vb**
 
 [!code-vb[Main](iteration-4-make-the-application-loosely-coupled-vb/samples/sample1.vb)]
 
 다음으로, IContactManagerRepository 인터페이스를 구현 하는 구체적인 클래스를 만드는 필요 합니다. Microsoft Entity Framework 데이터베이스에 액세스, 사용 중 이므로 EntityContactManagerRepository 라는 새 클래스를 만들겠습니다. 이 클래스는 목록 2에 포함 됩니다.
 
-**2-Models\EntityContactManagerRepository.vb 나열**
+**Listing 2 - Models\EntityContactManagerRepository.vb**
 
 [!code-vb[Main](iteration-4-make-the-application-loosely-coupled-vb/samples/sample2.vb)]
 
@@ -115,7 +115,7 @@ EntityContactManagerRepository 클래스 IContactManagerRepository 인터페이�
 
 수정 된 연락처 컨트롤러 목록 3에 포함 됩니다.
 
-**3-Controllers\ContactController.vb 나열**
+**Listing 3 - Controllers\ContactController.vb**
 
 [!code-vb[Main](iteration-4-make-the-application-loosely-coupled-vb/samples/sample3.vb)]
 
@@ -140,7 +140,7 @@ EntityContactManagerRepository 클래스 IContactManagerRepository 인터페이�
 
 ContactManagerService 목록 4에 포함 되어 있습니다. 연락처 컨트롤러 클래스에서 유효성 검사 논리를 포함 합니다.
 
-**4-Models\ContactManagerService.vb 나열**
+**Listing 4 - Models\ContactManagerService.vb**
 
 [!code-vb[Main](iteration-4-make-the-application-loosely-coupled-vb/samples/sample4.vb)]
 
@@ -150,13 +150,13 @@ ContactManagerService에 대 한 생성자는 ValidationDictionary 해야 한다
 
 IContactManagerService 인터페이스 목록 5에 포함 됩니다.
 
-**5-Models\IContactManagerService.vb 나열**
+**Listing 5 - Models\IContactManagerService.vb**
 
 [!code-vb[Main](iteration-4-make-the-application-loosely-coupled-vb/samples/sample5.vb)]
 
 수정 된 연락처 컨트롤러 클래스 목록 6에 포함 됩니다. 연락처 컨트롤러가 ContactManager 리포지토리와 상호 작용 더 이상 확인 합니다. 대신, 연락처 컨트롤러 ContactManager 서비스와 상호 작용 합니다. 각 레이어는 다른 계층에서 가능한 한 격리 합니다.
 
-**6-Controllers\ContactController.vb 나열**
+**Listing 6 - Controllers\ContactController.vb**
 
 [!code-vb[Main](iteration-4-make-the-application-loosely-coupled-vb/samples/sample6.vb)]
 
@@ -172,11 +172,11 @@ IContactManagerService 인터페이스 목록 5에 포함 됩니다.
 
 Decorator 패턴을 사용 하면 새 클래스에 인터페이스를 구현 하는 데 기존 클래스를 래핑할 수 있습니다. 우리의 않아 프로젝트 목록 7에 포함 된 ModelStateWrapper 클래스를 포함 합니다. ModelStateWrapper 클래스 목록 8에는 인터페이스를 구현합니다.
 
-**7-Models\Validation\ModelStateWrapper.vb 나열**
+**Listing 7 - Models\Validation\ModelStateWrapper.vb**
 
 [!code-vb[Main](iteration-4-make-the-application-loosely-coupled-vb/samples/sample7.vb)]
 
-**8-Models\Validation\IValidationDictionary.vb 나열**
+**Listing 8 - Models\Validation\IValidationDictionary.vb**
 
 [!code-vb[Main](iteration-4-make-the-application-loosely-coupled-vb/samples/sample8.vb)]
 
@@ -196,6 +196,6 @@ Decorator 패턴을 사용 하면 새 클래스에 인터페이스를 구현 하
 
 마지막으로,의 순서로 종속성 주입 패턴 라는 소프트웨어 디자인 패턴. 이 패턴을 구체적인 클래스가 아닌 인터페이스 (추상화)에 대해 프로그래밍할 수 있습니다. 종속성 주입 디자인 패턴을 구현 하면 코드가 더 테스트할 수 있습니다. 다음 반복에는 프로젝트에 단위 테스트 추가합니다.
 
->[!div class="step-by-step"]
-[이전](iteration-3-add-form-validation-vb.md)
-[다음](iteration-5-create-unit-tests-vb.md)
+> [!div class="step-by-step"]
+> [이전](iteration-3-add-form-validation-vb.md)
+> [다음](iteration-5-create-unit-tests-vb.md)

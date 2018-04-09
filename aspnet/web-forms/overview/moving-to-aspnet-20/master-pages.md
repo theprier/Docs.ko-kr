@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/moving-to-aspnet-20/master-pages
-title: "마스터 페이지 | Microsoft Docs"
+title: 마스터 페이지 | Microsoft Docs
 author: microsoft
-description: "성공적인 웹 사이트에 대 한 주요 구성 요소 중 하나에 일관 된 모양과 느낌입니다. ASP.NET에서 1.x 개발자는 일반적인 페이지 소형 복제 하기 위해 사용자 정의 컨트롤을 사용..."
+description: 성공적인 웹 사이트에 대 한 주요 구성 요소 중 하나에 일관 된 모양과 느낌입니다. ASP.NET에서 1.x 개발자는 일반적인 페이지 소형 복제 하기 위해 사용자 정의 컨트롤을 사용...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2005
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/master-pages
 msc.type: authoredcontent
-ms.openlocfilehash: bd9effd4b73a014d4d7bb825b382b8db34d636f1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f45dd9704f665244d2a48ec000326f6e98984e4f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="master-pages"></a>마스터 페이지
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 성공적인 웹 사이트에 대 한 주요 구성 요소 중 하나에 일관 된 모양과 느낌입니다. ASP.NET에서 1.x 개발자는 웹 응용 프로그램에서 일반 페이지 요소를 복제 하기 위해 사용자 정의 컨트롤을 사용 합니다. 확실히 처리 가능한 여러 솔루션 사용 되 고 있지만, 사용자 정의 컨트롤을 사용 하 여 일부의 단점이 있습니다. 예를 들어, 사용자 정의 컨트롤의 위치는 변경 사이트 전체에서 여러 페이지에 대 한 변경이 필요합니다. 사용자 정의 컨트롤은 또한 페이지에 삽입 되 고 후 디자인 보기에서 렌더링 되지 않습니다.
 
@@ -74,7 +74,7 @@ ASP.NET 2.0 소개 마스터 페이지 일관 된 모양 및 느낌을 유지 �
 **그림 2**: 새 마스터 페이지 만들기
 
 
-마스터 페이지에 대 한 파일 확장명은 *.master*합니다. 일반 페이지에서 마스터 페이지와 다른 방법 중 하나입니다. 다른 주요 차이점은 대신 하는 @Page 지시문, 마스터 페이지에는 @Master 지시문입니다. 방금 만든 및 코드 검토 페이지는 마스터에 대 한 소스 보기로 전환 합니다.
+마스터 페이지에 대 한 파일 확장명은 <em>.master</em>합니다. 일반 페이지에서 마스터 페이지와 다른 방법 중 하나입니다. 다른 주요 차이점은 대신 하는 @Page 지시문, 마스터 페이지에는 @Master 지시문입니다. 방금 만든 및 코드 검토 페이지는 마스터에 대 한 소스 보기로 전환 합니다.
 
 새 마스터 페이지에는 기본적으로 하나의 ContentPlaceHolder 권한을 갖게 됩니다. 대부분의 경우는 것이를 일반적인 페이지 요소를 먼저 만들고 ContentPlaceHolder 컨트롤을 삽입 한 다음 사용자 지정 콘텐츠를 원할 경우. 이 경우 개발자가 기본 ContentPlaceHolder 컨트롤을 삭제 하 고 페이지도 개발 된 대로 새 레코드를 삽입 하려고 합니다. ContentPlaceHolder 컨트롤은 크기 조정 핸들을 표시 않는지도 크기를 조정할 수 없습니다. 한 가지 예외로; 포함 된 내용에 따라 자동으로 ContentPlaceHolder 컨트롤 크기 예: 표 셀 블록 요소 안에 ContentPlaceHolder 컨트롤을 추가 하면 그 요소의 크기에 따라 크기 됩니다.
 
@@ -142,10 +142,10 @@ ASP.NET 2.0 소개 마스터 페이지 일관 된 모양 및 느낌을 유지 �
 
 네 가지 방법 중 하나에서 마스터 페이지 콘텐츠 페이지와의 연결을 구성할 수 있습니다.
 
-- **MasterPageFile** 특성에는 @Page 지시문
+- <strong>MasterPageFile</strong> 특성에는 @Page 지시문
 - 설정의 **Page.MasterPageFile** 코드에서 속성입니다.
--  **&lt;페이지&gt;**  응용 프로그램 구성 파일 (응용 프로그램의 루트 폴더에 web.config)의 요소
--  **&lt;페이지&gt;**  하위 폴더 구성 파일 (하위 폴더에 web.config)의 요소
+- **&lt;페이지&gt;** 응용 프로그램 구성 파일 (응용 프로그램의 루트 폴더에 web.config)의 요소
+- **&lt;페이지&gt;** 하위 폴더 구성 파일 (하위 폴더에 web.config)의 요소
 
 ## <a name="masterpagefile-attribute"></a>MasterPageFile 특성
 
@@ -157,7 +157,7 @@ MasterPageFile 특성을 사용 하면 쉽게 특정 ASP.NET 페이지에 마스
 
 ## <a name="using-the-ltpagesgt-element"></a>사용 하 여 &lt;페이지&gt; 요소
 
-masterPageFile 특성을 설정 하 여 페이지에 대 한 마스터 페이지를 구성할 수 있습니다는 &lt;페이지&gt; web.config 파일의 요소입니다. 이 메서드를 사용 하면 응용 프로그램 구조에서 하위 web.config 파일에이 설정을 재정의할 수를 염두에서에 둬야 합니다. 모든 MasterPageFile 속성 세트는 @Page 지시문이이 설정을 재정의 합니다. 사용 하는 &lt;페이지&gt; 요소를 사용 하면 간단 하 게 만들 수는 *마스터* 특정 폴더 또는 파일에 필요한 경우 재정의할 수 있는 마스터 페이지입니다.
+masterPageFile 특성을 설정 하 여 페이지에 대 한 마스터 페이지를 구성할 수 있습니다는 &lt;페이지&gt; web.config 파일의 요소입니다. 이 메서드를 사용 하면 응용 프로그램 구조에서 하위 web.config 파일에이 설정을 재정의할 수를 염두에서에 둬야 합니다. 모든 MasterPageFile 속성 세트는 @Page 지시문이이 설정을 재정의 합니다. 사용 하는 &lt;페이지&gt; 요소를 사용 하면 간단 하 게 만들 수는 <em>마스터</em> 특정 폴더 또는 파일에 필요한 경우 재정의할 수 있는 마스터 페이지입니다.
 
 ## <a name="properties-in-master-pages"></a>마스터 페이지에서 속성
 

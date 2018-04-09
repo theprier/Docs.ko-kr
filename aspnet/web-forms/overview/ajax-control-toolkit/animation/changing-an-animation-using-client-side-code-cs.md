@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/changing-an-animation-using-client-side-code-cs
-title: "클라이언트 쪽 코드 (C#)를 사용 하 여 애니메이션 변경 | Microsoft Docs"
+title: 클라이언트 쪽 코드 (C#)를 사용 하 여 애니메이션 변경 | Microsoft Docs
 author: wenz
-description: "ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트롤 뿐 아니라 애니메이션 컨트롤을 추가 하는 전체 프레임 워크. 애니메이션을 선택 하십시오."
+description: ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트롤 뿐 아니라 애니메이션 컨트롤을 추가 하는 전체 프레임 워크. 애니메이션을 선택 하십시오.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/changing-an-animation-using-client-side-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6dcaeac073f54b0804fe3acf7ec22491b1cbbba5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2f572efeb012d88ab15740bab7b0e4383572f3f7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="changing-an-animation-using-client-side-code-c"></a>클라이언트 쪽 코드 (C#)를 사용 하 여 애니메이션을 변경 합니다.
 ====================
@@ -78,6 +78,6 @@ ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트�
 
 애니메이션 실행: 마우스 클릭 하지 않고 (및 거의 태그로) 즉시 ([전체 크기 이미지를 보려면 클릭](changing-an-animation-using-client-side-code-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[이전](executing-animations-using-client-side-code-cs.md)
-[다음](animating-an-updatepanel-control-cs.md)
+> [!div class="step-by-step"]
+> [이전](executing-animations-using-client-side-code-cs.md)
+> [다음](animating-an-updatepanel-control-cs.md)

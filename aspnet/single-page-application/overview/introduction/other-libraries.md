@@ -1,22 +1,22 @@
 ---
 uid: single-page-application/overview/introduction/other-libraries
-title: "Knockout 이외의 라이브러리를 알고 있습니까? | Microsoft 문서"
+title: Knockout 이외의 라이브러리를 알고 있습니까? | Microsoft 문서
 author: madskristensen
-description: "Knockout 이외의 라이브러리를 알고 있습니까?"
+description: Knockout 이외의 라이브러리를 알고 있습니까?
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/05/2013
 ms.topic: article
 ms.assetid: a8367c6d-ef94-4dff-a010-5eff9e6eea96
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/introduction/other-libraries
 msc.type: authoredcontent
-ms.openlocfilehash: 5a863f50401a4e2bab3f772374b7fd178f6c6cdf
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6ac260e88fd156bad4b414e93325d5a04c490c88
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="know-a-library-other-than-knockout"></a>Knockout 이외의 라이브러리를 알고 있습니까?
 ====================
@@ -57,15 +57,17 @@ ms.lasthandoff: 11/10/2017
 
 다음은 각 SPA 템플릿을 제공 하는 기능입니다.
 
-|  | ASP.NET SPA | Backbone | 간편/각도 | 간편/KO | 불씨 | 핫 수건 |
-| --- | --- | --- | --- | --- | --- | --- |
-| ToDo 샘플 | &#10003; |  | &#10003; | &#10003; | &#10003; |  |
-| 운영 체제 미 설치 템플릿 |  | &#10003; |  |  |  | &#10003; |
-| 탐색 및 기록 |  | &#10003; | &#10003; |  | &#10003; | &#10003; |
-| Libaries |  |  |  |  |  |  |
-| 각도 |  |  | &#10003; |  |  |  |
-| &#8195; Backbone |  | &#10003; |  |  |  |  |
-| 옵션 |  |  | &#10003; | &#10003; |  | &#10003; |
-| durandal |  |  |  |  |  | &#10003; |
-| 불씨 |  |  |  |  | &#10003; |  |
-| knockout | &#10003; |  |  | &#10003; |  | &#10003; |
+
+|                        | ASP.NET SPA | Backbone | 간편/각도 | 간편/KO |  불씨   | 핫 수건 |
+|------------------------|-------------|----------|----------------|-----------|----------|-----------|
+|      ToDo 샘플       |  &#10003;   |          |    &#10003;    | &#10003;  | &#10003; |           |
+|     운영 체제 미 설치 템플릿      |             | &#10003; |                |           |          | &#10003;  |
+| 탐색 및 기록 |             | &#10003; |    &#10003;    |           | &#10003; | &#10003;  |
+|        Libaries        |             |          |                |           |          |           |
+|        각도         |             |          |    &#10003;    |           |          |           |
+|    &#8195;Backbone     |             | &#10003; |                |           |          |           |
+|         옵션         |             |          |    &#10003;    | &#10003;  |          | &#10003;  |
+|        durandal        |             |          |                |           |          | &#10003;  |
+|         불씨          |             |          |                |           | &#10003; |           |
+|        knockout        |  &#10003;   |          |                | &#10003;  |          | &#10003;  |
+

@@ -1,22 +1,22 @@
 ---
 uid: whitepapers/add-mobile-pages-to-your-aspnet-web-forms-mvc-application
-title: "방법: ASP.NET Web Forms에 모바일 페이지를 추가 / MVC 응용 프로그램 | Microsoft Docs"
+title: '방법: ASP.NET Web Forms에 모바일 페이지를 추가 / MVC 응용 프로그램 | Microsoft Docs'
 author: rick-anderson
-description: "How To를 ASP.NET Web Forms에서 모바일 장치에 대 한 액세스에 최적화 된 페이지를 처리 하는 다양 한 방법을 설명 / MVC 응용 프로그램 아키텍처를 제안 하 고 및..."
+description: How To를 ASP.NET Web Forms에서 모바일 장치에 대 한 액세스에 최적화 된 페이지를 처리 하는 다양 한 방법을 설명 / MVC 응용 프로그램 아키텍처를 제안 하 고 및...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/20/2011
 ms.topic: article
 ms.assetid: 3124f28e-cc32-418a-afe3-519fa56f4c36
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/add-mobile-pages-to-your-aspnet-web-forms-mvc-application
 msc.type: content
-ms.openlocfilehash: aac359b26c508784793a67260dc2e65c30db687a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: a8358b91ca424f4f3e576057ab43d850081dda60
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-to-add-mobile-pages-to-your-aspnet-web-forms--mvc-application"></a>방법: ASP.NET Web Forms에 모바일 페이지를 추가 / MVC 응용 프로그램
 ====================
@@ -37,7 +37,7 @@ ms.lasthandoff: 01/24/2018
 - 브라우저 및 장치 검색
 - ASP.NET Web Forms 응용 프로그램 관련 모바일 페이지를 나타낼 수 있는 방법
 - ASP.NET MVC 응용 프로그램 관련 모바일 페이지를 나타낼 수 있는 방법
-- 추가 리소스
+- 추가 자료
 
 ASP.NET Web Forms 및 MVC 모두에 대해이 백서 기법을 보여 주는 다운로드 가능한 코드 샘플 [모바일 앱 및 asp.net 사이트](https://docs.microsoft.com/aspnet/mobile/overview)합니다.
 
@@ -185,7 +185,7 @@ ASP while입니다. NET의 기본 제공 브라우저 검색 지원이 많은 �
 
     [!code-csharp[Main](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/samples/sample4.cs)]
   
- 이 코드 페이지에 기본 프로젝트 템플릿을 같이 LoginUser를를 호출 하는 로그인 서버 컨트롤을 가정 합니다.
+  이 코드 페이지에 기본 프로젝트 템플릿을 같이 LoginUser를를 호출 하는 로그인 서버 컨트롤을 가정 합니다.
 
 ### <a name="working-with-output-caching"></a>출력 캐싱을 사용합니다.
 
@@ -243,7 +243,7 @@ ASP while입니다. NET의 기본 제공 브라우저 검색 지원이 많은 �
 
 [!code-csharp[Main](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/samples/sample9.cs)]
 
-오류는 먼, 및 URL http:// 되돌려집니다 이제*yoursite*데스크톱 홈 페이지 및 http://에 도달 하면 /*yoursite*/mobile/ 모바일 홈 페이지에 도달 합니다.
+오류는 먼, 및 URL http:// 되돌려집니다 이제<em>yoursite</em>데스크톱 홈 페이지 및 http://에 도달 하면 /<em>yoursite</em>/mobile/ 모바일 홈 페이지에 도달 합니다.
 
 ### <a name="redirecting-mobile-visitors-to-your-mobile-area"></a>모바일 방문자 모바일 영역으로 리디렉션
 
@@ -358,7 +358,7 @@ Web.config 파일의 fiftyOne 섹션에 추가 된 다음 요소는 페이지에
 
 [!code-html[Main](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/samples/sample20.html)]
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 모바일 장치 에뮬레이터 및 시뮬레이터 모바일 ASP.NET 웹 응용 프로그램을 테스트 하는 데 사용할 수는 목록에 대 한 페이지 참조 [시뮬레이션 테스트를 위한 인기 있는 모바일 장치](../mobile/device-simulators.md)합니다.
 

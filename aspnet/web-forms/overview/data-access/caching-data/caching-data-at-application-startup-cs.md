@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/caching-data/caching-data-at-application-startup-cs
-title: "응용 프로그램 시작 (C#) 시 데이터를 캐시 | Microsoft Docs"
+title: 응용 프로그램 시작 (C#) 시 데이터를 캐시 | Microsoft Docs
 author: rick-anderson
-description: "모든 웹 응용 프로그램에서 일부 데이터는 자주 사용 됩니다 하 고 일부 데이터는 자주 사용 됩니다. 이 ASP.NET 응용 프로그램 b의 성능을 개선할 수 있는 중..."
+description: 모든 웹 응용 프로그램에서 일부 데이터는 자주 사용 됩니다 하 고 일부 데이터는 자주 사용 됩니다. 이 ASP.NET 응용 프로그램 b의 성능을 개선할 수 있는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/30/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-at-application-startup-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3a618ad702763a59b87336784afd1cb74de06d4c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 8d962a182b5136d3e44ce678a355c9679b4c8be1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="caching-data-at-application-startup-c"></a>응용 프로그램 시작 (C#)에서 데이터 캐싱
 ====================
@@ -129,11 +129,11 @@ ms.lasthandoff: 01/24/2018
 
 기본 `Global.asax` 내 서버 쪽에서 5 개의 메서드를 포함 하는 파일 템플릿의 `<script>` 태그:
 
-- **`Application_Start`**웹 응용 프로그램을 처음 시작할 때 실행
-- **`Application_End`**응용 프로그램이 종료 될 때 실행
-- **`Application_Error`**처리 되지 않은 예외가 응용 프로그램에 도달할 때마다 실행
-- **`Session_Start`**새 세션을 만들 때 실행
-- **`Session_End`**세션이 만료 되었거나 중단 하면 실행 됩니다.
+- **`Application_Start`** 웹 응용 프로그램을 처음 시작할 때 실행
+- **`Application_End`** 응용 프로그램이 종료 될 때 실행
+- **`Application_Error`** 처리 되지 않은 예외가 응용 프로그램에 도달할 때마다 실행
+- **`Session_Start`** 새 세션을 만들 때 실행
+- **`Session_End`** 세션이 만료 되었거나 중단 하면 실행 됩니다.
 
 `Application_Start` s 응용 프로그램 수명 주기 동안 한 번만 이벤트 처리기가 호출 됩니다. 응용 프로그램을 처음으로 응용 프로그램에서 요청 하 고 응용 프로그램은 다시 시작할 때까지 계속 실행 하는 ASP.NET 리소스의 내용을 수정 하 여 발생할 수 있음 시작는 `/Bin` 폴더 수정 `Global.asax`수정 하 고는 콘텐츠는 `App_Code` 폴더 또는 수정는 `Web.config` 다른 원인 중 파일입니다. 참조 [ASP.NET 응용 프로그램 수명 주기 개요](https://msdn.microsoft.com/library/ms178473.aspx) 에 대 한 자세한 내용은 응용 프로그램 수명 주기 합니다.
 
@@ -194,12 +194,12 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Teresa 머피 및 Zack jones 이면 특정 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](caching-data-in-the-architecture-cs.md)
-[다음](using-sql-cache-dependencies-cs.md)
+> [!div class="step-by-step"]
+> [이전](caching-data-in-the-architecture-cs.md)
+> [다음](using-sql-cache-dependencies-cs.md)

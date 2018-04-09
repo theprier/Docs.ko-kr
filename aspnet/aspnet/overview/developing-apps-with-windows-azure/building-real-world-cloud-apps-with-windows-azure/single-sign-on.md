@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/single-sign-on
-title: "Single Sign-on (Azure로 응용 프로그램 빌딩 실제 클라우드) | Microsoft Docs"
+title: Single Sign-on (Azure로 응용 프로그램 빌딩 실제 클라우드) | Microsoft Docs
 author: MikeWasson
-description: "실제 세계 클라우드로 응용 프로그램 빌딩 Azure 전자책 Scott Guthrie에서 개발 된 프레젠테이션을 기반으로 합니다. 13 패턴 및 그을 수 있는 방법에 설명..."
+description: 실제 세계 클라우드로 응용 프로그램 빌딩 Azure 전자책 Scott Guthrie에서 개발 된 프레젠테이션을 기반으로 합니다. 13 패턴 및 그을 수 있는 방법에 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: 7d82d5e9-0619-4f22-9e03-32a6d52940a5
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/single-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: b3640c94a8ae9ede330c0fe6a392acb5843cb65c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 82f2f99154d94074b03d580a0f491053d6f53bde
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="single-sign-on-building-real-world-cloud-apps-with-azure"></a>Single Sign-on (Azure로 응용 프로그램 빌딩 실제 클라우드)
 ====================
@@ -130,7 +130,7 @@ Azure 계정에 대 한 Azure AD 테 넌 트를 자동으로 부여 되며을 �
 
 Windows 2003 이상, 조직에서 하나의 도메인 컨트롤러에서 실행 해야 합니다. 및를 재부팅 해야 합니다. 완료 되는 모든 사용자에 게 클라우드에 하 고 할 수 있는 모든 웹 또는 SAML, OAuth, 또는 Ws-fed를 사용 하 여 모바일 응용 프로그램에 single sign-on입니다.
 
-이 보안에 대 한 요청한 가져올 경우에 따라 – Microsoft 사용지 않습니다 자신의 중요 한 비즈니스 데이터에 대 한? 및 그렇다고 수행 하는 것입니다. 에 내부 Microsoft SharePoint 사이트로 이동 하는 경우 등 [https://microsoft.sharepoint.com/](https://microsoft.sharepoint.com/), 로그인 하 라는 메시지가 가져옵니다.
+이 보안에 대 한 요청한 가져올 경우에 따라 – Microsoft 사용지 않습니다 자신의 중요 한 비즈니스 데이터에 대 한? 및 그렇다고 수행 하는 것입니다. 에 내부 Microsoft SharePoint 사이트로 이동 하는 경우 등 [ https://microsoft.sharepoint.com/ ](https://microsoft.sharepoint.com/), 로그인 하 라는 메시지가 가져옵니다.
 
 ![Office 365 로그인](single-sign-on/_static/image20.png)
 
@@ -179,7 +179,7 @@ Visual Studio에서는 몇 가지 스크린 샷에서 볼 수 있듯이 single s
 [다음 장에서](data-storage-options.md) 클라우드 앱에 사용할 수 있는 데이터 저장소 옵션을 살펴봅니다.
 
 <a id="resources"></a>
-## <a name="resources"></a>리소스
+## <a name="resources"></a>자료
 
 자세한 내용은 다음 리소스를 참조하세요.
 
@@ -193,6 +193,6 @@ Visual Studio에서는 몇 가지 스크린 샷에서 볼 수 있듯이 single s
 - [Azure Active Directory Graph API 블로그](https://blogs.msdn.com/b/aadgraphteam/)합니다.
 - [액세스 제어에서 BYOD 및 하이브리드 Id 인프라의 디렉터리 통합](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2014/PCIT-B213#fbid=)합니다. 기술 Ed 2014 세션 비디오 Gayana Bagdasaryan 여입니다.
 
->[!div class="step-by-step"]
-[이전](web-development-best-practices.md)
-[다음](data-storage-options.md)
+> [!div class="step-by-step"]
+> [이전](web-development-best-practices.md)
+> [다음](data-storage-options.md)

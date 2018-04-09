@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/custom-formatting/using-the-formview-s-templates-vb
-title: "FormView의 템플릿 (VB)를 사용 하 여 | Microsoft Docs"
+title: FormView의 템플릿 (VB)를 사용 하 여 | Microsoft Docs
 author: rick-anderson
-description: "DetailsView, 달리 FormView 하지 가지 필드로 구성 됩니다. 대신, FormView 템플릿을 사용 하 여 렌더링 됩니다. 이 자습서의 6.를 사용 하 여 검토 합니다."
+description: DetailsView, 달리 FormView 하지 가지 필드로 구성 됩니다. 대신, FormView 템플릿을 사용 하 여 렌더링 됩니다. 이 자습서의 6.를 사용 하 여 검토 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-the-formview-s-templates-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 05e97ce5efeaf72192ed294b946e2249c60007d1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 16293960f5d8758c93646844bd159547f5e0f38c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-the-formviews-templates-vb"></a>FormView의 템플릿 (VB)를 사용 하 여
 ====================
@@ -33,12 +33,12 @@ ms.lasthandoff: 11/10/2017
 
 DetailsView, 달리 FormView 하지 가지 필드로 구성 됩니다. BoundField 또는 TemplateField는 FormView에 추가할 수 없습니다. 대신, FormView 템플릿을 사용 하 여 렌더링 됩니다. FormView 단일 TemplateField를 포함 하는 DetailsView 컨트롤 라고 생각 됩니다. FormView 다음 서식 파일을 지원합니다.
 
-- `ItemTemplate`FormView에서 표시 되는 특정 레코드를 렌더링 하는 데 사용
-- `HeaderTemplate`선택적 헤더 행을 지정 하는 데 사용
-- `FooterTemplate`선택적 바닥글 행을 지정 하는 데 사용
-- `EmptyDataTemplate`때 FormView의 `DataSource` 에 게 없는 경우 모든 레코드는 `EmptyDataTemplate` 대신에 사용 되는 `ItemTemplate` 컨트롤의 태그를 렌더링 하기 위한
-- `PagerTemplate`페이징이 설정 되어 FormViews에 대 한 페이징 인터페이스를 사용자 지정 하는 데 사용할 수 있습니다.
-- `EditItemTemplate` / `InsertItemTemplate`이러한 기능을 지 원하는 FormViews에 대 한 편집 인터페이스 또는 삽입 인터페이스를 사용자 지정 하는 데 사용
+- `ItemTemplate` FormView에서 표시 되는 특정 레코드를 렌더링 하는 데 사용
+- `HeaderTemplate` 선택적 헤더 행을 지정 하는 데 사용
+- `FooterTemplate` 선택적 바닥글 행을 지정 하는 데 사용
+- `EmptyDataTemplate` 때 FormView의 `DataSource` 에 게 없는 경우 모든 레코드는 `EmptyDataTemplate` 대신에 사용 되는 `ItemTemplate` 컨트롤의 태그를 렌더링 하기 위한
+- `PagerTemplate` 페이징이 설정 되어 FormViews에 대 한 페이징 인터페이스를 사용자 지정 하는 데 사용할 수 있습니다.
+- `EditItemTemplate` / `InsertItemTemplate` 이러한 기능을 지 원하는 FormViews에 대 한 편집 인터페이스 또는 삽입 인터페이스를 사용자 지정 하는 데 사용
 
 이 자습서를 검토 합니다 FormView 컨트롤을 사용 하 여 제품의 표시를 더 융통성을 제공 합니다. 이름, 범주, 공급자 및 이런 식으로 FormView의에 대 한 필드는 것이 아니라 `ItemTemplate` 헤더 요소를 조합 하 여 이러한 값이 표시 됩니다는 및 `<table>` (그림 1 참조).
 
@@ -111,12 +111,12 @@ GridView 및 DetailsView 컨트롤 TemplateFields를 사용 하 여 사용자 �
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자가 E.R. Gilmore 합니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](using-templatefields-in-the-detailsview-control-vb.md)
-[다음](displaying-summary-information-in-the-gridview-s-footer-vb.md)
+> [!div class="step-by-step"]
+> [이전](using-templatefields-in-the-detailsview-control-vb.md)
+> [다음](displaying-summary-information-in-the-gridview-s-footer-vb.md)

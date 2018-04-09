@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-4
-title: "4 단계: 제품을 나열 하 | Microsoft Docs"
+title: '4 단계: 제품을 나열 하 | Microsoft Docs'
 author: JoeStagner
-description: "이 자습서 시리즈 모든 Tailspin Spyworks 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 4 부 GridView contr. 제품 목록 설명..."
+description: 이 자습서 시리즈 모든 Tailspin Spyworks 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 4 부 GridView contr. 제품 목록 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/21/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-4
 msc.type: authoredcontent
-ms.openlocfilehash: 420cdbcc002bcbfff619d399a7a374009999d754
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 69b26344e6dcdbf27e94da90ad5d6cd79f27ccd3
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-4-listing-products"></a>4 단계: 목록 제품
 ====================
@@ -27,7 +27,7 @@ ms.lasthandoff: 11/10/2017
 > 이 자습서 시리즈 모든 Tailspin Spyworks 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 4 부 목록 제품 GridView 컨트롤을 설명합니다.
 
 
-## <a id="_Toc260221670"></a>GridView 컨트롤에서 제품을 나열
+## <a id="_Toc260221670"></a>  GridView 컨트롤에서 제품을 나열
 
 "추가" 및 "새 항목"을 선택 하 고 솔루션에 "마우스 오른쪽 단추로 클릭" 가격 ProductsList.aspx 페이지 구현를 시작 해 보겠습니다.
 
@@ -100,6 +100,6 @@ ShoppingCart.aspx 이름을 선택 하지 않으면는 것을 참고 합니다.
 
 것도 알아두는 것을 만드는데 간단한 쇼핑 카트 주목할 및 쇼핑 카트 표시와 함께 쇼핑 카트 논리를 포함 합니다. 완전히 별개의 비즈니스 계층에서 당사의 쇼핑 카트를 구현 하 선택할 수도 있습니다.
 
->[!div class="step-by-step"]
-[이전](tailspin-spyworks-part-3.md)
-[다음](tailspin-spyworks-part-5.md)
+> [!div class="step-by-step"]
+> [이전](tailspin-spyworks-part-3.md)
+> [다음](tailspin-spyworks-part-5.md)

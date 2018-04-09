@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/slider/databinding-the-slider-control-cs
-title: "데이터 바인딩 슬라이더 컨트롤 (C#) | Microsoft Docs"
+title: 데이터 바인딩 슬라이더 컨트롤 (C#) | Microsoft Docs
 author: wenz
-description: "슬라이더 컨트롤 들어에서 마우스를 사용 하 여 제어할 수 있는 그래픽 슬라이더를 제공 합니다. 현재 positio 바인딩할 수는 중..."
+description: 슬라이더 컨트롤 들어에서 마우스를 사용 하 여 제어할 수 있는 그래픽 슬라이더를 제공 합니다. 현재 positio 바인딩할 수는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/slider/databinding-the-slider-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2aa770bce5969a4ab57893d5ceecc127cf7f7872
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7644c991cd88868235511ba372be1f5b47c68fea
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="databinding-the-slider-control-c"></a>데이터 바인딩 슬라이더 컨트롤 (C#)
 ====================
@@ -52,6 +52,6 @@ ASP.NET AJAX 및 제어 Toolkit의 기능을 활성화 하는 데는 `ScriptMana
 
 슬라이더와 텍스트 상자에 동기화 되었는지 ([전체 크기 이미지를 보려면 클릭](databinding-the-slider-control-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[이전](using-the-slider-control-with-auto-postback-cs.md)
-[다음](using-the-slider-control-with-auto-postback-vb.md)
+> [!div class="step-by-step"]
+> [이전](using-the-slider-control-with-auto-postback-cs.md)
+> [다음](using-the-slider-control-with-auto-postback-vb.md)

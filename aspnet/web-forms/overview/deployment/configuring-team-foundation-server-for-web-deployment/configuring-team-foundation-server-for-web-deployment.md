@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment
-title: "웹 배포에 대 한 Team Foundation Server 구성 | Microsoft Docs"
+title: 웹 배포에 대 한 Team Foundation Server 구성 | Microsoft Docs
 author: jrjlee
-description: "이 자습서에서는 Team Foundation Server (TFS) 2010 솔루션을 구축 하 다양 한 대상 환경에 웹 콘텐츠를 배포를 구성 하는 방법을 보여줍니다. 이 중..."
+description: 이 자습서에서는 Team Foundation Server (TFS) 2010 솔루션을 구축 하 다양 한 대상 환경에 웹 콘텐츠를 배포를 구성 하는 방법을 보여줍니다. 이 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 72f60841a1381380c0ea6167077420f960180dc7
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: c4cfac333c9400d9ee613ba88520b0b0439873f5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-team-foundation-server-for-web-deployment"></a>웹 배포에 대 한 Team Foundation Server 구성
 ====================
@@ -39,9 +39,9 @@ ms.lasthandoff: 03/15/2018
 
 ## <a name="context"></a>컨텍스트
 
-이 Fabrikam, inc. 라는 가상 회사의 엔터프라이즈 배포 요구 사항을 기반으로 하는 자습서 시리즈의 일부를 형성 이 자습서 시리즈 샘플 솔루션 & #x 2014;을 사용 하는 [않아](../web-deployment-in-the-enterprise/the-contact-manager-solution.md) 솔루션 & #x 2014; 현실적인 수준의 복잡성을 Windows ASP.NET MVC 3 응용 프로그램을 포함 하 여 웹 응용 프로그램을 나타내기 위해 Communication Foundation (WCF) 서비스 및 데이터베이스 프로젝트를 제공 합니다.
+이 Fabrikam, inc. 라는 가상 회사의 엔터프라이즈 배포 요구 사항을 기반으로 하는 자습서 시리즈의 일부를 형성 샘플 솔루션을 사용 하는 자습서 시리즈가&#x2014;는 [않아](../web-deployment-in-the-enterprise/the-contact-manager-solution.md) 솔루션&#x2014;현실적인 수준의 복잡성, Windows Communication ASP.NET MVC 3 응용 프로그램을 포함 하 여 웹 응용 프로그램을 나타내기 위해 WCF (foundation) 서비스 및 데이터베이스 프로젝트.
 
-이 자습서의 핵심에는 배포 방법에 설명 된 분할 프로젝트 파일 접근 방식에 따라 [빌드 프로세스를 이해](../web-deployment-in-the-enterprise/understanding-the-build-process.md)합니다 빌드 프로세스에 의해 제어 되는 두 프로젝트에 파일 & #x 2014; 포함 환경 관련 빌드 및 배포 설정을 포함 하는 하나 및 모든 대상 환경에 적용 되는 지침을 빌드하십시오. 빌드 시 환경 관련 프로젝트 파일은 빌드 지침의 전체 집합을 구성 하기 위해 환경을 알 수 없는 프로젝트 파일에 병합 됩니다.
+이 자습서의 핵심에는 배포 방법에 설명 된 분할 프로젝트 파일 접근 방식에 따라 [빌드 프로세스를 이해](../web-deployment-in-the-enterprise/understanding-the-build-process.md), 두 개의 프로젝트 파일에 빌드 프로세스에 의해 제어 되는&#x2014;포함 환경 관련 빌드 및 배포 설정을 포함 하는 하나 및 모든 대상 환경에 적용 되는 지침을 빌드하십시오. 빌드 시 환경 관련 프로젝트 파일은 빌드 지침의 전체 집합을 구성 하기 위해 환경을 알 수 없는 프로젝트 파일에 병합 됩니다.
 
 ## <a name="scenario-overview"></a>시나리오 개요
 
@@ -77,5 +77,5 @@ ms.lasthandoff: 03/15/2018
 - [웹 배포를 위한 서버 환경을 구성](../configuring-server-environments-for-web-deployment/configuring-server-environments-for-web-deployment.md)합니다. 이 자습서에서는 웹 배포 에이전트 서비스 (원격 에이전트) 또는 웹 배포 처리기 및 원격 데이터베이스 배포를 사용 하 여 원격 웹 패키지 배포를 비롯 한 다양 한 배포 시나리오를 지원 하기 위해 Windows 서버를 구성 하는 방법을 설명 합니다. 사용자 환경에 대 한 적절 한 배포 방법 선택에 지침을 제공 하 고 서버 팜의 모든 웹 서버에서 배포 된 웹 응용 프로그램을 복제 하기 위해 웹 팜 프레임 워크 (WFF)를 사용 하는 방법을 설명 합니다.
 - [고급 엔터프라이즈 웹 배포](../advanced-enterprise-web-deployment/advanced-enterprise-web-deployment.md)합니다. 이 자습서에서는 사용자 지정 된 여러 환경에 대 한 데이터베이스 배포, 배포에서 파일 및 폴더를 제외 하 고 배포 프로세스 중 웹 응용 프로그램을 오프 라인 등의 다양 한 고급 배포 작업을 수행 하는 방법을 설명합니다 .
 
->[!div class="step-by-step"]
-[다음](creating-a-team-project-in-tfs.md)
+> [!div class="step-by-step"]
+> [다음](creating-a-team-project-in-tfs.md)

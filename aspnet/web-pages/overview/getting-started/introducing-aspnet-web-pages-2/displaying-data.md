@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/displaying-data
-title: "ASP.NET 웹 페이지를 소개 합니다.-데이터를 표시 합니다. | Microsoft Docs"
+title: ASP.NET 웹 페이지를 소개 합니다.-데이터를 표시 합니다. | Microsoft Docs
 author: tfitzmac
-description: "이 자습서를 WebMatrix에서 데이터베이스를 만드는 방법 및 ASP.NET 웹 페이지 (Razor)를 사용 하는 경우 데이터베이스 데이터 페이지에 표시 하는 방법을 보여 줍니다. Y... 가정"
+description: 이 자습서를 WebMatrix에서 데이터베이스를 만드는 방법 및 ASP.NET 웹 페이지 (Razor)를 사용 하는 경우 데이터베이스 데이터 페이지에 표시 하는 방법을 보여 줍니다. Y... 가정
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/28/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/displaying-data
 msc.type: authoredcontent
-ms.openlocfilehash: fdb9af0ba87c7802c63451ac7aa422e0020b5719
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6c66e5fb0a1a49da411286e19c7954f83055c3fd
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---displaying-data"></a>데이터를 표시 하는 ASP.NET 웹 페이지-소개
 ====================
@@ -36,7 +36,7 @@ ms.lasthandoff: 11/10/2017
 > 기능/기술을 설명 합니다.
 > 
 > - WebMatrix 데이터베이스 도구입니다.
-> - `WebGrid`도우미입니다.
+> - `WebGrid` 도우미입니다.
 
 
 ## <a name="what-youll-build"></a>만들 것인지
@@ -334,10 +334,10 @@ WebMatrix 트리 보기에서 페이지를 마우스 오른쪽 단추로 클릭 
 
 [!code-cshtml[Main](displaying-data/samples/sample8.cshtml)]
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 - [Razor 구문을 사용 하 여 ASP.NET 웹 프로그래밍 소개](https://go.microsoft.com/fwlink/?LinkID=202890)
 
->[!div class="step-by-step"]
-[이전](intro-to-web-pages-programming.md)
-[다음](form-basics.md)
+> [!div class="step-by-step"]
+> [이전](intro-to-web-pages-programming.md)
+> [다음](form-basics.md)

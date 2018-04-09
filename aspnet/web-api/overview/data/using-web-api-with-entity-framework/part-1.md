@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/data/using-web-api-with-entity-framework/part-1
-title: "Web API 2 사용 하 여 Entity framework 6 | Microsoft Docs"
+title: Web API 2 사용 하 여 Entity framework 6 | Microsoft Docs
 author: MikeWasson
-description: "이 자습서에 대해서는 ASP.NET Web API를 사용 하 여 웹 응용 프로그램을 만드는 기본 사항 백 엔드 설명 됩니다. 이 자습서는 Entity Framework 6을 사용 하 여 데이터 레이아웃에 대 한 중..."
+description: 이 자습서에 대해서는 ASP.NET Web API를 사용 하 여 웹 응용 프로그램을 만드는 기본 사항 백 엔드 설명 됩니다. 이 자습서는 Entity Framework 6을 사용 하 여 데이터 레이아웃에 대 한 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/28/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-1
 msc.type: authoredcontent
-ms.openlocfilehash: cceefa128f90b4c3e23dd31119f44e6ffc55f46f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 8e6d381509a121e3036ca3af91ea3b9bd0be33c2
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-web-api-2-with-entity-framework-6"></a>Web API 2 사용 하 여 Entity framework 6
 ====================
@@ -76,7 +76,7 @@ Visual Studio를 엽니다. **파일** 메뉴 선택 **새로**을 선택한 후
 
 Azure 앱 서비스에서 프로젝트를 호스트 하려는 경우 둡니다는 **클라우드의 호스트에에서** 확인란을 선택 된 합니다.
 
-클릭 **확인** 프로젝트를 만듭니다.
+**확인**을 클릭해 프로젝트를 만듭니다.
 
 ## <a name="configure-azure-settings-optional"></a>(선택 사항) Azure 설정 구성
 
@@ -88,5 +88,5 @@ Azure에 로그인 한 후 Visual Studio 웹 응용 프로그램을 구성 하 �
 
 [![](part-1/_static/image10.png)](part-1/_static/image9.png)
 
->[!div class="step-by-step"]
-[다음](part-2.md)
+> [!div class="step-by-step"]
+> [다음](part-2.md)

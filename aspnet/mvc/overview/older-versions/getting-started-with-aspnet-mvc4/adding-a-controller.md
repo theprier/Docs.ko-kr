@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-controller
-title: "컨트롤러 추가 | Microsoft Docs"
+title: 컨트롤러 추가 | Microsoft Docs
 author: Rick-Anderson
-description: "참고:이 자습서의 업데이트 된 버전은 ASP.NET MVC 5 및 Visual Studio 2013을 사용 하는 있습니다. 것이 더 안전 하 고 진행할 데모를 단순..."
+description: 참고:이 자습서의 업데이트 된 버전은 ASP.NET MVC 5 및 Visual Studio 2013을 사용 하는 있습니다. 것이 더 안전 하 고 진행할 데모를 단순...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/28/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: 69af91401e51470fbc0b67103345325201b06723
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: bb76c0a87d935322406b9d8e18fbdb3e41f327f5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-controller"></a>컨트롤러 추가
 ====================
@@ -74,6 +74,6 @@ URL의 첫 번째 부분 컨트롤러 클래스를 결정 합니다. 따라서 *
 
 이러한 예제 모두에 컨트롤러에 작업을 하 고는 &quot;VC&quot; MVC의 부분 — 뷰와 컨트롤러 작업 즉, 합니다. 컨트롤러 HTML을 직접 반환 됩니다. 일반적으로 코드에 번거로운 되므로 HTML을 직접 반환 하는 컨트롤러 않으려는 합니다. 대신 일반적으로에서는 별도 뷰를 서식 파일을 HTML 응답을 생성할 수 있도록 합니다. 다음 방법을 수행 수에 대해 살펴보겠습니다.
 
->[!div class="step-by-step"]
-[이전](intro-to-aspnet-mvc-4.md)
-[다음](adding-a-view.md)
+> [!div class="step-by-step"]
+> [이전](intro-to-aspnet-mvc-4.md)
+> [다음](adding-a-view.md)

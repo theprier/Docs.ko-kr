@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/determining-what-files-need-to-be-deployed-cs
-title: "배포 파일에 필요한 확인 (C#) | Microsoft Docs"
+title: 배포 파일에 필요한 확인 (C#) | Microsoft Docs
 author: rick-anderson
-description: "개발 환경에서 프로덕션 환경에 배포 해야 하는 파일 정도 따라 결정 여부는 ASP.NET 응용 프로그램이 빌드된 주세요..."
+description: 개발 환경에서 프로덕션 환경에 배포 해야 하는 파일 정도 따라 결정 여부는 ASP.NET 응용 프로그램이 빌드된 주세요...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/01/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/determining-what-files-need-to-be-deployed-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d58956323275a46b44b36d4f19db4d2f607e3916
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: ff5f1d7d156efa12d97382db56211a07c43178fd
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="determining-what-files-need-to-be-deployed-c"></a>배포 파일에 필요한 확인 (C#)
 ====================
@@ -80,14 +80,14 @@ Microsoft Visual Studio 2005 서비스 팩 1을 릴리스 하는 경우 웹 응�
 - 7 개의 서로 다른 ASP.NET 페이지: 
 
     - ~`/Default.aspx`-사이트의 홈 페이지입니다.
-    - ~`/About.aspx`-"에 대 한 사이트의" 페이지.
-    - ~`/Fiction/Default.aspx`-소설 책 검토 된에 나열 된 페이지가 있습니다. 
+    - ~`/About.aspx` -"에 대 한 사이트의" 페이지.
+    - ~`/Fiction/Default.aspx` -소설 책 검토 된에 나열 된 페이지가 있습니다. 
 
-        - ~`/Fiction/Blaze.aspx`-Richard Bachman novel 검토 *Blaze*합니다.
-    - ~/`Tech/Default.aspx`-검토 된 기술 책 나열 된 페이지가 있습니다. 
+        - ~`/Fiction/Blaze.aspx` -Richard Bachman novel 검토 *Blaze*합니다.
+    - ~/`Tech/Default.aspx` -검토 된 기술 책 나열 된 페이지가 있습니다. 
 
         - ~/`Tech/CYOW.aspx`-검토 *직접 웹 사이트 만들기*합니다.
-        - ~/`Tech/TYASP35.aspx`-검토 *업무량이 직접 ASP.NET 3.5 24 시간 동안에서*합니다.
+        - ~/`Tech/TYASP35.aspx` -검토 *업무량이 직접 ASP.NET 3.5 24 시간 동안에서*합니다.
 - Styles 폴더에 3 개의 다른 CSS 파일을 선택 합니다.
 - -ASP.NET 로고와 이미지의 세 가지 검토 한 책의 내부적으로 Powered-모든 파일에 있는 이미지 4 개는 `Images` 폴더입니다.
 - A `Web.sitemap` 사이트 맵을 정의 하 고 메뉴에 표시 하는 데 사용 되는 파일의 `Default.aspx` 루트 디렉터리의 페이지 및 `Fiction` 및 `Tech` 폴더입니다.
@@ -110,7 +110,7 @@ Microsoft Visual Studio 2005 서비스 팩 1을 릴리스 하는 경우 웹 응�
 이 자습서 다운로드에는 웹 응용 프로그램의 두 복사본이, 다른 Visual Studio 프로젝트 형식으로 구현 하는 각: BookReviewsWAP, 웹 응용 프로그램 프로젝트 및 BookReviewsWSP, 웹 사이트 프로젝트입니다. 두 프로젝트가 모두 Visual Web Developer 2008 SP1를 사용 하 여 만든 및 ASP.NET 3.5 s p 1을 사용 합니다. 사용 하려면 이러한 프로젝트 내용을 바탕으로 압축을 푸는 시작 합니다. 웹 응용 프로그램 프로젝트 (BookReviewsWAP)을 열고 BookReviewsWAP 폴더를 탐색, 솔루션 파일을 두 번 `BookReviewsWAP.sln`합니다. (BookReviewsWSP) 웹 사이트 프로젝트를 열려면 Visual Studio를 시작 하 고 그런 다음 웹 사이트 열기 옵션을 선택 하 고 파일 메뉴에서를 찾은 `BookReviewsWSP` 폴더 바탕 화면에서 확인을 클릭 합니다.
 
 
-파일 확인이 자습서의 나머지 두 개의 섹션에 응용 프로그램을 배포 하는 경우 프로덕션 환경에 복사 해야 합니다. 다음 두 자습서-  *[Your 사이트를 사용 하 여 FTP 배포](deploying-your-site-using-an-ftp-client-cs.md)*  및  *[배포 Your 사이트를 사용 하 여 Visual Studio](deploying-your-site-using-visual-studio-cs.md)*  -여러 가지 방법을 보여 줍니다 웹 호스트 공급자에이 파일을 복사 합니다.
+파일 확인이 자습서의 나머지 두 개의 섹션에 응용 프로그램을 배포 하는 경우 프로덕션 환경에 복사 해야 합니다. 다음 두 자습서- *[Your 사이트를 사용 하 여 FTP 배포](deploying-your-site-using-an-ftp-client-cs.md)* 및 *[배포 Your 사이트를 사용 하 여 Visual Studio](deploying-your-site-using-visual-studio-cs.md)* -여러 가지 방법을 보여 줍니다 웹 호스트 공급자에이 파일을 복사 합니다.
 
 ## <a name="determining-the-files-to-deploy-for-the-web-application-project"></a>배포할 웹 응용 프로그램 프로젝트에 대 한 파일을 확인 합니다.
 
@@ -185,6 +185,6 @@ ASP.NET 응용 프로그램을 배포 하려면 개발 환경에서 프로덕션
 - [Visual Studio 2005의 웹 사이트 프로젝트 시스템: 것 란 무엇이 고 왜 수행할가?](https://weblogs.asp.net/scottgu/archive/2005/08/21/423201.aspx)
 - [연습: Visual Studio에서 웹 응용 프로그램 프로젝트를 웹 사이트 프로젝트를 변환](https://msdn.microsoft.com/library/aa983476.aspx)
 
->[!div class="step-by-step"]
-[이전](asp-net-hosting-options-cs.md)
-[다음](deploying-your-site-using-an-ftp-client-cs.md)
+> [!div class="step-by-step"]
+> [이전](asp-net-hosting-options-cs.md)
+> [다음](deploying-your-site-using-an-ftp-client-cs.md)

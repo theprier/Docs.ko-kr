@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/moving-to-aspnet-20/caching
-title: "캐싱 | Microsoft Docs"
+title: 캐싱 | Microsoft Docs
 author: microsoft
-description: "캐싱의 이해가 성능이 뛰어난 ASP.NET 응용 프로그램에 대 한 중요 합니다. ASP.NET 캐싱;에 대 한 3 가지 옵션을 제공 하는 1.x 출력 캐싱을 중..."
+description: 캐싱의 이해가 성능이 뛰어난 ASP.NET 응용 프로그램에 대 한 중요 합니다. ASP.NET 캐싱;에 대 한 3 가지 옵션을 제공 하는 1.x 출력 캐싱을 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2005
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/caching
 msc.type: authoredcontent
-ms.openlocfilehash: 9b229de60e09b94189f62a6bb6fa61a9973d637b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 90faaae75cc85585efa05e6e50eabe8c990d076e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="caching"></a>캐싱
 ====================
@@ -59,7 +59,7 @@ by [Microsoft](https://github.com/microsoft)
 
 참고 캐시 키의 배열에 추가 된 값과 같으면 캐시 키 역할을 하는 항목의 키 여야 합니다.
 
-## <a name="polling-based-sql-cache-dependenciesalso-called-table-based-dependencies"></a>SQL 캐시 종속성 폴링을 기반*(테이블 기반 종속성이 라고도 함)*
+## <a name="polling-based-sql-cache-dependenciesemalso-called-table-based-dependenciesem"></a>SQL 캐시 종속성 폴링을 기반<em>(테이블 기반 종속성이 라고도 함)</em>
 
 SQL Server 7 및 2000 SQL 캐시 종속성에 대 한 폴링 기반 모델을 사용합니다. 폴링 기반 모델은 테이블의에서 데이터를 변경할 때 트리거되는 데이터베이스 테이블에 트리거를 사용 합니다. 업데이트를 트리거하는 **changeId** 필드 ASP.NET 주기적으로 검사 하는 알림 테이블에 있습니다. 경우는 **changeId** 필드가 업데이트 되었습니다, ASP.NET 알고 데이터 변경 및 캐시 된 데이터를 무효화 합니다.
 
@@ -237,12 +237,13 @@ ASP.NET 2.0에서 캐싱 구성에 몇 가지 변경 사항이 있습니다. &lt
 
 다음 특성은 사용할 수는 &lt;outputCache&gt; 요소입니다.
 
-| **특성** | **설명** |
-| --- | --- |
-| **enableOutputCache** | 선택적 **부울** 특성입니다. 페이지 출력 캐시를 설정/해제합니다. 사용 하지 않을 경우 프로그래밍 방식으로 또는 선언적 설정에 관계 없이 페이지가 캐시 됩니다. 기본값은 **true**합니다. |
-| **enableFragmentCache** | 선택적 **부울** 특성입니다. 응용 프로그램 부분 캐시를 설정/해제합니다. 비활성화 하면 페이지가 없는에 관계 없이 캐시 된 [@ OutputCache](https://msdn.microsoft.com/library/hdxfb6cy.aspx) 지시문 또는 캐싱을 사용 하는 프로필입니다. 업스트림 프록시 서버는 물론 브라우저 클라이언트 페이지 출력 캐시를 시도 하지 않아야 표시 하는 캐시 제어 헤더를 포함 합니다. 기본값은 **false**합니다. |
-| **sendCacheControlHeader** | 선택적 **부울** 특성입니다. 나타내는 값을 가져오거나 여부는 **캐시-control: private** 출력 캐시 모듈에 의해 기본적으로 헤더를 보냅니다. 기본값은 **false**합니다. |
-| **omitVaryStar** | 선택적 **부울** 특성입니다. Http 전송 사용 가능/불가능 "**달라질 수 있습니다: \*** " 응답에서 헤더입니다. 기본 설정인 false, 사용 된 "**달라질 수 있습니다: \*** " 출력 캐시 된 페이지에 대 한 헤더를 보냅니다. Vary 헤더를 보낼 때 수에 대 한 서로 다른 버전을 캐싱하지 Vary 헤더에 지정 된 내용에 따라 합니다. 예를 들어 *Vary: 사용자-에이전트* 요청을 실행 하는 사용자 에이전트에 따라 페이지의 여러 버전을 저장 합니다. 기본값은 **false**합니다. |
+
+|       <strong>특성</strong>        |                                                                                                                                                                                                                                                       <strong>설명</strong>                                                                                                                                                                                                                                                       |
+|-----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|   <strong>enableOutputCache</strong>    |                                                                                                                                                          선택적 <strong>부울</strong> 특성입니다. 페이지 출력 캐시를 설정/해제합니다. 사용 하지 않을 경우 프로그래밍 방식으로 또는 선언적 설정에 관계 없이 페이지가 캐시 됩니다. 기본값은 <strong>true</strong>합니다.                                                                                                                                                           |
+|  <strong>enableFragmentCache</strong>   |                                                선택적 <strong>부울</strong> 특성입니다. 응용 프로그램 부분 캐시를 설정/해제합니다. 비활성화 하면 페이지가 없는에 관계 없이 캐시 된 [@ OutputCache](https://msdn.microsoft.com/library/hdxfb6cy.aspx) 지시문 또는 캐싱을 사용 하는 프로필입니다. 업스트림 프록시 서버는 물론 브라우저 클라이언트 페이지 출력 캐시를 시도 하지 않아야 표시 하는 캐시 제어 헤더를 포함 합니다. 기본값은 <strong>false</strong>합니다.                                                 |
+| <strong>sendCacheControlHeader</strong> |                                                                                                                                                      선택적 <strong>부울</strong> 특성입니다. 나타내는 값을 가져오거나 여부는 <strong>캐시-control: private</strong> 출력 캐시 모듈에 의해 기본적으로 헤더를 보냅니다. 기본값은 <strong>false</strong>합니다.                                                                                                                                                      |
+|      <strong>omitVaryStar</strong>      | 선택적 <strong>부울</strong> 특성입니다. Http 전송 사용 가능/불가능 "<strong>달라질 수 있습니다: \<g ><em>" 응답에서 헤더입니다. 기본 설정인 false, 사용 된 "</em>* 달라질 수 있습니다: \* <strong>" 출력 캐시 된 페이지에 대 한 헤더를 보냅니다. Vary 헤더를 보낼 때 수에 대 한 서로 다른 버전을 캐싱하지 Vary 헤더에 지정 된 내용에 따라 합니다. 예를 들어 <em>Vary: 사용자-에이전트</em> 요청을 실행 하는 사용자 에이전트에 따라 페이지의 여러 버전을 저장 합니다. 기본값은 * * false</strong>합니다. |
 
 ### <a name="the-ltoutputcachesettingsgt-element"></a>&lt;outputCacheSettings&gt; 요소
 

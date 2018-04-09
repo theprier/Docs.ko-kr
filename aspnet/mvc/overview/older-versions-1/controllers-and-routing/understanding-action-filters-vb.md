@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/understanding-action-filters-vb
-title: "작업 필터 (VB) 이해 | Microsoft Docs"
+title: 작업 필터 (VB) 이해 | Microsoft Docs
 author: microsoft
-description: "이 자습서의 목표 작업 필터를 설명 하는 것입니다. 작업 필터는 컨트롤러 동작-또는 전체 컨트롤러에 적용할 수 있는 특성 중..."
+description: 이 자습서의 목표 작업 필터를 설명 하는 것입니다. 작업 필터는 컨트롤러 동작-또는 전체 컨트롤러에 적용할 수 있는 특성 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/16/2008
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/understanding-action-filters-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 483133ec5db27c2fa1ed4b463e37e17efab12e0f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2796b67cba6a2ddaee7a006a170dfb7e5ff89888
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="understanding-action-filters-vb"></a>작업 필터 (VB) 이해
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [PDF 다운로드](http://download.microsoft.com/download/e/f/3/ef3f2ff6-7424-48f7-bdaa-180ef64c3490/ASPNET_MVC_Tutorial_14_VB.pdf)
 
@@ -45,7 +45,7 @@ ms.lasthandoff: 11/10/2017
 
 목록 1의 데이터 컨트롤러 라는 동작을 노출 하는 예를 들어 `Index()` 하는 현재 시간을 반환 합니다. 이 작업으로 데코레이팅되 어는 `OutputCache` 작업 필터. 이 필터를 사용 하면 10 초 동안 캐시 될 동작에 의해 반환 되는 값입니다.
 
-**1 – 나열`Controllers\DataController.vb`**
+**1 – 나열 `Controllers\DataController.vb`**
 
 [!code-vb[Main](understanding-action-filters-vb/samples/sample1.vb)]
 
@@ -103,7 +103,7 @@ ASP.NET MVC 프레임 워크의 기본 포함 사용자 지정 작업 필터를 
 
 를 사용자 지정 작업 필터를 구축 하는 방법을 보여 주기 위해 Visual Studio 출력 창에는 컨트롤러 동작을 처리 하는 단계를 기록 하는 사용자 지정 작업 필터를 만들겠습니다. 우리의 `LogActionFilter` 목록 2에 포함 되어 있습니다.
 
-**2 – 나열`ActionFilters\LogActionFilter.vb`**
+**2 – 나열 `ActionFilters\LogActionFilter.vb`**
 
 [!code-vb[Main](understanding-action-filters-vb/samples/sample2.vb)]
 
@@ -117,7 +117,7 @@ ASP.NET MVC 프레임 워크의 기본 포함 사용자 지정 작업 필터를 
 
 보기 3의 Home 컨트롤러를 전체 컨트롤러 클래스에는 로그 작업 필터를 적용 하는 방법을 보여 줍니다. 때마다 Home 컨트롤러에 의해 노출 되는 작업 중에 호출 되 – 하거나는 `Index()` 메서드 또는 `About()` 메서드-단계 처리 작업은 Visual Studio 출력 창에 기록 됩니다.
 
-**3 – 나열`Controllers\HomeController.vb`**
+**3 – 나열 `Controllers\HomeController.vb`**
 
 [!code-vb[Main](understanding-action-filters-vb/samples/sample3.vb)]
 
@@ -127,6 +127,6 @@ ASP.NET MVC 프레임 워크의 기본 포함 사용자 지정 작업 필터를 
 
 마지막으로, 간단한 작업 필터를 구현 하는 방법을 배웠습니다. Visual Studio 출력 창에는 컨트롤러 동작을 처리 하는 단계를 기록 하는 로그 작업 필터를 만들었는지 여부입니다.
 
->[!div class="step-by-step"]
-[이전](asp-net-mvc-routing-overview-vb.md)
-[다음](improving-performance-with-output-caching-vb.md)
+> [!div class="step-by-step"]
+> [이전](asp-net-mvc-routing-overview-vb.md)
+> [다음](improving-performance-with-output-caching-vb.md)

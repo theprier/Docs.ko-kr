@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/excluding-files-and-folders-from-deployment
-title: "배포에서 파일 및 폴더 제외 | Microsoft Docs"
+title: 배포에서 파일 및 폴더 제외 | Microsoft Docs
 author: jrjlee
-description: "이 항목 방법에서 제외할 수 있습니다 파일 및 폴더는 웹 배포 패키지를 빌드할 때 웹 응용 프로그램 프로젝트를 패키지에 대해 설명 합니다."
+description: 이 항목 방법에서 제외할 수 있습니다 파일 및 폴더는 웹 배포 패키지를 빌드할 때 웹 응용 프로그램 프로젝트를 패키지에 대해 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/excluding-files-and-folders-from-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 80810415bac473a58f60110fb9d08772e0627bd5
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: c435448bf057bbef9127d66ffda24a07729f2322
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="excluding-files-and-folders-from-deployment"></a>배포에서 파일 및 폴더 제외
 ====================
@@ -27,9 +27,9 @@ ms.lasthandoff: 03/15/2018
 > 이 항목 방법에서 제외할 수 있습니다 파일 및 폴더는 웹 배포 패키지를 빌드할 때 웹 응용 프로그램 프로젝트를 패키지에 대해 설명 합니다.
 
 
-이 항목의 Fabrikam, inc. 라는 가상 회사의 엔터프라이즈 배포 요구 사항을 바탕으로 하는 자습서 시리즈의 일부를 형성 합니다. 이 자습서 시리즈 샘플 솔루션 & #x 2014;을 사용 하는 [Contact Manager 솔루션](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; 현실적인 수준의 복잡성을 Windows ASP.NET MVC 3 응용 프로그램을 포함 하 여 웹 응용 프로그램을 나타내기 위해 Communication Foundation (WCF) 서비스 및 데이터베이스 프로젝트를 제공 합니다.
+이 항목의 Fabrikam, inc. 라는 가상 회사의 엔터프라이즈 배포 요구 사항을 바탕으로 하는 자습서 시리즈의 일부를 형성 합니다. 샘플 솔루션을 사용 하는 자습서 시리즈가&#x2014;는 [Contact Manager 솔루션](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;현실적인 수준의 복잡성, Windows Communication ASP.NET MVC 3 응용 프로그램을 포함 하 여 웹 응용 프로그램을 나타내기 위해 WCF (foundation) 서비스 및 데이터베이스 프로젝트.
 
-이 자습서의 핵심에는 배포 방법에 설명 된 분할 프로젝트 파일 접근 방식에 따라 [프로젝트 파일 이해](../web-deployment-in-the-enterprise/understanding-the-project-file.md), 빌드 프로세스에 의해 제어 되는 두 프로젝트에 파일 & #x 2014; 포함 환경 관련 빌드 및 배포 설정을 포함 하는 하나 및 모든 대상 환경에 적용 되는 지침을 빌드하십시오. 빌드 시 환경 관련 프로젝트 파일은 빌드 지침의 전체 집합을 구성 하기 위해 환경을 알 수 없는 프로젝트 파일에 병합 됩니다.
+이 자습서의 핵심에는 배포 방법에 설명 된 분할 프로젝트 파일 접근 방식에 따라 [프로젝트 파일 이해](../web-deployment-in-the-enterprise/understanding-the-project-file.md), 두 개의 프로젝트 파일에 빌드 프로세스에 의해 제어 되는&#x2014;포함 환경 관련 빌드 및 배포 설정을 포함 하는 하나 및 모든 대상 환경에 적용 되는 지침을 빌드하십시오. 빌드 시 환경 관련 프로젝트 파일은 빌드 지침의 전체 집합을 구성 하기 위해 환경을 알 수 없는 프로젝트 파일에 병합 됩니다.
 
 ## <a name="overview"></a>개요
 
@@ -74,7 +74,7 @@ Visual Studio에서 웹 응용 프로그램 프로젝트 속성을 구성할 때
 1. 라는 사용자 지정 프로젝트 파일을 만들어 *[프로젝트 이름].wpp.targets* 프로젝트 파일과 같은 폴더에 있습니다.
 
     > [!NOTE]
-    > *. wpp.targets* 파일에 웹 응용 프로그램 프로젝트 파일 & #x 2014;와 같은 폴더에 배치 해야 합니다. 예를 들어 *ContactManager.Mvc.csproj*& 하나로 #x 2014; 보다는 같은 폴더 제어 된 빌드 및 배포 프로세스에 사용 하는 사용자 지정 프로젝트 파일입니다.
+    > *. wpp.targets* 파일을 웹 응용 프로그램 프로젝트 파일와 같은 폴더에 배치 해야&#x2014;예를 들어 *ContactManager.Mvc.csproj*&#x2014;대신 사용자 지정와 같은 폴더에 빌드 및 배포 프로세스 제어 기능을 사용 하는 프로젝트 파일입니다.
 2. 에 *. wpp.targets* 파일에서 추가 **ItemGroup** 요소입니다.
 3. 에 **ItemGroup** 요소를 추가 **ExcludeFromPackageFolders** 및 **ExcludeFromPackageFiles** 특정 파일 및 필요에 따라 폴더를 제외할 항목입니다.
 
@@ -106,16 +106,16 @@ Visual Studio에서 웹 응용 프로그램 프로젝트 속성을 구성할 때
     [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample2.xml)]
 6. 웹 패키지에서 폴더를 제외 하려면 추가 **ExcludeFromPackageFolders** 요소는 **ItemGroup** 요소:
 
-    1. 에 **Include** 특성을 제외 하려는 폴더의 세미콜론으로 구분 된 목록을 제공 합니다.
-    2. 에 **FromTarget** 메타 데이터 요소를 나타내는 이유 폴더는 제외, 이름와 같은 의미 있는 값을 제공는 *. wpp.targets* 파일입니다.
+   1. 에 **Include** 특성을 제외 하려는 폴더의 세미콜론으로 구분 된 목록을 제공 합니다.
+   2. 에 **FromTarget** 메타 데이터 요소를 나타내는 이유 폴더는 제외, 이름와 같은 의미 있는 값을 제공는 *. wpp.targets* 파일입니다.
 
-    [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample3.xml)]
+      [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample3.xml)]
 7. 웹 패키지에서 파일을 제외 하려면 추가 **ExcludeFromPackageFiles** 요소는 **ItemGroup** 요소:
 
-    1. 에 **Include** 특성을 제외 하려면 파일의 세미콜론으로 구분 된 목록을 제공 합니다.
-    2. 에 **FromTarget** 메타 데이터 요소를 나타내는 이유 파일은 제외 되, 이름와 같은 의미 있는 값을 제공 된 *. wpp.targets* 파일.
+   1. 에 **Include** 특성을 제외 하려면 파일의 세미콜론으로 구분 된 목록을 제공 합니다.
+   2. 에 **FromTarget** 메타 데이터 요소를 나타내는 이유 파일은 제외 되, 이름와 같은 의미 있는 값을 제공 된 *. wpp.targets* 파일.
 
-    [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample4.xml)]
+      [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample4.xml)]
 8. *[프로젝트 이름].wpp.targets* 파일 이제는 다음과 유사 합니다.
 
     [!code-xml[Main](excluding-files-and-folders-from-deployment/samples/sample5.xml)]
@@ -131,6 +131,6 @@ Visual Studio에서 웹 응용 프로그램 프로젝트 속성을 구성할 때
 
 배포 프로세스 제어 기능을 사용자 지정 Microsoft Build Engine (MSBuild) 프로젝트 파일 사용에 대 한 자세한 내용은 참조 하십시오. [프로젝트 파일 이해](../web-deployment-in-the-enterprise/understanding-the-project-file.md) 및 [빌드 프로세스를 이해](../web-deployment-in-the-enterprise/understanding-the-build-process.md)합니다. 패키징 및 배포 프로세스에 대 한 자세한 내용은 참조 하십시오. [빌드 및 패키징 웹 응용 프로그램 프로젝트](../web-deployment-in-the-enterprise/building-and-packaging-web-application-projects.md), [웹 패키지 배포에 대 한 매개 변수 구성](../web-deployment-in-the-enterprise/configuring-parameters-for-web-package-deployment.md), 및 [ 웹 패키지 배포](../web-deployment-in-the-enterprise/deploying-web-packages.md)합니다.
 
->[!div class="step-by-step"]
-[이전](deploying-membership-databases-to-enterprise-environments.md)
-[다음](taking-web-applications-offline-with-web-deploy.md)
+> [!div class="step-by-step"]
+> [이전](deploying-membership-databases-to-enterprise-environments.md)
+> [다음](taking-web-applications-offline-with-web-deploy.md)

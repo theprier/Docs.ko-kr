@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/building-and-packaging-web-application-projects
-title: "빌드 및 웹 응용 프로그램 프로젝트를 패키지 | Microsoft Docs"
+title: 빌드 및 웹 응용 프로그램 프로젝트를 패키지 | Microsoft Docs
 author: jrjlee
-description: "원격 서버 환경에는 웹 응용 프로그램 프로젝트를 배포 하려는 경우 첫 번째 작업 프로젝트를 빌드하고 웹 배포 팩을 생성 하는 중..."
+description: 원격 서버 환경에는 웹 응용 프로그램 프로젝트를 배포 하려는 경우 첫 번째 작업 프로젝트를 빌드하고 웹 배포 팩을 생성 하는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/building-and-packaging-web-application-projects
 msc.type: authoredcontent
-ms.openlocfilehash: c05f725c9e6b493a6af8f5b5d20dbc9ff73a1ef8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d630e1776607bd0bd7c61e1f0f7234ef58c7533b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="building-and-packaging-web-application-projects"></a>빌드 및 웹 응용 프로그램 프로젝트를 패키지
 ====================
@@ -59,8 +59,8 @@ C#에 대 한 프로젝트 파일에서 확인을 수행한-기반된 웹 응용
 **패키지** 대상이에 정의 된 *Microsoft.Web.Publishing.targets* 파일입니다. 기본적으로,이 대상 웹 응용 프로그램 프로젝트의 빌드 출력 걸리며 IIS 웹 서버에 게시할 수 있는 웹 배포 패키지를로 변환 합니다.
 
 > [!NOTE]
-> 프로젝트 파일을 보려면 (예를 들어 *ContactManager.Mvc.csproj*) Visual Studio 2010에서 먼저 솔루션에서 프로젝트를 언로드합니다. 에 **솔루션 탐색기** 창에서 프로젝트 노드를 마우스 오른쪽 단추로 클릭 **프로젝트 언로드**합니다. 다시 프로젝트 노드를 마우스 오른쪽 단추로 누른 **편집***[프로젝트 파일]*). 프로젝트 파일은 원시 XML 형식으로 열립니다. 완료 되 면 프로젝트를 다시 로드 해야 합니다.  
-> MSBuild 대상, 작업에 대 한 자세한 내용은 및 **가져오기** 참조 [프로젝트 파일 이해](understanding-the-project-file.md)합니다. 프로젝트 파일 및 WPP에 대 한 자세한 소개를 참조 하십시오. [Microsoft Build Engine 안에: MSBuild를 사용 하 여 및 Team Foundation Build](http://amzn.com/0735645248) Sayed Ibrahim Hashimi 및 William Bartholomew, ISBN: 978-0-7356-4524-0입니다.
+> 프로젝트 파일을 보려면 (예를 들어 <em>ContactManager.Mvc.csproj</em>) Visual Studio 2010에서 먼저 솔루션에서 프로젝트를 언로드합니다. 에 <strong>솔루션 탐색기</strong> 창에서 프로젝트 노드를 마우스 오른쪽 단추로 클릭 <strong>프로젝트 언로드</strong>합니다. 다시 프로젝트 노드를 마우스 오른쪽 단추로 누른 <strong>편집</strong><em>[프로젝트 파일]</em>). 프로젝트 파일은 원시 XML 형식으로 열립니다. 완료 되 면 프로젝트를 다시 로드 해야 합니다.  
+> MSBuild 대상, 작업에 대 한 자세한 내용은 및 <strong>가져오기</strong> 참조 [프로젝트 파일 이해](understanding-the-project-file.md)합니다. 프로젝트 파일 및 WPP에 대 한 자세한 소개를 참조 하십시오. [Microsoft Build Engine 안에: MSBuild를 사용 하 여 및 Team Foundation Build](http://amzn.com/0735645248) Sayed Ibrahim Hashimi 및 William Bartholomew, ISBN: 978-0-7356-4524-0입니다.
 
 
 ## <a name="what-is-a-web-deployment-package"></a>웹 배포 패키지는 무엇입니까?
@@ -104,6 +104,6 @@ C#에 대 한 프로젝트 파일에서 확인을 수행한-기반된 웹 응용
 
 프로젝트 파일 및 WPP에 대 한 자세한 소개를 참조 하십시오. [Microsoft Build Engine 안에: MSBuild를 사용 하 여 및 Team Foundation Build](http://amzn.com/0735645248) Sayed Ibrahim Hashimi 및 William Bartholomew, ISBN: 978-0-7356-4524-0입니다.
 
->[!div class="step-by-step"]
-[이전](understanding-the-build-process.md)
-[다음](configuring-parameters-for-web-package-deployment.md)
+> [!div class="step-by-step"]
+> [이전](understanding-the-build-process.md)
+> [다음](configuring-parameters-for-web-package-deployment.md)

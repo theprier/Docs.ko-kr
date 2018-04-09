@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/validating-with-a-service-layer-cs
-title: "서비스 계층 (C#)을 사용한 유효성 검사 | Microsoft Docs"
+title: 서비스 계층 (C#)을 사용한 유효성 검사 | Microsoft Docs
 author: StephenWalther
-description: "사용자 유효성 검사 논리에서 컨트롤러 작업 및 별도 서비스 계층으로 이동 하는 방법에 알아봅니다. 이 자습서에서는 Stephen Walther 설명 방법을 있습니다..."
+description: 사용자 유효성 검사 논리에서 컨트롤러 작업 및 별도 서비스 계층으로 이동 하는 방법에 알아봅니다. 이 자습서에서는 Stephen Walther 설명 방법을 있습니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/02/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validating-with-a-service-layer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f36301aef4377c6c00cb4fc33dbc5c57b1c426a9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 06042ac197cc54da767a94a44c57eb09bb3db9fa
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="validating-with-a-service-layer-c"></a>서비스 계층 (C#)을 사용한 유효성 검사
 ====================
@@ -33,13 +33,13 @@ ASP.NET MVC 응용 프로그램을 빌드할 때에 컨트롤러 작업 내 하�
 
 예를 들어 목록 1의 ProductRepository 라는 간단한 리포지토리를 포함 합니다. 제품 저장소는 모든 응용 프로그램에 대 한 데이터 액세스 코드를 포함합니다. 목록에는 제품 저장소 구현 하는 IProductRepository 인터페이스 포함 되어 있습니다.
 
-**1--Models\ProductRepository.cs 나열**
+**Listing 1 -- Models\ProductRepository.cs**
 
 [!code-csharp[Main](validating-with-a-service-layer-cs/samples/sample1.cs)]
 
 목록 2에서 컨트롤러의 index () 및 create () 작업의 저장소 계층을 사용합니다. 이 컨트롤러에는 데이터베이스 논리 없는지 확인 합니다. 저장소 계층을 만드는 문제의 확실 하 게 구분을 유지 관리할 수 있습니다. 컨트롤러 응용 프로그램 흐름 제어 논리를 담당 하 고 저장소는 데이터 액세스 논리를 담당 합니다.
 
-**2-Controllers\ProductController.cs 나열**
+**Listing 2 - Controllers\ProductController.cs**
 
 [!code-csharp[Main](validating-with-a-service-layer-cs/samples/sample2.cs)]
 
@@ -57,7 +57,7 @@ ASP.NET MVC 응용 프로그램을 빌드할 때에 컨트롤러 작업 내 하�
 
 저장소 계층 대신 서비스 계층을 사용 하도록 목록 4에는 제품 컨트롤러 업데이트 되었습니다. 컨트롤러 계층의 서비스 계층으로 통신 합니다. 서비스 계층은 저장소 계층을 설명 합니다. 각 레이어에 별도 책임입니다.
 
-**4-Controllers\ProductController.cs 나열**
+**Listing 4 - Controllers\ProductController.cs**
 
 [!code-csharp[Main](validating-with-a-service-layer-cs/samples/sample4.cs)]
 
@@ -83,13 +83,13 @@ IValidationDictionary 인터페이스 목록 6에서 정의 됩니다. 이 간�
 
 ModelStateWrapper 클래스의 이름을 나열 하는 7: 클래스 IValidationDictionary 인터페이스를 구현 합니다. 모델 상태 사전 생성자에 전달 하 여 ModelStateWrapper 클래스를 인스턴스화할 수 있습니다.
 
-**7-Models\ModelStateWrapper.cs 나열**
+**Listing 7 - Models\ModelStateWrapper.cs**
 
 [!code-csharp[Main](validating-with-a-service-layer-cs/samples/sample7.cs)]
 
 마지막으로, 목록 8의 업데이트 된 컨트롤러는 해당 생성자에서 서비스 계층을 만들 때는 ModelStateWrapper를 사용 합니다.
 
-**8-Controllers\ProductController.cs 나열**
+**Listing 8 - Controllers\ProductController.cs**
 
 [!code-csharp[Main](validating-with-a-service-layer-cs/samples/sample8.cs)]
 
@@ -99,6 +99,6 @@ IValidationDictionary를 사용 하 여 인터페이스와 ModelStateWrapper 클
 
 이 자습서의 목표 ASP.NET MVC 응용 프로그램에서 유효성 검사를 수행 하는 한 가지 방법을 설명 하는 것 이었습니다. 이 자습서에서는 모든 유효성 검사 논리에 컨트롤러와 별도 서비스 계층으로 이동 하는 방법을 배웠습니다. 또한 ModelStateWrapper 클래스를 만들어 컨트롤러 계층에서 사용자 서비스 계층을 격리 하는 방법을 배웠습니다.
 
->[!div class="step-by-step"]
-[이전](validating-with-the-idataerrorinfo-interface-cs.md)
-[다음](validation-with-the-data-annotation-validators-cs.md)
+> [!div class="step-by-step"]
+> [이전](validating-with-the-idataerrorinfo-interface-cs.md)
+> [다음](validation-with-the-data-annotation-validators-cs.md)

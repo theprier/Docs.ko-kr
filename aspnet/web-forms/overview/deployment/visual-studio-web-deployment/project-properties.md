@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/project-properties
-title: "Visual Studio를 사용 하 여 ASP.NET 웹 배포: 프로젝트 속성 | Microsoft Docs"
+title: 'Visual Studio를 사용 하 여 ASP.NET 웹 배포: 프로젝트 속성 | Microsoft Docs'
 author: tdykstra
-description: "이 자습서 시리즈를 배포 하는 방법을 보여 줍니다. ASP.NET (게시) 실행 하 여 웹 응용 프로그램을 Azure 앱 서비스 웹 앱 또는 타사 호스팅 공급자 중..."
+description: 이 자습서 시리즈를 배포 하는 방법을 보여 줍니다. ASP.NET (게시) 실행 하 여 웹 응용 프로그램을 Azure 앱 서비스 웹 앱 또는 타사 호스팅 공급자 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/project-properties
 msc.type: authoredcontent
-ms.openlocfilehash: 85b6dbcc8d40c168a49513ef6b549f9ec7fa5097
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: fba3f089bf1693eec873b08b4bc50e3accba06ee
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-project-properties"></a>Visual Studio를 사용 하 여 ASP.NET 웹 배포: 프로젝트 속성
 ====================
@@ -68,6 +68,6 @@ ms.lasthandoff: 01/24/2018
 
 이제 배포 설치 작업을 모두 완료 했습니다. 다음 자습서에서는 Contoso 대학 사이트 테스트 환경에 배포 하 고 테스트 합니다.
 
->[!div class="step-by-step"]
-[이전](web-config-transformations.md)
-[다음](deploying-to-iis.md)
+> [!div class="step-by-step"]
+> [이전](web-config-transformations.md)
+> [다음](deploying-to-iis.md)

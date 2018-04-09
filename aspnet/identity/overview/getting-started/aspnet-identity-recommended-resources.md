@@ -1,22 +1,22 @@
 ---
 uid: identity/overview/getting-started/aspnet-identity-recommended-resources
-title: "ASP.NET Id 권장 리소스 | Microsoft Docs"
+title: ASP.NET Id 권장 리소스 | Microsoft Docs
 author: Rick-Anderson
-description: "이 항목에서는 ASP.NET Identity를 사용 하는 방법에 대 한 설명서 리소스에 대 한 링크를 제공 합니다. 블로그 게시물, stackoverflow 스레드 또는 다른 연결... 알고 있는 경우"
+description: 이 항목에서는 ASP.NET Identity를 사용 하는 방법에 대 한 설명서 리소스에 대 한 링크를 제공 합니다. 블로그 게시물, stackoverflow 스레드 또는 다른 연결... 알고 있는 경우
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/09/2015
 ms.topic: article
 ms.assetid: 0f78aec2-f509-46fa-b20f-d5208425d8ec
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/aspnet-identity-recommended-resources
 msc.type: authoredcontent
-ms.openlocfilehash: cb6e378d6b1de7d43bbc4272b64f9029f4e92924
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: f2e1693a32fce6956ddb1e095e6f208b9f0faab6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-identity-recommended-resources"></a>ASP.NET Id 권장 리소스
 ====================
@@ -94,7 +94,7 @@ ms.lasthandoff: 01/24/2018
     - [Owin 외부 인증 파이프라인 이해](http://coding.abel.nu/2014/06/understanding-the-owin-external-authentication-pipeline/)
     - [ASP.NET Id 및 Owin 개요](http://coding.abel.nu/2014/06/asp-net-identity-and-owin-overview/)
 
- 여 [K. Scott Allen](https://twitter.com/OdeToCode) Ode 코드에서
+  여 [K. Scott Allen](https://twitter.com/OdeToCode) Ode 코드에서
 
     - [ASP.NET Core Id](http://odetocode.com/blogs/scott/archive/2013/11/25/asp-net-core-identity.aspx) 이 블로그 IUser, IUserStore 및 I 비롯 한 핵심 추상화를 검사 하 여\*저장소 인터페이스입니다.
     - [ASP.NET Identity Entity Framework와 함께](http://odetocode.com/blogs/scott/archive/2014/01/03/asp-net-identity-with-the-entity-framework.aspx) MVC 5, 웹 API 및 SPA 앱, 연결 문자열 및 관리 컨텍스트의 개별 사용자 계정
@@ -108,7 +108,7 @@ ms.lasthandoff: 01/24/2018
 - [Pranav Rastogi](https://twitter.com/rustd)
 
     - [공급자 소셜에서 자세한 정보를 얻기](https://blogs.msdn.com/b/webdev/archive/2013/10/16/get-more-information-from-social-providers-used-in-the-vs-2013-project-templates.aspx)
-- [@beabigrockstar](https://twitter.com/beabigrockstar)(Jerrie Pelser)
+- [@beabigrockstar](https://twitter.com/beabigrockstar) (Jerrie Pelser)
 
     - [2 단계 인증](http://www.beabigrockstar.com/blog/2-factor-authentication-with-asp-net-identity-2-0-beta-1/)
     - [Google 인증자를 사용 하 여 ASP.NET Identity와](http://www.beabigrockstar.com/blog/using-google-authenticator-asp-net-identity/)
@@ -132,7 +132,7 @@ ms.lasthandoff: 01/24/2018
 - Channel 9 [ASP.NET Identity를 이용 하 여 웹 사이트 보안](https://channel9.msdn.com/Events/TechDays/Techdays-2014-the-Netherlands/Securing-your-website-with-ASP-NET-Identity) Alex Thissen 여
 - [ASP.NET Id를 사용 하 여 기존 DB 모델에](https://www.youtube.com/watch?v=elfqejow5hM) Alexander Schmidt 하 여
 - [한 ASP.NET Identity](https://www.youtube.com/watch?v=w8GD-QIusKk) Telerik의 Ivaylo Kenov 하 여
-- [체코어 ASP.NET Identity](https://www.youtube.com/watch?v=tVbZp5brcpY) 이 강의에서는 보여줍니다 기본 인증을 배포 하는 방법, Facebook, Twitter 등 외부 id 공급자에 대 한 지원을 추가 하는 방법 및 (otp 1)의 일회용 암호를 사용 하는 방법입니다. [ASP.NET Identity je nástupce 멤버 자격 역할 공급자 &#367; ASP.NET, tedy knihovna v pro zajišt #283 ní autentizace uživatel &; #367 합니다. V této p &#345; ednášce si ukážeme jak nasad]
+- [체코어 ASP.NET Identity](https://www.youtube.com/watch?v=tVbZp5brcpY) 이 강의에서는 보여줍니다 기본 인증을 배포 하는 방법, Facebook, Twitter 등 외부 id 공급자에 대 한 지원을 추가 하는 방법 및 (otp 1)의 일회용 암호를 사용 하는 방법입니다. [ASP.NET Identity je nástupce 멤버 자격 역할 공급자&#367; v ASP.NET, tedy knihovna pro zajišt&#283;ní autentizace uživatel&#367;합니다. V této p&#345;ednášce si ukážeme jak nasad]
 
 <a id="cust"></a>
 ## <a name="custom-storage-providers-for-aspnet-identity"></a>ASP.NET Id에 대 한 사용자 지정 저장소 공급자

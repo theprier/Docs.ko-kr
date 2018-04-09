@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/introduction/getting-started
-title: "ASP.NET MVC 5 시작 | Microsoft Docs"
+title: ASP.NET MVC 5 시작 | Microsoft Docs
 author: Rick-Anderson
-description: "참고:이 자습서의 업데이트 된 버전은 Visual Studio 2015를 사용 하 여 사용할 수입니다. 새 자습서에서는 ASP.NET Core MVC 6 많은 improvem 제공 하는 중..."
+description: 참고:이 자습서의 업데이트 된 버전은 Visual Studio 2015를 사용 하 여 사용할 수입니다. 새 자습서에서는 ASP.NET Core MVC 6 많은 improvem 제공 하는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/28/2015
@@ -12,26 +12,25 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/getting-started
 msc.type: authoredcontent
-ms.openlocfilehash: 1616b238612fa9f519418f583c40a46b9d81d8ce
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 0f1fd2026691d3bc0e81b20a9731879d7a6041bb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="getting-started-with-aspnet-mvc-5"></a>ASP.NET MVC 5 시작
 ====================
 으로 [Rick Anderson](https://github.com/Rick-Anderson)
 
-[!INCLUDE[consider RP](../../../../includes/razor.md)]
+[!INCLUDE [consider RP](../../../../includes/razor.md)]
 
- 
  이 자습서는 ASP.NET MVC 5 웹 응용 프로그램 사용 하 여 프로그램을 구축 하는 기초 업무량이 [Visual Studio 2017](https://www.visualstudio.com/)합니다. 자습서에 대 한 최종 소스에 있는 [GitHub](https://github.com/aspnet/Docs/tree/master/aspnet/mvc/overview/getting-started/introduction/sample/MvcMovie/MvcMovie)
- 
- 
+
+
  이 자습서에 의해 작성 되었으므로 [Scott Guthrie](https://weblogs.asp.net/scottgu/) (twitter[ @scottgu ](https://twitter.com/scottgu) ), [Scott Hanselman](http://www.hanselman.com/blog/) (twitter: [ @shanselman ](https://twitter.com/shanselman) ) 및 [Rick Anderson](https://twitter.com/RickAndMSFT) ( [ @RickAndMSFT ](https://twitter.com/#!/RickAndMSFT) )
- 
+
  이 응용 프로그램을 Azure에 배포 하려면 Azure 계정이 필요 합니다.
- 
+
  - 있습니다 수 [무료로 Azure 계정을 개설](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A443DD604) -크레딧을 얻게 유료 Azure 서비스를 실행 해 사용할 수 있으며, 사용 후에 최대 계정 등에 사용 가능한 Azure 서비스입니다.
  - 있습니다 수 [MSDN 구독자 혜택을 활성화](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604) -Your MSDN을 구독 하면 크레딧 매달 유료 Azure 서비스에 사용할 수 있습니다.
 
@@ -42,9 +41,9 @@ ms.lasthandoff: 01/24/2018
 
 Visual Studio IDE, 또는 통합된 개발 환경입니다. Microsoft Word를 사용 하 여 문서를 작성 하는 것 처럼 응용 프로그램을 만드는 있는 IDE를 사용 합니다. Visual Studio에는 사용할 수 있는 다양 한 옵션을 보여 주는 아래 목록입니다. IDE에서 작업을 수행 하는 다른 방법은 제공 하는 메뉴가 있습니다. (선택 하는 대신 예를 들어 **새 프로젝트** 에서 **시작** 페이지 메뉴를 사용 하 고 선택할 수 **파일** &gt; **새프로젝트**.)
 
-   
+
 ![](getting-started/_static/image1.png)  
- 
+
 
 ## <a name="creating-your-first-application"></a>응용 프로그램 처음 만들기
 
@@ -83,5 +82,5 @@ Azure에이 솔루션을 배포 하려면 Azure 계정이 필요 합니다. 계�
 - [무료 Azure 계정을 개설](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A443DD604) -크레딧을 얻게 유료 Azure 서비스를 실행 해 사용할 수 있으며, 사용 후에 최대 계정 등에 사용 가능한 Azure 서비스입니다.
 - [MSDN 구독자 혜택을 활성화](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A443DD604) -Your MSDN을 구독 하면 크레딧 매달 유료 Azure 서비스에 사용할 수 있습니다.
 
->[!div class="step-by-step"]
-[다음](adding-a-controller.md)
+> [!div class="step-by-step"]
+> [다음](adding-a-controller.md)

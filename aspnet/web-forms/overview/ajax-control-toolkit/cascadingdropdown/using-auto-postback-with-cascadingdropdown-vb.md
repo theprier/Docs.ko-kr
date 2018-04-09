@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/cascadingdropdown/using-auto-postback-with-cascadingdropdown-vb
-title: "자동 다시 게시를 사용 하 여 CascadingDropDown (VB)으로 | Microsoft Docs"
+title: 자동 다시 게시를 사용 하 여 CascadingDropDown (VB)으로 | Microsoft Docs
 author: wenz
-description: "변경 내용을 하나의 DropDownList 부하에 관련 된 값이 anoth에 있도록 DropDownList 컨트롤을 확장 하는 AJAX 컨트롤 도구 키트에서 CascadingDropDown 컨트롤 중..."
+description: 변경 내용을 하나의 DropDownList 부하에 관련 된 값이 anoth에 있도록 DropDownList 컨트롤을 확장 하는 AJAX 컨트롤 도구 키트에서 CascadingDropDown 컨트롤 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/using-auto-postback-with-cascadingdropdown-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f8059f44b4efbf59ebe7b3d2fd5400e886642a90
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e8a48692dd96ee6a647bfb57ce2915b4e85544fe
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-auto-postback-with-cascadingdropdown-vb"></a>자동 다시 게시를 사용 하 여 CascadingDropDown (VB)으로
 ====================
@@ -64,5 +64,5 @@ CascadingDropDown extender 다음 비동기적으로 호출 다음 메서드 서
 
 포스트백 목록 요소를 선택 하면 ([전체 크기 이미지를 보려면 클릭](using-auto-postback-with-cascadingdropdown-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[이전](presetting-list-entries-with-cascadingdropdown-vb.md)
+> [!div class="step-by-step"]
+> [이전](presetting-list-entries-with-cascadingdropdown-vb.md)

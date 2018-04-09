@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/configuring-parameters-for-web-package-deployment
-title: "웹 패키지 배포에 대 한 매개 변수 구성 | Microsoft Docs"
+title: 웹 패키지 배포에 대 한 매개 변수 구성 | Microsoft Docs
 author: jrjlee
-description: "이 항목에서는 인터넷 정보 서비스 (IIS) 웹 응용 프로그램 이름, 연결 문자열 및 서비스 끝점 등의 매개 변수 값을 설정 하는 방법을 설명..."
+description: 이 항목에서는 인터넷 정보 서비스 (IIS) 웹 응용 프로그램 이름, 연결 문자열 및 서비스 끝점 등의 매개 변수 값을 설정 하는 방법을 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/configuring-parameters-for-web-package-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 12a4ba8ad30df43e7192500ad4514dfa9679f899
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 7be08f1a1fb7232911a44cf64e2e784dbb95ff48
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-parameters-for-web-package-deployment"></a>웹 패키지 배포에 대 한 매개 변수를 구성합니다.
 ====================
@@ -92,7 +92,7 @@ WPP에 생성 된 배포 패키지에서 이러한 속성 매개 변수화 합�
 
 ## <a name="modifying-the-setparametersxml-file"></a>SetParameters.xml 파일 수정
 
-경우 수동으로 웹 응용 프로그램 패키지를 배포 하도록 계획 & #x 2014; 중 하나를 실행 하 여는 *. deploy.cmd* 파일 또는 명령줄 & #x 2014;에서 MSDeploy.exe를 실행 하 여 더 할 게 없습니다을 수동으로 편집 하 여 중지*SetParameters.xml* 배포 하기 전에 파일입니다. 그러나 엔터프라이즈 규모 솔루션에서 작업할 경우 큰, 자동화 된 빌드 및 배포 프로세스의 일부로 웹 응용 프로그램 패키지를를 배포 해야 할 수 있습니다. 이 시나리오에서는 Microsoft Build Engine (MSBuild)를 수정할 필요는 *SetParameters.xml* 파일에 있습니다. MSBuild를 사용 하 여 이렇게 하려면 **XmlPoke** 작업 합니다.
+웹 응용 프로그램 패키지를 수동으로 배포 하려면&#x2014;실행 하거나는 *. deploy.cmd* 파일 또는 명령줄에서 MSDeploy.exe를 실행 하 여&#x2014;중지 시킬을 수동으로 편집 하는 것이 없을  *SetParameters.xml* 배포 하기 전에 파일입니다. 그러나 엔터프라이즈 규모 솔루션에서 작업할 경우 큰, 자동화 된 빌드 및 배포 프로세스의 일부로 웹 응용 프로그램 패키지를를 배포 해야 할 수 있습니다. 이 시나리오에서는 Microsoft Build Engine (MSBuild)를 수정할 필요는 *SetParameters.xml* 파일에 있습니다. MSBuild를 사용 하 여 이렇게 하려면 **XmlPoke** 작업 합니다.
 
 [않아 샘플 솔루션](the-contact-manager-solution.md) 이 과정을 보여 줍니다. 다음 코드 예제이 예제에 관련 된 정보만 표시 하도록 편집 되었습니다.
 
@@ -148,6 +148,6 @@ WPP에 생성 된 배포 패키지에서 이러한 속성 매개 변수화 합�
 
 매개 변수화 웹 배포에 대 한 일반적인 정보를 참조 하십시오. [웹 배포에서 매개 변수화 동작](https://go.microsoft.com/?linkid=9805119) (블로그 게시물).
 
->[!div class="step-by-step"]
-[이전](building-and-packaging-web-application-projects.md)
-[다음](deploying-web-packages.md)
+> [!div class="step-by-step"]
+> [이전](building-and-packaging-web-application-projects.md)
+> [다음](deploying-web-packages.md)

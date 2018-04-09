@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/deploying-web-packages
-title: "웹 패키지 배포 | Microsoft Docs"
+title: 웹 패키지 배포 | Microsoft Docs
 author: jrjlee
-description: "이 항목에서는 인터넷 정보 서비스 (IIS) 웹 배포 도구 (웹...를 사용 하 여 원격 서버에 웹 배포 패키지를 게시할 수는 어떻게 설명"
+description: 이 항목에서는 인터넷 정보 서비스 (IIS) 웹 배포 도구 (웹...를 사용 하 여 원격 서버에 웹 배포 패키지를 게시할 수는 어떻게 설명
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/deploying-web-packages
 msc.type: authoredcontent
-ms.openlocfilehash: cd2bfa07262155b68ac4605fc7e9748d276d3193
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 5d3af0fdcc6e7ae20194ba658e0cf72ad22c1234
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-web-packages"></a>웹 패키지 배포
 ====================
@@ -43,10 +43,10 @@ ms.lasthandoff: 03/15/2018
 
 실행 되는 [*프로젝트 이름*]*. deploy.cmd* 파일은 웹 패키지를 배포 하는 가장 간단한 방법입니다. 특히 사용 하 여는 *. deploy.cmd* 파일 MSDeploy.exe를 직접 사용 하 여에 비해 이러한 이점을 제공 합니다.
 
-- 웹 배포 패키지 & #x 2014;의 위치를 지정할 필요가 없습니다는 *. deploy.cmd* 파일이 이미 알고 있습니다.
-- 위치를 지정할 필요가 없습니다는 *SetParameters.xml* 파일 & #x 2014;는 *. deploy.cmd* 파일이 이미 알고 있습니다.
-- 원본 및 대상 MSDeploy 공급자 & #x 2014; 지정할 필요가 없습니다는 *. deploy.cmd* 파일을 이미 알고 있는 값을 사용 합니다.
-- MSDeploy 운영 설정 & #x 2014;를 지정 하지 않아도 *. deploy.cmd* 파일 MSDeploy.exe 명령에 자동으로 일반적으로 필요한 값을 추가 합니다.
+- 웹 배포 패키지의 위치를 지정할 필요가 없습니다&#x2014;는 *. deploy.cmd* 파일이 이미 알고 있습니다.
+- 위치를 지정할 필요가 없습니다는 *SetParameters.xml* 파일&#x2014;는 *. deploy.cmd* 파일이 이미 알고 있습니다.
+- 원본 및 대상 MSDeploy 공급자를 지정할 필요가 없습니다&#x2014;는 *. deploy.cmd* 파일을 이미 알고 있는 값을 사용 합니다.
+- MSDeploy 작업 설정을 지정 하지 않아도&#x2014;는 *. deploy.cmd* 파일 MSDeploy.exe 명령에 자동으로 일반적으로 필요한 값을 추가 합니다.
 
 사용 하기 전에 *. deploy.cmd* 웹 패키지를 배포 하는 파일 인지 확인 해야 합니다.
 
@@ -92,7 +92,7 @@ ContactManager.Mvc 웹 응용 프로그램 프로젝트를 실행 하 여 테스
 이 예제에 대한 설명:
 
 - **/Y** 플래그는 실제로 패키지를 배포 하려면 실행 하지 않고 평가판을 수행 하는 나타냅니다.
-- **/M** 플래그 TESTWEB1 이라는 서버에 패키지를 배포할 것인지를 나타냅니다. 이 값을 통해 MSDeploy.exe http://TESTWEB1/MSDeployAgentService에 웹 배포 원격 에이전트 서비스에 패키지를 배포 하려고 합니다.
+- **/M** 플래그 TESTWEB1 이라는 서버에 패키지를 배포할 것인지를 나타냅니다. 이 값을 통해 MSDeploy.exe는 하려고 패키지에서 웹 배포 원격 에이전트 서비스를 배포할 http://TESTWEB1/MSDeployAgentService합니다.
 - **/A** 플래그 NTLM 인증을 사용할 것인지를 나타냅니다. 따라서 사용자 이름과 암호를 지정할 필요가 없습니다.
 
 설명 하기 위해 방법을 사용 하 여는 *. deploy.cmd* 배포 프로세스를 간소화 하는 파일, 가져옵니다의 생성 및 실행 하는 경우를 실행 하는 MSDeploy.exe 명령은 살펴보세요 *ContactManager.Mvc.deploy.cmd* 위에 표시 된 옵션을 사용 합니다.
@@ -105,7 +105,7 @@ ContactManager.Mvc 웹 응용 프로그램 프로젝트를 실행 하 여 테스
 
 ## <a name="using-msdeployexe"></a>MSDeploy.exe를 사용 하 여
 
-사용 하더라도 *. deploy.cmd* 파일은 일반적으로 배포 프로세스를 간소화, 몇 가지 경우가 있습니다 MSDeploy.exe를 직접 사용 하는 것이 좋습니다. 예:
+사용 하더라도 *. deploy.cmd* 파일은 일반적으로 배포 프로세스를 간소화, 몇 가지 경우가 있습니다 MSDeploy.exe를 직접 사용 하는 것이 좋습니다. 예를 들어:
 
 - 관리자가 아닌 사용자로 웹 배포 처리기를 배포 하려는 경우 사용할 수 없습니다는 *. deploy.cmd* 파일입니다. 아래 설명 된 대로 웹 배포 2.0의 버그 때문에 이것이 **끝점 고려 사항**합니다.
 - 수동으로 다른 사이 전환 하려면 *SetParameters.xml* 서로 다른 위치에 파일을 수도 있습니다 MSDeploy.exe를 직접 사용 합니다.
@@ -117,12 +117,12 @@ MSDeploy.exe를 사용 하면 세 가지 주요 정보를 제공 해야 합니�
 - A **-dest** 데이터 하려는 위치를 나타내는 매개 변수입니다.
 - A **– 동사** 나타내는 매개 변수는 [작업](https://technet.microsoft.com/library/dd568989(WS.10).aspx) 수행 하려는 합니다.
 
-MSDeploy.exe 의존 [웹 배포 공급자](https://technet.microsoft.com/library/dd569040(WS.10).aspx) 원본 및 대상 데이터를 처리 하 합니다. 웹 배포를 사용 하려면 응용 프로그램 및 데이터 원본 & #x 2014의 범위를 나타내는 공급자 많이 포함 됩니다. 예를 들어 SQL Server 데이터베이스, IIS 웹 서버, 인증서, 전역 어셈블리 캐시 (GAC) 어셈블리에 대 한 공급자가 다양 한 다른 구성 파일 및 다른 종류의 데이터를 많이 합니다. 두는 **– 소스** 매개 변수 및 **-dest** 형태로 매개 변수는 공급자를 지정 해야 **– 소스**: [*providerName*] [=*위치*]. IIS 웹 사이트에 웹 패키지를 배포할 때 이러한 값을 사용 해야 합니다.
+MSDeploy.exe 의존 [웹 배포 공급자](https://technet.microsoft.com/library/dd569040(WS.10).aspx) 원본 및 대상 데이터를 처리 하 합니다. 웹 배포 응용 프로그램 및 데이터 소스를 사용 하려면 범위를 나타내는 공급자 많이 포함&#x2014;예를 들어 SQL Server 데이터베이스, IIS 웹 서버, 인증서, 전역 어셈블리 캐시 (GAC) 어셈블리에 대 한 공급자가 다양 한 다른 구성 파일 및 다른 종류의 데이터를 많이 합니다. 두는 **– 소스** 매개 변수 및 **-dest** 형태로 매개 변수는 공급자를 지정 해야 **– 소스**: [*providerName*] [=*위치*]. IIS 웹 사이트에 웹 패키지를 배포할 때 이러한 값을 사용 해야 합니다.
 
-- **– 소스** 공급자는 항상 [패키지](https://technet.microsoft.com/library/dd569019(WS.10).aspx)합니다. 예:
+- **– 소스** 공급자는 항상 [패키지](https://technet.microsoft.com/library/dd569019(WS.10).aspx)합니다. 예를 들어:
 
     [!code-console[Main](deploying-web-packages/samples/sample4.cmd)]
-- **-dest** 공급자는 항상 [자동](https://technet.microsoft.com/library/dd569016(WS.10).aspx)합니다. 예:
+- **-dest** 공급자는 항상 [자동](https://technet.microsoft.com/library/dd569016(WS.10).aspx)합니다. 예를 들어:
 
     [!code-console[Main](deploying-web-packages/samples/sample5.cmd)]
 - **– 동사** 항상 **동기화**합니다.
@@ -213,6 +213,6 @@ Contact Manager 샘플 솔루션에 검토할는 **PublishWebPackages** 대상�
 
 만들기 및 웹 배포 패키지를 매개 변수화 하는 방법에 대 한 지침을 참조 하십시오. [빌드 및 패키징 웹 응용 프로그램 프로젝트](building-and-packaging-web-application-projects.md) 및 [웹 패키지 배포에 대 한 매개 변수 구성](configuring-parameters-for-web-package-deployment.md)합니다. 빌드 및 인스턴스를 Team Foundation Server (TFS)에서 웹 패키지를 배포 하는 방법에 대 한 지침을 참조 하십시오. [자동화 된 웹 배포를 위해 Team Foundation Server 구성](../configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment.md)합니다. 사용자 지정 하 고 배포 프로세스 문제를 해결 하는 방법에 대 한 정보를 참조 하십시오. [배포에서 제외 하 고 파일 및 폴더](../advanced-enterprise-web-deployment/excluding-files-and-folders-from-deployment.md)합니다.
 
->[!div class="step-by-step"]
-[이전](configuring-parameters-for-web-package-deployment.md)
-[다음](deploying-database-projects.md)
+> [!div class="step-by-step"]
+> [이전](configuring-parameters-for-web-package-deployment.md)
+> [다음](deploying-database-projects.md)

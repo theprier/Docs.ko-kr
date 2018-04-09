@@ -12,15 +12,15 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/releases/top-features-in-web-pages-2
 msc.type: authoredcontent
-ms.openlocfilehash: e8fc758936953970ff3e9ba289516925dee9ef45
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: HT
+ms.openlocfilehash: f0d32edd3ab54c55aa06c803cd91e01cbbb8f08a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="the-top-features-in-aspnet-web-pages-2"></a>ASP.NET 웹 페이지 2에서에서 최상위 기능
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 이 문서에서는 ASP.NET 웹 페이지 2 RC와 함께 포함 되는 경량 웹 프로그래밍 프레임 워크의에서 상위 새로운 기능의 개요를 제공 [Microsoft WebMatrix 2 RC](https://www.microsoft.com/web/)합니다.
 > 
@@ -62,9 +62,9 @@ ms.lasthandoff: 11/10/2017
     Internet Explorer를 사용 하는 경우 다음 단계로 이동 합니다. Google Chrome 또는 Mozilla Firefox와 같은 다른 브라우저를 사용 하는 메시지가 저장 된 *Webmatrix.exe* 파일을 컴퓨터입니다. 파일 저장 한 다음 설치 관리자를 시작 하려면 클릭 합니다.
 3. 설치 프로그램을 실행 하 고 선택 된 **설치** 단추입니다. WebMatrix 및 웹 페이지를 설치합니다.
 
-## <a id="New_and_Enhanced_Features"></a>새로운 기능과 향상 된 기능
+## <a id="New_and_Enhanced_Features"></a>  새로운 기능과 향상 된 기능
 
-### <a id="Changes_for_the_RC_Version"></a>(2012 년 6 월) RC 버전에 대 한 변경 내용
+### <a id="Changes_for_the_RC_Version"></a>  (2012 년 6 월) RC 버전에 대 한 변경 내용
 
 2012 년 6 월의에서 RC 버전에는 2012 년 3 월에에서 출시 된 베타 버전 새로 고침에서 몇 가지 변경 되었습니다. 이러한 변경은 다음과 같습니다.
 
@@ -94,8 +94,8 @@ ms.lasthandoff: 11/10/2017
     `<a href="~/Default.cshtml">Home</a>`
 - `Scripts` 으로 대체 되었습니다 (리소스) 자산 관리를 위한 도우미는 `Assets` 도우미에는 다음과 같이 약간 다른 방법을:
 
-    - 에 대 한 `Scripts.Add`를 사용 하 여`Assets.AddScript`
-    - 에 대 한 `Scripts.GetScriptTags`를 사용 하 여`Assets.GetScripts`
+  - 에 대 한 `Scripts.Add`를 사용 하 여 `Assets.AddScript`
+  - 에 대 한 `Scripts.GetScriptTags`를 사용 하 여 `Assets.GetScripts`
 
     이 주요 변경 내용. `Scripts` 클래스는 베타 릴리스 버전에서 사용할 수 없습니다. 자산 관리를 사용 하는이 문서의 코드 예제는 이러한 변경으로 인해 업데이트 되었습니다.
 
@@ -149,15 +149,15 @@ ms.lasthandoff: 11/10/2017
 
 이러한 단계는 서버 쪽 유효성 검사를 구현 하기에 충분 합니다. 클라이언트 쪽 유효성 검사를 추가 하려는 경우 또한 다음 수행 합니다.
 
-내부 다음 스크립트 파일 참조를 추가할는 `<head>` 웹 페이지의 섹션입니다. 처음 두 개의 스크립트 참조 콘텐츠 배달 네트워크 (CDN) 서버에 원격 파일을 가리킵니다. 세 번째 참조가 로컬 스크립트 파일을 가리킵니다.
+내부 다음 스크립트 파일 참조를 추가할는 `<head>` 웹 페이지의 섹션입니다. 처음 두 개의 스크립트 참조 콘텐츠 배달 네트워크 (CDN) 서버에 원격 파일을 가리킵니다. 세 번째 참조가 로컬 스크립트 파일을 가리킵니다. CDN을 사용할 수 없는 경우 프로덕션 응용 프로그램에 대체를 구현 해야 합니다. 대체 (fallback)를 테스트 합니다.
 
 [!code-html[Main](top-features-in-web-pages-2/samples/sample5.html)]
 
 로컬 복사본을 가져오는 가장 쉬운 방법은 *jquery.validate.unobtrusive.min.js* 라이브러리 (예: 시작 사이트) 사이트 템플릿 중 하나를 기반으로 새 웹 페이지 사이트를 만드는 것입니다. 템플릿에서 만든 사이트에 포함 되어 *jquery.validate.unobtrusive.js* 파일을 복사할 수 있습니다 프로그램 사이트로 스크립트 폴더에 있습니다.
 
-웹 사이트를 사용 하는 경우는*\_SiteLayout* 페이지 레이아웃을 제어 하려면 페이지에서 유효성 검사는 모든 콘텐츠 페이지를 사용할 수 있도록 해당 페이지에서 다음 스크립트 참조를 포함할 수 있습니다. 특정 페이지에 대해서만 유효성 검사를 수행 하려는 경우에 해당 페이지에 스크립트 등록 자산 관리자를 사용할 수 있습니다. 이 작업을 수행 하려면 호출 `Assets.AddScript(path)` 유효성을 검사 하 여 각 스크립트 파일을 참조 하는 페이지에 있습니다. 다음에 대 한 호출을 추가 `Assets.GetScripts` 에  *\_SiteLayout* 등록 된 렌더링 하는 데는 페이지 `<script>` 태그입니다. 자세한 내용은 섹션을 참조 하십시오. [자산 관리자를 사용 하 여 스크립트 등록](#resmanagement)합니다.
+웹 사이트를 사용 하는 경우는<em>\_SiteLayout</em> 페이지 레이아웃을 제어 하려면 페이지에서 유효성 검사는 모든 콘텐츠 페이지를 사용할 수 있도록 해당 페이지에서 다음 스크립트 참조를 포함할 수 있습니다. 특정 페이지에 대해서만 유효성 검사를 수행 하려는 경우에 해당 페이지에 스크립트 등록 자산 관리자를 사용할 수 있습니다. 이 작업을 수행 하려면 호출 `Assets.AddScript(path)` 유효성을 검사 하 여 각 스크립트 파일을 참조 하는 페이지에 있습니다. 다음에 대 한 호출을 추가 `Assets.GetScripts` 에  <em>\_SiteLayout</em> 등록 된 렌더링 하는 데는 페이지 `<script>` 태그입니다. 자세한 내용은 섹션을 참조 하십시오. [자산 관리자를 사용 하 여 스크립트 등록](#resmanagement)합니다.
 
-개별 요소에 대 한 태그를 호출 하 여 `Validation.For` 메서드. 이 메서드는 특성에서 해당 jQuery 클라이언트 쪽 유효성 검사를 제공 하기 위해 연결할 수 있습니다. 예:
+개별 요소에 대 한 태그를 호출 하 여 `Validation.For` 메서드. 이 메서드는 특성에서 해당 jQuery 클라이언트 쪽 유효성 검사를 제공 하기 위해 연결할 수 있습니다. 예를 들어:
 
 [!code-cshtml[Main](top-features-in-web-pages-2/samples/sample6.cshtml)]
 
@@ -172,15 +172,15 @@ ms.lasthandoff: 11/10/2017
 
 사용자가 유효한 입력을 제출할 때 페이지는 다음과 같습니다.
 
-[![유효한 1 topSeven](top-features-in-web-pages-2/_static/image8.png)](top-features-in-web-pages-2/_static/image7.png)
+[![topSeven-valid-1](top-features-in-web-pages-2/_static/image8.png)](top-features-in-web-pages-2/_static/image7.png)
 
 비워 두는 필수 필드와 사용자가 전송 하는 경우 페이지는 다음과 같습니다.
 
-[![유효한 2 topSeven](top-features-in-web-pages-2/_static/image10.png)](top-features-in-web-pages-2/_static/image9.png)
+[![topSeven-valid-2](top-features-in-web-pages-2/_static/image10.png)](top-features-in-web-pages-2/_static/image9.png)
 
 사용자가 아닌 다른 정수 제출 페이지가 표시 되어는 **크레딧** 필드:
 
-[![유효한 3 topSeven](top-features-in-web-pages-2/_static/image12.png)](top-features-in-web-pages-2/_static/image11.png)
+[![topSeven-valid-3](top-features-in-web-pages-2/_static/image12.png)](top-features-in-web-pages-2/_static/image11.png)
 
 자세한 내용은 다음 블로그 게시물을 참조 하십시오.
 
@@ -207,7 +207,7 @@ ms.lasthandoff: 11/10/2017
 
 - 명명 된 사용자 지정 도우미 `MakeNote`합니다. 이 도우미를 묶어서 상자 내의 문자열을 렌더링 한 `div` 요소로 둘러싼 있는 스타일이 지정 테두리가 있는 만들고 추가 하 여 &quot;참고:&quot; 를 합니다. 도우미는 또한 메모에 런타임 동작을 추가 하는 JavaScript 파일을 호출 합니다. 포함 하는 스크립트를 참조 하지 않고는 `<script>` 호출 하 여 스크립트를 등록 하는 태그 도우미 `Assets.AddScript` 합니다.
 - JavaScript 파일입니다. 이것은 도우미에 의해 호출 되는 파일이 고 일시적으로 증가 하는 동안 메모 항목의 글꼴 크기는 `mouseover` 이벤트입니다.
-- 참조 하는 콘텐츠 페이지는*\_SiteLayout* 페이지 본문의 일부 콘텐츠를 렌더링 한 다음 호출에서 `MakeNote` 도우미입니다.
+- 참조 하는 콘텐츠 페이지는<em>\_SiteLayout</em> 페이지 본문의 일부 콘텐츠를 렌더링 한 다음 호출에서 `MakeNote` 도우미입니다.
 - A  *\_SiteLayout* 페이지. 이 페이지는 공통 헤더 및 페이지 레이아웃 구조를 제공합니다. 에 대 한 호출도 `Assets.GetScripts`, 페이지에서 호출 되, 자산 관리자 스크립트를 렌더링 하는 방법입니다.
 
 샘플을 실행 하려면
@@ -447,7 +447,7 @@ WebMatrix로 웹 페이지 2 베타를 설치할 때 고려해 야 할 몇 가�
 - 웹 페이지 버전 1 (이전 시점에서와 같이 기본값) 대신 사용 하 여 사이트를 실행 하려는 경우에 작업을 수행 하는 사이트를 구성할 수 있습니다. 사이트에 지문이 아직 없으면는 *web.config* 사이트의 루트에서 파일을 새로 만들고 메서드를 다음과 같은 XML을 복사 기존 내용을 덮어씁니다. 사이트에 이미 포함 되어 있는 경우는 *web.config* 파일에서 추가 `<appSettings>` 에 다음과 같은 요소는 `<configuration>` 섹션.
 
     [!code-xml[Main](top-features-in-web-pages-2/samples/sample22.xml)]
-'-의 버전을 지정 하지 않으면는 *web.config* 파일을 사이트 버전 2 사이트도 배포 됩니다. (버전 2 어셈블리에 복사 되 고 *bin* 배포 된 사이트의 폴더입니다.)
+  '-의 버전을 지정 하지 않으면는 *web.config* 파일을 사이트 버전 2 사이트도 배포 됩니다. (버전 2 어셈블리에 복사 되 고 *bin* 배포 된 사이트의 폴더입니다.)
 - 사이트의 웹 페이지 버전 2 어셈블리를 포함 하는 2 베타 웹 매트릭스 버전에서 사이트 템플릿을 사용 하 여 만든 새 응용 프로그램 *bin* 폴더입니다.
 
 버전은 사이트에 적절 한 어셈블리를 설치 하려면 NuGet을 사용 하 여 사이트와 함께 사용할 웹 페이지에 항상 제어할 수는 일반적으로 *bin* 폴더입니다. 패키지를 찾으려고 방문 [NuGet.org](http://NuGet.org)합니다.
@@ -459,7 +459,7 @@ WebMatrix로 웹 페이지 2 베타를 설치할 때 고려해 야 할 몇 가�
 
 `System.Web.WebPages` 디스플레이 모드를 사용 하도록 하는 다음 클래스를 포함 하는 네임 스페이스: `DefaultDisplayMode`, `DisplayInfo`, 및 `DisplayModes`합니다. 이러한 클래스를 직접 사용할 수 있으며 특정 장치에 대 한 오른쪽 출력을 렌더링 하는 코드를 작성할 수 있습니다.
 
-또는 다음과 같이 파일 명명 패턴을 사용 하 여 장치 관련 페이지를 만들 수 있습니다: *파일 이름.* *모바일**.cshtml*합니다. 예를 들어 이름이 하나는 페이지의 두 버전을 만들 수 있습니다 *MyFile.cshtml* 및 이름이 각각 *MyFile.Mobile.cshtml*합니다. 런타임 시 모바일 장치를 요청할 때 *MyFile.cshtml*, 웹 페이지에서 콘텐츠를 렌더링 *MyFile.Mobile.cshtml*합니다. 그렇지 않으면 *MyFile.cshtml* 렌더링 됩니다.
+또는 다음과 같이 파일 명명 패턴을 사용 하 여 장치 관련 페이지를 만들 수 있습니다: <em>파일 이름.</em> <em>모바일</em><em>.cshtml</em>합니다. 예를 들어 이름이 하나는 페이지의 두 버전을 만들 수 있습니다 <em>MyFile.cshtml</em> 및 이름이 각각 <em>MyFile.Mobile.cshtml</em>합니다. 런타임 시 모바일 장치를 요청할 때 <em>MyFile.cshtml</em>, 웹 페이지에서 콘텐츠를 렌더링 <em>MyFile.Mobile.cshtml</em>합니다. 그렇지 않으면 <em>MyFile.cshtml</em> 렌더링 됩니다.
 
 다음 예제에서는 모바일 장치에 대 한 콘텐츠 페이지를 추가 하 여 모바일 렌더링을 활성화 하는 방법을 보여 줍니다. *Page1.cshtml* 콘텐츠 및 탐색 세로 막대를 포함 합니다. *Page1.Mobile.cshtml* 동일한 콘텐츠를 포함 하지만 세로 막대를 생략 합니다.
 
@@ -490,7 +490,7 @@ WebMatrix로 웹 페이지 2 베타를 설치할 때 고려해 야 할 몇 가�
 [![topseven-displaymodes-2](top-features-in-web-pages-2/_static/image44.png)](top-features-in-web-pages-2/_static/image43.png)
 
 <a id="resources"></a>
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 ### <a name="aspnet-web-pages-1-resources"></a>ASP.NET 웹 페이지 1 리소스
 
@@ -502,5 +502,5 @@ WebMatrix로 웹 페이지 2 베타를 설치할 때 고려해 야 할 몇 가�
 ### <a name="webmatrix-resources"></a>WebMatrix 리소스
 
 - [WebMatrix 2는 새로운 기능](http://webmatrix.com/next)
-- [Microsoft WebMatrix 사이트](https://go.microsoft.com/fwlink/?LinkID=195076)
+- [Microsoft WebMatrix Site](https://go.microsoft.com/fwlink/?LinkID=195076)
 - [Microsoft WebMatrix로 웹 개발 시작](https://msdn.microsoft.com/en-us/library/hh145669(v=VS.99).aspx)(전체 길이 샘플 웹 페이지 응용 프로그램 포함)

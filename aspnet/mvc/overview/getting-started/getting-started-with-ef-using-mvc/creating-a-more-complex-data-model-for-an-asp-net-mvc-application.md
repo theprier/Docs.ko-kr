@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-a-more-complex-data-model-for-an-asp-net-mvc-application
-title: "ASP.NET MVC 응용 프로그램에 대 한 보다 복잡 한 데이터 모델을 만드는 | Microsoft Docs"
+title: ASP.NET MVC 응용 프로그램에 대 한 보다 복잡 한 데이터 모델을 만드는 | Microsoft Docs
 author: tdykstra
-description: "Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다 중..."
+description: Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/07/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-a-more-complex-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 9a89aa8e7dd3b2f6ac18e0b1a9c2a9d64d27189c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: fd8bf6502b0dd261505a86a2ed86d4c3f42e8755
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-more-complex-data-model-for-an-aspnet-mvc-application"></a>ASP.NET MVC 응용 프로그램에 대 한 보다 복잡 한 데이터 모델 만들기
 ====================
@@ -24,28 +24,28 @@ ms.lasthandoff: 01/24/2018
 
 [완료 된 프로젝트를 다운로드](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8) 또는 [PDF 다운로드](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
 
-> Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio 2013을 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대 한 정보를 참조 하십시오. [시리즈의 첫 번째 자습서](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)합니다.
+> Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio 2013을 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)를 참조하세요.
 
 
 이전 자습서에서 사용한 세 가지 엔터티 작성 된 간단한 데이터 모델입니다. 이 자습서에서는 더 많은 엔터티 및 관계를 추가 합니다 및 서식 지정, 유효성 검사 및 데이터베이스 매핑 규칙을 지정 하 여 데이터 모델을 사용자 지정 합니다. 데이터 모델 사용자 지정 하는 두 가지 방법으로 표시 됩니다: 엔터티 클래스에 및 데이터베이스 컨텍스트 클래스에 코드를 추가 하 여 특성을 추가 하 여 합니다.
 
-완료 되 면, 엔터티 클래스는 다음 그림에 표시 되는 완성 된 데이터 모델을 구성 하는:
+완료되면 엔터티 클래스는 다음 그림에 표시된 완성된 데이터 모델을 구성하게 됩니다.
 
 ![School_class_diagram](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image1.png)
 
-## <a name="customize-the-data-model-by-using-attributes"></a>특성을 사용 하 여 데이터 모델을 사용자 지정
+## <a name="customize-the-data-model-by-using-attributes"></a>특성을 사용하여 데이터 모델 사용자 지정
 
-이 섹션의 서식, 유효성 검사 및 데이터베이스 매핑 규칙을 지정 하는 특성을 사용 하 여 데이터 모델을 사용자 지정 하는 방법을 배웁니다. 다음 섹션 중 몇 개에 대 한 자세한 만들게 한 후 `School` 추가 하 여 데이터 모델 특성 클래스에 이미 모델의 나머지 엔터티 형식에 대해 생성 되 고 만드는 새 클래스입니다.
+이 섹션에서는 서식 지정, 유효성 검사 및 데이터베이스 매핑 규칙을 지정하는 특성을 사용하여 데이터 모델을 사용자 지정하는 방법을 배웁니다. 다음 섹션 중 몇 개에 대 한 자세한 만들게 한 후 `School` 추가 하 여 데이터 모델 특성 클래스에 이미 모델의 나머지 엔터티 형식에 대해 생성 되 고 만드는 새 클래스입니다.
 
 ### <a name="the-datatype-attribute"></a>데이터 형식 특성
 
-학생 등록 날짜에 대 한 모든 웹 페이지의 현재 시간을 표시, 날짜와 함께 날짜는이 필드에 대 한 필요 하므로. 데이터 주석 특성을 사용 하 여 하나 만들 수 있습니다 코드는 데이터를 표시 하는 모든 보기에서 표시 형식을 해결 하는 변경 합니다. 특성을 추가 합니다 즉, 작업을 수행 하는 방법의 예를 보려면는 `EnrollmentDate` 속성에는 `Student` 클래스입니다.
+학생 등록 날짜의 경우, 이 필드에서 필요한 것은 날짜이지만 현재 모든 웹 페이지는 날짜와 함께 시간을 표시합니다. 데이터 주석 특성을 사용하면 데이터를 표시하는 모든 보기에서 표시 형식을 해결하는 하나의 코드 변경을 만들 수 있습니다. 수행 방법의 예제를 보려면 특성을 `Student` 클래스의 `EnrollmentDate` 속성에 추가합니다.
 
 *Models\Student.cs*, 추가 `using` 문에 `System.ComponentModel.DataAnnotations` 네임 스페이스 추가 `DataType` 및 `DisplayFormat` 특성을 `EnrollmentDate` 속성을 다음 예제와 같이:
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample1.cs?highlight=3,12-13)]
 
-[DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) 특성 데이터베이스 내장 형식 보다 구체적인 데이터 형식을 지정 하는 데 사용 됩니다. 이 경우에 포함 하려고 날짜와 시간에서 날짜를 추적 하 합니다. [DataType 열거형](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) 와 같은 대부분의 데이터 형식이에 제공 *날짜 "," 시간 "," PhoneNumber "," 통화 "," EmailAddress* 등입니다. `DataType` 특성을 통해 응용 프로그램에서 자동으로 유형별 기능을 제공하도록 설정할 수도 있습니다. 예를 들어 한 `mailto:` 에 대 한 링크를 만들 수 [DataType.EmailAddress](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx), 날짜 선택 기가 제공 될 수 있습니다 및 [DataType.Date](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) 지 원하는 브라우저에서 [HTML5](http://html5.org/). [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) 특성 내보냅니다 HTML 5 [데이터-](http://ejohn.org/blog/html-5-data-attributes/) (발음 *데이터 대시*) HTML 5 브라우저 이해할 수 있는 특성입니다. [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) 특성 유효성을 검사 하지 않습니다.
+[DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) 특성 데이터베이스 내장 형식 보다 구체적인 데이터 형식을 지정 하는 데 사용 됩니다. 이 경우에는 날짜 및 시간이 아닌 날짜만 추적하고자 합니다. [DataType 열거형](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) 와 같은 대부분의 데이터 형식이에 제공 *날짜 "," 시간 "," PhoneNumber "," 통화 "," EmailAddress* 등입니다. `DataType` 특성을 통해 응용 프로그램에서 자동으로 유형별 기능을 제공하도록 설정할 수도 있습니다. 예를 들어 한 `mailto:` 에 대 한 링크를 만들 수 [DataType.EmailAddress](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx), 날짜 선택 기가 제공 될 수 있습니다 및 [DataType.Date](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) 지 원하는 브라우저에서 [HTML5](http://html5.org/). [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) 특성 내보냅니다 HTML 5 [데이터-](http://ejohn.org/blog/html-5-data-attributes/) (발음 *데이터 대시*) HTML 5 브라우저 이해할 수 있는 특성입니다. [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) 특성 유효성을 검사 하지 않습니다.
 
 `DataType.Date`는 표시되는 날짜의 서식을 지정하지 않습니다. 기본적으로 데이터 필드에서 서버에 따라 기본 형식에 따라 표시 [CultureInfo](https://msdn.microsoft.com/library/vstudio/system.globalization.cultureinfo(v=vs.110).aspx)합니다.
 
@@ -59,7 +59,7 @@ ms.lasthandoff: 01/24/2018
 
 사용할 수는 [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) 하지만 자체를 기준으로 특성은 일반적으로 사용 하는 것이 좋습니다는 [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) 도 특성입니다. `DataType` 특성에 전달 된 *의미 체계* 데이터의 화면에 렌더링 하는 방법을 반대로과를으로 볼 수 없는 다음과 같은 이점을 제공 `DisplayFormat`:
 
-- 브라우저는 HTML5 기능을 활성화할 수 (calendar 컨트롤, 로캘에 적합 한 통화 기호, 전자 메일 링크를 표시 하는 등 일부 클라이언트 쪽 입력 유효성 검사, 등입니다.).
+- 브라우저는 HTML5 기능을 활성화할 수 있습니다(예: 달력 컨트롤, 로캘에 적합한 통화 기호, 이메일 링크, 일부 클라이언트 쪽 입력 유효성 검사 등을 표시하기 위해).
 - 기본적으로 브라우저에 따라 올바른 형식을 사용 하 여 데이터를 렌더링 합니다 프로그램 [로캘](https://msdn.microsoft.com/library/vstudio/wyzd2bce.aspx)합니다.
 - [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) 특성 데이터를 렌더링 하는 오른쪽 필드 템플릿을 선택 하는 MVC 사용 하도록 설정할 수 (의 [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) 문자열 서식 파일을 사용 하 여). 자세한 내용은 Brad Wilson의을 참조 하십시오. [ASP.NET MVC 2 Templates](http://bradwilson.typepad.com/blog/2009/10/aspnet-mvc-2-templates-part-1-introduction.html)합니다. (하지만 MVC 2 용으로 작성 된,이 문서 여전히에 적용 됩니다 ASP.NET MVC의 현재 버전입니다.)
 
@@ -73,9 +73,9 @@ MVC에서 다른 날짜 형식을 처리 하는 방법에 대 한 자세한 내�
 
 ### <a name="the-stringlengthattribute"></a>StringLengthAttribute
 
-데이터 유효성 검사 규칙 및 유효성 검사 오류 메시지 특성을 사용 하 여 지정할 수 있습니다. [StringLength 특성](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) 데이터베이스의 최대 길이 설정 하 고 클라이언트측 및 서버측 제공 ASP.NET MVC에 대 한 유효성을 검사 합니다. 이 특성에는 최소 문자열 길이 지정할 수도 있습니다 수 있지만 최소값 데이터베이스 스키마에 대 한 영향을 주지 않습니다.
+특성을 사용하여 데이터 유효성 검사 규칙 및 유효성 검사 오류 메시지를 지정할 수 있습니다. [StringLength 특성](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) 데이터베이스의 최대 길이 설정 하 고 클라이언트측 및 서버측 제공 ASP.NET MVC에 대 한 유효성을 검사 합니다. 이 특성의 최소 문자열 길이를 지정할 수도 있지만, 최소값은 데이터베이스 스키마에 영향을 주지 않습니다.
 
-사용자가을 이름에 대 한 50 개 이상의 문자를 입력 하지 마세요 되도록 한다고 가정 합니다. 이 제한 사항은 추가 하려면 추가 [StringLength](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) 특성에 `LastName` 및 `FirstMidName` 다음 예제와 같이 속성:
+사용자가 이름을 50자 이하로 입력하였는지를 확인한다고 가정합니다. 이 제한 사항은 추가 하려면 추가 [StringLength](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx) 특성에 `LastName` 및 `FirstMidName` 다음 예제와 같이 속성:
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample3.cs?highlight=10,12)]
 
@@ -91,23 +91,23 @@ MVC에서 다른 날짜 형식을 처리 하는 방법에 대 한 자세한 내�
 
 데이터베이스 모델 데이터베이스 스키마를 변경 해야 하는 방식으로 변경 되었습니다 및 Entity Framework에서 검색 되었습니다. UI를 사용 하 여 데이터베이스에 추가 하는 데이터 손실 없이 스키마를 업데이트 하려면 마이그레이션을 사용 합니다. 만들어진 데이터를 변경한 경우에 `Seed` 때문에 원래 상태로 변경할 수 있는 메서드는 [AddOrUpdate](https://msdn.microsoft.com/library/hh846520(v=vs.103).aspx) 에서 사용 하는 메서드는 `Seed` 메서드. ([AddOrUpdate](https://msdn.microsoft.com/library/hh846520(v=vs.103).aspx) 데이터베이스 용어에서는 "upsert" 작업에 해당 합니다.)
 
-패키지 관리자 콘솔 (PMC)에서 다음 명령을 입력 합니다.
+PMC(패키지 관리자 콘솔)에서 다음 명령을 입력합니다.
 
 [!code-console[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample4.cmd)]
 
-`add-migration` 명령 라는 파일을 만듭니다  *&lt;타임 스탬프&gt;\_MaxLengthOnNames.cs*합니다. 이 파일의 코드에 포함 된 `Up` 현재 데이터 모델과 일치 하도록 데이터베이스를 업데이트 하는 메서드. `update-database` 명령이 해당 코드를 실행 합니다.
+`add-migration` 명령 라는 파일을 만듭니다  *&lt;타임 스탬프&gt;\_MaxLengthOnNames.cs*합니다. 이 파일에는 현재 데이터 모델과 일치하도록 데이터베이스를 업데이트하는 `Up` 메서드의 코드가 포함됩니다. `update-database` 명령은 해당 코드를 실행합니다.
 
 마이그레이션 파일 이름 앞에 타임 스탬프를 마이그레이션 요청 Entity Framework에서 사용 됩니다. 마이그레이션을 실행 하기 전에 여러를 만들 수는 `update-database` 명령을 호출한 다음는 마이그레이션의 모든 생성 된 순서에 적용 됩니다.
 
-실행 된 **만들기** 페이지 및 50 자 보다 긴 이름 중 하나를 입력 합니다. 클릭할 때 **만들기**, 클라이언트 쪽 유효성 검사 오류 메시지를 표시 합니다.
+실행 된 **만들기** 페이지 및 50 자 보다 긴 이름 중 하나를 입력 합니다. **만들기**를 클릭하면, 클라이언트 쪽 유효성 검사가 오류 메시지를 표시합니다.
 
 ![클라이언트 쪽 val 오류](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image3.png)
 
 ### <a name="the-column-attribute"></a>Column 특성
 
-클래스 및 속성을 데이터베이스에 매핑되는 방법을 제어 하려면 특성을 사용할 수도 있습니다. 이름을 사용한 경우를 가정해 볼 `FirstMidName` 첫 번째 이름에 대 한 필드 중간 이름 포함도 될 수 있으므로 필드입니다. 이름을 지정 하는 데이터베이스 열을 원하는 하지만 `FirstName`해당 이름에는 데이터베이스에 대 한 임시 쿼리를 작성 하는 사용자는 대개 때문에 있습니다. 이 매핑은를 사용할 수 있습니다는 `Column` 특성입니다.
+또한 특성을 사용하여 클래스 및 속성을 데이터베이스에 매핑하는 방법을 제어할 수 있습니다. 필드에 중간 이름이 포함될 수 있으므로 첫 번째 이름 필드에 이름 `FirstMidName`을 사용한 경우를 가정합니다. 하지만 데이터베이스에 임시 쿼리를 작성하는 사용자는 해당 이름이 익숙하기 때문에 데이터베이스 열 이름을 `FirstName`으로 하려고 합니다. 이 매핑을 수행하기 위해 `Column` 특성을 사용할 수 있습니다.
 
-`Column` 특성을 지정 하는 데이터베이스를 만들 때의 열은 `Student` 테이블에 매핑되는 `FirstMidName` 속성 이름이 지정 됩니다 `FirstName`합니다. 즉 때 코드 참조 `Student.FirstMidName`, 데이터에서 옵니다 또는에서 업데이트할 수는 `FirstName` 의 열은 `Student` 테이블입니다. 열 이름을 지정 하지 않으면, 속성 이름과 같은 이름이 주어 집니다.
+`Column` 특성은 데이터베이스를 만드는 시기를 지정하고 `FirstMidName` 속성에 매핑하는 `Student` 테이블의 열 이름은 `FirstName`이 됩니다. 즉, 코드가 `Student.FirstMidName`을 참조하는 경우 데이터는 `Student` 테이블의 `FirstName` 열에서 가져오거나 업데이트됩니다. 열 이름을 지정 하지 않으면, 속성 이름과 같은 이름이 주어 집니다.
 
 에 *Student.cs* 파일에서 추가 `using` 문을 [System.ComponentModel.DataAnnotations.Schema](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.schema.aspx) 열 이름 특성을 추가 하 고는 `FirstMidName` 속성에 표시 된 대로 다음 코드를 강조 표시.
 
@@ -128,14 +128,14 @@ MVC에서 다른 날짜 형식을 처리 하는 방법에 대 한 자세한 내�
 만들 수도 있습니다 데이터베이스를 사용 하 여 매핑 변경 시에만 [Fluent API](https://msdn.microsoft.com/data/jj591617)와이 자습서의 뒷부분에 나오는 표시 됩니다.
 
 > [!NOTE]
-> 다음 섹션의 모든 엔터티 클래스를 만든 후 전에 컴파일 하려고 하면 컴파일러 오류가 발생할 수 있습니다.
+> 다음 섹션의 모든 엔터티 클래스 만들기를 완료하기 전에 컴파일을 시도하는 경우 컴파일러 오류가 발생할 수 있습니다.
 
 
 ## <a name="complete-changes-to-the-student-entity"></a>학생 엔터티를 완전 한 변경
 
 ![Student_entity](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image6.png)
 
-*Models\Student.cs*, 추가한 코드를 이전를 다음 코드로 바꿉니다. 변경 내용은 강조 표시 됩니다.
+*Models\Student.cs*, 추가한 코드를 이전를 다음 코드로 바꿉니다. 변경 내용은 강조 표시되어 있습니다.
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample7.cs?highlight=11,13,15,18,22,25-32)]
 
@@ -147,13 +147,13 @@ MVC에서 다른 날짜 형식을 처리 하는 방법에 대 한 자세한 내�
 
 ### <a name="the-display-attribute"></a>표시 특성
 
-`Display` 특성 지정 캡션 텍스트 상자에 대 한 각 인스턴스 (에 단어를 분할 하는 공간이 없습니다) "이름", "Last Name", "전체" 이름과 속성 이름 대신 "등록 날짜" 이어야 합니다.
+`Display` 특성은 텍스트 상자에 대한 캡션이 각 인스턴스의 속성 이름 대신 “First Name”, “Last Name”, “Full Name” 및 “Enrollment Date”여야 함을 지정합니다(단어를 분할하는 공백 없음).
 
 ### <a name="the-fullname-calculated-property"></a>FullName 계산 속성
 
-`FullName`다른 두 개의 속성을 연결 하 여 생성 하는 값을 반환 하는 계산 된 속성이입니다. 만 따라서는 `get` 접근자와 아니요 `FullName` 열이 데이터베이스에 생성 됩니다.
+`FullName`은 다른 두 개의 속성을 연결하여 생성되는 값을 반환하는 계산된 속성입니다. 만 따라서는 `get` 접근자와 아니요 `FullName` 열이 데이터베이스에 생성 됩니다.
 
-## <a name="create-the-instructor-entity"></a>Instructor 엔터티 만들기
+## <a name="create-the-instructor-entity"></a>강사 엔터티 만들기
 
 ![Instructor_entity](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image7.png)
 
@@ -161,7 +161,7 @@ MVC에서 다른 날짜 형식을 처리 하는 방법에 대 한 자세한 내�
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample9.cs)]
 
-여러 속성을 가지에서 동일는 `Student` 및 `Instructor` 엔터티. 에 [상속 구현](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application.md) 이 시리즈의 뒷부분에 나오는 자습서에서는이 코드는 중복 제거를 리팩터링 합니다.
+`Student` 및 `Instructor` 엔터티의 여러 속성은 동일합니다. 이 시리즈의 뒷부분에 나오는 [상속 구현](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application.md) 자습서에서는 이 코드를 리팩터링하여 중복을 제거합니다.
 
 강사 클래스를 다음과 같이 작성할 수도 수 있으므로 여러 특성을 한 줄에 넣을 수 있습니다.
 
@@ -191,7 +191,7 @@ MVC에서 다른 날짜 형식을 처리 하는 방법에 대 한 자세한 내�
 
 ### <a name="the-key-attribute"></a>키 특성
 
-사이 관계가 0 또는 1을 하나는 `Instructor` 및 `OfficeAssignment` 엔터티. 따라서 해당 기본 키가 해당 외래 키를 및 사무실 할당만 할당 된 강사를 기준으로 존재는 `Instructor` 엔터티. Entity Framework 자동으로 인식할 수 없습니다 하지만 `InstructorID` 주 데이터베이스의 이름이 때문에이 엔터티의 키는 `ID` 또는 *classname* `ID` 명명 규칙입니다. 따라서는 `Key` 특성 키로 식별 하는 데 사용 됩니다.
+사이 관계가 0 또는 1을 하나는 `Instructor` 및 `OfficeAssignment` 엔터티. 따라서 해당 기본 키가 해당 외래 키를 및 사무실 할당만 할당 된 강사를 기준으로 존재는 `Instructor` 엔터티. Entity Framework 자동으로 인식할 수 없습니다 하지만 `InstructorID` 주 데이터베이스의 이름이 때문에이 엔터티의 키는 `ID` 또는 *classname* `ID` 명명 규칙입니다. 따라서 `Key` 특성은 키로 식별하는 데 사용됩니다.
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample14.cs)]
 
@@ -211,7 +211,7 @@ MVC에서 다른 날짜 형식을 처리 하는 방법에 대 한 자세한 내�
 
 빠뜨릴 수는 `[Required]` 관련된 강사 있어야 하지만 (이 또한이 테이블에 키) InstructorID 외래 키가 null을 허용 하지 않아서 그럴 필요가 없습니다 지정 하려면 강사 탐색 속성에는 특성입니다.
 
-## <a name="modify-the-course-entity"></a>과정 엔터티 수정
+## <a name="modify-the-course-entity"></a>강좌 엔터티 수정
 
 ![Course_entity](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image9.png)
 
@@ -219,7 +219,7 @@ MVC에서 다른 날짜 형식을 처리 하는 방법에 대 한 자세한 내�
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample15.cs)]
 
-과정 엔터티에 포함 된 외래 키 속성이 `DepartmentID` 관련를 가리키는 `Department` 엔터티와 것에 `Department` 탐색 속성입니다. Entity Framework 관련된 엔터티에 대 한 탐색 속성을 사용 하는 경우 데이터 모델에 외래 키 속성을 추가할 수 필요 하지 않습니다. EF 자동으로 만듭니다 외래 키는 데이터베이스에는 필요할 때마다. 하지만 데이터 모델에 외래 키가 있는 업데이트를 수행할 수 쉽고 효율적으로. 을 편집 하려면 과정 엔터티를 가져올 때 예를 들어는 `Department` 엔터티는 null을 로드 하지 않는 하므로 과정 엔터티를 업데이트할 때 해야를 먼저 가져오지는 `Department` 엔터티. 때 외래 키 속성 `DepartmentID` 포함 된 데이터 모델에 가져올 필요가 없습니다는 `Department` 엔터티를 업데이트 하기 전에.
+과정 엔터티에 포함 된 외래 키 속성이 `DepartmentID` 관련를 가리키는 `Department` 엔터티와 것에 `Department` 탐색 속성입니다. Entity Framework는 관련된 엔터티에 대한 탐색 속성이 있는 경우 사용자가 외래 키 속성을 데이터 모델에 추가하지 않아도 됩니다. EF 자동으로 만듭니다 외래 키는 데이터베이스에는 필요할 때마다. 하지만 데이터 모델에 외래 키가 있으면 더 간단하고 더 효율적으로 업데이트를 수행할 수 있습니다. 을 편집 하려면 과정 엔터티를 가져올 때 예를 들어는 `Department` 엔터티는 null을 로드 하지 않는 하므로 과정 엔터티를 업데이트할 때 해야를 먼저 가져오지는 `Department` 엔터티. 때 외래 키 속성 `DepartmentID` 포함 된 데이터 모델에 가져올 필요가 없습니다는 `Department` 엔터티를 업데이트 하기 전에.
 
 ### <a name="the-databasegenerated-attribute"></a>DatabaseGenerated 특성
 
@@ -227,19 +227,19 @@ MVC에서 다른 날짜 형식을 처리 하는 방법에 대 한 자세한 내�
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample16.cs)]
 
-기본적으로 Entity Framework에서는 기본 키 값이 데이터베이스에서 생성 된을 가정 합니다. 즉, 대부분의 시나리오에서 원하는 합니다. 그러나 `Course` 엔터티를 다른 부서에 대 한 2000 계열 하나의 부서에 대 한 1000 계열과 같이 사용자가 지정한 과정 번호를 사용 하 고 등 합니다.
+기본적으로 Entity Framework에서는 기본 키 값이 데이터베이스에서 생성 된을 가정 합니다. 이는 대부분의 시나리오에서 사용자가 원하는 것입니다. 그러나 `Course` 엔터티를 다른 부서에 대 한 2000 계열 하나의 부서에 대 한 1000 계열과 같이 사용자가 지정한 과정 번호를 사용 하 고 등 합니다.
 
 ### <a name="foreign-key-and-navigation-properties"></a>외래 키 속성 및 탐색 속성
 
 외래 키 속성 및 탐색 속성을는 `Course` 엔터티는 다음과 같은 관계를 반영 합니다.
 
-- 이므로 과정 한 부서에 할당 된는 `DepartmentID` 외래 키와 `Department` 위에서 언급 한 이유는 탐색 속성입니다. 
+- 강좌는 한 부서에 할당되므로, 위에서 언급한 이유로 `DepartmentID` 외래 키와 `Department` 탐색 속성이 있습니다. 
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample17.cs)]
-- 과정을 학생을 등록 여러 개가 있을 수 있으므로 `Enrollments` 탐색 속성은 컬렉션: 
+- 강좌에는 등록된 학생이 여러 명 있을 수 있으므로 `Enrollments` 탐색 속성은 컬렉션입니다. 
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample18.cs)]
-- 여러 강사 하 여 과정을 배울 수 있습니다 하므로 `Instructors` 탐색 속성은 컬렉션: 
+- 여러 강사가 한 강좌를 수업할 수 있으므로 `Instructors` 탐색 속성은 컬렉션입니다. 
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample19.cs)]
 
@@ -257,21 +257,21 @@ MVC에서 다른 날짜 형식을 처리 하는 방법에 대 한 자세한 내�
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample21.cs)]
 
-열 매핑 일반적으로 필요 하지 않은, Entity Framework는 일반적으로 속성에 대해 정의 하는 CLR 형식에 따라 적절 한 SQL Server 데이터 형식을 선택 합니다. CLR `decimal` SQL Server에 매핑됩니다 `decimal` 유형입니다. 하지만,이 경우 있습니다 열 통화 금액 보유 수 및 [money](https://msdn.microsoft.com/library/ms179882.aspx) 데이터 형식이 하는 데 보다 적합 합니다. CLR 데이터 형식 및 SQL Server 데이터 형식에 일치 하는 방법에 대 한 자세한 내용은 참조 [Entity FrameworkTypes 용 SqlClient](https://msdn.microsoft.com/library/bb896344.aspx)합니다.
+열 매핑 일반적으로 필요 하지 않은, Entity Framework는 일반적으로 속성에 대해 정의 하는 CLR 형식에 따라 적절 한 SQL Server 데이터 형식을 선택 합니다. CLR `decimal` 형식은 SQL Server `decimal` 유형에 매핑됩니다. 하지만,이 경우 있습니다 열 통화 금액 보유 수 및 [money](https://msdn.microsoft.com/library/ms179882.aspx) 데이터 형식이 하는 데 보다 적합 합니다. CLR 데이터 형식 및 SQL Server 데이터 형식에 일치 하는 방법에 대 한 자세한 내용은 참조 [Entity FrameworkTypes 용 SqlClient](https://msdn.microsoft.com/library/bb896344.aspx)합니다.
 
 ### <a name="foreign-key-and-navigation-properties"></a>외래 키 속성 및 탐색 속성
 
-외래 키와 탐색 속성은 다음과 같은 관계 반영 됩니다.
+외래 키 및 탐색 속성은 다음과 같은 관계를 반영합니다.
 
-- 부서 수도, 관리자가 없을 수 있습니다 및 관리자는 항상 강사 합니다. 따라서는 `InstructorID` 속성은 포함 하는 외래 키로는 `Instructor` 엔터티와 매개 변수 뒤에 추가 됩니다는 `int` 지정 null 허용으로 속성을 표시 하려면를 입력 합니다. 탐색 속성이 명명 `Administrator` 보유 하지만 `Instructor` 엔터티: 
+- 부서는 관리자가 있을 수도 있고 없을 수도 있으며, 관리자는 항상 강사입니다. 따라서는 `InstructorID` 속성은 포함 하는 외래 키로는 `Instructor` 엔터티와 매개 변수 뒤에 추가 됩니다는 `int` 지정 null 허용으로 속성을 표시 하려면를 입력 합니다. 탐색 속성이 명명 `Administrator` 보유 하지만 `Instructor` 엔터티: 
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample22.cs)]
 - 부서 이므로 많은 과목 있을 수 있습니다는 `Courses` 탐색 속성: 
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample23.cs)]
 
- > [!NOTE]
- > 규칙에 따라 Entity Framework에는 null을 허용 하지는 외래 키 및 다 대 다 관계에 대 한 하위 삭제를 수 있습니다. 이 마이그레이션을 추가 하려고 하면 예외가 발생 하는 순환 cascade delete 규칙을 발생할 수 있습니다. 예를 들어 정의 하지는 `Department.InstructorID` null 허용으로 속성을 얻게 다음 예외 메시지: "참조 관계는 허용 되지 않는 순환 참조가 발생 합니다." 비즈니스 규칙에 필요한 경우 `InstructorID` 비 nullable 속성 관계에 cascade delete를 사용 하지 않도록 설정 하려면 다음 fluent API 문을 사용 해야 합니다. 
+  > [!NOTE]
+  > 규칙에 따라 Entity Framework는 null 비허용 외래 키 및 다대다 관계에 대한 하위 삭제를 사용하도록 허용합니다. 이는 마이그레이션을 추가하려고 하면 예외가 발생하는 순환 하위 삭제 규칙으로 이어질 수 있습니다. 예를 들어 정의 하지는 `Department.InstructorID` null 허용으로 속성을 얻게 다음 예외 메시지: "참조 관계는 허용 되지 않는 순환 참조가 발생 합니다." 비즈니스 규칙에 필요한 경우 `InstructorID` 비 nullable 속성 관계에 cascade delete를 사용 하지 않도록 설정 하려면 다음 fluent API 문을 사용 해야 합니다. 
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample24.cs)]
 
@@ -286,20 +286,20 @@ MVC에서 다른 날짜 형식을 처리 하는 방법에 대 한 자세한 내�
 
 ### <a name="foreign-key-and-navigation-properties"></a>외래 키 속성 및 탐색 속성
 
-외래 키 속성 및 탐색 속성은 다음과 같은 관계 반영 됩니다.
+외래 키 속성 및 탐색 속성은 다음 관계를 반영합니다.
 
-- 이므로 단일 과정에 대 한 등록 레코드는 한 `CourseID` 외래 키 속성 및 `Course` 탐색 속성: 
+- 등록 레코드는 단일 강좌에 해당하므로 `CourseID` 외래 키 속성 및 `Course` 탐색 속성이 있습니다. 
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample26.cs)]
-- 이므로 단일 학생에 대 한 등록 레코드는 한 `StudentID` 외래 키 속성 및 `Student` 탐색 속성: 
+- 등록 레코드는 단일 학생에 해당하므로 `StudentID` 외래 키 속성 및 `Student` 탐색 속성이 있습니다. 
 
     [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample27.cs)]
 
-### <a name="many-to-many-relationships"></a>다 대 다 관계
+### <a name="many-to-many-relationships"></a>다대다 관계
 
 간의 다 대 다 관계가 `Student` 및 `Course` 엔터티, 및 `Enrollment` 엔터티 역할 다 대 다 조인 테이블을 *페이로드를 사용한* 데이터베이스에 있습니다. 즉는 `Enrollment` 조인 된 테이블에 대 한 외래 키 외에도 추가 데이터를 포함 하는 테이블 (이 경우 기본 키에는 및 `Grade` 속성).
 
-다음 그림은 엔터티 다이어그램에서 이러한 관계 모양을 보여 줍니다. (이 다이어그램을 사용 하 여 만들어졌습니다는 [Entity Framework 파워 도구](https://visualstudiogallery.msdn.microsoft.com/72a60b14-1581-4b9b-89f2-846072eff19d); 자습서의 일부가 아닌는 다이어그램을 만들어만 사용 되 고로 보여 줍니다.)
+다음 그림은 이러한 관계 모양을 엔터티 다이어그램으로 보여 줍니다. (이 다이어그램을 사용 하 여 만들어졌습니다는 [Entity Framework 파워 도구](https://visualstudiogallery.msdn.microsoft.com/72a60b14-1581-4b9b-89f2-846072eff19d); 자습서의 일부가 아닌는 다이어그램을 만들어만 사용 되 고로 보여 줍니다.)
 
 ![Student-Course_many-to-many_relationship](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image12.png)
 
@@ -317,7 +317,7 @@ Entity Framework를 자동으로 만듭니다는 `CourseInstructor` 테이블 �
 
 ## <a name="entity-diagram-showing-relationships"></a>관계를 보여 주는 엔터티 다이어그램
 
-다음은 Entity Framework 파워 도구 만들기 완료 된 School 모델 다이어그램입니다.
+다음 그림에는 Entity Framework 파워 도구가 완벽한 School 모델을 만드는 다이어그램이 나와 있습니다.
 
 ![School_data_model_diagram](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/_static/image15.png)
 
@@ -329,9 +329,9 @@ Entity Framework를 자동으로 만듭니다는 `CourseInstructor` 테이블 �
 
 [!code-csharp[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample28.cs)]
 
-이 자습서에서는 특성으로 작업할 수 없는 데이터베이스 매핑을 위해서만 fluent API를 사용 합니다. 그러나 대부분의 서식, 유효성 검사 및 특성을 사용 하 여 수행할 수 있습니다는 매핑 규칙을 지정 하려면 fluent API를 사용할 수도 있습니다. 와 같은 일부 특성 `MinimumLength` fluent API를 통해 적용할 수 없습니다. 앞에서 설명한 대로 `MinimumLength` 는 스키마를 변경 하지 않는 클라이언트 및 서버 쪽 유효성 검사 규칙에만 적용 됩니다
+이 자습서에서는 특성으로 작업할 수 없는 데이터베이스 매핑을 위해서만 fluent API를 사용 합니다. 그러나 대부분의 서식 지정, 유효성 검사 및 매핑 규칙을 지정하는 데 흐름 API를 사용할 수 있습니다. `MinimumLength`와 같은 일부 특성은 흐름 API를 통해 적용할 수 없습니다. 앞에서 설명한 대로 `MinimumLength` 는 스키마를 변경 하지 않는 클라이언트 및 서버 쪽 유효성 검사 규칙에만 적용 됩니다
 
-일부 개발자가 단독으로 보관할 수 있는 엔터티 클래스 "정리 합니다." fluent API를 사용 하는 것을 선호합니다 원하는 되어만 fluent API를 사용 하 여 수행할 수 있는 몇 가지 사용자 지정 특성 및 fluent API를 함께 사용할 수 있습니다 하지만 일반적 방법이 권장된이 두 가지 방법 중 하나를 선택 하 고 가능한 한를 일관 되 게 사용 합니다.
+일부 개발자는 흐름 API를 단독으로 사용하는 것을 선호하므로 자신의 엔터티 클래스를 “정리”할 수 있습니다. 원하는 경우 특성과 흐름 API를 섞을 수 있으며, 흐름 API를 사용해야만 수행할 수 있는 몇 가지 사용자 지정이 있습니다. 하지만 일반적으로 이러한 두 가지 방법 중 하나를 선택하여 가능한 한 일관되게 사용하는 것이 좋습니다.
 
 새 엔터티 데이터 모델 및 특성을 사용 하 여 수행 하지 않은 데이터베이스 매핑을 수행를 추가 하려면 코드를 바꿉니다 *DAL\SchoolContext.cs* 를 다음 코드로:
 
@@ -349,7 +349,7 @@ Entity Framework를 자동으로 만듭니다는 `CourseInstructor` 테이블 �
 
 "Fluent API" 문을 수행 하는 백그라운드 방법은 참조는 [Fluent API](https://blogs.msdn.com/b/aspnetue/archive/2011/05/04/entity-framework-code-first-tutorial-supplement-what-is-going-on-in-a-fluent-api-call.aspx) 블로그 게시물입니다.
 
-## <a name="seed-the-database-with-test-data"></a>테스트 데이터로 데이터베이스를 시드하십시오
+## <a name="seed-the-database-with-test-data"></a>테스트 데이터로 데이터베이스 시드
 
 코드는 *Migrations\Configuration.cs* 만든 새 엔터티에 대 한 데이터를 제공 하기 위해 다음 코드가 포함 된 파일입니다.
 
@@ -367,7 +367,7 @@ PMC에서 입력 된 `add-migration` 명령 (실행 하지 마십시오.는 `upd
 
 `add-Migration ComplexDataModel`
 
-실행 하 려 한 경우는 `update-database` 이 시점에서 명령 (마 아직), 다음 오류가 발생 합니다.
+이 시점에서 `update-database` 명령 실행을 시도하면(아직 수행하지 말 것) 다음 오류가 발생합니다.
 
 *ALTER TABLE 문을 FOREIGN KEY 제약 조건 충돌 "FK\_dbo입니다. 과정\_dbo입니다. 부서\_DepartmentID "입니다. 데이터베이스 "ContosoUniversity" 테이블 "dbo에에서 충돌이 발생 했습니다. 부서 ", 열 'DepartmentID'입니다.*
 
@@ -384,7 +384,7 @@ PMC에서 입력 된 `add-migration` 명령 (실행 하지 마십시오.는 `upd
 [!code-powershell[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample35.ps1)]
 
 > [!NOTE]
-> 스키마 변경 하므로 및 데이터를 마이그레이션하는 경우 다른 오류를 가져오려는 것 같습니다. 마이그레이션 오류를 해결할 수 없으면 발생 하는 경우 연결 문자열에 데이터베이스 이름을 변경 하거나 데이터베이스를 삭제 합니다. 가장 간단한 방법은 데이터베이스의 이름을 바꾸려면 *Web.config* 파일입니다. 다음 예제에서는 이름이 CU에 변경\_테스트:
+> 스키마 변경 하므로 및 데이터를 마이그레이션하는 경우 다른 오류를 가져오려는 것 같습니다. 해결할 수 없는 마이그레이션 오류가 발생하면 연결 문자열에서 데이터베이스 이름을 변경하거나 데이터베이스를 삭제할 수 있습니다. 가장 간단한 방법은 데이터베이스의 이름을 바꾸려면 *Web.config* 파일입니다. 다음 예제에서는 이름이 CU에 변경\_테스트:
 > 
 > [!code-xml[Main](creating-a-more-complex-data-model-for-an-asp-net-mvc-application/samples/sample36.xml?highlight=1)]
 > 
@@ -407,12 +407,12 @@ PMC에서 입력 된 `add-migration` 명령 (실행 하지 마십시오.는 `upd
 
 ## <a name="summary"></a>요약
 
-이제 더 복잡 한 데이터 모델 및 해당 데이터베이스 만들어졌습니다. 다음 자습서에서 관련된 데이터에 액세스 하는 다른 방법에 대해 자세히 설명 합니다.
+이제 더 복잡한 데이터 모델 및 해당 데이터베이스가 만들어졌습니다. 다음 자습서에서 관련된 데이터에 액세스 하는 다른 방법에 대해 자세히 설명 합니다.
 
 이 자습서를 연결 하는 방법 및 향상 될 수 있습니다에 의견을 남겨 주세요. 새 항목을 요청할 수도 있습니다 [Me 방법으로 코드 보기](http://aspnet.uservoice.com/forums/228522-show-me-how-with-code)합니다.
 
 다른 Entity Framework 리소스에 대 한 링크에서 확인할 수 있습니다는 [ASP.NET 데이터 액세스-권장 리소스](../../../../whitepapers/aspnet-data-access-content-map.md)합니다.
 
->[!div class="step-by-step"]
-[이전](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application.md)
-[다음](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+> [!div class="step-by-step"]
+> [이전](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+> [다음](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)

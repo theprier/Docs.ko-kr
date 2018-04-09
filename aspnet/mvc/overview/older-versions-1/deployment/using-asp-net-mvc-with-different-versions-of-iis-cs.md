@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/deployment/using-asp-net-mvc-with-different-versions-of-iis-cs
-title: "ASP.NET MVC를 사용 하 여 서로 다른 버전의 IIS (C#) | Microsoft Docs"
+title: ASP.NET MVC를 사용 하 여 서로 다른 버전의 IIS (C#) | Microsoft Docs
 author: microsoft
-description: "이 자습서에서는 여러 가지 버전의 인터넷 정보 서비스 URL 라우팅 및 ASP.NET MVC를 사용 하는 방법에 설명 합니다. 배웁니다 다른 전략 중..."
+description: 이 자습서에서는 여러 가지 버전의 인터넷 정보 서비스 URL 라우팅 및 ASP.NET MVC를 사용 하는 방법에 설명 합니다. 배웁니다 다른 전략 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/19/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/deployment/using-asp-net-mvc-with-different-versions-of-iis-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8f2b98d5e5ae677fdac32336d542202a40290e21
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 73c129c1eaf85cb5b110248fe2a2c0faed0157bc
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-aspnet-mvc-with-different-versions-of-iis-c"></a>ASP.NET MVC를 사용 하 여 서로 다른 버전의 IIS (C#)
 ====================
@@ -33,7 +33,7 @@ ASP.NET MVC 프레임 워크 경로 브라우저 요청 컨트롤러 작업을 A
 - IIS 7.0 (기본 모드)-ASP.NET 라우팅을 사용 하려면 특별 한 구성이 수행 해야 합니다.
 - IIS 6.0 또는 아래-ASP.NET 라우팅을 사용 하려면 특별 한 구성 작업을 수행 해야 합니다.
 
-최신 버전의 IIS 버전 7.5 (Win7)에 합니다. IIS의 IIS 7 이상 포함 된 Windows Server 2008 AND VISTA/s p 1은 합니다. 또한 Home Basic 제외 하 고 Vista 운영 체제의 모든 버전에 IIS 7.0를 설치할 수 있습니다 (참조 [https://technet.microsoft.com/library/cc731179%28WS.10%29.aspx](https://technet.microsoft.com/library/cc731179%28WS.10%29.aspx)).
+최신 버전의 IIS 버전 7.5 (Win7)에 합니다. IIS의 IIS 7 이상 포함 된 Windows Server 2008 AND VISTA/s p 1은 합니다. 또한 Home Basic 제외 하 고 Vista 운영 체제의 모든 버전에 IIS 7.0를 설치할 수 있습니다 (참조 [ https://technet.microsoft.com/library/cc731179%28WS.10%29.aspx ](https://technet.microsoft.com/library/cc731179%28WS.10%29.aspx)).
 
 IIS 7.0 요청 처리를 위한 두 가지 모드를 지원 합니다. 통합된 모드 또는 클래식 모드를 사용할 수 있습니다. 통합된 모드의 IIS 7.0을 사용 하는 경우 특수 구성 단계를 수행할 필요가 없습니다. 클래식 모드에서 IIS 7.0을 사용 하는 경우 추가 구성을 수행할 필요가 있습니다.
 
@@ -103,7 +103,7 @@ IIS 7.0 이전 버전의 IIS와 ASP.NET MVC를 사용 해야 하거나 클래식
 
 따라서에서 실행 되도록 ASP.NET 라우팅이 얻으려고 했습니다 수정 해야 기본 경로 ASP.NET 프레임 워크에 매핑되는 파일 확장명이 포함 되도록 합니다.
 
-이 작업은 수행 라는 스크립트를 사용 하 여 `registermvc.wsf`합니다. 에 ASP.NET MVC 1 릴리스에 포함 된 `C:\Program Files\Microsoft ASP.NET\ASP.NET MVC\Scripts`, ASP.NET 2를 기준으로이 스크립트 이동에 사용할 수 있는 ASP.NET 미래에 [http://aspnet.codeplex.com/releases/view/39978](http://aspnet.codeplex.com/releases/view/39978)합니다.
+이 작업은 수행 라는 스크립트를 사용 하 여 `registermvc.wsf`합니다. 에 ASP.NET MVC 1 릴리스에 포함 된 `C:\Program Files\Microsoft ASP.NET\ASP.NET MVC\Scripts`, ASP.NET 2를 기준으로이 스크립트 이동에 사용할 수 있는 ASP.NET 미래에 [ http://aspnet.codeplex.com/releases/view/39978 ](http://aspnet.codeplex.com/releases/view/39978)합니다.
 
 이 스크립트를 실행 하는 새.mvc 확장 IIS에 등록 합니다. .Mvc 확장명을 등록 하면.mvc 확장명을 사용 하는 경로 Global.asax 파일의 프로그램 경로 수정할 수 있습니다.
 
@@ -212,5 +212,5 @@ IIS 7.0 또는 IIS 6.0에 대 한 와일드 카드 스크립트 매핑을 사용
 
 두 번째 옵션은 와일드 카드 스크립트 매핑 만드는 것입니다. 이 두 번째 옵션의 장점은입니다 Url을 수정할 필요가 없습니다. 이 두 번째 옵션의 단점은 ASP.NET MVC 응용 프로그램의 성능 영향을 줄 수는 있습니다.
 
->[!div class="step-by-step"]
-[다음](using-asp-net-mvc-with-different-versions-of-iis-vb.md)
+> [!div class="step-by-step"]
+> [다음](using-asp-net-mvc-with-different-versions-of-iis-vb.md)

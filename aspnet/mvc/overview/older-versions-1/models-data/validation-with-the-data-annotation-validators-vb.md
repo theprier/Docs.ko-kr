@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/validation-with-the-data-annotation-validators-vb
-title: "데이터 주석 유효성 검사기 (VB)와 유효성 검사 | Microsoft Docs"
+title: 데이터 주석 유효성 검사기 (VB)와 유효성 검사 | Microsoft Docs
 author: microsoft
-description: "ASP.NET MVC 응용 프로그램 내에서 유효성 검사를 수행 하려면 데이터 주석 모델 바인더 활용 합니다. 다양 한 유형의 유효성 검사기를 사용 하는 방법 알아보기..."
+description: ASP.NET MVC 응용 프로그램 내에서 유효성 검사를 수행 하려면 데이터 주석 모델 바인더 활용 합니다. 다양 한 유형의 유효성 검사기를 사용 하는 방법 알아보기...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/29/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validation-with-the-data-annotation-validators-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 227c1acb5e478047c4e5cdc7dbddedd703e91292
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d1987182a44a0ad3f91f455342dc934d1dd50267
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="validation-with-the-data-annotation-validators-vb"></a>데이터 주석 유효성 검사기 (VB)와 유효성 검사
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > ASP.NET MVC 응용 프로그램 내에서 유효성 검사를 수행 하려면 데이터 주석 모델 바인더 활용 합니다. 다양 한 유형의 유효성 검사기 특성을 사용 하 고 Microsoft Entity Framework에서 사용 하는 방법에 알아봅니다.
 
@@ -72,20 +72,20 @@ Product 클래스에 **목록 1** 이러한 유효성 검사기 특성을 사용
 
 [!code-vb[Main](validation-with-the-data-annotation-validators-vb/samples/sample2.vb)]
 
-**목록 1**: Models\Product.vb
+**Listing 1**: Models\Product.vb
 
 Product 클래스에는 하나의 추가 특성을 사용 하는 방법을 보여 줍니다: / / DisplayName 특성입니다. / / DisplayName 특성을 사용 하면 오류 메시지가 표시 되는 속성 때 속성의 이름을 수정할 수 있습니다. "UnitPrice 필드는 필수" 오류 메시지를 표시 하는 대신 오류 메시지 "Price 필드는 필수" 표시할 수 있습니다.
 
 > [!NOTE] 
 > 
-> 완전히 유효성 검사기에서 표시 되는 오류 메시지 사용자 지정 하려는 경우 다음과 같이 유효성 검사기의 ErrorMessage 속성에 사용자 지정 오류 메시지를 할당할 수 있습니다.`<Required(ErrorMessage:="This field needs a value!")>`
+> 완전히 유효성 검사기에서 표시 되는 오류 메시지 사용자 지정 하려는 경우 다음과 같이 유효성 검사기의 ErrorMessage 속성에 사용자 지정 오류 메시지를 할당할 수 있습니다. `<Required(ErrorMessage:="This field needs a value!")>`
 
 
 Product 클래스에 사용할 수 있습니다 **목록 1** 에서 create () 컨트롤러 작업으로 **목록 2**합니다. 모델 상태 오류를 포함 하는 경우이 컨트롤러 작업 만들기 뷰를 다시 표시 됩니다.
 
 [!code-vb[Main](validation-with-the-data-annotation-validators-vb/samples/sample3.vb)]
 
-**목록 2**: Controllers\ProductController.vb
+**Listing 2**: Controllers\ProductController.vb
 
 마지막으로,에서 보기를 만들 수 있습니다 **목록 3** create () 작업을 마우스 오른쪽 단추로 클릭 하 고 메뉴 옵션을 선택 하 여 **뷰 추가**합니다. 모델 클래스로 제품 클래스와 함께 강력한 형식의 뷰를 만듭니다. 선택 **만들기** 보기 콘텐츠 드롭다운 목록에서 (참조 **그림 2**).
 
@@ -95,7 +95,7 @@ Product 클래스에 사용할 수 있습니다 **목록 1** 에서 create () �
 
 [!code-aspx[Main](validation-with-the-data-annotation-validators-vb/samples/sample4.aspx)]
 
-**코드 3**: Views\Product\Create.aspx
+**Listing 3**: Views\Product\Create.aspx
 
 > [!NOTE] 
 > 
@@ -128,7 +128,7 @@ Entity Framework에서 생성 된 클래스와 유효성 검사기를 사용 하
 
 [!code-vb[Main](validation-with-the-data-annotation-validators-vb/samples/sample5.vb)]
 
-**목록 4**: Models\Movie.vb
+**Listing 4**: Models\Movie.vb
 
 에 있는 파일 **목록 4** 동영상, 동영상 메타 데이터 라는 두 개의 클래스를 포함 합니다. 영화 클래스는 partial 클래스입니다. DataModel.Designer.vb 파일에 포함 된 Entity Framework에서 생성 되는 partial 클래스에 해당 합니다.
 
@@ -153,5 +153,5 @@ Entity Framework에서 생성 된 클래스와 유효성 검사기를 사용 하
 
 이 자습서에서는 ASP.NET MVC 응용 프로그램 내에서 유효성 검사를 수행 하려면 데이터 주석 모델 바인더를 활용 하는 방법을 배웠습니다. 다양 한 유형의 필수 등의 유효성 검사기 특성 및 StringLength 특성을 사용 하는 방법을 배웠습니다. 또한 Microsoft Entity Framework와 함께 작업 하는 경우 이러한 특성을 사용 하는 방법을 배웠습니다.
 
->[!div class="step-by-step"]
-[이전](validating-with-a-service-layer-vb.md)
+> [!div class="step-by-step"]
+> [이전](validating-with-a-service-layer-vb.md)

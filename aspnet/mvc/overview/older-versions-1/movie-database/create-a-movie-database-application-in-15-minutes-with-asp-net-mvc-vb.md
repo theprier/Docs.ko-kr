@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/movie-database/create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb
-title: "ASP.NET MVC (VB) 15 분 내에 동영상 데이터베이스 응용 프로그램을 만들 | Microsoft Docs"
+title: ASP.NET MVC (VB) 15 분 내에 동영상 데이터베이스 응용 프로그램을 만들 | Microsoft Docs
 author: StephenWalther
-description: "Stephen Walther 전체 데이터베이스 기반의 ASP.NET MVC 응용 프로그램의 시작 끝나기를 작성 합니다. 이 자습서는 새로운 t 있는 사용자에 게 충분히 소개 중..."
+description: Stephen Walther 전체 데이터베이스 기반의 ASP.NET MVC 응용 프로그램의 시작 끝나기를 작성 합니다. 이 자습서는 새로운 t 있는 사용자에 게 충분히 소개 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/27/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/movie-database/create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b87a69df24a410161dfaf055519eb6137fa76c06
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: ecd5892457af5bc14a939672c64eed85fc05ec22
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="create-a-movie-database-application-in-15-minutes-with-aspnet-mvc-vb"></a>ASP.NET mvc (VB) 15 분 내에 동영상 데이터베이스 응용 프로그램 만들기
 ====================
@@ -366,5 +366,5 @@ Views\Home 폴더에 Edit.aspx 라는 새 뷰를 추가 이러한 단계를 완�
 
 이 자습서에서는 ASP.NET MVC 프레임 워크의 가장 기본적인 기능만 검사 했습니다. 이후 자습서에서 우리 심층적으로 알아보기 컨트롤러, 컨트롤러 작업, 보기, 데이터 보기 및 HTML 도우미와 같은 항목입니다.
 
->[!div class="step-by-step"]
-[이전](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs.md)
+> [!div class="step-by-step"]
+> [이전](create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-cs.md)

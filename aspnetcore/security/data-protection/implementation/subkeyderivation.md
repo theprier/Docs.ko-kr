@@ -1,7 +1,7 @@
 ---
-title: "하위 키 파생 및 인증 된 암호화"
+title: 하위 키 파생 및 ASP.NET 코어에서 인증 된 암호화
 author: rick-anderson
-description: "이 문서에서는 ASP.NET Core 데이터 보호의 구현 세부 정보 파생을 하위 키와 인증 암호화에 설명 합니다."
+description: ASP.NET Core 데이터 보호의 구현 세부 정보 파생을 하위 키와 인증 암호화에 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/implementation/subkeyderivation
-ms.openlocfilehash: 4b905bbc7bb064b6ba1741557bd694c8c67ccfa8
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 8c83da40a524896becc07c94c01d5e2b684e4386
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="subkey-derivation-and-authenticated-encryption"></a>하위 키 파생 및 인증 된 암호화
+# <a name="subkey-derivation-and-authenticated-encryption-in-aspnet-core"></a>하위 키 파생 및 ASP.NET 코어에서 인증 된 암호화
 
 <a name="data-protection-implementation-subkey-derivation"></a>
 
@@ -63,7 +63,7 @@ K_E 위 메커니즘을 통해 생성 되 면 임의 초기화 벡터를 생성 
 *출력: keyModifier = | | iv | | E_cbc (K_E, iv, 데이터) | | HMAC (K_H, iv | | E_cbc (K_E, iv, 데이터))*
 
 > [!NOTE]
-> `IDataProtector.Protect` 구현 됩니다 [매직 머리글과 키 id 앞에 추가](authenticated-encryption-details.md) 를 호출자에 게 반환 하기 전에 출력 합니다. 매직 머리글과 키 id는 암시적으로 하기 때문에 속하지 [AAD](xref:security/data-protection/implementation/subkeyderivation#data-protection-implementation-subkey-derivation-aad), 키 한정자는 KDF에 입력으로 제공 됩니다, 때문에이 경우 반환 된 마지막 페이로드는 모든 단일 바이트가 MAC에서 인증
+> `IDataProtector.Protect` 구현 됩니다 [매직 머리글과 키 id 앞에 추가](xref:security/data-protection/implementation/authenticated-encryption-details) 를 호출자에 게 반환 하기 전에 출력 합니다. 매직 머리글과 키 id는 암시적으로 하기 때문에 속하지 [AAD](xref:security/data-protection/implementation/subkeyderivation#data-protection-implementation-subkey-derivation-aad), 키 한정자는 KDF에 입력으로 제공 됩니다, 때문에이 경우 반환 된 마지막 페이로드는 모든 단일 바이트가 MAC에서 인증
 
 ## <a name="galoiscounter-mode-encryption--validation"></a>Galois/카운터 모드 암호화 + 유효성 검사
 
@@ -74,4 +74,4 @@ K_E 위 메커니즘을 통해 생성 되 면 임의 96 비트 nonce를 생성 �
 *출력: keyModifier = | | nonce | | E_gcm (nonce, 데이터, K_E) | | authTag*
 
 > [!NOTE]
-> GCM AAD의 개념을 고유 하 게 지 원하는 경우에에서는 여전히 저장 AAD 원래 KDF에만 해당 AAD 매개 변수에 대 한 GCM에 빈 문자열을 전달 하 고 있습니다. 그 이유는 두 가지가 있습니다. 첫째, [민첩성을 지원 하기 위해](context-headers.md#data-protection-implementation-context-headers) K_M를 사용 하 여 암호화 키로 직접 하려고 하지 않습니다. 또한 GCM 해당 입력에 대해 매우 엄격한 고유성 요구 사항을 적용 합니다. GCM 암호화 루틴의 두 개에서 호출 된 적이 또는 더 분명 가능성 (키, nonce) 동일한 입력된 데이터 집합 2 쌍을 초과할 수 없습니다 ^32입니다. 2 개 이상의 수행할 수 없습니다. 여기서 K_E를 해결 하는 경우 ^32 암호화 작업 전에 2의 위반을 실행 했습니다 ^-32를 제한 합니다. 이 처럼 매우 많은 수의 작업, 보이지만 트래픽이 많은 웹 서버는 단순한 일 전 부터는 이러한 키에 대 한 일반적인 수명 범위 내에 4 십억 요청을 통해 넣을 수 있습니다. 값 2의 준수할 수 ^-32 확률도 계속 해 서 128 비트 키 한정자와 근본적으로 지정 된 모든 K_M에 대 한 사용 가능한 작업 수를 확장 하는 96 비트 nonce를 사용 합니다. CBC 및 GCM 작업 사이의 KDF 코드 경로 공유 하겠습니다 디자인을 간소화 하 고 없기 때문에 KDF에서 AAD 이미 것으로 간주 GCM 루틴에 전달할 필요가 없습니다.
+> GCM AAD의 개념을 고유 하 게 지 원하는 경우에에서는 여전히 저장 AAD 원래 KDF에만 해당 AAD 매개 변수에 대 한 GCM에 빈 문자열을 전달 하 고 있습니다. 그 이유는 두 가지가 있습니다. 첫째, [민첩성을 지원 하기 위해](xref:security/data-protection/implementation/context-headers#data-protection-implementation-context-headers) K_M를 사용 하 여 암호화 키로 직접 하려고 하지 않습니다. 또한 GCM 해당 입력에 대해 매우 엄격한 고유성 요구 사항을 적용 합니다. GCM 암호화 루틴의 두 개에서 호출 된 적이 또는 더 분명 가능성 (키, nonce) 동일한 입력된 데이터 집합 2 쌍을 초과할 수 없습니다 ^32입니다. 2 개 이상의 수행할 수 없습니다. 여기서 K_E를 해결 하는 경우 ^32 암호화 작업 전에 2의 위반을 실행 했습니다 ^-32를 제한 합니다. 이 처럼 매우 많은 수의 작업, 보이지만 트래픽이 많은 웹 서버는 단순한 일 전 부터는 이러한 키에 대 한 일반적인 수명 범위 내에 4 십억 요청을 통해 넣을 수 있습니다. 값 2의 준수할 수 ^-32 확률도 계속 해 서 128 비트 키 한정자와 근본적으로 지정 된 모든 K_M에 대 한 사용 가능한 작업 수를 확장 하는 96 비트 nonce를 사용 합니다. CBC 및 GCM 작업 사이의 KDF 코드 경로 공유 하겠습니다 디자인을 간소화 하 고 없기 때문에 KDF에서 AAD 이미 것으로 간주 GCM 루틴에 전달할 필요가 없습니다.

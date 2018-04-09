@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/recommended-resources-for-mvc
-title: "MVC 권장 리소스 | Microsoft Docs"
+title: MVC 권장 리소스 | Microsoft Docs
 author: Rick-Anderson
-description: "이 항목에서는 ASP.NET MVC 5에 대 한 설명서 리소스에 대 한 링크를 제공 합니다. 블로그 게시물, stackoverflow 스레드 또는 다른 링크는 것을 알고 있는 경우..."
+description: 이 항목에서는 ASP.NET MVC 5에 대 한 설명서 리소스에 대 한 링크를 제공 합니다. 블로그 게시물, stackoverflow 스레드 또는 다른 링크는 것을 알고 있는 경우...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/10/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/recommended-resources-for-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: d08ee5c2bf56611caa483337af0ec1bd7cf982c0
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b328b733914b20b0aa3fe529c9a9f999349171ec
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="mvc-recommended-resources"></a>MVC 리소스를 권장 합니다.
 ====================
@@ -25,7 +25,7 @@ ms.lasthandoff: 01/24/2018
 > 이 항목에서는 ASP.NET MVC 5에 대 한 설명서 리소스에 대 한 링크를 제공 합니다. 훌륭한 블로그 게시물을 알고 있는 경우 [stackoverflow](http://stackoverflow.com/) 스레드나 다른 링크 유용할 것, 전송 되는 [me](mailto:aspnetue@microsoft.com?subject=Great ASP.NET MVC link) 링크와 전자 메일입니다. 여기에 제공 된 링크는 주기적으로 업데이트 됩니다. 하면 이전 찾을 수 있습니다 (그러나 많은 경우에 적용) ASP.NET MVC에서 링크는 [MSDN 콘텐츠 맵](https://msdn.microsoft.com/library/gg416514(v=vs.108).aspx)합니다.
 > 
 > 답변 질문 확인 하거나 문제에 솔루션을 찾을 좋습니다는 [ASP.NET MVC 포럼](https://forums.asp.net/1146.aspx/1?MVC) 또는 [stackoverflow](http://stackoverflow.com/questions/tagged/mvc+asp.net-mvc)합니다.
-<a id="gettingstarted"></a>
+> <a id="gettingstarted"></a>
 
 ## <a name="getting-started-with-aspnet-mvc"></a>ASP.NET MVC 시작
 

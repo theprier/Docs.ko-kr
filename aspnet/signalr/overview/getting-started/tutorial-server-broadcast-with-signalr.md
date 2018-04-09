@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/getting-started/tutorial-server-broadcast-with-signalr
-title: "자습서: 서버 2 SignalR과 브로드캐스트 | Microsoft Docs"
+title: '자습서: 서버 2 SignalR과 브로드캐스트 | Microsoft Docs'
 author: tdykstra
-description: "이 자습서에는 ASP.NET SignalR 2를 사용 하 여 서버 브로드캐스트 기능을 제공 하는 웹 응용 프로그램을 만드는 방법을 보여 줍니다. 다음은 해당 commun을 서버 브로드캐스트가 합니다."
+description: 이 자습서에는 ASP.NET SignalR 2를 사용 하 여 서버 브로드캐스트 기능을 제공 하는 웹 응용 프로그램을 만드는 방법을 보여 줍니다. 다음은 해당 commun을 서버 브로드캐스트가 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/13/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/getting-started/tutorial-server-broadcast-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 98a7ce4991d58181177cf56976888e9fd1526987
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: de4ccb4f0865e250fa0d78a9707fe5129c78e764
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="tutorial-server-broadcast-with-signalr-2"></a>자습서: 서버 2 SignalR과 브로드캐스트
 ====================
@@ -65,7 +65,7 @@ ms.lasthandoff: 01/24/2018
 
 ![StockTicker 초기 버전](tutorial-server-broadcast-with-signalr/_static/image1.png)
 
-정기적으로 서버 임의로 주가 업데이트 되 고 모든 연결 된 클라이언트에 업데이트를 푸시합니다. 브라우저 숫자 및 기호는 **변경** 및  **%**  열 서버에서 알림에 대 한 응답으로 동적으로 변경 합니다. 모두 동일한 데이터 및 표시 된 데이터에 동일한 변경 내용을 동시에 동일한 URL로 브라우저를 추가로 열고 합니다.
+정기적으로 서버 임의로 주가 업데이트 되 고 모든 연결 된 클라이언트에 업데이트를 푸시합니다. 브라우저 숫자 및 기호는 **변경** 및 **%** 열 서버에서 알림에 대 한 응답으로 동적으로 변경 합니다. 모두 동일한 데이터 및 표시 된 데이터에 동일한 변경 내용을 동시에 동일한 URL로 브라우저를 추가로 열고 합니다.
 
 이 자습서에는 다음 섹션이 포함 됩니다.
 
@@ -86,7 +86,7 @@ ms.lasthandoff: 01/24/2018
 
 <a id="prerequisites"></a>
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 시작 하기 전에 Visual Studio 2013을 컴퓨터에 설치 했는지 확인 합니다. Visual Studio가 없는 경우 참조 [ASP.NET 다운로드](https://www.asp.net/downloads) 는 무료 Visual Studio 2013 Express 얻으려고 합니다.
 
@@ -218,7 +218,7 @@ ms.lasthandoff: 01/24/2018
 
     스크립트 태그는 jQuery 스크립트 파일, SignalR core 스크립트 파일, SignalR 프록시 스크립트 파일 및 나중에 만드는 StockTicker 스크립트 파일을 지정 합니다. "/ Signalr/허브" URL을 지정 하는 SignalR 프록시 스크립트 파일을 동적으로 생성 및 StockTickerHub.GetAllStocks에 대 한이 예에서 허브 클래스에 메서드에 대 한 프록시 메서드를 정의 합니다. 원하는 경우 생성할 수 있습니다이 JavaScript 파일을 수동으로 사용 하 여 [SignalR 유틸리티](http://nuget.org/packages/Microsoft.AspNet.SignalR.Utils/) MapHubs 메서드 호출에서 동적 파일 만들기를 사용 하지 않도록 설정 합니다.
 3. > [!IMPORTANT]
- > JavaScript 파일에 참조 하는지 확인 *StockTicker.html* 올바른지 합니다. 즉, 인지 확인 하거나 스크립트 태그 (예제에서 1.10.2)에서 jQuery 버전을 프로젝트의 jQuery 버전과 같은 *스크립트* 폴더 인지 확인 하거나 스크립트 태그의 SignalR 버전 SignalR과 동일 하 고 프로젝트의 버전 *스크립트* 폴더입니다. 필요에 따라 스크립트 태그의 파일 이름을 변경 합니다.
+   > JavaScript 파일에 참조 하는지 확인 *StockTicker.html* 올바른지 합니다. 즉, 인지 확인 하거나 스크립트 태그 (예제에서 1.10.2)에서 jQuery 버전을 프로젝트의 jQuery 버전과 같은 *스크립트* 폴더 인지 확인 하거나 스크립트 태그의 SignalR 버전 SignalR과 동일 하 고 프로젝트의 버전 *스크립트* 폴더입니다. 필요에 따라 스크립트 태그의 파일 이름을 변경 합니다.
 4. **솔루션 탐색기**를 마우스 오른쪽 단추로 클릭 *StockTicker.html*, 클릭 하 고 **시작 페이지로 설정**합니다.
 5. 프로젝트 폴더에 새 JavaScript 파일을 만들고 이름을 *StockTicker.js*...
 6. 템플릿 코드를 다음 코드로 바꿉니다.

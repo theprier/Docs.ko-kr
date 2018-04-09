@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/disabling-actions-during-animation-cs
-title: "애니메이션 (C#) 중 동작 선택 안 함 | Microsoft Docs"
+title: 애니메이션 (C#) 중 동작 선택 안 함 | Microsoft Docs
 author: wenz
-description: "ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트롤 뿐 아니라 애니메이션 컨트롤을 추가 하는 전체 프레임 워크. 또한 작업을 지원 중..."
+description: ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트롤 뿐 아니라 애니메이션 컨트롤을 추가 하는 전체 프레임 워크. 또한 작업을 지원 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/disabling-actions-during-animation-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 875c6be5e190c31fac030fc17ef040a934233f16
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7862c5026a48fbee6eb48beb411e5e1d60c8b406
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="disabling-actions-during-animation-c"></a>애니메이션 (C#) 하는 동안 작업을 사용 하지 않도록 설정
 ====================
@@ -62,6 +62,6 @@ HTML 컨트롤을 포스트백을 만드는 단추와 바람직하지 이후 웹
 
 애니메이션 실행 되는 즉시 단추가 비활성화 ([전체 크기 이미지를 보려면 클릭](disabling-actions-during-animation-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[이전](animating-in-response-to-user-interaction-cs.md)
-[다음](triggering-an-animation-in-another-control-cs.md)
+> [!div class="step-by-step"]
+> [이전](animating-in-response-to-user-interaction-cs.md)
+> [다음](triggering-an-animation-in-another-control-cs.md)

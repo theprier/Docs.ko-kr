@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/nerddinner-wrap-up
-title: "업그레이드 되었으며 수정 줄 바꿈 | Microsoft Docs"
+title: 업그레이드 되었으며 수정 줄 바꿈 | Microsoft Docs
 author: microsoft
-description: "업그레이드 되었으며 수정 자습서의 결론 이며 자세한 방법에 대 한 정보를 제공 하십시오."
+description: 업그레이드 되었으며 수정 자습서의 결론 이며 자세한 방법에 대 한 정보를 제공 하십시오.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/nerddinner-wrap-up
 msc.type: authoredcontent
-ms.openlocfilehash: bb55668c714532c0a9ff499511b7a47572314194
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8d418f40f6d2911491c1a4f2498a4f711e9c271c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="nerddinner-wrap-up"></a>업그레이드 되었으며 수정 줄 바꿈
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [PDF 다운로드](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
 
@@ -43,11 +43,11 @@ ms.lasthandoff: 11/10/2017
 
 ASP.NET MVC에 대해 훨씬 더 자세한 책의 나머지 부분을 읽을 수 있습니다.
 
-자습서 및 비디오에서 훌륭한 ASP.NET MVC를 찾을 수도 있습니다: [https://www.asp.net/mvc](../../../index.md) 다른 훌륭한 ASP.NET MVC 책 곧 게시 됩니다. 제공 될 때 추가 책에 대 한 링크를 포함 하려면이 페이지를 업데이트 합니다.
+자습서 및 비디오에서 훌륭한 ASP.NET MVC를 찾을 수도 있습니다: [ https://www.asp.net/mvc ](../../../index.md) 다른 훌륭한 ASP.NET MVC 책 곧 게시 됩니다. 제공 될 때 추가 책에 대 한 링크를 포함 하려면이 페이지를 업데이트 합니다.
 
 이렇게 하면 기대
 
 Scott
 
->[!div class="step-by-step"]
-[이전](enable-automated-unit-testing.md)
+> [!div class="step-by-step"]
+> [이전](enable-automated-unit-testing.md)

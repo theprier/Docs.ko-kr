@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core에서 SMS로 2 단계 인증"
+title: ASP.NET Core에서 SMS로 2 단계 인증
 author: rick-anderson
-description: "ASP.NET Core 응용 프로그램과 (2FA) 2 단계 인증을 설정 하는 방법을 알아봅니다."
+description: ASP.NET Core 응용 프로그램과 (2FA) 2 단계 인증을 설정 하는 방법을 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 08/15/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/2fa
-ms.openlocfilehash: c328c6f4b674695dd1f2db8145a7ac1b8f12d36d
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 1c4acc4e4be593051d30793b7f73ad90ce727283
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="two-factor-authentication-with-sms-in-aspnet-core"></a>ASP.NET Core에서 SMS로 2 단계 인증
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 03/15/2018
 
 이 자습서는 ASP.NET Core에 적용 됩니다. 1.x만 합니다. 참조 [ASP.NET Core에서 인증자 앱에 대 한 QR 코드를 사용 하도록 설정 생성](xref:security/authentication/identity-enable-qrcodes) 이상 ASP.NET 코어 2.0에 대 한 합니다.
 
-이 자습서에는 SMS를 사용 하 여 2 단계 인증 (2FA)을 설정 하는 방법을 보여 줍니다. 에 대 한 지침이 제공 됩니다 [twilio](https://www.twilio.com/) 및 [ASPSMS](https://www.aspsms.com/asp.net/identity/core/testcredits/), 하지만 다른 SMS 공급자를 사용할 수 있습니다. 완료 하는 것이 좋습니다 [계정 확인 및 암호 복구](accconfirm.md) 이 자습서를 시작 하기 전에.
+이 자습서에는 SMS를 사용 하 여 2 단계 인증 (2FA)을 설정 하는 방법을 보여 줍니다. 에 대 한 지침이 제공 됩니다 [twilio](https://www.twilio.com/) 및 [ASPSMS](https://www.aspsms.com/asp.net/identity/core/testcredits/), 하지만 다른 SMS 공급자를 사용할 수 있습니다. 완료 하는 것이 좋습니다 [계정 확인 및 암호 복구](xref:security/authentication/accconfirm) 이 자습서를 시작 하기 전에.
 
 보기는 [완성 된 샘플](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/2fa/sample/Web2FA)합니다. [다운로드 하는 방법](xref:tutorials/index#how-to-download-a-sample)합니다.
 
@@ -62,7 +62,7 @@ Twilio 계정 대시보드 탭에서 복사 된 **계정 SID** 및 **인증 토�
 
 [!code-csharp[](2fa/sample/Web2FA/Services/SMSoptions.cs)]
 
-설정의 `SMSAccountIdentification`, `SMSAccountPassword` 및 `SMSAccountFrom` 와 [암호 관리자 도구](xref:security/app-secrets)합니다. 예:
+설정의 `SMSAccountIdentification`, `SMSAccountPassword` 및 `SMSAccountFrom` 와 [암호 관리자 도구](xref:security/app-secrets)합니다. 예를 들어:
 
 ```none
 C:/Web2FA/src/WebApp1>dotnet user-secrets set SMSAccountIdentification 12345
@@ -128,7 +128,7 @@ info: Successfully saved SMSAccountIdentification = 12345 to the secret store.
 
 * 로그 오프 합니다.
 
-* 로그인.
+* 로그인
 
 * 2 단계 인증을 제공 해야 하므로 사용자 계정 2 단계 인증이 있었습니다. 이 자습서에서는 전화 확인 사용 하도록 설정한 합니다. 템플릿이 제공된은 두 번째 요소로 전자 메일을 설정할 수 있습니다. QR 코드와 같은 인증에 대 한 추가 두 번째 요소를 설정할 수 있습니다. 탭 **제출**합니다.
 

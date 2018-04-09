@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/views/using-the-tagbuilder-class-to-build-html-helpers-cs
-title: "HTML 도우미 (C#)를 TagBuilder 클래스를 사용 하 여 | Microsoft Docs"
+title: HTML 도우미 (C#)를 TagBuilder 클래스를 사용 하 여 | Microsoft Docs
 author: StephenWalther
-description: "Stephen Walther TagBuilder 클래스의 이름을 ASP.NET MVC 프레임 워크에 유용한 유틸리티 클래스를 소개 합니다. TagBuilder 클래스를 쉽게 사용할 수 있습니다..."
+description: Stephen Walther TagBuilder 클래스의 이름을 ASP.NET MVC 프레임 워크에 유용한 유틸리티 클래스를 소개 합니다. TagBuilder 클래스를 쉽게 사용할 수 있습니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/02/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/views/using-the-tagbuilder-class-to-build-html-helpers-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 63f07c3f95c520dbc74f3568aa65dc6a6f34a901
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 6c0e8e4e3a733f2cc8690dc85e3006bce6c661d2
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-the-tagbuilder-class-to-build-html-helpers-c"></a>HTML 도우미 (C#)를 TagBuilder 클래스를 사용 하 여
 ====================
@@ -77,6 +77,6 @@ TagBuilder.MergeAttribute() 메서드를 사용 하 여 TagBuilder에 src 특성
 
 [!code-aspx[Main](using-the-tagbuilder-class-to-build-html-helpers-cs/samples/sample3.aspx)]
 
->[!div class="step-by-step"]
-[이전](creating-custom-html-helpers-cs.md)
-[다음](creating-page-layouts-with-view-master-pages-cs.md)
+> [!div class="step-by-step"]
+> [이전](creating-custom-html-helpers-cs.md)
+> [다음](creating-page-layouts-with-view-master-pages-cs.md)

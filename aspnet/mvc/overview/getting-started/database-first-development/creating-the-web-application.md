@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/creating-the-web-application
-title: "ASP.NET MVC를 사용 하 여 먼저 EF 데이터베이스: 웹 응용 프로그램 및 데이터 모델 만들기 | Microsoft Docs"
+title: 'ASP.NET MVC를 사용 하 여 먼저 EF 데이터베이스: 웹 응용 프로그램 및 데이터 모델 만들기 | Microsoft Docs'
 author: tfitzmac
-description: "MVC, Entity Framework 및 ASP.NET 스 캐 폴딩을 사용 하 여 기존 데이터베이스에 대 한 인터페이스를 제공 하는 웹 응용 프로그램을 만들 수 있습니다. 이 자습서 seri 중..."
+description: MVC, Entity Framework 및 ASP.NET 스 캐 폴딩을 사용 하 여 기존 데이터베이스에 대 한 인터페이스를 제공 하는 웹 응용 프로그램을 만들 수 있습니다. 이 자습서 seri 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/01/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/creating-the-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: f495bfa3aa5332e4ca3e44c2ffbfb760fbbeafc8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 04ccc00fa48702608fdc7b5b00d73778985852f9
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="ef-database-first-with-aspnet-mvc-creating-the-web-application-and-data-models"></a>ASP.NET MVC를 사용 하 여 먼저 EF 데이터베이스: 웹 응용 프로그램 및 데이터 모델 만들기
 ====================
@@ -101,6 +101,6 @@ ms.lasthandoff: 11/10/2017
 
 이 자습서와 함께 계속 하기 전에 프로젝트를 빌드하십시오. 다음 섹션에는 프로젝트가 빌드되지 않은 경우 작동 하지 것입니다 하지만 데이터 모델을 기반으로 하는 코드를 생성 합니다.
 
->[!div class="step-by-step"]
-[이전](setting-up-database.md)
-[다음](generating-views.md)
+> [!div class="step-by-step"]
+> [이전](setting-up-database.md)
+> [다음](generating-views.md)

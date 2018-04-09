@@ -1,22 +1,22 @@
 ---
 uid: identity/overview/extensibility/implementing-a-custom-mysql-aspnet-identity-storage-provider
-title: "MySQL 사용자 지정 ASP.NET Identity 저장소 공급자 구현 | Microsoft Docs"
+title: MySQL 사용자 지정 ASP.NET Identity 저장소 공급자 구현 | Microsoft Docs
 author: raquelsa
-description: "ASP.NET Id는 확장 가능한 시스템으로의 응용 프로그램 작업이 다시 실행 하지 않고 응용 프로그램에 연결 하 고 저장소 공급자를 만들 수 있습니다..."
+description: ASP.NET Id는 확장 가능한 시스템으로의 응용 프로그램 작업이 다시 실행 하지 않고 응용 프로그램에 연결 하 고 저장소 공급자를 만들 수 있습니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/22/2015
 ms.topic: article
 ms.assetid: 248f5fe7-39ba-40ea-ab1e-71a69b0bd649
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/extensibility/implementing-a-custom-mysql-aspnet-identity-storage-provider
 msc.type: authoredcontent
-ms.openlocfilehash: 3bfbccd91705755fc24bb8305fff171baa26f370
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d843b31e011fe520aad6cfdab0beca2d12477f12
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="implementing-a-custom-mysql-aspnet-identity-storage-provider"></a>MySQL 사용자 지정 ASP.NET Identity 저장소 공급자 구현
 ====================
@@ -124,7 +124,7 @@ MySQL 저장소 공급자를 만드는 단계를 시작 하기 전에 살펴 보
 5. IdentityMySQLDemo 프로젝트를 마우스 오른쪽 단추로 클릭, 선택 **추가**, **참조, 솔루션, 프로젝트;** AspNet.Identity.MySQL 프로젝트를 선택 하 고 클릭 **확인**합니다.
 6. IdentityMySQLDemo 프로젝트에서 대체에 대 한 모든 참조  
     `using Microsoft.AspNet.Identity.EntityFramework;`  
- 을(를) 다음으로 바꾸면 됩니다.  
+   다음 문자열로 바꾸세요.  
      `using AspNet.Identity.MySQL;`
 7. IdentityModels.cs, 설정 **ApplicationDbContext** 를 파생할 **MySqlDatabase** 하 고 있는 연결 이름 단일 매개 변수를 사용 하는 생성자를 포함 합니다.  
 

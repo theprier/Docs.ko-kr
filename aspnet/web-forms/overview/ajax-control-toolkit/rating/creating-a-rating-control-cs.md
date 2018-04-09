@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/rating/creating-a-rating-control-cs
-title: "등급 컨트롤 (C#) 만들기 | Microsoft Docs"
+title: 등급 컨트롤 (C#) 만들기 | Microsoft Docs
 author: wenz
-description: "전자 상거래 커뮤니티 사이트로에서 대부분의 웹 사이트 속도 문서 또는 항목에 사용자에 게 제공할 합니다. 이 일반적으로 일부 코딩 작업 필요 하지만 대 한는 중..."
+description: 전자 상거래 커뮤니티 사이트로에서 대부분의 웹 사이트 속도 문서 또는 항목에 사용자에 게 제공할 합니다. 이 일반적으로 일부 코딩 작업 필요 하지만 대 한는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/rating/creating-a-rating-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7c004522ac72b848e42320862d77bced0c11ca15
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a48cf0ed9402e2875e87ba7bdb76afc5f501a670
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-rating-control-c"></a>등급 컨트롤 (C#) 만들기
 ====================
@@ -41,12 +41,12 @@ ms.lasthandoff: 11/10/2017
 
 그런 다음 추가 `Rating` ASP.NET AJAX 컨트롤 도구 키트에서 제어 합니다. 이 예제에 대 한 설정 해야 하는 다음 특성:
 
-- `CurrentRating`사용할 초기 등급
-- `MaxRating`최대 등급
-- `EmptyStarCssClass`등급 항목 (별) 비어 있을 때 사용 하는 CSS 클래스
-- `FilledStarCssClass`등급 항목 (별)을 채울 때 사용 하는 CSS 클래스
-- `StarCssClass`표시 상태에 대 한 사용 하는 CSS 클래스
-- `WaitingStarCssClass`별 등급 서버에 다시 보내는 동안 사용 하는 CSS 클래스
+- `CurrentRating` 사용할 초기 등급
+- `MaxRating` 최대 등급
+- `EmptyStarCssClass` 등급 항목 (별) 비어 있을 때 사용 하는 CSS 클래스
+- `FilledStarCssClass` 등급 항목 (별)을 채울 때 사용 하는 CSS 클래스
+- `StarCssClass` 표시 상태에 대 한 사용 하는 CSS 클래스
+- `WaitingStarCssClass` 별 등급 서버에 다시 보내는 동안 사용 하는 CSS 클래스
 
 태그를 5 개 등급 컨트롤을 만드는 것는 none 입력 처음 항목 (smileys):
 
@@ -73,5 +73,5 @@ ms.lasthandoff: 11/10/2017
 
 최소한의 코드를 사용 하 여 등급 시스템 만들기 ([전체 크기 이미지를 보려면 클릭](creating-a-rating-control-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[다음](creating-a-rating-control-vb.md)
+> [!div class="step-by-step"]
+> [다음](creating-a-rating-control-vb.md)

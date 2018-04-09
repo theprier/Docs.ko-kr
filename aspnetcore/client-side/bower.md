@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core에서 Bower를 사용 하 여"
+title: ASP.NET Core에서 Bower 사용 하 여 클라이언트 패키지를 관리 합니다.
 author: rick-anderson
-description: "Bower 사용 하 여 클라이언트 패키지를 관리 합니다."
+description: Bower 사용 하 여 클라이언트 패키지를 관리 합니다.
 manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bower
-ms.openlocfilehash: 67695843846cfaf1619db11a7bffcc65802e0f69
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 81244cfb71194876071c64899d627c296aad3802
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="manage-client-side-packages-with-bower-in-aspnet-core"></a>ASP.NET Core에서 Bower 사용 하 여 클라이언트 패키지를 관리 합니다.
 
@@ -39,7 +39,7 @@ ms.lasthandoff: 03/02/2018
 
 * 에 **Bower: \<프로젝트 이름\>**  창 "찾아보기" 탭을 클릭 한 다음를 입력 하 여 패키지 목록 필터링 `font-awesome` 검색 상자에:
 
- ![bower 패키지 관리](bower/_static/manage-bower-packages.png)
+  ![bower 패키지 관리](bower/_static/manage-bower-packages.png)
 
 * 확인 하는 "변경 내용을 저장 하 *bower.json*" 확인란이 선택 되어 있습니다. 드롭다운 목록에서 버전을 선택 하 고 클릭는 **설치** 단추입니다. **출력** 설치 세부 정보 창에 표시 합니다.
 
@@ -100,9 +100,9 @@ Bower 클라이언트 쪽 빌드 프로세스를 사용 하는 일반적인 단�
 
 * 저장 된 *bower.json* 파일입니다.
 
- 프로젝트에 포함 되어는 *부트스트랩* 및 *jQuery* 디렉터리에 *wwwroot/lib*합니다. 사용 하 여 bower는 *.bowerrc* 파일을 자산에 설치 하려면 *wwwroot/lib*합니다.
+  프로젝트에 포함 되어는 *부트스트랩* 및 *jQuery* 디렉터리에 *wwwroot/lib*합니다. 사용 하 여 bower는 *.bowerrc* 파일을 자산에 설치 하려면 *wwwroot/lib*합니다.
 
- 참고: "Bower 패키지 관리" UI 수동 파일 편집에 대 한 대안을 제공합니다.
+  참고: "Bower 패키지 관리" UI 수동 파일 편집에 대 한 대안을 제공합니다.
 
 ### <a name="enable-static-files"></a>정적 파일을 사용 하도록 설정
 
@@ -115,12 +115,12 @@ Bower 클라이언트 쪽 빌드 프로세스를 사용 하는 일반적인 단�
 
 이 섹션에서는 배포 된 패키지에 액세스할 수를 확인 하는 HTML 페이지를 만들게 됩니다.
 
-* 라는 새 HTML 페이지를 추가 *Index.html* 에 *wwwroot* 폴더입니다. 참고: HTML 파일을 추가 해야는 *wwwroot* 폴더입니다. 기본적으로 정적 콘텐츠가 담긴 제공 될 수 없는 외부 *wwwroot*합니다. 참조 [정적 파일 작업](xref:fundamentals/static-files) 자세한 정보에 대 한 합니다.
+* 라는 새 HTML 페이지를 추가 *Index.html* 에 *wwwroot* 폴더입니다. 참고: HTML 파일을 추가 해야는 *wwwroot* 폴더입니다. 기본적으로 정적 콘텐츠가 담긴 제공 될 수 없는 외부 *wwwroot*합니다. 참조 [정적 파일로 작업할](xref:fundamentals/static-files) 자세한 정보에 대 한 합니다.
 
- 내용을 대체 *Index.html* 다음 태그로:
+  내용을 대체 *Index.html* 다음 태그로:
 
 [!code-html[](bower/sample/Index.html)]
 
 * 응용 프로그램을 실행 하 고 이동 `http://localhost:<port>/Index.html`합니다. 또는와 *Index.html* 열, 키를 눌러 `Ctrl+Shift+W`합니다. Jumbotron 스타일이 적용 되, jQuery 코드는 단추를 클릭할 때 응답 및 부트스트랩 단추 상태가 변경 되는지 확인 합니다.
 
- ![jumbotron 스타일 적용](bower/_static/jumbotron.png)
+  ![jumbotron 스타일 적용](bower/_static/jumbotron.png)

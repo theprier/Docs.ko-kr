@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/creating-and-running-a-deployment-command-file
-title: "명령 파일 만들기 및 배포를 실행 합니다. | Microsoft Docs"
+title: 명령 파일 만들기 및 배포를 실행 합니다. | Microsoft Docs
 author: jrjlee
-description: "이 항목에서는 다시 단일 단계로, Microsoft Build Engine (MSBuild) 프로젝트 파일을 사용 하 여 배포를 실행할 수 있도록 명령 파일을 작성 하는 방법에 설명..."
+description: 이 항목에서는 다시 단일 단계로, Microsoft Build Engine (MSBuild) 프로젝트 파일을 사용 하 여 배포를 실행할 수 있도록 명령 파일을 작성 하는 방법에 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/creating-and-running-a-deployment-command-file
 msc.type: authoredcontent
-ms.openlocfilehash: bc31bf55b29661816e0ca9a50b51b0abc3eb2c98
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: e5fb034a67bc9f2ea549af269eae51a49acc4d98
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-and-running-a-deployment-command-file"></a>만들기 및 배포 명령 파일을 실행 합니다.
 ====================
@@ -27,9 +27,9 @@ ms.lasthandoff: 03/15/2018
 > 이 항목에서는 단일 단계, 반복 프로세스로 Microsoft Build Engine (MSBuild) 프로젝트 파일을 사용 하 여 배포를 실행할 수 있도록 명령 파일을 작성 하는 방법을 설명 합니다.
 
 
-이 항목의 Fabrikam, inc. 라는 가상 회사의 엔터프라이즈 배포 요구 사항을 바탕으로 하는 자습서 시리즈의 일부를 형성 합니다. 이 자습서 시리즈 샘플 솔루션 & #x 2014;을 사용 하는 [않아](the-contact-manager-solution.md) 솔루션 & #x 2014; 현실적인 수준의 복잡성을 Windows ASP.NET MVC 3 응용 프로그램을 포함 하 여 웹 응용 프로그램을 나타내기 위해 Communication Foundation (WCF) 서비스 및 데이터베이스 프로젝트를 제공 합니다.
+이 항목의 Fabrikam, inc. 라는 가상 회사의 엔터프라이즈 배포 요구 사항을 바탕으로 하는 자습서 시리즈의 일부를 형성 합니다. 샘플 솔루션을 사용 하는 자습서 시리즈가&#x2014;는 [않아](the-contact-manager-solution.md) 솔루션&#x2014;현실적인 수준의 복잡성, Windows Communication ASP.NET MVC 3 응용 프로그램을 포함 하 여 웹 응용 프로그램을 나타내기 위해 WCF (foundation) 서비스 및 데이터베이스 프로젝트.
 
-이 자습서의 핵심에는 배포 방법에 설명 된 분할 프로젝트 파일 접근 방식에 따라 [빌드 프로세스를 이해](understanding-the-build-process.md)합니다 빌드 프로세스에 의해 제어 되는 두 프로젝트에 파일 & #x 2014; 포함 환경 관련 빌드 및 배포 설정을 포함 하는 하나 및 모든 대상 환경에 적용 되는 지침을 빌드하십시오. 빌드 시 환경 관련 프로젝트 파일은 빌드 지침의 전체 집합을 구성 하기 위해 환경을 알 수 없는 프로젝트 파일에 병합 됩니다.
+이 자습서의 핵심에는 배포 방법에 설명 된 분할 프로젝트 파일 접근 방식에 따라 [빌드 프로세스를 이해](understanding-the-build-process.md), 두 개의 프로젝트 파일에 빌드 프로세스에 의해 제어 되는&#x2014;포함 환경 관련 빌드 및 배포 설정을 포함 하는 하나 및 모든 대상 환경에 적용 되는 지침을 빌드하십시오. 빌드 시 환경 관련 프로젝트 파일은 빌드 지침의 전체 집합을 구성 하기 위해 환경을 알 수 없는 프로젝트 파일에 병합 됩니다.
 
 ## <a name="process-overview"></a>프로세스 개요
 
@@ -40,7 +40,7 @@ ms.lasthandoff: 03/15/2018
 
 ## <a name="create-an-msbuild-command"></a>MSBuild 명령 만들기
 
-에 설명 된 대로 [빌드 프로세스를 이해](understanding-the-build-process.md), 환경별 프로젝트 파일 & #x 2014; 예를 들어 *Env Dev.proj*& #x 2014;으로 가져올 수 있도록 설계 된 알 수 없는 환경 *Publish.proj* 빌드 시에는 파일입니다. 함께이 두 파일 전체 집합이 MSBuild를 빌드 및 솔루션을 배포 하는 방법을 지시 하는 지침을 제공 합니다.
+에 설명 된 대로 [빌드 프로세스를 이해](understanding-the-build-process.md), 환경별 프로젝트 파일&#x2014;예를 들어 *Env Dev.proj*&#x2014;중립적 환경으로 가져올 수 있도록 설계 *Publish.proj* 빌드 시에는 파일입니다. 함께이 두 파일 전체 집합이 MSBuild를 빌드 및 솔루션을 배포 하는 방법을 지시 하는 지침을 제공 합니다.
 
 *Publish.proj* 파일을 사용 하 여 프로그램 **가져올** 환경별 프로젝트 파일을 가져올 요소입니다.
 
@@ -92,7 +92,7 @@ ms.lasthandoff: 03/15/2018
 5. 에 테스트 웹 서버 컴퓨터 계정을 추가 해야 처음으로이 환경에 솔루션을 배포한 경우는 **db\_datawriter** 및 **db\_datareader**에 대 한 역할의 **ContactManager** 데이터베이스입니다. 이 절차에 설명 되어 [웹 배포 게시에 대 한 데이터베이스 서버를 구성](../configuring-server-environments-for-web-deployment/configuring-a-database-server-for-web-deploy-publishing.md)합니다.
 
     > [!NOTE]
-    > 데이터베이스를 만들 때 이러한 권한을 할당 하기만 하면 됩니다. 기본적으로 빌드 프로세스에서 모든 배포 & #x 2014에서 데이터베이스를 다시; 대신, 최신 스키마로의 기존 데이터베이스를 비교 하 고 필요한 변경 내용만 확인 하십시오. 결과적으로, 솔루션을 배포한 처음으로 이러한 데이터베이스 역할을 매핑할 필요가 합니다.
+    > 데이터베이스를 만들 때 이러한 권한을 할당 하기만 하면 됩니다. 기본적으로 빌드 프로세스는 다시 만들지 모든 배포에 있는 데이터베이스&#x2014;대신, 최신 스키마로의 기존 데이터베이스를 비교 하 고 필요한 변경 내용은 확인 합니다. 결과적으로, 솔루션을 배포한 처음으로 이러한 데이터베이스 역할을 매핑할 필요가 합니다.
 6. Internet Explorer를 열고 않아 응용 프로그램의 URL로 이동 (예를 들어 `http://testweb1:85/ContactManager/`).
 7. 응용 프로그램이 예상 대로 작동 하는지 확인 하 고 연락처를 추가할 수 있습니다.
 
@@ -118,6 +118,6 @@ MSBuild 지침이 포함 된 명령 파일 만들기의 구축 및 특정 대상
 
 또한 속성을 재정의 하거나 MSBuild 명령에 다른 다양 한 스위치를 설정 하 여 각 환경에 대 한 빌드 프로세스를 사용자 지정할 수 있습니다. 자세한 내용은 참조 [MSBuild 명령줄 참조](https://msdn.microsoft.com/library/ms164311.aspx)합니다.
 
->[!div class="step-by-step"]
-[이전](deploying-database-projects.md)
-[다음](manually-installing-web-packages.md)
+> [!div class="step-by-step"]
+> [이전](deploying-database-projects.md)
+> [다음](manually-installing-web-packages.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/presenting-and-managing-data/model-binding/using-query-string-values-to-retrieve-data
-title: "쿼리 문자열 값을 바인딩하는 모델을 사용 하 여 데이터를 필터링 및 웹 양식을 사용 하 여 | Microsoft Docs"
+title: 쿼리 문자열 값을 바인딩하는 모델을 사용 하 여 데이터를 필터링 및 웹 양식을 사용 하 여 | Microsoft Docs
 author: tfitzmac
-description: "이 자습서 시리즈 모델 바인딩을 사용 하 여 ASP.NET Web Forms 프로젝트의 기본 사항을 보여 줍니다. 모델 바인딩 데이터 상호 작용 하 게 더 많은 직선-중..."
+description: 이 자습서 시리즈 모델 바인딩을 사용 하 여 ASP.NET Web Forms 프로젝트의 기본 사항을 보여 줍니다. 모델 바인딩 데이터 상호 작용 하 게 더 많은 직선-중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/27/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/using-query-string-values-to-retrieve-data
 msc.type: authoredcontent
-ms.openlocfilehash: 2e5328ccda019462163b984da3661f7322b738df
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 03d20decf0eeff6062fbc6f8dd66f644b405c7cc
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-query-string-values-to-filter-data-with-model-binding-and-web-forms"></a>데이터를 필터링 하는 쿼리 문자열 값을 사용 하 여 모델 바인딩 및 웹 양식
 ====================
@@ -85,6 +85,6 @@ Students.aspx에서 총 크레딧을 대 한 눈금 보기 열 필드 바로 아
 
 다음에서 [자습서](adding-business-logic-layer.md), 비즈니스 논리 계층 및 데이터 액세스 계층으로 코드 숨김 파일에서 코드를 이동 합니다.
 
->[!div class="step-by-step"]
-[이전](integrating-jquery-ui.md)
-[다음](adding-business-logic-layer.md)
+> [!div class="step-by-step"]
+> [이전](integrating-jquery-ui.md)
+> [다음](adding-business-logic-layer.md)

@@ -1,7 +1,7 @@
 ---
-title: "키 관리 확장성"
+title: ASP.NET Core에서 키 관리 확장성
 author: rick-anderson
-description: "이 문서에서는 ASP.NET Core 데이터 보호 키 관리 확장성에 설명 합니다."
+description: ASP.NET Core 데이터 보호 키 관리 확장성에 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 11/22/2017
@@ -9,18 +9,18 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/extensibility/key-management
-ms.openlocfilehash: bcc4984efcee9a6ffd0f3b503a38089c78adf5e8
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: e3042b371cf7be8fa0218c1906042d2810b180e3
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="key-management-extensibility"></a>키 관리 확장성
+# <a name="key-management-extensibility-in-aspnet-core"></a>ASP.NET Core에서 키 관리 확장성
 
 <a name="data-protection-extensibility-key-management"></a>
 
 >[!TIP]
-> 읽기는 [키 관리](../implementation/key-management.md#data-protection-implementation-key-management) 이러한 Api는 기본적인 개념 중 일부에 대해 설명 하는 대로이 섹션을 읽기 전에 섹션.
+> 읽기는 [키 관리](xref:security/data-protection/implementation/key-management#data-protection-implementation-key-management) 이러한 Api는 기본적인 개념 중 일부에 대해 설명 하는 대로이 섹션을 읽기 전에 섹션.
 
 >[!WARNING]
 > 다음 인터페이스 중 하나를 구현 하는 형식은 스레드로부터 안전 해야 합니다. 여러 호출자에 대 한 합니다.
@@ -37,11 +37,11 @@ ms.lasthandoff: 03/02/2018
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-또한 `IKey` 노출 한 `CreateEncryptor` 만드는 데 사용할 수 있는 메서드는 [IAuthenticatedEncryptor](core-crypto.md#data-protection-extensibility-core-crypto-iauthenticatedencryptor) 인스턴스가이 키에 연결 합니다.
+또한 `IKey` 노출 한 `CreateEncryptor` 만드는 데 사용할 수 있는 메서드는 [IAuthenticatedEncryptor](xref:security/data-protection/extensibility/core-crypto#data-protection-extensibility-core-crypto-iauthenticatedencryptor) 인스턴스가이 키에 연결 합니다.
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-또한 `IKey` 노출 한 `CreateEncryptorInstance` 만드는 데 사용할 수 있는 메서드는 [IAuthenticatedEncryptor](core-crypto.md#data-protection-extensibility-core-crypto-iauthenticatedencryptor) 인스턴스가이 키에 연결 합니다.
+또한 `IKey` 노출 한 `CreateEncryptorInstance` 만드는 데 사용할 수 있는 메서드는 [IAuthenticatedEncryptor](xref:security/data-protection/extensibility/core-crypto#data-protection-extensibility-core-crypto-iauthenticatedencryptor) 인스턴스가이 키에 연결 합니다.
 
 ---
 
@@ -123,7 +123,7 @@ ms.lasthandoff: 03/02/2018
 
 구현에서 `GetAllKeys`, XML 문서 나타내는 키 및 해지 내부에서 읽을 수 있으며 `IXmlRepository`합니다. 이러한 문서를 암호화 하는 경우 시스템은 자동으로 암호 해독할 합니다. `XmlKeyManager` 적절 한 만듭니다 `IAuthenticatedEncryptorDescriptorDeserializer` 로 문서를 역직렬화 할 인스턴스를 다시 `IAuthenticatedEncryptorDescriptor` 개별에 래핑됩니다.이 다음에 인스턴스가 `IKey` 인스턴스. 이 컬렉션의 `IKey` 인스턴스 호출자에 게 반환 됩니다.
 
-특정 XML 요소에 대 한 자세한 정보를 찾을 수는 [키 저장소 형식 문서](../implementation/key-storage-format.md#data-protection-implementation-key-storage-format)합니다.
+특정 XML 요소에 대 한 자세한 정보를 찾을 수는 [키 저장소 형식 문서](xref:security/data-protection/implementation/key-storage-format#data-protection-implementation-key-storage-format)합니다.
 
 ## <a name="ixmlrepository"></a>IXmlRepository
 
@@ -135,7 +135,7 @@ ms.lasthandoff: 03/02/2018
 
 구현 `IXmlRepository` 을 통해 전달 되는 XML 구문 분석 필요 하지 않습니다. 불투명으로 XML 문서 처리를 생성 하 고 문서를 구문 분석 하는 방법에 대 한 걱정 더 높은 계층을 사용 합니다.
 
-형식은 두 가지가 기본 제공 구체적 구현 하는 `IXmlRepository`: `FileSystemXmlRepository` 및 `RegistryXmlRepository`합니다. 참조는 [키 저장소 공급자 문서](../implementation/key-storage-providers.md#data-protection-implementation-key-storage-providers) 자세한 정보에 대 한 합니다. 사용자 지정 등록 `IXmlRepository` 는 적절 한 방법으로 예: 다른 지원 저장소를 사용 하도록 Azure Blob 저장소는 것입니다.
+형식은 두 가지가 기본 제공 구체적 구현 하는 `IXmlRepository`: `FileSystemXmlRepository` 및 `RegistryXmlRepository`합니다. 참조는 [키 저장소 공급자 문서](xref:security/data-protection/implementation/key-storage-providers#data-protection-implementation-key-storage-providers) 자세한 정보에 대 한 합니다. 사용자 지정 등록 `IXmlRepository` 는 적절 한 방법으로 예: 다른 지원 저장소를 사용 하도록 Azure Blob 저장소는 것입니다.
 
 기본 저장소 전체 응용 프로그램을 변경 하려면 사용자 지정 등록 `IXmlRepository` 인스턴스:
 
@@ -169,7 +169,7 @@ serialize 된 경우 `IAuthenticatedEncryptorDescriptor` 다음 "암호화 필�
 * `DpapiXmlEncryptor`
 * `NullXmlEncryptor`
 
-참조는 [rest 문서에서 키 암호화](../implementation/key-encryption-at-rest.md#data-protection-implementation-key-encryption-at-rest) 자세한 정보에 대 한 합니다.
+참조는 [rest 문서에서 키 암호화](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest) 자세한 정보에 대 한 합니다.
 
 전체 응용 프로그램의 기본 휴지 키 암호화 메커니즘을 변경 하려면 사용자 지정 등록 `IXmlEncryptor` 인스턴스:
 

@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core에서 분산된 캐시 사용"
+title: 분산된 캐시 ASP.NET 코어에 대해 작업
 author: ardalis
-description: "ASP.NET Core 분산 응용 프로그램의 성능 및 확장성, 특히 클라우드 또는 서버 팜 환경 개선을 위한 캐싱을 사용 하는 방법에 알아봅니다."
+description: ASP.NET Core 분산 응용 프로그램의 성능 및 확장성, 특히 클라우드 또는 서버 팜 환경 개선을 위한 캐싱을 사용 하는 방법에 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 02/14/2017
@@ -9,23 +9,23 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/caching/distributed
-ms.openlocfilehash: 635c61cbb72a6a9eb822307bbc80936ee73bedc8
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: d9c7c1c3b2c052ba11f9ea5eaaa424d69bc43eb2
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="working-with-a-distributed-cache-in-aspnet-core"></a>ASP.NET Core에서 분산된 캐시 사용
+# <a name="work-with-a-distributed-cache-in-aspnet-core"></a>분산된 캐시 ASP.NET 코어에 대해 작업
 
 작성자: [Steve Smith](https://ardalis.com/)
 
 분산 된 캐시 클라우드 또는 서버 팜 환경에서 호스팅되는 경우에 특히 성능 및 ASP.NET Core 응용 프로그램의 확장성을 개선할 수 있습니다. 이 문서에서는 ASP.NET Core 기본 제공 분산된 캐시 추상화 및 구현 작업 하는 방법을 설명 합니다.
 
-[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/distributed/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/distributed/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="what-is-a-distributed-cache"></a>분산된 캐시 이란
 
-분산된 캐시 여러 응용 프로그램 서버에서 공유 됩니다 (참조 [기본 사항 캐싱](memory.md#caching-basics)). 캐시의 정보는 개별 웹 서버의 메모리에 저장 되지 않습니다 및 캐시 된 데이터는 모든 응용 프로그램의 서버에 사용할 수 있습니다. 이 여러 가지 이점을 제공합니다.
+분산된 캐시 여러 응용 프로그램 서버에서 공유 됩니다 (참조 [캐시 기본 사항](memory.md#caching-basics)). 캐시의 정보는 개별 웹 서버의 메모리에 저장 되지 않습니다 및 캐시 된 데이터는 모든 응용 프로그램의 서버에 사용할 수 있습니다. 이 여러 가지 이점을 제공합니다.
 
 1. 캐시 된 데이터는 모든 웹 서버에서 일관 됩니다. 사용자가 서버를 웹에 따라 해당 요청을 처리 하는 다른 결과가 표시 되지 않으면
 
@@ -95,7 +95,7 @@ Redis 구현을 구성 `ConfigureServices` 의 인스턴스를 요청 하 여 �
 [!code-csharp[](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=8,9,10,11,12,13&range=27-40)]
 
 > [!NOTE]
-> Redis를 로컬 컴퓨터에 설치 하려면 chocolatey 패키지 설치 [https://chocolatey.org/packages/redis-64/](https://chocolatey.org/packages/redis-64/) 실행 `redis-server` 명령 프롬프트에서 합니다.
+> Redis를 로컬 컴퓨터에 설치 하려면 chocolatey 패키지 설치 [ https://chocolatey.org/packages/redis-64/ ](https://chocolatey.org/packages/redis-64/) 실행 `redis-server` 명령 프롬프트에서 합니다.
 
 ## <a name="using-a-sql-server-distributed-cache"></a>SQL Server를 사용 하 여 분산 캐시
 
@@ -134,11 +134,11 @@ C:\DistCacheSample\src\DistCacheSample>dotnet sql-cache create "Data Source=(loc
 
 어떤 구현을 결정할 때 `IDistributedCache` Redis 중에서 선택할 응용 프로그램에 대 한 오른쪽 및 기존 인프라 및 환경, 성능 요구 사항 및 팀의 환경에 따라 SQL Server가 있습니다. 팀이 더 친숙 Redis와 함께 작업을 경우 매우 적합 합니다. SQL Server 팀이 선호 하는 경우 구현에도 안정적 수 있습니다. 기존의 캐싱 솔루션에는 데이터의 빠른 검색을 허용 하는 메모리 내 데이터 저장을 참고 합니다. 캐시에서 자주 사용 되는 데이터를 저장 하 고 SQL Server 또는 Azure 저장소와 같은 백 엔드 영구 저장소에 전체 데이터를 저장 해야 합니다. Redis 캐시는 SQL 캐시를 비교 하 여 높은 처리량과 낮은 대기 시간 제공 하는 캐싱 솔루션입니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 * [Redis Cache Azure에서](https://azure.microsoft.com/documentation/services/redis-cache/)
 * [Azure에서 SQL 데이터베이스](https://azure.microsoft.com/documentation/services/sql-database/)
-* [메모리 내 캐싱](xref:performance/caching/memory)
+* [메모리 내 캐시](xref:performance/caching/memory)
 * [변경 토큰을 사용하여 변경 내용 검색](xref:fundamentals/primitives/change-tokens)
 * [응답 캐싱](xref:performance/caching/response)
 * [응답 캐싱 미들웨어](xref:performance/caching/middleware)

@@ -1,22 +1,22 @@
 ---
 uid: identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity
-title: "SMS 및 전자 메일을 사용 하 여 ASP.NET Identity와 2 단계 인증 | Microsoft Docs"
+title: SMS 및 전자 메일을 사용 하 여 ASP.NET Identity와 2 단계 인증 | Microsoft Docs
 author: HaoK
-description: "이 자습서에서는 SMS 및 전자 메일을 사용 하 여 2 단계 인증 (2FA)을 설정 하는 방법을 보여줍니다. 이 문서 Rick Anderson에 의해 작성 되었으므로 ( @RickAndMSFT ) Pr.,..."
+description: 이 자습서에서는 SMS 및 전자 메일을 사용 하 여 2 단계 인증 (2FA)을 설정 하는 방법을 보여줍니다. 이 문서 Rick Anderson에 의해 작성 되었으므로 ( @RickAndMSFT ) Pr.,...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/15/2015
 ms.topic: article
 ms.assetid: 053e23c4-13c9-40fa-87cb-3e9b0823b31e
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 0f9ff7cf74048a008b150da1e843ff15333269ab
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c8f628d177004a8569dde2651469ed591e48591e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="two-factor-authentication-using-sms-and-email-with-aspnet-identity"></a>SMS 및 전자 메일을 사용 하 여 ASP.NET Identity와 2 단계 인증
 ====================
@@ -52,11 +52,11 @@ ms.lasthandoff: 01/24/2018
     `Install-Package SendGrid`  
     `Install-Package -Prerelease Microsoft.AspNet.Identity.Samples`  
   
- 이 자습서에서는 [SendGrid](http://sendgrid.com/) 전자 메일을 보내는 및 [Twilio](https://www.twilio.com/) 또는 [ASPSMS](https://www.aspsms.com/asp.net/identity/testcredits/) sms 문자 보내기에 대 한 합니다. `Identity.Samples` 패키지와 사용할 코드를 설치 합니다.
+   이 자습서에서는 [SendGrid](http://sendgrid.com/) 전자 메일을 보내는 및 [Twilio](https://www.twilio.com/) 또는 [ASPSMS](https://www.aspsms.com/asp.net/identity/testcredits/) sms 문자 보내기에 대 한 합니다. `Identity.Samples` 패키지와 사용할 코드를 설치 합니다.
 3. 설정의 [SSL을 사용 하도록 프로젝트](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)합니다.
 4. *선택적*:의 지침에 따라 내 [전자 메일 확인 자습서](account-confirmation-and-password-recovery-with-aspnet-identity.md) SendGrid 후크 다음 응용 프로그램을 실행 하 고 전자 메일 계정을 등록 하 합니다.
 5. * 옵션: * 샘플에서 데모 전자 메일 링크 확인 코드를 제거 (의 `ViewBag.Link` 계정 컨트롤러의 코드입니다. 참조는 `DisplayEmail` 및 `ForgotPasswordConfirmation` 작업 메서드 및 razor 뷰가).
-6. * 옵션: * 제거는 `ViewBag.Status` 코드와 관리 및 계정 컨트롤러에서는 *Views\Account\VerifyCode.cshtml* 및 *Views\Manage\VerifyPhoneNumber.cshtml* razor 뷰. 유지할 수 있습니다는 `ViewBag.Status` 이 앱에 연결 및 전자 메일 및 SMS 메시지를 보낼 필요 없이 로컬에서 작동 하는 방법을 테스트 하려면 표시 합니다.
+6. <em>선택 사항: * 제거는 `ViewBag.Status` 코드 관리 및 계정 컨트롤러와는 *Views\Account\VerifyCode.cshtml</em> 및 <em>Views\Manage\VerifyPhoneNumber.cshtml</em> razor 뷰. 유지할 수 있습니다는 `ViewBag.Status` 이 앱에 연결 및 전자 메일 및 SMS 메시지를 보낼 필요 없이 로컬에서 작동 하는 방법을 테스트 하려면 표시 합니다.
 
 > [!NOTE]
 > 경고:이 샘플의 보안 설정을 변경 하면 프로덕션 응용 프로그램의 변경 내용을 명시적으로 지정 하는 보안 감사를 해야 합니다.
@@ -70,44 +70,44 @@ ms.lasthandoff: 01/24/2018
 
 1. **SMS 공급자를 사용 하 여 사용자 계정 만들기**  
   
- 만들기는 [Twilio](https://www.twilio.com/try-twilio) 또는 [ASPSMS](https://www.aspsms.com/asp.net/identity/testcredits/) 계정.
+   만들기는 [Twilio](https://www.twilio.com/try-twilio) 또는 [ASPSMS](https://www.aspsms.com/asp.net/identity/testcredits/) 계정.
 2. **추가 패키지 설치 또는 서비스 참조 추가**  
   
- Twilio:  
- 패키지 관리자 콘솔에서 다음 명령을 입력 합니다.  
+   Twilio:  
+   패키지 관리자 콘솔에서 다음 명령을 입력 합니다.  
     `Install-Package Twilio`  
   
- ASPSMS:  
- 다음 서비스 참조를 추가 해야 합니다.  
+   ASPSMS:  
+   다음 서비스 참조를 추가 해야 합니다.  
   
     ![](two-factor-authentication-using-sms-and-email-with-aspnet-identity/_static/image1.png)  
   
- 주소:  
+   주소:  
     `https://webservice.aspsms.com/aspsmsx2.asmx?WSDL`  
   
- 네임스페이스:  
+   네임스페이스:  
     `ASPSMSX2`
 3. **SMS 공급자 사용자 자격 증명을 파악**  
   
- Twilio:  
- **대시보드** 복사 Twilio 계정 탭의 **계정 SID** 및 **인증 토큰**합니다.  
+   Twilio:  
+   **대시보드** 복사 Twilio 계정 탭의 **계정 SID** 및 **인증 토큰**합니다.  
   
- ASPSMS:  
- 계정 설정을에서으로 이동 **사용자 키로** 자체 정의 함께 복사 및 **암호**합니다.  
+   ASPSMS:  
+   계정 설정을에서으로 이동 **사용자 키로** 자체 정의 함께 복사 및 **암호**합니다.  
   
- 변수이 값이 나중에 저장할 `SMSAccountIdentification` 및 `SMSAccountPassword` 합니다.
+   변수이 값이 나중에 저장할 `SMSAccountIdentification` 및 `SMSAccountPassword` 합니다.
 4. **SenderID 지정 / 송신자**  
   
- Twilio:  
- **숫자** 탭, Twilio 전화 번호를 복사 합니다.  
+   Twilio:  
+   **숫자** 탭, Twilio 전화 번호를 복사 합니다.  
   
- ASPSMS:  
- 내에서 **잠금 해제 보낸 사람** 메뉴를 사용 하거나 하나 이상의 보낸 사람을 잠금 해제 (모든 네트워크에서 지원 되지 않음)에 영숫자 보낸 사람이 선택 합니다.  
+   ASPSMS:  
+   내에서 **잠금 해제 보낸 사람** 메뉴를 사용 하거나 하나 이상의 보낸 사람을 잠금 해제 (모든 네트워크에서 지원 되지 않음)에 영숫자 보낸 사람이 선택 합니다.  
   
- 변수이 값이 나중에 저장할 `SMSAccountFrom` 합니다.
+   변수이 값이 나중에 저장할 `SMSAccountFrom` 합니다.
 5. **응용 프로그램에 SMS 공급자 자격 증명 전송**  
   
- 자격 증명 및 보낸 사람에 게 전화 번호가 응용 프로그램에 사용할 수 있도록 합니다.
+   자격 증명 및 보낸 사람에 게 전화 번호가 응용 프로그램에 사용할 수 있도록 합니다.
 
     [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample1.cs)]
 
@@ -115,9 +115,9 @@ ms.lasthandoff: 01/24/2018
     > 보안-소스 코드에서 중요 한 데이터 저장 되지 않습니다. 계정 및 자격 증명은 위의 예제를 단순하게 유지 하기 위해 코드에 추가 됩니다. Jon Atten 참조 [ASP.NET MVC: 소스 제어의 개인 설정 확장 유지](http://typecastexception.com/post/2014/04/06/ASPNET-MVC-Keep-Private-Settings-Out-of-Source-Control.aspx)합니다.
 6. **SMS 공급자에 데이터 전송의 구현**  
   
- 구성에서 `SmsService` 클래스에 *앱\_Start\IdentityConfig.cs* 파일입니다.  
+   구성에서 `SmsService` 클래스에 *앱\_Start\IdentityConfig.cs* 파일입니다.  
   
- 사용 되는 SMS 공급자에 따라 활성화 중 하나는 **Twilio** 또는 **ASPSMS** 섹션: 
+   사용 되는 SMS 공급자에 따라 활성화 중 하나는 **Twilio** 또는 **ASPSMS** 섹션: 
 
     [!code-csharp[Main](two-factor-authentication-using-sms-and-email-with-aspnet-identity/samples/sample2.cs)]
 7. 응용 프로그램을 실행 하 고 이전에 등록 하는 계정으로 로그인 합니다.
@@ -278,7 +278,7 @@ QR 코드 생성기 같은 더 많은 2FA 공급자를 추가 하거나 소유�
 
 <a id="addRes"></a>
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 - [ASP.NET Identity 권장 리소스](../getting-started/aspnet-identity-recommended-resources.md) Id 블로그, 비디오, 자습서 및 좋은의 전체 목록은 지금 연결 합니다.
 - [Facebook, Twitter, LinkedIn 및 Google OAuth2 로그온 된 MVC 5 앱](../../../mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md) 사용자 테이블에 프로필 정보를 추가 하는 방법도 설명 합니다.

@@ -1,6 +1,6 @@
 ---
 uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
-title: "ASP.NET MVC 응용 프로그램에서 Entity Framework와 관련 된 데이터 읽기 | Microsoft Docs"
+title: ASP.NET MVC 응용 프로그램에서 Entity Framework와 관련 된 데이터 읽기 | Microsoft Docs
 author: tdykstra
 description: /ajax/tutorials/using-ajax-control-toolkit-controls-and-control-extenders-vb
 ms.author: aspnetcontent
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 7a74d01f306abeeac5ac28c942f03001e0fe00f8
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 06784d8b610856e71eae78b0db2d0253faedb955
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="reading-related-data-with-the-entity-framework-in-an-aspnet-mvc-application"></a>ASP.NET MVC 응용 프로그램에서 Entity Framework 사용 하 여 데이터를 관련 읽기
 ====================
@@ -24,12 +24,12 @@ ms.lasthandoff: 01/24/2018
 
 [완료 된 프로젝트를 다운로드](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8) 또는 [PDF 다운로드](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
 
-> Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio 2013을 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대 한 정보를 참조 하십시오. [시리즈의 첫 번째 자습서](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)합니다.
+> Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio 2013을 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)를 참조하세요.
 
 
 이전 자습서에서 School 데이터 모델을 완료 합니다. 이 자습서에서는 읽기 및 관련된 데이터를 표시 합니다-즉, 데이터 탐색 속성에는 Entity Framework를 로드 합니다.
 
-다음 그림에서는 보여 페이지와 협력 합니다.
+다음 그림에서는 사용할 페이지를 보여 줍니다.
 
 ![](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image1.png)
 
@@ -39,13 +39,13 @@ ms.lasthandoff: 01/24/2018
 
 여러 가지 방법으로 Entity Framework가 엔터티의 탐색 속성에 관련된 데이터를 로드할 수 있습니다.
 
-- *지연 로드*합니다. 먼저 엔터티를 읽으면 관련된 데이터가 검색 되지 않습니다. 그러나는 탐색 속성에 액세스 하려고 처음으로 해당 탐색 속성에 필요한 데이터가 자동으로 검색 됩니다. 이 인해 데이터베이스에 전송 하는 여러 개의 쿼리-엔터티 자체에 대 한 개와 때마다 관련 엔터티에 대 한 데이터를 검색 해야 합니다. `DbContext` 클래스에서는 기본적으로 지연 로드 합니다. 
+- *지연 로드*. 엔터티를 처음 읽을 때 관련된 데이터가 검색되지 않습니다. 그러나 탐색 속성에 처음으로 액세스하려고 할 때 해당 탐색 속성에 필요한 데이터가 자동으로 검색됩니다. 이 인해 데이터베이스에 전송 하는 여러 개의 쿼리-엔터티 자체에 대 한 개와 때마다 관련 엔터티에 대 한 데이터를 검색 해야 합니다. `DbContext` 클래스에서는 기본적으로 지연 로드 합니다. 
 
     ![Lazy_loading_example](https://asp.net/media/2577850/Windows-Live-Writer_Reading-Re.NET-MVC-Application-5-of-10h1_ADC3_Lazy_loading_example_2c44eabb-5fd3-485a-837d-8e3d053f2c0c.png)
-- *즉시 로드*합니다. 엔터티를 읽을 때 함께 관련된 데이터가 검색 됩니다. 일반적으로 필요한 데이터를 모두 검색 하는 단일 조인 쿼리에서 발생 합니다. 즉시 로드를 사용 하 여 지정 된 `Include` 메서드.
+- *즉시 로드*. 엔터티를 읽을 때 관련된 데이터가 함께 검색됩니다. 이는 일반적으로 필요한 데이터를 모두 검색하는 단일 조인 쿼리를 발생시킵니다. 즉시 로드를 사용 하 여 지정 된 `Include` 메서드.
 
     ![Eager_loading_example](https://asp.net/media/2577856/Windows-Live-Writer_Reading-Re.NET-MVC-Application-5-of-10h1_ADC3_Eager_loading_example_33f907ff-f0b0-4057-8e75-05a8cacac807.png)
-- *명시적 로드*합니다. 이 지연 로드를 제외 하 코드에서 관련된 데이터를 명시적으로 검색 탐색 속성에 액세스할 때 자동으로 발생 하지 않습니다. 엔터티 및 호출에 대 한 개체 상태 관리자 항목을 가져오는 하 여 수동으로 관련된 데이터를 로드 하면는 [Collection.Load](https://msdn.microsoft.com/library/gg696220(v=vs.103).aspx) 컬렉션에 대 한 메서드 또는 [Reference.Load](https://msdn.microsoft.com/library/gg679166(v=vs.103).aspx) 포함 하는 속성에 대 한 메서드는 단일 엔터티입니다. (다음 예제에서는 관리자 탐색 속성을 로드 하려는 경우 바꿨을 것 `Collection(x => x.Courses)` 와 `Reference(x => x.Administrator)`.) 일반적으로 지연 오프 로드 설정 하는 경우에 명시적으로 로드를 사용 합니다.
+- *명시적 로드*. 이 지연 로드를 제외 하 코드에서 관련된 데이터를 명시적으로 검색 탐색 속성에 액세스할 때 자동으로 발생 하지 않습니다. 엔터티 및 호출에 대 한 개체 상태 관리자 항목을 가져오는 하 여 수동으로 관련된 데이터를 로드 하면는 [Collection.Load](https://msdn.microsoft.com/library/gg696220(v=vs.103).aspx) 컬렉션에 대 한 메서드 또는 [Reference.Load](https://msdn.microsoft.com/library/gg679166(v=vs.103).aspx) 포함 하는 속성에 대 한 메서드는 단일 엔터티입니다. (다음 예제에서는 관리자 탐색 속성을 로드 하려는 경우 바꿨을 것 `Collection(x => x.Courses)` 와 `Reference(x => x.Administrator)`.) 일반적으로 지연 오프 로드 설정 하는 경우에 명시적으로 로드를 사용 합니다.
 
     ![Explicit_loading_example](https://asp.net/media/2577862/Windows-Live-Writer_Reading-Re.NET-MVC-Application-5-of-10h1_ADC3_Explicit_loading_example_79d8c368-6d82-426f-be9a-2b443644ab15.png)
 
@@ -53,9 +53,9 @@ ms.lasthandoff: 01/24/2018
 
 ### <a name="performance-considerations"></a>성능 고려 사항
 
-검색 된 모든 엔터티 관련된 데이터가 필요할 경우, 데이터베이스에 전송 하는 단일 쿼리를 검색할 각 엔터티에 대 한 별개의 쿼리와 보다 일반적으로 더 효율적 이므로 최상의 성능을 제공 종종 즉시 로드 합니다. 예를 들어 위의 예제에서 각 부서에는 10 개의 관련된 과정을 가정 합니다. 즉시 로드 예는 데이터베이스에 왕복만 단일 (조인) 쿼리 및 단일으로 반환 됩니다. 지연 로드 하 고 명시적 로딩 예는 모두 유발 11 개의 쿼리 및 11 개의 왕복 데이터베이스에 합니다. 데이터베이스에 추가 왕복 성능이 저하 때는 대기 시간이 깁니다.
+검색된 모든 엔터티에 대해 관련된 데이터가 필요한 경우 데이터베이스에 전송된 단일 쿼리는 검색된 각 엔터티에 대한 별도 쿼리보다 일반적으로 더 효율적이므로 즉시 로드는 종종 최상의 성능을 제공합니다. 예를 들어 위의 예제에서 각 부서에는 10 개의 관련된 과정을 가정 합니다. 즉시 로드 예는 데이터베이스에 왕복만 단일 (조인) 쿼리 및 단일으로 반환 됩니다. 지연 로드 하 고 명시적 로딩 예는 모두 유발 11 개의 쿼리 및 11 개의 왕복 데이터베이스에 합니다. 데이터베이스에 대한 추가 왕복은 대기 시간이 길 때 성능에 특히 악영향을 줍니다.
 
-반면에 일부 시나리오에서는 한 지연 로딩이 더 효율적입니다. 즉시 로드에는 SQL Server 없습니다 효율적으로 처리 하는 생성 될 매우 복잡 한 조인이 될 수 있습니다. 또는 엔터티 집합의 하위 집합에 대 한 엔터티 탐색 속성에 액세스 해야 하는 경우 처리 하는, 즉시 로드 필요한 것 보다 더 많은 데이터를 검색 하기 때문에 한 지연 로딩이 향상 될 수도 있습니다. 성능이 중요 한 경우에 최상의 선택을 하기 위해 두 가지 방식으로 성능을 테스트 하는 가장 좋습니다.
+반면에 일부 시나리오에서는 한 지연 로딩이 더 효율적입니다. 즉시 로드에는 SQL Server 없습니다 효율적으로 처리 하는 생성 될 매우 복잡 한 조인이 될 수 있습니다. 또는 엔터티 집합의 하위 집합에 대 한 엔터티 탐색 속성에 액세스 해야 하는 경우 처리 하는, 즉시 로드 필요한 것 보다 더 많은 데이터를 검색 하기 때문에 한 지연 로딩이 향상 될 수도 있습니다. 성능이 중요한 경우 최상의 선택을 위해 두 가지 방식으로 성능을 테스트하는 것이 가장 좋습니다.
 
 지연 로드로 인해 성능 문제가 발생 하는 코드를 마스킹할 수 있습니다. 예를 들어 eager 또는 명시적 로드를 지정 하지 않으면 하지만 많은 양의 엔터티를 처리 하 고 각 반복에서 몇 가지 탐색 속성을 사용 하 여 코드를 수 없습니다 효율적이 지 (때문에 데이터베이스에 여러 번 왕복). 온-프레미스 SQL server를 사용 하 여 개발을 수행 하는 응용 프로그램에는 대기 시간이 증가 및 지연 로드로 인해 Azure SQL 데이터베이스를 이동할 때 성능 문제가 있을 수 있습니다. 데이터베이스 쿼리는 실제 테스트 한 부하를 프로 파일링 한 지연 로딩이 적합 한지 결정 하는 데 도움이 됩니다. 자세한 내용은 참조 [Entity Framework 전략 제공: 관련 데이터를 로드](https://msdn.microsoft.com/magazine/hh205756.aspx) 및 [SQL Azure로 네트워크 대기 시간 줄이기를 Entity Framework를 사용 하 여](https://msdn.microsoft.com/magazine/gg309181.aspx)합니다.
 
@@ -88,16 +88,16 @@ ms.lasthandoff: 01/24/2018
 
 [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample2.cs)]
 
-자동 스 캐 폴딩이에 대 한 즉시 로드 지정는 `Department` 를 사용 하 여 탐색 속성에서 `Include` 메서드.
+자동 스캐폴딩은 `Include` 메서드를 사용하여 `Department` 탐색 속성에 대해 즉시 로드를 지정했습니다.
 
-열기 *Views\Course\Index.cshtml* 템플릿 코드를 다음 코드로 바꿉니다. 변경 내용은 강조 표시 됩니다.
+열기 *Views\Course\Index.cshtml* 템플릿 코드를 다음 코드로 바꿉니다. 변경 내용은 강조 표시되어 있습니다.
 
 [!code-cshtml[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample3.cshtml?highlight=4,7,14-16,23-25,31-33,40-42)]
 
-스 캐 폴드 코드를 다음과 같이 변경을 했습니다.
+스캐폴드 코드에 다음 변경 내용을 만들었습니다.
 
 - 제목을 변경 **인덱스** 를 **Courses**합니다.
-- 추가 **번호** 보여 주는 열은 `CourseID` 속성 값입니다. 기본적으로 기본 키 이므로 일반적으로 최종 사용자에 게 의미가 스 캐 폴드 되지 않습니다. 그러나이 경우 기본 키 의미 이며 하려는 표시할지를 기준으로 합니다.
+- `CourseID` 속성 값을 보여 주는 **Number** 열을 추가했습니다. 기본적으로 기본 키 이므로 일반적으로 최종 사용자에 게 의미가 스 캐 폴드 되지 않습니다. 그러나 이 경우 기본 키는 의미가 있으며 표시하길 원합니다.
 - 이동의 **부서** 오른쪽에 열 머리글을 변경 합니다. scaffolder 올바르게 표시 하도록 선택한는 `Name` 속성에서는 `Department` 엔터티, 하지만 여기서 과정 페이지 열 제목 있어야에 **부서** 대신 **이름**합니다.
 
 Department 열에 대 한 스 캐 폴드 코드 표시 됩니다는 `Name` 의 속성은 `Department` 에 로드 된 엔터티는 `Department` 탐색 속성:
@@ -114,15 +114,15 @@ Department 열에 대 한 스 캐 폴드 코드 표시 됩니다는 `Name` 의 �
 
 ![Instructors_index_page_with_instructor_and_course_selected](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image5.png)
 
-이 페이지를 읽고 다음과 같이 관련된 데이터를 표시 합니다.
+이 페이지는 다음과 같은 방법으로 관련된 데이터를 읽고 표시합니다.
 
-- 강사 목록은의 관련된 데이터 표시는 `OfficeAssignment` 엔터티. `Instructor` 및 `OfficeAssignment` 엔터티는 0 또는 1을 한 관계에 있습니다. 에 대 한 즉시 로드를 사용 하 여는 `OfficeAssignment` 엔터티. 이전에 설명한 대로 기본 테이블의 모든 검색 된 행에 관련된 데이터를 필요로 하는 경우 즉시 로드 일반적으로 더 효율적입니다. 이 경우에 표시 된 모든 강사에 게 사무실 할당을 표시 하려면.
-- 사용자가 관련 강사를 선택할 때 `Course` 엔터티 표시 됩니다. `Instructor` 및 `Course` 엔터티가 서로 다 대 다 관계에 있습니다. 에 대 한 즉시 로드를 사용 하 여는 `Course` 엔터티 및 관련 `Department` 엔터티. 이 경우 선택한 강사에 대해서만 courses 필요 하기 때문에 한 지연 로딩이 더 효율적일 수 있습니다. 그러나이 예제에는 자체 탐색 속성에 있는 엔터티 내에서 탐색 속성에 대 한 즉시 로드를 사용 하는 방법을 보여 줍니다.
-- 관련 된 데이터를 사용자가 과정을 선택 하는 경우는 `Enrollments` 엔터티 집합이 표시 됩니다. `Course` 및 `Enrollment` 엔터티가 서로 일 대 다 관계에 있습니다. 명시적 로드에 대 한 추가 `Enrollment` 엔터티 및 관련 `Student` 엔터티. (명시적 로딩 필요 하지 않습니다 지연 로드를 사용 하도록 설정 되었지만 명시적 로딩 작업을 수행 하는 방법을 보여 줍니다.)
+- 강사 목록은의 관련된 데이터 표시는 `OfficeAssignment` 엔터티. `Instructor` 및 `OfficeAssignment` 엔터티는 일대영 또는 일 관계에 있습니다. 에 대 한 즉시 로드를 사용 하 여는 `OfficeAssignment` 엔터티. 이전에 설명한 대로 기본 테이블의 검색된 모든 행에 관련된 데이터가 필요한 경우 즉시 로드는 일반적으로 더 효율적입니다. 이 경우 표시된 모든 강사에 대한 사무실 할당을 표시하길 원합니다.
+- 사용자가 관련 강사를 선택할 때 `Course` 엔터티 표시 됩니다. `Instructor` 및 `Course` 엔터티는 다대다 관계에 있습니다. 에 대 한 즉시 로드를 사용 하 여는 `Course` 엔터티 및 관련 `Department` 엔터티. 이 경우 선택한 강사에 대해서만 courses 필요 하기 때문에 한 지연 로딩이 더 효율적일 수 있습니다. 그러나 이 예제에서는 탐색 속성에 있는 엔터티 내에서 탐색 속성에 대한 즉시 로드를 사용하는 방법을 보여 줍니다.
+- 관련 된 데이터를 사용자가 과정을 선택 하는 경우는 `Enrollments` 엔터티 집합이 표시 됩니다. `Course` 및 `Enrollment` 엔터티는 일대다 관계에 있습니다. 명시적 로드에 대 한 추가 `Enrollment` 엔터티 및 관련 `Student` 엔터티. (명시적 로딩 필요 하지 않습니다 지연 로드를 사용 하도록 설정 되었지만 명시적 로딩 작업을 수행 하는 방법을 보여 줍니다.)
 
 ### <a name="create-a-view-model-for-the-instructor-index-view"></a>강사 인덱스 보기에 대 한 뷰 모델 만들기
 
-강사 페이지에는 서로 다른 세 테이블 표시 됩니다. 따라서 각 테이블 중 하나에 대 한 데이터를 보유으로 세 가지 속성을 포함 하는 보기 모델을 만들어야 합니다.
+강사 페이지에는 서로 다른 세 테이블 표시 됩니다. 따라서 각각이 테이블 중 하나에 대한 데이터를 보유하는 세 가지 속성을 포함하는 보기 모델을 만듭니다.
 
 에 *Viewmodel* 폴더를 만들 *InstructorIndexData.cs* 기존 코드를 다음 코드로 바꿉니다.
 
@@ -146,9 +146,9 @@ Department 열에 대 한 스 캐 폴드 코드 표시 됩니다는 `Name` 의 �
 
 [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample8.cs)]
 
-메서드에 선택적 경로 데이터 (`id`) 및 쿼리 문자열 매개 변수 (`courseID`) 선택한 강사 및 선택한 과정의 ID 값을 제공 하 고 필요한 데이터의 모든 보기를 전달 합니다. 매개 변수에서 제공 되는 **선택** 페이지의 하이퍼링크입니다.
+메서드에 선택적 경로 데이터 (`id`) 및 쿼리 문자열 매개 변수 (`courseID`) 선택한 강사 및 선택한 과정의 ID 값을 제공 하 고 필요한 데이터의 모든 보기를 전달 합니다. 매개 변수는 페이지의 **선택** 하이퍼링크에서 제공됩니다.
 
-코드의 보기 모델의 인스턴스를 만들고 강사 목록에 배치 하 여 시작 합니다. 에 대 한 즉시 로드를 지정 하는 코드는 `Instructor.OfficeAssignment` 및 `Instructor.Courses` 탐색 속성입니다.
+코드는 보기 모델의 인스턴스를 만들고 강사 목록에 배치하여 시작합니다. 에 대 한 즉시 로드를 지정 하는 코드는 `Instructor.OfficeAssignment` 및 `Instructor.Courses` 탐색 속성입니다.
 
 [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample9.cs?highlight=3-4)]
 
@@ -156,7 +156,7 @@ Department 열에 대 한 스 캐 폴드 코드 표시 됩니다는 `Name` 의 �
 
 [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample10.cs)]
 
-앞에서 설명한 대로 즉시 로드는 필요 하지 않지만 성능을 향상 시키기 위해서입니다. 보기 항상 필요 하므로 `OfficeAssignment` 엔터티에 것이 더 효율적을 같은 쿼리에서 인출 합니다. `Course`엔터티는 즉시 로드 하지 않고 보다 선택 하는 과정에 페이지를 더 자주 표시할 경우에 지연 로드 보다 더 나은 이므로 웹 페이지에서 강사를 선택한 경우에 필요 합니다.
+앞에서 설명한 대로 즉시 로드는 필요 하지 않지만 성능을 향상 시키기 위해서입니다. 보기 항상 필요 하므로 `OfficeAssignment` 엔터티에 것이 더 효율적을 같은 쿼리에서 인출 합니다. `Course` 엔터티는 즉시 로드 하지 않고 보다 선택 하는 과정에 페이지를 더 자주 표시할 경우에 지연 로드 보다 더 나은 이므로 웹 페이지에서 강사를 선택한 경우에 필요 합니다.
 
 강사 ID를 선택한 경우 선택한 강사 강사 보기 모델에 있는 목록에서 검색 됩니다. 뷰 모델 `Courses` 속성으로 로드는 `Course` 해당 강사에서 엔터티에 `Courses` 탐색 속성입니다.
 
@@ -172,20 +172,20 @@ Department 열에 대 한 스 캐 폴드 코드 표시 됩니다는 `Name` 의 �
 
 [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample13.cs)]
 
-다음으로 과정을 선택한 경우 선택한 과정의 보기 모델에는 과정의 목록에서 검색 됩니다. 다음 뷰 모델의 `Enrollments` 속성으로 로드 되는 `Enrollment` 해당 과정에서 엔터티 `Enrollments` 탐색 속성입니다.
+다음으로 강좌를 선택한 경우 선택한 강좌가 보기 모델의 강좌 목록에서 검색됩니다. 다음 뷰 모델의 `Enrollments` 속성으로 로드 되는 `Enrollment` 해당 과정에서 엔터티 `Enrollments` 탐색 속성입니다.
 
 [!code-csharp[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample14.cs)]
 
 ### <a name="modify-the-instructor-index-view"></a>강사 인덱스 뷰를 수정 합니다.
 
-*Views\Instructor\Index.cshtml*, 템플릿 코드를 다음 코드로 바꿉니다. 변경 내용은 강조 표시 됩니다.
+*Views\Instructor\Index.cshtml*, 템플릿 코드를 다음 코드로 바꿉니다. 변경 내용은 강조 표시되어 있습니다.
 
 [!code-cshtml[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample15.cshtml?highlight=1,4,14-18,21,23-28,38-43,45)]
 
-기존 코드를 다음과 같이 변경을 했습니다.
+기존 코드에 다음 변경 내용을 만들었습니다.
 
-- 모델 클래스를 변경 `InstructorIndexData`합니다.
-- 페이지 제목을 변경 **인덱스** 를 **강사**합니다.
+- 모델 클래스를 `InstructorIndexData`로 변경했습니다.
+- 페이지 제목을 **인덱스**에서 **강사**로 변경했습니다.
 - 추가 **Office** 표시 하는 열 `item.OfficeAssignment.Location` 경우에만 `item.OfficeAssignment` null입니다. (0 또는 1을 한 관계 이므로 수 없는 경우 관련 `OfficeAssignment` 엔터티.) 
 
     [!code-cshtml[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample16.cshtml)]
@@ -198,23 +198,23 @@ Department 열에 대 한 스 캐 폴드 코드 표시 됩니다는 `Name` 의 �
 
 ![Instructors_index_page_with_nothing_selected](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image7.png)
 
-에 *Views\Instructor\Index.cshtml* 파일을 닫은 후 `table` (끝에 요소 파일의), 다음 코드를 추가 합니다. 이 코드는 강사가 강사 선택 된 경우와 관련 된 과정의 목록이 표시 됩니다.
+에 *Views\Instructor\Index.cshtml* 파일을 닫은 후 `table` (끝에 요소 파일의), 다음 코드를 추가 합니다. 이 코드는 강사가 선택된 경우 강사와 관련된 강좌의 목록을 표시합니다.
 
 [!code-cshtml[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample18.cshtml)]
 
-이 코드를 읽고는 `Courses` 과정의 목록을 표시 하려면 보기 모델의 속성입니다. 또한 제공는 `Select` 하이퍼링크에 선택한 과정의 ID를 전송 하는 `Index` 동작 메서드.
+이 코드는 보기 모델의 `Courses` 속성을 읽어 강좌의 목록을 표시합니다. 또한 제공는 `Select` 하이퍼링크에 선택한 과정의 ID를 전송 하는 `Index` 동작 메서드.
 
-페이지를 실행 하 고 강사를 선택 합니다. 이제 선택한 강사에 할당 하는 과정을 표시 하는 표를 표시 및 각 과정에 대 한 할당 된 부서 이름을 표시 합니다.
+페이지를 실행 하 고 강사를 선택 합니다. 이제 선택된 강사에 할당된 강좌를 표시하는 표가 표시되고 각 강좌에 대해 할당된 부서의 이름이 표시됩니다.
 
 ![Instructors_index_page_with_instructor_selected](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image8.png)
 
-방금 추가한 코드 블록을 한 후 다음 코드를 추가 합니다. 해당 과정을 선택한 경우에 과정에서 등록 된 학생의 목록을 표시 합니다.
+방금 추가한 코드 블록 뒤에 다음 코드를 추가합니다. 해당 강좌가 선택된 경우에 강좌에 등록된 학생의 목록을 표시합니다.
 
 [!code-cshtml[Main](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample19.cshtml)]
 
 이 코드를 읽고는 `Enrollments` 과정에 학생의 목록을 표시 하려면 보기 모델의 속성 등록 합니다.
 
-페이지를 실행 하 고 강사를 선택 합니다. 그런 다음 등록 된 학생 자신의 등급의 목록을 보려면 과정을 선택 합니다.
+페이지를 실행 하 고 강사를 선택 합니다. 그런 다음, 강좌를 선택하여 등록된 학생 및 해당 등급의 목록을 봅니다.
 
 ![Instructors_index_page_with_instructor_and_course_selected](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image9.png)
 
@@ -244,12 +244,12 @@ Department 열에 대 한 스 캐 폴드 코드 표시 됩니다는 `Name` 의 �
 
 ## <a name="summary"></a>요약
 
-이제 모든 세 가지 방법으로 (지연, 신속 하 게, 및 명시적) 탐색 속성에 관련된 데이터를 로드를 사용 했습니다. 다음 자습서에서 관련된 데이터를 업데이트 하는 방법을 설명 합니다.
+이제 모든 세 가지 방법으로 (지연, 신속 하 게, 및 명시적) 탐색 속성에 관련된 데이터를 로드를 사용 했습니다. 다음 자습서에서는 관련된 데이터를 업데이트하는 방법을 설명합니다.
 
 이 자습서를 연결 하는 방법 및 향상 될 수 있습니다에 의견을 남겨 주세요. 새 항목을 요청할 수도 있습니다 [Me 방법으로 코드 보기](http://aspnet.uservoice.com/forums/228522-show-me-how-with-code)합니다.
 
 다른 Entity Framework 리소스에 대 한 링크에서 확인할 수 있습니다는 [ASP.NET 데이터 액세스-권장 리소스](../../../../whitepapers/aspnet-data-access-content-map.md)합니다.
 
->[!div class="step-by-step"]
-[이전](creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md)
-[다음](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+> [!div class="step-by-step"]
+> [이전](creating-a-more-complex-data-model-for-an-asp-net-mvc-application.md)
+> [다음](updating-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-client-side-confirmation-when-deleting-cs
-title: "클라이언트 쪽 확인 (C#)을 삭제할 때 추가 | Microsoft Docs"
+title: 클라이언트 쪽 확인 (C#)을 삭제할 때 추가 | Microsoft Docs
 author: rick-anderson
-description: "지금까지 만든 인터페이스에서 사용자 편집 단추를 클릭을 고려 하는 경우 삭제 단추를 클릭 하 여 데이터를 실수로 삭제할 수 있습니다. 이 둘 중..."
+description: 지금까지 만든 인터페이스에서 사용자 편집 단추를 클릭을 고려 하는 경우 삭제 단추를 클릭 하 여 데이터를 실수로 삭제할 수 있습니다. 이 둘 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/17/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-client-side-confirmation-when-deleting-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c5e8ee76224a48d3132597016b81099bd70a1776
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 72b15d498e45cc519a14ecfe39111b224db88c30
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-client-side-confirmation-when-deleting-c"></a>클라이언트 쪽 확인 (C#)을 삭제할 때 추가
 ====================
@@ -75,7 +75,7 @@ JavaScript `confirm(string)` 함수는 문자열 입력된 매개 변수를 함�
 
 ## <a name="step-2-calling-the-confirmstring-function-from-the-delete-buttons-client-side-onclick-event"></a>삭제 단추에서 클라이언트측 onclick 이벤트에서에서 confirm(string) 함수를 호출 하는 2 단계:
 
-만든 FormView와 마지막 단계는 삭제 단추를 구성 하는 때 것 JavaScript 방문자가 s 클릭할 `confirm(string)` 함수를 호출 합니다. 단추, LinkButton을 또는 ImageButton의 클라이언트 쪽에 클라이언트 측 스크립트 추가 `onclick` 이벤트를 사용 하 여 수행할 수 있습니다는 `OnClientClick property`, ASP.NET 2.0의 새로운 합니다. 값이 있어야 하는 데는 `confirm(string)` 함수 반환이 속성을 설정 하기만 하면:`return confirm('Are you certain that you want to delete this product?');`
+만든 FormView와 마지막 단계는 삭제 단추를 구성 하는 때 것 JavaScript 방문자가 s 클릭할 `confirm(string)` 함수를 호출 합니다. 단추, LinkButton을 또는 ImageButton의 클라이언트 쪽에 클라이언트 측 스크립트 추가 `onclick` 이벤트를 사용 하 여 수행할 수 있습니다는 `OnClientClick property`, ASP.NET 2.0의 새로운 합니다. 값이 있어야 하는 데는 `confirm(string)` 함수 반환이 속성을 설정 하기만 하면: `return confirm('Are you certain that you want to delete this product?');`
 
 이 변경 후 삭제 LinkButton s 선언적 구문 다음과 같이 표시 됩니다.
 
@@ -156,8 +156,8 @@ JavaScript `confirm(string)` 함수는 일반적으로 사용 되는 기술 제�
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
->[!div class="step-by-step"]
-[이전](implementing-optimistic-concurrency-cs.md)
-[다음](limiting-data-modification-functionality-based-on-the-user-cs.md)
+> [!div class="step-by-step"]
+> [이전](implementing-optimistic-concurrency-cs.md)
+> [다음](limiting-data-modification-functionality-based-on-the-user-cs.md)

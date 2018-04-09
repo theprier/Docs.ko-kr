@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-6
-title: "6 단계: ASP.NET 멤버 자격 | Microsoft Docs"
+title: '6 단계: ASP.NET 멤버 자격 | Microsoft Docs'
 author: JoeStagner
-description: "이 자습서 시리즈 모든 Tailspin Spyworks 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 6 부 ASP.NET 멤버 자격을 추가합니다."
+description: 이 자습서 시리즈 모든 Tailspin Spyworks 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 6 부 ASP.NET 멤버 자격을 추가합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/21/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-6
 msc.type: authoredcontent
-ms.openlocfilehash: efb0e2bed1172f42c7f1539f016fba305c47e3eb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 83e9bc780ea8face3e0f55fdf8c00e13b60f80a7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-6-aspnet-membership"></a>6 단계: ASP.NET 멤버 자격
 ====================
@@ -27,7 +27,7 @@ ms.lasthandoff: 11/10/2017
 > 이 자습서 시리즈 모든 Tailspin Spyworks 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 6 부 ASP.NET 멤버 자격을 추가합니다.
 
 
-## <a id="_Toc260221672"></a>ASP.NET 멤버 자격 작업
+## <a id="_Toc260221672"></a>  ASP.NET 멤버 자격 작업
 
 ![](tailspin-spyworks-part-6/_static/image1.png)
 
@@ -112,6 +112,6 @@ SubmitOrder을 수행합니다.
 
 응용 프로그램을 지금 실행 처음부터 끝까지 쇼핑 프로세스 테스트를 허용 합니다.
 
->[!div class="step-by-step"]
-[이전](tailspin-spyworks-part-5.md)
-[다음](tailspin-spyworks-part-7.md)
+> [!div class="step-by-step"]
+> [이전](tailspin-spyworks-part-5.md)
+> [다음](tailspin-spyworks-part-7.md)

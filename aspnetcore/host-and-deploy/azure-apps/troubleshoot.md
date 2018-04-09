@@ -1,7 +1,7 @@
 ---
-title: "Azure 앱 서비스에서 ASP.NET Core 문제 해결"
+title: Azure 앱 서비스에서 ASP.NET Core 문제 해결
 author: guardrex
-description: "ASP.NET Core Azure App Service 배포에 대한 문제 진단 방법을 알아봅니다."
+description: ASP.NET Core Azure App Service 배포에 대한 문제 진단 방법을 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,17 +10,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-apps/troubleshoot
-ms.openlocfilehash: e6a8404d3fe96a0136d7f874107b2cdf63e8e890
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 47056c80c7abf5dd5ad5ae96af7b821d31b21b8b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="troubleshoot-aspnet-core-on-azure-app-service"></a>Azure 앱 서비스에서 ASP.NET Core 문제 해결
 
 [Luke Latham](https://github.com/guardrex)으로
 
-[!INCLUDE[Azure App Service Preview Notice](../../includes/azure-apps-preview-notice.md)]
+[!INCLUDE [Azure App Service Preview Notice](../../includes/azure-apps-preview-notice.md)]
 
 이 문서에서는 설명 ASP.NET Core를 진단 하는 방법에 Azure 앱 서비스의 진단 도구를 사용 하 여 응용 프로그램 시작 문제입니다. 추가 문제 해결 권장 사항을 참조 하세요. [Azure 앱 서비스 진단 개요](/azure/app-service/app-service-diagnostics) 및 [하는 방법: Azure 앱 서비스 앱 모니터링](/azure/app-service/web-sites-monitor) Azure 설명서에서.
 
@@ -105,9 +105,9 @@ ASP.NET Core 모듈 stdout 로그는 종종 응용 프로그램 이벤트 로그
 1. 선택 **저장** 파일을 저장 합니다.
 
 > [!WARNING]
-> Stdout 로그를 사용 하지 않도록 설정 하지 않으면 응용 프로그램 또는 서버 오류가 발생할 수 있습니다. 로그 파일 크기 또는 생성되는 로그 파일 수에 대한 제한은 없습니다.
+> Stdout 로그를 사용 하지 않도록 설정 하지 않으면 응용 프로그램 또는 서버 오류가 발생할 수 있습니다. 로그 파일 크기 또는 생성되는 로그 파일 수에 대한 제한은 없습니다. Stdout 응용 프로그램 시작 문제를 해결 하려면 로깅을 사용 합니다.
 >
-> ASP.NET Core 응용 프로그램의 일상적인 로깅에 대 한 로그 파일 크기를 제한 하 고 로그를 회전 하는 로깅 라이브러리를 사용 합니다. 자세한 내용은 참조 [제 3 자 로깅 공급자](xref:fundamentals/logging/index#third-party-logging-providers)합니다.
+> 로그인 하기 위한 일반 ASP.NET Core 응용 프로그램 시작 후, 로그 파일 크기를 제한 하 고 로그를 회전 하는 로깅 라이브러리를 사용 합니다. 자세한 내용은 참조 [제 3 자 로깅 공급자](xref:fundamentals/logging/index#third-party-logging-providers)합니다.
 
 ## <a name="common-startup-errors"></a>일반적인 시작 오류 
 

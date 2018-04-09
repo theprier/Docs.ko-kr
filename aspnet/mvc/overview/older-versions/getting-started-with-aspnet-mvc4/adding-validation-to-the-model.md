@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-validation-to-the-model
-title: "모델에 유효성 검사 추가 | Microsoft Docs"
+title: 모델에 유효성 검사 추가 | Microsoft Docs
 author: Rick-Anderson
-description: "참고:이 자습서의 업데이트 된 버전은 ASP.NET MVC 5 및 Visual Studio 2013을 사용 하는 있습니다. 것이 더 안전 하 고 진행할 데모를 단순..."
+description: 참고:이 자습서의 업데이트 된 버전은 ASP.NET MVC 5 및 Visual Studio 2013을 사용 하는 있습니다. 것이 더 안전 하 고 진행할 데모를 단순...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/28/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-validation-to-the-model
 msc.type: authoredcontent
-ms.openlocfilehash: 6de7d279677c7bbf220b956767a97aaaff8da9a1
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 39d1d9d4cb8b11f7ce5a3a85c51f652115d79db7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-validation-to-the-model"></a>모델에 유효성 검사 추가
 ====================
@@ -81,7 +81,7 @@ Visual Studio 새 정의 하는 클래스 파일을 엽니다이 명령이 완�
 ![8_validationErrors](adding-validation-to-the-model/_static/image1.png)
 
 > [!NOTE]
-> 쉼표를 사용 하는 영어가 아닌 로캘의 jQuery 유효성 검사를 지원 하기 위해 (&quot;,&quot;) 소수점을 포함 해야 *globalize.js* 및 특정 *cultures/globalize.cultures.js* 파일 (에서 [https://github.com/jquery/globalize](https://github.com/jquery/globalize) ) 및 사용 하는 JavaScript `Globalize.parseFloat`합니다. 다음 코드와 작업할 Views\Movies\Edit.cshtml 파일을 수정 된 &quot;FR-FR&quot; 문화권:
+> 쉼표를 사용 하는 영어가 아닌 로캘의 jQuery 유효성 검사를 지원 하기 위해 (&quot;,&quot;) 소수점을 포함 해야 *globalize.js* 및 특정 *cultures/globalize.cultures.js* 파일 (에서 [ https://github.com/jquery/globalize ](https://github.com/jquery/globalize) ) 및 사용 하는 JavaScript `Globalize.parseFloat`합니다. 다음 코드와 작업할 Views\Movies\Edit.cshtml 파일을 수정 된 &quot;FR-FR&quot; 문화권:
 
 
 [!code-cshtml[Main](adding-validation-to-the-model/samples/sample6.cshtml)]
@@ -94,10 +94,10 @@ Visual Studio 새 정의 하는 클래스 파일을 엽니다이 명령이 완�
 
 1. 필드를 탭 합니다.
 2. 텍스트를 입력 합니다.
-3. 탭 합니다.
+3. 필드 밖을 탭합니다.
 4. 필드에 다시 여기를 탭 합니다.
 5. 텍스트를 제거 합니다.
-6. 탭 합니다.
+6. 필드 밖을 탭합니다.
 
 위의 순서를 제출 단추에 도달 하지 않고 필요한 유효성 검사를 트리거합니다. 필드를 입력 하지 않고 제출 단추를 누르기 단순히 클라이언트 쪽 유효성 검사를 트리거합니다. 양식 데이터는 클라이언트 쪽 유효성 검사 오류가 없을 때까지 서버에 전송되지 않습니다. HTTP Post 메서드에 중단점을 배치 하거나 사용 하 여 테스트할 수 있습니다는 [fiddler 도구](http://fiddler2.com/fiddler2/) 또는 IE 9 [F12 개발자 도구](https://msdn.microsoft.com/ie/aa740478)합니다.
 
@@ -165,6 +165,6 @@ Visual Studio 새 정의 하는 클래스 파일을 엽니다이 명령이 완�
 
 이 시리즈의 다음 부분에서는 응용 프로그램을 검토하고 자동 생성된 `Details` 및 `Delete` 메서드를 몇 가지 개선합니다.
 
->[!div class="step-by-step"]
-[이전](adding-a-new-field-to-the-movie-model-and-table.md)
-[다음](examining-the-details-and-delete-methods.md)
+> [!div class="step-by-step"]
+> [이전](adding-a-new-field-to-the-movie-model-and-table.md)
+> [다음](examining-the-details-and-delete-methods.md)

@@ -1,7 +1,7 @@
 ---
-title: "사이트 간 스크립팅 (XSS)에서 ASP.NET Core 방지"
+title: 사이트 간 스크립팅 (XSS)에서 ASP.NET Core 방지
 author: rick-anderson
-description: "사이트 간 스크립팅 (XSS) 및 ASP.NET Core 응용 프로그램의이 취약점을 해결 하기 위한 기술에 알아봅니다."
+description: 사이트 간 스크립팅 (XSS) 및 ASP.NET Core 응용 프로그램의이 취약점을 해결 하기 위한 기술에 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/cross-site-scripting
-ms.openlocfilehash: 9e54ee0b1169c01629c3cd91a378509a73c53904
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: d9263a2c1bb6a376008b7d8a55864e4d15e77cee
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="preventing-cross-site-scripting-xss-in-aspnet-core"></a>사이트 간 스크립팅 (XSS)에서 ASP.NET Core 방지
+# <a name="prevent-cross-site-scripting-xss-in-aspnet-core"></a>사이트 간 스크립팅 (XSS)에서 ASP.NET Core 방지
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -37,7 +37,7 @@ ms.lasthandoff: 03/15/2018
 
 ## <a name="html-encoding-using-razor"></a>Razor를 사용 하 여 HTML 인코딩
 
-Razor 엔진 MVC에서 자동으로 사용 되는 모든 인코딩합니다 이렇게 하기만 해도 실제로 하드 작업 하지 않는 출력 변수에서 제공 합니다. HTML 특성을 사용할 때마다 인코딩 규칙을 사용 하 여는  *@*  지시문입니다. HTML로 인코딩 특성은 HTML 인코딩 즉, 걱정 HTML 인코딩 또는 HTML 특성 인코딩입니다를 사용 해야 할지 없는 합니다. 만 사용 하는 HTML 컨텍스트에서 하지 JavaScript에 직접 신뢰할 수 없는 입력을 삽입 하려고 할 때 확인 해야 합니다. 태그 도우미는 또한 입력을 매개 변수 태그에서에서 사용 하 여를 인코딩합니다.
+Razor 엔진 MVC에서 자동으로 사용 되는 모든 인코딩합니다 이렇게 하기만 해도 실제로 하드 작업 하지 않는 출력 변수에서 제공 합니다. HTML 특성을 사용할 때마다 인코딩 규칙을 사용 하 여는 *@* 지시문입니다. HTML로 인코딩 특성은 HTML 인코딩 즉, 걱정 HTML 인코딩 또는 HTML 특성 인코딩입니다를 사용 해야 할지 없는 합니다. 만 사용 하는 HTML 컨텍스트에서 하지 JavaScript에 직접 신뢰할 수 없는 입력을 삽입 하려고 할 때 확인 해야 합니다. 태그 도우미는 또한 입력을 매개 변수 태그에서에서 사용 하 여를 인코딩합니다.
 
 다음 Razor 간주 합니다.
 
@@ -60,7 +60,7 @@ Razor 엔진 MVC에서 자동으로 사용 되는 모든 인코딩합니다 이�
 
 ## <a name="javascript-encoding-using-razor"></a>Razor를 사용 하 여 Javascript 인코딩
 
-보기에서 처리 하는 JavaScript에 값을 삽입 하려는 경우가 있을 수 있습니다. 이렇게 하는 데는 두 가지 방법이 있습니다. 간단한 값을 삽입 하는 가장 안전한 방법은 하는 태그의 데이터 특성에 값을 배치 하 고 JavaScript에서 검색 됩니다. 예:
+보기에서 처리 하는 JavaScript에 값을 삽입 하려는 경우가 있을 수 있습니다. 구체적인 방법은 두 가지입니다. 간단한 값을 삽입 하는 가장 안전한 방법은 하는 태그의 데이터 특성에 값을 배치 하 고 JavaScript에서 검색 됩니다. 예를 들어:
 
 ```none
 @{
@@ -145,7 +145,7 @@ JavaScript 인코더를를 직접 호출 또한 수 있습니다.
 
 ## <a name="accessing-encoders-in-code"></a>코드에서 인코더에 액세스
 
-HTML, JavaScript 및 URL 인코더는 두 가지 방법으로 코드에서 사용할 수 있습니다 수는 이러한 구성 요소를 통해, [종속성 주입](../fundamentals/dependency-injection.md#fundamentals-dependency-injection) 또는에 포함 된 기본 인코더를 사용할 수는 `System.Text.Encodings.Web` 네임 스페이스입니다. 에 적용 되는 모든 기본 인코더를 사용 하는 경우에 안전한 것으로 간주 문자 범위 사항은 적용-기본 인코더 가능한 가장 안전한 인코딩 규칙을 사용 합니다.
+HTML, JavaScript 및 URL 인코더는 두 가지 방법으로 코드에서 사용할 수 있습니다 수는 이러한 구성 요소를 통해, [종속성 주입](xref:fundamentals/dependency-injection#fundamentals-dependency-injection) 또는에 포함 된 기본 인코더를 사용할 수는 `System.Text.Encodings.Web` 네임 스페이스입니다. 에 적용 되는 모든 기본 인코더를 사용 하는 경우에 안전한 것으로 간주 문자 범위 사항은 적용-기본 인코더 가능한 가장 안전한 인코딩 규칙을 사용 합니다.
 
 이렇게 하려면 생성자 취해야 DI 사용 하는 구성 가능한 인코더가 사용 하는 *HtmlEncoder*, *JavaScriptEncoder* 및 *UrlEncoder* 매개 변수를 적절 하 게 합니다. 예를 들어
 

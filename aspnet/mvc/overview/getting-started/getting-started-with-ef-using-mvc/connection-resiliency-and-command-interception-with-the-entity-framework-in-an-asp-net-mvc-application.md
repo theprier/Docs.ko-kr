@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application
-title: "연결 복원 력 및 ASP.NET MVC 응용 프로그램에서 Entity Framework와 함께 명령 인터 셉 션 | Microsoft Docs"
+title: 연결 복원 력 및 ASP.NET MVC 응용 프로그램에서 Entity Framework와 함께 명령 인터 셉 션 | Microsoft Docs
 author: tdykstra
-description: "Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다 중..."
+description: Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/13/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 1a28284e203904cc943e5e46b369e8a58ea5c820
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 4a43a9120bf3fa69b00b234d65d0f59d3ce9975b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="connection-resiliency-and-command-interception-with-the-entity-framework-in-an-aspnet-mvc-application"></a>연결 복원 력 및 ASP.NET MVC 응용 프로그램에서 Entity Framework와 함께 인터 셉 션 명령
 ====================
@@ -24,7 +24,7 @@ ms.lasthandoff: 01/24/2018
 
 [완료 된 프로젝트를 다운로드](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8) 또는 [PDF 다운로드](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
 
-> Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio 2013을 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대 한 정보를 참조 하십시오. [시리즈의 첫 번째 자습서](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)합니다.
+> Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio 2013을 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)를 참조하세요.
 
 
 지금까지 응용 프로그램에 되었습니다에서 로컬로 실행 중 IIS Express에서 개발 컴퓨터. 실제 응용 프로그램을 인터넷을 통해 사용 하 여 다른 사람들이 사용할 수 있도록 하는 웹 호스팅 공급자를 배포 해야 하며 데이터베이스 서버에 데이터베이스를 배포 하 해야 합니다.
@@ -60,7 +60,7 @@ Entity Framework 공급자에서 지 원하는 모든 데이터베이스 환경�
 3. *StudentController.cs*, 추가 `using` 문을 `System.Data.Entity.Infrastructure`합니다.
 
     [!code-csharp[Main](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample2.cs)]
-4. 모든 변경 된 `catch` catch 하는 차단 `DataException` 예외를 포착할 수 있게 `RetryLimitExceededException` 예외 대신 합니다. 예:
+4. 모든 변경 된 `catch` catch 하는 차단 `DataException` 예외를 포착할 수 있게 `RetryLimitExceededException` 예외 대신 합니다. 예를 들어:
 
     [!code-csharp[Main](connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample3.cs?highlight=1)]
 
@@ -179,6 +179,6 @@ A [로깅에 대 한 최상의](../../../../aspnet/overview/developing-apps-with
 
 다른 Entity Framework 리소스에 대 한 링크에서 확인할 수 있습니다 [ASP.NET 데이터 액세스-권장 리소스](../../../../whitepapers/aspnet-data-access-content-map.md)합니다.
 
->[!div class="step-by-step"]
-[이전](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application.md)
-[다음](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+> [!div class="step-by-step"]
+> [이전](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+> [다음](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application.md)

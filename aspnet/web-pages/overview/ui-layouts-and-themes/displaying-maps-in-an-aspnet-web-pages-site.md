@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/displaying-maps-in-an-aspnet-web-pages-site
-title: "(Razor) 사이트 페이지는 ASP.NET 웹에 지도 표시 합니다. | Microsoft Docs"
+title: (Razor) 사이트 페이지는 ASP.NET 웹에 지도 표시 합니다. | Microsoft Docs
 author: tfitzmac
-description: "이 문서에서는 대화형 지도 매핑 Bing, Google, Ma 제공한 서비스를 기반으로 하는 ASP.NET 웹 페이지 (Razor) 웹 사이트의 페이지에 표시 하는 방법에 설명..."
+description: 이 문서에서는 대화형 지도 매핑 Bing, Google, Ma 제공한 서비스를 기반으로 하는 ASP.NET 웹 페이지 (Razor) 웹 사이트의 페이지에 표시 하는 방법에 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/displaying-maps-in-an-aspnet-web-pages-site
 msc.type: authoredcontent
-ms.openlocfilehash: 6f3e6a0cfb8c08cd971e88986d0f059dd8237aab
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 608dab8760bad7b877ab6fd4f89b21e980f5b1db
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="displaying-maps-in-an-aspnet-web-pages-razor-site"></a>ASP.NET 웹 페이지 (Razor) 사이트에 지도 표시합니다.
 ====================
@@ -89,9 +89,9 @@ ms.lasthandoff: 01/24/2018
         > [!NOTE]
         > 다른 버전의 jQuery 라이브러리를 사용 하는 경우 단지를 가리키고 있는 해당 버전 올바르게 있어야 합니다.
     - 에 대 한 호출에서 `@Maps.GetGoogleHtml` 페이지의 본문에 있습니다. 주소를 매핑하려면 주소 문자열을 전달 해야 합니다. 비슷한 방법으로 다른 맵 엔진에 대 한 메서드는 작동 (`@Maps.GetYahooHtml`, `@Maps.GetMapQuestHtml`).
-- 페이지를 실행 하 고 주소를 입력 합니다. 사용자가 지정한 위치를 표시 하는 Google 맵에 따라 지도 페이지에 표시 됩니다.
+3. 페이지를 실행 하 고 주소를 입력 합니다. 사용자가 지정한 위치를 표시 하는 Google 맵에 따라 지도 페이지에 표시 됩니다.
 
-    ![mapping-1](displaying-maps-in-an-aspnet-web-pages-site/_static/image2.png)
+     ![mapping-1](displaying-maps-in-an-aspnet-web-pages-site/_static/image2.png)
 
 ## <a name="creating-a-map-based-on-latitude-and-longitude-coordinates-using-bing"></a>위도 및 경도에 따라 맵 만들기 좌표를 (Bing 사용)
 
@@ -103,15 +103,15 @@ ms.lasthandoff: 01/24/2018
 2. 대체 `your-key-here` 앞에서 생성 하는 Bing 지도 키를 사용 합니다.
 3. 실행 된 *MapCoordinates.cshtml* 페이지 위도 및 경도 좌표를 입력 한 다음 클릭는 **Map It!** 클릭합니다. (모든 좌표를 모르는 경우 다음을 시도 합니다. 이 Microsoft 레드먼드 본사에 있습니다.)
 
-    - 위도: 47.6781005859375
-    - Longitude: -122.158317565918
+   - 위도: 47.6781005859375
+   - Longitude: -122.158317565918
 
-    지정한 좌표를 사용 하는 페이지가 표시 됩니다.
+     지정한 좌표를 사용 하는 페이지가 표시 됩니다.
 
-    ![mapping-3](displaying-maps-in-an-aspnet-web-pages-site/_static/image3.png)
+     ![mapping-3](displaying-maps-in-an-aspnet-web-pages-site/_static/image3.png)
 
 <a id="Additional_Resources"></a>
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 
 [Microsoft.Maps API 참조](https://msdn.microsoft.com/library/gg427611.aspx)

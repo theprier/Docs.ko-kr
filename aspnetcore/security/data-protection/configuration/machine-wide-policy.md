@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core 데이터 보호의 시스템 수준 정책 지원"
+title: ASP.NET Core 데이터 보호의 시스템 수준 정책 지원
 author: rick-anderson
-description: "ASP.NET Core 데이터 보호를 사용하는 모든 응용 프로그램에 적용되는 시스템 수준의 기본 정책 설정에 대한 지원에 관해서 알아봅니다."
+description: ASP.NET Core 데이터 보호를 사용하는 모든 응용 프로그램에 적용되는 시스템 수준의 기본 정책 설정에 대한 지원에 관해서 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/configuration/machine-wide-policy
-ms.openlocfilehash: 53ded37e9fd5f1a2eaa37935d1c52efb1e9231ac
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: c2d5760cd18f4e3ecaf0261f36414c9298e3f4c5
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="data-protection-machine-wide-policy-support-in-aspnet-core"></a>ASP.NET Core 데이터 보호의 시스템 수준 정책 지원
 
@@ -71,4 +71,4 @@ EncryptionType 값이 Managed로 지정되면, 기밀성을 위해 관리되는 
 EncryptionType 값에 이 외에 다른 값이 지정되면 (null 값이나 빈 값 이외의), 데이터 보호 시스템이 구동 시 예외를 던집니다.
 
 > [!WARNING]
-> 형식 이름(EncryptionAlgorithmType, ValidationAlgorithmType, KeyEscrowSinks)에 관한 기본 정책 설정을 구성하는 경우, 반드시 응용 프로그램에서 해당 형식을 사용할 수 있어야 합니다. 결론적으로 이 말은 데스크탑 CLR 상에서 실행되는 응용 프로그램의 경우, 해당 형식을 포함한 어셈블리가 GAC에 설치되어 있어야 한다는 뜻입니다. 그리고 [.NET Core](https://www.microsoft.com/net/core) 에서 실행되는 ASP.NET Core 응용 프로그램의 경우, 해당 형식을 포함한 패키지가 설치되어 있어야 합니다.
+> 형식 이름(EncryptionAlgorithmType, ValidationAlgorithmType, KeyEscrowSinks)에 관한 기본 정책 설정을 구성하는 경우, 반드시 응용 프로그램에서 해당 형식을 사용할 수 있어야 합니다. 결론적으로 이 말은 데스크탑 CLR 상에서 실행되는 응용 프로그램의 경우, 해당 형식을 포함한 어셈블리가 GAC에 설치되어 있어야 한다는 뜻입니다. ASP.NET Core 응용 프로그램의.NET Core에서 실행 중인 경우 이러한 형식을 포함 하는 패키지를 설치 해야 합니다.

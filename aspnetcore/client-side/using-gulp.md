@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core에서 Gulp를 사용 하 여"
+title: ASP.NET Core에서 Gulp를 사용 합니다.
 author: rick-anderson
-description: "ASP.NET Core에서 Gulp를 사용 하는 방법을 알아봅니다."
+description: ASP.NET Core에서 Gulp를 사용 하는 방법을 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
@@ -10,13 +10,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/using-gulp
-ms.openlocfilehash: 0a3443e8187d46992f55dc537d0f400c6771c50c
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: f776b2025b6ebfeff28d3903aaeac4d7d89665b3
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="introduction-to-using-gulp-in-aspnet-core"></a>ASP.NET Core에서 Gulp를 사용 하 여 소개 
+# <a name="use-gulp-in-aspnet-core"></a>ASP.NET Core에서 Gulp를 사용 합니다.
 
 여 [Erik Reitan](https://github.com/Erikre), [Scott Addie](https://scottaddie.com), [김 Roth](https://github.com/danroth27), 및 [Shayne 보이 어](https://twitter.com/spboyer)
 
@@ -183,6 +183,9 @@ gulp.task("min", ["min:js", "min:css"]);
     **작업 러너 탐색기** Gulp 작업의 목록을 보여 줍니다. (클릭 해야 할 수는 **새로 고침** 프로젝트 이름의 왼쪽에 나타나는 단추입니다.)
     
     ![작업 러너 탐색기](using-gulp/_static/03-TaskRunnerExplorer.png)
+    
+    > [!IMPORTANT]
+    > **Task Runner 탐색기** 경우에 상황에 맞는 메뉴 항목 표시 *gulpfile.js* 루트 프로젝트 디렉터리에 있습니다.
 
 4.  아래 **작업** 에 **Task Runner 탐색기**를 마우스 오른쪽 단추로 클릭 **클린**, 선택한 **실행** 팝업 메뉴에서 합니다.
 
@@ -228,7 +231,7 @@ gulp.task("min", ["min:js", "min:css"]);
 
     ![첫 번째 작업을 실행 하는 task Runner 탐색기](using-gulp/_static/06-TaskRunner-First.png)
 
-    출력 텍스트가 표시 되도록 표시 됩니다. 일반적인 시나리오에 따라 예제에 관심이 Gulp 레시피를 참조 하십시오.
+    출력 텍스트가 표시 됩니다. 일반적인 시나리오에 따라 예제를 보려면 [Gulp 레시피](#gulp-recipes)합니다.
 
 ## <a name="defining-and-running-tasks-in-a-series"></a>정의 하 고 일련의 작업을 실행 합니다.
 
@@ -323,7 +326,7 @@ Gulp를 사용 하 여 스테이징 및 프로덕션에 대 한 클라이언트 
 
     연결 된 스타일 시트는 CSS 파일의 축소 되지 않은 버전은를 가리키는지 확인 합니다.
 
-환경에서 ASP.NET Core와 관련 된 자세한 내용은 참조 하십시오. [여러 환경 작업](../fundamentals/environments.md)합니다.
+환경에서 ASP.NET Core와 관련 된 자세한 내용은 참조 하십시오. [여러 환경 작업할](../fundamentals/environments.md)합니다.
 
 ## <a name="task-and-module-details"></a>작업 및 모듈 세부 정보
 
@@ -342,8 +345,8 @@ Gulp 작업은 함수 이름으로 등록 됩니다. 다른 작업은 현재 작
 
 Gulp 커뮤니티 제공 Gulp [레시피](https://github.com/gulpjs/gulp/blob/master/docs/recipes/README.md)합니다. 이러한 레시피는 일반적인 시나리오를 처리 하도록 Gulp 작업으로 구성 됩니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 * [Gulp 설명서](https://github.com/gulpjs/gulp/blob/master/docs/README.md)
 * [묶음 및 축소에서 ASP.NET Core](bundling-and-minification.md)
-* [ASP.NET Core에서 Grunt를 사용 하 여](using-grunt.md)
+* [ASP.NET Core에서 Grunt를 사용 합니다.](using-grunt.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/introduction/an-overview-of-forms-authentication-cs
-title: "폼 인증 (C#)의 개요 | Microsoft Docs"
+title: 폼 인증 (C#)의 개요 | Microsoft Docs
 author: rick-anderson
-description: "사용자 지정 경로 만들기"
+description: 사용자 지정 경로 만들기
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/14/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/an-overview-of-forms-authentication-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d386a3b6328675fe21f989f8fd36bfc91fc08b32
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1f64384d403f3cf81ffa3327a81b635bc71e2b44
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="an-overview-of-forms-authentication-c"></a>폼 인증 (C#)의 개요
 ====================
@@ -43,8 +43,8 @@ ASP.NET 런타임, ASP.NET 페이지 또는 ASP.NET 웹 서비스 같은 ASP.NET
 
 *HTTP 모듈* 는 관리 되는 클래스는 요청 수명에 특정 이벤트에 해당 코드가 실행 됩니다. ASP.NET 원리를 자세히 파악할수록 필수 작업을 수행 하는 HTTP 모듈의 수와 함께 제공 합니다. 특히 관련 논의 하는 두 개의 기본 제공 HTTP 모듈은:
 
-- **[`FormsAuthenticationModule`](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx)**– 일반적으로 사용자의 쿠키 컬렉션에 포함 된 폼 인증 티켓을 검사 하 여 사용자를 인증 합니다. 폼 인증 티켓 없는 있는 경우 사용자가 익명입니다.
-- **[`UrlAuthorizationModule`](https://msdn.microsoft.com/library/system.web.security.urlauthorizationmodule.aspx)**– 현재 사용자가 요청 된 URL에 액세스를 권한이 있는지 여부를 결정 합니다. 이 모듈 응용 프로그램의 구성 파일에 지정 된 권한 부여 규칙을 참고 하 여 권한을 결정 합니다. ASP.NET도 포함 되어는 [ `FileAuthorizationModule` ](https://msdn.microsoft.com/library/system.web.security.fileauthorizationmodule.aspx) 기관 요청한 파일 Acl을 참고 하 여 결정 하는 합니다.
+- **[`FormsAuthenticationModule`](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx)** – 일반적으로 사용자의 쿠키 컬렉션에 포함 된 폼 인증 티켓을 검사 하 여 사용자를 인증 합니다. 폼 인증 티켓 없는 있는 경우 사용자가 익명입니다.
+- **[`UrlAuthorizationModule`](https://msdn.microsoft.com/library/system.web.security.urlauthorizationmodule.aspx)** – 현재 사용자가 요청 된 URL에 액세스를 권한이 있는지 여부를 결정 합니다. 이 모듈 응용 프로그램의 구성 파일에 지정 된 권한 부여 규칙을 참고 하 여 권한을 결정 합니다. ASP.NET도 포함 되어는 [ `FileAuthorizationModule` ](https://msdn.microsoft.com/library/system.web.security.fileauthorizationmodule.aspx) 기관 요청한 파일 Acl을 참고 하 여 결정 하는 합니다.
 
 `FormsAuthenticationModule` 시도 하기 전에 사용자를 인증 하는 `UrlAuthorizationModule` (및 `FileAuthorizationModule`)를 실행 합니다. 권한 부여 모듈은 요청을 종료 하 고이 반환 요청을 만드는 사용자는 요청 된 리소스에 액세스할 수 있는 권한이 없는, 경우는 [HTTP 401 권한이 없음](http://www.checkupdown.com/status/E401.html) 상태입니다. Windows 인증 시나리오에서 HTTP 401 상태는 브라우저에 반환 됩니다. 이 상태 코드에는 모달 대화 상자를 통해 자격 증명을 묻는 브라우저를 발생 합니다. 하지만 폼 인증을 사용 HTTP 401 권한이 없음 상태로 전송 되지 않습니다는 브라우저는 FormsAuthenticationModule이이 상태를 검색 하 고 대신 로그인 페이지에는 사용자를 리디렉션합니다 수정 하기 때문에 (통해는 [HTTP 302 리디렉션](http://www.checkupdown.com/status/E302.html) 상태).
 
@@ -103,7 +103,7 @@ Visual Studio 2008의 Microsoft의 무료 버전으로 생성 됩니다이 시�
 **그림 3**: 마스터 페이지 라는 Site.master 웹 사이트에 추가 ([전체 크기 이미지를 보려면 클릭](an-overview-of-forms-authentication-cs/_static/image7.png))
 
 
-마스터 페이지의 여기 사이트 전체 페이지 레이아웃을 정의 합니다. 디자인 뷰를 사용 하 고 필요한 모든 레이아웃 또는 웹 컨트롤을 추가 하거나 직접 소스 뷰에서 태그를 수동으로 추가할 수 있습니다. 내 마스터 페이지의 레이아웃에 사용 되는 레이아웃을 모방 하기 위해 구조 합니까 내  *[ASP.NET 2.0에서 데이터 작업을](../../data-access/index.md)*  자습서 시리즈 (그림 4 참조). 마스터 페이지를 사용 하 여 [스타일 시트](http://www.w3schools.com/css/default.asp) 위치 지정 (이 자습서의 관련된 다운로드에 포함)이 표시 된 Style.css 파일에 정의 된 CSS 설정 사용 하 여 스타일에 대 한 합니다. CSS 규칙을 정의 하는 동안 아래에 표시 된 태그에서 알 수 없습니다, 되도록 탐색 &lt;div&gt;의 왼쪽에 나타나고이 200 픽셀의 고정된 폭 있도록 절대 콘텐츠 위치로 지정 합니다.
+마스터 페이지의 여기 사이트 전체 페이지 레이아웃을 정의 합니다. 디자인 뷰를 사용 하 고 필요한 모든 레이아웃 또는 웹 컨트롤을 추가 하거나 직접 소스 뷰에서 태그를 수동으로 추가할 수 있습니다. 내 마스터 페이지의 레이아웃에 사용 되는 레이아웃을 모방 하기 위해 구조 합니까 내 *[ASP.NET 2.0에서 데이터 작업을](../../data-access/index.md)* 자습서 시리즈 (그림 4 참조). 마스터 페이지를 사용 하 여 [스타일 시트](http://www.w3schools.com/css/default.asp) 위치 지정 (이 자습서의 관련된 다운로드에 포함)이 표시 된 Style.css 파일에 정의 된 CSS 설정 사용 하 여 스타일에 대 한 합니다. CSS 규칙을 정의 하는 동안 아래에 표시 된 태그에서 알 수 없습니다, 되도록 탐색 &lt;div&gt;의 왼쪽에 나타나고이 200 픽셀의 고정된 폭 있도록 절대 콘텐츠 위치로 지정 합니다.
 
 [!code-aspx[Main](an-overview-of-forms-authentication-cs/samples/sample1.aspx)]
 
@@ -240,7 +240,7 @@ Login.aspx?ReturnUrl=ProtectedPage.aspx
 
 - [GetAuthCookie (*username*, *persistCookie*)](https://msdn.microsoft.com/library/system.web.security.formsauthentication.getauthcookie.aspx) – 제공 된 이름에 대 한 폼 인증 티켓을 만들어 *username*합니다. 다음으로,이 메서드가 만들고 인증 티켓의 콘텐츠를 보유 하는 HttpCookie 개체를 반환 합니다. 경우 *persistCookie* 가 true 이면 영구 쿠키 생성 됩니다.
 - [SetAuthCookie (*username*, *persistCookie*)](https://msdn.microsoft.com/library/system.web.security.formsauthentication.setauthcookie.aspx) –는 GetAuthCookie 호출 (*username*, *persistCookie*) 폼 인증 쿠키를 생성 하는 방법입니다. 이 메서드는 다음 (사용 되는, 그렇지 않으면 쿠키 기반 폼 인증 되 고,이 메서드는 쿠키 티켓 논리를 처리 하는 내부 클래스를 호출 한다고 가정) 쿠키 컬렉션에 GetAuthCookie에서 반환 된 쿠키를 추가 합니다.
-- [RedirectFromLoginPage (*username*, *persistCookie*)](https://msdn.microsoft.com/library/system.web.security.formsauthentication.redirectfromloginpage.aspx) –이 메서드를 호출 SetAuthCookie (*username*, *persistCookie* ), 한 다음 적절 한 페이지로 사용자를 리디렉션합니다.
+- [RedirectFromLoginPage (*username*, *persistCookie*)](https://msdn.microsoft.com/library/system.web.security.formsauthentication.redirectfromloginpage.aspx) –이 메서드를 호출 SetAuthCookie (*username*, *persistCookie*), 한 다음 적절 한 페이지로 사용자를 리디렉션합니다.
 
 GetAuthCookie 인증 티켓 쿠키 컬렉션에 쿠키를 쓰기 전에 수정 해야 할 때 유용 합니다. SetAuthCookie 쿠키 컬렉션에 추가 하 고 폼 인증 티켓 만들기를 이지만 적절 한 페이지로 사용자를 리디렉션할 하지 않으려는 경우에 유용 합니다. 로그인 페이지에 보관 하거나 일부 다른 페이지에 게 보낼 하려는 경우가 있을 것입니다.
 
@@ -459,7 +459,7 @@ LoginView 컨트롤 외부에서 LoginStatus 이므로 익명 및 인증 된 사
 - [로그인 ASP.NET 컨트롤](https://msdn.microsoft.com/library/d51ttbhx.aspx)
 - [전문 ASP.NET 2.0 보안, 구성원 자격 및 역할 관리](http://www.wrox.com/WileyCDA/WroxTitle/productCd-0764596985.html) (ISBN: 978-0-7645-9698-8)
 - [`<authentication>` 요소](https://msdn.microsoft.com/library/532aee0e.aspx)
-- [`<forms>` 요소에 대 한`<authentication>`](https://msdn.microsoft.com/library/1d3t3c61.aspx)
+- [`<forms>` 요소에 대 한 `<authentication>`](https://msdn.microsoft.com/library/1d3t3c61.aspx)
 
 ### <a name="video-training-on-topics-contained-in-this-tutorial"></a>이 자습서에 포함 된 항목에 대 한 비디오 교육
 
@@ -467,12 +467,12 @@ LoginView 컨트롤 외부에서 LoginStatus 이므로 익명 및 인증 된 사
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특히 감사 드립니다.
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자가이 자습서 시리즈 많은 유용한 검토자가 검토 되었습니다. 이 자습서에 대 한 선행 검토자 Alicja Maziarz, John Suru 및 Teresa 머피의 포함 됩니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](security-basics-and-asp-net-support-cs.md)
-[다음](forms-authentication-configuration-and-advanced-topics-cs.md)
+> [!div class="step-by-step"]
+> [이전](security-basics-and-asp-net-support-cs.md)
+> [다음](forms-authentication-configuration-and-advanced-topics-cs.md)

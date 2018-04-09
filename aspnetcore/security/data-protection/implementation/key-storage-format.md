@@ -1,7 +1,7 @@
 ---
-title: "키 저장소 형식"
+title: ASP.NET Core에서 키 저장소 형식
 author: tdykstra
-description: "이 문서에서는 ASP.NET Core 데이터 보호 키 저장소 형식 사용 하면의 구현 세부 사항을 설명 합니다."
+description: ASP.NET Core 데이터 보호는 키 저장소 형식이의 구현 세부 정보에 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/implementation/key-storage-format
-ms.openlocfilehash: 66783eb7264a4551eafdd9d5c7d99b014701a6de
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: abe23da3de70107aa4f4d84f4da27aadfe7b2061
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="key-storage-format"></a>키 저장소 형식
+# <a name="key-storage-format-in-aspnet-core"></a>ASP.NET Core에서 키 저장소 형식
 
 <a name="data-protection-implementation-key-storage-format"></a>
 
@@ -66,7 +66,7 @@ ms.lasthandoff: 01/30/2018
 
 ## <a name="the-encryptedsecret-element"></a>\<encryptedSecret > 요소
 
-<encryptedSecret> 비밀 키 자료의 암호화 된 형태를 포함 하는 요소 있을 수 경우 [비밀 미사용 데이터 암호화가 설정](key-encryption-at-rest.md#data-protection-implementation-key-encryption-at-rest)합니다. 특성 decryptorType IXmlDecryptor를 구현 하는 형식의 정규화 된 어셈블리 이름이 됩니다. 이 형식은 내부 읽는 역할 <encryptedKey> 요소와 복구를 원래의 일반 텍스트로 암호를 해독 합니다.
+<encryptedSecret> 비밀 키 자료의 암호화 된 형태를 포함 하는 요소 있을 수 경우 [비밀 미사용 데이터 암호화가 설정](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest)합니다. 특성 decryptorType IXmlDecryptor를 구현 하는 형식의 정규화 된 어셈블리 이름이 됩니다. 이 형식은 내부 읽는 역할 <encryptedKey> 요소와 복구를 원래의 일반 텍스트로 암호를 해독 합니다.
 
 와 마찬가지로 \<설명자 >, 특정 형식의 <encryptedSecret> 요소 사용에서-휴지 암호화 메커니즘에 따라 달라 집니다. 위의 예에 마스터 키가 주석 당 Windows DPAPI를 사용 하 여 암호화 합니다.
 

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/slider/using-the-slider-control-with-auto-postback-cs
-title: "슬라이더 컨트롤을 사용 하 여 자동 다시 게시 (C#)와 | Microsoft Docs"
+title: 슬라이더 컨트롤을 사용 하 여 자동 다시 게시 (C#)와 | Microsoft Docs
 author: wenz
-description: "슬라이더 컨트롤 들어에서 마우스를 사용 하 여 제어할 수 있는 그래픽 슬라이더를 제공 합니다. 슬라이더 autopost 확인 수는 중..."
+description: 슬라이더 컨트롤 들어에서 마우스를 사용 하 여 제어할 수 있는 그래픽 슬라이더를 제공 합니다. 슬라이더 autopost 확인 수는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/slider/using-the-slider-control-with-auto-postback-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f6291f4162b3069a6316a60b4b29f82f55121aac
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e347d20c5c2ee48e6ed801e95459af6f0bcd2667
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-the-slider-control-with-auto-postback-c"></a>슬라이더 컨트롤을 사용 하 여 자동 포스트백 (C#)
 ====================
@@ -63,5 +63,5 @@ ms.lasthandoff: 11/10/2017
 
 이러한 변경의 날짜 레이블을 작성 된 이후에 ([전체 크기 이미지를 보려면 클릭](using-the-slider-control-with-auto-postback-cs/_static/image6.png))
 
->[!div class="step-by-step"]
-[다음](databinding-the-slider-control-cs.md)
+> [!div class="step-by-step"]
+> [다음](databinding-the-slider-control-cs.md)

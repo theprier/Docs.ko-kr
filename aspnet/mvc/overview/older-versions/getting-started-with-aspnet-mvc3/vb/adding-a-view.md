@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-view
-title: "뷰 (VB) 추가 | Microsoft Docs"
+title: 뷰 (VB) 추가 | Microsoft Docs
 author: Rick-Anderson
-description: "이 자습서에서는 Microsoft Visual Web Developer 2010 Express 서비스 팩 1, 즉를 사용 하 여 ASP.NET MVC 웹 응용 프로그램을 구축 하는 기초 설명..."
+description: 이 자습서에서는 Microsoft Visual Web Developer 2010 Express 서비스 팩 1, 즉를 사용 하 여 ASP.NET MVC 웹 응용 프로그램을 구축 하는 기초 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-view
 msc.type: authoredcontent
-ms.openlocfilehash: 7e8564c743510780b93d56bc1215f4c5b1faeb43
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c9675eb7776116ecbe910d5515abfe9b4391df22
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-view-vb"></a>(VB) 뷰 추가
 ====================
@@ -65,7 +65,7 @@ ms.lasthandoff: 11/10/2017
 
 첫째, 텍스트를 변경해 보겠습니다 &quot;내 MVC 응용 프로그램입니다.&quot; 해당 텍스트를 공유 하 고 모든 페이지에 나타납니다. 것에 실제로 표시 한 위치는 프로젝트에만 응용 프로그램의 모든 페이지에는 것입니다. 이동 하는 */뷰/공유* 폴더에 **솔루션 탐색기** 엽니다는  *\_Layout.vbhtml* 파일입니다. 이 파일은 레이아웃 페이지 라고 이며 공유 &quot;셸&quot; 다른 모든 페이지를 사용 하는입니다.
 
-참고는 `@RenderBody()` 파일의 아래쪽에 있는 코드 줄을 합니다. `RenderBody`여기서 만드는 모든 페이지 표시, 자리 표시자 &quot;래핑된&quot; 레이아웃 페이지에서. 변경 된 `<h1>` 에서 머리글  **&quot;**  내 MVC 응용 프로그램&quot; 를 &quot;MVC 만든 동영상 앱&quot;합니다.
+참고는 `@RenderBody()` 파일의 아래쪽에 있는 코드 줄을 합니다. `RenderBody` 여기서 만드는 모든 페이지 표시, 자리 표시자 &quot;래핑된&quot; 레이아웃 페이지에서. 변경 된 `<h1>` 에서 머리글 **&quot;** 내 MVC 응용 프로그램&quot; 를 &quot;MVC 만든 동영상 앱&quot;합니다.
 
 [!code-html[Main](adding-a-view/samples/sample3.html)]
 
@@ -79,7 +79,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-vbhtml[Main](adding-a-view/samples/sample5.vbhtml)]
 
-열기 *MvcMovie\Views\HelloWorld\Index.vbhtml*합니다. 변경 하는 두 곳: 먼저 텍스트 표시 되는 브라우저의 제목에 찾은 다음 보조 헤더에서 (의 `<h2>` 요소). म 수 있도록 약간 다른는 약간의 코드 변경 응용 프로그램의 어느 부분을 볼 수 있습니다.
+Open *MvcMovie\Views\HelloWorld\Index.vbhtml*. 변경 하는 두 곳: 먼저 텍스트 표시 되는 브라우저의 제목에 찾은 다음 보조 헤더에서 (의 `<h2>` 요소). म 수 있도록 약간 다른는 약간의 코드 변경 응용 프로그램의 어느 부분을 볼 수 있습니다.
 
 응용 프로그램을 실행 하 고 찾아보기`http://localhost:xx/HelloWorld`합니다. 브라우저 제목, 기본 제목 및 작은 제목이 변경된 것을 확인합니다. 크게 변경 약간 변경 된 응용 프로그램에서 보기에 두는 것이 쉽습니다. (브라우저에서 변경 내용을 확인할 수 없는 경우 캐시된 콘텐츠를 보고 있을 수도 있습니다. 브라우저에서 Ctrl+F5 키를 눌러 로드될 서버에서 응답을 강제로 적용합니다.)
 
@@ -111,11 +111,11 @@ ms.lasthandoff: 11/10/2017
 
 [![3AddWelcomeView](adding-a-view/_static/image12.png "3AddWelcomeView")](adding-a-view/_static/image11.png)
 
-아래에 다음 코드를 추가 `<h2>` 새로운 요소 *시작.* vbhtml 파일입니다. 예를 들어 알아보고 루프 확인 하겠습니다 &quot;Hello&quot; 사용자가 중요 횟수 만큼!
+아래에 다음 코드를 추가 `<h2>` 새로운 요소 <em>시작.</em> vbhtml 파일입니다. 예를 들어 알아보고 루프 확인 하겠습니다 &quot;Hello&quot; 사용자가 중요 횟수 만큼!
 
 [!code-vbhtml[Main](adding-a-view/samples/sample8.vbhtml)]
 
-응용 프로그램을 실행 하 고 찾아보기`http://localhost:xx/HelloWorld/Welcome?name=Scott&numtimes=4`
+응용 프로그램을 실행 하 고 찾아보기 `http://localhost:xx/HelloWorld/Welcome?name=Scott&numtimes=4`
 
 이제 데이터 URL에서 수행 되 고 컨트롤러에 자동으로 전달 합니다. 컨트롤러에 대 한 데이터를 패키지 한 `Model` 개체 및 보기에 해당 개체를 전달 합니다. 사용자에 게 데이터를 HTML로 표시 하는 보다 보기입니다.
 
@@ -123,6 +123,6 @@ ms.lasthandoff: 11/10/2017
 
 하 한 종류의는 &quot;M&quot; 모델을 제외한 데이터베이스 종류 되지 않습니다. 지금까지 학습한 것을 살펴보고 동영상의 데이터베이스를 만들어 보겠습니다.
 
->[!div class="step-by-step"]
-[이전](adding-a-controller.md)
-[다음](adding-a-model.md)
+> [!div class="step-by-step"]
+> [이전](adding-a-controller.md)
+> [다음](adding-a-model.md)

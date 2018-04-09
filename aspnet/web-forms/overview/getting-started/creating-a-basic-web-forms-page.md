@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/creating-a-basic-web-forms-page
-title: "기본 ASP.NET 4.5 Web Forms 만들기 페이지 Visual Studio 2013에서 | Microsoft Docs"
+title: 기본 ASP.NET 4.5 Web Forms 만들기 페이지 Visual Studio 2013에서 | Microsoft Docs
 author: Erikre
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/03/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/creating-a-basic-web-forms-page
 msc.type: authoredcontent
-ms.openlocfilehash: 6b699cc939292b7ab0167dba7cfa6a00b681ef3a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 0dbd3063c9be3564637fad34e60f62c1662dcc07
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-basic-aspnet-45-web-forms-page-in-visual-studio-2013"></a>기본 ASP.NET 4.5 Web Forms 만들기 페이지에서 Visual Studio 2013
 ====================
@@ -33,7 +33,7 @@ ms.lasthandoff: 01/24/2018
 - 이벤트 처리기를 추가 합니다.
 - 실행 하 고 Visual Studio에서 페이지를 테스트 합니다.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 
 이 연습을 완료하려면 다음 사항이 필요합니다.
@@ -201,8 +201,8 @@ Visual Studio는 페이지에 있는 컨트롤의 속성을 설정 하는 다양
 
     > [!NOTE] 
     > 
-    > 내 모든 컨트롤은 한 **양식** 특성도 포함 하는 요소를 **runat =&quot;서버&quot;**합니다. **runat =&quot;서버&quot;**  특성 및 **asp:** 접두사 컨트롤 태그 페이지를 실행할 때 서버에서 ASP.NET에서 처리 되기 있도록 컨트롤을 표시 합니다. 외부 코드  **&lt;runat =&quot;서버&quot; &gt;**  및  **&lt;스크립트 runat =&quot;서버&quot; &gt;**  요소를 브라우저에도 때문에 ASP.NET 코드는 여는 태그를 포함 하는 요소 내부에 있어야 합니다. 변경 되지 않은 전송 되는 **runat =&quot;서버&quot;**  특성입니다.
-4. 다음을 추가 속성을 추가 합니다는 [레이블](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx) 제어 합니다. 후 직접 삽입 지점을 **p: Label** 에  **&lt;p: Label&gt;**  태그, 및 키를 누릅니다 **스페이스바**합니다.
+    > 내 모든 컨트롤은 한 **양식** 특성도 포함 하는 요소를 **runat =&quot;서버&quot;**합니다. **runat =&quot;서버&quot;**  특성 및 **asp:** 접두사 컨트롤 태그 페이지를 실행할 때 서버에서 ASP.NET에서 처리 되기 있도록 컨트롤을 표시 합니다. 외부 코드 **&lt;runat =&quot;서버&quot; &gt;** 및 **&lt;스크립트 runat =&quot;서버&quot; &gt;** 요소를 브라우저에도 때문에 ASP.NET 코드는 여는 태그를 포함 하는 요소 내부에 있어야 합니다. 변경 되지 않은 전송 되는 **runat =&quot;서버&quot;**  특성입니다.
+4. 다음을 추가 속성을 추가 합니다는 [레이블](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx) 제어 합니다. 후 직접 삽입 지점을 **p: Label** 에 **&lt;p: Label&gt;** 태그, 및 키를 누릅니다 **스페이스바**합니다.
 
     설정할 수 있는 사용 가능한 속성의 목록을 표시 하는 드롭다운 목록이 나타납니다는 [레이블](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx) 제어 합니다. 이 기능으로 이라고 **IntelliSense**에서 사용 하면 **소스** 페이지에 서버 컨트롤, HTML 요소 및 기타 항목의 구문 보기. 다음 그림에서는 **IntelliSense** 에 대 한 드롭다운 목록에서 [레이블](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx) 제어 합니다.
 
@@ -214,7 +214,7 @@ Visual Studio는 페이지에 있는 컨트롤의 속성을 설정 하는 다양
     > [!NOTE] 
     > 
     > 표시할 수 있습니다는 **IntelliSense** 드롭다운 목록에서 키를 눌러 언제 든 **CTRL + J** 코드를 볼 때.
-6. 색을 선택 된  **[레이블](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx)**  컨트롤의 텍스트입니다. 흰색 배경에서 읽을 수 있도록 어두운 색을 선택 해야 합니다.
+6. 색을 선택 된 **[레이블](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx)** 컨트롤의 텍스트입니다. 흰색 배경에서 읽을 수 있도록 어두운 색을 선택 해야 합니다.
 
     **ForeColor** 특성 닫는 따옴표를 포함 하 여, 선택 된 색으로 완료 됩니다.
 
@@ -231,7 +231,7 @@ Visual Studio는 페이지에 있는 컨트롤의 속성을 설정 하는 다양
 2. 두 번 클릭 하 여 [단추](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx) 제어 합니다.
 
     기본적으로 Visual Studio 코드 숨김 파일을 전환 하 고에 대 한 기본 이벤트 처리기를 만듭니다는 [단추](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx) 컨트롤의 기본 이벤트는 [클릭](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.click.aspx) 이벤트입니다. 코드 숨김 파일 (예: C#) 서버 코드에서 UI 태그 (예: HTML)를 구분합니다.   
-이 이벤트 처리기에 대 한 코드를 추가 하는 커서에 배치 됩니다.
+   이 이벤트 처리기에 대 한 코드를 추가 하는 커서에 배치 됩니다.
 
     > [!NOTE] 
     > 
@@ -247,7 +247,7 @@ Visual Studio는 페이지에 있는 컨트롤의 속성을 설정 하는 다양
 
     [!code-vb[Main](creating-a-basic-web-forms-page/samples/sample2.vb?highlight=2)]
 5. 보기로 다시 전환는 **소스** 마우스 오른쪽 단추로 클릭 하 여 HTML 태그의 보기 *FirstWebPage.aspx* 에 **솔루션 탐색기** 선택 하 고 **보기 태그**합니다.
-6. 스크롤하여는  **&lt;p: Button&gt;**  요소입니다. **&lt;p: Button&gt;**  이제 특성이 요소 **onclick =&quot;Button1\_클릭&quot;**합니다.
+6. 스크롤하여는 **&lt;p: Button&gt;** 요소입니다. **&lt;p: Button&gt;** 이제 특성이 요소 **onclick =&quot;Button1\_클릭&quot;**합니다.
 
     이 특성 단추의 바인딩합니다 [클릭](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.click.aspx) 이전 단계에서 코딩 된 처리기 메서드를 이벤트입니다.
 
@@ -268,7 +268,7 @@ Visual Studio는 페이지에 있는 컨트롤의 속성을 설정 하는 다양
     입력 한 이름이 표시 됩니다는 [레이블](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx) 제어 합니다. 참고 단추를 클릭할 때 페이지는 웹 서버에 게시 됩니다. 그런 다음 ASP.NET 페이지를 다시 만듭니다, 코드를 실행 (이 경우는 [단추](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx) 컨트롤의 [클릭](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.click.aspx) 이벤트 처리기가 실행), 한 다음 새 페이지를 브라우저에 보냅니다. 브라우저에서 상태 표시줄을 시청 하는 경우에 페이지는 라운드트립이 수행 웹 서버에 단추를 클릭할 때마다 볼 수 있습니다.
 3. 브라우저에서 페이지를 마우스 오른쪽 단추로 클릭 하 고 선택 하 여 실행 중인 페이지의 소스를 보려면 **소스 보기**합니다.
 
-    페이지 소스 코드에 서버 코드 없이 HTML을 표시 합니다. 특히, 표시 되지 않으면는  **&lt;asp:&gt;**  에서 작업 하는 요소 **소스** 보기. 페이지를 실행 하는 경우 ASP.NET 서버 컨트롤을 처리 하 고 컨트롤을 나타내는 기능을 수행 하는 페이지에 HTML 요소를 렌더링 합니다. 예를 들어는  **&lt;p: Button&gt;**  컨트롤이 HTML로 렌더링 되는지  **&lt;입력 형식 =&quot;제출&quot; &gt;**  요소입니다.
+    페이지 소스 코드에 서버 코드 없이 HTML을 표시 합니다. 특히, 표시 되지 않으면는 **&lt;asp:&gt;** 에서 작업 하는 요소 **소스** 보기. 페이지를 실행 하는 경우 ASP.NET 서버 컨트롤을 처리 하 고 컨트롤을 나타내는 기능을 수행 하는 페이지에 HTML 요소를 렌더링 합니다. 예를 들어는 **&lt;p: Button&gt;** 컨트롤이 HTML로 렌더링 되는지 **&lt;입력 형식 =&quot;제출&quot; &gt;** 요소입니다.
 4. 브라우저를 닫습니다.
 
 
@@ -297,7 +297,7 @@ Visual Studio는 페이지에 있는 컨트롤의 속성을 설정 하는 다양
 4. **구성표 선택** 목록에서 선택 **간단한** 클릭 하 고 **확인**합니다.
 5. 로 전환 **소스** 보기.
 
-    볼 수는  **&lt;asp: 달력&gt;**  요소입니다. 이 요소는 요소 앞에서 만든 단순 컨트롤에 대 한 보다 훨씬 깁니다. 도 하위 요소와 같은  **&lt;WeekEndDayStyle&gt;**, 있으며 다양 한 서식 설정을 나타냅니다. 다음 그림에서는 [달력](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.aspx) 제어 **소스** 보기. (에 표시 되는 실제 태그 **소스** 뷰 그림에서 약간 달라질 수 있습니다.)
+    볼 수는 **&lt;asp: 달력&gt;** 요소입니다. 이 요소는 요소 앞에서 만든 단순 컨트롤에 대 한 보다 훨씬 깁니다. 도 하위 요소와 같은  **&lt;WeekEndDayStyle&gt;**, 있으며 다양 한 서식 설정을 나타냅니다. 다음 그림에서는 [달력](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.aspx) 제어 **소스** 보기. (에 표시 되는 실제 태그 **소스** 뷰 그림에서 약간 달라질 수 있습니다.)
 
     ![소스 뷰에서 컨트롤 달력](creating-a-basic-web-forms-page/_static/image15.png "소스 뷰에서 컨트롤 달력")
 
@@ -316,10 +316,12 @@ Visual Studio는 페이지에 있는 컨트롤의 속성을 설정 하는 다양
 2. 완료 된 [SelectionChanged](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.selectionchanged.aspx) 이벤트 처리기를 다음 코드로 합니다.
 
 
-    [!code-csharp[Main](creating-a-basic-web-forms-page/samples/sample3.cs?highlight=3)]
+~~~
+[!code-csharp[Main](creating-a-basic-web-forms-page/samples/sample3.cs?highlight=3)]
 
 
-    [!code-vb[Main](creating-a-basic-web-forms-page/samples/sample4.vb?highlight=2)]
+[!code-vb[Main](creating-a-basic-web-forms-page/samples/sample4.vb?highlight=2)]
+~~~
 
  위의 코드는 달력 컨트롤에서 선택한 날짜에 레이블 컨트롤의 텍스트를 설정합니다.
 

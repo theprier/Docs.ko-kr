@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb
-title: "마스터 레코드의 글머리 기호 목록 세부 정보 DataList (VB)를 사용 하 여 마스터/세부 | Microsoft Docs"
+title: 마스터 레코드의 글머리 기호 목록 세부 정보 DataList (VB)를 사용 하 여 마스터/세부 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에서는 म 합니다 압축 이전 자습서의 2 페이지 마스터/세부 정보 보고서를 단일 페이지에 t에 범주 이름 글머리 기호 목록이 표시 중..."
+description: 이 자습서에서는 म 합니다 압축 이전 자습서의 2 페이지 마스터/세부 정보 보고서를 단일 페이지에 t에 범주 이름 글머리 기호 목록이 표시 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 613ad1fb101a168c79310c9dc7bf731be264f889
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 4d87dc7f4fb00e96d9eb2653e6fbc1efb8bb656c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="masterdetail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb"></a>마스터/세부 정보 DataList (VB) 마스터 레코드의 글머리 기호 목록 사용
 ====================
@@ -74,7 +74,7 @@ CSS 클래스를 추가 하 고의 태그를 구성한 후의 `CategoriesAndProd
 
 완료 태그 주변 반복기 및 DataList s로 제어 반복기의 범주 데이터를 바인딩할 준비 된 것입니다. 그러나 범주 그림 1에 글머리 기호 목록에서 볼 수 있듯이 각 범주의 이름 외에 필요는 범주와 관련 된 제품의 수를 표시 해야 합니다. 이 정보에 액세스 하려면 가능 하거나 합니다.
 
-- **ASP.NET 페이지의 코드 숨김 클래스에서이 정보를 확인 합니다.** 특정  *`categoryID`*  호출 하 여 연결 된 제품 수를 확인할 수 있습니다는 `ProductsBLL` s 클래스 `GetProductsByCategoryID(categoryID)` 메서드. 이 메서드는 반환는 `ProductsDataTable` 개체 `Count` 속성 나타냅니다 개수 `ProductsRow` s가 지정 된 제품의 수는  *`categoryID`* 합니다. 만들 수 있습니다는 `ItemDataBound` 반복 바인딩된 각 범주에 대 한 호출 하는 반복기에 대 한 이벤트 처리기는 `ProductsBLL` s 클래스 `GetProductsByCategoryID(categoryID)` 메서드 출력의 개수를 포함 합니다.
+- **ASP.NET 페이지의 코드 숨김 클래스에서이 정보를 확인 합니다.** 특정 *`categoryID`* 호출 하 여 연결 된 제품 수를 확인할 수 있습니다는 `ProductsBLL` s 클래스 `GetProductsByCategoryID(categoryID)` 메서드. 이 메서드는 반환는 `ProductsDataTable` 개체 `Count` 속성 나타냅니다 개수 `ProductsRow` s가 지정 된 제품의 수는 *`categoryID`*합니다. 만들 수 있습니다는 `ItemDataBound` 반복 바인딩된 각 범주에 대 한 호출 하는 반복기에 대 한 이벤트 처리기는 `ProductsBLL` s 클래스 `GetProductsByCategoryID(categoryID)` 메서드 출력의 개수를 포함 합니다.
 - **업데이트는 `CategoriesDataTable` 포함 하도록 입력 데이터 집합에는 `NumberOfProducts` 열입니다.** 그런 다음 업데이트할 수는 `GetCategories()` 에서 메서드는 `CategoriesDataTable` 이 정보를 포함 하거나, 또는 두고 `GetCategories()` 로-이며 새 `CategoriesDataTable` 라는 메서드가 `GetCategoriesAndNumberOfProducts()`합니다.
 
 S 이러한 두 기술 모두를 탐색할 수 있도록 합니다. 첫 번째 방법은 더 간단 하 게 데이터 액세스 계층; 업데이트를 t 필요 하지 않는 것 때문에 구현 그러나 데이터베이스와의 통신을 더 걸립니다. 에 대 한 호출에서 `ProductsBLL` s 클래스 `GetProductsByCategoryID(categoryID)` 에서 메서드는 `ItemDataBound` 이벤트 처리기 반복 표시 된 각 범주에 대 한 추가 데이터베이스 호출을 추가 합니다. 이 기술을 사용 하 여 없는 *N* + 1 데이터베이스 호출, 여기서 *N* 반복기에 표시 되는 범주 수입니다. 두 번째 접근 방식으로 제품 수가에서 각 범주에 대 한 정보가 반환 됩니다는 `CategoriesBLL` s 클래스 `GetCategories()` (또는 `GetCategoriesAndNumberOfProducts()`) 메서드를 사용 하므로 데이터베이스에 한 번만 발생 합니다.
@@ -210,7 +210,7 @@ DAL 포함 하도록 업데이트 하 여 렌더링 된 출력은 `NumberOfProdu
 
 이 시점에서 했으므로 `Categories` 각 범주에서 제품 수와 함께 범주의 목록을 표시 하는 반복기입니다. 반복기 LinkButton을 클릭 하면로 인해 포스트백을 가리키는지에서는 각 범주에 대 한 사용 하 여 해당 제품에는 선택한 범주에 대 한 표시 하기 위해 필요한는 `CategoryProducts` DataList 합니다.
 
-Us 직면 됩니다 DataList만 선택한 범주에 대 한 해당 제품을 표시 하는 방법. 에 [마스터/세부 정보 DetailsView 선택 가능한 마스터 GridView 사용에 대해 자세히 설명](../masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb.md) 는 GridView 행이 있는 작성 하는 방법에 살펴보았습니다 자습서를 선택할 수 없습니다, 선택 된 행으로 s 세부 정보 같은 페이지에 DetailsView에 표시 되 고 있습니다. GridView의 ObjectDataSource를 사용 하 여 모든 제품에 대 한 정보를 반환 되는 `ProductsBLL` s `GetProducts()` DetailsView의 ObjectDataSource 하는 동안 메서드를 사용 하 여 선택한 제품에 대 한 정보를 검색는 `GetProductsByProductID(productID)` 메서드. *`productID`*  매개 변수 값이 GridView s의 값과 연결 하 여 선언적으로 제공 `SelectedValue` 속성입니다. 안타깝게도, 반복기가 없습니다는 `SelectedValue` 속성 및 매개 변수 원본으로 사용할 수 없습니다.
+Us 직면 됩니다 DataList만 선택한 범주에 대 한 해당 제품을 표시 하는 방법. 에 [마스터/세부 정보 DetailsView 선택 가능한 마스터 GridView 사용에 대해 자세히 설명](../masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb.md) 는 GridView 행이 있는 작성 하는 방법에 살펴보았습니다 자습서를 선택할 수 없습니다, 선택 된 행으로 s 세부 정보 같은 페이지에 DetailsView에 표시 되 고 있습니다. GridView의 ObjectDataSource를 사용 하 여 모든 제품에 대 한 정보를 반환 되는 `ProductsBLL` s `GetProducts()` DetailsView의 ObjectDataSource 하는 동안 메서드를 사용 하 여 선택한 제품에 대 한 정보를 검색는 `GetProductsByProductID(productID)` 메서드. *`productID`* 매개 변수 값이 GridView s의 값과 연결 하 여 선언적으로 제공 `SelectedValue` 속성입니다. 안타깝게도, 반복기가 없습니다는 `SelectedValue` 속성 및 매개 변수 원본으로 사용할 수 없습니다.
 
 > [!NOTE]
 > 반복기에서 LinkButton을 사용할 때 나타나는 이러한 과제 중 하나입니다. 하이퍼링크에 전달 하도록 사용에 `CategoryID` querystring을 통해 대신 우리 수 해당 QueryString 필드 원본으로 사용할 매개 변수의 값에 대 한 합니다.
@@ -233,7 +233,7 @@ DataList s 스마트 태그에서 명명 된 새 ObjectDataSource를 추가 하�
 
 [![매개 변수 categoryID에 대 한 매개 변수 소스를 지정 하지 마십시오](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image36.png)](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image35.png)
 
-**그림 13**:에 대 한 매개 변수 소스를 지정 하지 않으면는  *`categoryID`*  매개 변수 ([전체 크기 이미지를 보려면 클릭](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image37.png))
+**그림 13**:에 대 한 매개 변수 소스를 지정 하지 않으면는 *`categoryID`* 매개 변수 ([전체 크기 이미지를 보려면 클릭](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/_static/image37.png))
 
 
 데이터 소스 구성 마법사를 완료 한 후 Visual Studio 자동으로 생성 s DataList `ItemTemplate`합니다. 이 기본 대체 `ItemTemplate` 템플릿을 사용 하 여 이전 자습서에서 사용 했습니다;이 또한 s DataList 설정 `RepeatColumns` 속성을 2로 합니다. 이러한 변경을 수행한 후 여 DataList 및 해당 관련된 ObjectDataSource에 대 한 선언적 태그는 다음과 같이 표시 됩니다.
@@ -241,7 +241,7 @@ DataList s 스마트 태그에서 명명 된 새 ObjectDataSource를 추가 하�
 
 [!code-aspx[Main](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb/samples/sample10.aspx)]
 
-현재는 `CategoryProductsDataSource` ObjectDataSource s  *`categoryID`*  매개 변수가 설정 되지 않은, 이므로 페이지를 볼 때 제품이 표시 됩니다. 이 매개 변수 값 설정에 따라 수행에 필요한 것은 `CategoryID` 반복기 클릭 한 범주입니다. 두 가지 문제에 소개: 먼저 어떻게 결정 하지 때 s 반복기에서 LinkButton `ItemTemplate` 경과 했는데도; 클릭, 두 번째 수 결정 하는 방법의 `CategoryID` 해당 범주에 속하는 인 LinkButton이 클릭 되었습니다?
+현재는 `CategoryProductsDataSource` ObjectDataSource s *`categoryID`* 매개 변수가 설정 되지 않은, 이므로 페이지를 볼 때 제품이 표시 됩니다. 이 매개 변수 값 설정에 따라 수행에 필요한 것은 `CategoryID` 반복기 클릭 한 범주입니다. 두 가지 문제에 소개: 먼저 어떻게 결정 하지 때 s 반복기에서 LinkButton `ItemTemplate` 경과 했는데도; 클릭, 두 번째 수 결정 하는 방법의 `CategoryID` 해당 범주에 속하는 인 LinkButton이 클릭 되었습니다?
 
 단추와 ImageButton 컨트롤 같이 LinkButton에는 `Click` 이벤트 및 [ `Command` 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.linkbutton.command.aspx)합니다. `Click` 이벤트 LinkButton 클릭 했음을 기록할 하도록 설계 되었습니다. 그러나 시간에 LinkButton 클릭 했음을 확인 하는 것 외에도 또한 해야 이벤트 처리기에 몇 가지 추가 정보를 전달 합니다. LinkButton s 좋다고 [ `CommandName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.linkbutton.commandname.aspx) 및 [ `CommandArgument` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.linkbutton.commandargument.aspx) 속성이 추가 정보를 할당할 수 있습니다. 그런 다음 LinkButton을 클릭할 경우 해당 `Command` 이벤트 발생 (대신 해당 `Click` 이벤트) 이벤트 처리기가 값을 전달 하 고는 `CommandName` 및 `CommandArgument` 속성입니다.
 
@@ -296,11 +296,11 @@ DataList s 스마트 태그에서 명명 된 새 ObjectDataSource를 추가 하�
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Zack jones 이면 특정 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](master-detail-filtering-acess-two-pages-datalist-vb.md)
+> [!div class="step-by-step"]
+> [이전](master-detail-filtering-acess-two-pages-datalist-vb.md)

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/using-the-dropdownlist-helper-with-aspnet-mvc
-title: "ASP.NET MVC DropDownList 도우미 사용 | Microsoft Docs"
+title: ASP.NET MVC DropDownList 도우미 사용 | Microsoft Docs
 author: Rick-Anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/using-the-dropdownlist-helper-with-aspnet-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 278d04aec68e93f3ebfd12d06a96b59f3bcbef4b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 21373deeded801c5cea9e89f6dac0f3542a55ca5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-the-dropdownlist-helper-with-aspnet-mvc"></a>ASP.NET MVC DropDownList 도우미 사용
 ====================
@@ -24,7 +24,7 @@ ms.lasthandoff: 01/24/2018
 
 이 자습서의 작업을 기본 사항은 설명 됩니다는 [DropDownList](https://msdn.microsoft.com/library/dd492948.aspx) 도우미 및 [ListBox](https://msdn.microsoft.com/library/system.web.mvc.html.selectextensions.listbox.aspx) ASP.NET MVC 웹 응용 프로그램에서 도우미입니다. Microsoft Visual Web Developer 2010 Express 서비스 팩 1, 즉 자습서를 수행 하려면 Microsoft Visual Studio의 무료 버전을 사용할 수 있습니다. 시작 하기 전에 아래에 나열 된 필수 구성 요소가 설치 되어 있는지 확인 합니다. 다음 링크를 클릭 하 여 모두를 설치할 수 있습니다: [웹 플랫폼 설치 관리자](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)합니다. 또는 다음 링크를 사용 하 여 필수 구성 요소를 개별적으로 설치할 수 있습니다.
 
-- [Visual Studio Web Developer Express SP1 필수 구성 요소](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)<a id="post"></a>
+- [Visual Studio Web Developer Express SP1 필수 구성 요소](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack) <a id="post"></a>
 - [ASP.NET MVC 3 도구 업데이트](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=MVC3)
 - [SQL Server Compact 4.0](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLCE;SQLCEVSTools_4_0)(런타임 + 도구 지원)
 
@@ -193,7 +193,7 @@ HTML 도우미 [ListBox](https://msdn.microsoft.com/library/dd470200.aspx) 메�
 
 [!code-cshtml[Main](using-the-dropdownlist-helper-with-aspnet-mvc/samples/sample12.cshtml)]
 
-위의 코드에 추가 하 고 HTML 특성 및 특성 값 `class = "chzn-select"`합니다. @ 문자 앞에 클래스 아무런 상관이 Razor 뷰 엔진입니다. `class`이 [C# 키워드](https://msdn.microsoft.com/library/x53a06bb.aspx)합니다. 접두사로 @을 포함 하지 않는 한 C# 키워드를 식별자로 사용할 수 없습니다. 위의 예에서 `@class` 올바른 식별자가 있지만 **클래스** 않으므로 **클래스** 는 키워드입니다.
+위의 코드에 추가 하 고 HTML 특성 및 특성 값 `class = "chzn-select"`합니다. @ 문자 앞에 클래스 아무런 상관이 Razor 뷰 엔진입니다. `class` 이 [C# 키워드](https://msdn.microsoft.com/library/x53a06bb.aspx)합니다. 접두사로 @을 포함 하지 않는 한 C# 키워드를 식별자로 사용할 수 없습니다. 위의 예에서 `@class` 올바른 식별자가 있지만 **클래스** 않으므로 **클래스** 는 키워드입니다.
 
 에 대 한 참조 추가 *Chosen/chosen.jquery.js* 및 *Chosen/chosen.css* 파일입니다. *Chosen/chosen.jquery.js* 구현 하는 선택한 플러그 인의 기능적으로 합니다. *Chosen/chosen.css* 파일은 스타일 지정을 제공 합니다. 맨 아래에 다음이 참조를 추가 *Views\Home\MultiSelectCountry.cshtml* 파일입니다. 다음 코드에는 선택한 플러그 인을 참조 하는 방법을 보여 줍니다.
 
@@ -217,5 +217,5 @@ HTML 도우미 [ListBox](https://msdn.microsoft.com/library/dd470200.aspx) 메�
 
 다음 섹션에 표시 된 ASP.NET MVC 스 캐 폴딩 메커니즘의 작동 방식을 **DropDownList** 도우미입니다.
 
->[!div class="step-by-step"]
-[다음](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper.md)
+> [!div class="step-by-step"]
+> [다음](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper.md)

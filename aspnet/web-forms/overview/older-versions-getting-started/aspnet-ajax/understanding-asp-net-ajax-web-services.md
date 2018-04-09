@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-web-services
-title: "ASP.NET AJAX 웹 서비스를 이해 | Microsoft Docs"
+title: ASP.NET AJAX 웹 서비스를 이해 | Microsoft Docs
 author: scottcate
-description: "웹 서비스는 분산된 시스템 간에 데이터를 교환 하기 위한 플랫폼 간 솔루션을 제공 하는.NET framework의 필수적인 부분입니다. 하지만 웹..."
+description: 웹 서비스는 분산된 시스템 간에 데이터를 교환 하기 위한 플랫폼 간 솔루션을 제공 하는.NET framework의 필수적인 부분입니다. 하지만 웹...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/28/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-web-services
 msc.type: authoredcontent
-ms.openlocfilehash: 8eb3486c9b3f4ddb6a8bc2c1cdcac774a6852574
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 0b9f61f895fea1960ebd25780454b86d5c3ba1bb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="understanding-aspnet-ajax-web-services"></a>ASP.NET AJAX 웹 서비스 이해
 ====================
@@ -51,7 +51,7 @@ JavaScript 웹 서비스 프록시를 사용 하 여.NET 웹 서비스에 ASP.NE
 
 [!code-json[Main](understanding-asp-net-ajax-web-services/samples/sample2.json)]
 
-> *>[!NOTE] 또한 요청 메시지 전송 되지 않습니다 항상 JSON을 통해; 작업 이름 웹 서비스에 대 한 URL의 일부분으로 정의 됩니다. 웹 서비스를 통해 전달 될 매개 변수를 true로 설정 UseHttpGet 매개 변수와 함께 ScriptMethod 특성을 사용할 수는 쿼리 문자열 매개 변수입니다.*
+> *> [!NOTE] 작업 이름이 웹 서비스 URL의 일부분으로 정의 된 또한 JSON을 통해 요청 메시지 항상 전송 되지 않습니다. 웹 서비스를 통해 전달 될 매개 변수를 true로 설정 UseHttpGet 매개 변수와 함께 ScriptMethod 특성을 사용할 수는 쿼리 문자열 매개 변수입니다.*
 
 
 **3을 나열 합니다. 웹 서비스 응답 메시지를 JSON으로 직렬화 됨**
@@ -160,7 +160,7 @@ ScriptManager 컨트롤을 통해 CustomersService.asmx에 대 한 참조를 추
 
 [!code-html[Main](understanding-asp-net-ajax-web-services/samples/sample14.html)]
 
-> *>[!NOTE] 생성 되는 실제 JavaScript 프록시 코드를 확인 하려는 경우 Internet Explorer의 주소 상자에 원하는.NET 웹 서비스 URL을 입력 하 고 /js의 끝에 추가할 수 있습니다.*
+> *> [!NOTE] 생성 되는 실제 JavaScript 프록시 코드를 확인 하려는 경우 Internet Explorer의 주소 상자에 원하는.NET 웹 서비스 URL을 입력 하 고 /js의 끝에 추가할 수 있습니다.*
 
 
 JavaScript 프록시의 디버그 버전으로 페이지에 포함 될 web.config에서 디버깅을 설정한 경우 다음에 나타납니다.
@@ -263,7 +263,7 @@ PageMethods 개체를 사용 하 여 JavaScript 프록시 개체를 사용 하 �
 
 ## <a name="the-autocompleteextender-and-the-aspnet-ajax-toolkit"></a>AutoCompleteExtender 및 ASP.NET AJAX 도구 키트
 
-ASP.NET AJAX Toolkit (에서 사용할 수 있는 [http://ajax.asp.net](http://ajax.asp.net)) 웹 서비스에 액세스 하는 데 사용할 수 있는 몇 가지 컨트롤을 제공 합니다. 도구 키트 라는 유용한 컨트롤을 포함 하는 구체적으로, `AutoCompleteExtender` 웹 서비스를 호출 하 고 모든 JavaScript 코드를 전혀 작성 하지 않고도 페이지에 데이터 표시를 사용할 수 있는 합니다.
+ASP.NET AJAX Toolkit (에서 사용할 수 있는 [ http://ajax.asp.net ](http://ajax.asp.net)) 웹 서비스에 액세스 하는 데 사용할 수 있는 몇 가지 컨트롤을 제공 합니다. 도구 키트 라는 유용한 컨트롤을 포함 하는 구체적으로, `AutoCompleteExtender` 웹 서비스를 호출 하 고 모든 JavaScript 코드를 전혀 작성 하지 않고도 페이지에 데이터 표시를 사용할 수 있는 합니다.
 
 AutoCompleteExtender 컨트롤 textbox의 기존 기능을 확장 하 고 사용자가 더 쉽게 찾고 있는 데이터를 찾을 데 사용할 수 있습니다. 텍스트 상자에 입력 컨트롤은 웹 서비스를 쿼리 하는 데 사용할 수 하 고 텍스트 상자 아래 결과 동적으로 보여 줍니다. 그림 4 AutoCompleteExtender 컨트롤을 사용 하 여 지원 응용 프로그램에 대 한 고객 id를 표시 합니다. 예를 보여 줍니다. Textbox에 서로 다른 문자를 충분할 서로 다른 항목이 입력에 따라 그 아래에 나타납니다. 그런 다음 사용자가 원하는 고객 id를 선택할 수 있습니다.
 
@@ -309,6 +309,6 @@ Dan Wahlin (Microsoft 가장 중요 한 Professional ASP.NET 및 XML 웹 서비�
 
 Scott 인증서의 근무 기간이 Microsoft 웹 기술을 1997 년부터 이며 myKB.com 부서장 ([www.myKB.com](http://www.myKB.com)) ASP.NET 작성 i 여기서 기반 응용 프로그램 기술 자료 소프트웨어 솔루션에 집중 합니다. Scott에 전자 메일을 통해 연결할 수 [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com) 또는에서 그의 블로그 [ScottCate.com](http://ScottCate.com)
 
->[!div class="step-by-step"]
-[이전](understanding-asp-net-ajax-localization.md)
-[다음](understanding-asp-net-ajax-debugging-capabilities.md)
+> [!div class="step-by-step"]
+> [이전](understanding-asp-net-ajax-localization.md)
+> [다음](understanding-asp-net-ajax-debugging-capabilities.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-2
-title: "2 부: 데이터 액세스 계층 | Microsoft Docs"
+title: '2 부: 데이터 액세스 계층 | Microsoft Docs'
 author: JoeStagner
-description: "이 자습서 시리즈 모든 Tailspin Spyworks 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 2 부에서는 데이터 액세스 계층을 추가 합니다."
+description: 이 자습서 시리즈 모든 Tailspin Spyworks 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 2 부에서는 데이터 액세스 계층을 추가 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/21/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: 8b07b320640c1bb0074a4d3a04ca7c5b7e7bb6cd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9f734b04a0f4cec3c33bc5b42ef283ea64cdb463
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-2-data-access-layer"></a>2 부: 데이터 액세스 계층
 ====================
@@ -27,7 +27,7 @@ ms.lasthandoff: 11/10/2017
 > 이 자습서 시리즈 모든 Tailspin Spyworks 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 2 부에서는 데이터 액세스 계층을 추가 합니다.
 
 
-## <a id="_Toc260221668"></a>데이터 액세스 계층 추가
+## <a id="_Toc260221668"></a>  데이터 액세스 계층 추가
 
 전자 상거래 응용 프로그램은 두 개의 데이터베이스에 따라 달라 집니다.
 
@@ -57,6 +57,6 @@ ms.lasthandoff: 11/10/2017
 
 이제이 첫 번째 기능 – 제품 범주 메뉴에 추가할 준비가 되었습니다.
 
->[!div class="step-by-step"]
-[이전](tailspin-spyworks-part-1.md)
-[다음](tailspin-spyworks-part-3.md)
+> [!div class="step-by-step"]
+> [이전](tailspin-spyworks-part-1.md)
+> [다음](tailspin-spyworks-part-3.md)

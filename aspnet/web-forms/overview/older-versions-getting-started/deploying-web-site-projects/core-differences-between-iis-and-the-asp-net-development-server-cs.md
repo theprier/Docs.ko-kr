@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-cs
-title: "IIS와 ASP.NET 개발 서버 (C#) 간의 차이 핵심 | Microsoft Docs"
+title: IIS와 ASP.NET 개발 서버 (C#) 간의 차이 핵심 | Microsoft Docs
 author: rick-anderson
-description: "로컬 ASP.NET 응용 프로그램을 테스트할 때 ASP.NET 개발 웹 서버를 사용 하는 가능성 됩니다. 그러나 프로덕션 웹 사이트는 가능성이 가장 높은 pow 중..."
+description: 로컬 ASP.NET 응용 프로그램을 테스트할 때 ASP.NET 개발 웹 서버를 사용 하는 가능성 됩니다. 그러나 프로덕션 웹 사이트는 가능성이 가장 높은 pow 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/01/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 79f06707cadf027baa03652dc722cab31f494b09
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: e343a6eac39d7959718cb791012cfa3b931ae33f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="core-differences-between-iis-and-the-aspnet-development-server-c"></a>코어 IIS와 ASP.NET 개발 서버 (C#)의 차이점
 ====================
@@ -94,7 +94,7 @@ ASP.NET 런타임 여러 (요청자 식별) 하는 인증 및 권한 부여 (요
 
 [!code-xml[Main](core-differences-between-iis-and-the-asp-net-development-server-cs/samples/sample4.xml)]
 
-ASP.NET 개발 서버를 사용 하 여 사이트를 방문 하 고 브라우저의 주소 표시줄에서 PDF 파일 중 하나를 직접 URL을 입력 합니다. 이 자습서의 URL은 같이 표시와 연결 된 웹 사이트 다운로드 한 경우:`http://localhost:portNumber/PrivateDocs/aspnet_tutorial01_Basics_vb.pdf`
+ASP.NET 개발 서버를 사용 하 여 사이트를 방문 하 고 브라우저의 주소 표시줄에서 PDF 파일 중 하나를 직접 URL을 입력 합니다. 이 자습서의 URL은 같이 표시와 연결 된 웹 사이트 다운로드 한 경우: `http://localhost:portNumber/PrivateDocs/aspnet_tutorial01_Basics_vb.pdf`
 
 주소 표시줄에이 URL을 입력 하면 해당 브라우저 파일에 대 한 ASP.NET 개발 서버는 요청을 보냅니다. ASP.NET 개발 서버는 요청을 처리를 위해 ASP.NET 런타임 넘깁니다. 에서는 아직 로그인 하지 않은 것 때문에 `Web.config` 에 `PrivateDocs` 폴더 익명 액세스를 거부 하도록 구성 되어, ASP.NET 런타임이 자동으로 리디렉션하여 우리 로그인 페이지로 `Login.aspx` (그림 3 참조). ASP.NET에 포함 되어 사용자 페이지에 있는 로그를 리디렉션하는 경우는 `ReturnUrl` querystring 매개 변수 페이지를 나타내는 사용자를 보려면 시도 했습니다. 이 페이지에는 사용자를 성공적으로 로그인 한 후를 반환할 수 있습니다.
 
@@ -140,6 +140,6 @@ IIS가 사용 하도록 구성 되 면 통합된 파이프라인에 다음 태�
 - [ASP.NET 포럼 인증을 사용 하 여 모든 종류의 IIS 7에서 콘텐츠](https://blogs.iis.net/bills/archive/2007/05/19/using-asp-net-forms-authentication-with-all-types-of-content-with-iis7-video.aspx) (비디오)
 - [Visual Web Developer에서 웹 서버](https://msdn.microsoft.com/library/58wxa9w5.aspx)
 
->[!div class="step-by-step"]
-[이전](common-configuration-differences-between-development-and-production-cs.md)
-[다음](deploying-a-database-cs.md)
+> [!div class="step-by-step"]
+> [이전](common-configuration-differences-between-development-and-production-cs.md)
+> [다음](deploying-a-database-cs.md)

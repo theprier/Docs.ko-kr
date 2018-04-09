@@ -2,21 +2,21 @@
 uid: whitepapers/mvc3-release-notes
 title: ASP.NET MVC 3 | Microsoft Docs
 author: rick-anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/06/2010
 ms.topic: article
 ms.assetid: f44c166e-7e91-48a0-a6f8-d9285f3594e5
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/mvc3-release-notes
 msc.type: content
-ms.openlocfilehash: 058b7c6fe6eeeea4403e7e5fdc05bb44d2ba1300
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 0bfe9cdc215226457ccfafff2b85ace87325b91b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 ====================
@@ -262,7 +262,7 @@ ASP.NET MVC 3 ASP.NET MVC 3을 ASP.NET MVC 2 응용 프로그램을 업그레이
 <a id="tu-Modernizr"></a>
 ### <a name="project-templates-now-include-modernizr-17"></a>프로젝트 템플릿에 Modernizr 1.7이 포함
 
-Modernizr은 아직 이러한 기능을 지원 하지 않는 브라우저에서 CSS 3 및 HTML5 지원이 가능한 JavaScript 라이브러리입니다. 이 라이브러리는 ASP.NET MVC 3 프로젝트용 템플릿에 사전 설치 NuGet 패키지로 포함 되어 있습니다. Modernizr에 대 한 자세한 내용은 참조 [http://www.modernizr.com/](http://www.modernizr.com/)합니다.
+Modernizr은 아직 이러한 기능을 지원 하지 않는 브라우저에서 CSS 3 및 HTML5 지원이 가능한 JavaScript 라이브러리입니다. 이 라이브러리는 ASP.NET MVC 3 프로젝트용 템플릿에 사전 설치 NuGet 패키지로 포함 되어 있습니다. Modernizr에 대 한 자세한 내용은 참조 [ http://www.modernizr.com/ ](http://www.modernizr.com/)합니다.
 
 <a id="tu-UpdatedJQuery"></a>
 ### <a name="project-templates-include-updated-versions-of-jquery-jquery-ui-and-jquery-validation"></a>프로젝트 템플릿에 jQuery, jQuery UI 및 jQuery의 업데이트 된 버전이 포함 되어 유효성 검사
@@ -373,7 +373,7 @@ ASP.NET MVC 3의 시험판 버전에서는 Razor 파일에 공백이 포함 된 
 <a id="_Toc2_1"></a>
 ### <a name="project-templates-changed-to-include-jquery-144-jquery-validation-17-and-jquery-ui-186"></a>프로젝트 템플릿이 1.4.4 jQuery, jQuery 유효성 검사 1.7 및 jQuery UI 1.8.6 포함 하도록 변경
 
-ASP.NET MVC 3 용 프로젝트 템플릿을 포함 최신 버전의 jQuery, jQuery 유효성 검사 및 jQuery UI입니다. jQuery UI 프로젝트 템플릿을 새로 추가 하 고 유용한 사용자 인터페이스 도구를 제공 합니다. JQuery UI에 대 한 자세한 내용은 참조의 홈 페이지: [http://jqueryui.com/](http://jqueryui.com/)합니다.
+ASP.NET MVC 3 용 프로젝트 템플릿을 포함 최신 버전의 jQuery, jQuery 유효성 검사 및 jQuery UI입니다. jQuery UI 프로젝트 템플릿을 새로 추가 하 고 유용한 사용자 인터페이스 도구를 제공 합니다. JQuery UI에 대 한 자세한 내용은 참조의 홈 페이지: [ http://jqueryui.com/ ](http://jqueryui.com/)합니다.
 
 <a id="_Toc2_2"></a>
 ### <a name="added-additionalmetadataattribute-class"></a>추가 된 "AdditionalMetadataAttribute" 클래스
@@ -438,7 +438,7 @@ ASP.NET MVC 3 용 프로젝트 템플릿을 포함 최신 버전의 jQuery, jQue
 <a id="_Toc2_10"></a>
 ### <a name="fixed-model-declaration-to-not-add-whitespace-to-the-document"></a>고정 @model 문서에 공백을 추가 하지 않는 선언
 
-이전 릴리스에서  *@model*  보기의 맨 위에 선언은 렌더링된 된 HTML 출력에 빈 줄을 추가 합니다. 이 선언에 공백이 발생 하지 않도록 있도록 수정 되었습니다.
+이전 릴리스에서 <em>@model</em> 보기의 맨 위에 선언은 렌더링된 된 HTML 출력에 빈 줄을 추가 합니다. 이 선언에 공백이 발생 하지 않도록 있도록 수정 되었습니다.
 
 <a id="_Toc2_11"></a>
 ### <a name="added-fileextensions-property-to-view-engines-to-support-engine-specific-file-names"></a>엔진-특정 파일 이름을 지원 하도록 뷰 엔진에 추가 된 "FileExtensions" 속성
@@ -465,7 +465,7 @@ ASP.NET MVC 3 용 프로젝트 템플릿을 포함 최신 버전의 jQuery, jQue
 - 이전 버전의 ASP.NET MVC에서는 작업 필터 몇 가지 경우에서를 제외 하 고 요청에 따라 만들어졌습니다. 이 동작은 되지 보장 된 동작은 하지만 단순히 구현 정보 이며 필터에 대 한 계약 상태 비저장 고려 합니다. ASP.NET MVC 3에서 필터는 보다 적극적으로 캐시 됩니다. 따라서 잘못 인스턴스 상태를 저장 하는 모든 사용자 지정 작업 필터는 손상 될 수 있습니다.
 - 동일한 예외 필터에 대 한 예외 필터에 대 한 실행 순서가 변경 된 *순서* 값입니다. 예외 필터를 동일한 컨트롤러에서 ASP.NET MVC 2 및 이전 버전에서는 *순서* 는 작업 메서드의 예외 필터 전에 실행의 동작 메서드 같이 합니다. 일반적으로 경우가이 예외가 필터가 적용 된 경우 지정 된 없이 *순서* 값입니다. ASP.NET MVC 3에서이 순서가 반대로 변경 되었습니다 가장 구체적인 예외 처리기는 먼저 실행 되도록 합니다. 이전 버전과 달리 하는 경우는 *순서* 속성을 명시적으로 지정, 필터는 지정 된 순서로 실행 됩니다.
 - 라는 새 속성이 *FileExtensions* 에 추가 된는 *VirtualPathProviderViewEngine* 기본 클래스입니다. ASP.NET에서는 보기를 경로 의해 (이름)가 아니라을 때 뷰만이 새 속성으로 지정 된 목록에 포함 된 파일 확장명으로 간주 됩니다. 웹 폼 보기에 대 한 사용자 지정 파일 확장명을 사용 하도록 설정 하려면 사용자 지정 빌드 공급자가 등록 된와 공급자는 이름이 아니라 전체 경로 사용 하 여 이러한 뷰를 참조 하는 경우 응용 프로그램의 주요 변경 내용입니다. 해결 하는 값을 수정 하는 *FileExtensions* 속성을 사용자 지정 파일 확장명을 포함 합니다.
-- 직접 구현 하는 사용자 지정 컨트롤러 팩터리 구현을 *IControllerFactory* 인터페이스의 새 구현을 제공 해야 *GetControllerSessionBehavior * *에 추가 된 메서드는 이 릴리스에서 인터페이스*합니다. 일반적으로 것이 좋습니다 수행 하지이 인터페이스를 직접 구현 하는 대신에서 클래스를 파생 *DefaultControllerFactory*합니다.
+- 직접 구현 하는 사용자 지정 컨트롤러 팩터리 구현을 <em>IControllerFactory</em> 인터페이스의 새 구현을 제공 해야 <em>GetControllerSessionBehavior</em>  <em>이 릴리스에서 인터페이스에 추가 된 메서드</em>합니다. 일반적으로 것이 좋습니다 수행 하지이 인터페이스를 직접 구현 하는 대신에서 클래스를 파생 <em>DefaultControllerFactory</em>합니다.
 
 <a id="_Toc2_KI"></a>
 ## <a name="known-issues"></a>알려진 문제
@@ -629,11 +629,11 @@ Namespace.ClassName
 
 ASP.NET MVC 3 베타는 2010 년 10 월 6 일에 출시 되었습니다. 다음 내용은 베타 릴리스 버전 관련 되어 있으며 업데이트 또는 위의 ASP.NET MVC 3 릴리스 후보 섹션에서 참조 하는 변경 사항이 적용 됩니다.
 
-## <a id="0.1__Toc274034215"></a>새 Featuresin ASP.NET MVC 3 베타
+## <a id="0.1__Toc274034215"></a>  새 Featuresin ASP.NET MVC 3 베타
 
 <a id="0.1__Default_validation_system"></a>이 섹션에 도입 된 기능에 설명 ASP.NET MVC 3 베타 릴리스 버전에서 합니다.
 
-### <a id="0.1__Toc274034216"></a>NuGet 패키지 관리자
+### <a id="0.1__Toc274034216"></a>  NuGet 패키지 관리자
 
 ASP.NET MVC 3 추가 라이브러리는 통합된 패키지 관리 도구 및 Visual Studio 프로젝트에는 도구는 NuGet 패키지 관리자를 포함 합니다. 대부분의 경우 개발자가 해당 원본 트리로 라이브러리를 지금 수행 하는 단계를 자동화 합니다.
 
@@ -641,7 +641,7 @@ NuGet 명령줄 도구, Visual Studio 상황에 맞는 메뉴에서 Visual Studi
 
 NuGet에 대 한 자세한 내용은 참조는 [NuGet 설명서](https://docs.microsoft.com/nuget/)합니다.
 
-### <a id="0.1__Toc274034217"></a>향상 된 새 프로젝트 대화 상자
+### <a id="0.1__Toc274034217"></a>  향상 된 새 프로젝트 대화 상자
 
 새 프로젝트를 만들 때 새 프로젝트 대화 상자 이제 수 있습니다는 뷰 엔진이 뿐만 아니라 ASP.NET MVC 프로젝트 형식을 지정 합니다.
 
@@ -655,7 +655,7 @@ NuGet에 대 한 자세한 내용은 참조는 [NuGet 설명서](https://docs.mi
 
 인터넷 응용 프로그램입니다. ASP.NET MVC 내에서 멤버 자격 공급자를 사용 하는 방법을 보여 주는 샘플 기능을 포함 합니다.
 
-### <a id="0.1__Toc274034218"></a>강력 하 게 지정 하는 간단한 방법은 입력 Razor 뷰 모델
+### <a id="0.1__Toc274034218"></a>  강력 하 게 지정 하는 간단한 방법은 입력 Razor 뷰 모델
 
 강력한 형식의 Razor 뷰의 모델 유형을 지정 하는 방법은 new를 사용 하 여 간단해졌습니다 @model CSHTML 뷰에 대 한 지시문 및 @ModelType VBHTML 뷰에 대 한 지시문입니다. 이전 버전의 ASP.NET MVC에서는 Razor에 대 한 강력한 형식의 모델에는 이러한 방식으로 뷰를 지정 합니다.
 
@@ -665,7 +665,7 @@ NuGet에 대 한 자세한 내용은 참조는 [NuGet 설명서](https://docs.mi
 
 [!code-cshtml[Main](mvc3-release-notes/samples/sample26.cshtml)]
 
-### <a id="0.1__Toc274034219"></a>새 ASP.NET 웹 페이지에 대 한 도우미 메서드를 지원
+### <a id="0.1__Toc274034219"></a>  새 ASP.NET 웹 페이지에 대 한 도우미 메서드를 지원
 
 새 ASP.NET 웹 페이지 기술을 뷰 및 컨트롤러에 일반적으로 사용 되는 기능을 추가 하는 데 도움이 되는 도우미 메서드 집합이 포함 되어 있습니다. ASP.NET MVC 3에서는 이러한 도우미 메서드를 컨트롤러와 뷰 내에서 사용할 수 (필요한 경우). 이러한 메서드는 System.Web.Helpers 어셈블리에 포함 되어 있습니다. 다음 표에서 몇 가지 ASP.NET 웹 페이지 도우미 메서드를 나열합니다.
 
@@ -675,13 +675,13 @@ NuGet에 대 한 자세한 내용은 참조는 [NuGet 설명서](https://docs.mi
 | 암호화 | 해시를 올바르게 만들려면 알고리즘을 사용 하 여 솔트된 및 해시 된 암호입니다. |
 | WebGrid | 그리드로 개체 (일반적으로 데이터베이스의 데이터)의 컬렉션을 렌더링합니다. 페이징 및 정렬을 지원 합니다. |
 | WebImage | 이미지를 렌더링합니다. |
-| WebMail | 전자 메일 메시지를 보냅니다. |
+| WebMail | 이메일 메시지를 보냅니다. |
 
 도우미와 기본 구문을 나열 하는 빠른 참조 항목을 사용할 수는 다음 URL에서 ASP.NET Razor 구문 문서의 일부로:
 
 [https://www.asp.net/webmatrix/tutorials/asp-net-web-pages-api-reference](../web-pages/overview/api-reference/asp-net-web-pages-api-reference.md)
 
-### <a id="0.1__Toc274034220"></a>추가 종속성 주입 지원
+### <a id="0.1__Toc274034220"></a>  추가 종속성 주입 지원
 
 현재 버전을 ASP.NET MVC 3 Preview 1 릴리스를 기반으로 구축 두 개의 새로운 서비스 및 4 개의 기존 서비스에 대 한 지원 추가 및 종속성 확인 및 공통 서비스 로케이터에 대 한 향상 된 지원 포함 됩니다.
 
@@ -732,7 +732,7 @@ DefaultControllerFactory 클래스 IControllerFactory 인스턴스를 허용 하
 - 값 공급자입니다. ValueProviderFactory를 구현 하는 클래스를 종속성 확인자에 등록할 수 있으며 시스템 컨트롤러에 의해 및 모델 바인딩 중에 사용 되는 값 공급자를 만드는 사용 합니다.
 - 모델 바인더입니다. IModelBinderProvider를 구현 하는 클래스를 종속성 확인자에 등록할 수 있으며 시스템 모델 바인딩 시스템에서 사용 하는 모델 바인더를 만드는 사용 합니다.
 
-### <a id="0.1__Toc274034221"></a>비 가시적인 jQuery 기반 Ajax에 대 한 새로운 지원
+### <a id="0.1__Toc274034221"></a>  비 가시적인 jQuery 기반 Ajax에 대 한 새로운 지원
 
 ASP.NET MVC Ajax 도우미 메서드를 다음과 같은 포함 되어 있습니다.
 
@@ -748,7 +748,7 @@ ASP.NET MVC Ajax 도우미 메서드를 다음과 같은 포함 되어 있습니
 
 이 기능은 ASP.NET MVC 3 새 프로젝트 템플릿이에서 Web.config 파일에서 기본적으로 설정 되어 있지만 기존 프로젝트에 기본적으로 비활성화 됩니다. 자세한 내용은 참조 [클라이언트 유효성 검사 및 비간섭 JavaScript에 대 한 응용 프로그램 수준 플래그를 추가](#0.1_AddedApplicationWideFlagsForClientValida) 이 문서의 뒷부분에 나오는 합니다.
 
-### <a id="0.1__Toc274034222"></a>비 가시적인 jQuery 유효성 검사에 대 한 새로운 지원
+### <a id="0.1__Toc274034222"></a>  비 가시적인 jQuery 유효성 검사에 대 한 새로운 지원
 
 기본적으로 ASP.NET MVC 3 베타 방식으로 비 가시적인 jQuery 유효성 검사 클라이언트 쪽 유효성 검사를 수행 하는 데 사용 됩니다. 비 가시적인 클라이언트 유효성 검사를 사용 하려면 보기 내에서 다음와 같은 호출을 확인 합니다.
 
@@ -768,7 +768,7 @@ ASP.NET MVC Ajax 도우미 메서드를 다음과 같은 포함 되어 있습니
 
 <a id="0.1__Toc274034223"></a>
 
-### <a id="0.1_AddedApplicationWideFlagsForClientValida"></a>클라이언트 유효성 검사 및 비간섭 JavaScript에 대 한 새 응용 프로그램 수준 플래그
+### <a id="0.1_AddedApplicationWideFlagsForClientValida"></a>  클라이언트 유효성 검사 및 비간섭 JavaScript에 대 한 새 응용 프로그램 수준 플래그
 
 클라이언트 유효성 검사 및 전체적으로 다음 예제와 같이 HtmlHelper 클래스의 정적 멤버를 사용 하 여 비간섭 JavaScript를 사용 하지 않도록 설정 하거나 설정할 수 있습니다.
 
@@ -784,7 +784,7 @@ ASP.NET MVC Ajax 도우미 메서드를 다음과 같은 포함 되어 있습니
 
 이전 버전과 호환성을 위해 이러한 기능은 모두 기본적으로 비활성화 됩니다.
 
-### <a id="0.1__Toc274034224"></a>뷰를 실행 하기 전에 실행 되는 코드에 대 한 새로운 지원
+### <a id="0.1__Toc274034224"></a>  뷰를 실행 하기 전에 실행 되는 코드에 대 한 새로운 지원
 
 이제 라는 파일을 넣을 수 있습니다 \_viewstart.cshtml (또는 \_viewstart.vbhtml) Views 디렉터리의 코드를 해당 디렉터리와 하위 디렉터리에 있는 여러 뷰 간에 공유 되는 추가 합니다. 예를 들어에 다음 코드를 넣을 수 있습니다는 \_viewstart.cshtml 페이지 ~/Views 폴더에서:
 
@@ -794,7 +794,7 @@ Views 폴더 내의 모든 보기 및 모든 해당 하위 폴더를 재귀적�
 
 기본적으로의 코드는 \_viewstart.cshtml 파일 하위 폴더에 보기에도 적용 됩니다. 그러나 개별 하위 폴더의 고유 버전을 포함할 수는 \_viewstart.cshtml 파일의 경우 로컬 버전이 우선 한다는 점에서;. 예를 들어 HomeController에 대 한 모든 뷰에 공통 되는 코드를 실행 하려면 배치는 \_viewstart.cshtml 파일 ~/Views/Home 폴더에 있습니다.
 
-### <a id="0.1__Toc274034225"></a>VBHTML Razor 구문에 대 한 새로운 지원
+### <a id="0.1__Toc274034225"></a>  VBHTML Razor 구문에 대 한 새로운 지원
 
 이전 ASP.NET MVC 미리 보기에는 Razor 구문을 기반으로 C#을 사용 하 여 보기에 대 한 지원이 포함 되어 있습니다. 이러한 뷰는.cshtml 파일 확장명을 사용 합니다. Razor를 지원 하기 위해 진행 중인 작업의 일환으로, ASP.NET MVC 3 베타에서는.vbhtml 파일 확장명을 사용 하 여 Visual Basic의 경우에 Razor 구문 지원 합니다.
 
@@ -802,7 +802,7 @@ Views 폴더 내의 모든 보기 및 모든 해당 하위 폴더를 재귀적�
 
 [https://www.asp.net/webmatrix/tutorials/asp-net-web-pages-visual-basic](../web-pages/overview/getting-started/introducing-razor-syntax-vb.md)
 
-### <a id="0.1__Toc274034226"></a>ValidateInputAttribute 보다 세부적으로 제어
+### <a id="0.1__Toc274034226"></a>  ValidateInputAttribute 보다 세부적으로 제어
 
 ASP.NET MVC에는 항상 들어오는 요청에 악의적인 입력 포함 되어 있지 않은지를 핵심 ASP.NET 요청 유효성 검사 인프라를 호출 하는 ValidateInputAttribute 클래스를 포함 됩니다. 입력된 유효성 검사는 기본적으로 사용 됩니다. 다음 예제와 같이 ValidateInputAttribute 특성을 사용 하 여 요청 유효성 검사를 비활성화 하는 것이 불가능:
 
@@ -814,7 +814,7 @@ ASP.NET MVC에는 항상 들어오는 요청에 악의적인 입력 포함 되�
 
 [!code-csharp[Main](mvc3-release-notes/samples/sample38.cs)]
 
-### <a id="0.1__Toc274034227"></a>도우미 밑줄 하이픈에 대 한 변환 익명 개체를 사용 하 여 지정 된 HTML 특성 이름
+### <a id="0.1__Toc274034227"></a>  도우미 밑줄 하이픈에 대 한 변환 익명 개체를 사용 하 여 지정 된 HTML 특성 이름
 
 도우미 메서드는 다음 예제 처럼 익명 개체를 사용 하 여 특성 이름/값 쌍을 지정할 수 있습니다.
 
@@ -830,7 +830,7 @@ ASP.NET에서 속성 이름에 대 한 하이픈을 사용할 수 없으므로�
 
 [!code-html[Main](mvc3-release-notes/samples/sample41.html)]
 
-## <a id="0.1__Toc274034228"></a>버그 수정
+## <a id="0.1__Toc274034228"></a>  버그 수정
 
 EditorFor 및 DisplayFor 템플릿 도우미에 대 한 기본 개체 템플릿을 이제 DisplayAttribute.Order 속성에 지정 된 순서 지정을 지원 합니다. (이전 버전에서는 순서 설정을 사용 하지 않았습니다.)
 
@@ -838,11 +838,11 @@ EditorFor 및 DisplayFor 템플릿 도우미에 대 한 기본 개체 템플릿�
 
 JsonValueProviderFactory은 이제 기본적으로 등록 됩니다.
 
-## <a id="0.1__Toc274034229"></a>주요 변경 내용
+## <a id="0.1__Toc274034229"></a>  주요 변경 내용
 
 예외 필터에 대 한 실행 순서 값이 동일한 예외 필터에 대 한 변경 되었습니다. ASP.NET MVC 2 및 이전 버전에서는 예외는 작업 메서드의 예외 필터 전에 실행 된 동작 메서드에 따라 동일한 순서를 가진 컨트롤러에서 필터링 합니다. 지정된 된 순서 값 없이 예외 필터가 적용 된 경우의 경우 일반적으로 것 수 있습니다. ASP.NET MVC 3에서이 순서가 반대로 변경 되었습니다 가장 구체적인 예외 처리기는 먼저 실행 되도록 합니다. 이전 버전에서와 Order 속성을 명시적으로 지정 하는 경우 필터가 지정 된 순서로 실행 됩니다.
 
-## <a id="0.1__Toc274034230"></a>알려진된 문제
+## <a id="0.1__Toc274034230"></a>  알려진된 문제
 
 설치 하는 동안 EULA 동의 대화 상자 예정 보다 작은 창에서 사용 약관을 표시 합니다.
 

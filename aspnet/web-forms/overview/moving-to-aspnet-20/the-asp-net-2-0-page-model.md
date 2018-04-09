@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/moving-to-aspnet-20/the-asp-net-2-0-page-model
-title: "ASP.NET 2.0 페이지 모델 | Microsoft Docs"
+title: ASP.NET 2.0 페이지 모델 | Microsoft Docs
 author: microsoft
-description: "ASP.NET에서 1.x 개발자가 인라인 코드 모델 및 코드 숨김 코드 모델 중에서 선택 했습니다. 코드 숨김의 Src attr 중 하나를 사용 하 여 구현할 수 있습니다..."
+description: ASP.NET에서 1.x 개발자가 인라인 코드 모델 및 코드 숨김 코드 모델 중에서 선택 했습니다. 코드 숨김의 Src attr 중 하나를 사용 하 여 구현할 수 있습니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2005
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/the-asp-net-2-0-page-model
 msc.type: authoredcontent
-ms.openlocfilehash: e008f197cf08bec81c560018f2d42306598f9e6d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fda85ec03f845cafa7720382bf85652937932c44
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="the-aspnet-20-page-model"></a>ASP.NET 2.0 페이지 모델
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > ASP.NET에서 1.x 개발자가 인라인 코드 모델 및 코드 숨김 코드 모델 중에서 선택 했습니다. 코드 숨김 Src 특성 또는 코드 숨김 특성을 사용 하 여 구현할 수는 @Page 지시문입니다. ASP.NET 2.0에서는 개발자가 인라인 코드 및 코드 숨김 사이 선택을 하지만 코드 숨김 모델을 크게 개선 되었습니다.
 
@@ -65,7 +65,7 @@ ASP.NET 2.0 @ Page 지시문에 많은 새 특성을 추가합니다. 다음 특
 
 Async 특성을 사용 하면 비동기적으로 실행 되는 페이지를 구성할 수 있습니다. 이 모듈의 뒷부분에 나오는 비동기 페이지도 포함 합니다.
 
-## <a name="asynctimeout"></a>Asynctimeout은
+## <a name="asynctimeout"></a>AsyncTimeout
 
 비동기 페이지에 대 한 제한 시간을 지정 합니다. 기본값은 45 초입니다.
 
@@ -77,7 +77,7 @@ CodeFile 특성은 Visual Studio 2002/2003에서 코드 숨김 파일 특성에 
 
 CodeFileBaseClass 특성은 하나의 기본 클래스에서 파생 되도록 여러 페이지를 원하는 경우에 사용 됩니다. 이 특성이 없으면 asp.net에서는 partial 클래스의 구현으로 인해 ASPX 페이지에 선언 된 컨트롤을 참조 하려면 공유 공통 필드를 사용 하는 기본 클래스는 제대로 작동 하지 때문에 ASP 합니다. 네트 컴파일 엔진의 페이지의 컨트롤에 따라 새 멤버를 자동으로 만들어집니다. 따라서 ASP.NET에서 두 개 이상의 페이지에 대 한 공통 기본 클래스를 원하는 할 경우를 정의 하는 CodeFileBaseClass 특성에 기본 클래스를 지정 하 고 각 페이지 클래스의 기본 클래스에서 파생 됩니다. CodeFile 특성은이 특성을 사용 하는 경우에 필요 합니다.
 
-## <a name="compilationmode"></a>compilationMode
+## <a name="compilationmode"></a>CompilationMode
 
 이 특성을 사용 하면 ASPX 페이지의 CompilationMode 속성을 설정할 수 있습니다. CompilationMode 속성 값을 포함 하는 열거형은 **항상**, **자동**, 및 **Never**합니다. 기본값은 **항상**합니다. **자동** 설정에 따라 동적으로 페이지를 가능한 경우 컴파일에서 ASP.NET을 차단 합니다. 페이지를 제외 하 고 동적 컴파일에서 성능을 향상 시킵니다. 그러나 컴파일해야 하는 코드가 제외 된 페이지에 있는 경우 페이지를 찾아볼 때 오류가 throw 됩니다.
 
@@ -144,13 +144,13 @@ ASP.NET 2.0에서 @ Page 지시문의 새로운 기능으로 다른 기본 클�
 
 ## <a name="apprelativetemplatesourcedirectory"></a>AppRelativeTemplateSourceDirectory
 
-페이지 또는 컨트롤에 응용 프로그램 상대 경로 반환합니다. 예를 들어 http://app/folder/page.aspx에 있는 페이지에 대 한 속성을 반환 ~ / 폴더/합니다.
+페이지 또는 컨트롤에 응용 프로그램 상대 경로 반환합니다. 에 있는 페이지에 대 한 예를 들어 http://app/folder/page.aspx, 속성은 반환 ~ / 폴더/합니다.
 
 ## <a name="apprelativevirtualpath"></a>AppRelativeVirtualPath
 
-페이지 또는 컨트롤에는 가상 디렉터리를 상대 경로 반환합니다. 예를 들어 http://app/folder/page.aspx에 있는 페이지에 대 한 속성은 반환 ~ / folder/page.aspx 합니다.
+페이지 또는 컨트롤에는 가상 디렉터리를 상대 경로 반환합니다. 에 있는 페이지에 대 한 예를 들어 http://app/folder/page.aspx, 속성은 반환 ~ / folder/page.aspx 합니다.
 
-## <a name="asynctimeout"></a>Asynctimeout은
+## <a name="asynctimeout"></a>AsyncTimeout
 
 비동기 페이지 처리에 사용 되는 제한 시간을 가져오거나 설정 합니다. (비동기 페이지 살펴보겠습니다이 모듈의 뒷부분에 나오는.)
 
@@ -600,11 +600,13 @@ RegisterStartupScript 메서드가 RegisterClientScriptBlock 방법으로 동일
 
 다음은 ClientScriptManager 클래스의 다른 유용한 메서드 중 일부입니다.
 
-| **GetCallbackEventReference** | 이 모듈의 앞부분에 나오는 스크립트 콜백을 참조 하십시오. |
-| --- | --- |
-| **GetPostBackClientHyperlink** | JavaScript 참조를 가져옵니다 (javascript:&lt;호출&gt;) 클라이언트 쪽 이벤트에서 다시 게시 하려면 사용할 수 있는 합니다. |
-| **GetPostBackEventReference** | 클라이언트에서 다시 게시를 시작 하려면 사용할 수 있는 문자열을 가져옵니다. |
-| **GetWebResourceUrl** | 어셈블리에 포함 된 리소스에 대 한 URL을 반환 합니다. 와 함께에서 사용 해야 **RegisterClientScriptResource**합니다. |
-| **RegisterClientScriptResource** | 페이지와 웹 리소스를 등록합니다. 이들은 새 WebResource.axd 처리기에서 처리 및 어셈블리에 포함 된 리소스입니다. |
-| **RegisterHiddenField** | 페이지와 숨겨진된 양식 필드를 등록합니다. |
-| **RegisterOnSubmitStatement** | HTML 폼이 전송 될 때 실행 되는 클라이언트 쪽 코드를 등록 합니다. |
+
+|  <strong>GetCallbackEventReference</strong>   |                                                 이 모듈의 앞부분에 나오는 스크립트 콜백을 참조 하십시오.                                                 |
+|-----------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+|  <strong>GetPostBackClientHyperlink</strong>  |                JavaScript 참조를 가져옵니다 (javascript:&lt;호출&gt;) 클라이언트 쪽 이벤트에서 다시 게시 하려면 사용할 수 있는 합니다.                 |
+|  <strong>GetPostBackEventReference</strong>   |                                   클라이언트에서 다시 게시를 시작 하려면 사용할 수 있는 문자열을 가져옵니다.                                    |
+|      <strong>GetWebResourceUrl</strong>       | 어셈블리에 포함 된 리소스에 대 한 URL을 반환 합니다. 와 함께에서 사용 해야 <strong>RegisterClientScriptResource</strong>합니다. |
+| <strong>RegisterClientScriptResource</strong> |     페이지와 웹 리소스를 등록합니다. 이들은 새 WebResource.axd 처리기에서 처리 및 어셈블리에 포함 된 리소스입니다.      |
+|     <strong>RegisterHiddenField</strong>      |                                                 페이지와 숨겨진된 양식 필드를 등록합니다.                                                 |
+|  <strong>RegisterOnSubmitStatement</strong>   |                                  HTML 폼이 전송 될 때 실행 되는 클라이언트 쪽 코드를 등록 합니다.                                   |
+

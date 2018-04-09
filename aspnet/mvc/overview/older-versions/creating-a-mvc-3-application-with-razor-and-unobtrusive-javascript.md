@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript
-title: "만드는 MVC 3 Application with Razor and Unobtrusive JavaScript | Microsoft Docs"
+title: 만드는 MVC 3 Application with Razor and Unobtrusive JavaScript | Microsoft Docs
 author: microsoft
-description: "사용자 목록 예제 웹 응용 프로그램 Razor 뷰 엔진을 사용 하 여 ASP.NET MVC 3 응용 프로그램을 만드는 간단한 방법을 보여 줍니다. 샘플 응용 프로그램 s 중..."
+description: 사용자 목록 예제 웹 응용 프로그램 Razor 뷰 엔진을 사용 하 여 ASP.NET MVC 3 응용 프로그램을 만드는 간단한 방법을 보여 줍니다. 샘플 응용 프로그램 s 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/01/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript
 msc.type: authoredcontent
-ms.openlocfilehash: 29b45c07b5498542abbf22c4c3001b1cee41edc9
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9b273f6827cad2078b581d6da7b127198dfddaa5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript"></a>만드는 MVC 3 Application with Razor and Unobtrusive JavaScript
 ====================
@@ -54,7 +54,7 @@ by [Microsoft](https://github.com/microsoft)
 
 ![Soln Exp](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image5.png)
 
-편집 된  *\_Layout.cshtml* 내부의 태그를 바꾸고 파일는 `<div>` 라는 요소 `logindisplay` 메시지와 함께  *&quot;* 로그인 비활성화&quot;. 다음 예제에서는 새 태그를 보여 줍니다.
+편집 된  <em>\_Layout.cshtml</em> 내부의 태그를 바꾸고 파일는 `<div>` 라는 요소 `logindisplay` 메시지와 함께 <em>&quot;</em>로그인 비활성화&quot;. 다음 예제에서는 새 태그를 보여 줍니다.
 
 [!code-cshtml[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample1.cshtml)]
 
@@ -122,7 +122,7 @@ by [Microsoft](https://github.com/microsoft)
 
 [!code-csharp[Main](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/samples/sample8.cs)]
 
-마우스 오른쪽 단추로 클릭는 `Details` 메서드와 선택 **뷰 추가**합니다. 되어 있는지 확인은 **데이터 클래스 보기** 상자에 **Mvc3Razor.Models.UserModel*** 합니다.* 설정 **콘텐츠를 볼** 를 **세부 정보** 클릭 하 고 **추가**합니다.
+마우스 오른쪽 단추로 클릭는 `Details` 메서드와 선택 <strong>뷰 추가</strong>합니다. 되어 있는지 확인은 <strong>데이터 클래스 보기</strong> 상자에 <strong>Mvc3Razor.Models.UserModel</strong><em>합니다.</em> 설정 <strong>콘텐츠를 볼</strong> 를 <strong>세부 정보</strong> 클릭 하 고 <strong>추가</strong>합니다.
 
 ![추가 세부 정보 보기](creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript/_static/image11.png)
 

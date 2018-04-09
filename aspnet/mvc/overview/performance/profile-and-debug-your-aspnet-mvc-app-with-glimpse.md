@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse
-title: "프로 파일링 하 고 Glimpse 사용해 ASP.NET MVC 응용 프로그램 디버그 | Microsoft Docs"
+title: 프로 파일링 하 고 Glimpse 사용해 ASP.NET MVC 응용 프로그램 디버그 | Microsoft Docs
 author: Rick-Anderson
-description: "Glimpse은 활발히 및 자세한 성능을 제공 하는 오픈 소스 NuGet 패키지의 제품군 증가 하 고, 디버깅 및 ASP.NET에 대 한 진단 정보는 중..."
+description: Glimpse은 활발히 및 자세한 성능을 제공 하는 오픈 소스 NuGet 패키지의 제품군 증가 하 고, 디버깅 및 ASP.NET에 대 한 진단 정보는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/26/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse
 msc.type: authoredcontent
-ms.openlocfilehash: 9cfdced21251b482ca527dda9c3a698de77cc8ca
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 6ac23256c57116de81c7bf690d5ce743301c75ce
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="profile-and-debug-your-aspnet-mvc-app-with-glimpse"></a>프로 파일링 하 고 Glimpse 사용해 ASP.NET MVC 응용 프로그램 디버그
 ====================
@@ -55,7 +55,7 @@ NuGet 패키지 관리자 콘솔에서 또는 Glimpse를 설치할 수는 **NuGe
 <a id="eg"></a>
 ## <a name="enable-glimpse-for-localhost"></a>로컬 호스트에 대 한 이해를 사용 하도록 설정
 
-Http://localhost로 이동:&lt;포트 번호&gt;/glimpse.axd 누른는 **Glimpse 켜기** 단추입니다.
+로 이동 http://localhost: &lt;포트 번호&gt;/glimpse.axd 누른는 <strong>Glimpse 켜기</strong> 단추입니다.
 
 ![Glimpse axd 페이지](profile-and-debug-your-aspnet-mvc-app-with-glimpse/_static/image4.png)
 
@@ -124,7 +124,7 @@ Glimpse 기본 보안 정책을 이해 표시할 데이터를 로컬 호스트�
 추가 역할에 대 한 정보를 참조 하세요. 내 [멤버 자격, OAuth, SQL 데이터베이스와 Secure ASP.NET MVC 5 웹 응용 프로그램을 Azure에 배포](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/) 자습서입니다.
 
 <a id="addRes"></a>
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 - [멤버 자격, OAuth, SQL 데이터베이스와 보안 ASP.NET MVC 5 앱을 Azure에 배포](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)
 - [구성 슬라이드](http://getglimpse.com/Docs/Configuration) -Doc 페이지 탭, 런타임 정책을, 로깅 등을 구성 합니다.

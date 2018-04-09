@@ -1,8 +1,8 @@
 ---
 uid: web-pages/readme/overview
-title: "WebMatrix 추가 정보 | Microsoft Docs"
+title: WebMatrix 추가 정보 | Microsoft Docs
 author: rick-anderson
-description: "WebMatrix 및 ASP.NET 웹 페이지 (Razor) 1.0 릴리스 추가 정보"
+description: WebMatrix 및 ASP.NET 웹 페이지 (Razor) 1.0 릴리스 추가 정보
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/06/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/readme
 msc.type: content
-ms.openlocfilehash: b8402aa3db1b2566878c4d56212facbbb2925eec
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c65ee58b8c13b0b4acb6e7c9b631c8235e791506
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="webmatrix-readme"></a>WebMatrix 추가 정보
 ====================
@@ -126,7 +126,7 @@ ms.lasthandoff: 01/24/2018
 - [변경 내용](#Changes)
 - [문제](#Issues)
 
-#### <a id="NewFeatures"></a>새로운 기능
+#### <a id="NewFeatures"></a>  새로운 기능
 
 #### <a name="new-configuration-setting-added-to-disable-the-package-manager"></a>패키지 관리자를 사용 하지 않도록 설정에 구성 설정을 추가 하는 새로운 기능:
 
@@ -142,7 +142,7 @@ ms.lasthandoff: 01/24/2018
 > `webPages:AdminFolderVirtualPath` 에 추가할 수 있는 키의 *web.config* 사용할 패키지 관리자의 위치를 지정 하는 파일의 이름이 변경는 `asp:` 대신 네임 스페이스는 `webPages` 네임 스페이스입니다. 이 요소를 사용한 경우 구성 파일에서 이름을 바꿀 해야 있습니다.
 
 
-#### <a id="Issues"></a>알려진된 문제
+#### <a id="Issues"></a>  알려진된 문제
 
 #### <a name="issue-passwords-for-membership-users-no-longer-recognized"></a>더 이상 인식 하지 멤버 자격 사용자에 대 한 암호 문제:
 
@@ -226,7 +226,7 @@ ms.lasthandoff: 01/24/2018
 > .NET Framework 버전 4 제거한 다음 다시 설치 하는 경우에 Razor 구문이 있는 ASP.NET 웹 페이지 비활성화 됩니다. 와 페이지는 *.cshtml* 확장 제대로 실행 되지 않습니다. 컴퓨터 루트에 있는 어셈블리를 등록 하는 ASP.NET 웹 페이지 *web.config* 파일 및.NET Framework를 제거 합니다. 해당 파일을 제거 합니다. .NET Framework를 다시 설치 하는 구성 파일의 새 버전을 설치 하지만 ASP.NET 웹 페이지 어셈블리에 대 한 참조를 추가 하지 않습니다.
 > 
 > **해결 방법** .NET Framework를 다시 설치한 후 Razor 구문이 있는 ASP.NET 웹 페이지를 다시 설치 합니다. 이렇게 하면 다음 요소를 추가 *web.config* 일반적으로 다음 위치에 있는 컴퓨터 루트에 파일:  
->   
+> 
 > `C:\Windows\Microsoft.NET\Framework\v4.0.30319\Config (32-bit)`  
 > `C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Config (64-bit)`
 > 
@@ -236,9 +236,9 @@ ms.lasthandoff: 01/24/2018
 #### <a name="issue-extensionless-urls-do-not-find-cshtmlvbhtml-files-on-iis-7-or-iis-75"></a>문제: 확장명 없는 Url 찾지 못하면 IIS 7.5 또는 IIS 7에서.cshtml/.vbhtml 파일
 
 > IIS 7 또는 IIS 7.5에서 다음과 같은 URL로 요청은 페이지를 찾을 수는 *.cshtml* 또는 *.vbhtml* 확장:  
->   
+> 
 > `http://www.example.com/ExampleSite/ExampleFile`  
->   
+> 
 > URL 다시 쓰기 해제 되어 기본적으로 IIS 7.5 또는 IIS 7에 대 한 문제가 발생 합니다. 문제일 수 상황은 IIS Express를 사용 하 여 로컬로 테스트할 때 문제가 표시 되지 않으면 하지만 웹 사이트 호스팅 웹 사이트에 배포 하는 경우 발생 합니다.
 > 
 > **해결 방법**
@@ -257,10 +257,11 @@ ms.lasthandoff: 01/24/2018
 > 
 > 1. 데이터베이스 엔진 어셈블리를 복사는 *Bin* 대상 컴퓨터에 응용 프로그램의 폴더 (및 하위 폴더):  
 > 
->     - Copy *C:\Program Files\Microsoft SQL Server Edition\v4.0\Desktop\System.Data.SqlServerCe.dll*   
->         **to** *\Bin*
->     - Copy *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\****to***\Bin\x86*
->     - Copy *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\** **to***\Bin\amd64*
+>    - Copy *C:\Program Files\Microsoft SQL Server Edition\v4.0\Desktop\System.Data.SqlServerCe.dll*   
+>        **to** *\Bin*
+>    - Copy <em>C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\</em><strong><em>to</em></strong>\Bin\x86*
+>    - Copy <em>C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\</em>* <strong>to</strong><em>\Bin\amd64</em>
+> 
 > 2. 웹 사이트의 루트 폴더에 작성 하거나 열을 *web.config* 파일입니다. (이 파일 형식은 WebMatrix 1.0에서 클릭 하면 사용할 수는 **모든** 에 **파일 형식을 선택** 대화 상자.)
 > 3. 다음 요소를 자식으로 추가 된 `<configuration>` 요소 (에 포함 되지 않은 `<system.web>` 요소):
 > 
@@ -279,7 +280,7 @@ ms.lasthandoff: 01/24/2018
 
 #### <a name="issue-applicationpart-resources-are-externally-accessible"></a>문제: "ApplicationPart" 리소스는 외부에서 액세스할 수
 
-> 어셈블리에서 파생 되는 개체를 포함 하는 경우는 `ApplicationPart` 클래스, 어셈블리의 리소스에 의해 노출 되는 `ResourceRouteHandler` 클래스입니다. 예를 들어 다음 URL:  
+> 어셈블리에서 파생 되는 개체를 포함 하는 경우는 `ApplicationPart` 클래스, 어셈블리의 리소스에 의해 노출 되는 `ResourceRouteHandler` 클래스입니다. 예를 들어 다음 URL을 가정해 봅니다.  
 >   
 > `~/r.ashx/System.Web.WebPages.Administration/Resources/AdminResources.resources`  
 >   
@@ -412,7 +413,7 @@ SQL Server Compact는 다음 URL에서 사용할 수 있는 추가 정보 파일
 
 WebMatrix의 일부로 SQL Server Compact 설치와 관련 된 문제에 대 한 정보를 참조 하십시오. [WebMatrix 설치 문제](#Known_Issues_Installation) 이 문서의 앞부분에 설명 합니다.
 
-### <a id="Known_Issues_Installing_Applications"></a>응용 프로그램 설치
+### <a id="Known_Issues_Installing_Applications"></a>  응용 프로그램 설치
 
 #### <a name="issue-installing-an-application-can-take-a-long-time-if-the-users-my-documents-folder-is-redirected-to-a-network-share"></a>문제: 응용 프로그램을 설치는 시간이 오래 걸릴 수는 사용자의 내 문서 폴더를 네트워크 공유로 리디렉션되면
 
@@ -420,7 +421,7 @@ WebMatrix의 일부로 SQL Server Compact 설치와 관련 된 문제에 대 한
 > 없음 응용 프로그램을 설치 하려면 시간이 오래 걸릴 수 있지만 제대로 설치 됩니다.
 
 
-### <a id="Known_Issues_Publishing_Applications"></a>응용 프로그램 게시
+### <a id="Known_Issues_Publishing_Applications"></a>  응용 프로그램 게시
 
 #### <a name="issue-required-permissions-cannot-be-acquired-error-when-publishing-a-sql-compact-database"></a>문제: "는 데 필요한 권한을 얻을 수 없습니다" 오류 SQL Compact 데이터베이스를 게시 하는 경우
 

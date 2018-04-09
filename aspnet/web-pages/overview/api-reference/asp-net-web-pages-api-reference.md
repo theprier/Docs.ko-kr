@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/api-reference/asp-net-web-pages-api-reference
-title: "ASP.NET 웹 페이지 (Razor) API 빠른 참조 | Microsoft Docs"
+title: ASP.NET 웹 페이지 (Razor) API 빠른 참조 | Microsoft Docs
 author: tfitzmac
-description: "이 페이지에는 가장 일반적으로 사용 되는 개체, 속성 및 Razor 구문이 있는 ASP.NET 웹 페이지를 프로그래밍 하는 방법의 간단한 예제와 함께 목록이 들어 있습니다."
+description: 이 페이지에는 가장 일반적으로 사용 되는 개체, 속성 및 Razor 구문이 있는 ASP.NET 웹 페이지를 프로그래밍 하는 방법의 간단한 예제와 함께 목록이 들어 있습니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/api-reference/asp-net-web-pages-api-reference
 msc.type: authoredcontent
-ms.openlocfilehash: 35f91f4dbea4881d9dabc4ab7c6b96dbb6a01ea2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5f9d84f4d453583d7d4eae12e4fc510275255616
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-pages-razor-api-quick-reference"></a>ASP.NET 웹 페이지 (Razor) API 빠른 참조
 ====================
@@ -158,13 +158,13 @@ HTTP 쿠키의 값을 가져오거나 설정 합니다.
 
 ### `Request.Form[key]`
 
-(문자열)으로 폼에 게시 된 데이터를 가져옵니다. `Request[key]`둘 다 확인는 `Request.Form` 및 `Request.QueryString` 컬렉션입니다.
+(문자열)으로 폼에 게시 된 데이터를 가져옵니다. `Request[key]` 둘 다 확인는 `Request.Form` 및 `Request.QueryString` 컬렉션입니다.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample19.cs)]
 
 ### `Request.QueryString[key]`
 
-URL 쿼리 문자열에 지정 된 데이터를 가져옵니다. `Request[key]`둘 다 확인는 `Request.Form` 및 `Request.QueryString` 컬렉션입니다.
+URL 쿼리 문자열에 지정 된 데이터를 가져옵니다. `Request[key]` 둘 다 확인는 `Request.Form` 및 `Request.QueryString` 컬렉션입니다.
 
 [!code-csharp[Main](asp-net-web-pages-api-reference/samples/sample20.cs)]
 
@@ -686,13 +686,13 @@ SMTP 서버에 대 한 암호를 설정합니다. 일반적으로이 속성 설�
 ### `WebMail.Send(to, subject, body [, from] [, cc] [, filesToAttach] [, isBodyHtml]`  
  `[, additionalHeaders])`
 
-전자 메일 메시지를 보냅니다.
+이메일 메시지를 보냅니다.
 
 [!code-css[Main](asp-net-web-pages-api-reference/samples/sample104.css)]
 
 ### `WebMail.SmtpServer`
 
-SMTP 서버 이름을 설정합니다. 일반적으로이 속성 설정 된*\_AppStart* 페이지.
+SMTP 서버 이름을 설정합니다. 일반적으로이 속성 설정 된<em>\_AppStart</em> 페이지.
 
 [!code-html[Main](asp-net-web-pages-api-reference/samples/sample105.html)]
 

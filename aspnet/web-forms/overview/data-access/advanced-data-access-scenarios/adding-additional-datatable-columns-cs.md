@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/adding-additional-datatable-columns-cs
-title: "추가 DataTable 열 (C#)을 추가 | Microsoft Docs"
+title: 추가 DataTable 열 (C#)을 추가 | Microsoft Docs
 author: rick-anderson
-description: "TableAdapter 마법사를 사용 하 여 형식화 된 데이터 집합을 만들를 해당 DataTable 기본 데이터베이스 쿼리에서 반환 되는 열을 포함 합니다. 하지만 있습니다..."
+description: TableAdapter 마법사를 사용 하 여 형식화 된 데이터 집합을 만들를 해당 DataTable 기본 데이터베이스 쿼리에서 반환 되는 열을 포함 합니다. 하지만 있습니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/18/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/adding-additional-datatable-columns-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2982af897b433706889cb4eda79dcb4e76baea62
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9c2232c9867fc605a5b5d3973d4dbe31895841ca
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-additional-datatable-columns-c"></a>추가 DataTable 열 (C#)를 추가합니다.
 ====================
@@ -41,9 +41,9 @@ TableAdapter s 주 쿼리를 반영 하는 DataTable의 스키마의 모델에�
 
 에 *새 저장 프로시저 만들기 형식의 DataSet s Tableadapter에 대 한* 라는 형식화 된 데이터 집합을 만들었습니다 자습서 `NorthwindWithSprocs`합니다. 이 데이터 집합에는 현재 두 개의 DataTables 포함: `ProductsDataTable` 및 `EmployeesDataTable`합니다. `ProductsTableAdapter` 에 다음과 같은 세 가지 메서드가 있습니다.
 
-- `GetProducts`-주 쿼리에서의 모든 레코드를 반환 하는 `Products` 테이블
-- `GetProductsByCategoryID(categoryID)`-지정 된 모든 제품을 반환 *categoryID*합니다.
-- `GetProductByProductID(productID)`-지정 된 특정 제품을 반환 *productID*합니다.
+- `GetProducts` -주 쿼리에서의 모든 레코드를 반환 하는 `Products` 테이블
+- `GetProductsByCategoryID(categoryID)` -지정 된 모든 제품을 반환 *categoryID*합니다.
+- `GetProductByProductID(productID)` -지정 된 특정 제품을 반환 *productID*합니다.
 
 주 쿼리 및 두 개의 추가 메서드를 모두 반환 즉의 모든 열에서 데이터 필드의 동일한 집합의 `Products` 테이블입니다. 상호 관련 된 하위 쿼리가 없습니다 또는 `JOIN` 관련된 데이터를 가져오는 s는 `Categories` 또는 `Suppliers` 테이블입니다. 따라서는 `ProductsDataTable` 의 각 필드에 대 한 해당 열이 고 `Products` 테이블입니다.
 
@@ -209,12 +209,12 @@ DataTable에 열을 추가 하는 대신 다른 데이터 필드를 반환 하�
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Randy Schmidt, Jacky Goor, 박 광 준 Leigh 및 Hilton Giesenow 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](updating-the-tableadapter-to-use-joins-cs.md)
-[다음](working-with-computed-columns-cs.md)
+> [!div class="step-by-step"]
+> [이전](updating-the-tableadapter-to-use-joins-cs.md)
+> [다음](working-with-computed-columns-cs.md)

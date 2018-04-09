@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/executing-several-animations-after-each-other-cs
-title: "다른 (C#) 한 후 여러 애니메이션 실행 | Microsoft Docs"
+title: 다른 (C#) 한 후 여러 애니메이션 실행 | Microsoft Docs
 author: wenz
-description: "ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트롤 뿐 아니라 애니메이션 컨트롤을 추가 하는 전체 프레임 워크. 떨어져서를 실행할 수 있습니다..."
+description: ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트롤 뿐 아니라 애니메이션 컨트롤을 추가 하는 전체 프레임 워크. 떨어져서를 실행할 수 있습니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/executing-several-animations-after-each-other-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9d4322690132fe3829e3454f0aa7ff38acd8eb04
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 836f0bba890a03e74ae62c2df029b7525b34275c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="executing-several-animations-after-each-other-c"></a>여러 개의 애니메이션 다른 (C#) 한 후 실행
 ====================
@@ -43,7 +43,7 @@ ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트�
 
 [!code-css[Main](executing-several-animations-after-each-other-cs/samples/sample3.css)]
 
-그런 다음 추가 `AnimationExtender` 페이지에 제공 하는 `ID`, `TargetControlID` 특성과 참가`runat="server":`
+그런 다음 추가 `AnimationExtender` 페이지에 제공 하는 `ID`, `TargetControlID` 특성과 참가 `runat="server":`
 
 [!code-aspx[Main](executing-several-animations-after-each-other-cs/samples/sample4.aspx)]
 
@@ -63,6 +63,6 @@ ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트�
 
 높이 감소 합니다 ([전체 크기 이미지를 보려면 클릭](executing-several-animations-after-each-other-cs/_static/image6.png))
 
->[!div class="step-by-step"]
-[이전](executing-several-animations-at-the-same-time-cs.md)
-[다음](animation-depending-on-a-condition-cs.md)
+> [!div class="step-by-step"]
+> [이전](executing-several-animations-at-the-same-time-cs.md)
+> [다음](animation-depending-on-a-condition-cs.md)

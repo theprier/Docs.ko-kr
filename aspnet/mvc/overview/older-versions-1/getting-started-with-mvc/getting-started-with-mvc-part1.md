@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part1
-title: "ASP.NET MVC 소개 | Microsoft Docs"
+title: ASP.NET MVC 소개 | Microsoft Docs
 author: shanselman
-description: "ASP.NET MVC의 기본 사항을 소개 하는 초보자를 위한 자습서입니다. 읽기 및 쓰기는 데이터베이스에서 단순 웹 응용 프로그램을 만듭니다."
+description: ASP.NET MVC의 기본 사항을 소개 하는 초보자를 위한 자습서입니다. 읽기 및 쓰기는 데이터베이스에서 단순 웹 응용 프로그램을 만듭니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part1
 msc.type: authoredcontent
-ms.openlocfilehash: 08c30f4aab77bff64ed3ab874d13cc5dc863fc99
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 476d832e389b9b5a26fe2d552ca648c79b100056
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="intro-to-aspnet-mvc"></a>ASP.NET MVC 소개
 ====================
@@ -84,5 +84,5 @@ Visual Basic 또는 Visual C#을 사용 하 여 응용 프로그램을 만들 �
 
 즉시 이러한 기본 템플릿은 하면 두 개의 페이지를 방문 하 고 기본 로그인 페이지를 제공 합니다. 이 응용 프로그램의 작동 방식을 변경 하 고 프로세스에서 ASP.NET MVC에 대해 약간 배우 살펴보겠습니다. 브라우저를 닫고 일부 코드를 변경할 수 있습니다.
 
->[!div class="step-by-step"]
-[다음](getting-started-with-mvc-part2.md)
+> [!div class="step-by-step"]
+> [다음](getting-started-with-mvc-part2.md)

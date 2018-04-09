@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-team-project-in-tfs
-title: "TFS에서 팀 프로젝트를 만들면 | Microsoft Docs"
+title: TFS에서 팀 프로젝트를 만들면 | Microsoft Docs
 author: jrjlee
-description: "이 항목에서는 Team Foundation Server (TFS) 2010에서 새 팀 프로젝트를 만드는 방법을 설명 합니다."
+description: 이 항목에서는 Team Foundation Server (TFS) 2010에서 새 팀 프로젝트를 만드는 방법을 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-team-project-in-tfs
 msc.type: authoredcontent
-ms.openlocfilehash: ef8cddb7733c1f8cacd24c5cf341a42741d25a95
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 79c069a601c0eafd84ae142241895428052acd29
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-team-project-in-tfs"></a>TFS에서 팀 프로젝트 만들기
 ====================
@@ -27,7 +27,7 @@ ms.lasthandoff: 01/24/2018
 > 이 항목에서는 Team Foundation Server (TFS) 2010에서 새 팀 프로젝트를 만드는 방법을 설명 합니다.
 
 
-이 항목의 Fabrikam, inc. 라는 가상 회사의 엔터프라이즈 배포 요구 사항을 바탕으로 하는 자습서 시리즈의 일부를 형성 합니다. 이 자습서 시리즈 샘플 솔루션 & #x 2014;을 사용 하는 [Contact Manager 솔루션](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; 현실적인 수준의 복잡성을 Windows ASP.NET MVC 3 응용 프로그램을 포함 하 여 웹 응용 프로그램을 나타내기 위해 Communication Foundation (WCF) 서비스 및 데이터베이스 프로젝트를 제공 합니다.
+이 항목의 Fabrikam, inc. 라는 가상 회사의 엔터프라이즈 배포 요구 사항을 바탕으로 하는 자습서 시리즈의 일부를 형성 합니다. 샘플 솔루션을 사용 하는 자습서 시리즈가&#x2014;는 [Contact Manager 솔루션](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;현실적인 수준의 복잡성, Windows Communication ASP.NET MVC 3 응용 프로그램을 포함 하 여 웹 응용 프로그램을 나타내기 위해 WCF (foundation) 서비스 및 데이터베이스 프로젝트.
 
 ## <a name="task-overview"></a>작업 개요
 
@@ -107,11 +107,11 @@ ms.lasthandoff: 01/24/2018
 
     ![](creating-a-team-project-in-tfs/_static/image9.png)
 
-    > [!NOTE]
-    > 나타날 수 있습니다는 **HTTP 404 찾을 수 없음** 오류 이중 HTTP 인코딩 버그 때문에 발생 합니다. 이 경우이 URL을 바꿉니다.   
-    > [*site collection URL*]/\_layouts/permsetup.aspx  
-    > 예:  
-    > http://tfs/sites/Fabrikam%20Web%20Projects/\_layouts/permsetup.aspx
+   > [!NOTE]
+   > 나타날 수 있습니다는 <strong>HTTP 404 찾을 수 없음</strong> 오류 이중 HTTP 인코딩 버그 때문에 발생 합니다. 이 경우이 URL을 바꿉니다.   
+   > [<em>site collection URL</em>]/\_layouts/permsetup.aspx  
+   > 예를 들어:  
+   > http://tfs/sites/Fabrikam%20Web%20Projects/\_layouts/permsetup.aspx
 8. 에 **그룹이이 사이트에 대 한 설정** 페이지에서 사용자를 팀 프로젝트를 만들고는 추가 **소유자** 그룹을 마우스 클릭 **확인**합니다.
 
     ![](creating-a-team-project-in-tfs/_static/image10.png)
@@ -202,6 +202,6 @@ ms.lasthandoff: 01/24/2018
 
 TFS에서 팀 프로젝트를 만드는 방법에 광범위 한 지침을 참조 하십시오. [팀 프로젝트를 만들](https://msdn.microsoft.com/library/ms181477(v=VS.100).aspx)합니다. 사용자가 팀 프로젝트 컬렉션 내에서 새 팀 프로젝트를 만드는 설정에 대 한 자세한 내용은 참조 하십시오. [팀 프로젝트 컬렉션에 대 한 관리자 권한 설정](https://msdn.microsoft.com/library/dd547204.aspx)합니다. 팀 프로젝트에 사용자를 추가 하는 방법에 대 한 자세한 내용은 참조 하십시오. [팀 프로젝트에 사용자 추가](https://msdn.microsoft.com/library/bb558971.aspx)합니다.
 
->[!div class="step-by-step"]
-[이전](configuring-team-foundation-server-for-web-deployment.md)
-[다음](adding-content-to-source-control.md)
+> [!div class="step-by-step"]
+> [이전](configuring-team-foundation-server-for-web-deployment.md)
+> [다음](adding-content-to-source-control.md)

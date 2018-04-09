@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-build-definition-that-supports-deployment
-title: "배포를 지원 하는 빌드 정의 만드는 | Microsoft Docs"
+title: 배포를 지원 하는 빌드 정의 만드는 | Microsoft Docs
 author: jrjlee
-description: "Team Foundation Server (TFS) 2010에서 모든 종류의 빌드를 수행 하려면 팀 프로젝트 내에서 빌드 정의 만드는 데 필요 합니다. 이 항목 des 중..."
+description: Team Foundation Server (TFS) 2010에서 모든 종류의 빌드를 수행 하려면 팀 프로젝트 내에서 빌드 정의 만드는 데 필요 합니다. 이 항목 des 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-build-definition-that-supports-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: e5610753968328e5d0f1dba4cbbfed08480fd773
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c5ea0bd9f01bb57b96abd349741f304c0093d887
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-build-definition-that-supports-deployment"></a>배포를 지원 하는 빌드 정의 만들기
 ====================
@@ -27,9 +27,9 @@ ms.lasthandoff: 01/24/2018
 > Team Foundation Server (TFS) 2010에서 모든 종류의 빌드를 수행 하려면 팀 프로젝트 내에서 빌드 정의 만드는 데 필요 합니다. 이 항목에서는 TFS에서 새 빌드 정의 만드는 방법과 팀 빌드의 빌드 프로세스의 일부로 웹 배포를 제어 하는 방법을 설명 합니다.
 
 
-이 항목의 Fabrikam, inc. 라는 가상 회사의 엔터프라이즈 배포 요구 사항을 바탕으로 하는 자습서 시리즈의 일부를 형성 합니다. 이 자습서 시리즈 샘플 솔루션 & #x 2014;을 사용 하는 [Contact Manager 솔루션](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; 현실적인 수준의 복잡성을 Windows ASP.NET MVC 3 응용 프로그램을 포함 하 여 웹 응용 프로그램을 나타내기 위해 Communication Foundation (WCF) 서비스 및 데이터베이스 프로젝트를 제공 합니다.
+이 항목의 Fabrikam, inc. 라는 가상 회사의 엔터프라이즈 배포 요구 사항을 바탕으로 하는 자습서 시리즈의 일부를 형성 합니다. 샘플 솔루션을 사용 하는 자습서 시리즈가&#x2014;는 [Contact Manager 솔루션](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;현실적인 수준의 복잡성, Windows Communication ASP.NET MVC 3 응용 프로그램을 포함 하 여 웹 응용 프로그램을 나타내기 위해 WCF (foundation) 서비스 및 데이터베이스 프로젝트.
 
-이 자습서의 핵심에는 배포 방법에 설명 된 분할 프로젝트 파일 접근 방식에 따라 [프로젝트 파일 이해](../web-deployment-in-the-enterprise/understanding-the-project-file.md), 빌드 및 배포 프로세스는 두 개의 프로젝트 파일 & #x 2014로 제어 되; o 환경 관련 빌드 및 배포 설정을 포함 하는 하나 및 모든 대상 환경에 적용 되는 빌드 명령이 포함 된 ne 합니다. 빌드 시 환경 관련 프로젝트 파일은 빌드 지침의 전체 집합을 구성 하기 위해 환경을 알 수 없는 프로젝트 파일에 병합 됩니다.
+이 자습서의 핵심에는 배포 방법에 설명 된 분할 프로젝트 파일 접근 방식에 따라 [프로젝트 파일 이해](../web-deployment-in-the-enterprise/understanding-the-project-file.md), 두 개의 프로젝트 파일에 빌드 및 배포 프로세스에 의해 제어 되는&#x2014;하나 환경 관련 빌드 및 배포 설정을 포함 하는 하나 및 모든 대상 환경에 적용 되는 빌드 명령이 포함 된입니다. 빌드 시 환경 관련 프로젝트 파일은 빌드 지침의 전체 집합을 구성 하기 위해 환경을 알 수 없는 프로젝트 파일에 병합 됩니다.
 
 ## <a name="task-overview"></a>작업 개요
 
@@ -62,7 +62,7 @@ ms.lasthandoff: 01/24/2018
 다음 섹션에는 새 빌드 정의 만들어이 프로세스를 구현 하는 방법을 설명 합니다.
 
 > [!NOTE]
-> 이 절차 & #x 2014; 단일 자동화 된 프로세스 빌드 테스트 하 고, 및 솔루션 & #x 2014 배포; 배포를 테스트 환경에 가장 적합 한 수입니다. 스테이징 및 프로덕션 환경에 대 한 있습니다 가능성이 훨씬 더 이전 버전 으로부터 이미 확인 및 테스트 환경에서 유효성을 검사 하는 콘텐츠를 배포 합니다. 이 방법은 다음 항목에서 설명 [는 특정 빌드 배포](deploying-a-specific-build.md)합니다.
+> 이 절차&#x2014;단일 자동화 된 프로세스를 작성, 테스트 하 고, 및에서 솔루션을 배포&#x2014;배포를 테스트 환경에 가장 적합 한 수입니다. 스테이징 및 프로덕션 환경에 대 한 있습니다 가능성이 훨씬 더 이전 버전 으로부터 이미 확인 및 테스트 환경에서 유효성을 검사 하는 콘텐츠를 배포 합니다. 이 방법은 다음 항목에서 설명 [는 특정 빌드 배포](deploying-a-specific-build.md)합니다.
 
 
 ### <a name="who-performs-this-procedure"></a>이 절차를 수행 하는 사람?
@@ -133,7 +133,7 @@ CI를 사용 하 여 빌드 정의 구성한 경우에 두 가지 방법으로 �
 
     ![](creating-a-build-definition-that-supports-deployment/_static/image10.png)
 
-진행률 및; 인 & #x 2014; 수동 또는 자동으로 트리거 여부에 관계 없이 빌드 & #x 2014의 결과 검토 하려면에서 빌드 정의 두 번 클릭은 **팀 탐색기** 창. 열립니다는 **빌드 탐색기** 탭 합니다.
+진행률 및 빌드 결과 검토 하려면&#x2014;수동 또는 자동으로 트리거 여부에 관계 없이&#x2014;에서 빌드 정의 두 번 클릭은 **팀 탐색기** 창. 열립니다는 **빌드 탐색기** 탭 합니다.
 
 ![](creating-a-build-definition-that-supports-deployment/_static/image11.png)
 
@@ -161,6 +161,6 @@ TFS 광범위 한 빌드 프로세스를 모니터링 하는 기능을 제공 �
 
 빌드 정의 만드는 방법에 대 한 자세한 내용은 참조 하십시오. [기본 빌드 정의 만들기](https://msdn.microsoft.com/library/ms181716.aspx) 및 [빌드 프로세스 정의](https://msdn.microsoft.com/library/ms181715.aspx)합니다. 빌드를 큐에 대 한 자세한 지침을 참조 하십시오. [빌드 큐에 대기](https://msdn.microsoft.com/library/ms181722.aspx)합니다.
 
->[!div class="step-by-step"]
-[이전](configuring-a-tfs-build-server-for-web-deployment.md)
-[다음](deploying-a-specific-build.md)
+> [!div class="step-by-step"]
+> [이전](configuring-a-tfs-build-server-for-web-deployment.md)
+> [다음](deploying-a-specific-build.md)

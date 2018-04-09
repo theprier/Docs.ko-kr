@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/advanced/http-cookies
-title: "ASP.NET Web API의에서 HTTP 쿠키 | Microsoft Docs"
+title: ASP.NET Web API의에서 HTTP 쿠키 | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/17/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/advanced/http-cookies
 msc.type: authoredcontent
-ms.openlocfilehash: e17c51946a268aa13ec035d18dc516928c9f4419
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 363ca975cf75b635b766a53eeda87cf957eed60c
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/22/2018
 ---
 <a name="http-cookies-in-aspnet-web-api"></a>ASP.NET Web API의에서 HTTP 쿠키
 ====================
@@ -28,7 +28,7 @@ ms.lasthandoff: 11/10/2017
 
 이 섹션에서는 쿠키를 HTTP 수준에서 구현 하는 방법에 대해 간략하게 설명 합니다. 자세한 내용은 참조 하십시오. [RFC 6265](http://tools.ietf.org/html/rfc6265)합니다.
 
-쿠키는 HTTP 응답에는 서버에서 전송 하는 데이터의 일부입니다. (선택 사항) 클라이언트는 쿠키를 저장 하 고 subsequet 요청에서 반환 합니다. 이렇게 하면 클라이언트 및 서버 상태를 공유 합니다. 쿠키를 설정 하려면 서버는 응답에서 Set-cookie 헤더를 포함 합니다. 쿠키의 형식은 선택적 특성이 있는 이름-값 쌍입니다. 예:
+쿠키는 HTTP 응답에는 서버에서 전송 하는 데이터의 일부입니다. (선택 사항) 클라이언트는 쿠키를 저장 하 고 subsequet 요청에서 반환 합니다. 이렇게 하면 클라이언트 및 서버 상태를 공유 합니다. 쿠키를 설정 하려면 서버는 응답에서 Set-cookie 헤더를 포함 합니다. 쿠키의 형식은 선택적 특성이 있는 이름-값 쌍입니다. 예를 들어:
 
 [!code-powershell[Main](http-cookies/samples/sample1.ps1)]
 
@@ -36,7 +36,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-powershell[Main](http-cookies/samples/sample2.ps1)]
 
-쿠키에 반환 하는 클라이언트 한 서버 쿠키 헤더 이후 요청에서.
+서버에 쿠키를 반환 하려면 클라이언트가 이후 요청에 쿠키 헤더를 포함 합니다.
 
 [!code-console[Main](http-cookies/samples/sample3.cmd)]
 
@@ -79,7 +79,7 @@ A **CookieHeaderValue** 의 컬렉션을 포함 **CookieState** 인스턴스. �
 
 ## <a name="structured-cookie-data"></a>구조적된 쿠키 데이터
 
-대부분의 브라우저는 저장 하는 쿠키 수 &#8212; 총 수와 각 도메인 수를 제한 합니다. 따라서 여러 쿠키를 설정 하는 대신 단일 쿠키로 구조적된 데이터를 저장 하 유용할 수 있습니다.
+저장 하는 쿠키의 수를 제한 하는 다양 한 브라우저&#8212;총 수와 각 도메인 수입니다. 따라서 여러 쿠키를 설정 하는 대신 단일 쿠키로 구조적된 데이터를 저장 하 유용할 수 있습니다.
 
 > [!NOTE]
 > RFC 6265 쿠키 데이터의 구조를 정의 하지 않습니다.

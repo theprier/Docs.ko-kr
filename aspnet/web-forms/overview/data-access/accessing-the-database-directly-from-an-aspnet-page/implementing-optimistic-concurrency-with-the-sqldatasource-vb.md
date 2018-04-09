@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/implementing-optimistic-concurrency-with-the-sqldatasource-vb
-title: "SqlDataSource (VB)를 사용 하 여 낙관적 동시성 구현 | Microsoft Docs"
+title: SqlDataSource (VB)를 사용 하 여 낙관적 동시성 구현 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에서는 낙관적 동시성 제어에 대 한 필수 정보를 검토 한 다음 SqlDataSource 컨트롤을 사용 하 여 구현 하는 방법을 탐색 합니다."
+description: 이 자습서에서는 낙관적 동시성 제어에 대 한 필수 정보를 검토 한 다음 SqlDataSource 컨트롤을 사용 하 여 구현 하는 방법을 탐색 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/implementing-optimistic-concurrency-with-the-sqldatasource-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 974ea50a0d12aae09107470815214b20068ea553
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 6e7e81b3f3a54596c033caa2cf75e5e3ec01764c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="implementing-optimistic-concurrency-with-the-sqldatasource-vb"></a>SqlDataSource (VB)를 사용 하 여 낙관적 동시성을 구현합니다.
 ====================
@@ -116,7 +116,7 @@ ms.lasthandoff: 01/24/2018
 
 보충 하며는 `WHERE` 절은 `UpdateCommand` 및 `DeleteCommand` 속성 (및 해당 매개 변수 컬렉션에 추가 매개 변수를 추가)을 사용 하 여 낙관적 동시성 옵션을 조정 두 개의 다른 선택 하면 속성:
 
-- 변경 된 [ `ConflictDetection` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.conflictdetection.aspx) 에서 `OverwriteChanges` (기본값)를`CompareAllValues`
+- 변경 된 [ `ConflictDetection` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.conflictdetection.aspx) 에서 `OverwriteChanges` (기본값)를 `CompareAllValues`
 - 변경 된 [ `OldValuesParameterFormatString` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.oldvaluesparameterformatstring.aspx) 원래 (기본값) {0}에서\_{0}.
 
 웹 컨트롤 데이터 SqlDataSource s를 호출 하는 경우 `Update()` 또는 `Delete()` 원래 값 메서드를 전달 합니다. 경우 SqlDataSource s `ConflictDetection` 속성이 `CompareAllValues`, 원래 값이 명령에 추가 됩니다. `OldValuesParameterFormatString` 속성은 이러한 원래 값 매개 변수에 대해 사용 되는 명명 패턴을 제공 합니다. 데이터 소스 구성 마법사를 사용 하 여 원래\_{0} 각 원래 매개 변수 이름을 지정 하 고는 `UpdateCommand` 및 `DeleteCommand` 속성 및 `UpdateParameters` 및 `DeleteParameters` 컬렉션 적절 하 게 합니다.
@@ -231,7 +231,7 @@ SqlDataSource 검사 하 여으로이 자습서를 마칩니다. 나머지 자�
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
->[!div class="step-by-step"]
-[이전](inserting-updating-and-deleting-data-with-the-sqldatasource-vb.md)
+> [!div class="step-by-step"]
+> [이전](inserting-updating-and-deleting-data-with-the-sqldatasource-vb.md)

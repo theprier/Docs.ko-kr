@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb
-title: "삽입, 업데이트 및 삭제 (VB) 데이터에 대 한 개요 | Microsoft Docs"
+title: 삽입, 업데이트 및 삭제 (VB) 데이터에 대 한 개요 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에서는 म ObjectDataSource의 insert (), update ()를 매핑하는 방법을 확인 하 고 구성 하는 방법 뿐만 아니라 BLL의 메서드에 delete () 메서드를 클래스 중..."
+description: 이 자습서에서는 म ObjectDataSource의 insert (), update ()를 매핑하는 방법을 확인 하 고 구성 하는 방법 뿐만 아니라 BLL의 메서드에 delete () 메서드를 클래스 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/17/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e7552abb30aa26d3aaceb3312c00661c6d4d6cf8
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: db77d9ec5b0d4b27259023363e786b26fe736d7b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="an-overview-of-inserting-updating-and-deleting-data-vb"></a>삽입, 업데이트 및 삭제 (VB)의 개요
 ====================
@@ -238,7 +238,7 @@ CommandField 번호가 `ShowXButton` 속성을 나타내는 어떤 일련의 단
 - 확장 하 고 `DeleteProduct` 지정한 제품의 주문 정보를 삭제 하는 논리를 포함 하는 메서드
 - 지정된 된 제품의 주문 정보 삭제를 포함 하도록 TableAdapter에서 사용 하는 SQL 쿼리를 수정 합니다.
 
-방금에서 레코드를 모두 삭제는 `Order Details` foreign key 제약 조건을 방지 하기 위해 테이블입니다. Visual Studio에서 서버 탐색기로 이동 마우스 오른쪽 단추로 클릭는 `NORTHWND.MDF` 노드를 새 쿼리를 선택 합니다. 그런 다음 쿼리 창에서 다음 SQL 문을 실행 합니다.`DELETE FROM [Order Details]`
+방금에서 레코드를 모두 삭제는 `Order Details` foreign key 제약 조건을 방지 하기 위해 테이블입니다. Visual Studio에서 서버 탐색기로 이동 마우스 오른쪽 단추로 클릭는 `NORTHWND.MDF` 노드를 새 쿼리를 선택 합니다. 그런 다음 쿼리 창에서 다음 SQL 문을 실행 합니다. `DELETE FROM [Order Details]`
 
 
 [![Order Details 테이블에서 모든 레코드를 삭제 합니다.](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image35.png)](an-overview-of-inserting-updating-and-deleting-data-vb/_static/image34.png)
@@ -441,8 +441,8 @@ FormView의 자동으로 생성 된 때 주의 해야 하는 `InsertItemTemplate
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
->[!div class="step-by-step"]
-[이전](limiting-data-modification-functionality-based-on-the-user-cs.md)
-[다음](examining-the-events-associated-with-inserting-updating-and-deleting-vb.md)
+> [!div class="step-by-step"]
+> [이전](limiting-data-modification-functionality-based-on-the-user-cs.md)
+> [다음](examining-the-events-associated-with-inserting-updating-and-deleting-vb.md)

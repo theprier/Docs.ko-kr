@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-acess-two-pages-datalist-cs
-title: "마스터/세부 두 페이지 (C#)에 걸쳐 필터링 | Microsoft Docs"
+title: 마스터/세부 두 페이지 (C#)에 걸쳐 필터링 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에서는 두 페이지에 걸쳐 마스터/세부 정보 보고서를 구분 하는 방법을 표시 합니다. 'Master' 페이지를 사용 하 여 반복기 컨트롤 categ 목록이 렌더링 중..."
+description: 이 자습서에서는 두 페이지에 걸쳐 마스터/세부 정보 보고서를 구분 하는 방법을 표시 합니다. 'Master' 페이지를 사용 하 여 반복기 컨트롤 categ 목록이 렌더링 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/30/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-acess-two-pages-datalist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: bb86db509ca26dde0c24341dee402e7af4355507
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6a3783175218438f2a9f735c3861c56e039a248e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="masterdetail-filtering-across-two-pages-c"></a>마스터/세부 두 페이지 (C#)에 대해 필터링
 ====================
@@ -59,7 +59,7 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="step-2-turning-the-category-name-into-a-link-to-the-details-page"></a>2 단계: 세부 정보 페이지에 대 한 링크에 범주 이름 설정
 
-지정된 된 범주에 대 한 "details 라는" 정보를 표시할 사용자를 허용 하려면 클릭, 두 번째 페이지를 사용자 걸립니다 때 각 글머리 기호 목록 항목을, 링크를 추가 해야 (`ProductsForCategoryDetails.aspx`). 그러면이 두 번째 페이지 DataList를 사용 하 여 선택한 범주에 대 한 제품을 표시 됩니다. 해당 링크를 클릭 하면 범주를 확인 하기 위해 클릭 한 범주를 전달 해야 `CategoryID` 메커니즘을 통해 두 번째 페이지에 있습니다. 한 페이지에서 스칼라 데이터 전송할 가장 간단 하 고 가장 간단한 방법은이 자습서에서는 옵션인는 쿼리 문자열을 통해 것입니다. 특히는 `ProductsForCategoryDetails.aspx` 페이지 선택한 증명  *`categoryID`*  명명 된 쿼리 문자열 필드를 통해 전달 될 값입니다 `CategoryID`합니다. 예를 들어, 음료 범주에 대 한 제품을 볼 수 있으며 그는 `CategoryID` 1의 사용자가 방문 `ProductsForCategoryDetails.aspx?CategoryID=1`합니다.
+지정된 된 범주에 대 한 "details 라는" 정보를 표시할 사용자를 허용 하려면 클릭, 두 번째 페이지를 사용자 걸립니다 때 각 글머리 기호 목록 항목을, 링크를 추가 해야 (`ProductsForCategoryDetails.aspx`). 그러면이 두 번째 페이지 DataList를 사용 하 여 선택한 범주에 대 한 제품을 표시 됩니다. 해당 링크를 클릭 하면 범주를 확인 하기 위해 클릭 한 범주를 전달 해야 `CategoryID` 메커니즘을 통해 두 번째 페이지에 있습니다. 한 페이지에서 스칼라 데이터 전송할 가장 간단 하 고 가장 간단한 방법은이 자습서에서는 옵션인는 쿼리 문자열을 통해 것입니다. 특히는 `ProductsForCategoryDetails.aspx` 페이지 선택한 증명 *`categoryID`* 명명 된 쿼리 문자열 필드를 통해 전달 될 값입니다 `CategoryID`합니다. 예를 들어, 음료 범주에 대 한 제품을 볼 수 있으며 그는 `CategoryID` 1의 사용자가 방문 `ProductsForCategoryDetails.aspx?CategoryID=1`합니다.
 
 하이퍼링크 웹 컨트롤 또는 HTML 앵커 요소를 추가 하거나 해야 반복기의 각 글머리 기호 목록 항목에 대 한 하이퍼링크를 만들려면 (`<a>`)에 `ItemTemplate`합니다. 각 행에 대해 동일한 하이퍼링크 인 시나리오 표시, 어느 방법이 든 충분 합니다. 반복기, 앵커 요소를 사용 하는 것이 않겠습니다. 앵커 요소를 사용 하려면 반복의 ItemTemplate을 업데이트 합니다.
 
@@ -170,18 +170,18 @@ ms.lasthandoff: 11/10/2017
 
 마스터/세부 정보 보고서는 단일 페이지에 마스터 및 세부 정보 레코드를 표시할 수, 하는 동안 여러 웹 사이트에서 구분 됩니다 두 웹 페이지에 걸쳐 있습니다. 이 자습서에서는 "마스터" 웹 페이지에는 반복기를 사용 하 여 글머리 기호 목록에 나열 된 범주와 연결 된 제품을 "details" 페이지에 나열 하 여 마스터/세부 정보 보고서를 구현 하는 방법을 찾았습니다. 마스터 웹 페이지의 각 목록 항목의 행을 따라 전달 하는 세부 정보 페이지에 대 한 링크 포함 `CategoryID` 값입니다.
 
-세부 정보 페이지에 지정 된 공급자에 대 한 해당 제품을 검색 작업을 수행 했습니다 통해는 `ProductsBLL` 클래스의 `GetProductsByCategoryID(categoryID)` 메서드.  *`categoryID`*  매개 변수 값을 사용 하 여 지정 된는 `CategoryID` 매개 변수 원본으로 쿼리 문자열 값입니다. 또한 살펴보았습니다는 FormView를 사용 하 여 세부 정보 페이지에서 범주 세부 정보를 표시 하는 방법 및 선택한 범주에 속하는 제품이 있는 경우 메시지를 표시 하는 방법.
+세부 정보 페이지에 지정 된 공급자에 대 한 해당 제품을 검색 작업을 수행 했습니다 통해는 `ProductsBLL` 클래스의 `GetProductsByCategoryID(categoryID)` 메서드. *`categoryID`* 매개 변수 값을 사용 하 여 지정 된는 `CategoryID` 매개 변수 원본으로 쿼리 문자열 값입니다. 또한 살펴보았습니다는 FormView를 사용 하 여 세부 정보 페이지에서 범주 세부 정보를 표시 하는 방법 및 선택한 범주에 속하는 제품이 있는 경우 메시지를 표시 하는 방법.
 
 만족도 매우 프로그래밍!
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특히 감사 드립니다.
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Zack Jones 및 Liz Shulok 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](master-detail-filtering-with-a-dropdownlist-datalist-cs.md)
-[다음](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs.md)
+> [!div class="step-by-step"]
+> [이전](master-detail-filtering-with-a-dropdownlist-datalist-cs.md)
+> [다음](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs.md)

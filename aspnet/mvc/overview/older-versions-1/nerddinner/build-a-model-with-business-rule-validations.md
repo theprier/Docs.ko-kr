@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/build-a-model-with-business-rule-validations
-title: "비즈니스 규칙 유효성 검사를 사용 하 여 모델 빌드 | Microsoft Docs"
+title: 비즈니스 규칙 유효성 검사를 사용 하 여 모델 빌드 | Microsoft Docs
 author: microsoft
-description: "3 단계는 म 두 쿼리를 사용 하 고 업데이트할 수 데이터베이스 업그레이드 되었으며 수정 응용 프로그램에 대 한 모델을 만드는 방법을 보여 줍니다."
+description: 3 단계는 म 두 쿼리를 사용 하 고 업데이트할 수 데이터베이스 업그레이드 되었으며 수정 응용 프로그램에 대 한 모델을 만드는 방법을 보여 줍니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/build-a-model-with-business-rule-validations
 msc.type: authoredcontent
-ms.openlocfilehash: dbe6370979f218988c168df3e80314ef9b338fbd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c5a482474fd2f41836f70952306ada5cd9136455
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="build-a-model-with-business-rule-validations"></a>비즈니스 규칙 유효성 검사를 사용 하 여 모델 빌드
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [PDF 다운로드](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
 
@@ -228,6 +228,6 @@ C#의 "return을 yield" 기능 모든 RuleViolations의 시퀀스를 반환 하�
 
 이제 추가해보겠습니다 컨트롤러와 뷰 일부 프로젝트에 테이블 주위의 HTML UI 경험을 만드는 데 사용할 수 있습니다.
 
->[!div class="step-by-step"]
-[이전](create-a-database.md)
-[다음](use-controllers-and-views-to-implement-a-listingdetails-ui.md)
+> [!div class="step-by-step"]
+> [이전](create-a-database.md)
+> [다음](use-controllers-and-views-to-implement-a-listingdetails-ui.md)

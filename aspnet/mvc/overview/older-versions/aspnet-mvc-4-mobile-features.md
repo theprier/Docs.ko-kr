@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/aspnet-mvc-4-mobile-features
-title: "ASP.NET MVC 4 모바일 기능 | Microsoft Docs"
+title: ASP.NET MVC 4 모바일 기능 | Microsoft Docs
 author: Rick-Anderson
-description: "이 자습서에서는 ASP.NET MVC 5 모바일 웹 응용 프로그램에서 Azure 웹 사이트 배포에서 샘플 코드는 MVC 5 버전이 되었습니다."
+description: 이 자습서에서는 ASP.NET MVC 5 모바일 웹 응용 프로그램에서 Azure 웹 사이트 배포에서 샘플 코드는 MVC 5 버전이 되었습니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/15/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/aspnet-mvc-4-mobile-features
 msc.type: authoredcontent
-ms.openlocfilehash: f4e0e4eb558e0c7b9e94fc83ede986fa4c666739
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 5f38fcdd8e71ce12f7899214b6b2133e21f9910c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-mvc-4-mobile-features"></a>ASP.NET MVC 4 모바일 기능
 ====================
@@ -165,7 +165,7 @@ ASP.NET MVC 4의 중요 한 새로운 기능은 개별 모바일 브라우저에
 
 [!code-csharp[Main](aspnet-mvc-4-mobile-features/samples/sample9.cs)]
 
-변경 내용을 저장 합니다. 복사는 *MvcMobile\Views\Shared\\_Layout.Mobile.cshtml* 파일을 *MvcMobile\Views\Shared\\_Layout.iPhone.cshtml*합니다. 새 파일을 열고 변경 하는 `h1` 에서 머리글 `Conference (Mobile)` 를 `Conference (iPhone)`합니다.
+변경 내용을 저장합니다. 복사는 *MvcMobile\Views\Shared\\_Layout.Mobile.cshtml* 파일을 *MvcMobile\Views\Shared\\_Layout.iPhone.cshtml*합니다. 새 파일을 열고 변경 하는 `h1` 에서 머리글 `Conference (Mobile)` 를 `Conference (iPhone)`합니다.
 
 복사는 *MvcMobile\Views\Home\AllTags.Mobile.cshtml* 파일을 *MvcMobile\Views\Home\AllTags.iPhone.cshtml*합니다. 새 파일에서 변경 된 `<h2>` 요소에서 "태그 (M)"을 "태그 (iPhone)"입니다.
 
@@ -190,7 +190,7 @@ ASP.NET MVC 4의 중요 한 새로운 기능은 개별 모바일 브라우저에
 1. **도구** 메뉴 선택 **라이브러리 패키지 관리자**를 선택한 후 **패키지 관리자 콘솔**합니다.
 
     [![p3_packageMgr](aspnet-mvc-4-mobile-features/_static/image20.png)](aspnet-mvc-4-mobile-features/_static/image19.png)
-2. 에 **패키지 관리자 콘솔**, 입력`Install-Package jQuery.Mobile.MVC -version 1.0.0`
+2. 에 **패키지 관리자 콘솔**, 입력 `Install-Package jQuery.Mobile.MVC -version 1.0.0`
 
 다음 이미지는 추가 및 MvcMobile 프로젝트에 NuGet jQuery.Mobile.MVC 패키지에서 변경 된 파일을 표시 합니다. 파일 이름 뒤에 추가 [추가]가 추가 되는 파일입니다. GIF 이미지는 표시 되지 않습니다 및 PNG 파일에 추가 된 *Content\images* 폴더입니다.
 
@@ -204,7 +204,7 @@ ASP.NET MVC 4의 중요 한 새로운 기능은 개별 모바일 브라우저에
 - jQuery Mobile JavaScript 파일입니다.
 - JQuery Mobile 스타일의 레이아웃 파일 (*Views\Shared\\_Layout.Mobile.cshtml*).
 - 뷰 전환기 부분 뷰 *(MvcMobile\Views\Shared\\_ViewSwitcher.cshtml*) 하는 모바일 보기로 그리고 반대로 바탕 화면 보기에서 전환 하려면 각 페이지의 위쪽에 대 한 링크를 제공 합니다.
-- 여러*.png* 및 *.gif* 이미지 파일의 *Content\images* 폴더입니다.
+- 여러<em>.png</em> 및 <em>.gif</em> 이미지 파일의 <em>Content\images</em> 폴더입니다.
 
 열기는 *Global.asax* 파일의 마지막 줄으로 다음 코드를 추가 하 고는 `Application_Start` 메서드.
 
@@ -270,7 +270,7 @@ ASP.NET MVC 4의 중요 한 새로운 기능은 개별 모바일 브라우저에
 
 [!code-cshtml[Main](aspnet-mvc-4-mobile-features/samples/sample17.cshtml)]
 
-때 `RequireConsistentDisplayMode` 로 설정 된 `true`, 모바일 레이아웃 (*\_Layout.Mobile.cshtml*) 모바일 보기에만 사용 됩니다. (즉, 파일 보기 된 형식인 ***ViewName**합니다. Mobile.cshtml*입니다.) 설정 하려는 경우 `RequireConsistentDisplayMode` 를 `true` 모바일 레이아웃 비모바일 보기와 잘 작동 하지 않는 경우. 다음 스크린샷에서 방법을 *스피커* 페이지를 렌더링 하는 경우 `RequireConsistentDisplayMode` 로 설정 된 `true`합니다.
+때 `RequireConsistentDisplayMode` 로 설정 된 `true`, 모바일 레이아웃 (<em>\_Layout.Mobile.cshtml</em>) 모바일 보기에만 사용 됩니다. (즉, 파일 보기 된 형식인 <em>* * ViewName</em><em>합니다. Mobile.cshtml</em>.) 설정 하려는 경우 `RequireConsistentDisplayMode` 를 `true` 모바일 레이아웃 비모바일 보기와 잘 작동 하지 않는 경우. 다음 스크린샷에서 방법을 <em>스피커</em> 페이지를 렌더링 하는 경우 `RequireConsistentDisplayMode` 로 설정 된 `true`합니다.
 
 [![p3_speakersConsistent](aspnet-mvc-4-mobile-features/_static/image33.png)](aspnet-mvc-4-mobile-features/_static/image32.png)
 

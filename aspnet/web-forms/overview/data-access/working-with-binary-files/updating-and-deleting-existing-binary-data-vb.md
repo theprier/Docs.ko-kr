@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/working-with-binary-files/updating-and-deleting-existing-binary-data-vb
-title: "기존 이진 데이터 (VB) 업데이트 및 삭제 | Microsoft Docs"
+title: 기존 이진 데이터 (VB) 업데이트 및 삭제 | Microsoft Docs
 author: rick-anderson
-description: "이전 자습서에서 어떻게 GridView 컨트롤을 간단히 편집 및 삭제 텍스트 데이터에 살펴보았습니다. 이 자습서에서 GridView 컨트롤 또한 확인 방법을 보기..."
+description: 이전 자습서에서 어떻게 GridView 컨트롤을 간단히 편집 및 삭제 텍스트 데이터에 살펴보았습니다. 이 자습서에서 GridView 컨트롤 또한 확인 방법을 보기...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/27/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/updating-and-deleting-existing-binary-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8baf187d484424aeaee57f8c57ac391a0ae9e946
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 37e32167cccd1b9a98b629179cdaeb9e193f88b7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="updating-and-deleting-existing-binary-data-vb"></a>기존 이진 데이터 (VB) 업데이트 및 삭제
 ====================
@@ -264,8 +264,8 @@ GridView s의 [업데이트] 단추를 클릭 하면 해당 `RowUpdating` 이벤
 
 때 완료 하는 데 필요한 단계 RadioButtonList s `SelectedValue` 은 3 DetailsView s에 의해 사용 되는 거의 동일 `ItemInserting` 이벤트 처리기입니다. 이 이벤트 처리기에 추가 된 DetailsView 컨트롤에서 새 범주 레코드가 추가 될 때 실행 되는 [이전 자습서](including-a-file-upload-option-when-adding-a-new-record-vb.md)합니다. 따라서 별도 메서드로 아웃이 기능을 리팩터링 하 behooves 합니다. 특히, I 제외 공통 기능 두 개의 메서드로:
 
-- `ProcessBrochureUpload(FileUpload, out bool)`파일 업로드 컨트롤 인스턴스 및 일부 유효성 검사 오류로 인해 취소 되도록 하는 경우 또는 삭제 또는 편집 작업을 계속할지 여부를 지정 하는 출력 부울 값을 입력으로 받아들입니다. 이 메서드는 저장 된 파일에 경로 반환 하거나 `null` 없는 파일을 저장 하는 경우.
-- `DeleteRememberedBrochurePath`페이지 변수에서 경로 지정 된 파일을 삭제 `deletedCategorysPdfPath` 경우 `deletedCategorysPdfPath` 않습니다 `null`합니다.
+- `ProcessBrochureUpload(FileUpload, out bool)` 파일 업로드 컨트롤 인스턴스 및 일부 유효성 검사 오류로 인해 취소 되도록 하는 경우 또는 삭제 또는 편집 작업을 계속할지 여부를 지정 하는 출력 부울 값을 입력으로 받아들입니다. 이 메서드는 저장 된 파일에 경로 반환 하거나 `null` 없는 파일을 저장 하는 경우.
+- `DeleteRememberedBrochurePath` 페이지 변수에서 경로 지정 된 파일을 삭제 `deletedCategorysPdfPath` 경우 `deletedCategorysPdfPath` 않습니다 `null`합니다.
 
 이러한 두 가지 방법에 대 한 코드를 따릅니다. 사이의 유사성 확인 `ProcessBrochureUpload` 및 DetailsView의 `ItemInserting` 이전 자습서에서 이벤트 처리기입니다. 이 자습서에서는 이러한 새 메서드를 사용 하는 DetailsView의 이벤트 처리기가 업데이트 합니다. DetailsView의 이벤트 처리기의 수정 내용을 확인 하려면이 자습서와 연결 된 코드를 다운로드 합니다.
 
@@ -362,11 +362,11 @@ GridView s의 시작 부분에 다음 코드를 추가 `RowUpdating` 이벤트 �
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Teresa 머피의 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](including-a-file-upload-option-when-adding-a-new-record-vb.md)
+> [!div class="step-by-step"]
+> [이전](including-a-file-upload-option-when-adding-a-new-record-vb.md)

@@ -1,22 +1,22 @@
 ---
 uid: single-page-application/overview/templates/hottowel-template
-title: "핫 수건 템플릿 | Microsoft Docs"
+title: 핫 수건 템플릿 | Microsoft Docs
 author: madskristensen
-description: "HotTowel 서식 파일"
+description: HotTowel 서식 파일
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/09/2013
 ms.topic: article
 ms.assetid: 75af2e17-6ed3-4d24-8ea1-bc340027c318
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/templates/hottowel-template
 msc.type: authoredcontent
-ms.openlocfilehash: bfc6e2c884c422f44e8be5f4f29554ae86f7ecb6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: dbd037c2469d326a3d3248ca07492ed9eb93e225
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="hot-towel-template"></a>핫 수건 서식 파일
 ====================
@@ -29,8 +29,8 @@ ms.lasthandoff: 11/10/2017
 > [Visual Studio 2012에 대 한 핫 수건 MVC 템플릿](https://visualstudiogallery.msdn.microsoft.com/1f68fbe8-b4e9-4968-9fd3-ddc7cbc52dca)
 > 
 > [Visual Studio 2013에 대 한 핫 수건 MVC 템플릿](https://visualstudiogallery.msdn.microsoft.com/1eb8780d-d522-4dcf-bf56-56f0eab305c2)
-
-
+> 
+> 
 > 핫 수건: 하나가 없어서 SPA로 이동 하려고 하므로!
 
 
@@ -49,7 +49,7 @@ SPA를 작성 하려고 하지만 시작 위치를 결정할 수 없습니다. �
 
 - durandal
 - 서비스
-- viewmodel
+- viewmodels
 - 뷰
 
 응용 프로그램 폴더는 모듈의 컬렉션을 포함합니다. 이러한 모듈의 기능을 캡슐화 하 고 다른 모듈에 대해 종속성을 선언 합니다. Views 폴더에는 응용 프로그램에 대 한 HTML 포함 되 고 viewmodel 폴더 뷰 (공통 MVVM 패턴)에 대 한 프레젠테이션 논리를 포함 합니다. 서비스 폴더는 응용 프로그램 예: HTTP 데이터 검색 또는 로컬 저장소의 상호 작용 해야 하는 모든 공통 서비스 보유할 수 있도록 이상적입니다. 것에 대 한 여러 viewmodel 서비스 모듈에서 코드 다시 사용 합니다.
@@ -95,7 +95,7 @@ Visual Studio 2012 템플릿으로 핫 수건을 설치할 수 있습니다. 클
 2. 뷰를 추가 `App/views` 폴더
 3. Viewmodel에 추가 `App/viewmodels` 폴더
 4. 새 보기에 HTML 및 Knockout 데이터 바인딩 추가
-5. 탐색 경로 업데이트 합니다.`shell.js`
+5. 탐색 경로 업데이트 합니다. `shell.js`
 
 ## <a name="walkthrough-of-the-htmljavascript"></a>HTML/JavaScript의 연습
 
@@ -139,7 +139,7 @@ index.cshtml는 시작 경로 및 MVC 응용 프로그램에 대 한 보기입�
 
 `footer.html` 바닥글의 맨 아래에 표시 되는 HTML이 포함 되어는 `shell` 보기.
 
-## <a name="viewmodels"></a>Viewmodel
+## <a name="viewmodels"></a>ViewModels
 
 Viewmodel에서 발견 되는 `App/viewmodels` 폴더입니다.
 

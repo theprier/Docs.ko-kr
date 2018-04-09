@@ -1,8 +1,8 @@
 ---
 uid: aspnet/web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio
-title: "프로그래밍 ASP.NET 웹 페이지 (Razor)를 사용 하 여 Visual Studio | Microsoft Docs"
+title: 프로그래밍 ASP.NET 웹 페이지 (Razor)를 사용 하 여 Visual Studio | Microsoft Docs
 author: tfitzmac
-description: "이 부록에서는 Razor 구문이 있는 ASP.NET 웹 페이지 프로그램에 Visual Studio 2010 또는 Visual Web Developer 2010 Express를 사용 하는 방법을 설명 합니다."
+description: 이 부록에서는 Razor 구문이 있는 ASP.NET 웹 페이지 프로그램에 Visual Studio 2010 또는 Visual Web Developer 2010 Express를 사용 하는 방법을 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/13/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio
 msc.type: authoredcontent
-ms.openlocfilehash: 5cfeda206eda8fb3fd769d34fb40bae2c3b65093
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: eb17c8cc1fab5b552c8495e74bb86ae9dbc5b972
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="programming-aspnet-web-pages-razor-using-visual-studio"></a>Visual Studio를 사용 하 여 ASP.NET 웹 페이지 (Razor) 프로그래밍
 ====================
@@ -95,9 +95,9 @@ Visual Studio에는 ASP.NET Razor 웹 사이트를 만들려면
 1. 방금 만든 웹 사이트를 열고는 *Default.cshtml* 페이지.
 2. 이후에 `<h3>` 는 페이지의 태그에에서 입력 `@ServerInfo.` (점 포함). IntelliSense를 사용할 수 있는 메서드를 표시 하는 방법을 확인할 수는 `ServerInfo` 드롭 다운 목록에서 도우미입니다. 
 
-    ![Intellisense](program-asp-net-web-pages-in-visual-studio/_static/image4.png)
+    ![intellisense](program-asp-net-web-pages-in-visual-studio/_static/image4.png)
 3. 선택 된 `GetHtml` 메서드 목록 및 다음 Enter 누릅니다. IntelliSense는 자동으로 채웁니다. (C#에서 어떤 방법으로 추가 해야 하는 대로 `()` 메서드 뒤의 문자가 있습니다.)  
- 에 대 한 완성 된 코드는 `GetHtml` 메서드는 다음 예제와 같습니다.  
+   에 대 한 완성 된 코드는 `GetHtml` 메서드는 다음 예제와 같습니다.  
 
     [!code-cshtml[Main](program-asp-net-web-pages-in-visual-studio/samples/sample1.cshtml)]
 4. 페이지를 실행 하려면 Ctrl + f 5를 누릅니다. 다음은 브라우저에 표시 된 때 같이 페이지입니다. 

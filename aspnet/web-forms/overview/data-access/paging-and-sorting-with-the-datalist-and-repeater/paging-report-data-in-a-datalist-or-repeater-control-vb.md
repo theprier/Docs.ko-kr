@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/paging-report-data-in-a-datalist-or-repeater-control-vb
-title: "DataList 반복기 컨트롤 (VB)에서 보고서 데이터를 페이징 | Microsoft Docs"
+title: DataList 반복기 컨트롤 (VB)에서 보고서 데이터를 페이징 | Microsoft Docs
 author: rick-anderson
-description: "DataList 아니고 반복기 제안 자동 페이징 또는 정렬을 지원 하는 동안이 자습서에서는 DataList 또는 반복기, 페이징 지원을 추가 하는 방법..."
+description: DataList 아니고 반복기 제안 자동 페이징 또는 정렬을 지원 하는 동안이 자습서에서는 DataList 또는 반복기, 페이징 지원을 추가 하는 방법...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/13/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/paging-report-data-in-a-datalist-or-repeater-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 66f1065c41352f355dd5f1be43443165df909b93
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 867f2a0a6de6da2ccda1526ef7c1d0edd97431c6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="paging-report-data-in-a-datalist-or-repeater-control-vb"></a>DataList 또는 반복기 컨트롤 (VB)에서 보고서 데이터를 페이징
 ====================
@@ -100,10 +100,10 @@ DataList 또는 반복기 컨트롤에서 기본 페이징을 구현 하려면 �
 
 메서드를 추가 `ProductsBLL` 라는 클래스 `GetProductsAsPagedDataSource` 두 정수 입력된 매개 변수를 사용 하 합니다.
 
-- `pageIndex`을 표시 하려면 페이지의 인덱스 0에 인덱싱된 및
-- `pageSize`한 페이지에 표시할 레코드 수를 지정 합니다.
+- `pageIndex` 을 표시 하려면 페이지의 인덱스 0에 인덱싱된 및
+- `pageSize` 한 페이지에 표시할 레코드 수를 지정 합니다.
 
-`GetProductsAsPagedDataSource`검색 하 여 시작 *모든* 에서 레코드 `GetProducts()`합니다. 그런 다음 만듭니다는 `PagedDataSource` 설정 개체를 해당 `CurrentPageIndex` 및 `PageSize` 속성 값의 전달 기능을 `pageIndex` 및 `pageSize` 매개 변수입니다. 메서드가이 구성이 반환 하 여 마지막 `PagedDataSource`:
+`GetProductsAsPagedDataSource` 검색 하 여 시작 *모든* 에서 레코드 `GetProducts()`합니다. 그런 다음 만듭니다는 `PagedDataSource` 설정 개체를 해당 `CurrentPageIndex` 및 `PageSize` 속성 값의 전달 기능을 `pageIndex` 및 `pageSize` 매개 변수입니다. 메서드가이 구성이 반환 하 여 마지막 `PagedDataSource`:
 
 
 [!code-vb[Main](paging-report-data-in-a-datalist-or-repeater-control-vb/samples/sample2.vb)]
@@ -275,12 +275,12 @@ DataList 아니고 반복기 제공 아웃오브 상자 페이징 지원을 Deta
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자가 Liz Shulok, Ken Pespisa 및 박 광 준 Leigh 합니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](sorting-data-in-a-datalist-or-repeater-control-cs.md)
-[다음](sorting-data-in-a-datalist-or-repeater-control-vb.md)
+> [!div class="step-by-step"]
+> [이전](sorting-data-in-a-datalist-or-repeater-control-cs.md)
+> [다음](sorting-data-in-a-datalist-or-repeater-control-vb.md)

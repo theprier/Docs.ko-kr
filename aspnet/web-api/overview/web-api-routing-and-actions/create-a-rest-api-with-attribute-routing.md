@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
-title: "ASP.NET Web API 2의에서 특성 라우팅을 사용 하 여 REST API 만들기 | Microsoft Docs"
+title: ASP.NET Web API 2의에서 특성 라우팅을 사용 하 여 REST API 만들기 | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/26/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
 msc.type: authoredcontent
-ms.openlocfilehash: c1d0b3e1644ef7f9ebb4be74c3fdf3df90cf3537
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1f1e90544c9dd8439a522f2196d81d020ea2f4f2
+ms.sourcegitcommit: 7f92990bad6a6cb901265d621dcbc136794f5f3f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 03/28/2018
 ---
 <a name="create-a-rest-api-with-attribute-routing-in-aspnet-web-api-2"></a>ASP.NET Web API 2에서에서의 라우팅 특성으로 REST API 만들기
 ====================
@@ -47,7 +47,7 @@ Web API 2는 새로운 형식을 지 원하는 라우팅 이라고 *특성 라�
 
 그러나 대부분의 요청에 대 한 API (title, author 및 장르)이이 데이터의 하위 집합을 반환 됩니다. 요청을 가져오지 전체 기록을 클라이언트 `/api/books/{id}/details`합니다.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 [Visual Studio 2017](https://www.visualstudio.com/vs/) Community, Professional 또는 Enterprise edition.
 
@@ -184,7 +184,7 @@ Ctrl+Shift+B를 눌러 프로젝트를 빌드합니다. Entity Framework 리플�
 
 ## <a name="get-books-by-genre"></a>Genre가 발행 한 책 가져오기
 
-책의 목록이 특정 장르를 가져오려면 클라이언트에 GET 요청을 보내 `/api/books/genre`여기서 *장르* 장르의 이름입니다. `/get/books/fantasy` 등을 예로 들 수 있습니다.
+책의 목록이 특정 장르를 가져오려면 클라이언트에 GET 요청을 보내 `/api/books/genre`여기서 *장르* 장르의 이름입니다. `/api/books/fantasy` 등을 예로 들 수 있습니다.
 
 다음 메서드를 추가 `BooksController`합니다.
 

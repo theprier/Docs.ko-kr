@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/displaying-a-custom-error-page-vb
-title: "사용자 지정 오류 페이지 (VB)를 표시 합니다. | Microsoft Docs"
+title: 사용자 지정 오류 페이지 (VB)를 표시 합니다. | Microsoft Docs
 author: rick-anderson
-description: "가 사용자 볼 ASP.NET 웹 응용 프로그램에서 런타임 오류가 발생할 때? 방법에 따라 결정 웹 사이트의 &lt;customErrors&gt; 구성 중..."
+description: 가 사용자 볼 ASP.NET 웹 응용 프로그램에서 런타임 오류가 발생할 때? 방법에 따라 결정 웹 사이트의 &lt;customErrors&gt; 구성 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/09/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/displaying-a-custom-error-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e8a2f88490de08f731f9737d15237ae445c5ec0d
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: eda7ceeac174f0d1697cb95d2eab4127f124011e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="displaying-a-custom-error-page-vb"></a>사용자 지정 오류 페이지 (VB)를 표시합니다.
 ====================
@@ -60,7 +60,7 @@ ms.lasthandoff: 01/30/2018
 
 다른 유형의 YSOD 런타임 오류 YSOD는 및에 표시 되는지 **그림 2**합니다. 런타임 오류 YSOD 방문자에서 런타임 오류가 발생 했음을 알립니다 있지만 throw 된 예외에 대 한 정보를 포함 하지 않습니다. 하지만 (오류 세부 정보를 수정 하 여 볼 수 있도록 하는 방법에 지침을 제공,는 `Web.config` 비 전문적으로 보이는 이러한 YSOD 하는 요소에 포함 되어 있는 파일입니다.)
 
-기본적으로 런타임 오류 YSOD 표시 됩니다 (을 통해 원격으로 http://www.yoursite.com)를 방문 하는 사용자에 게 url에서 브라우저의 주소 표시줄에 알 수 있듯이 **그림 2**: `http://httpruntime.web703.discountasp.net/Genre.aspx?ID=foo`합니다. 개발자가 오류 세부 정보를 알고 싶을 아니라 보안 문제 또는 기타 중요 한 정보를 방문 하는 모든 사용자에 게 표시 될 수 있습니다 때 등의 정보가 라이브 사이트에 표시 되지 않아야 때문에 두 개의 서로 다른 YSOD 화면 존재 하면 사이트입니다.
+기본적으로 런타임 오류 YSOD에 원격으로 방문 하는 사용자에 게 표시 됩니다 (통해 http://www.yoursite.com)에서 브라우저의 주소 표시줄에 URL에서 알 수 있듯이, **그림 2**: `http://httpruntime.web703.discountasp.net/Genre.aspx?ID=foo`합니다. 개발자가 오류 세부 정보를 알고 싶을 아니라 보안 문제 또는 기타 중요 한 정보를 방문 하는 모든 사용자에 게 표시 될 수 있습니다 때 등의 정보가 라이브 사이트에 표시 되지 않아야 때문에 두 개의 서로 다른 YSOD 화면 존재 하면 사이트입니다.
 
 > [!NOTE]
 > 중인 DiscountASP.NET 웹 호스트로 사용 하는 경우 런타임 오류 YSOD 라이브 사이트를 방문할 때 표시 되지 않습니다 확인할 수 있습니다. 기본적으로 예외 세부 정보 YSOD 표시 하도록 구성 하는 서버를 보유 하는 DiscountASP.NET 때문입니다. 다행 스럽게도 추가 하 여이 기본 동작을 재정의할 수 있습니다는 `<customErrors>` 섹션을 프로그램 `Web.config` 파일입니다. "구성 오류 페이지 표시할" 섹션을 검사 하는 `<customErrors>` 섹션 자세히 설명에서 합니다.
@@ -89,11 +89,11 @@ ms.lasthandoff: 01/30/2018
 
 [ `<customErrors>` 섹션](https://msdn.microsoft.com/library/h0hfz6fc.aspx) 에 `Web.config` 어떤 오류 페이지가 표시 될 영향을 주는 두 개의 특성이: `defaultRedirect` 및 `mode`합니다. `defaultRedirect` 특성은 선택 사항이며 제공 된 경우 사용자 지정 오류 페이지의 URL을 지정 하 고 런타임 오류 YSOD 대신 사용자 지정 오류 페이지 표시 됨을 나타냅니다. `mode` 특성은 필수 이며 세 가지 값 중 하나를 허용: `On`, `Off`, 또는 `RemoteOnly`합니다. 이러한 값은 다음과 같이 동작:
 
-- `On`-사용자 지정 오류 페이지나 런타임 오류 YSOD 로컬 또는 원격 인지 여부에 관계 없이 모든 방문자에 게 표시 됨을 나타냅니다.
-- `Off`-예외 세부 정보 YSOD 로컬 또는 원격 인지 여부에 관계 없이 모든 방문자에 게 표시 되도록 지정 합니다.
-- `RemoteOnly`-사용자 지정 오류 페이지나 런타임 오류 YSOD 나타나는지 원격 방문자에 게 예외 세부 정보 YSOD 로컬 방문자에 게 표시 되 나타냅니다.
+- `On` -사용자 지정 오류 페이지나 런타임 오류 YSOD 로컬 또는 원격 인지 여부에 관계 없이 모든 방문자에 게 표시 됨을 나타냅니다.
+- `Off` -예외 세부 정보 YSOD 로컬 또는 원격 인지 여부에 관계 없이 모든 방문자에 게 표시 되도록 지정 합니다.
+- `RemoteOnly` -사용자 지정 오류 페이지나 런타임 오류 YSOD 나타나는지 원격 방문자에 게 예외 세부 정보 YSOD 로컬 방문자에 게 표시 되 나타냅니다.
 
-별도로 지정 하지 않으면 ASP.NET 것 처럼 작동 모드 특성 설정한 경우 `RemoteOnly` 지정 하지 않았으면 및는 `defaultRedirect` 값입니다. 즉, 기본 동작은 런타임 오류 YSOD 원격 방문자에 게 표시 되는 예외 세부 정보 YSOD 로컬 방문자에 게 표시 됩니다. 추가 하 여이 기본 동작을 재정의할 수 있습니다는 `<customErrors>` 웹 응용 프로그램에 섹션`Web.config file.`
+별도로 지정 하지 않으면 ASP.NET 것 처럼 작동 모드 특성 설정한 경우 `RemoteOnly` 지정 하지 않았으면 및는 `defaultRedirect` 값입니다. 즉, 기본 동작은 런타임 오류 YSOD 원격 방문자에 게 표시 되는 예외 세부 정보 YSOD 로컬 방문자에 게 표시 됩니다. 추가 하 여이 기본 동작을 재정의할 수 있습니다는 `<customErrors>` 웹 응용 프로그램에 섹션 `Web.config file.`
 
 ## <a name="using-a-custom-error-page"></a>사용자 지정 오류 페이지를 사용 하 여
 
@@ -143,7 +143,7 @@ ms.lasthandoff: 01/30/2018
 > 체크 아웃 [404 오류 페이지를 하나 더 시간](http://www.smashingmagazine.com/2009/01/29/404-error-pages-one-more-time/) 효과적인 404 오류 페이지 만들기에 대 한 지침입니다.
 
 
-[![](displaying-a-custom-error-page-vb/_static/image19.png)](displaying-a-custom-error-page-vb/_static/image18.png)**그림 7**: 404 사용자 지정 오류 페이지 보다 정확한 메시지를 표시 합니다.`Oops.aspx`  
+[![](displaying-a-custom-error-page-vb/_static/image19.png)](displaying-a-custom-error-page-vb/_static/image18.png)**그림 7**: 404 사용자 지정 오류 페이지 보다 정확한 메시지를 표시 합니다. `Oops.aspx`  
  ([전체 크기 이미지를 보려면 클릭](displaying-a-custom-error-page-vb/_static/image20.png)) 
 
 됨을 알고 있으므로 `404.aspx` 사용자가 찾을 수 없는 페이지에 대 한 요청을 하면 페이지에 도달만,이 특정 유형의 오류를 해결 하는 사용자를 제공 하는 기능이 포함 하려면이 사용자 지정 오류 페이지를 향상 시킬 수 있습니다. 예를 들어 있습니다 수 좋은 Url에 잘못 된 Url을 알려진으로 매핑되는 데이터베이스 테이블을 작성 한 다음는 `404.aspx` 테이블 및 페이지는 사용자에 도달 하려고 할 수 있습니다를 제안 하는 사용자 지정 오류 페이지에 대 한 쿼리를 실행 합니다.
@@ -172,6 +172,6 @@ ms.lasthandoff: 01/30/2018
 - [예외 처리 및 Throw](https://msdn.microsoft.com/library/5b2yeyab.aspx)
 - [ASP.NET에서 사용자 지정 오류 페이지를 사용 하 여 제대로](http://professionalaspnet.com/archive/2007/09/30/Properly-Using-Custom-Error-Pages-in-ASP.NET.aspx)
 
->[!div class="step-by-step"]
-[이전](strategies-for-database-development-and-deployment-vb.md)
-[다음](processing-unhandled-exceptions-vb.md)
+> [!div class="step-by-step"]
+> [이전](strategies-for-database-development-and-deployment-vb.md)
+> [다음](processing-unhandled-exceptions-vb.md)

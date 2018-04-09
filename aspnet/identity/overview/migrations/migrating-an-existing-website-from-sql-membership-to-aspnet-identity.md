@@ -1,22 +1,22 @@
 ---
 uid: identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity
-title: "SQL 멤버 자격에서 ASP.NET Id로 기존 웹 사이트를 마이그레이션 | Microsoft Docs"
+title: SQL 멤버 자격에서 ASP.NET Id로 기존 웹 사이트를 마이그레이션 | Microsoft Docs
 author: Rick-Anderson
-description: "이 자습서에서는를 사용자와 역할 데이터를 새 ASP.NET Identity의 SQL 멤버 자격을 사용 하 여 만든 기존 웹 응용 프로그램을 마이그레이션하는 단계 중..."
+description: 이 자습서에서는를 사용자와 역할 데이터를 새 ASP.NET Identity의 SQL 멤버 자격을 사용 하 여 만든 기존 웹 응용 프로그램을 마이그레이션하는 단계 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/19/2014
 ms.topic: article
 ms.assetid: 220d3d75-16b2-4240-beae-a5b534f06419
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 3638c6779a0fcedaaa49623126b28ecf09a4954f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 2790f32bc74cecf450f5a258fc1ff5b280a63923
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="migrating-an-existing-website-from-sql-membership-to-aspnet-identity"></a>ASP.NET Id로 기존 웹 사이트 SQL 멤버 자격에서 마이그레이션
 ====================
@@ -42,7 +42,7 @@ ms.lasthandoff: 01/24/2018
 3. 관리자 라고 하는 역할을 만들고 해당 역할에 사용자로 'oldAdminUser'를 추가 합니다.
 
     ![](migrating-an-existing-website-from-sql-membership-to-aspnet-identity/_static/image2.png)
-4. Default.aspx를 사용 하면 사이트의 관리 섹션을 만듭니다. 관리자 역할의 사용자 에게만 액세스를 사용 하도록 설정 하려면 web.config 파일에 권한 부여 태그를 설정 합니다. 자세한 내용은 여기에서 찾을 수 있습니다 [https://www.asp.net/web-forms/tutorials/security/roles/role-based-authorization-cs](../../../web-forms/overview/older-versions-security/roles/role-based-authorization-cs.md)
+4. Default.aspx를 사용 하면 사이트의 관리 섹션을 만듭니다. 관리자 역할의 사용자 에게만 액세스를 사용 하도록 설정 하려면 web.config 파일에 권한 부여 태그를 설정 합니다. 자세한 내용은 여기에서 찾을 수 있습니다. [https://www.asp.net/web-forms/tutorials/security/roles/role-based-authorization-cs](../../../web-forms/overview/older-versions-security/roles/role-based-authorization-cs.md)
 
     ![](migrating-an-existing-website-from-sql-membership-to-aspnet-identity/_static/image3.png)
 5. SQL 멤버 자격 시스템에서 만든 테이블을 이해 하려면 서버 탐색기에서 데이터베이스를 봅니다. 에 aspnet 사용자 로그인 데이터가 저장 되\_사용자 및 aspnet\_역할 데이터는 aspnet에 저장 하는 동안 멤버 자격 테이블\_역할 테이블입니다. 에 대 한 사용자가 어떤 역할 aspnet에 저장 된 정보\_UsersInRoles 테이블입니다. 기본 회원 관리에 대 한 것으로 ASP.NET Identity 시스템에 위의 테이블의 정보를 이식 하 충분 합니다.
@@ -67,14 +67,14 @@ ms.lasthandoff: 01/24/2018
 
 1. 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 &gt; **NuGet 패키지 관리**합니다. 검색 상자에 "Asp.net Id"를 입력 합니다. 결과 목록에서 패키지를 선택 하 고 설치를 클릭 합니다. "동의 안 함" 단추를 클릭 하 여 사용권 계약에 동의 합니다. 이 패키지에서는 종속성 패키지를 설치 하는 참고: EntityFramework 및 Microsoft ASP.NET Identity Core 합니다. 마찬가지로 (OAuth 로그인을 사용 하도록 설정 하지 않을 경우 마지막 4 OWIN 패키지 건너뛸) 다음 패키지를 설치 합니다.
 
-    - Microsoft.AspNet.Identity.Owin
-    - Microsoft.Owin.Host.SystemWeb
-    - Microsoft.Owin.Security.Facebook
-    - Microsoft.Owin.Security.Google
-    - Microsoft.Owin.Security.MicrosoftAccount
-    - Microsoft.Owin.Security.Twitter
+   - Microsoft.AspNet.Identity.Owin
+   - Microsoft.Owin.Host.SystemWeb
+   - Microsoft.Owin.Security.Facebook
+   - Microsoft.Owin.Security.Google
+   - Microsoft.Owin.Security.MicrosoftAccount
+   - Microsoft.Owin.Security.Twitter
 
-    ![](migrating-an-existing-website-from-sql-membership-to-aspnet-identity/_static/image6.png)
+     ![](migrating-an-existing-website-from-sql-membership-to-aspnet-identity/_static/image6.png)
 
 ### <a name="migrate-database-to-the-new-identity-system"></a>새 Id 시스템으로 데이터베이스 마이그레이션
 
@@ -89,7 +89,7 @@ ASP.NET Id 시스템에 필요한 스키마에 기존 데이터베이스를 마�
 | **IdentityUser** | **Type** | **IdentityRole** | **IdentityUserRole** | **IdentityUserLogin** | **IdentityUserClaim** |
 | --- | --- | --- | --- | --- | --- |
 | ID | string | ID | RoleId | ProviderKey | ID |
-| 사용자 이름 | string | name | UserId | UserId | ClaimType |
+| 사용자 이름 | string | 이름 | UserId | UserId | ClaimType |
 | PasswordHash | string |  |  | LoginProvider | ClaimValue |
 | SecurityStamp | string |  |  |  | 사용자\_Id |
 | 메일 | string |  |  |  |  |
@@ -193,7 +193,7 @@ SQL 멤버 자격 사용자 정보에 다른 Id 사용자 모델 클래스 즉 �
 
 ### <a name="create-new-account-management-pages"></a>새 계정 관리 페이지 만들기
 
-다음 단계는 마이그레이션 계정 관리 페이지를 등록 및 로그인 사용자를 추가 하는 것입니다. SQL 멤버 자격에서 이전 계정을 페이지는 새 Id 시스템을 사용 하지 않는 컨트롤을 사용 합니다. 새 사용자를 추가 하려면 관리 페이지는 다음이 링크에서 자습서를 따라 [https://www.asp.net/identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project](../getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project.md) 단계의 시작 ' Web Forms 응용 프로그램에 사용자를 등록 하기 위한 추가 ' 이미 프로젝트를 만든 고 NuGet 패키지를 추가 했습니다.
+다음 단계는 마이그레이션 계정 관리 페이지를 등록 및 로그인 사용자를 추가 하는 것입니다. SQL 멤버 자격에서 이전 계정을 페이지는 새 Id 시스템을 사용 하지 않는 컨트롤을 사용 합니다. 새 사용자를 추가 하려면 관리 페이지는 다음이 링크에서 자습서를 따라 [ https://www.asp.net/identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project ](../getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project.md) 단계 ' 응용 프로그램에 사용자를 등록 하기 위한 Web Forms 추가 '에서 시작 하므로 이미 프로젝트를 만든 했으며 NuGet 추가 패키지입니다.
 
 여기에 있는 프로젝트와 함께 작동 하도록이 샘플에 대 한 일부 변경 해야 합니다.
 

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/filteredtextbox/allowing-only-certain-characters-in-a-text-box-cs
-title: "텍스트 상자 (C#)에 특정 문자만 허용 | Microsoft Docs"
+title: 텍스트 상자 (C#)에 특정 문자만 허용 | Microsoft Docs
 author: wenz
-description: "ASP.NET 유효성 검사 컨트롤은 사용자 입력에만 특정 문자는 사용할 수 있는지 확인할 수 있습니다. 그러나이 여전히 하더라도 사용자 입력에서 잘못 된..."
+description: ASP.NET 유효성 검사 컨트롤은 사용자 입력에만 특정 문자는 사용할 수 있는지 확인할 수 있습니다. 그러나이 여전히 하더라도 사용자 입력에서 잘못 된...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/filteredtextbox/allowing-only-certain-characters-in-a-text-box-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 246c3b5dd55ceb0f47ad1f4982ae5b3bf855e747
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d2ffc4b741bd0c7f9c456b6e76017f5350ab6378
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="allowing-only-certain-characters-in-a-text-box-c"></a>텍스트 상자 (C#)에 특정 문자를 허용합니다.
 ====================
@@ -45,10 +45,10 @@ ASP.NET AJAX 컨트롤 Toolkit에 포함 되어는 `FilteredTextBox` 입력란�
 
 마지막으로 `FilteredTextBoxExtender` 컨트롤 형식으로 사용자가 허용 되는 문자 제한의 담당 합니다. 먼저, 설정 된 `TargetControlID` 특성을 `ID` 의 `TextBox` 제어 합니다. 그런 다음 중 하나를 선택 `FilterType` 값:
 
-- `Custom`기본; 유효한 문자 목록을 지정 해야 합니다.
-- `LowercaseLetters`소문자만
-- `Numbers`숫자만
-- `UppercaseLetters`대문자만
+- `Custom` 기본; 유효한 문자 목록을 지정 해야 합니다.
+- `LowercaseLetters` 소문자만
+- `Numbers` 숫자만
+- `UppercaseLetters` 대문자만
 
 경우는 `Custom FilterType` 사용 되는 `ValidChars` 속성 설정 해야 하며 형식화 될 수 있는 문자 목록을 제공 합니다. 그런데: 텍스트 상자에 텍스트를 시도 하는 경우 모든 잘못 된 문자 제거 됩니다.
 
@@ -63,5 +63,5 @@ JavaScript가 설정 된 경우에 문자를 입력 하 고 페이지를 실행�
 
 숫자만 입력할 수 있습니다 ([전체 크기 이미지를 보려면 클릭](allowing-only-certain-characters-in-a-text-box-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[다음](allowing-only-certain-characters-in-a-text-box-vb.md)
+> [!div class="step-by-step"]
+> [다음](allowing-only-certain-characters-in-a-text-box-vb.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/advanced/configuring-aspnet-web-api
-title: "ASP.NET Web API 2 구성 | Microsoft Docs"
+title: ASP.NET Web API 2 구성 | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/advanced/configuring-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: f9b471fe2afdce278869a2e4d9b693a78030324b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: de2396710fb9434c84bf14a2faa37b98154f34d8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-aspnet-web-api-2"></a>ASP.NET Web API 2 구성합니다.
 ====================
@@ -49,7 +49,7 @@ ms.lasthandoff: 01/24/2018
 | **서비스** | 서비스의 컬렉션입니다. 참조 [서비스](#services)합니다. |
 
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 [Visual Studio 2017](https://www.visualstudio.com/vs/) Community, Professional 또는 Enterprise Edition.
 
@@ -120,13 +120,13 @@ Visual Studio 2017 년에서 "ASP.NET 웹 응용 프로그램" 프로젝트 템�
 다중 인스턴스 서비스
 
 
-| 서비스 | 설명 |
-| --- | --- |
-| **IFilterProvider** | 컨트롤러 작업에 대 한 필터의 목록을 반환합니다. |
-| **ModelBinderProvider** | 지정된 된 형식에 대 한 모델 바인더를 반환합니다. |
-| **ModelMetadataProvider** | 모델에 대 한 메타 데이터를 제공합니다. |
-| **ModelValidatorProvider** | 모델 유효성 검사기를 제공 합니다. |
-| **ValueProviderFactory** | 값 공급자를 만듭니다. 자세한 내용은 Mike Stall 블로그 게시물을 참조 하십시오. [WebAPI에 사용자 지정 값 공급자를 만드는 방법](https://blogs.msdn.com/b/jmstall/archive/2012/04/23/how-to-create-a-custom-value-provider-in-webapi.aspx) |이어야 합니다.
+|                 서비스                 |                                                                                                              설명                                                                                                               |
+|-----------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|    <strong>IFilterProvider</strong>     |                                                                                           컨트롤러 작업에 대 한 필터의 목록을 반환합니다.                                                                                           |
+|  <strong>ModelBinderProvider</strong>   |                                                                                                지정된 된 형식에 대 한 모델 바인더를 반환합니다.                                                                                                |
+| <strong>ModelMetadataProvider</strong>  |                                                                                                     모델에 대 한 메타 데이터를 제공합니다.                                                                                                     |
+| <strong>ModelValidatorProvider</strong> |                                                                                                   모델 유효성 검사기를 제공 합니다.                                                                                                    |
+|  <strong>ValueProviderFactory</strong>  | 값 공급자를 만듭니다. 자세한 내용은 Mike Stall 블로그 게시물을 참조 하십시오. [WebAPI에 사용자 지정 값 공급자를 만드는 방법](https://blogs.msdn.com/b/jmstall/archive/2012/04/23/how-to-create-a-custom-value-provider-in-webapi.aspx) |
 
 여러 인스턴스 서비스에 사용자 지정 구현을 추가 하려면 **추가** 또는 **삽입** 에 **서비스** 컬렉션:
 

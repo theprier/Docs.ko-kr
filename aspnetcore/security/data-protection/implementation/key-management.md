@@ -1,7 +1,7 @@
 ---
-title: "키 관리"
+title: ASP.NET Core에서 키 관리
 author: rick-anderson
-description: "이 문서에는 ASP.NET Core 데이터 보호 키 관리 Api의 구현 세부 사항을 설명합니다."
+description: ASP.NET Core 데이터 보호 키 관리 Api의 구현 세부 정보에 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/implementation/key-management
-ms.openlocfilehash: a1fd7c55ec94d5def569bb407c064f4fd2fe9695
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 1b073d8779547a828c17e825b0663b26efb61d14
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="key-management"></a>키 관리
+# <a name="key-management-in-aspnet-core"></a>ASP.NET Core에서 키 관리
 
 <a name="data-protection-implementation-key-management"></a>
 
@@ -29,7 +29,7 @@ ms.lasthandoff: 03/02/2018
 
 * 해지 되-키가 손상 되 고를 새 암호로 보호 작업에 대해 사용할 수 없습니다.
 
-만든 활성 및 만료 된 키는 모두 사용할 수 있습니다 들어오는 페이로드를 보호 해제 합니다. 페이로드, 보호 해제를 기본적으로 키를 해지 하지 사용할 수 있지만 응용 프로그램 개발자 수 [이 동작을 재정의할](../consumer-apis/dangerous-unprotect.md#data-protection-consumer-apis-dangerous-unprotect) 필요한 경우.
+만든 활성 및 만료 된 키는 모두 사용할 수 있습니다 들어오는 페이로드를 보호 해제 합니다. 페이로드, 보호 해제를 기본적으로 키를 해지 하지 사용할 수 있지만 응용 프로그램 개발자 수 [이 동작을 재정의할](xref:security/data-protection/consumer-apis/dangerous-unprotect#data-protection-consumer-apis-dangerous-unprotect) 필요한 경우.
 
 >[!WARNING]
 > 개발자 (예:에서 삭제 하 여 해당 파일은 파일 시스템) 키 링에서 키를 삭제 하려고 시도할 수 있습니다. 해당 시점에 키로 보호 하는 모든 데이터를 영구적으로 해독할 수 없습니다 및 재정의가 없습니다 응급 해지 된 키를 가진는 없습니다. 키 삭제가 실제로 삭제 동작이 며, 결과적으로 데이터 보호 시스템이이 작업을 수행 하기 위한 첫 번째 클래스 API가 없습니다.에서 제공 합니다.
@@ -83,6 +83,6 @@ services.AddDataProtection()
 
 데이터 보호 시스템에는 그에 따라 적절 한 키 저장소 위치 및 나머지 메커니즘에서 암호화를 자동으로 추론 하려고 하는 추론을 있습니다. 응용 프로그램 개발자가 구성할 수 이기도합니다. 다음 문서에는 이러한 메커니즘의 기본 구현에서 설명합니다.
 
-* [기본 키 저장소 공급자](key-storage-providers.md#data-protection-implementation-key-storage-providers)
+* [기본 키 저장소 공급자](xref:security/data-protection/implementation/key-storage-providers#data-protection-implementation-key-storage-providers)
 
-* [나머지 공급자에 기본 키 암호화](key-encryption-at-rest.md#data-protection-implementation-key-encryption-at-rest-providers)
+* [나머지 공급자에 기본 키 암호화](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest-providers)

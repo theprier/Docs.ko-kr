@@ -1,8 +1,8 @@
 ---
 uid: web-pages/readme/beta3
-title: "웹 매트릭스 및 ASP.NET 웹 페이지 (Razor) Beta 3 릴리스에 추가 정보 | Microsoft Docs"
+title: 웹 매트릭스 및 ASP.NET 웹 페이지 (Razor) Beta 3 릴리스에 추가 정보 | Microsoft Docs
 author: rick-anderson
-description: "웹 매트릭스 및 ASP.NET 웹 페이지 (Razor) Beta 3 릴리스에 추가 정보"
+description: 웹 매트릭스 및 ASP.NET 웹 페이지 (Razor) Beta 3 릴리스에 추가 정보
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/10/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/readme/beta3
 msc.type: content
-ms.openlocfilehash: def2f4b3e54c8de539e10c1b526a1dababeca8fb
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5ef7a6f44758cf94fc19d6fbab3cc4b7bce8e8e5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="web-matrix-and-aspnet-web-pages-razor-beta-3-release-readme"></a>웹 매트릭스 및 ASP.NET 웹 페이지 (Razor) Beta 3 릴리스에 추가 정보
 ====================
@@ -283,9 +283,9 @@ ms.lasthandoff: 01/24/2018
 > .NET Framework 버전 4 제거한 다음 다시 설치 하는 경우에 Razor 구문이 있는 ASP.NET 웹 페이지 비활성화 됩니다. 와 페이지는 *.cshtml* 확장 제대로 실행 되지 않습니다. 컴퓨터 루트에 있는 어셈블리를 등록 하는 ASP.NET 웹 페이지 *Web.config* 파일 및.NET Framework를 제거 합니다. 해당 파일을 제거 합니다. .NET Framework를 다시 설치 하는 구성 파일의 새 버전을 설치 하지만 ASP.NET 웹 페이지 어셈블리에 대 한 참조를 추가 하지 않습니다.
 > 
 > **해결 방법** .NET Framework를 다시 설치한 후 Razor 구문이 있는 ASP.NET 웹 페이지를 다시 설치 합니다. 이렇게 하면 다음 요소를 추가 *Web.config* 일반적으로 다음 위치에 있는 컴퓨터 루트에 파일:  
->   
+> 
 > `C:\Windows\Microsoft.NET\Framework\v4.0.30319\Config (32-bit)`  
->   
+> 
 > `C:\Windows\Microsoft.NET\Framework64\v4.0.30319\Config (64-bit)`
 > 
 > [!code-xml[Main](beta3/samples/sample6.xml)]
@@ -302,9 +302,9 @@ ms.lasthandoff: 01/24/2018
 #### <a name="issue-extensionless-urls-do-not-find-cshtmlvbhtml-files-on-iis-7-or-iis-75"></a>문제: 확장명 없는 Url 찾지 못하면 IIS 7.5 또는 IIS 7에서.cshtml/.vbhtml 파일
 
 > IIS 7 또는 IIS 7.5에서 다음과 같은 URL로 요청은 페이지를 찾을 수는 *.cshtml* 또는 *.vbhtml* 확장:  
->   
+> 
 > `http://www.example.com/ExampleSite/ExampleFile`  
->   
+> 
 > URL 다시 쓰기 해제 되어 기본적으로 IIS 7.5 또는 IIS 7에 대 한 문제가 발생 합니다. 문제일 수 상황은 IIS Express를 사용 하 여 로컬로 테스트할 때 문제가 표시 되지 않으면 하지만 웹 사이트 호스팅 웹 사이트에 배포 하는 경우 발생 합니다.
 > 
 > **해결 방법**
@@ -344,7 +344,7 @@ ms.lasthandoff: 01/24/2018
 >     - Copy *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\x86\\** **to** *\Bin\x86*
 >     - Copy *C:\Program Files\Microsoft SQL Server Compact Edition\v4.0\Private\amd64\\** **to** *\Bin\amd64*
 > 2. 웹 사이트의 루트 폴더에 작성 하거나 열을 *Web.config* 파일입니다. (이 파일 형식이 WebMatrix 베타 3에서 클릭 하면 표시 되 **모든** 에 **파일 형식을 선택** 대화 상자.)
-> 3. 다음 요소를 자식으로 추가  **&lt;구성&gt;**  요소 (에 포함 되지 않은  **&lt;system.web&gt;**  요소):
+> 3. 다음 요소를 자식으로 추가 **&lt;구성&gt;** 요소 (에 포함 되지 않은 **&lt;system.web&gt;** 요소):
 > 
 > 
 > [!code-xml[Main](beta3/samples/sample10.xml)]
@@ -366,21 +366,21 @@ ms.lasthandoff: 01/24/2018
 > 
 > **해결 방법**  
 > 사용 하 여는 `Encryption Mode` 의 속성은 `SqlCeConnection` SQL Server Compact 4.0 데이터베이스 파일을 암호화 하는 클래스입니다. 사용 하 여 암호화 된 SQL Server Compact 4.0 데이터베이스를 만드는 방법을 보여 주는 다음 예제는 `Encryption Mode` 속성:
->  
+> 
 > [!code-csharp[Main](beta3/samples/sample11.cs)]
->  
+> 
 > [!code-vb[Main](beta3/samples/sample12.vb)]
 > 
 > 기존 SQL Server Compact 4.0 데이터베이스의 암호화 모드를 변경 하려면 다음을 수행 합니다.
->  
+> 
 > [!code-csharp[Main](beta3/samples/sample13.cs)]
->  
+> 
 > [!code-vb[Main](beta3/samples/sample14.vb)]
 > 
 > 암호화 되지 않은 SQL Server Compact 4.0 데이터베이스를 암호화 하려면 다음을 수행 합니다.
->  
+> 
 > [!code-csharp[Main](beta3/samples/sample15.cs)]
->  
+> 
 > [!code-vb[Main](beta3/samples/sample16.vb)]
 
 
@@ -537,7 +537,7 @@ ms.lasthandoff: 01/24/2018
 > 와 같은 데이터 형식 매개 변수에 대 한를 명시적으로 설정 `SqlDbType` 또는 `DbType`합니다. 이 BLOB 데이터 형식의 경우 중요 한 (`image` 및 `ntext`). 다음과 같은 코드를 사용 합니다.
 > 
 > [!code-sql[Main](beta3/samples/sample20.sql)]
->  
+> 
 > [!code-vb[Main](beta3/samples/sample21.vb)]
 
 

@@ -1,6 +1,6 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/intro-to-web-pages-programming
-title: "ASP.NET 웹 페이지를 소개-프로그래밍 기본 사항 | Microsoft Docs"
+title: ASP.NET 웹 페이지를 소개-프로그래밍 기본 사항 | Microsoft Docs
 author: tfitzmac
 description: "이 자습서에서는 Razor 구문이 있는 ASP.NET 웹 페이지에서 프로그램에는 방법의 개요를 제공합니다. 학습할: 기본 'Razor' 구문을 프로젝트에 대 한 사용 하는 중..."
 ms.author: aspnetcontent
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/intro-to-web-pages-programming
 msc.type: authoredcontent
-ms.openlocfilehash: eed07f4f8a13ea9082ab3aad3e3db24febff8ef6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3e2c990a6451c13e03baafa343df156b2d46d219
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---programming-basics"></a>ASP.NET 웹 페이지-프로그래밍 기본 사항 소개
 ====================
@@ -103,7 +103,7 @@ WebMatrix를 아직 실행 되는 경우 시작 합니다. 이전 자습서에�
 
 - @(한\*b) 변수에 무엇이 곱일 렌더링 한와 b 합니다. (의 \* 연산자 곱하기를 의미 합니다.)
 - @(기술 + "" + 제품) 사이 공백을 추가 하 고 연결 후 변수 기술 및 제품의 값을 렌더링 합니다. 문자열 연결에 대 한 연산자 (+)는 숫자를 추가 하기 위한은 연산자와 같습니다. 숫자 또는 문자열 작업 하 고 올바른 작업으로 수행 하 여부를 일반적으로 ASP.NET 알 수는 + 연산자입니다.
-- @Request.Url요청 개체의 Url 속성을 렌더링합니다. 요청 개체를 브라우저에서 현재 요청에 대 한 정보를 포함 하 고 Url 속성은 현재 요청의 URL을 포함 하는 물론 합니다.
+- @Request.Url 요청 개체의 Url 속성을 렌더링합니다. 요청 개체를 브라우저에서 현재 요청에 대 한 정보를 포함 하 고 Url 속성은 현재 요청의 URL을 포함 하는 물론 합니다.
 
 이 예제에서는 설정할 수 있는 작업 않는 다양 한 방식에서 보여주도록 설계 되어 있습니다. 맨 위에 있는 코드 블록에는 계산을 수행 하 고, 결과 변수에 설정 하 고, 태그에서 변수를 렌더링 한 다음 수 있습니다. 또는 태그에는 식 오른쪽에 있는 계산을 수행할 수 있습니다. 사용 하는 방법에 따라 다릅니다 사람에 게, 사용자 고유의 기본 설정에 어느 정도 까지는.
 
@@ -165,7 +165,7 @@ If가 방금 추가한 어떤 조건입니다. 코드에서의 조건에는 구�
 
 [!code-csharp[Main](intro-to-web-pages-programming/samples/sample7.cs)]
 
-식 또는 값에 대 한 변수를 사용 하 여 테스트할 수 있습니다는 *논리 연산자* 또는 *비교 연산자*: 같음 (= =), 보다 큼 (&gt;), 미만 (&lt;), 보다 크거나 같음 (&gt;=), 보다 작거나 같음 (&lt;=) 합니다. ! = 같지 않음 연산자 의미-예를 들어 경우 (한! = 0) 의미 *경우* *는**0과 같지 않은*합니다.
+식 또는 값에 대 한 변수를 사용 하 여 테스트할 수 있습니다는 <em>논리 연산자</em> 또는 <em>비교 연산자</em>: 같음 (= =), 보다 큼 (&gt;), 미만 (&lt;), 보다 크거나 같음 (&gt;=), 보다 작거나 같음 (&lt;=) 합니다. ! = 같지 않음 연산자 의미-예를 들어 경우 (한! = 0) 의미 <em>경우</em> <em>는</em><em>0과 같지 않은</em>합니다.
 
 > [!NOTE]
 > 같음 (= =)에 대 한 비교 연산자는 = 동일 확인할 수 있는지 확인 합니다. = 연산자 값을 할당 하는 데에 사용 됩니다 (var는 = 2). 이러한 연산자 혼합 하면 오류가 얻게 또는 이상한 결과 얻게 됩니다.
@@ -207,7 +207,7 @@ If에 대 한 할 사항이 하나 블록:는 else 블록 블록 뒤 될 수 있
 
 ### <a name="testing-the-value-of-a-query-string"></a>쿼리 문자열의 값을 테스트
 
-한 더 많은 테스트 합니다. If 추가이 이번에는 값을 테스트 하는 블록 라는 쿼리 문자열에 전달 될 수 있는 표시 합니다. (다음과 같은: ' http://localhost:43097/TestRazorPart2.cshtml`?show=true`) 메시지 있습니다 한 된 표시 되도록 페이지를 변경 합니다 ("이것이 처음..." 등) 표시의 값은 경우에 표시 됩니다.
+한 더 많은 테스트 합니다. If 추가이 이번에는 값을 테스트 하는 블록 라는 쿼리 문자열에 전달 될 수 있는 표시 합니다. (다음과 같은: 'http://localhost:43097/TestRazorPart2.cshtml`?show=true`) 메시지 있습니다 한 된 표시 되도록 페이지를 변경 합니다 ("이것이 처음..." 등) 표시의 값은 경우에 표시 됩니다.
 
 페이지 맨 위에 있는 코드 블록 아래쪽 (그러나 내부)에서 다음을 추가.
 
@@ -223,7 +223,7 @@ If에 대 한 할 사항이 하나 블록:는 else 블록 블록 뒤 될 수 있
 
 코드는 URL 쿼리 문자열의 예: URL의이 버전에는 show 라는 변수가 포함 되어 있는지 여부를 결정 합니다.
 
-`http://localhost:43097/TestRazorPart2.cshtml`? 표시 = true
+`http://localhost:43097/TestRazorPart2.cshtml`?show=true
 
 자체 테스트 요청 개체의 QueryString 속성을 살펴봅니다. 쿼리 문자열에는 명명 된 항목 표시 하 고 해당 항목이 if를 true로 설정 된 경우 블록 실행 및 매개 변수를 true로 설정 합니다.
 
@@ -259,7 +259,7 @@ If에 대 한 할 사항이 하나 블록:는 else 블록 블록 뒤 될 수 있
 
 페이지를 실행 합니다. 매개가 false 이면 if(showMessage) 테스트 태그에서 false 반환 하기 때문에 메시지가 없는 있습니다.
 
-클릭 **제출**합니다. 날짜 및 시간, 있지만 메시지가 없는 여전히 표시 됩니다.
+**제출**을 클릭합니다. 날짜 및 시간, 있지만 메시지가 없는 여전히 표시 됩니다.
 
 브라우저에서 URL 상자도 이동 하 고 URL의 끝에 다음 추가:? 표시 = true 및 다음 Enter 키를 누릅니다.
 
@@ -281,7 +281,7 @@ ASP.NET 웹 페이지에서 기본적으로 제공 하는 몇 가지 도우미�
 
 자습서의이 부분에서는 Gravatar ("전체적으로 인식 된 아바타") 이미지를 표시할 수 있는 도우미를 설치 합니다. 다음 두 가지를 설명 합니다. 하나를 찾아서 도우미를 설치 하는 방법입니다. 또한 도우미 손쉽게 방법을 직접 작성 해야 하는 코드를 많이 사용 하 여 작업을 수행 하 고, 그렇지 해야 작업을 설명 합니다.
 
-Gravatar 웹 사이트에서 사용자 고유의 Gravatar를 등록할 수 있습니다 [http://www.gravatar.com/](http://www.gravatar.com/), 이지만를 반드시 자습서의이 부분을 수행할 수 있는 Gravatar 계정을 만들어야 합니다.
+Gravatar 웹 사이트에서 사용자 고유의 Gravatar를 등록할 수 있습니다 [ http://www.gravatar.com/ ](http://www.gravatar.com/), 이지만를 반드시 자습서의이 부분을 수행할 수 있는 Gravatar 계정을 만들어야 합니다.
 
 WebMatrix에서 클릭 하 고 **NuGet** 단추입니다.
 
@@ -355,11 +355,11 @@ WebMatrix의 목록을 표시 마침표 (.)를 입력 하는 즉시 *메서드* 
 
 [!code-cshtml[Main](intro-to-web-pages-programming/samples/sample18.cshtml)]
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 - [Razor 구문을 사용 하 여 ASP.NET 웹 프로그래밍 소개](https://go.microsoft.com/fwlink/?LinkID=202890)
 - [Twitter 도우미](../../ui-layouts-and-themes/twitter-helper.md)
 
->[!div class="step-by-step"]
-[이전](getting-started.md)
-[다음](displaying-data.md)
+> [!div class="step-by-step"]
+> [이전](getting-started.md)
+> [다음](displaying-data.md)

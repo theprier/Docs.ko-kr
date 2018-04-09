@@ -1,7 +1,7 @@
 ---
-title: "Nginx를 사용하여 Linux에서 ASP.NET Core 호스트"
+title: Nginx를 사용하여 Linux에서 ASP.NET Core 호스트
 author: rick-anderson
-description: "Ubuntu 16.04 Kestrel에서 실행 되는 ASP.NET Core 웹 앱에 대 한 HTTP 트래픽을 전달 하도록에 역방향 프록시로 Nginx를 설정 하는 방법을 설명 합니다."
+description: Ubuntu 16.04 Kestrel에서 실행 되는 ASP.NET Core 웹 앱에 대 한 HTTP 트래픽을 전달 하도록에 역방향 프록시로 Nginx를 설정 하는 방법을 설명 합니다.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/linux-nginx
-ms.openlocfilehash: a1de177fcd41c925a85e5aab9a0d236249b7da0b
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 64093b9fcfa9047145de8f8b142f72fa1515f248
+ms.sourcegitcommit: d45d766504c2c5aad2453f01f089bc6b696b5576
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="host-aspnet-core-on-linux-with-nginx"></a>Nginx를 사용하여 Linux에서 ASP.NET Core 호스트
 
@@ -62,7 +62,7 @@ Kestrel은 ASP.NET Core에서 동적 콘텐츠를 처리 하기 위한 훌륭한
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-호출 된 [UseForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders) 에서 메서드 `Startup.Configure` 호출 하기 전에 [UseAuthentication](/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication) 또는 유사한 인증 체계 미들웨어:
+호출 된 [UseForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders) 에서 메서드 `Startup.Configure` 호출 하기 전에 [UseAuthentication](/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication) 또는 유사한 인증 체계 미들웨어입니다. 미들웨어 전달 하도록 구성 된 `X-Forwarded-For` 및 `X-Forwarded-Proto` 헤더:
 
 ```csharp
 app.UseForwardedHeaders(new ForwardedHeadersOptions
@@ -75,7 +75,7 @@ app.UseAuthentication();
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
-호출 된 [UseForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders) 에서 메서드 `Startup.Configure` 호출 하기 전에 [UseIdentity](/dotnet/api/microsoft.aspnetcore.builder.builderextensions.useidentity) 및 [UseFacebookAuthentication](/dotnet/api/microsoft.aspnetcore.builder.facebookappbuilderextensions.usefacebookauthentication) 또는 유사한 인증 체계 미들웨어:
+호출 된 [UseForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders) 에서 메서드 `Startup.Configure` 호출 하기 전에 [UseIdentity](/dotnet/api/microsoft.aspnetcore.builder.builderextensions.useidentity) 및 [UseFacebookAuthentication](/dotnet/api/microsoft.aspnetcore.builder.facebookappbuilderextensions.usefacebookauthentication) 또는 유사한 인증 체계 미들웨어입니다. 미들웨어 전달 하도록 구성 된 `X-Forwarded-For` 및 `X-Forwarded-Proto` 헤더:
 
 ```csharp
 app.UseForwardedHeaders(new ForwardedHeadersOptions
@@ -94,6 +94,8 @@ app.UseFacebookAuthentication(new FacebookOptions()
 ---
 
 없는 경우 [ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions) 전달 하도록 기본 헤더는 미들웨어를 지정 된 `None`합니다.
+
+프록시 서버 및 부하 분산 장치 뒤에 호스트 되는 앱에 대 한 추가 구성 해야 할 수 있습니다. 자세한 내용은 참조 [프록시 서버를 사용 하 고 부하 분산 장치를 ASP.NET Core 구성](xref:host-and-deploy/proxy-load-balancer)합니다.
 
 ### <a name="install-nginx"></a>Nginx 설치
 
@@ -144,7 +146,7 @@ server {
 위의 구성 파일 및 기본 서버와 Nginx 허용 호스트 헤더를 사용 하 여 포트 80에서 공용 트래픽을 `example.com` 또는 `*.example.com`합니다. 이러한 호스트와 일치 하지 않는 요청 Kestrel에 경고가 전달 되지 않습니다. 일치 하는 요청에 Kestrel을 전달 하는 Nginx `http://localhost:5000`합니다. 참조 [nginx 요청을 처리 하는 방법을](https://nginx.org/docs/http/request_processing.html) 자세한 정보에 대 한 합니다.
 
 > [!WARNING]
-> 적절 한 입력 하지 않으면 [server_name 지시문](https://nginx.org/docs/http/server_names.html) 보안 취약성이 있는 응용 프로그램을 노출 합니다. 와일드 카드 바인딩 하위 도메인 (예를 들어 `*.example.com`) 전체 부모 도메인을 제어 하는 경우이 보안 위험을 노출 하지 않습니다 (반대인 `*.com`, 취약 한 변수인). 참조 [rfc7230 섹션 5.4](https://tools.ietf.org/html/rfc7230#section-5.4) 자세한 정보에 대 한 합니다.
+> 적절 한 입력 하지 않으면 [server_name 지시문](https://nginx.org/docs/http/server_names.html) 보안 취약성이 있는 응용 프로그램을 노출 합니다. 와일드 카드 바인딩 하위 도메인 (예를 들어 `*.example.com`) 전체 부모 도메인을 제어 하는 경우이 보안 위험을 노출 하지 않습니다 (반대인 `*.com`, 취약 한 변수인). 자세한 내용은 [rfc7230 섹션-5.4](https://tools.ietf.org/html/rfc7230#section-5.4)를 참조하세요.
 
 Nginx 구성, 설정 되 면 실행 `sudo nginx -t` 구성 파일의 구문을 확인 합니다. 구성 파일 테스트에 성공한 경우 강제로 실행 하 여 변경 내용을 적용 하려면 Nginx `sudo nginx -s reload`합니다.
 

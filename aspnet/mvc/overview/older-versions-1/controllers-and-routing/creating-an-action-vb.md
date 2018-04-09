@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/creating-an-action-vb
-title: "만들기 동작 (VB) | Microsoft Docs"
+title: 만들기 동작 (VB) | Microsoft Docs
 author: microsoft
-description: "ASP.NET MVC 컨트롤러에 새 동작을 추가 하는 방법에 알아봅니다. 메서드는 작업에 대 한 요구 사항에 알아봅니다."
+description: ASP.NET MVC 컨트롤러에 새 동작을 추가 하는 방법에 알아봅니다. 메서드는 작업에 대 한 요구 사항에 알아봅니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/02/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-an-action-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3d1d355599c17df597f9c08d9d7f129fffc1a2e4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c77e4738444c61d60bdd78a50b36f98be41fc271
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-an-action-vb"></a>액션 (VB) 만들기
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > ASP.NET MVC 컨트롤러에 새 동작을 추가 하는 방법에 알아봅니다. 메서드는 작업에 대 한 요구 사항에 알아봅니다.
 
@@ -31,7 +31,7 @@ ms.lasthandoff: 11/10/2017
 
 컨트롤러에 새 메서드를 추가 하 여 컨트롤러에 새 동작을 추가 합니다. 예를 들어 컨트롤러 목록 1의 index ()는 작업 및 sayhello () 라는 동작을 포함 합니다. 두 방법 모두 작업으로 노출 됩니다.
 
-**1-Controllers\HomeController.vb 나열**
+**Listing 1 - Controllers\HomeController.vb**
 
 [!code-vb[Main](creating-an-action-vb/samples/sample1.vb)]
 
@@ -53,7 +53,7 @@ ms.lasthandoff: 11/10/2017
 
 컨트롤러 클래스에는 공용 메서드를 만들어야 할 메서드를 컨트롤러 작업으로 노출 하지 않으려는 경우 때문 메서드를 사용 하 여 호출 되지는 &lt;NonAction&gt; 특성입니다. 목록 2에 있는 컨트롤러로 데코레이팅된 CompanySecrets() 라는 공용 메서드를 포함 하는 예를 들어는 &lt;NonAction&gt; 특성입니다.
 
-**2-Controllers\WorkController.vb 나열**
+**Listing 2 - Controllers\WorkController.vb**
 
 [!code-vb[Main](creating-an-action-vb/samples/sample2.vb)]
 
@@ -64,6 +64,6 @@ ms.lasthandoff: 11/10/2017
 
 **그림 01**: NonAction 메서드 호출 ([전체 크기 이미지를 보려면 클릭](creating-an-action-vb/_static/image2.png))
 
->[!div class="step-by-step"]
-[이전](creating-a-controller-vb.md)
-[다음](aspnet-mvc-controllers-overview-cs.md)
+> [!div class="step-by-step"]
+> [이전](creating-a-controller-vb.md)
+> [다음](aspnet-mvc-controllers-overview-cs.md)

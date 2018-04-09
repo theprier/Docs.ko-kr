@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core에서 플랫폼 관련 구성을 사용 하 여 앱 기능 추가"
+title: ASP.NET Core에서 플랫폼 관련 구성 사용 하 여 앱 기능을 추가 합니다.
 author: guardrex
-description: "IHostingStartup 구현을 사용 하 여 외부 어셈블리의 기능을 ASP.NET Core 응용 프로그램을 추가 하는 방법을 알아봅니다."
+description: IHostingStartup 구현을 사용 하 여 외부 어셈블리의 기능을 ASP.NET Core 응용 프로그램을 추가 하는 방법을 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,19 +10,19 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/platform-specific-configuration
-ms.openlocfilehash: c36b8acd6f7fcb4e4d11e43013ccaf5ca6d1b0ab
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 9dd7774a1885a9c6c702b5b46fa1f88c86f7f7ac
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="add-app-features-using-a-platform-specific-configuration-in-aspnet-core"></a>ASP.NET Core에서 플랫폼 관련 구성을 사용 하 여 앱 기능 추가
+# <a name="add-app-features-with-a-platform-specific-configuration-in-aspnet-core"></a>ASP.NET Core에서 플랫폼 관련 구성 사용 하 여 앱 기능을 추가 합니다.
 
 [Luke Latham](https://github.com/guardrex)으로
 
 [IHostingStartup](/dotnet/api/microsoft.aspnetcore.hosting.ihostingstartup) 구현 하면 응용 프로그램의 외부 어셈블리 외부에서 시작 시 응용 프로그램에 기능 추가 `Startup` 클래스입니다. 예를 들어 외부 도구 라이브러리 사용할 수는 `IHostingStartup` 구현을 추가 하는 구성 공급자 또는 응용 프로그램 서비스를 제공 합니다. `IHostingStartup` *이상에서 ASP.NET Core 2.0에서 사용할 수는 있습니다.*
 
-[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/platform-specific-configuration/sample/)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/platform-specific-configuration/sample/)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="discover-loaded-hosting-startup-assemblies"></a>로드 된 호스팅 시작 어셈블리를 검색 합니다.
 
@@ -143,7 +143,7 @@ DOTNET\_추가\_DEPS
 %UserProfile%\.dotnet\x64\additionalDeps\StartupDiagnostics\
 ```
 
-다양 한 운영 체제에 대 한 환경 변수를 설정 하는 방법의 예 참조 [여러 환경 작업](xref:fundamentals/environments)합니다.
+다양 한 운영 체제에 대 한 환경 변수를 설정 하는 방법의 예 참조 [여러 환경 작업할](xref:fundamentals/environments)합니다.
 
 ## <a name="sample-app"></a>샘플 응용 프로그램
 

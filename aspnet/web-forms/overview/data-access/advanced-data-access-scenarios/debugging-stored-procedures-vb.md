@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/debugging-stored-procedures-vb
-title: "저장된 프로시저 (VB) 디버깅 | Microsoft Docs"
+title: 저장된 프로시저 (VB) 디버깅 | Microsoft Docs
 author: rick-anderson
-description: "Visual Studio Professional 및 Team System 버전 수 있도록 중단점을 설정 하 고 SQL Server 내에서 저장된 프로시저에 단계 저장 디버깅을 만드는 중..."
+description: Visual Studio Professional 및 Team System 버전 수 있도록 중단점을 설정 하 고 SQL Server 내에서 저장된 프로시저에 단계 저장 디버깅을 만드는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/03/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/debugging-stored-procedures-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ad09847d828d02019a72e3022d035a8fbe921568
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 3391a78eaeb0add46e75048069a614ba00628f67
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="debugging-stored-procedures-vb"></a>저장된 프로시저 (VB) 디버깅
 ====================
@@ -167,7 +167,7 @@ Visual Studio와 동일한 컴퓨터에 SQL Server 데이터베이스 인스턴�
 
 두 번째 작업은 응용 프로그램을 디버깅 하는 데 Windows 사용자 계정을 원격 데이터베이스에서 유효한 로그인 하도록 요구 합니다. 그러나 가능성에는 Windows 계정으로 사용자의 워크스테이션에 로그온 하는 경우 SQL Server에서 유효한 로그인 하지 않습니다. SQL Server에 특정 로그인 계정을 추가 하는 대신 더 적합할 SQL Server 디버깅 계정으로 Windows 사용자 계정을 일부를 지정 하는 것입니다. 그런 다음 원격 SQL Server 인스턴스의 데이터베이스 개체를 디버깅 하려면 Visual Studio는 Windows 로그인 계정 s 자격 증명을 사용 하 여 실행 합니다.
 
-예제는 작업을 명확 하 게 하는 데 도움이 됩니다. Windows 계정인은 `SQLDebug` Windows 도메인 내에서. 이 계정은의 구성원으로 유효한 로그인과 원격 SQL Server 인스턴스에 추가할 해야는 `sysadmin` 역할입니다. 그런 다음 Visual Studio에서 원격 SQL Server 인스턴스를 디버깅 하려면 해야 Visual Studio와 실행의 `SQLDebug` 사용자입니다. 로그 아웃 우리의 워크스테이션으로 다시 로그인 하 여 수행할 수 있습니다 `SQLDebug`, 고유한 자격 증명을 사용 하 여이 워크스테이션에 로그인을 사용 하 여 간단 하지만 Visual Studio를 실행 될 수 `runas.exe` 으로 Visual Studio를 시작 하는 `SQLDebug` 사용자입니다. `runas.exe`특정 응용 프로그램을에서 다른 사용자 계정 가장 하 여 실행할 수 있습니다. 으로 Visual Studio를 시작 `SQLDebug`, 명령줄에서 다음 문을 입력할 수 있습니다.
+예제는 작업을 명확 하 게 하는 데 도움이 됩니다. Windows 계정인은 `SQLDebug` Windows 도메인 내에서. 이 계정은의 구성원으로 유효한 로그인과 원격 SQL Server 인스턴스에 추가할 해야는 `sysadmin` 역할입니다. 그런 다음 Visual Studio에서 원격 SQL Server 인스턴스를 디버깅 하려면 해야 Visual Studio와 실행의 `SQLDebug` 사용자입니다. 로그 아웃 우리의 워크스테이션으로 다시 로그인 하 여 수행할 수 있습니다 `SQLDebug`, 고유한 자격 증명을 사용 하 여이 워크스테이션에 로그인을 사용 하 여 간단 하지만 Visual Studio를 실행 될 수 `runas.exe` 으로 Visual Studio를 시작 하는 `SQLDebug` 사용자입니다. `runas.exe` 특정 응용 프로그램을에서 다른 사용자 계정 가장 하 여 실행할 수 있습니다. 으로 Visual Studio를 시작 `SQLDebug`, 명령줄에서 다음 문을 입력할 수 있습니다.
 
 
 [!code-console[Main](debugging-stored-procedures-vb/samples/sample2.cmd)]
@@ -190,8 +190,8 @@ SQL Server 프로젝트를 통해 데이터베이스 개체를 디버깅할 수�
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
->[!div class="step-by-step"]
-[이전](protecting-connection-strings-and-other-configuration-information-vb.md)
-[다음](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb.md)
+> [!div class="step-by-step"]
+> [이전](protecting-connection-strings-and-other-configuration-information-vb.md)
+> [다음](creating-stored-procedures-and-user-defined-functions-with-managed-code-vb.md)

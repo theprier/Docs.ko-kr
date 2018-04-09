@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/dynamicpopulate/using-dynamicpopulate-with-a-user-control-and-javascript-cs
-title: "DynamicPopulate를 사용 하 여 사용자 정의 컨트롤 및 JavaScript (C#) | Microsoft Docs"
+title: DynamicPopulate를 사용 하 여 사용자 정의 컨트롤 및 JavaScript (C#) | Microsoft Docs
 author: wenz
-description: "ASP.NET AJAX 컨트롤 도구 키트에서 DynamicPopulate 제어 웹 서비스 (또는 페이지 메서드)를 호출 및 t 대상 컨트롤에 결과 값을 채우는 중..."
+description: ASP.NET AJAX 컨트롤 도구 키트에서 DynamicPopulate 제어 웹 서비스 (또는 페이지 메서드)를 호출 및 t 대상 컨트롤에 결과 값을 채우는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/using-dynamicpopulate-with-a-user-control-and-javascript-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0d98177561b72ffbe05455f785e156f91e450d36
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: cced645733375de7ab6235efa46b8d20ed262e50
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-dynamicpopulate-with-a-user-control-and-javascript-c"></a>DynamicPopulate를 사용 하 여 사용자 정의 컨트롤 및 JavaScript (C#)
 ====================
@@ -74,6 +74,6 @@ A &lt; `label` &gt; 요소는 서버에서 가져온 데이터를 표시 하는 
 
 사용자 정의 컨트롤에 있는 라디오 단추 ([전체 크기 이미지를 보려면 클릭](using-dynamicpopulate-with-a-user-control-and-javascript-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[이전](dynamically-populating-a-control-using-javascript-code-cs.md)
-[다음](dynamically-populating-a-control-vb.md)
+> [!div class="step-by-step"]
+> [이전](dynamically-populating-a-control-using-javascript-code-cs.md)
+> [다음](dynamically-populating-a-control-vb.md)

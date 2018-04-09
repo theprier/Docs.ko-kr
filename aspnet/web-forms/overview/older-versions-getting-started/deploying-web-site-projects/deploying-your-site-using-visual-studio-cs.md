@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-visual-studio-cs
-title: "Visual Studio (C#)를 사용 하 여 사이트를 배포 합니다. | Microsoft Docs"
+title: Visual Studio (C#)를 사용 하 여 사이트를 배포 합니다. | Microsoft Docs
 author: rick-anderson
-description: "Visual Studio에는 웹 사이트를 배포 하기 위한 도구가 포함 되어 있습니다. 이 자습서에서는 이러한 도구에 대해 자세히 알아보기"
+description: Visual Studio에는 웹 사이트를 배포 하기 위한 도구가 포함 되어 있습니다. 이 자습서에서는 이러한 도구에 대해 자세히 알아보기
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/01/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-visual-studio-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c0c32c3dd24be5edfea3e17695753973f3fad30a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: f06e2fe1fdfb03b106466a1792f6381495f76096
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-your-site-using-visual-studio-c"></a>Visual Studio (C#)를 사용 하 여 사이트를 배포 합니다.
 ====================
@@ -155,6 +155,6 @@ Visual Studio 내에서 웹 응용 프로그램을 배포 하는 다른 방법�
 - [방법: 웹 사이트 게시](https://msdn.microsoft.com/library/20yh9f1b.aspx)
 - [설치 및 Visual Studio에서 프로젝트 배포](https://msdn.microsoft.com/library/wx3b589t.aspx)
 
->[!div class="step-by-step"]
-[이전](deploying-your-site-using-an-ftp-client-cs.md)
-[다음](common-configuration-differences-between-development-and-production-cs.md)
+> [!div class="step-by-step"]
+> [이전](deploying-your-site-using-an-ftp-client-cs.md)
+> [다음](common-configuration-differences-between-development-and-production-cs.md)

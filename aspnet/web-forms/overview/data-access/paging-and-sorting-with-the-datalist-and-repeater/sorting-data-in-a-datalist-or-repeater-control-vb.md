@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/sorting-data-in-a-datalist-or-repeater-control-vb
-title: "DataList 또는 반복기 컨트롤 (VB)에서 데이터 정렬 | Microsoft Docs"
+title: DataList 또는 반복기 컨트롤 (VB)에서 데이터 정렬 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에서는 정렬 지원을 DataList 및 반복기를 포함 하는 방법 뿐만 아니라 해당 데이터가 수 DataList 또는 반복기를 생성 하는 방법을 검토 합니다..."
+description: 이 자습서에서는 정렬 지원을 DataList 및 반복기를 포함 하는 방법 뿐만 아니라 해당 데이터가 수 DataList 또는 반복기를 생성 하는 방법을 검토 합니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/13/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/sorting-data-in-a-datalist-or-repeater-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0133a74454a7754f4f7087e2121c7387a1aef8a8
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 66d6833e69a91aef39cc4a202ef662ecaeeee839
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="sorting-data-in-a-datalist-or-repeater-control-vb"></a>DataList 또는 반복기 컨트롤 (VB)에서 데이터 정렬
 ====================
@@ -231,9 +231,9 @@ ObjectDataSource s 업데이트 `SelectMethod` 속성이 새 호출 한다는 �
 
 DataList 예제 단계에서 비효율적인 기본 페이징 기술을 사용 하 여 해당 데이터를 통해 5 페이지를 검사 합니다. 충분히 많은 양의 데이터를 페이징 하는 경우 반드시 사용자 지정 페이징을 사용할 수 있습니다. 에 [효율적으로 통해 큰 크기의 데이터를 페이징](../paging-and-sorting/efficiently-paging-through-large-amounts-of-data-vb.md) 및 [사용자 지정 페이징 데이터 정렬](../paging-and-sorting/sorting-custom-paged-data-vb.md) 자습서에 대 한 BLL에 기본 및 사용자 지정 페이징 및 만든된 메서드 간의 차이 검사 했습니다 사용자 지정 페이징 및 정렬 사용자 지정 페이징된 데이터를 활용할 수 있습니다. 특히이 두 이전 자습서에 추가한 이유를 다음 세 가지 방법에서 `ProductsBLL` 클래스:
 
-- `GetProductsPaged(startRowIndex, maximumRows)`시작 하는 레코드의 특정 하위 집합을 반환 *startRowIndex* 초과 하지 않는 및 *maximumRows*합니다.
-- `GetProductsPagedAndSorted(sortExpression, startRowIndex, maximumRows)`레코드에서 지정 된 정렬의 특정 하위 집합을 반환 *sortExpression* 입력된 매개 변수입니다.
-- `TotalNumberOfProducts()`에 있는 레코드의 총 수를 제공는 `Products` 데이터베이스 테이블입니다.
+- `GetProductsPaged(startRowIndex, maximumRows)` 시작 하는 레코드의 특정 하위 집합을 반환 *startRowIndex* 초과 하지 않는 및 *maximumRows*합니다.
+- `GetProductsPagedAndSorted(sortExpression, startRowIndex, maximumRows)` 레코드에서 지정 된 정렬의 특정 하위 집합을 반환 *sortExpression* 입력된 매개 변수입니다.
+- `TotalNumberOfProducts()` 에 있는 레코드의 총 수를 제공는 `Products` 데이터베이스 테이블입니다.
 
 이러한 메서드를 효율적으로 페이지 및 정렬 DataList 또는 반복기 컨트롤을 사용 하 여 데이터를 통해 사용할 수 있습니다. 이 설명 하기 s 페이징 지원을 사용자 지정 된 반복기 컨트롤을 만들어 시작 사용 그런 다음 정렬 기능을 추가 합니다.
 
@@ -390,11 +390,11 @@ DataList 또는 이미 페이징 지원을 제공 하는 반복기에 정렬 기
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 David Suru 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](paging-report-data-in-a-datalist-or-repeater-control-vb.md)
+> [!div class="step-by-step"]
+> [이전](paging-report-data-in-a-datalist-or-repeater-control-vb.md)

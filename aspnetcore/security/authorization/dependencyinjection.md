@@ -1,7 +1,7 @@
 ---
-title: "요구 사항 처리기의 종속성 주입"
+title: ASP.NET Core의 요구 사항 처리기의 종속성 주입
 author: rick-anderson
-description: "이 문서에서는 종속성 주입을 사용하여 ASP.NET Core 응용 프로그램에 권한 부여 요구 사항 처리기를 주입하는 방법을 설명합니다."
+description: 종속성 주입을 사용 하 여 ASP.NET Core 응용 프로그램에 권한 부여 요구 사항을 처리기를 삽입 하는 방법에 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/dependencyinjection
-ms.openlocfilehash: 1b7506b49109264a8c628ea2e39ded9f5ace95d3
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 4de7f0e49ade459968f8c30fbad76ce96a65815f
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="dependency-injection-in-requirement-handlers"></a>요구 사항 처리기의 종속성 주입
+# <a name="dependency-injection-in-requirement-handlers-in-aspnet-core"></a>ASP.NET Core의 요구 사항 처리기의 종속성 주입
 
 <a name="security-authorization-di"></a>
 
-권한 부여 처리기는 구성 중 서비스 컬렉션에 [등록](policies.md#handler-registration)되어야 합니다([종속성 주입](../../fundamentals/dependency-injection.md#fundamentals-dependency-injection) 사용).
+권한 부여 처리기는 구성 중 서비스 컬렉션에 [등록](xref:security/authorization/policies#handler-registration)되어야 합니다([종속성 주입](xref:fundamentals/dependency-injection#fundamentals-dependency-injection) 사용).
 
 권한 부여 처리기 내부에서 평가해야 하는 규칙의 리포지토리가 존재하며, 해당 리포지토리가 서비스 컬렉션에 등록되어 있다고 가정해보겠습니다. 그러면 권한 부여가 이 종속성을 해결해서 생성자에 주입하게 됩니다.
 

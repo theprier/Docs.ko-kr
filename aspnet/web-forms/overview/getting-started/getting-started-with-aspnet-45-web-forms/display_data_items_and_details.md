@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/display_data_items_and_details
-title: "데이터 표시 항목 및 세부 정보 | Microsoft Docs"
+title: 데이터 표시 항목 및 세부 정보 | Microsoft Docs
 author: Erikre
-description: "이 자습서 시리즈 것에 대 한 ASP.NET 4.5 및 Microsoft Visual Studio Express 2013을 사용 하 여 ASP.NET Web Forms 응용 프로그램을 구축 하는 기초 알려 드리겠습니다 중..."
+description: 이 자습서 시리즈 것에 대 한 ASP.NET 4.5 및 Microsoft Visual Studio Express 2013을 사용 하 여 ASP.NET Web Forms 응용 프로그램을 구축 하는 기초 알려 드리겠습니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/display_data_items_and_details
 msc.type: authoredcontent
-ms.openlocfilehash: 809d7a9c21a3ddf5dfd07d079eb8fe0d1d81712d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5fea654aa5116193cb7496c1b9020ed8e25fc06f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="display-data-items-and-details"></a>데이터 표시 항목 및 세부 정보
 ====================
@@ -131,7 +131,7 @@ ms.lasthandoff: 11/10/2017
 위의 태그를 데이터베이스에 연결 하려면 추가 코드를 추가 해야는 *ProductDetails.aspx* 코드입니다.
 
 1. **솔루션 탐색기**를 마우스 오른쪽 단추로 클릭 *ProductDetails.aspx* 클릭 하 고 **코드 보기**합니다.  
- *ProductDetails.aspx.cs* 파일이 표시 됩니다.
+   *ProductDetails.aspx.cs* 파일이 표시 됩니다.
 2. 기존 코드를 다음 코드로 바꿉니다.   
 
     [!code-csharp[Main](display_data_items_and_details/samples/sample6.cs)]
@@ -156,10 +156,10 @@ ms.lasthandoff: 11/10/2017
 
 이 자습서 시리즈의 태그 및 제품 목록을 표시 하 고 제품 세부 정보를 표시 하는 코드를 추가할 필요 합니다. 이 프로세스 중 강력한 형식의 데이터 컨트롤, 모델 바인딩 및 값 공급자에 대해 배웠습니다. 다음 자습서에서는 쇼핑 카트 Wingtip Toys 샘플 응용 프로그램에 추가 합니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 [검색 및 모델 바인딩 및 web forms를 사용 하 여 데이터를 표시 합니다.](../../presenting-and-managing-data/model-binding/retrieving-data.md)
 
->[!div class="step-by-step"]
-[이전](ui_and_navigation.md)
-[다음](shopping-cart.md)
+> [!div class="step-by-step"]
+> [이전](ui_and_navigation.md)
+> [다음](shopping-cart.md)

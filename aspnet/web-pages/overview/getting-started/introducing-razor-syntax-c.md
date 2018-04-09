@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-razor-syntax-c
-title: "Razor 구문 (C#)를 사용 하 여 ASP.NET 웹 프로그래밍 소개 | Microsoft Docs"
+title: Razor 구문 (C#)를 사용 하 여 ASP.NET 웹 프로그래밍 소개 | Microsoft Docs
 author: tfitzmac
-description: "이 장에서 한 개요를 제공 프로그래밍의 ASP.NET 웹 페이지 Razor 구문을 사용 하 여 합니다. ASP.NET는 동적 웹 pa를 실행 하기 위한 Microsoft의 기술 중..."
+description: 이 장에서 한 개요를 제공 프로그래밍의 ASP.NET 웹 페이지 Razor 구문을 사용 하 여 합니다. ASP.NET는 동적 웹 pa를 실행 하기 위한 Microsoft의 기술 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/07/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-c
 msc.type: authoredcontent
-ms.openlocfilehash: 32cdd8d524d783d7ccc3ab076de636ce4a868132
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 430033c06df74cc3661c40ca7f7bd9244cd257c9
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>Razor 구문 (C#)를 사용 하 여 ASP.NET 웹 프로그래밍 소개
 ====================
@@ -122,7 +122,7 @@ A *문자열* 텍스트로 처리 되는 문자 시퀀스입니다. 문자열을
 
 ### <a name="6-code-is-case-sensitive"></a>6. 코드는 대/소문자 구분
 
-C#에서는 키워드 (같은 `var`, `true`, 및 `if`) 변수 이름은 대/소문자 구분 되어 있습니다. 코드의 다음 행은 두 개의 다른 변수를 만듭니다 `lastName` 및`LastName.`
+C#에서는 키워드 (같은 `var`, `true`, 및 `if`) 변수 이름은 대/소문자 구분 되어 있습니다. 코드의 다음 행은 두 개의 다른 변수를 만듭니다 `lastName` 및 `LastName.`
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample8.cshtml)]
 
@@ -134,7 +134,7 @@ C#에서는 키워드 (같은 `var`, `true`, 및 `if`) 변수 이름은 대/소�
 
 ### <a name="7-much-of-your-coding-involves-objects"></a>7. 개체를 포함 하는 대부분의 프로그램 코딩
 
-*개체* 으로 프로그래밍할 수 있는 작업 &#8212; 나타내는 페이지, 텍스트 상자, 파일, 이미지, 웹 요청, 전자 메일 메시지, 고객 레코드 (데이터베이스 행) 등입니다. 개체는 각각의 특징을 설명 하는 속성 및 읽을 수 있도록 또는 변경 &#8212; 텍스트 상자 개체에는 `Text` 등 속성, 요청 개체에는 `Url` 속성, 전자 메일 메시지에는 `From` 속성을 고객 개체에는 `FirstName` 속성입니다. 개체에 갖게 되는 메서드와 &quot;동사&quot; 수행할 수 있습니다. 예로 파일 개체의 `Save` 메서드를 이미지 개체의 `Rotate` 메서드와 메일 개체의 `Send` 메서드.
+*개체* 으로 프로그래밍할 수 있는 것을 나타내는 &#8212; 페이지, 텍스트 상자, 파일, 이미지, 웹 요청, 전자 메일 메시지, 고객 레코드 (데이터베이스 행) 등입니다. 개체는 각각의 특징을 설명 하는 속성 및 읽거나 하거나 변경할 수 &#8212; 텍스트 상자 개체에는 `Text` 등 속성, 요청 개체에는 `Url` 속성, 전자 메일 메시지에는 `From` 속성 고객 개체에는 `FirstName` 속성입니다. 개체에 갖게 되는 메서드와 &quot;동사&quot; 수행할 수 있습니다. 예로 파일 개체의 `Save` 메서드를 이미지 개체의 `Rotate` 메서드와 메일 개체의 `Send` 메서드.
 
 자주 사용 하는 `Request` 개체를 텍스트 상자 (폼 필드)의 값 등의 정보를 제공 하는 브라우저 종류 요청, 페이지, 사용자 id, 등의 URL을 한 페이지입니다. 속성에 액세스 하는 방법을 보여 주는 다음 예제는 `Request` 개체와 호출 하는 방법의 `MapPath` 의 메서드는 `Request` 서버에서 해당 페이지의 절대 경로 제공 하는 개체:
 
@@ -199,7 +199,7 @@ C#에서는 키워드 (같은 `var`, `true`, 및 `if`) 변수 이름은 대/소�
 
 Razor 구문은 서버 기반 코드 웹 페이지에 포함 하기 위한 단순 프로그래밍 구문입니다. Razor 구문을 사용 하는 웹 페이지에는 두 종류의 콘텐츠: 클라이언트 콘텐츠 및 서버 코드입니다. 클라이언트는 콘텐츠는 웹 페이지에서 사용 했던 stuff: HTML 태그 (요소) CSS와 같은 정보 미정 JavaScript 및 일반 텍스트와 같은 일부 클라이언트 스크립트를 스타일입니다.
 
-Razor 구문에는이 클라이언트는 콘텐츠를 서버 코드를 추가할 수 있습니다. 페이지에서 서버 코드가 있는 경우 서버가 실행 되는 코드를 먼저 브라우저에 페이지를 보내기 전에 합니다. 서버에서를 실행 하 여 코드를 단독으로 서버 기반 데이터베이스 액세스와 같은 클라이언트는 콘텐츠를 사용 하면 훨씬 더 복잡 한 일 수 있는 작업을 수행할 수 있습니다. 가장 중요 한 점은 서버 코드가 동적으로 클라이언트를 만들 수 콘텐츠 &#8212; HTML 태그나 기타 콘텐츠 즉석에서 생성 하 고 페이지에 포함 될 수 있는 정적 HTML과 함께 브라우저에 전송할 수 있습니다. 브라우저의 관점에서 서버 코드에서 생성 되는 클라이언트는 콘텐츠는 다른 클라이언트 콘텐츠에 차이가 없습니다. 이미 살펴본 것 처럼 있으면 서버 코드는 매우 간단 합니다.
+Razor 구문에는이 클라이언트는 콘텐츠를 서버 코드를 추가할 수 있습니다. 페이지에서 서버 코드가 있는 경우 서버가 실행 되는 코드를 먼저 브라우저에 페이지를 보내기 전에 합니다. 서버에서를 실행 하 여 코드를 단독으로 서버 기반 데이터베이스 액세스와 같은 클라이언트는 콘텐츠를 사용 하면 훨씬 더 복잡 한 일 수 있는 작업을 수행할 수 있습니다. 가장 중요 한 점은 서버 코드가 동적으로 만들 수 클라이언트 콘텐츠 &#8212; HTML 태그나 기타 콘텐츠 즉석에서 생성 하 고 다음 페이지에 포함 될 수 있는 정적 HTML과 함께 브라우저에 전송할 수 있습니다. 브라우저의 관점에서 서버 코드에서 생성 되는 클라이언트는 콘텐츠는 다른 클라이언트 콘텐츠에 차이가 없습니다. 이미 살펴본 것 처럼 있으면 서버 코드는 매우 간단 합니다.
 
 ASP.NET 웹 페이지 Razor 구문을 포함 하는 특수 한 파일 확장명을 가진 (*.cshtml* 또는 *.vbhtml*). 서버는 이러한 확장을 인식, Razor 구문을 사용 하 여 표시 되 고 페이지를 브라우저에 전송 하는 코드를 실행 합니다.
 
@@ -224,7 +224,7 @@ Razor 구문 쉽게 전문가 하는 경우는 초보자를 위한 본인이 사
 
 ## <a name="basic-syntax"></a>기본 구문
 
-이전는 ASP.NET 웹 페이지의 페이지를 만드는 방법 및 서버 코드 HTML 태그를 추가할 수는 방법의 기본 예제에서는 있을 것입니다. 여기 Razor 구문 &#8212;를 사용 하 여 ASP.NET 서버 코드 작성의 기본 사항을 알아봅니다. 즉, 프로그래밍 언어 규칙입니다.
+이전는 ASP.NET 웹 페이지의 페이지를 만드는 방법 및 서버 코드 HTML 태그를 추가할 수는 방법의 기본 예제에서는 있을 것입니다. 여기 Razor 구문을 사용 하 여 ASP.NET 서버 코드 작성의 기본 사항을 알아봅니다 &#8212; 즉, 프로그래밍 언어 규칙입니다.
 
 (특히 사용한 적이 있다면 C, c + +, C#, Visual Basic 또는 JavaScript) 프로그래밍 경험이 경우 설명한 여기 대부분 익숙할 것입니다. 아마도 할 숙지만 태그에 서버 코드에 어떻게 추가 되었는지를 *.cshtml* 파일입니다.
 
@@ -249,7 +249,7 @@ Razor 구문 쉽게 전문가 하는 경우는 초보자를 위한 본인이 사
     첫 번째 예에서는 앞의 예제를 반복 하지만 한 쌍의를 사용 하 여 `<text>` 태그를 렌더링할 텍스트를 묶으십시오. 두 번째 예제에서는 `<text>` 및 `</text>` 태그는 모두 일부 포함 되지 않은 텍스트와 일치 하지 않는 HTML 태그 3 줄을 묶습니다 (`<br />`), 서버 코드와 일치 하는 HTML 태그와 함께 합니다. 각 줄을 따로 앞 수는 다시는 `@:` 연산자; 둘 다 방식으로 작동 합니다.
 
     > [!NOTE]
-    > 이 섹션 및 #8212;에 표시 된 대로 텍스트를 출력할 때 HTML 요소를 사용 하 여 `@:` 연산자 또는 `<text>` 요소 &#8212; ASP.NET 하지 않는 HTML 인코딩할 출력 합니다. (ASP.NET 서버 코드 식 및 뒤에 나오는 서버 코드 블록의 출력에서는 인코딩하지 앞에서 설명한 대로 `@`,이 섹션에서 설명 하는 특별 한 경우를 제외 하 고 있습니다.)
+    > 이 섹션에 표시 된 대로 텍스트를 출력할 때 &#8212; HTML 요소를 사용 하는 `@:` 연산자 또는 `<text>` 요소 &#8212; ASP.NET 하지 않는 HTML 인코딩할 출력 합니다. (ASP.NET 서버 코드 식 및 뒤에 나오는 서버 코드 블록의 출력에서는 인코딩하지 앞에서 설명한 대로 `@`,이 섹션에서 설명 하는 특별 한 경우를 제외 하 고 있습니다.)
 
 ### <a name="whitespace"></a>Whitespace
 
@@ -343,33 +343,35 @@ ASP.NET 데이터 형식을 자동으로 확인할 일반적으로 수 있지만
 
 다음 표에서 변수에 대 한 몇 가지 일반적인 변환 및 테스트 메서드를 나열합니다.
 
-| **메서드** | **설명** | **예제** |
-| --- | --- | --- |
-| `AsInt(), IsInt()` | 정수 숫자 (예: "593")를 나타내는 문자열로 변환 합니다. | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample28.cs)] |
-| `AsBool(), IsBool()` | 와 같은 문자열 변환 &quot;true&quot; 또는 &quot;false&quot; 부울 형식으로. | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample29.cs)] |
-| `AsFloat(), IsFloat()` | 같은 10 진수 값을 가진 문자열 변환 &quot;1.3&quot; 또는 &quot;7.439&quot; 된 부동 소수점 수입니다. | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample30.cs)] |
-| `AsDecimal(), IsDecimal()` | 와 같은 10 진수 값을 가진 문자열 변환 &quot;1.3&quot; 또는 &quot;7.439&quot; 소수로 합니다. (Asp.net에서 10 진수는 부동 소수점 숫자 보다 더 정확한.) | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample31.cs)] |
-| `AsDateTime(), IsDateTime()` | ASP.NET에는 날짜 및 시간 값을 나타내는 문자열 변환 `DateTime` 유형입니다. | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample32.cs)] |
-| `ToString()` | 다른 데이터 형식을 문자열로 변환합니다. | [!code-javascript[Main](introducing-razor-syntax-c/samples/sample33.js)] |
+
+|   <strong>메서드</strong>    |                                                                              <strong>설명</strong>                                                                              |                         <strong>예제</strong>                         |
+|------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
+|      `AsInt(), IsInt()`      |                                                      정수 숫자 (예: "593")를 나타내는 문자열로 변환 합니다.                                                      |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample28.cs)]   |
+|     `AsBool(), IsBool()`     |                                                    와 같은 문자열 변환 &quot;true&quot; 또는 &quot;false&quot; 부울 형식으로.                                                     |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample29.cs)]   |
+|    `AsFloat(), IsFloat()`    |                                    같은 10 진수 값을 가진 문자열 변환 &quot;1.3&quot; 또는 &quot;7.439&quot; 된 부동 소수점 수입니다.                                    |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample30.cs)]   |
+|  `AsDecimal(), IsDecimal()`  | 와 같은 10 진수 값을 가진 문자열 변환 &quot;1.3&quot; 또는 &quot;7.439&quot; 소수로 합니다. (Asp.net에서 10 진수는 부동 소수점 숫자 보다 더 정확한.) |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample31.cs)]   |
+| `AsDateTime(), IsDateTime()` |                                                ASP.NET에는 날짜 및 시간 값을 나타내는 문자열 변환 `DateTime` 유형입니다.                                                 |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample32.cs)]   |
+|         `ToString()`         |                                                                       다른 데이터 형식을 문자열로 변환합니다.                                                                        | [!code-javascript[Main](introducing-razor-syntax-c/samples/sample33.js)] |
 
 ## <a name="operators"></a>연산자
 
 연산자는 키워드 또는 ASP.NET 어떤 유형의 식에서 수행 하기 위한 명령에 알려 주는 문자입니다. C# 언어 (및 Razor 구문을 기반으로 하는) 다양 한 연산자를 지원 하지만 초보자를 위한 몇 가지를 인식 해야 합니다. 다음 표에서 가장 일반적인 연산자 요약 되어 있습니다.
 
-| **Operator** | **설명** | **예제** |
-| --- | --- | --- |
-| `+` `-` `*` `/` | 숫자 식에 사용 되는 수학 연산자. | [!code-css[Main](introducing-razor-syntax-c/samples/sample34.css)] |
-| `=` | 할당. 왼쪽에 있는 개체를 문의 오른쪽에 있는 값을 할당합니다. | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample35.cs)] |
-| `==` | 같음 반환 `true` 값이 동일 합니다. (간의 차이 확인할 수는 `=` 연산자 및 `==` 연산자입니다.) | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample36.cs)] |
-| `!=` | 같지 않음 반환 `true` 값 같지 않으면 합니다. | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample37.cs)] |
-| `< > <= >=` | 작음-, 보다 큼-보다 작음-보다-또는-같음 및 크거나 같음. | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample38.cs)] |
-| `+` | 연결 문자열을 조인 하는 데 사용 됩니다. ASP.NET이이 연산자 및 식의 데이터 형식을 기반으로 하는 더하기 연산자의 차이점을 알고 있습니다. | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample39.cs)] |
-| `+=` `-=` | 증가 및 감소 연산자의 추가 하 고 변수에서 각각 1을 뺌입니다. | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample40.cs)] |
-| `.` | 점입니다. 개체의 속성 및 메서드를 구별 하는 데 사용 합니다. | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample41.cs)] |
-| `()` | 괄호입니다. 식을 그룹화 하 고 매개 변수를 메서드에 전달 하는 데 사용 합니다. | [!code-javascript[Main](introducing-razor-syntax-c/samples/sample42.js)] |
-| `[]` | 대괄호입니다. 배열 또는 컬렉션에 있는 값에 액세스 하기 위해 사용 합니다. | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample43.cs)] |
-| `!` | 필요는 없습니다. 취소는 `true` 값을 `false` 그 반대의 합니다. 일반적으로 테스트 하는 약식 방법으로 사용 `false` (즉,에 대 한 하지 `true`). | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample44.cs)] |
-| `&&` <code>&#124;&#124;</code> | 논리 AND 또는 및 연결 하는 데 사용 되는 조건입니다. | [!code-csharp[Main](introducing-razor-syntax-c/samples/sample45.cs)] |
+
+|   <strong>Operator</strong>    |                                                                     <strong>설명</strong>                                                                     |                        <strong>예제</strong>                         |
+|--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
+|        `+` `-` `*` `/`         |                                                            숫자 식에 사용 되는 수학 연산자.                                                             |    [!code-css[Main](introducing-razor-syntax-c/samples/sample34.css)]    |
+|              `=`               |                                    할당. 왼쪽에 있는 개체를 문의 오른쪽에 있는 값을 할당합니다.                                    |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample35.cs)]   |
+|              `==`              |                      같음 반환 `true` 값이 동일 합니다. (간의 차이 확인할 수는 `=` 연산자 및 `==` 연산자입니다.)                      |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample36.cs)]   |
+|              `!=`              |                                                       같지 않음 반환 `true` 값 같지 않으면 합니다.                                                        |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample37.cs)]   |
+|          `< > <= >=`           |                                               작음-, 보다 큼-보다 작음-보다-또는-같음 및 크거나 같음.                                                |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample38.cs)]   |
+|              `+`               | 연결 문자열을 조인 하는 데 사용 됩니다. ASP.NET이이 연산자 및 식의 데이터 형식을 기반으로 하는 더하기 연산자의 차이점을 알고 있습니다. |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample39.cs)]   |
+|           `+=` `-=`            |                                   증가 및 감소 연산자의 추가 하 고 변수에서 각각 1을 뺌입니다.                                    |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample40.cs)]   |
+|              `.`               |                                                  점입니다. 개체의 속성 및 메서드를 구별 하는 데 사용 합니다.                                                  |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample41.cs)]   |
+|              `()`              |                                              괄호입니다. 식을 그룹화 하 고 매개 변수를 메서드에 전달 하는 데 사용 합니다.                                               | [!code-javascript[Main](introducing-razor-syntax-c/samples/sample42.js)] |
+|              `[]`              |                                                    대괄호입니다. 배열 또는 컬렉션에 있는 값에 액세스 하기 위해 사용 합니다.                                                     |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample43.cs)]   |
+|              `!`               |               필요는 없습니다. 취소는 `true` 값을 `false` 그 반대의 합니다. 일반적으로 테스트 하는 약식 방법으로 사용 `false` (즉,에 대 한 하지 `true`).               |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample44.cs)]   |
+| `&&` <code>&#124;&#124;</code> |                                                   논리 AND 또는 및 연결 하는 데 사용 되는 조건입니다.                                                    |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample45.cs)]   |
 
 <a id="ID_WorkingWithFileAndFolderPaths"></a>
 ## <a name="working-with-file-and-folder-paths-in-code"></a>파일 및 코드의 폴더 경로 작업
@@ -461,7 +463,7 @@ ASP.NET 서버 코드를 사용 하면 조건에 따라 작업을 수행 하 고
 
 로 시작 하는 루프는 `for` 세미콜론으로 종료 각 키워드와 괄호로 세 문입니다.
 
-- 첫 번째 문은 괄호 안에 (`var i=10;`) 카운터를 만들고 10로 초기화 합니다. 카운터 이름을 지정 하는 것이 없는 `i` &#8212; 모든 변수를 사용할 수 있습니다. 경우는 `for` 루프 실행 되며,이 카운터는 자동으로 증가 합니다.
+- 첫 번째 문은 괄호 안에 (`var i=10;`) 카운터를 만들고 10로 초기화 합니다. 카운터 이름을 지정 하지 않아도 `i` &#8212; 모든 변수를 사용할 수 있습니다. 경우는 `for` 루프 실행 되며,이 카운터는 자동으로 증가 합니다.
 - 두 번째 문은 (`i < 21;`) 개수를 계산할 간격에 대 한 조건을 설정 합니다. 이 경우 원하는 최대 20으로 이동 하려면 (즉, 계속 진행이 카운터는 21 미만 동안).
 - 세 번째 문은 (`i++` ) 단순히 카운터 루프가 실행 될 때마다 여기에 추가 하는 1로 있어야를 지정 하는 증가 연산자를 사용 합니다.
 
@@ -549,7 +551,7 @@ A *컬렉션* 컬렉션과 같은 동일한 유형의 개체 그룹은 `Customer
 
 이 메서드는 지정 된 가상 경로에 해당 하는 서버의 실제 경로 반환 합니다. 메서드에 대 한 매개 변수 3 개 `virtualPath`, `baseVirtualDir`, 및 `allowCrossAppMapping`합니다. (선언에서 수락 하 게 하는 데이터의 데이터 형식과 매개 변수가 나열 됩니다 확인 합니다.) 이 메서드를 호출할 때에 세 매개 변수 모두에 대 한 값을 입력 해야 합니다.
 
-Razor 구문 메서드에 매개 변수를 전달 하기 위한 두 가지 옵션을 제공: *위치 매개 변수* 및 *명명 된 매개 변수*합니다. 위치 매개 변수를 사용 하 여 메서드를 호출 하는 엄격한 순서를 메서드 선언에 지정 된 매개 변수를 전달 합니다. (일반적으로 알 수이 순서는 메서드에 대 한 설명서를 참조 하 여.) 순서를 따라야 하며 매개 변수 중 &#8212; 건너뛸 수 없습니다. 필요에 따라 전달 하면 빈 문자열 (`""`) 또는 `null` 위치 매개 변수 지원 하지 않는 대 한 값에 대 한 합니다.
+Razor 구문 메서드에 매개 변수를 전달 하기 위한 두 가지 옵션을 제공: *위치 매개 변수* 및 *명명 된 매개 변수*합니다. 위치 매개 변수를 사용 하 여 메서드를 호출 하는 엄격한 순서를 메서드 선언에 지정 된 매개 변수를 전달 합니다. (일반적으로 알 수이 순서는 메서드에 대 한 설명서를 참조 하 여.) 순서를 따라야 하며 매개 변수를 건너뛸 수 없습니다 &#8212; 필요에 따라 전달 하면 빈 문자열 (`""`) 또는 `null` 위치 매개 변수 지원 하지 않는 대 한 값에 대 한 합니다.
 
 다음 예제에서는 라는 폴더가 있다고 가정 *스크립트* 웹 사이트에 있습니다. 코드를 호출 하 여는 `Request.MapPath` 올바른 순서로 세 개의 매개 변수가 대 한 값을 메서드에 전달 합니다. 다음 결과 매핑된 경로 표시합니다.
 
@@ -568,7 +570,7 @@ Razor 구문 메서드에 매개 변수를 전달 하기 위한 두 가지 옵�
 
 ### <a name="try-catch-statements"></a>Try Catch 문
 
-종종 컨트롤 외부에 같은 이유로 실패할 수 있는 코드에 문의 해야 합니다. 예:
+종종 컨트롤 외부에 같은 이유로 실패할 수 있는 코드에 문의 해야 합니다. 예를 들어:
 
 - 코드를 만들거나 파일에 액세스 하 려 하면 모든 종류의 오류가 발생할 수 있습니다. 원하는 파일이 존재 하지 않을, 잠긴 상태일 수 코드 수 하지 사용 권한이 하 고, 합니다.
 - 마찬가지로, 코드를 데이터베이스에서 레코드를 업데이트 하려고 하는 경우 사용 권한 문제가 있을 수 있습니다, 그리고 데이터베이스에 연결을 삭제 될 수 있습니다, 그리고 유효 하지 않은, 및 등 데이터를 저장할 수 있습니다.
@@ -589,7 +591,7 @@ Razor 구문 메서드에 매개 변수를 전달 하기 위한 두 가지 옵�
 
 [!code-cshtml[Main](introducing-razor-syntax-c/samples/sample67.cshtml)]
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 **Visual Basic을 사용한 프로그래밍**
 

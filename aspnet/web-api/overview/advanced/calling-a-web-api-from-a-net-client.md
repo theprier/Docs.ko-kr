@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/advanced/calling-a-web-api-from-a-net-client
-title: ".NET 클라이언트 (C#)에서 Web API를 호출 합니다. | Microsoft Docs"
+title: .NET 클라이언트 (C#)에서 Web API를 호출 합니다. | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/24/2017
@@ -11,11 +11,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/advanced/calling-a-web-api-from-a-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: 44e02888b53ee372ab93db5f90acb691f26b7519
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: a243eeb982ba581e237263c4e31e130d634aff0e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="call-a-web-api-from-a-net-client-c"></a>.NET 클라이언트 (C#)에서 Web API를 호출 합니다.
 ====================
@@ -48,7 +48,7 @@ Visual Studio에서 명명 된 새 Windows 콘솔 앱을 만듭니다 **HttpClie
 
 위의 코드는 완전 한 클라이언트 응용 프로그램입니다.
 
-`RunAsync`완료 될 때까지 블록 및 실행 합니다. 대부분 **HttpClient** 네트워크 I/O를 수행 하기 때문에 메서드는 비동기 합니다. 비동기 작업을 모두에서 수행 된 `RunAsync`합니다. 일반적으로 응용 프로그램 주 스레드를 차단 하지 않습니다 되지만이 응용 프로그램 상호 작용을 허용 하지 않습니다.
+`RunAsync` 완료 될 때까지 블록 및 실행 합니다. 대부분 **HttpClient** 네트워크 I/O를 수행 하기 때문에 메서드는 비동기 합니다. 비동기 작업을 모두에서 수행 된 `RunAsync`합니다. 일반적으로 응용 프로그램 주 스레드를 차단 하지 않습니다 되지만이 응용 프로그램 상호 작용을 허용 하지 않습니다.
 
 [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet_run)]
 
@@ -109,7 +109,7 @@ Json.NET은.NET을 위한 인기 있는 고성능 JSON 프레임 워크입니다
 
 **GetAsync** 메서드 HTTP GET 요청을 보냅니다. 메서드가 완료 될 때 반환 된 **HttpResponseMessage** HTTP 응답이 들어 있는입니다. 응답에 상태 코드가 성공 코드 이면 응답 본문에는 제품의 JSON 표현을 포함 합니다. 호출 **ReadAsAsync** JSON 페이로드를 deserialize 하는 데는 `Product` 인스턴스. **ReadAsAsync** 응답 본문은 임의로 큰 수 있기 때문에 메서드는 비동기입니다.
 
-**HttpClient** HTTP 응답에 오류 코드가 포함 되어 있으면 예외를 throw 하지 않습니다. 대신,는 **IsSuccessStatusCode** 속성은 **false** 면 상태는 오류 코드입니다. HTTP 오류 코드 예외를 처리 하는 것을 선호 하는 경우 호출 [HttpResponseMessage.EnsureSuccessStatusCode](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.ensuresuccessstatuscode(v=vs.110).aspx) 응답 개체에서 합니다. `EnsureSuccessStatusCode`상태 코드 200 범위를 벗어나는 경우 예외를 throw&ndash;299 합니다. **HttpClient** 다른 이유로 예외를 throw 할 수 &mdash; 요청 시간이 초과 하는 경우 등입니다.
+**HttpClient** HTTP 응답에 오류 코드가 포함 되어 있으면 예외를 throw 하지 않습니다. 대신,는 **IsSuccessStatusCode** 속성은 **false** 면 상태는 오류 코드입니다. HTTP 오류 코드 예외를 처리 하는 것을 선호 하는 경우 호출 [HttpResponseMessage.EnsureSuccessStatusCode](https://msdn.microsoft.com/library/system.net.http.httpresponsemessage.ensuresuccessstatuscode(v=vs.110).aspx) 응답 개체에서 합니다. `EnsureSuccessStatusCode` 상태 코드 200 범위를 벗어나는 경우 예외를 throw&ndash;299 합니다. **HttpClient** 다른 이유로 예외를 throw 할 수 &mdash; 요청 시간이 초과 하는 경우 등입니다.
 
 <a id="MediaTypeFormatters"></a>
 ### <a name="media-type-formatters-to-deserialize"></a>미디어 유형 포맷터를 역직렬화
@@ -167,16 +167,16 @@ GET, 처럼 DELETE 요청은 요청 본문이 필요가 없습니다. DELETE로 
 
 클라이언트 앱을 테스트 합니다.
 
-1. [다운로드](https://github.com/aspnet/Docs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample/server) 및 서버 응용 프로그램을 실행 합니다. [다운로드 지침](https://docs.microsoft.com/aspnet/core/tutorials/#how-to-download-a-sample)합니다. 서버 응용 프로그램 작동을 확인 합니다. Exaxmple에 대 한 `http://localhost:64195/api/products` 제품 목록이 반환 해야 합니다.
+1. [다운로드](https://github.com/aspnet/Docs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample/server) 및 서버 응용 프로그램을 실행 합니다. [지침을 다운로드하세요](https://docs.microsoft.com/aspnet/core/tutorials/#how-to-download-a-sample). 서버 응용 프로그램 작동을 확인 합니다. Exaxmple에 대 한 `http://localhost:64195/api/products` 제품 목록이 반환 해야 합니다.
 2. HTTP 요청에 대 한 기본 URI를 설정 합니다. 서버 응용 프로그램에서 사용 되는 포트를 포트 번호를 변경 합니다.
     [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet5&highlight=2)]
 
 3. 클라이언트 응용 프로그램을 실행 합니다. 다음 출력이 생성됩니다.
 
- ```console
- Created at http://localhost:64195/api/products/4
-Name: Gizmo     Price: 100.0    Category: Widgets
-Updating price...
-Name: Gizmo     Price: 80.0     Category: Widgets
-Deleted (HTTP Status = 204)
-```
+   ```console
+   Created at http://localhost:64195/api/products/4
+   Name: Gizmo     Price: 100.0    Category: Widgets
+   Updating price...
+   Name: Gizmo     Price: 80.0     Category: Widgets
+   Deleted (HTTP Status = 204)
+   ```

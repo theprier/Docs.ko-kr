@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12
-title: "SQL Server Compact Visual Studio 또는 Visual Web Developer를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: SQL Server-10 12로 마이그레이션 | Microsoft Docs"
+title: 'SQL Server Compact Visual Studio 또는 Visual Web Developer를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: SQL Server-10 12로 마이그레이션 | Microsoft Docs'
 author: tdykstra
-description: "이 일련의 자습서 배포 하는 방법을 보여 줍니다. (게시) ASP.NET Visual Stu를 사용 하 여 SQL Server Compact 데이터베이스를 포함 하는 웹 응용 프로그램 프로젝트..."
+description: 이 일련의 자습서 배포 하는 방법을 보여 줍니다. (게시) ASP.NET Visual Stu를 사용 하 여 SQL Server Compact 데이터베이스를 포함 하는 웹 응용 프로그램 프로젝트...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/17/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: b97834e3e287645151bf927996fde63d93ae8356
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 25a829f1d3c730c7bb3b174f075ce8163999e482
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-migrating-to-sql-server---10-of-12"></a>SQL Server Compact Visual Studio 또는 Visual Web Developer를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: SQL Server-10 12로 마이그레이션
 ====================
@@ -242,7 +242,7 @@ SqlServerCompact NuGet 패키지는 SQL Server Compact 데이터베이스 Contos
 
 선택 된 **프로필** 탭 합니다.
 
-선택  **&lt;새로 만들기... &gt;**  드롭다운 목록에서 목록을 연 프로필 이름으로 "Test"를 입력 합니다.
+선택 **&lt;새로 만들기... &gt;** 드롭다운 목록에서 목록을 연 프로필 이름으로 "Test"를 입력 합니다.
 
 에 **서비스 URL** 상자에 입력 *localhost*합니다.
 
@@ -268,7 +268,7 @@ Visual Studio 응용 프로그램을 배포 하 고 테스트 환경에서 사�
 
 테스트 환경에 배포한 했으므로 준비가 프로덕션 환경에 배포를 설정 합니다. 배포 하는 데이터베이스를 만들고 테스트 환경에 대해 수행한으로 시작 합니다. 개요에서 설명한 대로 두 개가 아닌 하나만 데이터베이스를 설정 하 게 되므로 Cytanium Lite 호스팅 계획에는 단일 SQL Server 데이터베이스를 허용 됩니다. 모든 테이블 및 데이터의 멤버 자격과 학교 SQL Server Compact 데이터베이스를 프로덕션 환경에서 하나의 SQL Server 데이터베이스로 배포 됩니다.
 
-Cytanium 제어판 [http://panel.cytanium.com](http://panel.cytanium.com)합니다. 마우스로 **데이터베이스** 클릭 하 고 **SQL Server 2008**합니다.
+Cytanium 제어판 [ http://panel.cytanium.com ](http://panel.cytanium.com)합니다. 마우스로 **데이터베이스** 클릭 하 고 **SQL Server 2008**합니다.
 
 [![Selecting_Databases_in_Control_Panel](deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12/_static/image22.png)](deployment-to-a-hosting-provider-migrating-to-sql-server-10-of-12/_static/image21.png)
 
@@ -367,7 +367,7 @@ Cytanium 제어판 [http://panel.cytanium.com](http://panel.cytanium.com)합니�
 
 클릭 **가져오기**, 이전에 다운로드 한.publishsettings 파일을 선택 합니다.
 
-에 **연결** 탭으로 변경 된 **대상 URL** http://contosouniversity.com.vserver01.cytanium.com는이 예제에서는 올바른 임시 URL을 합니다.
+에 **연결** 탭으로 변경 된 **대상 URL** 올바른 임시 URL에는이 예제에서는 http://contosouniversity.com.vserver01.cytanium.com합니다.
 
 프로덕션 프로필을 이름을 바꿉니다. (선택 된 **프로필** 탭을 클릭 **프로필 관리** 이렇게 하기 위해).
 
@@ -380,7 +380,7 @@ Cytanium 제어판 [http://panel.cytanium.com](http://panel.cytanium.com)합니�
 
 에 **한 번 클릭으로 웹 게시** 도구 모음에서 있는지 확인은 **프로덕션** 프로필을 선택한 다음 클릭 **게시**합니다.
 
-업로드 한 경우 *앱\_offline.htm* 게시 하기 전에 사용 해야는 **파일 관리자** 삭제할 Cytanium 제어판에서 유틸리티 *앱\_오프 라인.* 테스트 하기 전에 htm 합니다. 동시에 삭제할 수도 *.sdf* 에서 파일의 *앱\_데이터* 폴더입니다.
+업로드 한 경우 <em>앱\_offline.htm</em> 게시 하기 전에 사용 해야는 <strong>파일 관리자</strong> 삭제할 Cytanium 제어판에서 유틸리티 <em>앱\_오프 라인.</em> 테스트 하기 전에 htm 합니다. 동시에 삭제할 수도 <em>.sdf</em> 에서 파일의 <em>앱\_데이터</em> 폴더입니다.
 
 이제 브라우저를 열고 하 고 응용 프로그램을 테스트 환경에 배포한 후 수행한 동일한 방식으로 테스트 공개 사이트의 URL로 이동할 수 있습니다.
 
@@ -450,6 +450,6 @@ Code First 마이그레이션을 AddBirthDate 마이그레이션 적용 하는 �
 
 이제 성공적으로 마이그레이션한 SQL Server Express 및 SQL Server 전체. 다음에 다른 데이터베이스 변경 및 할 자습서에는 SQL Server Express 및 SQL Server 전체 테스트 및 프로덕션 데이터베이스를 사용 하는 경우 데이터베이스 변경 내용을 배포 하는 방법을 표시 됩니다.
 
->[!div class="step-by-step"]
-[이전](deployment-to-a-hosting-provider-deploying-a-database-update-9-of-12.md)
-[다음](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12.md)
+> [!div class="step-by-step"]
+> [이전](deployment-to-a-hosting-provider-deploying-a-database-update-9-of-12.md)
+> [다음](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12.md)

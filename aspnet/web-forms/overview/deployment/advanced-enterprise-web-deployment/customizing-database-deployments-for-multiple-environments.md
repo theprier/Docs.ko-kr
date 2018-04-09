@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/customizing-database-deployments-for-multiple-environments
-title: "사용자 지정 된 여러 환경에 대 한 데이터베이스 배포 | Microsoft Docs"
+title: 사용자 지정 된 여러 환경에 대 한 데이터베이스 배포 | Microsoft Docs
 author: jrjlee
-description: "이 항목에서는 배포 프로세스의 일환으로 특정 대상 환경에 데이터베이스의 속성을 구성 하는 방법을 설명 합니다. 참고: 항목 가정 번째 중..."
+description: '이 항목에서는 배포 프로세스의 일환으로 특정 대상 환경에 데이터베이스의 속성을 구성 하는 방법을 설명 합니다. 참고: 항목 가정 번째 중...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/customizing-database-deployments-for-multiple-environments
 msc.type: authoredcontent
-ms.openlocfilehash: f3ca344c2466d9d538f55cd8ff0a5bf5b7bac808
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 06f22bc9a3068ee5621df62ee5ed1bea06d7e9e6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="customizing-database-deployments-for-multiple-environments"></a>사용자 지정 된 여러 환경에 대 한 데이터베이스 배포
 ====================
@@ -35,9 +35,9 @@ ms.lasthandoff: 03/15/2018
 > Visual Studio 2010 데이터베이스 프로젝트의 배포 설정은 배포 구성 (.sqldeployment) 파일 포함 되어 있습니다. 이 항목에서는 환경 관련 배포 구성 파일을 만들고 VSDBCMD 매개 변수로 사용 하려면를 지정 하는 방법을 보여줍니다.
 
 
-이 항목의 Fabrikam, inc. 라는 가상 회사의 엔터프라이즈 배포 요구 사항을 바탕으로 하는 자습서 시리즈의 일부를 형성 합니다. 이 자습서 시리즈 샘플 솔루션 & #x 2014;을 사용 하는 [Contact Manager 솔루션](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; 현실적인 수준의 복잡성을 Windows ASP.NET MVC 3 응용 프로그램을 포함 하 여 웹 응용 프로그램을 나타내기 위해 Communication Foundation (WCF) 서비스 및 데이터베이스 프로젝트를 제공 합니다.
+이 항목의 Fabrikam, inc. 라는 가상 회사의 엔터프라이즈 배포 요구 사항을 바탕으로 하는 자습서 시리즈의 일부를 형성 합니다. 샘플 솔루션을 사용 하는 자습서 시리즈가&#x2014;는 [Contact Manager 솔루션](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;현실적인 수준의 복잡성, Windows Communication ASP.NET MVC 3 응용 프로그램을 포함 하 여 웹 응용 프로그램을 나타내기 위해 WCF (foundation) 서비스 및 데이터베이스 프로젝트.
 
-이 자습서의 핵심에는 배포 방법에 설명 된 분할 프로젝트 파일 접근 방식에 따라 [프로젝트 파일 이해](../web-deployment-in-the-enterprise/understanding-the-project-file.md), 빌드 프로세스에 의해 제어 되는 두 프로젝트에 파일 & #x 2014; 포함 환경 관련 빌드 및 배포 설정을 포함 하는 하나 및 모든 대상 환경에 적용 되는 지침을 빌드하십시오. 빌드 시 환경 관련 프로젝트 파일은 빌드 지침의 전체 집합을 구성 하기 위해 환경을 알 수 없는 프로젝트 파일에 병합 됩니다.
+이 자습서의 핵심에는 배포 방법에 설명 된 분할 프로젝트 파일 접근 방식에 따라 [프로젝트 파일 이해](../web-deployment-in-the-enterprise/understanding-the-project-file.md), 두 개의 프로젝트 파일에 빌드 프로세스에 의해 제어 되는&#x2014;포함 환경 관련 빌드 및 배포 설정을 포함 하는 하나 및 모든 대상 환경에 적용 되는 지침을 빌드하십시오. 빌드 시 환경 관련 프로젝트 파일은 빌드 지침의 전체 집합을 구성 하기 위해 환경을 알 수 없는 프로젝트 파일에 병합 됩니다.
 
 ## <a name="task-overview"></a>작업 개요
 
@@ -146,6 +146,6 @@ MSDN에서 이러한 문서에 데이터베이스 배포 보다 일반적인 지
 - [빌드 및 격리 된 개발 환경에 데이터베이스 배포](https://msdn.microsoft.com/library/dd193409.aspx)
 - [빌드 및 스테이징 또는 프로덕션 환경에 데이터베이스 배포](https://msdn.microsoft.com/library/dd193413.aspx)
 
->[!div class="step-by-step"]
-[이전](performing-a-what-if-deployment.md)
-[다음](deploying-database-role-memberships-to-test-environments.md)
+> [!div class="step-by-step"]
+> [이전](performing-a-what-if-deployment.md)
+> [다음](deploying-database-role-memberships-to-test-environments.md)

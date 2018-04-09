@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/installing-helpers
-title: "(Razor) 사이트 페이지에 ASP.NET 웹 도우미를 설치 | Microsoft Docs"
+title: (Razor) 사이트 페이지에 ASP.NET 웹 도우미를 설치 | Microsoft Docs
 author: tfitzmac
-description: "이 문서에서는 ASP.NET 웹 페이지 (Razor) 웹 사이트에서 한 도우미를 설치 하는 방법을 설명 합니다. 도우미는 코드와 당 태그를 포함 하는 재사용 가능한 구성 요소 중..."
+description: 이 문서에서는 ASP.NET 웹 페이지 (Razor) 웹 사이트에서 한 도우미를 설치 하는 방법을 설명 합니다. 도우미는 코드와 당 태그를 포함 하는 재사용 가능한 구성 요소 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/installing-helpers
 msc.type: authoredcontent
-ms.openlocfilehash: 842c5a56d14314217c1e6ad6d48ded28d3cc5b4e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 766fbb87ae8bcb8917eb8fa7f552c00792242cf6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="installing-a-helper-in-an-aspnet-web-pages-razor-site"></a>ASP.NET 웹 페이지 (Razor) 사이트에 도우미를 설치합니다.
 ====================
@@ -49,17 +49,17 @@ ASP.NET 웹 페이지에서 기본적으로 제공 하는 몇 가지 도우미�
 2. 이 NuGet 패키지 관리자를 시작 하 고 사용 가능한 패키지를 표시 합니다. 검색 상자에를 설치 하려면 도우미에 대 한 키워드를 입력 합니다.
 
     ![WebMatrix에서 NuGet 갤러리 대화 상자](installing-helpers/_static/image2.png)
-- 패키지를 선택한 다음 클릭 **설치**합니다. 클릭 **예** 패키지를 설치 하 고 약관을 수락 함을 나타내려면 것인지 묻는 메시지가 나타나면 합니다.
+3. 패키지를 선택한 다음 클릭 **설치**합니다. 클릭 **예** 패키지를 설치 하 고 약관을 수락 함을 나타내려면 것인지 묻는 메시지가 나타나면 합니다.
 
-    처음으로 도우미를 설치한 경우 NuGet 도우미를 구성 하는 코드에 대 한 웹 사이트의 폴더를 만듭니다.
-- 도우미 메서드를 제거 하려면 클릭는 **갤러리** 단추를 클릭 하 여는 **설치 됨** 탭을 제거 하려는 패키지를 선택 합니다.
+     처음으로 도우미를 설치한 경우 NuGet 도우미를 구성 하는 코드에 대 한 웹 사이트의 폴더를 만듭니다.
+4. 도우미 메서드를 제거 하려면 클릭는 **갤러리** 단추를 클릭 하 여는 **설치 됨** 탭을 제거 하려는 패키지를 선택 합니다.
 
 ## <a name="installing-the-twitter-helper"></a>Twitter 도우미를 설치합니다.
 
 최신 버전의 Twitter API NuGet을 통해 설치 된 Twitter 도우미와 호환 되지 않습니다. 대신, 참조는 [Twitter 도우미를 WebMatrix로](twitter-helper.md) Twitter 도우미 프로젝트를 설정 하는 방법에 대 한 정보에 대 한 항목입니다.
 
 <a id="Additional_Resources"></a>
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 
 [소개 ASP.NET 웹 페이지 2-프로그래밍 기본 사항](../getting-started/introducing-razor-syntax-c.md)

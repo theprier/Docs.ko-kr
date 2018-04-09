@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/asp-net-hosting-options-cs
-title: "ASP.NET 호스팅 옵션 (C#) | Microsoft Docs"
+title: ASP.NET 호스팅 옵션 (C#) | Microsoft Docs
 author: rick-anderson
-description: "ASP.NET 웹 응용 프로그램은 일반적으로 설계, 작성 하 고 로컬 개발 환경에서 테스트 및 프로덕션 환경 o를 배포 해야 할..."
+description: ASP.NET 웹 응용 프로그램은 일반적으로 설계, 작성 하 고 로컬 개발 환경에서 테스트 및 프로덕션 환경 o를 배포 해야 할...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/01/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/asp-net-hosting-options-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 34e1f9c7ee1ae22bceb614eeeaa1ebe286c1ccad
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 6f8bb0e5a34d84d448af56285e8761c447229f7d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-hosting-options-c"></a>ASP.NET 호스팅 옵션 (C#)
 ====================
@@ -95,5 +95,5 @@ ASP.NET 웹 응용 프로그램은 일반적으로 설계, 작성 및 로컬 개
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Teresa 머피의 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)합니다.
 
->[!div class="step-by-step"]
-[다음](determining-what-files-need-to-be-deployed-cs.md)
+> [!div class="step-by-step"]
+> [다음](determining-what-files-need-to-be-deployed-cs.md)

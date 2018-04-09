@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/security/16-adding-security-and-membership
-title: "(Razor) 사이트 페이지에 ASP.NET 웹 보안 및 구성원 자격 추가 | Microsoft Docs"
+title: (Razor) 사이트 페이지에 ASP.NET 웹 보안 및 구성원 자격 추가 | Microsoft Docs
 author: tfitzmac
-description: "이 장의 페이지 중 일부가 작업을 사용자에 게 로그인에 사용할 수 있도록 웹 사이트를 보호 하는 방법을 보여 줍니다. (도 확인할 수 페이지 tha...를 만드는 방법"
+description: 이 장의 페이지 중 일부가 작업을 사용자에 게 로그인에 사용할 수 있도록 웹 사이트를 보호 하는 방법을 보여 줍니다. (도 확인할 수 페이지 tha...를 만드는 방법
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/24/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/security/16-adding-security-and-membership
 msc.type: authoredcontent
-ms.openlocfilehash: af2eeb128cff554e7ae3d903e2117861087344e9
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 351368a356a71e85d4abfdceac8d4f84e0b217f4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-security-and-membership-to-an-aspnet-web-pages-razor-site"></a>ASP.NET 웹 페이지 (Razor) 사이트에 보안 및 구성원 추가
 ====================
@@ -47,7 +47,7 @@ ms.lasthandoff: 01/24/2018
 > - ASP.NET Web Helpers Library
 
 
-&#8212;에 사용자가 로그인 할 수 있도록 웹 사이트를 설정할 수 있습니다. 즉, 사이트에서 지원 되도록 *구성원*합니다. 이 유용 여러 가지 이유로 합니다. 예를 들어 사이트 멤버에만 사용할 수 있는 여러 페이지가 있을 수 있습니다. 경우에 따라 사용자 피드백을 보낼 명령을 남길 수 있도록 로그인에 필요할 수 있습니다.
+사용자가 로그인 할 수 있도록 웹 사이트를 설정할 수 &#8212; 즉, 사이트에서 지원 되도록 *구성원*합니다. 이 유용 여러 가지 이유로 합니다. 예를 들어 사이트 멤버에만 사용할 수 있는 여러 페이지가 있을 수 있습니다. 경우에 따라 사용자 피드백을 보낼 명령을 남길 수 있도록 로그인에 필요할 수 있습니다.
 
 웹 사이트 멤버 자격을 지 원하는 경우에 사용자가 반드시 페이지 중 일부가 사이트에 사용 하기 전에 로그인 할 필요가 없습니다. 사용자가 로그인 하지 않은 라고 *익명 사용자에 게*합니다.
 
@@ -88,26 +88,26 @@ WebMatrix에서 사용할 수 있습니다는 **시작 사이트** 템플릿을�
     전자 메일 확인을 설정 하지 않을 경우이 단계와 다음 단계를 건너뛸 수 있습니다. SMTP 값을 설정 하지 않은 경우 새 계정은 확인 전자 메일이 없이 즉시 사용할 수 있습니다.
 6. 코드의 다음 전자 메일 관련 설정을 수정 합니다.
 
-    - 설정 `WebMail.SmtpServer` 에 액세스할 수 있는 SMTP 서버의 이름입니다.
-    - 둡니다 `WebMail.EnableSsl` 로 설정 `true`합니다. 이 설정을 암호화 하 여 SMTP 서버에 전송 되는 자격 증명을 보호 합니다.
-    - 설정 `WebMail.UserName` SMTP 서버 계정의 사용자 이름에 있습니다.
-    - 설정 `WebMail.Password` 를 SMTP 서버 계정의 암호입니다.
-    - 설정 `WebMail.From` 자신의 전자 메일 주소로 합니다. 메시지에서 보내는 전자 메일 주소입니다.
+   - 설정 `WebMail.SmtpServer` 에 액세스할 수 있는 SMTP 서버의 이름입니다.
+   - 둡니다 `WebMail.EnableSsl` 로 설정 `true`합니다. 이 설정을 암호화 하 여 SMTP 서버에 전송 되는 자격 증명을 보호 합니다.
+   - 설정 `WebMail.UserName` SMTP 서버 계정의 사용자 이름에 있습니다.
+   - 설정 `WebMail.Password` 를 SMTP 서버 계정의 암호입니다.
+   - 설정 `WebMail.From` 자신의 전자 메일 주소로 합니다. 메시지에서 보내는 전자 메일 주소입니다.
 
-    > [!NOTE] 
-    > 
-    > **팁** 이러한 속성에 대 한 값에 대 한 자세한 내용은 참조 하십시오. [전자 메일 설정 구성](https://go.microsoft.com/fwlink/?LinkID=202906#configuring_email_settings) 에 [사이트 전체의 동작을 사용자 지정 ASP.NET 웹 페이지에 대 한](https://go.microsoft.com/fwlink/?LinkID=202906)합니다.
+     > [!NOTE] 
+     > 
+     > **팁** 이러한 속성에 대 한 값에 대 한 자세한 내용은 참조 하십시오. [전자 메일 설정 구성](https://go.microsoft.com/fwlink/?LinkID=202906#configuring_email_settings) 에 [사이트 전체의 동작을 사용자 지정 ASP.NET 웹 페이지에 대 한](https://go.microsoft.com/fwlink/?LinkID=202906)합니다.
 7. 저장 후 닫기  *\_AppStart.cshtml*합니다.
 8. 실행 된 *Default.cshtml* 브라우저에서 페이지입니다.
 
     ![보안-멤버 자격-2](16-adding-security-and-membership/_static/image1.png)
 
-    > [!NOTE]
-    > 속성의 인스턴스를 되도록 알리는 오류가 표시 되 면 `ExtendedMembershipProvider`, ASP.NET 웹 페이지 멤버 자격 시스템 (SimpleMembership)를 사용 하도록 사이트를 구성할 수 있습니다. 호스팅 공급자의 서버가 로컬 서버와 다르게 구성 된 경우에 발생할 경우에 따라 수 있습니다. 이 해결 하려면 다음 요소를 사이트의 추가 *Web.config* 파일:
-    > 
-    > [!code-xml[Main](16-adding-security-and-membership/samples/sample2.xml)]
-    > 
-    > 이 요소의 자식으로 추가 `<configuration>` 요소와의 피어로 `<system.web>` 요소입니다.
+   > [!NOTE]
+   > 속성의 인스턴스를 되도록 알리는 오류가 표시 되 면 `ExtendedMembershipProvider`, ASP.NET 웹 페이지 멤버 자격 시스템 (SimpleMembership)를 사용 하도록 사이트를 구성할 수 있습니다. 호스팅 공급자의 서버가 로컬 서버와 다르게 구성 된 경우에 발생할 경우에 따라 수 있습니다. 이 해결 하려면 다음 요소를 사이트의 추가 *Web.config* 파일:
+   > 
+   > [!code-xml[Main](16-adding-security-and-membership/samples/sample2.xml)]
+   > 
+   > 이 요소의 자식으로 추가 `<configuration>` 요소와의 피어로 `<system.web>` 요소입니다.
 9. 페이지의 오른쪽 위 구석에 클릭는 **등록** 링크 합니다. *Register.cshtml* 페이지가 표시 됩니다.
 10. 사용자 이름 및 암호를 입력 한 다음 클릭 **등록**합니다.
 
@@ -120,14 +120,14 @@ WebMatrix에서 사용할 수 있습니다는 **시작 사이트** 템플릿을�
 12. 계정을 활성화 하려면 하이퍼링크를 클릭 합니다. 확인 하이퍼링크가 등록 확인 페이지를 엽니다.
 
     ![security-membership-5](16-adding-security-and-membership/_static/image4.png)
-- 클릭는 **로그인** 링크를 선택한 다음 등록 하는 계정을 사용 하 여 로그인 합니다.
+13. 클릭는 **로그인** 링크를 선택한 다음 등록 하는 계정을 사용 하 여 로그인 합니다.
 
-    로그인 한 후는 **로그인** 및 **등록** 링크로 대체 됩니다는 **로그 아웃** 링크 합니다. 사용자의 로그인 이름 링크로 표시 됩니다. (링크 하면 페이지로 이동 하는 암호를 변경할 수 있습니다.)
+      로그인 한 후는 **로그인** 및 **등록** 링크로 대체 됩니다는 **로그 아웃** 링크 합니다. 사용자의 로그인 이름 링크로 표시 됩니다. (링크 하면 페이지로 이동 하는 암호를 변경할 수 있습니다.)
 
-    ![보안-멤버 자격-6](16-adding-security-and-membership/_static/image5.png)
+      ![보안-멤버 자격-6](16-adding-security-and-membership/_static/image5.png)
 
-    > [!NOTE]
-    > 기본적으로 ASP.NET 웹 페이지 보낼 자격 증명 서버에 일반 텍스트로 (이해 하기 쉬운 텍스트로). 프로덕션 사이트 보안 HTTP를 사용 합니다 (https://, 또한 다음 이라고 알려집니다는 *보안 소켓 레이어* 또는 SSL) 서버와 교환 되는 중요 한 정보를 암호화 합니다. 필요한 전자 메일 수 메시지를 보낼 수 있도록 설정 하 여 SSL을 사용 하 여 `WebMail.EnableSsl=true` 앞의 예와 합니다. SSL에 대 한 자세한 내용은 참조 [웹 통신 보안: 인증서, SSL 및 https://](https://go.microsoft.com/fwlink/?LinkId=208660)합니다.
+      > [!NOTE]
+      > 기본적으로 ASP.NET 웹 페이지 보낼 자격 증명 서버에 일반 텍스트로 (이해 하기 쉬운 텍스트로). 프로덕션 사이트 보안 HTTP를 사용 합니다 (https://, 또한 다음 이라고 알려집니다는 *보안 소켓 레이어* 또는 SSL) 서버와 교환 되는 중요 한 정보를 암호화 합니다. 필요한 전자 메일 수 메시지를 보낼 수 있도록 설정 하 여 SSL을 사용 하 여 `WebMail.EnableSsl=true` 앞의 예와 합니다. SSL에 대 한 자세한 내용은 참조 [웹 통신 보안: 인증서, SSL 및 https://](https://go.microsoft.com/fwlink/?LinkId=208660)합니다.
 
 ## <a name="additional-membership-functionality-in-the-site"></a>사이트에서 추가 멤버 자격 기능
 
@@ -165,12 +165,12 @@ WebMatrix에서 사용할 수 있습니다는 **시작 사이트** 템플릿을�
     ((38366) 포트 번호는가 됩니다 URL과 다릅니다.)
 
     리디렉션됩니다 하는 *Login.cshtml* 로그인 하지 않은 때문에 페이지입니다.
-- 앞에서 만든 계정을 사용 하 여 로그인 합니다. 으로 다시 리디렉션됩니다 하는 *MembersInformation* 페이지. 로그인 되어 있으므로이 현재 페이지 내용이 표시 합니다.
+7. 앞에서 만든 계정을 사용 하 여 로그인 합니다. 으로 다시 리디렉션됩니다 하는 *MembersInformation* 페이지. 로그인 되어 있으므로이 현재 페이지 내용이 표시 합니다.
 
 여러 페이지에 대 한 액세스를 보호 하려면이 수행할 수 있습니다.
 
 - 각 페이지에 보안 검사를 추가 합니다.
-- 만들기는  *\_PageStart.cshtml* 보호 되는 페이지를 유지 하 고는 보안 검사를 추가할 수 있는 폴더의 페이지에에서 있습니다. *\_PageStart.cshtml* 페이지는 역할을 폴더에 있는 모든 페이지에 대 한 전역 페이지의 종류입니다. 이 방법은에서 더 자세하게 설명 [사이트 전체의 동작을 사용자 지정 ASP.NET 웹 페이지에 대 한](https://go.microsoft.com/fwlink/?LinkId=202906#Using__PageStart.cshtml_to_Restrict_Folder_Access)합니다.
+- 만들기는  *\_PageStart.cshtml* 보호 되는 페이지를 유지 하 고는 보안 검사를 추가할 수 있는 폴더의 페이지에에서 있습니다.  *\_PageStart.cshtml* 페이지는 역할을 폴더에 있는 모든 페이지에 대 한 전역 페이지의 종류입니다. 이 방법은에서 더 자세하게 설명 [사이트 전체의 동작을 사용자 지정 ASP.NET 웹 페이지에 대 한](https://go.microsoft.com/fwlink/?LinkId=202906#Using__PageStart.cshtml_to_Restrict_Folder_Access)합니다.
 
 ## <a name="creating-security-for-groups-of-users-roles"></a>사용자 (역할)의 그룹에 대 한 보안 만들기
 
@@ -227,10 +227,10 @@ ASP.NET 멤버 자격 시스템에서는 역할을 지원 합니다. 그러나 �
 7. 대체 `PUBLIC_KEY` 사용자 키로 합니다.
 8. 이미 제거 하지 않은, 경우 제거 된 `<div>` 을 사용 하려면"CAPTCHA 확인..."로 시작 하는 텍스트가 포함 된 요소입니다. (전체 제거 `<div>` 요소와 해당 내용입니다.)
 
-1. 실행 *Default.cshtml* 브라우저에서 합니다. 사이트에 로그인 하 고, 클릭는 **로그 아웃** 링크 합니다.
-2. 클릭는 **등록** 에 연결 하 고 CAPTCHA 테스트를 사용 하 여 등록을 테스트 합니다.
+9. 실행 *Default.cshtml* 브라우저에서 합니다. 사이트에 로그인 하 고, 클릭는 **로그 아웃** 링크 합니다.
+10. 클릭는 **등록** 에 연결 하 고 CAPTCHA 테스트를 사용 하 여 등록을 테스트 합니다.
 
-    ![보안-멤버 자격-10](16-adding-security-and-membership/_static/image9.png)
+     ![보안-멤버 자격-10](16-adding-security-and-membership/_static/image9.png)
 
 에 대 한 자세한 내용은 `ReCaptcha` 도우미, 참조 [를 사용 하 여 한 CATPCHA 자동화 된 프로그램 방지 (Bot)에서 사용 하 여 ASP.NET 웹 사이트](https://go.microsoft.com/fwlink/?LinkId=251967)합니다.
 
@@ -262,7 +262,7 @@ ASP.NET 멤버 자격 시스템에서는 역할을 지원 합니다. 그러나 �
 
 역할을 관리 하려면 사용할 수 있습니다는 [역할](https://msdn.microsoft.com/library/gg538398(v=vs.99).aspx) 및 [구성원](https://msdn.microsoft.com/library/gg569035(v=vs.99).aspx) 블로그 항목에 설명 된 대로 클래스입니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 - [사이트 전체 동작 사용자 지정](https://go.microsoft.com/fwlink/?LinkId=202906)
 - [웹 통신을 보호: 인증서, SSL 및 https://](https://go.microsoft.com/fwlink/?LinkId=208660)

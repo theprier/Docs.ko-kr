@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/animation-depending-on-a-condition-vb
-title: "애니메이션 (VB) 조건에 따라 | Microsoft Docs"
+title: 애니메이션 (VB) 조건에 따라 | Microsoft Docs
 author: wenz
-description: "ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트롤 뿐 아니라 애니메이션 컨트롤을 추가 하는 전체 프레임 워크. 애니메이션 인지 중..."
+description: ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트롤 뿐 아니라 애니메이션 컨트롤을 추가 하는 전체 프레임 워크. 애니메이션 인지 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/animation-depending-on-a-condition-vb
 msc.type: authoredcontent
-ms.openlocfilehash: cc8600f33f9c27e1045f5083a126b9d2d1e90303
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d3a648ff8299c9720e9f34522f271595ab1b9bc9
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="animation-depending-on-a-condition-vb"></a>(VB) 조건에 따라 애니메이션
 ====================
@@ -45,7 +45,7 @@ ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트�
 
 [!code-css[Main](animation-depending-on-a-condition-vb/samples/sample3.css)]
 
-그런 다음 추가 `AnimationExtender` 페이지에 제공 하는 `ID`, `TargetControlID` 특성과 참가`runat="server":`
+그런 다음 추가 `AnimationExtender` 페이지에 제공 하는 `ID`, `TargetControlID` 특성과 참가 `runat="server":`
 
 [!code-aspx[Main](animation-depending-on-a-condition-vb/samples/sample4.aspx)]
 
@@ -60,6 +60,6 @@ ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트�
 
 패널은 페이딩 크기를 조정 하지 않고 첫 번째는 두 번째 애니메이션 실행 하지 않은 하므로 ([전체 크기 이미지를 보려면 클릭](animation-depending-on-a-condition-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[이전](executing-several-animations-after-each-other-vb.md)
-[다음](picking-one-animation-out-of-a-list-vb.md)
+> [!div class="step-by-step"]
+> [이전](executing-several-animations-after-each-other-vb.md)
+> [다음](picking-one-animation-out-of-a-list-vb.md)

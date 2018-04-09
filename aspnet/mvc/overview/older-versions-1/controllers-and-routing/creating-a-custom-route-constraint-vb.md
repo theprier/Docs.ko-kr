@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/creating-a-custom-route-constraint-vb
-title: "사용자 지정 경로 제약 조건 (VB) 만들기 | Microsoft Docs"
+title: 사용자 지정 경로 제약 조건 (VB) 만들기 | Microsoft Docs
 author: StephenWalther
-description: "Stephen Walther 사용자 지정 경로 제약 조건을 만드는 방법을 보여 줍니다. 간단한 구현 되는 경로 방지 하는 사용자 지정 제약 조건을 w 일치 하는 중..."
+description: Stephen Walther 사용자 지정 경로 제약 조건을 만드는 방법을 보여 줍니다. 간단한 구현 되는 경로 방지 하는 사용자 지정 제약 조건을 w 일치 하는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/16/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-a-custom-route-constraint-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 41b04c1fea267e7ee9f8a0b1c2f0d4fe4bb96d15
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 094077fa0cb546f4cc91dbf074f8014e62b3b19c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-custom-route-constraint-vb"></a>사용자 지정 경로 제약 조건 (VB) 만들기
 ====================
@@ -53,5 +53,5 @@ Localhost 제약 조건은 관리 경로 정의에 사용 됩니다. 원격 브�
 
 기본 경로 주석 처리 되었습니다 목록 2의 Global.asax 파일에서 확인 합니다. 기본 경로 포함 하는 경우 기본 경로 관리 컨트롤러에 대 한 요청 동일 합니다. 이 경우 원격 사용자의 요청에는 관리 경로 일치 하지 않아 하는 경우에 관리 컨트롤러의 동작을 여전히 호출할 수 있습니다.
 
->[!div class="step-by-step"]
-[이전](creating-a-route-constraint-vb.md)
+> [!div class="step-by-step"]
+> [이전](creating-a-route-constraint-vb.md)

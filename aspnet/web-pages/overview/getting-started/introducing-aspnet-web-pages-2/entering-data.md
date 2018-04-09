@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/entering-data
-title: "ASP.NET 웹 페이지를 소개-양식을 사용 하 여 데이터베이스 데이터를 입력 합니다. | Microsoft Docs"
+title: ASP.NET 웹 페이지를 소개-양식을 사용 하 여 데이터베이스 데이터를 입력 합니다. | Microsoft Docs
 author: tfitzmac
-description: "이 자습서에서는 입력 폼을 만들고 다음에서 얻을 수 있는 폼을 데이터베이스 테이블에 ASP.NET 웹 페이지 (...를 사용 하는 경우 데이터를 입력 하는 방법을 보여 줍니다."
+description: 이 자습서에서는 입력 폼을 만들고 다음에서 얻을 수 있는 폼을 데이터베이스 테이블에 ASP.NET 웹 페이지 (...를 사용 하는 경우 데이터를 입력 하는 방법을 보여 줍니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/28/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/entering-data
 msc.type: authoredcontent
-ms.openlocfilehash: b74eecb16b2c4695bb417816b90f701f724cc9d0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: bbccf8134e90c19e29efaa5afe1e46e15320c189
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---entering-database-data-by-using-forms"></a>ASP.NET 웹 페이지를 소개-양식을 사용 하 여 데이터베이스 데이터를 입력 합니다.
 ====================
@@ -101,7 +101,7 @@ ms.lasthandoff: 11/10/2017
 
 열에 삽입 하기에 이미 명령에 나열- `(Title, Genre, Year)`합니다. 재미 있는 것으로 텍스트 상자에서 값을 얻는 방법의 `VALUES` 명령에 포함 합니다. 실제 값 대신 참조 `@0`, `@1`, 및 `@2`은 물론 자리 표시자입니다. 명령을 실행 하는 경우 (에 `db.Execute` 줄)을 텍스트 상자에서 가져온 값을 전달 합니다.
 
-**기억해 야 합니다.** 여기에 표시 된 대로 SQL 문에서 사용자가 온라인 입력 데이터도 포함 해야 하는 유일한 방법은 자리 표시자를 사용 하는 (`VALUES(@0, @1, @2)`). SQL 문으로 사용자 입력을 연결 하면 열면 사용자가 직접 SQL 주입 공격에에 설명 된 대로 [양식 기본 ASP.NET 웹 페이지에서](https://go.microsoft.com/fwlink/?LinkId=251581) (이전 자습서).
+**중요!** 여기에 표시 된 대로 SQL 문에서 사용자가 온라인 입력 데이터도 포함 해야 하는 유일한 방법은 자리 표시자를 사용 하는 (`VALUES(@0, @1, @2)`). SQL 문으로 사용자 입력을 연결 하면 열면 사용자가 직접 SQL 주입 공격에에 설명 된 대로 [양식 기본 ASP.NET 웹 페이지에서](https://go.microsoft.com/fwlink/?LinkId=251581) (이전 자습서).
 
 내부 여전히는 `if` 블록을 뒤에 다음 줄 추가 `db.Execute` 줄:
 
@@ -121,7 +121,7 @@ WebMatrix에 있는 파일의 트리 뷰에서 마우스 오른쪽 단추로 클
 
 ![브라우저에서 영화 추가' 페이지](entering-data/_static/image2.png)
 
-(브라우저에서 다른 페이지와 /fd 경우 URL이 있는지 확인 `http://localhost:nnnnn/AddMovie`) 여기서  *nnnnn*  사용 중인 포트 번호입니다.)
+(브라우저에서 다른 페이지와 /fd 경우 URL이 있는지 확인 `http://localhost:nnnnn/AddMovie`) 여기서 *nnnnn* 사용 중인 포트 번호입니다.)
 
 오류 페이지 어? 그렇다면 읽어 주십시오. 하 고 앞에 나열 된 어떤 코드 정확 하 게 표시 되는지 확인 합니다.
 
@@ -145,7 +145,7 @@ WebMatrix에 있는 파일의 트리 뷰에서 마우스 오른쪽 단추로 클
 
 물론, 사용자가 데이터베이스에 비어 있지 절반 영화 정보를 입력 하지 않으려면입니다. 솔루션은 사용자의 입력을 확인 하는 것입니다. 처음에 유효성 검사는 단순히 있는지 확인은 사용자가 모든 필드에 대 한 값을 입력 했는지 (즉, 않은 빈 문자열을 포함).
 
-> [!TIP] 
+> [!TIP]
 > 
 > **Null 및 빈 문자열**
 > 
@@ -254,12 +254,12 @@ ASP.NET을 해석 하기 전에 본 것 처럼는 `~` 연산자는 웹 사이트
 
 [!code-cshtml[Main](entering-data/samples/sample15.cshtml)]
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 - [Razor 구문을 사용 하 여 ASP.NET 웹 프로그래밍 소개](https://go.microsoft.com/fwlink/?LinkID=202890)
 - [INTO 문을 SQL 삽입](http://www.w3schools.com/sql/sql_insert.asp) W3Schools 사이트
 - [사이트 페이지에서 ASP.NET 웹 사용자 입력 유효성 검사](https://go.microsoft.com/fwlink/?LinkId=253002)합니다. 작업에 대 한 자세한 정보는 `Validation` 도우미입니다.
 
->[!div class="step-by-step"]
-[이전](form-basics.md)
-[다음](updating-data.md)
+> [!div class="step-by-step"]
+> [이전](form-basics.md)
+> [다음](updating-data.md)

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/performing-simple-validation-vb
-title: "간단한 유효성 검사 (VB)를 수행 합니다. | Microsoft Docs"
+title: 간단한 유효성 검사 (VB)를 수행 합니다. | Microsoft Docs
 author: StephenWalther
-description: "ASP.NET MVC 응용 프로그램에서 유효성 검사를 수행 하는 방법에 알아봅니다. 이 자습서에서는 Stephen Walther 소개 모델 상태 및 유효성 검사 HTML 도우미 중..."
+description: ASP.NET MVC 응용 프로그램에서 유효성 검사를 수행 하는 방법에 알아봅니다. 이 자습서에서는 Stephen Walther 소개 모델 상태 및 유효성 검사 HTML 도우미 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/02/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/performing-simple-validation-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2bc4cdbcd267bcdd3e71abc4c52664ae62c5c02e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: efb98d87106e332fffb158e5f382d57fea778957
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="performing-simple-validation-vb"></a>간단한 유효성 검사 (VB)를 수행합니다.
 ====================
@@ -35,7 +35,7 @@ ms.lasthandoff: 11/10/2017
 필자가 하지 추천 컨트롤러에 데이터베이스 또는 유효성 검사 논리를 추가 합니다. 컨트롤러 응용 프로그램 흐름 제어와 관련 된 논리만 포함 되어야 합니다. 바로 가기를 간단 하 게 수행 합니다.
 
 
-**1-Controllers\ProductController.vb 나열**
+**Listing 1 - Controllers\ProductController.vb**
 
 [!code-vb[Main](performing-simple-validation-vb/samples/sample1.vb)]
 
@@ -71,7 +71,7 @@ Html.ValidationMessage() 및 Html.ValidationSummary() 도우미 ASP.NET MVC 스 
 
 다음이 단계를 완료 한 후에 목록 2의 만들기 뷰를 가져옵니다.
 
-**2-Views\Product\Create.aspx 나열**
+**Listing 2 - Views\Product\Create.aspx**
 
 [!code-aspx[Main](performing-simple-validation-vb/samples/sample2.aspx)]
 
@@ -130,6 +130,6 @@ Prebinding 오류 메시지를 이러한 모양을 사용자 지정 하려는 �
 
 이 자습서의 목표는 ASP.NET MVC 프레임 워크에서 유효성 검사의 기본 메커니즘에 설명 하는 것 이었습니다. 모델 상태 및 유효성 검사 HTML 도우미를 사용 하는 방법을 배웠습니다. 유효성 검사 postbinding prebinding 간 구분을 논의 합니다. 다른 자습서에 모델 클래스를 컨트롤러에 유효성 검사 코드를 이동 하기 위한 다양 한 방법에 설명 합니다.
 
->[!div class="step-by-step"]
-[이전](displaying-a-table-of-database-data-vb.md)
-[다음](validating-with-the-idataerrorinfo-interface-vb.md)
+> [!div class="step-by-step"]
+> [이전](displaying-a-table-of-database-data-vb.md)
+> [다음](validating-with-the-idataerrorinfo-interface-vb.md)

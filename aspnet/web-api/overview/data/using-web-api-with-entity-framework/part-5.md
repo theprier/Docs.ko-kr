@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/data/using-web-api-with-entity-framework/part-5
-title: "데이터 전송 개체 Dto ()를 만들 | Microsoft Docs"
+title: 데이터 전송 개체 Dto ()를 만들 | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/16/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-5
 msc.type: authoredcontent
-ms.openlocfilehash: e179dcd52200734a45c84b3c7c3069a4727904c1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 35e01f959072b96204de3e2ce3d507635720e110
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="create-data-transfer-objects-dtos"></a>데이터 전송 개체 (Dto) 만들기
 ====================
@@ -53,7 +53,7 @@ ms.lasthandoff: 11/10/2017
 
 > [!NOTE]
 > 이 자습서에서는 변환 대상 Dto 수동으로 코드에서. 또 다른 옵션은 같은 라이브러리를 사용 하도록 [AutoMapper](http://automapper.org/) 변환이 자동으로 처리 하는 합니다.
-
->[!div class="step-by-step"]
-[이전](part-4.md)
-[다음](part-6.md)
+> 
+> [!div class="step-by-step"]
+> [이전](part-4.md)
+> [다음](part-6.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/custom-button-actions/adding-and-responding-to-buttons-to-a-gridview-cs
-title: "추가 하 고 응답 하는 GridView (C#)에 단추 | Microsoft Docs"
+title: 추가 하 고 응답 하는 GridView (C#)에 단추 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서와 GridView 또는 DetailsView 컨트롤의 필드에 서식 파일에 사용자 지정 단추를 추가 하는 방법을 살펴보겠습니다. 특히, त ु म च 작성기 중..."
+description: 이 자습서와 GridView 또는 DetailsView 컨트롤의 필드에 서식 파일에 사용자 지정 단추를 추가 하는 방법을 살펴보겠습니다. 특히, त ु म च 작성기 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/13/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions/adding-and-responding-to-buttons-to-a-gridview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4f2a31f406bb1ed98e3620e216b4ad14fe59b32f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 90648e10d5d058ea2e4aa5b3d8c4ed7448ea7166
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-and-responding-to-buttons-to-a-gridview-c"></a>추가 하 고 응답 하는 GridView (C#)에 단추
 ====================
@@ -127,7 +127,7 @@ FormView의 서식 파일에 모든 제품을 중단 단추를 추가 하기 전
 
 [![SupplierID 매개 변수는에서 가져왔는지 Suppliers FormView 컨트롤 표시](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image25.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image24.png)
 
-**그림 10**: 있음을  *`supplierID`*  매개 변수에서 가져와야 하는 `Suppliers` FormView 컨트롤 ([전체 크기 이미지를 보려면 클릭](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image26.png))
+**그림 10**: 있음을 *`supplierID`* 매개 변수에서 가져와야 하는 `Suppliers` FormView 컨트롤 ([전체 크기 이미지를 보려면 클릭](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image26.png))
 
 
 ObjectDataSource 마법사를 완료 한 후 GridView가 BoundField 또는 CheckBoxField 각 제품의 데이터 필드에 대해 포함 됩니다. 보겠습니다 축소이 표시 테이블만 `ProductName` 및 `UnitPrice` BoundFields와 함께 `Discontinued` CheckBoxField; 또한에 서식을 지정 하겠습니다는 `UnitPrice` BoundField를 해당 텍스트를 통화 형식을 지정 합니다. 에 GridView 및 `SuppliersProductsDataSource` ObjectDataSource의 선언적 태그에 다음 태그 유사 합니다.
@@ -154,7 +154,7 @@ FormView에 단추를 추가 하기 전에, 모두 중단 됩니다를 클릭 �
 **그림 12**: 특별 SQL 문을 사용 하 여 DAL 메서드 만들기 ([전체 크기 이미지를 보려면 클릭](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image32.png))
 
 
-다음으로, 마법사 어떤 유형의 쿼리를 만들에 대 한 미국 메시지 표시 합니다. 이후는 `DiscontinueAllProductsForSupplier(supplierID)` 메서드를 업데이트 해야 합니다는 `Products` 설정 하는 데이터베이스 테이블의 `Discontinued` 필드를 지정 된에서 제공 하는 모든 제품에 대 한 1  *`supplierID`* , 데이터를 업데이트 하는 쿼리를 만들어야 하 합니다.
+다음으로, 마법사 어떤 유형의 쿼리를 만들에 대 한 미국 메시지 표시 합니다. 이후는 `DiscontinueAllProductsForSupplier(supplierID)` 메서드를 업데이트 해야 합니다는 `Products` 설정 하는 데이터베이스 테이블의 `Discontinued` 필드를 지정 된에서 제공 하는 모든 제품에 대 한 1 *`supplierID`*, 데이터를 업데이트 하는 쿼리를 만들어야 하 합니다.
 
 
 [![업데이트 쿼리 형식 선택](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image34.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image33.png)
@@ -178,7 +178,7 @@ FormView에 단추를 추가 하기 전에, 모두 중단 됩니다를 클릭 �
 
 [!code-csharp[Main](adding-and-responding-to-buttons-to-a-gridview-cs/samples/sample5.cs)]
 
-이 메서드를 단순히 호출는 `DiscontinueAllProductsForSupplier(supplierID)` 메서드 함께 제공 된 전달 DAL에서  *`supplierID`*  매개 변수 값입니다. 특정 상황에서 중단 되도록 공급 업체의 제품에만 허용 하는 모든 비즈니스 규칙 인 경우 이러한 규칙 BLL에 여기에서 구현 되어야 합니다.
+이 메서드를 단순히 호출는 `DiscontinueAllProductsForSupplier(supplierID)` 메서드 함께 제공 된 전달 DAL에서 *`supplierID`* 매개 변수 값입니다. 특정 상황에서 중단 되도록 공급 업체의 제품에만 허용 하는 모든 비즈니스 규칙 인 경우 이러한 규칙 BLL에 여기에서 구현 되어야 합니다.
 
 > [!NOTE]
 > 와 달리는 `UpdateProduct` 에서 오버 로드는 `ProductsBLL` 클래스는 `DiscontinueAllProductsForSupplier(supplierID)` 메서드 시그니처는 포함 되지 않습니다는 `DataObjectMethodAttribute` 특성 (`<System.ComponentModel.DataObjectMethodAttribute(System.ComponentModel.DataObjectMethodType.Update, Boolean)>`). 이 인덱스나 관계는 `DiscontinueAllProductsForSupplier(supplierID)` 업데이트 탭 ObjectDataSource의 데이터 소스 구성 마법사의 드롭다운 목록에서 메서드. I 했습니다 호출할 때문에이 특성을 생략는 `DiscontinueAllProductsForSupplier(supplierID)` 가격 ASP.NET 페이지에서 이벤트 처리기에서 직접 메서드.
@@ -198,7 +198,7 @@ FormView의 페이지에서 포스트백 계속 사용자 방문 여는 단추�
 
 이후는 `ItemCommand` 이벤트 처리기를 모든 제품을 중단 단추 클릭 한 경우 확인 하는 방법이 필요 또는 기타 단추 인 경우 어떤 단추를 클릭 하는 것에 관계 없이 발생 합니다. 이를 위해 웹 단추 컨트롤의 설정할 수 있습니다 `CommandName` 속성을 식별 일부 값입니다. 단추를 클릭할 때,이 `CommandName` 에 값이 전달 되는 `ItemCommand` 수 있어 모든 제품을 중단 단추는 단추 클릭 했는지 확인 하려면 이벤트 처리기입니다. 중단 모든 제품 단추의 설정 `CommandName` 속성 DiscontinueProducts 합니다.
 
-마지막으로, 선택한 공급 업체의 제품을 중단 하려면 사용자가 실제로 있는지 확인 하는 클라이언트 쪽 확인 대화 상자를 사용 합니다. 설명한 것 처럼는 [추가 클라이언트 쪽 확인 때 삭제](../editing-inserting-and-deleting-data/adding-client-side-confirmation-when-deleting-cs.md) 자습서, 약간 JavaScript의이 작업을 수행할 수 있습니다. 특히, Button 웹 컨트롤 OnClientClick 속성을 설정`return confirm('This will mark _all_ of this supplier\'s products as discontinued. Are you certain you want to do this?');`
+마지막으로, 선택한 공급 업체의 제품을 중단 하려면 사용자가 실제로 있는지 확인 하는 클라이언트 쪽 확인 대화 상자를 사용 합니다. 설명한 것 처럼는 [추가 클라이언트 쪽 확인 때 삭제](../editing-inserting-and-deleting-data/adding-client-side-confirmation-when-deleting-cs.md) 자습서, 약간 JavaScript의이 작업을 수행할 수 있습니다. 특히, Button 웹 컨트롤 OnClientClick 속성을 설정 `return confirm('This will mark _all_ of this supplier\'s products as discontinued. Are you certain you want to do this?');`
 
 다음과 같이 변경한 후 FormView의 선언적 구문 다음과 같이 표시 됩니다.
 
@@ -304,7 +304,7 @@ ButtonField에 자동으로 전달 된 *rowIndex* 를 통해 해당 단추를 �
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
->[!div class="step-by-step"]
-[다음](adding-and-responding-to-buttons-to-a-gridview-vb.md)
+> [!div class="step-by-step"]
+> [다음](adding-and-responding-to-buttons-to-a-gridview-vb.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/formatting-the-datalist-and-repeater-based-upon-data-vb
-title: "데이터 (VB)에 따라 서식 DataList 및 반복기 | Microsoft Docs"
+title: 데이터 (VB)에 따라 서식 DataList 및 반복기 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에서는 서식을 म 있는 서식 지정 함수를 사용 하 여 DataList 및 반복기 컨트롤의 모양을 지정 방법의 예제를 단계별로 합니다 म 중..."
+description: 이 자습서에서는 서식을 म 있는 서식 지정 함수를 사용 하 여 DataList 및 반복기 컨트롤의 모양을 지정 방법의 예제를 단계별로 합니다 म 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/13/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/formatting-the-datalist-and-repeater-based-upon-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 460fc36062f3338ffd178aceda2b3b224752a089
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 174a68cf0785b33c85139d57ede9717ce7e135e0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="formatting-the-datalist-and-repeater-based-upon-data-vb"></a>DataList 및 데이터 (VB)를 기반으로 반복기 서식 지정
 ====================
@@ -42,19 +42,19 @@ ms.lasthandoff: 01/24/2018
 
 경우에 바인딩된 데이터가 데이터 소스 제어에서 또는 프로그래밍 방식으로 s 컨트롤에 데이터 할당을 통해 `DataSource` 속성과 호출 해당 `DataBind()` 메서드, s DataList `DataBinding` 이벤트가 발생 하면 데이터 원본 열거 및 각 데이터 레코드 DataList에 바인딩됩니다. 데이터 원본의 각 레코드에 대해 DataList 만듭니다는 [ `DataListItem` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalistitem.aspx) 되는 개체를 다음 현재 레코드에 바인딩됩니다. 이 과정에서 DataList 두 이벤트를 발생 시킵니다.
 
-- **`ItemCreated`**후에 발생는 `DataListItem` 만든
-- **`ItemDataBound`**현재 레코드에 바인딩된 후에 발생는`DataListItem`
+- **`ItemCreated`** 후에 발생는 `DataListItem` 만든
+- **`ItemDataBound`** 현재 레코드에 바인딩된 후에 발생는 `DataListItem`
 
 다음 단계 DataList 컨트롤에 대 한 데이터 바인딩 프로세스를 간략하게 설명합니다.
 
 1. DataList s [ `DataBinding` 이벤트](https://msdn.microsoft.com/library/system.web.ui.control.databinding.aspx) 발생 합니다.
 2. DataList에 데이터 바인딩된  
   
- 데이터 원본에 있는 각 레코드에 대 한 
+   데이터 원본에 있는 각 레코드에 대 한 
 
     1. 만들기는 `DataListItem` 개체
     2. 화재는 [ `ItemCreated` 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.itemcreated.aspx)
-    3. 해당 레코드를 바인딩하는`DataListItem`
+    3. 해당 레코드를 바인딩하는 `DataListItem`
     4. 화재는 [ `ItemDataBound` 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.itemdatabound.aspx)
     5. 추가 `DataListItem` 에 `Items` 컬렉션
 
@@ -172,7 +172,7 @@ ASP.NET 페이지의 코드 숨김 클래스에 추가 하는 서식 지정 함�
 
 [!code-aspx[Main](formatting-the-datalist-and-repeater-based-upon-data-vb/samples/sample5.aspx)]
 
-DataList s에서에서 `ItemTemplate` 는 `ProductNameLabel` Label 웹 컨트롤 현재 이름을 표시 하는 제품 s 할당 하 여 해당 `Text` 결과 속성의 `<%# Eval("ProductName") %>`합니다. 유지 하기 위해 필요한 경우 이름과 [단종] 텍스트를 표시, 선언적 구문 대신 할당 되도록 업데이트는 `Text` 속성 값의는 `DisplayProductNameAndDiscontinuedStatus` 메서드. 이렇게 할 경우 s 제품 이름 및 사용 하 여 지원 되지 않는 값에 전달 해야는 `Eval("columnName")` 구문입니다. `Eval`형식의 값을 반환 `Object`, 하지만 `DisplayProductNameAndDiscontinuedStatus` 메서드에서 입력된 매개 변수 형식의 예상 `String` 및 `Boolean`이므로, 반환 하는 값을 캐스팅 해야 했습니다는 `Eval` 같이 메서드를 필요한 입력된 매개 변수 형식:
+DataList s에서에서 `ItemTemplate` 는 `ProductNameLabel` Label 웹 컨트롤 현재 이름을 표시 하는 제품 s 할당 하 여 해당 `Text` 결과 속성의 `<%# Eval("ProductName") %>`합니다. 유지 하기 위해 필요한 경우 이름과 [단종] 텍스트를 표시, 선언적 구문 대신 할당 되도록 업데이트는 `Text` 속성 값의는 `DisplayProductNameAndDiscontinuedStatus` 메서드. 이렇게 할 경우 s 제품 이름 및 사용 하 여 지원 되지 않는 값에 전달 해야는 `Eval("columnName")` 구문입니다. `Eval` 형식의 값을 반환 `Object`, 하지만 `DisplayProductNameAndDiscontinuedStatus` 메서드에서 입력된 매개 변수 형식의 예상 `String` 및 `Boolean`이므로, 반환 하는 값을 캐스팅 해야 했습니다는 `Eval` 같이 메서드를 필요한 입력된 매개 변수 형식:
 
 
 [!code-aspx[Main](formatting-the-datalist-and-repeater-based-upon-data-vb/samples/sample6.aspx)]
@@ -200,12 +200,12 @@ DataList 또는 반복기 컨트롤에서 데이터에 기반한 내용의 서�
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자가 Yaakov Ellis, Randy Schmidt 및 Liz Shulok 합니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](displaying-data-with-the-datalist-and-repeater-controls-vb.md)
-[다음](showing-multiple-records-per-row-with-the-datalist-control-vb.md)
+> [!div class="step-by-step"]
+> [이전](displaying-data-with-the-datalist-and-repeater-controls-vb.md)
+> [다음](showing-multiple-records-per-row-with-the-datalist-control-vb.md)

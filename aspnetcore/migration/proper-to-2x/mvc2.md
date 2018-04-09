@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET에서 ASP.NET Core 2.0으로 마이그레이션"
+title: ASP.NET에서 ASP.NET Core 2.0 마이그레이션
 author: isaac2004
-description: "기존 ASP.NET MVC 또는 Web API 응용 프로그램을 마이그레이션하여 ASP.NET 코어 2.0에 대 한 지침을 수신 합니다."
+description: 기존 ASP.NET MVC 또는 Web API 응용 프로그램을 마이그레이션하여 ASP.NET 코어 2.0에 대 한 지침을 수신 합니다.
 manager: wpickett
 ms.author: scaddie
 ms.date: 08/27/2017
@@ -9,21 +9,26 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/mvc2
-ms.openlocfilehash: 9424234011525afdba35824b6b324f5175ba023f
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 58fac7642dbfdad58fef99f04d17de33e7218524
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="migrating-from-aspnet-to-aspnet-core-20"></a>ASP.NET에서 ASP.NET Core 2.0으로 마이그레이션
+# <a name="migrate-from-aspnet-to-aspnet-core-20"></a>ASP.NET에서 ASP.NET Core 2.0 마이그레이션
 
 작성자: [Isaac Levin](https://isaaclevin.com)
 
 이 문서는 ASP.NET 응용 프로그램을 ASP.NET Core 2.0으로 마이그레이션하기 위한 참조 가이드로 사용됩니다.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
-* [.NET Core 2.0.0 SDK](https://www.microsoft.com/net/core) 이상.
+설치 **하나의** 에서 다음 중 [.NET 다운로드: Windows](https://www.microsoft.com/net/download/windows):
+
+* .NET Core SDK
+* Windows 용 visual Studio
+  * **ASP.NET 및 웹 개발** 작업
+  * **.NET core 플랫폼 간 개발** 작업
 
 ## <a name="target-frameworks"></a>대상 프레임워크
 ASP.NET Core 2.0 프로젝트를 사용하면 개발자가 유연하게 .NET Core, .NET Framework 또는 두 항목을 모두 대상으로 지정하거나 둘 다 대상으로 지정할 수 있습니다. 가장 적절한 대상 프레임워크를 결정하려면 [서버 앱에 대해 .NET Core와 .NET Framework 중에서 선택](https://docs.microsoft.com/dotnet/standard/choosing-core-framework-server)을 참조하세요.
@@ -145,8 +150,8 @@ ASP.NET Core에서 정적 파일은 별도로 구성되지 않는 한 “웹 루
 
 예를 들어 *wwwroot/images* 폴더의 이미지 자산은 `http://<app>/images/<imageFileName>`과 같은 위치의 브라우저에 액세스할 수 있습니다.
 
-**참고:** ASP.NET Core의 정적 파일 지원에 대한 자세한 내용은 [ASP.NET Core에서 정적 파일 사용 소개](xref:fundamentals/static-files)를 참조하세요.
+**참고:** ASP.NET Core에 정적 파일 처리에 대 한 자세한 참조를 참조 하십시오. [ASP.NET Core에서 정적 파일로 작업할](xref:fundamentals/static-files)합니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 * [.NET Core로 라이브러리 이식](/dotnet/core/porting/libraries)

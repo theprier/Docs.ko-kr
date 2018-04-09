@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/building-the-ef5-mvc4-chapter-downloads
-title: "자습서 4 EF 5 MVC에 대 한 다운로드 장 작성 | Microsoft Docs"
+title: 자습서 4 EF 5 MVC에 대 한 다운로드 장 작성 | Microsoft Docs
 author: Rick-Anderson
-description: "Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 5 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 4 응용 프로그램을 만드는 방법을 보여 줍니다 중..."
+description: Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 5 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 4 응용 프로그램을 만드는 방법을 보여 줍니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/30/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/building-the-ef5-mvc4-chapter-downloads
 msc.type: authoredcontent
-ms.openlocfilehash: 912a1383ed170b49782657372abc1801140df8dd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: bda7effabd715e4658d2472e1f0a66d7bba18cab
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="building-the-chapter-downloads-for-the-ef-5-mvc-4-tutorials"></a>자습서 4 EF 5 MVC에 대 한 다운로드 장 작성
 ====================
@@ -24,7 +24,7 @@ ms.lasthandoff: 11/10/2017
 
 [완료 된 프로젝트를 다운로드 합니다.](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
 
-> Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 5 Code First 및 Visual Studio 2012를 사용 하 여 ASP.NET MVC 4 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대 한 정보를 참조 하십시오. [시리즈의 첫 번째 자습서](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)합니다.
+> Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 5 Code First 및 Visual Studio 2012를 사용 하 여 ASP.NET MVC 4 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)를 참조하세요.
 
 
 ## <a name="building-the-chapter-downloads"></a>장 다운로드를 작성합니다.
@@ -41,7 +41,7 @@ ms.lasthandoff: 11/10/2017
 6. 패키지 관리자 콘솔 (PMC)에서 클릭 **복원**합니다.  
   
     ![](building-the-ef5-mvc4-chapter-downloads/_static/image3.png)
-7. Visual Studio를 종료 합니다.
+7. Visual Studio를 끝냅니다.
 8. 위의 단계에서 닫은 솔루션 파일을 열면 Visual Studio를 다시 시작 합니다.
 9. 패키지 관리자 콘솔 (PMC)에서 입력 된 `Update-Database` 명령:  
   
@@ -57,5 +57,5 @@ ms.lasthandoff: 11/10/2017
 
     ![](building-the-ef5-mvc4-chapter-downloads/_static/image5.png)
 
->[!div class="step-by-step"]
-[이전](advanced-entity-framework-scenarios-for-an-mvc-web-application.md)
+> [!div class="step-by-step"]
+> [이전](advanced-entity-framework-scenarios-for-an-mvc-web-application.md)

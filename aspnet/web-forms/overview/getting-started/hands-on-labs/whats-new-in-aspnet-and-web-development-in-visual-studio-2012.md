@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/hands-on-labs/whats-new-in-aspnet-and-web-development-in-visual-studio-2012
-title: "ASP.NET 및 Visual Studio 2012에서 웹 개발의 새로운 기능 | Microsoft Docs"
+title: ASP.NET 및 Visual Studio 2012에서 웹 개발의 새로운 기능 | Microsoft Docs
 author: rick-anderson
-description: "새 버전의 Visual Studio 웹 기술을 사용 하는 경우, 환경 및 성능 향상에 초점을 맞춘 향상 된 기능 소개 중..."
+description: 새 버전의 Visual Studio 웹 기술을 사용 하는 경우, 환경 및 성능 향상에 초점을 맞춘 향상 된 기능 소개 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/whats-new-in-aspnet-and-web-development-in-visual-studio-2012
 msc.type: authoredcontent
-ms.openlocfilehash: f0818cce2a82ede80556b3471cec9d965c3e987f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 00b43cc548df44edded925521991a095ed856494
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="whats-new-in-aspnet-and-web-development-in-visual-studio-2012"></a>ASP.NET 및 Visual Studio 2012에서 웹 개발의 새로운 기능
 ====================
@@ -32,7 +32,7 @@ ms.lasthandoff: 01/24/2018
 > 
 > 이 랩에서 원본 폴더에 제공 된 샘플 웹 응용 프로그램에 사소한 변경 내용을 적용 하 여 이전에 설명 된 새로운 기능 및 향상 된 기능을 통해 설명 합니다.
 > 
-> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409)합니다.
+> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [ https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409 ](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409)합니다.
 
 
 <a id="Objectives"></a>
@@ -50,7 +50,7 @@ ms.lasthandoff: 01/24/2018
 <a id="Prerequisites"></a>
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>필수 구성 요소
+### <a name="prerequisites"></a>전제 조건
 
 - [Microsoft Visual Studio Express 2012 for Web](https://www.microsoft.com/visualstudio/eng/products/visual-studio-express-for-web) 하거나 그 보다 뛰어난 (읽기 [부록 A](#AppendixA) 설치 하는 방법에 대 한 지침은).
 - [Windows PowerShell](https://support.microsoft.com/kb/968930/) (스크립트에 대 한 설치 프로그램-이미 Windows 8 및 Windows Server 2008 r 2에 설치)
@@ -147,7 +147,7 @@ ms.lasthandoff: 01/24/2018
     *색 선택 불투명도*
 
     > [!NOTE]
-    > CSS3에 RGBA (빨강, 녹색, 파란색, Alpha) 색 정의 사용 하면 단일 항목에 대 한 색 불투명도 값을 정의할 수 있습니다. 와 달리 **불투명도-** 비슷한 CSS 특성  **-**  RGBA 색 최신 브라우저와 호환 됩니다.
+    > CSS3에 RGBA (빨강, 녹색, 파란색, Alpha) 색 정의 사용 하면 단일 항목에 대 한 색 불투명도 값을 정의할 수 있습니다. 와 달리 **불투명도-** 비슷한 CSS 특성 **-** RGBA 색 최신 브라우저와 호환 됩니다.
 
 <a id="Ex1Task3"></a>
 
@@ -156,7 +156,7 @@ ms.lasthandoff: 01/24/2018
 
 이 태스크에서는 웹 사이트의 일부 기능을 구현 하기 위해 브라우저 간 호환 CSS3 코드 조각을 사용 하는 방법에 설명 합니다.
 
-1. 에 **Site.css** 파일을 찾아는 **헤더** CSS 클래스 정의 (.header) 및 아래에 커서를 배치는  **/ \*테두리 radius\* /**  새 코드 조각을 추가 하는 자리 표시자입니다. 키를 눌러 **Enter** IntelliSense 목록 및 형식을 표시 하려면 **radius** 목록을 필터링 합니다. 선택 된 **테두리 radius** 두 번 클릭을 사용 하 여 목록에서 옵션 및 다음 키를 누릅니다는 **탭** 조각을 삽입할 키입니다. 그런 다음 누릅니다 픽셀에 radius 크기를 입력 **Enter**합니다. 예를 들어, 입력 **15px**합니다.
+1. 에 **Site.css** 파일을 찾아는 **헤더** CSS 클래스 정의 (.header) 및 아래에 커서를 배치는 **/ \*테두리 radius\* /** 새 코드 조각을 추가 하는 자리 표시자입니다. 키를 눌러 **Enter** IntelliSense 목록 및 형식을 표시 하려면 **radius** 목록을 필터링 합니다. 선택 된 **테두리 radius** 두 번 클릭을 사용 하 여 목록에서 옵션 및 다음 키를 누릅니다는 **탭** 조각을 삽입할 키입니다. 그런 다음 누릅니다 픽셀에 radius 크기를 입력 **Enter**합니다. 예를 들어, 입력 **15px**합니다.
 
     조각에 추가 된 CSS3 특성 Mozilla 및 WebKit를 기반으로 하는 브라우저를 비롯 한 대부분의 HTML5 준수 브라우저에서 모퉁이가 둥근된 테두리를 렌더링 합니다.
 
@@ -260,7 +260,9 @@ HTML 편집기 마스터 페이지에는 정의가 있을 수 있지만 페이�
 1. 에 **Default.aspx** 페이지에서 추가 된 **H3** 제목 (예를 들어 Visual Studio 2012 돌!) 인 요소입니다.
 
 
-    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample5.aspx)]
+~~~
+[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample5.aspx)]
+~~~
 2. 변경 된 **H3** 태그 및 형식 **H2** 또는 **H1 합니다.**
 
     끝 태그를 자동으로 업데이트 확인 합니다. 시작 태그 업데이트 하도록 적절 하 게 너무 보려면 끝 태그를 수정할 수 있습니다.
@@ -287,10 +289,12 @@ HTML 편집기 마스터 페이지에는 정의가 있을 수 있지만 페이�
 3. 기존 오디오 파일을 가리키도록 오디오 소스를 업데이트 합니다.
 
 
-    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample6.aspx)]
+~~~
+[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample6.aspx)]
 
-    > [!NOTE]
-    > 오디오 파일을 솔루션에 추가 해야 합니다.
+> [!NOTE]
+> You will need to add the audio file to the solution.
+~~~
 4. 키를 눌러 **F5** 사이트를 실행 하 여 오디오를 재생 하 합니다.
 
     ![실행 중인 오디오 컨트롤](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image29.png "실행 중인 오디오 컨트롤")
@@ -404,7 +408,7 @@ Visual Studio JavaScript 편집기를 꼭 코드 액세스 가능 하 고 구성
 
     *페이지 카운터*
 3. 브라우저를 닫고 Visual Studio로 돌아갑니다.
-4. 열기는 **JavaScript.aspx** 페이지를 찾습니다는  **&lt;스크립트&gt;**  블록 (아래 참조).
+4. 열기는 **JavaScript.aspx** 페이지를 찾습니다는 **&lt;스크립트&gt;** 블록 (아래 참조).
 
     다음 코드 HTML5 로컬 저장소를 사용 하 여 저장 하는 *pageLoadCount* 현재 사용자가 페이지를 방문한 횟수를 저장 하는 변수입니다. 로컬 저장소는 HTML5 표준 도입 하는 클라이언트 쪽 키-값 데이터베이스. 데이터는 로컬 컴퓨터 사용자의 브라우저 내에 저장 됩니다.
 
@@ -449,8 +453,8 @@ Visual Studio JavaScript 편집기를 꼭 코드 액세스 가능 하 고 구성
     ![JavaScript 유효성 검사 오류 메시지](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image42.png "JavaScript 유효성 검사 오류 메시지")
 
     *JavaScript 유효성 검사 오류 메시지*
-3. 주석으로 처리는  **&quot;strict 사용&quot;**  방향과 경고 상태로 유지 되지만 오류가 사라집니다.
-4. 파일의 마지막 줄에서 다음과 같은 모든 문자열을 작성  **&quot;테스트&quot;**  (은 문자열로 나타내기 위해 따옴표를 포함). IntelliSense 목록에 표시 하 고 선택 문자열 옆에 있는 마침표 쓰기는 **trim** 옵션입니다.
+3. 주석으로 처리는 **&quot;strict 사용&quot;** 방향과 경고 상태로 유지 되지만 오류가 사라집니다.
+4. 파일의 마지막 줄에서 다음과 같은 모든 문자열을 작성 **&quot;테스트&quot;** (은 문자열로 나타내기 위해 따옴표를 포함). IntelliSense 목록에 표시 하 고 선택 문자열 옆에 있는 마침표 쓰기는 **trim** 옵션입니다.
 
     ECMAScript5 표준에서 문자열 값 및 변수도 정의 trim, 대문자, 찾기 및 바꾸기와 같은 문자열 처리 메서드는 합니다.
 
@@ -546,28 +550,36 @@ Visual Studio JavaScript 편집기를 꼭 코드 액세스 가능 하 고 구성
     새 **Microsoft.Web.Optimization** 네임 스페이스는 파일의 시작 부분에서 주석으로 처리 합니다. 사용 하는 주석 처리 제거 지시문 묶음 및 축소 기능을 포함 하도록 합니다.
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample10.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample10.cs)]
+~~~
 4. 찾을 **응용 프로그램\_시작** 메서드.
 
     이 방법에서는 아래 코드 조각에 나와 있는 것 처럼 EnableDefaultBundles 호출 주석 처리 제거 합니다. 이렇게 하면 폴더의 CSS 파일의 번들로 묶은 컬렉션에는 해당 폴더의 경로 사용 하 여 참조를 수와 &quot;CSS&quot; 또는 &quot;JS&quot; 접미사입니다.
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample11.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample11.cs)]
+~~~
 5. 열기는 **Optimization.aspx** 파일을 콘텐츠 컨트롤을 찾으십시오 **HeadContent**합니다.
 
     CSS 파일 참조는 단일 태그가 있어야 JS 파일을 살펴보세요.
 
 
-    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample12.aspx)]
+~~~
+[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample12.aspx)]
 
-    > [!NOTE]
-    > 이 코드는 데모 목적 됩니다. 이상적으로 Site.Master 파일에 번들을 참조 합니다. 이 샘플 코드를 확인할 수는 모두 함께 제공 된 파일 중 일부가에서 참조 하는 Site.Master 파일이 마지막 참조를 중복 하 합니다.
+> [!NOTE]
+> This code is for demo purposes. Ideally, you will reference the bundles in the Site.Master file. In this sample code, you will find that some of the bundled files are also being referenced by the Site.Master file, making this last reference redundant.
+~~~
 6. 링크의 번들 규칙에 사용 하는 것을 알는 **href** 스타일 및 Scripts\custom에서 모든 CSS 또는 JS 파일을 가져올 특성 폴더 각각.
 
     경로 사용할 수 있습니다 **스크립트/사용자 지정/JS** 아래와 같이 축소할 내부에 있는 모든 JS 파일을 번들로 **스크립트/사용자 지정** 폴더입니다. 이것이 기본 번들 기본 동작입니다.
 
 
-    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample13.aspx)]
+~~~
+[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample13.aspx)]
+~~~
 7. 열기는 **Styles\Site.css** 파일입니다.
 
     원래 CSS 파일 들여쓰기 된 코드, 공백 및 파일을 확대 하는 주석을 포함 되어 있는지 확인 합니다. (또한 JavaScript 파일에 빈 공간 및 주석).
@@ -609,13 +621,17 @@ Visual Studio JavaScript 편집기를 꼭 코드 액세스 가능 하 고 구성
     파일 위치;에 있지 공지 기본 번들을 통해 또 다른 이점은입니다.
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample14.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample14.cs)]
+~~~
 4. 열기는 **Optimization.aspx** 파일입니다.
 
     에 대 한 링크 **정적 JS 번들** Global.asax.cs 파일에는 정적 번들을 구성 하는 경우 사용자가 선언한 경로 사용 하는: **/StaticBundle**합니다.
 
 
-    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample15.aspx)]
+~~~
+[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample15.aspx)]
+~~~
 5. 키를 눌러 **F5** 응용 프로그램을 실행 한 다음로 이동 하 여 **최적화** 페이지.
 6. 클릭는 **정적 JS 번들** 링크 파일을 열 수 있습니다.
 
@@ -641,7 +657,9 @@ Visual Studio JavaScript 편집기를 꼭 코드 액세스 가능 하 고 구성
     사용 하는 동적 폴더 번들을 정의 하는 **CoffeeMinify** 사용자 지정 축소 프로세서를 사용 하 여 파일에만 적용 됩니다는 &quot; **.coffee** &quot; 확장 드 ( CoffeeScript 파일)입니다. 파일 폴더 내의 같은 번들을 선택 하는 검색 패턴을 사용할 수 있는 알림 '\*.coffee'.
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample16.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample16.cs)]
+~~~
 3. NuGet 패키지 관리자 콘솔을 엽니다. 이 작업을 수행 하려면 메뉴 사용 **보기** | **다른 창** | **패키지 관리자 콘솔**합니다.
 4. 에 **패키지 관리자 콘솔** 형식 **Install-package CoffeeSharp** 누릅니다 **ENTER**합니다.
 5. 클릭는 **모든 파일 표시** 단추는 **솔루션 탐색기** 창
@@ -659,7 +677,9 @@ Visual Studio JavaScript 편집기를 꼭 코드 액세스 가능 하 고 구성
     이 클래스에서 JsMinify 축소할 CoffeeScript 코드 컴파일 얻는 JavaScript 출력을 상속 합니다. 먼저, JavaScript 코드를 생성 하려면 CoffeeScript 컴파일러를 호출 하 고에 전송할 JsMinify.Process 메서드 결과 코드 축소할를 키를 누릅니다.
 
 
-    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample17.cs)]
+~~~
+[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample17.cs)]
+~~~
 8. 열기는 **Script1.coffee** 및 **Script2.coffee** 에서 파일의 **스크립트/번들** 폴더입니다.
 
     이러한 파일 CoffeeMinify 클래스와 함께 번들로 수행 하는 동안 컴파일해야 할 CoffeScript 코드가 포함 됩니다.
@@ -677,7 +697,9 @@ Visual Studio JavaScript 편집기를 꼭 코드 액세스 가능 하 고 구성
     에 대 한 링크 **동적 JS 번들** 참조 하는 **스크립트/번들** 를 사용 하 여 폴더는 **커피/** 접미사 동적 폴더 번들에 대 한 구성 합니다.
 
 
-    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample18.aspx)]
+~~~
+[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample18.aspx)]
+~~~
 10. 키를 눌러 **F5** 응용 프로그램을 실행 한 다음로 이동 하 여 **최적화** 페이지.
 11. 클릭는 **동적 JS 번들** 링크를 생성된 된 파일을 엽니다.
 
@@ -703,9 +725,9 @@ Visual Studio JavaScript 편집기를 꼭 코드 액세스 가능 하 고 구성
 <a id="Appendix_A_Installing_Visual_Studio_Express_2012_for_Web"></a>
 ## <a name="appendix-a-installing-visual-studio-express-2012-for-web"></a>부록 a: 설치 Visual Studio Express 2012 for Web
 
-설치할 수 있습니다 **Microsoft Visual Studio Express 2012 for Web** 또는 다른 &quot;Express&quot; 버전을 사용 하 여  **[Microsoft 웹 플랫폼 설치 관리자](https://www.microsoft.com/web/downloads/platform.aspx)** . 다음 지침을 설치 하는 데 필요한 단계를 안내 하 *Visual studio Express 2012 for Web* 를 사용 하 여 *Microsoft 웹 플랫폼 설치 관리자*합니다.
+설치할 수 있습니다 **Microsoft Visual Studio Express 2012 for Web** 또는 다른 &quot;Express&quot; 버전을 사용 하 여 **[Microsoft 웹 플랫폼 설치 관리자](https://www.microsoft.com/web/downloads/platform.aspx)**. 다음 지침을 설치 하는 데 필요한 단계를 안내 하 *Visual studio Express 2012 for Web* 를 사용 하 여 *Microsoft 웹 플랫폼 설치 관리자*합니다.
 
-1. 로 이동 [ [https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169)합니다. 또는 이미 설치 된 웹 플랫폼 설치 관리자를 열 수 있습니다 및 제품에 대 한 검색 &quot; *Visual Studio Express 2012 for Web Windows Azure SDK와*&quot;합니다.
+1. 로 이동 [ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169)합니다. 또는 이미 설치 된 웹 플랫폼 설치 관리자를 열 수 있습니다 및 제품에 대 한 검색 &quot; <em>Visual Studio Express 2012 for Web Windows Azure SDK와</em>&quot;합니다.
 2. 클릭 **지금 설치**합니다. 없는 경우 **웹 플랫폼 설치 관리자** 를 다운로드 하 여 앱을 먼저 설치 이동 합니다.
 3. 한 번 **웹 플랫폼 설치 관리자** 열려 클릭 **설치** 는 설치 프로그램을 시작 합니다.
 
@@ -851,14 +873,14 @@ Visual Studio JavaScript 편집기를 꼭 코드 액세스 가능 하 고 구성
     *웹 배포 구성*
 5. 다음과 같이 데이터베이스 연결을 구성 합니다.
 
-    - 에 **서버 이름** SQL 데이터베이스 서버 URL 사용 하 여 입력 된 *tcp:* 접두사입니다.
-    - **사용자 이름** 서버 관리자 로그인 이름을 입력 합니다.
-    - **암호** 서버 관리자 로그인 암호를 입력 합니다.
-    - 예를 들어 새 데이터베이스 이름 입력: *MVC4SampleDB*합니다.
+   - 에 **서버 이름** SQL 데이터베이스 서버 URL 사용 하 여 입력 된 *tcp:* 접두사입니다.
+   - **사용자 이름** 서버 관리자 로그인 이름을 입력 합니다.
+   - **암호** 서버 관리자 로그인 암호를 입력 합니다.
+   - 예를 들어 새 데이터베이스 이름 입력: *MVC4SampleDB*합니다.
 
-    ![대상 연결 문자열 구성](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image80.png "대상 연결 문자열 구성")
+     ![대상 연결 문자열 구성](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image80.png "대상 연결 문자열 구성")
 
-    *대상 연결 문자열 구성*
+     *대상 연결 문자열 구성*
 6. 그런 다음 **확인**을 클릭합니다. 데이터베이스를 만들려는 대화 상자가 나타나면 **예**합니다.
 
     ![데이터베이스를 만드는](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image81.png "데이터베이스 문자열 만들기")

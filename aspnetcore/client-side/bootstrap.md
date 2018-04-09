@@ -1,7 +1,7 @@
 ---
-title: "부트스트랩 ASP.NET 코어와 아름 다운, 응답 사이트 구축"
+title: 부트스트랩 및 ASP.NET Core beautiful 및 응답성이 뛰어난 사이트 구축
 author: ardalis
-description: "부트스트랩 ASP.NET 코어를 사용 하 여 응답성이 뛰어난 웹 응용 프로그램을 개발 하는 데 사용 하는 방법에 알아봅니다."
+description: 부트스트랩 ASP.NET 코어를 사용 하 여 응답성이 뛰어난 웹 응용 프로그램을 개발 하는 데 사용 하는 방법에 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bootstrap
-ms.openlocfilehash: c3dfaa53e9e3277d025d014f65004e4c24a5acc4
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 142a997fa46f37545ea04971ab6593bff053b1ef
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="building-beautiful-responsive-sites-with-bootstrap-and-aspnet-core"></a>부트스트랩 ASP.NET 코어와 아름 다운, 응답 사이트 구축
+# <a name="build-beautiful-responsive-sites-with-bootstrap-and-aspnet-core"></a>부트스트랩 및 ASP.NET Core beautiful 및 응답성이 뛰어난 사이트 구축
 
 <a name="bootstrap-index"></a>
 

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/introduction/creating-a-business-logic-layer-cs
-title: "비즈니스 논리 계층 (C#)을 만드는 | Microsoft Docs"
+title: 비즈니스 논리 계층 (C#)을 만드는 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에는 비즈니스 논리 BLL (계층) 교량 t 간에 데이터를 교환에 대 한 역할을 하는 비즈니스 규칙에 중앙 집중화 하는 방법을 살펴보겠습니다..."
+description: 이 자습서에는 비즈니스 논리 BLL (계층) 교량 t 간에 데이터를 교환에 대 한 역할을 하는 비즈니스 규칙에 중앙 집중화 하는 방법을 살펴보겠습니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-business-logic-layer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7518ddd11a05a9e3d5df85e3cf6ceffa09a25060
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 6e73e9e68e4abb0d382baa7da925c167809e417a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-business-logic-layer-c"></a>비즈니스 논리 계층 (C#) 만들기
 ====================
@@ -61,13 +61,13 @@ DAL;에서 각 TableAdapter에 대해 하나씩 네 개의 클래스 우리의 B
 
 에 대 한는 `ProductsBLL` 클래스는 총 7 개의 메서드를 추가 해야 합니다.
 
-- `GetProducts()`모든 제품을 반환합니다.
-- `GetProductByProductID(productID)`지정 된 제품 ID로 곱을 반환합니다.
-- `GetProductsByCategoryID(categoryID)`지정 된 범주에 속한 모든 제품을 반환합니다.
-- `GetProductsBySupplier(supplierID)`지정 된 공급자 로부터 모든 제품을 반환합니다.
-- `AddProduct(productName, supplierID, categoryID, quantityPerUnit, unitPrice, unitsInStock, unitsOnOrder, reorderLevel, discontinued)`값을 사용 하 여 데이터베이스에 새 제품을 삽입 전달 인; 반환 된 `ProductID` 새로 삽입된 된 레코드의 값
-- `UpdateProduct(productName, supplierID, categoryID, quantityPerUnit, unitPrice, unitsInStock, unitsOnOrder, reorderLevel, discontinued, productID)`전달 된 값을 사용 하 여 데이터베이스에서 기존 제품 업데이트 반환 `true` 정확 하 게 하나의 행을 업데이트 하는 경우 `false` 그렇지 않은 경우
-- `DeleteProduct(productID)`데이터베이스에서 지정된 된 제품을 삭제합니다.
+- `GetProducts()` 모든 제품을 반환합니다.
+- `GetProductByProductID(productID)` 지정 된 제품 ID로 곱을 반환합니다.
+- `GetProductsByCategoryID(categoryID)` 지정 된 범주에 속한 모든 제품을 반환합니다.
+- `GetProductsBySupplier(supplierID)` 지정 된 공급자 로부터 모든 제품을 반환합니다.
+- `AddProduct(productName, supplierID, categoryID, quantityPerUnit, unitPrice, unitsInStock, unitsOnOrder, reorderLevel, discontinued)` 값을 사용 하 여 데이터베이스에 새 제품을 삽입 전달 인; 반환 된 `ProductID` 새로 삽입된 된 레코드의 값
+- `UpdateProduct(productName, supplierID, categoryID, quantityPerUnit, unitPrice, unitsInStock, unitsOnOrder, reorderLevel, discontinued, productID)` 전달 된 값을 사용 하 여 데이터베이스에서 기존 제품 업데이트 반환 `true` 정확 하 게 하나의 행을 업데이트 하는 경우 `false` 그렇지 않은 경우
+- `DeleteProduct(productID)` 데이터베이스에서 지정된 된 제품을 삭제합니다.
 
 ProductsBLL.cs
 
@@ -205,12 +205,12 @@ DAL 및 BLL 완료를 준비가 우리의 프레젠테이션 계층에서 시작
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Liz Shulok, Dennis Patterson, Carlos Santos 및 Hilton Giesenow 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](creating-a-data-access-layer-cs.md)
-[다음](master-pages-and-site-navigation-cs.md)
+> [!div class="step-by-step"]
+> [이전](creating-a-data-access-layer-cs.md)
+> [다음](master-pages-and-site-navigation-cs.md)

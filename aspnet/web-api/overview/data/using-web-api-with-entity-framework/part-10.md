@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/data/using-web-api-with-entity-framework/part-10
-title: "Azure 앱 서비스를 Azure에 앱 게시 | Microsoft Docs"
+title: Azure 앱 서비스를 Azure에 앱 게시 | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/16/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-10
 msc.type: authoredcontent
-ms.openlocfilehash: 08994815cb339800619caacdcb8d717e9986f9d5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cc8a9199144e9fac041435938ea8899374ea199f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="publish-the-app-to-azure-azure-app-service"></a>Azure 앱 서비스를 Azure에 앱을 게시
 ====================
@@ -51,12 +51,11 @@ Visual Studio에서 앱 배포를 완료 하는 경우의 기본 브라우저가
 
 ![](part-10/_static/image9.png)
 
-사이트 이름을 입력 합니다. Azure 구독 및 지역 선택 합니다. 아래 **데이터베이스 서버**선택, **새 서버 만들기**을 하거나 기존 서버를 선택 합니다. 
-              **만들기**를 클릭합니다.
+사이트 이름을 입력 합니다. Azure 구독 및 지역 선택 합니다. 아래 **데이터베이스 서버**선택, **새 서버 만들기**을 하거나 기존 서버를 선택 합니다. **만들기**를 클릭합니다.
 
 [![](part-10/_static/image11.png)](part-10/_static/image10.png)
 
 클릭는 **설정** 탭 하 고 확인 &quot;Code First 마이그레이션 실행&quot;합니다. 클릭 **게시**합니다.
 
->[!div class="step-by-step"]
-[이전](part-9.md)
+> [!div class="step-by-step"]
+> [이전](part-9.md)

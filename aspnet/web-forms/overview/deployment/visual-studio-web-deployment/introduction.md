@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/introduction
-title: "Visual Studio를 사용 하 여 ASP.NET 웹 배포: 소개 | Microsoft Docs"
+title: 'Visual Studio를 사용 하 여 ASP.NET 웹 배포: 소개 | Microsoft Docs'
 author: tdykstra
-description: "이 자습서 시리즈를 배포 하는 방법을 보여 줍니다. 웹 응용 프로그램을 Azure 앱 서비스 웹 앱 또는 타사 호스팅 공급자에서 ASP.NET (게시) V를 사용 하 여..."
+description: 이 자습서 시리즈를 배포 하는 방법을 보여 줍니다. 웹 응용 프로그램을 Azure 앱 서비스 웹 앱 또는 타사 호스팅 공급자에서 ASP.NET (게시) V를 사용 하 여...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: a7c5b348e44a88a56680237b0cac75c999901ec3
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 1ff4cc3b0fa6ce7e6cdc833a0c2f7fea2050c4e6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-introduction"></a>Visual Studio를 사용 하 여 ASP.NET 웹 배포: 소개
 ====================
@@ -43,7 +43,7 @@ ms.lasthandoff: 02/12/2018
 
 이 자습서는 순서 대로 실행 되도록 설계 하 고 이전 부분을 기반으로 하는 각 부분입니다. 상황에 관련이 없는 일부를 건너뛸 수 있지만 다음 이후의 자습서 절차를 조정 해야 할 수 있습니다.
 
-## <a name="intended-audience"></a>적용 대상
+## <a name="intended-audience"></a>대상 독자
 
 이 자습서는 환경에서 작업 하는 ASP.NET 개발자를 대상으로 위치:
 
@@ -114,7 +114,7 @@ Entity Framework Code First에 의해 관리 되지 SQL Server 데이터베이�
 
 <a id="prerequisites"></a>
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 이 자습서는 다음 제품에 대 한 작성 했습니다.
 
@@ -202,5 +202,5 @@ SDK 종속성의 개수를 이미 있는 컴퓨터에 따라 Azure SDK를 설치
 
 이 시리즈의 첫 번째 자습서에서는 샘플 Visual Studio 프로젝트를 다운로드 한 있고 응용 프로그램을 배포 하는 방법에 영향을 주는 사이트 기능을 검토 합니다. 다음 자습서에서 자동으로 처리 되도록 이러한 기능 중 일부를 설정 하 여 배포를 위해 준비할 수 있습니다. 다른 수동으로 처리할 수 있습니다.
 
->[!div class="step-by-step"]
-[다음](preparing-databases.md)
+> [!div class="step-by-step"]
+> [다음](preparing-databases.md)

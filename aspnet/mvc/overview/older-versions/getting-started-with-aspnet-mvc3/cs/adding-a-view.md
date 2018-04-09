@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-view
-title: "뷰 (C#) 추가 | Microsoft Docs"
+title: 뷰 (C#) 추가 | Microsoft Docs
 author: Rick-Anderson
-description: "이 자습서에서는 Microsoft Visual Web Developer 2010 Express 서비스 팩 1, 즉를 사용 하 여 ASP.NET MVC 웹 응용 프로그램을 구축 하는 기초 설명..."
+description: 이 자습서에서는 Microsoft Visual Web Developer 2010 Express 서비스 팩 1, 즉를 사용 하 여 ASP.NET MVC 웹 응용 프로그램을 구축 하는 기초 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-view
 msc.type: authoredcontent
-ms.openlocfilehash: 46d5494e668dfe156aeb6647ded83e6ce5366714
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 50ce4a2024ffd9e2bbb5526717052d486689ff38
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-view-c"></a>뷰 (C#) 추가
 ====================
@@ -77,7 +77,7 @@ ms.lasthandoff: 11/10/2017
 
 [![_LayoutCshtml](adding-a-view/_static/image8.png)](adding-a-view/_static/image7.png)
 
-레이아웃 서식 파일을 사용 하면 한 곳에서 사이트의 HTML 컨테이너 레이아웃을 지정 하 고 다음 사이트에서 여러 페이지에 걸쳐 적용 수 있도록 합니다. 참고는 `@RenderBody()` 파일의 맨 아래 근처의 줄 합니다. `RenderBody`여기서 만드는 모든 보기 전용 페이지 표시, "래핑된" 레이아웃 페이지의 자리 표시자가입니다. 제목 제목에 "내 MVC 응용 프로그램에서" "MVC 만든 동영상 앱"의 레이아웃 템플릿 변경 합니다.
+레이아웃 서식 파일을 사용 하면 한 곳에서 사이트의 HTML 컨테이너 레이아웃을 지정 하 고 다음 사이트에서 여러 페이지에 걸쳐 적용 수 있도록 합니다. 참고는 `@RenderBody()` 파일의 맨 아래 근처의 줄 합니다. `RenderBody` 여기서 만드는 모든 보기 전용 페이지 표시, "래핑된" 레이아웃 페이지의 자리 표시자가입니다. 제목 제목에 "내 MVC 응용 프로그램에서" "MVC 만든 동영상 앱"의 레이아웃 템플릿 변경 합니다.
 
 [!code-cshtml[Main](adding-a-view/samples/sample3.cshtml)]
 
@@ -91,7 +91,7 @@ ms.lasthandoff: 11/10/2017
 
 이제 인덱스 페이지 (뷰)의 제목을 변경 해보겠습니다.
 
-열기 *MvcMovie\Views\HelloWorld\Index.cshtml*합니다. 변경 하는 두 곳: 먼저 텍스트 표시 되는 브라우저의 제목에 찾은 다음 보조 헤더에서 (의 `<h2>` 요소). 어떤 코드에서 어떤 앱의 부분을 변경하는지 볼 수 있도록 약간 다르게 할 수 있습니다.
+Open *MvcMovie\Views\HelloWorld\Index.cshtml*. 변경 하는 두 곳: 먼저 텍스트 표시 되는 브라우저의 제목에 찾은 다음 보조 헤더에서 (의 `<h2>` 요소). 어떤 코드에서 어떤 앱의 부분을 변경하는지 볼 수 있도록 약간 다르게 할 수 있습니다.
 
 [!code-cshtml[Main](adding-a-view/samples/sample5.cshtml)]
 
@@ -113,7 +113,7 @@ ms.lasthandoff: 11/10/2017
 
 현재는 `Welcome` 의 동작 메서드에 `HelloWorldController` 걸립니다 클래스는 `name` 및 `numTimes` 매개 변수 및 브라우저에 직접 값을 출력 합니다. 이 응답을 문자열로 렌더링 되는 컨트롤러를 갖는 대신 보기 서식 파일을 대신 사용 하는 컨트롤러를 변경해 보겠습니다. 보기 템플릿은 동적 응답을 생성합니다. 즉, 응답을 생성하기 위해 컨트롤러에서 보기로 일부 적절한 데이터를 전달해야 합니다. 컨트롤러 템플릿 보기에는 동적 데이터를 저장 하 여이 수행할 수는 `ViewBag` 템플릿 보기에 액세스할 수 있는 개체입니다.
 
-돌아가서는 *HelloWorldController.cs* 파일을 변경는 `Welcome` 를 추가 하려면 메서드는 `Message` 및 `NumTimes` 값을 `ViewBag` 개체입니다. `ViewBag`넣을 수 있습니다에 원하는 것을 의미 하는 동적 개체 `ViewBag` 내부 요소를 넣으면 될 때까지 개체에 정의 된 속성이 없습니다. 전체 *HelloWorldController.cs* 파일은 다음과 같습니다.
+돌아가서는 *HelloWorldController.cs* 파일을 변경는 `Welcome` 를 추가 하려면 메서드는 `Message` 및 `NumTimes` 값을 `ViewBag` 개체입니다. `ViewBag` 넣을 수 있습니다에 원하는 것을 의미 하는 동적 개체 `ViewBag` 내부 요소를 넣으면 될 때까지 개체에 정의 된 속성이 없습니다. 전체 *HelloWorldController.cs* 파일은 다음과 같습니다.
 
 [!code-csharp[Main](adding-a-view/samples/sample6.cs)]
 
@@ -141,6 +141,6 @@ ms.lasthandoff: 11/10/2017
 
 이는 모델에 대한 일종의 "M"이었지만 데이터베이스 종류는 아니었습니다. 지금까지 학습한 것을 살펴보고 동영상의 데이터베이스를 만들어 보겠습니다.
 
->[!div class="step-by-step"]
-[이전](adding-a-controller.md)
-[다음](adding-a-model.md)
+> [!div class="step-by-step"]
+> [이전](adding-a-controller.md)
+> [다음](adding-a-model.md)

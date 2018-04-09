@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-8
-title: "8 단계: 쇼핑 카트 Ajax 업데이트 | Microsoft Docs"
+title: '8 단계: 쇼핑 카트 Ajax 업데이트 | Microsoft Docs'
 author: jongalloway
-description: "이 자습서 시리즈 모든 ASP.NET MVC Music Store 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 8 부 쇼핑 카트 Ajax 업데이트를 설명합니다."
+description: 이 자습서 시리즈 모든 ASP.NET MVC Music Store 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 8 부 쇼핑 카트 Ajax 업데이트를 설명합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/21/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: 75e1dff96f8b56d74c28ff9d522f4766fbad669f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 195c01ff0d71b2bfd0c00e71244d47a166330921
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-8-shopping-cart-with-ajax-updates"></a>Ajax 업데이트와 8 단계: 쇼핑 카트
 ====================
@@ -81,7 +81,7 @@ ShoppingCart 클래스는 다음 메서드를 노출 합니다.
 
 [!code-csharp[Main](mvc-music-store-part-8/samples/sample5.cs)]
 
-## <a name="viewmodels"></a>Viewmodel
+## <a name="viewmodels"></a>ViewModels
 
 당사의 쇼핑 카트 컨트롤러는 모델 개체에 완전히 매핑되지 않으면 해당 보기에 복잡 한 일부 정보를 전달 해야 합니다. 우리의 뷰만 맞게이 모델을 수정 하지는 않을 모델 클래스는 도메인의 사용자 인터페이스를 나타내야 합니다. 한 가지 해결 정보를 관리 하기 어려운 가져옵니다 ViewBag을 통해 많은 정보를 전달 하지만 저장소 관리자 드롭다운 정보와 동일한 방식으로 ViewBag 클래스를 사용 하 여이 뷰를 전달할 수 있습니다.
 
@@ -161,6 +161,6 @@ Out이 르 테스트 하려면 당사의 쇼핑 카트에 항목을 추가할 �
 쇼핑 카트 등록 되지 않은 사용자가 자신의 카트에 항목을 추가할 수 있는 작업으로 구성 합니다. 다음 섹션에 등록 하 고 체크 아웃 프로세스를 완료 하도록 허용 합니다.
 
 
->[!div class="step-by-step"]
-[이전](mvc-music-store-part-7.md)
-[다음](mvc-music-store-part-9.md)
+> [!div class="step-by-step"]
+> [이전](mvc-music-store-part-7.md)
+> [다음](mvc-music-store-part-9.md)

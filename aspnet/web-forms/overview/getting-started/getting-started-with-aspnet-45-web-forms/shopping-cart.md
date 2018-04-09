@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/shopping-cart
-title: "쇼핑 카트 | Microsoft Docs"
+title: 쇼핑 카트 | Microsoft Docs
 author: Erikre
-description: "이 자습서 시리즈 것에 대 한 ASP.NET 4.5 및 Microsoft Visual Studio Express 2013을 사용 하 여 ASP.NET Web Forms 응용 프로그램을 구축 하는 기초 알려 드리겠습니다 중..."
+description: 이 자습서 시리즈 것에 대 한 ASP.NET 4.5 및 Microsoft Visual Studio Express 2013을 사용 하 여 ASP.NET Web Forms 응용 프로그램을 구축 하는 기초 알려 드리겠습니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/shopping-cart
 msc.type: authoredcontent
-ms.openlocfilehash: 9fe6f28685d6a423b03f9c7abe753283b89344e1
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: a8e96da7737cdf649575711a464c4f7726cb6ded
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="shopping-cart"></a>쇼핑 카트
 ====================
@@ -66,7 +66,7 @@ ms.lasthandoff: 01/24/2018
     ![쇼핑 카트-새 항목 추가 대화 상자](shopping-cart/_static/image2.png)
 3. 이 새 클래스 이름을 *CartItem.cs*합니다.
 4. **추가**를 클릭합니다.  
- 새 클래스 파일은 편집기에 표시 됩니다.
+   새 클래스 파일은 편집기에 표시 됩니다.
 5. 기본 코드를 다음 코드로 바꿉니다.   
 
     [!code-csharp[Main](shopping-cart/samples/sample1.cs)]
@@ -136,7 +136,7 @@ ms.lasthandoff: 01/24/2018
 #### <a name="to-create-the-add-to-cart-functionality"></a>만들려면 장바구니에 추가 기능:
 
 1. **솔루션 탐색기**를 마우스 오른쪽 단추로 클릭는 **WingtipToys**프로젝트를 클릭 하 여 **추가**  - &gt; **새 항목**합니다.  
- **새 항목 추가** 대화 상자가 표시됩니다.
+   **새 항목 추가** 대화 상자가 표시됩니다.
 2. 표준 새 페이지 (Web Form) 라는 응용 프로그램에 추가 *AddToCart.aspx*합니다. 
 
     ![쇼핑 카트-Web Form을 추가 합니다.](shopping-cart/_static/image4.png)
@@ -154,7 +154,7 @@ ms.lasthandoff: 01/24/2018
 *ShoppingCart.aspx* 페이지는 사용자가 장바구니에 추가 하는 제품에 표시 됩니다. 또한 추가, 제거 및 시장 바구니에 항목을 업데이트 하는 기능을 제공 합니다.
 
 1. **솔루션 탐색기**를 마우스 오른쪽 단추로 클릭 **WingtipToys**, 클릭 **추가**  - &gt; **새 항목**합니다.  
- **새 항목 추가** 대화 상자가 표시됩니다.
+   **새 항목 추가** 대화 상자가 표시됩니다.
 2. 마스터 페이지를 선택 하 여 포함 된 새 페이지 (Web Form) 추가 **웹 폼 마스터 페이지를 사용 하 여**합니다. 새 페이지 이름을 *ShoppingCart.aspx*합니다.
 3. 선택 **Site.Master** 마스터 페이지를 새로 만든 연결할 *.aspx* 페이지.
 4. 에 *ShoppingCart.aspx* 페이지에서 기존 태그를 다음 태그로 바꿉니다.   
@@ -323,6 +323,6 @@ ms.lasthandoff: 01/24/2018
 
 [ASP.NET 세션 상태 개요](https://msdn.microsoft.com/library/ms178581.aspx)
 
->[!div class="step-by-step"]
-[이전](display_data_items_and_details.md)
-[다음](checkout-and-payment-with-paypal.md)
+> [!div class="step-by-step"]
+> [이전](display_data_items_and_details.md)
+> [다음](checkout-and-payment-with-paypal.md)

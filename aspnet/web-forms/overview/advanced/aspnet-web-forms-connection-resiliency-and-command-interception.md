@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/advanced/aspnet-web-forms-connection-resiliency-and-command-interception
-title: "ASP.NET Web Forms 연결 복원 력 및 명령 인터 셉 션 | Microsoft Docs"
+title: ASP.NET Web Forms 연결 복원 력 및 명령 인터 셉 션 | Microsoft Docs
 author: Erikre
-description: "이 자습서에서는 샘플 응용 프로그램 연결 복원 력 및 명령 인터 셉 션을 지원 하도록 수정 하는 방법을 설명 합니다."
+description: 이 자습서에서는 샘플 응용 프로그램 연결 복원 력 및 명령 인터 셉 션을 지원 하도록 수정 하는 방법을 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/advanced/aspnet-web-forms-connection-resiliency-and-command-interception
 msc.type: authoredcontent
-ms.openlocfilehash: e3347657fb5c7bf8c7bb4e51a2e810a1edde826a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d5c4e46209e1b21a303fdf1fb16c6c868b3ca923
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-forms-connection-resiliency-and-command-interception"></a>ASP.NET Web Forms 연결 복원 력 및 명령 인터 셉 션
 ====================
@@ -35,7 +35,7 @@ ms.lasthandoff: 01/24/2018
 - 연결 복원 력을 제공 하는 방법.
 - 명령 인터 셉 션을 구현 하는 방법입니다.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 시작 하기 전에 다음 소프트웨어가 컴퓨터에 설치 되어 있는지 확인 합니다.
 
@@ -102,9 +102,9 @@ Entity Framework 공급자가 지 원하는 모든 데이터베이스 환경에 
 
     [!code-csharp[Main](aspnet-web-forms-connection-resiliency-and-command-interception/samples/sample4.cs)]
 
- 로그의 상대적 중요도를 나타내는 세 가지 추적 수준 및 데이터베이스 쿼리와 같은 외부 서비스 호출에 대 한 대기 시간 정보를 제공 하도록 지정 된 인터페이스를 제공 합니다. 로깅 메서드 예외에 전달할 수 있는 오버 로드를 갖고 있습니다. 이 응용 프로그램에 걸쳐 각 로깅 메서드 호출에서 수행 되 고에 의존 하지 않고 인터페이스를 구현 하는 클래스에서 스택 추적 및 내부 예외를 포함 하는 예외 정보를 안정적으로 기록 되도록 합니다.  
+   로그의 상대적 중요도를 나타내는 세 가지 추적 수준 및 데이터베이스 쿼리와 같은 외부 서비스 호출에 대 한 대기 시간 정보를 제공 하도록 지정 된 인터페이스를 제공 합니다. 로깅 메서드 예외에 전달할 수 있는 오버 로드를 갖고 있습니다. 이 응용 프로그램에 걸쳐 각 로깅 메서드 호출에서 수행 되 고에 의존 하지 않고 인터페이스를 구현 하는 클래스에서 스택 추적 및 내부 예외를 포함 하는 예외 정보를 안정적으로 기록 되도록 합니다.  
   
- `TraceApi` 메서드를 사용 하 여 SQL 데이터베이스 같은 외부 서비스를 호출할 때마다 대기 시간을 추적할 수 있습니다.
+   `TraceApi` 메서드를 사용 하 여 SQL 데이터베이스 같은 외부 서비스를 호출할 때마다 대기 시간을 추적할 수 있습니다.
 3. 에 *로깅* 폴더 라는 클래스 파일을 만듭니다 *Logger.cs* 기본 코드를 다음 코드로 바꿉니다.  
 
     [!code-csharp[Main](aspnet-web-forms-connection-resiliency-and-command-interception/samples/sample5.cs)]
@@ -121,20 +121,20 @@ Entity Framework 공급자가 지 원하는 모든 데이터베이스 환경에 
 
     [!code-csharp[Main](aspnet-web-forms-connection-resiliency-and-command-interception/samples/sample6.cs)]
 
- 이 코드는 성공적인 쿼리나 명령에 대 한 대기 시간 정보를 사용 하 여 정보 로그는 씁니다. 예외에 대 한 오류 로그를 만듭니다.
+   이 코드는 성공적인 쿼리나 명령에 대 한 대기 시간 정보를 사용 하 여 정보 로그는 씁니다. 예외에 대 한 오류 로그를 만듭니다.
 2. 입력할 때 더미 일시적인 오류를 생성 하는 인터셉터 클래스를 만들려면 &quot;Throw&quot; 에 **이름** 라는 페이지에 있는 텍스트 상자 *AdminPage.aspx*, 클래스를 만듭니다 라는 파일 *InterceptorTransientErrors.cs* 에 *논리* 폴더 및 바꾸기 기본 코드를 다음 코드로:  
 
     [!code-csharp[Main](aspnet-web-forms-connection-resiliency-and-command-interception/samples/sample7.cs)]
 
     재정의이 코드는 `ReaderExecuting` 메서드를 여러 개의 데이터 행을 반환할 수 있는 쿼리에 대 한 호출 됩니다. 재정의 다른 종류의 쿼리에 대 한 연결 복원 력 확인 하려는 경우는 `NonQueryExecuting` 및 `ScalarExecuting` 메서드 로깅 인터셉터로 않습니다.  
   
- "관리자" 계정으로 로그인 하 고 선택 됩니다 나중의 **Admin** 위쪽 탐색 모음에서 링크 합니다. 그런 다음는 *AdminPage.aspx* 라는 제품을 추가한 페이지 &quot;Throw&quot;합니다. 코드는 오류 번호 20, 일반적으로 일시적인 것으로 알려진 형식에 대 한 더미 SQL 데이터베이스 예외를 만듭니다. 현재 임시로 인식 다른 오류 번호는 64, 233, 10053, 10054, 10060, 10928, 10929, 40197, 40501, 및 40613, 아니지만 새 버전의 SQL 데이터베이스에서는 변경 될 수 있습니다. 제품의 코드에서 따를 수 있습니다는 "TransientErrorExample"로 바뀝니다는 *InterceptorTransientErrors.cs* 파일입니다.  
+   "관리자" 계정으로 로그인 하 고 선택 됩니다 나중의 **Admin** 위쪽 탐색 모음에서 링크 합니다. 그런 다음는 *AdminPage.aspx* 라는 제품을 추가한 페이지 &quot;Throw&quot;합니다. 코드는 오류 번호 20, 일반적으로 일시적인 것으로 알려진 형식에 대 한 더미 SQL 데이터베이스 예외를 만듭니다. 현재 임시로 인식 다른 오류 번호는 64, 233, 10053, 10054, 10060, 10928, 10929, 40197, 40501, 및 40613, 아니지만 새 버전의 SQL 데이터베이스에서는 변경 될 수 있습니다. 제품의 코드에서 따를 수 있습니다는 "TransientErrorExample"로 바뀝니다는 *InterceptorTransientErrors.cs* 파일입니다.  
   
- 코드는 쿼리를 실행 하 고 뒤로 결과 전달 하는 대신 Entity Framework에는 예외를 반환 합니다. 일시적 예외가 반환 됩니다 *4 개의* 시간, 데이터베이스를 쿼리를 전달 하는 일반 프로시저 코드 되돌립니다 다음 합니다.
+   코드는 쿼리를 실행 하 고 뒤로 결과 전달 하는 대신 Entity Framework에는 예외를 반환 합니다. 일시적 예외가 반환 됩니다 *4 개의* 시간, 데이터베이스를 쿼리를 전달 하는 일반 프로시저 코드 되돌립니다 다음 합니다.
 
     모든 항목을 기록 하기 때문에 Entity Framework 후 성공 했습니다 4 번 쿼리를 실행 하려고 하 고 응용 프로그램의 유일한 차이점은 쿼리 결과 페이지를 렌더링 하는 데 더 많은 시간이 걸린다는 점을 볼 수 있습니다.  
   
- Entity Framework에서 다시 시도 횟수는 구성할 수 없습니다. SQL 데이터베이스 실행 정책에 대 한 기본값 이기 때문에 코드를 4 번을 지정 합니다. 실행 정책을 변경 하면 했던도 변경에 일시적인 오류가 발생 하는 횟수를 지정 하는 코드를 여기 합니다. 변경할 수도 있습니다. Entity Framework는 발생 하는 자세한 예외를 생성 하는 코드는 `RetryLimitExceededException` 예외입니다.
+   Entity Framework에서 다시 시도 횟수는 구성할 수 없습니다. SQL 데이터베이스 실행 정책에 대 한 기본값 이기 때문에 코드를 4 번을 지정 합니다. 실행 정책을 변경 하면 했던도 변경에 일시적인 오류가 발생 하는 횟수를 지정 하는 코드를 여기 합니다. 변경할 수도 있습니다. Entity Framework는 발생 하는 자세한 예외를 생성 하는 코드는 `RetryLimitExceededException` 예외입니다.
 3. *Global.asax*, 다음 추가 문을 사용 하 여:  
 
     [!code-csharp[Main](aspnet-web-forms-connection-resiliency-and-command-interception/samples/sample8.cs)]
@@ -158,16 +158,16 @@ UI에 서로 다른 값을 입력 하 여 일시적인 오류가 발생할 수 �
 2. 선택 **Admin** 위쪽 탐색 모음에서 합니다.
 3. 적절 한 설명, 가격 및 이미지 파일과 함께 "Throw" 라는 새 제품을 입력 합니다.
 4. 키를 눌러는 **제품 추가** 단추입니다.  
- Entity Framework는 쿼리를 다시 시도 여러 번 하는 동안 몇 초간 지연 브라우저 있다는 것을 확인할 수 있습니다. 첫 번째 다시 시도 매우 빠르게 수행 다음 각 추가 다시 시도 하기 전에 대기 증가 합니다. 각 다시 시도 호출 하기 전에 더 이상 기다리는이 프로세스 *지 수 백오프* 합니다.
+   Entity Framework는 쿼리를 다시 시도 여러 번 하는 동안 몇 초간 지연 브라우저 있다는 것을 확인할 수 있습니다. 첫 번째 다시 시도 매우 빠르게 수행 다음 각 추가 다시 시도 하기 전에 대기 증가 합니다. 각 다시 시도 호출 하기 전에 더 이상 기다리는이 프로세스 *지 수 백오프* 합니다.
 5. 페이지는 더 이상 atttempting 로드할 때까지 기다립니다.
 6. 프로젝트를 중지 하 고 Visual Studio 확인 **출력** 창 추적 출력을 볼 수 있습니다. 찾을 수 있습니다는 **출력** 창을 선택 하 여 **디버그**  - &gt; **Windows**  - &gt;  **출력**합니다. 이전에 거를 기록한 다른 여러 가지 로그 스크롤해야 할 수도 있습니다.  
   
- 데이터베이스에 전송 하는 실제 SQL 쿼리를 볼 수 있는지를 확인 합니다. 표시 초기 쿼리 및 시작 하려면 Entity Framework에서 명령의 몇 가지 데이터베이스 버전 및 마이그레이션 기록 테이블을 확인 합니다.   
+   데이터베이스에 전송 하는 실제 SQL 쿼리를 볼 수 있는지를 확인 합니다. 표시 초기 쿼리 및 시작 하려면 Entity Framework에서 명령의 몇 가지 데이터베이스 버전 및 마이그레이션 기록 테이블을 확인 합니다.   
     ![출력 창](aspnet-web-forms-connection-resiliency-and-command-interception/_static/image1.png)   
- 참고가 응용 프로그램을 중지 하 고 다시 시작 하지 않는 한이 테스트를 반복할 수 없습니다. 오류 카운터를 다시 설정 하는 코드를 작성할 수를 응용 프로그램의 단일 실행 중에 여러 번 연결 복원 력을 테스트 하려는 경우 `InterceptorTransientErrors` 합니다.
+   참고가 응용 프로그램을 중지 하 고 다시 시작 하지 않는 한이 테스트를 반복할 수 없습니다. 오류 카운터를 다시 설정 하는 코드를 작성할 수를 응용 프로그램의 단일 실행 중에 여러 번 연결 복원 력을 테스트 하려는 경우 `InterceptorTransientErrors` 합니다.
 7. 차이 보려면 실행 전략 (다시 시도 정책)이 작업을 주석는 `SetExecutionStrategy` 줄 *WingtipToysConfiguration.cs* 파일에 *논리* 실행 폴더는 **관리자**  다시 디버그 모드에서 페이지 및 명명 된 제품 추가 &quot;Throw&quot; 다시 합니다.  
   
- 이 시간 디버거 중지 첫 번째 생성 된 예외에 처음으로 쿼리를 실행 하려고 할 때에 즉시 합니다.  
+   이 시간 디버거 중지 첫 번째 생성 된 예외에 처음으로 쿼리를 실행 하려고 할 때에 즉시 합니다.  
     ![디버깅-자세히 보기](aspnet-web-forms-connection-resiliency-and-command-interception/_static/image2.png)
 8. 주석 처리 제거는 `SetExecutionStrategy` 줄은 *WingtipToysConfiguration.cs* 파일입니다.
 

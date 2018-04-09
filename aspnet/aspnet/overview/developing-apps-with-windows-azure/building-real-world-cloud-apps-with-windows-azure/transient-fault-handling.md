@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling
-title: "일시적인 오류 처리 (Azure 사용 하 여 실제 클라우드 앱 빌드) | Microsoft Docs"
+title: 일시적인 오류 처리 (Azure 사용 하 여 실제 클라우드 앱 빌드) | Microsoft Docs
 author: MikeWasson
-description: "실제 세계 클라우드로 응용 프로그램 빌딩 Azure 전자책 Scott Guthrie에서 개발 된 프레젠테이션을 기반으로 합니다. 13 패턴 및 그을 수 있는 방법에 설명..."
+description: 실제 세계 클라우드로 응용 프로그램 빌딩 Azure 전자책 Scott Guthrie에서 개발 된 프레젠테이션을 기반으로 합니다. 13 패턴 및 그을 수 있는 방법에 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/03/2015
 ms.topic: article
 ms.assetid: 7ead83bc-c08c-4b26-8617-00e07292e35c
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/transient-fault-handling
 msc.type: authoredcontent
-ms.openlocfilehash: b743b04789c5e5ebf5ab922cf34a516a16a6d356
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 86bd67b04931ae2452f6e063e6475a434a0125bc
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="transient-fault-handling-building-real-world-cloud-apps-with-azure"></a>일시적인 오류 처리 (Azure 사용 하 여 실제 클라우드 앱 빌드)
 ====================
@@ -82,7 +82,7 @@ Microsoft는 ADO.NET, Entity Framework 또는 Azure를 사용 하는 전략을 �
 
 에 [다음 장에서](distributed-caching.md), 성능을 개선 하는 방법을 살펴보겠습니다 및 사용 하 여 안정성 분산 캐싱 합니다.
 
-## <a name="resources"></a>리소스
+## <a name="resources"></a>자료
 
 자세한 내용은 다음 리소스를 참조하세요.
 
@@ -104,6 +104,6 @@ Microsoft는 ADO.NET, Entity Framework 또는 Azure를 사용 하는 전략을 �
 
 - [클라우드 서비스 기본 사항 Azure에서](https://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649)합니다. Microsoft Azure 고객 자문 팀 사용 하는 방법을 보여 주는 하 여 만든 응용 프로그램 예제는 [엔터프라이즈 라이브러리 일시적인 오류 처리 블록](http://nuget.org/packages/EnterpriseLibrary.TransientFaultHandling/) (TFH). 자세한 내용은 참조 [클라우드 서비스 기초 데이터 액세스 계층-일시적인 오류 처리](https://social.technet.microsoft.com/wiki/contents/articles/18665.cloud-service-fundamentals-data-access-layer-transient-fault-handling.aspx)합니다. TFH (사용 하지 않고 직접 Entity Framework) ADO.NET을 사용 하 여 데이터베이스 액세스를 위한 것이 좋습니다.
 
->[!div class="step-by-step"]
-[이전](monitoring-and-telemetry.md)
-[다음](distributed-caching.md)
+> [!div class="step-by-step"]
+> [이전](monitoring-and-telemetry.md)
+> [다음](distributed-caching.md)

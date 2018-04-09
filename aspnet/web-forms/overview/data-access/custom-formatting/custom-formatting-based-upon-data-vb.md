@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/custom-formatting/custom-formatting-based-upon-data-vb
-title: "데이터 (VB)를 기반으로 사용자 지정 서식을 | Microsoft Docs"
+title: 데이터 (VB)를 기반으로 사용자 지정 서식을 | Microsoft Docs
 author: rick-anderson
-description: "GridView, DetailsView, 또는 데이터를 바인딩할 기반 FormView의 형식이 조정 하는 여러 가지 방법으로 수행할 수 있습니다. 이 자습서에서는 त ु म च l..."
+description: GridView, DetailsView, 또는 데이터를 바인딩할 기반 FormView의 형식이 조정 하는 여러 가지 방법으로 수행할 수 있습니다. 이 자습서에서는 त ु म च l...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/custom-formatting-based-upon-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 43aed94fe5b1095af37abdae2cb4c9e67b7d7f6f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: a5c7f99b863697cc49a5bc9831dae861f51e129d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="custom-formatting-based-upon-data-vb"></a>데이터 (VB)를 기반으로 사용자 지정 형식 지정
 ====================
@@ -221,19 +221,19 @@ FormView 모든 BoundFields 포함 하지 않으며 따라서에 게 없는 경�
 
 GridView 데이터 원본 열거 만들고, 각 레코드에 대해 2 단계에서 한 `GridViewRow` 인스턴스를 현재 레코드 어셈블리에 바인딩합니다. 각 `GridViewRow` GridView에 추가 된 두 개의 이벤트가 발생 합니다.
 
-- **`RowCreated`**후에 발생는 `GridViewRow` 만든
-- **`RowDataBound`**현재 레코드에 바인딩된 후에 발생는 `GridViewRow`합니다.
+- **`RowCreated`** 후에 발생는 `GridViewRow` 만든
+- **`RowDataBound`** 현재 레코드에 바인딩된 후에 발생는 `GridViewRow`합니다.
 
 GridView에 대 한 다음, 데이터 바인딩 보다 정확 하 게 설명에서 다음 단계를 순서 대로:
 
 1. GridView의 `DataBinding` 이벤트 발생 합니다.
 2. 데이터가는 GridView에 바인딩됩니다.   
   
- 데이터 원본에 있는 각 레코드에 대 한 
+   데이터 원본에 있는 각 레코드에 대 한 
 
     1. 만들기는 `GridViewRow` 개체
     2. 화재는 `RowCreated` 이벤트
-    3. 해당 레코드를 바인딩하는`GridViewRow`
+    3. 해당 레코드를 바인딩하는 `GridViewRow`
     4. 화재는 `RowDataBound` 이벤트
     5. 추가 `GridViewRow` 에 `Rows` 컬렉션
 3. GridView의 `DataBound` 이벤트 발생 합니다.
@@ -279,12 +279,12 @@ FormView와 DetailsView 같은 일련의 단계를 사용 하 여이 이벤트 �
 
 작업할 때의 `RowDataBound` GridView 다양 한 유형의 행으로 구성 된 하 고이 이벤트에 대해 발생 하는 점에 유의 해야 하는 이벤트 처리기 *모든* 행 형식입니다. A `GridViewRow`의 형식을 확인 하 여 해당 `RowType` 속성을 가능한 값 중 하나일 수 있습니다.
 
-- `DataRow`GridView의에서 레코드에 바인딩되는 행`DataSource`
-- `EmptyDataRow`경우에 표시 되는 행 GridView의 `DataSource` 비어
-- `Footer`바닥글 행입니다. 경우에 표시 된 GridView의 `ShowFooter` 속성`True`
-- `Header`머리글 행입니다. GridView의 ShowHeader 속성이로 설정 되어 있으면 표시 `True` (기본값)
-- `Pager`GridView의에 대 한 구현 하는 페이징, 페이징 인터페이스를 표시 하는 행
-- `Separator`GridView에 대 한 사용 되지 않지만에서 사용 하는 `RowType` DataList와 반복기에 대 한 속성 컨트롤을 두 개의 데이터 웹 컨트롤에 설명 합니다 이후 자습서
+- `DataRow` GridView의에서 레코드에 바인딩되는 행 `DataSource`
+- `EmptyDataRow` 경우에 표시 되는 행 GridView의 `DataSource` 비어
+- `Footer` 바닥글 행입니다. 경우에 표시 된 GridView의 `ShowFooter` 속성 `True`
+- `Header` 머리글 행입니다. GridView의 ShowHeader 속성이로 설정 되어 있으면 표시 `True` (기본값)
+- `Pager` GridView의에 대 한 구현 하는 페이징, 페이징 인터페이스를 표시 하는 행
+- `Separator` GridView에 대 한 사용 되지 않지만에서 사용 하는 `RowType` DataList와 반복기에 대 한 속성 컨트롤을 두 개의 데이터 웹 컨트롤에 설명 합니다 이후 자습서
 
 이후는 `EmptyDataRow`, `Header`, `Footer`, 및 `Pager` 행 연관 되지 않습니다는 `DataSource` 레코드, 항상 수는 값이 `Nothing` 에 대 한 자신의 `DataItem` 속성입니다. 현재 사용 하 려 하기 전에 이러한 이유로 `GridViewRow`의 `DataItem` 속성을 항상 먼저 않도록 해야 것으로 처리 하는 한 `DataRow`합니다. 이 확인 하 여 수행할 수 있습니다는 `GridViewRow`의 `RowType` 같이 속성:
 
@@ -323,12 +323,12 @@ FormView와 DetailsView 같은 일련의 단계를 사용 하 여이 이벤트 �
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 E.R. 되었습니다. Gilmore, Dennis Patterson 및 Dan Jagers 합니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](displaying-summary-information-in-the-gridview-s-footer-cs.md)
-[다음](using-templatefields-in-the-gridview-control-vb.md)
+> [!div class="step-by-step"]
+> [이전](displaying-summary-information-in-the-gridview-s-footer-cs.md)
+> [다음](using-templatefields-in-the-gridview-control-vb.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/13-adding-social-networking-to-your-web-site
-title: "페이지 (Razor) 사이트를 ASP.NET 웹에 소셜 네트워킹 추가 | Microsoft Docs"
+title: 페이지 (Razor) 사이트를 ASP.NET 웹에 소셜 네트워킹 추가 | Microsoft Docs
 author: tfitzmac
-description: "이 사이트 소셜 네트워킹 서비스와 통합 하는 방법을 설명 합니다. 이 장에서 책갈피/링크 웹 사이트 사용자에 게 알릴지 방법을 배우게 됩니다..."
+description: 이 사이트 소셜 네트워킹 서비스와 통합 하는 방법을 설명 합니다. 이 장에서 책갈피/링크 웹 사이트 사용자에 게 알릴지 방법을 배우게 됩니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/21/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/13-adding-social-networking-to-your-web-site
 msc.type: authoredcontent
-ms.openlocfilehash: 2c43fa7d286e43f3a4581662ce421c7435e1871f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2d1f0074edf473c4be06adaa32598dd828a7552c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-social-networking-to-aspnet-web-pages-razor-sites"></a>소셜 네트워킹 ASP.NET 웹 페이지 (Razor) 사이트를 추가 합니다.
 ====================
@@ -57,10 +57,10 @@ ms.lasthandoff: 11/10/2017
     [!code-cshtml[Main](13-adding-social-networking-to-your-web-site/samples/sample1.cshtml)]
 
     이 예제에서는 때는 `LinkShare` 페이지 제목, 도우미 실행 소셜 네트워킹 사이트 페이지 제목을 전달 매개 변수로 전달 됩니다. 그러나 원하는 모든 문자열을 전달할 수 있습니다. 이 예제는 또한 목록에 포함할 소셜 네트워킹 사이트를 지정 합니다. 사이트에 관련 된 소셜 네트워킹 사이트를 지정할 수 있습니다.
-- 실행 된 *ListLinkShare.cshtml* 브라우저에서 페이지입니다. (있는지 확인 페이지에서 선택한는 **파일** 실행 하기 전에 작업 영역입니다.)
-- 에 등록 하는 사이트 중 하나에 대 한 문자 모양을 클릭 합니다. 링크를 이동 페이지를 공유할 수 있는 선택한 소셜 네트워크 사이트에 링크 합니다. 예를 들어 Reddit 링크를 클릭 하면 하는 이동 하 여 `submit to reddit` Reddit 웹 사이트에서 페이지입니다.
+2. 실행 된 *ListLinkShare.cshtml* 브라우저에서 페이지입니다. (있는지 확인 페이지에서 선택한는 **파일** 실행 하기 전에 작업 영역입니다.)
+3. 에 등록 하는 사이트 중 하나에 대 한 문자 모양을 클릭 합니다. 링크를 이동 페이지를 공유할 수 있는 선택한 소셜 네트워크 사이트에 링크 합니다. 예를 들어 Reddit 링크를 클릭 하면 하는 이동 하 여 `submit to reddit` Reddit 웹 사이트에서 페이지입니다.
 
-    ![그림 2](13-adding-social-networking-to-your-web-site/_static/image2.jpg)
+     ![그림 2](13-adding-social-networking-to-your-web-site/_static/image2.jpg)
 
 <a id="Adding_a_Twitter_Feed"></a>
 ## <a name="adding-a-twitter-feed"></a>추가 된 Twitter 피드
@@ -81,7 +81,7 @@ Facebook 기능 (예: Like 단추)에 사이트를 추가 하려면 코드 조�
 <a id="Rendering_a_Gravatar_Image"></a>
 ## <a name="rendering-a-gravatar-image"></a>Gravatar 이미지 렌더링
 
-A *Gravatar* (한 &quot;전체적으로 인식 된 아바타&quot;) 이미지 아바타 &#8212;여러 웹 사이트에 사용 될 수 있는 합니다; 즉, 사용자를 표시 하는 이미지입니다. 예를 들어 한 Gravatar 수 포럼 게시물 블로그 주석에서의 사용자 식별 등에입니다. (의 Gravatar 웹 사이트에서 사용자 고유의 Gravatar 등록할 수 있는 [http://www.gravatar.com/](http://www.gravatar.com/).) 웹 사이트에 사용자의 이름 또는 전자 메일 주소 옆에 있는 이미지를 표시 하려는 경우 Gravatar 도우미를 사용할 수 있습니다.
+A *Gravatar* (한 &quot;전체적으로 인식 된 아바타&quot;)는 아바타도 여러 웹 사이트에서 사용할 수 있는 이미지 &#8212; 수를 표시 하는 이미지, 합니다. 예를 들어 한 Gravatar 수 포럼 게시물 블로그 주석에서의 사용자 식별 등에입니다. (의 Gravatar 웹 사이트에서 사용자 고유의 Gravatar 등록할 수 있는 [ http://www.gravatar.com/ ](http://www.gravatar.com/).) 웹 사이트에 사용자의 이름 또는 전자 메일 주소 옆에 있는 이미지를 표시 하려는 경우 Gravatar 도우미를 사용할 수 있습니다.
 
 이 예제에서는 사용자가 직접 나타내는 단일 Gravatar를 사용 하는 합니다. Gravatar를 사용 하 여 사이트에 등록할 때 해당 Gravatar 주소를 지정 하는 사용자에 게 알릴지 됩니다. (에 등록할 수 있게 하는 방법을 학습할 수 있는 [추가 보안 및 ASP.NET 웹 페이지 사이트 멤버 자격](https://go.microsoft.com/fwlink/?LinkId=202904).) 해당 사용자에 대 한 정보를 표시할 때마다 사용자의 이름을 표시 하는 Gravatar만 추가할 수 있습니다.
 

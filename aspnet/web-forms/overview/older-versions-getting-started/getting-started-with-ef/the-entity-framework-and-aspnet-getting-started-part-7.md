@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-7
-title: "먼저 Entity Framework 4.0 데이터베이스와 시작 및 ASP.NET 4 Web Forms-7 부 | Microsoft Docs"
+title: 먼저 Entity Framework 4.0 데이터베이스와 시작 및 ASP.NET 4 Web Forms-7 부 | Microsoft Docs
 author: tdykstra
-description: "Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework를 사용 하 여 ASP.NET Web Forms 응용 프로그램을 만드는 방법을 보여 줍니다. 샘플 응용 프로그램은..."
+description: Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework를 사용 하 여 ASP.NET Web Forms 응용 프로그램을 만드는 방법을 보여 줍니다. 샘플 응용 프로그램은...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/03/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: aeea122636f5235364e6a40cb6e041b1fe221317
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: cb84f4f3e130fedb3e2f1a17d630767ff65bfa05
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-7"></a>먼저 Entity Framework 4.0 데이터베이스와 시작 및 ASP.NET 4 Web Forms-7 부
 ====================
@@ -51,7 +51,7 @@ Entity Framework를 사용 하면 데이터베이스 액세스를 위한 저장�
 
 [![image14](the-entity-framework-and-aspnet-getting-started-part-7/_static/image4.png)](the-entity-framework-and-aspnet-getting-started-part-7/_static/image3.png)
 
-`Student`엔터티는 4 개의 속성: `PersonID`, `LastName`, `FirstName`, 및 `EnrollmentDate`합니다. 데이터베이스에서 ID 값을 자동으로 생성 및 저장된 프로시저는 다른 세 개에 대 한 매개 변수를 허용 합니다. 저장된 프로시저를 Entity Framework의 추적할 수 있는 메모리에 유지 된 엔터티 버전에서 새 행의 레코드 키의 값을 반환 합니다.
+`Student` 엔터티는 4 개의 속성: `PersonID`, `LastName`, `FirstName`, 및 `EnrollmentDate`합니다. 데이터베이스에서 ID 값을 자동으로 생성 및 저장된 프로시저는 다른 세 개에 대 한 매개 변수를 허용 합니다. 저장된 프로시저를 Entity Framework의 추적할 수 있는 메모리에 유지 된 엔터티 버전에서 새 행의 레코드 키의 값을 반환 합니다.
 
 저장 하 고 저장된 프로시저 창을 닫습니다.
 
@@ -139,6 +139,6 @@ Entity Framework가 자동으로 실행 되지 저장된 프로시저와 같은 
 
 다음 자습서에서 프로그램 및 테스트 데이터 서식 및 유효성 검사 규칙을 쉽게 수행할 수 있도록 Dynamic Data 기능을 사용 하는 방법을 설명 합니다. 데이터 형식 문자열 등의 각 웹 페이지 규칙 및는 필드는 필수 여부를 지정 하지 않고 데이터 모델 메타 데이터에 이러한 규칙을 지정할 수 있습니다 및 모든 페이지에 자동으로 적용 합니다.
 
->[!div class="step-by-step"]
-[이전](the-entity-framework-and-aspnet-getting-started-part-6.md)
-[다음](the-entity-framework-and-aspnet-getting-started-part-8.md)
+> [!div class="step-by-step"]
+> [이전](the-entity-framework-and-aspnet-getting-started-part-6.md)
+> [다음](the-entity-framework-and-aspnet-getting-started-part-8.md)

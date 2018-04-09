@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/presenting-and-managing-data/model-binding/updating-deleting-and-creating-data
-title: "업데이트, 삭제 및 모델 바인딩 및 web forms를 사용 하 여 데이터를 만들기 | Microsoft Docs"
+title: 업데이트, 삭제 및 모델 바인딩 및 web forms를 사용 하 여 데이터를 만들기 | Microsoft Docs
 author: tfitzmac
-description: "이 자습서 시리즈 모델 바인딩을 사용 하 여 ASP.NET Web Forms 프로젝트의 기본 사항을 보여 줍니다. 모델 바인딩 데이터 상호 작용 하 게 더 많은 직선-중..."
+description: 이 자습서 시리즈 모델 바인딩을 사용 하 여 ASP.NET Web Forms 프로젝트의 기본 사항을 보여 줍니다. 모델 바인딩 데이터 상호 작용 하 게 더 많은 직선-중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/27/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/updating-deleting-and-creating-data
 msc.type: authoredcontent
-ms.openlocfilehash: 18c065b44524e7738c048b5908fa50c592188064
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e6536f7858afde5faf3aedd34f3cbe95c5ed0d53
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="updating-deleting-and-creating-data-with-model-binding-and-web-forms"></a>업데이트, 삭제 및 데이터 모델 바인딩 및 web forms를 사용 하 여 만들기
 ====================
@@ -133,6 +133,6 @@ GridView 컨트롤에 포함 되지 않습니다는 **InsertMethod** 속성 모�
 
 다음에서 [자습서](sorting-paging-and-filtering-data.md) 이 시리즈의 정렬, 페이징, 및 데이터를 필터링를 사용 합니다.
 
->[!div class="step-by-step"]
-[이전](retrieving-data.md)
-[다음](sorting-paging-and-filtering-data.md)
+> [!div class="step-by-step"]
+> [이전](retrieving-data.md)
+> [다음](sorting-paging-and-filtering-data.md)

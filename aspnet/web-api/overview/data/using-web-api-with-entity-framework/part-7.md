@@ -2,7 +2,7 @@
 uid: web-api/overview/data/using-web-api-with-entity-framework/part-7
 title: Create View (UI) | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/16/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-7
 msc.type: authoredcontent
-ms.openlocfilehash: 8c5cc662e2e3c9cb07ca9e30ff57eb084d58e1bb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5052d7cca4a5c12a9ea56eb929d4794b19e82603
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="create-the-view-ui"></a>Create View (UI)
 ====================
@@ -32,7 +32,7 @@ Views/Home/Index.cshtml 파일을 엽니다. 해당 파일의 전체 내용을 �
 
 대부분의 `div` 요소에 대 한 사항이 [부트스트랩](http://getbootstrap.com/) 스타일을 지정 합니다. 중요 한 요소가 동작은 `data-bind` 특성입니다. 이 특성의 보기 모델에 HTML을 연결합니다.
 
-예:
+예를 들어:
 
 [!code-html[Main](part-7/samples/sample2.html)]
 
@@ -42,7 +42,7 @@ Views/Home/Index.cshtml 파일을 엽니다. 해당 파일의 전체 내용을 �
 
 에 새 값이 할당 될 때마다 `error`, Knockout 텍스트를 업데이트는 `<p>` 요소입니다.
 
-`foreach` 바인딩 지시 Knockout의 내용을 반복 하는 `books` 배열입니다. 배열의 각 항목에 대 한 Knockout에서는 새 &lt;li&gt; 요소입니다. 바인딩 컨텍스트 내부의 `foreach` 배열 항목에서 속성을 참조 하십시오. 예:
+`foreach` 바인딩 지시 Knockout의 내용을 반복 하는 `books` 배열입니다. 배열의 각 항목에 대 한 Knockout에서는 새 &lt;li&gt; 요소입니다. 바인딩 컨텍스트 내부의 `foreach` 배열 항목에서 속성을 참조 하십시오. 예를 들어:
 
 [!code-html[Main](part-7/samples/sample4.html)]
 
@@ -54,6 +54,6 @@ Views/Home/Index.cshtml 파일을 엽니다. 해당 파일의 전체 내용을 �
 
 책 목록을 페이지가 로드 된 후 비동기적으로 로드 합니다. 지금 바로 &quot;세부 정보&quot; 링크는 작동 하지 않습니다. 다음 섹션에서이 기능을 추가 합니다.
 
->[!div class="step-by-step"]
-[이전](part-6.md)
-[다음](part-8.md)
+> [!div class="step-by-step"]
+> [이전](part-6.md)
+> [다음](part-8.md)

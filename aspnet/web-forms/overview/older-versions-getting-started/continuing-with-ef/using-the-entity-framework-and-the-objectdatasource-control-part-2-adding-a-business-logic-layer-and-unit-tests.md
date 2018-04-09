@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests
-title: "2 부 Entity Framework 4.0 및 ObjectDataSource 컨트롤을 사용 하 여,: 비즈니스 논리 계층 및 단위 테스트 추가 | Microsoft Docs"
+title: '2 부 Entity Framework 4.0 및 ObjectDataSource 컨트롤을 사용 하 여,: 비즈니스 논리 계층 및 단위 테스트 추가 | Microsoft Docs'
 author: tdykstra
-description: "이 자습서 시리즈의 Entity Framework 4.0 자습서 시리즈 시작 하기에 의해 만들어진 Contoso 대학 웹 응용 프로그램 기반으로 합니다. I 중..."
+description: 이 자습서 시리즈의 Entity Framework 4.0 자습서 시리즈 시작 하기에 의해 만들어진 Contoso 대학 웹 응용 프로그램 기반으로 합니다. I 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/26/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/using-the-entity-framework-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests
 msc.type: authoredcontent
-ms.openlocfilehash: df37acd8901b457f7887afe767d42d53e45e4815
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: ecdfb2bdc546f55778ec4cc1f61aa66e129134ea
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-2-adding-a-business-logic-layer-and-unit-tests"></a>2 부 Entity Framework 4.0 및 ObjectDataSource 컨트롤을 사용 하 여,: 비즈니스 논리 계층 및 단위 테스트 추가
 ====================
@@ -225,6 +225,6 @@ Contoso 대학의 모든 개별 강사는 단일 부서 관리자만 될 수 있
 
 다음 자습서에서는 정렬 및 필터링 기능을 응용 프로그램을 추가 하는 방법을 볼 수 있습니다.
 
->[!div class="step-by-step"]
-[이전](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)
-[다음](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)
+> [!div class="step-by-step"]
+> [이전](using-the-entity-framework-and-the-objectdatasource-control-part-1-getting-started.md)
+> [다음](using-the-entity-framework-and-the-objectdatasource-control-part-3-sorting-and-filtering.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/asp-net-hosting-options-vb
-title: "ASP.NET 호스팅 옵션 (VB) | Microsoft Docs"
+title: ASP.NET 호스팅 옵션 (VB) | Microsoft Docs
 author: rick-anderson
-description: "ASP.NET 웹 응용 프로그램은 일반적으로 설계, 작성 하 고 로컬 개발 환경에서 테스트 및 프로덕션 환경 o를 배포 해야 할..."
+description: ASP.NET 웹 응용 프로그램은 일반적으로 설계, 작성 하 고 로컬 개발 환경에서 테스트 및 프로덕션 환경 o를 배포 해야 할...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/01/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/asp-net-hosting-options-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 54bac82a96a35d871d764849856c8e31f6570666
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 0e99423ec803927d0f621c88f3d814578fec11f5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-hosting-options-vb"></a>ASP.NET (VB) 옵션 호스팅
 ====================
@@ -61,7 +61,7 @@ ms.lasthandoff: 01/30/2018
 1 단계는 웹 응용 프로그램 구성 변경 내용 외에 웹 서버와 데이터베이스에 대 한 구성도 해야 할 수도 있습니다. 예를 들어, ASP.NET 페이지를 만들거나 웹 서버에 있는 디렉터리에서 파일을 삭제 하는 경우 다음 웹 서버 해야 이러한 파일 시스템 수정을 허용 하도록 구성 합니다. 마찬가지로, 데이터베이스에 적용 하는 권한이 나 인증 설정이 있을 수 있습니다.
 
 
-2 단계에서는 일련의 필수 ASP.NET 페이지 및 지원 파일을 개발 및 프로덕션 환경 간에 동기화 합니다. ASP의 특정 집합입니다. NET 관련 파일을 두 환경 간에 동기화 되는 다음 자습서에 설명 된 이며 Visual Studio에서 만든 프로젝트의 유형에 따라  *[결정 어떤 파일 배포 해야 할](determining-what-files-need-to-be-deployed-vb.md)*. 세 번째와 네 번째 자습서-  *[Your 사이트를 사용 하 여 FTP 배포](deploying-your-site-using-an-ftp-client-vb.md)*및  *[배포 Your 사이트를 사용 하 여 Visual Studio](deploying-your-site-using-visual-studio-vb.md)*  -검사 다른 도구와 동기화 하는 이러한 파일에 대 한 기술 합니다.
+2 단계에서는 일련의 필수 ASP.NET 페이지 및 지원 파일을 개발 및 프로덕션 환경 간에 동기화 합니다. ASP의 특정 집합입니다. NET 관련 파일을 두 환경 간에 동기화 되는 다음 자습서에 설명 된 이며 Visual Studio에서 만든 프로젝트의 유형에 따라  <em>[결정 어떤 파일 배포 해야 할](determining-what-files-need-to-be-deployed-vb.md)</em>. 세 번째와 네 번째 자습서-  <em>[Your 사이트를 사용 하 여 FTP 배포](deploying-your-site-using-an-ftp-client-vb.md)</em>및 <em>[배포 Your 사이트를 사용 하 여 Visual Studio](deploying-your-site-using-visual-studio-vb.md)</em> -검사 다른 도구와 동기화 하는 이러한 파일에 대 한 기술 합니다.
 
 사용 중인 일반적으로 두 개의 데이터베이스는 데이터 기반 응용 프로그램을 빌드할 때: 개발 및 프로덕션에 한 합니다. 개발 하는 동안 또는 개발 데이터베이스의 스키마 새 테이블, 열, 저장된 프로시저 및 트리거를 포함 하도록 수정할 수 있습니다를 제거 하거나 기존 데이터베이스 개체 이름을 수정할 수 있습니다. 이러한 변경 내용이 시간와 응용 프로그램이 프로덕션으로 배포 될 때 개발 및 프로덕션 데이터베이스는 동기화 합니다. 이 비동기 배포 프로세스 중 수정 해야 합니다. 이러한 문제는 이후 자습서에서 검사 됩니다.
 
@@ -95,6 +95,6 @@ ASP.NET 웹 응용 프로그램은 일반적으로 설계, 작성 및 로컬 개
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Teresa 머피의 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)합니다.
 
->[!div class="step-by-step"]
-[이전](users-and-roles-on-the-production-website-cs.md)
-[다음](determining-what-files-need-to-be-deployed-vb.md)
+> [!div class="step-by-step"]
+> [이전](users-and-roles-on-the-production-website-cs.md)
+> [다음](determining-what-files-need-to-be-deployed-vb.md)

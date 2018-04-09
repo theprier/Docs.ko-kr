@@ -1,7 +1,7 @@
 ---
-title: "마이그레이션 인증 및 ASP.NET 코어 2.0 Id"
+title: 인증 및 Id ASP.NET 코어 2.0으로 마이그레이션
 author: scottaddie
-description: "이 문서는 ASP.NET 코어 2.0으로 마이그레이션 ASP.NET Core 1.x 인증 및 Id에 대 한 가장 일반적인 단계를 간략하게 설명 합니다."
+description: 이 문서는 ASP.NET 코어 2.0으로 마이그레이션 ASP.NET Core 1.x 인증 및 Id에 대 한 가장 일반적인 단계를 간략하게 설명 합니다.
 manager: wpickett
 ms.author: scaddie
 ms.date: 10/26/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/1x-to-2x/identity-2x
-ms.openlocfilehash: f0c29e6b4faa5c9d574726fc960f0c7c60092757
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 16369a14dbe97778724632317a82e11de5a8faed
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="migrating-authentication-and-identity-to-aspnet-core-20"></a>마이그레이션 인증 및 ASP.NET 코어 2.0 Id
+# <a name="migrate-authentication-and-identity-to-aspnet-core-20"></a>인증 및 Id ASP.NET 코어 2.0으로 마이그레이션
 
 여 [Scott Addie](https://github.com/scottaddie) 및 [Hao 둘러싼](https://github.com/HaoK)
 
@@ -398,5 +398,5 @@ A `ManageLoginsViewModel` 개체가 사용 되는 `ManageLogins` 의 동작 *Man
 
 <a name="additional-resources"></a>
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 추가 세부 정보 및 토론에 대 한 참조는 [Auth 2.0에 대 한 토론](https://github.com/aspnet/Security/issues/1338) GitHub에서 문제입니다.

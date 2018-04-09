@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-vb
-title: "ASP.NET 상태 모니터링 (VB)를 사용 하 여 오류 세부 정보를 로깅 | Microsoft Docs"
+title: ASP.NET 상태 모니터링 (VB)를 사용 하 여 오류 세부 정보를 로깅 | Microsoft Docs
 author: rick-anderson
-description: "Microsoft의 상태 모니터링 시스템에는 처리 되지 않은 예외를 포함 하 여 다양 한 웹 이벤트를 기록 하는 편리 하 고 사용자 지정할 수 있는 방법을 제공 합니다. 이 자습서에서는 thr 중..."
+description: Microsoft의 상태 모니터링 시스템에는 처리 되지 않은 예외를 포함 하 여 다양 한 웹 이벤트를 기록 하는 편리 하 고 사용자 지정할 수 있는 방법을 제공 합니다. 이 자습서에서는 thr 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/09/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 83f7504e3aeb02ed222712e7e51f612f7ffd5744
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 0a457d4b8773f0f4ed343f5005c76f48a5cc178f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="logging-error-details-with-aspnet-health-monitoring-vb"></a>ASP.NET 상태 모니터링 (VB)를 사용 하 여 오류 세부 정보를 로깅
 ====================
@@ -154,6 +154,6 @@ ASP.NET 상태 모니터링 시스템은 관리자가 배포 된 웹 응용 프�
 - [방법: ASP.NET에서 상태 모니터링 사용](https://msdn.microsoft.com/library/ms998306.aspx)
 - [ASP.NET에서 모니터링 하는 상태](http://aspnet.4guysfromrolla.com/articles/031407-1.aspx)
 
->[!div class="step-by-step"]
-[이전](processing-unhandled-exceptions-vb.md)
-[다음](logging-error-details-with-elmah-vb.md)
+> [!div class="step-by-step"]
+> [이전](processing-unhandled-exceptions-vb.md)
+> [다음](logging-error-details-with-elmah-vb.md)

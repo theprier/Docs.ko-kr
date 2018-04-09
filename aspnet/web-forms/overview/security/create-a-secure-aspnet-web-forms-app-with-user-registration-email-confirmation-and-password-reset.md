@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/security/create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset
-title: "확인 및 암호 재설정 (C#) 전자 메일 사용자 등록와 보안 ASP.NET Web Forms 응용 프로그램 만들기 | Microsoft Docs"
+title: 확인 및 암호 재설정 (C#) 전자 메일 사용자 등록와 보안 ASP.NET Web Forms 응용 프로그램 만들기 | Microsoft Docs
 author: Erikre
-description: "이 자습서에서는 사용자 등록, 전자 메일 확인 및 암호 재설정 ASP.NET Identity 멤버를 사용 하 여 ASP.NET Web Forms 응용 프로그램을 구축 하는 방법 중..."
+description: 이 자습서에서는 사용자 등록, 전자 메일 확인 및 암호 재설정 ASP.NET Identity 멤버를 사용 하 여 ASP.NET Web Forms 응용 프로그램을 구축 하는 방법 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/02/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/security/create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset
 msc.type: authoredcontent
-ms.openlocfilehash: ed39295ed1bcaa924336a1faf52049e291abeadb
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1dc7ace69473b45432fd942b9cf1ba32332cb707
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset-c"></a>확인 및 암호 재설정 (C#) 전자 메일 사용자 등록와 보안 ASP.NET Web Forms 응용 프로그램 만들기
 ====================
@@ -90,7 +90,7 @@ ms.lasthandoff: 01/24/2018
     [!code-xml[Main](create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset/samples/sample3.xml?highlight=2-5)]
 
     > [!WARNING]
-    > 보안-소스 코드에서 중요 한 데이터 저장 되지 않습니다. 이 예제에서는 계정 및 자격 증명에 저장 됩니다는 **appSetting** 의 섹션은 *Web.config* 파일입니다. Azure에서 안전 하 게에 저장할 수 있습니다 이러한 값은  **[구성](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)**  Azure 포털에서 탭 합니다. 관련된 내용은 Rick Anderson의 항목을 참조 하세요. [ASP.NET 및 Azure에 암호 및 기타 중요 한 데이터 배포에 대 한 유용한](https://go.microsoft.com/fwlink/?LinkId=513141)합니다.
+    > 보안-소스 코드에서 중요 한 데이터 저장 되지 않습니다. 이 예제에서는 계정 및 자격 증명에 저장 됩니다는 **appSetting** 의 섹션은 *Web.config* 파일입니다. Azure에서 안전 하 게에 저장할 수 있습니다 이러한 값은 **[구성](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)** Azure 포털에서 탭 합니다. 관련된 내용은 Rick Anderson의 항목을 참조 하세요. [ASP.NET 및 Azure에 암호 및 기타 중요 한 데이터 배포에 대 한 유용한](https://go.microsoft.com/fwlink/?LinkId=513141)합니다.
 6. SendGrid 인증 값 (사용자 이름 및 암호) 성공적으로 수행할 수 있도록 보낼 전자 메일 앱에서 반영 하기 위해 전자 메일 서비스 값을 추가 합니다. SendGrid를 입력 한 전자 메일 주소 보다는 SendGrid 계정 이름을 사용 해야 합니다.
 
 ### <a name="enable-email-confirmation"></a>전자 메일 확인을 사용 하도록 설정
@@ -104,9 +104,9 @@ ms.lasthandoff: 01/24/2018
 2. **솔루션 탐색기**를 마우스 오른쪽 단추로 클릭 *Default.aspx* 선택 **시작 페이지로 설정**합니다.
 3. 키를 눌러 앱을 실행 **F5 합니다.** 페이지 표시 되 면 클릭는 **등록** 링크 레지스터 페이지를 표시 합니다.
 4. 전자 메일 및 암호를 입력 한 다음 클릭는 **등록** 단추 SendGrid 통해 전자 메일 메시지를 보내도록 합니다.  
- 프로젝트 및 코드의 현재 상태에는 사용자 계정으로를 확인 하지 않은 경우에 등록 양식을 완료 되 면에 로그인 할 수 있게 됩니다.
+   프로젝트 및 코드의 현재 상태에는 사용자 계정으로를 확인 하지 않은 경우에 등록 양식을 완료 되 면에 로그인 할 수 있게 됩니다.
 5. 전자 메일 계정을 확인 하 고 사용자의 전자 메일을 확인 하려면 다음 링크를 클릭 합니다.  
- 등록 양식을 전송 하면에 기록 됩니다.  
+   등록 양식을 전송 하면에 기록 됩니다.  
     ![샘플 웹 사이트-로그인](create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset/_static/image4.png)
 
 <a id="require"></a>
@@ -146,9 +146,9 @@ ms.lasthandoff: 01/24/2018
 4. 키를 눌러 앱을 실행 **F5 합니다.** 페이지 표시 되 면 클릭는 **로그인** 링크 합니다.
 5. 클릭는 **암호를 잊으셨습니까?** 표시 하려면 링크는 **암호를 잊으셨습니까** 페이지.
 6. 전자 메일 주소를 입력 하 고 클릭는 **전송** 암호를 다시 설정할 수 있는 주소로 전자 메일을 보내는 단추입니다.   
- 전자 메일 계정을 확인 하 고 표시 하려면 링크를 클릭는 **암호 재설정** 페이지.
+   전자 메일 계정을 확인 하 고 표시 하려면 링크를 클릭는 **암호 재설정** 페이지.
 7. 에 **암호 재설정** 페이지에서 전자 메일, 암호 및 확인된 암호를 입력 합니다. 그런 다음 눌러는 **재설정** 단추입니다.  
- 암호를 재설정할 때는 **암호가 변경** 페이지가 표시 됩니다. 이제 새 암호를 사용 하 여 기록할 수 있습니다.
+   암호를 재설정할 때는 **암호가 변경** 페이지가 표시 됩니다. 이제 새 암호를 사용 하 여 기록할 수 있습니다.
 
 <a id="rsend"></a>
 ## <a name="resend-email-confirmation-link"></a>전자 메일 확인 링크를 다시 보냅니다.
@@ -167,7 +167,7 @@ ms.lasthandoff: 01/24/2018
 4. 모든 계정을 삭제는 **AspNetUsers** 테스트 하려는 전자 메일 별칭을 포함 하는 테이블입니다.
 5. 응용 프로그램을 실행 (**F5**) 하 고 전자 메일 주소를 등록 합니다.
 6. 방금 전송 된 전자 메일을 통해 사용자는 새 계정을 결정 하기 전에 새 계정으로 로그인 하려고 합니다.  
- 로그인 할 수 없는 및 확인 된 전자 메일 계정을 보유 해야 하는지 확인할 수 있습니다. 또한 이제 다시 보낼 수 있습니다 확인 메시지를 전자 메일에 있습니다.
+   로그인 할 수 없는 및 확인 된 전자 메일 계정을 보유 해야 하는지 확인할 수 있습니다. 또한 이제 다시 보낼 수 있습니다 확인 메시지를 전자 메일에 있습니다.
 7. 전자 메일 주소와 암호를 입력 누릅니다는 **확인을 다시 보낼** 단추입니다.
 8. 새로 보낸된 전자 메일 메시지에 기반한 전자 메일 주소를 확인 하 고 나면 앱에 로그인 합니다.
 
@@ -181,7 +181,7 @@ ms.lasthandoff: 01/24/2018
 - SendGrid 사용자 계정 이름으로 사용할 수는 *Web.config* SendGrid 계정 전자 메일 주소 대신 값입니다.
 
 <a id="addRes"></a>
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 - [ASP.NET Id에 대 한 링크 권장 리소스](../../../identity/overview/getting-started/aspnet-identity-recommended-resources.md)
 - [계정 확인 및 ASP.NET Id와 암호 복구](../../../identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity.md)

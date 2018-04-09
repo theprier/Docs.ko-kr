@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-cs
-title: "처리 되지 않은 예외 (C#)를 처리 합니다. | Microsoft Docs"
+title: 처리 되지 않은 예외 (C#)를 처리 합니다. | Microsoft Docs
 author: rick-anderson
-description: "프로덕션 환경에서 웹 응용 프로그램에서 런타임 오류가 발생할 때 고 것이 중요 개발자에 알리기 위해 la a에서 진단 수 있도록 오류를 기록 하려면..."
+description: 프로덕션 환경에서 웹 응용 프로그램에서 런타임 오류가 발생할 때 고 것이 중요 개발자에 알리기 위해 la a에서 진단 수 있도록 오류를 기록 하려면...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/09/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-cs
 msc.type: authoredcontent
-ms.openlocfilehash: dda73ca1878396e04b8ff04a255c25bf26ed4eff
-ms.sourcegitcommit: 9622bdc6326c28c3322c70000468a80ef21ad376
+ms.openlocfilehash: fccd529f5c489ed28f3cb01f07ffdc4452ead36d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="processing-unhandled-exceptions-c"></a>처리 되지 않은 예외 (C#)를 처리 합니다.
 ====================
@@ -167,6 +167,6 @@ ASP.NET 런타임에서 발생 하는 ASP.NET 웹 응용 프로그램에서 처�
 - [ASP.NET 작업 `Global.asax` 파일](http://articles.techrepublic.com.com/5100-10878_11-5771721.html)
 - [작업 `HttpApplication` 인스턴스](https://msdn.microsoft.com/library/a0xez8f2.aspx)
 
->[!div class="step-by-step"]
-[이전](displaying-a-custom-error-page-cs.md)
-[다음](logging-error-details-with-asp-net-health-monitoring-cs.md)
+> [!div class="step-by-step"]
+> [이전](displaying-a-custom-error-page-cs.md)
+> [다음](logging-error-details-with-asp-net-health-monitoring-cs.md)

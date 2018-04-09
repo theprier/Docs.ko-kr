@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/deploying-a-specific-build
-title: "특정 빌드를 배포 | Microsoft Docs"
+title: 특정 빌드를 배포 | Microsoft Docs
 author: jrjlee
-description: "이 항목에서는 웹 패키지 및 이전 버전 으로부터 특정 스테이징 또는 프로덕션 환경 같은 새 대상 데이터베이스 스크립트를 배포 하는 방법에 설명..."
+description: 이 항목에서는 웹 패키지 및 이전 버전 으로부터 특정 스테이징 또는 프로덕션 환경 같은 새 대상 데이터베이스 스크립트를 배포 하는 방법에 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/deploying-a-specific-build
 msc.type: authoredcontent
-ms.openlocfilehash: be1000f0cbc2f509f5014789c2bc47ce2b12fb2f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 271d084b3c69016df5be28ada032973bf7fd5a49
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-a-specific-build"></a>특정 빌드를 배포합니다.
 ====================
@@ -27,9 +27,9 @@ ms.lasthandoff: 01/24/2018
 > 이 항목에서는 웹 패키지 및 이전 버전 으로부터 특정 스테이징 또는 프로덕션 환경 같은 새 대상 데이터베이스 스크립트를 배포 하는 방법에 설명 합니다.
 
 
-이 항목의 Fabrikam, inc. 라는 가상 회사의 엔터프라이즈 배포 요구 사항을 바탕으로 하는 자습서 시리즈의 일부를 형성 합니다. 이 자습서 시리즈 샘플 솔루션 & #x 2014;을 사용 하는 [Contact Manager 솔루션](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; 현실적인 수준의 복잡성을 Windows ASP.NET MVC 3 응용 프로그램을 포함 하 여 웹 응용 프로그램을 나타내기 위해 Communication Foundation (WCF) 서비스 및 데이터베이스 프로젝트를 제공 합니다.
+이 항목의 Fabrikam, inc. 라는 가상 회사의 엔터프라이즈 배포 요구 사항을 바탕으로 하는 자습서 시리즈의 일부를 형성 합니다. 샘플 솔루션을 사용 하는 자습서 시리즈가&#x2014;는 [Contact Manager 솔루션](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;현실적인 수준의 복잡성, Windows Communication ASP.NET MVC 3 응용 프로그램을 포함 하 여 웹 응용 프로그램을 나타내기 위해 WCF (foundation) 서비스 및 데이터베이스 프로젝트.
 
-이 자습서의 핵심에는 배포 방법에 설명 된 분할 프로젝트 파일 접근 방식에 따라 [프로젝트 파일 이해](../web-deployment-in-the-enterprise/understanding-the-project-file.md), 빌드 및 배포 프로세스는 두 개의 프로젝트 파일 & #x 2014로 제어 되; o 환경 관련 빌드 및 배포 설정을 포함 하는 하나 및 모든 대상 환경에 적용 되는 빌드 명령이 포함 된 ne 합니다. 빌드 시 환경 관련 프로젝트 파일은 빌드 지침의 전체 집합을 구성 하기 위해 환경을 알 수 없는 프로젝트 파일에 병합 됩니다.
+이 자습서의 핵심에는 배포 방법에 설명 된 분할 프로젝트 파일 접근 방식에 따라 [프로젝트 파일 이해](../web-deployment-in-the-enterprise/understanding-the-project-file.md), 두 개의 프로젝트 파일에 빌드 및 배포 프로세스에 의해 제어 되는&#x2014;하나 환경 관련 빌드 및 배포 설정을 포함 하는 하나 및 모든 대상 환경에 적용 되는 빌드 명령이 포함 된입니다. 빌드 시 환경 관련 프로젝트 파일은 빌드 지침의 전체 집합을 구성 하기 위해 환경을 알 수 없는 프로젝트 파일에 병합 됩니다.
 
 ## <a name="task-overview"></a>작업 개요
 
@@ -54,13 +54,13 @@ ms.lasthandoff: 01/24/2018
 [!code-xml[Main](deploying-a-specific-build/samples/sample1.xml)]
 
 
-웹 패키지 및;는 이전 TFS 빌드 & #x 2014;의 출력을와 같은 다른 위치 & #x 2014에서 데이터베이스 스크립트를 배포 하기 위해 프로젝트 파일을 원하는 경우 단순히 재정의 해야는 **OutputRoot** 속성입니다. 팀 빌드 서버에서 관련 빌드 폴더에 속성 값을 설정 해야 합니다. 명령줄에서 MSBuild를 실행 했을 대 한 값을 지정할 수 있습니다 **OutputRoot** 명령줄 인수로:
+웹 패키지를 배포 하 고 다른 위치에서 스크립트 데이터베이스 하기 위해 프로젝트 파일을 원하는 경우&#x2014;이전 TFS 빌드 출력 같은&#x2014;무시 해야 하는 단순히는 **OutputRoot** 속성입니다. 팀 빌드 서버에서 관련 빌드 폴더에 속성 값을 설정 해야 합니다. 명령줄에서 MSBuild를 실행 했을 대 한 값을 지정할 수 있습니다 **OutputRoot** 명령줄 인수로:
 
 
 [!code-console[Main](deploying-a-specific-build/samples/sample2.cmd)]
 
 
-그러나 실제로, 것도 건너 뛰 려는 **빌드** 대상 & #x 2014; 솔루션을 빌드할 때 빌드 출력을 사용 하지 않으려는 경우에 포인터가 없는 합니다. 명령줄에서 실행할 대상을 지정 하 여 수행할 수 있습니다.
+그러나 실제로, 것도 건너 뛰 려는 **빌드** 대상&#x2014;솔루션을 빌드할 때 빌드 출력을 사용 하지 않으려는 경우에 대 한 포인터가 없습니다. 명령줄에서 실행할 대상을 지정 하 여 수행할 수 있습니다.
 
 
 [!code-console[Main](deploying-a-specific-build/samples/sample3.cmd)]
@@ -72,7 +72,7 @@ ms.lasthandoff: 01/24/2018
 
 다음 절차에는 사용자가 단일 명령으로 스테이징 환경에 대 한 트리거 배포가 수 있는 빌드 정의를 만드는 방법을 설명 합니다.
 
-이 경우 빌드 정의를 실제로 생성 아무 것도 않을 & #x 2014; 사용자 지정 프로젝트 파일의 배포 논리를 실행 하 려 합니다. *Publish.proj* 건너뛴 조건부 논리를 포함 하는 파일의 **빌드** 파일 Team Build에서 실행 중인 경우를 대상으로 합니다. 기본 제공 계산 하 여 이렇게 **BuildingInTeamBuild** 속성으로 자동으로 설정 된 **true** Team Build에서 프로젝트 파일을 실행 하는 경우. 결과적으로, 빌드 프로세스를 건너뛸 수 있으며 기존 빌드를 배포 하려면 프로젝트 파일을 실행 하면 됩니다.
+이 경우 빌드 정의를 실제로 생성 아무 것도 않을&#x2014;방금 원하는 사용자 지정 프로젝트 파일의 배포 논리를 실행 합니다. *Publish.proj* 건너뛴 조건부 논리를 포함 하는 파일의 **빌드** 파일 Team Build에서 실행 중인 경우를 대상으로 합니다. 기본 제공 계산 하 여 이렇게 **BuildingInTeamBuild** 속성으로 자동으로 설정 된 **true** Team Build에서 프로젝트 파일을 실행 하는 경우. 결과적으로, 빌드 프로세스를 건너뛸 수 있으며 기존 빌드를 배포 하려면 프로젝트 파일을 실행 하면 됩니다.
 
 **배포를 수동으로 트리거할 빌드 정의를 만들려면**
 
@@ -113,7 +113,7 @@ ms.lasthandoff: 01/24/2018
 
     ![](deploying-a-specific-build/_static/image7.png)
 2. 에 **빌드 큐 대기** 대화 상자의 **매개 변수** 탭을 확장 하 고는 **고급** 섹션.
-3. 에 **MSBuild 인수** 행에서의 값을 대체는 **OutputRoot** 빌드 폴더의 위치를 사용 하 여 속성입니다. 예:
+3. 에 **MSBuild 인수** 행에서의 값을 대체는 **OutputRoot** 빌드 폴더의 위치를 사용 하 여 속성입니다. 예를 들어:
 
     [!code-console[Main](deploying-a-specific-build/samples/sample5.cmd)]
 
@@ -133,6 +133,6 @@ ms.lasthandoff: 01/24/2018
 
 빌드 정의 만드는 방법에 대 한 자세한 내용은 참조 하십시오. [기본 빌드 정의 만들기](https://msdn.microsoft.com/library/ms181716.aspx) 및 [빌드 프로세스 정의](https://msdn.microsoft.com/library/ms181715.aspx)합니다. 빌드를 큐에 대 한 자세한 지침을 참조 하십시오. [빌드 큐에 대기](https://msdn.microsoft.com/library/ms181722.aspx)합니다.
 
->[!div class="step-by-step"]
-[이전](creating-a-build-definition-that-supports-deployment.md)
-[다음](configuring-permissions-for-team-build-deployment.md)
+> [!div class="step-by-step"]
+> [이전](creating-a-build-definition-that-supports-deployment.md)
+> [다음](configuring-permissions-for-team-build-deployment.md)

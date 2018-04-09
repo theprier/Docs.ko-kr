@@ -1,22 +1,22 @@
 ---
 uid: identity/overview/migrations/migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity
-title: "멤버 자격 및 ASP.NET Identity (C#)에 사용자 프로필에 대 한 유니버설 공급자 데이터 마이그레이션 | Microsoft Docs"
+title: 멤버 자격 및 ASP.NET Identity (C#)에 사용자 프로필에 대 한 유니버설 공급자 데이터 마이그레이션 | Microsoft Docs
 author: rustd
-description: "이 자습서에서는 사용자와 역할 데이터는 기존 응용 프로그램의 Universal Providers를 사용 하 여 만든 사용자 프로필 데이터를 마이그레이션하는 데 필요한 단계를 설명..."
+description: 이 자습서에서는 사용자와 역할 데이터는 기존 응용 프로그램의 Universal Providers를 사용 하 여 만든 사용자 프로필 데이터를 마이그레이션하는 데 필요한 단계를 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/13/2013
 ms.topic: article
 ms.assetid: 2e260430-d13c-4658-bd05-e256fc0d63b8
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/migrations/migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: e00bcfc111425d5dd26c7ff341eaf87fd969e089
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f65f93b20543d06ea70a9009b6921e297477c99e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity-c"></a>멤버 자격 및 ASP.NET Identity (C#)에 사용자 프로필에 대 한 유니버설 공급자 데이터 마이그레이션
 ====================
@@ -30,7 +30,7 @@ Visual Studio 2013의 릴리스로 ASP.NET 팀 새 ASP.NET Identity 시스템을
 예를 들어, 우리는 공급자 모델을 사용 하는 Visual Studio 2012를 사용 하 여 만든 웹 응용 프로그램으로 시작 됩니다. 그런 다음 프로필 관리에 대 한 코드를 추가, 사용자 등록, 사용자에 대 한 프로필 데이터를 추가, 데이터베이스 스키마를 마이그레이션하려면 알아보고 하겠습니다 사용자 및 역할 관리에 대 한 Id 시스템을 사용 하도록 응용 프로그램을 변경 합니다. 마이그레이션 테스트로 Universal Providers를 사용 하 여 만든 사용자가 로그인 할 수 있어야 합니다. 및 새 사용자가 등록할 수 있어야 합니다.
 
 > [!NOTE]
-> 전체 샘플을 찾을 수 있습니다 [https://github.com/suhasj/UniversalProviders-Identity-Migrations](https://github.com/suhasj/UniversalProviders-Identity-Migrations)합니다.
+> 전체 샘플을 찾을 수 있습니다 [ https://github.com/suhasj/UniversalProviders-Identity-Migrations ](https://github.com/suhasj/UniversalProviders-Identity-Migrations)합니다.
 
 
 ## <a name="profile-data-migration-summary"></a>프로필 데이터 마이그레이션 요약
@@ -61,11 +61,11 @@ Visual Studio 2013의 릴리스로 ASP.NET 팀 새 ASP.NET Identity 시스템을
 
     [!code-html[Main](migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity/samples/sample3.html)]
 
- 코드 숨김에 다음 코드를 추가 합니다.
+   코드 숨김에 다음 코드를 추가 합니다.
 
     [!code-csharp[Main](migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity/samples/sample4.cs)]
 
- 컴파일 오류를 제거 하는 AppProfile에서 클래스가 정의 된 네임 스페이스를 추가 합니다.
+   컴파일 오류를 제거 하는 AppProfile에서 클래스가 정의 된 네임 스페이스를 추가 합니다.
 6. 응용 프로그램을 실행 하 고 사용자 이름을 가진 새 사용자를 만들려면 '**olduser'.** 'AddProfileData' 페이지로 이동한 다음 사용자에 대 한 프로필 정보를 추가 합니다.  
     ![](migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity/_static/image2.png)
 
@@ -81,7 +81,7 @@ Id 시스템을 사용 하는 기존 데이터베이스를 원래 데이터베�
 
 ![](migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity/_static/image5.png)
 
-SQL 스크립트를 붙여 [https://raw.github.com/suhasj/UniversalProviders-Identity-Migrations/master/Migration.txt](https://raw.github.com/suhasj/UniversalProviders-Identity-Migrations/master/Migration.txt) 하 고 실행 합니다. 'DefaultConnection' 새로 고치면 새 테이블이 추가 되는 표시 됩니다. 정보 마이그레이션 되었는지 확인 하려면 테이블에 있는 데이터를 확인할 수 있습니다.
+SQL 스크립트를 붙여 [ https://raw.github.com/suhasj/UniversalProviders-Identity-Migrations/master/Migration.txt ](https://raw.github.com/suhasj/UniversalProviders-Identity-Migrations/master/Migration.txt) 하 고 실행 합니다. 'DefaultConnection' 새로 고치면 새 테이블이 추가 되는 표시 됩니다. 정보 마이그레이션 되었는지 확인 하려면 테이블에 있는 데이터를 확인할 수 있습니다.
 
 ![](migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity/_static/image6.png)
 
@@ -97,14 +97,14 @@ SQL 스크립트를 붙여 [https://raw.github.com/suhasj/UniversalProviders-Ide
     - Microsoft.Owin.Security.MicrosoftAccount
     - Microsoft.Owin.Security.Twitter
 
- Nuget 패키지 관리에 대 한 자세한 내용은 있습니다 [여기](http://docs.nuget.org/docs/start-here/Managing-NuGet-Packages-Using-The-Dialog)
+   Nuget 패키지 관리에 대 한 자세한 내용은 있습니다 [여기](http://docs.nuget.org/docs/start-here/Managing-NuGet-Packages-Using-The-Dialog)
 2. 테이블의 기존 데이터를 사용 하려면 테이블에 다시 매핑할 및 Id 시스템에 연결 하는 모델 클래스를 만들어야 할 합니다. Identity 계약의 일부로 모델 클래스 Identity.Core dll에 정의 된 인터페이스를 구현 해야 하거나 또는 Microsoft.AspNet.Identity.EntityFramework에서 사용할 수 있는 이러한 인터페이스의 기존 구현을 확장할 수 있습니다. 역할, 사용자 로그인 및 사용자 클레임에 대 한 기존 클래스 사용 합니다. 이 샘플에 대 한 사용자 지정 사용자를 사용 해야 합니다. 프로젝트를 마우스 오른쪽 단추로 클릭 하 고 'IdentityModels' 폴더를 새로 만듭니다. 아래와 같이 새 'User' 클래스를 추가 합니다.
 
     [!code-csharp[Main](migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity/samples/sample5.cs)]
 
- 이제 'ProfileInfo' 사용자 클래스에서 속성 인지 확인 합니다. 따라서 프로필 데이터로 직접 작업 하는 사용자 클래스를 사용할 수 있습니다.
+   이제 'ProfileInfo' 사용자 클래스에서 속성 인지 확인 합니다. 따라서 프로필 데이터로 직접 작업 하는 사용자 클래스를 사용할 수 있습니다.
 
-파일 복사는 **IdentityModels** 및 **IdentityAccount** 다운로드 원본의 폴더 ( [https://github.com/suhasj/UniversalProviders-Identity-Migrations/tree/master/ UniversalProviders-Identity-Migrations](https://github.com/suhasj/UniversalProviders-Identity-Migrations/tree/master/UniversalProviders-Identity-Migrations) ). 이러한 남은 모델 클래스 및 사용자와 ASP.NET Identity Api를 사용 하 여 역할 관리에 필요한 새 페이지가 포함 됩니다. 사용 하는 방법 SQL 멤버 자격에 비슷합니다. 자세한 설명은 수 있으며 [여기](migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)합니다.
+파일 복사는 **IdentityModels** 및 **IdentityAccount** 다운로드 원본의 폴더 ( [ https://github.com/suhasj/UniversalProviders-Identity-Migrations/tree/master/UniversalProviders-Identity-Migrations ](https://github.com/suhasj/UniversalProviders-Identity-Migrations/tree/master/UniversalProviders-Identity-Migrations) ). 이러한 남은 모델 클래스 및 사용자와 ASP.NET Identity Api를 사용 하 여 역할 관리에 필요한 새 페이지가 포함 됩니다. 사용 하는 방법 SQL 멤버 자격에 비슷합니다. 자세한 설명은 수 있으며 [여기](migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)합니다.
 
 ## <a name="copying-profile-data-to-the-new-tables"></a>프로필 데이터를 새 테이블에 복사
 
@@ -118,7 +118,7 @@ SQL 스크립트를 붙여 [https://raw.github.com/suhasj/UniversalProviders-Ide
 
     [!code-csharp[Main](migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity/samples/sample6.cs)]
 
- 해당 네임 스페이스를 포함 해야 하므로 사용 하는 모델 중 일부는 웹 응용 프로그램 프로젝트의 'IdentityModels' 폴더에 정의 됩니다.
+   해당 네임 스페이스를 포함 해야 하므로 사용 하는 모델 중 일부는 웹 응용 프로그램 프로젝트의 'IdentityModels' 폴더에 정의 됩니다.
 5. 위의 코드는 응용 프로그램에서 데이터베이스 파일에 적용\_이전 단계에서 만든 웹 응용 프로그램 프로젝트의 데이터 폴더. 참조 하는 웹 응용 프로그램의 web.config에서 연결 문자열과 함께 콘솔 응용 프로그램의 app.config 파일에서 연결 문자열을 업데이트 합니다. 또한 'AttachDbFilename' 속성에 전체 실제 경로 제공 합니다.
 6. 명령 프롬프트를 열고 위의 콘솔 응용 프로그램의 bin 폴더를 이동 합니다. 실행 파일을 실행 하 고 다음 그림에 나와 있는 것 처럼 로그 출력을 검토 합니다.  
     ![](migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity/_static/image3.jpg)

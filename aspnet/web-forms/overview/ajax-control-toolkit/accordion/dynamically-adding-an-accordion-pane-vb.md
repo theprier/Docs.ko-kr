@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/accordion/dynamically-adding-an-accordion-pane-vb
-title: "동적으로 추가 하는 아코디언 창 (VB) | Microsoft Docs"
+title: 동적으로 추가 하는 아코디언 창 (VB) | Microsoft Docs
 author: wenz
-description: "들어에서 Accordion 컨트롤 여러 창을 하며 한 번에 둘 중 하나를 표시할 수 있습니다. 일반적으로 패널 w 선언 중..."
+description: 들어에서 Accordion 컨트롤 여러 창을 하며 한 번에 둘 중 하나를 표시할 수 있습니다. 일반적으로 패널 w 선언 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/accordion/dynamically-adding-an-accordion-pane-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6adc0b7985e5ba3da1684b645ae1b71b5112594a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 68c60ba6d4be5eb6709f7558d6be4165f8232a4f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="dynamically-adding-an-accordion-pane-vb"></a>동적으로 추가 하는 아코디언 창 (VB)
 ====================
@@ -62,5 +62,5 @@ Accordion 컨트롤 서버 쪽 코드에 모든 중요 한 속성을 노출 합�
 
 accordion의 데이터를 서버 쪽 코드에 의해 동적으로 추가 되었습니다 ([전체 크기 이미지를 보려면 클릭](dynamically-adding-an-accordion-pane-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[이전](databinding-to-an-accordion-vb.md)
+> [!div class="step-by-step"]
+> [이전](databinding-to-an-accordion-vb.md)

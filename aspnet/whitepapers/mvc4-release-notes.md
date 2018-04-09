@@ -2,21 +2,21 @@
 uid: whitepapers/mvc4-release-notes
 title: ASP.NET MVC 4 | Microsoft Docs
 author: rick-anderson
-description: "이 문서는 ASP.NET MVC 4의 릴리스에 대해 설명합니다."
+description: 이 문서는 ASP.NET MVC 4의 릴리스에 대해 설명합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/09/2011
 ms.topic: article
 ms.assetid: f014524f-25c0-4094-b8e1-886d99536f00
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/mvc4-release-notes
 msc.type: content
-ms.openlocfilehash: bea6f6112388290a2c6b5ed267626ba28fc36671
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: dbcea6090a0376b8732e02c0891721672bfe50f9
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-mvc-4"></a>ASP.NET MVC 4
 ====================
@@ -103,7 +103,7 @@ ASP.NET Web API에는 다음과 같은 기능에 대 한 지원이 포함 됩니
 - **웹 API 프로젝트 템플릿을:** 선택 새 웹 API 프로젝트에서 새 MVC 4 프로젝트 마법사를 신속 하 게 시작 하 고 실행할 ASP.NET Web API를 선택 합니다.
 - **스 캐 폴딩:** 사용은 **컨트롤러 추가** 신속 하 게 Entity Framework를 기반으로 하는 web API 컨트롤러를 스 캐 폴드 하려면 대화 상자에 모델 형식을 기반으로 합니다.
 
-ASP.NET Web API에 대 한 자세한 내용은 링크 참조 [https://www.asp.net/web-api](../web-api/index.md)합니다.
+ASP.NET Web API에 대 한 자세한 내용은 링크 참조 [ https://www.asp.net/web-api ](../web-api/index.md)합니다.
 
 <a id="_Toc303253808"></a>
 ### <a name="enhancements-to-default-project-templates"></a>기본 프로젝트 템플릿의 향상 된 기능
@@ -134,7 +134,7 @@ ASP.NET Web API에 대 한 자세한 내용은 링크 참조 [https://www.asp.ne
 
 새 디스플레이 모드 기능을 사용 하는 응용 프로그램은 요청을 수행 하는 브라우저에 따라 보기를 선택 합니다. 예를 들어 데스크톱 브라우저 홈 페이지를 요청 하는 경우 응용 프로그램 Views\Home\Index.cshtml 템플릿을 사용 될 수 있습니다. 모바일 브라우저 홈 페이지를 요청 하는 경우 응용 프로그램 Views\Home\Index.mobile.cshtml 서식 파일을 반환할 수 있습니다.
 
-특정 브라우저 종류에 대 한 레이아웃 및 부분을 재정의할 수도 있습니다. 예:
+특정 브라우저 종류에 대 한 레이아웃 및 부분을 재정의할 수도 있습니다. 예를 들어:
 
 - Views\Shared 폴더 모두에 포함 된 경우는 \_Layout.cshtml 및 \_Layout.mobile.cshtml 템플릿, 응용 프로그램 사용은 기본적으로 \_모바일 브라우저와 의요청을하는동안Layout.mobile.cshtml\_다른 요청 하는 동안 Layout.cshtml 합니다.
 - 둘 다 포함 된 폴더 \_MyPartial.cshtml 및 \_MyPartial.mobile.cshtml, 명령 @Html.Partial("\_MyPartial")은 렌더링 \_MyPartial.mobile.cshtml 모바일에서 요청 하는 동안 브라우저 및 \_다른 요청 하는 동안 MyPartial.cshtml 합니다.
@@ -230,7 +230,7 @@ ASP.NET MVC 4 릴리스 후보 릴리스 정보는 여기에서 확인할 수 �
 - **경로의 메시지 처리기 당:** 지정된 된 경로 대 한 요청 체인에서 마지막 메시지 처리기를 지정할 수 있습니다. 이 통해 자신 들에 게 발송할 라우팅을 사용 하려면 안에서 따라 프레임에 대 한 지원 (비-*IHttpController*) 끝점입니다.
 - **진행률 알림을:** 는 *ProgressMessageHandler* 업로드 되 고 요청 엔터티 및 다운로드할 응답 엔터티 둘 다에 대 한 진행률 알림을 생성 합니다. 이 처리기를 사용 하 여 있기 요청 본문을 업로드 또는 다운로드 하는 응답 본문 떨어져 있는 정도 추적할 수 있습니다.
 - **콘텐츠 푸시:** 는 *PushStreamContent* 클래스 하려는 시나리오에서 데이터 공급자는 요청 또는 응답 (동기 또는 비동기)는 스트림을 사용 하 여에 직접 쓸 수 있도록 합니다. 경우는 *PushStreamContent* 출력 스트림 사용 하 여 action 대리자를 호출 하는 데이터를 받아들일 준비가 되었습니다. 스트림에 쓸 때 완료 하는 동안 필요한와 종가 대 한 개발자 스트림에 쓸 다음 수 있습니다. *PushStreamContent* 스트림의 닫는 검색 하 고 내부 비동기 완료 *작업* 콘텐츠 작성 하기 위한 합니다.
-- **오류 응답을 만드는:** 사용은 *HttpError* 일관 되 게 오류 정보에서 유효성 검사 오류 및 예외와 같은 여전히 적용 하면서를 나타내는 형식을 *IncludeErrorDetailPolicy* . 새로운 *CreateErrorResponse* 확장 메서드를 쉽게와 오류 응답을 만들 *HttpError* 콘텐츠로 합니다. *HttpError* 콘텐츠 완벽 하 게 콘텐츠를 협상 합니다.
+- **오류 응답을 만드는:** 사용은 *HttpError* 일관 되 게 오류 정보에서 유효성 검사 오류 및 예외와 같은 여전히 적용 하면서를 나타내는 형식을 *IncludeErrorDetailPolicy*. 새로운 *CreateErrorResponse* 확장 메서드를 쉽게와 오류 응답을 만들 *HttpError* 콘텐츠로 합니다. *HttpError* 콘텐츠 완벽 하 게 콘텐츠를 협상 합니다.
 - **제거 MediaRangeMapping:** 미디어 형식 범위는 이제 기본 콘텐츠 협상 자에 의해 처리 됩니다.
 - **단순 형식 매개 변수에 대 한 기본 매개 변수 바인딩에 이제 [FromUri]:** 모델 바인딩을 사용 하는 단순 형식 매개 변수가 기본 매개 변수 바인딩에 ASP.NET Web API의 이전 릴리스에서 합니다. 단순 형식 매개 변수에 대 한 기본 매개 변수 바인딩에 이제 *[FromUri]*합니다.
 - **작업 선택에 필요한 매개 변수가 인식:** ASP.NET Web API에서 작업 선택은 이제 경우에 선택 동작 URI에서 제공 하는 모든 필수 매개 변수가 제공 됩니다. 동작 메서드 시그니처의 인수에 대 한 기본값을 제공 하 여 매개 변수를 선택적으로 지정할 수 있습니다.
@@ -245,7 +245,7 @@ ASP.NET MVC 4 릴리스 후보 릴리스 정보는 여기에서 확인할 수 �
 - **연결 생성 기능 향상:** 는 *UrlHelper* 더 이상 의존 *HttpControllerContext*합니다. 이제 액세스할 수 있습니다는 *UrlHelper* 어떤 컨텍스트에서 여기서는 *HttpRequestMessage* ´ ï ´ 합니다.
 - **메시지 처리기 실행 순서 변경:** 메시지 처리기가 이제 대신 반대 순서로 구성 된 순서로 실행 됩니다.
 - **메시지 처리기를 연결에 대 한 도우미:** 새 *HttpClientFactory* 를 연결할 수 있는 *DelegatingHandlers* 만듭니다는 *HttpClient* 으로 원하는 파이프라인 준비가 되었습니다. 처리 된 대체 내부 처리기를 연결에 대 한 기능을 제공 (기본값은 *HttpClientHandler*) 뿐만 아니라 사용 하는 경우를 고 배선 해야 하나요 *HttpMessageInvoker* 또는 다른  *DelegatingHandler* 대신 *HttpClient* 위쪽 호출자입니다.
-- **ASP.NET 웹 최적화에서 Cdn에 대 한 지원:** 각각에 대해 지정할 수 있도록 하는 CDN 대체 경로가 번들 콘텐츠 배달 네트워크에 동일한 해당 리소스를 가리키는 추가 URL에 대 한 이제 ASP.NET 웹 최적화 지원을 제공 합니다. Cdn을 지 원하는 웹 응용 프로그램의 최종 소비자에 게 사용자 스크립트 및 스타일 번들 가깝게 지리적으로 가져올 수 있습니다.
+- **ASP.NET 웹 최적화에서 Cdn에 대 한 지원:** 각각에 대해 지정할 수 있도록 하는 CDN 대체 경로가 번들 콘텐츠 배달 네트워크에 동일한 해당 리소스를 가리키는 추가 URL에 대 한 이제 ASP.NET 웹 최적화 지원을 제공 합니다. Cdn을 지 원하는 웹 응용 프로그램의 최종 소비자에 게 사용자 스크립트 및 스타일 번들 가깝게 지리적으로 가져올 수 있습니다. CDN을 사용할 수 없는 경우 프로덕션 응용 프로그램에 대체를 구현 해야 합니다. 대체 (fallback)를 테스트 합니다.
 - **구성 서버로 이동 하 고 ASP.NET Web API 라우팅합니다 *WebApiConfig.Register* resused 테스트 코드에서 일 수 있는 정적 메서드.** 이전에 ASP.NET Web API 경로에 추가 된 *RouteConfig.RegisterRoutes* 표준 MVC와 함께 라우팅합니다. 기본 ASP.NET Web API 라우트하 고 구성 하는 별도의 이제 처리 *WebApiConfig.Register* 을 쉽게 테스트할 메서드.
 
 <a id="_Toc303253815"></a>
@@ -261,7 +261,7 @@ ASP.NET MVC 4 릴리스 후보 릴리스 정보는 여기에서 확인할 수 �
     - *MvcCSharpRazorCodeGenerator*
     - *MvcVBRazorCodeParser*
 
- 다음 방법도 제거 되었습니다. 
+  다음 방법도 제거 되었습니다. 
 
     - *MvcCSharpRazorCodeParser.ParseInheritsStatement(System.Web.Razor.Parser.CodeBlockInfo)*
     - *MvcWebPageRazorHost.DecorateCodeGenerator(System.Web.Razor.Generator.RazorCodeGenerator)*
@@ -275,22 +275,23 @@ ASP.NET MVC 4 릴리스 후보 릴리스 정보는 여기에서 확인할 수 �
 
     **필수 업데이트**
 
-    1. 루트 Web.config 파일에는 새로운 추가  *&lt;appSettings&gt;*  항목 키와 *webPages:Version* 값 *1.0.0.0*합니다. 
+  1. 루트 Web.config 파일에는 새로운 추가 *&lt;appSettings&gt;* 항목 키와 *webPages:Version* 값 *1.0.0.0*합니다. 
 
-        [!code-xml[Main](mvc4-release-notes/samples/sample7.xml)]
-    2. 솔루션 탐색기에서 프로젝트 이름을 마우스 오른쪽 단추로 클릭 하 고 프로젝트 언로드를 선택 합니다. 그런 다음 이름을 다시 마우스 오른쪽 단추로 클릭 하 고 편집 선택 *ProjectName*.csproj 합니다.
-    3. 다음 어셈블리 참조를 찾습니다. 
+      [!code-xml[Main](mvc4-release-notes/samples/sample7.xml)]
+  2. 솔루션 탐색기에서 프로젝트 이름을 마우스 오른쪽 단추로 클릭 하 고 프로젝트 언로드를 선택 합니다. 그런 다음 이름을 다시 마우스 오른쪽 단추로 클릭 하 고 편집 선택 *ProjectName*.csproj 합니다.
+  3. 다음 어셈블리 참조를 찾습니다. 
 
-        [!code-xml[Main](mvc4-release-notes/samples/sample8.xml)]
+      [!code-xml[Main](mvc4-release-notes/samples/sample8.xml)]
 
-        다음으로 바꾸세요.
+      다음으로 바꾸세요.
 
-        [!code-xml[Main](mvc4-release-notes/samples/sample9.xml)]
-    4. 변경 내용을 저장, 하면 편집 된 다음 마우스 오른쪽 단추로 클릭 프로젝트 다시 로드를 선택 하 고 프로젝트 (.csproj) 파일을 닫습니다.
+      [!code-xml[Main](mvc4-release-notes/samples/sample9.xml)]
+  4. 변경 내용을 저장, 하면 편집 된 다음 마우스 오른쪽 단추로 클릭 프로젝트 다시 로드를 선택 하 고 프로젝트 (.csproj) 파일을 닫습니다.
+
 - **4.5에서 ASP.NET MVC 4 프로젝트 대상 4.0로 변경 EntityFramework 어셈블리 참조를 업데이트 하지 않습니다:** 변경할 경우 ASP.NET MVC 4 프로젝트 대상 4.0 대상으로 하는 4.5 EntityFramework 어셈블리에 대 한 참조는 여전히 가리킵니다 후 4.5 버전입니다. 이 문제 제거를 수정 하 고 EntityFramework NuGet 패키지를 다시 설치 하십시오에.
-- **4.0 대상 4.5에서 변경 된 후 Azure에서 ASP.NET MVC 4 응용 프로그램을 실행 하는 경우 403 사용할 수 없음:** 4.5 대상으로 한 후 대상 4.0에는 ASP.NET MVC 4 프로젝트를 변경 하 고 다음 Azure에 배포 런타임에 403 사용할 수 없음 오류가 표시 될 수 있습니다. 이 문제를 해결 하려면 web.config에 다음을 추가 합니다.`<modules runAllManagedModulesForAllRequests="true" />`
+- **4.0 대상 4.5에서 변경 된 후 Azure에서 ASP.NET MVC 4 응용 프로그램을 실행 하는 경우 403 사용할 수 없음:** 4.5 대상으로 한 후 대상 4.0에는 ASP.NET MVC 4 프로젝트를 변경 하 고 다음 Azure에 배포 런타임에 403 사용할 수 없음 오류가 표시 될 수 있습니다. 이 문제를 해결 하려면 web.config에 다음을 추가 합니다. `<modules runAllManagedModulesForAllRequests="true" />`
 - **Visual Studio 2012를 입력 하는 경우 충돌을 '\' Razor 파일의 문자열 리터럴에서 합니다.** 실행 되도록 문제를 해결 리터럴 문자열의 닫는 따옴표를 먼저 입력 합니다.
-- **찾아 &quot;계정/관리&quot; CHS, TRK 및 CHT 언어에 대 한 런타임 오류가 인터넷 템플릿 결과에 있습니다.** 문제를 해결 하려면 구분해 페이지를 수정  *@User.Identity.Name*  사용 하 여 내 유일한 콘텐츠로  *&lt;강력한&gt;*  태그입니다.
+- <strong>찾아 &quot;계정/관리&quot; CHS, TRK 및 CHT 언어에 대 한 런타임 오류가 인터넷 템플릿 결과에 있습니다.</strong> 문제를 해결 하려면 구분해 페이지를 수정 <em>@User.Identity.Name</em> 사용 하 여 내 유일한 콘텐츠로 <em>&lt;강력한&gt;</em> 태그입니다.
 - **Google 및 LinkedIn 공급자는 Azure 웹 사이트 내에서 지원 되지 않습니다.** Azure 웹 사이트를 배포 하는 경우 다른 인증 공급자를 사용 합니다.
 - **UriPathExtensionMapping IIS 8 Express/IIS와 함께 사용할 때 확장을 사용 하려고 할 때 404 찾을 수 없음 오류를 수신는 합니다.** 정적 파일 처리기를 사용 하는 web Api에 대 한 요청을 방해할 *UriPathExtensionMappings*합니다. 설정 *runAllManagedModulesForAllRequests = true* 문제를 해결 하려면 web.config에 있습니다.
 - **Controller.Execute 방법은 더 이상 이라고 합니다.** 모든 MVC 컨트롤러는 이제 항상 비동기적으로 실행 합니다.

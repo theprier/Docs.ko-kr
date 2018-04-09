@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/getting-started/real-time-web-applications-with-signalr
-title: "랩 관련 한 실질적인: SignalR과 실시간 웹 응용 프로그램 | Microsoft Docs"
+title: '랩 관련 한 실질적인: SignalR과 실시간 웹 응용 프로그램 | Microsoft Docs'
 author: rick-anderson
-description: "실시간 웹 응용 프로그램 서버 쪽으로 실시간으로 발생 하는 대로 연결 된 클라이언트에 콘텐츠를 기능입니다. ASP는 ASP.NET 개발자를 위한..."
+description: 실시간 웹 응용 프로그램 서버 쪽으로 실시간으로 발생 하는 대로 연결 된 클라이언트에 콘텐츠를 기능입니다. ASP는 ASP.NET 개발자를 위한...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/16/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/getting-started/real-time-web-applications-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 22123a9c61e6830f3f9f66a45182e1e923950341
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5a2bc120ded18ad2302fd6c5cde65a5323e86ca8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="hands-on-lab-real-time-web-applications-with-signalr"></a>SignalR과 실습 랩: 실시간 웹 응용 프로그램
 ====================
@@ -34,7 +34,7 @@ ms.lasthandoff: 01/24/2018
 > 
 > ![SignalR 아키텍처](real-time-web-applications-with-signalr/_static/image1.png)
 > 
-> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [http://aka.ms/webcamps-training-kit](http://aka.ms/webcamps-training-kit)합니다.
+> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit)합니다.
 
 
 <a id="Overview"></a>
@@ -49,7 +49,7 @@ ms.lasthandoff: 01/24/2018
 - 사용 하 여 SignalR 응용 프로그램 확장 **SQL Server**합니다.
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>필수 구성 요소
+### <a name="prerequisites"></a>전제 조건
 
 다음은이 실습 랩을 완료 하려면 필요 합니다.
 
@@ -160,12 +160,12 @@ SignalR 지원 **서버 푸시** 또는 **브로드캐스트** 기능을 자동�
 
     *SignalR 패키지 설치*
 
-    > [!NOTE]
-    > 설치할 때 **SignalR** 를 수동으로 업데이트 해야 합니다는 완전히 새로운 MVC 5 응용 프로그램에서 NuGet 패키지 버전 2.0.2, **OWIN** 버전 2.0.1 패키지 (또는 이상) SignalR을 설치 하기 전에. 이 작업을 수행 하려면 다음 스크립트를 실행할 수 있습니다는 **패키지 관리자 콘솔**:
-    > 
-    > [!code-powershell[Main](real-time-web-applications-with-signalr/samples/sample2.ps1)]
-    > 
-    > SignalR의 이후 릴리스에서 OWIN 종속성 자동으로 업데이트 됩니다.
+   > [!NOTE]
+   > 설치할 때 **SignalR** 를 수동으로 업데이트 해야 합니다는 완전히 새로운 MVC 5 응용 프로그램에서 NuGet 패키지 버전 2.0.2, **OWIN** 버전 2.0.1 패키지 (또는 이상) SignalR을 설치 하기 전에. 이 작업을 수행 하려면 다음 스크립트를 실행할 수 있습니다는 **패키지 관리자 콘솔**:
+   > 
+   > [!code-powershell[Main](real-time-web-applications-with-signalr/samples/sample2.ps1)]
+   > 
+   > SignalR의 이후 릴리스에서 OWIN 종속성 자동으로 업데이트 됩니다.
 3. **솔루션 탐색기**, 확장는 **스크립트** 폴더 및 표시 하는 SignalR *js* 솔루션에 추가 된 파일이 있습니다.
 
     ![SignalR JavaScript 참조](real-time-web-applications-with-signalr/_static/image10.png "SignalR JavaScript 참조")
@@ -349,7 +349,7 @@ SignalR 백플레인에서 작동 방식, 여기에 대 한 자세한 내용은 
     ![Service Broker 상태를 쿼리](real-time-web-applications-with-signalr/_static/image25.png "Service Broker 상태를 쿼리 합니다.")
 
     *Service Broker 상태를 쿼리합니다.*
-8. 하는 경우의 값은 **은\_브로커\_활성화** 데이터베이스의 열은 &quot;0&quot;를 사용 하도록 설정 하려면 다음 명령을 사용 합니다. 대체  **&lt;귀하가 데이터베이스&gt;**  데이터베이스를 만들 때 설정한 이름 (예:: SignalR).
+8. 하는 경우의 값은 **은\_브로커\_활성화** 데이터베이스의 열은 &quot;0&quot;를 사용 하도록 설정 하려면 다음 명령을 사용 합니다. 대체 **&lt;귀하가 데이터베이스&gt;** 데이터베이스를 만들 때 설정한 이름 (예:: SignalR).
 
     [!code-sql[Main](real-time-web-applications-with-signalr/samples/sample12.sql)]
 
@@ -369,7 +369,7 @@ SignalR 백플레인에서 작동 방식, 여기에 대 한 자세한 내용은 
 
     [!code-powershell[Main](real-time-web-applications-with-signalr/samples/sample13.ps1)]
 2. 프로젝트에 대해 이전 단계 하지만이 이번 반복 **GeekQuiz2**합니다.
-3. SQL Server 백플레인에서 구성 하려면 엽니다는 **Startup.cs** 의 파일은 **GeekQuiz** 프로젝트 및 다음 코드를 추가 하는 **구성** 메서드. 대체  **&lt;귀하가 데이터베이스&gt;**  을 SQL Server 백플레인에서 만들 때 사용한 데이터베이스 이름입니다. 이 단계를 반복 하는 **GeekQuiz2** 프로젝트.
+3. SQL Server 백플레인에서 구성 하려면 엽니다는 **Startup.cs** 의 파일은 **GeekQuiz** 프로젝트 및 다음 코드를 추가 하는 **구성** 메서드. 대체 **&lt;귀하가 데이터베이스&gt;** 을 SQL Server 백플레인에서 만들 때 사용한 데이터베이스 이름입니다. 이 단계를 반복 하는 **GeekQuiz2** 프로젝트.
 
     (코드 조각- *RealTimeSignalR-e x 2-StartupConfiguration*)
 

@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/11-adding-email-to-your-web-site
-title: "(Razor) 사이트 페이지는 ASP.NET 웹에서 전자 메일 보내기 | Microsoft Docs"
+title: (Razor) 사이트 페이지는 ASP.NET 웹에서 전자 메일 보내기 | Microsoft Docs
 author: tfitzmac
-description: "이 장에서 웹 사이트에서 자동화 된 전자 메일 메시지를 전송 하는 방법을 설명 합니다."
+description: 이 장에서 웹 사이트에서 자동화 된 전자 메일 메시지를 전송 하는 방법을 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/11-adding-email-to-your-web-site
 msc.type: authoredcontent
-ms.openlocfilehash: c5878c3bc468daef050dcebee99f64441066409a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9be242d238c627a9557fe7ff7e596974e5b7d1c8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="sending-email-from-an-aspnet-web-pages-razor-site"></a>ASP.NET 웹 페이지 (Razor) 사이트에서 전자 메일 보내기
 ====================
@@ -48,7 +48,7 @@ ms.lasthandoff: 01/24/2018
 
 모든 종류의 웹 사이트에서 전자 메일 보내기 해야 이유가 있습니다. 사용자에 게 확인 메시지를 보낼 수 있습니다 (예: 새 사용자를 등록 합니다.) 자신에 게 알림을 보낼 수 있습니다 또는 `WebMail` 도우미를 사용 하면 쉽게 전자 메일을 보낼 수 있습니다.
 
-사용 하 여 `WebMail` 도우미, SMTP 서버에 액세스할 수 있도록 해야 합니다. (SMTP는 *Simple Mail Transfer Protocol*.) SMTP 서버에만 메시지를 받는 사람의 서버 &#8212;를 전달 하는 전자 메일 서버는 해당 전자 메일의 아웃 바운드 쪽입니다. 호스팅 공급자를 사용 하 여 웹 사이트에 대 한 아마도 설정 하면 전자 메일을 가진 및 SMTP server 이름이 무엇 인지 전달할 수 있습니다. 회사 네트워크 내부 작업 관리자 또는 IT 부서 일반적으로 정보를 제공할 수 있습니다는 사용할 수 있는 SMTP 서버에 대 한 합니다. 집에서 작업 하는 경우 해당 SMTP 서버의 이름을 알 수 있는 일반 전자 메일 공급자를 사용 하 여 테스트할 수도 합니다. 일반적으로 필요합니다.
+사용 하 여 `WebMail` 도우미, SMTP 서버에 액세스할 수 있도록 해야 합니다. (SMTP는 *Simple Mail Transfer Protocol*.) SMTP 서버에만 받는 사람의 서버로 메시지를 전달 하는 전자 메일 서버는 &#8212; 전자 메일의 아웃 바운드 측은 합니다. 호스팅 공급자를 사용 하 여 웹 사이트에 대 한 아마도 설정 하면 전자 메일을 가진 및 SMTP server 이름이 무엇 인지 전달할 수 있습니다. 회사 네트워크 내부 작업 관리자 또는 IT 부서 일반적으로 정보를 제공할 수 있습니다는 사용할 수 있는 SMTP 서버에 대 한 합니다. 집에서 작업 하는 경우 해당 SMTP 서버의 이름을 알 수 있는 일반 전자 메일 공급자를 사용 하 여 테스트할 수도 합니다. 일반적으로 필요합니다.
 
 - SMTP 서버의 이름입니다.
 - 포트 번호입니다. 이 거의 항상 25입니다. 그러나 ISP 포트 587을 사용 하도록 해야 할 수 있습니다. 전자 메일에 대 한 secure sockets layer (SSL)를 사용 하는 경우에 다른 포트를 할 수 있습니다. 전자 메일 공급자에 문의 하십시오.
@@ -86,23 +86,23 @@ ms.lasthandoff: 01/24/2018
 
     수정 다음 전자 메일의 코드에서 관련된 설정:
 
-    - 설정 `your-SMTP-host` 에 액세스할 수 있는 SMTP 서버의 이름입니다.
-    - 설정 `your-user-name-here` SMTP 서버 계정의 사용자 이름에 있습니다.
-    - 설정 `your-account-password` 를 SMTP 서버 계정의 암호입니다.
-    - 설정 `your-email-address-here` 자신의 전자 메일 주소로 합니다. 메시지에서 보내는 전자 메일 주소입니다. (다른 지정할 수는 일부 전자 메일 공급자 주저 하지 마시기 바랍니다 `From` 주소 및 사용자 이름으로 사용 합니다는 `From` 주소입니다.)
+   - 설정 `your-SMTP-host` 에 액세스할 수 있는 SMTP 서버의 이름입니다.
+   - 설정 `your-user-name-here` SMTP 서버 계정의 사용자 이름에 있습니다.
+   - 설정 `your-account-password` 를 SMTP 서버 계정의 암호입니다.
+   - 설정 `your-email-address-here` 자신의 전자 메일 주소로 합니다. 메시지에서 보내는 전자 메일 주소입니다. (다른 지정할 수는 일부 전자 메일 공급자 주저 하지 마시기 바랍니다 `From` 주소 및 사용자 이름으로 사용 합니다는 `From` 주소입니다.)
 
-    > [!TIP] 
-    > 
-    > <a id="configuring_email_settings"></a>
-    > ### <a name="configuring-email-settings"></a>전자 메일 설정 구성
-    > 
-    > SMTP 서버, 포트 번호 및에 대 한 올바른 설정을 있는지 확인 하는 경우에 따라 어려울 수 있습니다. 다음은 이에 대한 몇 가지 팁입니다.
-    > 
-    > - SMTP 서버 이름을 방식은 다음과 같이 `smtp.provider.com` 또는 `smtp.provider.net`합니다. 그러나 사이트를 호스팅 공급자에 게시 하는 경우 SMTP 서버 이름을 해당 지점에서 않을 `localhost`합니다. 게시 한 후 사이트 공급자의 서버에서 실행 되는 전자 메일 서버 응용 프로그램의 관점에서 로컬 수 있기 때문입니다. 게시 프로세스의 일부로 SMTP 서버 이름을 변경 해야 할 서버 이름에이 변경 될 수도 있습니다.
-    > - 포트 번호는 일반적으로 25입니다. 그러나 일부 공급자 사용 해야 할 포트 587 또는 일부 다른 포트입니다.
-    > - 올바른 자격 증명을 사용 하 고 있는지 확인 합니다. 사이트를 호스팅 공급자에 게시 한 경우 특별히 설정 된 공급자가 전자 메일에 대 한 자격 증명을 사용 합니다. 이러한 게시에 사용할 자격 증명과 다를 수 있습니다.
-    > - 경우에 따라 자격 증명을 전혀 필요 하지 않습니다. 개인 ISP를 사용 하 여 메일을 보내는 전자 메일 공급자 자격 증명 이미 알고 될 수 있습니다. 를 게시 한 후 로컬 컴퓨터에서 테스트 아니라 다른 자격 증명을 사용 하도록 할 수 있습니다.
-    > - 전자 메일 공급자가 암호화를 사용 하는 경우 설정 해야 `WebMail.EnableSsl` 를 `true`합니다.
+     > [!TIP] 
+     > 
+     > <a id="configuring_email_settings"></a>
+     > ### <a name="configuring-email-settings"></a>전자 메일 설정 구성
+     > 
+     > SMTP 서버, 포트 번호 및에 대 한 올바른 설정을 있는지 확인 하는 경우에 따라 어려울 수 있습니다. 다음은 이에 대한 몇 가지 팁입니다.
+     > 
+     > - SMTP 서버 이름을 방식은 다음과 같이 `smtp.provider.com` 또는 `smtp.provider.net`합니다. 그러나 사이트를 호스팅 공급자에 게시 하는 경우 SMTP 서버 이름을 해당 지점에서 않을 `localhost`합니다. 게시 한 후 사이트 공급자의 서버에서 실행 되는 전자 메일 서버 응용 프로그램의 관점에서 로컬 수 있기 때문입니다. 게시 프로세스의 일부로 SMTP 서버 이름을 변경 해야 할 서버 이름에이 변경 될 수도 있습니다.
+     > - 포트 번호는 일반적으로 25입니다. 그러나 일부 공급자 사용 해야 할 포트 587 또는 일부 다른 포트입니다.
+     > - 올바른 자격 증명을 사용 하 고 있는지 확인 합니다. 사이트를 호스팅 공급자에 게시 한 경우 특별히 설정 된 공급자가 전자 메일에 대 한 자격 증명을 사용 합니다. 이러한 게시에 사용할 자격 증명과 다를 수 있습니다.
+     > - 경우에 따라 자격 증명을 전혀 필요 하지 않습니다. 개인 ISP를 사용 하 여 메일을 보내는 전자 메일 공급자 자격 증명 이미 알고 될 수 있습니다. 를 게시 한 후 로컬 컴퓨터에서 테스트 아니라 다른 자격 증명을 사용 하도록 할 수 있습니다.
+     > - 전자 메일 공급자가 암호화를 사용 하는 경우 설정 해야 `WebMail.EnableSsl` 를 `true`합니다.
 4. 실행 된 *EmailRequest.cshtml* 브라우저에서 페이지입니다. (있는지 확인 페이지에서 선택한는 **파일** 실행 하기 전에 작업 영역입니다.)
 5. 사용자 이름 및 문제 설명, 입력 한 다음 클릭는 **전송** 단추입니다. 리디렉션됩니다 하는 *ProcessRequest.cshtml* 페이지에서 메시지를 확인 하는 전자 메일 메시지를 보냅니다입니다. 
 
@@ -135,7 +135,7 @@ ms.lasthandoff: 01/24/2018
 8. `Submit` 단추를 클릭합니다. 이동 하는 이전에 *ProcessFile.cshtml* 페이지에서 메시지를 확인 하 고 하는 메시지를 보냅니다 전자 메일 첨부 파일을 사용 합니다.
 
 <a id="Additional_Resources"></a>
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 
 - [ASP.NET 웹 페이지(Razor) 문제 해결 가이드](https://go.microsoft.com/fwlink/?LinkId=253001)

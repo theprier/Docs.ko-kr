@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-database-server-for-web-deploy-publishing
-title: "배포 게시를 웹에 대 한 데이터베이스 서버 구성 | Microsoft Docs"
+title: 배포 게시를 웹에 대 한 데이터베이스 서버 구성 | Microsoft Docs
 author: jrjlee
-description: "이 항목에서는 웹 배포 및 게시를 지원 하도록 SQL Server 2008 R2 데이터베이스 서버를 구성 하는 방법에 설명 합니다. 이 항목에 설명 된 작업은 co 중..."
+description: 이 항목에서는 웹 배포 및 게시를 지원 하도록 SQL Server 2008 R2 데이터베이스 서버를 구성 하는 방법에 설명 합니다. 이 항목에 설명 된 작업은 co 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-database-server-for-web-deploy-publishing
 msc.type: authoredcontent
-ms.openlocfilehash: 98fd728f48f6fb64a61686bc58824b9fb3a28b13
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: a2340c0d561ed274e281b5f6d942af0a2027315a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-a-database-server-for-web-deploy-publishing"></a>웹 배포 게시에 대 한 데이터베이스 서버 구성
 ====================
@@ -26,7 +26,7 @@ ms.lasthandoff: 03/15/2018
 
 > 이 항목에서는 웹 배포 및 게시를 지원 하도록 SQL Server 2008 R2 데이터베이스 서버를 구성 하는 방법에 설명 합니다.
 > 
-> 이 항목에 설명 된 작업은 일반적으로 모든 배포 시나리오 & #x 2014; 웹 서버에서 IIS 웹 배포 도구 (웹 배포) 원격 에이전트 서비스, 웹 배포 처리기 또는 오프 라인 배포를 사용 하도록 구성 된 여부와 상관 또는 단일 웹 서버 또는 서버 팜에서 응용 프로그램 실행 중입니다. 데이터베이스를 배포 하는 방법은 보안 요구 사항 및 기타 고려 사항에 따라 변경 될 수 있습니다. 예를 들어 상관 없이 샘플 데이터를 데이터베이스를 배포할 수 있습니다 및 사용자 역할 매핑을 배포 또는 배포 후 수동으로 구성할 수 있습니다. 그러나 데이터베이스 서버를 구성 하는 방법은 동일 하 게 유지 합니다.
+> 이 항목에 설명 된 작업은 모든 배포 시나리오에 공통적으로 적용&#x2014;웹 서버에서 IIS 웹 배포 도구 (웹 배포) 원격 에이전트 서비스, 웹 배포 처리기 또는 오프 라인 배포를 사용 하도록 구성 된 여부와 상관 또는 사용자의 단일 웹 서버 또는 서버 팜에서 응용 프로그램 실행 중입니다. 데이터베이스를 배포 하는 방법은 보안 요구 사항 및 기타 고려 사항에 따라 변경 될 수 있습니다. 예를 들어 상관 없이 샘플 데이터를 데이터베이스를 배포할 수 있습니다 및 사용자 역할 매핑을 배포 또는 배포 후 수동으로 구성할 수 있습니다. 그러나 데이터베이스 서버를 구성 하는 방법은 동일 하 게 유지 합니다.
 
 
 웹 배포를 지원 하도록 데이터베이스 서버를 구성 하는 데 추가 제품 또는 도구를 설치할 필요가 없습니다. 데이터베이스 서버와 웹 서버를 서로 다른 컴퓨터에서 실행 있다고 가정 하면:
@@ -65,8 +65,8 @@ TCP/IP를 통해 통신 하는 SQL Server를 사용 하려면 SQL Server 구성 
 1. 에 **시작** 메뉴에서 **모든 프로그램**, 클릭 **Microsoft SQL Server 2008 R2**, 클릭 **구성 도구**, 클릭 하 고 **SQL Server 구성 관리자**합니다.
 2. 트리 뷰 창에서 확장 **SQL Server 네트워크 구성**, 클릭 하 고 **MSSQLSERVER에 대 한 프로토콜**합니다.
 
-    > [!NOTE]
-    > SQL Server의 여러 인스턴스를 설치한 경우 표시 됩니다는 **에 대 한 프로토콜 * * * [인스턴스 이름]* 각 인스턴스에 대 한 항목입니다. 인스턴스에 의해 인스턴스 기반에서 네트워크 설정을 구성 해야 합니다.
+   > [!NOTE]
+   > SQL Server의 여러 인스턴스를 설치한 경우 표시 됩니다는 <strong>에 대 한 프로토콜</strong><em>[인스턴스 이름]</em> 각 인스턴스에 대 한 항목입니다. 인스턴스에 의해 인스턴스 기반에서 네트워크 설정을 구성 해야 합니다.
 3. 세부 정보 창에서 마우스 오른쪽 단추로 클릭는 **TCP/IP** 행을 클릭 하 고 **사용**합니다.
 
     ![](configuring-a-database-server-for-web-deploy-publishing/_static/image1.png)
@@ -130,7 +130,7 @@ SQL Server의 기본 인스턴스를 사용 하는 있다고 가정할 경우 �
 
 ## <a name="configure-logins-and-database-permissions"></a>로그인을 구성 및 데이터베이스 권한
 
-인터넷 정보 서비스 (IIS)에 웹 응용 프로그램을 배포 하면 응용 프로그램이 응용 프로그램 풀의 id를 사용 하 여 실행 합니다. 도메인 환경에서 응용 프로그램 풀 id에는 네트워크 리소스에 액세스할 실행 되는 서버의 컴퓨터 계정을 사용 합니다. 컴퓨터 계정에는 다음 양식을 사용 * [도메인 이름]***\** * [컴퓨터 이름]***$ * * & #x 2014; 예를 들어 **FABRIKAM\TESTWEB1$**합니다. 네트워크를 통해 데이터베이스에 액세스 하려면 웹 응용 프로그램을 허용 하려면:
+인터넷 정보 서비스 (IIS)에 웹 응용 프로그램을 배포 하면 응용 프로그램이 응용 프로그램 풀의 id를 사용 하 여 실행 합니다. 도메인 환경에서 응용 프로그램 풀 id에는 네트워크 리소스에 액세스할 실행 되는 서버의 컴퓨터 계정을 사용 합니다. 컴퓨터 계정에는 다음 양식을 사용 <em>[도메인 이름]</em><strong>\<강력한 / ><em>[컴퓨터 이름]</em><strong>$</strong>&#x2014;예를 들어 <strong>FABRIKAM\TESTWEB1$</strong>합니다. 네트워크를 통해 데이터베이스에 액세스 하려면 웹 응용 프로그램을 허용 하려면:
 
 - SQL Server 인스턴스를 웹 서버 컴퓨터 계정에 대 한 로그인을 추가 합니다.
 - 모든 필수 데이터베이스 역할에 컴퓨터 계정 로그인 매핑 (일반적으로 **db\_datareader** 및 **db\_datawriter**).
@@ -231,6 +231,6 @@ SQL Server 로그인 이므로 데이터베이스 수준 개체 보다는 서버
 
 데이터베이스 프로젝트 배포에 대 한 지침을 참조 하십시오. [데이터베이스 프로젝트 배포](../web-deployment-in-the-enterprise/deploying-database-projects.md)합니다. 배포 후 스크립트를 실행 하 여 데이터베이스 역할 멤버 자격을 만들기에 대 한 지침을 참조 하십시오. [배포 데이터베이스 역할 멤버 자격이 테스트 환경에](../advanced-enterprise-web-deployment/deploying-database-role-memberships-to-test-environments.md)합니다. 멤버 자격 데이터베이스에서 발생할 수 있는 고유한 배포 과제를 충족 하는 방법에 대 한 지침을 참조 하십시오. [엔터프라이즈 환경에 배포 멤버 자격 데이터베이스](../advanced-enterprise-web-deployment/deploying-membership-databases-to-enterprise-environments.md)합니다.
 
->[!div class="step-by-step"]
-[이전](configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md)
-[다음](creating-a-server-farm-with-the-web-farm-framework.md)
+> [!div class="step-by-step"]
+> [이전](configuring-a-web-server-for-web-deploy-publishing-offline-deployment.md)
+> [다음](creating-a-server-farm-with-the-web-farm-framework.md)

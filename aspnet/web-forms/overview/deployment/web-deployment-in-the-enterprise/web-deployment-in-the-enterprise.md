@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/web-deployment-in-the-enterprise
-title: "웹 배포는 기업에서 | Microsoft Docs"
+title: 웹 배포는 기업에서 | Microsoft Docs
 author: jrjlee
-description: "이 자습서에서는 다양 한 개발자의 엔터프라이즈급 웹 응용 프로그램의 배포를 관리 하는 경우 발생 하는 과제를 충족 하는 방법을 설명..."
+description: 이 자습서에서는 다양 한 개발자의 엔터프라이즈급 웹 응용 프로그램의 배포를 관리 하는 경우 발생 하는 과제를 충족 하는 방법을 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/web-deployment-in-the-enterprise
 msc.type: authoredcontent
-ms.openlocfilehash: 6210d01f65bcadf8ae4209e372d5aac68861bd7a
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: fc463cb689f4f63a12788b80958c9fc8fe20119d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="web-deployment-in-the-enterprise"></a>기업에서 웹 배포
 ====================
@@ -66,7 +66,7 @@ ms.lasthandoff: 03/15/2018
 
 이 자습서에는 네 가지 주요 영역에 해당 하는 항목이 포함 되어 있습니다.
 
-이러한 항목 참조 솔루션 & #x 2014;는 Contact Manager 솔루션 & #x 2014; 소개 하 고 다운로드 한 로컬 컴퓨터에서 구성 하는 방법을 설명 합니다.
+이러한 항목 참조 솔루션을 소개&#x2014;Contact Manager 솔루션&#x2014;다운로드 하 여 로컬 컴퓨터에서 구성 하는 방법에 설명 합니다.
 
 - [Contact Manager 솔루션](the-contact-manager-solution.md)
 - [Contact Manager 솔루션 설정](setting-up-the-contact-manager-solution.md)
@@ -104,5 +104,5 @@ MSBuild 프로젝트 파일을 소개 하, 만들기 및 사용자 지정 프로
 - [웹 배포에 대 한 Team Foundation Server 구성](../configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment.md)합니다. 이 자습서에서는 수동으로 배포의 특정 빌드를 트리거 및 CI 프로세스의 일부로 자동화 된 배포를 비롯 한 다양 한 배포 시나리오를 지원 하도록 TFS를 구성 하는 방법을 설명 합니다.
 - [고급 엔터프라이즈 웹 배포](../advanced-enterprise-web-deployment/advanced-enterprise-web-deployment.md)합니다. 이 자습서에서는 사용자 지정 된 여러 환경에 대 한 데이터베이스 배포, 배포에서 파일 및 폴더를 제외 하 고 배포 프로세스 중 웹 응용 프로그램을 오프 라인 등의 다양 한 고급 배포 작업을 수행 하는 방법을 설명합니다 .
 
->[!div class="step-by-step"]
-[다음](the-contact-manager-solution.md)
+> [!div class="step-by-step"]
+> [다음](the-contact-manager-solution.md)

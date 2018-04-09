@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/hosting-aspnet-web-api/host-aspnet-web-api-in-an-azure-worker-role
-title: "ASP.NET Web API 2 Azure 작업자 역할에 호스트 | Microsoft Docs"
+title: ASP.NET Web API 2 Azure 작업자 역할에 호스트 | Microsoft Docs
 author: MikeWasson
-description: "이 자습서 OWIN를 사용 하 여 Web API 프레임 워크를 자체 호스트 하는 Azure 작업자 역할에 ASP.NET Web API를 호스트 하는 방법을 보여 줍니다. .NET (OWIN) de에 대 한 웹 인터페이스를 열기..."
+description: 이 자습서 OWIN를 사용 하 여 Web API 프레임 워크를 자체 호스트 하는 Azure 작업자 역할에 ASP.NET Web API를 호스트 하는 방법을 보여 줍니다. .NET (OWIN) de에 대 한 웹 인터페이스를 열기...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/02/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/hosting-aspnet-web-api/host-aspnet-web-api-in-an-azure-worker-role
 msc.type: authoredcontent
-ms.openlocfilehash: 9a7f8242bf482e81513accfe05e10a64ae0ca0b2
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7ba1dc850e2f9d9c88e6ddf263a796e1867a98be
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="host-aspnet-web-api-2-in-an-azure-worker-role"></a>ASP.NET Web API 2 Azure 작업자 역할에 호스트
 ====================
@@ -131,7 +131,7 @@ WorkerRole.cs에 대 한 전체 코드는 다음과 같습니다.
 
 [![](host-aspnet-web-api-in-an-azure-worker-role/_static/image11.png)](host-aspnet-web-api-in-an-azure-worker-role/_static/image10.png)
 
-서비스 배포, 배포 [id] 서비스 세부 정보 아래에 IP 주소를 찾습니다. 웹 브라우저를 열고 http:// 이동*주소*/테스트/1, 여기서 *주소* 는 계산 에뮬레이터에서 할당 된 IP 주소 예를 들어 `http://127.0.0.1:80/test/1`합니다. Web API 컨트롤러에서 응답이 표시 됩니다.
+서비스 배포, 배포 [id] 서비스 세부 정보 아래에 IP 주소를 찾습니다. 웹 브라우저를 열고 http:// 이동<em>주소</em>/테스트/1, 여기서 <em>주소</em> 는 계산 에뮬레이터에서 할당 된 IP 주소 예를 들어 `http://127.0.0.1:80/test/1`합니다. Web API 컨트롤러에서 응답이 표시 됩니다.
 
 ![](host-aspnet-web-api-in-an-azure-worker-role/_static/image12.png)
 
@@ -159,11 +159,11 @@ Azure 계정에 로그인 하지 않은 경우 클릭 **로그인**합니다.
 
 [![](host-aspnet-web-api-in-an-azure-worker-role/_static/image20.png)](host-aspnet-web-api-in-an-azure-worker-role/_static/image19.png)
 
-Azure 활동 로그 창에는 배포의 진행률이 표시 됩니다. 앱을 배포 하는 경우 http://appname.cloudapp.net/test/1을 찾습니다.
+Azure 활동 로그 창에는 배포의 진행률이 표시 됩니다. 로 이동 하는 응용 프로그램을 배포할 때 http://appname.cloudapp.net/test/1합니다.
 
 ![](host-aspnet-web-api-in-an-azure-worker-role/_static/image21.png)
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 - [프로젝트 Katana 개요](../../../aspnet/overview/owin-and-katana/an-overview-of-project-katana.md)
 - [GitHub에서 Katana 프로젝트](https://github.com/aspnet/AspNetKatana)

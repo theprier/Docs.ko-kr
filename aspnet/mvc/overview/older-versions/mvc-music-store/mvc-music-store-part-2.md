@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-2
-title: "2 단계: 컨트롤러 | Microsoft Docs"
+title: '2 단계: 컨트롤러 | Microsoft Docs'
 author: jongalloway
-description: "이 자습서 시리즈 모든 ASP.NET MVC Music Store 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 2 부에서는 컨트롤러에 설명 합니다."
+description: 이 자습서 시리즈 모든 ASP.NET MVC Music Store 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 2 부에서는 컨트롤러에 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/21/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: bdafd751e996e759d516d0fa25b09eff21241ed7
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 680cdea388d9b01961bd626643c0fd91c9205ed7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-2-controllers"></a>2 부: 컨트롤러
 ====================
@@ -63,7 +63,7 @@ HomeController.cs, 새 파일을 다음 코드로 만들어집니다.
 이제 사이트를 확인해 보겠습니다. 웹 서버를 시작 하 고 다음 중 하나를 사용 하는 사이트를 체험할 수 있습니다::
 
 - 디버그 ⇨ 디버깅 시작 메뉴 항목 선택
-- 도구 모음에서 녹색 화살표 단추를 클릭 합니다.![](mvc-music-store-part-2/_static/image2.jpg)
+- 도구 모음에서 녹색 화살표 단추를 클릭 합니다. ![](mvc-music-store-part-2/_static/image2.jpg)
 - 바로 가기 키, f5 키를 사용 합니다.
 
 위의 단계를 사용 하 여이 프로젝트를 컴파일하 되 고 그러면 ASP.NET Development Server를 시작 하려면 Visual Web Developer에 기본 제공 됩니다. 알림을, ASP.NET Development Server가 시작 되었음을 나타내기 위해 화면 아래에 나타나고에서 실행 되 고 있는지 포트 번호가 표시 됩니다.
@@ -116,7 +116,7 @@ StoreController 구현은 theIndex() "Hello에서 Store.Index()" 문자열을 �
 
 [!code-csharp[Main](mvc-music-store-part-2/samples/sample4.cs)]
 
-*참고:에서는 HttpUtility.HtmlEncode 유틸리티 메서드를 사용자 입력을 삭제 합니다. 따라서 사용자를 /Store/Browse 같은 링크와 함께 보기에 Javascript를 삽입 수 없습니다. 장르 =&lt;스크립트&gt;window.location= 'http://hackersite.com'&lt;/script&gt;합니다.*
+*참고:에서는 HttpUtility.HtmlEncode 유틸리티 메서드를 사용자 입력을 삭제 합니다. 따라서 사용자를 /Store/Browse 같은 링크와 함께 보기에 Javascript를 삽입 수 없습니다. 장르 =&lt;스크립트&gt;window.location='http://hackersite.com'&lt;/script&gt;합니다.*
 
 이제/저장소/찾아보기를 찾아보겠습니다? Genre Disco =
 
@@ -141,6 +141,6 @@ ASP.NET MVC를 통해이 이상 구성할 필요 없이 쉽게 수행할 수 있
 - 작업 메서드는 URL 요청에 응답 하 고 브라우저에 텍스트를 반환 합니다.이 컨트롤러를 추가 했습니다.
 
 
->[!div class="step-by-step"]
-[이전](mvc-music-store-part-1.md)
-[다음](mvc-music-store-part-3.md)
+> [!div class="step-by-step"]
+> [이전](mvc-music-store-part-1.md)
+> [다음](mvc-music-store-part-3.md)

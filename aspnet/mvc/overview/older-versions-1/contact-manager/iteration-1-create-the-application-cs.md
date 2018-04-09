@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-1-create-the-application-cs
-title: "반복 #1 – (C#) 응용 프로그램을 만들 | Microsoft Docs"
+title: '반복 #1 – (C#) 응용 프로그램을 만들 | Microsoft Docs'
 author: microsoft
-description: "첫 번째 반복에서는 만듭니다 연락처 관리자에는 가장 간단한 방법은 가능한. 기본적인 데이터베이스 작업에 대 한 지원을 추가 하 여: 만들기, 읽기, 업데이트 및 D...."
+description: '첫 번째 반복에서는 만듭니다 연락처 관리자에는 가장 간단한 방법은 가능한. 기본적인 데이터베이스 작업에 대 한 지원을 추가 하 여: 만들기, 읽기, 업데이트 및 D....'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-1-create-the-application-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 12927250595a8f3130328d2fe219280a13349787
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 30f626511164363fea2195a05e73aeee5764933b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="iteration-1--create-the-application-c"></a>반복 #1 – 만드는 응용 프로그램 (C#)
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [코드 다운로드](iteration-1-create-the-application-cs/_static/contactmanager_1_cs1.zip)
 
@@ -80,13 +80,13 @@ ASP.NET MVC 프레임 워크입니다. 다음 주소에서 ASP.NET MVC 프레임
 
 이 자습서에서는 데이터베이스에 액세스 하려면 Microsoft Entity Framework를 사용 했습니다. Entity Framework는.NET Framework 3.5 서비스 팩 1 포함 되어 있습니다. 다음 위치에서이 서비스 팩을 다운로드할 수 있습니다.
 
-[https://www.microsoft.com/downloads/details.aspx?familyid=ab99342f-5d1a-413d-8319-81da479ab0d7&amp;4a83-b309-53b7b77edf78&displaylang = en](https://www.microsoft.com/downloads/details.aspx?familyid=ab99342f-5d1a-413d-8319-81da479ab0d7&amp;displaylang=en)
+[https://www.microsoft.com/downloads/details.aspx?familyid=ab99342f-5d1a-413d-8319-81da479ab0d7&amp;displaylang=en](https://www.microsoft.com/downloads/details.aspx?familyid=ab99342f-5d1a-413d-8319-81da479ab0d7&amp;displaylang=en)
 
 이러한 다운로드 한 각 수행 하는 대신, 웹 플랫폼 설치 관리자 (웹 PI)를 활용할 수 있습니다. 다음 주소에서 웹 PI를 다운로드할 수 있습니다.
 
 [https://www.asp.net/downloads/essential/](https://www.asp.net/downloads/essential)
 
-## <a name="aspnet-mvc-project"></a>ASP.NET MVC 프로젝트
+## <a name="aspnet-mvc-project"></a>ASP.NET MVC Project
 
 ASP.NET MVC 웹 응용 프로그램 프로젝트입니다. Visual Studio를 시작 하 고 메뉴 옵션을 선택 **파일, 새 프로젝트**합니다. **새 프로젝트** (그림 1 참조) 대화 상자가 나타납니다. 선택 된 **웹** 프로젝트 형식 및 **ASP.NET MVC 웹 응용 프로그램** 템플릿. 새 프로젝트 이름을 *ContactManager* 확인 단추를 클릭 합니다.
 
@@ -171,11 +171,11 @@ Microsoft SQL Server, Oracle, MySQL 및 IBM DB2 데이터베이스를 비롯 한
 
 | **열 이름** | **데이터 형식** | **Null 허용** |
 | --- | --- | --- |
-| ID | int | false |
-| FirstName | Nvarchar (50) | false |
-| LastName | Nvarchar (50) | false |
-| 전화 번호 | Nvarchar (50) | false |
-| 메일 | nvarchar (255) | false |
+| ID | int | False |
+| FirstName | nvarchar(50) | False |
+| LastName | nvarchar(50) | False |
+| 전화 번호 | nvarchar(50) | False |
+| 메일 | nvarchar(255) | False |
 
 
 첫 번째 열, Id 열은 특별 합니다. Id 열을 Id 열 및 기본 키 열으로 표시 해야 합니다. 열 속성 (그림 6의 맨 아래에 검색)를 확장 하 고 Id 사양 속성 아래로 스크롤 하 여 열이 Identity 열 임을 나타낼 있습니다. 설정의 **(Id)** 속성 값을 **예**합니다.
@@ -262,7 +262,7 @@ Home 컨트롤러를 만들 때에 목록 1의 클래스를 가져옵니다.
 
 Home 컨트롤러 index () 작업을 이미 있습니다. 이 메서드를 나열 하는 2의 모양 수정 해야 합니다.
 
-**2-Controllers\HomeController.cs 나열**
+**Listing 2 - Controllers\HomeController.cs**
 
 [!code-csharp[Main](iteration-1-create-the-application-cs/samples/sample2.cs)]
 
@@ -298,7 +298,7 @@ Index () 메서드를 마우스 오른쪽 단추로 클릭 하 고 메뉴 옵션
 
 가지 인덱스 뷰를 수정 해야 합니다. 세부 정보 보기를 만드는 하지 것 때문에 세부 정보 링크를 제거할 수 있습니다. 찾기 및 인덱스 보기에서 다음 코드를 제거 합니다.
 
-{id = 항목입니다. Id가}) %&gt;
+{ id=item.Id })%&gt;
 
 인덱스 뷰를 수정한 후에 연락처 관리자 응용 프로그램을 실행할 수 있습니다. 디버깅 시작 메뉴 옵션 디버그을 선택 하거나 단순히 F5 키를 누릅니다. 처음에 응용 프로그램을 실행할 때 얻게 대화 상자 그림 14에서입니다. 옵션을 선택 **디버깅할 수 있도록 Web.config 파일을 수정** 확인 단추를 클릭 합니다.
 
@@ -354,7 +354,7 @@ Create () 메서드 본문에서 Entity Framework 데이터베이스에 새 연�
 
 만들기 뷰는 각 연락처 클래스의 속성에 대 한 양식 필드를 포함합니다. 뷰 만들기에 대 한 코드 목록 5에 포함 됩니다.
 
-**5-Views\Home\Create.aspx 나열**
+**Listing 5 - Views\Home\Create.aspx**
 
 [!code-aspx[Main](iteration-1-create-the-application-cs/samples/sample5.aspx)]
 
@@ -390,7 +390,7 @@ Edit() 메서드를 마우스 오른쪽 단추로 클릭 하 고 추가 보기 �
 
 추가 단추를 클릭 하면 새 편집 뷰를 자동으로 생성 됩니다. 생성 되는 HTML 폼에는 각 연락처 클래스 (참조 목록 7)의 속성에 해당 하는 필드가 포함 됩니다.
 
-**7-Views\Home\Edit.aspx 나열**
+**Listing 7 - Views\Home\Edit.aspx**
 
 [!code-aspx[Main](iteration-1-create-the-application-cs/samples/sample7.aspx)]
 
@@ -419,7 +419,7 @@ Edit() 메서드를 마우스 오른쪽 단추로 클릭 하 고 추가 보기 �
 
 (그림 21 참조) 연락처 레코드를 삭제 하기 위한 링크를 포함 하도록 인덱스 뷰를 수정 해야 합니다. 편집 링크를 포함 하는 동일한 테이블 셀에 다음 코드를 추가 해야 합니다.
 
-Html.ActionLink ({id = 항목입니다. Id가}) %&gt;
+Html.ActionLink( { id=item.Id }) %&gt;
 
 
 [![새 프로젝트 대화 상자](iteration-1-create-the-application-cs/_static/image21.jpg)](iteration-1-create-the-application-cs/_static/image41.png)
@@ -439,7 +439,7 @@ Html.ActionLink ({id = 항목입니다. Id가}) %&gt;
 
 Delete 보기의 내용은 목록 9에 포함 됩니다. 이 뷰를 확인 하는 양식을 포함 여부는 특정 연락처 해야 삭제할 (그림 21 참조).
 
-**9-Views\Home\Delete.aspx 나열**
+**Listing 9 - Views\Home\Delete.aspx**
 
 [!code-aspx[Main](iteration-1-create-the-application-cs/samples/sample9.aspx)]
 
@@ -490,5 +490,5 @@ Delete 보기의 내용은 목록 9에 포함 됩니다. 이 뷰를 확인 하�
 
 마지막으로, 가장 중요 한 점은 않아 응용 프로그램의 현재 반복 하거나 수 없습니다 쉽게 수정 유지 관리 합니다. 예를 들어 데이터베이스 액세스 논리 컨트롤러 작업에 오른쪽을 반영 됩니다. 이이 컨트롤러를 수정 하지 않고 데이터 액세스 코드를 수정할 수 없습니다 것을 의미 합니다. 이후 반복에서 연락처 관리자를 변경 하려면 복원 성도 뛰어납니다 확인 하기 위해 구현할 수 있습니다 하는 소프트웨어 디자인 패턴을 탐색 합니다.
 
->[!div class="step-by-step"]
-[다음](iteration-2-make-the-application-look-nice-cs.md)
+> [!div class="step-by-step"]
+> [다음](iteration-2-make-the-application-look-nice-cs.md)

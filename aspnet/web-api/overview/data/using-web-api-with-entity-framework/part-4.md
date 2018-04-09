@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/data/using-web-api-with-entity-framework/part-4
-title: "엔터티 관계를 처리 합니다. | Microsoft Docs"
+title: 엔터티 관계를 처리 합니다. | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/16/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-4
 msc.type: authoredcontent
-ms.openlocfilehash: 58a9dfb621630f23b37247b96ed3a19a661857f1
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 3c82724739b8ccb7c6b13788a5420af1e61c990b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="handling-entity-relations"></a>처리 엔터티 관계
 ====================
@@ -112,6 +112,6 @@ XML 포맷터는 다음과 같습니다.
 
 이 자습서에서는 필요 하지 않습니다는 `Author.Book` 탐색 속성 둘 수 있습니다.
 
->[!div class="step-by-step"]
-[이전](part-3.md)
-[다음](part-5.md)
+> [!div class="step-by-step"]
+> [이전](part-3.md)
+> [다음](part-5.md)

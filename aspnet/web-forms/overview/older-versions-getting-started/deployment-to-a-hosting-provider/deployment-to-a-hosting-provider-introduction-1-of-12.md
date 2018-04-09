@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-introduction-1-of-12
-title: "SQL Server Compact Visual Studio를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: 1 / 12-소개 | Microsoft Docs"
+title: 'SQL Server Compact Visual Studio를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: 1 / 12-소개 | Microsoft Docs'
 author: tdykstra
-description: "이 일련의 자습서 배포 하는 방법을 보여 줍니다. (게시) ASP.NET Visual Stu를 사용 하 여 SQL Server Compact 데이터베이스를 포함 하는 웹 응용 프로그램 프로젝트..."
+description: 이 일련의 자습서 배포 하는 방법을 보여 줍니다. (게시) ASP.NET Visual Stu를 사용 하 여 SQL Server Compact 데이터베이스를 포함 하는 웹 응용 프로그램 프로젝트...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/17/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-introduction-1-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: a0f38c83bd9231dbd37d3d505c90316af521b336
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 3f1572bb890ee136cdd746040a5efae2ce537116
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-introduction---1-of-12"></a>SQL Server Compact Visual Studio를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: 1 / 12-소개
 ====================
@@ -53,7 +53,7 @@ ms.lasthandoff: 02/12/2018
 
 엔터프라이즈 환경에서 연속 통합 프로세스를 구현 하는 보다 일반적인 사용 되며 프로덕션 환경에 일반적으로 회사의 서버에서 호스팅됩니다. 일반적으로 각기 다른 사용자가 다른 역할을 수행 합니다. 엔터프라이즈 배포에 대 한 정보를 참조 하십시오. [엔터프라이즈 시나리오에서 웹 응용 프로그램 배포](../../deployment/deploying-web-applications-in-enterprise-scenarios/deploying-web-applications-in-enterprise-scenarios.md)합니다.
 
-모든 규모의 웹 응용 프로그램을 Azure에 배포할 수도 및 대부분의 이러한 자습서에 표시 된 절차는 Azure 앱 서비스 웹 앱에도 적용 합니다. Azure에 대 한 소개를 참조 하십시오. [https://azure.microsoft.com](https://azure.microsoft.com)합니다.
+모든 규모의 웹 응용 프로그램을 Azure에 배포할 수도 및 대부분의 이러한 자습서에 표시 된 절차는 Azure 앱 서비스 웹 앱에도 적용 합니다. Azure에 대 한 소개를 참조 하십시오. [ https://azure.microsoft.com ](https://azure.microsoft.com)합니다.
 
 ## <a name="the-hosting-provider-shown-in-the-tutorials"></a>이 자습서에 표시 된 호스팅 공급자
 
@@ -81,7 +81,7 @@ Contoso 대학 Visual Studio 웹 응용 프로그램 프로젝트입니다. 대�
 
 이 자습서에 대 한 의견을 기다리겠습니다, 하 고 자습서 업데이트 될 때 모든 노력 됩니다 계정 수정 또는 제안이 자습서 주석에서 제공 되는 향상 된 기능에 대 한 고려 되도록 합니다.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 시작 하기 전에 Windows 7 이상 있고 컴퓨터에 설치 된 다음 제품 중 하나에 있는지 확인 합니다.
 
@@ -142,5 +142,5 @@ Visual Studio를 시작 하 고 프로젝트를 열고 실행 하려면 CTRL + f
 
 이 시리즈의 첫 번째 자습서에서는 샘플 Visual Studio 프로젝트를 다운로드 한 있고 응용 프로그램을 배포 하는 방법에 영향을 주는 사이트 기능을 검토 합니다. 다음 자습서에서 자동으로 처리 되도록 이러한 기능 중 일부를 설정 하 여 배포를 위해 준비할 수 있습니다. 다른 수동으로 처리할 수 있습니다.
 
->[!div class="step-by-step"]
-[다음](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md)
+> [!div class="step-by-step"]
+> [다음](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12.md)

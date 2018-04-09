@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1
-title: "먼저 Entity Framework 4.0 데이터베이스와 시작 및 ASP.NET 4 Web Forms | Microsoft Docs"
+title: 먼저 Entity Framework 4.0 데이터베이스와 시작 및 ASP.NET 4 Web Forms | Microsoft Docs
 author: tdykstra
-description: "Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 4.0 및 Visual Studio 2010을 사용 하 여 ASP.NET Web Forms 응용 프로그램을 만드는 방법을 보여 줍니다 중..."
+description: Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 4.0 및 Visual Studio 2010을 사용 하 여 ASP.NET Web Forms 응용 프로그램을 만드는 방법을 보여 줍니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/03/2010
@@ -12,17 +12,17 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: ae2fddc81f6f4da866ec0719a0e74516bdd2a4d1
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: ad504b02d801f9513787f9fde1a4d00d7b0afff0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms"></a>먼저 Entity Framework 4.0 데이터베이스와 시작 및 ASP.NET 4 Web Forms
 ====================
 으로 [Tom Dykstra](https://github.com/tdykstra)
 
-> Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 4.0 및 Visual Studio 2010을 사용 하 여 ASP.NET Web Forms 응용 프로그램을 만드는 방법을 보여 줍니다. 샘플 응용 프로그램은 가상의 Contoso 대학교에 대 한 웹 사이트입니다. 학생 진입, 과정 만들기 및 강사 할당 등의 기능을 포함합니다.
+> Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 4.0 및 Visual Studio 2010을 사용 하 여 ASP.NET Web Forms 응용 프로그램을 만드는 방법을 보여 줍니다. 샘플 응용 프로그램은 가상의 Contoso 대학교에 대 한 웹 사이트입니다. 학생 입학, 강좌 개설 및 강사 할당과 같은 기능이 있습니다.
 > 
 > 이 자습서는 C#의 예를 보여줍니다. [다운로드 가능한 샘플](https://code.msdn.microsoft.com/ASPNET-Web-Forms-97f8ee9a) C# 및 Visual Basic 코드를 포함 합니다.
 > 
@@ -54,7 +54,7 @@ ms.lasthandoff: 01/24/2018
 
 [![Image03](the-entity-framework-and-aspnet-getting-started-part-1/_static/image2.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image1.png)
 
-사용자가 볼 수 있으며 학생과에서는 강사 정보 업데이트 됩니다. 몇 가지 만들어 화면 아래에 표시 됩니다.
+사용자는 학생, 강좌 및 강사 정보를 보고 업데이트할 수 있습니다. 몇 가지 만들어 화면 아래에 표시 됩니다.
 
 [![Image30](the-entity-framework-and-aspnet-getting-started-part-1/_static/image4.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image3.png)
 
@@ -161,7 +161,7 @@ ms.lasthandoff: 01/24/2018
 
     [![Image40](the-entity-framework-and-aspnet-getting-started-part-1/_static/image38.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image37.png)
 
-    이 경우에 `Person` 엔터티 수 또는 연결 된 가능성이 `StudentGrade` 엔터티. A `StudentGrade` 엔터티 하나에 연결 해야 합니다. `Person` 엔터티. `StudentGrade`엔터티는 실제로;이 데이터베이스에 등록 된 과정을 나타냅니다. 학생 과정에 등록 된 경우 아직 등급 없음 되어 있는 경우는 `Grade` 속성이 null입니다. 즉, 학생 모든 과목에 등록 되지 않을 수 있습니다, 하나의 과목에 등록할 수 있음 또는 여러 과목에 등록 될 수 있습니다. 등록된 과정에서 각 학년 하나만 학생에 적용 됩니다.
+    이 경우에 `Person` 엔터티 수 또는 연결 된 가능성이 `StudentGrade` 엔터티. A `StudentGrade` 엔터티 하나에 연결 해야 합니다. `Person` 엔터티. `StudentGrade` 엔터티는 실제로;이 데이터베이스에 등록 된 과정을 나타냅니다. 학생 과정에 등록 된 경우 아직 등급 없음 되어 있는 경우는 `Grade` 속성이 null입니다. 즉, 학생 모든 과목에 등록 되지 않을 수 있습니다, 하나의 과목에 등록할 수 있음 또는 여러 과목에 등록 될 수 있습니다. 등록된 과정에서 각 학년 하나만 학생에 적용 됩니다.
 - 다 대 다 연결을 나타내는 "\*"및"\*"입니다.
 
     [![Image41](the-entity-framework-and-aspnet-getting-started-part-1/_static/image40.png)](the-entity-framework-and-aspnet-getting-started-part-1/_static/image39.png)
@@ -214,5 +214,5 @@ Entity Framework는 XML을 사용 하 여 데이터베이스, 데이터 모델 �
 
 이제 웹 사이트, 데이터베이스 및 데이터 모델을 만들었습니다. 다음 연습에서는 데이터 모델 및 ASP.NET을 사용 하 여 데이터 작업을 먼저 `EntityDataSource` 제어 합니다.
 
->[!div class="step-by-step"]
-[다음](the-entity-framework-and-aspnet-getting-started-part-2.md)
+> [!div class="step-by-step"]
+> [다음](the-entity-framework-and-aspnet-getting-started-part-2.md)

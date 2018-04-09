@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/nested-master-pages-vb
-title: "마스터 페이지 (VB) 중첩 된 | Microsoft Docs"
+title: 마스터 페이지 (VB) 중첩 된 | Microsoft Docs
 author: rick-anderson
-description: "내에서 다른 한 마스터 페이지를 중첩 하는 방법을 보여 줍니다."
+description: 내에서 다른 한 마스터 페이지를 중첩 하는 방법을 보여 줍니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/28/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/nested-master-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9059e358311cc80b6a64aa3ee1168f4ffcd4e94c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 8c0123c12bb653a7f680154e2155eae0eb129428
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="nested-master-pages-vb"></a>중첩 된 마스터 페이지 (VB)
 ====================
@@ -94,7 +94,7 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="step-2-creating-a-simple-nested-master-page"></a>2 단계: 간단한 중첩 된 마스터 페이지 만들기
 
-`Simple.master`두 개의 ContentPlaceHolder 컨트롤이 포함:는 `MainContent` 와 함께 웹 폼 내에서 추가 ContentPlaceHolder는 `head` 에서 ContentPlaceHolder는 `<head>` 요소. 콘텐츠 페이지를 만들고에 바인딩할 경우 `Simple.master` 콘텐츠 페이지 콘텐츠 컨트롤을 두 가지 두 contentplaceholders의 참조 하는 것입니다. 마찬가지로, 중첩된 된 마스터 페이지를 만든 경우 하에 바인딩할 `Simple.master` 중첩 된 마스터 페이지 콘텐츠 컨트롤을 두 가지 해야 합니다.
+`Simple.master` 두 개의 ContentPlaceHolder 컨트롤이 포함:는 `MainContent` 와 함께 웹 폼 내에서 추가 ContentPlaceHolder는 `head` 에서 ContentPlaceHolder는 `<head>` 요소. 콘텐츠 페이지를 만들고에 바인딩할 경우 `Simple.master` 콘텐츠 페이지 콘텐츠 컨트롤을 두 가지 두 contentplaceholders의 참조 하는 것입니다. 마찬가지로, 중첩된 된 마스터 페이지를 만든 경우 하에 바인딩할 `Simple.master` 중첩 된 마스터 페이지 콘텐츠 컨트롤을 두 가지 해야 합니다.
 
 새 중첩 된 마스터 페이지를 추가 해 보겠습니다는 `NestedMasterPages` 라는 폴더 `SimpleNested.master`합니다. 마우스 오른쪽 단추로 클릭는 `NestedMasterPages` 폴더를 새 항목 추가 선택 합니다. 이 그림 2에 표시 된 새 항목 추가 대화 상자를 엽니다. 마스터 페이지 템플릿 유형을 선택 하는 새 마스터 페이지의 이름을 입력 합니다. 새 마스터 페이지에서 중첩된 된 마스터 페이지를 해야 함을 나타내려면 "마스터 페이지 선택" 확인란을 선택 합니다.
 
@@ -126,7 +126,7 @@ ms.lasthandoff: 01/24/2018
 
 [!code-aspx[Main](nested-master-pages-vb/samples/sample4.aspx)]
 
-이 추가 마치면 중첩 된 마스터 페이지를 저장 한 후에 새 콘텐츠 페이지를 추가 `NestedMasterPages` 라는 폴더 `Default.aspx`에 바인딩할는 `SimpleNested.master` 마스터 페이지입니다. 이 페이지에 추가 되 면 콘텐츠 (그림 4 참조) 컨트롤이 포함 되어 있는 확인할 놀랄 수 있습니다! 콘텐츠 페이지에만 액세스할 수는 *부모* 마스터 페이지의 contentplaceholders의 합니다. `SimpleNested.master`ContentPlaceHolder 컨트롤이; 들어 있지 않습니다. 따라서이 마스터 페이지에 바인딩된 모든 콘텐츠 페이지 모든 콘텐츠 컨트롤을 포함할 수 없습니다.
+이 추가 마치면 중첩 된 마스터 페이지를 저장 한 후에 새 콘텐츠 페이지를 추가 `NestedMasterPages` 라는 폴더 `Default.aspx`에 바인딩할는 `SimpleNested.master` 마스터 페이지입니다. 이 페이지에 추가 되 면 콘텐츠 (그림 4 참조) 컨트롤이 포함 되어 있는 확인할 놀랄 수 있습니다! 콘텐츠 페이지에만 액세스할 수는 *부모* 마스터 페이지의 contentplaceholders의 합니다. `SimpleNested.master` ContentPlaceHolder 컨트롤이; 들어 있지 않습니다. 따라서이 마스터 페이지에 바인딩된 모든 콘텐츠 페이지 모든 콘텐츠 컨트롤을 포함할 수 없습니다.
 
 
 [![새 콘텐츠 페이지 컨트롤이 포함 되지 않은 콘텐츠](nested-master-pages-vb/_static/image11.png)](nested-master-pages-vb/_static/image10.png)
@@ -258,7 +258,7 @@ ContentPlaceHolder 컨트롤과 하는 각 콘텐츠 컨트롤에 ContentPlaceHo
 
 새 콘텐츠 페이지를 바인딩해야 하 여 관리 섹션에 추가 하 고 언제 든 지는 `AdminNested.master` 방금 만든 마스터 페이지입니다. 하지만 콘텐츠 페이지는 기존 어떻습니까? 사이트의 모든 콘텐츠 페이지에서 파생 되는 현재는 `BasePage` 클래스를 프로그래밍 방식으로 런타임에 콘텐츠 페이지의 마스터 페이지를 설정 합니다. 콘텐츠 페이지의 관리 섹션에 대 한 결과가 아닙니다. 대신, 이러한 콘텐츠 페이지를 항상 사용 원하는 `AdminNested.master` 페이지. 런타임 시 오른쪽 최상위 콘텐츠 페이지를 선택 하려면 중첩 된 마스터 페이지에서 수행 됩니다.
 
-얻을 수 있는 가장 좋은 방법은이 필요한 동작은 라는 새 기본 페이지를 사용자 지정 클래스를 만드는 것 `AdminBasePage` 확장 하 고 `BasePage` 클래스입니다. `AdminBasePage`다음을 재정의할 수는 `SetMasterPageFile` 설정는 `Page` 개체의 `MasterPageFile` 하드 코드 된 값으로 "~ / Admin/AdminNested.master"입니다. 이러한 방식으로 모든 페이지에서 파생 된 `AdminBasePage` ´ ֲ `AdminNested.master`에서 파생 되는 모든 페이지에서는 `BasePage` 갖습니다 해당 `MasterPageFile` 속성 중 하나에 동적으로 설정 "~ / Site.master" 또는 "~ / Alternate.master"의 값에 따라는 `MyMasterPage` 세션 변수입니다.
+얻을 수 있는 가장 좋은 방법은이 필요한 동작은 라는 새 기본 페이지를 사용자 지정 클래스를 만드는 것 `AdminBasePage` 확장 하 고 `BasePage` 클래스입니다. `AdminBasePage` 다음을 재정의할 수는 `SetMasterPageFile` 설정는 `Page` 개체의 `MasterPageFile` 하드 코드 된 값으로 "~ / Admin/AdminNested.master"입니다. 이러한 방식으로 모든 페이지에서 파생 된 `AdminBasePage` ´ ֲ `AdminNested.master`에서 파생 되는 모든 페이지에서는 `BasePage` 갖습니다 해당 `MasterPageFile` 속성 중 하나에 동적으로 설정 "~ / Site.master" 또는 "~ / Alternate.master"의 값에 따라는 `MyMasterPage` 세션 변수입니다.
 
 새 클래스 파일을 추가 하 여 시작 된 `App_Code` 라는 폴더 `AdminBasePage.vb`합니다. 가 `AdminBasePage` 확장 `BasePage` 한 후 재정의 `SetMasterPageFile` 메서드. 해당 메서드의 할당은 `MasterPageFile` 값 "~ / Admin/AdminNested.master"입니다. 클래스에 이러한 변경을 수행한 후 파일에는 다음과 같아야 합니다.
 
@@ -358,11 +358,11 @@ ContentPlaceHolder 컨트롤과 하는 각 콘텐츠 컨트롤에 ContentPlaceHo
 
 ### <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 작성자 여러 ASP/ASP.NET 설명서와 4GuysFromRolla.com의 창립자의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 3.5 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco)합니다. Scott에 도달할 수 [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) 또는에서 그의 블로그 통해 [http://ScottOnWriting.NET](http://scottonwriting.net/)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 작성자 여러 ASP/ASP.NET 설명서와 4GuysFromRolla.com의 창립자의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 3.5 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco)합니다. Scott에 도달할 수 [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) 또는에서 그의 블로그 통해 [ http://ScottOnWriting.NET ](http://scottonwriting.net/)합니다.
 
 ### <a name="special-thanks-to"></a>특별히 감사
 
-이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](specifying-the-master-page-programmatically-vb.md)
+> [!div class="step-by-step"]
+> [이전](specifying-the-master-page-programmatically-vb.md)

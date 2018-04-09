@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/executing-animations-using-client-side-code-vb
-title: "클라이언트 쪽 코드 (VB)를 사용 하 여 애니메이션 실행 | Microsoft Docs"
+title: 클라이언트 쪽 코드 (VB)를 사용 하 여 애니메이션 실행 | Microsoft Docs
 author: wenz
-description: "ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트롤 뿐 아니라 애니메이션 컨트롤을 추가 하는 전체 프레임 워크. 애니메이션 실행 중..."
+description: ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트롤 뿐 아니라 애니메이션 컨트롤을 추가 하는 전체 프레임 워크. 애니메이션 실행 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/executing-animations-using-client-side-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c97ce87addd566ed1ba63ccdb81206c6449f49a2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e2b8c499edaccc70d439a576feb80e91cb28c1c7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="executing-animations-using-client-side-code-vb"></a>클라이언트 쪽 코드 (VB)를 사용 하 여 실행 중인 애니메이션
 ====================
@@ -70,6 +70,6 @@ ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트�
 
 마우스 클릭 하지 않고 애니메이션 즉시 실행 ([전체 크기 이미지를 보려면 클릭](executing-animations-using-client-side-code-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[이전](modifying-animations-from-the-server-side-vb.md)
-[다음](changing-an-animation-using-client-side-code-vb.md)
+> [!div class="step-by-step"]
+> [이전](modifying-animations-from-the-server-side-vb.md)
+> [다음](changing-an-animation-using-client-side-code-vb.md)

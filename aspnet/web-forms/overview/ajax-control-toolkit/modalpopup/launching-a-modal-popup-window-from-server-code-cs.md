@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/modalpopup/launching-a-modal-popup-window-from-server-code-cs
-title: "서버 코드 (C#)에서 모달 팝업 창을 시작 | Microsoft Docs"
+title: 서버 코드 (C#)에서 모달 팝업 창을 시작 | Microsoft Docs
 author: wenz
-description: "들어에서 ModalPopup 컨트롤을 클라이언트 쪽 방법을 사용 하 여 모달 팝업을 만드는 간단한 방법을 제공 합니다. 그러나 일부 시나리오에서는 t 해야..."
+description: 들어에서 ModalPopup 컨트롤을 클라이언트 쪽 방법을 사용 하 여 모달 팝업을 만드는 간단한 방법을 제공 합니다. 그러나 일부 시나리오에서는 t 해야...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/launching-a-modal-popup-window-from-server-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: cc2ccf8153de4f2633cc46ebbee2da199ba9d06e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 04bb056ee29065a472a70d480568b897a789ae59
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="launching-a-modal-popup-window-from-server-code-c"></a>서버 코드 (C#)에서 모달 팝업 창을 시작
 ====================
@@ -72,5 +72,5 @@ ASP.NET AJAX;에 따라 모든 웹 페이지와 마찬가지로 스크립트 관
 
 모달 팝업이 표시 되는 경우 단추 중 하나를 클릭 ([전체 크기 이미지를 보려면 클릭](launching-a-modal-popup-window-from-server-code-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[다음](using-modalpopup-with-a-repeater-control-cs.md)
+> [!div class="step-by-step"]
+> [다음](using-modalpopup-with-a-repeater-control-cs.md)

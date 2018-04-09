@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/testing-and-debugging/unit-testing-signalr-applications
-title: "SignalR 응용 프로그램 유닛 테스트 | Microsoft Docs"
+title: SignalR 응용 프로그램 유닛 테스트 | Microsoft Docs
 author: pfletcher
-description: "이 문서에서는 SignalR 2.0의 단위 테스트 기능을 사용 하는 방법을 설명 합니다."
+description: 이 문서에서는 SignalR 2.0의 단위 테스트 기능을 사용 하는 방법을 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/testing-and-debugging/unit-testing-signalr-applications
 msc.type: authoredcontent
-ms.openlocfilehash: d767e1a9d27670387133e5a48a8f92f5bdd39d9e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: cff866716cb1179e02b930f33cb0f8c33d4a6cf0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="unit-testing-signalr-applications"></a>단위 테스트 SignalR 응용 프로그램
 ====================
@@ -72,11 +72,11 @@ XUnit.net; 테스트를 제어 하는 데 사용 됩니다. Moq 만드는 데 �
     ![프로젝트 참조 추가](unit-testing-signalr-applications/_static/image3.png)
 6. SignalR, Moq, 및 XUnit 패키지에 추가 된 **TestLibrary** 프로젝트. 에 **패키지 관리자 콘솔**설정는 **기본 프로젝트** 드롭다운을 **TestLibrary**합니다. 콘솔 창에 다음 명령을 실행 합니다.
 
-    - `Install-Package Microsoft.AspNet.SignalR`
-    - `Install-Package Moq`
-    - `Install-Package XUnit`
+   - `Install-Package Microsoft.AspNet.SignalR`
+   - `Install-Package Moq`
+   - `Install-Package XUnit`
 
-    ![패키지 설치](unit-testing-signalr-applications/_static/image4.png)
+     ![패키지 설치](unit-testing-signalr-applications/_static/image4.png)
 7. 테스트 파일을 만듭니다. 마우스 오른쪽 단추로 클릭는 **TestLibrary** 프로젝트 **추가 중...** , **클래스**합니다. 클래스의 새 이름을 **Tests.cs**합니다.
 8. Tests.cs의 내용을 다음 코드로 바꿉니다.
 

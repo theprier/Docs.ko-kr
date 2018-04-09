@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application
-title: "Entity framework 4.0 ASP.NET 4 웹 응용 프로그램의 성능을 최대화 | Microsoft Docs"
+title: Entity framework 4.0 ASP.NET 4 웹 응용 프로그램의 성능을 최대화 | Microsoft Docs
 author: tdykstra
-description: "이 자습서 시리즈의 Entity Framework 4.0 자습서 시리즈 시작 하기에 의해 만들어진 Contoso 대학 웹 응용 프로그램 기반으로 합니다. I 중..."
+description: 이 자습서 시리즈의 Entity Framework 4.0 자습서 시리즈 시작 하기에 의해 만들어진 Contoso 대학 웹 응용 프로그램 기반으로 합니다. I 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/26/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 40a53a110115e5f6342d2a97d21b64470450fd3c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b85645eebf2822b33df944692736ea9d9b69b9aa
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="maximizing-performance-with-the-entity-framework-40-in-an-aspnet-4-web-application"></a>Entity framework 4.0 ASP.NET 4 웹 응용 프로그램에서 성능 최적화
 ====================
@@ -54,15 +54,15 @@ ms.lasthandoff: 01/24/2018
 
 여러 가지 방법으로 Entity Framework가 엔터티의 탐색 속성에 관련된 데이터를 로드할 수 있습니다.
 
-- *지연 로드*합니다. 먼저 엔터티를 읽으면 관련된 데이터가 검색 되지 않습니다. 그러나는 탐색 속성에 액세스 하려고 처음으로 해당 탐색 속성에 필요한 데이터가 자동으로 검색 됩니다. 이 인해 데이터베이스에 전송 하는 여러 개의 쿼리-엔터티 자체에 대 한 개와 때마다 관련 엔터티에 대 한 데이터를 검색 해야 합니다. 
+- *지연 로드*. 엔터티를 처음 읽을 때 관련된 데이터가 검색되지 않습니다. 그러나 탐색 속성에 처음으로 액세스하려고 할 때 해당 탐색 속성에 필요한 데이터가 자동으로 검색됩니다. 이 인해 데이터베이스에 전송 하는 여러 개의 쿼리-엔터티 자체에 대 한 개와 때마다 관련 엔터티에 대 한 데이터를 검색 해야 합니다. 
 
     [![Image05](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image2.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image1.png)
 
-*즉시 로드*합니다. 엔터티를 읽을 때 함께 관련된 데이터가 검색 됩니다. 일반적으로 필요한 데이터를 모두 검색 하는 단일 조인 쿼리에서 발생 합니다. 즉시 로드를 사용 하 여 지정 된 `Include` 메서드를 때를 살펴 보았으며 이미이 자습서에 합니다.
+*즉시 로드*. 엔터티를 읽을 때 관련된 데이터가 함께 검색됩니다. 이는 일반적으로 필요한 데이터를 모두 검색하는 단일 조인 쿼리를 발생시킵니다. 즉시 로드를 사용 하 여 지정 된 `Include` 메서드를 때를 살펴 보았으며 이미이 자습서에 합니다.
 
 [![Image07](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image4.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image3.png)
 
-- *명시적 로드*합니다. 이 지연 로드를 제외 하 코드에서 관련된 데이터를 명시적으로 검색 탐색 속성에 액세스할 때 자동으로 발생 하지 않습니다. 관련된 데이터를 사용 하 여 수동으로 부하는 `Load` 컬렉션 또는 사용자에 대 한 탐색 속성의 메서드를 사용 하 여는 `Load` reference 속성의 단일 개체를 포함 하는 속성에 대 한 메서드. (호출 하는 예를 들어는 `PersonReference.Load` 개체에 대 한는 `Person` 의 탐색 속성을 `Department` 엔터티.)
+- *명시적 로드*. 이 지연 로드를 제외 하 코드에서 관련된 데이터를 명시적으로 검색 탐색 속성에 액세스할 때 자동으로 발생 하지 않습니다. 관련된 데이터를 사용 하 여 수동으로 부하는 `Load` 컬렉션 또는 사용자에 대 한 탐색 속성의 메서드를 사용 하 여는 `Load` reference 속성의 단일 개체를 포함 하는 속성에 대 한 메서드. (호출 하는 예를 들어는 `PersonReference.Load` 개체에 대 한는 `Person` 의 탐색 속성을 `Department` 엔터티.)
 
     [![Image06](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image6.png)](maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application/_static/image5.png)
 
@@ -76,7 +76,7 @@ ms.lasthandoff: 01/24/2018
 
 웹 응용 프로그램에서 한 지연 로딩이 때문일 상대적으로 작은 값의 누르고, 페이지를 렌더링 하는 개체 컨텍스트에 연결 되지 브라우저에서 관련된 데이터에 대 한 필요성에 영향을 주는 사용자 작업이 수행입니다. 반면에 컨트롤 databind 알고 있는 경우 일반적으로 필요한을 즉시 로드 또는 지연 된 로드에 따라 선택할 수 있으므로 일반적으로 최상의 데이터 란 각 시나리오에 적합 합니다.
 
-또한 데이터 바인딩된 컨트롤 개체 컨텍스트를 삭제 한 후 엔터티 개체를 사용할 수 있습니다. 이 경우에 탐색 속성 지연 로드 하려는 시도가 실패 합니다. 나타나는 오류 메시지는 명확.&quot;`The ObjectContext instance has been disposed and can no longer be used for operations that require a connection.`&quot;
+또한 데이터 바인딩된 컨트롤 개체 컨텍스트를 삭제 한 후 엔터티 개체를 사용할 수 있습니다. 이 경우에 탐색 속성 지연 로드 하려는 시도가 실패 합니다. 나타나는 오류 메시지는 명확. &quot;`The ObjectContext instance has been disposed and can no longer be used for operations that require a connection.`&quot;
 
 `EntityDataSource` 컨트롤 기본적으로 지연 로딩을 사용 하지 않도록 설정 합니다. 에 대 한는 `ObjectDataSource` 컨트롤 현재 자습서에 사용 하는 (또는 개체 컨텍스트에 페이지 코드에서 액세스 하는 경우), 여러 가지 방법으로 지연 가능 로딩을 기본적으로 비활성화 합니다. 개체 컨텍스트에 인스턴스화할 때 해제할 수 있습니다. 예를 들어 다음 줄의 생성자 메서드를 추가할 수 있습니다는 `SchoolRepository` 클래스:
 
@@ -266,6 +266,6 @@ Entity Framework를 사용 하 여 ASP.NET 웹 응용 프로그램의 성능 향
 
 다음 자습서에서 중요 한 향상 된 기능은을 Entity Framework 버전 4의에서 새로운 기능 중 일부를 검토 합니다.
 
->[!div class="step-by-step"]
-[이전](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application.md)
-[다음](what-s-new-in-the-entity-framework-4.md)
+> [!div class="step-by-step"]
+> [이전](handling-concurrency-with-the-entity-framework-in-an-asp-net-web-application.md)
+> [다음](what-s-new-in-the-entity-framework-4.md)

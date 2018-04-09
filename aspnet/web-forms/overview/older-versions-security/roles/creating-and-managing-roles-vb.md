@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/roles/creating-and-managing-roles-vb
-title: "만들기 및 관리 역할 (VB) | Microsoft Docs"
+title: 만들기 및 관리 역할 (VB) | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에서는 역할 프레임 워크를 구성 하는 데 필요한 단계를 검사 합니다. 그런 다음, 웹 페이지를 만들고 삭제할 역할을 작성 합니다."
+description: 이 자습서에서는 역할 프레임 워크를 구성 하는 데 필요한 단계를 검사 합니다. 그런 다음, 웹 페이지를 만들고 삭제할 역할을 작성 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/24/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/creating-and-managing-roles-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 0b1132c6d782cd85edb8cbee98c8ab95a15171ac
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 75ca9b1c36f9a74d755ef05717f03d139d0b29ea
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-and-managing-roles-vb"></a>만들기 및 관리 역할 (VB)
 ====================
@@ -96,10 +96,10 @@ ASP.NET 역할 정의 및 사용자 계정으로 연결 하는 역할 프레임 
 
 따라서 단순히 역할 framework 응용 프로그램의 모든 공급자 정보를 지정 하지 않고 사용 하도록 설정 하는 경우 `Web.config` 파일, 응용 프로그램에 등록 된 기본 역할 공급자를 사용 하 여 `AspNetSqlRoleProvider`합니다. 경우는 `~/App_Data/aspnet.mdf` 데이터베이스가 존재 하지 않습니다, ASP.NET 런타임이 자동으로 만들고 응용 프로그램 서비스 스키마를 추가 합니다. 그러나 사용 하려는 하지는 `aspnet.mdf` 데이터베이스; 대신 사용 하려는 `SecurityTutorials.mdf` 데이터베이스를 이미 만든 했으며에 응용 프로그램 서비스 스키마를 추가 합니다. 두 가지 방법 중 하나에서이 수정 작업을 수행할 수 있습니다.
 
-- **에 대 한 값을 지정 된 * * *`LocalSqlServer`* * * 연결 문자열 이름에 * * *`Web.config`* * *입니다.** 덮어쓰는 방법으로 `LocalSqlServer` 연결 문자열 이름 값의 `Web.config`, 등록 된 기본 역할 공급자를 사용할 수 있습니다 (`AspNetSqlRoleProvider`)와 올바르게 사용할는 `SecurityTutorials.mdf` 데이터베이스입니다. 이 방법에 대 한 자세한 내용은 참조 하십시오. [Scott Guthrie](https://weblogs.asp.net/scottgu/)의 블로그 게시물 [구성 ASP.NET 2.0 응용 프로그램 서비스를 사용 하 여 SQL Server 2000 또는 SQL Server 2005](https://weblogs.asp.net/scottgu/archive/2005/08/25/423703.aspx)합니다.
-- **형식 * * *의 새 등록 된 공급자를 추가`SqlRoleProvider`* * * 구성 및 해당 * * *`connectionStringName`* * *를 가리키도록 설정에서 * * *`SecurityTutorials.mdf`* * * 데이터베이스입니다.** 이것은 좋으며에 사용 되는 방식에서 <a id="_msoanchor_7"> </a> [ *SQL Server에서 멤버 자격 스키마 만들기* ](../membership/creating-the-membership-schema-in-sql-server-vb.md) 자습서와이 방식은이 자습서에서를 사용 합니다.
+- <strong>에 대 한 값을 지정 된</strong><strong>`LocalSqlServer`</strong><strong>의 연결 문자열 이름</strong><strong>`Web.config`</strong><strong>합니다.</strong> 덮어쓰는 방법으로 `LocalSqlServer` 연결 문자열 이름 값의 `Web.config`, 등록 된 기본 역할 공급자를 사용할 수 있습니다 (`AspNetSqlRoleProvider`)와 올바르게 사용할는 `SecurityTutorials.mdf` 데이터베이스입니다. 이 방법에 대 한 자세한 내용은 참조 하십시오. [Scott Guthrie](https://weblogs.asp.net/scottgu/)의 블로그 게시물 [구성 ASP.NET 2.0 응용 프로그램 서비스를 사용 하 여 SQL Server 2000 또는 SQL Server 2005](https://weblogs.asp.net/scottgu/archive/2005/08/25/423703.aspx)합니다.
+- <strong>형식의 새 등록 된 공급자를 추가</strong><strong>`SqlRoleProvider`</strong><strong>구성 및 해당</strong><strong>`connectionStringName`</strong><strong>는를가리키도록설정</strong> <strong>`SecurityTutorials.mdf`</strong> <strong>데이터베이스입니다.</strong> 이것은 좋으며에 사용 되는 방식에서 <a id="_msoanchor_7"> </a> [ *SQL Server에서 멤버 자격 스키마 만들기* ](../membership/creating-the-membership-schema-in-sql-server-vb.md) 자습서와이 방식은이 자습서에서를 사용 합니다.
 
-다음 역할 구성 태그를 추가 `Web.config` 파일입니다. 이 태그 라는 새 공급자를 등록 합니다.`SecurityTutorialsSqlRoleProvider.`
+다음 역할 구성 태그를 추가 `Web.config` 파일입니다. 이 태그 라는 새 공급자를 등록 합니다. `SecurityTutorialsSqlRoleProvider.`
 
 [!code-xml[Main](creating-and-managing-roles-vb/samples/sample5.xml)]
 
@@ -187,7 +187,7 @@ GridView 때문에 항목을 레이블이 지정 된 유일한 열이 표시 됩
 
 GridView 사용 하 여 데이터를 표시할 때 명시적으로 내 열을 정의 하지 않고 GridView에서 암시적으로 생성 되도록 할 않겠습니다. 훨씬 쉽게 데이터의 형식을 지정 하는 열에 명시적으로 정의 하 여 열을 다시 정렬 하 고, 다른 일반적인 작업을 수행 합니다. 따라서 보겠습니다 GridView의 선언적 태그 있도록 업데이트 열이 명시적으로 정의 됩니다.
 
-GridView의 설정 하 여 시작 `AutoGenerateColumns` 속성을 false로 합니다. 다음으로 설정에서 표를 TemplateField 추가 해당 `HeaderText` 속성 역할을 하 고 구성 해당 `ItemTemplate` 배열의 내용을 표시 되도록 합니다. 이를 위해 라는 Label 웹 컨트롤을 추가 `RoleNameLabel` 에 `ItemTemplate` 바인딩하고 해당 `Text` 속성을`Container.DataItem.`
+GridView의 설정 하 여 시작 `AutoGenerateColumns` 속성을 false로 합니다. 다음으로 설정에서 표를 TemplateField 추가 해당 `HeaderText` 속성 역할을 하 고 구성 해당 `ItemTemplate` 배열의 내용을 표시 되도록 합니다. 이를 위해 라는 Label 웹 컨트롤을 추가 `RoleNameLabel` 에 `ItemTemplate` 바인딩하고 해당 `Text` 속성을 `Container.DataItem.`
 
 이러한 속성 및 `ItemTemplate`의 내용을 통해 선언적으로 또는 GridView의 필드 대화 상자 및 템플릿 편집 인터페이스 설정할 수 있습니다. 필드 대화 상자에 도달 하는 GridView의 스마트 태그에 열 편집 링크를 클릭 합니다. 다음으로 설정 하려면 자동 생성 필드 확인란의 선택을 취소는 `AutoGenerateColumns` 속성을 false로, 설정를 TemplateField GridView에 추가 하 고 해당 `HeaderText` 속성 역할을 합니다. 정의 하는 `ItemTemplate`의 내용, GridView의 스마트 태그에서 템플릿 편집 옵션을 선택 합니다. Label 웹 컨트롤을 끌어는 `ItemTemplate`설정, 해당 `ID` 속성을 `RoleNameLabel`, 해당 데이터 바인딩 설정을 구성 하 고 되도록 해당 `Text` 속성이 바인딩된 `Container.DataItem`합니다.
 
@@ -215,8 +215,8 @@ GridView의 설정 하 여 시작 `AutoGenerateColumns` 속성을 false로 합�
 
 이 시점에서 사용자는 새 역할을 만들고 볼 수에서 기존의 모든 역할의 `ManageRoles.aspx` 페이지. 역할을 삭제할 수도 있습니다 보겠습니다. `Roles.DeleteRole` 메서드에 두 개의 오버 로드가 있습니다.
 
-- [`DeleteRole(roleName)`](https://msdn.microsoft.com/library/ek4sywc0.aspx)-역할이 삭제 *roleName*합니다. 역할 하나 이상의 멤버를 포함 하는 경우 예외가 throw 됩니다.
-- [`DeleteRole(roleName, throwOnPopulatedRole)`](https://msdn.microsoft.com/library/38h6wf59.aspx)-역할이 삭제 *roleName*합니다. 경우 *throwOnPopulateRole* 은 `True`, 역할 하나 이상의 멤버를 포함 하는 경우 예외가 throw 됩니다. 경우 *throwOnPopulateRole* 은 `False`, 역할 또는 멤버를 포함 하는지 여부를 삭제 됩니다. 내부적으로 `DeleteRole(roleName)` 메서드 호출 `DeleteRole(roleName, True)`합니다.
+- [`DeleteRole(roleName)`](https://msdn.microsoft.com/library/ek4sywc0.aspx) -역할이 삭제 *roleName*합니다. 역할 하나 이상의 멤버를 포함 하는 경우 예외가 throw 됩니다.
+- [`DeleteRole(roleName, throwOnPopulatedRole)`](https://msdn.microsoft.com/library/38h6wf59.aspx) -역할이 삭제 *roleName*합니다. 경우 *throwOnPopulateRole* 은 `True`, 역할 하나 이상의 멤버를 포함 하는 경우 예외가 throw 됩니다. 경우 *throwOnPopulateRole* 은 `False`, 역할 또는 멤버를 포함 하는지 여부를 삭제 됩니다. 내부적으로 `DeleteRole(roleName)` 메서드 호출 `DeleteRole(roleName, True)`합니다.
 
 `DeleteRole` 메서드는 경우에 예외를 throw *roleName* 은 `Nothing` 또는 빈 문자열인 경우 *roleName* 에 쉼표가 포함 되어 있습니다. 경우 *roleName* 시스템에 존재 하지 않는 `DeleteRole` 예외가 발생 하지 않고 자동으로 실패 합니다.
 
@@ -263,12 +263,12 @@ GridView에서를 확장 하는 보겠습니다 `ManageRoles.aspx` 포함 하려
 
 ### <a name="about-the-author"></a>작성자 정보
 
-여러 ASP/ASP.NET 책의 작성자 및 4GuysFromRolla.com의 창립자 Scott Mitchell의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은  *[Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*합니다. Scott에 도달할 수 [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) 또는에서 그의 블로그 통해 [http://ScottOnWriting.NET](http://scottonwriting.net/)합니다.
+여러 ASP/ASP.NET 책의 작성자 및 4GuysFromRolla.com의 창립자 Scott Mitchell의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은  *[Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*합니다. Scott에 도달할 수 [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) 또는에서 그의 블로그 통해 [ http://ScottOnWriting.NET ](http://scottonwriting.net/)합니다.
 
 ### <a name="special-thanks-to"></a>특별히 감사
 
-이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Alicja Maziarz, Suchi Banerjee 및 Teresa 머피의 포함 됩니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Alicja Maziarz, Suchi Banerjee 및 Teresa 머피의 포함 됩니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](role-based-authorization-cs.md)
-[다음](assigning-roles-to-users-vb.md)
+> [!div class="step-by-step"]
+> [이전](role-based-authorization-cs.md)
+> [다음](assigning-roles-to-users-vb.md)

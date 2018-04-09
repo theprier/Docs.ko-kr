@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core에서 인증자 앱에 대 한 QR 코드를 생성 하도록 설정"
+title: ASP.NET Core에서 인증자 앱에 대 한 QR 코드 생성 사용
 author: rick-anderson
-description: "ASP.NET Core 2 단계 인증을 사용 하는 인증자 앱에 대 한 QR 코드 생성을 활성화 하는 방법을 알아봅니다."
+description: ASP.NET Core 2 단계 인증을 사용 하는 인증자 앱에 대 한 QR 코드 생성을 활성화 하는 방법을 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 09/24/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-enable-qrcodes
-ms.openlocfilehash: dd326bb32565b743d21e196bcb616a716d7994bf
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: c61918d42b407b01484b67d740edc7a682c3a4b0
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="enabling-qr-code-generation-for-authenticator-apps-in-aspnet-core"></a>ASP.NET Core에서 인증자 앱에 대 한 QR 코드를 생성 하도록 설정
+# <a name="enable-qr-code-generation-for-authenticator-apps-in-aspnet-core"></a>ASP.NET Core에서 인증자 앱에 대 한 QR 코드 생성 사용
 
 참고:이 항목을 적용할 ASP.NET Core 2.x
 

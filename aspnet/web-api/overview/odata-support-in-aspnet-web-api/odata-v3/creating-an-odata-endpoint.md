@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v3/creating-an-odata-endpoint
-title: "Web API 2 OData v3 끝점 만들기 | Microsoft Docs"
+title: Web API 2 OData v3 끝점 만들기 | Microsoft Docs
 author: MikeWasson
-description: "개방형 데이터 프로토콜 (OData)는 웹에 대 한 데이터 액세스 프로토콜입니다. OData는 데이터, 데이터를 쿼리 및 데이터를 조작 하는 일관 된 방식으로 제공..."
+description: 개방형 데이터 프로토콜 (OData)는 웹에 대 한 데이터 액세스 프로토콜입니다. OData는 데이터, 데이터를 쿼리 및 데이터를 조작 하는 일관 된 방식으로 제공...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/25/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/creating-an-odata-endpoint
 msc.type: authoredcontent
-ms.openlocfilehash: 33fe4d764bf9bf64c852f1269255925b5cc42536
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 227faacd3f42731e08a4cd2b71075776309961b6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-an-odata-v3-endpoint-with-web-api-2"></a>Web API 2 OData v3 끝점 만들기
 ====================
@@ -150,7 +150,7 @@ EDM은 데이터의 추상 모델입니다. 메타 데이터 문서를 만들고
 
 [!code-csharp[Main](creating-an-odata-endpoint/samples/sample4.cs)]
 
-첫 번째 매개 변수는 경로의 이름입니다. 서비스의 클라이언트가이 이름을 볼 수 없습니다. 두 번째 매개 변수는 끝점에 대 한 URI 접두사입니다. 이 코드를 매개 변수로 받아 Products 엔터티 집합에 대 한 URI은 http://*hostname*  /odata/제품입니다. 응용 프로그램에 OData 끝점을 여러 개 있을 수 있습니다. 각 끝점에 대 한 호출 **MapODataRoute** 고유 경로 이름 및 고유 URI 접두사를 제공 합니다.
+첫 번째 매개 변수는 경로의 이름입니다. 서비스의 클라이언트가이 이름을 볼 수 없습니다. 두 번째 매개 변수는 끝점에 대 한 URI 접두사입니다. 이 코드를 매개 변수로 받아 Products 엔터티 집합에 대 한 URI은 http://<em>hostname</em>  /odata/제품입니다. 응용 프로그램에 OData 끝점을 여러 개 있을 수 있습니다. 각 끝점에 대 한 호출 <strong>MapODataRoute</strong> 고유 경로 이름 및 고유 URI 접두사를 제공 합니다.
 
 <a id="seed-db"></a>
 ## <a name="seed-the-database-optional"></a>시드 데이터베이스 (옵션)

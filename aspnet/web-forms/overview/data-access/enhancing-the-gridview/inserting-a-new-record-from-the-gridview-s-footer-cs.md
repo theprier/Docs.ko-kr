@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/enhancing-the-gridview/inserting-a-new-record-from-the-gridview-s-footer-cs
-title: "GridView의 바닥글 (C#)에서 새 레코드 삽입 | Microsoft Docs"
+title: GridView의 바닥글 (C#)에서 새 레코드 삽입 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에서는 포함 하 여 GridView를 추가 하는 방법을 GridView 컨트롤 데이터의 새 레코드를 삽입 하기 위한 기본 제공 지원을 제공 하지 않습니다는 중..."
+description: 이 자습서에서는 포함 하 여 GridView를 추가 하는 방법을 GridView 컨트롤 데이터의 새 레코드를 삽입 하기 위한 기본 제공 지원을 제공 하지 않습니다는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/06/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/inserting-a-new-record-from-the-gridview-s-footer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: b0208b4df0194abaf37f7f9ac66c9ce24c35d721
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f131280f4769507d169f8ada7568184233591446
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="inserting-a-new-record-from-the-gridviews-footer-c"></a>GridView의 바닥글 (C#)에서 새 레코드 삽입
 ====================
@@ -140,18 +140,18 @@ GridView 이후 다시 대상이 t 지원 편집, 작업에서는 간편 하 게
 
 다음 목록에 추가 하려면 삽입 인터페이스를 지정 하는 GridView 필드 열거:
 
-- `ProductID`없음입니다.
-- `ProductName`TextBox를 추가 하 고 설정의 `ID` 를 `NewProductName`합니다. 사용자가 새 s 제품 이름에 대 한 값을 입력을 확인 하는 RequiredFieldValidator 컨트롤을 추가 합니다.
-- `SupplierID`없음입니다.
-- `CategoryID`없음입니다.
-- `QuantityPerUnit`설정 된 TextBox를 추가 해당 `ID` 를 `NewQuantityPerUnit`합니다.
-- `UnitPrice`라는 텍스트 상자 추가 `NewUnitPrice` 이 고 입력 한 값을 보장 하는 CompareValidator는 0 보다 크거나 통화 값입니다.
-- `UnitsInStock`텍스트 상자를 사용 하 여 해당 `ID` 로 설정 된 `NewUnitsInStock`합니다. 입력 한 값이 0 보다 크거나 정수 값을 보장 하는 CompareValidator 포함 됩니다.
-- `UnitsOnOrder`텍스트 상자를 사용 하 여 해당 `ID` 로 설정 된 `NewUnitsOnOrder`합니다. 입력 한 값이 0 보다 크거나 정수 값을 보장 하는 CompareValidator 포함 됩니다.
-- `ReorderLevel`텍스트 상자를 사용 하 여 해당 `ID` 로 설정 된 `NewReorderLevel`합니다. 입력 한 값이 0 보다 크거나 정수 값을 보장 하는 CompareValidator 포함 됩니다.
-- `Discontinued`확인란 설정을 추가 해당 `ID` 를 `NewDiscontinued`합니다.
-- `CategoryName`DropDownList를 추가 하 고 설정의 `ID` 를 `NewCategoryID`합니다. 라는 새 ObjectDataSource 바인딩할 `CategoriesDataSource` 사용 하도록 구성 하 고는 `CategoriesBLL` s 클래스 `GetCategories()` 메서드. DropDownList s `ListItem` s 표시는 `CategoryName` 데이터 필드를 사용 하 여 `CategoryID` 데이터 필드를 해당 값으로 합니다.
-- `SupplierName`DropDownList를 추가 하 고 설정의 `ID` 를 `NewSupplierID`합니다. 라는 새 ObjectDataSource 바인딩할 `SuppliersDataSource` 사용 하도록 구성 하 고는 `SuppliersBLL` s 클래스 `GetSuppliers()` 메서드. DropDownList s `ListItem` s 표시는 `CompanyName` 데이터 필드를 사용 하 여 `SupplierID` 데이터 필드를 해당 값으로 합니다.
+- `ProductID` 없음입니다.
+- `ProductName` TextBox를 추가 하 고 설정의 `ID` 를 `NewProductName`합니다. 사용자가 새 s 제품 이름에 대 한 값을 입력을 확인 하는 RequiredFieldValidator 컨트롤을 추가 합니다.
+- `SupplierID` 없음입니다.
+- `CategoryID` 없음입니다.
+- `QuantityPerUnit` 설정 된 TextBox를 추가 해당 `ID` 를 `NewQuantityPerUnit`합니다.
+- `UnitPrice` 라는 텍스트 상자 추가 `NewUnitPrice` 이 고 입력 한 값을 보장 하는 CompareValidator는 0 보다 크거나 통화 값입니다.
+- `UnitsInStock` 텍스트 상자를 사용 하 여 해당 `ID` 로 설정 된 `NewUnitsInStock`합니다. 입력 한 값이 0 보다 크거나 정수 값을 보장 하는 CompareValidator 포함 됩니다.
+- `UnitsOnOrder` 텍스트 상자를 사용 하 여 해당 `ID` 로 설정 된 `NewUnitsOnOrder`합니다. 입력 한 값이 0 보다 크거나 정수 값을 보장 하는 CompareValidator 포함 됩니다.
+- `ReorderLevel` 텍스트 상자를 사용 하 여 해당 `ID` 로 설정 된 `NewReorderLevel`합니다. 입력 한 값이 0 보다 크거나 정수 값을 보장 하는 CompareValidator 포함 됩니다.
+- `Discontinued` 확인란 설정을 추가 해당 `ID` 를 `NewDiscontinued`합니다.
+- `CategoryName` DropDownList를 추가 하 고 설정의 `ID` 를 `NewCategoryID`합니다. 라는 새 ObjectDataSource 바인딩할 `CategoriesDataSource` 사용 하도록 구성 하 고는 `CategoriesBLL` s 클래스 `GetCategories()` 메서드. DropDownList s `ListItem` s 표시는 `CategoryName` 데이터 필드를 사용 하 여 `CategoryID` 데이터 필드를 해당 값으로 합니다.
+- `SupplierName` DropDownList를 추가 하 고 설정의 `ID` 를 `NewSupplierID`합니다. 라는 새 ObjectDataSource 바인딩할 `SuppliersDataSource` 사용 하도록 구성 하 고는 `SuppliersBLL` s 클래스 `GetSuppliers()` 메서드. DropDownList s `ListItem` s 표시는 `CompanyName` 데이터 필드를 사용 하 여 `SupplierID` 데이터 필드를 해당 값으로 합니다.
 
 각 유효성 검사 컨트롤에 대 한 지울는 `ForeColor` 속성 있도록는 `FooterStyle` CSS 클래스 s 흰색 전경 색을 빨간색 기본 대신 사용 됩니다. 또한 사용 하 여는 `ErrorMessage` 대 한 자세한 내용은 속성을 설정할 수 있지만 `Text` 별표로 속성입니다. 유효성 검사 컨트롤의 텍스트가 두 줄으로 줄 삽입 인터페이스 발생 하지 못하도록 하려면 설정는 `FooterStyle` s `Wrap` 속성 각각에 대해 false로는 `FooterTemplate` 유효성 검사 컨트롤을 사용 하는 합니다. 마지막으로, 집합과 GridView 아래 ValidationSummary 컨트롤을 추가 해당 `ShowMessageBox` 속성을 `true` 및 해당 `ShowSummary` 속성을 `false`합니다.
 
@@ -234,7 +234,7 @@ GridView의 기본 제공 편집 기능을 사용할 때는 GridView 자동으�
 
 [!code-csharp[Main](inserting-a-new-record-from-the-gridview-s-footer-cs/samples/sample9.cs)]
 
-`SendUserToLastPage`페이지 수준 부울 변수는 초기 값이 할당은 `false`합니다. GridView s에서 `DataBound` 이벤트 처리기 인 경우 `SendUserToLastPage` 이 false 이면는 `PageIndex` 속성은 마지막 페이지에 연결 하도록 업데이트 합니다.
+`SendUserToLastPage` 페이지 수준 부울 변수는 초기 값이 할당은 `false`합니다. GridView s에서 `DataBound` 이벤트 처리기 인 경우 `SendUserToLastPage` 이 false 이면는 `PageIndex` 속성은 마지막 페이지에 연결 하도록 업데이트 합니다.
 
 
 [!code-csharp[Main](inserting-a-new-record-from-the-gridview-s-footer-cs/samples/sample10.cs)]
@@ -262,12 +262,12 @@ GridView에 DetailsView 및 FormView, 기본 제공 삽입 기능 부족 하지�
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 박 광 준 Leigh 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](adding-a-gridview-column-of-checkboxes-cs.md)
-[다음](adding-a-gridview-column-of-radio-buttons-vb.md)
+> [!div class="step-by-step"]
+> [이전](adding-a-gridview-column-of-checkboxes-cs.md)
+> [다음](adding-a-gridview-column-of-radio-buttons-vb.md)

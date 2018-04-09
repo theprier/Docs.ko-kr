@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-updatepanel-triggers
-title: "ASP.NET AJAX UpdatePanel 트리거 이해 | Microsoft Docs"
+title: ASP.NET AJAX UpdatePanel 트리거 이해 | Microsoft Docs
 author: scottcate
-description: "Visual Studio에서 태그 편집기에서 작업, 변경 될 수 있습니다 (IntelliSense)에서 UpdatePanel 컨트롤의 두 개의 자식 요소입니다. Wh 중..."
+description: Visual Studio에서 태그 편집기에서 작업, 변경 될 수 있습니다 (IntelliSense)에서 UpdatePanel 컨트롤의 두 개의 자식 요소입니다. Wh 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/12/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-updatepanel-triggers
 msc.type: authoredcontent
-ms.openlocfilehash: 1338ef0763d9bfab451bc30cafa39f715200153d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f30f2ead402d2f49a89b2caf47cc30b6445d4cfb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="understanding-aspnet-ajax-updatepanel-triggers"></a>ASP.NET AJAX UpdatePanel 트리거 이해
 ====================
@@ -59,8 +59,8 @@ Visual Studio에서 태그 편집기에서 작업, 변경 될 수 있습니다 (
 
 | **태그** | **설명** |
 | --- | --- |
-| &lt;asp: AsyncPostBackTrigger&gt; | 컨트롤 및 부분 페이지 업데이트를이 트리거 참조가 포함 되어 있는 UpdatePanel을 발생 시키는 이벤트를 지정 합니다. |
-| &lt;asp: PostBackTrigger&gt; | 컨트롤 및 전체 페이지 업데이트가 (전체 페이지 새로 고침)를 발생 시키는 이벤트를 지정 합니다. 이 태그는 컨트롤의 부분 렌더링 트리거할지 그렇지 않은 경우 전체 새로 고침을 강제로 사용할 수 있습니다. |
+| &lt;asp:AsyncPostBackTrigger&gt; | 컨트롤 및 부분 페이지 업데이트를이 트리거 참조가 포함 되어 있는 UpdatePanel을 발생 시키는 이벤트를 지정 합니다. |
+| &lt;asp:PostBackTrigger&gt; | 컨트롤 및 전체 페이지 업데이트가 (전체 페이지 새로 고침)를 발생 시키는 이벤트를 지정 합니다. 이 태그는 컨트롤의 부분 렌더링 트리거할지 그렇지 않은 경우 전체 새로 고침을 강제로 사용할 수 있습니다. |
 
 ## <a name="walkthrough-cross-updatepanel-triggers"></a>*연습: 간 UpdatePanel 트리거*
 
@@ -85,7 +85,7 @@ Visual Studio에서 태그 편집기에서 작업, 변경 될 수 있습니다 (
 ([전체 크기 이미지를 보려면 클릭](understanding-asp-net-ajax-updatepanel-triggers/_static/image3.png))
 
 
-## <a name="under-the-hood"></a>*기본적인 이해*
+## <a name="under-the-hood"></a>*내부 살펴보기*
 
 이 예제에서는 방금 구성한를 활용 하 ASP.NET AJAX 수행 하는 및 우리의 UpdatePanel 간 패널 트리거 작동 하는 방법을 참조를 수행할 수 있습니다. 이렇게 하려면 오른쪽으로 생성 된 페이지의 HTML, 소스, FireBug-라는 Mozilla Firefox 확장으로 작업 하 AJAX 포스트백 수 쉽게 알아봅니다. 또한 Lutz Roeder 여.NET Reflector 도구를 사용 합니다. 이러한 도구는 무료로 사용할 수 있는 온라인, 있고 인터넷 검색 하 여 확인할 수 있습니다.
 
@@ -151,10 +151,10 @@ ASP.NET AJAX 폼의 내부 작동 방식을 검토 하 여 인터 셉 션 모델
 
 ## <a name="bio"></a>약력
 
-Rob Paveza Terralever의 수석.NET 응용 프로그램 개발자는 ([www.terralever.com](http://www.terralever.com)), 템피 소재, AZ.에 선행 대화형 마케팅 회사 에 연결할 수 그 [ robpaveza@gmail.com ](mailto:robpaveza@gmail.com), 그의 블로그에 있는 것 [http://geekswithblogs.net/robp/](http://geekswithblogs.net/robp/)합니다.
+Rob Paveza Terralever의 수석.NET 응용 프로그램 개발자는 ([www.terralever.com](http://www.terralever.com)), 템피 소재, AZ.에 선행 대화형 마케팅 회사 에 연결할 수 그 [ robpaveza@gmail.com ](mailto:robpaveza@gmail.com), 그의 블로그에 있는 것 [ http://geekswithblogs.net/robp/ ](http://geekswithblogs.net/robp/)합니다.
 
 Scott 인증서의 근무 기간이 Microsoft 웹 기술을 1997 년부터 이며 myKB.com 부서장 ([www.myKB.com](http://www.myKB.com)) ASP.NET 작성 i 여기서 기반 응용 프로그램 기술 자료 소프트웨어 솔루션에 집중 합니다. Scott에 전자 메일을 통해 연결할 수 [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com) 또는에서 그의 블로그 [ScottCate.com](http://ScottCate.com)
 
->[!div class="step-by-step"]
-[이전](understanding-partial-page-updates-with-asp-net-ajax.md)
-[다음](understanding-asp-net-ajax-authentication-and-profile-application-services.md)
+> [!div class="step-by-step"]
+> [이전](understanding-partial-page-updates-with-asp-net-ajax.md)
+> [다음](understanding-asp-net-ajax-authentication-and-profile-application-services.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/testing-and-debugging/aspnet-web-pages-razor-troubleshooting-guide
-title: "ASP.NET 웹 페이지 (Razor) 문제 해결 가이드 | Microsoft Docs"
+title: ASP.NET 웹 페이지 (Razor) 문제 해결 가이드 | Microsoft Docs
 author: tfitzmac
-description: "이 문서에서는 ASP.NET Web Pages (Razor) 및 제안 된 일부 솔루션을 작업할 때 발생할 수 있는 문제를 설명 합니다. 소프트웨어 버전 ASP.NET 웹 페이지 중..."
+description: 이 문서에서는 ASP.NET Web Pages (Razor) 및 제안 된 일부 솔루션을 작업할 때 발생할 수 있는 문제를 설명 합니다. 소프트웨어 버전 ASP.NET 웹 페이지 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/testing-and-debugging/aspnet-web-pages-razor-troubleshooting-guide
 msc.type: authoredcontent
-ms.openlocfilehash: 2e25e9c7cea937016301e0f11919adb9647ca216
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: ec51169ccea0016712de3fdb28a16a174150a8bd
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-pages-razor-troubleshooting-guide"></a>ASP.NET 웹 페이지 (Razor) 문제 해결 가이드
 ====================
@@ -144,19 +144,19 @@ HTTP 오류 404.17에 대 한 이전 설명을 참조 하십시오.
     *연결 된 구성원 시간 또는 연결 된 호스트에서 응답 하지 없어 연결 기간 후 올바르게 응답 하지 않아 연결 시도가 실패*
 
     이 오류는 일반적으로 응용 프로그램에서 SMTP 서버에 연결할 수 없습니다 의미 합니다. 서버 이름을 확인 하 고 포트 번호입니다.
-- *사서함을 사용할 수 없습니다. 서버 응답: 5.1.0 &lt; someuser@invaliddomain &gt; 거부 보낸 사람: 잘못 된 보낸 도메인*
+- <em>사서함을 사용할 수 없습니다. 서버 응답: 5.1.0 &lt; someuser@invaliddomain &gt; 거부 보낸 사람: 잘못 된 보낸 도메인</em>
 
     이 메시지는 되었음을 나타낼 수 있습니다는 `From` 주소가 잘못 되었거나 없습니다.
 - *지정된 된 문자열에 전자 메일 주소 형식이 없는 경우*
 
-    이 오류를 나타낼 수 있습니다의 값은 `To` 또는 `From` 전자 메일 주소로 서 속성을 인식할 수 없습니다. (ASP.NET 확인할 수 없습니다. 전자 메일 주소가 올바른지 한다는 원하는 올바른 형식으로의  *name@domain.com* .)
+    이 오류를 나타낼 수 있습니다의 값은 `To` 또는 `From` 전자 메일 주소로 서 속성을 인식할 수 없습니다. (ASP.NET 확인할 수 없습니다. 전자 메일 주소가 올바른지 한다는 원하는 올바른 형식으로의 *name@domain.com*.)
 
 > [!NOTE]
 > 이 오류를 표시 하는 태그를 제거 (`@errorMessage`) 페이지를 라이브 사이트에 게시 하기 전에. 하지 사용자가 서버에서 얻을 수 있는 오류 메시지를 볼 수 있도록 하는 것이 좋습니다.
 
 
 <a id="AdditionalResources"></a>
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 [ASP.NET 웹 페이지(Razor) FAQ](https://go.microsoft.com/fwlink/?LinkId=253000)
 

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-1
-title: "1 단계: 파일-새 프로젝트 > | Microsoft Docs"
+title: '1 단계: 파일-새 프로젝트 > | Microsoft Docs'
 author: JoeStagner
-description: "이 자습서 시리즈 모든 Tailspin Spyworks 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 1 부에서는 개요 및 프로젝트 파일/새로 만들기를 다룹니다."
+description: 이 자습서 시리즈 모든 Tailspin Spyworks 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 1 부에서는 개요 및 프로젝트 파일/새로 만들기를 다룹니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/21/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: bd840f9f3f5d723e6bc1bb35955a7770634e9483
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a1b9681516e626b6a0eec420b168a74e05d88afb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-1-file--new-project"></a>1 단계: 파일-새 프로젝트 >
 ====================
@@ -27,7 +27,7 @@ ms.lasthandoff: 11/10/2017
 > 이 자습서 시리즈 모든 Tailspin Spyworks 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 1 부에서는 개요 및 프로젝트 파일/새로 만들기를 다룹니다.
 
 
-## <a id="_Toc260221666"></a>개요
+## <a id="_Toc260221666"></a>  개요
 
 이 자습서에는 ASP.NET WebForms에 대 한 소개입니다. 에서는 느리게 시작 합니다, 그리고 초급 수준 웹 개발 발생 하므로 괜찮습니다.
 
@@ -61,11 +61,11 @@ ms.lasthandoff: 11/10/2017
 
 Visual Studio 2010에서 새 ASP.NET WebForms 프로젝트를 만들면 먼저 및 기능을 완전 한 기능의 응용 프로그램을 만들거나 증분 방식으로 추가 합니다. 프로세스를 진행 다룰 것 데이터베이스 액세스, 목록 및 그리드 보기, 페이지를 업데이트 하는 데이터, 데이터 유효성 검사, 마스터 페이지를 사용 하 여 일관 된 페이지 레이아웃, AJAX, 유효성 검사, 사용자 구성원 자격, 등에.
 
-과정을 단계별로, 함께 진행할 수 또는에서 완성 된 응용 프로그램을 다운로드할 수 있습니다 [http://tailspinspyworks.codeplex.com/](http://tailspinspyworks.codeplex.com/)
+과정을 단계별로, 함께 진행할 수 또는에서 완성 된 응용 프로그램을 다운로드할 수 있습니다. [http://tailspinspyworks.codeplex.com/](http://tailspinspyworks.codeplex.com/)
 
-Visual Studio 2010 또는 무료 Visual Web Developer 2010에서 사용할 수 있습니다 [https://www.microsoft.com/express/Web/](https://www.microsoft.com/express/Web/)합니다. 응용 프로그램을 빌드하려면 SQL Server 또는 무료 SQL Server Express에 데이터베이스를 호스팅하는 사용할 수 있습니다.
+Visual Studio 2010 또는 무료 Visual Web Developer 2010에서 사용할 수 있습니다 [ https://www.microsoft.com/express/Web/ ](https://www.microsoft.com/express/Web/)합니다. 응용 프로그램을 빌드하려면 SQL Server 또는 무료 SQL Server Express에 데이터베이스를 호스팅하는 사용할 수 있습니다.
 
-## <a id="_Toc260221667"></a>파일 / 새 프로젝트
+## <a id="_Toc260221667"></a>  파일 / 새 프로젝트
 
 Visual Studio에서 파일 메뉴에서 새 프로젝트를 선택 하 여 시작 합니다. 이 통해 새 프로젝트 대화 상자를 가져옵니다.
 
@@ -105,5 +105,5 @@ Note ASP.NET 4 기본 프로젝트 템플릿에 의해 구현 되는 규칙입�
 
 마스터 페이지를 변경 해야이 작업을 수행한 후 모든.aspx 파일에 대 한 참조에서 생성 된 기본 ASP.NET WebForms 페이지입니다.
 
->[!div class="step-by-step"]
-[다음](tailspin-spyworks-part-2.md)
+> [!div class="step-by-step"]
+> [다음](tailspin-spyworks-part-2.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/performing-batch-updates-cs
-title: "일괄 처리 업데이트 (C#)를 수행 합니다. | Microsoft Docs"
+title: 일괄 처리 업데이트 (C#)를 수행 합니다. | Microsoft Docs
 author: rick-anderson
-description: "완벽 하 게 편집할 만드는 방법을 설명에 해당 항목이 모두 있는 DataList 편집 모드와 해당 값에서 ' 모두 업데이트 ' 단추를 클릭 하 여 저장할 수 있습니다는 중..."
+description: 완벽 하 게 편집할 만드는 방법을 설명에 해당 항목이 모두 있는 DataList 편집 모드와 해당 값에서 ' 모두 업데이트 ' 단추를 클릭 하 여 저장할 수 있습니다는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/30/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/performing-batch-updates-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 46db3c5d733b9c8b6e749a9b8ff1aa9a061c36df
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: af19104edb1849272773193befe1f5b2c7347683
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="performing-batch-updates-c"></a>일괄 처리 업데이트 수행 (C#)
 ====================
@@ -43,8 +43,8 @@ ms.lasthandoff: 01/24/2018
 
 여기서 만드는 표준, 항목 수준 편집 가능한 DataList म 사용 두 템플릿이 이전 자습서:
 
-- `ItemTemplate`읽기 전용 사용자 인터페이스 (각 제품 s 이름과 가격을 표시 하기 위한 레이블 웹 컨트롤)를 포함 합니다.
-- `EditItemTemplate`편집 모드 사용자 인터페이스 (두 개의 TextBox 웹 컨트롤)를 포함 합니다.
+- `ItemTemplate` 읽기 전용 사용자 인터페이스 (각 제품 s 이름과 가격을 표시 하기 위한 레이블 웹 컨트롤)를 포함 합니다.
+- `EditItemTemplate` 편집 모드 사용자 인터페이스 (두 개의 TextBox 웹 컨트롤)를 포함 합니다.
 
 DataList s `EditItemIndex` 속성은 어떤 나타냅니다 `DataListItem` (있는 경우)를 사용 하 여 렌더링 되는 `EditItemTemplate`합니다. 특히는 `DataListItem` 인 `ItemIndex` 값과 s DataList 일치 `EditItemIndex` 속성은 사용 하 여 렌더링는 `EditItemTemplate`합니다. 이 모델에는 완벽 하 게 편집할 DataList를 만들 때 시간만 떨어져 있는 폭포에 하나의 항목을 편집할 수 있습니다 하는 경우에 작동 합니다.
 
@@ -163,12 +163,12 @@ ADO.NET DataTable 및 데이터 어댑터 클래스는 여기서만 수정, 삭�
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Zack Jones 및 켄 Pespisa 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](an-overview-of-editing-and-deleting-data-in-the-datalist-cs.md)
-[다음](handling-bll-and-dal-level-exceptions-cs.md)
+> [!div class="step-by-step"]
+> [이전](an-overview-of-editing-and-deleting-data-in-the-datalist-cs.md)
+> [다음](handling-bll-and-dal-level-exceptions-cs.md)

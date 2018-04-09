@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage
-title: "구조화 되지 않은 Blob 저장소 (Azure로 응용 프로그램 빌딩 실제 클라우드) | Microsoft Docs"
+title: 구조화 되지 않은 Blob 저장소 (Azure로 응용 프로그램 빌딩 실제 클라우드) | Microsoft Docs
 author: MikeWasson
-description: "실제 세계 클라우드로 응용 프로그램 빌딩 Azure 전자책 Scott Guthrie에서 개발 된 프레젠테이션을 기반으로 합니다. 13 패턴 및 그을 수 있는 방법에 설명..."
+description: 실제 세계 클라우드로 응용 프로그램 빌딩 Azure 전자책 Scott Guthrie에서 개발 된 프레젠테이션을 기반으로 합니다. 13 패턴 및 그을 수 있는 방법에 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/30/2015
 ms.topic: article
 ms.assetid: 9f05ccb1-2004-4661-ad8b-c370e6c09c8e
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage
 msc.type: authoredcontent
-ms.openlocfilehash: 489769533a26c99404c6a5186d66f560385dcffd
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c2c82a579feb586287c40bb82eba53c5f84afaba
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="unstructured-blob-storage-building-real-world-cloud-apps-with-azure"></a>구조화 되지 않은 Blob 저장소 (Azure로 응용 프로그램 빌딩 실제 클라우드)
 ====================
@@ -139,7 +139,7 @@ Azure 지역 정치적 경계에 걸쳐 데이터를 복제 하지 않을: 파�
 
 에 [다음 장에서](design-to-survive-failures.md) 중요성 오류를 정상적으로 처리할 수 있는 클라우드 앱을 만드는 방법에 대해 알아보겠습니다.
 
-## <a name="resources"></a>리소스
+## <a name="resources"></a>자료
 
 자세한 내용은 다음 리소스를 참조 합니다.
 
@@ -148,6 +148,6 @@ Azure 지역 정치적 경계에 걸쳐 데이터를 복제 하지 않을: 파�
 - [FailSafe: 복원 력 있는 확장 가능한 클라우드 서비스를 만드는](https://channel9.msdn.com/Series/FailSafe)합니다. Marc Mercuri, Ulrich Homann, Mark Simms 하 여 비디오 시리즈를 9 개 부분으로 구성 합니다. 고급 개념 및 아키텍처 원칙 매우 액세스 가능 하 고 흥미로운 방법으로 스토리 실제 고객과 Microsoft 고객 자문 팀 (CAT) 환경에서 가져온 것으로 표시 합니다. Azure 저장소 서비스와 blob의 토론, 에피소드 5 35:13에서 시작을 참조 하십시오.
 - [Microsoft Patterns and Practices-Azure 지침](https://msdn.microsoft.com/library/dn568099.aspx)합니다. 참조 Valet 키 패턴입니다.
 
->[!div class="step-by-step"]
-[이전](data-partitioning-strategies.md)
-[다음](design-to-survive-failures.md)
+> [!div class="step-by-step"]
+> [이전](data-partitioning-strategies.md)
+> [다음](design-to-survive-failures.md)

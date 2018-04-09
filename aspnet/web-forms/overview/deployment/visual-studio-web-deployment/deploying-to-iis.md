@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-iis
-title: "Visual Studio를 사용 하 여 ASP.NET 웹 배포: 테스트 배포 | Microsoft Docs"
+title: 'Visual Studio를 사용 하 여 ASP.NET 웹 배포: 테스트 배포 | Microsoft Docs'
 author: tdykstra
-description: "이 자습서 시리즈를 배포 하는 방법을 보여 줍니다. ASP.NET (게시) 실행 하 여 웹 응용 프로그램을 Azure 앱 서비스 웹 앱 또는 타사 호스팅 공급자 중..."
+description: 이 자습서 시리즈를 배포 하는 방법을 보여 줍니다. ASP.NET (게시) 실행 하 여 웹 응용 프로그램을 Azure 앱 서비스 웹 앱 또는 타사 호스팅 공급자 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/23/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/deploying-to-iis
 msc.type: authoredcontent
-ms.openlocfilehash: 01f72e0240e84944f8ffece9a2dbc5802be4646b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: dc11072e053cbddd089e5df4bcea6d2a7af864fc
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-to-test"></a>Visual Studio를 사용 하 여 ASP.NET 웹 배포: 테스트에 배포
 ====================
@@ -52,15 +52,15 @@ Visual Studio에서 웹 서버를 사용 하는 방법에 대 한 자세한 내�
 
     IIS 및 웹 배포를 설치 하려면 웹 플랫폼 설치 관리자를 실행 하려면 다음 링크를 사용 합니다. 웹 플랫폼 설치 관리자를 이미 설치한 경우 IIS, 웹 배포 또는 해당 필수 구성 요소 중 하나를 누락 된 것만 설치 합니다.
 
-    - [IIS 및 WebPI를 사용 하 여 웹 배포 설치](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=IIS7;ASPNET;NETFramework4;WDeploy)
+   - [IIS 및 WebPI를 사용 하 여 웹 배포 설치](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=IIS7;ASPNET;NETFramework4;WDeploy)
 
-    IIS 7을 설치할 나타내는 메시지가 표시 됩니다. Windows 8, IIS 8 용 하지만 Windows 8에 대 한 링크 works 다음 단계를 수행 하 여 ASP.NET 4.5가 설치 되어 있는지 확인 합니다.
+     IIS 7을 설치할 나타내는 메시지가 표시 됩니다. Windows 8, IIS 8 용 하지만 Windows 8에 대 한 링크 works 다음 단계를 수행 하 여 ASP.NET 4.5가 설치 되어 있는지 확인 합니다.
 
-    1. 열기 **제어판**, **프로그램 및 기능**, **Windows 기능 설정 또는 해제**합니다.
-    2. 확장 **인터넷 정보 서비스**, **World Wide Web 서비스**, 및 **응용 프로그램 개발 기능**합니다.
-    3. 다음 사항을 확인 **ASP.NET 4.5** 을 선택 합니다.
+   - 열기 **제어판**, **프로그램 및 기능**, **Windows 기능 설정 또는 해제**합니다.
+   - 확장 **인터넷 정보 서비스**, **World Wide Web 서비스**, 및 **응용 프로그램 개발 기능**합니다.
+   - 다음 사항을 확인 **ASP.NET 4.5** 을 선택 합니다.
 
-        ![ASP.NET 4.5를 선택 합니다.](deploying-to-iis/_static/image1.png)
+      ![ASP.NET 4.5를 선택 합니다.](deploying-to-iis/_static/image1.png)
 
 IIS를 설치한 후 실행 **IIS 관리자** 를.NET Framework 버전 4 기본 응용 프로그램 풀에 할당 되어 있는지 확인 합니다.
 
@@ -178,7 +178,7 @@ Contoso 대학교 응용 프로그램 데이터베이스가 두 개인: 멤버 �
     마법사가 자동으로 이동 된 **연결** 탭 합니다.
 4. 에 **서비스 URL** 상자에 입력 *localhost*합니다.
 5. 에 **사이트/응용 프로그램** 상자에 입력 *기본 웹 사이트/ContosoUniversity*
-6. 에 **대상 URL** 상자에 입력 합니다`http://localhost/ContosoUniversity`
+6. 에 **대상 URL** 상자에 입력 합니다 `http://localhost/ContosoUniversity`
 
     **대상 URL** 설정이 필요 하지 않습니다. Visual Studio 응용 프로그램 배포 완료 되 면 자동으로이 URL에 기본 브라우저를 엽니다. 배포 후 자동으로 열 수 브라우저를 사용 하지 않으려는 경우에이 상자를 비워 둡니다.
 7. 클릭 **연결 유효성 검사** 설정이 올바른지 하 고 로컬 컴퓨터의 IIS에 연결할 수 있는지 확인 합니다.
@@ -337,6 +337,6 @@ Visual Studio에서 IIS 또는 IIS Express를 실행 하는 방법에 대 한 �
 
 어떤 문제에 대 한 정보는 보통 신뢰 수준에서 응용 프로그램이 실행 될 때 발생할 수 있습니다, 참조 [보통 신뢰에서 ASP.NET 응용 프로그램 호스팅](http://www.4guysfromrolla.com/articles/100307-1.aspx) Rolla 사이트에서 4 Guy에 있습니다.
 
->[!div class="step-by-step"]
-[이전](project-properties.md)
-[다음](setting-folder-permissions.md)
+> [!div class="step-by-step"]
+> [이전](project-properties.md)
+> [다음](setting-folder-permissions.md)

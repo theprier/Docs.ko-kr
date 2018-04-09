@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/collapsiblepanel/collapsing-and-expanding-a-panel-from-javascript-cs
-title: "확장 및 축소 된 패널 JavaScript (C#)에서 | Microsoft Docs"
+title: 확장 및 축소 된 패널 JavaScript (C#)에서 | Microsoft Docs
 author: wenz
-description: "ASP.NET AJAX 컨트롤 도구 키트에서 CollapsiblePanel 컨트롤 패널을 확장 하 고 해당 콘텐츠를 축소 및 확장 하는 기능과 제공는 중..."
+description: ASP.NET AJAX 컨트롤 도구 키트에서 CollapsiblePanel 컨트롤 패널을 확장 하 고 해당 콘텐츠를 축소 및 확장 하는 기능과 제공는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/collapsiblepanel/collapsing-and-expanding-a-panel-from-javascript-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 666f3e212ccdd5b26b466f4672134ce751dc5dd1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 7baa3be7144946bde7d11afd9b1cb5f14ad9dede
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="collapsing-and-expanding-a-panel-from-javascript-c"></a>확장 및 JavaScript (C#)에서 패널 축소
 ====================
@@ -53,7 +53,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-aspx[Main](collapsing-and-expanding-a-panel-from-javascript-cs/samples/sample5.aspx)]
 
-클라이언트 쪽 JavaScript 코드에서 (시작 `<script type="text/javascript">`), `$find()` 메서드를 사용 해야 합니다. 액세스 하는 `CollapsiblePanelExtender`합니다. `$find("cpe")`에 대 한 참조를 반환 합니다. 이 위치에서 관련 메서드는 작업에 해결 됩니다.
+클라이언트 쪽 JavaScript 코드에서 (시작 `<script type="text/javascript">`), `$find()` 메서드를 사용 해야 합니다. 액세스 하는 `CollapsiblePanelExtender`합니다. `$find("cpe")` 에 대 한 참조를 반환 합니다. 이 위치에서 관련 메서드는 작업에 해결 됩니다.
 
 메서드가 패널 (확장)을 열기 위해 호출 됩니다 `_doOpen()`; 다음 구현 코드는 `doOpen()` 함수는 첫 번째 단추를 클릭할 때 호출 합니다.
 
@@ -72,5 +72,5 @@ ms.lasthandoff: 11/10/2017
 
 패널의 상태를 변경 하는 세 번째 단추:에서 축소 하 여 코드 확장 되어 백 ([전체 크기 이미지를 보려면 클릭](collapsing-and-expanding-a-panel-from-javascript-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[다음](collapsing-and-expanding-a-panel-from-javascript-vb.md)
+> [!div class="step-by-step"]
+> [다음](collapsing-and-expanding-a-panel-from-javascript-vb.md)

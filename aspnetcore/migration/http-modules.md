@@ -1,7 +1,7 @@
 ---
-title: "HTTP 처리기 및 ASP.NET Core 미들웨어 모듈을 마이그레이션하는 방법"
+title: ASP.NET Core 미들웨어로 HTTP 처리기 및 모듈이 마이그레이션
 author: rick-anderson
-description: 
+description: ''
 manager: wpickett
 ms.author: tdykstra
 ms.date: 12/07/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/http-modules
-ms.openlocfilehash: 7f08e155491b56933ae183818e9b9ee562ad8286
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: e02f3a75269e5e4a4794d1979d3a5add21fe38be
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="migrating-http-handlers-and-modules-to-aspnet-core-middleware"></a>HTTP 처리기 및 ASP.NET Core 미들웨어 모듈을 마이그레이션하는 방법 
+# <a name="migrate-http-handlers-and-modules-to-aspnet-core-middleware"></a>ASP.NET Core 미들웨어로 HTTP 처리기 및 모듈이 마이그레이션
 
 으로 [Matt Perdeck](https://www.linkedin.com/in/mattperdeck)
 
@@ -173,17 +173,17 @@ HTTP 처리기 구성 의해 이루어진다는 *Web.config* 다음과 같은 �
 
 * 사용 하 여 [옵션 패턴](xref:fundamentals/configuration/options):
 
-1.  예를 들어 미들웨어 옵션을 저장 하는 클래스를 만듭니다.
+1. 예를 들어 미들웨어 옵션을 저장 하는 클래스를 만듭니다.
 
-    [!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_Options)]
+   [!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_Options)]
 
-2.  옵션 값을 저장 합니다.
+2. 옵션 값을 저장 합니다.
 
-    구성 시스템을 사용 하면 옵션 아무 곳 이나 원하는 값을 저장할 수 있습니다. 그러나 사용 하 여 가장 사이트 *appsettings.json*이므로 해당 접근 이동 합니다.
+   구성 시스템을 사용 하면 옵션 아무 곳 이나 원하는 값을 저장할 수 있습니다. 그러나 사용 하 여 가장 사이트 *appsettings.json*이므로 해당 접근 이동 합니다.
 
-    [!code-json[](http-modules/sample/Asp.Net.Core/appsettings.json?range=1,14-18)]
+   [!code-json[](http-modules/sample/Asp.Net.Core/appsettings.json?range=1,14-18)]
 
-    *MyMiddlewareOptionsSection* 섹션 이름에는 다음과 같습니다. 옵션 클래스의 이름이 같이 필요는 없습니다.
+   *MyMiddlewareOptionsSection* 섹션 이름에는 다음과 같습니다. 옵션 클래스의 이름이 같이 필요는 없습니다.
 
 3. 옵션 클래스 옵션 값에 연결
 
@@ -191,25 +191,25 @@ HTTP 처리기 구성 의해 이루어진다는 *Web.config* 다음과 같은 �
 
     업데이트 프로그램 `Startup` 클래스:
 
-    1.  사용 중인 경우 *appsettings.json*의 구성 작성기에 추가 `Startup` 생성자:
+   1. 사용 중인 경우 *appsettings.json*의 구성 작성기에 추가 `Startup` 생성자:
 
       [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Ctor&highlight=5-6)]
 
-    2.  옵션 서비스를 구성 합니다.
+   2. 옵션 서비스를 구성 합니다.
 
       [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_ConfigureServices&highlight=4)]
 
-    3.  옵션 클래스 옵션을 연결 합니다.
+   3. 옵션 클래스 옵션을 연결 합니다.
 
       [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_ConfigureServices&highlight=6-8)]
 
-4.  미들웨어 생성자에 대 한 옵션을 삽입 합니다. 컨트롤러에 대 한 옵션을 삽입 하는 것과 비슷합니다.
+4. 미들웨어 생성자에 대 한 옵션을 삽입 합니다. 컨트롤러에 대 한 옵션을 삽입 하는 것과 비슷합니다.
 
-  [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_MiddlewareWithParams&highlight=4,7,10,15-16)]
+   [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_MiddlewareWithParams&highlight=4,7,10,15-16)]
 
-  [UseMiddleware](#http-modules-usemiddleware) 미들웨어를 추가 하는 확장 메서드는 `IApplicationBuilder` 종속성 주입 담당 합니다.
+   [UseMiddleware](#http-modules-usemiddleware) 미들웨어를 추가 하는 확장 메서드는 `IApplicationBuilder` 종속성 주입 담당 합니다.
 
-  이에 제한 되지 않습니다 `IOptions` 개체입니다. 미들웨어 해야 하는 다른 개체에는 이러한 방식으로 삽입 될 수 있습니다.
+   이에 제한 되지 않습니다 `IOptions` 개체입니다. 미들웨어 해야 하는 다른 개체에는 이러한 방식으로 삽입 될 수 있습니다.
 
 ## <a name="loading-middleware-options-through-direct-injection"></a>로드를 통해 직접 삽입 미들웨어 옵션입니다.
 
@@ -219,21 +219,21 @@ HTTP 처리기 구성 의해 이루어진다는 *Web.config* 다음과 같은 �
 
 실제 옵션 값과 옵션 개체를 가져오는 데 솔루션은 프로그램 `Startup` 클래스 미들웨어의 각 인스턴스에 확인란을 직접 전달 합니다.
 
-1.  두 번째 키를 추가 *appsettings.json*
+1. 두 번째 키를 추가 *appsettings.json*
 
-    옵션 중 두 번째 집합을 추가 하려면는 *appsettings.json* 파일을 고유 하 게 식별 하는 데 새 키를 사용 합니다.
+   옵션 중 두 번째 집합을 추가 하려면는 *appsettings.json* 파일을 고유 하 게 식별 하는 데 새 키를 사용 합니다.
 
-    [!code-json[](http-modules/sample/Asp.Net.Core/appsettings.json?range=1,10-18&highlight=2-5)]
+   [!code-json[](http-modules/sample/Asp.Net.Core/appsettings.json?range=1,10-18&highlight=2-5)]
 
-2.  옵션 값을 검색 하 고 미들웨어에 전달 합니다. `Use...` (파이프라인에 미들웨어를 추가)는 확장 메서드는 옵션 값을 전달할 수 있는 논리적 위치: 
+2. 옵션 값을 검색 하 고 미들웨어에 전달 합니다. `Use...` (파이프라인에 미들웨어를 추가)는 확장 메서드는 옵션 값을 전달할 수 있는 논리적 위치: 
 
-    [!code-csharp[](http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Configure&highlight=20-23)]
+   [!code-csharp[](http-modules/sample/Asp.Net.Core/Startup.cs?name=snippet_Configure&highlight=20-23)]
 
-4.  미들웨어 옵션 매개 변수를 사용 하도록 설정 합니다. 오버 로드를 제공 된 `Use...` 확장 메서드 (옵션 매개 변수를 사용 하 고로 전달 `UseMiddleware`). 때 `UseMiddleware` 라고 매개 변수와 함께 전달 매개 변수 미들웨어 생성자에 미들웨어 개체를 인스턴스화할 때.
+3. 미들웨어 옵션 매개 변수를 사용 하도록 설정 합니다. 오버 로드를 제공 된 `Use...` 확장 메서드 (옵션 매개 변수를 사용 하 고로 전달 `UseMiddleware`). 때 `UseMiddleware` 라고 매개 변수와 함께 전달 매개 변수 미들웨어 생성자에 미들웨어 개체를 인스턴스화할 때.
 
-    [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_Extensions&highlight=9-14)]
+   [!code-csharp[](../migration/http-modules/sample/Asp.Net.Core/Middleware/MyMiddlewareWithParams.cs?name=snippet_Extensions&highlight=9-14)]
 
-    이 옵션 개체에 배치 되는 방법을 확인 프로그램 `OptionsWrapper` 개체입니다. 이 구현 `IOptions`미들웨어 생성자가 예상 대로, 합니다.
+   이 옵션 개체에 배치 되는 방법을 확인 프로그램 `OptionsWrapper` 개체입니다. 이 구현 `IOptions`미들웨어 생성자가 예상 대로, 합니다.
 
 ## <a name="migrating-to-the-new-httpcontext"></a>새 HttpContext로 마이그레이션
 
@@ -378,7 +378,7 @@ public async Task Invoke(HttpContext httpContext)
 
 [!code-csharp[](http-modules/sample/Asp.Net.Core/Middleware/HttpContextDemoMiddleware.cs?name=snippet_SetCookies)]
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 * [HTTP 처리기 및 HTTP 모듈 개요](/iis/configuration/system.webserver/)
 * [구성](xref:fundamentals/configuration/index)

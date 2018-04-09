@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/security/preventing-javascript-injection-attacks-vb
-title: "JavaScript 주입 공격 방지 (VB) | Microsoft Docs"
+title: JavaScript 주입 공격 방지 (VB) | Microsoft Docs
 author: StephenWalther
-description: "JavaScript 주입 공격 및 사이트 간 스크립팅 공격을 상황이 발생을 방지 합니다. 이 자습서에서는 Stephen Walther 하는 방법을 쉽게 de 설명..."
+description: JavaScript 주입 공격 및 사이트 간 스크립팅 공격을 상황이 발생을 방지 합니다. 이 자습서에서는 Stephen Walther 하는 방법을 쉽게 de 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/19/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/security/preventing-javascript-injection-attacks-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1d49d4d1afa30247d3452a96c8004441ba417ac8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cb19236b22abd455472621ce74a8cddf9752d6c5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="preventing-javascript-injection-attacks-vb"></a>JavaScript 주입 공격 방지 (VB)
 ====================
@@ -43,7 +43,7 @@ ms.lasthandoff: 11/10/2017
 
 사용 하 여 고객 의견 웹 사이트는 `controller` 목록 1에서입니다. 이 `controller` 라는 두 가지 동작 포함 `Index()` 및 `Create()`합니다.
 
-**1 – 나열`HomeController.vb`**
+**1 – 나열 `HomeController.vb`**
 
 [!code-vb[Main](preventing-javascript-injection-attacks-vb/samples/sample1.vb)]
 
@@ -53,7 +53,7 @@ ms.lasthandoff: 11/10/2017
 
 `Index` 보기 목록 2에 포함 되어 있습니다.
 
-**2 – 나열`Index.aspx`**
+**2 – 나열 `Index.aspx`**
 
 [!code-aspx[Main](preventing-javascript-injection-attacks-vb/samples/sample2.aspx)]
 
@@ -65,7 +65,7 @@ ms.lasthandoff: 11/10/2017
 
 [!code-html[Main](preventing-javascript-injection-attacks-vb/samples/sample3.html)]
 
-이 텍스트는 경고 메시지 상자를 표시 하는 JavaScript 스크립트를 나타냅니다. 이 스크립트를 피드백 제출 누군가가 후 양식에서 메시지 *Boo!* 모든 사용자 고객 의견 웹 사이트에 방문 나중에 (그림 2 참조) 될 때마다 표시 됩니다.
+이 텍스트는 경고 메시지 상자를 표시 하는 JavaScript 스크립트를 나타냅니다. 이 스크립트를 피드백 제출 누군가가 후 양식에서 메시지 <em>Boo!</em> 모든 사용자 고객 의견 웹 사이트에 방문 나중에 (그림 2 참조) 될 때마다 표시 됩니다.
 
 
 [![JavaScript 주입](preventing-javascript-injection-attacks-vb/_static/image5.png)](preventing-javascript-injection-attacks-vb/_static/image4.png)
@@ -121,5 +121,5 @@ HTML을 할 수 있습니다 HTML 인코딩 데이터 보기에서 데이터를 
 
 이 자습서의 목적은 JavaScript 주입 공격의 잠재 고객에 대 한 두려워 하는 것 이었습니다. 이 자습서에서는 JavaScript 주입 공격에 대 한 ASP.NET MVC 응용 프로그램을 방어 하기 위한 두 가지 방법을 설명: HTML 중 하나를 수행할 수 있습니다 제출 된 사용자를 인코딩하는 뷰 또는 사용자 데이터를 HTML 수 제출 된 사용자를 인코딩할 컨트롤러에는 데이터입니다.
 
->[!div class="step-by-step"]
-[이전](authenticating-users-with-windows-authentication-vb.md)
+> [!div class="step-by-step"]
+> [이전](authenticating-users-with-windows-authentication-vb.md)

@@ -1,28 +1,28 @@
 ---
 uid: aspnet/overview/owin-and-katana/getting-started-with-owin-and-katana
-title: "OWIN 및 Katana 시작 | Microsoft Docs"
+title: OWIN 및 Katana 시작 | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/27/2013
 ms.topic: article
 ms.assetid: 6dae249f-5ac6-4f6e-bc49-13bcd5a54a70
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/getting-started-with-owin-and-katana
 msc.type: authoredcontent
-ms.openlocfilehash: 8922aada723da9b149ec111902fcd883c8241dfb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ac0302ef1a786f6b1eef8119b3134a965f01c533
+ms.sourcegitcommit: 5ab5c5f4bfdb0150f42ba84c2770eadf540cae48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 03/28/2018
 ---
 <a name="getting-started-with-owin-and-katana"></a>OWIN 및 Katana 시작
 ====================
 으로 [Mike Wasson](https://github.com/MikeWasson)
 
-[.NET (OWIN)에 대 한 웹 인터페이스를 열고](http://owin.org/) .NET 웹 서버와 웹 응용 프로그램 간의 추상화를 정의 합니다. 응용 프로그램에서 웹 서버를 분리 하 여 OWIN 쉽게.NET 웹 개발에 대 한 미들웨어를 만들려고 합니다. 또한, OWIN 쉽게 다른 호스트 &#8212; 포트 웹 응용 프로그램에 예를 들어 Windows 서비스 또는 다른 프로세스에서 자체 호스트 합니다.
+[.NET (OWIN)에 대 한 웹 인터페이스를 열고](http://owin.org/) .NET 웹 서버와 웹 응용 프로그램 간의 추상화를 정의 합니다. 응용 프로그램에서 웹 서버를 분리 하 여 OWIN 쉽게.NET 웹 개발에 대 한 미들웨어를 만들려고 합니다. 또한, OWIN 쉽게 다른 호스트에 포트 웹 응용 프로그램에&#8212;예를 들어 Windows 서비스 또는 다른 프로세스에서 자체 호스트 합니다.
 
 OWIN는 커뮤니티 소유 사양, 구현 되지 않습니다. Katana 프로젝트가 Microsoft에서 개발 된 오픈 소스 OWIN 구성 요소 집합이 있습니다. OWIN 프로그램과 Katana의 일반적인 개요를 참조 하십시오. [An 프로젝트 Katana 개요](an-overview-of-project-katana.md)합니다. 이 문서에서 시작 하는 코드를 바로 됩니다 I.
 
@@ -74,7 +74,7 @@ F5 키를 눌러 디버깅을 시작 합니다. Visual Studio에 대 한 브라�
 
 ## <a name="self-host-owin-in-a-console-application"></a>콘솔 응용 프로그램에서 자체 호스트 OWIN
 
-이 응용 프로그램에서 사용자 지정 프로세스의 자체 호스팅에 IIS 호스팅에서 변환 하는 것이 쉽습니다. IIS 호스팅을 사용 IIS 역할 모두에서 HTTP 서버와 프로세스 서버를 호스트 하 합니다. 자체 호스팅을 사용 응용 프로그램 프로세스에서 만들고 사용 하는 **HttpListener** 클래스는 HTTP 서버입니다.
+이 응용 프로그램에서 사용자 지정 프로세스의 자체 호스팅에 IIS 호스팅에서 변환 하는 것이 쉽습니다. IIS 호스팅와 IIS와 역할을 수행 HTTP 서버 서비스를 호스팅하는 프로세스입니다. 자체 호스팅을 사용 응용 프로그램 프로세스에서 만들고 사용 하는 **HttpListener** 클래스는 HTTP 서버입니다.
 
 Visual Studio에서 새 콘솔 응용 프로그램을 만듭니다. 패키지 관리자 콘솔 창에서 다음 명령을 입력 합니다.
 

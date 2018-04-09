@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/creating-a-controller-cs
-title: "컨트롤러 (C#) 만들기 | Microsoft Docs"
+title: 컨트롤러 (C#) 만들기 | Microsoft Docs
 author: StephenWalther
-description: "이 자습서에서는 Stephen Walther ASP.NET MVC 응용 프로그램에 컨트롤러를 추가할 수는 방법을 보여 줍니다."
+description: 이 자습서에서는 Stephen Walther ASP.NET MVC 응용 프로그램에 컨트롤러를 추가할 수는 방법을 보여 줍니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/02/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-a-controller-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9faaff1e00998ef9a77c4928a9eb36fc93ab97f4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 86966f1064d09419e2102542c6d14c4162d153e4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-controller-c"></a>컨트롤러 (C#) 만들기
 ====================
@@ -92,10 +92,10 @@ ASP.NET MVC 컨트롤러에는 클래스 뿐입니다. 원하는 경우 Visual S
 
 `http://localhost:40071/Person`
 
-> [!NOTE] 
+> [!NOTE]
 > 
 > ASP.NET 개발 서버는 임의의 포트 번호 (예를 들어 40071)를 사용합니다. 컨트롤러를 호출 하는 URL을 입력할 때 올바른 포트 번호를 제공 해야 합니다. Windows 알림 영역 (의 오른쪽 아래 화면)에서 ASP.NET 개발 서버에 대 한 아이콘 위로 마우스를 이동 하 여 포트 번호를 확인할 수 있습니다.
-
->[!div class="step-by-step"]
-[이전](adding-dynamic-content-to-a-cached-page-cs.md)
-[다음](creating-an-action-cs.md)
+> 
+> [!div class="step-by-step"]
+> [이전](adding-dynamic-content-to-a-cached-page-cs.md)
+> [다음](creating-an-action-cs.md)

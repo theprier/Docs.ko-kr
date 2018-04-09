@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/working-with-binary-files/uploading-files-vb
-title: "(VB) 파일을 업로드 | Microsoft Docs"
+title: (VB) 파일을 업로드 | Microsoft Docs
 author: rick-anderson
-description: "서버의 파일 시스템에 저장 될 수 있는 웹 사이트 (예: Word 또는 PDF 문서) 이진 파일을 업로드 하는 사용자가 허용 하는 방법 알아보기..."
+description: '서버의 파일 시스템에 저장 될 수 있는 웹 사이트 (예: Word 또는 PDF 문서) 이진 파일을 업로드 하는 사용자가 허용 하는 방법 알아보기...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/27/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/uploading-files-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 69586ade54a40aabb55dd507731a6c2820774c04
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: fbc4aaf80ac7e0f960e140b492055fe35cd2b6ce
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="uploading-files-vb"></a>파일 (VB)를 업로드 하는 중
 ====================
@@ -124,9 +124,9 @@ ms.lasthandoff: 01/24/2018
 
 에 설명 된 대로 *데이터 액세스 계층을 만들려면*, 형식의 DataSet에 Datatable 비즈니스 개체를 확인 합니다. Tableadapter는 데이터베이스와 통신 하 고 쿼리 결과 함께 비즈니스 개체를 채우기 위해 합니다. `CategoriesDataTable` 채워집니다는 `CategoriesTableAdapter`, 세 가지 데이터 검색 방법을:
 
-- `GetCategories()`TableAdapter s 주 쿼리를 실행 하 고 반환 된 `CategoryID`, `CategoryName`, 및 `Description` 의 모든 레코드의 필드는 `Categories` 테이블입니다. 주 쿼리에서 사용 하는 것은 자동으로 생성 하 여 `Insert` 및 `Update` 메서드.
-- `GetCategoryByCategoryID(categoryID)`반환는 `CategoryID`, `CategoryName`, 및 `Description` 범주 필드를 `CategoryID` equals *categoryID*합니다.
-- `GetCategoriesAndNumberOfProducts()`-반환 된 `CategoryID`, `CategoryName`, 및 `Description` 의 모든 레코드에 대 한 필드는 `Categories` 테이블입니다. 또한 각 범주와 관련 된 제품의 수를 반환 하는 하위 쿼리를 사용 합니다.
+- `GetCategories()` TableAdapter s 주 쿼리를 실행 하 고 반환 된 `CategoryID`, `CategoryName`, 및 `Description` 의 모든 레코드의 필드는 `Categories` 테이블입니다. 주 쿼리에서 사용 하는 것은 자동으로 생성 하 여 `Insert` 및 `Update` 메서드.
+- `GetCategoryByCategoryID(categoryID)` 반환는 `CategoryID`, `CategoryName`, 및 `Description` 범주 필드를 `CategoryID` equals *categoryID*합니다.
+- `GetCategoriesAndNumberOfProducts()` -반환 된 `CategoryID`, `CategoryName`, 및 `Description` 의 모든 레코드에 대 한 필드는 `Categories` 테이블입니다. 또한 각 범주와 관련 된 제품의 수를 반환 하는 하위 쿼리를 사용 합니다.
 
 아무것도 반환을 쿼리 하는 알림은 `Categories` 테이블 s `Picture` 또는 `BrochurePath` 열; 없으며는 `CategoriesDataTable` 제공 `DataColumn` 이러한 필드에 대 한 합니다. 그림에서 사용 하려면 및 `BrochurePath` 속성을 먼저 추가 해야 하도록는 `CategoriesDataTable` 한 다음 업데이트는 `CategoriesTableAdapter` 이러한 열을 반환 하는 클래스입니다.
 
@@ -287,12 +287,12 @@ ASP.NET 2.0 새로운 [파일 업로드 웹 컨트롤](https://msdn.microsoft.co
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Teresa 머피 및 박 광 준 Leigh 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](updating-and-deleting-existing-binary-data-cs.md)
-[다음](displaying-binary-data-in-the-data-web-controls-vb.md)
+> [!div class="step-by-step"]
+> [이전](updating-and-deleting-existing-binary-data-cs.md)
+> [다음](displaying-binary-data-in-the-data-web-controls-vb.md)

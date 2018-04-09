@@ -1,7 +1,7 @@
 ---
-title: "용도 문자열"
+title: ASP.NET Core의 목적은 문자열
 author: rick-anderson
-description: "이 문서에서는 ASP.NET Core 데이터 보호 API에서 용도 문자열을 사용하는 방법을 자세히 알아봅니다."
+description: ASP.NET Core 데이터 보호 Api의 목적은 문자열 사용 방법에 대해 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/consumer-apis/purpose-strings
-ms.openlocfilehash: b4a0db801ecc1c4ba0762f0c9faf7429b4ac097b
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 8fe0020256d3a105b1968db693b0c667244957ec
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="purpose-strings"></a>용도 문자열
+# <a name="purpose-strings-in-aspnet-core"></a>ASP.NET Core의 목적은 문자열
 
 <a name="data-protection-consumer-apis-purposes"></a>
 

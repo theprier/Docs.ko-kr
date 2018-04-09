@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/introduction/forms-authentication-configuration-and-advanced-topics-cs
-title: "폼 인증 구성 및 고급 항목 (C#) | Microsoft Docs"
+title: 폼 인증 구성 및 고급 항목 (C#) | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에서는 다양 한 폼 인증 설정을 검사 하 고 폼 요소를 통해 수정 하는 방법을 참조 합니다. 이것을 통해 설명을 수반 중..."
+description: 이 자습서에서는 다양 한 폼 인증 설정을 검사 하 고 폼 요소를 통해 수정 하는 방법을 참조 합니다. 이것을 통해 설명을 수반 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/14/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/forms-authentication-configuration-and-advanced-topics-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c57722965b510ac4f5cf0c06c7c01c8cea26384f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d6578737478fb86f64be261925becc3adec33247
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="forms-authentication-configuration-and-advanced-topics-c"></a>폼 인증 구성 및 고급 항목 (C#)
 ====================
@@ -41,19 +41,20 @@ Asp.net에서 폼 인증 시스템에서는 다양 한 응용 프로그램에서
 
 표 1에는 통해 지정할 수 있는 속성이 요약 되어 있습니다.는 &lt;forms&gt; 요소입니다. Web.config는 XML 파일 이므로 왼쪽된 열에 특성 이름이 대/소문자 구분 됩니다.
 
-| **특성** | **설명** |
-| --- | --- |
-| cookieless | 이 특성 지정 어떤 조건에서 인증 티켓 및 URL에 포함 되는 쿠키에 저장 됩니다. 허용 가능한 값은: UseCookies; UseUri; 자동으로 검색 합니다. 및 UseDeviceProfile (기본값)입니다. 2 단계는이 설정을 자세히 검사합니다. |
-| defaultUrl | URL 쿼리 문자열에 지정 된 RedirectUrl 값이 없는 경우에 로그인 페이지에서 로그인 한 후 사용자는 리디렉션됩니다을 나타냅니다. 기본값은 default.aspx 합니다. |
-| 도메인 | 쿠키 기반 인증 티켓을 사용할 경우이 설정은 쿠키의 도메인 값을 지정 합니다. 기본값은 빈 문자열입니다 (예: www.yourdomain.com) 발급 도메인을 사용 하도록 브라우저. 이 경우 쿠키를 **하지** admin.yourdomain.com 같은 하위 도메인을 요청 하면 보낼 수 있습니다. 모든 하위 도메인에 전달할 쿠키를 원하는 경우, 도메인 속성 설정 yourdomain.com을 사용자 지정 해야 합니다. |
-| enableCrossAppRedirects | 동일한 서버의 다른 웹 응용 프로그램의 Url로 리디렉션할 때 인증 된 사용자가 저장 하는지 여부를 나타내는 부울 값입니다. 기본값은 false입니다. |
-| loginUrl | 로그인 페이지의 URL입니다. 기본값은 login.aspx입니다. |
-| name | 쿠키의 이름, 쿠키 기반 인증 티켓을 사용할 때 기본값은입니다. ASPXAUTH 합니다. |
-| path | 쿠키 기반 인증 티켓을 사용할 경우이 설정은 쿠키의 경로 특성을 지정 합니다. Path 특성에는 개발자를 특정 디렉터리 계층 구조를 쿠키의 범위를 제한할 수 있습니다. 기본값은 / 도메인에 대 한 모든 요청을 인증 티켓 쿠키를 보낼 브라우저에 게 알립니다. |
-| 보호 | 폼 인증 티켓을 보호 하기 위해 어떤 기술을 사용을 나타냅니다. 허용 가능한 값은: 모두 (기본값); 암호화; 해당 항목이 없습니다. 및 유효성 검사 합니다. 이러한 설정에 대해서는 3 단계에서에서 자세히 설명 합니다. |
-| requireSSL | 인증 쿠키를 전송 하는 SSL 연결이 필요한 지 여부를 나타내는 부울 값입니다. 기본값은 false입니다. |
-| slidingExpiration | 사용자가 단일 세션에서 사이트를 방문할 인증 쿠키 시간 초과 될 때마다 다시 설정 하는지 여부를 나타내는 부울 값입니다. 기본값은 true입니다. 인증 티켓 시간 제한 정책에는 지정 하면 보다 자세히 설명 되어 티켓의 시간 제한 값 섹션. |
-| 시간 제한 | 인증 티켓 쿠키가 만료 된 후 분 후에는 시간을 지정 합니다. 기본값은 30입니다. 인증 티켓 시간 제한 정책에는 지정 하면 보다 자세히 설명 되어 티켓의 시간 제한 값 섹션. |
+
+| <strong>특성</strong> |                                                                                                                                                                                                                                     <strong>설명</strong>                                                                                                                                                                                                                                      |
+|----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|         cookieless         |                                                                                                                이 특성 지정 어떤 조건에서 인증 티켓 및 URL에 포함 되는 쿠키에 저장 됩니다. 허용 가능한 값은: UseCookies; UseUri; 자동으로 검색 합니다. 및 UseDeviceProfile (기본값)입니다. 2 단계는이 설정을 자세히 검사합니다.                                                                                                                |
+|         defaultUrl         |                                                                                                                                                         URL 쿼리 문자열에 지정 된 RedirectUrl 값이 없는 경우에 로그인 페이지에서 로그인 한 후 사용자는 리디렉션됩니다을 나타냅니다. 기본값은 default.aspx 합니다.                                                                                                                                                         |
+|           도메인           | 쿠키 기반 인증 티켓을 사용할 경우이 설정은 쿠키의 도메인 값을 지정 합니다. 기본값은 빈 문자열입니다 (예: www.yourdomain.com) 발급 도메인을 사용 하도록 브라우저. 이 경우 쿠키를 <strong>하지</strong> admin.yourdomain.com 같은 하위 도메인을 요청 하면 보낼 수 있습니다. 모든 하위 도메인에 전달할 쿠키를 원하는 경우, 도메인 속성 설정 yourdomain.com을 사용자 지정 해야 합니다. |
+|  enableCrossAppRedirects   |                                                                                                                                                                   동일한 서버의 다른 웹 응용 프로그램의 Url로 리디렉션할 때 인증 된 사용자가 저장 하는지 여부를 나타내는 부울 값입니다. 기본값은 false입니다.                                                                                                                                                                   |
+|          loginUrl          |                                                                                                                                                                                                                      로그인 페이지의 URL입니다. 기본값은 login.aspx입니다.                                                                                                                                                                                                                      |
+|            name            |                                                                                                                                                                                                   쿠키의 이름, 쿠키 기반 인증 티켓을 사용할 때 기본값은입니다. ASPXAUTH 합니다.                                                                                                                                                                                                   |
+|            path            |                                                                             쿠키 기반 인증 티켓을 사용할 경우이 설정은 쿠키의 경로 특성을 지정 합니다. Path 특성에는 개발자를 특정 디렉터리 계층 구조를 쿠키의 범위를 제한할 수 있습니다. 기본값은 / 도메인에 대 한 모든 요청을 인증 티켓 쿠키를 보낼 브라우저에 게 알립니다.                                                                              |
+|         보호         |                                                                                                                                            폼 인증 티켓을 보호 하기 위해 어떤 기술을 사용을 나타냅니다. 허용 가능한 값은: 모두 (기본값); 암호화; 해당 항목이 없습니다. 및 유효성 검사 합니다. 이러한 설정에 대해서는 3 단계에서에서 자세히 설명 합니다.                                                                                                                                            |
+|         requireSSL         |                                                                                                                                                                                인증 쿠키를 전송 하는 SSL 연결이 필요한 지 여부를 나타내는 부울 값입니다. 기본값은 false입니다.                                                                                                                                                                                |
+|     slidingExpiration      |                                                                                                 사용자가 단일 세션에서 사이트를 방문할 인증 쿠키 시간 초과 될 때마다 다시 설정 하는지 여부를 나타내는 부울 값입니다. 기본값은 true입니다. 인증 티켓 시간 제한 정책에는 지정 하면 보다 자세히 설명 되어 티켓의 시간 제한 값 섹션.                                                                                                 |
+|          시간 제한           |                                                                                                                               인증 티켓 쿠키가 만료 된 후 분 후에는 시간을 지정 합니다. 기본값은 30입니다. 인증 티켓 시간 제한 정책에는 지정 하면 보다 자세히 설명 되어 티켓의 시간 제한 값 섹션.                                                                                                                               |
 
 **표 1**: A 요약은 &lt;forms&gt; 요소의 특성
 
@@ -166,7 +167,7 @@ Default.aspx의 변경 내용을 저장 한 후 브라우저를 통해 방문 �
 
 `http://localhost:2448/ASPNET\_Security\_Tutorial\_03\_CS/(F(jaIOIDTJxIr12xYS-VVgkqKCVAuIoW30Bu0diWi6flQC-FyMaLXJfow\_Vd9GZkB2Cv-rfezq0gKadKX0YPZCkA2))/SomePage.aspx`
 
-링크의 URL SomePage.aspx 인증 티켓-를 포함 하는 URL에 자동으로 변환 필요는 전혀 없고 코드가 전혀 작성! Http://로 시작 하는 모든 하이퍼링크에 대 한 URL에 자동으로 포함 될 폼 인증 티켓 또는 /. Response.Redirect에 대 한 호출, 하이퍼링크 컨트롤 또는 HTML 앵커 요소 하이퍼링크가 표시 되 면 문제가 되지 않습니다 (즉, &lt;는 href = "..."&gt;... &lt;/a&gt;). URL 예 http://www.someserver.com/SomePage.aspx 또는 /SomePage.aspx 아닌,으로 폼 인증 티켓을 수행해 줍니다 포함 됩니다.
+링크의 URL SomePage.aspx 인증 티켓-를 포함 하는 URL에 자동으로 변환 필요는 전혀 없고 코드가 전혀 작성! Http://로 시작 하는 모든 하이퍼링크에 대 한 URL에 자동으로 포함 될 폼 인증 티켓 또는 /. Response.Redirect에 대 한 호출, 하이퍼링크 컨트롤 또는 HTML 앵커 요소 하이퍼링크가 표시 되 면 문제가 되지 않습니다 (즉, &lt;는 href = "..."&gt;... &lt;/a&gt;). 다음과 같이 URL 없는 상태로 http://www.someserver.com/SomePage.aspx 또는 /SomePage.aspx, 폼 인증 티켓을 수행해 줍니다 포함 됩니다.
 
 > [!NOTE]
 > Cookieless 폼 인증 티켓을 동일한 쿠키 기반 인증 티켓 시간 제한 정책을 준수합니다. 그러나 쿠키 인증 티켓은 URL에서 직접 인증 티켓이 포함 되어 있으므로 재생 공격 가능성이 더 큽니다. 사용자가 웹 사이트를 방문 하 고, 로그인 동료에 게 전자 메일에 URL을 붙여 다음 가정해 보세요. 동료는 만료에 도달 하기 전에 해당 링크를 클릭, 하는 경우 이러한로 기록 됩니다 전자 메일을 보낸 사용자에 게!
@@ -432,12 +433,12 @@ ASP.NET 런타임 us에 대 한 이러한 속성 값을 자동으로 동기화 �
 
 ### <a name="about-the-author"></a>작성자 정보
 
-여러 ASP/ASP.NET 책의 작성자 및 4GuysFromRolla.com의 창립자 Scott Mitchell의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은  *[Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*합니다. Scott에 도달할 수 [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) 또는에서 그의 블로그 통해 [http://ScottOnWriting.NET](http://scottonwriting.net/)합니다.
+여러 ASP/ASP.NET 책의 작성자 및 4GuysFromRolla.com의 창립자 Scott Mitchell의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은  *[Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*합니다. Scott에 도달할 수 [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) 또는에서 그의 블로그 통해 [ http://ScottOnWriting.NET ](http://scottonwriting.net/)합니다.
 
 ### <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Alicja Maziarz 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4guysfromrolla.com)합니다.
 
->[!div class="step-by-step"]
-[이전](an-overview-of-forms-authentication-cs.md)
-[다음](security-basics-and-asp-net-support-vb.md)
+> [!div class="step-by-step"]
+> [이전](an-overview-of-forms-authentication-cs.md)
+> [다음](security-basics-and-asp-net-support-vb.md)

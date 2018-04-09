@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/introduction-and-overview
-title: "ASP.NET 4.5 Web Forms 및 Visual Studio 2013 시작 | Microsoft Docs"
+title: ASP.NET 4.5 Web Forms 및 Visual Studio 2013 시작 | Microsoft Docs
 author: Erikre
-description: "이 단계별 자습서 시리즈 ASP.NET 4.5 및 Microsoft Visual Studio Expres를 사용 하 여 ASP.NET Web Forms 응용 프로그램을 구축 하는 기초 알려 드리겠습니다 중..."
+description: 이 단계별 자습서 시리즈 ASP.NET 4.5 및 Microsoft Visual Studio Expres를 사용 하 여 ASP.NET Web Forms 응용 프로그램을 구축 하는 기초 알려 드리겠습니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/introduction-and-overview
 msc.type: authoredcontent
-ms.openlocfilehash: 6ae398f94c0ac3872601bdc8fd935f6d285793db
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 572b263a5f968b473457771a1dd4075910218c01
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2013"></a>ASP.NET 4.5 Web Forms 및 Visual Studio 2013 시작
 ====================
@@ -177,9 +177,9 @@ PayPal을 통한 반환한 검토 하 고 주문을 완료 수 있습니다.
 
 [ASP.NET 4.5 Web Forms 및 Visual Studio 2013-Wingtip Toys 시작](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) (C#) 
 
-다운로드 되는 *.zip* 파일입니다. 이 자습서 시리즈 만듭니다 완료 된 프로젝트, 찾기 및 선택은 *C#*폴더에는 *.zip* 파일입니다. 저장 된 *C#* folderto Visual Studio 2013 프로젝트 작업에 사용할 폴더입니다. 기본적으로 Visual Studio 2013 프로젝트 폴더는 다음입니다.
+다운로드 되는 <em>.zip</em> 파일입니다. 이 자습서 시리즈 만듭니다 완료 된 프로젝트, 찾기 및 선택은 <em>C#</em>폴더에는 <em>.zip</em> 파일입니다. 저장 된 <em>C#</em> folderto Visual Studio 2013 프로젝트 작업에 사용할 폴더입니다. 기본적으로 Visual Studio 2013 프로젝트 폴더는 다음입니다.
 
-**C:\Users\*****&lt;username&gt;*****\Documents\Visual Studio 2013\Projects**
+<strong>C:\Users\</strong><strong><em>&lt;username&gt;</em></strong><strong>\Documents\Visual Studio 2013\Projects</strong>
 
 이름 바꾸기는 ***C#*** 폴더를 ***WingtipToys***합니다.
 
@@ -197,5 +197,5 @@ PayPal을 통한 반환한 검토 하 고 주문을 완료 수 있습니다.
 
 개발 하는 동안 오류가 발생 하거나 웹 사이트가 올바르게 실행 되지 않은 경우 오류 메시지가 문제의 소스에 복잡 한 단서를 제공할 수 있습니다 또는 해결 방법을 확인할 수 있습니다. 몇 가지 일반적인 문제 시나리오 연결해보세요를 사용할 수도 있습니다는 [ASP.NET 포럼](https://forums.asp.net/) 또는에 포함 된 Q &AMP; A 섹션의 [ASP.NET 4.5 Web Forms 및 Visual Studio 2013-Wingtip Toys 시작](https://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) 드 ( C#) 샘플. 오류 메시지가 자습서를 진행할 때 작동 하지 않는 경우에 위의 위치를 확인 해야 합니다.
 
->[!div class="step-by-step"]
-[다음](create-the-project.md)
+> [!div class="step-by-step"]
+> [다음](create-the-project.md)

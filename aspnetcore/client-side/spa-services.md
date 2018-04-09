@@ -1,7 +1,7 @@
 ---
-title: "JavaScriptServices를 사용 하 여 ASP.NET 코어의 단일 페이지 응용 프로그램을 만들려면"
+title: JavaScriptServices를 사용 하 여 ASP.NET 코어의 단일 페이지 응용 프로그램을 만들려면
 author: scottaddie
-description: "단일 페이지 응용 프로그램 (SPA) 뒷받침 되며 ASP.NET Core 만들려는 JavaScriptServices 사용의 이점에 알아봅니다."
+description: 단일 페이지 응용 프로그램 (SPA) 뒷받침 되며 ASP.NET Core 만들려는 JavaScriptServices 사용의 이점에 알아봅니다.
 manager: wpickett
 ms.author: scaddie
 ms.custom: H1Hack27Feb2017
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/spa-services
-ms.openlocfilehash: c962fc160cf39ad1c69f4269616c993fde420035
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 05b0d7f31e167e620f2d168109ffd907ba120a49
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="use-javascriptservices-to-create-single-page-applications-in-aspnet-core"></a>JavaScriptServices를 사용 하 여 ASP.NET 코어의 단일 페이지 응용 프로그램을 만들려면
 
@@ -62,7 +62,7 @@ SpaServices와 같은 유용한 인프라를 제공 합니다.
 
 SpaServices를 사용 하려면 다음을 설치 합니다.
 * [Node.js](https://nodejs.org/) (버전 6) npm와
-    * 이러한 구성 요소 설치 되 고 있습니다를 확인 하려면 명령줄에서 다음을 실행 합니다.
+  * 이러한 구성 요소 설치 되 고 있습니다를 확인 하려면 명령줄에서 다음을 실행 합니다.
 
     ```console
     node -v && npm -v
@@ -70,8 +70,9 @@ SpaServices를 사용 하려면 다음을 설치 합니다.
 
 참고: Azure 웹 사이트를 배포 하는 경우 않아도 합니까 여기 &mdash; Node.js 설치 되어 서버 환경에서 사용할 수 있습니다.
 
-* [.NET core SDK](https://www.microsoft.com/net/download/core) 1.0 (이상)
-    * Windows를 사용 하는 경우 설치 Visual Studio 2017을 선택 하 여 **.NET Core 플랫폼 간 개발** 작업 합니다.
+* [!INCLUDE [](~/includes/net-core-sdk-download-link.md)]
+
+  * Visual Studio 2017을 사용 하 여 Windows를 사용 하는 경우는 SDK가 선택 하 여 설치 된 **.NET Core 플랫폼 간 개발** 작업 합니다.
 
 * [Microsoft.AspNetCore.SpaServices](https://www.nuget.org/packages/Microsoft.AspNetCore.SpaServices/) NuGet package
 
@@ -262,7 +263,7 @@ dotnet new angular
     * 소스 맵이 제외 됩니다.
     * 묶음 및 축소를 통해 클라이언트 코드를 최적화합니다.
 
-ASP.NET Core 라는 환경 변수를 사용 하 여 `ASPNETCORE_ENVIRONMENT` 구성 모드를 저장할 수 있습니다. 참조  **[환경 설정](xref:fundamentals/environments#setting-the-environment)**  자세한 정보에 대 한 합니다.
+ASP.NET Core 라는 환경 변수를 사용 하 여 `ASPNETCORE_ENVIRONMENT` 구성 모드를 저장할 수 있습니다. 참조 **[환경 설정](xref:fundamentals/environments#setting-the-environment)** 자세한 정보에 대 한 합니다.
 
 ### <a name="running-with-net-core-cli"></a>.NET core CLI 실행
 

@@ -1,20 +1,20 @@
 ---
 uid: webhooks/receiving/receivers
-title: "ASP.NET Webhook 수신기 | Microsoft Docs"
+title: ASP.NET Webhook 수신기 | Microsoft Docs
 author: rick-anderson
-description: "ASP.NET Webhook 수신기"
+description: ASP.NET Webhook 수신기
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/17/2012
 ms.topic: article
 ms.assetid: 6cdea089-15b2-4732-8c68-921ca561a8f1
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
-ms.openlocfilehash: 8c42db4056dd7a6ef77c7bcbc0eca3b5bf7c87e9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a8e42521f201f88b0ed433550e8786411b4487b0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="aspnet-webhooks-receivers"></a>ASP.NET Webhook 수신기
 
@@ -36,7 +36,7 @@ https://<host>/api/webhooks/incoming/<receiver>/{id}
 
 보안상의 이유로 많은 WebHook 수신기를 사용 하려면 URI는 *https* URI 및 일부 경우에도 포함 해야 하는 의도 된 파티 위의 URI에 Webhook을 보낼 수에 적용 하는 데 사용 되는 추가 쿼리 매개 변수 .
 
- *<receiver>*  구성 요소는 수신기의 이름 예를 들어 *github* 또는 *slack*합니다.
+<em> <receiver> </em> 구성 요소는 수신기의 이름 예를 들어 <em>github</em> 또는 <em>slack</em>합니다.
 
 *{id}* 특정 WebHook 수신기 구성을 식별 하는 데 사용할 수 있는 선택적 식별자입니다. N Webhook 특정 수신기를 등록 데 될 수 있습니다. 예를 들어 3 개의 독립적인 Webhook에 대 한 등록 하는 다음 세 가지 Uri는 사용할 수 있습니다.:
 

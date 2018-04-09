@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/ui_and_navigation
-title: "UI 및 탐색 | Microsoft Docs"
+title: UI 및 탐색 | Microsoft Docs
 author: Erikre
-description: "이 자습서 시리즈 것에 대 한 ASP.NET 4.5 및 Microsoft Visual Studio Express 2013을 사용 하 여 ASP.NET Web Forms 응용 프로그램을 구축 하는 기초 알려 드리겠습니다 중..."
+description: 이 자습서 시리즈 것에 대 한 ASP.NET 4.5 및 Microsoft Visual Studio Express 2013을 사용 하 여 ASP.NET Web Forms 응용 프로그램을 구축 하는 기초 알려 드리겠습니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/ui_and_navigation
 msc.type: authoredcontent
-ms.openlocfilehash: 7f1d8a1a473820a7c8da4c8086904cc41c86fd2a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d2d4101455a85c53e016e567c0cf1337642f1863
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="ui-and-navigation"></a>UI 및 탐색
 ====================
@@ -54,7 +54,7 @@ ASP.NET Web Forms를 사용 하 여 웹 응용 프로그램에 대 한 동적 �
     [!code-aspx[Main](ui_and_navigation/samples/sample2.aspx)]
 5. 저장 된 *Default.aspx* 페이지를 선택 하 여 **저장 Default.aspx** 에서 **파일** 메뉴.
 
- 그 결과 *Default.aspx* 페이지는 다음과 같이 표시 됩니다. 
+   그 결과 *Default.aspx* 페이지는 다음과 같이 표시 됩니다. 
 
 [!code-aspx[Main](ui_and_navigation/samples/sample3.aspx)]
 
@@ -62,7 +62,7 @@ ASP.NET Web Forms를 사용 하 여 웹 응용 프로그램에 대 한 동적 �
 
 ASP.NET 웹 페이지를 구성 하는 기본 요소를 포함 하는 예제 페이지. 페이지는 HTML 페이지, ASP.NET에만 적용 되는 요소와 함께에서와 같이 정적 텍스트를 포함 합니다. 에 포함 된 콘텐츠는 *Default.aspx* 페이지를 통합 하 여 마스터 페이지 콘텐츠를이 자습서의 뒷부분에서 설명 하는 합니다.
 
-### <a name="page-directive"></a>@Page지시문
+### <a name="page-directive"></a>@Page 지시문
 
 일반적으로 ASP.NET Web Forms 페이지에 대 한 페이지 속성 및 구성 정보를 지정할 수 있도록 하는 지시문을 포함 합니다. 페이지에서 처리 하는 방법에 대 한 지침으로 ASP.NET에서 지시문은 사용 되는 있지만 브라우저로 전송 되는 태그의 일부로 렌더링 되지 않습니다.
 
@@ -166,8 +166,8 @@ Visual Studio 2013 프로젝트 템플릿을 사용 하 여 [부트스트랩](ht
 2. 마우스 오른쪽 단추로 클릭는 *bootstrap.css* 파일 및 파일 이름을 *부트스트랩 original.css*합니다.
 3. 이름 바꾸기는 *bootstrap.min.css* 를 *부트스트랩 original.min.css*합니다.
 4. **솔루션 탐색기**를 마우스 오른쪽 단추로 클릭는 *콘텐츠* 폴더와 선택 **파일 탐색기에서 폴더 열기**합니다.  
- 파일 탐색기에 표시 됩니다. 이 위치에 다운로드 한 부트스트랩 CSS 파일을 저장 됩니다.
-5. 브라우저에서로 이동 [http://Bootswatch.com](http://bootswatch.com/)합니다.
+   파일 탐색기에 표시 됩니다. 이 위치에 다운로드 한 부트스트랩 CSS 파일을 저장 됩니다.
+5. 브라우저에서로 이동 [ http://Bootswatch.com ](http://bootswatch.com/)합니다.
 6. Cerulean 테마 나타날 때까지 브라우저 창을 스크롤하십시오. 
 
     ![UI 및 탐색-Cerulean 테마](ui_and_navigation/_static/image5.png)
@@ -176,9 +176,9 @@ Visual Studio 2013 프로젝트 템플릿을 사용 하 여 [부트스트랩](ht
 
     ![UI 및 탐색-솔루션 탐색기](ui_and_navigation/_static/image6.png)
 
- 두 개의 새 CSS 파일에 표시 됩니다는 **콘텐츠** 폴더 하지만 각 파일 이름 옆에 아이콘이 회색입니다. 즉, 프로젝트에 파일 아직 추가 되지 않습니다.
+   두 개의 새 CSS 파일에 표시 됩니다는 **콘텐츠** 폴더 하지만 각 파일 이름 옆에 아이콘이 회색입니다. 즉, 프로젝트에 파일 아직 추가 되지 않습니다.
 9. 마우스 오른쪽 단추로 클릭는 *bootstrap.css* 및 *bootstrap.min.css* 파일 및 선택 **프로젝트에 포함**합니다.   
- 이 자습서의 뒷부분에 나오는 Wingtip Toys 응용 프로그램을 실행 하는 경우 새 UI 표시 됩니다.
+   이 자습서의 뒷부분에 나오는 Wingtip Toys 응용 프로그램을 실행 하는 경우 새 UI 표시 됩니다.
 
 > [!NOTE] 
 > 
@@ -286,12 +286,12 @@ Visual Studio 2013 프로젝트 템플릿을 사용 하 여 [부트스트랩](ht
 
 이 자습서 시리즈의 일부 기본 UI, 그래픽, 페이지 및 탐색을 추가 했습니다. 또한 이전 자습서에서 추가 하는 데이터 클래스와에서 데이터베이스를 만든 웹 응용 프로그램을 실행 했습니다. 또한의 콘텐츠를 볼는 *제품* 데이터베이스를 직접 확인 하 여 데이터베이스의 테이블입니다. 다음 자습서에서 데이터 항목 및 데이터베이스에서 세부 정보를 표시 합니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 [ASP.NET 웹 페이지 프로그래밍 소개](https://msdn.microsoft.com/library/ms178125.aspx)   
 [ASP.NET 웹 서버 컨트롤 개요](https://msdn.microsoft.com/library/zsyt68f1.aspx)   
 [CSS 자습서](http://www.w3schools.com/css/default.asp)
 
->[!div class="step-by-step"]
-[이전](create_the_data_access_layer.md)
-[다음](display_data_items_and_details.md)
+> [!div class="step-by-step"]
+> [이전](create_the_data_access_layer.md)
+> [다음](display_data_items_and_details.md)

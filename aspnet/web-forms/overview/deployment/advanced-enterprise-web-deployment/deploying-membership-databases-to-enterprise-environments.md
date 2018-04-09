@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/deploying-membership-databases-to-enterprise-environments
-title: "멤버 자격 데이터베이스 엔터프라이즈 환경에 배포 | Microsoft Docs"
+title: 멤버 자격 데이터베이스 엔터프라이즈 환경에 배포 | Microsoft Docs
 author: jrjlee
-description: "이 항목에서는 주요 고려 사항 및 (더 일반적... ASP.NET 응용 프로그램 서비스 데이터베이스를 프로 비전 할 때 해결 해야 하는 문제 설명"
+description: 이 항목에서는 주요 고려 사항 및 (더 일반적... ASP.NET 응용 프로그램 서비스 데이터베이스를 프로 비전 할 때 해결 해야 하는 문제 설명
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/deploying-membership-databases-to-enterprise-environments
 msc.type: authoredcontent
-ms.openlocfilehash: 27fade9fc5cae917579d4963da7bca12f6a5cda1
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: b783fcf57759f2a431480eec6902105f6d683408
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-membership-databases-to-enterprise-environments"></a>멤버 자격 데이터베이스 엔터프라이즈 환경에 배포
 ====================
@@ -27,9 +27,9 @@ ms.lasthandoff: 03/15/2018
 > 이 항목에서는 주요 고려 사항 및 테스트, 준비 또는 프로덕션 환경에서 (일반적으로 멤버 자격 데이터베이스 라고도 함)는 데이터베이스를 서비스 하는 ASP.NET 응용 프로그램 구축 때 알아야 할 문제를 설명 합니다. 이러한 과제를 충족 하는 데 사용할 수는 방법에 대해서도 설명 합니다.
 
 
-이 항목의 Fabrikam, inc. 라는 가상 회사의 엔터프라이즈 배포 요구 사항을 바탕으로 하는 자습서 시리즈의 일부를 형성 합니다. 이 자습서 시리즈 샘플 솔루션 & #x 2014;을 사용 하는 [Contact Manager 솔루션](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; 현실적인 수준의 복잡성을 Windows ASP.NET MVC 3 응용 프로그램을 포함 하 여 웹 응용 프로그램을 나타내기 위해 Communication Foundation (WCF) 서비스 및 데이터베이스 프로젝트를 제공 합니다.
+이 항목의 Fabrikam, inc. 라는 가상 회사의 엔터프라이즈 배포 요구 사항을 바탕으로 하는 자습서 시리즈의 일부를 형성 합니다. 샘플 솔루션을 사용 하는 자습서 시리즈가&#x2014;는 [Contact Manager 솔루션](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;현실적인 수준의 복잡성, Windows Communication ASP.NET MVC 3 응용 프로그램을 포함 하 여 웹 응용 프로그램을 나타내기 위해 WCF (foundation) 서비스 및 데이터베이스 프로젝트.
 
-이 자습서의 핵심에는 배포 방법에 설명 된 분할 프로젝트 파일 접근 방식에 따라 [프로젝트 파일 이해](../web-deployment-in-the-enterprise/understanding-the-project-file.md), 빌드 프로세스에 의해 제어 되는 두 프로젝트에 파일 & #x 2014; 포함 환경 관련 빌드 및 배포 설정을 포함 하는 하나 및 모든 대상 환경에 적용 되는 지침을 빌드하십시오. 빌드 시 환경 관련 프로젝트 파일은 빌드 지침의 전체 집합을 구성 하기 위해 환경을 알 수 없는 프로젝트 파일에 병합 됩니다.
+이 자습서의 핵심에는 배포 방법에 설명 된 분할 프로젝트 파일 접근 방식에 따라 [프로젝트 파일 이해](../web-deployment-in-the-enterprise/understanding-the-project-file.md), 두 개의 프로젝트 파일에 빌드 프로세스에 의해 제어 되는&#x2014;포함 환경 관련 빌드 및 배포 설정을 포함 하는 하나 및 모든 대상 환경에 적용 되는 지침을 빌드하십시오. 빌드 시 환경 관련 프로젝트 파일은 빌드 지침의 전체 집합을 구성 하기 위해 환경을 알 수 없는 프로젝트 파일에 병합 됩니다.
 
 ## <a name="what-are-the-issues-when-you-deploy-a-membership-database"></a>멤버 자격 데이터베이스를 배포할 때 문제점은 무엇입니까?
 
@@ -45,13 +45,13 @@ ms.lasthandoff: 03/15/2018
 엔터프라이즈 서버 환경에서 멤버 자격 데이터베이스를 프로 비전 하는 방법을 선택할 때 이러한 지침을 따르세요.
 
 - 가능 하면 멤버 자격 데이터베이스를 배포 하지 마십시오. 대상 데이터베이스 서버에서 멤버 자격 데이터베이스를 수동으로 만들 대신 합니다. 멤버 자격 데이터베이스 스키마를 사용자 지정 하지 않은 경우 만들 수 있습니다 간단히 새 situ에 사용 하 여 대상에는 [ASP.NET SQL Server 등록 도구 (aspnet\_regsql.exe)](https://msdn.microsoft.com/library/ms229862(v=vs.100).aspx)합니다.
-- 배포 멤버 자격 데이터베이스 & #x 2014; 있지만 옵션이 있는 경우 예를 들어 경우 광범위 한 데이터베이스 스키마 & #x 2014; 수정 내용을 변경한 후 수행 해야 사용자 계정 데이터를 제외 하는 멤버 자격 데이터베이스의 스키마 전용 배포 및 다음 필수 구성 데이터를 추가 하는 배포 후 스크립트를 실행 합니다. 이러한 방법에 대 한 광범위 한 지침을 찾을 수 있습니다 [하는 방법: ASP.NET 멤버 자격 데이터베이스 없이 포함 하 여 사용자 계정을 배포](https://msdn.microsoft.com/library/ff361972(v=vs.100).aspx)합니다.
+- 경우에 멤버 자격 데이터베이스를 배포 하지만 옵션이 없습니다&#x2014;예를 들어, 데이터베이스 스키마를 광범위 하 게 수정할을 만든 경우&#x2014;사용자 계정 데이터를 제외 멤버 자격 데이터베이스의 스키마 전용 배포를 수행 해야 하면 다음 모든 필수 구성 데이터를 추가 하는 배포 후 스크립트를 실행 합니다. 이러한 방법에 대 한 광범위 한 지침을 찾을 수 있습니다 [하는 방법: ASP.NET 멤버 자격 데이터베이스 없이 포함 하 여 사용자 계정을 배포](https://msdn.microsoft.com/library/ff361972(v=vs.100).aspx)합니다.
 
-사항에 유의 해야 *멤버 자격 데이터베이스의 스키마가 상당히 정적일 가능성이*합니다. 멤버 자격 데이터베이스를 사용자 지정한 경우에 가능성이 정기적으로 & #x 2014에서 스키마를 업데이트 해야 하며 웹 응용 프로그램 또는 데이터베이스 프로젝트의 코드와 동일한 빈도로 변경 되기 하지 않습니다. 따라서 멤버 자격 데이터베이스는 단일 단계 또는 자동화 된 배포 프로세스에 포함할 필요는 없습니다.
+사항에 유의 해야 *멤버 자격 데이터베이스의 스키마가 상당히 정적일 가능성이*합니다. 정기적으로 스키마를 업데이트 해야 그럴 가능성은 멤버 자격 데이터베이스를 사용자 지정한 경우에&#x2014;것은 잘못 된 웹 응용 프로그램 또는 데이터베이스 프로젝트의 코드와 동일한 빈도로 변경 합니다. 따라서 멤버 자격 데이터베이스는 단일 단계 또는 자동화 된 배포 프로세스에 포함할 필요는 없습니다.
 
 ## <a name="using-vsdbcmd-to-update-a-membership-database-schema"></a>VSDBCMD를 사용 하 여 멤버 자격 데이터베이스 스키마를 업데이트 하려면
 
-첫 번째 배포 후 멤버 자격 데이터베이스의 구조를 수정 하는 경우 데이터베이스를 다시 배포 하려면 인터넷 정보 서비스 (IIS) 웹 배포 도구 (웹 배포)를 사용 하려는 하지 않습니다. 웹 배포에서 데이터베이스 배포 기능에는 대상 데이터베이스 & #x 2014 차등 업데이트를 확인 하는 기능이 포함 되어 있지 않습니다; 대신, 웹 배포 해야 삭제 하 고 데이터베이스를 다시 만드는 합니다. 즉, 스테이징 또는 프로덕션 환경에서 일반적으로 것이 바람직하지 않은 모든 기존 사용자 계정 데이터를 잃게 됩니다.
+첫 번째 배포 후 멤버 자격 데이터베이스의 구조를 수정 하는 경우 데이터베이스를 다시 배포 하려면 인터넷 정보 서비스 (IIS) 웹 배포 도구 (웹 배포)를 사용 하려는 하지 않습니다. 웹 배포에서 데이터베이스 배포 기능에는 대상 데이터베이스에 차등 업데이트를 확인 하는 기능이 포함 되어 있지 않습니다&#x2014;대신, 웹 배포 삭제 하 고 다시 만들어야 데이터베이스입니다. 즉, 스테이징 또는 프로덕션 환경에서 일반적으로 것이 바람직하지 않은 모든 기존 사용자 계정 데이터를 잃게 됩니다.
 
 대신 사용 하는 대상 데이터베이스의 스키마를 업데이트 하는 VSDBCMD 유틸리티를 사용 하는 것입니다. VSDBCMD 두 가지 중요 한 기능이 포함 되어 있습니다. 첫째,.dbschema 파일로 기존 데이터베이스의 스키마를 가져올 수 것입니다. 둘째, 대상 데이터베이스를 최신 상태로 만드는 데 필요한 변경 내용을 더욱 모든 데이터가 손실 되지 않으며 차등 업데이트를으로 기존 데이터베이스에.dbschema 파일을 배포할 수 것입니다.
 
@@ -68,6 +68,6 @@ ms.lasthandoff: 03/15/2018
 
 자세한 내용과 예 VSDBCMD를 사용 하는 방법에 대 한 참조 [VSDBCMD에 대 한 명령줄 참조 합니다. EXE (배포 및 스키마 가져오기)](https://msdn.microsoft.com/library/dd193283.aspx) 및 [하는 방법: 명령 프롬프트에서 스키마 가져오기](https://msdn.microsoft.com/library/dd172135.aspx)합니다. Aspnet를 사용 하 여 대 한 자세한 내용은\_멤버 자격 데이터베이스를 만들 regsql.exe 참조 [ASP.NET SQL Server 등록 도구 (aspnet\_regsql.exe)](https://msdn.microsoft.com/library/ms229862(v=vs.100).aspx)합니다. 멤버 자격 데이터베이스 배포에 대 한 보다 일반적인 지침을 참조 하십시오. [하는 방법: ASP.NET 멤버 자격 데이터베이스 없이 포함 하 여 사용자 계정을 배포](https://msdn.microsoft.com/library/ff361972(v=vs.100).aspx)합니다.
 
->[!div class="step-by-step"]
-[이전](deploying-database-role-memberships-to-test-environments.md)
-[다음](excluding-files-and-folders-from-deployment.md)
+> [!div class="step-by-step"]
+> [이전](deploying-database-role-memberships-to-test-environments.md)
+> [다음](excluding-files-and-folders-from-deployment.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sorting-user-interface-vb
-title: "정렬 사용자 지정 사용자 인터페이스 (VB) 만들기 | Microsoft Docs"
+title: 정렬 사용자 지정 사용자 인터페이스 (VB) 만들기 | Microsoft Docs
 author: rick-anderson
-description: "데이터 정렬의 긴 목록을 표시 하는 경우를 아주 유용할 수 있습니다 행 구분 기호를 도입 하 여 관련된 데이터를 그룹화 합니다. 이 자습서에서는 보겠습니다 cre 하는 방법..."
+description: 데이터 정렬의 긴 목록을 표시 하는 경우를 아주 유용할 수 있습니다 행 구분 기호를 도입 하 여 관련된 데이터를 그룹화 합니다. 이 자습서에서는 보겠습니다 cre 하는 방법...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/15/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sorting-user-interface-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 527bfe62a7293d0aa2d6b5b83119bb922906120b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 35144907aceda6ece56d91b24aba15ef951ed99a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-customized-sorting-user-interface-vb"></a>정렬 사용자 지정 사용자 인터페이스 (VB) 만들기
 ====================
@@ -141,7 +141,7 @@ GridView 아직 되도록 정렬, GridView의 `SortExpression` 속성이 설정 
 
 [!code-vb[Main](creating-a-customized-sorting-user-interface-vb/samples/sample4.vb)]
 
-프로그래밍 방식으로 참조 하 여이 코드가 시작 되는 `Table` GridView의 컨트롤 계층의 루트에 개체를 만드는 이라는 문자열 변수 `lastValue`합니다. `lastValue`현재 행 정렬 s 열 값의 이전 행의 값과 비교 하는 데 사용 됩니다. 다음, GridView s `Rows` 컬렉션이 열거 되 고 각 행에 대해 정렬 된 열의 값에 저장 됩니다는 `currentValue` 변수입니다.
+프로그래밍 방식으로 참조 하 여이 코드가 시작 되는 `Table` GridView의 컨트롤 계층의 루트에 개체를 만드는 이라는 문자열 변수 `lastValue`합니다. `lastValue` 현재 행 정렬 s 열 값의 이전 행의 값과 비교 하는 데 사용 됩니다. 다음, GridView s `Rows` 컬렉션이 열거 되 고 각 행에 대해 정렬 된 열의 값에 저장 됩니다는 `currentValue` 변수입니다.
 
 > [!NOTE]
 > S 셀을 사용 하려면 특정 행의 정렬 열 값을 결정 하려면 `Text` 속성입니다. 이 방법이 편리 BoundFields, 하지만 됩니다 하지 TemplateFields, CheckBoxFields 원하는 대로 작동 등에입니다. 곧 대체 GridView 필드에 대 한 고려 하는 방법을 살펴보겠습니다.
@@ -198,7 +198,7 @@ GridView 정렬 인터페이스 사용자 지정 하는 여러 기본 제공 옵
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
->[!div class="step-by-step"]
-[이전](sorting-custom-paged-data-vb.md)
+> [!div class="step-by-step"]
+> [이전](sorting-custom-paged-data-vb.md)

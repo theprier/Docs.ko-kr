@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/control-id-naming-in-content-pages-vb
-title: "콘텐츠 페이지 (VB)에서 ID 이름 지정을 제어 | Microsoft Docs"
+title: 콘텐츠 페이지 (VB)에서 ID 이름 지정을 제어 | Microsoft Docs
 author: rick-anderson
-description: "ContentPlaceHolder 컨트롤 명명 컨테이너 역할을 하 고 따라서 프로그래밍 방식으로 (FindConrol)을 통해 어려운 컨트롤 사용을 확인 하는 방법을 방법을 보여 줍니다 중..."
+description: ContentPlaceHolder 컨트롤 명명 컨테이너 역할을 하 고 따라서 프로그래밍 방식으로 (FindConrol)을 통해 어려운 컨트롤 사용을 확인 하는 방법을 방법을 보여 줍니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/control-id-naming-in-content-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9523fe5b241b6ff45927f142eb844a716822336b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 288afbb6851e23de4725f9e6351ae12ccecefaa5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="control-id-naming-in-content-pages-vb"></a>콘텐츠 페이지 (VB)에서 이름을 지정 하는 컨트롤 ID
 ====================
@@ -121,7 +121,7 @@ ASP.NET 수정 사항을 더 잘 이해 하려면 엔진에 게는 렌더링 된
 
 모든 ASP.NET 서버 컨트롤에는 `FindControl("controlID")` 라는 컨트롤에 대 한 컨트롤의 하위 항목을 검색 하는 메서드 *controlID*합니다. 이러한 컨트롤이 발견 되는 경우 반환 됩니다. 없는 일치 하는 컨트롤을 찾을 `FindControl` 반환 `Nothing`합니다.
 
-`FindControl`컨트롤에 액세스 하려면 있었지만에 대 한 직접 참조가 없는 시나리오에서 유용 합니다. 예를 들어 GridView 같은 웹 컨트롤을 데이터로 작업할 때 GridView의 필드 내에서 컨트롤의 선언적 구문에서 한 번 정의 되지만 런타임 시 각 GridView 행에 대해 컨트롤의 인스턴스가 만들어집니다. 따라서 런타임에 생성 컨트롤 있지만 직접 참조 코드 숨김 클래스에서 사용할 수는 없습니다. 사용 해야 결과적으로 `FindControl` GridView의 필드 내에서 특정 컨트롤에 프로그래밍 방식으로 작동 하도록 합니다. (사용 하 여 대 한 자세한 내용은 `FindControl` 데이터 웹 컨트롤 템플릿 내에서 컨트롤에 액세스 하려면 참조 [데이터 기반 시 사용자 지정 서식](../../data-access/custom-formatting/custom-formatting-based-upon-data-vb.md).) 동일한 경우가 Web Form에 동적으로 웹 컨트롤을 추가, 항목에 설명 된 [만드는 동적 데이터 입력 사용자 인터페이스가](https://msdn.microsoft.com/library/aa479330.aspx)합니다.
+`FindControl` 컨트롤에 액세스 하려면 있었지만에 대 한 직접 참조가 없는 시나리오에서 유용 합니다. 예를 들어 GridView 같은 웹 컨트롤을 데이터로 작업할 때 GridView의 필드 내에서 컨트롤의 선언적 구문에서 한 번 정의 되지만 런타임 시 각 GridView 행에 대해 컨트롤의 인스턴스가 만들어집니다. 따라서 런타임에 생성 컨트롤 있지만 직접 참조 코드 숨김 클래스에서 사용할 수는 없습니다. 사용 해야 결과적으로 `FindControl` GridView의 필드 내에서 특정 컨트롤에 프로그래밍 방식으로 작동 하도록 합니다. (사용 하 여 대 한 자세한 내용은 `FindControl` 데이터 웹 컨트롤 템플릿 내에서 컨트롤에 액세스 하려면 참조 [데이터 기반 시 사용자 지정 서식](../../data-access/custom-formatting/custom-formatting-based-upon-data-vb.md).) 동일한 경우가 Web Form에 동적으로 웹 컨트롤을 추가, 항목에 설명 된 [만드는 동적 데이터 입력 사용자 인터페이스가](https://msdn.microsoft.com/library/aa479330.aspx)합니다.
 
 사용 하 여 설명 하기 위해는 `FindControl` 콘텐츠 페이지에서 컨트롤을 검색 하는 메서드 만들기에 대 한 이벤트 처리기는 `SubmitButton`의 `Click` 이벤트입니다. 이벤트 처리기에서 프로그래밍 방식으로 참조 하는 다음 코드를 추가 `Age` 텍스트 상자 및 `Results` 레이블을 사용 하 여는 `FindControl` 메서드 다음에 메시지를 표시 하 고 `Results` 사용자의 입력에 따라 합니다.
 
@@ -256,7 +256,7 @@ ASP.NET 서버 컨트롤의 역할을 명명 컨테이너에 영향을 주는 �
 
 이 자습서에 설명 된 항목에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
-- [ASP.NET 마스터 페이지 및`FindControl`](http://www.west-wind.com/WebLog/posts/5127.aspx)
+- [ASP.NET 마스터 페이지 및 `FindControl`](http://www.west-wind.com/WebLog/posts/5127.aspx)
 - [동적 데이터 입력 사용자 인터페이스 만들기](https://msdn.microsoft.com/library/aa479330.aspx)
 - [확장 메서드를 사용한 기본 형식 기능 확장](http://aspnet.4guysfromrolla.com/articles/120507-1.aspx)
 - [방법: ASP.NET 마스터 페이지 콘텐츠를 참조 합니다.](https://msdn.microsoft.com/library/xxwa0ff0.aspx)
@@ -265,12 +265,12 @@ ASP.NET 서버 컨트롤의 역할을 명명 컨테이너에 영향을 주는 �
 
 ### <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 작성자 여러 ASP/ASP.NET 설명서와 4GuysFromRolla.com의 창립자의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 3.5 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. Scott에 도달할 수 [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) 또는에서 그의 블로그 통해 [http://ScottOnWriting.NET](http://scottonwriting.net/)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 작성자 여러 ASP/ASP.NET 설명서와 4GuysFromRolla.com의 창립자의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 3.5 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. Scott에 도달할 수 [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) 또는에서 그의 블로그 통해 [ http://ScottOnWriting.NET ](http://scottonwriting.net/)합니다.
 
 ### <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Zack Jones 및 Suchi Barnerjee 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)합니다.
 
->[!div class="step-by-step"]
-[이전](urls-in-master-pages-vb.md)
-[다음](interacting-with-the-master-page-from-the-content-page-vb.md)
+> [!div class="step-by-step"]
+> [이전](urls-in-master-pages-vb.md)
+> [다음](interacting-with-the-master-page-from-the-content-page-vb.md)

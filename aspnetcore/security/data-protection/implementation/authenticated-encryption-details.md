@@ -1,7 +1,7 @@
 ---
-title: "인증 된 암호화 정보"
+title: ASP.NET Core에서 인증 된 암호화 세부 정보
 author: rick-anderson
-description: "이 문서 윤곽선 ASP.NET Core 데이터 보호의 구현 세부 정보는 암호화를 인증합니다."
+description: ASP.NET Core 데이터 보호 인증 된 암호화의 구현 세부 정보에 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/implementation/authenticated-encryption-details
-ms.openlocfilehash: b58f36a5f0353da69d6f1ef4db542aba8267027a
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 3ca5231e84156ede59793825e1a3e3bea0313055
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="authenticated-encryption-details"></a>인증 된 암호화 정보
+# <a name="authenticated-encryption-details-in-aspnet-core"></a>ASP.NET Core에서 인증 된 암호화 세부 정보
 
 <a name="data-protection-implementation-authenticated-encryption-details"></a>
 
@@ -31,7 +31,7 @@ IDataProtector.Protect은 바이트 일반 텍스트 매개 변수를 사용 하
 
 * 이 특정 페이로드를 보호 하는 데 사용 되는 키를 식별 하는 128 비트 키 id입니다.
 
-* 보호 된 페이로드의 나머지 부분이 [이 키에 의해 캡슐화 암호기 특정](subkeyderivation.md#data-protection-implementation-subkey-derivation)합니다. 아래 예제에서는 키 AES-256-CBC + HMACSHA256 암호기 나타내며 페이로드는 추가로 다음과 같이 다음과 같이: * 128 비트 키 한정자입니다. *는 128 비트 초기화 벡터입니다. * AES-256-CBC 출력의 48 바이트입니다. *는 HMACSHA256 인증 태그입니다.
+* 보호 된 페이로드의 나머지 부분이 [이 키에 의해 캡슐화 암호기 특정](xref:security/data-protection/implementation/subkeyderivation#data-protection-implementation-subkey-derivation)합니다. 아래 예제에서는 키 AES-256-CBC + HMACSHA256 암호기 나타내며 페이로드는 추가로 다음과 같이 다음과 같이: * 128 비트 키 한정자입니다. *는 128 비트 초기화 벡터입니다. * AES-256-CBC 출력의 48 바이트입니다. *는 HMACSHA256 인증 태그입니다.
 
 샘플 보호 된 페이로드 아래 그림에 나와 있습니다.
 

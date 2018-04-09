@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/introduction/adding-search
-title: "검색 | Microsoft Docs"
+title: 검색 | Microsoft Docs
 author: Rick-Anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/22/2015
@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-search
 msc.type: authoredcontent
-ms.openlocfilehash: 116f681e14af0a09a4eb1502ef9f057c5db2f97d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 8afa72d4dbc4695e7d26c6ef4052be08a7c69080
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="search"></a>검색
 ====================
 으로 [Rick Anderson](https://github.com/Rick-Anderson)
 
-[!INCLUDE[Tutorial Note](sample/code-location.md)]
+[!INCLUDE [Tutorial Note](sample/code-location.md)]
 
 ## <a name="adding-a-search-method-and-search-view"></a>검색 방법 및 검색 뷰를 추가합니다.
 
@@ -157,6 +157,6 @@ Visual Studio 2013에는 표시 및 보기 파일을 편집 하는 경우 좋은
 
 이 섹션에서는 검색 동작 메서드와 영화 제목 및 장르 하 여 검색할 수 있도록 하는 뷰를 만들었습니다. 다음 섹션에서 살펴보겠습니다 속성을 추가 하는 방법의 `Movie` 모델 및 테스트 데이터베이스에서 자동으로 만듭니다는 이니셜라이저를 추가 하는 방법입니다.
 
->[!div class="step-by-step"]
-[이전](examining-the-edit-methods-and-edit-view.md)
-[다음](adding-a-new-field.md)
+> [!div class="step-by-step"]
+> [이전](examining-the-edit-methods-and-edit-view.md)
+> [다음](adding-a-new-field.md)

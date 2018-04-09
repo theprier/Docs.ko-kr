@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core 응용 프로그램에서 열려 리디렉션 공격 방지"
+title: ASP.NET Core에서 열기 리디렉션 공격을 방지
 author: ardalis
-description: "ASP.NET Core 응용 프로그램에 대 한 열기 리디렉션 공격을 방지 하는 방법을 보여 줍니다."
+description: ASP.NET Core 응용 프로그램에 대 한 열기 리디렉션 공격을 방지 하는 방법을 보여 줍니다.
 manager: wpickett
 ms.author: riande
 ms.date: 07/07/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/preventing-open-redirects
-ms.openlocfilehash: d6cd65a2516c4d5e41428f0c1f2dbbe913ac2123
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 4a210b8bb8091e7c036d4bc98306e3b3f90d7d46
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="preventing-open-redirect-attacks-in-an-aspnet-core-app"></a>ASP.NET Core 응용 프로그램에서 열려 리디렉션 공격 방지
+# <a name="prevent-open-redirect-attacks-in-aspnet-core"></a>ASP.NET Core에서 열기 리디렉션 공격을 방지
 
 잠재적으로 쿼리 문자열 또는 폼 데이터와 같은 요청을 통해 지정 된 URL로 리디렉션하는 웹 응용 프로그램 외부, 악성 URL로 사용자를 리디렉션하기와 훼손 될 수 있습니다. 이 변조 열려 리디렉션 공격을 이라고 합니다.
 
@@ -57,11 +57,11 @@ public IActionResult SomeAction(string redirectUrl)
 }
 ```
 
-``LocalRedirect``로컬이 아닌 URL을 지정 하는 경우 예외가 throw 됩니다. 그렇지 않은 경우와 동일 하 게 작동는 ``Redirect`` 메서드.
+``LocalRedirect`` 로컬이 아닌 URL을 지정 하는 경우 예외가 throw 됩니다. 그렇지 않은 경우와 동일 하 게 작동는 ``Redirect`` 메서드.
 
 ### <a name="islocalurl"></a>IsLocalUrl
 
-사용 하 여는 [IsLocalUrl](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.iurlhelper#Microsoft_AspNetCore_Mvc_IUrlHelper_IsLocalUrl_System_String_) 리디렉션하기 전에 Url을 테스트 하려면:
+사용 하 여는 [IsLocalUrl](/dotnet/api/Microsoft.AspNetCore.Mvc.IUrlHelper?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_IUrlHelper_IsLocalUrl_System_String_) 리디렉션하기 전에 Url을 테스트 하려면:
 
 다음 예제에서는 URL을 리디렉션하기 전에 로컬 인지 여부를 확인 하는 방법을 보여 줍니다.
 

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/custom-button-actions-with-the-datalist-and-repeater/custom-buttons-in-the-datalist-and-repeater-cs
-title: "DataList 및 반복기 (C#)에서 사용자 지정 단추 | Microsoft Docs"
+title: DataList 및 반복기 (C#)에서 사용자 지정 단추 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에서는 시스템에서 해당 associ를 표시 하려면 단추를 제공 하는 각 범주와 범주를 나열 하는 반복기를 사용 하는 인터페이스를 빌드합니다 중..."
+description: 이 자습서에서는 시스템에서 해당 associ를 표시 하려면 단추를 제공 하는 각 범주와 범주를 나열 하는 반복기를 사용 하는 인터페이스를 빌드합니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/13/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions-with-the-datalist-and-repeater/custom-buttons-in-the-datalist-and-repeater-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9a072ae18bbb19d086eb825c6e72b68d40b2e429
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d6d07f1dc3f97523da6d9ee1d45302cac06b45d2
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="custom-buttons-in-the-datalist-and-repeater-c"></a>DataList 및 반복기 (C#)에서 사용자 지정 단추
 ====================
@@ -104,8 +104,8 @@ DataList 컨트롤은 Visual Studio의 기본 생성을 달리 `ItemTemplate` �
 
 반복기 또는 DataList 내에서 단추를 클릭 하면 종종 해야 어느 단추를 클릭 하는 경우 있을 수 있음을 여러 편집 하는 모두 같은 컨트롤 내에서 단추 및 삭제 단추 및 아마도 몇 가지 추가 정보 (예: 전달 기본 키 값의 해당 단추를 클릭 한 항목). 단추, LinkButton을 및 ImageButton 제공 두 속성 값을 가진에 전달 되는 `ItemCommand` 이벤트 처리기.
 
-- `CommandName`일반적으로 각 단추에 서식 파일을 식별 하는 데 필요한 문자열
-- `CommandArgument`기본 키 값 등의 일부 데이터 필드의 값을 유지 하는 일반적으로 사용
+- `CommandName` 일반적으로 각 단추에 서식 파일을 식별 하는 데 필요한 문자열
+- `CommandArgument` 기본 키 값 등의 일부 데이터 필드의 값을 유지 하는 일반적으로 사용
 
 이 예제에서는 설정 LinkButton s `CommandName` 속성 ShowProducts 및 bind 현재 레코드 s 기본 키 값을 `CategoryID` 에 `CommandArgument` 구문이 사용 하 여 속성 `CategoryArgument='<%# Eval("CategoryID") %>'`합니다. 이러한 두 속성을 지정한 후 LinkButton s 선언적 구문 다음과 같이 표시 됩니다.
 
@@ -116,10 +116,10 @@ DataList 컨트롤은 Visual Studio의 기본 생성을 달리 `ItemTemplate` �
 
 S 반복기에 대 한 이벤트 처리기를 만들고 `ItemCommand` 이벤트 처리기에 전달 된 이벤트와 두 번째 매개 변수 메모 (라는 `e`). 이 두 번째 매개 변수는 형식 [ `RepeaterCommandEventArgs` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.repeatercommandeventargs.aspx) 다음 네 가지 속성이 있습니다.
 
-- `CommandArgument`s 클릭 한 단추의 값 `CommandArgument` 속성
-- `CommandName`s 단추의 값 `CommandName` 속성
-- `CommandSource`클릭 된 단추 컨트롤에 대 한 참조
-- `Item`에 대 한 참조는 [ `RepeaterItem` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.repeateritem.aspx) 으로 반복기에 바인딩된 각 레코드는 매니페스트; 클릭 된 단추의 포함 하는`RepeaterItem`
+- `CommandArgument` s 클릭 한 단추의 값 `CommandArgument` 속성
+- `CommandName` s 단추의 값 `CommandName` 속성
+- `CommandSource` 클릭 된 단추 컨트롤에 대 한 참조
+- `Item` 에 대 한 참조는 [ `RepeaterItem` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.repeateritem.aspx) 으로 반복기에 바인딩된 각 레코드는 매니페스트; 클릭 된 단추의 포함 하는 `RepeaterItem`
 
 선택한 범주의 s 이후 `CategoryID` 를 통해 전달 되는 `CommandArgument` 속성에서 선택한 범주와 관련 된 제품의 집합을 가져올 수 있습니다는 `ItemCommand` 이벤트 처리기입니다. 이러한 제품 BulletedList 컨트롤에 바인딩할 수 다음는 `ItemTemplate` (어떤 것 추가할 아직 했습니다). 유지 되는 경우 다음 BulletedList를 추가 하는 모든 참조는 `ItemCommand` 이벤트 처리기의 경우 4 단계에서에서 해결할 선택한 범주에 대 한 제품 집합에 바인딩합니다.
 
@@ -162,11 +162,11 @@ DataList 및 반복기 컨트롤 개수에 관계 없이 단추, 링크, 단추�
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Dennis Patterson 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[다음](custom-buttons-in-the-datalist-and-repeater-vb.md)
+> [!div class="step-by-step"]
+> [다음](custom-buttons-in-the-datalist-and-repeater-vb.md)

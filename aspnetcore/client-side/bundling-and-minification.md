@@ -1,7 +1,7 @@
 ---
-title: "묶음 및 축소에서 ASP.NET Core"
+title: ASP.NET Core에서 번들 및 minifiy 정적 자산
 author: scottaddie
-description: "묶음 및 축소 기술을 적용 하 여 ASP.NET Core 웹 응용 프로그램에서 정적 리소스를 최적화 하는 방법에 알아봅니다."
+description: 묶음 및 축소 기술을 적용 하 여 ASP.NET Core 웹 응용 프로그램에서 정적 리소스를 최적화 하는 방법에 알아봅니다.
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
@@ -11,13 +11,13 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bundling-and-minification
-ms.openlocfilehash: 6c233d0957ce9974adbc6112e6194c072aab0b41
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: a155422c0fd638f46fe4a9d8a77faebc0b2a5681
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="bundling-and-minification"></a>묶음 및 축소
+# <a name="bundle-and-minifiy-static-assets-in-aspnet-core"></a>ASP.NET Core에서 번들 및 minifiy 정적 자산
 
 작성자: [Scott Addie](https://twitter.com/Scott_Addie)
 
@@ -220,28 +220,22 @@ dotnet bundle
 
 다음 `environment` 태그에서 실행할 때 처리 되지 않은 CSS 파일을 렌더링 된 `Development` 환경:
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 [!code-cshtml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/Pages/_Layout.cshtml?highlight=3&range=21-24)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 [!code-cshtml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/Pages/_Layout.cshtml?highlight=3&range=9-12)]
 
----
-
+* * *
 다음 `environment` 이외의 환경에서 실행 하는 경우 태그 렌더링 번들 및 축소 된 CSS 파일 `Development`합니다. 예를 들어에서 실행 `Production` 또는 `Staging` 이러한 스타일 시트의 렌더링을 트리거합니다.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 [!code-cshtml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/Pages/_Layout.cshtml?highlight=5&range=25-30)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 [!code-cshtml[](../client-side/bundling-and-minification/samples/BuildBundlerMinifierApp/Pages/_Layout.cshtml?highlight=3&range=13-18)]
 
----
-
+* * *
 ## <a name="consume-bundleconfigjson-from-gulp"></a>Bundleconfig.json Gulp에서 사용 합니다.
 
 묶음 및 축소 워크플로 응용 프로그램의 추가 처리를 필요로 하는 경우가 있습니다. 이미지 최적화, 캐시 busting 및 CDN 자산 처리를 예로 들 수 있습니다. 이러한 요구를 충족 하기 위해 묶음 및 축소 워크플로 Gulp를 사용 하도록 변환할 수 있습니다.
@@ -315,7 +309,7 @@ Gulp 축소 작업을 트리거하는 Visual Studio에서 프로젝트를 구성
 
 또는 Visual Studio의 Task Runner 탐색기 Gulp 작업을 특정 Visual Studio 이벤트에 바인딩 데 사용할 수 있습니다. 참조 [기본 작업을 실행](xref:client-side/using-gulp#running-default-tasks) 것에 대 한 지침은 합니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 * [Gulp 사용](xref:client-side/using-gulp)
 * [Grunt 사용](xref:client-side/using-grunt)

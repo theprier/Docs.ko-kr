@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/taking-web-applications-offline-with-web-deploy
-title: "기록 사용 웹 응용 프로그램 오프 라인 웹 배포 | Microsoft Docs"
+title: 기록 사용 웹 응용 프로그램 오프 라인 웹 배포 | Microsoft Docs
 author: jrjlee
-description: "이 항목에서는 웹 응용 프로그램 오프 라인으로 인터넷 정보 서비스 (IIS) 웹 배포 관리자를 사용 하 여 자동된 배포 하는 중에 수행 하는 방법에 설명..."
+description: 이 항목에서는 웹 응용 프로그램 오프 라인으로 인터넷 정보 서비스 (IIS) 웹 배포 관리자를 사용 하 여 자동된 배포 하는 중에 수행 하는 방법에 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/taking-web-applications-offline-with-web-deploy
 msc.type: authoredcontent
-ms.openlocfilehash: 1c262ec7b834107524a18c6552b171f731452c91
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 511201dc5646340b21023430fa319417f2b53ae2
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="taking-web-applications-offline-with-web-deploy"></a>기록 사용 웹 응용 프로그램 오프 라인 웹 배포
 ====================
@@ -27,9 +27,9 @@ ms.lasthandoff: 03/15/2018
 > 이 항목에서는 웹 응용 프로그램 오프 라인 기간 동안 인터넷 정보 서비스 (IIS) 웹 배포 도구 (웹 배포)를 사용 하 여 배포를 자동화 하는 방법을 설명 합니다. 웹 응용 프로그램에 찾아보는 사용자는 리디렉션됩니다는 *앱\_offline.htm* 배포가 완료 될 때까지 파일입니다.
 
 
-이 항목의 Fabrikam, inc. 라는 가상 회사의 엔터프라이즈 배포 요구 사항을 바탕으로 하는 자습서 시리즈의 일부를 형성 합니다. 이 자습서 시리즈 샘플 솔루션 & #x 2014;을 사용 하는 [Contact Manager 솔루션](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; 현실적인 수준의 복잡성을 Windows ASP.NET MVC 3 응용 프로그램을 포함 하 여 웹 응용 프로그램을 나타내기 위해 Communication Foundation (WCF) 서비스 및 데이터베이스 프로젝트를 제공 합니다.
+이 항목의 Fabrikam, inc. 라는 가상 회사의 엔터프라이즈 배포 요구 사항을 바탕으로 하는 자습서 시리즈의 일부를 형성 합니다. 샘플 솔루션을 사용 하는 자습서 시리즈가&#x2014;는 [Contact Manager 솔루션](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;현실적인 수준의 복잡성, Windows Communication ASP.NET MVC 3 응용 프로그램을 포함 하 여 웹 응용 프로그램을 나타내기 위해 WCF (foundation) 서비스 및 데이터베이스 프로젝트.
 
-이 자습서의 핵심에는 배포 방법에 설명 된 분할 프로젝트 파일 접근 방식에 따라 [프로젝트 파일 이해](../web-deployment-in-the-enterprise/understanding-the-project-file.md), 빌드 프로세스에 의해 제어 되는 두 프로젝트에 파일 & #x 2014; 포함 환경 관련 빌드 및 배포 설정을 포함 하는 하나 및 모든 대상 환경에 적용 되는 지침을 빌드하십시오. 빌드 시 환경 관련 프로젝트 파일은 빌드 지침의 전체 집합을 구성 하기 위해 환경을 알 수 없는 프로젝트 파일에 병합 됩니다.
+이 자습서의 핵심에는 배포 방법에 설명 된 분할 프로젝트 파일 접근 방식에 따라 [프로젝트 파일 이해](../web-deployment-in-the-enterprise/understanding-the-project-file.md), 두 개의 프로젝트 파일에 빌드 프로세스에 의해 제어 되는&#x2014;포함 환경 관련 빌드 및 배포 설정을 포함 하는 하나 및 모든 대상 환경에 적용 되는 지침을 빌드하십시오. 빌드 시 환경 관련 프로젝트 파일은 빌드 지침의 전체 집합을 구성 하기 위해 환경을 알 수 없는 프로젝트 파일에 병합 됩니다.
 
 ## <a name="task-overview"></a>작업 개요
 
@@ -94,7 +94,7 @@ ms.lasthandoff: 03/15/2018
 2. 루트에서 **프로젝트** 요소를 새 **PropertyGroup** 요소에 대 한 변수를 저장 하는 *앱\_오프 라인* 배포:
 
     [!code-xml[Main](taking-web-applications-offline-with-web-deploy/samples/sample3.xml)]
-3. **SourceRoot** 속성은 다른 곳에서 정의 된 *Publish.proj* 파일입니다. 원본 콘텐츠 위치에 상대적인 즉, 현재 경로 & #x 2014 기준으로;에 대 한 루트 폴더의 위치를 나타내는 *Publish.proj* 파일입니다.
+3. **SourceRoot** 속성은 다른 곳에서 정의 된 *Publish.proj* 파일입니다. 현재 경로 따라 원본 콘텐츠에 대 한 루트 폴더의 위치를 나타내는&#x2014;의 위치에 상대적인 즉,는 *Publish.proj* 파일입니다.
 4. **contentPath** 공급자를 배포 하기 전에 소스 파일에 절대 경로 가져와야 할 하므로 상대 파일 경로 허용 하지 것입니다. 사용할 수는 [ConvertToAbsolutePath](https://msdn.microsoft.com/library/bb882668.aspx) 이 작업을 수행 하는 작업입니다.
 5. 새로 추가 **대상** 라는 요소 **GetAppOfflineAbsolutePath**합니다. 이 대상 내에서 사용 하 여는 **ConvertToAbsolutePath** 태스크의 절대 경로를 가져올는 *앱\_템플릿을 오프 라인* 프로젝트 폴더의 파일입니다.
 
@@ -116,7 +116,7 @@ ms.lasthandoff: 03/15/2018
 
 ## <a name="adding-an-appoffline-file-to-deployment-packages"></a>앱 추가\_배포 패키지에 오프 라인 파일
 
-대상 IIS 웹 응용 프로그램 & #x 2014;에 배포, 모든 기존 내용을 구성 되는 방법에 따라 같은 *앱\_offline.htm* 파일 & #x 2014; 웹 배포할 때 자동으로 삭제 될 수 있습니다 패키지의 대상입니다. 되도록는 *앱\_offline.htm* 배포의 기간에 대 한 위치에 유지 되는 파일의 시작 부분에 직접 파일을 배포 하려면 또한 웹 배포 패키지 자체 내에서 파일을 포함 하도록 해야 합니다. 배포 프로세스입니다.
+대상 IIS에 콘텐츠를 기존 웹 응용 프로그램 배포를 구성 하는 방법에 따라&#x2014;같은 *앱\_offline.htm* 파일&#x2014;웹 배포할 때 자동으로 삭제 될 수 있습니다 패키지의 대상입니다. 되도록는 *앱\_offline.htm* 배포의 기간에 대 한 위치에 유지 되는 파일의 시작 부분에 직접 파일을 배포 하려면 또한 웹 배포 패키지 자체 내에서 파일을 포함 하도록 해야 합니다. 배포 프로세스입니다.
 
 - 경우이 항목의 이전 태스크에 따라, 됩니다 추가한는 *앱\_offline.htm* 파일을 다른 파일 이름 아래에서 웹 응용 프로그램 프로젝트 (사용 *앱\_ 오프 라인 template.htm*) 합니다 빌드 작업으로 설정 하 고 **None**합니다. 이러한 변경이 방해 개발 및 디버깅에서 파일을 방지 하기 위해 필요 합니다. 되도록 패키징 프로세스를 사용자 지정 해야 하는 결과적으로 *앱\_offline.htm* 파일이 웹 배포 패키지에 포함 되어 있습니다.
 
@@ -125,7 +125,7 @@ ms.lasthandoff: 03/15/2018
 1. 라는 사용자 지정 프로젝트 파일을 만들어 *[프로젝트 이름].wpp.targets* 프로젝트 파일과 같은 폴더에 있습니다.
 
     > [!NOTE]
-    > *. wpp.targets* 파일에 웹 응용 프로그램 프로젝트 파일 & #x 2014;와 같은 폴더에 배치 해야 합니다. 예를 들어 *ContactManager.Mvc.csproj*& 하나로 #x 2014; 보다는 같은 폴더 제어 된 빌드 및 배포 프로세스에 사용 하는 사용자 지정 프로젝트 파일입니다.
+    > *. wpp.targets* 파일을 웹 응용 프로그램 프로젝트 파일와 같은 폴더에 배치 해야&#x2014;예를 들어 *ContactManager.Mvc.csproj*&#x2014;대신 사용자 지정와 같은 폴더에 빌드 및 배포 프로세스 제어 기능을 사용 하는 프로젝트 파일입니다.
 2. 에 *. wpp.targets* 파일을 실행 하는 새 MSBuild 대상을 만들 *전에* 는 **CopyAllFilesToSingleFolderForPackage** 대상입니다. 이 패키지에 포함 해야 할 사항 목록을 작성 하는 WPP 대상입니다.
 3. 새 대상 만듭니다는 **ItemGroup** 요소입니다.
 4. 에 **ItemGroup** 요소를 추가 **FilesForPackagingFromProject** 항목을 지정는 *앱\_offline.htm* 파일입니다.
@@ -175,6 +175,6 @@ ms.lasthandoff: 03/15/2018
 
 이 자습서에 설명 된 사용자 지정 MSBuild 프로젝트 파일 방법을 사용 해야 응용 프로그램 오프 라인으로 게시 하는 동안 수행할 약간 다른 접근 방식을 사용 하지 않고 Visual Studio에서 직접 웹 응용 프로그램을 게시 하는 경우 프로세스입니다. 자세한 내용은 참조 [을 게시 하는 동안 오프 라인 웹 응용 프로그램을 가져오는 방법](https://go.microsoft.com/?linkid=9805135) (블로그 게시물).
 
->[!div class="step-by-step"]
-[이전](excluding-files-and-folders-from-deployment.md)
-[다음](running-windows-powershell-scripts-from-msbuild-project-files.md)
+> [!div class="step-by-step"]
+> [이전](excluding-files-and-folders-from-deployment.md)
+> [다음](running-windows-powershell-scripts-from-msbuild-project-files.md)

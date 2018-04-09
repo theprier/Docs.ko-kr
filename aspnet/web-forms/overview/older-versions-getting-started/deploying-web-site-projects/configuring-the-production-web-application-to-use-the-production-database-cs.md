@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-the-production-web-application-to-use-the-production-database-cs
-title: "프로덕션 데이터베이스 (C#)를 사용 하 여 프로덕션 웹 응용 프로그램 구성 | Microsoft Docs"
+title: 프로덕션 데이터베이스 (C#)를 사용 하 여 프로덕션 웹 응용 프로그램 구성 | Microsoft Docs
 author: rick-anderson
-description: "이전 자습서에서 설명 했 듯이 구성 정보를 개발 및 프로덕션 환경 간에 다도 드물지 않습니다. 이 es 중..."
+description: 이전 자습서에서 설명 했 듯이 구성 정보를 개발 및 프로덕션 환경 간에 다도 드물지 않습니다. 이 es 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/23/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-the-production-web-application-to-use-the-production-database-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 21eac6a4d829795f02eeeca5f9870b1ab8132d08
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 7fef7ecab0e51790ff7737b16500f6c2bb5eecdf
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-the-production-web-application-to-use-the-production-database-c"></a>프로덕션 데이터베이스 (C#)를 사용 하 여 프로덕션 웹 응용 프로그램 구성
 ====================
@@ -71,7 +71,7 @@ Visual Studio를 열고 서버 탐색기 창으로 이동 합니다 (Visual Web 
 
 이제 프로덕션 환경 데이터베이스 서버 탐색기에 나열 됩니다. 서버 탐색기에서 데이터베이스를 선택 하 고 속성 창으로 이동 합니다. 있습니다 라는 데이터베이스의 연결 문자열과 함께 연결 문자열 속성을 찾을 수 있습니다. 프로덕션 및 SqlClient 공급자는 Microsoft SQL Server 데이터베이스를 사용할 경우 연결 문자열이 다음과 비슷하게 표시 됩니다.
 
-**데이터 원본 =*serverName*; 초기 카탈로그 =*databaseName*; 보안 정보 유지 = True; 사용자 ID =*username*; 암호 = * 암호***
+<strong>데이터 원본 =<em>serverName</em>; 초기 카탈로그 =<em>databaseName</em>; 보안 정보 유지 = True; 사용자 ID =<em>username</em>; 암호 =*암호</strong>*
 
 여기서 *serverName*, *databaseName*, *username*, 및 *암호* 데이터베이스 서버 이름, 데이터베이스에 대 한 값으로는 이름 및 사용자 이름 및 암호 웹 호스트 귀사에 게 제공 합니다.
 
@@ -152,6 +152,6 @@ DatabaseConnectionStrings.dev.config 파일의 복사본을 만들고 databaseCo
 - [Web.config 파일에서 설정 이동](http://www.asp101.com/tips/index.asp?id=154)
 - [에 대 한 기술 문서는 &lt;connectionStrings&gt; 요소](https://msdn.microsoft.com/library/bf7sd233.aspx)
 
->[!div class="step-by-step"]
-[이전](deploying-a-database-cs.md)
-[다음](configuring-a-website-that-uses-application-services-cs.md)
+> [!div class="step-by-step"]
+> [이전](deploying-a-database-cs.md)
+> [다음](configuring-a-website-that-uses-application-services-cs.md)

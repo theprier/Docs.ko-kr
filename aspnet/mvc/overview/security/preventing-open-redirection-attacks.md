@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/security/preventing-open-redirection-attacks
-title: "열린 리디렉션 공격 방지 (C#) | Microsoft Docs"
+title: 열린 리디렉션 공격 방지 (C#) | Microsoft Docs
 author: jongalloway
-description: "이 자습서에서는 ASP.NET MVC 응용 프로그램에서 열려 리디렉션 공격을 방지 하는 방법에 대해 설명 합니다. 이 자습서에는 적용 된 변경 사항에 설명..."
+description: 이 자습서에서는 ASP.NET MVC 응용 프로그램에서 열려 리디렉션 공격을 방지 하는 방법에 대해 설명 합니다. 이 자습서에는 적용 된 변경 사항에 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/27/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/preventing-open-redirection-attacks
 msc.type: authoredcontent
-ms.openlocfilehash: 17944c0600a174176e3e9940f414b34f0835b800
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: ec1cd1791eb6d32e7c1ea50bc6626929cad2960e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="preventing-open-redirection-attacks-c"></a>열린 리디렉션 공격 방지 (C#)
 ====================
@@ -39,7 +39,7 @@ ms.lasthandoff: 01/30/2018
 
 **그림 01**: 열려 리디렉션을 로그인 페이지
 
-이후 ReturnUrl querystring 매개 변수 유효성이 검사 되지 않습니다 하면 공격자가 열려 리디렉션 공격을 수행 하 고 매개 변수를 모든 URL 주소를 삽입 하도록 수정할 수 있습니다. 이 증명 하려면 ReturnUrl 매개 변수를 수정할 수 있을 [http://bing.com](http://bing.com)결과 로그인 URL을 갖게 됩니다/계정/로그온,? ReturnUrl = http://www.bing.com/ 합니다. 성공적으로 사이트에 로그인 하 되 면 우리는 리디렉션됩니다 [http://bing.com](http://bing.com)합니다. 이후이 리디렉션이 유효성이 검사 되지 않습니다 대신 사용자 속일 하려는 악성 사이트를 가리킬 수 있습니다.
+이후 ReturnUrl querystring 매개 변수 유효성이 검사 되지 않습니다 하면 공격자가 열려 리디렉션 공격을 수행 하 고 매개 변수를 모든 URL 주소를 삽입 하도록 수정할 수 있습니다. 이 증명 하려면 ReturnUrl 매개 변수를 수정할 수 있을 [ http://bing.com ](http://bing.com)결과 로그인 URL을 갖게 됩니다/계정/로그온? ReturnUrl =<http://www.bing.com/>합니다. 성공적으로 사이트에 로그인 하 되 면 우리는 리디렉션됩니다 [ http://bing.com ](http://bing.com)합니다. 이후이 리디렉션이 유효성이 검사 되지 않습니다 대신 사용자 속일 하려는 악성 사이트를 가리킬 수 있습니다.
 
 ### <a name="a-more-complex-open-redirection-attack"></a>더 복잡 한 열기 리디렉션 공격
 
@@ -55,7 +55,7 @@ Note 반환 URL 단어 dinner에서 "n" 없는 nerddiner.com 가리킵니다. �
 
 **그림 02**: 열려 리디렉션을 업그레이드 되었으며 수정 로그인 페이지
 
-ASP.NET MVC AccountController 로그온 작업을 올바르게에 로그인 하겠습니다 returnUrl querystring 매개 변수에서 지정 된 URL로 우리 리디렉션합니다. 이 경우에 공격자가 입력 한 URL을는 [http://nerddiner.com/Account/LogOn](http://nerddiner.com/Account/LogOn)합니다. We're 매우 워치 매우 높습니다이 알 수 없습니다 공격자가 있는지 확인 하려면 신중 하 게 되지 않았기 때문에 특히 하지 않는 한 해당 위조 된 페이지 합법적인 로그인 페이지와 동일 하 게 보입니다. 이 로그인 페이지에 다시 로그인 하는 오류 메시지 요청에 포함 됩니다. 어 색 하 게 us, 암호를 입력 했 해야 했습니다.
+ASP.NET MVC AccountController 로그온 작업을 올바르게에 로그인 하겠습니다 returnUrl querystring 매개 변수에서 지정 된 URL로 우리 리디렉션합니다. 이 경우에 공격자가 입력 한 URL을는 [ http://nerddiner.com/Account/LogOn ](http://nerddiner.com/Account/LogOn)합니다. We're 매우 워치 매우 높습니다이 알 수 없습니다 공격자가 있는지 확인 하려면 신중 하 게 되지 않았기 때문에 특히 하지 않는 한 해당 위조 된 페이지 합법적인 로그인 페이지와 동일 하 게 보입니다. 이 로그인 페이지에 다시 로그인 하는 오류 메시지 요청에 포함 됩니다. 어 색 하 게 us, 암호를 입력 했 해야 했습니다.
 
 [![](preventing-open-redirection-attacks/_static/image6.png)](preventing-open-redirection-attacks/_static/image5.png)
 
@@ -67,13 +67,13 @@ ASP.NET MVC AccountController 로그온 작업을 올바르게에 로그인 하�
 
 ASP.NET MVC 2 응용 프로그램에서 로그온 작업에 대 한 코드는 다음과 같습니다. 성공적으로 로그인 할 때 컨트롤러 돌아갑니다 리디렉션을 returnUrl 참고 합니다. 유효성 검사가 수행 되지 returnUrl 매개 변수에 대해 수행 되 고 있는지 확인할 수 있습니다.
 
-**1 –에서 ASP.NET MVC 2 로그온 작업 나열`AccountController.cs`**
+**1 –에서 ASP.NET MVC 2 로그온 작업 나열 `AccountController.cs`**
 
 [!code-csharp[Main](preventing-open-redirection-attacks/samples/sample1.cs)]
 
 이제 ASP.NET MVC 3 로그온 동작의 변경 내용을 살펴 보겠습니다. 이 코드는 returnUrl 매개 변수 이름의 System.Web.Mvc.Url 도우미 클래스의 새 메서드를 호출 하 여 유효성을 검사 하도록 변경 되었습니다 `IsLocalUrl()`합니다.
 
-**2 –에서 ASP.NET MVC 3 로그온 작업 나열`AccountController.cs`**
+**2 –에서 ASP.NET MVC 3 로그온 작업 나열 `AccountController.cs`**
 
 [!code-csharp[Main](preventing-open-redirection-attacks/samples/sample2.cs)]
 
@@ -85,7 +85,7 @@ IsLocalUrl() 도우미 메서드를 추가 하 고 returnUrl 매개 변수 유�
 
 ASP.NET 웹 페이지 응용 프로그램에서 실제로 호출에서이 유효성 검사와 System.Web.WebPages 메서드로 UrlHelper IsLocalUrl() 메서드도 사용 됩니다.
 
-**3 – ASP.NET MVC 3 UrlHelper에서 IsLocalUrl() 메서드를 나열합니다.`class`**
+**3 – ASP.NET MVC 3 UrlHelper에서 IsLocalUrl() 메서드를 나열합니다. `class`**
 
 [!code-csharp[Main](preventing-open-redirection-attacks/samples/sample3.cs)]
 
@@ -107,7 +107,7 @@ IsLocalUrl() 메서드 이면 했으므로 다음 코드에 나와 있는 것 �
 
 [!code-csharp[Main](preventing-open-redirection-attacks/samples/sample6.cs)]
 
-이제 열려 리디렉션 공격 외부 반환 URL을 사용 하 여 로그인을 시도 하 여 테스트할 수 있습니다. 다음을 사용해 봅시다/계정/로그온? ReturnUrl http://www.bing.com/ 다시 = 합니다.
+이제 열려 리디렉션 공격 외부 반환 URL을 사용 하 여 로그인을 시도 하 여 테스트할 수 있습니다. /Account/LogOn 사용? ReturnUrl =<http://www.bing.com/> 다시 합니다.
 
 [![](preventing-open-redirection-attacks/_static/image8.png)](preventing-open-redirection-attacks/_static/image7.png)
 

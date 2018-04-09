@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/limiting-data-modification-functionality-based-on-the-user-vb
-title: "사용자 (VB)에 따라 데이터 수정 기능을 제한 | Microsoft Docs"
+title: 사용자 (VB)에 따라 데이터 수정 기능을 제한 | Microsoft Docs
 author: rick-anderson
-description: "사용자가 데이터를 편집할 수 있는 웹 응용 프로그램을 다른 사용자 계정에 다른 데이터 편집 권한을 가질 수 있습니다. 이 자습서에서는 살펴봅니다 어떻게 t..."
+description: 사용자가 데이터를 편집할 수 있는 웹 응용 프로그램을 다른 사용자 계정에 다른 데이터 편집 권한을 가질 수 있습니다. 이 자습서에서는 살펴봅니다 어떻게 t...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/17/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/limiting-data-modification-functionality-based-on-the-user-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e1bf749ce152d1c9f184d5726d5da059ffe0822f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: eccb8e114e0ecf772680a2e5b36a761736cf8025
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="limiting-data-modification-functionality-based-on-the-user-vb"></a>사용자 (VB)에 따라 데이터 수정 기능 제한
 ====================
@@ -246,7 +246,7 @@ GridView s에 대 한 이벤트 처리기를 만들고 `RowDataBound` 이벤트�
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
->[!div class="step-by-step"]
-[이전](adding-client-side-confirmation-when-deleting-vb.md)
+> [!div class="step-by-step"]
+> [이전](adding-client-side-confirmation-when-deleting-vb.md)

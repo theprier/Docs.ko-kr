@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create-the-project
-title: "프로젝트 만들기 | Microsoft Docs"
+title: 프로젝트 만들기 | Microsoft Docs
 author: Erikre
-description: "이 자습서 시리즈 것에 대 한 ASP.NET 4.5 및 Microsoft Visual Studio Express 2013을 사용 하 여 ASP.NET Web Forms 응용 프로그램을 구축 하는 기초 알려 드리겠습니다 중..."
+description: 이 자습서 시리즈 것에 대 한 ASP.NET 4.5 및 Microsoft Visual Studio Express 2013을 사용 하 여 ASP.NET Web Forms 응용 프로그램을 구축 하는 기초 알려 드리겠습니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create-the-project
 msc.type: authoredcontent
-ms.openlocfilehash: 094733dcbe31486385dda2f8b44ba77a17486c82
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b42e62b560e01d592c9f4cb61ea6199a15dc8bb6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="create-the-project"></a>프로젝트 만들기
 ====================
@@ -189,12 +189,12 @@ Visual Studio에 대 한 자세한 내용은 참조 [Visual Web Developer에 시
 
 이 자습서에서 생성, 검토 하 고 하면 기본 Web Forms 응용 프로그램을 실행 합니다. 기본 Web forms 응용 프로그램의 다양 한 기능을 검토 하 고 Visual Studio 환경을 사용 하는 방법에 대 한 몇 가지 기본 사항을 배웠습니다. 다음 자습서에서는 데이터 액세스 계층을 만듭니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 [오른쪽 프로그래밍 모델을 선택 합니다.](../../../videos/how-do-i/choosing-the-right-programming-model.md)   
 [웹 응용 프로그램 프로젝트와 웹 사이트 프로젝트 비교](https://msdn.microsoft.com/library/dd547590.aspx)   
 [ASP.NET Web Forms 페이지 개요](https://msdn.microsoft.com/library/428509ah.aspx)
 
->[!div class="step-by-step"]
-[이전](introduction-and-overview.md)
-[다음](create_the_data_access_layer.md)
+> [!div class="step-by-step"]
+> [이전](introduction-and-overview.md)
+> [다음](create_the_data_access_layer.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/textboxwatermark/using-textboxwatermark-with-validation-controls-cs
-title: "유효성 검사 컨트롤 (C#) TextBoxWatermark 사용 | Microsoft Docs"
+title: 유효성 검사 컨트롤 (C#) TextBoxWatermark 사용 | Microsoft Docs
 author: wenz
-description: "들어에서 TextBoxWatermark 컨트롤 텍스트 상자 내에서 표시 되도록 입력란을 확장 합니다. 상자에는 사용자가 클릭할 때 그 i..."
+description: 들어에서 TextBoxWatermark 컨트롤 텍스트 상자 내에서 표시 되도록 입력란을 확장 합니다. 상자에는 사용자가 클릭할 때 그 i...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/textboxwatermark/using-textboxwatermark-with-validation-controls-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 61fa55c8c4580800de1097b7242c7077cda27115
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b5cc7974f3444b54770cba54b991aab7b103f753
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-textboxwatermark-with-validation-controls-c"></a>TextBoxWatermark를 사용 하 여 유효성 검사 컨트롤 (C#)
 ====================
@@ -56,6 +56,6 @@ ms.lasthandoff: 11/10/2017
 
 유효성 검사기 필드에 텍스트가 불만 ([전체 크기 이미지를 보려면 클릭](using-textboxwatermark-with-validation-controls-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[이전](using-textboxwatermark-in-a-formview-cs.md)
-[다음](using-textboxwatermark-in-a-formview-vb.md)
+> [!div class="step-by-step"]
+> [이전](using-textboxwatermark-in-a-formview-cs.md)
+> [다음](using-textboxwatermark-in-a-formview-vb.md)

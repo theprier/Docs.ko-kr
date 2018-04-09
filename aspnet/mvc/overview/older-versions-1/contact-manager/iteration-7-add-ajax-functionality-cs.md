@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-7-add-ajax-functionality-cs
-title: "반복 추가 Ajax 기능 (C#) #7 – | Microsoft Docs"
+title: '반복 추가 Ajax 기능 (C#) #7 – | Microsoft Docs'
 author: microsoft
-description: "일곱 번째 반복에서 개선할 응용 프로그램의 성능과 응답성 ajax 지원을 추가 하 여 합니다."
+description: 일곱 번째 반복에서 개선할 응용 프로그램의 성능과 응답성 ajax 지원을 추가 하 여 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-7-add-ajax-functionality-cs
 msc.type: authoredcontent
-ms.openlocfilehash: db313d12dfd6a146347f253dc3a1f4a889bee780
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 35d62383a571725749b2fc629bbb17954657b2f6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="iteration-7--add-ajax-functionality-c"></a>반복 #7 – 추가 Ajax 기능 (C#)
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [코드 다운로드](iteration-7-add-ajax-functionality-cs/_static/contactmanager_7_cs1.zip)
 
@@ -103,7 +103,7 @@ JavaScript 지원 브라우저로 않아 응용 프로그램을 사용 하는 �
 
 첫 번째 단계는 별도 부분 (사용자 정의 컨트롤 보기)에 비동기적으로 업데이트 하려고 하는 보기의 일부를 분리 하는 것입니다. 연락처의 테이블을 표시 하는 인덱스 뷰 섹션 목록 1의 부분으로 이동 되었습니다.
 
-**1-Views\Contact\ContactList.ascx 나열**
+**Listing 1 - Views\Contact\ContactList.ascx**
 
 [!code-aspx[Main](iteration-7-add-ajax-functionality-cs/samples/sample2.aspx)]
 
@@ -111,7 +111,7 @@ JavaScript 지원 브라우저로 않아 응용 프로그램을 사용 하는 �
 
 업데이트 된 인덱스 뷰 목록 2에 포함 됩니다.
 
-**2-Views\Contact\Index.aspx 나열**
+**Listing 2 - Views\Contact\Index.aspx**
 
 [!code-aspx[Main](iteration-7-add-ajax-functionality-cs/samples/sample3.aspx)]
 
@@ -147,7 +147,7 @@ Ajax 요청에 의해 호출 되 면 많은 데이터를 반환 하는 index () 
 
 애니메이션 효과를 만들 Microsoft ASP.NET MVC 프레임 워크에 포함 된 jQuery 라이브러리를 사용 합니다. 업데이트 된 인덱스 뷰 목록 4에 포함 되어 있습니다.
 
-**4-Views\Contact\Index.aspx 나열**
+**Listing 4 - Views\Contact\Index.aspx**
 
 [!code-aspx[Main](iteration-7-add-ajax-functionality-cs/samples/sample6.aspx)]
 
@@ -175,7 +175,7 @@ ASP.NET AJAX 브라우저 기록을 다음 세 가지 작업을 수행 해야 �
 
 업데이트 된 인덱스 뷰 목록 5에 포함 됩니다.
 
-**5-Views\Contact\Index.aspx 나열**
+**Listing 5 - Views\Contact\Index.aspx**
 
 [!code-aspx[Main](iteration-7-add-ajax-functionality-cs/samples/sample8.aspx)]
 
@@ -205,7 +205,7 @@ BeginContactList() 메서드는 메일 그룹을 클릭할 때 호출 됩니다.
 
 링크가 삭제 부분 ContactList에 포함 됩니다. 업데이트 된 버전의 부분 ContactList 목록 6에 포함 됩니다.
 
-**6-Views\Contact\ContactList.ascx 나열**
+**Listing 6 - Views\Contact\ContactList.ascx**
 
 [!code-aspx[Main](iteration-7-add-ajax-functionality-cs/samples/sample10.aspx)]
 
@@ -242,6 +242,6 @@ AjaxDelete() 작업 AcceptVerbs 특성으로 데코레이팅되 어 있습니다
 
 마지막으로, HTTP DELETE 작업을 지 원하는 삭제 링크를 만들었는지 여부입니다. Ajax 삭제를 수행 하 여 사용자를 추가 삭제 확인 페이지를 요청 하지 않고도 데이터베이스 레코드를 삭제 하려면 사용자가 설정 합니다.
 
->[!div class="step-by-step"]
-[이전](iteration-6-use-test-driven-development-cs.md)
-[다음](iteration-1-create-the-application-vb.md)
+> [!div class="step-by-step"]
+> [이전](iteration-6-use-test-driven-development-cs.md)
+> [다음](iteration-1-create-the-application-vb.md)

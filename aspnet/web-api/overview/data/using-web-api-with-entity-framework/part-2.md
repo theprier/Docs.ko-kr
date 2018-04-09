@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/data/using-web-api-with-entity-framework/part-2
-title: "모델 및 컨트롤러를 추가 합니다. | Microsoft Docs"
+title: 모델 및 컨트롤러를 추가 합니다. | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/16/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-2
 msc.type: authoredcontent
-ms.openlocfilehash: 7e09316f0faaf0731e4cdda48040fdaedc0f244a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 015bb9698d81387d03ea8f9629316fb53232e708
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="add-models-and-controllers"></a>모델 및 컨트롤러를 추가 합니다.
 ====================
@@ -84,8 +84,8 @@ Book 클래스에는 `AuthorId` 에 외래 키 정의 `Author` 테이블입니�
 
 클릭 **추가** 완료 하는 **컨트롤러 추가** 대화 상자. 프로젝트에 두 개의 클래스를 추가 하는 대화 상자:
 
-- `AuthorsController`Web API 컨트롤러를 정의합니다. 컨트롤러는 클라이언트가 사용 작성자의 목록에서 CRUD 작업을 수행 하는 REST API를 구현 합니다.
-- `BookServiceContext`데이터베이스에 데이터는 데이터베이스, 변경 내용 추적 및 데이터 유지를 사용 하 여 개체를 채우는 포함 하는 런타임 시 엔터티 개체를 관리 합니다. 상속 된 `DbContext`합니다.
+- `AuthorsController` Web API 컨트롤러를 정의합니다. 컨트롤러는 클라이언트가 사용 작성자의 목록에서 CRUD 작업을 수행 하는 REST API를 구현 합니다.
+- `BookServiceContext` 데이터베이스에 데이터는 데이터베이스, 변경 내용 추적 및 데이터 유지를 사용 하 여 개체를 채우는 포함 하는 런타임 시 엔터티 개체를 관리 합니다. 상속 된 `DbContext`합니다.
 
 ![](part-2/_static/image7.png)
 
@@ -93,6 +93,6 @@ Book 클래스에는 `AuthorId` 에 외래 키 정의 `Author` 테이블입니�
 
 ![](part-2/_static/image8.png)
 
->[!div class="step-by-step"]
-[이전](part-1.md)
-[다음](part-3.md)
+> [!div class="step-by-step"]
+> [이전](part-1.md)
+> [다음](part-3.md)

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/re-use-ui-using-master-pages-and-partials
-title: "마스터 페이지 및 부분을 사용 하 여 UI를 사용 하 여 다시 | Microsoft Docs"
+title: 마스터 페이지 및 부분을 사용 하 여 UI를 사용 하 여 다시 | Microsoft Docs
 author: microsoft
-description: "7 단계 부분 뷰 서식 파일 및 마스터 페이지를 사용 하 여 코드 중복을 제거 하는 보기 템플릿 내에서 ' 건조 원칙 '를 적용할 수 있습니다 하는 방법을 살펴봅니다."
+description: 7 단계 부분 뷰 서식 파일 및 마스터 페이지를 사용 하 여 코드 중복을 제거 하는 보기 템플릿 내에서 ' 건조 원칙 '를 적용할 수 있습니다 하는 방법을 살펴봅니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/re-use-ui-using-master-pages-and-partials
 msc.type: authoredcontent
-ms.openlocfilehash: c42cd6aca40b08a9f8461532fbfd0589901b64ad
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ade655f3a4a429360b678d02fb564ac9cf255d42
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="re-use-ui-using-master-pages-and-partials"></a>마스터 페이지 및 부분을 사용 하 여 UI를 다시 사용
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [PDF 다운로드](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
 
@@ -123,7 +123,7 @@ Html.RenderPartial() 부분 뷰의 이름으로 호출 되 면 ASP.NET MVC에서
 
 [!code-aspx[Main](re-use-ui-using-master-pages-and-partials/samples/sample7.aspx)]
 
-Site.master 파일 및 새로 고침을 저장 하는 경우이 헤더를 보면 브라우저 표시 응용 프로그램 내에서 모든 뷰에 변경 합니다. 예:
+Site.master 파일 및 새로 고침을 저장 하는 경우이 헤더를 보면 브라우저 표시 응용 프로그램 내에서 모든 뷰에 변경 합니다. 예를 들어:
 
 ![](re-use-ui-using-master-pages-and-partials/_static/image6.png)
 
@@ -137,6 +137,6 @@ Site.master 파일 및 새로 고침을 저장 하는 경우이 헤더를 보면
 
 보겠습니다 이제 앞에서 만든 목록 시나리오를 다시 확인 하 고 확장 가능한 페이징 지원을 사용 하도록 설정 합니다.
 
->[!div class="step-by-step"]
-[이전](use-viewdata-and-implement-viewmodel-classes.md)
-[다음](implement-efficient-data-paging.md)
+> [!div class="step-by-step"]
+> [이전](use-viewdata-and-implement-viewmodel-classes.md)
+> [다음](implement-efficient-data-paging.md)

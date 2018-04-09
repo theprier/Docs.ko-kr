@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/working-with-computed-columns-cs
-title: "계산된 열 (C#) 사용 | Microsoft Docs"
+title: 계산된 열 (C#) 사용 | Microsoft Docs
 author: rick-anderson
-description: "Microsoft SQL Server 계산된 열 값은 식에서 계산을 정의할 수 있습니다는 데이터베이스 테이블을 만들 때 일반적으로 referen..."
+description: Microsoft SQL Server 계산된 열 값은 식에서 계산을 정의할 수 있습니다는 데이터베이스 테이블을 만들 때 일반적으로 referen...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/03/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/working-with-computed-columns-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 41206f76f9d9ca68971a53d79e84d82349e92333
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7a67abd2a0c140c0503c07f764549a6d90ef7298
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="working-with-computed-columns-c"></a>계산 열 (C#)
 ====================
@@ -51,7 +51,7 @@ Northwind 데이터베이스에 없으므로 계산된 열 하나 직접 추가 
 SQL에서 문자열을 연결할 수 있는지 참고를 사용 하는 `+` 연산자입니다. `CASE` 기존의 프로그래밍 언어에는 조건부와 같은 문을 사용할 수 있습니다. 위 식에서는 `CASE` 문을로 읽을 수 있습니다: 경우 `ContactTitle` 않습니다 `NULL` 다음 출력 하는 `ContactTitle` 쉼표, 그렇지 않으면 연결 값을 내보낼 nothing입니다. 유용성에 대 한 자세한는 `CASE` 문을 참조 [SQL의 전원 `CASE` 문을](http://www.4guysfromrolla.com/webtech/102704-1.shtml)합니다.
 
 > [!NOTE]
-> 사용 하는 대신 한 `CASE` 여기 문, 또는 사용할 수도 `ISNULL(ContactTitle, '')`합니다. [`ISNULL(checkExpression, replacementValue)`](https://msdn.microsoft.com/library/ms184325.aspx)반환 *checkExpression* NULL이 아닌 경우, 그렇지 않으면 반환 *replacementValue*합니다. 하나는 동안 `ISNULL` 또는 `CASE` 작동이 경우에는 더 복잡 한 시나리오 여기서의 유연성은 `CASE` 문을 일치할 수 없는 `ISNULL`합니다.
+> 사용 하는 대신 한 `CASE` 여기 문, 또는 사용할 수도 `ISNULL(ContactTitle, '')`합니다. [`ISNULL(checkExpression, replacementValue)`](https://msdn.microsoft.com/library/ms184325.aspx) 반환 *checkExpression* NULL이 아닌 경우, 그렇지 않으면 반환 *replacementValue*합니다. 하나는 동안 `ISNULL` 또는 `CASE` 작동이 경우에는 더 복잡 한 시나리오 여기서의 유연성은 `CASE` 문을 일치할 수 없는 `ISNULL`합니다.
 
 
 이 계산된 열을 추가한 후 화면에 나오는 그림 1 스크린 샷의와 같아야 합니다.
@@ -261,12 +261,12 @@ Microsoft SQL Server 테이블에 대 한 스키마를 정의 하면 계산된 �
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Hilton Geisenow 및 Teresa 머피의 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](adding-additional-datatable-columns-cs.md)
-[다음](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs.md)
+> [!div class="step-by-step"]
+> [이전](adding-additional-datatable-columns-cs.md)
+> [다음](configuring-the-data-access-layer-s-connection-and-command-level-settings-cs.md)

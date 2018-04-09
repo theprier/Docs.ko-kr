@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/protecting-connection-strings-and-other-configuration-information-vb
-title: "연결 문자열 및 기타 구성 정보 (VB) 보호 | Microsoft Docs"
+title: 연결 문자열 및 기타 구성 정보 (VB) 보호 | Microsoft Docs
 author: rick-anderson
-description: "일반적으로 ASP.NET 응용 프로그램 Web.config 파일에 구성 정보를 저장합니다. 이 정보 중 일부가 민감하여 보호 수행 되도록 합니다. 정의... 하 여"
+description: 일반적으로 ASP.NET 응용 프로그램 Web.config 파일에 구성 정보를 저장합니다. 이 정보 중 일부가 민감하여 보호 수행 되도록 합니다. 정의... 하 여
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/03/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/protecting-connection-strings-and-other-configuration-information-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f1514c4b6d041f6bbd83788e2110a95d3d831ff6
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 3372416dd9143afbfd442eaffb39cd807fae0de6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="protecting-connection-strings-and-other-configuration-information-vb"></a>연결 문자열 및 기타 구성 정보 (VB)를 보호합니다.
 ====================
@@ -31,7 +31,7 @@ ms.lasthandoff: 01/24/2018
 
 ASP.NET 응용 프로그램에 대 한 구성 정보는 일반적으로 이라는 XML 파일에 저장 `Web.config`합니다. 이 자습서의 과정 동안 업데이트는 `Web.config` 는 소수의 시간입니다. 만들 때의 `Northwind` 형식화 된 데이터 집합에는 [첫 번째 자습서](../introduction/creating-a-data-access-layer-vb.md), 연결 문자열 정보를 자동으로 추가 된 예를 들어 `Web.config` 에 `<connectionStrings>` 섹션. 뒷부분에 나오는 [마스터 페이지 및 사이트 탐색](../introduction/master-pages-and-site-navigation-vb.md) 자습서에서는 수동으로 업데이트 했습니다. `Web.config`추가는 `<pages>` 요소 모든 프로젝트에 ASP.NET 페이지의 사용 해야 함을 나타내는 `DataWebControls` 테마입니다.
 
-이후 `Web.config` 연결 문자열과 같은 중요 한 데이터가 포함 될 수는 것이 중요 하는 내용의 `Web.config` 안전 하 고 권한이 없는 사용자에 게 서 숨겨지면 유지 합니다. 기본적으로 사용 하 여 파일 모든 HTTP 요청는 `.config` 확장을 반환 하는 ASP.NET 엔진에 의해 처리 되는 *이 형식의 페이지가 제공 되지 않습니다* 그림 1에 표시 되는 메시지입니다. 즉, 방문자를 볼 수 없는 프로그램 `Web.config`의 내용을 입력 하 여 간단히 http://www.YourServer.com/Web.config 자신의 s 브라우저 주소 표시줄에 파일.
+이후 `Web.config` 연결 문자열과 같은 중요 한 데이터가 포함 될 수는 것이 중요 하는 내용의 `Web.config` 안전 하 고 권한이 없는 사용자에 게 서 숨겨지면 유지 합니다. 기본적으로 사용 하 여 파일 모든 HTTP 요청는 `.config` 확장을 반환 하는 ASP.NET 엔진에 의해 처리 되는 *이 형식의 페이지가 제공 되지 않습니다* 그림 1에 표시 되는 메시지입니다. 즉, 방문자를 볼 수 없는 프로그램 `Web.config` s 내용을 입력 하 여 간단히 파일 http://www.YourServer.com/Web.config 자신의 s 브라우저 주소 표시줄에 합니다.
 
 
 [![메시지를 서비스 하지 않는 Web.config를 통해 정도 브라우저 반환이 페이지의 입력을 방문 합니다.](protecting-connection-strings-and-other-configuration-information-vb/_static/image2.png)](protecting-connection-strings-and-other-configuration-information-vb/_static/image1.png)
@@ -60,8 +60,8 @@ ASP.NET 2.0에는 보호 되는 구성 시스템 암호화 및 해독 구성 정
 
 .NET Framework는 두 명의 보호 되는 구성 공급자와 함께 제공:
 
-- [`RSAProtectedConfigurationProvider`](https://msdn.microsoft.com/library/system.configuration.rsaprotectedconfigurationprovider.aspx)-비대칭를 사용 하 여 [RSA 알고리즘](http://en.wikipedia.org/wiki/Rsa) 암호화 및 암호 해독 합니다.
-- [`DPAPIProtectedConfigurationProvider`](https://msdn.microsoft.com/system.configuration.dpapiprotectedconfigurationprovider.aspx)-Windows를 사용 하 여 [데이터 보호 API (DPAPI)](https://msdn.microsoft.com/library/ms995355.aspx) 암호화 및 암호 해독 합니다.
+- [`RSAProtectedConfigurationProvider`](https://msdn.microsoft.com/library/system.configuration.rsaprotectedconfigurationprovider.aspx) -비대칭를 사용 하 여 [RSA 알고리즘](http://en.wikipedia.org/wiki/Rsa) 암호화 및 암호 해독 합니다.
+- [`DPAPIProtectedConfigurationProvider`](https://msdn.microsoft.com/system.configuration.dpapiprotectedconfigurationprovider.aspx) -Windows를 사용 하 여 [데이터 보호 API (DPAPI)](https://msdn.microsoft.com/library/ms995355.aspx) 암호화 및 암호 해독 합니다.
 
 이기 때문에 공급자 디자인 패턴을 구현 하는 보호 되는 구성 시스템, 응용 프로그램에 연결 하 고 보호 되는 구성 공급자를 만들 수 있습니다. 참조 [보호 구성 공급자를 구현](https://msdn.microsoft.com/library/wfc2t3az(VS.80).aspx) 이 프로세스에 대 한 자세한 내용은 합니다.
 
@@ -96,7 +96,7 @@ DPAPI 및 RSA 공급자의 암호화 및 암호 해독 루틴에 대 한 키를 
 
 [!code-vb[Main](protecting-connection-strings-and-other-configuration-information-vb/samples/sample1.vb)]
 
-`DisplayWebConfig` 메서드는 [ `File` 클래스](https://msdn.microsoft.com/library/system.io.file.aspx) 응용 프로그램 s 열려는 `Web.config` 파일을는 [ `StreamReader` 클래스](https://msdn.microsoft.com/library/system.io.streamreader.aspx) 문자열과 로해당내용을읽어[ `Path` 클래스](https://msdn.microsoft.com/library/system.io.path.aspx) 실제 경로를 생성 하는 `Web.config` 파일입니다. 이러한 세 클래스 모두에서 발견 되는 [ `System.IO` 네임 스페이스](https://msdn.microsoft.com/library/system.io.aspx)합니다. 따라서 추가 해야 합니다는 `Imports``System.IO` 는 코드 숨김 클래스 하거나, 이러한 클래스와 이름은 접두사의 맨 위에 문을`System.IO.`
+`DisplayWebConfig` 메서드는 [ `File` 클래스](https://msdn.microsoft.com/library/system.io.file.aspx) 응용 프로그램 s 열려는 `Web.config` 파일을는 [ `StreamReader` 클래스](https://msdn.microsoft.com/library/system.io.streamreader.aspx) 문자열과 로해당내용을읽어[ `Path` 클래스](https://msdn.microsoft.com/library/system.io.path.aspx) 실제 경로를 생성 하는 `Web.config` 파일입니다. 이러한 세 클래스 모두에서 발견 되는 [ `System.IO` 네임 스페이스](https://msdn.microsoft.com/library/system.io.aspx)합니다. 따라서 추가 해야 합니다는 `Imports``System.IO` 는 코드 숨김 클래스 하거나, 이러한 클래스와 이름은 접두사의 맨 위에 문을 `System.IO.`
 
 다음으로, 두 개의 단추 컨트롤에 대 한 이벤트 처리기를 추가 해야 `Click` 이벤트 암호화 및 해독 하는 데 필요한 코드를 추가 하 고는 `<connectionStrings>` DPAPI 공급자와 함께 컴퓨터 수준 키를 사용 하 여 섹션. 디자이너에서 두 번 클릭 각 단추를 추가 하려면는 `Click` 코드 숨김의 이벤트 처리기 클래스 및 다음 코드를 추가 합니다.
 
@@ -228,12 +228,12 @@ DPAPI 및 RSA 공급자의 암호화 및 암호 해독 루틴에 대 한 키를 
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Teresa 머피 및 Randy Schmidt 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb.md)
-[다음](debugging-stored-procedures-vb.md)
+> [!div class="step-by-step"]
+> [이전](configuring-the-data-access-layer-s-connection-and-command-level-settings-vb.md)
+> [다음](debugging-stored-procedures-vb.md)

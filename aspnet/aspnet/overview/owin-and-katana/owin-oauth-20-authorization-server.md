@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/owin-and-katana/owin-oauth-20-authorization-server
-title: "OWIN OAuth 2.0 권한 부여 서버 | Microsoft Docs"
+title: OWIN OAuth 2.0 권한 부여 서버 | Microsoft Docs
 author: hongyes
-description: "이 자습서에서는 OAuth OWIN 미들웨어를 사용 하 여 OAuth 2.0 권한 부여 서버를 구현 하는 방법을 안내 합니다. 이 유일한 outlin 고급 자습서는 중..."
+description: 이 자습서에서는 OAuth OWIN 미들웨어를 사용 하 여 OAuth 2.0 권한 부여 서버를 구현 하는 방법을 안내 합니다. 이 유일한 outlin 고급 자습서는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/20/2014
 ms.topic: article
 ms.assetid: 20acee16-c70c-41e9-b38f-92bfcf9a4c1c
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-oauth-20-authorization-server
 msc.type: authoredcontent
 ms.openlocfilehash: e5968f8d19191c3f44e9bd58f8e22a39d8d8faff
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="owin-oauth-20-authorization-server"></a>OWIN OAuth 2.0 권한 부여 서버
 ====================
@@ -54,7 +54,7 @@ ms.lasthandoff: 01/24/2018
 - OAuth 2.0 클라이언트를 만듭니다.
 
 <a id="prerequisites"></a>
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/downloads#d-2013-editions) 무료 또는 [Visual Studio Express 2013](https://www.microsoft.com/visualstudio/eng/downloads#d-2013-express)에 표시 된 대로, **소프트웨어 버전** 페이지의 위쪽에 있습니다.
 - OWIN 익숙해야 합니다. 참조 [Katana 프로젝트 시작](https://msdn.microsoft.com/magazine/dn451439.aspx) 및 [OWIN 및 Katana 새로운](index.md)합니다.
@@ -104,7 +104,7 @@ ms.lasthandoff: 01/24/2018
 
 [!code-csharp[Main](owin-oauth-20-authorization-server/samples/sample4.cs?highlight=1)]
 
-`ValidateClientRedirectUri`등록 된 리디렉션 URL 사용 하 여 클라이언트의 유효성을 검사 하는 데 사용 됩니다. `ValidateClientAuthentication`기본 체계 헤더 및 클라이언트의 자격 증명을 가져오려면 폼 본문을 검사 합니다.
+`ValidateClientRedirectUri` 등록 된 리디렉션 URL 사용 하 여 클라이언트의 유효성을 검사 하는 데 사용 됩니다. `ValidateClientAuthentication` 기본 체계 헤더 및 클라이언트의 자격 증명을 가져오려면 폼 본문을 검사 합니다.
 
 로그인 페이지는 다음과 같습니다.
 
@@ -241,10 +241,10 @@ Ietf 초안 OAuth 2 참조 [새로 고침 토큰](http://tools.ietf.org/html/rfc
 
 [!code-csharp[Main](owin-oauth-20-authorization-server/samples/sample13.cs)]
 
-- `UseCors`메서드는 모든 도메인에 대해 CORS를 사용 하면 됩니다.
-- `UseOAuthBearerAuthentication`메서드를 사용 하면 OAuth 전달자 토큰 인증 미들웨어를 수신 하 고 요청에 권한 부여 헤더에서 전달자 토큰의 유효성을 검사 합니다.
-- `Config.SuppressDefaultHostAuthenticaiton`기본 억제 앱에서 인증 된 주체 호스트, 모든 요청은 수 있으므로 익명이 호출 합니다.
-- `HostAuthenticationFilter`지정 된 인증 형식에 대 한 인증을 사용할 수 있습니다. 이 경우 전달자 인증 형식입니다.
+- `UseCors` 메서드는 모든 도메인에 대해 CORS를 사용 하면 됩니다.
+- `UseOAuthBearerAuthentication` 메서드를 사용 하면 OAuth 전달자 토큰 인증 미들웨어를 수신 하 고 요청에 권한 부여 헤더에서 전달자 토큰의 유효성을 검사 합니다.
+- `Config.SuppressDefaultHostAuthenticaiton` 기본 억제 앱에서 인증 된 주체 호스트, 모든 요청은 수 있으므로 익명이 호출 합니다.
+- `HostAuthenticationFilter` 지정 된 인증 형식에 대 한 인증을 사용할 수 있습니다. 이 경우 전달자 인증 형식입니다.
 
 인증 된 id를 증명 하기 위해 현재 사용자의 클레임을 출력 하려면 ApiController 만듭니다.
 
@@ -272,7 +272,7 @@ Ietf 초안 OAuth 2 참조 [새로 고침 토큰](http://tools.ietf.org/html/rfc
 
 [!code-csharp[Main](owin-oauth-20-authorization-server/samples/sample16.cs)]
 
-`DotNetOpenAuth`기본적으로 SSL이 필요 합니다. 에 추가 해야 하므로 데모 HTTP를 사용 하는 다음 구성 파일의 설정:
+`DotNetOpenAuth` 기본적으로 SSL이 필요 합니다. 에 추가 해야 하므로 데모 HTTP를 사용 하는 다음 구성 파일의 설정:
 
 [!code-xml[Main](owin-oauth-20-authorization-server/samples/sample17.xml?highlight=4-6)]
 

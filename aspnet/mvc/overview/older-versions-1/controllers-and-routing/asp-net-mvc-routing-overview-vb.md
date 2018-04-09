@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-routing-overview-vb
-title: "ASP.NET MVC 라우팅 개요 (VB) | Microsoft Docs"
+title: ASP.NET MVC 라우팅 개요 (VB) | Microsoft Docs
 author: StephenWalther
-description: "이 자습서에서는 Stephen Walther ASP.NET MVC 프레임 워크 컨트롤러 작업에 브라우저 요청을 매핑하 하는 방법을 보여 줍니다."
+description: 이 자습서에서는 Stephen Walther ASP.NET MVC 프레임 워크 컨트롤러 작업에 브라우저 요청을 매핑하 하는 방법을 보여 줍니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/19/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-routing-overview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1e4c74e61b1a0d5f5020154756e34dd2fa507034
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3de0e21552a4aa03aa21f21a4e26028f1475f3e9
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-mvc-routing-overview-vb"></a>ASP.NET MVC 라우팅 개요 (VB)
 ====================
@@ -109,6 +109,6 @@ MVC 프레임 워크 컨트롤러 작업을 호출 하는 방식으로 인해 UR
 
 이 자습서의 목표 ASP.NET 라우팅에 대 한 간략 한 소개를 제공 하는 것 이었습니다. 새 ASP.NET MVC 응용 프로그램으로 얻을 수 있는 기본 경로 테이블을 검사 했습니다. 기본 경로 컨트롤러 작업에 Url을 매핑합니다 하는 방법을 배웠습니다.
 
->[!div class="step-by-step"]
-[이전](creating-an-action-cs.md)
-[다음](understanding-action-filters-vb.md)
+> [!div class="step-by-step"]
+> [이전](creating-an-action-cs.md)
+> [다음](understanding-action-filters-vb.md)

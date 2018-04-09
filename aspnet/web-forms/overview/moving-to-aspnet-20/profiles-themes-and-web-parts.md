@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/moving-to-aspnet-20/profiles-themes-and-web-parts
-title: "프로필, 테마 및 웹 파트 | Microsoft Docs"
+title: 프로필, 테마 및 웹 파트 | Microsoft Docs
 author: microsoft
-description: "구성의 주요 변경 사항 및 ASP.NET 2.0의 계측 됩니다. 새 ASP.NET 구성 API 구성 변경 하려면 프로젝트를 만들 수 있습니다..."
+description: 구성의 주요 변경 사항 및 ASP.NET 2.0의 계측 됩니다. 새 ASP.NET 구성 API 구성 변경 하려면 프로젝트를 만들 수 있습니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2005
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/profiles-themes-and-web-parts
 msc.type: authoredcontent
-ms.openlocfilehash: 2c6ba11799a5a9be3d8c0037fad5d79d8177c0e8
-ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
+ms.openlocfilehash: b749ed093fbaacf45b60f2826a2c20bac219a5c7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/05/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="profiles-themes-and-web-parts"></a>프로필, 테마 및 웹 파트
 ====================
@@ -341,19 +341,19 @@ UI 구조적 구성 요소는 개인 설정에 의존 하 고는 핵심 구조 �
 4. 앞에 삽입 포인터를 배치할는 `<div>` 다음 enter 키를 눌러 새 줄을 추가 하 고 디자인 화면에 태그를 삽입 합니다. 줄 바꿈 문자 앞에 삽입 포인터를 놓고 클릭는 **블록 형식을** 드롭 다운 목록 메뉴에서 제어 하 고 선택 된 **제목 1** 옵션입니다. 머리글에서 텍스트를 추가 **웹 파트 데모 페이지**합니다.
 5. **WebParts** 끌어서 도구 상자 탭은 **WebPartManager** 컨트롤을 줄 바꿈 문자 바로 뒤와 앞에 배치 페이지로 `<div>`태그입니다.   
   
- **WebPartManager** 디자이너 화면에는 회색 상자로 표시 되도록 컨트롤에 출력을 렌더링 하지 않습니다.
+   **WebPartManager** 디자이너 화면에는 회색 상자로 표시 되도록 컨트롤에 출력을 렌더링 하지 않습니다.
 6. 내에서 커서는 `<div>` 태그입니다.
 7. 에 **레이아웃** 메뉴를 클릭 **표 삽입**, 3 개의 열과 한 행이 있는 새 테이블을 만듭니다. 클릭는 **셀 속성** 단추를 선택 **top** 에서 **세로 맞춤** 드롭 다운 목록에서 클릭 **확인**, 클릭**확인** 다시 테이블을 만들 수 있습니다.
 8. 왼쪽된 테이블 열에는 WebPartZone 컨트롤을 끌어 놓습니다. 마우스 오른쪽 단추로 클릭는 **WebPartZone** 컨트롤을 선택 **속성**, 다음 속성을 설정 합니다.   
   
- ID: SidebarZone   
+   ID: SidebarZone   
   
- HeaderText: 사이드바
+   HeaderText: 사이드바
 9. 두 번째 끌어 **WebPartZone** 중간 테이블 열에 대 한 제어 하 고 다음 속성을 설정 합니다.   
   
- ID: MainZone   
+   ID: MainZone   
   
- HeaderText: 주
+   HeaderText: 주
 10. 파일을 저장합니다.
 
 이제 페이지에는 개별적으로 제어할 수 있는 두 개의 영역이 포함 되어 있습니다. 그러나 두 영역에 콘텐츠를 없으므로 다음 단계를 콘텐츠를 만듭니다. 이 연습에서는 정적 콘텐츠만 표시 하는 웹 파트 컨트롤을 사용 하 여 작업할 합니다.
@@ -462,10 +462,10 @@ UI 구조적 구성 요소는 개인 설정에 의존 하 고는 핵심 구조 �
 2. 가 작업을 보여 주기 위해 브라우저를 닫고 페이지를 다시 로드 합니다. 이후 브라우저 세션에 대 한 변경 내용을 저장 됩니다.
 3. **디스플레이 모드** 메뉴 선택 **편집**합니다.   
   
- 페이지에 있는 각 컨트롤 동사 드롭다운 메뉴를 포함 하는 제목 표시줄에 있는 아래쪽 화살표와 함께 표시 됩니다.
+   페이지에 있는 각 컨트롤 동사 드롭다운 메뉴를 포함 하는 제목 표시줄에 있는 아래쪽 화살표와 함께 표시 됩니다.
 4. 동사 메뉴를 표시 하려면 화살표를 클릭는 **내 링크** 제어 합니다. 클릭는 **편집** 동사입니다.   
   
- **EditorZone** 컨트롤이 표시 되 고, 추가한 컨트롤은 EditorPart 표시 합니다.
+   **EditorZone** 컨트롤이 표시 되 고, 추가한 컨트롤은 EditorPart 표시 합니다.
 5. 에 **모양** 변경 하는 편집 컨트롤의 섹션은 **제목** 즐겨찾기를 사용 하 여는 **크롬 유형** 를 선택 하려면 드롭다운 목록 **제목만**, 클릭 하 고 **적용**합니다. 다음 스크린 샷에서 편집 모드에 있는 페이지를 보여줍니다.
 
 ### <a name="web-parts-demo-page-in-edit-mode"></a>편집 모드에서 웹 파트 데모 페이지
@@ -496,7 +496,7 @@ UI 구조적 구성 요소는 개인 설정에 의존 하 고는 핵심 구조 �
 1. WebPartsDemo.aspx 페이지를 열고 전환할 **디자인** 보기.
 2. **WebParts** 탭의 도구 상자 컨트롤을 끌어 CatalogZone 표의 오른쪽 열에 아래에 **EditorZone** 제어 합니다.   
   
- 두 컨트롤 모두 같은 표 셀에 수 있습니다 동시에 표시 되지 것입니다.
+   두 컨트롤 모두 같은 표 셀에 수 있습니다 동시에 표시 되지 것입니다.
 3. 속성 창에서 문자열을 할당 **웹 파트 추가** 의 HeaderText 속성에는 **CatalogZone** 제어 합니다.
 4. **WebParts** 섹션 도구 상자의 DeclarativeCatalogPart 컨트롤의 콘텐츠 영역으로 끕니다는 **CatalogZone** 제어 합니다.
 5. 오른쪽 위 모서리에 있는 화살표를 클릭 합니다.는 **DeclarativeCatalogPart** 해당 작업 메뉴를 노출 하도록 제어 하 고 다음 선택 **템플릿 편집**합니다.
@@ -504,7 +504,7 @@ UI 구조적 구성 요소는 개인 설정에 의존 하 고는 핵심 구조 �
 7. 로 전환 **소스** 보기. 소스 코드 검사는 &lt;asp: catalogzone&gt; 요소입니다. 에 **DeclarativeCatalogPart** 컨트롤에 포함 되어는 &lt;webpartstemplate&gt; 카탈로그에서 페이지에 추가할 수 있는 두 개의 포함 된 서버 컨트롤 요소입니다.
 8. 추가 **제목** 속성을 아래 코드 예제에서는 각 타이틀에 대해 표시 되는 문자열 값을 사용 하 여 카탈로그에 추가 된 컨트롤의 각 합니다. 제목 속성인 경우에 설정할 수 있습니다 일반적으로 이러한 두 명의 서버 컨트롤에는 사용자 이러한 컨트롤을 추가 하는 경우 디자인 타임에는 **WebPartZone** 영역 런타임 시 카탈로그에서 각각 래핑되고와  **GenericWebPart** 제어 합니다. 이 통해 역할 웹 파트 컨트롤을 되므로 책 제목은 표시할 수 있습니다.   
   
- 에 포함 된 두 컨트롤에 대 한 코드는 **DeclarativeCatalogPart** 컨트롤이 다음과 같이 표시 됩니다. 
+   에 포함 된 두 컨트롤에 대 한 코드는 **DeclarativeCatalogPart** 컨트롤이 다음과 같이 표시 됩니다. 
 
     [!code-aspx[Main](profiles-themes-and-web-parts/samples/sample26.aspx)]
 9. 페이지를 저장합니다.
@@ -516,12 +516,12 @@ UI 구조적 구성 요소는 개인 설정에 의존 하 고는 핵심 구조 �
 1. 브라우저에서 페이지를 로드 합니다.
 2. 클릭는 **디스플레이 모드** 드롭 다운 메뉴에서을 선택 **카탈로그**합니다.   
   
- 라는 카탈로그 **웹 파트 추가** 표시 됩니다.
+   라는 카탈로그 **웹 파트 추가** 표시 됩니다.
 3. 끌어서는 **즐겨찾기** 사이드바 영역의 맨 위로 이동 Main 영역에서 제어 하 고 있는 놓습니다.
 4. 에 **웹 파트 추가** 카탈로그 두 확인란을 선택한 다음 선택 **Main** 사용 가능한 영역에 있는 드롭 다운 목록에서.
 5. 클릭 **추가** 카탈로그에 있습니다. 컨트롤을 Main 영역에 추가 합니다. 원할 경우 카탈로그에서 페이지에 컨트롤의 여러 인스턴스를 추가할 수 있습니다.   
   
- 다음 스크린 샷에서 Main 영역에서 파일 업로드 컨트롤 및 일정 페이지를 보여 줍니다. 
+   다음 스크린 샷에서 Main 영역에서 파일 업로드 컨트롤 및 일정 페이지를 보여 줍니다. 
 
 ![카탈로그에서 Main 영역에 추가 된 컨트롤](profiles-themes-and-web-parts/_static/image7.gif)
 

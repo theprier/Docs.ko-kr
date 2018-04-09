@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-a-database-cs
-title: "데이터베이스 (C#)를 배포 | Microsoft Docs"
+title: 데이터베이스 (C#)를 배포 | Microsoft Docs
 author: rick-anderson
-description: "ASP.NET 웹 응용 프로그램 개발 환경에서 프로덕션 환경에 필요한 파일 및 리소스를 가져오는 과정이 수반 됩니다. Da...에 대 한"
+description: ASP.NET 웹 응용 프로그램 개발 환경에서 프로덕션 환경에 필요한 파일 및 리소스를 가져오는 과정이 수반 됩니다. Da...에 대 한
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/23/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-a-database-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f71e3cd1e81644df7b3dfed363b6f2ca826e610d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 203bf64da887f31e5f0727fc57173d6a573095da
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-a-database-c"></a>배포 데이터베이스 (C#)
 ====================
@@ -41,10 +41,10 @@ ASP.NET 웹 응용 프로그램 개발 환경에서 프로덕션 환경에 필�
 
 `Reviews.mdf` 데이터베이스 4 개의 테이블이 포함 되어 있습니다.
 
-- `Genres`-비즈니스, 기술 및 소설, 등 각 장르에 대 한 레코드가 포함 됩니다.
-- `Books`-같은 열이 있는 각 검토에 대 한 레코드를 포함 `Title`, `GenreId`, `ReviewDate`, 및 `Review`, 등입니다.
-- `Authors`-각 작성자 검토 책에 기여 하는 방법에 대 한 정보가 포함 됩니다.
-- `BooksAuthors`-어떤 작성자 책 이나 작성 한을 지정 하는 다 대 다 조인 테이블입니다.
+- `Genres` -비즈니스, 기술 및 소설, 등 각 장르에 대 한 레코드가 포함 됩니다.
+- `Books` -같은 열이 있는 각 검토에 대 한 레코드를 포함 `Title`, `GenreId`, `ReviewDate`, 및 `Review`, 등입니다.
+- `Authors` -각 작성자 검토 책에 기여 하는 방법에 대 한 정보가 포함 됩니다.
+- `BooksAuthors` -어떤 작성자 책 이나 작성 한을 지정 하는 다 대 다 조인 테이블입니다.
   
 
 그림 1는 이러한 네 가지 테이블의 다이어그램을 보여 줍니다.
@@ -195,6 +195,6 @@ SSMS를 시작 하 고 웹 호스트 공급자가 제공 하는 정보를 사용
 - [Microsoft SQL Server 데이터베이스 게시 마법사 1.1을 다운로드 합니다.](https://www.microsoft.com/downloads/details.aspx?familyid=56E5B1C5-BF17-42E0-A410-371A838E570A&amp;displaylang=en)
 - [Microsoft SQL Server Management Studio Express Edition 다운로드](https://www.microsoft.com/downloads/details.aspx?FamilyId=C243A5AE-4BD1-4E3D-94B8-5A0F62BF7796&amp;displaylang=en)
 
->[!div class="step-by-step"]
-[이전](core-differences-between-iis-and-the-asp-net-development-server-cs.md)
-[다음](configuring-the-production-web-application-to-use-the-production-database-cs.md)
+> [!div class="step-by-step"]
+> [이전](core-differences-between-iis-and-the-asp-net-development-server-cs.md)
+> [다음](configuring-the-production-web-application-to-use-the-production-database-cs.md)

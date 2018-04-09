@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3
-title: "ASP.NET MVC 3 (C#) 소개 | Microsoft Docs"
+title: ASP.NET MVC 3 (C#) 소개 | Microsoft Docs
 author: Rick-Anderson
-description: "이 자습서에서는 Microsoft Visual Web Developer 2010 Express 서비스 팩 1, 즉를 사용 하 여 ASP.NET MVC 웹 응용 프로그램을 구축 하는 기초 설명..."
+description: 이 자습서에서는 Microsoft Visual Web Developer 2010 Express 서비스 팩 1, 즉를 사용 하 여 ASP.NET MVC 웹 응용 프로그램을 구축 하는 기초 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/intro-to-aspnet-mvc-3
 msc.type: authoredcontent
-ms.openlocfilehash: bbeaad9e52db1fd85ef166052a377e8b6732a90a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 9b965df6175051a084de35627160161c116be42d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="intro-to-aspnet-mvc-3-c"></a>ASP.NET MVC 3 (C#) 소개
 ====================
@@ -91,5 +91,5 @@ F 5를 눌러 Visual Web Developer 웹 개발 서버를 시작 하 고 웹 응�
 
 즉시이 기본 템플릿을 사용 하면 두 개의 페이지를 방문 하 고 기본 로그인 페이지. 이 응용 프로그램 작동 방식을 변경 하 고 프로세스에서 약간 ASP.NET MVC에 설명 하는 다음 단계가입니다. 브라우저를 닫고 일부 코드를 변경 해보겠습니다.
 
->[!div class="step-by-step"]
-[다음](adding-a-controller.md)
+> [!div class="step-by-step"]
+> [다음](adding-a-controller.md)

@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/design-to-survive-failures
-title: "실패 (Azure로 응용 프로그램 빌딩 실제 클라우드)를 디자인 | Microsoft Docs"
+title: 실패 (Azure로 응용 프로그램 빌딩 실제 클라우드)를 디자인 | Microsoft Docs
 author: MikeWasson
-description: "실제 세계 클라우드로 응용 프로그램 빌딩 Azure 전자책 Scott Guthrie에서 개발 된 프레젠테이션을 기반으로 합니다. 13 패턴 및 그을 수 있는 방법에 설명..."
+description: 실제 세계 클라우드로 응용 프로그램 빌딩 Azure 전자책 Scott Guthrie에서 개발 된 프레젠테이션을 기반으로 합니다. 13 패턴 및 그을 수 있는 방법에 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: 364ce84e-5af8-4e08-afc9-75a512b01f84
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/design-to-survive-failures
 msc.type: authoredcontent
-ms.openlocfilehash: 62a16e9a99cd1298b0db5f8099092212f9f6850b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 01883cb0be3e7c7b5dc8d32b784ccb3a28652f1e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="design-to-survive-failures-building-real-world-cloud-apps-with-azure"></a>에 오류가 발생 했습니다 (Azure로 응용 프로그램 빌딩 실제 클라우드)에 동등한 존속 디자인
 ====================
@@ -111,7 +111,7 @@ Sla 보고 하는 경우에 대해 생각 하는 중요 한 점은 응용 프로
 - 사용 하 여 [분산 캐싱](distributed-caching.md) 데이터베이스 액세스 권한이 있는 처리량, 대기 시간 및 연결 문제를 최소화 하기 위해 합니다.
 - 느슨한 결합을 통해 구현 된 [큐 중심 작업 패턴](queue-centric-work-pattern.md)응용 프로그램 프런트 엔드는 백 엔드 다운 되었을 때 작업을 계속할 수 있도록 합니다.
 
-## <a name="resources"></a>리소스
+## <a name="resources"></a>자료
 
 자세한 내용은이 전자책 (영문) 및 다음 리소스의 뒷부분을 참조 하십시오.
 
@@ -131,6 +131,6 @@ Sla 보고 하는 경우에 대해 생각 하는 중요 한 점은 응용 프로
 - [FailSafe: 복원 력 있는 확장 가능한 클라우드 서비스를 만드는](https://channel9.msdn.com/Series/FailSafe)합니다. Marc Mercuri, Ulrich Homann, Mark Simms 하 여 시리즈를 9 개 부분으로 구성 합니다. 고급 개념 및 아키텍처 원칙 매우 액세스 가능 하 고 흥미로운 방법으로 스토리 실제 고객과 Microsoft 고객 자문 팀 (CAT) 환경에서 가져온 것으로 표시 합니다. 1에서 8 에피소드 깊이에 실패 하는 클라우드 앱을 디자인 하기 위한 이유도 이동 합니다. 49:57, 오류 지점과 오류 모드 56:05에서 시작 하는 2 에피소드의 토론 및 회로 차단기 40:55에서 시작 하는 3 에피소드에 대 한 설명에서 시작 하는 2 에피소드 제한에 대 한 추가 설명은 참조 하십시오.
 - [건물 큰: Azure 고객-2 부에서에서 확인 된 사항을](https://channel9.msdn.com/Events/Build/2012/3-030)합니다. Mark Simms 실패에 대 한 디자인 하 고 모든 항목을 계측 하는 방법에 대 한 설명입니다. 유사 Failsafe 시리즈 하지만 방법 더 세부적으로 이동 합니다.
 
->[!div class="step-by-step"]
-[이전](unstructured-blob-storage.md)
-[다음](monitoring-and-telemetry.md)
+> [!div class="step-by-step"]
+> [이전](unstructured-blob-storage.md)
+> [다음](monitoring-and-telemetry.md)

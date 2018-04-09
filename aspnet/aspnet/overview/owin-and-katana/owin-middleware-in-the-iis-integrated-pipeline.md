@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/owin-and-katana/owin-middleware-in-the-iis-integrated-pipeline
-title: "OWIN 미들웨어입니다. iis에서 통합 파이프라인 | Microsoft Docs"
+title: OWIN 미들웨어입니다. iis에서 통합 파이프라인 | Microsoft Docs
 author: Praburaj
-description: "이 문서에서는 IIS 통합된 파이프라인의 OWIN 미들웨어 구성 요소 (OMCs)를 실행 하는 방법을 설명 하 고는 OMC 파이프라인 이벤트를 설정 하는 방법에서 실행 합니다. 다음 작업을 수행 해야합니다."
+description: 이 문서에서는 IIS 통합된 파이프라인의 OWIN 미들웨어 구성 요소 (OMCs)를 실행 하는 방법을 설명 하 고는 OMC 파이프라인 이벤트를 설정 하는 방법에서 실행 합니다. 다음 작업을 수행 해야합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/07/2013
 ms.topic: article
 ms.assetid: d031c021-33c2-45a5-bf9f-98f8fa78c2ab
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-middleware-in-the-iis-integrated-pipeline
 msc.type: authoredcontent
-ms.openlocfilehash: 5f6ed1ae0309e9bdd3ca4ae229195835f20bc729
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 5df70c80084a32c5f61ac9288c8cdbfaaa47f124
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="owin-middleware-in-the-iis-integrated-pipeline"></a>IIS 통합된 파이프라인의 OWIN 미들웨어.
 ====================
@@ -83,13 +83,13 @@ Owin 미들웨어 구성 요소 (OMC) 다음 OWIN 파이프라인 단계 이벤�
 
     [!code-console[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample9.cmd)]
 
- 에 대 한 호출이 `app.UseStageMarker` 전달 `Authenticate` 또는 `PostAuthenticate` 유효 하며, 수 없으며 예외가 throw 됩니다. 기본적으로 최신 단계에서 실행 OMCs `PreHandlerExecute`합니다. 단계 마커를 먼저 실행 되도록 하는 데 사용 됩니다. 순서가 단계 마커를 지정 하면 이전 표식에 반올림 했습니다. 즉, 한 단계 마커 추가 "단계 X 늦어도 실행" 표시 됩니다. OWIN 파이프라인의 다음에 추가 하는 가장 빠른 단계 마커 OMC의 실행 합니다.
+   에 대 한 호출이 `app.UseStageMarker` 전달 `Authenticate` 또는 `PostAuthenticate` 유효 하며, 수 없으며 예외가 throw 됩니다. 기본적으로 최신 단계에서 실행 OMCs `PreHandlerExecute`합니다. 단계 마커를 먼저 실행 되도록 하는 데 사용 됩니다. 순서가 단계 마커를 지정 하면 이전 표식에 반올림 했습니다. 즉, 한 단계 마커 추가 "단계 X 늦어도 실행" 표시 됩니다. OWIN 파이프라인의 다음에 추가 하는 가장 빠른 단계 마커 OMC의 실행 합니다.
 4. 최초의 단계에 대 한 호출 `app.UseStageMarker` wins 합니다. 예를 들어, 순서를 전환 하는 경우 `app.UseStageMarker` 이전 예제에서 호출 합니다.
 
     [!code-csharp[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample10.cs?highlight=13,19)]
 
- 출력 창에 표시 됩니다. 
+   출력 창에 표시 됩니다. 
 
     [!code-console[Main](owin-middleware-in-the-iis-integrated-pipeline/samples/sample11.cmd)]
 
- 모든 연속된 OMCs는 `AuthenticateRequest` 마지막 OMC로 등록 되었으므로 단계는 `Authenticate` 이벤트, 및 `Authenticate` 이벤트에는 다른 모든 이벤트 앞에 합니다.
+   모든 연속된 OMCs는 `AuthenticateRequest` 마지막 OMC로 등록 되었으므로 단계는 `Authenticate` 이벤트, 및 `Authenticate` 이벤트에는 다른 모든 이벤트 앞에 합니다.

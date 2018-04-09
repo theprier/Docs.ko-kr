@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part6
-title: "추가 된 메서드를 만들고 보기 만들기 | Microsoft Docs"
+title: 추가 된 메서드를 만들고 보기 만들기 | Microsoft Docs
 author: shanselman
-description: "ASP.NET MVC의 기본 사항을 소개 하는 초보자를 위한 자습서입니다. 읽기 및 쓰기는 데이터베이스에서 단순 웹 응용 프로그램을 만듭니다."
+description: ASP.NET MVC의 기본 사항을 소개 하는 초보자를 위한 자습서입니다. 읽기 및 쓰기는 데이터베이스에서 단순 웹 응용 프로그램을 만듭니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part6
 msc.type: authoredcontent
-ms.openlocfilehash: 36b3d6ef0432292f21ecd8f29ea2d88ee8867436
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 48e656a0c394b9db5baaec9c557ec38c4020d41b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-create-method-and-create-view"></a>추가 된 메서드를 만들고 보기 만들기
 ====================
@@ -65,6 +65,6 @@ MoviesController 클래스 내에서 두 개의 create () 메서드 내에서 �
 
 म 우리의 영화은 하지만 및 제목 없음 함께 동영상을 저장 하는 데이터베이스 허용 하지 않는 확인 되지 않습니다. 이 좋을 수 알립니다를 이전 데이터베이스에서 오류가 발생 했습니다. 응용 프로그램에 유효성 검사 지원을 추가 하 여 다음이 단계를 하겠습니다.
 
->[!div class="step-by-step"]
-[이전](getting-started-with-mvc-part5.md)
-[다음](getting-started-with-mvc-part7.md)
+> [!div class="step-by-step"]
+> [이전](getting-started-with-mvc-part5.md)
+> [다음](getting-started-with-mvc-part7.md)

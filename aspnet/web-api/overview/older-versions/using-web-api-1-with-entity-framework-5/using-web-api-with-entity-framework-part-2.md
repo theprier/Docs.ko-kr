@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-2
-title: "2 단계: 도메인 모델을 만드는 | Microsoft Docs"
+title: '2 단계: 도메인 모델을 만드는 | Microsoft Docs'
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/03/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-2
 msc.type: authoredcontent
-ms.openlocfilehash: a573b47d27767dc78d557cd2b6c73714eb9e94f4
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 84631494c1be266c21e5e5702182df717b1d29b0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-2-creating-the-domain-models"></a>2 단계: 도메인 모델 만들기
 ====================
@@ -84,6 +84,6 @@ A [미디어 유형 포맷터](../../formats-and-model-binding/media-formatters.
 
 이 코드는 개체 참조를 유지 하는 JSON 포맷터를 설정 하 고 파이프라인에서 XML 포맷터를 완전히 제거 합니다. (개체 참조를 유지 하는 XML 포맷터를 구성할 수 있습니다 하지만 약간 더 많은 작업을 이며이 응용 프로그램에 대 한 JSON만 필요 합니다. 자세한 내용은 참조 [순환 개체 참조를 처리](../../formats-and-model-binding/json-and-xml-serialization.md#handling_circular_object_references).)
 
->[!div class="step-by-step"]
-[이전](using-web-api-with-entity-framework-part-1.md)
-[다음](using-web-api-with-entity-framework-part-3.md)
+> [!div class="step-by-step"]
+> [이전](using-web-api-with-entity-framework-part-1.md)
+> [다음](using-web-api-with-entity-framework-part-3.md)

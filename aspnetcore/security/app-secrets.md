@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core 개발 중 앱의 보안 정보를 안전하게 저장하기"
+title: ASP.NET Core에서 개발의 앱 암호의 안전한 저장소
 author: rick-anderson
-description: "개발 중 보안 정보를 안전하게 저장하는 방법을 보여줍니다."
+description: 개발 중 보안 정보를 안전하게 저장하는 방법을 보여줍니다.
 manager: wpickett
 ms.author: riande
 ms.date: 09/15/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/app-secrets
-ms.openlocfilehash: a23c9dc9ee1e20c0e0551a372e1cd706bb82070e
-ms.sourcegitcommit: 6548a3dd0cd1e3e92ac2310dee757ddad9fd6456
+ms.openlocfilehash: 166111696a9c4244ede44fca8878dd3725bb3099
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="safe-storage-of-app-secrets-during-development-in-aspnet-core"></a>ASP.NET Core 개발 중 앱의 보안 정보를 안전하게 저장하기
+# <a name="safe-storage-of-app-secrets-in-development-in-aspnet-core"></a>ASP.NET Core에서 개발의 앱 암호의 안전한 저장소
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT), [김 Roth](https://github.com/danroth27), 및 [Scott Addie](https://scottaddie.com) 
 
@@ -34,15 +34,14 @@ Secret Manager 도구는 개발 시에만 사용됩니다. Azure의 테스트 �
 
 ## <a name="secret-manager"></a>Secret Manager
 
-Secret Manager 도구는 개발 작업에 필요한 민감한 데이터를 프로젝트의 디렉터리 구조 외부에 저장합니다. Secret Manager 도구는 개발 동안 [.NET Core](https://www.microsoft.com/net/core) 프로젝트에 사용되는 보안 정보를 저장하기 위해 사용할 수 있는 프로젝트 도구입니다. Secret Manager 도구를 사용하면 응용 프로그램의 보안 정보를 특정 프로젝트와 연결하고 이를 여러 프로젝트에서 공유할 수 있습니다.
+Secret Manager 도구는 개발 작업에 필요한 민감한 데이터를 프로젝트의 디렉터리 구조 외부에 저장합니다. 암호 관리자 도구는 개발 하는 동안.NET Core 프로젝트에 대 한 기밀 정보를 사용할 수 있는 프로젝트 도구입니다. Secret Manager 도구를 사용하면 응용 프로그램의 보안 정보를 특정 프로젝트와 연결하고 이를 여러 프로젝트에서 공유할 수 있습니다.
 
 >[!WARNING]
 > 암호 관리자 도구 저장 된 암호를 암호화 하지 않습니다 하 고 신뢰할 수 있는 저장소로 처리 하지 않아야 합니다. 개발 용도로입니다. 키와 값은 사용자 프로필 디렉터리에 위치한 JSON 구성 파일에 저장됩니다. 
 
 ## <a name="installing-the-secret-manager-tool"></a>Secret Manager 도구 설치하기
 
-# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
-
+#### <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
 마우스 오른쪽 버튼으로 솔루션 탐색기에서 프로젝트를 클릭한 다음, 컨텍스트 메뉴에서 **\<project_name\>.csproj 편집 (Edit \<project_name\>.csproj)** 을 선택합니다. 다음에 강조 표시된 줄을 *.csproj* 파일에 추가하고 저장하면 관련된 NuGet 패키지가 복원됩니다.
 
 [!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
@@ -59,8 +58,7 @@ Secret Manager 도구는 개발 작업에 필요한 민감한 데이터를 프�
 }
 ```
 
-# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
-
+#### <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
 추가 `Microsoft.Extensions.SecretManager.Tools` 에 *.csproj* 파일을 실행 [dotnet 복원](/dotnet/core/tools/dotnet-restore)합니다. 명령줄에서 동일한 단계를 사용해서 Secret Manager 도구를 설치할 수 있습니다. 
 
 [!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
@@ -89,15 +87,14 @@ dotnet user-secrets set MySecret ValueOfMySecret
 ```
 
 다른 디렉터리에서 Secret Manager 도구를 실행할 수도 있지만, `--project` 옵션을 사용해서*.csproj* 파일의 경로를 전달해야 합니다.
- 
+
 ```console
 dotnet user-secrets set MySecret ValueOfMySecret --project c:\work\WebApp1\src\webapp1
 ```
 
 Secret Manager 도구를 사용해서 응용 프로그램의 보안 정보의 목록을 나열하거나 제거하고 초기화시킬 수도 있습니다. 
 
------
-
+* * *
 ## <a name="accessing-user-secrets-via-configuration"></a>구성을 통해서 사용자 보안 정보에 접근하기
 
 구성 시스템을 통해서 Secret Manager 도구의 사용자 보안 정보에 접근할 수 있습니다. 추가 `Microsoft.Extensions.Configuration.UserSecrets` 패키지 및 실행 [dotnet 복원](/dotnet/core/tools/dotnet-restore)합니다.

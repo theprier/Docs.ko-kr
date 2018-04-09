@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/use-controllers-and-views-to-implement-a-listingdetails-ui
-title: "컨트롤러와 뷰를 사용 하 여 목록/세부 정보 UI 구현할 | Microsoft Docs"
+title: 컨트롤러와 뷰를 사용 하 여 목록/세부 정보 UI 구현할 | Microsoft Docs
 author: microsoft
-description: "4 단계에는 데이터 목록/세부 정보 탐색 환경을 제공 하기 위해 모델의 이점을 활용 하는 응용 프로그램에는 컨트롤러를 추가 하는 방법을 보여 줍니다 중..."
+description: 4 단계에는 데이터 목록/세부 정보 탐색 환경을 제공 하기 위해 모델의 이점을 활용 하는 응용 프로그램에는 컨트롤러를 추가 하는 방법을 보여 줍니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-controllers-and-views-to-implement-a-listingdetails-ui
 msc.type: authoredcontent
-ms.openlocfilehash: 2f9148a2d419863229e2c5a2a0c98984001fcee5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ac3568941eeef24bd9857c5787471aadea15fc7f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="use-controllers-and-views-to-implement-a-listingdetails-ui"></a>컨트롤러와 뷰를 사용 하 여 목록/세부 정보 UI를 구현 하려면
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [PDF 다운로드](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
 
@@ -62,7 +62,7 @@ ms.lasthandoff: 11/10/2017
 | **URL** | **용도** |
 | --- | --- |
 | */Dinners/* | 예정 된 dinners는 HTML 목록 표시 |
-| */Dinners/세부 정보 / [id]* | 데이터베이스에 dinner DinnerID 일치시킬지 URL – 내에 포함 하는 "id" 매개 변수가 나타내는 특정 저녁에 대 한 세부 정보를 표시 합니다. 예를 들어: /Dinners/Details/2 해당 DinnerID 값이 2 저녁에 대 한 세부 정보와 함께 HTML 페이지를 표시 합니다. |
+| */Dinners/Details/[id]* | 데이터베이스에 dinner DinnerID 일치시킬지 URL – 내에 포함 하는 "id" 매개 변수가 나타내는 특정 저녁에 대 한 세부 정보를 표시 합니다. 예를 들어: /Dinners/Details/2 해당 DinnerID 값이 2 저녁에 대 한 세부 정보와 함께 HTML 페이지를 표시 합니다. |
 
 아래와 같은 DinnersController 클래스에 두 개의 공용 "작업 방법"을 추가 하 여 이러한 Url의 초기 구현 발표 합니다.
 
@@ -92,15 +92,15 @@ ASP.NET MVC 컨트롤러 클래스에 Url 매핑하는 방식을 제어 시 유�
 
 "경로입니다. MapRoute() "위의 메서드 호출을 컨트롤러 클래스 URL 형식을 사용 하 여 들어오는 Url을 매핑하는 기본 라우팅 규칙을 등록:" / {controller} / {action} / {id} "– 여기서"컨트롤러 "는 인스턴스화할 컨트롤러 클래스의 이름을"action"의 이름인는 한 "id"를 호출 하는 공용 메서드는 메서드에 대 한 인수로 전달할 수 있는 URL 내에 포함 하는 선택적 매개 변수입니다. "MapRoute()" 메서드 호출에 전달 된 세 번째 매개 변수는 URL에 존재 하지 않는 컨트롤러/작업/id 값에 사용할 기본 값의 집합 (컨트롤러 동작 = "Home", "Index", Id = = "").
 
-다음은 이러한 기본값을 사용 하 여 Url의 다양 한 방법을 보여 주는 테이블 매핑된 "*/ {컨트롤러} / {action} / {id}"*경로 규칙:
+다음은 이러한 기본값을 사용 하 여 Url의 다양 한 방법을 보여 주는 테이블 매핑된 "<em>/ {컨트롤러} / {action} / {id}"</em>경로 규칙:
 
 | **URL** | **컨트롤러 클래스** | **동작 메서드** | **전달 된 매개 변수** |
 | --- | --- | --- | --- |
-| */ Dinners/세부 정보/2* | DinnersController | Details(id) | id = 2 |
-| */ Dinners/편집/5* | DinnersController | Edit(id) | id = 5 |
-| */ Dinners/만들기* | DinnersController | Create) | N/A |
-| */ Dinners* | DinnersController | Index) | N/A |
-| */ 홈* | HomeController | Index) | N/A |
+| */Dinners/Details/2* | DinnersController | Details(id) | id=2 |
+| */Dinners/Edit/5* | DinnersController | Edit(id) | id=5 |
+| */Dinners/Create* | DinnersController | Create() | N/A |
+| */Dinners* | DinnersController | Index) | N/A |
+| */Home* | HomeController | Index) | N/A |
 | */* | HomeController | Index) | N/A |
 
 기본 값을 표시 하는 마지막 3 개의 행 (컨트롤러 = 가정, 작업 = 인덱스, Id = "") 사용 하 고 합니다. "Index" 메서드 하나를 지정 하지 않으면 기본 동작 이름으로 등록 되므로 "/ Dinners" 및 "/ 홈" Url 원인 index () 동작 메서드를 해당 컨트롤러 클래스에서 호출 합니다. 지정 하지 않고 "홈" 컨트롤러가 기본 컨트롤러로 등록 된, 하기 때문에 "/" URL HomeController 만들어야 하 고 index () 동작 메서드를 호출할 수 발생 합니다.
@@ -301,6 +301,6 @@ Html.ActionLink() 도우미 메서드를 사용 하는 첫 번째 매개 변수�
 
 CRUD (만들기, 읽기, 업데이트, 삭제) 데이터를 편집할 수 있도록 지원 이제 하도록 하겠습니다.
 
->[!div class="step-by-step"]
-[이전](build-a-model-with-business-rule-validations.md)
-[다음](provide-crud-create-read-update-delete-data-form-entry-support.md)
+> [!div class="step-by-step"]
+> [이전](build-a-model-with-business-rule-validations.md)
+> [다음](provide-crud-create-read-update-delete-data-form-entry-support.md)

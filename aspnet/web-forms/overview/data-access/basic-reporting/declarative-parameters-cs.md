@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/basic-reporting/declarative-parameters-cs
-title: "선언적 매개 변수 (C#) | Microsoft Docs"
+title: 선언적 매개 변수 (C#) | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에서는 DetailsView 컨트롤에 표시할 데이터를 선택 하는 하드 코드 된 값으로 설정 하는 매개 변수를 사용 하는 방법을 설명 하겠습니다."
+description: 이 자습서에서는 DetailsView 컨트롤에 표시할 데이터를 선택 하는 하드 코드 된 값으로 설정 하는 매개 변수를 사용 하는 방법을 설명 하겠습니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/declarative-parameters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4bbe32ae65f71196fc1f939671b9d1a24bee8c34
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 840630852d28f49f4f4387f1d2cc6b275b468fc2
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="declarative-parameters-c"></a>선언적 매개 변수 (C#)
 ====================
@@ -127,7 +127,7 @@ ObjectDataSource의 선언적 태그는 첫 번째 예제에서 약간 다릅니
 
 ## <a name="showing-all-suppliers-by-default"></a>기본적으로 모든 공급자를 표시합니다.
 
-대신 보다 먼저 페이지를 볼 때 공급 업체 중 없음 표시 하려는 표시 *모든* , 처음에 공급 업체 목록 국가 이름 텍스트 상자에 입력 하 여 축소 수 있도록 허용 합니다. TextBox 비어 있을 때는 `SuppliersBLL` 클래스의 `GetSuppliersByCountry(country)` 메서드에 전달 되는 `null` 값에 대 한 해당  *`country`*  입력된 매개 변수입니다. 이 `null` 다음 값이 전달에 DAL `GetSupplierByCountry(country)` 메서드를 데이터베이스로 변환 됩니다 `NULL` 에 대 한 값은 `@Country` 다음 쿼리에서 매개 변수:
+대신 보다 먼저 페이지를 볼 때 공급 업체 중 없음 표시 하려는 표시 *모든* , 처음에 공급 업체 목록 국가 이름 텍스트 상자에 입력 하 여 축소 수 있도록 허용 합니다. TextBox 비어 있을 때는 `SuppliersBLL` 클래스의 `GetSuppliersByCountry(country)` 메서드에 전달 되는 `null` 값에 대 한 해당 *`country`* 입력된 매개 변수입니다. 이 `null` 다음 값이 전달에 DAL `GetSupplierByCountry(country)` 메서드를 데이터베이스로 변환 됩니다 `NULL` 에 대 한 값은 `@Country` 다음 쿼리에서 매개 변수:
 
 [!code-sql[Main](declarative-parameters-cs/samples/sample3.sql)]
 
@@ -157,12 +157,12 @@ ObjectDataSource의 선언적 태그는 첫 번째 예제에서 약간 다릅니
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Hilton Giesenow 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](displaying-data-with-the-objectdatasource-cs.md)
-[다음](programmatically-setting-the-objectdatasource-s-parameter-values-cs.md)
+> [!div class="step-by-step"]
+> [이전](displaying-data-with-the-objectdatasource-cs.md)
+> [다음](programmatically-setting-the-objectdatasource-s-parameter-values-cs.md)

@@ -1,7 +1,7 @@
 ---
-title: "핵심 암호화 확장성"
+title: ASP.NET Core에서 핵심 암호화 확장성
 author: rick-anderson
-description: "IAuthenticatedEncryptor, IAuthenticatedEncryptorDescriptor, IAuthenticatedEncryptorDescriptorDeserializer, 및 최상위 팩터리에 설명합니다."
+description: IAuthenticatedEncryptor, IAuthenticatedEncryptorDescriptor, IAuthenticatedEncryptorDescriptorDeserializer, 및 최상위 팩터리 방법을 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 8/11/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/extensibility/core-crypto
-ms.openlocfilehash: ead4012236244d88cff0b0520d000d89f93f3355
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: b5a0dbc9120a8032dbb8d8eee74684495a982ac1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="core-cryptography-extensibility"></a>핵심 암호화 확장성
+# <a name="core-cryptography-extensibility-in-aspnet-core"></a>ASP.NET Core에서 핵심 암호화 확장성
 
 <a name="data-protection-extensibility-core-crypto"></a>
 
@@ -123,7 +123,7 @@ IAuthenticatedEncryptor 및 IAuthenticatedEncryptorDescriptor 간의 주요 차�
 
 설명자의 ExportToXml 루틴을 통해 serialize 할 수 있습니다. 이 루틴에는 두 개의 속성이 포함 된 XmlSerializedDescriptorInfo 반환: 설명자 및 형식을 나타내는 XElement 표현을 [IAuthenticatedEncryptorDescriptorDeserializer](xref:security/data-protection/extensibility/core-crypto#data-protection-extensibility-core-crypto-iauthenticatedencryptordescriptordeserializer) 수 있음 해당 XElement 제공이 설명자 부활 하는 데 사용 합니다.
 
-Serialize 된 설명자는 암호화 키 자료 같은 중요 한 정보를 포함할 수 있습니다. 데이터 보호 시스템에서 저장소에 유지가 전에 정보를 암호화 하기 위해 기본적으로 지원 합니다. 를 이용 하려면이 설명자 (xmlns "http://schemas.asp.net/2015/03/dataProtection") 값 "true" 특성 이름 "requiresEncryption"를 사용 하 여 중요 한 정보를 포함 하는 요소를 표시 해야 합니다.
+Serialize 된 설명자는 암호화 키 자료 같은 중요 한 정보를 포함할 수 있습니다. 데이터 보호 시스템에서 저장소에 유지가 전에 정보를 암호화 하기 위해 기본적으로 지원 합니다. 설명자를 이용 하려면이 특성 이름 "requiresEncryption"를 사용 하 여 중요 한 정보를 포함 하는 요소를 표시 해야 (xmlns "<http://schemas.asp.net/2015/03/dataProtection>"), "true" 값입니다.
 
 >[!TIP]
 > 이 특성을 설정 하기 위한 도우미 API 있습니다. XElement.MarkAsRequiresEncryption() Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel 네임 스페이스에 있는 확장 메서드를 호출 합니다.
@@ -161,7 +161,7 @@ AlgorithmConfiguration 최상위 팩터리 라고 생각 됩니다. 구성을 �
 
 CreateNewDescriptor 라고, 새로운 키 자료가이 호출에만 만들어지고 새 IAuthenticatedEncryptorDescriptor 생성 되는 자료를 사용 하는 데 필요한 정보를 알고리즘 및이 키 자료 래핑합니다. 키 자료 될 수 있습니다 소프트웨어에서 만든 (고 메모리에 보관), 만들고가 HSM을 내 보유할 수 없습니다. 중요 한 점은 CreateNewDescriptor 두 번 호출 된 해당 IAuthenticatedEncryptorDescriptor 인스턴스를 만들지 마십시오입니다.
 
-와 같은 키를 만드는 루틴에 대 한 진입점으로 적합 AlgorithmConfiguration 유형은 [자동 키 롤링](../implementation/key-management.md#key-expiration-and-rolling)합니다. 모든 향후 키에 대 한 구현을 변경 하려면 KeyManagementOptions AuthenticatedEncryptorConfiguration 속성을 설정 합니다.
+와 같은 키를 만드는 루틴에 대 한 진입점으로 적합 AlgorithmConfiguration 유형은 [자동 키 롤링](xref:security/data-protection/implementation/key-management#key-expiration-and-rolling)합니다. 모든 향후 키에 대 한 구현을 변경 하려면 KeyManagementOptions AuthenticatedEncryptorConfiguration 속성을 설정 합니다.
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
@@ -173,6 +173,6 @@ IAuthenticatedEncryptorConfiguration 최상위 팩터리 라고 생각 됩니다
 
 CreateNewDescriptor 라고, 새로운 키 자료가이 호출에만 만들어지고 새 IAuthenticatedEncryptorDescriptor 생성 되는 자료를 사용 하는 데 필요한 정보를 알고리즘 및이 키 자료 래핑합니다. 키 자료 될 수 있습니다 소프트웨어에서 만든 (고 메모리에 보관), 만들고가 HSM을 내 보유할 수 없습니다. 중요 한 점은 CreateNewDescriptor 두 번 호출 된 해당 IAuthenticatedEncryptorDescriptor 인스턴스를 만들지 마십시오입니다.
 
-와 같은 키를 만드는 루틴에 대 한 진입점으로 적합 IAuthenticatedEncryptorConfiguration 유형은 [자동 키 롤링](../implementation/key-management.md#key-expiration-and-rolling)합니다. 모든 향후 키에 대 한 구현을 변경 하려면 단일 IAuthenticatedEncryptorConfiguration 서비스 컨테이너에 등록 합니다.
+와 같은 키를 만드는 루틴에 대 한 진입점으로 적합 IAuthenticatedEncryptorConfiguration 유형은 [자동 키 롤링](xref:security/data-protection/implementation/key-management#key-expiration-and-rolling)합니다. 모든 향후 키에 대 한 구현을 변경 하려면 단일 IAuthenticatedEncryptorConfiguration 서비스 컨테이너에 등록 합니다.
 
 ---

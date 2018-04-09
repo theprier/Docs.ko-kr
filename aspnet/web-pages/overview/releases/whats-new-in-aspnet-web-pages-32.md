@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/releases/whats-new-in-aspnet-web-pages-32
-title: "3.2 페이지는 ASP.NET 웹의 새로운 기능 | Microsoft Docs"
+title: 3.2 페이지는 ASP.NET 웹의 새로운 기능 | Microsoft Docs
 author: microsoft
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/30/2014
@@ -12,15 +12,15 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/releases/whats-new-in-aspnet-web-pages-32
 msc.type: authoredcontent
-ms.openlocfilehash: cdb0e259bbf27d1d3dcf6ada11e6636c9cefcc9c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 80421018e0508d430b6142cd3cee1727d1d17b7e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="whats-new-in-aspnet-web-pages-32"></a>ASP.NET 웹 페이지 3.2의에서 새로운 기능
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 이 항목에서는 ASP.NET 웹 페이지 3.2, 3.2.2 웹 페이지에 대 한 새로운 설명 및 [웹 페이지 3.2.3 beta1](https://blogs.msdn.com/b/webdev/archive/2014/12/17/asp-net-mvc-5-2-3-web-pages-5-2-3-and-web-api-5-2-3-beta-releases.aspx)
 
@@ -65,7 +65,8 @@ ms.lasthandoff: 11/10/2017
 | CPU / (샘플/요청) 요청 | 19.73 | 16.47 | -16.50% |
 
 | 색 구분: | <font style="background-color: #00ff00">코어 개선</font> | <font style="background-color: #4bacc6">성능에 긍정적인 영향</font> |
-| --- | --- | --- |
+|---------------|-----------------------------------------------------------------|-------------------------------------------------------------------------------|
+|               |                                                                 |                                                                               |
 
 ## <a name="aspnet-web-pages-323-beta1"></a>ASP.NET 웹 페이지 3.2.3 beta1
 

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/membership/user-based-authorization-vb
-title: "사용자 기반 권한 부여 (VB) | Microsoft Docs"
+title: 사용자 기반 권한 부여 (VB) | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에서는 살펴보겠습니다 다양 한 기술을 통해 페이지 수준 기능을 제한 하 고 페이지에 대 한 액세스를 제한 합니다."
+description: 이 자습서에서는 살펴보겠습니다 다양 한 기술을 통해 페이지 수준 기능을 제한 하 고 페이지에 대 한 액세스를 제한 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/18/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/user-based-authorization-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5579292930da97b142ff6db5d34d33be77aeea4b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 4073f349c7965a89b39a4b1b672f0e84fc96f287
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="user-based-authorization-vb"></a>사용자 기반 권한 부여 (VB)
 ====================
@@ -168,7 +168,7 @@ ASP.NET을 사용 하면 쉽게 사이트에서 다른 파일 및 폴더에 대 
 
 ### <a name="a-look-at-how-theurlauthorizationmoduleuses-the-authorization-rules-to-grant-or-deny-access"></a>참조 방법을`UrlAuthorizationModule`액세스를 부여 하거나 거부 권한 부여 규칙을 사용 하 여
 
-`UrlAuthorizationModule` 여부 URL 권한 부여를 분석 하 여 특정 URL에 대 한 특정 id를 갖도록 규칙 하려면 첫 번째에서 시작 하 고 아래쪽의 방식으로 작업 한 번에 하나씩 결정 합니다. 사용자가 허용 하거나 거부, 경우에 따라 일치가 발생에 일치 항목이 발견 되는 즉시는 `<allow>` 또는 `<deny>` 요소입니다. **일치 하는 항목이 사용자 액세스 권한이 부여 됩니다.** 따라서 액세스를 제한 하려는 경우 사용 하 여는 `<deny>` URL 권한 부여 구성에서 마지막 요소로 요소입니다. **생략 하면는 * * *`<deny>`* * * 요소, 모든 사용자에 게 권한이 부여 됩니다.**
+`UrlAuthorizationModule` 여부 URL 권한 부여를 분석 하 여 특정 URL에 대 한 특정 id를 갖도록 규칙 하려면 첫 번째에서 시작 하 고 아래쪽의 방식으로 작업 한 번에 하나씩 결정 합니다. 사용자가 허용 하거나 거부, 경우에 따라 일치가 발생에 일치 항목이 발견 되는 즉시는 `<allow>` 또는 `<deny>` 요소입니다. <strong>일치 하는 항목이 사용자 액세스 권한이 부여 됩니다.</strong> 따라서 액세스를 제한 하려는 경우 사용 하 여는 `<deny>` URL 권한 부여 구성에서 마지막 요소로 요소입니다. <strong>생략 하면는</strong><strong>`<deny>`</strong><strong>요소를 모든 사용자에 게 권한이 부여 됩니다.</strong>
 
 사용 하는 프로세스를 보다 잘 이해 하려면는 `UrlAuthorizationModule` 기관을 확인 하려면 예를 들어 URL 권한 부여 규칙에서이 단계에서 찾았습니다. 첫 번째 규칙은 한 `<allow>` Tito 및 Scott에 액세스할 수 있는 요소입니다. 두 번째 규칙은 한 `<deny>` 모든 사용자에 게 액세스를 거부 하는 요소입니다. 익명 사용자를 방문 하는 경우는 `UrlAuthorizationModule` 를 요청 하 여 시작 되는 익명 Scott 또는 Tito? 응답, 분명 한 것 이므로 No, 두 번째 규칙에 진행 됩니다. 모든 사용자에 게 집합에서 익명 인가요? 대답 이후 예, 다음은 `<deny>` 규칙 적용 배치 되 고 방문자 로그인 페이지로 리디렉션됩니다. 마찬가지로 Jisun 방문 중인 경우, 고 `UrlAuthorizationModule` 요청은 Jisun 하 여 시작 Scott 또는 Tito? 그녀는 사용 되지 않는 이후는 `UrlAuthorizationModule` 두 번째 질문의 모든 사용자 집합에는 Jisun 진행? 그녀 이므로, she, 너무,의 액세스가 거부 됩니다. 에 의해 첫 번째 질문 제기 되 Tito 방문 하는 경우 마지막으로 `UrlAuthorizationModule` 확실 한 응답, 이므로 Tito 액세스 권한이 부여 됩니다.
 
@@ -217,7 +217,7 @@ URL 권한 부여 쉽게 거친 권한 부여 규칙을 지정할 수 있습니�
 GridView 내에서 특정 디렉터리의 파일을 나열 하는 페이지를 만들어 보겠습니다. 각 파일의 이름, 크기 및 기타 정보를 나열 하는, 함께 GridView linkbutton이 있는의 두 개의 열이 포함 됩니다: 하나 제목은 보기 및 제목이 지정된 삭제 합니다. 보기 LinkButton을 클릭 하면 선택한 파일의 내용이 표시 됩니다. 삭제 LinkButton을 클릭 하면 파일이 삭제 됩니다. 처음 만들겠습니다이 페이지의 보기 및 삭제 기능을 모든 사용자에 게 사용할 수 있도록 합니다. 사용에서 LoginView 컨트롤 및 프로그래밍 방식으로 제한 기능 섹션을 사용 하도록 설정 하거나 페이지를 방문 하는 사용자에 따라 이러한 기능을 사용 하지 않도록 설정 하는 방법을 살펴봅니다.
 
 > [!NOTE]
-> 작성 하려고 하는 ASP.NET 페이지 파일의 목록을 표시 하는 GridView 컨트롤을 사용 합니다. 이 자습서에서는 폼 인증, 권한 부여, 사용자 계정 및 역할에 중점을 두고 시리즈 이후 하지 않음 GridView 컨트롤의 내부 작업에 논의 너무 많은 시간이 소비 하 합니다. 이 자습서에서이 페이지를 설정 하기 위한 특정 단계별 지침을 제공 하지만 특정 선택 사항이 이유 또는 렌더링된 된 출력에 효과 특정 속성의 세부 정보를 자세히 하지 않습니다. GridView 컨트롤의 철저 한 검사를 참조 하세요. 내  *[ASP.NET 2.0에서 데이터 작업](../../data-access/index.md)*  자습서 시리즈 합니다.
+> 작성 하려고 하는 ASP.NET 페이지 파일의 목록을 표시 하는 GridView 컨트롤을 사용 합니다. 이 자습서에서는 폼 인증, 권한 부여, 사용자 계정 및 역할에 중점을 두고 시리즈 이후 하지 않음 GridView 컨트롤의 내부 작업에 논의 너무 많은 시간이 소비 하 합니다. 이 자습서에서이 페이지를 설정 하기 위한 특정 단계별 지침을 제공 하지만 특정 선택 사항이 이유 또는 렌더링된 된 출력에 효과 특정 속성의 세부 정보를 자세히 하지 않습니다. GridView 컨트롤의 철저 한 검사를 참조 하세요. 내 *[ASP.NET 2.0에서 데이터 작업](../../data-access/index.md)* 자습서 시리즈 합니다.
 
 
 열어 시작는 `UserBasedAuthorization.aspx` 파일에 `Membership` 라는 페이지에 GridView 컨트롤 추가 같은 폴더 `FilesGrid`합니다. GridView의 스마트 태그에서 필드 대화 상자를 시작 하는 열 편집 링크를 클릭 합니다. 여기에서 왼쪽된 아래 모서리에서 자동 생성 필드 확인란의 선택을 취소 합니다. (선택 및 삭제 단추가 CommandField 형식에서 찾을 수 있습니다) 왼쪽된 위 모서리에서 선택 단추, 삭제 단추 및 두 개의 BoundFields를 다음으로 추가 합니다. 선택 단추 설정 `SelectText` 속성 보기 및 첫 번째 BoundField의을 `HeaderText` 및 `DataField` 속성 이름입니다. 두 번째 BoundField의 설정 `HeaderText` 속성 크기 (바이트)을 해당 `DataField` 길이에 대 한 속성 해당 `DataFormatString` {0: n0}에 대 한 속성 및 해당 `HtmlEncode` 속성을 false로 합니다.
@@ -400,24 +400,24 @@ URL 권한 부여 프레임 워크에서 페이지 단위로 권한 부여 규�
 
 이 자습서에 설명 된 항목에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
-- [비즈니스 및 데이터 계층을 사용 하 여 권한 부여 규칙 추가`PrincipalPermissionAttributes`](https://weblogs.asp.net/scottgu/archive/2006/10/04/Tip_2F00_Trick_3A00_-Adding-Authorization-Rules-to-Business-and-Data-Layers-using-PrincipalPermissionAttributes.aspx)
+- [비즈니스 및 데이터 계층을 사용 하 여 권한 부여 규칙 추가 `PrincipalPermissionAttributes`](https://weblogs.asp.net/scottgu/archive/2006/10/04/Tip_2F00_Trick_3A00_-Adding-Authorization-Rules-to-Business-and-Data-Layers-using-PrincipalPermissionAttributes.aspx)
 - [ASP.NET 권한 부여](https://msdn.microsoft.com/library/wce3kxhd.aspx)
 - [Iis 6 및 IIS7 보안 간의 변경 사항](https://www.iis.net/articles/view.aspx/IIS7/Managing-IIS7/Configuring-Security/Changes-between-IIS6-and-IIS7-Security)
 - [특정 파일 및 하위 디렉터리를 구성합니다.](https://msdn.microsoft.com/library/6hbkh9s7.aspx)
 - [사용자를 기반으로 하는 데이터 수정 기능 제한](../../data-access/editing-inserting-and-deleting-data/limiting-data-modification-functionality-based-on-the-user-vb.md)
 - [LoginView 컨트롤 퀵 스타트](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/login/loginview.aspx)
 - [IIS7 URL 권한 부여 이해](https://www.iis.net/articles/view.aspx/IIS7/Managing-IIS7/Configuring-Security/URL-Authorization/Understanding-IIS7-URL-Authorization)
-- [`UrlAuthorizationModule`기술 문서](https://msdn.microsoft.com/library/system.web.security.urlauthorizationmodule.aspx)
+- [`UrlAuthorizationModule` 기술 문서](https://msdn.microsoft.com/library/system.web.security.urlauthorizationmodule.aspx)
 - [ASP.NET 2.0에서에서 데이터 사용](../../data-access/index.md)
 
 ### <a name="about-the-author"></a>작성자 정보
 
-여러 ASP/ASP.NET 책의 작성자 및 4GuysFromRolla.com의 창립자 Scott Mitchell의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은  *[Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*합니다. Scott에 도달할 수 [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) 또는에서 그의 블로그 통해 [http://ScottOnWriting.NET](http://scottonwriting.net/)합니다.
+여러 ASP/ASP.NET 책의 작성자 및 4GuysFromRolla.com의 창립자 Scott Mitchell의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은  *[Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*합니다. Scott에 도달할 수 [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) 또는에서 그의 블로그 통해 [ http://ScottOnWriting.NET ](http://scottonwriting.net/)합니다.
 
 ### <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)합니다.
 
->[!div class="step-by-step"]
-[이전](validating-user-credentials-against-the-membership-user-store-vb.md)
-[다음](storing-additional-user-information-vb.md)
+> [!div class="step-by-step"]
+> [이전](validating-user-credentials-against-the-membership-user-store-vb.md)
+> [다음](storing-additional-user-information-vb.md)

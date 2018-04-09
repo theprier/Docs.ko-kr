@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/adding-dynamic-content-to-a-cached-page-vb
-title: "캐시 된 페이지 (VB)에 동적 콘텐츠 추가 | Microsoft Docs"
+title: 캐시 된 페이지 (VB)에 동적 콘텐츠 추가 | Microsoft Docs
 author: microsoft
-description: "같은 페이지의 동적 및 캐시 된 콘텐츠를 혼합 하는 방법을 알아봅니다. 캐시 후 대체 배너 광고 o 같은 동적 콘텐츠를 표시할 수 있습니다..."
+description: 같은 페이지의 동적 및 캐시 된 콘텐츠를 혼합 하는 방법을 알아봅니다. 캐시 후 대체 배너 광고 o 같은 동적 콘텐츠를 표시할 수 있습니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/27/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/adding-dynamic-content-to-a-cached-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f07f4ecec36e71679dbc471b65f26d260349a07e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 89421b4bec2170e408ded87ccc918a7a16844a98
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-dynamic-content-to-a-cached-page-vb"></a>캐시 된 페이지 (VB)에 동적 콘텐츠 추가
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 같은 페이지의 동적 및 캐시 된 콘텐츠를 혼합 하는 방법을 알아봅니다. 캐시 후 대체 배너 보급 알림 또는 뉴스 항목 캐시 페이지 출력 된 변수가 있는 내에서 같은 동적 콘텐츠를 표시할 수 있습니다.
 
@@ -47,7 +47,7 @@ ms.lasthandoff: 11/10/2017
 
 캐시 후 대체를 이용 하려면 HttpResponse.WriteSubstitution() 메서드를 호출 합니다. 동적 콘텐츠는 캐시 된 페이지의 영역 바꿉니다 WriteSubstitution() 메서드 코드를 설정 합니다. WriteSubstitution() 메서드를 사용 하 여 목록 2의 뷰에서 임의의 뉴스 항목을 표시 합니다.
 
-**2 – Views\Home\Index.aspx 나열**
+**Listing 2 – Views\Home\Index.aspx**
 
 [!code-aspx[Main](adding-dynamic-content-to-a-cached-page-vb/samples/sample2.aspx)]
 
@@ -55,7 +55,7 @@ RenderNews 메서드에 WriteSubstitution() 메서드에 전달 됩니다. 공�
 
 인덱스 뷰 캐시 됩니다. 보기는 보기 3의 컨트롤러에 의해 반환 됩니다. Index () 작업으로 데코레이팅되 어 통지는 &lt;OutputCache&gt; 60 초 동안 캐시 될 인덱스 뷰를 발생 시키는 특성입니다.
 
-**3 – Controllers\HomeController.vb 나열**
+**Listing 3 – Controllers\HomeController.vb**
 
 [!code-vb[Main](adding-dynamic-content-to-a-cached-page-vb/samples/sample3.vb)]
 
@@ -69,7 +69,7 @@ RenderNews 메서드에 WriteSubstitution() 메서드에 전달 됩니다. 공�
 
 캐시 후 대체 기능을 활용할 수 있는 더욱 손쉬운 방법을 사용자 지정 도우미 메서드 내에서 WriteSubstitution() 메서드에 대 한 호출을 캡슐화 하는 합니다. 목록 4의 도우미 메서드에 의해이 방법은 보여 줍니다.
 
-**4 – Helpers\AdHelper.vb 나열**
+**Listing 4 – Helpers\AdHelper.vb**
 
 [!code-vb[Main](adding-dynamic-content-to-a-cached-page-vb/samples/sample4.vb)]
 
@@ -97,6 +97,6 @@ RenderBannerInternal() 메서드는 private 메서드입니다. 이 메서드는
 
 웹 응용 프로그램의 성능에 큰 영향을 줄 수 것-가능한 경우 항상 캐싱을 활용 합니다. 이 자습서에서 설명 했 듯이를 페이지에 동적 콘텐츠를 표시 해야 하는 경우에 캐싱의 이용할 수 있습니다.
 
->[!div class="step-by-step"]
-[이전](improving-performance-with-output-caching-vb.md)
-[다음](creating-a-controller-vb.md)
+> [!div class="step-by-step"]
+> [이전](improving-performance-with-output-caching-vb.md)
+> [다음](creating-a-controller-vb.md)

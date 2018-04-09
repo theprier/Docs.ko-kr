@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication
-title: "SMS 및 전자 메일 2 단계 인증을 사용 하는 ASP.NET MVC 5 앱 | Microsoft Docs"
+title: SMS 및 전자 메일 2 단계 인증을 사용 하는 ASP.NET MVC 5 앱 | Microsoft Docs
 author: Rick-Anderson
-description: "이 자습서 2 단계 인증을 사용 하 여 ASP.NET MVC 5 웹 앱을 빌드하는 방법을 보여 줍니다. 웹 앱을 만들기 보안 ASP.NET MVC 5 완료 해야..."
+description: 이 자습서 2 단계 인증을 사용 하 여 ASP.NET MVC 5 웹 앱을 빌드하는 방법을 보여 줍니다. 웹 앱을 만들기 보안 ASP.NET MVC 5 완료 해야...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/20/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: d6bc92f3cbe6b61332e33e8a507b4516bf5c15a5
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5e1c54b3901f2c8c85134445c1fa91ee9f2e0d59
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication"></a>SMS 및 전자 메일 2 단계 인증을 사용 하는 ASP.NET MVC 5 앱
 ====================
@@ -53,44 +53,44 @@ ms.lasthandoff: 01/24/2018
 
 1. **SMS 공급자를 사용 하 여 사용자 계정 만들기**  
   
- 만들기는 [Twilio](https://www.twilio.com/try-twilio) 또는 [ASPSMS](https://www.aspsms.com/asp.net/identity/testcredits/) 계정.
+   만들기는 [Twilio](https://www.twilio.com/try-twilio) 또는 [ASPSMS](https://www.aspsms.com/asp.net/identity/testcredits/) 계정.
 2. **추가 패키지 설치 또는 서비스 참조 추가**  
   
- Twilio:  
- 패키지 관리자 콘솔에서 다음 명령을 입력 합니다.  
+   Twilio:  
+   패키지 관리자 콘솔에서 다음 명령을 입력 합니다.  
     `Install-Package Twilio`  
   
- ASPSMS:  
- 다음 서비스 참조를 추가 해야 합니다.  
+   ASPSMS:  
+   다음 서비스 참조를 추가 해야 합니다.  
   
     ![](aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication/_static/image2.png)  
   
- 주소:  
+   주소:  
     `https://webservice.aspsms.com/aspsmsx2.asmx?WSDL`  
   
- 네임스페이스:  
+   네임스페이스:  
     `ASPSMSX2`
 3. **SMS 공급자 사용자 자격 증명을 파악**  
   
- Twilio:  
- **대시보드** 복사 Twilio 계정 탭의 **계정 SID** 및 **인증 토큰**합니다.  
+   Twilio:  
+   **대시보드** 복사 Twilio 계정 탭의 **계정 SID** 및 **인증 토큰**합니다.  
   
- ASPSMS:  
- 계정 설정을에서으로 이동 **사용자 키로** 자체 정의 함께 복사 및 **암호**합니다.  
+   ASPSMS:  
+   계정 설정을에서으로 이동 **사용자 키로** 자체 정의 함께 복사 및 **암호**합니다.  
   
- 나중에 이러한 값에 저장할는 *web.config* 내 키 파일 `"SMSAccountIdentification"` 및 `"SMSAccountPassword"` 합니다.
+   나중에 이러한 값에 저장할는 *web.config* 내 키 파일 `"SMSAccountIdentification"` 및 `"SMSAccountPassword"` 합니다.
 4. **SenderID 지정 / 송신자**  
   
- Twilio:  
- **숫자** 탭, Twilio 전화 번호를 복사 합니다.  
+   Twilio:  
+   **숫자** 탭, Twilio 전화 번호를 복사 합니다.  
   
- ASPSMS:  
- 내에서 **잠금 해제 보낸 사람** 메뉴를 사용 하거나 하나 이상의 보낸 사람을 잠금 해제 (모든 네트워크에서 지원 되지 않음)에 영숫자 보낸 사람이 선택 합니다.  
+   ASPSMS:  
+   내에서 **잠금 해제 보낸 사람** 메뉴를 사용 하거나 하나 이상의 보낸 사람을 잠금 해제 (모든 네트워크에서 지원 되지 않음)에 영숫자 보낸 사람이 선택 합니다.  
   
- 저장 하겠습니다. 나중에이 값은 *web.config* 내 키 파일 `"SMSAccountFrom"` 합니다.
+   저장 하겠습니다. 나중에이 값은 *web.config* 내 키 파일 `"SMSAccountFrom"` 합니다.
 5. **응용 프로그램에 SMS 공급자 자격 증명 전송**  
   
- 자격 증명 및 보낸 사람에 게 전화 번호가 응용 프로그램에 사용할 수 있도록 합니다. 간단 하 게 저장 하겠습니다. 이러한 값에는 *web.config* 파일입니다. Azure에 배포 하기 하는 경우에 안전 하 게 값을 저장할 수 우리는 **앱 설정** 웹 사이트에서 섹션 구성 탭 합니다. 
+   자격 증명 및 보낸 사람에 게 전화 번호가 응용 프로그램에 사용할 수 있도록 합니다. 간단 하 게 저장 하겠습니다. 이러한 값에는 *web.config* 파일입니다. Azure에 배포 하기 하는 경우에 안전 하 게 값을 저장할 수 우리는 **앱 설정** 웹 사이트에서 섹션 구성 탭 합니다. 
 
     [!code-xml[Main](aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication/samples/sample1.xml?highlight=8-10)]
 
@@ -98,9 +98,9 @@ ms.lasthandoff: 01/24/2018
     > 보안-소스 코드에서 중요 한 데이터 저장 되지 않습니다. 계정 및 자격 증명은 위의 예제를 단순하게 유지 하기 위해 코드에 추가 됩니다. 참조 [ASP.NET 및 Azure에 암호 및 기타 중요 한 데이터 배포에 대 한 유용한](../../../identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md)합니다.
 6. **SMS 공급자에 데이터 전송의 구현**  
   
- 구성에서 `SmsService` 클래스에 *앱\_Start\IdentityConfig.cs* 파일입니다.  
+   구성에서 `SmsService` 클래스에 *앱\_Start\IdentityConfig.cs* 파일입니다.  
   
- 사용 되는 SMS 공급자에 따라 활성화 중 하나는 **Twilio** 또는 **ASPSMS** 섹션: 
+   사용 되는 SMS 공급자에 따라 활성화 중 하나는 **Twilio** 또는 **ASPSMS** 섹션: 
 
     [!code-csharp[Main](aspnet-mvc-5-app-with-sms-and-email-two-factor-authentication/samples/sample2.cs)]
 7. 업데이트는 *Views\Manage\Index.cshtml* Razor 보기: (참고: 기존 코드에서 주석을 제거, 아래 코드를 사용 하 여 방금 하지 마십시오.)  
@@ -147,7 +147,7 @@ Enable 2FA 클릭 합니다.
 이 자습서에서는 새 ASP.NET MVC 응용 프로그램에 2FA 활성화 간략 한 소개를 제공 합니다. 내 자습서 [SMS 및 전자 메일을 사용 하 여 ASP.NET Identity와 2 단계 인증](../../../identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity.md) 세부 뒤에 있는 샘플 코드에 들어갑니다.
 
 <a id="addRes"></a>
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 - [SMS 및 전자 메일을 사용 하 여 ASP.NET Identity와 2 단계 인증](../../../identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity.md) 에 2 단계 인증에 자세히 나와
 - [ASP.NET Id에 대 한 링크 권장 리소스](../../../identity/overview/getting-started/aspnet-identity-recommended-resources.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/data/using-web-api-with-entity-framework/part-3
-title: "Code First 마이그레이션을 사용 하 여 데이터베이스의 초기값 | Microsoft Docs"
+title: Code First 마이그레이션을 사용 하 여 데이터베이스의 초기값 | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/16/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-3
 msc.type: authoredcontent
-ms.openlocfilehash: 1ca627397f0f100d13388f9afc27ff481886e098
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 33bc6d82daa9ca5f46452a1adf4e2eebea04fa6c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="use-code-first-migrations-to-seed-the-database"></a>Code First 마이그레이션을 사용 하 여 데이터베이스의 초기값
 ====================
@@ -72,7 +72,7 @@ API를 통해 데이터베이스에 대해 CRUD 작업 합니다. 다음은 API�
 | PUT /api/작성자 / {id} | 기존 author를 업데이트 합니다. |
 | 삭제 /api/작성자 / {id} | 제작자를 삭제 합니다. |
 
-| 설명서 |  |
+| 책 |  |
 | --- | -- |
 | /Api/books 가져오기 | 모든 책을 가져옵니다. |
 | GET /api/books/{id} | 책 id 가져오기 |
@@ -102,6 +102,6 @@ Visual Studio는 LocalDB에 연결 하 고 SQL Server 개체 탐색기 창에서
 
 ![](part-3/_static/image9.png)
 
->[!div class="step-by-step"]
-[이전](part-2.md)
-[다음](part-4.md)
+> [!div class="step-by-step"]
+> [이전](part-2.md)
+> [다음](part-4.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/modalpopup/handling-postbacks-from-a-modalpopup-vb
-title: "포스트백 ModalPopup (VB)에서 처리 | Microsoft Docs"
+title: 포스트백 ModalPopup (VB)에서 처리 | Microsoft Docs
 author: wenz
-description: "들어에서 ModalPopup 컨트롤을 클라이언트 쪽 방법을 사용 하 여 모달 팝업을 만드는 간단한 방법을 제공 합니다. Pos 때 특별히 주의 해야 합니다..."
+description: 들어에서 ModalPopup 컨트롤을 클라이언트 쪽 방법을 사용 하 여 모달 팝업을 만드는 간단한 방법을 제공 합니다. Pos 때 특별히 주의 해야 합니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/handling-postbacks-from-a-modalpopup-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7915d555fef363f41aa51bd77f0183c97c2f3769
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1aa2c42deb67015dd0b35edf4ba72d8d667ec88c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="handling-postbacks-from-a-modalpopup-vb"></a>포스트백 ModalPopup (VB)에서 처리
 ====================
@@ -62,6 +62,6 @@ ASP.NET AJAX 및 제어 Toolkit의 기능을 활성화 하는 데는 `ScriptMana
 
 모달 팝업 포스트백 ([전체 크기 이미지를 보려면 클릭](handling-postbacks-from-a-modalpopup-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[이전](using-modalpopup-with-a-repeater-control-vb.md)
-[다음](positioning-a-modalpopup-vb.md)
+> [!div class="step-by-step"]
+> [이전](using-modalpopup-with-a-repeater-control-vb.md)
+> [다음](positioning-a-modalpopup-vb.md)

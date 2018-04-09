@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/an-overview-of-editing-and-deleting-data-in-the-datalist-cs
-title: "DataList (C#)에서 데이터 편집 및 삭제에 대 한 개요 | Microsoft Docs"
+title: DataList (C#)에서 데이터 편집 및 삭제에 대 한 개요 | Microsoft Docs
 author: rick-anderson
-description: "DataList에 기본 제공 편집 및 삭제 기능 부족, 하는 동안이 자습서에서는 보겠습니다를 지 원하는 편집 및 삭제 o DataList를 만드는 방법..."
+description: DataList에 기본 제공 편집 및 삭제 기능 부족, 하는 동안이 자습서에서는 보겠습니다를 지 원하는 편집 및 삭제 o DataList를 만드는 방법...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/30/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/an-overview-of-editing-and-deleting-data-in-the-datalist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8b3067c5a6bcf81a35f66d43886c9b116a0ef7d8
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: be86707980b11453ef78fdbddead73ab9808b54d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="an-overview-of-editing-and-deleting-data-in-the-datalist-c"></a>DataList (C#)에서 데이터 편집 및 삭제에 대 한 개요
 ====================
@@ -249,7 +249,7 @@ DataList s 이후 `EditCommand` 만들기, 이벤트 편집 단추를 클릭할 
 
 읽기 전용 모드에 있는 해당 항목의 모든 렌더링 DataList가 하도록 설정 해야 합니다.
 
-1. DataList s 설정 [ `EditItemIndex` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.edititemindex.aspx) 존재 하지의 인덱스에 `DataListItem` 인덱스입니다. `-1`것은 안전 하므로 `DataListItem` 인덱스에서 시작 `0`합니다.
+1. DataList s 설정 [ `EditItemIndex` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.edititemindex.aspx) 존재 하지의 인덱스에 `DataListItem` 인덱스입니다. `-1` 것은 안전 하므로 `DataListItem` 인덱스에서 시작 `0`합니다.
 2. DataList에 데이터를 다시 바인딩해야 합니다. No 이후 `DataListItem` `ItemIndex` DataList s에 해당 하는 es `EditItemIndex`, 전체 DataList는 읽기 전용 모드에서 렌더링 됩니다.
 
 다음 이벤트 처리기 코드와 다음이 단계를 수행할 수 있습니다.
@@ -263,7 +263,7 @@ DataList s 이후 `EditCommand` 만들기, 이벤트 편집 단추를 클릭할 
 
 1. 편집 된 제품 s 뿐만 아니라 사용자가 입력 한 제품 이름 및 가격을 프로그래밍 방식으로 액세스 `ProductID`합니다.
 2. 적절 한 호출 하 여 업데이트 프로세스를 시작할 `UpdateProduct` 에 오버 로드는 `ProductsBLL` 클래스입니다.
-3. DataList s 설정 [ `EditItemIndex` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.edititemindex.aspx) 존재 하지의 인덱스에 `DataListItem` 인덱스입니다. `-1`것은 안전 하므로 `DataListItem` 인덱스에서 시작 `0`합니다.
+3. DataList s 설정 [ `EditItemIndex` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.datalist.edititemindex.aspx) 존재 하지의 인덱스에 `DataListItem` 인덱스입니다. `-1` 것은 안전 하므로 `DataListItem` 인덱스에서 시작 `0`합니다.
 4. DataList에 데이터를 다시 바인딩해야 합니다. No 이후 `DataListItem` `ItemIndex` DataList s에 해당 하는 es `EditItemIndex`, 전체 DataList는 읽기 전용 모드에서 렌더링 됩니다.
 
 단계 1 및 2는 s 변경; 사용자를 저장 해야 3 단계와 4 DataList 미리 편집 상태로 되돌리려면 후 변경 내용이 저장 되 고에서 수행 된 단계와 동일는 `CancelCommand` 이벤트 처리기입니다.
@@ -339,11 +339,11 @@ DataList는 지점에 부족 하 고 편집 및 삭제 지원 GridView 받을 �
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자가 Zack jones 이면 특정, Ken Pespisa 및 Randy Schmidt 합니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[다음](performing-batch-updates-cs.md)
+> [!div class="step-by-step"]
+> [다음](performing-batch-updates-cs.md)

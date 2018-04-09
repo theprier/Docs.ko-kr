@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/creating-model-classes-with-linq-to-sql-cs
-title: "LINQ to SQL (C#)를 사용 하 여 모델 클래스 만들기 | Microsoft Docs"
+title: LINQ to SQL (C#)를 사용 하 여 모델 클래스 만들기 | Microsoft Docs
 author: microsoft
-description: "이 자습서의 목표는 ASP.NET MVC 응용 프로그램에 대 한 모델 클래스를 만드는 방법 중 하나가 설명 하는입니다. 이 자습서에서는 c 모델을 작성 하는 방법에 설명..."
+description: 이 자습서의 목표는 ASP.NET MVC 응용 프로그램에 대 한 모델 클래스를 만드는 방법 중 하나가 설명 하는입니다. 이 자습서에서는 c 모델을 작성 하는 방법에 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/07/2008
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/creating-model-classes-with-linq-to-sql-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c640007a75f2421e0f6c1e86e525de4834bbc8e4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1f30ff6c97e565059c57c55f26d2dff477774aeb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-model-classes-with-linq-to-sql-c"></a>LINQ to SQL (C#)를 사용 하 여 모델 클래스 만들기
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [PDF 다운로드](http://download.microsoft.com/download/1/1/f/11f721aa-d749-4ed7-bb89-a681b68894e6/ASPNET_MVC_Tutorial_10_CS.pdf)
 
@@ -75,7 +75,7 @@ Visual Web Developer를 사용 하는 경우 서버 탐색기 창의 데이터�
 | --- | --- | --- |
 | ID | Int | False |
 | 제목 | Nvarchar(200) | False |
-| 감독 | Nvarchar (50) | False |
+| 감독 | Nvarchar(50) | False |
 
 Id 열에 두 가지 특별 한 작업을 수행 해야 합니다. 먼저, 테이블 디자이너에서 열을 선택 하 고 키 아이콘을 클릭 하 여 Id 열에 기본 키 열으로 표시 해야 합니다. LINQ to SQL 삽입을 수행 하거나 데이터베이스에 대해 업데이트할 때 기본 키 열을 지정 해야 합니다.
 
@@ -109,7 +109,7 @@ LINQ to SQL 클래스를 만들었으므로 이제 해당 데이터를 검색 �
 
 먼저, HomeController 클래스를 수정 해야 합니다. 이 클래스는 응용 프로그램의 컨트롤러 폴더에서 찾을 수 있습니다. 목록 1의 클래스와 비슷하게 클래스를 수정 합니다.
 
-**1 – 나열`Controllers\HomeController.cs`**
+**1 – 나열 `Controllers\HomeController.cs`**
 
 [!code-csharp[Main](creating-model-classes-with-linq-to-sql-cs/samples/sample1.cs)]
 
@@ -119,7 +119,7 @@ LINQ 쿼리는 모든 영화를 검색 하는 DataContext에 대해 수행 되�
 
 영화를 표시 하려면 다음 인덱스 뷰를 수정 해야 합니다. 인덱스 뷰를 찾을 수 있습니다는 `Views\Home\` 폴더입니다. 보기 목록 2에서와 같이 인덱스 뷰를 업데이트 합니다.
 
-**2 – 나열`Views\Home\Index.aspx`**
+**2 – 나열 `Views\Home\Index.aspx`**
 
 [!code-aspx[Main](creating-model-classes-with-linq-to-sql-cs/samples/sample2.aspx)]
 
@@ -161,19 +161,19 @@ MVC 응용 프로그램을 작성 하기 위해는 향후에 더 적응력이 �
 
 인터페이스 목록 3에서 라는 `IMovieRepository` 라는 단일 메서드가 나타내는 `ListAll()`합니다.
 
-**3 – 나열`Models\IMovieRepository.cs`**
+**3 – 나열 `Models\IMovieRepository.cs`**
 
 [!code-csharp[Main](creating-model-classes-with-linq-to-sql-cs/samples/sample3.cs)]
 
 목록 4에는 저장소 클래스를 구현 하는 `IMovieRepository` 인터페이스입니다. 라는 메서드가 들어 `ListAll()` 에서 요구 하는 방법에 해당 하는 `IMovieRepository` 인터페이스입니다.
 
-**4 – 나열`Models\MovieRepository.cs`**
+**4 – 나열 `Models\MovieRepository.cs`**
 
 [!code-csharp[Main](creating-model-classes-with-linq-to-sql-cs/samples/sample4.cs)]
 
 마지막으로 `MoviesController` 클래스 목록 5의 리포지토리 패턴을 사용 합니다. 더 이상 사용 LINQ to SQL 클래스 직접 합니다.
 
-**5-나열`Controllers\MoviesController.cs`**
+**5-나열 `Controllers\MoviesController.cs`**
 
 [!code-csharp[Main](creating-model-classes-with-linq-to-sql-cs/samples/sample5.cs)]
 
@@ -197,6 +197,6 @@ MVC 응용 프로그램을 작성 하기 위해는 향후에 더 적응력이 �
 
 다음으로, 데이터베이스 데이터를 표시 하기 위한 약간 더 어려운 하지만 더 확실 하 게 원동력이 경로 살펴본 합니다. 리포지토리 패턴을 활용 하 고 모든 데이터베이스 액세스 논리는 별도 저장소 클래스에 배치 합니다. 컨트롤러에 안내 드린 바 구체적인 클래스가 아니라 인터페이스에 대해 코드의 모든 합니다. 리포지토리 패턴의 장점은 나중에 데이터베이스 액세스 기술을 쉽게 변경할 수 있도록 하 고 컨트롤러 클래스를 쉽게 테스트할 수 있게 됩니다.
 
->[!div class="step-by-step"]
-[이전](creating-model-classes-with-the-entity-framework-cs.md)
-[다음](displaying-a-table-of-database-data-cs.md)
+> [!div class="step-by-step"]
+> [이전](creating-model-classes-with-the-entity-framework-cs.md)
+> [다음](displaying-a-table-of-database-data-cs.md)

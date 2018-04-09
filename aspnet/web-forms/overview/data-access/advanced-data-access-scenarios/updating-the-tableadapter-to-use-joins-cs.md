@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/updating-the-tableadapter-to-use-joins-cs
-title: "TableAdapter를 사용 하 여 업데이트 조인 (C#) | Microsoft Docs"
+title: TableAdapter를 사용 하 여 업데이트 조인 (C#) | Microsoft Docs
 author: rick-anderson
-description: "데이터베이스 작업을 수행 하는 경우에 데이터를 요청 하는 여러 테이블에 분산 되어 일반적입니다. 서로 다른 두 테이블에서 데이터를 검색 하려면 하나를 사용 하면..."
+description: 데이터베이스 작업을 수행 하는 경우에 데이터를 요청 하는 여러 테이블에 분산 되어 일반적입니다. 서로 다른 두 테이블에서 데이터를 검색 하려면 하나를 사용 하면...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/18/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/updating-the-tableadapter-to-use-joins-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1a24245a3c846d061a528d520f915b8eac3ff475
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: be74be8865b021be1f2e2d8181d2eb42cb74eb75
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="updating-the-tableadapter-to-use-joins-c"></a>TableAdapter를 사용 하 여 업데이트 조인 (C#)
 ====================
@@ -54,7 +54,7 @@ ms.lasthandoff: 01/24/2018
 A `JOIN` 일부 조건에 따라 다른 테이블의 레코드와 한 테이블에서 레코드를 병합 합니다. 예를 들어 위의 쿼리에서 `LEFT JOIN Categories ON Categories.CategoryID = Products.CategoryID` 사용 하면 SQL Server 병합 각 범주와 제품 레코드를 기록 하는 `CategoryID` 값과 s 제품 일치 `CategoryID` 값입니다. 병합 된 결과 통해 각 제품에 대 한 해당 범주 필드를 사용 하 여 (예: `CategoryName`).
 
 > [!NOTE]
-> `JOIN`s 관계형 데이터베이스에서 데이터를 쿼리할 때 자주 사용 됩니다. 처음 사용 하는 경우는 `JOIN` 구문 또는 사용법에 대 약간 브러시를 사용 하는 필요성 d 것이 좋습니다.는 [SQL Join 자습서](http://www.w3schools.com/sql/sql_join.asp) 에서 [W3 학교](http://www.w3schools.com/)합니다. 또한 읽기 가치는 [ `JOIN` 기본 사항](https://msdn.microsoft.com/library/ms191517.aspx) 및 [하위 쿼리 기본 사항](https://msdn.microsoft.com/library/ms189575.aspx) 의 섹션은 [SQL 온라인 설명서](https://msdn.microsoft.com/library/ms130214.aspx)합니다.
+> `JOIN` s 관계형 데이터베이스에서 데이터를 쿼리할 때 자주 사용 됩니다. 처음 사용 하는 경우는 `JOIN` 구문 또는 사용법에 대 약간 브러시를 사용 하는 필요성 d 것이 좋습니다.는 [SQL Join 자습서](http://www.w3schools.com/sql/sql_join.asp) 에서 [W3 학교](http://www.w3schools.com/)합니다. 또한 읽기 가치는 [ `JOIN` 기본 사항](https://msdn.microsoft.com/library/ms191517.aspx) 및 [하위 쿼리 기본 사항](https://msdn.microsoft.com/library/ms189575.aspx) 의 섹션은 [SQL 온라인 설명서](https://msdn.microsoft.com/library/ms130214.aspx)합니다.
 
 
 이후 `JOIN` s와 상관된 하위 쿼리 둘 다 사용할 수 다른 테이블에서 관련된 데이터를 검색, 머리 보이지 않는 하 고 사용할 방법에 다음이 궁금할 많은 개발자에 게 남아 있습니다. 모든 SQL gurus I 간의 대화와 거의 동일한 작업에 설명 했습니다 한다는 대상이 t 중요 성능 관점에서 보면으로 SQL Server와 거의 동일한 실행 계획을 생성 합니다. 그런 다음 해당 조언을 팀과 가장 익숙한 기술을 사용 하 고 되려고 합니다. 이 충고를 전달 하는 후 이러한 전문가 즉시 express의 기본 설정의 데이터에 해당 `JOIN` 상관된 하위 쿼리를 통해 s입니다.
@@ -260,12 +260,12 @@ I이 그대로 실행으로 판독기에 대 한 합니다.
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자가 Hilton Geisenow, David Suru 및 Teresa 머피의 합니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md)
-[다음](adding-additional-datatable-columns-cs.md)
+> [!div class="step-by-step"]
+> [이전](using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md)
+> [다음](adding-additional-datatable-columns-cs.md)

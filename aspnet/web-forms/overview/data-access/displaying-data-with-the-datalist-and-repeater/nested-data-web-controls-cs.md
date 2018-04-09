@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/nested-data-web-controls-cs
-title: "중첩 된 데이터 웹 컨트롤 (C#) | Microsoft Docs"
+title: 중첩 된 데이터 웹 컨트롤 (C#) | Microsoft Docs
 author: rick-anderson
-description: "이 자습서를 살펴볼 것입니다는 반복기를 사용 하는 방법을 다른 반복기 내에 중첩 합니다. 이 예에서는 두 d 내부 반복을 채우는 방법을 설명 합니다..."
+description: 이 자습서를 살펴볼 것입니다는 반복기를 사용 하는 방법을 다른 반복기 내에 중첩 합니다. 이 예에서는 두 d 내부 반복을 채우는 방법을 설명 합니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/13/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/nested-data-web-controls-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 69fa0489ff8baed1423d29ee7bfaa3157d35a76b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4957f555691efaeaafa5bcf92141e0bef1cb1de9
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="nested-data-web-controls-c"></a>중첩 된 데이터 웹 컨트롤 (C#)
 ====================
@@ -93,14 +93,14 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="accessing-the-data-declaratively-with-an-objectdatasource-control-and-theitemdataboundevent-handler"></a>ObjectDataSource 컨트롤을 사용 하 여 선언적으로 데이터에 액세스 하 고`ItemDataBound`이벤트 처리기
 
-에서는 이후이 자습서 시리즈는 ObjectDataSource를 사용 하는이 예제에 대해 데이터에 액세스 하기 위한 가장 자연 스러운 선택 전체에서 광범위 하 게 ObjectDataSource을 사용한 적입니다. `ProductsBLL` 클래스에는 `GetProductsByCategoryID(categoryID)` 지정 된에 속해 있는 해당 제품에 대 한 정보를 반환 하는 메서드  *`categoryID`* 합니다. 따라서에 ObjectDataSource 추가할 수 있습니다는 `CategoryList` 반복기의 `ItemTemplate` 이 s 클래스 메서드에서 해당 데이터에 액세스 하도록 구성 합니다.
+에서는 이후이 자습서 시리즈는 ObjectDataSource를 사용 하는이 예제에 대해 데이터에 액세스 하기 위한 가장 자연 스러운 선택 전체에서 광범위 하 게 ObjectDataSource을 사용한 적입니다. `ProductsBLL` 클래스에는 `GetProductsByCategoryID(categoryID)` 지정 된에 속해 있는 해당 제품에 대 한 정보를 반환 하는 메서드 *`categoryID`*합니다. 따라서에 ObjectDataSource 추가할 수 있습니다는 `CategoryList` 반복기의 `ItemTemplate` 이 s 클래스 메서드에서 해당 데이터에 액세스 하도록 구성 합니다.
 
 안타깝게도, 반복기 대상이 t 디자인 뷰를 통해 편집이 ObjectDataSource 컨트롤에 대 한 선언적 구문 직접 추가 해야 하므로 해당 서식 파일을 허용 합니다. 에서는 다음 구문은 `CategoryList` 반복기 s `ItemTemplate` 이 새 ObjectDataSource를 추가한 후 (`ProductsByCategoryDataSource`):
 
 
 [!code-aspx[Main](nested-data-web-controls-cs/samples/sample3.aspx)]
 
-설정 해야 ObjectDataSource 접근 방식을 사용 하는 경우는 `ProductsByCategoryList` 반복기 s `DataSourceID` 속성을는 `ID` 는 ObjectDataSource의 (`ProductsByCategoryDataSource`). 또한 구성 요소 개발자는 우리의 ObjectDataSource에는 `<asp:Parameter>` 지정 하는 요소는  *`categoryID`*  에 전달 되는 값은 `GetProductsByCategoryID(categoryID)` 메서드. 하지만이 값 어떻게 지정 우리? 이상적으로 d 것만 설정할 수는 `DefaultValue` 의 속성은 `<asp:Parameter>` databinding 구문을 사용 하 여 요소 같이:
+설정 해야 ObjectDataSource 접근 방식을 사용 하는 경우는 `ProductsByCategoryList` 반복기 s `DataSourceID` 속성을는 `ID` 는 ObjectDataSource의 (`ProductsByCategoryDataSource`). 또한 구성 요소 개발자는 우리의 ObjectDataSource에는 `<asp:Parameter>` 지정 하는 요소는 *`categoryID`* 에 전달 되는 값은 `GetProductsByCategoryID(categoryID)` 메서드. 하지만이 값 어떻게 지정 우리? 이상적으로 d 것만 설정할 수는 `DefaultValue` 의 속성은 `<asp:Parameter>` databinding 구문을 사용 하 여 요소 같이:
 
 
 [!code-aspx[Main](nested-data-web-controls-cs/samples/sample4.aspx)]
@@ -133,7 +133,7 @@ ms.lasthandoff: 11/10/2017
 
 반복기 s `DataSource` 속성 구문이 사용 하 여 해당 데이터에서 제공 됨을 나타냅니다는 `GetProductsInCategory(categoryID)` 메서드. 이후 `Eval("CategoryID")` 형식의 값을 반환 `Object`, 개체를 캐스팅 우리는 `Integer` 에 전달 하기 전에 `GetProductsInCategory(categoryID)` 메서드. `CategoryID` 여기에서 데이터 바인딩을 통해 구문은 액세스는 `CategoryID` 에 *외부* 반복기 (`CategoryList`), 한 s의 레코드에 바인딩된는 `Categories` 테이블 합니다. 따라서 알고 있는 `CategoryID` 데이터베이스 일 수 없습니다 `NULL` 값이 때문에 맹목적으로 캐스팅할 수 있습니다는 `Eval` 있는지를 확인 하지 않고 메서드 다루는 다시 우리는 `DBNull`합니다.
 
-이 접근 방식에서는 만들어야 할는 `GetProductsInCategory(categoryID)` 메서드를 적절 한 집합이 제공 된 지정 된 제품 검색  *`categoryID`* 합니다. 단순히 반환 하 여이 작업을 수행할 수 있습니다는 `ProductsDataTable` 에서 반환 되는 `ProductsBLL` s 클래스 `GetProductsByCategoryID(categoryID)` 메서드. 만들 s는 `GetProductsInCategory(categoryID)` 에 대 한 코드 숨김 클래스의 메서드에 우리의 `NestedControls.aspx` 페이지. 다음 코드를 사용 하 여 수행 합니다.
+이 접근 방식에서는 만들어야 할는 `GetProductsInCategory(categoryID)` 메서드를 적절 한 집합이 제공 된 지정 된 제품 검색 *`categoryID`*합니다. 단순히 반환 하 여이 작업을 수행할 수 있습니다는 `ProductsDataTable` 에서 반환 되는 `ProductsBLL` s 클래스 `GetProductsByCategoryID(categoryID)` 메서드. 만들 s는 `GetProductsInCategory(categoryID)` 에 대 한 코드 숨김 클래스의 메서드에 우리의 `NestedControls.aspx` 페이지. 다음 코드를 사용 하 여 수행 합니다.
 
 
 [!code-csharp[Main](nested-data-web-controls-cs/samples/sample7.cs)]
@@ -179,12 +179,12 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Zack Jones 및 Liz Shulok 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](showing-multiple-records-per-row-with-the-datalist-control-cs.md)
-[다음](displaying-data-with-the-datalist-and-repeater-controls-vb.md)
+> [!div class="step-by-step"]
+> [이전](showing-multiple-records-per-row-with-the-datalist-control-cs.md)
+> [다음](displaying-data-with-the-datalist-and-repeater-controls-vb.md)

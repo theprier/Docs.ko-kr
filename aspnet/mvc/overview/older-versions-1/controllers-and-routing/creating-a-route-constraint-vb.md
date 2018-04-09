@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/creating-a-route-constraint-vb
-title: "경로 제약 조건 (VB) 만들기 | Microsoft Docs"
+title: 경로 제약 조건 (VB) 만들기 | Microsoft Docs
 author: StephenWalther
-description: "이 자습서에서는 Stephen Walther 브라우저 정규식과 경로 제약 조건을 만들어 일치 경로 요청 하는 방법을 제어 하는 방법을 보여 줍니다."
+description: 이 자습서에서는 Stephen Walther 브라우저 정규식과 경로 제약 조건을 만들어 일치 경로 요청 하는 방법을 제어 하는 방법을 보여 줍니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/16/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-a-route-constraint-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 67ff2666f4558abd4f8d9bddffd7aef8bb68d7bd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2f50b371ac679218b06c4848e6d33516d29d3a82
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-route-constraint-vb"></a>경로 제약 조건 (VB) 만들기
 ====================
@@ -35,7 +35,7 @@ ms.lasthandoff: 11/10/2017
 
 목록 1 제품을 라는 경로 포함 합니다. 브라우저 요청 목록 2에 포함 된 ProductController에 매핑할 제품 경로 사용할 수 있습니다.
 
-**2-Controllers\ProductController.vb 나열**
+**Listing 2 - Controllers\ProductController.vb**
 
 [!code-vb[Main](creating-a-route-constraint-vb/samples/sample2.vb)]
 
@@ -43,13 +43,13 @@ ms.lasthandoff: 11/10/2017
 
 목록 1에 정의 된 경로 다음 Url 중 하 나와 일치 합니다.
 
-- / 제품/23
+- /Product/23
 - / 제품/7
 
 안타깝게도, 경로 다음 Url 일치 합니다.
 
 - / 제품/핵심 성과 지표
-- / 제품/apple
+- /Product/apple
 
 Details() 작업에서 정수 매개 변수를 기대 하기 때문에 정수 값 이외의 값을 포함 하는 요청을 만드는 오류가 발생 합니다. 예를 들어 URL /Product/apple 브라우저에 입력 하는 경우 다음 받아볼 수 오류 페이지에는 그림 1에 있습니다.
 
@@ -68,15 +68,15 @@ Details() 작업에서 정수 매개 변수를 기대 하기 때문에 정수 �
 정규식 \d+ 하나 이상의 정수 일치합니다. 이 제한 사항으로 인해 다음 Url을 일치 시킬 제품 경로의:
 
 - / 제품/3
-- / 제품/8999
+- /Product/8999
 
 하지만 다음 Url에 없습니다.
 
-- / 제품/apple
+- /Product/apple
 - / 제품
 
 다른 경로에서 이러한 브라우저 요청을 처리 되는 일치 하는 경로가 없는 경우 또는 *리소스를 찾을 수* 오류가 반환 됩니다.
 
->[!div class="step-by-step"]
-[이전](creating-custom-routes-vb.md)
-[다음](creating-a-custom-route-constraint-vb.md)
+> [!div class="step-by-step"]
+> [이전](creating-custom-routes-vb.md)
+> [다음](creating-a-custom-route-constraint-vb.md)

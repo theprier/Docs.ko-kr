@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-3
-title: "3 단계: 관리 컨트롤러 만들기 | Microsoft Docs"
+title: '3 단계: 관리 컨트롤러 만들기 | Microsoft Docs'
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: 6fadfb6e96ae287fc5f81516b7535e03853c7e6a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 588d9d1b5d27759692cd840faabf2c3549c309d6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-3-creating-an-admin-controller"></a>3 단계: 관리 컨트롤러 만들기
 ====================
@@ -71,10 +71,10 @@ A **DbSet** 쿼리할 수 있는 엔터티 집합을 나타냅니다. 다음은 
 | 컨트롤러 메서드 | 설명 | URI | HTTP 메서드 |
 | --- | --- | --- | --- |
 | GetProducts | 모든 제품을 가져옵니다. | api/제품 | 가져오기 |
-| GetProduct | 제품을 id를 찾습니다. | api/제품/*id* | 가져오기 |
-| PutProduct | 제품을 업데이트합니다. | api/제품/*id* | PUT |
+| GetProduct | 제품을 id를 찾습니다. | api/products/*id* | 가져오기 |
+| PutProduct | 제품을 업데이트합니다. | api/products/*id* | PUT |
 | PostProduct | 새 제품을 만듭니다. | api/제품 | 올리기 |
-| DeleteProduct | 제품을 삭제합니다. | api/제품/*id* | Delete |
+| DeleteProduct | 제품을 삭제합니다. | api/products/*id* | Delete |
 
 각 메서드를 호출 `OrdersContext` 데이터베이스를 쿼리할 수 있습니다. 컬렉션 (PUT, POST 및 DELETE)을 수정 하는 메서드 호출 `db.SaveChanges` 데이터베이스에 변경 내용을 유지 합니다. 컨트롤러는 HTTP 요청에 따라 생성 및는 메서드가 반환 되기 전에 변경 내용을 유지 하는 데 필요한 이므로 다음 삭제 됩니다.
 
@@ -102,6 +102,6 @@ HTTP 요청을 보내기 "`http://localhost:*portnum*/api/admin`합니다. Entif
 
 [!code-console[Main](using-web-api-with-entity-framework-part-3/samples/sample6.cmd)]
 
->[!div class="step-by-step"]
-[이전](using-web-api-with-entity-framework-part-2.md)
-[다음](using-web-api-with-entity-framework-part-4.md)
+> [!div class="step-by-step"]
+> [이전](using-web-api-with-entity-framework-part-2.md)
+> [다음](using-web-api-with-entity-framework-part-4.md)

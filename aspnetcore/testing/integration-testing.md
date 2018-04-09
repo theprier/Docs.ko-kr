@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core에서 통합 테스트"
+title: ASP.NET Core의 통합 테스트
 author: ardalis
-description: "응용 프로그램의 구성 요소가 제대로 작동 하는지 확인 하는 테스트 ASP.NET Core 통합을 사용 하는 방법."
+description: 응용 프로그램의 구성 요소가 제대로 작동 하는지 확인 하는 테스트 ASP.NET Core 통합을 사용 하는 방법.
 manager: wpickett
 ms.author: riande
 ms.date: 09/25/2017
@@ -9,19 +9,19 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: testing/integration-testing
-ms.openlocfilehash: 8c28f1b4f66433eaebd9e474e784ecf3f1ac271b
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 3c618b2bd5919f6536601631eb4d21359a6bc03a
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="integration-testing-in-aspnet-core"></a>ASP.NET Core에서 통합 테스트
+# <a name="integration-tests-in-aspnet-core"></a>ASP.NET Core의 통합 테스트
 
 작성자: [Steve Smith](https://ardalis.com/)
 
 통합 테스트 함께 어셈블되어 때 응용 프로그램의 구성 요소가 제대로 작동 하는지 확인 합니다. ASP.NET Core는 네트워크 오버헤드 없이 요청을 처리하는 데 사용할 수 있는 기본 테스트 웹 호스트 및 단위 테스트 프레임 워크를 사용하는 통합 테스트를 지원합니다.
 
-[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/testing/integration-testing/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/testing/integration-testing/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="introduction-to-integration-testing"></a>통합 테스트 소개
 
@@ -147,8 +147,8 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 > [!NOTE]
 > 리팩터링를 완료 하 고 테스트가 통과 한 후 소스 제어에 대 한 변경 내용을 적용 하는 것이 좋습니다. 테스트 기반 개발을 공유 하는 경우 [커밋 빨간색-녹색-리팩터링 주기를 추가 하는 것이 좋습니다.](https://ardalis.com/rgrc-is-the-new-red-green-refactor-for-test-first-development)합니다.
 
-## <a name="resources"></a>리소스
+## <a name="resources"></a>자료
 
 * [유닛 테스트](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
 * [미들웨어](xref:fundamentals/middleware/index)
-* [컨트롤러 테스트](xref:mvc/controllers/testing)
+* [테스트 컨트롤러](xref:mvc/controllers/testing)

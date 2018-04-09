@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control
-title: "소스 제어 (Azure로 응용 프로그램 빌딩 실제 클라우드) | Microsoft Docs"
+title: 소스 제어 (Azure로 응용 프로그램 빌딩 실제 클라우드) | Microsoft Docs
 author: MikeWasson
-description: "실제 세계 클라우드로 응용 프로그램 빌딩 Azure 전자책 Scott Guthrie에서 개발 된 프레젠테이션을 기반으로 합니다. 13 패턴 및 그을 수 있는 방법에 설명..."
+description: 실제 세계 클라우드로 응용 프로그램 빌딩 Azure 전자책 Scott Guthrie에서 개발 된 프레젠테이션을 기반으로 합니다. 13 패턴 및 그을 수 있는 방법에 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/23/2015
 ms.topic: article
 ms.assetid: 2a0370d3-c2fb-4bf3-88b8-aad5a736c793
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control
 msc.type: authoredcontent
-ms.openlocfilehash: e3ce68b949199db35c18a09771d99d38562b74e9
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 0022458fa89a3be7ee8303750ad0e072df3b1bab
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="source-control-building-real-world-cloud-apps-with-azure"></a>소스 제어 (Azure로 응용 프로그램 빌딩 실제 클라우드)
 ====================
@@ -66,7 +66,7 @@ ms.lasthandoff: 01/24/2018
 
 큰 팀에 있을 수 있습니다; 각 새로운 기능에 대 한 별도 분기 더 작은 팀에 대 한 체크 인에서 development 분기로 모든 사용자를 할 수 있습니다.
 
-A 기능은 준비 하면 병합 하는 경우 각 기능에 대 한 분기를 설정한 경우 해당 소스 코드를 개발에 구성 변경 분기 하 고 다른 기능 분기 다운 합니다. 이 소스 코드 병합 프로세스는 시간이 오래 걸릴 수 있습니다 하 고 작동 하는 별도 기능을 그대로 유지 하면서를 방지 하려면 일부 팀 구현 호출 하는 대신  *[기능 설정/해제](http://en.wikipedia.org/wiki/Feature_toggle)*  (라고도 *플래그 기능*). 즉, 같은 분기에서는의 모든 기능에 대 한 코드의 모든 있지만 사용 하도록 설정 하거나 코드에서 스위치를 사용 하 여 각 기능을 사용 하지 않도록 설정 합니다. 예를 들어, A 기능은 수정 응용 프로그램 작업에 대 한 새 필드 및 캐싱 기능을 추가 하는 기능 B Development 분기에 두 기능에 대 한 코드 수 있지만 앱 합니다만 표시 변수는 true로 설정 된 경우 새 필드 됩니다만 사용할 캐싱을 다른 변수에 설정 된 경우 true로 합니다. A 기능 수준을 올릴 수 없습니다. 기능 B가 준비 표시 되지만 모든 기능 A 스위치를 off를 사용 하 여 프로덕션 환경에 코드를 승격할 수 있습니다 하 고 기능 B 전환 합니다. 그런 다음 기능 A를 완료 하 고 승격 나중 없는 소스 코드 병합을 모두 수 있습니다.
+A 기능은 준비 하면 병합 하는 경우 각 기능에 대 한 분기를 설정한 경우 해당 소스 코드를 개발에 구성 변경 분기 하 고 다른 기능 분기 다운 합니다. 이 소스 코드 병합 프로세스는 시간이 오래 걸릴 수 있습니다 하 고 작동 하는 별도 기능을 그대로 유지 하면서를 방지 하려면 일부 팀 구현 호출 하는 대신 *[기능 설정/해제](http://en.wikipedia.org/wiki/Feature_toggle)* (라고도 *플래그 기능*). 즉, 같은 분기에서는의 모든 기능에 대 한 코드의 모든 있지만 사용 하도록 설정 하거나 코드에서 스위치를 사용 하 여 각 기능을 사용 하지 않도록 설정 합니다. 예를 들어, A 기능은 수정 응용 프로그램 작업에 대 한 새 필드 및 캐싱 기능을 추가 하는 기능 B Development 분기에 두 기능에 대 한 코드 수 있지만 앱 합니다만 표시 변수는 true로 설정 된 경우 새 필드 됩니다만 사용할 캐싱을 다른 변수에 설정 된 경우 true로 합니다. A 기능 수준을 올릴 수 없습니다. 기능 B가 준비 표시 되지만 모든 기능 A 스위치를 off를 사용 하 여 프로덕션 환경에 코드를 승격할 수 있습니다 하 고 기능 B 전환 합니다. 그런 다음 기능 A를 완료 하 고 승격 나중 없는 소스 코드 병합을 모두 수 있습니다.
 
 예: 분기 또는 설정/해제를 사용 하 여 기능에 대 한 여부 이와 같은 분기 구조를 통해를 민첩 하 고 반복 가능한 방식으로 프로덕션 환경으로 개발에서 코드를 이동할 수 있습니다.
 
@@ -196,7 +196,7 @@ Visual Studio의 로컬 Git 리포지토리를 이용한 사용법은 무엇을 
 변경 하는 하 한 안전 하 고 예측 가능한 방식으로 동시에 얻을 수 하는 속도에 따라 소스 제어 시스템의 성공 여부를 측정 합니다. 를 찾을 경우 사용자가 직접 변경 하는 하루 또는에 수동 테스트 중 두 가지를 수행 해야 하기 때문에 무서 일까요 분 또는 1 시간 보다 더 이상 최저에서 변경을 수행할 수 있도록 process-wise 또는 test-wise 수행 해야 합니다. 작업을 수행 하는 한 가지 전략 연속 통합 및 지속적인 업데이트에서 다룰 것입니다를 구현 하는 것은 [다음 장에서](continuous-integration-and-continuous-delivery.md)합니다.
 
 <a id="resources"></a>
-## <a name="resources"></a>리소스
+## <a name="resources"></a>자료
 
 [Visual Studio Online](https://www.visualstudio.com/) 설명서 및 지원 서비스를 제공 하는 포털 및 계정에 등록할 수 있습니다. Visual Studio 2012 있고 Git를 사용 하려는 경우 참조 [Visual Studio Tools for Git](https://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c)합니다.
 
@@ -221,6 +221,6 @@ Visual Studio의 로컬 Git 리포지토리를 이용한 사용법은 무엇을 
 
 소스 제어에서 중요 한 정보를 유지 하기 위한 다른 방법에 대 한 정보를 참조 하십시오. [ASP.NET MVC: 소스 제어의 개인 설정의 유지](http://typecastexception.com/post/2014/04/06/ASPNET-MVC-Keep-Private-Settings-Out-of-Source-Control.aspx)합니다.
 
->[!div class="step-by-step"]
-[이전](automate-everything.md)
-[다음](continuous-integration-and-continuous-delivery.md)
+> [!div class="step-by-step"]
+> [이전](automate-everything.md)
+> [다음](continuous-integration-and-continuous-delivery.md)

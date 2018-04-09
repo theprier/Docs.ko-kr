@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-entity-framework-scaffolding-and-migrations
-title: "ASP.NET MVC 4 Entity Framework 스 캐 폴딩 및 마이그레이션 | Microsoft Docs"
+title: ASP.NET MVC 4 Entity Framework 스 캐 폴딩 및 마이그레이션 | Microsoft Docs
 author: rick-anderson
-description: "ASP.NET MVC 4 컨트롤러 메서드에 익숙한 경우 또는 완료에서 &quot;도우미, 폼 및 유효성 검사&quot; 실습 랩 알고 있어야..."
+description: ASP.NET MVC 4 컨트롤러 메서드에 익숙한 경우 또는 완료에서 &quot;도우미, 폼 및 유효성 검사&quot; 실습 랩 알고 있어야...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-entity-framework-scaffolding-and-migrations
 msc.type: authoredcontent
-ms.openlocfilehash: 396859463446d95c58271c4b00fc950bcd0d539a
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 548afe1926eed49841251832d54dc213da0cb753
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="aspnet-mvc-4-entity-framework-scaffolding-and-migrations"></a>ASP.NET MVC 4 Entity Framework 스 캐 폴딩 및 마이그레이션
 
@@ -44,7 +44,7 @@ ASP.NET MVC 4 컨트롤러 메서드에 익숙한 경우 또는 완료에서 &qu
 <a id="Prerequisites"></a>
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>필수 구성 요소
+### <a name="prerequisites"></a>전제 조건
 
 이 랩을 완료 하려면 다음 항목이 있어야 합니다.
 
@@ -98,7 +98,7 @@ ASP.NET MVC 스 캐 폴딩 데이터베이스 계층 상호 작용 하는 응용
     ![새 ASP.NET MVC 4 프로젝트 대화 상자](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image1.png "새 ASP.NET MVC 4 프로젝트 대화 상자")
 
     *새 ASP.NET MVC 4 프로젝트 대화 상자*
-3. 에 **새 ASP.NET MVC 4 프로젝트** 대화 상자 선택은 **인터넷 응용 프로그램** 서식 파일을 있는지 확인 하 고 **Razor** 은 선택한 **뷰 엔진**. 클릭 **확인** 프로젝트를 만듭니다.
+3. 에 **새 ASP.NET MVC 4 프로젝트** 대화 상자 선택은 **인터넷 응용 프로그램** 서식 파일을 있는지 확인 하 고 **Razor** 은 선택한 **뷰 엔진**. **확인**을 클릭해 프로젝트를 만듭니다.
 
     ![새 ASP.NET MVC 4 인터넷 응용 프로그램](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image2.png "새 ASP.NET MVC 4 인터넷 응용 프로그램")
 
@@ -109,7 +109,9 @@ ASP.NET MVC 스 캐 폴딩 데이터베이스 계층 상호 작용 하는 응용
     (코드 조각- *ASP.NET MVC 4 및 Entity Framework 마이그레이션-e x 1 사람 속성*)
 
 
-    [!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample1.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample1.cs)]
+~~~
 6. 클릭 **빌드 | 솔루션 빌드** 는 변경 내용을 저장 하는 프로젝트를 빌드합니다.
 
     ![응용 프로그램 빌드](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image3.png "응용 프로그램 빌드")
@@ -118,14 +120,14 @@ ASP.NET MVC 스 캐 폴딩 데이터베이스 계층 상호 작용 하는 응용
 7. 솔루션 탐색기에서 controllers 폴더를 마우스 오른쪽 단추로 클릭 하 고 선택 **추가 | 컨트롤러**합니다.
 8. 컨트롤러 이름을 *PersonController* 완료는 **스 캐 폴딩 옵션** 다음 값을 사용 합니다.
 
-    1. 에 **템플릿** 드롭 다운 목록에서 **읽기/쓰기 동작 및 뷰가, Entity Framework를 사용 하 여 포함 된 MVC 컨트롤러** 옵션.
-    2. 에 **모델 클래스** 드롭 다운 목록에서 **사람** 클래스입니다.
-    3. 에 **데이터 컨텍스트 클래스** 목록에서  **&lt;새 데이터 컨텍스트에... &gt;**. 모든 이름을 선택 하 고 클릭 **확인**합니다.
-    4. 에 **뷰** 드롭 다운 목록에서 다음 사항을 확인 **Razor** 을 선택 합니다.
+   1. 에 **템플릿** 드롭 다운 목록에서 **읽기/쓰기 동작 및 뷰가, Entity Framework를 사용 하 여 포함 된 MVC 컨트롤러** 옵션.
+   2. 에 **모델 클래스** 드롭 다운 목록에서 **사람** 클래스입니다.
+   3. 에 **데이터 컨텍스트 클래스** 목록에서  **&lt;새 데이터 컨텍스트에... &gt;**. 모든 이름을 선택 하 고 클릭 **확인**합니다.
+   4. 에 **뷰** 드롭 다운 목록에서 다음 사항을 확인 **Razor** 을 선택 합니다.
 
-    ![스 캐 폴딩에 사람 컨트롤러 추가](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image4.png "스 캐 폴딩에 사람 컨트롤러 추가")
+      ![스 캐 폴딩에 사람 컨트롤러 추가](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image4.png "스 캐 폴딩에 사람 컨트롤러 추가")
 
-    *스 캐 폴딩에 사람 컨트롤러 추가*
+      *스 캐 폴딩에 사람 컨트롤러 추가*
 9. 클릭 **추가** 사람에 대 한 새 컨트롤러 스 캐 폴딩을 만들려고 합니다. 이제 컨트롤러 작업 뿐만 아니라 뷰를 생성 한 합니다.
 
     ![스 캐 폴딩을 사용 사람 컨트롤러를 만든 다음](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image5.png "스 캐 폴딩을 사용 사람 컨트롤러를 만든 다음")
@@ -133,9 +135,9 @@ ASP.NET MVC 스 캐 폴딩 데이터베이스 계층 상호 작용 하는 응용
     *스 캐 폴딩을 사용 사람 컨트롤러를 만든 다음*
 10. 열기 **PersonController** 클래스입니다. 전체 CRUD 작업 메서드를 자동으로 생성 된 것을 확인 합니다.
 
-    ![Person 컨트롤러 내](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image6.png "사람 내부 컨트롤러")
+   ![Person 컨트롤러 내](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image6.png "사람 내부 컨트롤러")
 
-    *사람 컨트롤러 내*
+   *사람 컨트롤러 내*
 
 <a id="Ex1Task2"></a>
 
@@ -195,11 +197,15 @@ ASP.NET MVC 스 캐 폴딩 데이터베이스 계층 상호 작용 하는 응용
 3. 열기는 **Configuration.cs** Migrations 폴더에서 파일입니다. 클래스 생성자를 찾아 변경는 **AutomaticMigrationsEnabled** 값을 *true*합니다.
 
 
-    [!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample3.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample3.cs)]
+~~~
 4. 사용자 클래스를 열고 있는 사람의 중간 이름을 대 한 특성을 추가 합니다. 이 새 특성으로 모델을 변경 됩니다.
 
 
-    [!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample4.cs)]
+~~~
+[!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample4.cs)]
+~~~
 5. 선택 **빌드 | 솔루션 빌드** 메뉴에서 응용 프로그램을 빌드합니다.
 
     ![응용 프로그램 빌드](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image13.png "응용 프로그램 빌드")
@@ -247,9 +253,9 @@ ASP.NET MVC 스 캐 폴딩 데이터베이스 계층 상호 작용 하는 응용
     *컨트롤러 업데이트*
 10. **추가**를 클릭합니다. 값을 선택한 다음, **덮어쓰기 PersonController.cs** 및 **덮어쓰기 관련 뷰** 클릭 **확인**합니다.
 
-    ![컨트롤러 덮어쓰기 추가](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image19.png)
+   ![컨트롤러 덮어쓰기 추가](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image19.png)
 
-    *컨트롤러 업데이트*
+   *컨트롤러 업데이트*
 
 <a id="Ex1Task4"></a>
 
@@ -280,9 +286,9 @@ ASP.NET MVC 스 캐 폴딩 데이터베이스 계층 상호 작용 하는 응용
 <a id="Appendix_A_Installing_Visual_Studio_Express_2012_for_Web"></a>
 ## <a name="appendix-a-installing-visual-studio-express-2012-for-web"></a>부록 a: 설치 Visual Studio Express 2012 for Web
 
-설치할 수 있습니다 **Microsoft Visual Studio Express 2012 for Web** 또는 다른 &quot;Express&quot; 버전을 사용 하 여  **[Microsoft 웹 플랫폼 설치 관리자](https://www.microsoft.com/web/downloads/platform.aspx)** . 다음 지침을 설치 하는 데 필요한 단계를 안내 하 *Visual studio Express 2012 for Web* 를 사용 하 여 *Microsoft 웹 플랫폼 설치 관리자*합니다.
+설치할 수 있습니다 **Microsoft Visual Studio Express 2012 for Web** 또는 다른 &quot;Express&quot; 버전을 사용 하 여 **[Microsoft 웹 플랫폼 설치 관리자](https://www.microsoft.com/web/downloads/platform.aspx)**. 다음 지침을 설치 하는 데 필요한 단계를 안내 하 *Visual studio Express 2012 for Web* 를 사용 하 여 *Microsoft 웹 플랫폼 설치 관리자*합니다.
 
-1. 로 이동 [ [https://go.microsoft.com/? linkid = 9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169)합니다. 또는 이미 설치 된 웹 플랫폼 설치 관리자를 열 수 있습니다 및 제품에 대 한 검색 &quot; *Visual Studio Express 2012 for Web Windows Azure SDK와*&quot;합니다.
+1. 로 이동 [ [ https://go.microsoft.com/? linkid = 9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169)합니다. 또는 이미 설치 된 웹 플랫폼 설치 관리자를 열 수 있습니다 및 제품에 대 한 검색 &quot; <em>Visual Studio Express 2012 for Web Windows Azure SDK와</em>&quot;합니다.
 2. 클릭 **지금 설치**합니다. 없는 경우 **웹 플랫폼 설치 관리자** 를 다운로드 하 여 앱을 먼저 설치 이동 합니다.
 3. 한 번 **웹 플랫폼 설치 관리자** 열려 클릭 **설치** 는 설치 프로그램을 시작 합니다.
 
@@ -293,7 +299,7 @@ ASP.NET MVC 스 캐 폴딩 데이터베이스 계층 상호 작용 하는 응용
 
     ![사용 조건 동의](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image23.png)
 
-    사용 조건 동의
+    *사용 조건 동의*
 5. 다운로드 및 설치 프로세스가 완료 될 때까지 기다립니다.
 
     ![설치 진행률](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image24.png)
@@ -303,13 +309,13 @@ ASP.NET MVC 스 캐 폴딩 데이터베이스 계층 상호 작용 하는 응용
 
     ![설치 완료](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image25.png)
 
-    설치 완료
+    *설치 완료*
 7. 클릭 **종료** 를 웹 플랫폼 설치 관리자를 닫습니다.
 8. Visual Studio Express for Web을 열려면로 이동는 **시작** 화면를 쓰기 시작할 &quot; **VS Express**&quot;, 클릭는 **VS Express for Web** 바둑판식 배열입니다.
 
     ![웹 타일에 대 한 VS Express](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image26.png)
 
-    웹 타일에 대 한 VS Express
+    *웹 타일에 대 한 VS Express*
 
 <a id="AppendixB"></a>
 

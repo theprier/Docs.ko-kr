@@ -1,22 +1,22 @@
 ---
 uid: visual-studio/overview/2013/release-notes
-title: "ASP.NET 및 Web Tools for Visual Studio 2013 릴리스 정보 | Microsoft Docs"
+title: ASP.NET 및 Web Tools for Visual Studio 2013 릴리스 정보 | Microsoft Docs
 author: microsoft
-description: "이 문서에서는 Visual Studio 2013 용 ASP.NET 및 웹 도구 릴리스를 설명 합니다."
+description: 이 문서에서는 Visual Studio 2013 용 ASP.NET 및 웹 도구 릴리스를 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
 ms.topic: article
 ms.assetid: 08815768-2702-42ae-ae85-0a59934a11d1
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/release-notes
 msc.type: authoredcontent
-ms.openlocfilehash: 7f38a0f2693aeb2a4884b9c03719b583423957a8
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: e9ddd96f186564834ff6bb2c30cf0ed5444cbf1b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-and-web-tools-for-visual-studio-2013-release-notes"></a>ASP.NET 및 Web Tools for Visual Studio 2013 릴리스 정보
 ====================
@@ -201,14 +201,14 @@ MVC 프로젝트 템플릿을 사용 하도록 업데이트 되었습니다 [부
 
 ### <a name="attribute-routing"></a>특성 라우팅
 
-ASP.NET MVC의 작성자, Tim McCall 여 기여 덕분에 특성 라우팅을 지원 [http://attributerouting.net](http://attributerouting.net)합니다. 특성 라우팅을 사용 하 여 작업 및 컨트롤러를 주석을 달아 프로그램 경로 지정할 수 있습니다.
+ASP.NET MVC의 작성자, Tim McCall 여 기여 덕분에 특성 라우팅을 지원 [ http://attributerouting.net ](http://attributerouting.net)합니다. 특성 라우팅을 사용 하 여 작업 및 컨트롤러를 주석을 달아 프로그램 경로 지정할 수 있습니다.
 
 <a id="TOC11"></a>
 ## <a name="aspnet-web-api-2"></a>ASP.NET Web API 2
 
 ### <a name="attribute-routing"></a>특성 라우팅
 
-ASP.NET Web API는 이제 Tim McCall, 작성자에 의해 기여 덕분에 특성 라우팅을 지원 [http://attributerouting.net](http://attributerouting.net)합니다. 특성 라우팅을 사용 하 여 다음과 같은 컨트롤러를 주석을 달아 웹 API 경로 지정할 수 있습니다.
+ASP.NET Web API는 이제 Tim McCall, 작성자에 의해 기여 덕분에 특성 라우팅을 지원 [ http://attributerouting.net ](http://attributerouting.net)합니다. 특성 라우팅을 사용 하 여 다음과 같은 컨트롤러를 주석을 달아 웹 API 경로 지정할 수 있습니다.
 
 [!code-csharp[Main](release-notes/samples/sample1.cs)]
 
@@ -284,7 +284,7 @@ API 2에서는 웹 API 컨트롤러를 테스트 하는 것이 훨씬 쉽게 단
 
 Brock Allen에서 또 다른 훌륭한 기여를 통해 ASP.NET 완벽 하 게 지원 요청 공유 CORS (Cross Origin).
 
-브라우저 보안 다른 도메인에 대 한 AJAX 요청에서 웹 페이지를 방지 합니다. [CORS](http://www.w3.org/TR/cors/) 은 W3C 표준 동일 원본 정책을 완화 하도록 서버입니다. CORS를 사용 하는 서버는 다른 사용자를 거부 하는 동안 일부 크로스-원본 요청을 명시적으로 허용할 수 있습니다.
+브라우저의 보안 기능은 웹 페이지에서 다른 도메인으로 AJAX 요청을 전송하는 것을 막습니다. [CORS](http://www.w3.org/TR/cors/) 은 W3C 표준 동일 원본 정책을 완화 하도록 서버입니다. CORS를 사용하면 서버가 명시적으로 특정 교차 원본 요청만 허용하고, 다른 요청은 거부할 수 있습니다.
 
 Web API 2에는 이제 자동으로 실행 전 요청 처리를 포함 하 여 CORS를 지원 합니다. 자세한 내용은 참조 [ASP.NET Web API에서 크로스-원본 요청을 사용 하도록 설정](../../../web-api/overview/security/enabling-cross-origin-requests-in-web-api.md)합니다.
 
@@ -332,7 +332,7 @@ SignalR 2.0에 완전히 빌드될 [OWIN (.NET에 대 한 Open Web Interface)](h
 
 ### <a name="maphubs-and-mapconnection-are-now-mapsignalr"></a>MapHubs 및 MapConnection MapSignalR 됩니다.
 
-OWIN 표준 호환성을 위해 이러한 메서드로 변경 되었습니다 `MapSignalR`합니다. `MapSignalR`매개 변수는 모든 허브 매핑됩니다 없이 호출 (으로 `MapHubs` 버전에서 1.x); 개별 매핑할 **PersistentConnection** 개체, 형식 매개 변수 및으로 연결에 대 한 URL 확장명 연결 유형을 지정는 첫 번째 인수입니다.
+OWIN 표준 호환성을 위해 이러한 메서드로 변경 되었습니다 `MapSignalR`합니다. `MapSignalR` 매개 변수는 모든 허브 매핑됩니다 없이 호출 (으로 `MapHubs` 버전에서 1.x); 개별 매핑할 **PersistentConnection** 개체, 형식 매개 변수 및으로 연결에 대 한 URL 확장명 연결 유형을 지정는 첫 번째 인수입니다.
 
 `MapSignalR` 메서드 Owin 시작 클래스에서 호출 됩니다. Owin 시작 클래스;에 대 한 새 서식 파일을 포함 하는 visual Studio 2013 이 서식 파일을 사용 하려면 다음을 수행 합니다.
 
@@ -392,7 +392,7 @@ SignalR 2.0을 새 CORS 미들웨어를 추가 하려면 추가 `Microsoft.Owin.
 
 IOS 및 Android 클라이언트에서 MonoTouch 및 MonoDroid 구성 요소를 사용 하 여에 대 한 지원이 추가 되었습니다는 [Xamarin 라이브러리](https://xamarin.com/)합니다. 사용 하는 방법에 대 한 자세한 내용은 참조 하십시오. [Xamarin 구성 요소를 사용 하 여](https://github.com/SignalR/SignalR/wiki/Building-Mono.Mobile.sln)합니다. 이러한 구성 요소에서 사용할 수 있습니다는 [Xamarin 스토어](https://store.xamarin.com/) SignalR RTW 릴리스를 사용할 수 있습니다.
 
-<a id="portable"></a># # # 이식 가능한.NET 클라이언트
+<a id="portable"></a> # # # 이식 가능한.NET 클라이언트
 
 보다 잘 Silverlight, WinRT 플랫폼 간 개발을 용이 하 게 하 고 Windows Phone 클라이언트는 단일 이식 가능한.NET 클라이언트를 지 원하는 플랫폼은 다음과 같은 대체 되었습니다.
 
@@ -580,8 +580,8 @@ ASP.NET Razor 3에는 다음과 같은 새로운 기능이 포함 됩니다.
 - 탭에서 편집할 수 있습니다. Preivously,는 **문서 서식** 사용 하는 경우 명령, 자동 들여쓰기 및 서식을 Visual Studio에서 자동 올바르게 작동 하지 않았습니다 고 **탭 유지** 옵션입니다. 이 변경에는 Visual Studio 서식 탭에 대 한 Razor 코드에 대 한 서식을 해결 합니다.
 - 링크를 생성 하는 경우 URL 재작성 규칙에 대 한 지원 합니다.
 - 보안 투명 특성으로 제거 합니다.
- > [!NOTE]
- > 이 주요 변경 내용, 고 Razor 3 호환 되지 않는 mvc 4 및 이전 버전에서는 동안 Razor 2 m v c 5 또는 m v c 5에 대해 컴파일된 어셈블리와 호환 되지 않습니다.
+  > [!NOTE]
+  > 이 주요 변경 내용, 고 Razor 3 호환 되지 않는 mvc 4 및 이전 버전에서는 동안 Razor 2 m v c 5 또는 m v c 5에 대해 컴파일된 어셈블리와 호환 되지 않습니다.
 
 시험판 버전에서 Visual Studio 2013에서 해결 된 razor 3 문제 있습니다 [여기](https://aspnetwebstack.codeplex.com/workitem/list/advanced?keyword=&status=Resolved%7cClosed&type=All&priority=All&release=All%7cv5.0%2bPreview%7cv5.0%2bRC%7cv5.0%2bRTM&assignedTo=All&component=Web%2bPages%252fRazor&reasonClosed=Fixed&sortField=LastUpdatedDate&sortDirection=Descending&page=0)합니다.
 
@@ -603,7 +603,7 @@ ASP.NET 앱 일시 중단에는 사용자 환경 및 많은 수의 단일 컴퓨
 
 ### <a name="aspnet-web-api"></a>ASP.NET Web API
 
-1. `ODataQueryOptions<T>.ApplyTo(IQueryable)`반환 하지 `IQueryable<T>` 에 대 한 지원을 추가 하는 대로 항상 `$select` 및 `$expand`합니다.
+1. `ODataQueryOptions<T>.ApplyTo(IQueryable)` 반환 하지 `IQueryable<T>` 에 대 한 지원을 추가 하는 대로 항상 `$select` 및 `$expand`합니다.
 
     에 대 한 이전 샘플 `ODataQueryOptions<T>` 항상 캐스팅할의 반환 값에서 `ApplyTo` 를 `IQueryable<T>`합니다. 이전에서는이 되는 쿼리 옵션 때문에 이전 작업을 지원 하는지 (`$filter`, `$orderby`, `$skip`, `$top`) 쿼리의 셰이프를 변경 하지 마십시오. 지원 했으므로 `$select` 및 `$expand` 반환 값을 `ApplyTo` 됩니다 `IQueryable<T>` 항상 합니다.
 
@@ -632,7 +632,7 @@ ASP.NET 앱 일시 중단에는 사용자 환경 및 많은 수의 단일 컴퓨
 
     *'/' 응용 프로그램에서 서버 오류입니다.*
 
-    *클레임 형식 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier' 또는 'http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider'의 제공 된 ClaimsIdentity에 표시 되지 않았습니다. 위조 방지 토큰 지원 클레임 기반 인증을 사용 하도록 설정 하려면 구성 된 클레임 공급자 생성 ClaimsIdentity 인스턴스에서 이러한 클레임의 둘 다 제공할가 있는지 확인 하십시오. 구성 된 클레임 공급자 대신 다른 클레임 유형에 사용 하 여 고유 식별자로, AntiForgeryConfig.UniqueClaimTypeIdentifier 정적 속성을 설정 하 여 구성할 수 있습니다.*
+    <em>형식의 클레임이 '<http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier>'또는'<http://schemas.microsoft.com/accesscontrolservice/2010/07/claims/identityprovider>'에 제공 된 ClaimsIdentity 표시 되지 않았습니다. 위조 방지 토큰 지원 클레임 기반 인증을 사용 하도록 설정 하려면 구성 된 클레임 공급자 생성 ClaimsIdentity 인스턴스에서 이러한 클레임의 둘 다 제공할가 있는지 확인 하십시오. 구성 된 클레임 공급자 대신 다른 클레임 유형에 사용 하 여 고유 식별자로, AntiForgeryConfig.UniqueClaimTypeIdentifier 정적 속성을 설정 하 여 구성할 수 있습니다.</em>
 
     **해결 방법**:
 
@@ -647,14 +647,14 @@ ASP.NET 앱 일시 중단에는 사용자 환경 및 많은 수의 단일 컴퓨
 
     위의 오류를 해결 하려면 열고 *모든* 프로젝트 및 다음을 수행에 Web.config 파일 (Views 폴더에 있는 구성을 포함):
 
-    1. 버전 "4.0.0.0"의 "System.Web.Mvc"를 "5.0.0.0"의 모든 항목을 업데이트 합니다.
-    2. "System.Web.Helpers"의 "2.0.0.0" 버전의 항목을 모두 업데이트 &quot;System.Web.WebPages&quot; 및 &quot;System.Web.WebPages.Razor&quot; "3.0.0.0"를
+   1. 버전 "4.0.0.0"의 "System.Web.Mvc"를 "5.0.0.0"의 모든 항목을 업데이트 합니다.
+   2. "System.Web.Helpers"의 "2.0.0.0" 버전의 항목을 모두 업데이트 &quot;System.Web.WebPages&quot; 및 &quot;System.Web.WebPages.Razor&quot; "3.0.0.0"를
 
-    예를 들어 위의 변경을 수행한 후 어셈블리 바인딩 다음과 같이 표시 됩니다.
+      예를 들어 위의 변경을 수행한 후 어셈블리 바인딩 다음과 같이 표시 됩니다.
 
-    [!code-xml[Main](release-notes/samples/sample24.xml)]
+      [!code-xml[Main](release-notes/samples/sample24.xml)]
 
-    MVC 5로 MVC 4 프로젝트 업그레이드에 대 한 자세한 내용은 참조 하십시오. [ASP.NET MVC 4 및 Web API 프로젝트를 ASP.NET MVC 5 및 Web API 2로 업그레이드 하는 방법을](../../../mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2.md)합니다.
+      MVC 5로 MVC 4 프로젝트 업그레이드에 대 한 자세한 내용은 참조 하십시오. [ASP.NET MVC 4 및 Web API 프로젝트를 ASP.NET MVC 5 및 Web API 2로 업그레이드 하는 방법을](../../../mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2.md)합니다.
 3. 유효성 검사 비 가시적인 jQuery 함께 클라이언트 쪽 유효성 검사를 사용 하면 유효성 검사 메시지 올바르지 않을 경우에 따라 형식과 HTML input 요소에 대 한 = 'number'. 유효성 검사 오류에 대해 필요한 값 ("The이 지 필드는 필수")가 표시 유효한 숫자가 필수임 올바른 메시지 대신 잘못 된 숫자 입력 된 경우.
 
     이 문제는 일반적으로 만들기 및 편집 보기에는 정수 속성을 사용 하 여 모델에 대 한 스 캐 폴드 코드로 발견 됩니다.
@@ -697,13 +697,13 @@ MVC Web Forms 프로젝트를 추가 하려면 새 스 캐 폴드 항목을 추�
 - MVC에 대 한이 오류를 해결 하려면 새 스 캐 폴드 항목을 추가 하 고 MVC 5 종속성 선택 (최소 또는 전체). 이 프로세스의 모든 필요한 변경 사항을 프로젝트에 추가 합니다.
 - 웹 API에 대 한이 오류를 해결 하려면:
 
-    1. 프로젝트에 경우 WebApiConfig 클래스를 추가 합니다.
+  1. 프로젝트에 경우 WebApiConfig 클래스를 추가 합니다.
 
-        [!code-csharp[Main](release-notes/samples/sample25.cs)]
+      [!code-csharp[Main](release-notes/samples/sample25.cs)]
 
-        [!code-vb[Main](release-notes/samples/sample26.vb)]
-    2. 응용 프로그램에서 WebApiConfig.Register 구성\_Global.asax에 다음과 같이 메서드를 시작 합니다.
+      [!code-vb[Main](release-notes/samples/sample26.vb)]
+  2. 응용 프로그램에서 WebApiConfig.Register 구성\_Global.asax에 다음과 같이 메서드를 시작 합니다.
 
-        [!code-csharp[Main](release-notes/samples/sample27.cs)]
+      [!code-csharp[Main](release-notes/samples/sample27.cs)]
 
-        [!code-vb[Main](release-notes/samples/sample28.vb)]
+      [!code-vb[Main](release-notes/samples/sample28.vb)]

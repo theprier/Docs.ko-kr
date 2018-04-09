@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/create-a-database
-title: "데이터베이스 만들기 | Microsoft Docs"
+title: 데이터베이스 만들기 | Microsoft Docs
 author: microsoft
-description: "2 단계를 모두 dinner 보유 하는 데이터베이스를 만들고 RSVP 업그레이드 되었으며 수정 응용 프로그램에 대 한 데이터 단계를 보여 줍니다."
+description: 2 단계를 모두 dinner 보유 하는 데이터베이스를 만들고 RSVP 업그레이드 되었으며 수정 응용 프로그램에 대 한 데이터 단계를 보여 줍니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/create-a-database
 msc.type: authoredcontent
-ms.openlocfilehash: 7635722fc357356edd06fb4cff301a8c4dfebbef
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ba28d671bf13ec54b83b876462e2c23f90310037
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="create-a-database"></a>데이터베이스 만들기
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [PDF 다운로드](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
 
@@ -131,6 +131,6 @@ Dinners 테이블에 몇 가지 샘플 데이터를 추가 하 여 완료 해 �
 
 이 데이터베이스를 만드는 하는 작업을 완료 했습니다. 이제 쿼리 하 고 업데이트를 사용할 수 있는 모델 클래스를 만들어 보겠습니다.
 
->[!div class="step-by-step"]
-[이전](create-a-new-aspnet-mvc-project.md)
-[다음](build-a-model-with-business-rule-validations.md)
+> [!div class="step-by-step"]
+> [이전](create-a-new-aspnet-mvc-project.md)
+> [다음](build-a-model-with-business-rule-validations.md)

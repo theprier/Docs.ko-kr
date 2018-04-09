@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application
-title: "ASP.NET MVC 응용 프로그램 (9 / 10)에서 저장소 및 작업 패턴의 단위 구현 | Microsoft Docs"
+title: ASP.NET MVC 응용 프로그램 (9 / 10)에서 저장소 및 작업 패턴의 단위 구현 | Microsoft Docs
 author: tdykstra
-description: "Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 5 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 4 응용 프로그램을 만드는 방법을 보여 줍니다 중..."
+description: Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 5 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 4 응용 프로그램을 만드는 방법을 보여 줍니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/30/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 02b1de31b9513247facc92bc6b72247865d176f9
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1f870b61658686769304a7809bde62e66da3bd0c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="implementing-the-repository-and-unit-of-work-patterns-in-an-aspnet-mvc-application-9-of-10"></a>ASP.NET MVC 응용 프로그램 (9 / 10)에서 저장소 및 단위의 작업 패턴 구현
 ====================
@@ -24,7 +24,7 @@ ms.lasthandoff: 01/24/2018
 
 [완료 된 프로젝트를 다운로드 합니다.](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
 
-> Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 5 Code First 및 Visual Studio 2012를 사용 하 여 ASP.NET MVC 4 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대 한 정보를 참조 하십시오. [시리즈의 첫 번째 자습서](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)합니다. 시작 부분에서 자습서 시리즈를 시작할 수 있습니다 또는 [이 장의 대 한 시작 프로젝트 다운로드](building-the-ef5-mvc4-chapter-downloads.md) 여기에서 시작 하 고 있습니다.
+> Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 5 Code First 및 Visual Studio 2012를 사용 하 여 ASP.NET MVC 4 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)를 참조하세요. 시작 부분에서 자습서 시리즈를 시작할 수 있습니다 또는 [이 장의 대 한 시작 프로젝트 다운로드](building-the-ef5-mvc4-chapter-downloads.md) 여기에서 시작 하 고 있습니다.
 > 
 > > [!NOTE] 
 > > 
@@ -35,7 +35,7 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="the-repository-and-unit-of-work-patterns"></a>리포지토리 및 작업 패턴의 단위
 
-리포지토리 및 작업 패턴의 단위는 데이터 액세스 계층 및 응용 프로그램의 비즈니스 논리 계층 간에 추상화 계층을 만드는 데 사용 됩니다. 이러한 패턴을 구현 하는 데이터 저장소의 변경 내용 으로부터 응용 프로그램을 분리 하는 데 도움이 및 자동화 된 단위 테스트 또는 테스트 기반 개발 (TDD)으로 기여할 수입니다.
+리포지토리 및 작업 패턴의 단위는 데이터 액세스 계층 및 응용 프로그램의 비즈니스 논리 계층 간에 추상화 계층을 만드는 데 사용 됩니다. 이러한 패턴을 구현하면 데이터 저장소의 변경 내용으로부터 응용 프로그램을 격리할 수 있으며 자동화된 단위 테스트 또는 TDD(테스트 중심 개발)를 용이하게 수행할 수 있습니다.
 
 이 자습서에서는 각 엔터티 형식에 대 한 저장소 클래스를 구현 합니다. 에 대 한는 `Student` 리포지토리 인터페이스와 저장소 클래스를 만들어야 하는 엔터티 형식입니다. 컨트롤러에서 저장소를 인스턴스화하는 경우에 컨트롤러 리포지토리 인터페이스를 구현 하는 모든 개체에 대 한 참조를 받아들일 수 있도록 인터페이스를 사용 합니다. 컨트롤러는 웹 서버에서 실행 되 면 Entity Framework와 함께 작동 하는 리포지토리의 받습니다. 컨트롤러는 단위 테스트 클래스에서 실행 되 면 메모리 내 컬렉션과 같은 테스트를 쉽게 조작할 수 있는 방식으로 저장 된 데이터와 작동 하는 리포지토리의 받습니다.
 
@@ -78,7 +78,7 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="change-the-student-controller-to-use-the-repository"></a>리포지토리를 사용 하도록 학생 컨트롤러 변경
 
-*StudentController.cs*, 클래스의 현재 코드를 다음 코드로 바꿉니다. 변경 내용은 강조 표시 됩니다.
+*StudentController.cs*, 클래스의 현재 코드를 다음 코드로 바꿉니다. 변경 내용은 강조 표시되어 있습니다.
 
 [!code-csharp[Main](implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application/samples/sample4.cs?highlight=13-18,44,75,77,102-103,120,137-138,159,172-174,186)]
 
@@ -124,7 +124,7 @@ CRUD 메서드 저장소 이제 컨텍스트 대신 호출 됩니다.
 
 코드의 원래 버전에 `students` 로 형식화 되는 `IQueryable` 개체입니다. 쿼리는 같은 메서드를 사용 하 여 컬렉션으로 변환 될 때까지 데이터베이스에 전송 되지 않고 `ToList`, 인덱스 뷰 학생 모델에 액세스 될 때까지 발생 하지 않습니다. `Where` 위의 원본 코드에서 메서드는 `WHERE` 절에서 데이터베이스에 전송 되는 SQL 쿼리 합니다. 그러면 데이터베이스에서 선택한 엔터티만 반환 되도록 것입니다. 그러나 변경의 결과로 `context.Students` 를 `studentRepository.GetStudents()`, `students` 문이이 변수는 `IEnumerable` 데이터베이스에서 모든 학생을 포함 하는 컬렉션입니다. 적용의 최종 결과 `Where` 메서드는 같지만 완료 이제 웹 서버 및 데이터베이스가 아니라 메모리에 작업입니다. 많은 양의 데이터를 반환 하는 쿼리의 경우이 수 있습니다. 수. 있습니다
 
-> [!TIP] 
+> [!TIP]
 > 
 > **IQueryable vs입니다. IEnumerable**
 > 
@@ -249,6 +249,6 @@ CRUD 메서드 저장소 이제 컨텍스트 대신 호출 됩니다.
 
 다른 Entity Framework 리소스에 대 한 링크에서 확인할 수 있습니다는 [ASP.NET 데이터 액세스 콘텐츠 맵](../../../../whitepapers/aspnet-data-access-content-map.md)합니다.
 
->[!div class="step-by-step"]
-[이전](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application.md)
-[다음](advanced-entity-framework-scenarios-for-an-mvc-web-application.md)
+> [!div class="step-by-step"]
+> [이전](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+> [다음](advanced-entity-framework-scenarios-for-an-mvc-web-application.md)

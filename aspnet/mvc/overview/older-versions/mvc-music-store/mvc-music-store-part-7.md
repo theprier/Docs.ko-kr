@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-7
-title: "7 단계: 멤버 자격 및 권한 부여 | Microsoft Docs"
+title: '7 단계: 멤버 자격 및 권한 부여 | Microsoft Docs'
 author: jongalloway
-description: "이 자습서 시리즈 모든 ASP.NET MVC Music Store 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 7 부에서는 멤버 자격 및 권한 부여에 설명 합니다."
+description: 이 자습서 시리즈 모든 ASP.NET MVC Music Store 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 7 부에서는 멤버 자격 및 권한 부여에 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/13/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: db459de687db862be00a9b59ff5b1b238fa75061
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: a0f599da4691c5bb7c8e6f01625fc0e94ce0eac8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-7-membership-and-authorization"></a>7 단계: 멤버 자격 및 권한 부여
 ====================
@@ -110,6 +110,6 @@ MvcMusicStore로 시작 하도록 컨트롤러와 모델 클래스에 대 한 �
 
 이 새 관리자 계정으로 로그온 한 후 we 're 전으로 앨범 편집 화면으로 이동할 수 있습니다.
 
->[!div class="step-by-step"]
-[이전](mvc-music-store-part-6.md)
-[다음](mvc-music-store-part-8.md)
+> [!div class="step-by-step"]
+> [이전](mvc-music-store-part-6.md)
+> [다음](mvc-music-store-part-8.md)

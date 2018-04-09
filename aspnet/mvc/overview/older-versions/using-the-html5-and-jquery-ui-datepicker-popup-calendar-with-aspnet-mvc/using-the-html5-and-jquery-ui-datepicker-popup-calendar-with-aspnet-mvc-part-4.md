@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4
-title: "ASP.NET MVC-4 부 HTML5 및 jQuery UI Datepicker 팝업 일정 사용 | Microsoft Docs"
+title: ASP.NET MVC-4 부 HTML5 및 jQuery UI Datepicker 팝업 일정 사용 | Microsoft Docs
 author: Rick-Anderson
-description: "이 자습서는 기본적인 편집기 템플릿과 표시 템플릿은 ASP.NET MV에서 jQuery UI datepicker 팝업 일정 사용 방법 알려 드리겠습니다 중..."
+description: 이 자습서는 기본적인 편집기 템플릿과 표시 템플릿은 ASP.NET MV에서 jQuery UI datepicker 팝업 일정 사용 방법 알려 드리겠습니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/29/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4
 msc.type: authoredcontent
-ms.openlocfilehash: 32211465adeb1353908daa1014d188b84389e1a7
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c6df727107b0a045341badefbf99eec773cd4eff
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-4"></a>ASP.NET MVC-4 부 HTML5 및 jQuery UI Datepicker 팝업 일정 사용
 ====================
@@ -178,5 +178,5 @@ Ctrl+F5를 눌러 응용 프로그램을 실행합니다. 편집 링크를 선�
 - Datepicker 컨트롤 지역화 하는 방법에 대 한 정보를 참조 하십시오. [UI/Datepicker/지역화](http://docs.jquery.com/UI/Datepicker/Localization)합니다.
 - ASP.NET MVC 템플릿에 대 한 자세한 내용은 Brad Wilson의 블로그 시리즈에 참조 [ASP.NET MVC 2 Templates](http://bradwilson.typepad.com/blog/2009/10/aspnet-mvc-2-templates-part-1-introduction.html)합니다. 계열을 ASP.NET MVC 2 용으로 작성 된, 하지만 자료는 ASP.NET MVC의 최신 버전은 여전히 적용 됩니다.
 
->[!div class="step-by-step"]
-[이전](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3.md)
+> [!div class="step-by-step"]
+> [이전](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3.md)

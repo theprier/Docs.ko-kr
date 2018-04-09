@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/older-versions/build-restful-apis-with-aspnet-web-api
-title: "ASP.NET Web API 사용 하 여 RESTful Api 빌드 | Microsoft Docs"
+title: ASP.NET Web API 사용 하 여 RESTful Api 빌드 | Microsoft Docs
 author: rick-anderson
-description: "최근 몇 년 동안 HTTP HTML 페이지를 제공 하는 데 아닌지 지우기 사항이 되었습니다. 소수의 o를 사용 하 여 웹 Api를 구축 하기 위한 강력한 플랫폼 이기도 중..."
+description: 최근 몇 년 동안 HTTP HTML 페이지를 제공 하는 데 아닌지 지우기 사항이 되었습니다. 소수의 o를 사용 하 여 웹 Api를 구축 하기 위한 강력한 플랫폼 이기도 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/build-restful-apis-with-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 49dcd86649ceb77cd5a02ebeb5d9d7b11ff4f344
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 320409cd395384a608a07307a56d18105d45de14
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="build-restful-apis-with-aspnet-web-api"></a>ASP.NET Web API 사용 하 여 RESTful Api 빌드
 ====================
@@ -25,12 +25,12 @@ ms.lasthandoff: 11/10/2017
 > 최근 몇 년 동안 HTTP HTML 페이지를 제공 하는 데 아닌지 지우기 사항이 되었습니다. 와 같은 몇 가지 간단한 개념 더하기는 소수의 동사 (GET, POST 등)을 사용 하는 웹 Api를 구축 하기 위한 강력한 플랫폼 이기도 *Uri* 및 *헤더*합니다. ASP.NET Web API는 HTTP 프로그래밍을 단순화 하는 구성 요소 집합입니다. ASP.NET MVC 런타임 기반의 빌드하 때문에 Web API http 전송 낮은 수준의 세부 정보를 자동으로 처리 합니다. 같은 시간에 Web API HTTP 프로그래밍 모델을 자연스럽 게 표시합니다. 사실, 하나의 웹 API의 ´ ֲ *하지* HTTP 현실을 추상화 합니다. 결과적으로, 웹 API는 유연 하 고 쉽게 확장할 수 있습니다. 이 실습 랩에서 연락처 관리자 응용 프로그램에 대 한 간단한 REST API를 만들려는 웹 API를 사용 합니다. 또한 API를 사용 하는 클라이언트를 작성 합니다. REST 아키텍처 스타일은 분명 하지 않지만 HTTP에 대 한 유효한 접근 방법 HTTP-활용 하는 효과적인 방법을 것으로 입증 된 합니다. 연락처의 관리자는 RESTful 적용, 추가 및 제거 등의 연락처에 대 한 노출 합니다. 이 랩에서 HTTP, REST, 기본적으로 이해 하며 HTML, JavaScript 및 jQuery 대 한 기본 실무 지식이 있다고 가정 합니다.
 > 
 > > [!NOTE]
-> > ASP.NET 웹 사이트에 ASP.NET Web API 프레임 워크에서 전용 영역 [ [https://asp.net/web-api](https://asp.net/web-api)](https://asp.net/web-api)합니다. 이 사이트를 계속 최신 정보, 샘플 및 웹 API와 관련 된 뉴스 있으므로 체크 자주 제공할 거의 모든 장치 또는 개발 프레임 워크를 사용할 수 있는 사용자 지정 웹 Api를 만드는 아트를 철저히 하려는 경우.
+> > ASP.NET 웹 사이트에 ASP.NET Web API 프레임 워크에서 전용 영역 [ [ https://asp.net/web-api ](https://asp.net/web-api) ](https://asp.net/web-api)합니다. 이 사이트를 계속 최신 정보, 샘플 및 웹 API와 관련 된 뉴스 있으므로 체크 자주 제공할 거의 모든 장치 또는 개발 프레임 워크를 사용할 수 있는 사용자 지정 웹 Api를 만드는 아트를 철저히 하려는 경우.
 > > 
 > > ASP.NET Web API, ASP.NET MVC 4 비슷합니다 사용 가능한 종속성 주입 프레임 워크의 여러 상당히 쉽게 사용할 수 있도록 하는 컨트롤러에서 서비스 계층을 구분 측면에서 뛰어난 유연성을 있습니다. MSDN에서 다운로드할 수 있는 ASP.NET Web API 프로젝트에서 종속성 주입을 위한 Ninject를 사용 하는 방법을 보여 주는 좋은 예제 중인 있고 [여기](https://code.msdn.microsoft.com/ASPNET-Web-API-JavaScript-d0d64dd7)합니다.
 > 
 > 
-> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409)합니다.
+> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [ https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409 ](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409)합니다.
 
 
 <a id="Objectives"></a>
@@ -42,7 +42,7 @@ ms.lasthandoff: 11/10/2017
 - HTML 클라이언트에서 API를 호출 합니다.
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>필수 구성 요소
+### <a name="prerequisites"></a>전제 조건
 
 다음은이 실습 랩을 완료 하려면 필요 합니다.
 
@@ -172,7 +172,9 @@ ms.lasthandoff: 11/10/2017
     (코드 조각- *웹 API 랩-Ex01-연락처 클래스*)
 
 
-    [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample2.cs)]
+~~~
+[!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample2.cs)]
+~~~
 4. 에 **ContactController** 클래스, 단어를 선택 **문자열** 의 메서드 정의에 **가져오기** 메서드와 해당 단어 입력 *연락처*합니다. 표시기는 단어를으로 입력 되 면 단어의 시작 부분에 표시 됩니다 **연락처**합니다. 키를 누른 채 중 하나는 **Ctrl** 키 마침표 (.) 키를 누르거나 마우스를 사용 하 여 코드 편집기 자동으로 채울에서 지원 대화 상자를 열려면 아이콘을 클릭는 **를 사용 하 여** 는 모델에 대 한 지시문 네임 스페이스입니다.
 
     ![네임 스페이스 선언에 대 한 Intellisense 지원을 사용 하 여](build-restful-apis-with-aspnet-web-api/_static/image12.png)
@@ -185,16 +187,16 @@ ms.lasthandoff: 11/10/2017
     [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample3.cs)]
 6. 키를 눌러 **F5** 브라우저에서 웹 응용 프로그램을 디버깅 합니다. 변경 된 API의 응답 출력에를 보려면 다음 단계를 수행 합니다.
 
-    1. 브라우저가 열리면 되 면 키를 눌러 **F12** 아직 개발자 도구 열려 있지 않은 경우.
-    2. 클릭는 **네트워크** 탭 합니다.
-    3. 키를 눌러는 **캡처 시작** 단추입니다.
-    4. URL 접미사 추가 **/api/연락처** 누릅니다 주소 표시줄에서 URL로의 **Enter** 키입니다.
-    5. 키를 눌러는 **자세히 보기로 이동** 단추입니다.
-    6. 선택 된 **응답 본문** 탭 합니다. 연락처 인스턴스의 배열 serialize 된 형식을 나타내는 JSON 문자열로 표시 됩니다.
+   1. 브라우저가 열리면 되 면 키를 눌러 **F12** 아직 개발자 도구 열려 있지 않은 경우.
+   2. 클릭는 **네트워크** 탭 합니다.
+   3. 키를 눌러는 **캡처 시작** 단추입니다.
+   4. URL 접미사 추가 **/api/연락처** 누릅니다 주소 표시줄에서 URL로의 **Enter** 키입니다.
+   5. 키를 눌러는 **자세히 보기로 이동** 단추입니다.
+   6. 선택 된 **응답 본문** 탭 합니다. 연락처 인스턴스의 배열 serialize 된 형식을 나타내는 JSON 문자열로 표시 됩니다.
 
-    ![JSON 직렬화는 복잡 한 Web API 메서드 호출의 출력](build-restful-apis-with-aspnet-web-api/_static/image13.png "JSON 직렬화는 복잡 한 Web API 메서드 호출의 출력")
+      ![JSON 직렬화는 복잡 한 Web API 메서드 호출의 출력](build-restful-apis-with-aspnet-web-api/_static/image13.png "JSON 직렬화는 복잡 한 Web API 메서드 호출의 출력")
 
-    *복잡 한 Web API 메서드 호출의 JSON으로 직렬화 된 출력*
+      *복잡 한 Web API 메서드 호출의 JSON으로 직렬화 된 출력*
 
 <a id="Ex1Task4"></a>
 
@@ -221,7 +223,9 @@ ms.lasthandoff: 11/10/2017
 4. 사용 하 여 추가 지시문을 **ContactRepository.cs** 모델 네임 스페이스를 포함 하는 파일입니다.
 
 
-    [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample4.cs)]
+~~~
+[!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample4.cs)]
+~~~
 5. 다음 강조 표시 된 코드를 추가 하는 **ContactRepository.cs** GetAllContacts 메서드를 구현 하는 파일입니다.
 
     (코드 조각- *웹 API 랩-Ex01-연락처 리포지토리에*)
@@ -231,7 +235,9 @@ ms.lasthandoff: 11/10/2017
 7. 다음 추가 문을 사용 하 여 파일의 네임 스페이스 선언 섹션에 있습니다.
 
 
-    [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample6.cs)]
+~~~
+[!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample6.cs)]
+~~~
 8. 다음 강조 표시 된 코드를 추가 하는 **ContactController.cs** 서비스 구현의 멤버가 만들 수는 클래스의 나머지 부분에 사용 하 여 있도록 저장소의 인스턴스를 나타내는 전용 필드를 추가 하는 클래스입니다.
 
     (코드 조각- *Web API 랩-Ex01-연락처 컨트롤러*)
@@ -244,9 +250,9 @@ ms.lasthandoff: 11/10/2017
     [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample8.cs)]
 10. 에 중단점을 설정의 **ContactController**의 **가져오기** 메서드 정의 합니다.
 
-    ![연락처 컨트롤러에 중단점을 추가](build-restful-apis-with-aspnet-web-api/_static/image17.png "연락처 컨트롤러에 중단점을 추가 합니다.")
+   ![연락처 컨트롤러에 중단점을 추가](build-restful-apis-with-aspnet-web-api/_static/image17.png "연락처 컨트롤러에 중단점을 추가 합니다.")
 
-    *연락처 컨트롤러에 중단점을 추가합니다.*
+   *연락처 컨트롤러에 중단점을 추가합니다.*
 11. **F5** 키를 눌러 응용 프로그램을 실행합니다.
 12. 브라우저를 열 때 키를 눌러 **F12** 개발자 도구를 엽니다.
 13. 클릭는 **네트워크** 탭 합니다.
@@ -254,10 +260,10 @@ ms.lasthandoff: 11/10/2017
 15. 접미사가 있는 주소 표시줄에 URL 추가 **/api/연락처** 한 키를 누릅니다 **Enter** API 컨트롤러를 로드할 수 있습니다.
 16. Visual Studio 2012를 한 번 나눌 **가져오기** 메서드 실행을 시작 합니다.
 
-    ![Get 메서드 내에서 주요](build-restful-apis-with-aspnet-web-api/_static/image18.png "Get 메서드 내에서 분리")
+   ![Get 메서드 내에서 주요](build-restful-apis-with-aspnet-web-api/_static/image18.png "Get 메서드 내에서 분리")
 
-    *Get 메서드 내에서 분리*
-17. 키를 눌러 **F5** 를 계속 합니다.
+   *Get 메서드 내에서 분리*
+17. **F5**를 눌러 계속합니다.
 18. 로 돌아갈 Internet Explorer 없는에 포커스가 있을 경우. 네트워크 캡처 창을 note 합니다.
 
     ![네트워크에서 Internet Explorer Web API 호출의 결과 보여 주는 보기](build-restful-apis-with-aspnet-web-api/_static/image19.png "네트워크 Web API 호출의 결과 보여 주는 Internet Explorer에서 보기")
@@ -287,12 +293,12 @@ ms.lasthandoff: 11/10/2017
 1. 실행 **Visual Studio 2012 Express for Web**이 이동 작업을 수행 하는, **시작** 유형과 **VS Express for Web** 다음 키를 누릅니다 **Enter**합니다.
 2. 열기는 **시작** 솔루션에 있는 **소스/Ex02-ReadWriteWebAPI/시작/** 폴더입니다. 그렇지 않은 경우 계속 사용할 수도 있습니다는 **끝** 솔루션, 이전 연습을 완료 하 여 가져옵니다.
 
-    1. 제공 된 연 경우 **시작** 를 일부 누락 된 NuGet 패키지를 다운로드 해야 합니다 솔루션을 계속 하려면. 이 작업을 수행 하려면는 **프로젝트** 메뉴와 선택 **NuGet 패키지 관리**합니다.
-    2. 에 **NuGet 패키지 관리** 대화 상자를 클릭 하 여 **복원** 누락 된 패키지를 다운로드 하려면.
-    3. 마지막으로,를 클릭 하 여 솔루션을 빌드합니다 **빌드** | **솔루션 빌드**합니다.
+   1. 제공 된 연 경우 **시작** 를 일부 누락 된 NuGet 패키지를 다운로드 해야 합니다 솔루션을 계속 하려면. 이 작업을 수행 하려면는 **프로젝트** 메뉴와 선택 **NuGet 패키지 관리**합니다.
+   2. 에 **NuGet 패키지 관리** 대화 상자를 클릭 하 여 **복원** 누락 된 패키지를 다운로드 하려면.
+   3. 마지막으로,를 클릭 하 여 솔루션을 빌드합니다 **빌드** | **솔루션 빌드**합니다.
 
-    > [!NOTE]
-    > NuGet을 사용 하 여의 장점 중 하나 없습니다 있는입니다 써 해당 프로젝트의 모든 라이브러리를 프로젝트 크기를 줄이면 합니다. NuGet 파워 도구 Packages.config 파일에서 패키지 버전을 지정 하 여 해야 합니다를 처음으로 프로젝트를 실행 하면 필요한 라이브러리를 다운로드할 수 있습니다. 이 때문에이 랩에서 기존 솔루션을 연 후 다음이 단계를 실행 해야 합니다.
+      > [!NOTE]
+      > NuGet을 사용 하 여의 장점 중 하나 없습니다 있는입니다 써 해당 프로젝트의 모든 라이브러리를 프로젝트 크기를 줄이면 합니다. NuGet 파워 도구 Packages.config 파일에서 패키지 버전을 지정 하 여 해야 합니다를 처음으로 프로젝트를 실행 하면 필요한 라이브러리를 다운로드할 수 있습니다. 이 때문에이 랩에서 기존 솔루션을 연 후 다음이 단계를 실행 해야 합니다.
 3. 열기는 **Services/ContactRepository.cs** 파일입니다.
 
 <a id="Ex2Task2"></a>
@@ -341,21 +347,25 @@ ms.lasthandoff: 11/10/2017
 1. 열고 **Visual Studio 2012 Express for Web** 열려 있지 않으면입니다.
 2. 열기는 **시작** 솔루션에 있는 **소스/Ex03-ConsumingWebAPI/시작/** 폴더입니다. 그렇지 않은 경우 계속 사용할 수도 있습니다는 **끝** 솔루션, 이전 연습을 완료 하 여 가져옵니다.
 
-    1. 제공 된 연 경우 **시작** 를 일부 누락 된 NuGet 패키지를 다운로드 해야 합니다 솔루션을 계속 하려면. 이 작업을 수행 하려면는 **프로젝트** 메뉴와 선택 **NuGet 패키지 관리**합니다.
-    2. 에 **NuGet 패키지 관리** 대화 상자를 클릭 하 여 **복원** 누락 된 패키지를 다운로드 하려면.
-    3. 마지막으로,를 클릭 하 여 솔루션을 빌드합니다 **빌드** | **솔루션 빌드**합니다.
+   1. 제공 된 연 경우 **시작** 를 일부 누락 된 NuGet 패키지를 다운로드 해야 합니다 솔루션을 계속 하려면. 이 작업을 수행 하려면는 **프로젝트** 메뉴와 선택 **NuGet 패키지 관리**합니다.
+   2. 에 **NuGet 패키지 관리** 대화 상자를 클릭 하 여 **복원** 누락 된 패키지를 다운로드 하려면.
+   3. 마지막으로,를 클릭 하 여 솔루션을 빌드합니다 **빌드** | **솔루션 빌드**합니다.
 
-    > [!NOTE]
-    > NuGet을 사용 하 여의 장점 중 하나 없습니다 있는입니다 써 해당 프로젝트의 모든 라이브러리를 프로젝트 크기를 줄이면 합니다. NuGet 파워 도구 Packages.config 파일에서 패키지 버전을 지정 하 여 해야 합니다를 처음으로 프로젝트를 실행 하면 필요한 라이브러리를 다운로드할 수 있습니다. 이 때문에이 랩에서 기존 솔루션을 연 후 다음이 단계를 실행 해야 합니다.
+      > [!NOTE]
+      > NuGet을 사용 하 여의 장점 중 하나 없습니다 있는입니다 써 해당 프로젝트의 모든 라이브러리를 프로젝트 크기를 줄이면 합니다. NuGet 파워 도구 Packages.config 파일에서 패키지 버전을 지정 하 여 해야 합니다를 처음으로 프로젝트를 실행 하면 필요한 라이브러리를 다운로드할 수 있습니다. 이 때문에이 랩에서 기존 솔루션을 연 후 다음이 단계를 실행 해야 합니다.
 3. 열기는 **Index.cshtml** 에 있는 파일 **뷰/홈** 폴더입니다.
 4. Id가 인 div 요소 내에서 HTML 코드를 바꿉니다 **본문** 다음 코드 처럼 표시 되도록 합니다.
 
 
-    [!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample13.html)]
+~~~
+[!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample13.html)]
+~~~
 5. 웹 API에 HTTP 요청을 수행 하는 파일의 맨 아래에 다음 Javascript 코드를 추가 합니다.
 
 
-    [!code-cshtml[Main](build-restful-apis-with-aspnet-web-api/samples/sample14.cshtml)]
+~~~
+[!code-cshtml[Main](build-restful-apis-with-aspnet-web-api/samples/sample14.cshtml)]
+~~~
 6. 열기는 **ContactController.cs** 아직 열지 않은 경우에 파일입니다.
 7. 중단점을 배치는 **가져오기** 의 메서드는 **ContactController** 클래스입니다.
 
@@ -391,12 +401,16 @@ ms.lasthandoff: 11/10/2017
     (코드 조각- *웹 API 랩-Ex03-Post 메서드*)
 
 
-    [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample15.cs)]
+~~~
+[!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample15.cs)]
+~~~
 3. 열기는 **Index.cshtml** 열려 있지 않으면 Visual Studio에서 파일입니다.
 4. 이전 태스크에서 추가한 순서가 지정 되지 않은 목록 바로 다음 파일에 아래 HTML 코드를 추가 합니다.
 
 
-    [!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample16.html)]
+~~~
+[!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample16.html)]
+~~~
 5. 문서 맨 아래에 스크립트 요소 내에서 데이터를 게시 Web API HTTP POST 호출을 사용 하는 단추 클릭 이벤트를 처리 하려면 다음 강조 표시 된 코드를 추가 합니다.
 
     [!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample17.html)]
@@ -414,14 +428,14 @@ ms.lasthandoff: 11/10/2017
     *클라이언트에서 Web API에 전송 되는 연락처 개체*
 10. 될 때까지 디버거에서 메서드를 통해 단계는 **응답** 변수를 만들었습니다. 검사 되는 **지역** 디버거에서 창 표시 속성을 모두 설정 되어 있는지 합니다.
 
-    ![디버거에서 만든 응답](build-restful-apis-with-aspnet-web-api/_static/image26.png "디버거에서 만든 응답")
+   ![디버거에서 만든 응답](build-restful-apis-with-aspnet-web-api/_static/image26.png "디버거에서 만든 응답")
 
-    *디버거에서 만든 응답*
+   *디버거에서 만든 응답*
 11. 키를 누르면 **F5** 키를 누르거나 **계속** 디버거 요청을 수행 합니다. 저장 하는 연락처 목록에 새 연락처를 추가한 브라우저에 다시 전환 하면는 **ContactRepository** 구현 합니다.
 
-    ![브라우저를 성공적으로 만드는 새 연락처 인스턴스의 반영](build-restful-apis-with-aspnet-web-api/_static/image27.png "브라우저 반영 새 연락처 인스턴스를 성공적으로 만들기")
+   ![브라우저를 성공적으로 만드는 새 연락처 인스턴스의 반영](build-restful-apis-with-aspnet-web-api/_static/image27.png "브라우저 반영 새 연락처 인스턴스를 성공적으로 만들기")
 
-    *새 연락처 인스턴스의 성공적으로 만드는 반영 하는 브라우저*
+   *새 연락처 인스턴스의 성공적으로 만드는 반영 하는 브라우저*
 
 > [!NOTE]
 > 또한 Azure 다음에이 응용 프로그램을 배포할 수 있습니다 [부록 c: 게시 웹 배포를 사용 하 여 ASP.NET MVC 4 응용 프로그램](#AppendixC)합니다.
@@ -434,7 +448,7 @@ ms.lasthandoff: 11/10/2017
 
 이 랩에서 새로운 ASP.NET Web API 프레임 워크를 구현 프레임 워크를 사용 하는 RESTful 웹 api를 소개 했습니다. 여기에서 만들고 하는 임의 개수의 메커니즘을 사용 하 여 데이터 유지를 용이 하 게 하는 새 저장소 간단한 것이 랩에서 예로서 제공 하는 대신 해당 서비스를 연결 합니다. Web API에는 다양 한 HTTP 및 JSON 또는 XML을 지 원하는 모든 언어로 작성 된 HTML이 아닌 클라이언트 로부터의 통신을 설정 하는 등의 추가 기능을 지원 합니다. 일반 웹 응용 프로그램 외부의 웹 API를 호스트 하는 기능 또한으로 사용자 고유의 serialization 형식을 만드는 하는 기능.
 
-ASP.NET 웹 사이트에 ASP.NET Web API 프레임 워크에서 전용 영역 [ [https://asp.net/web-api](https://asp.net/web-api)](https://asp.net/web-api)합니다. 이 사이트를 계속 최신 정보, 샘플 및 웹 API와 관련 된 뉴스 있으므로 체크 자주 제공할 거의 모든 장치 또는 개발 프레임 워크를 사용할 수 있는 사용자 지정 웹 Api를 만드는 아트를 철저히 하려는 경우.
+ASP.NET 웹 사이트에 ASP.NET Web API 프레임 워크에서 전용 영역 [ [ https://asp.net/web-api ](https://asp.net/web-api) ](https://asp.net/web-api)합니다. 이 사이트를 계속 최신 정보, 샘플 및 웹 API와 관련 된 뉴스 있으므로 체크 자주 제공할 거의 모든 장치 또는 개발 프레임 워크를 사용할 수 있는 사용자 지정 웹 Api를 만드는 아트를 철저히 하려는 경우.
 
 <a id="AppendixA"></a>
 
@@ -492,9 +506,9 @@ ASP.NET 웹 사이트에 ASP.NET Web API 프레임 워크에서 전용 영역 [ 
 <a id="Appendix_B_Installing_Visual_Studio_Express_2012_for_Web"></a>
 ## <a name="appendix-b-installing-visual-studio-express-2012-for-web"></a>부록 b: 설치 Visual Studio Express 2012 for Web
 
-설치할 수 있습니다 **Microsoft Visual Studio Express 2012 for Web** 또는 다른 &quot;Express&quot; 버전을 사용 하 여  **[Microsoft 웹 플랫폼 설치 관리자](https://www.microsoft.com/web/downloads/platform.aspx)** . 다음 지침을 설치 하는 데 필요한 단계를 안내 하 *Visual studio Express 2012 for Web* 를 사용 하 여 *Microsoft 웹 플랫폼 설치 관리자*합니다.
+설치할 수 있습니다 **Microsoft Visual Studio Express 2012 for Web** 또는 다른 &quot;Express&quot; 버전을 사용 하 여 **[Microsoft 웹 플랫폼 설치 관리자](https://www.microsoft.com/web/downloads/platform.aspx)**. 다음 지침을 설치 하는 데 필요한 단계를 안내 하 *Visual studio Express 2012 for Web* 를 사용 하 여 *Microsoft 웹 플랫폼 설치 관리자*합니다.
 
-1. 로 이동 [ [https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169)합니다. 또는 이미 설치 된 웹 플랫폼 설치 관리자를 열 수 있습니다 및 제품에 대 한 검색 &quot; *Visual Studio Express 2012 for Web Azure SDK와*&quot;합니다.
+1. 로 이동 [ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169)합니다. 또는 이미 설치 된 웹 플랫폼 설치 관리자를 열 수 있습니다 및 제품에 대 한 검색 &quot; <em>Visual Studio Express 2012 for Web Azure SDK와</em>&quot;합니다.
 2. 클릭 **지금 설치**합니다. 없는 경우 **웹 플랫폼 설치 관리자** 를 다운로드 하 여 앱을 먼저 설치 이동 합니다.
 3. 한 번 **웹 플랫폼 설치 관리자** 열려 클릭 **설치** 는 설치 프로그램을 시작 합니다.
 
@@ -638,14 +652,14 @@ ASP.NET 웹 사이트에 ASP.NET Web API 프레임 워크에서 전용 영역 [ 
     *웹 배포 구성*
 5. 다음과 같이 데이터베이스 연결을 구성 합니다.
 
-    - 에 **서버 이름** SQL 데이터베이스 서버 URL 사용 하 여 입력 된 *tcp:* 접두사입니다.
-    - **사용자 이름** 서버 관리자 로그인 이름을 입력 합니다.
-    - **암호** 서버 관리자 로그인 암호를 입력 합니다.
-    - 예를 들어 새 데이터베이스 이름 입력: *MVC4SampleDB*합니다.
+   - 에 **서버 이름** SQL 데이터베이스 서버 URL 사용 하 여 입력 된 *tcp:* 접두사입니다.
+   - **사용자 이름** 서버 관리자 로그인 이름을 입력 합니다.
+   - **암호** 서버 관리자 로그인 암호를 입력 합니다.
+   - 예를 들어 새 데이터베이스 이름 입력: *MVC4SampleDB*합니다.
 
-    ![대상 연결 문자열 구성](build-restful-apis-with-aspnet-web-api/_static/image55.png "대상 연결 문자열 구성")
+     ![대상 연결 문자열 구성](build-restful-apis-with-aspnet-web-api/_static/image55.png "대상 연결 문자열 구성")
 
-    *대상 연결 문자열 구성*
+     *대상 연결 문자열 구성*
 6. 그런 다음 **확인**을 클릭합니다. 데이터베이스를 만들려는 대화 상자가 나타나면 **예**합니다.
 
     ![데이터베이스를 만드는](build-restful-apis-with-aspnet-web-api/_static/image56.png "데이터베이스 문자열 만들기")

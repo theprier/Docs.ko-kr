@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/security/hub-authorization
-title: "인증 및 권한 부여 SignalR 허브에 대 한 | Microsoft Docs"
+title: 인증 및 권한 부여 SignalR 허브에 대 한 | Microsoft Docs
 author: pfletcher
-description: "이 항목에 있는 사용자 또는 역할에는 허브 메서드에 액세스할 수를 제한 하는 방법을 설명 합니다. 이 항목에서 Visual Studio 2013.NET 4.5 SignalR 했습니다 사용 하는 소프트웨어 버전 중..."
+description: 이 항목에 있는 사용자 또는 역할에는 허브 메서드에 액세스할 수를 제한 하는 방법을 설명 합니다. 이 항목에서 Visual Studio 2013.NET 4.5 SignalR 했습니다 사용 하는 소프트웨어 버전 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/05/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/security/hub-authorization
 msc.type: authoredcontent
-ms.openlocfilehash: cb0f06a3ca2b39a4a952c33cea70136c7c5af7a8
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 8e3bc8889efb1be80c57084fb04dc8030b386601
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="authentication-and-authorization-for-signalr-hubs"></a>인증 및 권한 부여 SignalR 허브에 대 한
 ====================
@@ -73,10 +73,10 @@ SignalR 제공는 [Authorize](https://msdn.microsoft.com/library/microsoft.aspne
 
 다음 예에서는 다양 한 권한 부여 시나리오를 처리 합니다.
 
-- `[Authorize]`-인증 된 사용자만
-- `[Authorize(Roles = "Admin,Manager")]`-인증 된 사용자 지정된 된 역할에만
-- `[Authorize(Users = "user1,user2")]`– 지정된 된 사용자 이름 가진 사용자를 인증 된만
-- `[Authorize(RequireOutgoing=false)]`-인증 된 사용자가 허브를 호출할 수 있지만 서버에서 클라이언트로 다시 호출 제한할 수 없는 권한 부여와 같은 특정 사용자만 메시지를 보낼 수 있지만 다른 모든 메시지를 받을 수만 있습니다. RequireOutgoing 속성 허브 내에서 개인 메서드에 없는 전체 hub에만 적용할 수 있습니다. RequireOutgoing을 false로 설정 하지 않으면 권한 부여 요구 사항을 충족 하는 사용자만 서버에서 호출 됩니다.
+- `[Authorize]` -인증 된 사용자만
+- `[Authorize(Roles = "Admin,Manager")]` -인증 된 사용자 지정된 된 역할에만
+- `[Authorize(Users = "user1,user2")]` – 지정된 된 사용자 이름 가진 사용자를 인증 된만
+- `[Authorize(RequireOutgoing=false)]` -인증 된 사용자가 허브를 호출할 수 있지만 서버에서 클라이언트로 다시 호출 제한할 수 없는 권한 부여와 같은 특정 사용자만 메시지를 보낼 수 있지만 다른 모든 메시지를 받을 수만 있습니다. RequireOutgoing 속성 허브 내에서 개인 메서드에 없는 전체 hub에만 적용할 수 있습니다. RequireOutgoing을 false로 설정 하지 않으면 권한 부여 요구 사항을 충족 하는 사용자만 서버에서 호출 됩니다.
 
 <a id="requireauth"></a>
 
@@ -126,7 +126,7 @@ SignalR 제공는 [Authorize](https://msdn.microsoft.com/library/microsoft.aspne
 
 [!code-csharp[Main](hub-authorization/samples/sample7.cs)]
 
-콘솔 응용 프로그램 게시 자격 증명을 **www.contoso.com/RemoteLogin** 다음 코드 숨김 파일을 포함 하는 빈 페이지를 참조할 수 있는 합니다.
+콘솔 응용 프로그램 게시 자격 증명을 <strong>www.contoso.com/RemoteLogin</strong> 다음 코드 숨김 파일을 포함 하는 빈 페이지를 참조할 수 있는 합니다.
 
 [!code-csharp[Main](hub-authorization/samples/sample8.cs)]
 

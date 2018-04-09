@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/introduction/adding-a-controller
-title: "컨트롤러 추가 | Microsoft Docs"
+title: 컨트롤러 추가 | Microsoft Docs
 author: Rick-Anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: c8f317b2ac133f560461917af1588b7a1fa51c4f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 3864bab284661b0c44f9e4cb363c2d60eccc7c66
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-controller"></a>컨트롤러 추가
 ====================
 으로 [Rick Anderson](https://github.com/Rick-Anderson)
 
-[!INCLUDE[Tutorial Note](sample/code-location.md)]
+[!INCLUDE [Tutorial Note](sample/code-location.md)]
 
 MVC는 *모델-뷰-컨트롤러*합니다. MVC는은 잘 설계, 테스트 및 유지 관리 하기 쉬운 응용 프로그램을 개발 하기 위한 패턴입니다. MVC 기반 응용 프로그램에는 다음이 포함 되어 있습니다.
 
@@ -95,7 +95,7 @@ URL 세그먼트 위의 샘플에서 ( `Parameters`)을 사용 하지 않으면�
 
 [!code-csharp[Main](adding-a-controller/samples/sample4.cs)]
 
-응용 프로그램을 실행 하 고 다음 URL을 입력 합니다.`http://localhost:xxx/HelloWorld/Welcome/1?name=Scott`
+응용 프로그램을 실행 하 고 다음 URL을 입력 합니다. `http://localhost:xxx/HelloWorld/Welcome/1?name=Scott`
 
 ![](adding-a-controller/_static/image8.png)
 
@@ -115,6 +115,6 @@ ASP.NET MVC 응용 프로그램의 일반적인 쿼리 문자열로 전달 보�
 
 다음 예에서 컨트롤러는 작업을 하 고는 &quot;VC&quot; MVC의 부분 — 뷰와 컨트롤러 작업 즉, 합니다. 컨트롤러 HTML을 직접 반환 됩니다. 일반적으로 코드에 번거로운 되므로 HTML을 직접 반환 하는 컨트롤러 않으려는 합니다. 대신 일반적으로에서는 별도 뷰를 서식 파일을 HTML 응답을 생성할 수 있도록 합니다. 다음 방법을 수행 수에 대해 살펴보겠습니다.
 
->[!div class="step-by-step"]
-[이전](getting-started.md)
-[다음](adding-a-view.md)
+> [!div class="step-by-step"]
+> [이전](getting-started.md)
+> [다음](adding-a-view.md)

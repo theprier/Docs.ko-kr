@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-storage-options
-title: "데이터 저장소 옵션 (Azure로 응용 프로그램 빌딩 실제 클라우드) | Microsoft Docs"
+title: 데이터 저장소 옵션 (Azure로 응용 프로그램 빌딩 실제 클라우드) | Microsoft Docs
 author: MikeWasson
-description: "실제 세계 클라우드로 응용 프로그램 빌딩 Azure 전자책 Scott Guthrie에서 개발 된 프레젠테이션을 기반으로 합니다. 13 패턴 및 그을 수 있는 방법에 설명..."
+description: 실제 세계 클라우드로 응용 프로그램 빌딩 Azure 전자책 Scott Guthrie에서 개발 된 프레젠테이션을 기반으로 합니다. 13 패턴 및 그을 수 있는 방법에 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: e51fcecb-cb33-4f9e-8428-6d2b3d0fe1bf
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-storage-options
 msc.type: authoredcontent
-ms.openlocfilehash: 88f57244bfbfdf33df3bb265d8aa2c93689b2f24
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d638dca331cb24c340a4471e5964a00b75bb608a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="data-storage-options-building-real-world-cloud-apps-with-azure"></a>데이터 저장소 옵션 (Azure로 응용 프로그램 빌딩 실제 클라우드)
 ====================
@@ -155,7 +155,7 @@ Azure에서 PaaS 데이터 저장소 옵션에서 타사 공급자가 제공은 
 
 어떤는 일반적으로 권장은 데이터 저장소 솔루션을 선택 하기 전에 이러한 각 범주에 있는 질문에 대 한 답변을 알고 있습니다.
 
-또한 작업에는 일부 플랫폼 보다 나은 지원할 수 있는 특정 요구 사항이 있을 수 있습니다. 예:
+또한 작업에는 일부 플랫폼 보다 나은 지원할 수 있는 특정 요구 사항이 있을 수 있습니다. 예를 들어:
 
 - 응용 프로그램에 필요한 기능을 감사지 않습니다?
 - 데이터 수명 요구 사항은 무엇입니까-자동화 된 보관 또는 제거 기능 필요 하십니까?
@@ -250,7 +250,7 @@ SQL Server 및 Azure SQL 데이터베이스에 대 한 좋을 둘 모두에 대 
 | Azure SQL 데이터베이스 (PaaS) | 가상 컴퓨터 (IaaS)에서 SQL Server |
 | --- | --- |
 | **전문가** -만들기 또는 Vm 관리, 업데이트 또는 운영 체제 또는 SQL; 패치 필요가 없습니다 Azure 사용자에 대해이 작업이 있습니다. -기본 제공 고가용성을 데이터베이스 수준의 SLA 사용 합니다. -사용 하는 것 (라이선스 필요)에 대해서만 지불 하기 때문에 총 소유 비용 (TCO) 부족 합니다. -좋은 많은 수의 작은 데이터베이스를 처리 하기 위한 (&lt;= 500 GB)입니다. -를 동적으로 쉽게 만들 수 새 데이터베이스 사용 하도록 설정 하려면 확장 합니다. | ***전문가*** -온-프레미스 SQL Server와 호환 되는 기능. -SQL Server를 구현할 수 [AlwaysOn 통해 고가용성](https://www.microsoft.com/sqlserver/solutions-technologies/mission-critical-operations/high-availability.aspx) 2 + Vm, VM 수준의 SLA와에서 합니다. -SQL 관리 되는 방식을 완전히 제어할이 되었습니다. -SQL 라이선스 수 있으며, 하나에 대 한 시간당 비용을 지불를 다시 사용 수 있습니다. -좋은 적은 처리 하기 위한 좋아지지만 (1 t B +) 데이터베이스입니다. |
-| **Cons** -온-프레미스 SQL Server에 비해 간격 일부 기능 (부족 [CLR 통합](https://technet.microsoft.com/library/ms131102.aspx), [TDE](https://technet.microsoft.com/library/bb934049.aspx), [압축 지원](https://technet.microsoft.com/library/cc280449.aspx), [SQL Reporting Services 서버](https://technet.microsoft.com/library/ms159106.aspx)등)-500GB의 데이터베이스 크기 제한 합니다. | ***Cons*** -업데이트/패치 (OS 및 SQL)는 사용자의 책임-생성 및 Db의 관리 사용자의 책임-디스크 IOPS (초당 입/출력 작업) (16 데이터 드라이브)를 통해 약 8000로 제한 됩니다. |
+| **Cons** -온-프레미스 SQL Server에 비해 간격 일부 기능 (부족 [CLR 통합](https://technet.microsoft.com/library/ms131102.aspx), [TDE](https://technet.microsoft.com/library/bb934049.aspx), [압축 지원](https://technet.microsoft.com/library/cc280449.aspx), [SQL Server Reporting Services](https://technet.microsoft.com/library/ms159106.aspx)등)-500GB의 데이터베이스 크기 제한 합니다. | ***Cons*** -업데이트/패치 (OS 및 SQL)는 사용자의 책임-생성 및 Db의 관리 사용자의 책임-디스크 IOPS (초당 입/출력 작업) (16 데이터 드라이브)를 통해 약 8000로 제한 됩니다. |
 
 SQL Server VM에 사용 하려는 경우 사용자 고유의 SQL Server 라이선스를 사용할 수 있습니다 또는 시간 단위로 하나에 대 한 대금을 지불할 수 있습니다. 예를 들어 포털에서 또는 REST API를 통해 SQL Server 이미지를 사용 하 여 새 VM을 만들 수 있습니다.
 
@@ -264,7 +264,7 @@ SQL Server VM에 사용 하려는 경우 사용자 고유의 SQL Server 라이�
 
 클라우드 컴퓨팅 혼합 하는 데 유용 하 고 가장 잘 일치 데이터 저장 방법을 응용 프로그램의 요구에 맞게 합니다. 새 응용 프로그램을 작성 하는 경우 계속 응용 프로그램 증가 하는 경우에 제대로 작동 하는 접근 방식을 선택 하기 위해 여기에 나열 된 질문에 대 한 신중 하 게 생각 합니다. [다음 장에서](data-partitioning-strategies.md) 에서는 다양 한 데이터 저장소 접근 방식이 결합 하는 데 사용할 수 있는 몇 가지 분할 전략에 설명 합니다.
 
-## <a name="resources"></a>리소스
+## <a name="resources"></a>자료
 
 자세한 내용은 다음 리소스를 참조하세요.
 
@@ -301,6 +301,6 @@ HDInsight (Azure에서 Hadoop):
 - [Hadoop 및 HDInsight: Azure의 빅 데이터](https://msdn.microsoft.com/magazine/dn385705.aspx)합니다. MSDN Magazine 문서, Bruno Terkaly 및 Ricardo Villalobos, Azure에서 Hadoop을 소개 합니다.
 - [Microsoft Patterns and Practices-Azure 지침](https://msdn.microsoft.com/library/dn568099.aspx)합니다. MapReduce 패턴을 참조 하십시오.
 
->[!div class="step-by-step"]
-[이전](single-sign-on.md)
-[다음](data-partitioning-strategies.md)
+> [!div class="step-by-step"]
+> [이전](single-sign-on.md)
+> [다음](data-partitioning-strategies.md)

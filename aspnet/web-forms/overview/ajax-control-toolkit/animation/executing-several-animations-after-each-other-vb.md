@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/executing-several-animations-after-each-other-vb
-title: "여러 개의 애니메이션 서로 (VB) 한 후 실행 | Microsoft Docs"
+title: 여러 개의 애니메이션 서로 (VB) 한 후 실행 | Microsoft Docs
 author: wenz
-description: "ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트롤 뿐 아니라 애니메이션 컨트롤을 추가 하는 전체 프레임 워크. 떨어져서를 실행할 수 있습니다..."
+description: ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트롤 뿐 아니라 애니메이션 컨트롤을 추가 하는 전체 프레임 워크. 떨어져서를 실행할 수 있습니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/executing-several-animations-after-each-other-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e949d181c0b742ee38ebbcc46e0e08efc678a1f8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 700946b9f32c5ed2dcb8586e7c0e84d2238ff103
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="executing-several-animations-after-each-other-vb"></a>여러 개의 애니메이션 서로 (VB) 한 후 실행
 ====================
@@ -45,7 +45,7 @@ ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트�
 
 [!code-css[Main](executing-several-animations-after-each-other-vb/samples/sample3.css)]
 
-그런 다음 추가 `AnimationExtender` 페이지에 제공 하는 `ID`, `TargetControlID` 특성과 참가`runat="server":`
+그런 다음 추가 `AnimationExtender` 페이지에 제공 하는 `ID`, `TargetControlID` 특성과 참가 `runat="server":`
 
 [!code-aspx[Main](executing-several-animations-after-each-other-vb/samples/sample4.aspx)]
 
@@ -65,6 +65,6 @@ ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트�
 
 높이 감소 합니다 ([전체 크기 이미지를 보려면 클릭](executing-several-animations-after-each-other-vb/_static/image6.png))
 
->[!div class="step-by-step"]
-[이전](executing-several-animations-at-the-same-time-vb.md)
-[다음](animation-depending-on-a-condition-vb.md)
+> [!div class="step-by-step"]
+> [이전](executing-several-animations-at-the-same-time-vb.md)
+> [다음](animation-depending-on-a-condition-vb.md)

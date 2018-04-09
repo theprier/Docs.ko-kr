@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/working-with-batched-data/wrapping-database-modifications-within-a-transaction-vb
-title: "데이터베이스 수정 내용을 (VB) 트랜잭션 내에서 줄 바꿈 | Microsoft Docs"
+title: 데이터베이스 수정 내용을 (VB) 트랜잭션 내에서 줄 바꿈 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에는 업데이트, 삭제 및 삽입 데이터의 일괄 처리에는 4 개의 중 첫 번째 숫자입니다. 이 자습서에서는 데이터베이스 트랜잭션을 허용 하는 방법 알아보기..."
+description: 이 자습서에는 업데이트, 삭제 및 삽입 데이터의 일괄 처리에는 4 개의 중 첫 번째 숫자입니다. 이 자습서에서는 데이터베이스 트랜잭션을 허용 하는 방법 알아보기...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/26/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/wrapping-database-modifications-within-a-transaction-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f054445091edbc27263127fb3b7b851776ec617f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 2005561755b22f5811d011bd3146853f6cd184af
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="wrapping-database-modifications-within-a-transaction-vb"></a>(VB) 트랜잭션 내에서 줄 바꿈 데이터베이스 수정
 ====================
@@ -117,7 +117,7 @@ ms.lasthandoff: 01/24/2018
 
 ![TransactionSupport 폴더 및 ProductsTableAdapter.TransactionSupport.vb 라는 클래스 파일 추가](wrapping-database-modifications-within-a-transaction-vb/_static/image4.gif)
 
-**그림 4**: 라는 폴더를 추가 `TransactionSupport` 와 명명 된 클래스 파일`ProductsTableAdapter.TransactionSupport.vb`
+**그림 4**: 라는 폴더를 추가 `TransactionSupport` 와 명명 된 클래스 파일 `ProductsTableAdapter.TransactionSupport.vb`
 
 
 입력에 다음 코드는 `ProductsTableAdapter.TransactionSupport.vb` 파일:
@@ -127,7 +127,7 @@ ms.lasthandoff: 01/24/2018
 
 `Partial` 내에서 추가 된 멤버에 추가 하는 컴파일러에 알리는 키워드를 클래스 선언에는 `ProductsTableAdapter` 클래스에 `NorthwindTableAdapters` 네임 스페이스입니다. 참고는 `Imports System.Data.SqlClient` 파일 맨 위에 있는 문. TableAdapter가 SqlClient 공급자를 사용 하도록 구성 된 이후 내부적으로 사용 하 여 한 [ `SqlDataAdapter` ](https://msdn.microsoft.com/library/system.data.sqlclient.sqldataadapter.aspx) 개체를 데이터베이스에 해당 명령을 실행 합니다. 사용 해야 결과적는 `SqlTransaction` 트랜잭션을 시작 하는 클래스 다음 커밋하거나 롤백합니다. Microsoft SQL Server 이외의 데이터 저장소를 사용 하는 경우 적절 한 공급자를 사용 하도록 해야 합니다.
 
-이러한 메서드는 롤백를 시작 하는 데 필요한 구성 요소를 제공 하 고 트랜잭션을 커밋하는 합니다. 표시 된 `Public`, 내에서 사용할 수 있도록는 `ProductsTableAdapter`, DAL에서 다른 클래스 또는 BLL 같은 아키텍처의 또 다른 계층입니다. `BeginTransaction`내부 tableadapter를 엽니다 `SqlConnection` (필요한 경우) 트랜잭션을 시작 하 고에 할당 된 `Transaction` 속성을 트랜잭션을 내부에 연결 하 고 `SqlDataAdapter` s `SqlCommand` 개체입니다. `CommitTransaction`및 `RollbackTransaction` 호출는 `Transaction` 개체 s `Commit` 및 `Rollback` 메서드 내부를 닫기 전에 각각 `Connection` 개체입니다.
+이러한 메서드는 롤백를 시작 하는 데 필요한 구성 요소를 제공 하 고 트랜잭션을 커밋하는 합니다. 표시 된 `Public`, 내에서 사용할 수 있도록는 `ProductsTableAdapter`, DAL에서 다른 클래스 또는 BLL 같은 아키텍처의 또 다른 계층입니다. `BeginTransaction` 내부 tableadapter를 엽니다 `SqlConnection` (필요한 경우) 트랜잭션을 시작 하 고에 할당 된 `Transaction` 속성을 트랜잭션을 내부에 연결 하 고 `SqlDataAdapter` s `SqlCommand` 개체입니다. `CommitTransaction` 및 `RollbackTransaction` 호출는 `Transaction` 개체 s `Commit` 및 `Rollback` 메서드 내부를 닫기 전에 각각 `Connection` 개체입니다.
 
 ## <a name="step-3-adding-methods-to-update-and-delete-data-under-the-umbrella-of-a-transaction"></a>3 단계: 업데이트 및 트랜잭션의 포괄적인 정리 된 데이터를 삭제 하는 메서드를 추가
 
@@ -247,18 +247,18 @@ ms.lasthandoff: 01/24/2018
 
 - [트랜잭션 사용 하 여 데이터베이스 일관성을 유지 관리](http://aspnet.4guysfromrolla.com/articles/072705-1.aspx)
 - [SQL Server에서 트랜잭션 관리 저장 프로시저](http://www.4guysfromrolla.com/webtech/080305-1.shtml)
-- [간편해 진 트랜잭션의 경우:`System.Transactions`](https://blogs.msdn.com/florinlazar/archive/2004/07/23/192239.aspx)
+- [간편해 진 트랜잭션의 경우: `System.Transactions`](https://blogs.msdn.com/florinlazar/archive/2004/07/23/192239.aspx)
 - [TransactionScope 및 Dataadapter](http://andyclymer.blogspot.com/2007/01/transactionscope-and-dataadapters.html)
 - [.NET에서 Oracle 데이터베이스 트랜잭션 사용](http://www.oracle.com/technology/pub/articles/price_dbtrans_dotnet.html)
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자가 Dave Gardner, Hilton Giesenow 및 Teresa 머피의 합니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](batch-inserting-cs.md)
-[다음](batch-updating-vb.md)
+> [!div class="step-by-step"]
+> [이전](batch-inserting-cs.md)
+> [다음](batch-updating-vb.md)

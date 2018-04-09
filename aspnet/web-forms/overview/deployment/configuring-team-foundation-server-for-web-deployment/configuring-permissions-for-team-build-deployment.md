@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-permissions-for-team-build-deployment
-title: "빌드 배포 팀의 사용 권한과 구성 | Microsoft Docs"
+title: 빌드 배포 팀의 사용 권한과 구성 | Microsoft Docs
 author: jrjlee
-description: "이 항목에서는 자동화 된 b의 일부로 콘텐츠 웹 서버와 데이터베이스 서버를 배포 하려면 빌드 서버에 사용할 수 있도록 권한을 구성 하는 방법을 설명..."
+description: 이 항목에서는 자동화 된 b의 일부로 콘텐츠 웹 서버와 데이터베이스 서버를 배포 하려면 빌드 서버에 사용할 수 있도록 권한을 구성 하는 방법을 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-permissions-for-team-build-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: cb3d013d69e36f97335ea31dd6e4997772ba2d8e
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 4698349d664816ec49475bbfe71fb32af79ea96d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-permissions-for-team-build-deployment"></a>팀에 대 한 구성 권한 빌드 배포
 ====================
@@ -27,9 +27,9 @@ ms.lasthandoff: 03/15/2018
 > 이 항목에는 자동화 된 빌드 프로세스의 일부로 콘텐츠 웹 서버와 데이터베이스 서버를 배포 하려면 빌드 서버에 사용할 수 있도록 권한을 구성 하는 방법을 설명 합니다.
 
 
-이 항목의 Fabrikam, inc. 라는 가상 회사의 엔터프라이즈 배포 요구 사항을 바탕으로 하는 자습서 시리즈의 일부를 형성 합니다. 이 자습서 시리즈 샘플 솔루션 & #x 2014;을 사용 하는 [Contact Manager 솔루션](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; 현실적인 수준의 복잡성을 Windows ASP.NET MVC 3 응용 프로그램을 포함 하 여 웹 응용 프로그램을 나타내기 위해 Communication Foundation (WCF) 서비스 및 데이터베이스 프로젝트를 제공 합니다.
+이 항목의 Fabrikam, inc. 라는 가상 회사의 엔터프라이즈 배포 요구 사항을 바탕으로 하는 자습서 시리즈의 일부를 형성 합니다. 샘플 솔루션을 사용 하는 자습서 시리즈가&#x2014;는 [Contact Manager 솔루션](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;현실적인 수준의 복잡성, Windows Communication ASP.NET MVC 3 응용 프로그램을 포함 하 여 웹 응용 프로그램을 나타내기 위해 WCF (foundation) 서비스 및 데이터베이스 프로젝트.
 
-이 자습서의 핵심에는 배포 방법에 설명 된 분할 프로젝트 파일 접근 방식에 따라 [프로젝트 파일 이해](../web-deployment-in-the-enterprise/understanding-the-project-file.md), 빌드 프로세스에 의해 제어 되는 두 프로젝트에 파일 & #x 2014; 포함 환경 관련 빌드 및 배포 설정을 포함 하는 하나 및 모든 대상 환경에 적용 되는 지침을 빌드하십시오. 빌드 시 환경 관련 프로젝트 파일은 빌드 지침의 전체 집합을 구성 하기 위해 환경을 알 수 없는 프로젝트 파일에 병합 됩니다.
+이 자습서의 핵심에는 배포 방법에 설명 된 분할 프로젝트 파일 접근 방식에 따라 [프로젝트 파일 이해](../web-deployment-in-the-enterprise/understanding-the-project-file.md), 두 개의 프로젝트 파일에 빌드 프로세스에 의해 제어 되는&#x2014;포함 환경 관련 빌드 및 배포 설정을 포함 하는 하나 및 모든 대상 환경에 적용 되는 지침을 빌드하십시오. 빌드 시 환경 관련 프로젝트 파일은 빌드 지침의 전체 집합을 구성 하기 위해 환경을 알 수 없는 프로젝트 파일에 병합 됩니다.
 
 ## <a name="task-overview"></a>작업 개요
 
@@ -38,7 +38,7 @@ Team Foundation Server (TFS) 2010 빌드 서비스를 설치할 때 서비스를
 팀 빌드를 사용 하 여 자동화 하려는 및 Windows 인증을 요구 하는 모든 배포 작업은 빌드 서비스 id를 사용 하 여 실행 됩니다. 따라서 빌드 서비스 id를 웹 서버와 데이터베이스 서버에 필요한 사용 권한을 부여 해야 합니다.
 
 > [!NOTE]
-> 네트워크 서비스 계정으로 시스템 계정을 사용 하 여 다른 컴퓨터를 인증. 컴퓨터 계정에는 다음 양식을 사용 * [도메인 이름]\[컴퓨터 이름] ***$**& #x 2014 등 **FABRIKAM\TFSBUILD$**합니다. 이와 같이 빌드 서비스가 네트워크 서비스 id를 사용 하 여 실행을 빌드 서버에 대 한 컴퓨터 계정 id에 필요한 모든 권한을 부여 해야.
+> 네트워크 서비스 계정으로 시스템 계정을 사용 하 여 다른 컴퓨터를 인증. 컴퓨터 계정에는 다음 양식을 사용 * [도메인 이름]\[컴퓨터 이름] ***$**&#x2014;예를 들어 **FABRIKAM\TFSBUILD$**합니다. 이와 같이 빌드 서비스가 네트워크 서비스 id를 사용 하 여 실행을 빌드 서버에 대 한 컴퓨터 계정 id에 필요한 모든 권한을 부여 해야.
 
 
 ## <a name="configuring-web-server-permissions"></a>웹 서버 사용 권한 구성
@@ -50,7 +50,7 @@ Team Foundation Server (TFS) 2010 빌드 서비스를 설치할 때 서비스를
 
 원격 에이전트에는 경우 두 가지 주요 제한이 있습니다.
 
-- 원격 에이전트에는 NTLM 인증만을 지원합니다. 즉, 배포 빌드 서비스 id & #x 2014 사용 해야 합니다; 다른 계정을 가장할 수 없습니다.
+- 원격 에이전트에는 NTLM 인증만을 지원합니다. 즉, 배포 빌드 서비스 id를 사용 해야&#x2014;계정이 다른 계정을 가장할 수 없습니다.
 - 원격 에이전트를 사용 하려면 배포를 수행 하는 계정에 대상 서버에서 관리자 여야 합니다.
 
 함께, 이러한 두 가지 제한 구성 원격 에이전트 접근 방식이 자동된 팀 빌드 배포에 대 한 바람직하지 않은 합니다. 이 방법을 사용 하려면 모든 대상 웹 서버에서 관리자 계정 빌드 서비스를 확인 해야 합니다.
@@ -93,5 +93,5 @@ NTLM 인증 또는 SQL Server 인증을 사용 하 여 SQL Server 인스턴스�
 
 원격 배포를 지원할 Windows 서버 환경 구성에 대 한 자세한 내용은 참조 하십시오. [웹 배포에 대 한 서버 환경을 구성](../configuring-server-environments-for-web-deployment/configuring-server-environments-for-web-deployment.md)합니다.
 
->[!div class="step-by-step"]
-[이전](deploying-a-specific-build.md)
+> [!div class="step-by-step"]
+> [이전](deploying-a-specific-build.md)

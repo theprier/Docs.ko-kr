@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create_the_data_access_layer
-title: "데이터 액세스 계층 만들기 | Microsoft Docs"
+title: 데이터 액세스 계층 만들기 | Microsoft Docs
 author: Erikre
-description: "이 자습서 시리즈 것에 대 한 ASP.NET 4.5 및 Microsoft Visual Studio Express 2013을 사용 하 여 ASP.NET Web Forms 응용 프로그램을 구축 하는 기초 알려 드리겠습니다 중..."
+description: 이 자습서 시리즈 것에 대 한 ASP.NET 4.5 및 Microsoft Visual Studio Express 2013을 사용 하 여 ASP.NET Web Forms 응용 프로그램을 구축 하는 기초 알려 드리겠습니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create_the_data_access_layer
 msc.type: authoredcontent
-ms.openlocfilehash: 809609155b06c4632bd4f450082d84c432c7a46f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 671d1bbf661dfb3e56c6ccd67ce0d383990918d6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="create-the-data-access-layer"></a>데이터 액세스 계층 만들기
 ====================
@@ -68,13 +68,13 @@ Web Forms 응용 프로그램에 대 한 데이터 모델을 정의 하는 엔�
 
     ![데이터 액세스 계층-새 항목 메뉴 만들기](create_the_data_access_layer/_static/image1.png)
 
- **새 항목 추가** 대화 상자가 표시됩니다.
+   **새 항목 추가** 대화 상자가 표시됩니다.
 2. 아래 **Visual C#** 에서 **설치 됨** 선택 왼쪽 창에서 **코드**합니다. 
 
     ![데이터 액세스 계층-새 항목 메뉴 만들기](create_the_data_access_layer/_static/image2.png)
 3. 선택 **클래스** 가운데 창에서이 새 클래스 이름 및 *Product.cs*합니다.
 4. **추가**를 클릭합니다.  
- 새 클래스 파일은 편집기에 표시 됩니다.
+   새 클래스 파일은 편집기에 표시 됩니다.
 5. 기본 코드를 다음 코드로 바꿉니다.   
 
     [!code-csharp[Main](create_the_data_access_layer/samples/sample1.cs)]
@@ -95,7 +95,7 @@ Web Forms 응용 프로그램에 대 한 데이터 모델을 정의 하는 엔�
 새 C# 컨텍스트 클래스를 추가 하는이 절차는 *모델* 폴더입니다.
 
 1. 마우스 오른쪽 단추로 클릭는 *모델* 폴더 및 다음 선택 **추가**  - &gt; **새 항목**합니다.   
- **새 항목 추가** 대화 상자가 표시됩니다.
+   **새 항목 추가** 대화 상자가 표시됩니다.
 2. 선택 **클래스** 이름을 가운데 창에서 *ProductContext.cs* 클릭 **추가**합니다.
 3. 다음 코드를 사용 하 여 클래스에 포함 된 기본 코드를 바꿉니다.   
 
@@ -179,7 +179,7 @@ Entity Framework Code First는 생성 하지만 데이터베이스를 기본 위
 
 다음 자습서에서는 UI를 업데이트, 추가 탐색 하 고 데이터베이스에서 데이터를 검색 합니다. 이렇게 하면이 자습서에서 만든 엔터티 클래스에 따라 자동으로 생성 되는 데이터베이스입니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 [Entity Framework 개요](https://msdn.microsoft.com/library/bb399567.aspx)   
 [ADO.NET Entity Framework에 대 한 기본 설명](https://msdn.microsoft.com/data/ee712907)   
@@ -188,6 +188,6 @@ Entity Framework Code First는 생성 하지만 데이터베이스를 기본 위
 [코드의 첫 번째 데이터 주석](https://msdn.microsoft.com/data/gg193958)  
 [Entity Framework에 대 한 성능 향상 기능](https://blogs.msdn.com/b/efdesign/archive/2010/06/21/productivity-improvements-for-the-entity-framework.aspx?wa=wsignin1.0)
 
->[!div class="step-by-step"]
-[이전](create-the-project.md)
-[다음](ui_and_navigation.md)
+> [!div class="step-by-step"]
+> [이전](create-the-project.md)
+> [다음](ui_and_navigation.md)

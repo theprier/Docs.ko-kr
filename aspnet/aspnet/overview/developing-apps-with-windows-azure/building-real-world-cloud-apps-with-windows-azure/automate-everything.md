@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
-title: "(Azure 사용 하 여 실제 클라우드 앱 빌드) 모든 것 자동화 | Microsoft Docs"
+title: (Azure 사용 하 여 실제 클라우드 앱 빌드) 모든 것 자동화 | Microsoft Docs
 author: MikeWasson
-description: "실제 세계 클라우드로 응용 프로그램 빌딩 Azure 전자책 Scott Guthrie에서 개발 된 프레젠테이션을 기반으로 합니다. 13 패턴 및 그을 수 있는 방법에 설명..."
+description: 실제 세계 클라우드로 응용 프로그램 빌딩 Azure 전자책 Scott Guthrie에서 개발 된 프레젠테이션을 기반으로 합니다. 13 패턴 및 그을 수 있는 방법에 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: ba6e6baa-9b9f-471f-b39d-b007a3addadc
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
 msc.type: authoredcontent
-ms.openlocfilehash: aa8bb895ed6eaa0ef4c5752f475ea7c911544ef2
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 2e30ab7831a10f215a08f74e61adf2d147e76543
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="automate-everything-building-real-world-cloud-apps-with-azure"></a>(Azure 사용 하 여 실제 클라우드 앱 빌드) 모든 것 자동화
 ====================
@@ -90,7 +90,7 @@ Azure 서비스를 관리 하는 PowerShell 스크립트를 실행 하려면 Azu
 
 ![connectionStrings 및 appSettings](automate-everything/_static/image6.png)
 
-*자동화* 폴더 이제도 포함 되어는  *&lt;websitename&gt;.pubxml* 파일입니다. 이 파일에는 MSBuild에서 방금 만든 Azure 환경에 응용 프로그램 배포에 사용할 설정을 저장 합니다. 예:
+*자동화* 폴더 이제도 포함 되어는  *&lt;websitename&gt;.pubxml* 파일입니다. 이 파일에는 MSBuild에서 방금 만든 Azure 환경에 응용 프로그램 배포에 사용할 설정을 저장 합니다. 예를 들어:
 
 [!code-xml[Main](automate-everything/samples/sample1.xml)]
 
@@ -128,7 +128,7 @@ Azure 서비스를 관리 하는 PowerShell 스크립트를 실행 하려면 Azu
 
 ### <a name="create-the-storage-account"></a>저장소 계정 만들기
 
-기본 스크립트를 실행 한 후의 *새로 AzureStorage.ps1* 스크립트를 지정 하 "*&lt;websitename&gt;*저장소" 저장소 계정 이름에 대 한 동일한 데이터 센터의 위치 및 웹 앱입니다.
+기본 스크립트를 실행 한 후의 <em>새로 AzureStorage.ps1</em> 스크립트를 지정 하 "<em>&lt;websitename&gt;</em>저장소" 저장소 계정 이름에 대 한 동일한 데이터 센터의 위치 및 웹 앱입니다.
 
 [!code-powershell[Main](automate-everything/samples/sample4.ps1?highlight=3)]
 
@@ -158,7 +158,7 @@ Azure 서비스를 관리 하는 PowerShell 스크립트를 실행 하려면 Azu
 
     [!code-powershell[Main](automate-everything/samples/sample10.ps1?highlight=4)]
 
-    `New-PSCredentialFromPlainText`호출 하는 스크립트에는 함수는 `ConvertTo-SecureString` 암호화 암호와 반환 하는 cmdlet는 `PSCredential` 형식 동일 개체는 `Get-Credential` cmdlet에서 반환 합니다.
+    `New-PSCredentialFromPlainText` 호출 하는 스크립트에는 함수는 `ConvertTo-SecureString` 암호화 암호와 반환 하는 cmdlet는 `PSCredential` 형식 동일 개체는 `Get-Credential` cmdlet에서 반환 합니다.
 - 응용 프로그램 데이터베이스를 만들고 사용 하 여 멤버 자격 데이터베이스는 `New-AzureSqlDatabase` cmdlet.
 
     [!code-powershell[Main](automate-everything/samples/sample11.ps1?highlight=2,5)]
@@ -253,7 +253,7 @@ Azure를 읽으려고 할 때 응용 프로그램에 반환 되는 항목을 자
 
 에 [다음 장에서](source-control.md) 소스 코드를 보면 알아보고 소스 코드 리포지토리에 스크립트를 포함 해야 하는 이유를 설명 하겠습니다.
 
-## <a name="resources"></a>리소스
+## <a name="resources"></a>자료
 
 - [설치 하 고 Azure에 대 한 Windows PowerShell 구성](https://docs.microsoft.com/powershell/azure/overview?view=azurermps-4.3.1)합니다. Azure PowerShell cmdlet을 설치 하는 방법 및 필요한 Azure를 관리 하기 위해 컴퓨터에 계정을 인증서를 설치 하는 방법을 설명 합니다. 이것이 자체 PowerShell 학습을 위한 리소스의 링크를 포함 하기 때문에 시작 하는 좋은 장소입니다.
 - [Azure 스크립트 센터](https://docs.microsoft.com/azure/automation/automation-runbook-gallery)합니다. 자습서 시작된, cmdlet 참조 설명서 및 소스 코드 및 예제 스크립트에 대 한 링크가 있는 Azure 서비스를 관리 하는 스크립트를 개발을 위한 리소스를 WindowsAzure.com 포털
@@ -264,6 +264,6 @@ Azure를 읽으려고 할 때 응용 프로그램에 반환 되는 항목을 자
 - [Windows PowerShell 스크립트를 사용 하 여 개발 및 테스트 환경에 게시 하도록](https://msdn.microsoft.com/library/azure/dn642480.aspx)합니다. 사용 하는 방법을 설명 하는 MSDN 설명서는 Visual Studio 웹 프로젝트에 자동으로 생성 하는 스크립트를 게시 합니다.
 - [Visual Studio 2013 용 PowerShell 도구](https://visualstudiogallery.msdn.microsoft.com/c9eb3ba8-0c59-4944-9a62-6eee37294597)합니다. Visual Studio에서 Windows PowerShell에 대 한 언어 지원을 추가 하는 visual Studio 확장 합니다.
 
->[!div class="step-by-step"]
-[이전](introduction.md)
-[다음](source-control.md)
+> [!div class="step-by-step"]
+> [이전](introduction.md)
+> [다음](source-control.md)

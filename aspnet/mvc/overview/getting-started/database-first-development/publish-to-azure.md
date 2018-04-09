@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/publish-to-azure
-title: "Azure에 데이터베이스에 첫 번째 MVC 사이트 게시 | Microsoft Docs"
+title: Azure에 데이터베이스에 첫 번째 MVC 사이트 게시 | Microsoft Docs
 author: tfitzmac
-description: "MVC, Entity Framework 및 ASP.NET 스 캐 폴딩을 사용 하 여 기존 데이터베이스에 대 한 인터페이스를 제공 하는 웹 응용 프로그램을 만들 수 있습니다. 이 자습서 seri 중..."
+description: MVC, Entity Framework 및 ASP.NET 스 캐 폴딩을 사용 하 여 기존 데이터베이스에 대 한 인터페이스를 제공 하는 웹 응용 프로그램을 만들 수 있습니다. 이 자습서 seri 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/22/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/publish-to-azure
 msc.type: authoredcontent
-ms.openlocfilehash: eadc0f2b08df29f80fe53d03cf88cd3cdcecfb12
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 839bbceba6f0e098303facd40dbb1496bd449ba3
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="publish-mvc-database-first-site-to-azure"></a>MVC 데이터베이스 첫 번째 사이트를 Azure에 게시
 ====================
@@ -152,7 +152,7 @@ Azure 포털을 통해 Azure 계정에 로그인 합니다.
 
 ![새 테이블](publish-to-azure/_static/image22.png)
 
-이제 Azure에 배포 되는 웹 응용 프로그램을 테스트할 준비가 되었습니다. Azure에서 웹 앱 (예: http://contosositeexample.azurewebsites.net/)로 이동 합니다. 학생 목록에 대 한 링크를 클릭 하 고 학생을 위한 인덱스 보기 확인 해야 합니다.
+이제 Azure에 배포 되는 웹 응용 프로그램을 테스트할 준비가 되었습니다. Azure에서 웹 앱으로 이동 (예: http://contosositeexample.azurewebsites.net/)합니다. 학생 목록에 대 한 링크를 클릭 하 고 학생을 위한 인덱스 보기 확인 해야 합니다.
 
 ![보기](publish-to-azure/_static/image23.png)
 
@@ -166,5 +166,5 @@ Code First 개발의 기본 예제를 보려면 [Getting Started with ASP.NET MV
 
 고급 예제를 보려면 [ASP.NET MVC 4 응용 프로그램에 대 한 Entity Framework 데이터 모델을 만드는](../getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)합니다. Note DbContext API 첫 번째 데이터베이스의 데이터 작업에 사용 하는 첫 번째 코드에서 데이터 작업에 사용할 API와 동일 합니다. Database First 사용 하려는 경우에 코드 첫 번째 자습서에서 가져오고 동시성 충돌을 처리 관련된 데이터 읽기 및 업데이트와 같은 보다 복잡 한 시나리오를 처리 하는 방법을 배울 수 있습니다. 유일한 차이점은 데이터베이스, 컨텍스트 클래스 및 엔터티 클래스 만들어지는 방식입니다.
 
->[!div class="step-by-step"]
-[이전](enhancing-data-validation.md)
+> [!div class="step-by-step"]
+> [이전](enhancing-data-validation.md)

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
-title: "ASP.NET MVC 응용 프로그램 (1 / 10)에 대 한 Entity Framework 데이터 모델 만들기 | Microsoft Docs"
+title: ASP.NET MVC 응용 프로그램 (1 / 10)에 대 한 Entity Framework 데이터 모델 만들기 | Microsoft Docs
 author: tdykstra
-description: "이 자습서 시리즈의 최신 버전은 Visual Studio 2013, Entity Framework 6 및 MVC 5에 사용할 수 있습니다. Contoso 대학 샘플 웹 응용 프로그램 de 중..."
+description: 이 자습서 시리즈의 최신 버전은 Visual Studio 2013, Entity Framework 6 및 MVC 5에 사용할 수 있습니다. Contoso 대학 샘플 웹 응용 프로그램 de 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/30/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 8c9971ccc70cb4b966abb64086b1b5420fc6c72a
-ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
+ms.openlocfilehash: a963f26b408f2a54bd9cd3e852bc1e368f86c41f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-an-entity-framework-data-model-for-an-aspnet-mvc-application-1-of-10"></a>ASP.NET MVC 응용 프로그램 (1 / 10)에 대 한 Entity Framework 데이터 모델 만들기
 ====================
@@ -311,29 +311,29 @@ Visual Studio 2012 이상 버전에서 LocalDB는 Visual Studio를 사용 하 �
 
 1. 만들려는 `Student` 컨트롤러를 마우스 오른쪽 단추로 클릭는 **컨트롤러** 폴더에 **솔루션 탐색기**선택, **추가**, 클릭 하 고 **컨트롤러** . 에 **컨트롤러 추가** 대화 상자, 다음을 선택 하 고 클릭 **추가**: 
 
-    - 컨트롤러 이름: **StudentController**합니다.
-    - 서식 파일: **읽기/쓰기 동작 및 뷰가, Entity Framework를 사용 하 여 포함 된 MVC 컨트롤러**합니다.
-    - 모델 클래스: **학생 (ContosoUniversity.Models)**합니다. (드롭 다운 목록에서이 옵션을 표시 되지 않으면, 프로젝트 빌드 및 다시 시도 하십시오.)
-    - 데이터 컨텍스트 클래스: **SchoolContext (ContosoUniversity.Models)**합니다.
-    - 보기: **Razor (CSHTML)**합니다. (기본값입니다.)
+   - 컨트롤러 이름: **StudentController**합니다.
+   - 서식 파일: **읽기/쓰기 동작 및 뷰가, Entity Framework를 사용 하 여 포함 된 MVC 컨트롤러**합니다.
+   - 모델 클래스: **학생 (ContosoUniversity.Models)**합니다. (드롭 다운 목록에서이 옵션을 표시 되지 않으면, 프로젝트 빌드 및 다시 시도 하십시오.)
+   - 데이터 컨텍스트 클래스: **SchoolContext (ContosoUniversity.Models)**합니다.
+   - 보기: **Razor (CSHTML)**합니다. (기본값입니다.)
 
-    ![Add_Controller_dialog_box_for_Student_controller](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image20.png)
-- Visual Studio가 열릴는 *Controllers\StudentController.cs* 파일입니다. 클래스 변수 만들어진 데이터베이스 컨텍스트 개체를 인스턴스화하는 것이 표시 됩니다.
+     ![Add_Controller_dialog_box_for_Student_controller](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image20.png)
+2. Visual Studio가 열릴는 *Controllers\StudentController.cs* 파일입니다. 클래스 변수 만들어진 데이터베이스 컨텍스트 개체를 인스턴스화하는 것이 표시 됩니다.
 
-    [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample16.cs)]
+     [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample16.cs)]
 
-    `Index` 동작 메서드가에서 학생의 목록을 가져옵니다는 *학생* 엔터티 참조 하 여 집합에서 `Students` 데이터베이스 컨텍스트 인스턴스의 속성:
+     `Index` 동작 메서드가에서 학생의 목록을 가져옵니다는 *학생* 엔터티 참조 하 여 집합에서 `Students` 데이터베이스 컨텍스트 인스턴스의 속성:
 
-    [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample17.cs)]
+     [!code-csharp[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample17.cs)]
 
-    *Student\Index.cshtml* 보기 테이블에이 목록에 표시 됩니다.
+     *Student\Index.cshtml* 보기 테이블에이 목록에 표시 됩니다.
 
-    [!code-cshtml[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample18.cshtml)]
-- Ctrl+F5를 눌러 프로젝트를 실행합니다.
+     [!code-cshtml[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample18.cshtml)]
+3. Ctrl+F5를 눌러 프로젝트를 실행합니다.
 
-    클릭는 **학생** 테스트 데이터를 탭 하는 `Seed` 삽입 메서드.
+     클릭는 **학생** 테스트 데이터를 탭 하는 `Seed` 삽입 메서드.
 
-    ![학생 인덱스 페이지](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image21.png)
+     ![학생 인덱스 페이지](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image21.png)
 
 ## <a name="conventions"></a>규칙
 
@@ -351,5 +351,5 @@ Visual Studio 2012 이상 버전에서 LocalDB는 Visual Studio를 사용 하 �
 
 다른 Entity Framework 리소스에 대 한 링크에서 확인할 수 있습니다는 [ASP.NET 데이터 액세스 콘텐츠 맵](../../../../whitepapers/aspnet-data-access-content-map.md)합니다.
 
->[!div class="step-by-step"]
-[다음](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md)
+> [!div class="step-by-step"]
+> [다음](implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application.md)

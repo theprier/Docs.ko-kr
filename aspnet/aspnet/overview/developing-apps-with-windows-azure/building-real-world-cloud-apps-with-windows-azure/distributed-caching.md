@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/distributed-caching
-title: "분산 캐싱 (Azure로 응용 프로그램 빌딩 실제 클라우드) | Microsoft Docs"
+title: 분산 캐싱 (Azure로 응용 프로그램 빌딩 실제 클라우드) | Microsoft Docs
 author: MikeWasson
-description: "실제 세계 클라우드로 응용 프로그램 빌딩 Azure 전자책 Scott Guthrie에서 개발 된 프레젠테이션을 기반으로 합니다. 13 패턴 및 그을 수 있는 방법에 설명..."
+description: 실제 세계 클라우드로 응용 프로그램 빌딩 Azure 전자책 Scott Guthrie에서 개발 된 프레젠테이션을 기반으로 합니다. 13 패턴 및 그을 수 있는 방법에 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/20/2015
 ms.topic: article
 ms.assetid: 406518e9-3817-49ce-8b90-e82bc461e2c0
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/distributed-caching
 msc.type: authoredcontent
-ms.openlocfilehash: 24ede9cb9289c84140f6e2573f9d526f19cac64b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 3600200f9bb705ccf66c859547668bdf8e89d97a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="distributed-caching-building-real-world-cloud-apps-with-azure"></a>분산 캐싱 (실제 클라우드로 응용 프로그램 빌딩 Azure)
 ====================
@@ -90,7 +90,7 @@ Azure는 다음과 같은 캐싱 서비스 제공: [Azure Redis Cache](https://m
 
 캐싱 응용 프로그램에서 계속 해 서 데이터베이스를 사용할 수 없는 경우 읽기 작업에 대해 응답할 수 있도록 및 응답 시간 및 확장성을 개선 하기 위해 수정 앱 수 구현 방법을 살펴보았습니다. 에 [다음 장에서](queue-centric-work-pattern.md) 더욱 확장성이 개선 하 고 앱 계속 쓰기 작업에 대해 응답할 수 있도록 하는 방법을 보여줍니다.
 
-## <a name="resources"></a>리소스
+## <a name="resources"></a>자료
 
 캐싱에 대 한 자세한 내용은 다음 리소스를 참조 합니다.
 
@@ -111,6 +111,6 @@ Azure는 다음과 같은 캐싱 서비스 제공: [Azure Redis Cache](https://m
 
 - [클라우드 서비스 기본 사항 Azure에서](https://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649)합니다. 분산 캐시를 구현 하는 샘플 응용 프로그램 관련 블로그 게시물을 참조 [클라우드 서비스 기본 사항 – 기본 사항 캐싱](https://blogs.msdn.com/b/windowsazure/archive/2013/10/03/cloud-service-fundamentals-caching-basics.aspx)합니다.
 
->[!div class="step-by-step"]
-[이전](transient-fault-handling.md)
-[다음](queue-centric-work-pattern.md)
+> [!div class="step-by-step"]
+> [이전](transient-fault-handling.md)
+> [다음](queue-centric-work-pattern.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/security/external-authentication-services
-title: "외부 인증 서비스가 ASP.NET web API (C#) | Microsoft Docs"
+title: 외부 인증 서비스가 ASP.NET web API (C#) | Microsoft Docs
 author: rmcmurray
-description: "외부 인증 서비스를 사용 하 여 ASP.NET Web API에 설명 합니다."
+description: 외부 인증 서비스를 사용 하 여 ASP.NET Web API에 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/26/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/external-authentication-services
 msc.type: authoredcontent
-ms.openlocfilehash: 744396cb0c95d1887f259b1e2e890bd06ef7d049
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 406a85db7055910cb7a4e15fec8ef68dff5a19dc
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="external-authentication-services-with-aspnet-web-api-c"></a>외부 인증 서비스가 ASP.NET web API (C#)
 ====================
@@ -39,7 +39,7 @@ Visual Studio 2013 및 ASP.NET 4.5.1에 대 한 보안 옵션을 확장 [단일 
     - [Microsoft 인증에 대 한 응용 프로그램 설정을 가져오는 방법](#OBTAIN)
     - [로컬 등록을 사용 하지 않도록 선택 사항:](#DISABLE)
 
-### <a name="prerequisites"></a>필수 구성 요소
+### <a name="prerequisites"></a>전제 조건
 
 이 연습에서 예제를 수행 하려면 다음 조건이 충족 해야 합니다.
 
@@ -119,7 +119,7 @@ F5 키를 눌러을 빌드하고 웹 응용 프로그램을 디버깅할 때 표
 <a id="FACEBOOK"></a>
 ## <a name="enabling-facebook-authentication"></a>Facebook 인증을 사용 하도록 설정
 
-Facebook을 사용 하 여 인증에 필요한 Facebook 개발자 계정을 만들 수 있습니다 하 고 프로젝트에 작동 하는 데는 응용 프로그램 ID와 Facebook의 비밀 키를 해야 합니다. Facebook 개발자 계정을 만들고 응용 프로그램 ID 및 비밀 키를 가져오는 방법에 대 한 정보를 참조 하십시오. [https://go.microsoft.com/fwlink/?LinkID=252166](https://go.microsoft.com/fwlink/?LinkID=252166)합니다.
+Facebook을 사용 하 여 인증에 필요한 Facebook 개발자 계정을 만들 수 있습니다 하 고 프로젝트에 작동 하는 데는 응용 프로그램 ID와 Facebook의 비밀 키를 해야 합니다. Facebook 개발자 계정을 만들고 응용 프로그램 ID 및 비밀 키를 가져오는 방법에 대 한 정보를 참조 하십시오. [ https://go.microsoft.com/fwlink/?LinkID=252166 ](https://go.microsoft.com/fwlink/?LinkID=252166)합니다.
 
 한 번에 받은 응용 프로그램 ID 및 비밀 키 웹 응용 프로그램에 대 한 Facebook 인증을 사용 하도록 설정 하려면 다음 단계를 사용 합니다.
 
@@ -180,7 +180,7 @@ Google은 단연 가장 쉬운 개발자 계정으로 필요 하지 않거나 �
 <a id="MICROSOFT"></a>
 ## <a name="enabling-microsoft-authentication"></a>Microsoft 인증을 사용 하도록 설정
 
-Microsoft 인증에 필요한 개발자 계정을 만들 수 있습니다 및 클라이언트 ID와 클라이언트 암호가 작동 하는 데 필요 합니다. Microsoft 개발자 계정 만들기 및 클라이언트 ID와 클라이언트 암호를 가져오는 방법에 대 한 정보를 참조 하십시오. [https://go.microsoft.com/fwlink/?LinkID=144070](https://go.microsoft.com/fwlink/?LinkID=144070)합니다.
+Microsoft 인증에 필요한 개발자 계정을 만들 수 있습니다 및 클라이언트 ID와 클라이언트 암호가 작동 하는 데 필요 합니다. Microsoft 개발자 계정 만들기 및 클라이언트 ID와 클라이언트 암호를 가져오는 방법에 대 한 정보를 참조 하십시오. [ https://go.microsoft.com/fwlink/?LinkID=144070 ](https://go.microsoft.com/fwlink/?LinkID=144070)합니다.
 
 한 번에 받은 소비자 키 및 소비자 암호 웹 응용 프로그램에 대 한 Microsoft 인증을 사용 하도록 설정 하려면 다음 단계를 사용 합니다.
 
@@ -212,7 +212,7 @@ Microsoft 인증에 필요한 개발자 계정을 만들 수 있습니다 및 �
 <a id="TWITTER"></a>
 ## <a name="enabling-twitter-authentication"></a>Twitter 인증 사용
 
-Twitter 인증에 필요한 개발자 계정을 만들 수 있습니다 및 소비자 키 및 소비자 암호 작동 하는 데 필요 합니다. Twitter 개발자 계정을 만들고 소비자 키 및 소비자 암호를 가져오는 방법에 대 한 정보를 참조 하십시오. [https://go.microsoft.com/fwlink/?LinkID=252166](https://go.microsoft.com/fwlink/?LinkID=252166)합니다.
+Twitter 인증에 필요한 개발자 계정을 만들 수 있습니다 및 소비자 키 및 소비자 암호 작동 하는 데 필요 합니다. Twitter 개발자 계정을 만들고 소비자 키 및 소비자 암호를 가져오는 방법에 대 한 정보를 참조 하십시오. [ https://go.microsoft.com/fwlink/?LinkID=252166 ](https://go.microsoft.com/fwlink/?LinkID=252166)합니다.
 
 한 번에 받은 소비자 키 및 소비자 암호 웹 응용 프로그램에 대 한 Twitter 인증을 사용 하도록 설정 하려면 다음 단계를 사용 합니다.
 
@@ -260,19 +260,21 @@ OAuth 및 OpenID를 사용 하는 응용 프로그램을 만드는 방법에 대
 
 - 호스트 파일 매핑 정적 FQDN을 추가 합니다.
 
-    1. 창에서 관리자 권한 명령 프롬프트를 엽니다.
-    2. 다음 명령을 입력합니다.
+  1. 창에서 관리자 권한 명령 프롬프트를 엽니다.
+  2. 다음 명령을 입력합니다.
 
-        <kbd>notepad %WinDir%\system32\drivers\etc\hosts</kbd>
-    3. 호스트 파일에 다음과 같은 항목을 추가 합니다.
+      <kbd>notepad %WinDir%\system32\drivers\etc\hosts</kbd>
+  3. 호스트 파일에 다음과 같은 항목을 추가 합니다.
 
-        <kbd>127.0.0.1 www.wingtiptoys.com</kbd>
-    4. 저장 하 고 호스트 파일을 닫습니다.
+      <kbd>127.0.0.1 www.wingtiptoys.com</kbd>
+  4. 저장 하 고 호스트 파일을 닫습니다.
+
 - FQDN을 사용 하도록 Visual Studio 프로젝트를 구성 합니다.
 
-    1. 프로젝트를 Visual Studio 2013에서 연 클릭는 **프로젝트** 메뉴에서 다음 프로젝트의 속성을 선택 하 고 있습니다. 예를 들어, 선택할 수 **WebApplication1 속성**합니다.
-    2. 선택 된 **웹** 탭 합니다.
-    3. 에 대 한 FQDN을 입력에서 **프로젝트 Url**합니다. 예를 들어 입력 <kbd>http://www.wingtiptoys.com</kbd> 호스트 파일에 추가 되는 FQDN 매핑은 복제본이 있는 경우.
+  1. 프로젝트를 Visual Studio 2013에서 연 클릭는 **프로젝트** 메뉴에서 다음 프로젝트의 속성을 선택 하 고 있습니다. 예를 들어, 선택할 수 **WebApplication1 속성**합니다.
+  2. 선택 된 **웹** 탭 합니다.
+  3. 에 대 한 FQDN을 입력에서 <strong>프로젝트 Url</strong>합니다. 예를 들어 입력 <kbd> <http://www.wingtiptoys.com> </kbd> 호스트 파일에 추가 되는 FQDN 매핑은 복제본이 있는 경우.
+
 - IIS Express 응용 프로그램에 대 한 FQDN을 사용 하도록 구성 합니다.
 
     1. 창에서 관리자 권한 명령 프롬프트를 엽니다.
@@ -283,14 +285,14 @@ OAuth 및 OpenID를 사용 하는 응용 프로그램을 만드는 방법에 대
 
         <kbd>appcmd.exe set config -section:system.applicationHost/sites /+&quot;[name='WebApplication1'].bindings.[protocol='http',bindingInformation='*:80:www.wingtiptoys.com']&quot; /commit:apphost</kbd>
 
- 여기서 **WebApplication1** 프로젝트의 이름 및 **bindingInformation** 테스트에 사용할 포트 번호 및 FQDN을 포함 합니다.
+  여기서 **WebApplication1** 프로젝트의 이름 및 **bindingInformation** 테스트에 사용할 포트 번호 및 FQDN을 포함 합니다.
 
 <a id="OBTAIN"></a>
 ### <a name="how-to-obtain-your-application-settings-for-microsoft-authentication"></a>Microsoft 인증에 대 한 응용 프로그램 설정을 가져오는 방법
 
 Microsoft 인증에 대 한 Windows Live에 응용 프로그램을 연결 하는 것은 간단 합니다. Windows Live에 응용 프로그램을 아직 연결 하지 않은 경우 다음 단계를 사용할 수 있습니다.
 
-1. 찾아 [https://go.microsoft.com/fwlink/?LinkID=144070](https://go.microsoft.com/fwlink/?LinkID=144070) 고 Microsoft 계정 이름 및 메시지가 표시 되 면 암호를 입력 한 다음 클릭 **로그인**:
+1. 찾아 [ https://go.microsoft.com/fwlink/?LinkID=144070 ](https://go.microsoft.com/fwlink/?LinkID=144070) 고 Microsoft 계정 이름 및 메시지가 표시 되 면 암호를 입력 한 다음 클릭 **로그인**:
 
     [![](external-authentication-services/_static/image64.png "클릭 하 여 이미지를 확장 합니다.")](external-authentication-services/_static/image63.png)
 2. 이름 및 메시지가 표시 되 면 응용 프로그램의 언어를 입력 한 다음 클릭 **동의**:

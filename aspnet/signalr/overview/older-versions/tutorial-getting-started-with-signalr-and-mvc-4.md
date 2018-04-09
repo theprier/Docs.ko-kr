@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/tutorial-getting-started-with-signalr-and-mvc-4
-title: "자습서: SignalR 시작 1.x 및 MVC 4 | Microsoft Docs"
+title: '자습서: SignalR 시작 1.x 및 MVC 4 | Microsoft Docs'
 author: pfletcher
-description: "ASP.NET SignalR 및 ASP.NET MVC 4를 사용 하 여 실시간 채팅 응용 프로그램을 빌드합니다."
+description: ASP.NET SignalR 및 ASP.NET MVC 4를 사용 하 여 실시간 채팅 응용 프로그램을 빌드합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/29/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/tutorial-getting-started-with-signalr-and-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 632e6098a03eae02f2367c6dc1c293dbdb6b6170
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1ae330be5caf00c3cac7451f326398c0958538af
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="tutorial-getting-started-with-signalr-1x-and-mvc-4"></a>자습서: SignalR 시작 1.x 및 MVC 4
 ====================
@@ -63,17 +63,17 @@ ms.lasthandoff: 01/24/2018
         > VS 2010에서 선택 **.NET Framework 4** Framework 버전 드롭다운 컨트롤에서 합니다. SignalR 코드는.NET Framework 버전 4 및 4.5에서 실행 됩니다.
 
         ![Mvc 웹 만들기](tutorial-getting-started-with-signalr-and-mvc-4/_static/image3.png)
-    2. 인터넷 응용 프로그램 템플릿을 선택, 옵션을 선택 취소 **단위 테스트 프로젝트 만들기**, 확인을 클릭 합니다.
+      2. 인터넷 응용 프로그램 템플릿을 선택, 옵션을 선택 취소 **단위 테스트 프로젝트 만들기**, 확인을 클릭 합니다.
 
-        ![Mvc 인터넷 사이트 만들기](tutorial-getting-started-with-signalr-and-mvc-4/_static/image4.png)
-    3. 열기는 **도구 | 라이브러리 패키지 관리자 | 패키지 관리자 콘솔** 다음 명령을 실행 합니다. 이 단계는 SignalR 기능을 사용 하는 어셈블리 참조 및 스크립트 파일 집합이 프로젝트에 추가 합니다.
+         ![Mvc 인터넷 사이트 만들기](tutorial-getting-started-with-signalr-and-mvc-4/_static/image4.png)
+      3. 열기는 **도구 | 라이브러리 패키지 관리자 | 패키지 관리자 콘솔** 다음 명령을 실행 합니다. 이 단계는 SignalR 기능을 사용 하는 어셈블리 참조 및 스크립트 파일 집합이 프로젝트에 추가 합니다.
 
-        `install-package Microsoft.AspNet.SignalR -Version 1.1.3`
-    4. **솔루션 탐색기** 스크립트 폴더를 확장 합니다. SignalR에 대 한 스크립트 라이브러리를 프로젝트에 추가한 참고 합니다.
+         `install-package Microsoft.AspNet.SignalR -Version 1.1.3`
+      4. **솔루션 탐색기** 스크립트 폴더를 확장 합니다. SignalR에 대 한 스크립트 라이브러리를 프로젝트에 추가한 참고 합니다.
 
-        ![라이브러리 참조](tutorial-getting-started-with-signalr-and-mvc-4/_static/image6.png)
-    5. **솔루션 탐색기**프로젝트를 마우스 오른쪽 단추로 선택 **추가 | 새 폴더**, 라는 새 폴더를 추가 하 고 **허브**합니다.
-    6. 마우스 오른쪽 단추로 클릭는 **허브** 폴더를 클릭 하 여 **추가 | 클래스**, C# 라는 새 클래스를 만들고 **ChatHub.cs**합니다. 이 클래스는 모든 클라이언트에 메시지를 보내는 SignalR 서버 허브로 사용 합니다.
+         ![라이브러리 참조](tutorial-getting-started-with-signalr-and-mvc-4/_static/image6.png)
+      5. **솔루션 탐색기**프로젝트를 마우스 오른쪽 단추로 선택 **추가 | 새 폴더**, 라는 새 폴더를 추가 하 고 **허브**합니다.
+      6. 마우스 오른쪽 단추로 클릭는 **허브** 폴더를 클릭 하 여 **추가 | 클래스**, C# 라는 새 클래스를 만들고 **ChatHub.cs**합니다. 이 클래스는 모든 클라이언트에 메시지를 보내는 SignalR 서버 허브로 사용 합니다.
 
 > [!NOTE]
 > 설치한 후 Visual Studio 2012를 사용 하는 경우는 [ASP.NET 및 웹 도구 2012.2 업데이트](../../../visual-studio/overview/2012/aspnet-and-web-tools-20122-release-notes-rtw.md#_Installation), 허브 클래스를 만드는 새 SignalR 항목 템플릿을 사용할 수 있습니다. 이렇게 하려면 마우스 오른쪽 단추로 클릭는 **허브** 폴더를 클릭 하 여 **추가 | 새 항목**선택, **SignalR 허브 클래스 (v1)**, 클래스 이름을 지정 하 고 **ChatHub.cs**합니다.
@@ -117,7 +117,7 @@ ms.lasthandoff: 01/24/2018
 6. 다음 스크린 샷에서 브라우저에서 실행 중인 채팅 응용 프로그램을 보여 줍니다.
 
     ![채팅 브라우저](tutorial-getting-started-with-signalr-and-mvc-4/_static/image11.png)
-7. **솔루션 탐색기**, 검사는 **스크립트 문서** 실행 중인 응용 프로그램에 대 한 노드입니다. 이 노드는 브라우저로 Internet Explorer를 사용 하는 경우 디버그 모드에서 표시 합니다. 라는 스크립트 파일이 **허브** SignalR 라이브러리를 런타임에 동적으로 생성 하는 합니다. 이 파일 jQuery 스크립트와 서버 쪽 코드 간의 통신을 관리합니다. Internet Explorer 이외의 브라우저를 사용 하면 동적 액세스할 수도 있습니다 **허브** 파일을 찾아 직접 예를 들어 http://mywebsite/signalr/hubs 합니다.
+7. **솔루션 탐색기**, 검사는 **스크립트 문서** 실행 중인 응용 프로그램에 대 한 노드입니다. 이 노드는 브라우저로 Internet Explorer를 사용 하는 경우 디버그 모드에서 표시 합니다. 라는 스크립트 파일이 **허브** SignalR 라이브러리를 런타임에 동적으로 생성 하는 합니다. 이 파일 jQuery 스크립트와 서버 쪽 코드 간의 통신을 관리합니다. Internet Explorer 이외의 브라우저를 사용 하면 동적 액세스할 수도 있습니다 **허브** 파일을 찾아 직접 예를 들어 http://mywebsite/signalr/hubs합니다.
 
     ![생성 된 허브 스크립트](tutorial-getting-started-with-signalr-and-mvc-4/_static/image13.png)
 

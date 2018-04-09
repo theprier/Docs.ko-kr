@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/showing-multiple-records-per-row-with-the-datalist-control-vb
-title: "DataList 컨트롤 (VB)에서 행당 여러 레코드를 보여 주는 | Microsoft Docs"
+title: DataList 컨트롤 (VB)에서 행당 여러 레코드를 보여 주는 | Microsoft Docs
 author: rick-anderson
-description: "이 간단한 자습서 RepeatColumns 및 RepeatDirection 속성 DataList의 레이아웃을 사용자 지정 하는 방법을 살펴보겠습니다."
+description: 이 간단한 자습서 RepeatColumns 및 RepeatDirection 속성 DataList의 레이아웃을 사용자 지정 하는 방법을 살펴보겠습니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/13/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/showing-multiple-records-per-row-with-the-datalist-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 416178533f022f2a262799e6f042d6009bb9d999
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9c85e5a1d7b88a9ed53ed8392a300d5118363bf8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="showing-multiple-records-per-row-with-the-datalist-control-vb"></a>DataList 컨트롤 (VB)에서 행당 여러 레코드를 표시합니다.
 ====================
@@ -55,7 +55,7 @@ Visual Studio에서 자동으로 만들고 새 ObjectDataSource DataList 바인�
 
 [!code-aspx[Main](showing-multiple-records-per-row-with-the-datalist-control-vb/samples/sample2.aspx)]
 
-공지를 보기에 형식 지정자를 포함 했습니다는 `Eval` 에 대 한 데이터 바인딩 구문을 `UnitPrice`, 통화로-반환 되는 값을 서식 지정`Eval("UnitPrice", "{0:C}").`
+공지를 보기에 형식 지정자를 포함 했습니다는 `Eval` 에 대 한 데이터 바인딩 구문을 `UnitPrice`, 통화로-반환 되는 값을 서식 지정 `Eval("UnitPrice", "{0:C}").`
 
 브라우저에서 페이지를 방문 하 여 보십시오. 그림 2에서 볼 수 있듯이 DataList 단일 열, 다중 행 테이블을 제품으로 렌더링 합니다.
 
@@ -113,12 +113,12 @@ DataList, 기본적으로 단일 TemplateField 된 GridView의 레이아웃을 �
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 John Suru 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](formatting-the-datalist-and-repeater-based-upon-data-vb.md)
-[다음](nested-data-web-controls-vb.md)
+> [!div class="step-by-step"]
+> [이전](formatting-the-datalist-and-repeater-based-upon-data-vb.md)
+> [다음](nested-data-web-controls-vb.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/precompiling-your-website-cs
-title: "웹 사이트 (C#)를 미리 컴파일하기 | Microsoft Docs"
+title: 웹 사이트 (C#)를 미리 컴파일하기 | Microsoft Docs
 author: rick-anderson
-description: "Visual Studio에서는 ASP.NET 개발자에 게 두 가지 프로젝트 유형의: 웹 응용 프로그램 프로젝트 (Wap) 및 웹 사이트 프로젝트 (WSPs). 주요 차이점 betwe 중..."
+description: 'Visual Studio에서는 ASP.NET 개발자에 게 두 가지 프로젝트 유형의: 웹 응용 프로그램 프로젝트 (Wap) 및 웹 사이트 프로젝트 (WSPs). 주요 차이점 betwe 중...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/09/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/precompiling-your-website-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f31f470b4d2b6736b98c0b7d88ea7a53ad1438b9
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: fe49029d09db99735a181b90e781396929f22d8d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="precompiling-your-website-c"></a>웹 사이트 (C#)을 미리 컴파일
 ====================
@@ -97,7 +97,7 @@ Visual Studio에서 책 검토 WSP 열고 빌드 메뉴에서 웹 사이트 게�
 
 [![](precompiling-your-website-cs/_static/image5.png)](precompiling-your-website-cs/_static/image4.png)
 
-**그림 2**: 프로젝트 디렉터리에 `.aspx` 및 `.aspx.cs` ; 파일의 `Bin` 폴더에만 포함 되어`Elmah.dll`  
+**그림 2**: 프로젝트 디렉터리에 `.aspx` 및 `.aspx.cs` ; 파일의 `Bin` 폴더에만 포함 되어 `Elmah.dll`  
  ([전체 크기 이미지를 보려면 클릭](precompiling-your-website-cs/_static/image6.png))
 
 **그림 3** 내용이 ASP.NET 컴파일 도구에서 생성 된 대상 위치 폴더를 표시 합니다. 이 폴더에는 코드 숨김 파일이 없습니다. 또한이 폴더의 `Bin` 디렉터리에 여러 어셈블리 및 두 개의 `.compiled` 외에 파일의 `Elmah.dll` 어셈블리입니다.
@@ -190,6 +190,6 @@ ASP.NET 컴파일 두 모드를 지원: 자동 및 명시적입니다. 이전 �
 - [ASP.NET에서 미리 컴파일](http://www.odetocode.com/Articles/417.aspx)
 - [ASP.NET에서 미리 컴파일된 사이트가 옵션](http://www.dotnetperls.com/precompiled)
 
->[!div class="step-by-step"]
-[이전](logging-error-details-with-elmah-cs.md)
-[다음](users-and-roles-on-the-production-website-cs.md)
+> [!div class="step-by-step"]
+> [이전](logging-error-details-with-elmah-cs.md)
+> [다음](users-and-roles-on-the-production-website-cs.md)

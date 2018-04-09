@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/views/creating-custom-html-helpers-vb
-title: "사용자 지정 HTML 도우미 (VB) 만들기 | Microsoft Docs"
+title: 사용자 지정 HTML 도우미 (VB) 만들기 | Microsoft Docs
 author: microsoft
-description: "이 자습서의 목표를 사용해 MVC 뷰 내에서 사용할 수 있는 사용자 지정 HTML 도우미를 만드는 방법을 보여 주기 위한 것입니다. HTML 도우미를 활용 하면..."
+description: 이 자습서의 목표를 사용해 MVC 뷰 내에서 사용할 수 있는 사용자 지정 HTML 도우미를 만드는 방법을 보여 주기 위한 것입니다. HTML 도우미를 활용 하면...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/07/2008
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/views/creating-custom-html-helpers-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e389a03228995ce0a6926a53af38f26ad51372d5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6980026e2653eacb71697f9b34def9bc38638726
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-custom-html-helpers-vb"></a>사용자 지정 HTML 도우미 (VB) 만들기
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [PDF 다운로드](http://download.microsoft.com/download/1/1/f/11f721aa-d749-4ed7-bb89-a681b68894e6/ASPNET_MVC_Tutorial_9_VB.pdf)
 
@@ -57,7 +57,7 @@ ASP.NET MVC 프레임 워크에는 다음과 같은 표준 HTML 도우미 (이�
 **그림 01**: HTML 도우미를 사용 하 여 페이지 렌더링 ([전체 크기 이미지를 보려면 클릭](creating-custom-html-helpers-vb/_static/image3.png))
 
 
-**1 – 나열`Views\Home\Index.aspx`**
+**1 – 나열 `Views\Home\Index.aspx`**
 
 [!code-aspx[Main](creating-custom-html-helpers-vb/samples/sample1.aspx)]
 
@@ -72,7 +72,7 @@ ASP.NET MVC 프레임 워크에는 다음과 같은 표준 HTML 도우미 (이�
 
 ASP.NET MVC 프레임 워크 도우미 중 작은 부분만 포함 되어 있습니다. 대부분의 경우 사용자 지정 HTML 도우미와 MVC 프레임 워크를 확장 해야 합니다. 이 자습서의 나머지 부분에서는 사용자 지정 HTML 도우미를 작성 하는 두 가지 방법에 설명 합니다.
 
-**2 – 나열`Index.aspx Source`**
+**2 – 나열 `Index.aspx Source`**
 
 [!code-aspx[Main](creating-custom-html-helpers-vb/samples/sample2.aspx)]
 
@@ -80,7 +80,7 @@ ASP.NET MVC 프레임 워크 도우미 중 작은 부분만 포함 되어 있습
 
 새 HTML 도우미를 만드는 가장 쉬운 방법은 문자열을 반환 하는 공유 메서드를 만드는 것입니다. 한다고 가정, 예를 들어 HTML을 렌더링 하는 새 HTML 도우미 만들려는 `<label>` 태그입니다. 목록 2 클래스를 사용 하 여 렌더링 하는 수는 `<label>`합니다.
 
-**2 – 나열`Helpers\LabelHelper.vb`**
+**2 – 나열 `Helpers\LabelHelper.vb`**
 
 [!code-vb[Main](creating-custom-html-helpers-vb/samples/sample3.vb)]
 
@@ -88,7 +88,7 @@ ASP.NET MVC 프레임 워크 도우미 중 작은 부분만 포함 되어 있습
 
 목록 3에서 수정 된 인덱스 뷰를 사용 하는 `LabelHelper` HTML을 렌더링 하 `<label>` 태그입니다. 공지 보기를 포함 하는 `<%@ imports %>` 지시문에 Application1.Helpers 네임 스페이스를 가져옵니다.
 
-**2 – 나열`Views\Home\Index2.aspx`**
+**2 – 나열 `Views\Home\Index2.aspx`**
 
 [!code-aspx[Main](creating-custom-html-helpers-vb/samples/sample4.aspx)]
 
@@ -100,7 +100,7 @@ ASP.NET MVC 프레임 워크 도우미 중 작은 부분만 포함 되어 있습
 
 둘째, 알 수 있듯이의 첫 번째 매개 변수는 `Label()` 메서드가 `HtmlHelper` 클래스입니다. 확장 메서드의 첫 번째 매개 변수는 확장 메서드를 확장 하는 클래스를 나타냅니다.
 
-**3 – 나열`Helpers\LabelExtensions.vb`**
+**3 – 나열 `Helpers\LabelExtensions.vb`**
 
 [!code-vb[Main](creating-custom-html-helpers-vb/samples/sample5.vb)]
 
@@ -114,7 +114,7 @@ ASP.NET MVC 프레임 워크 도우미 중 작은 부분만 포함 되어 있습
 
 수정한 인덱스 뷰 목록 4에 Html.Label() 확장 메서드를 사용 하 여 모든 렌더링 하는 &lt;레이블&gt; 태그입니다.
 
-**4 – 나열`Views\Home\Index3.aspx`**
+**4 – 나열 `Views\Home\Index3.aspx`**
 
 [!code-aspx[Main](creating-custom-html-helpers-vb/samples/sample6.aspx)]
 
@@ -124,6 +124,6 @@ ASP.NET MVC 프레임 워크 도우미 중 작은 부분만 포함 되어 있습
 
 이 자습서에서는 매우 간단한 HTML 도우미 메서드는 구축에 집중 합니다. 참고로, 하는 HTML 도우미는 원하는 만큼 복잡 해질 수 있습니다. 트리 뷰, 메뉴 또는 데이터베이스 데이터 테이블 같은 풍부한 콘텐츠를 렌더링 하는 HTML 도우미를 작성할 수 있습니다.
 
->[!div class="step-by-step"]
-[이전](asp-net-mvc-views-overview-vb.md)
-[다음](using-the-tagbuilder-class-to-build-html-helpers-vb.md)
+> [!div class="step-by-step"]
+> [이전](asp-net-mvc-views-overview-vb.md)
+> [다음](using-the-tagbuilder-class-to-build-html-helpers-vb.md)

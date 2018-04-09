@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-custom-action-filters
-title: "ASP.NET MVC 4 사용자 지정 작업 필터 | Microsoft Docs"
+title: ASP.NET MVC 4 사용자 지정 작업 필터 | Microsoft Docs
 author: rick-anderson
-description: "ASP.NET MVC 이전 또는 작업 메서드가 호출 된 후 필터링 논리를 실행 하기 위한 작업 필터를 제공 합니다. 작업 필터는 사용자 지정 특성 tha 중..."
+description: ASP.NET MVC 이전 또는 작업 메서드가 호출 된 후 필터링 논리를 실행 하기 위한 작업 필터를 제공 합니다. 작업 필터는 사용자 지정 특성 tha 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-custom-action-filters
 msc.type: authoredcontent
-ms.openlocfilehash: 639815cc92b7cb5f3dfb4e1a198f6b4c2476dc90
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 8b135b23aea64b0c7c7d4368eef9ee80914159e4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="aspnet-mvc-4-custom-action-filters"></a>ASP.NET MVC 4 사용자 지정 작업 필터
 
@@ -45,7 +45,7 @@ ASP.NET MVC 이전 또는 작업 메서드가 호출 된 후 필터링 논리를
 <a id="Prerequisites"></a>
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>필수 구성 요소
+### <a name="prerequisites"></a>전제 조건
 
 이 랩을 완료 하려면 다음 항목이 있어야 합니다.
 
@@ -139,14 +139,14 @@ ASP.NET MVC 이전 또는 작업 메서드가 호출 된 후 필터링 논리를
 
 1. 열기는 **시작** 솔루션에 있는 **\Source\Ex01-LoggingActions\Begin** 폴더입니다.
 
-    1. 계속 하기 전에 몇 가지 누락 된 NuGet 패키지를 다운로드 해야 합니다. 이 작업을 수행 하려면는 **프로젝트** 메뉴와 선택 **NuGet 패키지 관리**합니다.
-    2. 에 **NuGet 패키지 관리** 대화 상자를 클릭 하 여 **복원** 누락 된 패키지를 다운로드 하려면.
-    3. 마지막으로,를 클릭 하 여 솔루션을 빌드합니다 **빌드** | **솔루션 빌드**합니다.
+   1. 계속 하기 전에 몇 가지 누락 된 NuGet 패키지를 다운로드 해야 합니다. 이 작업을 수행 하려면는 **프로젝트** 메뉴와 선택 **NuGet 패키지 관리**합니다.
+   2. 에 **NuGet 패키지 관리** 대화 상자를 클릭 하 여 **복원** 누락 된 패키지를 다운로드 하려면.
+   3. 마지막으로,를 클릭 하 여 솔루션을 빌드합니다 **빌드** | **솔루션 빌드**합니다.
 
-    > [!NOTE]
-    > NuGet을 사용 하 여의 장점 중 하나 없습니다 있는입니다 써 해당 프로젝트의 모든 라이브러리를 프로젝트 크기를 줄이면 합니다. NuGet 파워 도구 Packages.config 파일에서 패키지 버전을 지정 하 여 해야 합니다를 처음으로 프로젝트를 실행 하면 필요한 라이브러리를 다운로드할 수 있습니다. 이 때문에이 랩에서 기존 솔루션을 연 후 다음이 단계를 실행 해야 합니다.
-    > 
-    > 자세한 내용은이 문서를 참조 하십시오.: [http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages](http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages)합니다.
+      > [!NOTE]
+      > NuGet을 사용 하 여의 장점 중 하나 없습니다 있는입니다 써 해당 프로젝트의 모든 라이브러리를 프로젝트 크기를 줄이면 합니다. NuGet 파워 도구 Packages.config 파일에서 패키지 버전을 지정 하 여 해야 합니다를 처음으로 프로젝트를 실행 하면 필요한 라이브러리를 다운로드할 수 있습니다. 이 때문에이 랩에서 기존 솔루션을 연 후 다음이 단계를 실행 해야 합니다.
+      > 
+      > 자세한 내용은이 문서를 참조 하십시오.: [ http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages ](http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages)합니다.
 2. 에 새 C# 클래스를 추가 **필터** 폴더 이름을 지정 *CustomActionFilter.cs*합니다. 이 폴더는 모든 사용자 지정 필터를 저장 합니다.
 3. 열기 **CustomActionFilter.cs** 에 대 한 참조를 추가 하 고 **System.Web.Mvc** 및 **MvcMusicStore.Models** 네임 스페이스:
 
@@ -185,10 +185,10 @@ ASP.NET MVC 이전 또는 작업 메서드가 호출 된 후 필터링 논리를
 
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample5.cs)]
 
-    > [!NOTE]
-    > 필터는 컨트롤러 클래스에 주입 된, 모든 작업은 삽입도 합니다. 삽입 해야 일련의 동작에 대해서만 필터를 적용 하려는 경우 **[CustomActionFilter]** 중 각각에:
-    > 
-    > [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample6.cs)]
+   > [!NOTE]
+   > 필터는 컨트롤러 클래스에 주입 된, 모든 작업은 삽입도 합니다. 삽입 해야 일련의 동작에 대해서만 필터를 적용 하려는 경우 **[CustomActionFilter]** 중 각각에:
+   > 
+   > [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample6.cs)]
 
 <a id="Ex1Task3"></a>
 
@@ -204,14 +204,14 @@ ASP.NET MVC 이전 또는 작업 메서드가 호출 된 후 필터링 논리를
 
     *페이지 작업 이전 로그 추적 장치 상태*
 
-    > [!NOTE]
-    > 기본적으로 한 항목의 메뉴에 대 한 기존 장르를 검색할 때 생성 되는 항상 표시 됩니다.
-    > 
-    > 단순성을 위해를 정리 하 우리는 **ActionLog** 는 각 특정 작업의 확인의 로그 데이터만 표시 하도록 응용 프로그램이 실행 될 때마다 테이블입니다.
-    > 
-    > 파일에서 다음 코드를 제거 해야 할 수는 **세션\_시작** 메서드 (에 **Global.asax** 클래스), 저장소 내에서 실행 되는 모든 작업에 대 한 기록 로그를 저장 하려면 컨트롤러입니다.
-    > 
-    > [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample7.cs)]
+   > [!NOTE]
+   > 기본적으로 한 항목의 메뉴에 대 한 기존 장르를 검색할 때 생성 되는 항상 표시 됩니다.
+   > 
+   > 단순성을 위해를 정리 하 우리는 **ActionLog** 는 각 특정 작업의 확인의 로그 데이터만 표시 하도록 응용 프로그램이 실행 될 때마다 테이블입니다.
+   > 
+   > 파일에서 다음 코드를 제거 해야 할 수는 **세션\_시작** 메서드 (에 **Global.asax** 클래스), 저장소 내에서 실행 되는 모든 작업에 대 한 기록 로그를 저장 하려면 컨트롤러입니다.
+   > 
+   > [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample7.cs)]
 3. 중 하나를 클릭는 **장르** 메뉴에서 사용할 수 있는 앨범 화, 일부 작업을 수행 하 고 있습니다.
 4. 찾아 **/ActionLog** 로그 빈 키를 눌러가 고 **F5** 페이지를 새로 고칠 합니다. 프로그램 환자가 내 원 추적 된 확인 합니다.
 
@@ -232,7 +232,7 @@ ASP.NET MVC 이전 또는 작업 메서드가 호출 된 후 필터링 논리를
 
 또한 각 작업 필터는 필터의 범위에서 실행 순서를 결정 하는 데 사용 되는 순서 속성을 있습니다.
 
-사용자 지정 작업 필터 실행 순서에 대 한 자세한 내용은이 MSDN 문서를 참조 하십시오. ([https://msdn.microsoft.com/library/dd381609(v=vs.98).aspx](https://msdn.microsoft.com/library/dd381609(v=vs.98).aspx)) 합니다.
+사용자 지정 작업 필터 실행 순서에 대 한 자세한 내용은이 MSDN 문서를 참조 하십시오. ([https://msdn.microsoft.com/library/dd381609(v=vs.98).aspx](https://msdn.microsoft.com/library/dd381609(v=vs.98).aspx)).
 
 <a id="Ex2Task1"></a>
 
@@ -250,7 +250,7 @@ ASP.NET MVC 이전 또는 작업 메서드가 호출 된 후 필터링 논리를
         > [!NOTE]
         > NuGet을 사용 하 여의 장점 중 하나 없습니다 있는입니다 써 해당 프로젝트의 모든 라이브러리를 프로젝트 크기를 줄이면 합니다. NuGet 파워 도구 Packages.config 파일에서 패키지 버전을 지정 하 여 해야 합니다를 처음으로 프로젝트를 실행 하면 필요한 라이브러리를 다운로드할 수 있습니다. 이 때문에이 랩에서 기존 솔루션을 연 후 다음이 단계를 실행 해야 합니다.
         > 
-        > 자세한 내용은이 문서를 참조 하십시오.: [http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages](http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages)합니다.
+        > 자세한 내용은이 문서를 참조 하십시오.: [ http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages ](http://docs.nuget.org/docs/workflows/using-nuget-without-committing-packages)합니다.
 2. 에 새 C# 클래스를 추가 **필터** 폴더 이름을 지정 *MyNewCustomActionFilter.cs*
 3. 열기 **MyNewCustomActionFilter.cs** 에 대 한 참조를 추가 하 고 **System.Web.Mvc** 및 **MvcMusicStore.Models** 네임 스페이스:
 
@@ -264,7 +264,7 @@ ASP.NET MVC 이전 또는 작업 메서드가 호출 된 후 필터링 논리를
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample9.cs)]
 
     > [!NOTE]
-    > 이 사용자 지정 작업 필터는 이전 연습에서 만든 것 보다 거의 동일 합니다. 주요 차이점은 있다는  *&quot;기록 하 여&quot;*  wich 필터를 식별 하는이 새 클래스의이 이름으로 업데이트 하는 특성의 로그를 등록 합니다.
+    > 이 사용자 지정 작업 필터는 이전 연습에서 만든 것 보다 거의 동일 합니다. 주요 차이점은 있다는 *&quot;기록 하 여&quot;* wich 필터를 식별 하는이 새 클래스의이 이름으로 업데이트 하는 특성의 로그를 등록 합니다.
 
 <a id="Ex2Task2"></a>
 
@@ -376,9 +376,9 @@ ASP.NET MVC 이전 또는 작업 메서드가 호출 된 후 필터링 논리를
 <a id="Appendix_A_Installing_Visual_Studio_Express_2012_for_Web"></a>
 ## <a name="appendix-a-installing-visual-studio-express-2012-for-web"></a>부록 a: 설치 Visual Studio Express 2012 for Web
 
-설치할 수 있습니다 **Microsoft Visual Studio Express 2012 for Web** 또는 다른 &quot;Express&quot; 버전을 사용 하 여  **[Microsoft 웹 플랫폼 설치 관리자](https://www.microsoft.com/web/downloads/platform.aspx)** . 다음 지침을 설치 하는 데 필요한 단계를 안내 하 *Visual studio Express 2012 for Web* 를 사용 하 여 *Microsoft 웹 플랫폼 설치 관리자*합니다.
+설치할 수 있습니다 **Microsoft Visual Studio Express 2012 for Web** 또는 다른 &quot;Express&quot; 버전을 사용 하 여 **[Microsoft 웹 플랫폼 설치 관리자](https://www.microsoft.com/web/downloads/platform.aspx)**. 다음 지침을 설치 하는 데 필요한 단계를 안내 하 *Visual studio Express 2012 for Web* 를 사용 하 여 *Microsoft 웹 플랫폼 설치 관리자*합니다.
 
-1. 로 이동 [ [https://go.microsoft.com/? linkid = 9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169)합니다. 또는 이미 설치 된 웹 플랫폼 설치 관리자를 열 수 있습니다 및 제품에 대 한 검색 &quot; *Visual Studio Express 2012 for Web Windows Azure SDK와*&quot;합니다.
+1. 로 이동 [ [ https://go.microsoft.com/? linkid = 9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169)합니다. 또는 이미 설치 된 웹 플랫폼 설치 관리자를 열 수 있습니다 및 제품에 대 한 검색 &quot; <em>Visual Studio Express 2012 for Web Windows Azure SDK와</em>&quot;합니다.
 2. 클릭 **지금 설치**합니다. 없는 경우 **웹 플랫폼 설치 관리자** 를 다운로드 하 여 앱을 먼저 설치 이동 합니다.
 3. 한 번 **웹 플랫폼 설치 관리자** 열려 클릭 **설치** 는 설치 프로그램을 시작 합니다.
 
@@ -399,13 +399,13 @@ ASP.NET MVC 이전 또는 작업 메서드가 호출 된 후 필터링 논리를
 
     ![설치 완료](aspnet-mvc-4-custom-action-filters/_static/image15.png)
 
-    설치 완료
+    *설치 완료*
 7. 클릭 **종료** 를 웹 플랫폼 설치 관리자를 닫습니다.
 8. Visual Studio Express for Web을 열려면로 이동는 **시작** 화면를 쓰기 시작할 &quot; **VS Express**&quot;, 클릭는 **VS Express for Web** 바둑판식 배열입니다.
 
     ![웹 타일에 대 한 VS Express](aspnet-mvc-4-custom-action-filters/_static/image16.png)
 
-    웹 타일에 대 한 VS Express
+    *웹 타일에 대 한 VS Express*
 
 <a id="AppendixB"></a>
 
@@ -485,12 +485,12 @@ ASP.NET MVC 이전 또는 작업 메서드가 호출 된 후 필터링 논리를
 
     ![클라이언트 IP 주소를 추가합니다.](aspnet-mvc-4-custom-action-filters/_static/image27.png)
 
-    클라이언트 IP 주소를 추가합니다.
+    *클라이언트 IP 주소를 추가합니다.*
 3. 한 번는 **클라이언트 IP 주소** 허용된 된 IP 주소에 추가 됩니다 목록에서 클릭 **저장** 하 여 변경 사항을 확인 합니다.
 
     ![변경 확인](aspnet-mvc-4-custom-action-filters/_static/image28.png)
 
-    변경 확인
+    *변경 확인*
 
 <a id="ApxBTask3"></a>
 
@@ -522,14 +522,14 @@ ASP.NET MVC 이전 또는 작업 메서드가 호출 된 후 필터링 논리를
     *웹 배포 구성*
 5. 다음과 같이 데이터베이스 연결을 구성 합니다.
 
-    - 에 **서버 이름** SQL 데이터베이스 서버 URL 사용 하 여 입력 된 *tcp:* 접두사입니다.
-    - **사용자 이름** 서버 관리자 로그인 이름을 입력 합니다.
-    - **암호** 서버 관리자 로그인 암호를 입력 합니다.
-    - 새 데이터베이스 이름을 입력 합니다.
+   - 에 **서버 이름** SQL 데이터베이스 서버 URL 사용 하 여 입력 된 *tcp:* 접두사입니다.
+   - **사용자 이름** 서버 관리자 로그인 이름을 입력 합니다.
+   - **암호** 서버 관리자 로그인 암호를 입력 합니다.
+   - 새 데이터베이스 이름을 입력 합니다.
 
-    ![대상 연결 문자열 구성](aspnet-mvc-4-custom-action-filters/_static/image33.png "대상 연결 문자열 구성")
+     ![대상 연결 문자열 구성](aspnet-mvc-4-custom-action-filters/_static/image33.png "대상 연결 문자열 구성")
 
-    *대상 연결 문자열 구성*
+     *대상 연결 문자열 구성*
 6. 그런 다음 **확인**을 클릭합니다. 데이터베이스를 만들려는 대화 상자가 나타나면 **예**합니다.
 
     ![데이터베이스를 만드는](aspnet-mvc-4-custom-action-filters/_static/image34.png "데이터베이스 문자열 만들기")

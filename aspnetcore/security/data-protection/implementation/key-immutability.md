@@ -1,7 +1,7 @@
 ---
-title: "키 불변성 및 설정 변경"
+title: ASP.NET Core의 불변성 및 키 설정 키
 author: rick-anderson
-description: "이 문서에는 ASP.NET Core 데이터 보호 키 불변성 Api의 구현 세부 사항을 설명합니다."
+description: ASP.NET Core 데이터 보호 키 불변성 Api의 구현 세부 정보에 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,23 +9,23 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/implementation/key-immutability
-ms.openlocfilehash: 98727c7a0c525edcda4fd8d004e0ac584cf0a5e5
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: e918b00562aca9821de87c38f10242177517d8a5
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="key-immutability-and-changing-settings"></a>주요 불변성 및 설정 변경
+# <a name="key-immutability-and-key-settings-in-aspnet-core"></a>ASP.NET Core의 불변성 및 키 설정 키
 
 개체는 백업 저장소에 유지 되 면 표현 영원히 고정 되어 있습니다. 새 데이터에는 백업 저장소에 추가할 수 있지만 기존 데이터를 변경할 수 없습니다. 이 동작의 주 목적은 데이터 손상을 방지 하려면입니다.
 
 이 동작의 한 결과 키를 백업 저장소에 쓴 후 아닌지 변경할 수는입니다. 생성, 활성화 및 만료 날짜는 변경할 수 없습니다, 사용 하 여 취소할 수 있지만 `IKeyManager`합니다. 또한 해당 기본 알고리즘 정보, 마스터 키 자료 및 나머지 속성에서 암호화도 변경할 수 없는 합니다.
 
-다음에 키를 생성 하기 위해 명시적 호출이 통해 될 때까지 해당 변경 내용이 반영 다루지는 않겠습니다. 개발자는 설정 키 지 속성에 영향을 주는 변경 되 면 `IKeyManager.CreateNewKey` 또는 데이터 보호 시스템의 자체를 통해 [자동 키 세대](key-management.md#data-protection-implementation-key-management) 동작 합니다. 지 속성 키에 영향을 주는 설정은 다음과 같습니다.
+다음에 키를 생성 하기 위해 명시적 호출이 통해 될 때까지 해당 변경 내용이 반영 다루지는 않겠습니다. 개발자는 설정 키 지 속성에 영향을 주는 변경 되 면 `IKeyManager.CreateNewKey` 또는 데이터 보호 시스템의 자체를 통해 [자동 키 세대](xref:security/data-protection/implementation/key-management#data-protection-implementation-key-management) 동작 합니다. 지 속성 키에 영향을 주는 설정은 다음과 같습니다.
 
-* [기본 키 수명](key-management.md#data-protection-implementation-key-management)
+* [기본 키 수명](xref:security/data-protection/implementation/key-management#data-protection-implementation-key-management)
 
-* [나머지 메커니즘에 키 암호화](key-encryption-at-rest.md#data-protection-implementation-key-encryption-at-rest)
+* [나머지 메커니즘에 키 암호화](xref:security/data-protection/implementation/key-encryption-at-rest#data-protection-implementation-key-encryption-at-rest)
 
 * [키 내에 포함 된 알고리즘 정보](xref:security/data-protection/configuration/overview#changing-algorithms-with-usecryptographicalgorithms)
 

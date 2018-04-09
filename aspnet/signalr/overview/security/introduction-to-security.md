@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/security/introduction-to-security
-title: "SignalR 보안 소개 | Microsoft Docs"
+title: SignalR 보안 소개 | Microsoft Docs
 author: pfletcher
-description: "SignalR 응용 프로그램을 개발할 때 고려해 야 할 보안 문제에 설명 합니다."
+description: SignalR 응용 프로그램을 개발할 때 고려해 야 할 보안 문제에 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/security/introduction-to-security
 msc.type: authoredcontent
-ms.openlocfilehash: 1cb9f15a958028822b50decf4b420c36596ce25e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 9a4f09c8036d6d662dfdc44d7c7feaba0101e0c6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introduction-to-signalr-security"></a>SignalR 보안 소개
 ====================
@@ -115,7 +115,7 @@ CSRF 공격의 예는 다음과 같습니다.
 
     [!code-html[Main](introduction-to-security/samples/sample1.html)]
 
- Form action에는 취약 한 사이트 악성 사이트에 게시 확인 합니다. CSRF의 "사이트 간" 부분입니다.
+   Form action에는 취약 한 사이트 악성 사이트에 게시 확인 합니다. CSRF의 "사이트 간" 부분입니다.
 4. 사용자가 제출 단추를 클릭 합니다. 브라우저에는 요청과 함께 인증 쿠키가 포함 되어 있습니다.
 5. 요청은 사용자의 인증 컨텍스트를 사용 하 여 example.com 서버에서 실행 되며 인증된 된 사용자가 수행할 수 있는 모든 작업을 수행할 수 있습니다.
 

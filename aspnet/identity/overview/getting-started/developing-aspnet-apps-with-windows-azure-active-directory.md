@@ -1,22 +1,22 @@
 ---
 uid: identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory
-title: "Azure Active Directory와 ASP.NET 응용 프로그램 개발 | Microsoft Docs"
+title: Azure Active Directory와 ASP.NET 응용 프로그램 개발 | Microsoft Docs
 author: Rick-Anderson
-description: "Azure Active Directory 용 Microsoft ASP.NET 도구가 간단히 Azure에서 호스팅되는 웹 응용 프로그램에 대 한 인증을 사용 하도록 설정 합니다. Azure 인증을 사용할 수 있습니다..."
+description: Azure Active Directory 용 Microsoft ASP.NET 도구가 간단히 Azure에서 호스팅되는 웹 응용 프로그램에 대 한 인증을 사용 하도록 설정 합니다. Azure 인증을 사용할 수 있습니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2014
 ms.topic: article
 ms.assetid: 457d7eaf-ee76-4ceb-9082-c7c1721435ad
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/developing-aspnet-apps-with-windows-azure-active-directory
 msc.type: authoredcontent
-ms.openlocfilehash: 1ef0468d5f5c17480b23ac88983f30fe6f4979c0
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 44bf29e099583bf9d49f2715d3ff4f748728ad8b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="developing-aspnet-apps-with-azure-active-directory"></a>Azure Active Directory와 ASP.NET 앱 개발
 ====================
@@ -24,12 +24,12 @@ ms.lasthandoff: 01/24/2018
 
 > Azure Active Directory를 사용 하면 간단 하 게에서 호스팅된 웹 응용 프로그램에 대 한 인증을 사용 하도록 설정에 대 한 Microsoft ASP.NET 도구 [Azure](https://www.windowsazure.com/home/features/web-sites/)합니다. Office 365 사용자 인증을 위해 조직, 온-프레미스 Active Directory에서 동기화 된 회사 계정 또는 사용자 고유의 사용자 지정 Azure Active Directory 도메인에서 만든 사용자가 Azure 인증을 사용할 수 있습니다. Windows Azure 인증을 사용 하도록 설정 단일을 사용 하 여 사용자를 인증 하는 응용 프로그램을 구성 [Azure Active Directory](https://docs.microsoft.com/azure/active-directory/) 테 넌 트입니다.
 > 
->  이 자습서는 Rick Anderson에 의해 작성 되었으므로[@RickAndMSFT](https://twitter.com/#!/RickAndMSFT)
+>  이 자습서는 Rick Anderson에 의해 작성 되었으므로 [@RickAndMSFT](https://twitter.com/#!/RickAndMSFT)
 
 
 이 자습서를 사용 하 여 로그온에 대해 구성 된 ASP.NET 응용 프로그램을 만드는 방법을 보여 됩니다 [Azure Active Directory](https://msdn.microsoft.com/library/azure/mt168838.aspx) (Azure AD). 또한 현재 로그인 한 사용자에 대 한 정보에 Graph API를 호출 하는 방법과 Azure에 응용 프로그램을 배포 하는 방법을 배웁니다.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 1. [Visual Studio Express 2013 for Web](https://www.microsoft.com/visualstudio/eng/2013-downloads#d-2013-express) 또는 [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)합니다.
 2. [Visual Studio 2013 업데이트 4](https://www.microsoft.com/download/details.aspx?id=44921) -업데이트 3 이상 작업이 필요 합니다.
@@ -52,7 +52,7 @@ ms.lasthandoff: 01/24/2018
   
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image4.png)  
   
- 암호를 저장 후 첫 번째 로그인 암호를 변경 하는 데 필요한 됩니다. 다음 그림은 새 관리자 계정을 보여 줍니다. 또한이 페이지에 표시 된 Microsoft 계정이 아닌 앱에 로그인 하려면 Azure Active Directory를 사용 해야 합니다.  
+   암호를 저장 후 첫 번째 로그인 암호를 변경 하는 데 필요한 됩니다. 다음 그림은 새 관리자 계정을 보여 줍니다. 또한이 페이지에 표시 된 Microsoft 계정이 아닌 앱에 로그인 하려면 Azure Active Directory를 사용 해야 합니다.  
   
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image5.png)
 
@@ -65,11 +65,11 @@ ms.lasthandoff: 01/24/2018
   
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image6.png)
 3. 에 **인증 변경** 대화 상자에서 **조직 계정**합니다. 자동으로 Azure AD와 통합 하는 응용 프로그램을 구성할 수 있을 뿐 아니라 Azure AD와 응용 프로그램을 자동으로 등록 하려면이 옵션을 사용할 수 있습니다. 사용할 필요가 없습니다는 **인증 변경** 등록 하 고 있지만 응용 프로그램 구성 대화 상자를 통해 훨씬 쉬워졌습니다. Visual Studio 2012 예를 사용 하는 경우 수동으로 Azure 관리 포털에서 응용 프로그램을 등록 하 고 업데이트할 수 Azure AD와 통합 하는 구성 합니다.  
- 드롭 다운 메뉴에서 선택 **클라우드-단일 조직** 및 **Single Sign On, 디렉터리 데이터 읽기**합니다. 예를 들어 (이미지에 아래)를 Azure AD 디렉터리에 대 한 도메인을 입력 합니다. *aricka0yahoo.onmicrosoft.com*, 클릭 하 고 **확인**합니다. Azure 포털에서 기본 디렉터리에 대 한 도메인 탭에서 도메인 이름을 가져올 수 있습니다 (다음 이미지 아래 참조).   
+   드롭 다운 메뉴에서 선택 **클라우드-단일 조직** 및 **Single Sign On, 디렉터리 데이터 읽기**합니다. 예를 들어 (이미지에 아래)를 Azure AD 디렉터리에 대 한 도메인을 입력 합니다. *aricka0yahoo.onmicrosoft.com*, 클릭 하 고 **확인**합니다. Azure 포털에서 기본 디렉터리에 대 한 도메인 탭에서 도메인 이름을 가져올 수 있습니다 (다음 이미지 아래 참조).   
   
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image7.png)  
   
- 다음 이미지는 Azure 포털에서 도메인 이름을 표시 합니다.  
+   다음 이미지는 Azure 포털에서 도메인 이름을 표시 합니다.  
   
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image8.png)  
 
@@ -94,11 +94,11 @@ ms.lasthandoff: 01/24/2018
   
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image13.png)  
   
- 오류가 표시될 경우:  
- 값은 null 이거나 비워 둘 수 없습니다. 매개 변수 이름: linkText   
+   오류가 표시될 경우:  
+   값은 null 이거나 비워 둘 수 없습니다. 매개 변수 이름: linkText   
     ![](developing-aspnet-apps-with-windows-azure-active-directory/_static/image14.png)  
   
- 참조는 [디버그](#dbg) 자습서의 마지막 부분에 있습니다.
+   참조는 [디버그](#dbg) 자습서의 마지막 부분에 있습니다.
 
 ## <a name="basics-of-the-graph-api"></a>Graph API의 기본 사항
 

@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET에서 machineKey 바꾸기"
+title: ASP.NET Core에서 ASP.NET 컴퓨터 키를 대체 합니다.
 author: rick-anderson
-description: "Asp.net는 새롭고 보다 안전한 데이터 보호 시스템의 사용을 허용 하도록 machineKey를 대체 하는 방법을 검색 합니다."
+description: Asp.net는 새롭고 보다 안전한 데이터 보호 시스템의 사용을 허용 하도록 machineKey를 대체 하는 방법을 검색 합니다.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/compatibility/replacing-machinekey
-ms.openlocfilehash: 8113780dd7b8b3010cf77d14abb45730a2f28959
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 18d14099786929058b17bac2a653eaa1489de7d2
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="replace-machinekey-in-aspnet"></a>ASP.NET에서 machineKey 바꾸기
+# <a name="replace-the-aspnet-machinekey-in-aspnet-core"></a>ASP.NET Core에서 ASP.NET 컴퓨터 키를 대체 합니다.
 
 <a name="compatibility-replacing-machinekey"></a>
 

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-5-create-unit-tests-vb
-title: "반복 #5 – 만들기 단위 테스트 (VB) | Microsoft Docs"
+title: '반복 #5 – 만들기 단위 테스트 (VB) | Microsoft Docs'
 author: microsoft
-description: "다섯 번째 반복에서 하도록 응용 프로그램이 쉽게 유지 관리 및 단위 테스트를 추가 하 여 수정 합니다. 데이터 모델 클래스를 모의 하 고 o에 대 한 단위 테스트 빌드 중..."
+description: 다섯 번째 반복에서 하도록 응용 프로그램이 쉽게 유지 관리 및 단위 테스트를 추가 하 여 수정 합니다. 데이터 모델 클래스를 모의 하 고 o에 대 한 단위 테스트 빌드 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-5-create-unit-tests-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ab9ff5629cb468b785f5b82178f9f6247a55cacb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fe59792a1e1a7950a318e7e893b3da12d53a8efa
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="iteration-5--create-unit-tests-vb"></a>반복 #5-단위 테스트 만들기 (VB)
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [코드 다운로드](iteration-5-create-unit-tests-vb/_static/contactmanager_5_vb1.zip)
 
@@ -105,15 +105,15 @@ ms.lasthandoff: 11/10/2017
 
 Visual Studio의 모의 개체 프레임 워크를 포함 하지 않습니다. 그러나는 여러 개의 상용 및 오픈 소스 모의 개체 프레임 워크가.NET framework에 사용할 수 있는
 
-1. Moq-이 프레임 워크는 오픈 소스 BSD 라이선스에 따라 사용할 수 있습니다. Moq에서 다운로드할 수 있습니다 [https://code.google.com/p/moq/](https://code.google.com/p/moq/)합니다.
-2. Rhino Mocks-이 프레임 워크는 오픈 소스 BSD 라이선스 아래에 있습니다. Rhino Mocks에서 다운로드할 수 있습니다 [http://ayende.com/projects/rhino-mocks.aspx](http://ayende.com/projects/rhino-mocks.aspx)합니다.
-3. Typemock 절연체-상용 프레임 워크입니다. 평가판 버전을 다운로드할 수 있습니다 [http://www.typemock.com/](http://www.typemock.com/)합니다.
+1. Moq-이 프레임 워크는 오픈 소스 BSD 라이선스에 따라 사용할 수 있습니다. Moq에서 다운로드할 수 있습니다 [ https://code.google.com/p/moq/ ](https://code.google.com/p/moq/)합니다.
+2. Rhino Mocks-이 프레임 워크는 오픈 소스 BSD 라이선스 아래에 있습니다. Rhino Mocks에서 다운로드할 수 있습니다 [ http://ayende.com/projects/rhino-mocks.aspx ](http://ayende.com/projects/rhino-mocks.aspx)합니다.
+3. Typemock 절연체-상용 프레임 워크입니다. 평가판 버전을 다운로드할 수 있습니다 [ http://www.typemock.com/ ](http://www.typemock.com/)합니다.
 
 이 자습서에서는 Moq 사용 하기로 합니다. 그러나 Rhino Mocks 손쉽게 사용할 수 있습니다 또는 모의 만들려는 Typemock 절연체 않아 응용 프로그램에 대 한 개체입니다.
 
 Moq를 사용 하려면 먼저 다음 단계를 완료 해야 합니다.
 
-1. 입니다.
+1. 이어야 합니다.
 2. 다운로드 압축을 푸는 전에 파일을 마우스 오른쪽 단추로 클릭 하 고 단추를 클릭 했는지 확인 **차단 해제** (그림 1 참조).
 3. 다운로드를 압축을 풉니다.
 4. 메뉴 옵션을 선택 하 여 테스트 프로젝트에 Moq 어셈블리에 대 한 참조를 추가 **프로젝트, 참조 추가** 열려는 **참조 추가** 대화 상자. 찾아보기 탭에서 Moq의 압축을 푼 폴더를 찾아 Moq.dll 어셈블리를 선택 합니다. 클릭는 **확인** 단추 (그림 2 참조).
@@ -157,7 +157,7 @@ ContactManager.Tests 프로젝트에서 모델을 라는 새 폴더를 만듭니
 
 이러한 테스트에 대 한 코드 목록 1에 포함 됩니다.
 
-**1-Models\ContactManagerServiceTest.vb 나열**
+**Listing 1 - Models\ContactManagerServiceTest.vb**
 
 [!code-vb[Main](iteration-5-create-unit-tests-vb/samples/sample1.vb)]
 
@@ -226,7 +226,7 @@ View("Create") 반환
 없는 경우 명시적 보기를 반환할 때 ViewResult.ViewName 속성은 빈 문자열을 반환 합니다.
 
 
-**2-Controllers\ContactControllerTest.vb 나열**
+**Listing 2 - Controllers\ContactControllerTest.vb**
 
 [!code-vb[Main](iteration-5-create-unit-tests-vb/samples/sample6.vb)]
 
@@ -238,6 +238,6 @@ View("Create") 반환
 
 다음 반복에서 우리 않아 응용 프로그램 되도록 수정 메일 그룹을 지원 합니다. 이 새로운 기능 테스트 기반 개발 소프트웨어 디자인 프로세스를 사용 하 여 응용 프로그램에 추가 합니다.
 
->[!div class="step-by-step"]
-[이전](iteration-4-make-the-application-loosely-coupled-vb.md)
-[다음](iteration-6-use-test-driven-development-vb.md)
+> [!div class="step-by-step"]
+> [이전](iteration-4-make-the-application-loosely-coupled-vb.md)
+> [다음](iteration-6-use-test-driven-development-vb.md)

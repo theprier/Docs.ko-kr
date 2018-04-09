@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/unit-testing/creating-unit-tests-for-asp-net-mvc-applications-cs
-title: "ASP.NET MVC 응용 프로그램 (C#)에 대 한 단위 테스트 만들기 | Microsoft Docs"
+title: ASP.NET MVC 응용 프로그램 (C#)에 대 한 단위 테스트 만들기 | Microsoft Docs
 author: StephenWalther
-description: "컨트롤러 작업에 대 한 단위 테스트를 만드는 방법에 알아봅니다. 이 자습서에서는 Stephen Walther 컨트롤러 작업에는 parti 반환 하는지 여부를 테스트 하는 방법을 보여 줍니다 중..."
+description: 컨트롤러 작업에 대 한 단위 테스트를 만드는 방법에 알아봅니다. 이 자습서에서는 Stephen Walther 컨트롤러 작업에는 parti 반환 하는지 여부를 테스트 하는 방법을 보여 줍니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/19/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/unit-testing/creating-unit-tests-for-asp-net-mvc-applications-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 56c981363f1905c1c9869dbaf2adb6b5ac1c28a5
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ccd9a1b3aee8379c23c01c5eb7f756a786f6359d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-unit-tests-for-aspnet-mvc-applications-c"></a>ASP.NET MVC 응용 프로그램 (C#)에 대 한 단위 테스트 만들기
 ====================
@@ -33,7 +33,7 @@ ms.lasthandoff: 11/10/2017
 
 테스트 하 여 사용 하는 컨트롤러를 만들어 보겠습니다. 명명 된 컨트롤러는 `ProductController`, 목록 1에 포함 되어 있습니다.
 
-**1 – 나열`ProductController.cs`**
+**1 – 나열 `ProductController.cs`**
 
 [!code-csharp[Main](creating-unit-tests-for-asp-net-mvc-applications-cs/samples/sample1.cs)]
 
@@ -43,7 +43,7 @@ ms.lasthandoff: 11/10/2017
 
 테스트 한다고 가정해 보세요. 여부는 `ProductController` 오른쪽 뷰를 반환 합니다. 있는지 확인 하고자 때는 `ProductController.Details()` 동작이 호출 자세히 보기 반환 됩니다. 테스트에서 반환 된 보기에 대 한 단위 테스트를 포함 하는 목록 2에서 테스트 클래스는 `ProductController.Details()` 동작 합니다.
 
-**2 – 나열`ProductControllerTest.cs`**
+**2 – 나열 `ProductControllerTest.cs`**
 
 [!code-csharp[Main](creating-unit-tests-for-asp-net-mvc-applications-cs/samples/sample2.cs)]
 
@@ -74,11 +74,11 @@ ms.lasthandoff: 11/10/2017
 
 ## <a name="testing-the-view-data-returned-by-a-controller"></a>컨트롤러에 의해 반환 된 데이터 보기를 테스트 합니다.
 
-MVC 컨트롤러 라는 것을 사용 하 여 데이터 뷰를 전달  *`View Data`* 합니다. 예를 들어, 호출할 때 특정 제품에 대 한 정보를 표시 하 고 가정은 `ProductController Details()` 동작 합니다. 인스턴스를 만들 수는 경우에 `Product` (모델에 정의 됨) 하는 클래스 인스턴스를 전달 하 고는 `Details` 뷰를 이용 하 여 `View Data`합니다.
+MVC 컨트롤러 라는 것을 사용 하 여 데이터 뷰를 전달 *`View Data`*합니다. 예를 들어, 호출할 때 특정 제품에 대 한 정보를 표시 하 고 가정은 `ProductController Details()` 동작 합니다. 인스턴스를 만들 수는 경우에 `Product` (모델에 정의 됨) 하는 클래스 인스턴스를 전달 하 고는 `Details` 뷰를 이용 하 여 `View Data`합니다.
 
 수정 된 `ProductController` 보기 3의 업데이트 된 포함 `Details()` 제품을 반환 하는 작업입니다.
 
-**3 – 나열`ProductController.cs`**
+**3 – 나열 `ProductController.cs`**
 
 [!code-csharp[Main](creating-unit-tests-for-asp-net-mvc-applications-cs/samples/sample5.cs)]
 
@@ -86,7 +86,7 @@ MVC 컨트롤러 라는 것을 사용 하 여 데이터 뷰를 전달  *`View Da
 
 단위 테스트를 작성할 수 필요한 데이터가 있는지 여부를 테스트 보기에 데이터가 포함 됩니다. 테스트 목록 4에서에서 단위 테스트에 노트북 컴퓨터를 나타내는 제품 호출할 때 반환 되는 여부는 `ProductController Details()` 동작 메서드.
 
-**4 – 나열`ProductControllerTest.cs`**
+**4 – 나열 `ProductControllerTest.cs`**
 
 [!code-csharp[Main](creating-unit-tests-for-asp-net-mvc-applications-cs/samples/sample6.cs)]
 
@@ -98,13 +98,13 @@ MVC 컨트롤러 라는 것을 사용 하 여 데이터 뷰를 전달  *`View Da
 
 예를 들어 수정 된 `Details()` 목록 5의 동작은 반환는 `Details` 작업에 유효한 제품 Id를 전달 하는 경우를 확인 합니다. 1--합니다는 리디렉션됩니다 보다 작은 잘못 된 제품 Id-Id 값으로 전달 하는 경우는 `Index()` 동작 합니다.
 
-**5-나열`ProductController.cs`**
+**5-나열 `ProductController.cs`**
 
 [!code-csharp[Main](creating-unit-tests-for-asp-net-mvc-applications-cs/samples/sample7.cs)]
 
 동작을 테스트할 수 있습니다는 `Details()` 목록 6에서 단위 테스트와 함께 작업 합니다. 단위 테스트 목록 6에서 확인으로 리디렉션됩니다는 `Index` 에 전달 된 값-1 Id 보기는 `Details()` 메서드.
 
-**6-나열`ProductControllerTest.cs`**
+**6-나열 `ProductControllerTest.cs`**
 
 [!code-csharp[Main](creating-unit-tests-for-asp-net-mvc-applications-cs/samples/sample8.cs)]
 
@@ -118,5 +118,5 @@ MVC 컨트롤러 라는 것을 사용 하 여 데이터 뷰를 전달  *`View Da
 
 마지막으로, 다양 한 유형의 작업 결과 컨트롤러 작업에서 반환 되는 여부를 테스트 하는 방법을 설명 합니다. 컨트롤러를 반환 하는지 여부를 테스트 하는 방법을 배웠습니다는 `ViewResult` 또는 `RedirectToRouteResult`합니다.
 
->[!div class="step-by-step"]
-[다음](creating-unit-tests-for-asp-net-mvc-applications-vb.md)
+> [!div class="step-by-step"]
+> [다음](creating-unit-tests-for-asp-net-mvc-applications-vb.md)

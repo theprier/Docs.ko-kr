@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-5
-title: "먼저 Entity Framework 4.0 데이터베이스와 시작 및 ASP.NET 4 Web Forms-5 부 | Microsoft Docs"
+title: 먼저 Entity Framework 4.0 데이터베이스와 시작 및 ASP.NET 4 Web Forms-5 부 | Microsoft Docs
 author: tdykstra
-description: "Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework를 사용 하 여 ASP.NET Web Forms 응용 프로그램을 만드는 방법을 보여 줍니다. 샘플 응용 프로그램은..."
+description: Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework를 사용 하 여 ASP.NET Web Forms 응용 프로그램을 만드는 방법을 보여 줍니다. 샘플 응용 프로그램은...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/03/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-5
 msc.type: authoredcontent
-ms.openlocfilehash: 5efc5ff367d5da5df060eba0028399af898a69fa
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 7f351718123e881e832f4ac95af506ed601d3337
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-5"></a>먼저 Entity Framework 4.0 데이터베이스와 시작 및 ASP.NET 4 Web Forms-5 부
 ====================
@@ -123,10 +123,10 @@ ID, 제목, 다양 한 크레딧, 입력 한 부서를 선택한 다음 클릭 *
 
 [![Image01](the-entity-framework-and-aspnet-getting-started-part-5/_static/image10.png)](the-entity-framework-and-aspnet-getting-started-part-5/_static/image9.png)
 
-강사를 선택 합니다. **과정 할당** 드롭다운 목록에서 강사 설명 하지 않는 하는 강의 표시 됩니다 및 **제거 과정** 드롭다운 목록에서 강사에 이미 할당 되어 있는 강의 표시 됩니다. 에 **과정 할당** 섹션 과정을 선택한 다음 클릭 **할당**합니다. 과정을 이동는 **제거 과정** 드롭 다운 목록입니다. 과정 선택는 **제거 과정** 섹션 및 클릭 **제거 * * * 합니다.* 과정을 이동는 **과정 할당** 드롭 다운 목록입니다.
+강사를 선택 합니다. <strong>과정 할당</strong> 드롭다운 목록에서 강사 설명 하지 않는 하는 강의 표시 됩니다 및 <strong>제거 과정</strong> 드롭다운 목록에서 강사에 이미 할당 되어 있는 강의 표시 됩니다. 에 <strong>과정 할당</strong> 섹션 과정을 선택한 다음 클릭 <strong>할당</strong>합니다. 과정을 이동는 <strong>제거 과정</strong> 드롭 다운 목록입니다. 과정 선택는 <strong>제거 과정</strong> 섹션 및 클릭 <strong>제거</strong><em>합니다.</em> 과정을 이동는 <strong>과정 할당</strong> 드롭 다운 목록입니다.
 
 관련된 데이터에 사용할 수 있는 몇 가지 다른 방법을 살펴 보았습니다. 다음 자습서에서는 응용 프로그램의 관리 효율을 개선 하기 위해 데이터 모델에서 상속을 사용 하는 방법을 설명 합니다.
 
->[!div class="step-by-step"]
-[이전](the-entity-framework-and-aspnet-getting-started-part-4.md)
-[다음](the-entity-framework-and-aspnet-getting-started-part-6.md)
+> [!div class="step-by-step"]
+> [이전](the-entity-framework-and-aspnet-getting-started-part-4.md)
+> [다음](the-entity-framework-and-aspnet-getting-started-part-6.md)

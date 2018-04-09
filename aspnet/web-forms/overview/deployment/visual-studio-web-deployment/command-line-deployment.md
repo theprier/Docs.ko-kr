@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/command-line-deployment
-title: "Visual Studio를 사용 하 여 ASP.NET 웹 배포: 명령줄 배포 | Microsoft Docs"
+title: 'Visual Studio를 사용 하 여 ASP.NET 웹 배포: 명령줄 배포 | Microsoft Docs'
 author: tdykstra
-description: "이 자습서 시리즈를 배포 하는 방법을 보여 줍니다. ASP.NET (게시) 실행 하 여 웹 응용 프로그램을 Azure 앱 서비스 웹 앱 또는 타사 호스팅 공급자 중..."
+description: 이 자습서 시리즈를 배포 하는 방법을 보여 줍니다. ASP.NET (게시) 실행 하 여 웹 응용 프로그램을 Azure 앱 서비스 웹 앱 또는 타사 호스팅 공급자 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/command-line-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 8446b3fc05e3ef4a5a30c753c989252fd7f1a56f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: acc4a0e7f4744a3759b90e0f1b159da68b7c7362
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-command-line-deployment"></a>Visual Studio를 사용 하 여 ASP.NET 웹 배포: 명령줄 배포
 ====================
@@ -45,7 +45,7 @@ ms.lasthandoff: 11/10/2017
 
 프로젝트를 실행 하 고 선택 된 **에 대 한** 페이지.
 
-![페이지 정보](command-line-deployment/_static/image2.png)
+![정보 페이지](command-line-deployment/_static/image2.png)
 
 ## <a name="deploy-to-test-by-using-the-command-line"></a>명령줄을 사용 하 여 테스트를 배포
 
@@ -98,9 +98,9 @@ Visual Studio 2010에 대 한 버전 번호는 10.0입니다. 자세한 내용�
 
 메서드를 게시 하는 3 개의 명령줄 게시에 대해 지원 됩니다.
 
-- `MSDeploy`-웹 배포를 사용 하 여 게시 합니다.
-- `Package`-웹 배포 패키지를 만들어 게시 합니다. 만든 MSBuild 명령에서 패키지를 별도로 설치 해야 합니다.
-- `FileSystem`-지정 된 폴더에 파일을 복사 하 여 게시 합니다.
+- `MSDeploy` -웹 배포를 사용 하 여 게시 합니다.
+- `Package` -웹 배포 패키지를 만들어 게시 합니다. 만든 MSBuild 명령에서 패키지를 별도로 설치 해야 합니다.
+- `FileSystem` -지정 된 폴더에 파일을 복사 하 여 게시 합니다.
 
 ### <a name="specifying-the-build-configuration-and-platform"></a>빌드 구성 및 플랫폼 지정
 
@@ -144,6 +144,6 @@ Azure에 배포 하려면 명령줄에 암호를 추가 해야 합니다. 에 �
 
 다음 자습서에서는 웹을 확장 하는 방법의 예가 표시 됩니다 파이프라인을 게시 합니다. 이 예제에서는 프로젝트에 포함 되지 않은 파일을 배포 하는 방법을 설명 합니다.
 
->[!div class="step-by-step"]
-[이전](deploying-a-database-update.md)
-[다음](deploying-extra-files.md)
+> [!div class="step-by-step"]
+> [이전](deploying-a-database-update.md)
+> [다음](deploying-extra-files.md)

@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/performance/scaleout-with-sql-server
-title: "SQL Server와 함께 SignalR 확장 | Microsoft Docs"
+title: SQL Server와 함께 SignalR 확장 | Microsoft Docs
 author: MikeWasson
-description: "이전 버전의에 대 한 내용은이 항목의 버전 2 이전 버전을 Visual Studio 2013.NET 4.5 SignalR이이 항목에서 사용 하는 소프트웨어 버전 중..."
+description: 이전 버전의에 대 한 내용은이 항목의 버전 2 이전 버전을 Visual Studio 2013.NET 4.5 SignalR이이 항목에서 사용 하는 소프트웨어 버전 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/performance/scaleout-with-sql-server
 msc.type: authoredcontent
-ms.openlocfilehash: 18ce212f5cb7849d522248f9c462b5b48e3487ed
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b3189c36fc076333c0c6007bd039b12e03d63bc8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="signalr-scaleout-with-sql-server"></a>SQL Server와 함께 SignalR 확장
 ====================
@@ -44,7 +44,7 @@ ms.lasthandoff: 01/24/2018
 
 ![](scaleout-with-sql-server/_static/image1.png)
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 Microsoft SQL Server 2005 이상입니다. 백플레인에서는 데스크톱 및 서버 모두 SQL Server 버전을 지원합니다. SQL Server Compact Edition 또는 Azure SQL 데이터베이스를 지원 하지 않습니다. (응용 프로그램을 Azure에서 호스트 될 고려 서비스 버스 백플레인에서 대신 합니다.)
 
@@ -62,7 +62,7 @@ Microsoft SQL Server 2005 이상입니다. 백플레인에서는 데스크톱 �
 
     [!code-csharp[Main](scaleout-with-sql-server/samples/sample1.cs)]
 
- 이 코드에 대 한 기본 값으로 백플레인에서 구성 [TableCount](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.sqlscaleoutconfiguration.tablecount(v=vs.118).aspx) 및 [MaxQueueLength](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.scaleoutconfiguration.maxqueuelength(v=vs.118).aspx)합니다. 변경 된 이러한 값에 대 한 정보를 참조 하십시오. [SignalR 성능: 확장 메트릭](signalr-performance.md#scaleout_metrics)합니다. 
+   이 코드에 대 한 기본 값으로 백플레인에서 구성 [TableCount](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.sqlscaleoutconfiguration.tablecount(v=vs.118).aspx) 및 [MaxQueueLength](https://msdn.microsoft.com/library/microsoft.aspnet.signalr.messaging.scaleoutconfiguration.maxqueuelength(v=vs.118).aspx)합니다. 변경 된 이러한 값에 대 한 정보를 참조 하십시오. [SignalR 성능: 확장 메트릭](signalr-performance.md#scaleout_metrics)합니다. 
 
 ## <a name="configure-the-database"></a>데이터베이스 구성
 

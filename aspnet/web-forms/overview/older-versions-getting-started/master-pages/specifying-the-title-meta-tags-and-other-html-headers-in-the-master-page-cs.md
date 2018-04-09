@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs
-title: "마스터 페이지 (C#)에 제목, 메타 태그 및 다른 HTML 헤더를 지정 하 | Microsoft Docs"
+title: 마스터 페이지 (C#)에 제목, 메타 태그 및 다른 HTML 헤더를 지정 하 | Microsoft Docs
 author: rick-anderson
-description: "다양 한 정의 하기 위한 다양 한 기술을 살펴봅니다 &lt;h e a d&gt; 콘텐츠 페이지의 마스터 페이지에 있는 요소입니다."
+description: 다양 한 정의 하기 위한 다양 한 기술을 살펴봅니다 &lt;h e a d&gt; 콘텐츠 페이지의 마스터 페이지에 있는 요소입니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/21/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 30324c45fd8acbcba43808307512ef7aecffe695
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 2f9399be5b95f608f0d635b69b132dcb1d27909a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-c"></a>마스터 페이지 (C#)에서 제목, 메타 태그 및 다른 HTML 헤더 지정
 ====================
@@ -130,7 +130,7 @@ Visual Studio 설정 새 콘텐츠 페이지를 만들 때 기본적으로는 `T
 
 ![App_Code 폴더와 BasePage 라는 클래스를 추가 합니다.](specifying-the-title-meta-tags-and-other-html-headers-in-the-master-page-cs/_static/image4.png)
 
-**그림 04**: 추가 된 `App_Code` 폴더와 라는 클래스`BasePage`
+**그림 04**: 추가 된 `App_Code` 폴더와 라는 클래스 `BasePage`
 
 
 > [!NOTE]
@@ -279,7 +279,7 @@ ListView의 서식 파일을 구성한 후의 웹 사이트를 방문 합니다.
 
 이전 처럼는 `OnLoadComplete` 페이지의 제목 명시적으로 설정 되었는지 여부를 확인 하 여 메서드를 시작 합니다. 경우 `Page.Title` 은 `null`, 빈 문자열을 코드에 값을 자동으로 할당 한 다음 "제목 없음 페이지" 값이 할당 또는 `Page.Title`합니다.
 
-사용할 제목을 확인 하려면를 참조 하 여 시작 하는 코드는 [ `SiteMap` 클래스](https://msdn.microsoft.com/library/system.web.sitemap.aspx)의 [ `CurrentNode` 속성](https://msdn.microsoft.com/library/system.web.sitemap.currentnode.aspx)합니다. `CurrentNode`반환 된 [ `SiteMapNode` ](https://msdn.microsoft.com/library/system.web.sitemapnode.aspx) 현재 요청 된 페이지에 해당 하는 사이트 맵에서 인스턴스. 현재 요청 된 페이지 가정 사이트 맵 내에서 발견 되는 `SiteMapNode`의 `Title` 속성이 페이지의 제목에 할당 됩니다. 현재 요청 된 페이지 사이트 맵에 없는 경우 `CurrentNode` 반환 `null` 요청 된 페이지의 파일 이름 (2 단계에서에서 수행 했던) 것 처럼 제목으로 사용 됩니다.
+사용할 제목을 확인 하려면를 참조 하 여 시작 하는 코드는 [ `SiteMap` 클래스](https://msdn.microsoft.com/library/system.web.sitemap.aspx)의 [ `CurrentNode` 속성](https://msdn.microsoft.com/library/system.web.sitemap.currentnode.aspx)합니다. `CurrentNode` 반환 된 [ `SiteMapNode` ](https://msdn.microsoft.com/library/system.web.sitemapnode.aspx) 현재 요청 된 페이지에 해당 하는 사이트 맵에서 인스턴스. 현재 요청 된 페이지 가정 사이트 맵 내에서 발견 되는 `SiteMapNode`의 `Title` 속성이 페이지의 제목에 할당 됩니다. 현재 요청 된 페이지 사이트 맵에 없는 경우 `CurrentNode` 반환 `null` 요청 된 페이지의 파일 이름 (2 단계에서에서 수행 했던) 것 처럼 제목으로 사용 됩니다.
 
 그림 12는 `MultipleContentPlaceHolders.aspx` 브라우저를 통해 볼 때 페이지입니다. 이 페이지의이 제목 명시적으로 설정 되어 있지 않으므로 해당 사이트 맵 노드의 제목이 대신 사용 됩니다.
 
@@ -345,12 +345,12 @@ ContentPlaceHolder 헤드 통해 선언적으로 마스터 페이지에 사용�
 
 ### <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 작성자 여러 ASP/ASP.NET 설명서와 4GuysFromRolla.com의 창립자의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 3.5 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. Scott에 도달할 수 [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) 또는에서 그의 블로그 통해 [http://ScottOnWriting.NET](http://scottonwriting.net/)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 작성자 여러 ASP/ASP.NET 설명서와 4GuysFromRolla.com의 창립자의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 3.5 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. Scott에 도달할 수 [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) 또는에서 그의 블로그 통해 [ http://ScottOnWriting.NET ](http://scottonwriting.net/)합니다.
 
 ### <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Zack Jones 및 Suchi Banerjee 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)합니다.
 
->[!div class="step-by-step"]
-[이전](multiple-contentplaceholders-and-default-content-cs.md)
-[다음](urls-in-master-pages-cs.md)
+> [!div class="step-by-step"]
+> [이전](multiple-contentplaceholders-and-default-content-cs.md)
+> [다음](urls-in-master-pages-cs.md)

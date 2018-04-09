@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices
-title: "웹 개발 모범 사례 (Azure로 응용 프로그램 빌딩 실제 클라우드) | Microsoft Docs"
+title: 웹 개발 모범 사례 (Azure로 응용 프로그램 빌딩 실제 클라우드) | Microsoft Docs
 author: MikeWasson
-description: "실제 세계 클라우드로 응용 프로그램 빌딩 Azure 전자책 Scott Guthrie에서 개발 된 프레젠테이션을 기반으로 합니다. 13 패턴 및 그을 수 있는 방법에 설명..."
+description: 실제 세계 클라우드로 응용 프로그램 빌딩 Azure 전자책 Scott Guthrie에서 개발 된 프레젠테이션을 기반으로 합니다. 13 패턴 및 그을 수 있는 방법에 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: 52d6c941-2cd9-442f-9872-2c798d6d90cd
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices
 msc.type: authoredcontent
-ms.openlocfilehash: de536a0ca39cb752c0962f0c4ae36eb00b586bff
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 4c43b256018d91e89b3427f90fc5c6cd018641f9
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="web-development-best-practices-building-real-world-cloud-apps-with-azure"></a>웹 개발 모범 사례 (Azure로 응용 프로그램 빌딩 실제 클라우드)
 ====================
@@ -136,7 +136,7 @@ Entity Framework 6 쿼리 또는 데이터베이스에 보낼 명령의 발생 �
 
 [다음 장에서](single-sign-on.md) 클라우드 single sign-on 시나리오를 사용 하는 방법을 살펴봅니다.
 
-## <a name="resources"></a>리소스
+## <a name="resources"></a>자료
 
 자세한 내용은 다음 리소스를 참조 합니다.
 
@@ -165,6 +165,6 @@ CDN:
 - [수정 프로그램 응용 프로그램-모범 사례를 샘플](the-fix-it-sample-application.md#bestpractices)합니다. 이 전자책 부록 수정 응용 프로그램에서 구현 된 모범 사례 수를 나열 합니다.
 - [웹 개발자 검사 목록](http://webdevchecklist.com/asp.net)
 
->[!div class="step-by-step"]
-[이전](continuous-integration-and-continuous-delivery.md)
-[다음](single-sign-on.md)
+> [!div class="step-by-step"]
+> [이전](continuous-integration-and-continuous-delivery.md)
+> [다음](single-sign-on.md)

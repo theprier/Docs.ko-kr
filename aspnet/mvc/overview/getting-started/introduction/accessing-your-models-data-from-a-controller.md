@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/introduction/accessing-your-models-data-from-a-controller
-title: "컨트롤러에서 모델의 데이터에 액세스 | Microsoft Docs"
+title: 컨트롤러에서 모델의 데이터에 액세스 | Microsoft Docs
 author: Rick-Anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
@@ -12,17 +12,17 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/accessing-your-models-data-from-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: 91bfa5fe3c5bd3029b7d7c12c8831e1653fb1d2b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d3dfa079c334e04f368531456ec2ec4e9728f893
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="accessing-your-models-data-from-a-controller"></a>컨트롤러에서 모델의 데이터에 액세스
 ====================
 으로 [Rick Anderson](https://github.com/Rick-Anderson)
 
-[!INCLUDE[Tutorial Note](sample/code-location.md)]
+[!INCLUDE [Tutorial Note](sample/code-location.md)]
 
 이 섹션에서는 새 만들어 `MoviesController` 클래스 및 동영상 데이터를 검색 하 고 뷰 템플릿을 사용 하 여 브라우저에 표시 하는 코드를 작성 합니다.
 
@@ -40,7 +40,7 @@ ms.lasthandoff: 01/24/2018
 - 선택 **MovieDBContext (MvcMovie.Models)** 데이터 컨텍스트 클래스에 대 한 합니다.
 - 컨트롤러 이름에 대 한 입력 **MoviesController**합니다.
 
- 아래 이미지 완료 된 대화 상자를 표시 합니다.  
+  아래 이미지 완료 된 대화 상자를 표시 합니다.  
   
 ![](accessing-your-models-data-from-a-controller/_static/image3.png)   
 
@@ -64,7 +64,7 @@ Visual Studio에서 자동으로 작성 된 [CRUD](http://en.wikipedia.org/wiki/
 ![](accessing-your-models-data-from-a-controller/_static/image5.png)
 
 > [!NOTE]
-> Price 필드에서 소수점이 하 또는 쉼표를 입력할 수 수 있습니다. 쉼표를 사용 하는 영어가 아닌 로캘의 jQuery 유효성 검사를 지원 하기 위해 (&quot;,&quot;) 소수점 및 미국 영어가 아닌 날짜 형식을 포함 해야 *globalize.js* 및 특정  *cultures/globalize.cultures.js* 파일 (에서 [https://github.com/jquery/globalize](https://github.com/jquery/globalize) ) 및 사용 하는 JavaScript `Globalize.parseFloat`합니다. 다음 자습서에서이 작업을 수행 하는 방법을 보여 드리 려 합니다. 이제 10 같은 정수를 입력하면 됩니다.
+> Price 필드에서 소수점이 하 또는 쉼표를 입력할 수 수 있습니다. 쉼표를 사용 하는 영어가 아닌 로캘의 jQuery 유효성 검사를 지원 하기 위해 (&quot;,&quot;) 소수점 및 미국 영어가 아닌 날짜 형식을 포함 해야 *globalize.js* 및 특정  *cultures/globalize.cultures.js* 파일 (에서 [ https://github.com/jquery/globalize ](https://github.com/jquery/globalize) ) 및 사용 하는 JavaScript `Globalize.parseFloat`합니다. 다음 자습서에서이 작업을 수행 하는 방법을 보여 드리 려 합니다. 이제 10 같은 정수를 입력하면 됩니다.
 
 
 클릭 하 고 **만들기** 단추를 클릭 하면 데이터베이스에 동영상 정보 저장 되는 서버에 게시 될 폼입니다. 다음 리디렉션됩니다 하는 */Movies* URL을 목록에서 새로 만든된 동영상을 볼 수 있습니다.
@@ -157,6 +157,6 @@ Visual Studio에서 다음을 자동으로 포함 영화 컨트롤러를 만들 
 
 이제 데이터를 표시, 편집, 업데이트 및 삭제할 데이터베이스 및 페이지가 제공됩니다. 다음 자습서에서는 합니다 스 캐 폴드 코드의 나머지 부분을 검사 하 고 추가 `SearchIndex` 메서드 및 `SearchIndex` 보기를이 데이터베이스에서 영화를 검색할 수 있습니다. MVC와 함께 Entity Framework를 사용 하 여에 대 한 자세한 내용은 참조 하십시오. [ASP.NET MVC 응용 프로그램에 대 한 Entity Framework 데이터 모델을 만드는](../getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)합니다.
 
->[!div class="step-by-step"]
-[이전](creating-a-connection-string.md)
-[다음](examining-the-edit-methods-and-edit-view.md)
+> [!div class="step-by-step"]
+> [이전](creating-a-connection-string.md)
+> [다음](examining-the-edit-methods-and-edit-view.md)

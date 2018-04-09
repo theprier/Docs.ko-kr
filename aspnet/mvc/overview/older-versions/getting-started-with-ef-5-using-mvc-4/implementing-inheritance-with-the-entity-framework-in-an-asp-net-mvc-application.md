@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application
-title: "(8 / 10) ASP.NET MVC 응용 프로그램에서 Entity Framework 사용한 상속 구현 | Microsoft Docs"
+title: (8 / 10) ASP.NET MVC 응용 프로그램에서 Entity Framework 사용한 상속 구현 | Microsoft Docs
 author: tdykstra
-description: "Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 5 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 4 응용 프로그램을 만드는 방법을 보여 줍니다 중..."
+description: Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 5 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 4 응용 프로그램을 만드는 방법을 보여 줍니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/30/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 54e46c6f996b6fe86a227c851562e61678b02780
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ee088f841bdb68f4806b0b62be7d379b9eab9f8c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="implementing-inheritance-with-the-entity-framework-in-an-aspnet-mvc-application-8-of-10"></a>(8 / 10) ASP.NET MVC 응용 프로그램에서 Entity Framework 사용한 상속 구현
 ====================
@@ -24,16 +24,16 @@ ms.lasthandoff: 11/10/2017
 
 [완료 된 프로젝트를 다운로드 합니다.](http://code.msdn.microsoft.com/Getting-Started-with-dd0e2ed8)
 
-> Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 5 Code First 및 Visual Studio 2012를 사용 하 여 ASP.NET MVC 4 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대 한 정보를 참조 하십시오. [시리즈의 첫 번째 자습서](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)합니다. 시작 부분에서 자습서 시리즈를 시작할 수 있습니다 또는 [이 장의 대 한 시작 프로젝트 다운로드](building-the-ef5-mvc4-chapter-downloads.md) 여기에서 시작 하 고 있습니다.
+> Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework 5 Code First 및 Visual Studio 2012를 사용 하 여 ASP.NET MVC 4 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)를 참조하세요. 시작 부분에서 자습서 시리즈를 시작할 수 있습니다 또는 [이 장의 대 한 시작 프로젝트 다운로드](building-the-ef5-mvc4-chapter-downloads.md) 여기에서 시작 하 고 있습니다.
 > 
 > > [!NOTE] 
 > > 
 > > 해결할 수 없는 문제에 직면 하는 경우 [완료 장 다운로드](building-the-ef5-mvc4-chapter-downloads.md) 문제를 재현 하려고 합니다. 일반적으로 코드 완성 된 코드를 비교 하 여 문제에 솔루션을 찾을 수 있습니다. 몇 가지 일반적인 오류 및 해결 하는 방법에 대 한 참조 [오류 및 해결 방법입니다.](advanced-entity-framework-scenarios-for-an-mvc-web-application.md#errors)
 
 
-이전 자습서에서 동시성 예외를 처리합니다. 이 자습서에서는 데이터 모델에서 상속을 구현 하는 방법을 보여줍니다.
+이전 자습서에서 동시성 예외를 처리합니다. 이 자습서에서는 데이터 모델에서 상속을 구현하는 방법을 보여 줍니다.
 
-개체 지향 프로그래밍에서 중복 코드를 제거할 상속을 사용할 수 있습니다. 이 자습서에서는 변경 된 `Instructor` 및 `Student` 에서 파생 되도록 클래스는 `Person` 기본 클래스와 같은 속성이 포함 된 `LastName` 강사 및 학생 데이터 모두에 공통적인 합니다. 추가 하거나 모든 웹 페이지를 변경 하지 않습니다 되지만 일부 코드를 변경 합니다 및 이러한 변경 내용을 데이터베이스에 자동으로 반영 됩니다.
+개체 지향 프로그래밍에서 중복 코드를 제거할 상속을 사용할 수 있습니다. 이 자습서에서는 강사와 학생 모두에게 공통적인 속성(예: `LastName`)이 포함된 `Person` 기본 클래스에서 클래스가 파생되도록 `Instructor` 및 `Student` 클래스를 변경합니다. 웹 페이지를 추가하거나 변경하지는 않지만 일부 코드를 변경하고 이러한 변경 내용이 데이터베이스에 자동으로 반영됩니다.
 
 ## <a name="table-per-hierarchy-versus-table-per-type-inheritance"></a>형식당 하나의 테이블 상속 및 계층 당 테이블
 
@@ -41,23 +41,23 @@ ms.lasthandoff: 11/10/2017
 
 ![Student_and_Instructor_classes](https://asp.net/media/2578113/Windows-Live-Writer_58f5a93579b2_CC7B_Student_and_Instructor_classes_e7a32f99-8bc4-48ce-aeaf-216a18071a8b.png)
 
-공유 하는 속성에 대 한 중복 코드를 제거 하려는 경우 다음과 같이 `Instructor` 및 `Student` 엔터티. 만들 수는 `Person` 확인 한 다음 기본 속성을 공유 하는 것만 포함 하는 클래스는 `Instructor` 및 `Student` 다음 그림에 나와 있는 것 처럼 해당 기본 클래스에서 상속 되는 엔터티:
+`Instructor` 및 `Student` 엔터티에서 공유하는 속성에 대해 중복 코드를 제거하려고 한다고 가정해 보겠습니다. 만들 수는 `Person` 확인 한 다음 기본 속성을 공유 하는 것만 포함 하는 클래스는 `Instructor` 및 `Student` 다음 그림에 나와 있는 것 처럼 해당 기본 클래스에서 상속 되는 엔터티:
 
 ![Student_and_Instructor_classes_deriving_from_Person_class](https://asp.net/media/2578119/Windows-Live-Writer_58f5a93579b2_CC7B_Student_and_Instructor_classes_deriving_from_Person_class_671d708c-cbb8-454a-a8f8-c2d99439acd9.png)
 
-여러 가지 방법으로 데이터베이스에이 상속 구조를 나타낼 수 있습니다. 있을 수 있습니다는 `Person` 학생과 단일 테이블에서 강사에 대 한 정보를 포함 하는 테이블입니다. 강사에만 적용할 수는 일부 열의 (`HireDate`), 학생에만 일부 (`EnrollmentDate`), 일부에 모두 (`LastName`, `FirstName`). 일반적으로, 한 *판별자* 는 형식을 각 행 표시 열을 나타냅니다. 예를 들어 판별자 열 학생용 강사 및 "학생"에 대 한 "강사"를 할 수 있습니다.
+데이터베이스에 이 상속 구조를 여러 가지 방법으로 나타낼 수 있습니다. 있을 수 있습니다는 `Person` 학생과 단일 테이블에서 강사에 대 한 정보를 포함 하는 테이블입니다. 강사에만 적용할 수는 일부 열의 (`HireDate`), 학생에만 일부 (`EnrollmentDate`), 일부에 모두 (`LastName`, `FirstName`). 일반적으로, 한 *판별자* 는 형식을 각 행 표시 열을 나타냅니다. 예를 들어, 판별자 열은 강사에 대해 "Instructor"를, 학생에 대해 "Student"를 포함할 수 있습니다.
 
-![Hierarchy_example 당 테이블](https://asp.net/media/2578125/Windows-Live-Writer_58f5a93579b2_CC7B_Table-per-hierarchy_example_244067cd-b451-4e9b-9595-793b9afca505.png)
+![Table-per-hierarchy_example](https://asp.net/media/2578125/Windows-Live-Writer_58f5a93579b2_CC7B_Table-per-hierarchy_example_244067cd-b451-4e9b-9595-793b9afca505.png)
 
 이 패턴의 단일 데이터베이스 테이블에서 엔터티 상속 구조를 생성 하 라고 *테이블 계층당* TPH () 상속 합니다.
 
-대신 좀 더 상속 구조 처럼 보이도록 하는 데이터베이스입니다. 예를 들어 이름 필드에만 있을 수 있습니다는 `Person` 테이블 있고 별도 `Instructor` 및 `Student` 날짜 필드가 있는 테이블입니다.
+다른 방법은 데이터베이스를 상속 구조와 유사하게 만드는 것입니다. 예를 들어 이름 필드에만 있을 수 있습니다는 `Person` 테이블 있고 별도 `Instructor` 및 `Student` 날짜 필드가 있는 테이블입니다.
 
-![Type_inheritance 당 테이블](https://asp.net/media/2578131/Windows-Live-Writer_58f5a93579b2_CC7B_Table-per-type_inheritance.png)
+![Table-per-type_inheritance](https://asp.net/media/2578131/Windows-Live-Writer_58f5a93579b2_CC7B_Table-per-type_inheritance.png)
 
 이 패턴의 각 엔터티 클래스에 대 한 데이터베이스 테이블을 만드는 *형식당 하나의 테이블* (TPT) 상속 합니다.
 
-TPH 상속 패턴 일반적으로 더 나은 성능을 제공 TPT 상속 패턴 보다 Entity Framework에서 TPT 패턴 복잡 한 조인 쿼리에서 발생할 수 있기 때문입니다. 이 자습서에서는 TPH 상속 구현 하는 방법을 설명 합니다. 다음 단계를 수행 하 여 수행 합니다.
+TPH 상속 패턴 일반적으로 더 나은 성능을 제공 TPT 상속 패턴 보다 Entity Framework에서 TPT 패턴 복잡 한 조인 쿼리에서 발생할 수 있기 때문입니다. 이 자습서에서는 TPH 상속을 구현하는 방법을 보여 줍니다. 다음 단계를 수행 하 여 수행 합니다.
 
 - 만들기는 `Person` 클래스 및 변경 된 `Instructor` 및 `Student` 클래스에서 상속할 수 `Person`합니다.
 - 데이터베이스 컨텍스트 클래스를 데이터베이스에 모델 매핑 코드를 추가 합니다.
@@ -71,7 +71,7 @@ TPH 상속 패턴 일반적으로 더 나은 성능을 제공 TPT 상속 패턴 
 
 [!code-csharp[Main](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample1.cs)]
 
-*Instructor.cs*, 파생 된 `Instructor` 에서 클래스는 `Person` 클래스 및 키 / 이름 필드를 제거 합니다. 코드는 다음 예제와 같습니다.
+*Instructor.cs*, 파생 된 `Instructor` 에서 클래스는 `Person` 클래스 및 키 / 이름 필드를 제거 합니다. 해당 코드는 다음 예제와 같이 나타납니다.
 
 [!code-csharp[Main](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample2.cs)]
 
@@ -85,7 +85,7 @@ TPH 상속 패턴 일반적으로 더 나은 성능을 제공 TPT 상속 패턴 
 
 [!code-csharp[Main](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/samples/sample4.cs)]
 
-Entity Framework 계층당 하나의 테이블 상속을 구성 하는 데 필요한 것입니다. 하겠지만, 데이터베이스를 다시 생성 하는 경우는 `Person` 대신 테이블는 `Student` 및 `Instructor` 테이블입니다.
+계층당 하나의 테이블 상속을 구성하기 위해 Entity Framework에 필요한 모든 작업입니다. 하겠지만, 데이터베이스를 다시 생성 하는 경우는 `Person` 대신 테이블는 `Student` 및 `Instructor` 테이블입니다.
 
 ## <a name="changing-instructorid-and-studentid-to-personid"></a>InstructorID StudentID PersonID로 변경
 
@@ -100,7 +100,7 @@ Entity Framework 계층당 하나의 테이블 상속을 구성 하는 데 필�
 변경 해야 다음 `InstructorID` 를 `PersonID` 및 `StudentID` 를 `PersonID` 프로젝트 전반에 걸쳐 ***제외 하 고*** 의 타임 스탬프 마이그레이션 파일에는 *마이그레이션* 폴더입니다. 그렇게 하려면 찾 및 열고 변경 해야 할 파일만 다음 열린된 파일에서 전역 변경 수행 수 있습니다. 유일한 파일은 *마이그레이션* 변경 해야 하는 폴더는 *Migrations\Configuration.cs 합니다.*
 
 1. > [!IMPORTANT]
- > Visual Studio에서 열려 있는 모든 파일을 닫고 시작 합니다.
+   > Visual Studio에서 열려 있는 모든 파일을 닫고 시작 합니다.
 2. 클릭 **찾기 및 바꾸기 등의 모든 파일을 찾으려면** 에 **편집** 메뉴 및 포함 된 프로젝트의 모든 파일에 대 한 다음 검색 `InstructorID`합니다.  
   
     ![](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image1.png)
@@ -108,7 +108,7 @@ Entity Framework 계층당 하나의 테이블 상속을 구성 하는 데 필�
   
     ![](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image2.png)
 4. 열기는 **파일에서 바꾸기** 대화 상자와 변경 **찾는 위치** 를 **열려 있는 모든 문서**합니다.
-5. 사용 하 여는 **파일에서 바꾸기** 모든 변경 하려면 대화 `InstructorID` 를`PersonID.`  
+5. 사용 하 여는 **파일에서 바꾸기** 모든 변경 하려면 대화 `InstructorID` 를 `PersonID.`  
   
     ![](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image3.png)
 6. 포함 된 프로젝트의 모든 파일을 찾을 `StudentID`합니다.
@@ -149,13 +149,13 @@ Entity Framework 계층당 하나의 테이블 상속을 구성 하는 데 필�
 
 ## <a name="testing"></a>테스트
 
-사이트를 실행 하 고 다양 한 페이지를 시도 하십시오. 모든 항목이 작동 하기 전과 동일 합니다.
+사이트를 실행 하 고 다양 한 페이지를 시도 하십시오. 모든 항목이 이전과 같이 작동합니다.
 
 **서버 탐색기** 확장 **SchoolContext** 차례로 **테이블**, 했다는 보고는 **학생** 및 **강사**  으로 바꾼 테이블을 **사람** 테이블입니다. 확장 하 고는 **사람** 테이블을 모두 사용 하는 열 참조는 **학생** 및 **강사** 테이블입니다.
 
 ![Server_Explorer_showing_Person_table](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image6.png)
 
-Person 테이블을 마우스 오른쪽 단추로 누른 **테이블 데이터 표시** 판별자 열을 표시 합니다.
+Person 테이블을 마우스 오른쪽 단추로 클릭한 후 **테이블 데이터 표시**를 클릭하여 판별자 열을 표시합니다.
 
 ![](implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image7.png)
 
@@ -169,6 +169,6 @@ Person 테이블을 마우스 오른쪽 단추로 누른 **테이블 데이터 �
 
 다른 Entity Framework 리소스에 대 한 링크에서 확인할 수 있습니다는 [ASP.NET 데이터 액세스 콘텐츠 맵](../../../../whitepapers/aspnet-data-access-content-map.md)합니다.
 
->[!div class="step-by-step"]
-[이전](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)
-[다음](implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application.md)
+> [!div class="step-by-step"]
+> [이전](handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application.md)
+> [다음](implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application.md)

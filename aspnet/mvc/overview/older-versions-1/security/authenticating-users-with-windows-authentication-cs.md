@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/security/authenticating-users-with-windows-authentication-cs
-title: "Windows 인증 (C#)을 사용 하는 사용자를 인증 | Microsoft Docs"
+title: Windows 인증 (C#)을 사용 하는 사용자를 인증 | Microsoft Docs
 author: microsoft
-description: "MVC 응용 프로그램의 컨텍스트에서 Windows 인증을 사용 하는 방법에 알아봅니다. 응용 프로그램의 웹 co 내에서 Windows 인증을 사용 하도록 설정 하는 방법을 알아봅니다."
+description: MVC 응용 프로그램의 컨텍스트에서 Windows 인증을 사용 하는 방법에 알아봅니다. 응용 프로그램의 웹 co 내에서 Windows 인증을 사용 하도록 설정 하는 방법을 알아봅니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/27/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/security/authenticating-users-with-windows-authentication-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d52597e65272fa202ef4980924f669dcc4cec593
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 140d2232f7826e178301d1d2064e12657be23385
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="authenticating-users-with-windows-authentication-c"></a>Windows 인증 (C#)을 사용 하는 사용자 인증
 ====================
@@ -51,7 +51,7 @@ ASP.NET 개발 웹 서버는 NTLM 인증도 지원합니다. 솔루션 탐색기
 
 > [!NOTE] 
 > 
-> 이러한 유형의 인증의 보다 자세한 개요를 참조 하십시오. [https://msdn.microsoft.com/library/aa292114(VS.71).aspx](https://msdn.microsoft.com/library/aa292114(VS.71).aspx).
+> 이러한 유형의 인증의 보다 자세한 개요를 참조 하십시오. [ https://msdn.microsoft.com/library/aa292114(VS.71).aspx ](https://msdn.microsoft.com/library/aa292114(VS.71).aspx)합니다.
 
 
 특정 유형의 인증을 사용 하도록 설정 하려면 인터넷 정보 서비스 관리자를 사용할 수 있습니다. 주의 모든 종류의 인증은 모든 운영 체제의 경우 사용할 수 없습니다. 또한 Windows Vista와 함께 IIS 7.0을 사용할 경우에 인터넷 정보 서비스 관리자에 표시 하기 전에 다양 한 유형의 Windows 인증을 사용 하도록 설정 해야 합니다. 열기 **제어판, 프로그램, 프로그램 및 기능, Windows 기능 설정 또는 해제**, 인터넷 정보 서비스 노드를 확장 하 고 (그림 2 참조).
@@ -93,6 +93,6 @@ Windows 인증을 사용 하도록 설정한 후에 컨트롤러 또는 컨트�
 
 이 자습서는 ASP.NET MVC 응용 프로그램의 컨텍스트에서 Windows 인증을 사용 하는 방법을 설명 합니다. 응용 프로그램의 웹 구성 파일 내에서 Windows 인증을 사용 하도록 설정 하는 방법과 iis 인증을 구성 하는 방법을 배웠습니다. 마지막으로, 특정 Windows 사용자 또는 그룹에 있는 컨트롤러 작업에 대 한 액세스를 제한 하려면 [Authorize] 특성을 사용 하는 방법을 배웠습니다.
 
->[!div class="step-by-step"]
-[이전](authenticating-users-with-forms-authentication-cs.md)
-[다음](preventing-javascript-injection-attacks-cs.md)
+> [!div class="step-by-step"]
+> [이전](authenticating-users-with-forms-authentication-cs.md)
+> [다음](preventing-javascript-injection-attacks-cs.md)

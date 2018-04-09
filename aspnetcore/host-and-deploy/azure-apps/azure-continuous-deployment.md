@@ -1,7 +1,7 @@
 ---
-title: "Visual Studio를 사용 하 여 Azure 및 ASP.NET Core를 사용 하 여 Git 연속 배포"
+title: Visual Studio를 사용 하 여 Azure 및 ASP.NET Core를 사용 하 여 Git 연속 배포
 author: rick-anderson
-description: "Visual Studio를 사용하여 ASP.NET Core 웹앱을 만들고 연속 배포를 위한 Git을 사용하여 Azure App Service에 배포하는 방법을 알아봅니다."
+description: Visual Studio를 사용하여 ASP.NET Core 웹앱을 만들고 연속 배포를 위한 Git을 사용하여 Azure App Service에 배포하는 방법을 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,17 +10,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-apps/azure-continuous-deployment
-ms.openlocfilehash: 7302de1ace62dba53b317039aac7f4763314aa19
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 4de1893e8c1f7f2f4d9af7278a110067ea777c61
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="continuous-deployment-to-azure-with-visual-studio-and-git-with-aspnet-core"></a>Visual Studio를 사용 하 여 Azure 및 ASP.NET Core를 사용 하 여 Git 연속 배포
 
 작성자: [Erik Reitan](https://github.com/Erikre)
 
-[!INCLUDE[Azure App Service Preview Notice](../../includes/azure-apps-preview-notice.md)]
+[!INCLUDE [Azure App Service Preview Notice](../../includes/azure-apps-preview-notice.md)]
 
 이 자습서 연속 배포를 사용 하 여 Visual Studio를 사용 하 여 ASP.NET Core 웹 앱을 만들고 Visual Studio에서 Azure 앱 서비스에 배포 하는 방법을 보여 줍니다.
 
@@ -34,7 +34,7 @@ ms.lasthandoff: 03/15/2018
 이 자습서에서는 다음 소프트웨어가 설치 되어 가정 합니다.
 
 * [Visual Studio](https://www.visualstudio.com)
-* [.NET core SDK](https://www.microsoft.com/net/download/core) (런타임 및 도구가)
+* [!INCLUDE [](~/includes/net-core-sdk-download-link.md)]
 * Windows용 [Git](https://git-scm.com/downloads)
 
 ## <a name="create-an-aspnet-core-web-app"></a>ASP.NET Core 웹앱 만들기

@@ -1,22 +1,22 @@
 ---
 uid: identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project
-title: "프로젝트를 구성 하는 ASP.NET Identity 비어 있거나 기존 웹에 추가 합니다. | Microsoft Docs"
+title: 프로젝트를 구성 하는 ASP.NET Identity 비어 있거나 기존 웹에 추가 합니다. | Microsoft Docs
 author: raquelsa
-description: "이 자습서에서는 ASP.NET 응용 프로그램에 ASP.NET Id (ASP.NET에 대 한 새 멤버 자격 시스템)를 추가 하는 방법을 보여 줍니다. 만들 때 새 MVC 또는 Web Forms 중..."
+description: 이 자습서에서는 ASP.NET 응용 프로그램에 ASP.NET Id (ASP.NET에 대 한 새 멤버 자격 시스템)를 추가 하는 방법을 보여 줍니다. 만들 때 새 MVC 또는 Web Forms 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/23/2013
 ms.topic: article
 ms.assetid: 1cbc0ed2-5bd6-4b62-8d34-4c193dcd8b25
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/adding-aspnet-identity-to-an-empty-or-existing-web-forms-project
 msc.type: authoredcontent
-ms.openlocfilehash: 3ab67b93a32106c0b79f9e8d739d47835391edb5
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 8961e596f0d6cc4810e2439be1ec2915bddb8c78
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-aspnet-identity-to-an-empty-or-existing-web-forms-project"></a>프로젝트를 구성 하는 비어 있거나 기존 웹에 ASP.NET Id 추가
 ====================
@@ -40,7 +40,7 @@ ms.lasthandoff: 01/24/2018
   
     ![](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project/_static/image2.png)  
   
- 공지는 **인증 변경** 단추가 비활성화 되 고 인증 지원 되지 않습니다는이 서식 파일에서 제공 됩니다. Web Forms, MVC 및 Web API 템플릿을 사용 인증 접근 방법을 선택할 수 있습니다. 자세한 내용은 참조 [인증 개요](../../../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#auth) 합니다.
+   공지는 **인증 변경** 단추가 비활성화 되 고 인증 지원 되지 않습니다는이 서식 파일에서 제공 됩니다. Web Forms, MVC 및 Web API 템플릿을 사용 인증 접근 방법을 선택할 수 있습니다. 자세한 내용은 참조 [인증 개요](../../../visual-studio/overview/2013/creating-web-projects-in-visual-studio.md#auth) 합니다.
 
 ## <a name="adding-identity-packages-to-your-app"></a>응용 프로그램에 Identity 패키지 추가
 
@@ -56,7 +56,7 @@ ms.lasthandoff: 01/24/2018
   
     ![](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project/_static/image4.png)
 2. 에 **항목에 대 한 이름 지정** 대화 상자에 새 web form 이름 **등록**, 클릭 하 고 **확인**
-3. 생성 된 태그 바꿉니다 *Register.aspx* 아래 코드가 포함 된 파일입니다. 코드 변경 내용 강조 표시 됩니다.   
+3. 생성 된 태그 바꿉니다 *Register.aspx* 아래 코드가 포함 된 파일입니다. 코드 변경 내용은 강조 표시되어 있습니다.   
 
     [!code-aspx[Main](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project/samples/sample1.aspx?highlight=9,12-40)]
 
@@ -152,20 +152,20 @@ ms.lasthandoff: 01/24/2018
     > - `Page_Load` 이제 현재 사용자의 상태를 확인 하 고 작업 실행에 따라 해당 `Context.User.Identity.IsAuthenticated` 상태입니다.  
     >     **사용자 이름에 로그 된 표시** : Microsoft ASP.NET Identity 프레임 워크에 확장 메서드를 추가 했습니다 [System.Security.Principal.IIdentity](https://msdn.microsoft.com/library/system.security.principal.iidentity.aspx) 를 얻을 수 있도록 하는 `UserName` 및 `UserId` 에 대 한는 사용자를 로그인합니다. 에 정의 된 이러한 확장 메서드는 `Microsoft.AspNet.Identity.Core` 어셈블리입니다. 이러한 확장 메서드는에 대 한 대체 [HttpContext.User.Identity.Name](https://msdn.microsoft.com/library/system.web.httpcontext.user.aspx) 합니다.
     > - SignIn 방법:   
-    >     `This`메서드는 이전 대체 `CreateUser_Click` 이 샘플의 사용자를 성공적으로 만든 후 사용자의 기호 이제 메서드.   
+    >     `This` 메서드는 이전 대체 `CreateUser_Click` 이 샘플의 사용자를 성공적으로 만든 후 사용자의 기호 이제 메서드.   
     >  Microsoft OWIN 프레임 워크에 확장 메서드를 추가 했습니다 `System.Web.HttpContext` 에 대 한 참조를 가져올 수 있는 프로그램 `IOwinContext`합니다. 이러한 확장 메서드에 정의 된 `Microsoft.Owin.Host.SystemWeb` 어셈블리입니다. `OwinContext` 클래스가 노출 한 `IAuthenticationManager` 현재 요청에서 사용 가능한 인증 미들웨어 기능을 나타내는 속성입니다.  
     >  사용자를 사용 하 여 로그인의 `AuthenticationManager` OWIN 및 호출에서 `SignIn` 를 전달 하 고는 `ClaimsIdentity` 위와 같이 합니다.   
     >  응용 프로그램에서 생성 하면 프레임 워크에 필요 하 고 ASP.NET Identity OWIN 쿠키 인증 클레임 기반 시스템에 있으므로 `ClaimsIdentity` 사용자에 대 한 합니다.   
     >  `ClaimsIdentity` 사용자가 속한 역할 같은 사용자에 대 한 모든 클레임에 대 한 정보가 있습니다. 이 단계에서 사용자에 대 한 더 많은 클레임을 추가할 수도 있습니다.  
     >  이 코드는 사용자에 로그인 하 고도 쿠키를 생성 합니다. 이 호출은 비슷합니다 [FormAuthentication.SetAuthCookie](https://msdn.microsoft.com/library/system.web.security.formsauthentication.setauthcookie.aspx) 에서 사용 하는 [FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx) 모듈입니다.
-    > - `SignOut`방법:   
+    > - `SignOut` 방법:   
     >  에 대 한 참조는 `AuthenticationManager` OWIN 및 호출에서 `SignOut`합니다. 이 방법은 유사 [FormsAuthentication.SignOut](https://msdn.microsoft.com/library/system.web.security.formsauthentication.signout.aspx) 사용 하는 방법의 [FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx) 모듈입니다.
 5. 키를 눌러 **Ctrl + f 5를 눌러** 작성 하 고 웹 응용 프로그램을 실행 합니다. 새 사용자 이름 및 암호를 입력 한 후에 클릭 **등록**합니다.  
   
     ![](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project/_static/image13.png)  
- 참고:이 시점에서 새 사용자 만들고에 기록 합니다.
+   참고:이 시점에서 새 사용자 만들고에 기록 합니다.
 6. 클릭 **로그 아웃** 단추입니다. 로그인 폼으로 이동 합니다.
 7. 에 잘못 된 사용자 이름 또는 암호 및 클릭 입력 **로그인** 단추입니다.   
- `UserManager.Find` 메서드는 null이 고 오류 메시지가 반환 됩니다: " *잘못 된 사용자 이름 또는 암호가* " 표시 됩니다.  
+   `UserManager.Find` 메서드는 null이 고 오류 메시지가 반환 됩니다: " *잘못 된 사용자 이름 또는 암호가* " 표시 됩니다.  
   
     ![](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project/_static/image14.png)

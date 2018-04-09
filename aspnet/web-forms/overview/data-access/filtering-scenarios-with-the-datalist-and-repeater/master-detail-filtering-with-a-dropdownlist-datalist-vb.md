@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-with-a-dropdownlist-datalist-vb
-title: "마스터/세부 DropDownList (VB)를 사용 하 여 필터링 | Microsoft Docs"
+title: 마스터/세부 DropDownList (VB)를 사용 하 여 필터링 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에서는 displ 하려면 'master' 레코드와 DataList를 표시 하려면 dropdownlist 활용을 사용 하 여 단일 웹 페이지에서 마스터/세부 보고서를 표시 하는 방법을 표시 중..."
+description: 이 자습서에서는 displ 하려면 'master' 레코드와 DataList를 표시 하려면 dropdownlist 활용을 사용 하 여 단일 웹 페이지에서 마스터/세부 보고서를 표시 하는 방법을 표시 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/18/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-with-a-dropdownlist-datalist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1f480cfcfb3b02c9398b2db3e66cec432152a05d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e4ece466319e268a74bbe8c4ed96ffc33cff432f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="masterdetail-filtering-with-a-dropdownlist-vb"></a>마스터/세부 DropDownList (VB)를 사용 하 여 필터링
 ====================
@@ -103,12 +103,12 @@ ms.lasthandoff: 11/10/2017
 **그림 7**: 선택 된 `GetProductsByCategoryID(categoryID)` 메서드 ([전체 크기 이미지를 보려면 클릭](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image17.png))
 
 
-다음을 클릭 한 후 ObjectDataSource 마법사 라는 메시지가 나타납니다에 대 한 값의 출처는 `GetProductsByCategoryID(categoryID)` 메서드의  *`categoryID`*  매개 변수입니다. 선택 된 값을 사용 하려면 `categories` DropDownList 항목 매개 변수 소스 제어 및에 ControlID를 설정 `Categories`합니다.
+다음을 클릭 한 후 ObjectDataSource 마법사 라는 메시지가 나타납니다에 대 한 값의 출처는 `GetProductsByCategoryID(categoryID)` 메서드의 *`categoryID`* 매개 변수입니다. 선택 된 값을 사용 하려면 `categories` DropDownList 항목 매개 변수 소스 제어 및에 ControlID를 설정 `Categories`합니다.
 
 
 [![매개 변수 categoryID 범주 DropDownList의 값으로 설정](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image19.png)](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image18.png)
 
-**그림 8**: 설정의  *`categoryID`*  의 값에 대 한 매개 변수는 `Categories` DropDownList ([전체 크기 이미지를 보려면 클릭](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image20.png))
+**그림 8**: 설정의 *`categoryID`* 의 값에 대 한 매개 변수는 `Categories` DropDownList ([전체 크기 이미지를 보려면 클릭](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image20.png))
 
 
 Visual Studio에서 자동으로 데이터 소스 구성 마법사를 완료 될 때 생성 된 `ItemTemplate` DataList 이름 및 각 데이터 필드의 값을 표시 하는 대 한 합니다. 대신 사용 하 여 DataList을 향상 해 보겠습니다는 `ItemTemplate` 제품의 이름, 범주, 공급 업체, 단위 테스트와 함께 가격 및 수량만 표시 하는 `SeparatorTemplate` 삽입 하는 `<hr>` 각 항목 사이 요소입니다. 사용 하도록 하겠습니다는 `ItemTemplate` 의 예제에서는 [DataList 및 반복기 컨트롤을 사용 하 여 데이터 표시](../displaying-data-with-the-datalist-and-repeater/displaying-data-with-the-datalist-and-repeater-controls-vb.md) 자습서 하지만 느낌 매력적인 시각적으로 가장 찾을 어떤 템플릿 태그 있습니다 사용할 수 있습니다.
@@ -164,7 +164,7 @@ DropDownList를 새 목록 항목을 추가 하려면 속성 창으로 이동 �
 **그림 13**: "-범주 선택-" 목록 항목을 선택 하면 No 제품 표시 됩니다 ([전체 크기 이미지를 보려면 클릭](master-detail-filtering-with-a-dropdownlist-datalist-vb/_static/image31.png))
 
 
-대신 표시 하는 경우 *모든* 제품 "-범주 선택-" 옵션을 선택 하면 값이 사용 됩니다. `-1` 대신 합니다. 예리한 독자에 그 뒤로 다시 호출 됩니다는 *마스터/세부 정보 필터링 된 정도 DropDownList* 을 업데이트 했습니다. 자습서는 `ProductsBLL` 클래스의 `GetProductsByCategoryID(categoryID)` 메서드 되도록 하는 경우는  *`categoryID`*  값 `-1` 반환 된 레코드가 모든 제품에 전달 되었습니다.
+대신 표시 하는 경우 *모든* 제품 "-범주 선택-" 옵션을 선택 하면 값이 사용 됩니다. `-1` 대신 합니다. 예리한 독자에 그 뒤로 다시 호출 됩니다는 *마스터/세부 정보 필터링 된 정도 DropDownList* 을 업데이트 했습니다. 자습서는 `ProductsBLL` 클래스의 `GetProductsByCategoryID(categoryID)` 메서드 되도록 하는 경우는 *`categoryID`* 값 `-1` 반환 된 레코드가 모든 제품에 전달 되었습니다.
 
 ## <a name="summary"></a>요약
 
@@ -176,12 +176,12 @@ DropDownList를 새 목록 항목을 추가 하려면 속성 창으로 이동 �
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특히 감사 드립니다.
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Randy Schmidt 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs.md)
-[다음](master-detail-filtering-acess-two-pages-datalist-vb.md)
+> [!div class="step-by-step"]
+> [이전](master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-cs.md)
+> [다음](master-detail-filtering-acess-two-pages-datalist-vb.md)

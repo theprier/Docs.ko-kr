@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/working-with-batched-data/batch-inserting-cs
-title: "일괄 처리 삽입 (C#) | Microsoft Docs"
+title: 일괄 처리 삽입 (C#) | Microsoft Docs
 author: rick-anderson
-description: "한 번에 여러 데이터베이스 레코드를 삽입 하는 방법을 알아봅니다. 사용자 인터페이스 계층에서 사용자를 여러 n 입력할 수 있도록 GridView 내용을 확장 하였습니다 중..."
+description: 한 번에 여러 데이터베이스 레코드를 삽입 하는 방법을 알아봅니다. 사용자 인터페이스 계층에서 사용자를 여러 n 입력할 수 있도록 GridView 내용을 확장 하였습니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/26/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-inserting-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9dc18e259da24d71464a156a70a85cfc9a1745ce
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: c8995592d9206fb17a7769414212369946304c54
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="batch-inserting-c"></a>일괄 처리 삽입 (C#)
 ====================
@@ -203,7 +203,7 @@ ValidationSummary 컨트롤 내에서 마지막으로, 추가 `InsertingInterfac
 
 [!code-csharp[Main](batch-inserting-cs/samples/sample5.cs)]
 
-둘 다 `Click` 이벤트 처리기를 호출 하기만 하면는 `ReturnToDisplayInterface` 메서드를 하겠습니다로 반환 하는 제품 추가에서 배송 있지만 `Click` 이벤트 처리기에서 4 단계 하 고 코드를 추가 하는 제품을 저장 합니다. `ReturnToDisplayInterface`반환 하 여 시작 되는 `Suppliers` 및 `Categories` 가 첫 번째 옵션을 dropdownlist 활용 합니다. 두 개 상수 `firstControlID` 및 `lastControlID` 시작 및 끝 입력란 삽입 인터페이스와의 경계에서 사용 되 제품 이름과 단위 가격이 명명에 사용 되는 컨트롤 인덱스 값을 표시는 `for` 는 를설정하는루프`Text`TextBox 컨트롤의 속성을 빈 문자열로 백업 합니다. 마지막으로, 패널 `Visible` 표시 된 디스플레이 인터페이스 및 삽입 인터페이스가 숨겨진다는 있도록 속성이 다시 설정 됩니다.
+둘 다 `Click` 이벤트 처리기를 호출 하기만 하면는 `ReturnToDisplayInterface` 메서드를 하겠습니다로 반환 하는 제품 추가에서 배송 있지만 `Click` 이벤트 처리기에서 4 단계 하 고 코드를 추가 하는 제품을 저장 합니다. `ReturnToDisplayInterface` 반환 하 여 시작 되는 `Suppliers` 및 `Categories` 가 첫 번째 옵션을 dropdownlist 활용 합니다. 두 개 상수 `firstControlID` 및 `lastControlID` 시작 및 끝 입력란 삽입 인터페이스와의 경계에서 사용 되 제품 이름과 단위 가격이 명명에 사용 되는 컨트롤 인덱스 값을 표시는 `for` 는 를설정하는루프`Text`TextBox 컨트롤의 속성을 빈 문자열로 백업 합니다. 마지막으로, 패널 `Visible` 표시 된 디스플레이 인터페이스 및 삽입 인터페이스가 숨겨진다는 있도록 속성이 다시 설정 됩니다.
 
 브라우저에서이 페이지를 테스트해 보십시오. 그림 5에 표시 된 대로 먼저 페이지를 방문 하는 경우 디스플레이 인터페이스를 표시 됩니다. 프로세스 제품 배송과 단추를 클릭 합니다. 페이지에서 포스트백 고 이제 표시 삽입 인터페이스 그림 12에 나와 있는 것 처럼 합니다. 중의 추가 제품 배송 또는 취소 단추를 클릭 하면 디스플레이 인터페이스를 반환 합니다.
 
@@ -269,12 +269,12 @@ ValidationSummary 컨트롤 내에서 마지막으로, 추가 `InsertingInterfac
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 Hilton Giesenow 및 S ren 야곱의 Lauritsen 된 검토자를 될 있습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](batch-deleting-cs.md)
-[다음](wrapping-database-modifications-within-a-transaction-vb.md)
+> [!div class="step-by-step"]
+> [이전](batch-deleting-cs.md)
+> [다음](wrapping-database-modifications-within-a-transaction-vb.md)

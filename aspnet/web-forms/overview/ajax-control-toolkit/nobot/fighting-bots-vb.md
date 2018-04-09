@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/nobot/fighting-bots-vb
-title: "봇 (VB)에 대처 | Microsoft Docs"
+title: 봇 (VB)에 대처 | Microsoft Docs
 author: wenz
-description: "자동화 된 봇 웹 로그 및 기타 웹 사이트 사용자 상호 작용 없이 주석 양식 전송 스팸 석고 합니다. ASP.NET AJAX Con에서 NoBot 컨트롤 중..."
+description: 자동화 된 봇 웹 로그 및 기타 웹 사이트 사용자 상호 작용 없이 주석 양식 전송 스팸 석고 합니다. ASP.NET AJAX Con에서 NoBot 컨트롤 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/nobot/fighting-bots-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3b786fd8605c7521a4aae8e49ca236363a71b572
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 35d5984ac7ff3422bab07a759c93fef3914a22f7
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="fighting-bots-vb"></a>대처 봇 (VB)
 ====================
@@ -37,7 +37,7 @@ ms.lasthandoff: 11/10/2017
 
 몇 가지 장점 및 단점이이 방법에 있지만이 설명은이 자습서의 범위를 벗어납니다. 그러나 유사한 방법을 제공 하는 ASP.NET AJAX 컨트롤 도구 키트에서 컨트롤: `NoBot`합니다. 대부분 스팸 시도 하는 경우 성공 간주 됩니다. 여기서 블로그 같은 웹 사이트에서 매우 잘 fares, 되며에 보다 CAPTCHA를 극복 하기 쉽게 알고리즘은 매우 쉽게 사용할 수 있지만는 `NoBot` 제어 작업을 수행할 수 있습니다.
 
-`NoBot`이러한 조건 중 하나 이상을 충족 될 경우에 현재 ASP.NET web form의 포스트백을 가로채:
+`NoBot` 이러한 조건 중 하나 이상을 충족 될 경우에 현재 ASP.NET web form의 포스트백을 가로채:
 
 - JavaScript 퍼즐을 해결 하기 위해 브라우저 실패 (예를 들어 JavaScript가 비활성화 된 경우)
 - 사용자를 빠른 양식을 제출
@@ -45,9 +45,9 @@ ms.lasthandoff: 11/10/2017
 
 이러한 조건을 확인 하기 위해는 `NoBot` 컨트롤 (모든 옵션) 이러한 특성을 사용 하려면:
 
-- `ResponseMinimumDelaySeconds`최소한의 포스트백 간격 (초)
-- `CutoffWindowSeconds`하나의 IP에서 포스트백 측정값 되는 시간 간격의 길이
-- `CutoffMaximumInstances`시간 간격 (초)의 최대 크기
+- `ResponseMinimumDelaySeconds` 최소한의 포스트백 간격 (초)
+- `CutoffWindowSeconds` 하나의 IP에서 포스트백 측정값 되는 시간 간격의 길이
+- `CutoffMaximumInstances` 시간 간격 (초)의 최대 크기
 
 다음 태그 요구 2 초 해당 이상 게시 하는 동안 경과 5 개만 포스트백 있는지 이하의 30 초 간격 내에서:
 
@@ -72,5 +72,5 @@ ms.lasthandoff: 11/10/2017
 
 이 오류 메시지는 bot 인해 발생 수 ([전체 크기 이미지를 보려면 클릭](fighting-bots-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[이전](fighting-bots-cs.md)
+> [!div class="step-by-step"]
+> [이전](fighting-bots-cs.md)

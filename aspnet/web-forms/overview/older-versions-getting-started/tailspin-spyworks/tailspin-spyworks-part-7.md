@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-7
-title: "7 단계: 추가 기능 | Microsoft Docs"
+title: '7 단계: 추가 기능 | Microsoft Docs'
 author: JoeStagner
-description: "이 자습서 시리즈 모든 Tailspin Spyworks 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 7 부 계정 revie 같은 추가 기능을 추가 하는 중..."
+description: 이 자습서 시리즈 모든 Tailspin Spyworks 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 7 부 계정 revie 같은 추가 기능을 추가 하는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/21/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: 5280de44b3e75f9d1ae85e0248bc3ef6d5444f6d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 17f068155f6726047901e2f7d580d375a4e07c87
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-7-adding-features"></a>7 단계: 추가 기능
 ====================
@@ -27,7 +27,7 @@ ms.lasthandoff: 11/10/2017
 > 이 자습서 시리즈 모든 Tailspin Spyworks 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 7 부 계정 검토, 제품 검토 및 "인기 있는 항목" 및 "도 구매한" 사용자 정의 컨트롤 등의 추가 기능을 추가합니다.
 
 
-## <a id="_Toc260221673"></a>기능 추가
+## <a id="_Toc260221673"></a>  기능 추가
 
 사용자가 카탈로그를 찾아볼 수 있지만 장바구니의 항목을 배치 하 고 체크 아웃 과정을 완료는 다양 한 지원 기능 사이트를 개선 하기 위해 포함 될 것입니다.
 
@@ -40,7 +40,7 @@ ms.lasthandoff: 11/10/2017
 7. 추가 한 페이지에 대 한 합니다.
 8. 전역 오류
 
-## <a id="_Toc260221674"></a>계정 검토
+## <a id="_Toc260221674"></a>  계정 검토
 
 "계정" 폴더에서 명명된 한 OrderList.aspx 및 다른 명명 된 OrderDetails.aspx 두.aspx 페이지를 만듭니다
 
@@ -56,7 +56,7 @@ Note도 GridView HyperlinkField에 이러한 매개 변수:
 
 이러한 OrderDetails.aspx 페이지의 쿼리 문자열 매개 변수로 OrderID 필드를 지정 하는 각 제품에 대 한 주문 세부 정보 보기에 대 한 링크를 지정 합니다.
 
-## <a id="_Toc260221675"></a>OrderDetails.aspx
+## <a id="_Toc260221675"></a>  OrderDetails.aspx
 
 EntityDataSource 컨트롤에 모든 주문의 품목을 표시 하는 GridView와 다른 EntityDataSource 및 주문 데이터를 표시 하는 주문 및는 FormView 액세스 하려면 사용 합니다.
 
@@ -72,7 +72,7 @@ EntityDataSource 컨트롤에 모든 주문의 품목을 표시 하는 GridView�
 
 [!code-csharp[Main](tailspin-spyworks-part-7/samples/sample5.cs)]
 
-## <a id="_Toc260221676"></a>홈 페이지
+## <a id="_Toc260221676"></a>  홈 페이지
 
 Default.aspx 페이지에 몇 가지 정적 콘텐츠를 추가 해 보겠습니다.
 
@@ -82,7 +82,7 @@ Default.aspx 페이지의 아래쪽 개체 틀에 다음 태그를 추가 합니
 
 [!code-aspx[Main](tailspin-spyworks-part-7/samples/sample6.aspx)]
 
-## <a id="_Toc260221677"></a>제품 평가
+## <a id="_Toc260221677"></a>  제품 평가
 
 먼저 입력 한 제품 검토를 사용할 수 있는 형식으로 링크와 단추를 추가 합니다.
 
@@ -94,7 +94,7 @@ Default.aspx 페이지의 아래쪽 개체 틀에 다음 태그를 추가 합니
 
 다음 ReviewAdd.aspx 라는 페이지 추가
 
-이 페이지는 ASP.NET AJAX 컨트롤 도구 키트를 사용 합니다. 하는 경우 수행 하지 않은 이미에서 다운로드할 수 있도록 [DevExpress](http://devexpress.com/act) 여기 Visual Studio와 함께 사용 하기 위해 도구 키트 설정 지침 이며 [https://www.asp.net/learn/ajax-videos/video-76.aspx](../../../videos/ajax-control-toolkit/how-do-i-get-started-with-the-aspnet-ajax-control-toolkit.md).
+이 페이지는 ASP.NET AJAX 컨트롤 도구 키트를 사용 합니다. 하는 경우 수행 하지 않은 이미에서 다운로드할 수 있도록 [DevExpress](http://devexpress.com/act) 여기 Visual Studio와 함께 사용 하기 위해 도구 키트 설정 지침 이며 [ https://www.asp.net/learn/ajax-videos/video-76.aspx ](../../../videos/ajax-control-toolkit/how-do-i-get-started-with-the-aspnet-ajax-control-toolkit.md)합니다.
 
 디자인 모드에서 컨트롤 및 유효성 검사기 도구 상자에서 끌어서 아래와 같은 양식을 작성 합니다.
 
@@ -114,7 +114,7 @@ Default.aspx 페이지의 아래쪽 개체 틀에 다음 태그를 추가 합니
 
 ![](tailspin-spyworks-part-7/_static/image3.jpg)
 
-## <a id="_Toc260221678"></a>인기 있는 컨트롤 (사용자 정의 컨트롤 만들기)
+## <a id="_Toc260221678"></a>  인기 있는 컨트롤 (사용자 정의 컨트롤 만들기)
 
 웹 사이트에서의 매출을 늘리기 위해 몇 가지 기능 "추천 판매" 인기 있는 하거나 관련 된 제품에 추가 합니다.
 
@@ -156,7 +156,7 @@ Note 우리의 컨트롤의 태그의 위쪽에이 중요 한 줄도 합니다.
 
 ![](tailspin-spyworks-part-7/_static/image6.jpg)
 
-## <a id="_Toc260221679"></a>(매개 변수가 있는 사용자 정의 컨트롤)를 제어 "구입 도"
+## <a id="_Toc260221679"></a>  (매개 변수가 있는 사용자 정의 컨트롤)를 제어 "구입 도"
 
 두 번째 사용자 컨트롤 만들 것을 추천 상황에 맞는 구체적인 정도 추가 하 여 다음 수준으로 판매 소요 됩니다.
 
@@ -236,6 +236,6 @@ AlsoPurchased 사용자 정의 컨트롤에는 ProductId 정수가 필요 하므
 
 ![](tailspin-spyworks-part-7/_static/image7.jpg)
 
->[!div class="step-by-step"]
-[이전](tailspin-spyworks-part-6.md)
-[다음](tailspin-spyworks-part-8.md)
+> [!div class="step-by-step"]
+> [이전](tailspin-spyworks-part-6.md)
+> [다음](tailspin-spyworks-part-8.md)

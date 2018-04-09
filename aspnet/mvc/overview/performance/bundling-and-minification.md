@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/performance/bundling-and-minification
-title: "묶음 및 축소 | Microsoft Docs"
+title: 묶음 및 축소 | Microsoft Docs
 author: Rick-Anderson
-description: "묶음 및 축소는 다음 두 가지 기술 요청 부하 시간을 개선 하기 위해 ASP.NET 4.5에서 사용할 수 있습니다. 묶음 및 축소 reducin 여 로드 시간 개선 중..."
+description: 묶음 및 축소는 다음 두 가지 기술 요청 부하 시간을 개선 하기 위해 ASP.NET 4.5에서 사용할 수 있습니다. 묶음 및 축소 reducin 여 로드 시간 개선 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/23/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/performance/bundling-and-minification
 msc.type: authoredcontent
-ms.openlocfilehash: 7192481de46c36f7de71164766e68afdbba74f6d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 001ebf89cda66a50cddcd7e4944f27b9396d4450
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="bundling-and-minification"></a>묶음 및 축소
 ====================
@@ -98,7 +98,7 @@ F12 개발자 도구를 사용 하 여 디버깅에 대 한 자세한 내용은 
 [!code-csharp[Main](bundling-and-minification/samples/sample4.cs?highlight=7)]
 
 > [!NOTE]
-> 하지 않는 한 `EnableOptimizations` 은 `true` 또는 디버그 특성에는 [compilation 요소](https://msdn.microsoft.com/library/s10awwz0.aspx) 에 *Web.config* 파일으로 설정 되어 `false`, 파일을 번들로 제공 되거나 축소 되지 것입니다. 또한.min 버전의 파일 사용 되지 않습니다, 그리고 전체 디버그 버전을 선택 됩니다. `EnableOptimizations`디버그 특성이 재정의 [compilation 요소](https://msdn.microsoft.com/library/s10awwz0.aspx) 에 *Web.config* 파일
+> 하지 않는 한 `EnableOptimizations` 은 `true` 또는 디버그 특성에는 [compilation 요소](https://msdn.microsoft.com/library/s10awwz0.aspx) 에 *Web.config* 파일으로 설정 되어 `false`, 파일을 번들로 제공 되거나 축소 되지 것입니다. 또한.min 버전의 파일 사용 되지 않습니다, 그리고 전체 디버그 버전을 선택 됩니다. `EnableOptimizations` 디버그 특성이 재정의 [compilation 요소](https://msdn.microsoft.com/library/s10awwz0.aspx) 에 *Web.config* 파일
 
 
 ## <a name="using-bundling-and-minification-with-aspnet-web-forms-and-web-pages"></a>번들을 사용 하 여 및 ASP.NET Web Forms 및 웹 페이지 축소
@@ -186,7 +186,7 @@ Render 메서드 코드 한 줄에 여러 번들을 추가할 수 있도록 문�
 
     [!code-csharp[Main](bundling-and-minification/samples/sample12.cs)]
 
- 와일드 카드 선택기 "\*.css" 폴더에서 각 CSS 파일에는 포함 하는 *Content\themes\base\jquery.ui.all.css* 파일입니다. *jquery.ui.all.css* 파일은 다른 CSS 파일을 가져옵니다.
+  와일드 카드 선택기 "\*.css" 폴더에서 각 CSS 파일에는 포함 하는 *Content\themes\base\jquery.ui.all.css* 파일입니다. *jquery.ui.all.css* 파일은 다른 CSS 파일을 가져옵니다.
 
 ## <a name="bundle-caching"></a>캐싱 번들
 
@@ -233,15 +233,15 @@ IE9 F12 개발자 도구를 실행 하 고 이전에 로드 된 페이지를 탐
 
 `System.Web.Optimization` 네임 스페이스 System.Web.Optimization.DLL에서 구현 됩니다. 활용 WebGrease 라이브러리 (WebGrease.dll) 축소 기능을 차례로 Antlr3.Runtime.dll를 사용 하 여 합니다.
 
-*Twitter 빠른 게시물 링크와 공유 하 고 사용 합니다. 내 Twitter 핸들은*:[@RickAndMSFT](http://twitter.com/RickAndMSFT)
+*Twitter 빠른 게시물 링크와 공유 하 고 사용 합니다. 내 Twitter 핸들은*: [@RickAndMSFT](http://twitter.com/RickAndMSFT)
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 - 비디오:[묶음 및 최적화](https://channel9.msdn.com/Events/aspConf/aspConf/Bundling-and-Optimizing) 여 [Howard Dierking](https://twitter.com/#!/howard_dierking)
 - [웹 페이지 사이트에 웹 최적화 추가](https://blogs.msdn.com/b/rickandy/archive/2012/08/15/adding-web-optimization-to-a-web-pages-site.aspx)합니다.
 - [추가 묶음 및 축소를 Web Forms](https://blogs.msdn.com/b/rickandy/archive/2012/08/14/adding-bundling-and-minification-to-web-forms.aspx)합니다.
-- [번들의 성능에 미치는 영향 및 웹 검색에 축소](https://blogs.msdn.com/b/henrikn/archive/2012/06/17/performance-implications-of-bundling-and-minification-on-http.aspx) 여 [구재석 F Nielsen](http://en.wikipedia.org/wiki/Henrik_Frystyk_Nielsen)[@frystyk](https://twitter.com/frystyk)
-- [Cdn을 사용 하 여 웹 사이트 성능 향상을 위해 만료 되 고](https://blogs.msdn.com/b/rickandy/archive/2011/05/21/using-cdns-to-improve-web-site-performance.aspx) Rick anderson[@RickAndMSFT](https://twitter.com/#!/RickAndMSFT)
+- [번들의 성능에 미치는 영향 및 웹 검색에 축소](https://blogs.msdn.com/b/henrikn/archive/2012/06/17/performance-implications-of-bundling-and-minification-on-http.aspx) 여 [구재석 F Nielsen](http://en.wikipedia.org/wiki/Henrik_Frystyk_Nielsen) [@frystyk](https://twitter.com/frystyk)
+- [Cdn을 사용 하 여 웹 사이트 성능 향상을 위해 만료 되 고](https://blogs.msdn.com/b/rickandy/archive/2011/05/21/using-cdns-to-improve-web-site-performance.aspx) Rick anderson [@RickAndMSFT](https://twitter.com/#!/RickAndMSFT)
 - [최소화 RTT (왕복 시간)](https://developers.google.com/speed/docs/best-practices/rtt)
 
 ## <a name="contributors"></a>참가자

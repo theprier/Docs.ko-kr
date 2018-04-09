@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/masterdetail/master-detail-filtering-with-two-dropdownlists-vb
-title: "마스터/세부 두 dropdownlist 활용 (VB)를 사용 하 여 필터링 | Microsoft Docs"
+title: 마스터/세부 두 dropdownlist 활용 (VB)를 사용 하 여 필터링 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서는 DropDownList 컨트롤을 두 가지를 사용 하 여 원하는 부모 및 최상위 항목 recor 선택, 세 번째 계층을 추가 하려면 마스터/세부 관계를 확장 중..."
+description: 이 자습서는 DropDownList 컨트롤을 두 가지를 사용 하 여 원하는 부모 및 최상위 항목 recor 선택, 세 번째 계층을 추가 하려면 마스터/세부 관계를 확장 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-with-two-dropdownlists-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c345fbfe5df4d8ce06695c4dd4b88cc099ad7836
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: ee0232cf8f7c0533703a51a4629522fd887f216f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="masterdetail-filtering-with-two-dropdownlists-vb"></a>마스터/세부 두 dropdownlist 활용 (VB)를 사용 하 여 필터링
 ====================
@@ -102,12 +102,12 @@ ObjectDataSource를 구성한 후 작업을 계속 합니다 데이터 소스 �
 **그림 9**: 구성에 사용 하 여 ObjectDataSource는 `GetProductsByCategoryID(categoryID)` 메서드 ([전체 크기 이미지를 보려면 클릭](master-detail-filtering-with-two-dropdownlists-vb/_static/image27.png))
 
 
-값을 지정 해야 마법사의 마지막 단계에서는  *`categoryID`*  매개 변수입니다. 이 매개 변수에서 선택한 항목에 할당 된 `Categories` DropDownList 합니다.
+값을 지정 해야 마법사의 마지막 단계에서는 *`categoryID`* 매개 변수입니다. 이 매개 변수에서 선택한 항목에 할당 된 `Categories` DropDownList 합니다.
 
 
 [![범주 드롭다운 목록에서 매개 변수 값 categoryID 끌어오기](master-detail-filtering-with-two-dropdownlists-vb/_static/image29.png)](master-detail-filtering-with-two-dropdownlists-vb/_static/image28.png)
 
-**그림 10**: 끌어오기는  *`categoryID`*  에서 매개 변수 값은 `Categories` DropDownList ([전체 크기 이미지를 보려면 클릭](master-detail-filtering-with-two-dropdownlists-vb/_static/image30.png))
+**그림 10**: 끌어오기는 *`categoryID`* 에서 매개 변수 값은 `Categories` DropDownList ([전체 크기 이미지를 보려면 클릭](master-detail-filtering-with-two-dropdownlists-vb/_static/image30.png))
 
 
 구성 된 ObjectDataSource를 사용 하는 모든 남아 지정 하는 것 어떤 데이터 소스 필드를 표시 하 고 DropDownList의 항목의 값 사용 됩니다. 표시는 `ProductName` 필드를 사용 하 여는 `ProductID` 값 필드입니다.
@@ -141,7 +141,7 @@ ObjectDataSource와 및 `ProductsByCategory` DropDownList 구성 가격 페이�
 
 ## <a name="step-3-using-a-detailsview-to-display-details-for-the-selected-product"></a>3 단계: DetailsView를 사용 하 여 선택한 제품에 대 한 정보를 표시 하려면
 
-마지막 단계는 DetailsView에 선택한 제품에 대 한 세부 정보를 표시 하는 것입니다. 이 위해를 추가 하려면 DetailsView 페이지로 설정 해당 `ID` 속성을 `ProductDetails`에 대 한 새 ObjectDataSource를 만듭니다. 구성에서 해당 데이터를 가져오도록이 ObjectDataSource는 `ProductsBLL` 클래스의 `GetProductByProductID(productID)` 의 선택된 된 값을 사용 하 여 메서드는 `ProductsByCategory` 의 값에 필요한 DropDownList는  *`productID`*  매개 변수입니다.
+마지막 단계는 DetailsView에 선택한 제품에 대 한 세부 정보를 표시 하는 것입니다. 이 위해를 추가 하려면 DetailsView 페이지로 설정 해당 `ID` 속성을 `ProductDetails`에 대 한 새 ObjectDataSource를 만듭니다. 구성에서 해당 데이터를 가져오도록이 ObjectDataSource는 `ProductsBLL` 클래스의 `GetProductByProductID(productID)` 의 선택된 된 값을 사용 하 여 메서드는 `ProductsByCategory` 의 값에 필요한 DropDownList는 *`productID`* 매개 변수입니다.
 
 
 [![ProductsBLL 클래스를 사용 하려면 선택 합니다.](master-detail-filtering-with-two-dropdownlists-vb/_static/image44.png)](master-detail-filtering-with-two-dropdownlists-vb/_static/image43.png)
@@ -156,7 +156,7 @@ ObjectDataSource와 및 `ProductsByCategory` DropDownList 구성 가격 페이�
 
 [![ProductsByCategory 드롭다운 목록에서 매개 변수 값 productID 끌어오기](master-detail-filtering-with-two-dropdownlists-vb/_static/image50.png)](master-detail-filtering-with-two-dropdownlists-vb/_static/image49.png)
 
-**그림 17**: 끌어오기는  *`productID`*  에서 매개 변수 값은 `ProductsByCategory` DropDownList ([전체 크기 이미지를 보려면 클릭](master-detail-filtering-with-two-dropdownlists-vb/_static/image51.png))
+**그림 17**: 끌어오기는 *`productID`* 에서 매개 변수 값은 `ProductsByCategory` DropDownList ([전체 크기 이미지를 보려면 클릭](master-detail-filtering-with-two-dropdownlists-vb/_static/image51.png))
 
 
 사용 가능한 필드 중 하나를 표시 하도록 선택할 수는 `ProductDetails` DetailsView 합니다. 제거를 선택한 이유는 `ProductID`, `SupplierID`, 및 `CategoryID` 필드 다시 정렬 하 고 나머지 필드 형식이 지정 합니다. DetailsView의을 선택을 취소 또한 `Height` 및 `Width` 속성을 DetailsView 데이터 대신 지정 된 크기로 제한 최적으로 표시 하는 데 필요한 너비를 확장 합니다. 전체 태그 아래에 나타납니다.
@@ -215,12 +215,12 @@ ObjectDataSource와 및 `ProductsByCategory` DropDownList 구성 가격 페이�
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Hilton Giesenow 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](master-detail-filtering-with-a-dropdownlist-vb.md)
-[다음](master-detail-filtering-across-two-pages-vb.md)
+> [!div class="step-by-step"]
+> [이전](master-detail-filtering-with-a-dropdownlist-vb.md)
+> [다음](master-detail-filtering-across-two-pages-vb.md)

@@ -1,8 +1,8 @@
 ---
 uid: mvc/videos/mvc-2/how-do-i/displaying-a-table-of-database-data
-title: "테이블을 데이터베이스 데이터 표시 | Microsoft Docs"
+title: 테이블을 데이터베이스 데이터 표시 | Microsoft Docs
 author: StephenWalther
-description: "ASP.NET MVC 뷰에 데이터베이스 레코드의 집합을 표시 해야 하나요? HTML 테이블에 레코드를 표시 하는 두 가지 방법을 알아봅니다. T의 모든 수행 하는 방법을 알아봅니다 중..."
+description: ASP.NET MVC 뷰에 데이터베이스 레코드의 집합을 표시 해야 하나요? HTML 테이블에 레코드를 표시 하는 두 가지 방법을 알아봅니다. T의 모든 수행 하는 방법을 알아봅니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/20/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/displaying-a-table-of-database-data
 msc.type: video
-ms.openlocfilehash: 5ad1d531fb2e47dc5192d202ae1641b70f30f1e6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a8c3bd87273323d570baeb662ec70083750914e8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="displaying-a-table-of-database-data"></a>테이블을 데이터베이스 데이터 표시
 ====================
@@ -24,8 +24,8 @@ ms.lasthandoff: 11/10/2017
 
 ASP.NET MVC 뷰에 데이터베이스 레코드의 집합을 표시 해야 하나요? HTML 테이블에 레코드를 표시 하는 두 가지 방법을 알아봅니다. 모든 서식 인라인으로 수행 하는 방법을 배웁니다. ASP.NET MVC 사용자 정의 컨트롤 템플릿을 만드는 방법을 배웁니다.
 
-[&#9654; (15 분) 비디오를 시청 하세요](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/displaying-a-table-of-database-data)
+[&#9654;(15 분) 비디오를 시청 하세요](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/displaying-a-table-of-database-data)
 
->[!div class="step-by-step"]
-[이전](creating-model-classes-with-linq-to-sql.md)
-[다음](what-is-aspnet-mvc-80-minute-technical-video-for-developers-building-nerddinner.md)
+> [!div class="step-by-step"]
+> [이전](creating-model-classes-with-linq-to-sql.md)
+> [다음](what-is-aspnet-mvc-80-minute-technical-video-for-developers-building-nerddinner.md)

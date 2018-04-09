@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core의 사용자 지정 정책 기반 권한 부여"
+title: ASP.NET Core의 사용자 지정 정책 기반 권한 부여
 author: rick-anderson
-description: "ASP.NET Core 응용 프로그램에서 사용자 지정 권한 정책 처리기를 작성 및 사용해서 권한 부여 요구 사항을 적용하는 방법을 알아봅니다."
+description: ASP.NET Core 응용 프로그램에서 사용자 지정 권한 정책 처리기를 작성 및 사용해서 권한 부여 요구 사항을 적용하는 방법을 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,13 +10,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/policies
-ms.openlocfilehash: a9ee7e6fd06fa88485d7f578a9df74cbf87d9540
-ms.sourcegitcommit: 7ee6e7582421195cbd675355c970d3d292ee668d
+ms.openlocfilehash: 411fee90bdccfb45c33f5d4ccd7864c83c614e70
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/14/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="policy-based-authorization"></a>정책 기반 권한 부여
+# <a name="policy-based-authorization-in-aspnet-core"></a>ASP.NET Core의 사용자 지정 정책 기반 권한 부여
 
 [역할 기반 권한 부여](xref:security/authorization/roles) 및 [클레임 기반 권한 부여](xref:security/authorization/claims) 는 내부적으로 요구 사항, 요구 사항 처리기, 그리고 미리 구성된 정책을 사용합니다. 이런 빌딩 블록들은 권한 부여 평가를 코드로 표현할 수 있는 기능을 지원합니다. 결과적으로 보다 풍부하고 재사용 가능하며 테스트 가능한 권한 부여 구조를 만들 수 있습니다.
 
@@ -26,7 +26,7 @@ ms.lasthandoff: 02/14/2018
 
 위의 예제는 "AtLeast21"이라는 정책을 생성합니다. 이 정책은 요구 사항의 &mdash; 매개 변수로 제공되는, 최소 연령을 뜻하는 단일 요구 사항을 갖습니다.
 
-사용 하 여 정책이 적용 되는 `[Authorize]` 정책 이름 가진 특성이 있습니다. 예:
+사용 하 여 정책이 적용 되는 `[Authorize]` 정책 이름 가진 특성이 있습니다. 예를 들어:
 
 [!code-csharp[](policies/samples/PoliciesAuthApp1/Controllers/AlcoholPurchaseController.cs?name=snippet_AlcoholPurchaseControllerClass&highlight=4)]
 
@@ -69,7 +69,7 @@ ms.lasthandoff: 02/14/2018
 
 ### <a name="handler-registration"></a>처리기 등록하기
 
-처리기는 구성 하는 동안 서비스 컬렉션에 등록 됩니다. 예:
+처리기는 구성 하는 동안 서비스 컬렉션에 등록 됩니다. 예를 들어:
 
 [!code-csharp[](policies/samples/PoliciesAuthApp1/Startup.cs?range=40-41,50-55,63-65,72)]
 

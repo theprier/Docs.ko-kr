@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-5
-title: "5 단계: 편집 양식 및 템플릿 | Microsoft Docs"
+title: '5 단계: 편집 양식 및 템플릿 | Microsoft Docs'
 author: jongalloway
-description: "이 자습서 시리즈 모든 ASP.NET MVC Music Store 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 편집 양식 및 템플릿 5 부에 설명합니다."
+description: 이 자습서 시리즈 모든 ASP.NET MVC Music Store 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 편집 양식 및 템플릿 5 부에 설명합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/21/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-5
 msc.type: authoredcontent
-ms.openlocfilehash: cde6fe133291254531a797a434a4b2cdd226dd5f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: d584e614b5a4124044cd9decd2272192ca164643
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-5-edit-forms-and-templating"></a>5 단계: 편집 양식 및 템플릿
 ====================
@@ -262,9 +262,9 @@ Razor의 @helper 구문 되었습니다 상당히 쉽게 보기에 사용 하기
 
 ![](mvc-music-store-part-5/_static/image18.png)
 
-참고: 만들고 하나의 보기에는 도우미를 사용 하 여 간단한 예를 표시 합니다. 사이트 전체에서 사용할 수 있는 도우미 만들기에 대 한 자세한 내용은 내 블로그 게시물을 참조 합니다: [http://bit.ly/mvc3-helper-options](http://bit.ly/mvc3-helper-options)
+참고: 만들고 하나의 보기에는 도우미를 사용 하 여 간단한 예를 표시 합니다. 사이트 전체에서 사용할 수 있는 도우미 만들기에 대 한 자세한 내용은 내 블로그 게시물을 참조 합니다. [http://bit.ly/mvc3-helper-options](http://bit.ly/mvc3-helper-options)
 
 
->[!div class="step-by-step"]
-[이전](mvc-music-store-part-4.md)
-[다음](mvc-music-store-part-6.md)
+> [!div class="step-by-step"]
+> [이전](mvc-music-store-part-4.md)
+> [다음](mvc-music-store-part-6.md)

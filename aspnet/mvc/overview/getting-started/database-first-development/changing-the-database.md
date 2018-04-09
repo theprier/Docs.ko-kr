@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/changing-the-database
-title: "ASP.NET MVC를 사용 하 여 먼저 EF 데이터베이스: 데이터베이스를 변경 | Microsoft Docs"
+title: 'ASP.NET MVC를 사용 하 여 먼저 EF 데이터베이스: 데이터베이스를 변경 | Microsoft Docs'
 author: tfitzmac
-description: "MVC, Entity Framework 및 ASP.NET 스 캐 폴딩을 사용 하 여 기존 데이터베이스에 대 한 인터페이스를 제공 하는 웹 응용 프로그램을 만들 수 있습니다. 이 자습서 seri 중..."
+description: MVC, Entity Framework 및 ASP.NET 스 캐 폴딩을 사용 하 여 기존 데이터베이스에 대 한 인터페이스를 제공 하는 웹 응용 프로그램을 만들 수 있습니다. 이 자습서 seri 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/01/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/changing-the-database
 msc.type: authoredcontent
-ms.openlocfilehash: 1ffe753812e5eef817f03ab488a28ae5fcefd41e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 63ee8768a43dbdac80922e3adbedd3378c10da73
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="ef-database-first-with-aspnet-mvc-changing-the-database"></a>ASP.NET MVC를 사용 하 여 먼저 EF 데이터베이스: 데이터베이스를 변경
 ====================
@@ -63,6 +63,6 @@ ms.lasthandoff: 11/10/2017
 
 다음 섹션에서 학생 레코드에 대 한 세부 정보를 표시 하기 위한 뷰를 사용자 지정 하는 코드를 추가 합니다.
 
->[!div class="step-by-step"]
-[이전](generating-views.md)
-[다음](customizing-a-view.md)
+> [!div class="step-by-step"]
+> [이전](generating-views.md)
+> [다음](customizing-a-view.md)

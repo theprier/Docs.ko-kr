@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-5
-title: "5 단계: 비즈니스 논리 | Microsoft Docs"
+title: '5 단계: 비즈니스 논리 | Microsoft Docs'
 author: JoeStagner
-description: "이 자습서 시리즈 모든 Tailspin Spyworks 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 5 단계는 비즈니스 논리를 추가합니다."
+description: 이 자습서 시리즈 모든 Tailspin Spyworks 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 5 단계는 비즈니스 논리를 추가합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/21/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-5
 msc.type: authoredcontent
-ms.openlocfilehash: e205788e05a2ad94d86d4847c11c40898b1c3113
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e4342e634ef8c4bcf4e0085650a28f414ab23736
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-5-business-logic"></a>5 단계: 비즈니스 논리
 ====================
@@ -27,7 +27,7 @@ ms.lasthandoff: 11/10/2017
 > 이 자습서 시리즈 모든 Tailspin Spyworks 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 5 단계는 비즈니스 논리를 추가합니다.
 
 
-## <a id="_Toc260221671"></a>일부 비즈니스 논리 추가
+## <a id="_Toc260221671"></a>  일부 비즈니스 논리 추가
 
 웹 사이트를 방문 하는 사람이 때마다 사용할 수 있도록 쇼핑 경험상 주시기 바랍니다. 방문자를 찾아보고 등록 되거나에 기록 되지 않을 경우에 장바구니에 항목을 추가할 수 있습니다. 체크 아웃 준비가 될 때 부여 됩니다 인증 하기 위한 옵션 되며 그렇지 않은 경우 아직 멤버 수 없게 됩니다 계정을 만들 수 있습니다.
 
@@ -85,7 +85,7 @@ LINQ to Entities에 항목이 바구니에 이미 있는지 사용 했습니다.
 
 현재 구현 하지 않았습니다 아직 전역 오류 처리기를이 예외는 응용 프로그램에서 처리 되지 않은 거쳐야 하지만 여기서는이 문제를 해결할 곧 합니다.
 
-참고 (을 통해 사용 가능 Debug.Fail() 문 사용도`using System.Diagnostics;)`
+참고 (을 통해 사용 가능 Debug.Fail() 문 사용도 `using System.Diagnostics;)`
 
 응용 프로그램이 디버거 내에서 실행 중인이 메서드를 지정 하는 오류 메시지와 함께 응용 프로그램 상태에 대 한 정보로 세부 대화 상자를 표시 합니다.
 
@@ -187,6 +187,6 @@ GetValues()는 특수 한 도우미 함수 MyShoppingCart.aspx.cs에서 다음�
 
 보겠습니다 이렇게 하기 전에 멤버 자격 데이터베이스를 생성 하 고 사용자 멤버 자격 리포지토리를 추가 하려면 Visual Studio를 사용 합니다.
 
->[!div class="step-by-step"]
-[이전](tailspin-spyworks-part-4.md)
-[다음](tailspin-spyworks-part-6.md)
+> [!div class="step-by-step"]
+> [이전](tailspin-spyworks-part-4.md)
+> [다음](tailspin-spyworks-part-6.md)

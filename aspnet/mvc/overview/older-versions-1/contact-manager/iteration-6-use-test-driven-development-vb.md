@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-6-use-test-driven-development-vb
-title: "반복 6-테스트 기반 개발 (VB)를 사용 하 여 | Microsoft Docs"
+title: 반복 6-테스트 기반 개발 (VB)를 사용 하 여 | Microsoft Docs
 author: microsoft
-description: "이 6 번째 반복에서에서는 새 기능을 추가할 응용 프로그램 먼저 단위 테스트를 작성 하 고 단위 테스트에 대해 코드를 작성 합니다. 이 반복에..."
+description: 이 6 번째 반복에서에서는 새 기능을 추가할 응용 프로그램 먼저 단위 테스트를 작성 하 고 단위 테스트에 대해 코드를 작성 합니다. 이 반복에...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-6-use-test-driven-development-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9b558df9c0b44f5f76115270d361b6022658f9f9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 71b3425c5ca8cbfc1b89493c7afb26681f8bdc9d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="iteration-6--use-test-driven-development-vb"></a>반복 6-테스트 기반 개발 (VB)를 사용 합니다.
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [코드 다운로드](iteration-6-use-test-driven-development-vb/_static/contactmanager_6_vb1.zip)
 
@@ -123,7 +123,7 @@ ContactManager.Tests 프로젝트에서 Controllers 폴더를 마우스 오른�
 
 첫 번째 단위 테스트 목록 1에 포함 됩니다. 이 테스트 그룹 컨트롤러의 index () 메서드 그룹 집합이 있는지 확인 합니다. 테스트 그룹의 컬렉션 데이터 보기에서 반환 하 되 확인 합니다.
 
-**1-Controllers\GroupControllerTest.vb 나열**
+**Listing 1 - Controllers\GroupControllerTest.vb**
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample1.vb)]
 
@@ -133,11 +133,11 @@ T에도 빌드를 활용해 서이 시점에서 응용 프로그램을 활용해
 
 목록 2의 그룹 컨트롤러 클래스는 최소한의 단위 테스트를 통과 하는 데 필요한 코드를 포함 합니다. Index () 작업 그룹 (그룹 클래스 보기 3에 정의 됨)의 정적으로 코딩 된 목록을 반환 합니다.
 
-**2-Controllers\GroupController.vb 나열**
+**Listing 2 - Controllers\GroupController.vb**
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample2.vb)]
 
-**3-Models\Group.vb 나열**
+**Listing 3 - Models\Group.vb**
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample3.vb)]
 
@@ -155,7 +155,7 @@ T에도 빌드를 활용해 서이 시점에서 응용 프로그램을 활용해
 
 테스트 목록 4에서 새 그룹을 사용 하 여 메서드 그룹 index () 메서드에 의해 반환 된 목록에 그룹을 추가 하는 create () 호출 있는지 확인 합니다. 즉, 새 그룹을 만드는 경우 다음 I 할 수 있어야 index () 메서드에 의해 반환 된 그룹의 목록에서 새 그룹을 다시 가져옵니다.
 
-**4-Controllers\GroupControllerTest.vb 나열**
+**Listing 4 - Controllers\GroupControllerTest.vb**
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample4.vb)]
 
@@ -163,7 +163,7 @@ T에도 빌드를 활용해 서이 시점에서 응용 프로그램을 활용해
 
 수정 된 그룹 컨트롤러 목록 5에 최소한의 새 테스트를 통과 하는 데 필요한 변경 내용이 포함 되어 있습니다.
 
-**5-Controllers\GroupController.vb 나열**
+**Listing 5 - Controllers\GroupController.vb**
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample5.vb)]
 
@@ -177,17 +177,17 @@ T에도 빌드를 활용해 서이 시점에서 응용 프로그램을 활용해
 
 목록 6이이 의도 표현 하는 새 테스트를 포함 합니다. 이 테스트 확인 모델 상태의 유효성 검사 오류 메시지에 이름이 결과 제공 하지 않고 그룹 만들기를 시도 합니다.
 
-**6-Controllers\GroupControllerTest.vb 나열**
+**Listing 6 - Controllers\GroupControllerTest.vb**
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample6.vb)]
 
 이 테스트를 충족 하기 위해 Name 속성 (참조 목록 7)에서는 그룹 클래스에 추가 해야 합니다. 또한 유효성 검사 논리의 간단한 작업이 그룹 controller s create () 동작 (8 목록 참조)에 추가 해야 합니다.
 
-**7-Models\Group.vb 나열**
+**Listing 7 - Models\Group.vb**
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample7.vb)]
 
-**8-Controllers\GroupController.vb 나열**
+**Listing 8 - Controllers\GroupController.vb**
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample8.vb)]
 
@@ -207,15 +207,15 @@ T에도 빌드를 활용해 서이 시점에서 응용 프로그램을 활용해
 
 목록 11 IContactManagerRepository 인터페이스를 구현 하는 새 FakeContactManagerRepository 클래스를 포함 합니다. 또한 IContactManagerRepository 인터페이스를 구현 하는 EntityContactManagerRepository 클래스와 달리 새 FakeContactManagerRepository 클래스는 데이터베이스와 통신 하지 않습니다. FakeContactManagerRepository 클래스는 데이터베이스에 대 한 프록시로 메모리 내 컬렉션을 사용합니다. 이 단위 테스트에서이 클래스 가짜 저장소 계층으로 사용 합니다.
 
-**9-Controllers\GroupController.vb 나열**
+**Listing 9 - Controllers\GroupController.vb**
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample9.vb)]
 
-**10-Controllers\ContactManagerService.vb 나열**
+**Listing 10 - Controllers\ContactManagerService.vb**
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample10.vb)]
 
-**11-Controllers\FakeContactManagerRepository.vb 나열**
+**Listing 11 - Controllers\FakeContactManagerRepository.vb**
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample11.vb)]
 
@@ -227,7 +227,7 @@ T에도 빌드를 활용해 서이 시점에서 응용 프로그램을 활용해
 
 마지막으로, 이러한 변경 내용은 응용 프로그램의 디자인에 단위 테스트를 약간 수정을 만드는 데 필요 합니다. 이제 단위 테스트를 수행할 때의 FakeContactManagerRepository를 사용 해야 합니다. 업데이트 된 GroupControllerTest 클래스 12 목록에 포함 됩니다.
 
-**12-Controllers\GroupControllerTest.vb 나열**
+**Listing 12 - Controllers\GroupControllerTest.vb**
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample13.vb)]
 
@@ -250,7 +250,7 @@ T에도 빌드를 활용해 서이 시점에서 응용 프로그램을 활용해
 | **열 이름** | **데이터 형식** | **Null 허용** |
 | --- | --- | --- |
 | ID | int | False |
-| 이름 | Nvarchar (50) | False |
+| 이름 | nvarchar(50) | False |
 
 
 다음으로 Contacts 테이블에서 모든 데이터를 삭제 해야 (성공한 그렇지 않으면 t 연락처 및 그룹이 테이블 간의 관계를 만들 수)입니다. 아래 단계를 수행합니다.
@@ -309,7 +309,7 @@ T에도 빌드를 활용해 서이 시점에서 응용 프로그램을 활용해
 
 다음으로, 저장소 클래스를 구현 해야 합니다. 반복이 진행 되는 동안 새 메서드가 여러 개에 추가한 IContactManagerRepository 인터페이스 단위 테스트를 충족 하기 위해 코드를 작성 하는 동안 합니다. IContactManagerRepository 인터페이스의 최종 버전 14 목록에 포함 됩니다.
 
-**14-Models\IContactManagerRepository.vb 나열**
+**Listing 14 - Models\IContactManagerRepository.vb**
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample14.vb)]
 
@@ -319,7 +319,7 @@ T에도 빌드를 활용해 서이 시점에서 응용 프로그램을 활용해
 
 스텁 메서드를 사용 하면 응용 프로그램을 컴파일 및 단위 테스트를 통과할 수 있었습니다. 그러나 이제 속도가 실제로 이러한 메서드를 구현 합니다. EntityContactManagerRepository 클래스의 최종 버전 목록 13에 포함 됩니다.
 
-**13-Models\EntityContactManagerRepository.vb 나열**
+**Listing 13 - Models\EntityContactManagerRepository.vb**
 
 [!code-vb[Main](iteration-6-use-test-driven-development-vb/samples/sample16.vb)]
 
@@ -360,6 +360,6 @@ ASP.NET MVC 응용 프로그램 기본 ASP.NET 뷰 엔진을 사용 하는 경�
 
 -마지막 반복-다음 반복에서 Ajax 활용 하기 위해 응용 프로그램 다시 작성 합니다. Ajax 활용 함으로써 않아 응용 프로그램의 성능 및 응답성을 향상 합니다 했습니다.
 
->[!div class="step-by-step"]
-[이전](iteration-5-create-unit-tests-vb.md)
-[다음](iteration-7-add-ajax-functionality-vb.md)
+> [!div class="step-by-step"]
+> [이전](iteration-5-create-unit-tests-vb.md)
+> [다음](iteration-7-add-ajax-functionality-vb.md)

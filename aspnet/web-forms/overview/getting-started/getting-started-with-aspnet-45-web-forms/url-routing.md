@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing
-title: "URL 라우팅 | Microsoft Docs"
+title: URL 라우팅 | Microsoft Docs
 author: Erikre
-description: "이 자습서 시리즈 것에 대 한 ASP.NET 4.5 및 Microsoft Visual Studio Express 2013을 사용 하 여 ASP.NET Web Forms 응용 프로그램을 구축 하는 기초 알려 드리겠습니다 중..."
+description: 이 자습서 시리즈 것에 대 한 ASP.NET 4.5 및 Microsoft Visual Studio Express 2013을 사용 하 여 ASP.NET Web Forms 응용 프로그램을 구축 하는 기초 알려 드리겠습니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing
 msc.type: authoredcontent
-ms.openlocfilehash: 279617e4ebb475d935c0d1e01e08a3a2def0f9e9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: a195b36517bcae4bbeaf43fe7386e7787fd00212
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="url-routing"></a>URL 라우팅
 ====================
@@ -147,12 +147,12 @@ Wingtip Toys 샘플 응용 프로그램 시작 되 면 호출 하는 `Applicatio
 
 이 자습서에서는 범주 및 제품에 대 한 경로 추가 했습니다. 모델 바인딩을 사용 하는 데이터 컨트롤과 경로 수 통합 하는 방법을 배웠습니다. 다음 자습서에서는 전역 오류 처리를 구현 합니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 [Asp.net Url](http://www.nuget.org/packages/Microsoft.AspNet.FriendlyUrls/)  
 [Azure 앱 서비스에 멤버 자격, OAuth, SQL 데이터베이스와 보안 ASP.NET Web Forms 응용 프로그램 배포](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/)  
 [Microsoft Azure-무료 평가판](https://azure.microsoft.com/pricing/free-trial/)
 
->[!div class="step-by-step"]
-[이전](membership-and-administration.md)
-[다음](aspnet-error-handling.md)
+> [!div class="step-by-step"]
+> [이전](membership-and-administration.md)
+> [다음](aspnet-error-handling.md)

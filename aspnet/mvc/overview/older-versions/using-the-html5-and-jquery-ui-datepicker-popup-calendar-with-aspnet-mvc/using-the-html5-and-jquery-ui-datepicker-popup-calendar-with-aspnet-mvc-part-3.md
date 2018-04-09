@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3
-title: "ASP.NET MVC-3 부 HTML5 및 jQuery UI Datepicker 팝업 일정 사용 | Microsoft Docs"
+title: ASP.NET MVC-3 부 HTML5 및 jQuery UI Datepicker 팝업 일정 사용 | Microsoft Docs
 author: Rick-Anderson
-description: "이 자습서는 기본적인 편집기 템플릿과 표시 템플릿은 ASP.NET MV에서 jQuery UI datepicker 팝업 일정 사용 방법 알려 드리겠습니다 중..."
+description: 이 자습서는 기본적인 편집기 템플릿과 표시 템플릿은 ASP.NET MV에서 jQuery UI datepicker 팝업 일정 사용 방법 알려 드리겠습니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/29/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: 7d4ed67254c2b0fc2aef748cfab1c8f628b25641
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: fd1ae746f4f134b779c7eee50cf6c840bbb7068e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-3"></a>ASP.NET MVC-3 부 HTML5 및 jQuery UI Datepicker 팝업 일정 사용
 ====================
@@ -99,6 +99,6 @@ Ctrl + f 5를 눌러 응용 프로그램을 실행 하 여 탐색 하 *영화/Pe
 
 다음 섹션에서 전환 하 여 약간 주제 및 입력 방식을 사용자 지정 데이터 표시 방법을 사용자 지정에서 이동 합니다. JQuery datepicker 날짜를 지정 하는 편리한 방법을 제공 하기 위해 응용 프로그램의 편집 뷰에 연결 합니다.
 
->[!div class="step-by-step"]
-[이전](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2.md)
-[다음](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4.md)
+> [!div class="step-by-step"]
+> [이전](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-2.md)
+> [다음](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4.md)

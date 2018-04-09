@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-8
-title: "먼저 Entity Framework 4.0 데이터베이스와 시작 및 ASP.NET 4 Web Forms-8 부 | Microsoft Docs"
+title: 먼저 Entity Framework 4.0 데이터베이스와 시작 및 ASP.NET 4 Web Forms-8 부 | Microsoft Docs
 author: tdykstra
-description: "Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework를 사용 하 여 ASP.NET Web Forms 응용 프로그램을 만드는 방법을 보여 줍니다. 샘플 응용 프로그램은..."
+description: Contoso 대학 샘플 웹 응용 프로그램에는 Entity Framework를 사용 하 여 ASP.NET Web Forms 응용 프로그램을 만드는 방법을 보여 줍니다. 샘플 응용 프로그램은...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/03/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/getting-started-with-ef/the-entity-framework-and-aspnet-getting-started-part-8
 msc.type: authoredcontent
-ms.openlocfilehash: 323ee44f43f6d4081bd9ba50791755696bc9128f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 035cce022d1b3697b825a96487529dbc9675d90e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-8"></a>먼저 Entity Framework 4.0 데이터베이스와 시작 및 ASP.NET 4 Web Forms-8 부
 ====================
@@ -101,7 +101,7 @@ ms.lasthandoff: 01/24/2018
 
 속성 메타 데이터 클래스에 적용 되는 특성 유효성 검사, 규칙 및 오류 메시지 서식을 지정 합니다. 여기에 표시 된 특성에는 다음과 같은 결과가 포함 됩니다.
 
-- `EnrollmentDate`(시간)을 제외한 날짜가 표시 됩니다.
+- `EnrollmentDate` (시간)을 제외한 날짜가 표시 됩니다.
 - 두 이름 필드 25 자 이거나 작은 길이 및 사용자 지정 오류 메시지에 제공 됩니다.
 - 두 이름 필드가 필요 하며, 사용자 지정 오류 메시지가 제공 됩니다.
 
@@ -132,5 +132,5 @@ ms.lasthandoff: 01/24/2018
 - [Entity Framework 포럼](https://social.msdn.microsoft.com/forums/adodotnetentityframework/)
 - [Julie Lerman 블로그](http://thedatafarm.com/blog/)
 
->[!div class="step-by-step"]
-[이전](the-entity-framework-and-aspnet-getting-started-part-7.md)
+> [!div class="step-by-step"]
+> [이전](the-entity-framework-and-aspnet-getting-started-part-7.md)

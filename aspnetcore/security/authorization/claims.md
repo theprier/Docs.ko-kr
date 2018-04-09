@@ -1,7 +1,7 @@
 ---
-title: "클레임 기반 권한 부여"
+title: ASP.NET Core에서 클레임 기반 권한 부여
 author: rick-anderson
-description: "이 문서에서는 ASP.NET Core 응용 프로그램에서 권한 부여에 대한 클레임 검사를 추가하는 방법을 설명합니다."
+description: ASP.NET Core 응용 프로그램에서 권한 부여에 대 한 클레임 검사를 추가 하는 방법에 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/claims
-ms.openlocfilehash: 608aaa469c5ca20fab8250025804e28e7808122d
-ms.sourcegitcommit: 7a87d66cf1d01febe6635c7306f2f679434901d1
+ms.openlocfilehash: da308b67be046395bb1baa0f272e767cccbc99c8
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="claims-based-authorization"></a>클레임 기반 권한 부여
+# <a name="claims-based-authorization-in-aspnet-core"></a>ASP.NET Core에서 클레임 기반 권한 부여
 
 <a name="security-authorization-claims-based"></a>
 
@@ -122,4 +122,4 @@ public class SalaryController : Controller
 
 위의 예제에서는 컨트롤러에 적용된 정책에 따라, `EmployeeOnly` 정책을 만족하는 모든 신원이 `Payslip` 액션에 접근할 수 있습니다. 그러나 `UpdateSalary` 액션을 호출할 수 있으려면, 신원이 `EmployeeOnly` 정책과 `HumanResources` 정책을 *모두* 만족해야만 합니다.
 
-만약, 생년월일 클레임의 날짜를 가져와서 나이를 계산하고 21살 이상인지 확인하는 것 같은 복잡한 정책이 필요하다면 [사용자 지정 정책 처리기](policies.md)를 작성해야 합니다.
+만약, 생년월일 클레임의 날짜를 가져와서 나이를 계산하고 21살 이상인지 확인하는 것 같은 복잡한 정책이 필요하다면 [사용자 지정 정책 처리기](xref:security/authorization/policies)를 작성해야 합니다.

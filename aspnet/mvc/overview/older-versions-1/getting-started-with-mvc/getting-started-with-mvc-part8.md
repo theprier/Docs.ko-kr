@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part8
-title: "모델에 열 추가 | Microsoft Docs"
+title: 모델에 열 추가 | Microsoft Docs
 author: shanselman
-description: "ASP.NET MVC의 기본 사항을 소개 하는 초보자를 위한 자습서입니다. 읽기 및 쓰기는 데이터베이스에서 단순 웹 응용 프로그램을 만듭니다."
+description: ASP.NET MVC의 기본 사항을 소개 하는 초보자를 위한 자습서입니다. 읽기 및 쓰기는 데이터베이스에서 단순 웹 응용 프로그램을 만듭니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part8
 msc.type: authoredcontent
-ms.openlocfilehash: 17ee105f596319423ac83cf718683ed293f952f3
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 7a0b64ce00fc5ee6d49990f1d4d93a154c467bf5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-column-to-the-model"></a>모델에 열 추가
 ====================
@@ -77,11 +77,11 @@ ms.lasthandoff: 01/30/2018
 
 이 기본 자습서 보기와 연결 하 고 하드 코드 된 데이터에 대 한 전달 컨트롤러를 만들기 시작 했습니다. 에서는 데이터베이스 디자인 하 고 만들고 일부 데이터를 저장 한 다음에 있습니다. 데이터베이스에서 데이터를 검색 하 고 HTML 테이블에 표시 합니다. 그런 다음 데이터를 추가할 데이터베이스 자체에서 웹 응용 프로그램의 사용자 수 있는 폼 만들기를 추가 했습니다. 유효성 검사를 추가 합니다. 그런 다음 JavaScript를 사용 하 여 클라이언트 쪽 유효성 검사를 수행 합니다. 마지막으로의 데이터를 새 열을 포함 하도록 데이터베이스를 변경 하 후 만들고 이러한 새 데이터를 표시 하는 두 개의 페이지를 업데이트 합니다.
 
-이제 확인해이 중간 수준 자습서로 이동할 수 있습니다 "[MVC Music Store](../../older-versions/mvc-music-store/mvc-music-store-part-1.md)" 뿐 아니라 많은 비디오 및 리소스에 [https://asp.net/mvc](https://asp.net/mvc) ASP.NET MVC에 대해 훨씬 더 자세한!
+이제 확인해이 중간 수준 자습서로 이동할 수 있습니다 "[MVC Music Store](../../older-versions/mvc-music-store/mvc-music-store-part-1.md)" 뿐 아니라 많은 비디오 및 리소스에 [ https://asp.net/mvc ](https://asp.net/mvc) ASP.NET MVC에 대해 훨씬 더 자세한!
 
 즐겨보세요!
 
-- Scott Hanselman- [http://hanselman.com](http://hanselman.com) 및 [ @shanselman ](http://twitter.com/shanselman) Twitter에서.
+- Scott Hanselman- [ http://hanselman.com ](http://hanselman.com) 및 [ @shanselman ](http://twitter.com/shanselman) Twitter에서.
 
->[!div class="step-by-step"]
-[이전](getting-started-with-mvc-part7.md)
+> [!div class="step-by-step"]
+> [이전](getting-started-with-mvc-part7.md)

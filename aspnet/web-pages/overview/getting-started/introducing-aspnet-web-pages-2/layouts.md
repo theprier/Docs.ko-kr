@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/layouts
-title: "ASP.NET 웹 페이지를 소개-일관 된 레이아웃 만들기 | Microsoft Docs"
+title: ASP.NET 웹 페이지를 소개-일관 된 레이아웃 만들기 | Microsoft Docs
 author: tfitzmac
-description: "이 자습서에서는 레이아웃을 사용 하 여 페이지에 일관 된 모양을 ASP.NET 웹 페이지를 사용 하는 사이트를 만들려고 하는 방법을 보여 줍니다. 완료 한 것으로 가정는 중..."
+description: 이 자습서에서는 레이아웃을 사용 하 여 페이지에 일관 된 모양을 ASP.NET 웹 페이지를 사용 하는 사이트를 만들려고 하는 방법을 보여 줍니다. 완료 한 것으로 가정는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/28/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/layouts
 msc.type: authoredcontent
-ms.openlocfilehash: 692adc5a03892f27c91fe8868c8eab6ce08f49cd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c2d5c4d8ed8a71979c16d484ab90d283a45de537
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---creating-a-consistent-layout"></a>ASP.NET 웹 페이지-일관 된 레이아웃 만들기 소개
 ====================
@@ -149,7 +149,7 @@ ASP.NET은 병합에 Movies.cshtml 페이지의 콘텐츠는  *\_Layout.cshtml* 
 
 `Page` 개체는 모두에서 사용할 수 있는 *.cshtml* 페이지 이며이 작업을 위해 즉 페이지와 레이아웃 간에 정보를 공유 합니다.
 
-열기는*\_Layout.cshtml* 페이지. 변경 된 `<title>` 요소를이 태그 같이 되도록 합니다.
+열기는<em>\_Layout.cshtml</em> 페이지. 변경 된 `<title>` 요소를이 태그 같이 되도록 합니다.
 
 [!code-html[Main](layouts/samples/sample9.html)]
 
@@ -232,11 +232,11 @@ ASP.NET은 병합에 Movies.cshtml 페이지의 콘텐츠는  *\_Layout.cshtml* 
 
 다음 자습서에서는 사람이 볼 수 있도록 사이트를 인터넷에 게시 하는 방법을 설명 합니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 - [일관성 확인을 만드는](https://go.microsoft.com/fwlink/?LinkID=202891) -레이아웃 작업에 더 자세히 제공 하는 문서입니다. 또한를 표시 하거나 숨기는 콘텐츠 일부가 레이아웃 페이지에는 값을 전달 하는 방법을 설명 합니다.
 - [중첩 된 Razor 사용한 레이아웃 페이지](http://www.mikesdotnetting.com/Article/164/Nested-Layout-Pages-with-Razor) -Mike Brind 블로그 레이아웃 페이지를 중첩 하는 방법의 예입니다. (페이지의 다운로드 포함).
 
->[!div class="step-by-step"]
-[이전](deleting-data.md)
-[다음](publishing.md)
+> [!div class="step-by-step"]
+> [이전](deleting-data.md)
+> [다음](publishing.md)

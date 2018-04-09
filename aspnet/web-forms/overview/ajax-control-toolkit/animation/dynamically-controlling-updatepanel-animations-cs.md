@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/dynamically-controlling-updatepanel-animations-cs
-title: "UpdatePanel 애니메이션 (C#)을 동적으로 제어 | Microsoft Docs"
+title: UpdatePanel 애니메이션 (C#)을 동적으로 제어 | Microsoft Docs
 author: wenz
-description: "ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트롤 뿐 아니라 애니메이션 컨트롤을 추가 하는 전체 프레임 워크. 내용에는 중..."
+description: ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트롤 뿐 아니라 애니메이션 컨트롤을 추가 하는 전체 프레임 워크. 내용에는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/dynamically-controlling-updatepanel-animations-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0408556e322a46211388fbd557d7a967044129ef
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 78401ee35027040dffea50c295c752dd182e75a1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="dynamically-controlling-updatepanel-animations-c"></a>UpdatePanel 애니메이션 동적으로 제어 (C#)
 ====================
@@ -65,6 +65,6 @@ ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트�
 
 현재 시간 페이딩 됩니다 ([전체 크기 이미지를 보려면 클릭](dynamically-controlling-updatepanel-animations-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[이전](animating-an-updatepanel-control-cs.md)
-[다음](adding-animation-to-a-control-vb.md)
+> [!div class="step-by-step"]
+> [이전](animating-an-updatepanel-control-cs.md)
+> [다음](adding-animation-to-a-control-vb.md)

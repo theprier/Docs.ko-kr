@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/using-parameterized-queries-with-the-sqldatasource-vb
-title: "SqlDataSource (VB)와 매개 변수가 있는 쿼리를 사용 하 여 | Microsoft Docs"
+title: SqlDataSource (VB)와 매개 변수가 있는 쿼리를 사용 하 여 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에서는 SqlDataSource 컨트롤에서 모양 계속 하 고 매개 변수가 있는 쿼리를 정의 하는 방법을 알아봅니다. 매개 변수를 지정할 수 있습니다 모두 decla..."
+description: 이 자습서에서는 SqlDataSource 컨트롤에서 모양 계속 하 고 매개 변수가 있는 쿼리를 정의 하는 방법을 알아봅니다. 매개 변수를 지정할 수 있습니다 모두 decla...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/using-parameterized-queries-with-the-sqldatasource-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b1cda18620a970c45b05039dd380c393e3854889
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: a7442ef3bebb2742cc36d695914b745aa2dfa721
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-parameterized-queries-with-the-sqldatasource-vb"></a>SqlDataSource (VB)와 매개 변수가 있는 쿼리를 사용 하 여
 ====================
@@ -235,7 +235,7 @@ SqlDataSource를 추가 하 여 시작 `ParameterizedQueries.aspx` 설정 하 �
 
 [!code-sql[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample10.sql)]
 
-`ORDER BY NEWID()`임의의 순서로 정렬 된 레코드를 반환 합니다 (참조 [Using `NEWID()` 임의로 정렬 레코드를](http://www.sqlteam.com/item.asp?ItemID=8747)). `SELECT TOP 1`결과 집합에서 첫 번째 레코드를 반환합니다. 이 쿼리는 반환 종합적으로 `CategoryID` 및 `CategoryName` 단일, 임의로 선택 된 범주에서 열 값입니다.
+`ORDER BY NEWID()` 임의의 순서로 정렬 된 레코드를 반환 합니다 (참조 [Using `NEWID()` 임의로 정렬 레코드를](http://www.sqlteam.com/item.asp?ItemID=8747)). `SELECT TOP 1` 결과 집합에서 첫 번째 레코드를 반환합니다. 이 쿼리는 반환 종합적으로 `CategoryID` 및 `CategoryName` 단일, 임의로 선택 된 범주에서 열 값입니다.
 
 S 범주 표시 하려면 `CategoryName` 값, 페이지로 Label 웹 컨트롤을 추가 하 고, 설정 해당 `ID` 속성을 `CategoryNameLabel`를 제거 하 고 해당 `Text` 속성입니다. 호출 하도록 설정 해야 SqlDataSource 컨트롤에서 데이터를 프로그래밍 방식으로 검색, 해당 `Select()` 메서드. [ `Select()` 메서드](https://msdn.microsoft.com/library/system.web.ui.webcontrols.sqldatasource.select.aspx) 형식의 단일 입력 매개 변수 [ `DataSourceSelectArguments` ](https://msdn.microsoft.com/library/system.web.ui.datasourceselectarguments.aspx)를 반환 하기 전에 데이터를 이와 하는 방법을 지정 합니다. 이 데이터를 정렬 및 필터링에 대 한 지침을 포함할 수 있습니다 및 웹 컨트롤을 정렬 하거나 SqlDataSource 컨트롤에서 데이터를 통한 페이징을 할 데이터에 사용 합니다. 이 예에서는 그러나 우리 않는 t 필요가 데이터를 반환 하기 전에 수정할 수 및에서 통과 합니다는 `DataSourceSelectArguments.Empty` 개체입니다.
 
@@ -246,7 +246,7 @@ S 범주 표시 하려면 `CategoryName` 값, 페이지로 Label 웹 컨트롤�
 
 [!code-vb[Main](using-parameterized-queries-with-the-sqldatasource-vb/samples/sample11.vb)]
 
-`randomCategoryView(0)`첫 번째 개체가 반환 `DataRowView` DataView의 합니다. `randomCategoryView(0)("CategoryName")`값을 반환 된 `CategoryName` 이 첫 번째 행의 열입니다. DataView 느슨한 형 인지 note 합니다. 특정 열 값을 참조 하려면 (이 경우 CategoryName) 문자열 열 이름을 전달 해야 합니다. 그림 13에 표시 되는 메시지를 보여 줍니다.는 `CategoryNameLabel` 페이지를 볼 때. 물론, 표시 되는 실제 범주 이름은 임의로 선택 하 여는 `RandomCategoryDataSource` (포스트백 포함) 페이지를 각 방문할 SqlDataSource 합니다.
+`randomCategoryView(0)` 첫 번째 개체가 반환 `DataRowView` DataView의 합니다. `randomCategoryView(0)("CategoryName")` 값을 반환 된 `CategoryName` 이 첫 번째 행의 열입니다. DataView 느슨한 형 인지 note 합니다. 특정 열 값을 참조 하려면 (이 경우 CategoryName) 문자열 열 이름을 전달 해야 합니다. 그림 13에 표시 되는 메시지를 보여 줍니다.는 `CategoryNameLabel` 페이지를 볼 때. 물론, 표시 되는 실제 범주 이름은 임의로 선택 하 여는 `RandomCategoryDataSource` (포스트백 포함) 페이지를 각 방문할 SqlDataSource 합니다.
 
 
 [![임의로 선택 된 범주의 이름이 표시 됩니다](using-parameterized-queries-with-the-sqldatasource-vb/_static/image13.gif)](using-parameterized-queries-with-the-sqldatasource-vb/_static/image25.png)
@@ -306,12 +306,12 @@ SqlDataSource는 페이지 개발자가을 매개 변수 값을 가진 하드 �
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자가 Scott와 클라이드, Randell Schmidt 및 켄 Pespisa 합니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](querying-data-with-the-sqldatasource-control-vb.md)
-[다음](inserting-updating-and-deleting-data-with-the-sqldatasource-vb.md)
+> [!div class="step-by-step"]
+> [이전](querying-data-with-the-sqldatasource-control-vb.md)
+> [다음](inserting-updating-and-deleting-data-with-the-sqldatasource-vb.md)

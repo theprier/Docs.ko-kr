@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report-data-cs
-title: "페이징 및 정렬에 대 한 보고서 데이터 (C#) | Microsoft Docs"
+title: 페이징 및 정렬에 대 한 보고서 데이터 (C#) | Microsoft Docs
 author: rick-anderson
-description: "페이징 및 정렬과 온라인 응용 프로그램에서 데이터를 표시할 때 두 매우 공통적인 기능이 있습니다. 이 자습서에서 소개 정렬 추가 이동 합니다 및..."
+description: 페이징 및 정렬과 온라인 응용 프로그램에서 데이터를 표시할 때 두 매우 공통적인 기능이 있습니다. 이 자습서에서 소개 정렬 추가 이동 합니다 및...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/15/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d5cf45e391a2b32e1d22e160fd2757b754753875
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 06a907f2af0adb2eb8aef5a814c2d767b62db69a
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="paging-and-sorting-report-data-c"></a>페이징 및 정렬에 대 한 보고서 데이터 (C#)
 ====================
@@ -115,13 +115,13 @@ DetailsView와 FormView 컨트롤만 각 페이지에 단일 레코드를 표시
 
 이 GridView, DetailsView, 및 FormView의 페이징 인터페이스는 다음 속성을 사용 하 여 사용자 지정할 수 있습니다.
 
-- `PagerStyle`페이징 인터페이스;에 대 한 스타일 정보를 나타냅니다. 같은 설정으로 지정할 수 `BackColor`, `ForeColor`, `CssClass`, `HorizontalAlign`등입니다.
-- `PagerSettings`페이징 인터페이스;의 기능을 사용자 지정할 수 있는 속성의 표시를 포함 합니다. `PageButtonCount` (기본값은 10) 페이징 인터페이스에 표시 되는 숫자 페이지 번호의 최대 수를 나타내는; [ `Mode` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pagersettings.mode.aspx) 페이징 인터페이스 작동 하 고 설정할 수 있습니다 하는 방법을 나타냅니다. 
+- `PagerStyle` 페이징 인터페이스;에 대 한 스타일 정보를 나타냅니다. 같은 설정으로 지정할 수 `BackColor`, `ForeColor`, `CssClass`, `HorizontalAlign`등입니다.
+- `PagerSettings` 페이징 인터페이스;의 기능을 사용자 지정할 수 있는 속성의 표시를 포함 합니다. `PageButtonCount` (기본값은 10) 페이징 인터페이스에 표시 되는 숫자 페이지 번호의 최대 수를 나타내는; [ `Mode` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.pagersettings.mode.aspx) 페이징 인터페이스 작동 하 고 설정할 수 있습니다 하는 방법을 나타냅니다. 
 
-    - `NextPrevious`사용자가 이전 이나 이후 위치로 한 번에 한 페이지씩 단계 수 있도록 다음 및 이전 단추를 보여 줍니다.
-    - `NextPreviousFirstLast`다음 및 이전 단추 외에도 첫 번째 및 마지막 단추 사항도 포함 되어, 사용자가 신속 하 게 첫 번째 또는 마지막 데이터 페이지로 이동할 수 있도록
-    - `Numeric`일련의 사용자가 즉시 원하는 페이지로 이동할 수 있도록 하는 페이지 번호를 보여 줍니다.
-    - `NumericFirstLast`페이지 번호 외에 첫 번째 및 마지막 단추를 사용자가 데이터의 첫 번째 또는 마지막 페이지에 빠르게 이동할 수 있도록 하는 첫 번째/마지막 단추만 숫자 페이지 번호를 모두 표시할 수 없는 경우 표시 됩니다.
+    - `NextPrevious` 사용자가 이전 이나 이후 위치로 한 번에 한 페이지씩 단계 수 있도록 다음 및 이전 단추를 보여 줍니다.
+    - `NextPreviousFirstLast` 다음 및 이전 단추 외에도 첫 번째 및 마지막 단추 사항도 포함 되어, 사용자가 신속 하 게 첫 번째 또는 마지막 데이터 페이지로 이동할 수 있도록
+    - `Numeric` 일련의 사용자가 즉시 원하는 페이지로 이동할 수 있도록 하는 페이지 번호를 보여 줍니다.
+    - `NumericFirstLast` 페이지 번호 외에 첫 번째 및 마지막 단추를 사용자가 데이터의 첫 번째 또는 마지막 페이지에 빠르게 이동할 수 있도록 하는 첫 번째/마지막 단추만 숫자 페이지 번호를 모두 표시할 수 없는 경우 표시 됩니다.
 
 또한 GridView, DetailsView, 및 모든 제공 FormView는 `PageIndex` 및 `PageCount` 속성으로, 각각 표시 되는 현재 페이지와 데이터를 페이지의 총 수를 나타냅니다. `PageIndex` 즉 데이터의 첫 번째 페이지를 볼 때 0부터 시작 하는 인덱싱된 속성은 `PageIndex` 0은 같습니다. `PageCount`을 1부터 계산, 즉 반면에 시작 `PageIndex` 0 사이의 값으로 제한 됩니다 및 `PageCount - 1`합니다.
 
@@ -245,7 +245,7 @@ GridView s 스마트 태그에서 정렬 사용 옵션을 선택 하기만 하�
 
 1. GridView s [Sorting 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sorting(VS.80).aspx) 발생 합니다.
 2. GridView s [ `SortExpression` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sortexpression.aspx) 로 설정 되 고 `SortExpression` 필드의 LinkButton이 클릭 되었습니다 정렬 헤더에는
-3. ObjectDataSource 다시 모든 BLL에서 데이터를 검색 하 고 GridView s를 사용 하 여 데이터를 정렬`SortExpression`
+3. ObjectDataSource 다시 모든 BLL에서 데이터를 검색 하 고 GridView s를 사용 하 여 데이터를 정렬 `SortExpression`
 4. GridView의 `PageIndex` 속성은 0으로 다시 설정, 데이터 (페이징 지원을 구현 된 것으로 가정)의 첫 페이지에 반환 되 사용자를 정렬할 때 즉
 5. GridView s [ `Sorted` 이벤트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.gridview.sorted(VS.80).aspx) 발생 합니다.
 
@@ -306,7 +306,7 @@ Button 웹 컨트롤을 페이지에서 추가이를 위해 설정 해당 `ID` �
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
->[!div class="step-by-step"]
-[다음](efficiently-paging-through-large-amounts-of-data-cs.md)
+> [!div class="step-by-step"]
+> [다음](efficiently-paging-through-large-amounts-of-data-cs.md)

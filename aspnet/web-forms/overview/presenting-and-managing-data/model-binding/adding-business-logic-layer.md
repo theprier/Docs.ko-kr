@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/presenting-and-managing-data/model-binding/adding-business-logic-layer
-title: "모델 바인딩 및 web forms를 사용 하는 프로젝트에 추가 비즈니스 논리 계층 | Microsoft Docs"
+title: 모델 바인딩 및 web forms를 사용 하는 프로젝트에 추가 비즈니스 논리 계층 | Microsoft Docs
 author: tfitzmac
-description: "이 자습서 시리즈 모델 바인딩을 사용 하 여 ASP.NET Web Forms 프로젝트의 기본 사항을 보여 줍니다. 모델 바인딩 데이터 상호 작용 하 게 더 많은 직선-중..."
+description: 이 자습서 시리즈 모델 바인딩을 사용 하 여 ASP.NET Web Forms 프로젝트의 기본 사항을 보여 줍니다. 모델 바인딩 데이터 상호 작용 하 게 더 많은 직선-중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/27/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/adding-business-logic-layer
 msc.type: authoredcontent
-ms.openlocfilehash: ca50690052cca73a718342a9725c8096a72f1187
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 25e887bdc316abf65c780bb6c8d075e938e85064
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-business-logic-layer-to-a-project-that-uses-model-binding-and-web-forms"></a>모델 바인딩 및 web forms를 사용 하는 프로젝트에 비즈니스 논리 계층 추가
 ====================
@@ -98,5 +98,5 @@ Courses.aspx에서 비슷한 변경을 확인 합니다.
 
 이 자습서에서는 데이터 액세스 계층 및 비즈니스 논리 계층을 사용 하도록 응용 프로그램 다시 구성 합니다. 지정한 데이터 컨트롤 데이터 작업에 대 한 현재 페이지 하는 개체를 사용 합니다.
 
->[!div class="step-by-step"]
-[이전](using-query-string-values-to-retrieve-data.md)
+> [!div class="step-by-step"]
+> [이전](using-query-string-values-to-retrieve-data.md)

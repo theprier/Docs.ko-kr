@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/users-and-roles-on-the-production-website-cs
-title: "사용자 및 역할 프로덕션 웹 사이트 (C#) | Microsoft Docs"
+title: 사용자 및 역할 프로덕션 웹 사이트 (C#) | Microsoft Docs
 author: rick-anderson
-description: "멤버 자격 및 역할 설정을 구성 하기 위한 및 만들기, 웹 기반 사용자 인터페이스를 제공 하는 ASP.NET 웹 사이트 관리 도구 (WSAT) 편집는 중..."
+description: 멤버 자격 및 역할 설정을 구성 하기 위한 및 만들기, 웹 기반 사용자 인터페이스를 제공 하는 ASP.NET 웹 사이트 관리 도구 (WSAT) 편집는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/09/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/users-and-roles-on-the-production-website-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 68f3a45b6a393f7b6a12b7c296a374536b0d66d6
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: e3e1165959ae47715e0037db7a3bc6ac58807653
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="users-and-roles-on-the-production-website-c"></a>사용자 및 역할 프로덕션 웹 사이트 (C#)
 ====================
@@ -37,7 +37,7 @@ ASP입니다. NET의 응용 프로그램 서비스는 특정 구현에 연결 �
 
 ## <a name="using-the-aspnet-web-site-administration-tool"></a>ASP.NET 웹 사이트 관리 도구를 사용 하 여
 
-ASP.NET에 포함 되어는 [웹 사이트 관리 도구](https://msdn.microsoft.com/library/yy40ytx0.aspx) (WSAT)을 쉽게 만들고 사용자 계정과 역할을 관리 하 고 사용자 및 역할 기반 권한 부여 규칙을 지정할 수 있습니다. WSAT를 사용 하려면 솔루션 탐색기에서 ASP.NET 구성 아이콘을 클릭 하 고 또는 웹 사이트 또는 프로젝트 메뉴에서 ASP.NET 구성 옵션을 선택 합니다. 어느 방법이 든 웹 브라우저를 시작 하 고 같은 주소에서 WSAT 가리키는:`http://localhost:portNumber/asp.netwebadminfiles/default.aspx?applicationPhysicalPath=pathToApplication`
+ASP.NET에 포함 되어는 [웹 사이트 관리 도구](https://msdn.microsoft.com/library/yy40ytx0.aspx) (WSAT)을 쉽게 만들고 사용자 계정과 역할을 관리 하 고 사용자 및 역할 기반 권한 부여 규칙을 지정할 수 있습니다. WSAT를 사용 하려면 솔루션 탐색기에서 ASP.NET 구성 아이콘을 클릭 하 고 또는 웹 사이트 또는 프로젝트 메뉴에서 ASP.NET 구성 옵션을 선택 합니다. 어느 방법이 든 웹 브라우저를 시작 하 고 같은 주소에서 WSAT 가리키는: `http://localhost:portNumber/asp.netwebadminfiles/default.aspx?applicationPhysicalPath=pathToApplication`
 
 WSAT는 세 개의 섹션으로 구분 됩니다.
 
@@ -119,6 +119,6 @@ ASP.NET 웹 사이트 관리 도구 (WSAT) 웹 사이트에 대 한 사용자 �
 - [웹 사이트 관리 도구 개요](https://msdn.microsoft.com/library/yy40ytx0.aspx)
 - [웹 사이트 보안 자습서](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)
 
->[!div class="step-by-step"]
-[이전](precompiling-your-website-cs.md)
-[다음](asp-net-hosting-options-vb.md)
+> [!div class="step-by-step"]
+> [이전](precompiling-your-website-cs.md)
+> [다음](asp-net-hosting-options-vb.md)

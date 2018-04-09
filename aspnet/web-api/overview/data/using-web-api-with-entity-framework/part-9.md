@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/data/using-web-api-with-entity-framework/part-9
-title: "데이터베이스에 새 항목 추가 | Microsoft Docs"
+title: 데이터베이스에 새 항목 추가 | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/16/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-9
 msc.type: authoredcontent
-ms.openlocfilehash: d33355b1bd286513958f71ce5521942a6cbb584f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5845c092c4d7aee12b33b3f0a49c0e944c0fb9aa
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="add-a-new-item-to-the-database"></a>데이터베이스에 새 항목 추가
 ====================
@@ -32,7 +32,7 @@ Index.cshtml에서 태그를 다음 코드로 바꿉니다.
 
 [!code-html[Main](part-9/samples/sample2.html)]
 
-코드로 대체 합니다.
+바꿀 대상:
 
 [!code-html[Main](part-9/samples/sample3.html)]
 
@@ -44,6 +44,6 @@ Index.cshtml에서 태그를 다음 코드로 바꿉니다.
 
 `addBook` 함수는 JSON 개체를 만드는 데 데이터 바인딩된 폼 입력의 현재 값을 읽습니다. JSON 개체를 게시 한 다음 `/api/books`합니다.
 
->[!div class="step-by-step"]
-[이전](part-8.md)
-[다음](part-10.md)
+> [!div class="step-by-step"]
+> [이전](part-8.md)
+> [다음](part-10.md)

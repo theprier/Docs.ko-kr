@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry
-title: "모니터링 및 원격 분석 (Azure로 응용 프로그램 빌딩 실제 클라우드) | Microsoft Docs"
+title: 모니터링 및 원격 분석 (Azure로 응용 프로그램 빌딩 실제 클라우드) | Microsoft Docs
 author: MikeWasson
-description: "실제 세계 클라우드로 응용 프로그램 빌딩 Azure 전자책 Scott Guthrie에서 개발 된 프레젠테이션을 기반으로 합니다. 13 패턴 및 그을 수 있는 방법에 설명..."
+description: 실제 세계 클라우드로 응용 프로그램 빌딩 Azure 전자책 Scott Guthrie에서 개발 된 프레젠테이션을 기반으로 합니다. 13 패턴 및 그을 수 있는 방법에 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/09/2015
 ms.topic: article
 ms.assetid: 7e986ab5-6615-4638-add7-4614ce7b51db
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry
 msc.type: authoredcontent
-ms.openlocfilehash: 9baddd1836323385239206a3cf49e5938bbaff58
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d58c495b3888c146a2a9bc831865cf7cc0d94c7b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="monitoring-and-telemetry-building-real-world-cloud-apps-with-azure"></a>모니터링 및 원격 분석 (Azure로 응용 프로그램 빌딩 실제 클라우드)
 ====================
@@ -258,7 +258,7 @@ Azure에 로그인을 활성화 한 후에 만들어지는 경우 Visual Studio 
 
 에 [다음 장에서](transient-fault-handling.md) 프로덕션 문제를 조사 해야 할 수 있는 상태가 하지 않는 일시적인 오류를 처리 하는 방법을 살펴보겠습니다.
 
-## <a name="resources"></a>리소스
+## <a name="resources"></a>자료
 
 자세한 내용은 다음 리소스를 참조하세요.
 
@@ -292,6 +292,6 @@ Azure에 로그인을 활성화 한 후에 만들어지는 경우 Visual Studio 
 
 - [클라우드 서비스 기본 사항 Azure에서](https://code.msdn.microsoft.com/Cloud-Service-Fundamentals-4ca72649)합니다. Microsoft Azure 고객 자문 팀에서 만든 샘플 응용 프로그램입니다. 다음 문서에 설명 된 대로 원격 분석 및 로깅 사례를 모두 보여 줍니다. 이 샘플은 응용 프로그램 로깅을 사용 하 여 구현 [NLog](http://nlog-project.org/)합니다. 관련된 문서에 대 한 참조는 [일련의 원격 분석 및 로깅에 대 한 TechNet wiki 문서를 4 개의](https://social.technet.microsoft.com/wiki/contents/articles/17987.cloud-service-fundamentals.aspx#Telemetry_coming_soon)합니다.
 
->[!div class="step-by-step"]
-[이전](design-to-survive-failures.md)
-[다음](transient-fault-handling.md)
+> [!div class="step-by-step"]
+> [이전](design-to-survive-failures.md)
+> [다음](transient-fault-handling.md)

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/enable-automated-unit-testing
-title: "Enable 단위 테스트를 자동화 된 | Microsoft Docs"
+title: Enable 단위 테스트를 자동화 된 | Microsoft Docs
 author: microsoft
-description: "12 단계 우리의 업그레이드 되었으며 수정 기능을 확인 하 고 변경에 대 한 신뢰성을 제공 합니다.는 자동화 된 단위 테스트 모음을 개발 하는 방법을 보여 줍니다 중..."
+description: 12 단계 우리의 업그레이드 되었으며 수정 기능을 확인 하 고 변경에 대 한 신뢰성을 제공 합니다.는 자동화 된 단위 테스트 모음을 개발 하는 방법을 보여 줍니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/enable-automated-unit-testing
 msc.type: authoredcontent
-ms.openlocfilehash: 1a4258054d90b2d5bcc06a63fb6f3b4673a4837d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fede08be7e06327c6d04fa5d36f7dd818d79b380
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="enable-automated-unit-testing"></a>자동화 된 단위 테스트를 사용 하도록 설정
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [PDF 다운로드](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
 
@@ -45,7 +45,7 @@ ms.lasthandoff: 11/10/2017
 
 ASP.NET MVC 프레임 워크를 사용 하면 간편 하 고 단위 테스트 응용 프로그램의 기능을 합니다. 또한 테스트 기반 개발 (TDD) 워크플로를 기반으로 테스트 우선 개발을 수행할 수 있습니다.
 
-### <a name="nerddinnertests-project"></a>NerdDinner.Tests 프로젝트
+### <a name="nerddinnertests-project"></a>NerdDinner.Tests Project
 
 이 자습서의 시작 부분에서 업그레이드 되었으며 수정 응용 프로그램을 만들 때 응용 프로그램 프로젝트와 함께 이동 하려면 단위 테스트 프로젝트를 만들 주고자 있는지 여부를 묻는 대화 상자가 표시 된 했습니다.
 
@@ -234,7 +234,7 @@ FakeDinnerRepository 클래스를 만들어 보겠습니다.
 
 모의 프레임 워크는 동적으로 가짜 버전의 종속 개체를 지 원하는 테스트를 만들고 사용 하 여 테스트를 보다 쉽게 확인 합니다. 예를 들어 동적으로 개체를 만들려면 사용자 우리의 DinnersController 시뮬레이션 된 사용자 이름을 조회 하는 데 사용할 수 있는 편집 작업 테스트에서 모의 프레임 워크를 사용할 수 있습니다. 이 테스트 실행 하면 throw 되는 null 참조를 피해 야 합니다.
 
-많은.NET 모의 ASP.NET MVC와 함께 사용할 수 있는 프레임 워크는 (여기의 목록을 볼 수 있습니다: [http://www.mockframeworks.com/](http://www.mockframeworks.com/)). 모의 프레임 워크 "Moq"를 호출 하는 오픈 소스에서는 업그레이드 되었으며 수정 응용 프로그램 테스트를 위해 다운로드 가능한 무료에서 [http://www.mockframeworks.com/moq](http://www.mockframeworks.com/moq)합니다.
+많은.NET 모의 ASP.NET MVC와 함께 사용할 수 있는 프레임 워크는 (여기의 목록을 볼 수 있습니다: [ http://www.mockframeworks.com/ ](http://www.mockframeworks.com/)). 모의 프레임 워크 "Moq"를 호출 하는 오픈 소스에서는 업그레이드 되었으며 수정 응용 프로그램 테스트를 위해 다운로드 가능한 무료에서 [ http://www.mockframeworks.com/moq ](http://www.mockframeworks.com/moq)합니다.
 
 를 다운로드 한 후 Moq.dll 어셈블리에 NerdDinner.Tests 프로젝트에 대 한 참조를 추가 합니다 했습니다.
 
@@ -285,6 +285,6 @@ HTTP GET 버전 편집 작업을 포괄 하는 테스트 만들었습니다. 이
 
 메모를 몇 가지 최종 줄 바꿈 합니다.
 
->[!div class="step-by-step"]
-[이전](use-ajax-to-implement-mapping-scenarios.md)
-[다음](nerddinner-wrap-up.md)
+> [!div class="step-by-step"]
+> [이전](use-ajax-to-implement-mapping-scenarios.md)
+> [다음](nerddinner-wrap-up.md)

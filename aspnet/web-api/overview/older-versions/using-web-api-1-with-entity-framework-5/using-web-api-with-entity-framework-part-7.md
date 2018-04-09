@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-7
-title: "7 단계: 기본 만들기 페이지 | Microsoft Docs"
+title: '7 단계: 기본 만들기 페이지 | Microsoft Docs'
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/using-web-api-1-with-entity-framework-5/using-web-api-with-entity-framework-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: 4d06e72bc664f707bbbe4603be41347158c58903
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 2c378e68a1e6600daf655c19afbfe355e89496d4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-7-creating-the-main-page"></a>7 단계: 기본 만들기 페이지
 ====================
@@ -59,13 +59,13 @@ ms.lasthandoff: 01/24/2018
 
 `OrderDetailsViewModel` 는 순서를 사용 하 여 초기화는 서버에 AJAX 요청을 전송 하 여 주문 세부 정보를 인출 합니다.
 
-또한는 `total` 속성에는 `OrderDetailsViewModel`합니다. 이 속성은 특수 한 유형의 호출 하는 observable는 [observable 계산](http://knockoutjs.com/documentation/computedObservables.html)합니다. 이름에서 알 수 있듯이 계산된 관찰 가능 개체를 수 있습니다. 계산 된 값을 & # 8212에 데이터 바인딩하는 주문의 총 비용이 경우.
+또한는 `total` 속성에는 `OrderDetailsViewModel`합니다. 이 속성은 특수 한 유형의 호출 하는 observable는 [observable 계산](http://knockoutjs.com/documentation/computedObservables.html)합니다. 이름에서 알 수 있듯이 계산된 observable 사용 하면 계산된 된 값을 데이터 바인딩할&#8212;총 순서가 경우 비용이 발생 합니다.
 
 다음으로, 이러한 함수를 추가 `AppViewModel`:
 
-- `resetCart`그러면에서 모든 항목을 제거합니다.
-- `getDetails`주문에 대 한 세부 정보를 가져옵니다 (새 pusing 여 `OrderDetailsViewModel` 에 `details` 목록).
-- `createOrder`새 주문을 만들고 카트를 비웁니다.
+- `resetCart` 그러면에서 모든 항목을 제거합니다.
+- `getDetails` 주문에 대 한 세부 정보를 가져옵니다 (새 pusing 여 `OrderDetailsViewModel` 에 `details` 목록).
+- `createOrder` 새 주문을 만들고 카트를 비웁니다.
 
 
 [!code-javascript[Main](using-web-api-with-entity-framework-part-7/samples/sample6.js?highlight=4)]
@@ -119,5 +119,5 @@ ms.lasthandoff: 01/24/2018
 - [ASP.NET 데이터 액세스 콘텐츠 맵](https://msdn.microsoft.com/library/6759sth4.aspx)
 - [Entity Framework 개발자 센터](https://msdn.microsoft.com/data/ef)
 
->[!div class="step-by-step"]
-[이전](using-web-api-with-entity-framework-part-6.md)
+> [!div class="step-by-step"]
+> [이전](using-web-api-with-entity-framework-part-6.md)

@@ -1,7 +1,7 @@
 ---
-title: "미사용 데이터 암호화 키"
+title: ASP.NET Core에서 미사용 데이터 암호화 키
 author: rick-anderson
-description: "이 문서에는 ASP.NET Core 데이터 보호 키 암호화의 구현 세부 사항을 설명합니다."
+description: ASP.NET Core 데이터 보호 미사용 데이터 암호화 키의 구현 세부 정보에 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,20 +9,20 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/implementation/key-encryption-at-rest
-ms.openlocfilehash: c66430bfe547cf061e9e79a703ac665a968bbe0b
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 9247b141a44c958f34529e5a42a0ddc8c8893cb0
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="key-encryption-at-rest"></a>미사용 데이터 암호화 키
+# <a name="key-encryption-at-rest-in-aspnet-core"></a>ASP.NET Core에서 미사용 데이터 암호화 키
 
 <a name="data-protection-implementation-key-encryption-at-rest"></a>
 
 기본적으로 데이터 보호 시스템 [경험적 접근을 사용](xref:security/data-protection/configuration/default-settings) 어떻게 암호화 키 자료를 확인 하려면 휴지 암호화 해야 합니다. 개발자는 추론은 무시 하 고 수동으로 키를 미사용 암호화 해야 하는 방법을 지정할 수도 있습니다.
 
 > [!NOTE]
-> 나머지 메커니즘에는 명시적 키 암호화를 지정 하는 경우 데이터 보호 시스템의 추론은 제공 하는 기본 키 저장소 메커니즘 등록을 취소 합니다. 수행 해야 [명시적 키 저장소 메커니즘을 지정](key-storage-providers.md#data-protection-implementation-key-storage-providers), 그렇지 않으면 데이터 보호 시스템 시작에 실패 합니다.
+> 나머지 메커니즘에는 명시적 키 암호화를 지정 하는 경우 데이터 보호 시스템의 추론은 제공 하는 기본 키 저장소 메커니즘 등록을 취소 합니다. 수행 해야 [명시적 키 저장소 메커니즘을 지정](xref:security/data-protection/implementation/key-storage-providers#data-protection-implementation-key-storage-providers), 그렇지 않으면 데이터 보호 시스템 시작에 실패 합니다.
 
 <a name="data-protection-implementation-key-encryption-at-rest-providers"></a>
 
@@ -95,7 +95,7 @@ sc.AddDataProtection()
 
 ## <a name="certificate-based-encryption-with-windows-dpapi-ng"></a>인증서 기반 암호화와 Windows DPAPI-NG
 
-Windows 8.1 실행 하는 경우 / Windows Server 2012 R2 이상 버전에서는 사용할 수 있습니다 Windows DPAPI NG 인증서 기반 암호화를 수행 하는 응용 프로그램에서 실행 중인 경우에 [.NET Core](https://www.microsoft.com/net/core)합니다. 를 이용 하려면이 규칙 설명자 문자열을 사용 하 여 "인증서 HashId:thumbprint =" 지문을 사용 하는 인증서의 16 진수로 인코딩된 SHA1 지문을 위치입니다. 예를 보려면 아래를 참조 하십시오.
+Windows 8.1 실행 하는 경우 / Windows Server 2012 R2 이상 버전에서는 사용할 수 있습니다 Windows DPAPI NG 인증서 기반 암호화를 수행 하는 응용 프로그램은.NET Core에서 실행 중인 경우에 합니다. 를 이용 하려면이 규칙 설명자 문자열을 사용 하 여 "인증서 HashId:thumbprint =" 지문을 사용 하는 인증서의 16 진수로 인코딩된 SHA1 지문을 위치입니다. 예를 보려면 아래를 참조 하십시오.
 
 ```csharp
 sc.AddDataProtection()

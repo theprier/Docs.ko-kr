@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/adding-content-to-source-control
-title: "소스 제어에 콘텐츠 추가 | Microsoft Docs"
+title: 소스 제어에 콘텐츠 추가 | Microsoft Docs
 author: jrjlee
-description: "이 Team Foundation Server (TFS) 2010에서 소스 제어에 콘텐츠를 추가 하는 방법을 설명 합니다. 팀 proje에 솔루션 및 프로젝트를 추가 하는 방법을 설명..."
+description: 이 Team Foundation Server (TFS) 2010에서 소스 제어에 콘텐츠를 추가 하는 방법을 설명 합니다. 팀 proje에 솔루션 및 프로젝트를 추가 하는 방법을 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/adding-content-to-source-control
 msc.type: authoredcontent
-ms.openlocfilehash: d46e2697d10ca27f8e08533350a6e7f2354b4a43
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: c9c3a506d2745a6793661453a293732429d3e46e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-content-to-source-control"></a>소스 제어에 콘텐츠 추가
 ====================
@@ -27,7 +27,7 @@ ms.lasthandoff: 03/15/2018
 > 이 Team Foundation Server (TFS) 2010에서 소스 제어에 콘텐츠를 추가 하는 방법을 설명 합니다. TFS의 팀 프로젝트에 솔루션 및 프로젝트를 추가 하는 방법을 설명 하 고 소스 제어에 프레임 워크 또는 어셈블리와 같은 외부 종속성을 추가 하는 방법을 설명 합니다.
 
 
-이 항목의 Fabrikam, inc. 라는 가상 회사의 엔터프라이즈 배포 요구 사항을 바탕으로 하는 자습서 시리즈의 일부를 형성 합니다. 이 자습서 시리즈 샘플 솔루션 & #x 2014;을 사용 하는 [Contact Manager 솔루션](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)& #x 2014; 현실적인 수준의 복잡성을 Windows ASP.NET MVC 3 응용 프로그램을 포함 하 여 웹 응용 프로그램을 나타내기 위해 Communication Foundation (WCF) 서비스 및 데이터베이스 프로젝트를 제공 합니다.
+이 항목의 Fabrikam, inc. 라는 가상 회사의 엔터프라이즈 배포 요구 사항을 바탕으로 하는 자습서 시리즈의 일부를 형성 합니다. 샘플 솔루션을 사용 하는 자습서 시리즈가&#x2014;는 [Contact Manager 솔루션](../web-deployment-in-the-enterprise/the-contact-manager-solution.md)&#x2014;현실적인 수준의 복잡성, Windows Communication ASP.NET MVC 3 응용 프로그램을 포함 하 여 웹 응용 프로그램을 나타내기 위해 WCF (foundation) 서비스 및 데이터베이스 프로젝트.
 
 ## <a name="task-overview"></a>작업 개요
 
@@ -157,6 +157,6 @@ ms.lasthandoff: 03/15/2018
 
 TFS에서 소스 제어를 사용한 작업에 대 한 자세한 내용은 참조 하십시오. [버전 제어를 사용 하 여](https://msdn.microsoft.com/library/ms181368.aspx)합니다.
 
->[!div class="step-by-step"]
-[이전](creating-a-team-project-in-tfs.md)
-[다음](configuring-a-tfs-build-server-for-web-deployment.md)
+> [!div class="step-by-step"]
+> [이전](creating-a-team-project-in-tfs.md)
+> [다음](configuring-a-tfs-build-server-for-web-deployment.md)

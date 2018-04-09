@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-3
-title: "3 부: 레이아웃 및 범주 메뉴 | Microsoft Docs"
+title: '3 부: 레이아웃 및 범주 메뉴 | Microsoft Docs'
 author: JoeStagner
-description: "이 자습서 시리즈 모든 Tailspin Spyworks 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 3 부에서는 레이아웃 및 범주 메뉴를 추가 합니다."
+description: 이 자습서 시리즈 모든 Tailspin Spyworks 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 3 부에서는 레이아웃 및 범주 메뉴를 추가 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/21/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: 57c0342efb67b94a0d8c8b06dc13a727e7184db8
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 27a493173b03f813ee3dcbbfafd8bc52fb0b9771
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-3-layout-and-category-menu"></a>3 부: 레이아웃 및 범주 메뉴
 ====================
@@ -27,7 +27,7 @@ ms.lasthandoff: 11/10/2017
 > 이 자습서 시리즈 모든 Tailspin Spyworks 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 3 부에서는 레이아웃 및 범주 메뉴를 추가 합니다.
 
 
-## <a id="_Toc260221669"></a>일부 레이아웃 및 범주 메뉴 추가
+## <a id="_Toc260221669"></a>  일부 레이아웃 및 범주 메뉴 추가
 
 가격 사이트 마스터 페이지에서이 제품 범주 메뉴에 있는 왼쪽 열에 대 한 div를 추가 합니다.
 
@@ -77,6 +77,6 @@ ASP.NET 구문 &lt;% # %&gt; 는 무엇이 든 내에 포함 된 결과 출력�
 
 에 불과하며 우리의 제품 범주 메뉴 표시 되 고 ProductsList.aspx 라는 메뉴 항목 링크가 가리키는 아직을 구현 해야 하는 페이지를 볼 수 있습니다 범주 메뉴 항목 중 하나 위에 가져간 म 포함 되어 있는지를 구축 했으므로 동적 쿼리 문자열 인수는는  범주 id입니다.
 
->[!div class="step-by-step"]
-[이전](tailspin-spyworks-part-2.md)
-[다음](tailspin-spyworks-part-4.md)
+> [!div class="step-by-step"]
+> [이전](tailspin-spyworks-part-2.md)
+> [다음](tailspin-spyworks-part-4.md)

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part2
-title: "컨트롤러 추가 | Microsoft Docs"
+title: 컨트롤러 추가 | Microsoft Docs
 author: shanselman
-description: "이 자습서는 다음 Visual Studio 2013을 사용 하 여 사용할 수 있는 경우 업데이트 된 버전입니다. T 보다 많은 향상 된 기능을 제공 하는 ASP.NET MVC 5를 사용 하는 새 자습서 중..."
+description: 이 자습서는 다음 Visual Studio 2013을 사용 하 여 사용할 수 있는 경우 업데이트 된 버전입니다. T 보다 많은 향상 된 기능을 제공 하는 ASP.NET MVC 5를 사용 하는 새 자습서 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part2
 msc.type: authoredcontent
-ms.openlocfilehash: 93a362cf83d39b29fcba3f2dee0c28257805a89e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: c6ecd1ffdd53a629d0079d57b85c7f6db2f316ce
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-controller"></a>컨트롤러 추가
 ====================
@@ -57,7 +57,7 @@ HelloWorldController.cs 호출한 경우에 대 한 새 파일을 만든 하에�
 
 ASP.NET MVC 들어오는 URL에 따라 서로 다른 컨트롤러 클래스 (및 다른 작업 메서드 내에서)를 호출합니다. ASP.NET MVC에서 사용 하는 기본 매핑 논리 다음과 같은 형식을 사용 하 여 코드 실행을 제어.
 
-/ [컨트롤러] / [ActionName] / [매개 변수]
+/[Controller]/[ActionName]/[Parameters]
 
 URL의 첫 번째 부분 컨트롤러 클래스를 결정 합니다. 따라서 /HelloWorld HelloWorldController 클래스에 매핑됩니다. URL의 두 번째 부분 클래스에 작업 메서드를 결정 합니다. 따라서 /HelloWorld/Index index () 메서드를 실행할 HelloWorldcontroller 클래스의 리라 예상 되었습니다. 만 위의 /HelloWorld 및 인덱스 유추 되었으므로 메서드 방문 야 했음을 확인 합니다. 즉, "Index" 라는 메서드를 명시적으로 지정 하지 않으면 컨트롤러에 호출한 기본 방법입니다.
 
@@ -77,6 +77,6 @@ URL의 첫 번째 부분 컨트롤러 클래스를 결정 합니다. 따라서 /
 
 두이 예제에서 컨트롤러는 모든 작업을 수행 하 되 고에 HTML을 직접 반환 되었습니다. 일반적으로 우리의 컨트롤러 않도록 하는 코드에 번거로운 되 고 결국 이후 직접-HTML을 반환 합니다. 대신 일반적으로에서는 별도 템플릿 파일 보기 HTML 응답을 생성 하기. 어떻게 이렇게 하려면 살펴보겠습니다. 브라우저를 닫고 IDE로 돌아갑니다.
 
->[!div class="step-by-step"]
-[이전](getting-started-with-mvc-part1.md)
-[다음](getting-started-with-mvc-part3.md)
+> [!div class="step-by-step"]
+> [이전](getting-started-with-mvc-part1.md)
+> [다음](getting-started-with-mvc-part3.md)

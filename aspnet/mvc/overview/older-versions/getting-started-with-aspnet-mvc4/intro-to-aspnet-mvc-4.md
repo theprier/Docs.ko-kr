@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4
-title: "ASP.NET MVC 4 소개 | Microsoft Docs"
+title: ASP.NET MVC 4 소개 | Microsoft Docs
 author: Rick-Anderson
-description: "이 자습서는 다음 Visual Studio 2013을 사용 하 여 사용할 수 있는 경우 업데이트 된 버전입니다. T 보다 많은 향상 된 기능을 제공 하는 ASP.NET MVC 5를 사용 하는 새 자습서 중..."
+description: 이 자습서는 다음 Visual Studio 2013을 사용 하 여 사용할 수 있는 경우 업데이트 된 버전입니다. T 보다 많은 향상 된 기능을 제공 하는 ASP.NET MVC 5를 사용 하는 새 자습서 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/15/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 92d9e583b6c26fa8c928d33e14593d280702a269
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 519bac22ba2607931c5f3123b9b567859a2b3d1c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="intro-to-aspnet-mvc-4"></a>ASP.NET MVC 4 소개
 ====================
@@ -88,5 +88,5 @@ F 5를 눌러 Visual Studio IIS Express를 시작 하 고 웹 응용 프로그�
 
 즉시이 기본 템플릿을 사용 하면 집, 연락처 및 정보 페이지입니다. 또한 등록 하 고 로그인 하는 지원을 제공 하 고 Facebook 및 Twitter에 연결 합니다. 이 응용 프로그램 작동 방식을 변경 하 고 ASP.NET MVC에 대해 약간 자세한 하는 다음 단계가입니다. 브라우저를 닫고 일부 코드를 변경 해보겠습니다.
 
->[!div class="step-by-step"]
-[다음](adding-a-controller.md)
+> [!div class="step-by-step"]
+> [다음](adding-a-controller.md)

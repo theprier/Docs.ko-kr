@@ -1,7 +1,7 @@
 ---
-title: "Azure 앱 서비스 및 ASP.NET 코어는 IIS에 대 한 일반적인 오류 참조"
+title: Azure 앱 서비스 및 ASP.NET 코어는 IIS에 대 한 일반적인 오류 참조
 author: guardrex
-description: "Azure 앱 서비스 및 IIS에서 ASP.NET Core 응용 프로그램을 호스트 하는 경우에 일반적인 오류를 구분 합니다."
+description: Azure 앱 서비스 및 IIS에서 ASP.NET Core 응용 프로그램을 호스트 하는 경우에 일반적인 오류를 구분 합니다.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-iis-errors-reference
-ms.openlocfilehash: cd9f8fc310ba0258477db51aa416c03debadeffe
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: fb833ef8797ea7851cbaf53bb5681df248d07a49
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="common-errors-reference-for-azure-app-service-and-iis-with-aspnet-core"></a>Azure 앱 서비스 및 ASP.NET 코어는 IIS에 대 한 일반적인 오류 참조
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 03/02/2018
 
 다음과 같은 일반적인 오류에 대 한 정보를 비교 합니다. 일치 하는 항목이 없는 경우 문제 해결 지시를 따릅니다.
 
-[!INCLUDE[Azure App Service Preview Notice](../includes/azure-apps-preview-notice.md)]
+[!INCLUDE [Azure App Service Preview Notice](../includes/azure-apps-preview-notice.md)]
 
 ## <a name="installer-unable-to-obtain-vc-redistributable"></a>설치 관리자에서 VC++ 재배포 가능 패키지를 가져올 수 없음
 
@@ -42,7 +42,7 @@ ms.lasthandoff: 03/02/2018
 
 문제 해결:
 
-* 시스템에서 서버 호스팅 번들을 설치하지만 인터넷에 액세스할 수 없는 경우 이 예외는 설치 관리자에서 *Microsoft Visual C++ 2015 재배포 가능 패키지*를 얻을 수 없을 때 발생합니다. 프로그램 설치 관리자를 가져옵니다는 [Microsoft 다운로드 센터](https://www.microsoft.com/download/details.aspx?id=53840)합니다. 설치 관리자에 오류가 발생 하면 서버에서 프레임 워크 종속 배포 (FDD)를 호스트 하는 데 필요한.NET 핵심 런타임을 받지 못할 수 있습니다. FDD 호스팅, 하는 경우 프로그램에서 런타임이 설치 되어 있는지 확인 &amp; 기능입니다. 필요한 경우에서 런타임 설치 관리자를 가져올 [.NET 다운로드](https://www.microsoft.com/net/download/core)합니다. 런타임을 설치한 후 시스템을 다시 시작하거나 명령 프롬프트에서 **net stop was /y**에 이어 **net start w3svc**를 실행하여 IIS를 다시 시작합니다.
+* 시스템에서 서버 호스팅 번들을 설치하지만 인터넷에 액세스할 수 없는 경우 이 예외는 설치 관리자에서 *Microsoft Visual C++ 2015 재배포 가능 패키지*를 얻을 수 없을 때 발생합니다. 프로그램 설치 관리자를 가져옵니다는 [Microsoft 다운로드 센터](https://www.microsoft.com/download/details.aspx?id=53840)합니다. 설치 관리자에 오류가 발생 하면 서버에서 프레임 워크 종속 배포 (FDD)를 호스트 하는 데 필요한.NET 핵심 런타임을 받지 못할 수 있습니다. FDD 호스팅, 하는 경우 프로그램에서 런타임이 설치 되어 있는지 확인 &amp; 기능입니다. 필요한 경우에서 런타임 설치 관리자를 가져올 [.NET 모든 다운로드](https://www.microsoft.com/net/download/all)합니다. 런타임을 설치한 후 시스템을 다시 시작하거나 명령 프롬프트에서 **net stop was /y**에 이어 **net start w3svc**를 실행하여 IIS를 다시 시작합니다.
 
 ## <a name="os-upgrade-removed-the-32-bit-aspnet-core-module"></a>OS 업그레이드에서 32비트 ASP.NET Core 모듈이 제거됨
 
@@ -92,7 +92,7 @@ ms.lasthandoff: 03/02/2018
 
 ## <a name="incorrect-website-physical-path-or-app-missing"></a>앱이 누락 또는 잘못 된 웹 사이트 실제 경로
 
-* **브라우저:** 403 사용할 수 없음 - 액세스가 거부되었습니다.  **- 또는 -**  403.14 사용할 수 없음 - 웹 서버가 이 디렉터리의 내용을 표시하지 못하도록 구성되었습니다.
+* **브라우저:** 403 사용할 수 없음 - 액세스가 거부되었습니다. **- 또는 -** 403.14 사용할 수 없음 - 웹 서버가 이 디렉터리의 내용을 표시하지 못하도록 구성되었습니다.
 
 * **응용 프로그램 로그:** 항목 없음
 
@@ -138,7 +138,7 @@ ms.lasthandoff: 03/02/2018
 
 * FDD 배포 하 고 IIS를 다시 시작 하지 않고.NET Core를 설치 합니다. 서버를 다시 시작하거나 명령 프롬프트에서 **net stop was /y**에 이어 **net start w3svc**를 실행하여 IIS를 다시 시작합니다.
 
-* .NET 핵심 런타임을 호스팅하는 시스템에 설치 하지 않고는 FDD는 배포 했을 수 있습니다. .NET 핵심 런타임을 설치 실패 하는 경우 실행는 **번들 설치 관리자.NET 핵심 Windows Server 호스팅** 시스템에 있습니다. [.NET Core Windows Server 호스팅 번들 설치](xref:host-and-deploy/iis/index#install-the-net-core-windows-server-hosting-bundle)를 참조하세요. 인터넷 연결 없이 시스템에.NET 핵심 런타임을 설치 하는 동안에서 런타임 가져올 [.NET 다운로드](https://www.microsoft.com/net/download/core) ASP.NET Core 모듈을 설치 하려면 호스팅 번들 설치 관리자를 실행 합니다. 설치를 완료하려면 시스템을 다시 시작하거나 명령 프롬프트에서 **net stop was /y**에 이어 **net start w3svc**를 실행하여 IIS를 다시 시작합니다.
+* .NET 핵심 런타임을 호스팅하는 시스템에 설치 하지 않고는 FDD는 배포 했을 수 있습니다. .NET 핵심 런타임을 설치 실패 하는 경우 실행는 **번들 설치 관리자.NET 핵심 Windows Server 호스팅** 시스템에 있습니다. [.NET Core Windows Server 호스팅 번들 설치](xref:host-and-deploy/iis/index#install-the-net-core-windows-server-hosting-bundle)를 참조하세요. 인터넷 연결 없이 시스템에.NET 핵심 런타임을 설치 하는 동안에서 런타임 가져올 [.NET 모든 다운로드](https://www.microsoft.com/net/download/all) ASP.NET Core 모듈을 설치 하려면 호스팅 번들 설치 관리자를 실행 합니다. 설치를 완료하려면 시스템을 다시 시작하거나 명령 프롬프트에서 **net stop was /y**에 이어 **net start w3svc**를 실행하여 IIS를 다시 시작합니다.
 
 * FDD 배포 및 *Microsoft Visual c + + 2015 재배포 가능 (x64)* 시스템에 설치 되어 있지 않습니다. 프로그램 설치 관리자를 가져옵니다는 [Microsoft 다운로드 센터](https://www.microsoft.com/download/details.aspx?id=53840)합니다.
 
@@ -188,7 +188,7 @@ ms.lasthandoff: 03/02/2018
 
 * **응용 프로그램 로그:** 응용 프로그램 ' MACHINE/WEBROOT/APPHOST / {어셈블리 (를) ' 실제 루트와 ' c:\\{PATH}\' 명령줄을 사용 하 여 프로세스를 만든 ' "c:\\{PATH}\{어셈블리}. { exe | dll} "' 하지만 충돌 또는 응답 하지 않았습니다 또는 ErrorCode 지정한 포트 '{PORT}'에서 수신 하지 않은 '0x800705b4' =
 
-*  **ASP.NET Core 모듈 로그:**  로그 파일이 만들어졌고 정상 작동을 보여 줍니다.
+* **ASP.NET Core 모듈 로그:** 로그 파일이 만들어졌고 정상 작동을 보여 줍니다.
 
 문제 해결
 
@@ -211,6 +211,18 @@ ms.lasthandoff: 03/02/2018
 문제 해결
 
 * 하위 앱의 *web.config* 파일에 `<handlers>` 섹션이 포함되어 있지 않은지 확인합니다.
+
+## <a name="stdout-log-path-incorrect"></a>stdout 로그 경로가 올바르지 않습니다.
+
+* **브라우저:** 응용 프로그램 정상적으로 응답 합니다.
+
+* **Application Log:** Warning: Could not create stdoutLogFile \\?\C:\_apps\app_folder\bin\Release\netcoreapp2.0\win10-x64\publish\logs\path_doesnt_exist\stdout_8748_201831835937.log, ErrorCode = -2147024893.
+
+* **ASP.NET Core 모듈 로그:** 로그 파일이 만들어지지 않았습니다.
+
+문제 해결
+
+* `stdoutLogFile` 에 지정 된 경로 `<aspNetCore>` 요소의 *web.config* 존재 하지 않습니다. 자세한 내용은 참조는 [로그 생성 및 리디렉션](xref:host-and-deploy/aspnet-core-module#log-creation-and-redirection) ASP.NET Core 모듈 구성 참조 항목의 섹션입니다.
 
 ## <a name="application-configuration-general-issue"></a>일반적인 응용 프로그램 구성 문제
 

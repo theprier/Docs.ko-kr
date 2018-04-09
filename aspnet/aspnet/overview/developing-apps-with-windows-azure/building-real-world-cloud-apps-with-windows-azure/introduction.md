@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
-title: "Azure와 실제 클라우드 앱을 빌드하는 | Microsoft Docs"
+title: Azure와 실제 클라우드 앱을 빌드하는 | Microsoft Docs
 author: MikeWasson
-description: "이 전자책 (영문)에서는 실제 클라우드 솔루션을 구축 하는 데 패턴 기반 접근 방식을 통해 설명 합니다. 패턴으로도 개발 프로세스에 적용 한..."
+description: 이 전자책 (영문)에서는 실제 클라우드 솔루션을 구축 하는 데 패턴 기반 접근 방식을 통해 설명 합니다. 패턴으로도 개발 프로세스에 적용 한...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: accfa16a-ab15-4c26-9ad4-babdc2a77d2e
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: 4de0b52e0b4ae7ce00e7b07bce2decfc5068964a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5a62818a2dc21128bb0a42a8b296ade460e7b060
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="building-real-world-cloud-apps-with-azure"></a>Azure와 실제 클라우드 앱 빌드
 ====================
@@ -60,7 +60,7 @@ Scott Guthrie의 감시 하는 모든 사람이 *실제 세계 클라우드로 �
     - 상태 비저장 웹 계층을 유지 합니다.
     - 데모: 확장 및 Azure 앱 서비스의 웹 응용 프로그램에서 자동 크기 조정 합니다.
     - 세션 상태를 방지 합니다.
-    - CDN을 사용 합니다.
+    - CDN을 사용할 수 없는 경우 대체 사용 하 여 CDN을 사용 합니다.
     - 비동기 프로그래밍 모델을 사용 합니다.
     - ASP.NET MVC 및 Entity Framework에서 데모: 비동기입니다.
 - [단일 로그온](single-sign-on.md)합니다. 
@@ -162,7 +162,7 @@ Scott Guthrie의 감시 하는 모든 사람이 *실제 세계 클라우드로 �
 
 이 소개 항목 책은 설명, 샘플 응용 프로그램의 스크린 샷 및 Azure 앱 서비스 클라우드 환경에서 웹 앱에 간략하게 설명 목록을 제공 했습니다. 앱에서 한 클라우드를 위한 개발의 가장 큰 장점 중 하나에 코드를 배포 및 테스트 환경을 직접 만들어와 같은 반복적인 개발 작업을 자동화 하기 쉽습니다입니다. 즉의 주제를 수행 하는 방법의 [다음 장에서](automate-everything.md)합니다.
 
-## <a name="resources"></a>리소스
+## <a name="resources"></a>자료
 
 이 장에서 설명 하는 항목에 대 한 자세한 내용은 다음 리소스를 참조 합니다.
 
@@ -177,5 +177,5 @@ Scott Guthrie의 감시 하는 모든 사람이 *실제 세계 클라우드로 �
 - [Stefan Schackow와 웹 사이트 아키텍처-](https://azure.microsoft.com/documentation/videos/why-azure-web-sites-plus-architecture/)합니다.
 - [Nir Mashkowski와 azure 웹 사이트 내부](https://channel9.msdn.com/Shows/Web+Camps+TV/Windows-Azure-Web-Sites-Internals-with-Nir-Mashkowski)합니다.
 
->[!div class="step-by-step"]
-[다음](automate-everything.md)
+> [!div class="step-by-step"]
+> [다음](automate-everything.md)

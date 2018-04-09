@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-server-environments-for-web-deployment/creating-a-server-farm-with-the-web-farm-framework
-title: "웹 팜 프레임 워크를 사용 하 여 서버 팜 만들기 | Microsoft Docs"
+title: 웹 팜 프레임 워크를 사용 하 여 서버 팜 만들기 | Microsoft Docs
 author: jrjlee
-description: "이 항목에서는 만들고 컬렉션의 서버에서 웹 서버 팜을 구성 하는 웹 팜 wff (프레임 워크) 2.0을 사용 하는 방법을 설명 합니다."
+description: 이 항목에서는 만들고 컬렉션의 서버에서 웹 서버 팜을 구성 하는 웹 팜 wff (프레임 워크) 2.0을 사용 하는 방법을 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/creating-a-server-farm-with-the-web-farm-framework
 msc.type: authoredcontent
-ms.openlocfilehash: c592ed78a7332834923ce2290af77919fb3c7576
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 53a91660953795f2c55edcd795b053641d308dfe
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-server-farm-with-the-web-farm-framework"></a>웹 팜 프레임 워크를 사용 하 여 서버 팜 만들기
 ====================
@@ -27,7 +27,7 @@ ms.lasthandoff: 03/15/2018
 > 이 항목에서는 만들고 컬렉션의 서버에서 웹 서버 팜을 구성 하는 웹 팜 wff (프레임 워크) 2.0을 사용 하는 방법을 설명 합니다.
 
 
-WFF 여러 부하 분산 된 웹 서버에서 웹 플랫폼 제품 및 구성 요소, 웹 응용 프로그램, 웹 사이트 및 구성 설정을 동기화 할 수 있습니다. 스테이징 및 프로덕션 환경 같은 둘 이상의 웹 서버를 필요한 시나리오가 크게 배포 및 구성 프로세스를 간소화할 수 있습니다. 단일 서버 & #x 2014; 웹 응용 프로그램을 배포할 수는 *주 서버*& #x 2014; 및 WFF가 해당 웹 응용 프로그램 서버 팜에 있는 모든 다른 웹 서버에 자동으로 복제 합니다.
+WFF 여러 부하 분산 된 웹 서버에서 웹 플랫폼 제품 및 구성 요소, 웹 응용 프로그램, 웹 사이트 및 구성 설정을 동기화 할 수 있습니다. 스테이징 및 프로덕션 환경 같은 둘 이상의 웹 서버를 필요한 시나리오가 크게 배포 및 구성 프로세스를 간소화할 수 있습니다. 단일 서버에 웹 응용 프로그램을 배포할 수 있습니다&#x2014;는 *주 서버*&#x2014;및 WFF 서버 팜에 있는 모든 다른 웹 서버에서 해당 웹 응용 프로그램을 자동으로 복제 됩니다.
 
 ## <a name="understanding-the-web-farm-framework"></a>웹 팜 프레임 워크 이해
 
@@ -51,7 +51,7 @@ WFF 여러 부하 분산 된 웹 서버에서 웹 플랫폼 제품 및 구성 �
 
 ## <a name="task-overview"></a>작업 개요
 
-작업 및이 항목의 연습을 완료 하려면 해야 3 개 이상 서버 & #x 2014; 하나의 WFF 컨트롤러, 서버 팜에 대 한 기본 웹 서버 및 서버 팜에 대 한 하나 이상의 보조 웹 서버입니다. 언제 든 지 WFF 서버 팜에 보조 서버를 더 추가할 수 있습니다. 상위 수준, 만들기 및 구성 해야 스테이징 또는 프로덕션 환경에 대 한 WFF 서버 팜:
+3 개 이상 서버 작업 및이 항목의 연습을 완료 하려면 해야&#x2014;하나의 WFF 컨트롤러, 서버 팜에 대 한 주 웹 서버 및 서버 팜에 대 한 하나 이상의 보조 웹 서버입니다. 언제 든 지 WFF 서버 팜에 보조 서버를 더 추가할 수 있습니다. 상위 수준, 만들기 및 구성 해야 스테이징 또는 프로덕션 환경에 대 한 WFF 서버 팜:
 
 - 인터넷 정보 서비스 (IIS) 7.5 및 WFF 2.0을 설치 하 여 컨트롤러 서버를 만듭니다.
 - 일반적인 관리자 계정을 만들고 방화벽 예외를 구성 하 여 기본 및 보조 서버를 준비 합니다.
@@ -78,7 +78,7 @@ WFF 컨트롤러 서버를 만들려면 IIS 7 이상와 WFF 2.0 이상을 설치
 2. 맨 위에 있는 **웹 플랫폼 설치 관리자 3.0** 창 클릭 **제품**합니다.
 3. 왼쪽 탐색 창에서 창에서 클릭 **서버**합니다.
 4. 에 **IIS 7 권장 구성** 행에서 클릭 **추가**합니다.
-5. 에 **웹 팜 프레임 워크 2. * * * x* 행에서 클릭 **추가**합니다.
+5. 에 <strong>웹 팜 프레임 워크 2.</strong> <em>x</em> 행에서 클릭 <strong>추가</strong>합니다.
 
     ![](creating-a-server-farm-with-the-web-farm-framework/_static/image2.png)
 6. **설치**를 클릭합니다. 웹 플랫폼 설치 관리자 설치 목록에 웹 배포 도구 다른 다양 한 종속성과 함께 추가 있는지 확인 합니다.
@@ -96,7 +96,7 @@ WFF 서버 팜 만들기 전에 팜의 구성 하는 웹 서버에서 일부 준
 
 Windows 방화벽에서 다음 방화벽 예외를 구성 하는 방법에 대 한 자세한 내용은 참조 하십시오. [시스템 및 IIS 7에 대 한 Web Farm Framework 2.0에 대 한 플랫폼 요구 사항](https://go.microsoft.com/?linkid=9805128)합니다. 다른 방화벽 시스템, 제품 설명서를 참조 하십시오.
 
-Windows Server 2008 r 2의 로컬 관리자 그룹에 도메인 계정을 추가 하려면 다음 절차를 사용할 수 있습니다. 서버 팜 & #x 2014;에 추가할 모든 서버에서이 절차를 수행 해야 즉, 주 서버 및 각 보조 서버에서 로컬 관리자 그룹에 동일한 도메인 계정을 추가 합니다.
+Windows Server 2008 r 2의 로컬 관리자 그룹에 도메인 계정을 추가 하려면 다음 절차를 사용할 수 있습니다. 서버 팜에 추가 하려는 모든 서버에서이 절차를 수행 해야&#x2014;즉, 주 서버 및 각 보조 서버에서 로컬 관리자 그룹에 동일한 도메인 계정을 추가 합니다.
 
 **로컬 관리자 그룹에 도메인 계정을 추가 하려면**
 
@@ -111,7 +111,7 @@ Windows Server 2008 r 2의 로컬 관리자 그룹에 도메인 계정을 추가
     ![](creating-a-server-farm-with-the-web-farm-framework/_static/image5.png)
 6. 에 **Administrators 속성** 대화 상자를 클릭 **확인**합니다.
 
-서버를 서버 팜에 추가할 준비가 됩니다. 주 서버에서의 경우 서버 팜 & #x 2014 만든 후 전이나 응용 프로그램 요구 사항에 맞게 서버를 구성할 수 있습니다 해야 하며 두 경우 모두의 WFF는 서버는 동일한 제품 구성 요소를 배포 하 여 또는 보조 서버에 구성 합니다. 간단한 설명을 위해가이 자습서에서는 서버 팜을 만드는 했으면 주 서버를 구성 합니다을 가정 합니다.
+서버를 서버 팜에 추가할 준비가 됩니다. 주 서버에서의 경우 이전 또는 이후 서버 팜을 만들려면 응용 프로그램 요구 사항에 맞게 서버를 구성할 수 있습니다&#x2014;두 경우 모두의 WFF은 동기화 서버 동일한 제품, 구성 요소 또는 구성에 배포 하 여 보조 서버에 있습니다. 간단한 설명을 위해가이 자습서에서는 서버 팜을 만드는 했으면 주 서버를 구성 합니다을 가정 합니다.
 
 ## <a name="create-the-wff-server-farm"></a>WFF 서버 팜 만들기
 
@@ -225,12 +225,12 @@ ARR을 사용한 부하 분산을 구성 하는 방법에 대 한 자세한 내�
 
 ## <a name="conclusion"></a>결론
 
-WFF 서버 팜을 실행 되 고 있어야 합니다. 어떤 배포 접근 & #x 2014 지원 하도록 주 서버를 구성할 수 있습니다; 세부 정보 및 2014; #x 및 구성에 대 한 추가 정보 섹션을 참조 서버 팜에 있는 각 보조 서버에 복제 됩니다.
+WFF 서버 팜을 실행 되 고 있어야 합니다. 원하는 어떤 배포 방법을 지원 하려면 주 서버를 구성할 수 있습니다&#x2014;세부 정보에 대 한 추가 정보 섹션을 참조&#x2014;구성을 서버 팜에 있는 각 보조 서버에서 복제 됩니다.
 
 ## <a name="further-reading"></a>추가 정보
 
 모든 측면을 구성 하 고는 WFF를 사용 하 여에 대 한 자세한 지침을 참조 하십시오.는 [IIS 7 용 Microsoft Web Farm Framework 2.0](https://go.microsoft.com/?linkid=9805129) 웹 사이트입니다.
 
->[!div class="step-by-step"]
-[이전](configuring-a-database-server-for-web-deploy-publishing.md)
-[다음](configuring-deployment-properties-for-a-target-environment.md)
+> [!div class="step-by-step"]
+> [이전](configuring-a-database-server-for-web-deploy-publishing.md)
+> [다음](configuring-deployment-properties-for-a-target-environment.md)

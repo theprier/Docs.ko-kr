@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/common-configuration-differences-between-development-and-production-cs
-title: "개발 및 프로덕션 (C#) 간의 일반적인 구성 차이 | Microsoft Docs"
+title: 개발 및 프로덕션 (C#) 간의 일반적인 구성 차이 | Microsoft Docs
 author: rick-anderson
-description: "이전 자습서의 모든 관련 파일을 개발 환경에서 프로덕션 환경에 복사 하 여 웹 사이트를 배포 되었습니다. 그러나 i..."
+description: 이전 자습서의 모든 관련 파일을 개발 환경에서 프로덕션 환경에 복사 하 여 웹 사이트를 배포 되었습니다. 그러나 i...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/01/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/common-configuration-differences-between-development-and-production-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 092362e3811213047820dab08efc16e1a1e75020
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 2694e0dba774a5bca13b9acc6b14c3e47226a064
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="common-configuration-differences-between-development-and-production-c"></a>개발 및 프로덕션 (C#) 간의 일반적인 구성 차이
 ====================
@@ -53,7 +53,7 @@ ASP.NET 페이지를 방문 하는 경우 처음으로 (또는 변경 된 후 �
 Debug 특성은에서 가장 중요 한 특성 중 하나는 `<compilation>` 요소입니다. 경우는 `debug` 특성이 컴파일된 어셈블리는 Visual Studio에서 응용 프로그램을 디버깅할 때 필요한 디버그 기호를 포함 한 다음 "true"로 설정 되어 있습니다. 하지만 디버그 기호는 어셈블리의 크기가 증가 하 고 코드를 실행 하는 경우 추가 메모리 요구 사항이 적용 됩니다. 또한 때는 `debug` 특성에서 반환 된 모든 콘텐츠를 "true"로 설정 되어 `WebResource.axd` 은 캐시 되지 있는지 될 때마다 사용자가 방문에서 반환 된 정적 콘텐츠를 다시 다운로드 해야 합니다는 페이지 `WebResource.axd`합니다.
 
 > [!NOTE]
-> `WebResource.axd`HTTP 처리기를 기본 제공 ASP.NET 2.0에서 도입 서버 컨트롤 사용 하 여 스크립트 파일, 이미지, CSS 파일 및 기타 콘텐츠 등의 포함된 리소스를 검색 하는입니다. 방법에 대 한 자세한 내용은 `WebResource.axd` 작동 하며 사용 하 여 사용자 지정 서버 컨트롤에서 포함된 리소스를 액세스 하는 방법을 참조 [액세스 포함 된 리소스를 통해 정도 URL 사용 하 여 `WebResource.axd` ](http://aspnet.4guysfromrolla.com/articles/080906-1.aspx)합니다.
+> `WebResource.axd` HTTP 처리기를 기본 제공 ASP.NET 2.0에서 도입 서버 컨트롤 사용 하 여 스크립트 파일, 이미지, CSS 파일 및 기타 콘텐츠 등의 포함된 리소스를 검색 하는입니다. 방법에 대 한 자세한 내용은 `WebResource.axd` 작동 하며 사용 하 여 사용자 지정 서버 컨트롤에서 포함된 리소스를 액세스 하는 방법을 참조 [액세스 포함 된 리소스를 통해 정도 URL 사용 하 여 `WebResource.axd` ](http://aspnet.4guysfromrolla.com/articles/080906-1.aspx)합니다.
 
 
 `<compilation>` 요소의 `debug` 특성이로 설정 되어 일반적으로 개발 환경에서 "true"입니다. 이 특성을 "true"는 웹 응용 프로그램을 디버깅 하는 데로 설정 해야 하는 사실, Visual Studio에서 ASP.NET 응용 프로그램을 디버깅 하려고 할 경우 및 `debug` 특성이 "false"로 설정 된, Visual Studio 응용 프로그램까지 디버깅할 수 없는 경우 설명 메시지가 표시 됩니다는 `debug` 특성이으로 "true"로 설정 된 이 변경 하려면이 옵션을 제공 합니다.
@@ -136,6 +136,6 @@ ASP.NET 응용 프로그램에서 처리 되지 않은 예외가 발생할 때 �
 - [VS 2008 웹 배포 프로젝트](https://weblogs.asp.net/scottgu/archive/2005/11/06/429723.aspx) | [VS 2008 웹 배포 프로젝트 지원 발표](https://weblogs.asp.net/scottgu/archive/2008/01/28/vs-2008-web-deployment-project-support-released.aspx)
 - [웹 배포 프로젝트](https://msdn.microsoft.com/magazine/cc163448.aspx)
 
->[!div class="step-by-step"]
-[이전](deploying-your-site-using-visual-studio-cs.md)
-[다음](core-differences-between-iis-and-the-asp-net-development-server-cs.md)
+> [!div class="step-by-step"]
+> [이전](deploying-your-site-using-visual-studio-cs.md)
+> [다음](core-differences-between-iis-and-the-asp-net-development-server-cs.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview
-title: "엔터프라이즈 웹 배포: 시나리오 개요 | Microsoft Docs"
+title: '엔터프라이즈 웹 배포: 시나리오 개요 | Microsoft Docs'
 author: jrjlee
-description: "이 집합의 자습서를 사용 하 여 샘플 솔루션 현실적인 수준의 복잡성 가상의 엔터프라이즈 배포 시나리오와 함께 ref 제공..."
+description: 이 집합의 자습서를 사용 하 여 샘플 솔루션 현실적인 수준의 복잡성 가상의 엔터프라이즈 배포 시나리오와 함께 ref 제공...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/03/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview
 msc.type: authoredcontent
-ms.openlocfilehash: f90db22bf98456661c530e728e854ce109aec6fd
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 20f6e206d6aa4bebb4936246468f5ada0e213236
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="enterprise-web-deployment-scenario-overview"></a>엔터프라이즈 웹 배포: 시나리오 개요
 ====================
@@ -78,10 +78,10 @@ Fabrikam, Inc., 회사인 원격 영업 팀 저장 하 고 웹 인터페이스�
 
 ![](enterprise-web-deployment-scenario-overview/_static/image2.png)
 
-- **ContactManager.Mvc**합니다. 이 ASP.NET MVC3 웹 응용 프로그램 프로젝트를 솔루션에 대 한 진입점을 나타냅니다. 만들고 연락처 세부 정보를 볼 수 있는 사용자가 제공 하는 등 몇 가지 기본 웹 응용 프로그램 기능을 제공 합니다. 응용 프로그램 연락처와 인증 및 권한 부여를 관리 하는 ASP.NET 응용 프로그램 서비스 데이터베이스를 관리 하려면 Windows Communication Foundation (WCF) 서비스를 사용 합니다.
-- **ContactManager.Database**합니다. 이것이 Visual Studio 2010 데이터베이스 프로젝트입니다. 프로젝트는 저장소 연락처 세부 정보는 데이터베이스에 대 한 스키마를 정의 합니다.
-- **ContactManager.Service**합니다. 이 WCF 웹 서비스 프로젝트입니다. 수행 하는 호출자를 허용 하는 끝점을 만들려면 WCF 노출 검색, 업데이트 및 삭제 (CRUD) 작업 Contact Manager 데이터베이스에 있습니다. 서비스는 연락처 Manager 데이터베이스 및 ContactManager.Common.dll 어셈블리에 의존합니다.
-- **ContactManager.Common**합니다. 이 클래스 라이브러리 프로젝트입니다. WCF 서비스는이 어셈블리에 정의 된 형식을 사용 합니다.
+- **ContactManager.Mvc**. 이 ASP.NET MVC3 웹 응용 프로그램 프로젝트를 솔루션에 대 한 진입점을 나타냅니다. 만들고 연락처 세부 정보를 볼 수 있는 사용자가 제공 하는 등 몇 가지 기본 웹 응용 프로그램 기능을 제공 합니다. 응용 프로그램 연락처와 인증 및 권한 부여를 관리 하는 ASP.NET 응용 프로그램 서비스 데이터베이스를 관리 하려면 Windows Communication Foundation (WCF) 서비스를 사용 합니다.
+- **ContactManager.Database**. 이것이 Visual Studio 2010 데이터베이스 프로젝트입니다. 프로젝트는 저장소 연락처 세부 정보는 데이터베이스에 대 한 스키마를 정의 합니다.
+- **ContactManager.Service**. 이 WCF 웹 서비스 프로젝트입니다. 수행 하는 호출자를 허용 하는 끝점을 만들려면 WCF 노출 검색, 업데이트 및 삭제 (CRUD) 작업 Contact Manager 데이터베이스에 있습니다. 서비스는 연락처 Manager 데이터베이스 및 ContactManager.Common.dll 어셈블리에 의존합니다.
+- **ContactManager.Common**. 이 클래스 라이브러리 프로젝트입니다. WCF 서비스는이 어셈블리에 정의 된 형식을 사용 합니다.
 
 솔루션 및 해당 배포 요구 사항을 면밀히 검토 한이 시리즈의 첫 번째 자습서에서 제공 됩니다 [기업에서 웹 배포](../web-deployment-in-the-enterprise/web-deployment-in-the-enterprise.md)합니다.
 
@@ -105,7 +105,7 @@ Fabrikam, Inc., 회사인 원격 영업 팀 저장 하 고 웹 인터페이스�
 
 ### <a name="key-deployment-issues"></a>주요 배포 문제
 
-Contact Manager 솔루션 및 Fabrikam, Inc. 시나리오에는 다양 한 일반적인 문제 및 문제 복잡 하거나 엔터프라이즈 규모 솔루션을 배포할 때 발생할 수 있는 강조 표시 합니다. 예:
+Contact Manager 솔루션 및 Fabrikam, Inc. 시나리오에는 다양 한 일반적인 문제 및 문제 복잡 하거나 엔터프라이즈 규모 솔루션을 배포할 때 발생할 수 있는 강조 표시 합니다. 예를 들어:
 
 - 해야 개발자와 같은 여러 환경에 프로젝트를 배포 하거나 테스트 환경에서는 수 플랫폼 및 프로덕션 서버를 준비 합니다. 솔루션은 각 환경에 대해 서로 다른 구성 설정을 사용 하 여 배포 해야 합니다.
 - 단일 단계 또는 자동화 된 빌드 및 배포 프로세스의 일환으로 동시에 여러 종속 프로젝트를 배포 해야 합니다.
@@ -115,13 +115,13 @@ Contact Manager 솔루션 및 Fabrikam, Inc. 시나리오에는 다양 한 일�
 - 사용자 계정 데이터를 배포 하지 않고 멤버 자격 데이터베이스 임시로에 배포 해야 합니다. 또한 기존 사용자 계정 데이터 손실 없이 배포 된 멤버 자격 데이터베이스의 스키마를 업데이트 해야 할 수 있습니다.
 - 다양 한 대상 환경에 콘텐츠를 배포할 때 특정 파일 또는 폴더를 제외 해야 합니다.
 
-또한 일반적이 고 증분 업데이트 되 면 배포를 관리 하는 몇 가지 추가 과제를 throw 합니다. 예:
+또한 일반적이 고 증분 업데이트 되 면 배포를 관리 하는 몇 가지 추가 과제를 throw 합니다. 예를 들어:
 
 - 개발자는 새 코드에 체크 인하 때마다 단위 테스트를 실행 합니다. 코드 단위 테스트를 통과 하는 경우 솔루션을 배포 하려고 합니다.
 - 사용자가을 리디렉션하려고 할 스테이징 또는 프로덕션 환경에 웹 응용 프로그램을 배포 하는 경우는 *앱\_offline.htm* 배포 프로세스 중에 파일입니다.
 - 배포 작업을 기록 하려면. 지정 된 받는 사람에 게 배포 프로세스에 성공 또는 실패 한 배포의 전자 메일 알림을 보내야 합니다.
 - 자동화 된 배포에 실패 하는 경우 배포 프로세스는 현재 배포를 다시 시도 하거나 대신 이전 웹 패키지를 배포 해야 합니다.
 
->[!div class="step-by-step"]
-[이전](deploying-web-applications-in-enterprise-scenarios.md)
-[다음](application-lifecycle-management-from-development-to-production.md)
+> [!div class="step-by-step"]
+> [이전](deploying-web-applications-in-enterprise-scenarios.md)
+> [다음](application-lifecycle-management-from-development-to-production.md)

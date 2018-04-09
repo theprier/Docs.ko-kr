@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/security/authenticating-users-with-forms-authentication-cs
-title: "사용자를 인증 하는 것 폼 인증 (C#) | Microsoft Docs"
+title: 사용자를 인증 하는 것 폼 인증 (C#) | Microsoft Docs
 author: microsoft
-description: "[Authorize] 특성을 사용 하는 방법에 알아봅니다 암호로 보호 하는 MVC 응용 프로그램의 특정 페이지입니다. 관리 웹 사이트도 사용 하는 방법을 알아봅니다."
+description: '[Authorize] 특성을 사용 하는 방법에 알아봅니다 암호로 보호 하는 MVC 응용 프로그램의 특정 페이지입니다. 관리 웹 사이트도 사용 하는 방법을 알아봅니다.'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/27/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/security/authenticating-users-with-forms-authentication-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 17bcf02e1351587d64b72ee2b40393e0f748f23e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e1def84bbf48847339e89b239b026d053640b935
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="authenticating-users-with-forms-authentication-c"></a>폼 인증 (C#)는 사용자 인증
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > [Authorize] 특성을 사용 하는 방법에 알아봅니다 암호로 보호 하는 MVC 응용 프로그램의 특정 페이지입니다. 만들고 사용자 및 역할 관리 웹 사이트 관리 도구를 사용 하는 방법을 배웁니다. 또한 사용자 계정과 역할 정보를 저장 하는 구성 하는 방법을 알아봅니다.
 
@@ -87,7 +87,7 @@ URL /Home/CompanySecrets 브라우저의 주소 표시줄에 입력 하 여 Comp
 
 사용자 또는 사용자 역할의 특정 집합의 특정 집합에는 컨트롤러 작업에 대 한 액세스를 제한 하려면 [Authorize] 특성을 사용할 수 있습니다. 예를 들어 목록 2의 수정 된 Home 컨트롤러 StephenSecrets() 및 AdministratorSecrets() 라는 두 개의 새 작업이 포함 되어 있습니다.
 
-**2 – Controllers\HomeController.cs 나열**
+**Listing 2 – Controllers\HomeController.cs**
 
 [!code-csharp[Main](authenticating-users-with-forms-authentication-cs/samples/sample2.cs)]
 
@@ -152,5 +152,5 @@ Microsoft SQL Server Management Studio를 사용 하 여 데이터베이스에 �
 
 이 자습서에서는 ASP.NET MVC 응용 프로그램을 빌드하는 경우 폼 인증을 사용 하는 방법을 배웠습니다. 첫째, 웹 사이트 관리 도구를 이용 하 여 새 사용자 및 역할을 만드는 방법을 배웠습니다. 다음으로, [Authorize] 특성에서 컨트롤러 작업 호출 권한이 없는 사용자가 방지 하기 위해 사용 하는 방법을 배웠습니다. 마지막으로, 프로덕션 데이터베이스에 사용자 및 역할 정보를 저장 하 여 MVC 응용 프로그램을 구성 하는 방법을 배웠습니다.
 
->[!div class="step-by-step"]
-[다음](authenticating-users-with-windows-authentication-cs.md)
+> [!div class="step-by-step"]
+> [다음](authenticating-users-with-windows-authentication-cs.md)

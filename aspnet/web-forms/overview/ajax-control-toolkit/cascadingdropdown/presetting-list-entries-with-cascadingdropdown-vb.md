@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/cascadingdropdown/presetting-list-entries-with-cascadingdropdown-vb
-title: "목록 항목 CascadingDropDown (VB)으로 미리 설정 | Microsoft Docs"
+title: 목록 항목 CascadingDropDown (VB)으로 미리 설정 | Microsoft Docs
 author: wenz
-description: "변경 내용을 하나의 DropDownList 부하에 관련 된 값이 anoth에 있도록 DropDownList 컨트롤을 확장 하는 AJAX 컨트롤 도구 키트에서 CascadingDropDown 컨트롤 중..."
+description: 변경 내용을 하나의 DropDownList 부하에 관련 된 값이 anoth에 있도록 DropDownList 컨트롤을 확장 하는 AJAX 컨트롤 도구 키트에서 CascadingDropDown 컨트롤 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/presetting-list-entries-with-cascadingdropdown-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c28c7893c39d9ba9f828c34da7ffdce525ee248e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f74e6ac80b756240870d9406a03db11c610093aa
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="presetting-list-entries-with-cascadingdropdown-vb"></a>목록 항목 CascadingDropDown (VB)으로 미리 설정
 ====================
@@ -60,6 +60,6 @@ CascadingDropDown extender 다음 비동기적으로 호출 다음 메서드 서
 
 목록 채우기 및 자동으로 미리 선택 ([전체 크기 이미지를 보려면 클릭](presetting-list-entries-with-cascadingdropdown-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[이전](using-cascadingdropdown-with-a-database-vb.md)
-[다음](using-auto-postback-with-cascadingdropdown-vb.md)
+> [!div class="step-by-step"]
+> [이전](using-cascadingdropdown-with-a-database-vb.md)
+> [다음](using-auto-postback-with-cascadingdropdown-vb.md)

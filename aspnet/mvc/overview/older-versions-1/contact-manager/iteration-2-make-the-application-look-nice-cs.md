@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-2-make-the-application-look-nice-cs
-title: "반복 #2-확인는 응용 프로그램의 모양을 좋은 (C#) | Microsoft Docs"
+title: '반복 #2-확인는 응용 프로그램의 모양을 좋은 (C#) | Microsoft Docs'
 author: microsoft
-description: "이 반복에서 기본 ASP.NET MVC 뷰 마스터 페이지를 수정 및 스타일 시트를 연계 하 여 응용 프로그램의 모양을 개선 합니다."
+description: 이 반복에서 기본 ASP.NET MVC 뷰 마스터 페이지를 수정 및 스타일 시트를 연계 하 여 응용 프로그램의 모양을 개선 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-2-make-the-application-look-nice-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 10379f5321773155aaff4c384d8e0716d7e0e874
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: cad28fb6ff02625674e59674d1ec08d52373c269
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="iteration-2--make-the-application-look-nice-c"></a>반복 #2-확인는 응용 프로그램의 모양을 좋은 (C#)
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [코드 다운로드](iteration-2-make-the-application-look-nice-cs/_static/contactmanager_2_cs1.zip)
 
@@ -115,7 +115,7 @@ ASP.NET MVC 디자인 갤러리 좋은 선택한 다른 디자인 스타일에 �
 
 그러나 웹 사이트에 대 한 완전히 고유한 디자인을 만드는 할 수 있습니다. 이 경우에 웹 사이트 디자인 회사에서 실행 되도록 것이 좋습니다. 이 접근 방식을 않아 응용 프로그램에 대 한 디자인에 대 한 하기로 결정 합니다.
 
-반복 # 1에서 연락처 관리자를 압축 하 고 설계 회사에 프로젝트를 전송 합니다. 해당 않았음에도 t 문제를 나타내지 (참에!), Visual Studio를 소유 하지 않았습니다. Microsoft Visual Web Developer를 무료로 다운로드할 수 있었던는 [https://www.asp.net](https://www.asp.net) 웹 사이트 및 Visual Web Developer에서 않아 응용 프로그램을 엽니다. 며칠, 그림 7에 디자인 얻은 결과 있습니다.
+반복 # 1에서 연락처 관리자를 압축 하 고 설계 회사에 프로젝트를 전송 합니다. 해당 않았음에도 t 문제를 나타내지 (참에!), Visual Studio를 소유 하지 않았습니다. Microsoft Visual Web Developer를 무료로 다운로드할 수 있었던는 [ https://www.asp.net ](https://www.asp.net) 웹 사이트 및 Visual Web Developer에서 않아 응용 프로그램을 엽니다. 며칠, 그림 7에 디자인 얻은 결과 있습니다.
 
 
 [![새 프로젝트 대화 상자](iteration-2-make-the-application-look-nice-cs/_static/image7.jpg)](iteration-2-make-the-application-look-nice-cs/_static/image13.png)
@@ -163,6 +163,6 @@ MenuItemHelper를 사용 하 여 TagBuilder 클래스 내부적으로 작성 된
 
 다음 반복에서 유효성 검사의 매우 중요 한 주제를 해결할 했습니다. 사용자 먼저 사용자 s 등 필요한 값을 제공 하지 않고 새 연락처를 만들 수 없습니다 및 성을 유효성 검사 코드에 응용 프로그램을 추가 했습니다.
 
->[!div class="step-by-step"]
-[이전](iteration-1-create-the-application-cs.md)
-[다음](iteration-3-add-form-validation-cs.md)
+> [!div class="step-by-step"]
+> [이전](iteration-1-create-the-application-cs.md)
+> [다음](iteration-3-add-form-validation-cs.md)

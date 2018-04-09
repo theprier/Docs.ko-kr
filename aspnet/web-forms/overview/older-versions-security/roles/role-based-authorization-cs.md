@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/roles/role-based-authorization-cs
-title: "역할 기반 권한 부여 (C#) | Microsoft Docs"
+title: 역할 기반 권한 부여 (C#) | Microsoft Docs
 author: rick-anderson
-description: "이 자습서 역할 프레임 워크의 보안 컨텍스트와 사용자 역할에 연결 하는 방법을 보는 것으로 시작 합니다. 그런 다음 역할 기반 URL을 적용 하는 방법을 검사..."
+description: 이 자습서 역할 프레임 워크의 보안 컨텍스트와 사용자 역할에 연결 하는 방법을 보는 것으로 시작 합니다. 그런 다음 역할 기반 URL을 적용 하는 방법을 검사...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/24/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/role-based-authorization-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9a71c463f94bafa80b7fd2f97f381b5d8cb5dcaa
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 0a494e697eba44fcbf373c979e119572a8e37565
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="role-based-authorization-c"></a>역할 기반 권한 부여 (C#)
 ====================
@@ -73,18 +73,18 @@ ASP.NET 파이프라인에 들어갈 때마다 요청자를 식별 하는 정보
 > 표 1에 나와 있는 구성 설정이 결과 역할 캐시 쿠키의 속성을 지정 합니다. 에 대 한 자세한 내용은 쿠키, 작동 방법 및 다양 한 속성을 [이 쿠키 자습서](http://www.quirksmode.org/js/cookies.html)합니다.
 
 
-| **Property** | **설명** |
-| --- | --- |
-| `cacheRolesInCookie` | 쿠키 캐싱 사용 여부를 나타내는 부울 값입니다. 기본값은 `false`입니다. |
-| `cookieName` | 역할 캐시 쿠키의 이름입니다. 기본값은 ". ASPXROLES "입니다. |
-| `cookiePath` | 역할 이름 쿠키에 대 한 경로입니다. Path 특성에는 개발자를 특정 디렉터리 계층 구조를 쿠키의 범위를 제한할 수 있습니다. 기본값은 "/", 도메인에 대 한 모든 요청을 인증 티켓 쿠키를 보낼 브라우저에 게 알립니다. |
-| `cookieProtection` | 역할 캐시 쿠키를 보호 하기 위해 어떤 기술을 사용을 나타냅니다. 허용 가능한 값은: `All` (기본값); `Encryption`; `None`; 및 `Validation`합니다. 3 단계로 다시 참조는 <a id="_anchor_5"> </a> [ *폼 인증 구성 및 고급 항목* ](../introduction/forms-authentication-configuration-and-advanced-topics-cs.md) 이러한 보호 수준에 대 한 자세한 내용은 자습서입니다. |
-| `cookieRequireSSL` | 인증 쿠키를 전송 하는 SSL 연결이 필요한 지 여부를 나타내는 부울 값입니다. 기본값은 `false`입니다. |
-| `cookieSlidingExpiration` | 사용자가 단일 세션에서 사이트를 방문할 쿠키의 시간 초과 될 때마다 다시 설정 하는지 여부를 나타내는 부울 값입니다. 기본값은 `false`입니다. 이 값은 관련 때 `createPersistentCookie` 로 설정 된 `true`합니다. |
-| `cookieTimeout` | 인증 티켓 쿠키가 만료 된 후 분 후에는 시간을 지정 합니다. 기본값은 `30`입니다. 이 값은 관련 때 `createPersistentCookie` 로 설정 된 `true`합니다. |
-| `createPersistentCookie` | 역할 캐시 쿠키는 세션 쿠키 또는 영구 쿠키 여부를 지정 하는 부울 값입니다. 경우 `false` (기본값) 이면 브라우저를 닫을 때 삭제 되는 세션 쿠키 사용 됩니다. 경우 `true`, 영구 쿠키 사용 됩니다; 만료 `cookieTimeout` 시간 만들어진 후에 또는 값에 따라 이전 방문 후 숫자 `cookieSlidingExpiration`합니다. |
-| `domain` | 쿠키의 도메인 값을 지정합니다. 기본값은 빈 문자열입니다 (예: www.yourdomain.com) 발급 도메인을 사용 하도록 브라우저. 이 경우 쿠키를 **하지** admin.yourdomain.com 같은 하위 도메인을 요청 하면 보낼 수 있습니다. 사용자 지정 해야 하는 모든 하위 도메인에 전달할 쿠키 하려는 경우는 `domain` 특성을 "yourdomain.com"로 설정 합니다. |
-| `maxCachedResults` | 쿠키에 캐시 되는 역할 이름의 최대 수를 지정 합니다. 기본값은 25입니다. `RoleManagerModule` 에 속하는 사용자에 대 한 쿠키를 만들지 않습니다 이상 `maxCachedResults` 역할입니다. 따라서는 `RolePrincipal` 개체의 `IsInRole` 메서드를 사용 합니다는 `Roles` 사용자의 역할을 확인 하려면 클래스입니다. 이유 `maxCachedResults` 존재는 많은 사용자 에이전트는 4, 096 바이트 보다 큰 쿠키를 허용 하지 않기 때문입니다. 따라서이 cap이 크기 제한 초과의 가능성을 위한 것입니다. 보다 작은 지정 하는 것이 좋습니다 하려는 매우 긴 역할 이름이 있는 경우 `maxCachedResults` 값; contrariwise, 매우 짧은 역할 이름이 있는 경우 아마도이 값 늘릴 수 있습니다이 있습니다. |
+| <strong>Property</strong> |                                                                                                                                                                                                                                                                                                                                                         <strong>설명</strong>                                                                                                                                                                                                                                                                                                                                                          |
+|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|   `cacheRolesInCookie`    |                                                                                                                                                                                                                                                                                                                              쿠키 캐싱 사용 여부를 나타내는 부울 값입니다. 기본값은 `false`입니다.                                                                                                                                                                                                                                                                                                                              |
+|       `cookieName`        |                                                                                                                                                                                                                                                                                                                                     역할 캐시 쿠키의 이름입니다. 기본값은 ". ASPXROLES "입니다.                                                                                                                                                                                                                                                                                                                                     |
+|       `cookiePath`        |                                                                                                                                                                                                                                역할 이름 쿠키에 대 한 경로입니다. Path 특성에는 개발자를 특정 디렉터리 계층 구조를 쿠키의 범위를 제한할 수 있습니다. 기본값은 "/", 도메인에 대 한 모든 요청을 인증 티켓 쿠키를 보낼 브라우저에 게 알립니다.                                                                                                                                                                                                                                 |
+|    `cookieProtection`     |                                                                                                                                                               역할 캐시 쿠키를 보호 하기 위해 어떤 기술을 사용을 나타냅니다. 허용 가능한 값은: `All` (기본값); `Encryption`; `None`; 및 `Validation`합니다. 3 단계로 다시 참조는 <a id="_anchor_5"> </a> [ *폼 인증 구성 및 고급 항목* ](../introduction/forms-authentication-configuration-and-advanced-topics-cs.md) 이러한 보호 수준에 대 한 자세한 내용은 자습서입니다.                                                                                                                                                                |
+|    `cookieRequireSSL`     |                                                                                                                                                                                                                                                                                                   인증 쿠키를 전송 하는 SSL 연결이 필요한 지 여부를 나타내는 부울 값입니다. 기본값은 `false`입니다.                                                                                                                                                                                                                                                                                                   |
+| `cookieSlidingExpiration` |                                                                                                                                                                                                                                                  사용자가 단일 세션에서 사이트를 방문할 쿠키의 시간 초과 될 때마다 다시 설정 하는지 여부를 나타내는 부울 값입니다. 기본값은 `false`입니다. 이 값은 관련 때 `createPersistentCookie` 로 설정 된 `true`합니다.                                                                                                                                                                                                                                                  |
+|      `cookieTimeout`      |                                                                                                                                                                                                                                                                         인증 티켓 쿠키가 만료 된 후 분 후에는 시간을 지정 합니다. 기본값은 `30`입니다. 이 값은 관련 때 `createPersistentCookie` 로 설정 된 `true`합니다.                                                                                                                                                                                                                                                                         |
+| `createPersistentCookie`  |                                                                                                                                                                   역할 캐시 쿠키는 세션 쿠키 또는 영구 쿠키 여부를 지정 하는 부울 값입니다. 경우 `false` (기본값) 이면 브라우저를 닫을 때 삭제 되는 세션 쿠키 사용 됩니다. 경우 `true`, 영구 쿠키 사용 됩니다; 만료 `cookieTimeout` 시간 만들어진 후에 또는 값에 따라 이전 방문 후 숫자 `cookieSlidingExpiration`합니다.                                                                                                                                                                    |
+|         `domain`          |                                                                                                                                                 쿠키의 도메인 값을 지정합니다. 기본값은 빈 문자열입니다 (예: www.yourdomain.com) 발급 도메인을 사용 하도록 브라우저. 이 경우 쿠키를 <strong>하지</strong> admin.yourdomain.com 같은 하위 도메인을 요청 하면 보낼 수 있습니다. 사용자 지정 해야 하는 모든 하위 도메인에 전달할 쿠키 하려는 경우는 `domain` 특성을 "yourdomain.com"로 설정 합니다.                                                                                                                                                 |
+|    `maxCachedResults`     | 쿠키에 캐시 되는 역할 이름의 최대 수를 지정 합니다. 기본값은 25입니다. `RoleManagerModule` 에 속하는 사용자에 대 한 쿠키를 만들지 않습니다 이상 `maxCachedResults` 역할입니다. 따라서는 `RolePrincipal` 개체의 `IsInRole` 메서드를 사용 합니다는 `Roles` 사용자의 역할을 확인 하려면 클래스입니다. 이유 `maxCachedResults` 존재는 많은 사용자 에이전트는 4, 096 바이트 보다 큰 쿠키를 허용 하지 않기 때문입니다. 따라서이 cap이 크기 제한 초과의 가능성을 위한 것입니다. 보다 작은 지정 하는 것이 좋습니다 하려는 매우 긴 역할 이름이 있는 경우 `maxCachedResults` 값; contrariwise, 매우 짧은 역할 이름이 있는 경우 아마도이 값 늘릴 수 있습니다이 있습니다. |
 
 **표 1:** 역할 캐시 쿠키 구성 옵션
 
@@ -158,7 +158,7 @@ URL 권한 부여는 어떤 id 상태 규칙 쉽게 거친 권한 부여를 지�
 GridView에 시스템에 사용자 계정을 모두 나열 하는 페이지를 만들어 보겠습니다. GridView에는 각 사용자의 사용자 이름, 전자 메일 주소, 마지막 로그인 날짜 및 사용자에 대 한 설명을 포함 됩니다. 각 사용자의 정보를 표시할 뿐 아니라 GridView은 편집을 포함 하 고 기능을 삭제 합니다. 처음에 편집이 페이지를 만들 하 고 모든 사용자에 게 사용할 수 있는 기능을 삭제 합니다. "LoginView 컨트롤 사용 하 여" 및 "프로그래밍 방식으로 제한 기능" 섹션을 사용 하도록 설정 하거나 방문한 사용자의 역할에 따라 이러한 기능을 사용 하지 않도록 설정 하는 방법을 살펴봅니다.
 
 > [!NOTE]
-> 작성 하려고 하는 ASP.NET 페이지 GridView 컨트롤을 사용 하 여 사용자 계정을 표시 합니다. 이 자습서에서는 폼 인증, 권한 부여, 사용자 계정 및 역할에 중점을 두고 시리즈 이후 하지 않음 GridView 컨트롤의 내부 작업에 논의 너무 많은 시간이 소비 하 합니다. 이 자습서에서이 페이지를 설정 하기 위한 특정 단계별 지침을 제공 하지만 특정 선택 사항이 이유 또는 렌더링된 된 출력에 효과 특정 속성의 세부 정보를 자세히 하지 않습니다. GridView 컨트롤의 철저 한 검사를 체크 아웃 내  *[ASP.NET 2.0에서 데이터 작업](../../data-access/index.md)*  자습서 시리즈 합니다.
+> 작성 하려고 하는 ASP.NET 페이지 GridView 컨트롤을 사용 하 여 사용자 계정을 표시 합니다. 이 자습서에서는 폼 인증, 권한 부여, 사용자 계정 및 역할에 중점을 두고 시리즈 이후 하지 않음 GridView 컨트롤의 내부 작업에 논의 너무 많은 시간이 소비 하 합니다. 이 자습서에서이 페이지를 설정 하기 위한 특정 단계별 지침을 제공 하지만 특정 선택 사항이 이유 또는 렌더링된 된 출력에 효과 특정 속성의 세부 정보를 자세히 하지 않습니다. GridView 컨트롤의 철저 한 검사를 체크 아웃 내 *[ASP.NET 2.0에서 데이터 작업](../../data-access/index.md)* 자습서 시리즈 합니다.
 
 
 열어 시작는 `RoleBasedAuthorization.aspx` 페이지에 `Roles` 폴더입니다. 디자이너와 설정으로 페이지에서 GridView를 끌어 해당 `ID` 를 `UserGrid`합니다. 잠시 후에 호출 하는 코드 작성 하는 `Membership.GetAllUsers` 메서드 결과 바인딩합니다 `MembershipUserCollection` GridView에는 개체입니다. `MembershipUserCollection` 포함 한 `MembershipUser` ; 시스템에서 각 사용자 계정에 대 한 개체 `MembershipUser` 개체에는 같은 속성이 `UserName`, `Email`, `LastLoginDate`, 등입니다.
@@ -380,19 +380,19 @@ ASP.NET 페이지 외에도 많은 응용 프로그램은 레이블에도 비즈
 
 이 자습서에 설명 된 항목에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
-- [비즈니스 및 데이터 계층을 사용 하 여 권한 부여 규칙 추가`PrincipalPermissionAttributes`](https://weblogs.asp.net/scottgu/archive/2006/10/04/Tip_2F00_Trick_3A00_-Adding-Authorization-Rules-to-Business-and-Data-Layers-using-PrincipalPermissionAttributes.aspx)
+- [비즈니스 및 데이터 계층을 사용 하 여 권한 부여 규칙 추가 `PrincipalPermissionAttributes`](https://weblogs.asp.net/scottgu/archive/2006/10/04/Tip_2F00_Trick_3A00_-Adding-Authorization-Rules-to-Business-and-Data-Layers-using-PrincipalPermissionAttributes.aspx)
 - [ASP.NET 2.0의 검사 멤버 자격, 역할 및 프로필: 역할 작업](http://aspnet.4guysfromrolla.com/articles/121405-1.aspx)
 - [ASP.NET 2.0에 대 한 보안 질문 목록](https://msdn.microsoft.com/library/ms998375.aspx)
 - [에 대 한 기술 문서는 `<roleManager>` 요소](https://msdn.microsoft.com/library/ms164660.aspx)
 
 ### <a name="about-the-author"></a>작성자 정보
 
-여러 ASP/ASP.NET 책의 작성자 및 4GuysFromRolla.com의 창립자 Scott Mitchell의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은  *[Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*합니다. Scott에 도달할 수 [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) 또는에서 그의 블로그 통해 [http://ScottOnWriting.NET](http://scottonwriting.net/)합니다.
+여러 ASP/ASP.NET 책의 작성자 및 4GuysFromRolla.com의 창립자 Scott Mitchell의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은  *[Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*합니다. Scott에 도달할 수 [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) 또는에서 그의 블로그 통해 [ http://ScottOnWriting.NET ](http://scottonwriting.net/)합니다.
 
 ### <a name="special-thanks-to"></a>특히 감사 드립니다.
 
-이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Suchi Banerjee 및 Teresa 머피의 포함 됩니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Suchi Banerjee 및 Teresa 머피의 포함 됩니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](assigning-roles-to-users-cs.md)
-[다음](creating-and-managing-roles-vb.md)
+> [!div class="step-by-step"]
+> [이전](assigning-roles-to-users-cs.md)
+> [다음](creating-and-managing-roles-vb.md)

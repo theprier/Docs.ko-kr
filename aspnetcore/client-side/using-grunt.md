@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core에서 Grunt를 사용 하 여"
+title: ASP.NET Core에서 Grunt를 사용 합니다.
 author: rick-anderson
-description: 
+description: ''
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/using-grunt
-ms.openlocfilehash: c23f170b36ac1b9623835337020f2b5ac9514971
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 169552e9b5dd811884ce1c65952677ba83626b58
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="using-grunt-in-aspnet-core"></a>ASP.NET Core에서 Grunt를 사용 하 여 
+# <a name="use-grunt-in-aspnet-core"></a>ASP.NET Core에서 Grunt를 사용 합니다.
 
 으로 [Noel 밥](https://blog.falafel.com/falafel-software-recognized-sitefinity-website-year/)
 
-Grunt은 스크립트 축소, TypeScript 컴파일, 코드 품질 "중요" 도구, CSS 사전 프로세서 및 클라이언트 개발을 지원 하기 위해 수행 하는 모든 반복적인 작업에 대 한 작업을 자동화 하는 JavaScript task runner입니다. ASP.NET 프로젝트 템플릿에서 기본적으로 Gulp를 사용 하는 경우 Visual Studio에서 grunt 완전히 지원 됩니다 (참조 [Gulp를 사용 하 여](using-gulp.md)).
+Grunt은 스크립트 축소, TypeScript 컴파일, 코드 품질 "중요" 도구, CSS 사전 프로세서 및 클라이언트 개발을 지원 하기 위해 수행 하는 모든 반복적인 작업에 대 한 작업을 자동화 하는 JavaScript task runner입니다. ASP.NET 프로젝트 템플릿에서 기본적으로 Gulp를 사용 하는 경우 Visual Studio에서 grunt 완전히 지원 됩니다 (참조 [Gulp 사용](using-gulp.md)).
 
 이 예제를 기준으로 빈 ASP.NET Core 프로젝트를 사용 하 여 처음부터 클라이언트 빌드 프로세스를 자동화 하는 방법을 보여 줍니다.
 
@@ -129,16 +129,16 @@ Grunt은 스크립트 축소, TypeScript 컴파일, 코드 품질 "중요" 도�
 
 Grunt 이라는 매니페스트를 사용 하 여 구성 된 *Gruntfile.js* 정의 하는, 로드 하 고 Visual Studio에서 이벤트에 따라 자동으로 실행 되도록 구성 하거나 수동으로 실행할 수 있는 작업을 등록 합니다.
 
-1.  프로젝트를 마우스 오른쪽 단추로 클릭 하 고 선택 **추가 > 새 항목**합니다. 선택 된 **Grunt 구성 파일** 옵션에서 기본 이름을 *Gruntfile.js*를 클릭 하 고는 **추가** 단추 합니다.
+1. 프로젝트를 마우스 오른쪽 단추로 클릭 하 고 선택 **추가 > 새 항목**합니다. 선택 된 **Grunt 구성 파일** 옵션에서 기본 이름을 *Gruntfile.js*를 클릭 하 고는 **추가** 단추 합니다.
 
-    모듈 정의 포함 하는 초기 코드 및 `grunt.initConfig()` 메서드. `initConfig()` 각 패키지에 대 한 옵션을 설정 하는 데 사용 되는 모듈의 나머지 부분을 로드 하 고 작업을 등록 하 고 있습니다.
+   모듈 정의 포함 하는 초기 코드 및 `grunt.initConfig()` 메서드. `initConfig()` 각 패키지에 대 한 옵션을 설정 하는 데 사용 되는 모듈의 나머지 부분을 로드 하 고 작업을 등록 하 고 있습니다.
     
-    ```javascript
-    module.exports = function (grunt) {
-      grunt.initConfig({
-      });
-    };
-    ```
+   ```javascript
+   module.exports = function (grunt) {
+     grunt.initConfig({
+     });
+   };
+   ```
 
 2. 내에서 `initConfig()` 메서드를 옵션에 대 한 추가 `clean` 예제에서와 같이 작업 *Gruntfile.js* 아래 합니다. Clean 작업이 디렉터리 문자열의 배열을 수락합니다. 이 작업에서 wwwroot/lib 파일을 제거 하 고 전체/임시 디렉터리를 제거 합니다.
 
@@ -207,16 +207,16 @@ Grunt 이라는 매니페스트를 사용 하 여 구성 된 *Gruntfile.js* 정�
     > [!NOTE]
     > 옵션 "-W069" 오류가 발생 하 여 만들어집니다 jshint JavaScript 사용 하 여 대괄호 즉, 점 표기법 대신 속성을 할당 하려면 다음 구문을 사용 하는 경우 `Tastes["Sweet"]` 대신 `Tastes.Sweet`합니다. 옵션은 나머지 프로세스를 계속할 수 있도록 경고를 해제 합니다.
 
-10.  추가 `uglify` 아래 코드를 사용 하 여 작업 합니다.
+10. 추가 `uglify` 아래 코드를 사용 하 여 작업 합니다.
 
     축소 작업은 *combined.js* 파일의 임시 디렉터리에서 찾은 wwwroot/lib 표준 명명 규칙에 결과 파일을 만듭니다  *\<파일 이름\>. min.js*.
     
     ```javascript
     uglify: {
-      all: {
-        src: ['temp/combined.js'],
-        dest: 'wwwroot/lib/combined.min.js'
-      }
+     all: {
+       src: ['temp/combined.js'],
+       dest: 'wwwroot/lib/combined.min.js'
+     }
     },
     ```
 
@@ -241,7 +241,7 @@ Grunt 이라는 매니페스트를 사용 하 여 구성 된 *Gruntfile.js* 정�
     ![솔루션 탐색기에서 모든 작업](using-grunt/_static/solution-explorer-after-all-tasks.png)
     
     > [!NOTE]
-    > 각 패키지에 대 한 옵션에 대 한 자세한 내용은 방문 [https://www.npmjs.com/](https://www.npmjs.com/) 및 기본 페이지에서 검색 상자에 패키지 이름 조회 합니다. 예를 들어 grunt contrib 정리 패키지를 모든 해당 매개 변수를 설명 하는 문서 링크를 찾을 수 있습니다.
+    > 각 패키지에 대 한 옵션에 대 한 자세한 내용은 방문 [ https://www.npmjs.com/ ](https://www.npmjs.com/) 및 기본 페이지에서 검색 상자에 패키지 이름 조회 합니다. 예를 들어 grunt contrib 정리 패키지를 모든 해당 매개 변수를 설명 하는 문서 링크를 찾을 수 있습니다.
 
 ### <a name="all-together-now"></a>모두 통합
 
@@ -255,7 +255,7 @@ grunt.registerTask("all", ['clean', 'concat', 'jshint', 'uglify']);
 
 ![별칭 grunt 작업](using-grunt/_static/alias-tasks.png)
 
-## <a name="watching-for-changes"></a>변경 내용에 대 한 감시
+## <a name="watching-for-changes"></a>변경 내용 감시하기
 
 A `watch` 작업 프로그램은 파일 및 디렉터리에 있습니다. 시계 변경 내용을 감지한 경우 자동으로 작업을 트리거합니다. 아래 코드에 대 한 변경 내용을 initConfig를 추가 \*TypeScript 디렉터리에서.js 파일입니다. JavaScript 파일이 변경 되 면 `watch` 실행할지는 `all` 작업 합니다.
 
@@ -290,6 +290,6 @@ Visual Studio에서 작업할 때마다 작업을 수동으로 시작 하려는 
 
 Grunt 대부분 클라이언트 빌드 작업을 자동화 하는 데 사용할 수 있는 강력한 작업 runner입니다. Grunt NPM 배달의 패키지 및 Visual Studio와의 통합 도구 기능을 활용 합니다. 작업 러너 탐색기 visual Studio의 구성 파일에 변경 내용을 검색 하 고 작업 실행, 실행 중인 작업 보기 및 작업을 Visual Studio 이벤트에 바인딩 편리한 인터페이스를 제공 합니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
    * [Gulp 사용](using-gulp.md)

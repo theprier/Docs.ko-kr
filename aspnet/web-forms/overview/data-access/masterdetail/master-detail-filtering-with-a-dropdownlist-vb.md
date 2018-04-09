@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/masterdetail/master-detail-filtering-with-a-dropdownlist-vb
-title: "마스터/세부 DropDownList (VB)를 사용 하 여 필터링 | Microsoft Docs"
+title: 마스터/세부 DropDownList (VB)를 사용 하 여 필터링 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에서는 DropDownList 컨트롤과 GridView에 선택한 목록 항목의 세부 정보에 마스터 레코드를 표시 하는 방법을 살펴보겠습니다."
+description: 이 자습서에서는 DropDownList 컨트롤과 GridView에 선택한 목록 항목의 세부 정보에 마스터 레코드를 표시 하는 방법을 살펴보겠습니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-with-a-dropdownlist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3f66e133b2bc8cdececf55b4d92508e6ff157d95
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5d1ae660ddbc6c8e2874190ade6f3deddeebe820
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="masterdetail-filtering-with-a-dropdownlist-vb"></a>마스터/세부 DropDownList (VB)를 사용 하 여 필터링
 ====================
@@ -87,12 +87,12 @@ ms.lasthandoff: 01/24/2018
 **그림 7**: 선택 된 `GetProductsByCategoryID(categoryID)` 메서드 ([전체 크기 이미지를 보려면 클릭](master-detail-filtering-with-a-dropdownlist-vb/_static/image21.png))
 
 
-이 메서드를 선택한 후 ObjectDataSource 만들라는 우리는 메서드에 대 한 값에 대 한  *`categoryID`*  매개 변수입니다. 선택 된 값을 사용 하려면 `categories` DropDownList 항목 매개 변수 소스 제어 및에 ControlID를 설정 `Categories`합니다.
+이 메서드를 선택한 후 ObjectDataSource 만들라는 우리는 메서드에 대 한 값에 대 한 *`categoryID`* 매개 변수입니다. 선택 된 값을 사용 하려면 `categories` DropDownList 항목 매개 변수 소스 제어 및에 ControlID를 설정 `Categories`합니다.
 
 
 [![매개 변수 categoryID 범주 DropDownList의 값으로 설정](master-detail-filtering-with-a-dropdownlist-vb/_static/image23.png)](master-detail-filtering-with-a-dropdownlist-vb/_static/image22.png)
 
-**그림 8**: 설정의  *`categoryID`*  의 값에 대 한 매개 변수는 `Categories` DropDownList ([전체 크기 이미지를 보려면 클릭](master-detail-filtering-with-a-dropdownlist-vb/_static/image24.png))
+**그림 8**: 설정의 *`categoryID`* 의 값에 대 한 매개 변수는 `Categories` DropDownList ([전체 크기 이미지를 보려면 클릭](master-detail-filtering-with-a-dropdownlist-vb/_static/image24.png))
 
 
 브라우저에서 진행률을 확인해 보십시오. 해당 제품 선택한 범주에 속하는 페이지를 처음 방문 하는 경우 (음료) (그림 9에 표시)으로 표시 되지만 DropDownList 변경 데이터를 업데이트 하지는 않습니다. 즉, 업데이트 하는 GridView에 대 한 포스트백 있어야 합니다. 이를 위해 (둘 중 필요한 코드를 작성)는 두 가지 옵션이 있습니다.
@@ -146,12 +146,12 @@ DropDownList를 새 목록 항목을 추가 하려면 속성 창으로 이동 �
 **그림 13**:에서 초기 페이지 아니요 제품 로드 표시 됩니다 ([전체 크기 이미지를 보려면 클릭](master-detail-filtering-with-a-dropdownlist-vb/_static/image37.png))
 
 
-값이 "-범주 선택-" 목록 항목을 선택 하기 때문에 제품이 때 표시 되는 이유는 `-1` 및 데이터베이스에 있는 제품은 `CategoryID` 의 `-1`합니다. 이 동작 수행 하려는 경우이 시점에서 끝난 다음! 그러나 표시 하려는 경우 *모든* 범주의 "-범주 선택-" 목록 항목을 선택 하면 반환 하는 `ProductsBLL` 클래스 및 사용자 지정의 `GetProductsByCategoryID(categoryID)` 메서드를 호출 하는 `GetProducts()` 메서드 경우 전달 된에서  *`categoryID`*  매개 변수는 0 보다 작은:
+값이 "-범주 선택-" 목록 항목을 선택 하기 때문에 제품이 때 표시 되는 이유는 `-1` 및 데이터베이스에 있는 제품은 `CategoryID` 의 `-1`합니다. 이 동작 수행 하려는 경우이 시점에서 끝난 다음! 그러나 표시 하려는 경우 *모든* 범주의 "-범주 선택-" 목록 항목을 선택 하면 반환 하는 `ProductsBLL` 클래스 및 사용자 지정의 `GetProductsByCategoryID(categoryID)` 메서드를 호출 하는 `GetProducts()` 메서드 경우 전달 된에서 *`categoryID`* 매개 변수는 0 보다 작은:
 
 
 [!code-vb[Main](master-detail-filtering-with-a-dropdownlist-vb/samples/sample2.vb)]
 
-여기에서 사용 하는 방법의 모든 공급 업체를 표시 하는 방법은 비슷합니다 다시는 [선언적 매개 변수](../basic-reporting/declarative-parameters-cs.md) 자습서,이 예제에 대 한 값을 사용 하지만 `-1` 모든 레코드 해야 함을 나타내기 위해 과 반대 검색 `Nothing`합니다. 때문에 이것이  *`categoryID`*  의 매개 변수는 `GetProductsByCategoryID(categoryID)` 메서드에서 예상 정수 값을 전달 된 반면 선언적 매개 변수 자습서에서 문자열 입력된 매개 변수에서 전달 된 것입니다.
+여기에서 사용 하는 방법의 모든 공급 업체를 표시 하는 방법은 비슷합니다 다시는 [선언적 매개 변수](../basic-reporting/declarative-parameters-cs.md) 자습서,이 예제에 대 한 값을 사용 하지만 `-1` 모든 레코드 해야 함을 나타내기 위해 과 반대 검색 `Nothing`합니다. 때문에 이것이 *`categoryID`* 의 매개 변수는 `GetProductsByCategoryID(categoryID)` 메서드에서 예상 정수 값을 전달 된 반면 선언적 매개 변수 자습서에서 문자열 입력된 매개 변수에서 전달 된 것입니다.
 
 그림 14의 스크린 샷을 나와 `FilterByDropDownList.aspx` "-범주 선택-" 옵션을 선택한 경우. 여기에서 기본적으로 표시 되는 모든 제품 하 고 사용자를 특정 범주를 선택 하 여 디스플레이 좁힐 수 있습니다.
 
@@ -171,8 +171,8 @@ DropDownList를 새 목록 항목을 추가 하려면 속성 창으로 이동 �
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
->[!div class="step-by-step"]
-[이전](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs.md)
-[다음](master-detail-filtering-with-two-dropdownlists-vb.md)
+> [!div class="step-by-step"]
+> [이전](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-cs.md)
+> [다음](master-detail-filtering-with-two-dropdownlists-vb.md)

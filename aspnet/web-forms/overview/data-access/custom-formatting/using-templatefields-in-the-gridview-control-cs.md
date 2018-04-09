@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-gridview-control-cs
-title: "TemplateFields GridView 컨트롤 (C#)에 사용 하 여 | Microsoft Docs"
+title: TemplateFields GridView 컨트롤 (C#)에 사용 하 여 | Microsoft Docs
 author: rick-anderson
-description: "GridView 유연성을 제공 하도록 서식 파일을 사용 하 여 렌더링 하는 TemplateField를 제공 합니다. 서식 파일에는 정적 HTML 웹 컨트롤을 혼합 하 여 포함 될 수 있습니다 및..."
+description: GridView 유연성을 제공 하도록 서식 파일을 사용 하 여 렌더링 하는 TemplateField를 제공 합니다. 서식 파일에는 정적 HTML 웹 컨트롤을 혼합 하 여 포함 될 수 있습니다 및...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-gridview-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 004f1450937cc6543cb728e01586e3c3529a57d0
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 6485cbda50912920808fc0caf41c888493f210dc
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-templatefields-in-the-gridview-control-c"></a>GridView 컨트롤 (C#)에서 TemplateFields 사용
 ====================
@@ -94,7 +94,7 @@ GridView 이런이 방식으로 바인딩 자동으로 추가 BoundField 각 직
 
 [!code-aspx[Main](using-templatefields-in-the-gridview-control-cs/samples/sample2.aspx)]
 
-볼 수 있듯이 TemplateField는 두 개의 템플릿으로 구성 됩니다는 `ItemTemplate` 레이블이 있는 해당 `Text` 속성의 값으로 설정 됩니다는 `FirstName` 데이터 필드와 `EditItemTemplate` 컨트롤 TextBox와 `Text` 도 속성이 설정 되어 에 `FirstName` 데이터 필드입니다. 구문이- `<%# Bind("fieldName") %>` -나타냅니다 데이터 필드  *`fieldName`*  지정된 된 웹 컨트롤 속성에 바인딩됩니다.
+볼 수 있듯이 TemplateField는 두 개의 템플릿으로 구성 됩니다는 `ItemTemplate` 레이블이 있는 해당 `Text` 속성의 값으로 설정 됩니다는 `FirstName` 데이터 필드와 `EditItemTemplate` 컨트롤 TextBox와 `Text` 도 속성이 설정 되어 에 `FirstName` 데이터 필드입니다. 구문이- `<%# Bind("fieldName") %>` -나타냅니다 데이터 필드 *`fieldName`* 지정된 된 웹 컨트롤 속성에 바인딩됩니다.
 
 추가 하려면는 `LastName` 데이터 필드 값을 다른 레이블 웹 컨트롤에 추가 해야이 TemplateField는 `ItemTemplate` 바인딩하고 해당 `Text` 속성을 `LastName`합니다. 이 디자이너를 통해 또는 수동으로 수행할 수 있습니다. 직접 수행 하려면 추가를 적절 한 선언적 구문은 `ItemTemplate`:
 
@@ -239,7 +239,7 @@ Calendar 컨트롤의 스마트 태그에서 데이터 바인딩 편집을 선�
 
 [!code-aspx[Main](using-templatefields-in-the-gridview-control-cs/samples/sample6.aspx)]
 
-`Container.DataItem`반환 된 `DataRowView` 개체에 해당 하는 `DataSource` 레코드에 바인딩된는 `GridViewRow`합니다. 해당 `Row` 속성 강력한 형식의 반환 `Northwind.EmployeesRow`로 전달 되는 `DisplayDaysOnJob` 메서드. 이 데이터 바인딩 구문을 직접 나타날 수 있습니다는 `ItemTemplate` (에서처럼 아래 선언적 구문) 또는에 지정할 수는 `Text` Label 웹 컨트롤의 속성입니다.
+`Container.DataItem` 반환 된 `DataRowView` 개체에 해당 하는 `DataSource` 레코드에 바인딩된는 `GridViewRow`합니다. 해당 `Row` 속성 강력한 형식의 반환 `Northwind.EmployeesRow`로 전달 되는 `DisplayDaysOnJob` 메서드. 이 데이터 바인딩 구문을 직접 나타날 수 있습니다는 `ItemTemplate` (에서처럼 아래 선언적 구문) 또는에 지정할 수는 `Text` Label 웹 컨트롤의 속성입니다.
 
 > [!NOTE]
 > 에 전달 하는 대신에 또는 `EmployeesRow` 인스턴스, 우리 전달할 수에 `HireDate` 를 사용 하 여 값 `<%# DisplayDaysOnJob(Eval("HireDate")) %>`합니다. 그러나는 `Eval` 메서드가 반환 되는 `object`이므로 변경 해야 할 우리의 `DisplayDaysOnJob` 메서드 시그니처를 형식의 입력된 매개 변수를 허용 하도록 `object`, 대신 합니다. म 맹목적으로 캐스팅할 수 없습니다는 `Eval("HireDate")` 에 대 한 호출는 `DateTime` 때문에 `HireDate` 열에는 `Employees` 포함 하 여 `NULL` 값입니다. 따라서에 동의 해야 한다는 의미는 `object` 에 대 한 입력된 매개 변수로 `DisplayDaysOnJob` 메서드를 확인 하는 데이터베이스를 갖는 경우 `NULL` 값 (를 사용 하 여 수행할 수 `Convert.IsDBNull(objectToCheck)`), 그에 따라 계속 진행 합니다.
@@ -276,12 +276,12 @@ GridView 컨트롤에 TemplateField 더 높은 수준의 다른 필드 컨트롤
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Dan Jagers 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](custom-formatting-based-upon-data-cs.md)
-[다음](using-templatefields-in-the-detailsview-control-cs.md)
+> [!div class="step-by-step"]
+> [이전](custom-formatting-based-upon-data-cs.md)
+> [다음](using-templatefields-in-the-detailsview-control-cs.md)

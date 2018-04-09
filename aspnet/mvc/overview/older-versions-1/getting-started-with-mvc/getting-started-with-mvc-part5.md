@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part5
-title: "컨트롤러에서 모델의 데이터에 액세스 | Microsoft Docs"
+title: 컨트롤러에서 모델의 데이터에 액세스 | Microsoft Docs
 author: shanselman
-description: "ASP.NET MVC의 기본 사항을 소개 하는 초보자를 위한 자습서입니다. 읽기 및 쓰기는 데이터베이스에서 단순 웹 응용 프로그램을 만듭니다."
+description: ASP.NET MVC의 기본 사항을 소개 하는 초보자를 위한 자습서입니다. 읽기 및 쓰기는 데이터베이스에서 단순 웹 응용 프로그램을 만듭니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/14/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part5
 msc.type: authoredcontent
-ms.openlocfilehash: cf81d351aef45af3640f5d113eb3619911e03606
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 2ba1b73f40a920e27e4a03d9f703e62054d3f25c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="accessing-your-models-data-from-a-controller"></a>컨트롤러에서 모델의 데이터에 액세스
 ====================
@@ -63,6 +63,6 @@ Controllers 폴더를 마우스 오른쪽 단추로 클릭 하 고 새 MoviesCon
 
 동영상 데이터의 간단한 목록을 했습니다. 그러나 "새로 만들기" 링크를 클릭 하면 살펴보겠습니다 오류가 대로 연결 되지 않았습니다! 만들기 동작 메서드를 구현 하 고 사용자가 데이터베이스에 새 동영상을 입력할 수 있도록 살펴보겠습니다.
 
->[!div class="step-by-step"]
-[이전](getting-started-with-mvc-part4.md)
-[다음](getting-started-with-mvc-part6.md)
+> [!div class="step-by-step"]
+> [이전](getting-started-with-mvc-part4.md)
+> [다음](getting-started-with-mvc-part6.md)

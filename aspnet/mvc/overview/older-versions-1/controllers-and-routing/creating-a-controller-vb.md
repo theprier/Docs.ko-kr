@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/creating-a-controller-vb
-title: "컨트롤러 (VB) 만들기 | Microsoft Docs"
+title: 컨트롤러 (VB) 만들기 | Microsoft Docs
 author: StephenWalther
-description: "이 자습서에서는 Stephen Walther ASP.NET MVC 응용 프로그램에 컨트롤러를 추가할 수는 방법을 보여 줍니다."
+description: 이 자습서에서는 Stephen Walther ASP.NET MVC 응용 프로그램에 컨트롤러를 추가할 수는 방법을 보여 줍니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/02/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-a-controller-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d2caf7fe137b48c016ff3cd52db9e36e1e8001c0
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e9a2bbcb09672f5247429064908cd4d2ef67f518
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-controller-vb"></a>컨트롤러 (VB) 만들기
 ====================
@@ -48,7 +48,7 @@ ms.lasthandoff: 11/10/2017
 누락 된 컨트롤러를 만드는 경우는 *컨트롤러* 접미사 컨트롤러를 호출 해 수는 없습니다. 실행 하지 마십시오.--이 실수를 수행한 후 내 수명 많은 시간 불필요 하 게 했습니다.
 
 
-**1-Controllers\ProductController.vb 나열**
+**Listing 1 - Controllers\ProductController.vb**
 
 [!code-vb[Main](creating-a-controller-vb/samples/sample1.vb)]
 
@@ -64,7 +64,7 @@ ms.lasthandoff: 11/10/2017
 **그림 03**: 작업 메서드를 자동으로 만들기 ([전체 크기 이미지를 보려면 클릭](creating-a-controller-vb/_static/image6.png))
 
 
-**2-Controllers\CustomerController.vb 나열**
+**Listing 2 - Controllers\CustomerController.vb**
 
 [!code-vb[Main](creating-a-controller-vb/samples/sample2.vb)]
 
@@ -84,7 +84,7 @@ ASP.NET MVC 컨트롤러에는 클래스 뿐입니다. 원하는 경우 Visual S
 **그림 04**: 새 클래스 만들기 ([전체 크기 이미지를 보려면 클릭](creating-a-controller-vb/_static/image8.png))
 
 
-**3-Controllers\PersonController.vb 나열**
+**Listing 3 - Controllers\PersonController.vb**
 
 [!code-vb[Main](creating-a-controller-vb/samples/sample3.vb)]
 
@@ -92,10 +92,10 @@ ASP.NET MVC 컨트롤러에는 클래스 뿐입니다. 원하는 경우 Visual S
 
 `http://localhost:40071/Person`
 
-> [!NOTE] 
+> [!NOTE]
 > 
 > ASP.NET 개발 서버는 임의의 포트 번호 (예를 들어 40071)를 사용합니다. 컨트롤러를 호출 하는 URL을 입력할 때 올바른 포트 번호를 제공 해야 합니다. Windows 알림 영역 (의 오른쪽 아래 화면)에서 ASP.NET 개발 서버에 대 한 아이콘 위로 마우스를 이동 하 여 포트 번호를 확인할 수 있습니다.
-
->[!div class="step-by-step"]
-[이전](adding-dynamic-content-to-a-cached-page-vb.md)
-[다음](creating-an-action-vb.md)
+> 
+> [!div class="step-by-step"]
+> [이전](adding-dynamic-content-to-a-cached-page-vb.md)
+> [다음](creating-an-action-vb.md)

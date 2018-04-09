@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/editing-inserting-and-deleting-data/implementing-optimistic-concurrency-vb
-title: "낙관적 동시성 (VB) 구현 | Microsoft Docs"
+title: 낙관적 동시성 (VB) 구현 | Microsoft Docs
 author: rick-anderson
-description: "웹 응용 프로그램의 여러 사용자가 데이터를 편집할 수 있는 경우는 두 명의 사용자가 편집 하 고 동일한 데이터 동시에 위험이 있습니다. 이 tutori에서..."
+description: 웹 응용 프로그램의 여러 사용자가 데이터를 편집할 수 있는 경우는 두 명의 사용자가 편집 하 고 동일한 데이터 동시에 위험이 있습니다. 이 tutori에서...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/17/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/implementing-optimistic-concurrency-vb
 msc.type: authoredcontent
-ms.openlocfilehash: a31ce101c3264d10ec80a45718d9222fc18c093c
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 056d907e80b5bdfa1848b4b31cb03702ca823583
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="implementing-optimistic-concurrency-vb"></a>낙관적 동시성 (VB) 구현
 ====================
@@ -259,8 +259,8 @@ DAL 및 BLL 완료 했으므로 이제 남은 것 시스템에 기본 제공 하
 
 ObjectDataSource 올바르게 BLL 메서드를 원래 값을 전달 하는 순서로 수행 해야 하는 최종 속성 설정 중 하나 있습니다. ObjectDataSource에는 [ConflictDetection 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.conflictdetection.aspx) 에 할당할 수 있는 [두 값 중 하나](https://msdn.microsoft.com/library/system.web.ui.conflictoptions.aspx):
 
-- `OverwriteChanges`-기본값입니다. 원래 입력된 매개 변수는 BLL 메서드도 원래 값을 전송 하지 않습니다.
-- `CompareAllValues`-는 BLL 방식의을 원래 값에 전송 낙관적 동시성을 사용 하는 경우이 옵션을 선택 합니다.
+- `OverwriteChanges` -기본값입니다. 원래 입력된 매개 변수는 BLL 메서드도 원래 값을 전송 하지 않습니다.
+- `CompareAllValues` -는 BLL 방식의을 원래 값에 전송 낙관적 동시성을 사용 하는 경우이 옵션을 선택 합니다.
 
 설정 하는 `ConflictDetection` 속성을 `CompareAllValues`합니다.
 
@@ -429,8 +429,8 @@ DAL 및 BLL 업데이트 하 고 ASP.NET 페이지에이 자습서에서 살펴�
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
->[!div class="step-by-step"]
-[이전](customizing-the-data-modification-interface-vb.md)
-[다음](adding-client-side-confirmation-when-deleting-vb.md)
+> [!div class="step-by-step"]
+> [이전](customizing-the-data-modification-interface-vb.md)
+> [다음](adding-client-side-confirmation-when-deleting-vb.md)

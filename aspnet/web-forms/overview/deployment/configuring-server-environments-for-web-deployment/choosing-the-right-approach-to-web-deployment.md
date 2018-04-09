@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-server-environments-for-web-deployment/choosing-the-right-approach-to-web-deployment
-title: "웹 배포에 적절 한 방식을 선택 | Microsoft Docs"
+title: 웹 배포에 적절 한 방식을 선택 | Microsoft Docs
 author: jrjlee
-description: "인터넷 정보 서비스 (IIS) 웹 배포 도구 (웹 배포) 2.0 이상 작업할 때는 다음 3 가지 주요 방법 가져오는 데 사용할 수 있습니다..."
+description: 인터넷 정보 서비스 (IIS) 웹 배포 도구 (웹 배포) 2.0 이상 작업할 때는 다음 3 가지 주요 방법 가져오는 데 사용할 수 있습니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/choosing-the-right-approach-to-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: b77aa37160f3822f58908866e44497aea3d3bdc8
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 2d690744687af93a69743dc6ce6c853629f61f5d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="choosing-the-right-approach-to-web-deployment"></a>웹 배포에 적합 한 접근 방식을 선택합니다.
 ====================
@@ -118,7 +118,7 @@ IIS 7부터에 대 한 웹 배포에서는 IIS 웹 배포 처리기를 통해 �
 [!code-console[Main](choosing-the-right-approach-to-web-deployment/samples/sample6.cmd)]
 
 
-예를 들어 빌드 프로세스를 자동으로 모든 작업을 성공적으로 빌드한 후 스테이징 환경에 웹 응용 프로그램을 배포 하도록 구성 됩니다. 원격 에이전트 접근을 사용 하는 경우 대상 서버에서 관리자가 빌드 프로세스 id를 확인 해야 합니다. 반면, 웹 배포 처리기 방식을 사용 하 여 제공할 수 있습니다는 관리자가 아닌 사용자 & #x 2014; **FABRIKAM\stagingdeployer** 특정 IIS 웹 사이트 에서만 및 빌드 프로세스에 사용 권한을이 대/소문자 & #x 2014;에 웹 패키지를 배포 하려면 이러한 자격 증명을 제공할 수 있습니다.
+예를 들어 빌드 프로세스를 자동으로 모든 작업을 성공적으로 빌드한 후 스테이징 환경에 웹 응용 프로그램을 배포 하도록 구성 됩니다. 원격 에이전트 접근을 사용 하는 경우 대상 서버에서 관리자가 빌드 프로세스 id를 확인 해야 합니다. 반면, 웹 배포 처리기 방식을 사용 하 여 제공할 수 있습니다는 관리자가 아닌 사용자&#x2014;**FABRIKAM\stagingdeployer** 이 예제의&#x2014;이러한 특정 IIS 웹 사이트 에서만 및 빌드 프로세스에 대 한 사용 권한을 제공할 수 있습니다 웹 패키지를 배포 하는 자격 증명입니다.
 
 
 [!code-console[Main](choosing-the-right-approach-to-web-deployment/samples/sample7.cmd)]
@@ -150,6 +150,6 @@ IIS 7부터에 대 한 웹 배포에서는 IIS 웹 배포 처리기를 통해 �
 
 원격 컴퓨터에서 웹 패키지를 배포할 수 있는 다양 한 방법에 대 한 보다 일반적인 지침을 참조 하십시오. [를 사용 하 여 웹 배포 원격으로](https://technet.microsoft.com/library/ee461175(WS.10).aspx)합니다. 주문형 웹 배포 사용에 대 한 자세한 내용은 참조 하십시오. [주문형 웹 배포](https://technet.microsoft.com/library/ee517345(WS.10).aspx)합니다.
 
->[!div class="step-by-step"]
-[이전](configuring-server-environments-for-web-deployment.md)
-[다음](scenario-configuring-a-test-environment-for-web-deployment.md)
+> [!div class="step-by-step"]
+> [이전](configuring-server-environments-for-web-deployment.md)
+> [다음](scenario-configuring-a-test-environment-for-web-deployment.md)

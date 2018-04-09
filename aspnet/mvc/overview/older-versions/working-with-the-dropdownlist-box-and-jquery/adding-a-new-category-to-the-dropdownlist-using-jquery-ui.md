@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/adding-a-new-category-to-the-dropdownlist-using-jquery-ui
-title: "JQuery UI를 사용 하 여 드롭다운 목록에 새 범주를 추가 합니다. | Microsoft Docs"
+title: JQuery UI를 사용 하 여 드롭다운 목록에 새 범주를 추가 합니다. | Microsoft Docs
 author: Rick-Anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/adding-a-new-category-to-the-dropdownlist-using-jquery-ui
 msc.type: authoredcontent
-ms.openlocfilehash: de661616ff3ca83052ae74d3ae6810d014aff764
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 16f7af1d679aace24fff86abb19740beebafe785
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="adding-a-new-category-to-the-dropdownlist-using-jquery-ui"></a>JQuery UI를 사용 하 여 드롭다운 목록에 새 범주를 추가 합니다.
 ====================
@@ -36,7 +36,7 @@ HTML `Select` 태그는 고정된 범주 데이터의 목록을 표시할 적합
 2. JavaScript는 select 목록에 새 장르 데이터를 추가합니다.
 3. JavaScript 새 장르 선택한 항목을 만듭니다.
 
- 아래 이미지에 **Opera** 가 데이터베이스에 추가 되 고에서 선택한는 **장르** 드롭다운 목록입니다. 
+   아래 이미지에 **Opera** 가 데이터베이스에 추가 되 고에서 선택한는 **장르** 드롭다운 목록입니다. 
 
 ![](adding-a-new-category-to-the-dropdownlist-using-jquery-ui/_static/image3.png)
 
@@ -60,7 +60,7 @@ ID를 사용 하 여 숨겨진된 div 만듭니다 `genreDialog`합니다. JQuer
 
 ![](adding-a-new-category-to-the-dropdownlist-using-jquery-ui/_static/image4.png)
 
-클릭는 **저장** 단추입니다. AJAX 호출 Opera 범주를 만듭니다 하 고 속성을 사용 하 여 드롭다운 목록 채우고 Opera 선택한 장르로 설정 합니다.
+**저장** 단추를 클릭합니다. AJAX 호출 Opera 범주를 만듭니다 하 고 속성을 사용 하 여 드롭다운 목록 채우고 Opera 선택한 장르로 설정 합니다.
 
 ![](adding-a-new-category-to-the-dropdownlist-using-jquery-ui/_static/image5.png)
 
@@ -102,7 +102,7 @@ JQuery `$.post` 선이 작업 특성에 대 한 AJAX 호출 (`/StoreManager/Crea
 3. 검색 상자에 GenreID를 입력 합니다.
 4. 다음 아이콘을 사용 하 여   
     ![](adding-a-new-category-to-the-dropdownlist-using-jquery-ui/_static/image9.png)  
- 다음 select 태그를 찾습니다.
+   다음 select 태그를 찾습니다.
 
     [!code-html[Main](adding-a-new-category-to-the-dropdownlist-using-jquery-ui/samples/sample9.html)]
 5. 마지막 옵션 값을 확장 합니다.
@@ -141,5 +141,5 @@ Rick.Anderson[at]Microsoft.com
 - Mike 서
 - Tom Dykstra
 
->[!div class="step-by-step"]
-[이전](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper.md)
+> [!div class="step-by-step"]
+> [이전](examining-how-aspnet-mvc-scaffolds-the-dropdownlist-helper.md)

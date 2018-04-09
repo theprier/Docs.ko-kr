@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/validating-user-input-in-aspnet-web-pages-sites
-title: "사이트 (Razor) 페이지에서 ASP.NET 웹 사용자 입력 유효성 검사 | Microsoft Docs"
+title: 사이트 (Razor) 페이지에서 ASP.NET 웹 사용자 입력 유효성 검사 | Microsoft Docs
 author: tfitzmac
-description: "이 문서에서는 사용자 로부터 얻은 정보를 확인 하는 방법을 설명 &mdash; 즉, 되도록 하려면 사용자가 입력 유효한 html에서 정보에에서 forms는 이름으로 저장..."
+description: 이 문서에서는 사용자 로부터 얻은 정보를 확인 하는 방법을 설명 &mdash; 즉, 되도록 하려면 사용자가 입력 유효한 html에서 정보에에서 forms는 이름으로 저장...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/validating-user-input-in-aspnet-web-pages-sites
 msc.type: authoredcontent
-ms.openlocfilehash: 3bde2a4ea69577ebcbe3e9e89a7ee07e6ece8dd1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 34f703e6db70ac79c22f4a50d4cfd4e2326b4c74
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="validating-user-input-in-aspnet-web-pages-razor-sites"></a>ASP.NET 웹 페이지 (Razor) 사이트에서 사용자 입력 유효성 검사
 ====================
@@ -83,15 +83,15 @@ ASP.NET 웹 페이지 2에서는 사용할 수 있습니다는 `Validator` 사�
     필수 필드를 확인 하려면를 사용 하 여 `Validation.RequireField(field, [error message])` (개별 필드)에 대 한 또는 `Validation.RequireFields(field1, field2, ...))` (필드 목록)에 대 한 합니다. 다른 유형의 유효성 검사를 사용 하 여 `Validation.Add(field, ValidationType)`합니다. 에 대 한 `ValidationType`, 이러한 옵션을 사용할 수 있습니다.
 
     `Validator.DateTime ([error message])`  
-`Validator.Decimal([error message])`  
-`Validator.EqualsTo(otherField [, error message])`  
-`Validator.Float([error message])`  
-`Validator.Integer([error message])`  
-`Validator.Range(min, max [, error message])`  
-`Validator.RegEx(pattern [, error message])`  
-`Validator.Required([error message])`  
-`Validator.StringLength(length)`  
-`Validator.Url([error message])`
+   `Validator.Decimal([error message])`  
+   `Validator.EqualsTo(otherField [, error message])`  
+   `Validator.Float([error message])`  
+   `Validator.Integer([error message])`  
+   `Validator.Range(min, max [, error message])`  
+   `Validator.RegEx(pattern [, error message])`  
+   `Validator.Required([error message])`  
+   `Validator.StringLength(length)`  
+   `Validator.Url([error message])`
 3. 페이지가 제출 되 면 유효성 검사의 검사 하 여 통과 여부를 확인 `Validation.IsValid`:
 
     [!code-csharp[Main](validating-user-input-in-aspnet-web-pages-sites/samples/sample1.cs)]
@@ -122,7 +122,7 @@ ASP.NET 웹 페이지 2에서는 사용할 수 있습니다는 `Validator` 사�
 
     [!code-html[Main](validating-user-input-in-aspnet-web-pages-sites/samples/sample3.html)]
 
- 라이브러리의 두 가지는 컴퓨터 또는 서버에 포함 시 필요 없는 (CDN) 콘텐츠 배달 네트워크에서 로드할 수 있습니다. 그러나의 로컬 복사본이 있어야 *jquery.validate.unobtrusive.js*합니다. 경우 하지 이미 사용 하는 WebMatrix 템플릿 (같은 **시작 사이트** ) 라이브러리를 포함 하는 기반으로 하는 웹 페이지 사이트 만들기, **시작 사이트**합니다. 그런 다음 복사는 *.js* 현재 사이트에는 파일입니다.
+   라이브러리의 두 가지는 컴퓨터 또는 서버에 포함 시 필요 없는 (CDN) 콘텐츠 배달 네트워크에서 로드할 수 있습니다. 그러나의 로컬 복사본이 있어야 *jquery.validate.unobtrusive.js*합니다. 경우 하지 이미 사용 하는 WebMatrix 템플릿 (같은 **시작 사이트** ) 라이브러리를 포함 하는 기반으로 하는 웹 페이지 사이트 만들기, **시작 사이트**합니다. 그런 다음 복사는 *.js* 현재 사이트에는 파일입니다.
 2. 유효성을 검사 하는 각 요소에 대 한 태그에 대 한 호출 추가 `Validation.For(field)`합니다. 이 메서드는 클라이언트 쪽 유효성 검사에 사용 되는 특성을 내보냅니다. (메서드가 실제 JavaScript 코드 대신 같은 특성을 내보내는 `data-val-...`합니다. 이러한 특성 지원 jQuery를 사용 하 여 작업을 수행 하는 비 가시적인 클라이언트 유효성 검사 합니다.)
 
 다음 페이지에는 이전 예제에 클라이언트 유효성 검사 기능을 추가 하는 방법을 보여 줍니다.
@@ -196,6 +196,6 @@ HTML 양식에서 직접 존재 하지 않는 정보의 유효성을 검사 해�
 이 오류를 표시 하려면 수 오류 유효성 검사 오류의 목록에 호출 하 여 추가 `Validation.AddFormError("message")`합니다. 페이지에 대 한 호출을 포함 하는 경우는 `Html.ValidationSummary` 메서드, 오류는 사용자 입력 유효성 검사 오류와 동일 하 게 여기에 표시 됩니다.
 
 <a id="AdditionalResources"></a>
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 [ASP.NET 웹 페이지 사이트에서 HTML 폼 사용](https://go.microsoft.com/fwlink/?LinkID=202892)

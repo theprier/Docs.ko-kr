@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12
-title: "SQL Server Compact Visual Studio 또는 Visual Web Developer를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: 배포 SQL Server Compact 데이터베이스-2/12 | Microsoft Docs"
+title: 'SQL Server Compact Visual Studio 또는 Visual Web Developer를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: 배포 SQL Server Compact 데이터베이스-2/12 | Microsoft Docs'
 author: tdykstra
-description: "이 일련의 자습서 배포 하는 방법을 보여 줍니다. (게시) ASP.NET Visual Stu를 사용 하 여 SQL Server Compact 데이터베이스를 포함 하는 웹 응용 프로그램 프로젝트..."
+description: 이 일련의 자습서 배포 하는 방법을 보여 줍니다. (게시) ASP.NET Visual Stu를 사용 하 여 SQL Server Compact 데이터베이스를 포함 하는 웹 응용 프로그램 프로젝트...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/17/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 5296bc1ca3fd0b24123bd79a550a7e2cffc34a44
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7e2d430bd8e07ed7d97d11a00c61d90beeac005f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-sql-server-compact-databases---2-of-12"></a>SQL Server Compact Visual Studio 또는 Visual Web Developer를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: 배포 SQL Server Compact 데이터베이스-2/12
 ====================
@@ -190,7 +190,7 @@ Contoso 대학교 응용 프로그램 ASP.NET 멤버 자격 시스템 및 폼 �
 처음으로 사이트를 배포 하는 경우에 테스트를 위해 생성 하는 사용자 계정의 전체 또는 대부분을 제외 하려면 일반적입니다. 이 경우 관리자 계정 및 사용자 계정이 배포할 수 있습니다. 테스트 계정을 수동으로 삭제 하는 대신 새 멤버 자격 데이터베이스를 프로덕션 환경에서 필요로 하는 한 명의 관리자 사용자 계정 으로만 만듭니다.
 
 > [!NOTE]
-> 멤버 자격 데이터베이스 계정 암호의 해시를 저장 합니다. 한 컴퓨터에서 계정을 배포 하려면 원본 컴퓨터에서 보다 해시 루틴이 대상 서버에서 다른 해시를 생성 하지 않아도 되어 있는지 확인 해야 합니다. 생성 합니다 동일한 해시 ASP.NET Universal Providers를 사용 하는 경우 기본 알고리즘을 변경 하지 않는 상태로 있습니다. 기본 알고리즘 HMACSHA256 이며에 지정 된는 **유효성 검사** 특성에는  **[machineKey](https://msdn.microsoft.com/library/w8h3skw9.aspx)**  Web.config 파일의 요소입니다.
+> 멤버 자격 데이터베이스 계정 암호의 해시를 저장 합니다. 한 컴퓨터에서 계정을 배포 하려면 원본 컴퓨터에서 보다 해시 루틴이 대상 서버에서 다른 해시를 생성 하지 않아도 되어 있는지 확인 해야 합니다. 생성 합니다 동일한 해시 ASP.NET Universal Providers를 사용 하는 경우 기본 알고리즘을 변경 하지 않는 상태로 있습니다. 기본 알고리즘 HMACSHA256 이며에 지정 된는 **유효성 검사** 특성에는 **[machineKey](https://msdn.microsoft.com/library/w8h3skw9.aspx)** Web.config 파일의 요소입니다.
 
 
 멤버 자격 데이터베이스는 Code First 마이그레이션을 통해 유지 되지 않습니다 되며 (이므로 School 데이터베이스에 대 한) 테스트 계정 사용 하 여 데이터베이스를 시드하 자동 이니셜라이저 없습니다. 따라서 사용할 수 있는 테스트 데이터를 유지 하려면 지정 테스트 데이터베이스의 복사본을 새를 만들기 전에 합니다.
@@ -245,6 +245,6 @@ SQL Server Compact 데이터베이스 엔진 및 두 데이터베이스를 배�
 
 NuGet에 대 한 자세한 내용은 참조 하십시오. [NuGet이 포함 된 프로젝트 라이브러리가 관리](https://msdn.microsoft.com/magazine/hh547106.aspx) 및 [NuGet 설명서](http://docs.nuget.org/docs/start-here/overview)합니다. NuGet을 사용 하지 않으려면 설치 될 때 역할을 결정 하는 NuGet 패키지를 분석 하는 방법에 알아보려면 해야 합니다. (구성할 수는 예를 들어 *Web.config* 변환 등 빌드 시간에 실행 되도록 PowerShell 스크립트를 구성 합니다.) NuGet의 작동 방식에 대 한 자세한 내용은 참조 특히 [만들기 및 게시 패키지](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package) 및 [구성 파일 및 소스 코드 변환](http://docs.nuget.org/docs/creating-packages/configuration-file-and-source-code-transformations)합니다.
 
->[!div class="step-by-step"]
-[이전](deployment-to-a-hosting-provider-introduction-1-of-12.md)
-[다음](deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12.md)
+> [!div class="step-by-step"]
+> [이전](deployment-to-a-hosting-provider-introduction-1-of-12.md)
+> [다음](deployment-to-a-hosting-provider-web-config-file-transformations-3-of-12.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/strategies-for-database-development-and-deployment-vb
-title: "데이터베이스 개발 및 배포 (VB) 전략 | Microsoft Docs"
+title: 데이터베이스 개발 및 배포 (VB) 전략 | Microsoft Docs
 author: rick-anderson
-description: "처음으로 데이터 기반 응용 프로그램을 배포 하는 경우 프로덕션 환경으로 개발 환경에서 데이터베이스를 맹목적으로 복사할 수 있습니다. 2."
+description: 처음으로 데이터 기반 응용 프로그램을 배포 하는 경우 프로덕션 환경으로 개발 환경에서 데이터베이스를 맹목적으로 복사할 수 있습니다. 2.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/23/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/strategies-for-database-development-and-deployment-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 877056dc74e0b5a64d6e0f11d63ed9f642b0a2cd
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 26e6537b7cba704d3513a2e4ae32f9266834e6d3
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="strategies-for-database-development-and-deployment-vb"></a>데이터베이스 개발 및 배포 (VB)에 대 한 전략
 ====================
@@ -160,6 +160,6 @@ SQL Compare 시작 될 때 저장 된 SQL Compare 프로젝트를 보여 주는 
 
 만족도 매우 프로그래밍!
 
->[!div class="step-by-step"]
-[이전](configuring-a-website-that-uses-application-services-vb.md)
-[다음](displaying-a-custom-error-page-vb.md)
+> [!div class="step-by-step"]
+> [이전](configuring-a-website-that-uses-application-services-vb.md)
+> [다음](displaying-a-custom-error-page-vb.md)

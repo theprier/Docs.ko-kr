@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-3-add-form-validation-vb
-title: "반복 #3-추가 폼 유효성 검사 (VB) | Microsoft Docs"
+title: '반복 #3-추가 폼 유효성 검사 (VB) | Microsoft Docs'
 author: microsoft
-description: "세 번째 반복에서 기본적인 형태의 유효성 검사를 추가 했습니다. म 중이거나 사용자에서 필수 양식 필드를 완료 하지 않고 폼을 제출 합니다. 또한 emai을 확인 중..."
+description: 세 번째 반복에서 기본적인 형태의 유효성 검사를 추가 했습니다. म 중이거나 사용자에서 필수 양식 필드를 완료 하지 않고 폼을 제출 합니다. 또한 emai을 확인 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-3-add-form-validation-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e9ed182fb58addd8c5dadbe6e3d09c391840ca00
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 8e30e247bd31dfb800eea517d195025f9e881cd3
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="iteration-3--add-form-validation-vb"></a>반복 #3-추가 폼 유효성 검사 (VB)
 ====================
@@ -108,7 +108,7 @@ by [Microsoft](https://github.com/microsoft)
 
 > [!NOTE] 
 > 
-> 정규식 리포지토리에서 전화 번호 및 전자 메일 주소 유효성을 검사 하는 것에 대 한 정규식 수신 됨 [ *http://regexlib.com*](http://regexlib.com)
+> 정규식 리포지토리에서 전화 번호 및 전자 메일 주소 유효성을 검사 하는 것에 대 한 정규식 수신 됨 [*http://regexlib.com*](http://regexlib.com)
 
 
 ## <a name="adding-validation-logic-to-the-edit-action"></a>편집 작업에 유효성 검사 논리를 추가합니다.
@@ -129,6 +129,6 @@ by [Microsoft](https://github.com/microsoft)
 
 다음 반복에 됩니다 리팩터링한 우리의 유효성 검사 논리 및 데이터베이스 액세스 논리는 컨트롤러입니다. 더 유지 하 고 느슨하게 결합 된 응용 프로그램을 만들 수 있도록 몇 가지 소프트웨어 디자인 원칙을 활용을 이동 합니다.
 
->[!div class="step-by-step"]
-[이전](iteration-2-make-the-application-look-nice-vb.md)
-[다음](iteration-4-make-the-application-loosely-coupled-vb.md)
+> [!div class="step-by-step"]
+> [이전](iteration-2-make-the-application-look-nice-vb.md)
+> [다음](iteration-4-make-the-application-loosely-coupled-vb.md)

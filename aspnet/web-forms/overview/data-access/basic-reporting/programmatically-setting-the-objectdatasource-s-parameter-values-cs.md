@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/basic-reporting/programmatically-setting-the-objectdatasource-s-parameter-values-cs
-title: "ObjectDataSource의 매개 변수 값 (C#)를 프로그래밍 방식으로 설정 | Microsoft Docs"
+title: ObjectDataSource의 매개 변수 값 (C#)를 프로그래밍 방식으로 설정 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에서는 DAL 및 BLL 단일 입력된 매개 변수를 허용 하 고 데이터를 반환 하는 메서드를 추가 하는 방법을 살펴보겠습니다. 이 예제에서는이 매개 변수를 설정 합니다."
+description: 이 자습서에서는 DAL 및 BLL 단일 입력된 매개 변수를 허용 하 고 데이터를 반환 하는 메서드를 추가 하는 방법을 살펴보겠습니다. 이 예제에서는이 매개 변수를 설정 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/programmatically-setting-the-objectdatasource-s-parameter-values-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7694c56fa5c50ff75db931e88c2334f560631d74
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1bd1fd63e5aae74459675d45dd399e449d7897b8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="programmatically-setting-the-objectdatasources-parameter-values-c"></a>ObjectDataSource의 매개 변수 값 (C#)를 프로그래밍 방식으로 설정
 ====================
@@ -124,7 +124,7 @@ ms.lasthandoff: 01/24/2018
 **그림 9**: 웹 컨트롤의 이벤트를 나열 하려면 속성 창에서 번개 모양 아이콘 클릭
 
 
-ObjectDataSource의에 대 한 새 이벤트 처리기를 추가 하는 두 방법 모두 `Selecting` 페이지의 코드 숨김 클래스에는 이벤트입니다. 이 이벤트 처리기에서 우리 읽고 쓸 수를 사용 하 여 매개 변수 값에 `e.InputParameters[parameterName]`여기서  *`parameterName`*  의 값이는 `Name` 특성에 `<asp:Parameter>` 태그 (의 `InputParameters` 컬렉션 수도 있습니다 서 수에서 같이 인덱싱된 `e.InputParameters[index]`). 설정 하는 `month` 현재 월을 매개 변수는 다음을 추가 `Selecting` 이벤트 처리기.
+ObjectDataSource의에 대 한 새 이벤트 처리기를 추가 하는 두 방법 모두 `Selecting` 페이지의 코드 숨김 클래스에는 이벤트입니다. 이 이벤트 처리기에서 우리 읽고 쓸 수를 사용 하 여 매개 변수 값에 `e.InputParameters[parameterName]`여기서 *`parameterName`* 의 값이는 `Name` 특성에 `<asp:Parameter>` 태그 (의 `InputParameters` 컬렉션 수도 있습니다 서 수에서 같이 인덱싱된 `e.InputParameters[index]`). 설정 하는 `month` 현재 월을 매개 변수는 다음을 추가 `Selecting` 이벤트 처리기.
 
 
 [!code-csharp[Main](programmatically-setting-the-objectdatasource-s-parameter-values-cs/samples/sample3.cs)]
@@ -147,12 +147,12 @@ ObjectDataSource의에 대 한 새 이벤트 처리기를 추가 하는 두 방�
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Hilton Giesenow 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](declarative-parameters-cs.md)
-[다음](displaying-data-with-the-objectdatasource-vb.md)
+> [!div class="step-by-step"]
+> [이전](declarative-parameters-cs.md)
+> [다음](displaying-data-with-the-objectdatasource-vb.md)

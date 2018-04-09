@@ -2,7 +2,7 @@
 uid: mvc/overview/older-versions-1/views/creating-page-layouts-with-view-master-pages-vb
 title: Creating Page Layouts with View Master Pages (VB) | Microsoft Docs
 author: microsoft
-description: "이 자습서를 사용 하 여 보기의 마스터 페이지 응용 프로그램에서 여러 페이지에 대 한 일반 페이지 레이아웃을 만드는 방법에 알아봅니다. 사용할 수는 중..."
+description: 이 자습서를 사용 하 여 보기의 마스터 페이지 응용 프로그램에서 여러 페이지에 대 한 일반 페이지 레이아웃을 만드는 방법에 알아봅니다. 사용할 수는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/16/2008
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/views/creating-page-layouts-with-view-master-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5466ea8a33bd2ccfe36c0f01b6b474bbb8d540a3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5208cedd8d24a290a0227bdcbaa84ae6210cd969
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-page-layouts-with-view-master-pages-vb"></a>Creating Page Layouts with View Master Pages (VB)
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [PDF 다운로드](http://download.microsoft.com/download/e/f/3/ef3f2ff6-7424-48f7-bdaa-180ef64c3490/ASPNET_MVC_Tutorial_12_VB.pdf)
 
@@ -51,7 +51,7 @@ ms.lasthandoff: 11/10/2017
 
 예를 들어 보기 마스터 페이지 목록 1에서 2 열 레이아웃을 정의합니다. 포함 된 두 개의 `<contentplaceholder>` 태그입니다. 하나의 `<ContentPlaceHolder>` 각 열에 대 한 합니다.
 
-**1 – 나열`Views\Shared\Site.master`**
+**1 – 나열 `Views\Shared\Site.master`**
 
 [!code-aspx[Main](creating-page-layouts-with-view-master-pages-vb/samples/sample1.aspx)]
 
@@ -83,7 +83,7 @@ ms.lasthandoff: 11/10/2017
 
 Site.master 마스터 페이지에 따라 새 뷰 콘텐츠 페이지를 만든 후 목록 2에서 파일 가져오기
 
-**2 – 나열`Views\Home\Index.aspx`**
+**2 – 나열 `Views\Home\Index.aspx`**
 
 [!code-aspx[Main](creating-page-layouts-with-view-master-pages-vb/samples/sample2.aspx)]
 
@@ -97,7 +97,7 @@ Site.master 마스터 페이지에 따라 새 뷰 콘텐츠 페이지를 만든 
 
 예를 들어 목록 3에서 수정 된 인덱스 보기에는 두 개의 `<asp:Content>` 태그입니다. 각각의 `<asp:Content>` 태그 일부 텍스트를 포함 합니다.
 
-**3 – 나열`Views\Home\Index.aspx (modified)`**
+**3 – 나열 `Views\Home\Index.aspx (modified)`**
 
 [!code-aspx[Main](creating-page-layouts-with-view-master-pages-vb/samples/sample3.aspx)]
 
@@ -127,7 +127,7 @@ Site.master 마스터 페이지에 따라 새 뷰 콘텐츠 페이지를 만든 
 
 또 다른 개별 뷰 콘텐츠 페이지에서 마스터 페이지 콘텐츠를 수정 하는 방법은에 수정 하려는 영역을 래핑하는 `<asp:ContentPlaceHolder>` 태그입니다. 예를 들어 제목, 뿐만 아니라 마스터 뷰 페이지에서 렌더링 메타 태그를 변경 하 고 가정 합니다. 마스터 뷰 페이지 목록 4에는 `<asp:ContentPlaceHolder>` 태그 내에서 해당 `<head>` 태그입니다.
 
-**4 – 나열`Views\Shared\Site2.master`**
+**4 – 나열 `Views\Shared\Site2.master`**
 
 [!code-aspx[Main](creating-page-layouts-with-view-master-pages-vb/samples/sample5.aspx)]
 
@@ -135,7 +135,7 @@ Site.master 마스터 페이지에 따라 새 뷰 콘텐츠 페이지를 만든 
 
 콘텐츠 보기 페이지 목록 5에서 재정의 된 `<asp:ContentPlaceHolder>` 제목 사용자 지정 및 사용자 지정 메타 태그를 표시 하기 위해 태그입니다.
 
-**5-나열`Views\Home\Index2.aspx`**
+**5-나열 `Views\Home\Index2.aspx`**
 
 [!code-aspx[Main](creating-page-layouts-with-view-master-pages-vb/samples/sample6.aspx)]
 
@@ -143,6 +143,6 @@ Site.master 마스터 페이지에 따라 새 뷰 콘텐츠 페이지를 만든 
 
 이 자습서 마스터 페이지 및 콘텐츠 페이지를 볼 한 기본적인 소개를 제공 합니다. 새 뷰 마스터 페이지를 만들고 그에 따라 콘텐츠 페이지 보기를 만드는 방법을 배웠습니다. 또한 특정 뷰 콘텐츠 페이지에서 보기 마스터 페이지의 내용을 수정 하는 방법을 검사 했습니다.
 
->[!div class="step-by-step"]
-[이전](using-the-tagbuilder-class-to-build-html-helpers-vb.md)
-[다음](passing-data-to-view-master-pages-vb.md)
+> [!div class="step-by-step"]
+> [이전](using-the-tagbuilder-class-to-build-html-helpers-vb.md)
+> [다음](passing-data-to-view-master-pages-vb.md)

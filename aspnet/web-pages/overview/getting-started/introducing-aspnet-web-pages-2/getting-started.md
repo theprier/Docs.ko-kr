@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/getting-started
-title: "ASP.NET 웹 페이지-시작 소개 | Microsoft Docs"
+title: ASP.NET 웹 페이지-시작 소개 | Microsoft Docs
 author: tfitzmac
-description: "WebMatrix 더 이상 권장 통합된 개발 환경에 대 한 ASP.NET 웹 페이지입니다. Visual Studio 또는 Visual Studio 코드를 사용 합니다. 이 설명서는 중..."
+description: WebMatrix 더 이상 권장 통합된 개발 환경에 대 한 ASP.NET 웹 페이지입니다. Visual Studio 또는 Visual Studio 코드를 사용 합니다. 이 설명서는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/28/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/getting-started
 msc.type: authoredcontent
-ms.openlocfilehash: a6789ee75b4ca6e9443681cc7ec0bd3ab94cedcd
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5fd67a230f76774e102094f42426b8bb126c0cc6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---getting-started"></a>ASP.NET 웹 페이지-시작 소개
 ====================
@@ -285,9 +285,9 @@ WebMatrix에서 페이지를 테스트할 때 브라우저의 URL은 다음과 �
 
 이 시리즈의 다음 자습서에서는 ASP.NET 웹 페이지 프로그래밍 좀 더 살펴볼 있습니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 [ASP.NET 웹 사이트를 처음부터 만들](https://www.microsoft.com/web/post/create-an-aspnet-website-from-scratch)합니다. 이것은 자습서를 WebMatrix (하지: ASP.NET 웹 페이지)를 사용 하는 방법에 대 한 합니다. 이동에 약간이 자습서에서는 다루지 않습니다 WebMatrix의 추가 기능 중 일부에 대 한 자세한 정보.
 
->[!div class="step-by-step"]
-[다음](intro-to-web-pages-programming.md)
+> [!div class="step-by-step"]
+> [다음](intro-to-web-pages-programming.md)

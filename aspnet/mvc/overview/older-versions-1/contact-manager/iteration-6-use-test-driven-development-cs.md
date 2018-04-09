@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-6-use-test-driven-development-cs
-title: "반복 6-테스트 기반 개발 (C#)를 사용 하 여 | Microsoft Docs"
+title: 반복 6-테스트 기반 개발 (C#)를 사용 하 여 | Microsoft Docs
 author: microsoft
-description: "이 6 번째 반복에서에서는 새 기능을 추가할 응용 프로그램 먼저 단위 테스트를 작성 하 고 단위 테스트에 대해 코드를 작성 합니다. 이 반복에..."
+description: 이 6 번째 반복에서에서는 새 기능을 추가할 응용 프로그램 먼저 단위 테스트를 작성 하 고 단위 테스트에 대해 코드를 작성 합니다. 이 반복에...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-6-use-test-driven-development-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 85426a7d4024b779848c3ffd05f2ab306152000c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 94502625f66d3eb08a24b8f2a369bf456a3367b1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="iteration-6--use-test-driven-development-c"></a>반복 6-테스트 기반 개발 (C#)를 사용 합니다.
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [코드 다운로드](iteration-6-use-test-driven-development-cs/_static/contactmanager_6_cs1.zip)
 
@@ -133,7 +133,7 @@ T에도 빌드를 활용해 서이 시점에서 응용 프로그램을 활용해
 
 목록 2의 그룹 컨트롤러 클래스는 최소한의 단위 테스트를 통과 하는 데 필요한 코드를 포함 합니다. Index () 작업 그룹 (그룹 클래스 보기 3에 정의 됨)의 정적으로 코딩 된 목록을 반환 합니다.
 
-**2-Controllers\GroupController.cs 나열**
+**Listing 2 - Controllers\GroupController.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample2.cs)]
 
@@ -187,7 +187,7 @@ T에도 빌드를 활용해 서이 시점에서 응용 프로그램을 활용해
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample7.cs)]
 
-**8-Controllers\GroupController.cs 나열**
+**Listing 8 - Controllers\GroupController.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample8.cs)]
 
@@ -207,15 +207,15 @@ T에도 빌드를 활용해 서이 시점에서 응용 프로그램을 활용해
 
 목록 11 IContactManagerRepository 인터페이스를 구현 하는 새 FakeContactManagerRepository 클래스를 포함 합니다. 또한 IContactManagerRepository 인터페이스를 구현 하는 EntityContactManagerRepository 클래스와 달리 새 FakeContactManagerRepository 클래스는 데이터베이스와 통신 하지 않습니다. FakeContactManagerRepository 클래스는 데이터베이스에 대 한 프록시로 메모리 내 컬렉션을 사용합니다. 이 단위 테스트에서이 클래스 가짜 저장소 계층으로 사용 합니다.
 
-**9-Controllers\GroupController.cs 나열**
+**Listing 9 - Controllers\GroupController.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample9.cs)]
 
-**10-Controllers\ContactManagerService.cs 나열**
+**Listing 10 - Controllers\ContactManagerService.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample10.cs)]
 
-**11-Controllers\FakeContactManagerRepository.cs 나열**
+**Listing 11 - Controllers\FakeContactManagerRepository.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample11.cs)]
 
@@ -226,7 +226,7 @@ T에도 빌드를 활용해 서이 시점에서 응용 프로그램을 활용해
 
 마지막으로, 이러한 변경 내용은 응용 프로그램의 디자인에 단위 테스트를 약간 수정을 만드는 데 필요 합니다. 이제 단위 테스트를 수행할 때의 FakeContactManagerRepository를 사용 해야 합니다. 업데이트 된 GroupControllerTest 클래스 12 목록에 포함 됩니다.
 
-**12-Controllers\GroupControllerTest.cs 나열**
+**Listing 12 - Controllers\GroupControllerTest.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample13.cs)]
 
@@ -249,7 +249,7 @@ T에도 빌드를 활용해 서이 시점에서 응용 프로그램을 활용해
 | **열 이름** | **데이터 형식** | **Null 허용** |
 | --- | --- | --- |
 | ID | int | False |
-| 이름 | Nvarchar (50) | False |
+| 이름 | nvarchar(50) | False |
 
 
 다음으로 Contacts 테이블에서 모든 데이터를 삭제 해야 (성공한 그렇지 않으면 t 연락처 및 그룹이 테이블 간의 관계를 만들 수)입니다. 아래 단계를 수행합니다.
@@ -308,7 +308,7 @@ T에도 빌드를 활용해 서이 시점에서 응용 프로그램을 활용해
 
 다음으로, 저장소 클래스를 구현 해야 합니다. 반복이 진행 되는 동안 새 메서드가 여러 개에 추가한 IContactManagerRepository 인터페이스 단위 테스트를 충족 하기 위해 코드를 작성 하는 동안 합니다. IContactManagerRepository 인터페이스의 최종 버전 14 목록에 포함 됩니다.
 
-**14-Models\IContactManagerRepository.cs 나열**
+**Listing 14 - Models\IContactManagerRepository.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample14.cs)]
 
@@ -318,7 +318,7 @@ T에도 빌드를 활용해 서이 시점에서 응용 프로그램을 활용해
 
 스텁 메서드를 사용 하면 응용 프로그램을 컴파일 및 단위 테스트를 통과할 수 있었습니다. 그러나 이제 속도가 실제로 이러한 메서드를 구현 합니다. EntityContactManagerRepository 클래스의 최종 버전 목록 13에 포함 됩니다.
 
-**13-Models\EntityContactManagerRepository.cs 나열**
+**Listing 13 - Models\EntityContactManagerRepository.cs**
 
 [!code-csharp[Main](iteration-6-use-test-driven-development-cs/samples/sample16.cs)]
 
@@ -359,6 +359,6 @@ ASP.NET MVC 응용 프로그램 기본 ASP.NET 뷰 엔진을 사용 하는 경�
 
 -마지막 반복-다음 반복에서 Ajax 활용 하기 위해 응용 프로그램 다시 작성 합니다. Ajax 활용 함으로써 않아 응용 프로그램의 성능 및 응답성을 향상 합니다 했습니다.
 
->[!div class="step-by-step"]
-[이전](iteration-5-create-unit-tests-cs.md)
-[다음](iteration-7-add-ajax-functionality-cs.md)
+> [!div class="step-by-step"]
+> [이전](iteration-5-create-unit-tests-cs.md)
+> [다음](iteration-7-add-ajax-functionality-cs.md)

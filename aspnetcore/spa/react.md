@@ -1,7 +1,7 @@
 ---
-title: "React 프로젝트 템플릿을 사용 하 여"
+title: ASP.NET Core React 프로젝트 템플릿을 사용합니다
 author: SteveSandersonMS
-description: "React 및 반응 만들기-앱에 대 한 ASP.NET Core 단일 페이지 응용 프로그램 (SPA) 프로젝트 템플릿으로 시작 하는 방법에 알아봅니다."
+description: React 및 반응 만들기-앱에 대 한 ASP.NET Core 단일 페이지 응용 프로그램 (SPA) 프로젝트 템플릿으로 시작 하는 방법에 알아봅니다.
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
@@ -11,13 +11,13 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/react
-ms.openlocfilehash: cda9f52d1f5fa1d240e210488bf1bd5c76e49be7
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 4dcfef2bbb99873a9d716a4942f39123944f495c
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="use-the-react-project-template"></a>React 프로젝트 템플릿을 사용 하 여
+# <a name="use-the-react-project-template-with-aspnet-core"></a>ASP.NET Core React 프로젝트 템플릿을 사용합니다
 
 > [!NOTE]
 > 이 설명서 포함 되지 않습니다 React 프로젝트 템플릿에 대 한 ASP.NET 코어 2.0. 최신 React 서식 파일을 수동으로 업데이트할 수 있습니다. 서식 파일은 기본적으로 ASP.NET Core 2.1에 포함 됩니다.
@@ -63,9 +63,9 @@ Visual Studio 또는.NET Core CLI에서 응용 프로그램을 실행 합니다.
 
 이 템플릿으로 만든 React 앱과 자체; CRA 하 여 만든 간에 약간의 차이가 있습니다. 그러나 응용 프로그램의 기능을 변경 합니다. 템플릿에서 만든 앱에 포함 되어는 [부트스트랩](https://getbootstrap.com/)-레이아웃 및 기본 라우팅 예제를 기반으로 합니다.
 
-## <a name="install-npm-packages"></a>Npm 패키지를 설치 합니다.
+## <a name="install-npm-packages"></a>npm 패키지 설치
 
-제 3 자 npm 패키지를 설치 하려면 명령 프롬프트를 사용 하 여는 *ClientApp* 하위 디렉터리입니다. 예:
+제 3 자 npm 패키지를 설치 하려면 명령 프롬프트를 사용 하 여는 *ClientApp* 하위 디렉터리입니다. 예를 들어:
 
 ```console
 cd ClientApp

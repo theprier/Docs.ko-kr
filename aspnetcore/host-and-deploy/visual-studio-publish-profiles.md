@@ -1,7 +1,7 @@
 ---
-title: "Visual Studio ASP.NET Core 응용 프로그램 배포에 대 한 프로필 게시"
+title: Visual Studio ASP.NET Core 응용 프로그램 배포에 대 한 프로필 게시
 author: rick-anderson
-description: "만드는 방법을 익힐 Visual Studio에서 ASP.NET Core 응용 프로그램에 대 한 프로필을 게시 합니다."
+description: 만드는 방법을 익힐 Visual Studio에서 ASP.NET Core 응용 프로그램에 대 한 프로필을 게시 합니다.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/visual-studio-publish-profiles
-ms.openlocfilehash: d2c4ec317f235c6d042bd130dbf79f6cb5e2d47d
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 64c96f572c42c56480cfe2bd58f926d54eddf35e
+ms.sourcegitcommit: 71b93b42cbce8a9b1a12c4d88391e75a4dfb6162
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="visual-studio-publish-profiles-for-aspnet-core-app-deployment"></a>Visual Studio ASP.NET Core 응용 프로그램 배포에 대 한 프로필 게시
 
@@ -91,7 +91,7 @@ MSBuild 또는 Visual Studio가 프로젝트를 로드하면 다음 높은 수�
 * 게시할 파일 계산
 * 대상에 파일 게시
 
-### <a name="compute-project-items"></a>프로젝트 항목 계산
+## <a name="compute-project-items"></a>프로젝트 항목 계산
 
 프로젝트가 로드되면 프로젝트 항목(파일)이 계산됩니다. `item type` 특성에 따라 파일 처리 방법이 결정됩니다. 기본적으로 *.cs* 파일은 `Compile` 항목 목록에 포함됩니다. `Compile` 항목 목록의 파일이 컴파일됩니다.
 
@@ -109,7 +109,7 @@ ASP.NET Core 프로젝트가 참조 하는 경우 `Microsoft.NET.Sdk.Web` 프로
 
 ## <a name="basic-command-line-publishing"></a>기본 명령줄 게시
 
-명령줄 게시.NET Core 지원 되는 모든 플랫폼에서 작동 하며 Visual Studio 필요 하지 않습니다. 아래 예제에는 [dotnet 게시](/dotnet/core/tools/dotnet-publish) 프로젝트 디렉터리에서 명령을 실행 (포함 하는 *.csproj* 파일). 그렇지 않으면 프로젝트 폴더의 프로젝트 파일 경로에 명시적으로 전달 합니다. 예:
+명령줄 게시.NET Core 지원 되는 모든 플랫폼에서 작동 하며 Visual Studio 필요 하지 않습니다. 아래 예제에는 [dotnet 게시](/dotnet/core/tools/dotnet-publish) 프로젝트 디렉터리에서 명령을 실행 (포함 하는 *.csproj* 파일). 그렇지 않으면 프로젝트 폴더의 프로젝트 파일 경로에 명시적으로 전달 합니다. 예를 들어:
 
 ```console
 dotnet publish c:/webs/web1
@@ -197,11 +197,12 @@ MSBuild 속성 형식 중 하나를 사용 하 여 전달 될 수 있습니다.
 자세한 내용은 [내게 적합한 게시 옵션](https://docs.microsoft.com/visualstudio/ide/not-in-toc/web-publish-options)을 참조하세요.
 
 Visual Studio와 함께 게시 프로필을 만들 때 한 *속성/PublishProfiles/\<게시 이름입니다. >.pubxml* MSBuild 파일이 만들어집니다. 이 *.pubxml* 파일은 MSBuild 파일이고 게시 구성 설정을 포함합니다. 빌드 사용자 지정 및 프로세스를 게시 하려면이 파일을 변경할 수 있습니다. 게시 프로세스에서 이 파일을 읽습니다. `<LastUsedBuildConfiguration>` 전역 속성을 빌드에 가져온 모든 파일에 되지 않아야 하기 때문에 특별 합니다. 자세한 내용은 [MSBuild: 구성 속성을 설정하는 방법](http://sedodream.com/2012/10/27/MSBuildHowToSetTheConfigurationProperty.aspx)을 참조하세요.
+
 *.pubxml* 있기 때문에 소스 제어에 파일을 체크 인할 수 해서는 안는 *.user* 파일입니다. *.user* 파일은 중요 정보를 포함할 수 있고 하나의 사용자 및 컴퓨터에 대해서만 유효하므로 소스 제어에 체크 인되면 안 됩니다.
 
 중요 정보(예: 게시 암호)는 사용자/컴퓨터 수준별로 암호화되고 *Properties/PublishProfiles/\<publish name>.pubxml.user* 파일에 저장됩니다. 이 파일에는 중요 정보가 포함될 수 있으므로 소스 제어에 체크 인되면 **안 됩니다**.
 
-ASP.NET core 웹 앱을 게시 하는 방법에 대 한 개요를 참조 하십시오. [호스트 하 고 배포](index.md)합니다. [호스트 및 배포](index.md) https://github.com/aspnet/websdk에서 오픈 소스 프로젝트입니다.
+ASP.NET core 웹 앱을 게시 하는 방법에 대 한 개요를 참조 하십시오. [호스트 하 고 배포](index.md)합니다. [호스트 하 고 배포](index.md) 는 오픈 소스 프로젝트에서 https://github.com/aspnet/websdk합니다.
 
 `dotnet publish` 폴더를 MSDeploy צ ְ ײ 및 [KUDU](https://github.com/projectkudu/kudu/wiki) 게시 프로필:
  
@@ -272,7 +273,7 @@ MSBuild file.
 </Project>
 ```
 
-`<LastUsedBuildConfiguration>`은 `Release`로 설정됩니다. Visual Studio에서 게시할 경우 `<LastUsedBuildConfiguration>` 구성 속성 값은 게시 프로세스가 시작될 때의 값을 사용하여 설정됩니다. `<LastUsedBuildConfiguration>` 구성 속성은 특수 하며 가져온된 MSBuild 파일에서 재정의할 수 없습니다. 명령줄에서이 속성을 재정의할 수 있습니다. 예:
+`<LastUsedBuildConfiguration>`은 `Release`로 설정됩니다. Visual Studio에서 게시할 경우 `<LastUsedBuildConfiguration>` 구성 속성 값은 게시 프로세스가 시작될 때의 값을 사용하여 설정됩니다. `<LastUsedBuildConfiguration>` 구성 속성은 특수 하며 가져온된 MSBuild 파일에서 재정의할 수 없습니다. 명령줄에서이 속성을 재정의할 수 있습니다. 예를 들어:
 
 `dotnet build -c Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile`
 
@@ -444,7 +445,7 @@ MSBuild file.
 
 더 많은 배포 샘플을 보려면 [WebSDK Readme](https://github.com/aspnet/websdk)(WebSDK 추가 정보)를 참조하세요.
 
-### <a name="run-a-target-before-or-after-publishing"></a>게시 이전 또는 이후 대상 실행
+## <a name="run-a-target-before-or-after-publishing"></a>게시 이전 또는 이후 대상 실행
 
 기본 제공 `BeforePublish` 및 `AfterPublish` 대상 앞 이나 뒤 게시 대상이 대상이 실행 데 사용할 수 있습니다. 다음 태그를 게시 프로필에 추가하여 게시 이전 및 이후에 콘솔 출력에 메시지를 기록할 수 있습니다.
 
@@ -457,9 +458,19 @@ MSBuild file.
 </Target>
 ```
 
+## <a name="publish-to-a-server-using-an-untrusted-certificate"></a>신뢰할 수 없는 인증서를 사용 하 여 서버에 게시
+
+추가 `<AllowUntrustedCertificate>` 속성의 값과 `True` 게시 프로필:
+
+```xml
+<PropertyGroup>
+  <AllowUntrustedCertificate>True</AllowUntrustedCertificate>
+</PropertyGroup>
+```
+
 ## <a name="the-kudu-service"></a>Kudu 서비스
 
-파일을 보려면는 Azure 앱 서비스 웹 응용 프로그램 배포를 사용 하 여는 [Kudu 서비스](https://github.com/projectkudu/kudu/wiki/Accessing-the-kudu-service)합니다. 추가 `scm` 토큰을 웹 응용 프로그램의 이름입니다. 예:
+파일을 보려면는 Azure 앱 서비스 웹 응용 프로그램 배포를 사용 하 여는 [Kudu 서비스](https://github.com/projectkudu/kudu/wiki/Accessing-the-kudu-service)합니다. 추가 `scm` 토큰을 웹 응용 프로그램의 이름입니다. 예를 들어:
 
 | URL                                    | 결과      |
 | -------------------------------------- | ----------- |
@@ -468,7 +479,7 @@ MSBuild file.
 
 [디버그 콘솔](https://github.com/projectkudu/kudu/wiki/Kudu-console) 메뉴 항목을 선택하여 파일을 표시/편집/삭제/추가합니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 * [웹 배포](https://www.iis.net/downloads/microsoft/web-deploy) (MSDeploy)는 웹 응용 프로그램 및 웹 사이트는 IIS 서버에 배포를 간소화 합니다.
-* [https://github.com/aspnet/websdk](https://github.com/aspnet/websdk/issues): 배포에 대한 파일 문제 및 요청 기능.
+* [https://github.com/aspnet/websdk](https://github.com/aspnet/websdk/issues): 파일 문제 및 배포에 대 한 기능을 요청 합니다.

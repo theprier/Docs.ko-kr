@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/displaying-a-table-of-database-data-vb
-title: "데이터베이스 데이터 (VB)의 테이블 표시 | Microsoft Docs"
+title: 데이터베이스 데이터 (VB)의 테이블 표시 | Microsoft Docs
 author: microsoft
-description: "이 자습서에서는 I에 데이터베이스 레코드의 집합을 표시 하는 두 가지 방법을 보여 줍니다. 두 가지 방법으로 서식을 html에서 데이터베이스 레코드 집합이 ta 표시..."
+description: 이 자습서에서는 I에 데이터베이스 레코드의 집합을 표시 하는 두 가지 방법을 보여 줍니다. 두 가지 방법으로 서식을 html에서 데이터베이스 레코드 집합이 ta 표시...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/07/2008
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/displaying-a-table-of-database-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6dc0aa91cfb68d308ed098f429d3251d424ab778
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: dd871520f98aaae2d7b33d83b1646eb9eee88821
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="displaying-a-table-of-database-data-vb"></a>데이터베이스 데이터 (VB)의 테이블 표시
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [PDF 다운로드](http://download.microsoft.com/download/1/1/f/11f721aa-d749-4ed7-bb89-a681b68894e6/ASPNET_MVC_Tutorial_11_VB.pdf)
 
@@ -40,7 +40,7 @@ ms.lasthandoff: 11/10/2017
 | --- | --- | --- |
 | ID | Int | False |
 | 제목 | Nvarchar(200) | False |
-| 감독 | Nvarchar (50) | False |
+| 감독 | NVarchar(50) | False |
 | DateReleased | DateTime | False |
 
 
@@ -101,7 +101,7 @@ ASP.NET MVC 응용 프로그램의 영화 테이블을 나타내기 위해 모�
 
 데이터베이스 레코드 집합 반환 되도록 영화 컨트롤러에 의해 노출 되는 index () 동작을 수정 해야 합니다. 목록 1의 컨트롤러 모양이 되도록 컨트롤러를 수정 합니다.
 
-**1 – Controllers\MovieController.vb 나열**
+**Listing 1 – Controllers\MovieController.vb**
 
 [!code-vb[Main](displaying-a-table-of-database-data-vb/samples/sample1.vb)]
 
@@ -131,7 +131,7 @@ Index () 작업을 마우스 오른쪽 단추로 클릭 하 고 메뉴 옵션을
 
 클릭 한 후의 **추가** 단추, 목록 2에서 보기를 자동으로 생성 됩니다. 이 보기는 동영상 컬렉션을 반복 하 고 각 동영상의 속성을 표시 하는 데 필요한 코드를 포함 합니다.
 
-**2 – Views\Movie\Index.aspx 나열**
+**Listing 2 – Views\Movie\Index.aspx**
 
 [!code-aspx[Main](displaying-a-table-of-database-data-vb/samples/sample2.aspx)]
 
@@ -169,7 +169,7 @@ Index () 작업을 마우스 오른쪽 단추로 클릭 하 고 메뉴 옵션을
 
 수정한 인덱스 뷰 목록 4에 부분 MovieTemplate를 사용합니다.
 
-**4 – Views\Movie\Index.aspx 나열**
+**Listing 4 – Views\Movie\Index.aspx**
 
 [!code-aspx[Main](displaying-a-table-of-database-data-vb/samples/sample4.aspx)]
 
@@ -185,6 +185,6 @@ RenderPartial() 메서드는 문자열을 반환 하지 않으므로 대부분�
 
 이 자습서의 목표 HTML 테이블에 데이터베이스 레코드 집합을 표시 하는 방법에 대해 설명 하는 것 이었습니다. 첫째, Microsoft Entity Framework을 이용 하 여 컨트롤러 작업에서 데이터베이스 레코드 집합을 반환 하는 방법을 배웠습니다. 다음으로, Visual Studio 스 캐 폴딩을 사용 하 여 항목의 컬렉션을 자동으로 표시 하는 보기를 생성 하는 방법을 배웠습니다. 마지막으로, 부분을 이용 하 여 뷰를 단순화 하는 방법을 배웠습니다. 각 데이터베이스 레코드를 서식을 지정할 수 있도록 템플릿으로 부분을 사용 하는 방법을 배웠습니다.
 
->[!div class="step-by-step"]
-[이전](creating-model-classes-with-linq-to-sql-vb.md)
-[다음](performing-simple-validation-vb.md)
+> [!div class="step-by-step"]
+> [이전](creating-model-classes-with-linq-to-sql-vb.md)
+> [다음](performing-simple-validation-vb.md)

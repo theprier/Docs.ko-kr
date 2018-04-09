@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/aspnet-error-handling
-title: "ASP.NET 오류 처리 | Microsoft Docs"
+title: ASP.NET 오류 처리 | Microsoft Docs
 author: Erikre
-description: "이 자습서 시리즈 것에 대 한 ASP.NET 4.5 및 Microsoft Visual Studio Express 2013을 사용 하 여 ASP.NET Web Forms 응용 프로그램을 구축 하는 기초 알려 드리겠습니다 중..."
+description: 이 자습서 시리즈 것에 대 한 ASP.NET 4.5 및 Microsoft Visual Studio Express 2013을 사용 하 여 ASP.NET Web Forms 응용 프로그램을 구축 하는 기초 알려 드리겠습니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/aspnet-error-handling
 msc.type: authoredcontent
-ms.openlocfilehash: 3f732ae6f1b7845bcae88912b4a4fe26574c10de
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: ac5508334bf6d471471a719b98618bdcd3214fb5
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-error-handling"></a>ASP.NET 오류 처리
 ====================
@@ -104,7 +104,7 @@ Try 블록 위의 코드에서 발생 가능한 예외를 방지 하는 코드�
 Wingtip Toys 샘플 응용 프로그램에 오류 처리를 추가 하기 전에 추가 하 여 오류 로깅 지원을 추가 합니다는 `ExceptionUtility` 클래스는 *논리* 폴더입니다. 응용 프로그램 오류를 처리할 때마다가를 수행 하 여 오류 세부 정보를 오류 로그 파일에 추가 됩니다.
 
 1. 마우스 오른쪽 단추로 클릭는 *논리* 폴더 및 다음 선택 **추가**  - &gt; **새 항목**합니다.   
- **새 항목 추가** 대화 상자가 표시됩니다.
+   **새 항목 추가** 대화 상자가 표시됩니다.
 2. 선택 된 **Visual C#**  - &gt; **코드** 왼쪽의 템플릿 그룹입니다. 그런 다음 선택 **클래스**중간에서 나열 하 고 이름을 **ExceptionUtility.cs**합니다.
 3. **추가**를 선택합니다. 새 클래스 파일이 표시 됩니다.
 4. 기존 코드를 다음으로 바꿉니다.  
@@ -118,7 +118,7 @@ Wingtip Toys 샘플 응용 프로그램에 오류 처리를 추가 하기 전에
 Wingtip Toys 예제 응용 프로그램에서는 한 페이지 오류를 표시 하려면 사용 됩니다. 오류 페이지는 사이트의 사용자에 게 보안 오류 메시지를 표시 하도록 설계 되었습니다. 그러나 사용자가 컴퓨터에서 로컬로 제공 하는 HTTP 요청을 만드는 코드 거주 하는 개발자, 오류 페이지에 추가 오류 세부 정보 표시 됩니다.
 
 1. 프로젝트 이름을 마우스 오른쪽 단추로 클릭 (**Wingtip Toys**)에서 **솔루션 탐색기** 선택 **추가**  - &gt; **새 항목**.   
- **새 항목 추가** 대화 상자가 표시됩니다.
+   **새 항목 추가** 대화 상자가 표시됩니다.
 2. 선택 된 **Visual C#**  - &gt; **웹** 왼쪽의 템플릿 그룹입니다. 중간 목록에서 선택 **마스터 페이지가 있는 웹 폼**, 하 고 이름을 **ErrorPage.aspx**합니다.
 3. **추가**를 클릭합니다.
 4. 선택 된 *Site.Master* 마스터 페이지로 파일을 다음 선택 **확인**합니다.
@@ -166,7 +166,7 @@ Wingtip Toys 예제 응용 프로그램에서는 한 페이지 오류를 표시 
 발생 시 응용 프로그램이 어떻게 작동 하는지 확인 하려면, ASP.NET에서 오류 조건을 신중 하 게 만들 수 있습니다. Wingtip Toys 예제 응용 프로그램에서는 현상을 보려면 기본 페이지가 로드 될 때 한 테스트 예외를 throw 합니다.
 
 1. 관련 코드를 열고는 *Default.aspx* Visual Studio에서 페이지입니다.   
- *Default.aspx.cs* 코드 숨김 페이지에 표시 됩니다.
+   *Default.aspx.cs* 코드 숨김 페이지에 표시 됩니다.
 2. 에 `Page_Load` 처리기 처리기는 다음과 같이 표시 되도록 코드를 추가 합니다.   
 
     [!code-csharp[Main](aspnet-error-handling/samples/sample9.cs?highlight=3-4)]
@@ -326,7 +326,7 @@ Microsoft Azure에 웹 응용 프로그램을 배포 하는 방법에 대 한 �
 [Microsoft Azure-무료 평가판](https://azure.microsoft.com/pricing/free-trial/)  
  Microsoft Azure에 웹 사이트를 게시할 저장 하면 시간과 유지 관리 비용. Azure에 웹 앱을 배포 하는 빠른 프로세스입니다. 유지 관리 하 고 웹 응용 프로그램을 모니터링 하려는 경우 Azure는 다양 한 도구 및 서비스를 제공 합니다. 데이터, 트래픽, identity, 메시징, 미디어 및 Azure에서 성능 백업을 관리 합니다. 및이 모두는 매우 비용 효율적인 방식으로 제공 됩니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 [ASP.NET 상태 모니터링을 사용 하 여 오류 세부 정보를 로깅](../../older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-cs.md)   
 [ELMAH](https://code.google.com/p/elmah/)
@@ -356,11 +356,11 @@ Microsoft Azure에 웹 응용 프로그램을 배포 하는 방법에 대 한 �
 ## <a name="community-contributions"></a>커뮤니티 기여
 
 - Graham Mendick ([@grahammendick](http://twitter.com/grahammendick))  
- Visual Studio 2012 관련 msdn 코드 샘플: [탐색 Wingtip Toys](https://code.msdn.microsoft.com/Navigation-Wingtip-Toys-5f0daba2)
+  Visual Studio 2012 관련 msdn 코드 샘플: [탐색 Wingtip Toys](https://code.msdn.microsoft.com/Navigation-Wingtip-Toys-5f0daba2)
 - James Chaney ([jchaney@agvance.net](mailto:jchaney@agvance.net))  
- Visual Studio 2012 관련 msdn 코드 샘플: [Visual Basic의 ASP.NET 4.5 Web Forms 자습서 시리즈](https://code.msdn.microsoft.com/ASPNET-45-Web-Forms-f37f0f63)
+  Visual Studio 2012 관련 msdn 코드 샘플: [Visual Basic의 ASP.NET 4.5 Web Forms 자습서 시리즈](https://code.msdn.microsoft.com/ASPNET-45-Web-Forms-f37f0f63)
 - Andrielle Azevedo-Microsoft 기술 Audience 참가자 (twitter: @driazevedo)  
- Visual Studio 2012 번역: [Iniciando com Visão Geral ASP.NET Web Forms 4.5-Parte 1-Introdução e](https://andrielleazevedo.wordpress.com/2013/01/24/iniciando-com-asp-net-web-forms-4-5-introducao-e-visao-geral/)
+  Visual Studio 2012 번역: [Iniciando com Visão Geral ASP.NET Web Forms 4.5-Parte 1-Introdução e](https://andrielleazevedo.wordpress.com/2013/01/24/iniciando-com-asp-net-web-forms-4-5-introducao-e-visao-geral/)
 
->[!div class="step-by-step"]
-[이전](url-routing.md)
+> [!div class="step-by-step"]
+> [이전](url-routing.md)

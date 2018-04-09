@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/passwordstrength/testing-the-strength-of-a-password-cs
-title: "테스트 (C#) 암호의 강도 | Microsoft Docs"
+title: 테스트 (C#) 암호의 강도 | Microsoft Docs
 author: wenz
-description: "암호는 지연 사용자는 해독 하기 쉬운 간단한 암호를 선택 하는 경향이 있도록 거의 모든 곳에서 필요 합니다. ASP에서 PasswordStrength 컨트롤입니다. 14."
+description: 암호는 지연 사용자는 해독 하기 쉬운 간단한 암호를 선택 하는 경향이 있도록 거의 모든 곳에서 필요 합니다. ASP에서 PasswordStrength 컨트롤입니다. 14.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/passwordstrength/testing-the-strength-of-a-password-cs
 msc.type: authoredcontent
-ms.openlocfilehash: eda7baae1833b074ba34d8f10fa434df14cc592e
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: f5f4a7128f2edbef4fbe95faf9de19bdae5f436e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="testing-the-strength-of-a-password-c"></a>암호 (C#)의 강도 테스트합니다.
 ====================
@@ -35,10 +35,10 @@ ms.lasthandoff: 11/10/2017
 
 `PasswordStrength` 컨트롤을 텍스트 상자를 확장 하 고에서 암호가 충분히 강력한 인지를 확인 합니다. 다양 한 특성을 통해 옵션 제공 그 중 일부만 다음과 같습니다.
 
-- `MinimumNumericCharacters`암호에 필요한 숫자 문자의 최소 개수
-- `MinimumSymbolCharacters`최소 기호 문자 (문자 및 숫자 하지) 암호에 필요한
-- `PreferredPasswordLength`암호의 최소 길이
-- `RequiresUpperAndLowerCaseCharacters`암호를 대문자 및 소문자 모두 문자를 사용 해야 하는 여부
+- `MinimumNumericCharacters` 암호에 필요한 숫자 문자의 최소 개수
+- `MinimumSymbolCharacters` 최소 기호 문자 (문자 및 숫자 하지) 암호에 필요한
+- `PreferredPasswordLength` 암호의 최소 길이
+- `RequiresUpperAndLowerCaseCharacters` 암호를 대문자 및 소문자 모두 문자를 사용 해야 하는 여부
 
 `StrengthIndicatorType` 텍스트로 암호의 강도 제공 하는 방법 정보를 제공 합니다 (값 `"Text"`) 또는 진행률 표시줄의 한 종류로 (값 `"BarIndicator"`). 에 `DisplayPosition` 특성을 구성한 정보가 표시 됩니다. ASP.NET AJAX를 포함 한 전체 예제는 다음과 같습니다 `ScriptManager` 컨트롤의 `PasswordStrength` 제어 및 물론 사용자 암호를 입력할 수 있는 텍스트 상자입니다. 데모를 보려면 위해 후자 폼 필드 입력 내용을 개발 하는 동안 볼 수 있도록 일반 텍스트 필드 및 암호 필드가 아닙니다 됩니다.
 
@@ -51,5 +51,5 @@ ms.lasthandoff: 11/10/2017
 
 암호는 () 활동적 ([전체 크기 이미지를 보려면 클릭](testing-the-strength-of-a-password-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[다음](testing-the-strength-of-a-password-vb.md)
+> [!div class="step-by-step"]
+> [다음](testing-the-strength-of-a-password-vb.md)

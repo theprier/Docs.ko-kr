@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/hands-on-labs/using-page-inspector-in-visual-studio-2012
-title: "페이지 검사기를 사용 하 여 Visual Studio 2012에서 | Microsoft Docs"
+title: 페이지 검사기를 사용 하 여 Visual Studio 2012에서 | Microsoft Docs
 author: rick-anderson
-description: "이 실습 랩에서 새로운 도구를 찾아 Visual Studio-에서 페이지 검사기에서에서 웹 페이지 문제 해결에서 검색 합니다. 페이지 검사기는 새 도구 b는 중..."
+description: 이 실습 랩에서 새로운 도구를 찾아 Visual Studio-에서 페이지 검사기에서에서 웹 페이지 문제 해결에서 검색 합니다. 페이지 검사기는 새 도구 b는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/using-page-inspector-in-visual-studio-2012
 msc.type: authoredcontent
-ms.openlocfilehash: 1a9e093faae2cea1c27c582e22aebc908f78addb
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 052d29dba170d403c2b1c1667c55fc2c34045615
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-page-inspector-in-visual-studio-2012"></a>페이지 검사기를 사용 하 여 Visual Studio 2012에서
 ====================
@@ -38,7 +38,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > 이 랩에서 원본 폴더에 제공 된 샘플 웹 응용 프로그램에 사소한 변경 내용을 적용 하 여 이전에 설명 된 새로운 기능 및 향상 된 기능을 통해 설명 합니다.
 > 
-> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409)합니다.
+> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [ https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409 ](https://go.microsoft.com/fwlink/?LinkID=248297&clcid=0x409)합니다.
 
 
 <a id="Objectives"></a>
@@ -55,7 +55,7 @@ ms.lasthandoff: 11/10/2017
 <a id="Prerequisites"></a>
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>필수 구성 요소
+### <a name="prerequisites"></a>전제 조건
 
 이 랩을 완료 하려면 다음 항목이 있어야 합니다.
 
@@ -96,12 +96,12 @@ ms.lasthandoff: 11/10/2017
 
 1. 열기는 **시작** 솔루션에 있는 **소스/e x 1-MVC4/시작/** 폴더입니다.
 
-    1. 일부 누락 된 NuGet 패키지를 다운로드 해야 합니다 전에 계속 합니다. 이 작업을 수행 하려면는 **프로젝트** 메뉴와 선택 **NuGet 패키지 관리**합니다.
-    2. 에 **NuGet 패키지 관리** 대화 상자를 클릭 하 여 **복원** 누락 된 패키지를 다운로드 하려면.
-    3. 마지막으로,를 클릭 하 여 솔루션을 빌드합니다 **빌드** | **솔루션 빌드**합니다.
+   1. 일부 누락 된 NuGet 패키지를 다운로드 해야 합니다 전에 계속 합니다. 이 작업을 수행 하려면는 **프로젝트** 메뉴와 선택 **NuGet 패키지 관리**합니다.
+   2. 에 **NuGet 패키지 관리** 대화 상자를 클릭 하 여 **복원** 누락 된 패키지를 다운로드 하려면.
+   3. 마지막으로,를 클릭 하 여 솔루션을 빌드합니다 **빌드** | **솔루션 빌드**합니다.
 
-    > [!NOTE]
-    > NuGet을 사용 하 여의 장점 중 하나 없습니다 있는입니다 써 해당 프로젝트의 모든 라이브러리를 프로젝트 크기를 줄이면 합니다. NuGet 파워 도구 Packages.config 파일에서 패키지 버전을 지정 하 여 해야 합니다를 처음으로 프로젝트를 실행 하면 필요한 라이브러리를 다운로드할 수 있습니다. 이 때문에이 랩에서 기존 솔루션을 연 후 다음이 단계를 실행 해야 합니다.
+      > [!NOTE]
+      > NuGet을 사용 하 여의 장점 중 하나 없습니다 있는입니다 써 해당 프로젝트의 모든 라이브러리를 프로젝트 크기를 줄이면 합니다. NuGet 파워 도구 Packages.config 파일에서 패키지 버전을 지정 하 여 해야 합니다를 처음으로 프로젝트를 실행 하면 필요한 라이브러리를 다운로드할 수 있습니다. 이 때문에이 랩에서 기존 솔루션을 연 후 다음이 단계를 실행 해야 합니다.
 2. 솔루션 탐색기에서 찾을 **Index.cshtml** 뷰에 **/뷰/홈** 폴더를 프로젝트 마우스 오른쪽 단추로 클릭 한 다음 선택 **페이지 검사기에서 보기**합니다.
 
     ![페이지 검사기에서 미리 보기 위해 파일을 선택 하면](using-page-inspector-in-visual-studio-2012/_static/image1.png "페이지 검사기에서 미리 보기 위해 파일을 선택 하면")
@@ -221,7 +221,7 @@ ASP.NET MVC 4의 없는 실제 WYSIWYG 그대로 스타일 문제를 대부분 �
 2. 선택한 검사 모드를 설정/해제를 사용 닫기를는 없지만, 해당 코드를 열려는 레지스터 링크를 클릭 합니다.
 
     링크의 소스 코드에 있는 공지는  **\_LoginPartial.cshtml** 파일, Index.cshtml 하지와 \_Layout.cshtml는는 첫 번째 위치에서 찾을 수 있습니다. 올바른 소스 파일에서 직접 넣었습니다.
-3. 에 **스타일** 탭을 찾아서 클릭는  **<section> #login</section>**  항목 이러한 링크에 대 한 HTML 컨테이너입니다.
+3. 에 **스타일** 탭을 찾아서 클릭는 **<section> #login</section>** 항목 이러한 링크에 대 한 HTML 컨테이너입니다.
 
     다음에 유의 **#login** 스타일에 있는 자동으로 **Site.css** 클릭 합니다. 또한 코드는 이제 강조 표시 합니다.
 
@@ -242,7 +242,7 @@ ASP.NET MVC 4의 없는 실제 WYSIWYG 그대로 스타일 문제를 대부분 �
     ![업데이트 페이지](using-page-inspector-in-visual-studio-2012/_static/image18.png)
 
     *업데이트 페이지*
-6. 검사 모드를 사용 하 여 중 하나를 선택는  **&lt;li&gt;**  포함 된 항목의 &quot;등록&quot; 및 &quot;로그인&quot; 링크 합니다. 클릭는  **&lt;섹션&gt; #login** 항목의 액세스 **Styles.css** 코드입니다.
+6. 검사 모드를 사용 하 여 중 하나를 선택는 **&lt;li&gt;** 포함 된 항목의 &quot;등록&quot; 및 &quot;로그인&quot; 링크 합니다. 클릭는  **&lt;섹션&gt; #login** 항목의 액세스 **Styles.css** 코드입니다.
 
     ![스타일 찾기](using-page-inspector-in-visual-studio-2012/_static/image19.png "스타일 찾기")
 
@@ -287,12 +287,12 @@ ASP.NET MVC 4의 없는 실제 WYSIWYG 그대로 스타일 문제를 대부분 �
 
 1. 열기는 **시작** 솔루션에 있는 **소스/e x 2-WebForms/시작/** 폴더입니다.
 
-    1. 일부 누락 된 NuGet 패키지를 다운로드 해야 합니다 전에 계속 합니다. 이 작업을 수행 하려면는 **프로젝트** 메뉴와 선택 **NuGet 패키지 관리**합니다.
-    2. 에 **NuGet 패키지 관리** 대화 상자를 클릭 하 여 **복원** 누락 된 패키지를 다운로드 하려면.
-    3. 마지막으로,를 클릭 하 여 솔루션을 빌드합니다 **빌드** | **솔루션 빌드**합니다.
+   1. 일부 누락 된 NuGet 패키지를 다운로드 해야 합니다 전에 계속 합니다. 이 작업을 수행 하려면는 **프로젝트** 메뉴와 선택 **NuGet 패키지 관리**합니다.
+   2. 에 **NuGet 패키지 관리** 대화 상자를 클릭 하 여 **복원** 누락 된 패키지를 다운로드 하려면.
+   3. 마지막으로,를 클릭 하 여 솔루션을 빌드합니다 **빌드** | **솔루션 빌드**합니다.
 
-    > [!NOTE]
-    > NuGet을 사용 하 여의 장점 중 하나 없습니다 있는입니다 써 해당 프로젝트의 모든 라이브러리를 프로젝트 크기를 줄이면 합니다. NuGet 파워 도구 Packages.config 파일에서 패키지 버전을 지정 하 여 해야 합니다를 처음으로 프로젝트를 실행 하면 필요한 라이브러리를 다운로드할 수 있습니다. 이 때문에이 랩에서 기존 솔루션을 연 후 다음이 단계를 실행 해야 합니다.
+      > [!NOTE]
+      > NuGet을 사용 하 여의 장점 중 하나 없습니다 있는입니다 써 해당 프로젝트의 모든 라이브러리를 프로젝트 크기를 줄이면 합니다. NuGet 파워 도구 Packages.config 파일에서 패키지 버전을 지정 하 여 해야 합니다를 처음으로 프로젝트를 실행 하면 필요한 라이브러리를 다운로드할 수 있습니다. 이 때문에이 랩에서 기존 솔루션을 연 후 다음이 단계를 실행 해야 합니다.
 2. 솔루션 탐색기에서 찾아 **Default.aspx** 페이지 마우스 오른쪽 단추로 클릭 한 다음 선택 **페이지 검사기에서 보기**합니다.
 
     ![Default.aspx 페이지 검사기를 사용 하 여 열기](using-page-inspector-in-visual-studio-2012/_static/image24.png "Default.aspx 페이지 검사기를 사용 하 여 열기")
@@ -433,7 +433,7 @@ ASP.NET WebForms의 실제 WYSIWYG 더 있으면, 일부 스타일 문제를 실
     ![업데이트 페이지](using-page-inspector-in-visual-studio-2012/_static/image41.png)
 
     *업데이트 페이지*
-6. 검사 모드를 사용 하 여 중 하나를 선택는  **&lt;li&gt;**  포함 된 항목의 &quot;등록&quot; 및 &quot;로그인&quot; 링크 합니다. 클릭는  **&lt;섹션&gt; #login** 항목의 액세스 **Styles.css** 코드입니다.
+6. 검사 모드를 사용 하 여 중 하나를 선택는 **&lt;li&gt;** 포함 된 항목의 &quot;등록&quot; 및 &quot;로그인&quot; 링크 합니다. 클릭는  **&lt;섹션&gt; #login** 항목의 액세스 **Styles.css** 코드입니다.
 
     ![스타일 찾기](using-page-inspector-in-visual-studio-2012/_static/image42.png "스타일 찾기")
 
@@ -474,9 +474,9 @@ ASP.NET WebForms의 실제 WYSIWYG 더 있으면, 일부 스타일 문제를 실
 <a id="Appendix_A_Installing_Visual_Studio_Express_2012_for_Web"></a>
 ## <a name="appendix-a-installing-visual-studio-express-2012-for-web"></a>부록 a: 설치 Visual Studio Express 2012 for Web
 
-설치할 수 있습니다 **Microsoft Visual Studio Express 2012 for Web** 또는 다른 &quot;Express&quot; 버전을 사용 하 여  **[Microsoft 웹 플랫폼 설치 관리자](https://www.microsoft.com/web/downloads/platform.aspx)** . 다음 지침을 설치 하는 데 필요한 단계를 안내 하 *Visual studio Express 2012 for Web* 를 사용 하 여 *Microsoft 웹 플랫폼 설치 관리자*합니다.
+설치할 수 있습니다 **Microsoft Visual Studio Express 2012 for Web** 또는 다른 &quot;Express&quot; 버전을 사용 하 여 **[Microsoft 웹 플랫폼 설치 관리자](https://www.microsoft.com/web/downloads/platform.aspx)**. 다음 지침을 설치 하는 데 필요한 단계를 안내 하 *Visual studio Express 2012 for Web* 를 사용 하 여 *Microsoft 웹 플랫폼 설치 관리자*합니다.
 
-1. 로 이동 [ [https://go.microsoft.com/?linkid=9810169](https://go.microsoft.com/?linkid=9810169)](https://go.microsoft.com/?linkid=9810169)합니다. 또는 이미 설치 된 웹 플랫폼 설치 관리자를 열 수 있습니다 및 제품에 대 한 검색 &quot; *Visual Studio Express 2012 for Web Windows Azure SDK와*&quot;합니다.
+1. 로 이동 [ [ https://go.microsoft.com/?linkid=9810169 ](https://go.microsoft.com/?linkid=9810169) ](https://go.microsoft.com/?linkid=9810169)합니다. 또는 이미 설치 된 웹 플랫폼 설치 관리자를 열 수 있습니다 및 제품에 대 한 검색 &quot; <em>Visual Studio Express 2012 for Web Windows Azure SDK와</em>&quot;합니다.
 2. 클릭 **지금 설치**합니다. 없는 경우 **웹 플랫폼 설치 관리자** 를 다운로드 하 여 앱을 먼저 설치 이동 합니다.
 3. 한 번 **웹 플랫폼 설치 관리자** 열려 클릭 **설치** 는 설치 프로그램을 시작 합니다.
 

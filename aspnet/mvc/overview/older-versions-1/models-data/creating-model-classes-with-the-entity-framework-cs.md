@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/creating-model-classes-with-the-entity-framework-cs
-title: "Entity Framework (C#)를 사용 하 여 모델 클래스 만들기 | Microsoft Docs"
+title: Entity Framework (C#)를 사용 하 여 모델 클래스 만들기 | Microsoft Docs
 author: microsoft
-description: "이 자습서에서는 Microsoft Entity Framework와 함께 ASP.NET MVC를 사용 하는 방법에 설명 합니다. ADO.NET 엔터티 Da 만들기 엔터티 마법사를 사용 하는 방법을 알아봅니다 중..."
+description: 이 자습서에서는 Microsoft Entity Framework와 함께 ASP.NET MVC를 사용 하는 방법에 설명 합니다. ADO.NET 엔터티 Da 만들기 엔터티 마법사를 사용 하는 방법을 알아봅니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/27/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/creating-model-classes-with-the-entity-framework-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8a897f671de73d9991189e32a5d86b513051ef05
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b0a79da580f14d5ae6bcfaaa00d3900234dc662e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-model-classes-with-the-entity-framework-c"></a>Entity Framework (C#)를 사용 하 여 모델 클래스 만들기
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 이 자습서에서는 Microsoft Entity Framework와 함께 ASP.NET MVC를 사용 하는 방법에 설명 합니다. ADO.NET 엔터티 데이터 모델을 만들려는 엔터티 마법사를 사용 하는 방법을 배웁니다. 이 자습서의 과정 동안 선택, 삽입, 업데이트 및 Entity Framework를 사용 하 여 데이터베이스 데이터를 삭제 하는 방법을 설명 하는 웹 응용 프로그램을 만들었습니다.
 
@@ -48,8 +48,8 @@ Microsoft Entity Framework는 데이터베이스에서 데이터 액세스 계�
 | 열 이름 | 데이터 형식 | Null 허용 하 시겠습니까? | 기본 키가? |
 | --- | --- | --- | --- |
 | ID | int | False | True |
-| 제목 | Nvarchar (100) | False | False |
-| 감독 | Nvarchar (100) | False | False |
+| 제목 | nvarchar(100) | False | False |
+| 감독 | nvarchar(100) | False | False |
 
 다음이 단계를 수행 하 여 ASP.NET MVC 프로젝트에이 테이블을 추가할 수 있습니다.
 
@@ -139,7 +139,7 @@ Entity Framework를 사용 하려면 엔터티 데이터 모델을 만드는 필
 
 영화 레코드를 표시 하려면 보기 목록 2에 사용 됩니다.
 
-**2 – Views\Home\Index.aspx 나열**
+**Listing 2 – Views\Home\Index.aspx**
 
 [!code-aspx[Main](creating-model-classes-with-the-entity-framework-cs/samples/sample3.aspx)]
 
@@ -201,7 +201,7 @@ Entity Framework를 사용할 때는 TryUpdateModel 또는 UpdateModel 메서드
 
 데이터베이스 레코드를 편집할 때 데이터베이스 업데이트를 수행 하는 컨트롤러 동작을 편집 하 고 레코드의 Id를 전달 해야 합니다. 그렇지 않으면 컨트롤러 작업은 기본 데이터베이스에서 업데이트할 레코드 알지 합니다. 목록 5에 포함 된 편집 보기, 편집 하 고 데이터베이스 레코드의 Id를 나타내는 숨겨진된 양식 필드를 포함 합니다.
 
-**5-Views\Home\Edit.aspx 나열**
+**Listing 5 – Views\Home\Edit.aspx**
 
 [!code-aspx[Main](creating-model-classes-with-the-entity-framework-cs/samples/sample8.aspx)]
 
@@ -221,5 +221,5 @@ Entity Framework를 사용할 때는 TryUpdateModel 또는 UpdateModel 메서드
 
 첫째, 엔터티 데이터 모델 마법사를 사용 하 여 Visual Studio 내에서 엔터티 데이터 모델을 생성 하는 방법을 설명 합니다. 다음으로 LINQ to Entities 사용 하 여 데이터베이스 테이블에서 데이터베이스 레코드의 집합을 검색 하는 방법을 배웁니다. 마지막으로 삽입, 업데이트 및 데이터베이스 레코드를 삭제 하는 Entity Framework을 사용 했습니다.
 
->[!div class="step-by-step"]
-[다음](creating-model-classes-with-linq-to-sql-cs.md)
+> [!div class="step-by-step"]
+> [다음](creating-model-classes-with-linq-to-sql-cs.md)

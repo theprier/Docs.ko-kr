@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-a-website-that-uses-application-services-vb
-title: "응용 프로그램 서비스 (VB)를 사용 하는 웹 사이트를 구성 | Microsoft Docs"
+title: 응용 프로그램 서비스 (VB)를 사용 하는 웹 사이트를 구성 | Microsoft Docs
 author: rick-anderson
-description: "ASP.NET 버전 2.0에는 일련의.NET Framework의 일부 이며 문서 블록의 도구 모음 서비스를 yo으로 사용 하는 응용 프로그램 서비스를 도입 중..."
+description: ASP.NET 버전 2.0에는 일련의.NET Framework의 일부 이며 문서 블록의 도구 모음 서비스를 yo으로 사용 하는 응용 프로그램 서비스를 도입 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/23/2009
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-a-website-that-uses-application-services-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5f908eb6c6b2d18c6c41870a38bb618737949b0a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 416cc5b3b6ac3c8e7a6c1a99a8b4f8d94b5b3428
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-a-website-that-uses-application-services-vb"></a>응용 프로그램 서비스 (VB)를 사용 하는 웹 사이트를 구성 합니다.
 ====================
@@ -200,6 +200,6 @@ WSAT 체크 아웃의 모든 기능이 필요한 경우 [ *롤링 Your 직접 �
 - [*웹 사이트 보안 자습서*](../../older-versions-security/introduction/security-basics-and-asp-net-support-cs.md)
 - [*웹 사이트 관리 도구 개요*](https://msdn.microsoft.com/library/yy40ytx0.aspx)
 
->[!div class="step-by-step"]
-[이전](configuring-the-production-web-application-to-use-the-production-database-vb.md)
-[다음](strategies-for-database-development-and-deployment-vb.md)
+> [!div class="step-by-step"]
+> [이전](configuring-the-production-web-application-to-use-the-production-database-vb.md)
+> [다음](strategies-for-database-development-and-deployment-vb.md)

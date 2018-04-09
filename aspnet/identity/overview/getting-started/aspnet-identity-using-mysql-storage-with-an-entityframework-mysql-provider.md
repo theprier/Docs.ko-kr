@@ -1,22 +1,22 @@
 ---
 uid: identity/overview/getting-started/aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider
-title: ": ASP.NET Identity EntityFramework MySQL 공급자 (C#)와 함께 MySQL 저장소를 사용 하 여 | Microsoft Docs"
+title: ': ASP.NET Identity EntityFramework MySQL 공급자 (C#)와 함께 MySQL 저장소를 사용 하 여 | Microsoft Docs'
 author: maumar
-description: "이 자습서에서는 MySQL 견실한와 EntityFramework (SQL 클라이언트 공급자)으로 ASP.NET Identity에 대 한 기본 데이터 저장소 메커니즘을 바꾸는 방법을 보여 줍니다 중..."
+description: 이 자습서에서는 MySQL 견실한와 EntityFramework (SQL 클라이언트 공급자)으로 ASP.NET Identity에 대 한 기본 데이터 저장소 메커니즘을 바꾸는 방법을 보여 줍니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/10/2013
 ms.topic: article
 ms.assetid: 15253312-a92c-43ba-908e-b5dacd3d08b8
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider
 msc.type: authoredcontent
-ms.openlocfilehash: 82341724286a53f7883df324a391beeae3a9e2bd
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 6018b4f62f95f9abffece536f345d7a16d052aac
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider-c"></a>: ASP.NET Identity EntityFramework MySQL 공급자 (C#) MySQL 저장소 사용
 ====================
@@ -42,23 +42,23 @@ ms.lasthandoff: 02/12/2018
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image2.png)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image1.png)
 3. 에 **선택 및 추가 기능** 선택 마법사 **ClearDB MySQL 데이터베이스**, 클릭 하 고는 **다음** 프레임의 아래쪽 화살표:  
   
- [확장 하려면 다음 이미지를 클릭 합니다. ]  
+   [확장 하려면 다음 이미지를 클릭 합니다. ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image4.png)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image3.png)
 4. 기본값을 유지 **무료** 변경, 계획 된 **이름** 를 **IdentityMySQLDatabase**영역을 가장 가까운 항목을 선택한 다음 클릭는 **다음** 프레임의 아래쪽 화살표:  
   
- [확장 하려면 다음 이미지를 클릭 합니다. ]  
+   [확장 하려면 다음 이미지를 클릭 합니다. ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image6.png)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image5.png)
 5. 클릭는 **구매** 데이터베이스 만들기를 완료 하려면 확인 표시 합니다.  
   
- [확장 하려면 다음 이미지를 클릭 합니다. ]  
+   [확장 하려면 다음 이미지를 클릭 합니다. ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image8.png)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image7.png)
 6. 데이터베이스를 만든 후에서 관리할 수 있습니다는 **추가 기능** 관리 포털에서 탭 합니다. 데이터베이스에 대 한 연결 정보를 검색 하려면 클릭 **연결 정보입니다.** 페이지의 맨 아래에 있습니다.  
   
- [확장 하려면 다음 이미지를 클릭 합니다. ]  
+   [확장 하려면 다음 이미지를 클릭 합니다. ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image10.png)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image9.png)
 7. [복사] 단추를 클릭 하 여 연결 문자열을 복사는 **CONNECTIONSTRING** 필드 및 저장; MVC 응용 프로그램에 대 한이 자습서의 뒷부분에서이 정보를 사용 합니다.  
   
- [확장 하려면 다음 이미지를 클릭 합니다. ]  
+   [확장 하려면 다음 이미지를 클릭 합니다. ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image12.png)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image11.png)
 
 ## <a name="creating-an-mvc-application-project"></a>MVC 응용 프로그램 프로젝트 만들기
@@ -68,15 +68,15 @@ ms.lasthandoff: 02/12/2018
 1. Visual Studio 2013을 엽니다.
 2. 클릭 **새 프로젝트** 에서 **시작** 페이지 또는 있습니다 클릭할 수는 **파일** 메뉴 차례로 **새 프로젝트**:  
   
- [확장 하려면 다음 이미지를 클릭 합니다. ]  
+   [확장 하려면 다음 이미지를 클릭 합니다. ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image2.jpg)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image1.jpg)
 3. 경우는 **새 프로젝트** 대화 상자가 표시 됩니다, 확장 **Visual C#** 템플릿 목록에서 클릭 **웹**를 선택 하 고 **ASP.NET 웹 응용 프로그램**. 프로젝트 이름을 **IdentityMySQLDemo** 클릭 하 고 **확인**:  
   
- [확장 하려면 다음 이미지를 클릭 합니다. ]  
+   [확장 하려면 다음 이미지를 클릭 합니다. ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image14.png)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image13.png)
 4. 에 **새 ASP.NET 프로젝트** 대화 상자에서는 **MVC** templatewith 기본 옵션; 이렇게 설정이 하면 구성 **개별 사용자 계정** 인증 방법으로 합니다. 클릭 **확인**:  
   
- [확장 하려면 다음 이미지를 클릭 합니다. ]  
+   [확장 하려면 다음 이미지를 클릭 합니다. ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image16.png)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image15.png)
 
 ## <a name="configure-entityframework-to-work-with-a-mysql-database"></a>MySQL 데이터베이스를 작성 하려면 EntityFramework 구성
@@ -88,11 +88,11 @@ Visual Studio 2013 서식 파일에서 만든 MVC 응용 프로그램에 대 한
 1. Visual Studio 2013에서 MVC 프로젝트를 엽니다.
 2. 클릭 **도구**, 클릭 **라이브러리 패키지 관리자**, 클릭 하 고 **패키지 관리자 콘솔**:  
   
- [확장 하려면 다음 이미지를 클릭 합니다. ]  
+   [확장 하려면 다음 이미지를 클릭 합니다. ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image18.png)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image17.png)
 3. **패키지 관리자 콘솔** Visual Studio의 아래쪽 섹션에 표시 됩니다. 형식 &quot; **업데이트 패키지 EntityFramework** &quot; Enter 키를 누릅니다.  
   
- [확장 하려면 다음 이미지를 클릭 합니다. ]  
+   [확장 하려면 다음 이미지를 클릭 합니다. ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image20.png)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image19.png)
 
 ### <a name="install-the-mysql-provider-for-entityframework"></a>EntityFramework에 대 한 MySQL 공급자를 설치 합니다.
@@ -161,15 +161,15 @@ MySQL에 대 한 사용자 지정 Entity Framework 이니셜라이저를 만들�
 1. 키를 눌러 **Ctrl + f 5를 눌러** 작성 하 고 웹 응용 프로그램을 실행 합니다.
 2. 클릭는 **등록** 페이지 위쪽의 탭:  
   
- [확장 하려면 다음 이미지를 클릭 합니다. ]  
+   [확장 하려면 다음 이미지를 클릭 합니다. ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image4.jpg)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image3.jpg)
 3. 새 사용자 이름 및 암호를 입력 한 다음 클릭 **등록**:  
   
- [확장 하려면 다음 이미지를 클릭 합니다. ]  
+   [확장 하려면 다음 이미지를 클릭 합니다. ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image24.png)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image23.png)
 4. 이 시점에서 ASP.NET Identity 테이블은에서 MySQL 데이터베이스 만들어지고 사용자가 등록 하 고 응용 프로그램에 로그인:  
   
- [확장 하려면 다음 이미지를 클릭 합니다. ]  
+   [확장 하려면 다음 이미지를 클릭 합니다. ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image6.jpg)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image5.jpg)
 
 ### <a name="installing-mysql-workbench-tool-to-verify-the-data"></a>데이터를 확인 하려면 MySQL 워크 벤치 도구 설치
@@ -180,9 +180,9 @@ MySQL에 대 한 사용자 지정 Entity Framework 이니셜라이저를 만들�
 4. 연결을 만든 후 검사는 **ASP.NET Identity** 에 생성 된 테이블은 **IdentityMySQLDatabase 합니다.**
 5. 모든 ASP.NET Identity 필요한 아래 이미지에 표시 된 대로 테이블을 만들 수 있는지 확인할 수 있습니다.  
   
- [확장 하려면 다음 이미지를 클릭 합니다. ]  
+   [확장 하려면 다음 이미지를 클릭 합니다. ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image8.jpg)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image7.jpg)
 6. 검사는 **aspnetusers** 테이블 예를 들어 새 사용자를 등록할 때 항목을 확인 합니다.  
   
- [확장 하려면 다음 이미지를 클릭 합니다. ]  
+   [확장 하려면 다음 이미지를 클릭 합니다. ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image26.png)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image25.png)

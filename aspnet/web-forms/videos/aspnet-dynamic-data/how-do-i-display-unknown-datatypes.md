@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/aspnet-dynamic-data/how-do-i-display-unknown-datatypes
-title: "어떻게 할까요? 디스플레이 알 수 없는 데이터 형식 | Microsoft 문서"
+title: 어떻게 할까요? 디스플레이 알 수 없는 데이터 형식 | Microsoft 문서
 author: shanselman
-description: "이 비디오에서는 보여줍니다 이진 BLOB으로 데이터베이스에 저장 되어 있는 완전히 알 수 없는 사용자 지정 데이터 형식을 처리 하려면 동적 데이터를 구성 하는 방법."
+description: 이 비디오에서는 보여줍니다 이진 BLOB으로 데이터베이스에 저장 되어 있는 완전히 알 수 없는 사용자 지정 데이터 형식을 처리 하려면 동적 데이터를 구성 하는 방법.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/08/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-dynamic-data/how-do-i-display-unknown-datatypes
 msc.type: video
-ms.openlocfilehash: f9b75542ba35384dfc82b3059d1a2a18212bc184
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: e246ec8e0686a72f2b67e89dbcbbfd0ca6a74d20
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-do-i-display-unknown-datatypes"></a>어떻게 할까요? 디스플레이 알 수 없는 데이터 형식
 ====================
@@ -24,8 +24,8 @@ ms.lasthandoff: 11/10/2017
 
 이 비디오에서는 보여줍니다 이진 BLOB으로 데이터베이스에 저장 되어 있는 완전히 알 수 없는 사용자 지정 데이터 형식을 처리 하려면 동적 데이터를 구성 하는 방법.
 
-[&#9654; (8 분) 비디오를 시청 하세요](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-display-unknown-datatypes)
+[&#9654;(8 분) 비디오를 시청 하세요](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-display-unknown-datatypes)
 
->[!div class="step-by-step"]
-[이전](how-do-i-make-custom-pages.md)
-[다음](how-do-i-use-a-dynamiccontrol-in-listview-and-detailsview-controls.md)
+> [!div class="step-by-step"]
+> [이전](how-do-i-make-custom-pages.md)
+> [다음](how-do-i-use-a-dynamiccontrol-in-listview-and-detailsview-controls.md)

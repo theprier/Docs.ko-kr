@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/getting-started/introduction-to-signalr
-title: "SignalR 소개 | Microsoft Docs"
+title: SignalR 소개 | Microsoft Docs
 author: pfletcher
-description: "이 문서에서는 SignalR, 정의 및 만들기 하도록 설계 된 솔루션 중 일부를 설명 합니다."
+description: 이 문서에서는 SignalR, 정의 및 만들기 하도록 설계 된 솔루션 중 일부를 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/getting-started/introduction-to-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 5bb49c9c2405d232ba5e067d99f8879b3bc99361
-ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
+ms.openlocfilehash: 0ceca3edc26d35b1155946e60863a84da0bbe592
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introduction-to-signalr"></a>SignalR 소개
 ====================
@@ -85,11 +85,11 @@ SignalR은 클라이언트와 서버 간의 실시간 작업을 수행 하는 �
 2. JSONP 구성 된 경우 (즉,는 `jsonp` 로 설정 된 `true` 연결이 시작 될 때), 긴 폴링을 사용 됩니다.
 3. 도메인 간 연결 되 고 (즉, SignalR 끝점에에서 없는 경우 호스팅 페이지와 같은 도메인)를 만들어지면 다음 WebSocket 사용 됩니다는 다음 조건을 충족 될 경우:
 
-    - 클라이언트에서 CORS (크로스-원본 자원 공유)을 지원 합니다. 클라이언트에 CORS는 지원 세부 정보를 참조 하십시오. [caniuse.com에 CORS](http://www.caniuse.com/CORS)합니다.
-    - 클라이언트에서 WebSocket을 지원합니다.
-    - 서버에서 WebSocket을 지원합니다.
+   - 클라이언트에서 CORS (크로스-원본 자원 공유)을 지원 합니다. 클라이언트에 CORS는 지원 세부 정보를 참조 하십시오. [caniuse.com에 CORS](http://www.caniuse.com/CORS)합니다.
+   - 클라이언트에서 WebSocket을 지원합니다.
+   - 서버에서 WebSocket을 지원합니다.
 
-    이러한 조건 중 하나라도 충족 되지 않는 긴 폴링을 사용 됩니다. 도메인 간 연결에 대 한 자세한 내용은 참조 하십시오. [도메인 간 연결을 설정 하는 방법을](../guide-to-the-api/hubs-api-guide-javascript-client.md#crossdomain)합니다.
+     이러한 조건 중 하나라도 충족 되지 않는 긴 폴링을 사용 됩니다. 도메인 간 연결에 대 한 자세한 내용은 참조 하십시오. [도메인 간 연결을 설정 하는 방법을](../guide-to-the-api/hubs-api-guide-javascript-client.md#crossdomain)합니다.
 4. JSONP 구성 되지 않은 경우 연결이 도메인 간 클라이언트와 서버 모두에서 지 원하는 경우 WebSocket 사용 됩니다.
 5. 클라이언트 또는 서버에는 WebSocket을 지원 하지 않는, 사용 가능한 경우 서버 전송 이벤트 사용 됩니다.
 6. 이벤트를 전송 하는 서버를 사용할 수 없는 프레임 계속 시도 됩니다.

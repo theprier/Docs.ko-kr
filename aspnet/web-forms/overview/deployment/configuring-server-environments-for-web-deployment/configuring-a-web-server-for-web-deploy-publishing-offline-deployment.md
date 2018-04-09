@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment
-title: "게시 (오프 라인 배포의 경우)를 배포할 웹에 대 한 웹 서버를 구성 | Microsoft Docs"
+title: 게시 (오프 라인 배포의 경우)를 배포할 웹에 대 한 웹 서버를 구성 | Microsoft Docs
 author: jrjlee
-description: "이 항목에서는 오프 라인 웹 게시 및 배포를 지원 하기 위해 IIS 웹 서버를 구성 하는 방법에 설명 합니다. 인터넷 정보 서비스를 사용할 때 (I...."
+description: 이 항목에서는 오프 라인 웹 게시 및 배포를 지원 하기 위해 IIS 웹 서버를 구성 하는 방법에 설명 합니다. 인터넷 정보 서비스를 사용할 때 (I....
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/04/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: dfd3ab41e44a3b000bf2c25a5a71db4344617bf2
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: e28bdea26847d4e660d6ee59b15eb38f749d2314
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="configuring-a-web-server-for-web-deploy-publishing-offline-deployment"></a>웹 배포 게시 (오프 라인 배포의 경우)에 대 한 웹 서버를 구성 합니다.
 ====================
@@ -35,7 +35,7 @@ ms.lasthandoff: 03/15/2018
 > 주요 기능, 이점 및 이러한 방법의 단점에 대 한 자세한 내용은 참조 하십시오. [웹 배포에 대 한 오른쪽 접근 방식을 선택](choosing-the-right-approach-to-web-deployment.md)합니다.
 
 
-예, 네트워크 인프라 또는 보안 제한을 원격 배포가 진행 되지 않습니다. 이 인터넷 연결 프로덕션 환경에서는 웹 서버는 격리 된 & #x 2014;에서 일어날 가능성이 가장 높은 중 물리적으로 또는 방화벽 및 서브넷 & #x 2014; 하 여 서버 인프라의 나머지 부분과에서 합니다.
+예, 네트워크 인프라 또는 보안 제한을 원격 배포가 진행 되지 않습니다. 이 웹 서버는 격리 된 인터넷 연결 프로덕션 환경에서 일어날 가능성이 가장 높은&#x2014;중 물리적으로 또는 하 여 방화벽 및 서브넷&#x2014;서버 인프라의 나머지 부분과에서 합니다.
 
 물론,이 방법은 바람직하지 웹 응용 프로그램을 정기적으로 업데이트 됩니다. 인프라에서 허용 하는 경우 하려는 원격 배포를 사용 하도록 설정 하는 것이 좋습니다. 웹 배포 처리기 또는 웹 배포 원격 에이전트 서비스가 사용 하 여 합니다.
 
@@ -97,7 +97,7 @@ ms.lasthandoff: 03/15/2018
 7. 탐색 창에서 클릭 **서버**합니다.
 8. 에 **IIS 7 권장 구성** 행에서 클릭 **추가**합니다.
 9. 에 **웹 배포 도구 2.1** 행에서 클릭 **추가**합니다.
-10. **설치**를 클릭합니다. 웹 플랫폼 설치 관리자를 설치할 모든 관련 된 종속성 & #x 2014; 함께; 제품 & #x 2014의 목록이 표시 됩니다 및 사용 조건에 동의 하 라는 메시지가 나타납니다.
+10. **설치**를 클릭합니다. 웹 플랫폼 설치 관리자는 제품의 목록을 표시&#x2014;하 나와 함께 연결 된 종속성&#x2014;를 설치 및 사용 조건에 동의 하 라는 메시지가 나타납니다.
 
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image2.png)
 11. 라이선스 조건을 검토 하 고 사용자가 약관에 동의 하는 경우 클릭 **동의**합니다.
@@ -160,7 +160,7 @@ IIS를 설치 하기 전에.NET Framework 4.0을 설치한 경우 실행 해야 
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image6.png)
 
     > [!NOTE]
-    > 첫 번째 사이트 바인딩을 사용 하면 IP 주소와 포트를 사용 하 여 로컬로 사이트에 액세스할 수 있습니다 또는 `http://localhost:85`합니다. 두 번째 사이트 바인딩을 사용 하면 컴퓨터 이름 (예를 들어 http://proweb1:85)를 사용 하 여 도메인의 다른 컴퓨터에서 사이트에 액세스할 수 있습니다.
+    > 첫 번째 사이트 바인딩을 사용 하면 IP 주소와 포트를 사용 하 여 로컬로 사이트에 액세스할 수 있습니다 또는 `http://localhost:85`합니다. 두 번째 사이트 바인딩을 사용 하면 컴퓨터 이름을 사용 하 여 도메인의 다른 컴퓨터에서 사이트에 액세스할 수 있습니다 (예를 들어 http://proweb1:85)합니다.
 13. 에 **사이트 바인딩** 대화 상자를 클릭 **닫기**합니다.
 14. 에 **연결** 창에서 클릭 **응용 프로그램 풀**합니다.
 15. 에 **응용 프로그램 풀** 창, 응용 프로그램 풀의 이름을 마우스 오른쪽 단추로 클릭 하 고 클릭 **기본 설정**합니다. 기본적으로 응용 프로그램 풀의 이름에는 웹 사이트의 이름과 일치 합니다 (예를 들어 **DemoSite**).
@@ -171,11 +171,11 @@ IIS를 설치 하기 전에.NET Framework 4.0을 설치한 경우 실행 해야 
     > [!NOTE]
     > 샘플 솔루션에는.NET Framework 4.0 필요합니다. 이것이 웹 배포에 대 한 요구 사항은 일반적입니다.
 
-콘텐츠를 제공 하도록 웹 사이트를 응용 프로그램 풀 id는 콘텐츠를 저장 하는 로컬 폴더에 대 한 권한이 읽기 있어야 합니다. IIS 7.5에서 응용 프로그램 풀은 일반적으로 실행 위치는 네트워크 서비스 계정을 사용 하 여 IIS의 이전 버전) (달리 기본적으로 응용 프로그램 풀 고유한 응용 프로그램 풀 id로 실행 합니다. 응용 프로그램 풀 id가 실제 사용자 계정이 아닌 및 사용자 또는 그룹 & #x 2014의 모든 목록에 표시 되지 않습니다; 대신 만들어졌을 동적으로 응용 프로그램 풀을 시작할 때 각 응용 프로그램 풀 id는 로컬에 추가 됩니다 **IIS\_IUSRS** 숨겨진된 항목으로 보안 그룹입니다.
+콘텐츠를 제공 하도록 웹 사이트를 응용 프로그램 풀 id는 콘텐츠를 저장 하는 로컬 폴더에 대 한 권한이 읽기 있어야 합니다. IIS 7.5에서 응용 프로그램 풀은 일반적으로 실행 위치는 네트워크 서비스 계정을 사용 하 여 IIS의 이전 버전) (달리 기본적으로 응용 프로그램 풀 고유한 응용 프로그램 풀 id로 실행 합니다. 응용 프로그램 풀 id 실제 사용자 계정이 고 사용자 또는 그룹의 모든 목록에 표시 되지 않는&#x2014;대신 만들어졌을 동적으로 응용 프로그램 풀을 시작할 때입니다. 각 응용 프로그램 풀 id는 로컬에 추가 됩니다 **IIS\_IUSRS** 숨겨진된 항목으로 보안 그룹입니다.
 
 를 파일이 나 폴더에 응용 프로그램 풀 id에 대 한 권한을 부여 하는 두 가지 옵션이 있습니다.
 
-- 에 사용 권한을 할당 응용 프로그램 풀 id를 직접 형식을 사용 하 여 **IIS AppPool\***[응용 프로그램 풀 이름] * (예를 들어 **IIS AppPool\DemoSite**).
+- 에 사용 권한을 할당 응용 프로그램 풀 id를 직접 형식을 사용 하 여 <strong>IIS AppPool\<강력한 / ><em>[응용 프로그램 풀 이름]</em>(예를 들어 <strong>IIS AppPool\DemoSite</strong>).
 - 권한 할당의 **IIS\_IUSRS** 그룹입니다.
 
 로컬에 사용 권한을 할당 하는 가장 일반적인 방법입니다 **IIS\_IUSRS** 그룹화 하므로이 방법을 사용 하면 파일 시스템 사용 권한 다시 구성 하지 않고 응용 프로그램 풀을 변경할 수 있습니다. 다음 절차에는이 그룹 기반 접근 방식을 사용 합니다.
@@ -193,8 +193,8 @@ IIS를 설치 하기 전에.NET Framework 4.0을 설치한 경우 실행 해야 
 
     ![](configuring-a-web-server-for-web-deploy-publishing-offline-deployment/_static/image8.png)
 5. 에 **사용자 또는 그룹 선택** 대화 상자에서 **IIS\_IUSRS**, 클릭 **이름 확인**, 클릭 하 고 **확인**합니다.
-6. 에 **에 대 한 권한을 * * * [폴더 이름]* 대화 상자, 새 그룹에 할당 된 통지는 **읽기 &amp; 실행**, **폴더 내용 보기**, 및 **읽기** 권한은 기본적으로 합니다. 이 변경 되지 않은 상태로 두고 클릭 **확인**합니다.
-7. 클릭 **확인** 를 닫으려면는 *[폴더 이름] * * * 속성** 대화 상자.
+6. 에 <strong>에 대 한 권한을</strong><em>[폴더 이름]</em> 대화 상자, 새 그룹에 할당 된 통지는 <strong>읽기 &amp; 실행</strong>, <strong>폴더 목록 내용을</strong>, 및 <strong>읽기</strong> 권한은 기본적으로 합니다. 이 변경 되지 않은 상태로 두고 클릭 <strong>확인</strong>합니다.
+7. 클릭 <strong>확인</strong> 를 닫으려면는 <em>[폴더 이름]</em><strong>속성</strong> 대화 상자.
 
 ## <a name="disable-the-remote-agent-service"></a>원격 에이전트 서비스를 사용 하지 않도록 설정
 
@@ -226,6 +226,6 @@ IIS를 설치 하기 전에.NET Framework 4.0을 설치한 경우 실행 해야 
 - 응용 프로그램 풀 id가 읽기 권한을 웹 사이트에 대 한 원본 폴더에 있습니까?
 - 웹 배포 에이전트 서비스를 중지 하면?
 
->[!div class="step-by-step"]
-[이전](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler.md)
-[다음](configuring-a-database-server-for-web-deploy-publishing.md)
+> [!div class="step-by-step"]
+> [이전](configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler.md)
+> [다음](configuring-a-database-server-for-web-deploy-publishing.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb
-title: "선택 가능한 마스터 GridView 세부 정보 DetailView (VB)를 사용 하 여 마스터/세부 | Microsoft Docs"
+title: 선택 가능한 마스터 GridView 세부 정보 DetailView (VB)를 사용 하 여 마스터/세부 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서는 GridView 행이 있는 이름과 선택 단추와 함께 각 제품의 가격을 포함 해야 합니다. particu에 대 한 선택 단추를 클릭 하면..."
+description: 이 자습서는 GridView 행이 있는 이름과 선택 단추와 함께 각 제품의 가격을 포함 해야 합니다. particu에 대 한 선택 단추를 클릭 하면...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: eae9c07eff7780aab18346815ca410d687789d17
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 80db1589de901f7364c05c5bb67829145579b6c0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="masterdetail-using-a-selectable-master-gridview-with-a-details-detailview-vb"></a>마스터/세부 정보 DetailView (VB)는 선택 가능한 마스터 GridView 사용
 ====================
@@ -131,12 +131,12 @@ GridView에 대 한 최종 태그는입니다.
 **그림 9**: 호출 된 `ProductsBLL` 클래스의 `GetProductByProductID(productID)` 메서드 ([전체 크기 이미지를 보려면 클릭](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image27.png))
 
 
-있어야는  *`productID`*  GridView 컨트롤에서 가져온 매개 변수 값 `SelectedValue` 속성입니다. GridView의 앞에서 설명한 대로 `SelectedValue` 속성 첫 번째 데이터 키 선택된 된 행에 대 한 값을 반환 합니다. 따라서를 반드시 하는 GridView의 `DataKeyNames` 속성이 `ProductID`되도록 선택한 행의 `ProductID` 반환한 값 `SelectedValue`합니다.
+있어야는 *`productID`* GridView 컨트롤에서 가져온 매개 변수 값 `SelectedValue` 속성입니다. GridView의 앞에서 설명한 대로 `SelectedValue` 속성 첫 번째 데이터 키 선택된 된 행에 대 한 값을 반환 합니다. 따라서를 반드시 하는 GridView의 `DataKeyNames` 속성이 `ProductID`되도록 선택한 행의 `ProductID` 반환한 값 `SelectedValue`합니다.
 
 
 [![GridView의 SelectedValue 속성에는 productID 매개 변수 설정](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image29.png)](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image28.png)
 
-**그림 10**: 설정의  *`productID`*  매개 변수를 GridView의 `SelectedValue` 속성 ([전체 크기 이미지를 보려면 클릭](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image30.png))
+**그림 10**: 설정의 *`productID`* 매개 변수를 GridView의 `SelectedValue` 속성 ([전체 크기 이미지를 보려면 클릭](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb/_static/image30.png))
 
 
 한 번의 `productDetailsDataSource` 이 자습서를 완료, ObjectDataSource 올바르게 구성 되었으며 DetailsView에 바인딩된! 해당 페이지를 처음 방문 하는 경우 선택한 행, 하므로 GridView의 `SelectedValue` 속성에서 반환 `Nothing`합니다. 없는 제품을 되므로 `NULL` `ProductID` 값에서 반환 된 레코드가 없습니다는 `GetProductByProductID(productID)` DetailsView 표시 되지 않으면 의미 메서드 (11 그림 참조). GridView 행의 선택 단추를 클릭 하면 계속 다시 게시 하 고 DetailsView 새로 고쳐집니다. GridView의 이번 `SelectedValue` 속성에서 반환은 `ProductID` 선택한 행의는 `GetProductByProductID(productID)` 메서드가 반환 되는 `ProductsDataTable` 해당 특정 제품 및 DetailsView에 대 한 정보로 이러한 세부 정보를 표시 합니다 (그림 12 참조).
@@ -162,11 +162,11 @@ GridView에 대 한 최종 태그는입니다.
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Hilton Giesenow 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](master-detail-filtering-across-two-pages-vb.md)
+> [!div class="step-by-step"]
+> [이전](master-detail-filtering-across-two-pages-vb.md)

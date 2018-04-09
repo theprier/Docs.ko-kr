@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/membership/creating-user-accounts-vb
-title: "사용자 계정 (VB) 만들기 | Microsoft Docs"
+title: 사용자 계정 (VB) 만들기 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에서는 살펴볼 것입니다 (SqlMembershipProvider)를 통해 멤버 자격이 프레임 워크를 사용 하 여 새 사용자 계정을 만들 수 있습니다. 주세요. 새로 만드는 방법에 확인해 보겠습니다."
+description: 이 자습서에서는 살펴볼 것입니다 (SqlMembershipProvider)를 통해 멤버 자격이 프레임 워크를 사용 하 여 새 사용자 계정을 만들 수 있습니다. 주세요. 새로 만드는 방법에 확인해 보겠습니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/18/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/creating-user-accounts-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 61621ffaae98ac74c16b2ff014ba9d85c2c10b3a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: d665e7ba43401da76a88a904c10a587aa4576d4b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-user-accounts-vb"></a>사용자 계정 (VB) 만들기
 ====================
@@ -31,7 +31,7 @@ ms.lasthandoff: 01/24/2018
 
 에 <a id="_msoanchor_1"> </a> [이전 자습서](creating-the-membership-schema-in-sql-server-vb.md) 테이블, 뷰, 추가 하 고 저장 프로시저에서 필요로 하는 데이터베이스에 응용 프로그램 서비스 스키마를 설치 했습니다는 `SqlMembershipProvider` 및 `SqlRoleProvider`합니다. 이이 시리즈의 자습서의 나머지 부분에 대 한 필요한 인프라를 생성 합니다. 이 자습서에서는 살펴볼 것 구성원 프레임 워크를 사용 하 여 (통해는 `SqlMembershipProvider`) 새 사용자 계정을 만들 수 있습니다. 프로그래밍 방식으로 및 ASP을 통해 새 사용자를 만드는 방법을 살펴봅니다. NET의 기본 제공 CreateUserWizard 컨트롤입니다.
 
-새 사용자 계정을 만드는 방법을 학습 하는 것 외에도 처음에 만든 데모 웹 사이트를 업데이트 해야 또한 됩니다는  *<a id="_msoanchor_2"> </a> [폼 인증의 개요는](../introduction/an-overview-of-forms-authentication-vb.md)*  자습서 및 다음에 향상 된는  *<a id="_msoanchor_3"> </a> [폼 인증 구성 및 고급 항목](../introduction/forms-authentication-configuration-and-advanced-topics-vb.md)*  자습서입니다. 데모 웹 응용 프로그램에 하드 코드 된 사용자 이름/암호 쌍에 대 한 사용자의 자격 증명의 유효성을 검사 하는 로그인 페이지를 있습니다. 또한 `Global.asax` 만드는 사용자 지정 코드를 포함 `IPrincipal` 및 `IIdentity` 인증 된 사용자에 대 한 개체입니다. 멤버 자격 framework에 대 한 사용자의 자격 증명의 유효성을 검사 하 고 사용자 지정 보안 주체 및 id 논리를 제거 하는 로그인 페이지를 업데이트 됩니다.
+새 사용자 계정을 만드는 방법을 학습 하는 것 외에도 처음에 만든 데모 웹 사이트를 업데이트 해야 또한 됩니다는 *<a id="_msoanchor_2"> </a> [폼 인증의 개요는](../introduction/an-overview-of-forms-authentication-vb.md)* 자습서 및 다음에 향상 된는 *<a id="_msoanchor_3"> </a> [폼 인증 구성 및 고급 항목](../introduction/forms-authentication-configuration-and-advanced-topics-vb.md)* 자습서입니다. 데모 웹 응용 프로그램에 하드 코드 된 사용자 이름/암호 쌍에 대 한 사용자의 자격 증명의 유효성을 검사 하는 로그인 페이지를 있습니다. 또한 `Global.asax` 만드는 사용자 지정 코드를 포함 `IPrincipal` 및 `IIdentity` 인증 된 사용자에 대 한 개체입니다. 멤버 자격 framework에 대 한 사용자의 자격 증명의 유효성을 검사 하 고 사용자 지정 보안 주체 및 id 논리를 제거 하는 로그인 페이지를 업데이트 됩니다.
 
 이제 시작 하겠습니다.
 
@@ -40,7 +40,7 @@ ms.lasthandoff: 01/24/2018
 멤버 자격 프레임 워크와 작업을 시작 하기 전에이 시점까지 이동 하는 중요 한 단계를 검토 하려면 잠시 하겠습니다. 멤버 자격 framework를 사용 하는 경우는 `SqlMembershipProvider` 폼 기반 인증 시나리오에서는 다음 단계에서 웹 응용 프로그램 멤버 자격 기능을 구현 하기 전에 수행 해야 합니다.
 
 1. **폼 기반 인증을 사용 하도록 설정 합니다.** 설명한 것 처럼  *<a id="_msoanchor_4"> </a> [폼 인증의 개요는](../introduction/an-overview-of-forms-authentication-vb.md)*, 편집 하 여 폼 인증을 사용 하는 `Web.config` 설정는 `<authentication>` 요소의 `mode` 특성을 `Forms`합니다. 폼 인증 사용을 들어오는 각 요청을 검사 하는 *폼 인증 티켓*, 있는 경우 식별 하는 요청 자가 있습니다.
-2. **해당 데이터베이스에 응용 프로그램 서비스 스키마를 추가 합니다.** 사용 하는 경우는 `SqlMembershipProvider` 데이터베이스에 응용 프로그램 서비스 스키마를 설치 해야 합니다. 일반적으로이 스키마는 응용 프로그램의 데이터 모델을 보유 하는 동일한 데이터베이스에 추가 됩니다. *<a id="_msoanchor_5"> </a> [SQL Server에서 멤버 자격 스키마 만들기](creating-the-membership-schema-in-sql-server-vb.md)*  자습서를 사용 하 여에 검토는 `aspnet_regsql.exe` 이를 위해 도구입니다.
+2. **해당 데이터베이스에 응용 프로그램 서비스 스키마를 추가 합니다.** 사용 하는 경우는 `SqlMembershipProvider` 데이터베이스에 응용 프로그램 서비스 스키마를 설치 해야 합니다. 일반적으로이 스키마는 응용 프로그램의 데이터 모델을 보유 하는 동일한 데이터베이스에 추가 됩니다. *<a id="_msoanchor_5"> </a> [SQL Server에서 멤버 자격 스키마 만들기](creating-the-membership-schema-in-sql-server-vb.md)* 자습서를 사용 하 여에 검토는 `aspnet_regsql.exe` 이를 위해 도구입니다.
 3. **2 단계에서 데이터베이스를 참조 하는 웹 응용 프로그램의 설정을 사용자 지정 합니다.** *SQL Server에서 멤버 자격 스키마 만들기* 자습서 웹 응용 프로그램을 구성 하는 두 가지 방법을 보여 주었습니다 있도록는 `SqlMembershipProvider` 2 단계에서 선택한 데이터베이스를 사용 합니다: 수정 하 여는 `LocalSqlServer` 연결 문자열 이름입니다. 또는 프레임 워크 멤버 자격 공급자의 목록에 새 등록 된 공급자를 추가 하는 새 공급자에서 데이터베이스를 사용 하도록 사용자 지정 하 여 2 단계.
 
 사용 하는 웹 응용 프로그램을 빌드할 경우는 `SqlMembershipProvider` 폼 기반 인증을 해야 합니다를 사용 하기 전에 이러한 세 단계를 수행 하 고는 `Membership` 클래스 또는 ASP.NET 로그인 웹 컨트롤입니다. 이전 자습서의 다음이 단계를 이미 수행한 म 이후 준비가 구성원 프레임 워크를 사용 하 여 시작!
@@ -69,7 +69,7 @@ ms.lasthandoff: 01/24/2018
 
 [!code-aspx[Main](creating-user-accounts-vb/samples/sample1.aspx)]
 
-이전에 설명한 대로 `LoginContent` ContentPlaceHolder의 기본 태그 로그온 하거나 로그 오프 사용자가 인증 되는지 여부에 따라 사이트에 대 한 링크를 표시 합니다. 그러나 존재는 `Content2` 콘텐츠 컨트롤에 마스터 페이지의 기본 태그 보다 우선 합니다. 설명한 것 처럼  *<a id="_msoanchor_6"> </a> [폼 인증의 개요는](../introduction/an-overview-of-forms-authentication-vb.md)*  자습서에서는이 여기서 म 하지 않으려는 왼쪽된 열에 표시 되는 로그인 관련 옵션 페이지에 유용 합니다.
+이전에 설명한 대로 `LoginContent` ContentPlaceHolder의 기본 태그 로그온 하거나 로그 오프 사용자가 인증 되는지 여부에 따라 사이트에 대 한 링크를 표시 합니다. 그러나 존재는 `Content2` 콘텐츠 컨트롤에 마스터 페이지의 기본 태그 보다 우선 합니다. 설명한 것 처럼 *<a id="_msoanchor_6"> </a> [폼 인증의 개요는](../introduction/an-overview-of-forms-authentication-vb.md)* 자습서에서는이 여기서 म 하지 않으려는 왼쪽된 열에 표시 되는 로그인 관련 옵션 페이지에 유용 합니다.
 
 그러나 이러한 5 개 페이지에 대 한 표시 하려고에 대 한 마스터 페이지의 기본 태그는 `LoginContent` ContentPlaceHolder 합니다. 따라서 태그에 대 한 선언적 태그를 제거는 `Content2` 콘텐츠 컨트롤을 합니다. 이렇게 한 다음 5 개 페이지의 태그의 각 콘텐츠 컨트롤을 한 개만 있어야 합니다.
 
@@ -107,7 +107,7 @@ XML 사이트 맵 파일을 계층으로 웹 사이트의 구조를 정의합니
 
 ASP.NET에는 여러 사용자 인터페이스 디자인에 대 한 탐색 관련 웹 컨트롤이 포함 되어 있습니다. 여기에 메뉴, TreeView SiteMapPath 컨트롤 포함 됩니다. 메뉴 및 TreeView 컨트롤이 SiteMapPath 상위 뿐만 아니라 방문 되 고 현재 노드가 표시 된 이동 경로 표시 합니다. 사이트 맵 구조는 트리 또는 메뉴에 각각 렌더링 합니다. 사이트 맵 데이터 웹 컨트롤은 SiteMapDataSource를 사용 하 여 다른 데이터에 바인딩될 수 있으며를 통해 프로그래밍 방식으로 액세스할 수는 `SiteMap` 클래스입니다.
 
-이 자습서 시리즈의 범위를 벗어나는 대 한 자세한 설명은 사이트 맵 프레임 워크 및 탐색 컨트롤 이므로 대신 보겠습니다 고유한 탐색 사용자 인터페이스를 만들어 시간 보다 대신 빌릴 사용 되는 내  *[ ASP.NET 2.0에서 데이터 작업](../../data-access/index.md)*  그림 4에 나와 있는 것 처럼 두 심층 글머리 기호 목록이 탐색 링크를 표시 하려면 반복기 컨트롤을 사용 하는 자습서 시리즈 합니다.
+이 자습서 시리즈의 범위를 벗어나는 대 한 자세한 설명은 사이트 맵 프레임 워크 및 탐색 컨트롤 이므로 대신 보겠습니다 고유한 탐색 사용자 인터페이스를 만들어 시간 보다 대신 빌릴 사용 되는 내 *[ ASP.NET 2.0에서 데이터 작업](../../data-access/index.md)* 그림 4에 나와 있는 것 처럼 두 심층 글머리 기호 목록이 탐색 링크를 표시 하려면 반복기 컨트롤을 사용 하는 자습서 시리즈 합니다.
 
 ### <a name="adding-a-two-level-list-of-links-in-the-left-column"></a>왼쪽된 열에 대 한 링크 목록이 두 수준의 추가
 
@@ -143,7 +143,7 @@ ASP.NET에는 여러 사용자 인터페이스 디자인에 대 한 탐색 관�
 
 ## <a name="step-4-removing-the-custom-principal-and-identity-logic"></a>4 단계: 사용자 지정 보안 주체 및 Id 논리를 제거합니다.
 
-에  *<a id="_msoanchor_7"> </a> [폼 인증 구성 및 고급 항목](../introduction/forms-authentication-configuration-and-advanced-topics-vb.md)*  자습서 인증된 된 사용자에 사용자 지정 보안 주체 및 identity 개체를 연결 하는 방법에 살펴보았습니다. 이벤트 처리기를 만들어이 작업을 수행 했습니다 `Global.asax` 응용 프로그램에 대 한 `PostAuthenticateRequest` 후 발생 하는 이벤트는 `FormsAuthenticationModule` 사용자를 인증 합니다. 이 이벤트 처리기에서 교체는 `GenericPrincipal` 및 `FormsIdentity` 하 여 추가 된 개체는 `FormsAuthenticationModule` 와 `CustomPrincipal` 및 `CustomIdentity` 해당 자습서에서 만든 개체입니다.
+에 *<a id="_msoanchor_7"> </a> [폼 인증 구성 및 고급 항목](../introduction/forms-authentication-configuration-and-advanced-topics-vb.md)* 자습서 인증된 된 사용자에 사용자 지정 보안 주체 및 identity 개체를 연결 하는 방법에 살펴보았습니다. 이벤트 처리기를 만들어이 작업을 수행 했습니다 `Global.asax` 응용 프로그램에 대 한 `PostAuthenticateRequest` 후 발생 하는 이벤트는 `FormsAuthenticationModule` 사용자를 인증 합니다. 이 이벤트 처리기에서 교체는 `GenericPrincipal` 및 `FormsIdentity` 하 여 추가 된 개체는 `FormsAuthenticationModule` 와 `CustomPrincipal` 및 `CustomIdentity` 해당 자습서에서 만든 개체입니다.
 
 사용자 지정 보안 주체 및 identity 개체는 대부분의 경우에서 특정 시나리오에서 유용는 `GenericPrincipal` 및 `FormsIdentity` 개체는 충분 합니다. 따라서 기본 동작으로 되돌립니다 많은 도움이 될 것 생각 됩니다. 이 변경 내용을 제거 하거나 주석으로 처리 여는 `PostAuthenticateRequest` 이벤트 처리기 또는 삭제 하 여는 `Global.asax` 완전히 합니다.
 
@@ -164,17 +164,17 @@ ASP.NET에는 여러 사용자 인터페이스 디자인에 대 한 탐색 관�
 
 이러한 4 개의 오버 로드에 수집 되는 정보의 양을 마다 다릅니다. 첫 번째 오버 로드 예를 들어이 필요 사용자 이름 및 암호는 새 사용자 계정에 대 한 하지만 두 번째 식에도 사용자의 전자 메일 주소가 필요 합니다.
 
-이러한 오버 로드에는 새 사용자 계정을 만드는 데 필요한 정보 멤버 자격 공급자의 구성 설정에 따라 다르기 때문에 존재 합니다. 에  *<a id="_msoanchor_8"> </a> [SQL Server에서 멤버 자격 스키마 만들기](creating-the-membership-schema-in-sql-server-vb.md)*  자습서의 멤버 자격 공급자 구성 설정 지정을 검사 했습니다 `Web.config`합니다. 표 2는 구성 설정의 전체 목록을 포함 합니다.
+이러한 오버 로드에는 새 사용자 계정을 만드는 데 필요한 정보 멤버 자격 공급자의 구성 설정에 따라 다르기 때문에 존재 합니다. 에 *<a id="_msoanchor_8"> </a> [SQL Server에서 멤버 자격 스키마 만들기](creating-the-membership-schema-in-sql-server-vb.md)* 자습서의 멤버 자격 공급자 구성 설정 지정을 검사 했습니다 `Web.config`합니다. 표 2는 구성 설정의 전체 목록을 포함 합니다.
 
 설정 하는 이러한 한 멤버 자격 공급자 구성에 어떤 영향을 줍니다 `CreateUser` 오버 로드를 사용할 수 있습니다.이 `requiresQuestionAndAnswer` 설정 합니다. 경우 `requiresQuestionAndAnswer` 로 설정 된 `true` (기본값), 새 사용자 계정을 만들 때 보안 질문 및 대답 지정 해야 합니다. 이 정보는 해당 암호를 다시 설정 하거나 변경 해야 하는 경우 나중에 사용 됩니다. 특히, 당시에는 표시 된 보안 질문을 재설정 하거나 암호를 변경 하기 위해 올바른 답을 입력 해야 합니다. 따라서 경우는 `requiresQuestionAndAnswer` 로 설정 된 `true` 처음 두 가지 중 하나를 호출 하는 다음 `CreateUser` 보안 질문 및 대답 누락 되어 예외가 발생 하는 오버 로드 합니다. 응용 프로그램은 현재 보안 질문과 대답을 요구 하도록 구성 된 사용자의 프로그래밍 방식으로 만들 때 두 번째 오버 로드 중 하나를 사용 해야 합니다.
 
 사용 하 여 설명 하기 위해는 `CreateUser` 메서드를 사용자에 게 이름, 암호, 전자 메일 및 미리 정의 된 보안 질문에 대 한 답변을 확인 했습니다 사용자 인터페이스를 만들어 보겠습니다. 열기는 `CreatingUserAccounts.aspx` 페이지에 `Membership` 폴더 콘텐츠 컨트롤을 다음 웹 컨트롤을 추가:
 
-- 명명 된 TextBox`Username`
-- 명명 된 TextBox `Password`, 해당 `TextMode` 속성`Password`
-- 명명 된 TextBox`Email`
+- 명명 된 TextBox `Username`
+- 명명 된 TextBox `Password`, 해당 `TextMode` 속성 `Password`
+- 명명 된 TextBox `Email`
 - 이라는 레이블이 `SecurityQuestion` 와 해당 `Text` 속성 삭제
-- 명명 된 TextBox`SecurityAnswer`
+- 명명 된 TextBox `SecurityAnswer`
 - 이라는 단추 `CreateAccountButton` 인 `Text` 속성을 사용자 계정 만들기로 설정
 - 명명 된 Label 컨트롤 `CreateAccountResults` 와 해당 `Text` 속성 삭제
 
@@ -196,7 +196,7 @@ ASP.NET에는 여러 사용자 인터페이스 디자인에 대 한 탐색 관�
 
 [!code-vb[Main](creating-user-accounts-vb/samples/sample6.vb)]
 
-`Click` 이벤트 처리기 라는 변수를 정의 하 여 시작 `createStatus` 형식의 [ `MembershipCreateStatus` ](https://msdn.microsoft.com/library/system.web.security.membershipcreatestatus.aspx)합니다. `MembershipCreateStatus`상태를 표시 하는 열거형은 `CreateUser` 작업 합니다. 예를 들어, 결과로 생성 된 사용자 계정이 성공적으로 생성 하는 경우 `MembershipCreateStatus` 인스턴스 값으로 설정 됩니다 `Success;` 반면에 동일한 사용자 이름 가진 사용자 이미 있으므로 작업이 실패 하는 경우 설정 됩니다 의값으로`DuplicateUserName`. 에 `CreateUser` 를 전달 해야 오버 로드를 사용 하 여는 `MembershipCreateStatus` 메서드에 인스턴스. 이 매개 변수 내에서 적절 한 값으로 설정 되는 `CreateUser` 메서드와에서는 메서드 호출에 사용자 계정을 성공적으로 만들어졌는지 여부를 확인 한 후 해당 값을 검사할 수 있습니다.
+`Click` 이벤트 처리기 라는 변수를 정의 하 여 시작 `createStatus` 형식의 [ `MembershipCreateStatus` ](https://msdn.microsoft.com/library/system.web.security.membershipcreatestatus.aspx)합니다. `MembershipCreateStatus` 상태를 표시 하는 열거형은 `CreateUser` 작업 합니다. 예를 들어, 결과로 생성 된 사용자 계정이 성공적으로 생성 하는 경우 `MembershipCreateStatus` 인스턴스 값으로 설정 됩니다 `Success;` 반면에 동일한 사용자 이름 가진 사용자 이미 있으므로 작업이 실패 하는 경우 설정 됩니다 의값으로`DuplicateUserName`. 에 `CreateUser` 를 전달 해야 오버 로드를 사용 하 여는 `MembershipCreateStatus` 메서드에 인스턴스. 이 매개 변수 내에서 적절 한 값으로 설정 되는 `CreateUser` 메서드와에서는 메서드 호출에 사용자 계정을 성공적으로 만들어졌는지 여부를 확인 한 후 해당 값을 검사할 수 있습니다.
 
 호출한 후 `CreateUser`을 전달 `createStatus`, `Select Case` 문을 사용 하는 적절 한 메시지에 할당 된 값에 따라 출력를 `createStatus`합니다. 그림 7에서는 새 사용자를 성공적으로 생성 되 면 출력을 보여 줍니다. 그림 8과 9에는 사용자 계정이 만들어지지 않은 경우 출력을 보여 줍니다. 그림 8 방문자 멤버 자격 공급자 구성 설정에 암호 강도 요구 사항을 충족 하지 않는 5 못 암호를 입력 합니다. 그림 9, 방문자를 기존 사용자 이름 (그림 7에서 만들어진 것) 있는 사용자 계정을 생성할 하려고 합니다.
 
@@ -231,7 +231,7 @@ ASP.NET에는 여러 사용자 인터페이스 디자인에 대 한 탐색 관�
 멤버 자격 사용자 저장소에서 이제 1 세 및 Tito의 계정 정보를 포함 하는 동안 아직 1 세 또는 Tito 사이트에 로그온 할 수 있는 기능을 구현 합니다. 현재 `Login.aspx` 사용자의 자격 증명의 유효성을 검사는 사용자 이름/암호 쌍-의 하드 코드 된 집합에 대해 *하지* 구성원 프레임 워크에 대해 제공된 된 자격 증명의 유효성을 검사 합니다. 이제 새 사용자 계정에 확인 하는 데는 `aspnet_Users` 및 `aspnet_Membership` 테이블 충분 해야 합니다. 다음 자습서에서는  *<a id="_msoanchor_9"> </a> [유효성 검사 사용자 자격 증명에 대해의 멤버 자격 사용자 저장할](validating-user-credentials-against-the-membership-user-store-vb.md)*, 구성원 저장소에 대 한 유효성을 검사 하는 로그인 페이지 업데이트 됩니다.
 
 > [!NOTE]
-> 모든 사용자가 표시 되지 않으면 프로그램 `SecurityTutorials.mdf` 웹 응용 프로그램은 기본 멤버 자격 공급자를 사용 하 여 때문일 수 있습니다 데이터베이스 `AspNetSqlMembershipProvider`, 사용 하는 `ASPNETDB.mdf` 사용자 저장소로 데이터베이스입니다. 이것이 문제 인지를 확인 하려면 솔루션 탐색기에서 새로 고침 단추를 클릭 합니다. 라는 데이터베이스가 `ASPNETDB.mdf` 에 추가 되었습니다는 `App_Data` 폴더를 이것이 문제가 있습니다. 4 단계로 돌아가서는  *<a id="_msoanchor_10"> </a> [SQL Server에서 멤버 자격 스키마 만들기](creating-the-membership-schema-in-sql-server-vb.md)*  올바르게 멤버 자격 공급자를 구성 하는 방법에 대 한 자습서입니다.
+> 모든 사용자가 표시 되지 않으면 프로그램 `SecurityTutorials.mdf` 웹 응용 프로그램은 기본 멤버 자격 공급자를 사용 하 여 때문일 수 있습니다 데이터베이스 `AspNetSqlMembershipProvider`, 사용 하는 `ASPNETDB.mdf` 사용자 저장소로 데이터베이스입니다. 이것이 문제 인지를 확인 하려면 솔루션 탐색기에서 새로 고침 단추를 클릭 합니다. 라는 데이터베이스가 `ASPNETDB.mdf` 에 추가 되었습니다는 `App_Data` 폴더를 이것이 문제가 있습니다. 4 단계로 돌아가서는 *<a id="_msoanchor_10"> </a> [SQL Server에서 멤버 자격 스키마 만들기](creating-the-membership-schema-in-sql-server-vb.md)* 올바르게 멤버 자격 공급자를 구성 하는 방법에 대 한 자습서입니다.
 
 
 대부분의 시나리오를 만들 사용자 계정, 방문자에 게 자신의 사용자 이름, 암호, 전자 메일, 이때 새 계정을 만든, 기타 중요 한 정보 입력에 대 한 몇 가지 인터페이스 제공 됩니다. 이 단계에서는 이러한 인터페이스를 직접 작성에 검토 하 고 다음 사용 하는 방법을 보여 준다는 사실을 알았습니다는 `Membership.CreateUser` 사용자의 입력을 기반으로 하는 메서드를 프로그래밍 방식으로 새 사용자 계정을 추가 합니다. 그러나 코드, 방금 만든 새 사용자 계정입니다. 모든 후속 방금 만든 사용자 계정에서 사이트에 사용자를 로그인 또는 사용자에 게 확인 전자 메일을 보내는 등의 작업은 수행 하지 못했습니다. 이러한 단계를 더 단추의 추가 코드가 필요 `Click` 이벤트 처리기입니다.
@@ -350,7 +350,7 @@ CreateUserWizard 컨트롤의 워크플로 중 다양을 한 이벤트를 발생
 
 
 > [!NOTE]
-> CreateUserWizard 컨트롤을 사용 하는 예제를 살펴봅니다 `CreatedUser` 이벤트에는  *<a id="_msoanchor_11"> </a> [추가 사용자 정보를 저장](storing-additional-user-information-vb.md)*  자습서입니다.
+> CreateUserWizard 컨트롤을 사용 하는 예제를 살펴봅니다 `CreatedUser` 이벤트에는 *<a id="_msoanchor_11"> </a> [추가 사용자 정보를 저장](storing-additional-user-information-vb.md)* 자습서입니다.
 
 
 ## <a name="summary"></a>요약
@@ -367,7 +367,7 @@ CreateUserWizard 컨트롤의 워크플로 중 다양을 한 이벤트를 발생
 
 이 자습서에 설명 된 항목에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 
-- [`CreateUser`기술 문서](https://msdn.microsoft.com/library/system.web.security.membershipprovider.createuser.aspx)
+- [`CreateUser` 기술 문서](https://msdn.microsoft.com/library/system.web.security.membershipprovider.createuser.aspx)
 - [CreateUserWizard 컨트롤 개요](https://quickstarts.asp.net/QuickStartv20/aspnet/doc/ctrlref/login/createuserwizard.aspx)
 - [파일 시스템 기반 사이트 맵 공급자 만들기](http://aspnet.4guysfromrolla.com/articles/020106-1.aspx)
 - [ASP.NET 2.0 Wizard 컨트롤을 사용 하 여 단계별 사용자 인터페이스 만들기](http://aspnet.4guysfromrolla.com/articles/061406-1.aspx)
@@ -377,12 +377,12 @@ CreateUserWizard 컨트롤의 워크플로 중 다양을 한 이벤트를 발생
 
 ### <a name="about-the-author"></a>작성자 정보
 
-여러 ASP/ASP.NET 책의 작성자 및 4GuysFromRolla.com의 창립자 Scott Mitchell의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은  *[Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*합니다. Scott에 도달할 수 [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) 또는에서 그의 블로그 통해 [http://ScottOnWriting.NET](http://scottonwriting.net/)합니다.
+여러 ASP/ASP.NET 책의 작성자 및 4GuysFromRolla.com의 창립자 Scott Mitchell의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은  *[Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*합니다. Scott에 도달할 수 [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) 또는에서 그의 블로그 통해 [ http://ScottOnWriting.NET ](http://scottonwriting.net/)합니다.
 
 ### <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Teresa 머피의 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4guysfromrolla.com)합니다.
 
->[!div class="step-by-step"]
-[이전](creating-the-membership-schema-in-sql-server-vb.md)
-[다음](validating-user-credentials-against-the-membership-user-store-vb.md)
+> [!div class="step-by-step"]
+> [이전](creating-the-membership-schema-in-sql-server-vb.md)
+> [다음](validating-user-credentials-against-the-membership-user-store-vb.md)

@@ -1,22 +1,22 @@
 ---
 uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/more-patterns-and-guidance
-title: "더 많은 패턴 및 지침 (Azure로 응용 프로그램 빌딩 실제 클라우드) | Microsoft Docs"
+title: 더 많은 패턴 및 지침 (Azure로 응용 프로그램 빌딩 실제 클라우드) | Microsoft Docs
 author: MikeWasson
-description: "실제 세계 클라우드로 응용 프로그램 빌딩 Azure 전자책 Scott Guthrie에서 개발 된 프레젠테이션을 기반으로 합니다. 13 패턴 및 그을 수 있는 방법에 설명..."
+description: 실제 세계 클라우드로 응용 프로그램 빌딩 Azure 전자책 Scott Guthrie에서 개발 된 프레젠테이션을 기반으로 합니다. 13 패턴 및 그을 수 있는 방법에 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2014
 ms.topic: article
 ms.assetid: 7e97cfc3-d830-4002-8ff7-5790d1ff49e6
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/more-patterns-and-guidance
 msc.type: authoredcontent
-ms.openlocfilehash: a388f2e0ca3e1f0ce24a6def2a2b91711a7bf5a7
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 5da5110afc50fa02fcfae551a18741821f18fcbb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="more-patterns-and-guidance-building-real-world-cloud-apps-with-azure"></a>더 많은 패턴 및 지침 (Azure로 응용 프로그램 빌딩 실제 클라우드)
 ====================
@@ -45,7 +45,7 @@ ms.lasthandoff: 01/24/2018
 추가 클라우드 컴퓨팅 패턴 및 참고 자료를 참조 하십시오 [Microsoft Patterns and Practices-Azure 지침](https://msdn.microsoft.com/library/dn568099.aspx)합니다.
 
 <a id="resources"></a>
-## <a name="resources"></a>리소스
+## <a name="resources"></a>자료
 
 각 전자책이 장에 해당 특정 항목에 대 한 자세한 정보에 대 한 리소스에 대 한 링크를 제공합니다. 다음 목록에는 성공적인 클라우드 개발 azure에 대 한 모범 사례 및 권장된 패턴을 간략하게 설명에 대 한 링크를 제공합니다.
 
@@ -78,7 +78,7 @@ ms.lasthandoff: 01/24/2018
 마지막으로, 실제 응용 프로그램을 구축 하 고 Azure에서 실행을 시작 하는 경우 조만간 아마도 해야 전문가의 지원 합니다. 와 같은 커뮤니티 사이트에 질문 요청 [Azure 포럼 또는 StackOverflow](https://azure.microsoft.com/support/forums/), 하거나 Microsoft Azure 지원에 대 한 직접 문의할 수 있습니다. Microsoft는 여러 가지 수준의 Azure 기술 지원 제공: 요약과 옵션 비교에 대 한 참조 [Azure 지원](https://azure.microsoft.com/support/plans/)합니다.
 
 <a id="acknowledgments"></a>
-## <a name="acknowledgments"></a>승인
+## <a name="acknowledgments"></a>감사의 글
 
 이 콘텐츠 Tom Dykstra, Rick Anderson 및 Mike Wasson 썼습니다. 대부분의 원본 콘텐츠 출처 [Scott Guthrie](https://weblogs.asp.net/scottgu/), 그 차례로 그린 자료에는 Microsoft 고객 자문 팀 (CAT) 및 Mark Simms 및 합니다.
 
@@ -132,6 +132,6 @@ DGAC의 다른 멤버 검토 하 고 주석 처리 됨 예비 개요:
 - Roger Whitehead
 - Pawel Wilkosz
 
->[!div class="step-by-step"]
-[이전](queue-centric-work-pattern.md)
-[다음](the-fix-it-sample-application.md)
+> [!div class="step-by-step"]
+> [이전](queue-centric-work-pattern.md)
+> [다음](the-fix-it-sample-application.md)

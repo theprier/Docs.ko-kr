@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/presenting-and-managing-data/model-binding/retrieving-data
-title: "검색 및 사용 하 여 데이터를 표시 합니다. 모델 바인딩 및 web forms | Microsoft Docs"
+title: 검색 및 사용 하 여 데이터를 표시 합니다. 모델 바인딩 및 web forms | Microsoft Docs
 author: tfitzmac
-description: "이 자습서 시리즈 모델 바인딩을 사용 하 여 ASP.NET Web Forms 프로젝트의 기본 사항을 보여 줍니다. 모델 바인딩 데이터 상호 작용 하 게 더 많은 직선-중..."
+description: 이 자습서 시리즈 모델 바인딩을 사용 하 여 ASP.NET Web Forms 프로젝트의 기본 사항을 보여 줍니다. 모델 바인딩 데이터 상호 작용 하 게 더 많은 직선-중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/27/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/retrieving-data
 msc.type: authoredcontent
-ms.openlocfilehash: e750250285fcb0088da284588d721ac21e73820c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 26873efa5dbfdbdab39a52cfb9cfd5a65c8231a3
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="retrieving-and-displaying-data-with-model-binding-and-web-forms"></a>검색 및 모델 바인딩 및 web forms를 사용 하 여 데이터를 표시 합니다.
 ====================
@@ -97,7 +97,7 @@ SchoolContext 클래스는 데이터베이스 연결 및 데이터의 변경 작
 
 Student 클래스에서 특성에 적용 된을 확인는 **FirstName**, **LastName**, 및 **연도** 속성입니다. 이러한 특성은이 자습서의 데이터 유효성 검사에 사용 됩니다. 이 데모 프로젝트에 대 한 코드를 간소화 하기 위해 이러한 속성에만 데이터 유효성 검사 특성으로 표시 되었습니다. 실제 프로젝트에서 등록 및 과정 클래스의 속성 등의 유효성이 검사 된 데이터를 필요로 하는 모든 속성에 유효성 검사 특성을 적용 됩니다.
 
-UniversityModels.cs를 저장 합니다.
+Save UniversityModels.cs.
 
 이러한 클래스에 따라 데이터베이스를 설정 하려면 Code First 마이그레이션을 위한 도구를 사용 합니다.
 
@@ -182,5 +182,5 @@ Visual Studio 적절 한 서명 사용 하 여 코드 숨김의 메서드를 만
 
 다음에서 [자습서](updating-deleting-and-creating-data.md) 이 시리즈의 업데이트, 삭제, 및 데이터를 만드는 사용 합니다.
 
->[!div class="step-by-step"]
-[다음](updating-deleting-and-creating-data.md)
+> [!div class="step-by-step"]
+> [다음](updating-deleting-and-creating-data.md)

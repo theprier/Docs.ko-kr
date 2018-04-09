@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/preparing-databases
-title: "Visual Studio를 사용 하 여 ASP.NET 웹 배포: 배포 데이터베이스에 대 한 준비 | Microsoft Docs"
+title: 'Visual Studio를 사용 하 여 ASP.NET 웹 배포: 배포 데이터베이스에 대 한 준비 | Microsoft Docs'
 author: tdykstra
-description: "이 자습서 시리즈를 배포 하는 방법을 보여 줍니다. ASP.NET (게시) 실행 하 여 웹 응용 프로그램을 Azure 앱 서비스 웹 앱 또는 타사 호스팅 공급자 중..."
+description: 이 자습서 시리즈를 배포 하는 방법을 보여 줍니다. ASP.NET (게시) 실행 하 여 웹 응용 프로그램을 Azure 앱 서비스 웹 앱 또는 타사 호스팅 공급자 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2013
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/preparing-databases
 msc.type: authoredcontent
-ms.openlocfilehash: caa79725ede320c4bd3e87ac246966c57175eb8e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 61392af322de454687da522055005a670b34f510
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-web-deployment-using-visual-studio-preparing-for-database-deployment"></a>Visual Studio를 사용 하 여 ASP.NET 웹 배포: 데이터베이스 배포 준비
 ====================
@@ -171,7 +171,7 @@ Contoso 대학교 응용 프로그램 ASP.NET 멤버 자격 시스템 및 폼 �
 개발 사용자 테스트 환경을 스테이징 및 프로덕션에 프로덕션 사용자에 게 배포 합니다. 이렇게 하기 위해이 자습서에서 개발 및 프로덕션 환경에 대 한 두 개의 SQL 스크립트를 만들어야 하 고 이후의 자습서으로 실행 하도록 게시 프로세스를 구성 합니다.
 
 > [!NOTE]
-> 멤버 자격 데이터베이스 계정 암호의 해시를 저장 합니다. 한 컴퓨터에서 계정을 배포 하려면 원본 컴퓨터에서 보다 해시 루틴이 대상 서버에서 다른 해시를 생성 하지 않아도 되어 있는지 확인 해야 합니다. 생성 합니다 동일한 해시 ASP.NET Universal Providers를 사용 하는 경우 기본 알고리즘을 변경 하지 않는 상태로 있습니다. 기본 알고리즘 HMACSHA256 이며에 지정 된는 **유효성 검사** 특성에는  **[machineKey](https://msdn.microsoft.com/library/system.web.configuration.machinekeysection.aspx)**  Web.config 파일의 요소입니다.
+> 멤버 자격 데이터베이스 계정 암호의 해시를 저장 합니다. 한 컴퓨터에서 계정을 배포 하려면 원본 컴퓨터에서 보다 해시 루틴이 대상 서버에서 다른 해시를 생성 하지 않아도 되어 있는지 확인 해야 합니다. 생성 합니다 동일한 해시 ASP.NET Universal Providers를 사용 하는 경우 기본 알고리즘을 변경 하지 않는 상태로 있습니다. 기본 알고리즘 HMACSHA256 이며에 지정 된는 **유효성 검사** 특성에는 **[machineKey](https://msdn.microsoft.com/library/system.web.configuration.machinekeysection.aspx)** Web.config 파일의 요소입니다.
 
 
 SQL Server Management Studio (SSMS)를 사용 하 여 또는 타사 도구를 사용 하 여 데이터 배포 스크립트를 수동으로 만들 수 있습니다. 이 자습서의 나머지 부분이에서는이 SSMS에서 수행 하는 방법을 표시 되지만 설치 하 고 SSMS를 사용 하지 않으려는 경우에 프로젝트의 완성된 된 버전에서 스크립트를 가져올 고 노트가 저장은 솔루션 폴더에서 섹션으로 건너뛸 수 있습니다.
@@ -215,11 +215,11 @@ SQL Server 설치 센터의 첫 번째 페이지에서 클릭 **새 SQL Server �
 1. SSMS에서 **개체 탐색기**를 마우스 오른쪽 단추로 클릭 **데이터베이스** 클릭 **연결**합니다.
 
     ![SSMS에서 연결](preparing-databases/_static/image15.png)
-- 에 **데이터베이스 연결** 대화 상자에서 클릭 **추가** 이동한 후는 *aspnet-ContosoUniversity-Prod.mdf* 파일에 *앱\_ 데이터* 폴더입니다.
+2. 에 **데이터베이스 연결** 대화 상자에서 클릭 **추가** 이동한 후는 *aspnet-ContosoUniversity-Prod.mdf* 파일에 *앱\_ 데이터* 폴더입니다.
 
-    ![연결할 SSMS 추가.mdf 파일](preparing-databases/_static/image16.png)
-- **확인**을 클릭합니다.
-- 이전 프로덕션 파일에 대 한 스크립트를 만드는 데 사용한 동일한 절차를 따릅니다. 스크립트 파일의 이름을 *aspnet-데이터-prod.sql*합니다.
+     ![연결할 SSMS 추가.mdf 파일](preparing-databases/_static/image16.png)
+3. **확인**을 클릭합니다.
+4. 이전 프로덕션 파일에 대 한 스크립트를 만드는 데 사용한 동일한 절차를 따릅니다. 스크립트 파일의 이름을 *aspnet-데이터-prod.sql*합니다.
 
 ## <a name="summary"></a>요약
 
@@ -233,6 +233,6 @@ SQL Server 설치 센터의 첫 번째 페이지에서 클릭 **새 SQL Server �
 
 NuGet에 대 한 자세한 내용은 참조 하십시오. [NuGet이 포함 된 프로젝트 라이브러리가 관리](https://msdn.microsoft.com/magazine/hh547106.aspx) 및 [NuGet 설명서](http://docs.nuget.org/docs/start-here/overview)합니다. NuGet을 사용 하지 않으려면 설치 될 때 역할을 결정 하는 NuGet 패키지를 분석 하는 방법에 알아보려면 해야 합니다. (구성할 수는 예를 들어 *Web.config* 변환 등 빌드 시간에 실행 되도록 PowerShell 스크립트를 구성 합니다.) NuGet의 작동 방식에 대 한 자세한 참조 [만들기 및 게시 패키지](http://docs.nuget.org/docs/creating-packages/creating-and-publishing-a-package) 및 [구성 파일 및 소스 코드 변환](http://docs.nuget.org/docs/creating-packages/configuration-file-and-source-code-transformations)합니다.
 
->[!div class="step-by-step"]
-[이전](introduction.md)
-[다음](web-config-transformations.md)
+> [!div class="step-by-step"]
+> [이전](introduction.md)
+> [다음](web-config-transformations.md)

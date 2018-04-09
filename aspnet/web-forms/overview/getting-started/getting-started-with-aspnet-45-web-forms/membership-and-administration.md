@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/membership-and-administration
-title: "멤버 자격 및 관리 | Microsoft Docs"
+title: 멤버 자격 및 관리 | Microsoft Docs
 author: Erikre
-description: "이 자습서 시리즈 것에 대 한 ASP.NET 4.5 및 Microsoft Visual Studio Express 2013을 사용 하 여 ASP.NET Web Forms 응용 프로그램을 구축 하는 기초 알려 드리겠습니다 중..."
+description: 이 자습서 시리즈 것에 대 한 ASP.NET 4.5 및 Microsoft Visual Studio Express 2013을 사용 하 여 ASP.NET Web Forms 응용 프로그램을 구축 하는 기초 알려 드리겠습니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/membership-and-administration
 msc.type: authoredcontent
-ms.openlocfilehash: a10dbfe1ca49baee1604aac8dd9a1f93ccfcb7f9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 166bc642ea2083f455be0648e424f0b0ae3b082c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="membership-and-administration"></a>멤버 자격 및 관리
 ====================
@@ -66,14 +66,14 @@ ASP.NET Id를 사용 하 여 사용자 지정 역할을 추가한 코드를 사�
 
     [!code-csharp[Main](membership-and-administration/samples/sample2.cs?highlight=11,26-28)]
 6. 다음에 유의 `AddUserAndRole` 빨간색으로 밑줄이 그어져 있습니다. AddUserAndRole 코드를 두 번 클릭 합니다.  
- 강조 표시 된 메서드의 시작 부분에 "A" 문자에 밑줄이 표시 됩니다.
+   강조 표시 된 메서드의 시작 부분에 "A" 문자에 밑줄이 표시 됩니다.
 7. 문자 "A" 위에 놓고 클릭에 대 한 메서드 스텁을 생성할 수 있도록 UI는 `AddUserAndRole` 메서드. 
 
     ![멤버 자격 및 Advministration-메서드 스텁 생성](membership-and-administration/_static/image1.png)
 8. 이라는 옵션을 클릭 합니다.  
     `Generate method stub for "AddUserAndRole" in "WingtipToys.Logic.RoleActions"`
 9. 열기는 *RoleActions.cs* 에서 파일의 *논리* 폴더입니다.  
- `AddUserAndRole` 메서드가 클래스 파일에 추가 되었습니다.
+   `AddUserAndRole` 메서드가 클래스 파일에 추가 되었습니다.
 10. 수정 된 *RoleActions.cs* 제거 하 여 파일의 `NotImplementedeException` 다음과 같이 표시 되도록 노란색으로 강조 표시 된 코드를 추가 하 고:  
 
     [!code-csharp[Main](membership-and-administration/samples/sample3.cs?highlight=5-7,15-51)]
@@ -120,8 +120,8 @@ Wingtip Toys 샘플 응용 프로그램에 익명 사용자와 로그인 한 사
 1. 프로젝트 이름을 마우스 오른쪽 단추로 클릭 (**Wingtip Toys**)에서 **솔루션 탐색기** 선택 **추가**  - &gt; **새폴더**.
 2. 새 폴더 이름을 *Admin*합니다.
 3. 마우스 오른쪽 단추로 클릭는 *Admin* 폴더 및 다음 선택 **추가**  - &gt; **새 항목**합니다.   
- **새 항목 추가** 대화 상자가 표시됩니다.
-4. 선택 된 **Visual C#** - &gt; **웹** 왼쪽의 템플릿 그룹입니다. 중간 목록에서 선택 **마스터 페이지가 있는 웹 폼**, 이름을 *AdminPage.aspx***,** 선택한 후 **추가**합니다.
+   **새 항목 추가** 대화 상자가 표시됩니다.
+4. 선택 된 <strong>Visual C#</strong> - &gt; <strong>웹</strong> 왼쪽의 템플릿 그룹입니다. 중간 목록에서 선택 <strong>마스터 페이지가 있는 웹 폼</strong>, 이름을 <em>AdminPage.aspx</em><strong>,</strong> 선택한 후 <strong>추가</strong>합니다.
 5. 선택 된 *Site.Master* 마스터 페이지로 파일을 다음 선택 **확인**합니다.
 
 #### <a name="add-a-webconfig-file"></a>Web.config 파일 추가
@@ -129,8 +129,8 @@ Wingtip Toys 샘플 응용 프로그램에 익명 사용자와 로그인 한 사
 추가 하 여 한 *Web.config* 파일을 *Admin* 폴더를 폴더에 포함 된 페이지에 대 한 액세스를 제한할 수 있습니다.
 
 1. 마우스 오른쪽 단추로 클릭는 *Admin* 폴더와 선택 **추가**  - &gt; **새 항목**합니다.  
- **새 항목 추가** 대화 상자가 표시됩니다.
-2. Visual C# 웹 템플릿 목록에서 선택 **웹 구성 파일**중간 목록에서의 기본 이름을 그대로 *Web.config***,** 선택한 후 **추가**합니다.
+   **새 항목 추가** 대화 상자가 표시됩니다.
+2. Visual C# 웹 템플릿 목록에서 선택 <strong>웹 구성 파일</strong>중간 목록에서의 기본 이름을 그대로 <em>Web.config</em><strong>,</strong> 선택한 후 <strong>추가</strong>합니다.
 3. 기존 XML에 콘텐츠를 교체는 *Web.config* 다음 파일:  
 
     [!code-xml[Main](membership-and-administration/samples/sample4.xml)]
@@ -167,9 +167,9 @@ Wingtip Toys 샘플 응용 프로그램에 익명 사용자와 로그인 한 사
 에 대해 입력 하는 코드에서는 *AdminPage.aspx.cs* 코드 숨김 파일을 호출 하는 클래스 `AddProducts` 데이터베이스에 추가 하는 제품의 실제 작업을 수행 합니다. 이 클래스는 이제 만들는 아직 존재 하지 않습니다.
 
 1. **솔루션 탐색기**를 마우스 오른쪽 단추로 클릭는 *논리* 폴더 및 다음 선택 **추가**  - &gt; **새 항목**합니다.   
- **새 항목 추가** 대화 상자가 표시됩니다.
+   **새 항목 추가** 대화 상자가 표시됩니다.
 2. 선택 된 **Visual C#**  - &gt; **코드** 왼쪽의 템플릿 그룹입니다. 그런 다음 선택 **클래스**중간에서 나열 하 고 이름을 *AddProducts.cs*합니다.   
- 새 클래스 파일이 표시 됩니다.
+   새 클래스 파일이 표시 됩니다.
 3. 기존 코드를 다음으로 바꿉니다.  
 
     [!code-csharp[Main](membership-and-administration/samples/sample9.cs)]
@@ -194,7 +194,7 @@ Wingtip Toys 샘플 응용 프로그램에 익명 사용자와 로그인 한 사
 
 #### <a name="model-binding"></a>모델 바인딩
 
-이 자습서 시리즈의 앞부분에 나오는 채울 때 사용 했던 모델 바인딩은 **ListView** 컨트롤은 **FormsView** 컨트롤은 **GridView** 컨트롤 및 ** DetailView** 제어 합니다. 이 자습서를 사용 하 여 모델 바인딩 채우기는 **DropDownList** 제품 범주 목록 사용 하 여 제어 합니다.
+이 자습서 시리즈의 앞부분에 나오는 채울 때 사용 했던 모델 바인딩은 **ListView** 컨트롤은 **FormsView** 컨트롤은 **GridView** 컨트롤 및  **DetailView** 제어 합니다. 이 자습서를 사용 하 여 모델 바인딩 채우기는 **DropDownList** 제품 범주 목록 사용 하 여 제어 합니다.
 
 에 추가 하는 태그는 *AdminPage.aspx* 파일에 포함 되어는 **DropDownList** 이라는 컨트롤 `DropDownAddCategory`:
 
@@ -235,15 +235,15 @@ Wingtip Toys 샘플 응용 프로그램에 익명 사용자와 로그인 한 사
 시장 바구니에 응용 프로그램을 지금 추가 하는 방법을 알아보려면, 삭제 및 업데이트 항목을 실행할 수 있습니다. 쇼핑 카트 총액 시장 바구니에 있는 모든 항목의 총 비용을 반영 합니다.
 
 1. 솔루션 탐색기에서 눌러 **F5** Wingtip Toys 샘플 응용 프로그램을 실행 합니다.  
- 브라우저가 열리고 표시는 *Default.aspx* 페이지.
+   브라우저가 열리고 표시는 *Default.aspx* 페이지.
 2. 클릭는 **로그인** 페이지 맨 아래에 링크 합니다. 
 
     ![링크에 대 한 멤버 자격 및 관리-로그인](membership-and-administration/_static/image2.png)
 
- *Login.aspx* 페이지가 표시 됩니다.
+   *Login.aspx* 페이지가 표시 됩니다.
 3. 다음 사용자 이름 및 암호 사용:  
- 사용자 이름:canEditUser@wingtiptoys.com  
- 암호: Pa $$ word1 
+   사용자 이름: canEditUser@wingtiptoys.com  
+   암호: Pa $$ word1 
 
     ![멤버 자격 및 관리-로그인 페이지](membership-and-administration/_static/image3.png)
 4. 클릭는 **로그인** 페이지의 아래쪽에 있는 단추입니다.
@@ -254,7 +254,7 @@ Wingtip Toys 샘플 응용 프로그램에 익명 사용자와 로그인 한 사
 
     ![멤버 자격 및 관리-관리자 페이지](membership-and-administration/_static/image5.png)
 
- 필수 필드 메시지 표시 되는지 확인 합니다.
+   필수 필드 메시지 표시 되는지 확인 합니다.
 7. 새 제품에 대 한 세부 정보를 추가 하 고 클릭는 **제품 추가** 단추입니다. 
 
     ![멤버 자격 및 관리-제품 추가](membership-and-administration/_static/image6.png)
@@ -268,19 +268,19 @@ Wingtip Toys 샘플 응용 프로그램에 익명 사용자와 로그인 한 사
     ![멤버 자격 및 관리-제거 제품](membership-and-administration/_static/image8.png)
 12. 선택 **제품** 제품 제거 된 것을 확인 하려면 위쪽 탐색 메뉴에서 합니다.
 13. 클릭 **로그 오프** 관리 모드에 있어야 합니다.   
- 위쪽 탐색 창에 더 이상 표시에 **Admin** 메뉴 항목입니다.
+    위쪽 탐색 창에 더 이상 표시에 **Admin** 메뉴 항목입니다.
 
 ## <a name="summary"></a>요약
 
 이 자습서에서는 사용자 지정 역할 및 사용자 지정 역할을 관리 폴더 및 페이지에 대 한 제한 된 액세스에 속한 사용자를 추가 하 고 사용자 지정 역할에 속하는 사용자에 대 한 탐색을 제공 합니다. 모델 바인딩 채우는 데 사용 된 **DropDownList** 컨트롤에 데이터입니다. 구현 하는 **파일 업로드** 제어 및 유효성 검사 컨트롤입니다. 또한, 추가 하 고 데이터베이스에서 제품을 제거 하는 방법을 배웠습니다. 다음 자습서에서는 ASP.NET 라우팅을 구현 하는 방법을 설명 합니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 [Web.config-권한 부여 요소](https://msdn.microsoft.com/library/8d82143t(v=vs.100).aspx)  
 [ASP.NET Id](../../../../identity/overview/getting-started/introduction-to-aspnet-identity.md)  
 [Azure 웹 사이트에 멤버 자격, OAuth, SQL 데이터베이스와 보안 ASP.NET Web Forms 응용 프로그램 배포](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/)  
 [Microsoft Azure-무료 평가판](https://azure.microsoft.com/pricing/free-trial/)
 
->[!div class="step-by-step"]
-[이전](checkout-and-payment-with-paypal.md)
-[다음](url-routing.md)
+> [!div class="step-by-step"]
+> [이전](checkout-and-payment-with-paypal.md)
+> [다음](url-routing.md)

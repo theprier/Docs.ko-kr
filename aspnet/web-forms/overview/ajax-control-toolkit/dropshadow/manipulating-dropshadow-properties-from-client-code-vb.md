@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/dropshadow/manipulating-dropshadow-properties-from-client-code-vb
-title: "클라이언트 코드 (VB)에서 DropShadow 속성 조작 | Microsoft Docs"
+title: 클라이언트 코드 (VB)에서 DropShadow 속성 조작 | Microsoft Docs
 author: wenz
-description: "들어의 DropShadow 컨트롤 그림자가 있는 패널을 확장합니다. 이 extender 속성 JavaScrip 클라이언트를 사용 하 여 변경할 수 있습니다..."
+description: 들어의 DropShadow 컨트롤 그림자가 있는 패널을 확장합니다. 이 extender 속성 JavaScrip 클라이언트를 사용 하 여 변경할 수 있습니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dropshadow/manipulating-dropshadow-properties-from-client-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 706ccb5a95873aad4c1b9e0942ab06cf4162710a
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: b5b024811ea511e67ce180169de9f0b7e3ef51d9
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="manipulating-dropshadow-properties-from-client-code-vb"></a>클라이언트 코드 (VB)에서 DropShadow 속성 조작
 ====================
@@ -62,5 +62,5 @@ JavaScript 함수 `changeOpacity()` 다음 먼저 찾아야는 `DropShadowExtend
 
 클라이언트 쪽에서 변경 되는 불투명도 ([전체 크기 이미지를 보려면 클릭](manipulating-dropshadow-properties-from-client-code-vb/_static/image3.png))
 
->[!div class="step-by-step"]
-[이전](adjusting-the-z-index-of-a-dropshadow-vb.md)
+> [!div class="step-by-step"]
+> [이전](adjusting-the-z-index-of-a-dropshadow-vb.md)

@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/deleting-data
-title: "Introducing ASP.NET 웹 페이지-데이터베이스 데이터를 삭제 합니다. | Microsoft Docs"
+title: Introducing ASP.NET 웹 페이지-데이터베이스 데이터를 삭제 합니다. | Microsoft Docs
 author: tfitzmac
-description: "이 자습서는 개별 데이터베이스 항목을 삭제 하는 방법을 보여 줍니다. ASP.NET 웹 Pa.에서 데이터베이스 데이터 업데이트를 통해 시리즈를 완료 했습니다.. 가정"
+description: 이 자습서는 개별 데이터베이스 항목을 삭제 하는 방법을 보여 줍니다. ASP.NET 웹 Pa.에서 데이터베이스 데이터 업데이트를 통해 시리즈를 완료 했습니다.. 가정
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/02/2018
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/deleting-data
 msc.type: authoredcontent
-ms.openlocfilehash: 5bc92b5d40e7a55dcd730d552c71031d913b277e
-ms.sourcegitcommit: 281f0c614543a6c3db565ea4655b70fe49b61d84
+ms.openlocfilehash: 146199e862cd6fa2607671d31633476b1cb67021
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/03/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introducing-aspnet-web-pages---deleting-database-data"></a>Introducing ASP.NET 웹 페이지-데이터베이스 데이터 삭제
 ====================
@@ -167,11 +167,11 @@ ms.lasthandoff: 01/03/2018
 
 [!code-cshtml[Main](deleting-data/samples/sample9.cshtml)]
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 - [Razor 구문을 사용 하 여 ASP.NET 웹 프로그래밍 소개](../introducing-razor-syntax-c.md)
 - [SQL DELETE 문을](http://www.w3schools.com/sql/sql_delete.asp) W3Schools 사이트
 
->[!div class="step-by-step"]
-[이전](updating-data.md)
-[다음](layouts.md)
+> [!div class="step-by-step"]
+> [이전](updating-data.md)
+> [다음](layouts.md)

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/customizing-a-view
-title: "ASP.NET MVC를 사용 하 여 먼저 EF 데이터베이스: 보기를 사용자 지정 | Microsoft Docs"
+title: 'ASP.NET MVC를 사용 하 여 먼저 EF 데이터베이스: 보기를 사용자 지정 | Microsoft Docs'
 author: tfitzmac
-description: "MVC, Entity Framework 및 ASP.NET 스 캐 폴딩을 사용 하 여 기존 데이터베이스에 대 한 인터페이스를 제공 하는 웹 응용 프로그램을 만들 수 있습니다. 이 자습서 seri 중..."
+description: MVC, Entity Framework 및 ASP.NET 스 캐 폴딩을 사용 하 여 기존 데이터베이스에 대 한 인터페이스를 제공 하는 웹 응용 프로그램을 만들 수 있습니다. 이 자습서 seri 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/01/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/customizing-a-view
 msc.type: authoredcontent
-ms.openlocfilehash: af9609396cff18b08824732731ddb9c5cca578fa
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 8338603e032329ad03d47c6392e508aa07c6858e
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="ef-database-first-with-aspnet-mvc-customizing-a-view"></a>ASP.NET MVC를 사용 하 여 먼저 EF 데이터베이스: 보기를 사용자 지정
 ====================
@@ -41,6 +41,6 @@ ms.lasthandoff: 11/10/2017
 
 ![학생으로 등록](customizing-a-view/_static/image1.png)
 
->[!div class="step-by-step"]
-[이전](changing-the-database.md)
-[다음](enhancing-data-validation.md)
+> [!div class="step-by-step"]
+> [이전](changing-the-database.md)
+> [다음](enhancing-data-validation.md)

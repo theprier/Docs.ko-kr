@@ -1,7 +1,7 @@
 ---
-title: "IIS 모듈을 사용 하 여 ASP.NET 코어"
+title: ASP.NET Core를 사용 하 여 IIS 모듈
 author: guardrex
-description: "ASP.NET Core 응용 프로그램 및 IIS 모듈을 관리 하는 방법에 대 한 활성 및 비활성 IIS 모듈을 검색 합니다."
+description: ASP.NET Core 응용 프로그램 및 IIS 모듈을 관리 하는 방법에 대 한 활성 및 비활성 IIS 모듈을 검색 합니다.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,13 +10,13 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/modules
-ms.openlocfilehash: a6610e33abdc3eafb5908728b3299e95e6e7183f
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: d9b3de915df333153255f91649f9169f76ba2fe0
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="using-iis-modules-with-aspnet-core"></a>IIS 모듈을 사용 하 여 ASP.NET 코어
+# <a name="iis-modules-with-aspnet-core"></a>ASP.NET Core를 사용 하 여 IIS 모듈
 
 [Luke Latham](https://github.com/guardrex)으로
 
@@ -58,7 +58,7 @@ ASP.NET Core 응용 프로그램의 역방향 프록시 구성에서 IIS에서 �
 | **URL 권한 부여**<br>`UrlAuthorizationModule` | 예 | [ASP.NET Core Identity](xref:security/authentication/identity) |
 | **Windows 인증**<br>`WindowsAuthenticationModule` | 예 | |
 
-&#8224; URL 재작성 모듈의 `isFile` 및 `isDirectory` 유형과 일치 변경 때문에 ASP.NET Core 응용 프로그램을 사용 하지 않는 [디렉터리 구조](xref:host-and-deploy/directory-structure)합니다.
+&#8224;URL 재작성 모듈의 `isFile` 및 `isDirectory` 유형과 일치 변경 때문에 ASP.NET Core 응용 프로그램을 사용 하지 않는 [디렉터리 구조](xref:host-and-deploy/directory-structure)합니다.
 
 ## <a name="managed-modules"></a>관리 되는 모듈
 
@@ -106,21 +106,21 @@ IIS 모듈 응용 프로그램에서는 응용 프로그램에 추가 된 항목
 
 1. 서버 수준에서 모듈의 잠금을 해제 합니다. IIS 관리자에서 IIS 서버를 선택 합니다. **연결** 사이드바 합니다. 열기는 **모듈** 에 **IIS** 영역입니다. 목록에서 모듈을 선택 합니다. 에 **동작** , 오른쪽에 선택 **잠금 해제**합니다. 많은 모듈을 제거할 계획을 수립할 때 잠금을 해제 *web.config* 나중입니다.
 
-1. 없이 앱을 배포는  **\<모듈 >** 섹션 *web.config*합니다. 응용 프로그램으로 배포 하는 경우는 *web.config* 포함 하는  **\<모듈 >** 섹션에 있는 섹션 잠금을 해제는 먼저 IIS 관리자에서 Configuration Manager 예외를 throw 합니다. 섹션 잠금 해제 하는 동안 합니다. 따라서 없이 앱을 배포는  **\<모듈 >** 섹션.
+2. 없이 앱을 배포는  **\<모듈 >** 섹션 *web.config*합니다. 응용 프로그램으로 배포 하는 경우는 *web.config* 포함 하는  **\<모듈 >** 섹션에 있는 섹션 잠금을 해제는 먼저 IIS 관리자에서 Configuration Manager 예외를 throw 합니다. 섹션 잠금 해제 하는 동안 합니다. 따라서 없이 앱을 배포는  **\<모듈 >** 섹션.
 
-1. 잠금 해제는  **\<모듈 >** 섹션 *web.config*합니다. 에 **연결** 사이드바에서 웹 사이트를 선택 **사이트**합니다. 에 **관리** 영역을 열고는 **구성 편집기**합니다. 탐색 컨트롤을 사용 하 여 선택 된 `system.webServer/modules` 섹션. 에 **동작** 하려면, 오른쪽에 선택 **잠금 해제** 섹션입니다.
+3. 잠금 해제는  **\<모듈 >** 섹션 *web.config*합니다. 에 **연결** 사이드바에서 웹 사이트를 선택 **사이트**합니다. 에 **관리** 영역을 열고는 **구성 편집기**합니다. 탐색 컨트롤을 사용 하 여 선택 된 `system.webServer/modules` 섹션. 에 **동작** 하려면, 오른쪽에 선택 **잠금 해제** 섹션입니다.
 
-1. 이 시점에서  **\<모듈 >** 섹션에 추가할 수는 *web.config* 파일는  **\<제거 >** 요소에서 모듈을 제거 하려면 응용 프로그램입니다. 여러  **\<제거 >** 여러 모듈을 제거 하는 요소를 추가할 수 있습니다. 경우 *web.config* 서버에서 정의가 변경 되어도, 해당 프로젝트의 동일 하 게 변경 즉시 *web.config* 파일을 로컬입니다. 이러한 방식으로 모듈을 제거 하면 서버에서 다른 앱을 사용 하 여 모듈의 사용을 적용 되지 않습니다.
+4. 이 시점에서  **\<모듈 >** 섹션에 추가할 수는 *web.config* 파일는  **\<제거 >** 요소에서 모듈을 제거 하려면 응용 프로그램입니다. 여러  **\<제거 >** 여러 모듈을 제거 하는 요소를 추가할 수 있습니다. 경우 *web.config* 서버에서 정의가 변경 되어도, 해당 프로젝트의 동일 하 게 변경 즉시 *web.config* 파일을 로컬입니다. 이러한 방식으로 모듈을 제거 하면 서버에서 다른 앱을 사용 하 여 모듈의 사용을 적용 되지 않습니다.
 
-  ```xml
-  <configuration> 
+   ```xml
+   <configuration> 
     <system.webServer> 
       <modules> 
         <remove name="MODULE_NAME" /> 
       </modules> 
     </system.webServer> 
-  </configuration>
-  ```
+   </configuration>
+   ```
 
 설치 된 기본 모듈로 IIS 설치의 경우 다음을 사용 하 여  **\<모듈 >** 기본 모듈을 제거 하려면 섹션.
 
@@ -156,7 +156,7 @@ ASP.NET Core 응용 프로그램을 실행 하는 데 필요한 유일한 모듈
 
 ![표시 된 최소 모듈 구성을 사용 하 여 모듈에 IIS 관리자를 열려면](modules/_static/modules.png)
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 * [IIS를 사용하여 Windows에서 호스트](xref:host-and-deploy/iis/index)
 * [IIS 아키텍처 소개: IIS에서 모듈](/iis/get-started/introduction-to-iis/introduction-to-iis-architecture#modules-in-iis)

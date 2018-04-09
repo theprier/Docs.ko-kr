@@ -1,22 +1,22 @@
 ---
 uid: identity/overview/getting-started/introduction-to-aspnet-identity
-title: "ASP.NET Id 소개 | Microsoft Docs"
+title: ASP.NET Id 소개 | Microsoft Docs
 author: jongalloway
-description: "ASP.NET 멤버 자격 시스템 도입 된 ASP.NET 2.0 다시 이후 및 2005에서는 같은 방법으로 웹 응용 프로그램 일반적에 많은 변경 내용이 다음 중..."
+description: ASP.NET 멤버 자격 시스템 도입 된 ASP.NET 2.0 다시 이후 및 2005에서는 같은 방법으로 웹 응용 프로그램 일반적에 많은 변경 내용이 다음 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
 ms.topic: article
 ms.assetid: 38717fc1-5989-43cf-952d-4007cc1dd923
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/getting-started/introduction-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 7c7dcb7903b0d0772acc560161ff39c6869c599a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 59272f4659256e108ee99b22eb3bd3e2583a617c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introduction-to-aspnet-identity"></a>ASP.NET Id 소개
 ====================
@@ -112,37 +112,37 @@ ASP.NET Id는 다음 절차를 사용 하 여 구현 됩니다. 이 문서의 �
 2. 만든된 프로젝트는 ASP.NET Identity에 대 한 다음과 같은 세 가지 패키지를 포함합니다.
 
     - [`Microsoft.AspNet.Identity.EntityFramework`](http://www.nuget.org/packages/Microsoft.AspNet.Identity.EntityFramework/)  
- 이 패키지에는 ASP.NET Identity 데이터 및 SQL Server에 대 한 스키마를 유지 하는 ASP.NET Identity의 Entity Framework 구현이 있습니다.
+   이 패키지에는 ASP.NET Identity 데이터 및 SQL Server에 대 한 스키마를 유지 하는 ASP.NET Identity의 Entity Framework 구현이 있습니다.
     - [`Microsoft.AspNet.Identity.Core`](http://www.nuget.org/packages/Microsoft.AspNet.Identity.Core/)  
- 이 패키지에는 ASP.NET Identity에 대 한 핵심 인터페이스에 있습니다. 이 패키지 저장 하는 다른 지 속성을 대상으로 NoSQL Azure 테이블 저장소와 같은 데이터베이스 등 ASP.NET Identity에 대 한 구현을 쓰는 데 사용할 수 있습니다.
+   이 패키지에는 ASP.NET Identity에 대 한 핵심 인터페이스에 있습니다. 이 패키지 저장 하는 다른 지 속성을 대상으로 NoSQL Azure 테이블 저장소와 같은 데이터베이스 등 ASP.NET Identity에 대 한 구현을 쓰는 데 사용할 수 있습니다.
     - [`Microsoft.AspNet.Identity.OWIN`](http://www.nuget.org/packages/Microsoft.AspNet.Identity.Owin/)  
- 이 패키지에는 ASP.NET 응용 프로그램에서 ASP.NET Id를 가진 OWIN 인증에 연결 하는 데 사용 되는 기능이 들어 있습니다. 이 기능에서 응용 프로그램 및 쿠키를 생성 하는 OWIN 쿠키 인증 미들웨어로 호출에 로그를 추가할 때 사용 됩니다.
+   이 패키지에는 ASP.NET 응용 프로그램에서 ASP.NET Id를 가진 OWIN 인증에 연결 하는 데 사용 되는 기능이 들어 있습니다. 이 기능에서 응용 프로그램 및 쿠키를 생성 하는 OWIN 쿠키 인증 미들웨어로 호출에 로그를 추가할 때 사용 됩니다.
 3. 사용자를 생성 합니다.  
- 응용 프로그램을 시작 하 고을 클릭는 **등록** 사용자를 만들려면 링크 합니다. 다음 이미지는 사용자 이름 및 암호를 수집 하는 등록 페이지를 보여 줍니다.  
+   응용 프로그램을 시작 하 고을 클릭는 **등록** 사용자를 만들려면 링크 합니다. 다음 이미지는 사용자 이름 및 암호를 수집 하는 등록 페이지를 보여 줍니다.  
   
     ![](introduction-to-aspnet-identity/_static/image2.png)  
   
- 사용자가 클릭할 때는 **등록** 단추를는 `Register` 계정 컨트롤러의 작업 아래 강조 표시 된 대로 ASP.NET Identity API를 호출 하 여 사용자를 만듭니다.
+   사용자가 클릭할 때는 **등록** 단추를는 `Register` 계정 컨트롤러의 작업 아래 강조 표시 된 대로 ASP.NET Identity API를 호출 하 여 사용자를 만듭니다.
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample1.cs?highlight=8-9)]
-4. 로그인.  
- 사용자가 만들어졌음을 그녀는에 기록 하 여는 `SignInAsync` 메서드.  
+4. 로그인  
+   사용자가 만들어졌음을 그녀는에 기록 하 여는 `SignInAsync` 메서드.  
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample2.cs?highlight=12)]
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample3.cs?highlight=5-6)]
 
- 위의 강조 표시 된 코드는 `SignInAsync` 메서드를 생성 한 [ClaimsIdentity](https://msdn.microsoft.com/library/system.security.claims.claimsidentity.aspx)합니다. ASP.NET Id 및 OWIN 쿠키 인증 클레임 기반 시스템 이므로 응용 프로그램에서 사용자에 대 한 ClaimsIdentity를 생성 하면 프레임 워크에 필요 합니다. ClaimsIdentity에 사용자가 속한 역할 같은 사용자에 대 한 모든 클레임에 대 한 정보가 있습니다. 또한이 단계에서 사용자에 대 한 더 많은 클레임을 추가할 수 있습니다.  
+   위의 강조 표시 된 코드는 `SignInAsync` 메서드를 생성 한 [ClaimsIdentity](https://msdn.microsoft.com/library/system.security.claims.claimsidentity.aspx)합니다. ASP.NET Id 및 OWIN 쿠키 인증 클레임 기반 시스템 이므로 응용 프로그램에서 사용자에 대 한 ClaimsIdentity를 생성 하면 프레임 워크에 필요 합니다. ClaimsIdentity에 사용자가 속한 역할 같은 사용자에 대 한 모든 클레임에 대 한 정보가 있습니다. 또한이 단계에서 사용자에 대 한 더 많은 클레임을 추가할 수 있습니다.  
   
- 아래에 강조 표시 된 코드는 `SignInAsync` 메서드 호출 및 OWIN AuthenticationManager를 사용 하 여 사용자 로그인 `SignIn` 는 ClaimsIdentity를 전달 합니다.  
+   아래에 강조 표시 된 코드는 `SignInAsync` 메서드 호출 및 OWIN AuthenticationManager를 사용 하 여 사용자 로그인 `SignIn` 는 ClaimsIdentity를 전달 합니다.  
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample4.cs?highlight=8-11)]
 5. 로그 오프 합니다.  
- 클릭 하 고 **로그 오프** 링크 계정 컨트롤러에서 로그 오프 동작을 호출 합니다. 
+   클릭 하 고 **로그 오프** 링크 계정 컨트롤러에서 로그 오프 동작을 호출 합니다. 
 
     [!code-csharp[Main](introduction-to-aspnet-identity/samples/sample5.cs?highlight=6)]
 
- 강조 표시 된 코드 위의 OWIN `AuthenticationManager.SignOut` 메서드. 이 방법은 유사 [FormsAuthentication.SignOut](https://msdn.microsoft.com/library/system.web.security.formsauthentication.signout.aspx) 사용 하는 방법의 [FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx) Web Forms에는 모듈입니다.
+   강조 표시 된 코드 위의 OWIN `AuthenticationManager.SignOut` 메서드. 이 방법은 유사 [FormsAuthentication.SignOut](https://msdn.microsoft.com/library/system.web.security.formsauthentication.signout.aspx) 사용 하는 방법의 [FormsAuthentication](https://msdn.microsoft.com/library/system.web.security.formsauthenticationmodule.aspx) Web Forms에는 모듈입니다.
 
 ## <a name="components-of-aspnet-identity"></a>ASP.NET Id의 구성 요소
 

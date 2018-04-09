@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-1
-title: "1 부: 개요 및 파일을 새 프로젝트를-> | Microsoft Docs"
+title: '1 부: 개요 및 파일을 새 프로젝트를-> | Microsoft Docs'
 author: jongalloway
-description: "이 자습서 시리즈 모든 ASP.NET MVC Music Store 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 1 부에서는 개요 및 파일-새 프로젝트를 >합니다."
+description: 이 자습서 시리즈 모든 ASP.NET MVC Music Store 샘플 응용 프로그램을 작성 하는 데 필요한 단계를 자세히 설명 합니다. 1 부에서는 개요 및 파일-새 프로젝트를 >합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/21/2011
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: 1e3373a21c7d1766cfad390a7ba68b1363d8d895
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 2082927d18c95563893da199d60347fa15952446
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="part-1-overview-and-file-new-project"></a>1 부: 개요 및 새 프로젝트를-> 파일
 ====================
@@ -115,15 +115,15 @@ HTML5 의미 체계 태그-검사를 사용 하 여
 
 ASP.NET MVC에서는 폴더 이름에 대 한 몇 가지 기본 명명 규칙을 활용 합니다.
 
-| **폴더** | **용도** |
+| **Folder** | **용도** |
 | --- | --- |
-| **/ 컨트롤러** | 컨트롤러, 수행 하 고 사용자에 대 한 응답을 반환할 내용을 결정할 브라우저에서의 입력에 응답 합니다. |
-| **/ 보기** | 뷰 저장 우리의 UI 템플릿 |
-| **/ 모델** | 모델 저장 및 데이터 조작 |
-| **/ 콘텐츠** | 이 폴더는 이미지, CSS 및 다른 정적 콘텐츠를 보유합니다. |
-| **/ 스크립트** | 이 폴더에 JavaScript 파일 저장 |
+| **/Controllers** | 컨트롤러, 수행 하 고 사용자에 대 한 응답을 반환할 내용을 결정할 브라우저에서의 입력에 응답 합니다. |
+| **/Views** | 뷰 저장 우리의 UI 템플릿 |
+| **/Models** | 모델 저장 및 데이터 조작 |
+| **/Content** | 이 폴더는 이미지, CSS 및 다른 정적 콘텐츠를 보유합니다. |
+| **/Scripts** | 이 폴더에 JavaScript 파일 저장 |
 
 이 폴더는 기본적으로 ASP.NET MVC 프레임 워크 "구성의 관례" 방법을 사용 하 여 폴더 명명 규칙에 따라 몇 가지 기본 사항을 가정 하기 때문에 빈 ASP.NET MVC 응용 프로그램에 포함 됩니다. 예를 들어, 컨트롤러가 찾을 Views 폴더의 뷰에 대 한 기본적으로이 코드에 명시적으로 지정 하지 않아도 됩니다. 를 작성 해야 하는 코드의 양이 감소 기본 규칙으로 생각해도 쉽게 만들 수에 대 한 다른 개발자가 프로젝트를 이해 하 고 있습니다. 이러한 규칙 우리가 응용 프로그램을 구축 하는 대로 자세한 설명 합니다.
 
->[!div class="step-by-step"]
-[다음](mvc-music-store-part-2.md)
+> [!div class="step-by-step"]
+> [다음](mvc-music-store-part-2.md)

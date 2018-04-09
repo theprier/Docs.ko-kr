@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/working-with-batched-data/batch-updating-vb
-title: "일괄 업데이트 (VB) | Microsoft Docs"
+title: 일괄 업데이트 (VB) | Microsoft Docs
 author: rick-anderson
-description: "한 번에 여러 데이터베이스 레코드를 업데이트 하는 방법에 알아봅니다. 사용자 인터페이스 계층의 각 행은 편집할 수는 GridView 작성할 수 있습니다. 데이터에서..."
+description: 한 번에 여러 데이터베이스 레코드를 업데이트 하는 방법에 알아봅니다. 사용자 인터페이스 계층의 각 행은 편집할 수는 GridView 작성할 수 있습니다. 데이터에서...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/26/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-updating-vb
 msc.type: authoredcontent
-ms.openlocfilehash: bcfdf734de0b4a4aa0a11f35bd6e40d6b97719cf
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 2c5119410057b39e7b9a03eca3a2dbdbc315ce00
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="batch-updating-vb"></a>일괄 업데이트 (VB)
 ====================
@@ -185,7 +185,7 @@ S로 시작는 `ProductName` TemplateField 합니다. GridView s 스마트 태�
 참고 방법을 `<asp:ListItem Value="">` -하나 선택-가 `Value` 특성이 명시적으로 빈 문자열로 설정 합니다. 다시 참조는 [데이터 수정 인터페이스 사용자 지정](../editing-inserting-and-deleting-data/customizing-the-data-modification-interface-vb.md) 자습서에 대 한 보다 철저 한 내용은 처리 하기 위해이 추가 DropDownList 항목은 필요한 이유는 `NULL` 대/소문자 및 이유의 할당 된 `Value` 속성을 빈 문자열로 반드시 필요 합니다.
 
 > [!NOTE]
-> 잠재적인 성능 및 확장성 문제가 여기 대해서 있습니다. 각 행에 사용 하는 DropDownList 있으므로 `CategoriesDataSource` 를 데이터 원본으로는 `CategoriesBLL` s 클래스 `GetCategories` 메서드는 호출  *n*  페이지 마다 한 번 방문 여기서  *n*  는 GridView에서 행의 수입니다. 이러한  *n*  에 대 한 호출이 `GetCategories` 발생  *n*  데이터베이스에 쿼리 합니다. 요청 캐시 또는 SQL 캐시 종속성 또는 매우 짧은 시간 기반 만료를 사용 하 여 캐싱 계층을 통해 반환 된 범주를 캐시 하 여이 데이터베이스에이 영향을 떨어질 수 수 없습니다. 캐싱 옵션을 당 요청에 대 한 자세한 내용은 참조 [ `HttpContext.Items` 당 요청 캐시 저장소](http://aspnet.4guysfromrolla.com/articles/060904-1.aspx)합니다.
+> 잠재적인 성능 및 확장성 문제가 여기 대해서 있습니다. 각 행에 사용 하는 DropDownList 때문는 `CategoriesDataSource` 를 데이터 원본으로는 `CategoriesBLL` s 클래스 `GetCategories` 메서드는 호출 *n* 페이지 마다 한 번 방문 여기서 *n* 의 수 GridView에서 행 수입니다. 이러한 *n* 에 대 한 호출이 `GetCategories` 발생 *n* 데이터베이스에 쿼리 합니다. 요청 캐시 또는 SQL 캐시 종속성 또는 매우 짧은 시간 기반 만료를 사용 하 여 캐싱 계층을 통해 반환 된 범주를 캐시 하 여이 데이터베이스에이 영향을 떨어질 수 수 없습니다. 캐싱 옵션을 당 요청에 대 한 자세한 내용은 참조 [ `HttpContext.Items` 당 요청 캐시 저장소](http://aspnet.4guysfromrolla.com/articles/060904-1.aspx)합니다.
 
 
 ## <a name="step-4-completing-the-editing-interface"></a>4 단계: 완료 편집 인터페이스
@@ -270,7 +270,7 @@ GridView s 이후 편집 인터페이스에에서 정의 되어 있는 해당 Te
 
 [!code-vb[Main](batch-updating-vb/samples/sample7.vb)]
 
-`BatchMethodAlternate`비어 있는 새를 만들어 시작 `ProductsDataTable` 라는 `products`합니다. 다음 단계를 통해 GridView s `Rows` 컬렉션의 각 행 BLL s를 사용 하 여 특정 제품 정보를 가져옵니다 `GetProductByProductID(productID)` 메서드. 검색 된 `ProductsRow` 인스턴스에 해당 속성을 동일한 방식으로 업데이트는 `BatchUpdate`, 하지만에 가져온 행을 업데이트 한 후의 `products` `ProductsDataTable` DataTable s 통해 [ `ImportRow(DataRow)` 메서드](https://msdn.microsoft.com/library/system.data.datatable.importrow(VS.80).aspx).
+`BatchMethodAlternate` 비어 있는 새를 만들어 시작 `ProductsDataTable` 라는 `products`합니다. 다음 단계를 통해 GridView s `Rows` 컬렉션의 각 행 BLL s를 사용 하 여 특정 제품 정보를 가져옵니다 `GetProductByProductID(productID)` 메서드. 검색 된 `ProductsRow` 인스턴스에 해당 속성을 동일한 방식으로 업데이트는 `BatchUpdate`, 하지만에 가져온 행을 업데이트 한 후의 `products` `ProductsDataTable` DataTable s 통해 [ `ImportRow(DataRow)` 메서드](https://msdn.microsoft.com/library/system.data.datatable.importrow(VS.80).aspx).
 
 이후에 `For Each` 루프 완료 `products` 하나가 포함 된 `ProductsRow` GridView의 각 행에 대 한 인스턴스. 각각의 이후는 `ProductsRow` 에 추가 된 인스턴스는 `products` (대신 업데이트)를 맹목적으로 전달 하는 경우는 `UpdateWithTransaction` 메서드는 `ProductsTableAdatper` 레코드의 각 데이터베이스에 삽입 하려고 합니다. 대신, 각이 행의 수정 되었다는 사실을 (추가 됨)을 지정 해야 합니다.
 
@@ -289,12 +289,12 @@ GridView 기본 제공 행 편집 기능을 제공 하지만 지원 완벽 하 �
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Teresa 머피 및 David Suru 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](wrapping-database-modifications-within-a-transaction-vb.md)
-[다음](batch-deleting-vb.md)
+> [!div class="step-by-step"]
+> [이전](wrapping-database-modifications-within-a-transaction-vb.md)
+> [다음](batch-deleting-vb.md)

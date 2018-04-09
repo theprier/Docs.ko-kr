@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-razor-syntax-vb
-title: "Razor 구문 (Visual Basic)를 사용 하 여 ASP.NET 웹 프로그래밍 소개 | Microsoft Docs"
+title: Razor 구문 (Visual Basic)를 사용 하 여 ASP.NET 웹 프로그래밍 소개 | Microsoft Docs
 author: tfitzmac
-description: "이 부록 한 개요를 제공 ASP.NET 웹 페이지를 사용한 프로그래밍의 Visual Basic에서 Razor 구문을 사용 하 여 합니다."
+description: 이 부록 한 개요를 제공 ASP.NET 웹 페이지를 사용한 프로그래밍의 Visual Basic에서 Razor 구문을 사용 하 여 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/07/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8f5d223a5944d8adb9fe65c89e87829d18d1c7ee
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 715e52715fb22b92f94d3d602ec58c29a913426c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-visual-basic"></a>Razor 구문 (Visual Basic)를 사용 하 여 ASP.NET 웹 프로그래밍 소개
 ====================
@@ -73,7 +73,7 @@ Razor 구문이 있는 ASP.NET 웹 페이지를 사용 하 여 대부분의 예�
 
 ### <a name="2-you-enclose-code-blocks-with-codeend-code"></a>2. 코드를 사용 하 여 코드 블록 안에 포함 하는 중... 종료 코드
 
-코드 블록 하나 이상의 코드 문을 포함 및 키워드와 함께 둘러싸입니다 `Code` 및 `End Code`합니다. 열기 배치 `Code` 키워드 바로 뒤의 `@` 문자 및 #8212; 사이의 공백 수 없습니다.
+코드 블록 하나 이상의 코드 문을 포함 및 키워드와 함께 둘러싸입니다 `Code` 및 `End Code`합니다. 열기 배치 `Code` 키워드 바로 뒤의 `@` 문자 &#8212; 사이의 공백 수 없습니다.
 
 [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample2.vbhtml)]
 
@@ -125,7 +125,7 @@ Visual Basic 언어가 대/소문자 구분 되지 않습니다. 프로그래밍
 
 ### <a name="7-much-of-your-coding-involves-working-with-objects"></a>7. 개체를 사용 하 여 코딩의 대부분
 
-개체를 사용 하 여 프로그래밍 수 있는 항목 &#8212; 나타냅니다. 페이지, 텍스트 상자, 파일, 이미지, 웹 요청, 전자 메일 메시지, 고객 레코드 (데이터베이스 행) 등입니다. 개체에는 #8212; 및 해당 특성을 설명 하는 속성이 텍스트 상자 개체에는 `Text` 속성, 요청 개체에는 `Url` 속성, 전자 메일 메시지에는 `From` 속성을 고객 개체에는 `FirstName` 속성입니다. 개체에 갖게 되는 메서드와 &quot;동사&quot; 수행할 수 있습니다. 예로 파일 개체의 `Save` 메서드를 이미지 개체의 `Rotate` 메서드와 메일 개체의 `Send` 메서드.
+개체를 프로그래밍할 수 있는 것을 나타냅니다 &#8212; 페이지, 텍스트 상자, 파일, 이미지, 웹 요청, 전자 메일 메시지, 고객 레코드 (데이터베이스 행) 등입니다. 개체에는 각각의 특징을 설명 하는 속성이 &#8212; 텍스트 상자 개체에는 `Text` 속성, 요청 개체에는 `Url` 속성, 전자 메일 메시지에는 `From` 속성을 고객 개체에는 `FirstName` 속성입니다. 개체에 갖게 되는 메서드와 &quot;동사&quot; 수행할 수 있습니다. 예로 파일 개체의 `Save` 메서드를 이미지 개체의 `Rotate` 메서드와 메일 개체의 `Send` 메서드.
 
 자주 사용 하 여 `Request` 폼의 값 등의 정보를 제공 하는 개체 브라우저 종류 요청, 페이지, 사용자 id, 등의 URL을 한 페이지 (텍스트 상자, 등)에 필드입니다. 속성에 액세스 하는 방법을 보여 주는이 예제는 `Request` 개체와 호출 하는 방법의 `MapPath` 의 메서드는 `Request` 서버에서 해당 페이지의 절대 경로 제공 하는 개체:
 
@@ -180,11 +180,11 @@ Visual Basic 언어가 대/소문자 구분 되지 않습니다. 프로그래밍
 
 ## <a name="visual-basic-language-and-syntax"></a>Visual Basic 언어 및 구문
 
-이전 ASP.NET 웹 페이지를 만드는 방법 및 서버 코드 HTML 태그를 추가할 수는 방법의 기본 예제에서는 있을 것입니다. 여기서 Visual Basic을 사용 하 여 Razor 구문 &#8212;를 사용 하 여 ASP.NET 서버 코드를 작성 하는 기본적인 방법과 알아봅니다. 즉, 프로그래밍 언어 규칙입니다.
+이전 ASP.NET 웹 페이지를 만드는 방법 및 서버 코드 HTML 태그를 추가할 수는 방법의 기본 예제에서는 있을 것입니다. 여기서 Visual Basic을 사용 하 여 Razor 구문을 사용 하 여 ASP.NET 서버 코드를 작성 하는 기본적인 방법과 알아봅니다 &#8212; 즉, 프로그래밍 언어 규칙입니다.
 
 (특히 사용한 적이 있다면 C, c + +, C#, Visual Basic 또는 JavaScript) 프로그래밍 경험이 경우 설명한 여기 대부분 익숙할 것입니다. 아마도 할 숙지만 태그에 WebMatrix 코드에 어떻게 추가 되었는지를 *.vbhtml* 파일입니다.
 
-### <a id="BM_CombiningTextMarkupAndCode"></a>텍스트, 태그 및 코드 블록의에서 코드를 결합합니다.
+### <a id="BM_CombiningTextMarkupAndCode"></a>  텍스트, 태그 및 코드 블록의에서 코드를 결합합니다.
 
 서버 코드 블록에서 텍스트와 페이지에는 태그를 출력 하고자 합니다. 서버 코드 블록에 코드 되 고 하는 대신 링크로 렌더링할지는 텍스트가 포함 하는 경우 ASP.NET 코드에서 해당 텍스트를 구별할 수 있어야 합니다. 다음과 같은 여러 가지 방법으로 이 작업을 수행할 수 있습니다.
 
@@ -207,7 +207,7 @@ Visual Basic 언어가 대/소문자 구분 되지 않습니다. 프로그래밍
     [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample14.vbhtml)]
 
     > [!NOTE]
-    > 이 섹션 및 #8212;에 표시 된 대로 텍스트를 출력할 때 HTML 요소를 사용 하 여 `@:` 연산자 또는 `<text>` 요소 &#8212; ASP.NET 하지 않는 HTML 인코딩할 출력 합니다. (ASP.NET 서버 코드 식 및 뒤에 나오는 서버 코드 블록의 출력에서는 인코딩하지 앞에서 설명한 대로 `@`,이 섹션에서 설명 하는 특별 한 경우를 제외 하 고 있습니다.)
+    > 이 섹션에 표시 된 대로 텍스트를 출력할 때 &#8212; HTML 요소를 사용 하는 `@:` 연산자 또는 `<text>` 요소 &#8212; ASP.NET 하지 않는 HTML 인코딩할 출력 합니다. (ASP.NET 서버 코드 식 및 뒤에 나오는 서버 코드 블록의 출력에서는 인코딩하지 앞에서 설명한 대로 `@`,이 섹션에서 설명 하는 특별 한 경우를 제외 하 고 있습니다.)
 
 ### <a name="whitespace"></a>Whitespace
 
@@ -275,31 +275,33 @@ ASP.NET 데이터 형식을 자동으로 확인할 일반적으로 수 있지만
 
 다음 표에서 변수에 대 한 몇 가지 일반적인 변환 및 테스트 메서드를 나열합니다.
 
-| **메서드** | **설명** | **예제** |
-| --- | --- | --- |
-| `AsInt(), IsInt()` | 숫자를 나타내는 문자열로 변환 (같은 &quot;593&quot;)는 정수입니다. | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample23.vb)] |
-| `AsBool(), IsBool()` | 와 같은 문자열 변환 &quot;true&quot; 또는 &quot;false&quot; 부울 형식으로. | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample24.vb)] |
-| `AsFloat(), IsFloat()` | 같은 10 진수 값을 가진 문자열 변환 &quot;1.3&quot; 또는 &quot;7.439&quot; 된 부동 소수점 수입니다. | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample25.vb)] |
-| `AsDecimal(), IsDecimal()` | 와 같은 10 진수 값을 가진 문자열 변환 &quot;1.3&quot; 또는 &quot;7.439&quot; 소수로 합니다. (Asp.net에서 10 진수는 부동 소수점 숫자 보다 더 정확한.) | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample26.vb)] |
-| `AsDateTime(), IsDateTime()` | ASP.NET에는 날짜 및 시간 값을 나타내는 문자열 변환 `DateTime` 유형입니다. | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample27.vb)] |
-| `ToString()` | 다른 데이터 형식을 문자열로 변환합니다. | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample28.vb)] |
+
+|   <strong>메서드</strong>    |                                                                              <strong>설명</strong>                                                                              |                     <strong>예제</strong>                      |
+|------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------|
+|      `AsInt(), IsInt()`      |                                                 숫자를 나타내는 문자열로 변환 (같은 &quot;593&quot;)는 정수입니다.                                                 | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample23.vb)] |
+|     `AsBool(), IsBool()`     |                                                    와 같은 문자열 변환 &quot;true&quot; 또는 &quot;false&quot; 부울 형식으로.                                                     | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample24.vb)] |
+|    `AsFloat(), IsFloat()`    |                                    같은 10 진수 값을 가진 문자열 변환 &quot;1.3&quot; 또는 &quot;7.439&quot; 된 부동 소수점 수입니다.                                    | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample25.vb)] |
+|  `AsDecimal(), IsDecimal()`  | 와 같은 10 진수 값을 가진 문자열 변환 &quot;1.3&quot; 또는 &quot;7.439&quot; 소수로 합니다. (Asp.net에서 10 진수는 부동 소수점 숫자 보다 더 정확한.) | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample26.vb)] |
+| `AsDateTime(), IsDateTime()` |                                                ASP.NET에는 날짜 및 시간 값을 나타내는 문자열 변환 `DateTime` 유형입니다.                                                 | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample27.vb)] |
+|         `ToString()`         |                                                                       다른 데이터 형식을 문자열로 변환합니다.                                                                        | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample28.vb)] |
 
 ## <a name="operators"></a>연산자
 
 연산자는 키워드 또는 ASP.NET 어떤 유형의 식에서 수행 하기 위한 명령에 알려 주는 문자입니다. Visual Basic에서는 많은 연산자를 지원 하지만 ASP.NET 웹 페이지 개발을 시작 하려면 몇 가지를 인식 해야 합니다. 다음 표에서 가장 일반적인 연산자 요약 되어 있습니다.
 
-| **Operator** | **설명** | **예제** |
-| --- | --- | --- |
-| `+ - * /` | 숫자 식에 사용 되는 수학 연산자. | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample29.vb)] |
-| `=` | 할당 및 같음입니다. 컨텍스트에 따라 왼쪽에 있는 개체를 문의 오른쪽에 있는 값을 할당 하거나 하거나 값이 같은지를 확인 합니다. | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample30.vb)] |
-| `<>` | 같지 않음 반환 `True` 값 같지 않으면 합니다. | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample31.vb)] |
-| `< > <= >=` | 보다 작음, 보다 큼, 작거나 보다 또는 같음, 및 보다 크거나 합니다. | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample32.vb)] |
-| `&` | 연결 문자열을 조인 하는 데 사용 됩니다. | [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample33.vbhtml)] |
-| `+= -=` | 증가 및 감소 연산자의 추가 하 고 변수에서 각각 1을 뺌입니다. | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample34.vb)] |
-| `.` | 점입니다. 개체의 속성 및 메서드를 구별 하는 데 사용 합니다. | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample35.vb)] |
-| `()` | 괄호입니다. 그룹 식에 배열 및 컬렉션의 멤버에 액세스 하 고 하는 메서드에 매개 변수를 전달 하는 데 사용 합니다. | [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample36.vbhtml)] |
-| `Not` | 필요는 없습니다. False로 그리고 반대로 true 값을 반대로 바꿉니다. 일반적으로 테스트 하는 약식 방법으로 사용 `False` (즉,에 대 한 하지 `True`). | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample37.vb)] |
-| `AndAlso OrElse` | 논리 AND 또는 및 연결 하는 데 사용 되는 조건입니다. | [!code-vb[Main](introducing-razor-syntax-vb/samples/sample38.vb)] |
+
+| <strong>Operator</strong> |                                                                        <strong>설명</strong>                                                                         |                         <strong>예제</strong>                         |
+|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
+|         `+ - * /`         |                                                                숫자 식에 사용 되는 수학 연산자.                                                                |     [!code-vb[Main](introducing-razor-syntax-vb/samples/sample29.vb)]     |
+|            `=`            | 할당 및 같음입니다. 컨텍스트에 따라 왼쪽에 있는 개체를 문의 오른쪽에 있는 값을 할당 하거나 하거나 값이 같은지를 확인 합니다. |     [!code-vb[Main](introducing-razor-syntax-vb/samples/sample30.vb)]     |
+|           `<>`            |                                                           같지 않음 반환 `True` 값 같지 않으면 합니다.                                                           |     [!code-vb[Main](introducing-razor-syntax-vb/samples/sample31.vb)]     |
+|        `< > <= >=`        |                                                   보다 작음, 보다 큼, 작거나 보다 또는 같음, 및 보다 크거나 합니다.                                                   |     [!code-vb[Main](introducing-razor-syntax-vb/samples/sample32.vb)]     |
+|            `&`            |                                                                연결 문자열을 조인 하는 데 사용 됩니다.                                                                | [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample33.vbhtml)] |
+|          `+= -=`          |                                       증가 및 감소 연산자의 추가 하 고 변수에서 각각 1을 뺌입니다.                                       |     [!code-vb[Main](introducing-razor-syntax-vb/samples/sample34.vb)]     |
+|            `.`            |                                                     점입니다. 개체의 속성 및 메서드를 구별 하는 데 사용 합니다.                                                      |     [!code-vb[Main](introducing-razor-syntax-vb/samples/sample35.vb)]     |
+|           `()`            |                           괄호입니다. 그룹 식에 배열 및 컬렉션의 멤버에 액세스 하 고 하는 메서드에 매개 변수를 전달 하는 데 사용 합니다.                           | [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample36.vbhtml)] |
+|           `Not`           |                    필요는 없습니다. False로 그리고 반대로 true 값을 반대로 바꿉니다. 일반적으로 테스트 하는 약식 방법으로 사용 `False` (즉,에 대 한 하지 `True`).                     |     [!code-vb[Main](introducing-razor-syntax-vb/samples/sample37.vb)]     |
+|     `AndAlso OrElse`      |                                                       논리 AND 또는 및 연결 하는 데 사용 되는 조건입니다.                                                       |     [!code-vb[Main](introducing-razor-syntax-vb/samples/sample38.vb)]     |
 
 ## <a name="working-with-file-and-folder-paths-in-code"></a>파일 및 코드의 폴더 경로 작업
 
@@ -475,7 +477,7 @@ Asp.net에서 가장 기본적인 개체 페이지입니다. 조건에 맞는 �
 
 이 메서드는 지정 된 가상 경로에 해당 하는 서버의 실제 경로 반환 합니다. 메서드에 대 한 매개 변수 3 개 `virtualPath`, `baseVirtualDir`, 및 `allowCrossAppMapping`합니다. (선언에서 수락 하 게 하는 데이터의 데이터 형식과 매개 변수가 나열 됩니다 확인 합니다.) 이 메서드를 호출할 때에 세 매개 변수 모두에 대 한 값을 입력 해야 합니다.
 
-메서드에 매개 변수를 전달 하기 위한 두 가지 옵션이 Razor 구문을 사용 하 여 Visual Basic을 사용 하는 경우: *위치 매개 변수* 또는 *명명 된 매개 변수*합니다. 위치 매개 변수를 사용 하 여 메서드를 호출 하는 엄격한 순서를 메서드 선언에 지정 된 매개 변수를 전달 합니다. (일반적으로 알 수이 순서는 메서드에 대 한 설명서를 참조 하 여.) 순서를 따라야 하며 매개 변수 중 &#8212; 건너뛸 수 없습니다. 필요에 따라 전달 하면 빈 문자열 (`""`) 또는 null에 대 한 값을 갖지 위치 매개 변수입니다.
+메서드에 매개 변수를 전달 하기 위한 두 가지 옵션이 Razor 구문을 사용 하 여 Visual Basic을 사용 하는 경우: *위치 매개 변수* 또는 *명명 된 매개 변수*합니다. 위치 매개 변수를 사용 하 여 메서드를 호출 하는 엄격한 순서를 메서드 선언에 지정 된 매개 변수를 전달 합니다. (일반적으로 알 수이 순서는 메서드에 대 한 설명서를 참조 하 여.) 순서를 따라야 하며 매개 변수를 건너뛸 수 없습니다 &#8212; 필요에 따라 전달 하면 빈 문자열 (`""`) 또는 null에 대 한 값을 갖지 위치 매개 변수입니다.
 
 다음 예제에서는 라는 폴더가 있다고 가정 *스크립트* 웹 사이트에 있습니다. 코드를 호출 하 여는 `Request.MapPath` 올바른 순서로 세 개의 매개 변수가 대 한 값을 메서드에 전달 합니다. 다음 결과 매핑된 경로 표시합니다.
 
@@ -493,7 +495,7 @@ Asp.net에서 가장 기본적인 개체 페이지입니다. 조건에 맞는 �
 
 ### <a name="try-catch-statements"></a>Try Catch 문
 
-종종 컨트롤 외부에 같은 이유로 실패할 수 있는 코드에 문의 해야 합니다. 예:
+종종 컨트롤 외부에 같은 이유로 실패할 수 있는 코드에 문의 해야 합니다. 예를 들어:
 
 - 코드를 열고, 만들기, 읽기, 또는 파일을 작성 하 려 하면 모든 종류의 오류가 발생할 수 있습니다. 원하는 파일이 존재 하지 않을, 잠긴 상태일 수 코드 수 하지 사용 권한이 하 고, 합니다.
 - 마찬가지로, 코드를 데이터베이스에서 레코드를 업데이트 하려고 하는 경우 사용 권한 문제가 있을 수 있습니다, 그리고 데이터베이스에 연결을 삭제 될 수 있습니다, 그리고 유효 하지 않은, 및 등 데이터를 저장할 수 있습니다.
@@ -514,7 +516,7 @@ Asp.net에서 가장 기본적인 개체 페이지입니다. 조건에 맞는 �
 
 [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample60.vbhtml)]
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 ### <a name="reference-documentation"></a>참조 설명서
 

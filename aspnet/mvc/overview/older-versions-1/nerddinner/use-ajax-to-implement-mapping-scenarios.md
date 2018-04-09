@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/use-ajax-to-implement-mapping-scenarios
-title: "AJAX를 사용 하 여 매핑 시나리오를 구현할 | Microsoft Docs"
+title: AJAX를 사용 하 여 매핑 시나리오를 구현할 | Microsoft Docs
 author: microsoft
-description: "11 단계 AJAX 매핑 지원 만들기, 편집 또는 보기 dinners l 볼 수 있는 사용자를 사용 하면이 업그레이드 되었으며 수정 응용 프로그램에 통합 하는 방법을 보여 줍니다 중..."
+description: 11 단계 AJAX 매핑 지원 만들기, 편집 또는 보기 dinners l 볼 수 있는 사용자를 사용 하면이 업그레이드 되었으며 수정 응용 프로그램에 통합 하는 방법을 보여 줍니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2010
@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-ajax-to-implement-mapping-scenarios
 msc.type: authoredcontent
-ms.openlocfilehash: cc55560ce691826b6d52971b16d0515ed73d72a6
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4b3f1e46886c4c1f054e43768b0a44695d71bf09
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="use-ajax-to-implement-mapping-scenarios"></a>AJAX를 사용 하 여 매핑 시나리오를 구현 하려면
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 [PDF 다운로드](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
 
@@ -115,7 +115,7 @@ AJAX 구현을 완료 하려면 사용자가 그래픽으로 dinners 근처를 �
 
 ![](use-ajax-to-implement-mapping-scenarios/_static/image7.png)
 
-Dinners에 대 한 radius 위치 기반 검색을 효율적으로 우리의 데이터베이스 및 데이터 저장소 계층 내에서 지원 구현부터 시작 합니다. 사용 하 여 새 [SQL 2008의 지리 공간 기능](https://www.microsoft.com/sqlserver/2008/en/us/spatial-data.aspx) ,이 구현 하려면 또는 Gary 드 라이덴 문서 여기에서 설명 하는 SQL 함수 접근 방식을 사용할 수 있습니다 또는: [http://www.codeproject.com/KB/cs/ distancebetweenlocations.aspx](http://www.codeproject.com/KB/cs/distancebetweenlocations.aspx) 및 여기에 linq to SQL 사용 하는 방법에 대 한 Rob Conery blogged: [http://blog.wekeroad.com/2007/08/30/linq-and-geocoding/](http://blog.wekeroad.com/2007/08/30/linq-and-geocoding/)
+Dinners에 대 한 radius 위치 기반 검색을 효율적으로 우리의 데이터베이스 및 데이터 저장소 계층 내에서 지원 구현부터 시작 합니다. 사용 하 여 새 [SQL 2008의 지리 공간 기능](https://www.microsoft.com/sqlserver/2008/en/us/spatial-data.aspx) ,이 구현 하려면 또는 Gary 드 라이덴 문서 여기에서 설명 하는 SQL 함수 접근 방식을 사용할 수 있습니다 또는: [ http://www.codeproject.com/KB/cs/distancebetweenlocations.aspx ](http://www.codeproject.com/KB/cs/distancebetweenlocations.aspx) 및 Rob Conery 여기에 linq to SQL 사용 하는 방법에 대 한 blogged: [http://blog.wekeroad.com/2007/08/30/linq-and-geocoding/](http://blog.wekeroad.com/2007/08/30/linq-and-geocoding/)
 
 이 기법을 구현 하려면 됩니다 Visual Studio 내에서 "서버 탐색기" 열, 선택 업그레이드 되었으며 수정 데이터베이스 및 그 아래에서 "기능" 하위 노드에서 마우스 오른쪽 단추로 클릭 하 고 새 "스칼라 반환 함수 만들기"를 선택:
 
@@ -193,6 +193,6 @@ CallbackUpdateMapDinners() 방법은 실제 작업을 수행 하는 위치입니
 
 이제 업그레이드 되었으며 수정 응용 프로그램의 모든 응용 프로그램 기능을 구현 했습니다. 보겠습니다 이제 가능 방법을 살펴보고 자동화 된 단위를 테스트 합니다.
 
->[!div class="step-by-step"]
-[이전](use-ajax-to-deliver-dynamic-updates.md)
-[다음](enable-automated-unit-testing.md)
+> [!div class="step-by-step"]
+> [이전](use-ajax-to-deliver-dynamic-updates.md)
+> [다음](enable-automated-unit-testing.md)

@@ -1,7 +1,7 @@
 ---
-title: "개별 사용자 계정을 사용 하 여 만든 프로젝트를 기반으로 문서"
+title: 개별 사용자 계정을 사용 하 여 만든 ASP.NET Core 프로젝트에 따라 문서
 author: rick-anderson
-description: "이 문서는 개별 사용자 계정을 사용 하 여 만든 프로젝트를 기반으로 문서를 나열 합니다."
+description: 개별 사용자 계정을 사용 하 여 만든 ASP.NET Core 프로젝트에 따라 문서를 검색 합니다.
 manager: wpickett
 ms.author: riande
 ms.date: 11/30/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/individual
-ms.openlocfilehash: aee18fa08fbc5c8452ca2b401d32858edaf55e7c
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 40715debb48c0a7121ce84d7843b8517b0973e74
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="articles-based-on-projects-created-with-individual-user-accounts"></a>개별 사용자 계정을 사용 하 여 만든 프로젝트를 기반으로 문서
+# <a name="articles-based-on-aspnet-core-projects-created-with-individual-user-accounts"></a>개별 사용자 계정을 사용 하 여 만든 ASP.NET Core 프로젝트에 따라 문서
 
 ASP.NET Core Id는 "개별 사용자 계정" 옵션을 사용 하 여 Visual Studio에서 프로젝트 템플릿을에 포함 됩니다.
 
@@ -29,6 +29,6 @@ dotnet new razor -au Individual
 
 다음 문서에는 개별 사용자 계정을 사용 하는 ASP.NET Core 서식 파일에서 생성 된 코드를 사용 하는 방법을 보여 줍니다.
 
-* [SMS를 사용한 2단계 인증](xref:security/authentication/2fa)
+* [SMS를 이용한 2단계 인증](xref:security/authentication/2fa)
 * [ASP.NET Core의 계정 확인 및 암호 복구](xref:security/authentication/accconfirm)
 * [권한 부여에 의해 보호 되는 사용자 데이터와 ASP.NET Core 응용 프로그램 만들기](xref:security/authorization/secure-data)

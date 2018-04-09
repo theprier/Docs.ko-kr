@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/master-pages-and-asp-net-ajax-cs
-title: "마스터 페이지 및 ASP.NET AJAX (C#) | Microsoft Docs"
+title: 마스터 페이지 및 ASP.NET AJAX (C#) | Microsoft Docs
 author: rick-anderson
-description: "ASP.NET AJAX 및 마스터 페이지를 사용 하기 위한 옵션에 설명 합니다. ScriptManagerProxy 클래스를 사용 하 여 조사 다양 한 JS 파일은 dependi를 로드 하는 방법에 대해 설명..."
+description: ASP.NET AJAX 및 마스터 페이지를 사용 하기 위한 옵션에 설명 합니다. ScriptManagerProxy 클래스를 사용 하 여 조사 다양 한 JS 파일은 dependi를 로드 하는 방법에 대해 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/11/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/master-pages-and-asp-net-ajax-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6e09951be5483ed098b8cab6517335f9962a5d95
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 87e5855354610723823da88ec961e7391c3f705f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="master-pages-and-aspnet-ajax-c"></a>마스터 페이지 및 ASP.NET AJAX (C#)
 ====================
@@ -184,9 +184,9 @@ ASP.NET AJAX framework 클라이언트 라이브러리에 대 한 필요한 스�
 
 ScriptManagerProxy 컨트롤의 작동을 보려면 보겠습니다에서 UpdatePanel 보강 `ShowRandomProduct.aspx` 일시 중지 또는 재개 Timer 컨트롤을 클라이언트 쪽 스크립트를 사용 하는 단추를 포함 하도록 합니다. 타이머 컨트롤에이 원하는 기능을 얻기 위해 사용할 수 있는 세 가지 클라이언트 쪽 방법이 있습니다.
 
-- `_startTimer()`-Timer 컨트롤 시작
-- `_raiseTick()`-다시 게시 하 고 발생 시키는 함으로써 Timer 컨트롤 "틱"로 인해 해당 `Tick` 서버에서 이벤트
-- `_stopTimer()`-Timer 컨트롤을 중지 합니다.
+- `_startTimer()` -Timer 컨트롤 시작
+- `_raiseTick()` -다시 게시 하 고 발생 시키는 함으로써 Timer 컨트롤 "틱"로 인해 해당 `Tick` 서버에서 이벤트
+- `_stopTimer()` -Timer 컨트롤을 중지 합니다.
 
 명명 된 변수로 JavaScript 파일을 만들어 보겠습니다 `timerEnabled` 및 라는 함수 `ToggleTimer`합니다. `timerEnabled` 변수 Timer 컨트롤은 현재 사용 가능 여부를 나타냅니다; 기본값은 true입니다. `ToggleTimer` 함수에서는 두 개의 입력 매개 변수를 사용할: 일시 중지/다시 시작 단추 및 클라이언트 쪽에 대 한 참조 `id` 타이머 컨트롤의 값입니다. 이 함수는 값을 설정/해제 `timerEnabled`Timer 컨트롤에 대 한 참조, 시작 또는 타이머를 중지 (값에 따라 `timerEnabled`), "일시 중지" 또는 "Resume" 단추의 표시 텍스트를 업데이트 합니다. 일시 중지/다시 시작 단추를 클릭할 때마다이 함수가 호출 됩니다.
 
@@ -228,7 +228,7 @@ ScriptManagerProxy 컨트롤의 스크립트 참조를 추가 하는 것의 선�
 
 [!code-aspx[Main](master-pages-and-asp-net-ajax-cs/samples/sample10.aspx)]
 
-그러면 "일시 중지" 텍스트가 있는 단추가 표시 됩니다. 때마다 클릭할 JavaScript 함수 `ToggleTimer` 호출, 단추와 Timer 컨트롤의 id 값에 대 한 참조를 전달 (`ProductTimer`). 가져오는 구문은 `id` 타이머 컨트롤의 값입니다. `<%=ProductTimer.ClientID%>`값을 내보내는 `ProductTimer` 타이머 컨트롤 `ClientID` 속성입니다. 에 [ *콘텐츠 페이지에서 컨트롤 ID 명명* ](control-id-naming-in-content-pages-cs.md) 자습서 서버 쪽 간의 차이점에 설명 했습니다 `ID` 값과 클라이언트 쪽 결과 `id` 값 방법과 `ClientID` 클라이언트 쪽 반환 `id`합니다.
+그러면 "일시 중지" 텍스트가 있는 단추가 표시 됩니다. 때마다 클릭할 JavaScript 함수 `ToggleTimer` 호출, 단추와 Timer 컨트롤의 id 값에 대 한 참조를 전달 (`ProductTimer`). 가져오는 구문은 `id` 타이머 컨트롤의 값입니다. `<%=ProductTimer.ClientID%>` 값을 내보내는 `ProductTimer` 타이머 컨트롤 `ClientID` 속성입니다. 에 [ *콘텐츠 페이지에서 컨트롤 ID 명명* ](control-id-naming-in-content-pages-cs.md) 자습서 서버 쪽 간의 차이점에 설명 했습니다 `ID` 값과 클라이언트 쪽 결과 `id` 값 방법과 `ClientID` 클라이언트 쪽 반환 `id`합니다.
 
 그림 11 브라우저를 통해 먼저 방문 하는 경우이 페이지를 보여 줍니다. 타이머는 현재 실행 되 고 15 초 마다 표시 된 제품 정보를 업데이트 합니다. 그림 12는 일시 중지 단추를 클릭 한 후 화면을 보여 줍니다. 일시 중지 단추를 클릭 하면 타이머를 중지 하 고 단추의 텍스트를 "Resume"를 업데이트 합니다. 제품 정보는 새로 고침 (및 15 초 마다 새로 고쳐집니다 계속) 후 사용자가 다시 시작을 클릭 합니다.
 
@@ -264,12 +264,12 @@ ASP.NET AJAX 프레임 워크를 사용 하 여 AJAX 사용 웹 응용 프로그
 
 ### <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 작성자 여러 ASP/ASP.NET 설명서와 4GuysFromRolla.com의 창립자의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 3.5 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco)합니다. Scott에 도달할 수 [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) 또는에서 그의 블로그 통해 [http://ScottOnWriting.NET](http://scottonwriting.net/)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 작성자 여러 ASP/ASP.NET 설명서와 4GuysFromRolla.com의 창립자의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 3.5 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672329972/4guysfromrollaco)합니다. Scott에 도달할 수 [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com) 또는에서 그의 블로그 통해 [ http://ScottOnWriting.NET ](http://scottonwriting.net/)합니다.
 
 ### <a name="special-thanks-to"></a>특별히 감사
 
-이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩[mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
+이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [mitchell@4GuysFromRolla.com](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](interacting-with-the-content-page-from-the-master-page-cs.md)
-[다음](specifying-the-master-page-programmatically-cs.md)
+> [!div class="step-by-step"]
+> [이전](interacting-with-the-content-page-from-the-master-page-cs.md)
+> [다음](specifying-the-master-page-programmatically-cs.md)

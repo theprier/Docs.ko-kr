@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/modifying-animations-from-the-server-side-cs
-title: "서버 쪽 (C#)에서 애니메이션 수정 | Microsoft Docs"
+title: 서버 쪽 (C#)에서 애니메이션 수정 | Microsoft Docs
 author: wenz
-description: "ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트롤 뿐 아니라 애니메이션 컨트롤을 추가 하는 전체 프레임 워크. 애니메이션 있을 수 있습니다..."
+description: ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트롤 뿐 아니라 애니메이션 컨트롤을 추가 하는 전체 프레임 워크. 애니메이션 있을 수 있습니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/modifying-animations-from-the-server-side-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e1f9bda03b3e3edf3bbdc591cde9858944d39321
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6946875552c885ffb1f2a2eb7e728b85d7dd3973
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="modifying-animations-from-the-server-side-c"></a>서버 쪽 (C#)에서 애니메이션 수정
 ====================
@@ -62,6 +62,6 @@ ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트�
 
 C# /VB 서버 쪽 코드를 사용 하 여 애니메이션 만들어집니다 ([전체 크기 이미지를 보려면 클릭](modifying-animations-from-the-server-side-cs/_static/image3.png))
 
->[!div class="step-by-step"]
-[이전](triggering-an-animation-in-another-control-cs.md)
-[다음](executing-animations-using-client-side-code-cs.md)
+> [!div class="step-by-step"]
+> [이전](triggering-an-animation-in-another-control-cs.md)
+> [다음](executing-animations-using-client-side-code-cs.md)

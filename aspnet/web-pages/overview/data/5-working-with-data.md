@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/data/5-working-with-data
-title: "ASP.NET 웹에서 데이터베이스 작업 소개 페이지 (Razor) 사이트 | Microsoft Docs"
+title: ASP.NET 웹에서 데이터베이스 작업 소개 페이지 (Razor) 사이트 | Microsoft Docs
 author: tfitzmac
-description: "데이터베이스에서 데이터를 액세스 하 고 ASP.NET 웹 페이지를 사용 하 여 표시 하는 방법을 설명이 합니다."
+description: 데이터베이스에서 데이터를 액세스 하 고 ASP.NET 웹 페이지를 사용 하 여 표시 하는 방법을 설명이 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/data/5-working-with-data
 msc.type: authoredcontent
-ms.openlocfilehash: 460af471a1b0650f8d782d582ce6cd9a06664d5c
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 563074cf3e60717c2e6c336a2c282b4203f73b8b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="introduction-to-working-with-a-database-in-aspnet-web-pages-razor-sites"></a>ASP.NET 웹에서 데이터베이스 작업 소개 페이지 (Razor) 사이트
 ====================
@@ -361,7 +361,7 @@ ms.lasthandoff: 03/15/2018
 6. 클릭는 **삭제** 제품 중 하나에 대 한 링크입니다. *DeleteProduct.cshtml* 해당 레코드를 삭제 하도록 확인 페이지가 표시 됩니다.
 7. 클릭는 **삭제** 단추입니다. 제품 레코드가 삭제 되 고 업데이트 된 제품 목록과 함께 페이지가 새로 고쳐집니다.
 
-> [!TIP] 
+> [!TIP]
 > 
 > <a id="SB_ConnectingToADatabase"></a>
 > ### <a name="connecting-to-a-database"></a>데이터베이스에 연결
@@ -389,7 +389,7 @@ ms.lasthandoff: 03/15/2018
 > 마지막으로, 연결 문자열을 직접 사용 하려는 경우를 호출할 수 있습니다는 `Database.OpenConnectionString` 메서드와 패스에 하나의 이름 대신 실제 연결 문자열이 하는 것은 *Web.config* 파일입니다. 이 몇 가지 이유로 없는 연결 문자열에 대 한 액세스 하는 경우에 유용할 수 있습니다 (또는,와 같은 값을 *.sdf* 파일 이름) 페이지가 실행 될 때까지 합니다. 그러나 대부분의 시나리오에 사용할 수 있습니다 `Database.Open` 이 문서에 설명 된 대로 합니다.
 
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 - [SQL Server Compact](https://www.microsoft.com/sqlserver/2008/en/us/compact.aspx)
 - [SQL Server 또는 WebMatrix의 MySQL 데이터베이스에 연결](https://go.microsoft.com/fwlink/?LinkId=208661)

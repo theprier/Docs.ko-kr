@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/htmleditor/how-do-i-use-the-html-editor-control-cs
-title: "HTML 편집기 컨트롤을 사용 하려면 어떻게 해야 합니까? (C#) | Microsoft Docs"
+title: HTML 편집기 컨트롤을 사용 하려면 어떻게 해야 합니까? (C#) | Microsoft Docs
 author: microsoft
-description: "HTMLEditor는 쉽게 작성 하 고 도구 모음 단추를 통해 HTML 콘텐츠를 편집할 수 있도록 ASP.NET AJAX 컨트롤입니다."
+description: HTMLEditor는 쉽게 작성 하 고 도구 모음 단추를 통해 HTML 콘텐츠를 편집할 수 있도록 ASP.NET AJAX 컨트롤입니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/12/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/htmleditor/how-do-i-use-the-html-editor-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 17343660d7bf7aa6210fa9c6c9c0206598d34b18
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: fca18948c0e4f1323f214dc0033f19fa44efad47
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="how-do-i-use-the-html-editor-control-c"></a>HTML 편집기 컨트롤을 사용 하려면 어떻게 해야 합니까? (C#)
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > HTMLEditor는 쉽게 작성 하 고 도구 모음 단추를 통해 HTML 콘텐츠를 편집할 수 있도록 ASP.NET AJAX 컨트롤입니다.
 
@@ -111,5 +111,5 @@ HTML 편집기 Content 속성은 HTML 콘텐츠를 HTML 편집기에 입력 한 
 
 이 자습서에서는 들어에 포함 된 HTML 편집기 컨트롤에 간략하게 설명 함께 제공 된 있습니다. HTML 편집기를 사용 하 여 사용자 로부터 풍부한 콘텐츠를 허용 하도록 서버에 콘텐츠를 전송 하는 방법을 배웠습니다. 도 HTML 편집기에서 표시 되는 도구 모음 단추를 사용자 지정할 수는 방법을 설명 했습니다. 마지막으로, 잠재적으로 악의적인 입력을 허용 하도록 HTML 편집기를 사용할 때 교차 사이트 스크립팅 공격을 방지 하는 방법을 배웠습니다.
 
->[!div class="step-by-step"]
-[다음](how-do-i-use-the-html-editor-control-vb.md)
+> [!div class="step-by-step"]
+> [다음](how-do-i-use-the-html-editor-control-vb.md)
