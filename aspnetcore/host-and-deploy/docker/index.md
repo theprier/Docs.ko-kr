@@ -1,7 +1,7 @@
 ---
-title: "Docker 컨테이너에서 ASP.NET Core 호스트"
+title: Docker 컨테이너에서 ASP.NET Core 호스트
 author: rick-anderson
-description: "Docker 컨테이너에서 ASP.NET Core 앱을 호스트하는 방법을 학습하기 위한 리소스 링크를 검색합니다."
+description: Docker 컨테이너에서 ASP.NET Core 앱을 호스트하는 방법을 학습하기 위한 리소스 링크를 검색합니다.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,11 +10,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/docker/index
-ms.openlocfilehash: f6646a92e75b79d2193e9cbca7fa8ac8e26dc429
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 12a179287ec302994380e0faf4b843596f8c2f4e
+ms.sourcegitcommit: d45d766504c2c5aad2453f01f089bc6b696b5576
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/30/2018
 ---
 # <a name="host-aspnet-core-in-docker-containers"></a>Docker 컨테이너에서 ASP.NET Core 호스트
 
@@ -32,7 +32,7 @@ Docker 기술에 대한 용어 및 정의를 알아봅니다.
 [Docker 컨테이너, 이미지 및 레지스트리](/dotnet/standard/microservices-architecture/container-docker-introduction/docker-containers-images-registries)  
 여러 환경 간의 일관된 배포를 위해 Docker 컨테이너 이미지가 이미지 레지스트리에 저장되는 방법을 확인합니다.
 
-[.NET Core 응용 프로그램에 대한 Docker 이미지 작성](/dotnet/articles/core/docker/building-net-docker-images)  
+[.NET Core 응용 프로그램에 대한 Docker 이미지 빌드](/dotnet/articles/core/docker/building-net-docker-images)  
 ASP.NET Core 앱을 빌드하고 Docker화하는 방법을 배웁니다. Microsoft에서 관리하는 Docker 이미지를 살펴보고 사용 사례를 검토합니다.
 
 [Docker용 Visual Studio Tools](xref:host-and-deploy/docker/visual-studio-tools-for-docker)  
@@ -40,3 +40,6 @@ Visual Studio 2017에서 Windows용 Docker에 대해 .NET Framework 또는 .NET 
 
 [Docker 이미지에 게시](/azure/vs-azure-tools-docker-hosting-web-apps-in-docker)  
 PowerShell을 사용하여 Azure의 Docker 호스트에 ASP.NET Core 앱을 배포하기 위해 Visual Studio Tools for Docker 확장을 사용하는 방법을 알아봅니다.
+
+[프록시 서버 및 부하 분산 장치를 사용하도록 ASP.NET Core 구성](xref:host-and-deploy/proxy-load-balancer)  
+프록시 서버 및 부하 분산 장치 외에도 호스팅되는 앱에 추가 구성이 필요할 수 있습니다. 프록시를 통해 요청을 전달하면 체계 및 클라이언트 IP와 같은 원래 요청에 대한 정보를 모호하게 합니다. 앱에 대한 수동 요청에 대한 정보를 전달해야 할 수도 있습니다.

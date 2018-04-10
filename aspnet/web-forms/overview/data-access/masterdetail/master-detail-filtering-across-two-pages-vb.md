@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/masterdetail/master-detail-filtering-across-two-pages-vb
-title: "마스터/세부 정보 (VB)의 두 페이지에 걸쳐 필터링 | Microsoft Docs"
+title: 마스터/세부 정보 (VB)의 두 페이지에 걸쳐 필터링 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에서는 데이터베이스 공급자를 나열 하는 GridView를 사용 하 여이 패턴을 구현 합니다. GridView에서 각 공급 업체 행은 Vie 포함 됩니다..."
+description: 이 자습서에서는 데이터베이스 공급자를 나열 하는 GridView를 사용 하 여이 패턴을 구현 합니다. GridView에서 각 공급 업체 행은 Vie 포함 됩니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/31/2010
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-across-two-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d8d43475ae2f05d83d51c53d76de4f07db70ca7a
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: b8250c0f8d1befacf66d6be517514aad8bc31b09
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="masterdetail-filtering-across-two-pages-vb"></a>마스터/세부 정보 (VB)의 두 페이지에 걸쳐 필터링
 ====================
@@ -35,7 +35,7 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="step-1-addingsupplierlistmasteraspxandproductsforsupplierdetailsaspxpages-to-thefilteringfolder"></a>1 단계: 추가`SupplierListMaster.aspx`및`ProductsForSupplierDetails.aspx`페이지는`Filtering`폴더
 
-"시작" 페이지 수가 세 번째 자습서에서 페이지 레이아웃을 정의할 때 추가 `BasicReporting`, `Filtering`, 및 `CustomFormatting` 폴더입니다. 그러나 우리 추가 하지 않았습니다 기초 페이지가이 자습서에 대 한 해당 시간에 되 고 있으므로 두 개의 새 페이지를 추가 하는 `Filtering` 폴더: `SupplierListMaster.aspx` 및 `ProductsForSupplierDetails.aspx`합니다. `SupplierListMaster.aspx`하는 동안 "마스터" 레코드 (공급 업체)를 나열 합니다 `ProductsForSupplierDetails.aspx` 선택한 공급자에 대 한 제품을 표시 합니다.
+"시작" 페이지 수가 세 번째 자습서에서 페이지 레이아웃을 정의할 때 추가 `BasicReporting`, `Filtering`, 및 `CustomFormatting` 폴더입니다. 그러나 우리 추가 하지 않았습니다 기초 페이지가이 자습서에 대 한 해당 시간에 되 고 있으므로 두 개의 새 페이지를 추가 하는 `Filtering` 폴더: `SupplierListMaster.aspx` 및 `ProductsForSupplierDetails.aspx`합니다. `SupplierListMaster.aspx` 하는 동안 "마스터" 레코드 (공급 업체)를 나열 합니다 `ProductsForSupplierDetails.aspx` 선택한 공급자에 대 한 제품을 표시 합니다.
 
 이러한 두 개의 새 페이지를 만들 수 있는 시기를 사용 하 여 연결 하려면 특정는 `Site.master` 마스터 페이지입니다.
 
@@ -87,7 +87,7 @@ HyperLinkField 동일한 텍스트를 사용 하도록 구성할 수 있습니�
 **그림 5**: HyperLinkField의 설정 `Text` 속성을 제품 보기 ([전체 크기 이미지를 보려면 클릭](master-detail-filtering-across-two-pages-vb/_static/image13.png))
 
 
-텍스트 또는 GridView 행에 바인딩된 원본 데이터를 기반으로 할에 URL 값을 설정 하려면 데이터 텍스트 필드 또는 URL 값에서 끌어와야 합니다 지정는 `DataTextField` 또는 `DataNavigateUrlFields` 속성입니다. `DataTextField`단일 데이터 필드;로 설정할 수 있습니다. 하지만`DataNavigateUrlFields`,, 데이터 필드의 쉼표로 구분 된 목록으로 설정할 수 있습니다. 자주 텍스트 또는 현재 행의 데이터 필드 값과 일부 static 태그의 조합에 대 한 URL을 기반으로 해야 합니다. 이 자습서에서는 예를 들어 원하는 HyperLinkField의 링크의 URL을 `ProductsForSupplierDetails.aspx?SupplierID=supplierID`여기서  *`supplierID`*  각 GridView 행이 `SupplierID` 값입니다. 정적 필요 하 고 여기 값 데이터 기반 알림:는 `ProductsForSupplierDetails.aspx?SupplierID=` 링크의 URL의 일부는 정적 반면는  *`supplierID`*  부분은 데이터 기반으로 해당 값은 각 행의 자체 `SupplierID` 값입니다.
+텍스트 또는 GridView 행에 바인딩된 원본 데이터를 기반으로 할에 URL 값을 설정 하려면 데이터 텍스트 필드 또는 URL 값에서 끌어와야 합니다 지정는 `DataTextField` 또는 `DataNavigateUrlFields` 속성입니다. `DataTextField` 단일 데이터 필드;로 설정할 수 있습니다. 하지만`DataNavigateUrlFields`,, 데이터 필드의 쉼표로 구분 된 목록으로 설정할 수 있습니다. 자주 텍스트 또는 현재 행의 데이터 필드 값과 일부 static 태그의 조합에 대 한 URL을 기반으로 해야 합니다. 이 자습서에서는 예를 들어 원하는 HyperLinkField의 링크의 URL을 `ProductsForSupplierDetails.aspx?SupplierID=supplierID`여기서 *`supplierID`* 각 GridView 행이 `SupplierID` 값입니다. 정적 필요 하 고 여기 값 데이터 기반 알림:는 `ProductsForSupplierDetails.aspx?SupplierID=` 링크의 URL의 일부는 정적 반면는 *`supplierID`* 부분은 데이터 기반으로 해당 값은 각 행의 자체 `SupplierID` 값입니다.
 
 정적 및 데이터 기반 값의 조합을 나타내기 위해 사용 하 여는 `DataTextFormatString` 및 `DataNavigateUrlFormatString` 속성입니다. 필요에 따라 이러한 속성의 static 태그를 입력 한 다음 마커를 사용 하 여 `{0}` 에 지정 된 필드의 값을 원하는 `DataTextField` 또는 `DataNavigateUrlFields` 속성을 표시 합니다. 경우는 `DataNavigateUrlFields` 속성에는 여러 필드가 지정 된 사용 `{0}` 삽입, 첫 번째 필드 값을 원하는 경우 `{1}` 등에 대 한는 두 번째 필드 값입니다.
 
@@ -132,12 +132,12 @@ HyperLinkField를 추가한 후 자유롭게 사용자 지정 하 고 GridView�
 **그림 10**: ObjectDataSource 호출가 `GetProductsBySupplierID(supplierID)` 메서드 ([전체 크기 이미지를 보려면 클릭](master-detail-filtering-across-two-pages-vb/_static/image28.png))
 
 
-데이터 소스 구성 마법사의 마지막 단계에서는의 소스를 제공 하는 `GetProductsBySupplierID(supplierID)` 메서드의  *`supplierID`*  매개 변수입니다. 쿼리 문자열 값을 사용 하려면 쿼리 문자열 매개 변수 원본을 설정 하 고 QueryStringField 텍스트 상자에 사용할 쿼리 문자열 값의 이름을 입력 (`SupplierID`).
+데이터 소스 구성 마법사의 마지막 단계에서는의 소스를 제공 하는 `GetProductsBySupplierID(supplierID)` 메서드의 *`supplierID`* 매개 변수입니다. 쿼리 문자열 값을 사용 하려면 쿼리 문자열 매개 변수 원본을 설정 하 고 QueryStringField 텍스트 상자에 사용할 쿼리 문자열 값의 이름을 입력 (`SupplierID`).
 
 
 [![SupplierID를 SupplierID Querystring 값에서 매개 변수 값을 채웁니다](master-detail-filtering-across-two-pages-vb/_static/image30.png)](master-detail-filtering-across-two-pages-vb/_static/image29.png)
 
-**그림 11**: 채우기는  *`supplierID`*  에서 매개 변수 값은 `SupplierID` Querystring 값 ([전체 크기 이미지를 보려면 클릭](master-detail-filtering-across-two-pages-vb/_static/image31.png))
+**그림 11**: 채우기는 *`supplierID`* 에서 매개 변수 값은 `SupplierID` Querystring 값 ([전체 크기 이미지를 보려면 클릭](master-detail-filtering-across-two-pages-vb/_static/image31.png))
 
 
 그을 마쳤습니다. 그림 12는 `ProductsForSupplierDetails.aspx` 도쿄 Traders 링크를 클릭 하 여 방문 페이지 `SupplierListMaster.aspx`합니다.
@@ -165,12 +165,12 @@ HyperLinkField를 추가한 후 자유롭게 사용자 지정 하 고 GridView�
 **그림 14**: ObjectDataSource 호출가 `GetSupplierBySupplierID(supplierID)` 메서드 ([전체 크기 이미지를 보려면 클릭](master-detail-filtering-across-two-pages-vb/_static/image40.png))
 
 
-와 마찬가지로 `ProductsBySupplierDataSource`, 있어야는  *`supplierID`*  매개 변수 값이 할당은 `SupplierID` querystring 값입니다.
+와 마찬가지로 `ProductsBySupplierDataSource`, 있어야는 *`supplierID`* 매개 변수 값이 할당은 `SupplierID` querystring 값입니다.
 
 
 [![SupplierID를 SupplierID Querystring 값에서 매개 변수 값을 채웁니다](master-detail-filtering-across-two-pages-vb/_static/image42.png)](master-detail-filtering-across-two-pages-vb/_static/image41.png)
 
-**그림 15**: 채우기는  *`supplierID`*  에서 매개 변수 값은 `SupplierID` Querystring 값 ([전체 크기 이미지를 보려면 클릭](master-detail-filtering-across-two-pages-vb/_static/image43.png))
+**그림 15**: 채우기는 *`supplierID`* 에서 매개 변수 값은 `SupplierID` Querystring 값 ([전체 크기 이미지를 보려면 클릭](master-detail-filtering-across-two-pages-vb/_static/image43.png))
 
 
 Visual Studio FormView의을 자동으로 만들어집니다 FormView 디자인 뷰에서 ObjectDataSource에 바인딩할 때 `ItemTemplate`, `InsertItemTemplate`, 및 `EditItemTemplate` 각에서 반환 된 데이터 필드에 대 한 레이블 및 TextBox 웹 컨트롤이 ObjectDataSource 합니다. 공급 업체 정보를 자유롭게 제거 표시 하고자 하므로 `InsertItemTemplate` 및 `EditItemTemplate`합니다. 다음으로 ItemTemplate 편집에 공급 업체의 회사 이름이 표시 됩니다는 `<h3>` 요소 및 주소, city, country 및 회사 이름 아래에 전화 번호입니다. 또는 FormView의 수동으로 설정할 수 `DataSourceID` 만듭니다는 `ItemTemplate` 태그 다시에서 같이 "[the ObjectDataSource와 데이터를 표시](../basic-reporting/displaying-data-with-the-objectdatasource-cs.md)" 자습서입니다.
@@ -212,7 +212,7 @@ Visual Studio FormView의을 자동으로 만들어집니다 FormView 디자인 
 
 마스터/세부 정보 보고서는 단일 페이지에 마스터 및 세부 정보 레코드를 표시할 수, 하는 동안 여러 웹 사이트에서 구분 됩니다 두 웹 페이지에 걸쳐 있습니다. 이 자습서에서는 "마스터" 웹 페이지에 GridView에 나열 된 공급자와 연결 된 제품을 "details" 페이지에 나열 하 여 마스터/세부 정보 보고서를 구현 하는 방법을 찾았습니다. 마스터 웹 페이지에 각 공급 업체 행의 행을 따라 전달 하는 세부 정보 페이지에 대 한 링크 포함 `SupplierID` 값입니다. GridView의 HyperLinkField를 사용 하 여 이러한 행에 지정 링크를 쉽게 추가할 수 있습니다.
 
-세부 정보 페이지에서 호출 하 여 수행 된 지정 된 공급자에 대 한 해당 제품을 검색 하는 `ProductsBLL` 클래스의 `GetProductsBySupplierID(supplierID)` 메서드. *`supplierID`*  querystring 매개 변수 원본으로 사용 하 여 매개 변수 값이 지정 되었습니다. 또한 살펴보았습니다는 FormView를 사용 하 여 세부 정보 페이지에 공급자 세부 정보를 표시 하는 방법.
+세부 정보 페이지에서 호출 하 여 수행 된 지정 된 공급자에 대 한 해당 제품을 검색 하는 `ProductsBLL` 클래스의 `GetProductsBySupplierID(supplierID)` 메서드. *`supplierID`* querystring 매개 변수 원본으로 사용 하 여 매개 변수 값이 지정 되었습니다. 또한 살펴보았습니다는 FormView를 사용 하 여 세부 정보 페이지에 공급자 세부 정보를 표시 하는 방법.
 
 우리의 [다음 자습서](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb.md) 마스터/세부 정보 보고서에 최종 라는 것입니다. 각 행에 선택 단추는 GridView에 제품의 목록을 표시 하는 방법을 살펴보겠습니다. Select 버튼을 클릭 하면 DetailsView 컨트롤 같은 페이지에 있는 해당 제품의 세부 정보가 표시 됩니다.
 
@@ -220,12 +220,12 @@ Visual Studio FormView의을 자동으로 만들어집니다 FormView 디자인 
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Hilton Giesenow 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](master-detail-filtering-with-two-dropdownlists-vb.md)
-[다음](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb.md)
+> [!div class="step-by-step"]
+> [이전](master-detail-filtering-with-two-dropdownlists-vb.md)
+> [다음](master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb.md)

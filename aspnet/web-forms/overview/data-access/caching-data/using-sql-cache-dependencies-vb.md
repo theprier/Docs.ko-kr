@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/caching-data/using-sql-cache-dependencies-vb
-title: "SQL 캐시 종속성 (VB)를 사용 하 여 | Microsoft Docs"
+title: SQL 캐시 종속성 (VB)를 사용 하 여 | Microsoft Docs
 author: rick-anderson
-description: "가장 간단한 캐싱 전략 지정 된 기간 후에 만료 되도록 캐시 된 데이터입니다. 하지만이 간단한 방법은 즉 캐시 된 데이터 maintai..."
+description: 가장 간단한 캐싱 전략 지정 된 기간 후에 만료 되도록 캐시 된 데이터입니다. 하지만이 간단한 방법은 즉 캐시 된 데이터 maintai...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/30/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/caching-data/using-sql-cache-dependencies-vb
 msc.type: authoredcontent
-ms.openlocfilehash: af302d67b009fc25e38fb33a5e2a623f7200bcd5
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 452d856fe352ef2eb7dfcc3f3acd6aa5bcb5ae41
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-sql-cache-dependencies-vb"></a>SQL 캐시 종속성 (VB)를 사용 하 여
 ====================
@@ -309,15 +309,15 @@ GridView의 몇 가지 페이지를 통해 페이징, 후 두 번째 브라우�
 - [쿼리 알림 생성](https://msdn.microsoft.com/library/ms188669.aspx)
 - [에 `SqlCacheDependency` 클래스](https://msdn.microsoft.com/library/ms178604(VS.80).aspx)
 - [ASP.NET SQL Server 등록 도구 (`aspnet_regsql.exe`)](https://msdn.microsoft.com/library/ms229862(vs.80).aspx)
-- [개요`SqlCacheDependency`](http://www.aspnetresources.com/blog/sql_cache_depedency_overview.aspx)
+- [개요 `SqlCacheDependency`](http://www.aspnetresources.com/blog/sql_cache_depedency_overview.aspx)
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자가 Marko Rangel, Teresa 머피 및 Hilton Giesenow 합니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](caching-data-at-application-startup-vb.md)
+> [!div class="step-by-step"]
+> [이전](caching-data-at-application-startup-vb.md)

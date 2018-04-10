@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/getting-started/creating-a-custom-ajax-control-toolkit-control-extender-cs
-title: "도구 키트 컨트롤 Extender (C#)을 제어 사용자 지정 AJAX 만들기 | Microsoft Docs"
+title: 도구 키트 컨트롤 Extender (C#)을 제어 사용자 지정 AJAX 만들기 | Microsoft Docs
 author: microsoft
-description: "사용자 지정 Extender를 사용 하 여 사용자 지정 하 고 새 클래스를 만들 필요 없이 ASP.NET 컨트롤의 기능을 확장할 수 있습니다."
+description: 사용자 지정 Extender를 사용 하 여 사용자 지정 하 고 새 클래스를 만들 필요 없이 ASP.NET 컨트롤의 기능을 확장할 수 있습니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/12/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/getting-started/creating-a-custom-ajax-control-toolkit-control-extender-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2ae03484dd1161c65b77f4718bb8cedb5abfdd82
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: dc058d1d19df880109352caf2dc7d1860121a104
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-a-custom-ajax-control-toolkit-control-extender-c"></a>사용자 지정 AJAX 컨트롤 Toolkit 컨트롤 Extender (C#) 만들기
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > 사용자 지정 Extender를 사용 하 여 사용자 지정 하 고 새 클래스를 만들 필요 없이 ASP.NET 컨트롤의 기능을 확장할 수 있습니다.
 
@@ -198,7 +198,7 @@ JavaScript 파일에 포함 리소스로 목록 3 컴파일해야 기억 합니�
 2. ScriptManager는 페이지로 끌어옵니다.
 3. TextBox 컨트롤을 페이지로 끕니다.
 4. Button 컨트롤을 페이지로 끕니다.
-5. 속성 창에서 단추 ID 속성 값을 변경 *btnSave* 및 Text 속성 값을 *저장\**합니다.
+5. 속성 창에서 단추 ID 속성 값을 변경 <em>btnSave</em> 및 Text 속성 값을 *저장\**합니다.
   
 
 표준 ASP.NET 텍스트 상자 및 단추 컨트롤과 페이지를 만들었는지 여부입니다.
@@ -238,6 +238,6 @@ JavaScript 파일에 포함 리소스로 목록 3 컴파일해야 기억 합니�
 
 이 자습서의 목표 들어 사용자 지정 extender 컨트롤을 확장 하는 방법을 설명 하는 것 이었습니다. 이 자습서에서는 간단한 DisabledButton 컨트롤 extender를 만들었습니다. DisabledButtonExtender 클래스, DisabledButtonBehavior JavaScript 동작 및 DisabledButtonDesigner 클래스를 만들어이 extender를 구현 했습니다. 사용자 지정 컨트롤 extender를 만들 때마다 비슷한 일련의 단계를 수행 합니다.
 
->[!div class="step-by-step"]
-[이전](using-ajax-control-toolkit-controls-and-control-extenders-cs.md)
-[다음](get-started-with-the-ajax-control-toolkit-vb.md)
+> [!div class="step-by-step"]
+> [이전](using-ajax-control-toolkit-controls-and-control-extenders-cs.md)
+> [다음](get-started-with-the-ajax-control-toolkit-vb.md)

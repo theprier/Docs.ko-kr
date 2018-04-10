@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core에서 Facebook, Google 및 외부 공급자 인증"
+title: ASP.NET Core에서 Facebook, Google 및 외부 공급자 인증
 author: rick-anderson
-description: "이 자습서에는 외부 인증 공급자에 OAuth 2.0을 사용하여 ASP.NET Core 2.x 앱을 빌드하는 방법을 보여줍니다."
+description: 이 자습서에는 외부 인증 공급자에 OAuth 2.0을 사용하여 ASP.NET Core 2.x 앱을 빌드하는 방법을 보여줍니다.
 manager: wpickett
 ms.author: riande
 ms.date: 11/01/2016
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/social/index
-ms.openlocfilehash: 76433f814d6850a449434c29eb0bd27570ce193a
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 93fa42be9c551f5bbdf3851aec1d9e01139fdb76
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="facebook-google-and-external-provider-authentication-in-aspnet-core"></a>ASP.NET Core에서 Facebook, Google 및 외부 공급자 인증
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 03/02/2018
 
 이 자습서에는 사용자가 외부 인증 공급자의 자격 증명으로 OAuth 2.0을 사용하여 로그인할 수 있도록 ASP.NET Core 2.x 앱을 빌드하는 방법을 보여줍니다.
 
-[Facebook](facebook-logins.md), [Twitter](twitter-logins.md), [Google](google-logins.md) 및 [Microsoft](microsoft-logins.md) 공급자는 다음 섹션에서 다룹니다. 다른 공급자는 [AspNet.Security.OAuth.Providers](https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers) 및 [AspNet.Security.OpenId.Providers](https://github.com/aspnet-contrib/AspNet.Security.OpenId.Providers)와 같은 타사 패키지에서 사용할 수 있습니다.
+[Facebook](xref:security/authentication/facebook-logins), [Twitter](xref:security/authentication/twitter-logins), [Google](xref:security/authentication/google-logins) 및 [Microsoft](xref:security/authentication/microsoft-logins) 공급자는 다음 섹션에서 다룹니다. 다른 공급자는 [AspNet.Security.OAuth.Providers](https://github.com/aspnet-contrib/AspNet.Security.OAuth.Providers) 및 [AspNet.Security.OpenId.Providers](https://github.com/aspnet-contrib/AspNet.Security.OpenId.Providers)와 같은 타사 패키지에서 사용할 수 있습니다.
 
 ![Facebook, Twitter, Google Plus 및 Windows용 소셜 미디어 아이콘](index/_static/social.png)
 
@@ -66,17 +66,17 @@ OAuth 2.0은 HTTPS 프로토콜을 통한 인증을 위해 SSL을 사용해야 �
 
 이러한 값은 해당 API에 액세스하기 위해 응용 프로그램이 사용하는 *사용자 이름* 및 *암호*를 효과적으로 지정하고 직접 구성 파일에 저장하거나 하드 코딩하는 대신 **암호 관리자**를 사용하여 응용 프로그램 구성에 연결될 수 있는 "비밀"을 구성합니다.
 
-[ASP.NET Core에서 개발 중에 앱 암호의 안전한 저장소](xref:security/app-secrets) 항목의 단계에 따라 아래의 각 로그인 공급자에 의해 할당된 토큰을 저장할 수 있습니다.
+[ASP.NET Core에서 개발 중인 앱 암호의 안전한 저장소](xref:security/app-secrets) 항목의 단계에 따라 아래의 각 로그인 공급자에 의해 할당된 토큰을 저장할 수 있습니다.
 
 ## <a name="setup-login-providers-required-by-your-application"></a>응용 프로그램에 필요한 로그인 공급자 설정
 
 다음 항목을 사용하여 해당 공급자를 사용하도록 응용 프로그램을 구성합니다.
 
-* [Facebook](facebook-logins.md) 지침
-* [Twitter](twitter-logins.md) 지침
-* [Google](google-logins.md) 지침
-* [Microsoft](microsoft-logins.md) 지침
-* [다른 공급자](other-logins.md) 지침
+* [Facebook](xref:security/authentication/facebook-logins) 지침
+* [Twitter](xref:security/authentication/twitter-logins) 지침
+* [Google](xref:security/authentication/google-logins) 지침
+* [Microsoft](xref:security/authentication/microsoft-logins) 지침
+* [다른 공급자](xref:security/authentication/otherlogins) 지침
 
 ## <a name="optionally-set-password"></a>필요에 따라 암호 설정
 

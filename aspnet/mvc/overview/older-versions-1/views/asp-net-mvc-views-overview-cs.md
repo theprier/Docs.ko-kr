@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/views/asp-net-mvc-views-overview-cs
-title: "ASP.NET MVC 뷰 개요 (C#) | Microsoft Docs"
+title: ASP.NET MVC 뷰 개요 (C#) | Microsoft Docs
 author: StephenWalther
-description: "ASP.NET MVC 뷰 란 무엇이 고 어떻게 다른 것 일까요 HTML 페이지에서? 이 자습서에서는 Stephen Walther에서는 보기에 소개 하 고 t 하는 방법을 보여 줍니다. 중..."
+description: ASP.NET MVC 뷰 란 무엇이 고 어떻게 다른 것 일까요 HTML 페이지에서? 이 자습서에서는 Stephen Walther에서는 보기에 소개 하 고 t 하는 방법을 보여 줍니다. 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/16/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/views/asp-net-mvc-views-overview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9de095b0621af3b6166a2e1cbcb1c63c26a88aa2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5217994168ebac32a4a9754ae09e63e120804813
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="aspnet-mvc-views-overview-c"></a>ASP.NET MVC 뷰 개요 (C#)
 ====================
@@ -78,19 +78,19 @@ View();
 
 예를 들어 목록 2는 보기는 현재 날짜 및 시간을 표시합니다.
 
-**2-나열 \Views\Home\Index.aspx**
+**Listing 2 - \Views\Home\Index.aspx**
 
 [!code-aspx[Main](asp-net-mvc-views-overview-cs/samples/sample2.aspx)]
 
 다음 스크립트는 목록 2에 있는 HTML 페이지의 본문에 포함 되어 있는지 확인 합니다.
 
-&lt;%Response.Write(DateTime.Now); %&gt;
+&lt;% Response.Write(DateTime.Now);%&gt;
 
 스크립트 구분 기호를 사용 하 여 &lt;% 및 %&gt; 스크립트의 시작과 끝을 표시 합니다. 이 스크립트는 C#으로 작성 됩니다. 내용을 브라우저에 렌더링 하 Response.Write() 메서드를 호출 하 여 현재 날짜 및 시간을 표시 합니다. 스크립트 구분 기호 &lt;% 및 %&gt; 는 하나 이상의 문을 실행 하는 데 사용할 수 있습니다.
 
 Response.Write()를 자주 호출할 수 있으므로 Microsoft 제공 바로 가기를 Response.Write() 메서드를 호출 합니다. 목록 3에서 보기의 구분 기호를 사용 하 여 &lt;% = %&gt; Response.Write() 호출에 대 한 바로 가기로 합니다.
 
-**3-Views\Home\Index2.aspx 나열**
+**Listing 3 - Views\Home\Index2.aspx**
 
 [!code-aspx[Main](asp-net-mvc-views-overview-cs/samples/sample3.aspx)]
 
@@ -102,7 +102,7 @@ Response.Write()를 자주 호출할 수 있으므로 Microsoft 제공 바로 �
 
 예를 들어 3 명의 HTML 도우미-활용 목록 4에서에서 보기 BeginForm(), TextBox() 및 Password() 도우미-로그인을 생성 하려면 (그림 1 참조)을 형성 합니다.
 
-**4--나열 \Views\Home\Login.aspx**
+**Listing 4 -- \Views\Home\Login.aspx**
 
 [!code-aspx[Main](asp-net-mvc-views-overview-cs/samples/sample4.aspx)]
 
@@ -118,7 +118,7 @@ Response.Write()를 자주 호출할 수 있으므로 Microsoft 제공 바로 �
 
 HTML 도우미 메서드를 사용 하는 것은 선택 사항입니다. 쉽게 단순화 하 여 HTML 및 스크립트를 작성 해야 하는 양이 줄어듭니다. 목록 5에서 보기는 HTML 도우미를 사용 하지 않고 목록 4의 보기와 정확히 같은 폼을 렌더링 합니다.
 
-**5--나열 \Views\Home\Login.aspx**
+**Listing 5 -- \Views\Home\Login.aspx**
 
 [!code-aspx[Main](asp-net-mvc-views-overview-cs/samples/sample5.aspx)]
 
@@ -136,7 +136,7 @@ HTML 도우미 메서드를 사용 하는 것은 선택 사항입니다. 쉽게 
 
 보기 목록 7의 데이터 보기에서에서 메시지를 검색 하 고 브라우저에 메시지를 렌더링 합니다.
 
-**7-나열 \Views\Product\Index.aspx**
+**Listing 7 -- \Views\Product\Index.aspx**
 
 [!code-aspx[Main](asp-net-mvc-views-overview-cs/samples/sample7.aspx)]
 
@@ -152,5 +152,5 @@ HTML 도우미 메서드를 사용 하는 것은 선택 사항입니다. 쉽게 
 
 이 자습서에는 ASP.NET MVC 뷰, 데이터 보기 및 HTML 도우미에 대 한 간략 한 소개를 제공합니다. 첫 번째 섹션에서는 프로젝트에 새 보기를 추가 하는 방법을 알아보았습니다. 특정 컨트롤러에서 호출 하기 위해 뷰를 추가에 적합 한 폴더 해야 한다고 설명 했습니다. 다음으로, HTML 도우미의 주제에 설명 했습니다. HTML 도우미 표준 HTML 콘텐츠를 쉽게 생성할 수 있도록 방법을 배웠습니다. 마지막으로, 보기에는 컨트롤러에서 데이터를 전달 하는 뷰 데이터를 활용 하는 방법을 배웠습니다.
 
->[!div class="step-by-step"]
-[다음](creating-custom-html-helpers-cs.md)
+> [!div class="step-by-step"]
+> [다음](creating-custom-html-helpers-cs.md)

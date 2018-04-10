@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core 미들웨어"
+title: ASP.NET Core 미들웨어 기본 사항
 author: rick-anderson
-description: "ASP.NET Core 미들웨어 및 요청 파이프라인에 대해 알아봅니다."
+description: ASP.NET Core 미들웨어 및 요청 파이프라인에 대해 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 01/22/2018
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/middleware/index
-ms.openlocfilehash: 186faa4c02275ae1f4be53f4a2dd4f8325397bd2
-ms.sourcegitcommit: c5ecda3c5b1674b62294cfddcb104e7f0b9ce465
+ms.openlocfilehash: 3312b27f936340a73243224c1a716fe421f178bc
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/05/2018
+ms.lasthandoff: 03/22/2018
 ---
 # <a name="aspnet-core-middleware"></a>ASP.NET Core 미들웨어
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT) 및 [Steve Smith](https://ardalis.com/)
 
-[예제 코드 보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/middleware/index/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/middleware/index/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="what-is-middleware"></a>미들웨어란?
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 03/05/2018
 
 요청 대리자는 요청 파이프라인을 빌드하는 데 사용됩니다. 요청 대리자는 각 HTTP 요청을 처리합니다.
 
-요청 대리자는 [Run](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.runextensions), [Map](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mapextensions) 및 [Use](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.useextensions) 확장 메서드를 사용하여 구성됩니다. 개별 요청 대리자는 무명 메서드(인라인 미들웨어라고 함)로 인라인에서 지정되거나 다시 사용할 수 있는 클래스에서 정의될 수 있습니다. 이러한 다시 사용할 수 있는 클래스 및 인라인 무명 메서드는 *미들웨어* 또는 *미들웨어 구성 요소*입니다. 요청 파이프라인의 각 미들웨어 구성 요소는 파이프라인의 다음 구성 요소를 호출하거나 해당하는 경우 체인을 단락(short-circuiting)하는 일을 담당합니다.
+요청 대리자는 [Run](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.runextensions), [Map](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mapextensions) 및 [Use](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.useextensions) 확장 메서드를 사용하여 구성됩니다. 개별 요청 대리자는 무명 메서드(인라인 미들웨어라고 함)로 인라인에서 지정되거나 다시 사용할 수 있는 클래스에서 정의될 수 있습니다. 이러한 다시 사용할 수 있는 클래스 및 인라인 무명 메서드는 *미들웨어* 또는 *미들웨어 구성 요소*입니다. 요청 파이프라인의 각 미들웨어 구성 요소는 파이프라인의 다음 구성 요소를 호출하거나 적절한 경우 체인을 단락(short-circuiting)하는 일을 담당합니다.
 
 [HTTP 모듈을 미들웨어로 마이그레이션](xref:migration/http-modules)은 ASP.NET Core와 ASP.NET 4.x의 요청 파이프라인 간의 차이점을 설명하고 더 많은 미들웨어 샘플을 제공합니다.
 
@@ -54,12 +54,12 @@ ASP.NET Core 요청 파이프라인은 이 다이어그램이 보여 주는 것�
 
 >[!WARNING]
 > 클라이언트에 응답을 전송한 후에 `next.Invoke`를 호출하지 마십시오. 응답이 시작된 후 `HttpResponse`로 변경하면 예외를 throw합니다. 예를 들어 헤더, 상태 코드 등을 설정하는 것 같은 변경은 예외를 throw합니다. `next`를 호출한 후 응답 본문에 작성하기:
-> - 프로토콜 위반이 발생할 수 있습니다. 예를 들어 언급된 `content-length`보다 더 많이 작성하기.
+> - 프로토콜 위반이 발생할 수 있습니다. 예를 들어, 명시된 `content-length`보다 긴 내용이 작성될 수 있습니다.
 > - 본문 형식을 손상시킬 수 있습니다. 예를 들어 CSS 파일에 HTML 바닥글 작성하기.
 >
-> [HttpResponse.HasStarted](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.http.features.httpresponsefeature#Microsoft_AspNetCore_Http_Features_HttpResponseFeature_HasStarted)는 헤더가 전송되고 또는 본문이 작성되었는지 나타내는 데 유용한 힌트입니다.
+> [HttpResponse.HasStarted](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.http.features.httpresponsefeature#Microsoft_AspNetCore_Http_Features_HttpResponseFeature_HasStarted)는 헤더가 이미 전송됐는지 또는 본문이 이미 작성됐는지 여부를 나타내는 유용한 힌트를 제공해줍니다.
 
-## <a name="ordering"></a>정렬
+## <a name="ordering"></a>순서
 
 미들웨어 구성 요소가 `Configure` 메서드에 추가되는 순서는 요청에서 호출되는 순서와 응답에 대한 역순서를 정의합니다. 이 순서 지정은 보안, 성능 및 기능에 중요합니다.
 
@@ -109,7 +109,7 @@ public void Configure(IApplicationBuilder app)
 
 위의 코드에서 `UseExceptionHandler`는 파이프라인에 추가된 첫 번째 미들웨어 구성 요소이므로 후속 호출에서 발생하는 모든 예외를 catch합니다.
 
-정적 파일 미들웨어는 파이프라인 초기에 호출되므로 요청을 처리하고 나머지 구성 요소를 통과하지 않고 단락(short-circuit)할 수 있습니다. 정적 파일 미들웨어는 권한 부여 검사를 제공하지 **않습니다**. *wwwroot* 아래의 항목을 비롯한 제공되는 모든 파일은 공개적으로 사용할 수 있습니다. 정적 파일을 보호하는 방법은 [정적 파일 작업](xref:fundamentals/static-files)을 참조하세요.
+정적 파일 미들웨어는 파이프라인 초기에 호출되므로 요청을 처리하고 나머지 구성 요소를 통과하지 않고 단락(short-circuit)할 수 있습니다. 정적 파일 미들웨어는 권한 부여 검사를 제공하지 **않습니다**. *wwwroot* 아래의 항목을 비롯한 제공되는 모든 파일은 공개적으로 사용할 수 있습니다. 고정 파일을 보호하는 방법은 [고정 파일 작업](xref:fundamentals/static-files)을 참조하세요.
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
@@ -259,10 +259,10 @@ public class MyMiddleware
 }
 ```
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 * [HTTP 모듈을 미들웨어로 마이그레이션](xref:migration/http-modules)
 * [응용 프로그램 시작](xref:fundamentals/startup)
-* [기능 요청](xref:fundamentals/request-features)
+* [요청 기능](xref:fundamentals/request-features)
 * [팩터리 기반 미들웨어 활성화](xref:fundamentals/middleware/extensibility)
 * [타사 컨테이너를 사용하여 미들웨어 활성화](xref:fundamentals/middleware/extensibility-third-party-container)

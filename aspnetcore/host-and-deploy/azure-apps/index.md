@@ -1,7 +1,7 @@
 ---
-title: "Azure App Service에서 ASP.NET Core 호스트"
+title: Azure App Service에서 ASP.NET Core 호스트
 author: guardrex
-description: "유용한 리소스에 대한 링크를 통해 Azure App Service에서 ASP.NET Core 앱을 호스트하는 방법을 알아봅니다."
+description: 유용한 리소스에 대한 링크를 통해 Azure App Service에서 ASP.NET Core 앱을 호스트하는 방법을 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,17 +10,15 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: cefbc27c8091a2ed1441663e3779d67aae2c64dd
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: c2675f73880a41ee75f6ec13155419945387e109
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="host-aspnet-core-on-azure-app-service"></a>Azure App Service에서 ASP.NET Core 호스트
 
 [Azure App Service](https://azure.microsoft.com/services/app-service/)는 ASP.NET Core를 비롯한 웹앱을 호스트하기 위한 [Microsoft 클라우드 컴퓨팅 플랫폼 서비스](https://azure.microsoft.com/)입니다.
-
-[!INCLUDE[Azure App Service Preview Notice](../../includes/azure-apps-preview-notice.md)]
 
 ## <a name="useful-resources"></a>유용한 리소스
 
@@ -43,7 +41,7 @@ Git 명령줄 클라이언트를 사용하여 Azure App Service에 ASP.NET Core 
 [Visual Studio 및 Git을 사용하여 Azure에 연속 배포](xref:host-and-deploy/azure-apps/azure-continuous-deployment)  
 Visual Studio를 사용하여 ASP.NET Core 웹앱을 만들고 연속 배포를 위한 Git을 사용하여 Azure App Service에 배포하는 방법을 알아봅니다.
 
-[Continuous deployment to Azure with VSTS](https://www.visualstudio.com/docs/build/aspnet/core/quick-to-azure)(VSTS를 사용하여 Azure에 연속 배포)  
+[VSTS를 사용하여 Azure에 연속 배포](https://www.visualstudio.com/docs/build/aspnet/core/quick-to-azure)  
 ASP.NET Core 앱에 대한 CI 빌드를 설정하고 Azure App Service에 대한 연속 배포 릴리스를 만듭니다.
 
 [Azure Web App 샌드박스](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox)  
@@ -56,6 +54,10 @@ ASP.NET Core 2.0 이상에서 [Microsoft.AspNetCore.All 메타패키지](xref:fu
 * [Microsoft.AspNetCore.AzureAppServices.HostingStartup](https://www.nuget.org/packages/Microsoft.AspNetCore.AzureAppServices.HostingStartup/)은 [IHostingStartup](xref:host-and-deploy/platform-specific-configuration)을 사용하여 Azure App Service와 ASP.NET Core의 라이트업 통합을 제공합니다. 추가된 로깅 기능은 `Microsoft.AspNetCore.AzureAppServicesIntegration` 패키지에서 제공합니다.
 * [Microsoft.AspNetCore.AzureAppServicesIntegration](https://www.nuget.org/packages/Microsoft.AspNetCore.AzureAppServicesIntegration/)은 [AddAzureWebAppDiagnostics](/dotnet/api/microsoft.extensions.logging.azureappservicesloggerfactoryextensions.addazurewebappdiagnostics)를 실행하여 `Microsoft.Extensions.Logging.AzureAppServices` 패키지의 Azure App Service 진단 로깅 공급자를 추가합니다.
 * [Microsoft.Extensions.Logging.AzureAppServices](https://www.nuget.org/packages/Microsoft.Extensions.Logging.AzureAppServices/)는 Azure App Service 진단 로그 및 로그 스트리밍 기능을 지원하는 로거 구현을 제공합니다.
+
+## <a name="proxy-server-and-load-balancer-scenarios"></a>프록시 서버 및 부하 분산 장치 시나리오
+
+체계(HTTP/HTTPS) 및 요청이 시작된 원격 IP 주소를 전달하도록 전달된 헤더 미들웨어를 구성하는 IIS 통합 미들웨어 및 ASP.NET Core 모듈을 구성합니다. 추가 프록시 서버 및 부하 분산 장치 외에도 호스팅되는 앱에 추가 구성이 필요할 수 있습니다. 자세한 내용은 [프록시 서버 및 부하 분산 장치를 사용하도록 ASP.NET Core 구성](xref:host-and-deploy/proxy-load-balancer)을 참조하세요.
 
 ## <a name="monitoring-and-logging"></a>모니터링 및 로깅
 
@@ -89,6 +91,62 @@ Azure App Service/IIS에서 호스트하는 앱의 일반적인 배포 구성 �
 
 자세한 내용은 [키 저장소 공급자](xref:security/data-protection/implementation/key-storage-providers)를 참조하세요.
 
+## <a name="deploy-aspnet-core-preview-release-to-azure-app-service"></a>Azure App Service에 ASP.NET Core 미리 보기 릴리스 배포
+
+다음과 같은 방법으로 Azure App Service에 ASP.NET Core 미리 보기 앱을 배포할 수 있습니다.
+
+* [미리 보기 사이트 확장 설치](#site-x)
+* [자체 포함된 앱 배포](#self)
+* [Web Apps for Containers에서 Docker 사용](#docker)
+
+미리 보기 사이트 확장을 사용하는 데 문제가 발생하는 경우 [GitHub](https://github.com/aspnet/azureintegration/issues/new)에서 문제를 엽니다.
+
+<a name="site-x"></a>
+### <a name="install-the-preview-site-extention"></a>미리 보기 사이트 확장 설치
+
+* Azure Portal에서 App Service 블레이드로 이동합니다.
+* 검색 상자에 "ex"를 입력합니다.
+* **확장**을 선택합니다.
+* "추가"를 선택합니다.
+
+![이전 단계에서 Azure 앱 블레이드](index/_static/x1.png)
+
+* **ASP.NET Core 런타임 확장**을 선택합니다.
+* **확인** > **확인**을 선택합니다.
+
+추가 작업이 완료되면 최신.NET Core 2.1 미리 보기가 설치됩니다. 콘솔에서 `dotnet --info`를 실행하여 설치를 확인할 수 있습니다. App Service 블레이드에서:
+
+* 검색 상자에 "con"을 입력합니다.
+* **콘솔**을 선택합니다.
+* 콘솔에 `dotnet --info`를 입력합니다.
+
+![이전 단계에서 Azure 앱 블레이드](index/_static/cons.png)
+
+앞의 이미지는 이 내용이 작성된 현재 시간이었습니다. 다른 버전으로 표시될 수 있습니다.
+
+`dotnet --info`는 미리 보기가 설치되어 있는 사이트 확장에 대한 경로를 표시합니다. 기본 *ProgramFiles* 위치 대신 사이트 확장에서 앱이 실행된다고 표시합니다. *ProgramFiles*가 표시되면 사이트를 다시 시작하고 `dotnet --info`를 실행합니다.
+
+#### <a name="use-the-preview-site-extention-with-an-arm-template"></a>ARM 템플릿에서 미리 보기 사이트 확장 사용
+
+ARM 템플릿을 사용하여 응용 프로그램을 만들고 배포하는 경우 `siteextensions` 리소스 형식을 사용하여 웹앱에 사이트 확장을 추가할 수 있습니다. 예:
+
+[!code-json[Main](index/sample/arm.json?highlight=2)]
+
+<a name="self"></a>
+### <a name="deploy-the-app-self-contained"></a>자체 포함된 앱 배포
+
+배포될 때 미리 보기 런타임이 함께 포함된 [자체 포함된 앱](/dotnet/core/deploying/#self-contained-deployments-scd)을 배포할 수 있습니다. 자체 포함된 앱을 배포하는 경우:
+
+* 사이트를 준비할 필요가 없습니다.
+* 서버에 SDK가 설치되면 앱을 배포할 경우와 달리 응용 프로그램을 게시해야 합니다.
+
+자체 포함된 앱은 모든 .NET Core 응용 프로그램에 대한 옵션입니다.
+
+<a name="docker"></a>
+### <a name="use-docker-with-web-apps-for-containers"></a>Web Apps for Containers에서 Docker 사용
+
+[Docker 허브](https://hub.docker.com/r/microsoft/aspnetcore/)에는 최신 2.1 미리 보기 Docker 이미지가 포함됩니다. 이를 기본 이미지로 사용하고 일반적인 방법으로 Web Apps for Containers에 배포할 수 있습니다.
+
 ## <a name="additional-resources"></a>추가 자료
 
 * [Web Apps 개요(5분 개요 비디오)](/azure/app-service/app-service-web-overview)
@@ -101,5 +159,5 @@ Windows Server의 Azure App Service는 [IIS(인터넷 정보 서비스)](https:/
 * [IIS가 있는 Windows에서 ASP.NET Core 호스팅](xref:host-and-deploy/iis/index)
 * [ASP.NET Core 모듈 소개](xref:fundamentals/servers/aspnet-core-module)
 * [ASP.NET Core 모듈 구성 참조](xref:host-and-deploy/aspnet-core-module)
-* [ASP.NET Core와 함께 IIS 모듈 사용](xref:host-and-deploy/iis/modules)
+* [IIS 모듈 및 ASP.NET Core](xref:host-and-deploy/iis/modules)
 * [Microsoft TechNet 라이브러리: Windows Server](/windows-server/windows-server-versions)

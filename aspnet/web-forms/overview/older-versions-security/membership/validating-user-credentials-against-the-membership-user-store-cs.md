@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/membership/validating-user-credentials-against-the-membership-user-store-cs
-title: "멤버 자격 사용자 저장소 (C#)에 대 한 사용자 자격 증명 유효성 검사 | Microsoft Docs"
+title: 멤버 자격 사용자 저장소 (C#)에 대 한 사용자 자격 증명 유효성 검사 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에서는 프로그래밍 방식으로 Login 컨트롤을 사용 하 여 멤버 자격 사용자 저장소에 대 한 사용자의 자격 증명의 유효성을 검사 하는 방법을 검토 합니다..."
+description: 이 자습서에서는 프로그래밍 방식으로 Login 컨트롤을 사용 하 여 멤버 자격 사용자 저장소에 대 한 사용자의 자격 증명의 유효성을 검사 하는 방법을 검토 합니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/18/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/validating-user-credentials-against-the-membership-user-store-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8f8f4db63ba8c1f1c1df7c1c5c1f92184bf6841d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 484a0f16265ee2d887ee08f6ae7ada47047f1f04
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="validating-user-credentials-against-the-membership-user-store-c"></a>멤버 자격 사용자 저장소 (C#)에 대 한 사용자 자격 증명 유효성 검사
 ====================
@@ -39,9 +39,9 @@ ms.lasthandoff: 01/24/2018
 
 폼 인증을 사용 하는 웹 사이트에 대 한 사용자 로그온 웹 사이트에 로그인 페이지를 방문 하 고 자격 증명을 입력 합니다. 이러한 자격 증명 사용자 저장소에 대 한 다음 비교 됩니다. 유효한 경우에 사용자 id 및 방문자의 신뢰성을 나타내는 보안 토큰을 폼 인증 티켓을 부여 됩니다.
 
-멤버 자격 프레임 워크에 대해 사용자 확인을 위해 사용 하 여는 `Membership` 클래스의 [ `ValidateUser` 메서드](https://msdn.microsoft.com/library/system.web.security.membership.validateuser.aspx)합니다. `ValidateUser` 메서드는 두 입력된 매개 변수-  *`username`*  및  *`password`*  -자격 증명이 유효한 지 여부를 나타내는 부울 값을 반환 합니다. 와 함께 `CreateUser` 에서 이전 자습서 인 검사 했습니다 메서드는 `ValidateUser` 메서드 실제 유효성 검사 구성 된 멤버 자격 공급자를 위임 합니다.
+멤버 자격 프레임 워크에 대해 사용자 확인을 위해 사용 하 여는 `Membership` 클래스의 [ `ValidateUser` 메서드](https://msdn.microsoft.com/library/system.web.security.membership.validateuser.aspx)합니다. `ValidateUser` 메서드는 두 입력된 매개 변수- *`username`* 및 *`password`* -자격 증명이 유효한 지 여부를 나타내는 부울 값을 반환 합니다. 와 함께 `CreateUser` 에서 이전 자습서 인 검사 했습니다 메서드는 `ValidateUser` 메서드 실제 유효성 검사 구성 된 멤버 자격 공급자를 위임 합니다.
 
-`SqlMembershipProvider` 제공 된 자격 증명을 통해 지정된 된 사용자의 암호를 확보 하 여 유효성을 검사는 `aspnet_Membership_GetPasswordWithFormat` 저장 프로시저입니다. 이전에 설명한 대로 `SqlMembershipProvider` 세 가지 형식 중 하나를 사용 하 여 사용자의 암호: 암호화, 해시 또는 선택 취소 합니다. `aspnet_Membership_GetPasswordWithFormat` 저장된 프로시저는 원시 형식으로 암호를 반환 합니다. 암호화 / 해시 된 암호에 대 한는 `SqlMembershipProvider` 변환는  *`password`*  에 전달 된 값은 `ValidateUser` 암호화 또는 해시 상태와 다음에서 반환 된 비교에 해당 하는 메서드는 데이터베이스입니다. 사용자가 입력 한 서식이 지정 된 암호와 일치 하는 데이터베이스에 저장 된 암호 자격 증명이 유효 합니다.
+`SqlMembershipProvider` 제공 된 자격 증명을 통해 지정된 된 사용자의 암호를 확보 하 여 유효성을 검사는 `aspnet_Membership_GetPasswordWithFormat` 저장 프로시저입니다. 이전에 설명한 대로 `SqlMembershipProvider` 세 가지 형식 중 하나를 사용 하 여 사용자의 암호: 암호화, 해시 또는 선택 취소 합니다. `aspnet_Membership_GetPasswordWithFormat` 저장된 프로시저는 원시 형식으로 암호를 반환 합니다. 암호화 / 해시 된 암호에 대 한는 `SqlMembershipProvider` 변환는 *`password`* 에 전달 된 값은 `ValidateUser` 암호화 또는 해시 상태와 다음에서 반환 된 비교에 해당 하는 메서드는 데이터베이스입니다. 사용자가 입력 한 서식이 지정 된 암호와 일치 하는 데이터베이스에 저장 된 암호 자격 증명이 유효 합니다.
 
 로그인 페이지 정보를 업데이트 (~ /`Login.aspx`) 구성원 프레임 워크 사용자 저장소에 대해 제공된 된 자격 증명 유효성을 검사할 수 있도록 합니다. 만든이 로그인 페이지에 다시는 <a id="Tutorial02"> </a> [ *폼 인증의 개요는* ](../introduction/an-overview-of-forms-authentication-cs.md) 자습서에서는 사용자 이름 및 암호를 두 개의 텍스트 상자를 사용 하 여 인터페이스를 만들기는 암호 저장 확인란을 선택 하 고 로그인 단추 (그림 1 참조). 코드의 하드 코드 된 목록 (Scott/암호, Jisun/암호 및 Sam/암호) 사용자 이름 및 암호 쌍에 대해 입력 한 자격 증명 유효성을 검사 합니다. 에 <a id="Tutorial03"> </a> [ *폼 인증 구성 및 고급 항목* ](../introduction/forms-authentication-configuration-and-advanced-topics-cs.md) 자습서는 폼에 추가 정보를 저장 하는 로그인 페이지의 코드를 업데이트 했습니다. 인증 티켓 `UserData` 속성입니다.
 
@@ -71,8 +71,8 @@ ms.lasthandoff: 01/24/2018
 
 이러한 무차별 암호 대입 공격을 방지 하려면 멤버 자격 프레임 워크도 잠그는 사용자 특정 특정 기간 내에 실패 한 로그인 시도 수 없는 경우. 정확한 매개 변수는 다음 두 개의 멤버 자격 공급자 구성 설정을 통해 구성할 수 없습니다.
 
-- `maxInvalidPasswordAttempts`-잘못 된 암호 수를 지정 합니다. 계정이 잠겨 하기 전 까지의 기간 안에 시도 사용자에 대해 사용할 수 있습니다. 기본값은 5입니다.
-- `passwordAttemptWindow`-는 지정 된 잘못 된 로그인 시도 횟수 하면 계정이 잠길 수 분에서 기간을 나타냅니다. 기본값은 10입니다.
+- `maxInvalidPasswordAttempts` -잘못 된 암호 수를 지정 합니다. 계정이 잠겨 하기 전 까지의 기간 안에 시도 사용자에 대해 사용할 수 있습니다. 기본값은 5입니다.
+- `passwordAttemptWindow` -는 지정 된 잘못 된 로그인 시도 횟수 하면 계정이 잠길 수 분에서 기간을 나타냅니다. 기본값은 10입니다.
 
 사용자가 잠긴, 하는 경우 관리자가 자신의 계정을 잠금 해제할 때까지 로그인 할 수 없는 그녀 합니다. 사용자가 잠겨 있는 경우는 `ValidateUser` 방법은 *항상* 반환 `false`유효한 자격 증명을 제공 하는 경우에 합니다. 이 동작은 더 쉬워질 수 있습니다 가능성을 무작위 메서드를 통해 사이트에는 해커가 끊긴다는, 하는 동안 사용자가 암호를 잊어버렸으며 단순히 또는 실수로 Caps Lock 잘못 된 입력 일 필요는 유효한 사용자를 잠그는를 종료할 수 있습니다.
 
@@ -110,10 +110,10 @@ ms.lasthandoff: 01/24/2018
 
 Login 컨트롤 네 가지 요소를 사용 하 여 적절 한 페이지를 성공적으로 로그인 시 사용자를 리디렉션하를 결정 합니다.
 
-- Login 컨트롤에 연결 되어 있는지 로그인 페이지에 정의 된 대로 `loginUrl` 이 설정의 기본값은 있으며 폼 인증 구성에서 설정`Login.aspx`
+- Login 컨트롤에 연결 되어 있는지 로그인 페이지에 정의 된 대로 `loginUrl` 이 설정의 기본값은 있으며 폼 인증 구성에서 설정 `Login.aspx`
 - 존재는 `ReturnUrl` querystring 매개 변수
 - Login 컨트롤의 값 [ `DestinationUrl` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.destinationpageurl.aspx)
-- `defaultUrl` 인증 구성 설정의 폼에 지정 된 값이이 설정의 기본값은;`Default.aspx`
+- `defaultUrl` 인증 구성 설정의 폼에 지정 된 값이이 설정의 기본값은; `Default.aspx`
 
 그림 4는 방법을 보여 주며 로그인 컨트롤 이러한 4 개의 매개 변수를 사용 하 여 해당 페이지를 적절 한 의사 결정에 도달 하 게 합니다.
 
@@ -230,7 +230,7 @@ Login 컨트롤이 시점에서 계속 사용 하 여 `Membership.ValidateUser` 
 
 ### <a name="determining-and-validating-the-supplied-credentials"></a>확인 하 고 제공된 된 자격 증명 유효성 검사
 
-Login 컨트롤을 사용 하 여 [ `UserName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.username.aspx) 및 [ `Password` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.password.aspx) 사용자가 입력 한 사용자 이름 및 암호 자격 증명을 확인 하려면. 추가 웹 컨트롤에 입력 된 값을 확인 하기 위해 (같은 `Email` 이전 단계에서 추가 하는 텍스트 상자)를 사용 하 여  *`LoginControlID`*  `.FindControl`(" *`controlID`* ")를 가져올 프로그래밍에 대 한 참조는 서식 파일에서 웹 컨트롤 갖는 `ID` 속성이  *`controlID`* 합니다. 예를 들어에 대 한 참조를 얻으려고는 `Email` 텍스트 상자 다음 코드를 사용 합니다.
+Login 컨트롤을 사용 하 여 [ `UserName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.username.aspx) 및 [ `Password` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.password.aspx) 사용자가 입력 한 사용자 이름 및 암호 자격 증명을 확인 하려면. 추가 웹 컨트롤에 입력 된 값을 확인 하기 위해 (같은 `Email` 이전 단계에서 추가 하는 텍스트 상자)를 사용 하 여 *`LoginControlID`* `.FindControl`("*`controlID`*")를 가져올 프로그래밍에 대 한 참조는 서식 파일에서 웹 컨트롤 갖는 `ID` 속성이 *`controlID`*합니다. 예를 들어에 대 한 참조를 얻으려고는 `Email` 텍스트 상자 다음 코드를 사용 합니다.
 
 `TextBox EmailTextBox = myLogin.FindControl("Email") as TextBox;`
 
@@ -310,12 +310,12 @@ Login 컨트롤 표준 로그인 사용자 인터페이스를 렌더링 하 고 
 
 ### <a name="about-the-author"></a>작성자 정보
 
-여러 ASP/ASP.NET 책의 작성자 및 4GuysFromRolla.com의 창립자 Scott Mitchell의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은  *[Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*합니다. Scott에 도달할 수 [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) 또는에서 그의 블로그 통해 [http://ScottOnWriting.NET](http://scottonwriting.net/)합니다.
+여러 ASP/ASP.NET 책의 작성자 및 4GuysFromRolla.com의 창립자 Scott Mitchell의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은  *[Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*합니다. Scott에 도달할 수 [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) 또는에서 그의 블로그 통해 [ http://ScottOnWriting.NET ](http://scottonwriting.net/)합니다.
 
 ### <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Teresa 머피 및 Michael Olivero 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4guysfromrolla.com)합니다.
 
->[!div class="step-by-step"]
-[이전](creating-user-accounts-cs.md)
-[다음](user-based-authorization-cs.md)
+> [!div class="step-by-step"]
+> [이전](creating-user-accounts-cs.md)
+> [다음](user-based-authorization-cs.md)

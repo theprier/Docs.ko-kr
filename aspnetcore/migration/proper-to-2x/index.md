@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET에서 ASP.NET Core 2.0으로 마이그레이션"
+title: ASP.NET에서 ASP.NET Core 2.0으로 마이그레이션
 author: isaac2004
-description: "기존 ASP.NET MVC 또는 Web API 앱을 ASP.NET Core 2.0으로 마이그레이션하기 위한 지침을 받습니다."
+description: 기존 ASP.NET MVC 또는 Web API 앱을 ASP.NET Core 2.0으로 마이그레이션하기 위한 지침을 받습니다.
 manager: wpickett
 ms.author: scaddie
 ms.date: 08/27/2017
@@ -9,21 +9,21 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/proper-to-2x/index
-ms.openlocfilehash: 877bcdbe5c5fb43e280800b2b843f2dfacb5bb45
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 86b4ee5f431d1e23ed3ad2be5740af34176de531
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="migrating-from-aspnet-to-aspnet-core-20"></a>ASP.NET에서 ASP.NET Core 2.0으로 마이그레이션
+# <a name="migrate-from-aspnet-to-aspnet-core-20"></a>ASP.NET에서 ASP.NET Core 2.0으로 마이그레이션
 
 작성자: [Isaac Levin](https://isaaclevin.com)
 
 이 문서는 ASP.NET 응용 프로그램을 ASP.NET Core 2.0으로 마이그레이션하기 위한 참조 가이드로 사용됩니다.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
-* [.NET Core 2.0.0 SDK](https://dot.net/core) 이상.
+[!INCLUDE [](~/includes/net-core-sdk-download-link.md)]
 
 ## <a name="target-frameworks"></a>대상 프레임워크
 ASP.NET Core 2.0 프로젝트를 사용하면 개발자가 유연하게 .NET Core, .NET Framework 또는 두 항목을 모두 대상으로 지정하거나 둘 다 대상으로 지정할 수 있습니다. 가장 적절한 대상 프레임워크를 결정하려면 [서버 앱에 대해 .NET Core와 .NET Framework 중에서 선택](https://docs.microsoft.com/dotnet/standard/choosing-core-framework-server)을 참조하세요.
@@ -145,8 +145,8 @@ ASP.NET Core에서 정적 파일은 별도로 구성되지 않는 한 “웹 루
 
 예를 들어 *wwwroot/images* 폴더의 이미지 자산은 `http://<app>/images/<imageFileName>`과 같은 위치의 브라우저에 액세스할 수 있습니다.
 
-**참고:** ASP.NET Core의 정적 파일 지원에 대한 자세한 내용은 [ASP.NET Core에서 정적 파일 사용 소개](xref:fundamentals/static-files)를 참조하세요.
+**참고:** ASP.NET Core의 고정 파일 지원에 대한 자세한 내용은 [ASP.NET Core에서 고정 파일 작업](xref:fundamentals/static-files)을 참조하세요.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 * [.NET Core로 라이브러리 이식](/dotnet/core/porting/libraries)

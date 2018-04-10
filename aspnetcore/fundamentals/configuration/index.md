@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core의 구성"
+title: ASP.NET Core의 구성
 author: rick-anderson
-description: "구성 API를 사용하여 여러 가지 방법으로 ASP.NET Core 앱을 구성합니다."
+description: 구성 API를 사용하여 여러 가지 방법으로 ASP.NET Core 앱을 구성합니다.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,13 +10,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 7c41621db835b452c9aad9463a9ffccdf0c06484
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: f272f9629ab1f9e7f7643cafd0d45f19340d5284
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="configure-an-aspnet-core-app"></a>ASP.NET Core 앱 구성
+# <a name="configuration-in-aspnet-core"></a>ASP.NET Core의 구성
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT), [Mark Michaelis](http://intellitect.com/author/mark-michaelis/), [Steve Smith](https://ardalis.com/), [Daniel Roth](https://github.com/danroth27), [Luke Latham](https://github.com/guardrex)
 
@@ -48,7 +48,7 @@ ms.lasthandoff: 03/15/2018
 
 [!code-json[](index/sample/ConfigJson/appsettings.json)]
 
-구성은 콜론으로 노드를 구분하는 이름-값 쌍의 계층적 목록으로 이루어집니다. 값을 검색하려면 해당 항목의 키를 사용하여 `Configuration` 인덱서에 액세스합니다.
+구성은 콜론(`:`)으로 노드를 구분하는 이름-값 쌍의 계층적 목록으로 이루어집니다. 값을 검색하려면 해당 항목의 키를 사용하여 `Configuration` 인덱서에 액세스합니다.
 
 [!code-csharp[](index/sample/ConfigJson/Program.cs?range=21-22)]
 
@@ -105,15 +105,15 @@ ASP.NET Core 1.x 앱은 `AddJsonFile` 및 [AddEnvironmentVariables](/dotnet/api/
 
 [!code-csharp[](index/sample/StartupConfig.cs?name=snippet&highlight=3,4)]
 
-
-환경은 일반적으로 `Development`, `Staging` 또는 `Production`으로 설정됩니다. 자세한 내용은 [여러 환경 사용](xref:fundamentals/environments)을 참조하세요.
+환경은 일반적으로 `Development`, `Staging` 또는 `Production`으로 설정됩니다. 자세한 내용은 [여러 환경 사용](xref:fundamentals/environments)를 참고하시기 바랍니다.
 
 구성 고려 사항:
 
-* `IOptionsSnapshot`은 구성 데이터가 변경되면 구성 데이터를 다시 로드할 수 있습니다. 자세한 내용은 [IOptionsSnapshot](xref:fundamentals/configuration/options#reload-configuration-data-with-ioptionssnapshot)을 참조하세요.
+* [IOptionsSnapshot](xref:fundamentals/configuration/options#reload-configuration-data-with-ioptionssnapshot)은 구성 데이터가 변경되면 구성 데이터를 다시 로드할 수 있습니다.
 * 구성 키는 대/소문자를 구분하지 **않습니다**.
-* 구성 공급자 코드 또는 일반 텍스트 구성 파일에 암호 또는 기타 중요한 데이터를 **절대 저장하지 마세요**. 개발 또는 테스트 환경에서 프로덕션 비밀을 사용하지 마세요. 의도치 않게 소스 코드 리포지토리에 커밋되는 일이 없도록 프로젝트 외부에서 비밀을 지정하세요. [여러 환경 사용](xref:fundamentals/environments) 및 [개발 중 안전한 앱 비밀 저장소](xref:security/app-secrets) 관리에 대해 자세히 알아보세요.
-* 시스템의 환경 변수에서 콜론(`:`)을 사용할 수 없으면 콜론(`:`)을 이중 밑줄(`__`)로 바꾸세요.
+* 구성 공급자 코드 또는 일반 텍스트 구성 파일에 암호 또는 기타 중요한 데이터를 **절대 저장하지 마세요**. 개발 또는 테스트 환경에서 프로덕션 비밀을 사용하지 마세요. 의도치 않게 소스 코드 리포지토리에 커밋되는 일이 없도록 프로젝트 외부에서 비밀을 지정하세요. [여러 환경을 사용하는 방법](xref:fundamentals/environments) 및 [개발 중 안전한 앱 비밀 저장소](xref:security/app-secrets) 관리에 대해 자세히 알아보세요.
+* 환경 변수에 지정된 계층적 구성 값의 경우 콜론(`:`)은 모든 플랫폼에서 작동하지 않을 수 있습니다. 두 개의 밑줄(`__`)은 모든 플랫폼에서 지원됩니다.
+* 구성 API와 상호 작용하는 경우 콜론(`:`)은 모든 플랫폼에서 작동합니다.
 
 ## <a name="in-memory-provider-and-binding-to-a-poco-class"></a>메모리 내 공급자 및 POCO 클래스에 바인딩
 
@@ -234,8 +234,7 @@ key3=value_from_json_3
 
 ### <a name="setup-and-use-the-commandline-configuration-provider"></a>CommandLine 구성 공급자 설정 및 사용
 
-# <a name="basic-configurationtabbasicconfiguration"></a>[기본 구성](#tab/basicconfiguration)
-
+#### <a name="basic-configurationtabbasicconfiguration"></a>[기본 구성](#tab/basicconfiguration/)
 명령줄 구성을 활성화하려면 [ConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.configurationbuilder) 인스턴스에서 `AddCommandLine` 확장 메서드를 호출합니다.
 
 [!code-csharp[](index/sample_snapshot//CommandLine/Program.cs?highlight=18,21)]
@@ -264,8 +263,7 @@ Left: 1979
 
 [!code-csharp[](index/sample_snapshot//CommandLine/Program2.cs?range=11-16&highlight=1,5)]
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 일반적인 ASP.NET Core 2.x 앱은 고정적인 편의 메서드를 사용하여 `CreateDefaultBuilder`를 빌드합니다.
 
 [!code-csharp[](index/sample_snapshot//Program.cs?highlight=12)]
@@ -282,14 +280,12 @@ Left: 1979
 
 ASP.NET Core 2.x 앱은 `CreateDefaultBuilder` 대신 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder)를 사용할 수 있습니다. `WebHostBuilder`를 사용하는 경우 [ConfigurationBuilder](/api/microsoft.extensions.configuration.configurationbuilder)를 사용하여 수동으로 구성을 설정하세요. 자세한 내용은 ASP.NET Core 1.x 탭을 참조하세요.
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 [ConfigurationBuilder](/api/microsoft.extensions.configuration.configurationbuilder)를 만들고 `AddCommandLine` 메서드를 호출하여 CommandLine 구성 공급자를 사용합니다. 공급자가 마지막에 호출되기 때문에 다른 구성 공급자가 이전에 설정한 구성을 런타임에 전달되는 명령줄 인수가 재정의할 수 있습니다. `UseConfiguration` 메서드를 사용하여 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder)에 구성을 적용합니다.
 
 [!code-csharp[](index/sample_snapshot//CommandLine/Program2.cs?highlight=11,15,19)]
 
----
-
+* * *
 ### <a name="arguments"></a>인수
 
 명령줄에 전달된 인수는 다음 표에 표시된 두 형식 중 하나를 따라야 합니다.
@@ -413,9 +409,52 @@ Left: 1988
 
 IIS 또는 IIS Express에서 앱을 호스트하는 경우 *web.config* 파일이 필요합니다. *web.config*의 설정은 IIS의 [ASP.NET Core Module](xref:fundamentals/servers/aspnet-core-module)이 앱을 시작하고 다른 IIS 설정 및 모듈을 구성할 수 있게 합니다. *web.config* 파일이 없고 프로젝트 파일에 `<Project Sdk="Microsoft.NET.Sdk.Web">`이 포함되어 있는 경우 프로젝트를 게시하면 게시된 출력에 *web.config* 파일이 만들어집니다(*게시* 폴더). 자세한 내용은 [IIS가 있는 Windows에서 ASP.NET Core 호스팅](xref:host-and-deploy/iis/index#webconfig-file)을 참조하세요.
 
-## <a name="accessing-configuration-during-startup"></a>시작하는 동안 구성에 액세스
+## <a name="access-configuration-during-startup"></a>시작하는 동안 구성에 액세스
 
 시작하는 동안 `ConfigureServices` 또는 `Configure` 내에서 구성에 액세스하려면 [응용 프로그램 시작](xref:fundamentals/startup) 항목의 예를 참조하세요.
+
+## <a name="access-configuration-in-a-razor-page-or-mvc-view"></a>Razor 페이지 또는 MVC 뷰에서 구성에 액세스
+
+Razor 페이지나 MVC 뷰의 구성 설정에 액세스하려면 [Microsoft.Extensions.Configuration 네임스페이스](/dotnet/api/microsoft.extensions.configuration)에 [using 지시문](xref:mvc/views/razor#using)([C# 참조: using 지시문](/dotnet/csharp/language-reference/keywords/using-directive))을 추가하고 [IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration)을 페이지 또는 뷰로 삽입합니다.
+
+Razor 페이지에서:
+
+```cshtml
+@page
+@model IndexModel
+
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Index Page</title>
+</head>
+<body>
+    <h1>Access configuration in a Razor Pages page</h1>
+    <p>Configuration[&quot;key&quot;]: @Configuration["key"]</p>
+</body>
+</html>
+```
+
+MVC 뷰에서:
+
+```cshtml
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Index View</title>
+</head>
+<body>
+    <h1>Access configuration in an MVC view</h1>
+    <p>Configuration[&quot;key&quot;]: @Configuration["key"]</p>
+</body>
+</html>
+```
 
 ## <a name="additional-notes"></a>추가 참고 사항
 
@@ -430,7 +469,7 @@ IIS 또는 IIS Express에서 앱을 호스트하는 경우 *web.config* 파일�
 
 * [옵션](xref:fundamentals/configuration/options)
 * [여러 환경 사용](xref:fundamentals/environments)
-* [개발 중 안전한 앱 비밀 저장소](xref:security/app-secrets)
+* [개발 중인 안전한 앱 비밀 저장소](xref:security/app-secrets)
 * [ASP.NET Core에서 호스팅](xref:fundamentals/hosting)
 * [종속성 주입](xref:fundamentals/dependency-injection)
 * [Azure Key Vault 구성 공급자](xref:security/key-vault-configuration)

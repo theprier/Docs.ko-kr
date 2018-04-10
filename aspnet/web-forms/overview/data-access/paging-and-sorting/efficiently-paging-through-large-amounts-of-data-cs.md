@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/paging-and-sorting/efficiently-paging-through-large-amounts-of-data-cs
-title: "효율적으로 많은 양의 데이터 (C#)를 통한 페이징을 | Microsoft Docs"
+title: 효율적으로 많은 양의 데이터 (C#)를 통한 페이징을 | Microsoft Docs
 author: rick-anderson
-description: "많은 양의 데이터에 해당 기본 데이터 소스 제어 retriev 작업할 때는 데이터 프레젠테이션 컨트롤의 기본 페이징 옵션은 적합 없습니다."
+description: 많은 양의 데이터에 해당 기본 데이터 소스 제어 retriev 작업할 때는 데이터 프레젠테이션 컨트롤의 기본 페이징 옵션은 적합 없습니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/15/2006
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/efficiently-paging-through-large-amounts-of-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ac16cc79f2ed6b62bf676553a374180cd0165632
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: ea1fd06f8eb7c53c3e9e7fb10c46974eb2af2acd
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="efficiently-paging-through-large-amounts-of-data-c"></a>효율적으로 많은 양의 데이터 (C#)를 통해 페이징
 ====================
@@ -122,9 +122,9 @@ DAL s `TotalNumberOfProducts` 메서드 nullable 정수를 반환 하지만 म 
 - **SQL Server 2005 s를 사용 하 여 `ROW_NUMBER()` 키워드** 새 SQL Server 2005로의 `ROW_NUMBER()` 키워드를 일정 한 순서에 따라 각 반환 된 레코드와 순위를 연결 합니다. 이 순위 각 행에 대해 행 인덱스도 사용할 수 있습니다.
 - **테이블 변수를 사용 하 여 및 `SET ROWCOUNT`**  SQL Server s [ `SET ROWCOUNT` 문을](https://msdn.microsoft.com/library/ms188774.aspx) 는 쿼리; 종료 전에 처리 해야 총 레코드 수를 지정 하는 데 사용할 수 [테이블 변수](http://www.sqlteam.com/item.asp?ItemID=9454) 지역 변수가 T-SQL akin를 표 형식 데이터를 저장할 수 있는 [임시 테이블](http://www.sqlteam.com/item.asp?ItemID=2029)합니다. 이 접근 방식은 동일 하 게 모두 Microsoft SQL Server 2005 및 SQL Server 2000 (반면는 `ROW_NUMBER()` 방법은 SQL Server 2005에만 작동).  
   
- 여기서는 테이블 변수를 만들려면는 `IDENTITY` 열과 해당 데이터를 통해 페이징 될 테이블의 기본 키에 대 한 열입니다. 있으므로 순차적 행 인덱스를 연결 하는 테이블 변수로 통해 페이징 될 데이터가 있는 테이블의 내용을 덤프 됩니다는 다음으로, (통해는 `IDENTITY` 열)는 테이블의 각 레코드에 대 한 합니다. 테이블 변수가 채워진 후는 `SELECT` 테이블 변수에서 문을 특정 레코드를 추출 하기 위해 실행할 수는 기본 테이블과 조인 합니다. `SET ROWCOUNT` 테이블 변수로 덤프 해야 하는 레코드의 수를 제한 하는 지능적으로 문을 사용 합니다.  
+  여기서는 테이블 변수를 만들려면는 `IDENTITY` 열과 해당 데이터를 통해 페이징 될 테이블의 기본 키에 대 한 열입니다. 있으므로 순차적 행 인덱스를 연결 하는 테이블 변수로 통해 페이징 될 데이터가 있는 테이블의 내용을 덤프 됩니다는 다음으로, (통해는 `IDENTITY` 열)는 테이블의 각 레코드에 대 한 합니다. 테이블 변수가 채워진 후는 `SELECT` 테이블 변수에서 문을 특정 레코드를 추출 하기 위해 실행할 수는 기본 테이블과 조인 합니다. `SET ROWCOUNT` 테이블 변수로 덤프 해야 하는 레코드의 수를 제한 하는 지능적으로 문을 사용 합니다.  
   
- 이러한 접근 방식을의 효율성 요청 되는 페이지 번호를 기반으로 `SET ROWCOUNT` 값 행 인덱스 이며 시작을 더한 최대 행 값이 할당 됩니다. 데이터의 후속 페이지 첫 번째 같은 숫자가 낮은 페이지를 페이징할 때는이 방법이 매우 효율적입니다. 그러나 끝 근처에 있는 페이지를 검색할 때 기본 페이징와 비슷한 성능을 보여줍니다.
+  이러한 접근 방식을의 효율성 요청 되는 페이지 번호를 기반으로 `SET ROWCOUNT` 값 행 인덱스 이며 시작을 더한 최대 행 값이 할당 됩니다. 데이터의 후속 페이지 첫 번째 같은 숫자가 낮은 페이지를 페이징할 때는이 방법이 매우 효율적입니다. 그러나 끝 근처에 있는 페이지를 검색할 때 기본 페이징와 비슷한 성능을 보여줍니다.
 
 이 자습서를 사용 하 여 사용자 지정 페이징을 구현 하는 `ROW_NUMBER()` 키워드입니다. 테이블 변수를 사용 하 여 대 한 자세한 내용은 및 `SET ROWCOUNT` 기술 참조 [A 더 효율적으로 큰 결과 집합을 통해 페이징](http://www.4guysfromrolla.com/webtech/042606-1.shtml)합니다.
 
@@ -133,7 +133,7 @@ DAL s `TotalNumberOfProducts` 메서드 nullable 정수를 반환 하지만 म 
 
 [!code-sql[Main](efficiently-paging-through-large-amounts-of-data-cs/samples/sample3.sql)]
 
-`ROW_NUMBER()`표시 된 순서와 관련 하 여 각 레코드에 대 한 순위를 지정 하는 숫자 값을 반환 합니다. 예를 들어 가장에서 주문한 각 제품에 대 한 순위를 가장 적게 하는 데 비용이 사용 있습니다 다음 쿼리.
+`ROW_NUMBER()` 표시 된 순서와 관련 하 여 각 레코드에 대 한 순위를 지정 하는 숫자 값을 반환 합니다. 예를 들어 가장에서 주문한 각 제품에 대 한 순위를 가장 적게 하는 데 비용이 사용 있습니다 다음 쿼리.
 
 
 [!code-sql[Main](efficiently-paging-through-large-amounts-of-data-cs/samples/sample4.sql)]
@@ -147,7 +147,7 @@ DAL s `TotalNumberOfProducts` 메서드 nullable 정수를 반환 하지만 म 
 
 
 > [!NOTE]
-> `ROW_NUMBER()`SQL Server 2005에서 사용할 수 있는 많은 새 순위 함수 중 하나일 뿐입니다. 에 대 한 보다 철저 한 설명은 `ROW_NUMBER()`, 다른 순위 함수를 함께 읽기 [Microsoft SQL Server 2005를 사용 하 여 순위 결과 반환](http://www.4guysfromrolla.com/webtech/010406-1.shtml)합니다.
+> `ROW_NUMBER()` SQL Server 2005에서 사용할 수 있는 많은 새 순위 함수 중 하나일 뿐입니다. 에 대 한 보다 철저 한 설명은 `ROW_NUMBER()`, 다른 순위 함수를 함께 읽기 [Microsoft SQL Server 2005를 사용 하 여 순위 결과 반환](http://www.4guysfromrolla.com/webtech/010406-1.shtml)합니다.
 
 
 결과에서 지정 된 순위 때 `ORDER BY` 열에는 `OVER` 절 (`UnitPrice`, 위 예에서), SQL Server 결과 정렬 해야 합니다. 이것은 빠른 작업으로, 결과 정렬 열 위에 클러스터형된 인덱스가 있으면 포함 된 경우 인덱스로 하지만 그렇지 않은 경우 비용이 많이 드는 될 수 있습니다. 충분히 큰 쿼리의 성능은 개선 하려면 기준인 결과으로 정렬 열에 대 한 비클러스터형 인덱스를 추가 하는 것이 좋습니다. 참조 [순위 함수 및 SQL Server 2005의 성능](http://www.sql-server-performance.com/ak_ranking_functions.asp) 를 더 자세히 살펴보려면 성능 고려 사항에 대 한 합니다.
@@ -163,7 +163,7 @@ DAL s `TotalNumberOfProducts` 메서드 nullable 정수를 반환 하지만 म 
 [!code-html[Main](efficiently-paging-through-large-amounts-of-data-cs/samples/sample6.html)]
 
 > [!NOTE]
-> 이 자습서의 나중에 알 수 있듯이  *`StartRowIndex`*  제공한는 ObjectDataSource 인덱싱된 0부터 시작 하는 반면는 `ROW_NUMBER()` SQL Server 2005에서 반환 된 값 1에서 시작 인덱싱됩니다. 따라서는 `WHERE` 절은 레코드를 반환 합니다. 여기서 `PriceRank` 보다 엄격 하 게 크면  *`StartRowIndex`*  보다 작거나 같음 및  *`StartRowIndex`*   +  *`MaximumRows`*.
+> 이 자습서의 나중에 알 수 있듯이 *`StartRowIndex`* 제공한는 ObjectDataSource 인덱싱된 0부터 시작 하는 반면는 `ROW_NUMBER()` SQL Server 2005에서 반환 된 값 1에서 시작 인덱싱됩니다. 따라서는 `WHERE` 절은 레코드를 반환 합니다. 여기서 `PriceRank` 보다 엄격 하 게 크면 *`StartRowIndex`* 보다 작거나 같음 및 *`StartRowIndex`*  +  *`MaximumRows`*.
 
 
 해당 म 것은 사용 이제 방법을 설명 했습니다 `ROW_NUMBER()` 될 수 있습니다 DAL 및 BLL에 메서드로이 논리를 구현 하려면 이제 해야 시작 하는 행 인덱스 및 최대 행 수 값 데이터의 특정 페이지를 검색 하는 데 사용 합니다.
@@ -188,7 +188,7 @@ DAL s `TotalNumberOfProducts` 메서드 nullable 정수를 반환 하지만 म 
 
 ![에 대 한 값을 입력에서 @startRowIndex 및 @maximumRows 매개 변수](efficiently-paging-through-large-amounts-of-data-cs/_static/image7.png)
 
-**그림 7**:에 대 한 값을 입력에서 @startRowIndex 및 @maximumRows 매개 변수
+<strong>그림 7</strong>:에 대 한 값을 입력에서 @startRowIndex 및 @maximumRows 매개 변수
 
 
 후 이러한 선택 매개 변수 값을 입력, 출력 창에 결과가 표시 됩니다. 그림 8 10 둘 다에 전달 하는 경우 결과 보여 줍니다는 `@startRowIndex` 및 `@maximumRows` 매개 변수입니다.
@@ -276,9 +276,9 @@ ObjectDataSource에서 사용 중이기 때문에 현재 0 값으로 둘 다에 
 이 해결 하려면 사용자 지정 페이징을 사용 하 여 ObjectDataSource를 구성 해야 합니다. 다음 단계에서는를 수행할 수 있습니다.
 
 1. **ObjectDataSource s 설정 `EnablePaging` 속성을 `true`**  으로 전달 해야 하는 ObjectDataSource 표시는 `SelectMethod` 두 개의 추가 매개 변수: 시작 하는 행 인덱스를 지정할 수 하나의 ([ `StartRowIndexParameterName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.startrowindexparametername.aspx)), 최대 행을 지정 하 고 다른 하나 ([`MaximumRowsParameterName`](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.maximumrowsparametername.aspx)).
-2. **ObjectDataSource s 설정 `StartRowIndexParameterName` 및 `MaximumRowsParameterName` 그에 따라 속성** 는 `StartRowIndexParameterName` 및 `MaximumRowsParameterName` 속성에 전달 된 입력된 매개 변수의 이름을 나타냅니다는 `SelectMethod` 사용자 지정 페이징 목적 . 기본적으로 이러한 매개 변수 이름은 `startIndexRow` 및 `maximumRows`, 하는 이유를 만들 때의 `GetProductsPaged` 메서드 BLL, 입력된 매개 변수에 대 한 이러한 값 사용. BLL s에 대 한 서로 다른 매개 변수 이름을 사용 하도록 선택한 경우 `GetProductsPaged` 메서드와 같은 `startIndex` 및 `maxRows`ObjectDataSource s를 설정 해야 하는 예제에 대 한 `StartRowIndexParameterName` 및 `MaximumRowsParameterName` 속성 적절 하 게 (예:에 대 한 startIndex `StartRowIndexParameterName` 및에 대 한 maxRows `MaximumRowsParameterName`).
+2. **ObjectDataSource s 설정 `StartRowIndexParameterName` 및 `MaximumRowsParameterName` 그에 따라 속성** 는 `StartRowIndexParameterName` 및 `MaximumRowsParameterName` 속성에 전달 된 입력된 매개 변수의 이름을 나타냅니다는 `SelectMethod` 사용자 지정 페이징 목적입니다. 기본적으로 이러한 매개 변수 이름은 `startIndexRow` 및 `maximumRows`, 하는 이유를 만들 때의 `GetProductsPaged` 메서드 BLL, 입력된 매개 변수에 대 한 이러한 값 사용. BLL s에 대 한 서로 다른 매개 변수 이름을 사용 하도록 선택한 경우 `GetProductsPaged` 메서드와 같은 `startIndex` 및 `maxRows`ObjectDataSource s를 설정 해야 하는 예제에 대 한 `StartRowIndexParameterName` 및 `MaximumRowsParameterName` 속성 적절 하 게 (예:에 대 한 startIndex `StartRowIndexParameterName` 및에 대 한 maxRows `MaximumRowsParameterName`).
 3. **ObjectDataSource s 설정 [ `SelectCountMethod` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.objectdatasource.selectcountmethod(VS.80).aspx) 의 총 수의 레코드 되 고 페이지를 통해 반환 되는 메서드의 이름에 (`TotalNumberOfProducts`)** 이전에 설명한 대로 `ProductsBLL`의 클래스`TotalNumberOfProducts`실행 하는 DAL 메서드를 사용 하 여 호출이 전달 하는 레코드의 총 수를 반환 하는 메서드는 `SELECT COUNT(*) FROM Products` 쿼리 합니다. 이 정보는 objectdatasource 올바르게 페이징 인터페이스를 렌더링 하는 데 필요 합니다.
-4. **제거는 `startRowIndex` 및 `maximumRows` `<asp:Parameter>` ObjectDataSource s 선언 태그에서에서 요소를** 마법사를 통해 ObjectDataSource를 구성할 때 Visual Studio 자동으로 추가 두 `<asp:Parameter>` 에 대 한 요소는 `GetProductsPaged`의 메서드 매개 변수를 입력 합니다. 설정 하 여 `EnablePaging` 를 `true`, 이러한 매개 변수를 자동으로 전달 됩니다;는 ObjectDataSource를 전달 하려고 시도 선언적 구문에도 표시, *4 개의* 에 매개 변수는 `GetProductsPaged` 메서드 및 두 개의 매개 변수는 `TotalNumberOfProducts` 메서드. 이러한 확장을 제거할 것을 잊은 경우 `<asp:Parameter>` 같은 오류 메시지를 얻게 됩니다 브라우저를 통해 페이지를 방문 하는 경우 요소: *ObjectDataSource 'ObjectDataSource1' 찾을 수 없습니다 제네릭이 아닌 메서드를 가진 ' TotalNumberOfProducts' 매개 변수: startRowIndex, maximumRows*합니다.
+4. **제거는 `startRowIndex` 및 `maximumRows` `<asp:Parameter>` ObjectDataSource s 선언 태그에서에서 요소를** 마법사를 통해 ObjectDataSource를 구성할 때 Visual Studio 자동으로 추가 두 `<asp:Parameter>` 요소 에 대 한는 `GetProductsPaged`의 메서드 매개 변수를 입력 합니다. 설정 하 여 `EnablePaging` 를 `true`, 이러한 매개 변수를 자동으로 전달 됩니다;는 ObjectDataSource를 전달 하려고 시도 선언적 구문에도 표시, *4 개의* 에 매개 변수는 `GetProductsPaged` 메서드 및 두 개의 매개 변수는 `TotalNumberOfProducts` 메서드. 이러한 확장을 제거할 것을 잊은 경우 `<asp:Parameter>` 같은 오류 메시지를 얻게 됩니다 브라우저를 통해 페이지를 방문 하는 경우 요소: *ObjectDataSource 'ObjectDataSource1' 찾을 수 없습니다 제네릭이 아닌 메서드를 가진 ' TotalNumberOfProducts' 매개 변수: startRowIndex, maximumRows*합니다.
 
 다음과 같이 변경한 후 ObjectDataSource s 선언적 구문 다음과 같이 표시 됩니다.
 
@@ -326,7 +326,7 @@ ObjectDataSource에서 사용 중이기 때문에 현재 0 값으로 둘 다에 
 마지막으로 제품을 GridView 삭제 시 *해야* 자동으로 여덟 번째 페이지로 이동 하 고 이러한 기능은 기본 페이징을 사용 하 여 발생 합니다. 그러나 사용자 지정 페이징을 사용 하 여 마지막 페이지에는 마지막으로 제품을 삭제 한 후 GridView 단순히 사라집니다 화면에서 모두. 정확한 원인을 *이유* 이 자습서의 범위를 벗어나지만이 작업은 이루어지고 참조 [사용자 지정 페이징 된 GridView에서 마지막 페이지에 있는 마지막 레코드를 삭제](http://scottonwriting.net/sowblog/posts/7326.aspx) 의 소스에 대 한 하위 수준 세부 정보에 대 한 이 문제입니다. 요약 하자면에서 것 s 다음 단계를 수행 하는 GridView 삭제 단추를 클릭할 때 발생 합니다.
 
 1. 레코드 삭제
-2. 지정 된 표시 하려면 적절 한 레코드를 가져올 `PageIndex` 및`PageSize`
+2. 지정 된 표시 하려면 적절 한 레코드를 가져올 `PageIndex` 및 `PageSize`
 3. 확인 하 고 `PageIndex` GridView s 감소 시킬 자동으로 수행 하는 경우 데이터 원본;의 데이터 페이지의 수를 초과 하지 않는 `PageIndex` 속성
 4. 2 단계에서에서 얻은 레코드를 사용 하 여 GridView에 적절 한 페이지의 데이터 바인딩
 
@@ -377,8 +377,8 @@ ObjectDataSource s에 대 한 이벤트 처리기를 만들려면 다른 해결 
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
->[!div class="step-by-step"]
-[이전](paging-and-sorting-report-data-cs.md)
-[다음](sorting-custom-paged-data-cs.md)
+> [!div class="step-by-step"]
+> [이전](paging-and-sorting-report-data-cs.md)
+> [다음](sorting-custom-paged-data-cs.md)

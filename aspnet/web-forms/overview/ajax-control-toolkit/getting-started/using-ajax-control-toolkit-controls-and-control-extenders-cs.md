@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/getting-started/using-ajax-control-toolkit-controls-and-control-extenders-cs
-title: "AJAX 컨트롤 Toolkit 컨트롤 및 컨트롤 Extender (C#)를 사용 하 여 | Microsoft Docs"
+title: AJAX 컨트롤 Toolkit 컨트롤 및 컨트롤 Extender (C#)를 사용 하 여 | Microsoft Docs
 author: microsoft
-description: "ASP.NET 페이지 들어 컨트롤과 extender를 추가 하는 방법을 알아봅니다."
+description: ASP.NET 페이지 들어 컨트롤과 extender를 추가 하는 방법을 알아봅니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/12/2009
@@ -12,15 +12,15 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/getting-started/using-ajax-control-toolkit-controls-and-control-extenders-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 42a210ac41e83e2379aa64979f42ce66c843f878
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3d7cea2452db01ca116849ffb17631db3b935668
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/06/2018
 ---
 <a name="using-ajax-control-toolkit-controls-and-control-extenders-c"></a>AJAX 컨트롤 Toolkit 컨트롤 및 컨트롤 Extender (C#)를 사용 하 여
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 > ASP.NET 페이지 들어 컨트롤과 extender를 추가 하는 방법을 알아봅니다.
 
@@ -106,6 +106,6 @@ ConfirmButton 컨트롤 extender를 사용 하려면 다음이 단계를 수행 
 
 여러 컨트롤 extender에서 단일 ASP.NET 컨트롤을 확장할 수 있습니다. 확장 하 고 컨트롤에 대 한 속성 시트 컨트롤에 연결 된 컨트롤 extender의 모든 나열 됩니다.
 
->[!div class="step-by-step"]
-[이전](get-started-with-the-ajax-control-toolkit-cs.md)
-[다음](creating-a-custom-ajax-control-toolkit-control-extender-cs.md)
+> [!div class="step-by-step"]
+> [이전](get-started-with-the-ajax-control-toolkit-cs.md)
+> [다음](creating-a-custom-ajax-control-toolkit-control-extender-cs.md)

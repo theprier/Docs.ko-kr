@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/membership/creating-the-membership-schema-in-sql-server-vb
-title: "SQL Server (VB)에서 멤버 자격 스키마 만들기 | Microsoft Docs"
+title: SQL Server (VB)에서 멤버 자격 스키마 만들기 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서는 SqlMembershipProvider 사용 하려면 데이터베이스에 필요한 스키마를 추가 하기 위한 기술을 검사 하 여 시작 합니다. 그런 다음, 우리 wi..."
+description: 이 자습서는 SqlMembershipProvider 사용 하려면 데이터베이스에 필요한 스키마를 추가 하기 위한 기술을 검사 하 여 시작 합니다. 그런 다음, 우리 wi...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/18/2008
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/creating-the-membership-schema-in-sql-server-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2dadf091c6ae77fdfaf76f4e1bda92fd3e949678
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 44458e8022f1f0d52cf136ad7fbaa5dd1f546632
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-the-membership-schema-in-sql-server-vb"></a>SQL Server (VB)에서 멤버 자격 스키마 만들기
 ====================
@@ -155,9 +155,9 @@ ASP.NET 응용 프로그램의 데이터는 일반적으로 다양 한 데이터
 
 데이터베이스 정보를 묻는 세 번째 단계: 서버 이름, 인증 정보 및 데이터베이스 이름입니다. 이 자습서를 함께 수행 하 고 추가한 경우는 `SecurityTutorials.mdf` 데이터베이스를 `App_Data`에 연결 된 `localhost\InstanceName`, 되 게 하므로 이름을 바꿀 `SecurityTutorialsDatabase`, 다음 값을 사용 합니다.
 
-- 서버:`localhost\InstanceName`
+- 서버: `localhost\InstanceName`
 - Windows 인증
-- 데이터베이스:`SecurityTutorialsDatabase`
+- 데이터베이스: `SecurityTutorialsDatabase`
 
 
 [![데이터베이스 정보를 입력 합니다.](creating-the-membership-schema-in-sql-server-vb/_static/image26.png)](creating-the-membership-schema-in-sql-server-vb/_static/image25.png)
@@ -211,7 +211,7 @@ ASP.NET 응용 프로그램에서 멤버 자격 및 역할 프레임 워크를 �
 - `UserName`
 - `ApplicationId`
 
-`UserId`기본 키 (유형의 `uniqueidentifier`). `UserName`형식이 `nvarchar(256)` 및 암호와 함께 사용자의 자격 증명을 만듭니다. (사용자의 암호에 저장 됩니다는 `aspnet_Membership` 테이블입니다.) `ApplicationId` 에서 특정 응용 프로그램에 사용자 계정을 연결 `aspnet_Applications`합니다. 복합 [ `UNIQUE` 제약 조건](https://msdn.microsoft.com/library/ms191166.aspx) 에 `UserName` 및 `ApplicationId` 열입니다. 이렇게 하면 각 사용자 지정된 된 응용 프로그램에 고유 이름이 아직 동일한 고려한 `UserName` 서로 다른 응용 프로그램에서 사용할 수 있습니다.
+`UserId` 기본 키 (유형의 `uniqueidentifier`). `UserName` 형식이 `nvarchar(256)` 및 암호와 함께 사용자의 자격 증명을 만듭니다. (사용자의 암호에 저장 됩니다는 `aspnet_Membership` 테이블입니다.) `ApplicationId` 에서 특정 응용 프로그램에 사용자 계정을 연결 `aspnet_Applications`합니다. 복합 [ `UNIQUE` 제약 조건](https://msdn.microsoft.com/library/ms191166.aspx) 에 `UserName` 및 `ApplicationId` 열입니다. 이렇게 하면 각 사용자 지정된 된 응용 프로그램에 고유 이름이 아직 동일한 고려한 `UserName` 서로 다른 응용 프로그램에서 사용할 수 있습니다.
 
 `aspnet_Membership` 사용자의 암호, 전자 메일 주소는 마지막 로그인 날짜 및 시간 및 등과 같은 추가 사용자 계정 정보가 포함 됩니다. 레코드 간에 일대일 대응이 `aspnet_Users` 및 `aspnet_Membership` 테이블입니다. 이 관계에 의해 보장 되는 `UserId` 필드에 `aspnet_Membership`, 테이블의 기본 키로 제공 되 합니다. 마찬가지로 `aspnet_Users` 테이블 `aspnet_Membership` 포함는 `ApplicationId` 이 정보는 특정 응용 프로그램 파티션에 연결 하는 필드입니다.
 
@@ -225,7 +225,7 @@ ASP.NET 응용 프로그램에서 멤버 자격 및 역할 프레임 워크를 �
 
 사용 되는 암호 저장소 기술에 따라 달라 집니다는 `SqlMembershipProvider` 에 지정 된 설정을 `Web.config`합니다. 사용자 지정 방법에 대해서는 `SqlMembershipProvider` 4 단계에서에서 설정 합니다. 기본 동작은 암호의 해시를 저장 하는 것입니다.
 
-암호를 저장 하는 일을 담당 하는 열 `Password`, `PasswordFormat`, 및 `PasswordSalt`합니다. `PasswordFormat`형식의 필드는 `int` 암호를 저장 하는 데 사용 되는 기술은 나타내는 값: 0 지우기에 대 한; Hashed에 대 한 1; 암호화에 대 한 2입니다. `PasswordSalt`사용 하는 암호 저장 방법에 관계 없이 임의로 생성 된 문자열을 할당 값 `PasswordSalt` 암호의 해시를 계산할 때만 사용 됩니다. 마지막으로 `Password` 일반 텍스트 암호의 암호화 된 암호 또는 암호를 해시 수를 실제 암호 데이터를 포함 하는 열입니다.
+암호를 저장 하는 일을 담당 하는 열 `Password`, `PasswordFormat`, 및 `PasswordSalt`합니다. `PasswordFormat` 형식의 필드는 `int` 암호를 저장 하는 데 사용 되는 기술은 나타내는 값: 0 지우기에 대 한; Hashed에 대 한 1; 암호화에 대 한 2입니다. `PasswordSalt` 사용 하는 암호 저장 방법에 관계 없이 임의로 생성 된 문자열을 할당 값 `PasswordSalt` 암호의 해시를 계산할 때만 사용 됩니다. 마지막으로 `Password` 일반 텍스트 암호의 암호화 된 암호 또는 암호를 해시 수를 실제 암호 데이터를 포함 하는 열입니다.
 
 표 1이 3 열의 수 모양을 보여줍니다 다양 한 저장소 기술에 대 한 MySecret 암호를 저장할 때! 이어야 합니다.
 
@@ -248,7 +248,7 @@ ASP.NET 응용 프로그램에서 멤버 자격 및 역할 프레임 워크를 �
 - `RoleName`
 - `ApplicationId`
 
-`RoleId`기본 키 (유형의 `uniqueidentifier`). `RoleName`는 `nvarchar(256)` 형식입니다. 및 `ApplicationId` 에서 특정 응용 프로그램에 사용자 계정을 연결 `aspnet_Applications`합니다. 복합 `UNIQUE` 제약 조건에는 `RoleName` 및 `ApplicationId` 열을 지정된 된 응용 프로그램에서 각 역할 이름이 고유한 지 확인 합니다.
+`RoleId` 기본 키 (유형의 `uniqueidentifier`). `RoleName`는 `nvarchar(256)` 형식입니다. 및 `ApplicationId` 에서 특정 응용 프로그램에 사용자 계정을 연결 `aspnet_Applications`합니다. 복합 `UNIQUE` 제약 조건에는 `RoleName` 및 `ApplicationId` 열을 지정된 된 응용 프로그램에서 각 역할 이름이 고유한 지 확인 합니다.
 
 `aspnet_UsersInRoles` 테이블 사용자 및 역할 간의 매핑을로 사용 합니다. 두 개의 열이- `UserId` 및 `RoleId` -함께 복합 기본 키를 구성 하 고 있습니다.
 
@@ -305,8 +305,8 @@ ASP.NET 응용 프로그램에서 멤버 자격 및 역할 프레임 워크를 �
 
 이 응용 프로그램에서 한 멤버 자격 공급자 정보를 지정 하지 않았기 경우 `Web.config` 파일, 응용 프로그램에 등록 된 기본 멤버 자격 공급자를 사용 하 여 `AspNetSqlMembershipProvider`합니다. 경우는 `~/App_Data/aspnet.mdf` 데이터베이스가 존재 하지 않습니다, ASP.NET 런타임이 자동으로 만들고 응용 프로그램 서비스 스키마를 추가 합니다. 그러나에서는 사용 하지 않음은 `aspnet.mdf` 데이터베이스; 대신 사용 하려는 `SecurityTutorials.mdf` 2 단계에서에서 만든 데이터베이스입니다. 두 가지 방법 중 하나에서이 수정 작업을 수행할 수 있습니다.
 
-- **에 대 한 값을 지정 된 * * *`LocalSqlServer`* * * 연결 문자열 이름에 * * *`Web.config`* * *입니다.** 덮어쓰는 방법으로 `LocalSqlServer` 연결 문자열 이름 값의 `Web.config`, 등록 된 기본 멤버 자격 공급자를 사용할 수 있습니다 (`AspNetSqlMembershipProvider`)와 올바르게 사용할는 `SecurityTutorials.mdf` 데이터베이스입니다. 이 방법은 지정 된 구성 설정으로 콘텐츠는 괜 찮으 `AspNetSqlMembershipProvider`합니다. 이 방법에 대 한 자세한 내용은 참조 하십시오. [Scott Guthrie](https://weblogs.asp.net/scottgu/)의 블로그 게시물 [구성 ASP.NET 2.0 응용 프로그램 서비스를 사용 하 여 SQL Server 2000 또는 SQL Server 2005](https://weblogs.asp.net/scottgu/archive/2005/08/25/423703.aspx)합니다.
-- **형식 * * *의 새 등록 된 공급자를 추가`SqlMembershipProvider`* * * 구성 및 해당 * * *`connectionStringName`* * *를 가리키도록 설정에서 * * *`SecurityTutorials.mdf`* * * 데이터베이스입니다.** 이 방법은 데이터베이스 연결 문자열 뿐 아니라 구성 속성을 다른 사용자 지정 하려는 시나리오에서 유용 합니다. 나만의 프로젝트에서 항상 사용이 방법을 사용의 유연성과 가독성 때문에 합니다.
+- <strong>에 대 한 값을 지정 된</strong><strong>`LocalSqlServer`</strong><strong>의 연결 문자열 이름</strong><strong>`Web.config`</strong><strong>합니다.</strong> 덮어쓰는 방법으로 `LocalSqlServer` 연결 문자열 이름 값의 `Web.config`, 등록 된 기본 멤버 자격 공급자를 사용할 수 있습니다 (`AspNetSqlMembershipProvider`)와 올바르게 사용할는 `SecurityTutorials.mdf` 데이터베이스입니다. 이 방법은 지정 된 구성 설정으로 콘텐츠는 괜 찮으 `AspNetSqlMembershipProvider`합니다. 이 방법에 대 한 자세한 내용은 참조 하십시오. [Scott Guthrie](https://weblogs.asp.net/scottgu/)의 블로그 게시물 [구성 ASP.NET 2.0 응용 프로그램 서비스를 사용 하 여 SQL Server 2000 또는 SQL Server 2005](https://weblogs.asp.net/scottgu/archive/2005/08/25/423703.aspx)합니다.
+- <strong>형식의 새 등록 된 공급자를 추가</strong><strong>`SqlMembershipProvider`</strong><strong>구성 및 해당</strong><strong>`connectionStringName`</strong><strong>는를가리키도록설정</strong> <strong>`SecurityTutorials.mdf`</strong> <strong>데이터베이스입니다.</strong> 이 방법은 데이터베이스 연결 문자열 뿐 아니라 구성 속성을 다른 사용자 지정 하려는 시나리오에서 유용 합니다. 나만의 프로젝트에서 항상 사용이 방법을 사용의 유연성과 가독성 때문에 합니다.
 
 참조 하는 새 등록 된 공급자를 추가 하기 전에 `SecurityTutorials.mdf` 데이터베이스에 먼저 추가 해야 한다고를 적절 한 연결 문자열 값에는 `<connectionStrings>` 섹션 `Web.config`합니다. 라는 새 연결 문자열을 추가 하는 다음 태그 `SecurityTutorialsConnectionString` SQL Server 2005 Express Edition을 참조 하는 `SecurityTutorials.mdf` 여기에 데이터베이스는 `App_Data` 폴더입니다.
 
@@ -348,7 +348,7 @@ ASP.NET 응용 프로그램에서 멤버 자격 및 역할 프레임 워크를 �
 - [`<membership>` 요소](https://msdn.microsoft.com/library/1b9hw62f.aspx)
 - [`<providers>` 멤버 자격에 대 한 요소](https://msdn.microsoft.com/library/6d4936ht.aspx)
 - [사용 하 여 `<clear />` 공급자 추가](https://weblogs.asp.net/scottgu/archive/2006/11/20/common-gotcha-don-t-forget-to-clear-when-adding-providers.aspx)
-- [와 직접 작업 하는`SqlMembershipProvider`](http://aspnet.4guysfromrolla.com/articles/091207-1.aspx)
+- [와 직접 작업 하는 `SqlMembershipProvider`](http://aspnet.4guysfromrolla.com/articles/091207-1.aspx)
 
 ### <a name="video-training-on-topics-contained-in-this-tutorial"></a>이 자습서에 포함 된 항목에 대 한 비디오 교육
 
@@ -358,12 +358,12 @@ ASP.NET 응용 프로그램에서 멤버 자격 및 역할 프레임 워크를 �
 
 ### <a name="about-the-author"></a>작성자 정보
 
-여러 ASP/ASP.NET 책의 작성자 및 4GuysFromRolla.com의 창립자 Scott Mitchell의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은  *[Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*합니다. Scott에 도달할 수 [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) 또는에서 그의 블로그 통해 [http://ScottOnWriting.NET](http://scottonwriting.net/)합니다.
+여러 ASP/ASP.NET 책의 작성자 및 4GuysFromRolla.com의 창립자 Scott Mitchell의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은  *[Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*합니다. Scott에 도달할 수 [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) 또는에서 그의 블로그 통해 [ http://ScottOnWriting.NET ](http://scottonwriting.net/)합니다.
 
 ### <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 Alicja Maziarz 했습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com ](mailto:mitchell@4GuysFromRolla.com)합니다.
 
->[!div class="step-by-step"]
-[이전](storing-additional-user-information-cs.md)
-[다음](creating-user-accounts-vb.md)
+> [!div class="step-by-step"]
+> [이전](storing-additional-user-information-cs.md)
+> [다음](creating-user-accounts-vb.md)

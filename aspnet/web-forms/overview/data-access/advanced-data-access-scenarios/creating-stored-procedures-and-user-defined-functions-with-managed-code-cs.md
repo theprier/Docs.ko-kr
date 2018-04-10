@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/advanced-data-access-scenarios/creating-stored-procedures-and-user-defined-functions-with-managed-code-cs
-title: "관리 코드 (C#)를 저장된 프로시저 및 사용자 정의 함수 만들기 | Microsoft Docs"
+title: 관리 코드 (C#)를 저장된 프로시저 및 사용자 정의 함수 만들기 | Microsoft Docs
 author: rick-anderson
-description: "Microsoft SQL Server 2005 개발자가 관리 되는 코드를 통해 데이터베이스 개체를 만들 수 있도록.NET 공용 언어 런타임 통합 합니다. 이 자습서 중..."
+description: Microsoft SQL Server 2005 개발자가 관리 되는 코드를 통해 데이터베이스 개체를 만들 수 있도록.NET 공용 언어 런타임 통합 합니다. 이 자습서 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/03/2007
@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-stored-procedures-and-user-defined-functions-with-managed-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6daa0dec764e2e9248cac97ba7d7b6df0da3208f
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: 5a860c8ab6ad7ff04de2175900491d532db782d4
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 04/06/2018
 ---
 <a name="creating-stored-procedures-and-user-defined-functions-with-managed-code-c"></a>저장 프로시저와 관리 코드 (C#)와 사용자 정의 함수 만들기
 ====================
@@ -31,7 +31,7 @@ ms.lasthandoff: 02/12/2018
 
 Microsoft SQL Server 2005 s와 같은 데이터베이스 사용은 [Transact-Structured 쿼리 언어 (T-SQL)](http://en.wikipedia.org/wiki/Transact-SQL) 삽입, 수정 및 데이터 검색에 대 한 합니다. 대부분의 데이터베이스 시스템에는 일련의 다시 사용할 수 있는 단일 단위로 실행 될 수 있는 SQL 문 그룹화 하기 위한 구문을 포함 됩니다. 저장된 프로시저는 한 가지 예입니다. 다른 스냅숏이 *사용자 정의 함수*(Udf) 9 단계에서에서 더 자세히 검사 하는 구문입니다.
 
-본질적으로 데이터 집합으로 작업 하기 위한 SQL 설계 되었습니다. `SELECT`, `UPDATE`, 및 `DELETE` 문을 기본적으로 해당 테이블의 모든 레코드에 적용 되 고 뿐 해당 `WHERE` 절. 아직 설계 하 고 스칼라 데이터를 조작 하기 위해 한 번에 하나의 레코드를 사용 하기 위한 언어 기능이 많이 있습니다. [`CURSOR`s](http://www.sqlteam.com/item.asp?ItemID=553) 레코드 집합을 통해 한 번에 하나씩 반복 될 수 있습니다. 문자열 조작 함수 같은 `LEFT`, `CHARINDEX`, 및 `PATINDEX` 스칼라 데이터와 함께 작동 합니다. SQL에도 같은 제어 흐름 문의 `IF` 및 `WHILE`합니다.
+본질적으로 데이터 집합으로 작업 하기 위한 SQL 설계 되었습니다. `SELECT`, `UPDATE`, 및 `DELETE` 문을 기본적으로 해당 테이블의 모든 레코드에 적용 되 고 뿐 해당 `WHERE` 절. 아직 설계 하 고 스칼라 데이터를 조작 하기 위해 한 번에 하나의 레코드를 사용 하기 위한 언어 기능이 많이 있습니다. [`CURSOR` s](http://www.sqlteam.com/item.asp?ItemID=553) 레코드 집합을 통해 한 번에 하나씩 반복 될 수 있습니다. 문자열 조작 함수 같은 `LEFT`, `CHARINDEX`, 및 `PATINDEX` 스칼라 데이터와 함께 작동 합니다. SQL에도 같은 제어 흐름 문의 `IF` 및 `WHILE`합니다.
 
 Microsoft SQL Server 2005 이전 저장된 프로시저 및 Udf 수로 정의 될 T-SQL 문 모음입니다. 그러나 SQL Server 2005와의 통합을 제공 하도록 디자인 된는 [공용 언어 런타임 (CLR)](https://msdn.microsoft.com/netframework/aa497266.aspx), 하는 모든.NET 어셈블리에서 사용 하는 런타임입니다. 따라서 저장된 프로시저 및 Udf는 SQL Server 2005 데이터베이스에 만들 수 있습니다 관리 코드를 사용 하 여 합니다. 즉, 저장된 프로시저 또는 UDF를 C# 클래스의 메서드로 만들 수 있습니다. 이렇게 하면 이러한 저장된 프로시저 및 사용자 지정 클래스와.NET Framework의 기능을 활용 하는 Udf 수 있습니다.
 
@@ -424,8 +424,8 @@ UDF의 메서드에 입력된 매개 변수는 해당 SQL 형식의: `SqlMoney` 
 
 프로젝트를 배포한 후에 SQL Server Management Studio로 반환 하 고 스칼라 반환 함수 폴더를 새로 고칩니다. 이제 두 개의 항목이 나타납니다.
 
-- `dbo.udf_ComputeInventoryValue`-9 단계에서에서 만든 T-SQL UDF 및
-- `dbo.udf ComputeInventoryValue_Managed`-관리 되는 UDF 방금 배포 된 10 단계에서에서 생성 합니다.
+- `dbo.udf_ComputeInventoryValue` -9 단계에서에서 만든 T-SQL UDF 및
+- `dbo.udf ComputeInventoryValue_Managed` -관리 되는 UDF 방금 배포 된 10 단계에서에서 생성 합니다.
 
 이 관리 되는 UDF를 테스트 하려면 Management Studio 내에서 다음 쿼리를 실행 합니다.
 
@@ -569,12 +569,12 @@ Visual Studio의 SQL Server 프로젝트 형식 만들기, 컴파일 및 관리 
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [http://ScottOnWriting.NET](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
 이 자습서 시리즈 많은 유용한 검토자가 검토 합니다. 이 자습서에 대 한 선행 검토자 S ren 야곱의 Lauritsen 했습니다. 이 문서, S ren도 검토 하는 것 외에도 관리 되는 데이터베이스 개체를 수동으로 컴파일하기 위해이 문서의 다운로드에 포함 된 Visual C# Express Edition 프로젝트를 만들었습니다. 향후 내 MSDN 문서를 검토에 관심이 있으십니까? 이 경우 drop me에 한 줄씩 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com)
 
->[!div class="step-by-step"]
-[이전](debugging-stored-procedures-cs.md)
-[다음](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb.md)
+> [!div class="step-by-step"]
+> [이전](debugging-stored-procedures-cs.md)
+> [다음](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb.md)
