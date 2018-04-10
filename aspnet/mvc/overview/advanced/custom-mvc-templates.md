@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/advanced/custom-mvc-templates
-title: "사용자 지정 MVC 템플릿 | Microsoft Docs"
+title: 사용자 지정 MVC 템플릿 | Microsoft Docs
 author: joeloff
-description: "VSIX 확장으로 템플릿을 만듭니다."
+description: VSIX 확장으로 템플릿을 만듭니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/10/2012
