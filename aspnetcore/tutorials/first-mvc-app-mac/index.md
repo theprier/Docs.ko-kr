@@ -1,7 +1,7 @@
 ---
-title: "macOS에서 ASP.NET Core MVC를 사용하여 웹앱 만들기"
+title: Mac용 Visual Studio를 사용하여 macOS에서 ASP.NET Core MVC로 웹앱 만들기
 author: rick-anderson
-description: "Mac용 Visual Studio를 사용하여 ASP.NET Core MVC/Entity Framework 앱 만들기"
+description: Mac용 Visual Studio를 사용하여 ASP.NET Core MVC/Entity Framework 앱 만들기
 manager: wpickett
 ms.author: riande
 ms.date: 06/26/2017
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: tutorials/first-mvc-app-mac/index
-ms.openlocfilehash: 51d62043592fbb7e1edd377c4f3ef3c1693b666a
-ms.sourcegitcommit: 6548a3dd0cd1e3e92ac2310dee757ddad9fd6456
+ms.openlocfilehash: 417f5c49a026348a62ef1bff0ed3611578e8d111
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/16/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="create-a-web-app-with-aspnet-core-mvc-using-visual-studio-for-mac"></a>Mac용 Visual Studio를 사용하여 ASP.NET Core MVC로 웹앱 만들기
+# <a name="create-a-web-app-with-aspnet-core-mvc-on-macos-with-visual-studio-for-mac"></a>Mac용 Visual Studio를 사용하여 macOS에서 ASP.NET Core MVC로 웹앱 만들기
 
 이 자습서 시리즈에서는 Mac용 Visual Studio를 사용하여 ASP.NET Core MVC 웹앱을 빌드하는 기본 사항에 대해 알아봅니다. 
 
-[!INCLUDE[consider RP](../../includes/razor.md)]
+[!INCLUDE [consider RP](../../includes/razor.md)]
 
 1. [시작](xref:tutorials/first-mvc-app-mac/start-mvc)
 1. [컨트롤러 추가](xref:tutorials/first-mvc-app-mac/adding-controller)

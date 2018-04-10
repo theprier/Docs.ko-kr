@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core 기본 사항"
+title: ASP.NET Core 기본 사항
 author: rick-anderson
-description: "ASP.NET Core 응용 프로그램을 구축하기 위한 기본적인 개념을 알아봅니다."
+description: ASP.NET Core 응용 프로그램을 구축하기 위한 기본적인 개념을 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
@@ -10,48 +10,42 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: fundamentals/index
-ms.openlocfilehash: be37df7789354ac4ce8e373a1560366be157ffa5
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: b74870c93ea0120e43931bb75f47bab19a6de201
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="aspnet-core-fundamentals"></a>ASP.NET Core 기본 사항
 
 ASP.NET Core 응용 프로그램은 `Main` 메서드에서 웹 서버를 생성하는 콘솔 앱입니다.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 [!code-csharp[](../getting-started/sample/aspnetcoreapp/Program2x.cs)]
 
-`Main` 메서드는 빌드 패턴에 따라 웹 응용 프로그램 호스트를 생성하는 `WebHost.CreateDefaultBuilder` 를 호출합니다. 이 빌더는 웹 서버를 정의하거나 (예: `UseKestrel`) 시작 클래스를 정의하는 (`UseStartup`) 메서드들을 제공합니다. 위의 예제에서는 기본적으로 [Kestrel](xref:fundamentals/servers/kestrel) 웹 서버가 할당되며. 가능하다면 ASP.NET Core의 웹 호스트는 IIS에서 실행하려고 시도합니다. 그러나 적절한 확장 메서드를 호출해서 [HTTP.sys](xref:fundamentals/servers/httpsys) 같은 다른 웹 서버를 사용할 수도 있습니다. `UseStartup` 에 관해서는 다음 섹션에서 더 자세히 살펴봅니다.
+`Main` 메서드는 빌드 패턴에 따라 웹 응용 프로그램 호스트를 만드는 `WebHost.CreateDefaultBuilder`를 호출합니다. 이 빌더는 웹 서버를 정의하거나 (예: `UseKestrel`) 시작 클래스를 정의하는 (`UseStartup`) 메서드들을 제공합니다. 위의 예제에서는 기본적으로 [Kestrel](xref:fundamentals/servers/kestrel) 웹 서버가 할당되며. 가능하다면 ASP.NET Core의 웹 호스트는 IIS에서 실행하려고 시도합니다. 그러나 적절한 확장 메서드를 호출해서 [HTTP.sys](xref:fundamentals/servers/httpsys) 같은 다른 웹 서버를 사용할 수도 있습니다. `UseStartup` 에 관해서는 다음 섹션에서 더 자세히 살펴봅니다.
 
 `WebHost.CreateDefaultBuilder` 호출로부터 반환되는 `IWebHostBuilder`형식은 다양한 선택적 메서드를 제공합니다. 이 메서드들 중에는 HTTP.sys에서 앱을 호스트하기 위한 `UseHttpSys` 및 루트 콘텐츠 디렉터리를 지정하기 위한 `UseContentRoot`도 포함되어 있습니다. `Build` 및 `Run` 메서드는 앱을 호스트하고 HTTP 요청의 수신 대기를 시작하는 `IWebHost` 개체를 빌드합니다.
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 [!code-csharp[](../getting-started/sample/aspnetcoreapp/Program.cs)]
 
 `Main` 메서드는 빌드 패턴에 따라 웹 응용 프로그램 호스트를 만드는 `WebHostBuilder`를 사용합니다. 이 빌더는 웹 서버를 정의하거나 (예: `UseKestrel`) 시작 클래스를 정의하는(`UseStartup`)메서드들을 제공합니다. 위의 예제에서는 [Kestrel](xref:fundamentals/servers/kestrel) 웹 서버를 사용하고 있습니다. [WebListener](xref:fundamentals/servers/weblistener) 같은 다른 웹 서버를 사용할 수도 있습니다. `UseStartup`에 관해서는 다음 섹션에서 더 자세히 살펴봅니다.
 
 `WebHostBuilder`는 IIS 및 IIS Express에서 호스팅하기 위한 `UseIISIntegration` 확장 메서드 및 루트 콘텐츠 디렉터리를 지정하기 위한 `UseContentRoot`확장 메서드를 비롯한 다양한 선택적 메서드를 제공합니다. `Build` 및 `Run` 메서드는 앱을 호스트하고 HTTP 요청의 수신 대기를 시작하는 `IWebHost` 개체를 빌드합니다.
 
----
-
+* * *
 ## <a name="startup"></a>Startup 클래스
 
 `WebHostBuilder`의 `UseStartup` 메서드는 앱의 `Startup` 클래스를 지정합니다.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 [!code-csharp[](../getting-started/sample/aspnetcoreapp/Program2x.cs?highlight=10&range=6-17)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 [!code-csharp[](../getting-started/sample/aspnetcoreapp/Program.cs?highlight=7&range=6-17)]
 
----
-
+* * *
 `Startup` 클래스는 요청 처리 파이프라인을 정의하고 앱에 필요한 모든 서비스를 구성하는 곳입니다. `Startup` 클래스는 public으로 지정해야 하며 다음과 같은 메서드들을 제공해야 합니다.
 
 ```csharp
@@ -109,7 +103,7 @@ ASP.NET Core 앱에서 [OWIN](http://owin.org) 기반 미들웨어를 사용할 
 
 "Development" 및 "Production" 같은 환경은 ASP.NET Core의 일급 개념으로, 환경 변수를 통해서 설정할 수 있습니다.
 
-자세한 내용은 [다양한 환경에서 작업하기](xref:fundamentals/environments)를 참고하시기 바랍니다.
+자세한 내용은 [여러 환경 사용](xref:fundamentals/environments)를 참고하시기 바랍니다.
 
 ## <a name="configuration"></a>구성
 
@@ -121,13 +115,13 @@ ASP.NET Core는 이름 값 쌍에 기반을 둔 구성 모델을 사용합니다
 
 ASP.NET Core는 다양한 로깅 공급자를 사용하는 로깅 API를 지원합니다. 기본으로 제공되는 공급자는 하나 이상의 대상에 로그를 전송할 수 있습니다. 타사의 로깅 프레임워크를 사용할 수도 있습니다.
 
-자세한 내용은[로깅](xref:fundamentals/logging/index)을 참고하시기 바랍니다.
+[로깅](xref:fundamentals/logging/index)
 
 ## <a name="error-handling"></a>오류 처리
 
 ASP.NET Core는 앱에서 오류를 처리하기 위한 개발자 예외 페이지, 사용자 지정 오류 페이지, 정적 상태 코드 페이지 및 시작 예외 처리 등의 기본 제공 기능을 지원합니다.
 
-자세한 내용은 [오류 처리](xref:fundamentals/error-handling)를 참고하시기 바랍니다.
+자세한 내용은 [오류를 처리하는 방법](xref:fundamentals/error-handling)을 참조하세요.
 
 ## <a name="routing"></a>라우팅
 
@@ -145,7 +139,7 @@ ASP.NET Core는 파일 공급자를 사용하여 파일 시스템 액세스를 �
 
 정적 파일 미들웨어는 HTML, CSS, 이미지, JavaScript 등의 정적 파일을 제공합니다.
 
-자세한 내용은 [고정 파일 작업](xref:fundamentals/static-files)을 참고하시기 바랍니다.
+자세한 내용은 [고정 파일 작업](xref:fundamentals/static-files)을 참조하세요.
 
 ## <a name="hosting"></a>호스팅
 
