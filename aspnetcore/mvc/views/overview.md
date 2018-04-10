@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core MVC에서 뷰"
+title: ASP.NET Core MVC에서 뷰
 author: ardalis
-description: "ASP.NET Core MVC에서 뷰가 앱의 데이터 프레젠테이션과 사용자 상호 작용을 처리하는 방식에 대해 알아봅니다."
+description: ASP.NET Core MVC에서 뷰가 앱의 데이터 프레젠테이션과 사용자 상호 작용을 처리하는 방식에 대해 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 12/12/2017
@@ -64,7 +64,7 @@ ASP.NET Core MVC에서 뷰는 Razor 태그에서 [C# 프로그래밍 언어](/do
 
 이 작업이 반환되면 *About.cshtml* 뷰가 다음 웹 페이지로 렌더링된 마지막 섹션에 표시됩니다.
 
-![Edge 브라우저에서 렌더링된 About 페이지](overview/_static/about-page.png)
+![Microsoft Edge 브라우저에서 렌더링된 About 페이지](overview/_static/about-page.png)
 
 `View` 도우미 메서드는 몇 가지 오버로드를 포함합니다. 필요에 따라 다음을 지정할 수 있습니다.
 
