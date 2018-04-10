@@ -2,13 +2,13 @@
 uid: index
 layout: HubPage
 ms.topic: hub-page
-title: "ASP.NET 설명서 | Microsoft Docs"
-description: 
-ms.openlocfilehash: 4ab928b65bc91a24d02cd0450e143cd6bd3b639b
-ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
+title: ASP.NET 설명서 | Microsoft Docs
+description: ''
+ms.openlocfilehash: cc887183fba9d3c46fbb1068d13d612a3e1806e6
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/06/2018
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -23,7 +23,7 @@ ms.lasthandoff: 03/08/2018
                             <li>
                                 <div class="container intro">
                                     <p>ASP.NET Core는 Windows, Mac 또는 Linux에서 최신 클라우드 기반 웹 응용 프로그램을 빌드하기 위한 새로운 오픈 소스 플랫폼 간 .NET 프레임워크입니다.</p>
-                                    <p>[ASP.NET Core 및 ASP.NET의 이점](https://docs.microsoft.com/aspnet/core/choose-aspnet-framework)을 알아보고 둘 중에서 적합한 것을 선택하면 됩니다.</p>
+                                    <p><a href="https://docs.microsoft.com/aspnet/core/choose-aspnet-framework" data-raw-source="[Learn the benefits of both ASP.NET Core and ASP.NET](https://docs.microsoft.com/aspnet/core/choose-aspnet-framework)">ASP.NET Core 및 ASP.NET의 이점</a>을 알아보고 둘 중에서 적합한 것을 선택하면 됩니다.</p>
                                 </div>
                             </li>
                             <li>
@@ -153,7 +153,7 @@ ms.lasthandoff: 03/08/2018
                         <ul id="core_tutorials" class="cardsZ">
                             <li>
                                 <div class="container intro">
-                                    <p>추천 자습서 | [ASP.NET Core 자습서 모두 보기](https://docs.microsoft.com/aspnet/core/tutorials/)</p>
+                                    <p>추천 자습서 | <a href="https://docs.microsoft.com/aspnet/core/tutorials/" data-raw-source="[View all ASP.NET Core tutorials](https://docs.microsoft.com/aspnet/core/tutorials/)">ASP.NET Core 자습서 모두 보기</a></p>
                                 </div>
                             </li>
                             <li>
@@ -291,7 +291,7 @@ ms.lasthandoff: 03/08/2018
                             <li>
                                 <div class="container intro">
                                     <p>ASP.NET은 Windows에서 .NET을 사용하여 엔터프라이즈 수준의 서버 기반 웹 응용 프로그램을 빌드할 때 필요한 모든 서비스를 제공하는 성숙한 웹 플랫폼입니다.</p>
-                                    <p>[ASP.NET Core 및 ASP.NET의 이점](https://docs.microsoft.com/aspnet/core/choose-aspnet-framework)을 알아보고 둘 중에서 적합한 것을 선택하면 됩니다.</p>
+                                    <p><a href="https://docs.microsoft.com/aspnet/core/choose-aspnet-framework" data-raw-source="[Learn the benefits of both ASP.NET Core and ASP.NET](https://docs.microsoft.com/aspnet/core/choose-aspnet-framework)">ASP.NET Core 및 ASP.NET의 이점</a>을 알아보고 둘 중에서 적합한 것을 선택하면 됩니다.</p>
                                 </div>
                             </li>
                             <li>
@@ -568,7 +568,7 @@ ms.lasthandoff: 03/08/2018
                         <ul id="aspnet_tutorials" class="cardsZ">
                             <li>
                                 <div class="container intro">
-                                    <p>추천 자습서 | [ASP.NET 자습서 모두 보기](https://docs.microsoft.com/aspnet/tutorials/)</p>
+                                    <p>추천 자습서 | <a href="https://docs.microsoft.com/aspnet/tutorials/" data-raw-source="[View all ASP.NET tutorials](https://docs.microsoft.com/aspnet/tutorials/)">ASP.NET 자습서 모두 보기</a></p>
                                 </div>
                             </li>
                             <li>

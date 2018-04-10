@@ -200,7 +200,7 @@
 ## [Azure Storage](data/azure-storage/index.md)
 ### [Visual Studio 연결된 서비스를 사용하여 Azure Storage 추가](https://azure.microsoft.com/documentation/articles/vs-azure-tools-connected-services-storage/)
 ### [Blob Storage 및 Visual Studio 연결된 서비스 시작](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-blobs/)
-### [Get Started with Queue Storage and Visual Studio Connected Services](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-queues/)(Queue Storage 및 Visual Studio 연결된 서비스 시작)
+### [Queue Storage 및 Visual Studio 연결된 서비스 시작](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-queues/)
 ### [Table Storage 및 Visual Studio 연결된 서비스 시작](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-tables/)
 
 # [클라이언트 쪽 개발](xref:client-side/index)
