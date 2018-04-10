@@ -1,22 +1,22 @@
 ---
 uid: whitepapers/overview
-title: "백서 | Microsoft Docs"
+title: 백서 | Microsoft Docs
 author: rick-anderson
-description: "이 페이지에서 설치 하 고 ASP.NET을 구성 하 고 안전 하며 속도 및 유연한 ASP.NET 응용 프로그램을 작성 하는 데 도움이 되도록 백서를 찾을 수 있습니다."
+description: 이 페이지에서 설치 하 고 ASP.NET을 구성 하 고 안전 하며 속도 및 유연한 ASP.NET 응용 프로그램을 작성 하는 데 도움이 되도록 백서를 찾을 수 있습니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/15/2011
 ms.topic: article
 ms.assetid: d5e79470-01f2-4d65-8077-11c3e10a6784
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers
 msc.type: content
 ms.openlocfilehash: ba9fda509605025754dc9753266f86585f38b089
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="whitepapers"></a>백서
 ====================

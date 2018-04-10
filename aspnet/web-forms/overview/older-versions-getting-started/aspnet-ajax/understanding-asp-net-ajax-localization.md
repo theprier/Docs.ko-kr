@@ -16,7 +16,7 @@ ms.openlocfilehash: 565b0294f57b784bc592b286b3d8b28504110415
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="understanding-aspnet-ajax-localization"></a>ASP.NET AJAX 지역화 이해
 ====================
@@ -149,7 +149,7 @@ ScriptManager는 지역화 된 응용 프로그램에 대 한 몇 가지 자동 
 
 기본적으로.NET Framework 리소스 문자열 및 이미지를 조회 하는 일관 된 방식으로 표시 하는 위성 어셈블리 및 XML 리소스 (.resx) 파일을 활용 하는 풍부한 지역화 프레임 워크를 지원 합니다. Microsoft AJAX Framework 및 Microsoft AJAX 스크립트 라이브러리를 포함 하 여 ASP.NET AJAX 확장에 지원을 제공이 프로그래밍 모델에 대 한 클라이언트 쪽 코드를 쉽게 문자열 조회를 사용 하도록 설정 합니다. 위성 어셈블리 따르기만 파일 이름이 지정된 하는 이름 지정 체계를 ScriptResource.axd 통해 스크립트 리소스 (실제.js 파일)의 자동 포함을 지원 합니다. 이 기능을 ASP.NET AJAX 확장에는 스크립트의 지역화 및 전역화 응용 프로그램의 단순화합니다.
 
-## <a name="bio"></a>*약력*
+## <a name="bio"></a>*Bio*
 
 Scott 인증서의 근무 기간이 Microsoft 웹 기술을 1997 년부터 이며 myKB.com 부서장 ([www.myKB.com](http://www.myKB.com)) ASP.NET 작성 i 여기서 기반 응용 프로그램 기술 자료 소프트웨어 솔루션에 집중 합니다. Scott에 전자 메일을 통해 연결할 수 [ scott.cate@myKB.com ](mailto:scott.cate@myKB.com) 또는에서 그의 블로그 [ScottCate.com](http://ScottCate.com)
 

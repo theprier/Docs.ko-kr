@@ -16,7 +16,7 @@ ms.openlocfilehash: af19104edb1849272773193befe1f5b2c7347683
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="performing-batch-updates-c"></a>일괄 처리 업데이트 수행 (C#)
 ====================

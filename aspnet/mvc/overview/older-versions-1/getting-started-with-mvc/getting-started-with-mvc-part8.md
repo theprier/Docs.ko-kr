@@ -16,7 +16,7 @@ ms.openlocfilehash: 7a0b64ce00fc5ee6d49990f1d4d93a154c467bf5
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="adding-a-column-to-the-model"></a>모델에 열 추가
 ====================
@@ -43,7 +43,7 @@ ms.lasthandoff: 04/06/2018
 
 마침을 클릭 한 후이 모델 영화 엔터티에 추가한 새 등급 열을 볼 수 있습니다.
 
-[![영화 엔터티](getting-started-with-mvc-part8/_static/image7.png)](getting-started-with-mvc-part8/_static/image6.png)
+[![Movie Entity](getting-started-with-mvc-part8/_static/image7.png)](getting-started-with-mvc-part8/_static/image6.png)
 
 데이터베이스 모델에서 열을 추가 했습니다 있지만 보기 항목에 대 한 알 수 없습니다.
 

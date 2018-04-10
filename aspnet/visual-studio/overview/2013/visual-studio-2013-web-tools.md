@@ -1,22 +1,22 @@
 ---
 uid: visual-studio/overview/2013/visual-studio-2013-web-tools
-title: "실습 랩: Visual Studio 2013 웹 도구 | Microsoft Docs"
+title: '실습 랩: Visual Studio 2013 웹 도구 | Microsoft Docs'
 author: rick-anderson
-description: "Visual Studio는에 대 한 뛰어난 개발 환경입니다. 또한 Windows 및 웹 프로젝트입니다. 쉽게 사용할 수 있는 강력한 텍스트 편집기를 포함..."
+description: Visual Studio는에 대 한 뛰어난 개발 환경입니다. 또한 Windows 및 웹 프로젝트입니다. 쉽게 사용할 수 있는 강력한 텍스트 편집기를 포함...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/16/2014
 ms.topic: article
 ms.assetid: 09e82351-816b-402d-acd1-0f9ac6901d16
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/visual-studio-2013-web-tools
 msc.type: authoredcontent
 ms.openlocfilehash: ef8ab82f9043ef9da3a3e6a146a97f083149534d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/10/2018
 ---
 <a name="hands-on-lab-visual-studio-2013-web-tools"></a>실습 랩: Visual Studio 2013 웹 도구
 ====================
@@ -30,7 +30,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > 이 전원의 모든 확장의 경우 필요에 따라 강력한 새 기능으로 편집기를 확장 하 여 사용할 수도 있습니다. 웹 Essentials은 대부분 웹 관련 향상 된 Visual Studio의 컬렉션입니다. (특히 CSS)에 대해 새 IntelliSense 완성, 새로운 브라우저 링크 기능으로, 자동 많이 포함 JSHint JavaScript에 대 한 파일, HTML 및 CSS 및 최신 웹 개발에 꼭 필요한 기타 많은 기능에 대 한 새 경고 합니다.
 > 
-> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [http://aka.ms/webcamps-training-kit](http://aka.ms/webcamps-training-kit)합니다.
+> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit)합니다.
 
 
 <a id="Overview"></a>
@@ -47,12 +47,12 @@ ms.lasthandoff: 11/10/2017
 - 브라우저 및 브라우저 링크를 사용 하 여 Visual Studio 사이 데이터 교환
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>필수 구성 요소
+### <a name="prerequisites"></a>전제 조건
 
 다음은이 실습 랩을 완료 하려면 필요 합니다.
 
 - [Microsoft Visual Studio Professional 2013](https://www.microsoft.com/visualstudio/) 이상
-- [웹 Essentials 2013](http://vswebessentials.com/)
+- [Web Essentials 2013](http://vswebessentials.com/)
 - [Google Chrome](https://www.google.com/chrome/)
 
 <a id="Setup"></a>
@@ -144,7 +144,7 @@ ms.lasthandoff: 11/10/2017
 
 1. Visual Studio로 다시 전환 합니다.
 2. 열기는 **Index.cshtml** 에 있는 파일의 **뷰** | **홈** 폴더입니다.
-3. 대체는  **&lt;!-TODO: 여기-옵션 추가&gt;**  메모 앞에 다음 코드 및 키를 눌러 **탭**합니다.
+3. 대체는 **&lt;!-TODO: 여기-옵션 추가&gt;** 메모 앞에 다음 코드 및 키를 눌러 **탭**합니다.
 
     [!code-css[Main](visual-studio-2013-web-tools/samples/sample1.css)]
 4. 코드를 HTML로 확장 해야 합니다.
@@ -307,7 +307,7 @@ ms.lasthandoff: 11/10/2017
     ![편집할 질문](visual-studio-2013-web-tools/_static/image29.png "질문 편집")
 
     *편집할 질문*
-4. Visual Studio로 다시 및 open 스위치 **Index.cshtml**열려 있지 않으면, 합니다. 다음에 유의의 내부 텍스트는  **&lt;p&gt;**  요소가 업데이트 되었습니다.
+4. Visual Studio로 다시 및 open 스위치 **Index.cshtml**열려 있지 않으면, 합니다. 다음에 유의의 내부 텍스트는 **&lt;p&gt;** 요소가 업데이트 되었습니다.
 
     ![HTML 페이지에 업데이트 된 질문](visual-studio-2013-web-tools/_static/image30.png "HTML 페이지에 업데이트 된 질문")
 
@@ -323,7 +323,7 @@ ms.lasthandoff: 11/10/2017
     ![오류 목록 보기에 메뉴](visual-studio-2013-web-tools/_static/image31.png "보기 메뉴의 오류 목록")
 
     *오류 목록 보기에 메뉴*
-2. 한 SEO을 알리는 경고를 하는 한  **&lt;메타&gt;**  페이지 설명에 대 한 태그를 지정 합니다. 이 문제를 해결할 SEO 경고 항목을 두 번 클릭 합니다.
+2. 한 SEO을 알리는 경고를 하는 한 **&lt;메타&gt;** 페이지 설명에 대 한 태그를 지정 합니다. 이 문제를 해결할 SEO 경고 항목을 두 번 클릭 합니다.
 
     ![오류 목록 창](visual-studio-2013-web-tools/_static/image32.png "오류 목록 창")
 
@@ -333,7 +333,7 @@ ms.lasthandoff: 11/10/2017
     ![웹 Essentials 대화 상자](visual-studio-2013-web-tools/_static/image33.png "웹 Essentials 대화 상자")
 
     *웹 Essentials 대화 상자*
-4. 에 대 한 편집기  **\_Layout.cshtml** 열립니다 및  **&lt;메타&gt;**  태그 자동으로 추가 되는 **h e a d** 의 섹션의 HTML 파일입니다.
+4. 에 대 한 편집기  **\_Layout.cshtml** 열립니다 및 **&lt;메타&gt;** 태그 자동으로 추가 되는 **h e a d** 의 섹션의 HTML 파일입니다.
 
     ![_Layout 페이지에 자동으로 추가 하는 메타 태그](visual-studio-2013-web-tools/_static/image34.png "_Layout 페이지에 자동으로 추가 하는 메타 태그")
 
@@ -354,7 +354,7 @@ ms.lasthandoff: 11/10/2017
 
 1. 열기 **Visual Studio Express 2013 for Web** 및 **Begin.sln** 솔루션에 있는 **소스/e x 2-TakingAdvantageofCodeSnippetsandIntelliSense/시작** 폴더입니다. 또는 계속할 수 있습니다 솔루션으로, 이전 연습에서 가져올 있음을.
 2. **솔루션 탐색기**열고는 **Index.cshtml** 에 있는 파일의 **뷰** | **홈** 폴더입니다.
-3. 내부 다음 양식을 추가  **&lt;섹션&gt;**  요소입니다.
+3. 내부 다음 양식을 추가 **&lt;섹션&gt;** 요소입니다.
 
     (코드 조각- *VisualStudio2013WebTooling* - *e x 2* - *양식*)
 
@@ -362,19 +362,19 @@ ms.lasthandoff: 11/10/2017
 4. 입력된 태그 일부 설명은 필드 레이블 뒤에 야 합니다. 입력된 태그 앞에 다음 레이블을 추가 합니다.
 
     [!code-html[Main](visual-studio-2013-web-tools/samples/sample5.html)]
-5. **에 대 한** 특성에는  **&lt;레이블&gt;**  레이블이 폼 요소에 바인딩된 지정 합니다. 특성의 값은 관련 된 요소의 id로 같아야 합니다. 추가 **에 대 한** 특성을  **&lt;레이블&gt;**  요소입니다. 다음 그림에 나와 있는 것 처럼는 &quot;이름&quot; 값 팝업 IntelliSense 상자에서 동일한 범위 내 요소의 id에 따라 (묶는  **&lt;양식&gt;**).
+5. **에 대 한** 특성에는 **&lt;레이블&gt;** 레이블이 폼 요소에 바인딩된 지정 합니다. 특성의 값은 관련 된 요소의 id로 같아야 합니다. 추가 **에 대 한** 특성을 **&lt;레이블&gt;** 요소입니다. 다음 그림에 나와 있는 것 처럼는 &quot;이름&quot; 값 팝업 IntelliSense 상자에서 동일한 범위 내 요소의 id에 따라 (묶는  **&lt;양식&gt;**).
 
     ![IntelliSense의 id를 보여 주는](visual-studio-2013-web-tools/_static/image35.png "IntelliSense에 id를 표시 합니다.")
 
     *IntelliSense에 id를 표시합니다.*
-6. 최근에 추가 된 삭제  **&lt;양식&gt;**  요소와 해당 콘텐츠입니다.
+6. 최근에 추가 된 삭제 **&lt;양식&gt;** 요소와 해당 콘텐츠입니다.
 
 <a id="Ex2Task2"></a>
 #### <a name="task-2---using-html-code-snippets"></a>작업 2-HTML 코드 조각을 사용 하 여
 
 HTML5 25 개 이상의 새로운 의미 체계 태그를 도입 되었습니다. Visual Studio가 이미 이러한 태그에 대 한 IntelliSense 지원 하지만 Visual Studio 2013을 사용 하면 빠르고 쉽게 새 코드 조각을 추가 하 여 태그를 작성 하 합니다. 에 대 한 올바른 코덱을 대체를 추가 하는 등 몇 가지 작은 미묘한 함께 제공 되는 경우에 이러한 태그 크게 복잡 하지 않습니다는 *오디오* 태그입니다. 이 태스크에서는 오디오 태그에 대 한 HTML 코드 조각을 표시 됩니다.
 
-1. 에 **Index.cshtml** 파일, 입력  **&lt;aud** 내는  **&lt;섹션&gt;**  요소는 다음 그림에 나와 있는 것 처럼 합니다.
+1. 에 **Index.cshtml** 파일, 입력  **&lt;aud** 내는 **&lt;섹션&gt;** 요소는 다음 그림에 나와 있는 것 처럼 합니다.
 
     ![오디오 요소를 삽입할](visual-studio-2013-web-tools/_static/image36.png "오디오 요소 삽입")
 
@@ -385,7 +385,7 @@ HTML5 25 개 이상의 새로운 의미 체계 태그를 도입 되었습니다.
 
     > [!NOTE]
     > 키를 눌러는 **탭** 키를 두 번 코드 조각을 삽입 됩니다. 오디오 조각 대 한 일반 사용법을 보여 줍니다.는 *오디오* 지원 향상된에 대 한 소스 파일의 태그입니다.
-3. 두 번째 줄을 삭제 하 고 다음 링크를 WebCampsTV Katana 표시도 첫 번째 줄의 소스를 업데이트: [http://media.ch9.ms/ch9/11d8/604b8163-fad3-4f12-9607-b404201211d8/KatanaProject.mp3](http://media.ch9.ms/ch9/11d8/604b8163-fad3-4f12-9607-b404201211d8/KatanaProject.mp3)합니다. 결과 코드는 다음과 같습니다.
+3. 두 번째 줄을 삭제 하 고 다음 링크를 WebCampsTV Katana 표시도 첫 번째 줄의 소스를 업데이트: [ http://media.ch9.ms/ch9/11d8/604b8163-fad3-4f12-9607-b404201211d8/KatanaProject.mp3 ](http://media.ch9.ms/ch9/11d8/604b8163-fad3-4f12-9607-b404201211d8/KatanaProject.mp3)합니다. 결과 코드는 다음과 같습니다.
 
     [!code-html[Main](visual-studio-2013-web-tools/samples/sample7.html)]
 
@@ -465,7 +465,7 @@ HTML5 25 개 이상의 새로운 의미 체계 태그를 도입 되었습니다.
     ![GetElementByTagName 메서드에 대 한 IntelliSense를 보여 주는](visual-studio-2013-web-tools/_static/image45.png "getElementByTagName 메서드를 보여 주는 IntelliSense")
 
     *IntelliSense getElementsByTagName 메서드에 대 한 표시*
-13. 선택  **&quot;오디오&quot;**  목록 및 키를 눌러 **ENTER**합니다. 결과는 다음 그림에 나와 있습니다.
+13. 선택 **&quot;오디오&quot;** 목록 및 키를 눌러 **ENTER**합니다. 결과는 다음 그림에 나와 있습니다.
 
     ![오디오 요소 검색](visual-studio-2013-web-tools/_static/image46.png "오디오으로 요소 검색")
 

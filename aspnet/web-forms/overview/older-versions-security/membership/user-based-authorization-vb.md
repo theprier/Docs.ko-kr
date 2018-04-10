@@ -16,7 +16,7 @@ ms.openlocfilehash: 4073f349c7965a89b39a4b1b672f0e84fc96f287
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="user-based-authorization-vb"></a>사용자 기반 권한 부여 (VB)
 ====================
@@ -217,7 +217,7 @@ URL 권한 부여 쉽게 거친 권한 부여 규칙을 지정할 수 있습니�
 GridView 내에서 특정 디렉터리의 파일을 나열 하는 페이지를 만들어 보겠습니다. 각 파일의 이름, 크기 및 기타 정보를 나열 하는, 함께 GridView linkbutton이 있는의 두 개의 열이 포함 됩니다: 하나 제목은 보기 및 제목이 지정된 삭제 합니다. 보기 LinkButton을 클릭 하면 선택한 파일의 내용이 표시 됩니다. 삭제 LinkButton을 클릭 하면 파일이 삭제 됩니다. 처음 만들겠습니다이 페이지의 보기 및 삭제 기능을 모든 사용자에 게 사용할 수 있도록 합니다. 사용에서 LoginView 컨트롤 및 프로그래밍 방식으로 제한 기능 섹션을 사용 하도록 설정 하거나 페이지를 방문 하는 사용자에 따라 이러한 기능을 사용 하지 않도록 설정 하는 방법을 살펴봅니다.
 
 > [!NOTE]
-> 작성 하려고 하는 ASP.NET 페이지 파일의 목록을 표시 하는 GridView 컨트롤을 사용 합니다. 이 자습서에서는 폼 인증, 권한 부여, 사용자 계정 및 역할에 중점을 두고 시리즈 이후 하지 않음 GridView 컨트롤의 내부 작업에 논의 너무 많은 시간이 소비 하 합니다. 이 자습서에서이 페이지를 설정 하기 위한 특정 단계별 지침을 제공 하지만 특정 선택 사항이 이유 또는 렌더링된 된 출력에 효과 특정 속성의 세부 정보를 자세히 하지 않습니다. GridView 컨트롤의 철저 한 검사를 참조 하세요. 내 *[ASP.NET 2.0에서 데이터 작업](../../data-access/index.md)* 자습서 시리즈 합니다.
+> 작성 하려고 하는 ASP.NET 페이지 파일의 목록을 표시 하는 GridView 컨트롤을 사용 합니다. 이 자습서에서는 폼 인증, 권한 부여, 사용자 계정 및 역할에 중점을 두고 시리즈 이후 하지 않음 GridView 컨트롤의 내부 작업에 논의 너무 많은 시간이 소비 하 합니다. 이 자습서에서이 페이지를 설정 하기 위한 특정 단계별 지침을 제공 하지만 특정 선택 사항이 이유 또는 렌더링된 된 출력에 효과 특정 속성의 세부 정보를 자세히 하지 않습니다. GridView 컨트롤의 철저 한 검사를 참조 하세요. 내 * [ASP.NET 2.0에서 데이터 작업](../../data-access/index.md) * 자습서 시리즈 합니다.
 
 
 열어 시작는 `UserBasedAuthorization.aspx` 파일에 `Membership` 라는 페이지에 GridView 컨트롤 추가 같은 폴더 `FilesGrid`합니다. GridView의 스마트 태그에서 필드 대화 상자를 시작 하는 열 편집 링크를 클릭 합니다. 여기에서 왼쪽된 아래 모서리에서 자동 생성 필드 확인란의 선택을 취소 합니다. (선택 및 삭제 단추가 CommandField 형식에서 찾을 수 있습니다) 왼쪽된 위 모서리에서 선택 단추, 삭제 단추 및 두 개의 BoundFields를 다음으로 추가 합니다. 선택 단추 설정 `SelectText` 속성 보기 및 첫 번째 BoundField의을 `HeaderText` 및 `DataField` 속성 이름입니다. 두 번째 BoundField의 설정 `HeaderText` 속성 크기 (바이트)을 해당 `DataField` 길이에 대 한 속성 해당 `DataFormatString` {0: n0}에 대 한 속성 및 해당 `HtmlEncode` 속성을 false로 합니다.
@@ -412,7 +412,7 @@ URL 권한 부여 프레임 워크에서 페이지 단위로 권한 부여 규�
 
 ### <a name="about-the-author"></a>작성자 정보
 
-여러 ASP/ASP.NET 책의 작성자 및 4GuysFromRolla.com의 창립자 Scott Mitchell의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은  *[Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*합니다. Scott에 도달할 수 [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) 또는에서 그의 블로그 통해 [ http://ScottOnWriting.NET ](http://scottonwriting.net/)합니다.
+여러 ASP/ASP.NET 책의 작성자 및 4GuysFromRolla.com의 창립자 Scott Mitchell의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 * [Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*합니다. Scott에 도달할 수 [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) 또는에서 그의 블로그 통해 [ http://ScottOnWriting.NET ](http://scottonwriting.net/)합니다.
 
 ### <a name="special-thanks-to"></a>특별히 감사
 

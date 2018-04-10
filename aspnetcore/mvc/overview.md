@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core MVC 개요"
+title: ASP.NET Core MVC 개요
 author: ardalis
-description: "모델-보기-컨트롤러 디자인 패턴을 사용하여 웹앱 및 API를 빌드할 수 있는 풍부한 프레임워크인 ASP.NET Core MVC에 대해 알아봅니다."
+description: 모델-뷰-컨트롤러(MVC) 디자인 패턴을 이용해서 웹앱 및 API를 구축하기 위한 풍부한 프레임워크인 ASP.NET Core MVC에 관해서 살펴봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 01/08/2018
@@ -9,23 +9,23 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/overview
-ms.openlocfilehash: 16fd1b5e71cde4364f02640f504d42218ed680df
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
-ms.translationtype: HT
+ms.openlocfilehash: 1cf48499d3bc0ba63e2f0667740668fad0b13c28
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="overview-of-aspnet-core-mvc"></a>ASP.NET Core MVC 개요
 
 작성자: [Steve Smith](https://ardalis.com/)
 
-ASP.NET Core MVC는 모델-보기-컨트롤러 디자인 패턴을 사용하여 웹앱 및 API를 빌드할 수 있는 풍부한 프레임워크입니다.
+ASP.NET Core MVC는 모델-뷰-컨트롤러(MVC) 디자인 패턴을 이용해서 웹앱 및 API를 구축하기 위한 풍부한 프레임워크입니다.
 
 ## <a name="what-is-the-mvc-pattern"></a>MVC 패턴이란?
 
-MVC(모델-뷰-컨트롤러) 아키텍처 패턴은 응용 프로그램을 모델, 보기, 컨트롤러라는 세 가지 주요 구성 요소로 구분합니다. 이 패턴은 [문제를 분리](http://deviq.com/separation-of-concerns/)하는 데 도움이 됩니다. 이 패턴을 사용하면 사용자 요청은 모델 작업을 담당하는 컨트롤러에 라우팅되어 사용자 작업을 수행하고/수행하거나 쿼리 결과를 검색합니다. 컨트롤러는 사용자에게 표시할 보기를 선택하고, 보기에 필요한 모델 데이터를 제공합니다.
+모델-뷰-컨트롤러(MVC, Model-View-Controller) 아키텍처 패턴은 응용 프로그램을 모델, 뷰, 컨트롤러라는 세 가지 주요 구성 요소 그룹으로 구분합니다. 이 패턴은 [관심사의 분리(Separation of Concerns)](http://deviq.com/separation-of-concerns/)를 준수하는 데 도움이 됩니다. MVC 패턴에서 사용자의 요청은 모델을 이용해서 사용자의 작업을 수행하거나 쿼리 결과를 조회하는 컨트롤러로 라우팅됩니다. 그러면 컨트롤러는 사용자에게 출력할 뷰를 선택한 다음, 필요한 모든 모델 데이터와 함께 뷰를 제공합니다.
 
-다음 다이어그램은 세 가지 주요 구성 요소 및 다른 구성 요소를 참조하는 구성 요소를 보여줍니다.
+다음 다이어그램은 세 가지 주요 구성 요소 및 이 구성 요소들 간의 참조 관계를 보여줍니다.
 
 ![MVC 패턴](overview/_static/mvc.png)
 
@@ -185,13 +185,13 @@ ASP.NET Core는 기본적으로 [DI(종속성 주입 )](../fundamentals/dependen
 
 ASP.NET Core MVC는 웹 사이트를 구축할 수 있는 훌륭한 플랫폼일 뿐 아니라 웹 API 빌드를 잘 지원합니다. 브라우저 및 모바일 장치를 비롯한 광범위한 클라이언트에 연결하는 서비스를 빌드할 수 있습니다.
 
-이 프레임워크는 JSON 또는 XML로 [데이터 형식을 지정](models/formatting.md)하는 기본 지원을 통해 HTTP 콘텐츠 협상을 지원합니다. [사용자 지정 포맷터](advanced/custom-formatters.md)를 작성하여 사용자 고유의 형식에 대한 지원을 추가할 수 있습니다.
+프레임 워크를 기본 제공 지원으로 HTTP 콘텐츠 협상에 대 한 지원이 포함 [데이터 서식 지정](xref:web-api/advanced/formatting) JSON 또는 XML입니다. [사용자 지정 포맷터](xref:web-api/advanced/custom-formatters)를 작성하여 사용자 고유의 형식에 대한 지원을 추가할 수 있습니다.
 
 링크 생성을 사용하여 하이퍼미디어를 지원할 수 있습니다. 여러 웹 응용 프로그램에서 Web API를 공유할 수 있도록 [CORS(원본 간 리소스 공유)](http://www.w3.org/TR/cors/)를 간단하게 지원할 수 있습니다.
 
 ### <a name="testability"></a>테스트 가능성
 
-이 프레임워크의 인터페이스 및 종속성 주입 사용은 단위 테스트에 적합하며, [통합 테스트](../testing/integration-testing.md)를 쉽고 빠르게 수행할 수 있는 기능(예: Entity Framework용 TestHost 및 InMemory 공급자)을 포함하고 있습니다. [컨트롤러 논리 테스트](controllers/testing.md)에 대해 자세히 알아보세요.
+인터페이스 및 종속성 주입의 프레임 워크의 사용 더 적합 한 단위 테스트를 지정 하 고 구성 하는 기능 (예: Entity Framework 용 TestHost 및 InMemory 공급자)를 포함 하는 프레임 워크 [통합 테스트](../testing/integration-testing.md) 빠른 및 쉽게도 합니다. 에 대 한 자세한 내용은 [컨트롤러 논리를 테스트 하는 방법을](controllers/testing.md)합니다.
 
 ### <a name="razor-view-engine"></a>Razor 보기 엔진
 

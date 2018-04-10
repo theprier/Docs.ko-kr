@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/moving-to-aspnet-20/configuration-and-instrumentation
-title: "구성 및 계측 | Microsoft Docs"
+title: 구성 및 계측 | Microsoft Docs
 author: microsoft
-description: "구성의 주요 변경 사항 및 ASP.NET 2.0의 계측 됩니다. 새 ASP.NET 구성 API 구성 변경 하려면 프로젝트를 만들 수 있습니다..."
+description: 구성의 주요 변경 사항 및 ASP.NET 2.0의 계측 됩니다. 새 ASP.NET 구성 API 구성 변경 하려면 프로젝트를 만들 수 있습니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2005
@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/configuration-and-instrumentation
 msc.type: authoredcontent
 ms.openlocfilehash: 16dfe3c899dfa028d8a52b4b5f9c2868887e8fa9
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="configuration-and-instrumentation"></a>구성 및 계측
 ====================
@@ -78,13 +78,13 @@ GetSection 또는 GetSectionGroup 메서드를 사용 하 여 구성 정보를 �
 
 | **구성 클래스 또는 네임 스페이스** | **설명** |
 | --- | --- |
-| [System.Configuration](https://msdn.microsoft.com/library/system.configuration.aspx) 네임 스페이스 | 모든.NET Framework 응용 프로그램에 대 한 주요 구성 클래스가 포함 됩니다. 섹션 처리기 클래스 GetSection GetSectionGroup 등의 방법 중에서 섹션에 대 한 구성 데이터를 가져오는 데 사용 됩니다. 이 두 메서드는 static이 아닌 합니다. |
+| [System.Configuration](https://msdn.microsoft.com/library/system.configuration.aspx) namespace | 모든.NET Framework 응용 프로그램에 대 한 주요 구성 클래스가 포함 됩니다. 섹션 처리기 클래스 GetSection GetSectionGroup 등의 방법 중에서 섹션에 대 한 구성 데이터를 가져오는 데 사용 됩니다. 이 두 메서드는 static이 아닌 합니다. |
 | System.Configuration.Configuration 클래스 | 컴퓨터, 응용 프로그램, 웹 디렉터리 또는 다른 리소스에 대 한 구성 데이터의 집합을 나타냅니다. 이 클래스에는 유용한 메서드, 예: GetSection 및 GetSectionGroup, 구성 설정을 업데이트 하 고 섹션 및 섹션 그룹에 대 한 참조를 얻기에 대 한 포함 합니다. 이 클래스는 WebConfigurationManager 및 ConfigurationManager 클래스의 메서드와 같은 디자인 타임 구성 데이터를 가져오는 방법에 대 한 반환 형식으로 사용 됩니다. |
-| System.Web.Configuration 네임 스페이스 | ASP.NET 구성 섹션에 정의 된 섹션 처리기 클래스를 포함 [ASP.NET 구성 설정](https://msdn.microsoft.com/library/b5ysx397.aspx)합니다. 섹션 처리기 클래스 GetSection GetSectionGroup 등의 방법 중에서 섹션에 대 한 구성 데이터를 가져오는 데 사용 됩니다. |
+| System.Web.Configuration namespace | ASP.NET 구성 섹션에 정의 된 섹션 처리기 클래스를 포함 [ASP.NET 구성 설정](https://msdn.microsoft.com/library/b5ysx397.aspx)합니다. 섹션 처리기 클래스 GetSection GetSectionGroup 등의 방법 중에서 섹션에 대 한 구성 데이터를 가져오는 데 사용 됩니다. |
 | System.Web.Configuration.WebConfigurationManager class | 런타임 및 디자인 타임 구성 설정에 대 한 참조를 가져오기 위한 유용한 메서드를 제공 합니다. 이러한 메서드는 반환 형식으로 System.Configuration.Configuration 클래스를 사용합니다. 이 클래스의 정적 GetSection 메서드 또는 System.Configuration.ConfigurationManager 클래스의 비정적 GetSection 메서드 같은 의미로 사용할 수 있습니다. 웹 응용 프로그램 구성에 대 한 System.Web.Configuration.WebConfigurationManager 클래스 System.Configuration.ConfigurationManager 클래스 대신이 좋습니다. |
 | [System.Configuration.Provider](https://msdn.microsoft.com/library/system.configuration.provider.aspx) namespace | 사용자 지정 하 고 구성 공급자를 확장 하는 방법을 제공 합니다. 구성 시스템에 모든 공급자 클래스에 대 한 기본 클래스입니다. |
 | [System.Web.Management](https://msdn.microsoft.com/library/system.web.management.aspx) namespace | 클래스와 웹 응용 프로그램의 상태를 모니터링 및 관리 하기 위한 인터페이스를 포함 합니다. 엄밀히 말해이 네임 스페이스 구성 API의 일부로 간주 되지 않습니다. 예를 들어 추적 및 이벤트 발생이 네임 스페이스의 클래스에 의해 수행 됩니다. |
-| [System.Management.Instrumentation](https://msdn.microsoft.com/library/system.management.instrumentation.aspx) 네임 스페이스 | 관리 정보 및 잠재 고객에 게 Windows Management Instrumentation (WMI)를 통해 이벤트를 노출 하는 응용 프로그램의 계측에 필요한 클래스를 제공 합니다. ASP.NET 상태 모니터링는 WMI 이벤트를 제공할 수 있습니다. 엄밀히 말해이 네임 스페이스 구성 API의 일부로 간주 되지 않습니다. |
+| [System.Management.Instrumentation](https://msdn.microsoft.com/library/system.management.instrumentation.aspx) namespace | 관리 정보 및 잠재 고객에 게 Windows Management Instrumentation (WMI)를 통해 이벤트를 노출 하는 응용 프로그램의 계측에 필요한 클래스를 제공 합니다. ASP.NET 상태 모니터링는 WMI 이벤트를 제공할 수 있습니다. 엄밀히 말해이 네임 스페이스 구성 API의 일부로 간주 되지 않습니다. |
 
 ## <a name="reading-from-aspnet-configuration-files"></a>ASP.NET 구성 파일에서 읽기
 
@@ -330,7 +330,7 @@ TargetDir 매개 변수를 지정 하 여 배포 (컴파일 대상 위치에)에
 
 | **파일 형식** | **컴파일러 동작** |
 | --- | --- |
-| .ascx, .aspx, .master | 이러한 파일에 포함 된 모든 코드 및 코드 숨김 파일을 모두 포함 하는 태그 코드와 소스 코드도 분할 됩니다 &lt;스크립트 runat = "server"&gt; 요소입니다. 소스 코드 해싱 알고리즘에서 파생 된 이름 갖는 어셈블리로 컴파일하고 Bin 디렉터리에 저장 됩니다. 인라인 코드, 즉, 사이 포함 된 코드는 ** &lt; % ** 및 ** % &gt; ** 대괄호는 태그에 포함 되며 컴파일되지 않습니다. 새 파일의 소스 파일과 동일한 이름의 태그를 포함 하도록 만들고 해당 출력 디렉터리에 배치 합니다. |
+| .ascx, .aspx, .master | 이러한 파일에 포함 된 모든 코드 및 코드 숨김 파일을 모두 포함 하는 태그 코드와 소스 코드도 분할 됩니다 &lt;스크립트 runat = "server"&gt; 요소입니다. 소스 코드 해싱 알고리즘에서 파생 된 이름 갖는 어셈블리로 컴파일하고 Bin 디렉터리에 저장 됩니다. 인라인 코드, 즉, 사이 포함 된 코드는 **&lt; %** 및 **% &gt;** 대괄호는 태그에 포함 되며 컴파일되지 않습니다. 새 파일의 소스 파일과 동일한 이름의 태그를 포함 하도록 만들고 해당 출력 디렉터리에 배치 합니다. |
 | .ashx, .asmx | 이러한 파일 컴파일되고 고 컴파일되지 출력 디렉터리로 이동 됩니다. 컴파일된 처리기 코드 하려는 경우 앱의 소스 코드 파일에 코드를 배치\_코드 디렉터리입니다. |
 | .cs,.vb,.jsl,.cpp (앞에서 나열 된 파일 형식에 대 한 코드 숨김 파일 제외) | 이러한 파일 컴파일되고 참조 하는 어셈블리에 리소스로 포함 됩니다. 소스 파일은 출력 디렉터리에 복사 되지 않습니다. 코드 파일을 참조 하지 않은 경우 컴파일되지 않습니다. |
 | 사용자 지정 파일 형식 | 이러한 파일은 컴파일되지 않습니다. 이러한 파일은 해당 출력 디렉터리에 복사 됩니다. |
@@ -344,7 +344,7 @@ TargetDir 매개 변수를 지정 하 여 배포 (컴파일 대상 위치에)에
 
 | **파일 형식** | **컴파일러 동작** |
 | --- | --- |
-| .aspx, .asmx, .ashx, .master | 이러한 파일에 포함 된 모든 코드 및 코드 숨김 파일을 모두 포함 하는 태그 코드와 소스 코드도 분할 됩니다 &lt;스크립트 runat = "server"&gt; 요소입니다. 소스 코드는 해싱 알고리즘에서 파생 된 이름 갖는 어셈블리로 컴파일됩니다. 결과 어셈블리 Bin 디렉터리에 배치 됩니다. 인라인 코드, 즉, 사이 포함 된 코드는 ** &lt; % ** 및 ** % &gt; ** 대괄호는 태그에 포함 되며 컴파일되지 않습니다. 컴파일러는 소스 파일과 동일한 이름의 태그를 포함할 새 파일을 만듭니다. 이러한 결과 파일은 Bin 디렉터리에 배치 됩니다. 또한 컴파일러의 소스 파일과 동일한 이름의 하지만 확장명은 파일을 만듭니다. 매핑 정보를 포함 하는 컴파일된 합니다. 합니다. 컴파일된 파일은 소스 파일의 원래 위치에 해당 하는 출력 디렉터리에 배치 됩니다. |
+| .aspx, .asmx, .ashx, .master | 이러한 파일에 포함 된 모든 코드 및 코드 숨김 파일을 모두 포함 하는 태그 코드와 소스 코드도 분할 됩니다 &lt;스크립트 runat = "server"&gt; 요소입니다. 소스 코드는 해싱 알고리즘에서 파생 된 이름 갖는 어셈블리로 컴파일됩니다. 결과 어셈블리 Bin 디렉터리에 배치 됩니다. 인라인 코드, 즉, 사이 포함 된 코드는 **&lt; %** 및 **% &gt;** 대괄호는 태그에 포함 되며 컴파일되지 않습니다. 컴파일러는 소스 파일과 동일한 이름의 태그를 포함할 새 파일을 만듭니다. 이러한 결과 파일은 Bin 디렉터리에 배치 됩니다. 또한 컴파일러의 소스 파일과 동일한 이름의 하지만 확장명은 파일을 만듭니다. 매핑 정보를 포함 하는 컴파일된 합니다. 합니다. 컴파일된 파일은 소스 파일의 원래 위치에 해당 하는 출력 디렉터리에 배치 됩니다. |
 | .ascx | 이러한 파일은 태그 및 소스 코드도 분할 됩니다. 소스 코드를 어셈블리에 컴파일되고 해싱 알고리즘에서 파생 된 형식의 이름으로 Bin 디렉터리에 배치 됩니다. 태그 파일이 생성 됩니다. |
 | .cs,.vb,.jsl,.cpp (앞에서 나열 된 파일 형식에 대 한 코드 숨김 파일 제외) | .Ascx,.ashx, 또는.aspx 파일에서 생성 된 어셈블리에서 참조 되는 소스 코드를 어셈블리에 컴파일되고 Bin 디렉터리에 배치 됩니다. 원본 파일이 복사 됩니다. |
 | 사용자 지정 파일 형식 | 이러한 파일은 동적 파일 처럼 컴파일됩니다. 에 기반 하는 파일의 형식에 따라 컴파일러 출력 디렉터리에 매핑 파일을 배치할 수 있습니다. |
@@ -360,7 +360,7 @@ MSI Windows Installer를 사용 하 여 웹 응용 프로그램 배포 등의 �
 
 ### <a name="strong-name-compilationhttpsmsdnmicrosoftcomlibraryms229863aspx"></a>[강력한 이름의 컴파일](https://msdn.microsoft.com/library/ms229863.aspx##)
 
-**aptca**, **-delaysign**, **-keycontainer** 및 **-keyfile** Aspnet를 사용할 수 있도록 옵션이 제공 됩니다\_ 사용 하지 않고 compiler.exe를 만드는 강력한 이름의 어셈블리는 [강력한 이름 도구 (Sn.exe)](https://msdn.microsoft.com/library/k5b5tt23.aspx) 별도로 합니다. 이러한 옵션 각각 해당을 **AllowPartiallyTrustedCallersAttribute**, **AssemblyDelaySignAttribute**, **AssemblyKeyNameAttribute**, 및 ** AssemblyKeyFileAttribute**합니다.
+**aptca**, **-delaysign**, **-keycontainer** 및 **-keyfile** Aspnet를 사용할 수 있도록 옵션이 제공 됩니다\_ 사용 하지 않고 compiler.exe를 만드는 강력한 이름의 어셈블리는 [강력한 이름 도구 (Sn.exe)](https://msdn.microsoft.com/library/k5b5tt23.aspx) 별도로 합니다. 이러한 옵션 각각 해당을 **AllowPartiallyTrustedCallersAttribute**, **AssemblyDelaySignAttribute**, **AssemblyKeyNameAttribute**, 및  **AssemblyKeyFileAttribute**합니다.
 
 이러한 특성에 대 한 설명은이 과정의 범위를 벗어났습니다.
 

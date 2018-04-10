@@ -16,7 +16,7 @@ ms.openlocfilehash: 0dba613594686a28b82bc6d7701cda6e24b82e2e
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="checkout-and-payment-with-paypal"></a>체크 아웃 및 PayPal 지불
 ====================
@@ -166,7 +166,7 @@ ASP.NET Web Forms 멤버 자격 및 인증에 대 한 향상 된 옵션을 제�
     ![Google 개발자 콘솔](checkout-and-payment-with-paypal/_static/image8.png)
 4. 클릭는 **프로젝트 만들기** 단추 하 고 프로젝트 이름 및 ID (기본 값을 사용할 수)를 입력 합니다. 클릭는 **계약 확인란** 및 **만들기** 단추입니다.  
 
-    ![Google-새 프로젝트](checkout-and-payment-with-paypal/_static/image9.png)
+    ![Google - New Project](checkout-and-payment-with-paypal/_static/image9.png)
 
    몇 초 후에 새 프로젝트가 만들어집니다 및 브라우저가 새 프로젝트 페이지에 표시 됩니다.
 5. 왼쪽된 탭에서 클릭 **Api &amp; auth**, 클릭 하 고 **자격 증명**합니다.
@@ -195,7 +195,7 @@ ASP.NET Web Forms 멤버 자격 및 인증에 대 한 향상 된 옵션을 제�
 16. 아래 **다른 서비스를 사용 하 여 로그인 할**, 클릭 **Google**합니다.  
     ![로그인](checkout-and-payment-with-paypal/_static/image11.png)
 17. 자격 증명을 입력 해야 할 경우 자격 증명을 입력할 google 사이트로 이동 합니다.  
-    ![Google-로그인](checkout-and-payment-with-paypal/_static/image12.png)
+    ![Google - Sign in](checkout-and-payment-with-paypal/_static/image12.png)
 18. 자격 증명을 입력 한 후 방금 만든 웹 응용 프로그램에 권한을 부여 하 라는 메시지가 표시 됩니다.  
     ![프로젝트 기본 서비스 계정](checkout-and-payment-with-paypal/_static/image13.png)
 19. 클릭 **수락**합니다. 이제 다시 이동 합니다는 **등록** 의 페이지는 **WingtipToys** 응용 프로그램 Google 계정을 등록할 수 있습니다.  

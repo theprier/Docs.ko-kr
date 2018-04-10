@@ -16,7 +16,7 @@ ms.openlocfilehash: 6ce52c387ff835eda46bc1882b8b974889e2d4af
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>ASP.NET 4 및 Visual Studio 2010 웹 개발 개요
 ====================
@@ -38,7 +38,7 @@ ms.lasthandoff: 04/06/2018
 [개체 캐싱 및 캐싱 확장성 개체](#0.2__Toc253429246 "_Toc253429246")  
 [확장 가능한 HTML, URL 및 HTTP 헤더 인코딩을](#0.2__Toc253429247 "_Toc253429247")  
 [단일 작업자 프로세스에서 개별 응용 프로그램에 대 한 성능 모니터링](#0.2__Toc253429248 "_Toc253429248")  
-[Multi-Targeting](#0.2__Toc253429249 "_Toc253429249")
+[멀티 타기 팅](#0.2__Toc253429249 "_Toc253429249")
 
 **[Ajax](#0.2__Toc253429250 "_Toc253429250")**  
 [Web Forms 및 MVC에 포함 된 jQuery](#0.2__Toc253429251 "_Toc253429251")  
@@ -69,7 +69,7 @@ ms.lasthandoff: 04/06/2018
 [데이터 주석을 특성 유효성 검사 지원을](#0.2__Toc253429276 "_Toc253429276")  
 [템플릿 기반 도우미](#0.2__Toc253429277 "_Toc253429277")
 
-**[동적 데이터](#0.2__Toc253429278 "_Toc253429278")**  
+**[Dynamic Data](#0.2__Toc253429278 "_Toc253429278")**  
 [기존 프로젝트에 대 한 동적 데이터 사용](#0.2__Toc253429279 "_Toc253429279")  
 [DynamicDataManager 컨트롤 선언적 구문](#0.2__Toc253429280 "_Toc253429280")  
 [엔터티 템플릿에](#0.2__Toc253429281 "_Toc253429281")  
@@ -579,7 +579,7 @@ ASP.NET 4에 도입 된 *MapPageRoute* 메서드. 다음 예제에서는 이전 
 
 *MapPageRoute* 메서드는 다음 메서드 오버 로드를 지원 합니다.
 
-- *MapPageRoute (문자열 routeName, 문자열 routeUrl, physicalFile string, bool checkPhysicalUrlAccess)*
+- *MapPageRoute(string routeName, string routeUrl, string physicalFile, bool checkPhysicalUrlAccess)*
 - *MapPageRoute (문자열 routeName, 문자열 routeUrl, physicalFile string, bool checkPhysicalUrlAccess, RouteValueDictionary 기본값)*
 - *MapPageRoute (문자열 routeName, 문자열 routeUrl, 문자열 physicalFile, bool checkPhysicalUrlAccess, RouteValueDictionary 기본값, RouteValueDictionary 제약 조건)*
 
@@ -985,7 +985,7 @@ ASP.NET 2.0 및 이후 버전에는 시스템 관련 숨겨진된 필드 렌더�
 기본적으로 템플릿을 지 원하는 다음 ASP.NET 웹 서버 컨트롤은 인라인 스타일을 적용 하는 데 사용 되는 외부 테이블에 자동으로 줄:
 
 - *FormView*
-- *로그인*
+- *Login*
 - *PasswordRecovery*
 - *ChangePassword*
 - *마법사*

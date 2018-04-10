@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/4-working-with-forms
-title: "ASP.NET 웹 페이지 (Razor) 사이트의 HTML 양식 작업 | Microsoft Docs"
+title: ASP.NET 웹 페이지 (Razor) 사이트의 HTML 양식 작업 | Microsoft Docs
 author: tfitzmac
-description: "양식은은 텍스트 상자, 확인란, 라디오 단추, 풀 다운 목록 등의 사용자 입력 컨트롤을 배치 하는 위치는 HTML 문서의 섹션입니다. 양식을 사용 하면 wh..."
+description: 양식은은 텍스트 상자, 확인란, 라디오 단추, 풀 다운 목록 등의 사용자 입력 컨트롤을 배치 하는 위치는 HTML 문서의 섹션입니다. 양식을 사용 하면 wh...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2014
@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/4-working-with-forms
 msc.type: authoredcontent
 ms.openlocfilehash: 8579c444fd19d1a366349cc09f9f768de23055f8
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="working-with-html-forms-in-aspnet-web-pages-razor-sites"></a>ASP.NET 웹 페이지 (Razor) 사이트에서 HTML 폼 사용
 ====================
@@ -73,7 +73,7 @@ ms.lasthandoff: 01/24/2018
 
     ![페이지에 표시 하는 입력 한 값을 보여 주는 스크린 샷](4-working-with-forms/_static/image2.jpg)
 
-    코드 페이지를 확인 합니다. 먼저 사용 하는 `IsPost` 페이지가 게시 되 고 있는지 여부 및 #8212; 즉, 사용자가 클릭 했는지 여부를 확인 하는 **전송** 단추입니다. Post, 이것이 `IsPost` true를 반환 합니다. 이것이 있는지 여부를 사용 하는 초기 요청 (GET 요청) 또는 다시 게시 (POST 요청)을 확인 하려면 ASP.NET 웹 페이지에서 표준 방법입니다. (GET 및 POST에 대 한 자세한 내용은 "HTTP GET 및 POST 및 IsPost Property" 세로 막대의 참조 [ASP.NET 웹 페이지 프로그래밍 구문을 사용 하 여 Razor 소개](https://go.microsoft.com/fwlink/?LinkId=202890#SB_HttpGetPost).)
+    코드 페이지를 확인 합니다. 먼저 사용 하 여는 `IsPost` 페이지가 게시 되 고 있는지 여부를 확인할 수 있는 방법은 &#8212; 즉, 여부는 사용자가 클릭 한는 **전송** 단추입니다. Post, 이것이 `IsPost` true를 반환 합니다. 이것이 있는지 여부를 사용 하는 초기 요청 (GET 요청) 또는 다시 게시 (POST 요청)을 확인 하려면 ASP.NET 웹 페이지에서 표준 방법입니다. (GET 및 POST에 대 한 자세한 내용은 "HTTP GET 및 POST 및 IsPost Property" 세로 막대의 참조 [ASP.NET 웹 페이지 프로그래밍 구문을 사용 하 여 Razor 소개](https://go.microsoft.com/fwlink/?LinkId=202890#SB_HttpGetPost).)
 
     사용자가 입력 하는 값을 가져오려면 다음으로 `Request.Form` 개체에 추가한 변수 나중에 적용 하도록 합니다. `Request.Form` 키로 식별 하는 각 페이지와 전송 된 모든 값을 포함 하는 개체입니다. 키는 해당 하는 고 `name` 읽으려는 양식 필드의 특성입니다. 예를 들어, 읽을 수는 `companyname` 필드 (텍스트 상자)를 사용 하면 `Request.Form["companyname"]`합니다.
 
@@ -89,7 +89,7 @@ ms.lasthandoff: 01/24/2018
 > 
 > HTML 인코딩을 브라우저 올바른 기호로 해석 된 코드와 같은 예약 된 문자를 바꿉니다. 예를 들어는 `<` 문자 아래 템플릿으로 바뀝니다 `&lt;` 및 `>` 문자 아래 템플릿으로 바뀝니다 `&gt;`합니다. 브라우저 보려는 문자로 이러한 대체 문자열을 렌더링 합니다.
 > 
-> 되었기 HTML 문자열을 표시 하는 언제 든 지 인코딩을 사용 하도록 (입력) 사용자 로부터 받은 하는 것이 좋습니다. 이렇게 하지 않으면 사용자는 사용자 웹 페이지를 악성 스크립트를 실행 하거나 다른 작업을 사이트 보안을 저해 하 또는 의도 하지 않은 시도할 수 있습니다. (이것은 예를 들어 블로그 주석으로 사용자 검토를; 사용자 입력을 했지만 위치를 저장 한 다음 나중에 &#8212;표시할 사용 하는 경우에 특히 중요 또는 같은 내용을)
+> 되었기 HTML 문자열을 표시 하는 언제 든 지 인코딩을 사용 하도록 (입력) 사용자 로부터 받은 하는 것이 좋습니다. 이렇게 하지 않으면 사용자는 사용자 웹 페이지를 악성 스크립트를 실행 하거나 다른 작업을 사이트 보안을 저해 하 또는 의도 하지 않은 시도할 수 있습니다. (사용자 입력을 받아, 했지만 위치를 저장 한 다음 나중에 표시 하는 경우이 특히 중요 &#8212; 블로그 주석, 사용자 검토 또는 되죠로 예를 들어 있습니다.)
 > 
 > 이러한 문제를 ASP.NET 웹 페이지를 자동으로 방지 하려면 HTML로 인코딩하고 텍스트 콘텐츠를 사용자 코드에서 출력 합니다. 예를 들어, 변수 또는 같은 코드를 사용 하는 식의 내용을 표시할 때는 `@MyVar`, ASP.NET 웹 페이지는 출력을 자동으로 인코딩합니다.
 
@@ -137,7 +137,7 @@ ASP.NET 웹 페이지에는 사용자 입력을 자동으로 사용자가 브라
     ![forms-5](4-working-with-forms/_static/image5.jpg)
 
 <a id="Additional_Resources"></a>
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 - [웹 사용자의 입력에 1,001 방법](https://msdn.microsoft.com/library/ms971057.aspx)
 - [폼을 사용 하 고 사용자 입력 처리](https://msdn.microsoft.com/library/ms525182(VS.90).aspx)

@@ -16,7 +16,7 @@ ms.openlocfilehash: 0bfe9cdc215226457ccfafff2b85ace87325b91b
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 ====================
@@ -91,7 +91,7 @@ ms.lasthandoff: 04/06/2018
     - [버그 수정](#0.1__Toc274034228)
     - [주요 변경 내용](#0.1__Toc274034229)
     - [알려진 문제](#0.1__Toc274034230)
-- [Disclaimer](#0.1__Toc274034231)
+- [고 지 사항](#0.1__Toc274034231)
 
 <a id="overview"></a>
 ## <a name="overview"></a>개요
@@ -165,7 +165,7 @@ ASP.NET MVC 3 ASP.NET MVC 3을 ASP.NET MVC 2 응용 프로그램을 업그레이
     - /Views/Web.config
     - /packages.config
     - /scripts/\*.js
-    - /내용/테마/\*합니다.\*
+    - /Content/themes/\*.\*
 3. 복사는 *패키지* 솔루션의.sln 파일이 있는 디렉터리에 있는 솔루션의 루트에 빈 ASP.NET MVC 3 프로젝트 솔루션의 루트에는 폴더입니다.
 4. ASP.NET MVC 2 프로젝트에 영역이 포함 된, 경우 /Views/Web.config 파일을 복사는 *뷰* 각 영역의 폴더입니다.
 5. ASP.NET MVC 2 프로젝트에서 두 Web.config 파일에서 검색 하 고 ASP.NET MVC 버전이 대체 되는 전역적으로. 다음을 찾습니다. 
@@ -179,14 +179,14 @@ ASP.NET MVC 3 ASP.NET MVC 3을 ASP.NET MVC 2 응용 프로그램을 업그레이
 7. System.Web.WebPages.dll 및 System.Web.Helpers.dll에 대 한 참조를 추가 합니다. 이러한 어셈블리는 다음 폴더에 있습니다. 
 
     - %ProgramFiles%\ Microsoft ASP.NET\ASP.NET MVC 3\Assemblies
-    - %ProgramFiles%\ Microsoft ASP.NET\ASP.NET Web Pages\v1.0\Assemblies
+    - %ProgramFiles%\ Microsoft ASP.NET\ASP.NET 웹 Pages\v1.0\Assemblies
 8. 솔루션 탐색기에서 프로젝트 이름을 마우스 오른쪽 단추로 클릭 하 고 프로젝트 언로드를 선택 합니다. 그런 다음 프로젝트 이름을 다시 마우스 오른쪽 단추로 클릭 하 고 편집 선택 *ProjectName*.csproj 합니다.
 9. 찾을 *ProjectTypeGuids* 요소 및 {F85E285D-A4E0-4152-9332-AB1D724D3325} {E53F8FEA-EAE0-44A6-8774-FFD645390401}로 대체 합니다.
 10. 변경 내용을 저장, 프로젝트를 마우스 오른쪽 단추로 클릭 하 고 프로젝트 다시 로드를 선택 합니다.
 11. 응용 프로그램의 루트 Web.config 파일에 추가 하려면 다음 설정의 *어셈블리* 섹션. 
 
     [!code-xml[Main](mvc3-release-notes/samples/sample3.xml)]
-12. ASP.NET MVC 2를 사용 하 여 컴파일되는 모든 타사 라이브러리를 프로젝트에서 참조 하는 경우 강조 표시 된 다음 추가 *bindingRedirect* 응용 프로그램 루트에 있는 Web.config 파일에는 요소는  *구성* 섹션: 
+12. ASP.NET MVC 2를 사용 하 여 컴파일되는 모든 타사 라이브러리를 프로젝트에서 참조 하는 경우 강조 표시 된 다음 추가 *bindingRedirect* 응용 프로그램 루트에 있는 Web.config 파일에는 요소는 * 구성* 섹션: 
 
     [!code-xml[Main](mvc3-release-notes/samples/sample4.xml)]
 
@@ -303,7 +303,7 @@ JQuery 파일 이름에 버전 번호를 포함 하므로 jQuery를 최신 버�
 - 원인을 솔루션 폴더에서 새 ASP.NET MVC 3 프로젝트를 만들기는 *NullReferenceException* 오류입니다. 해결 방법은 솔루션의 루트에 ASP.NET MVC 3 프로젝트를 만들고 다음 솔루션 폴더로 이동 하는 것입니다.
 - ReSharper가 설치 된 경우에 IntelliSense for Razor 구문 작동 하지 않습니다. ReSharper가 설치 되어 ASP.NET MVC 3의 Razor IntelliSense 지원을 활용 하려고 하는 경우 항목을 참조 [Razor Intellisense and ReSharper](http://blogs.jetbrains.com/dotnet/2010/11/razor-intellisense-and-resharper/) Hadi Hariri 블로그에서 함께 사용 하는 방법을 설명 하는 합니다.
 - 설치 하는 동안 EULA 동의 대화 상자 예정 보다 작은 창에서 사용 약관을 표시 합니다.
-- Razor 뷰를 편집할 때 (.cshtml 또는. *vbhtml* 파일), 뷰. ASP.NET MVC 3 Razor 뷰의 코드 조각이 포함 되지 않습니다. ASP.NET MVC 용 코드 조각 aspxselecting 조각이 표시 됩니다.
+- Razor 뷰를 편집할 때 (.cshtml 또는.* vbhtml* 파일), 뷰. ASP.NET MVC 3 Razor 뷰의 코드 조각이 포함 되지 않습니다. ASP.NET MVC 용 코드 조각 aspxselecting 조각이 표시 됩니다.
 - 여기서 Visual Studio 설치 되지 않은 컴퓨터에 Visual Web Developer Express에 대 한 ASP.NET MVC 3을 설치 하 고 다음 나중에 Visual Studio를 설치 하는 경우에 ASP.NET MVC 3를 다시 설치 해야 합니다. Visual Studio 및 Visual Web Developer Express는 ASP.NET MVC 3 설치 관리자가 업그레이드 하는 구성 요소를 공유 합니다. Visual Web Developer Express가 되지 않으며 다음 나중에 Visual Web Developer Express를 설치 하는 컴퓨터에서 Visual Studio에 대 한 ASP.NET MVC 3을 설치 하는 경우 동일한 문제에 적용 됩니다.
 
 <a id="MVC3RTM"></a>
@@ -438,7 +438,7 @@ ASP.NET MVC 3 용 프로젝트 템플릿을 포함 최신 버전의 jQuery, jQue
 <a id="_Toc2_10"></a>
 ### <a name="fixed-model-declaration-to-not-add-whitespace-to-the-document"></a>고정 @model 문서에 공백을 추가 하지 않는 선언
 
-이전 릴리스에서 <em>@model</em> 보기의 맨 위에 선언은 렌더링된 된 HTML 출력에 빈 줄을 추가 합니다. 이 선언에 공백이 발생 하지 않도록 있도록 수정 되었습니다.
+이전 릴리스에서 <em> @model </em> 보기의 맨 위에 선언은 렌더링된 된 HTML 출력에 빈 줄을 추가 합니다. 이 선언에 공백이 발생 하지 않도록 있도록 수정 되었습니다.
 
 <a id="_Toc2_11"></a>
 ### <a name="added-fileextensions-property-to-view-engines-to-support-engine-specific-file-names"></a>엔진-특정 파일 이름을 지원 하도록 뷰 엔진에 추가 된 "FileExtensions" 속성
@@ -465,7 +465,7 @@ ASP.NET MVC 3 용 프로젝트 템플릿을 포함 최신 버전의 jQuery, jQue
 - 이전 버전의 ASP.NET MVC에서는 작업 필터 몇 가지 경우에서를 제외 하 고 요청에 따라 만들어졌습니다. 이 동작은 되지 보장 된 동작은 하지만 단순히 구현 정보 이며 필터에 대 한 계약 상태 비저장 고려 합니다. ASP.NET MVC 3에서 필터는 보다 적극적으로 캐시 됩니다. 따라서 잘못 인스턴스 상태를 저장 하는 모든 사용자 지정 작업 필터는 손상 될 수 있습니다.
 - 동일한 예외 필터에 대 한 예외 필터에 대 한 실행 순서가 변경 된 *순서* 값입니다. 예외 필터를 동일한 컨트롤러에서 ASP.NET MVC 2 및 이전 버전에서는 *순서* 는 작업 메서드의 예외 필터 전에 실행의 동작 메서드 같이 합니다. 일반적으로 경우가이 예외가 필터가 적용 된 경우 지정 된 없이 *순서* 값입니다. ASP.NET MVC 3에서이 순서가 반대로 변경 되었습니다 가장 구체적인 예외 처리기는 먼저 실행 되도록 합니다. 이전 버전과 달리 하는 경우는 *순서* 속성을 명시적으로 지정, 필터는 지정 된 순서로 실행 됩니다.
 - 라는 새 속성이 *FileExtensions* 에 추가 된는 *VirtualPathProviderViewEngine* 기본 클래스입니다. ASP.NET에서는 보기를 경로 의해 (이름)가 아니라을 때 뷰만이 새 속성으로 지정 된 목록에 포함 된 파일 확장명으로 간주 됩니다. 웹 폼 보기에 대 한 사용자 지정 파일 확장명을 사용 하도록 설정 하려면 사용자 지정 빌드 공급자가 등록 된와 공급자는 이름이 아니라 전체 경로 사용 하 여 이러한 뷰를 참조 하는 경우 응용 프로그램의 주요 변경 내용입니다. 해결 하는 값을 수정 하는 *FileExtensions* 속성을 사용자 지정 파일 확장명을 포함 합니다.
-- 직접 구현 하는 사용자 지정 컨트롤러 팩터리 구현을 <em>IControllerFactory</em> 인터페이스의 새 구현을 제공 해야 <em>GetControllerSessionBehavior</em>  <em>이 릴리스에서 인터페이스에 추가 된 메서드</em>합니다. 일반적으로 것이 좋습니다 수행 하지이 인터페이스를 직접 구현 하는 대신에서 클래스를 파생 <em>DefaultControllerFactory</em>합니다.
+- 직접 구현 하는 사용자 지정 컨트롤러 팩터리 구현을 <em>IControllerFactory</em> 인터페이스의 새 구현을 제공 해야 <em>GetControllerSessionBehavior</em> <em> 이 릴리스에서 인터페이스에 추가 된 메서드</em>합니다. 일반적으로 것이 좋습니다 수행 하지이 인터페이스를 직접 구현 하는 대신에서 클래스를 파생 <em>DefaultControllerFactory</em>합니다.
 
 <a id="_Toc2_KI"></a>
 ## <a name="known-issues"></a>알려진 문제
@@ -669,7 +669,7 @@ NuGet에 대 한 자세한 내용은 참조는 [NuGet 설명서](https://docs.mi
 
 새 ASP.NET 웹 페이지 기술을 뷰 및 컨트롤러에 일반적으로 사용 되는 기능을 추가 하는 데 도움이 되는 도우미 메서드 집합이 포함 되어 있습니다. ASP.NET MVC 3에서는 이러한 도우미 메서드를 컨트롤러와 뷰 내에서 사용할 수 (필요한 경우). 이러한 메서드는 System.Web.Helpers 어셈블리에 포함 되어 있습니다. 다음 표에서 몇 가지 ASP.NET 웹 페이지 도우미 메서드를 나열합니다.
 
-| **Helper** | **설명** |
+| **도우미** | **설명** |
 | --- | --- |
 | 차트 | 보기 내에서 차트를 렌더링합니다. Chart.ToWebImage, Chart.Save, Chart.Write 등 메서드를 포함합니다. |
 | 암호화 | 해시를 올바르게 만들려면 알고리즘을 사용 하 여 솔트된 및 해시 된 암호입니다. |

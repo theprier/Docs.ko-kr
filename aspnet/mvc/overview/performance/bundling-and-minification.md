@@ -16,7 +16,7 @@ ms.openlocfilehash: 001ebf89cda66a50cddcd7e4944f27b9396d4450
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="bundling-and-minification"></a>묶음 및 축소
 ====================
@@ -27,7 +27,7 @@ ms.lasthandoff: 04/06/2018
 
 수를 제한 하는 대부분의 현재 주요 브라우저 [동시 연결](http://www.browserscope.org/?category=network) 당 6 개의 각 호스트 이름입니다. 즉, 처리 되는 6 개의 요청 하는 동안 호스트에는 자산에 대 한 추가 요청은 브라우저에서 대기 됩니다. 아래 그림에서는 IE F12 개발자 도구 네트워크 탭에서는 샘플 응용 프로그램의 정보 보기에 필요한 자산에 대 한 타이밍을 보여 줍니다.
 
-![B/M](bundling-and-minification/_static/image1.png)
+![M B /](bundling-and-minification/_static/image1.png)
 
 회색 막대는 6 개 연결 제한에서 대기 하는 브라우저에서 요청은 큐에 대기 시간을 표시 합니다. 노란색 막대는 첫 번째 바이트에는 요청 시간 즉, 요청을 보내고 서버에서 첫 번째 응답을 수신 하는 데 걸린 시간입니다. 파란색 막대는 서버에서 응답 데이터를 수신 하는 데 걸린 시간을 표시 합니다. 자세한 타이밍 정보를 얻으려면 자산에 대해 두 번 클릭 수 있습니다. 다음 이미지는 로드에 대 한 타이밍 정보를 표시 하는 예를 들어는 */Scripts/MyScripts/JavaScript6.js* 파일입니다.
 
@@ -55,7 +55,7 @@ ms.lasthandoff: 04/06/2018
 
 주석 및 불필요 한 공백을 제거 하는 것 외에도 다음 매개 변수 및 변수 이름은 열의 이름을 (축약 됨) 다음과 같습니다.
 
-| **Original** | **이름이 변경** |
+| **원문 언어** | **이름이 변경** |
 | --- | --- |
 | imageTagAndImageID | n |
 | imageContext | t |

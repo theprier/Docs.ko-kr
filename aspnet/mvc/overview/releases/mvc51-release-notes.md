@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/releases/mvc51-release-notes
-title: "ASP.NET MVC 5.1의에서 새로운 기능 | Microsoft Docs"
+title: ASP.NET MVC 5.1의에서 새로운 기능 | Microsoft Docs
 author: microsoft
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/27/2014
@@ -13,14 +13,14 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/releases/mvc51-release-notes
 msc.type: authoredcontent
 ms.openlocfilehash: be10486c9fd39738f44cdda4fedb409058017601
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 04/10/2018
 ---
 <a name="whats-new-in-aspnet-mvc-51"></a>ASP.NET MVC 5.1의에서 새로운 기능
 ====================
-여 [Microsoft](https://github.com/microsoft)
+by [Microsoft](https://github.com/microsoft)
 
 이 항목에서는 ASP.NET 웹 MVC 5.1에 대 한 새로운 기능을 설명 합니다.
 
@@ -54,7 +54,7 @@ ms.lasthandoff: 11/10/2017
 <a id="documentation"></a>
 ## <a name="documentation"></a>설명서
 
-자습서 및 ASP.NET MVC 5.1 RTM에 대 한 기타 정보에는 ASP.NET 웹 사이트 (https://www.asp.net)에서 사용할 수 있는 합니다. 
+ASP.NET 웹 사이트에서 사용할 수 있는 자습서 및 ASP.NET MVC 5.1 RTM에 대 한 기타 정보 ( https://www.asp.net)합니다. 
 
 <a id="new-features"></a>
 ## <a name="new-features-in-aspnet-mvc-51"></a>ASP.NET MVC 5.1의에서 새로운 기능
@@ -84,7 +84,7 @@ ms.lasthandoff: 11/10/2017
 
 HTML 특성에서 전달 이제 허용 [EditorFor](https://msdn.microsoft.com/en-us/library/system.web.mvc.html.editorextensions.editorfor(v=vs.100).aspx) 로 [익명 개체](https://msdn.microsoft.com/en-us/library/bb397696.aspx)합니다.
 
-예:
+예를 들어:
 
 [!code-cshtml[Main](mvc51-release-notes/samples/sample3.cshtml)]
 
@@ -98,7 +98,7 @@ HTML 특성에서 전달 이제 허용 [EditorFor](https://msdn.microsoft.com/en
 
 ### <a name="supporting-the-this-context-in-unobtrusive-ajax"></a>비 가시적인 Ajax에서 'this'이 컨텍스트를 지 원하는
 
-콜백 함수 (`OnBegin, OnComplete, OnFailure, OnSuccess`)를 통해 호출 요소를 찾을 수 이제 됩니다는 `this` 컨텍스트. 예:
+콜백 함수 (`OnBegin, OnComplete, OnFailure, OnSuccess`)를 통해 호출 요소를 찾을 수 이제 됩니다는 `this` 컨텍스트. 예를 들어:
 
 [!code-html[Main](mvc51-release-notes/samples/sample4.html)]
 

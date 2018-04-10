@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/data/working-with-files
-title: "ASP.NET 웹 페이지 (Razor) 사이트에 대 한 파일 작업 | Microsoft Docs"
+title: ASP.NET 웹 페이지 (Razor) 사이트에 대 한 파일 작업 | Microsoft Docs
 author: tfitzmac
-description: "이 읽기, 쓰기, 추가, 삭제 및 파일을 업로드 하는 방법을 설명 합니다."
+description: 이 읽기, 쓰기, 추가, 삭제 및 파일을 업로드 하는 방법을 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2014
@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/data/working-with-files
 msc.type: authoredcontent
 ms.openlocfilehash: 0f119f8fb4873e55292203f21a2efd8f26793ae4
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="working-with-files-in-an-aspnet-web-pages-razor-site"></a>ASP.NET 웹 페이지 (Razor) 사이트에 대 한 파일 작업
 ====================
@@ -133,9 +133,9 @@ ms.lasthandoff: 01/24/2018
 
     이 작업을 수행 하는 코드는 내부에 `if` 문. 파일을 읽을 시기는 것이 좋습니다 사용 하는 `File.Exists` 는 파일을 사용할 수 있는지 여부를 먼저 확인 하는 메서드. 또한이 코드 파일이 비어 있는지 여부를 확인 합니다.
 
-    페이지의 본문에는 두 개의 `foreach` 다른 중첩 된 반복 합니다. 외부 `foreach` 루프 데이터 파일에서 한 번에 한 줄을 가져옵니다. 이 경우 줄은 파일 &#8212;의 줄 바꿈 정의 즉, 각 데이터 항목은 별도 줄 있습니다. 외부 루프는 새 항목을 만듭니다 (`<li>` 요소) 안에 정렬 된 목록 (`<ol>` 요소).
+    페이지의 본문에는 두 개의 `foreach` 다른 중첩 된 반복 합니다. 외부 `foreach` 루프 데이터 파일에서 한 번에 한 줄을 가져옵니다. 이 경우 줄은 파일에 줄 바꿈을 정의 &#8212; 즉, 각 데이터 항목은 별도 줄. 외부 루프는 새 항목을 만듭니다 (`<li>` 요소) 안에 정렬 된 목록 (`<ol>` 요소).
 
-    내부 반복 구분 기호로 쉼표를 사용 하는 항목 (필드)를 각 데이터 행을 분할 합니다. (이전 예제에 따라, 즉, 각 줄에는 세 개의 필드가 & #8212, 이름, 성, 이름 및 전자 메일 주소를 각각 쉼표로 구분 하 여) 내부 루프도 만듭니다.는 `<ul>` 데이터 줄의 각 필드에 대 한 항목 목록 및 한 목록을 표시 합니다.
+    내부 반복 구분 기호로 쉼표를 사용 하는 항목 (필드)를 각 데이터 행을 분할 합니다. (이전 예제에 따라, 즉, 각 줄에 세 개의 필드가 포함 되어 있음을 &#8212; 이름, 성, 이름 및 전자 메일 주소를 각각 쉼표로 구분 하 여.) 내부 루프도 만듭니다.는 `<ul>` 데이터 줄의 각 필드에 대 한 항목 목록 및 한 목록을 표시 합니다.
 
     코드에는 두 개의 데이터 형식, 배열을 사용 하는 방법을 보여 줍니다. 및 `char` 데이터 형식입니다. 배열이 필요 하기 때문에 `File.ReadAllLines` 메서드는 배열로 데이터를 반환 합니다. `char` 데이터 형식이 필요 하기 때문에 `Split` 메서드가 반환 되는 `array` 각 요소는 형식에서 `char`합니다. (배열에 대 한 정보를 참조 하십시오. [ASP.NET 웹 프로그래밍 구문을 사용 하 여 Razor 소개](https://go.microsoft.com/fwlink/?LinkId=202890#ID_CollectionsAndObjects).)
 3. 브라우저에서 페이지를 실행 합니다. 이전 예제에 대 한 입력 한 데이터가 표시 됩니다. 
@@ -194,7 +194,7 @@ ms.lasthandoff: 01/24/2018
 
     에 대해 설정한 속성은 `FileUpload` 도우미 지정 업로드할 파일에 대 한 단일 박스 원하고 제출 단추 읽기를 원하는 **업로드**합니다. (문서의 뒷부분에서 상자를 더 추가 합니다.)
 
-    사용자가 클릭할 때 **업로드**, 페이지 맨 위에 있는 코드 파일을 저장 합니다. `Request` 양식 필드의 값을 가져오는 일반적으로 사용 하는 개체에는 `Files` 파일 (또는 파일)를 포함 하는 배열 업로드 합니다. 배열 &#8212; 특정 위치에서 개별 파일을 가져올 수 있습니다. 예를 들어 첫 번째 업로드 된 파일을 가져오려면 얻게 `Request.Files[0]`을 두 번째 파일을 가져오는 얻게 `Request.Files[1]`등입니다. (프로그래밍에서는 계산을 일반적으로 0에서 시작 해야 합니다.)
+    사용자가 클릭할 때 **업로드**, 페이지 맨 위에 있는 코드 파일을 저장 합니다. `Request` 양식 필드의 값을 가져오는 일반적으로 사용 하는 개체에는 `Files` 파일 (또는 파일)를 포함 하는 배열 업로드 합니다. 배열의 특정 위치에서 개별 파일을 가져올 수 있습니다 &#8212; 예를 들어 첫 번째 업로드 된 파일을 가져오려면 얻게 `Request.Files[0]`을 두 번째 파일을 가져오는 얻게 `Request.Files[1]`등입니다. (프로그래밍에서는 계산을 일반적으로 0에서 시작 해야 합니다.)
 
     변수에 배치 업로드 된 파일을 인출 하는 경우 (여기서 `uploadedFile`) 조작할 수 있도록 합니다. 업로드 된 파일의 이름을 확인 하려면 거 해당 `FileName` 속성입니다. 그러나 사용자는 파일 업로드 `FileName` 전체 경로가 포함 된 사용자의 원래 이름을 포함 합니다. 그는 다음과 같이 표시 될 수 있습니다.
 
@@ -238,7 +238,7 @@ ms.lasthandoff: 01/24/2018
 
     ![[image]](working-with-files/_static/image11.jpg)
 
-    사용자를 업로드 하는 파일을 처리 하려면 코드에서는 앞의 예제 &#8212;에서 사용한 동일한 기본 기술을 사용합니다 파일을 가져옵니다. `Request.Files` 저장 합니다. (다양 한 항목을 포함 하 여 수행 해야 올바른 파일 이름 및 경로 가져올 수 있습니다.) 이 이번 혁신은 사용자에 여러 파일 업로드 수를 알 수 없는 많은입니다. 가져올 수를 확인 하려면 `Request.Files.Count`합니다.
+    사용자 업로드 하는 파일을 처리 하려면 코드에서는 앞의 예제에서 사용한 동일한 기본 기술을 사용 &#8212; 에서 파일을 가져옵니다. `Request.Files` 저장 합니다. (다양 한 항목을 포함 하 여 수행 해야 올바른 파일 이름 및 경로 가져올 수 있습니다.) 이 이번 혁신은 사용자에 여러 파일 업로드 수를 알 수 없는 많은입니다. 가져올 수를 확인 하려면 `Request.Files.Count`합니다.
 
     반복 하면 손 모양 아이콘이이 번호로 `Request.Files`차례로 각 파일을 인출 하 고 저장 합니다. 컬렉션 전체 알려진된 횟수를 반복 하려는 경우 사용할 수 있습니다는 `for` 다음과 같은 루프:
 
@@ -257,7 +257,7 @@ ms.lasthandoff: 01/24/2018
 9. 열기는 *UploadedFiles* 폴더 성공적으로 업로드 된 파일을 볼 수 있습니다.
 
 <a id="Additional_Resources"></a>
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 
 [ASP.NET 웹 페이지 사이트에 이미지 작업](https://go.microsoft.com/fwlink/?LinkId=202897)

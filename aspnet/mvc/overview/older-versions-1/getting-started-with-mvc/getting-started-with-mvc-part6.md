@@ -16,7 +16,7 @@ ms.openlocfilehash: 48e656a0c394b9db5baaec9c557ec38c4020d41b
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="adding-a-create-method-and-create-view"></a>추가 된 메서드를 만들고 보기 만들기
 ====================
@@ -61,7 +61,7 @@ MoviesController 클래스 내에서 두 개의 create () 메서드 내에서 �
 
 이 영화 개체가 만들기 작업 메서드의 [HttpPost] 버전에 전달 된 다음 및 데이터베이스에 저장 하 고 사용자 영화 목록에 저장 된 결과 보여 주는 index () 동작 메서드를 다시 리디렉션됩니다.
 
-[![Movie List - Windows Internet Explorer](getting-started-with-mvc-part6/_static/image6.png)](getting-started-with-mvc-part6/_static/image5.png)
+[![Windows Internet Explorer-동영상 목록](getting-started-with-mvc-part6/_static/image6.png)](getting-started-with-mvc-part6/_static/image5.png)
 
 म 우리의 영화은 하지만 및 제목 없음 함께 동영상을 저장 하는 데이터베이스 허용 하지 않는 확인 되지 않습니다. 이 좋을 수 알립니다를 이전 데이터베이스에서 오류가 발생 했습니다. 응용 프로그램에 유효성 검사 지원을 추가 하 여 다음이 단계를 하겠습니다.
 

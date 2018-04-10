@@ -15,7 +15,7 @@ ms.openlocfilehash: a155422c0fd638f46fe4a9d8a77faebc0b2a5681
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="bundle-and-minifiy-static-assets-in-aspnet-core"></a>ASP.NET Core에서 번들 및 minifiy 정적 자산
 
@@ -84,8 +84,8 @@ MVC 및 Razor 페이지 프로젝트 템플릿에 *bundleconfig.json* 구성 파
     * [CSS Minifier입니다.](https://github.com/madskristensen/BundlerMinifier/wiki/cssminifier)
     * [JavaScript Minifier입니다.](https://github.com/madskristensen/BundlerMinifier/wiki/JavaScript-Minifier-settings)
     * [HTML Minifier입니다.](https://github.com/madskristensen/BundlerMinifier/wiki)
-* `includeInProject`: 프로젝트 파일을 생성 된 파일을 추가할 것인지를 나타내는 플래그입니다. **선택적**, *기본값-false*
-* `sourceMap`: 해당 번들된 파일에 대 한 소스 맵을 생성 여부를 나타내는 플래그입니다. **선택적**, *기본값-false*
+* `includeInProject`: 프로젝트 파일을 생성 된 파일을 추가할 것인지를 나타내는 플래그입니다. **optional**, *default - false*
+* `sourceMap`: 해당 번들된 파일에 대 한 소스 맵을 생성 여부를 나타내는 플래그입니다. **optional**, *default - false*
 * `sourceMapRootPath`생성 된 소스 맵 파일을 저장 하기 위한: 루트 경로입니다.
 
 ## <a name="build-time-execution-of-bundling-and-minification"></a>빌드 타임 실행 묶음 및 축소

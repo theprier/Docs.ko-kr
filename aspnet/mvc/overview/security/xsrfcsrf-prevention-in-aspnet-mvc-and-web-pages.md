@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages
-title: "웹 페이지 및 ASP.NET MVC에서 XSRF/CSRF 방지 | Microsoft Docs"
+title: 웹 페이지 및 ASP.NET MVC에서 XSRF/CSRF 방지 | Microsoft Docs
 author: Rick-Anderson
-description: "교차 사이트 요청 위조 (XSRF 또는 CSRF 라고도 함)가 악의적인 웹 사이트는 interacti 영향을 줄 수는 그에 따라 웹 호스팅 응용 프로그램에 대 한 공격 중..."
+description: 교차 사이트 요청 위조 (XSRF 또는 CSRF 라고도 함)가 악의적인 웹 사이트는 interacti 영향을 줄 수는 그에 따라 웹 호스팅 응용 프로그램에 대 한 공격 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/14/2013
@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages
 msc.type: authoredcontent
 ms.openlocfilehash: 6cf30daa7ed966b11405cec715c5bc803b567249
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages"></a>웹 페이지 및 ASP.NET MVC에서 XSRF/CSRF 방지
 ====================
@@ -86,7 +86,7 @@ ANTI-XSRF 토큰의 페이로드가 암호화 되 고 서명, 토큰을 검사 �
 ANTI-XSRF 토큰을 생성 하려면 호출는 [ @Html.AntiForgeryToken ](https://msdn.microsoft.com/library/dd470175.aspx) MVC 뷰에서 메서드 또는 @AntiForgery.GetHtmlRazor 페이지에서 (). 런타임은 다음 단계를 수행 다음 합니다.
 
 1. 현재 HTTP 요청 ANTI-XSRF 세션 토큰에 이미 포함 되어 있는 경우 (ANTI-XSRF 쿠키 \_ \_RequestVerificationToken), 보안 토큰에서 추출 됩니다. HTTP 요청에는 ANTI-XSRF 세션 토큰 또는 보안 토큰의 추출이 실패할 경우 새 임의 ANTI-XSRF 토큰 생성 됩니다.
-2. ANTI-XSRF 필드 토큰이 현재 로그인 한 사용자의 id (1) 위의 단계에서 보안 토큰을 사용 하 여 생성 됩니다. (사용자 id 확인에 대 한 자세한 내용은 참조는  **[특별 한 지원 사용 하는 시나리오](#_Scenarios_with_special)**  아래 섹션.) 또한 경우는 [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/jj158328(v=vs.111).aspx) 은 구성 런타임에서 호출 됩니다는 [GetAdditionalData](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider.getadditionaldata(v=vs.111).aspx) 메서드 field 토큰에는 반환 된 문자열을 포함 합니다. (참조는  **[구성 및 확장성](#_Configuration_and_extensibility)**  한 자세 합니다.)
+2. ANTI-XSRF 필드 토큰이 현재 로그인 한 사용자의 id (1) 위의 단계에서 보안 토큰을 사용 하 여 생성 됩니다. (사용자 id 확인에 대 한 자세한 내용은 참조는 **[특별 한 지원 사용 하는 시나리오](#_Scenarios_with_special)** 아래 섹션.) 또한 경우는 [IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/jj158328(v=vs.111).aspx) 은 구성 런타임에서 호출 됩니다는 [GetAdditionalData](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider.getadditionaldata(v=vs.111).aspx) 메서드 field 토큰에는 반환 된 문자열을 포함 합니다. (참조는 **[구성 및 확장성](#_Configuration_and_extensibility)** 한 자세 합니다.)
 3. 새 ANTI-XSRF 토큰 단계 (1)에서 생성 된, 새 세션 토큰 및 포함 하기 위해 만들어집니다 아웃 바운드 HTTP 쿠키 컬렉션에 추가 됩니다. 단계 (2)에서 필드 토큰이에 래핑됩니다는 `<input type="hidden" />` 요소, 그리고이 HTML 태그의 반환 값이 됩니다 `Html.AntiForgeryToken()` 또는 `AntiForgery.GetHtml()`합니다.
 
 ## <a name="validating-the-tokens"></a>토큰 유효성 검사
@@ -108,9 +108,9 @@ ASP.NET 웹 스택 런타임 v 2와 함께 시작 하는 모든 *HttpAntiForgery
 - 세션 토큰 및 필드 토큰 교체 되었습니다.
 - 세션 토큰 및 필드 토큰이 일치 하지 않는 보안 토큰을 포함 합니다.
 - Field 토큰 내에 포함 된 사용자 이름에는 현재 로그인 한 사용자의 사용자 이름을 일치 하지 않습니다.
-- *[IAntiForgeryAdditionalDataProvider.ValidateAdditionalData](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider.validateadditionaldata(v=vs.111).aspx)*  메서드 반환 *false*합니다.
+- *[IAntiForgeryAdditionalDataProvider.ValidateAdditionalData](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider.validateadditionaldata(v=vs.111).aspx)* 메서드 반환 *false*합니다.
 
-ANTI-XSRF 시설 토큰 생성 또는 유효성 검사를 하는 동안 추가 검사 수행 될 수 있습니다 하며 이러한 검사 중에 오류가 발생 하는 예외가 발생할 수 있습니다. 참조는 [WIF / ACS / 클레임 기반 인증](#_WIF_ACS) 및  **[구성 및 확장성](#_Configuration_and_extensibility)**  섹션에서 자세한 정보.
+ANTI-XSRF 시설 토큰 생성 또는 유효성 검사를 하는 동안 추가 검사 수행 될 수 있습니다 하며 이러한 검사 중에 오류가 발생 하는 예외가 발생할 수 있습니다. 참조는 [WIF / ACS / 클레임 기반 인증](#_WIF_ACS) 및 **[구성 및 확장성](#_Configuration_and_extensibility)** 섹션에서 자세한 정보.
 
 <a id="_Scenarios_with_special"></a>
 
@@ -139,10 +139,10 @@ ANTI-XSRF 시스템에 "익명"가 정의 되어 있는 사용자로 익명 사�
 
 를 생성 하거나 유효성을 검사 하는 토큰 ASP.NET 웹 스택 런타임 런타임 시 시도 합니다 형식에 바인딩:
 
-- `Microsoft.IdentityModel.Claims.IClaimsIdentity, Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35`(SDK에 대 한는 WIF.)
-- `System.Security.Claims.ClaimsIdentity`(.NET 4.5) 용.
+- `Microsoft.IdentityModel.Claims.IClaimsIdentity, Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35` (SDK에 대 한는 WIF.)
+- `System.Security.Claims.ClaimsIdentity` (.NET 4.5) 용.
 
-이러한 형식은 존재 한 경우 현재 사용자의 *IIIIdentity* 유형 중 하나 구현 또는 서브 클래스 (id 공급자, 이름 식별자) ANTI-XSRF 시설 사용, 생성 하는 경우 사용자 이름 대신 튜플 및 토큰의 유효성 검사. 이러한 튜플이 있는 경우 사용 중인 특정 클레임 기반 인증 메커니즘을 이해 하려면 ANTI-XSRF 시스템을 구성 하는 방법을 개발자에 게 설명 하는 오류와 함께 요청이 실패 합니다. 참조는  **[구성 및 확장성](#_Configuration_and_extensibility)**  한 자세 합니다.
+이러한 형식은 존재 한 경우 현재 사용자의 *IIIIdentity* 유형 중 하나 구현 또는 서브 클래스 (id 공급자, 이름 식별자) ANTI-XSRF 시설 사용, 생성 하는 경우 사용자 이름 대신 튜플 및 토큰의 유효성 검사. 이러한 튜플이 있는 경우 사용 중인 특정 클레임 기반 인증 메커니즘을 이해 하려면 ANTI-XSRF 시스템을 구성 하는 방법을 개발자에 게 설명 하는 오류와 함께 요청이 실패 합니다. 참조는 **[구성 및 확장성](#_Configuration_and_extensibility)** 한 자세 합니다.
 
 ### <a name="oauth--openid-authentication"></a>OAuth / OpenID 인증
 
@@ -175,7 +175,7 @@ ANTI-XSRF 시스템에 "익명"가 정의 되어 있는 사용자로 익명 사�
 
 ### <a name="iantiforgeryadditionaldataprovider"></a>IAntiForgeryAdditionalDataProvider
 
-*[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)*  형식에서는 개발자가 각 토큰의 추가 데이터를 왕복 하 여 ANTI-XSRF 시스템의 동작을 확장할 수 있습니다. *GetAdditionalData* 될 때마다 메서드는 필드 토큰이 생성 되 고 반환 값은 생성 되는 토큰 내에 포함 되어 있습니다. 구현 자가이 메서드에서 타임 스탬프, nonce, 또는 그녀 하지 않고자 한다면 다른 모든 값을 반환할 수 있습니다.
+*[IAntiForgeryAdditionalDataProvider](https://msdn.microsoft.com/library/system.web.helpers.iantiforgeryadditionaldataprovider(v=vs.111).aspx)* 형식에서는 개발자가 각 토큰의 추가 데이터를 왕복 하 여 ANTI-XSRF 시스템의 동작을 확장할 수 있습니다. *GetAdditionalData* 될 때마다 메서드는 필드 토큰이 생성 되 고 반환 값은 생성 되는 토큰 내에 포함 되어 있습니다. 구현 자가이 메서드에서 타임 스탬프, nonce, 또는 그녀 하지 않고자 한다면 다른 모든 값을 반환할 수 있습니다.
 
 마찬가지로,는 *ValidateAdditionalData* 될 때마다 메서드는 필드 토큰의 유효성을 검사 하 고 토큰 내에 포함 된 "데이터 추가" 문자열 메서드에 전달 됩니다. 루틴 또는 기타 검사 nonce 원하는 논리, 유효성 검사 루틴 (토큰을 만들 때 저장 된 시간에 대해 현재 시간을 확인 하는 중)에서 시간 초과 구현할 수 없습니다.
 

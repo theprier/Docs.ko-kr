@@ -1,22 +1,22 @@
 ---
 uid: visual-studio/overview/2012/aspnet-and-web-tools-20122-release-notes-rtw
-title: "ASP.NET 및 웹 도구 2012.2 릴리스 정보 | Microsoft Docs"
+title: ASP.NET 및 웹 도구 2012.2 릴리스 정보 | Microsoft Docs
 author: rick-anderson
-description: "ASP.NET 및 웹 도구 2012.2에 대 한 릴리스 정보입니다."
+description: ASP.NET 및 웹 도구 2012.2에 대 한 릴리스 정보입니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/14/2013
 ms.topic: article
 ms.assetid: 9534e58b-1d15-4f1d-b04c-10c79b9d8227
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2012/aspnet-and-web-tools-20122-release-notes-rtw
 msc.type: content
 ms.openlocfilehash: ab1642f1a3de298919aa9c6c1ddbd6bbb0cb99b5
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="aspnet-and-web-tools-20122-release-notes"></a>릴리스 정보에 ASP.NET 및 Web Tools 2012.2
 ====================
@@ -53,12 +53,12 @@ ASP.NET 및 Visual Studio 2012 용 웹 도구 2012.2를 사용해 설치 가능 
 5. 경우 입력 정보를 요청 실행을 클릭 합니다. 또한 나중에 실행 파일을 저장할 수 있습니다.
 
 > [!NOTE]
-> ASP.NET 및 웹 도구 2012.2 릴리스는 SQL Server Data Tools를 포함 하지 않습니다. SQL Server와 Windows Azure SQL 데이터베이스에는 다양 한 데이터베이스 프로젝트 기반 오프 라인으로 개발, 스키마 비교 및 향상 된 데이터베이스 배포 기능을 포함 하 여 도구를 제공 합니다. 자세한 내용을 보거나 SQL Server Data Tools를 설치 하려면 방문 [https://go.microsoft.com/fwlink/?LinkID=237127](https://go.microsoft.com/fwlink/?LinkID=237127)합니다.
+> ASP.NET 및 웹 도구 2012.2 릴리스는 SQL Server Data Tools를 포함 하지 않습니다. SQL Server와 Windows Azure SQL 데이터베이스에는 다양 한 데이터베이스 프로젝트 기반 오프 라인으로 개발, 스키마 비교 및 향상 된 데이터베이스 배포 기능을 포함 하 여 도구를 제공 합니다. 자세한 내용을 보거나 SQL Server Data Tools를 설치 하려면 방문 [ https://go.microsoft.com/fwlink/?LinkID=237127 ](https://go.microsoft.com/fwlink/?LinkID=237127)합니다.
 
 <a id="_Documentation"></a>
 ## <a name="documentation"></a>설명서
 
-자습서 및 ASP.NET 및 웹 도구 2012.2 하는 방법에 대 한 기타 정보는 ASP.NET 웹 사이트 (https://www.asp.net)에서 사용할 수 있습니다.
+ASP.NET 웹 사이트에서 사용할 수 있는 자습서 및 ASP.NET 및 웹 도구 2012.2 하는 방법에 대 한 기타 정보 ( https://www.asp.net)합니다.
 
 <a id="_Support"></a>
 ## <a name="support"></a>Support(지원)
@@ -104,8 +104,8 @@ ASP.NET 및 웹 도구 2012.2 Visual Studio 2012 또는 Visual Studio Express 20
 <a id="_Templates"></a>
 ### <a name="aspnet-mvc-templates"></a>ASP.NET MVC 템플릿
 
-- 새로운 Facebook 응용 프로그램 템플릿 덕분에 Facebook Canvas 쉽게 응용 프로그램을 작성 합니다. 몇 가지 간단한 단계에서에서 로그인된 한 사용자 데이터를 가져오고 자신의 친구와 통합 하는 Facebook 응용 프로그램을 만들 수 있습니다. 서식 파일에는 인증, 사용 권한, Facebook 데이터 액세스를 포함 하 여 Facebook 응용 프로그램 작성과 관련 된 모든 배관을 처리 하기 위한 새 라이브러리가 포함 됩니다. Facebook 응용 프로그램 템플릿을 사용 하 여 대 한 자세한 내용은 참조 [https://go.microsoft.com/fwlink/?LinkID=269921](https://go.microsoft.com/fwlink/?LinkID=269921)합니다.
-- 새로운 단일 페이지 응용 프로그램 MVC 템플릿을 HTML 5, CSS 3 Knockout 및 jQuery JavaScript 라이브러리를 ASP.NET Web API를 사용 하 여 대화형 클라이언트 쪽 웹 앱을 만들 수가 있습니다. 서식 파일에 RESTful 서버 API를 사용 하는 JavaScript HTML5 응용 프로그램을 작성 하기 위한 일반적인 방법을 보여 주는 "todo" 목록 응용 프로그램에 포함 됩니다. 자세히 알아볼 수 있습니다 [https://www.asp.net/single-page-application](../../../single-page-application/index.md)합니다.
+- 새로운 Facebook 응용 프로그램 템플릿 덕분에 Facebook Canvas 쉽게 응용 프로그램을 작성 합니다. 몇 가지 간단한 단계에서에서 로그인된 한 사용자 데이터를 가져오고 자신의 친구와 통합 하는 Facebook 응용 프로그램을 만들 수 있습니다. 서식 파일에는 인증, 사용 권한, Facebook 데이터 액세스를 포함 하 여 Facebook 응용 프로그램 작성과 관련 된 모든 배관을 처리 하기 위한 새 라이브러리가 포함 됩니다. Facebook 응용 프로그램 템플릿을 사용 하 여 대 한 자세한 내용은 참조 [ https://go.microsoft.com/fwlink/?LinkID=269921 ](https://go.microsoft.com/fwlink/?LinkID=269921)합니다.
+- 새로운 단일 페이지 응용 프로그램 MVC 템플릿을 HTML 5, CSS 3 Knockout 및 jQuery JavaScript 라이브러리를 ASP.NET Web API를 사용 하 여 대화형 클라이언트 쪽 웹 앱을 만들 수가 있습니다. 서식 파일에 RESTful 서버 API를 사용 하는 JavaScript HTML5 응용 프로그램을 작성 하기 위한 일반적인 방법을 보여 주는 "todo" 목록 응용 프로그램에 포함 됩니다. 자세히 알아볼 수 있습니다 [ https://www.asp.net/single-page-application ](../../../single-page-application/index.md)합니다.
 - 이제 ASP.NET MVC 새 프로젝트 대화 상자에 새 템플릿을 추가 하는 VSIX를 만들 수 있습니다. 자세한 내용은: [https://go.microsoft.com/fwlink/?LinkId=275019](https://go.microsoft.com/fwlink/?LinkId=275019)
 - FixedDisplayModes 패키지 &#8211; MVC 프로젝트 템플릿은 MVC 4의 버그에 대 한 해결책을 포함 하는 새 'FixedDisplayModes' NuGet 패키지를 포함 하도록 업데이트 되었습니다. 패키지에 포함 된 수정에 관한 자세한 내용은이 블로그 게시물을 참조 ([https://blogs.msdn.com/b/rickandy/archive/2012/09/17/asp-net-mvc-4-mobile-caching-bug-fixed.aspx](https://blogs.msdn.com/b/rickandy/archive/2012/09/17/asp-net-mvc-4-mobile-caching-bug-fixed.aspx)) MVC 팀에서.
 
@@ -148,33 +148,33 @@ ASP.NET Web API OData는 현재 다음과 같은 기능을 지원합니다.
 - OData 작업입니다.
 - WCF Data Services, 즉 ODataLib와 동일한 기반을 기반으로 구축 ([http://www.nuget.org/packages/microsoft.data.odata](http://www.nuget.org/packages/microsoft.data.odata)).
 
-ASP.NET Web API OData에 대 한 자세한 내용은 참조 [https://go.microsoft.com/fwlink/?LinkId=271141](https://go.microsoft.com/fwlink/?LinkId=271141)합니다.
+ASP.NET Web API OData에 대 한 자세한 내용은 참조 [ https://go.microsoft.com/fwlink/?LinkId=271141 ](https://go.microsoft.com/fwlink/?LinkId=271141)합니다.
 
 #### <a name="aspnet-web-api-tracing"></a>ASP.NET Web API 추적
 
 ASP.NET Web API 추적.NET 추적 웹 Api에서에서 추적 데이터를 통합합니다. 이제 Web API 프로젝트 템플릿에 기본적으로 설정 됩니다. 웹에 대 한 데이터 추적 Api 출력 창에 전송 및 IntelliTrace를 통해 사용할 수 있습니다. ASP.NET Web API Tracing 하면 Web API와의 통합을 통해 Windows Azure에서 호스팅되는 경우에 대 한 추적 정보 [Windows Azure 진단](https://msdn.microsoft.com/library/windowsazure/hh411529.aspx)합니다. 또한 설치 하 고 ASP.NET 웹 API 추적 NuGet 패키지를 사용 하 여 모든 응용 프로그램에서 ASP.NET 웹 API 추적 기능을 활성화 수 ([http://www.nuget.org/packages/microsoft.aspnet.webapi.tracing](http://www.nuget.org/packages/microsoft.aspnet.webapi.tracing)).
 
-구성 및 ASP.NET Web API Tracing 사용에 대 한 자세한 내용은 참조 [https://go.microsoft.com/fwlink/?LinkID=269874](https://go.microsoft.com/fwlink/?LinkID=269874)합니다.
+구성 및 ASP.NET Web API Tracing 사용에 대 한 자세한 내용은 참조 [ https://go.microsoft.com/fwlink/?LinkID=269874 ](https://go.microsoft.com/fwlink/?LinkID=269874)합니다.
 
 #### <a name="aspnet-web-api-help-page"></a>ASP.NET Web API 도움말 페이지
 
 이제 ASP.NET Web API 도움말 페이지는 웹 API 프로젝트 템플릿에 기본적으로 포함 됩니다. ASP.NET 웹 API 도움말 페이지는 웹 HTTP 끝점, 지원 되는 HTTP 방법, 매개 변수 및 예제 요청 및 응답 메시지 페이로드를 포함 하 여 Api에 대 한 설명서를 자동으로 생성 합니다. 문서는 자동으로 코드의 주석에서 찾아볼 수 있습니다. ASP.NET 웹 API 도움말 페이지 NuGet 패키지를 사용 하 여 응용 프로그램에 ASP.NET 웹 API 도움말 페이지를 추가할 수도 있습니다 ([http://www.nuget.org/packages/microsoft.aspnet.webapi.helppage](http://www.nuget.org/packages/microsoft.aspnet.webapi.helppage)).
 
-설정 및 ASP.NET 웹 API 도움말 페이지 참조를 사용자 지정에 대 한 자세한 내용은 [https://go.microsoft.com/fwlink/?LinkId=271140](https://go.microsoft.com/fwlink/?LinkId=271140)합니다.
+설정 및 ASP.NET 웹 API 도움말 페이지 참조를 사용자 지정에 대 한 자세한 내용은 [ https://go.microsoft.com/fwlink/?LinkId=271140 ](https://go.microsoft.com/fwlink/?LinkId=271140)합니다.
 
 <a id="_ASP.NET_SignalR"></a>
 ### <a name="aspnet-signalr"></a>ASP.NET SignalR
 
 ASP.NET SignalR 쉽게 실시간 웹 기능 ASP.NET 응용 프로그램을 추가할 수 있는 경우 Websocket을 사용 하 고 자동으로 대체 하기 명시 된 기타 기술을 그렇지 않을 경우 있습니다.
 
-ASP.NET SignalR을 사용 하 여 대 한 자세한 내용은 참조 [https://go.microsoft.com/fwlink/?LinkId=271271](https://go.microsoft.com/fwlink/?LinkId=271271)합니다.
+ASP.NET SignalR을 사용 하 여 대 한 자세한 내용은 참조 [ https://go.microsoft.com/fwlink/?LinkId=271271 ](https://go.microsoft.com/fwlink/?LinkId=271271)합니다.
 
 <a id="_ASP.NET_Friendly_URLs"></a>
 ### <a name="aspnet-friendly-urls"></a>Asp.net Url
 
 ASP.NET FriendlyURLs를 사용 하면 수행 되는 클리너 (.aspx 확장명 없음) Url을 찾고 생성 하려면 web forms 개발자가 매우 쉬워집니다. No로 적은 구성이 필요로 하며 기존 ASP.NET v4.0 응용 프로그램과 함께 사용할 수 있습니다. 또한 FriendlyURLs 기능을 사용 하면 보다 쉽게 지원 데스크톱 및 모바일 뷰 간을 전환 하 여 해당 응용 프로그램에 모바일 지원을 추가 하는 개발자를 위한 합니다.
 
-설치 및 ASP.NET Url 사용에 대 한 자세한 내용은 참조 [http://www.hanselman.com/blog/IntroducingASPNETFriendlyUrlsCleanerURLsEasierRoutingAndMobileViewsForASPNETWebForms.aspx](http://www.hanselman.com/blog/IntroducingASPNETFriendlyUrlsCleanerURLsEasierRoutingAndMobileViewsForASPNETWebForms.aspx)합니다.
+설치 및 ASP.NET Url 사용에 대 한 자세한 내용은 참조 [ http://www.hanselman.com/blog/IntroducingASPNETFriendlyUrlsCleanerURLsEasierRoutingAndMobileViewsForASPNETWebForms.aspx ](http://www.hanselman.com/blog/IntroducingASPNETFriendlyUrlsCleanerURLsEasierRoutingAndMobileViewsForASPNETWebForms.aspx)합니다.
 
 <a id="_Known_Issues_and"></a>
 ## <a name="known-issues-and-breaking-changes"></a>알려진된 문제 및 주요 변경 내용
@@ -226,7 +226,7 @@ ASP.NET 및 웹 도구 2012.2 NuGet 2.1을 함께 제공 하 고 Visual Studio 2
 3. Visual Studio를 닫습니다.
 4. ASP.NET 및 웹 도구 2012.2 설치 폴더로 이동 합니다.
 
-    1. For Visual Studio 2012: **Program Files\Microsoft ASP.NET\ASP.NET Web Stack\Visual Studio 2012**
+    1. Visual Studio 2012: **Files\Microsoft ASP.NET\ASP.NET 웹 Stack\Visual Studio 2012 프로그램**
     2. Visual Studio 2012 Express for Web 용: **Program Files\Microsoft ASP.NET\ASP.NET 웹 Stack\Visual Studio Express 2012 for Web**
 5. NuGet을 다시 설치 하려면 NuGet.Tools.vsix을 두 번 클릭
 
@@ -247,7 +247,7 @@ OData는 OData 쿼리 및 odata 경로에 대/소문자 속성 이름을 지원 
 
 #### <a name="default-odata-routing-conventions-doesnt-support-postput-on-navigation-property"></a>기본 OData 라우팅 규칙 탐색 속성에 대해 POST/PUT을 지원 하지 않습니다.
 
-기본 OData 라우팅 규칙 탐색 속성에 대해 POST/PUT을 지원 하지 않습니다. 작업 항목을 참조 [http://aspnetwebstack.codeplex.com/workitem/366](http://aspnetwebstack.codeplex.com/workitem/366)합니다. 기본 규칙에서이 자주 사용 되는 규칙을 누락 됩니다.
+기본 OData 라우팅 규칙 탐색 속성에 대해 POST/PUT을 지원 하지 않습니다. 작업 항목을 참조 [ http://aspnetwebstack.codeplex.com/workitem/366 ](http://aspnetwebstack.codeplex.com/workitem/366)합니다. 기본 규칙에서이 자주 사용 되는 규칙을 누락 됩니다.
 
 이 해결 하려면 사용자를 지원 하기 위한 새 경로 규칙을 확장 해야 합니다.
 
@@ -259,7 +259,7 @@ ASP.NET MVC 4에 Facebook 응용 프로그램 템플릿이 새 프로젝트 대�
 
 #### <a name="real-time-update-controller"></a>컨트롤러 실시간 업데이트
 
-Facebook 응용 프로그램 템플릿은 사용자를 쉽게 있습니다 facebook에서 실시간 업데이트를 처리 하도록 Web API 컨트롤러를 만듭니다. 개발 컴퓨터 NAT 뒤에 있는 포함 된 경우 컨트롤러 추가 네트워크 구성 없이도 작동 하지 않습니다. 자세한 내용은 여기를 참조 하십시오.: [http://facebook.stackoverflow.com/questions/5259467/can-a-computer-behind-a-nat-router-receive-realtime-updates-from-facebook](http://facebook.stackoverflow.com/questions/5259467/can-a-computer-behind-a-nat-router-receive-realtime-updates-from-facebook)
+Facebook 응용 프로그램 템플릿은 사용자를 쉽게 있습니다 facebook에서 실시간 업데이트를 처리 하도록 Web API 컨트롤러를 만듭니다. 개발 컴퓨터 NAT 뒤에 있는 포함 된 경우 컨트롤러 추가 네트워크 구성 없이도 작동 하지 않습니다. 자세한 내용은 여기를 참조 하십시오. [http://facebook.stackoverflow.com/questions/5259467/can-a-computer-behind-a-nat-router-receive-realtime-updates-from-facebook](http://facebook.stackoverflow.com/questions/5259467/can-a-computer-behind-a-nat-router-receive-realtime-updates-from-facebook)
 
 #### <a name="query-string-values-conflict-with-facebook-oauth-parameters"></a>Facebook OAuth 매개 변수가 있는 문자열 값이 충돌 하는 쿼리
 
@@ -275,7 +275,7 @@ Facebook 응용 프로그램을 디버깅 하는 동안 Visual Studio 2012에서
 
 JQuery 1.9/Knockout 2.2.1 업데이트을 기본 MVC SPA 프로젝트를 실행할 때 새 할 일 항목 편집 입력 더 이상 포커스 새 할 일 항목 편집 상자에 다시 할 일 목록에 새 할 일 항목을 입력 한 후 합니다.
 
-해결 방법 참조 [http://knockoutjs.com/documentation/hasfocus-binding.html](http://knockoutjs.com/documentation/hasfocus-binding.html), 다음 샘플 코드에 비슷한 수정 확인:
+해결 방법 참조 [ http://knockoutjs.com/documentation/hasfocus-binding.html ](http://knockoutjs.com/documentation/hasfocus-binding.html), 다음 샘플 코드에 비슷한 수정 확인:
 
 파일 todo.model.js  
  todolist(data) 함수, 추가 다음:  
@@ -286,6 +286,6 @@ todoList.prototype.addTodo 함수 blacked 다음 텍스트를 추가 합니다.
  self.newTodoTitle(&quot;&quot;);
 
 Index.cshtml 파일 blacked 다음 텍스트를 추가 합니다.  
- &lt;form data-bind=&quot;submit: addTodo&quot;&gt;  
- &lt;클래스를 입력 =&quot;addTodo&quot; 유형 =&quot;텍스트&quot; 데이터 바인딩 =&quot;값: newTodoTitle, 자리 표시자: '여기에 형식을 추가 하려면', blurOnEnter: true 이면 **hasfocus: isSelected**, 이벤트: {흐림: addTodo}&quot; /&gt;  
+ &lt;데이터 바인딩 폼 =&quot;제출: addTodo&quot;&gt;  
+ &lt;input class=&quot;addTodo&quot; type=&quot;text&quot; data-bind=&quot;value: newTodoTitle, placeholder: 'Type here to add', blurOnEnter: true, **hasfocus: isSelected**, event: { blur: addTodo }&quot; /&gt;  
  &lt;/form&gt;

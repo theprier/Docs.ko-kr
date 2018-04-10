@@ -16,7 +16,7 @@ ms.openlocfilehash: 7b3130ca7d36ffec457e1871fa62c1077b5e3174
 ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/10/2018
 ---
 <a name="configuring-a-tfs-build-server-for-web-deployment"></a>웹 배포를 위한 TFS 빌드 서버 구성
 ====================
@@ -74,7 +74,7 @@ ms.lasthandoff: 04/06/2018
 
 - **.NET Framework 4.0**. 이 버전의.NET Framework에 작성 된 응용 프로그램을 실행 해야 합니다.
 - **웹 배포 도구 2.1 이상**합니다. 서버에 웹 배포 (및 해당 기본 실행 파일, MSDeploy.exe)를 설치합니다. 이 과정의 일환으로, 설치 및 웹 배포 에이전트 서비스를 시작 합니다. 이 서비스는 원격 컴퓨터에서 웹 패키지를 배포할 수 있습니다.
-- **ASP.NET MVC 3**합니다. ASP.NET MVC 3 응용 프로그램을 실행 해야 하는 어셈블리를 설치 합니다.
+- **ASP.NET MVC 3**. ASP.NET MVC 3 응용 프로그램을 실행 해야 하는 어셈블리를 설치 합니다.
 
 **필요한 제품 및 구성 요소를 설치 하려면**
 

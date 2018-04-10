@@ -1,22 +1,22 @@
 ---
 uid: overview
-title: "ASP.NET 개요 | Microsoft Docs"
+title: ASP.NET 개요 | Microsoft Docs
 author: rick-anderson
-description: "ASP.NET, 웹 사이트, 웹 응용 프로그램 및 web Api 만들기 위한 무료 프레임 워크에 소개 합니다."
+description: ASP.NET, 웹 사이트, 웹 응용 프로그램 및 web Api 만들기 위한 무료 프레임 워크에 소개 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/12/2010
 ms.topic: article
 ms.assetid: 3a309468-f1ca-4e51-b9c3-536af79d7a8b
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
-msc.legacyurl: 
+msc.legacyurl: ''
 msc.type: content
 ms.openlocfilehash: 0ba7814d4004b17e678eab9a2a41a6d6f34773e1
-ms.sourcegitcommit: 53ee14b9c8200f44705d8997c3619fa874192d45
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/08/2018
+ms.lasthandoff: 04/10/2018
 ---
 # <a name="aspnet-overview"></a>ASP.NET 개요
 
@@ -39,7 +39,7 @@ ASP.NET은 뛰어난 웹 사이트 및 HTML, CSS 및 JavaScript를 사용 하 �
 |   | 환경에 있는 경우 | 개발 스타일 | 전문 지식 | 
 |-----------|----------------------|-----------------------------------------------------|----------------|
 | Web Forms | Win Forms, WPF, .NET | HTML 태그를 캡슐화 하는 컨트롤의 풍부한 라이브러리를 사용 하 여 신속 하 게 개발 | 표준은 중간 수준의 고급 RAD |
-| MVC       | 레일에.NET에 ruby  | HTML 태그, 코드 및 태그, 분리 되 고 테스트를 작성 하기가 대 한 모든 권한을 합니다. 모바일 및 단일 페이지 응용 프로그램 (SPA)에 적합 합니다. | Mid-Level, Advanced |
+| MVC       | 레일에.NET에 ruby  | HTML 태그, 코드 및 태그, 분리 되 고 테스트를 작성 하기가 대 한 모든 권한을 합니다. 모바일 및 단일 페이지 응용 프로그램 (SPA)에 적합 합니다. | 표준은 중간 수준의 고급 |
 | 웹 페이지  | 클래식 ASP, PHP     | HTML 태그와 같은 파일에 함께 코드 | 새, 중간 수준 |
 
 ### <a name="web-forms"></a>Web Forms
