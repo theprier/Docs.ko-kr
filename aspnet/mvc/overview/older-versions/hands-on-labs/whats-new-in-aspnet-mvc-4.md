@@ -580,7 +580,7 @@ jQuery Mobile 기본 테마 문자 권한이 부여 된 5 견본 포함 (a, b, c
     ![바탕 화면 보기에서 렌더링 전환기 볼](whats-new-in-aspnet-mvc-4/_static/image32.png "뷰 전환기 바탕 화면 보기에서 렌더링")
 
     *바탕 화면 보기에서 렌더링 된 뷰 전환기*
-7. 모바일 뷰로 다시 전환 하 고 찾아보기 <strong>에 대 한</strong> 페이지 (http://localhost[port] / Home/에 대 한). About.Mobile.cshtml 보기를 만들지 않은 경우에 정보 페이지 표시 되는지 확인 모바일 레이아웃을 사용 하 여 (\_Layout.Mobile.cshtml).
+7. 모바일 뷰로 다시 전환 하 고 찾아보기 <strong>에 대 한</strong> 페이지 (http://localhost[port]/Home/About). About.Mobile.cshtml 보기를 만들지 않은 경우에 정보 페이지 표시 되는지 확인 모바일 레이아웃을 사용 하 여 (\_Layout.Mobile.cshtml).
 
     ![페이지에 대 한](whats-new-in-aspnet-mvc-4/_static/image33.png "페이지에 대 한")
 
