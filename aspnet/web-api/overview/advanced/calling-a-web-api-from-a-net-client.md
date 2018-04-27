@@ -11,17 +11,17 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/advanced/calling-a-web-api-from-a-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: a243eeb982ba581e237263c4e31e130d634aff0e
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: fdb74b0eb74ce7f387f49a0b25ceebd3fc389da9
+ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/26/2018
 ---
 <a name="call-a-web-api-from-a-net-client-c"></a>.NET 클라이언트 (C#)에서 Web API를 호출 합니다.
 ====================
 여 [Mike Wasson](https://github.com/MikeWasson) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[완료 된 프로젝트를 다운로드 합니다.](https://github.com/aspnet/Docs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample)
+[완료 된 프로젝트를 다운로드](https://github.com/aspnet/Docs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample)합니다. [지침을 다운로드하세요](/aspnet/core/tutorials/#how-to-download-a-sample). 
 
 .NET 응용 프로그램에서 web API를 호출 하는 방법을 보여 주는이 자습서를 사용 하 여 [System.Net.Http.HttpClient 합니다.](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.110).aspx)
 
@@ -167,7 +167,7 @@ GET, 처럼 DELETE 요청은 요청 본문이 필요가 없습니다. DELETE로 
 
 클라이언트 앱을 테스트 합니다.
 
-1. [다운로드](https://github.com/aspnet/Docs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample/server) 및 서버 응용 프로그램을 실행 합니다. [지침을 다운로드하세요](https://docs.microsoft.com/aspnet/core/tutorials/#how-to-download-a-sample). 서버 응용 프로그램 작동을 확인 합니다. Exaxmple에 대 한 `http://localhost:64195/api/products` 제품 목록이 반환 해야 합니다.
+1. [다운로드](https://github.com/aspnet/Docs/tree/master/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client/sample/server) 및 서버 응용 프로그램을 실행 합니다. [지침을 다운로드하세요](/aspnet/core/tutorials/#how-to-download-a-sample). 서버 응용 프로그램 작동을 확인 합니다. Exaxmple에 대 한 `http://localhost:64195/api/products` 제품 목록이 반환 해야 합니다.
 2. HTTP 요청에 대 한 기본 URI를 설정 합니다. 서버 응용 프로그램에서 사용 되는 포트를 포트 번호를 변경 합니다.
     [!code-csharp[Main](calling-a-web-api-from-a-net-client/sample/client/Program.cs?name=snippet5&highlight=2)]
 

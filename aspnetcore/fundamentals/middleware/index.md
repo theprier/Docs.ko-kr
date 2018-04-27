@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/middleware/index
-ms.openlocfilehash: 3312b27f936340a73243224c1a716fe421f178bc
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: a410d686b6140a487efb9962e94f64cfbec245f2
+ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="aspnet-core-middleware"></a>ASP.NET Core 미들웨어
 
@@ -241,7 +241,7 @@ ASP.NET Core는 다음 미들웨어 구성 요소 및 추가되어야 하는 순
 
 미들웨어는 요청당이 아닌 앱 시작 시 생성되므로 미들웨어 생성자에 의해 사용되는 *범위가 지정된* 수명 서비스는 각 요청 중에 다른 종속성 주입된 형식과 공유되지 않습니다. *범위가 지정된* 서비스를 미들웨어와 다른 형식 간에 공유해야 하는 경우 이러한 서비스를 `Invoke` 메서드의 서명에 추가합니다. `Invoke` 메서드는 종속성 주입으로 채워지는 추가 매개 변수를 수락할 수 있습니다. 예:
 
-```c#
+```csharp
 public class MyMiddleware
 {
     private readonly RequestDelegate _next;

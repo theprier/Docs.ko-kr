@@ -3,6 +3,7 @@ title: SignalR에서 ASP.NET Core 시작
 author: rachelappel
 description: 이 자습서에서는 ASP.NET Core 용 SignalR을 사용 하 여 응용 프로그램을 만듭니다.
 manager: wpickett
+monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
 ms.custom: mvc
 ms.date: 03/16/2018
@@ -10,17 +11,17 @@ ms.prod: aspnet-core
 ms.topic: tutorial
 ms.technology: aspnet
 uid: signalr/get-started
-ms.openlocfilehash: cf120d535c85c7871f5b1f27039018ea2405b9cb
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 03735359bb22cc3085ddc7b34372ecfc9501a940
+ms.sourcegitcommit: 07903a1be39a99dcf538d57981161592d0e658b8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/20/2018
 ---
 # <a name="get-started-with-signalr-on-aspnet-core"></a>SignalR에서 ASP.NET Core 시작
 
 작성자: [Rachel Appel](https://twitter.com/rachelappel)
 
-[!INCLUDE [Version notice](../includes/signalr-version-notice.md)]
+[!INCLUDE [2.1 preview notice](~/includes/2.1.md)]
 
 이 자습서의 ASP.NET Core 용 SignalR을 사용 하 여 실시간 앱 빌드 기본 사항에 설명 합니다.
 
@@ -41,14 +42,14 @@ ms.lasthandoff: 04/06/2018
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-* [.NET core 2.1.0 Preview 1 SDK](https://www.microsoft.com/net/download/dotnet-core/sdk-2.1.300-preview1) 이상 버전
-* [Visual Studio 2017](https://www.visualstudio.com/downloads/) 15.6 이상 버전에서 **ASP.NET 및 웹 개발** 작업
+* [.NET core 2.1.0 Preview 2 SDK](https://www.microsoft.com/net/download/dotnet-core/sdk-2.1.300-preview2) 이상 버전
+* [Visual Studio 2017](https://www.visualstudio.com/downloads/) 15.7 이상 버전에서 **ASP.NET 및 웹 개발** 작업
 * [npm](https://www.npmjs.com/get-npm)
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 
-* [.NET core 2.1.0 Preview 1 SDK](https://www.microsoft.com/net/download/dotnet-core/sdk-2.1.300-preview1) 이상 버전
-* [Visual Studio Code](https://code.visualstudio.com/download) 
+* [.NET core 2.1.0 Preview 2 SDK](https://www.microsoft.com/net/download/dotnet-core/sdk-2.1.300-preview2) 이상 버전
+* [Visual Studio Code](https://code.visualstudio.com/download)
 * [Visual Studio 코드에 대 한 C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
 * [npm](https://www.npmjs.com/get-npm)
 
@@ -56,7 +57,8 @@ ms.lasthandoff: 04/06/2018
 
 ## <a name="create-an-aspnet-core-project-that-hosts-signalr-client-and-server"></a>SignalR 클라이언트와 서버를 호스팅하는 ASP.NET Core 프로젝트 만들기
 
-#### <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
+
 1. 사용 하 여는 **파일** > **새 프로젝트** 메뉴 옵션 선택한 **ASP.NET Core 웹 응용 프로그램**합니다. 프로젝트 이름을 *SignalRChat*합니다.
 
    ![Visual Studio에서 새 프로젝트 대화 상자](get-started/_static/signalr-new-project-dialog.png)
@@ -65,16 +67,19 @@ ms.lasthandoff: 04/06/2018
 
    ![Visual Studio에서 새 프로젝트 대화 상자](get-started/_static/signalr-new-project-choose-type.png)
 
-3. 프로젝트를 마우스 오른쪽 단추로 클릭 **솔루션 탐색기** > **추가** > **새 항목** > **npm 구성 파일** . 파일 이름을 *package.json*합니다.
+Visual Studio에 포함 되어는 `Microsoft.AspNetCore.SignalR` 서버 라이브러리의 일부로 포함 된 패키지의 **ASP.NET Core 웹 응용 프로그램** 템플릿. 그러나 SignalR 용 JavaScript 클라이언트 라이브러리 해야 설치를 사용 하 여 *npm*합니다.
 
-4. 다음 명령을 실행 하는 **패키지 관리자 콘솔** 프로젝트 루트에서 창:
+3. 다음 명령을 실행 하는 **패키지 관리자 콘솔** 프로젝트 루트에서 창:
 
     ```console
+      npm init -y
       npm install @aspnet/signalr
-    ```
-5. 복사는 <em>signalr.js</em> 에서 파일을 <em>node_modules\\ @aspnet\signalr\dist\browser</em>  에 <em>wwwroot\lib</em> 프로젝트의 폴더에에서 있습니다.
+    ```     
 
-#### <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
+4. 복사는 *signalr.js* 에서 파일을 *node_modules\\ @aspnet\signalr\dist\browser*  에 *lib* 프로젝트의 폴더에에서 있습니다.
+
+# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
+
 1. **통합 터미널**, 다음 명령을 실행 합니다.
 
     ```console
@@ -88,21 +93,24 @@ ms.lasthandoff: 04/06/2018
       npm install @aspnet/signalr
     ```
 
-* * *
+-----
+
 ## <a name="create-the-signalr-hub"></a>SignalR 허브를 만듭니다.
 
 허브는 클라이언트와 서버에서 다른 메서드를 호출할 수 있도록 하는 높은 수준의 파이프라인으로 사용 되는 클래스입니다.
 
-#### <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
+
 1. 클래스를 선택 하 여 프로젝트에 추가 **파일** > **새로** > **파일** 선택 하 고 **Visual C# 클래스**합니다.
 
 2. 상속 `Microsoft.AspNetCore.SignalR.Hub`합니다. `Hub` 속성과 송신 및 수신 데이터 뿐 아니라 연결 그룹을 관리 하기 위한 이벤트 클래스를 포함 합니다.
 
-3. 만들기는 `SendMessage` 모든 연결 된 채팅 클라이언트에 메시지를 보내는 방법입니다. 반환 확인는 [작업](https://msdn.microsoft.com/en-us/library/system.threading.tasks.task(v=vs.110).aspx)SignalR 비동기 이기 때문에 있습니다. 비동기 코드 확장성이 좋아집니다.
+3. 만들기는 `SendMessage` 모든 연결 된 채팅 클라이언트에 메시지를 보내는 방법입니다. 반환 확인는 [작업](https://msdn.microsoft.com/library/system.threading.tasks.task(v=vs.110).aspx)SignalR 비동기 이기 때문에 있습니다. 비동기 코드 확장성이 좋아집니다.
 
-   [!code-csharp[Startup](get-started/sample/Hubs/ChatHub.cs?range=7-14)]
+   [!code-csharp[Startup](get-started/sample/Hubs/ChatHub.cs)]
 
-#### <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
+# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
+
 1. 열기는 *SignalRChat* Visual Studio Code에서 폴더입니다.
 
 2. 클래스를 선택 하 여 프로젝트에 추가 **파일** > **새 파일** 메뉴에서 합니다.
@@ -111,9 +119,10 @@ ms.lasthandoff: 04/06/2018
 
 4. 클래스에 `SendMessage` 메서드를 추가합니다. `SendMessage` 메서드는 모든 연결 된 채팅 클라이언트에 메시지를 보냅니다. 반환 확인는 [작업](/dotnet/api/system.threading.tasks.task)SignalR 비동기 이기 때문에 있습니다. 비동기 코드 확장성이 좋아집니다.
 
-   [!code-csharp[Startup](get-started/sample/Hubs/ChatHub.cs?range=7-14)]
+   [!code-csharp[Startup](get-started/sample/Hubs/ChatHub.cs?range=6-12)]
 
-* * *
+-----
+
 ## <a name="configure-the-project-to-use-signalr"></a>SignalR을 사용 하도록 프로젝트를 구성 합니다.
 
 SignalR 서버 signalr 요청을 전달 하려면 알 수 있도록 구성 되어야 합니다.
@@ -124,7 +133,9 @@ SignalR 서버 signalr 요청을 전달 하려면 알 수 있도록 구성 되�
 
 2. 사용 하 여 허브에 대 한 라우팅을 구성 `UseSignalR`합니다.
 
-   [!code-csharp[Startup](get-started/sample/Startup.cs?highlight=22,40-43)]
+
+   [!code-csharp[Startup](get-started/sample/Startup.cs?highlight=36,56-59)]
+
 
 ## <a name="create-the-signalr-client-code"></a>SignalR 클라이언트 코드 만들기
 

@@ -12,11 +12,11 @@ ms.technology: dotnet-webpages
 ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-c
 msc.type: authoredcontent
-ms.openlocfilehash: 430033c06df74cc3661c40ca7f7bd9244cd257c9
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 48f49f40a6fc0c6a0c664873879f9f61080132ea
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/18/2018
 ---
 <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-c"></a>Razor 구문 (C#)를 사용 하 여 ASP.NET 웹 프로그래밍 소개
 ====================
@@ -58,7 +58,7 @@ ms.lasthandoff: 04/06/2018
 
 다음은 이러한 문을 페이지를 브라우저에서 실행할 때 모양을입니다.
 
-![Razor-Img1](introducing-razor-syntax-c/_static/image1.jpg)
+![Razor Img1](introducing-razor-syntax-c/_static/image1.jpg)
 
 > [!TIP] 
 > 
@@ -79,7 +79,7 @@ A *코드 블록* 하나 이상의 코드 문을 포함 하 고 중괄호로 묶
 
 브라우저에 표시 된 결과:
 
-![Razor-Img2](introducing-razor-syntax-c/_static/image2.jpg)
+![Razor Img2](introducing-razor-syntax-c/_static/image2.jpg)
 
 ### <a name="3-inside-a-block-you-end-each-code-statement-with-a-semicolon"></a>3. 블록 내 각 코드 문을 세미콜론으로 종료
 
@@ -95,7 +95,7 @@ A *코드 블록* 하나 이상의 코드 문을 포함 하 고 중괄호로 묶
 
 브라우저에 표시 된 결과:
 
-![Razor-Img3](introducing-razor-syntax-c/_static/image3.jpg)
+![Razor Img3](introducing-razor-syntax-c/_static/image3.jpg)
 
 <a id="ID_StringLiterals"></a>
 ### <a name="5-you-enclose-literal-string-values-in-double-quotation-marks"></a>5. 리터럴 문자열 값을 큰따옴표로 묶습니다.
@@ -114,7 +114,7 @@ A *문자열* 텍스트로 처리 되는 문자 시퀀스입니다. 문자열을
 
 이러한 예제 모두를 사용 하 여 페이지에서의 결과 다음과 같습니다.
 
-![Razor-Img4](introducing-razor-syntax-c/_static/image4.jpg)
+![Razor Img4](introducing-razor-syntax-c/_static/image4.jpg)
 
 > [!NOTE]
 > 에 `@` 문자는 C#에서 축 자 문자열 리터럴을 표시 하 고 ASP.NET 페이지의에서 코드를 표시 하는 사용 됩니다.
@@ -142,7 +142,7 @@ C#에서는 키워드 (같은 `var`, `true`, 및 `if`) 변수 이름은 대/소�
 
 브라우저에 표시 된 결과:
 
-![Razor-Img5](introducing-razor-syntax-c/_static/image5.jpg)
+![Razor Img5](introducing-razor-syntax-c/_static/image5.jpg)
 
 ### <a name="8-you-can-write-code-that-makes-decisions"></a>8. 의사 결정 하는 코드를 작성할 수 있습니다.
 
@@ -154,7 +154,7 @@ C#에서는 키워드 (같은 `var`, `true`, 및 `if`) 변수 이름은 대/소�
 
 브라우저에 표시 된 결과 (클릭 한 후 **전송**):
 
-![Razor-Img6](introducing-razor-syntax-c/_static/image6.jpg)
+![Razor Img6](introducing-razor-syntax-c/_static/image6.jpg)
 
 > [!TIP] 
 > 
@@ -187,7 +187,7 @@ C#에서는 키워드 (같은 `var`, `true`, 및 `if`) 변수 이름은 대/소�
     - `<form>` 태그를 포함 한 `method="post"` 특성입니다. 이 지정 하는 사용자가 클릭할 때 **추가**, 페이지 HTTP POST 메서드를 사용 하 여 서버에 보내집니다. 페이지가 제출 되는 경우는 `if(IsPost)` 테스트 결과가 true와 조건 코드를 실행, 숫자를 추가 하는 결과 표시 합니다.
 3. 페이지를 저장 하 고 브라우저에서 실행 합니다. (있는지 확인 페이지에서 선택한는 **파일** 실행 하기 전에 작업 영역입니다.) 두 정수를 입력 한 다음 클릭는 **추가** 단추입니다. 
 
-    ![Razor-Img7](introducing-razor-syntax-c/_static/image7.jpg)
+    ![Razor Img7](introducing-razor-syntax-c/_static/image7.jpg)
 
 ## <a name="basic-programming-concepts"></a>기본 프로그래밍 개념
 
@@ -209,7 +209,7 @@ Razor 구문이 버전인 ASP.NET에는 Microsoft.NET Framework를 기반으로 
 
 Razor 구문 쉽게 전문가 하는 경우는 초보자를 위한 본인이 사용 하면 생산성을 높일 경우 배울 수 있는 간단한 구문을 사용 하는 ASP.NET의 모든 기능을 제공 합니다. 이 구문은 간단 하 게 사용 하는 경우에 웹 사이트 보다 복잡 해지면 서 있는지 있습니다 사용할 수 있는 더 큰 프레임 워크의 강력한 제품군의 관계 ASP.NET 및.NET Framework를 의미 합니다.
 
-![Razor-Img8](introducing-razor-syntax-c/_static/image8.jpg)
+![Razor Img8](introducing-razor-syntax-c/_static/image8.jpg)
 
 > [!TIP] 
 > 
@@ -325,7 +325,7 @@ Razor에 C#의 중첩 된 블록에 제한이 있습니다. 자세한 내용은 
 
 페이지에 앞의 예제를 함께 사용 하면 브라우저에 표시 된이 표시 됩니다.
 
-![Razor-Img9](introducing-razor-syntax-c/_static/image9.jpg)
+![Razor Img9](introducing-razor-syntax-c/_static/image9.jpg)
 
 ### <a name="converting-and-testing-data-types"></a>변환 및 데이터 형식 테스트
 
@@ -343,35 +343,84 @@ ASP.NET 데이터 형식을 자동으로 확인할 일반적으로 수 있지만
 
 다음 표에서 변수에 대 한 몇 가지 일반적인 변환 및 테스트 메서드를 나열합니다.
 
-
-|   <strong>메서드</strong>    |                                                                              <strong>설명</strong>                                                                              |                         <strong>예제</strong>                         |
-|------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
-|      `AsInt(), IsInt()`      |                                                      정수 숫자 (예: "593")를 나타내는 문자열로 변환 합니다.                                                      |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample28.cs)]   |
-|     `AsBool(), IsBool()`     |                                                    와 같은 문자열 변환 &quot;true&quot; 또는 &quot;false&quot; 부울 형식으로.                                                     |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample29.cs)]   |
-|    `AsFloat(), IsFloat()`    |                                    같은 10 진수 값을 가진 문자열 변환 &quot;1.3&quot; 또는 &quot;7.439&quot; 된 부동 소수점 수입니다.                                    |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample30.cs)]   |
-|  `AsDecimal(), IsDecimal()`  | 와 같은 10 진수 값을 가진 문자열 변환 &quot;1.3&quot; 또는 &quot;7.439&quot; 소수로 합니다. (Asp.net에서 10 진수는 부동 소수점 숫자 보다 더 정확한.) |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample31.cs)]   |
-| `AsDateTime(), IsDateTime()` |                                                ASP.NET에는 날짜 및 시간 값을 나타내는 문자열 변환 `DateTime` 유형입니다.                                                 |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample32.cs)]   |
-|         `ToString()`         |                                                                       다른 데이터 형식을 문자열로 변환합니다.                                                                        | [!code-javascript[Main](introducing-razor-syntax-c/samples/sample33.js)] |
+::: 행:::::: 열::: <strong>메서드</strong> ::: 열 간:::::: 열::: <strong>설명</strong> ::: 열 간:::::: 열::: <strong>예제</strong> ::: 종료 열:::::: 마지막 행:::
+* * *
+::: 행:::::: 열::: `AsInt(), IsInt()` ::: 종료 열:::::: 열::: 정수로 숫자 (예: "593")를 나타내는 문자열로 변환 합니다.
+::: 종료 열:::::: 열::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample28.cs)]
+    ::: 종료 열:::::: 마지막 행:::
+* * *
+::: 행:::::: 열::: `AsBool(), IsBool()` ::: 종료 열:::::: 열:::와 같은 문자열 변환 &quot;true&quot; 또는 &quot;false&quot; 부울 형식으로.
+::: 종료 열:::::: 열::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample29.cs)]
+    ::: 종료 열:::::: 마지막 행:::
+* * *
+::: 행:::::: 열::: `AsFloat(), IsFloat()` ::: 열 간:::::: 열:::와 같은 10 진수 값을 가진 문자열 변환 &quot;1.3&quot; 또는 &quot;7.439&quot; 을 부동 소수점 숫자로 합니다.
+::: 종료 열:::::: 열::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample30.cs)]
+    ::: 종료 열:::::: 마지막 행:::
+* * *
+::: 행:::::: 열::: `AsDecimal(), IsDecimal()` ::: 열 간:::::: 열:::와 같은 10 진수 값을 가진 문자열 변환 &quot;1.3&quot; 또는 &quot;7.439&quot; 소수로 합니다. (Asp.net에서 10 진수는 부동 소수점 숫자 보다 더 정확한.) ::: 종료 열:::::: 열::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample31.cs)]
+    ::: 종료 열:::::: 마지막 행:::
+* * *
+::: 행:::::: 열::: `AsDateTime(), IsDateTime()` ::: 열 간:::::: 열::: ASP.NET에는 날짜 및 시간 값을 나타내는 문자열 변환 `DateTime` 유형입니다.
+::: 종료 열:::::: 열::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample32.cs)]
+    ::: 종료 열:::::: 마지막 행:::
+* * *
+::: 행:::::: 열::: `ToString()` ::: 종료 열:::::: 열::: 다른 데이터 형식 문자열로 변환 합니다.
+::: 종료 열:::::: 열::: [!code-javascript[Main](introducing-razor-syntax-c/samples/sample33.js)]
+    ::: 종료 열:::::: 마지막 행:::
 
 ## <a name="operators"></a>연산자
 
 연산자는 키워드 또는 ASP.NET 어떤 유형의 식에서 수행 하기 위한 명령에 알려 주는 문자입니다. C# 언어 (및 Razor 구문을 기반으로 하는) 다양 한 연산자를 지원 하지만 초보자를 위한 몇 가지를 인식 해야 합니다. 다음 표에서 가장 일반적인 연산자 요약 되어 있습니다.
 
 
-|   <strong>Operator</strong>    |                                                                     <strong>설명</strong>                                                                     |                        <strong>예제</strong>                         |
-|--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
-|        `+` `-` `*` `/`         |                                                            숫자 식에 사용 되는 수학 연산자.                                                             |    [!code-css[Main](introducing-razor-syntax-c/samples/sample34.css)]    |
-|              `=`               |                                    할당. 왼쪽에 있는 개체를 문의 오른쪽에 있는 값을 할당합니다.                                    |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample35.cs)]   |
-|              `==`              |                      같음 반환 `true` 값이 동일 합니다. (간의 차이 확인할 수는 `=` 연산자 및 `==` 연산자입니다.)                      |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample36.cs)]   |
-|              `!=`              |                                                       같지 않음 반환 `true` 값 같지 않으면 합니다.                                                        |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample37.cs)]   |
-|          `< > <= >=`           |                                               작음-, 보다 큼-보다 작음-보다-또는-같음 및 크거나 같음.                                                |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample38.cs)]   |
-|              `+`               | 연결 문자열을 조인 하는 데 사용 됩니다. ASP.NET이이 연산자 및 식의 데이터 형식을 기반으로 하는 더하기 연산자의 차이점을 알고 있습니다. |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample39.cs)]   |
-|           `+=` `-=`            |                                   증가 및 감소 연산자의 추가 하 고 변수에서 각각 1을 뺌입니다.                                    |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample40.cs)]   |
-|              `.`               |                                                  점입니다. 개체의 속성 및 메서드를 구별 하는 데 사용 합니다.                                                  |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample41.cs)]   |
-|              `()`              |                                              괄호입니다. 식을 그룹화 하 고 매개 변수를 메서드에 전달 하는 데 사용 합니다.                                               | [!code-javascript[Main](introducing-razor-syntax-c/samples/sample42.js)] |
-|              `[]`              |                                                    대괄호입니다. 배열 또는 컬렉션에 있는 값에 액세스 하기 위해 사용 합니다.                                                     |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample43.cs)]   |
-|              `!`               |               필요는 없습니다. 취소는 `true` 값을 `false` 그 반대의 합니다. 일반적으로 테스트 하는 약식 방법으로 사용 `false` (즉,에 대 한 하지 `true`).               |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample44.cs)]   |
-| `&&` <code>&#124;&#124;</code> |                                                   논리 AND 또는 및 연결 하는 데 사용 되는 조건입니다.                                                    |   [!code-csharp[Main](introducing-razor-syntax-c/samples/sample45.cs)]   |
+::: 행:::::: 열::: <strong>연산자</strong> ::: 열 간:::::: 열::: <strong>설명</strong> ::: 열 간:::::: 열::: <strong>예제</strong> ::: 종료 열:::::: 마지막 행:::
+* * *
+::: 행:::::: 열::: `+` `-` `*` `/` ::: 종료 열:::::: 열::: 숫자 식에 사용 된 산술 연산자.
+::: 종료 열:::::: 열::: [!code-css[Main](introducing-razor-syntax-c/samples/sample34.css)]
+    ::: 종료 열:::::: 마지막 행:::
+* * *
+::: 행:::::: 열::: `=` ::: 종료 열:::::: 열::: 할당 합니다. 왼쪽에 있는 개체를 문의 오른쪽에 있는 값을 할당합니다.
+::: 종료 열:::::: 열::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample35.cs)]
+    ::: 종료 열:::::: 마지막 행:::
+* * *
+::: 행:::::: 열::: `==` ::: 종료 열:::::: 열::: 같음. 반환 `true` 값이 동일 합니다. (간의 차이 확인할 수는 `=` 연산자 및 `==` 연산자입니다.)::: 종료 열:::::: 열::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample36.cs)]
+    ::: 종료 열:::::: 마지막 행:::
+* * *
+::: 행:::::: 열::: `!=` ::: 종료 열:::::: 열::: 같지 않음. 반환 `true` 값 같지 않으면 합니다.
+::: 종료 열:::::: 열::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample37.cs)]
+    ::: 종료 열:::::: 마지막 행:::
+* * *
+::: 행:::::: 열::: `< > <= >=` ::: 종료 열:::::: 열::: 덜-, 보다 큼-보다 작음-보다-또는-같음 및 크거나 같음.
+::: 종료 열:::::: 열::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample38.cs)]
+    ::: 종료 열:::::: 마지막 행:::
+* * *
+::: 행:::::: 열::: `+` ::: 종료 열:::::: 열::: 연결 문자열을 조인 하는 데 사용 됩니다. ASP.NET이이 연산자 및 식의 데이터 형식을 기반으로 하는 더하기 연산자의 차이점을 알고 있습니다.
+::: 종료 열:::::: 열::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample39.cs)]
+    ::: 종료 열:::::: 마지막 행:::
+* * *
+::: 행:::::: 열::: `+=` `-=` ::: 종료 열:::::: 열::: 추가 하 고 변수에서 각각 1을 뺌를 증가 및 감소 연산자입니다.
+::: 종료 열:::::: 열::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample40.cs)]
+    ::: 종료 열:::::: 마지막 행:::
+* * *
+::: 행:::::: 열::: `.` ::: 종료 열:::::: 열::: 점입니다. 개체의 속성 및 메서드를 구별 하는 데 사용 합니다.
+::: 종료 열:::::: 열::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample41.cs)]
+    ::: 종료 열:::::: 마지막 행:::
+* * *
+::: 행:::::: 열::: `()` ::: 종료 열:::::: 열::: 괄호입니다. 식을 그룹화 하 고 매개 변수를 메서드에 전달 하는 데 사용 합니다.
+::: 종료 열:::::: 열::: [!code-javascript[Main](introducing-razor-syntax-c/samples/sample42.js)]
+    ::: 종료 열:::::: 마지막 행:::
+* * *
+::: 행:::::: 열::: `[]` ::: 종료 열:::::: 열::: 대괄호입니다. 배열 또는 컬렉션에 있는 값에 액세스 하기 위해 사용 합니다.
+::: 종료 열:::::: 열::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample43.cs)]
+    ::: 종료 열:::::: 마지막 행:::
+* * *
+::: 행:::::: 열::: `!` ::: 종료 열:::::: 열::: 없습니다. 취소는 `true` 값을 `false` 그 반대의 합니다. 일반적으로 테스트 하는 약식 방법으로 사용 `false` (즉,에 대 한 하지 `true`).
+::: 종료 열:::::: 열::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample44.cs)]
+    ::: 종료 열:::::: 마지막 행:::
+* * *
+::: 행:::::: 열::: `&&` <code>&#124;&#124;</code> ::: 열 간:::::: 열::: 논리적이 고 또는 및 연결 하는 데 사용 되는 조건입니다.
+::: 종료 열:::::: 열::: [!code-csharp[Main](introducing-razor-syntax-c/samples/sample45.cs)]
+    ::: 종료 열:::::: 마지막 행:::
 
 <a id="ID_WorkingWithFileAndFolderPaths"></a>
 ## <a name="working-with-file-and-folder-paths-in-code"></a>파일 및 코드의 폴더 경로 작업
@@ -453,7 +502,7 @@ ASP.NET 서버 코드를 사용 하면 조건에 따라 작업을 수행 하 고
 
 브라우저에 표시 하는 마지막 두 개의 조건부 블록의 결과:
 
-![Razor-Img10](introducing-razor-syntax-c/_static/image10.jpg)
+![Razor Img10](introducing-razor-syntax-c/_static/image10.jpg)
 
 ### <a name="looping-code"></a>코드를 반복합니다.
 
@@ -469,7 +518,7 @@ ASP.NET 서버 코드를 사용 하면 조건에 따라 작업을 수행 하 고
 
 중괄호 안에 루프의 각 반복에 대해 실행 되는 코드입니다. 태그에 새 단락 만듭니다 (`<p>` 요소) 시간 및의 값을 표시 하는 출력에 추가 하는 각 `i` (카운터). 이 페이지를 실행 하면이 예제에서는 항목 수를 나타내는 각 줄에 있는 텍스트로 출력을 표시 하는 11 선을 만듭니다.
 
-![Razor-Img11](introducing-razor-syntax-c/_static/image11.jpg)
+![Razor Img11](introducing-razor-syntax-c/_static/image11.jpg)
 
 를 컬렉션 또는 배열으로 작업 하는 경우 자주 사용 하는 `foreach` 루프입니다. 컬렉션은 유사한 개체의 그룹 및 `foreach` 루프는 컬렉션의 각 항목에 작업을 수행할 수 있습니다. 이 유형의 루프는 컬렉션에 대 한 편리한 때문에 달리는 `for` 카운터를 증가 또는 제한을 설정 하지 않아도 루프입니다. 대신,는 `foreach` 루프 코드 컬렉션을 통해 완료 될 때까지 단순히 진행 합니다.
 

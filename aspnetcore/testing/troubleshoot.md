@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: content
 uid: testing/troubleshoot
-ms.openlocfilehash: 98077081409949db14b19c7934bc162990ffc302
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: a75dc666621600e1e2fe36c29acbe7484bae9229
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="troubleshoot-aspnet-core-projects"></a>ASP.NET Core 프로젝트 문제 해결
 
@@ -24,6 +24,7 @@ ms.lasthandoff: 04/06/2018
 * [Azure App Service에서 ASP.NET Core 문제 해결](xref:host-and-deploy/azure-apps/troubleshoot)
 * [IIS에서 ASP.NET Core 문제 해결](xref:host-and-deploy/iis/troubleshoot)
 * [ASP.NET Core를 사용하는 Azure App Service 및 IIS에 대한 일반적인 오류 참조](xref:host-and-deploy/azure-iis-errors-reference)
+* [YouTube: ASP.NET Core 응용 프로그램의 문제를 진단합니다.](https://www.youtube.com/watch?v=RYI0DHoIVaA)
 
 <a name="sdk"></a>
 ## <a name="net-core-sdk-warnings"></a>.NET core SDK 경고

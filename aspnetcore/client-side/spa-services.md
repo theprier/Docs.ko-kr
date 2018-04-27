@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/spa-services
-ms.openlocfilehash: 05b0d7f31e167e620f2d168109ffd907ba120a49
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: fd893b7c62f38442bf5633a956786983763e6f9f
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="use-javascriptservices-to-create-single-page-applications-in-aspnet-core"></a>JavaScriptServices를 사용 하 여 ASP.NET 코어의 단일 페이지 응용 프로그램을 만들려면
 
@@ -74,7 +74,7 @@ SpaServices를 사용 하려면 다음을 설치 합니다.
 
   * Visual Studio 2017을 사용 하 여 Windows를 사용 하는 경우는 SDK가 선택 하 여 설치 된 **.NET Core 플랫폼 간 개발** 작업 합니다.
 
-* [Microsoft.AspNetCore.SpaServices](https://www.nuget.org/packages/Microsoft.AspNetCore.SpaServices/) NuGet package
+* [Microsoft.AspNetCore.SpaServices](https://www.nuget.org/packages/Microsoft.AspNetCore.SpaServices/) NuGet 패키지
 
 <a name="server-prerendering"></a>
 
@@ -166,7 +166,7 @@ ASP.NET Core [태그 도우미](xref:mvc/views/tag-helpers/intro) 제공한 SpaS
 
 ## <a name="hot-module-replacement"></a>핫 모듈 교체
 
-시스템용의 간주할 [핫 모듈 교체](https://webpack.github.io/docs/hot-module-replacement-with-webpack.html) 의 진화 (HMR) 기능 [시스템용 Dev 미들웨어](#webpack-dev-middleware)합니다. HMR는 모두 같은 유용한 기능이 도입 되었지만 더 이상 자동으로 변경 내용을 컴파일한 후 페이지 콘텐츠를 업데이트 하 여 개발 워크플로 간소화 합니다. 현재 메모리 상태와는 SPA의 디버깅 세션을 방해 하 게 하는 브라우저의 새로 고침으로이 혼동 하지 마십시오. 변경 내용을 브라우저에 전달 되는 브라우저와 시스템용 Dev 미들웨어 서비스 간의 라이브 연결이 됩니다.
+시스템용의 간주할 [핫 모듈 교체](https://webpack.js.org/concepts/hot-module-replacement/) 의 진화 (HMR) 기능 [시스템용 Dev 미들웨어](#webpack-dev-middleware)합니다. HMR는 모두 같은 유용한 기능이 도입 되었지만 더 이상 자동으로 변경 내용을 컴파일한 후 페이지 콘텐츠를 업데이트 하 여 개발 워크플로 간소화 합니다. 현재 메모리 상태와는 SPA의 디버깅 세션을 방해 하 게 하는 브라우저의 새로 고침으로이 혼동 하지 마십시오. 변경 내용을 브라우저에 전달 되는 브라우저와 시스템용 Dev 미들웨어 서비스 간의 라이브 연결이 됩니다.
 
 ### <a name="prerequisites"></a>전제 조건
 
@@ -226,7 +226,7 @@ app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions {
 
 ## <a name="creating-a-new-project"></a>새 프로젝트 만들기
 
-JavaScriptServices 미리 구성 된 응용 프로그램 템플릿을 제공합니다. SpaServices 다양 한 프레임 워크 및 각, Aurelia, Knockout, React, 및 Vue 등의 라이브러리와 함께에서 이러한 서식 파일에 사용 됩니다.
+JavaScriptServices 미리 구성 된 응용 프로그램 템플릿을 제공합니다. SpaServices 다양 한 프레임 워크 및 각, React, 및 Redux 등의 라이브러리와 함께에서 이러한 서식 파일에 사용 됩니다.
 
 다음 명령을 실행 하 여.NET Core CLI를 통해 이러한 서식 파일을 설치할 수 있습니다.
 
@@ -238,12 +238,9 @@ dotnet new --install Microsoft.AspNetCore.SpaTemplates::*
 
 | 템플릿                                 | 짧은 이름 | 언어 | Tags        |
 |:------------------------------------------|:-----------|:---------|:------------|
-| 각도와 MVC ASP.NET Core             | angular    | [C#]     | Web/MVC/SPA |
-| MVC ASP.NET Core Aurelia와             | aurelia    | [C#]     | Web/MVC/SPA |
-| Knockout.js와 MVC ASP.NET Core         | knockout   | [C#]     | Web/MVC/SPA |
-| MVC ASP.NET Core React.js와            | react      | [C#]     | Web/MVC/SPA |
-| MVC ASP.NET Core React.js 및 Redux  | reactredux | [C#]     | Web/MVC/SPA |
-| MVC ASP.NET Core Vue.js와              | vue        | [C#]     | Web/MVC/SPA | 
+| 각도와 MVC ASP.NET Core             | angular    | [C#]     | 웹/MVC/SPA |
+| MVC ASP.NET Core React.js와            | react      | [C#]     | 웹/MVC/SPA |
+| MVC ASP.NET Core React.js 및 Redux  | reactredux | [C#]     | 웹/MVC/SPA |
 
 SPA 템플릿 중 하나를 사용 하 여 새 프로젝트를 만들려면 포함는 **약식 이름** 에 서식 파일의는 [새 dotnet](/dotnet/core/tools/dotnet-new) 명령입니다. 다음 명령은 서버 측에 대해 구성 된 ASP.NET Core MVC와 함께 각 응용 프로그램를 만듭니다.
 
@@ -295,7 +292,7 @@ SpaServices 템플릿은 사용 하 여 클라이언트 쪽 테스트를 실행 
 
 [!code-typescript[](../client-side/spa-services/sample/SpaServicesSampleApp/ClientApp/app/components/counter/counter.component.spec.ts?range=15-28)]
 
-프로젝트 루트에 명령 프롬프트를 열고 다음 명령을 실행 합니다.
+명령 프롬프트를 열고는 *ClientApp* 디렉터리입니다. 다음 명령을 실행합니다.
 
 ```console
 npm test

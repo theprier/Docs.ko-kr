@@ -9,19 +9,27 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/configuration/overview
-ms.openlocfilehash: 3a19cec2ce4387ca44ca120f031a072269b93454
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 300feb42dff7f1bb86bab6fedf3f657273ced8be
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/10/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="configure-aspnet-core-data-protection"></a>ASP.NET Core 데이터 보호를 구성 합니다.
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-데이터 보호 시스템이 초기화 될 때, 운영 환경에 따른 [기본 설정](xref:security/data-protection/configuration/default-settings) 이 적용됩니다. 대부분 이런 기본 설정은 단일 컴퓨터에서 실행되는 앱에 적합합니다. 그러나 때로는 앱이 여러 컴퓨터에 분산되어 배포되기 때문에, 또는 규정을 준수하기 위해서 개발자가 설정을 변경해야 하는 경우도 존재하며, 데이터 보호 시스템은 이런 시나리오를 지원하기 위한 풍부한 구성 API를 제공합니다. 이러한 시나리오에 대 한 데이터 보호 시스템 풍부한 구성 API를 제공합니다.
+데이터 보호 시스템이 초기화 될 때, 운영 환경에 따른 [기본 설정](xref:security/data-protection/configuration/default-settings) 이 적용됩니다. 대부분 이런 기본 설정은 단일 컴퓨터에서 실행되는 앱에 적합합니다. 개발자는 기본 설정을 변경 해야 할 수는 있는 경우가 있습니다.
 
-[IDataProtectionBuilder](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotectionbuilder)를 반환하는 [AddDataProtection](/dotnet/api/microsoft.extensions.dependencyinjection.dataprotectionservicecollectionextensions.adddataprotection) 확장 메서드가 제공되는데, `IDataProtectionBuilder` 는 함께 연이어 호출해서 데이터 보호 옵션을 구성할 수 있는 확장 메서드들을 노출합니다. 
+* 여러 컴퓨터 간에 분산 되는 앱입니다.
+* 준수 이유 때문입니다.
+
+이러한 시나리오에 대 한 데이터 보호 시스템 풍부한 구성 API를 제공합니다.
+
+> [!WARNING]
+> 마찬가지로 구성 파일, 데이터 보호 키 링 보호 해야 적절 한 사용 권한을 사용 합니다. 을 미사용 키를 암호화 하도록 선택할 수 있습니다 하지만이 되지 않도록 공격자가 새 키를 만드는 합니다. 따라서 응용 프로그램의 보안이 저하 됩니다. 데이터 보호를 사용 하 여 구성 저장소 위치는 응용 프로그램 구성 파일을 보호 하는 방식과 유사 하 게 자체가으로 제한 된 액세스 권한이 있어야 합니다. 예를 들어 키 링 디스크에 저장 하려는 경우에 파일 시스템 권한을 사용 합니다. id만 보장 웹 앱에서 실행 되는 대 한 읽기, 쓰기 및 해당 디렉터리에 대 한 액세스를 만듭니다. Azure 테이블 저장소를 사용 하는 경우 웹 앱에만 읽기, 쓰기 또는 등 테이블 저장소에 새 항목을 만들 수가 있어야 합니다.
+>
+> 확장 메서드 [AddDataProtection](/dotnet/api/microsoft.extensions.dependencyinjection.dataprotectionservicecollectionextensions.adddataprotection) 반환는 [IDataProtectionBuilder](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotectionbuilder)합니다. `IDataProtectionBuilder` 는 함께 연이어 호출해서 데이터 보호 옵션을 구성할 수 있는 확장 메서드들을 노출합니다. 
 
 ## <a name="persistkeystofilesystem"></a>PersistKeysToFileSystem
 

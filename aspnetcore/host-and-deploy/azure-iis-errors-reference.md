@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-iis-errors-reference
-ms.openlocfilehash: fb833ef8797ea7851cbaf53bb5681df248d07a49
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 1500f026c245f80de4120d6db4901cb117552966
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="common-errors-reference-for-azure-app-service-and-iis-with-aspnet-core"></a>Azure 앱 서비스 및 ASP.NET 코어는 IIS에 대 한 일반적인 오류 참조
 
@@ -42,7 +42,7 @@ ms.lasthandoff: 04/06/2018
 
 문제 해결:
 
-* 시스템에서 서버 호스팅 번들을 설치하지만 인터넷에 액세스할 수 없는 경우 이 예외는 설치 관리자에서 *Microsoft Visual C++ 2015 재배포 가능 패키지*를 얻을 수 없을 때 발생합니다. 프로그램 설치 관리자를 가져옵니다는 [Microsoft 다운로드 센터](https://www.microsoft.com/download/details.aspx?id=53840)합니다. 설치 관리자에 오류가 발생 하면 서버에서 프레임 워크 종속 배포 (FDD)를 호스트 하는 데 필요한.NET 핵심 런타임을 받지 못할 수 있습니다. FDD 호스팅, 하는 경우 프로그램에서 런타임이 설치 되어 있는지 확인 &amp; 기능입니다. 필요한 경우에서 런타임 설치 관리자를 가져올 [.NET 모든 다운로드](https://www.microsoft.com/net/download/all)합니다. 런타임을 설치한 후 시스템을 다시 시작하거나 명령 프롬프트에서 **net stop was /y**에 이어 **net start w3svc**를 실행하여 IIS를 다시 시작합니다.
+* 설치 관리자에서 획득할 수 없거나이 예외가 발생 시스템이 없는 경우 인터넷 액세스 호스팅 번들을 설치 하는 동안,는 *Microsoft Visual c + + 2015 재배포 가능*합니다. 프로그램 설치 관리자를 가져옵니다는 [Microsoft 다운로드 센터](https://www.microsoft.com/download/details.aspx?id=53840)합니다. 설치 관리자에 오류가 발생 하면 서버에서 프레임 워크 종속 배포 (FDD)를 호스트 하는 데 필요한.NET 핵심 런타임을 받지 못할 수 있습니다. FDD 호스팅, 하는 경우 프로그램에서 런타임이 설치 되어 있는지 확인 &amp; 기능입니다. 필요한 경우에서 런타임 설치 관리자를 가져올 [.NET 모든 다운로드](https://www.microsoft.com/net/download/all)합니다. 런타임을 설치한 후 시스템을 다시 시작하거나 명령 프롬프트에서 **net stop was /y**에 이어 **net start w3svc**를 실행하여 IIS를 다시 시작합니다.
 
 ## <a name="os-upgrade-removed-the-32-bit-aspnet-core-module"></a>OS 업그레이드에서 32비트 ASP.NET Core 모듈이 제거됨
 
@@ -50,7 +50,7 @@ ms.lasthandoff: 04/06/2018
 
 문제 해결:
 
-* OS를 업그레이드하는 동안 **C:\Windows\SysWOW64\inetsrv** 디렉터리에 있는 비OS 파일은 보존되지 않습니다. ASP.NET Core 모듈은 이전에 설치 됩니다. 운영 체제 업그레이드와 모든 AppPool 다음은 운영 체제 업그레이드 한 후 32 비트 모드에서 실행 되 면이 문제가 발생 했습니다. OS를 업그레이드한 후에 ASP.NET Core 모듈을 복구합니다. [.NET Core Windows Server 호스팅 번들 설치](xref:host-and-deploy/iis/index#install-the-net-core-windows-server-hosting-bundle)를 참조하세요. 선택 **복구** 설치 관리자를 실행 한 경우.
+* OS를 업그레이드하는 동안 **C:\Windows\SysWOW64\inetsrv** 디렉터리에 있는 비OS 파일은 보존되지 않습니다. ASP.NET Core 모듈은 이전에 설치 됩니다. 운영 체제 업그레이드와 모든 AppPool 다음은 운영 체제 업그레이드 한 후 32 비트 모드에서 실행 되 면이 문제가 발생 했습니다. OS를 업그레이드한 후에 ASP.NET Core 모듈을 복구합니다. 참조 [.NET Core 호스팅 번들을 설치](xref:host-and-deploy/iis/index#install-the-net-core-hosting-bundle)합니다. 선택 **복구** 설치 관리자를 실행 한 경우.
 
 ## <a name="platform-conflicts-with-rid"></a>플랫폼이 RID와 충돌함
 
@@ -114,11 +114,11 @@ ms.lasthandoff: 04/06/2018
 
 * 적절 한 역할을 활성화 되어 있는지 확인 합니다. [IIS 구성](xref:host-and-deploy/iis/index#iis-configuration)을 참조하세요.
 
-* **프로그램 &amp; 기능**을 확인하고 **Microsoft ASP.NET Core 모듈**이 설치되어 있는지 확인합니다. **Microsoft ASP.NET Core 모듈**이 설치된 프로그램 목록에 없으면 해당 모듈을 설치합니다. [.NET Core Windows Server 호스팅 번들 설치](xref:host-and-deploy/iis/index#install-the-net-core-windows-server-hosting-bundle)를 참조하세요.
+* **프로그램 &amp; 기능**을 확인하고 **Microsoft ASP.NET Core 모듈**이 설치되어 있는지 확인합니다. **Microsoft ASP.NET Core 모듈**이 설치된 프로그램 목록에 없으면 해당 모듈을 설치합니다. 참조 [번들 호스팅.NET 핵심](xref:host-and-deploy/iis/index#install-the-net-core-hosting-bundle)합니다.
 
 * 다음 사항을 확인는 **응용 프로그램 풀** > **프로세스 모델** > **Identity** 로 설정 된 **ApplicationPoolIdentity** 또는 사용자 지정 id는 올바른 권한이 응용 프로그램의 배포 폴더에 액세스할 수 있습니다.
 
-## <a name="incorrect-processpath-missing-path-variable-hosting-bundle-not-installed-systemiis-not-restarted-vc-redistributable-not-installed-or-dotnetexe-access-violation"></a>잘못된 processPath, 누락된 PATH 변수, 설치되지 않은 호스팅 번들, 다시 시작되지 않은 시스템/IIS, 설치되지 않은 VC++ 재배포 가능 패키지 또는 dotnet.exe 액세스 위반
+## <a name="incorrect-processpath-missing-path-variable-hosting-bundle-not-installed-systemiis-not-restarted-vc-redistributable-not-installed-or-dotnetexe-access-violation"></a>잘못 된 processPath, 누락 된 경로 변수, 호스팅 번들 설치 되어 있지 않습니다, 시스템/IIS를 다시 시작 하지, VC + + 재배포 가능 패키지가 설치 되지 않은 또는 dotnet.exe 액세스 위반
 
 * **브라우저:** HTTP 오류 502.5 - 프로세스 오류
 
@@ -138,7 +138,7 @@ ms.lasthandoff: 04/06/2018
 
 * FDD 배포 하 고 IIS를 다시 시작 하지 않고.NET Core를 설치 합니다. 서버를 다시 시작하거나 명령 프롬프트에서 **net stop was /y**에 이어 **net start w3svc**를 실행하여 IIS를 다시 시작합니다.
 
-* .NET 핵심 런타임을 호스팅하는 시스템에 설치 하지 않고는 FDD는 배포 했을 수 있습니다. .NET 핵심 런타임을 설치 실패 하는 경우 실행는 **번들 설치 관리자.NET 핵심 Windows Server 호스팅** 시스템에 있습니다. [.NET Core Windows Server 호스팅 번들 설치](xref:host-and-deploy/iis/index#install-the-net-core-windows-server-hosting-bundle)를 참조하세요. 인터넷 연결 없이 시스템에.NET 핵심 런타임을 설치 하는 동안에서 런타임 가져올 [.NET 모든 다운로드](https://www.microsoft.com/net/download/all) ASP.NET Core 모듈을 설치 하려면 호스팅 번들 설치 관리자를 실행 합니다. 설치를 완료하려면 시스템을 다시 시작하거나 명령 프롬프트에서 **net stop was /y**에 이어 **net start w3svc**를 실행하여 IIS를 다시 시작합니다.
+* .NET 핵심 런타임을 호스팅하는 시스템에 설치 하지 않고는 FDD는 배포 했을 수 있습니다. .NET 핵심 런타임을 설치 실패 하는 경우 실행는 **.NET Core 호스팅 번들 installer** 시스템에 있습니다. 참조 [번들 호스팅.NET 핵심](xref:host-and-deploy/iis/index#install-the-net-core-hosting-bundle)합니다. 인터넷 연결 없이 시스템에.NET 핵심 런타임을 설치 하는 동안에서 런타임 가져올 [.NET 모든 다운로드](https://www.microsoft.com/net/download/all) ASP.NET Core 모듈을 설치 하려면 호스팅 번들 설치 관리자를 실행 합니다. 설치를 완료하려면 시스템을 다시 시작하거나 명령 프롬프트에서 **net stop was /y**에 이어 **net start w3svc**를 실행하여 IIS를 다시 시작합니다.
 
 * FDD 배포 및 *Microsoft Visual c + + 2015 재배포 가능 (x64)* 시스템에 설치 되어 있지 않습니다. 프로그램 설치 관리자를 가져옵니다는 [Microsoft 다운로드 센터](https://www.microsoft.com/download/details.aspx?id=53840)합니다.
 
@@ -216,7 +216,7 @@ ms.lasthandoff: 04/06/2018
 
 * **브라우저:** 응용 프로그램 정상적으로 응답 합니다.
 
-* **Application Log:** Warning: Could not create stdoutLogFile \\?\C:\_apps\app_folder\bin\Release\netcoreapp2.0\win10-x64\publish\logs\path_doesnt_exist\stdout_8748_201831835937.log, ErrorCode = -2147024893.
+* **응용 프로그램 로그:** 경고:가 stdoutLogFile를 만들지 못했습니다 \\? \C:\_apps\app_folder\bin\Release\netcoreapp2.0\win10-x64\publish\logs\path_doesnt_exist\stdout_8748_201831835937.log, 오류 코드 =- 2147024893 합니다.
 
 * **ASP.NET Core 모듈 로그:** 로그 파일이 만들어지지 않았습니다.
 

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/introduction
-ms.openlocfilehash: 7ba1966dcaf1ce0510f489cfe0ff11501faffa56
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: f969cb26d1fcddeac967b1e3d13e3c06ebc7631f
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="introduction-to-authorization-in-aspnet-core"></a>ASP.NET Core에서 권한 부여 소개
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 03/22/2018
 
 권한 부여 작업을 결정 하는 프로세스를 사용자가 수행할 수 있게 합니다. 예를 들어 관리자가 문서 라이브러리 만들기, 문서를 추가, 문서, 편집 및 삭제할 수 있습니다. 라이브러리와 함께 일 하는 관리자가 아닌 사용자는 문서를 읽을 권한이.
 
-권한 부여는 직각 인증에서 사용자가 누구를 구축 방향을 얻기 위한 하는 프로세스에서 독립적입니다. 인증 현재 사용자에 대 한 하나 이상의 id를 만들 수 있습니다.
+권한 부여는 직각 인증에서 독립적입니다. 그러나 권한 부여는 인증 메커니즘을 필요합니다. 인증은 사용자가 누구를 구축 방향을 얻기 위한의 프로세스입니다. 인증 현재 사용자에 대 한 하나 이상의 id를 만들 수 있습니다.
 
 ## <a name="authorization-types"></a>인증 형식
 

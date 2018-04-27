@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core 모듈 구성 참조"
+title: ASP.NET Core 모듈 구성 참조
 author: guardrex
-description: "ASP.NET Core 응용 프로그램을 호스팅하기 위한 ASP.NET Core 모듈을 구성 하는 방법을 알아봅니다."
+description: ASP.NET Core 응용 프로그램을 호스팅하기 위한 ASP.NET Core 모듈을 구성 하는 방법을 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/aspnet-core-module
-ms.openlocfilehash: 5aac5cf2b8fd4bc53ba7201645b9bb02a5d1ecae
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 954841a1b1465c80e60d5745ad9e22294a88fdf4
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 04/18/2018
 ---
 # <a name="aspnet-core-module-configuration-reference"></a>ASP.NET Core 모듈 구성 참조
 
@@ -65,6 +65,7 @@ ASP.NET Core 모듈 구성 된는 `aspNetCore` 의 섹션은 `system.webServer` 
 
 ### <a name="attributes-of-the-aspnetcore-element"></a>AspNetCore 요소의 특성입니다.
 
+::: moniker range="<= aspnetcore-2.0"
 | 특성 | 설명 | 기본 |
 | --------- | ----------- | :-----: |
 | `arguments` | <p>선택적 문자열 특성입니다.</p><p>에 지정 된 실행 파일에 대 한 인수 **processPath**합니다.</p>| |
@@ -72,11 +73,26 @@ ASP.NET Core 모듈 구성 된는 `aspNetCore` 의 섹션은 `system.webServer` 
 | `forwardWindowsAuthToken` | 참 또는 거짓입니다.</p><p>True 이면 토큰 요청당 헤더로 ' MS ASPNETCORE WINAUTHTOKEN' % ASPNETCORE_PORT %에서 수신 하는 자식 프로세스에 전달 됩니다. 것은 해당 프로세스를 요청에 따라이 토큰에 CloseHandle 호출의 책임입니다.</p> | `true` |
 | `processPath` | <p>필수 문자열 특성입니다.</p><p>HTTP 요청을 수신 하는 프로세스를 시작 하는 실행 파일 경로입니다. 상대 경로 지원 합니다. 로 시작 하는 경로 경우 `.`, 경로 사이트 루트 기준 것으로 간주 됩니다.</p> | |
 | `rapidFailsPerMinute` | <p>선택적 정수 특성입니다.</p><p>에 지정 된 프로세스의 수를 지정 **processPath** 분당 충돌을 허용 합니다. 이 제한을 초과 하는 나머지 분에서 프로세스 시작 모듈을 중지 합니다.</p> | `10` |
-| `requestTimeout` | <p>선택적 timespan 특성입니다.</p><p>ASP.NET Core 모듈 ASPNETCORE_PORT % %를 수신 하는 프로세스에서 응답에 대 한 대기 기간을 지정 합니다.</p><p>`requestTimeout` 지정 해야이 분 단위로, 그렇지 않으면 기본적으로 2 분입니다.</p> | `00:02:00` |
+| `requestTimeout` | <p>선택적 timespan 특성입니다.</p><p>ASP.NET Core 모듈 ASPNETCORE_PORT % %를 수신 하는 프로세스에서 응답에 대 한 대기 기간을 지정 합니다.</p><p>또는 이전 버전에서 ASP.NET Core 2.0의 출시와 함께 제공 되는 ASP.NET Core 모듈의 버전에는 `requestTimeout` 지정 해야이 분 단위로, 그렇지 않으면 기본적으로 2 분입니다.</p> | `00:02:00` |
 | `shutdownTimeLimit` | <p>선택적 정수 특성입니다.</p><p>기간 (초)를 정상적으로 종료 실행 파일에 대 한 모듈에서 대기 하는 경우는 *app_offline.htm* 파일이 검색 될 합니다.</p> | `10` |
 | `startupTimeLimit` | <p>선택적 정수 특성입니다.</p><p>포트에서 수신 하는 프로세스가 시작 되는 파일에 대 한 모듈에서 대기 하는 시간 (초) 기간입니다. 이 시간 제한을 초과 하는 모듈에서 프로세스를 중단 합니다. 모듈에서 새 요청을 수신 하 고 앱이 시작 되지 않는 한 이후 들어오는 요청에서 프로세스를 다시 시작 하려고 계속 경우 프로세스를 다시 시작 하려고 **rapidFailsPerMinute** 지난에서 번 롤링 분입니다.</p> | `120` |
 | `stdoutLogEnabled` | <p>선택적 부울 특성입니다.</p><p>True 이면 **stdout** 및 **stderr** 에 지정 된 프로세스에 대 한 **processPath** 는에 지정 된 파일로 리디렉션할 **가 stdoutLogFile**합니다.</p> | `false` |
 | `stdoutLogFile` | <p>선택적 문자열 특성입니다.</p><p>상대 또는 절대 파일 경로를 지정 **stdout** 및 **stderr** 에 지정 된 프로세스에서 **processPath** 기록 됩니다. 상대 경로 사이트의 루트를 기준으로 합니다. 로 시작 하는 경로 `.` 은 절대 경로로 루트 및 다른 모든 경로 사이트에 상대적인 처리 합니다. 모든 폴더 경로에 제공 된 로그 파일을 만들 모듈에 대 한 순서에 있어야 합니다. 밑줄 구분 기호, 타임 스탬프, 프로세스 ID 및 파일 확장명을 사용 하 여 (*.log*) 세그먼트의 마지막으로 추가 된 **가 stdoutLogFile** 경로입니다. 경우 `.\logs\stdout` 제공 예제 stdout 로그로 저장 된 값으로 *stdout_20180205194132_1934.log* 에 *로그* 19시 41분: 32 1934의 프로세스 id는 2/5/2018에 저장할 경우 폴더입니다.</p> | `aspnetcore-stdout` |
+::: moniker-end
+::: moniker range=">= aspnetcore-2.1"
+| 특성 | 설명 | 기본 |
+| --------- | ----------- | :-----: |
+| `arguments` | <p>선택적 문자열 특성입니다.</p><p>에 지정 된 실행 파일에 대 한 인수 **processPath**합니다.</p>| |
+| `disableStartUpErrorPage` | 참 또는 거짓입니다.</p><p>True 이면는 **502.5-프로세스 오류** 페이지는 표시 되지 않으며 502 상태 코드 페이지에 구성 된는 *web.config* 우선적으로 적용 합니다.</p> | `false` |
+| `forwardWindowsAuthToken` | 참 또는 거짓입니다.</p><p>True 이면 토큰 요청당 헤더로 ' MS ASPNETCORE WINAUTHTOKEN' % ASPNETCORE_PORT %에서 수신 하는 자식 프로세스에 전달 됩니다. 것은 해당 프로세스를 요청에 따라이 토큰에 CloseHandle 호출의 책임입니다.</p> | `true` |
+| `processPath` | <p>필수 문자열 특성입니다.</p><p>HTTP 요청을 수신 하는 프로세스를 시작 하는 실행 파일 경로입니다. 상대 경로 지원 합니다. 로 시작 하는 경로 경우 `.`, 경로 사이트 루트 기준 것으로 간주 됩니다.</p> | |
+| `rapidFailsPerMinute` | <p>선택적 정수 특성입니다.</p><p>에 지정 된 프로세스의 수를 지정 **processPath** 분당 충돌을 허용 합니다. 이 제한을 초과 하는 나머지 분에서 프로세스 시작 모듈을 중지 합니다.</p> | `10` |
+| `requestTimeout` | <p>선택적 timespan 특성입니다.</p><p>ASP.NET Core 모듈 ASPNETCORE_PORT % %를 수신 하는 프로세스에서 응답에 대 한 대기 기간을 지정 합니다.</p><p>ASP.NET Core 2.1 이상 릴리스와 함께 제공 된 ASP.NET Core 모듈의 버전에는 `requestTimeout` 시, 분 및 초에 지정 되어 있습니다.</p> | `00:02:00` |
+| `shutdownTimeLimit` | <p>선택적 정수 특성입니다.</p><p>기간 (초)를 정상적으로 종료 실행 파일에 대 한 모듈에서 대기 하는 경우는 *app_offline.htm* 파일이 검색 될 합니다.</p> | `10` |
+| `startupTimeLimit` | <p>선택적 정수 특성입니다.</p><p>포트에서 수신 하는 프로세스가 시작 되는 파일에 대 한 모듈에서 대기 하는 시간 (초) 기간입니다. 이 시간 제한을 초과 하는 모듈에서 프로세스를 중단 합니다. 모듈에서 새 요청을 수신 하 고 앱이 시작 되지 않는 한 이후 들어오는 요청에서 프로세스를 다시 시작 하려고 계속 경우 프로세스를 다시 시작 하려고 **rapidFailsPerMinute** 지난에서 번 롤링 분입니다.</p> | `120` |
+| `stdoutLogEnabled` | <p>선택적 부울 특성입니다.</p><p>True 이면 **stdout** 및 **stderr** 에 지정 된 프로세스에 대 한 **processPath** 는에 지정 된 파일로 리디렉션할 **가 stdoutLogFile**합니다.</p> | `false` |
+| `stdoutLogFile` | <p>선택적 문자열 특성입니다.</p><p>상대 또는 절대 파일 경로를 지정 **stdout** 및 **stderr** 에 지정 된 프로세스에서 **processPath** 기록 됩니다. 상대 경로 사이트의 루트를 기준으로 합니다. 로 시작 하는 경로 `.` 은 절대 경로로 루트 및 다른 모든 경로 사이트에 상대적인 처리 합니다. 모든 폴더 경로에 제공 된 로그 파일을 만들 모듈에 대 한 순서에 있어야 합니다. 밑줄 구분 기호, 타임 스탬프, 프로세스 ID 및 파일 확장명을 사용 하 여 (*.log*) 세그먼트의 마지막으로 추가 된 **가 stdoutLogFile** 경로입니다. 경우 `.\logs\stdout` 제공 예제 stdout 로그로 저장 된 값으로 *stdout_20180205194132_1934.log* 에 *로그* 19시 41분: 32 1934의 프로세스 id는 2/5/2018에 저장할 경우 폴더입니다.</p> | `aspnetcore-stdout` |
+::: moniker-end
 
 ### <a name="setting-environment-variables"></a>환경 변수 설정
 
@@ -113,11 +129,15 @@ ASP.NET Core 모듈을 백 엔드 프로세스 또는 백 엔드 프로세스 �
 
 ## <a name="log-creation-and-redirection"></a>로그 만들기 및 리디렉션
 
-ASP.NET Core 모듈 리디렉션합니다 `stdout` 및 `stderr` 로그 디스크에 `stdoutLogEnabled` 및 `stdoutLogFile` 의 특성은 `aspNetCore` 요소 설정 됩니다. 에 있는 폴더는 `stdoutLogFile` 경로 로그 파일을 만들 모듈에 대 한 순서에 존재 해야 합니다. 타임 스탬프 및 파일 확장명은 로그 파일을 만들 때 자동으로 추가 됩니다. 프로세스 재활용/를 다시 시작이 발생 하지 않으면 로그가 회전 되지 않습니다. 것은 로그 사용할 디스크 공간을 제한 하는 호스팅 서비스 공급자의 책임입니다. 사용 하는 `stdout` 로그 응용 프로그램 시작 문제 해결에 권장 됩니다. 일반 응용 프로그램 로깅 목적 stdout 로그를 사용 하지 마십시오. ASP.NET Core 응용 프로그램의 일상적인 로깅에 대 한 로그 파일 크기를 제한 하 고 로그를 회전 하는 로깅 라이브러리를 사용 합니다. 자세한 내용은 참조 [제 3 자 로깅 공급자](xref:fundamentals/logging/index#third-party-logging-providers)합니다.
+ASP.NET Core 모듈 리디렉션합니다 stdout 및 stderr 로그 디스크에 `stdoutLogEnabled` 및 `stdoutLogFile` 의 특성은 `aspNetCore` 요소 설정 됩니다. 에 있는 폴더는 `stdoutLogFile` 경로 로그 파일을 만들 모듈에 대 한 순서에 존재 해야 합니다. 응용 프로그램 풀 로그 작성 된 위치에 쓰기 권한이 있어야 합니다 (사용 하 여 `IIS AppPool\<app_pool_name>` 쓰기 권한이).
 
-타임 스탬프, 프로세스 ID 및 파일 확장명을 추가 하 여 로그 파일 이름이 구성 됩니다 (*.log*)의 마지막 세그먼트에는 `stdoutLogFile` 경로 (일반적으로 *stdout*) 밑줄로 구분 합니다. 경우는 `stdoutLogFile` 로 끝나는 경로 *stdout*, 19시 42분: 32에서 2/5/2018에서 만든 1934의 PID 사용 하 여 앱에 대 한 로그 파일 이름이 *stdout_20180205194132_1934.log*합니다.
+프로세스 재활용/를 다시 시작이 발생 하지 않으면 로그가 회전 되지 않습니다. 것은 로그 사용할 디스크 공간을 제한 하는 호스팅 서비스 공급자의 책임입니다.
 
-다음 샘플 `aspNetCore` 요소 구성 `stdout` Azure 앱 서비스에서 호스팅되는 앱에 대 한 로깅을 합니다. 로컬 경로 또는 네트워크 공유 경로 로컬 로깅 있습니다. AppPool 사용자 id 제공 된 경로에 쓸 수 있는 권한이 있는지 확인 합니다.
+Stdout 로그를 사용 하 여 응용 프로그램 시작 문제 해결에 대해서만 권장 됩니다. 일반 응용 프로그램 로깅 목적 stdout 로그를 사용 하지 마십시오. ASP.NET Core 응용 프로그램의 일상적인 로깅에 대 한 로그 파일 크기를 제한 하 고 로그를 회전 하는 로깅 라이브러리를 사용 합니다. 자세한 내용은 참조 [제 3 자 로깅 공급자](xref:fundamentals/logging/index#third-party-logging-providers)합니다.
+
+타임 스탬프 및 파일 확장명은 로그 파일을 만들 때 자동으로 추가 됩니다. 타임 스탬프, 프로세스 ID 및 파일 확장명을 추가 하 여 로그 파일 이름이 구성 됩니다 (*.log*)의 마지막 세그먼트에는 `stdoutLogFile` 경로 (일반적으로 *stdout*) 밑줄로 구분 합니다. 경우는 `stdoutLogFile` 로 끝나는 경로 *stdout*, 19시 42분: 32에서 2/5/2018에서 만든 1934의 PID 사용 하 여 앱에 대 한 로그 파일 이름이 *stdout_20180205194132_1934.log*합니다.
+
+다음 샘플 `aspNetCore` 요소 Azure 앱 서비스에서 호스팅되는 앱에 대 한 stdout 로깅을 구성 합니다. 로컬 경로 또는 네트워크 공유 경로 로컬 로깅 있습니다. AppPool 사용자 id 제공 된 경로에 쓸 수 있는 권한이 있는지 확인 합니다.
 
 ```xml
 <aspNetCore processPath="dotnet"
@@ -144,7 +164,7 @@ ASP.NET Core 모듈 설치 관리자의 권한으로 실행 되는 **시스템**
 1. 업데이트 된 내보내기 *applicationHost.config* 파일을 공유 합니다.
 1. IIS 공유 구성을 다시 설정 합니다.
 
-## <a name="module-version-and-hosting-bundle-installer-logs"></a>모듈의 버전 및 번들 설치 관리자 로그를 호스팅
+## <a name="module-version-and-hosting-bundle-installer-logs"></a>모듈의 버전 및 호스팅 번들 설치 관리자 로그
 
 확인 하려면 설치 된 ASP.NET Core 모듈 버전:
 
@@ -153,7 +173,7 @@ ASP.NET Core 모듈 설치 관리자의 권한으로 실행 되는 **시스템**
 1. 파일을 마우스 오른쪽 단추로 클릭 하 고 선택 **속성** 상황에 맞는 메뉴에서 합니다.
 1. 선택 된 **세부 정보** 탭 합니다. **파일 버전** 및 **제품 버전** 모듈의 설치 된 버전을 나타냅니다.
 
-모듈에 대 한 Windows 서버 호스팅 번들 설치 관리자 로그에서 발견 되 *c:\\사용자\\% UserName %\\AppData\\로컬\\Temp*합니다. 파일의 이름은 *dd_DotNetCoreWinSvrHosting__\<타임 스탬프 > _000_AspNetCoreModule_x64.log*합니다.
+모듈에 대 한 호스팅 번들 설치 관리자 로그에서 발견 되 *c:\\사용자\\% UserName %\\AppData\\로컬\\Temp*합니다. 파일의 이름은 *dd_DotNetCoreWinSvrHosting__\<타임 스탬프 > _000_AspNetCoreModule_x64.log*합니다.
 
 ## <a name="module-schema-and-configuration-file-locations"></a>모듈, 스키마 및 구성 파일 위치
 

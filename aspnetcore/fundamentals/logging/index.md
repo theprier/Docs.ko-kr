@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/logging/index
-ms.openlocfilehash: 4cb2cf5b22ed9f5b84638b5f8c4b07d99a17ce1c
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: aab1190467c13ae121625c377d0908eac2fe8d95
+ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="logging-in-aspnet-core"></a>ASP.NET Core에 로그인
 
@@ -488,37 +488,6 @@ loggerFactory.AddEventSourceLogger()
 
 ![Perfview 추가 공급자](index/_static/perfview-additional-providers.png)
 
-Nano Server에서 이벤트를 캡처하려면 몇 가지 추가 설정이 필요합니다.
-
-* PowerShell 원격 기능을 Nano Server에 연결합니다.
-
-  ```powershell
-  Enter-PSSession [name]
-  ```
-
-* ETW 세션을 만합니다.
-
-  ```powershell
-  New-EtwTraceSession -Name "MyAppTrace" -LocalFilePath C:\trace.etl
-  ```
-
-* 필요에 따라 [CLR](/dotnet/framework/performance/clr-etw-providers), ASP.NET Core 등에 대한 ETW 공급자를 추가합니다. ASP.NET Core 공급자 GUID는 `3ac73b97-af73-50e9-0822-5da4367920d0`입니다. 
-
-  ```powershell
-  Add-EtwTraceProvider -Guid "{e13c0d23-ccbc-4e12-931b-d9cc2eee27e4}" -SessionName MyAppTrace
-  Add-EtwTraceProvider -Guid "{3ac73b97-af73-50e9-0822-5da4367920d0}" -SessionName MyAppTrace
-  ```
-
-* 사이트를 실행하고 추적 정보에 대한 원하는 작업을 수행합니다.
-
-* 작업을 마쳤으면 추적 세션을 중지합니다.
-
-  ```powershell
-  Stop-EtwTraceSession -Name "MyAppTrace"
-  ```
-
-다른 Windows 버전에서 하듯이, 실행 결과로 얻은 *C:\trace.etl* 파일을 PerfView로 분석할 수 있습니다.
-
 <a id="eventlog"></a>
 ### <a name="the-windows-eventlog-provider"></a>Windows EventLog 공급자
 
@@ -631,7 +600,7 @@ Azure 로그 스트리밍을 통해 로그 작업을 실시간으로 볼 수 있
 Azure 로그 스트리밍을 구성하려면: 
 
 * 응용 프로그램의 포털 페이지에서 **진단 로그** 페이지로 이동합니다.
-* **응용 프로그램 로깅(파일 시스템)**을 켭니다. 
+* **응용 프로그램 로깅(파일 시스템)** 을 켭니다. 
 
 ![Azure Portal 진단 로그 페이지](index/_static/azure-diagnostic-logs.png)
 

@@ -1,22 +1,22 @@
 ---
 uid: signalr/overview/getting-started/supported-platforms
-title: "지원 되는 플랫폼 | Microsoft Docs"
+title: 지원 되는 플랫폼 | Microsoft Docs
 author: pfletcher
-description: "이 문서에서는 어떤 클라이언트 및 서버는 SignalR에서 지원 합니다."
+description: 이 문서에서는 어떤 클라이언트 및 서버는 SignalR에서 지원 합니다.
 ms.author: aspnetcontent
 manager: wpickett
-ms.date: 06/10/2014
+ms.date: 04/18/2018
 ms.topic: article
 ms.assetid: eac31beb-0f46-4afa-9def-e80904dea4f0
 ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/getting-started/supported-platforms
 msc.type: authoredcontent
-ms.openlocfilehash: 1379b9fb638f67896d88d7aa4312d95280ef7318
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 4d3dc028ff67d0a9cfa03627b5f98f6541ecfff8
+ms.sourcegitcommit: 7c8fd9b7445cd77eb7f7d774bfd120c26f3b5d84
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/19/2018
 ---
 <a name="supported-platforms"></a>지원되는 플랫폼
 ====================
@@ -37,8 +37,9 @@ SignalR 서버 구성 요소는 다양 한 서버 구성에서 호스트할 수 
 
 ### <a name="supported-server-operating-systems"></a>지원되는 서버 운영 체제
 
-SignalR 서버 구성 요소는 다음과 같은 서버 또는 클라이언트 운영 체제에서 호스팅할 수 있습니다. Websocket을 사용 하는 SignalR에 대 한 Windows Server 2012 또는 Windows 8이 필요 (WebSocket 사용 가능 Windows Azure 웹 사이트에 사이트의.NET framework 버전 4.5로 설정 되어 있고 사이트의 구성 페이지에서 Websocket 사용 됨).
+SignalR 서버 구성 요소는 다음과 같은 서버 또는 클라이언트 운영 체제에서 호스팅할 수 있습니다. Websocket을 사용 하는 SignalR에 대 한 Windows Server 2012, Windows Server 2016 또는 Windows 8이 필요 (WebSocket 사용 가능 Windows Azure 웹 사이트에 사이트의.NET framework 버전 4.5로 설정 되어 있고 사이트의 웹 소켓을 사용 구성 페이지)입니다.
 
+- Windows Server 2016
 - Windows Server 2012
 - Windows Server 2008 r2
 - Windows 10
@@ -127,10 +128,10 @@ SignalR은 Windows 스토어 응용 프로그램 및 Windows Phone 8 응용 프�
 
 | 전송 | Windows 스토어 /.NET | Windows 스토어 / JavaScript | Windows Phone / IE | Windows Phone /.NET |
 | --- | --- | --- | --- | --- |
-| WebSocket | N/A | Win8+ | 8+ | N/A |
-| 영원히 프레임 | N/A | Win8+ | 7.5+ | N/A |
-| 서버에서 전송 이벤트 | Win8+ | N/A | N/A | 8+ |
-| 긴 폴링 | Win8+ | Win8+ | 7.5+ | 8+ |
+| WebSocket | N/A | Win8 + | 8+ | N/A |
+| 영원히 프레임 | N/A | Win8 + | 7.5+ | N/A |
+| 서버에서 전송 이벤트 | Win8 + | N/A | N/A | 8+ |
+| 긴 폴링 | Win8 + | Win8 + | 7.5+ | 8+ |
 
 <a id="updates"></a>
 

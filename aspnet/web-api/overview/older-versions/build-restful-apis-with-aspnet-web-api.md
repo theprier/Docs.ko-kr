@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/build-restful-apis-with-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 320409cd395384a608a07307a56d18105d45de14
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: ded549109ca6e7ad806f1c3f53387766527e5a94
+ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/26/2018
 ---
 <a name="build-restful-apis-with-aspnet-web-api"></a>ASP.NET Web API 사용 하 여 RESTful Api 빌드
 ====================
@@ -25,7 +25,7 @@ ms.lasthandoff: 04/06/2018
 > 최근 몇 년 동안 HTTP HTML 페이지를 제공 하는 데 아닌지 지우기 사항이 되었습니다. 와 같은 몇 가지 간단한 개념 더하기는 소수의 동사 (GET, POST 등)을 사용 하는 웹 Api를 구축 하기 위한 강력한 플랫폼 이기도 *Uri* 및 *헤더*합니다. ASP.NET Web API는 HTTP 프로그래밍을 단순화 하는 구성 요소 집합입니다. ASP.NET MVC 런타임 기반의 빌드하 때문에 Web API http 전송 낮은 수준의 세부 정보를 자동으로 처리 합니다. 같은 시간에 Web API HTTP 프로그래밍 모델을 자연스럽 게 표시합니다. 사실, 하나의 웹 API의 ´ ֲ *하지* HTTP 현실을 추상화 합니다. 결과적으로, 웹 API는 유연 하 고 쉽게 확장할 수 있습니다. 이 실습 랩에서 연락처 관리자 응용 프로그램에 대 한 간단한 REST API를 만들려는 웹 API를 사용 합니다. 또한 API를 사용 하는 클라이언트를 작성 합니다. REST 아키텍처 스타일은 분명 하지 않지만 HTTP에 대 한 유효한 접근 방법 HTTP-활용 하는 효과적인 방법을 것으로 입증 된 합니다. 연락처의 관리자는 RESTful 적용, 추가 및 제거 등의 연락처에 대 한 노출 합니다. 이 랩에서 HTTP, REST, 기본적으로 이해 하며 HTML, JavaScript 및 jQuery 대 한 기본 실무 지식이 있다고 가정 합니다.
 > 
 > > [!NOTE]
-> > ASP.NET 웹 사이트에 ASP.NET Web API 프레임 워크에서 전용 영역 [ [ https://asp.net/web-api ](https://asp.net/web-api) ](https://asp.net/web-api)합니다. 이 사이트를 계속 최신 정보, 샘플 및 웹 API와 관련 된 뉴스 있으므로 체크 자주 제공할 거의 모든 장치 또는 개발 프레임 워크를 사용할 수 있는 사용자 지정 웹 Api를 만드는 아트를 철저히 하려는 경우.
+> > ASP.NET 웹 사이트에 ASP.NET Web API 프레임 워크에서 전용 영역 [ https://asp.net/web-api ](https://asp.net/web-api)합니다. 이 사이트를 계속 최신 정보, 샘플 및 웹 API와 관련 된 뉴스 있으므로 체크 자주 제공할 거의 모든 장치 또는 개발 프레임 워크를 사용할 수 있는 사용자 지정 웹 Api를 만드는 아트를 철저히 하려는 경우.
 > > 
 > > ASP.NET Web API, ASP.NET MVC 4 비슷합니다 사용 가능한 종속성 주입 프레임 워크의 여러 상당히 쉽게 사용할 수 있도록 하는 컨트롤러에서 서비스 계층을 구분 측면에서 뛰어난 유연성을 있습니다. MSDN에서 다운로드할 수 있는 ASP.NET Web API 프로젝트에서 종속성 주입을 위한 Ninject를 사용 하는 방법을 보여 주는 좋은 예제 중인 있고 [여기](https://code.msdn.microsoft.com/ASPNET-Web-API-JavaScript-d0d64dd7)합니다.
 > 
