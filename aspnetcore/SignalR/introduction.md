@@ -1,21 +1,21 @@
 ---
 title: ASP.NET Core SignalR 소개
 author: rachelappel
-description: ASP.NET Core SignalR 라이브러리 간소화 앱에 실시간 웹 기능을 추가 하는 방법을 알아봅니다.
+description: 앱에 실시간 기능 추가 ASP.NET Core SignalR 라이브러리를 간소화 하는 방법에 대해 알아봅니다.
 manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
 ms.custom: mvc
-ms.date: 03/07/2018
+ms.date: 04/25/2018
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: signalr/introduction
-ms.openlocfilehash: fa9b10201b5dc0e67bcd6d1321a3737e2025fda4
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: 190dfe9eac95be646b458870ac4ee95f681f45d7
+ms.sourcegitcommit: 2ab550f8c46e1a8a5d45e58be44d151c676af256
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 04/28/2018
 ---
 # <a name="introduction-to-aspnet-core-signalr"></a>ASP.NET Core SignalR 소개
 
@@ -51,20 +51,17 @@ ASP.NET Core 용 SignalR:
 
 다양 한 기술을 갖추고 실시간 웹 응용 프로그램을 통해 SignalR 간단히 설명 합니다. [Websocket](https://tools.ietf.org/html/rfc7118) 는 최적의 전송 되지만 해당 장치가 사용할 수 없는 경우 Server-Sent 이벤트 및 긴 폴링와 같은 다른 기법을 사용할 수 있습니다. SignalR에서는 자동으로 검색 하 고 서버와 클라이언트에서 지원 되는 기능을 기반으로 적절 한 전송을 초기화 합니다.
 
-## <a name="hubs-and-endpoints"></a>허브 및 끝점
+## <a name="hubs"></a>허브
 
-SignalR 허브와 끝점을 사용 하 여 클라이언트와 서버 간 통신 합니다. 허브 API에서는 대부분의 시나리오에 설명 합니다.
+SignalR 허브를 사용 하 여 클라이언트와 서버 간 통신 합니다.
 
-허브는 클라이언트와 서버에서 다른 메서드를 호출할 수 있도록 하는 끝점 API를 기반으로 하는 높은 수준의 파이프라인입니다. 클라이언트가 서버에서 로컬 메서드로 쉽게 그 반대의으로 메서드를 호출할 수 있도록 자동으로 컴퓨터 경계 간 디스패치 SignalR에서 처리 합니다. 허브 모델 바인딩 수 있는 강력한 형식의 매개 변수 하는 메서드에 전달 되도록 허용 합니다. 두 개의 기본 제공 허브 프로토콜을 제공 하는 SignalR: JSON 및 기반 이진 프로토콜을 기반으로 텍스트 프로토콜 [MessagePack](https://msgpack.org/)합니다.  MessagePack은 일반적으로 JSON을 사용할 때 보다 작은 메시지를 만듭니다. 이전 버전의 브라우저를 지원 해야 [XHR 수준 2](https://caniuse.com/#feat=xhr2) MessagePack 프로토콜 지원을 제공 하기 위해 합니다.
+허브는 클라이언트와 서버에서 다른 메서드를 호출할 수 있는 높은 수준의 파이프라인입니다. 클라이언트가 서버에서 로컬 메서드로 쉽게 그 반대의으로 메서드를 호출할 수 있도록 자동으로 컴퓨터 경계 간 디스패치 SignalR에서 처리 합니다. 허브 모델 바인딩 수 있는 강력한 형식의 매개 변수 하는 메서드에 전달 되도록 허용 합니다. 두 개의 기본 제공 허브 프로토콜을 제공 하는 SignalR: JSON 및 기반 이진 프로토콜을 기반으로 텍스트 프로토콜 [MessagePack](https://msgpack.org/)합니다.  MessagePack은 일반적으로 JSON을 사용할 때 보다 작은 메시지를 만듭니다. 이전 버전의 브라우저를 지원 해야 [XHR 수준 2](https://caniuse.com/#feat=xhr2) MessagePack 프로토콜 지원을 제공 하기 위해 합니다.
 
 활성 전송을 사용 하 여 메시지를 전송 하 여 클라이언트 쪽 코드를 호출 하는 허브입니다. 메시지 이름 및 클라이언트 쪽 메서드의 매개 변수를 포함 합니다. 메서드 매개 변수로 보낸 개체 구성 된 프로토콜을 사용 하 여 deserialize 됩니다. 클라이언트는 클라이언트 쪽 코드의 메서드에 대 한 이름과 일치 하도록 시도 합니다. 일치 하는 경우 클라이언트 메서드는 deserialize 된 매개 변수 데이터를 사용 하 여 실행 합니다.
 
-끝점에는 클라이언트에서 읽고 쓸 수 있도록 원시 소켓 같은 API를 제공 합니다. 그룹화, 브로드캐스트, 및 기타 기능을 처리 하도록 개발자에 게 중인지 합니다. 허브 API 끝점 계층 위에 빌드됩니다.
+## <a name="additional-resources"></a>추가 자료
 
-다음 다이어그램은 허브, 끝점 및 클라이언트 간의 관계를 보여줍니다.
-
-![SignalR 맵](introduction/_static/signalr-core-architecture.png)
-
-## <a name="related-resources"></a>관련 참고 자료
-
-[ASP.NET Core 용 SignalR 시작](xref:signalr/get-started)
+* [ASP.NET Core 용 SignalR 시작](xref:signalr/get-started)
+* [지원되는 플랫폼](xref:signalr/supported-platforms)
+* [허브](xref:signalr/hubs)
+* [JavaScript 클라이언트](xref:signalr/javascript-client)

@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/introduction-and-overview
 msc.type: authoredcontent
-ms.openlocfilehash: 572b263a5f968b473457771a1dd4075910218c01
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: a3527b54d1936bc14e32a1828ac3a2be625107ba
+ms.sourcegitcommit: 2ab550f8c46e1a8a5d45e58be44d151c676af256
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/28/2018
 ---
 <a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2013"></a>ASP.NET 4.5 Web Forms 및 Visual Studio 2013 시작
 ====================
@@ -60,7 +60,7 @@ ms.lasthandoff: 04/06/2018
 위에 나열 된 영역을 검토 하려는 경우 다음 콘텐츠를 검토 하는 것이 좋습니다.
 
 - [Visual C# 시작](https://msdn.microsoft.com/library/a72418yk.aspx)
-- [Web Development](https://msdn.microsoft.com/beginner/bb308760.aspx), [HTML, CSS, JavaScript, SQL, PHP, JQuery](http://w3schools.com/)
+- [웹 개발](https://msdn.microsoft.com/beginner/bb308760.aspx), [HTML, CSS, JavaScript, SQL, PHP, JQuery](http://w3schools.com/)
 - [관계형 데이터베이스](http://en.wikipedia.org/wiki/Relational_database)
 - [다중 계층 아키텍처](http://en.wikipedia.org/wiki/Multitier_architecture)
 
@@ -179,7 +179,7 @@ PayPal을 통한 반환한 검토 하 고 주문을 완료 수 있습니다.
 
 다운로드 되는 <em>.zip</em> 파일입니다. 이 자습서 시리즈 만듭니다 완료 된 프로젝트, 찾기 및 선택은 <em>C#</em>폴더에는 <em>.zip</em> 파일입니다. 저장 된 <em>C#</em> folderto Visual Studio 2013 프로젝트 작업에 사용할 폴더입니다. 기본적으로 Visual Studio 2013 프로젝트 폴더는 다음입니다.
 
-<strong>C:\Users\</strong><strong><em>&lt;username&gt;</em></strong><strong>\Documents\Visual Studio 2013\Projects</strong>
+<strong>C:\Users&#92;</strong><strong><em>&lt;username&gt;</em></strong><strong>\Documents\Visual Studio 2013\Projects</strong>
 
 이름 바꾸기는 ***C#*** 폴더를 ***WingtipToys***합니다.
 
