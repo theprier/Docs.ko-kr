@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 64eb85f75a6c2e10bf8c39f32eeda5311744f2a2
-ms.sourcegitcommit: 7d02ca5f5ddc2ca3eb0258fdd6996fbf538c129a
+ms.openlocfilehash: 9f164b6e1f3cc520b704cbb5ffdaadb99cebdc57
+ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>IIS가 있는 Windows에서 ASP.NET Core 호스팅
 
@@ -25,9 +25,7 @@ ms.lasthandoff: 04/03/2018
 지원되는 운영 체제는 다음과 같습니다.
 
 * Windows 7 이상
-* Windows Server 2008 R2 이상&#8224;
-
-&#8224;개념적으로 이 문서에서 설명하는 IIS 구성은 Nano Server IIS에서 ASP.NET Core 앱을 호스트하는 경우에도 적용됩니다. Nano Server와 관련된 지침은 [Nano Server의 ASP.NET Core 및 IIS](xref:tutorials/nano-server) 자습서를 참조하세요.
+* Windows Server 2008 R2 이상
 
 [HTTP.sys 서버](xref:fundamentals/servers/httpsys)(이전의 [WebListener](xref:fundamentals/servers/weblistener))는 IIS를 사용하는 역방향 프록시 구성에서 작동하지 않습니다. [Kestrel 서버](xref:fundamentals/servers/kestrel)를 사용합니다.
 
@@ -45,7 +43,7 @@ public static IWebHost BuildWebHost(string[] args) =>
         ...
 ```
 
-ASP.NET Core 모듈은 동적 포트를 생성하여 백 엔드 프로세스에 할당합니다. `UseIISIntegration` 메서드는 동적 포트를 선택하고 `http://locahost:{dynamicPort}/`에서 수신 대기하도록 Kestrel을 구성합니다. 이는 `UseUrls` 또는 [Kestrel의 수신 API](xref:fundamentals/servers/kestrel#endpoint-configuration)에 대한 호출과 같은 다른 URL 구성을 재정의합니다. 따라서 모듈을 사용하는 경우 `UseUrls`에 대한 호출 또는 Kestrel의 `Listen` API가 필요하지 않습니다. `UseUrls` 또는 `Listen`을 호출하는 경우 Kestrel은 IIS 없이 앱을 실행할 때 지정된 포트에서 수신 대기합니다.
+ASP.NET Core 모듈은 동적 포트를 생성하여 백 엔드 프로세스에 할당합니다. `UseIISIntegration` 메서드는 동적 포트를 선택하고 `http://localhost:{dynamicPort}/`에서 수신 대기하도록 Kestrel을 구성합니다. 이는 `UseUrls` 또는 [Kestrel의 수신 API](xref:fundamentals/servers/kestrel#endpoint-configuration)에 대한 호출과 같은 다른 URL 구성을 재정의합니다. 따라서 모듈을 사용하는 경우 `UseUrls`에 대한 호출 또는 Kestrel의 `Listen` API가 필요하지 않습니다. `UseUrls` 또는 `Listen`을 호출하는 경우 Kestrel은 IIS 없이 앱을 실행할 때 지정된 포트에서 수신 대기합니다.
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
@@ -169,15 +167,15 @@ services.Configure<IISOptions>(options =>
 
 ---
 
-## <a name="install-the-net-core-windows-server-hosting-bundle"></a>.NET Core Windows Server 호스팅 번들 설치
+## <a name="install-the-net-core-hosting-bundle"></a>.NET Core 호스팅 번들 설치
 
-1. 호스팅 시스템에 *.NET Core Windows Server 호스팅 번들*을 설치합니다. 번들은 .NET Core 런타임, .NET Core 라이브러리 및 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)을 설치합니다. 이 모듈은 IIS와 Kestrel 서버 간에 역방향 프록시를 만듭니다. 시스템이 인터넷에 연결되지 않은 경우 [Microsoft Visual C++ 2015 재배포 가능 패키지](https://www.microsoft.com/download/details.aspx?id=53840)를 설치한 후에 .NET Core Windows Server 호스팅 번들을 설치합니다.
+1. 호스팅 시스템에 *.NET Core 호스팅 번들*을 설치합니다. 번들은 .NET Core 런타임, .NET Core 라이브러리 및 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)을 설치합니다. 이 모듈은 IIS와 Kestrel 서버 간에 역방향 프록시를 만듭니다. 시스템이 인터넷에 연결되지 않은 경우 [Microsoft Visual C++ 2015 재배포 가능 패키지](https://www.microsoft.com/download/details.aspx?id=53840)를 설치한 후에 .NET Core 호스팅 번들을 설치합니다.
 
    1. [.NET 모든 다운로드 페이지](https://www.microsoft.com/net/download/all)로 이동합니다.
    1. 목록에서 미리 보기 상태가 아닌 최신 .NET Core 런타임을 선택합니다(**.NET Core** > **런타임** > **.NET Core 런타임 x.y.z**). 미리 보기 소프트웨어로 작업하려는 경우가 아니면 해당 링크 텍스트에서 "미리 보기"라는 단어가 있는 런타임을 사용하지 마십시오.
-   1. .NET Core 런타임 다운로드 페이지의 **Windows**에서 **서버 호스팅 설치 프로그램** 링크를 선택하여 *.NET Core Windows Server 호스팅 번들*을 다운로드합니다.
+   1. .NET Core 런타임 다운로드 페이지의 **Windows**에서 **호스팅 번들 설치 프로그램** 링크를 선택하여 *.NET Core 호스팅 번들*을 다운로드합니다.
 
-   **중요!** IIS 이전에 호스팅 번들이 설치된 경우 번들 설치를 복구해야 합니다. IIS를 설치한 후 호스팅 번들 설치 관리자를 다시 실행합니다.
+   **중요!** IIS 이전에 호스팅 번들이 설치된 경우 번들 설치를 복구해야 합니다. IIS를 설치한 후 호스팅 번들 설치 프로그램을 다시 실행합니다.
    
    설치 관리자가 x64 OS에서 x86 패키지를 설치하지 않도록 방지하려면 `OPT_NO_X86=1` 스위치를 사용하여 관리자 명령 프롬프트에서 설치 관리자를 실행합니다.
 
@@ -196,7 +194,8 @@ services.Configure<IISOptions>(options =>
 
 1. stdout 로깅을 사용하도록 설정할 경우 ASP.NET Core 모듈 stdout 로그를 보관할 *logs* 폴더를 새 폴더 안에 만듭니다. 앱이 페이로드에서 *logs* 폴더로 배포되는 경우 이 단계를 건너뜁니다. 로컬에서 프로젝트가 빌드될 때 MSBuild에서 *logs* 폴더를 자동으로 만들도록 설정하는 방법에 대한 지침은 [디렉터리 구조](xref:host-and-deploy/directory-structure) 항목을 참조하세요.
 
-   **중요!** stdout 로그는 앱 시작 오류의 문제 해결 용도로만 사용해야 합니다. 일상적인 앱 로깅에는 stdout 로깅을 사용하지 마세요. 로그 파일 크기 또는 생성되는 로그 파일 수에 대한 제한은 없습니다. stdout 로그에 대한 자세한 내용은 [로그 생성 및 리디렉션](xref:host-and-deploy/aspnet-core-module#log-creation-and-redirection)을 참조하세요. ASP.NET Core 앱의 로깅에 대한 자세한 내용은 [로깅](xref:fundamentals/logging/index) 항목을 참조하세요.
+   > [!IMPORTANT]
+   > stdout 로그는 앱 시작 오류의 문제 해결 용도로만 사용해야 합니다. 일상적인 앱 로깅에는 stdout 로깅을 사용하지 마세요. 로그 파일 크기 또는 생성되는 로그 파일 수에 대한 제한은 없습니다. 앱 풀에는 로그가 기록될 위치에 쓰기 권한이 있어야 합니다. 로그 위치에 대한 해당 경로에 있는 모든 폴더가 있어야 합니다. stdout 로그에 대한 자세한 내용은 [로그 생성 및 리디렉션](xref:host-and-deploy/aspnet-core-module#log-creation-and-redirection)을 참조하세요. ASP.NET Core 앱의 로깅에 대한 자세한 내용은 [로깅](xref:fundamentals/logging/index) 항목을 참조하세요.
 
 1. **IIS 관리자**의 **연결** 패널에서 서버 노드를 엽니다. **사이트** 폴더를 마우스 오른쪽 단추로 클릭합니다. 상황에 맞는 메뉴에서 **웹 사이트 추가**를 선택합니다.
 
@@ -242,6 +241,8 @@ services.Configure<IISOptions>(options =>
 
 수동 복사, Xcopy, Robocopy, PowerShell 등의 여러 방법 중 하나를 사용하여 앱을 호스팅 시스템으로 이동합니다.
 
+IIS에 ASP.NET Core 배포에 대한 자세한 내용은 [IIS 관리자를 위한 배포 리소스](#deployment-resources-for-iis-administrators) 섹션을 참조하세요.
+
 ## <a name="browse-the-website"></a>웹 사이트 찾아보기
 
 ![IIS 시작 페이지가 로드된 Microsoft Edge 브라우저](index/_static/browsewebsite.png)
@@ -250,7 +251,7 @@ services.Configure<IISOptions>(options =>
 
 앱이 실행 중이면 배포 폴더의 파일이 잠겨 있습니다. 잠긴 파일은 배포 중에 덮어쓸 수 없습니다. 배포에서 잠긴 파일을 해제하려면 다음 방법 중 **하나**를 사용하여 앱 풀을 중지합니다.
 
-* 웹 배포를 사용하고 프로젝트 파일에서 `Microsoft.NET.Sdk.Web`을 참조합니다. *app_offline.htm* 파일은 웹앱 디렉터리의 루트에 배치됩니다. 파일이 있는 경우 ASP.NET Core 모듈은 앱을 정상적으로 종료하고, 배포하는 동안 *app_offline.htm* 파일을 제공합니다. 자세한 내용은 [ASP.NET Core 모듈 구성 참조](xref:host-and-deploy/aspnet-core-module#appofflinehtm)를 참조하세요.
+* 웹 배포를 사용하고 프로젝트 파일에서 `Microsoft.NET.Sdk.Web`을 참조합니다. *app_offline.htm* 파일은 웹앱 디렉터리의 루트에 배치됩니다. 파일이 있는 경우 ASP.NET Core 모듈은 앱을 정상적으로 종료하고, 배포하는 동안 *app_offline.htm* 파일을 제공합니다. 자세한 내용은 [ASP.NET Core 모듈 구성 참조](xref:host-and-deploy/aspnet-core-module#app_offlinehtm)를 참조하세요.
 * 서버의 IIS 관리자에서 앱 풀을 수동으로 중지합니다.
 * PowerShell을 사용하여 응용 프로그램 풀을 중지하고 다시 시작합니다(PowerShell 5 이상 필요).
 
@@ -391,7 +392,7 @@ IIS 작업자 프로세스에서 앱에 대한 높은 액세스 권한이 필요
 
 1. **위치** 단추를 선택하고 시스템이 선택되어 있는지 확인합니다.
 
-1. **선택할 개체 이름 입력** 영역에 **IIS AppPool\\<app_pool_name>**을 입력합니다. **이름 확인** 단추를 선택합니다. *DefaultAppPool*의 경우 **IIS AppPool\DefaultAppPool**을 사용하는 이름을 확인합니다. **이름 확인** 단추를 선택하면 개체 이름 영역에 **DefaultAppPool** 값이 표시됩니다. 개체 이름 영역에 앱 풀 이름을 직접 입력할 수는 없습니다. 개체 이름을 확인할 때는 **IIS AppPool\\<app_pool_name>** 형식을 사용합니다.
+1. **선택할 개체 이름 입력** 영역에 **IIS AppPool\\<app_pool_name>** 을 입력합니다. **이름 확인** 단추를 선택합니다. *DefaultAppPool*의 경우 **IIS AppPool\DefaultAppPool**을 사용하는 이름을 확인합니다. **이름 확인** 단추를 선택하면 개체 이름 영역에 **DefaultAppPool** 값이 표시됩니다. 개체 이름 영역에 앱 풀 이름을 직접 입력할 수는 없습니다. 개체 이름을 확인할 때는 **IIS AppPool\\<app_pool_name>** 형식을 사용합니다.
 
    ![앱 폴더에 대한 사용자 또는 그룹 대화 상자 선택: “이름 확인”을 선택하기 전에 개체 이름 영역의 “IIS AppPool\"에 앱 풀 이름 “DefaultAppPool”이 추가됩니다.](index/_static/select-users-or-groups-1.png)
 
@@ -409,13 +410,34 @@ ICACLS C:\sites\MyWebApp /grant "IIS AppPool\DefaultAppPool":F
 
 자세한 내용은 [icacls](/windows-server/administration/windows-commands/icacls) 항목을 참조하세요.
 
+## <a name="deployment-resources-for-iis-administrators"></a>IIS 관리자를 위한 배포 리소스
+
+IIS 설명서에서 IIS에 대해 자세히 알아보세요.  
+[IIS 설명서](/iis)
+
+.NET Core 앱 배포 모델에 자세히 알아보세요.  
+[.NET Core 응용 프로그램 배포](/dotnet/core/deploying/)
+
+ASP.NET Core 모듈이 Kestrel 웹 서버에서 역방향 프록시 서버로 IIS 또는 IIS Express를 어떻게 사용하도록 허용하는지 알아봅니다.  
+[ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)
+
+ASP.NET Core 앱을 호스팅하기 위해 ASP.NET Core 모듈을 구성하는 방법을 알아봅니다.  
+[ASP.NET Core 모듈 구성 참조](xref:host-and-deploy/aspnet-core-module)
+
+게시된 ASP.NET Core 앱의 디렉터리 구조에 대해 알아봅니다.  
+[디렉터리 구조](xref:host-and-deploy/directory-structure)
+
+ASP.NET Core 앱용 활성 및 비활성 IIS 모듈과 IIS 모듈을 관리하는 방법을 살펴봅니다.  
+[IIS 모듈](xref:host-and-deploy/iis/troubleshoot)
+
+ASP.NET Core 앱의 IIS 배포에 대한 문제 진단 방법을 알아봅니다.  
+[문제 해결](xref:host-and-deploy/iis/troubleshoot)
+
+IIS에서 ASP.NET Core 앱을 호스팅할 때 일반적인 오류를 구분합니다.  
+[Azure App Service 및 IIS에 대한 일반적인 오류 참조](xref:host-and-deploy/azure-iis-errors-reference)
+
 ## <a name="additional-resources"></a>추가 자료
 
-* [IIS에서 ASP.NET Core 문제 해결](xref:host-and-deploy/iis/troubleshoot)
-* [ASP.NET Core를 사용하는 Azure App Service 및 IIS에 대한 일반적인 오류 참조](xref:host-and-deploy/azure-iis-errors-reference)
-* [ASP.NET Core 모듈 소개](xref:fundamentals/servers/aspnet-core-module)
-* [ASP.NET Core 모듈 구성 참조](xref:host-and-deploy/aspnet-core-module)
-* [IIS 모듈 및 ASP.NET Core](xref:host-and-deploy/iis/modules)
-* [ASP.NET Core 소개](../index.md)
+* [ASP.NET Core 소개](xref:index)
 * [공식 Microsoft IIS 사이트](https://www.iis.net/)
-* [Microsoft TechNet 라이브러리: Windows Server](/windows-server/windows-server-versions)
+* [Windows Server 기술 콘텐츠 라이브러리](/windows-server/windows-server)

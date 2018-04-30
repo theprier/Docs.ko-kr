@@ -3,17 +3,18 @@ title: ASP.NET Core의 Razor 페이지 소개
 author: Rick-Anderson
 description: ASP.NET Core의 Razor 페이지를 통해 MVC를 사용하는 것보다 더 쉽고 더 생산적으로 코딩 페이지에 초점을 맞춘 시나리오를 만드는 방법을 알아봅니다.
 manager: wpickett
+monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 09/12/2017
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: mvc/razor-pages/index
-ms.openlocfilehash: 532799d013f26869da03fe1062072f55dcce35f8
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 5e2b53a4771a97b0a4091f593720b9c0e4e345bf
+ms.sourcegitcommit: c4a31aaf902f2e84aaf4a9d882ca980fdf6488c0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/23/2018
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core의 Razor 페이지 소개
 
@@ -291,7 +292,7 @@ Razor 페이지의 뷰 검색에는 *Pages* 폴더가 포함됩니다. MVC 컨�
 * */Pages*
 
   * *Index.cshtml*
-  * */Customer*
+  * */Customers*
 
     * *Create.cshtml*
     * *Edit.cshtml*
@@ -314,7 +315,7 @@ Razor 페이지의 뷰 검색에는 *Pages* 폴더가 포함됩니다. MVC 컨�
 | RedirectToPage("../Index") | *Pages/Index* |
 | RedirectToPage("Index")  | *Pages/Customers/Index* |
 
-`RedirectToPage("Index")`, `RedirectToPage("./Index")` 및 `RedirectToPage("../Index")`는 <em>상대적 이름</em>입니다. `RedirectToPage` 매개 변수는 현재 페이지의 경로와 <em>결합</em>되어 대상 페이지의 이름을 계산합니다.  <!-- Review: Original had The provided string is combined with the page name of the current page to compute the name of the destination page. -- page name, not page path -->
+`RedirectToPage("Index")`, `RedirectToPage("./Index")` 및 `RedirectToPage("../Index")`는 <em>상대적 이름</em>입니다. `RedirectToPage` 매개 변수는 현재 페이지의 경로와 <em>결합</em>되어 대상 페이지의 이름을 계산합니다.  <!-- Review: Original had The provided string is combined with the page name of the current page to compute the name of the destination page.  page name, not page path -->
 
 상대적 이름 연결은 구조가 복잡한 사이트를 빌드할 때 유용합니다. 상대적 이름을 사용하여 한 폴더의 여러 페이지 간을 연결하는 경우 해당 폴더의 이름을 바꿀 수 있습니다. 그래도 모든 링크가 작동합니다(폴더 이름을 포함하지 않기 때문).
 
@@ -417,6 +418,7 @@ services.AddMvc()
 ## <a name="see-also"></a>참고 항목
 
 * [ASP.NET Core 소개](xref:index)
+* [Razor 구문](xref:mvc/views/razor)
 * [Razor 페이지 시작](xref:tutorials/razor-pages/razor-pages-start)
 * [Razor 페이지 권한 부여 규칙](xref:security/authorization/razor-pages-authorization)
 * [Razor 페이지 사용자 지정 경로 및 페이지 모델 공급자](xref:mvc/razor-pages/razor-pages-convention-features)

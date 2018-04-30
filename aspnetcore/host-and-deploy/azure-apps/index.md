@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: c2675f73880a41ee75f6ec13155419945387e109
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: f53f77d342cc59094a80e8667db6ef345a6e8305
+ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 04/26/2018
 ---
 # <a name="host-aspnet-core-on-azure-app-service"></a>Azure App Service에서 ASP.NET Core 호스트
 
@@ -95,14 +95,13 @@ Azure App Service/IIS에서 호스트하는 앱의 일반적인 배포 구성 �
 
 다음과 같은 방법으로 Azure App Service에 ASP.NET Core 미리 보기 앱을 배포할 수 있습니다.
 
-* [미리 보기 사이트 확장 설치](#site-x)
-* [자체 포함된 앱 배포](#self)
-* [Web Apps for Containers에서 Docker 사용](#docker)
+* [미리 보기 사이트 확장 설치](#install-the-preview-site-extension)
+* [자체 포함된 앱 배포](#deploy-the-app-self-contained)
+* [Web Apps for Containers에서 Docker 사용](#use-docker-with-web-apps-for-containers)
 
 미리 보기 사이트 확장을 사용하는 데 문제가 발생하는 경우 [GitHub](https://github.com/aspnet/azureintegration/issues/new)에서 문제를 엽니다.
 
-<a name="site-x"></a>
-### <a name="install-the-preview-site-extention"></a>미리 보기 사이트 확장 설치
+### <a name="install-the-preview-site-extension"></a>미리 보기 사이트 확장 설치
 
 * Azure Portal에서 App Service 블레이드로 이동합니다.
 * 검색 상자에 "ex"를 입력합니다.
@@ -111,10 +110,10 @@ Azure App Service/IIS에서 호스트하는 앱의 일반적인 배포 구성 �
 
 ![이전 단계에서 Azure 앱 블레이드](index/_static/x1.png)
 
-* **ASP.NET Core 런타임 확장**을 선택합니다.
-* **확인** > **확인**을 선택합니다.
+* **ASP.NET Core 2.1(x86) 런타임** 또는 **ASP.NET Core 2.1(x64) 런타임**을 선택합니다.
+* **확인**을 선택합니다. **확인**을 다시 선택합니다.
 
-추가 작업이 완료되면 최신.NET Core 2.1 미리 보기가 설치됩니다. 콘솔에서 `dotnet --info`를 실행하여 설치를 확인할 수 있습니다. App Service 블레이드에서:
+추가 작업이 완료되면 최신.NET Core 2.1 미리 보기가 설치됩니다. 콘솔에서 `dotnet --info`를 실행하여 설치를 확인할 수 있습니다. **App Service** 블레이드에서:
 
 * 검색 상자에 "con"을 입력합니다.
 * **콘솔**을 선택합니다.
@@ -126,26 +125,24 @@ Azure App Service/IIS에서 호스트하는 앱의 일반적인 배포 구성 �
 
 `dotnet --info`는 미리 보기가 설치되어 있는 사이트 확장에 대한 경로를 표시합니다. 기본 *ProgramFiles* 위치 대신 사이트 확장에서 앱이 실행된다고 표시합니다. *ProgramFiles*가 표시되면 사이트를 다시 시작하고 `dotnet --info`를 실행합니다.
 
-#### <a name="use-the-preview-site-extention-with-an-arm-template"></a>ARM 템플릿에서 미리 보기 사이트 확장 사용
+**ARM 템플릿에서 미리 보기 사이트 확장 사용**
 
-ARM 템플릿을 사용하여 응용 프로그램을 만들고 배포하는 경우 `siteextensions` 리소스 형식을 사용하여 웹앱에 사이트 확장을 추가할 수 있습니다. 예:
+ARM 템플릿을 사용하여 앱을 만들고 배포하는 경우 `siteextensions` 리소스 형식을 사용하여 웹앱에 사이트 확장을 추가할 수 있습니다. 예:
 
 [!code-json[Main](index/sample/arm.json?highlight=2)]
 
-<a name="self"></a>
 ### <a name="deploy-the-app-self-contained"></a>자체 포함된 앱 배포
 
-배포될 때 미리 보기 런타임이 함께 포함된 [자체 포함된 앱](/dotnet/core/deploying/#self-contained-deployments-scd)을 배포할 수 있습니다. 자체 포함된 앱을 배포하는 경우:
+배포에 미리 보기 런타임을 전달하는 [자체 포함된 앱](/dotnet/core/deploying/#self-contained-deployments-scd)을 배포할 수 있습니다. 자체 포함된 앱을 배포하는 경우:
 
-* 사이트를 준비할 필요가 없습니다.
-* 서버에 SDK가 설치되면 앱을 배포할 경우와 달리 응용 프로그램을 게시해야 합니다.
+* 사이트는 준비할 필요가 없습니다.
+* 공유 런타임 및 서버의 호스트를 사용하여 프레임워크 종속 배포를 위해 게시할 때와 다르게 앱을 게시해야 합니다.
 
-자체 포함된 앱은 모든 .NET Core 응용 프로그램에 대한 옵션입니다.
+자체 포함된 앱은 모든 ASP.NET Core 앱에 대한 옵션입니다.
 
-<a name="docker"></a>
 ### <a name="use-docker-with-web-apps-for-containers"></a>Web Apps for Containers에서 Docker 사용
 
-[Docker 허브](https://hub.docker.com/r/microsoft/aspnetcore/)에는 최신 2.1 미리 보기 Docker 이미지가 포함됩니다. 이를 기본 이미지로 사용하고 일반적인 방법으로 Web Apps for Containers에 배포할 수 있습니다.
+[Docker 허브](https://hub.docker.com/r/microsoft/aspnetcore/)에는 최신 2.1 미리 보기 Docker 이미지가 포함됩니다. 이미지는 기본 이미지로 사용할 수 있습니다. 이미지를 사용하고 일반적으로 Web App for Containers에 배포합니다.
 
 ## <a name="additional-resources"></a>추가 자료
 
