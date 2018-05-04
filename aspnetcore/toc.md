@@ -132,6 +132,7 @@
 ### [HTTP.sys](fundamentals/servers/httpsys.md)
 ## [전역화 및 지역화](xref:fundamentals/localization)
 ### [Orchard Core를 사용하여 이식 가능 개체 지역화 구성](xref:fundamentals/portable-object-localization)
+## [HTTP 요청 시작](xref:fundamentals/http-requests)
 ## [요청 기능](fundamentals/request-features.md)
 ## [호스티드 서비스를 사용하는 백그라운드 작업](xref:fundamentals/hosted-services)
 ## [Primitives](xref:fundamentals/primitives/index)
@@ -143,9 +144,11 @@
 ## [ASP.NET Core와 ASP.NET 중에서 선택](choose-aspnet-framework.md)
 
 # [Razor 페이지](xref:mvc/razor-pages/index)
-## [경로 및 앱 규칙 기능](xref:mvc/razor-pages/razor-pages-convention-features)
 ## [Razor 페이지에 대한 필터 메서드](xref:mvc/razor-pages/filter)
+## [Razor 클래스 라이브러리 만들기](xref:mvc/razor-pages/ui-class)
+## [경로 및 앱 규칙 기능](xref:mvc/razor-pages/razor-pages-convention-features)
 ## [Razor SDK](xref:mvc/razor-pages/sdk)
+
 
 # [MVC](mvc/overview.md)
 ## [모델 바인딩](mvc/models/model-binding.md)
@@ -355,7 +358,7 @@
 ## [ASP.NET Core 1.x에서 2.0으로](xref:migration/1x-to-2x/index)
 ### [인증 및 ID](xref:migration/1x-to-2x/identity-2x)
 
-# [API 참조](https://docs.microsoft.com/dotnet/api/?view=aspnetcore-2.0)
+# [API 참조](/dotnet/api/?view=aspnetcore-2.0)
 
 # [2.0 릴리스 정보](aspnetcore-2.0.md)
 ## [1.1 릴리스 정보](aspnetcore-1.1.md)
