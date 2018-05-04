@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bower
-ms.openlocfilehash: ada8120189baf036296b83f91d20b364ee90d074
-ms.sourcegitcommit: 07903a1be39a99dcf538d57981161592d0e658b8
+ms.openlocfilehash: 2d6cc526b5a0890103e2856a0ca4b58c5f162c79
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/20/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="manage-client-side-packages-with-bower-in-aspnet-core"></a>ASP.NET Core에서 Bower 사용 하 여 클라이언트 패키지를 관리 합니다.
 
@@ -107,7 +107,7 @@ Bower 클라이언트 쪽 빌드 프로세스를 사용 하는 일반적인 단�
 ### <a name="enable-static-files"></a>정적 파일을 사용 하도록 설정
 
 * 추가 `Microsoft.AspNetCore.StaticFiles` NuGet 패키지를 프로젝트입니다.
-* 와 제공에 정적 파일을 사용 하도록 설정 된 [정적 파일 미들웨어](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.staticfileextensions)합니다. 에 대 한 호출 추가 [UseStaticFiles](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.staticfileextensions) 에 `Configure` 메서드 `Startup`합니다.
+* 와 제공에 정적 파일을 사용 하도록 설정 된 [정적 파일 미들웨어](/dotnet/api/microsoft.aspnetcore.builder.staticfileextensions)합니다. 에 대 한 호출 추가 [UseStaticFiles](/dotnet/api/microsoft.aspnetcore.builder.staticfileextensions) 에 `Configure` 메서드 `Startup`합니다.
 
 [!code-csharp[](bower/sample/Startup.cs?highlight=9)]
 

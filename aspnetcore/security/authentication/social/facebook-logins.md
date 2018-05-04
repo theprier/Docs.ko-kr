@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/facebook-logins
-ms.openlocfilehash: 70a4b2e53be335b8854b0aef3cfbf8f4e21e6ebe
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 1798c310f36073e90a4e3521cfd1447bc94af666
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="facebook-external-login-setup-in-aspnet-core"></a>ASP.NET Core에서 Facebook 외부 로그인 설정
 
@@ -106,7 +106,7 @@ app.UseFacebookAuthentication(new FacebookOptions()
 ```
 
 * * *
-참조는 [FacebookOptions](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.facebookoptions) Facebook 인증에서 지 원하는 구성 옵션에 대 한 자세한 내용은 API 참조 합니다. 구성 옵션을 사용할 수 있습니다.
+참조는 [FacebookOptions](/dotnet/api/microsoft.aspnetcore.builder.facebookoptions) Facebook 인증에서 지 원하는 구성 옵션에 대 한 자세한 내용은 API 참조 합니다. 구성 옵션을 사용할 수 있습니다.
 
 * 사용자에 대 한 다른 정보를 요청 합니다.
 * 로그인 환경을 사용자 지정 하는 쿼리 문자열 인수를 추가 합니다.

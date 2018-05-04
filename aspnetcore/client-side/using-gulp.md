@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/using-gulp
-ms.openlocfilehash: f776b2025b6ebfeff28d3903aaeac4d7d89665b3
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 7a3d7807484b76e40e9728e0c750fa1383cc271f
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="use-gulp-in-aspnet-core"></a>ASP.NET Core에서 Gulp를 사용 합니다.
 
@@ -63,9 +63,9 @@ paths.concatCssDest = paths.webroot + "css/site.min.css";
 | ----------- | ----------- |
 | gulp        | Gulp 스트리밍 빌드 시스템입니다. 자세한 내용은 참조 [gulp](https://www.npmjs.com/package/gulp)합니다. |
 | rimraf      | 노드 삭제 모듈입니다. 자세한 내용은 참조 [rimraf](https://www.npmjs.com/package/rimraf)합니다. |
-| gulp-concat | 운영 체제의 줄 바꿈 문자에 따라 파일을 연결 하는 모듈입니다. 자세한 내용은 참조 [gulp concat](https://www.npmjs.com/package/gulp-concat)합니다. |
-| gulp-cssmin | CSS 파일을 축소 하는 모듈입니다. 자세한 내용은 참조 [gulp cssmin](https://www.npmjs.com/package/gulp-cssmin)합니다. |
-| gulp-uglify | 축소 하는 모듈 *.js* 파일입니다. 자세한 내용은 참조 [gulp uglify](https://www.npmjs.com/package/gulp-uglify)합니다. |
+| gulp concat | 운영 체제의 줄 바꿈 문자에 따라 파일을 연결 하는 모듈입니다. 자세한 내용은 참조 [gulp concat](https://www.npmjs.com/package/gulp-concat)합니다. |
+| gulp cssmin | CSS 파일을 축소 하는 모듈입니다. 자세한 내용은 참조 [gulp cssmin](https://www.npmjs.com/package/gulp-cssmin)합니다. |
+| gulp uglify | 축소 하는 모듈 *.js* 파일입니다. 자세한 내용은 참조 [gulp uglify](https://www.npmjs.com/package/gulp-uglify)합니다. |
 
 필수 모듈을 가져온 후 작업을 지정할 수 있습니다. 6 가지 작업 같습니다 등록, 다음 코드에 의해 표현:
 
@@ -267,7 +267,7 @@ IntelliSense 코드 완성, 매개 변수 설명 및 생산성을 향상 하 고
 
 ![IntelliSense gulp](using-gulp/_static/08-IntelliSense.png)
 
-IntelliSense에 대 한 자세한 내용은 참조 [JavaScript IntelliSense](https://docs.microsoft.com/visualstudio/ide/javascript-intellisense)합니다.
+IntelliSense에 대 한 자세한 내용은 참조 [JavaScript IntelliSense](/visualstudio/ide/javascript-intellisense)합니다.
 
 ## <a name="development-staging-and-production-environments"></a>개발, 스테이징 및 프로덕션 환경
 

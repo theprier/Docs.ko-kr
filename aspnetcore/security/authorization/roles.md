@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/roles
-ms.openlocfilehash: 7bc7ed35ef0496e855b024f92c915eb85b55511b
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: f1e7209cae1e2a58ad536547d655dd744ca0d3f7
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="role-based-authorization-in-aspnet-core"></a>ASP.NET Core에서 역할 기반 권한 부여
 
 <a name="security-authorization-role-based"></a>
 
-신원(Identity)이 생성될 때 해당 신원은 하나 이상의 역할에 속할 수 있습니다. 예를 들어, Tracy는 Administrator 및 User 역할에 동시에 속하지만 Scott은 User 역할에만 속하는 것처럼 말입니다. 이런 역할들이 생성되고 관리되는 방식은 권한 부여 프로세스에 사용되는 백업 저장소에 따라서 달라집니다. 개발자는 [ClaimsPrincipal](https://docs.microsoft.com/dotnet/api/system.security.claims.claimsprincipal) 클래스의 [IsInRole](https://docs.microsoft.com/dotnet/api/system.security.principal.genericprincipal.isinrole) 메서드를 이용해서 역할에 접근할 수 있습니다.
+신원(Identity)이 생성될 때 해당 신원은 하나 이상의 역할에 속할 수 있습니다. 예를 들어, Tracy는 Administrator 및 User 역할에 동시에 속하지만 Scott은 User 역할에만 속하는 것처럼 말입니다. 이런 역할들이 생성되고 관리되는 방식은 권한 부여 프로세스에 사용되는 백업 저장소에 따라서 달라집니다. 개발자는 [ClaimsPrincipal](/dotnet/api/system.security.claims.claimsprincipal) 클래스의 [IsInRole](/dotnet/api/system.security.principal.genericprincipal.isinrole) 메서드를 이용해서 역할에 접근할 수 있습니다.
 
 ## <a name="adding-role-checks"></a>추가 역할 검사
 

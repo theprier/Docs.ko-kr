@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/1x-to-2x/index
-ms.openlocfilehash: 4b7a13b31340f01c4f1527f602b925d3ac4e8241
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: c462f38ba345a9eaf648967524cadd1ba45aee19
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="migrate-from-aspnet-core-1x-to-20"></a>ASP.NET Core 1.x에서 2.0으로 마이그레이션
 
 작성자: [Scott Addie](https://github.com/scottaddie)
 
-이 문서에서는 기존 ASP.NET Core 1.x 프로젝트를 ASP.NET Core 2.0으로 업데이트하는 과정을 안내합니다. 응용 프로그램을 ASP.NET Core 2.0으로 마이그레이션하면 [여러 가지 새로운 기능 및 향상된 성능](https://docs.microsoft.com/aspnet/core/aspnetcore-2.0)을 활용할 수 있습니다. 
+이 문서에서는 기존 ASP.NET Core 1.x 프로젝트를 ASP.NET Core 2.0으로 업데이트하는 과정을 안내합니다. 응용 프로그램을 ASP.NET Core 2.0으로 마이그레이션하면 [여러 가지 새로운 기능 및 향상된 성능](xref:aspnetcore-2.0)을 활용할 수 있습니다. 
 
 기존 ASP.NET Core 1.x 응용 프로그램은 버전별 프로젝트 템플릿을 기반으로 합니다. ASP.NET Core 프레임워크가 진화함에 따라 프로젝트 템플릿 및 포함된 시작 코드도 함께 진화합니다. ASP.NET Core 프레임워크를 업데이트하는 것 외에도 응용 프로그램에 대한 코드를 업데이트해야 합니다.
 

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity
-ms.openlocfilehash: b3bfae665403162db1fb012fac227275b1dfd6c9
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: f9215767bf9a7c8b43b474848ba7dff7c3ddaf24
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>ASP.NET Core Identity 소개
 
@@ -23,7 +23,7 @@ ASP.NET Core Identity는 응용 프로그램에 로그인 기능을 추가할 �
 
 ASP.NET Core Identity는 SQL Server 데이터베이스에 사용자 이름, 비밀번호 및 프로필 정보를 저장하도록 구성할 수 있습니다. 또는 Azure 테이블 저장소 같은 사용자 고유의 영구 저장소를 사용할 수도 있습니다. 이 문서는 Visual Studio 및 CLI를 사용하는 경우에 대한 지침을 모두 포함합니다.
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample/src/ASPNETCore-IdentityDemoComplete/) [(다운로드 방법)](https://docs.microsoft.com/aspnet/core/tutorials/index#how-to-download-a-sample)
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample/src/ASPNETCore-IdentityDemoComplete/) [(다운로드 방법)](xref:tutorials/index#how-to-download-a-sample)
 
 ## <a name="overview-of-identity"></a>Identity 개요
 
@@ -37,7 +37,7 @@ ASP.NET Core Identity는 SQL Server 데이터베이스에 사용자 이름, 비�
 
    ![새 프로젝트 대화 상자](identity/_static/01-new-project.png)
 
-   ASP.NET Core 2.x 용 ASP.NET Core**웹 응용 프로그램 (모델-뷰-컨트롤러)**을 선택한 다음 **인증 변경**을 선택합니다.
+   ASP.NET Core 2.x 용 ASP.NET Core**웹 응용 프로그램 (모델-뷰-컨트롤러)** 을 선택한 다음 **인증 변경**을 선택합니다.
 
    ![새 프로젝트 대화 상자](identity/_static/02-new-project.png)
 

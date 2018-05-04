@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/twitter-logins
-ms.openlocfilehash: 3f0eb9abce067108b82cf8b639cea3b120ca4b5a
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: e0bf0084f8e46f3774fa070602404840aa803661
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="twitter-external-login-setup-with-aspnet-core"></a>ASP.NET Core를 사용 하 여 twitter 외부 로그인 설치
 
@@ -85,7 +85,7 @@ app.UseTwitterAuthentication(new TwitterOptions()
 ```
 
 * * *
-참조는 [TwitterOptions](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.twitteroptions) Twitter 인증에서 지 원하는 구성 옵션에 대 한 자세한 내용은 API 참조 합니다. 이 사용 하 여 사용자에 대 한 다른 정보를 요청할 수 수 있습니다.
+참조는 [TwitterOptions](/dotnet/api/microsoft.aspnetcore.builder.twitteroptions) Twitter 인증에서 지 원하는 구성 옵션에 대 한 자세한 내용은 API 참조 합니다. 이 사용 하 여 사용자에 대 한 다른 정보를 요청할 수 수 있습니다.
 
 ## <a name="sign-in-with-twitter"></a>Twitter를 사용 하 여 로그인
 

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/app-secrets
-ms.openlocfilehash: 166111696a9c4244ede44fca8878dd3725bb3099
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 0a04f5762a35426f342b58b8b60288c66c057ae7
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="safe-storage-of-app-secrets-in-development-in-aspnet-core"></a>ASP.NET Core에서 개발의 앱 암호의 안전한 저장소
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 04/06/2018
 
 이 문서에서는 개발 중 Secret Manager 도구를 이용해서 코드 외부에 보안 정보를 저장하는 방법을 보여줍니다. 무엇보다 중요한 점은 절대로 소스 코드에 암호나 기타 중요한 데이터를 저장하면 안 될 뿐만 아니라, 프로덕션 환경의 보안 정보를 개발 및 테스트 모드에서 사용해서는 안 된다는 것입니다. 대신, 이런 값들을 [구성](xref:fundamentals/configuration/index) 시스템을 이용해서 환경 변수로부터 읽거나, 또는 Secret Manager 도구를 이용해서 저장된 값으로부터 읽어올 수 있습니다. Secret Manager 도구는 민감한 보안 정보가 소스 제어에 체크인되지 않게 도와줍니다. 이 문서에서 설명하는 Secret Manager 도구를 이용해서 저장된 보안 정보는 [구성](xref:fundamentals/configuration/index) 시스템으로 읽을 수 있습니다
 
-Secret Manager 도구는 개발 시에만 사용됩니다. Azure의 테스트 및 프로덕션 보안 데이터는 [Microsoft Azure Key Vault](https://azure.microsoft.com/services/key-vault/) 구성 공급자를 이용해서 보호할 수 있습니다. 보다 자세한 정보는 [Azure 키 자격 증명 모음 구성 공급자](https://docs.microsoft.com/aspnet/core/security/key-vault-configuration)를 참고하시기 바랍니다. 
+Secret Manager 도구는 개발 시에만 사용됩니다. Azure의 테스트 및 프로덕션 보안 데이터는 [Microsoft Azure Key Vault](https://azure.microsoft.com/services/key-vault/) 구성 공급자를 이용해서 보호할 수 있습니다. 보다 자세한 정보는 [Azure 키 자격 증명 모음 구성 공급자](xref:security/key-vault-configuration)를 참고하시기 바랍니다. 
 
 ## <a name="environment-variables"></a>환경 변수
 
@@ -46,7 +46,7 @@ Secret Manager 도구는 개발 작업에 필요한 민감한 데이터를 프�
 
 [!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
 
-다시 마우스 오른쪽 버튼으로 솔루션 탐색기에서 프로젝트를 클릭한 다음, 컨텍스트 메뉴에서 **사용자 암호 관리 (Manage User Secrets)**를 선택합니다.  그러면 다음 예제에 강조 표시된 것처럼 *.csproj* 파일의 `PropertyGroup` 노드 하위에 새로운 `UserSecretsId` 노드가 추가됩니다.
+다시 마우스 오른쪽 버튼으로 솔루션 탐색기에서 프로젝트를 클릭한 다음, 컨텍스트 메뉴에서 **사용자 암호 관리 (Manage User Secrets)** 를 선택합니다.  그러면 다음 예제에 강조 표시된 것처럼 *.csproj* 파일의 `PropertyGroup` 노드 하위에 새로운 `UserSecretsId` 노드가 추가됩니다.
 
 [!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-after.csproj?highlight=4)]
 
@@ -72,7 +72,7 @@ dotnet user-secrets -h
 그러면 Secret Manager 도구의 사용법, 옵션 및 명령 도움말이 표시됩니다.
 
 > [!NOTE]
-> 이렇게 *.csproj* 파일의 `DotNetCliToolReference` 노드에 정의된 도구를 실행하려면*.csproj* 파일과 동일한 디렉터리에 위치해 있어야 합니다. 
+> 이렇게 *.csproj* 파일의 `DotNetCliToolReference` 노드에 정의된 도구를 실행하려면 *.csproj* 파일과 동일한 디렉터리에 위치해 있어야 합니다. 
 
 Secret Manager 도구는 사용자 프로필에 저장된 프로젝트별 구성 설정을 대상으로 동작합니다. 사용자 보안 정보를 사용하려면 프로젝트의 *.csproj* 파일에 `UserSecretsId` 값을 지정해야 합니다.  `UserSecretsId` 값은 선택적이긴 하지만 일반적으로 프로젝트에 고유합니다. 개발자는 대부분 `UserSecretsId` 값에 GUID를 생성해서 지정합니다. 
 
@@ -86,7 +86,7 @@ Secret Manager 도구를 사용해서 보안 정보를 설정합니다. 예를 �
 dotnet user-secrets set MySecret ValueOfMySecret
 ```
 
-다른 디렉터리에서 Secret Manager 도구를 실행할 수도 있지만, `--project` 옵션을 사용해서*.csproj* 파일의 경로를 전달해야 합니다.
+다른 디렉터리에서 Secret Manager 도구를 실행할 수도 있지만, `--project` 옵션을 사용해서 *.csproj* 파일의 경로를 전달해야 합니다.
 
 ```console
 dotnet user-secrets set MySecret ValueOfMySecret --project c:\work\WebApp1\src\webapp1

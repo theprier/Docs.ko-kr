@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create-the-project
 msc.type: authoredcontent
-ms.openlocfilehash: b42e62b560e01d592c9f4cb61ea6199a15dc8bb6
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 7cfceb38204b6cfd3589a082761273e54ac122ca
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 <a name="create-the-project"></a>프로젝트 만들기
 ====================
@@ -52,7 +52,10 @@ ms.lasthandoff: 04/06/2018
 
     > [!NOTE]
     > 이 자습서 시리즈의 프로젝트 이름이 **WingtipToys**합니다. 이 사용 하는 것이 좋습니다. *정확한* 예상 대로 작동 자습서 시리즈에서 제공 되는 코드를 프로젝트 이름입니다.
-6. 다음으로, 선택는 **Web Forms** 템플릿을 선택 하 고는 **프로젝트 만들기** 단추입니다.  
+
+6. 클릭는 **인증 변경** 단추입니다. 선택 **개별 사용자 계정** 클릭는 **확인** 단추입니다.
+
+7. 선택 된 **Web Forms** 템플릿과 클릭은 **확인** 단추입니다.
 
     ![프로젝트-새 프로젝트 템플릿 만들기](create-the-project/_static/image3.png)
 
@@ -95,7 +98,7 @@ Visual Studio 프로젝트에 대 한 일부 파일과 초기 폴더를 만듭�
 
 | **파일** | **용도** |
 | --- | --- |
-| *Default.aspx* | 일반적으로 첫 번째 페이지는 응용 프로그램이 브라우저에서 실행 될 때 표시 됩니다. |
+| *default.aspx* | 일반적으로 첫 번째 페이지는 응용 프로그램이 브라우저에서 실행 될 때 표시 됩니다. |
 | *Site.Master* | 응용 프로그램에서 페이지에 대 한 일관 된 레이아웃 및 사용 하 여 표준 동작을 만들 수 있도록 하는 페이지입니다. |
 | *Global.asax* | ASP.NET 또는 HTTP 모듈에서 발생 시킨 응용 프로그램 수준 및 세션 수준 이벤트에 응답 하기 위한 코드를 포함 하는 선택적 파일입니다. |
 | *Web.config* | 응용 프로그램에 대 한 구성 데이터입니다. |

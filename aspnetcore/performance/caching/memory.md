@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/caching/memory
-ms.openlocfilehash: c2eae83219e8995a614b2933b1290d061f1b7869
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: a1ceb6c577c634aae7ee9c327e8e5b33e973912d
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="cache-in-memory-in-aspnet-core"></a>ASP.NET Core에서 메모리 내 캐시
 
@@ -26,11 +26,11 @@ ms.lasthandoff: 03/22/2018
 
 캐싱 크게 향상 시킬 수 성능 및 확장성 응용 프로그램의 콘텐츠를 생성 하는 데 필요한 작업을 줄여 합니다. 캐싱 동작 자주 변경 되는 데이터에 가장 적합 합니다. 많은 반환 될 수 있는 데이터의 복사본을 만들어 캐시 원본에서 보다 더 빠릅니다. 작성 하 고 캐시 된 데이터에 의존 하지를 응용 프로그램을 테스트 해야 합니다.
 
-ASP.NET Core 몇 가지 다른 캐시를 지원합니다. 가장 간단한 캐시 기반는 [IMemoryCache](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.imemorycache)을 웹 서버의 메모리에 저장 된 캐시를 나타냅니다. 여러 서버의 서버 팜에서 실행 되는 응용 프로그램 메모리에 캐시를 사용 하는 경우 세션 스티커 인지 확인 해야 합니다. 고정 세션 모든 클라이언트에서 후속 요청이 동일한 서버로 이동 있는지 확인 합니다. 예를 들어 Azure 웹 앱 사용 [응용 프로그램 요청 라우팅](https://www.iis.net/learn/extensions/planning-for-arr) (ARR) 동일한 서버에 모든 후속 요청을 라우팅할 수 있습니다.
+ASP.NET Core 몇 가지 다른 캐시를 지원합니다. 가장 간단한 캐시 기반는 [IMemoryCache](/dotnet/api/microsoft.extensions.caching.memory.imemorycache)을 웹 서버의 메모리에 저장 된 캐시를 나타냅니다. 여러 서버의 서버 팜에서 실행 되는 응용 프로그램 메모리에 캐시를 사용 하는 경우 세션 스티커 인지 확인 해야 합니다. 고정 세션 모든 클라이언트에서 후속 요청이 동일한 서버로 이동 있는지 확인 합니다. 예를 들어 Azure 웹 앱 사용 [응용 프로그램 요청 라우팅](https://www.iis.net/learn/extensions/planning-for-arr) (ARR) 동일한 서버에 모든 후속 요청을 라우팅할 수 있습니다.
 
 웹 팜에서 아닌 고정 세션 필요는 [분산 캐시](distributed.md) 캐시 일관성 문제가 발생 하지 않도록 합니다. 일부 응용 프로그램에 대 한 분산된 캐시 메모리에 캐시 보다 더 높은 규모 확장을 지원할 수 있습니다. 분산된 캐시를 사용 하 여 외부 프로세스에 캐시 메모리 오프 로드 합니다. 
 
-`IMemoryCache` 하지 않는 한 캐시의 메모리 캐시 항목을 제거 하는 [우선 순위를 캐시](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheitempriority) 로 설정 된 `CacheItemPriority.NeverRemove`합니다. 설정할 수 있습니다는 `CacheItemPriority` 캐시를 사용할 메모리가 중에서 항목을 제거 하는 우선 순위를 조정 해야 합니다.
+`IMemoryCache` 하지 않는 한 캐시의 메모리 캐시 항목을 제거 하는 [우선 순위를 캐시](/dotnet/api/microsoft.extensions.caching.memory.cacheitempriority) 로 설정 된 `CacheItemPriority.NeverRemove`합니다. 설정할 수 있습니다는 `CacheItemPriority` 캐시를 사용할 메모리가 중에서 항목을 제거 하는 우선 순위를 조정 해야 합니다.
 
 메모리 내 캐시는 모든 개체를 저장할 수 있습니다. 분산된 캐시 인터페이스는 제한 `byte[]`합니다.
 
@@ -58,15 +58,15 @@ ASP.NET Core 몇 가지 다른 캐시를 지원합니다. 가장 간단한 캐�
 
 ![인덱스 뷰를 표시 하는 두 개의 서로 다른 시간](memory/_static/time.png)
 
-다음 코드에서는 [GetOrCreate](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_GetOrCreate__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object_System_Func_Microsoft_Extensions_Caching_Memory_ICacheEntry___0__) 및 [GetOrCreateAsync](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_GetOrCreateAsync__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object_System_Func_Microsoft_Extensions_Caching_Memory_ICacheEntry_System_Threading_Tasks_Task___0___) 데이터를 캐시 합니다. 
+다음 코드에서는 [GetOrCreate](/dotnet/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_GetOrCreate__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object_System_Func_Microsoft_Extensions_Caching_Memory_ICacheEntry___0__) 및 [GetOrCreateAsync](/dotnet/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_GetOrCreateAsync__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object_System_Func_Microsoft_Extensions_Caching_Memory_ICacheEntry_System_Threading_Tasks_Task___0___) 데이터를 캐시 합니다. 
 
 [!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet2&highlight=3-7,14-19)]
 
-다음 호출 코드 [가져오기](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_Get__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object_) 를 캐시 된 시간을 가져옵니다.
+다음 호출 코드 [가져오기](/dotnet/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_Get__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object_) 를 캐시 된 시간을 가져옵니다.
 
 [!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_gct)]
 
-참조 [IMemoryCache 메서드](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.imemorycache) 및 [CacheExtensions 메서드](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheextensions) 에 대 한 설명은 캐시 메서드.
+참조 [IMemoryCache 메서드](/dotnet/api/microsoft.extensions.caching.memory.imemorycache) 및 [CacheExtensions 메서드](/dotnet/api/microsoft.extensions.caching.memory.cacheextensions) 에 대 한 설명은 캐시 메서드.
 
 ## <a name="using-memorycacheentryoptions"></a>MemoryCacheEntryOptions를 사용 하 여
 
@@ -75,7 +75,7 @@ ASP.NET Core 몇 가지 다른 캐시를 지원합니다. 가장 간단한 캐�
 - 절대 만료 시간을 설정합니다. 이 항목을 캐시 될 수 있는 최대 시간 고 슬라이딩 만료 지속적으로 갱신 되 면 너무 부실 항목 방지 합니다.
 - 슬라이딩 만료 시간을 설정합니다. 이 캐시 된 항목에 액세스 하는 요청에는 상대 (sliding) 만료 시계가 다시 설정 됩니다.
 - 캐시 우선 순위 설정 `CacheItemPriority.NeverRemove`합니다. 
-- 집합은 [PostEvictionDelegate](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.postevictiondelegate) 하는 후에 호출 됩니다는 엔트리를 캐시에서 제거 합니다. 콜백 캐시에서 항목을 제거 하는 코드에서 다른 스레드에서 실행 됩니다.
+- 집합은 [PostEvictionDelegate](/dotnet/api/microsoft.extensions.caching.memory.postevictiondelegate) 하는 후에 호출 됩니다는 엔트리를 캐시에서 제거 합니다. 콜백 캐시에서 항목을 제거 하는 코드에서 다른 스레드에서 실행 됩니다.
 
 [!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_et&highlight=14-20)]
 

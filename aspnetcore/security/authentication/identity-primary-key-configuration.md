@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-primary-key-configuration
-ms.openlocfilehash: db47055aecc5252dbb3991f29a8255b946deaeb7
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: ce654492dc7bab6c031c9f82555f877f642171ce
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="configure-identity-primary-key-data-type-in-aspnet-core"></a>ASP.NET Core에서 Id 기본 키 데이터 형식 구성
 
@@ -21,11 +21,11 @@ ASP.NET Core Identity를 사용 하면 기본 키를 나타내는 데 사용 되
 
 ## <a name="customize-the-primary-key-data-type"></a>기본 키 데이터 형식을 사용자 지정
 
-1. 사용자 지정 구현을 만듭니다는 [IdentityUser](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.entityframeworkcore.identityuser-1) 클래스입니다. 사용자 개체를 만드는 데 사용할 유형을 나타냅니다. 다음 예제에서는 기본 `string` 형식으로 대체 됩니다 `Guid`합니다.
+1. 사용자 지정 구현을 만듭니다는 [IdentityUser](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identityuser-1) 클래스입니다. 사용자 개체를 만드는 데 사용할 유형을 나타냅니다. 다음 예제에서는 기본 `string` 형식으로 대체 됩니다 `Guid`합니다.
 
     [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Models/ApplicationUser.cs?highlight=4&range=7-13)]
 
-2. 사용자 지정 구현을 만듭니다는 [IdentityRole](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.identity.entityframeworkcore.identityrole-1) 클래스입니다. 역할 개체를 만드는 데 사용할 유형을 나타냅니다. 다음 예제에서는 기본 `string` 형식으로 대체 됩니다 `Guid`합니다.
+2. 사용자 지정 구현을 만듭니다는 [IdentityRole](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identityrole-1) 클래스입니다. 역할 개체를 만드는 데 사용할 유형을 나타냅니다. 다음 예제에서는 기본 `string` 형식으로 대체 됩니다 `Guid`합니다.
 
     [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Models/ApplicationRole.cs?highlight=3&range=7-12)]
 

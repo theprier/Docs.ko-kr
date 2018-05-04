@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/cookie
-ms.openlocfilehash: 26101d46557c64047f3d121083fe34ad34ff99ea
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: b251aa3ff0b4d0c08f9885cd73a111b7c2008766
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="use-cookie-authentication-without-aspnet-core-identity"></a>ASP.NET Core Id 없이 쿠키 인증을 사용 하 여
 
@@ -40,7 +40,7 @@ ASP.NET Core에서 마이그레이션 쿠키 기반 인증에 대 한 내용은 
 
 [!code-csharp[](cookie/sample/Startup.cs?name=snippet2)]
 
-**AddCookie Options**
+**AddCookie 옵션**
 
 [CookieAuthenticationOptions](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions?view=aspnetcore-2.0) 클래스는 인증 공급자 옵션을 구성 하는 데 사용 됩니다.
 
@@ -162,7 +162,7 @@ var cookiePolicyOptions = new CookiePolicyOptions
 
 ## <a name="creating-an-authentication-cookie"></a>인증 쿠키를 만들기
 
-사용자 정보를 보관 하는 쿠키를 만들려면 먼저 생성 해야는 [ClaimsPrincipal](https://docs.microsoft.com/dotnet/api/system.security.claims.claimsprincipal)합니다. 사용자 정보 직렬화 되며 쿠키에 저장 됩니다. 
+사용자 정보를 보관 하는 쿠키를 만들려면 먼저 생성 해야는 [ClaimsPrincipal](/dotnet/api/system.security.claims.claimsprincipal)합니다. 사용자 정보 직렬화 되며 쿠키에 저장 됩니다. 
 
 #### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 만들기는 [ClaimsIdentity](/dotnet/api/system.security.claims.claimsidentity) 와 모든 필수 [클레임](/dotnet/api/system.security.claims.claim)s 및 호출 [SignInAsync](/dotnet/api/microsoft.aspnetcore.authentication.authenticationhttpcontextextensions.signinasync?view=aspnetcore-2.0) 사용자 로그인:

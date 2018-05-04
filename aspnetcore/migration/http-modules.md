@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/http-modules
-ms.openlocfilehash: e02f3a75269e5e4a4794d1979d3a5add21fe38be
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: cbdef871ffc3269e3118d23ed20306a71b9df030
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="migrate-http-handlers-and-modules-to-aspnet-core-middleware"></a>ASP.NET Core 미들웨어로 HTTP 처리기 및 모듈이 마이그레이션
 
 으로 [Matt Perdeck](https://www.linkedin.com/in/mattperdeck)
 
-이 문서에서는 기존 ASP.NET 마이그레이션하는 방법을 보여 줍니다. [HTTP 모듈 및 처리기 system.webserver에서](https://docs.microsoft.com/iis/configuration/system.webserver/) ASP.NET Core로 [미들웨어](xref:fundamentals/middleware/index)합니다.
+이 문서에서는 기존 ASP.NET 마이그레이션하는 방법을 보여 줍니다. [HTTP 모듈 및 처리기 system.webserver에서](/iis/configuration/system.webserver/) ASP.NET Core로 [미들웨어](xref:fundamentals/middleware/index)합니다.
 
 ## <a name="modules-and-handlers-revisited"></a>모듈 및 revisited 처리기
 
@@ -29,15 +29,15 @@ ASP.NET Core 미들웨어를 계속 하기 전에 먼저 요약해 보면 HTTP �
 
 **처리기는:**
 
-   * 구현 하는 클래스 [IHttpHandler](https://docs.microsoft.com/dotnet/api/system.web.ihttphandler)
+   * 구현 하는 클래스 [IHttpHandler](/dotnet/api/system.web.ihttphandler)
 
    * 와 같은 지정 된 파일 이름이 나 확장명을 사용 하 여 요청을 처리 하는 데 사용 *보고서*
 
-   * [구성 된](https://docs.microsoft.com//iis/configuration/system.webserver/handlers/) 에 *Web.config*
+   * [구성 된](/iis/configuration/system.webserver/handlers/) 에 *Web.config*
 
 **모듈은:**
 
-   * 구현 하는 클래스 [IHttpModule](https://docs.microsoft.com/dotnet/api/system.web.ihttpmodule)
+   * 구현 하는 클래스 [IHttpModule](/dotnet/api/system.web.ihttpmodule)
 
    * 모든 요청에 대해 호출 됩니다.
 
@@ -45,11 +45,11 @@ ASP.NET Core 미들웨어를 계속 하기 전에 먼저 요약해 보면 HTTP �
 
    * HTTP 응답에 추가 하거나 직접 만들 수
 
-   * [구성 된](https://docs.microsoft.com//iis/configuration/system.webserver/modules/) 에 *Web.config*
+   * [구성 된](/iis/configuration/system.webserver/modules/) 에 *Web.config*
 
 **모듈에는 들어오는 요청을 처리 하는 순서는 의해 결정 됩니다.**
 
-   1. [응용 프로그램 수명 주기](https://msdn.microsoft.com/library/ms227673.aspx), ASP.NET에서 발생 하는 계열 이벤트 변수인: [BeginRequest](https://docs.microsoft.com/dotnet/api/system.web.httpapplication.beginrequest), [AuthenticateRequest](https://docs.microsoft.com/dotnet/api/system.web.httpapplication.authenticaterequest)등입니다. 각 모듈 하나 이상의 이벤트에 대 한 처리기를 만들 수 있습니다.
+   1. [응용 프로그램 수명 주기](https://msdn.microsoft.com/library/ms227673.aspx), ASP.NET에서 발생 하는 계열 이벤트 변수인: [BeginRequest](/dotnet/api/system.web.httpapplication.beginrequest), [AuthenticateRequest](/dotnet/api/system.web.httpapplication.authenticaterequest)등입니다. 각 모듈 하나 이상의 이벤트에 대 한 처리기를 만들 수 있습니다.
 
    2. 동일한 이벤트에서 구성 하는 순서에 대 한 *Web.config*합니다.
 
@@ -243,7 +243,7 @@ HTTP 처리기 구성 의해 이루어진다는 *Web.config* 다음과 같은 �
 public async Task Invoke(HttpContext context)
 ```
 
-`HttpContext` ASP.NET Core 크게 변경 되었습니다. 이 섹션에서는의 가장 일반적으로 사용 되는 속성으로 변환 하는 방법을 보여 줍니다. [System.Web.HttpContext](https://docs.microsoft.com/dotnet/api/system.web.httpcontext) 새 `Microsoft.AspNetCore.Http.HttpContext`합니다.
+`HttpContext` ASP.NET Core 크게 변경 되었습니다. 이 섹션에서는의 가장 일반적으로 사용 되는 속성으로 변환 하는 방법을 보여 줍니다. [System.Web.HttpContext](/dotnet/api/system.web.httpcontext) 새 `Microsoft.AspNetCore.Http.HttpContext`합니다.
 
 ### <a name="httpcontext"></a>HttpContext
 

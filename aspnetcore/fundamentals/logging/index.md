@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/logging/index
-ms.openlocfilehash: aab1190467c13ae121625c377d0908eac2fe8d95
-ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
+ms.openlocfilehash: 78dcee05799965c72f878662df61034018a23021
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="logging-in-aspnet-core"></a>ASP.NET Core에 로그인
 
@@ -586,8 +586,6 @@ App Service 앱에 배포할 때 응용 프로그램은 Azure Portal **App Servi
 일부 타사 프레임워크는 [구조적 로깅이라고도 하는 의미 체계 로깅](https://softwareengineering.stackexchange.com/questions/312197/benefits-of-structured-logging-vs-basic-logging)을 수행할 수 있습니다.
 
 타사 프레임워크를 사용하는 방법은 기본 공급자 중 하나를 사용하는 방법과 비슷합니다. 프로젝트에 NuGet 패키지를 추가하고 `ILoggerFactory`에 대한 확장 메서드를 호출하면 됩니다. 자세한 내용은 각 프레임워크의 설명서를 참조하십시오.
-
-다른 로깅 프레임워크 또는 개발자 고유의 로깅 요구 사항을 지원하는 사용자 지정 공급자를 만들 수도 있습니다.
 
 ## <a name="azure-log-streaming"></a>Azure 로그 스트리밍
 

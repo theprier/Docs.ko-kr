@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/middleware/index
-ms.openlocfilehash: a410d686b6140a487efb9962e94f64cfbec245f2
-ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
+ms.openlocfilehash: 4c44063fb3385fc625c35c8a3cf06a35b5b0afb7
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="aspnet-core-middleware"></a>ASP.NET Core 미들웨어
 
@@ -30,7 +30,7 @@ ms.lasthandoff: 04/26/2018
 
 요청 대리자는 요청 파이프라인을 빌드하는 데 사용됩니다. 요청 대리자는 각 HTTP 요청을 처리합니다.
 
-요청 대리자는 [Run](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.runextensions), [Map](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mapextensions) 및 [Use](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.useextensions) 확장 메서드를 사용하여 구성됩니다. 개별 요청 대리자는 무명 메서드(인라인 미들웨어라고 함)로 인라인에서 지정되거나 다시 사용할 수 있는 클래스에서 정의될 수 있습니다. 이러한 다시 사용할 수 있는 클래스 및 인라인 무명 메서드는 *미들웨어* 또는 *미들웨어 구성 요소*입니다. 요청 파이프라인의 각 미들웨어 구성 요소는 파이프라인의 다음 구성 요소를 호출하거나 적절한 경우 체인을 단락(short-circuiting)하는 일을 담당합니다.
+요청 대리자는 [Run](/dotnet/api/microsoft.aspnetcore.builder.runextensions), [Map](/dotnet/api/microsoft.aspnetcore.builder.mapextensions) 및 [Use](/dotnet/api/microsoft.aspnetcore.builder.useextensions) 확장 메서드를 사용하여 구성됩니다. 개별 요청 대리자는 무명 메서드(인라인 미들웨어라고 함)로 인라인에서 지정되거나 다시 사용할 수 있는 클래스에서 정의될 수 있습니다. 이러한 다시 사용할 수 있는 클래스 및 인라인 무명 메서드는 *미들웨어* 또는 *미들웨어 구성 요소*입니다. 요청 파이프라인의 각 미들웨어 구성 요소는 파이프라인의 다음 구성 요소를 호출하거나 적절한 경우 체인을 단락(short-circuiting)하는 일을 담당합니다.
 
 [HTTP 모듈을 미들웨어로 마이그레이션](xref:migration/http-modules)은 ASP.NET Core와 ASP.NET 4.x의 요청 파이프라인 간의 차이점을 설명하고 더 많은 미들웨어 샘플을 제공합니다.
 
@@ -46,9 +46,9 @@ ASP.NET Core 요청 파이프라인은 이 다이어그램이 보여 주는 것�
 
 [!code-csharp[](index/sample/Middleware/Startup.cs)]
 
-첫 번째 [app.Run](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.runextensions) 대리자는 파이프라인을 종료합니다.
+첫 번째 [app.Run](/dotnet/api/microsoft.aspnetcore.builder.runextensions) 대리자는 파이프라인을 종료합니다.
 
-[app.Use](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.useextensions)를 사용하여 여러 요청 대리자를 함께 연결할 수 있습니다. `next` 매개 변수는 파이프라인의 다음 대리자를 나타냅니다. (*next* 매개 변수를 호출하지 *않고* 파이프라인을 단락(short-circuit)할 수 있습니다.) 이 예제에서 설명하듯이 일반적으로 다음 대리자 전과 후 모두에서 작업을 수행할 수 있습니다.
+[app.Use](/dotnet/api/microsoft.aspnetcore.builder.useextensions)를 사용하여 여러 요청 대리자를 함께 연결할 수 있습니다. `next` 매개 변수는 파이프라인의 다음 대리자를 나타냅니다. (*next* 매개 변수를 호출하지 *않고* 파이프라인을 단락(short-circuit)할 수 있습니다.) 이 예제에서 설명하듯이 일반적으로 다음 대리자 전과 후 모두에서 작업을 수행할 수 있습니다.
 
 [!code-csharp[](index/sample/Chain/Startup.cs?name=snippet1)]
 
@@ -57,7 +57,7 @@ ASP.NET Core 요청 파이프라인은 이 다이어그램이 보여 주는 것�
 > - 프로토콜 위반이 발생할 수 있습니다. 예를 들어, 명시된 `content-length`보다 긴 내용이 작성될 수 있습니다.
 > - 본문 형식을 손상시킬 수 있습니다. 예를 들어 CSS 파일에 HTML 바닥글 작성하기.
 >
-> [HttpResponse.HasStarted](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.http.features.httpresponsefeature#Microsoft_AspNetCore_Http_Features_HttpResponseFeature_HasStarted)는 헤더가 이미 전송됐는지 또는 본문이 이미 작성됐는지 여부를 나타내는 유용한 힌트를 제공해줍니다.
+> [HttpResponse.HasStarted](/dotnet/api/microsoft.aspnetcore.http.features.httpresponsefeature#Microsoft_AspNetCore_Http_Features_HttpResponseFeature_HasStarted)는 헤더가 이미 전송됐는지 또는 본문이 이미 작성됐는지 여부를 나타내는 유용한 힌트를 제공해줍니다.
 
 ## <a name="ordering"></a>순서
 
@@ -122,7 +122,7 @@ public void Configure(IApplicationBuilder app)
 
 -----------
 
-다음 예제는 정적 파일에 대한 요청이 응답 압축 미들웨어 전에 정적 파일 미들웨어에서 처리되는 미들웨어 순서를 설명합니다. 정적 파일은 이 미들웨어의 순서로 압축되지 않습니다. [UseMvcWithDefaultRoute](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mvcapplicationbuilderextensions#Microsoft_AspNetCore_Builder_MvcApplicationBuilderExtensions_UseMvcWithDefaultRoute_Microsoft_AspNetCore_Builder_IApplicationBuilder_)의 MVC 응답은 압축될 수 있습니다.
+다음 예제는 정적 파일에 대한 요청이 응답 압축 미들웨어 전에 정적 파일 미들웨어에서 처리되는 미들웨어 순서를 설명합니다. 정적 파일은 이 미들웨어의 순서로 압축되지 않습니다. [UseMvcWithDefaultRoute](/dotnet/api/microsoft.aspnetcore.builder.mvcapplicationbuilderextensions#Microsoft_AspNetCore_Builder_MvcApplicationBuilderExtensions_UseMvcWithDefaultRoute_Microsoft_AspNetCore_Builder_IApplicationBuilder_)의 MVC 응답은 압축될 수 있습니다.
 
 ```csharp
 public void Configure(IApplicationBuilder app)
@@ -140,7 +140,7 @@ public void Configure(IApplicationBuilder app)
 
 `Use`, `Run` 및 `Map`을 사용하여 HTTP 파이프라인을 구성합니다. `Use` 메서드는 파이프라인을 단락(short-circuit)할 수 있습니다(즉, `next` 요청 대리자를 호출하지 않는 경우). `Run`은 규칙이며 일부 미들웨어 구성 요소는 파이프라인의 끝에서 실행되는 `Run[Middleware]` 메서드를 노출할 수 있습니다.
 
-`Map*` 확장은 파이프라인 분기에 규칙으로 사용됩니다. [Map](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mapextensions)은 지정된 요청 경로의 일치를 기반으로 요청 파이프라인을 분기합니다. 요청 경로가 지정된 경로로 시작하는 경우 분기가 실행됩니다.
+`Map*` 확장은 파이프라인 분기에 규칙으로 사용됩니다. [Map](/dotnet/api/microsoft.aspnetcore.builder.mapextensions)은 지정된 요청 경로의 일치를 기반으로 요청 파이프라인을 분기합니다. 요청 경로가 지정된 경로로 시작하는 경우 분기가 실행됩니다.
 
 [!code-csharp[](index/sample/Chain/StartupMap.cs?name=snippet1)]
 
@@ -155,7 +155,7 @@ public void Configure(IApplicationBuilder app)
 
 `Map`이 사용되는 경우 일치하는 경로 세그먼트는 `HttpRequest.Path`에서 제거되고 각 요청에 대해 `HttpRequest.PathBase`에 추가됩니다.
 
-[MapWhen](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.mapwhenextensions)은 지정된 조건자의 결과를 기반으로 요청 파이프라인을 분기합니다. `Func<HttpContext, bool>` 형식의 조건자는 파이프라인의 새 분기에 요청을 매핑하는 데 사용될 수 있습니다. 다음 예제에서 조건자는 쿼리 문자열 변수 `branch`의 존재를 검색하는 데 사용됩니다.
+[MapWhen](/dotnet/api/microsoft.aspnetcore.builder.mapwhenextensions)은 지정된 조건자의 결과를 기반으로 요청 파이프라인을 분기합니다. `Func<HttpContext, bool>` 형식의 조건자는 파이프라인의 새 분기에 요청을 매핑하는 데 사용될 수 있습니다. 다음 예제에서 조건자는 쿼리 문자열 변수 `branch`의 존재를 검색하는 데 사용됩니다.
 
 [!code-csharp[](index/sample/Chain/StartupMapWhen.cs?name=snippet1)]
 
@@ -225,7 +225,7 @@ ASP.NET Core는 다음 미들웨어 구성 요소 및 추가되어야 하는 순
 > [!NOTE]
 > ASP.NET Core 1.x에서 미들웨어 `Task` 메서드의 이름은 `Invoke`이어야 합니다. ASP.NET 코어 2.0 이상에서는 이름이 `Invoke` 또는 `InvokeAsync`일 수 있습니다.
 
-다음 확장 메서드는 [IApplicationBuilder](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.iapplicationbuilder)를 통해 미들웨어를 공개합니다.
+다음 확장 메서드는 [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder)를 통해 미들웨어를 공개합니다.
 
 [!code-csharp[](index/sample/Culture/RequestCultureMiddlewareExtensions.cs)]
 
@@ -235,7 +235,7 @@ ASP.NET Core는 다음 미들웨어 구성 요소 및 추가되어야 하는 순
 
 미들웨어는 해당 생성자에서 해당 종속성을 노출하여 [명시적 종속성 원칙](http://deviq.com/explicit-dependencies-principle/)을 따라야 합니다. 미들웨어는 *응용 프로그램 수명*당 한 번 생성됩니다. 서비스를 요청 내의 미들웨어와 공유해야 하는 경우 아래 *요청당 종속성*을 참조하세요.
 
-미들웨어 구성 요소는 생성자 매개 변수를 통해 종속성 주입에서 해당 종속성을 확인할 수 있습니다. [`UseMiddleware<T>`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.usemiddlewareextensions#methods_summary)는 추가 매개 변수를 직접 수락할 수도 있습니다.
+미들웨어 구성 요소는 생성자 매개 변수를 통해 종속성 주입에서 해당 종속성을 확인할 수 있습니다. [`UseMiddleware<T>`](/dotnet/api/microsoft.aspnetcore.builder.usemiddlewareextensions#methods_summary)는 추가 매개 변수를 직접 수락할 수도 있습니다.
 
 ### <a name="per-request-dependencies"></a>요청당 종속성
 

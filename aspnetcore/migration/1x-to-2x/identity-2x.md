@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/1x-to-2x/identity-2x
-ms.openlocfilehash: 16369a14dbe97778724632317a82e11de5a8faed
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 0653906996f9f37d436ebefc6a738d2603788d53
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="migrate-authentication-and-identity-to-aspnet-core-20"></a>인증 및 Id ASP.NET 코어 2.0으로 마이그레이션
 
@@ -238,7 +238,7 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerfactory) {
     ```
 
 ### <a name="setting-default-authentication-schemes"></a>기본 인증 체계를 설정합니다.
-1.x에는 `AutomaticAuthenticate` 및 `AutomaticChallenge` 의 속성은 [AuthenticationOptions](https://docs.microsoft.com/dotnet/api/Microsoft.AspNetCore.Builder.AuthenticationOptions?view=aspnetcore-1.1) 하나의 인증 구성표에 설정 될 기본 클래스를 서로 합니다. 이 적용할 수 있는 좋은 방법이 없었습니다.
+1.x에는 `AutomaticAuthenticate` 및 `AutomaticChallenge` 의 속성은 [AuthenticationOptions](/dotnet/api/Microsoft.AspNetCore.Builder.AuthenticationOptions?view=aspnetcore-1.1) 하나의 인증 구성표에 설정 될 기본 클래스를 서로 합니다. 이 적용할 수 있는 좋은 방법이 없었습니다.
 
 2.0에서는 이러한 두 속성 제거한 개인에 대 한 속성으로 `AuthenticationOptions` 인스턴스. 구성할 수 있습니다는 `AddAuthentication` 내에서 메서드 호출에서 `ConfigureServices` 방식의 *Startup.cs*:
 
@@ -296,7 +296,7 @@ services.AddAuthentication(IISDefaults.AuthenticationScheme);
 
 <a name="identity-cookie-options"></a>
 
-## <a name="identitycookieoptions-instances"></a>IdentityCookieOptions instances
+## <a name="identitycookieoptions-instances"></a>IdentityCookieOptions 인스턴스
 2.0 변경의 부작용은 옵션 쿠키 옵션 인스턴스 대신 명명 된 사용으로 전환 합니다. Identity 쿠키 구성표 이름을 사용자 지정 하는 기능이 제거 됩니다.
 
 예를 들어 1.x 프로젝트 사용 [생성자 삽입](xref:mvc/controllers/dependency-injection#constructor-injection) 전달 하는 `IdentityCookieOptions` 매개 변수를 *AccountController.cs*합니다. 외부 쿠키 인증 체계는에서 제공된 된 인스턴스에 액세스 합니다.

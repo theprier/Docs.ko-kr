@@ -8,11 +8,11 @@ ms.date: 08/09/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: security/key-vault-configuration
-ms.openlocfilehash: 09f28ec3792cf137fbcfdecc593e27ce6b2e7e09
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 78a00e04e260863af17d7888ca6bf77d3f915ce1
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="azure-key-vault-configuration-provider-in-aspnet-core"></a>ASP.NET Core에 azure 키 자격 증명 모음 구성 공급자
 
@@ -47,7 +47,7 @@ ms.lasthandoff: 04/06/2018
 | 앱 설정    | 설명                    | 예제                                      |
 | -------------- | ------------------------------ | -------------------------------------------- |
 | `Vault`        | Azure 키 자격 증명 모음 이름           | contosovault                                 |
-| `ClientId`     | Azure Active Directory App Id  | 627e911e-43cc-61d4-992e-12db9c81b413         |
+| `ClientId`     | Azure Active Directory 응용 프로그램 Id  | 627e911e-43cc-61d4-992e-12db9c81b413         |
 | `ClientSecret` | Azure Active Directory 응용 프로그램 키 | g58K3dtg59o1Pa+e59v2Tx829w6VxTB2yv9sv/101di= |
 
 [!code-csharp[Program](key-vault-configuration/samples/basic-sample/2.x/Program.cs?name=snippet1&highlight=2,7-10)]
@@ -161,4 +161,4 @@ Configuration.Reload();
 * [Microsoft Azure: 키 자격 증명 모음](https://azure.microsoft.com/services/key-vault/)
 * [Microsoft Azure: 키 자격 증명 모음 설명서](https://docs.microsoft.com/azure/key-vault/)
 * [Azure 키 자격 증명 모음에 대 한 키 생성 및 HSM 보호 된 전송 하는 방법](https://docs.microsoft.com/azure/key-vault/key-vault-hsm-protected-keys)
-* [KeyVaultClient 클래스](https://docs.microsoft.com/dotnet/api/microsoft.azure.keyvault.keyvaultclient)
+* [KeyVaultClient 클래스](/dotnet/api/microsoft.azure.keyvault.keyvaultclient)

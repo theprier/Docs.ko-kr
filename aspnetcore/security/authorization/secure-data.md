@@ -1,7 +1,7 @@
 ---
-title: "권한 부여에 의해 보호 되는 사용자 데이터와 ASP.NET Core 응용 프로그램 만들기"
+title: 권한 부여에 의해 보호 되는 사용자 데이터와 ASP.NET Core 응용 프로그램 만들기
 author: rick-anderson
-description: "권한 부여에 의해 보호 되는 사용자 데이터와 함께 Razor 페이지 앱을 만드는 방법에 알아봅니다. HTTPS, 인증, 보안, ASP.NET Core Id를 포함합니다."
+description: 권한 부여에 의해 보호 되는 사용자 데이터와 함께 Razor 페이지 앱을 만드는 방법에 알아봅니다. HTTPS, 인증, 보안, ASP.NET Core Id를 포함합니다.
 manager: wpickett
 ms.author: riande
 ms.date: 01/24/2018
@@ -9,11 +9,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/secure-data
-ms.openlocfilehash: 5acb65be078fd39b9e7a17ce2d8167b8f7b7db22
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: e42f299efcae7c6a0e3d20b157c591eed98c99d0
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>권한 부여에 의해 보호 되는 사용자 데이터와 ASP.NET Core 응용 프로그램 만들기
 
@@ -55,13 +55,13 @@ ms.lasthandoff: 03/02/2018
 * `ContactManagerAuthorizationHandler`: 관리자가 승인 또는 거부 연락처 수 있도록 합니다.
 * `ContactAdministratorsAuthorizationHandler`: 관리자가 승인 또는 연락처를 거부 하 고 연락처 편집 하거나 삭제할 수 있습니다.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 이 자습서를 진행 됩니다. 에 대해 잘 알고 있어야 합니다.
 
 * [ASP.NET Core](xref:tutorials/first-mvc-app/start-mvc)
 * [인증](xref:security/authentication/index)
-* [계정 확인 및 암호 복구](xref:security/authentication/accconfirm)
+* [계정 확인 및 비밀번호 복구](xref:security/authentication/accconfirm)
 * [권한 부여](xref:security/authorization/index)
 * [Entity Framework Core](xref:data/ef-mvc/intro)
 
@@ -102,7 +102,7 @@ dotnet ef database update
 
 [!code-csharp[](secure-data/samples/final2/Startup.cs?name=snippet_env)]
 
-에 `ConfigureServices` 의 메서드는 *Startup.cs* 파일에서 추가 된 [RequireHttpsAttribute](/aspnet/core/api/microsoft.aspnetcore.mvc.requirehttpsattribute) 권한 부여 필터:
+에 `ConfigureServices` 의 메서드는 *Startup.cs* 파일에서 추가 된 [RequireHttpsAttribute](/dotnet/api/microsoft.aspnetcore.mvc.requirehttpsattribute) 권한 부여 필터:
 
 [!code-csharp[](secure-data/samples/final2/Startup.cs?name=snippet_SSL&highlight=10-999)]
 
@@ -182,7 +182,7 @@ dotnet user-secrets set SeedUserPW <PW>
 
 ## <a name="register-the-authorization-handlers"></a>인증 처리기를 등록 합니다.
 
-Entity Framework Core를 사용 하 여 서비스를 위해 등록 되어야 [종속성 주입](xref:fundamentals/dependency-injection) 를 사용 하 여 [AddScoped](/aspnet/core/api/microsoft.extensions.dependencyinjection.servicecollectionserviceextensions)합니다. `ContactIsOwnerAuthorizationHandler` ASP.NET Core를 사용 하 여 [Identity](xref:security/authentication/identity), Entity Framework Core 기반입니다. 가 사용할 수 있도록 서비스 컬렉션에 처리기를 등록 된 `ContactsController` 통해 [종속성 주입](xref:fundamentals/dependency-injection)합니다. 다음 코드의 끝에 추가 `ConfigureServices`:
+Entity Framework Core를 사용 하 여 서비스를 위해 등록 되어야 [종속성 주입](xref:fundamentals/dependency-injection) 를 사용 하 여 [AddScoped](/dotnet/api/microsoft.extensions.dependencyinjection.servicecollectionserviceextensions)합니다. `ContactIsOwnerAuthorizationHandler` ASP.NET Core를 사용 하 여 [Identity](xref:security/authentication/identity), Entity Framework Core 기반입니다. 가 사용할 수 있도록 서비스 컬렉션에 처리기를 등록 된 `ContactsController` 통해 [종속성 주입](xref:fundamentals/dependency-injection)합니다. 다음 코드의 끝에 추가 `ConfigureServices`:
 
 [!code-csharp[](secure-data/samples/final2/Startup.cs?name=ConfigureServices&highlight=41-999)]
 
@@ -346,7 +346,7 @@ dotnet ef database update
 
 <a name="secure-data-add-resources-label"></a>
 
-### <a name="additional-resources"></a>추가 리소스
+### <a name="additional-resources"></a>추가 자료
 
 * [ASP.NET Core 권한 부여 랩](https://github.com/blowdart/AspNetAuthorizationWorkshop)합니다. 이 자습서에 도입 된 보안 기능에이 랩 자세히 알아봅니다.
 * [ASP.NET Core에서 권한 부여: 단순, 역할, 클레임 기반 및 사용자 지정](xref:security/authorization/index)

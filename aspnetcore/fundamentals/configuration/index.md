@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 8325776597eab9c673a4847edf87ae0d9e0d3efb
-ms.sourcegitcommit: 2ab550f8c46e1a8a5d45e58be44d151c676af256
+ms.openlocfilehash: b1c2b734a2e9b274792b597bfd222c31e661b0d7
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="configuration-in-aspnet-core"></a>ASP.NET Core의 구성
 
@@ -228,7 +228,7 @@ key3=value_from_json_3
 
 ## <a name="commandline-configuration-provider"></a>CommandLine 구성 공급자
 
-[CommandLine 구성 공급자](/aspnet/core/api/microsoft.extensions.configuration.commandline.commandlineconfigurationprovider)는 런타임에 구성에 대한 명령줄 인수 키-값 쌍을 받습니다.
+[CommandLine 구성 공급자](/dotnet/api/microsoft.extensions.configuration.commandline.commandlineconfigurationprovider)는 런타임에 구성에 대한 명령줄 인수 키-값 쌍을 받습니다.
 
 [CommandLine 구성 샘플 살펴보기 또는 다운로드](https://github.com/aspnet/docs/tree/master/aspnetcore/fundamentals/index/sample/CommandLine)
 

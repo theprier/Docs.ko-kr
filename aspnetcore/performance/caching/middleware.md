@@ -9,11 +9,11 @@ ms.date: 01/26/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: performance/caching/middleware
-ms.openlocfilehash: ff92b032fe8bbbcb7bc26a34fdfbc56a0fcc0e2c
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 8296d535725d95682fa5904a43ab196e21b4f83c
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="response-caching-middleware-in-aspnet-core"></a>ASP.NET Core의 미들웨어 캐싱 응답
 
@@ -33,7 +33,7 @@ ms.lasthandoff: 03/22/2018
 
 [!code-csharp[](middleware/sample/Startup.cs?name=snippet1&highlight=3)]
 
-사용 하 여 미들웨어를 사용 하도록 응용 프로그램 구성에서 `UseResponseCaching` 요청 처리 파이프라인에 미들웨어를 추가 하는 확장 메서드를 합니다. 샘플 응용 프로그램 추가 [ `Cache-Control` ](https://tools.ietf.org/html/rfc7234#section-5.2) 헤더를 최대 10 초 동안 캐시 가능한 응답을 캐시 하는 응답입니다. 샘플에서 보내기는 [ `Vary` ](https://tools.ietf.org/html/rfc7231#section-7.1.4) 를 경우에만 캐시 된 응답을 처리 하는 미들웨어를 구성 하는 헤더는 [ `Accept-Encoding` ](https://tools.ietf.org/html/rfc7231#section-5.3.4) 이후의 요청 헤더의 일치 하는 원래 요청 합니다.
+사용 하 여 미들웨어를 사용 하도록 응용 프로그램 구성에서 `UseResponseCaching` 요청 처리 파이프라인에 미들웨어를 추가 하는 확장 메서드를 합니다. 샘플 응용 프로그램 추가 [ `Cache-Control` ](https://tools.ietf.org/html/rfc7234#section-5.2) 헤더를 최대 10 초 동안 캐시 가능한 응답을 캐시 하는 응답입니다. 샘플에서 보내기는 [ `Vary` ](https://tools.ietf.org/html/rfc7231#section-7.1.4) 를 경우에만 캐시 된 응답을 처리 하는 미들웨어를 구성 하는 헤더는 [ `Accept-Encoding` ](https://tools.ietf.org/html/rfc7231#section-5.3.4) 이후의 요청 헤더의 일치 하는 원래 요청 합니다. 아래 코드 예제에서 [CacheControlHeaderValue](/dotnet/api/microsoft.net.http.headers.cachecontrolheadervalue) 및 [HeaderNames](/dotnet/api/microsoft.net.http.headers.headernames) 필요는 `using` 문에 [Microsoft.Net.Http.Headers](/dotnet/api/microsoft.net.http.headers) 네임 스페이스입니다.
 
 [!code-csharp[](middleware/sample/Startup.cs?name=snippet2&highlight=3,7-12)]
 
@@ -88,9 +88,9 @@ if (responseCachingFeature != null)
 | Header | 설명 |
 | ------ | ------- |
 | 권한 부여 | 응답 헤더에 있는 경우 캐시 되지 않습니다. |
-| Cache-Control | 미들웨어로 표시 하는 응답을 캐시 고려는 `public` 캐시 지시문입니다. 매개 변수가 캐싱을 제어:<ul><li>max-age</li><li>max-stale&#8224;</li><li>최소 새로</li><li>must-revalidate</li><li>캐시 없음</li><li>저장소 아니요</li><li>전용-if-캐시</li><li>private</li><li>public</li><li>기간</li><li>proxy-revalidate&#8225;</li></ul>&#8224;에 제한이 없음을 지정 하는 경우 `max-stale`, 미들웨어 아무 작업도 수행 합니다.<br>&#8225;`proxy-revalidate`과 동일한 결과가 `must-revalidate`합니다.<br><br>자세한 내용은 참조 [RFC 7231: 캐시 제어 지시문 요청](https://tools.ietf.org/html/rfc7234#section-5.2.1)합니다. |
+| 캐시 제어 | 미들웨어로 표시 하는 응답을 캐시 고려는 `public` 캐시 지시문입니다. 매개 변수가 캐싱을 제어:<ul><li>최대 처리 기간</li><li>max-stale&#8224;</li><li>최소 새로</li><li>must-revalidate</li><li>캐시 없음</li><li>저장소 아니요</li><li>전용-if-캐시</li><li>private</li><li>public</li><li>기간</li><li>proxy-revalidate&#8225;</li></ul>&#8224;에 제한이 없음을 지정 하는 경우 `max-stale`, 미들웨어 아무 작업도 수행 합니다.<br>&#8225;`proxy-revalidate`과 동일한 결과가 `must-revalidate`합니다.<br><br>자세한 내용은 참조 [RFC 7231: 캐시 제어 지시문 요청](https://tools.ietf.org/html/rfc7234#section-5.2.1)합니다. |
 | Pragma | A `Pragma: no-cache` 요청의 헤더 생성 한 것과 같습니다 `Cache-Control: no-cache`합니다. 이 헤더에 관련 지시문에 의해 재정의 되는 `Cache-Control` 헤더로, 있는 경우. HTTP/1.0과 함께 이전 버전과 호환성에 대 한 것으로 간주 합니다. |
-| Set-Cookie | 응답 헤더에 있는 경우 캐시 되지 않습니다. |
+| Set-cookie | 응답 헤더에 있는 경우 캐시 되지 않습니다. 하나 이상의 쿠키를 설정 하는 요청 처리 파이프라인의 모든 미들웨어의 응답을 캐시 작업을 통해 응답 캐싱 미들웨어 방지 (예를 들어는 [TempData 공급자 쿠키 기반](xref:fundamentals/app-state#tempdata)).  |
 | 변경 | `Vary` 헤더 다른 헤더에 의해 캐시 된 응답을 변경 하기 위해 사용 됩니다. 예를 들어, 포함 하 여 인코딩할 응답을 캐시는 `Vary: Accept-Encoding` 헤더와 요청에 대 한 응답을 캐시 하는 헤더 `Accept-Encoding: gzip` 및 `Accept-Encoding: text/plain` 별도로 합니다. 포함 된 응답의 헤더 값으로 `*` 저장 되지 않습니다. |
 | Expires | 이 헤더에 의해 부실 하다 고 판단 하는 응답 저장 아니거나 다른 재정의 되지 않는 경우 검색 `Cache-Control` 헤더입니다. |
 | None-If-match | 값이 없는 경우 캐시에서 제공 되는 전체 응답 `*` 및 `ETag` 응답의은 제공 된 값이 하나라도 일치 하지 않습니다. 그렇지 않으면 304 (수정 되지 않음) 응답 서비스 됩니다. |
@@ -130,13 +130,13 @@ if (responseCachingFeature != null)
 * `Set-Cookie` 헤더 없어야 합니다.
 * `Vary` 헤더 매개 변수는 유효 하 고 같지 않음 이어야 `*`합니다.
 * `Content-Length` 헤더 값 (하는 경우 설정)는 응답 본문의 크기와 일치 해야 합니다.
-* [IHttpSendFileFeature](/aspnet/core/api/microsoft.aspnetcore.http.features.ihttpsendfilefeature) 사용 되지 않습니다.
+* [IHttpSendFileFeature](/dotnet/api/microsoft.aspnetcore.http.features.ihttpsendfilefeature) 사용 되지 않습니다.
 * 응답에 지정 된 대로 오래 된 않아야는 `Expires` 헤더 및 `max-age` 및 `s-maxage` 지시문을 캐시 합니다.
 * 응답 버퍼링 성공 이어야 하며 응답 크기가 구성 된 보다 작은 또는 기본 `SizeLimit`합니다.
 * 응답에 따라 캐시 가능 해야 합니다.는 [RFC 7234](https://tools.ietf.org/html/rfc7234) 사양입니다. 예를 들어는 `no-store` 지시문 요청 또는 응답 헤더 필드에 없어야 합니다. 참조 *섹션 3: 응답을 캐시에 저장* 의 [RFC 7234](https://tools.ietf.org/html/rfc7234) 대 한 자세한 내용은 합니다.
 
 > [!NOTE]
-> 교차 사이트 요청 위조 CSRF ()을 방지 하기 위해 보안 토큰을 생성 하기 위한 Antiforgery 시스템 공격 집합은 `Cache-Control` 및 `Pragma` 헤더를 `no-cache` 응답은 캐시 되지 않도록 합니다.
+> 교차 사이트 요청 위조 CSRF ()을 방지 하기 위해 보안 토큰을 생성 하기 위한 Antiforgery 시스템 공격 집합은 `Cache-Control` 및 `Pragma` 헤더를 `no-cache` 응답은 캐시 되지 않도록 합니다. HTML 폼 요소에 대 한 antiforgery 토큰을 사용 하지 않도록 설정 하는 방법에 대 한 정보를 참조 하십시오. [ASP.NET Core antiforgery 구성](xref:security/anti-request-forgery#aspnet-core-antiforgery-configuration)합니다.
 
 ## <a name="additional-resources"></a>추가 자료
 

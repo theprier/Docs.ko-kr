@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/performance/scaleout-with-windows-azure-service-bus
-title: "Azure 서비스 버스에 SignalR 확장 | Microsoft Docs"
+title: Azure 서비스 버스에 SignalR 확장 | Microsoft Docs
 author: MikeWasson
-description: "이 항목 Visual Studio 2013.NET 4.5 SignalR 버전에서는이 항목의이 항목에 대 한 SignalR 1.x 버전의 이전 버전 2 사용 하는 소프트웨어 버전 중..."
+description: 이 항목 Visual Studio 2013.NET 4.5 SignalR 버전에서는이 항목의이 항목에 대 한 SignalR 1.x 버전의 이전 버전 2 사용 하는 소프트웨어 버전 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
@@ -12,11 +12,11 @@ ms.technology: dotnet-signalr
 ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/performance/scaleout-with-windows-azure-service-bus
 msc.type: authoredcontent
-ms.openlocfilehash: 7cb68d578fee8d6ee036f8fb096ba45e0c8ef3d6
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: e6d9e4e6ba2040aa2c6e453aacf0ddca38c4a1a9
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 05/03/2018
 ---
 <a name="signalr-scaleout-with-azure-service-bus"></a>Azure 서비스 버스에 SignalR 확장
 ====================
@@ -46,7 +46,7 @@ ms.lasthandoff: 01/24/2018
 2. 응용 프로그램에 이러한 NuGet 패키지를 추가 합니다. 
 
     - [Microsoft.AspNet.SignalR](http://nuget.org/packages/Microsoft.AspNet.SignalR)
-    - [Microsoft.AspNet.SignalR.ServiceBus](http://www.nuget.org/packages/SignalR.WindowsAzureServiceBus)
+    - [Microsoft.AspNet.SignalR.ServiceBus3](https://www.nuget.org/packages/Microsoft.AspNet.SignalR.ServiceBus3) 또는 [Microsoft.AspNet.SignalR.ServiceBus](https://www.nuget.org/packages/Microsoft.AspNet.SignalR.ServiceBus)
 3. SignalR 응용 프로그램을 만듭니다.
 4. 백플레인에서 구성 하려면 Startup.cs에 다음 코드를 추가 합니다. 
 
@@ -74,7 +74,7 @@ ms.lasthandoff: 01/24/2018
 
 Visual Studio를 시작합니다. **파일** 메뉴를 클릭 하 여 **새 프로젝트**합니다.
 
-에 **새 프로젝트** 대화 상자에서 **Visual C#**합니다. 아래 **설치 된 템플릿**선택, **클라우드** 선택한 후 **Windows Azure 클라우드 서비스**합니다. 기본.NET Framework 4.5를 유지 합니다. ChatService 응용 프로그램 이름을 지정 하 고 클릭 **확인**합니다.
+에 **새 프로젝트** 대화 상자에서 **Visual C#** 합니다. 아래 **설치 된 템플릿**선택, **클라우드** 선택한 후 **Windows Azure 클라우드 서비스**합니다. 기본.NET Framework 4.5를 유지 합니다. ChatService 응용 프로그램 이름을 지정 하 고 클릭 **확인**합니다.
 
 ![](scaleout-with-windows-azure-service-bus/_static/image4.png)
 
@@ -129,7 +129,7 @@ SignalRChat 역할을 마우스 오른쪽 단추로 클릭 하 고 선택 **속�
 
 ![](scaleout-with-windows-azure-service-bus/_static/image10.png)
 
-변경 내용을 저장 합니다.
+변경 내용을 저장합니다.
 
 솔루션 탐색기에서 ChatService 프로젝트를 마우스 오른쪽 단추로 클릭 합니다. **게시**를 선택합니다.
 
