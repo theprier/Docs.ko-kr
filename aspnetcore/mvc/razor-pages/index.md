@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: mvc/razor-pages/index
-ms.openlocfilehash: 5e2b53a4771a97b0a4091f593720b9c0e4e345bf
-ms.sourcegitcommit: c4a31aaf902f2e84aaf4a9d882ca980fdf6488c0
+ms.openlocfilehash: 08866543d5b510b86c6af1896a9bd41ae0053ecf
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/23/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core의 Razor 페이지 소개
 
@@ -207,6 +207,38 @@ Razor 페이지는 기본적으로 GET이 아닌 동사에만 속성을 바인�
 * 고객 연락처를 찾으면 고객 연락처의 목록에서 제거됩니다. 데이터베이스가 업데이트됩니다.
 * `RedirectToPage`를 호출하여 루트 인덱스 페이지(`/Index`)를 리디렉션합니다.
 
+::: moniker range=">= aspnetcore-2.1"
+## <a name="manage-head-requests-with-the-onget-handler"></a>OnGet 처리기를 사용하여 HEAD 요청 관리
+
+일반적으로 HEAD 처리기는 HEAD 요청에 대해 생성 및 호출됩니다.
+
+```csharp
+public void OnHead()
+{
+    HttpContext.Response.Headers.Add("HandledBy", "Handled by OnHead!");
+}
+```
+
+HEAD 처리기(`OnHead`)가 정의되지 않으면 Razor 페이지는 ASP.NET Core 2.1 이상에서 GET 페이지 처리기(`OnGet`) 호출로 대체됩니다. ASP.NET Core 2.1~2.x에 대한 `Startup.Configure`의 [SetCompatibilityVersion 메서드](xref:fundamentals/startup#setcompatibilityversion-for-aspnet-core-mvc)로 이 동작을 옵트인(opt in)합니다.
+
+```csharp
+services.AddMvc()
+    .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
+```
+
+`SetCompatibilityVersion`은 효과적으로 Razor 페이지 옵션 `AllowMappingHeadRequestsToGetHandler`를 `true`로 설정합니다. 이 동작은 ASP.NET Core 3.0 미리 보기 1 이상이 릴리스될 때까지 옵트인(opt in)됩니다. ASP.NET Core의 각 주 버전은 모든 이전 버전의 패치 릴리스 동작을 채택합니다.
+
+HEAD 요청을 GET 처리기에 매핑하는 앱 구성을 사용하면 패치 릴리스 2.1~2.x에 대한 전역 옵트인(opt in) 동작을 피할 수 있습니다. `Startup.Configure`에서 `SetCompatibilityVersion`을 호출하지 말고 `AllowMappingHeadRequestsToGetHandler` Razor 페이지 옵션을 `true`로 설정하세요.
+
+```csharp
+services.AddMvc()
+    .AddRazorPagesOptions(options =>
+    {
+        options.AllowMappingHeadRequestsToGetHandler = true;
+    });
+```
+::: moniker-end
+
 <a name="xsrf"></a>
 
 ## <a name="xsrfcsrf-and-razor-pages"></a>XSRF/CSRF 및 Razor 페이지
@@ -321,7 +353,7 @@ Razor 페이지의 뷰 검색에는 *Pages* 폴더가 포함됩니다. MVC 컨�
 
 ## <a name="tempdata"></a>TempData
 
-ASP.NET Core는 [TempData](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.controller.tempdata?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_Controller_TempData) 속성을 [컨트롤러](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controller)에서 노출합니다. 이 속성은 판독될 때까지 데이터를 저장합니다. `Keep` 및 `Peek` 메서드를 사용하여 삭제 없이 데이터를 검사할 수 있습니다. `TempData`는 두 개 이상의 요청에 대한 데이터가 필요할 경우 리디렉션에 유용합니다.
+ASP.NET Core는 [TempData](/dotnet/api/microsoft.aspnetcore.mvc.controller.tempdata?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_Controller_TempData) 속성을 [컨트롤러](/dotnet/api/microsoft.aspnetcore.mvc.controller)에서 노출합니다. 이 속성은 판독될 때까지 데이터를 저장합니다. `Keep` 및 `Peek` 메서드를 사용하여 삭제 없이 데이터를 검사할 수 있습니다. `TempData`는 두 개 이상의 요청에 대한 데이터가 필요할 경우 리디렉션에 유용합니다.
 
 `[TempData]` 특성은 ASP.NET Core 2.0의 새로운 기능이고 컨트롤러 및 페이지에서 지원됩니다.
 
@@ -364,6 +396,8 @@ public string Message { get; set; }
 [!code-cshtml[](index/sample/RazorPagesContacts2/Pages/Customers/CreateFATH.cshtml?range=12-13)]
 
 이전 코드를 사용할 경우 `OnPostJoinListAsync`에 제출되는 URL 경로는 `http://localhost:5000/Customers/CreateFATH?handler=JoinList`입니다. `OnPostJoinListUCAsync`에 제출되는 URL 경로는 `http://localhost:5000/Customers/CreateFATH?handler=JoinListUC`입니다.
+
+
 
 ## <a name="customizing-routing"></a>라우팅 사용자 지정
 

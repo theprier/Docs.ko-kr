@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: fundamentals/index
-ms.openlocfilehash: b74870c93ea0120e43931bb75f47bab19a6de201
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: d5b74e213828d1a1f7e09810e5cc72773a821dab
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="aspnet-core-fundamentals"></a>ASP.NET Core 기본 사항
 
@@ -79,7 +79,7 @@ public class Startup
 
 ## <a name="dependency-injection-services"></a>종속성 주입(서비스)
 
-서비스는 앱에서 공통으로 사용하기 위해 설계된 구성 요소입니다. 서비스는 DI([종속성 주입](xref:fundamentals/dependency-injection))를 통해서 사용됩니다. ASP.NET Core에는 기본적으로 [생성자 주입](xref:mvc/controllers/dependency-injection#constructor-injection)을 지원하는 네이티브 IoC(**I**nversion **o**f **C**) 컨테이너가 포함되어 있습니다. 만약 원한다면 기본 네이티브 컨테이너를 교체할 수도 있습니다. DI를 사용하면 느슨한 결합의 이점을 얻을 수 있을 뿐만 아니라, 앱 전체에서 서비스를 사용할 수 있습니다(예: [로깅](xref:fundamentals/logging/index)).
+서비스는 앱에서 공통으로 사용하기 위한 구성 요소입니다. 서비스는 DI([종속성 주입](xref:fundamentals/dependency-injection))를 통해서 사용됩니다. ASP.NET Core에는 기본적으로 [생성자 주입](xref:mvc/controllers/dependency-injection#constructor-injection)을 지원하는 네이티브 IoC(**I**nversion **o**f **C**) 컨테이너가 포함되어 있습니다. 만약 원한다면 기본 네이티브 컨테이너를 교체할 수도 있습니다. DI를 사용하면 느슨한 결합의 이점을 얻을 수 있을 뿐만 아니라, 앱 전체에서 서비스를 사용할 수 있습니다(예: [로깅](xref:fundamentals/logging/index)).
 
 자세한 내용은 [종속성 주입](xref:fundamentals/dependency-injection)을 참고하시기 바랍니다.
 
@@ -98,6 +98,10 @@ ASP.NET Core는 다양한 기본 제공 미들웨어들을 함께 제공합니�
 ASP.NET Core 앱에서 [OWIN](http://owin.org) 기반 미들웨어를 사용할 수 있으며, 직접 자신의 사용자 지정 미들웨어를 작성할 수도 있습니다.
 
 자세한 내용은 [미들웨어](xref:fundamentals/middleware/index) 및 [OWIN(Open Web Interface for .NET)](xref:fundamentals/owin)을 참고하시기 바랍니다.
+
+## <a name="initiate-http-requests"></a>HTTP 요청 시작
+
+`IHttpClientFactory`를 사용하여 `HttpClient` 인스턴스에 액세스하고 HTTP 요청을 만드는 방법은 [HTTP 요청 시작](xref:fundamentals/http-requests)을 참조하세요.
 
 ## <a name="environments"></a>환경
 

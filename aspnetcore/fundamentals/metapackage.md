@@ -1,31 +1,32 @@
 ---
-title: "ASP.NET Core 2.x 이상용 Microsoft.AspNetCore.All 메타패키지"
+title: ASP.NET Core 2.x 이상용 Microsoft.AspNetCore.All 메타패키지
 author: Rick-Anderson
-description: "Microsoft.AspNetCore.All 메타패키지에는 지원되는 모든 ASP.NET Core 및 Entity Framework Core 패키지와 해당 종속성이 포함됩니다."
+description: Microsoft.AspNetCore.All 메타패키지에는 지원되는 모든 ASP.NET Core 및 Entity Framework Core 패키지와 해당 종속성이 포함됩니다.
 manager: wpickett
+monikerRange: = aspnetcore-2.0
 ms.author: riande
 ms.date: 09/20/2017
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/metapackage
-ms.openlocfilehash: 07220fdae299723088fa85e452cedff5e5685bd7
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 4c11f15e659565325bfe8b8d91188b62177b251d
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/18/2018
 ---
-#<a name="microsoftaspnetcoreall-metapackage-for-aspnet-core-2x"></a>ASP.NET Core 2.x용 Microsoft.AspNetCore.All 메타패키지
+# <a name="microsoftaspnetcoreall-metapackage-for-aspnet-core-2x"></a>ASP.NET Core 2.x용 Microsoft.AspNetCore.All 메타패키지
 
 이 기능을 사용하려면 .NET Core 2.x를 대상으로 하는 ASP.NET Core 2.x가 필요합니다.
 
-ASP.NET Core에 대한 [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All) 메타패키지는 다음을 포함합니다.
+ASP.NET Core에 대한 [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All) 메타패키지에는 다음 패키지들이 포함되어 있습니다.
 
 * ASP.NET Core 팀에서 지원되는 모든 패키지
 * Entity Framework Core에서 지원되는 모든 패키지 
-* ASP.NET Core 및 Entity Framework Core에서 사용하는 내부 및 타사 종속성 
+* ASP.NET Core 및 Entity Framework Core에서 사용되는 내부 및 타사 종속성 
 
-ASP.NET Core 2.x 및 Entity Framework Core 2.x의 모든 기능은 `Microsoft.AspNetCore.All` 패키지에 포함됩니다. 기본 프로젝트 템플릿은 이 패키지를 사용합니다.
+ASP.NET Core 2.x 및 Entity Framework Core 2.x의 모든 기능은 `Microsoft.AspNetCore.All` 패키지에 포함됩니다. ASP.NET Core 2.0을 대상으로 하는 기본 프로젝트 템플릿에는 이 패키지를 사용합니다.
 
 `Microsoft.AspNetCore.All` 메타패키지의 버전 번호는 ASP.NET Core 버전 및 Entity Framework Core 버전(.NET Core 버전에 맞게 조정)을 나타냅니다.
 
@@ -35,4 +36,4 @@ ASP.NET Core 2.x 및 Entity Framework Core 2.x의 모든 기능은 `Microsoft.As
 
 다음 *.csproj* 파일은 ASP.NET Core용 `Microsoft.AspNetCore.All` 메타패키지를 참조합니다.
 
-[!code-xml[Main](..\mvc\views\view-compilation\sample\MvcRazorCompileOnPublish2.csproj?highlight=9)]
+[!code-xml[](../mvc/views/view-compilation/sample/MvcRazorCompileOnPublish2.csproj?highlight=9)]

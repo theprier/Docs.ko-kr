@@ -4,4 +4,4 @@
 * 자습서 내용을 좀 더 쉽게 진행할 수 있습니다.
 * 더 많은 기능을 다룹니다.
 
-[Razor 페이지](xref:tutorials/razor-pages/razor-pages-start) 버전에서 이 자습서를 선택한 경우 이유를 설명하는 메모를 남겨주세요.
+[Razor 페이지](xref:tutorials/razor-pages/razor-pages-start) 버전에 대한 이 자습서를 선택하시는 경우 [이 GitHub 문제](https://github.com/aspnet/Docs/issues/6146)에서 선택 이유를 알려주세요.
