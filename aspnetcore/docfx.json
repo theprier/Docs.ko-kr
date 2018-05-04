@@ -40,11 +40,16 @@
       "_navRel": "/foo",
       "searchScope": [
         "ASP.NET Core"
-      ],
-      "bilingual_type": "hover over"
+      ]
     },
     "fileMetadata": {},
     "template": [],
-    "dest": "_site"
+    "dest": "_site",
+    "groups": {
+      "group1": {
+        "dest": "group1-dest",
+        "moniker_range": ">= aspnetcore-1.0"
+      }
+    }  
   }
 }
