@@ -13,8 +13,7 @@
         "RestApi": "Content"
       },
       "build_entry_point": "docs",
-      "template_folder": "_themes",
-      "moniker_ranges": [">= aspnetcore-1.0"]
+      "template_folder": "_themes"
     },
     {
       "docset_name": "aspnet-core-conceptual",
@@ -27,7 +26,8 @@
         "ManagedReference": "Content",
         "RestApi": "Content"
       },
-      "template_folder": "_themes"
+      "template_folder": "_themes",
+      "moniker_ranges": [">= aspnetcore-1.0"]
     }
   ],
   "notification_subscribers": [
