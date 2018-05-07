@@ -44,7 +44,8 @@
       "_navRel": "/foo",
       "searchScope": [
         "ASP.NET Core"
-      ]
+      ],
+      "bilingual_type": "hover over"
     },
     "fileMetadata": {},
     "template": [],
@@ -54,6 +55,6 @@
         "dest": "group1-dest",
         "moniker_range": ">= aspnetcore-1.0"
       }
-    }  
+    } 
   }
 }
