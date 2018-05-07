@@ -14,9 +14,9 @@
           "**/includes/**",
           "**/aspnet-core-conceptual/**",
           "_site/**"
-        ], 
-    "group": "group1", 
-    "src": "." 
+        ],
+        "group": "group1",
+        "src": "."
       }
     ],
     "resource": [
@@ -30,14 +30,15 @@
           "aspnet/core/**",
           "**/includes/**",
           "_site/**"
-        ], 
-    "group": "group1", 
-    "src": "." 
+        ],
+        "group": "group1",
+        "src": "."
       }
     ],
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
+      "bilingual_type": "hover over",
       "breadcrumb_path": "/aspnet/breadcrumb/toc.json",
       "_navPath": "/foo",
       "_navRel": "/foo",
@@ -51,6 +52,6 @@
         "dest": "group1-dest",
         "moniker_range": ">= aspnetcore-1.0"
       }
-    }    
+    }  
   }
 }
