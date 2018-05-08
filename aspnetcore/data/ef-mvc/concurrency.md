@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core MVC 및 EF Core - 동시성 - 8/10"
+title: ASP.NET Core MVC 및 EF Core - 동시성 - 8/10
 author: tdykstra
-description: "이 자습서에는 여러 사용자가 동시에 같은 엔터티를 업데이트하는 경우 충돌을 처리하는 방법을 보여 줍니다."
+description: 이 자습서에는 여러 사용자가 동시에 같은 엔터티를 업데이트하는 경우 충돌을 처리하는 방법을 보여 줍니다.
 manager: wpickett
 ms.author: tdykstra
 ms.date: 03/15/2017
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/concurrency
-ms.openlocfilehash: c271488d4da72ba340f3617ac20c7b6da2574c69
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 99c4872719a4e46aa27eb7138eb914dc5954c219
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="handling-concurrency-conflicts---ef-core-with-aspnet-core-mvc-tutorial-8-of-10"></a>동시성 충돌 처리 - EF Core 및 ASP.NET Core MVC 자습서(8/10)
+# <a name="aspnet-core-mvc-with-ef-core---concurrency---8-of-10"></a>ASP.NET Core MVC 및 EF Core - 동시성 - 8/10
 
 작성자: [Tom Dykstra](https://github.com/tdykstra) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Contoso University 샘플 웹 응용 프로그램은 Entity Framework Core 및 Visual Studio를 사용하여 ASP.NET Core MVC 웹 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](intro.md)를 참조하세요.
+Contoso University 웹 응용 프로그램 예제는 Entity Framework Core 및 Visual Studio를 사용하여 ASP.NET Core MVC 웹 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](intro.md)를 참조하세요.
 
 이전 자습서에서 데이터를 업데이트하는 방법을 배웠습니다. 이 자습서에는 여러 사용자가 동시에 같은 엔터티를 업데이트하는 경우 충돌을 처리하는 방법을 보여 줍니다.
 
@@ -45,7 +45,7 @@ Contoso University 샘플 웹 응용 프로그램은 Entity Framework Core 및 V
 
 ![예산을 0으로 변경](concurrency/_static/change-budget.png)
 
-Jane이 **저장**을 클릭하기 전에 John은 동일한 페이지를 방문하여 2007년 9월 1일에서 2013년 9월 1일로 시작 날짜 필드를 변경합니다.
+Jane이 **저장**을 클릭하기 전에, John이 동일한 페이지를 방문하여 시작 날짜 필드를 2007년 9월 1일에서 2013년 9월 1일로 변경합니다.
 
 ![시작 날짜를 2013으로 변경](concurrency/_static/change-date.png)
 
@@ -89,7 +89,7 @@ Entity Framework에서 throw하는 `DbConcurrencyException` 예외를 처리하�
 
 *Models/Department.cs*에서 RowVersion으로 명명된 추적 속성을 추가합니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/Department.cs?name=snippet_Final&highlight=26,27)]
+[!code-csharp[](intro/samples/cu/Models/Department.cs?name=snippet_Final&highlight=26,27)]
 
 `Timestamp` 특성은 데이터베이스에 전송된 Update 및 Delete 명령의 Where 절에 이 열이 포함되도록 지정합니다. SQL `rowversion`이 대체하기 전에 이전 버전의 SQL Server가 SQL `timestamp` 데이터 형식을 사용했으므로 특성을 `Timestamp`라고 합니다. `rowversion`에 대한 .NET 유형은 바이트 배열입니다.
 
@@ -120,7 +120,7 @@ dotnet ef database update
 
 *DepartmentsController.cs* 파일에서 부서 관리자 드롭다운 목록이 강사의 성 보다는 전체 이름을 포함하도록 "FirstMidName"에서 "FullName"으로 네 개의 모든 항목을 변경합니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_Dropdown)]
+[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_Dropdown)]
 
 ## <a name="update-the-departments-index-view"></a>부서 인덱스 보기 업데이트
 
@@ -128,7 +128,7 @@ dotnet ef database update
 
 *Views/Departments/Index.cshtml*의 코드를 다음 코드로 바꿉니다.
 
-[!code-html[Main](intro/samples/cu/Views/Departments/Index.cshtml?highlight=4,7,44)]
+[!code-html[](intro/samples/cu/Views/Departments/Index.cshtml?highlight=4,7,44)]
 
 이는 제목을 "부서"로 변경하고, RowVersion 열을 삭제하고, 관리자의 이름 대신 전체 이름을 표시합니다.
 
@@ -136,11 +136,11 @@ dotnet ef database update
 
 HttpGet `Edit` 메서드 및 `Details` 메서드 모두에 `AsNoTracking`을 추가합니다. HttpGet `Edit` 메서드에서 관리자에 대해 즉시 로드를 추가합니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_EagerLoading&highlight=2,3)]
+[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_EagerLoading&highlight=2,3)]
 
 HttpPost `Edit` 메서드에 대한 기존 코드를 다음 코드로 바꿉니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_EditPost)]
+[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_EditPost)]
 
 코드는 업데이트될 부서 읽기를 시도하여 시작합니다. `SingleOrDefaultAsync` 메서드가 Null을 반환하는 경우 부서가 다른 사용자에 의해 삭제되었습니다. 이 경우 코드는 편집 페이지가 오류 메시지와 함께 다시 표시될 수 있도록 게시된 양식 값을 사용하여 부서 엔터티를 만듭니다. 대신 부서 필드를 다시 표시하지 않고 오류 메시지만을 표시하는 경우 부서 엔터티를 다시 만들 필요가 없습니다.
 
@@ -154,19 +154,19 @@ _context.Entry(departmentToUpdate).Property("RowVersion").OriginalValue = rowVer
 
 해당 예외에 대한 catch 블록의 코드에서 예외 개체의 `Entries` 속성에서 업데이트된 값이 있는 영향을 받은 부서 엔터티를 가져옵니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/DepartmentsController.cs?range=164)]
+[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?range=164)]
 
 `Entries` 컬렉션은 하나의 `EntityEntry` 개체만 갖습니다.  해당 개체를 사용하여 사용자가 입력한 새 값 및 현재 데이터베이스 값을 가져올 수 있습니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/DepartmentsController.cs?range=165-166)]
+[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?range=165-166)]
 
 코드는 사용자가 편집 페이지에서 입력한 것과 다른 데이터베이스 값이 있는 각 열에 대해 사용자 지정 오류 메시지를 추가합니다(여기에서는 간단히 하기 위해 하나의 필드만 표시됨).
 
-[!code-csharp[Main](intro/samples/cu/Controllers/DepartmentsController.cs?range=174-178)]
+[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?range=174-178)]
 
 마지막으로 코드는 `departmentToUpdate`의 `RowVersion` 값을 데이터베이스에서 검색된 새 값으로 설정합니다. 이 새로운 `RowVersion` 값은 편집 페이지가 다시 표시되고, 다음 번에 사용자가 **저장**을 클릭할 때 숨겨진 필드에 저장되고, 편집 페이지의 다시 표시로 인해 발생하는 동시성 오류만 catch됩니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/DepartmentsController.cs?range=199-200)]
+[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?range=199-200)]
 
 `ModelState`에 이전 `RowVersion` 값이 있으므로 `ModelState.Remove` 문이 필요합니다. 보기에서 필드에 대한 `ModelState` 값은 모델 속성 값에 우선합니다(둘 다 있는 경우).
 
@@ -178,7 +178,7 @@ _context.Entry(departmentToUpdate).Property("RowVersion").OriginalValue = rowVer
 
 * 드롭다운 목록에 "관리자 선택" 옵션을 추가합니다.
 
-[!code-html[Main](intro/samples/cu/Views/Departments/Edit.cshtml?highlight=16,34-36)]
+[!code-html[](intro/samples/cu/Views/Departments/Edit.cshtml?highlight=16,34-36)]
 
 ## <a name="test-concurrency-conflicts-in-the-edit-page"></a>편집 페이지에서 동시성 충돌 테스트
 
@@ -208,13 +208,13 @@ _context.Entry(departmentToUpdate).Property("RowVersion").OriginalValue = rowVer
 
 *DepartmentsController.cs*에서 HttpGet `Delete` 메서드를 다음 코드로 바꿉니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_DeleteGet&highlight=1,10,14-17,21-29)]
+[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_DeleteGet&highlight=1,10,14-17,21-29)]
 
 메서드는 동시성 오류가 발생한 후 페이지가 다시 표시되고 있는지 여부를 나타내는 선택적 매개 변수를 허용합니다. 이 플래그가 true이고 지정된 부서가 더 이상 존재하지 않는 경우 다른 사용자에 의해 삭제되었습니다. 이 경우 코드는 인덱스 페이지로 리디렉션합니다.  이 플래그가 true이고 부서가 존재하는 경우 다른 사용자에 의해 변경되었습니다. 이 경우 코드는 `ViewData`를 사용하여 보기에 오류 메시지를 보냅니다.  
 
 HttpPost `Delete` 메서드의 코드(`DeleteConfirmed`라는)를 다음 코드로 바꿉니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_DeletePost&highlight=1,3,5-8,11-18)]
+[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_DeletePost&highlight=1,3,5-8,11-18)]
 
 방금 바꾼 스캐폴드된 코드에서 이 메서드는 레코드 ID만 허용했습니다.
 
@@ -239,7 +239,7 @@ public async Task<IActionResult> Delete(Department department)
 
 *Views/Departments/Delete.cshtml*에서 스캐폴드된 코드를 DepartmentID 및 RowVersion 속성에 대해 오류 메시지 필드와 숨겨진 필드를 추가하는 다음 코드로 바꿉니다. 변경 내용은 강조 표시되어 있습니다.
 
-[!code-html[Main](intro/samples/cu/Views/Departments/Delete.cshtml?highlight=9,38,44,45,48)]
+[!code-html[](intro/samples/cu/Views/Departments/Delete.cshtml?highlight=9,38,44,45,48)]
 
 이렇게 하면 다음이 변경됩니다.
 
@@ -269,16 +269,16 @@ public async Task<IActionResult> Delete(Department department)
 
 *Views/Departments/Details.cshtml*의 코드를 바꿔 RowVersion 열을 삭제하고 관리자의 전체 이름을 표시합니다.
 
-[!code-html[Main](intro/samples/cu/Views/Departments/Details.cshtml?highlight=35)]
+[!code-html[](intro/samples/cu/Views/Departments/Details.cshtml?highlight=35)]
 
 *Views/Departments/Create.cshtml*의 코드를 바꿔 드롭다운 목록에 선택 옵션을 추가합니다.
 
-[!code-html[Main](intro/samples/cu/Views/Departments/Create.cshtml?highlight=32-34)]
+[!code-html[](intro/samples/cu/Views/Departments/Create.cshtml?highlight=32-34)]
 
 ## <a name="summary"></a>요약
 
 동시성 충돌 처리에 대한 소개를 완료합니다. EF Core에서 동시성을 처리하는 방법에 대한 자세한 내용은 [동시성 충돌](https://docs.microsoft.com/ef/core/saving/concurrency)을 참조하세요. 다음 자습서에서는 강사 및 학생 엔터티에 대한 계층당 테이블 상속을 구현하는 방법을 보여 줍니다.
 
->[!div class="step-by-step"]
-[이전](update-related-data.md)
-[다음](inheritance.md)  
+> [!div class="step-by-step"]
+> [이전](update-related-data.md)
+> [다음](inheritance.md)  

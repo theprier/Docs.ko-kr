@@ -1,7 +1,7 @@
 ---
-title: "앵커 태그 도우미"
+title: ASP.NET Core의 앵커 태그 도우미
 author: pkellner
-description: "ASP.NET Core 앵커 태그 도우미 특성 및 HTML 앵커 태그의 동작을 확장할 때 각 특성이 담당하는 역할을 검색합니다."
+description: ASP.NET Core 앵커 태그 도우미 특성 및 HTML 앵커 태그의 동작을 확장할 때 각 특성이 담당하는 역할을 검색합니다.
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
@@ -10,23 +10,23 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/tag-helpers/builtin-th/anchor-tag-helper
-ms.openlocfilehash: f3b704174c3287edda12725b7973a2464e485bac
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 31ff62b6bedb5e577a51f341c89d241d06a83ad3
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="anchor-tag-helper"></a>앵커 태그 도우미
+# <a name="anchor-tag-helper-in-aspnet-core"></a>ASP.NET Core의 앵커 태그 도우미
 
 작성자: [Peter Kellner](http://peterkellner.net) 및 [Scott Addie](https://github.com/scottaddie)
 
-[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/tag-helpers/built-in/samples/TagHelpersBuiltInAspNetCore)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/built-in/samples)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 [앵커 태그 도우미](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortaghelper)는 새 특성을 추가하여 표준 HTML 앵커(`<a ... ></a>`) 태그를 향상시킵니다. 규칙에 따라 특성 이름의 접두사는 `asp-`입니다. 렌더링된 앵커 요소의 `href` 특성 값은 `asp-` 특성 값에 따라 결정됩니다.
 
 *SpeakerController*는 이 문서 전반의 샘플에서 사용됩니다.
 
-[!code-csharp[](samples/TagHelpersBuiltInAspNetCore/Controllers/SpeakerController.cs?name=snippet_SpeakerController)]
+[!code-csharp[](samples/TagHelpersBuiltIn/Controllers/SpeakerController.cs?name=snippet_SpeakerController)]
 
 `asp-` 특성의 인벤토리는 다음과 같습니다.
 
@@ -34,7 +34,7 @@ ms.lasthandoff: 02/01/2018
 
 [asp-controller](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortaghelper.controller) 특성은 URL 생성에 사용되는 컨트롤러를 할당합니다. 다음 태그는 모든 스피커를 나열합니다.
 
-[!code-cshtml[](samples/TagHelpersBuiltInAspNetCore/Views/Home/Index.cshtml?name=snippet_AspController)]
+[!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspController)]
 
 생성된 코드:
 
@@ -52,7 +52,7 @@ ms.lasthandoff: 02/01/2018
 
 [asp-action](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortaghelper.action) 특성 값은 생성된 `href` 특성에 포함된 컨트롤러 작업 이름을 나타냅니다. 다음 태그는 생성된 `href` 특성 값을 스피커 평가 페이지로 설정합니다.
 
-[!code-cshtml[](samples/TagHelpersBuiltInAspNetCore/Views/Home/Index.cshtml?name=snippet_AspAction)]
+[!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspAction)]
 
 생성된 코드:
 
@@ -70,11 +70,11 @@ ms.lasthandoff: 02/01/2018
 
 다음 컨트롤러 작업을 살펴보세요.
 
-[!code-csharp[](samples/TagHelpersBuiltInAspNetCore/Controllers/BuiltInTagController.cs?name=snippet_AnchorTagHelperAction)]
+[!code-csharp[](samples/TagHelpersBuiltIn/Controllers/BuiltInTagController.cs?name=snippet_AnchorTagHelperAction)]
 
 *Startup.Configure*에 정의된 기본 경로 템플릿을 사용하는 경우 다음과 같습니다.
 
-[!code-csharp[](samples/TagHelpersBuiltInAspNetCore/Startup.cs?name=snippet_UseMvc&highlight=8-10)]
+[!code-csharp[](samples/TagHelpersBuiltIn/Startup.cs?name=snippet_UseMvc&highlight=8-10)]
 
 MVC 보기는 다음과 같이 작업을 통해 제공되는 모델을 사용합니다.
 
@@ -122,11 +122,11 @@ MVC 보기는 다음과 같이 작업을 통해 제공되는 모델을 사용합
 
 [asp-route](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortaghelper.route) 특성은 명명된 경로에 직접 연결되는 URL을 만드는 데 사용됩니다. [라우팅 특성](xref:mvc/controllers/routing#attribute-routing)을 사용하면 경로가 `SpeakerController`에 표시된 이름으로 지정되고 해당 `Evaluations` 메서드에서 사용할 수 있습니다.
 
-[!code-cshtml[](samples/TagHelpersBuiltInAspNetCore/Controllers/SpeakerController.cs?range=22-24)]
+[!code-csharp[](samples/TagHelpersBuiltIn/Controllers/SpeakerController.cs?range=22-24)]
 
 다음 태그에서 `asp-route` 특성은 명명된 경로를 참조합니다.
 
-[!code-cshtml[](samples/TagHelpersBuiltInAspNetCore/Views/Home/Index.cshtml?name=snippet_AspRoute)]
+[!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspRoute)]
 
 앵커 태그 도우미는 */Speaker/Evaluations* URL을 사용하여 해당 컨트롤러 작업을 직접 가리키는 경로를 생성합니다. 생성된 코드:
 
@@ -142,7 +142,7 @@ MVC 보기는 다음과 같이 작업을 통해 제공되는 모델을 사용합
 
 다음 예제에서는 사전이 초기화되어 Razor 보기로 전달됩니다. 또는 모델을 사용하여 데이터를 전달할 수도 있습니다.
 
-[!code-cshtml[](samples/TagHelpersBuiltInAspNetCore/Views/Home/Index.cshtml?name=snippet_AspAllRouteData)]
+[!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspAllRouteData)]
 
 앞의 코드에서 생성된 HTML은 다음과 같습니다.
 
@@ -152,7 +152,7 @@ MVC 보기는 다음과 같이 작업을 통해 제공되는 모델을 사용합
 
 `asp-all-route-data` 사전을 평면화하여 오버로드된 `Evaluations` 작업의 요구 사항을 충족하는 쿼리 문자열을 생성합니다.
 
-[!code-csharp[](samples/TagHelpersBuiltInAspNetCore/Controllers/SpeakerController.cs?range=26-30)]
+[!code-csharp[](samples/TagHelpersBuiltIn/Controllers/SpeakerController.cs?range=26-30)]
 
 사전에 있는 키가 경로 매개 변수와 일치하면 해당 값이 경로에서 적절하게 대체됩니다. 일치하지 않는 다른 값은 요청 매개 변수로 생성됩니다.
 
@@ -160,7 +160,7 @@ MVC 보기는 다음과 같이 작업을 통해 제공되는 모델을 사용합
 
 [asp-fragment](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortaghelper.fragment) 특성은 URL에 추가할 URL 조각을 정의합니다. 앵커 태그 도우미는 해시 문자(#)를 추가합니다. 다음 태그를 살펴보세요.
 
-[!code-cshtml[](samples/TagHelpersBuiltInAspNetCore/Views/Home/Index.cshtml?name=snippet_AspFragment)]
+[!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspFragment)]
 
 생성된 코드:
 
@@ -189,7 +189,7 @@ MVC 보기는 다음과 같이 작업을 통해 제공되는 모델을 사용합
 
 앞의 디렉터리 계층 구조에서 *AboutBlog.cshtml* 파일을 참조하는 태그는 다음과 같습니다.
 
-[!code-cshtml[](samples/TagHelpersBuiltInAspNetCore/Views/Home/Index.cshtml?name=snippet_AspArea)]
+[!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspArea)]
 
 생성된 코드:
 
@@ -198,13 +198,13 @@ MVC 보기는 다음과 같이 작업을 통해 제공되는 모델을 사용합
 ```
 
 > [!TIP]
-> MVC 앱에서 작업할 영역이 있는 경우 경로 템플릿에 해당 영역에 대한 참조가 포함되어야 합니다. 해당 템플릿은 *Startup.Configure*에서 `routes.MapRoute` 메서드 호출의 두 번째 매개 변수([!code-csharp[](samples/TagHelpersBuiltInAspNetCore/Startup.cs?name=snippet_UseMvc&highlight=5)])로 표시됩니다.
+> MVC 앱에서 작업할 영역이 있는 경우 경로 템플릿에 해당 영역에 대한 참조가 포함되어야 합니다. 해당 템플릿은 *Startup.Configure*에서 `routes.MapRoute` 메서드 호출의 두 번째 매개 변수([!code-csharp[](samples/TagHelpersBuiltIn/Startup.cs?name=snippet_UseMvc&highlight=5)])로 표시됩니다.
 
 ## <a name="asp-protocol"></a>asp-protocol
 
 [asp-protocol](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortaghelper.protocol) 특성은 URL에서 프로토콜(예: `https`)을 지정하는 데 사용됩니다. 예:
 
-[!code-cshtml[samples/TagHelpersBuiltInAspNetCore/Views/Index.cshtml?name=snippet_AspProtocol]]
+[!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspProtocol)]
 
 생성된 코드:
 
@@ -218,7 +218,7 @@ MVC 보기는 다음과 같이 작업을 통해 제공되는 모델을 사용합
 
 [asp-host](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortaghelper.host) 특성은 URL에 호스트 이름을 지정하는 데 사용됩니다. 예:
 
-[!code-cshtml[](samples/TagHelpersBuiltInAspNetCore/Views/Home/Index.cshtml?name=snippet_AspHost)]
+[!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspHost)]
 
 생성된 코드:
 
@@ -232,7 +232,7 @@ MVC 보기는 다음과 같이 작업을 통해 제공되는 모델을 사용합
 
 다음 샘플은 참석자 Razor 페이지를 가리킵니다.
 
-[!code-cshtml[](samples/TagHelpersBuiltInAspNetCore/Views/Home/Index.cshtml?name=snippet_AspPage)]
+[!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspPage)]
 
 생성된 코드:
 
@@ -242,7 +242,7 @@ MVC 보기는 다음과 같이 작업을 통해 제공되는 모델을 사용합
 
 `asp-page` 특성은 `asp-route`, `asp-controller` 및 `asp-action` 특성과 함께 사용할 수 없습니다. 그러나 다음 태그에서 보여 주듯이 `asp-page`는 `asp-route-{value}`와 함께 사용하여 라우팅을 제어할 수 있습니다.
 
-[!code-cshtml[](samples/TagHelpersBuiltInAspNetCore/Views/Home/Index.cshtml?name=snippet_AspPageAspRouteId)]
+[!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspPageAspRouteId)]
 
 생성된 코드:
 
@@ -256,11 +256,11 @@ MVC 보기는 다음과 같이 작업을 통해 제공되는 모델을 사용합
 
 다음 페이지 처리기를 살펴보세요.
 
-[!code-csharp[](samples/TagHelpersBuiltInAspNetCore/Pages/Attendee.cshtml.cs?name=snippet_OnGetProfileHandler)]
+[!code-csharp[](samples/TagHelpersBuiltIn/Pages/Attendee.cshtml.cs?name=snippet_OnGetProfileHandler)]
 
 페이지 모델 관련 태그는 `OnGetProfile` 페이지 처리기에 연결됩니다. 페이지 처리기 메서드 이름의 `On<Verb>` 접두사는 `asp-page-handler` 특성 값에서 생략됩니다. 비동기 메서드인 경우 `Async` 접미사도 생략됩니다.
 
-[!code-cshtml[](samples/TagHelpersBuiltInAspNetCore/Views/Home/Index.cshtml?name=snippet_AspPageHandler)]
+[!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspPageHandler)]
 
 생성된 코드:
 
@@ -268,7 +268,7 @@ MVC 보기는 다음과 같이 작업을 통해 제공되는 모델을 사용합
 <a href="/Attendee?attendeeid=12&handler=Profile">Attendee Profile</a>
 ```
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 * [영역](xref:mvc/controllers/areas)
 * [Razor 페이지 소개](xref:mvc/razor-pages/index)

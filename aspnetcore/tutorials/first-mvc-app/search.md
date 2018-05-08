@@ -1,7 +1,7 @@
 ---
-title: "검색 추가"
+title: 검색 추가
 author: rick-anderson
-description: "간단한 ASP.NET Core MVC 앱에 검색을 추가하는 방법을 보여 줍니다."
+description: 간단한 ASP.NET Core MVC 앱에 검색을 추가하는 방법을 보여 줍니다.
 manager: wpickett
 ms.author: riande
 ms.date: 03/07/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app/search
-ms.openlocfilehash: 3ab9086275ec4c3651383c4c845e40db55f67f4c
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 772409f11a43e1d130265d8bba3bad1da5a41b86
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-[!INCLUDE[adding-model](../../includes/mvc-intro/search1.md)]
+[!INCLUDE [adding-model](../../includes/mvc-intro/search1.md)]
 
 **rename** 명령을 사용하여 `searchString` 매개 변수의 이름을 `id`로 신속하게 바꿀 수 있습니다. `searchString` **> Rename**을 마우스 오른쪽 단추로 클릭합니다.
 
@@ -29,7 +29,7 @@ ms.lasthandoff: 01/30/2018
 
 ![변수를 보여 주는 코드 편집기는 id로 변경되었습니다.](search/_static/rename3.png)
 
-[!INCLUDE[adding-model](../../includes/mvc-intro/search2.md)]
+[!INCLUDE [adding-model](../../includes/mvc-intro/search2.md)]
 
 intelliSense에서 변경 내용 업데이트를 돕는 방법을 확인합니다.
 
@@ -41,8 +41,8 @@ intelliSense에서 변경 내용 업데이트를 돕는 방법을 확인합니�
 
 ![자주색 텍스트가 있는 양식 태그](search/_static/th_font.png)
 
-[!INCLUDE[adding-model](../../includes/mvc-intro/search3.md)]
+[!INCLUDE [adding-model](../../includes/mvc-intro/search3.md)]
 
->[!div class="step-by-step"]
-[이전](controller-methods-views.md)
-[다음](new-field.md)  
+> [!div class="step-by-step"]
+> [이전](controller-methods-views.md)
+> [다음](new-field.md)  

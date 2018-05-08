@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core MVC 및 EF Core - 관련 데이터 업데이트 - 7/10"
+title: ASP.NET Core MVC 및 EF Core - 관련 데이터 업데이트 - 7/10
 author: tdykstra
-description: "이 자습서에서는 외래 키 필드 및 탐색 속성을 업데이트하여 관련된 데이터를 업데이트합니다."
+description: 이 자습서에서는 외래 키 필드 및 탐색 속성을 업데이트하여 관련된 데이터를 업데이트합니다.
 manager: wpickett
 ms.author: tdykstra
 ms.date: 03/15/2017
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/update-related-data
-ms.openlocfilehash: 4085ca9340291f6ab594285360f3b65738699098
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 2501f4c4abdadd47b4910909205a5c798f1b938f
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="updating-related-data---ef-core-with-aspnet-core-mvc-tutorial-7-of-10"></a>관련 데이터 업데이트 - EF Core 및 ASP.NET Core MVC 자습서(7/10)
+# <a name="aspnet-core-mvc-with-ef-core---update-related-data---7-of-10"></a>ASP.NET Core MVC 및 EF Core - 관련 데이터 업데이트 - 7/10
 
 작성자: [Tom Dykstra](https://github.com/tdykstra) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Contoso University 샘플 웹 응용 프로그램은 Entity Framework Core 및 Visual Studio를 사용하여 ASP.NET Core MVC 웹 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](intro.md)를 참조하세요.
+Contoso University 웹 응용 프로그램 예제는 Entity Framework Core 및 Visual Studio를 사용하여 ASP.NET Core MVC 웹 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](intro.md)를 참조하세요.
 
 이전 자습서에서는 관련 데이터를 표시했습니다. 이 자습서에서는 외래 키 필드 및 탐색 속성을 업데이트하여 관련된 데이터를 업데이트합니다.
 
@@ -35,27 +35,27 @@ Contoso University 샘플 웹 응용 프로그램은 Entity Framework Core 및 V
 
 *CoursesController.cs*에서 4개의 만들기 및 편집 메서드를 삭제하고 다음 코드로 바꿉니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_CreateGet)]
+[!code-csharp[](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_CreateGet)]
 
-[!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_CreatePost)]
+[!code-csharp[](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_CreatePost)]
 
-[!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_EditGet)]
+[!code-csharp[](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_EditGet)]
 
-[!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_EditPost)]
+[!code-csharp[](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_EditPost)]
 
 `Edit` HttpPost 메서드 후에 드롭다운 목록에 대한 부서 정보를 로드하는 새 메서드를 만듭니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_Departments)]
+[!code-csharp[](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_Departments)]
 
 `PopulateDepartmentsDropDownList` 메서드는 이름을 기준으로 정렬하는 모든 부서의 목록을 가져오고, 드롭다운 목록에 대한 `SelectList` 컬렉션을 만들고, 컬렉션을 `ViewBag`의 보기에 전달합니다. 메서드는 호출 코드가 드롭다운 목록이 렌더링될 때 선택될 항목을 지정하도록 허용하는 선택적 `selectedDepartment` 매개 변수를 허용합니다. 보기가 "DepartmentID"라는 이름을 `<select>` 태그 도우미에 전달하면 도우미는 "DepartmentID"라는 `SelectList`에 대한 `ViewBag` 개체에서 보는 것을 압니다.
 
 새 강좌의 경우 부서는 아직 설정되지 않기 때문에 HttpGet `Create` 메서드는 선택한 항목을 설정하지 않고 `PopulateDepartmentsDropDownList` 메서드를 호출합니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?highlight=3&name=snippet_CreateGet)]
+[!code-csharp[](intro/samples/cu/Controllers/CoursesController.cs?highlight=3&name=snippet_CreateGet)]
 
 HttpGet `Edit` 메서드는 편집 중인 강좌에 이미 할당되어 있는 부서의 ID에 따라 선택한 항목을 설정합니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?highlight=15&name=snippet_EditGet)]
+[!code-csharp[](intro/samples/cu/Controllers/CoursesController.cs?highlight=15&name=snippet_EditGet)]
 
 `Create` 및 `Edit` 모두에 대한 HttpPost 메서드는 오류가 발생한 후 페이지를 다시 표시할 때 선택한 항목을 설정하는 코드를 포함합니다. 이렇게 하면 오류 메시지를 표시하기 위해 페이지가 다시 표시될 때 선택한 부서에 관계 없이 선택된 상태로 유지됩니다.
 
@@ -63,27 +63,27 @@ HttpGet `Edit` 메서드는 편집 중인 강좌에 이미 할당되어 있는 �
 
 강좌 세부 정보 및 삭제 페이지의 성능을 최적화하기 위해 `Details` 및 HttpGet `Delete` 메서드에 `AsNoTracking` 호출을 추가합니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?highlight=10&name=snippet_Details)]
+[!code-csharp[](intro/samples/cu/Controllers/CoursesController.cs?highlight=10&name=snippet_Details)]
 
-[!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?highlight=10&name=snippet_DeleteGet)]
+[!code-csharp[](intro/samples/cu/Controllers/CoursesController.cs?highlight=10&name=snippet_DeleteGet)]
 
 ### <a name="modify-the-course-views"></a>강좌 보기 수정
 
 *Views/Courses/Create.cshtml*에서 **부서** 드롭다운 목록에 "부서 선택" 옵션을 추가하고, **DepartmentID**에서  **부서**로 캡션을 변경하고, 유효성 검사 메시지를 추가합니다.
 
-[!code-html[Main](intro/samples/cu/Views/Courses/Create.cshtml?highlight=2-6&range=29-34)]
+[!code-html[](intro/samples/cu/Views/Courses/Create.cshtml?highlight=2-6&range=29-34)]
 
 *Views/Courses/Edit.cshtml*에서 부서 필드에 대해 *Create.cshtml*에서 수행한 동일한 변경 내용을 만듭니다.
 
 또한 *Views/Courses/Edit.cshtml*에서 **제목** 필드 전에 강좌 번호 필드를 추가합니다. 강좌 번호는 기본 키이기 때문에 표시되지만 변경될 수 없습니다.
 
-[!code-html[Main](intro/samples/cu/Views/Courses/Edit.cshtml?range=15-18)]
+[!code-html[](intro/samples/cu/Views/Courses/Edit.cshtml?range=15-18)]
 
 편집 보기에 강좌 번호에 대해 이미 숨겨진 필드(`<input type="hidden">`)가 있습니다. 사용자가 **편집** 페이지에서 **저장**을 클릭할 때 강좌 번호가 게시된 데이터에 삽입되도록 하지 않으므로 `<label>` 태그 도우미를 추가하는 것은 숨겨진 필드에 대한 필요성을 없애지 않습니다.
 
 *Views/Courses/Delete.cshtml*에서 위쪽에 강좌 번호 필드를 추가하고 부서 ID를 부서 이름으로 변경합니다.
 
-[!code-html[Main](intro/samples/cu/Views/Courses/Delete.cshtml?highlight=14-19,36)]
+[!code-html[](intro/samples/cu/Views/Courses/Delete.cshtml?highlight=14-19,36)]
 
 *Views/Courses/Details.cshtml*에서 *Delete.cshtml*에 대해 수행한 동일한 변경 내용을 만듭니다.
 
@@ -115,11 +115,11 @@ HttpGet `Edit` 메서드는 편집 중인 강좌에 이미 할당되어 있는 �
 
 *InstructorsController.cs*에서 강사 엔터티의 `OfficeAssignment` 탐색 속성을 로드하고 `AsNoTracking`을 호출하도록 HttpGet `Edit` 메서드에서 코드를 변경합니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?highlight=9,10&name=snippet_EditGetOA)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?highlight=9,10&name=snippet_EditGetOA)]
 
 HttpPost `Edit` 메서드를 다음 코드로 바꿔 사무실 할당 업데이트를 처리합니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_EditPostOA)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_EditPostOA)]
 
 코드는 다음을 수행합니다.
 
@@ -129,7 +129,7 @@ HttpPost `Edit` 메서드를 다음 코드로 바꿔 사무실 할당 업데이�
 
 -  모델 바인더의 값으로 검색된 강사 엔터티를 업데이트합니다. `TryUpdateModel` 오버로드를 통해 포함하려는 속성을 허용 목록에 추가할 수 있습니다. 이렇게 하면 [두 번째 자습서](crud.md)에 설명된 대로 초과 게시를 방지합니다.
 
-    <!-- Snippets don't play well with <ul> [!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?range=241-244)] -->
+    <!-- Snippets don't play well with <ul> [!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?range=241-244)] -->
 
     ```csharp
     if (await TryUpdateModelAsync<Instructor>(
@@ -155,7 +155,7 @@ HttpPost `Edit` 메서드를 다음 코드로 바꿔 사무실 할당 업데이�
 
 *Views/Instructors/Edit.cshtml*에서 **저장** 단추 앞의 끝에 사무실 위치를 편집하기 위해 새 필드를 추가합니다.
 
-[!code-html[Main](intro/samples/cu/Views/Instructors/Edit.cshtml?range=30-34)]
+[!code-html[](intro/samples/cu/Views/Instructors/Edit.cshtml?range=30-34)]
 
 앱을 실행하고, **강사** 탭을 선택한 다음, 강사에서 **편집**을 클릭합니다. **사무실 위치**를 변경하고 **저장**을 클릭합니다.
 
@@ -177,11 +177,11 @@ HttpPost `Edit` 메서드를 다음 코드로 바꿔 사무실 할당 업데이�
 
 *SchoolViewModels* 폴더에서 *AssignedCourseData.cs*를 만들고 기존 코드를 다음 코드로 바꿉니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/SchoolViewModels/AssignedCourseData.cs)]
+[!code-csharp[](intro/samples/cu/Models/SchoolViewModels/AssignedCourseData.cs)]
 
 *InstructorsController.cs*에서 HttpGet `Edit` 메서드를 다음 코드로 바꿉니다. 변경 내용은 강조 표시되어 있습니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?highlight=10,17,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36&name=snippet_EditGetCourses)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?highlight=10,17,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36&name=snippet_EditGetCourses)]
 
 코드는 `Courses` 탐색 속성에 대해 즉시 로드를 추가하고 새 `PopulateAssignedCourseData` 메서드를 호출하여 `AssignedCourseData` 보기 모델 클래스를 사용하여 확인란 배열에 대한 정보를 제공합니다.
 
@@ -189,9 +189,9 @@ HttpPost `Edit` 메서드를 다음 코드로 바꿔 사무실 할당 업데이�
 
 다음으로 사용자가 **저장**을 클릭할 때 실행되는 코드를 추가합니다. `EditPost` 메서드를 다음 코드를 바꾸고, 강사 엔터티의 `Courses` 탐색 속성을 업데이트하는 새 메서드를 추가합니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?highlight=1,3,12,13,25,39-40&name=snippet_EditPostCourses)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?highlight=1,3,12,13,25,39-40&name=snippet_EditPostCourses)]
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_UpdateCourses&highlight=1-31)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_UpdateCourses&highlight=1-31)]
 
 메서드 서명은 이제 HttpGet `Edit` 메서드와 다르므로 메서드 이름은 `EditPost`에서 `Edit`로 다시 변경됩니다.
 
@@ -199,17 +199,17 @@ HttpPost `Edit` 메서드를 다음 코드로 바꿔 사무실 할당 업데이�
 
 확인란이 선택되지 않은 경우 `UpdateInstructorCourses`의 코드는 빈 컬렉션으로 `CourseAssignments` 탐색 속성을 초기화하고 다음을 반환합니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_UpdateCourses&highlight=3-7)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_UpdateCourses&highlight=3-7)]
 
 그런 다음, 코드는 데이터베이스의 모든 강좌를 반복하고 현재 강사에게 할당된 것과 보기에서 선택되었던 것에 대해 각 강좌를 확인합니다. 효율적인 조회를 수행하기 위해 후자의 두 컬렉션은 `HashSet` 개체에 저장됩니다.
 
 강좌에 대한 확인란이 선택됐지만 강좌가 `Instructor.CourseAssignments` 탐색 속성에 없는 경우 강좌는 탐색 속성의 컬렉션에 추가됩니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?highlight=14-20&name=snippet_UpdateCourses)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?highlight=14-20&name=snippet_UpdateCourses)]
 
 강좌에 대한 확인란이 선택되지 않았지만 강좌가 `Instructor.CourseAssignments` 탐색 속성에 있는 경우 강좌는 탐색 속성에서 제거됩니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?highlight=21-29&name=snippet_UpdateCourses)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?highlight=21-29&name=snippet_UpdateCourses)]
 
 ### <a name="update-the-instructor-views"></a>강사 보기 업데이트
 
@@ -219,7 +219,7 @@ HttpPost `Edit` 메서드를 다음 코드로 바꿔 사무실 할당 업데이�
 > [!NOTE] 
 > Visual Studio에서 코드를 붙여 넣을 때 줄 바꿈이 코드를 중단하는 방식으로 변경됩니다.  자동 서식 지정을 실행 취소하려면 Ctrl+Z를 한 번 누릅니다.  여기와 같은 모양이 되도록 줄 바꿈을 수정합니다. 들여쓰기는 완벽할 필요가 없지만 `@</tr><tr>`, `@:<td>`, `@:</td>` 및 `@:</tr>` 줄은 표시된 것처럼 각각 한 줄에 있어야 합니다. 그렇지 않으면 런타임 오류가 발생합니다. 선택된 새 코드의 블록과 함께 Tab 키를 세 번 눌러 기존 코드와 함께 새 코드를 정렬합니다. [여기](https://developercommunity.visualstudio.com/content/problem/147795/razor-editor-malforms-pasted-markup-and-creates-in.html)합니다.에서 이 문제의 상태를 확인할 수 있습니다.
 
-[!code-html[Main](intro/samples/cu/Views/Instructors/Edit.cshtml?range=35-61)]
+[!code-html[](intro/samples/cu/Views/Instructors/Edit.cshtml?range=35-61)]
 
 이 코드는 세 개의 열이 있는 HTML 테이블을 만듭니다. 각 열은 강좌 번호 및 제목으로 구성된 캡션이 뒤에 오는 확인란입니다. 확인란은 모두 모델 바인더에게 그룹으로 간주된다는 것을 알리는 동일한 이름("selectedCourses")을 갖습니다. 각 확인란의 값 특성은 `CourseID`의 값으로 설정됩니다. 페이지가 게시되면 모델 바인더는 선택된 확인란에 대한 `CourseID` 값으로 구성된 배열을 컨트롤러에 전달합니다.
 
@@ -238,7 +238,7 @@ HttpPost `Edit` 메서드를 다음 코드로 바꿔 사무실 할당 업데이�
 
 *InstructorsController.cs*에서 `DeleteConfirmed` 메서드를 삭제하고 해당 위치에 다음 코드를 삽입합니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?highlight=5-7,9-12&name=snippet_DeleteConfirmed)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?highlight=5-7,9-12&name=snippet_DeleteConfirmed)]
 
 이 코드로 다음이 변경됩니다.
 
@@ -250,7 +250,7 @@ HttpPost `Edit` 메서드를 다음 코드로 바꿔 사무실 할당 업데이�
 
 *InstructorsController.cs*에서 HttpGet 및 HttpPost `Create` 메서드를 삭제한 다음, 해당 위치에 다음 코드를 추가합니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_Create&highlight=3-5,12,14-22,29)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_Create&highlight=3-5,12,14-22,29)]
 
 이 코드는 처음에 선택된 강좌가 없다는 것을 제외하고 `Edit` 메서드에 대해 확인한 것과 유사합니다. 선택된 강좌가 있을 수 있기 때문이 아니라 보기의 `foreach` 반복에 대해 빈 컬렉션을 제공하기 위해 HttpGet `Create` 메서드는 `PopulateAssignedCourseData` 메서드를 호출합니다(그렇지 않은 경우 보기 코드는 null 참조 예외를 throw함).
 
@@ -283,7 +283,7 @@ public ICollection<CourseAssignment> CourseAssignments
 
 *Views/Instructor/Create.cshtml*에서 사무실 위치 텍스트 상자와 제출 단추 전에 강좌에 대한 확인란을 추가합니다. 편집 페이지의 경우와 같이 [Visual Studio에서 붙여넣을 때 코드의 서식을 다시 지정하는 경우 서식 지정을 수정합니다](#notepad).
 
-[!code-html[Main](intro/samples/cu/Views/Instructors/Create.cshtml?range=29-61)]
+[!code-html[](intro/samples/cu/Views/Instructors/Create.cshtml?range=29-61)]
 
 앱을 실행하고 강사를 만들어 테스트합니다. 
 
@@ -295,6 +295,6 @@ public ICollection<CourseAssignment> CourseAssignments
 
 이제 관련된 데이터 사용에 대한 소개를 완료했습니다. 다음 자습서에서는 동시성 충돌을 처리하는 방법을 확인합니다.
 
->[!div class="step-by-step"]
-[이전](read-related-data.md)
-[다음](concurrency.md)  
+> [!div class="step-by-step"]
+> [이전](read-related-data.md)
+> [다음](concurrency.md)  

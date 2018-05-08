@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core MVC의 캐시 태그 도우미"
+title: ASP.NET Core MVC의 캐시 태그 도우미
 author: pkellner
-description: "캐시 태그 도우미 사용 방법 소개"
+description: 캐시 태그 도우미 사용 방법 소개
 manager: wpickett
 ms.author: riande
 ms.date: 02/14/2017
@@ -9,11 +9,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/tag-helpers/builtin-th/cache-tag-helper
-ms.openlocfilehash: 51811ee1669a24a0fc4ce9bc67e782b61bff655c
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 6f19a989c9bdfddea7609c5571cdd49de29e036b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
 # <a name="cache-tag-helper-in-aspnet-core-mvc"></a>ASP.NET Core MVC의 캐시 태그 도우미
 
@@ -60,10 +60,9 @@ Razor 보기 엔진은 기본 `expires-after`를 20분으로 설정합니다.
 
 ### <a name="expires-on"></a>expires-on 
 
-| 특성 유형    | 예제 값     |
-|----------------   |----------------   |
-| DateTimeOffset    | "@new DateTime(2025,1,29,17,02,0)"    |
-
+| 특성 유형 |           예제 값            |
+|----------------|------------------------------------|
+| DateTimeOffset | "@new DateTime(2025,1,29,17,02,0)" |
 
 절대 만료 날짜를 설정합니다. 다음 예제는 2025년 1월 29일 오후 5시 2분이 될 때까지 캐시 태그 도우미의 콘텐츠를 캐시합니다.
 
@@ -79,10 +78,9 @@ Razor 보기 엔진은 기본 `expires-after`를 20분으로 설정합니다.
 
 ### <a name="expires-after"></a>expires-after
 
-| 특성 유형    | 예제 값     |
-|----------------   |----------------   |
-| TimeSpan    | "@TimeSpan.FromSeconds(120)"    |
-
+| 특성 유형 |        예제 값         |
+|----------------|------------------------------|
+|    TimeSpan    | "@TimeSpan.FromSeconds(120)" |
 
 콘텐츠를 캐시할 첫 번째 요청 시간부터 시간 길이를 설정합니다. 
 
@@ -98,10 +96,9 @@ Razor 보기 엔진은 기본 `expires-after`를 20분으로 설정합니다.
 
 ### <a name="expires-sliding"></a>expires-sliding
 
-| 특성 유형    | 예제 값     |
-|----------------   |----------------   |
-| TimeSpan    | "@TimeSpan.FromSeconds(60)"     |
-
+| 특성 유형 |        예제 값        |
+|----------------|-----------------------------|
+|    TimeSpan    | "@TimeSpan.FromSeconds(60)" |
 
 캐시 항목이 액세스되지 않는 경우 캐시 항목을 제거해야 하는 시간을 설정합니다.
 
@@ -169,7 +166,7 @@ routes.MapRoute(
     name: "default",
     template: "{controller=Home}/{action=Index}/{Make?}/{Model?}");
 ```
-  
+
 *Index.cshtml*
 
 ```cshtml
@@ -224,10 +221,9 @@ routes.MapRoute(
 
 ### <a name="vary-by"></a>vary-by
 
-| 특성 유형    | 예제 값                |
-|----------------   |----------------               |
-| 문자열             | "@Model"                 |
-
+| 특성 유형 | 예제 값 |
+|----------------|----------------|
+|     문자열     |    "@Model"    |
 
 캐시되는 데이터의 사용자 지정을 허용합니다. 특성의 문자열 값에서 참조하는 개체가 변경되면 캐시 태그 도우미의 콘텐츠가 업데이트됩니다. 종종 모델 값의 문자열 연결이 이 특성에 할당됩니다.  연결된 값을 업데이트하면 캐시가 무효화된다는 의미입니다.
 
@@ -281,7 +277,7 @@ public IActionResult Index(string myParam1,string myParam2,string myParam3)
 
 캐시 태그 도우미는 [메모리 캐시 서비스](xref:performance/caching/memory)에 따라 달라집니다. 서비스가 추가되지 않은 경우 캐시 태그 도우미가 서비스를 추가합니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
-* [메모리 내 캐싱](xref:performance/caching/memory)
+* [메모리 내 캐시](xref:performance/caching/memory)
 * [ID 소개](xref:security/authentication/identity)

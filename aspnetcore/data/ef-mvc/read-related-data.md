@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core MVC 및 EF Core - 관련 데이터 읽기 - 6/10"
+title: ASP.NET Core MVC 및 EF Core - 관련 데이터 읽기 - 6/10
 author: tdykstra
-description: "이 자습서에서는 관련 데이터 즉, Entity Framework에서 탐색 속성으로 로드하는 데이터를 읽고 표시합니다."
+description: 이 자습서에서는 관련 데이터 즉, Entity Framework에서 탐색 속성으로 로드하는 데이터를 읽고 표시합니다.
 manager: wpickett
 ms.author: tdykstra
 ms.date: 03/15/2017
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/read-related-data
-ms.openlocfilehash: 58b05587458aacad1a633a04f0359a4d2a3605a3
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 6ee4b0db5bf4d1781ce44f1aff8331680ca8686c
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="reading-related-data---ef-core-with-aspnet-core-mvc-tutorial-6-of-10"></a>관련 데이터 읽기 - EF Core 및 ASP.NET Core MVC 자습서(6/10)
+# <a name="aspnet-core-mvc-with-ef-core---read-related-data---6-of-10"></a>ASP.NET Core MVC 및 EF Core - 관련 데이터 읽기 - 6/10
 
 작성자: [Tom Dykstra](https://github.com/tdykstra) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Contoso University 샘플 웹 응용 프로그램은 Entity Framework Core 및 Visual Studio를 사용하여 ASP.NET Core MVC 웹 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](intro.md)를 참조하세요.
+Contoso University 웹 응용 프로그램 예제는 Entity Framework Core 및 Visual Studio를 사용하여 ASP.NET Core MVC 웹 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](intro.md)를 참조하세요.
 
 이전 자습서에서 School 데이터 모델을 완료했습니다. 이 자습서에서는 관련 데이터 즉, Entity Framework에서 탐색 속성으로 로드하는 데이터를 읽고 표시합니다.
 
@@ -65,7 +65,7 @@ Entity Framework와 같은 ORM(개체-관계형 매핑) 소프트웨어에서 �
 
 `Index` 메서드를 강좌 엔터티를 반환하는 `IQueryable`에 대해 더욱 적절한 이름을 사용하는 다음 코드로 바꿉니다(`schoolContext` 대신 `courses`).
 
-[!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_RevisedIndexMethod)]
+[!code-csharp[](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_RevisedIndexMethod)]
 
 *Views/Courses/Index.cshtml*을 열고 템플릿 코드를 다음 코드로 바꿉니다. 변경 내용은 강조 표시되어 있습니다.
 
@@ -75,7 +75,7 @@ Entity Framework와 같은 ORM(개체-관계형 매핑) 소프트웨어에서 �
 
 * 인덱스에서 강좌로 제목이 변경됐습니다.
 
-* `CourseID` 속성 값을 보여 주는 **번호** 열을 추가했습니다. 일반적으로 최종 사용자에게 의미가 없으므로 기본적으로 기본 키는 스캐폴드되지 않습니다. 그러나 이 경우 기본 키는 의미가 있으며 표시하길 원합니다.
+* `CourseID` 속성 값을 보여 주는 **Number** 열을 추가했습니다. 일반적으로 최종 사용자에게 의미가 없으므로 기본적으로 기본 키는 스캐폴드되지 않습니다. 그러나 이 경우 기본 키는 의미가 있으며 표시하길 원합니다.
 
 * 부서 이름을 표시하도록 **부서** 열을 변경했습니다. 코드는 `Department` 탐색 속성으로 로드되는 부서 엔터티의 `Name` 속성을 표시합니다.
 
@@ -107,7 +107,7 @@ Entity Framework와 같은 ORM(개체-관계형 매핑) 소프트웨어에서 �
 
 *SchoolViewModels* 폴더에서 *InstructorIndexData.cs*를 만들고 기존 코드를 다음 코드로 바꿉니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/SchoolViewModels/InstructorIndexData.cs)]
+[!code-csharp[](intro/samples/cu/Models/SchoolViewModels/InstructorIndexData.cs)]
 
 ### <a name="create-the-instructor-controller-and-views"></a>강사 컨트롤러 및 뷰 만들기
 
@@ -117,31 +117,31 @@ Entity Framework와 같은 ORM(개체-관계형 매핑) 소프트웨어에서 �
 
 *InstructorsController.cs*를 열고 ViewModels 네임스페이스에 대해 using 문을 추가합니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_Using)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_Using)]
 
 인덱스 메서드를 다음 코드로 바꿔 관련된 데이터의 즉시 로드를 수행하고 보기 모델에 배치합니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_EagerLoading)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_EagerLoading)]
 
 메서드는 선택한 강사 및 선택한 강좌의 ID 값을 제공하는 선택적 경로 데이터(`id`) 및 쿼리 문자열 매개 변수(`courseID`)를 허용합니다. 매개 변수는 페이지의 **선택** 하이퍼링크에서 제공됩니다.
 
 코드는 보기 모델의 인스턴스를 만들고 강사 목록에 배치하여 시작합니다. 코드는 `Instructor.OfficeAssignment` 및 `Instructor.CourseAssignments` 탐색 속성에 대한 즉시 로드를 지정합니다. `CourseAssignments` 속성 내에서 `Course` 속성이 로드되고, 해당 속성 내에서 `Enrollments` 및 `Department` 속성이 로드되고, 각 `Enrollment` 엔터티 내에서 `Student` 속성이 로드됩니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_ThenInclude)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_ThenInclude)]
 
 보기는 항상 OfficeAssignment 엔터티가 필요하므로 동일한 쿼리에서 인출하는 것이 더 효율적입니다. 강좌 엔터티는 강사가 웹 페이지에서 선택된 경우에 필요하므로 단일 쿼리는 페이지가 선택된 강좌와 함께 더 자주 표시되는 경우에만(함께 표시되지 않는 것보다) 여러 쿼리보다 낫습니다.
 
 `Course`에서 두 개의 속성이 필요하므로 코드는 `CourseAssignments` 및 `Course`를 반복합니다. `ThenInclude` 호출의 첫 번째 문자열은 `CourseAssignment.Course`, `Course.Enrollments` 및 `Enrollment.Student`를 가져옵니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_ThenInclude&highlight=3-6)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_ThenInclude&highlight=3-6)]
 
 코드의 해당 지점에서 다른 `ThenInclude`는 필요하지 않은 `Student`의 탐색 속성에 대한 것입니다. 하지만 `Include`를 호출하면 `Instructor` 속성으로 다시 시작하므로 체인을 통해 다시 이동해야 합니다. 이 때 `Course.Enrollments` 대신 `Course.Department`를 지정합니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_ThenInclude&highlight=7-9)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_ThenInclude&highlight=7-9)]
 
 다음 코드는 강사가 선택되었을 때 실행합니다. 선택한 강사는 보기 모델의 강사 목록에서 검색됩니다. 보기 모델의 `Courses` 속성은 해당 강사의 `CourseAssignments` 탐색 속성에서 강좌 엔터티로 로드됩니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?range=56-62)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?range=56-62)]
 
 `Where` 메서드는 컬렉션을 반환하지만 이 경우 해당 메서드에 전달된 조건으로 반환되는 단일 강사 엔터티만 발생할 수 있습니다. `Single` 메서드는 컬렉션을 단일 강사 엔터티로 변환합니다. 이는 해당 엔터티의 `CourseAssignments` 속성에 대한 액세스를 제공합니다. `CourseAssignments` 속성은 `CourseAssignment` 엔터티를 포함합니다. 여기에서 관련된 `Course` 엔터티만을 원합니다.
 
@@ -159,7 +159,7 @@ Entity Framework와 같은 ORM(개체-관계형 매핑) 소프트웨어에서 �
 
 다음으로 강좌를 선택한 경우 선택한 강좌가 보기 모델의 강좌 목록에서 검색됩니다. 보기 모델의 `Enrollments` 속성은 해당 강좌의 `Enrollments` 탐색 속성에서 등록 엔터티로 로드됩니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?range=64-69)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?range=64-69)]
 
 ### <a name="modify-the-instructor-index-view"></a>강사 인덱스 뷰 수정
 
@@ -223,7 +223,7 @@ Entity Framework와 같은 ORM(개체-관계형 매핑) 소프트웨어에서 �
 
 페이지를 다시 새로 고치고 강사를 선택합니다. 그런 다음, 강좌를 선택하여 등록된 학생 및 해당 등급의 목록을 봅니다.
 
-![강사 및 강좌가 선택된 강사 인덱스 페이지](read-related-data/_static/instructors-index.png)
+![강사 및 과정이 선택된 강사 인덱스 페이지](read-related-data/_static/instructors-index.png)
 
 ## <a name="explicit-loading"></a>명시적 로드
 
@@ -231,7 +231,7 @@ Entity Framework와 같은 ORM(개체-관계형 매핑) 소프트웨어에서 �
 
 사용자가 선택된 강사 및 강좌에서 등록을 드물게 확인하려고 한다는 것을 예상했다고 가정합니다. 이 경우 요청된 경우에만 등록 데이터를 로드할 수 있습니다. 명시적 로드를 수행하는 방법의 예를 보려면 `Index` 메서드를 등록에 대한 즉시 로드를 제거하고 해당 속성을 명시적으로 로드하는 다음 코드로 바꿉니다. 코드 변경 내용은 강조 표시되어 있습니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_ExplicitLoading&highlight=23-29)]
+[!code-csharp[](intro/samples/cu/Controllers/InstructorsController.cs?name=snippet_ExplicitLoading&highlight=23-29)]
 
 새 코드는 강사 엔터티를 검색하는 코드에서 등록 데이터에 대한 *ThenInclude* 메서드 호출을 삭제합니다. 강사 및 강좌가 선택된 경우 강조 표시된 코드는 선택된 강좌에 대한 등록 엔터티 및 각 등록에 대한 학생 엔터티를 검색합니다.
 

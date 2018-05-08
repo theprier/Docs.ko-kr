@@ -1,6 +1,6 @@
 *Controllers/HelloWorldController.cs*의 내용을 다음으로 바꿉니다.
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/HelloWorldController.cs?name=snippet_1)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/HelloWorldController.cs?name=snippet_1)]
 
 컨트롤러의 모든 `public` 메서드는 HTTP 끝점으로 호출할 수 있습니다. 위의 샘플에서 메서드는 모두 문자열을 반환합니다.  각 메서드 앞의 주석을 적어둡니다.
 
@@ -12,13 +12,13 @@ HTTP 끝점은 웹 응용 프로그램에서 대상으로 지정 가능한 URL(�
 
 ![브라우저 창은 내 기본 작업입니다.라는 응용 프로그램 응답을 표시합니다.](../../tutorials/first-mvc-app/adding-controller/_static/hell1.png)
 
-MVC는 들어오는 URL에 따라 컨트롤러 클래스(및 그 안에 작업 메서드)를 호출합니다. MVC에서 사용하는 기본 [URL 라우팅 논리](../../mvc/controllers/routing.md)는 다음과 같은 형식을 사용하여 호출할 코드를 결정합니다.
+MVC는 들어오는 URL에 따라 컨트롤러 클래스(및 그 안에 작업 메서드)를 호출합니다. MVC에서 사용하는 기본 [URL 라우팅 논리](xref:mvc/controllers/routing)는 다음과 같은 형식을 사용하여 호출할 코드를 결정합니다.
 
 `/[Controller]/[ActionName]/[Parameters]`
 
 *Startup.cs* 파일의 `Configure` 메서드에서 라우팅에 대한 형식을 설정합니다.
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=snippet_1&highlight=5)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=snippet_1&highlight=5)]
 
 앱을 실행하고 URL 세그먼트를 제공하지 않는 경우 "Home" 컨트롤러에 기본값으로 지정되고 위에 강조 표시된 템플릿 줄에 "Index" 메서드가 지정됩니다.
 
@@ -30,19 +30,19 @@ MVC는 들어오는 URL에 따라 컨트롤러 클래스(및 그 안에 작업 �
 
 URL의 일부 매개 변수 정보를 컨트롤러에 전달하도록 코드를 수정합니다. 예를 들어, `/HelloWorld/Welcome?name=Rick&numtimes=4`을 입력합니다. `Welcome` 메서드가 다음 코드와 같이 두 개의 매개 변수를 포함하도록 변경합니다. 
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/HelloWorldController.cs?name=snippet_2)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/HelloWorldController.cs?name=snippet_2)]
 
 위의 코드:
 
 * C# 선택적 매개 변수 기능을 사용하여 `numTimes` 매개 변수에 대해 전달된 값이 없는 경우 해당 매개 변수의 기본값이 1임을 나타냅니다.
 * `HtmlEncoder.Default.Encode`를 사용하여 악의적인 입력(예: JavaScript)에서 응용 프로그램을 보호합니다. 
-* [보간된 문자열](https://docs.microsoft.com/dotnet/articles/csharp/language-reference/keywords/interpolated-strings)을 사용합니다.
+* [보간된 문자열](/dotnet/articles/csharp/language-reference/keywords/interpolated-strings)을 사용합니다.
 
 앱을 실행하고 다음으로 이동합니다.
 
    `http://localhost:xxxx/HelloWorld/Welcome?name=Rick&numtimes=4`
 
-(xxxx를 포트 번호로 바꿉니다.) URL에서 `name` 및 `numtimes`에 다른 값을 사용할 수 있습니다. MVC [모델 바인딩](../../mvc/models/model-binding.md) 시스템은 주소 표시줄의 쿼리 문자열에서 메서드의 매개 변수로 명명된 매개 변수를 자동으로 매핑합니다. 자세한 정보는 [모델 바인딩](../../mvc/models/model-binding.md)을 참조하세요.
+(xxxx를 포트 번호로 바꿉니다.) URL에서 `name` 및 `numtimes`에 다른 값을 사용할 수 있습니다. MVC [모델 바인딩](xref:mvc/models/model-binding) 시스템은 주소 표시줄의 쿼리 문자열에서 메서드의 매개 변수로 명명된 매개 변수를 자동으로 매핑합니다. 자세한 정보는 [모델 바인딩](xref:mvc/models/model-binding)을 참조하세요.
 
 ![브라우저 창은 안녕하세요, Rick. NumTimes은 4입니다.라는 응용 프로그램 응답을 표시합니다.](../../tutorials/first-mvc-app/adding-controller/_static/rick4.png)
 
@@ -50,7 +50,7 @@ URL의 일부 매개 변수 정보를 컨트롤러에 전달하도록 코드를 
 
 `Welcome` 메서드를 다음 코드로 바꿉니다.
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/HelloWorldController.cs?name=snippet_3)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/HelloWorldController.cs?name=snippet_3)]
 
 앱을 실행하고 다음 URL을 입력합니다.`http://localhost:xxx/HelloWorld/Welcome/3?name=Rick`
 
@@ -58,6 +58,6 @@ URL의 일부 매개 변수 정보를 컨트롤러에 전달하도록 코드를 
 
 이번에 세 번째 URL 세그먼트는 `id` 경로 매개 변수와 일치합니다. `Welcome` 메서드는 `MapRoute` 메서드에서 URL 템플릿과 일치하는 `id` 매개 변수를 포함합니다. 후행 `?`(`id?`에 위치)는 `id` 매개 변수가 선택 사항임을 나타냅니다.
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=snippet_1&highlight=5)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=snippet_1&highlight=5)]
 
 이러한 예제에서 컨트롤러는 MVC의 "VC" 부분을 사용했습니다. 즉, 뷰 및 컨트롤러 작업입니다. 컨트롤러는 HTML을 직접 반환합니다. 일반적으로 매우 코딩하고 유지하기에 복잡해지므로 컨트롤러에서 HTML을 직접 반환하지 않으려고 합니다. 대신 일반적으로 별도의 Razor 뷰 템플릿 파일을 사용하여 HTML 응답을 생성하는 데 도움이 됩니다. 다음 자습서에서 해당 작업을 수행합니다.

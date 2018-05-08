@@ -1,20 +1,20 @@
 ---
-title: "ASP.NET Core MVC 및 EF Core - 정렬, 필터, 페이징 - 3/10"
+title: ASP.NET Core MVC 및 EF Core - 정렬, 필터, 페이징 - 3/10
 author: tdykstra
-description: "이 자습서에서는 ASP.NET Core 및 Entity Framework Core를 사용하여 페이지에 정렬, 필터링 및 페이징 기능을 추가합니다."
+description: 이 자습서에서는 ASP.NET Core 및 Entity Framework Core를 사용하여 페이지에 정렬, 필터링 및 페이징 기능을 추가합니다.
 ms.author: tdykstra
 ms.date: 03/15/2017
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/sort-filter-page
-ms.openlocfilehash: feb4a50c9e5602064e7d493b6991485949903f47
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: d4fe6386318210a751d1248c87299d414ab563a3
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="sorting-filtering-paging-and-grouping---ef-core-with-aspnet-core-mvc-tutorial-3-of-10"></a>정렬, 필터링, 페이징 및 그룹화 - EF Core 및 ASP.NET Core MVC 자습서(3/10)
+# <a name="aspnet-core-mvc-with-ef-core---sort-filter-paging---3-of-10"></a>ASP.NET Core MVC 및 EF Core - 정렬, 필터, 페이징 - 3/10
 
 작성자: [Tom Dykstra](https://github.com/tdykstra) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -34,7 +34,7 @@ Student 인덱스 페이지에 정렬을 추가하려면 Students 컨트롤러�
 
 *StudentsController.cs*에서 `Index` 메서드를 다음 코드로 바꿉니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_SortOnly)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_SortOnly)]
 
 이 코드는 URL의 쿼리 문자열에서 `sortOrder` 매개 변수를 받습니다. 쿼리 문자열 값은 매개 변수로 ASP.NET Core MVC에 의해 작업 메서드에 제공됩니다. 매개 변수는 "Name" 또는 "Date" 문자열이며 필요에 따라 밑줄과 내림차순을 지정하는 문자열 "desc"가 옵니다. 기본 정렬 순서는 오름차순입니다.
 
@@ -42,14 +42,14 @@ Student 인덱스 페이지에 정렬을 추가하려면 Students 컨트롤러�
 
 열 제목 하이퍼링크를 적절한 쿼리 문자열 값으로 구성하기 위해 뷰에 두 `ViewData` 요소(NameSortParm 및 DateSortParm)가 사용됩니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_SortOnly&highlight=3-4)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_SortOnly&highlight=3-4)]
 
 이것은 3개로 구성된 문입니다. 첫 번째 문은 `sortOrder` 매개 변수는 Null인지, 비어 있는지 여부를 지정하고 Null이면 NameSortParm을 "name_desc"로 설정하고, 그렇지 않으면 빈 문자열로 설정합니다. 이러한 두 문을 사용하면 뷰에서 다음과 같이 열 제목 하이퍼링크를 설정할 수 있습니다.
 
 |  현재 정렬 순서  | 성 하이퍼링크 | 날짜 하이퍼링크 |
 |:--------------------:|:-------------------:|:--------------:|
-| 이름 오름차순  | descending          | ascending      |
-| 이름 내림차순 | ascending           | ascending      |
+| 성 오름차순  | descending          | ascending      |
+| 성 내림차순 | ascending           | ascending      |
 | 날짜 오름차순       | ascending           | descending     |
 | 날짜 내림차순      | ascending           | ascending      |
 
@@ -77,7 +77,7 @@ Student 인덱스 페이지에 정렬을 추가하려면 Students 컨트롤러�
 
 *StudentsController.cs*에서 `Index` 메서드를 다음 코드로 바꿉니다(변경 내용이 강조 표시됨).
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_SortFilter&highlight=1,5,9-13)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_SortFilter&highlight=1,5,9-13)]
 
 `searchString` 매개 변수를 `Index` 메서드에 추가했습니다. 검색 문자열 값은 Index 뷰에 추가할 텍스트 상자에서 가져옵니다. 또한 성과 이름에 검색 문자열이 포함된 학생만 선택하는 where 절이 LINQ 문에 추가되었습니다. where 절을 추가하는 문은 검색할 값이 있는 경우에만 실행됩니다.
 
@@ -116,7 +116,7 @@ http://localhost:5813/Students?SearchString=an
 
 프로젝트 폴더에서 `PaginatedList.cs`를 만든 후 템플릿 코드를 다음 코드로 바꿉니다.
 
-[!code-csharp[Main](intro/samples/cu/PaginatedList.cs)]
+[!code-csharp[](intro/samples/cu/PaginatedList.cs)]
 
 이 코드에서 `CreateAsync` 메서드는 페이지 크기 및 페이지 번호를 사용하고 적절한 `Skip` 및 `Take` 문을 `IQueryable`에 적용합니다. `IQueryable`에서 `ToListAsync`를 호출하면 요청된 페이지만 포함하는 목록을 반환합니다. **이전** 및 **다음** 페이징 단추를 사용 또는 사용하지 않도록 하는 데 `HasPreviousPage` 및 `HasNextPage` 속성을 사용할 수 있습니다.
 
@@ -126,7 +126,7 @@ http://localhost:5813/Students?SearchString=an
 
 *StudentsController.cs*에서 `Index` 메서드를 다음 코드로 바꿉니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_SortFilterPage&highlight=1-5,7,11-18,45-46)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_SortFilterPage&highlight=1-5,7,11-18,45-46)]
 
 이 코드는 페이지 번호 매개 변수, 현재 정렬 순서 매개 변수 및 현재 필터 매개 변수를 메서드 시그니처에 추가합니다.
 
@@ -213,21 +213,21 @@ Contoso University 웹 사이트의 **정보** 페이지에는 각 등록 날짜
 
 새 폴더에서 *EnrollmentDateGroup.cs* 클래스 파일을 추가하고 템플릿 코드를 다음 코드로 바꿉니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/SchoolViewModels/EnrollmentDateGroup.cs)]
+[!code-csharp[](intro/samples/cu/Models/SchoolViewModels/EnrollmentDateGroup.cs)]
 
 ### <a name="modify-the-home-controller"></a>홈 컨트롤러 수정
 
 *HomeController.cs*에서 파일 맨 위에 다음 using 문을 추가합니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/HomeController.cs?name=snippet_Usings1)]
+[!code-csharp[](intro/samples/cu/Controllers/HomeController.cs?name=snippet_Usings1)]
 
 클래스의 여는 중괄호 바로 뒤에 데이터베이스 컨텍스트에 대한 클래스 변수를 추가하고 ASP.NET Core DI에서 컨텍스트 인스턴스를 가져옵니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/HomeController.cs?name=snippet_AddContext&highlight=3,5,7)]
+[!code-csharp[](intro/samples/cu/Controllers/HomeController.cs?name=snippet_AddContext&highlight=3,5,7)]
 
 `About` 메서드를 다음 코드로 바꿉니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/HomeController.cs?name=snippet_UseDbSet)]
+[!code-csharp[](intro/samples/cu/Controllers/HomeController.cs?name=snippet_UseDbSet)]
 
 LINQ 문은 등록 날짜별로 학생 엔터티를 그룹화하고 각 그룹의 엔터티 수를 계산하며 결과를 `EnrollmentDateGroup` 뷰 모델 개체의 컬렉션에 저장합니다.
 > [!NOTE] 
@@ -241,12 +241,12 @@ LINQ 문은 등록 날짜별로 학생 엔터티를 그룹화하고 각 그룹�
 
 앱을 실행하고 [정보] 페이지로 이동합니다. 각 등록 날짜에 대한 학생 수가 테이블에 표시됩니다.
 
-![[정보] 페이지](sort-filter-page/_static/about.png)
+![정보 페이지](sort-filter-page/_static/about.png)
 
 ## <a name="summary"></a>요약
 
 이 자습서에서는 정렬, 필터링, 페이징 및 그룹화를 수행하는 방법을 살펴보았습니다. 다음 자습서에서 마이그레이션을 사용하여 데이터 모델 변경 내용을 처리하는 방법에 대해 알아봅니다.
 
->[!div class="step-by-step"]
-[이전](crud.md)
-[다음](migrations.md)  
+> [!div class="step-by-step"]
+> [이전](crud.md)
+> [다음](migrations.md)  

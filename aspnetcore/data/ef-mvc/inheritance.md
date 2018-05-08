@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core MVC 및 EF Core - 상속 - 9/10"
+title: ASP.NET Core MVC 및 EF Core - 상속 - 9/10
 author: tdykstra
-description: "이 자습서에서는 ASP.NET Core 응용 프로그램에서 Entity Framework Core를 사용하여 데이터 모델에서 상속을 구현하는 방법을 보여 줍니다."
+description: 이 자습서에서는 ASP.NET Core 응용 프로그램에서 Entity Framework Core를 사용하여 데이터 모델에서 상속을 구현하는 방법을 보여 줍니다.
 manager: wpickett
 ms.author: tdykstra
 ms.date: 03/15/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/inheritance
-ms.openlocfilehash: 985cc38b10ef830b8274e40ad5f7050157fd4d86
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 25d4292e325e208ee08f4a7bb8d06580809f9e40
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="inheritance---ef-core-with-aspnet-core-mvc-tutorial-9-of-10"></a>상속 - EF Core 및 ASP.NET Core MVC 자습서(9/10)
+# <a name="aspnet-core-mvc-with-ef-core---inheritance---9-of-10"></a>ASP.NET Core MVC 및 EF Core - 상속 - 9/10
 
 작성자: [Tom Dykstra](https://github.com/tdykstra) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -60,23 +60,23 @@ TPT 패턴이 복잡한 조인 쿼리를 초래할 수 있기 때문에 TPC 및 
 
 Models 폴더에서 Person.cs 만들고 템플릿 코드를 다음 코드로 바꿉니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/Person.cs)]
+[!code-csharp[](intro/samples/cu/Models/Person.cs)]
 
 ## <a name="make-student-and-instructor-classes-inherit-from-person"></a>Person 클래스로부터 상속되는 Student 및 Instructor 클래스 만들기
 
 *Instructor.cs*에서 Person 클래스에서 Instructor 클래스를 파생시키고 키 및 이름 필드를 제거합니다. 해당 코드는 다음 예제와 같이 나타납니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/Instructor.cs?name=snippet_AfterInheritance&highlight=8)]
+[!code-csharp[](intro/samples/cu/Models/Instructor.cs?name=snippet_AfterInheritance&highlight=8)]
 
 *Student.cs*에서 동일하게 변경합니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_AfterInheritance&highlight=8)]
+[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_AfterInheritance&highlight=8)]
 
 ## <a name="add-the-person-entity-type-to-the-data-model"></a>Person 엔터티 형식을 데이터 모델에 추가
 
 Person 엔터티 형식을 *SchoolContext.cs*에 추가합니다. 새 줄이 강조 표시됩니다.
 
-[!code-csharp[Main](intro/samples/cu/Data/SchoolContext.cs?name=snippet_AfterInheritance&highlight=19,30)]
+[!code-csharp[](intro/samples/cu/Data/SchoolContext.cs?name=snippet_AfterInheritance&highlight=19,30)]
 
 계층당 하나의 테이블 상속을 구성하기 위해 Entity Framework에 필요한 모든 작업입니다. 보다시피, 데이터베이스가 업데이트되면 Student 테이블과 Instructor 테이블 대신 Person 테이블이 생깁니다.
 
@@ -92,7 +92,7 @@ dotnet ef migrations add Inheritance
 
 *Migrations/\<timestamp>_Inheritance.cs*를 여고 `Up` 메서드를 다음 코드로 바꿉니다.
 
-[!code-csharp[Main](intro/samples/cu/Migrations/20170216215525_Inheritance.cs?name=snippet_Up)]
+[!code-csharp[](intro/samples/cu/Migrations/20170216215525_Inheritance.cs?name=snippet_Up)]
 
 이 코드는 다음과 같은 데이터베이스 업데이트 작업을 처리합니다.
 
@@ -143,6 +143,6 @@ Person 테이블을 마우스 오른쪽 단추로 클릭한 후 **테이블 데�
 
 `Person`, `Student` 및 `Instructor` 클래스에 대해 계층당 하나의 테이블 상속을 구현했습니다. Entity Framework Core의 상속에 대한 자세한 내용은 [상속](https://docs.microsoft.com/ef/core/modeling/inheritance)을 참조하세요. 다음 자습서에서는 다양한 고급 Entity Framework 시나리오를 처리하는 방법을 살펴봅니다.
 
->[!div class="step-by-step"]
-[이전](concurrency.md)
-[다음](advanced.md)  
+> [!div class="step-by-step"]
+> [이전](concurrency.md)
+> [다음](advanced.md)  

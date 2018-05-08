@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core의 파일 공급자"
+title: ASP.NET Core의 파일 공급자
 author: ardalis
-description: "ASP.NET Core에서 파일 공급자를 사용하여 파일 시스템 액세스를 추상화하는 방법을 알아봅니다."
+description: ASP.NET Core에서 파일 공급자를 사용하여 파일 시스템 액세스를 추상화하는 방법을 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 02/14/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/file-providers
-ms.openlocfilehash: 06197f967e111d75531e9c3bcbcbdb971cb9f99b
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: cdbffdadd9616fe941809d67dc2c0bbd52149561
+ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/02/2018
 ---
 # <a name="file-providers-in-aspnet-core"></a>ASP.NET Core의 파일 공급자
 
@@ -50,15 +50,15 @@ IFileInfo fileInfo = provider.GetFileInfo("wwwroot/js/site.js"); // a file under
 
 컨트롤러에서 공급자를 사용하려면 공급자를 컨트롤러의 생성자 매개 변수로 지정한 다음, 전달받은 공급자 개체를 필드에 할당합니다. 그리고 액션 메서드에서는 이 로컬 인스턴스를 사용합니다.
 
-[!code-csharp[Main](file-providers/sample/src/FileProviderSample/Controllers/HomeController.cs?highlight=5,7,12&range=6-19)]
+[!code-csharp[](file-providers/sample/src/FileProviderSample/Controllers/HomeController.cs?highlight=5,7,12&range=6-19)]
 
 그런 다음, 응용 프로그램의 `Startup` 클래스에서 공급자를 생성합니다.
 
-[!code-csharp[Main](file-providers/sample/src/FileProviderSample/Startup.cs?highlight=35,40&range=1-43)]
+[!code-csharp[](file-providers/sample/src/FileProviderSample/Startup.cs?highlight=35,40&range=1-43)]
 
 다음 *Index.cshtml* 뷰는 전달된 `IDirectoryContents` 를 반복 조회합니다.
 
-[!code-html[Main](file-providers/sample/src/FileProviderSample/Views/Home/Index.cshtml?highlight=2,7,9,11,15)]
+[!code-html[](file-providers/sample/src/FileProviderSample/Views/Home/Index.cshtml?highlight=2,7,9,11,15)]
 
 그 결과는 다음과 같습니다.
 
@@ -68,7 +68,7 @@ IFileInfo fileInfo = provider.GetFileInfo("wwwroot/js/site.js"); // a file under
 
 `EmbeddedFileProvider` 는 어셈블리에 포함된 파일에 접근하기 위한 용도로 사용됩니다. .NET Core에서는 *.csproj* 파일의 `<EmbeddedResource>` 요소에 지정된 파일들이 어셈블리에 포함됩니다.
 
-[!code-json[Main](file-providers/sample/src/FileProviderSample/FileProviderSample.csproj?range=13-18)]
+[!code-json[](file-providers/sample/src/FileProviderSample/FileProviderSample.csproj?range=13-18)]
 
 어셈블리에 포함시킬 파일들을 지정할 때, [Globbing 패턴](#globbing-patterns) 을 사용할 수 있습니다. 이 패턴을 사용하면 하나 이상의 파일을 지정할 수 있습니다.
 
@@ -97,7 +97,7 @@ var embeddedProvider = new EmbeddedFileProvider(Assembly.GetEntryAssembly());
 
 `CompositeFileProvider` 는 `IFileProvider` 의 인스턴스들을 결합해서 다수의 공급자를 이용한 파일 작업을 처리할 수 있는 단일 인터페이스를 제공합니다.  `CompositeFileProvider` 를 생성할 때는 생성자에 하나 이상의 `IFileProvider` 인스턴스를 전달합니다.
 
-[!code-csharp[Main](file-providers/sample/src/FileProviderSample/Startup.cs?highlight=3&range=35-37)]
+[!code-csharp[](file-providers/sample/src/FileProviderSample/Startup.cs?highlight=3&range=35-37)]
 
 이전에 구성된 물리적 및 포함된 공급자 모두를 포함하는 `CompositeFileProvider`를 사용하도록 샘플 앱을 업데이트하면 다음 출력과 같은 결과가 발생합니다.
 
@@ -109,7 +109,7 @@ var embeddedProvider = new EmbeddedFileProvider(Assembly.GetEntryAssembly());
 
 이 문서 샘플에서 콘솔 응용 프로그램은 텍스트 파일이 수정될 때마다 메시지를 표시하도록 구성됩니다.
 
-[!code-csharp[Main](file-providers/sample/src/WatchConsole/Program.cs?name=snippet1&highlight=1-2,16,19-20)]
+[!code-csharp[](file-providers/sample/src/WatchConsole/Program.cs?name=snippet1&highlight=1-2,16,19-20)]
 
 파일을 여러 번 저장한 후 결과는 다음과 같습니다.
 

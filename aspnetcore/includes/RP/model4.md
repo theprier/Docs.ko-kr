@@ -19,7 +19,7 @@ dotnet aspnet-codegenerator razorpage -h
 * 앱을 실행하고 브라우저에서 `/Movies`를 URL에 추가합니다(`http://localhost:port/movies`).
 * **만들기** 링크를 테스트합니다.
 
- ![페이지 만들기](../../tutorials/razor-pages/model/_static/conan.png)
+  ![페이지 만들기](../../tutorials/razor-pages/model/_static/conan.png)
 
 <a name="scaffold"></a>
 

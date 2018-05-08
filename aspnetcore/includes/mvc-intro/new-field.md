@@ -4,13 +4,13 @@
 
 이 자습서에서는 `Movies` 테이블에 새 필드를 추가합니다. 스키마를 변경하는 경우 데이터베이스를 삭제하고 새 데이터베이스를 만듭니다(새 필드 추가). 유지할 프로덕션 데이터가 없는 경우 이 워크플로는 개발 초기에 잘 작동합니다.
 
-앱을 배포하고 유지해야 하는 데이터가 있으면 스키마를 변경해야 하는 경우 DB를 삭제할 수 없습니다. Entity Framework [Code First 마이그레이션](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db)을 사용하면 스키마를 업데이트하고 데이터 손실 없이 데이터베이스를 마이그레이션할 수 있습니다. 마이그레이션은 SQL Server를 사용하는 경우 인기 있는 기능이지만 SQLlite는 다양한 마이그레이션 스키마 작업을 지원하지 않으므로 매우 간단하게 마이그레이션할 수 있습니다. 자세한 내용은 [SQLite 제한 사항](https://docs.microsoft.com/ef/core/providers/sqlite/limitations)을 참조하세요.
+앱을 배포하고 유지해야 하는 데이터가 있으면 스키마를 변경해야 하는 경우 DB를 삭제할 수 없습니다. Entity Framework [Code First 마이그레이션](/ef/core/get-started/aspnetcore/new-db)을 사용하면 스키마를 업데이트하고 데이터 손실 없이 데이터베이스를 마이그레이션할 수 있습니다. 마이그레이션은 SQL Server를 사용하는 경우 인기 있는 기능이지만 SQLlite는 다양한 마이그레이션 스키마 작업을 지원하지 않으므로 매우 간단하게 마이그레이션할 수 있습니다. 자세한 내용은 [SQLite 제한 사항](/ef/core/providers/sqlite/limitations)을 참조하세요.
 
 ## <a name="adding-a-rating-property-to-the-movie-model"></a>영화 모델에 등급 속성 추가
 
 *Models/Movie.cs* 파일을 열고 `Rating` 속성을 추가합니다.
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]
 
 `Movie` 클래스에 새 필드를 추가했으므로 이 새 속성이 포함되도록 바인딩 허용 목록도 업데이트해야 합니다. *MoviesController.cs*에서 `Rating` 속성을 포함하도록 `Create` 및 `Edit` 동작 메서드에 대해 `[Bind]` 속성을 업데이트합니다.
 
@@ -22,7 +22,7 @@
 
 */Views/Movies/Index.cshtml* 파일을 편집하고 `Rating` 필드를 추가합니다.
 
-[!code-HTML[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Movies/IndexGenreRating.cshtml?highlight=17,39&range=24-64)]
+[!code-HTML[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Movies/IndexGenreRating.cshtml?highlight=17,39&range=24-64)]
 
 `Rating` 필드로 */Views/Movies/Create.cshtml*을 업데이트합니다.
 
@@ -48,7 +48,7 @@ SqliteException: SQLite Error 1: 'no such column: m.Rating'.
 
 새 열에 대해 값을 제공하도록 `SeedData` 클래스를 업데이트합니다. 샘플 변경은 아래에 표시되지만 각 `new Movie`에 대해 이 변경을 수행하려고 합니다.
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/SeedDataRating.cs?name=snippet1&highlight=6)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/SeedDataRating.cs?name=snippet1&highlight=6)]
 
 `Rating` 필드를 `Edit`, `Details` 및 `Delete` 뷰에 추가합니다.
 

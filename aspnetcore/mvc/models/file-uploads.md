@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core에서 파일 업로드"
+title: ASP.NET Core에서 파일 업로드
 author: ardalis
-description: "모델 바인딩 및 스트리밍을 사용하여 ASP.NET Core MVC에서 파일을 업로드하는 방법입니다."
+description: 모델 바인딩 및 스트리밍을 사용하여 ASP.NET Core MVC에서 파일을 업로드하는 방법입니다.
 manager: wpickett
 ms.author: riande
 ms.date: 07/05/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/models/file-uploads
-ms.openlocfilehash: 314d585c7bf7f8c95f763babe6cdf93e514ff656
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 7ba4f6d9e3901c310fe9fa7a70382d9243d8b347
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="file-uploads-in-aspnet-core"></a>ASP.NET Core에서 파일 업로드
 
@@ -47,7 +47,7 @@ ASP.NET MVC 작업은 소규모 파일에 대해서는 단순 모델 바인딩�
 
 ![파일 업로드 양식](file-uploads/_static/upload-form.png)
 
-서버에 업로드된 개별 파일은 [IFormFile](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.http.iformfile) 인터페이스를 사용하여 [모델 바인딩](xref:mvc/models/model-binding)을 통해 액세스할 수 있습니다. `IFormFile`에는 다음 구조체가 있습니다.
+서버에 업로드된 개별 파일은 [IFormFile](/dotnet/api/microsoft.aspnetcore.http.iformfile) 인터페이스를 사용하여 [모델 바인딩](xref:mvc/models/model-binding)을 통해 액세스할 수 있습니다. `IFormFile`에는 다음 구조체가 있습니다.
 
 ```csharp
 public interface IFormFile
@@ -71,7 +71,7 @@ public interface IFormFile
 
 [!INCLUDE [GetTempFileName](../../includes/GetTempFileName.md)]
 
-[!code-csharp[Main](file-uploads/sample/FileUploadSample/Controllers/UploadFilesController.cs?name=snippet1)]
+[!code-csharp[](file-uploads/sample/FileUploadSample/Controllers/UploadFilesController.cs?name=snippet1)]
 
 `IFormFile` 기술을 사용하여 업로드된 파일은 처리되기 전에 웹 서버의 메모리나 디스크에 버퍼링됩니다. 작업 메서드 내부에서 `IFormFile` 내용을 스트림으로 액세스할 수 있습니다. 로컬 파일 시스템 외에도 파일을 [Azure Blob Storage](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-blobs/) 또는 [Entity Framework](https://docs.microsoft.com/ef/core/index)에 스트리밍할 수 있습니다.
 
@@ -151,15 +151,15 @@ public IActionResult Index()
 
 이 특성은 ASP.NET Core의 기본 제공 [위조 방지](xref:security/anti-request-forgery) 지원을 사용하여 요청 토큰으로 쿠키를 설정합니다.
 
-[!code-csharp[Main](file-uploads/sample/FileUploadSample/Filters/GenerateAntiforgeryTokenCookieForAjaxAttribute.cs?name=snippet1)]
+[!code-csharp[](file-uploads/sample/FileUploadSample/Filters/GenerateAntiforgeryTokenCookieForAjaxAttribute.cs?name=snippet1)]
 
 Angular는 `X-XSRF-TOKEN`으로 명명된 요청 헤더에서 위조 방지 토큰을 자동으로 전달합니다. *Startup.cs*의 해당 구성에서 이 헤더를 참조하도록 ASP.NET Core MVC 앱이 구성됩니다.
 
-[!code-csharp[Main](file-uploads/sample/FileUploadSample/Startup.cs?name=snippet1)]
+[!code-csharp[](file-uploads/sample/FileUploadSample/Startup.cs?name=snippet1)]
 
 아래 표시된 `DisableFormValueModelBinding` 특성은 `Upload` 작업 메서드에 대한 모델 바인딩을 사용하지 않도록 설정하는 데 사용됩니다.
 
-[!code-csharp[Main](file-uploads/sample/FileUploadSample/Filters/DisableFormValueModelBindingAttribute.cs?name=snippet1)]
+[!code-csharp[](file-uploads/sample/FileUploadSample/Filters/DisableFormValueModelBindingAttribute.cs?name=snippet1)]
 
 모델 바인딩이 사용되지 않으므로 `Upload` 작업 메서드는 매개 변수를 받아들이지 않습니다. `ControllerBase`의 `Request` 속성으로 직접 작동합니다. `MultipartReader`는 각 섹션을 읽는 데 사용됩니다. 파일이 GUID 파일 이름으로 저장되고 키/값 데이터가 `KeyValueAccumulator`에 저장됩니다. 모든 섹션을 읽었으면 `KeyValueAccumulator`의 내용이 양식 데이터를 모델 형식으로 바인딩하는 데 사용됩니다.
 
@@ -167,7 +167,7 @@ Angular는 `X-XSRF-TOKEN`으로 명명된 요청 헤더에서 위조 방지 토�
 
 [!INCLUDE [GetTempFileName](../../includes/GetTempFileName.md)]
 
-[!code-csharp[Main](file-uploads/sample/FileUploadSample/Controllers/StreamingController.cs?name=snippet1)]
+[!code-csharp[](file-uploads/sample/FileUploadSample/Controllers/StreamingController.cs?name=snippet1)]
 
 ## <a name="troubleshooting"></a>문제 해결
 
@@ -195,7 +195,7 @@ The request filtering module is configured to deny a request that exceeds the re
 </system.webServer>
 ```
 
-이 설정은 IIS에만 적용됩니다. Kestrel에서 호스팅하는 경우 기본적으로 동작이 발생하지 않습니다. 자세한 내용은 [요청 제한 \<requestLimits\>](https://docs.microsoft.com/iis/configuration/system.webServer/security/requestFiltering/requestLimits/)을 참조하세요.
+이 설정은 IIS에만 적용됩니다. Kestrel에서 호스팅하는 경우 기본적으로 동작이 발생하지 않습니다. 자세한 내용은 [요청 제한 \<requestLimits\>](/iis/configuration/system.webServer/security/requestFiltering/requestLimits/)을 참조하세요.
 
 ### <a name="null-reference-exception-with-iformfile"></a>IFormFile을 사용한 Null 참조 예외
 

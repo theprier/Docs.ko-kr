@@ -12,7 +12,7 @@
 
 * 일부 로캘에서는 날짜 형식을 지정해야 합니다. 아래 강조 표시된 코드를 참조하세요.
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieDateFormat.cs?name=snippet_1&highlight=2,10)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieDateFormat.cs?name=snippet_1&highlight=2,10)]
 
 자습서의 뒷부분에서 `DataAnnotations`에 대해 알아봅니다.
 
