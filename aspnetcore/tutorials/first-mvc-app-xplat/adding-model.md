@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core MVC 앱에 모델 추가."
+title: ASP.NET Core MVC 앱에 모델 추가
 author: rick-anderson
-description: "간단한 ASP.NET Core 앱에 모델을 추가합니다."
+description: 간단한 ASP.NET Core 앱에 모델을 추가합니다.
 manager: wpickett
 ms.author: riande
 ms.date: 09/18/2017
@@ -9,73 +9,75 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app-xplat/adding-model
-ms.openlocfilehash: 81511b05a3cc11a58b93452d3c6e5305e7ee4357
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 77750ba0df7775d6a0e4744811848bfe9782d995
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-[!INCLUDE[adding-model1](../../includes/mvc-intro/adding-model1.md)]
+# <a name="add-a-model-to-an-aspnet-core-mvc-app"></a><span data-ttu-id="d717e-103">ASP.NET Core MVC 앱에 모델 추가</span><span class="sxs-lookup"><span data-stu-id="d717e-103">Add a model to an ASP.NET Core MVC app</span></span>
 
-* <span data-ttu-id="28851-103">*Models* 폴더에 *Movie.cs* 클래스를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="28851-103">Add a class to the *Models* folder named *Movie.cs*.</span></span>
-* <span data-ttu-id="28851-104">*Models/Movie.cs* 파일에 다음 코드를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="28851-104">Add the following code to the *Models/Movie.cs* file:</span></span>
+[!INCLUDE [adding-model1](../../includes/mvc-intro/adding-model1.md)]
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieNoEF.cs?name=snippet_1)]
+* <span data-ttu-id="d717e-104">*Models* 폴더에 *Movie.cs* 클래스를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="d717e-104">Add a class to the *Models* folder named *Movie.cs*.</span></span>
+* <span data-ttu-id="d717e-105">*Models/Movie.cs* 파일에 다음 코드를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="d717e-105">Add the following code to the *Models/Movie.cs* file:</span></span>
 
-<span data-ttu-id="28851-105">`ID` 필드는 데이터베이스에서 기본 키 대신 필요합니다.</span><span class="sxs-lookup"><span data-stu-id="28851-105">The `ID` field is required by the database for the primary key.</span></span> 
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieNoEF.cs?name=snippet_1)]
 
-<span data-ttu-id="28851-106">앱을 빌드하여 오류가 없고 마지막으로 **모**델을 **M**VC 앱에 추가했는지 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="28851-106">Build the app to verify you don't have any errors, and you've finally added a **M**odel to your **M**VC app.</span></span>
+<span data-ttu-id="d717e-106">`ID` 필드는 데이터베이스에서 기본 키 대신 필요합니다.</span><span class="sxs-lookup"><span data-stu-id="d717e-106">The `ID` field is required by the database for the primary key.</span></span> 
 
-## <a name="prepare-the-project-for-scaffolding"></a><span data-ttu-id="28851-107">프로젝트에서 스캐폴딩을 준비합니다.</span><span class="sxs-lookup"><span data-stu-id="28851-107">Prepare the project for scaffolding</span></span>
+<span data-ttu-id="d717e-107">앱을 빌드하여 오류가 없고 마지막으로 **모**델을 **M**VC 앱에 추가했는지 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="d717e-107">Build the app to verify you don't have any errors, and you've finally added a **M**odel to your **M**VC app.</span></span>
 
-- <span data-ttu-id="28851-108">다음 강조 표시된 NuGet 패키지를 *MvcMovie.csproj* 파일에 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="28851-108">Add the following highlighted NuGet packages to the *MvcMovie.csproj* file:</span></span>
+## <a name="prepare-the-project-for-scaffolding"></a><span data-ttu-id="d717e-108">프로젝트에서 스캐폴딩을 준비합니다.</span><span class="sxs-lookup"><span data-stu-id="d717e-108">Prepare the project for scaffolding</span></span>
+
+- <span data-ttu-id="d717e-109">다음 강조 표시된 NuGet 패키지를 *MvcMovie.csproj* 파일에 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="d717e-109">Add the following highlighted NuGet packages to the *MvcMovie.csproj* file:</span></span>
              
-   [!code-csharp[Main](start-mvc/sample/MvcMovie/MvcMovie.csproj?highlight=7,10)]
+   [!code-csharp[](start-mvc/sample/MvcMovie/MvcMovie.csproj?highlight=7,10)]
 
-- <span data-ttu-id="28851-109">파일을 저장하고 다음 **정보** 메시지에 대해 **복원**을 선택합니다. “확인되지 않은 종속성이 있습니다.”</span><span class="sxs-lookup"><span data-stu-id="28851-109">Save the file and select **Restore** to the **Info** message "There are unresolved dependencies".</span></span>
-- <span data-ttu-id="28851-110">*Models/MvcMovieContext.cs* 파일을 만들고 다음 `MvcMovieContext` 클래스를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="28851-110">Create a *Models/MvcMovieContext.cs* file and add the following `MvcMovieContext` class:</span></span>
+- <span data-ttu-id="d717e-110">파일을 저장하고 다음 **정보** 메시지에 대해 **복원**을 선택합니다. “확인되지 않은 종속성이 있습니다.”</span><span class="sxs-lookup"><span data-stu-id="d717e-110">Save the file and select **Restore** to the **Info** message "There are unresolved dependencies".</span></span>
+- <span data-ttu-id="d717e-111">*Models/MvcMovieContext.cs* 파일을 만들고 다음 `MvcMovieContext` 클래스를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="d717e-111">Create a *Models/MvcMovieContext.cs* file and add the following `MvcMovieContext` class:</span></span>
 
-   [!code-csharp[Main](start-mvc/sample/MvcMovie/Models/MvcMovieContext.cs)]
+   [!code-csharp[](start-mvc/sample/MvcMovie/Models/MvcMovieContext.cs)]
    
-- <span data-ttu-id="28851-111">*Startup.cs* 파일을 열고 두 개의 using을 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="28851-111">Open the *Startup.cs* file and add two usings:</span></span>
+- <span data-ttu-id="d717e-112">*Startup.cs* 파일을 열고 두 개의 using을 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="d717e-112">Open the *Startup.cs* file and add two usings:</span></span>
 
-   [!code-csharp[Main](start-mvc/sample/MvcMovie/Startup.cs?name=snippet1&highlight=1,2)]
+   [!code-csharp[](start-mvc/sample/MvcMovie/Startup.cs?name=snippet1&highlight=1,2)]
 
-- <span data-ttu-id="28851-112">데이터베이스 컨텍스트를 *Startup.cs* 파일에 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="28851-112">Add the database context to the *Startup.cs* file:</span></span>
+- <span data-ttu-id="d717e-113">데이터베이스 컨텍스트를 *Startup.cs* 파일에 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="d717e-113">Add the database context to the *Startup.cs* file:</span></span>
 
-   [!code-csharp[Main](start-mvc/sample/MvcMovie/Startup.cs?name=snippet2&highlight=6-7)]
+   [!code-csharp[](start-mvc/sample/MvcMovie/Startup.cs?name=snippet2&highlight=6-7)]
 
-  <span data-ttu-id="28851-113">이 코드는 데이터 모델에 포함되는 모델 클래스를 Entity Framework에 알립니다.</span><span class="sxs-lookup"><span data-stu-id="28851-113">This tells Entity Framework which model classes are included in the data model.</span></span> <span data-ttu-id="28851-114">데이터베이스에서 Movie 테이블을 표현할 Movie 개체의 *엔터티 집합* 하나를 정의하고 있습니다.</span><span class="sxs-lookup"><span data-stu-id="28851-114">You're defining one *entity set* of Movie objects, which will be represented in the database as a Movie table.</span></span>
+  <span data-ttu-id="d717e-114">이 코드는 데이터 모델에 포함되는 모델 클래스를 Entity Framework에 알립니다.</span><span class="sxs-lookup"><span data-stu-id="d717e-114">This tells Entity Framework which model classes are included in the data model.</span></span> <span data-ttu-id="d717e-115">데이터베이스에서 Movie 테이블을 표현할 Movie 개체의 *엔터티 집합* 하나를 정의하고 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d717e-115">You're defining one *entity set* of Movie objects, which will be represented in the database as a Movie table.</span></span>
 
-- <span data-ttu-id="28851-115">프로젝트를 빌드하여 오류가 없는지 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="28851-115">Build the project to verify there are no errors.</span></span>
+- <span data-ttu-id="d717e-116">프로젝트를 빌드하여 오류가 없는지 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="d717e-116">Build the project to verify there are no errors.</span></span>
 
-## <a name="scaffold-the-moviecontroller"></a><span data-ttu-id="28851-116">MovieController 스캐폴드</span><span class="sxs-lookup"><span data-stu-id="28851-116">Scaffold the MovieController</span></span>
+## <a name="scaffold-the-moviecontroller"></a><span data-ttu-id="d717e-117">MovieController 스캐폴드</span><span class="sxs-lookup"><span data-stu-id="d717e-117">Scaffold the MovieController</span></span>
 
-<span data-ttu-id="28851-117">프로젝트 폴더에서 터미널 창을 열고 다음 명령을 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="28851-117">Open a terminal window in the project folder and run the following commands:</span></span>
+<span data-ttu-id="d717e-118">프로젝트 폴더에서 터미널 창을 열고 다음 명령을 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="d717e-118">Open a terminal window in the project folder and run the following commands:</span></span>
 
 ```
 dotnet restore
 dotnet aspnet-codegenerator controller -name MoviesController -m Movie -dc MvcMovieContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries 
 ```
-<span data-ttu-id="28851-118">스캐폴딩 엔진은 다음을 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="28851-118">The scaffolding engine creates the following:</span></span>
+<span data-ttu-id="d717e-119">스캐폴딩 엔진은 다음을 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="d717e-119">The scaffolding engine creates the following:</span></span>
 
-* <span data-ttu-id="28851-119">동영상 컨트롤러(*Controllers/MoviesController.cs*)</span><span class="sxs-lookup"><span data-stu-id="28851-119">A movies controller (*Controllers/MoviesController.cs*)</span></span>
-* <span data-ttu-id="28851-120">만들기, 삭제, 세부 정보, 편집 및 인덱스 페이지에 대한 Razor 뷰 파일(*Views/Movies/\*.cshtml*)</span><span class="sxs-lookup"><span data-stu-id="28851-120">Razor view files for Create, Delete, Details, Edit and Index pages (*Views/Movies/\*.cshtml*)</span></span>
+* <span data-ttu-id="d717e-120">동영상 컨트롤러(*Controllers/MoviesController.cs*)</span><span class="sxs-lookup"><span data-stu-id="d717e-120">A movies controller (*Controllers/MoviesController.cs*)</span></span>
+* <span data-ttu-id="d717e-121">만들기, 삭제, 세부 정보, 편집 및 인덱스 페이지에 대한 Razor 뷰 파일(*Views/Movies/\*.cshtml*)</span><span class="sxs-lookup"><span data-stu-id="d717e-121">Razor view files for Create, Delete, Details, Edit and Index pages (*Views/Movies/\*.cshtml*)</span></span>
 
-<span data-ttu-id="28851-121">[CRUD](https://wikipedia.org/wiki/Create,_read,_update_and_delete)(만들기, 읽기, 업데이트 및 삭제) 작업 메서드와 뷰를 자동으로 만드는 작업을 *스캐폴딩*이라고 합니다.</span><span class="sxs-lookup"><span data-stu-id="28851-121">The automatic creation of [CRUD](https://wikipedia.org/wiki/Create,_read,_update_and_delete) (create, read, update, and delete) action methods and views is known as *scaffolding*.</span></span> <span data-ttu-id="28851-122">동영상 데이터베이스를 관리할 수 있는 완벽하게 작동하는 웹 응용 프로그램이 곧 제공됩니다.</span><span class="sxs-lookup"><span data-stu-id="28851-122">You'll soon have a fully functional web application that lets you manage a movie database.</span></span>
+<span data-ttu-id="d717e-122">[CRUD](https://wikipedia.org/wiki/Create,_read,_update_and_delete)(만들기, 읽기, 업데이트 및 삭제) 작업 메서드와 뷰를 자동으로 만드는 작업을 *스캐폴딩*이라고 합니다.</span><span class="sxs-lookup"><span data-stu-id="d717e-122">The automatic creation of [CRUD](https://wikipedia.org/wiki/Create,_read,_update_and_delete) (create, read, update, and delete) action methods and views is known as *scaffolding*.</span></span> <span data-ttu-id="d717e-123">동영상 데이터베이스를 관리할 수 있는 완벽하게 작동하는 웹 응용 프로그램이 곧 제공됩니다.</span><span class="sxs-lookup"><span data-stu-id="d717e-123">You'll soon have a fully functional web application that lets you manage a movie database.</span></span>
 
-[!INCLUDE[adding-model 2x](../../includes/mvc-intro/adding-model2xp.md)]
+[!INCLUDE [adding-model 2x](../../includes/mvc-intro/adding-model2xp.md)]
 
-[!INCLUDE[adding-model](../../includes/mvc-intro/adding-model3.md)]
+[!INCLUDE [adding-model](../../includes/mvc-intro/adding-model3.md)]
 
-<span data-ttu-id="28851-123">이제 데이터를 표시, 편집, 업데이트 및 삭제할 데이터베이스 및 페이지가 제공됩니다.</span><span class="sxs-lookup"><span data-stu-id="28851-123">You now have a database and pages to display, edit, update and delete data.</span></span> <span data-ttu-id="28851-124">다음 자습서에서는 데이터베이스 작업을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="28851-124">In the next tutorial, we'll work with the database.</span></span>
+<span data-ttu-id="d717e-124">이제 데이터를 표시, 편집, 업데이트 및 삭제할 데이터베이스 및 페이지가 제공됩니다.</span><span class="sxs-lookup"><span data-stu-id="d717e-124">You now have a database and pages to display, edit, update and delete data.</span></span> <span data-ttu-id="d717e-125">다음 자습서에서는 데이터베이스 작업을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="d717e-125">In the next tutorial, we'll work with the database.</span></span>
 
-### <a name="additional-resources"></a><span data-ttu-id="28851-125">추가 리소스</span><span class="sxs-lookup"><span data-stu-id="28851-125">Additional resources</span></span>
+### <a name="additional-resources"></a><span data-ttu-id="d717e-126">추가 자료</span><span class="sxs-lookup"><span data-stu-id="d717e-126">Additional resources</span></span>
 
-* [<span data-ttu-id="28851-126">태그 도우미</span><span class="sxs-lookup"><span data-stu-id="28851-126">Tag Helpers</span></span>](xref:mvc/views/tag-helpers/intro)
-* [<span data-ttu-id="28851-127">전역화 및 지역화</span><span class="sxs-lookup"><span data-stu-id="28851-127">Globalization and localization</span></span>](xref:fundamentals/localization)
+* [<span data-ttu-id="d717e-127">태그 도우미</span><span class="sxs-lookup"><span data-stu-id="d717e-127">Tag Helpers</span></span>](xref:mvc/views/tag-helpers/intro)
+* [<span data-ttu-id="d717e-128">전역화 및 지역화</span><span class="sxs-lookup"><span data-stu-id="d717e-128">Globalization and localization</span></span>](xref:fundamentals/localization)
 
->[!div class="step-by-step"]
-<span data-ttu-id="28851-128">[이전 - 뷰 추가](adding-view.md)
-[다음 - SQLite 사용](working-with-sql.md)</span><span class="sxs-lookup"><span data-stu-id="28851-128">[Previous - Add a view](adding-view.md)
+> [!div class="step-by-step"]
+> <span data-ttu-id="d717e-129">[이전 - 뷰 추가](adding-view.md)
+> [다음 - SQLite 사용](working-with-sql.md)</span><span class="sxs-lookup"><span data-stu-id="d717e-129">[Previous - Add a view](adding-view.md)
 [Next - Working with SQLite](working-with-sql.md)</span></span>
