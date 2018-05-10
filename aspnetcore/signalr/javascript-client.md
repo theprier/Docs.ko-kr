@@ -6,22 +6,20 @@ manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
 ms.custom: mvc
-ms.date: 04/06/2018
+ms.date: 05/09/2018
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: signalr/javascript-client
-ms.openlocfilehash: d2530fe3c4b47687d3ef4015624499d96fea2d7b
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
-ms.translationtype: HT
+ms.openlocfilehash: 1701d9ac5222bf64f9690c1cecdf54ef95fe4a49
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="aspnet-core-signalr-javascript-client"></a>ASP.NET SignalR JavaScript 코어 클라이언트
 
 작성자: [Rachel Appel](http://twitter.com/rachelappel)
-
-[!INCLUDE [2.1 preview notice](~/includes/2.1.md)]
 
 ASP.NET Core SignalR JavaScript 클라이언트 라이브러리를 사용 하면 서버 쪽 허브 코드를 호출할 수 있습니다.
 
@@ -58,7 +56,7 @@ Npm 설치에서 패키지 콘텐츠는 *node_modules\\ @aspnet\signalr\dist\bro
 
 악성 사이트를 다른 사이트에서 중요 한 데이터를 읽는 하지 않도록 하려면 [크로스-원본 연결](xref:security/cors) 기본적으로 비활성화 됩니다. 크로스-원본 요청을 허용 하려면에서 사용 하도록 설정할는 `Startup` 클래스입니다.
 
-[!code-csharp[Cross-origin connections](javascript-client/sample/Startup.cs?highlight=29-34,55)]
+[!code-csharp[Cross-origin connections](javascript-client/sample/Startup.cs?highlight=29-35,56)]
 
 ## <a name="call-hub-methods-from-client"></a>클라이언트에서 허브 메서드를 호출 합니다.
 
@@ -102,7 +100,7 @@ SignalR 메서드 이름과 일치 하 여 호출 클라이언트 방법을 결�
 
 사용 하 여는 `configureLogging` 메서드를 `HubConnectionBuilder` 로그 수준을 구성할 수 있습니다. 메시지가는 브라우저 콘솔에 기록 됩니다.
 
-[!code-javascript[Logging levels](javascript-client/sample/wwwroot/js/chat.js?range=11)]
+[!code-javascript[Logging levels](javascript-client/sample/wwwroot/js/chat.js?range=9-12)]
 
 ## <a name="related-resources"></a>관련 참고 자료
 

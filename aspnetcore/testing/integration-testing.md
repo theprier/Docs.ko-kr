@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: testing/integration-testing
-ms.openlocfilehash: 3c618b2bd5919f6536601631eb4d21359a6bc03a
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: ac3a9e00edfd4c736ee1e7d5c0c724c3e52d0b6b
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="integration-tests-in-aspnet-core"></a>ASP.NET Core의 통합 테스트
 
@@ -43,7 +43,7 @@ ms.lasthandoff: 03/22/2018
 
 ### <a name="the-test-host"></a>테스트 호스트
 
-ASP.NET Core 통합 테스트 프로젝트에 추가할 수 있으며, 호스팅하는 데 사용 ASP.NET Core 응용 프로그램의 경우 실제 웹 호스트에 대 한 필요 없이 서비스 테스트를 요청 하는 테스트 호스트를 포함 합니다. 제공 된 샘플에 사용 하도록 구성 된 통합 테스트 프로젝트에 포함 되어 [xUnit](https://xunit.github.io) 와 테스트 호스트 합니다. 사용 하 여는 `Microsoft.AspNetCore.TestHost` NuGet 패키지 합니다.
+ASP.NET Core 통합 테스트 프로젝트에 추가할 수 있으며, 호스팅하는 데 사용 ASP.NET Core 응용 프로그램의 경우 실제 웹 호스트에 대 한 필요 없이 서비스 테스트를 요청 하는 테스트 호스트를 포함 합니다. 제공 된 샘플에 사용 하도록 구성 된 통합 테스트 프로젝트에 포함 되어 [xUnit](https://xunit.github.io) 와 테스트 호스트 합니다. 사용 하 여는 [Microsoft.AspNetCore.TestHost](https://www.nuget.org/packages/Microsoft.AspNetCore.TestHost/) NuGet 패키지 합니다.
 
 한 번의 `Microsoft.AspNetCore.TestHost` 패키지는 프로젝트에 포함 된를 만들고 구성할 수 있습니다는 `TestServer` 테스트에서 합니다. 다음 테스트에는 사이트의 루트에 대 한 요청 "Hello World!"을 반환 하는지 확인 하는 방법을 보여 줍니다. 고 해야 성공적으로 실행 된 기본값에 대 한 Visual Studio에서 만든 ASP.NET Core 빈 웹 템플릿.
 

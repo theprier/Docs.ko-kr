@@ -6,22 +6,20 @@ manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
 ms.custom: mvc
-ms.date: 03/16/2018
+ms.date: 05/09/2018
 ms.prod: aspnet-core
 ms.topic: tutorial
 ms.technology: aspnet
 uid: signalr/get-started
-ms.openlocfilehash: ecd40eba5f46d4cbe768c332478c24277f27446b
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
-ms.translationtype: HT
+ms.openlocfilehash: 11c8cf079a0922e925060ad3d439ba5e095ae22e
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="get-started-with-signalr-on-aspnet-core"></a>SignalR에서 ASP.NET Core 시작
 
 작성자: [Rachel Appel](https://twitter.com/rachelappel)
-
-[!INCLUDE [2.1 preview notice](~/includes/2.1.md)]
 
 이 자습서의 ASP.NET Core 용 SignalR을 사용 하 여 실시간 앱 빌드 기본 사항에 설명 합니다.
 
@@ -136,7 +134,7 @@ SignalR 서버 signalr 요청을 전달 하려면 알 수 있도록 구성 되�
 2. 사용 하 여 허브에 대 한 라우팅을 구성 `UseSignalR`합니다.
 
 
-   [!code-csharp[Startup](get-started/sample/Startup.cs?highlight=36,56-59)]
+   [!code-csharp[Startup](get-started/sample/Startup.cs?highlight=37,57-60)]
 
 
 ## <a name="create-the-signalr-client-code"></a>SignalR 클라이언트 코드 만들기

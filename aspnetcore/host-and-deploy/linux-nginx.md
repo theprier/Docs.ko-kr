@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/linux-nginx
-ms.openlocfilehash: 64093b9fcfa9047145de8f8b142f72fa1515f248
-ms.sourcegitcommit: d45d766504c2c5aad2453f01f089bc6b696b5576
+ms.openlocfilehash: fe772203e5e3fceb7489e0a5866f60ea914b7329
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/30/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="host-aspnet-core-on-linux-with-nginx"></a>Nginx를 사용하여 Linux에서 ASP.NET Core 호스트
 
@@ -95,7 +95,7 @@ app.UseFacebookAuthentication(new FacebookOptions()
 
 없는 경우 [ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions) 전달 하도록 기본 헤더는 미들웨어를 지정 된 `None`합니다.
 
-프록시 서버 및 부하 분산 장치 뒤에 호스트 되는 앱에 대 한 추가 구성 해야 할 수 있습니다. 자세한 내용은 참조 [프록시 서버를 사용 하 고 부하 분산 장치를 ASP.NET Core 구성](xref:host-and-deploy/proxy-load-balancer)합니다.
+프록시 서버 및 부하 분산 장치 외에도 호스팅되는 앱에 추가 구성이 필요할 수 있습니다. 자세한 내용은 [프록시 서버 및 부하 분산 장치를 사용하도록 ASP.NET Core 구성](xref:host-and-deploy/proxy-load-balancer)을 참조하세요.
 
 ### <a name="install-nginx"></a>Nginx 설치
 
@@ -184,6 +184,13 @@ WantedBy=multi-user.target
 
 **참고:** 경우 사용자 *www 데이터* 사용 되지 않는 구성, 여기에 정의 된 사용자를 만든 다음 먼저 파일에 대 한 적절 한 소유권을 부여 합니다.
 **참고:** Linux는 대/소문자 구분 파일 시스템이 있습니다. 구성 파일에 대 한 검색에 "Production"을로 ASPNETCORE_ENVIRONMENT 설정 *appsettings 합니다. Production.json*이 아니라 *appsettings.production.json*합니다.
+
+> [!NOTE]
+> 환경 변수를 읽을 수는 구성 공급자에 대 한 일부 값 (예를 들어 SQL 연결 문자열)를 이스케이프 해야 합니다. 다음 명령을 사용 하 여 구성 파일에서 사용 하기 위해 올바르게 이스케이프 된 값을 생성 합니다.
+>
+> ```console
+> systemd-escape "<value-to-escape>"
+> ```
 
 파일을 저장하고 서비스를 사용하도록 설정합니다.
 

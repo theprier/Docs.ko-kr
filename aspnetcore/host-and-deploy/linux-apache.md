@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/linux-apache
-ms.openlocfilehash: 5a8a035ff3f127d01655888d4f83a871645b0bf5
-ms.sourcegitcommit: d45d766504c2c5aad2453f01f089bc6b696b5576
+ms.openlocfilehash: 473585f1be180645395c14a154c9c017ca50edab
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/30/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="host-aspnet-core-on-linux-with-apache"></a>Apache를 사용하여 Linux에서 ASP.NET Core 호스트
 
@@ -79,7 +79,7 @@ app.UseFacebookAuthentication(new FacebookOptions()
 
 없는 경우 [ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions) 전달 하도록 기본 헤더는 미들웨어를 지정 된 `None`합니다.
 
-프록시 서버 및 부하 분산 장치 뒤에 호스트 되는 앱에 대 한 추가 구성 해야 할 수 있습니다. 자세한 내용은 참조 [프록시 서버를 사용 하 고 부하 분산 장치를 ASP.NET Core 구성](xref:host-and-deploy/proxy-load-balancer)합니다.
+프록시 서버 및 부하 분산 장치 외에도 호스팅되는 앱에 추가 구성이 필요할 수 있습니다. 자세한 내용은 [프록시 서버 및 부하 분산 장치를 사용하도록 ASP.NET Core 구성](xref:host-and-deploy/proxy-load-balancer)을 참조하세요.
 
 ### <a name="install-apache"></a>Apache 설치
 
@@ -189,6 +189,13 @@ WantedBy=multi-user.target
 
 > [!NOTE]
 > **사용자** &mdash; 경우 사용자 *apache* 는 사용 하지 않으며, 구성에서 사용자를 만든 다음 먼저 파일에 대 한 적절 한 소유권을 부여 합니다.
+
+> [!NOTE]
+> 환경 변수를 읽을 수는 구성 공급자에 대 한 일부 값 (예를 들어 SQL 연결 문자열)를 이스케이프 해야 합니다. 다음 명령을 사용 하 여 구성 파일에서 사용 하기 위해 올바르게 이스케이프 된 값을 생성 합니다.
+>
+> ```console
+> systemd-escape "<value-to-escape>"
+> ```
 
 파일을 저장 하 고 서비스를 활성화 합니다.
 

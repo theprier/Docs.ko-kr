@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/examining-the-details-and-delete-methods
 msc.type: authoredcontent
-ms.openlocfilehash: b6939207ee15aa93bfb3ccb9cad553b814896bd1
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: f534080fe9aa22eb9092932babc74c5ab96aabbf
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/10/2018
 ---
 <a name="examining-the-details-and-delete-methods"></a>세부 정보 및 삭제 메서드를 검사합니다.
 ====================
@@ -42,7 +42,7 @@ ms.lasthandoff: 04/06/2018
 
 [!code-csharp[Main](examining-the-details-and-delete-methods/samples/sample2.cs?highlight=17)]
 
-`HTTP Get``Delete` 메서드는 지정 된 영화를 삭제 하지 않습니다, 동영상의 보기 반환 제출할 수 있습니다 (`HttpPost`) 삭제... GET 요청에 대한 응답에서 삭제 작업 수행(또는 해당 문제를 위해 편집 작업 수행, 작업 만들기 또는 데이터를 변경하는 기타 작업)은 보안 허점을 야기합니다. 이 대 한 자세한 내용은 Stephen Walther 블로그 항목을 참조 하십시오. [ASP.NET MVC 팁 #46-보안 허점을 만들기 때문에 삭제 링크를 사용 하지 않는](http://stephenwalther.com/blog/archive/2009/01/21/asp.net-mvc-tip-46-ndash-donrsquot-use-delete-links-because.aspx)합니다.
+HTTP GET는 `Delete` 메서드는 지정 된 영화를 삭제 하지 않습니다, 동영상의 보기 반환 제출할 수 있습니다 (`HttpPost`) 삭제 합니다. GET 요청에 대한 응답에서 삭제 작업 수행(또는 해당 문제를 위해 편집 작업 수행, 작업 만들기 또는 데이터를 변경하는 기타 작업)은 보안 허점을 야기합니다. 이 대 한 자세한 내용은 Stephen Walther 블로그 항목을 참조 하십시오. [ASP.NET MVC 팁 #46-보안 허점을 만들기 때문에 삭제 링크를 사용 하지 않는](http://stephenwalther.com/blog/archive/2009/01/21/asp.net-mvc-tip-46-ndash-donrsquot-use-delete-links-because.aspx)합니다.
 
 데이터를 삭제하는 `HttpPost` 메서드는 HTTP POST 메서드에 고유한 서명 또는 이름을 제공하기 위해 `DeleteConfirmed`로 이름이 지정됩니다. 두 개의 메서드 서명은 다음과 같습니다.
 
@@ -64,7 +64,7 @@ CLR(공용 언어 런타임)은 고유한 매개 변수 서명을 갖기 위해 
 
 ## <a name="next-steps"></a>다음 단계
 
-작성 하 고 웹 응용 프로그램을 테스트 후 다른 사람이 인터넷을 통해 사용 하도록 사용할 수 있도록 하려면 다음 단계가입니다. 이렇게 하려면 웹 호스팅 공급자를 배포 해야 합니다. Microsoft에서 제공 하는 최대 10 개의 웹 사이트의 무료 웹 호스팅는 [무료 Azure 평가판 계정](https://www.windowsazure.com/pricing/free-trial/?WT.mc_id=A443DD604)합니다. 다음 내 자습서를 따라 보시기 [멤버 자격, OAuth, SQL 데이터베이스와 Secure ASP.NET MVC 응용 프로그램을 Azure에 배포](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data)합니다. 뛰어난 자습서가 Tom Dykstra 중간 수준 [ASP.NET MVC 응용 프로그램에 대 한 Entity Framework 데이터 모델을 만드는](../getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)합니다. [Stackoverflow](http://stackoverflow.com/help) 및 [ASP.NET MVC 포럼](https://forums.asp.net/1146.aspx) 질문을 하는 좋은 배치 됩니다. 에 따라 [me](https://twitter.com/RickAndMSFT) 에서 twitter 때문 내 최신 자습서에 대 한 업데이트를 가져올 수 있습니다.
+작성 하 고 웹 응용 프로그램을 테스트 후 다른 사람이 인터넷을 통해 사용 하도록 사용할 수 있도록 하려면 다음 단계가입니다. 이렇게 하려면 웹 호스팅 공급자를 배포 해야 합니다. Microsoft에서 제공 하는 최대 10 개의 웹 사이트의 무료 웹 호스팅는 [무료 Azure 평가판 계정](https://www.windowsazure.com/pricing/free-trial/?WT.mc_id=A443DD604)합니다. 다음 내 자습서를 따라 보시기 [멤버 자격, OAuth, SQL 데이터베이스와 Secure ASP.NET MVC 응용 프로그램을 Azure에 배포](https://docs.microsoft.com/aspnet/core/security/authorization/secure-data)합니다. 뛰어난 자습서가 Tom Dykstra 중간 수준 [ASP.NET MVC 응용 프로그램에 대 한 Entity Framework 데이터 모델을 만드는](../getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)합니다. [Stackoverflow](http://stackoverflow.com/help) 및 [ASP.NET MVC 포럼](https://forums.asp.net/1146.aspx) 질문을 하는 좋은 배치 됩니다. twitter에서 [저](https://twitter.com/RickAndMSFT)를 팔로우하시면 최신 자습서 업데이트를 받으실 수 있습니다.
 
 피드백을 보내 주십시오.
 

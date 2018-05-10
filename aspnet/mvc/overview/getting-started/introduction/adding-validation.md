@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-validation
 msc.type: authoredcontent
-ms.openlocfilehash: d084c5c7e232b92c8cfe2230e076752d42d8da5d
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 946d4d5e5a506fb437232f9f4440c98e33a1a9b3
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/10/2018
 ---
 <a name="adding-validation"></a>유효성 검사 추가
 ====================
@@ -134,7 +134,7 @@ ASP.NET MVC 및 Entity Framework Code First 제공 하는 유효성 검사 지�
 
 [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) 특성만 데이터의 서식을 지정 하는 뷰 엔진이 대 한 힌트를 제공 (같은 특성을 제공 하 고 `<a>` URL에 대 한 및 `<a href="mailto:EmailAddress.com">` 전자 메일에 대 한 합니다. 사용할 수는 [정규식으로](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.regularexpressionattribute.aspx) 유효성을 검사할 데이터 형식의 특성입니다. [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) 특성 데이터베이스 내장 형식 보다 구체적인 데이터 형식을 지정 하는 데 사용 됩니다는 ***하지*** 유효성 검사 특성입니다. 이 경우에는 날짜 및 시간이 아닌 날짜만 추적하고자 합니다. [DataType 열거형](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) 와 같은 대부분의 데이터 형식이에 제공 *날짜 "," 시간 "," PhoneNumber "," 통화 "," EmailAddress* 등입니다. `DataType` 특성을 통해 응용 프로그램에서 자동으로 유형별 기능을 제공하도록 설정할 수도 있습니다. 예를 들어 한 `mailto:` 에 대 한 링크를 만들 수 [DataType.EmailAddress](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx), 날짜 선택 기가 제공 될 수 있습니다 및 [DataType.Date](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) 지 원하는 브라우저에서 [HTML5](http://html5.org/). [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) 특성 내보냅니다 HTML 5 [데이터-](http://ejohn.org/blog/html-5-data-attributes/) (발음 *데이터 대시*) HTML 5 브라우저 이해할 수 있는 특성입니다. [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) 특성 유효성을 검사 하지 않습니다.
 
-`DataType.Date`는 표시되는 날짜의 서식을 지정하지 않습니다. 기본적으로 데이터 필드에서 서버에 따라 기본 형식에 따라 표시[CultureInfo](https://msdn.microsoft.com/library/vstudio/system.globalization.cultureinfo(v=vs.110).aspx)합니다.
+`DataType.Date`는 표시되는 날짜의 서식을 지정하지 않습니다. 기본적으로 데이터 필드에서 서버에 따라 기본 형식에 따라 표시 [CultureInfo](https://msdn.microsoft.com/library/vstudio/system.globalization.cultureinfo(v=vs.110).aspx)합니다.
 
 `DisplayFormat` 특성은 날짜 형식을 명시적으로 지정하는 데 사용됩니다.
 
@@ -147,17 +147,17 @@ ASP.NET MVC 및 Entity Framework Code First 제공 하는 유효성 검사 지�
 사용할 수는 [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) 하지만 자체를 기준으로 특성은 일반적으로 사용 하는 것이 좋습니다는 [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) 도 특성입니다. `DataType` 특성에 전달 된 *의미 체계* 데이터의 화면에 렌더링 하는 방법을 반대로과를으로 볼 수 없는 다음과 같은 이점을 제공 `DisplayFormat`:
 
 - 브라우저 (예: calendar 컨트롤, 로캘에 적합 한 통화 기호, 전자 메일 링크, 등을 표시 합니다.) HTML5 기능을 활성화할 수 있습니다.
-- 기본적으로 브라우저에 따라 올바른 형식을 사용 하 여 데이터를 렌더링 합니다 프로그램[로캘](https://msdn.microsoft.com/library/vstudio/wyzd2bce.aspx)합니다.
-- [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) 특성 데이터를 렌더링 하는 오른쪽 필드 템플릿을 선택 하는 MVC 사용 하도록 설정할 수 (의 [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) 자체 문자열 서식 파일을 사용 하 여 사용 하는 경우). 자세한 내용은 Brad Wilson의을 참조 하십시오.[ASP.NET MVC 2 Templates](http://bradwilson.typepad.com/blog/2009/10/aspnet-mvc-2-templates-part-1-introduction.html)합니다. (하지만 MVC 2 용으로 작성 된,이 문서 여전히에 적용 됩니다 ASP.NET MVC의 현재 버전입니다.)
+- 기본적으로 브라우저에 따라 올바른 형식을 사용 하 여 데이터를 렌더링 합니다 프로그램 [로캘](https://msdn.microsoft.com/library/vstudio/wyzd2bce.aspx)합니다.
+- [DataType](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatypeattribute.aspx) 특성 데이터를 렌더링 하는 오른쪽 필드 템플릿을 선택 하는 MVC 사용 하도록 설정할 수 (의 [DisplayFormat](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) 자체 문자열 서식 파일을 사용 하 여 사용 하는 경우). 자세한 내용은 Brad Wilson의을 참조 하십시오. [ASP.NET MVC 2 Templates](http://bradwilson.typepad.com/blog/2009/10/aspnet-mvc-2-templates-part-1-introduction.html)합니다. (하지만 MVC 2 용으로 작성 된,이 문서 여전히에 적용 됩니다 ASP.NET MVC의 현재 버전입니다.)
 
 사용 하는 경우는 `DataType` 특성을 지정 해야 날짜 필드와는 `DisplayFormat` 필드 Chrome 브라우저에서 올바르게 렌더링 하려면 또한 특성입니다. 자세한 내용은 참조 [이 StackOverflow 스레드](http://stackoverflow.com/questions/12633471/mvc4-datatype-date-editorfor-wont-display-date-value-in-chrome-fine-in-ie)합니다.
 
 > [!NOTE]
-> jQuery 유효성 검사는 사용 하지는[범위](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) 특성 및[DateTime](https://msdn.microsoft.com/library/system.datetime.aspx)합니다. 예를 들어 다음 코드는 날짜가 지정된 범위에 있을 경우에도 클라이언트 쪽 유효성 검사 오류를 항상 표시합니다.
+> jQuery 유효성 검사는 사용 하지는 [범위](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) 특성 및 [DateTime](https://msdn.microsoft.com/library/system.datetime.aspx)합니다. 예를 들어 다음 코드는 날짜가 지정된 범위에 있을 경우에도 클라이언트 쪽 유효성 검사 오류를 항상 표시합니다.
 > 
 > [!code-csharp[Main](adding-validation/samples/sample9.cs)]
 > 
-> 사용 하 여 jQuery 날짜 유효성 검사를 사용 하지 않도록 설정 해야 합니다는 [범위](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) 특성이[DateTime](https://msdn.microsoft.com/library/system.datetime.aspx)합니다. 하지는 것이 좋습니다 하드 날짜를 사용 하 여 모델에서 컴파일하는 데는 일반적으로[범위](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) 특성 및[DateTime](https://msdn.microsoft.com/library/system.datetime.aspx) 않는 것이 좋습니다.
+> 사용 하 여 jQuery 날짜 유효성 검사를 사용 하지 않도록 설정 해야 합니다는 [범위](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) 특성이 [DateTime](https://msdn.microsoft.com/library/system.datetime.aspx)합니다. 하지는 것이 좋습니다 하드 날짜를 사용 하 여 모델에서 컴파일하는 데는 일반적으로 [범위](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) 특성 및 [DateTime](https://msdn.microsoft.com/library/system.datetime.aspx) 않는 것이 좋습니다.
 
 
 다음 코드는 한 줄에 결합 특성을 보여 줍니다.
