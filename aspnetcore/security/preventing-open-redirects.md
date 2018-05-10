@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/preventing-open-redirects
-ms.openlocfilehash: 4a210b8bb8091e7c036d4bc98306e3b3f90d7d46
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 9ac6b311170dbbc27dd388842c071bc64add6f08
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="prevent-open-redirect-attacks-in-aspnet-core"></a>ASP.NET Core에서 열기 리디렉션 공격을 방지
 
@@ -29,18 +29,18 @@ ms.lasthandoff: 03/22/2018
 
 ### <a name="an-example-attack"></a>예제 공격
 
-악의적인 사용자를 사용자의 자격 증명 또는 응용 프로그램에서 중요 한 정보를 악의적인 사용자가 액세스를 허용 하는 방식의 공격을 개발할 수 있습니다. 포함 된 사이트의 로그인 페이지에 대 한 링크를 클릭 하 여 사용자를 유도 방지할 수 있었던 공격을 시작 하려면 한 `returnUrl` URL에 추가 하는 쿼리 문자열 값입니다. 예를 들어는 [NerdDinner.com](http://nerddinner.com) (ASP.NET MVC 용으로 작성 된) 샘플 응용 프로그램에는 로그인 페이지가 여기에 포함 되어: ``http://nerddinner.com/Account/LogOn?returnUrl=/Home/About``합니다. 방지할 수 있었던 공격 후 다음이 단계를 따릅니다.
+악의적인 사용자를 사용자의 자격 증명 또는 응용 프로그램에서 중요 한 정보를 악의적인 사용자가 액세스를 허용 하는 방식의 공격을 개발할 수 있습니다. 포함 된 사이트의 로그인 페이지에 대 한 링크를 클릭 하 여 사용자를 유도 방지할 수 있었던 공격을 시작 하려면 한 `returnUrl` URL에 추가 하는 쿼리 문자열 값입니다. 예를 들어는 [NerdDinner.com](http://nerddinner.com) (ASP.NET MVC 용으로 작성 된) 샘플 응용 프로그램에는 로그인 페이지가 여기에 포함 되어: `http://nerddinner.com/Account/LogOn?returnUrl=/Home/About`합니다. 방지할 수 있었던 공격 후 다음이 단계를 따릅니다.
 
-1. 사용자는 링크를 클릭 ``http://nerddinner.com/Account/LogOn?returnUrl=http://nerddiner.com/Account/LogOn`` (두 번째 URL은 nerddi**n**어, 하지 nerddi**nn**어).
+1. 사용자는 링크를 클릭 `http://nerddinner.com/Account/LogOn?returnUrl=http://nerddiner.com/Account/LogOn` (두 번째 URL은 nerddi**n**어, 하지 nerddi**nn**어).
 2. 사용자가 성공적으로 로그인 합니다.
-3. 사용자가을 (사이트)에 의해 리디렉션되 ``http://nerddiner.com/Account/LogOn`` (실제 사이트 처럼 보이는 악성 사이트).
+3. 사용자가을 (사이트)에 의해 리디렉션되 `http://nerddiner.com/Account/LogOn` (실제 사이트 처럼 보이는 악성 사이트).
 4. 사용자가 다시 로그인 (자격 증명 사이트 악의적인 제공)을 실제 사이트로 다시 리디렉션됩니다.
 
 사용자는 가능성이 생각 로그인의 첫 번째 시도가 실패와 두 번째 식의 성공 합니다. 대개 남지만 인식 하지 않는 자격 증명 노출 되었다고 합니다.
 
 ![열기 리디렉션 공격 프로세스](preventing-open-redirects/_static/open-redirection-attack-process.png)
 
-로그인 페이지 외에도 일부 사이트 리디렉션 페이지 또는 끝점을 제공합니다. 응용 프로그램에 열려 리디렉션 있는 페이지를 가정해 보십시오. ``/Home/Redirect``합니다. 공격자가 만들 수, 예를 들어,로 이동 하는 전자 메일의 링크 ``[yoursite]/Home/Redirect?url=http://phishingsite.com/Home/Login``합니다. 일반적인 사용자 URL 확인 되며 참조 사이트 이름으로 시작 됩니다. 신뢰 하는, 해당 링크를 클릭 합니다. 열기 리디렉션은 다음 사용자에 게 보낼 피싱 사이트로 실제로 사용자 작업과 동일 하 고 사용자 했을 것 생각 하는 로그인이 사이트입니다.
+로그인 페이지 외에도 일부 사이트 리디렉션 페이지 또는 끝점을 제공합니다. 응용 프로그램에 열려 리디렉션 있는 페이지를 가정해 보십시오. `/Home/Redirect`합니다. 공격자가 만들 수, 예를 들어,로 이동 하는 전자 메일의 링크 `[yoursite]/Home/Redirect?url=http://phishingsite.com/Home/Login`합니다. 일반적인 사용자 URL 확인 되며 참조 사이트 이름으로 시작 됩니다. 신뢰 하는, 해당 링크를 클릭 합니다. 열기 리디렉션은 다음 사용자에 게 보낼 피싱 사이트로 실제로 사용자 작업과 동일 하 고 사용자 했을 것 생각 하는 로그인이 사이트입니다.
 
 ## <a name="protecting-against-open-redirect-attacks"></a>열린 리디렉션 공격 으로부터 보호
 
@@ -48,7 +48,7 @@ ms.lasthandoff: 03/22/2018
 
 ### <a name="localredirect"></a>LocalRedirect
 
-사용 하 여는 ``LocalRedirect`` 도우미 메서드는 기본에서 `Controller` 클래스:
+사용 하 여는 `LocalRedirect` 도우미 메서드는 기본에서 `Controller` 클래스:
 
 ```csharp
 public IActionResult SomeAction(string redirectUrl)
@@ -57,7 +57,7 @@ public IActionResult SomeAction(string redirectUrl)
 }
 ```
 
-``LocalRedirect`` 로컬이 아닌 URL을 지정 하는 경우 예외가 throw 됩니다. 그렇지 않은 경우와 동일 하 게 작동는 ``Redirect`` 메서드.
+`LocalRedirect` 로컬이 아닌 URL을 지정 하는 경우 예외가 throw 됩니다. 그렇지 않은 경우와 동일 하 게 작동는 `Redirect` 메서드.
 
 ### <a name="islocalurl"></a>IsLocalUrl
 

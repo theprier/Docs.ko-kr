@@ -1,7 +1,7 @@
 ---
-title: ASP.NET에서 ASP.NET Core 2.0으로 마이그레이션
+title: ASP.NET에서 ASP.NET Core로 마이그레이션
 author: isaac2004
-description: 기존 ASP.NET MVC 또는 Web API 앱을 ASP.NET Core 2.0으로 마이그레이션하기 위한 지침을 받습니다.
+description: 기존 ASP.NET MVC 또는 Web API 앱을 ASP.NET Core.web으로 마이그레이션하기 위한 지침을 받으세요.
 manager: wpickett
 ms.author: scaddie
 ms.date: 08/27/2017
@@ -9,28 +9,29 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/proper-to-2x/index
-ms.openlocfilehash: 86b4ee5f431d1e23ed3ad2be5740af34176de531
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 82f85bf2919fac1c023c0b89419a42a3ef7c402c
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/08/2018
 ---
-# <a name="migrate-from-aspnet-to-aspnet-core-20"></a>ASP.NET에서 ASP.NET Core 2.0으로 마이그레이션
+# <a name="migrate-from-aspnet-to-aspnet-core"></a>ASP.NET에서 ASP.NET Core로 마이그레이션
 
 작성자: [Isaac Levin](https://isaaclevin.com)
 
-이 문서는 ASP.NET 응용 프로그램을 ASP.NET Core 2.0으로 마이그레이션하기 위한 참조 가이드로 사용됩니다.
+이 문서는 ASP.NET 앱을 ASP.NET Core로 마이그레이션하기 위한 참조 가이드로 사용됩니다.
 
 ## <a name="prerequisites"></a>전제 조건
 
 [!INCLUDE [](~/includes/net-core-sdk-download-link.md)]
 
 ## <a name="target-frameworks"></a>대상 프레임워크
-ASP.NET Core 2.0 프로젝트를 사용하면 개발자가 유연하게 .NET Core, .NET Framework 또는 두 항목을 모두 대상으로 지정하거나 둘 다 대상으로 지정할 수 있습니다. 가장 적절한 대상 프레임워크를 결정하려면 [서버 앱에 대해 .NET Core와 .NET Framework 중에서 선택](https://docs.microsoft.com/dotnet/standard/choosing-core-framework-server)을 참조하세요.
+
+ASP.NET Core 프로젝트를 사용하면 개발자가 유연하게 .NET Core, .NET Framework 또는 두 항목을 모두 대상으로 지정하거나 둘 다 대상으로 지정할 수 있습니다. 가장 적절한 대상 프레임워크를 결정하려면 [서버 앱에 대해 .NET Core와 .NET Framework 중에서 선택](/dotnet/standard/choosing-core-framework-server)을 참조하세요.
 
 .NET Framework를 대상으로 지정할 경우 프로젝트는 개별 NuGet 패키지를 참조해야 합니다.
 
-.NET Core를 대상으로 지정하면 ASP.NET Core 2.0 [메타패키지](xref:fundamentals/metapackage) 덕분에 수많은 명시적 패키지 참조를 제거할 수 있습니다. 프로젝트에서 `Microsoft.AspNetCore.All` 메타패키지를 설치합니다.
+.NET Core를 대상으로 지정하면 ASP.NET Core [메타패키지](xref:fundamentals/metapackage) 덕분에 수많은 명시적 패키지 참조를 제거할 수 있습니다. 프로젝트에서 `Microsoft.AspNetCore.All` 메타패키지를 설치합니다.
 
 ```xml
 <ItemGroup>
@@ -41,7 +42,9 @@ ASP.NET Core 2.0 프로젝트를 사용하면 개발자가 유연하게 .NET Cor
 메타패키지를 사용하면 메타패키지에서 참조되는 패키지가 앱과 함께 배포되지 않습니다. .NET Core 런타임 저장소에는 이러한 자산이 포함되고 해당 자산은 성능을 개선하도록 미리 컴파일되어 있습니다. 자세한 내용은 [ASP.NET Core 2.x에 대한 Microsoft.AspNetCore.All 메타패키지](xref:fundamentals/metapackage)를 참조하세요.
 
 ## <a name="project-structure-differences"></a>프로젝트 구조 차이점
+
 *.csproj* 파일 형식은 ASP.NET Core에서 간소화되었습니다. 몇 가지 주요 변경 내용은 다음과 같습니다.
+
 - 파일을 프로젝트의 일부로 간주하기 위해 파일을 명시적으로 포함할 필요가 없습니다. 이 덕분에 대규모 팀에서 작업할 때 XML 병합 충돌의 위험이 감소합니다.
 - 다른 프로젝트에 대한 GUID 기반 참조가 없으므로 파일 가독성이 향상됩니다.
 - Visual Studio에서 파일을 언로드하지 않고 파일을 편집할 수 있습니다.
@@ -49,6 +52,7 @@ ASP.NET Core 2.0 프로젝트를 사용하면 개발자가 유연하게 .NET Cor
     ![Visual Studio 2017에서 CSPROJ 상황에 맞는 메뉴 옵션 편집](_static/EditProjectVs2017.png)
 
 ## <a name="globalasax-file-replacement"></a>Global.asax 파일 바꾸기
+
 ASP.NET Core에는 앱을 부트스트랩하기 위한 새로운 메커니즘이 도입되었습니다. ASP.NET 응용 프로그램의 진입점은 *Global.asax* 파일입니다. 경로 구성 및 필터/영역 등록과 같은 작업은 *Global.asax* 파일에서 처리됩니다.
 
 [!code-csharp[](samples/globalasax-sample.cs)]
@@ -75,9 +79,11 @@ ASP.NET Core는 비슷한 방법을 사용하지만 항목을 처리하는 데 O
 
 호스트와 응용 프로그램이 분리되었으므로 나중에 유연하게 다른 플랫폼으로 이동할 수 있습니다.
 
-**참고:** ASP.NET Core 시작 및 미들웨어에 대한 자세한 내용은 [ASP.NET Core의 시작](xref:fundamentals/startup)을 참조하세요.
+> [!NOTE]
+> ASP.NET Core 시작 및 미들웨어에 대한 자세한 내용은 [ASP.NET Core의 시작](xref:fundamentals/startup)을 참조하세요.
 
-## <a name="storing-configurations"></a>구성 저장
+## <a name="store-configurations"></a>구성 저장
+
 ASP.NET은 정렬 설정을 지원합니다. 예를 들어 이러한 설정은 응용 프로그램이 배포된 환경을 지원하는 데 사용됩니다. 일반적으로 모든 사용자 지정 키 값 쌍은 *Web.config* 파일의 `<appSettings>` 섹션에 저장됩니다.
 
 [!code-xml[](samples/webconfig-sample.xml)]
@@ -105,12 +111,14 @@ DI([종속성 주입](xref:fundamentals/dependency-injection))를 사용하여 �
 services.Configure<AppConfiguration>(Configuration.GetSection("AppConfiguration"));
 ````
 
-**참고:** ASP.NET Core 구성에 대한 자세한 내용은 [ASP.NET Core의 구성](xref:fundamentals/configuration/index)을 참조하세요.
+> [!NOTE]
+> ASP.NET Core 구성에 대한 자세한 내용은 [ASP.NET Core의 구성](xref:fundamentals/configuration/index)을 참조하세요.
 
 ## <a name="native-dependency-injection"></a>네이티브 종속성 주입
+
 크고 확장 가능한 응용 프로그램을 빌드할 때 중요한 목표는 구성 요소와 서비스를 느슨하게 결합하는 것입니다. [종속성 주입](xref:fundamentals/dependency-injection)은 이 목표를 위해 널리 사용되는 기술이고 ASP.NET Core의 네이티브 구성 요소입니다.
 
-ASP.NET 응용 프로그램에서 개발자는 타사 라이브러리를 사용하여 종속성 주입을 구현합니다. 이러한 라이브러리 중 하나는 Microsoft Patterns & Practices에서 제공하는 [Unity](https://github.com/unitycontainer/unity)입니다. 
+ASP.NET 앱에서 개발자는 타사 라이브러리를 사용하여 종속성 주입을 구현합니다. 이러한 라이브러리 중 하나는 Microsoft Patterns & Practices에서 제공하는 [Unity](https://github.com/unitycontainer/unity)입니다.
 
 Unity를 사용한 종속성 주입 설정의 예로는 `UnityContainer`를 래핑하는 `IDependencyResolver`를 구현하는 것입니다.
 
@@ -130,9 +138,11 @@ Unity를 사용한 종속성 주입 설정의 예로는 `UnityContainer`를 래�
 
 Unity에서 삽입한 것처럼 리포지토리는 어디든지 삽입될 수 있습니다.
 
-**참고:** ASP.NET Core의 종속성 주입에 대한 자세한 내용은 [ASP.NET Core의 종속성 주입](xref:fundamentals/dependency-injection#replacing-the-default-services-container)을 참조하세요.
+> [!NOTE]
+> ASP.NET Core의 종속성 주입에 대한 자세한 내용은 [ASP.NET Core의 종속성 주입](xref:fundamentals/dependency-injection#replacing-the-default-services-container)을 참조하세요.
 
-## <a name="serving-static-files"></a>정적 파일 지원
+## <a name="serve-static-files"></a>정적 파일 제공
+
 웹 개발의 중요한 부분은 정적 클라이언트 쪽 자산을 지원하는 기능입니다. 정적 파일의 가장 일반적인 예로는 HTML, CSS, Javascript 및 이미지가 있습니다. 이러한 파일은 앱(또는 CDN)의 게시된 위치에 저장되고 요청을 통해 로드될 수 있도록 참조되어야 합니다. 이 프로세스는 ASP.NET Core에서 변경되었습니다.
 
 ASP.NET에서 정적 파일은 다양한 디렉터리에 저장되고 뷰에서 참조됩니다.
@@ -141,12 +151,14 @@ ASP.NET Core에서 정적 파일은 별도로 구성되지 않는 한 “웹 루
 
 [!code-csharp[](../../fundamentals/static-files/samples/1x/StartupStaticFiles.cs?highlight=3&name=snippet_ConfigureMethod)]
 
-**참고:** .NET Framework를 대상으로 지정할 경우 NuGet 패키지 `Microsoft.AspNetCore.StaticFiles`를 설치합니다.
+> [!NOTE]
+> .NET Framework를 대상으로 지정할 경우 NuGet 패키지 `Microsoft.AspNetCore.StaticFiles`를 설치합니다.
 
 예를 들어 *wwwroot/images* 폴더의 이미지 자산은 `http://<app>/images/<imageFileName>`과 같은 위치의 브라우저에 액세스할 수 있습니다.
 
-**참고:** ASP.NET Core의 고정 파일 지원에 대한 자세한 내용은 [ASP.NET Core에서 고정 파일 작업](xref:fundamentals/static-files)을 참조하세요.
+> [!NOTE]
+> ASP.NET Core의 정적 파일 지원에 대한 자세한 내용은 [정적 파일](xref:fundamentals/static-files)을 참조하세요.
 
 ## <a name="additional-resources"></a>추가 자료
 
-* [.NET Core로 라이브러리 이식](/dotnet/core/porting/libraries)
+- [.NET Core로 라이브러리 이식](/dotnet/core/porting/libraries)

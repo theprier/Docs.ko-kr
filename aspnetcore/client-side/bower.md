@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/bower
-ms.openlocfilehash: 2d6cc526b5a0890103e2856a0ca4b58c5f162c79
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 4f53d0f04d17631a12e2c2030d6dbb1f4fcc09d3
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="manage-client-side-packages-with-bower-in-aspnet-core"></a>ASP.NET Core에서 Bower 사용 하 여 클라이언트 패키지를 관리 합니다.
 
@@ -115,7 +115,7 @@ Bower 클라이언트 쪽 빌드 프로세스를 사용 하는 일반적인 단�
 
 이 섹션에서는 배포 된 패키지에 액세스할 수를 확인 하는 HTML 페이지를 만들게 됩니다.
 
-* 라는 새 HTML 페이지를 추가 *Index.html* 에 *wwwroot* 폴더입니다. 참고: HTML 파일을 추가 해야는 *wwwroot* 폴더입니다. 기본적으로 정적 콘텐츠가 담긴 제공 될 수 없는 외부 *wwwroot*합니다. 참조 [정적 파일로 작업할](xref:fundamentals/static-files) 자세한 정보에 대 한 합니다.
+* 라는 새 HTML 페이지를 추가 *Index.html* 에 *wwwroot* 폴더입니다. 참고: HTML 파일을 추가 해야는 *wwwroot* 폴더입니다. 기본적으로 정적 콘텐츠가 담긴 제공 될 수 없는 외부 *wwwroot*합니다. 참조 [정적 파일](xref:fundamentals/static-files) 자세한 정보에 대 한 합니다.
 
   내용을 대체 *Index.html* 다음 태그로:
 

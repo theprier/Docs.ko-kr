@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity
-ms.openlocfilehash: f9215767bf9a7c8b43b474848ba7dff7c3ddaf24
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: cf63766dc4ae94d784190d6dbc7b5beb57342f42
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>ASP.NET Core Identity 소개
 
@@ -49,7 +49,7 @@ ASP.NET Core Identity는 SQL Server 데이터베이스에 사용자 이름, 비�
 
    # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 
-   .NET Core CLI를 사용하는 경우, ``dotnet new mvc --auth Individual`` 명령으로 새로운 프로젝트를 생성합니다. 이 명령은 Visual Studio가 생성하는 것과 동일한 Identity 템플릿 코드를 사용하는 새로운 프로젝트를 생성합니다.
+   .NET Core CLI를 사용하는 경우, `dotnet new mvc --auth Individual` 명령으로 새로운 프로젝트를 생성합니다. 이 명령은 Visual Studio가 생성하는 것과 동일한 Identity 템플릿 코드를 사용하는 새로운 프로젝트를 생성합니다.
 
    생성된 프로젝트에는 [Entity Framework Core](https://docs.microsoft.com/ef/)를 이용해서 SQL Server에 Identity 데이터와 스키마를 저장하는 `Microsoft.AspNetCore.Identity.EntityFrameworkCore` 패키지가 포함되어 있습니다.
 
@@ -88,30 +88,30 @@ ASP.NET Core Identity는 SQL Server 데이터베이스에 사용자 이름, 비�
 
    ![마이그레이션 웹 페이지를 적용합니다.](identity/_static/apply-migrations.png)
 
-   또는 영구적인 데이터베이스 없이 메모리 내 데이터베이스를 이용해서 응용 프로그램과 ASP.NET Core Identity를 테스트할 수도 있습니다. 메모리 내 데이터베이스를 사용하려면 응용 프로그램에 ``Microsoft.EntityFrameworkCore.InMemory`` 패키지를 추가하고, 응용 프로그램이 ``ConfigureServices``에서 ``AddDbContext``를 호출하는 부분을 다음과 같이 수정합니다:
+   또는 영구적인 데이터베이스 없이 메모리 내 데이터베이스를 이용해서 응용 프로그램과 ASP.NET Core Identity를 테스트할 수도 있습니다. 메모리 내 데이터베이스를 사용하려면 응용 프로그램에 `Microsoft.EntityFrameworkCore.InMemory` 패키지를 추가하고, 응용 프로그램이 `ConfigureServices`에서 `AddDbContext`를 호출하는 부분을 다음과 같이 수정합니다:
 
    ```csharp
    services.AddDbContext<ApplicationDbContext>(options =>
        options.UseInMemoryDatabase(Guid.NewGuid().ToString()));
    ```
 
-   사용자가 **Register** 링크를 클릭하면 ``AccountController`` 에서 ``Register`` 액션이 호출됩니다. ``Register`` 액션은 `_userManager` 개체의 (종속성 주입으로 ``AccountController``에 제공된) `CreateAsync`를 호출해서 사용자를 생성합니다:
+   사용자가 **Register** 링크를 클릭하면 `AccountController` 에서 `Register` 액션이 호출됩니다. `Register` 액션은 `_userManager` 개체의 (종속성 주입으로 `AccountController`에 제공된) `CreateAsync`를 호출해서 사용자를 생성합니다:
 
    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_register&highlight=11)]
 
-   사용자가 정상적으로 생성되면 ``_signInManager.SignInAsync`` 가 호출되어 사용자가 즉시 로그인됩니다.
+   사용자가 정상적으로 생성되면 `_signInManager.SignInAsync` 가 호출되어 사용자가 즉시 로그인됩니다.
 
    **참고:** 사용자 등록 즉시 로그인을 방지하는 방법은 [계정 확인](xref:security/authentication/accconfirm#prevent-login-at-registration) 을 참고하시기 바랍니다.
 
 4. 로그인
 
-   사용자는 사이트 상단의 **Log in** 링크를 클릭해서 로그인할 수 있으며, 사이트에서 권한 부여가 필요한 페이지에 접근하려고 시도할 경우 Login 페이지로 이동하게 됩니다. 사용자가 Login 페이지의 양식을 제출하면 ``AccountController``의 ``Login`` 액션이 호출됩니다.
+   사용자는 사이트 상단의 **Log in** 링크를 클릭해서 로그인할 수 있으며, 사이트에서 권한 부여가 필요한 페이지에 접근하려고 시도할 경우 Login 페이지로 이동하게 됩니다. 사용자가 Login 페이지의 양식을 제출하면 `AccountController`의 `Login` 액션이 호출됩니다.
 
-   ``Login`` 액션은 ``_signInManager`` 개체의 (종속성 주입으로 ``AccountController`` 에 제공된) ``PasswordSignInAsync``를 호출합니다. 
+   `Login` 액션은 `_signInManager` 개체의 (종속성 주입으로 `AccountController` 에 제공된) `PasswordSignInAsync`를 호출합니다. 
 
    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_login&highlight=13-14)]
 
-   기본 ``Controller`` 클래스는 컨트롤러의 메서드에서 접근할 수 있는 ``User`` 속성을 제공합니다. 예를 들어, 열거할 수 있습니다 `User.Claims` 을 권한 부여 결정을 내립니다. 자세한 내용은 참조 [권한 부여](xref:security/authorization/index)합니다.
+   기본 `Controller` 클래스는 컨트롤러의 메서드에서 접근할 수 있는 `User` 속성을 제공합니다. 예를 들어, 열거할 수 있습니다 `User.Claims` 을 권한 부여 결정을 내립니다. 자세한 내용은 참조 [권한 부여](xref:security/authorization/index)합니다.
 
 5. 로그아웃
 
@@ -149,7 +149,7 @@ ASP.NET Core Identity는 SQL Server 데이터베이스에 사용자 이름, 비�
 
     기본 *ASP.NET Core 웹 응용 프로그램* 프로젝트 템플릿은 사용자가 로그인하지 않더라도 응용 프로그램의 모든 액션에 접근할 수 있습니다. 정상적으로 ASP.NET Identity가 동작하는지 확인해보려면 `Home` 컨트롤러의 `About` 액션에 `[Authorize]` 특성을 추가합니다.
 
-    ```cs
+    ```csharp
     [Authorize]
     public IActionResult About()
     {
@@ -166,7 +166,7 @@ ASP.NET Core Identity는 SQL Server 데이터베이스에 사용자 이름, 비�
 
     명령 창을 열고 `.csproj` 파일이 위치한 프로젝트의 루트 디렉터리로 이동합니다. 실행의 [실행 dotnet](/dotnet/core/tools/dotnet-run) 명령을 앱을 실행 하려면:
 
-    ```cs
+    ```csharp
     dotnet run 
     ```
 

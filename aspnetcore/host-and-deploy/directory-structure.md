@@ -1,7 +1,7 @@
 ---
 title: ASP.NET Core 디렉터리 구조
 author: guardrex
-description: 게시 된 ASP.NET Core 응용 프로그램의 디렉터리 구조에 알아봅니다.
+description: 게시된 ASP.NET Core 앱의 디렉터리 구조에 대해 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/directory-structure
-ms.openlocfilehash: ac9b777bcc7f4a8634161fc1347a4d0fdc3b4784
-ms.sourcegitcommit: 7c8fd9b7445cd77eb7f7d774bfd120c26f3b5d84
+ms.openlocfilehash: a5cc1f23d624643facddc9e2006fb246e5ae66dc
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="aspnet-core-directory-structure"></a>ASP.NET Core 디렉터리 구조
 
@@ -34,7 +34,7 @@ ASP.NET Core, 게시 된 응용 프로그램 디렉터리에서에서 *게시*, 
 
 *wwwroot* 디렉터리에 있는 경우 정적 자산이 포함만 합니다.
 
-stdout *로그* 디렉터리는 다음 두 가지 방법 중 하나를 사용 하 여 배포를 만들 수 있습니다.
+stdout *로그* 다음 두 가지 방법 중 하나를 사용 하 여 배포에 대 한 디렉터리를 만들 수 있습니다.
 
 * 다음 추가 `<Target>` 프로젝트 파일에는 요소:
 

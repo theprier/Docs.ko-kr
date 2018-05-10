@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: fundamentals/index
-ms.openlocfilehash: d5b74e213828d1a1f7e09810e5cc72773a821dab
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 223b1906ef9941084e18e0698f007d9564e81f09
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="aspnet-core-fundamentals"></a>ASP.NET Core 기본 사항
 
@@ -107,7 +107,7 @@ ASP.NET Core 앱에서 [OWIN](http://owin.org) 기반 미들웨어를 사용할 
 
 "Development" 및 "Production" 같은 환경은 ASP.NET Core의 일급 개념으로, 환경 변수를 통해서 설정할 수 있습니다.
 
-자세한 내용은 [여러 환경 사용](xref:fundamentals/environments)를 참고하시기 바랍니다.
+자세한 내용은 [여러 환경 사용](xref:fundamentals/environments)를 참조하세요.
 
 ## <a name="configuration"></a>구성
 
@@ -143,7 +143,7 @@ ASP.NET Core는 파일 공급자를 사용하여 파일 시스템 액세스를 �
 
 정적 파일 미들웨어는 HTML, CSS, 이미지, JavaScript 등의 정적 파일을 제공합니다.
 
-자세한 내용은 [고정 파일 작업](xref:fundamentals/static-files)을 참조하세요.
+자세한 내용은 [정적 파일](xref:fundamentals/static-files)을 참조하세요.
 
 ## <a name="hosting"></a>호스팅
 

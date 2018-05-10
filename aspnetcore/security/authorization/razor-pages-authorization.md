@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core의 razor 페이지 권한 부여 규칙"
+title: ASP.NET Core의 razor 페이지 권한 부여 규칙
 author: guardrex
-description: "사용자가 권한을 부여 하 고 익명 사용자가 페이지나 페이지의 하위 폴더에 액세스할 수 있도록 하는 규칙을 사용 하 여 페이지에 대 한 액세스를 제어 하는 방법에 알아봅니다."
+description: 사용자가 권한을 부여 하 고 익명 사용자가 페이지나 페이지의 하위 폴더에 액세스할 수 있도록 하는 규칙을 사용 하 여 페이지에 대 한 액세스를 제어 하는 방법에 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 10/27/2017
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/razor-pages-authorization
-ms.openlocfilehash: bbef653c6cf968527e753df9c853f5972640cc03
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: 2fd8cd444b1d774c387dc6426af5914bde9b8ae7
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="razor-pages-authorization-conventions-in-aspnet-core"></a>ASP.NET Core의 razor 페이지 권한 부여 규칙
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 03/02/2018
 
 Razor 페이지 응용 프로그램에서 액세스를 제어 하는 한 가지 방법은 시작 시 권한 부여 규칙을 사용 하는 것입니다. 이러한 규칙을 사용 하 여 사용자 권한을 부여 하 고 익명 사용자가 개별 페이지나 페이지의 하위 폴더에 액세스할 수 있도록 수 있습니다. 자동으로이 항목에서 설명 하는 규칙이 적용 [권한 부여 필터](xref:mvc/controllers/filters#authorization-filters) 액세스를 제어할 수 있습니다.
 
-[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/razor-pages-authorization/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/razor-pages-authorization/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="require-authorization-to-access-a-page"></a>페이지에 액세스할 수 있는 인증 필요
 
@@ -77,7 +77,7 @@ Razor 페이지 응용 프로그램에서 액세스를 제어 하는 한 가지 
 
 개인 페이지에 권한 부여가 필요한 수 없으므로 작동 하지 때 모두는 `AllowAnonymousFilter` 및 `AuthorizeFilter` 페이지에 필터가 적용 된는 `AllowAnonymousFilter` wins 및 액세스를 제어 합니다.
 
-## <a name="see-also"></a>참고 항목
+## <a name="see-also"></a>참고자료
 
-* [Razor 페이지 사용자 지정 경로 및 페이지 모델 공급자](xref:mvc/razor-pages/razor-pages-convention-features)
+* [Razor 페이지 사용자 지정 경로 및 페이지 모델 공급자](xref:mvc/razor-pages/razor-pages-conventions)
 * [PageConventionCollection](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.pageconventioncollection) 클래스

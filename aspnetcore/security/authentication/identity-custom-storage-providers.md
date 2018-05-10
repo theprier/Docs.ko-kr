@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: bd5e5219765dfea0305fa02e79e5423266ce4df2
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: a50069586c702152e81961773114ea75901ab23d
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>ASP.NET Core Id에 대 한 사용자 지정 저장소 공급자
 
@@ -62,7 +62,7 @@ ASP.NET Core Id 관리자와 저장소를 호출 하는 클래스로 구성 됩�
 
 ### <a name="users"></a>사용자
 
-웹 사이트의 등록 된 사용자입니다. [IdentityUser](/dotnet/api/microsoft.aspnet.identity.corecompat.identityuser) 형식을 확장 하거나 사용자 고유의 사용자 지정 형식에 대 한 예제로 사용 될 수 있습니다. 사용자 지정 id 저장소 솔루션을 구현 하는 특정 형식에서 상속할 필요가 없습니다.
+웹 사이트의 등록 된 사용자입니다. [IdentityUser](/aspnet/core/api/microsoft.aspnet.identity.corecompat.identityuser) 형식을 확장 하거나 사용자 고유의 사용자 지정 형식에 대 한 예제로 사용 될 수 있습니다. 사용자 지정 id 저장소 솔루션을 구현 하는 특정 형식에서 상속할 필요가 없습니다.
 
 ### <a name="user-claims"></a>사용자 클레임
 
@@ -70,11 +70,11 @@ ASP.NET Core Id 관리자와 저장소를 호출 하는 클래스로 구성 됩�
 
 ### <a name="user-logins"></a>사용자 로그인
 
-외부 인증 공급자 (예: Facebook 또는 Microsoft 계정)에 대 한 정보는 사용자를 로그인 할 때 사용 하도록 합니다. [예제](/dotnet/api/microsoft.aspnet.identity.corecompat.identityuserlogin)
+외부 인증 공급자 (예: Facebook 또는 Microsoft 계정)에 대 한 정보는 사용자를 로그인 할 때 사용 하도록 합니다. [예제](/aspnet/core/api/microsoft.aspnet.identity.corecompat.identityuserlogin)
 
 ### <a name="roles"></a>역할
 
-사이트에 대 한 권한 부여 그룹입니다. 역할 Id 및 역할 이름 (예: "Admin" 또는 "Employee")를 포함합니다. [예제](/dotnet/api/microsoft.aspnet.identity.corecompat.identityrole)
+사이트에 대 한 권한 부여 그룹입니다. 역할 Id 및 역할 이름 (예: "Admin" 또는 "Employee")를 포함합니다. [예제](/aspnet/core/api/microsoft.aspnet.identity.corecompat.identityrole)
 
 ## <a name="the-data-access-layer"></a>데이터 액세스 계층
 
@@ -86,11 +86,11 @@ ASP.NET Core Id 관리자와 저장소를 호출 하는 클래스로 구성 됩�
 
 ### <a name="context-class"></a>Context 클래스
 
-지 속성 메커니즘에 연결 하 고 쿼리를 실행 하는 정보를 캡슐화 합니다. 종속성 주입을 통해 일반적으로 제공 되는이 클래스의 인스턴스를 필요로 하는 여러 데이터 클래스입니다. [예제](/dotnet/api/microsoft.aspnet.identity.corecompat.identitydbcontext-1)합니다.
+지 속성 메커니즘에 연결 하 고 쿼리를 실행 하는 정보를 캡슐화 합니다. 종속성 주입을 통해 일반적으로 제공 되는이 클래스의 인스턴스를 필요로 하는 여러 데이터 클래스입니다. [예제](/aspnet/core/api/microsoft.aspnet.identity.corecompat.identitydbcontext-1)합니다.
 
 ### <a name="user-storage"></a>사용자 저장소
 
-저장 하 고 사용자 정보 (예: 사용자 이름 및 암호 해시)를 검색 합니다. [예제](/dotnet/api/microsoft.aspnet.identity.corecompat.userstore-1)
+저장 하 고 사용자 정보 (예: 사용자 이름 및 암호 해시)를 검색 합니다. [예제](/aspnet/core/api/microsoft.aspnet.identity.corecompat.userstore-1)
 
 ### <a name="role-storage"></a>역할 저장소
 
@@ -98,15 +98,15 @@ ASP.NET Core Id 관리자와 저장소를 호출 하는 클래스로 구성 됩�
 
 ### <a name="userclaims-storage"></a>UserClaims 저장소
 
-저장 하 고 사용자 클레임 정보 (예: 클레임 유형 및 값)를 검색 합니다. [예제](/dotnet/api/microsoft.aspnet.identity.corecompat.userstore-1)
+저장 하 고 사용자 클레임 정보 (예: 클레임 유형 및 값)를 검색 합니다. [예제](/aspnet/core/api/microsoft.aspnet.identity.corecompat.userstore-1)
 
 ### <a name="userlogins-storage"></a>UserLogins 저장소
 
-저장 하 고 (예: 외부 인증 공급자 사용 하 는) 사용자 로그인 정보를 검색 합니다. [예제](/dotnet/api/microsoft.aspnet.identity.corecompat.userstore-1)
+저장 하 고 (예: 외부 인증 공급자 사용 하 는) 사용자 로그인 정보를 검색 합니다. [예제](/aspnet/core/api/microsoft.aspnet.identity.corecompat.userstore-1)
 
 ### <a name="userrole-storage"></a>UserRole 저장소
 
-저장 하 고 있는 사용자에 게 할당 된 역할을 검색 합니다. [예제](/dotnet/api/microsoft.aspnet.identity.corecompat.userstore-1)
+저장 하 고 있는 사용자에 게 할당 된 역할을 검색 합니다. [예제](/aspnet/core/api/microsoft.aspnet.identity.corecompat.userstore-1)
 
 **팁:** 만 응용 프로그램에서 사용 하려는 클래스를 구현 합니다.
 
@@ -114,15 +114,15 @@ ASP.NET Core Id 관리자와 저장소를 호출 하는 클래스로 구성 됩�
 
 [!code-csharp[](identity-custom-storage-providers/sample/CustomIdentityProviderSample/CustomProvider/CustomUserStore.cs?name=createuser&highlight=7)]
 
-사용자 만들기에 대 한 구현 논리에는 ``_usersTable.CreateAsync`` 메서드를 아래에 표시 합니다.
+사용자 만들기에 대 한 구현 논리에는 `_usersTable.CreateAsync` 메서드를 아래에 표시 합니다.
 
 ## <a name="customize-the-user-class"></a>사용자 클래스를 사용자 지정
 
-저장소 공급자를 구현할 때에 사용자 클래스를 만듭니다는 [ `IdentityUser` 클래스](/dotnet/api/microsoft.aspnet.identity.corecompat.identityuser)합니다.
+저장소 공급자를 구현할 때에 사용자 클래스를 만듭니다는 [ `IdentityUser` 클래스](/aspnet/core/api/microsoft.aspnet.identity.corecompat.identityuser)합니다.
 
 여기에 최소한 사용자 클래스에 포함 해야 합니다는 `Id` 및 `UserName` 속성입니다.
 
-`IdentityUser` 클래스 속성을 정의 하는 ``UserManager`` 호출을 수행할 때 요청 작업입니다. 기본 유형을 `Id` 속성은 문자열 이지만에서 상속할 수 있습니다 `IdentityUser<TKey, TUserClaim, TUserRole, TUserLogin, TUserToken>` 하 고 다른 형식을 지정 합니다. 프레임 워크는 데이터 형식 변환을 처리 하는 저장소 구현이 필요 합니다.
+`IdentityUser` 클래스 속성을 정의 하는 `UserManager` 호출을 수행할 때 요청 작업입니다. 기본 유형을 `Id` 속성은 문자열 이지만에서 상속할 수 있습니다 `IdentityUser<TKey, TUserClaim, TUserRole, TUserLogin, TUserToken>` 하 고 다른 형식을 지정 합니다. 프레임 워크는 데이터 형식 변환을 처리 하는 저장소 구현이 필요 합니다.
 
 ## <a name="customize-the-user-store"></a>사용자 저장소에 사용자 지정
 
@@ -188,7 +188,7 @@ public class UserStore : IUserStore<IdentityUser>,
 
 ### <a name="identityuserclaim-identityuserlogin-and-identityuserrole"></a>IdentityUserClaim, IdentityUserLogin, 및 IdentityUserRole
 
-``Microsoft.AspNet.Identity.EntityFramework`` 네임 스페이스에 구현 된 [IdentityUserClaim](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identityuserclaim-1), [IdentityUserLogin](/dotnet/api/microsoft.aspnet.identity.corecompat.identityuserlogin), 및 [IdentityUserRole](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identityuserrole-1) 클래스입니다. 이러한 기능을 사용 하는 경우에 이러한 클래스의 사용자가 자체 버전을 만들고 응용 프로그램에 대 한 속성을 정의 하는 것이 좋습니다. 그러나 때로는 것이 효율적 기본 작업 (예: 추가 또는 제거 하는 사용자의 클레임)를 수행할 때 이러한 엔터티를 메모리에 로드 하지 않도록 합니다. 대신, 백 엔드 저장소 클래스는 데이터 원본에 직접 이러한 작업을 실행할 수 있습니다. 예를 들어는 ``UserStore.GetClaimsAsync`` 메서드를 호출할 수는 ``userClaimTable.FindByUserId(user.Id)`` 에 대 한 쿼리를 실행 하는 메서드를 직접 테이블 클레임의 목록을 반환 합니다.
+`Microsoft.AspNet.Identity.EntityFramework` 네임 스페이스에 구현 된 [IdentityUserClaim](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identityuserclaim-1), [IdentityUserLogin](/aspnet/core/api/microsoft.aspnet.identity.corecompat.identityuserlogin), 및 [IdentityUserRole](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.identityuserrole-1) 클래스입니다. 이러한 기능을 사용 하는 경우에 이러한 클래스의 사용자가 자체 버전을 만들고 응용 프로그램에 대 한 속성을 정의 하는 것이 좋습니다. 그러나 때로는 것이 효율적 기본 작업 (예: 추가 또는 제거 하는 사용자의 클레임)를 수행할 때 이러한 엔터티를 메모리에 로드 하지 않도록 합니다. 대신, 백 엔드 저장소 클래스는 데이터 원본에 직접 이러한 작업을 실행할 수 있습니다. 예를 들어는 `UserStore.GetClaimsAsync` 메서드를 호출할 수는 `userClaimTable.FindByUserId(user.Id)` 에 대 한 쿼리를 실행 하는 메서드를 직접 테이블 클레임의 목록을 반환 합니다.
 
 ## <a name="customize-the-role-class"></a>Role 클래스를 사용자 지정
 
@@ -200,7 +200,7 @@ public class UserStore : IUserStore<IdentityUser>,
 
 ## <a name="customize-the-role-store"></a>역할 저장소의 사용자 지정
 
-만들 수는 ``RoleStore`` 역할에 대 한 모든 데이터 작업에 대 한 메서드를 제공 하는 클래스입니다. 이 클래스는 해당 하는 [RoleStore<TRole> ](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.rolestore-1) 클래스입니다. 에 `RoleStore` 구현 클래스는 ``IRoleStore<TRole>`` 하 고 선택적으로 ``IQueryableRoleStore<TRole>`` 인터페이스입니다.
+만들 수는 `RoleStore` 역할에 대 한 모든 데이터 작업에 대 한 메서드를 제공 하는 클래스입니다. 이 클래스는 해당 하는 [RoleStore<TRole> ](/dotnet/api/microsoft.aspnetcore.identity.entityframeworkcore.rolestore-1) 클래스입니다. 에 `RoleStore` 구현 클래스는 `IRoleStore<TRole>` 하 고 선택적으로 `IQueryableRoleStore<TRole>` 인터페이스입니다.
 
 - **IRoleStore&lt;TRole&gt;**  
  [IRoleStore](/dotnet/api/microsoft.aspnetcore.identity.irolestore-1) 인터페이스 역할 저장소 클래스에서 구현 하는 메서드를 정의 합니다. 만들기, 업데이트, 삭제 및 역할을 검색 하는 메서드를 포함 합니다.
@@ -214,7 +214,7 @@ public class UserStore : IUserStore<IdentityUser>,
 1. 제거는 `Microsoft.AspNetCore.EntityFramework.Identity` NuGet 패키지 합니다.
 1. 저장소 공급자와는 별도 프로젝트 또는 패키지에 있는 경우에 대 한 참조를 추가 합니다.
 1. 에 대 한 모든 참조 바꿉니다 `Microsoft.AspNetCore.EntityFramework.Identity` 을 사용 하 여 저장소 공급자의 네임 스페이스에 대 한 문입니다.
-1. 에 ``ConfigureServices`` change 메서드에 `AddIdentity` 사용자 지정 형식을 사용 하는 메서드. 이 용도 대 한 확장 메서드를 만들 수 있습니다. 참조 [IdentityServiceCollectionExtensions](https://github.com/aspnet/Identity/blob/rel/1.1.0/src/Microsoft.AspNetCore.Identity/IdentityServiceCollectionExtensions.cs) 예에 대 한 합니다.
+1. 에 `ConfigureServices` change 메서드에 `AddIdentity` 사용자 지정 형식을 사용 하는 메서드. 이 용도 대 한 확장 메서드를 만들 수 있습니다. 참조 [IdentityServiceCollectionExtensions](https://github.com/aspnet/Identity/blob/rel/1.1.0/src/Microsoft.AspNetCore.Identity/IdentityServiceCollectionExtensions.cs) 예에 대 한 합니다.
 1. 역할을 사용 하는 업데이트는 `RoleManager` 사용 하 여 `RoleStore` 클래스입니다.
 1. 응용 프로그램의 구성에는 연결 문자열 및 자격 증명을 업데이트 합니다.
 
@@ -240,5 +240,5 @@ public void ConfigureServices(IServiceCollection services)
 
 ## <a name="references"></a>참조
 
-- [ASP.NET Id에 대 한 사용자 지정 저장소 공급자](https://docs.microsoft.com/aspnet/identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity)
+- [ASP.NET Id에 대 한 사용자 지정 저장소 공급자](/aspnet/identity/overview/extensibility/overview-of-custom-storage-providers-for-aspnet-identity)
 - [ASP.NET Core Id](https://github.com/aspnet/identity) -이 저장소에 저장소 공급자를 유지 관리 하는 커뮤니티에 대 한 링크를 포함 합니다.

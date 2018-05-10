@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/index
-ms.openlocfilehash: b1c2b734a2e9b274792b597bfd222c31e661b0d7
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 4637ff6312f32f5887ff0f7a6e74d10f5beb0ca5
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="configuration-in-aspnet-core"></a>ASP.NET Core의 구성
 
@@ -105,7 +105,7 @@ ASP.NET Core 1.x 앱은 `AddJsonFile` 및 [AddEnvironmentVariables](/dotnet/api/
 
 [!code-csharp[](index/sample/StartupConfig.cs?name=snippet&highlight=3,4)]
 
-환경은 일반적으로 `Development`, `Staging` 또는 `Production`으로 설정됩니다. 자세한 내용은 [여러 환경 사용](xref:fundamentals/environments)를 참고하시기 바랍니다.
+환경은 일반적으로 `Development`, `Staging` 또는 `Production`으로 설정됩니다. 자세한 내용은 [여러 환경 사용](xref:fundamentals/environments)를 참조하세요.
 
 구성 고려 사항:
 
@@ -412,6 +412,10 @@ IIS 또는 IIS Express에서 앱을 호스트하는 경우 *web.config* 파일�
 ## <a name="access-configuration-during-startup"></a>시작하는 동안 구성에 액세스
 
 시작하는 동안 `ConfigureServices` 또는 `Configure` 내에서 구성에 액세스하려면 [응용 프로그램 시작](xref:fundamentals/startup) 항목의 예를 참조하세요.
+
+## <a name="adding-configuration-from-an-external-assembly"></a>외부 어셈블리의 구성 추가
+
+[IHostingStartup](/dotnet/api/microsoft.aspnetcore.hosting.ihostingstartup) 구현에서는 시작 시 앱의 `Startup` 클래스 외부에 있는 외부 어셈블리에서 앱에 향상된 기능을 추가할 수 있습니다. 자세한 내용은 [외부 어셈블리에서 앱 강화](xref:fundamentals/configuration/platform-specific-configuration)를 참조하세요.
 
 ## <a name="access-configuration-in-a-razor-page-or-mvc-view"></a>Razor 페이지 또는 MVC 뷰에서 구성에 액세스
 

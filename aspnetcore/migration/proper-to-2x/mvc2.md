@@ -1,5 +1,5 @@
 ---
-title: ASP.NET에서 ASP.NET Core 2.0 마이그레이션
+title: ASP.NET에서 ASP.NET Core 2.0으로 마이그레이션
 author: isaac2004
 description: 기존 ASP.NET MVC 또는 Web API 응용 프로그램을 마이그레이션하여 ASP.NET 코어 2.0에 대 한 지침을 수신 합니다.
 manager: wpickett
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/mvc2
-ms.openlocfilehash: 58fac7642dbfdad58fef99f04d17de33e7218524
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: f8e9d3c222bdd5491e946f286bbdf71a2d26ab10
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/08/2018
 ---
-# <a name="migrate-from-aspnet-to-aspnet-core-20"></a>ASP.NET에서 ASP.NET Core 2.0 마이그레이션
+# <a name="migrate-from-aspnet-to-aspnet-core-20"></a>ASP.NET에서 ASP.NET Core 2.0으로 마이그레이션
 
 작성자: [Isaac Levin](https://isaaclevin.com)
 
@@ -150,7 +150,7 @@ ASP.NET Core에서 정적 파일은 별도로 구성되지 않는 한 “웹 루
 
 예를 들어 *wwwroot/images* 폴더의 이미지 자산은 `http://<app>/images/<imageFileName>`과 같은 위치의 브라우저에 액세스할 수 있습니다.
 
-**참고:** ASP.NET Core에 정적 파일 처리에 대 한 자세한 참조를 참조 하십시오. [ASP.NET Core에서 정적 파일로 작업할](xref:fundamentals/static-files)합니다.
+**참고:** ASP.NET Core에 정적 파일 처리에 대 한 자세한 참조를 참조 하십시오. [정적 파일](xref:fundamentals/static-files)합니다.
 
 ## <a name="additional-resources"></a>추가 자료
 

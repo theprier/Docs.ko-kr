@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/lifecycle-of-an-aspnet-mvc-5-application
-title: "ASP.NET MVC 5 응용 프로그램의 수명 주기 | Microsoft Docs"
+title: ASP.NET MVC 5 응용 프로그램의 수명 주기 | Microsoft Docs
 author: cephalin
-description: "ASP.NET MVC 5 응용 프로그램의 수명 주기를 차트를 PDF 문서를 다운로드 합니다. 이 주기 문서에서는 MVC 수명 주기를 간략하게 제공는 중..."
+description: ASP.NET MVC 5 응용 프로그램의 수명 주기를 차트로 보여주는 PDF 문서를 다운로드합니다. 이 수명 주기 문서는 MVC 수명 주기에 대한 개요를 제공합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/28/2014
@@ -20,22 +20,22 @@ ms.lasthandoff: 01/24/2018
 ---
 <a name="lifecycle-of-an-aspnet-mvc-5-application"></a>ASP.NET MVC 5 응용 프로그램의 수명 주기
 ====================
-으로 [Cephas 링크](https://github.com/cephalin)
+작성자: [Cephas Lin](https://github.com/cephalin)
 
-[PDF 문서를 다운로드 합니다.](lifecycle-of-an-aspnet-mvc-5-application/_static/lifecycle-of-an-aspnet-mvc-5-application1.pdf)
+[PDF 문서 다운로드](lifecycle-of-an-aspnet-mvc-5-application/_static/lifecycle-of-an-aspnet-mvc-5-application1.pdf)
 
-여기에서 HTTP 수신 모든 ASP.NET MVC 5 응용 프로그램의 수명 주기는 HTTP 응답을 보내는 것에 요청 하는 차트를 다시 클라이언트에 PDF 문서를 다운로드할 수 있습니다. ASP.NET MVC와 접하는 사용자에 게 교육 도구로도 응용 프로그램의 특정 측면을 드릴 필요로 하는 사람들에 대 한 참조로 설계 되었습니다. PDF 문서에는 다음 기능이 있습니다.
+HTTP 요청을 받고 HTTP 요청을 다시 클라이언트로 보내는 ASP.NET MVC 5 응용 프로그램의 수명 주기를 차트로 보여주는 PDF 문서를 여기서 다운로드할 수 있습니다. 이 문서는 ASP.NET MVC를 처음 접하는 분들을 위한 교육 도구이자 응용 프로그램의 특정 기능을 자세히 알아보려는 분들을 위한 참조 자료로 작성되었습니다. PDF 문서의 특징은 다음과 같습니다.
 
-- 관련 [HttpApplication](https://msdn.microsoft.com/library/system.web.httpapplication.aspx) MVC에 통합 하는 위치를 쉽게 이해할 수 있도록 하는 단계는 [ASP.NET 응용 프로그램 수명 주기](https://msdn.microsoft.com/library/bb470252.aspx)합니다.
-- 높은 수준의 MVC 응용 프로그램 수명 주기 모든 MVC 응용 프로그램 요청 처리 파이프라인의를 통해 전달 되는 주요 단계를 이해할 수 있습니다.  
+- MVC가 [ASP.NET 응용 프로그램 수명 주기](https://msdn.microsoft.com/library/bb470252.aspx)의 어느 부분에 통합되는지 이해를 도와주는 관련 [HttpApplication](https://msdn.microsoft.com/library/system.web.httpapplication.aspx) 단계.
+- 요청 처리 파이프라인에서 모든 MVC 응용 프로그램이 통과하는 주요 단계를 이해할 수 있는 MVC 응용 프로그램 수명 주기에 대한 개요 보기.  
     ![](lifecycle-of-an-aspnet-mvc-5-application/_static/image1.jpg)
-- 요청 처리 파이프라인의 세부 정보를 드릴 다운 표시 하는 세부 정보 보기입니다. 상위 수준 뷰와 여러 단계로 주기 정보가 수집 되는 방법을 보려면 세부 정보 보기를 비교할 수 있습니다. [PDF 다운로드](lifecycle-of-an-aspnet-mvc-5-application/_static/lifecycle-of-an-aspnet-mvc-5-application1.pdf) 더 크게 보려면 볼 수 있습니다.
+- 요청 처리 파이프라인의 세부 정보를 보여주는 세부 정보 보기. 개요 보기와 세부 정보 보기를 비교하여 수명 주기에 대한 상세 정보가 다양한 단계로 수집되는 원리를 볼 수 있습니다. 더 크게 보려면 [PDF를 다운로드](lifecycle-of-an-aspnet-mvc-5-application/_static/lifecycle-of-an-aspnet-mvc-5-application1.pdf)하세요.
     ![](lifecycle-of-an-aspnet-mvc-5-application/_static/image2.jpg)
-- 에 있는 모든 재정의 가능한 메서드가의 목적 및 배치는 [컨트롤러](https://msdn.microsoft.com/library/system.web.mvc.controller.aspx) 요청 처리 파이프라인에서 개체입니다. 수도 한 모든 메서드를 재정의 필요가 없을 수 있습니다 하지만 결과 얻기에 대 한 적절 한 수명 주기 단계에서 코드를 작성할 수 있도록 응용 프로그램 수명 주기에서 자신의 역할을 이해 하는 것이 유용 합니다.
-- 각 필터 형식 (예: 인증, 권한 부여, 동작 및 결과)이 호출 하는 방법을 보여 주는 나간 접속 다이어그램.
-- 세부 정보 보기에 대 한 관심의 각 지점에서 유용한 문서 또는 블로그를 연결 합니다.
+- 요청 처리 파이프라인의 [컨트롤러](https://msdn.microsoft.com/library/system.web.mvc.controller.aspx) 개체에서 재정의 가능한 모든 메서드의 배치 및 목적. 어떤 메서드를 재정의해야 할 수도 있고 재정의할 필요가 없을 수도 있지만, 응용 프로그램 수명 주기에서 메서드가 하는 역할을 이해하면 적절한 수명 주기 단계에서 코드를 작성하여 원하는 효과를 얻을 수 있습니다.
+- 각 필터 유형(예: 인증, 권한 부여, 작업, 결과)이 호출되는 방식을 보여주는 확대 다이어그램.
+- 세부 정보 보기의 각 관심 지점에 제공되는 유용한 문서 또는 블로그.
 
 
 ## <a name="next-steps"></a>다음 단계
 
-이 문서에 요구 사항에 충족 됩니까? 여러분의 의견 보내 주셔서 감사 합니다. 응용 프로그램에서 ASP.NET MVC 수명 주기 궁금한 사항이 있는 경우 [Stackoverflow](http://stackoverflow.com/help) 및 [ASP.NET MVC 포럼](https://forums.asp.net/1146.aspx) 하 게 합니다. 에 따라 [me](https://twitter.com/Cephas_MSFT) 에서 twitter 때문 내 최신 자습서에 대 한 업데이트를 가져올 수 있습니다.
+이 문서로 요구 사항이 충족되었습니까? 소중한 의견에 감사합니다. 응용 프로그램의 ASP.NET MVC 수명 주기에 대해 궁금한 사항이 있는 경우 [Stackoverflow](http://stackoverflow.com/help) 및 [ASP.NET MVC 포럼](https://forums.asp.net/1146.aspx)에 질문을 올려주세요. twitter에서 [저](https://twitter.com/Cephas_MSFT)를 팔로우하시면 최신 자습서 업데이트를 받으실 수 있습니다.

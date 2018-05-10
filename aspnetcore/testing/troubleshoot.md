@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: content
 uid: testing/troubleshoot
-ms.openlocfilehash: a75dc666621600e1e2fe36c29acbe7484bae9229
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: f2c785bfe27ddd67db0313b8ee1c077a8cc06e05
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="troubleshoot-aspnet-core-projects"></a>ASP.NET Core 프로젝트 문제 해결
 
@@ -24,13 +24,13 @@ ms.lasthandoff: 04/18/2018
 * [Azure App Service에서 ASP.NET Core 문제 해결](xref:host-and-deploy/azure-apps/troubleshoot)
 * [IIS에서 ASP.NET Core 문제 해결](xref:host-and-deploy/iis/troubleshoot)
 * [ASP.NET Core를 사용하는 Azure App Service 및 IIS에 대한 일반적인 오류 참조](xref:host-and-deploy/azure-iis-errors-reference)
-* [YouTube: ASP.NET Core 응용 프로그램의 문제를 진단합니다.](https://www.youtube.com/watch?v=RYI0DHoIVaA)
+* [YouTube: ASP.NET Core 응용 프로그램의 문제 진단](https://www.youtube.com/watch?v=RYI0DHoIVaA)
 
 <a name="sdk"></a>
 ## <a name="net-core-sdk-warnings"></a>.NET core SDK 경고
 
-### <a name="both-the-32-and-64-bit-versions-of-the-net-core-sdk-are-installed"></a>모두 32와 64 비트 버전의.NET Core SDK가 설치 된
-에 **새 프로젝트** 대화 ASP.NET Core 상단에 표시 하는 경우 다음과 같은 경고가 표시 될 수 있습니다. 
+### <a name="both-the-32-bit-and-64-bit-versions-of-the-net-core-sdk-are-installed"></a>설치 되는 32 비트 및 64 비트 버전의.NET Core SDK
+에 **새 프로젝트** 대화 ASP.NET Core에 대 한 다음과 같은 경고가 표시 될 수 있습니다. 
 
     Both 32 and 64 bit versions of the .NET Core SDK are installed. Only templates from the 64 bit version(s) installed at C:\Program Files\dotnet\sdk\" will be displayed.
 
@@ -45,12 +45,24 @@ ms.lasthandoff: 04/18/2018
 이 경고를 방지 하기 위해 32 비트.NET Core SDK를 제거 합니다. 제거 **제어판** > **프로그램 및 기능** > **제거 또는 변경 프로그램**합니다. 경고의 발생 이유 및 그 의미를 이해 하는 경우 경고를 무시할 수 있습니다.
 
 ### <a name="the-net-core-sdk-is-installed-in-multiple-locations"></a>.NET Core SDK가 여러 위치에 설치 되어 있습니다.
-에 **새 프로젝트** 대화에 대 한 ASP.NET Core 상단에 표시 하는 경우 다음과 같은 경고가 표시 될 수 있습니다. 
+에 **새 프로젝트** 대화 ASP.NET Core에 대 한 다음과 같은 경고가 표시 될 수 있습니다. 
 
  .NET Core SDK는 여러 위치에 설치 됩니다. 에 설치 된과에서 템플릿만 ' C:\Program Files\dotnet\sdk\' 표시 됩니다.
 
 ![경고 메시지를 보여 주는 OneASP.NET 대화 상자의 스크린 샷](troubleshoot/_static/multiplelocations.png)
 
-.NET Core SDK의 하나 이상 설치 디렉터리의 외부에 있으므로이 메시지는 표시 * C:\Program Files\dotnet\sdk\*합니다. 일반적으로.NET Core SDK MSI 설치 프로그램을 대신 복사/붙여넣기를 사용 하는 컴퓨터에 배포 된 경우 발생 합니다.
+.NET Core SDK의 하나 이상 설치 디렉터리의 외부에 있는 경우이 메시지가 나타나는 * C:\Program Files\dotnet\sdk\*합니다. 일반적으로.NET Core SDK MSI 설치 프로그램을 대신 복사/붙여넣기를 사용 하는 컴퓨터에 배포 된 경우 발생 합니다.
 
 이 경고를 방지 하기 위해 32 비트.NET Core SDK를 제거 합니다. 제거 **제어판** > **프로그램 및 기능** > **제거 또는 변경 프로그램**합니다. 경고의 발생 이유 및 그 의미를 이해 하는 경우 경고를 무시할 수 있습니다.
+
+### <a name="no-net-core-sdks-were-detected"></a>.NET Core Sdk은 찾았습니다.
+에 **새 프로젝트** 대화 ASP.NET Core에 대 한 다음과 같은 경고가 표시 될 수 있습니다. 
+
+**.NET Core Sdk를 찾았습니다., 'PATH' 환경 변수에 포함**
+
+![경고 메시지를 보여 주는 OneASP.NET 대화 상자의 스크린 샷](troubleshoot/_static/NoNetCore.png)
+
+이 경고를 표시 하는 경우 환경 변수 `PATH` 컴퓨터에 모든.NET Core Sdk를 가리키지 않습니다. 이 문제를 해결 방법:
+
+* 설치 또는.NET Core SDK 설치 되었는지 확인 합니다.
+* 확인 된 `PATH` 환경 변수는 SDK가 설치 하는 위치를 가리킵니다. 설치 관리자는 일반적으로 설정 된 `PATH`합니다.

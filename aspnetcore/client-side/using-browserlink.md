@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/using-browserlink
-ms.openlocfilehash: a75a896dd7ebc488e3e9344ec705c24201924375
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 0496f9df35956b8fe7ca9fcc7c03df33437d5a87
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="browser-link-in-aspnet-core"></a>ASP.NET Core에서 브라우저 링크
 
@@ -66,7 +66,7 @@ if (env.IsDevelopment())
 }
 ```
 
-자세한 내용은 참조 [여러 환경 작업할](xref:fundamentals/environments)합니다.
+자세한 내용은 참조 [여러 환경을 사용 하 여](xref:fundamentals/environments)합니다.
 
 ## <a name="how-to-use-browser-link"></a>브라우저 링크를 사용 하는 방법
 
@@ -112,7 +112,7 @@ Visual Studio 브라우저 링크 도구 모음 컨트롤 옆에 표시 ASP.NET 
 
 브라우저 링크에 대 한 드롭다운 메뉴를 열고 브라우저와 연결을 관리에서 브라우저 링크 대시보드를 엽니다.
 
-![open-browserslink-dashboard](using-browserlink/_static/open-browserlink-dashboard.png)
+![오픈 browserslink 대시보드](using-browserlink/_static/open-browserlink-dashboard.png)
 
 브라우저가 없으므로 연결 되어 있는 경우 선택 하 여 비-디버깅 세션을 시작할 수 있습니다는 *브라우저에서 보기* 링크:
 

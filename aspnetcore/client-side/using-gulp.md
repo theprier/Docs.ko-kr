@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: client-side/using-gulp
-ms.openlocfilehash: 7a3d7807484b76e40e9728e0c750fa1383cc271f
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 13f30be7670983bd65f8402404b841039bdacb09
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="use-gulp-in-aspnet-core"></a>ASP.NET Core에서 Gulp를 사용 합니다.
 
@@ -326,7 +326,7 @@ Gulp를 사용 하 여 스테이징 및 프로덕션에 대 한 클라이언트 
 
     연결 된 스타일 시트는 CSS 파일의 축소 되지 않은 버전은를 가리키는지 확인 합니다.
 
-환경에서 ASP.NET Core와 관련 된 자세한 내용은 참조 하십시오. [여러 환경 작업할](../fundamentals/environments.md)합니다.
+환경에서 ASP.NET Core와 관련 된 자세한 내용은 참조 하십시오. [여러 환경을 사용 하 여](../fundamentals/environments.md)합니다.
 
 ## <a name="task-and-module-details"></a>작업 및 모듈 세부 정보
 

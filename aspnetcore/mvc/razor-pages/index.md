@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: mvc/razor-pages/index
-ms.openlocfilehash: 08866543d5b510b86c6af1896a9bd41ae0053ecf
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: f9484d4806a7430177878b462209ba6608cfdd7d
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core의 Razor 페이지 소개
 
@@ -92,7 +92,7 @@ Razor 페이지는 *Startup.cs*에서 사용하도록 설정됩니다.
 
 ## <a name="writing-a-basic-form"></a>기본 폼 작성
 
-Razor 페이지 기능은 웹 브라우저에서 사용되는 일반 패턴을 쉽게 만들도록 고안되어 있습니다. [모델 바인딩](xref:mvc/models/model-binding), [태그 도우미](xref:mvc/views/tag-helpers/intro) 및 HTML 도우미는 모두 Razor 페이지 클래스에 정의된 속성에서 *제대로 작동*합니다. `Contact` 모델에 대한 기본 “연락처” 폼을 구현하는 페이지를 고려해 봅니다.
+Razor 페이지는 웹 브라우저에서 사용되는 일반 패턴을 쉽게 구현할 수 있도록 설계되었습니다. [모델 바인딩](xref:mvc/models/model-binding), [태그 도우미](xref:mvc/views/tag-helpers/intro) 및 HTML 도우미는 모두 Razor 페이지 클래스에 정의된 속성에서 *제대로 작동*합니다. `Contact` 모델에 대한 기본 “연락처” 폼을 구현하는 페이지를 고려해 봅니다.
 
 이 문서에 있는 샘플의 경우 `DbContext`는 [Startup.cs](https://github.com/aspnet/Docs/blob/master/aspnetcore/mvc/razor-pages/index/sample/RazorPagesContacts/Startup.cs#L15-L16) 파일에서 초기화됩니다.
 
@@ -147,7 +147,7 @@ db 컨텍스트:
 Razor 페이지는 기본적으로 GET이 아닌 동사에만 속성을 바인딩합니다. 속성에 바인딩하면 작성해야 하는 코드 양이 감소할 수 있습니다. 바인딩은 동일한 속성을 사용하여 폼 필드(`<input asp-for="Customer.Name" />`)를 렌더링하고 입력을 허용하는 방식으로 코드를 줄입니다.
 
 > [!NOTE]
-> 보안상의 이유로 페이지 모델 속성에 GET 요청 데이터를 바인딩하기 위해 옵트인해야 합니다. 속성에 매핑하기 전에 사용자 입력을 확인합니다. 쿼리 문자열이나 경로 값을 사용하는 기능을 빌드할 때 이 동작에 옵트인하면 유용합니다.
+> 보안상의 이유로 페이지 모델 속성에 GET 요청 데이터를 바인딩하기 위해 옵트인해야 합니다. 속성에 매핑하기 전에 사용자 입력을 확인합니다. 쿼리 문자열이나 경로 값을 사용하는 시나리오를 해결할 때 이 동작을 옵트인하면 유용합니다.
 >
 > GET 요청에 속성을 바인딩하려면 `[BindProperty]` 특성의 `SupportsGet` 속성을 `true`로 설정합니다. `[BindProperty(SupportsGet = true)]`
 
@@ -248,9 +248,9 @@ services.AddMvc()
 <a name="layout"></a>
 ## <a name="using-layouts-partials-templates-and-tag-helpers-with-razor-pages"></a>Razor 페이지와 함께 레이아웃, 부분, 템플릿 및 태그 도우미 사용
 
-페이지는 Razor 뷰 엔진의 모든 기능을 사용합니다. 레이아웃, 부분, 템플릿, 태그 도우미, *_ViewStart.cshtml*, *_ViewImports.cshtml*은 기존 Razor 뷰와 동일한 방식으로 작동합니다.
+페이지는 Razor 보기 엔진의 모든 기능과 함께 작동합니다. 레이아웃, 부분, 템플릿, 태그 도우미, *_ViewStart.cshtml*, *_ViewImports.cshtml*은 기존 Razor 뷰와 동일한 방식으로 작동합니다.
 
-해당 기능 중 일부를 활용하여 이 페이지의 문제를 해결해 보겠습니다.
+이러한 기능 중 일부를 활용하여 이 페이지의 문제를 해결해 보겠습니다.
 
 [레이아웃 페이지](xref:mvc/views/layout)를 *Pages/_Layout.cshtml*에 추가합니다.
 
@@ -336,7 +336,7 @@ Razor 페이지의 뷰 검색에는 *Pages* 폴더가 포함됩니다. MVC 컨�
 * `<a asp-page="/Index">My Index Page</a>`
 * `RedirectToPage("/Index")`
 
-페이지 이름은 루트 */Pages* 폴더에서 시작되는 페이지 경로입니다(선행 `/` 포함, 예: `/Index`). 이전 URL 생성 샘플은 URL 하드 코딩보다 훨씬 더 기능이 다양합니다. URL 생성은 [라우팅](xref:mvc/controllers/routing)을 사용하며 경로가 대상 경로에서 정의되는 방식에 따라 매개 변수를 생성하고 인코딩할 수 있습니다.
+페이지 이름은 루트 */Pages* 폴더에서 선행 `/`를 포함한 페이지 경로입니다(예: `/Index`). 이전 URL 생성 샘플은 URL 하드 코딩보다 향상된 옵션과 기능을 제공합니다. URL 생성은 [라우팅](xref:mvc/controllers/routing)을 사용하며 경로가 대상 경로에서 정의되는 방식에 따라 매개 변수를 생성하고 인코딩할 수 있습니다.
 
 페이지에 대한 URL 생성은 상대적 이름을 지원합니다. 다음 표에서는 *Pages/Customers/Create.cshtml*에서 다른 `RedirectToPage` 매개 변수를 통해 선택되는 인덱스 페이지를 보여 줍니다.
 
@@ -455,5 +455,5 @@ services.AddMvc()
 * [Razor 구문](xref:mvc/views/razor)
 * [Razor 페이지 시작](xref:tutorials/razor-pages/razor-pages-start)
 * [Razor 페이지 권한 부여 규칙](xref:security/authorization/razor-pages-authorization)
-* [Razor 페이지 사용자 지정 경로 및 페이지 모델 공급자](xref:mvc/razor-pages/razor-pages-convention-features)
+* [Razor 페이지 사용자 지정 경로 및 페이지 모델 공급자](xref:mvc/razor-pages/razor-pages-conventions)
 * [Razor 페이지 단위 및 통합 테스트](xref:testing/razor-pages-testing)
