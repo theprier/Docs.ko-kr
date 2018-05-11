@@ -4,16 +4,16 @@ author: ardalis
 description: ASP.NET Core mvc 웹 API 구현 ASP.NET Web API에서 마이그레이션하는 방법에 알아봅니다.
 manager: wpickett
 ms.author: riande
-ms.date: 10/14/2016
+ms.date: 05/10/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: migration/webapi
-ms.openlocfilehash: 059e1bc54c57e502ad01fd50d9899dfd0671037f
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 8d842877e49e317323d453e71ebb3302245f388d
+ms.sourcegitcommit: 3d071fabaf90e32906df97b08a8d00e602db25c0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="migrate-from-aspnet-web-api-to-aspnet-core"></a>ASP.NET Web API에서에서 ASP.NET Core로 마이그레이션
 
@@ -116,6 +116,37 @@ ASP.NET Core 더 이상 사용 되지 *Global.asax*, *web.config*, 또는 *App_S
 [!code-csharp[](../migration/webapi/sample/ProductsCore/Controllers/ProductsController.cs?highlight=1,2,6,8,9,27)]
 
 마이그레이션된 프로젝트를 실행 하 고를 이제 있어야 */api/제품*; 및 3 제품의 전체 목록을 표시 되어야 합니다. 찾아 */api/products/1* 첫 번째 제품 표시 되어야 합니다.
+
+## <a name="microsoftaspnetcoremvcwebapicompatshim"></a>Microsoft.AspNetCore.Mvc.WebApiCompatShim
+
+ASP.NET Core 마이그레이션 ASP.NET Web API 프로젝트 때 유용한 도구는는 [Microsoft.AspNetCore.Mvc.WebApiCompatShim](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.WebApiCompatShim) 라이브러리입니다. 호환성 shim 다양 한 다른 Web API 2 사용할 규칙을 허용 하도록 ASP.NET Core를 확장 합니다. 이 문서에서 이전에 이식 샘플은 기본 충분히 호환성 shim 필요 없습니다. 대규모 프로젝트 호환성 shim을 사용 하 여 가능 일시적으로 ASP.NET Core 및 ASP.NET Web API 2 간의 API 차이 조정 하는 데 유용 합니다.
+
+웹 API 호환성 shim ASP.NET Core로 큰 웹 API 프로젝트 마이그레이션 용이 하 게 임시 측정값으로 사용할 것입니다. 시간이 지남에 따라 프로젝트 호환성 shim에 의존 하지 않고 ASP.NET Core 패턴을 사용 하도록 업데이트 되어야 합니다. 
+
+Microsoft.AspNetCore.Mvc.WebApiCompatShim에 포함 된 호환성 기능은 다음과 같습니다.
+
+* 추가 `ApiController` 을 입력 하 여 컨트롤러의 기본 형식 업데이트할 필요가 없습니다.
+* 웹 API 스타일 모델 바인딩을 활성화합니다. ASP.NET Core MVC 모델 바인딩 비슷하게 작동 기본적으로 MVC 5입니다. 호환성 shim 변경 모델 바인딩을 유사한 Web API 2 모델 바인딩 규칙을 준수 해야 합니다. 예를 들어 복합 형식은 자동으로 요청 본문에서 바인딩됩니다.
+* 컨트롤러 동작의 형식 매개 변수를 사용할 수 있도록 모델 바인딩 확장 `HttpRequestMessage`합니다.
+* 추가 하는 형식의 결과를 반환할 작업 수 있도록 메시지 포맷터 `HttpResponseMessage`합니다.
+* Web API 2 작업 응답을 제공 하도록 사용 했을 수 있는 추가 응답 메서드를 추가 합니다.
+    * HttpResponseMessage 생성기:
+        * `CreateResponse<T>`
+        * `CreateErrorResponse`
+    * 작업 결과 메서드:
+        * `BadResuestErrorMessageResult`
+        * `ExceptionResult`
+        * `InternalServerErrorResult`
+        * `InvalidModelStateResult`
+        * `NegotiatedContentResult`
+        * `ResponseMessageResult`
+* 인스턴스를 추가 `IContentNegotiator` 응용 프로그램의 DI 컨테이너에는 콘텐츠 협상 관련 형식에서 및 [Microsoft.AspNet.WebApi.Client](https://www.nuget.org/packages/Microsoft.AspNet.WebApi.Client/) 사용할 수 있습니다. 에 같은 `DefaultContentNegotiator`, `MediaTypeFormatter`등입니다.
+
+호환성 shim을 사용 하려면:
+
+* 참조는 [Microsoft.AspNetCore.Mvc.WebApiCompatShim](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.WebApiCompatShim) NuGet 패키지 합니다.
+* 호환성 shim 서비스를 호출 하 여 응용 프로그램의 DI 컨테이너와 등록 `services.AddWebApiConventions()` 응용 프로그램의 `Startup.ConfigureServices` 메서드.
+* 웹 API 관련 경로 사용 하 여 정의 `MapWebApiRoute` 에 `IRouteBuilder` 응용 프로그램의 `IApplicationBuilder.UseMvc` 호출 합니다.
 
 ## <a name="summary"></a>요약
 

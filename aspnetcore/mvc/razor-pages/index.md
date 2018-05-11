@@ -5,16 +5,16 @@ description: ASP.NET Core의 Razor 페이지를 통해 MVC를 사용하는 것�
 manager: wpickett
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
-ms.date: 09/12/2017
+ms.date: 5/12/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: mvc/razor-pages/index
-ms.openlocfilehash: f9484d4806a7430177878b462209ba6608cfdd7d
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: c848c5d66a9e8141d9d737e8ce9c994587b04916
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core의 Razor 페이지 소개
 
@@ -208,6 +208,13 @@ Razor 페이지는 기본적으로 GET이 아닌 동사에만 속성을 바인�
 * `RedirectToPage`를 호출하여 루트 인덱스 페이지(`/Index`)를 리디렉션합니다.
 
 ::: moniker range=">= aspnetcore-2.1"
+
+## <a name="mark-page-properties-required"></a>필요한 페이지 속성 표시
+
+`PageModel`의 속성은 [필수](/dotnet/api/system.componentmodel.dataannotations.requiredattribute) 특성으로 데코레이팅될 수 있습니다.
+
+[!code-cs[](index/sample/Create.cshtml.cs?highlight=3,15-16)]
+
 ## <a name="manage-head-requests-with-the-onget-handler"></a>OnGet 처리기를 사용하여 HEAD 요청 관리
 
 일반적으로 HEAD 처리기는 HEAD 요청에 대해 생성 및 호출됩니다.
@@ -226,9 +233,10 @@ services.AddMvc()
     .SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
 ```
 
-`SetCompatibilityVersion`은 효과적으로 Razor 페이지 옵션 `AllowMappingHeadRequestsToGetHandler`를 `true`로 설정합니다. 이 동작은 ASP.NET Core 3.0 미리 보기 1 이상이 릴리스될 때까지 옵트인(opt in)됩니다. ASP.NET Core의 각 주 버전은 모든 이전 버전의 패치 릴리스 동작을 채택합니다.
+`SetCompatibilityVersion`은 효과적으로 Razor 페이지 옵션 `AllowMappingHeadRequestsToGetHandler`를 `true`로 설정합니다.
 
-HEAD 요청을 GET 처리기에 매핑하는 앱 구성을 사용하면 패치 릴리스 2.1~2.x에 대한 전역 옵트인(opt in) 동작을 피할 수 있습니다. `Startup.Configure`에서 `SetCompatibilityVersion`을 호출하지 말고 `AllowMappingHeadRequestsToGetHandler` Razor 페이지 옵션을 `true`로 설정하세요.
+`SetCompatibilityVersion`을 사용하여 모든 2.1 동작을 옵트인하는 대신 특정 동작을 명시적으로 옵트인할 수 있습니다. 다음 코드는 HEAD 요청을 GET 처리기에 매핑을 옵트인합니다.
+
 
 ```csharp
 services.AddMvc()
@@ -267,7 +275,7 @@ services.AddMvc()
 
 [!code-cshtml[](index/sample/RazorPagesContacts2/Pages/_ViewStart.cshtml)]
 
-**참고:** 레이아웃은 *Pages* 폴더에 있습니다. 페이지는 현재 페이지와 동일한 폴더에서 시작하여 다른 뷰(레이아웃, 템플릿, 부분)를 계층 구조로 검색합니다. *Pages* 폴더의 레이아웃은 *Pages* 폴더 아래의 Razor 페이지에서 사용될 수 있습니다.
+레이아웃은 *Pages* 폴더에 있습니다. 페이지는 현재 페이지와 동일한 폴더에서 시작하여 다른 뷰(레이아웃, 템플릿, 부분)를 계층 구조로 검색합니다. *Pages* 폴더의 레이아웃은 *Pages* 폴더 아래의 Razor 페이지에서 사용될 수 있습니다.
 
 레이아웃 파일은 *Views/Shared* 폴더에 두지 **않는** 것이 좋습니다. *Views/Shared*는 MVC 뷰 패턴입니다. Razor 페이지는 경로 규칙이 아니라 폴더 계층 구조를 사용해야 합니다.
 
@@ -299,7 +307,7 @@ Razor 페이지의 뷰 검색에는 *Pages* 폴더가 포함됩니다. MVC 컨�
 
 *Pages/Customers/Edit.cshtml* Razor 페이지에 대한 생성된 네임스페이스는 코드 숨김 파일과 동일합니다. `@namespace` 지시문은 코드 숨김 파일에 대한 `@using` 지시문을 추가할 필요 없이 프로젝트 및 페이지 생성 코드에 추가된 C# 클래스가 *제대로 작동*하도록 고안되었습니다.
 
-**참고:** `@namespace`는 기존 Razor 뷰에서도 작동합니다.
+`@namespace` *는 기존 Razor 뷰에서도 작동합니다.*
 
 원래 *Pages/Create.cshtml* 뷰 파일:
 
@@ -350,6 +358,42 @@ Razor 페이지의 뷰 검색에는 *Pages* 폴더가 포함됩니다. MVC 컨�
 `RedirectToPage("Index")`, `RedirectToPage("./Index")` 및 `RedirectToPage("../Index")`는 <em>상대적 이름</em>입니다. `RedirectToPage` 매개 변수는 현재 페이지의 경로와 <em>결합</em>되어 대상 페이지의 이름을 계산합니다.  <!-- Review: Original had The provided string is combined with the page name of the current page to compute the name of the destination page.  page name, not page path -->
 
 상대적 이름 연결은 구조가 복잡한 사이트를 빌드할 때 유용합니다. 상대적 이름을 사용하여 한 폴더의 여러 페이지 간을 연결하는 경우 해당 폴더의 이름을 바꿀 수 있습니다. 그래도 모든 링크가 작동합니다(폴더 이름을 포함하지 않기 때문).
+
+::: moniker range=">= aspnetcore-2.1"
+## <a name="viewdata-attribute"></a>ViewData 특성
+
+[ViewDataAttribute](/dotnet/api/microsoft.aspnetcore.mvc.viewdataattribute)를 사용하여 데이터를 페이지에 전달할 수 있습니다. `[ViewData]`로 데코레이팅된 컨트롤러 또는 Razor 페이지 모델의 속성은 값을 [ViewDataDictionary](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary)에 저장하고 로드됩니다.
+
+다음 예제에서 `AboutModel`에는 `[ViewData]`으로 데코레이팅된 `Title` 속성이 있습니다. `Title` 속성은 정보 페이지의 제목에 설정되어 있습니다.
+
+```csharp
+public class AboutModel : PageModel
+{
+    [ViewData]
+    public string Title { get; } = "About";
+
+    public void OnGet()
+    {
+    }
+}
+```
+
+정보 페이지에서 `Title` 속성을 모델 속성으로 액세스하세요.
+
+```cshtml
+<h1>@Model.Title</h1>
+```
+
+레이아웃에서 제목은 ViewData 사전에서 읽습니다.
+
+```cshtml
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewData["Title"] - WebApplication</title>
+    ...
+```
+::: moniker-end
 
 ## <a name="tempdata"></a>TempData
 

@@ -10,11 +10,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: web-api/index
-ms.openlocfilehash: f0368258d078673ab5eab21c5ce07f2437cb8ea4
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 6afc02c1a966b62d0fcead0349c5f0803309dcbb
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="build-web-apis-with-aspnet-core"></a>ASP.NET Core에서 Web API 빌드
 
@@ -40,7 +40,7 @@ Web API를 제공할 목적으로 컨트롤의 [ControllerBase](/dotnet/api/micr
 ::: moniker range=">= aspnetcore-2.1"
 ## <a name="annotate-class-with-apicontrollerattribute"></a>ApiControllerAttribute로 클래스에 주석 달기
 
-ASP.NET Core 2.1에서는 Web API 컨트롤러 클래스를 나타내는 `[ApiController]` 특성을 소개합니다. 예:
+ASP.NET Core 2.1에서는 Web API 컨트롤러 클래스를 나타내는 [[ApiController]](/dotnet/api/microsoft.aspnetcore.mvc.apicontrollerattribute) 특성을 소개합니다. 예:
 
 [!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Controllers/ProductsController.cs?name=snippet_ControllerSignature&highlight=2)]
 

@@ -11,8 +11,8 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: signalr/hubs
-ms.openlocfilehash: 4810b3a1978f05eb0608320750f31b8bb95d71fd
-ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
+ms.openlocfilehash: cfe9f7a7321094b8f901687d91745df2247e1da6
+ms.sourcegitcommit: 3d071fabaf90e32906df97b08a8d00e602db25c0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 05/10/2018
@@ -35,7 +35,7 @@ SignalR 미들웨어를 호출 하 여 구성 된 일부 서비스 필요 `servi
 
 SignalR 기능에는 ASP.NET Core 응용 프로그램을 추가할 때 호출 하 여 SignalR 경로 설정 `app.UseSignalR` 에 `Startup.Configure` 메서드.
 
-[!code-csharp[Configure routes to hubs](hubs/sample/startup.cs?range=56-59)]
+[!code-csharp[Configure routes to hubs](hubs/sample/startup.cs?range=57-60)]
 
 ## <a name="create-and-use-hubs"></a>만들기 및 허브를 사용 합니다.
 
@@ -91,4 +91,6 @@ SignalR 허브 API를 제공는 `OnConnectedAsync` 및 `OnDisconnectedAsync` 가
 
 ## <a name="related-resources"></a>관련 참고 자료
 
-[ASP.NET Core SignalR 소개](xref:signalr/introduction)
+* [ASP.NET Core SignalR 소개](xref:signalr/introduction)
+* [JavaScript 클라이언트](xref:signalr/javascript-client)
+* [Azure에 게시](xref:signalr/publish-to-azure-web-app)
