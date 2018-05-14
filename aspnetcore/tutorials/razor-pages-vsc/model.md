@@ -1,23 +1,24 @@
 ---
-title: "Mac용 Visual Studio를 사용하여 Razor 페이지 앱에 모델 추가"
+title: Visual Studio Code를 사용하여 ASP.NET Core Razor 페이지 앱에 모델 추가
 author: rick-anderson
-description: "Mac용 Visual Studio를 사용하여 ASP.NET Core에서 Razor 페이지 앱에 모델 추가"
+description: Visual Studio Code를 사용하여 ASP.NET Core의 Razor 페이지 앱에 모델을 추가하는 방법을 배웁니다.
 manager: wpickett
+monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/27/2017
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages-vsc/model
-ms.openlocfilehash: 9600392b47fb8b1dded06faefaff1bf87d67af4e
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 20282b491162e9f35e40702655532a78edceb89a
+ms.sourcegitcommit: 2ab550f8c46e1a8a5d45e58be44d151c676af256
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/28/2018
 ---
-# <a name="adding-a-model-to-a-razor-pages-app-in-aspnet-core-with-visual-studio-code"></a>Visual Studio Code를 사용하여 ASP.NET Core에서 Razor 페이지 앱에 모델 추가
+# <a name="add-a-model-to-an-aspnet-core-razor-pages-app-with-visual-studio-code"></a>Visual Studio Code를 사용하여 ASP.NET Core Razor 페이지 앱에 모델 추가
 
-[!INCLUDE[model1](../../includes/RP/model1.md)]
+[!INCLUDE [model1](../../includes/RP/model1.md)]
 
 ## <a name="add-a-data-model"></a>데이터 모델 추가
 
@@ -25,10 +26,11 @@ ms.lasthandoff: 01/30/2018
 * *Models* 폴더에 *Movie.cs* 클래스를 추가합니다.
 * *Models/Movie.cs* 파일에 다음 코드를 추가합니다.
 
-[!INCLUDE[model 2](../../includes/RP/model2.md)]
-[!INCLUDE[model 2a](../../includes/RP/model2a.md)]
+[!INCLUDE [model 2](../../includes/RP/model2.md)]
 
-[!code-csharp[Main](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Startup.cs?name=snippet_ConfigureServices2&highlight=3-6)]
+[!INCLUDE [model 2a](../../includes/RP/model2a.md)]
+
+[!code-csharp[](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Startup.cs?name=snippet_ConfigureServices2&highlight=3-6)]
 
 프로젝트를 빌드하여 오류가 없는지 확인합니다.
 
@@ -39,11 +41,11 @@ CLI(명령줄 인터페이스)용 EF 도구는 [Microsoft.EntityFrameworkCore.To
 *RazorPagesMovie.csproj* 파일을 편집합니다.
 
 * **파일** > **파일 열기**를 선택한 다음, *RazorPagesMovie.csproj* 파일을 선택합니다.
-* `Microsoft.EntityFrameworkCore.Tools.DotNet`에 대한 도구 참조를 두 번째 **\<ItemGroup>**에 추가합니다.
+* `Microsoft.EntityFrameworkCore.Tools.DotNet`에 대한 도구 참조를 두 번째 **\<ItemGroup>** 에 추가합니다.
 
-[!code-xml[Main](../../tutorials/razor-pages/razor-pages-start/snapshot_cli_sample/RazorPagesMovie/RazorPagesMovie.cli.csproj)]
+[!code-xml[](../../tutorials/razor-pages/razor-pages-start/snapshot_cli_sample/RazorPagesMovie/RazorPagesMovie.cli.csproj)]
 
-[!INCLUDE[model 3](../../includes/RP/model3.md)]
+[!INCLUDE [model 3](../../includes/RP/model3.md)]
 
 <a name="scaffold"></a>
 ### <a name="scaffold-the-movie-model"></a>Movie 모델 스캐폴드
@@ -72,8 +74,10 @@ CLI(명령줄 인터페이스)용 EF 도구는 [Microsoft.EntityFrameworkCore.To
 
 Visual Studio를 종료하고 명령을 다시 실행합니다.
 
-[!INCLUDE[model 4](../../includes/RP/model4.md)] 다음 자습서에서는 스캐폴딩을 통해 만들어진 파일을 설명합니다.
+[!INCLUDE [model 4](../../includes/RP/model4.md)]
 
->[!div class="step-by-step"]
-[이전: 시작](xref:tutorials/razor-pages-vsc/razor-pages-start)
-[다음: 스캐폴드된 Razor 페이지](xref:tutorials/razor-pages-vsc/page)
+다음 자습서에서는 스캐폴딩을 통해 만들어진 파일을 설명합니다.
+
+> [!div class="step-by-step"]
+> [이전: 시작](xref:tutorials/razor-pages-vsc/razor-pages-start)
+> [다음: 스캐폴드된 Razor 페이지](xref:tutorials/razor-pages-vsc/page)

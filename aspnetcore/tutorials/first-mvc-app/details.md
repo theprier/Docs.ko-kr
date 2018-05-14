@@ -1,7 +1,7 @@
 ---
-title: "세부 정보 및 삭제 메서드 검사"
+title: ASP.NET Core 앱의 Details 및 Delete 메서드 검사
 author: rick-anderson
-description: "기본적인 ASP.NET Core MVC 앱의 세부 정보 컨트롤러 메서드 및 보기"
+description: 기본적인 ASP.NET Core MVC 앱에서 Details 컨트롤러 메서드 및 보기에 대해 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 03/07/2017
@@ -9,37 +9,37 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app/details
-ms.openlocfilehash: 4a0004fc79f8e1d334e3acb96b28b2954d19f0a1
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 3691801c2d48b7f635bee844fdf2392f2f3445de
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="examining-the-details-and-delete-methods"></a>세부 정보 및 삭제 메서드 검사
+# <a name="examine-the-details-and-delete-methods-of-an-aspnet-core-app"></a>ASP.NET Core 앱의 Details 및 Delete 메서드 검사
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 Movie 컨트롤러를 열고 `Details` 메서드를 검사합니다.
 
-[!code-csharp[Main](start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?name=snippet_details)]
+[!code-csharp[](start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?name=snippet_details)]
 
 이 작업 메서드를 만든 MVC 스캐폴딩 엔진은 메서드를 호출하는 HTTP 요청을 보여 주는 설명을 추가합니다. 이 경우 3개의 URL 세그먼트인 `Movies` 컨트롤러, `Details` 메서드 및 `id` 값을 가진 GET 요청입니다. 이러한 세그먼트 회수는 *Startup.cs*에서 정의됩니다.
 
-[!code-csharp[Main](start-mvc/sample/MvcMovie/Startup.cs?highlight=5&name=snippet_1)]
+[!code-csharp[](start-mvc/sample/MvcMovie/Startup.cs?highlight=5&name=snippet_1)]
 
 EF를 통해 `SingleOrDefaultAsync` 메서드를 사용하는 데이터를 쉽게 검색할 수 있습니다. 메서드에 기본 구성된 중요한 보안 기능은 검색 메서드가 이를 사용하여 어떠한 작업을 시도하기 전에 동영상을 발견했는지 코드에서 확인하는 것입니다. 예를 들어 해커는 링크에서 만든 URL을 `http://localhost:xxxx/Movies/Details/1`에서 `http://localhost:xxxx/Movies/Details/12345`(또는 실제 동영상을 표시하지 않는 다른 값)와 같은 URL로 변경하여 사이트에 오류를 발생시킬 수 있습니다. Null 동영상을 검사하지 않은 경우 앱은 예외를 throw합니다.
 
 `Delete` 및 `DeleteConfirmed` 메서드를 검사합니다.
 
-[!code-csharp[Main](start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?name=snippet_delete)]
+[!code-csharp[](start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?name=snippet_delete)]
 
 `HTTP GET Delete` 메서드는 지정된 동영상을 삭제하지 않고 삭제를 제출(HttpPost)할 수 있는 동영상의 보기를 반환합니다. GET 요청에 대한 응답에서 삭제 작업 수행(또는 해당 문제를 위해 편집 작업 수행, 작업 만들기 또는 데이터를 변경하는 기타 작업)은 보안 허점을 야기합니다.
 
 데이터를 삭제하는 `[HttpPost]` 메서드는 HTTP POST 메서드에 고유한 서명 또는 이름을 제공하기 위해 `DeleteConfirmed`로 이름이 지정됩니다. 두 개의 메서드 서명은 다음과 같습니다.
 
-[!code-csharp[Main](start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?name=snippet_delete2)]
+[!code-csharp[](start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?name=snippet_delete2)]
 
-[!code-csharp[Main](start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?name=snippet_delete3)]
+[!code-csharp[](start-mvc/sample/MvcMovie/Controllers/MoviesController.cs?name=snippet_delete3)]
 
 
 CLR(공용 언어 런타임)은 고유한 매개 변수 서명을 갖기 위해 오버로드된 메서드가 필요합니다(동일한 메서드 이름이지만 다른 매개 변수의 목록). 그러나 여기에서 두 개의 `Delete` 메서드가 필요합니다. 하나는 GET에 대한 것이며 다른 하나는 POST에 대한 것입니다. 두 메서드에는 동일한 매개 변수 서명이 있습니다. (모두 매개 변수로 단일 정수를 허용해야 합니다.)
@@ -58,7 +58,7 @@ public async Task<IActionResult> Delete(int id, bool notUsed)
 
 Visual Studio를 사용하여 Azure에 이 앱을 게시하는 방법에 관한 지침은 [Visual Studio를 사용하여 Azure App Service에 ASP.NET Core 웹앱 게시](xref:tutorials/publish-to-azure-webapp-using-vs)를 참조하세요.  [명령줄](xref:tutorials/publish-to-azure-webapp-using-cli)에서도 앱을 게시할 수 있습니다.
 
-ASP.NET Core MVC에 대한 이 소개를 완료해 주셔서 감사합니다. 의견을 남겨 주세요. [MVC 및 EF Core 시작](xref:data/ef-mvc/intro)은 이 자습서에 대한 뛰어난 후속편입니다.
+ASP.NET Core MVC에 대한 이 소개를 완료해 주셔서 감사합니다. 의견을 남겨 주세요. [MVC 및 EF Core 시작](xref:data/ef-mvc/intro)은 이 자습서의 유용한 후속편입니다.
 
->[!div class="step-by-step"]
-[이전](validation.md)
+> [!div class="step-by-step"]
+> [이전](validation.md)

@@ -1,19 +1,19 @@
 ---
-title: "ASP.NET Core에서 WebListener 웹 서버 구현"
+title: ASP.NET Core에서 WebListener 웹 서버 구현
 author: rick-anderson
-description: "Windows의 ASP.NET Core에 대한 웹 서버인, WebListener를 소개합니다. Http.Sys 커널 모드 드라이버를 기반으로 한 WebListener는 IIS 없이 인터넷에 대한 직접 연결에 사용될 수 있는 Kestrel에 대한 대안입니다."
+description: IIS 없이 인터넷에 직접 연결하는 데 사용할 수 있는 Windows의 ASP.NET Core용 웹 서버인 WebListener에 대해 알아봅니다.
 manager: wpickett
 ms.author: riande
-ms.date: 08/07/2017
+ms.date: 03/13/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/weblistener
-ms.openlocfilehash: fb2e0621645a48f4e603d754d8babbc07a78cae4
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: cd2e477824d916afcf1a7901e935dd465a466922
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="weblistener-web-server-implementation-in-aspnet-core"></a>ASP.NET Core에서 WebListener 웹 서버 구현
 
@@ -30,17 +30,17 @@ WebListener는 다음과 같은 기능을 지원합니다.
 
 - [Windows 인증](xref:security/authentication/windowsauth)
 - 포트 공유
-- SNI로 HTTPS
+- SNI를 사용하는 HTTPS
 - TLS를 통한 HTTP/2(Windows 10)
 - 직접 파일 전송
 - 응답 캐싱
-- WebSocket(Windows 8)
+- WebSockets(Windows 8)
 
 지원되는 Windows 버전:
 
 - Windows 7 및 Windows Server 2008 R2 이상
 
-[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/weblistener/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/servers/weblistener/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="when-to-use-weblistener"></a>WebListener를 사용하는 경우
 
@@ -78,15 +78,18 @@ WebListener는 Kestrel을 사용하여 가져올 수 없는 제공하는 기능 
 
 * NuGet 패키지 [Microsoft.AspNetCore.Server.WebListener](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.WebListener/)를 설치합니다. 종속성으로 [Microsoft.Net.Http.Server](https://www.nuget.org/packages/Microsoft.Net.Http.Server/)도 설치합니다.
 
-* 다음 예제와 같이 필요한 WebListener [옵션](https://github.com/aspnet/HttpSysServer/blob/rel/1.1.2/src/Microsoft.AspNetCore.Server.WebListener/WebListenerOptions.cs) 및 [설정](https://github.com/aspnet/HttpSysServer/blob/rel/1.1.2/src/Microsoft.Net.Http.Server/WebListenerSettings.cs)을 지정하여 `Main` 메서드에서 [WebHostBuilder](/aspnet/core/api/microsoft.aspnetcore.hosting.webhostbuilder)의 `UseWebListener` 확장 메서드를 호출합니다.
+* 다음 예제와 같이 필요한 WebListener [옵션](https://github.com/aspnet/HttpSysServer/blob/rel/1.1.2/src/Microsoft.AspNetCore.Server.WebListener/WebListenerOptions.cs) 및 [설정](https://github.com/aspnet/HttpSysServer/blob/rel/1.1.2/src/Microsoft.Net.Http.Server/WebListenerSettings.cs)을 지정하여 `Main` 메서드에서 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder)의 `UseWebListener` 확장 메서드를 호출합니다.
 
   [!code-csharp[](weblistener/sample/Program.cs?name=snippet_Main&highlight=13-17)]
 
 * 수신 대기하는 URL 및 포트 구성 
 
-  기본적으로 ASP.NET Core는 `http://localhost:5000`으로 바인딩합니다. URL 접두사와 포트를 구성하기 위해 `UseURLs` 확장 메서드, `urls` 명령줄 인수 또는 ASP.NET Core 구성 시스템을 사용할 수 있습니다. 자세한 내용은 [호스팅](../../fundamentals/hosting.md)을 참조하세요.
+  기본적으로 ASP.NET Core는 `http://localhost:5000`으로 바인딩합니다. URL 접두사와 포트를 구성하기 위해 `UseURLs` 확장 메서드, `urls` 명령줄 인수 또는 ASP.NET Core 구성 시스템을 사용할 수 있습니다. 자세한 내용은 [호스팅](../../fundamentals/hosting.md)을 참고하시기 바랍니다.
 
   웹 수신기는 [Http.Sys 접두사 문자열 형식](https://msdn.microsoft.com/library/windows/desktop/aa364698.aspx)을 사용합니다. WebListener와 관련된 접두사 문자열 형식 요구 사항이 없습니다.
+
+  > [!WARNING]
+  > 최상위 와일드카드 바인딩(`http://*:80/` 및 `http://+:80`)을 사용하지 **않아야** 합니다. 최상위 와일드카드 바인딩은 보안 취약점에 앱을 노출시킬 수 있습니다. 강력한 와일드카드와 약한 와일드카드 모두에 적용됩니다. 와일드카드보다는 명시적 호스트 이름을 사용합니다. 전체 부모 도메인을 제어하는 경우 하위 도메인 와일드카드 바인딩(예: `*.mysub.com`)에는 이러한 보안 위험이 없습니다(취약한 `*.com`과 반대임). 자세한 내용은 [rfc7230 섹션-5.4](https://tools.ietf.org/html/rfc7230#section-5.4)를 참조하세요.
 
   > [!NOTE]
   > 서버에서 미리 등록한 동일한 접두사 문자열을 `UseUrls`에 지정해야 합니다. 

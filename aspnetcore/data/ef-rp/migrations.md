@@ -1,7 +1,7 @@
 ---
-title: "EF Core를 사용한 Razor 페이지 - 마이그레이션 - 4/8"
+title: ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 마이그레이션 - 4/8
 author: rick-anderson
-description: "이 자습서에서는 ASP.NET Core MVC 앱에서 데이터 모델 변경 관리를 위해 EF Core 마이그레이션 기능을 사용하는 것을 시작합니다."
+description: 이 자습서에서는 ASP.NET Core MVC 앱에서 데이터 모델 변경 관리를 위해 EF Core 마이그레이션 기능을 사용하는 것을 시작합니다.
 manager: wpickett
 ms.author: riande
 ms.date: 10/15/2017
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/migrations
-ms.openlocfilehash: e89d95702cb94556bc6e5dc73253c51acaa11578
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 690beaabeab098cf9b764730b1bf1bd04bf6b003
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="migrations---ef-core-with-razor-pages-tutorial-4-of-8"></a>마이그레이션 - Razor 페이지를 사용한 EF Core 자습서(4/8)
+# <a name="razor-pages-with-ef-core-in-aspnet-core---migrations---4-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 마이그레이션 - 4/8
 
 작성자: [Tom Dykstra](https://github.com/tdykstra), [Jon P Smith](https://twitter.com/thereformedprog) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[!INCLUDE[about the series](../../includes/RP-EF/intro.md)]
+[!INCLUDE [about the series](../../includes/RP-EF/intro.md)]
 
 이 자습서에서는 데이터 모델 변경 관리를 위한 EF Core 마이그레이션 기능이 사용됩니다.
 
@@ -52,7 +52,7 @@ CLI(명령줄 인터페이스)용 EF Core 도구는 [Microsoft.EntityFrameworkCo
 
 *appsettings.json* 파일에서 연결 문자열의 DB 이름을 ContosoUniversity2로 변경합니다.
 
-[!code-json[Main](intro/samples/cu/appsettings2.json?range=1-4)]
+[!code-json[](intro/samples/cu/appsettings2.json?range=1-4)]
 
 연결 문자열에서 DB 이름을 변경하면 첫 번째 마이그레이션으로 인해 새 DB가 만들어집니다. 이름이 존재하지 않으므로 새 DB가 만들어집니다. 마이그레이션을 시작하기 위해 연결 문자열을 변경하지 않아도 됩니다.
 
@@ -62,7 +62,7 @@ DB 이름을 변경하는 다른 방법은 DB를 삭제하는 것입니다. **SS
  dotnet ef database drop
  ```
 
-다음 섹션에는 CLI 명령을 실행하는 방법을 설명합니다.
+다음 섹션에서는 CLI 명령을 실행하는 방법을 설명합니다.
 
 ## <a name="create-an-initial-migration"></a>초기 마이그레이션 만들기
 
@@ -100,30 +100,28 @@ Done. To undo this action, use 'ef migrations remove'
 
 EF Core 명령 `migrations add`로 DB를 생성하는 코드를 생성했습니다. 이 마이그레이션 코드는 *마이그레이션\<timestamp>_InitialCreate.cs* 파일에 있습니다. `InitialCreate` 클래스dml `Up` 메서드는 데이터 모델 엔터티 집합에 해당하는 DB 테이블을 만듭니다. `Down` 메서드는 다음 예제처럼 테이블을 삭제합니다.
 
-[!code-csharp[Main](intro/samples/cu/Migrations/20171026010210_InitialCreate.cs?range=8-24,77-)]
+[!code-csharp[](intro/samples/cu/Migrations/20171026010210_InitialCreate.cs?range=8-24,77-)]
 
 마이그레이션에서는 마이그레이션을 위한 데이터 모델 변경을 구현하기 위해 `Up` 메서드를 호출합니다. 업데이트를 롤백하는 명령을 입력하면 마이그레이션에서 `Down` 메서드를 호출합니다.
 
 위의 코드는 초기 마이그레이션에 대한 코드입니다. 이 코드는 `migrations add InitialCreate` 명령을 실행할 때 만들어집니다. 파일 이름에는 마이그레이션 이름 매개 변수(이 예제에서 "InitialCreate")가 사용됩니다. 마이그레이션 이름은 임의의 유효한 파일 이름이 될 수 있습니다. 마이그레이션에서 수행 중인 작업을 요약한 단어 또는 구를 선택하는 것이 가장 좋습니다. 예를 들어 부서 테이블을 추가한 마이그레이션은 "AddDepartmentTable"이라고 할 수 있습니다.
 
-초기 마이그레이션이 만들어지고 DB가 종료되는 경우:
+초기 마이그레이션이 생성되었고 DB가 존재하는 경우:
 
 * DB 만들기 코드가 생성됩니다.
-* DB는 데이터 모델과 이미 일치하므로 DB 만들기 코드를 실행할 필요가 없습니다. DB 만들기 코드가 실행되면 DB가 데이터 모델과 이미 일치하므로 변경하지 않습니다.
+* DB는 데이터 모델과 이미 일치하므로 DB 만들기 코드를 실행할 필요가 없습니다. DB 만들기 코드가 실행되면 DB가 데이터 모델과 이미 일치하므로 아무것도 변경되지 않습니다.
 
 앱이 새 환경에 배포되면 DB 만들기 코드를 실행하여 DB를 만들어야 합니다.
 
 이전에는 DB에 새 이름을 사용하도록 연결 문자열을 변경했습니다. 지정된 DB가 존재하지 않으므로 마이그레이션에서 DB를 만듭니다.
 
-### <a name="examine-the-data-model-snapshot"></a>데이터 모델 스냅숏 검사
+### <a name="the-data-model-snapshot"></a>데이터 모델 스냅숏
 
-마이그레이션에서는 현재 DB 스키마의 *스냅숏*을 *Migrations/SchoolContextModelSnapshot.cs*에 만듭니다.
+마이그레이션은 현재 데이터베이스 스키마의 *스냅숏*을 *Migrations/SchoolContextModelSnapshot.cs*에 만듭니다. 마이그레이션을 추가하면 EF가 데이터 모델을 스냅숏 파일과 비교하여 변경 내용을 확인합니다.
 
-[!code-csharp[Main](intro/samples/cu/Migrations/SchoolContextModelSnapshot1.cs?name=snippet_Truncate)]
+마이그레이션을 삭제할 때는 [dotnet ef migrations remove](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet#dotnet-ef-migrations-remove) 명령을 사용합니다. `dotnet ef migrations remove`는 마이그레이션을 삭제하고 스냅숏이 올바르게 다시 설정되도록 합니다.
 
-현재 DB 스키마가 쿄드에 표시되므로 EF Core는 마이그레이션을 만들기 위해 DB와 상호 작용할 필요가 없습니다. 마이그레이션을 추가하면 EF Core가 데이터 모델과 스냅숏 파일을 비교하여 변경 내용을 확인합니다. DB를 업데이트해야 하는 경우에만 EF Core가 DB와 상호 작용합니다.
-
-스냅숏 파일은 스냅숏이 생성된 마이그레이션과 함께 동기화되어야 합니다. *\<timestamp>_\<migrationname>.cs*라는 파일을 삭제하여 마이그레이션을 제거할 수 없습니다. 해당 파일을 삭제하면 나머지 마이그레이션이 DB 스냅숏 파일과 동기화가 해제됩니다. 추가된 마지막 마이그레이션을 삭제하려면 [dotnet ef migrations remove](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet#dotnet-ef-migrations-remove) 명령을 사용합니다.
+스냅숏 파일을 사용하는 방법에 대한 자세한 내용은 [팀 환경의 EF Core 마이그레이션](/ef/core/managing-schemas/migrations/teams)을 참조하세요.
 
 ## <a name="remove-ensurecreated"></a>EnsureCreated 제거
 
@@ -181,15 +179,15 @@ info: Microsoft.EntityFrameworkCore.Database.Command[200101]
 Done.
 ```
 
-로그 메시지의 세부 수준을 줄이기 위해 *appsettings 합니다. Development.json* 파일에서 로그 수준을 변경할 수 있습니다. 자세한 내용은 [로깅 소개](xref:fundamentals/logging/index)를 참조하세요.
+로그 메시지의 세부 수준을 줄이려면 *appsettings.Development.json* 파일에서 로그 수준을 변경합니다. 자세한 내용은 [로깅 소개](xref:fundamentals/logging/index)를 참조하세요.
 
 **SQL Server 개체 탐색기**를 사용하여 DB를 검사합니다. `__EFMigrationsHistory` 테이블이 추가된 것을 볼 수 있습니다. `__EFMigrationsHistory` 테이블은 DB에 적용된 마이그레이션을 추적합니다. `__EFMigrationsHistory` 테이블의 데이터를 보면 첫 번째 마이그레이션에 대해 한 행이 표시됩니다. 앞의 CLI 출력 예제의 마지막 로그는 이 행을 만드는 INSERT 문을 보여 줍니다.
 
 앱을 실행하고 모든 항목이 작동하는지 확인합니다.
 
-## <a name="appling-migrations-in-production"></a>프로덕션 환경에서 마이그레이션 적용
+## <a name="applying-migrations-in-production"></a>프로덕션 환경에서 마이그레이션 적용
 
-프로덕션 앱은 응용 프로그램 시작 시 [Database.Migrate](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.relationaldatabasefacadeextensions.migrate?view=efcore-2.0#Microsoft_EntityFrameworkCore_RelationalDatabaseFacadeExtensions_Migrate_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_)를 호출하지 **않는 것이** 좋습니다. 서버 팜의 앱에서 `Migrate`를 호출하면 안됩니다. 예를 들어, 앱이 스케일 아웃으로 클라우드에 배포된 경우(앱의 여러 인스턴스가 실행 중임)
+프로덕션 앱은 응용 프로그램 시작 시 [Database.Migrate](/dotnet/api/microsoft.entityframeworkcore.relationaldatabasefacadeextensions.migrate?view=efcore-2.0#Microsoft_EntityFrameworkCore_RelationalDatabaseFacadeExtensions_Migrate_Microsoft_EntityFrameworkCore_Infrastructure_DatabaseFacade_)를 호출하지 **않는 것이** 좋습니다. 서버 팜의 앱에서 `Migrate`를 호출하면 안됩니다. 예를 들어, 앱이 스케일 아웃으로 클라우드에 배포된 경우(앱의 여러 인스턴스가 실행 중임)
 
 데이터베이스 마이그레이션은 배포의 일부로 제어된 방식으로 수행되어야 합니다. 프로덕션 데이터베이스 마이그레이션 방법은 다음과 같습니다.
 
@@ -224,7 +222,7 @@ https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/S
 앱에서는 다음과 같은 예외가 생성됩니다.
 
 ```text
-`SqlException: Cannot open database "ContosoUniversity" requested by the login.
+SqlException: Cannot open database "ContosoUniversity" requested by the login.
 The login failed.
 Login failed for user 'user name'.
 ```
@@ -236,6 +234,6 @@ Login failed for user 'user name'.
 * 명령을 다시 실행합니다.
 * 페이지의 맨 아래에 메시지를 남깁니다.
 
->[!div class="step-by-step"]
-[이전](xref:data/ef-rp/sort-filter-page)
-[다음](xref:data/ef-rp/complex-data-model)
+> [!div class="step-by-step"]
+> [이전](xref:data/ef-rp/sort-filter-page)
+> [다음](xref:data/ef-rp/complex-data-model)

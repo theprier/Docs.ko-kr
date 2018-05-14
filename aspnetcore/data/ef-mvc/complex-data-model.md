@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core MVC 및 EF Core - 데이터 모델 - 5/10"
+title: ASP.NET Core MVC 및 EF Core - 데이터 모델 - 5/10
 author: tdykstra
-description: "이 자습서에서는 더 많은 엔터티 및 관계를 추가하고, 서식 지정, 유효성 검사 및 데이터베이스 매핑 규칙을 지정하여 데이터 모델을 사용자 지정합니다."
+description: 이 자습서에서는 더 많은 엔터티 및 관계를 추가하고, 서식 지정, 유효성 검사 및 매핑 규칙을 지정하여 데이터 모델을 사용자 지정합니다.
 manager: wpickett
 ms.author: tdykstra
 ms.date: 03/15/2017
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/complex-data-model
-ms.openlocfilehash: ac30d9ae5531934ba5163a8d9114b11ac54af8d2
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: ab3d4221b498bb2987105fb36f2c6803f8fe6125
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="creating-a-complex-data-model---ef-core-with-aspnet-core-mvc-tutorial-5-of-10"></a>복잡한 데이터 모델 만들기 - EF Core 및 ASP.NET Core MVC 자습서(5/10)
+# <a name="aspnet-core-mvc-with-ef-core---data-model---5-of-10"></a>ASP.NET Core MVC 및 EF Core - 데이터 모델 - 5/10
 
 작성자: [Tom Dykstra](https://github.com/tdykstra) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Contoso University 웹 응용 프로그램 예제는 Entity Framework Core 및 Visual Studio를 사용하여 ASP.NET Core MVC 웹 응용 프로그램을 만드는 방법을 보여줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](intro.md)를 참조하세요.
+Contoso University 웹 응용 프로그램 예제는 Entity Framework Core 및 Visual Studio를 사용하여 ASP.NET Core MVC 웹 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](intro.md)를 참조하세요.
 
 이전 자습서에서는 세 가지 엔터티로 구성된 간단한 데이터 모델을 사용했습니다. 이 자습서에서는 더 많은 엔터티 및 관계를 추가하고, 서식 지정, 유효성 검사 및 데이터베이스 매핑 규칙을 지정하여 데이터 모델을 사용자 지정합니다.
 
@@ -37,7 +37,7 @@ Contoso University 웹 응용 프로그램 예제는 Entity Framework Core 및 V
 
 *Models/Student.cs*에서 다음 예제와 같이 `System.ComponentModel.DataAnnotations` 네임스페이스에 대한 `using` 문을 추가하고 `DataType` 및 `DisplayFormat` 특성을 `EnrollmentDate` 속성에 추가합니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_DataType&highlight=3,12-13)]
+[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_DataType&highlight=3,12-13)]
 
 `DataType` 특성은 데이터베이스 내장 형식보다 구체적인 데이터 형식을 지정하는 데 사용됩니다. 이 경우에는 날짜 및 시간이 아닌 날짜만 추적하고자 합니다. `DataType` 열거형은 날짜, 시간, 전화 번호, 통화, 이메일 주소 등과 같은 다양한 데이터 형식을 제공합니다. `DataType` 특성을 통해 응용 프로그램에서 자동으로 유형별 기능을 제공하도록 설정할 수도 있습니다. 예를 들어, `DataType.EmailAddress`에 대해 `mailto:` 링크를 만들고 HTML5를 지원하는 브라우저에서 `DataType.Date`에 대해 날짜 선택기를 제공할 수 있습니다. `DataType` 특성은 HTML 5 브라우저가 인식할 수 있는 HTML 5 `data-`(데이터 대시로 발음) 특성을 내보냅니다. `DataType` 특성은 유효성 검사를 제공하지 않습니다.
 
@@ -69,7 +69,7 @@ Contoso University 웹 응용 프로그램 예제는 Entity Framework Core 및 V
 
 사용자가 이름을 50자 이하로 입력하였는지를 확인한다고 가정합니다. 이 제한 사항을 추가하려면 다음 예제와 같이 `StringLength` 특성을 `LastName` 및 `FirstMidName` 속성에 추가합니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_StringLength&highlight=10,12)]
+[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_StringLength&highlight=10,12)]
 
 `StringLength` 특성은 이름에 공백을 입력할 수 있습니다. `RegularExpression` 특성을 사용하여 입력에 제한을 적용할 수 있습니다. 예를 들어 다음 코드는 첫 번째 문자가 대문자여야 하고, 나머지 문자는 알파벳순이어야 합니다.
 
@@ -107,7 +107,7 @@ timestamp가 접두사로 사용된 마이그레이션 파일 이름이 마이�
 
 다음 강조 표시된 코드에 나와 있는 것처럼 *Student.cs* 파일에서 `System.ComponentModel.DataAnnotations.Schema`에 대한 `using` 문을 추가하고, 열 이름 특성을 `FirstMidName` 속성에 추가합니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_Column&highlight=4,14)]
+[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_Column&highlight=4,14)]
 
 `Column` 특성을 추가하면 `SchoolContext`를 지원하는 모델이 변경되므로 데이터베이스가 일치하지 않습니다.
 
@@ -136,7 +136,7 @@ dotnet ef database update
 
 *Models/Student.cs*에서 앞서 추가한 코드를 다음 코드로 바꿉니다. 변경 내용은 강조 표시되어 있습니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_BeforeInheritance&highlight=11,13,15,18,22,24-31)]
+[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_BeforeInheritance&highlight=11,13,15,18,22,24-31)]
 
 ### <a name="the-required-attribute"></a>필수 특성
 
@@ -164,7 +164,7 @@ public string LastName { get; set; }
 
 템플릿 코드를 다음 코드로 바꾸어 *Models/Instructor.cs*를 만듭니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/Instructor.cs?name=snippet_BeforeInheritance)]
+[!code-csharp[](intro/samples/cu/Models/Instructor.cs?name=snippet_BeforeInheritance)]
 
 학생과 강사 엔터티의 여러 속성이 동일하다는 것을 확인하세요. 이 시리즈의 뒷부분에 나오는 [상속 구현](inheritance.md) 자습서에서는 이 코드를 리팩터링하여 중복을 제거합니다.
 
@@ -200,7 +200,7 @@ public OfficeAssignment OfficeAssignment { get; set; }
 
 다음 코드로 *Models/OfficeAssignment.cs*를 만듭니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/OfficeAssignment.cs)]
+[!code-csharp[](intro/samples/cu/Models/OfficeAssignment.cs)]
 
 ### <a name="the-key-attribute"></a>Key 특성
 
@@ -227,7 +227,7 @@ public int InstructorID { get; set; }
 
 *Models/Course.cs*에서 앞서 추가한 코드를 다음 코드로 바꿉니다. 변경 내용은 강조 표시되어 있습니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/Course.cs?name=snippet_Final&highlight=2,10,13,16,19,21,23)]
+[!code-csharp[](intro/samples/cu/Models/Course.cs?name=snippet_Final&highlight=2,10,13,16,19,21,23)]
 
 강좌 엔터티에는 관련된 부서 엔터티를 가리키는 외래 키 속성 `DepartmentID`가 있으며, 여기에는 `Department` 탐색 속성이 있습니다.
 
@@ -277,7 +277,7 @@ public ICollection<CourseAssignment> CourseAssignments { get; set; }
 
 다음 코드로 *Models/Department.cs*를 만듭니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/Department.cs?name=snippet_Begin)]
+[!code-csharp[](intro/samples/cu/Models/Department.cs?name=snippet_Begin)]
 
 ### <a name="the-column-attribute"></a>열 특성
 
@@ -322,7 +322,7 @@ public ICollection<Course> Courses { get; set; }
 
 *Models/Enrollment.cs*에서 앞서 추가한 코드를 다음 코드로 바꿉니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/Enrollment.cs?name=snippet_Final&highlight=1-2,16)]
+[!code-csharp[](intro/samples/cu/Models/Enrollment.cs?name=snippet_Final&highlight=1-2,16)]
 
 ### <a name="foreign-key-and-navigation-properties"></a>외래 키 및 탐색 속성
 
@@ -362,7 +362,7 @@ public Student Student { get; set; }
 
 다음 코드로 *Models/CourseAssignment.cs*를 만듭니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/CourseAssignment.cs)]
+[!code-csharp[](intro/samples/cu/Models/CourseAssignment.cs)]
 
 ### <a name="join-entity-names"></a>조인 엔터티 이름
 
@@ -378,7 +378,7 @@ public Student Student { get; set; }
 
 다음 강조 표시된 코드를 *Data/SchoolContext.cs* 파일에 추가합니다.
 
-[!code-csharp[Main](intro/samples/cu/Data/SchoolContext.cs?name=snippet_BeforeInheritance&highlight=15-18,25-31)]
+[!code-csharp[](intro/samples/cu/Data/SchoolContext.cs?name=snippet_BeforeInheritance&highlight=15-18,25-31)]
 
 이 코드는 새 엔터티를 추가하고 CourseAssignment 엔터티의 복합 기본 키를 구성합니다.
 
@@ -413,7 +413,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 
 만든 새 엔터티에 대한 시드 데이터를 제공하기 위해 *Data/DbInitializer.cs* 파일의 코드를 다음 코드로 바꿉니다.
 
-[!code-csharp[Main](intro/samples/cu/Data/DbInitializer.cs?name=snippet_Final)]
+[!code-csharp[](intro/samples/cu/Data/DbInitializer.cs?name=snippet_Final)]
 
 첫 번째 자습서에서 보았듯이, 이 코드의 대부분은 단순히 새 엔터티 개체를 만들고 테스트를 위해 필요에 따라 속성에 샘플 데이터를 로드합니다. 어떻게 다대다 관계가 처리되는지 확인하세요. 코드는 `Enrollments` 및 `CourseAssignment` 조인 엔터티 집합에서 엔터티를 만들어서 관계를 생성합니다.
 
@@ -444,11 +444,11 @@ Done. To undo this action, use 'ef migrations remove'
 
 * DepartmentID 열을 강좌 테이블에 추가하는 코드 줄을 주석으로 처리합니다.
 
-  [!code-csharp[Main](intro/samples/cu/Migrations/20170215234014_ComplexDataModel.cs?name=snippet_CommentOut&highlight=9-13)]
+  [!code-csharp[](intro/samples/cu/Migrations/20170215234014_ComplexDataModel.cs?name=snippet_CommentOut&highlight=9-13)]
 
 * 부서 테이블을 만드는 코드 뒤에 다음 강조 표시된 코드를 추가합니다.
 
-  [!code-csharp[Main](intro/samples/cu/Migrations/20170215234014_ComplexDataModel.cs?name=snippet_CreateDefaultValue&highlight=22-32)]
+  [!code-csharp[](intro/samples/cu/Migrations/20170215234014_ComplexDataModel.cs?name=snippet_CreateDefaultValue&highlight=22-32)]
 
 프로덕션 응용 프로그램에서 코드 또는 스크립트를 작성하여 부서 행을 추가하고 강좌 행을 새 부서 행에 연결합니다. 그런 다음, “Temp” 부서 또는 기본 값은 Course.DepartmentID 열에 필요하지 않습니다.
 
@@ -495,6 +495,6 @@ dotnet ef database update
 
 이제 더 복잡한 데이터 모델 및 해당 데이터베이스가 만들어졌습니다. 다음 자습서에서는 관련된 데이터에 액세스하는 방법에 대해 자세히 설명합니다.
 
->[!div class="step-by-step"]
-[이전](migrations.md)
-[다음](read-related-data.md)  
+> [!div class="step-by-step"]
+> [이전](migrations.md)
+> [다음](read-related-data.md)  

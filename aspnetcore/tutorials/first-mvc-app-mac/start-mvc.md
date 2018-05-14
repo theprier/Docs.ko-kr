@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core MVC 및 Mac용 Visual Studio 시작"
+title: ASP.NET Core MVC 및 Mac용 Visual Studio 시작
 author: rick-anderson
-description: "ASP.NET Core MVC 및 Visual Studio 시작"
+description: ASP.NET Core MVC 및 Visual Studio 시작 방법 배우기
 manager: wpickett
 ms.author: riande
 ms.date: 8/23/2017
@@ -9,19 +9,19 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: tutorials/first-mvc-app-mac/start-mvc
-ms.openlocfilehash: 05a2323851c58c95667066a74c11f1d015405e6f
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: ffa620f07251c52c785672d8fbeefacac31ed4c1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="getting-started-with-aspnet-core-mvc-and-visual-studio-for-mac"></a>ASP.NET Core MVC 및 Mac용 Visual Studio 시작
+# <a name="get-started-with-aspnet-core-mvc-and-visual-studio-for-mac"></a>ASP.NET Core MVC 및 Mac용 Visual Studio 시작
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 이 자습서에서는 [Mac용 Visual Studio](https://www.visualstudio.com/vs/visual-studio-mac/)를 사용하여 ASP.NET Core MVC 웹앱을 빌드하는 기본 사항에 대해 알아봅니다. 
 
-[!INCLUDE[consider RP](../../includes/razor.md)]
+[!INCLUDE [consider RP](../../includes/razor.md)]
 
 이 자습서는 세 가지 버전이 있습니다.
 
@@ -29,14 +29,9 @@ ms.lasthandoff: 01/30/2018
 * Windows: [Visual Studio를 사용하여 ASP.NET Core MVC 앱 빌드](xref:tutorials/first-mvc-app/start-mvc)
 * Linux, macOS 및 Windows: [Visual Studio Code를 사용하여 ASP.NET Core MVC 앱 빌드](xref:tutorials/first-mvc-app-xplat/start-mvc)
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
-이 자습서에서는 [.NET Core 2.0.0 SDK](https://www.microsoft.com/net/core) 이상이 필요합니다.
-
-다음을 설치합니다.
-
-- [.NET Core 2.0.0 SDK](https://www.microsoft.com/net/core) 이상
-- [Visual Studio for Mac](https://www.visualstudio.com/vs/visual-studio-mac/)
+[!INCLUDE [](~/includes/net-core-prereqs-macos.md)]
 
 ## <a name="create-a-web-app"></a>웹앱 만들기
 
@@ -67,5 +62,5 @@ Visual Studio에서 **실행 > 디버깅하지 않고 시작**을 선택하여 �
 
 이 자습서의 다음 부분에서는 MVC에 대해 알아보고 일부 코드 작성을 시작합니다.
 
->[!div class="step-by-step"]
-[다음](adding-controller.md)  
+> [!div class="step-by-step"]
+> [다음](adding-controller.md)  

@@ -1,23 +1,24 @@
 ---
-title: "Mac용 Visual Studio를 사용하여 Razor 페이지 앱에 모델 추가"
+title: Mac용 Visual Studio를 사용하여 ASP.NET Core Razor 페이지 앱에 모델 추가
 author: rick-anderson
-description: "Mac용 Visual Studio를 사용하여 ASP.NET Core에서 Razor 페이지 앱에 모델 추가"
+description: Mac용 Visual Studio를 사용하여 ASP.NET Core의 Razor 페이지 앱에 모델을 추가하는 방법을 배웁니다.
 manager: wpickett
+monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/27/2017
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages-mac/model
-ms.openlocfilehash: b8e5d65e195f9824602ec15d05dc013faa2a8dc9
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 97bc9f14b8d6da958a7f587e54a37d2d0e0aabd4
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/18/2018
 ---
-# <a name="adding-a-model-to-a-razor-pages-app-in-aspnet-core-with-visual-studio-for-mac"></a>Mac용 Visual Studio를 사용하여 ASP.NET Core에서 Razor 페이지 앱에 모델 추가
+# <a name="add-a-model-to-an-aspnet-core-razor-pages-app-with-visual-studio-for-mac"></a>Mac용 Visual Studio를 사용하여 ASP.NET Core Razor 페이지 앱에 모델 추가
 
-[!INCLUDE[model1](../../includes/RP/model1.md)]
+[!INCLUDE [model1](../../includes/RP/model1.md)]
 
 ## <a name="add-a-data-model"></a>데이터 모델 추가
 
@@ -29,12 +30,13 @@ ms.lasthandoff: 01/30/2018
   * 가운데 창에서 **빈 클래스**를 선택합니다.
   * 클래스 이름을 **Movie**로 지정하고 **새로 만들기**를 선택합니다.
 
-[!INCLUDE[model 2](../../includes/RP/model2.md)]
-[!INCLUDE[model 2a](../../includes/RP/model2a.md)]
+[!INCLUDE [model 2](../../includes/RP/model2.md)]
 
-[!code-csharp[Main](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Startup.cs?name=snippet_ConfigureServices2&highlight=3-6)]
+[!INCLUDE [model 2a](../../includes/RP/model2a.md)]
 
-줄 `services.AddDbContext<MovieContext>(options =>`에서 빨간색 물결선을 마우스 오른쪽 단추로 클릭합니다(예: `MovieContext`). **빠른 수정 > using RazorPagesMovie.Models;**을 선택합니다. Visual Studio가 using 문을 추가합니다.
+[!code-csharp[](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Startup.cs?name=snippet_ConfigureServices2&highlight=3-6)]
+
+줄 `services.AddDbContext<MovieContext>(options =>`에서 빨간색 물결선을 마우스 오른쪽 단추로 클릭합니다(예: `MovieContext`). **빠른 수정 > using RazorPagesMovie.Models;** 을 선택합니다. Visual Studio가 using 문을 추가합니다.
 
 프로젝트를 빌드하여 오류가 없는지 확인합니다.
 
@@ -52,18 +54,19 @@ CLI(명령줄 인터페이스)용 EF 도구는 [Microsoft.EntityFrameworkCore.To
 
 ![csproj 파일 편집](model/csproj.png)
 
-`Microsoft.EntityFrameworkCore.Tools.DotNet` 도구 참조를 두 번째 **\<ItemGroup>**에 추가합니다.
+`Microsoft.EntityFrameworkCore.Tools.DotNet` 도구 참조를 두 번째 **\<ItemGroup>** 에 추가합니다.
 
-[!code-xml[Main](../../tutorials/razor-pages/razor-pages-start/snapshot_cli_sample/RazorPagesMovie/RazorPagesMovie.cli.csproj?highlight=10)]
+[!code-xml[](../../tutorials/razor-pages/razor-pages-start/snapshot_cli_sample/RazorPagesMovie/RazorPagesMovie.cli.csproj?highlight=10)]
 
 다음 코드에 표시된 버전 번호는 작성 당시 정확했습니다.
 
-[!INCLUDE[model3](../../includes/RP/model3.md)]
-[!INCLUDE[model 4x](../../includes/RP/model4x.md)]
+[!INCLUDE [model3](../../includes/RP/model3.md)]
 
-[!INCLUDE[model 4 exit](../../includes/RP/model4exit.md)]
+[!INCLUDE [model 4x](../../includes/RP/model4x.md)]
 
-[!INCLUDE[model 4](../../includes/RP/model4.md)]
+[!INCLUDE [model 4 exit](../../includes/RP/model4exit.md)]
+
+[!INCLUDE [model 4](../../includes/RP/model4.md)]
 
 ### <a name="add-the-pagesmovies-files-to-the-project"></a>프로젝트에 Pages/Movies 파일 추가
 
@@ -73,6 +76,6 @@ CLI(명령줄 인터페이스)용 EF 도구는 [Microsoft.EntityFrameworkCore.To
 
 다음 자습서에서는 스캐폴딩을 통해 만들어진 파일을 설명합니다.
 
->[!div class="step-by-step"]
-[이전: 시작](xref:tutorials/razor-pages-mac/razor-pages-start)
-[다음: 스캐폴드된 Razor 페이지](xref:tutorials/razor-pages-mac/page)
+> [!div class="step-by-step"]
+> [이전: 시작](xref:tutorials/razor-pages-mac/razor-pages-start)
+> [다음: 스캐폴드된 Razor 페이지](xref:tutorials/razor-pages-mac/page)

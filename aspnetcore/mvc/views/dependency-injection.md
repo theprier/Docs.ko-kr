@@ -1,7 +1,7 @@
 ---
-title: "보기에 종속성 주입"
+title: ASP.NET Core의 보기에 종속성 주입
 author: ardalis
-description: 
+description: ASP.NET Core가 MVC 보기에 종속성 주입을 지원하는 방법을 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,19 +9,19 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/dependency-injection
-ms.openlocfilehash: 690fdd0fd841341d17de48c0a8c9af121da220de
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: cc34b9069ec062f08644c0026c1ccdcd00f667ac
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="dependency-injection-into-views"></a>보기에 종속성 주입
+# <a name="dependency-injection-into-views-in-aspnet-core"></a>ASP.NET Core의 보기에 종속성 주입
 
 작성자: [Steve Smith](https://ardalis.com/)
 
 ASP.NET Core는 보기에 [종속성 주입](xref:fundamentals/dependency-injection)을 지원합니다. 보기 요소를 채우는 데만 필요한 지역화 또는 데이터 같은 보기 관련 서비스에 유용합니다. 컨트롤러와 보기 사이에 [문제를 분리](http://deviq.com/separation-of-concerns/)해야 합니다. 보기에서 표시하는 대부분의 데이터는 컨트롤러에서 전달되어야 합니다.
 
-[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/dependency-injection/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/dependency-injection/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="a-simple-example"></a>간단한 예제
 
@@ -31,15 +31,15 @@ ASP.NET Core는 보기에 [종속성 주입](xref:fundamentals/dependency-inject
 
 실제로 작동하는 `@inject` 예제:
 
-[!code-csharp[Main](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Views/ToDo/Index.cshtml?highlight=4,5,15,16,17)]
+[!code-csharp[](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Views/ToDo/Index.cshtml?highlight=4,5,15,16,17)]
 
 이 보기는 전체 통계를 보여주는 요약 정보와 함께 `ToDoItem` 인스턴스 목록을 표시합니다. 요약 정보는 주입된 `StatisticsService`에서 채워집니다. 이 서비스는 *Startup.cs*의 `ConfigureServices`에서 종속성 주입을 위해 등록됩니다.
 
-[!code-csharp[Main](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Startup.cs?highlight=6,7&range=15-22)]
+[!code-csharp[](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Startup.cs?highlight=6,7&range=15-22)]
 
 `StatisticsService`는 리포지토리를 통해 액세스되는 `ToDoItem` 인스턴스 집합에서 몇 가지 계산을 수행합니다.
 
-[!code-csharp[Main](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Model/Services/StatisticsService.cs?highlight=15,20,26)]
+[!code-csharp[](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Model/Services/StatisticsService.cs?highlight=15,20,25)]
 
 샘플 리포지토리는 메모리 내 컬렉션을 사용합니다. 위에서 보여드린 구현은 메모리 내 모든 데이터에서 작동하므로 원격으로 액세스되는 대규모 데이터 집합에는 권장하지 않습니다.
 
@@ -53,7 +53,7 @@ ASP.NET Core는 보기에 [종속성 주입](xref:fundamentals/dependency-inject
 
 다른 방법은 서비스를 보기에 직접 주입하여 옵션을 가져오는 것입니다. 이 방법은 컨트롤러에 필요한 코드 양을 최소화하고, 이 보기 요소 생성 논리를 보기 자체로 이동합니다. 프로필 편집 양식을 표시하는 컨트롤러 작업은 양식을 프로필 인스턴스에 전달하기만 하면 됩니다.
 
-[!code-csharp[Main](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Controllers/ProfileController.cs?highlight=9,19)]
+[!code-csharp[](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Controllers/ProfileController.cs?highlight=9,19)]
 
 이러한 기본 설정을 업데이트하는 데 사용되는 HTML 양식으로는 다음과 같은 세 가지 속성에 대한 드롭다운 목록이 포함됩니다.
 
@@ -61,11 +61,11 @@ ASP.NET Core는 보기에 [종속성 주입](xref:fundamentals/dependency-inject
 
 이러한 목록은 보기에 주입된 서비스로 채워집니다.
 
-[!code-csharp[Main](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Views/Profile/Index.cshtml?highlight=4,16,17,21,22,26,27)]
+[!code-cshtml[](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Views/Profile/Index.cshtml?highlight=4,16,17,21,22,26,27)]
 
 `ProfileOptionsService`는 이 양식에 필요한 데이터만 제공하도록 설계된 UI 수준 서비스입니다.
 
-[!code-csharp[Main](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Model/Services/ProfileOptionsService.cs?highlight=7,13,24)]
+[!code-csharp[](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Model/Services/ProfileOptionsService.cs?highlight=7,13,24)]
 
 >[!TIP]
 > *Startup.cs*의 `ConfigureServices` 메서드에서 종속성 주입을 통해 요청할 유형을 등록하는 것을 잊지 마세요.
@@ -78,7 +78,7 @@ ASP.NET Core는 보기에 [종속성 주입](xref:fundamentals/dependency-inject
 
 보시는 것처럼 기본 필드로 `Html`, `Component` 및 `Url`(그리고 우리가 주입한 `StatsService`)이 있습니다. 예를 들어 기본 HTML 도우미를 개발자 고유의 도우미로 바꾸려면 간단하게 `@inject`를 사용하면 됩니다.
 
-[!code-html[Main](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Views/Helper/Index.cshtml?highlight=3,11)]
+[!code-cshtml[](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Views/Helper/Index.cshtml?highlight=3,11)]
 
 기존 서비스를 확장하려는 경우 간단하게 이 기술을 사용하여 기존 구현에서 상속하거나 기존 구현을 개발자 고유의 구현으로 래핑하면 됩니다.
 

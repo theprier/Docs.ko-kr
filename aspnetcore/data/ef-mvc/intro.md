@@ -1,7 +1,7 @@
 ---
-title: "Entity Framework Core를 사용한 ASP.NET Core MVC - 자습서 1/10"
+title: Entity Framework Core를 사용한 ASP.NET Core MVC - 자습서 1/10
 author: tdykstra
-description: 
+description: ''
 manager: wpickett
 ms.author: tdykstra
 ms.date: 03/15/2017
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/intro
-ms.openlocfilehash: 7de43a390ee0e11f6eda811b0774343ab330c53b
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: eaa3070e182b161087185bbb9007e8067052d95c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="getting-started-with-aspnet-core-mvc-and-entity-framework-core-using-visual-studio-1-of-10"></a>Visual Studio를 사용하여 ASP.NET Core MVC 및 Entity Framework Core 시작(1/10)
+# <a name="aspnet-core-mvc-with-entity-framework-core---tutorial-1-of-10"></a>Entity Framework Core를 사용한 ASP.NET Core MVC - 자습서 1/10
 
 작성자: [Tom Dykstra](https://github.com/tdykstra) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-이 자습서의 Razor 페이지 버전은 [여기](xref:data/ef-rp/intro)에서 제공됩니다. Razor 페이지 버전은 좀 더 쉽게 따라 할 수 있으며 더 많은 EF 기능을 다룹니다. [이 자습서의 Razor 페이지 버전](xref:data/ef-rp/intro)을 따르는 것이 좋습니다.
+[!INCLUDE [RP better than MVC](../../includes/RP-EF/rp-over-mvc.md)]
 
 Contoso University 샘플 웹 응용 프로그램은 EF(Entity Framework) Core 2.0 및 Visual Studio 2017을 사용하여 ASP.NET Core 2.0 MVC 웹 응용 프로그램을 만드는 방법을 보여 줍니다.
 
@@ -27,15 +27,15 @@ Contoso University 샘플 웹 응용 프로그램은 EF(Entity Framework) Core 2
 
 [완성된 응용 프로그램을 다운로드하거나 확인합니다.](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final)
 
-EF Core 2.0은 최신 버전의 EF이지만 EF 6.x의 모든 기능을 가지고 있지 않습니다. EF 6.x 및 EF Core 중에 선택하는 방법에 대한 내용은 [EF Core와 EF 6.x 비교](https://docs.microsoft.com/ef/efcore-and-ef6/)를 참조하세요.  EF 6.x를 선택하는 경우 [이 자습서 시리즈의 이전 버전](https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application)을 참조하세요.
+EF Core 2.0은 최신 버전의 EF이지만 EF 6.x의 모든 기능을 가지고 있지 않습니다. EF 6.x 및 EF Core 중에 선택하는 방법에 대한 내용은 [EF Core와  EF6.x 비교](https://docs.microsoft.com/ef/efcore-and-ef6/)를 참조합니다. EF 6.x를 선택하는 경우 [이 자습서 시리즈의 이전 버전](https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application)을 참조하세요.
 
 > [!NOTE]
 > * 이 자습서의 ASP.NET Core 1.1 버전의 경우 [PDF 형식에서 이 자습서의 VS 2017 업데이트 2 버전](https://github.com/aspnet/Docs/blob/master/aspnetcore/data/ef-mvc/intro/_static/efmvc1.1.pdf)을 참조하세요.
 > * 이 자습서의 Visual Studio 2015 버전을 보려면 [VS 2015 version of ASP.NET Core documentation in PDF format](https://github.com/aspnet/Docs/blob/master/aspnetcore/common/_static/aspnet-core-project-json.pdf)(ASP.NET Core의 VS 2015 버전 설명서(PDF 형식))을 참조하세요.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
-[!INCLUDE[install 2.0](../../includes/install2.0.md)]
+[!INCLUDE [](~/includes/net-core-prereqs.md)]
 
 ## <a name="troubleshooting"></a>문제 해결
 
@@ -128,7 +128,7 @@ Entity Framework Core에 사용할 수 있는 다른 데이터베이스 공급�
 
 *Models* 폴더에서 *Student.cs*라는 클래스 파일을 만들고 템플릿 코드를 다음 코드로 바꿉니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_Intro)]
+[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_Intro)]
 
 `ID` 속성은 이 클래스에 해당하는 데이터베이스 테이블의 기본 키 열이 됩니다. 기본적으로 Entity Framework는 `ID` 또는 `classnameID`로 명명된 속성을 기본 키로 해석합니다.
 
@@ -142,7 +142,7 @@ Entity Framework Core에 사용할 수 있는 다른 데이터베이스 공급�
 
 *Models* 폴더에서*Enrollment.cs*를 만들고 기존 코드를 다음 코드로 바꿉니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/Enrollment.cs?name=snippet_Intro)]
+[!code-csharp[](intro/samples/cu/Models/Enrollment.cs?name=snippet_Intro)]
 
 `EnrollmentID` 속성은 기본 키가 됩니다. 이 엔터티는 `Student` 엔터티에서 본 것과 같이 자체적으로 `ID` 대신 `classnameID` 패턴을 사용합니다. 일반적으로 하나의 패턴을 선택하고 이를 데이터 모델 전체에서 사용합니다. 여기에서 변형은 패턴 중 하나를 사용할 수 있음을 보여 줍니다. [자습서의 뒷부분](inheritance.md)에서는 클래스 이름 없이 ID를 사용하여 더 손쉽게 데이터 모델에서 상속을 구현하는 방법을 알아봅니다.
 
@@ -160,7 +160,7 @@ Entity Framework는 속성 이름이 `<navigation property name><primary key pro
 
 *Models* 폴더에서*Course.cs*를 만들고 기존 코드를 다음 코드로 바꿉니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/Course.cs?name=snippet_Intro)]
+[!code-csharp[](intro/samples/cu/Models/Course.cs?name=snippet_Intro)]
 
 `Enrollments` 속성은 탐색 속성입니다. `Course` 엔터티는 `Enrollment` 엔터티의 개수와 관련이 있을 수 있습니다.
 
@@ -174,7 +174,7 @@ Entity Framework는 속성 이름이 `<navigation property name><primary key pro
 
 *Data* 폴더에서 *SchoolContext.cs*라는 새로운 클래스 파일을 만들고 템플릿 코드를 다음 코드로 바꿉니다.
 
-[!code-csharp[Main](intro/samples/cu/Data/SchoolContext.cs?name=snippet_Intro)]
+[!code-csharp[](intro/samples/cu/Data/SchoolContext.cs?name=snippet_Intro)]
 
 이 코드는 각 엔터티 집합에 대한 `DbSet` 속성을 만듭니다. Entity Framework 용어에서 엔터티 집합은 일반적으로 데이터베이스 테이블에 해당하고 엔터티는 테이블의 행에 해당합니다.
 
@@ -182,7 +182,7 @@ Entity Framework는 속성 이름이 `<navigation property name><primary key pro
 
 데이터베이스가 만들어지면 EF는 `DbSet` 속성 이름과 동일한 이름을 갖는 테이블을 만듭니다. 컬렉션에 대한 속성 이름은 일반적으로 복수형이지만(Student보다는 Students) 개발자는 테이블 이름을 복수화할지 여부에 대해 동의하지 않습니다. 이러한 자습서의 경우 DbContext에서 단수 테이블 이름을 지정하여 기본 동작을 재정의합니다. 이렇게 하려면 마지막 DbSet 속성 뒤에 강조 표시된 다음 코드를 추가합니다.
 
-[!code-csharp[Main](intro/samples/cu/Data/SchoolContext.cs?name=snippet_TableNames&highlight=16-21)]
+[!code-csharp[](intro/samples/cu/Data/SchoolContext.cs?name=snippet_TableNames&highlight=16-21)]
 
 ## <a name="register-the-context-with-dependency-injection"></a>종속성 주입으로 컨텍스트 등록
 
@@ -190,13 +190,13 @@ ASP.NET Core는 기본적으로 [종속성 주입](../../fundamentals/dependency
 
 `SchoolContext`를 서비스로 등록하려면 *Startup.cs*를 열고 강조 표시된 줄을 `ConfigureServices` 메서드에 추가합니다.
 
-[!code-csharp[Main](intro/samples/cu/Startup.cs?name=snippet_SchoolContext&highlight=3-4)]
+[!code-csharp[](intro/samples/cu/Startup.cs?name=snippet_SchoolContext&highlight=3-4)]
 
 `DbContextOptionsBuilder` 개체에서 메서드를 호출하여 연결 문자열의 이름을 컨텍스트에 전달합니다. 로컬 개발의 경우 [ASP.NET Core 구성 시스템](xref:fundamentals/configuration/index)은 *appsettings.json* 파일에서 연결 문자열을 읽습니다.
 
 `ContosoUniversity.Data` 및 `Microsoft.EntityFrameworkCore` 네임스페이스에 대해 `using` 문을 추가한 다음, 프로젝트를 빌드합니다.
 
-[!code-csharp[Main](intro/samples/cu/Startup.cs?name=snippet_Usings)]
+[!code-csharp[](intro/samples/cu/Startup.cs?name=snippet_Usings)]
 
 *appsettings.json* 파일을 열고 다음 예제에 표시된 대로 연결 문자열을 추가합니다.
 
@@ -214,7 +214,7 @@ Entity Framework에서 빈 데이터베이스를 만듭니다. 이 섹션에서�
 
 *Data* 폴더에서 *DbInitializer.cs*라는 새 클래스 파일을 만들고 템플릿 코드를 다음 코드로 바꿉니다. 이로 인해 필요할 때 데이터베이스가 만들어지며 테스트 데이터를 새 데이터베이스로 로드합니다.
 
-[!code-csharp[Main](intro/samples/cu/Data/DbInitializer.cs?name=snippet_Intro)]
+[!code-csharp[](intro/samples/cu/Data/DbInitializer.cs?name=snippet_Intro)]
 
 코드는 데이터베이스에 학생이 있는지를 확인하고 없는 경우 데이터베이스가 새 것이며 테스트 데이터로 시드되어야 한다고 가정합니다. `List<T>` 컬렉션이 아닌 배열에 테스트 데이터를 로드하여 성능을 최적화합니다.
 
@@ -224,11 +224,11 @@ Entity Framework에서 빈 데이터베이스를 만듭니다. 이 섹션에서�
 * 컨텍스트를 전달하는 시드 메서드를 호출합니다.
 * 시드 메서드가 완료되면 컨텍스트를 삭제합니다.
 
-[!code-csharp[Main](intro/samples/cu/Program.cs?name=snippet_Seed&highlight=3-20)]
+[!code-csharp[](intro/samples/cu/Program.cs?name=snippet_Seed&highlight=3-20)]
 
 `using` 문을 추가합니다.
 
-[!code-csharp[Main](intro/samples/cu/Program.cs?name=snippet_Usings)]
+[!code-csharp[](intro/samples/cu/Program.cs?name=snippet_Usings)]
 
 이전 자습서에서는 *Startup.cs*의 `Configure` 메서드에서 유사한 코드를 볼 수 있습니다. 요청 파이프라인을 설정하는 데에만 `Configure` 메서드를 사용하는 것이 좋습니다. 응용 프로그램 시작 코드는 `Main` 메서드에 속합니다.
 
@@ -271,13 +271,13 @@ CRUD 작업 메서드와 보기를 자동으로 만드는 작업을 스캐폴딩
 
 컨트롤러는 `SchoolContext`를 생성자 매개 변수로 사용합니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_Context&highlight=5,7,9)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_Context&highlight=5,7,9)]
 
 ASP.NET 종속성 주입은 `SchoolContext`의 인스턴스를 컨트롤러에 전달하는 것을 담당합니다. 이전에 *Startup.cs* 파일에서 구성했습니다.
 
 컨트롤러는 데이터베이스에 모든 학생을 표시하는 `Index` 작업 메서드를 포함합니다. 메서드는 데이터베이스 컨텍스트 인스턴스의 `Students` 속성을 읽어 학생 엔터티 집합에서 학생의 목록을 가져옵니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_ScaffoldedIndex&highlight=3)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_ScaffoldedIndex&highlight=3)]
 
 이 자습서의 뒷부분에 나오는 이 코드에서 비동기 프로그래밍 요소에 대해 알아봅니다.
 
@@ -311,7 +311,7 @@ SSOX에서 **(localdb) \MSSQLLocalDB > 데이터베이스**를 클릭한 다음,
 
 ![SSOX의 학생 테이블](intro/_static/ssox-student-table.png)
 
-*.mdf* 및 *.ldf* 데이터베이스 파일은 *C:\Users\<yourusername>* 폴더에 있습니다.
+<em>.mdf</em> 및 <em>.ldf</em> 데이터베이스 파일은 <em>C:\Users\\<yourusername></em> 폴더에 있습니다.
 
 앱 시작 시 실행되는 이니셜라이저 메서드에서 `EnsureCreated`를 호출하기 때문에 이제 `Student` 클래스에 변경 내용을 만들고, 데이터베이스를 삭제하고, 응용 프로그램을 다시 시작할 수 있으며, 데이터베이스는 변경 내용에 맞도록 자동으로 다시 생성됩니다. 예를 들어 `EmailAddress` 속성을 `Student` 클래스에 추가하는 경우 다시 만들어진 테이블에 새 `EmailAddress` 열이 표시됩니다.
 
@@ -325,7 +325,7 @@ Entity Framework에서 전체 데이터베이스를 만들 수 있도록 작성�
 
 * ID 또는 classnameID로 명명된 엔터티 속성은 기본 키 속성으로 인식됩니다.
 
-* 속성 이름이 *<navigation property name><primary key property name>*인 경우 외래 키 속성으로는 해석됩니다(예: `Student` 엔터티의 기본 키가 `ID`이므로 `Student` 탐색 속성의 경우 `StudentID`). 외래 키 속성의 이름을 단순히 *<primary key property name>*으로 지정할 수 있습니다(예: `Enrollment` 엔터티의 기본 키가 `EnrollmentID`이므로 `EnrollmentID`).
+* 속성 이름이 *<navigation property name><primary key property name>* 인 경우 외래 키 속성으로는 해석됩니다(예: `Student` 엔터티의 기본 키가 `ID`이므로 `Student` 탐색 속성의 경우 `StudentID`). 외래 키 속성의 이름을 단순히 *<primary key property name>* 으로 지정할 수 있습니다(예: `Enrollment` 엔터티의 기본 키가 `EnrollmentID`이므로 `EnrollmentID`).
 
 기본 동작은 재정의될 수 있습니다. 예를 들어 이 자습서의 앞부분에서 본 것처럼 테이블 이름을 명시적으로 지정할 수 있습니다. 또한 이 시리즈의 [이후의 자습서](complex-data-model.md)에서 볼 수 있듯이 열 이름을 설정하고 기본 키 또는 외래 키로 속성을 설정할 수 있습니다.
 
@@ -339,7 +339,7 @@ Entity Framework에서 전체 데이터베이스를 만들 수 있도록 작성�
 
 다음 코드에서 `async` 키워드, `Task<T>` 반환 값, `await` 키워드 및 `ToListAsync` 메서드는 비동기적으로 코드 실행을 수행합니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_ScaffoldedIndex)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_ScaffoldedIndex)]
 
 * `async` 키워드는 컴파일러에서 메서드 본문의 부분에 대한 콜백을 생성하고 반환되는 `Task<IActionResult>` 개체를 자동으로 만들도록 합니다.
 
@@ -363,5 +363,5 @@ Entity Framework를 사용하는 비동기 코드를 작성할 때 고려해야 
 
 이제 Entity Framework Core 및 SQL Server Express LocalDB를 사용하여 데이터를 저장하고 표시하는 간단한 응용 프로그램을 만들었습니다. 다음 자습서에서는 기본 CRUD(만들기, 읽기, 업데이트, 삭제) 작업을 수행하는 방법을 배웁니다.
 
->[!div class="step-by-step"]
-[다음](crud.md)
+> [!div class="step-by-step"]
+> [다음](crud.md)

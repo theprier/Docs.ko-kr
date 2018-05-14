@@ -1,21 +1,22 @@
 ---
-title: "Razor 페이지에 새 필드 추가"
+title: ASP.NET Core의 Razor 페이지에 새 필드 추가
 author: rick-anderson
-description: "Entity Framework Core를 사용하여 Razor 페이지에 새 필드를 추가하는 방법을 보여 줍니다."
+description: Entity Framework Core를 사용하여 Razor 페이지에 새 필드를 추가하는 방법을 보여 줍니다.
 manager: wpickett
+monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/07/2017
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages/new-field
-ms.openlocfilehash: 36412e9d1f3143f0d1999d0e754e6627f0984ad5
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 45a39defc9480b0e4fe85ae7ed6bfa654a35264a
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/18/2018
 ---
-# <a name="adding-a-new-field-to-a-razor-page"></a>Razor 페이지에 새 필드 추가
+# <a name="add-a-new-field-to-a-razor-page-in-aspnet-core"></a>ASP.NET Core의 Razor 페이지에 새 필드 추가
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -27,13 +28,13 @@ EF Code First를 사용하여 자동으로 데이터베이스를 만들 때 Code
 
 *Models/Movie.cs* 파일을 열고 `Rating` 속성을 추가합니다.
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]
 
 앱을 빌드합니다(Ctrl+Shift+B).
 
 *Pages/Movies/Index.cshtml*를 편집하고 `Rating` 필드를 추가합니다.
 
-[!code-cshtml[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Movies/Index.cshtml?highlight=40-42,61-63)]
+[!code-cshtml[](razor-pages-start/sample/RazorPagesMovie/Pages/Movies/Index.cshtml?highlight=40-42,61-63)]
 
 삭제 및 세부 정보 페이지에 `Rating` 필드를 추가합니다.
 
@@ -43,7 +44,7 @@ EF Code First를 사용하여 자동으로 데이터베이스를 만들 때 Code
 
 다음 코드는 `Rating` 필드와 함께 *Create.cshtml*을 보여 줍니다.
 
-[!code-cshtml[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Movies/Create.cshtml?highlight=36-40)]
+[!code-cshtml[](razor-pages-start/sample/RazorPagesMovie/Pages/Movies/Create.cshtml?highlight=36-40)]
 
 편집 페이지에 `Rating` 필드를 추가합니다.
 
@@ -67,7 +68,7 @@ SqlException: Invalid column name 'Rating'.
 
 새 열에 대해 값을 제공하도록 `SeedData` 클래스를 업데이트합니다. 샘플 변경은 아래에 표시되지만 각 `new Movie` 블록에 대해 이 변경을 수행하려고 합니다.
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/SeedDataRating.cs?name=snippet1&highlight=8)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/SeedDataRating.cs?name=snippet1&highlight=8)]
 
 [완료된 SeedData.cs 파일](https://github.com/aspnet/Docs/blob/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Models/SeedDataRating.cs)을 참조하세요.
 
@@ -102,6 +103,6 @@ Update-Database
 
 앱을 실행하고 `Rating` 필드를 사용하여 동영상을 만들고/편집/표시할 수 있는지 확인합니다. 데이터베이스가 시드되지 않은 경우 IIS Express를 중지한 다음 앱을 실행합니다.
 
->[!div class="step-by-step"]
-[이전: 검색 추가](xref:tutorials/razor-pages/search)
-[다음: 유효성 검사 추가](xref:tutorials/razor-pages/validation)
+> [!div class="step-by-step"]
+> [이전: 검색 추가](xref:tutorials/razor-pages/search)
+> [다음: 유효성 검사 추가](xref:tutorials/razor-pages/validation)

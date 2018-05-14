@@ -1,14 +1,14 @@
 ---
 uid: visual-studio/overview/2013/one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api
-title: "실습 랩: One ASP.NET: ASP.NET Web Forms, MVC 및 Web API 통합 | Microsoft Docs"
+title: '실습 랩: One ASP.NET: ASP.NET Web Forms, MVC 및 Web API 통합 | Microsoft Docs'
 author: rick-anderson
-description: "ASP.NET은 웹 사이트, 응용 프로그램 및 MVC, Web API 등과 같은 특수 한 기술을 사용 하 여 서비스를 빌드하기 위한 프레임 워크입니다. 와 ASP.NET h 확장 중..."
+description: ASP.NET은 웹 사이트, 응용 프로그램 및 MVC, Web API 등과 같은 특수 한 기술을 사용 하 여 서비스를 빌드하기 위한 프레임 워크입니다. 와 ASP.NET h 확장 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/16/2014
 ms.topic: article
 ms.assetid: 4fe2558d-67cc-4d12-a5c1-6fb9f6f16137
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api
 msc.type: authoredcontent
@@ -161,7 +161,7 @@ ms.lasthandoff: 11/10/2017
     *친화적 Url*
 
     > [!NOTE]
-    > URL로 변경 볼 수 있듯이 **문의/**합니다. 시작 **ASP.NET 4**, URL 라우팅 기능 Web Forms에 추가 된, Url 등 작성할 수 있습니다  *[http://www.mysite.com/products/software](http://www.mysite.com/products/software)*  대신 *[http://www.mysite.com/products.aspx?category=software](http://www.mysite.com/products.aspx?category=software)*합니다. 자세한 내용은를 참조 [URL 라우팅](../../../web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing.md)합니다.
+    > URL로 변경 볼 수 있듯이 **문의/** 합니다. 시작 **ASP.NET 4**, URL 라우팅 기능 Web Forms에 추가 된, Url 등 작성할 수 있습니다 *[http://www.mysite.com/products/software](http://www.mysite.com/products/software)* 대신 *[http://www.mysite.com/products.aspx?category=software](http://www.mysite.com/products.aspx?category=software)* 합니다. 자세한 내용은를 참조 [URL 라우팅](../../../web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing.md)합니다.
 3. 이제 응용 프로그램에 통합 된 인증 흐름을 탐색 합니다. 이 작업을 수행 하려면 **등록** 페이지의 오른쪽 위 모퉁이에 있습니다.
 
     ![새 사용자를 등록 하는 중](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image8.png)

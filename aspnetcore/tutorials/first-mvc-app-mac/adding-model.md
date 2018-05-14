@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core MVC 앱에 모델 추가"
+title: Mac용 Visual Studio을 사용하여 ASP.NET Core MVC 앱에 모델 추가
 author: rick-anderson
-description: "간단한 ASP.NET Core 앱에 모델을 추가합니다."
+description: 간단한 ASP.NET Core 앱에 모델을 추가합니다.
 manager: wpickett
 ms.author: riande
 ms.date: 09/22/2017
@@ -10,13 +10,15 @@ ms.prod: .net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app-mac/adding-model
-ms.openlocfilehash: bf4d5d289266b585cbdfbb70c7482620fd4ced54
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 6792dbc7c9ab063d85c0c4145481b8fd6b40da63
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-[!INCLUDE[adding-model](../../includes/mvc-intro/adding-model1.md)]
+# <a name="add-a-model-to-an-aspnet-core-mvc-app-with-visual-studio-for-mac"></a>Mac용 Visual Studio을 사용하여 ASP.NET Core MVC 앱에 모델 추가
+
+[!INCLUDE [adding-model](../../includes/mvc-intro/adding-model1.md)]
 
 * *Models* 폴더를 마우스 오른쪽 단추로 클릭하고 **추가** > **새 파일**을 선택합니다. 
 * **새 파일** 대화 상자에서:
@@ -27,7 +29,7 @@ ms.lasthandoff: 01/30/2018
 
 `Movie` 클래스에 다음 속성을 추가합니다.
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieNoEF.cs?name=snippet_1)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieNoEF.cs?name=snippet_1)]
 
 `ID` 필드는 데이터베이스에서 기본 키 대신 필요합니다.
 
@@ -41,17 +43,17 @@ ms.lasthandoff: 01/30/2018
 
 - 다음 강조 표시된 NuGet 패키지를 *MvcMovie.csproj* 파일에 추가합니다.
              
-  [!code-csharp[Main](../first-mvc-app-xplat/start-mvc/sample/MvcMovie/MvcMovie.csproj?highlight=7,10)]
+  [!code-csharp[](../first-mvc-app-xplat/start-mvc/sample/MvcMovie/MvcMovie.csproj?highlight=7,10)]
 
 - 파일을 저장합니다.
 
-- *Models/MvcMovieContext.cs* 파일을 만들고 다음 `MvcMovieContext` 클래스를 추가합니다. [!code-csharp[Main](../../tutorials/first-mvc-app-xplat/start-mvc/sample/MvcMovie/Models/MvcMovieContext.cs)]
+- *Models/MvcMovieContext.cs* 파일을 만들고 다음 `MvcMovieContext` 클래스를 추가합니다. [!code-csharp[](../../tutorials/first-mvc-app-xplat/start-mvc/sample/MvcMovie/Models/MvcMovieContext.cs)]
    
-- *Startup.cs* 파일을 열고 두 개의 using을 추가합니다. [!code-csharp[Main](../../tutorials/first-mvc-app-xplat/start-mvc/sample/MvcMovie/Startup.cs?name=snippet1&highlight=1,2)]
+- *Startup.cs* 파일을 열고 두 개의 using을 추가합니다. [!code-csharp[](../../tutorials/first-mvc-app-xplat/start-mvc/sample/MvcMovie/Startup.cs?name=snippet1&highlight=1,2)]
 
 - 데이터베이스 컨텍스트를 *Startup.cs* 파일에 추가합니다.
 
-   [!code-csharp[Main](../../tutorials/first-mvc-app-xplat/start-mvc/sample/MvcMovie/Startup.cs?name=snippet2&highlight=6-7)]
+   [!code-csharp[](../../tutorials/first-mvc-app-xplat/start-mvc/sample/MvcMovie/Startup.cs?name=snippet2&highlight=6-7)]
 
   이 코드는 데이터 모델에 포함되는 모델 클래스를 Entity Framework에 알립니다. 데이터베이스에서 Movie 테이블을 표현할 Movie 개체의 *엔터티 집합* 하나를 정의하고 있습니다.
 
@@ -96,17 +98,17 @@ dotnet aspnet-codegenerator controller -name MoviesController -m Movie -dc MvcMo
   * *Views* 폴더로 이동하고, *Views\Movies*를 선택하고 나서, **열기**를 선택합니다.
   * **Movies에서 추가할 파일 선택** 대화 상자에서 **모두 포함**, **확인**을 차례로 선택합니다.
 
-[!INCLUDE[adding-model 2x](../../includes/mvc-intro/adding-model2xp.md)]
+[!INCLUDE [adding-model 2x](../../includes/mvc-intro/adding-model2xp.md)]
 
-[!INCLUDE[adding-model](../../includes/mvc-intro/adding-model3.md)]
+[!INCLUDE [adding-model](../../includes/mvc-intro/adding-model3.md)]
 
 이제 데이터를 표시, 편집, 업데이트 및 삭제할 데이터베이스 및 페이지가 제공됩니다. 다음 자습서에서는 데이터베이스 작업을 수행합니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 * [태그 도우미](xref:mvc/views/tag-helpers/intro)
 * [전역화 및 지역화](xref:fundamentals/localization)
 
->[!div class="step-by-step"]
-[이전 뷰 추가](adding-view.md)
-[다음 SQL 사용](working-with-sql.md)  
+> [!div class="step-by-step"]
+> [이전 뷰 추가](adding-view.md)
+> [다음 SQL 사용](working-with-sql.md)  

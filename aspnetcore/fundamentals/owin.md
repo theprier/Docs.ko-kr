@@ -1,7 +1,7 @@
 ---
-title: OWIN(Open Web Interface for .NET)
+title: ASP.NET Core가 있는 OWIN(Open Web Interface for .NET)
 author: ardalis
-description: "ASP.NET Core에서 웹앱이 웹 서버에서 분리될 수 있도록 하는 OWIN(Open Web Interface for .NET)을 지원하는 방법을 알아봅니다."
+description: ASP.NET Core에서 웹앱이 웹 서버에서 분리될 수 있도록 하는 OWIN(Open Web Interface for .NET)을 지원하는 방법을 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
@@ -10,17 +10,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/owin
-ms.openlocfilehash: 91e59d8568434867e10869b4db22bce9935ce573
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 3ff7b6e02284b4f6c61bf5d31013b4edfe8f7f29
+ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/18/2018
 ---
-# <a name="introduction-to-open-web-interface-for-net-owin"></a>OWIN(Open Web Interface for .NET)에 대한 소개
+# <a name="open-web-interface-for-net-owin-with-aspnet-core"></a>ASP.NET Core가 있는 OWIN(Open Web Interface for .NET)
 
 작성자: [Steve Smith](https://ardalis.com/) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-ASP.NET Core는 OWIN(Open Web Interface for .NET)을 지원합니다. OWIN을 사용하면 웹앱을 웹 서버에서 분리할 수 있습니다. 미들웨어를 파이프라인에서 사용하고 요청 및 관련된 응답을 처리하기 위한 표준 방법을 정의합니다. ASP.NET Core 응용 프로그램 및 미들웨어는 OWIN 기반 응용 프로그램, 서버 및 미들웨어와 상호 운용할 수 있습니다.
+ASP.NET Core는 OWIN(Open Web Interface for .NET)을 지원합니다. OWIN을 사용하면 웹 앱을 웹 서버에서 분리할 수 있습니다. 미들웨어를 파이프라인에서 사용하고 요청 및 관련된 응답을 처리하기 위한 표준 방법을 정의합니다. ASP.NET Core 응용 프로그램 및 미들웨어는 OWIN 기반 응용 프로그램, 서버 및 미들웨어와 상호 운용할 수 있습니다.
 
 OWIN은 서로 다른 개체 모델이 있는 두 프레임워크를 함께 사용할 수 있도록 허용하는 분리 계층을 제공합니다. `Microsoft.AspNetCore.Owin` 패키지는 두 개의 어댑터 구현을 제공합니다.
 - ASP.NET Core에서 OWIN으로 
@@ -30,7 +30,7 @@ OWIN은 서로 다른 개체 모델이 있는 두 프레임워크를 함께 사�
 
 참고: 이러한 어댑터를 사용하면 성능 비용이 수반됩니다. ASP.NET Core 구성 요소만을 사용하는 응용 프로그램은 Owin 패키지 또는 어댑터를 사용하면 안 됩니다.
 
-[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/owin/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/owin/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="running-owin-middleware-in-the-aspnet-pipeline"></a>ASP.NET 파이프라인에서 OWIN 미들웨어 실행
 
@@ -80,10 +80,10 @@ OWIN 파이프라인 내에서 수행하도록 기타 작업을 구성할 수 �
 ```csharp
 app.UseOwin(pipeline =>
 {
-    pipeline(next =>
+    pipeline(async (next) =>
     {
         // do something before
-        return OwinHello;
+        await OwinHello(new OwinEnvironment(HttpContext));
         // do something after
     });
 });
@@ -95,7 +95,7 @@ app.UseOwin(pipeline =>
 
 OWIN 기반 서버는 ASP.NET 응용 프로그램을 호스팅할 수 있습니다. 이러한 서버는 [Nowin](https://github.com/Bobris/Nowin), .NET OWIN 웹 서버입니다. 이 문서에 대한 샘플에서는 Nowin을 참조하고 자체 호스팅 ASP.NET Core가 가능한 `IServer`를 만드는 데 사용하는 프로젝트를 추가했습니다.
 
-[!code-csharp[Main](owin/sample/src/NowinSample/Program.cs?highlight=15)]
+[!code-csharp[](owin/sample/src/NowinSample/Program.cs?highlight=15)]
 
 `IServer`는 `Features` 속성 및 `Start` 메서드가 필요한 인터페이스입니다.
 
@@ -134,10 +134,9 @@ namespace Microsoft.AspNetCore.Hosting
 }
 ```
 
-*Program.cs*에서 확장을 호출하는 데 이 사용자 지정 서버를 사용하여 ASP.NET 응용 프로그램을 실행하는 데 필요한 모든 것이 준비됩니다.
+이 항목이 준비되어 있으면 이 사용자 지정 서버를 통해 *Program.cs*의 확장을 호출하여 ASP.NET Core 앱을 실행합니다.
 
 ```csharp
-
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -162,7 +161,6 @@ namespace NowinSample
         }
     }
 }
-
 ```
 
 ASP.NET [서버](servers/index.md)에 대해 자세히 알아봅니다.
@@ -318,7 +316,7 @@ OWIN은 HTTP 요청/응답 교환 전체에서 정보를 전달하는 `IDictiona
 | websocket.ClientCloseStatus | `int` | Optional |
 | websocket.ClientCloseDescription | `String` | Optional |
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
-* [미들웨어](xref:fundamentals/middleware)
+* [미들웨어](xref:fundamentals/middleware/index)
 * [서버](xref:fundamentals/servers/index)

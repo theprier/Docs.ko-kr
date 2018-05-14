@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core에서 응용 프로그램 파트"
+title: ASP.NET Core에서 응용 프로그램 파트
 author: ardalis
-description: "앱의 리소스에 대한 추상화인 응용 프로그램 파트를 사용하여 어셈블리에서 기능을 검색하거나 로드하지 않도록 앱을 구성하는 방법을 알아봅니다."
+description: 앱의 리소스에 대한 추상화인 응용 프로그램 파트를 사용하여 어셈블리에서 기능을 검색하거나 로드하지 않도록 하는 방법을 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 01/04/2017
@@ -9,21 +9,21 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/extensibility/app-parts
-ms.openlocfilehash: 6b855f8725dacc89a7e0607224ef3c19ab9f5676
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 8f7aeadc7a1218bf203575add8c82c95faf137b4
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="application-parts-in-aspnet-core"></a>ASP.NET Core에서 응용 프로그램 파트
 
-[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/advanced/app-parts/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/advanced/app-parts/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 *응용 프로그램 파트*는 컨트롤러, 보기 구성 요소 또는 태그 도우미와 같은 MVC 기능이 검색할 수 있는 응용 프로그램의 리소스에 대한 추상화입니다. 응용 프로그램 파트의 한 가지 예로는 AssemblyPart가 있습니다. 여기서는 어셈블리 참조를 캡슐화하고 표시 유형 및 컴파일 참조를 노출합니다. *기능 공급자*는 응용 프로그램 파트를 사용하여 ASP.NET Core MVC 앱의 기능을 구성합니다. 응용 프로그램 파트에 대한 주요 사용 사례는 어셈블리에서 MVC 기능을 검색(또는 로드를 방지)하도록 앱을 구성하는 것입니다.
 
 ## <a name="introducing-application-parts"></a>응용 프로그램 파트 소개
 
-MVC 앱은 [응용 프로그램 파트](/aspnet/core/api/microsoft.aspnetcore.mvc.applicationparts.applicationpart)에서 해당 기능을 로드합니다. 특히 [AssemblyPart](/aspnet/core/api/microsoft.aspnetcore.mvc.applicationparts.assemblypart#Microsoft_AspNetCore_Mvc_ApplicationParts_AssemblyPart) 클래스는 어셈블리에서 지원하는 응용 프로그램 파트를 나타냅니다. 이러한 클래스를 사용하여 컨트롤러, 보기 구성 요소, 태그 도우미 및 Razor 컴파일 원본과 같은 MVC 기능을 검색하고 로드할 수 있습니다. [ApplicationPartManager](/aspnet/core/api/microsoft.aspnetcore.mvc.applicationparts.applicationpartmanager)는 MVC 앱에 사용할 수 있는 응용 프로그램 파트 및 기능 공급자를 추적합니다. MVC를 구성하는 경우 `Startup`에서 `ApplicationPartManager`와 상호 작용할 수 있습니다.
+MVC 앱은 [응용 프로그램 파트](/dotnet/api/microsoft.aspnetcore.mvc.applicationparts.applicationpart)에서 해당 기능을 로드합니다. 특히 [AssemblyPart](/dotnet/api/microsoft.aspnetcore.mvc.applicationparts.assemblypart#Microsoft_AspNetCore_Mvc_ApplicationParts_AssemblyPart) 클래스는 어셈블리에서 지원하는 응용 프로그램 파트를 나타냅니다. 이러한 클래스를 사용하여 컨트롤러, 보기 구성 요소, 태그 도우미 및 Razor 컴파일 원본과 같은 MVC 기능을 검색하고 로드할 수 있습니다. [ApplicationPartManager](/dotnet/api/microsoft.aspnetcore.mvc.applicationparts.applicationpartmanager)는 MVC 앱에 사용할 수 있는 응용 프로그램 파트 및 기능 공급자를 추적합니다. MVC를 구성하는 경우 `Startup`에서 `ApplicationPartManager`와 상호 작용할 수 있습니다.
 
 ```csharp
 // create an assembly part from a class's assembly
@@ -35,7 +35,7 @@ services.AddMvc()
 var assembly = typeof(Startup).GetTypeInfo().Assembly;
 var part = new AssemblyPart(assembly);
 services.AddMvc()
-    .ConfigureApplicationPartManager(apm => p.ApplicationParts.Add(part));
+    .ConfigureApplicationPartManager(apm => apm.ApplicationParts.Add(part));
 ```
 
 기본적으로 MVC는 (다른 어셈블리에서도) 종속성 트리를 검색하고 컨트롤러를 찾습니다. 임의의 어셈블리를 로드하려면(예: 컴파일 타임 시 참조되지 않는 플러그 인에서) 응용 프로그램 파트를 사용할 수 있습니다.
@@ -46,9 +46,9 @@ services.AddMvc()
 
 ```csharp
 services.AddMvc()
-    .ConfigureApplicationPartManager(p =>
+    .ConfigureApplicationPartManager(apm =>
     {
-        var dependentLibrary = p.ApplicationParts
+        var dependentLibrary = apm.ApplicationParts
             .FirstOrDefault(part => part.Name == "DependentLibrary");
 
         if (dependentLibrary != null)
@@ -64,10 +64,10 @@ services.AddMvc()
 
 응용 프로그램 기능 공급자는 응용 프로그램 파트를 검사하고 해당 파트에 대한 기능을 제공합니다. 다음 MVC 기능에 대한 기본 제공 기능 공급자가 있습니다.
 
-* [컨트롤러](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controllers.controllerfeatureprovider)
-* [메타데이터 참조](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.razor.compilation.metadatareferencefeatureprovider)
-* [태그 도우미](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.razor.taghelpers.taghelperfeatureprovider)
-* [보기 구성 요소](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.viewcomponents.viewcomponentfeatureprovider)
+* [컨트롤러](/dotnet/api/microsoft.aspnetcore.mvc.controllers.controllerfeatureprovider)
+* [메타데이터 참조](/dotnet/api/microsoft.aspnetcore.mvc.razor.compilation.metadatareferencefeatureprovider)
+* [태그 도우미](/dotnet/api/microsoft.aspnetcore.mvc.razor.taghelpers.taghelperfeatureprovider)
+* [보기 구성 요소](/dotnet/api/microsoft.aspnetcore.mvc.viewcomponents.viewcomponentfeatureprovider)
 
 기능 공급자는 `IApplicationFeatureProvider<T>`에서 상속됩니다. 여기서 `T`는 기능의 형식입니다. 위에 나열된 MVC 기능 형식에 대한 고유한 공급자를 구현할 수 있습니다. 나중에 공급자가 이전 공급자 수행한 작업에 반응할 수 있으므로 `ApplicationPartManager.FeatureProviders` 컬렉션에서 기능 공급자의 순서는 중요할 수 있습니다.
 
@@ -75,27 +75,27 @@ services.AddMvc()
 
 기본적으로 ASP.NET Core MVC는 제네릭 컨트롤러(예: `SomeController<T>`)를 무시합니다. 이 샘플에서는 기본 공급자 이후에 실행되고 지정된 목록 형식에 대한 제네릭 컨트롤러 인스턴스를 추가하는 컨트롤러 기능 공급자를 사용합니다(`EntityTypes.Types`에 정의됨).
 
-[!code-csharp[Main](./app-parts/sample/AppPartsSample/GenericControllerFeatureProvider.cs?highlight=13&range=18-36)]
+[!code-csharp[](./app-parts/sample/AppPartsSample/GenericControllerFeatureProvider.cs?highlight=13&range=18-36)]
 
 엔터티 형식:
 
-[!code-csharp[Main](./app-parts/sample/AppPartsSample/Model/EntityTypes.cs?range=6-16)]
+[!code-csharp[](./app-parts/sample/AppPartsSample/Model/EntityTypes.cs?range=6-16)]
 
 기능 공급자는 `Startup`에 추가됩니다.
 
 ```csharp
 services.AddMvc()
-    .ConfigureApplicationPartManager(p => 
-        p.FeatureProviders.Add(new GenericControllerFeatureProvider()));
+    .ConfigureApplicationPartManager(apm => 
+        apm.FeatureProviders.Add(new GenericControllerFeatureProvider()));
 ```
 
-기본적으로 라우팅에 사용되는 제네릭 컨트롤러 이름은 *위젯*이 아닌 *GenericController`1[위젯]*의 형식입니다. 다음 특성을 사용하여 컨트롤러에서 사용하는 제네릭 형식에 해당하도록 이름을 수정합니다.
+기본적으로 라우팅에 사용되는 제네릭 컨트롤러 이름은 *위젯*이 아닌 *GenericController`1[위젯]* 의 형식입니다. 다음 특성을 사용하여 컨트롤러에서 사용하는 제네릭 형식에 해당하도록 이름을 수정합니다.
 
-[!code-csharp[Main](./app-parts/sample/AppPartsSample/GenericControllerNameConvention.cs)]
+[!code-csharp[](./app-parts/sample/AppPartsSample/GenericControllerNameConvention.cs)]
 
 `GenericController` 클래스:
 
-[!code-csharp[Main](./app-parts/sample/AppPartsSample/GenericController.cs?highlight=5-6)]
+[!code-csharp[](./app-parts/sample/AppPartsSample/GenericController.cs?highlight=5-6)]
 
 일치하는 경로를 요청하는 경우 결과:
 
@@ -105,7 +105,7 @@ services.AddMvc()
 
 [종속성 주입](../../fundamentals/dependency-injection.md)을 통해 `ApplicationPartManager`을 요청하고 적절한 기능의 인스턴스를 채우는 데 사용하여 앱에 제공되는 채워진 기능을 반복할 수 있습니다.
 
-[!code-csharp[Main](./app-parts/sample/AppPartsSample/Controllers/FeaturesController.cs?highlight=16,25-27)]
+[!code-csharp[](./app-parts/sample/AppPartsSample/Controllers/FeaturesController.cs?highlight=16,25-27)]
 
 예제 출력:
 

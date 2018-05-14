@@ -1,28 +1,28 @@
 ---
-title: "ASP.NET Core에서 응용 프로그램 시작"
+title: ASP.NET Core에서 응용 프로그램 시작
 author: ardalis
-description: "ASP.NET Core의 시작 클래스에서 서비스 및 앱의 요청 파이프라인을 구성하는 방법을 알아봅니다."
+description: ASP.NET Core의 시작 클래스에서 서비스 및 앱의 요청 파이프라인을 구성하는 방법을 알아봅니다.
 manager: wpickett
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 12/08/2017
+ms.date: 4/13/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/startup
-ms.openlocfilehash: c324918b33af82b619bb2251f32308e4a57c27e5
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 8dd632a2c888e65c6420e0fed7acf6fa15173b3d
+ms.sourcegitcommit: c4a31aaf902f2e84aaf4a9d882ca980fdf6488c0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/23/2018
 ---
 # <a name="application-startup-in-aspnet-core"></a>ASP.NET Core에서 응용 프로그램 시작
 
 작성자: [Steve Smith](https://ardalis.com), [Tom Dykstra](https://github.com/tdykstra) 및 [Luke Latham](https://github.com/guardrex)
 
-`Startup` 클래스는 서비스와 응용 프로그램의 요청 파이프라인을 구성합니다.
+`Startup` 클래스는 서비스 및 앱의 요청 파이프라인을 구성합니다.
 
-## <a name="the-startup-class"></a>Startup 클래스
+## <a name="the-startup-class"></a>시작 클래스
 
 ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startup` 클래스를 사용합니다. `Startup` 클래스:
 
@@ -31,20 +31,20 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 
 `ConfigureServices` 및 `Configure`는 앱 시작 시 런타임에 의해 호출됩니다.
 
-[!code-csharp[Main](startup/snapshot_sample/Startup1.cs)]
+[!code-csharp[](startup/snapshot_sample/Startup1.cs)]
 
 [WebHostBuilderExtensions](/dotnet/api/Microsoft.AspNetCore.Hosting.WebHostBuilderExtensions) [UseStartup&lt;TStartup&gt;](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.usestartup#Microsoft_AspNetCore_Hosting_WebHostBuilderExtensions_UseStartup__1_Microsoft_AspNetCore_Hosting_IWebHostBuilder_) 메서드로 `Startup` 클래스를 지정합니다.
 
-[!code-csharp[Main](../common/samples/WebApplication1DotNetCore2.0App/Program.cs?name=snippet_Main&highlight=10)]
+[!code-csharp[](../common/samples/WebApplication1DotNetCore2.0App/Program.cs?name=snippet_Main&highlight=10)]
 
 `Startup` 클래스 생성자는 호스트에 의해 정의된 종속성을 허용합니다. `Startup` 클래스에 대한 [종속성 주입](xref:fundamentals/dependency-injection)의 일반적인 용도는 다음을 삽입하는 것입니다.
 
 * 환경에서 서비스를 구성하는 [IHostingEnvironment](/dotnet/api/Microsoft.AspNetCore.Hosting.IHostingEnvironment)
 * 시작하는 동안 앱을 구성하는 [IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration)
 
-[!code-csharp[Main](startup/snapshot_sample/Startup2.cs)]
+[!code-csharp[](startup/snapshot_sample/Startup2.cs)]
 
-`IHostingEnvironment` 삽입의 대안은 규칙 기반 접근 방식을 사용하는 것입니다. 앱은 다양한 환경(예: `StartupDevelopment`)에 대한 별도의 `Startup` 클래스를 정의할 수 있으며 적절한 시작 클래스는 런타임에 선택됩니다. 해당 이름 접미사가 현재 환경과 일치하는 클래스에 우선 순위가 부여됩니다. 앱이 개발 환경에서 실행되고 `Startup` 클래스 및 `StartupDevelopment` 클래스 모두를 포함하는 경우 `StartupDevelopment` 클래스가 사용됩니다. 자세한 내용은 [여러 환경 사용](xref:fundamentals/environments#startup-conventions)을 참조하세요.
+`IHostingEnvironment` 삽입의 대안은 규칙 기반 접근 방식을 사용하는 것입니다. 앱은 다양한 환경(예: `StartupDevelopment`)에 대한 별도의 `Startup` 클래스를 정의할 수 있으며 적절한 시작 클래스는 런타임에 선택됩니다. 해당 이름 접미사가 현재 환경과 일치하는 클래스에 우선 순위가 부여됩니다. 앱이 개발 환경에서 실행되고 `Startup` 클래스 및 `StartupDevelopment` 클래스 모두를 포함하는 경우 `StartupDevelopment` 클래스가 사용됩니다. 자세한 내용은 [여러 환경 사용](xref:fundamentals/environments#startup-conventions)를 참고하시기 바랍니다.
 
 `WebHostBuilder`에 대한 자세한 내용은 [호스팅](xref:fundamentals/hosting) 항목을 참조하세요. 시작하는 동안 오류를 처리하는 방법은 [시작 예외 처리](xref:fundamentals/error-handling#startup-exception-handling)를 참조하세요.
 
@@ -52,17 +52,55 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 
 [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configureservices) 메서드는
 
-* 선택 사항입니다.
+* Optional
 * `Configure` 메서드 전에 웹 호스트에 의해 호출되어 앱의 서비스를 구성합니다.
 * 여기서 [구성 옵션](xref:fundamentals/configuration/index)은 규칙에 의해 설정됩니다.
 
 서비스 컨테이너에 서비스를 추가하면 앱 내 및 `Configure` 메서드에서 사용할 수 있습니다. 서비스는 [종속성 주입](xref:fundamentals/dependency-injection)을 통해 또는 [IApplicationBuilder.ApplicationServices](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder.applicationservices)에서 확인됩니다.
 
-웹 호스트는 `Startup` 메서드가 호출되기 전에 일부 서비스를 구성할 수 있습니다. 세부 정보는 [호스팅](xref:fundamentals/hosting) 항목에서 제공됩니다. 
+웹 호스트는 `Startup` 메서드가 호출되기 전에 일부 서비스를 구성할 수 있습니다. 세부 정보는 [호스팅](xref:fundamentals/hosting) 항목에서 제공됩니다.
 
 대부분의 설치가 필요한 기능의 경우 [IServiceCollection](/dotnet/api/Microsoft.Extensions.DependencyInjection.IServiceCollection)에 `Add[Service]` 확장 메서드가 있습니다. 일반적인 웹앱은 Entity Framework, ID 및 MVC에 대한 서비스를 등록합니다.
 
-[!code-csharp[Main](../common/samples/WebApplication1/Startup.cs?highlight=4,7,11&start=40&end=55)]
+[!code-csharp[](../common/samples/WebApplication1/Startup.cs?highlight=4,7,11&start=40&end=55)]
+
+::: moniker range=">= aspnetcore-2.1" 
+
+<a name="setcompatibilityversion"></a>
+### <a name="setcompatibilityversion-for-aspnet-core-mvc"></a>ASP.NET Core MVC용 SetCompatibilityVersion 
+
+`SetCompatibilityVersion` 메서드를 사용하면 ASP.NET MVC Core 2.1+에서 도입된 주요 동작 변경 내용을 앱이 옵트인(opt-in) 또는 옵트아웃(opt-out)할 수 있습니다. 이 주요 동작 변경 내용은 일반적으로 MVC 하위 시스템의 작동 방식과 런타임에서 **코드**를 호출하는 방법과 관련이 있습니다. 옵트인을 하면 ASP.NET Core의 최신 동작과 장기 동작을 가져올 수 있습니다.
+
+다음 코드는 호환성 모드를 ASP.NET Core 2.1로 설정합니다.
+
+[!code-csharp[Main](startup/sampleCompatibility/Startup.cs?name=snippet1)]
+
+최신 버전(`CompatibilityVersion.Version_2_1`)을 사용하여 응용 프로그램을 테스트하는 것이 좋습니다. 대부분의 응용 프로그램은 최신 버전을 사용하여 주요 동작을 변경하지 않을 것으로 예상합니다. 
+
+`SetCompatibilityVersion(CompatibilityVersion.Version_2_0)`을 호출하는 응용 프로그램은 ASP.NET Core 2.1 MVC 및 이후의 2.x 버전에서 도입된 주요 동작 변경으로부터 보호됩니다. 이 보호:
+
+* 2.1 이상의 모든 변경 내용에 적용되지는 않으며, MVC 하위 시스템의 주요 ASP.NET Core 런타임 동작 변경을 대상으로 합니다.
+* 다음의 주 버전으로 확장되지 않습니다.
+
+`SetCompatibilityVersion`을 호출하지 **않는** ASP.NET Core 2.1 및 이후 2.x 응용 프로그램의 기본 호환성은 2.0 호환성입니다. 즉, `SetCompatibilityVersion`을 호출하지 않는 것은 `SetCompatibilityVersion(CompatibilityVersion.Version_2_0)`을 호출하는 것과 같습니다.
+
+다음 코드는 다음 동작을 제외하고, 호환성 모드를 ASP.NET Core 2.1로 설정합니다.
+
+* [AllowCombiningAuthorizeFilters](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs)
+* [InputFormatterExceptionPolicy](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs)
+
+[!code-csharp[Main](startup/sampleCompatibility/Startup2.cs?name=snippet1)]
+
+적절한 호환성 스위치를 사용하여 주요 동작 변경 내용이 발생하는 앱의 경우:
+
+* 최신 릴리스를 사용하고 특정 주요 동작 변경 내용을 옵트아웃(opt out)할 수 있습니다.
+* 최신 변경 내용과 함께 작동하도록 앱을 업데이트할 시간을 제공합니다.
+
+[MvcOptions](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs) 클래스 소스 주석에는 변경된 내용과 변경 내용이 대부분의 사용자에게 향상된 기능인 이유가 잘 설명되어 있습니다.
+
+이후에 [ASP.NET Core 3.0 버전](https://github.com/aspnet/Home/wiki/Roadmap)이 나올 예정입니다. 호환성 스위치가 지원하는 이전 동작은 3.0 버전에서 제거됩니다. 거의 모든 사용자에게 혜택을 주는 긍정적인 변화라고 생각합니다. 이제 이러한 변경 내용을 도입함으로써 대부분의 앱이 혜택을 받을 수 있으며, 다른 사람은 응용 프로그램을 업데이트할 시간을 얻게 됩니다.
+
+::: moniker-end
 
 ## <a name="services-available-in-startup"></a>시작 시 사용할 수 있는 서비스
 
@@ -74,19 +112,21 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 
 [ASP.NET Core 템플릿](/dotnet/core/tools/dotnet-new)은 개발자 예외 페이지, [BrowserLink](http://vswebessentials.com/features/browserlink), 오류 페이지, 정적 파일 및 ASP.NET MVC에 대한 지원으로 파이프라인을 구성합니다.
 
-[!code-csharp[Main](../common/samples/WebApplication1DotNetCore2.0App/Startup.cs?range=28-48&highlight=5,6,10,13,15)]
+[!code-csharp[](../common/samples/WebApplication1DotNetCore2.0App/Startup.cs?range=28-48&highlight=5,6,10,13,15)]
 
 각 `Use` 확장 메서드는 요청 파이프라인에 미들웨어 구성 요소를 추가합니다. 예를 들어 `UseMvc` 확장 메서드는 [라우팅 미들웨어](xref:fundamentals/routing)를 요청 파이프라인에 추가하고 기본 처리기로 [MVC](xref:mvc/overview)를 구성합니다.
 
+요청 파이프라인의 각 미들웨어 구성 요소는 파이프라인의 다음 구성 요소를 호출하거나 적절한 경우 체인을 단락(short-circuiting)하는 일을 담당합니다. 미들웨어 체인을 따라 단락(short-circuiting)이 발생하지 않으면, 각 미들웨어는 클라이언트에 전송되기 전에 요청을 처리할 수 있는 두 번째 기회를 얻게 됩니다.
+
 `IHostingEnvironment` 및 `ILoggerFactory`와 같은 추가 서비스는 메서드 서명에서 지정될 수도 있습니다. 지정되면 사용 가능한 경우 추가 서비스가 삽입됩니다.
 
-`IApplicationBuilder`를 사용하는 방법에 대한 자세한 내용은 [미들웨어](xref:fundamentals/middleware/index)를 참조하세요.
+`IApplicationBuilder`를 사용하는 방법 및 미들웨어 처리 순서에 대한 자세한 내용은 [미들웨어](xref:fundamentals/middleware/index)를 참조하세요.
 
 ## <a name="convenience-methods"></a>편리한 메서드
 
 [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder.configureservices) 및 [Configure](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configure) 편의 메서드는 `Startup` 클래스 지정 대신 사용될 수 있습니다. `ConfigureServices`에 대한 여러 호출은 다른 것에 추가됩니다. `Configure`에 대한 여러 호출은 마지막 메서드 호출을 사용합니다.
 
-[!code-csharp[Main](startup/snapshot_sample/Program.cs?highlight=18,22)]
+[!code-csharp[](startup/snapshot_sample/Program.cs?highlight=18,22)]
 
 ## <a name="startup-filters"></a>시작 필터
 
@@ -98,15 +138,15 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 
 [샘플 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/startup/sample/)([다운로드하는 방법](xref:tutorials/index#how-to-download-a-sample))은 `IStartupFilter`를 사용하여 미들웨어를 등록하는 방법을 보여 줍니다. 샘플 앱은 쿼리 문자열 매개 변수에서 옵션 값을 설정하는 미들웨어를 포함합니다.
 
-[!code-csharp[Main](startup/sample/RequestSetOptionsMiddleware.cs?name=snippet1)]
+[!code-csharp[](startup/sample/RequestSetOptionsMiddleware.cs?name=snippet1)]
 
 `RequestSetOptionsMiddleware`는 `RequestSetOptionsStartupFilter` 클래스에서 구성됩니다.
 
-[!code-csharp[Main](startup/sample/RequestSetOptionsStartupFilter.cs?name=snippet1&highlight=7)]
+[!code-csharp[](startup/sample/RequestSetOptionsStartupFilter.cs?name=snippet1&highlight=7)]
 
 `IStartupFilter`는 `ConfigureServices`의 서비스 컨테이너에 등록됩니다.
 
-[!code-csharp[Main](startup/sample/Startup.cs?name=snippet1&highlight=3)]
+[!code-csharp[](startup/sample/Startup.cs?name=snippet1&highlight=3)]
 
 `option`에 대한 쿼리 문자열 매개 변수가 제공되는 경우 미들웨어는 MVC 미들웨어가 응답을 렌더링하기 전에 값 할당을 처리합니다.
 
@@ -117,7 +157,7 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 * 여러 `IStartupFilter` 구현은 동일한 개체와 상호 작용할 수 있습니다. 순서 지정이 중요한 경우 해당 미들웨어가 실행해야 하는 순서와 일치하도록 해당 `IStartupFilter` 서비스 등록의 순서를 지정합니다.
 * 라이브러리는 `IStartupFilter`로 등록된 다른 앱 미들웨어 전이나 후에 실행하는 하나 이상의 `IStartupFilter` 구현으로 미들웨어를 추가할 수 있습니다. 라이브러리의 `IStartupFilter`에 의해 추가되는 미들웨어 전에 `IStartupFilter` 미들웨어를 호출하려면 라이브러리가 서비스 컨테이너에 추가되기 전에 서비스 등록의 위치를 지정합니다. 나중에 호출하려면 라이브러리가 추가된 후에 서비스 등록의 위치를 지정합니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 * [호스팅](xref:fundamentals/hosting)
 * [여러 환경 사용](xref:fundamentals/environments)

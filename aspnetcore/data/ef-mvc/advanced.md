@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core MVC 및 EF Core - 고급 - 10/10"
+title: ASP.NET Core MVC 및 EF Core - 고급 - 10/10
 author: tdykstra
-description: "이 자습서에서는 Entity Framework Core를 사용하는 ASP.NET 웹 응용 프로그램을 개발하는 기본 개념을 넘어 알아 두면 유용한 여러 가지 항목을 소개합니다."
+description: 이 자습서에서는 Entity Framework Core를 사용하는 ASP.NET Core 웹앱 개발의 기본 개념을 넘어 유용한 토픽을 소개합니다.
 manager: wpickett
 ms.author: tdykstra
 ms.date: 03/15/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/advanced
-ms.openlocfilehash: 458f2dc8a67f8c706d043f0d9d7cb7ce962e52ce
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 655f60116cbfe1dd81b7e2855906446b919b6489
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="advanced-topics---ef-core-with-aspnet-core-mvc-tutorial-10-of-10"></a>고급 항목 - EF Core 및 ASP.NET Core MVC 자습서(10/10)
+# <a name="aspnet-core-mvc-with-ef-core---advanced---10-of-10"></a>ASP.NET Core MVC 및 EF Core - 고급 - 10/10
 
 작성자: [Tom Dykstra](https://github.com/tdykstra) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -41,7 +41,7 @@ Entity Framework를 사용할 때 장점 중 하나는 코드가 데이터를 �
 
 다음 강조 표시된 코드에서처럼 *DepartmentsController.cs*의 `Details` 메서드에서 `FromSql` 메서드 호출로 부서를 검색하는 코드를 바꿉니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_RawSQL&highlight=8,9,10,13)]
+[!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_RawSQL&highlight=8,9,10,13)]
 
 새 코드가 올바르게 작동하는지 확인하려면 **부서** 탭을 선택한 후 부서 중 하나에 대해 **세부 정보**를 선택합니다.
 
@@ -53,11 +53,11 @@ Entity Framework를 사용할 때 장점 중 하나는 코드가 데이터를 �
 
 *HomeController.cs*에서 `About` 메서드를 다음 코드로 바꿉니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/HomeController.cs?name=snippet_UseRawSQL&highlight=3-32)]
+[!code-csharp[](intro/samples/cu/Controllers/HomeController.cs?name=snippet_UseRawSQL&highlight=3-32)]
 
 using 문을 추가합니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/HomeController.cs?name=snippet_Usings2)]
+[!code-csharp[](intro/samples/cu/Controllers/HomeController.cs?name=snippet_Usings2)]
 
 앱을 실행하고 [정보] 페이지로 이동합니다. 이전과 동일한 데이터가 표시됩니다.
 
@@ -71,9 +71,9 @@ Contoso University 관리자가 모든 과정의 학점 수를 변경하는 등 
 
 *CoursesContoller.cs*에서 HttpGet 및 HttpPost에 대한 UpdateCourseCredits 메서드를 추가합니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_UpdateGet)]
+[!code-csharp[](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_UpdateGet)]
 
-[!code-csharp[Main](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_UpdatePost)]
+[!code-csharp[](intro/samples/cu/Controllers/CoursesController.cs?name=snippet_UpdatePost)]
 
 컨트롤러가 HttpGet 요청을 처리할 때 `ViewData["RowsAffected"]`에는 아무 것도 반환되지 않으며 앞의 그림과 같이 뷰에 빈 텍스트 상자와 제출 단추가 표시됩니다.
 
@@ -85,7 +85,7 @@ Contoso University 관리자가 모든 과정의 학점 수를 변경하는 등 
 
 *Views/Courses/UpdateCourseCredits.cshtml*에서 템플릿 코드를 다음 코드로 바꿉니다.
 
-[!code-html[Main](intro/samples/cu/Views/Courses/UpdateCourseCredits.cshtml)]
+[!code-html[](intro/samples/cu/Views/Courses/UpdateCourseCredits.cshtml)]
 
 **Courses(과정)** 탭을 선택하여 `UpdateCourseCredits` 메서드를 실행한 후 브라우저의 주소 표시줄에서 URL 끝에 "/UpdateCourseCredits"를 추가합니다(예: `http://localhost:5813/Courses/UpdateCourseCredits`). 텍스트 상자에 숫자를 입력합니다.
 
@@ -149,7 +149,7 @@ ORDER BY [t].[ID]
 
 리포지토리 및 작업 패턴 단위를 구현하는 방법에 대한 자세한 내용은 [이 자습서 시리즈의 Entity Framework 5 버전](https://docs.microsoft.com/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application)을 참조하세요.
 
-Entity Framework Core는 테스트에 사용할 수 있는 메모리 내 데이터베이스 공급자를 구현합니다. 자세한 내용은 [InMemory 테스트](https://docs.microsoft.com/ef/core/miscellaneous/testing/in-memory)를 참조하세요.
+Entity Framework Core는 테스트에 사용할 수 있는 메모리 내 데이터베이스 공급자를 구현합니다. 자세한 내용은 [InMemory를 사용한 테스트](https://docs.microsoft.com/ef/core/miscellaneous/testing/in-memory)를 참조하세요.
 
 ## <a name="automatic-change-detection"></a>자동 변경 내용 검색
 
@@ -182,7 +182,7 @@ Entity Framework Core 소스는 [https://github.com/aspnet/EntityFrameworkCore](
 
 [이 시리즈의 세 번째 자습서](sort-filter-page.md)에서는 `switch` 문에 열 이름을 하드 코딩하여 LINQ 코드를 작성하는 방법을 보여 줍니다. 선택할 수 있는 열이 두 개인 경우 잘 작동하지만 열 수가 많은 경우 코드가 길어질 수 있습니다. 이러한 문제를 해결하기 위해 `EF.Property` 메서드를 사용하여 속성 이름을 문자열로 지정할 수 있습니다. 이 방법을 사용해 보려면 `StudentsController`에서 `Index` 메서드를 다음 코드로 바꿉니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_DynamicLinq)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_DynamicLinq)]
 
 ## <a name="next-steps"></a>다음 단계
 
@@ -192,7 +192,7 @@ EF Core에 대한 자세한 내용은 [Entity Framework Core 설명서](https://
 
 웹앱을 배포하는 방법에 대한 정보는 [호스트 및 배포](xref:host-and-deploy/index)를 참조하세요.
 
-인증 및 권한 부여와 같은 ASP.NET Core MVC와 관련된 다른 항목에 대한 정보는 [ASP.NET Core 설명서](https://docs.microsoft.com/aspnet/core/)를 참조하세요.
+인증 및 권한 부여와 같은 ASP.NET Core MVC와 관련된 다른 항목에 대한 정보는 [ASP.NET Core 설명서](xref:index)를 참조하세요.
 
 ## <a name="acknowledgments"></a>감사의 글
 
@@ -244,5 +244,5 @@ dotnet ef database drop
 
 연결 문자열을 확인합니다. 데이터베이스 파일을 수동으로 삭제한 경우 새 데이터베이스로 시작하도록 생성 문자열에서 데이터베이스 이름을 변경합니다.
 
->[!div class="step-by-step"]
-[이전](inheritance.md)
+> [!div class="step-by-step"]
+> [이전](inheritance.md)

@@ -1,7 +1,7 @@
 ---
-title: "레이아웃"
+title: ASP.NET Core의 레이아웃
 author: ardalis
-description: 
+description: ASP.NET Core 앱에서 뷰를 렌더링하기 전에 일반적인 레이아웃을 사용하고, 지시문을 공유하고, 공용 코드를 실행하는 방법을 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/layout
-ms.openlocfilehash: 3e9e5949d8940a33508e24f0da015b49b7ba468c
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 8e89c8e6cf18c47abb6bf432cdc6bb6b97e8aeb0
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="layout"></a>레이아웃
+# <a name="layout-in-aspnet-core"></a>ASP.NET Core의 레이아웃
 
 작성자: [Steve Smith](https://ardalis.com/)
 
@@ -37,13 +37,13 @@ ms.lasthandoff: 01/30/2018
 
 `_Layout.cshtml` 예:
 
-[!code-html[Main](../../common/samples/WebApplication1/Views/Shared/_Layout.cshtml?highlight=42,66)]
+[!code-html[](../../common/samples/WebApplication1/Views/Shared/_Layout.cshtml?highlight=42,66)]
 
 ## <a name="specifying-a-layout"></a>레이아웃 지정
 
 Razor 뷰는 `Layout` 속성을 포함합니다. 이 속성을 설정하여 레이아웃을 지정하는 개별 뷰:
 
-[!code-html[Main](../../common/samples/WebApplication1/Views/_ViewStart.cshtml?highlight=2)]
+[!code-html[](../../common/samples/WebApplication1/Views/_ViewStart.cshtml?highlight=2)]
 
 지정한 레이아웃은 전체 경로(예: `/Views/Shared/_Layout.cshtml`) 또는 부분 이름(예: `_Layout`)을 사용할 수 있습니다. 부분 이름이 제공되면 Razor 뷰 엔진이 표준 검색 프로세스를 사용하여 레이아웃 파일을 검색합니다. 컨트롤러 관련 폴더를 먼저 검색한 후 `Shared` 폴더를 검색합니다. 이 검색 프로세스는 [부분 뷰](partial.md)를 검색하는 데 사용된 것과 동일합니다.
 
@@ -99,7 +99,7 @@ Razor 페이지의 본문 및 모든 섹션은 렌더링되거나 무시되어�
 
 샘플 `_ViewImports.cshtml` 파일:
 
-[!code-html[Main](../../common/samples/WebApplication1/Views/_ViewImports.cshtml)]
+[!code-html[](../../common/samples/WebApplication1/Views/_ViewImports.cshtml)]
 
 ASP.NET Core MVC 앱에 대한 `_ViewImports.cshtml` 파일은 일반적으로 `Views` 폴더에 배치됩니다. `_ViewImports.cshtml` 파일은 모든 폴더 내에 배치할 수 있으며, 이 경우 해당 폴더 및 해당 하위 폴더 내의 뷰에만 적용됩니다. `_ViewImports` 파일은 루트 수준에서부터 처리된 다음, 각 폴더에 대해 뷰 자체의 위치까지 처리되므로 루트 수준에서 지정된 설정이 폴더 수준에서 재정의될 수 있습니다.
 
@@ -127,7 +127,7 @@ ASP.NET Core MVC 앱에 대한 `_ViewImports.cshtml` 파일은 일반적으로 `
 
 샘플 `_ViewStart.cshtml` 파일:
 
-[!code-html[Main](../../common/samples/WebApplication1/Views/_ViewStart.cshtml)]
+[!code-html[](../../common/samples/WebApplication1/Views/_ViewStart.cshtml)]
 
 위의 파일은 모든 뷰가 `_Layout.cshtml` 레이아웃을 사용하도록 지정합니다.
 

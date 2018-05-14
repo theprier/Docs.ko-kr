@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core MVC에서 컨트롤러를 사용한 요청 처리"
+title: ASP.NET Core MVC에서 컨트롤러를 사용한 요청 처리
 author: ardalis
-description: 
+description: ''
 manager: wpickett
 ms.author: riande
 ms.date: 07/03/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/actions
-ms.openlocfilehash: 1c6bf5ad92a43274af351652d240e2fa8873a956
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 187ac69322545685380ad8f810bb65208c093d82
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="handling-requests-with-controllers-in-aspnet-core-mvc"></a>ASP.NET Core MVC에서 컨트롤러를 사용한 요청 처리
+# <a name="handle-requests-with-controllers-in-aspnet-core-mvc"></a>ASP.NET Core MVC에서 컨트롤러를 사용한 요청 처리
 
 작성자: [Steve Smith](https://ardalis.com/) 및 [Scott Addie](https://github.com/scottaddie)
 
@@ -40,7 +40,7 @@ ms.lasthandoff: 01/30/2018
 
 **M**odel-**V**iew-**C**ontroller(모델 뷰 컨트롤러) 패턴 내에서 컨트롤러는 초기 요청 처리 및 모델의 인스턴스화를 담당합니다. 일반적으로 비즈니스 의사 결정은 모델 내에서 수행되어야 합니다.
 
-컨트롤러는 모델의 처리 결과(있는 경우)를 사용하고, 적절한 보기와 관련된 보기 데이터 또는 API 호출의 결과를 반환합니다. 자세한 내용은 [ASP.NET Core MVC 개요](xref:mvc/overview) 및 [ASP.NET Core MVC 및 Visual Studio 시작](xref:tutorials/first-mvc-app/start-mvc)을 참조하세요.
+컨트롤러는 모델의 처리 결과(있는 경우)를 사용하고, 적절한 보기와 관련된 보기 데이터 또는 API 호출의 결과를 반환합니다. [ASP.NET Core MVC 개요](xref:mvc/overview) 및 [ASP.NET Core MVC 및 Visual Studio 시작](xref:tutorials/first-mvc-app/start-mvc)에서 자세히 알아봅니다.
 
 컨트롤러는 *UI 수준* 추상화입니다. 해당 업무는 요청 데이터가 올바른지 확인하고 어떤 보기(또는 API에 대한 결과)를 반환해야 하는지 선택하는 것입니다. 잘 구성된 앱에서는 데이터 액세스 또는 비즈니스 논리를 직접 포함하지 않습니다. 대신, 컨트롤러는 이러한 책임을 처리하는 서비스에 위임합니다.
 
@@ -54,7 +54,7 @@ ms.lasthandoff: 01/30/2018
 
 ### <a name="controller-helper-methods"></a>컨트롤러 도우미 메서드
 
-컨트롤러는 일반적으로 [Controller](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.controller)에서 상속합니다. 단, 이는 필수가 아닙니다. `Controller`에서의 파생은 도우미 메서드의 세 범주에 대한 액세스를 제공합니다.
+컨트롤러는 일반적으로 [Controller](/dotnet/api/microsoft.aspnetcore.mvc.controller)에서 상속합니다. 단, 이는 필수가 아닙니다. `Controller`에서의 파생은 도우미 메서드의 세 범주에 대한 액세스를 제공합니다.
 
 #### <a name="1-methods-resulting-in-an-empty-response-body"></a>1. 빈 응답 본문으로 이어지는 메서드
 
@@ -76,7 +76,7 @@ ms.lasthandoff: 01/30/2018
 
 이 범주의 도우미 메서드 대부분은 `ContentType` 속성을 포함하므로 응답 본문을 설명하도록 `Content-Type` 응답 헤더를 설정할 수 있습니다.
 
-이 범주 내의 결과 형식은 [보기](xref:mvc/views/overview) 및 [서식 있는 응답](xref:mvc/models/formatting)의 두 가지가 있습니다.
+이 범주 내의 결과 형식은 [보기](xref:mvc/views/overview) 및 [서식 있는 응답](xref:web-api/advanced/formatting)의 두 가지가 있습니다.
 
 * **보기**
 
@@ -90,7 +90,7 @@ ms.lasthandoff: 01/30/2018
 
 #### <a name="3-methods-resulting-in-a-non-empty-response-body-formatted-in-a-content-type-negotiated-with-the-client"></a>3. 클라이언트와 협상된 콘텐츠 형식으로 서식이 지정된 비어 있지 않은 응답 본문으로 이어지는 메서드
 
-이 범주는 **콘텐츠 협상**으로 더 잘 알려져 있습니다. [콘텐츠 협상](xref:mvc/models/formatting#content-negotiation)은 작업이 [ObjectResult](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.objectresult) 형식 또는 [IActionResult](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.iactionresult) 구현 외 항목을 반환할 때마다 적용됩니다. 비`IActionResult` 구현을 반환하는 작업(예: `object`)도 서식 있는 응답을 반환합니다.
+이 범주는 **콘텐츠 협상**으로 더 잘 알려져 있습니다. [콘텐츠 협상](xref:web-api/advanced/formatting#content-negotiation)은 작업이 [ObjectResult](/dotnet/api/microsoft.aspnetcore.mvc.objectresult) 형식 또는 [IActionResult](/dotnet/api/microsoft.aspnetcore.mvc.iactionresult) 구현 외 항목을 반환할 때마다 적용됩니다. 비`IActionResult` 구현을 반환하는 작업(예: `object`)도 서식 있는 응답을 반환합니다.
 
 이 형식의 몇 가지 도우미 메서드에는 `BadRequest`, `CreatedAtRoute` 및 `Ok`가 포함됩니다. 이러한 메서드의 예에는 각각 `return BadRequest(modelState);`, `return CreatedAtRoute("routename", values, newobject);` 및 `return Ok(value);`가 있습니다. `BadRequest` 및 `Ok`는 값이 전달될 때만 콘텐츠 협상을 수행합니다. 값을 전달하지 않으면 대신 HTTP 상태 코드 결과 형식으로 제공합니다. 반면, `CreatedAtRoute` 메서드는 해당 오버로드에서는 모두 값이 전달되어야 하므로 항상 콘텐츠 협상을 수행합니다.
 
@@ -104,4 +104,4 @@ ms.lasthandoff: 01/30/2018
    * [오류 처리](xref:mvc/controllers/filters#exception-filters)
    * [응답 캐싱](xref:performance/caching/response)
 
-많은 교차 편집 문제는 필터 또는 사용자 지정 [미들웨어](xref:fundamentals/middleware)를 사용하여 처리할 수 있습니다.
+많은 교차 편집 문제는 필터 또는 사용자 지정 [미들웨어](xref:fundamentals/middleware/index)를 사용하여 처리할 수 있습니다.

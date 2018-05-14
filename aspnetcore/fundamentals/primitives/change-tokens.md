@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core에서 변경 토큰을 사용하여 변경 내용 검색"
+title: ASP.NET Core에서 변경 토큰을 사용하여 변경 내용 검색
 author: guardrex
-description: "변경 토큰을 사용하여 변경 내용을 추적하는 방법에 대해 알아봅니다."
+description: 변경 토큰을 사용하여 변경 내용을 추적하는 방법에 대해 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 11/10/2017
@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/primitives/change-tokens
-ms.openlocfilehash: 94bf356fcbfab3930804485c1b65e4a0f4c52b8e
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 3055eec91adc412b596d4cc73e8523e18ff63331
+ms.sourcegitcommit: 7c8fd9b7445cd77eb7f7d774bfd120c26f3b5d84
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 04/19/2018
 ---
 # <a name="detect-changes-with-change-tokens-in-aspnet-core"></a>ASP.NET Core에서 변경 토큰을 사용하여 변경 내용 검색
 
@@ -22,7 +22,7 @@ ms.lasthandoff: 01/31/2018
 
 *변경 토큰*은 변경 내용을 추적하는 데 사용되는 범용의 하위 수준 구성 요소입니다.
 
-[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/primitives/change-tokens/sample/)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/primitives/change-tokens/sample/)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="ichangetoken-interface"></a>IChangeToken 인터페이스
 
@@ -59,22 +59,22 @@ ms.lasthandoff: 01/31/2018
 
 기본적으로 ASP.NET Core 템플릿은 [JSON 구성 파일](xref:fundamentals/configuration/index#json-configuration)(*appsettings.json*, *appsettings.Development.json*, and *appsettings.Production.json*)을 사용하여 앱 구성 설정을 로드합니다.
 
-이러한 파일은 `reloadOnChange` 매개 변수를 받아들이는 [ConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.configurationbuilder)에서 [AddJsonFile(IConfigurationBuilder, String, Boolean, Boolean)](/dotnet/api/microsoft.extensions.configuration.jsonconfigurationextensions.addjsonfile?view=aspnetcore-2.0#Microsoft_Extensions_Configuration_JsonConfigurationExtensions_AddJsonFile_Microsoft_Extensions_Configuration_IConfigurationBuilder_System_String_System_Boolean_System_Boolean_) 확장 메서드를 사용하여 구성합니다(ASP.NET Core 1.1 이상). `reloadOnChange`는 파일 변경 시 구성을 다시 로드해야 하는지를 나타냅니다. [WebHost](/dotnet/api/microsoft.aspnetcore.webhost) 편의 메서드 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder)([참조 소스](https://github.com/aspnet/MetaPackages/blob/rel/2.0.3/src/Microsoft.AspNetCore/WebHost.cs#L152-L193))에서 이 설정을 참조하세요.
+이러한 파일은 `reloadOnChange` 매개 변수를 받아들이는 [ConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.configurationbuilder)에서 [AddJsonFile(IConfigurationBuilder, String, Boolean, Boolean)](/dotnet/api/microsoft.extensions.configuration.jsonconfigurationextensions.addjsonfile?view=aspnetcore-2.0#Microsoft_Extensions_Configuration_JsonConfigurationExtensions_AddJsonFile_Microsoft_Extensions_Configuration_IConfigurationBuilder_System_String_System_Boolean_System_Boolean_) 확장 메서드를 사용하여 구성합니다(ASP.NET Core 1.1 이상). `reloadOnChange`는 파일 변경 시 구성을 다시 로드해야 하는지를 나타냅니다. [WebHost](/dotnet/api/microsoft.aspnetcore.webhost) 편의 메서드 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder)에서 이 설정을 참조하세요.
 
 ```csharp
 config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
       .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true);
 ```
 
-파일 기반 구성은 [FileConfigurationSource](/dotnet/api/microsoft.extensions.configuration.fileconfigurationsource)로 표현됩니다. `FileConfigurationSource`는 파일을 모니터링하는 데 [IFileProvider](/dotnet/api/microsoft.extensions.fileproviders.ifileprovider)([참조 소스](https://github.com/aspnet/FileSystem/blob/patch/2.0.1/src/Microsoft.Extensions.FileProviders.Abstractions/IFileProvider.cs))를 사용합니다.
+파일 기반 구성은 [FileConfigurationSource](/dotnet/api/microsoft.extensions.configuration.fileconfigurationsource)로 표현됩니다. `FileConfigurationSource`는 [IFileProvider](/dotnet/api/microsoft.extensions.fileproviders.ifileprovider)을 사용하여 파일을 모니터링합니다.
 
-기본적으로 `IFileMonitor`는 [PhysicalFileProvider](/dotnet/api/microsoft.extensions.fileproviders.physicalfileprovider)([참조 소스](https://github.com/aspnet/Configuration/blob/patch/2.0.1/src/Microsoft.Extensions.Configuration.FileExtensions/FileConfigurationSource.cs#L82))에 의해 제공되며 [FileSystemWatcher](/dotnet/api/system.io.filesystemwatcher)를 사용하여 구성 파일 변경을 모니터링합니다.
+기본적으로 `IFileMonitor`는 [PhysicalFileProvider](/dotnet/api/microsoft.extensions.fileproviders.physicalfileprovider)에서 제공하며 [FileSystemWatcher](/dotnet/api/system.io.filesystemwatcher)를 사용하여 구성 파일 변경을 모니터링합니다.
 
 샘플 앱을 통해 구성 변경 모니터링을 위한 두 가지 구현을 설명합니다. *appsettings.json* 파일이 변경되거나 파일의 환경 버전이 변경되는 경우 각 구현에서 사용자 지정 코드를 실행합니다. 샘플 앱은 메시지를 콘솔에 기록합니다.
 
 구성 파일의 `FileSystemWatcher`는 단일 구성 파일 변경에 대해 토큰 콜백을 여러 개 트리거할 수 있습니다. 샘플의 구현은 구성 파일에서 파일 해시를 확인하여 이 문제를 방지합니다. 파일 해시를 확인하면 사용자 지정 코드를 실행하기 전에 적어도 하나의 구성 파일이 변경되었는지 확인할 수 있습니다. 샘플에서는 SHA1 파일 해시(*Utilities/Utilities.cs*)를 사용합니다.
 
-   [!code-csharp[Main](change-tokens/sample/Utilities/Utilities.cs?name=snippet1)]
+   [!code-csharp[](change-tokens/sample/Utilities/Utilities.cs?name=snippet1)]
 
    재시도는 지수 백오프로 구현됩니다. 파일 중 하나에서 새 해시를 일시적으로 계산하지 못하게 하는 파일 잠금이 발생할 수 있으므로 재시도가 제공됩니다.
 
@@ -82,11 +82,11 @@ config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
 
 변경 알림을 위한 토큰 소비자 `Action` 콜백을 구성 다시 로드 토큰(*Startup.cs*)에 등록합니다.
 
-[!code-csharp[Main](change-tokens/sample/Startup.cs?name=snippet2)]
+[!code-csharp[](change-tokens/sample/Startup.cs?name=snippet2)]
 
 `config.GetReloadToken()`은 토큰을 제공합니다. 콜백은 `InvokeChanged` 메서드입니다.
 
-[!code-csharp[Main](change-tokens/sample/Startup.cs?name=snippet3)]
+[!code-csharp[](change-tokens/sample/Startup.cs?name=snippet3)]
 
 콜백의 `state`가 `IHostingEnvironment`에서 전달하는 데 사용됩니다. 이것은 모니터링할 올바른 *appsettings* 구성 JSON 파일(*appsettings.&lt;Environment&gt;.json*)을 결정하는 데 유용합니다. 파일 해시는 구성 파일이 한 번만 변경된 경우 여러 토큰 콜백으로 인해 `WriteConsole` 문이 여러 번 실행되지 않도록 하는 데 사용됩니다.
 
@@ -102,11 +102,11 @@ config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
 
 이 샘플은 `IConfigurationMonitor` 인터페이스(*Extensions/ConfigurationMonitor.cs*)를 설정합니다.
 
-[!code-csharp[Main](change-tokens/sample/Extensions/ConfigurationMonitor.cs?name=snippet1)]
+[!code-csharp[](change-tokens/sample/Extensions/ConfigurationMonitor.cs?name=snippet1)]
 
 구현된 클래스의 생성자인 `ConfigurationMonitor`는 변경 알림을 위한 콜백을 등록합니다.
 
-[!code-csharp[Main](change-tokens/sample/Extensions/ConfigurationMonitor.cs?name=snippet2)]
+[!code-csharp[](change-tokens/sample/Extensions/ConfigurationMonitor.cs?name=snippet2)]
 
 `config.GetReloadToken()`은 토큰을 제공합니다. `InvokeChanged`는 콜백 메서드입니다. 이 인스턴스에서 `state`는 모니터링 상태를 설명하는 문자열입니다. 두 개의 속성이 사용됩니다.
 
@@ -119,27 +119,27 @@ config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
 * `CurrentState` 속성 문자열을 코드가 실행된 시간을 기록하는 설명 메시지로 설정합니다.
 * `WriteConsole` 출력의 현재 `state`를 기록합니다.
 
-[!code-csharp[Main](change-tokens/sample/Extensions/ConfigurationMonitor.cs?name=snippet3)]
+[!code-csharp[](change-tokens/sample/Extensions/ConfigurationMonitor.cs?name=snippet3)]
 
 `ConfigurationMonitor` 인스턴스가 *Startup.cs*의 `ConfigureServices`에서 서비스로 등록됩니다.
 
-[!code-csharp[Main](change-tokens/sample/Startup.cs?name=snippet1)]
+[!code-csharp[](change-tokens/sample/Startup.cs?name=snippet1)]
 
 인덱스 페이지에서는 구성 모니터링을 통해 사용자 컨트롤을 제공합니다. `IConfigurationMonitor`의 인스턴스는 `IndexModel`에 삽입됩니다.
 
-[!code-csharp[Main](change-tokens/sample/Pages/Index.cshtml.cs?name=snippet1)]
+[!code-csharp[](change-tokens/sample/Pages/Index.cshtml.cs?name=snippet1)]
 
 단추는 모니터링을 사용 및 사용하지 않도록 설정합니다.
 
-[!code-cshtml[Main](change-tokens/sample/Pages/Index.cshtml?range=35)]
+[!code-cshtml[](change-tokens/sample/Pages/Index.cshtml?range=35)]
 
-[!code-csharp[Main](change-tokens/sample/Pages/Index.cshtml.cs?name=snippet2)]
+[!code-csharp[](change-tokens/sample/Pages/Index.cshtml.cs?name=snippet2)]
 
 `OnPostStartMonitoring`이 트리거되면 모니터링을 사용하도록 설정하고 현재 상태가 지워집니다. `OnPostStopMonitoring`이 트리거되면 모니터링을 사용하지 않도록 설정하고 모니터링이 발생하지 않음을 반영하도록 상태를 설정합니다.
 
 ## <a name="monitoring-cached-file-changes"></a>캐시된 파일 변경 모니터링
 
-[IMemoryCache](/dotnet/api/microsoft.extensions.caching.memory.imemorycache)를 사용하여 파일 콘텐츠를 메모리 내에 캐시할 수 있습니다. 메모리 내 캐싱은 [메모리 내 캐싱](xref:performance/caching/memory) 항목에서 설명합니다. 아래에 설명된 구현과 같은 추가 단계를 수행하지 않으면 소스 데이터가 변경될 경우 캐시에서 *부실*(오래된) 데이터가 반환됩니다.
+[IMemoryCache](/dotnet/api/microsoft.extensions.caching.memory.imemorycache)를 사용하여 파일 콘텐츠를 메모리 내에 캐시할 수 있습니다. 메모리 내 캐싱은 [메모리 내 캐시](xref:performance/caching/memory) 토픽에서 설명합니다. 아래에 설명된 구현과 같은 추가 단계를 수행하지 않으면 소스 데이터가 변경될 경우 캐시에서 *부실*(오래된) 데이터가 반환됩니다.
 
 [상대(sliding) 만료](/dotnet/api/microsoft.extensions.caching.memory.memorycacheentryoptions.slidingexpiration) 기간을 갱신할 때 캐시된 소스 파일의 상태를 고려하지 않으면 부실 캐시 데이터가 발생합니다. 데이터에 대한 각 요청은 상대(sliding) 만료 기간을 갱신하지만 파일은 캐시에 다시 로드되지 않습니다. 파일의 캐시된 콘텐츠를 사용하는 모든 앱 기능은 부실 콘텐츠를 받을 수 있습니다.
 
@@ -152,7 +152,7 @@ config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
 
 *Utilities/Utilities.cs*:
 
-[!code-csharp[Main](change-tokens/sample/Utilities/Utilities.cs?name=snippet2)]
+[!code-csharp[](change-tokens/sample/Utilities/Utilities.cs?name=snippet2)]
 
 캐시된 파일 조회를 처리하기 위해 `FileService`가 생성됩니다. 서비스의 `GetFileContent` 메서드 호출은 메모리 내 캐시에서 파일 콘텐츠를 가져와 호출자( *Services/FileService.cs*)에게 반환하려고 합니다.
 
@@ -162,19 +162,19 @@ config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
 1. [IFileProviders.Watch](/dotnet/api/microsoft.extensions.fileproviders.ifileprovider.watch)를 통해 파일 공급자로부터 변경 토큰을 가져옵니다. 파일이 수정될 때 토큰의 콜백이 트리거됩니다.
 1. [상대(sliding) 만료](/dotnet/api/microsoft.extensions.caching.memory.memorycacheentryoptions.slidingexpiration) 기간과 함께 파일 콘텐츠가 캐시됩니다. 변경 토큰은 [MemoryCacheEntryExtensions.AddExpirationToken](/dotnet/api/microsoft.extensions.caching.memory.memorycacheentryextensions.addexpirationtoken)과 연결되어 파일이 캐시되는 동안 변경되면 캐시 항목을 제거합니다.
 
-[!code-csharp[Main](change-tokens/sample/Services/FileService.cs?name=snippet1)]
+[!code-csharp[](change-tokens/sample/Services/FileService.cs?name=snippet1)]
 
 `FileService`가 메모리 캐싱 서비스(*Startup.cs*)와 함께 서비스 컨테이너에 등록됩니다.
 
-[!code-csharp[Main](change-tokens/sample/Startup.cs?name=snippet4)]
+[!code-csharp[](change-tokens/sample/Startup.cs?name=snippet4)]
 
 페이지 모델은 서비스(*Pages/Index.cshtml.cs*)를 사용하여 파일의 콘텐츠를 로드합니다.
 
-[!code-csharp[Main](change-tokens/sample/Pages/Index.cshtml.cs?name=snippet3)]
+[!code-csharp[](change-tokens/sample/Pages/Index.cshtml.cs?name=snippet3)]
 
 ## <a name="compositechangetoken-class"></a>CompositeChangeToken 클래스
 
-단일 개체에 하나 이상의 `IChangeToken` 인스턴스를 나타내는 경우 [CompositeChangeToken](/dotnet/api/microsoft.extensions.primitives.compositechangetoken) 클래스([참조 소스](https://github.com/aspnet/Common/blob/patch/2.0.1/src/Microsoft.Extensions.Primitives/CompositeChangeToken.cs))를 사용합니다.
+단일 개체에 있는 하나 이상의 `IChangeToken` 인스턴스를 나타내는 경우 [CompositeChangeToken](/dotnet/api/microsoft.extensions.primitives.compositechangetoken) 클래스를 사용합니다.
 
 ```csharp
 var firstCancellationTokenSource = new CancellationTokenSource();
@@ -199,7 +199,7 @@ var compositeChangeToken =
 
 ## <a name="see-also"></a>참고 항목
 
-* [메모리 내 캐싱](xref:performance/caching/memory)
+* [메모리 내 캐시](xref:performance/caching/memory)
 * [분산 캐시 사용](xref:performance/caching/distributed)
 * [변경 토큰을 사용하여 변경 내용 검색](xref:fundamentals/primitives/change-tokens)
 * [응답 캐싱](xref:performance/caching/response)

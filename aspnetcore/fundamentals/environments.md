@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core에서 여러 환경 사용"
+title: ASP.NET Core에서 여러 환경 사용
 author: rick-anderson
-description: "ASP.NET Core가 어떻게 여러 환경에 걸쳐 앱 동작을 제어하기 위한 지원을 제공하는지에 대해 알아봅니다."
+description: ASP.NET Core가 어떻게 여러 환경에 걸쳐 앱 동작을 제어하기 위한 지원을 제공하는지에 대해 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 12/25/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/environments
-ms.openlocfilehash: b40ee9b1c6feae4942f05d22dab776d3cf6c26a0
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: b9c3b8a15424ca637a2486450bfdde2762204935
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="working-with-multiple-environments"></a>여러 환경 사용
+# <a name="work-with-multiple-environments-in-aspnet-core"></a>ASP.NET Core에서 여러 환경 사용
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -25,14 +25,14 @@ ASP.NET Core는 환경 변수를 통해 런타임 시 응용 프로그램 동작
 
 ## <a name="environments"></a>환경
 
-ASP.NET Core는 응용 프로그램 시작 시 `ASPNETCORE_ENVIRONMENT` 환경 변수를 읽고, [IHostingEnvironment.EnvironmentName](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.ihostingenvironment.environmentname?view=aspnetcore-2.0#Microsoft_AspNetCore_Hosting_IHostingEnvironment_EnvironmentName)에 해당 값을 저장합니다. `ASPNETCORE_ENVIRONMENT`는 임의의 값으로 설정할 수 있지만 [개발](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.environmentname.development?view=aspnetcore-2.0), [준비](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.environmentname.staging?view=aspnetcore-2.0) 및 [프로덕션](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.environmentname.production?view=aspnetcore-2.0)의 [3개 값](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.environmentname?view=aspnetcore-2.0)은 프레임워크에서 지원됩니다. `ASPNETCORE_ENVIRONMENT`를 설정하지 않으면 기본값은 `Production`으로 설정됩니다.
+ASP.NET Core는 응용 프로그램 시작 시 `ASPNETCORE_ENVIRONMENT` 환경 변수를 읽고, [IHostingEnvironment.EnvironmentName](/dotnet/api/microsoft.aspnetcore.hosting.ihostingenvironment.environmentname?view=aspnetcore-2.0#Microsoft_AspNetCore_Hosting_IHostingEnvironment_EnvironmentName)에 해당 값을 저장합니다. `ASPNETCORE_ENVIRONMENT`는 임의의 값으로 설정할 수 있지만 [개발](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.development?view=aspnetcore-2.0), [준비](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.staging?view=aspnetcore-2.0) 및 [프로덕션](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.production?view=aspnetcore-2.0)의 [3개 값](/dotnet/api/microsoft.aspnetcore.hosting.environmentname?view=aspnetcore-2.0)은 프레임워크에서 지원됩니다. `ASPNETCORE_ENVIRONMENT`를 설정하지 않으면 기본값은 `Production`으로 설정됩니다.
 
-[!code-csharp[Main](environments/sample/WebApp1/Startup.cs?name=snippet)]
+[!code-csharp[](environments/sample/WebApp1/Startup.cs?name=snippet)]
 
 위의 코드:
 
-* `ASPNETCORE_ENVIRONMENT`가 `Development`로 설정된 경우 [UseDeveloperExceptionPage](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.developerexceptionpageextensions.usedeveloperexceptionpage?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_DeveloperExceptionPageExtensions_UseDeveloperExceptionPage_Microsoft_AspNetCore_Builder_IApplicationBuilder_) 및 [UseBrowserLink](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.browserlinkextensions.usebrowserlink?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_BrowserLinkExtensions_UseBrowserLink_Microsoft_AspNetCore_Builder_IApplicationBuilder_)를 호출합니다.
-* `ASPNETCORE_ENVIRONMENT`의 값이 다음 중 하나로 설정된 경우 [UseExceptionHandler](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.builder.exceptionhandlerextensions.useexceptionhandler?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_ExceptionHandlerExtensions_UseExceptionHandler_Microsoft_AspNetCore_Builder_IApplicationBuilder_)를 호출합니다.
+* `ASPNETCORE_ENVIRONMENT`가 `Development`로 설정된 경우 [UseDeveloperExceptionPage](/dotnet/api/microsoft.aspnetcore.builder.developerexceptionpageextensions.usedeveloperexceptionpage?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_DeveloperExceptionPageExtensions_UseDeveloperExceptionPage_Microsoft_AspNetCore_Builder_IApplicationBuilder_) 및 [UseBrowserLink](/dotnet/api/microsoft.aspnetcore.builder.browserlinkextensions.usebrowserlink?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_BrowserLinkExtensions_UseBrowserLink_Microsoft_AspNetCore_Builder_IApplicationBuilder_)를 호출합니다.
+* `ASPNETCORE_ENVIRONMENT`의 값이 다음 중 하나로 설정된 경우 [UseExceptionHandler](/dotnet/api/microsoft.aspnetcore.builder.exceptionhandlerextensions.useexceptionhandler?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_ExceptionHandlerExtensions_UseExceptionHandler_Microsoft_AspNetCore_Builder_IApplicationBuilder_)를 호출합니다.
 
     * `Staging`
     * `Production`
@@ -40,7 +40,7 @@ ASP.NET Core는 응용 프로그램 시작 시 `ASPNETCORE_ENVIRONMENT` 환경 �
 
 [환경 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/environment-tag-helper)는 `IHostingEnvironment.EnvironmentName`의 값을 사용하여 요소에 표시를 포함하거나 제외합니다.
 
-[!code-html[Main](environments/sample/WebApp1/Pages/About.cshtml)]
+[!code-html[](environments/sample/WebApp1/Pages/About.cshtml)]
 
 참고: Windows와 macOS에서 환경 변수 및 값은 대/소문자를 구분하지 않습니다. Linux 환경 변수 및 값은 기본적으로 **대/소문자를 구분**합니다.
 
@@ -52,21 +52,37 @@ ASP.NET Core는 응용 프로그램 시작 시 `ASPNETCORE_ENVIRONMENT` 환경 �
 
 다음 JSON에는 *launchSettings.json* 파일의 세 가지 프로필이 표시되어 있습니다.
 
-[!code-json[Main](environments/sample/WebApp1/Properties/launchSettings.json?highlight=10,11,18,26)]
+[!code-json[](environments/sample/WebApp1/Properties/launchSettings.json?highlight=10,11,18,26)]
 
-응용 프로그램이 `dotnet run`으로 시작하는 경우 `"commandName": "Project"`가 있는 첫 번째 프로필이 사용됩니다. `commandName`의 값은 시작할 웹 서버를 지정합니다. `commandName`은 다음 중 하나일 수 있습니다.
+::: moniker range=">= aspnetcore-2.1"
+> [!NOTE]
+> *launchSettings.json*의 `applicationUrl` 속성은 서버 URL의 목록을 지정할 수 있습니다. 목록의 URL 사이에 세미콜론을 사용합니다.
+>
+> ```json
+> "WebApplication1": {
+>    "commandName": "Project",
+>    "launchBrowser": true,
+>    "applicationUrl": "https://localhost:5001;http://localhost:5000",
+>    "environmentVariables": {
+>      "ASPNETCORE_ENVIRONMENT": "Development"
+>    }
+> }
+> ```
+::: moniker-end
+
+[dotnet run](/dotnet/core/tools/dotnet-run)을 사용하여 응용 프로그램을 시작하면 `"commandName": "Project"`를 포함한 첫 번째 프로필이 사용됩니다. `commandName`의 값은 시작할 웹 서버를 지정합니다. `commandName`은 다음 중 하나일 수 있습니다.
 
 * IIS Express
 * IIS
 * 프로젝트(Kestrel을 시작)
 
-앱이 `dotnet run`으로 시작하는 경우:
+앱이 [dotnet run](/dotnet/core/tools/dotnet-run)으로 시작하는 경우:
 
 * 가능한 경우 *launchSettings.json*을 읽습니다. *launchSettings.json*의 `environmentVariables` 설정은 환경 변수를 재정의합니다.
 * 호스팅 환경이 표시됩니다.
 
 
-다음 출력에는 `dotnet run`으로 시작되는 앱이 나와 있습니다.
+다음 출력은 [dotnet run](/dotnet/core/tools/dotnet-run)으로 시작되는 앱을 보여 줍니다.
 ```bash
 PS C:\Webs\WebApp1> dotnet run
 Using launch settings from C:\Webs\WebApp1\Properties\launchSettings.json...
@@ -87,7 +103,7 @@ Visual Studio **Debug** 탭은 *launchSettings.json* 파일을 편집할 수 있
 
 ### <a name="production"></a>프로덕션
 
-프로덕션 환경은 보안, 성능 및 응용 프로그램 견고성을 최대화하도록 구성되어야 합니다. 프로덕션 환경에 있을 수 있는, 개발과 다를 수 있는 몇 가지 일반적인 설정에는 다음이 포함됩니다.
+프로덕션 환경은 보안, 성능 및 응용 프로그램 견고성을 최대화하도록 구성되어야 합니다. 개발과 다른 몇 가지 일반적인 설정은 다음과 같습니다.
 
 * 캐싱.
 * 클라이언트 쪽 리소스가 번들로 제공되고, 축소되며, 잠재적으로 CDN에서 처리됩니다.
@@ -110,7 +126,7 @@ Azure App Service의 경우:
 
 
 ### <a name="windows"></a>Windows
-현재 세션에 대한 `ASPNETCORE_ENVIRONMENT`를 설정하려면 앱이 `dotnet run`을 사용하여 시작된 경우 다음 명령이 사용됩니다.
+현재 세션에 `ASPNETCORE_ENVIRONMENT`를 설정하려면 앱이 [dotnet run](/dotnet/core/tools/dotnet-run)을 사용하여 시작된 경우 다음 명령이 사용됩니다.
 
 **명령줄**
 ```
@@ -165,16 +181,16 @@ Linux 배포의 경우 세션 기반 변수 설정에 대한 명령줄에서 `ex
 
 ASP.NET Core 앱이 시작되면 [시작 클래스](xref:fundamentals/startup)가 앱을 부트스트랩합니다. `Startup{EnvironmentName}` 클래스가 존재하는 경우 해당 클래스가 `EnvironmentName`에 대해 호출됩니다.
 
-[!code-csharp[Main](environments/sample/WebApp1/StartupDev.cs?name=snippet&highlight=1)]
+[!code-csharp[](environments/sample/WebApp1/StartupDev.cs?name=snippet&highlight=1)]
 
-참고: [WebHostBuilder.UseStartup<TStartup>](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.usestartup?view=aspnetcore-2.0#Microsoft_AspNetCore_Hosting_WebHostBuilderExtensions_UseStartup__1_Microsoft_AspNetCore_Hosting_IWebHostBuilder_)을 호출하면 구성 섹션을 재정의합니다.
+참고: [WebHostBuilder.UseStartup<TStartup>](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.usestartup?view=aspnetcore-2.0#Microsoft_AspNetCore_Hosting_WebHostBuilderExtensions_UseStartup__1_Microsoft_AspNetCore_Hosting_IWebHostBuilder_)을 호출하면 구성 섹션을 재정의합니다.
 
-[Configure](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure?view=aspnetcore-2.0#Microsoft_AspNetCore_Hosting_StartupBase_Configure_Microsoft_AspNetCore_Builder_IApplicationBuilder_) 및 [ConfigureServices](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configureservices?view=aspnetcore-2.0)는 `Configure{EnvironmentName}` 및 `Configure{EnvironmentName}Services` 양식의 환경 특정 버전을 지원합니다.
+[Configure](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure?view=aspnetcore-2.0#Microsoft_AspNetCore_Hosting_StartupBase_Configure_Microsoft_AspNetCore_Builder_IApplicationBuilder_) 및 [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configureservices?view=aspnetcore-2.0)는 `Configure{EnvironmentName}` 및 `Configure{EnvironmentName}Services` 양식의 환경 특정 버전을 지원합니다.
 
-[!code-csharp[Main](environments/sample/WebApp1/Startup.cs?name=snippet_all&highlight=15,37)]
+[!code-csharp[](environments/sample/WebApp1/Startup.cs?name=snippet_all&highlight=15,37)]
 
 ## <a name="additional-resources"></a>추가 자료
 
 * [응용 프로그램 시작](xref:fundamentals/startup)
 * [구성](xref:fundamentals/configuration/index)
-* [IHostingEnvironment.EnvironmentName](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.hosting.ihostingenvironment.environmentname?view=aspnetcore-2.0#Microsoft_AspNetCore_Hosting_IHostingEnvironment_EnvironmentName)
+* [IHostingEnvironment.EnvironmentName](/dotnet/api/microsoft.aspnetcore.hosting.ihostingenvironment.environmentname?view=aspnetcore-2.0#Microsoft_AspNetCore_Hosting_IHostingEnvironment_EnvironmentName)

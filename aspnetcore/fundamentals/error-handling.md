@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core의 오류 처리"
+title: ASP.NET Core에서 오류 처리
 author: ardalis
-description: "ASP.NET Core 응용 프로그램에서 오류를 처리하는 방법을 알아봅니다."
+description: ASP.NET Core 응용 프로그램에서 오류를 처리하는 방법을 알아봅니다.
 manager: wpickett
 ms.author: tdykstra
 ms.custom: H1Hack27Feb2017
@@ -10,25 +10,25 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/error-handling
-ms.openlocfilehash: 5b0cda7b79b8a9523d1ba6a9b321d22d3ccc753a
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 5443cbeb1ef95c579e5fc12b625babbfa27c7ec2
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="introduction-to-error-handling-in-aspnet-core"></a>ASP.NET Core에서 오류 처리 소개
+# <a name="handle-errors-in-aspnet-core"></a>ASP.NET Core에서 오류 처리
 
 작성자: [Steve Smith](https://ardalis.com/) 및 [Tom Dykstra](https://github.com/tdykstra/)
 
 이 문서에서는 ASP.NET Core 앱에서 오류를 처리하기 위한 일반적인 접근법을 다룹니다.
 
-[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/error-handling/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/error-handling/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="the-developer-exception-page"></a>개발자 예외 페이지
 
 예외에 대한 자세한 정보가 있는 페이지를 표시하도록 응용 프로그램을 구성하려면 `Microsoft.AspNetCore.Diagnostics` NuGet 패키지를 설치하고 줄을 [시작 클래스에서 메서드를 구성](startup.md)에 추가합니다.
 
-[!code-csharp[Main](error-handling/sample/Startup.cs?name=snippet_DevExceptionPage&highlight=7)]
+[!code-csharp[](error-handling/sample/Startup.cs?name=snippet_DevExceptionPage&highlight=7)]
 
 `app.UseMvc`와 같은 예외를 catch하려는 모든 미들웨어 앞에 `UseDeveloperExceptionPage`를 배치합니다.
 
@@ -51,7 +51,7 @@ ms.lasthandoff: 01/30/2018
 
 앱이 `Development` 환경에서 실행되고 있지 않는 경우 사용할 예외 처리기 페이지를 구성하는 것이 좋습니다.
 
-[!code-csharp[Main](error-handling/sample/Startup.cs?name=snippet_DevExceptionPage&highlight=11)]
+[!code-csharp[](error-handling/sample/Startup.cs?name=snippet_DevExceptionPage&highlight=11)]
 
 MVC 앱에서는 `HttpGet`과 같은 HTTP 메서드 특성을 사용하여 오류 처리기 작업 메서드를 명시적으로 데코레이트하지 마십시오. 명시적 동사를 사용하면 일부 요청이 메서드에 도달하지 못할 수 있습니다.
 
@@ -65,39 +65,44 @@ public IActionResult Index()
 
 ## <a name="configuring-status-code-pages"></a>상태 코드 페이지 구성
 
-기본적으로 앱은 500(내부 서버 오류) 또는 404(찾을 수 없음)와 같은 HTTP 상태 코드에 대한 다양한 상태 코드 페이지를 제공하지 않습니다. `Configure` 메서드에 줄을 추가하여 `StatusCodePagesMiddleware`를 구성할 수 있습니다.
+기본적으로 앱은 *404 찾을 수 없음*과 같은 HTTP 상태 코드에 대한 다양한 상태 코드 페이지를 제공하지 않습니다. 상태 코드 페이지를 제공하려면 `Startup.Configure` 메서드에 줄을 추가하여 상태 코드 페이지 미들웨어를 구성합니다.
 
 ```csharp
 app.UseStatusCodePages();
 ```
 
-기본적으로 이 미들웨어는 404와 같이 일반적인 상태 코드에 대한 간단한 텍스트 전용 처리기를 추가합니다.
+기본적으로 상태 코드 페이지 미들웨어는 404와 같은 일반적인 상태 코드에 대한 간단한 텍스트 전용 처리기를 추가합니다.
 
 ![404 페이지](error-handling/_static/default-404-status-code.png)
 
-미들웨어는 몇 가지 다양한 확장 메서드를 지원합니다. 람다 식에서 사용하기도 하고, 콘텐츠 형식 및 형식 문자열을 사용하기도 합니다.
+미들웨어는 몇 가지 확장 메서드를 지원합니다. 한 가지 메서드는 람다 식을 사용합니다.
 
-[!code-csharp[Main](error-handling/sample/Startup.cs?name=snippet_StatusCodePages)]
+[!code-csharp[](error-handling/sample/Startup.cs?name=snippet_StatusCodePages)]
+
+또 다른 메서드는 콘텐츠 형식 및 형식 문자열을 사용합니다.
 
 ```csharp
 app.UseStatusCodePages("text/plain", "Status code page, status code: {0}");
 ```
 
-리디렉션 확장 메서드도 있습니다. 302 상태 코드를 클라이언트에 보내기도 하고, 클라이언트에 원래 상태 코드를 반환하면서 리디렉션 URL에 대한 처리기를 실행하기도 합니다.
+또한 리디렉션 및 다시 실행 확장 메서드도 있습니다. 리디렉션 메서드는 302 상태 코드를 클라이언트에 보냅니다.
 
-[!code-csharp[Main](error-handling/sample/Startup.cs?name=snippet_StatusCodePagesWithRedirect)]
+[!code-csharp[](error-handling/sample/Startup.cs?name=snippet_StatusCodePagesWithRedirect)]
+
+다시 실행 메서드는 원래 상태 코드를 클라이언트에 반환할 뿐만 아니라 리디렉션 URL에 대한 처리기도 실행합니다.
 
 ```csharp
 app.UseStatusCodePagesWithReExecute("/error/{0}");
 ```
 
-특정 요청에 대한 상태 코드 페이지를 사용하지 않도록 설정해야 하는 경우 그렇게 할 수 있습니다.
+Razor 페이지 처리기 메서드 또는 MVC 컨트롤러에서 특정 요청에 대한 상태 코드 페이지를 비활성화할 수 있습니다. 상태 코드 페이지를 비활성화하려면 요청의 [HttpContext.Features](/dotnet/api/microsoft.aspnetcore.http.httpcontext.features) 컬렉션에서 [IStatusCodePagesFeature](/dotnet/api/microsoft.aspnetcore.diagnostics.istatuscodepagesfeature)를 검색하고 사용 가능한 경우 기능을 비활성합니다.
 
 ```csharp
-var statusCodePagesFeature = context.Features.Get<IStatusCodePagesFeature>();
+var statusCodePagesFeature = HttpContext.Features.Get<IStatusCodePagesFeature>();
+
 if (statusCodePagesFeature != null)
 {
-  statusCodePagesFeature.Enabled = false;
+    statusCodePagesFeature.Enabled = false;
 }
 ```
 
@@ -109,13 +114,15 @@ if (statusCodePagesFeature != null)
 
 ## <a name="server-exception-handling"></a>서버 예외 처리
 
-앱에서 논리를 처리하는 예외뿐 아니라 앱을 호스팅하는 [서버](servers/index.md)는 몇 가지 예외 처리를 수행합니다. 헤더를 보내기 전에 서버가 예외를 catch하는 경우 서버는 본문이 없는 500 내부 서버 오류 응답을 보냅니다. 헤더를 보낸 후에 서버가 예외를 catch하는 경우 서버는 연결을 닫습니다. 앱으로 처리되지 않는 요청은 서버에서 처리됩니다. 발생하는 모든 예외는 서버의 예외 처리에 의해 처리됩니다. 구성된 모든 사용자 지정 오류 페이지 또는 예외 처리 미들웨어 또는 필터는 이 동작에 영향을 미치지 않습니다.
+앱에서 논리를 처리하는 예외뿐 아니라 앱을 호스팅하는 [서버](servers/index.md)는 몇 가지 예외 처리를 수행합니다. 헤더를 보내기 전에 서버가 예외를 catch하는 경우 서버는 본문이 없는 *500 내부 서버 오류* 응답을 보냅니다. 헤더를 보낸 후에 서버가 예외를 catch하는 경우 서버는 연결을 닫습니다. 앱으로 처리되지 않는 요청은 서버에서 처리됩니다. 발생하는 모든 예외는 서버의 예외 처리에 의해 처리됩니다. 구성된 모든 사용자 지정 오류 페이지 또는 예외 처리 미들웨어 또는 필터는 이 동작에 영향을 미치지 않습니다.
 
 ## <a name="startup-exception-handling"></a>시작 예외 처리
 
 호스팅 계층만 앱 시작 시 발생하는 예외를 처리할 수 있습니다. `captureStartupErrors` 및 `detailedErrors` 키를 사용하여 [시작 시 오류에 대해 응답의 호스트가 동작하는 방법을 구성](hosting.md#detailed-errors)할 수 있습니다.
 
-호스팅은 호스트 주소/포트 바인딩 후에 오류가 발생하는 경우 캡처된 시작 오류에 대한 오류 페이지만 표시할 수 있습니다. 어떤 이유로 바인딩이 실패한 경우 호스팅 계층은 중요한 예외를 로그하고, dotnet 프로세스가 충돌하며, 오류 페이지가 표시되지 않습니다.
+호스팅은 호스트 주소/포트 바인딩 후에 오류가 발생하는 경우 캡처된 시작 오류에 대한 오류 페이지만 표시할 수 있습니다. 어떤 이유로 바인딩이 실패한 경우 호스팅 계층이 심각한 예외를 기록하고, dotnet 프로세스가 충돌하며, 앱이 [Kestrel](xref:fundamentals/servers/kestrel) 서버에서 실행 중일 때 오류 페이지가 표시되지 않습니다.
+
+[IIS](/iis) 또는 [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview)에서 실행 중일 때, 프로세스를 시작할 수 없는 경우 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)에서 *502.5 프로세스 실패*를 반환합니다. [IIS에서 ASP.NET Core 문제 해결](xref:host-and-deploy/iis/troubleshoot) 토픽의 문제 해결 방법에 대한 조언을 따릅니다.
 
 ## <a name="aspnet-mvc-error-handling"></a>ASP.NET MVC 오류 처리
 

@@ -12,7 +12,7 @@
 No executable found matching command "dotnet-aspnet-codegenerator"
   ```
 
-프로젝트 디렉터리(*Program.cs*, *Startup.cs* 및 *.csproj* 파일이 포함된 디렉터리)에 대해 명령 셸을 엽니다.
+앞의 오류는 잘못된 디렉터리에 있는 경우 발생합니다. 명령 셸에서 프로젝트 디렉터리(*Program.cs*, *Startup.cs* 및 *.csproj* 파일이 포함된 디렉터리)를 연 다음, 이전 명령을 실행합니다.
 
 오류가 표시될 경우:
   ```

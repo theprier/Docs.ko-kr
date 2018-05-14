@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core에서 세션 및 응용 프로그램 상태"
+title: ASP.NET Core에서 세션 및 응용 프로그램 상태
 author: rick-anderson
-description: "요청 간에 응용 프로그램 및 사용자(세션) 상태를 유지하는 접근 방법입니다."
+description: 요청 간에 응용 프로그램 및 사용자(세션) 상태를 유지하는 접근 방법입니다.
 manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
@@ -10,13 +10,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/app-state
-ms.openlocfilehash: f4ed38f7395e3f4fe939584c1f3f5b0dba93724c
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 3a9463e5c501b5f32471f002ecab5ad7a81a5c4a
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="introduction-to-session-and-application-state-in-aspnet-core"></a>ASP.NET Core에서 세션 및 응용 프로그램 상태 소개
+# <a name="session-and-application-state-in-aspnet-core"></a>ASP.NET Core에서 세션 및 응용 프로그램 상태
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT), [Steve Smith](https://ardalis.com/) 및 [Diana LaRose](https://github.com/DianaLaRose)
 
@@ -24,7 +24,7 @@ HTTP는 상태 비저장 프로토콜입니다. 웹 서버는 독립적인 요�
 
 ## <a name="session-state"></a>세션 상태
 
-세션 상태는 사용자가 웹앱을 탐색하는 동안 사용자 데이터를 저장하는 데 사용할 수 있는 ASP.NET Core의 기능입니다. 서버에서 사전 또는 해시 테이블로 구성하여 세션 상태는 브라우저에서 요청 간 데이터를 유지합니다. 세션 데이터는 캐시에 의해 지원됩니다.
+세션 상태는 사용자가 웹 앱을 탐색하는 동안 사용자의 데이터를 저장하기 위해서 사용할 수 있는 ASP.NET Core의 기능입니다. 서버에서 사전 또는 해시 테이블로 구성하여 세션 상태는 브라우저에서 요청 간 데이터를 유지합니다. 세션 데이터는 캐시에 의해 지원됩니다.
 
 ASP.NET Core는 클라이언트에 각 요청과 함께 서버에 전송된 세션 ID를 포함하는 쿠키를 제공하여 세션 상태를 유지합니다. 서버는 세션 ID를 사용하여 세션 데이터를 가져옵니다. 세션 쿠키는 브라우저와 관련되기 때문에 브라우저에서 세션을 공유할 수 없습니다. 세션 쿠키는 브라우저 세션이 끝나면 삭제됩니다. 쿠키가 만료된 세션에 대해 수신되면 동일한 세션 쿠키를 사용하는 새 세션이 생성됩니다. 
 
@@ -38,7 +38,7 @@ ASP.NET Core는 클라이언트에 각 요청과 함께 서버에 전송된 세�
 <a name="temp"></a>
 ## <a name="tempdata"></a>TempData
 
-ASP.NET Core MVC는 [컨트롤러](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.controller?view=aspnetcore-2.0)에서 [TempData](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.mvc.controller.tempdata?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_Controller_TempData) 속성을 노출합니다. 이 속성은 판독될 때까지 데이터를 저장합니다. `Keep` 및 `Peek` 메서드를 사용하여 삭제 없이 데이터를 검사할 수 있습니다. `TempData`는 두 개 이상의 요청에 대한 데이터가 필요할 경우 리디렉션에 특히 유용합니다. `TempData`는 TempData 공급자에 의해 구현됩니다(예: 쿠키 또는 세션 상태 사용).
+ASP.NET Core MVC는 [컨트롤러](/dotnet/api/microsoft.aspnetcore.mvc.controller?view=aspnetcore-2.0)에서 [TempData](/dotnet/api/microsoft.aspnetcore.mvc.controller.tempdata?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_Controller_TempData) 속성을 노출합니다. 이 속성은 판독될 때까지 데이터를 저장합니다. `Keep` 및 `Peek` 메서드를 사용하여 삭제 없이 데이터를 검사할 수 있습니다. `TempData`는 두 개 이상의 요청에 대한 데이터가 필요할 경우 리디렉션에 특히 유용합니다. `TempData`는 TempData 공급자에 의해 구현됩니다(예: 쿠키 또는 세션 상태 사용).
 
 <a name="tempdata-providers"></a>
 ### <a name="tempdata-providers"></a>TempData 공급자
@@ -47,7 +47,7 @@ ASP.NET Core MVC는 [컨트롤러](https://docs.microsoft.com/dotnet/api/microso
 
 ASP.NET Core 2.0 이상에서 쿠키 기반 TempData 공급자는 TempData를 쿠키에 저장하는 데 기본적으로 사용됩니다.
 
-쿠키 데이터는 [Base64UrlTextEncoder](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.webutilities.base64urltextencoder?view=aspnetcore-2.0)로 인코딩됩니다. 쿠키는 암호화되고 청크되므로 ASP.NET Core 1.x에서 확인한 단일 쿠키 크기 제한은 적용되지 않습니다. 암호화된 데이터를 압축하는 것은 [범죄](https://wikipedia.org/wiki/CRIME_(security_exploit)) 및 [위반](https://wikipedia.org/wiki/BREACH_(security_exploit)) 공격과 같은 보안 문제를 일으킬 수 있으므로 쿠키 데이터는 압축되지 않습니다. 쿠키 기반 TempData 공급자에 대한 자세한 내용은 [CookieTempDataProvider](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.ViewFeatures/ViewFeatures/CookieTempDataProvider.cs)를 참조하세요.
+쿠키 데이터는 [Base64UrlTextEncoder](/dotnet/api/microsoft.aspnetcore.webutilities.base64urltextencoder?view=aspnetcore-2.0)로 인코딩됩니다. 쿠키는 암호화되고 청크되므로 ASP.NET Core 1.x에서 확인한 단일 쿠키 크기 제한은 적용되지 않습니다. 암호화된 데이터를 압축하는 것은 [범죄](https://wikipedia.org/wiki/CRIME_(security_exploit)) 및 [위반](https://wikipedia.org/wiki/BREACH_(security_exploit)) 공격과 같은 보안 문제를 일으킬 수 있으므로 쿠키 데이터는 압축되지 않습니다. 쿠키 기반 TempData 공급자에 대한 자세한 내용은 [CookieTempDataProvider](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.ViewFeatures/ViewFeatures/CookieTempDataProvider.cs)를 참조하세요.
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
@@ -70,20 +70,17 @@ TempData 공급자를 선택하는 데는 다음과 같은 몇 가지 고려 사
 <a name="config-temp"></a>
 ### <a name="configure-the-tempdata-provider"></a>TempData 공급자 구성
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 쿠키 기반 TempData 공급자는 기본적으로 활성화됩니다. 다음 `Startup` 클래스 코드는 세션 기반 TempData 공급자를 구성합니다.
 
 [!code-csharp[](app-state/sample/src/WebAppSessionDotNetCore2.0App/StartupTempDataSession.cs?name=snippet_TempDataSession&highlight=4,6,11)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 다음 `Startup` 클래스 코드는 세션 기반 TempData 공급자를 구성합니다.
 
 [!code-csharp[](app-state/sample/src/WebAppSession/StartupTempDataSession.cs?name=snippet_TempDataSession&highlight=4,9)]
 
----
-
+* * *
 순서 지정은 미들웨어 구성 요소에 중요합니다. 위의 예에서 `UseMvcWithDefaultRoute` 후에 `UseSession`이 호출되는 경우 형식 `InvalidOperationException`의 예외가 발생합니다. 자세한 내용은 [미들웨어 순서 지정](xref:fundamentals/middleware/index#ordering)을 참조하세요.
 
 > [!IMPORTANT]
@@ -91,7 +88,7 @@ TempData 공급자를 선택하는 데는 다음과 같은 몇 가지 고려 사
 
 ## <a name="query-strings"></a>쿼리 문자열
 
-새 요청의 쿼리 문자열에 추가하여 한 요청에서 다른 요청으로 제한된 양의 데이터를 전달할 수 있습니다. 이는 이메일 또는 소셜 네트워크를 통해 공유되도록 포함된 상태가 있는 링크를 허용하는 영구적인 방식으로 상태를 캡처하는 데 유용합니다. 그러나 이러한 이유로 중요한 데이터에 쿼리 문자열을 절대 사용하면 안 됩니다. 쉽게 공유되는 것 뿐만 아니라 쿼리 문자열에 데이터를 포함하면 사용자가 인증되는 동안 악성 사이트를 방문하도록 유도할 수 있는 [CSRF(교차 사이트 요청 위조)](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)) 공격에 대한 기회를 만들 수 있습니다. 공격자는 앱에서 사용자 데이터를 도용하거나 사용자를 대신하여 악의적인 작업을 수행할 수 있습니다. 유지된 모든 응용 프로그램 또는 세션 상태를 CSRF 공격으로부터 보호해야 합니다. CSRF 공격에 대한 자세한 내용은 [ASP.NET Core에서 교차 사이트 요청 위조(XSRF/CSRF) 공격 방지](../security/anti-request-forgery.md)를 참조하세요.
+새 요청의 쿼리 문자열에 추가하여 한 요청에서 다른 요청으로 제한된 양의 데이터를 전달할 수 있습니다. 이는 이메일 또는 소셜 네트워크를 통해 공유되도록 포함된 상태가 있는 링크를 허용하는 영구적인 방식으로 상태를 캡처하는 데 유용합니다. 그러나 이러한 이유로 중요한 데이터에 쿼리 문자열을 절대 사용하면 안 됩니다. 쉽게 공유되는 것 뿐만 아니라 쿼리 문자열에 데이터를 포함하면 사용자가 인증되는 동안 악성 사이트를 방문하도록 유도할 수 있는 [CSRF(교차 사이트 요청 위조)](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)) 공격에 대한 기회를 만들 수 있습니다. 공격자는 앱에서 사용자 데이터를 도용하거나 사용자를 대신하여 악의적인 작업을 수행할 수 있습니다. 유지된 모든 응용 프로그램 또는 세션 상태를 CSRF 공격으로부터 보호해야 합니다. CSRF 공격에 대한 자세한 내용은 [교차 사이트 요청 위조(XSRF/CSRF) 공격 방지](xref:security/anti-request-forgery)를 참조하세요.
 
 ## <a name="post-data-and-hidden-fields"></a>데이터 게시 및 숨겨진 필드
 
@@ -107,11 +104,11 @@ TempData 공급자를 선택하는 데는 다음과 같은 몇 가지 고려 사
 
 ## <a name="httpcontextitems"></a>HttpContext.Items
 
-`Items` 컬렉션은 하나의 특정 요청을 처리하는 동안에만 필요한 데이터를 저장하기 위한 좋은 위치입니다. 컬렉션의 콘텐츠는 각 요청 후 삭제됩니다. `Items` 컬렉션은 요청 중에 다른 시점에서 작동하고 매개 변수를 전달할 직접 방법이 없는 경우에 통신하는 구성 요소 또는 미들웨어에 대한 방법으로 가장 잘 사용됩니다. 자세한 내용은 이 항목의 뒷부분에 나오는 [HttpContext.Items 작업](#working-with-httpcontextitems)을 참조하세요.
+`Items` 컬렉션은 하나의 특정 요청을 처리하는 동안에만 필요한 데이터를 저장하기 위한 좋은 위치입니다. 컬렉션의 콘텐츠는 각 요청 후 삭제됩니다. `Items` 컬렉션은 요청 중에 다른 시점에서 작동하고 매개 변수를 전달할 직접 방법이 없는 경우에 통신하는 구성 요소 또는 미들웨어에 대한 방법으로 가장 잘 사용됩니다. 자세한 내용은 이 아티클의 뒷부분에 나오는 [HttpContext.Items 작업](#working-with-httpcontextitems)을 참조하세요.
 
 ## <a name="cache"></a>캐시
 
-캐싱은 데이터 저장 및 검색하는 효율적인 방법입니다. 시간 및 기타 고려 사항에 따라 캐시된 항목의 수명을 제어할 수 있습니다. [캐싱](../performance/caching/index.md)에 대해 더 자세히 알아봅니다.
+캐싱은 데이터 저장 및 검색하는 효율적인 방법입니다. 시간 및 기타 고려 사항에 따라 캐시된 항목의 수명을 제어할 수 있습니다. [캐시하는 방법](../performance/caching/index.md)에 대해 자세히 알아봅니다.
 
 <a name="session"></a>
 ## <a name="working-with-session-state"></a>세션 상태 사용
@@ -120,22 +117,19 @@ TempData 공급자를 선택하는 데는 다음과 같은 몇 가지 고려 사
 
 `Microsoft.AspNetCore.Session` 패키지는 세션 상태를 관리하기 위한 미들웨어를 제공합니다. 세션 미들웨어를 활성화하려면 `Startup`은 다음을 포함해야 합니다.
 
-- [IDistributedCache](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.distributed.idistributedcache) 메모리 캐시 중 하나 `IDistributedCache` 구현은 세션에 대한 백업 저장소로 사용됩니다.
-- NuGet 패키지 "Microsoft.AspNetCore.Session"이 필요한 [AddSession](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.dependencyinjection.sessionservicecollectionextensions#Microsoft_Extensions_DependencyInjection_SessionServiceCollectionExtensions_AddSession_Microsoft_Extensions_DependencyInjection_IServiceCollection_) 호출
-- [UseSession](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.builder.sessionmiddlewareextensions#methods_) 호출
+- [IDistributedCache](/dotnet/api/microsoft.extensions.caching.distributed.idistributedcache) 메모리 캐시 중 하나 `IDistributedCache` 구현은 세션에 대한 백업 저장소로 사용됩니다.
+- NuGet 패키지 "Microsoft.AspNetCore.Session"이 필요한 [AddSession](/dotnet/api/microsoft.extensions.dependencyinjection.sessionservicecollectionextensions#Microsoft_Extensions_DependencyInjection_SessionServiceCollectionExtensions_AddSession_Microsoft_Extensions_DependencyInjection_IServiceCollection_) 호출
+- [UseSession](/dotnet/api/microsoft.aspnetcore.builder.sessionmiddlewareextensions#methods_) 호출
 
 다음 코드에서는 메모리 내 세션 공급자를 설정하는 방법을 보여 줍니다.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+[!code-csharp[](app-state/sample/src/WebAppSessionDotNetCore2.0App/Startup.cs?highlight=11-19,24)]
 
-[!code-csharp[Main](app-state/sample/src/WebAppSessionDotNetCore2.0App/Startup.cs?highlight=11-19,24)]
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+[!code-csharp[](app-state/sample/src/WebAppSession/Startup.cs?highlight=11-19,24)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
-[!code-csharp[Main](app-state/sample/src/WebAppSession/Startup.cs?highlight=11-19,24)]
-
----
-
+* * *
 설치되고 구성되면 `HttpContext`에서 세션을 참조할 수 있습니다.
 
 `UseSession`이 호출되기 전에 `Session`에 액세스하려는 경우 예외 `InvalidOperationException: Session has not been configured for this application or request`가 throw됩니다.
@@ -144,9 +138,9 @@ TempData 공급자를 선택하는 데는 다음과 같은 몇 가지 고려 사
 
 ### <a name="loading-session-asynchronously"></a>세션을 비동기적으로 로드 
 
-ASP.NET Core에서 기본 세션 공급자는 [ISession.LoadAsync](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.http.isession#Microsoft_AspNetCore_Http_ISession_LoadAsync) 메서드가 `TryGetValue`, `Set` 또는 `Remove` 메서드 전에 명시적으로 호출된 경우에만 기본 [IDistributedCache](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.distributed.idistributedcache) 저장소에서 비동기적으로 세션 레코드를 로드합니다. `LoadAsync`가 먼저 호출되지 않은 경우 기본 세션 레코드가 동기적으로 로드되며 이는 크기를 조정하는 앱의 기능에 잠재적으로 영향을 줄 수 있습니다.
+ASP.NET Core에서 기본 세션 공급자는 [ISession.LoadAsync](/dotnet/api/microsoft.aspnetcore.http.isession#Microsoft_AspNetCore_Http_ISession_LoadAsync) 메서드가 `TryGetValue`, `Set` 또는 `Remove` 메서드 전에 명시적으로 호출된 경우에만 기본 [IDistributedCache](/dotnet/api/microsoft.extensions.caching.distributed.idistributedcache) 저장소에서 비동기적으로 세션 레코드를 로드합니다. `LoadAsync`가 먼저 호출되지 않은 경우 기본 세션 레코드가 동기적으로 로드되며 이는 크기를 조정하는 앱의 기능에 잠재적으로 영향을 줄 수 있습니다.
 
-이 패턴을 응용 프로그램에 적용하려면 `LoadAsync` 메서드가 `TryGetValue`, `Set` 또는 `Remove` 이전에 호출되지 않은 경우 예외를 throw하는 버전으로 [DistributedSessionStore](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.session.distributedsessionstore) 및 [DistributedSession](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.session.distributedsession) 구현을 래핑합니다. 서비스 컨테이너에 래핑된 버전을 등록합니다.
+이 패턴을 응용 프로그램에 적용하려면 `LoadAsync` 메서드가 `TryGetValue`, `Set` 또는 `Remove` 이전에 호출되지 않은 경우 예외를 throw하는 버전으로 [DistributedSessionStore](/dotnet/api/microsoft.aspnetcore.session.distributedsessionstore) 및 [DistributedSession](/dotnet/api/microsoft.aspnetcore.session.distributedsession) 구현을 래핑합니다. 서비스 컨테이너에 래핑된 버전을 등록합니다.
 
 ### <a name="implementation-details"></a>구현 세부 정보
 
@@ -154,35 +148,32 @@ ASP.NET Core에서 기본 세션 공급자는 [ISession.LoadAsync](https://docs.
 
 세션 기본값을 재정의하려면 `SessionOptions`를 사용합니다.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+[!code-csharp[](app-state/sample/src/WebAppSessionDotNetCore2.0App/StartupCopy.cs?name=snippet1&highlight=8-12)]
 
-[!code-csharp[Main](app-state/sample/src/WebAppSessionDotNetCore2.0App/StartupCopy.cs?name=snippet1&highlight=8-12)]
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+[!code-csharp[](app-state/sample/src/WebAppSession/StartupCopy.cs?name=snippet1&highlight=8-12)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
-[!code-csharp[Main](app-state/sample/src/WebAppSession/StartupCopy.cs?name=snippet1&highlight=8-12)]
-
----
-
+* * *
 서버는 `IdleTimeout` 속성을 사용하여 해당 콘텐츠가 중단되기 전에 유휴 상태일 수 있는 세션의 기간을 결정합니다. 이 속성은 쿠키 만료와 무관합니다. 세션 미들웨어(읽거나 쓰는)를 통해 전달되는 각 요청은 시간 제한을 다시 설정합니다.
 
 `Session`은 *잠기지 않으므로* 두 요청이 모두 세션의 콘텐츠를 수정하려고 하는 경우 마지막 요청이 첫 번째 요청을 재정의합니다. `Session`은 *일관된 세션*으로 구현됩니다. 즉, 모든 콘텐츠는 함께 저장됩니다. 세션의 다른 부분(다른 키)을 수정하는 두 요청은 여전히 서로 영향을 줄 수 있습니다.
 
 ### <a name="setting-and-getting-session-values"></a>세션 값 설정 및 가져오기
 
-세션은 `HttpContext`의 `Session` 속성을 통해 액세스됩니다. 이 속성은 [ISession](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.http.isession) 구현입니다.
+세션은 `HttpContext`의 `Session` 속성을 통해 액세스됩니다. 이 속성은 [ISession](/dotnet/api/microsoft.aspnetcore.http.isession) 구현입니다.
 
 다음 예제에서는 int 및 문자열 설정 및 가져오기를 보여 줍니다.
 
-[!code-csharp[Main](app-state/sample/src/WebAppSession/Controllers/HomeController.cs?range=8-27,49)]
+[!code-csharp[](app-state/sample/src/WebAppSession/Controllers/HomeController.cs?range=8-27,49)]
 
 다음 확장 메서드를 추가하는 경우 세션에 직렬화 가능 개체를 설정하고 가져올 수 있습니다.
 
-[!code-csharp[Main](app-state/sample/src/WebAppSession/Extensions/SessionExtensions.cs)]
+[!code-csharp[](app-state/sample/src/WebAppSession/Extensions/SessionExtensions.cs)]
 
 다음 샘플에서는 직렬화 가능 개체를 설정하고 가져오는 방법을 보여 줍니다.
 
-[!code-csharp[Main](app-state/sample/src/WebAppSession/Controllers/HomeController.cs?name=snippet2)]
+[!code-csharp[](app-state/sample/src/WebAppSession/Controllers/HomeController.cs?name=snippet2)]
 
 
 ## <a name="working-with-httpcontextitems"></a>HttpContext.Items 작업
@@ -271,7 +262,7 @@ public class MyController : Controller
 
 * "'Microsoft.AspNetCore.Session.DistributedSessionStore'를 활성화하려고 시도하는 동안 'Microsoft.Extensions.Caching.Distributed.IDistributedCache' 형식에 대한 서비스를 확인할 수 없습니다."
 
-  이는 일반적으로는 하나 이상의 `IDistributedCache` 구현을 구성하는 데 실패하여 발생됩니다. 자세한 내용은 [분산 캐시 사용](xref:performance/caching/distributed) 및 [인 메모리 캐싱](xref:performance/caching/memory)을 참조하세요.
+  이는 일반적으로는 하나 이상의 `IDistributedCache` 구현을 구성하는 데 실패하여 발생됩니다. 자세한 내용은 [분산 캐시 사용](xref:performance/caching/distributed) 및 [메모리 내 캐싱](xref:performance/caching/memory)을 참조하세요.
 
 * 세션 미들웨어가 세션 유지에 실패하는 이벤트에서(예: 데이터베이스를 사용할 수 없는 경우) 예외를 기록하고 숨깁니다. 그런 다음, 요청은 정상적으로 계속합니다. 이로 인해 매우 예기치 않은 동작이 발생합니다.
 
@@ -281,7 +272,7 @@ public class MyController : Controller
 
 이러한 오류를 확인하는 권장 방법은 세션에 작성을 완료하면 앱 코드에서 `await feature.Session.CommitAsync();`를 호출하는 것입니다. 그런 다음, 오류에 대해 원하는 작업을 수행할 수 있습니다. `LoadAsync`를 호출할 때 동일한 방식으로 작동합니다.
 
-### <a name="additional-resources"></a>추가 리소스
+### <a name="additional-resources"></a>추가 자료
 
 * [ASP.NET Core 1.x: 이 문서에 사용되는 코드 샘플](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/app-state/sample/src/WebAppSession)
 * [ASP.NET Core 2.x: 이 문서에 사용되는 코드 샘플](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/app-state/sample/src/WebAppSessionDotNetCore2.0App)

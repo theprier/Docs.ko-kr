@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core 및 Entity Framework 6 시작"
+title: ASP.NET Core 및 Entity Framework 6 시작
 author: tdykstra
-description: "이 문서에는 ASP.NET Core 응용 프로그램에서 Entity Framework 6을 사용하는 방법을 보여 줍니다."
+description: 이 문서에는 ASP.NET Core 응용 프로그램에서 Entity Framework 6을 사용하는 방법을 보여 줍니다.
 manager: wpickett
 ms.author: tdykstra
 ms.date: 02/24/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: data/entity-framework-6
-ms.openlocfilehash: 7407fe8a976978d7d5077d5e5ac6cc264565621d
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 2ea51d01718adb785fd621421bc5f04d11e61199
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="getting-started-with-aspnet-core-and-entity-framework-6"></a>ASP.NET Core 및 Entity Framework 6 시작
+# <a name="get-started-with-aspnet-core-and-entity-framework-6"></a>ASP.NET Core 및 Entity Framework 6 시작
 
 작성자: [Paweł Grudzień](https://github.com/pgrudzien12), [Damien Pontifex](https://github.com/DamienPontifex) 및 [Tom Dykstra](https://github.com/tdykstra)
 
@@ -73,7 +73,7 @@ Visual Studio에서 다음 단계에 따라 이 샘플을 처음부터 만들 �
 
 * **[새 프로젝트 추가] > [Windows 클래식 바탕 화면] > [클래스 라이브러리(.NET Framework)]**
 
-* 두 프로젝트에 대한 **PMC(패키지 관리자 콘솔)**에서 `Install-Package Entityframework` 명령을 실행합니다.
+* 두 프로젝트에 대한 **PMC(패키지 관리자 콘솔)** 에서 `Install-Package Entityframework` 명령을 실행합니다.
 
 * 클래스 라이브러리 프로젝트에서 데이터 모델 클래스 및 컨텍스트 클래스와 `IDbContextFactory`의 구현을 만듭니다.
 
@@ -91,6 +91,6 @@ Visual Studio에서 다음 단계에 따라 이 샘플을 처음부터 만들 �
 
 이 문서에서는 ASP.NET Core 응용 프로그램에서 Entity Framework 6을 사용하기 위한 기본 지침을 제공했습니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 * [Entity Framework - 코드 기반 구성](https://msdn.microsoft.com/data/jj680699.aspx)

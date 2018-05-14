@@ -1,7 +1,7 @@
 ---
-title: "네이티브 모바일 응용 프로그램에 대한 백 엔드 서비스 만들기"
+title: ASP.NET Core를 사용하여 네이티브 모바일 앱용 백 엔드 서비스 만들기
 author: ardalis
-description: 
+description: ASP.NET Core MVC를 사용하여 네이티브 모바일 앱을 지원하는 백 엔드 서비스를 만드는 방법을 배웁니다.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mobile/native-mobile-backend
-ms.openlocfilehash: ff09f331cff5cca7b42fa89bff55c0ed5c7d82f4
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 18aecea00eb9cda3462ede7e478616a99cf302f8
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="creating-backend-services-for-native-mobile-applications"></a>네이티브 모바일 응용 프로그램에 대한 백 엔드 서비스 만들기
+# <a name="create-backend-services-for-native-mobile-apps-with-aspnet-core"></a>ASP.NET Core를 사용하여 네이티브 모바일 앱용 백 엔드 서비스 만들기
 
 작성자: [Steve Smith](https://ardalis.com/)
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 01/31/2018
 
 ## <a name="the-sample-native-mobile-app"></a>샘플 네이티브 모바일 앱
 
-이 자습서에서는 네이티브 모바일 앱을 지원하기 위해 ASP.NET Core MVC를 사용하여 백 엔드 서비스를 만드는 방법을 보여 줍니다. Android, iOS, Windows 유니버설 및 Window Phone 장치에 대한 별도 네이티브 클라이언트를 포함하는 네이티브 클라이언트로 [Xamarin Forms ToDoRest 앱](https://developer.xamarin.com/guides/xamarin-forms/web-services/consuming/rest/)을 사용합니다. 연결된 자습서를 따라 네이티브 앱을 만들고(필요한 무료 Xamarin 도구 설치) Xamarin 샘플 솔루션을 다운로드할 수 있습니다. Xamarin 샘플에는 이 문서의 ASP.NET Core 앱이 바꾸는 ASP.NET Web API 2 서비스 프로젝트가 포함되어 있습니다(클라이언트에서 필요한 변경 내용 없이).
+이 자습서에서는 네이티브 모바일 앱을 지원하기 위해 ASP.NET Core MVC를 사용하여 백 엔드 서비스를 만드는 방법을 보여 줍니다. Android, iOS, Windows 유니버설 및 Window Phone 장치에 대한 별도 네이티브 클라이언트를 포함하는 네이티브 클라이언트로 [Xamarin Forms ToDoRest 앱](/xamarin/xamarin-forms/data-cloud/consuming/rest)을 사용합니다. 연결된 자습서를 따라 네이티브 앱을 만들고(필요한 무료 Xamarin 도구 설치) Xamarin 샘플 솔루션을 다운로드할 수 있습니다. Xamarin 샘플에는 이 문서의 ASP.NET Core 앱이 바꾸는 ASP.NET Web API 2 서비스 프로젝트가 포함되어 있습니다(클라이언트에서 필요한 변경 내용 없이).
 
 ![Android 스마트폰에서 실행되는 To Do Rest 응용 프로그램](native-mobile-backend/_static/todo-android.png)
 
@@ -61,31 +61,31 @@ Visual Studio에서 새 ASP.NET Core 웹 응용 프로그램을 만듭니다. �
 
 응용 프로그램은 포트 5000에 대한 모든 요청에 응답해야 합니다. 이를 수행하기 위해 `.UseUrls("http://*:5000")`를 포함하도록 *Program.cs*를 업데이트합니다.
 
-[!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Program.cs?range=10-16&highlight=3)]
+[!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Program.cs?range=10-16&highlight=3)]
 
 > [!NOTE]
-> 기본적으로 로컬이 아닌 요청을 무시하는 IIS Express 뒤에서보다 응용 프로그램을 직접 실행해야 합니다. 명령 프롬프트에서 `dotnet run`을 실행하거나 Visual Studio 도구 모음의 디버그 대상 드롭다운에서 응용 프로그램 이름 프로필을 선택합니다.
+> 기본적으로 로컬이 아닌 요청을 무시하는 IIS Express 뒤에서보다 응용 프로그램을 직접 실행해야 합니다. 명령 프롬프트에서 [dotnet run](/dotnet/core/tools/dotnet-run)을 실행하거나 Visual Studio 도구 모음의 디버그 대상 드롭다운에서 응용 프로그램 이름 프로필을 선택합니다.
 
 할 일 항목을 나타내도록 모델 클래스를 추가합니다. `[Required]` 특성을 사용하여 필수 필드를 표시합니다.
 
-[!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Models/ToDoItem.cs)]
+[!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Models/ToDoItem.cs)]
 
 API 메서드에는 데이터를 사용하는 방법이 필요합니다. 원래 Xamarin 샘플에서 사용하는 동일한 `IToDoRepository` 인터페이스를 사용합니다.
 
-[!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Interfaces/IToDoRepository.cs)]
+[!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Interfaces/IToDoRepository.cs)]
 
 이 샘플의 경우 구현은 항목의 개별 컬렉션을 사용합니다.
 
-[!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Services/ToDoRepository.cs)]
+[!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Services/ToDoRepository.cs)]
 
 *Startup.cs*에서 구현을 구성합니다.
 
-[!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Startup.cs?highlight=6&range=29-35)]
+[!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Startup.cs?highlight=6&range=29-35)]
 
 이 시점에서 *ToDoItemsController*를 만들 준비가 되었습니다.
 
 > [!TIP]
-> [ASP.NET Core MVC 및 Visual Studio를 사용하여 첫 번째 Web API 빌드](../tutorials/first-web-api.md)에서 웹 API 만들기에 대해 자세히 알아봅니다.
+> [ASP.NET Core MVC 및 Visual Studio를 사용하여 첫 번째 Web API 빌드](../tutorials/first-web-api.md)에서 Web API를 만드는 방법에 대해 자세히 알아봅니다.
 
 ## <a name="creating-the-controller"></a>컨트롤러 만들기
 
@@ -93,7 +93,7 @@ API 메서드에는 데이터를 사용하는 방법이 필요합니다. 원래 
 
 컨트롤러는 작동하기 위해 `IToDoRepository`가 필요합니다. 컨트롤러의 생성자를 통해 이 유형의 인스턴스를 요청합니다. 런타임 시 이 인스턴스는 [종속성 주입](../fundamentals/dependency-injection.md)에 대한 프레임워크의 지원을 사용하여 제공됩니다.
 
-[!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=1-17&highlight=9,14)]
+[!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=1-17&highlight=9,14)]
 
 이 API는 데이터 원본에서 CRUD(만들기, 읽기, 업데이트, 삭제) 작업을 수행하도록 4개의 다른 HTTP 동사를 지원합니다. 이 중 가장 간단한 것은 HTTP GET 요청에 해당하는 읽기 작업입니다.
 
@@ -101,7 +101,7 @@ API 메서드에는 데이터를 사용하는 방법이 필요합니다. 원래 
 
 항목의 목록 요청은 `List` 메서드에 대한 GET 요청으로 수행됩니다. `List` 메서드의 `[HttpGet]` 특성은 이 작업이 GET 요청만을 처리해야 함을 나타냅니다. 이 작업에 대한 경로는 컨트롤러에 지정된 경로입니다. 경로의 일부로 작업 이름을 사용할 필요가 없습니다. 각 작업에 고유하고 명확한 경로가 있도록 하기만 하면 됩니다. 라우팅 특성은 특정 경로를 작성하도록 컨트롤러와 메서드 수준 모두에 적용될 수 있습니다.
 
-[!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=19-23)]
+[!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=19-23)]
 
 `List` 메서드는 200 정상 응답 코드와 JSON으로 직렬화된 모든 할 일 항목을 반환합니다.
 
@@ -115,11 +115,11 @@ API 메서드에는 데이터를 사용하는 방법이 필요합니다. 원래 
 
 메서드 내부에서 유효성 및 데이터 저장소의 이전 존재에 대해 항목이 선택되며 문제가 발생하지 않는 경우 리포지토리를 사용하여 추가됩니다. `ModelState.IsValid`를 확인하면 [모델 유효성 검사](../mvc/models/validation.md)를 수행하고, 사용자 입력을 허용하는 모든 API 메서드에서 수행되어야 합니다.
 
-[!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=25-46)]
+[!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=25-46)]
 
 샘플은 모바일 클라이언트에 전달되는 오류 코드를 포함하는 열거형을 사용합니다.
 
-[!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=91-99)]
+[!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=91-99)]
 
 요청의 본문에 JSON 형식의 새 개체를 제공하는 POST 동사를 선택하여 Postman을 사용하는 새 항목 추가를 테스트합니다. 또한 `application/json`의 `Content-Type`을 지정하는 요청 헤더를 추가해야 합니다.
 
@@ -131,7 +131,7 @@ API 메서드에는 데이터를 사용하는 방법이 필요합니다. 원래 
 
 레코드 수정은 HTTP PUT 요청을 사용하여 수행됩니다. 이 변경 외에 `Edit` 메서드는 `Create`와 거의 동일합니다. 레코드를 찾을 수 없는 경우 `Edit` 작업은 `NotFound`(404) 응답을 반환합니다.
 
-[!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=48-69)]
+[!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=48-69)]
 
 Postman으로 테스트하려면 동사를 PUT으로 변경합니다. 요청의 본문에서 업데이트된 개체 데이터를 지정합니다.
 
@@ -143,7 +143,7 @@ Postman으로 테스트하려면 동사를 PUT으로 변경합니다. 요청의 
 
 레코드 삭제는 서비스에 대해 DELETE 요청을 만들고, 삭제될 항목의 ID를 전달하여 수행됩니다. 업데이트를 사용하면 존재하지 않는 항목에 대한 요청은 `NotFound` 응답을 수신합니다. 그렇지 않으면 성공한 요청은 `NoContent`(204) 응답을 받습니다.
 
-[!code-csharp[Main](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=71-88)]
+[!code-csharp[](native-mobile-backend/sample/ToDoApi/src/ToDoApi/Controllers/ToDoItemsController.cs?range=71-88)]
 
 삭제 기능을 테스트할 때 요청의 본문에 아무 것도 필요하지 않습니다.
 

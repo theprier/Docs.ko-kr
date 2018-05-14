@@ -10,7 +10,7 @@
 
 | 파일 또는 폴더              | 용도 |
 | ----------------- | ------------ | 
-| wwwroot | 정적 파일을 포함합니다. [정적 파일 작업](xref:fundamentals/static-files)을 참조하세요. |
+| wwwroot | 정적 파일을 포함합니다. [정적 파일 사용](xref:fundamentals/static-files)을 참조하세요. |
 | 인쇄할 페이지 | [Razor 페이지](xref:mvc/razor-pages/index)에 대한 폴더입니다. | 
 | *appsettings.json* | [구성](xref:fundamentals/configuration/index) |
 | *Program.cs* | ASP.NET Core 앱을 [호스트](xref:fundamentals/hosting)합니다.|

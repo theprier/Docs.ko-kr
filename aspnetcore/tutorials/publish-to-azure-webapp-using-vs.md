@@ -1,7 +1,7 @@
 ---
-title: "Visual Studio를 사용해서 Azure 앱 서비스에 ASP.NET Core 앱 게시하기"
+title: Visual Studio를 사용하여 Azure에 ASP.NET Core 앱 게시
 author: rick-anderson
-description: "Visual Studio를 사용하여 Azure App Service에 ASP.NET Core 앱을 게시하는 방법을 알아봅니다."
+description: Visual Studio를 사용하여 Azure App Service에 ASP.NET Core 앱을 게시하는 방법을 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 12/16/2017
@@ -9,17 +9,21 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/publish-to-azure-webapp-using-vs
-ms.openlocfilehash: 14d8dd0a5e6a99bacce3bf50b0468b20e0dddb96
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: e5c213a682c9bf7c64c40fad630cacfff24e23bb
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="publish-an-aspnet-core-web-app-to-azure-app-service-using-visual-studio"></a>Visual Studio를 사용하여 Azure App Service에 ASP.NET Core 웹앱 게시
+# <a name="publish-an-aspnet-core-app-to-azure-with-visual-studio"></a>Visual Studio를 사용하여 Azure에 ASP.NET Core 앱 게시
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT), [Cesar Blum Silveira](https://github.com/cesarbs) 및 [Rachel Appel](https://twitter.com/rachelappel)
 
-Mac에서 작업하고 있는 경우 [Mac용 Visual Studio에서 Azure에 게시](https://blog.xamarin.com/publish-azure-visual-studio-mac/)를 참조하세요.
+[!INCLUDE [Azure App Service Preview Notice](../includes/azure-apps-preview-notice.md)]
+
+macOS에서 작업하고 있는 경우 [Mac용 Visual Studio에서 Azure에 게시](https://blog.xamarin.com/publish-azure-visual-studio-mac/)를 참조하세요.
+
+App Service 배포 문제를 해결하려면 [Azure App Service에서 ASP.NET Core 문제 해결](xref:host-and-deploy/azure-apps/troubleshoot)을 참조하세요.
 
 ## <a name="set-up"></a>설치
 
@@ -27,7 +31,7 @@ Mac에서 작업하고 있는 경우 [Mac용 Visual Studio에서 Azure에 게시
 
 ## <a name="create-a-web-app"></a>웹앱 만들기
 
-Visual Studio 시작 페이지에서 **파일 > 새로 만들기 > 프로젝트...**를 선택합니다.
+Visual Studio 시작 페이지에서 **파일 > 새로 만들기 > 프로젝트...** 를 선택합니다.
 
 ![파일 메뉴](publish-to-azure-webapp-using-vs/_static/file_new_project.png)
 
@@ -77,7 +81,7 @@ Visual Studio는 솔루션을 만듭니다.
 
 ## <a name="deploy-the-app-to-azure"></a>Azure에 앱 배포
 
-솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 **게시...**를 선택합니다.
+솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 **게시...** 를 선택합니다.
 
 ![강조 표시된 게시 링크로 열린 바로 가기 메뉴](publish-to-azure-webapp-using-vs/_static/pub.png)
 
@@ -104,7 +108,7 @@ Visual Studio는 솔루션을 만듭니다.
 
 ![새 SQL Database](publish-to-azure-webapp-using-vs/_static/sql.png)
 
-* **SQL Database 구성** 대화 상자에서 **새로 만들기...**를 선택하여 새 데이터베이스 서버를 만듭니다.
+* **SQL Database 구성** 대화 상자에서 **새로 만들기...** 를 선택하여 새 데이터베이스 서버를 만듭니다.
 
 ![새 SQL Database 및 서버](publish-to-azure-webapp-using-vs/_static/conf.png)
 
@@ -154,7 +158,7 @@ Visual Studio는 Azure에서 웹앱 및 SQL Server를 만듭니다. 이 단계�
 
 * *Pages/About.cshtml* Razor 페이지를 편집하고 내용을 변경합니다. 예를 들어 단락을 수정하여 “Hello ASP.NET Core!” 문구를 표시할 수 있습니다. [!code-html[About](publish-to-azure-webapp-using-vs/sample/about.cshtml?highlight=9&range=1-9)]
 
-* 프로젝트를 마우스 오른쪽 단추로 클릭하고 **게시...**를 선택합니다.
+* 프로젝트를 마우스 오른쪽 단추로 클릭하고 **게시...** 를 선택합니다.
 
 ![강조 표시된 게시 링크로 열린 바로 가기 메뉴](publish-to-azure-webapp-using-vs/_static/pub.png)
 
@@ -185,3 +189,4 @@ Visual Studio는 Azure에서 웹앱 및 SQL Server를 만듭니다. 이 단계�
 * [Azure App Service](https://docs.microsoft.com/azure/app-service/app-service-web-overview)
 * [Azure 리소스 그룹](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#resource-groups)
 * [Azure SQL Database](https://docs.microsoft.com/azure/sql-database/)
+* [Azure App Service에서 ASP.NET Core 문제 해결](xref:host-and-deploy/azure-apps/troubleshoot)

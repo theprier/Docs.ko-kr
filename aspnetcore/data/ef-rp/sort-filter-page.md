@@ -1,24 +1,24 @@
 ---
-title: "EF Core를 사용한 Razor 페이지 - 정렬, 필터, 페이징 - 3/8"
+title: ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 정렬, 필터, 페이징 - 3/8
 author: rick-anderson
-description: "이 자습서에서는 ASP.NET Core 및 Entity Framework Core를 사용하여 페이지에 정렬, 필터링 및 페이징 기능을 추가합니다."
+description: 이 자습서에서는 ASP.NET Core 및 Entity Framework Core를 사용하여 페이지에 정렬, 필터링 및 페이징 기능을 추가합니다.
 ms.author: riande
 ms.date: 10/22/2017
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: 9c1ee6f8c00f3cd501ea86fbf73f51ae540a010a
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: be7d55bf1a5d3da63ff137ed86f71984dc897eff
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="sorting-filtering-paging-and-grouping---ef-core-with-razor-pages-3-of-8"></a>정렬, 필터링, 페이징 및 그룹화 - Razor 페이지를 사용한 EF Core(3/8)
+# <a name="razor-pages-with-ef-core-in-aspnet-core---sort-filter-paging---3-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 정렬, 필터, 페이징 - 3/8
 
 작성자: [Tom Dykstra](https://github.com/tdykstra), [Rick Anderson](https://twitter.com/RickAndMSFT) 및 [Jon P Smith](https://twitter.com/thereformedprog)
 
-[!INCLUDE[about the series](../../includes/RP-EF/intro.md)]
+[!INCLUDE [about the series](../../includes/RP-EF/intro.md)]
 
 이 자습서에서는 정렬, 필터링, 그룹화 및 페이징 기능이 추가됩니다.
 
@@ -32,12 +32,12 @@ ms.lasthandoff: 01/31/2018
 
 정렬 매개 변수를 포함하도록 문자열을 *Students/Index.cshtml.cs* `PageModel`에 추가합니다.
 
-[!code-csharp[Main](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet1&highlight=10-13)]
+[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet1&highlight=10-13)]
 
 
 다음 코드로 *Students/Index.cshtml.cs* `OnGetAsync`를 업데이트합니다.
 
-[!code-csharp[Main](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortOnly)]
+[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortOnly)]
 
 이전 코드는 URL의 쿼리 문자열에서 `sortOrder` 매개 변수를 받습니다. URL(쿼리 문자열 포함)이 [앵커 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper
 )에서 생성됩니다.
@@ -48,11 +48,11 @@ ms.lasthandoff: 01/31/2018
 
 열 제목 하이퍼링크를 적절한 쿼리 문자열 값으로 구성하기 위해 `NameSort` 및 `DateSort`가 사용됩니다.
 
-[!code-csharp[Main](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortOnly&highlight=3-4)]
+[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortOnly&highlight=3-4)]
 
 다음 코드는 C# [?: operator](https://docs.microsoft.com/dotnet/csharp/language-reference/operators/conditional-operator)를 포함합니다.
 
-[!code-csharp[Main](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_Ternary)]
+[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_Ternary)]
 
 첫 번째 줄은 `sortOrder`가 null이거나 비어 있는 경우 `NameSort`가 “name_desc”로 설정되도록 지정합니다. `sortOrder`가 null 또는 비어 있지 **않은** 경우 `NameSort`는 빈 문자열로 설정됩니다.
 
@@ -69,11 +69,11 @@ ms.lasthandoff: 01/31/2018
 
 메서드는 LINQ to Entities를 사용하여 정렬할 기준이 되는 열을 지정합니다. 코드는 `IQueryable<Student> `를 switch 문 앞에서 초기화하고 switch 문에서 수정합니다.
 
-[!code-csharp[Main](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortOnly&highlight=6-)]
+[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortOnly&highlight=6-999)]
 
  `IQueryable`을 만들거나 수정하는 경우 데이터베이스에 쿼리가 전송되지 않습니다. 쿼리는 `IQueryable` 개체가 컬렉션으로 변환될 때까지 실행되지 않습니다. `ToListAsync`와 같은 메서드를 호출하면 `IQueryable`이 컬렉션으로 변환됩니다. 따라서 `IQueryable` 코드는 다음 명령문까지 실행되지 않는 단일 쿼리가 됩니다.
 
-[!code-csharp[Main](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortOnlyRtn)]
+[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortOnlyRtn)]
 
 `OnGetAsync`는 많은 수의 열이 포함된 자세한 정보를 가져올 수 있습니다.
 
@@ -113,7 +113,7 @@ ms.lasthandoff: 01/31/2018
 
 다음 코드로 *Students/Index.cshtml.cs* `OnGetAsync`를 업데이트합니다.
 
-[!code-csharp[Main](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilter&highlight=1,5,9-13)]
+[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilter&highlight=1,5,9-13)]
 
 위의 코드:
 
@@ -164,7 +164,7 @@ http://localhost:5000/Students?SearchString=an
 
 프로젝트 폴더에서 다음 코드로 `PaginatedList.cs`를 만듭니다.
 
-[!code-csharp[Main](intro/samples/cu/PaginatedList.cs)]
+[!code-csharp[](intro/samples/cu/PaginatedList.cs)]
 
 이전 코드에서 `CreateAsync` 메서드는 페이지 크기 및 페이지 번호를 사용하고 적절한 `Skip` 및 `Take` 문을 `IQueryable`에 적용합니다. `IQueryable`에서 `ToListAsync`를 호출하면 요청된 페이지만 포함하는 목록을 반환합니다. **이전** 및 **다음** 페이징 단추를 사용 또는 사용하지 않도록 설정하는 데 `HasPreviousPage` 및 `HasNextPage` 속성을 사용합니다.
 
@@ -174,15 +174,15 @@ http://localhost:5000/Students?SearchString=an
 
 *Students/Index.cshtml.cs*에서 `Student`의 형식을 `IList<Student>`에서 `PaginatedList<Student>`로 업데이트합니다.
 
-[!code-csharp[Main](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPageType)]
+[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPageType)]
 
 다음 코드로 *Students/Index.cshtml.cs* `OnGetAsync`를 업데이트합니다.
 
-[!code-csharp[Main](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage&highlight=1-4,7-14,41-)]
+[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage&highlight=1-4,7-14,41-999)]
 
 이전 코드는 페이지 인덱스, 현재 `sortOrder` 및 `currentFilter`를 메서드 서명에 추가합니다.
 
-[!code-csharp[Main](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage2)]
+[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage2)]
 
 모든 매개 변수는 다음 경우에 null입니다.
 
@@ -203,11 +203,11 @@ http://localhost:5000/Students?SearchString=an
 * 검색 문자열이 변경됩니다.
 * `searchString` 매개 변수가 null이 아닙니다.
 
-[!code-csharp[Main](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage3)]
+[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage3)]
 
 `PaginatedList.CreateAsync` 메서드가 학생 쿼리를 페이징을 지원하는 컬렉션 형식의 단일 학생 페이지로 변환합니다. 해당 단일 학생 페이지가 Razor 페이지에 전달됩니다.
 
-[!code-csharp[Main](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage4)]
+[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage4)]
 
 `PaginatedList.CreateAsync`에서 두 개의 물음표는 [Null 병합 연산자](https://docs.microsoft.com/ dotnet/csharp/language-reference/operators/null-conditional-operator)를 나타냅니다. Null 병합 연산자는 null 허용 형식에 대한 기본값을 정의합니다. 식 `(pageIndex ?? 1)`은 값이 있는 경우 `pageIndex`의 값을 반환함을 의미합니다. `pageIndex`에 값이 없으면 1을 반환합니다.
 
@@ -215,7 +215,7 @@ http://localhost:5000/Students?SearchString=an
 
 *Students/Index.cshtml*의 표시를 업데이트합니다. 변경 내용은 강조 표시되어 있습니다.
 
-[!code-html[](intro/samples/cu/Pages/Students/Index.cshtml?highlight=28-31,37-40,68-)]
+[!code-html[](intro/samples/cu/Pages/Students/Index.cshtml?highlight=28-31,37-40,68-999)]
 
 열 제목 링크는 쿼리 문자열을 사용하여 현재 검색 문자열을 `OnGetAsync` 메서드에 전달하므로 사용자가 필터 결과 내에서 정렬할 수 있습니다.
 
@@ -253,13 +253,13 @@ http://localhost:5000/Students?SearchString=an
 
 *SchoolViewModels* 폴더에서 다음 코드로 *EnrollmentDateGroup.cs*를 추가합니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/SchoolViewModels/EnrollmentDateGroup.cs)]
+[!code-csharp[](intro/samples/cu/Models/SchoolViewModels/EnrollmentDateGroup.cs)]
 
 ### <a name="update-the-about-page-model"></a>페이지 모델 정보 업데이트
 
 *Pages/About.cshtml.cs* 파일을 다음 코드로 업데이트합니다.
 
-[!code-csharp[Main](intro/samples/cu/Pages/About.cshtml.cs)]
+[!code-csharp[](intro/samples/cu/Pages/About.cshtml.cs)]
 
 LINQ 문은 등록 날짜별로 학생 엔터티를 그룹화하고 각 그룹의 엔터티 수를 계산하며 결과를 `EnrollmentDateGroup` 뷰 모델 개체의 컬렉션에 저장합니다.
 
@@ -277,12 +277,12 @@ LINQ 문은 등록 날짜별로 학생 엔터티를 그룹화하고 각 그룹�
 
 ![정보 페이지](sort-filter-page/_static/about.png)
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 * [ASP.NET Core 2.x 소스 디버깅](https://github.com/aspnet/Docs/issues/4155)
 
 다음 자습서에서는 앱은 마이그레이션을 사용하여 데이터 모델을 업데이트합니다.
 
->[!div class="step-by-step"]
-[이전](xref:data/ef-rp/crud)
-[다음](xref:data/ef-rp/migrations)
+> [!div class="step-by-step"]
+> [이전](xref:data/ef-rp/crud)
+> [다음](xref:data/ef-rp/migrations)

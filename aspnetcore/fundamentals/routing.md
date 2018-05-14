@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core에서 라우팅"
+title: ASP.NET Core에서 라우팅
 author: ardalis
-description: "ASP.NET Core 라우팅 기능에서 들어오는 요청을 경로 처리기에 매핑하는 일을 담당하는 방법을 파악합니다."
+description: ASP.NET Core 라우팅 기능에서 들어오는 요청을 경로 처리기에 매핑하는 일을 담당하는 방법을 파악합니다.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/routing
-ms.openlocfilehash: d35c24347e8e06ed85e2af8addcc1f8cf28dc47a
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 2e1257639ec41f657093439c5245b50adbad34dc
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="routing-in-aspnet-core"></a>ASP.NET Core에서 라우팅
 
@@ -24,11 +24,11 @@ ms.lasthandoff: 02/01/2018
 >[!IMPORTANT]
 > 이 문서에서는 낮은 수준의 ASP.NET Core 라우팅을 설명합니다. ASP.NET Core MVC 라우팅의 경우 [컨트롤러 작업에 라우팅](../mvc/controllers/routing.md)을 참조하세요.
 
-[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/routing/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/routing/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="routing-basics"></a>라우팅 기본 사항
 
-라우팅은 *경로*([IRouter](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.routing.irouter)의 구현)를 사용하여 다음 작업을 수행합니다.
+라우팅은 *경로*([IRouter](/dotnet/api/microsoft.aspnetcore.routing.irouter)의 구현)를 사용하여 다음 작업을 수행합니다.
 
 * 들어오는 요청을 *경로 처리기*에 매핑
 
@@ -88,7 +88,7 @@ URL 생성은 비슷한 반복적인 프로세스를 따르지만 경로 컬렉�
 
 대부분의 응용 프로그램은 `MapRoute` 또는 `IRouteBuilder`에 정의된 유사한 확장 메서드 중 하나를 호출하여 경로를 만듭니다. 이러한 모든 메서드는 `Route`의 인스턴스를 만들고 경로 컬렉션에 추가합니다.
 
-참고: `MapRoute`는 경로 처리기 매개 변수를 사용하지 않습니다. `DefaultHandler`에서 처리될 경로를 추가합니다. 기본 처리기는 `IRouter`이므로 요청을 처리하지 않도록 결정할 것입니다. 예를 들어 ASP.NET MVC는 일반적으로 사용 가능한 컨트롤러 및 작업과 일치하는 요청만 처리하는 기본 처리기로 구성됩니다. MVC에 라우팅에 대해 자세히 알아보려면 [컨트롤러 작업에 라우팅](../mvc/controllers/routing.md)을 참조하세요.
+참고: `MapRoute`는 경로 처리기 매개 변수를 사용하지 않습니다. `DefaultHandler`에서 처리될 경로를 추가합니다. 기본 처리기는 `IRouter`이므로 요청을 처리하지 않도록 결정할 것입니다. 예를 들어 ASP.NET MVC는 일반적으로 사용 가능한 컨트롤러 및 작업과 일치하는 요청만 처리하는 기본 처리기로 구성됩니다. MVC에 라우팅하는 방법을 자세히 알아보려면 [컨트롤러 작업에 라우팅](../mvc/controllers/routing.md)을 참조하세요.
 
 이는 일반적인 ASP.NET MVC 경로 정의에서 사용되는 `MapRoute` 호출의 예제입니다.
 
@@ -187,7 +187,7 @@ NuGet 패키지 "Microsoft.AspNetCore.Routing"을 추가합니다.
 
 *Startup.cs*의 서비스 컨테이너에 라우팅을 추가합니다.
 
-[!code-csharp[Main](../fundamentals/routing/sample/RoutingSample/Startup.cs?highlight=3&start=11&end=14)]
+[!code-csharp[](../fundamentals/routing/sample/RoutingSample/Startup.cs?highlight=3&start=11&end=14)]
 
 경로는 `Startup` 클래스의 `Configure` 메서드에서 구성되어야 합니다. 아래 예제에서는 이러한 API를 사용합니다.
 
@@ -321,7 +321,7 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
 
 ## <a name="regular-expressions"></a>정규식 
 
-ASP.NET Core 프레임워크는 정규식 생성자에 `RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.CultureInvariant`를 추가합니다. 이러한 멤버에 대한 설명은 [RegexOptions 열거](https://docs.microsoft.com/dotnet/api/system.text.regularexpressions.regexoptions)를 참조하세요.
+ASP.NET Core 프레임워크는 정규식 생성자에 `RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.CultureInvariant`를 추가합니다. 이러한 멤버에 대한 설명은 [RegexOptions 열거](/dotnet/api/system.text.regularexpressions.regexoptions)를 참조하세요.
 
 정규식은 라우팅 및 C# 언어에서 사용하는 것과 유사한 구분 기호 및 토큰을 사용합니다. 정규식 토큰은 이스케이프되어야 합니다. 예를 들어 라우팅에서 `^\d{3}-\d{2}-\d{4}$` 정규식을 사용하려면 `\` 문자열 이스케이프 문자를 이스케이프하도록 C# 원본 파일에서 `\\`로 입력된 `\` 문자를 가져야 합니다([약어 문자열 리터럴](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/string)을 사용하지 않는 한). `{`, `}`, '['및']' 문자는 라우팅 매개 변수 구분 기호 문자를 이스케이프하도록 이중으로 처리하여 이스케이프되어야 합니다.  아래 표는 정규식 및 이스케이프된 버전을 보여 줍니다.
 
@@ -351,7 +351,7 @@ ASP.NET Core 프레임워크는 정규식 생성자에 `RegexOptions.IgnoreCase 
 
 아래 예제에서는 경로 값의 사전 및 `RouteCollection`이 지정된 경로에 대한 링크를 생성하는 방법을 보여 줍니다.
 
-[!code-csharp[Main](../fundamentals/routing/sample/RoutingSample/Startup.cs?range=45-59)]
+[!code-csharp[](../fundamentals/routing/sample/RoutingSample/Startup.cs?range=45-59)]
 
 위의 샘플 끝부분에서 생성된 `VirtualPath`는 `/package/create/123`입니다.
 

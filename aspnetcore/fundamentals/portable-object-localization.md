@@ -1,7 +1,7 @@
 ---
-title: "이식 가능 개체 지역화 구성"
+title: ASP.NET Core에서 이식 가능 개체 지역화 구성
 author: sebastienros
-description: "이 문서는 이식 가능 개체 파일을 소개하고 ASP.NET Core 응용 프로그램에서 Orchard Core 프레임워크와 사용하는 단계를 간략하게 설명합니다."
+description: 이 문서는 이식 가능 개체 파일을 소개하고 ASP.NET Core 응용 프로그램에서 Orchard Core 프레임워크와 사용하는 단계를 간략하게 설명합니다.
 manager: wpickett
 ms.author: scaddie
 ms.date: 09/26/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/portable-object-localization
-ms.openlocfilehash: 6fefbd9b28d481184e358e7d66af68d112c63696
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: fbf2afd6fbc07c8068a21be15816aa45618f28d6
+ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="configure-portable-object-localization-with-orchard-core"></a>Orchard Core를 사용하여 이식 가능 개체 지역화 구성
+# <a name="configure-portable-object-localization-in-aspnet-core"></a>ASP.NET Core에서 이식 가능 개체 지역화 구성
 
 작성자: [Sébastien Ros](https://github.com/sebastienros) 및 [Scott Addie](https://twitter.com/Scott_Addie)
 
@@ -23,7 +23,7 @@ ms.lasthandoff: 01/30/2018
 
 **참고:** Orchard Core는 Microsoft 제품이 아닙니다. 따라서 Microsoft는 이 기능에 대한 지원을 제공하지 않습니다.
 
-[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/localization/sample/POLocalization)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/localization/sample/POLocalization)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="what-is-a-po-file"></a>PO 파일이란?
 
@@ -70,25 +70,25 @@ PO 파일 사양은 [여기](https://www.gnu.org/savannah-checkouts/gnu/gettext/
 
 ### <a name="referencing-the-package"></a>패키지 참조
 
-`OrchardCore.Localization.Core` NuGet 패키지에 대한 참조를 추가합니다. 다음 패키지 원본: https://www.myget.org/F/orchardcore-preview/api/v3/index.json의 [MyGet](https://www.myget.org/)에서 사용 가능합니다.
+`OrchardCore.Localization.Core` NuGet 패키지에 대한 참조를 추가합니다. 패키지 소스 https://www.myget.org/F/orchardcore-preview/api/v3/index.json의 [MyGet](https://www.myget.org/)에서 사용할 수 있습니다.
 
 이제 *.csproj* 파일은 다음과 비슷한 줄을 포함합니다(버전 번호가 달라질 수 있음).
 
-[!code-xml[Main](localization/sample/POLocalization/POLocalization.csproj?range=9)]
+[!code-xml[](localization/sample/POLocalization/POLocalization.csproj?range=9)]
 
 ### <a name="registering-the-service"></a>서비스 등록
 
 *Startup.cs*의 `ConfigureServices` 메서드에 필요한 서비스를 추가합니다.
 
-[!code-csharp[Main](localization/sample/POLocalization/Startup.cs?name=snippet_ConfigureServices&highlight=4-21)]
+[!code-csharp[](localization/sample/POLocalization/Startup.cs?name=snippet_ConfigureServices&highlight=4-21)]
 
 *Startup.cs*의 `Configure` 메서드에 필요한 미들웨어를 추가합니다.
 
-[!code-csharp[Main](localization/sample/POLocalization/Startup.cs?name=snippet_Configure&highlight=15)]
+[!code-csharp[](localization/sample/POLocalization/Startup.cs?name=snippet_Configure&highlight=15)]
 
 선택한 Razor 뷰에 다음 코드를 추가합니다. 이 예제에서는 *About.cshtml*이 사용됩니다.
 
-[!code-cshtml[Main](localization/sample/POLocalization/Views/Home/About.cshtml)]
+[!code-cshtml[](localization/sample/POLocalization/Views/Home/About.cshtml)]
 
 `IViewLocalizer` 인스턴스가 삽입되고 "Hello world!" 텍스트를 번역하는 데 사용됩니다.
 
@@ -96,7 +96,7 @@ PO 파일 사양은 [여기](https://www.gnu.org/savannah-checkouts/gnu/gettext/
 
 응용 프로그램 루트 폴더에 *<culture code>.po*라는 파일을 만듭니다. 이 예제에서는 프랑스어가 사용되므로 파일 이름은 *fr.po*입니다.
 
-[!code-text[Main](localization/sample/POLocalization/fr.po)]
+[!code-text[](localization/sample/POLocalization/fr.po)]
 
 이 파일은 번역할 문자열 및 프랑스어로 번역된 문자열 모두를 저장합니다. 필요한 경우 번역은 해당 부모 문화권으로 되돌립니다. 이 예제에서 요청된 문화권이 `fr-FR` 또는 `fr-CA`인 경우 *fr.po* 파일이 사용됩니다.
 
@@ -133,7 +133,7 @@ msgstr[1] "Il y a {0} éléments."
 
 다음과 같이 `cs.po` 파일을 만들고 복수화에서 세 가지 다른 번역을 요구하는 방법을 확인합니다.
 
-[!code-text[Main](localization/sample/POLocalization/cs.po)]
+[!code-text[](localization/sample/POLocalization/cs.po)]
 
 체코어 지역화를 허용하려면 `ConfigureServices` 메서드의 지원되는 문화권 목록에 `"cs"`를 추가합니다.
 
@@ -206,7 +206,7 @@ msgstr "Bonjour le monde!"
 
 특정 항목이 지정된 파일 컨텍스트와 일치하지 않는 경우 Orchard Core의 대체 메커니즘은 컨텍스트 없이 적절한 PO 파일을 찾습니다. *Views/Home/Contact.cshtml*에 대해 정의된 특정 파일 컨텍스트가 없다고 가정하는 경우 `/Home/Contact?culture=fr-FR`로 이동하면 다음과 같은 PO 파일이 로드됩니다.
 
-[!code-text[Main](localization/sample/POLocalization/fr.po)]
+[!code-text[](localization/sample/POLocalization/fr.po)]
 
 ### <a name="changing-the-location-of-po-files"></a>PO 파일의 위치 변경
 

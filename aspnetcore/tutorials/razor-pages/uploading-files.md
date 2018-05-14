@@ -1,21 +1,22 @@
 ---
-title: "ASP.NET Core에서 Razor 페이지에 파일 업로드"
+title: ASP.NET Core의 Razor 페이지에 파일 업로드
 author: guardrex
-description: "Razor 페이지에 파일을 업로드하는 방법을 알아봅니다."
+description: Razor 페이지에 파일을 업로드하는 방법을 알아봅니다.
 manager: wpickett
+monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 09/12/2017
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages/uploading-files
-ms.openlocfilehash: 4a2c6da6ed698d1a65ee51bd00a557e607f012da
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 5f86164b3d227e55e11244da7600394809b6a4a7
+ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/26/2018
 ---
-# <a name="uploading-files-to-a-razor-page-in-aspnet-core"></a>ASP.NET Core에서 Razor 페이지에 파일 업로드
+# <a name="upload-files-to-a-razor-page-in-aspnet-core"></a>ASP.NET Core의 Razor 페이지에 파일 업로드
 
 [Luke Latham](https://github.com/guardrex)으로
 
@@ -47,7 +48,7 @@ ms.lasthandoff: 02/01/2018
 
 파일 업로드 쌍을 처리할 Razor 페이지를 만듭니다. 일정 데이터를 가져오기 위해 페이지에 바인딩되는 `FileUpload` 클래스를 추가합니다. *Models* 폴더를 마우스 오른쪽 단추로 클릭합니다. **추가** > **클래스**를 선택합니다. 클래스 이름을 **FileUpload**로 지정하고 다음 속성을 추가합니다.
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/FileUpload.cs)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/FileUpload.cs)]
 
 클래스에 일정 제목에 대한 속성 및 일정의 각 두 버전에 대한 속성이 있습니다. 세 가지 속성 모두 필요하며 제목 길이는 3-60자여야 합니다.
 
@@ -55,20 +56,44 @@ ms.lasthandoff: 02/01/2018
 
 업로드된 일정 파일을 처리하기 위한 코드 중복을 방지하려면 먼저 정적 도우미 메서드를 추가합니다. 앱에 *유틸리티* 폴더를 만들고 다음 콘텐츠가 포함된 *FileHelpers.cs* 파일을 추가합니다. 도우미 메서드 `ProcessFormFile`은 [IFormFile](/dotnet/api/microsoft.aspnetcore.http.iformfile) 및 [ModelStateDictionary](/api/microsoft.aspnetcore.mvc.modelbinding.modelstatedictionary)를 사용하여 파일의 크기와 콘텐츠를 포함하는 문자열을 반환합니다. 콘텐츠 형식 및 길이를 확인합니다. 파일이 유효성 검사를 통과하지 못한 경우 오류가 `ModelState`에 추가됩니다.
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Utilities/FileHelpers.cs)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Utilities/FileHelpers.cs)]
 
 ### <a name="save-the-file-to-disk"></a>디스크에 파일 저장
 
-샘플 앱은 파일의 콘텐츠를 데이터베이스 필드에 저장합니다. 파일의 콘텐츠를 디스크에 저장하려면 [FileStream](/dotnet/api/system.io.filestream)을 사용합니다.
+샘플 앱은 업로드된 파일을 데이터베이스 필드에 저장합니다. 디스크에 파일을 저장하려면 [FileStream](/dotnet/api/system.io.filestream)을 사용합니다. 다음 예제에서는 `FileUpload.UploadPublicSchedule`에 저장된 파일을 `OnPostAsync` 메서드의 `FileStream`으로 복사합니다. `FileStream`은 제공된 `<PATH-AND-FILE-NAME>`의 디스크에 파일을 씁니다.
 
 ```csharp
-using (var fileStream = new FileStream(filePath, FileMode.Create))
+public async Task<IActionResult> OnPostAsync()
 {
-    await formFile.CopyToAsync(fileStream);
+    // Perform an initial check to catch FileUpload class attribute violations.
+    if (!ModelState.IsValid)
+    {
+        return Page();
+    }
+
+    var filePath = "<PATH-AND-FILE-NAME>";
+
+    using (var fileStream = new FileStream(filePath, FileMode.Create))
+    {
+        await FileUpload.UploadPublicSchedule.CopyToAsync(fileStream);
+    }
+
+    return RedirectToPage("./Index");
 }
 ```
 
 작업자 프로세스는 `filePath`로 지정된 위치에 대한 쓰기 권한이 있어야 합니다.
+
+> [!NOTE]
+> `filePath`에는 *파일 이름*이 포함되어야 합니다. 파일 이름이 제공되지 않는 경우 런타임 시 [UnauthorizedAccessException](/dotnet/api/system.unauthorizedaccessexception)이 throw됩니다.
+
+> [!WARNING]
+> 업로드된 파일은 앱과 동일한 디렉터리 트리에 보관하지 마세요.
+>
+> 코드 샘플에서는 악성 파일 업로드에 대한 서버 쪽 보호 기능을 제공하지 않습니다. 사용자의 파일을 수락할 때 공격 노출 영역을 줄이는 방법에 대한 자세한 내용은 다음 리소스를 참조하세요.
+>
+> * [무제한 파일 업로드](https://www.owasp.org/index.php/Unrestricted_File_Upload)
+> * [Azure 보안: 사용자의 파일을 수락할 때 적절한 제어 장치가 있는지 확인](/azure/security/azure-security-threat-modeling-tool-input-validation#controls-users)
 
 ### <a name="save-the-file-to-azure-blob-storage"></a>Azure Blob Storage에 파일 저장
 
@@ -78,7 +103,7 @@ Azure Blob Storage에 파일 콘텐츠를 업로드하려면 [.NET을 사용하�
 
 *Models* 폴더를 마우스 오른쪽 단추로 클릭합니다. **추가** > **클래스**를 선택합니다. 클래스 이름을 **Schedule**로 지정하고 다음 속성을 추가합니다.
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/Schedule.cs)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/Schedule.cs)]
 
 클래스는 예약된 데이터가 렌더링될 때 친숙한 제목 및 서식 지정을 만드는 `Display` 및 `DisplayFormat` 특성을 사용합니다.
 
@@ -86,7 +111,7 @@ Azure Blob Storage에 파일 콘텐츠를 업로드하려면 [.NET을 사용하�
 
 일정의 경우 `MovieContext`(*Models/MovieContext.cs*)에서 `DbSet`을 지정합니다.
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/MovieContext.cs?highlight=13)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/MovieContext.cs?highlight=13)]
 
 ## <a name="add-the-schedule-table-to-the-database"></a>데이터베이스에 일정 테이블 추가
 
@@ -105,53 +130,53 @@ Update-Database
 
 *페이지* 폴더에서 *Schedules* 폴더를 만듭니다. *일정* 폴더에서 다음 콘텐츠를 포함한 일정을 업로드하기 위한 *Index.cshtml*이라는 페이지를 만듭니다.
 
-[!code-cshtml[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Index.cshtml)]
+[!code-cshtml[](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Index.cshtml)]
 
-각 양식 그룹에는 각 클래스 속성의 이름을 표시하는 **\<레이블>**이 포함되어 있습니다. `FileUpload` 모델의 `Display` 특성은 레이블에 대한 표시 값을 제공합니다. 예를 들어 `UploadPublicSchedule` 속성의 표시 이름이 `[Display(Name="Public Schedule")]`로 설정되어 있으면 양식이 렌더링할 때 레이블에서 “공개 일정”을 표시합니다.
+각 양식 그룹에는 각 클래스 속성의 이름을 표시하는 **\<레이블>** 이 포함되어 있습니다. `FileUpload` 모델의 `Display` 특성은 레이블에 대한 표시 값을 제공합니다. 예를 들어 `UploadPublicSchedule` 속성의 표시 이름이 `[Display(Name="Public Schedule")]`로 설정되어 있으면 양식이 렌더링할 때 레이블에서 “공개 일정”을 표시합니다.
 
-각 양식 그룹은 유효성 검사 **\<span>**을 포함합니다. 사용자의 입력이 `FileUpload` 클래스에 설정된 속성 특성을 충족하지 못하거나 `ProcessFormFile` 메서드 파일 유효성 검사 확인에 실패하는 경우 모델 유효성 검사에 실패합니다. 모델 유효성 검사에 실패하면 유용한 유효성 검사 메시지가 사용자에게 렌더링됩니다. 예를 들어 `Title` 속성은 `[Required]` 및 `[StringLength(60, MinimumLength = 3)]`으로 주석이 추가됩니다. 사용자가 제목을 입력하지 못하면 값이 필수 항목임을 나타내는 메시지가 표시됩니다. 사용자가 3자 미만 또는 60자 이상의 값을 입력하는 경우 값의 길이가 잘못되었음을 나타내는 메시지가 표시됩니다. 콘텐츠가 없는 파일이 제공되는 경우 해당 파일이 비어 있음을 나타내는 메시지가 표시됩니다.
+각 양식 그룹은 유효성 검사 **\<span>** 을 포함합니다. 사용자의 입력이 `FileUpload` 클래스에 설정된 속성 특성을 충족하지 못하거나 `ProcessFormFile` 메서드 파일 유효성 검사 확인에 실패하는 경우 모델 유효성 검사에 실패합니다. 모델 유효성 검사에 실패하면 유용한 유효성 검사 메시지가 사용자에게 렌더링됩니다. 예를 들어 `Title` 속성은 `[Required]` 및 `[StringLength(60, MinimumLength = 3)]`으로 주석이 추가됩니다. 사용자가 제목을 입력하지 못하면 값이 필수 항목임을 나타내는 메시지가 표시됩니다. 사용자가 3자 미만 또는 60자 이상의 값을 입력하는 경우 값의 길이가 잘못되었음을 나타내는 메시지가 표시됩니다. 콘텐츠가 없는 파일이 제공되는 경우 해당 파일이 비어 있음을 나타내는 메시지가 표시됩니다.
 
 ## <a name="add-the-page-model"></a>페이지 모델 추가
 
 *Schedules* 폴더에 페이지 모델(*Index.cshtml.cs*)을 추가합니다.
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs)]
 
 페이지 모델(*Index.cshtml.cs*의 `IndexModel`)은 `FileUpload` 클래스를 바인딩합니다.
 
-[!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet1)]
+[!code-csharp[](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet1)]
 
 또한 모델은 일정(`IList<Schedule>`)의 목록을 사용하여 데이터베이스에 저장된 일정을 페이지에 표시합니다.
 
-[!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet2)]
+[!code-csharp[](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet2)]
 
 페이지가 `OnGetAsync`로 로드되면 `Schedules`은 데이터베이스에서 채워지고 로드된 일정의 HTML 테이블을 생성하는 데 사용됩니다.
 
-[!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet3)]
+[!code-csharp[](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet3)]
 
 양식이 서버에 게시될 때 `ModelState`가 선택됩니다. 유효하지 않은 경우 `Schedule`이 다시 작성되고 페이지는 페이지 유효성 검사에 실패한 이유를 나타내는 하나 이상의 유효성 검사 메시지로 렌더링합니다. 유효한 경우 일정의 두 버전에 대한 파일 업로드를 완료하고 데이터를 저장하도록 새 `Schedule` 개체를 만드는 데 `FileUpload` 속성이 *OnPostAsync*에 사용됩니다. 일정이 다음 데이터베이스에 저장됩니다.
 
-[!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet4)]
+[!code-csharp[](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Index.cshtml.cs?name=snippet4)]
 
 ## <a name="link-the-file-upload-razor-page"></a>파일 업로드 Razor 페이지 연결
 
 *_Layout.cshtml*을 열고 파일 업로드 페이지에 도달하는 탐색 모음에 대한 링크를 추가합니다.
 
-[!code-cshtml[Main](razor-pages-start/sample/RazorPagesMovie/Pages/_Layout.cshtml?range=31-38&highlight=4)]
+[!code-cshtml[](razor-pages-start/sample/RazorPagesMovie/Pages/_Layout.cshtml?range=31-38&highlight=4)]
 
 ## <a name="add-a-page-to-confirm-schedule-deletion"></a>일정 삭제를 확인하는 페이지 추가
 
 사용자가 일정을 삭제하기 위해 클릭할 때 작업을 취소할 기회가 제공됩니다. 삭제 확인 페이지(*Delete.cshtml*)를 *Schedules* 폴더에 추가합니다.
 
-[!code-cshtml[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml)]
+[!code-cshtml[](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml)]
 
 페이지 모델(*Delete.cshtml.cs*)은 요청의 경로 데이터에서 `id`로 식별되는 단일 일정을 로드합니다. *Delete.cshtml.cs* 파일을 *Schedules* 폴더에 추가합니다.
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml.cs)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml.cs)]
 
 `OnPostAsync` 메서드는 해당 `id`에 의해 일정 삭제를 처리합니다.
 
-[!code-csharp[Main](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml.cs?name=snippet1&highlight=8,12-13)]
+[!code-csharp[](razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Schedules/Delete.cshtml.cs?name=snippet1&highlight=8,12-13)]
 
 일정을 성공적으로 삭제한 후 `RedirectToPage`는 사용자에게 일정 *Index.cshtml* 페이지를 다시 보냅니다.
 
@@ -179,12 +204,12 @@ Update-Database
 
 `IFormFile` 업로드에 관한 문제 해결 정보는 [ASP.NET Core에서 파일 업로드: 문제 해결](xref:mvc/models/file-uploads#troubleshooting)을 참조하세요.
 
-Razor 페이지에 대한 이 소개를 완료해 주셔서 감사합니다. 소중한 의견에 감사합니다. [MVC 및 EF Core 시작](xref:data/ef-mvc/intro)은 이 자습서에 대한 뛰어난 후속편입니다.
+Razor 페이지에 대한 이 소개를 완료해 주셔서 감사합니다. 소중한 의견에 감사합니다. [MVC 및 EF Core 시작](xref:data/ef-mvc/intro)은 이 자습서의 유용한 후속편입니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 * [ASP.NET Core에서 파일 업로드](xref:mvc/models/file-uploads)
 * [IFormFile](/dotnet/api/microsoft.aspnetcore.http.iformfile)
 
->[!div class="step-by-step"]
-[이전: 유효성 검사](xref:tutorials/razor-pages/validation)
+> [!div class="step-by-step"]
+> [이전: 유효성 검사](xref:tutorials/razor-pages/validation)

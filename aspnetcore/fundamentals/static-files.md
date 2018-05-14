@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core에서 정적 파일 작업하기"
+title: ASP.NET Core에서 정적 파일 작업하기
 author: rick-anderson
-description: "ASP.NET Core 웹앱에서 정적 파일을 제공 및 보호하고 정적 파일 호스팅 미들웨어 동작을 구성하는 방법을 알아봅니다."
+description: ASP.NET Core 웹앱에서 정적 파일을 제공 및 보호하고 정적 파일 호스팅 미들웨어 동작을 구성하는 방법을 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -11,19 +11,19 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/static-files
-ms.openlocfilehash: 7b156830ab59db3c08fbff6b2c4180d8765a113b
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: 46e868910661024ea3b950e78ced02a095896be1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="work-with-static-files-in-aspnet-core"></a>ASP.NET Core에서 정적 파일 작업하기
+# <a name="work-with-static-files-in-aspnet-core"></a>ASP.NET Core에서 정적 파일 사용
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT) 및 [Scott Addie](https://twitter.com/Scott_Addie)
 
 HTML, CSS, 이미지 및 JavaScript와 같은 정적 파일은 ASP.NET Core 앱이 클라이언트에 직접 제공하는 자산입니다. 일부 구성은 이러한 파일을 제공하는 데 필수적입니다.
 
-[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/static-files/samples)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/static-files/samples)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="serve-static-files"></a>정적 파일 제공
 
@@ -31,20 +31,17 @@ HTML, CSS, 이미지 및 JavaScript와 같은 정적 파일은 ASP.NET Core 앱�
 
 앱의 웹 호스트에서 콘텐츠 루트 디렉터리를 인식하도록 해야 합니다.
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
+#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 `WebHost.CreateDefaultBuilder` 메서드는 콘텐츠 루트를 현재 디렉터리로 설정합니다.
 
 [!code-csharp[](../common/samples/WebApplication1DotNetCore2.0App/Program.cs?name=snippet_Main&highlight=9)]
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
+#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 `Program.Main` 내부에 있는 [UseContentRoot](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.usecontentroot#Microsoft_AspNetCore_Hosting_HostingAbstractionsWebHostBuilderExtensions_UseContentRoot_Microsoft_AspNetCore_Hosting_IWebHostBuilder_System_String_)를 호출하여 콘텐츠 루트를 현재 디렉터리로 설정합니다.
 
 [!code-csharp[](static-files/samples/1x/Program.cs?name=snippet_ProgramClass&highlight=7)]
 
----
-
+* * *
 정적 파일은 웹 루트를 기준으로 하는 경로를 통해 액세스할 수 있습니다. 예를 들어 **웹 응용 프로그램** 프로젝트 템플릿에는 *wwwroot* 폴더 내에 여러 폴더를 포함합니다.
 
 * **wwwroot**
@@ -52,7 +49,7 @@ HTML, CSS, 이미지 및 JavaScript와 같은 정적 파일은 ASP.NET Core 앱�
   * **images**
   * **js**
 
-*images* 하위 폴더에 있는 파일에 액세스하기 위한 URI 형식은 *http://\<server_address>/images/\<image_file_name>*입니다. 예를 들어 *http://localhost:9189/images/banner3.svg*입니다.
+*images* 하위 폴더에 있는 파일에 액세스하기 위한 URI 형식은 *http://\<server_address>/images/\<image_file_name>* 입니다. 예: *http://localhost:9189/images/banner3.svg*.
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
@@ -208,7 +205,7 @@ URL은 파일 계층 구조 및 이전 코드를 사용하여 다음과 같이 �
 ![정적 파일 목록](static-files/_static/db2.png)
 
 > [!NOTE]
-> `UseDefaultFiles` 및 `UseDirectoryBrowser`는 후행 슬래시가 없는 URL *http://\<server_address>/StaticFiles*를 사용하여 *http://\<server_address>/StaticFiles/*로의 클라이언트 쪽 리디렉션을 트리거합니다. 후행 슬래시 추가를 확인하세요. 문서 내에서 상대 URL은 후행 슬래시가 없는 잘못된 것으로 간주됩니다.
+> `UseDefaultFiles` 및 `UseDirectoryBrowser`는 후행 슬래시가 없는 URL *http://\<server_address>/StaticFiles*를 사용하여 *http://\<server_address>/StaticFiles/* 로의 클라이언트 쪽 리디렉션을 트리거합니다. 후행 슬래시 추가를 확인하세요. 문서 내에서 상대 URL은 후행 슬래시가 없는 잘못된 것으로 간주됩니다.
 
 ## <a name="fileextensioncontenttypeprovider"></a>FileExtensionContentTypeProvider
 
@@ -236,9 +233,9 @@ URL은 파일 계층 구조 및 이전 코드를 사용하여 다음과 같이 �
 > [!WARNING]
 > `UseDirectoryBrowser` 및 `UseStaticFiles`는 비밀 정보를 누출 할 수 있습니다. 프로덕션 환경에서 디렉터리 검색을 비활성화하는 것이 좋습니다. `UseStaticFiles` 또는 `UseDirectoryBrowser`를 통해 어떤 디렉터리가 활성화되었는지 주의 깊게 검토합니다. 전체 디렉터리와 해당 하위 디렉터리는 공개적으로 액세스할 수 있습니다. *\<content_root>/wwwroot*와 같이 전용 디렉터리에 공개적으로 제공하는 데 적합한 파일을 저장합니다. MVC 뷰, Razor 페이지(2.x에만 해당), 구성 파일 등으로 이러한 파일을 구분합니다.
 
-* `UseDirectoryBrowser` 및 `UseStaticFiles`로 노출된 콘텐츠에 대한 URL은 대/소문자 구분 및 기본 파일 시스템의 문자 제한이 적용됩니다. 예를 들어 Windows는 대/소문자를 구분하지 않는 반면 &mdash;Mac 및 Linux는 해당되지 않습니다.
+* `UseDirectoryBrowser` 및 `UseStaticFiles`로 노출된 콘텐츠에 대한 URL은 대/소문자 구분 및 기본 파일 시스템의 문자 제한이 적용됩니다. 예를 들어 Windows는 대/소문자를 구분하지 않는 반면 macOS 및 Linux는 그렇지 않습니다.
 
-* IIS에서 호스팅되는 ASP.NET Core 앱은 [ANCM(ASP.NET Core 모듈)](xref:fundamentals/servers/aspnet-core-module)을 사용하여 정적 파일 요청을 비롯한 앱에 모든 요청을 전달합니다. IIS 정적 파일 처리기는 사용되지 않습니다. ANCM에서 처리하기 전에는 요청을 처리할 수 없습니다.
+* IIS에서 호스팅되는 ASP.NET Core 앱은 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)을 사용하여 정적 파일 요청을 비롯한 모든 요청을 앱에 전달합니다. IIS 정적 파일 처리기는 사용되지 않습니다. 모듈에서 처리하기 전에는 요청을 처리할 수 없습니다.
 
 * 서버 또는 웹 사이트 수준에서 IIS 정적 파일 처리기를 제거하려면 IIS 관리자에서 다음 단계를 완료합니다.
     1. **모듈** 기능으로 이동합니다.
@@ -246,11 +243,11 @@ URL은 파일 계층 구조 및 이전 코드를 사용하여 다음과 같이 �
     1. **동작** 사이드바에서 **제거**를 클릭합니다.
 
 > [!WARNING]
-> IIS 정적 파일 처리기가 사용되도록 설정된 경우 **및** ANCM이 올바르게 구성된 경우 정적 파일이 제공됩니다. 이는 예를 들어 *web.config* 파일이 배포되지 않는 경우에 발생합니다.
+> IIS 정적 파일 처리기가 사용되도록 설정된 경우 **및** ASP.NET Core 모듈이 올바르게 구성된 경우, 정적 파일이 제공됩니다. 이는 예를 들어 *web.config* 파일이 배포되지 않는 경우에 발생합니다.
 
 * 코드 파일(*.cs* 및 *.cshtml* 포함)을 앱 프로젝트의 웹 루트 외부에 배치합니다. 따라서 논리적 분리가 앱의 클라이언트 쪽 콘텐츠 및 서버 기반 코드 사이에 만들어집니다. 그러면 서버 쪽 코드가 유출되지 않습니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 * [미들웨어](xref:fundamentals/middleware/index)
 * [ASP.NET Core 소개](xref:index)

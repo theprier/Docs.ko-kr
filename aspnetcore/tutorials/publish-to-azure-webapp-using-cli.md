@@ -1,7 +1,7 @@
 ---
-title: "명령줄 도구를 사용하여 Azure에 ASP.NET Core 앱 게시"
+title: 명령줄 도구를 사용하여 Azure에 ASP.NET Core 앱 게시
 author: camsoper
-description: "Git 명령줄 클라이언트를 사용하여 Azure App Service에 ASP.NET Core 앱을 게시하는 방법을 알아봅니다."
+description: Git 명령줄 클라이언트를 사용하여 Azure App Service에 ASP.NET Core 앱을 게시하는 방법을 알아봅니다.
 manager: wpickett
 ms.author: casoper
 ms.custom: mvc
@@ -12,15 +12,17 @@ ms.technology: aspnet
 ms.topic: get-started-article
 services: multiple
 uid: tutorials/publish-to-azure-webapp-using-cli
-ms.openlocfilehash: 0418a2695d3afb6dc2c55b8f694a97d62239835f
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 0462a4cf18bba23643ed3b1b4e6b76bdbceb24a8
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="deploy-an-aspnet-core-application-to-azure-app-service-from-the-command-line"></a>명령줄에서 Azure App Service에 ASP.NET Core 응용 프로그램 배포
+# <a name="publish-an-aspnet-core-app-to-azure-with-command-line-tools"></a>명령줄 도구를 사용하여 Azure에 ASP.NET Core 앱 게시
 
 작성자: [Cam Soper](https://twitter.com/camsoper)
+
+[!INCLUDE [Azure App Service Preview Notice](../includes/azure-apps-preview-notice.md)]
 
 이 자습서에서는 명령줄 도구를 사용하여 Microsoft Azure App Service에 ASP.NET Core 응용 프로그램을 빌드하고 배포하는 방법을 보여줍니다.  완료되면 Azure App Service 웹앱으로 호스트된 ASP.NET MVC Core에서 웹 응용 프로그램이 빌드된 결과를 얻을 수 있습니다.  이 자습서는 Windows 명령줄 도구를 사용하여 작성되지만 macOS 및 Linux 환경에도 적용할 수 있습니다.  
 
@@ -30,12 +32,12 @@ ms.lasthandoff: 01/30/2018
 > * Azure CLI를 사용하여 Azure App Service 웹 사이트 만들기
 > * Git 명령줄 도구를 사용하여 ASP.NET Core 응용 프로그램을 Azure App Service 배포
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 이 자습서를 완료하려면 다음이 필요합니다.
 
 * [Microsoft Azure 구독](https://azure.microsoft.com/free/)
-* [.NET Core](https://www.microsoft.com/net/download/core)
+* [!INCLUDE [](~/includes/net-core-sdk-download-link.md)]
 * [Git](https://www.git-scm.com/) 명령줄 클라이언트
 
 ## <a name="create-a-web-application"></a>웹 응용 프로그램 만들기

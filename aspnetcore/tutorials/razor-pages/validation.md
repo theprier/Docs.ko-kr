@@ -1,7 +1,7 @@
 ---
-title: "유효성 검사 추가"
+title: ASP.NET Core Razor 페이지에 유효성 검사 추가
 author: rick-anderson
-description: "Razor 페이지에 유효성 검사를 추가하는 방법을 설명합니다."
+description: ASP.NET Core의 Razor 페이지에 유효성 검사를 추가하는 방법을 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 08/07/2017
@@ -9,13 +9,13 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages/validation
-ms.openlocfilehash: 770b930373888c8b4bd578ba6d2524546549800e
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 271a5ce517ae550845d96e3969b39b1eda6ae51b
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="adding-validation-to-a-razor-page"></a>Razor 페이지에 유효성 검사 추가
+# <a name="add-validation-to-an-aspnet-core-razor-page"></a>ASP.NET Core Razor 페이지에 유효성 검사 추가
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -33,7 +33,7 @@ Razor 페이지에서 제공하는 유효성 검사 지원 및 Entity Framework�
 
 `Required`, `StringLength`, `RegularExpression` 및 `Range` 유효성 검사 특성을 활용하도록 `Movie` 클래스를 업데이트합니다.
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc//sample/MvcMovie/Models/MovieDateRatingDA.cs?name=snippet1)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc//sample/MvcMovie/Models/MovieDateRatingDA.cs?name=snippet1)]
 
 유효성 검사 특성은 모델 속성에 적용되는 동작을 지정합니다.
 
@@ -85,7 +85,7 @@ ASP.NET Core에 의해 자동으로 적용되는 유효성 검사 규칙을 사�
 
 다음 코드는 자습서의 앞부분에서 스캐폴드한 *Create.cshtml* 페이지의 일부를 보여 줍니다. 만들기 및 편집 페이지에서 초기 양식을 표시하고 오류가 발생한 경우 양식을 다시 표시하기 위해 사용됩니다.
 
-[!code-cshtml[Main](razor-pages-start/sample/RazorPagesMovie/Pages/Movies/Create.cshtml?range=14-20)]
+[!code-cshtml[](razor-pages-start/sample/RazorPagesMovie/Pages/Movies/Create.cshtml?range=14-20)]
 
 [입력 태그 도우미](xref:mvc/views/working-with-forms)는 [DataAnnotations](https://docs.microsoft.com/aspnet/mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6) 특성을 사용하고 클라이언트 쪽의 jQuery 유효성 검사에 필요한 HTML 특성을 생성합니다. [유효성 검사 태그 도우미](xref:mvc/views/working-with-forms#the-validation-tag-helpers)는 유효성 검사 오류를 표시합니다. 자세한 내용은 [유효성 검사](xref:mvc/models/validation)를 참조하세요.
 
@@ -97,7 +97,7 @@ ASP.NET Core에 의해 자동으로 적용되는 유효성 검사 규칙을 사�
 
 `Movie` 클래스를 검사합니다. `System.ComponentModel.DataAnnotations` 네임스페이스는 기본 제공 유효성 검사 특성의 집합 외에 서식 지정 특성을 제공합니다. `DataType` 특성은 `ReleaseDate` 및 `Price` 속성에 적용됩니다.
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/MovieDateRatingDA.cs?highlight=2,6&name=snippet2)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/MovieDateRatingDA.cs?highlight=2,6&name=snippet2)]
 
 `DataType` 특성은 데이터의 서식을 지정하도록 뷰 엔진에 대한 힌트만을 제공합니다(그리고 URL에 대한 `<a>` 및 전자 메일에 대한 `<a href="mailto:EmailAddress.com">`과 같은 특성 제공). `RegularExpression` 특성을 사용하여 데이터 형식의 유효성을 검사합니다. `DataType` 특성은 데이터베이스 내장 형식보다 구체적인 데이터 형식을 지정하는 데 사용됩니다. `DataType` 특성은 유효성 검사 특성이 아닙니다. 샘플 응용 프로그램에서 날짜는 시간 없이 표시됩니다.
 
@@ -130,21 +130,21 @@ public DateTime ReleaseDate { get; set; }
 
 다음 코드는 한 줄에 결합 특성을 보여 줍니다.
 
-[!code-csharp[Main](razor-pages-start/sample/RazorPagesMovie/Models/MovieDateRatingDAmult.cs?name=snippet1)]
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/MovieDateRatingDAmult.cs?name=snippet1)]
 
-[Razor 페이지 및 EF Core 시작](xref:data/ef-rp/intro)에서는 Razor 페이지와 고급 EF Core 작업을 보여 줍니다.
+[Razor 페이지 및 EF Core 시작](xref:data/ef-rp/intro)에서는 Razor 페이지를 사용한 고급 EF Core 작업을 보여 줍니다.
 
 ### <a name="publish-to-azure"></a>Azure에 게시
 
 Azure에 이 앱을 게시하는 방법에 관한 지침은 [Visual Studio를 사용하여 Azure App Service에 ASP.NET Core 웹앱 게시](xref:tutorials/publish-to-azure-webapp-using-vs)를 참조하세요.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 * [양식 사용](xref:mvc/views/working-with-forms)
 * [전역화 및 지역화](xref:fundamentals/localization)
 * [태그 도우미 소개](xref:mvc/views/tag-helpers/intro)
 * [태그 도우미 작성](xref:mvc/views/tag-helpers/authoring)
 
->[!div class="step-by-step"]
-[이전: 새 필드 추가](xref:tutorials/razor-pages/new-field)
-[다음: 파일 업로드](xref:tutorials/razor-pages/uploading-files)
+> [!div class="step-by-step"]
+> [이전: 새 필드 추가](xref:tutorials/razor-pages/new-field)
+> [다음: 파일 업로드](xref:tutorials/razor-pages/uploading-files)

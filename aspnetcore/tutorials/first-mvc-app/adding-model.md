@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core MVC 앱에 모델 추가"
+title: ASP.NET Core MVC 앱에 모델 추가
 author: rick-anderson
-description: "간단한 ASP.NET Core 앱에 모델을 추가합니다."
+description: 간단한 ASP.NET Core 앱에 모델을 추가합니다.
 manager: wpickett
 ms.author: riande
 ms.date: 12/8/2017
@@ -9,19 +9,21 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app/adding-model
-ms.openlocfilehash: 1819aff0e6ae68ad3c609466e52fcb6510fe1dcd
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 4204d4e2d474db51692d42751a9f82373e9f0c0d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-[!INCLUDE[adding-model](../../includes/mvc-intro/adding-model1.md)]
+# <a name="add-a-model-to-an-aspnet-core-mvc-app"></a>ASP.NET Core MVC 앱에 모델 추가
+
+[!INCLUDE [adding-model](../../includes/mvc-intro/adding-model1.md)]
 
 참고: ASP.NET Core 2.0 템플릿은 *Models* 폴더를 포함합니다.
 
 *Models* 폴더> **추가** > **클래스**를 마우스 오른쪽 단추로 클릭합니다. 클래스 이름을 **Movie**로 지정하고 다음 속성을 추가합니다.
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieNoEF.cs?name=snippet_1)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieNoEF.cs?name=snippet_1)]
 
 `ID` 필드는 데이터베이스에서 기본 키 대신 필요합니다. 
 
@@ -59,7 +61,7 @@ Visual Studio에서 다음을 만듭니다.
 
 * Entity Framework Core [데이터베이스 컨텍스트 클래스](xref:data/ef-mvc/intro#create-the-database-context)(*Data/MvcMovieContext.cs*)
 * 동영상 컨트롤러(*Controllers/MoviesController.cs*)
-* 만들기, 삭제, 세부 정보, 편집 및 인덱스 페이지에 대한 Razor 뷰 파일(*Views/Movies/&ast;.cshtml*)
+* 만들기, 삭제, 세부 정보, 편집 및 인덱스 페이지에 대한 Razor 뷰 파일(<em>Views/Movies/&ast;.cshtml</em>)
 
 [CRUD](https://wikipedia.org/wiki/Create,_read,_update_and_delete)(만들기, 읽기, 업데이트 및 삭제) 작업 메서드와 뷰 및 데이터베이스 컨텍스트의 자동 생성을 *스캐폴딩*이라고 합니다. 동영상 데이터베이스를 관리할 수 있는 완벽하게 작동하는 웹 응용 프로그램이 곧 제공됩니다.
 
@@ -113,20 +115,29 @@ Update-Database
   dotnet ef database update
   ```     
   
+  앱을 실행하고 오류가 발생하는 경우:
+  
+  ```text
+  SqlException: Cannot open database "Movie" requested by the login.
+  The login failed.
+  Login failed for user 'user name'.
+  ```
 
-[!INCLUDE[adding-model](../../includes/mvc-intro/adding-model3.md)]
+` dotnet ef database update`를 실행하지 않았을 수 있습니다.
+  
+[!INCLUDE [adding-model](../../includes/mvc-intro/adding-model3.md)]
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=ConfigureServices&highlight=6-7)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=ConfigureServices&highlight=6-7)]
 
-[!INCLUDE[adding-model](../../includes/mvc-intro/adding-model4.md)]
+[!INCLUDE [adding-model](../../includes/mvc-intro/adding-model4.md)]
 
 ![ID, 가격, 출시일, 제목에 대해 사용 가능한 속성을 열거하는 모델 항목의 Intellisense 상황별 메뉴](adding-model/_static/ints.png)
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 * [태그 도우미](xref:mvc/views/tag-helpers/intro)
 * [전역화 및 지역화](xref:fundamentals/localization)
 
->[!div class="step-by-step"]
-[이전 뷰 추가](adding-view.md)
-[다음 SQL 사용](working-with-sql.md)  
+> [!div class="step-by-step"]
+> [이전 뷰 추가](adding-view.md)
+> [다음 SQL 사용](working-with-sql.md)  

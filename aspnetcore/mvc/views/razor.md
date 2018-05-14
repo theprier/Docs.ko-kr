@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/razor
-ms.openlocfilehash: 98021cc76555f0c1402764c845471a4730b01b20
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 9c96ea34071bf3009f1ec53ed9af9206439aa229
+ms.sourcegitcommit: 2ab550f8c46e1a8a5d45e58be44d151c676af256
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/28/2018
 ---
-# <a name="razor-syntax-for-aspnet-core"></a>ASP.NET Core에 대한 Razor 구문
+# <a name="razor-syntax-reference-for-aspnet-core"></a>ASP.NET Core에 대한 Razor 구문 참조
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT), [Luke Latham](https://github.com/guardrex), [Taylor Mullen](https://twitter.com/ntaylormullen) 및 [Dan Vicarel](https://github.com/Rabadash8820)
 
@@ -89,7 +89,7 @@ C# `await` 키워드를 제외하고, 암시적 식에 공백이 있으면 안 �
 
 이전 섹션에서 설명한 암시적 식은 일반적으로 공백을 포함할 수 없습니다. 다음 코드에서 일주일은 현재 시간에서 차감되지 않습니다.
 
-[!code-cshtml[Main](razor/sample/Views/Home/Contact.cshtml?range=17)]
+[!code-cshtml[](razor/sample/Views/Home/Contact.cshtml?range=17)]
 
 이 코드는 다음 HTML을 렌더링합니다.
 
@@ -109,19 +109,7 @@ C# `await` 키워드를 제외하고, 암시적 식에 공백이 있으면 안 �
 
 명시적 식이 없으면 `<p>Age@joe.Age</p>`는 이메일 주소로 처리되고 `<p>Age@joe.Age</p>`가 렌더링됩니다. 명시적 식으로 작성되면 `<p>Age33</p>`이 렌더링됩니다.
 
-
-명시적 식은 *.cshtml* 파일에 있는 제네릭 메서드의 출력을 렌더링하는 데 사용할 수 있습니다. 암시적 식에서 대괄호(`<>`) 안에 있는 문자는 HTML 태그로 해석됩니다. 다음 태그는 유효한 Razor가 **아닙니다**.
-
-```cshtml
-<p>@GenericMethod<int>()</p>
-```
-
-위의 코드는 다음 중 하나와 비슷한 컴파일러 오류를 생성합니다.
-
- * "Int" 요소가 종료되지 않았습니다. 모든 요소는 하나 있어야 자체적으로 닫히거나 일치하는 끝 태그가 있어야 합니다.
- *  'GenericMethod' 메서드 그룹을 비대리자 형식 '개체'로 변환할 수 없습니다. 메서드를 호출할 생각이었나요? 
- 
- 다음 태그는 이 코드를 작성하는 올바른 방법을 보여줍니다. 이 코드는 명시적 식으로 작성됩니다.
+명시적 식은 *.cshtml* 파일에 있는 제네릭 메서드의 출력을 렌더링하는 데 사용할 수 있습니다. 다음 표시는 앞에서 C# 제네릭의 대괄호로 인해 발생한 오류를 해결하는 방법을 보여 줍니다. 이 코드는 명시적 식으로 작성됩니다.
 
 ```cshtml
 <p>@(GenericMethod<int>())</p>
@@ -231,7 +219,7 @@ HTML 태그로 묶이지 않은 HTML을 렌더링하려면 이 방법을 사용�
 
 코드에 `@:`이 없으면 Razor 런타임 오류가 생성됩니다.
 
-경고: Razor 파일의 추가 `@` 문자는 블록의 뒷부분에 나오는 명령문에서 컴파일러 오류를 일으킬 수 있습니다. 실제 오류가 보고된 오류보다 먼저 발생하기 때문에 이러한 컴파일러 오류를 이해하기 어려울 수 있습니다. 이 오류는 여러 암시적/명시적 식을 단일 코드 블록에 결합한 이후에 자주 발생합니다.
+경고: Razor 파일의 추가 `@` 문자는 블록의 뒷부분에 나오는 명령문에서 컴파일러 오류를 유발할 수 있습니다. 실제 오류가 보고된 오류보다 먼저 발생하기 때문에 이러한 컴파일러 오류를 이해하기 어려울 수 있습니다. 이 오류는 여러 암시적/명시적 식을 단일 코드 블록에 결합한 이후에 자주 발생합니다.
 
 ## <a name="control-structures"></a>제어 구조
 
@@ -370,7 +358,7 @@ C#에서 `using` 문은 개체가 삭제되도록 보장하는 데 사용됩니�
 
 예외 처리는 C#과 비슷합니다.
 
-[!code-cshtml[Main](razor/sample/Views/Home/Contact7.cshtml)]
+[!code-cshtml[](razor/sample/Views/Home/Contact7.cshtml)]
 
 ### <a name="lock"></a>@lock
 
@@ -419,7 +407,7 @@ Razor 지시문은 `@` 기호 뒤에 예약된 키워드를 사용하여 암시�
 
 Razor가 보기에 대한 코드를 생성하는 원리를 이해하면 지시문의 작동 원리를 쉽게 이해할 수 있습니다.
 
-[!code-html[Main](razor/sample/Views/Home/Contact8.cshtml)]
+[!code-html[](razor/sample/Views/Home/Contact8.cshtml)]
 
 이 코드는 다음과 비슷한 클래스를 생성합니다.
 
@@ -439,11 +427,12 @@ public class _Views_Something_cshtml : RazorPage<dynamic>
 
 이 문서의 뒷부분에 나오는 [보기에 대해 생성된 Razor C# 클래스 보기](#viewing-the-razor-c-class-generated-for-a-view) 섹션에서는 생성된 클래스를 보는 방법을 설명합니다.
 
+<a name="using"></a>
 ### <a name="using"></a>@using
 
 `@using` 지시문은 C# `using` 지시문을 생성된 보기에 추가합니다.
 
-[!code-cshtml[Main](razor/sample/Views/Home/Contact9.cshtml)]
+[!code-cshtml[](razor/sample/Views/Home/Contact9.cshtml)]
 
 ### <a name="model"></a>@model
 
@@ -471,7 +460,7 @@ Razor는 보기에 전달된 모델에 액세스할 수 있는 `Model` 속성을
 <div>The Login Email: @Model.Email</div>
 ```
 
-`@model` 지시문은 이 속성의 형식을 지정합니다. 이 지시문은 보기가 파생되는 클래스를 생성한 `RazorPage<T>`의 `T`를 지정합니다. `@model` 지시문이 지정되지 않으면 `Model` 속성은 `dynamic` 형식입니다. 모델의 값은 컨트롤러에서 보기로 전달됩니다. 자세한 내용은 [강력한 형식의 모델 및 @model 키워드]를 참조하세요.
+`@model` 지시문은 이 속성의 형식을 지정합니다. 이 지시문은 보기가 파생되는 클래스를 생성한 `RazorPage<T>`의 `T`를 지정합니다. `@model` 지시문이 지정되지 않을 경우 `Model` 속성은 `dynamic` 형식입니다. 모델의 값은 컨트롤러에서 보기로 전달됩니다. 자세한 내용은 [강력한 형식의 모델 및 &commat;모델 키워드](xref:tutorials/first-mvc-app/adding-model#strongly-typed-models-and-the--keyword)를 참조하세요.
 
 ### <a name="inherits"></a>@inherits
 
@@ -483,11 +472,11 @@ Razor는 보기에 전달된 모델에 액세스할 수 있는 `Model` 속성을
 
 다음 코드는 사용자 지정 Razor 페이지 형식입니다.
 
-[!code-csharp[Main](razor/sample/Classes/CustomRazorPage.cs)]
+[!code-csharp[](razor/sample/Classes/CustomRazorPage.cs)]
 
 `CustomText`는 보기에 표시됩니다.
 
-[!code-cshtml[Main](razor/sample/Views/Home/Contact10.cshtml)]
+[!code-cshtml[](razor/sample/Views/Home/Contact10.cshtml)]
 
 이 코드는 다음 HTML을 렌더링합니다.
 
@@ -497,11 +486,11 @@ Razor는 보기에 전달된 모델에 액세스할 수 있는 `Model` 속성을
 
  `@model` 및 `@inherits`는 동일한 보기에 사용할 수 있습니다. `@inherits`는 보기에서 가져오는 *_ViewImports.cshtml* 파일에 있을 수 있습니다.
 
-[!code-cshtml[Main](razor/sample/Views/_ViewImportsModel.cshtml)]
+[!code-cshtml[](razor/sample/Views/_ViewImportsModel.cshtml)]
 
 다음 코드는 강력한 형식의 보기 예제입니다.
 
-[!code-cshtml[Main](razor/sample/Views/Home/Login1.cshtml)]
+[!code-cshtml[](razor/sample/Views/Home/Login1.cshtml)]
 
 "rick@contoso.com"이 모델에 전달되면 보기에서 다음과 같은 HTML 태그를 생성합니다.
 
@@ -517,7 +506,7 @@ Razor는 보기에 전달된 모델에 액세스할 수 있는 `Model` 속성을
 
 ### <a name="functions"></a>@functions
 
-`@functions` 지시문을 사용하면 Razor 페이지에서 함수 수준 콘텐츠를 보기에 추가할 수 있습니다.
+`@functions` 지시문을 사용하면 Razor 페이지에서 C# 코드 블록을 보기에 추가할 수 있습니다.
 
 ```cshtml
 @functions { // C# Code }
@@ -525,7 +514,7 @@ Razor는 보기에 전달된 모델에 액세스할 수 있는 `Model` 속성을
 
 예:
 
-[!code-cshtml[Main](razor/sample/Views/Home/Contact6.cshtml)]
+[!code-cshtml[](razor/sample/Views/Home/Contact6.cshtml)]
 
 이 코드는 다음과 같은 HTML 태그를 생성합니다.
 
@@ -535,7 +524,7 @@ Razor는 보기에 전달된 모델에 액세스할 수 있는 `Model` 속성을
 
 다음 코드는 생성된 Razor C# 클래스입니다.
 
-[!code-csharp[Main](razor/sample/Classes/Views_Home_Test_cshtml.cs?range=1-19)]
+[!code-csharp[](razor/sample/Classes/Views_Home_Test_cshtml.cs?range=1-19)]
 
 ### <a name="section"></a>@section
 
@@ -547,9 +536,9 @@ Razor는 보기에 전달된 모델에 액세스할 수 있는 `Model` 속성을
 
 | 지시문 | 함수 |
 | --------- | -------- |
-| [@addTagHelper](xref:mvc/views/tag-helpers/intro#add-helper-label) | 보기에 태그 도우미를 제공합니다. |
-| [@removeTagHelper](xref:mvc/views/tag-helpers/intro#remove-razor-directives-label) | 보기에서 이전에 추가된 태그 도우미를 제거합니다. |
-| [@tagHelperPrefix](xref:mvc/views/tag-helpers/intro#prefix-razor-directives-label) | 태그 도우미를 지원하고 태그 도우미 사용을 명시적으로 만들어주는 태그 접두사를 지정합니다. |
+| [&commat;addTagHelper](xref:mvc/views/tag-helpers/intro#add-helper-label) | 보기에 태그 도우미를 제공합니다. |
+| [&commat;removeTagHelper](xref:mvc/views/tag-helpers/intro#remove-razor-directives-label) | 보기에서 이전에 추가된 태그 도우미를 제거합니다. |
+| [&commat;tagHelperPrefix](xref:mvc/views/tag-helpers/intro#prefix-razor-directives-label) | 태그 도우미를 지원하고 태그 도우미 사용을 명시적으로 만들어주는 태그 접두사를 지정합니다. |
 
 ## <a name="razor-reserved-keywords"></a>Razor 예약 키워드
 
@@ -592,11 +581,11 @@ C# Razor 키워드는 `@(@C# Razor Keyword)`으로 이중 이스케이프되어�
 
 ASP.NET Core MVC 프로젝트에 다음 클래스를 추가합니다.
 
-[!code-csharp[Main](razor/sample/Utilities/CustomTemplateEngine.cs)]
+[!code-csharp[](razor/sample/Utilities/CustomTemplateEngine.cs)]
 
 MVC에서 추가한 `RazorTemplateEngine`을 `CustomTemplateEngine` 클래스로 재정의합니다.
 
-[!code-csharp[Main](razor/sample/Startup.cs?highlight=4&range=10-14)]
+[!code-csharp[](razor/sample/Startup.cs?highlight=4&range=10-14)]
 
 `CustomTemplateEngine`의 `return csharpDocument` 문에서 중단점을 설정합니다. 중단점에서 프로그램 실행이 중지되면 `generatedCode`의 값을 확인합니다.
 

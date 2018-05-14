@@ -1,7 +1,7 @@
 ---
-title: "Mac, Linux 또는 Windows에서 ASP.NET Core MVC 소개"
+title: macOS, Linux 또는 Windows의 ASP.NET Core MVC 소개
 author: rick-anderson
-description: "Mac, Linux 또는 Windows에서 ASP.NET Core MVC 및 Visual Studio Code 시작"
+description: macOS, Linux 또는 Windows에서 ASP.NET Core MVC 및 Visual Studio Code를 시작하는 방법 알아보기
 manager: wpickett
 ms.author: riande
 ms.date: 07/07/2017
@@ -9,19 +9,19 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app-xplat/start-mvc
-ms.openlocfilehash: 4771555b66f328a819f17a32eb3959f9ecf33d44
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 50fbd54c6b0cc1146271afda7e45a0dab590dd7d
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="getting-started-with-aspnet-core-mvc--on-mac-linux-or-windows"></a>Mac, Linux 또는 Windows에서 ASP.NET Core MVC 시작
+# <a name="introduction-to-aspnet-core-mvc-on-macos-linux-or-windows"></a>macOS, Linux 또는 Windows의 ASP.NET Core MVC 소개
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 
 이 자습서에서는 [Visual Studio Code](https://code.visualstudio.com)(VS Code)를 사용하여 ASP.NET Core MVC 웹앱을 빌드하는 기본 사항에 대해 알아봅니다. 이 자습서에서는 VS 코드를 잘 알고 있다고 가정합니다. 자세한 내용은 [VS 코드 시작](https://code.visualstudio.com/docs) 및 [Visual Studio Code 도움말](#visual-studio-code-help)을 참조하세요. 
 
-[!INCLUDE[consider RP](../../includes/razor.md)]
+[!INCLUDE [consider RP](../../includes/razor.md)]
 
 이 자습서는 세 가지 버전이 있습니다.
 
@@ -29,15 +29,9 @@ ms.lasthandoff: 01/30/2018
 * Windows: [Visual Studio를 사용하여 ASP.NET Core MVC 앱 만들기](xref:tutorials/first-mvc-app/start-mvc)
 * macOS, Linux 및 Windows: [Visual Studio Code를 사용하여 ASP.NET Core MVC 앱 만들기](xref:tutorials/first-mvc-app-xplat/start-mvc) 
 
-## <a name="install-vs-code-and-net-core"></a>VS Code 및 .NET Core 설치 
+## <a name="prerequisites"></a>전제 조건
 
-이 자습서에서는 [.NET Core 2.0.0 SDK](https://www.microsoft.com/net/core) 이상이 필요합니다. ASP.NET Core 1.1 버전에 대해서는 [PDF](https://github.com/aspnet/Docs/blob/master/aspnetcore/tutorials/first-mvc-app-mac/start-mvc/8-23-17.pdf)를 참조하세요.
-
-다음을 설치합니다.
-
-* [.NET Core 2.0.0 SDK](https://www.microsoft.com/net/core) 이상.
-* [Visual Studio Code](https://code.visualstudio.com)
-* VS Code [C# 확장](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) 
+[!INCLUDE [](~/includes/net-core-prereqs-vscode.md)]
 
 ## <a name="create-a-web-app-with-dotnet"></a>Dotnet와 웹앱 만들기
 
@@ -75,9 +69,9 @@ VS Code가 [Kestrel](xref:fundamentals/servers/kestrel) 웹 서버를 시작하�
 - [통합 터미널](https://code.visualstudio.com/docs/editor/integrated-terminal)
 - [바로 가기 키](https://code.visualstudio.com/docs/getstarted/keybindings#_keyboard-shortcuts-reference)
 
-  - [Mac 바로 가기 키](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf)
+  - [macOS 바로 가기 키](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf)
   - [Linux 바로 가기 키](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf)
   - [Windows 바로 가기 키](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
 
->[!div class="step-by-step"]
-[다음 - 컨트롤러 추가](adding-controller.md)
+> [!div class="step-by-step"]
+> [다음 - 컨트롤러 추가](adding-controller.md)

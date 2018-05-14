@@ -1,7 +1,7 @@
 ---
-title: "Entity Framework Core를 사용한 Razor 페이지 - 자습서 1/8"
+title: ASP.NET Core에서 Entity Framework Core를 사용한 Razor 페이지 - 자습서 1/8
 author: rick-anderson
-description: "Entity Framework Core를 사용하여 Razor 페이지 앱을 만드는 방법을 보여 줍니다."
+description: Entity Framework Core를 사용하여 Razor 페이지 앱을 만드는 방법을 보여 줍니다.
 manager: wpickett
 ms.author: riande
 ms.date: 11/15/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/intro
-ms.openlocfilehash: 091f34da347d52ba8e3e87779ddc4aeb790c2800
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 99a8d158c896566c2f6e6c22e4b37b1956e21cbf
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="getting-started-with-razor-pages-and-entity-framework-core-using-visual-studio-1-of-8"></a>Visual Studio를 사용하여 Razor 페이지 및 Entity Framework Core 시작(1/8)
+# <a name="razor-pages-with-entity-framework-core-in-aspnet-core---tutorial-1-of-8"></a>ASP.NET Core에서 Entity Framework Core를 사용한 Razor 페이지 - 자습서 1/8
 
 작성자: [Tom Dykstra](https://github.com/tdykstra) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -25,15 +25,15 @@ Contoso University 샘플 웹앱은 EF(Entity Framework) Core 2.0 및 Visual Stu
 
 [완성된 앱을 다운로드하거나 확인하세요.](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples) [지침을 다운로드하세요](xref:tutorials/index#how-to-download-a-sample).
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
-[!INCLUDE[install 2.0](../../includes/install2.0.md)]
+[!INCLUDE [](~/includes/net-core-prereqs.md)]
 
 [Razor 페이지](xref:mvc/razor-pages/index)에 익숙함. 신규 프로그래머는 이 시리즈를 시작하기 전에 [Razor 페이지 시작하기](xref:tutorials/razor-pages/razor-pages-start)를 완료해야 합니다.
 
 ## <a name="troubleshooting"></a>문제 해결
 
-해결할 수 없는 문제가 발생한 경우 일반적으로 [완료된 단계](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots) 또는 [완료된 프로젝트](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/cu-final)와 코드를 비교하여 해결책을 찾을 수 있습니다. 일반적인 오류 목록 및 해결 방법은 [시리즈 중 마지막 자습서의 문제 해결 섹션](xref:data/ef-mvc/advanced#common-errors)을 참조하세요. 필요한 내용을 찾지 못한 경우 질문을 [ASP.NET Core](https://stackoverflow.com/questions/tagged/asp.net-core) 또는 [EF Core](https://stackoverflow.com/questions/tagged/entity-framework-core)에 대한 [StackOverflow.com](https://stackoverflow.com/questions/tagged/asp.net-core)에 게시할 수 있습니다.
+해결할 수 없는 문제가 발생한 경우 일반적으로 [완료된 단계](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots)와 코드를 비교하여 해결책을 찾을 수 있습니다. 일반적인 오류 목록 및 해결 방법은 [시리즈에서 마지막 자습서의 문제 해결 섹션](xref:data/ef-mvc/advanced#common-errors)을 참조하세요. 필요한 내용을 찾지 못한 경우 질문을 [ASP.NET Core](https://stackoverflow.com/questions/tagged/asp.net-core) 또는 [EF Core](https://stackoverflow.com/questions/tagged/entity-framework-core)에 대한 [StackOverflow.com](https://stackoverflow.com/questions/tagged/asp.net-core)에 게시할 수 있습니다.
 
 > [!TIP]
 > 이 자습서 시리즈는 이전 자습서에서 수행되는 내용을 기반으로 합니다. 각 자습서를 성공적으로 완료한 후에 프로젝트 복사본의 저장을 고려합니다. 문제가 발생한 경우 다시 처음으로 이동하는 대신 이전 자습서부터 시작할 수 있습니다. 또는 [완료된 단계](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots)를 다운로드하고 완료된 단계를 사용하여 다시 시작할 수 있습니다.
@@ -98,9 +98,9 @@ Contoso University 앱에 대한 엔터티 클래스를 만듭니다. 다음과 
 
 *모델* 폴더를 만듭니다. *모델* 폴더에서 다음 코드로 *Student.cs*라는 이름의 클래스 파일을 만듭니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_Intro)]
+[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_Intro)]
 
-`ID` 속성은 이 클래스에 해당하는 DB(데이터베이스) 테이블의 기본 키 열이 됩니다. 기본적으로 EF 코어는 `ID` 또는 `classnameID`로 명명된 속성을 기본 키로 해석합니다.
+`ID` 속성은 이 클래스에 해당하는 DB(데이터베이스) 테이블의 기본 키 열이 됩니다. 기본적으로 EF 코어는 `ID` 또는 `classnameID`로 명명된 속성을 기본 키로 해석합니다. `classnameID`에서 `classname`은 앞의 예에 나온 `Student`와 같은 클래스 이름입니다.
 
 `Enrollments` 속성은 탐색 속성입니다. 탐색 속성은 이 엔터티와 관련된 다른 엔터티에 연결됩니다. 이 경우 `Student entity`의 `Enrollments` 속성은 해당 `Student`에 관련된 모든 `Enrollment` 엔터티를 포함합니다. 예를 들어 DB의 학생 행에 두 개의 관련 등록 행이 있는 경우 `Enrollments` 탐색 속성은 그 두 `Enrollment` 엔터티를 포함합니다. 관련된 `Enrollment` 행은 `StudentID` 열에서 해당 학생의 기본 키 값을 포함하는 열입니다. 예를 들어 ID=1인 학생에 `Enrollment` 테이블의 두 개 행이 있다고 가정합니다. `Enrollment` 테이블에 `StudentID` = 1인 두 개의 행이 있습니다. `StudentID`는 `Student` 테이블에서 학생을 지정하는 `Enrollment` 테이블의 외래 키입니다.
 
@@ -112,11 +112,11 @@ Contoso University 앱에 대한 엔터티 클래스를 만듭니다. 다음과 
 
 *모델* 폴더에서 다음 코드로 *Enrollment.cs*를 만듭니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/Enrollment.cs?name=snippet_Intro)]
+[!code-csharp[](intro/samples/cu/Models/Enrollment.cs?name=snippet_Intro)]
 
 `EnrollmentID` 속성은 기본 키입니다. 이 엔터티는 `Student` 엔터티 같은 `ID` 대신 `classnameID` 패턴을 사용합니다. 일반적으로 개발자는 하나의 패턴을 선택하여 데이터 모델 전체에 사용합니다. 자습서의 뒷부분에서는 클래스 이름 없이 ID를 사용하여 더 손쉽게 데이터 모델에서 상속을 구현하는 내용이 나옵니다.
 
-`Grade` 속성은 `enum`입니다. `Grade` 형식 선언 뒤에 있는 물음표는 `Grade` 속성이 null을 허용한다는 것을 나타냅니다. null인 등급은 0 등급과는 다릅니다. null 의미는 알려지지 않거나 아직 등록되지 않은 등급을 뜻합니다.
+`Grade` 속성은 `enum`입니다. `Grade` 형식 선언 뒤에 있는 물음표는 `Grade` 속성이 nullable이라는 것을 나타냅니다. Null인 등급은 0 등급과는 다릅니다. Null은 알려지지 않거나 아직 등록되지 않은 등급을 의미합니다.
 
 `StudentID` 속성은 외래 키로, 해당 탐색 속성은 `Student`입니다. `Enrollment` 엔터티는 하나의 `Student` 엔터티와 연결되므로 속성은 단일 `Student` 엔터티를 포함합니다. `Student` 엔터티는 여러 `Enrollment` 엔터티를 포함하는 `Student.Enrollments` 탐색 속성과 다릅니다.
 
@@ -130,7 +130,7 @@ EF Core는 속성 이름이 `<navigation property name><primary key property nam
 
 *모델* 폴더에서 다음 코드로 *Course.cs*를 만듭니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/Course.cs?name=snippet_Intro)]
+[!code-csharp[](intro/samples/cu/Models/Course.cs?name=snippet_Intro)]
 
 `Enrollments` 속성은 탐색 속성입니다. `Course` 엔터티는 `Enrollment` 엔터티의 개수와 관련이 있을 수 있습니다.
 
@@ -144,7 +144,7 @@ EF Core는 속성 이름이 `<navigation property name><primary key property nam
 
 *Data* 폴더에서 다음 코드로 *SchoolContext.cs*를 만듭니다.
 
-[!code-csharp[Main](intro/samples/cu/Data/SchoolContext.cs?name=snippet_Intro)]
+[!code-csharp[](intro/samples/cu/Data/SchoolContext.cs?name=snippet_Intro)]
 
 이 코드는 각 엔터티 집합에 대한 `DbSet` 속성을 만듭니다. EF Core 용어에서:
 
@@ -155,7 +155,7 @@ EF Core는 속성 이름이 `<navigation property name><primary key property nam
 
 DB가 만들어지면 EF Core는 `DbSet` 속성 이름과 동일한 이름을 갖는 테이블을 만듭니다. 컬렉션에 대한 속성 이름은 일반적으로 복수(Student가 아닌 Students)입니다. 개발자는 테이블 이름을 복수화할지 여부에 대해 동의하지 않습니다. 이러한 자습서의 경우 기본 동작은 DbContext에서 단수 테이블 이름을 지정하여 재정의됩니다. 단수 테이블 이름을 지정하려면 다음 강조 표시된 코드를 추가합니다.
 
-[!code-csharp[Main](intro/samples/cu/Data/SchoolContext.cs?name=snippet_TableNames&highlight=16-21)]
+[!code-csharp[](intro/samples/cu/Data/SchoolContext.cs?name=snippet_TableNames&highlight=16-21)]
 
 ## <a name="register-the-context-with-dependency-injection"></a>종속성 주입으로 컨텍스트 등록
 
@@ -163,19 +163,19 @@ ASP.NET Core는 [종속성 주입](xref:fundamentals/dependency-injection)을 �
 
 `SchoolContext`를 서비스로 등록하려면 *Startup.cs*를 열고 강조 표시된 줄을 `ConfigureServices` 메서드에 추가합니다.
 
-[!code-csharp[Main](intro/samples/cu/Startup.cs?name=snippet_SchoolContext&highlight=3-4)]
+[!code-csharp[](intro/samples/cu/Startup.cs?name=snippet_SchoolContext&highlight=3-4)]
 
 `DbContextOptionsBuilder` 개체에서 메서드를 호출하여 연결 문자열의 이름을 컨텍스트에 전달합니다. 로컬 개발의 경우 [ASP.NET Core 구성 시스템](xref:fundamentals/configuration/index)은 *appsettings.json* 파일에서 연결 문자열을 읽습니다.
 
 `ContosoUniversity.Data` 및 `Microsoft.EntityFrameworkCore` 네임스페이스에 대한 `using` 문을 추가합니다. 프로젝트를 빌드합니다.
 
-[!code-csharp[Main](intro/samples/cu/Startup.cs?name=snippet_Usings)]
+[!code-csharp[](intro/samples/cu/Startup.cs?name=snippet_Usings)]
 
 *appsettings.json* 파일을 열고 다음 코드에 표시된 대로 연결 문자열을 추가합니다.
 
 [!code-json[](./intro/samples/cu/appsettings1.json?highlight=2-4)]
 
-위의 연결 문자열은 `ConnectRetryCount=0`을 사용하여 [SQLClient](https://docs.microsoft.com/dotnet/framework/data/adonet/ef/sqlclient-for-the-entity-framework)가 중단되는 것을 방지합니다.
+위의 연결 문자열은 `ConnectRetryCount=0`을 사용하여 [SQLClient](/dotnet/framework/data/adonet/ef/sqlclient-for-the-entity-framework)가 중단되는 것을 방지합니다.
 
 ### <a name="sql-server-express-localdb"></a>SQL Server Express LocalDB
 
@@ -187,7 +187,7 @@ EF Core가 빈 DB를 만듭니다. 이 섹션에서는 테스트 데이터로 �
 
 *Data* 폴더에서 *DbInitializer.cs*라는 새 클래스 파일을 만들고 다음 코드를 추가합니다.
 
-[!code-csharp[Main](intro/samples/cu/Data/DbInitializer.cs?name=snippet_Intro)]
+[!code-csharp[](intro/samples/cu/Data/DbInitializer.cs?name=snippet_Intro)]
 
 코드는 DB에 학생이 있는지를 확인합니다. DB에 학생이 없는 경우 DB는 테스트 데이터로 시드됩니다. `List<T>` 컬렉션이 아닌 배열에 테스트 데이터를 로드하여 성능을 최적화합니다.
 
@@ -201,7 +201,7 @@ EF Core가 빈 DB를 만듭니다. 이 섹션에서는 테스트 데이터로 �
 
 다음 코드는 업데이트된 *Program.cs* 파일을 보여 줍니다.
 
-[!code-csharp[Main](intro/samples/cu/ProgramOriginal.cs?name=snippet)]
+[!code-csharp[](intro/samples/cu/ProgramOriginal.cs?name=snippet)]
 
 처음으로 앱이 실행되고 DB가 생성되며 테스트 데이터로 시드됩니다. 데이터 모델이 업데이트되면:
 * DB를 삭제합니다.
@@ -226,7 +226,7 @@ Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Utils
 
 위 명령은 *.csproj 파일에 NuGet 패키지를 추가합니다.
 
-[!code-csharp[Main](intro/samples/cu/ContosoUniversity1_csproj.txt?highlight=7-8)]
+[!code-csharp[](intro/samples/cu/ContosoUniversity1_csproj.txt?highlight=7-8)]
 
 <a name="scaffold"></a>
 ## <a name="scaffold-the-model"></a>모델 스캐폴드
@@ -239,18 +239,6 @@ Install-Package Microsoft.VisualStudio.Web.CodeGeneration.Utils
 dotnet restore
 dotnet aspnet-codegenerator razorpage -m Student -dc SchoolContext -udl -outDir Pages\Students --referenceScriptLibraries
  ```
- 
-다음 오류가 생성되는 경우:
-
-```text
-Unhandled Exception: System.IO.FileNotFoundException: 
-Could not load file or assembly 
-'Microsoft.VisualStudio.Web.CodeGeneration.Utils, 
-Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60'.
-The system cannot find the file specified.
-```
-
-명령을 다시 실행하고 페이지 아래쪽에 의견을 남깁니다.
 
 오류가 표시될 경우:
   ```
@@ -266,7 +254,7 @@ No executable found matching command "dotnet-aspnet-codegenerator"
 
  전체적으로 `_context.Student`를 `_context.Students`로 변경합니다(즉, “s”를 `Student`에 추가). 7개 항목이 발견되어 업데이트됩니다. 다음 릴리스에서 [이 버그](https://github.com/aspnet/Scaffolding/issues/633)를 해결하기 위해 노력하고 있습니다.
 
-[!INCLUDE[model4tbl](../../includes/RP/model4tbl.md)]
+[!INCLUDE [model4tbl](../../includes/RP/model4tbl.md)]
 
  <a name="test"></a>
 ### <a name="test-the-app"></a>앱 테스트
@@ -281,14 +269,14 @@ No executable found matching command "dotnet-aspnet-codegenerator"
 
 앱이 시작되면 `DbInitializer.Initialize`는 `EnsureCreated`를 호출합니다. `EnsureCreated`는 DB가 존재하는지 감지하고 필요한 경우 DB를 만듭니다. DB에 학생이 없는 경우 `Initialize` 메서드는 학생을 추가합니다.
 
-Visual Studio의 **보기** 메뉴에서 **SSOX(SQL Server 개체 탐색기)**를 엽니다.
+Visual Studio의 **보기** 메뉴에서 **SSOX(SQL Server 개체 탐색기)** 를 엽니다.
 SSOX에서 **(localdb)\MSSQLLocalDB > 데이터베이스 > ContosoUniversity1**을 클릭합니다.
 
 **테이블** 노드를 확장합니다.
 
 **학생** 테이블을 마우스 오른쪽 단추로 클릭하고, **데이터 보기**를 클릭하여 만든 열 및 테이블에 삽입된 행을 볼 수 있습니다.
 
-*.mdf* 및 *.ldf* DB 파일은 *C:\Users\\<yourusername>* 폴더에 있습니다.
+<em>.mdf</em> 및 <em>.ldf</em> DB 파일은 <em>C:\Users\\<yourusername></em> 폴더에 있습니다.
 
 앱 시작 시 다음 작업 흐름을 허용하는 `EnsureCreated`가 호출됩니다.
 
@@ -308,7 +296,7 @@ EF Core에서 수행하는 규칙 또는 가정의 사용으로 인해 EF Core�
 
 * ID 또는 classnameID로 명명된 엔터티 속성은 기본 키 속성으로 인식됩니다.
 
-* 속성 이름이 *<navigation property name><primary key property name>*인 경우 외래 키 속성으로는 해석됩니다(예를 들어 `Student` 엔터티의 기본 키가 `ID`이므로 `Student` 탐색 속성의 경우 `StudentID`). 외래 키 속성의 이름을 *<primary key property name>*으로 지정할 수 있습니다(예를 들어 `Enrollment` 엔터티의 기본 키가 `EnrollmentID`이므로 `EnrollmentID`).
+* 속성 이름이 *<navigation property name><primary key property name>* 인 경우 외래 키 속성으로는 해석됩니다(예를 들어 `Student` 엔터티의 기본 키가 `ID`이므로 `Student` 탐색 속성의 경우 `StudentID`). 외래 키 속성의 이름을 *<primary key property name>* 으로 지정할 수 있습니다(예를 들어 `Enrollment` 엔터티의 기본 키가 `EnrollmentID`이므로 `EnrollmentID`).
 
 기본 동작은 재정의할 수 있습니다. 예를 들어 이 자습서의 앞부분에 나온 것처럼 테이블 이름을 명시적으로 지정할 수 있습니다. 열 이름을 명시적으로 설정할 수 있습니다. 기본 키와 외래 키를 명시적으로 설정할 수 있습니다.
 
@@ -322,12 +310,12 @@ EF Core에서 수행하는 규칙 또는 가정의 사용으로 인해 EF Core�
 
 다음 코드에서 `async` 키워드, `Task<T>` 반환 값, `await` 키워드 및 `ToListAsync` 메서드는 비동기적으로 코드 실행을 수행합니다.
 
-[!code-csharp[Main](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_ScaffoldedIndex)]
+[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_ScaffoldedIndex)]
 
 * `async` 키워드는 컴파일러가 다음을 수행하도록 합니다.
 
   * 메서드 본문의 부분에 대한 콜백을 생성합니다.
-  * 반환되는 [작업](https://docs.microsoft.com/dotnet/api/system.threading.tasks.task?view=netframework-4.7) 개체를 자동으로 만듭니다. 자세한 내용은 [작업 반환 형식](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/async/async-return-types#BKMK_TaskReturnType)을 참조하세요.
+  * 반환되는 [작업](/dotnet/api/system.threading.tasks.task?view=netframework-4.7) 개체를 자동으로 만듭니다. 자세한 내용은 [작업 반환 형식](/dotnet/csharp/programming-guide/concepts/async/async-return-types#BKMK_TaskReturnType)을 참조하세요.
 
 * 암시적 반환 형식 `Task`는 진행 중인 작업을 나타냅니다.
 
@@ -343,9 +331,9 @@ EF Core를 사용하는 비동기 코드를 작성할 때 고려해야 할 몇 �
 
 * 비동기 코드의 성능 이점을 활용하려면 쿼리를 DB에 보내는 EF Core 메서드를 호출하는 경우 라이브러리 패키지(예: 페이징)가 비동기를 사용하는지 확인합니다.
 
-.NET에서의 비동기 프로그래밍에 대한 자세한 내용은 [비동기 개요](https://docs.microsoft.com/dotnet/articles/standard/async)를 참조하세요.
+.NET에서의 비동기 프로그래밍에 대한 자세한 내용은 [비동기 개요](/dotnet/articles/standard/async)를 참조하세요.
 
 다음 자습서에서는 기본 CRUD(만들기, 읽기, 업데이트, 삭제) 작업을 검사합니다.
 
->[!div class="step-by-step"]
-[다음](xref:data/ef-rp/crud)
+> [!div class="step-by-step"]
+> [다음](xref:data/ef-rp/crud)

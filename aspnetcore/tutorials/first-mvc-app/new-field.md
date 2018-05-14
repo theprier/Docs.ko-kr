@@ -1,7 +1,7 @@
 ---
-title: "새 필드 추가"
+title: ASP.NET Core 앱에 새 필드 추가
 author: rick-anderson
-description: 
+description: Entity Framework Code First 마이그레이션을 사용하여 모델에 새 필드를 추가하고 해당 변경 내용을 데이터베이스로 마이그레이션하는 방법을 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app/new-field
-ms.openlocfilehash: f8a5f9528d899f75aaabfbca38f075a27763567f
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: a314115459fedb9561694604509856503c023a5c
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="adding-a-new-field"></a>새 필드 추가
+# <a name="add-a-new-field-to-an-aspnet-core-app"></a>ASP.NET Core 앱에 새 필드 추가
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -27,7 +27,7 @@ EF Code First를 사용하여 자동으로 데이터베이스를 만들 때 Code
 
 *Models/Movie.cs* 파일을 열고 `Rating` 속성을 추가합니다.
 
-[!code-csharp[Main](start-mvc/sample/MvcMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]
+[!code-csharp[](start-mvc/sample/MvcMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]
 
 앱을 빌드합니다(Ctrl+Shift+B).
 
@@ -41,7 +41,7 @@ EF Code First를 사용하여 자동으로 데이터베이스를 만들 때 Code
 
 */Views/Movies/Index.cshtml* 파일을 편집하고 `Rating` 필드를 추가합니다.
 
-[!code-HTML[Main](start-mvc/sample/MvcMovie/Views/Movies/IndexGenreRating.cshtml?highlight=17,39&range=24-64)]
+[!code-HTML[](start-mvc/sample/MvcMovie/Views/Movies/IndexGenreRating.cshtml?highlight=17,39&range=24-64)]
 
 `Rating` 필드로 */Views/Movies/Create.cshtml*을 업데이트합니다. 이전 "양식 그룹"을 복사/붙여넣기하고 intelliSense에서 필드를 업데이트하도록 할 수 있습니다. IntelliSense는 [태그 도우미](xref:mvc/views/tag-helpers/intro)와 함께 작동합니다. 참고: Visual Studio 2017의 RTM 버전에서 Razor intelliSense에 대해 [Razor 언어 서비스](https://marketplace.visualstudio.com/items?itemName=ms-madsk.RazorLanguageServices)를 설치해야 합니다. 그러면 다음 릴리스에서 수정됩니다.
 
@@ -65,7 +65,7 @@ EF Code First를 사용하여 자동으로 데이터베이스를 만들 때 Code
 
 새 열에 대해 값을 제공하도록 `SeedData` 클래스를 업데이트합니다. 샘플 변경은 아래에 표시되지만 각 `new Movie`에 대해 이 변경을 수행하려고 합니다.
 
-[!code-csharp[Main](start-mvc/sample/MvcMovie/Models/SeedDataRating.cs?name=snippet1&highlight=6)]
+[!code-csharp[](start-mvc/sample/MvcMovie/Models/SeedDataRating.cs?name=snippet1&highlight=6)]
 
 솔루션을 빌드합니다.
 
@@ -86,6 +86,6 @@ DB의 모든 레코드를 삭제하는 경우 이니셜라이저에서 DB를 시
 
 앱을 실행하고 `Rating` 필드를 사용하여 동영상을 만들고/편집/표시할 수 있는지 확인합니다. 또한 `Edit`, `Details` 및 `Delete` 보기 템플릿에 `Rating` 필드를 추가해야 합니다.
 
->[!div class="step-by-step"]
-[이전](search.md)
-[다음](validation.md)  
+> [!div class="step-by-step"]
+> [이전](search.md)
+> [다음](validation.md)  

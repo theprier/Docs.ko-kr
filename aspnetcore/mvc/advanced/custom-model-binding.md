@@ -1,7 +1,7 @@
 ---
-title: "사용자 지정 모델 바인딩"
+title: ASP.NET Core의 사용자 지정 모델 바인딩
 author: ardalis
-description: "ASP.NET Core MVC에서 모델 바인딩을 사용자 지정합니다."
+description: 모델 바인딩을 통해 컨트롤러 작업이 ASP.NET Core의 모델 형식과 함께 직접 작동할 수 있게 하는 방법을 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 04/10/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/advanced/custom-model-binding
-ms.openlocfilehash: 313bc586a1c313f0bf5d8f413a4b082ffc2b7f0c
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: a687753083d3b11898e9ff35828780a5ad240854
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="custom-model-binding"></a>사용자 지정 모델 바인딩
+# <a name="custom-model-binding-in-aspnet-core"></a>ASP.NET Core의 사용자 지정 모델 바인딩
 
 작성자: [Steve Smith](https://ardalis.com/)
 
@@ -31,7 +31,7 @@ ms.lasthandoff: 01/30/2018
 
 모델 바인딩은 작업을 수행하는 형식에 대한 특정 정의를 사용합니다. *단순 형식*은 입력의 단일 문자열에서 변환됩니다. *복합 형식*은 여러 입력 값에서 변환됩니다. 프레임워크는 `TypeConverter`의 존재 여부에 따라 차이점을 확인합니다. 외부 리소스가 필요 없는 간단한 `string` -> `SomeType` 매핑이 있는 경우 형식 변환기를 만드는 것이 좋습니다.
 
-개발자 고유의 사용자 지정 모델 바인더를 만들기 전에 기존 모델 바인더가 구현되는 방식을 검토하는 것이 좋습니다. base64로 인코딩된 문자열을 바이트 배열로 변환하는 데 사용할 수 있는 [ByteArrayModelBinder](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.modelbinding.binders.bytearraymodelbinder)를 고려해 보세요. 바이트 배열은 종종 파일 또는 데이터베이스 BLOB 필드로 저장됩니다.
+개발자 고유의 사용자 지정 모델 바인더를 만들기 전에 기존 모델 바인더가 구현되는 방식을 검토하는 것이 좋습니다. base64로 인코딩된 문자열을 바이트 배열로 변환하는 데 사용할 수 있는 [ByteArrayModelBinder](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.binders.bytearraymodelbinder)를 고려해 보세요. 바이트 배열은 종종 파일 또는 데이터베이스 BLOB 필드로 저장됩니다.
 
 ### <a name="working-with-the-bytearraymodelbinder"></a>ByteArrayModelBinder 사용
 
@@ -45,7 +45,7 @@ Base64로 인코딩된 문자열은 이진 데이터를 나타내는 데 사용�
 
 [샘플의 추가 정보](https://github.com/aspnet/Docs/blob/master/aspnetcore/mvc/advanced/custom-model-binding/sample/CustomModelBindingSample/README.md)에 제공된 지침에 따라 base64로 인코딩된 문자열을 파일로 변환합니다.
 
-ASP.NET Core MVC는 base64로 인코딩된 문자열을 가져온 후 `ByteArrayModelBinder`를 사용하여 바이트 배열로 변환할 수 있습니다. [IModelBinderProvider](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.modelbinding.imodelbinderprovider)를 구현하는 [ByteArrayModelBinderProvider](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.modelbinding.binders.bytearraymodelbinderprovider)는 `byte[]` 인수를 `ByteArrayModelBinder`에 매핑합니다.
+ASP.NET Core MVC는 base64로 인코딩된 문자열을 가져온 후 `ByteArrayModelBinder`를 사용하여 바이트 배열로 변환할 수 있습니다. [IModelBinderProvider](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.imodelbinderprovider)를 구현하는 [ByteArrayModelBinderProvider](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.binders.bytearraymodelbinderprovider)는 `byte[]` 인수를 `ByteArrayModelBinder`에 매핑합니다.
 
 ```csharp
 public IModelBinder GetBinder(ModelBinderProviderContext context)
@@ -64,11 +64,11 @@ public IModelBinder GetBinder(ModelBinderProviderContext context)
 }
 ```
 
-개발자 고유의 사용자 지정 모델 바인더를 만들 때 고유의 `IModelBinderProvider` 형식을 구현해도 되고 [ModelBinderAttribute](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.modelbinderattribute)를 사용해도 됩니다.
+개발자 고유의 사용자 지정 모델 바인더를 만들 때 고유의 `IModelBinderProvider` 형식을 구현해도 되고 [ModelBinderAttribute](/dotnet/api/microsoft.aspnetcore.mvc.modelbinderattribute)를 사용해도 됩니다.
 
 다음 예제에서는 `ByteArrayModelBinder`를 사용하여 base64로 인코딩된 문자열을 `byte[]`로 변환하고 그 결과를 파일에 저장하는 방법을 보여줍니다.
 
-[!code-csharp[Main](custom-model-binding/sample/CustomModelBindingSample/Controllers/ImageController.cs?name=post1&highlight=3)]
+[!code-csharp[](custom-model-binding/sample/CustomModelBindingSample/Controllers/ImageController.cs?name=post1&highlight=3)]
 
 [Postman](https://www.getpostman.com/) 같은 도구를 사용하여 base64로 인코딩된 문자열을 이 api 메서드에 게시할 수 있습니다.
 
@@ -76,7 +76,7 @@ public IModelBinder GetBinder(ModelBinderProviderContext context)
 
 바인더가 요청 데이터를 적절한 이름의 속성 또는 인수로 바인딩할 수 있는 한, 모델 바인딩은 성공합니다. 다음 예제에서는 보기 모델에 `ByteArrayModelBinder`를 사용하는 방법을 보여줍니다.
 
-[!code-csharp[Main](custom-model-binding/sample/CustomModelBindingSample/Controllers/ImageController.cs?name=post2&highlight=2)]
+[!code-csharp[](custom-model-binding/sample/CustomModelBindingSample/Controllers/ImageController.cs?name=post2&highlight=2)]
 
 ## <a name="custom-model-binder-sample"></a>사용자 지정 모델 바인더 샘플
 
@@ -88,21 +88,21 @@ public IModelBinder GetBinder(ModelBinderProviderContext context)
 
 다음 샘플은 `Author` 모델에서 `ModelBinder` 특성을 사용합니다.
 
-[!code-csharp[Main](custom-model-binding/sample/CustomModelBindingSample/Data/Author.cs?highlight=10)]
+[!code-csharp[](custom-model-binding/sample/CustomModelBindingSample/Data/Author.cs?highlight=10)]
 
 이전 코드에서 `ModelBinder` 특성은 `Author` 작업 매개 변수를 바인딩하는 데 사용할 `IModelBinder` 형식을 지정합니다. 
 
 `AuthorEntityBinder`는 Entity Framework Core 및 `authorId`를 사용하여 데이터 원본에서 엔터티를 가져와 `Author` 매개 변수를 바인딩하는 데 사용됩니다.
 
-[!code-csharp[Main](custom-model-binding/sample/CustomModelBindingSample/Binders/AuthorEntityBinder.cs?name=demo)]
+[!code-csharp[](custom-model-binding/sample/CustomModelBindingSample/Binders/AuthorEntityBinder.cs?name=demo)]
 
 다음 코드는 작업 메서드에 `AuthorEntityBinder`를 사용하는 방법을 보여줍니다.
 
-[!code-csharp[Main](custom-model-binding/sample/CustomModelBindingSample/Controllers/BoundAuthorsController.cs?name=demo2&highlight=2)]
+[!code-csharp[](custom-model-binding/sample/CustomModelBindingSample/Controllers/BoundAuthorsController.cs?name=demo2&highlight=2)]
 
 `ModelBinder` 특성은 기본 규칙을 사용하지 않는 매개 변수에 `AuthorEntityBinder`를 적용하는 데 사용할 수 있습니다.
 
-[!code-csharp[Main](custom-model-binding/sample/CustomModelBindingSample/Controllers/BoundAuthorsController.cs?name=demo1&highlight=2)]
+[!code-csharp[](custom-model-binding/sample/CustomModelBindingSample/Controllers/BoundAuthorsController.cs?name=demo1&highlight=2)]
 
 이 예에서는 인수 이름이 기본 `authorId`가 아니기 때문에 `ModelBinder` 특성을 사용하여 매개 변수에 지정됩니다. 컨트롤러와 작업 메서드는 작업 메서드에서 엔터티를 조회하는 것에 비해 간단합니다. Entity Framework Core를 사용하여 작성자를 가져오는 논리는 모델 바인더로 이동되었습니다. 작성자 모델에 바인딩하는 메서드가 여러 개 있는 경우 상당히 간소화될 수 있으며 [DRY 원칙](http://deviq.com/don-t-repeat-yourself/)을 준수하는 데 도움이 될 수 있습니다.
 
@@ -112,13 +112,13 @@ public IModelBinder GetBinder(ModelBinderProviderContext context)
 
 특성을 적용하는 대신, `IModelBinderProvider`를 구현할 수도 있습니다. 기본 제공 프레임워크 바인더는 이 방식으로 구현됩니다. 바인더가 작동하는 형식을 지정할 때 바인더가 허용하는 입력이 **아니라** 바인더가 생성하는 인수 형식을 지정합니다. 다음 바인더 공급자는 `AuthorEntityBinder`를 작업합니다. 공급자의 MVC 컬렉션에 추가할 때 `Author` 또는 `Author` 형식 매개 변수에서 `ModelBinder` 특성을 사용할 필요가 없습니다.
 
-[!code-csharp[Main](custom-model-binding/sample/CustomModelBindingSample/Binders/AuthorEntityBinderProvider.cs?highlight=17-20)]
+[!code-csharp[](custom-model-binding/sample/CustomModelBindingSample/Binders/AuthorEntityBinderProvider.cs?highlight=17-20)]
 
 > 참고: 앞의 코드는 `BinderTypeModelBinder`를 반환합니다. `BinderTypeModelBinder`는 모델 바인더에 대한 팩터리 역할을 하며 DI(종속성 주입)를 제공합니다. `AuthorEntityBinder`는 EF Core에 액세스하려면 DI가 필요합니다. 모델 바인더에서 DI의 서비스를 요구하는 경우 `BinderTypeModelBinder`를 사용합니다.
 
 사용자 지정 모델 바인더 공급자를 사용하려면 `ConfigureServices`에서 추가합니다.
 
-[!code-csharp[Main](custom-model-binding/sample/CustomModelBindingSample/Startup.cs?name=callout&highlight=5-9)]
+[!code-csharp[](custom-model-binding/sample/CustomModelBindingSample/Startup.cs?name=callout&highlight=5-9)]
 
 모델 바인더를 평가할 때 공급자 컬렉션은 순서대로 검사됩니다. 바인더를 반환하는 첫 번째 공급자가 사용됩니다.
 
@@ -128,11 +128,11 @@ public IModelBinder GetBinder(ModelBinderProviderContext context)
 
 컬렉션 끝에 공급자를 추가하면 사용자 지정 바인더가 기회를 얻기도 전에 기본 제공 모델 바인더가 호출될 수 있습니다. 이 예제에서는 `Author` 작업 인수에 사용되도록 사용자 지정 공급자를 컬렉션의 시작 부분에 추가합니다.
 
-[!code-csharp[Main](custom-model-binding/sample/CustomModelBindingSample/Startup.cs?name=callout&highlight=5-9)]
+[!code-csharp[](custom-model-binding/sample/CustomModelBindingSample/Startup.cs?name=callout&highlight=5-9)]
 
 ## <a name="recommendations-and-best-practices"></a>권장 사항 및 모범 사례
 
 사용자 지정 모델 바인더:
 - 상태 코드를 설정하거나 결과를 반환하려고 시도하면 안 됩니다(예를 들어 404 찾을 수 없음). 모델 바인딩이 실패하면 [작업 필터](xref:mvc/controllers/filters) 또는 작업 메서드 자체의 논리에서 오류를 처리해야 합니다.
 - 작업 메서드에서 반복 코드와 교차 편집 문제를 제거하는 데 가장 유용합니다.
-- 일반적으로 문자열을 사용자 지정 형식으로 변환하는 데 사용되지 않습니다. [`TypeConverter`](https://docs.microsoft.com//dotnet/api/system.componentmodel.typeconverter)가 더 좋은 옵션입니다.
+- 일반적으로 문자열을 사용자 지정 형식으로 변환하는 데 사용되지 않습니다. [`TypeConverter`](/dotnet/api/system.componentmodel.typeconverter)가 더 좋은 옵션입니다.

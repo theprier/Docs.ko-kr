@@ -1,7 +1,7 @@
 ---
-title: "영역"
+title: ASP.NET Core의 영역
 author: rick-anderson
-description: "영역에 대해 작업하는 방법을 보여 줍니다."
+description: 관련 기능을 별도의 네임스페이스(라우팅용) 및 폴더 구조(보기용)로 그룹화하는 데 사용되는 ASP.NET MVC 기능인 영역에 대해 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 02/14/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/areas
-ms.openlocfilehash: 1ade49de3f6c58edc4ea7b06bc593b3db797081c
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 61527eb350b5aba9cb37b1de5acdeae1287bf073
+ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 03/22/2018
 ---
-# <a name="areas"></a>영역
+# <a name="areas-in-aspnet-core"></a>ASP.NET Core의 영역
 
 작성자: [Dhananjay Kumar](https://twitter.com/debug_mode) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -125,7 +125,7 @@ services.Configure<RazorViewEngineOptions>(options =>
    }
    ```
 
-새로 생성된 영역에서 작동하는 경로 정의를 설정합니다. [컨트롤러 작업으로 라우팅](routing.md) 문서에서는 기존 경로 및 특성 경로를 사용하는 방법을 포함하여 경로 정의를 만드는 방법에 대해 자세히 설명합니다. 이 예에서는 기존 경로를 사용합니다. 이렇게 하려면 *Startup.cs* 파일을 열고 아래에 `areaRoute` 경로 정의를 추가하여 수정합니다.
+새로 생성된 영역에서 작동하는 경로 정의를 설정합니다. [컨트롤러 작업으로 라우팅](routing.md) 아티클에서는 기존 경로 및 특성 경로를 사용하는 방법을 포함하여 경로 정의를 만드는 방법에 대해 자세히 설명합니다. 이 예에서는 기존 경로를 사용합니다. 이렇게 하려면 *Startup.cs* 파일을 열고 아래에 `areaRoute` 경로 정의를 추가하여 수정합니다.
 
 ```csharp
 ...

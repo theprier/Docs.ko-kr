@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core MVC 및 EF Core - CRUD - 2/10"
+title: ASP.NET Core MVC 및 EF Core - CRUD - 2/10
 author: tdykstra
-description: 
+description: ''
 manager: wpickett
 ms.author: tdykstra
 ms.date: 03/15/2017
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-mvc/crud
-ms.openlocfilehash: a7e0d4ff3d57e42dd7e33ffb5f26f2143520be87
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 54f25733126c6de5a3704664bda7c7942a3643a1
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="create-read-update-and-delete---ef-core-with-aspnet-core-mvc-tutorial-2-of-10"></a>만들기, 읽기, 업데이트 및 삭제 - EF Core 및 ASP.NET Core MVC 자습서(2/10)
+# <a name="aspnet-core-mvc-with-ef-core---crud---2-of-10"></a>ASP.NET Core MVC 및 EF Core - CRUD - 2/10
 
 작성자: [Tom Dykstra](https://github.com/tdykstra) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-Contoso University 샘플 웹 응용 프로그램은 Entity Framework Core 및 Visual Studio를 사용하여 ASP.NET Core MVC 웹 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](intro.md)를 참조하세요.
+Contoso University 웹 응용 프로그램 예제는 Entity Framework Core 및 Visual Studio를 사용하여 ASP.NET Core MVC 웹 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](intro.md)를 참조하세요.
 
 이전 자습서에서 Entity Framework 및 SQL Server LocalDB를 사용하여 데이터를 저장하고 표시하는 MVC 응용 프로그램을 만들었습니다. 이 자습서에서는 MVC 스캐폴딩이 컨트롤러 및 보기에서 자동으로 만드는 CRUD(만들기, 읽기, 업데이트, 삭제) 코드를 검토하고 사용자 지정합니다.
 
@@ -42,9 +42,9 @@ Contoso University 샘플 웹 응용 프로그램은 Entity Framework Core 및 V
 
 *Controllers/StudentsController.cs*에서 세부 정보 보기에 대한 작업 메서드는 `SingleOrDefaultAsync` 메서드를 사용하여 단일 `Student` 엔터티를 검색합니다. `Include`를 호출하는 코드를 추가합니다. 다음 강조 표시된 코드에 표시된 것처럼 `ThenInclude` 및 `AsNoTracking` 메서드입니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_Details&highlight=8-12)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_Details&highlight=8-12)]
 
-`Include` 및 `ThenInclude` 메서드로 인해 컨텍스트는 `Student.Enrollments` 탐색 속성 및 각 등록 내에서 `Enrollment.Course` 탐색 속성을 로드합니다.  [관련된 데이터 읽기](read-related-data.md) 자습서에서 이러한 메서드에 대해 자세히 알아봅니다.
+`Include` 및 `ThenInclude` 메서드로 인해 컨텍스트가 `Student.Enrollments` 탐색 속성 및 각 등록 내 `Enrollment.Course` 탐색 속성을 로드합니다.  [관련된 데이터 읽기](read-related-data.md) 자습서에서 이러한 메서드에 대해 자세히 알아봅니다.
 
 `AsNoTracking` 메서드는 반환된 엔터티가 현재 컨텍스트의 수명에서 업데이트되지 않는 시나리오에서 성능을 향상시킵니다. 이 자습서의 끝에서 `AsNoTracking`에 대해 자세히 알아봅니다.
 
@@ -52,7 +52,7 @@ Contoso University 샘플 웹 응용 프로그램은 Entity Framework Core 및 V
 
 `Details` 메서드에 전달되는 키 값은 *경로 데이터*에서 제공됩니다. 경로 데이터는 모델 바인더가 URL의 세그먼트에서 찾은 데이터입니다. 예를 들어 기본 경로는 컨트롤러, 작업 및 ID 세그먼트를 지정합니다.
 
-[!code-csharp[Main](intro/samples/cu/Startup.cs?name=snippet_Route&highlight=5)]
+[!code-csharp[](intro/samples/cu/Startup.cs?name=snippet_Route&highlight=5)]
 
 다음 URL에서 기본 경로는 강사를 컨트롤러로, 인덱스를 작업으로, 1을 ID로 매핑합니다. 해당 내용은 경로 데이터 값입니다.
 
@@ -114,7 +114,7 @@ http://localhost:1230/Instructor/Index?id=1&CourseID=2021
 
 *StudentsController.cs*에서 try-catch 블록을 추가하고 `Bind` 특성에서 ID를 제거하여 HttpPost `Create` 메서드를 수정합니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_Create&highlight=4,6-7,14-21)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_Create&highlight=4,6-7,14-21)]
 
 이 코드는 ASP.NET MVC 모델 바인더에서 만든 학생 엔터티를 학생 엔터티 설정에 추가한 다음, 데이터베이스에 변경 내용을 저장합니다. (모델 바인더는 양식에서 전송한 데이터를 쉽게 사용할 수 있도록 하는 ASP.NET MVC 기능을 참조합니다. 모델 바인더는 게시된 양식 값을 CLR 형식으로 변환하고 매개 변수의 동작 메서드에 전달합니다. 이 경우 모델 바인더는 양식 컬렉션에서 속성 값을 사용하여 학생 엔터티를 인스턴스화합니다.)
 
@@ -162,7 +162,7 @@ public class Student
 
 이는 기본적으로 얻는 서버 쪽 유효성 검사입니다. 이후의 자습서에서 클라이언트 쪽 유효성 검사에 대한 코드를 생성하는 특성을 추가하는 방법도 알아봅니다. 다음 강조 표시된 코드는 `Create` 메서드에서 모델 유효성 검사를 보여 줍니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_Create&highlight=8)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_Create&highlight=8)]
 
 유효한 값으로 날짜를 변경하고 **만들기**를 클릭하여 **인덱스** 페이지에 표시되는 새 학생을 봅니다.
 
@@ -174,7 +174,7 @@ public class Student
 
 HttpPost 편집 작업 메서드를 다음 코드로 바꿉니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_ReadFirst)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_ReadFirst)]
 
 이러한 변경 내용은 초과 게시를 방지하기 위해 보안 모범 사례를 구현합니다. 스캐폴더는 `Bind` 특성을 생성했고 모델 바인더에서 만든 엔터티를 `Modified` 플래그로 설정된 엔터티에 추가했습니다. `Bind` 특성은 `Include` 매개 변수에 나열되지 않은 필드에서 기존의 모든 데이터를 지우므로 해당 코드는 대부분의 시나리오에 권장되지 않습니다.
 
@@ -188,7 +188,7 @@ HttpPost 편집 작업 메서드를 다음 코드로 바꿉니다.
 
 권장된 HttpPost 편집 코드는 변경된 열만 업데이트되도록 하며 모델 바인딩에 포함되지 않기를 원하는 속성에 데이터를 유지합니다. 그러나 읽기 우선 접근 방식에는 추가 데이터베이스 읽기가 필요하며 동시성 충돌 처리에 대한 더 복잡한 코드가 발생할 수 있습니다. 대안은 모델 바인더에서 만든 엔터티를 EF 컨텍스트에 연결하고 수정된 것으로 표시하는 것입니다. (이 코드로 프로젝트를 업데이트하지 마십시오. 선택적 접근 방식을 설명하기 위해 표시되었습니다.) 
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_CreateAndAttach)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_CreateAndAttach)]
 
 웹 페이지 UI가 엔터티에 모든 필드를 포함하고 그 중 하나를 업데이트할 수 있는 경우 이 방법을 사용할 수 있습니다.
 
@@ -236,7 +236,7 @@ try-catch 블록을 HttpPost `Delete` 메서드에 추가하여 데이터베이�
 
 HttpGet `Delete` 작업 메서드를 오류 보고를 관리하는 다음 코드로 바꿉니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_DeleteGet&highlight=1,9,16-21)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_DeleteGet&highlight=1,9,16-21)]
 
 이 코드는 변경 내용 저장에 실패한 후 메서드가 호출되었는지 여부를 나타내는 선택적 매개 변수를 허용합니다. HttpGet `Delete` 메서드가 이전 실패 없이 호출되는 경우 이 매개 변수는 false입니다. 데이터베이스 업데이트 오류에 대한 응답에서 HttpPost `Delete` 메서드로 호출되는 경우 매개 변수는 true이고 오류 메시지가 보기에 전달됩니다.
 
@@ -244,7 +244,7 @@ HttpGet `Delete` 작업 메서드를 오류 보고를 관리하는 다음 코드
 
 HttpPost `Delete` 작업 메서드(`DeleteConfirmed`라는)를 실제 삭제 작업을 수행하고 모든 데이터베이스 업데이트 오류를 catch하는 다음 코드로 바꿉니다.
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_DeleteWithReadFirst&highlight=6,8-11,13-14,18-23)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_DeleteWithReadFirst&highlight=6,8-11,13-14,18-23)]
 
 이 코드는 선택한 엔터티를 검색한 다음, `Remove` 메서드를 호출하여 엔터티의 상태를 `Deleted`로 설정합니다. `SaveChanges`가 호출되면 SQL DELETE 명령이 생성됩니다.
 
@@ -252,7 +252,7 @@ HttpPost `Delete` 작업 메서드(`DeleteConfirmed`라는)를 실제 삭제 작
 
 대규모 응용 프로그램의 성능 향상이 우선 순위인 경우 기본 키 값만을 사용하여 학생 엔터티를 인스턴스화한 다음, 엔터티 상태를 `Deleted`로 설정하여 불필요한 SQL 쿼리를 피할 수 있습니다. Entity Framework에서 엔터티를 삭제하기 위해 필요한 모든 것입니다. (프로젝트에 이 코드를 배치하지 마십시오. 대안을 설명하기 위한 것입니다.)
 
-[!code-csharp[Main](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_DeleteWithoutReadFirst&highlight=7-8)]
+[!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_DeleteWithoutReadFirst&highlight=7-8)]
 
 엔터티에 삭제되어야 하는 관련된 데이터가 있는 경우 계단식 삭제가 데이터베이스에 구성되어 있는지 확인합니다. 엔터티 삭제에 대한 이 접근 방식을 사용하여 EF는 삭제될 관련된 엔터티가 있다는 것을 모를 수도 있습니다.
 
@@ -290,12 +290,12 @@ HttpPost `Delete` 작업 메서드(`DeleteConfirmed`라는)를 실제 삭제 작
 
 * 업데이트하기 위해 엔터티를 연결하려고 하지만 이전에 다른 목적을 위해 동일한 엔터티를 검색했습니다. 엔터티는 데이터베이스 컨텍스트에서 이미 추적 중이므로 변경하려는 엔터티를 연결할 수 없습니다. 이 상황을 처리하는 한 가지 방법은 이전 쿼리에서 `AsNoTracking`을 호출하는 것입니다.
 
-자세한 내용은 [추적과 비 추적 비교](https://docs.microsoft.com/ef/core/querying/tracking)를 참조하세요. 
+자세한 내용은 [추적과 비추적 비교](https://docs.microsoft.com/ef/core/querying/tracking)를 참조하세요.
 
 ## <a name="summary"></a>요약
 
 이제 학생 엔터티에 대한 간단한 CRUD 작업을 수행하는 페이지의 집합을 완료했습니다. 다음 자습서에서는 정렬, 필터링 및 페이징을 추가하여 **인덱스** 페이지의 기능을 확장합니다.
 
->[!div class="step-by-step"]
-[이전](intro.md)
-[다음](sort-filter-page.md)  
+> [!div class="step-by-step"]
+> [이전](intro.md)
+> [다음](sort-filter-page.md)  

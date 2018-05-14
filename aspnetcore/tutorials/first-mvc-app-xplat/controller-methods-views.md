@@ -1,7 +1,7 @@
 ---
-title: "컨트롤러 메서드 및 보기"
+title: ASP.NET Core의 컨트롤러 메서드 및 보기
 author: rick-anderson
-description: "컨트롤러 메서드, 보기 및 DataAnnotations 작업"
+description: ASP.NET Core에서 컨트롤러 메서드, 보기 및 DataAnnotations를 사용하는 방법을 배웁니다.
 manager: wpickett
 ms.author: riande
 ms.date: 04/07/2017
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app-xplat/controller-methods-views
-ms.openlocfilehash: 34bd73af9bd0e4a7c1e59b491105f959bcbc06c6
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 0bf9bffbf14ff958b28d9494600f55eb3f8e0c35
+ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 04/06/2018
 ---
-# <a name="controller-methods-and-views"></a>컨트롤러 메서드 및 보기
+# <a name="controller-methods-and-views-in-aspnet-core"></a>ASP.NET Core의 컨트롤러 메서드 및 보기
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -25,7 +25,7 @@ ms.lasthandoff: 01/30/2018
 
 *Models/Movie.cs* 파일을 열고 아래 표시된 강조 표시된 줄을 추가합니다.
 
-[!code-csharp[Main](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieDate.cs?name=snippet_1&highlight=2,11-12)]
+[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieDate.cs?name=snippet_1&highlight=2,11-12)]
 
 앱을 빌드하고 실행합니다.
 
@@ -34,8 +34,8 @@ ms.lasthandoff: 01/30/2018
 
  -->
 
-[!INCLUDE[adding-model](../../includes/mvc-intro/controller-methods-views.md)]
+[!INCLUDE [adding-model](../../includes/mvc-intro/controller-methods-views.md)]
 
->[!div class="step-by-step"]
-[이전 - SQLite 작업](working-with-sql.md)
-[다음 - 검색 추가](search.md)  
+> [!div class="step-by-step"]
+> [이전 - SQLite 작업](working-with-sql.md)
+> [다음 - 검색 추가](search.md)  
