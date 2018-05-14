@@ -1,2 +1,2 @@
 > [!NOTE]
-> <span data-ttu-id="ddb02-101">이 문서의 최신 버전의 ASP.NET Core SignalR을 자세히 설명합니다.</span><span class="sxs-lookup"><span data-stu-id="ddb02-101">This document details the latest version of ASP.NET Core SignalR.</span></span> <span data-ttu-id="ddb02-102">참조는 [SignalR 1.x 설명서](/aspnet/signalr/) ASP.NET 프레임 워크 버전에 대 한 합니다.</span><span class="sxs-lookup"><span data-stu-id="ddb02-102">See the [SignalR 1.x documentation](/aspnet/signalr/) for the ASP.NET Framework version.</span></span>
+> 이 문서의 최신 버전의 ASP.NET Core SignalR을 자세히 설명합니다. 참조는 [SignalR 1.x 설명서](/aspnet/signalr/) ASP.NET 프레임 워크 버전에 대 한 합니다.

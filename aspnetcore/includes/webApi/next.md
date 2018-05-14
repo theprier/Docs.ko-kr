@@ -1,7 +1,7 @@
-## <a name="next-steps"></a><span data-ttu-id="4619b-101">다음 단계</span><span class="sxs-lookup"><span data-stu-id="4619b-101">Next steps</span></span>
+## <a name="next-steps"></a>다음 단계
 
-* [<span data-ttu-id="4619b-102">Swagger를 사용한 ASP.NET Core Web API 도움말 페이지</span><span class="sxs-lookup"><span data-stu-id="4619b-102">ASP.NET Core Web API Help Pages using Swagger</span></span>](xref:tutorials/web-api-help-pages-using-swagger)
-* [<span data-ttu-id="4619b-103">컨트롤러 작업에 라우팅</span><span class="sxs-lookup"><span data-stu-id="4619b-103">Routing to Controller Actions</span></span>](xref:mvc/controllers/routing)
-* <span data-ttu-id="4619b-104">Azure App Service를 비롯한 API 배포에 대한 자세한 내용은 [호스트 및 배포](xref:host-and-deploy/index)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="4619b-104">For information about deploying an API, including to Azure App Service, see [Host and deploy](xref:host-and-deploy/index).</span></span>
-* <span data-ttu-id="4619b-105">[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-web-api/sample)</span><span class="sxs-lookup"><span data-stu-id="4619b-105">[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-web-api/sample).</span></span> <span data-ttu-id="4619b-106">[다운로드하는 방법](xref:tutorials/index#how-to-download-a-sample)을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="4619b-106">See [how to download](xref:tutorials/index#how-to-download-a-sample).</span></span>
-* [<span data-ttu-id="4619b-107">Postman</span><span class="sxs-lookup"><span data-stu-id="4619b-107">Postman</span></span>](https://www.getpostman.com/)
+* [Swagger를 사용한 ASP.NET Core Web API 도움말 페이지](xref:tutorials/web-api-help-pages-using-swagger)
+* [컨트롤러 작업에 라우팅](xref:mvc/controllers/routing)
+* Azure App Service를 비롯한 API 배포에 대한 자세한 내용은 [호스트 및 배포](xref:host-and-deploy/index)를 참조하세요.
+* [샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-web-api/sample) [다운로드하는 방법](xref:tutorials/index#how-to-download-a-sample)을 참조하세요.
+* [Postman](https://www.getpostman.com/)
