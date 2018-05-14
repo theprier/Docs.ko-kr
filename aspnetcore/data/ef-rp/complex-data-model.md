@@ -1,7 +1,7 @@
 ---
-title: "EF Core를 사용한 Razor 페이지 - 데이터 모델 - 5/8"
+title: ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 데이터 모델 - 5/8
 author: rick-anderson
-description: "이 자습서에서는 더 많은 엔터티 및 관계를 추가하고, 서식 지정, 유효성 검사 및 데이터베이스 매핑 규칙을 지정하여 데이터 모델을 사용자 지정합니다."
+description: 이 자습서에서는 더 많은 엔터티 및 관계를 추가하고, 서식 지정, 유효성 검사 및 매핑 규칙을 지정하여 데이터 모델을 사용자 지정합니다.
 manager: wpickett
 ms.author: riande
 ms.date: 10/25/2017
@@ -9,17 +9,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: 58bb773ba16314827da84909def05a8ef370479b
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: 2cec45afbf08e5dd379a54e780e4218bfc86d13f
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="creating-a-complex-data-model---ef-core-with-razor-pages-tutorial-5-of-8"></a>복잡한 데이터 모델 만들기 - EF Core 및 Razor 페이지 자습서(5/8)
+# <a name="razor-pages-with-ef-core-in-aspnet-core---data-model---5-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 데이터 모델 - 5/8
 
 작성자: [Tom Dykstra](https://github.com/tdykstra) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[!INCLUDE[about the series](../../includes/RP-EF/intro.md)]
+[!INCLUDE [about the series](../../includes/RP-EF/intro.md)]
 
 이전 자습서에서는 세 가지 엔터티로 구성된 기본 데이터 모델을 사용했습니다. 이 자습서에서:
 
@@ -42,16 +42,16 @@ ms.lasthandoff: 01/31/2018
 
 *Models/Student.cs*를 다음 강조 표시된 코드로 업데이트합니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_DataType&highlight=3,12-13)]
+[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_DataType&highlight=3,12-13)]
 
-[DataType](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.datatypeattribute?view=netframework-4.7.1) 특성은 데이터베이스 내장 형식보다 구체적인 데이터 형식을 지정합니다. 이 경우 날짜 및 시간이 아닌 날짜만 표시되어야 합니다. [DataType 열거형](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.datatype?view=netframework-4.7.1)은 날짜, 시간, 전화 번호, 통화, 이메일 주소 등과 같은 많은 데이터 형식을 제공합니다. `DataType` 특성을 통해 앱에서 자동으로 유형별 기능을 제공하도록 설정할 수도 있습니다. 예:
+[DataType](/dotnet/api/system.componentmodel.dataannotations.datatypeattribute?view=netframework-4.7.1) 특성은 데이터베이스 내장 형식보다 구체적인 데이터 형식을 지정합니다. 이 경우 날짜 및 시간이 아닌 날짜만 표시되어야 합니다. [DataType 열거형](/dotnet/api/system.componentmodel.dataannotations.datatype?view=netframework-4.7.1)은 날짜, 시간, 전화 번호, 통화, 이메일 주소 등과 같은 많은 데이터 형식을 제공합니다. `DataType` 특성을 통해 앱에서 자동으로 유형별 기능을 제공하도록 설정할 수도 있습니다. 예:
 
 * `mailto:` 링크는 `DataType.EmailAddress`에 대해 자동으로 만들어집니다.
 * 날짜 선택기는 대부분의 브라우저에서 `DataType.Date`에 대해 제공됩니다.
 
 `DataType` 특성은 HTML 5 브라우저에서 사용하는 HTML 5 `data-`(데이터 대시로 발음) 특성을 내보냅니다. `DataType` 특성은 유효성 검사를 제공하지 않습니다.
 
-`DataType.Date`는 표시되는 날짜의 서식을 지정하지 않습니다. 기본적으로 날짜 필드는 서버의 [CultureInfo](https://docs.microsoft.com/aspnet/core/fundamentals/localization#provide-localized-resources-for-the-languages-and-cultures-you-support)를 기본으로 하는 기본 형식에 따라 표시됩니다.
+`DataType.Date`는 표시되는 날짜의 서식을 지정하지 않습니다. 기본적으로 날짜 필드는 서버의 [CultureInfo](xref:fundamentals/localization#provide-localized-resources-for-the-languages-and-cultures-you-support)를 기본으로 하는 기본 형식에 따라 표시됩니다.
 
 `DisplayFormat` 특성은 날짜 형식을 명시적으로 지정하는 데 사용됩니다.
 
@@ -74,13 +74,13 @@ ms.lasthandoff: 01/31/2018
 
 ### <a name="the-stringlength-attribute"></a>StringLength 특성
 
-데이터 유효성 검사 규칙 및 유효성 검사 오류 메시지는 특성으로 지정될 수 있습니다. [StringLength](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.stringlengthattribute?view=netframework-4.7.1) 특성은 데이터 필드에서 허용되는 최소 및 최대 문자 길이를 지정합니다. `StringLength` 특성은 또한 클라이언트 쪽 및 서버 쪽 유효성 검사를 제공합니다. 최소값은 데이터베이스 스키마에 영향을 주지 않습니다.
+데이터 유효성 검사 규칙 및 유효성 검사 오류 메시지는 특성으로 지정될 수 있습니다. [StringLength](/dotnet/api/system.componentmodel.dataannotations.stringlengthattribute?view=netframework-4.7.1) 특성은 데이터 필드에서 허용되는 최소 및 최대 문자 길이를 지정합니다. `StringLength` 특성은 또한 클라이언트 쪽 및 서버 쪽 유효성 검사를 제공합니다. 최소값은 데이터베이스 스키마에 영향을 주지 않습니다.
 
 `Student` 모델을 다음 코드로 업데이트합니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_StringLength&highlight=10,12)]
+[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_StringLength&highlight=10,12)]
 
-위의 코드는 이름을 최대 50자로 제한합니다. `StringLength` 특성은 이름에 공백을 입력할 수 있습니다. [RegularExpression](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.regularexpressionattribute?view=netframework-4.7.1) 특성은 입력에 제한을 적용하는 데 사용됩니다. 예를 들어 다음 코드는 첫 번째 문자가 대문자여야 하고, 나머지 문자는 사전순이어야 합니다.
+위의 코드는 이름을 최대 50자로 제한합니다. `StringLength` 특성은 이름에 공백을 입력할 수 있습니다. [RegularExpression](/dotnet/api/system.componentmodel.dataannotations.regularexpressionattribute?view=netframework-4.7.1) 특성은 입력에 제한을 적용하는 데 사용됩니다. 예를 들어 다음 코드는 첫 번째 문자가 대문자여야 하고, 나머지 문자는 사전순이어야 합니다.
 
 ```csharp
 [RegularExpression(@"^[A-Z]+[a-zA-Z""'\s-]*$")]
@@ -110,7 +110,7 @@ DB가 만들어질 때 모델의 속성 이름은 열 이름에 사용됩니다(
 
 *Student.cs* 파일을 다음 강조 표시된 코드로 업데이트합니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_Column&highlight=4,14)]
+[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_Column&highlight=4,14)]
 
 이전 변경으로 인해 앱의 `Student.FirstMidName`은 `Student` 테이블의 `FirstName` 열로 매핑됩니다.
 
@@ -155,7 +155,7 @@ SSOX에서 학생 테이블을 엽니다.
 
 *Models/Student.cs*를 다음 코드로 업데이트합니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/Student.cs?name=snippet_BeforeInheritance&highlight=11,13,15,18,22,24-31)]
+[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_BeforeInheritance&highlight=11,13,15,18,22,24-31)]
 
 ### <a name="the-required-attribute"></a>필수 특성
 
@@ -183,7 +183,7 @@ public string LastName { get; set; }
 
 다음 코드로 *Models/Instructor.cs*를 만듭니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/Instructor.cs?name=snippet_BeforeInheritance)]
+[!code-csharp[](intro/samples/cu/Models/Instructor.cs?name=snippet_BeforeInheritance)]
 
 `Student` 및 `Instructor` 엔터티의 여러 속성은 동일합니다. 이 시리즈의 뒷부분에 나오는 상속 구현 자습서에서 이 코드는 중복을 제거하도록 리팩터링됩니다.
 
@@ -229,7 +229,7 @@ public OfficeAssignment OfficeAssignment { get; set; }
 
 다음 코드로 *Models/OfficeAssignment.cs*를 만듭니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/OfficeAssignment.cs)]
+[!code-csharp[](intro/samples/cu/Models/OfficeAssignment.cs)]
 
 ### <a name="the-key-attribute"></a>키 특성
 
@@ -278,7 +278,7 @@ public Instructor Instructor { get; set; }
 
 *Models/Course.cs*를 다음 코드로 업데이트합니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/Course.cs?name=snippet_Final&highlight=2,10,13,16,19,21,23)]
+[!code-csharp[](intro/samples/cu/Models/Course.cs?name=snippet_Final&highlight=2,10,13,16,19,21,23)]
 
 `Course` 엔터티에는 FK(외래 키) 속성 `DepartmentID`가 있습니다. `DepartmentID`는 관련된 `Department` 엔터티를 가리킵니다. `Course` 엔터티에는 `Department` 탐색 속성이 있습니다.
 
@@ -336,7 +336,7 @@ public ICollection<CourseAssignment> CourseAssignments { get; set; }
 
 다음 코드로 *Models/Department.cs*를 만듭니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/Department.cs?name=snippet_Begin)]
+[!code-csharp[](intro/samples/cu/Models/Department.cs?name=snippet_Begin)]
 
 ### <a name="the-column-attribute"></a>열 특성
 
@@ -397,7 +397,7 @@ public ICollection<Course> Courses { get; set; }
 
 *Models/Enrollment.cs*를 다음 코드로 업데이트합니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/Enrollment.cs?name=snippet_Final&highlight=1-2,16)]
+[!code-csharp[](intro/samples/cu/Models/Enrollment.cs?name=snippet_Final&highlight=1-2,16)]
 
 ### <a name="foreign-key-and-navigation-properties"></a>외래 키 및 탐색 속성
 
@@ -439,7 +439,7 @@ public Student Student { get; set; }
 
 다음 코드로 *Models/CourseAssignment.cs*를 만듭니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/CourseAssignment.cs)]
+[!code-csharp[](intro/samples/cu/Models/CourseAssignment.cs)]
 
 ### <a name="instructor-to-courses"></a>강사-강좌
 
@@ -473,7 +473,7 @@ FK는 Null을 허용하지 않습니다. `CourseAssignment`에서 두 개의 FK(
 
 다음 강조 표시된 코드를 *Data/SchoolContext.cs*에 추가합니다.
 
-[!code-csharp[Main](intro/samples/cu/Data/SchoolContext.cs?name=snippet_BeforeInheritance&highlight=15-18,25-31)]
+[!code-csharp[](intro/samples/cu/Data/SchoolContext.cs?name=snippet_BeforeInheritance&highlight=15-18,25-31)]
 
 위의 코드는 새 엔터티를 추가하고 `CourseAssignment` 엔터티의 복합 PK를 구성합니다.
 
@@ -523,7 +523,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 
 *Data/DbInitializer.cs*에서 코드를 업데이트합니다.
 
-[!code-csharp[Main](intro/samples/cu/Data/DbInitializer.cs?name=snippet_Final)]
+[!code-csharp[](intro/samples/cu/Data/DbInitializer.cs?name=snippet_Final)]
 
 위의 코드는 새 엔터티에 대한 시드 데이터를 제공합니다. 이 코드의 대부분은 새 엔터티 개체를 만들고 샘플 데이터를 로드합니다. 샘플 데이터는 테스트를 위해 사용됩니다. 위의 코드는 다음과 같은 다대다 관계를 만듭니다.
 
@@ -572,12 +572,12 @@ database "ContosoUniversity", table "dbo.Department", column 'DepartmentID'.
 
 * 또는 다음을 사용하여 DB를 삭제합니다.
 
-    * **SQL Server 개체 탐색기**(SSOX)
-    * `database drop` CLI 명령:
+  * **SQL Server 개체 탐색기**(SSOX)
+  * `database drop` CLI 명령:
 
-   ```console
-   dotnet ef database drop
-   ```
+    ```console
+    dotnet ef database drop
+    ```
 
 명령 창에서 `database update`를 실행합니다.
 
@@ -613,7 +613,7 @@ SSOX에서 DB를 엽니다.
 
 *{timestamp}_ComplexDataModel.cs* 파일은 다음 코드를 포함합니다.
 
-[!code-csharp[Main](intro/samples/cu/Migrations/20171027005808_ComplexDataModel.cs?name=snippet_DepartmentID)]
+[!code-csharp[](intro/samples/cu/Migrations/20171027005808_ComplexDataModel.cs?name=snippet_DepartmentID)]
 
 위의 코드는 Null을 허용하지 않는 `DepartmentID` FK를 `Course` 테이블에 추가합니다. 테이블을 마이그레이션에서 업데이트할 수 없도록 이전 자습서의 DB는 `Course`에 행을 포함합니다.
 
@@ -629,9 +629,9 @@ SSOX에서 DB를 엽니다.
 * *{timestamp}_ComplexDataModel.cs* 파일을 엽니다.
 * `DepartmentID` 열을 `Course` 테이블에 추가하는 코드 줄을 주석으로 처리합니다.
 
-[!code-csharp[Main](intro/samples/cu/Migrations/20171027005808_ComplexDataModel.cs?name=snippet_CommentOut&highlight=9-13)]
+[!code-csharp[](intro/samples/cu/Migrations/20171027005808_ComplexDataModel.cs?name=snippet_CommentOut&highlight=9-13)]
 
-다음 강조 표시된 코드를 추가합니다. 새 코드는 `.CreateTable( name: "Department"` 블록 뒤로 이동합니다. [!code-csharp[Main](intro/samples/cu/Migrations/20171027005808_ComplexDataModel.cs?name=snippet_CreateDefaultValue&highlight=22-32)]
+다음 강조 표시된 코드를 추가합니다. 새 코드는 `.CreateTable( name: "Department"` 블록 뒤로 이동합니다. [!code-csharp[](intro/samples/cu/Migrations/20171027005808_ComplexDataModel.cs?name=snippet_CreateDefaultValue&highlight=22-32)]
 
 위의 변경 내용으로 `ComplexDataModel` `Up` 메서드를 실행한 후에 기존 `Course` 행은 “Temp” 부서에 연결됩니다.
 
@@ -642,6 +642,6 @@ SSOX에서 DB를 엽니다.
 
 다음 자습서에서는 관련된 데이터를 설명합니다.
 
->[!div class="step-by-step"]
-[이전](xref:data/ef-rp/migrations)
-[다음](xref:data/ef-rp/read-related-data)
+> [!div class="step-by-step"]
+> [이전](xref:data/ef-rp/migrations)
+> [다음](xref:data/ef-rp/read-related-data)

@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core 2.0의 새로운 기능"
+title: ASP.NET Core 2.0의 새로운 기능
 author: rick-anderson
-description: "ASP.NET Core 2.0의 새로운 기능"
+description: ASP.NET Core 2.0의 새로운 기능에 대해 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 07/10/2017
@@ -9,11 +9,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: aspnetcore-2.0
-ms.openlocfilehash: 35d57abd07e83cd5b190572962fbf43aef03a534
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: b4ac500888ce134e8f4f0d4bf16efa4e95f24c15
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="whats-new-in-aspnet-core-20"></a>ASP.NET Core 2.0의 새로운 기능
 
@@ -38,7 +38,7 @@ Razor 페이지는 더 쉽고 더 생산적으로 코딩 페이지에 초점을 
 
 `Microsoft.AspNetCore.All` 메타패키지를 사용하는 응용 프로그램은 새로운 .NET Core 런타임 저장소를 자동으로 활용합니다. 저장소에는 ASP.NET Core 2.0 응용 프로그램을 실행하는 데 필요한 모든 런타임 자산이 포함됩니다. `Microsoft.AspNetCore.All` 메타패키지를 사용할 경우 참조되는 ASP.NET Core NuGet 패키지의 자산은 대상 시스템에 있기 때문에 응용 프로그램과 함께 배포되지 않습니다. 또한 응용 프로그램 시작 시간을 개선하기 위해 런타임 저장소의 자산은 미리 컴파일됩니다.
 
-자세한 내용은 [런타임 저장소](https://docs.microsoft.com/dotnet/core/deploying/runtime-store)를 참조하세요.
+자세한 내용은 [런타임 저장소](/dotnet/core/deploying/runtime-store)를 참조하세요.
 
 ## <a name="net-standard-20"></a>.NET Standard 2.0
 
@@ -62,7 +62,7 @@ ASP.NET Core 2.0에서 로깅은 기본적으로 DI(종속성 주입) 시스템�
 
 새 인증 모델을 사용하면 DI를 사용하는 응용 프로그램에 대한 인증을 더 쉽게 구성할 수 있습니다.
 
-새 템플릿을 사용하여 [Azure AD B2C](https://azure.microsoft.com/services/active-directory-b2c/)를 통해 웹앱 및 Web API에 대한 인증을 구성할 수 있습니다.
+새 템플릿을 사용하여 [Azure AD B2C](https://azure.microsoft.com/services/active-directory-b2c/))를 통해 웹앱 및 Web API에 대한 인증을 구성할 수 있습니다.
 
 계획된 문서의 상태에 대한 자세한 내용은 [GitHub issue](https://github.com/aspnet/Docs/issues/3054)(GitHub 문제)를 참조하세요.
 
@@ -122,11 +122,13 @@ ASP.NET Core 2.0에서 이 기능은 Visual Studio에서 디버그할 경우 및
 
 ASP.NET Core는 언제나 기본적으로 콘텐츠를 HTML 인코딩하는 기능을 제공했지만, 새 버전에서는 XSRF(교차 사이트 요청 위조) 공격을 방지할 수 있도록 추가 조치를 취합니다. 이제 ASP.NET Core는 기본적으로 위조 방지 토큰을 내보내고 추가 구성없이 폼 POST 작업 및 페이지에서 토큰의 유효성을 검사합니다.
 
-자세한 내용은 [ASP.NET Core에서 교차 사이트 요청 위조(XSRF/CSRF) 공격 방지](xref:security/anti-request-forgery)를 참조하세요.
+자세한 내용은 [교차 사이트 요청 위조(XSRF/CSRF) 공격 방지](xref:security/anti-request-forgery)를 참조하세요.
 
 ## <a name="automatic-precompilation"></a>자동으로 미리 컴파일
 
 Razor 뷰 미리 컴파일이 기본적으로 게시 중에 사용하도록 설정되므로 게시 출력 크기와 응용 프로그램 시작 시간이 감소합니다.
+
+자세한 내용은 [ASP.NET Core에서 Razor 뷰 컴파일 및 미리 컴파일](xref:mvc/views/view-compilation)을 참조하세요.
 
 ## <a name="razor-support-for-c-71"></a>C# 7.1에 대한 Razor 지원
 

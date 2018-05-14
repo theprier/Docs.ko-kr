@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core에서 태그 도우미 작성"
+title: ASP.NET Core의 작성자 태그 도우미
 author: rick-anderson
-description: "ASP.NET Core에서 태그 도우미를 작성하는 방법을 알아봅니다."
+description: ASP.NET Core에서 태그 도우미를 작성하는 방법을 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
@@ -10,17 +10,17 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/tag-helpers/authoring
-ms.openlocfilehash: 040c26bfccb8f258b0941bed4bc936cf7a16324a
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 85809a0f7bfe0adcf535c2be7f5b77e8abd947fd
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="author-tag-helpers-in-aspnet-core-a-walkthrough-with-samples"></a>ASP.NET Core에서 태그 도우미 작성, 샘플을 통한 연습
+# <a name="author-tag-helpers-in-aspnet-core"></a>ASP.NET Core의 작성자 태그 도우미
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/authoring/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/authoring/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="get-started-with-tag-helpers"></a>태그 도우미 시작
 
@@ -48,31 +48,31 @@ ms.lasthandoff: 01/30/2018
 
 즉, 이메일 링크로 만드는 앵커 태그. 블로그 엔진을 작성하고 마케팅, 지원 및 기타 연락처에 대한 이메일을 모두 동일한 도메인으로 보내는 데 필요한 경우 이 작업을 수행할 수 있습니다.
 
-1.  다음 `EmailTagHelper` 클래스를 *TagHelpers* 폴더에 추가합니다.
+1. 다음 `EmailTagHelper` 클래스를 *TagHelpers* 폴더에 추가합니다.
 
-    [!code-csharp[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z1EmailTagHelperCopy.cs)]
+   [!code-csharp[](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z1EmailTagHelperCopy.cs)]
     
-    **참고:**
+   **참고:**
     
-    * 태그 도우미는 루트 클래스 이름의 요소를 대상으로 하는 명명 규칙을 사용합니다(클래스 이름의 *TagHelper* 부분 제외). 이 예에서 **Email**TagHelper의 루트 이름이 *email*이므로 `<email>` 태그가 대상으로 지정됩니다. 이 명명 규칙은 대부분의 태그 도우미에서 작동하며, 나중에는 재정의하는 방법에 대해 설명하기로 합니다.
+   * 태그 도우미는 루트 클래스 이름의 요소를 대상으로 하는 명명 규칙을 사용합니다(클래스 이름의 *TagHelper* 부분 제외). 이 예에서 **Email**TagHelper의 루트 이름이 *email*이므로 `<email>` 태그가 대상으로 지정됩니다. 이 명명 규칙은 대부분의 태그 도우미에서 작동하며, 나중에는 재정의하는 방법에 대해 설명하기로 합니다.
     
-    * `EmailTagHelper` 클래스는 `TagHelper`에서 파생됩니다. `TagHelper` 클래스는 태그 도우미를 작성하기 위한 메서드 및 속성을 제공합니다.
+   * `EmailTagHelper` 클래스는 `TagHelper`에서 파생됩니다. `TagHelper` 클래스는 태그 도우미를 작성하기 위한 메서드 및 속성을 제공합니다.
     
-    * 재정의된 `Process` 메서드는 실행될 때 태그 도우미가 수행하는 작업을 제어합니다. `TagHelper` 클래스는 동일한 매개 변수와 함께 비동기 버전(`ProcessAsync`)을 제공합니다.
+   * 재정의된 `Process` 메서드는 실행될 때 태그 도우미가 수행하는 작업을 제어합니다. `TagHelper` 클래스는 동일한 매개 변수와 함께 비동기 버전(`ProcessAsync`)을 제공합니다.
     
-    * `Process`(및 `ProcessAsync`)에 대한 컨텍스트 매개 변수는 현재 HTML 태그의 실행과 관련된 정보를 포함합니다.
+   * `Process`(및 `ProcessAsync`)에 대한 컨텍스트 매개 변수는 현재 HTML 태그의 실행과 관련된 정보를 포함합니다.
     
-    * `Process`(및 `ProcessAsync`)에 대한 출력 매개 변수는 HTML 태그 및 콘텐츠를 생성하는 데 사용된 원본 소스의 상태 저장 HTML 요소 표현을 포함합니다.
+   * `Process`(및 `ProcessAsync`)에 대한 출력 매개 변수는 HTML 태그 및 콘텐츠를 생성하는 데 사용된 원본 소스의 상태 저장 HTML 요소 표현을 포함합니다.
     
-    * 클래스 이름에는 **TagHelper**라는 접미사가 있으며 필수는 *아니지만* 관례적으로 사용됩니다. 다음과 같이 클래스를 선언할 수 있습니다.
+   * 클래스 이름에는 **TagHelper**라는 접미사가 있으며 필수는 *아니지만* 관례적으로 사용됩니다. 다음과 같이 클래스를 선언할 수 있습니다.
     
-    ```csharp
-    public class Email : TagHelper
-    ```
+   ```csharp
+   public class Email : TagHelper
+   ```
 
-2.  `EmailTagHelper` 클래스를 모든 Razor 뷰에서 사용할 수 있도록 하려면 `addTagHelper` 지시문을 *Views/_ViewImports.cshtml* 파일에 추가합니다. [!code-html[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImportsCopyEmail.cshtml?highlight=2,3)]
+2. `EmailTagHelper` 클래스를 모든 Razor 뷰에서 사용할 수 있도록 하려면 `addTagHelper` 지시문을 *Views/_ViewImports.cshtml* 파일에 추가합니다. [!code-html[](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImportsCopyEmail.cshtml?highlight=2,3)]
     
-    위의 코드에서는 와일드 카드 구문을 사용하여 사용할 수 있는 모든 태그 도우미를 어셈블리에서 지정합니다. `@addTagHelper` 뒤의 첫 번째 문자열은 로드할 태그 도우미(모든 태그 도우미에 "*" 사용)를 지정하고 두 번째 문자열 "AuthoringTagHelpers"는 태그 도우미가 있는 어셈블리를 지정합니다. 또한 두 번째 줄은 와일드 카드 구문을 사용하여 ASP.NET Core MVC 태그 도우미를 제공합니다(해당 도우미에 대해서는 [태그 도우미 소개](intro.md)에서 설명). 태그 도우미를 Razor 뷰에서 사용할 수 있도록 해주는 `@addTagHelper` 지시문입니다. 또는 아래 표시된 것처럼 태그 도우미의 FQN(정규화된 이름)을 제공할 수 있습니다.
+   위의 코드에서는 와일드 카드 구문을 사용하여 사용할 수 있는 모든 태그 도우미를 어셈블리에서 지정합니다. `@addTagHelper` 뒤의 첫 번째 문자열은 로드할 태그 도우미(모든 태그 도우미에 "*" 사용)를 지정하고 두 번째 문자열 "AuthoringTagHelpers"는 태그 도우미가 있는 어셈블리를 지정합니다. 또한 두 번째 줄은 와일드 카드 구문을 사용하여 ASP.NET Core MVC 태그 도우미를 제공합니다(해당 도우미에 대해서는 [태그 도우미 소개](intro.md)에서 설명). 태그 도우미를 Razor 뷰에서 사용할 수 있도록 해주는 `@addTagHelper` 지시문입니다. 또는 아래 표시된 것처럼 태그 도우미의 FQN(정규화된 이름)을 제공할 수 있습니다.
     
 ```csharp
 @using AuthoringTagHelpers
@@ -82,18 +82,16 @@ ms.lasthandoff: 01/30/2018
     
 <!--
 the following snippet uses TagHelpers3 and should use TagHelpers (not the 3)
-    [!code-html[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImports.cshtml?highlight=3&range=1-3)]
+    [!code-html[](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImports.cshtml?highlight=3&range=1-3)]
 -->
     
 FQN을 사용하여 뷰에 태그 도우미를 추가하려면 먼저 FQN(`AuthoringTagHelpers.TagHelpers.EmailTagHelper`)을 추가한 후 어셈블리 이름(*AuthoringTagHelpers*)을 추가합니다. 대부분의 개발자는 와일드 카드 구문을 사용하는 방법을 선호합니다. [태그 도우미 소개](intro.md)에서는 태그 도우미 추가, 제거, 계층 구조 및 와일드 카드 구문에 대해 자세히 설명합니다.
     
-3.  *Views/Home/Contact.cshtml* 파일에서 태그를 다음 변경 내용으로 업데이트합니다.
+3. *Views/Home/Contact.cshtml* 파일에서 태그를 다음 변경 내용으로 업데이트합니다.
 
-    [!code-html[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/Contact.cshtml?highlight=15,16&range=1-17)]
+   [!code-html[](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/Contact.cshtml?highlight=15,16&range=1-17)]
 
-4.  앱을 실행하고 선호하는 브라우저를 사용하여 HTML 소스를 보면 이메일 태그가 앵커 태그로 대체되었는지 확인할 수 있습니다(예: `<a>Support</a>`). *지원* 및 *마케팅*은 링크로 렌더링되지만 작동하도록 하는 `href` 특성이 없습니다. 다음 섹션에서 이 문제를 해결합니다.
-
-참고: HTML 태그 및 특성과 마찬가지로, Razor 및 C#에서 태그, 클래스 이름 및 특성은 대/소문자를 구분하지 않습니다.
+4. 앱을 실행하고 선호하는 브라우저를 사용하여 HTML 소스를 보면 이메일 태그가 앵커 태그로 대체되었는지 확인할 수 있습니다(예: `<a>Support</a>`). *지원* 및 *마케팅*은 링크로 렌더링되지만 작동하도록 하는 `href` 특성이 없습니다. 다음 섹션에서 이 문제를 해결합니다.
 
 ## <a name="setattribute-and-setcontent"></a>SetAttribute 및 SetContent
 
@@ -101,7 +99,7 @@ FQN을 사용하여 뷰에 태그 도우미를 추가하려면 먼저 FQN(`Autho
 
 `EmailTagHelper` 클래스를 다음으로 업데이트합니다.
 
-[!code-csharp[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/EmailTagHelperMailTo.cs?range=6-22)]
+[!code-csharp[](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/EmailTagHelperMailTo.cs?range=6-22)]
 
 **참고:**
 
@@ -111,60 +109,60 @@ FQN을 사용하여 뷰에 태그 도우미를 추가하려면 먼저 FQN(`Autho
 
 * 강조 표시된 줄은 특성 추가를 위한 구문을 보여 줍니다.
 
-[!code-csharp[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/EmailTagHelperMailTo.cs?highlight=6&range=14-21)]
+[!code-csharp[](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/EmailTagHelperMailTo.cs?highlight=6&range=14-21)]
 
 이 방법은 특성 컬렉션에 현재 존재하지 않는 한, 속성 "href" 특성에 대해 작동합니다. 또한 `output.Attributes.Add` 메서드를 사용하여 태그 특성 컬렉션 끝에 태그 도우미 특성을 추가할 수도 있습니다.
 
-1.  *Views/Home/Contact.cshtml* 파일에서 태그를 다음 변경 내용으로 업데이트합니다. [!code-html[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/ContactCopy.cshtml?highlight=15,16)]
+1. *Views/Home/Contact.cshtml* 파일에서 태그를 다음 변경 내용으로 업데이트합니다. [!code-html[](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/ContactCopy.cshtml?highlight=15,16)]
 
-2.  앱을 실행하고 올바른 링크를 생성하는지 확인합니다.
+2. 앱을 실행하고 올바른 링크를 생성하는지 확인합니다.
     
-    > [!NOTE]
-    >이메일 태그 자체 닫음(`<email mail-to="Rick" />`)을 작성하려는 경우 최종 출력도 자체로 닫힙니다. 시작 태그(`<email mail-to="Rick">`)만 사용하여 태그를 작성하는 기능을 사용하려면 클래스를 다음과 같이 데코레이트해야 합니다.
-    >
-    > [!code-csharp[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/EmailTagHelperMailVoid.cs?highlight=1&range=6-10)]
+   > [!NOTE]
+   > 이메일 태그 자체 닫음(`<email mail-to="Rick" />`)을 작성하려는 경우 최종 출력도 자체로 닫힙니다. 시작 태그(`<email mail-to="Rick">`)만 사용하여 태그를 작성하는 기능을 사용하려면 클래스를 다음과 같이 데코레이트해야 합니다.
+   > 
+   > [!code-csharp[](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/EmailTagHelperMailVoid.cs?highlight=1&range=6-10)]
     
-    자체 닫음 이메일 태그 도우미를 사용하면 출력은 `<a href="mailto:Rick@contoso.com" />`이 됩니다. 자체 닫음 앵커 태그가 유효한 HTML이 아니므로 태그를 만들지는 않겠지만 자체 닫음 태그 도우미를 만들 수 있습니다. 태그 도우미는 태그를 읽은 후 `TagMode` 속성의 형식을 설정합니다.
+   자체 닫음 이메일 태그 도우미를 사용하면 출력은 `<a href="mailto:Rick@contoso.com" />`이 됩니다. 자체 닫음 앵커 태그가 유효한 HTML이 아니므로 태그를 만들지는 않겠지만 자체 닫음 태그 도우미를 만들 수 있습니다. 태그 도우미는 태그를 읽은 후 `TagMode` 속성의 형식을 설정합니다.
     
 ### <a name="processasync"></a>ProcessAsync
 
 이 섹션에서는 비동기 이메일 도우미를 작성합니다.
 
-1.  `EmailTagHelper` 클래스를 다음 코드로 바꿉니다.
+1. `EmailTagHelper` 클래스를 다음 코드로 바꿉니다.
 
-    [!code-csharp[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/EmailTagHelper.cs?range=6-17)]
+   [!code-csharp[](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/EmailTagHelper.cs?range=6-17)]
 
-    **참고:**
+   **참고:**
 
-    * 이 버전은 비동기 `ProcessAsync` 메서드를 사용합니다. 비동기 `GetChildContentAsync`는 `TagHelperContent`가 포함된 `Task`를 반환합니다.
+   * 이 버전은 비동기 `ProcessAsync` 메서드를 사용합니다. 비동기 `GetChildContentAsync`는 `TagHelperContent`가 포함된 `Task`를 반환합니다.
 
-    * `output` 매개 변수를 사용하여 HTML 요소의 내용을 가져옵니다.
+   * `output` 매개 변수를 사용하여 HTML 요소의 내용을 가져옵니다.
 
-2.  태그 도우미가 대상 이메일을 가져올 수 있도록 *Views/Home/Contact.cshtml* 파일을 다음과 같이 변경합니다.
+2. 태그 도우미가 대상 이메일을 가져올 수 있도록 *Views/Home/Contact.cshtml* 파일을 다음과 같이 변경합니다.
 
-    [!code-html[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/Contact.cshtml?highlight=15,16&range=1-17)]
+   [!code-html[](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/Contact.cshtml?highlight=15,16&range=1-17)]
 
-3.  앱을 실행하고 유효한 이메일 링크를 생성하는지 확인합니다.
+3. 앱을 실행하고 유효한 이메일 링크를 생성하는지 확인합니다.
 
 ### <a name="removeall-precontentsethtmlcontent-and-postcontentsethtmlcontent"></a>RemoveAll, PreContent.SetHtmlContent 및 PostContent.SetHtmlContent
 
-1.  다음 `BoldTagHelper` 클래스를 *TagHelpers* 폴더에 추가합니다.
+1. 다음 `BoldTagHelper` 클래스를 *TagHelpers* 폴더에 추가합니다.
 
-    [!code-csharp[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/BoldTagHelper.cs)]
+   [!code-csharp[](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/BoldTagHelper.cs)]
 
-    **참고:**
+   **참고:**
     
-    * `[HtmlTargetElement]` 특성은 "bold"라는 HTML 특성이 포함된 HTML 요소가 일치하고 클래스에서 `Process` 재정의 메서드가 실행되도록 지정하는 특성 매개 변수를 전달합니다. 이 샘플에서 `Process` 메서드는 "bold" 특성을 제거하고 포함된 태그를 `<strong></strong>`으로 둘러쌉니다.
+   * `[HtmlTargetElement]` 특성은 "bold"라는 HTML 특성이 포함된 HTML 요소가 일치하고 클래스에서 `Process` 재정의 메서드가 실행되도록 지정하는 특성 매개 변수를 전달합니다. 이 샘플에서 `Process` 메서드는 "bold" 특성을 제거하고 포함된 태그를 `<strong></strong>`으로 둘러쌉니다.
     
-    * 기존 태그 내용을 바꾸지 않기 때문에 `PreContent.SetHtmlContent` 메서드로 여는 `<strong>` 태그를 작성하고 `PostContent.SetHtmlContent` 메서드로 닫는 `</strong>` 태그를 작성해야 합니다.
+   * 기존 태그 내용을 바꾸지 않기 때문에 `PreContent.SetHtmlContent` 메서드로 여는 `<strong>` 태그를 작성하고 `PostContent.SetHtmlContent` 메서드로 닫는 `</strong>` 태그를 작성해야 합니다.
     
-2.  `bold` 특성 값을 포함하도록 *About.cshtml* 뷰를 수정합니다. 완성된 코드는 다음과 같습니다.
+2. `bold` 특성 값을 포함하도록 *About.cshtml* 뷰를 수정합니다. 완성된 코드는 다음과 같습니다.
 
-    [!code-html[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/AboutBoldOnly.cshtml?highlight=7)]
+   [!code-html[](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/AboutBoldOnly.cshtml?highlight=7)]
 
-3.  앱을 실행합니다. 선호하는 브라우저를 사용하여 소스를 검사하고 태그를 확인할 수 있습니다.
+3. 앱을 실행합니다. 선호하는 브라우저를 사용하여 소스를 검사하고 태그를 확인할 수 있습니다.
 
-    위의 `[HtmlTargetElement]` 특성은 "bold" 특성 이름을 제공하는 HTML 태그만 대상으로 합니다. `<bold>` 요소는 태그 도우미에 의해 수정되지 않았습니다.
+   위의 `[HtmlTargetElement]` 특성은 "bold" 특성 이름을 제공하는 HTML 태그만 대상으로 합니다. `<bold>` 요소는 태그 도우미에 의해 수정되지 않았습니다.
 
 4. `[HtmlTargetElement]` 특성 줄을 주석 처리하고 기본적으로 `<bold>` 태그를 대상으로 합니다. 즉, `<bold>` 형식의 HTML 태그입니다. 기본 명명 규칙은 클래스 이름 **Bold**TagHelper를 `<bold>` 태그와 일치시킨다는 점을 유의합니다.
 
@@ -172,7 +170,7 @@ FQN을 사용하여 뷰에 태그 도우미를 추가하려면 먼저 FQN(`Autho
 
 클래스를 여러 개의 `[HtmlTargetElement]` 특성으로 데코레이팅하면 그 결과는 대상의 논리 OR입니다. 예를 들어 아래 코드를 사용하여 bold 태그 또는 bold 특성을 일치시킵니다.
 
-[!code-csharp[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/zBoldTagHelperCopy.cs?highlight=1,2&range=5-15)]
+[!code-csharp[](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/zBoldTagHelperCopy.cs?highlight=1,2&range=5-15)]
 
 동일한 문에 특성이 여러 개 추가된 경우, 런타임에서 논리 AND로 처리합니다. 예를 들어 아래 코드에서는 일치시킬 "bold"(`<bold bold />`) 특성을 사용하여 HTML 요소 이름을 "bold"로 지정해야 합니다.
 
@@ -188,100 +186,100 @@ FQN을 사용하여 뷰에 태그 도우미를 추가하려면 먼저 FQN(`Autho
 
 ## <a name="pass-a-model-to-a-tag-helper"></a>모델을 태그 도우미에 전달
 
-1.  *모델* 폴더를 추가합니다.
+1. *모델* 폴더를 추가합니다.
 
-2.  다음 `WebsiteContext` 클래스를 *Models* 폴더에 추가합니다.
+2. 다음 `WebsiteContext` 클래스를 *Models* 폴더에 추가합니다.
 
-    [!code-csharp[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Models/WebsiteContext.cs)]
+   [!code-csharp[](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Models/WebsiteContext.cs)]
 
-3.  다음 `WebsiteInformationTagHelper` 클래스를 *TagHelpers* 폴더에 추가합니다.
+3. 다음 `WebsiteInformationTagHelper` 클래스를 *TagHelpers* 폴더에 추가합니다.
 
-    [!code-csharp[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/WebsiteInformationTagHelper.cs)]
+   [!code-csharp[](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/WebsiteInformationTagHelper.cs)]
     
-    **참고:**
+   **참고:**
     
-    * 앞에서 언급했듯이, 태그 도우미는 파스칼식 C# 클래스 이름과 태그 도우미 속성을 [kebab 소문자](http://wiki.c2.com/?KebabCase)로 변환합니다. 따라서 Razor에서 `WebsiteInformationTagHelper`를 사용하려면 `<website-information />`을 작성합니다.
+   * 앞에서 언급했듯이, 태그 도우미는 파스칼식 C# 클래스 이름과 태그 도우미 속성을 [kebab 소문자](http://wiki.c2.com/?KebabCase)로 변환합니다. 따라서 Razor에서 `WebsiteInformationTagHelper`를 사용하려면 `<website-information />`을 작성합니다.
     
-    * `[HtmlTargetElement]` 특성을 사용하여 대상 요소를 명시적으로 식별하지 않으므로 `website-information`의 기본값이 대상으로 지정됩니다. 다음 특성을 적용한 경우(kebab 대/소문자는 아니지만 클래스 이름 일치):
+   * `[HtmlTargetElement]` 특성을 사용하여 대상 요소를 명시적으로 식별하지 않으므로 `website-information`의 기본값이 대상으로 지정됩니다. 다음 특성을 적용한 경우(kebab 대/소문자는 아니지만 클래스 이름 일치):
     
-    ```csharp
-    [HtmlTargetElement("WebsiteInformation")]
-    ```
+   ```csharp
+   [HtmlTargetElement("WebsiteInformation")]
+   ```
     
-    kebab 소문자 태그 `<website-information />`은 일치하지 않습니다. `[HtmlTargetElement]` 특성을 사용하려는 경우 아래와 같이 kebab 대/소문자를 사용합니다.
+   kebab 소문자 태그 `<website-information />`은 일치하지 않습니다. `[HtmlTargetElement]` 특성을 사용하려는 경우 아래와 같이 kebab 대/소문자를 사용합니다.
     
-    ```csharp
-    [HtmlTargetElement("Website-Information")]
-    ```
+   ```csharp
+   [HtmlTargetElement("Website-Information")]
+   ```
     
-    * 자체 닫음 요소에는 내용이 없습니다. 이 예에서 Razor 태그는 자체 닫음 태그를 사용하지만, 태그 도우미는 [section](http://www.w3.org/TR/html5/sections.html#the-section-element) 요소(자체 닫음이 아니며 `section` 요소 내부에 내용 작성 중)를 만들 것입니다. 따라서 `TagMode`를 `StartTagAndEndTag`로 설정하여 출력을 작성해야 합니다. 또는 `TagMode` 설정 줄을 주석 처리하고 닫는 태그로 태그를 작성할 수 있습니다. (예제 태그는 이 자습서의 뒷부분에 제공됩니다.)
+   * 자체 닫음 요소에는 내용이 없습니다. 이 예에서 Razor 태그는 자체 닫음 태그를 사용하지만, 태그 도우미는 [section](http://www.w3.org/TR/html5/sections.html#the-section-element) 요소(자체 닫음이 아니며 `section` 요소 내부에 내용 작성 중)를 만들 것입니다. 따라서 `TagMode`를 `StartTagAndEndTag`로 설정하여 출력을 작성해야 합니다. 또는 `TagMode` 설정 줄을 주석 처리하고 닫는 태그로 태그를 작성할 수 있습니다. (예제 태그는 이 자습서의 뒷부분에 제공됩니다.)
     
-    * 다음 줄에서 `$`(달러 기호)는 [보간된 문자열](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/interpolated-strings)을 사용합니다.
+   * 다음 줄에서 `$`(달러 기호)는 [보간된 문자열](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/interpolated-strings)을 사용합니다.
     
-    ```cshtml
-    $@"<ul><li><strong>Version:</strong> {Info.Version}</li>
-    ```
+   ```cshtml
+   $@"<ul><li><strong>Version:</strong> {Info.Version}</li>
+   ```
 
-4.  다음 태그를 *About.cshtml* 뷰에 추가합니다. 강조 표시된 태그는 웹 사이트 정보를 표시합니다.
+4. 다음 태그를 *About.cshtml* 뷰에 추가합니다. 강조 표시된 태그는 웹 사이트 정보를 표시합니다.
     
-    [!code-html[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/About.cshtml?highlight=1,12-)]
+   [!code-html[](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/About.cshtml?highlight=1,12-999)]
     
-    >[!NOTE]
-    > 아래에 표시된 Razor 태그에서:
-    >
-    >[!code-html[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/About.cshtml?range=13-17)]
-    > 
-    >Razor는 `info` 특성이 문자열이 아니라 클래스임을 알고 있으며 C# 코드를 작성하려고 합니다. 모든 문자열이 아닌 태그 도우미 특성이 `@` 문자 없이 작성됩니다.
+   > [!NOTE]
+   > 아래에 표시된 Razor 태그에서:
+   > 
+   > [!code-html[](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/About.cshtml?range=13-17)]
+   > 
+   > Razor는 `info` 특성이 문자열이 아니라 클래스임을 알고 있으며 C# 코드를 작성하려고 합니다. 모든 문자열이 아닌 태그 도우미 특성이 `@` 문자 없이 작성됩니다.
     
-5.  앱을 실행하고 About 뷰로 이동하여 웹 사이트 정보를 확인합니다.
+5. 앱을 실행하고 About 뷰로 이동하여 웹 사이트 정보를 확인합니다.
 
-    >[!NOTE]
-    >닫는 태그로 다음 태그를 사용하고 태그 도우미에서 `TagMode.StartTagAndEndTag`로 해당 줄을 제거할 수 있습니다.
-    >
-    >[!code-html[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/AboutNotSelfClosing.cshtml?range=13-18)]
+   > [!NOTE]
+   > 닫는 태그로 다음 태그를 사용하고 태그 도우미에서 `TagMode.StartTagAndEndTag`로 해당 줄을 제거할 수 있습니다.
+   > 
+   > [!code-html[](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/AboutNotSelfClosing.cshtml?range=13-18)]
 
 ## <a name="condition-tag-helper"></a>조건 태그 도우미
 
 조건 태그 도우미는 true 값을 전달한 경우 출력을 렌더링합니다.
 
-1.  다음 `ConditionTagHelper` 클래스를 *TagHelpers* 폴더에 추가합니다.
+1. 다음 `ConditionTagHelper` 클래스를 *TagHelpers* 폴더에 추가합니다.
 
-    [!code-csharp[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/ConditionTagHelper.cs)]
+   [!code-csharp[](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/ConditionTagHelper.cs)]
 
-2.  *Views/Home/Index.cshtml* 파일의 내용을 다음 태그로 대체합니다.
+2. *Views/Home/Index.cshtml* 파일의 내용을 다음 태그로 대체합니다.
 
-    ```cshtml
-    @using AuthoringTagHelpers.Models
-    @model WebsiteContext
+   ```cshtml
+   @using AuthoringTagHelpers.Models
+   @model WebsiteContext
     
-    @{
-        ViewData["Title"] = "Home Page";
-    }
+   @{
+       ViewData["Title"] = "Home Page";
+   }
     
-    <div>
-        <h3>Information about our website (outdated):</h3>
-        <website-information info=@Model />
-        <div condition="@Model.Approved">
-            <p>
-                This website has <strong surround="em"> @Model.Approved </strong> been approved yet.
-                Visit www.contoso.com for more information.
-            </p>
-        </div>
-    </div>
-    ```
+   <div>
+       <h3>Information about our website (outdated):</h3>
+       <website-information info=@Model />
+       <div condition="@Model.Approved">
+           <p>
+               This website has <strong surround="em"> @Model.Approved </strong> been approved yet.
+               Visit www.contoso.com for more information.
+           </p>
+       </div>
+   </div>
+   ```
     
-3.  `Home` 컨트롤러에서 `Index` 메서드를 다음 코드로 바꿉니다.
+3. `Home` 컨트롤러에서 `Index` 메서드를 다음 코드로 바꿉니다.
 
-    [!code-csharp[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Controllers/HomeController.cs?range=9-18)]
+   [!code-csharp[](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Controllers/HomeController.cs?range=9-18)]
 
-4.  앱을 실행하고 홈 페이지로 이동합니다. 조건부 `div`의 태그가 렌더링되지 않습니다. 쿼리 문자열 `?approved=true`를 URL에 추가합니다(예: `http://localhost:1235/Home/Index?approved=true`). `approved`가 true로 설정되고 조건부 태그가 표시됩니다.
+4. 앱을 실행하고 홈 페이지로 이동합니다. 조건부 `div`의 태그가 렌더링되지 않습니다. 쿼리 문자열 `?approved=true`를 URL에 추가합니다(예: `http://localhost:1235/Home/Index?approved=true`). `approved`가 true로 설정되고 조건부 태그가 표시됩니다.
 
->[!NOTE]
->[nameof](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/nameof) 연산자를 사용하여 bold 태그 도우미에서와 마찬가지로 문자열을 지정하지 않고 대상에 특성을 지정합니다.
->
->[!code-csharp[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/zConditionTagHelperCopy.cs?highlight=1,2,5&range=5-18)]
->
->[nameof](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/nameof) 연산자는 리팩토링해야 하는 코드를 보호합니다(이름을 `RedCondition`으로 변경할 수 있음).
+> [!NOTE]
+> [nameof](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/nameof) 연산자를 사용하여 bold 태그 도우미에서와 마찬가지로 문자열을 지정하지 않고 대상에 특성을 지정합니다.
+> 
+> [!code-csharp[](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/zConditionTagHelperCopy.cs?highlight=1,2,5&range=5-18)]
+> 
+> [nameof](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/nameof) 연산자는 리팩토링해야 하는 코드를 보호합니다(이름을 `RedCondition`으로 변경할 수 있음).
 
 ### <a name="avoid-tag-helper-conflicts"></a>태그 도우미 충돌 방지
 
@@ -289,43 +287,43 @@ FQN을 사용하여 뷰에 태그 도우미를 추가하려면 먼저 FQN(`Autho
 
 이러한 두 도우미는 밀접하게 관련되어 있으며 향후 리팩터링할 수 있으므로 동일한 파일에 유지합니다.
 
-1.  다음 `AutoLinkerHttpTagHelper` 클래스를 *TagHelpers* 폴더에 추가합니다.
+1. 다음 `AutoLinkerHttpTagHelper` 클래스를 *TagHelpers* 폴더에 추가합니다.
 
-    [!code-csharp[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z1AutoLinker.cs?range=7-19)]
+   [!code-csharp[](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z1AutoLinker.cs?range=7-19)]
 
-    >[!NOTE]
-    >`AutoLinkerHttpTagHelper` 클래스는 `p` 요소를 대상으로 하고 [Regex](https://docs.microsoft.com/dotnet/standard/base-types/regular-expression-language-quick-reference)를 사용하여 앵커를 만듭니다.
+   >[!NOTE]
+   >`AutoLinkerHttpTagHelper` 클래스는 `p` 요소를 대상으로 하고 [Regex](https://docs.microsoft.com/dotnet/standard/base-types/regular-expression-language-quick-reference)를 사용하여 앵커를 만듭니다.
 
-2.  *Views/Home/Contact.cshtml* 파일 끝에 다음 마크업을 추가합니다.
+2. *Views/Home/Contact.cshtml* 파일 끝에 다음 마크업을 추가합니다.
 
-    [!code-html[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/Contact.cshtml?highlight=19)]
+   [!code-html[](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/Home/Contact.cshtml?highlight=19)]
 
-3.  앱을 실행하고 태그 도우미가 앵커를 제대로 렌더링하는지 확인합니다.
+3. 앱을 실행하고 태그 도우미가 앵커를 제대로 렌더링하는지 확인합니다.
 
-4.  www 텍스트를 원본 www 텍스트를 포함하는 앵커 태그로 변환할 `AutoLinkerWwwTagHelper`를 포함하도록 `AutoLinker` 클래스를 업데이트합니다. 업데이트된 코드는 아래에 강조 표시됩니다.
+4. www 텍스트를 원본 www 텍스트를 포함하는 앵커 태그로 변환할 `AutoLinkerWwwTagHelper`를 포함하도록 `AutoLinker` 클래스를 업데이트합니다. 업데이트된 코드는 아래에 강조 표시됩니다.
 
-    [!code-csharp[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z1AutoLinker.cs?highlight=15-34&range=7-34)]
+   [!code-csharp[](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z1AutoLinker.cs?highlight=15-34&range=7-34)]
 
-5.  앱을 실행합니다. www 텍스트는 링크로 렌더링되지만 HTTP 텍스트는 그렇지 않습니다. 두 클래스 모두에 중단점을 넣으면 HTTP 태그 도우미 클래스가 먼저 실행되는 것을 확인할 수 있습니다. 문제는 태그 도우미 출력이 캐시된 후 WWW 태그 도우미가 실행될 때, HTTP 태그 도우미의 캐시된 출력을 덮어쓴다는 것입니다. 자습서의 뒷부분에서 태그 도우미가 실행되는 순서를 제어하는 방법을 살펴 보겠습니다. 코드를 다음과 같이 수정합니다.
+5. 앱을 실행합니다. www 텍스트는 링크로 렌더링되지만 HTTP 텍스트는 그렇지 않습니다. 두 클래스 모두에 중단점을 넣으면 HTTP 태그 도우미 클래스가 먼저 실행되는 것을 확인할 수 있습니다. 문제는 태그 도우미 출력이 캐시된 후 WWW 태그 도우미가 실행될 때, HTTP 태그 도우미의 캐시된 출력을 덮어쓴다는 것입니다. 자습서의 뒷부분에서 태그 도우미가 실행되는 순서를 제어하는 방법을 살펴 보겠습니다. 코드를 다음과 같이 수정합니다.
 
-    [!code-csharp[Main](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z1AutoLinkerCopy.cs?highlight=5,6,10,21,22,26&range=8-37)]
+   [!code-csharp[](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z1AutoLinkerCopy.cs?highlight=5,6,10,21,22,26&range=8-37)]
 
-    >[!NOTE]
-    >자동 링크 태그 도우미의 첫 번째 버전에서는 다음 코드를 사용하여 대상의 내용을 얻었습니다.
-    >
-    >[!code-csharp[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z1AutoLinker.cs?range=12)]
-    >
-    >즉, `ProcessAsync` 메서드에 전달된 `TagHelperOutput`을 사용하여 `GetChildContentAsync`를 호출합니다. 이전에 언급한 것처럼, 출력이 캐시되므로 실행할 마지막 태그 도우미가 우선합니다. 다음 코드로 문제를 해결했습니다.
-    >
-    >[!code-csharp[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z2AutoLinkerCopy.cs?range=34-35)]
-    >
-    >위의 코드는 내용이 수정되었는지 확인하고, 수정되었으면 출력 버퍼에서 내용을 가져옵니다.
+   > [!NOTE]
+   > 자동 링크 태그 도우미의 첫 번째 버전에서는 다음 코드를 사용하여 대상의 내용을 얻었습니다.
+   > 
+   > [!code-csharp[](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z1AutoLinker.cs?range=12)]
+   > 
+   > 즉, `ProcessAsync` 메서드에 전달된 `TagHelperOutput`을 사용하여 `GetChildContentAsync`를 호출합니다. 이전에 언급한 것처럼, 출력이 캐시되므로 실행할 마지막 태그 도우미가 우선합니다. 다음 코드로 문제를 해결했습니다.
+   > 
+   > [!code-csharp[](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z2AutoLinkerCopy.cs?range=34-35)]
+   > 
+   > 위의 코드는 내용이 수정되었는지 확인하고, 수정되었으면 출력 버퍼에서 내용을 가져옵니다.
 
-6.  앱을 실행하고 두 링크가 예상대로 작동하는지 확인합니다. 자동 링커 태그 도우미가 정확하고 완전한 것으로 보일 수 있지만 미묘한 문제가 있습니다. WWW 태그 도우미가 먼저 실행되면 www 링크는 올바르지 않습니다. 태그가 실행되는 순서를 제어하기 위해 `Order` 오버로드를 추가하여 코드를 업데이트합니다. `Order` 속성은 동일한 요소를 대상으로 하는 다른 태그 도우미를 기준으로 실행 순서를 결정합니다. 기본 순서 값은 0이고 값이 낮은 인스턴스가 먼저 실행됩니다.
+6. 앱을 실행하고 두 링크가 예상대로 작동하는지 확인합니다. 자동 링커 태그 도우미가 정확하고 완전한 것으로 보일 수 있지만 미묘한 문제가 있습니다. WWW 태그 도우미가 먼저 실행되면 www 링크는 올바르지 않습니다. 태그가 실행되는 순서를 제어하기 위해 `Order` 오버로드를 추가하여 코드를 업데이트합니다. `Order` 속성은 동일한 요소를 대상으로 하는 다른 태그 도우미를 기준으로 실행 순서를 결정합니다. 기본 순서 값은 0이고 값이 낮은 인스턴스가 먼저 실행됩니다.
 
-    [!code-csharp[Main](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z2AutoLinkerCopy.cs?highlight=5,6,7,8&range=8-15)]
+   [!code-csharp[](authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z2AutoLinkerCopy.cs?highlight=5,6,7,8&range=8-15)]
     
-    위의 코드는 HTTP 태그 도우미가 WWW 태그 도우미보다 먼저 실행되도록 보장합니다. `Order`를 `MaxValue`로 변경하고 WWW 태그에 대해 보장된 태그가 잘못되었는지 확인합니다.
+   위의 코드는 HTTP 태그 도우미가 WWW 태그 도우미보다 먼저 실행되도록 보장합니다. `Order`를 `MaxValue`로 변경하고 WWW 태그에 대해 보장된 태그가 잘못되었는지 확인합니다.
 
 ## <a name="inspect-and-retrieve-child-content"></a>자식 콘텐츠 검사 및 검색
 
@@ -335,6 +333,6 @@ FQN을 사용하여 뷰에 태그 도우미를 추가하려면 먼저 FQN(`Autho
 -  `GetContent`로 `GetChildContentAsync`의 결과를 검사할 수 있습니다.
 -  `output.Content`를 수정하고 `GetChildContentAsync`를 자동 링커 샘플에서처럼 호출하지 않는 경우, TagHelper 본문이 실행 또는 렌더링되지 않습니다.
 
-[!code-csharp[Main](../../views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z1AutoLinkerCopy.cs?highlight=5,6,10&range=8-21)]
+[!code-csharp[](../../views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/TagHelpers/z1AutoLinkerCopy.cs?highlight=5,6,10&range=8-21)]
 
 -  `GetChildContentAsync`를 여러 번 호출해도 같은 값이 반환되며 캐시된 결과를 사용하지 않음을 나타내는 false 매개 변수를 전달하지 않은 경우 `TagHelper` 본문을 다시 실행하지 않습니다.

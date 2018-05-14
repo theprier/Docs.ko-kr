@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core에서 컨트롤러 논리 테스트"
+title: ASP.NET Core에서 컨트롤러 논리 테스트
 author: ardalis
-description: "ASP.NET Core에서 Moq 및 xUnit로 컨트롤러 논리를 테스트하는 방법을 알아봅니다."
+description: ASP.NET Core에서 Moq 및 xUnit로 컨트롤러 논리를 테스트하는 방법을 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/testing
-ms.openlocfilehash: cabb1d2498e6c993b327c2fb9719525ec2181f9e
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 51b7a02c697807c9e3504b70f89370126ee0e781
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="testing-controller-logic-in-aspnet-core"></a>ASP.NET Core에서 컨트롤러 논리 테스트
+# <a name="test-controller-logic-in-aspnet-core"></a>ASP.NET Core에서 컨트롤러 논리 테스트
 
 작성자: [Steve Smith](https://ardalis.com/)
 
@@ -40,20 +40,20 @@ ASP.NET MVC 앱의 컨트롤러는 크기가 작아야 하고 사용자 인터�
 
 ## <a name="unit-testing"></a>유닛 테스트
 
-[단위 테스트](https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test)는 인프라 및 종속성으로부터 격리된 상태에서 앱의 일부를 테스트하는 것입니다. 컨트롤러 논리를 단위 테스트하는 경우 단일 작업의 콘텐츠만 테스트되고, 종속성 또는 프레임워크 자체의 동작은 테스트되지 않습니다. 컨트롤러 작업을 단위 테스트할 때에는 동작에만 집중해야 합니다. 컨트롤러 단위 테스트는 [필터](filters.md), [라우팅](../../fundamentals/routing.md), [모델 바인딩](../models/model-binding.md) 같은 것들이 필요 없습니다. 단위 테스트는 하나를 테스트하는 데 집중하기 때문에 일반적으로 작성 방법이 간단하고 신속하게 실행할 수 있습니다. 잘 작성된 단위 테스트 집합은 많은 오버헤드 없이 자주 실행할 수 있습니다. 그러나 단위 테스트는 구성 요소 간의 상호 작용 문제를 검색하지 않습니다. 이 문제는 [통합 테스트](xref:mvc/controllers/testing#integration-testing)의 목적입니다.
+[단위 테스트](/dotnet/articles/core/testing/unit-testing-with-dotnet-test)는 인프라 및 종속성으로부터 격리된 상태에서 앱의 일부를 테스트하는 것입니다. 컨트롤러 논리를 단위 테스트하는 경우 단일 작업의 콘텐츠만 테스트되고, 종속성 또는 프레임워크 자체의 동작은 테스트되지 않습니다. 컨트롤러 작업을 단위 테스트할 때에는 동작에만 집중해야 합니다. 컨트롤러 단위 테스트는 [필터](filters.md), [라우팅](../../fundamentals/routing.md), [모델 바인딩](../models/model-binding.md) 같은 것들이 필요 없습니다. 단위 테스트는 하나를 테스트하는 데 집중하기 때문에 일반적으로 작성 방법이 간단하고 신속하게 실행할 수 있습니다. 잘 작성된 단위 테스트 집합은 많은 오버헤드 없이 자주 실행할 수 있습니다. 그러나 단위 테스트는 구성 요소 간의 상호 작용 문제를 검색하지 않습니다. 이 문제는 [통합 테스트](xref:mvc/controllers/testing#integration-testing)의 목적입니다.
 
 사용자 지정 필터, 경로 등을 작성할 때 단위 테스트를 수행해야 하지만, 특정 컨트롤러 작업에 대한 테스트의 일부로 수행하면 안 됩니다. 격리된 상태에서 테스트해야 합니다.
 
 > [!TIP]
-> [Visual Studio를 사용하여 단위 테스트를 만들고 실행](https://docs.microsoft.com/visualstudio/test/unit-test-your-code)
+> [Visual Studio를 사용하여 단위 테스트를 만들고 실행](/visualstudio/test/unit-test-your-code)
 
 단위 테스트를 시연하려면 다음 컨트롤러를 검토합니다. 이 컨트롤러는 브레인스토밍 세션 목록을 표시하며 POST를 사용하여 새로운 브레인스토밍 세션을 만들 수 있습니다.
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/src/TestingControllersSample/Controllers/HomeController.cs?highlight=12,16,21,42,43)]
+[!code-csharp[](testing/sample/TestingControllersSample/src/TestingControllersSample/Controllers/HomeController.cs?highlight=12,16,21,42,43)]
 
 이 컨트롤러는 [명시적 종속성 원칙](http://deviq.com/explicit-dependencies-principle/)을 따르며, `IBrainstormSessionRepository` 인스턴스를 제공하는 종속성 주입을 예상합니다. 따라서 [Moq](https://www.nuget.org/packages/Moq/) 같은 모의 개체 프레임워크를 사용하여 매우 간편하게 테스트할 수 있습니다. `HTTP GET Index` 메서드는 반복 또는 분기가 없으며 한 가지 메서드만 호출합니다. 이 `Index` 메서드를 테스트하려면 리포지토리의 `List` 메서드에서 `ViewModel`를 사용하여 `ViewResult`가 반환되는지 확인해야 합니다.
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/HomeControllerTests.cs?highlight=17-18&range=1-33,76-95)]
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/HomeControllerTests.cs?highlight=17-18&range=1-33,76-95)]
 
 위에서 나온 `HomeController` `HTTP POST Index` 메서드는 다음을 확인해야 합니다.
 
@@ -63,7 +63,7 @@ ASP.NET MVC 앱의 컨트롤러는 크기가 작아야 하고 사용자 인터�
 
 아래의 첫 번째 테스트처럼 `AddModelError`로 오류를 추가하여 잘못된 모델 상태를 테스트할 수 있습니다.
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/HomeControllerTests.cs?highlight=8,15-16,37-39&range=35-75)]
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/HomeControllerTests.cs?highlight=8,15-16,37-39&range=35-75)]
 
 첫 번째 테스트는 `ModelState`가 잘못된 경우 `GET` 요청과 마찬가지로 동일한 `ViewResult`가 반환되는지 확인합니다. 이 테스트는 잘못된 모델을 전달하려고 시도하지 않습니다. 모델 바인딩이 실행되고 있지 않으므로([통합 테스트](xref:mvc/controllers/testing#integration-testing)에서 연습 모델 바인딩을 사용하겠지만) 어떤 방법으로도 작동하지 않습니다. 이 예에서는 모델 바인딩을 테스트하지 않습니다. 이러한 단위 테스트는 작업 메서드의 코드에서 하는 일만 테스트합니다.
 
@@ -74,23 +74,23 @@ ASP.NET MVC 앱의 컨트롤러는 크기가 작아야 하고 사용자 인터�
 
 앱의 다른 컨트롤러는 특정 브레인스토밍 세션과 관련된 정보를 표시합니다. 잘못된 id 값을 처리하는 일부 논리를 포함합니다.
 
-[!code-csharp[Main](./testing/sample/TestingControllersSample/src/TestingControllersSample/Controllers/SessionController.cs?highlight=19,20,21,22,25,26,27,28)]
+[!code-csharp[](./testing/sample/TestingControllersSample/src/TestingControllersSample/Controllers/SessionController.cs?highlight=19,20,21,22,25,26,27,28)]
 
 컨트롤러 작업에는 테스트할 사례가 각 `return` 문에 하나씩, 총 세 개 있습니다.
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/SessionControllerTests.cs?highlight=27,28,29,46,47,64,65,66,67,68)]
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/SessionControllerTests.cs?highlight=27,28,29,46,47,64,65,66,67,68)]
 
 앱에서는 기능을 웹 API(브레인스토밍 세션과 관련된 아이디어 목록 및 세션에 새 아이디어를 추가하기 위한 메서드)로 노출합니다.
 
 <a name="ideas-controller"></a>
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/src/TestingControllersSample/Api/IdeasController.cs?highlight=21,22,27,30,31,32,33,34,35,36,41,42,46,52,65)]
+[!code-csharp[](testing/sample/TestingControllersSample/src/TestingControllersSample/Api/IdeasController.cs?highlight=21,22,27,30,31,32,33,34,35,36,41,42,46,52,65)]
 
 `ForSession` 메서드는 `IdeaDTO` 형식 목록을 반환합니다. API 호출을 통해 직접 비즈니스 도메인 엔터티를 반환하지 마세요. API 호출은 API 클라이언트에서 요구하는 것보다 더 많은 데이터를 포함하고 앱의 내부 도메인 모델을 외부에 노출되는 API와 불필요하게 연결하는 경우가 자주 있기 때문입니다. 도메인 엔터티와 유선으로 반환할 형식 간의 매핑은 수동으로(여기 보이는 것처럼 LINQ `Select` 사용) 또는 [AutoMapper](https://github.com/AutoMapper/AutoMapper) 같은 라이브러리를 사용하여 수행할 수 있습니다.
 
 `Create` 및 `ForSession` API 메서드에 대한 단위 테스트:
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/ApiIdeasControllerTests.cs?highlight=18,23,29,33,38-39,43,50,58-59,68-70,76-78&range=1-83,121-135)]
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/UnitTests/ApiIdeasControllerTests.cs?highlight=18,23,29,33,38-39,43,50,58-59,68-70,76-78&range=1-83,121-135)]
 
 앞서 언급했듯이, `ModelState`가 유효하지 않을 때 메서드의 동작을 테스트하려면 테스트의 일부로 컨트롤러에 모델 오류를 추가합니다. 단위 테스트에서 모델 유효성 검사 또는 모델 바인딩을 테스트하지 말고, 특정 `ModelState` 값이 나타나면 작업 메서드의 동작만 테스트하세요.
 
@@ -112,7 +112,7 @@ ASP.NET MVC 앱의 컨트롤러는 크기가 작아야 하고 사용자 인터�
 
 `Startup` 클래스:
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/src/TestingControllersSample/Startup.cs?highlight=19,20,34,35,43,52)]
+[!code-csharp[](testing/sample/TestingControllersSample/src/TestingControllersSample/Startup.cs?highlight=19,20,34,35,43,52)]
 
 아래의 통합 테스트에서 `GetTestSession` 메서드가 자주 사용되는 것을 볼 수 있습니다.
 
@@ -127,11 +127,11 @@ The view 'Index' wasn't found. The following locations were searched:
 
 이 문제를 해결하려면 테스트 중인 프로젝트에 대한 보기를 찾을 수 있도록 서버의 콘텐츠 루트를 구성해야 합니다. 이 작업은 아래와 같이 `TestFixture` 클래스의 `UseContentRoot`를 호출하여 수행됩니다.
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/IntegrationTests/TestFixture.cs?highlight=30,33)]
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/IntegrationTests/TestFixture.cs?highlight=30,33)]
 
 `TestFixture` 클래스는 `TestServer`를 구성 및 생성하고, `TestServer`와 통신하도록 `HttpClient`를 설정하는 역할을 합니다. 각 통합 테스트에서는 `Client` 속성을 사용하여 테스트 서버에 연결하고 요청을 만듭니다.
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/IntegrationTests/HomeControllerTests.cs?highlight=20,26,29,30,31,35,38,39,40,41,44,47,48)]
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/IntegrationTests/HomeControllerTests.cs?highlight=20,26,29,30,31,35,38,39,40,41,44,47,48)]
 
 위의 첫 번째 테스트에서, `responseString`은 보기에서 렌더링된 실제 HTML을 보관하며, 이것을 검사하여 예상 결과를 포함하고 있는지 확인할 수 있습니다.
 
@@ -143,7 +143,7 @@ The view 'Index' wasn't found. The following locations were searched:
 
 다음 테스트 집합은 위에 보이는 [IdeasController](xref:mvc/controllers/testing#ideas-controller) 클래스의 `Create` 메서드를 대상으로 합니다.
 
-[!code-csharp[Main](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/IntegrationTests/ApiIdeasControllerTests.cs)]
+[!code-csharp[](testing/sample/TestingControllersSample/tests/TestingControllersSample.Tests/IntegrationTests/ApiIdeasControllerTests.cs)]
 
 HTML 보기를 반환하는 작업 통합 테스트와는 달리, 결과를 반환하는 웹 API 메서드는 일반적으로 위에 보이는 마지막 테스트처럼 강력한 형식의 개체로 deserialize할 수 있습니다. 이 예의 테스트는 결과를 `BrainstormSession` 인스턴스로 deserialize하고, 아이디어가 아이디어 컬렉션에 올바르게 추가되었는지 확인합니다.
 

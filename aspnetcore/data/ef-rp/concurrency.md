@@ -1,7 +1,7 @@
 ---
-title: "EF Core를 사용한 Razor 페이지 - 동시성 - 8/8"
+title: ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 동시성 - 8/8
 author: rick-anderson
-description: "이 자습서에는 여러 사용자가 동시에 같은 엔터티를 업데이트하는 경우 충돌을 처리하는 방법을 보여 줍니다."
+description: 이 자습서에는 여러 사용자가 동시에 같은 엔터티를 업데이트하는 경우 충돌을 처리하는 방법을 보여 줍니다.
 manager: wpickett
 ms.author: riande
 ms.date: 11/15/2017
@@ -9,19 +9,19 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/concurrency
-ms.openlocfilehash: 1c6cdefa1410839606711d7460a8f4d0f1d6c72b
-ms.sourcegitcommit: 18d1dc86770f2e272d93c7e1cddfc095c5995d9e
+ms.openlocfilehash: b6a8354bf438895f5188290013afefd883c4dd0a
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/31/2018
+ms.lasthandoff: 05/03/2018
 ---
 ko-kr/
 
-# <a name="handling-concurrency-conflicts---ef-core-with-razor-pages-8-of-8"></a>동시성 충돌 처리 - Razor 페이지를 사용한 EF Core(8/8)
+# <a name="razor-pages-with-ef-core-in-aspnet-core---concurrency---8-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 동시성 - 8/8
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT), [Tom Dykstra](https://github.com/tdykstra) 및 [Jon P Smith](https://twitter.com/thereformedprog)
 
-[!INCLUDE[about the series](../../includes/RP-EF/intro.md)]
+[!INCLUDE [about the series](../../includes/RP-EF/intro.md)]
 
 이 자습서에는 여러 사용자가 동시에(같은 시간에) 엔터티를 업데이트하는 경우 충돌을 처리하는 방법을 보여 줍니다. 해결할 수 없는 문제가 발생한 경우 [이 단계에 완성된 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part8)을 다운로드합니다.
 
@@ -57,38 +57,38 @@ John이 예산이 여전히 $350,000.00인 편집 페이지에서 **저장**을 
 
 * 사용자가 수정한 속성을 추적하고 DB에서 해당하는 열만 업데이트할 수 있습니다.
 
- 이 시나리오에서는 데이터가 손실되지 않습니다. 다른 속성이 두 사용자에 의해 업데이트되었습니다. 다음에 누군가가 영어 부서를 찾아볼 때는 Jane과 John의 변경 내용을 모두 볼 수 있습니다. 이 업데이트 메서드는 데이터 손실로 이어질 수 있는 충돌 횟수를 줄일 수 있습니다. 이 방법은: * 같은 속성에 변경 사항이 적용된 경우 데이터 손실을 방지할 수 없습니다.
+  이 시나리오에서는 데이터가 손실되지 않습니다. 다른 속성이 두 사용자에 의해 업데이트되었습니다. 다음에 누군가가 영어 부서를 찾아볼 때는 Jane과 John의 변경 내용을 모두 볼 수 있습니다. 이 업데이트 메서드는 데이터 손실로 이어질 수 있는 충돌 횟수를 줄일 수 있습니다. 이 방법은: * 같은 속성에 변경 사항이 적용된 경우 데이터 손실을 방지할 수 없습니다.
         * 일반적으로 웹앱에서는 실현할 수 없습니다. 페치된 값과 새 값을 모두 추적하기 위해 유효한 상태를 유지해야 합니다. 많은 양의 상태를 유지하는 것은 응용 프로그램 성능에 영향을 미칠 수 있습니다.
         * 엔터티에 대한 동시성 감지에 비해 앱 복잡성이 증가할 수 있습니다.
 
 * Jane의 변경 사항을 John의 변경 사항으로 덮어쓸 수 있습니다.
 
- 다음에 누군가가 영어 부서를 찾아볼 때 2013년 9월 1일과 페치된 $350,000.00 값을 볼 수 있습니다. 이 방법을 *클라이언트 우선* 또는 *최종 우선* 시나리오라고 합니다. (클라이언트의 모든 값은 데이터 저장소에 포함된 값에 우선합니다.) 동시성 처리에 대한 코딩을 수행하지 않은 경우 클라이언트 우선이 자동으로 발생합니다.
+  다음에 누군가가 영어 부서를 찾아볼 때 2013년 9월 1일과 페치된 $350,000.00 값을 볼 수 있습니다. 이 방법을 *클라이언트 우선* 또는 *최종 우선* 시나리오라고 합니다. (클라이언트의 모든 값은 데이터 저장소에 포함된 값에 우선합니다.) 동시성 처리에 대한 코딩을 수행하지 않은 경우 클라이언트 우선이 자동으로 발생합니다.
 
 * John의 변경 내용이 DB에서 업데이트되지 않도록 할 수 있습니다. 일반적으로 앱은: * 오류 메시지를 표시합니다.
         * 데이터의 현재 상태를 표시합니다.
         * 사용자가 변경 내용을 다시 적용하도록 허용합니다.
 
- 이를 *저장소 우선* 시나리오라고 합니다. (데이터 저장소 값은 클라이언트가 전송한 값에 우선합니다.) 이 자습서에서는 저장소 우선 시나리오를 구현합니다. 이 메서드는 사용자 알림 없이 덮어쓴 변경 내용이 없는지 확인합니다.
+  이를 *저장소 우선* 시나리오라고 합니다. (데이터 저장소 값은 클라이언트가 전송한 값에 우선합니다.) 이 자습서에서는 저장소 우선 시나리오를 구현합니다. 이 메서드는 사용자 알림 없이 덮어쓴 변경 내용이 없는지 확인합니다.
 
 ## <a name="handling-concurrency"></a>동시성 처리 
 
 속성이 [동시성 토큰](https://docs.microsoft.com/ef/core/modeling/concurrency)으로 구성되는 경우:
 
-* EF Core는 속성이 페치된 후 수정되지 않았는지 확인합니다. 확인 작업은 [SaveChanges](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechanges?view=efcore-2.0#Microsoft_EntityFrameworkCore_DbContext_SaveChanges) 또는 [SaveChangesAsync](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechangesasync?view=efcore-2.0#Microsoft_EntityFrameworkCore_DbContext_SaveChangesAsync_System_Threading_CancellationToken_)가 호출될 때 발생합니다.
-* 속성이 페치된 후 변경된 경우 [DbUpdateConcurrencyException](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbupdateconcurrencyexception?view=efcore-2.0)이 throw됩니다. 
+* EF Core는 속성이 페치된 후 수정되지 않았는지 확인합니다. 확인 작업은 [SaveChanges](/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechanges?view=efcore-2.0#Microsoft_EntityFrameworkCore_DbContext_SaveChanges) 또는 [SaveChangesAsync](/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechangesasync?view=efcore-2.0#Microsoft_EntityFrameworkCore_DbContext_SaveChangesAsync_System_Threading_CancellationToken_)가 호출될 때 발생합니다.
+* 속성이 페치된 후 변경된 경우 [DbUpdateConcurrencyException](/dotnet/api/microsoft.entityframeworkcore.dbupdateconcurrencyexception?view=efcore-2.0)이 throw됩니다. 
 
 `DbUpdateConcurrencyException`의 throw를 지원하도록 DB 및 데이터 모델을 구성해야 합니다.
 
 ### <a name="detecting-concurrency-conflicts-on-a-property"></a>속성에서 동시성 충돌 감지
 
-동시성 충돌은 [ConcurrencyCheck](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.concurrencycheckattribute?view=netcore-2.0) 특성을 사용하여 속성 수준에서 감지될 수 있습니다. 특성은 모델에서 여러 속성에 적용할 수 있습니다. 자세한 내용은 [데이터 주석 - ConcurrencyCheck](https://docs.microsoft.com/ef/core/modeling/concurrency#data-annotations)를 참조하세요.
+동시성 충돌은 [ConcurrencyCheck](/dotnet/api/system.componentmodel.dataannotations.concurrencycheckattribute?view=netcore-2.0) 특성을 사용하여 속성 수준에서 감지될 수 있습니다. 특성은 모델에서 여러 속성에 적용할 수 있습니다. 자세한 내용은 [데이터 주석 - ConcurrencyCheck](/ef/core/modeling/concurrency#data-annotations)를 참조하세요.
 
 `[ConcurrencyCheck]` 특성은 이 자습서에서 사용되지 않습니다.
 
 ### <a name="detecting-concurrency-conflicts-on-a-row"></a>행에서 동시성 충돌 감지
 
-동시성 충돌을 감지하기 위해 [rowversion](https://docs.microsoft.com/sql/t-sql/data-types/rowversion-transact-sql) 추적 열이 모델에 추가됩니다.  `rowversion`은:
+동시성 충돌을 감지하기 위해 [rowversion](/sql/t-sql/data-types/rowversion-transact-sql) 추적 열이 모델에 추가됩니다.  `rowversion`은:
 
 * SQL Server 한정적입니다. 다른 데이터베이스는 유사한 기능을 제공하지 않을 수 있습니다.
 * DB에서 페치된 이후로 엔터티가 변경되지 않았는지를 확인하는 데 사용됩니다. 
@@ -105,9 +105,9 @@ EF Core에서 `Update` 또는 `Delete` 명령에 의해 업데이트된 행이 �
 
 *Models/Department.cs*에서 RowVersion으로 명명된 추적 속성을 추가합니다.
 
-[!code-csharp[Main](intro/samples/cu/Models/Department.cs?name=snippet_Final&highlight=26,27)]
+[!code-csharp[](intro/samples/cu/Models/Department.cs?name=snippet_Final&highlight=26,27)]
 
-[타임스탬프](https://docs.microsoft.com/dotnet/api/system.componentmodel.dataannotations.timestampattribute) 특성은 이 열이 `Update` 및 `Delete` 명령의 `Where` 절에 포함되어 있음을 지정합니다. SQL `rowversion` 형식이 대체하기 전에 이전 버전의 SQL Server가 SQL `timestamp` 데이터 형식을 사용했으므로 특성은 `Timestamp`라고 합니다.
+[타임스탬프](/dotnet/api/system.componentmodel.dataannotations.timestampattribute) 특성은 이 열이 `Update` 및 `Delete` 명령의 `Where` 절에 포함되어 있음을 지정합니다. SQL `rowversion` 형식이 대체하기 전에 이전 버전의 SQL Server가 SQL `timestamp` 데이터 형식을 사용했으므로 특성은 `Timestamp`라고 합니다.
 
 또한 흐름 API가 추적 속성을 지정할 수 있습니다.
 
@@ -127,7 +127,7 @@ modelBuilder.Entity<Department>()
 
 [!code-sql[](intro/samples/sql.txt?highlight=4-6)]
 
-[@@ROWCOUNT](https://docs.microsoft.com/sql/t-sql/functions/rowcount-transact-sql)는 마지막 명령문의 영향을 받는 행 수를 반환합니다. 행이 업데이트되지 않은 경우 EF Core는 `DbUpdateConcurrencyException`을 throw합니다.
+[@@ROWCOUNT](/sql/t-sql/functions/rowcount-transact-sql)는 마지막 명령문의 영향을 받는 행 수를 반환합니다. 행이 업데이트되지 않은 경우 EF Core는 `DbUpdateConcurrencyException`을 throw합니다.
 
 Visual Studio의 출력 창에서 T-SQL EF Core 생성을 확인할 수 있습니다.
 
@@ -147,7 +147,7 @@ dotnet ef database update
 * *Migrations/{time stamp}_RowVersion.cs* 마이그레이션 파일을 추가합니다.
 * *Migrations/SchoolContextModelSnapshot.cs* 파일을 업데이트합니다. 업데이트는 다음 강조 표시된 코드를 `BuildModel` 메서드에 추가합니다.
 
-[!code-csharp[Main](intro/samples/cu/Migrations/SchoolContextModelSnapshot2.cs?name=snippet&highlight=14-16)]
+[!code-csharp[](intro/samples/cu/Migrations/SchoolContextModelSnapshot2.cs?name=snippet&highlight=14-16)]
 
 * 마이그레이션을 실행하여 DB를 업데이트합니다.
 
@@ -158,9 +158,9 @@ dotnet ef database update
 * 프로젝트 디렉터리(*Program.cs*, *Startup.cs* 및 *.csproj* 파일이 포함된 디렉터리)에서 명령 창을 엽니다.
 * 다음 명령을 실행합니다.
 
- ```console
-dotnet aspnet-codegenerator razorpage -m Department -dc SchoolContext -udl -outDir Pages\Departments --referenceScriptLibraries
- ```
+  ```console
+  dotnet aspnet-codegenerator razorpage -m Department -dc SchoolContext -udl -outDir Pages\Departments --referenceScriptLibraries
+  ```
 
 위의 명령은 `Department` 모델을 스캐폴드합니다. Visual Studio에서 프로젝트를 엽니다.
 
@@ -193,9 +193,9 @@ dotnet aspnet-codegenerator razorpage -m Department -dc SchoolContext -udl -outD
 
 [!code-csharp[](intro/samples/cu/Pages/Departments/Edit.cshtml.cs?name=snippet)]
 
-동시성 문제를 감지하기 위해 [OriginalValue](https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.changetracking.propertyentry.originalvalue?view=efcore-2.0#Microsoft_EntityFrameworkCore_ChangeTracking_PropertyEntry_OriginalValue)가 페치된 엔터티의 `rowVersion` 값으로 업데이트됩니다. EF Core는 원본 `RowVersion` 값을 포함하는 WHERE 절과 함께 SQL UPDATE 명령을 생성합니다. UPDATE 명령의 영향을 받는 행이 없는 경우(행에 원래 `RowVersion` 값이 없음) `DbUpdateConcurrencyException` 예외가 throw됩니다.
+동시성 문제를 감지하기 위해 [OriginalValue](/dotnet/api/microsoft.entityframeworkcore.changetracking.propertyentry.originalvalue?view=efcore-2.0#Microsoft_EntityFrameworkCore_ChangeTracking_PropertyEntry_OriginalValue)가 페치된 엔터티의 `rowVersion` 값으로 업데이트됩니다. EF Core는 원본 `RowVersion` 값을 포함하는 WHERE 절과 함께 SQL UPDATE 명령을 생성합니다. UPDATE 명령의 영향을 받는 행이 없는 경우(행에 원래 `RowVersion` 값이 없음) `DbUpdateConcurrencyException` 예외가 throw됩니다.
 
-[!code-csharp[](intro/samples/cu/Pages/Departments/Edit.cshtml.cs?name=snippet_rv&highlight=24-)]
+[!code-csharp[](intro/samples/cu/Pages/Departments/Edit.cshtml.cs?name=snippet_rv&highlight=24-999)]
 
 위의 코드에서 `Department.RowVersion`은 엔터티가 페치될 때 값입니다. `OriginalValue`는 `FirstOrDefaultAsync`가 이 메서드에서 호출될 때 DB의 값입니다.
 
@@ -303,10 +303,10 @@ dotnet aspnet-codegenerator razorpage -m Department -dc SchoolContext -udl -outD
 
 데이터 모델을 상속하는 방법은 [상속](xref:data/ef-mvc/inheritance)을 참조하세요.
 
-### <a name="additional-resources"></a>추가 리소스
+### <a name="additional-resources"></a>추가 자료
 
-* [EF Core의 동시성 토큰](https://docs.microsoft.com/ef/core/modeling/concurrency)
-* [EF Core의 동시성 처리](https://docs.microsoft.com/ef/core/saving/concurrency)
+* [EF Core의 동시성 토큰](/ef/core/modeling/concurrency)
+* [EF Core의 동시성 처리](/ef/core/saving/concurrency)
 
->[!div class="step-by-step"]
-[이전](xref:data/ef-rp/update-related-data)
+> [!div class="step-by-step"]
+> [이전](xref:data/ef-rp/update-related-data)

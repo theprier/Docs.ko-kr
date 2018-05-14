@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/overview
-ms.openlocfilehash: b9af2068aec4326585eb2a8994399a16461db3be
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
-ms.translationtype: MT
+ms.openlocfilehash: 9af08d8fcbd91a9189fe1f4c6cedd644361773f7
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/10/2018
+ms.lasthandoff: 05/03/2018
 ---
 # <a name="views-in-aspnet-core-mvc"></a>ASP.NET Core MVC에서 뷰
 
@@ -56,7 +56,7 @@ ASP.NET Core MVC에서 뷰는 Razor 태그에서 [C# 프로그래밍 언어](/do
 
 ## <a name="how-controllers-specify-views"></a>컨트롤러에서 뷰를 지정하는 방법
 
-일반적으로 뷰는 [ActionResult](/aspnet/core/api/microsoft.aspnetcore.mvc.actionresult) 형식인 [ViewResult](/aspnet/core/api/microsoft.aspnetcore.mvc.viewresult)로 작업에서 반환됩니다. 사용자 작업 메서드로 `ViewResult`를 직접 만들고 반환할 수 있지만 일반적으로 이렇게 수행되지 않습니다. 대부분의 컨트롤러는 [Controller](/aspnet/core/api/microsoft.aspnetcore.mvc.controller)를 상속하므로 `View` 도우미 메서드를 사용하여 `ViewResult`를 반환합니다.
+일반적으로 뷰는 [ActionResult](/dotnet/api/microsoft.aspnetcore.mvc.actionresult) 형식인 [ViewResult](/dotnet/api/microsoft.aspnetcore.mvc.viewresult)로 작업에서 반환됩니다. 사용자 작업 메서드로 `ViewResult`를 직접 만들고 반환할 수 있지만 일반적으로 이렇게 수행되지 않습니다. 대부분의 컨트롤러는 [Controller](/dotnet/api/microsoft.aspnetcore.mvc.controller)를 상속하므로 `View` 도우미 메서드를 사용하여 `ViewResult`를 반환합니다.
 
 *HomeController.cs*
 
@@ -115,7 +115,7 @@ return View("./About");
 
 [부분 뷰](xref:mvc/views/partial) 및 [뷰 구성 요소](xref:mvc/views/view-components)는 비슷하지만 다른 검색 메커니즘을 사용합니다.
 
-사용자 지정 [IViewLocationExpander](/aspnet/core/api/microsoft.aspnetcore.mvc.razor.iviewlocationexpander)를 사용하여 뷰가 앱 내에 어떻게 위치하는지에 대한 기본 규칙을 사용자 지정할 수 있습니다.
+사용자 지정 [IViewLocationExpander](/dotnet/api/microsoft.aspnetcore.mvc.razor.iviewlocationexpander)를 사용하여 뷰가 앱 내에 어떻게 위치하는지에 대한 기본 규칙을 사용자 지정할 수 있습니다.
 
 뷰 검색은 파일 이름으로 뷰 파일을 찾는 방식을 사용합니다. 기본 파일 시스템이 대/소문자를 구분하는 경우 뷰 이름도 대/소문자를 구분합니다. 운영 체제 간 호환성을 위해, 컨트롤러 및 작업 이름, 관련 뷰 폴더 및 파일 이름 간에 대/소문자를 일치시킵니다. 대/소문자 구분 파일 시스템으로 작업하는 동안 파일 뷰를 찾을 수 없는 오류가 발생하면, 요청된 뷰 파일과 실제 뷰 파일 이름 간에 대/소문자가 일치하는지 확인합니다.
 
@@ -190,7 +190,7 @@ namespace WebApplication1.ViewModels
 
 강력한 형식의 뷰 외에도, 뷰는 *약한형*(*느슨한 형*이라고도 함) 데이터 컬렉션에 액세스할 수 있습니다. 강력한 형식과 달리, *약한 형식*(또는 *느슨한 형식*)은 사용 중인 데이터 형식을 명시적으로 선언하지 않는 것을 의미합니다. 컨트롤러 및 뷰 간에 적은 양의 데이터를 전달하기 위해 약한형 데이터 컬렉션을 사용할 수 있습니다.
 
-| 다음 사이에 데이터 전달 ...                        | 예제                                                                        |
+| 다음 사이에 데이터 전달 ...                        | 예                                                                        |
 | ------------------------------------------------- | ------------------------------------------------------------------------------ |
 | 컨트롤러 및 뷰                             | 드롭다운 목록을 데이터로 채웁니다.                                          |
 | 뷰 및 [레이아웃 뷰](xref:mvc/views/layout)   | 뷰 파일의 레이아웃 뷰에서 **\<title>** 요소 콘텐츠를 설정합니다.  |
@@ -205,7 +205,7 @@ namespace WebApplication1.ViewModels
 
 **ViewData**
 
-`ViewData`는 `string` 키를 통해 액세스된 [ViewDataDictionary](/aspnet/core/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary) 개체입니다. 문자열 데이터는 캐스트할 필요 없이 직접 저장 및 사용할 수 있지만 추출할 때는 다른 `ViewData` 개체 값을 특정 형식으로 캐스트해야 합니다. `ViewData`를 사용하여 컨트롤러에서 뷰로, [부분 뷰](xref:mvc/views/partial) 및 [레이아웃](xref:mvc/views/layout)을 포함한 뷰 내에서 데이터를 전달할 수 있습니다.
+`ViewData`는 `string` 키를 통해 액세스된 [ViewDataDictionary](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary) 개체입니다. 문자열 데이터는 캐스트할 필요 없이 직접 저장 및 사용할 수 있지만 추출할 때는 다른 `ViewData` 개체 값을 특정 형식으로 캐스트해야 합니다. `ViewData`를 사용하여 컨트롤러에서 뷰로, [부분 뷰](xref:mvc/views/partial) 및 [레이아웃](xref:mvc/views/layout)을 포함한 뷰 내에서 데이터를 전달할 수 있습니다.
 
 다음은 작업에서 `ViewData`를 사용하여 인사말 및 주소에 대한 값을 설정하는 예제입니다.
 
@@ -247,7 +247,7 @@ public IActionResult SomeAction()
 
 참고: `ViewBag`은 Razor 페이지에서 사용할 수 없습니다.
 
-`ViewBag`은 `ViewData`에 저장된 개체에 대한 동적 액세스를 제공하는 [DynamicViewData](/aspnet/core/api/microsoft.aspnetcore.mvc.viewfeatures.internal.dynamicviewdata) 개체입니다. 캐스팅이 필요하지 않으므로 `ViewBag`이 작업하기 더 편리할 수 있습니다. 다음 예제에서는 `ViewData`를 사용할 때와 동일한 결과로 `ViewBag`을 사용하는 방법을 보여 줍니다.
+`ViewBag`은 `ViewData`에 저장된 개체에 대한 동적 액세스를 제공하는 [DynamicViewData](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.internal.dynamicviewdata) 개체입니다. 캐스팅이 필요하지 않으므로 `ViewBag`이 작업하기 더 편리할 수 있습니다. 다음 예제에서는 `ViewData`를 사용할 때와 동일한 결과로 `ViewBag`을 사용하는 방법을 보여 줍니다.
 
 ```csharp
 public IActionResult SomeAction()
@@ -321,11 +321,11 @@ public IActionResult SomeAction()
  `ViewBag`은 Razor 페이지에서 사용할 수 없습니다.
 
 * `ViewData`
-  * [ViewDataDictionary](/aspnet/core/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary)에서 파생되므로 유용한 `ContainsKey`, `Add`, `Remove` 및 `Clear`와 같은 사전 속성이 있습니다.
+  * [ViewDataDictionary](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary)에서 파생되므로 유용한 `ContainsKey`, `Add`, `Remove` 및 `Clear`와 같은 사전 속성이 있습니다.
   * 사전의 키는 문자열이므로 공백을 사용할 수 있습니다. 예: `ViewData["Some Key With Whitespace"]`
   * `string` 이외의 모든 형식을 뷰에서 `ViewData`를 사용하도록 캐스트해야 합니다.
 * `ViewBag`
-  * [DynamicViewData](/aspnet/core/api/microsoft.aspnetcore.mvc.viewfeatures.internal.dynamicviewdata)에서 파생되므로 점 표기법(`@ViewBag.SomeKey = <value or object>`)을 사용하여 동적 속성을 생성할 수 있으며 캐스팅이 필요하지 않습니다. `ViewBag` 구문을 사용하면 신속하게 컨트롤러와 뷰를 추가할 수 있습니다.
+  * [DynamicViewData](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.internal.dynamicviewdata)에서 파생되므로 점 표기법(`@ViewBag.SomeKey = <value or object>`)을 사용하여 동적 속성을 생성할 수 있으며 캐스팅이 필요하지 않습니다. `ViewBag` 구문을 사용하면 신속하게 컨트롤러와 뷰를 추가할 수 있습니다.
   * 간단하게 Null 값을 확인합니다. 예: `@ViewBag.Person?.Name`
 
 **ViewData 또는 ViewBag을 사용하는 경우**

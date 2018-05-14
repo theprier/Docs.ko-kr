@@ -1,7 +1,7 @@
 ---
-title: "응용 프로그램 모델 작업"
+title: ASP.NET Core에서 응용 프로그램 모델 작업
 author: ardalis
-description: 
+description: MVC 요소가 ASP.NET Core에서 작동하는 방법을 수정하려면 응용 프로그램 모델을 읽고 조작하는 방법을 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -9,15 +9,15 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/controllers/application-model
-ms.openlocfilehash: 08f67b517b2d7ee1186666a4eb5c6c925eb3bd5d
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: f61d04f6cf0aa054566d9f48a030cf268f2ba72a
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="working-with-the-application-model"></a>응용 프로그램 모델 작업
+# <a name="work-with-the-application-model-in-aspnet-core"></a>ASP.NET Core에서 응용 프로그램 모델 작업
 
-작성자 [Steve Smith](https://ardalis.com/)
+작성자: [Steve Smith](https://ardalis.com/)
 
 ASP.NET Core MVC는 MVC 앱의 구성 요소를 나타내는 *응용 프로그램 모델*을 정의합니다. 이 모델을 읽고 조작하여 MVC 요소의 작동 방법을 수정할 수 있습니다. 기본적으로 MVC는 컨트롤러로 간주되는 클래스, 작업할 해당 클래스의 메서드 및 매개 변수 및 라우팅 작동 방법을 결정하는 특정 규칙을 따릅니다. 고유한 규칙을 만들고 전역으로 또는 특성으로 적용하여 앱의 요구 사항에 맞게 이 동작을 사용자 지정할 수 있습니다.
 
@@ -39,18 +39,18 @@ ASP.NET Core MVC 응용 프로그램 모델의 구조는 다음과 같습니다.
 
 ### <a name="iapplicationmodelprovider"></a>IApplicationModelProvider
 
-ASP.NET Core MVC는 공급자 패턴을 사용하여 응용 프로그램 모델을 로드하며 [IApplicationModelProvider](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.iapplicationmodelprovider) 인터페이스에 의해 정의됩니다. 이 섹션에서는 이 공급자가 작동하는 방법에 대한 내부 구현 세부 정보 중 일부를 다룹니다. 규칙을 사용하여 응용 프로그램 모델을 활용하는 대부분의 앱이 수행해야 하는 고급 항목입니다.
+ASP.NET Core MVC는 공급자 패턴을 사용하여 응용 프로그램 모델을 로드하며 [IApplicationModelProvider](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.iapplicationmodelprovider) 인터페이스에 의해 정의됩니다. 이 섹션에서는 이 공급자가 작동하는 방법에 대한 내부 구현 세부 정보 중 일부를 다룹니다. 규칙을 사용하여 응용 프로그램 모델을 활용하는 대부분의 앱이 수행해야 하는 고급 항목입니다.
 
 `IApplicationModelProvider` 인터페이스의 구현은 서로 "래핑"합니다. 이 때 각 구현은 해당 `Order` 속성에 따라 오름차순으로 `OnProvidersExecuting`를 호출합니다. `OnProvidersExecuted` 메서드는 역순으로 호출됩니다. 프레임워크는 여러 공급자를 정의합니다.
 
 First(`Order=-1000`):
 
-* [`DefaultApplicationModelProvider`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.internal.defaultapplicationmodelprovider)
+* [`DefaultApplicationModelProvider`](/dotnet/api/microsoft.aspnetcore.mvc.internal.defaultapplicationmodelprovider)
 
 Then(`Order=-990`):
 
-* [`AuthorizationApplicationModelProvider`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.internal.authorizationapplicationmodelprovider)
-* [`CorsApplicationModelProvider`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.cors.internal.corsapplicationmodelprovider)
+* [`AuthorizationApplicationModelProvider`](/dotnet/api/microsoft.aspnetcore.mvc.internal.authorizationapplicationmodelprovider)
+* [`CorsApplicationModelProvider`](/dotnet/api/microsoft.aspnetcore.mvc.cors.internal.corsapplicationmodelprovider)
 
 > [!NOTE]
 > `Order`에 대해 같은 값을 가진 두 공급자를 호출하는 순서는 정의되지 않으며 따라서 사용하지 않아야 합니다.
@@ -66,7 +66,7 @@ Then(`Order=-990`):
 * 컨텍스트에 작업 메서드 매개 변수 추가
 * 경로 및 기타 특성 적용
 
-일부 기본 제공 동작은 `DefaultApplicationModelProvider`에 의해 구현됩니다. 이 공급자는 [`ControllerModel`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.controllermodel)을 구성할 책임이 있습니다. 여기서는 [`ActionModel`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.actionmodel#Microsoft_AspNetCore_Mvc_ApplicationModels_ActionModel), [`PropertyModel`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.propertymodel) 및 [`ParameterModel`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.parametermodel#Microsoft_AspNetCore_Mvc_ApplicationModels_ParameterModel) 인스턴스를 차례로 참조합니다. `DefaultApplicationModelProvider` 클래스는 나중에 변경될 수 있는 내부 프레임워크 구현 세부 정보입니다. 
+일부 기본 제공 동작은 `DefaultApplicationModelProvider`에 의해 구현됩니다. 이 공급자는 [`ControllerModel`](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.controllermodel)을 구성할 책임이 있습니다. 여기서는 [`ActionModel`](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.actionmodel#Microsoft_AspNetCore_Mvc_ApplicationModels_ActionModel), [`PropertyModel`](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.propertymodel) 및 [`ParameterModel`](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.parametermodel#Microsoft_AspNetCore_Mvc_ApplicationModels_ParameterModel) 인스턴스를 차례로 참조합니다. `DefaultApplicationModelProvider` 클래스는 나중에 변경될 수 있는 내부 프레임워크 구현 세부 정보입니다. 
 
 `AuthorizationApplicationModelProvider`는 `AuthorizeFilter` 및 `AllowAnonymousFilter` 특성과 연결된 동작을 적용할 책임이 있습니다. [이러한 특성에 대한 자세한 정보](xref:security/authorization/simple)
 
@@ -78,10 +78,10 @@ Then(`Order=-990`):
 
 사용할 수 있는 규칙은 다음과 같습니다.
 
-* [`IApplicationModelConvention`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.iapplicationmodelconvention)
-* [`IControllerModelConvention`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.icontrollermodelconvention)
-* [`IActionModelConvention`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.iactionmodelconvention)
-* [`IParameterModelConvention`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.iparametermodelconvention)
+* [`IApplicationModelConvention`](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.iapplicationmodelconvention)
+* [`IControllerModelConvention`](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.icontrollermodelconvention)
+* [`IActionModelConvention`](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.iactionmodelconvention)
+* [`IParameterModelConvention`](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.iparametermodelconvention)
 
 MVC 옵션을 추가하거나 `Attribute`를 구현하고 컨트롤러, 작업 또는 작업 매개 변수([`Filters`](xref:mvc/controllers/filters)와 유사)에 적용하여 규칙을 적용합니다. 필터와 달리 각 요청의 일부가 아니라 앱을 시작하는 경우에만 규칙이 실행됩니다.
 
@@ -89,25 +89,25 @@ MVC 옵션을 추가하거나 `Attribute`를 구현하고 컨트롤러, 작업 �
 
 다음 규칙은 응용 프로그램 모델에 속성을 추가하는 데 사용됩니다. 
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Conventions/ApplicationDescription.cs)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Conventions/ApplicationDescription.cs)]
 
 `Startup`의 `ConfigureServices`에 MVC를 추가할 경우 옵션으로 응용 프로그램 모델 규칙을 적용합니다.
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Startup.cs?name=ConfigureServices&highlight=5)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Startup.cs?name=ConfigureServices&highlight=5)]
 
 속성은 컨트롤러 작업 내의 `ActionDescriptor` 속성 컬렉션에서 액세스할 수 있습니다.
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Controllers/AppModelController.cs?name=AppModelController)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Controllers/AppModelController.cs?name=AppModelController)]
 
 ### <a name="sample-modifying-the-controllermodel-description"></a>샘플: ControllerModel 설명 수정
 
 이전의 예제처럼 컨트롤러 모델은 사용자 지정 속성을 포함하도록 수정될 수도 있습니다. 그러면 응용 프로그램 모델에 지정된 동일한 이름을 가진 기존 속성을 덮어씁니다. 다음과 같은 규칙 특성은 컨트롤러 수준에서 설명을 추가합니다.
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Conventions/ControllerDescriptionAttribute.cs)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Conventions/ControllerDescriptionAttribute.cs)]
 
 이 규칙은 컨트롤러에 대한 특성으로 적용됩니다.
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Controllers/DescriptionAttributesController.cs?name=ControllerDescription&highlight=1)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Controllers/DescriptionAttributesController.cs?name=ControllerDescription&highlight=1)]
 
 이전 예제와 같이 동일한 방식으로 "설명" 속성에 액세스합니다.
 
@@ -115,53 +115,53 @@ MVC 옵션을 추가하거나 `Attribute`를 구현하고 컨트롤러, 작업 �
 
 개별 작업에 별도의 특성 규칙을 적용할 수 있습니다. 그러면 이미 응용 프로그램 또는 컨트롤러 수준에서 적용되는 동작을 재정의합니다.
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Conventions/ActionDescriptionAttribute.cs)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Conventions/ActionDescriptionAttribute.cs)]
 
 이전 예제의 컨트롤러 내에 있는 작업에 이를 적용하면 컨트롤러 수준 규칙을 재정의하는 방법을 보여줍니다.
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Controllers/DescriptionAttributesController.cs?name=DescriptionAttributesController&highlight=9)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Controllers/DescriptionAttributesController.cs?name=DescriptionAttributesController&highlight=9)]
 
 ### <a name="sample-modifying-the-parametermodel"></a>샘플: ParameterModel 수정
 
 `BindingInfo`를 수정하는 작업 매개 변수에 다음 규칙을 적용할 수 있습니다. 다음과 같은 규칙의 매개 변수는 경로 매개 변수여야 합니다. 다른 잠재적인 바인딩 소스(예: 쿼리 문자열 값)는 무시됩니다.
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Conventions/MustBeInRouteParameterModelConvention.cs)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Conventions/MustBeInRouteParameterModelConvention.cs)]
 
 특성이 모든 작업 매개 변수에 적용될 수 있습니다.
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Controllers/ParameterModelController.cs?name=ParameterModelController&highlight=5)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Controllers/ParameterModelController.cs?name=ParameterModelController&highlight=5)]
 
 ### <a name="sample-modifying-the-actionmodel-name"></a>샘플: ActionModel 이름 수정
 
 다음 규칙은 적용되는 작업의 *이름*을 업데이트하도록 `ActionModel`을 수정합니다. 특성에 대한 매개 변수로 새 이름이 제공됩니다. 라우팅에서 이 새 이름을 사용하므로 이 작업 메서드에 연결하는 데 사용된 경로에 영향을 줍니다.
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Conventions/CustomActionNameAttribute.cs)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Conventions/CustomActionNameAttribute.cs)]
 
 이 특성은 `HomeController`에서 작업 메서드에 적용됩니다.
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Controllers/HomeController.cs?name=ActionModelConvention&highlight=2)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Controllers/HomeController.cs?name=ActionModelConvention&highlight=2)]
 
 메서드 이름이 `SomeName`이지만 특성은 메서드 이름을 사용하는 MVC 규칙을 재정의하 작업 이름을 `MyCoolAction`으로 바꿉니다. 따라서 이 작업에 도달하는 데 사용된 경로는 `/Home/MyCoolAction`입니다.
 
 > [!NOTE]
-> 이 예제는 기본적으로 기본 제공 [ActionName](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.actionnameattribute) 특성을 사용하는 것과 같습니다.
+> 이 예제는 기본적으로 기본 제공 [ActionName](/dotnet/api/microsoft.aspnetcore.mvc.actionnameattribute) 특성을 사용하는 것과 같습니다.
 
 ### <a name="sample-custom-routing-convention"></a>샘플: 사용자 지정 라우팅 규칙
 
 `IApplicationModelConvention`을 사용하여 라우팅 작동 방법을 사용자 지정할 수 있습니다. 예를 들어 다음 규칙은 컨트롤러의 네임스페이스를 해당 경로에 통합하고 네임스페이스의 `.`를 경로의 `/`로 바꿉니다.
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Conventions/NamespaceRoutingConvention.cs)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Conventions/NamespaceRoutingConvention.cs)]
 
 규칙은 시작에서 옵션으로 추가됩니다.
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Startup.cs?name=ConfigureServices&highlight=6)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Startup.cs?name=ConfigureServices&highlight=6)]
 
 > [!TIP]
-> `services.Configure<MvcOptions>(c => c.Conventions.Add(YOURCONVENTION));`를 사용하는 `MvcOptions`에 액세스하여 [미들웨어](xref:fundamentals/middleware)에 규칙을 추가할 수 있습니다.
+> `services.Configure<MvcOptions>(c => c.Conventions.Add(YOURCONVENTION));`를 사용하는 `MvcOptions`에 액세스하여 [미들웨어](xref:fundamentals/middleware/index)에 규칙을 추가할 수 있습니다.
 
 이 샘플에서는 컨트롤러의 이름에 "네임스페이스"가 있는 특성 라우팅을 사용하지 않는 경로에 이 규칙을 적용합니다. 다음 컨트롤러에서는 이 규칙을 보여줍니다.
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Controllers/NamespaceRoutingController.cs?highlight=7-8)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Controllers/NamespaceRoutingController.cs?highlight=7-8)]
 
 ## <a name="application-model-usage-in-webapicompatshim"></a>WebApiCompatShim의 응용 프로그램 모델 사용
 
@@ -178,10 +178,10 @@ services.AddMvc().AddWebApiConventions();
 
 shim에서 제공하는 규칙은 특정 특성에 적용되는 앱의 일부에만 적용됩니다. 다음과 같은 네 가지 특성이 컨트롤에 사용됩니다. 여기서 컨트롤러는 shim의 규칙에 의해 수정된 규칙을 포함해야 합니다.
 
-* [UseWebApiActionConventionsAttribute](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.webapicompatshim.usewebapiactionconventionsattribute)
-* [UseWebApiOverloadingAttribute](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.webapicompatshim.usewebapioverloadingattribute)
-* [UseWebApiParameterConventionsAttribute](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.webapicompatshim.usewebapiparameterconventionsattribute)
-* [UseWebApiRoutesAttribute](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.webapicompatshim.usewebapiroutesattribute)
+* [UseWebApiActionConventionsAttribute](/dotnet/api/microsoft.aspnetcore.mvc.webapicompatshim.usewebapiactionconventionsattribute)
+* [UseWebApiOverloadingAttribute](/dotnet/api/microsoft.aspnetcore.mvc.webapicompatshim.usewebapioverloadingattribute)
+* [UseWebApiParameterConventionsAttribute](/dotnet/api/microsoft.aspnetcore.mvc.webapicompatshim.usewebapiparameterconventionsattribute)
+* [UseWebApiRoutesAttribute](/dotnet/api/microsoft.aspnetcore.mvc.webapicompatshim.usewebapiroutesattribute)
 
 ### <a name="action-conventions"></a>작업 규칙
 
@@ -203,8 +203,8 @@ shim에서 제공하는 규칙은 특정 특성에 적용되는 앱의 일부에
 
 ## <a name="using-apiexplorer-to-document-your-app"></a>ApiExplorer를 사용하여 앱 문서화
 
-응용 프로그램 모델은 앱의 구조를 트래버스하는 데 사용할 수 있는 각 수준에서 [`ApiExplorer`](https://docs.microsoft.com/aspnet/core/api/microsoft.aspnetcore.mvc.applicationmodels.apiexplorermodel) 속성을 노출합니다. [Swagger와 같은 도구를 사용하여 Web API용 도움말 페이지를 생성](https://docs.microsoft.com/aspnet/core/tutorials/web-api-help-pages-using-swagger)하는 데 사용할 수 있습니다. `ApiExplorer` 속성은 앱의 모델이 노출해야 하는 부분을 지정하도록 설정할 수 있는 `IsVisible` 속성을 노출합니다. 규칙을 사용하여 이 설정을 구성할 수 있습니다.
+응용 프로그램 모델은 앱의 구조를 트래버스하는 데 사용할 수 있는 각 수준에서 [`ApiExplorer`](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.apiexplorermodel) 속성을 노출합니다. [Swagger와 같은 도구를 사용하여 Web API용 도움말 페이지를 생성](xref:tutorials/web-api-help-pages-using-swagger)하는 데 사용할 수 있습니다. `ApiExplorer` 속성은 앱의 모델이 노출해야 하는 부분을 지정하도록 설정할 수 있는 `IsVisible` 속성을 노출합니다. 규칙을 사용하여 이 설정을 구성할 수 있습니다.
 
-[!code-csharp[Main](./application-model/sample/src/AppModelSample/Conventions/EnableApiExplorerApplicationConvention.cs)]
+[!code-csharp[](./application-model/sample/src/AppModelSample/Conventions/EnableApiExplorerApplicationConvention.cs)]
 
 이 접근 방식(및 필요한 경우 추가 규칙)을 사용하여 앱 내의 모든 수준에서 API 가시성을 사용하거나 사용하지 않도록 설정할 수 있습니다. 
