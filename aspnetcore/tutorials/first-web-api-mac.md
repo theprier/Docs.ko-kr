@@ -1,179 +1,199 @@
 ---
-title: "ASP.NET Core 및 Mac용 Visual Studio를 사용하여 Web API 만들기"
+title: ASP.NET Core 및 Mac용 Visual Studio를 사용하여 Web API 만들기
 author: rick-anderson
-description: "ASP.NET Core MVC 및 Mac용 Visual Studio를 사용하여 Web API 만들기"
+description: ASP.NET Core MVC 및 Mac용 Visual Studio를 사용하여 Web API 만들기
 helpviewer_heywords: ASP.NET Core, WebAPI, Web API, REST, mac, macOS, HTTP, Service, HTTP Service
 manager: wpickett
 ms.author: riande
-ms.date: 09/15/2017
+ms.custom: mvc
+ms.date: 04/27/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-web-api-mac
-ms.openlocfilehash: b0e1a331fe3229119f4669fa336b6af4822785bf
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
+ms.openlocfilehash: 46050f4bbd6ae821c03d92c8750e839d491328cd
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="create-a-web-api-with-aspnet-core-mvc-and-visual-studio-for-mac"></a><span data-ttu-id="de94a-103">ASP.NET Core MVC 및 Mac용 Visual Studio를 사용하여 Web API 만들기</span><span class="sxs-lookup"><span data-stu-id="de94a-103">Create a Web API with ASP.NET Core MVC and Visual Studio for Mac</span></span>
+# <a name="create-a-web-api-with-aspnet-core-and-visual-studio-for-mac"></a><span data-ttu-id="48f7e-103">ASP.NET Core 및 Mac용 Visual Studio를 사용하여 Web API 만들기</span><span class="sxs-lookup"><span data-stu-id="48f7e-103">Create a Web API with ASP.NET Core and Visual Studio for Mac</span></span>
 
-<span data-ttu-id="de94a-104">작성자: [Rick Anderson](https://twitter.com/RickAndMSFT) 및 [Mike Wasson](https://github.com/mikewasson)</span><span class="sxs-lookup"><span data-stu-id="de94a-104">By [Rick Anderson](https://twitter.com/RickAndMSFT) and [Mike Wasson](https://github.com/mikewasson)</span></span>
+<span data-ttu-id="48f7e-104">작성자: [Rick Anderson](https://twitter.com/RickAndMSFT) 및 [Mike Wasson](https://github.com/mikewasson)</span><span class="sxs-lookup"><span data-stu-id="48f7e-104">By [Rick Anderson](https://twitter.com/RickAndMSFT) and [Mike Wasson](https://github.com/mikewasson)</span></span>
 
-<span data-ttu-id="de94a-105">이 자습서에서는 “할 일” 항목 목록을 관리하기 위한 웹 API를 빌드합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-105">In this tutorial, build a web API for managing a list of "to-do" items.</span></span> <span data-ttu-id="de94a-106">UI는 생성되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-106">The UI isn't constructed.</span></span>
+::: moniker range="= aspnetcore-2.1"
+[!INCLUDE[](~/includes/2.1.md)]
+::: moniker-end
 
-<span data-ttu-id="de94a-107">이 자습서는 세 가지 버전이 있습니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-107">There are 3 versions of this tutorial:</span></span>
+<span data-ttu-id="48f7e-106">이 자습서에서는 “할 일” 항목 목록을 관리하기 위한 웹 API를 빌드합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-106">In this tutorial, build a web API for managing a list of "to-do" items.</span></span> <span data-ttu-id="48f7e-107">UI는 생성되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-107">The UI isn't constructed.</span></span>
 
-* <span data-ttu-id="de94a-108">macOS: Mac용 Visual Studio를 사용한 Web API(이 자습서)</span><span class="sxs-lookup"><span data-stu-id="de94a-108">macOS: Web API with Visual Studio for Mac (This tutorial)</span></span>
-* <span data-ttu-id="de94a-109">Windows: [Windows용 Visual Studio를 사용한 Web API](xref:tutorials/first-web-api)</span><span class="sxs-lookup"><span data-stu-id="de94a-109">Windows: [Web API with Visual Studio for Windows](xref:tutorials/first-web-api)</span></span>
-* <span data-ttu-id="de94a-110">macOS, Linux, Windows: [Visual Studio Code를 사용한 Web API](xref:tutorials/web-api-vsc)</span><span class="sxs-lookup"><span data-stu-id="de94a-110">macOS, Linux, Windows: [Web API with Visual Studio Code](xref:tutorials/web-api-vsc)</span></span>
+<span data-ttu-id="48f7e-108">이 자습서는 다음 세 가지 버전으로 제공됩니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-108">There are three versions of this tutorial:</span></span>
+
+* <span data-ttu-id="48f7e-109">macOS: Mac용 Visual Studio를 사용한 Web API(이 자습서)</span><span class="sxs-lookup"><span data-stu-id="48f7e-109">macOS: Web API with Visual Studio for Mac (This tutorial)</span></span>
+* <span data-ttu-id="48f7e-110">Windows: [Windows용 Visual Studio를 사용한 Web API](xref:tutorials/first-web-api)</span><span class="sxs-lookup"><span data-stu-id="48f7e-110">Windows: [Web API with Visual Studio for Windows](xref:tutorials/first-web-api)</span></span>
+* <span data-ttu-id="48f7e-111">macOS, Linux, Windows: [Visual Studio Code를 사용한 Web API](xref:tutorials/web-api-vsc)</span><span class="sxs-lookup"><span data-stu-id="48f7e-111">macOS, Linux, Windows: [Web API with Visual Studio Code](xref:tutorials/web-api-vsc)</span></span>
 
 <!-- WARNING: The code AND images in this doc are used by uid: tutorials/web-api-vsc, tutorials/first-web-api-mac and tutorials/first-web-api. If you change any code/images in this tutorial, update uid: tutorials/web-api-vsc -->
 
 [!INCLUDE[template files](../includes/webApi/intro.md)]
 
-* <span data-ttu-id="de94a-111">영구 데이터베이스를 사용하는 예제를 보려면 [Mac 또는 Linux의 ASP.NET Core MVC 소개](xref:tutorials/first-mvc-app-xplat/index)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="de94a-111">See [Introduction to ASP.NET Core MVC on Mac or Linux](xref:tutorials/first-mvc-app-xplat/index) for an example that uses a persistent database.</span></span>
+<span data-ttu-id="48f7e-112">영구 데이터베이스를 사용하는 예제를 보려면 [macOS 또는 Linux의 ASP.NET Core MVC 소개](xref:tutorials/first-mvc-app-xplat/index)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="48f7e-112">See [Introduction to ASP.NET Core MVC on macOS or Linux](xref:tutorials/first-mvc-app-xplat/index) for an example that uses a persistent database.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="de94a-112">필수 구성 요소</span><span class="sxs-lookup"><span data-stu-id="de94a-112">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="48f7e-113">전제 조건</span><span class="sxs-lookup"><span data-stu-id="48f7e-113">Prerequisites</span></span>
 
-<span data-ttu-id="de94a-113">다음을 설치합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-113">Install the following:</span></span>
+[!INCLUDE[](~/includes/net-core-prereqs-macos.md)]
 
-- <span data-ttu-id="de94a-114">[.NET Core 2.0.0 SDK](https://www.microsoft.com/net/core) 이상</span><span class="sxs-lookup"><span data-stu-id="de94a-114">[.NET Core 2.0.0 SDK](https://www.microsoft.com/net/core) or later</span></span>
-- [<span data-ttu-id="de94a-115">Visual Studio for Mac</span><span class="sxs-lookup"><span data-stu-id="de94a-115">Visual Studio for Mac</span></span>](https://www.visualstudio.com/vs/visual-studio-mac/)
+## <a name="create-the-project"></a><span data-ttu-id="48f7e-114">프로젝트를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-114">Create the project</span></span>
 
-## <a name="create-the-project"></a><span data-ttu-id="de94a-116">프로젝트를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-116">Create the project</span></span>
-
-<span data-ttu-id="de94a-117">Visual Studio에서 **파일 > 새 솔루션**을 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-117">From Visual Studio, select **File > New Solution**.</span></span>
+<span data-ttu-id="48f7e-115">Visual Studio에서 **파일** > **새 솔루션**을 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-115">From Visual Studio, select **File** > **New Solution**.</span></span>
 
 ![macOS 새 솔루션](first-web-api-mac/_static/sln.png)
 
-<span data-ttu-id="de94a-119">**.NET Core App > ASP.NET Core Web API > 다음**을 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-119">Select **.NET Core App >  ASP.NET Core Web API > Next**.</span></span>
+<span data-ttu-id="48f7e-117">**.NET Core App** > **ASP.NET Core Web API** > **다음**을 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-117">Select **.NET Core App** > **ASP.NET Core Web API** > **Next**.</span></span>
 
 ![macOS 새 프로젝트 대화 상자](first-web-api-mac/_static/1.png)
 
-<span data-ttu-id="de94a-121">**프로젝트 이름**으로 **TodoApi**를 입력하고 [만들기]를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-121">Enter **TodoApi** for the **Project Name**, and then select Create.</span></span>
+<span data-ttu-id="48f7e-119">**프로젝트 이름**으로 *TodoApi*를 입력한 다음, **만들기**를 클릭합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-119">Enter *TodoApi* for the **Project Name**, and then click **Create**.</span></span>
 
 ![구성 대화 상자](first-web-api-mac/_static/2.png)
 
-### <a name="launch-the-app"></a><span data-ttu-id="de94a-123">앱 시작</span><span class="sxs-lookup"><span data-stu-id="de94a-123">Launch the app</span></span>
+### <a name="launch-the-app"></a><span data-ttu-id="48f7e-121">앱 시작</span><span class="sxs-lookup"><span data-stu-id="48f7e-121">Launch the app</span></span>
 
-<span data-ttu-id="de94a-124">Visual Studio에서 **실행 > 디버깅 시작**을 선택하여 앱을 시작합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-124">In Visual Studio, select **Run > Start With Debugging** to launch the app.</span></span> <span data-ttu-id="de94a-125">Visual Studio가 브라우저를 시작하고 `http://localhost:5000`으로 이동합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-125">Visual Studio launches a browser and navigates to `http://localhost:5000`.</span></span> <span data-ttu-id="de94a-126">HTTP 404(찾을 수 없음) 오류가 표시됩니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-126">You get an HTTP 404 (Not Found) error.</span></span>  <span data-ttu-id="de94a-127">URL을 `http://localhost:port/api/values`로 변경합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-127">Change the URL to `http://localhost:port/api/values`.</span></span> <span data-ttu-id="de94a-128">`ValuesController` 데이터가 표시됩니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-128">The `ValuesController` data will be displayed:</span></span>
+<span data-ttu-id="48f7e-122">Visual Studio에서 **실행** > **디버깅 시작**을 선택하여 앱을 시작합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-122">In Visual Studio, select **Run** > **Start With Debugging** to launch the app.</span></span> <span data-ttu-id="48f7e-123">Visual Studio가 브라우저를 시작하고 `http://localhost:5000`으로 이동합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-123">Visual Studio launches a browser and navigates to `http://localhost:5000`.</span></span> <span data-ttu-id="48f7e-124">HTTP 404(찾을 수 없음) 오류가 표시됩니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-124">You get an HTTP 404 (Not Found) error.</span></span> <span data-ttu-id="48f7e-125">URL을 `http://localhost:<port>/api/values`로 변경합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-125">Change the URL to `http://localhost:<port>/api/values`.</span></span> <span data-ttu-id="48f7e-126">`ValuesController` 데이터가 표시됩니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-126">The `ValuesController` data is displayed:</span></span>
 
-```
+```json
 ["value1","value2"]
 ```
 
-### <a name="add-support-for-entity-framework-core"></a><span data-ttu-id="de94a-129">Entity Framework Core에 대한 지원 추가</span><span class="sxs-lookup"><span data-stu-id="de94a-129">Add support for Entity Framework Core</span></span>
+### <a name="add-support-for-entity-framework-core"></a><span data-ttu-id="48f7e-127">Entity Framework Core에 대한 지원 추가</span><span class="sxs-lookup"><span data-stu-id="48f7e-127">Add support for Entity Framework Core</span></span>
 
-<span data-ttu-id="de94a-130">[Entity Framework Core InMemory](https://docs.microsoft.com/ef/core/providers/in-memory/) 데이터베이스 공급자를 설치합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-130">Install the [Entity Framework Core InMemory](https://docs.microsoft.com/ef/core/providers/in-memory/) database provider.</span></span> <span data-ttu-id="de94a-131">이 데이터베이스 공급자를 설치하면 Entity Framework Core를 메모리 내 데이터베이스에서 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-131">This database provider allows Entity Framework Core to be used with an in-memory database.</span></span>
+<span data-ttu-id="48f7e-128">[Entity Framework Core InMemory](/ef/core/providers/in-memory/) 데이터베이스 공급자를 설치합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-128">Install the [Entity Framework Core InMemory](/ef/core/providers/in-memory/) database provider.</span></span> <span data-ttu-id="48f7e-129">이 데이터베이스 공급자를 설치하면 Entity Framework Core를 메모리 내 데이터베이스에서 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-129">This database provider allows Entity Framework Core to be used with an in-memory database.</span></span>
 
-* <span data-ttu-id="de94a-132">**프로젝트** 메뉴에서 **NuGet 패키지 추가**를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-132">From the **Project** menu, select **Add NuGet Packages**.</span></span> 
+* <span data-ttu-id="48f7e-130">**프로젝트** 메뉴에서 **NuGet 패키지 추가**를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-130">From the **Project** menu, select **Add NuGet Packages**.</span></span>
 
-  *  <span data-ttu-id="de94a-133">또는 **종속성**을 마우스 오른쪽 단추로 클릭하고 **패키지 추가**를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-133">Alternately, you can right-click **Dependencies**, and then select **Add Packages**.</span></span>
+  * <span data-ttu-id="48f7e-131">또는 **종속성**을 마우스 오른쪽 단추로 클릭한 다음, **패키지 추가**를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-131">Alternatively, you can right-click **Dependencies**, and then select **Add Packages**.</span></span>
 
-* <span data-ttu-id="de94a-134">검색 상자에 `EntityFrameworkCore.InMemory`를 입력합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-134">Enter `EntityFrameworkCore.InMemory` in the search box.</span></span>
-* <span data-ttu-id="de94a-135">`Microsoft.EntityFrameworkCore.InMemory`를 선택하고 **패키지 추가**를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-135">Select `Microsoft.EntityFrameworkCore.InMemory`, and then select **Add Package**.</span></span>
+* <span data-ttu-id="48f7e-132">검색 상자에 `EntityFrameworkCore.InMemory`를 입력합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-132">Enter `EntityFrameworkCore.InMemory` in the search box.</span></span>
+* <span data-ttu-id="48f7e-133">`Microsoft.EntityFrameworkCore.InMemory`를 선택하고 **패키지 추가**를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-133">Select `Microsoft.EntityFrameworkCore.InMemory`, and then select **Add Package**.</span></span>
 
-### <a name="add-a-model-class"></a><span data-ttu-id="de94a-136">모델 클래스 추가</span><span class="sxs-lookup"><span data-stu-id="de94a-136">Add a model class</span></span>
+### <a name="add-a-model-class"></a><span data-ttu-id="48f7e-134">모델 클래스 추가</span><span class="sxs-lookup"><span data-stu-id="48f7e-134">Add a model class</span></span>
 
-<span data-ttu-id="de94a-137">모델은 응용 프로그램에서 데이터를 나타내는 개체입니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-137">A model is an object that represents the data in your application.</span></span> <span data-ttu-id="de94a-138">이 경우 유일한 모델은 할 일 항목입니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-138">In this case, the only model is a to-do item.</span></span>
+<span data-ttu-id="48f7e-135">모델은 앱에서 데이터를 나타내는 개체입니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-135">A model is an object representing the data in your app.</span></span> <span data-ttu-id="48f7e-136">이 경우 유일한 모델은 할 일 항목입니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-136">In this case, the only model is a to-do item.</span></span>
 
-<span data-ttu-id="de94a-139">*Models* 폴더를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-139">Add a folder named *Models*.</span></span> <span data-ttu-id="de94a-140">솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-140">In Solution Explorer, right-click the project.</span></span> <span data-ttu-id="de94a-141">**추가** > **새 폴더**를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-141">Select **Add** > **New Folder**.</span></span> <span data-ttu-id="de94a-142">폴더 이름을 *Models*로 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-142">Name the folder *Models*.</span></span>
+<span data-ttu-id="48f7e-137">솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-137">In Solution Explorer, right-click the project.</span></span> <span data-ttu-id="48f7e-138">**추가** > **새 폴더**를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-138">Select **Add** > **New Folder**.</span></span> <span data-ttu-id="48f7e-139">폴더 이름을 *Models*로 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-139">Name the folder *Models*.</span></span>
 
 ![새 폴더](first-web-api-mac/_static/folder.png)
 
-<span data-ttu-id="de94a-144">참고: 프로젝트의 아무 곳에나 모델 클래스를 넣을 수 있지만 일반적으로 *Models* 폴더를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-144">Note: You can put model classes anywhere in your project, but the *Models* folder is used by convention.</span></span>
+> [!NOTE]
+> <span data-ttu-id="48f7e-141">프로젝트의 아무 곳에나 모델 클래스를 넣을 수 있지만 일반적으로 *Models* 폴더를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-141">You can put model classes anywhere in your project, but the *Models* folder is used by convention.</span></span>
 
-<span data-ttu-id="de94a-145">`TodoItem` 클래스를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-145">Add a `TodoItem` class.</span></span> <span data-ttu-id="de94a-146">*Models* 폴더를 마우스 오른쪽 단추로 클릭하고 **추가 > 새 파일 > 일반 > 빈 클래스**를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-146">Right-click the *Models* folder and select **Add > New File > General > Empty Class**.</span></span> <span data-ttu-id="de94a-147">클래스 이름을 `TodoItem`으로 지정하고 **새로 만들기**를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-147">Name the class `TodoItem`, and then select **New**.</span></span>
+<span data-ttu-id="48f7e-142">*모델* 폴더를 마우스 오른쪽 단추로 클릭하고 **추가** > **새 파일** > **일반** > **빈 클래스**를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-142">Right-click the *Models* folder, and select **Add** > **New File** > **General** > **Empty Class**.</span></span> <span data-ttu-id="48f7e-143">클래스 이름을 *TodoItem*으로 지정한 다음, **새로 만들기**를 클릭합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-143">Name the class *TodoItem*, and then click **New**.</span></span>
 
-<span data-ttu-id="de94a-148">생성된 코드를 다음으로 바꿉니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-148">Replace the generated code with:</span></span>
+<span data-ttu-id="48f7e-144">생성된 코드를 다음으로 바꿉니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-144">Replace the generated code with:</span></span>
 
-[!code-csharp[Main](first-web-api/sample/TodoApi/Models/TodoItem.cs)]
+[!code-csharp[](first-web-api/samples/2.0/TodoApi/Models/TodoItem.cs)]
 
-<span data-ttu-id="de94a-149">`TodoItem`이 만들어질 때 데이터베이스가 `Id`를 생성합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-149">The database generates the `Id` when a `TodoItem` is created.</span></span>
+<span data-ttu-id="48f7e-145">`TodoItem`이 만들어질 때 데이터베이스가 `Id`를 생성합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-145">The database generates the `Id` when a `TodoItem` is created.</span></span>
 
-### <a name="create-the-database-context"></a><span data-ttu-id="de94a-150">데이터베이스 컨텍스트 만들기</span><span class="sxs-lookup"><span data-stu-id="de94a-150">Create the database context</span></span>
+### <a name="create-the-database-context"></a><span data-ttu-id="48f7e-146">데이터베이스 컨텍스트 만들기</span><span class="sxs-lookup"><span data-stu-id="48f7e-146">Create the database context</span></span>
 
-<span data-ttu-id="de94a-151">*데이터베이스 컨텍스트*는 특정 데이터 모델에 맞게 Entity Framework 기능을 조정하는 주 클래스입니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-151">The *database context* is the main class that coordinates Entity Framework functionality for a given data model.</span></span> <span data-ttu-id="de94a-152">`Microsoft.EntityFrameworkCore.DbContext` 클래스에서 파생시키는 방식으로 이 클래스를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-152">You create this class by deriving from the `Microsoft.EntityFrameworkCore.DbContext` class.</span></span>
+<span data-ttu-id="48f7e-147">*데이터베이스 컨텍스트*는 특정 데이터 모델에 맞게 Entity Framework 기능을 조정하는 주 클래스입니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-147">The *database context* is the main class that coordinates Entity Framework functionality for a given data model.</span></span> <span data-ttu-id="48f7e-148">`Microsoft.EntityFrameworkCore.DbContext` 클래스에서 파생시키는 방식으로 이 클래스를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-148">You create this class by deriving from the `Microsoft.EntityFrameworkCore.DbContext` class.</span></span>
 
-<span data-ttu-id="de94a-153">`TodoContext` 클래스를 *Models* 폴더에 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-153">Add a `TodoContext` class to the *Models* folder.</span></span>
+<span data-ttu-id="48f7e-149">`TodoContext` 클래스를 *Models* 폴더에 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-149">Add a `TodoContext` class to the *Models* folder.</span></span>
 
-[!code-csharp[Main](first-web-api/sample/TodoApi/Models/TodoContext.cs)]
+[!code-csharp[](first-web-api/samples/2.0/TodoApi/Models/TodoContext.cs)]
 
 [!INCLUDE[Register the database context](../includes/webApi/register_dbContext.md)]
 
-## <a name="add-a-controller"></a><span data-ttu-id="de94a-154">컨트롤러 추가</span><span class="sxs-lookup"><span data-stu-id="de94a-154">Add a controller</span></span>
+## <a name="add-a-controller"></a><span data-ttu-id="48f7e-150">컨트롤러 추가</span><span class="sxs-lookup"><span data-stu-id="48f7e-150">Add a controller</span></span>
 
-<span data-ttu-id="de94a-155">솔루션 탐색기의 *Controllers* 폴더에서 `TodoController` 클래스를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-155">In Solution Explorer, in the *Controllers* folder, add the class `TodoController`.</span></span>
+<span data-ttu-id="48f7e-151">솔루션 탐색기의 *Controllers* 폴더에서 `TodoController` 클래스를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-151">In Solution Explorer, in the *Controllers* folder, add the class `TodoController`.</span></span>
 
-<span data-ttu-id="de94a-156">생성된 코드를 다음으로 바꾸고 닫는 중괄호를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-156">Replace the generated code with the following (and add closing braces):</span></span>
+<span data-ttu-id="48f7e-152">생성된 코드를 다음으로 바꿉니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-152">Replace the generated code with the following:</span></span>
 
 [!INCLUDE[code and get todo items](../includes/webApi/getTodoItems.md)]
 
-### <a name="launch-the-app"></a><span data-ttu-id="de94a-157">앱 시작</span><span class="sxs-lookup"><span data-stu-id="de94a-157">Launch the app</span></span>
+### <a name="launch-the-app"></a><span data-ttu-id="48f7e-153">앱 시작</span><span class="sxs-lookup"><span data-stu-id="48f7e-153">Launch the app</span></span>
 
-<span data-ttu-id="de94a-158">Visual Studio에서 **실행 > 디버깅 시작**을 선택하여 앱을 시작합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-158">In Visual Studio, select **Run > Start With Debugging** to launch the app.</span></span> <span data-ttu-id="de94a-159">Visual Studio가 브라우저를 시작하고 `http://localhost:port`로 이동합니다. 여기서 *port*는 임의로 선택된 포트 번호입니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-159">Visual Studio launches a browser and navigates to `http://localhost:port`, where *port* is a randomly chosen port number.</span></span> <span data-ttu-id="de94a-160">HTTP 404(찾을 수 없음) 오류가 표시됩니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-160">You get an HTTP 404 (Not Found) error.</span></span>  <span data-ttu-id="de94a-161">URL을 `http://localhost:port/api/values`로 변경합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-161">Change the URL to `http://localhost:port/api/values`.</span></span> <span data-ttu-id="de94a-162">`ValuesController` 데이터가 표시됩니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-162">The `ValuesController` data will be displayed:</span></span>
+<span data-ttu-id="48f7e-154">Visual Studio에서 **실행** > **디버깅 시작**을 선택하여 앱을 시작합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-154">In Visual Studio, select **Run** > **Start With Debugging** to launch the app.</span></span> <span data-ttu-id="48f7e-155">Visual Studio가 브라우저를 시작하고 `http://localhost:<port>`로 이동합니다. 여기서 `<port>`는 임의로 선택된 포트 번호입니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-155">Visual Studio launches a browser and navigates to `http://localhost:<port>`, where `<port>` is a randomly chosen port number.</span></span> <span data-ttu-id="48f7e-156">HTTP 404(찾을 수 없음) 오류가 표시됩니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-156">You get an HTTP 404 (Not Found) error.</span></span> <span data-ttu-id="48f7e-157">URL을 `http://localhost:<port>/api/values`로 변경합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-157">Change the URL to `http://localhost:<port>/api/values`.</span></span> <span data-ttu-id="48f7e-158">`ValuesController` 데이터가 표시됩니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-158">The `ValuesController` data is displayed:</span></span>
 
-```
+```json
 ["value1","value2"]
 ```
 
-<span data-ttu-id="de94a-163">`Todo` 컨트롤러(`http://localhost:port/api/todo`)로 이동합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-163">Navigate to the `Todo` controller at`http://localhost:port/api/todo`:</span></span>
+<span data-ttu-id="48f7e-159">`http://localhost:<port>/api/todo`의 `Todo` 컨트롤러로 이동합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-159">Navigate to the `Todo` controller at `http://localhost:<port>/api/todo`:</span></span>
 
-```
+```json
 [{"key":1,"name":"Item1","isComplete":false}]
 ```
 
-## <a name="implement-the-other-crud-operations"></a><span data-ttu-id="de94a-164">기타 CRUD 작업 구현</span><span class="sxs-lookup"><span data-stu-id="de94a-164">Implement the other CRUD operations</span></span>
+## <a name="implement-the-other-crud-operations"></a><span data-ttu-id="48f7e-160">기타 CRUD 작업 구현</span><span class="sxs-lookup"><span data-stu-id="48f7e-160">Implement the other CRUD operations</span></span>
 
-<span data-ttu-id="de94a-165">`Create`, `Update` 및 `Delete` 메서드를 컨트롤러에 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-165">We'll add `Create`, `Update`, and `Delete` methods to the controller.</span></span> <span data-ttu-id="de94a-166">이러한 메서드는 테마에 대한 변형이므로 코드를 표시하고 주요 차이점을 강조 표시합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-166">These are variations on a theme, so I'll just show the code and highlight the main differences.</span></span> <span data-ttu-id="de94a-167">코드를 추가하거나 변경한 후 프로젝트를 빌드합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-167">Build the project after adding or changing code.</span></span>
+<span data-ttu-id="48f7e-161">`Create`, `Update` 및 `Delete` 메서드를 컨트롤러에 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-161">We'll add `Create`, `Update`, and `Delete` methods to the controller.</span></span> <span data-ttu-id="48f7e-162">이러한 메서드는 테마에 대한 변형이므로 코드를 표시하고 주요 차이점을 강조 표시하겠습니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-162">These methods are variations on a theme, so I'll just show the code and highlight the main differences.</span></span> <span data-ttu-id="48f7e-163">코드를 추가하거나 변경한 후 프로젝트를 빌드합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-163">Build the project after adding or changing code.</span></span>
 
-### <a name="create"></a><span data-ttu-id="de94a-168">만들기</span><span class="sxs-lookup"><span data-stu-id="de94a-168">Create</span></span>
+### <a name="create"></a><span data-ttu-id="48f7e-164">만들기</span><span class="sxs-lookup"><span data-stu-id="48f7e-164">Create</span></span>
 
-[!code-csharp[Main](first-web-api/sample/TodoApi/Controllers/TodoController.cs?name=snippet_Create)]
+::: moniker range="<= aspnetcore-2.0"
+<span data-ttu-id="48f7e-165">[!code-csharp[](first-web-api/samples/2.0/TodoApi/Controllers/TodoController.cs?name=snippet_Create)]</span><span class="sxs-lookup"><span data-stu-id="48f7e-165">[!code-csharp[](first-web-api/samples/2.0/TodoApi/Controllers/TodoController.cs?name=snippet_Create)]</span></span>
 
-<span data-ttu-id="de94a-169">[`[HttpPost]`](/aspnet/core/api/microsoft.aspnetcore.mvc.httppostattribute) 특성으로 나타내는 HTTP POST 메서드입니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-169">This is an HTTP POST method, indicated by the [`[HttpPost]`](/aspnet/core/api/microsoft.aspnetcore.mvc.httppostattribute) attribute.</span></span> <span data-ttu-id="de94a-170">[`[FromBody]`](/aspnet/core/api/microsoft.aspnetcore.mvc.frombodyattribute) 특성은 HTTP 요청 본문에서 할 일 항목 값을 가져오도록 MVC에 지시합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-170">The [`[FromBody]`](/aspnet/core/api/microsoft.aspnetcore.mvc.frombodyattribute) attribute tells MVC to get the value of the to-do item from the body of the HTTP request.</span></span>
+<span data-ttu-id="48f7e-166">이전 메서드는 [[HttpPost]](/dotnet/api/microsoft.aspnetcore.mvc.httppostattribute) 특성으로 표시되는 HTTP POST에 응답합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-166">The preceding method responds to an HTTP POST, as indicated by the [[HttpPost]](/dotnet/api/microsoft.aspnetcore.mvc.httppostattribute) attribute.</span></span> <span data-ttu-id="48f7e-167">[[FromBody]](/dotnet/api/microsoft.aspnetcore.mvc.frombodyattribute) 특성은 HTTP 요청 본문에서 할 일 항목 값을 가져오도록 MVC에 지시합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-167">The [[FromBody]](/dotnet/api/microsoft.aspnetcore.mvc.frombodyattribute) attribute tells MVC to get the value of the to-do item from the body of the HTTP request.</span></span>
+::: moniker-end
+::: moniker range=">= aspnetcore-2.1"
+<span data-ttu-id="48f7e-168">[!code-csharp[](first-web-api/samples/2.1/TodoApi/Controllers/TodoController.cs?name=snippet_Create)]</span><span class="sxs-lookup"><span data-stu-id="48f7e-168">[!code-csharp[](first-web-api/samples/2.1/TodoApi/Controllers/TodoController.cs?name=snippet_Create)]</span></span>
 
-<span data-ttu-id="de94a-171">`CreatedAtRoute` 메서드는 서버에서 새 리소스를 만드는 HTTP POST 메서드의 표준 응답인 201 응답을 반환합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-171">The `CreatedAtRoute` method returns a 201 response, which is the standard response for an HTTP POST method that creates a new resource on the server.</span></span> <span data-ttu-id="de94a-172">`CreatedAtRoute`는 응답에 대한 위치 헤더도 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-172">`CreatedAtRoute` also adds a Location header to the response.</span></span> <span data-ttu-id="de94a-173">위치 헤더는 새로 만들어진 할 일 항목의 URI를 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-173">The Location header specifies the URI of the newly created to-do item.</span></span> <span data-ttu-id="de94a-174">[10.2.2 201 Created](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)(10.2.2 201 생성됨)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="de94a-174">See [10.2.2 201 Created](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).</span></span>
+<span data-ttu-id="48f7e-169">이전 메서드는 [[HttpPost]](/dotnet/api/microsoft.aspnetcore.mvc.httppostattribute) 특성으로 표시되는 HTTP POST에 응답합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-169">The preceding method responds to an HTTP POST, as indicated by the [[HttpPost]](/dotnet/api/microsoft.aspnetcore.mvc.httppostattribute) attribute.</span></span> <span data-ttu-id="48f7e-170">MVC는 HTTP 요청 본문에서 할 일 항목 값을 가져옵니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-170">MVC gets the value of the to-do item from the body of the HTTP request.</span></span>
+::: moniker-end
 
-### <a name="use-postman-to-send-a-create-request"></a><span data-ttu-id="de94a-175">Postman을 사용하여 만들기 요청 보내기</span><span class="sxs-lookup"><span data-stu-id="de94a-175">Use Postman to send a Create request</span></span>
+<span data-ttu-id="48f7e-171">`CreatedAtRoute` 메서드는 201 응답을 반환합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-171">The `CreatedAtRoute` method returns a 201 response.</span></span> <span data-ttu-id="48f7e-172">이는 서버에서 새 리소스를 만드는 HTTP POST 메서드의 표준 응답입니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-172">It's the standard response for an HTTP POST method that creates a new resource on the server.</span></span> <span data-ttu-id="48f7e-173">`CreatedAtRoute`는 응답에 대한 위치 헤더도 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-173">`CreatedAtRoute` also adds a Location header to the response.</span></span> <span data-ttu-id="48f7e-174">위치 헤더는 새로 만들어진 할 일 항목의 URI를 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-174">The Location header specifies the URI of the newly created to-do item.</span></span> <span data-ttu-id="48f7e-175">[10.2.2 201 Created](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)(10.2.2 201 생성됨)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="48f7e-175">See [10.2.2 201 Created](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html).</span></span>
 
-* <span data-ttu-id="de94a-176">앱을 시작합니다(**실행 > 디버깅 시작**).</span><span class="sxs-lookup"><span data-stu-id="de94a-176">Start the app (**Run > Start With Debugging**).</span></span>
-* <span data-ttu-id="de94a-177">Postman을 시작합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-177">Start Postman.</span></span>
+### <a name="use-postman-to-send-a-create-request"></a><span data-ttu-id="48f7e-176">Postman을 사용하여 만들기 요청 보내기</span><span class="sxs-lookup"><span data-stu-id="48f7e-176">Use Postman to send a Create request</span></span>
+
+* <span data-ttu-id="48f7e-177">앱을 시작합니다(**실행** > **디버깅 시작**).</span><span class="sxs-lookup"><span data-stu-id="48f7e-177">Start the app (**Run** > **Start With Debugging**).</span></span>
+* <span data-ttu-id="48f7e-178">Postman을 엽니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-178">Open Postman.</span></span>
 
 ![Postman 콘솔](first-web-api/_static/pmc.png)
 
-* <span data-ttu-id="de94a-179">HTTP 메서드를 `POST`로 설정</span><span class="sxs-lookup"><span data-stu-id="de94a-179">Set the HTTP method to `POST`</span></span>
-* <span data-ttu-id="de94a-180">**본문** 라디오 단추 선택</span><span class="sxs-lookup"><span data-stu-id="de94a-180">Select the **Body** radio button</span></span>
-* <span data-ttu-id="de94a-181">**원시** 라디오 단추 선택</span><span class="sxs-lookup"><span data-stu-id="de94a-181">Select the **raw** radio button</span></span>
-* <span data-ttu-id="de94a-182">형식을 JSON으로 설정</span><span class="sxs-lookup"><span data-stu-id="de94a-182">Set the type to JSON</span></span>
-* <span data-ttu-id="de94a-183">키 값 편집기에서 다음과 같이 Todo 항목 입력</span><span class="sxs-lookup"><span data-stu-id="de94a-183">In the key-value editor, enter a Todo item such as</span></span>
+* <span data-ttu-id="48f7e-180">localhost URL에서 포트 번호를 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-180">Update the port number in the localhost URL.</span></span>
+* <span data-ttu-id="48f7e-181">HTTP 메서드를 *POST*로 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-181">Set the HTTP method to *POST*.</span></span>
+* <span data-ttu-id="48f7e-182">**본문** 탭을 클릭합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-182">Click the **Body** tab.</span></span>
+* <span data-ttu-id="48f7e-183">**원시** 라디오 단추를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-183">Select the **raw** radio button.</span></span>
+* <span data-ttu-id="48f7e-184">유형을 *JSON(application/json)* 으로 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-184">Set the type to *JSON (application/json)*.</span></span>
+* <span data-ttu-id="48f7e-185">다음 JSON과 같은 할 일 항목을 사용하여 요청 본문을 입력합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-185">Enter a request body with a to-do item resembling the following JSON:</span></span>
 
 ```json
 {
-    "name":"walk dog",
-    "isComplete":true
+  "name":"walk dog",
+  "isComplete":true
 }
 ```
 
-* <span data-ttu-id="de94a-184">**보내기** 선택</span><span class="sxs-lookup"><span data-stu-id="de94a-184">Select **Send**</span></span>
+* <span data-ttu-id="48f7e-186">**보내기** 단추를 클릭합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-186">Click the **Send** button.</span></span>
 
-* <span data-ttu-id="de94a-185">아래쪽 창에서 [헤더] 탭을 선택하고 **위치** 헤더를 복사합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-185">Select the Headers tab in the lower pane and copy the **Location** header:</span></span>
+::: moniker range=">= aspnetcore-2.1"
+> [!TIP]
+> <span data-ttu-id="48f7e-187">**보내기**를 클릭한 후 응답이 표시되지 않는 경우 **SSL 인증 유효성 검사** 옵션을 사용하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-187">If no response displays after clicking **Send**, disable the **SSL certification verification** option.</span></span> <span data-ttu-id="48f7e-188">이 옵션은 **파일** > **설정** 아래에 있습니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-188">This is found under **File** > **Settings**.</span></span> <span data-ttu-id="48f7e-189">설정을 사용하지 못하게 한 후 **보내기** 단추를 다시 클릭합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-189">Click the **Send** button again after disabling the setting.</span></span>
+::: moniker-end
 
-![Postman 콘솔의 헤더 탭](first-web-api/_static/pmget.png)
+<span data-ttu-id="48f7e-190">**응답** 창에서 **헤더** 탭을 클릭하고 **위치** 헤더 값을 복사합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-190">Click the **Headers** tab in the **Response** pane and copy the **Location** header value:</span></span>
 
-<span data-ttu-id="de94a-187">위치 헤더 URI를 사용하여 방금 만든 리소스에 액세스합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-187">You can use the Location header URI to access the resource you just created.</span></span> <span data-ttu-id="de94a-188">`GetById` 메서드에서 만들어진 `"GetTodo"` 경로를 회수합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-188">Recall the `GetById` method created the `"GetTodo"` named route:</span></span>
+![Postman 콘솔의 헤더 탭](first-web-api/_static/pmc2.png)
+
+<span data-ttu-id="48f7e-192">위치 헤더 URI를 사용하여 만든 리소스에 액세스할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-192">You can use the Location header URI to access the resource you created.</span></span> <span data-ttu-id="48f7e-193">`Create` 메서드는 [CreatedAtRoute](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.createdatroute#Microsoft_AspNetCore_Mvc_ControllerBase_CreatedAtRoute_System_String_System_Object_System_Object_)를 반환합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-193">The `Create` method returns [CreatedAtRoute](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.createdatroute#Microsoft_AspNetCore_Mvc_ControllerBase_CreatedAtRoute_System_String_System_Object_System_Object_).</span></span> <span data-ttu-id="48f7e-194">`CreatedAtRoute`에 전달된 첫 번째 매개 변수는 URL을 생성하는 데 사용할 이름이 지정된 경로를 나타냅니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-194">The first parameter passed to `CreatedAtRoute` represents the named route to use for generating the URL.</span></span> <span data-ttu-id="48f7e-195">`GetById` 메서드가 `"GetTodo"`로 명명된 경로를 만들었다는 사실을 기억하세요.</span><span class="sxs-lookup"><span data-stu-id="48f7e-195">Recall that the `GetById` method created the `"GetTodo"` named route:</span></span>
 
 ```csharp
 [HttpGet("{id}", Name = "GetTodo")]
-public IActionResult GetById(string id)
 ```
 
-### <a name="update"></a><span data-ttu-id="de94a-189">업데이트</span><span class="sxs-lookup"><span data-stu-id="de94a-189">Update</span></span>
+### <a name="update"></a><span data-ttu-id="48f7e-196">업데이트</span><span class="sxs-lookup"><span data-stu-id="48f7e-196">Update</span></span>
 
-[!code-csharp[Main](first-web-api/sample/TodoApi/Controllers/TodoController.cs?name=snippet_Update)]
+::: moniker range="<= aspnetcore-2.0"
+<span data-ttu-id="48f7e-197">[!code-csharp[](first-web-api/samples/2.0/TodoApi/Controllers/TodoController.cs?name=snippet_Update)]</span><span class="sxs-lookup"><span data-stu-id="48f7e-197">[!code-csharp[](first-web-api/samples/2.0/TodoApi/Controllers/TodoController.cs?name=snippet_Update)]</span></span>
+::: moniker-end
+::: moniker range=">= aspnetcore-2.1"
+<span data-ttu-id="48f7e-198">[!code-csharp[](first-web-api/samples/2.1/TodoApi/Controllers/TodoController.cs?name=snippet_Update)]</span><span class="sxs-lookup"><span data-stu-id="48f7e-198">[!code-csharp[](first-web-api/samples/2.1/TodoApi/Controllers/TodoController.cs?name=snippet_Update)]</span></span>
+::: moniker-end
 
-<span data-ttu-id="de94a-190">`Update`는 `Create`와 비슷하지만 HTTP PUT을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-190">`Update` is similar to `Create`, but uses HTTP PUT.</span></span> <span data-ttu-id="de94a-191">응답은 [204(콘텐츠 없음)](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)입니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-191">The response is [204 (No Content)](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html).</span></span> <span data-ttu-id="de94a-192">HTTP 사양에 따라 PUT 요청의 경우 클라이언트는 델타만이 아니라 전체 업데이트된 엔터티를 보내야 합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-192">According to the HTTP spec, a PUT request requires the client to send the entire updated entity, not just the deltas.</span></span> <span data-ttu-id="de94a-193">부분 업데이트를 지원하려면 HTTP PATCH를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-193">To support partial updates, use HTTP PATCH.</span></span>
+<span data-ttu-id="48f7e-199">`Update`는 `Create`와 비슷하지만 HTTP PUT을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-199">`Update` is similar to `Create`, but uses HTTP PUT.</span></span> <span data-ttu-id="48f7e-200">응답은 [204(콘텐츠 없음)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)입니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-200">The response is [204 (No Content)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html).</span></span> <span data-ttu-id="48f7e-201">HTTP 사양에 따라 PUT 요청의 경우 클라이언트는 델타만이 아니라 전체 업데이트된 엔터티를 보내야 합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-201">According to the HTTP spec, a PUT request requires the client to send the entire updated entity, not just the deltas.</span></span> <span data-ttu-id="48f7e-202">부분 업데이트를 지원하려면 HTTP PATCH를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-202">To support partial updates, use HTTP PATCH.</span></span>
 
 ```json
 {
@@ -185,18 +205,14 @@ public IActionResult GetById(string id)
 
 ![204(콘텐츠 없음) 응답을 보여주는 Postman 콘솔](first-web-api/_static/pmcput.png)
 
-### <a name="delete"></a><span data-ttu-id="de94a-195">삭제</span><span class="sxs-lookup"><span data-stu-id="de94a-195">Delete</span></span>
+### <a name="delete"></a><span data-ttu-id="48f7e-204">삭제</span><span class="sxs-lookup"><span data-stu-id="48f7e-204">Delete</span></span>
 
-[!code-csharp[Main](first-web-api/sample/TodoApi/Controllers/TodoController.cs?name=snippet_Delete)]
+[!code-csharp[](first-web-api/samples/2.0/TodoApi/Controllers/TodoController.cs?name=snippet_Delete)]
 
-<span data-ttu-id="de94a-196">응답은 [204(콘텐츠 없음)](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)입니다.</span><span class="sxs-lookup"><span data-stu-id="de94a-196">The response is [204 (No Content)](http://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html).</span></span>
+<span data-ttu-id="48f7e-205">응답은 [204(콘텐츠 없음)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)입니다.</span><span class="sxs-lookup"><span data-stu-id="48f7e-205">The response is [204 (No Content)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html).</span></span>
 
 ![204(콘텐츠 없음) 응답을 보여주는 Postman 콘솔](first-web-api/_static/pmd.png)
 
-## <a name="next-steps"></a><span data-ttu-id="de94a-198">다음 단계</span><span class="sxs-lookup"><span data-stu-id="de94a-198">Next steps</span></span>
+[!INCLUDE[jQuery](../includes/webApi/add-jquery.md)]
 
-* [<span data-ttu-id="de94a-199">컨트롤러 작업에 라우팅</span><span class="sxs-lookup"><span data-stu-id="de94a-199">Routing to Controller Actions</span></span>](xref:mvc/controllers/routing)
-* <span data-ttu-id="de94a-200">API 배포에 대한 자세한 내용은 [호스트 및 배포](xref:host-and-deploy/index)를 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="de94a-200">For information about deploying your API, see [Host and deploy](xref:host-and-deploy/index).</span></span>
-* <span data-ttu-id="de94a-201">[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-web-api/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))</span><span class="sxs-lookup"><span data-stu-id="de94a-201">[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/first-web-api/sample) ([how to download](xref:tutorials/index#how-to-download-a-sample))</span></span>
-* [<span data-ttu-id="de94a-202">Postman</span><span class="sxs-lookup"><span data-stu-id="de94a-202">Postman</span></span>](https://www.getpostman.com/)
-* [<span data-ttu-id="de94a-203">Fiddler</span><span class="sxs-lookup"><span data-stu-id="de94a-203">Fiddler</span></span>](https://www.telerik.com/download/fiddler)
+[!INCLUDE[next steps](../includes/webApi/next.md)]

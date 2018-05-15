@@ -1,12 +1,12 @@
-# <a name="custom-model-binding-demo"></a>사용자 지정 모델 바인딩 데모
+# <a name="custom-model-binding-demo"></a><span data-ttu-id="06f62-101">사용자 지정 모델 바인딩 데모</span><span class="sxs-lookup"><span data-stu-id="06f62-101">Custom Model Binding Demo</span></span>
 
-앱을 실행하고 base64로 인코딩된 문자열을 `ImageController` 엔드포인트(`/api/image/`)에 게시하여 `ByteArrayModelBinder`를 테스트합니다. 요청 본문에 파일 및 파일 이름 속성을 양식 데이터로 지정합니다([Postman](https://www.getpostman.com/) 또는 유사한 도구 사용). [이 샘플 문자열](Base64String.txt)을 사용할 수 있습니다. 결과는 지정된 파일 이름으로 *wwwroot/images/upload* 폴더에 저장됩니다.
+<span data-ttu-id="06f62-102">앱을 실행하고 base64로 인코딩된 문자열을 `ImageController` 엔드포인트(`/api/image/`)에 게시하여 `ByteArrayModelBinder`를 테스트합니다.</span><span class="sxs-lookup"><span data-stu-id="06f62-102">Test `ByteArrayModelBinder` by running the app and POSTing a base64-encoded string to the `ImageController` endpoint (`/api/image/`).</span></span> <span data-ttu-id="06f62-103">요청 본문에 파일 및 파일 이름 속성을 양식 데이터로 지정합니다([Postman](https://www.getpostman.com/) 또는 유사한 도구 사용).</span><span class="sxs-lookup"><span data-stu-id="06f62-103">Specify the file and filename proparties in the request body as form-data (using [Postman](https://www.getpostman.com/) or a similar tool).</span></span> <span data-ttu-id="06f62-104">[이 샘플 문자열](Base64String.txt)을 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="06f62-104">You can use [this sample string](Base64String.txt).</span></span> <span data-ttu-id="06f62-105">결과는 지정된 파일 이름으로 *wwwroot/images/upload* 폴더에 저장됩니다.</span><span class="sxs-lookup"><span data-stu-id="06f62-105">The result is saved in the *wwwroot/images/upload* folder with the filename specified.</span></span>
 
-사용자 지정 바인딩 예제를 테스트하려면 다음 엔드포인트를 사용합니다.
+<span data-ttu-id="06f62-106">사용자 지정 바인딩 예제를 테스트하려면 다음 엔드포인트를 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="06f62-106">To test the custom binding example, try the following endpoints:</span></span>
 
-* /api/authors/1
-* /api/authors/2(찾을 수 없음)
-* /api/boundauthors/1
-* /api/boundauthors/2(찾을 수 없음)
-* /api/boundauthors/get/1
-* /api/boundauthors/get/2(콘텐츠 없음) &ndash; 이 작업은 null을 검사하지 않고 *404 찾을 수 없음*을 반환합니다.
+* <span data-ttu-id="06f62-107">/api/authors/1</span><span class="sxs-lookup"><span data-stu-id="06f62-107">/api/authors/1</span></span>
+* <span data-ttu-id="06f62-108">/api/authors/2(찾을 수 없음)</span><span class="sxs-lookup"><span data-stu-id="06f62-108">/api/authors/2 (NOT FOUND)</span></span>
+* <span data-ttu-id="06f62-109">/api/boundauthors/1</span><span class="sxs-lookup"><span data-stu-id="06f62-109">/api/boundauthors/1</span></span>
+* <span data-ttu-id="06f62-110">/api/boundauthors/2(찾을 수 없음)</span><span class="sxs-lookup"><span data-stu-id="06f62-110">/api/boundauthors/2 (NOT FOUND)</span></span>
+* <span data-ttu-id="06f62-111">/api/boundauthors/get/1</span><span class="sxs-lookup"><span data-stu-id="06f62-111">/api/boundauthors/get/1</span></span>
+* <span data-ttu-id="06f62-112">/api/boundauthors/get/2(콘텐츠 없음) &ndash; 이 작업은 null을 검사하지 않고 *404 찾을 수 없음*을 반환합니다.</span><span class="sxs-lookup"><span data-stu-id="06f62-112">/api/boundauthors/get/2 (NO CONTENT) &ndash; This action doesn't check for null and returns a *404 Not Found*.</span></span>

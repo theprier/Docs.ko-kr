@@ -1,25 +1,23 @@
-## <a name="overview"></a>개요
+## <a name="overview"></a><span data-ttu-id="16e69-101">개요</span><span class="sxs-lookup"><span data-stu-id="16e69-101">Overview</span></span>
 
-이 자습서에서는 다음 API를 만듭니다.
+<span data-ttu-id="16e69-102">이 자습서에서는 다음 API를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="16e69-102">This tutorial creates the following API:</span></span>
 
-|API | 설명 | 요청 본문 | 응답 본문 |
+|<span data-ttu-id="16e69-103">API</span><span class="sxs-lookup"><span data-stu-id="16e69-103">API</span></span> | <span data-ttu-id="16e69-104">설명</span><span class="sxs-lookup"><span data-stu-id="16e69-104">Description</span></span> | <span data-ttu-id="16e69-105">요청 본문</span><span class="sxs-lookup"><span data-stu-id="16e69-105">Request body</span></span> | <span data-ttu-id="16e69-106">응답 본문</span><span class="sxs-lookup"><span data-stu-id="16e69-106">Response body</span></span> |
 |--- | ---- | ---- | ---- |
-|GET /api/todo | 할 일 항목 모두 가져오기 | 없음 | 할 일 항목의 배열|
-|GET /api/todo/{id} | ID로 항목 가져오기 | 없음 | 할 일 항목|
-|POST /api/todo | 새 항목 추가 | 할 일 항목 | 할 일 항목 |
-|PUT /api/todo/{id} | 기존 항목 업데이트 &nbsp; | 할 일 항목 | 없음 |
-|DELETE /api/todo/{id} &nbsp; &nbsp; | 항목 삭제 &nbsp; &nbsp; | 없음 | 없음|
+|<span data-ttu-id="16e69-107">GET /api/todo</span><span class="sxs-lookup"><span data-stu-id="16e69-107">GET /api/todo</span></span> | <span data-ttu-id="16e69-108">할 일 항목 모두 가져오기</span><span class="sxs-lookup"><span data-stu-id="16e69-108">Get all to-do items</span></span> | <span data-ttu-id="16e69-109">없음</span><span class="sxs-lookup"><span data-stu-id="16e69-109">None</span></span> | <span data-ttu-id="16e69-110">할 일 항목의 배열</span><span class="sxs-lookup"><span data-stu-id="16e69-110">Array of to-do items</span></span>|
+|<span data-ttu-id="16e69-111">GET /api/todo/{id}</span><span class="sxs-lookup"><span data-stu-id="16e69-111">GET /api/todo/{id}</span></span> | <span data-ttu-id="16e69-112">ID로 항목 가져오기</span><span class="sxs-lookup"><span data-stu-id="16e69-112">Get an item by ID</span></span> | <span data-ttu-id="16e69-113">없음</span><span class="sxs-lookup"><span data-stu-id="16e69-113">None</span></span> | <span data-ttu-id="16e69-114">할 일 항목</span><span class="sxs-lookup"><span data-stu-id="16e69-114">To-do item</span></span>|
+|<span data-ttu-id="16e69-115">POST /api/todo</span><span class="sxs-lookup"><span data-stu-id="16e69-115">POST /api/todo</span></span> | <span data-ttu-id="16e69-116">새 항목 추가</span><span class="sxs-lookup"><span data-stu-id="16e69-116">Add a new item</span></span> | <span data-ttu-id="16e69-117">할 일 항목</span><span class="sxs-lookup"><span data-stu-id="16e69-117">To-do item</span></span> | <span data-ttu-id="16e69-118">할 일 항목</span><span class="sxs-lookup"><span data-stu-id="16e69-118">To-do item</span></span> |
+|<span data-ttu-id="16e69-119">PUT /api/todo/{id}</span><span class="sxs-lookup"><span data-stu-id="16e69-119">PUT /api/todo/{id}</span></span> | <span data-ttu-id="16e69-120">기존 항목 업데이트 &nbsp;</span><span class="sxs-lookup"><span data-stu-id="16e69-120">Update an existing item &nbsp;</span></span> | <span data-ttu-id="16e69-121">할 일 항목</span><span class="sxs-lookup"><span data-stu-id="16e69-121">To-do item</span></span> | <span data-ttu-id="16e69-122">없음</span><span class="sxs-lookup"><span data-stu-id="16e69-122">None</span></span> |
+|<span data-ttu-id="16e69-123">DELETE /api/todo/{id} &nbsp; &nbsp;</span><span class="sxs-lookup"><span data-stu-id="16e69-123">DELETE /api/todo/{id} &nbsp; &nbsp;</span></span> | <span data-ttu-id="16e69-124">항목 삭제 &nbsp; &nbsp;</span><span class="sxs-lookup"><span data-stu-id="16e69-124">Delete an item &nbsp; &nbsp;</span></span> | <span data-ttu-id="16e69-125">없음</span><span class="sxs-lookup"><span data-stu-id="16e69-125">None</span></span> | <span data-ttu-id="16e69-126">없음</span><span class="sxs-lookup"><span data-stu-id="16e69-126">None</span></span>|
 
-<br>
+<span data-ttu-id="16e69-127">다음 다이어그램에서는 앱의 기본 디자인을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="16e69-127">The following diagram shows the basic design of the app.</span></span>
 
-다음 다이어그램에서는 앱의 기본 디자인을 보여 줍니다.
+![클라이언트는 왼쪽에 상자로 표시되며 요청을 제출하고 오른쪽에 그린 상자인 응용 프로그램에서 응답을 받습니다.](../../tutorials/first-web-api/_static/architecture.png)
 
-![클라이언트는 왼쪽에 상자로 표시되며 요청을 제출하고 오른쪽에 그린 상자인 응용 프로그램에서 응답을 받습니다. 응용 프로그램 상자 내에서 3개의 상자는 컨트롤러, 모델 및 데이터 액세스 계층을 나타냅니다. 요청은 응용 프로그램의 컨트롤러로 들어오고 읽기/쓰기 작업은 컨트롤러와 데이터 액세스 계층 간에 발생합니다. 모델은 직렬화되며 응답에서 클라이언트에 반환됩니다.](../../tutorials/first-web-api/_static/architecture.png)
+* <span data-ttu-id="16e69-132">웹 API를 사용하는 어떤 것도 클라이언트에 해당합니다(모바일 앱, 브라우저 등).</span><span class="sxs-lookup"><span data-stu-id="16e69-132">The client is whatever consumes the web API (mobile app, browser, etc.).</span></span> <span data-ttu-id="16e69-133">이 자습서에서는 클라이언트를 만들지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="16e69-133">This tutorial doesn't create a client.</span></span> <span data-ttu-id="16e69-134">[Postman](https://www.getpostman.com/) 또는 [curl](https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/curl.1.html)은 앱을 테스트하기 위한 클라이언트로 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="16e69-134">[Postman](https://www.getpostman.com/) or [curl](https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/curl.1.html) is used as the client to test the app.</span></span>
 
-* 웹 API를 사용하는 어떤 것도 클라이언트에 해당합니다(모바일 앱, 브라우저 등). 이 자습서에서는 클라이언트를 만들지 않습니다. [Postman](https://www.getpostman.com/) 또는 [curl](https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/curl.1.html)은 앱을 테스트하기 위한 클라이언트로 사용됩니다.
+* <span data-ttu-id="16e69-135">*모델*은 앱에서 데이터를 나타내는 개체입니다.</span><span class="sxs-lookup"><span data-stu-id="16e69-135">A *model* is an object that represents the data in the app.</span></span> <span data-ttu-id="16e69-136">이 경우 유일한 모델은 할 일 항목입니다.</span><span class="sxs-lookup"><span data-stu-id="16e69-136">In this case, the only model is a to-do item.</span></span> <span data-ttu-id="16e69-137">모델은 C# 클래스로 표현되며 POCO(**P**lain **O**ld **C**# **O**bject)로도 알려져 있습니다.</span><span class="sxs-lookup"><span data-stu-id="16e69-137">Models are represented as C# classes, also known as **P**lain **O**ld **C**# **O**bject (POCOs).</span></span>
 
-* *모델*은 앱에서 데이터를 나타내는 개체입니다. 이 경우 유일한 모델은 할 일 항목입니다. 모델은 C# 클래스로 표현되며 POCO(**P**lain **O**ld **C**# **O**bject)로도 알려져 있습니다.
+* <span data-ttu-id="16e69-138">*컨트롤러*는 HTTP 요청을 처리하고 HTTP 응답을 만드는 개체입니다.</span><span class="sxs-lookup"><span data-stu-id="16e69-138">A *controller* is an object that handles HTTP requests and creates the HTTP response.</span></span> <span data-ttu-id="16e69-139">이 앱에는 단일 컨트롤러가 있습니다.</span><span class="sxs-lookup"><span data-stu-id="16e69-139">This app has a single controller.</span></span>
 
-* *컨트롤러*는 HTTP 요청을 처리하고 HTTP 응답을 만드는 개체입니다. 이 앱에는 단일 컨트롤러가 있습니다.
-
-* 자습서를 간단히 유지하기 위해 앱은 영구 데이터베이스를 사용하지 않습니다. 샘플 앱은 메모리 내 데이터베이스에 할 일 항목을 저장합니다.
+* <span data-ttu-id="16e69-140">자습서를 간단히 유지하기 위해 앱은 영구 데이터베이스를 사용하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="16e69-140">To keep the tutorial simple, the app doesn't use a persistent database.</span></span> <span data-ttu-id="16e69-141">샘플 앱은 메모리 내 데이터베이스에 할 일 항목을 저장합니다.</span><span class="sxs-lookup"><span data-stu-id="16e69-141">The sample app stores to-do items in an in-memory database.</span></span>
