@@ -19,19 +19,19 @@ ms.lasthandoff: 03/22/2018
 
 작성자: [Steve Smith](https://ardalis.com/)
 
-분산 캐시는 ASP.NET Core 응용 프로그램이 특히 클라우드나 서버 팜 환경에서 호스팅 될 때 성능 및 확장성을 개선할 수 있습니다. 이 문서에서는 ASP.NET Core가 기본으로 제공하는 분산 캐시 추상화 및 구현의 사용 방법을 설명합니다.
+분산 캐시는 ASP.NET Core 응용 프로그램이 특히 클라우드나 서버 팜 환경에서 호스팅될 때 성능 및 확장성을 개선할 수 있습니다. 이 문서에서는 ASP.NET Core가 기본으로 제공하는 분산 캐시 추상화 및 구현의 사용 방법을 설명합니다.
 
 [예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/distributed/sample) ([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="what-is-a-distributed-cache"></a>분산 캐시란
 
-분산 캐시는 여러 응용 프로그램 서버에서 공유됩니다 ([캐시 기본 사항](memory.md#caching-basics) 참조). 캐시에 저장된 정보는 개별 웹 서버의 메모리에 저장되지 않으며, 캐시된 데이터는 모든 응용 프로그램의 서버에 사용할 수 있습니다. 이는 몇 가지 이점을 제공합니다:
+분산 캐시는 여러 응용 프로그램 서버에서 공유됩니다([캐시 기본 사항](memory.md#caching-basics) 참조). 캐시에 저장된 정보는 개별 웹 서버의 메모리에 저장되지 않으며, 캐시된 데이터는 모든 응용 프로그램의 서버에 사용할 수 있습니다. 이는 몇 가지 이점을 제공합니다.
 
 1. 캐시된 데이터가 모든 웹 서버에서 일관적입니다. 어떤 서버가 사용자의 요청을 처리하는지에 따라 다른 결과를 표시하거나 하지 않습니다.
 
 2. 캐시된 데이터는 웹 서버가 재시작되거나 배포된 후에도 유지됩니다. 캐시에 영향을 주지 않고 개별 웹 서버를 제거하거나 추가할 수 있습니다.
 
-3. 원본 데이터 저장소에 대한 요청 회수가 줄어듭니다 (다수의 메모리 내 캐시를 사용하거나 캐시를 전혀 사용하지 않는 경우 보다).
+3. 원본 데이터 저장소에 대한 요청 회수가 줄어듭니다(다수의 메모리 내 캐시를 사용하거나 캐시를 전혀 사용하지 않는 경우 보다).
 
 > [!NOTE]
 > SQL Server 분산 캐시를 사용하는 경우 이런 장점 중 일부는 응용 프로그램의 원본 데이터와 다른 캐시 전용 데이터베이스 인스턴스를 사용하는 경우에만 적용됩니다.
@@ -42,7 +42,7 @@ ms.lasthandoff: 03/22/2018
 
 ## <a name="the-idistributedcache-interface"></a>IDistributedCache 인터페이스
 
-`IDistributedCache` 인터페이스는 동기 및 비동기 메서드를 포함하고 있습니다. 이 인터페이스를 사용하면 분산 캐시 구현에 항목을 추가하고, 검색하고, 제거할 수 있습니다. `IDistributedCache` 인터페이스는 다음과 같은 메서드를 포함하고 있습니다:
+`IDistributedCache` 인터페이스는 동기 및 비동기 메서드를 포함하고 있습니다. 이 인터페이스를 사용하면 분산 캐시 구현에 항목을 추가하고, 검색하고, 제거할 수 있습니다. `IDistributedCache` 인터페이스는 다음과 같은 메서드를 포함하고 있습니다.
 
 **Get, GetAsync**
 
@@ -54,7 +54,7 @@ ms.lasthandoff: 03/22/2018
 
 **Refresh, RefreshAsync**
 
-키를 기반으로 캐시 항목을 새로 고치고, 캐시 항목의 슬라이딩 만료 시간 제한을 재설정합니다 (필요한 경우).
+키를 기반으로 캐시 항목을 새로 고치고, 캐시 항목의 슬라이딩 만료 시간 제한을 재설정합니다(필요한 경우).
 
 **Remove, RemoveAsync**
 
@@ -69,13 +69,13 @@ ms.lasthandoff: 03/22/2018
    3. 응용 프로그램의 [미들웨어](xref:fundamentals/middleware/index)나 MVC 컨트롤러 클래스의 생성자에서 `IDistributedCache`의 인스턴스를 요청합니다. 인스턴스는 [종속성 주입](../../fundamentals/dependency-injection.md)(DI)을 통해서 제공됩니다.
 
 > [!NOTE]
-> `IDistributedCache` 인스턴스를 Singleton이나 Scoped 수명으로 사용해야만 할 필요는 없습니다 (적어도 기본 구현에 대해서는). 필요할 때마다 인스턴스를 생성할 수도 있지만 ([종속성 주입](../../fundamentals/dependency-injection.md)을 사용하는 대신), 그럴 경우 코드를 테스트하기가 어려워지고 [명시적 종속성 원칙](http://deviq.com/explicit-dependencies-principle/)을 위반하게 됩니다.
+> `IDistributedCache` 인스턴스를 Singleton이나 Scoped 수명으로 사용할 필요는 없습니다(적어도 기본 구현일 경우). 필요할 때마다 인스턴스를 생성할 수도 있지만([종속성 주입](../../fundamentals/dependency-injection.md)을 사용하는 대신), 그럴 경우 코드를 테스트하기가 어려워지고 [명시적 종속성 원칙](http://deviq.com/explicit-dependencies-principle/)을 위반하게 됩니다.
 
-다음 예제는 간단한 미들웨어 구성 요소에서 `IDistributedCache`의 인스턴스를 사용하는 방법을 보여줍니다:
+다음 예제는 간단한 미들웨어 구성 요소에서 `IDistributedCache`의 인스턴스를 사용하는 방법을 보여줍니다.
 
 [!code-csharp[](./distributed/sample/src/DistCacheSample/StartTimeHeader.cs?highlight=15,18,21,27,28,29,30,31)]
 
-위의 코드는 캐시된 값을 읽기만 하고 작성하지는 않습니다. 이 예제에서 값은 오직 서버가 시작될 때만 설정하고 변경되지 않습니다. 다중 서버 시나리오에서는 가장 최근에 시작된 서버가 다른 서버에 의해 설정된 기존의 모든 값을 덮어쓰게 됩니다. 그리고 `Get` 및 `Set` 메서드는 `byte[]` 형식을 사용합니다. 따라서 문자열 값은 `Encoding.UTF8.GetString` (`Get`을 사용할 때) 또는 `Encoding.UTF8.GetBytes`를 (`Set`을 사용할 때) 사용해서 변환해야 합니다.
+위의 코드는 캐시된 값을 읽기만 하고 작성하지는 않습니다. 이 예제에서 값은 오직 서버가 시작될 때만 설정하고 변경되지 않습니다. 다중 서버 시나리오에서는 가장 최근에 시작된 서버가 다른 서버에 의해 설정된 기존의 모든 값을 덮어쓰게 됩니다. 그리고 `Get` 및 `Set` 메서드는 `byte[]` 형식을 사용합니다. 따라서 문자열 값은 `Encoding.UTF8.GetString`(`Get`을 사용할 때) 또는 `Encoding.UTF8.GetBytes`(`Set`을 사용할 때)를 사용해서 변환해야 합니다.
 
 다음 코드는 *Startup.cs*에서 값이 설정되고 있는 부분을 보여줍니다.
 
@@ -88,9 +88,9 @@ ms.lasthandoff: 03/22/2018
 
 [Redis](https://redis.io/)는 분산 캐시로 흔히 사용되는 오픈 소스 메모리 내 데이터 저장소입니다. 로컬에서 사용할 수도 있고 Azure에서 호스팅되는 응용 프로그램에 대한 [Azure Redis Cache](https://azure.microsoft.com/services/cache/)를 구성할 수도 있습니다. ASP.NET Core 응용 프로그램은 `RedisDistributedCache`의 인스턴스를 사용해서 캐시 구현을 구성합니다.
 
-`ConfigureServices`에서 Redis 구현을 구성한 다음 응용 프로그램 코드에서 `IDistributedCache`의 인스턴스를 요청하여 이에 접근합니다 (위의 코드 참조).
+`ConfigureServices`에서 Redis 구현을 구성한 다음 응용 프로그램 코드에서 `IDistributedCache`의 인스턴스를 요청하여 이에 접근합니다(위의 코드 참조).
 
-예제 코드에서는 서버가 `Staging` 환경으로 구성될 때 `RedisCache` 구현이 사용됩니다. 따라서 `ConfigureStagingServices` 메서드에서 `RedisCache`를 구성합니다:
+예제 코드에서는 서버가 `Staging` 환경으로 구성될 때 `RedisCache` 구현이 사용됩니다. 따라서 `ConfigureStagingServices` 메서드에서 `RedisCache`를 구성합니다.
 
 [!code-csharp[](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=8,9,10,11,12,13&range=27-40)]
 
@@ -111,7 +111,7 @@ sql-cache 캐시 도구를 사용하려면 *.csproj* 파일의 `<ItemGroup>` 요
 C:\DistCacheSample\src\DistCacheSample>dotnet sql-cache create --help
    ```
 
-그러면 sql-cache 도구가 사용 방법, 옵션 및 명령 도움말을 출력하며, 이제 "sql-cache create" 명령을 실행하여 Sql Server에 테이블을 생성할 수 있습니다:
+그러면 sql-cache 도구가 사용 방법, 옵션 및 명령 도움말을 출력하며, 이제 "sql-cache create" 명령을 실행하여 Sql Server에 테이블을 생성할 수 있습니다.
 
 ```none
 C:\DistCacheSample\src\DistCacheSample>dotnet sql-cache create "Data Source=(localdb)\v11.0;Initial Catalog=DistCache;Integrated Security=True;" dbo TestCache
@@ -123,7 +123,7 @@ C:\DistCacheSample\src\DistCacheSample>dotnet sql-cache create "Data Source=(loc
 
 ![SqlServer 캐시 테이블](distributed/_static/SqlServerCacheTable.png)
 
-다른 모든 캐시 구현과 마찬가지로, 응용 프로그램은 `SqlServerCache`가 아니라 `IDistributedCache`의 인스턴스를 사용해서 캐시 값을 읽고 설정해야 합니다. 예제에서는 `Production` 환경에서 `SqlServerCache`를 구현하고 있습니다 (그래서 `ConfigureProductionServices`에 설정되어 있습니다).
+다른 모든 캐시 구현과 마찬가지로, 응용 프로그램은 `SqlServerCache`가 아니라 `IDistributedCache`의 인스턴스를 사용해서 캐시 값을 읽고 설정해야 합니다. 예제에서는 `Production` 환경에서 `SqlServerCache`를 구현하고 있습니다(그래서 `ConfigureProductionServices`에 설정되어 있습니다).
 
 [!code-csharp[](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=7,8,9,10,11,12&range=42-56)]
 
