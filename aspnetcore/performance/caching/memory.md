@@ -1,5 +1,5 @@
 ---
-title: ASP.NET Core와 메모리 내 캐시
+title: ASP.NET Core의 메모리 내 캐시
 author: rick-anderson
 description: ASP.NET Core에서 데이터를 메모리에 캐시하는 방법을 알아봅니다.
 manager: wpickett
@@ -10,15 +10,15 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/caching/memory
-ms.openlocfilehash: c2eae83219e8995a614b2933b1290d061f1b7869
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: a1ceb6c577c634aae7ee9c327e8e5b33e973912d
+ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/03/2018
 ---
-# <a name="cache-in-memory-in-aspnet-core"></a>ASP.NET Core와 메모리 내 캐시
+# <a name="cache-in-memory-in-aspnet-core"></a>ASP.NET Core의 메모리 내 캐시
 
-작성자: [Rick Anderson](https://twitter.com/RickAndMSFT), [John Luo](https://github.com/JunTaoLuo), 및 [Steve Smith](https://ardalis.com/)
+작성자: [Rick Anderson](https://twitter.com/RickAndMSFT), [John Luo](https://github.com/JunTaoLuo) 및 [Steve Smith](https://ardalis.com/)
 
 [예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/memory/sample) ([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
@@ -36,15 +36,15 @@ ASP.NET Core는 몇 가지 다른 종류의 캐시를 지원합니다. 가장 �
 
 ## <a name="using-imemorycache"></a>IMemoryCache 사용하기
 
-메모리 내 캐시는 응용 프로그램에서 [종속성 주입](../../fundamentals/dependency-injection.md)을 통해서 참조되는 *서비스*입니다. `ConfigureServices`에서 `AddMemoryCache`를 호출합니다:
+메모리 내 캐시는 응용 프로그램에서 [종속성 주입](../../fundamentals/dependency-injection.md)을 통해서 참조되는 *서비스*입니다. `ConfigureServices`에서 `AddMemoryCache`를 호출합니다.
 
 [!code-csharp[](memory/sample/WebCache/Startup.cs?highlight=8)] 
 
-그런 다움 생성자에서 `IMemoryCache`의 인스턴스를 요청합니다:
+그런 다음 생성자에서 `IMemoryCache`의 인스턴스를 요청합니다.
 
 [!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet_ctor&highlight=3,5-999)] 
 
-`IMemoryCache`를 사용하기 위해서는 "Microsoft.Extensions.Caching.Memory" NuGet 패키지가 필요합니다.
+`IMemoryCache`를 사용하려면 "Microsoft.Extensions.Caching.Memory" NuGet 패키지가 필요합니다.
 
 다음 코드는 [TryGetValue](/dotnet/api/microsoft.extensions.caching.memory.imemorycache.trygetvalue?view=aspnetcore-2.0#Microsoft_Extensions_Caching_Memory_IMemoryCache_TryGetValue_System_Object_System_Object__)를 이용해서 시간이 캐시되어 있는지 확인합니다. 만약 시간이 캐시되어 있지 않다면 새로운 항목이 생성되고 [Set](/dotnet/api/microsoft.extensions.caching.memory.cacheextensions.set?view=aspnetcore-2.0#Microsoft_Extensions_Caching_Memory_CacheExtensions_Set__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object___0_Microsoft_Extensions_Caching_Memory_MemoryCacheEntryOptions_)을 통해서 캐시에 추가됩니다.
 
@@ -54,11 +54,11 @@ ASP.NET Core는 몇 가지 다른 종류의 캐시를 지원합니다. 가장 �
 
 [!code-cshtml[](memory/sample/WebCache/Views/Home/Cache.cshtml)]
 
-제한 시간 안에 요청이 전달되는 동안에는 (그리고 메모리 부족으로 제거되지 않은 경우에는) 캐시된 `DateTime` 값이 캐시에 남아 있습니다. 다음 그림은 현재 시간과 캐시에서 조회한 그보다 오래된 시간을 보여줍니다:
+제한 시간 안에 요청이 전달되는 동안에는 (그리고 메모리 부족으로 제거되지 않은 경우에는) 캐시된 `DateTime` 값이 캐시에 남아 있습니다. 다음 그림은 현재 시간과 캐시에서 조회한 그보다 오래된 시간을 보여줍니다.
 
 ![두 개의 서로 다른 시간을 표시하는 Index 뷰](memory/_static/time.png)
 
-다음 코드는 [GetOrCreate](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_GetOrCreate__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object_System_Func_Microsoft_Extensions_Caching_Memory_ICacheEntry___0__) 및 [GetOrCreateAsync](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_GetOrCreateAsync__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object_System_Func_Microsoft_Extensions_Caching_Memory_ICacheEntry_System_Threading_Tasks_Task___0___)를 이용해서 데이터를 캐시합니다. 
+다음 코드에서는 [GetOrCreate](/dotnet/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_GetOrCreate__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object_System_Func_Microsoft_Extensions_Caching_Memory_ICacheEntry___0__) 및 [GetOrCreateAsync](/dotnet/api/microsoft.extensions.caching.memory.cacheextensions#Microsoft_Extensions_Caching_Memory_CacheExtensions_GetOrCreateAsync__1_Microsoft_Extensions_Caching_Memory_IMemoryCache_System_Object_System_Func_Microsoft_Extensions_Caching_Memory_ICacheEntry_System_Threading_Tasks_Task___0___) 데이터를 캐시 합니다. 
 
 [!code-csharp[](memory/sample/WebCache/Controllers/HomeController.cs?name=snippet2&highlight=3-7,14-19)]
 
@@ -72,8 +72,8 @@ ASP.NET Core는 몇 가지 다른 종류의 캐시를 지원합니다. 가장 �
 
 다음 예제에서는:
 
-- 절대 만료 시간을 설정합니다. 절대 만료 시간은 항목이 캐시될 수 있는 최대 시간으로, 슬라이딩 만료가 지속적으로 갱신될 경우 항목이 너무 낡아지는 것을 방지합니다.
-- 슬라이딩 만료 시간을 설정합니다. 상대 만료 시계는 캐시된 항목에 접근하는 요청에 의해 재설정됩니다.
+- 절대 만료 시간을 설정합니다. 절대 만료 시간은 항목이 캐시될 수 있는 최대 시간으로, 슬라이딩 만료가 지속적으로 갱신될 경우 항목이 이전 상태로 지속되는 것을 방지합니다.
+- 슬라이딩 만료 시간을 설정합니다. 상대 만료 시계는 캐시된 항목에 접근하는 요청에 따라 재설정됩니다.
 - 캐시 우선 순위를 `CacheItemPriority.NeverRemove`로 설정합니다.
 - 캐시에서 항목이 제거된 후에 호출되는 [PostEvictionDelegate](https://docs.microsoft.com/aspnet/core/api/microsoft.extensions.caching.memory.postevictiondelegate)를 설정합니다. 콜백은 캐시에서 항목을 제거하는 코드와 다른 스레드에서 실행됩니다.
 
