@@ -1,5 +1,5 @@
 ---
-title: Configure ASP.NET Core Identity
+title: ASP.NET Core Id 구성
 author: AdrienTorris
 description: ASP.NET Core Id 기본값을 이해 하 고 사용자 지정 값을 사용 하도록 Id 속성을 구성 하는 방법에 알아봅니다.
 manager: wpickett
@@ -9,13 +9,13 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-configuration
-ms.openlocfilehash: c254a5eaa94d7502fe3e3f2f49031c5120ecaff2
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 511c39db2bb4d3b215a1037c52f6c4f89b48ff7d
+ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/12/2018
 ---
-# <a name="configure-aspnet-core-identity"></a>Configure ASP.NET Core Identity
+# <a name="configure-aspnet-core-identity"></a>ASP.NET Core Id 구성
 
 ASP.NET Core Identity 쿠키 설정, 암호 정책 및 잠금 시간 등의 설정에 대 한 기본 구성을 사용합니다. 이러한 설정은 응용 프로그램에서 재정의할 수 있습니다 `Startup` 클래스입니다.
 
@@ -61,15 +61,18 @@ var result = await _signInManager.PasswordSignInAsync(
 
 기본적으로 Id는 암호에 대문자, 소문자, 숫자 및 영숫자가 아닌 문자를 포함 필요 합니다. 암호는 최소 6 자 여야 합니다. [PasswordOptions](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions) 에서 변경할 수 있습니다 `Startup.ConfigureServices`합니다.
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
 ASP.NET Core 추가 2.0는 [RequiredUniqueChars](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requireduniquechars) 속성입니다. 그렇지 않으면 옵션은 ASP.NET Core 동일 1.x 합니다.
 
 [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo-Configuration/Startup.cs?range=29-37,50-52)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Startup.cs?range=58-65,84)]
 
-* * *
+---
+
 [IdentityOptions.Password](/dotnet/api/microsoft.aspnetcore.identity.identityoptions.password) 지정는 [PasswordOptions](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions) 표에 표시 된 속성을 사용 합니다.
 
 | 속성 | 설명 | 기본 |
@@ -121,15 +124,17 @@ ASP.NET Core 추가 2.0는 [RequiredUniqueChars](/dotnet/api/microsoft.aspnetcor
 
 구성에서 응용 프로그램의 쿠키 `Startup.ConfigureServices`:
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
 [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo-Configuration/Startup.cs?name=snippet_configurecookie)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo-PrimaryKeysConfig/Startup.cs?range=58-59,72-80,84)]
 
-* * *
-[CookieAuthenticationOptions](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions) 속성은 다음과 같습니다.
+---
 
+[CookieAuthenticationOptions](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions) 속성은 다음과 같습니다.
 
 |                                                               속성                                                               |                                                                                                                                                           설명                                                                                                                                                            |
 |--------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

@@ -2,7 +2,7 @@
 
 이 섹션에서는 jQuery를 사용하여 Web API를 호출하는 HTML 페이지가 추가되었습니다. jQuery는 요청을 시작하고 API 응답의 세부 정보로 페이지를 업데이트합니다.
 
-정적 파일을 제공하고 기본 파일 매핑을 사용하도록 프로젝트를 구성합니다. 이는 *Startup.Configure*에서 [UseStaticFiles](/dotnet/api/microsoft.aspnetcore.builder.staticfileextensions.usestaticfiles#Microsoft_AspNetCore_Builder_StaticFileExtensions_UseStaticFiles_Microsoft_AspNetCore_Builder_IApplicationBuilder_) 및 [UseDefaultFiles](/dotnet/api/microsoft.aspnetcore.builder.defaultfilesextensions.usedefaultfiles#Microsoft_AspNetCore_Builder_DefaultFilesExtensions_UseDefaultFiles_Microsoft_AspNetCore_Builder_IApplicationBuilder_) 확장 메서드를 호출하여 수행됩니다. 자세한 내용은 [ASP.NET Core에서 정적 파일 작업](xref:fundamentals/static-files)을 참조하세요.
+정적 파일을 제공하고 기본 파일 매핑을 사용하도록 프로젝트를 구성합니다. 이는 *Startup.Configure*에서 [UseStaticFiles](/dotnet/api/microsoft.aspnetcore.builder.staticfileextensions.usestaticfiles#Microsoft_AspNetCore_Builder_StaticFileExtensions_UseStaticFiles_Microsoft_AspNetCore_Builder_IApplicationBuilder_) 및 [UseDefaultFiles](/dotnet/api/microsoft.aspnetcore.builder.defaultfilesextensions.usedefaultfiles#Microsoft_AspNetCore_Builder_DefaultFilesExtensions_UseDefaultFiles_Microsoft_AspNetCore_Builder_IApplicationBuilder_) 확장 메서드를 호출하여 수행됩니다. 자세한 내용은 [정적 파일](xref:fundamentals/static-files)을 참조하세요.
 
 [!code-csharp[](../../tutorials/first-web-api/samples/2.0/TodoApi/Startup2.cs?name=snippet_Configure&highlight=3-4)]
 

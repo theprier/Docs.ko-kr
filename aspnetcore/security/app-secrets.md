@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/app-secrets
-ms.openlocfilehash: 0a04f5762a35426f342b58b8b60288c66c057ae7
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
-ms.translationtype: MT
+ms.openlocfilehash: a268fd76a303dc1185b451e4f678fc2fe761e80a
+ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="safe-storage-of-app-secrets-in-development-in-aspnet-core"></a>ASP.NET Core에서 개발의 앱 암호의 안전한 저장소
 
@@ -41,7 +41,8 @@ Secret Manager 도구는 개발 작업에 필요한 민감한 데이터를 프�
 
 ## <a name="installing-the-secret-manager-tool"></a>Secret Manager 도구 설치하기
 
-#### <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
+
 마우스 오른쪽 버튼으로 솔루션 탐색기에서 프로젝트를 클릭한 다음, 컨텍스트 메뉴에서 **\<project_name\>.csproj 편집 (Edit \<project_name\>.csproj)** 을 선택합니다. 다음에 강조 표시된 줄을 *.csproj* 파일에 추가하고 저장하면 관련된 NuGet 패키지가 복원됩니다.
 
 [!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
@@ -58,7 +59,8 @@ Secret Manager 도구는 개발 작업에 필요한 민감한 데이터를 프�
 }
 ```
 
-#### <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
+# <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
+
 추가 `Microsoft.Extensions.SecretManager.Tools` 에 *.csproj* 파일을 실행 [dotnet 복원](/dotnet/core/tools/dotnet-restore)합니다. 명령줄에서 동일한 단계를 사용해서 Secret Manager 도구를 설치할 수 있습니다. 
 
 [!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
@@ -94,7 +96,8 @@ dotnet user-secrets set MySecret ValueOfMySecret --project c:\work\WebApp1\src\w
 
 Secret Manager 도구를 사용해서 응용 프로그램의 보안 정보의 목록을 나열하거나 제거하고 초기화시킬 수도 있습니다. 
 
-* * *
+---
+
 ## <a name="accessing-user-secrets-via-configuration"></a>구성을 통해서 사용자 보안 정보에 접근하기
 
 구성 시스템을 통해서 Secret Manager 도구의 사용자 보안 정보에 접근할 수 있습니다. 추가 `Microsoft.Extensions.Configuration.UserSecrets` 패키지 및 실행 [dotnet 복원](/dotnet/core/tools/dotnet-restore)합니다.

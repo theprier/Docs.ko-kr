@@ -11,11 +11,11 @@ ms.prod: aspnet-core
 ms.topic: tutorial
 ms.technology: aspnet
 uid: signalr/get-started
-ms.openlocfilehash: 11c8cf079a0922e925060ad3d439ba5e095ae22e
-ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
+ms.openlocfilehash: 5929ee44aa58088614f910560eafbf5f5ab82ded
+ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="get-started-with-signalr-on-aspnet-core"></a>SignalR에서 ASP.NET Core 시작
 
@@ -70,8 +70,8 @@ Visual Studio에 포함 되어는 `Microsoft.AspNetCore.SignalR` 서버 라이�
 3. 다음 명령을 실행 하는 **패키지 관리자 콘솔** 프로젝트 루트에서 창:
 
     ```console
-      npm init -y
-      npm install @aspnet/signalr
+    npm init -y
+    npm install @aspnet/signalr
     ```     
 
 4. 복사는 *signalr.js* 에서 파일을 *node_modules\\ @aspnet\signalr\dist\browser*  에 *lib* 프로젝트의 폴더에에서 있습니다.
@@ -81,14 +81,14 @@ Visual Studio에 포함 되어는 `Microsoft.AspNetCore.SignalR` 서버 라이�
 1. **통합 터미널**, 다음 명령을 실행 합니다.
 
     ```console
-      dotnet new razor -o SignalRChat
+    dotnet new razor -o SignalRChat
     ```
 
 2. 사용 하 여 JavaScript 클라이언트 라이브러리를 설치 *npm*합니다.
 
-    ```
-      npm init -y
-      npm install @aspnet/signalr
+    ```console
+    npm init -y
+    npm install @aspnet/signalr
     ```
 
 3. 복사는 *signalr.js* 에서 파일을 *node_modules\\ @aspnet\signalr\dist\browser*  에 *lib* 프로젝트의 폴더에에서 있습니다.
@@ -167,7 +167,7 @@ SignalR 서버 signalr 요청을 전달 하려면 알 수 있도록 구성 되�
 
 1. 브라우저 중 하나를 선택 하 고, 이름 및 메시지를 입력 한 다음 클릭는 **보낼** 단추입니다. 이름 및 메시지는 두 페이지에 즉시 표시 됩니다.
 
------
+---
 
   ![솔루션](get-started/_static/signalr-get-started-finished.png)
 

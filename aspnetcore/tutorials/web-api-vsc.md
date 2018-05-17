@@ -5,24 +5,20 @@ description: ASP.NET Core MVC 및 Visual Studio Code를 사용하여 macOS, Linu
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 04/27/2018
+ms.date: 05/08/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/web-api-vsc
-ms.openlocfilehash: f991aeadbaa3f7696d6fd6b8791d26248e7560a6
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 9fac4d7b3f687881eafbd63ee71f99bff3b27183
+ms.sourcegitcommit: c867d7427bd4a88a78b2322e156367733b532730
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="create-a-web-api-with-aspnet-core-and-visual-studio-code"></a>ASP.NET Core 및 Visual Studio Code를 사용하여 Web API 만들기
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT) 및 [Mike Wasson](https://github.com/mikewasson)
-
-::: moniker range="= aspnetcore-2.1"
-[!INCLUDE[](~/includes/2.1.md)]
-::: moniker-end
 
 이 자습서에서는 “할 일” 항목 목록을 관리하기 위한 웹 API를 빌드합니다. UI는 생성되지 않습니다.
 
@@ -105,7 +101,7 @@ ASP.NET Core 2.1 이상에서 새 프로젝트를 만들면 *TodoApi.csproj* 파
 
 ## <a name="add-a-controller"></a>컨트롤러 추가
 
-*Controllers* 폴더에 `TodoController`라는 클래스를 만듭니다. 다음 코드로 내용을 바꿉니다.
+*Controllers* 폴더에 `TodoController`라는 클래스를 만듭니다. 다음 코드로 콘텐츠를 바꿉니다.
 
 [!INCLUDE[code and get todo items](../includes/webApi/getTodoItems.md)]
 

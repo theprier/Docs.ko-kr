@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
 msc.type: authoredcontent
-ms.openlocfilehash: 081a71ef67a6eee6c84058c30f9e15301afbed23
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 57477cf15bf6755523f28356d5384517bea24982
+ms.sourcegitcommit: 5ae0c125ee3bbd324edef3818d1d160f4dd84602
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="aspnet-mvc-4-models-and-data-access"></a>ASP.NET MVC 4 모델 및 데이터 액세스
 
@@ -235,12 +235,14 @@ Code First 접근 방식은 일반적으로 프레임 워크와 연결 되어 �
 
 ~~~
 [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample2.cs)]
+~~~
 
 > [!NOTE]
-> You are using a capability of .NET called **LINQ** (language-integrated query) to write strongly-typed query expressions against these collections - which will execute code against the database and return objects that you can program against.
+> .NET 호출의 기능을 사용 하는 **LINQ** 프로그래밍할 수 있습니다 (통합 언어 쿼리)-이 데이터베이스에 대해 코드를 실행 하 고 반환 하는 이러한 컬렉션에 대 한 강력한 형식의 쿼리 식을 작성 하 개체 합니다.
 > 
-> For more information about LINQ, please visit the [msdn site](https://msdn.microsoft.com/library/bb397926&amp;#040;v=vs.110&amp;#041;.aspx).
-~~~
+> LINQ에 대 한 자세한 내용은 참조 하십시오는 [msdn 사이트](https://msdn.microsoft.com/library/bb397926&amp;#040;v=vs.110&amp;#041;.aspx)합니다.
+
+
 3. 업데이트 **인덱스** 동작 메서드를 모든 장르를 검색 합니다.
 
     (코드 조각- *모델 및 데이터 액세스-e x 1 저장소 인덱스*)

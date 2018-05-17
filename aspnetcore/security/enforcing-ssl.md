@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/enforcing-ssl
-ms.openlocfilehash: b324dbcd6d28c1a8505f96da333874728e2e6a18
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: edc69443455677ba80ebb0a73e193d4d6741e470
+ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="enforce-https-in-an-aspnet-core"></a>ASP.NET Core에 HTTPS를 적용 합니다.
 
@@ -73,7 +73,7 @@ ms.lasthandoff: 05/08/2018
 
 당 [OWASP](https://www.owasp.org/index.php/About_The_Open_Web_Application_Security_Project), [HTTP 엄격한 전송 보안 (HSTS)](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet) 는 특별 한 응답 헤더를 사용 하 여 웹 응용 프로그램에 의해 지정 된 옵트인 보안 향상 합니다. 지원 되는 브라우저는이 헤더를 수신 되 면 해당 브라우저의 통신을 지정한 도메인에 HTTP를 통해 보낼 수 없게 됩니다 및 HTTPS를 통해 모든 통신 송신할 대신 합니다. 또한 브라우저에 대 한 프롬프트를 통해 HTTPS 클릭을 수 없습니다.
 
-ASP.NET 2.1 preview1 핵심 또는 나중에 HSTS와 구현 하는 `UseHsts` 확장 메서드. 다음 호출 코드 `UseHsts` 앱에 없는 경우 [개발 모드](xref:fundamentals/environments):
+ASP.NET Core 2.1 이상 HSTS와 구현 하는 `UseHsts` 확장 메서드. 다음 호출 코드 `UseHsts` 앱에 없는 경우 [개발 모드](xref:fundamentals/environments):
 
 [!code-csharp[sample](enforcing-ssl/sample/Startup.cs?name=snippet1&highlight=10)]
 

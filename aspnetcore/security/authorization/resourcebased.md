@@ -11,11 +11,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/resourcebased
-ms.openlocfilehash: 5eac8ecf9de074d0a009690969de5beb4f284341
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 3be2d9b9aef18763fbdba78e044dd6b68ddcef0c
+ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="resource-based-authorization-in-aspnet-core"></a>ASP.NET Core에서 리소스 기반의 권한 부여
 
@@ -66,43 +66,52 @@ Task<bool> AuthorizeAsync(ClaimsPrincipal user,
 > [!NOTE]
 > 다음 코드 샘플 인증을 실행 하는 것으로 가정 하 고 집합의 `User` 속성입니다.
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
 [!code-csharp[](resourcebased/samples/ResourceBasedAuthApp2/Pages/Document/Edit.cshtml.cs?name=snippet_DocumentEditHandler)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 [!code-csharp[](resourcebased/samples/ResourceBasedAuthApp1/Controllers/DocumentController.cs?name=snippet_DocumentEditAction)]
 
-* * *
+---
+
 ## <a name="write-a-resource-based-handler"></a>리소스 기반 처리기 작성
 
 리소스 기반 권한 부여 보다 큰 차이가 없습니다.에 대 한 처리기를 작성 [일반 요구 사항 처리기 작성](xref:security/authorization/policies#security-authorization-policies-based-authorization-handler)합니다. 사용자 지정 요구 사항 클래스를 만들고 요구 사항 처리기 클래스를 구현 합니다. 처리기 클래스 요구 사항 및 리소스 종류를 지정합니다. 예를 들어 한 처리기를 활용 하는 `SameAuthorRequirement` 요구 사항 및 `Document` 리소스 모양은 다음과 같습니다.
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
 [!code-csharp[](resourcebased/samples/ResourceBasedAuthApp2/Services/DocumentAuthorizationHandler.cs?name=snippet_HandlerAndRequirement)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 [!code-csharp[](resourcebased/samples/ResourceBasedAuthApp1/Services/DocumentAuthorizationHandler.cs?name=snippet_HandlerAndRequirement)]
 
-* * *
+---
+
 요구 사항 및 처리기에 등록 된 `Startup.ConfigureServices` 메서드:
 
 [!code-csharp[](resourcebased/samples/ResourceBasedAuthApp2/Startup.cs?name=snippet_ConfigureServicesSample&highlight=3-7,9)]
 
 ### <a name="operational-requirements"></a>운영 요구 사항
 
-수행 하면 CRUD의 결과에 따라 결정 하는 경우 (**C**작성, **R**읽기, **U**업데이트 (), **D**삭제 ()) 작업을 사용 하 여는 [OperationAuthorizationRequirement](/dotnet/api/microsoft.aspnetcore.authorization.infrastructure.operationauthorizationrequirement) 도우미 클래스입니다. 이 클래스를 사용 하면 각 작업 유형에 대해 개별 클래스 대신 단일 처리기를 작성할 수 있습니다. 이 기능을 사용 하려면 일부 작업 이름을 제공 합니다.
+CRUD (만들기, 읽기, 업데이트, 삭제) 작업의 결과에 따라 결정을 수행 하면 사용 하 여는 [OperationAuthorizationRequirement](/dotnet/api/microsoft.aspnetcore.authorization.infrastructure.operationauthorizationrequirement) 도우미 클래스입니다. 이 클래스를 사용 하면 각 작업 유형에 대해 개별 클래스 대신 단일 처리기를 작성할 수 있습니다. 이 기능을 사용 하려면 일부 작업 이름을 제공 합니다.
 
 [!code-csharp[](resourcebased/samples/ResourceBasedAuthApp2/Services/DocumentAuthorizationCrudHandler.cs?name=snippet_OperationsClass)]
 
 처리기는 다음과 같이 사용 하 여 구현 된 `OperationAuthorizationRequirement` 요구 사항 및 `Document` 리소스:
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
 [!code-csharp[](resourcebased/samples/ResourceBasedAuthApp2/Services/DocumentAuthorizationCrudHandler.cs?name=snippet_Handler)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 [!code-csharp[](resourcebased/samples/ResourceBasedAuthApp1/Services/DocumentAuthorizationCrudHandler.cs?name=snippet_Handler)]
 
-* * *
+---
+
 이전 처리기 리소스, 사용자의 id 및 요구 사항의를 사용 하 여 작업의 유효성을 검사 `Name` 속성입니다.
 
 작업 리소스 처리기를 호출 하려면 작업을 호출할 때 지정 `AuthorizeAsync` 페이지 처리기의 동작입니다. 다음 예제에서는 인증 된 사용자가 제공 된 문서를 볼 수 있는지 여부를 결정 합니다.
@@ -110,14 +119,16 @@ Task<bool> AuthorizeAsync(ClaimsPrincipal user,
 > [!NOTE]
 > 다음 코드 샘플 인증을 실행 하는 것으로 가정 하 고 집합의 `User` 속성입니다.
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
 [!code-csharp[](resourcebased/samples/ResourceBasedAuthApp2/Pages/Document/View.cshtml.cs?name=snippet_DocumentViewHandler&highlight=10-11)]
 
 권한 부여에 성공 하면 문서를 보기 위한 페이지가 반환 됩니다. 경우 권한 부여 실패 하지만 사용자가 인증 되 면 반환 `ForbidResult` 권한 부여에 실패 한 모든 인증 미들웨어에 알립니다. A `ChallengeResult` 인증을 수행 해야 하는 경우 반환 됩니다. 대화형 브라우저 클라이언트에는 사용자를 로그인 페이지로 리디렉션합니다 적절 한 수 있습니다.
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 [!code-csharp[](resourcebased/samples/ResourceBasedAuthApp1/Controllers/DocumentController.cs?name=snippet_DocumentViewAction&highlight=11-12)]
 
 권한 부여에 성공 하면 문서에 대 한 보기 반환 됩니다. 권한 부여에 실패 하면 반환 `ChallengeResult` 모든 인증 미들웨어에 알리고 권한 부여 실패, 미들웨어 적절 한 응답을 걸릴 수 있습니다. 적절 한 응답 401 또는 403 상태 코드를 반환 될 수 없습니다. 대화형 브라우저 클라이언트에 대 한 사용자를 로그인 페이지로 리디렉션하여 관리할 수 있습니다.
 
-* * *
+---

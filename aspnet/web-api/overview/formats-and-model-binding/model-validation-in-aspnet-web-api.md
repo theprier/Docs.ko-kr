@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/formats-and-model-binding/model-validation-in-aspnet-web-api
-title: "ASP.NET Web API의에서 유효성 검사 모델 | Microsoft Docs"
+title: ASP.NET Web API의에서 유효성 검사 모델 | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/20/2012
@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/formats-and-model-binding/model-validation-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 45b519af4073b62c8be1ca8951e44d6cf3cbe075
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 409a91eceb8baa48a7dded1b850d59a27cec2c60
+ms.sourcegitcommit: 5ae0c125ee3bbd324edef3818d1d160f4dd84602
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 05/17/2018
 ---
 <a name="model-validation-in-aspnet-web-api"></a>ASP.NET Web API의에서 모델 유효성 검사
 ====================
@@ -26,7 +26,7 @@ ms.lasthandoff: 01/24/2018
 
 ## <a name="data-annotations"></a>데이터 주석
 
-ASP.NET Web API에서에서 특성을 사용할 수는 [System.ComponentModel.DataAnnotations](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) 네임 스페이스를 모델에서 속성에 대 한 유효성 검사 규칙을 설정 합니다. 다음과 같은 모델을 유의 하십시오.
+ASP.NET Web API에서에서 특성을 사용할 수는 [System.ComponentModel.DataAnnotations](/dotnet/api/system.componentmodel.dataannotations) 네임 스페이스를 모델에서 속성에 대 한 유효성 검사 규칙을 설정 합니다. 다음과 같은 모델을 유의 하십시오.
 
 [!code-csharp[Main](model-validation-in-aspnet-web-api/samples/sample1.cs)]
 
@@ -54,11 +54,11 @@ ASP.NET MVC에서 모델 유효성 검사를 사용한 경우에 익숙한 확�
 
 [!code-csharp[Main](model-validation-in-aspnet-web-api/samples/sample5.cs?highlight=1-2)]
 
-**"게시 과도 하 게"**: 클라이언트 보낼 수도 *자세한* 예상 보다 데이터입니다. 예:
+**"게시 과도 하 게"**: 클라이언트 보낼 수도 *자세한* 예상 보다 데이터입니다. 예를 들어:
 
 [!code-json[Main](model-validation-in-aspnet-web-api/samples/sample6.json)]
 
-JSON에 존재 하지 않는 속성 ("색")을 포함 하는 여기에서 `Product` 모델입니다. 이 경우 JSON 포맷터는 단순히이 값을 무시합니다. (XML 포맷터의 동일한 작업을 수행 합니다.) 모델에 읽기 전용으로 사용 하는 속성이 있는 경우 문제가 발생 하는 과도 하 게 게시 합니다. 예:
+JSON에 존재 하지 않는 속성 ("색")을 포함 하는 여기에서 `Product` 모델입니다. 이 경우 JSON 포맷터는 단순히이 값을 무시합니다. (XML 포맷터의 동일한 작업을 수행 합니다.) 모델에 읽기 전용으로 사용 하는 속성이 있는 경우 문제가 발생 하는 과도 하 게 게시 합니다. 예를 들어:
 
 [!code-csharp[Main](model-validation-in-aspnet-web-api/samples/sample7.cs)]
 

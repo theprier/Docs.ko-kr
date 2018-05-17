@@ -11,11 +11,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: spa/angular
-ms.openlocfilehash: e3956bedbc243578f6dfdc09f5f043327de7c66b
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: b4e48f40c3d4e3167e7fdb3534d2c33b3544592c
+ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="use-the-angular-project-template-with-aspnet-core"></a>ASP.NET Core와 함께 각 프로젝트 템플릿을 사용합니다
 
@@ -39,12 +39,14 @@ cd my-new-app
 
 Visual Studio 또는.NET Core CLI에서 응용 프로그램을 실행 합니다.
 
-#### <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
+
 생성 된 열고 *.csproj* 파일, 및 여기에서 응용 프로그램 정상적으로 실행 합니다.
 
 빌드 프로세스는 몇 분 정도 걸릴 수 있는 첫 번째 실행 시 npm 종속성을 복원 합니다. 후속 빌드는 훨씬 빠릅니다.
 
-#### <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli/)
+# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli/)
+
 라는 환경 변수 해야 `ASPNETCORE_Environment` 값 `Development`합니다. (비 PowerShell 프롬프트)의 Windows에서는 실행 `SET ASPNETCORE_Environment=Development`합니다. Linux 또는 macOS 실행 `export ASPNETCORE_Environment=Development`합니다.
 
 실행 [dotnet 빌드](/dotnet/core/tools/dotnet-build) 응용 프로그램을 확인 하기 올바르게를 작성 합니다. 첫 번째 실행에서 빌드 프로세스 몇 분 정도 걸릴 수 있는 npm 종속성을 복원 합니다. 후속 빌드는 훨씬 빠릅니다.
@@ -57,9 +59,10 @@ Now listening on: http://localhost:<port>
 
 브라우저에서이 URL로 이동 합니다.
 
-응용 프로그램의 백그라운드에서 각도 CLI 서버 인스턴스를 시작 합니다. 다음과 비슷한 메시지가 기록 됩니다: <em>NG 라이브 개발 서버가 수신 하는 localhost:&lt;otherport&gt;에서 브라우저를 열고 http://localhost: &lt;otherport&gt; /</em> . 이 메시지는 무시&mdash;있기 <strong>하지</strong> 결합 된 각도 CLI 및 ASP.NET Core 응용 프로그램에 대 한 URL입니다.
+응용 프로그램의 백그라운드에서 각도 CLI 서버 인스턴스를 시작 합니다. 다음과 비슷한 메시지가 기록 됩니다: <em>NG 라이브 개발 서버가 수신 하는 localhost:&lt;otherport&gt;에서 브라우저를 열고 http://localhost:&lt; otherport&gt; /</em>  . 이 메시지는 무시&mdash;있기 <strong>하지</strong> 결합 된 각도 CLI 및 ASP.NET Core 응용 프로그램에 대 한 URL입니다.
 
-* * *
+---
+
 프로젝트 템플릿은 각도 응용 프로그램 및 ASP.NET Core 응용 프로그램을 만듭니다. ASP.NET Core 응용 프로그램은 데이터 액세스, 권한 부여 및 기타 서버 쪽 고려 사항에 대해 사용 하는 데 사용 됩니다. 에 있는 각 응용 프로그램의 *ClientApp* 하위 디렉터리를은 모든 UI 문제에 대 한 사용 하려고 합니다.
 
 ## <a name="add-pages-images-styles-modules-etc"></a>페이지, 이미지, 스타일, 모듈 등을 추가 합니다.

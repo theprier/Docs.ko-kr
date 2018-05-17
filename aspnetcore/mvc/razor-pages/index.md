@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: mvc/razor-pages/index
-ms.openlocfilehash: c848c5d66a9e8141d9d737e8ce9c994587b04916
-ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
+ms.openlocfilehash: 651d47ce20f3269340f0796f487e2f1a2a155710
+ms.sourcegitcommit: 0063338c2e130409081bb60fcffa0c3f190cd46a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core의 Razor 페이지 소개
 
@@ -214,6 +214,8 @@ Razor 페이지는 기본적으로 GET이 아닌 동사에만 속성을 바인�
 `PageModel`의 속성은 [필수](/dotnet/api/system.componentmodel.dataannotations.requiredattribute) 특성으로 데코레이팅될 수 있습니다.
 
 [!code-cs[](index/sample/Create.cshtml.cs?highlight=3,15-16)]
+
+자세한 내용은 [모델 유효성 검사](xref:mvc/models/validation)를 참조하세요.
 
 ## <a name="manage-head-requests-with-the-onget-handler"></a>OnGet 처리기를 사용하여 HEAD 요청 관리
 
@@ -418,7 +420,7 @@ ASP.NET Core는 [TempData](/dotnet/api/microsoft.aspnetcore.mvc.controller.tempd
 public string Message { get; set; }
 ```
 
-자세한 내용은 [TempData](xref:fundamentals/app-state#temp)를 참조하세요.
+자세한 내용은 [TempData](xref:fundamentals/app-state#tempdata)를 참조하세요.
 
 <a name="mhpp"></a>
 ## <a name="multiple-handlers-per-page"></a>페이지당 여러 처리기

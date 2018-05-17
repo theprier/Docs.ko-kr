@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app/start-mvc
-ms.openlocfilehash: b7036b92e8f25613917cfc4112389be81c12f614
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 1dba6eaceb6b69cf92cb8a831df9dc8d70a005d4
+ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="get-started-with-aspnet-core-mvc-and-visual-studio"></a>ASP.NET Core MVC 및 Visual Studio 시작
 
@@ -29,10 +29,12 @@ ms.lasthandoff: 05/03/2018
 
 ## <a name="install-visual-studio-and-net-core"></a>Visual Studio 및 .NET Core 설치
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
 [!INCLUDE [](~/includes/net-core-prereqs.md)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 Visual Studio Community 2017을 설치합니다. 커뮤니티 다운로드를 선택합니다. Visual Studio 2017을 설치한 경우 이 단계를 건너뜁니다.
 
 * [Visual Studio 2017 Home page installer](https://www.visualstudio.com/)(Visual Studio 2017 홈페이지 설치 관리자)
@@ -46,7 +48,8 @@ Visual Studio Community 2017을 설치합니다. 커뮤니티 다운로드를 �
 
 ![**.NET Core 플랫폼 간 개발**(**기타 도구 집합** 아래)](start-mvc/_static/x_plat_wl.png)
 
-* * *
+---
+
 ## <a name="create-a-web-app"></a>웹앱 만들기
 
 Visual Studio에서 **파일 > 새로 만들기 > 프로젝트**를 선택합니다.
@@ -61,7 +64,6 @@ Visual Studio에서 **파일 > 새로 만들기 > 프로젝트**를 선택합니
 * **확인**을 탭합니다.
 
 ![새 프로젝트 대화 상자, 왼쪽 창의 .Net core, ASP.NET Core 웹 ](start-mvc/_static/new_project2.png)
-
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 

@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/razor
-ms.openlocfilehash: 9c96ea34071bf3009f1ec53ed9af9206439aa229
-ms.sourcegitcommit: 2ab550f8c46e1a8a5d45e58be44d151c676af256
+ms.openlocfilehash: 224c855b355b8ecde36377bba6966edec251af6a
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/28/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="razor-syntax-reference-for-aspnet-core"></a>ASP.NET Core에 대한 Razor 구문 참조
 
@@ -545,6 +545,7 @@ Razor는 보기에 전달된 모델에 액세스할 수 있는 `Model` 속성을
 ### <a name="razor-keywords"></a>Razor 키워드
 
 * 페이지(ASP.NET Core 2.0 이상 필요)
+* 네임스페이스(namespace)
 * 함수
 * 상속
 * 모델
@@ -574,7 +575,6 @@ C# Razor 키워드는 `@(@C# Razor Keyword)`으로 이중 이스케이프되어�
 
 ### <a name="reserved-keywords-not-used-by-razor"></a>Razor에서 사용하지 않는 예약된 키워드
 
-* 네임스페이스(namespace)
 * 클래스
 
 ## <a name="viewing-the-razor-c-class-generated-for-a-view"></a>보기에 대해 생성된 Razor C# 클래스 보기

@@ -107,7 +107,7 @@ ASP.NET MVC 이전 또는 작업 메서드가 호출 된 후 필터링 논리를
 
 이 Music Store 솔루션은 사이트 로깅에 대 한 새 데이터 모델 테이블 **ActionLog**, 다음 필드: 요청, 작업 호출, 클라이언트 IP 및 타임 스탬프를 수신 하는 컨트롤러의 이름입니다.
 
-![데이터 모델입니다. ActionLog 테이블입니다. ] (aspnet-mvc-4-custom-action-filters/_static/image1.png "데이터 모델입니다. ActionLog 테이블입니다.")
+![데이터 모델입니다. ActionLog 테이블입니다. ](aspnet-mvc-4-custom-action-filters/_static/image1.png "데이터 모델입니다. ActionLog 테이블입니다.")
 
 *데이터 모델-ActionLog 테이블*
 
@@ -330,7 +330,7 @@ ASP.NET MVC 이전 또는 작업 메서드가 호출 된 후 필터링 논리를
 
 이 태스크에서는 새 필터를 등록 하려면 솔루션을 업데이트 합니다 (**MyNewCustomActionFilter**)를 글로벌 필터로 합니다. 이 작업을 수행 하 여 이전 태스크에서와 같이 StoreController 것 뿐만 아니라 응용 프로그램에 모든 작업 perfomed로 실행 될 됩니다.
 
-1. **StoreController** 클래스, 제거 **[MyNewCustomActionFilter]** 특성 및 순서 속성에서 **[CustomActionFilter]**합니다. 다음과 같은 같아야 합니다.
+1. **StoreController** 클래스, 제거 **[MyNewCustomActionFilter]** 특성 및 순서 속성에서 **[CustomActionFilter]** 합니다. 다음과 같은 같아야 합니다.
 
     [!code-csharp[Main](aspnet-mvc-4-custom-action-filters/samples/sample13.cs)]
 2. 열기 **Global.asax** 파일를 찾습니다는 **응용 프로그램\_시작** 메서드. 표시 될 때마다 응용 프로그램 시작 됨이 호출 하 여 전역 필터 등록 **RegisterGlobalFilters** 메서드 내에서 **FilterConfig** 클래스입니다.
