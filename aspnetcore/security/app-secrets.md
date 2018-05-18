@@ -1,129 +1,262 @@
 ---
 title: ASP.NET Core에서 개발의 앱 암호의 안전한 저장소
 author: rick-anderson
-description: 개발 중 보안 정보를 안전하게 저장하는 방법을 보여줍니다.
+description: 저장 하 고 ASP.NET Core 응용 프로그램을 개발 하는 동안 앱 암호로 중요 한 정보를 검색 하는 방법을 알아봅니다.
 manager: wpickett
-ms.author: riande
-ms.date: 09/15/2017
+ms.author: scaddie
+ms.custom: mvc
+ms.date: 05/16/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/app-secrets
-ms.openlocfilehash: a268fd76a303dc1185b451e4f678fc2fe761e80a
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
-ms.translationtype: HT
+ms.openlocfilehash: 4db09d3d41b705597f93d05af91077f2b9236b7e
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/17/2018
 ---
-# <a name="safe-storage-of-app-secrets-in-development-in-aspnet-core"></a><span data-ttu-id="09996-103">ASP.NET Core에서 개발의 앱 암호의 안전한 저장소</span><span class="sxs-lookup"><span data-stu-id="09996-103">Safe storage of app secrets in development in ASP.NET Core</span></span>
+# <a name="safe-storage-of-app-secrets-in-development-in-aspnet-core"></a><span data-ttu-id="c31e6-103">ASP.NET Core에서 개발의 앱 암호의 안전한 저장소</span><span class="sxs-lookup"><span data-stu-id="c31e6-103">Safe storage of app secrets in development in ASP.NET Core</span></span>
 
-<span data-ttu-id="09996-104">작성자: [Rick Anderson](https://twitter.com/RickAndMSFT), [김 Roth](https://github.com/danroth27), 및 [Scott Addie](https://scottaddie.com)</span><span class="sxs-lookup"><span data-stu-id="09996-104">By [Rick Anderson](https://twitter.com/RickAndMSFT), [Daniel Roth](https://github.com/danroth27), and [Scott Addie](https://scottaddie.com)</span></span> 
+<span data-ttu-id="c31e6-104">작성자: [Rick Anderson](https://twitter.com/RickAndMSFT), [김 Roth](https://github.com/danroth27), 및 [Scott Addie](https://github.com/scottaddie)</span><span class="sxs-lookup"><span data-stu-id="c31e6-104">By [Rick Anderson](https://twitter.com/RickAndMSFT), [Daniel Roth](https://github.com/danroth27), and [Scott Addie](https://github.com/scottaddie)</span></span>
 
-<span data-ttu-id="09996-105">이 문서에서는 개발 중 Secret Manager 도구를 이용해서 코드 외부에 보안 정보를 저장하는 방법을 보여줍니다.</span><span class="sxs-lookup"><span data-stu-id="09996-105">This document shows how you can use the Secret Manager tool in development to keep secrets out of your code.</span></span> <span data-ttu-id="09996-106">무엇보다 중요한 점은 절대로 소스 코드에 암호나 기타 중요한 데이터를 저장하면 안 될 뿐만 아니라, 프로덕션 환경의 보안 정보를 개발 및 테스트 모드에서 사용해서는 안 된다는 것입니다.</span><span class="sxs-lookup"><span data-stu-id="09996-106">The most important point is you should never store passwords or other sensitive data in source code, and you shouldn't use production secrets in development and test mode.</span></span> <span data-ttu-id="09996-107">대신, 이런 값들을 [구성](xref:fundamentals/configuration/index) 시스템을 이용해서 환경 변수로부터 읽거나, 또는 Secret Manager 도구를 이용해서 저장된 값으로부터 읽어올 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="09996-107">You can instead use the [configuration](xref:fundamentals/configuration/index) system to read these values from environment variables or from values stored using the Secret Manager tool.</span></span> <span data-ttu-id="09996-108">Secret Manager 도구는 민감한 보안 정보가 소스 제어에 체크인되지 않게 도와줍니다.</span><span class="sxs-lookup"><span data-stu-id="09996-108">The Secret Manager tool helps prevent sensitive data from being checked into source control.</span></span> <span data-ttu-id="09996-109">이 문서에서 설명하는 Secret Manager 도구를 이용해서 저장된 보안 정보는 [구성](xref:fundamentals/configuration/index) 시스템으로 읽을 수 있습니다</span><span class="sxs-lookup"><span data-stu-id="09996-109">The [configuration](xref:fundamentals/configuration/index) system can read secrets stored with the Secret Manager tool described in this article.</span></span>
+::: moniker range="<= aspnetcore-1.1"
+<span data-ttu-id="c31e6-105">[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/app-secrets/samples/1.1)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))</span><span class="sxs-lookup"><span data-stu-id="c31e6-105">[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/app-secrets/samples/1.1) ([how to download](xref:tutorials/index#how-to-download-a-sample))</span></span>
+::: moniker-end
+::: moniker range=">= aspnetcore-2.0"
+<span data-ttu-id="c31e6-106">[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/app-secrets/samples/2.1)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))</span><span class="sxs-lookup"><span data-stu-id="c31e6-106">[View or download sample code](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/app-secrets/samples/2.1) ([how to download](xref:tutorials/index#how-to-download-a-sample))</span></span>
+::: moniker-end
 
-<span data-ttu-id="09996-110">Secret Manager 도구는 개발 시에만 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="09996-110">The Secret Manager tool is used only in development.</span></span> <span data-ttu-id="09996-111">Azure의 테스트 및 프로덕션 보안 데이터는 [Microsoft Azure Key Vault](https://azure.microsoft.com/services/key-vault/) 구성 공급자를 이용해서 보호할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="09996-111">You can safeguard Azure test and production secrets with the [Microsoft Azure Key Vault](https://azure.microsoft.com/services/key-vault/) configuration provider.</span></span> <span data-ttu-id="09996-112">보다 자세한 정보는 [Azure 키 자격 증명 모음 구성 공급자](xref:security/key-vault-configuration)를 참고하시기 바랍니다. </span><span class="sxs-lookup"><span data-stu-id="09996-112">See [Azure Key Vault configuration provider](xref:security/key-vault-configuration) for more information.</span></span>
+<span data-ttu-id="c31e6-107">이 문서에 저장 하 고 ASP.NET Core 응용 프로그램을 개발 하는 동안 중요 한 데이터를 검색 하는 기술을 설명 합니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-107">This document explains techniques for storing and retrieving sensitive data during the development of an ASP.NET Core app.</span></span> <span data-ttu-id="c31e6-108">소스 코드에서 암호 또는 기타 중요 한 데이터를 저장 해서는 안 하 고 개발에서 생산 암호를 사용 하거나 모드를 테스트 하지 않아야 합니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-108">You should never store passwords or other sensitive data in source code, and you shouldn't use production secrets in development or test mode.</span></span> <span data-ttu-id="c31e6-109">저장 하 고 Azure 테스트 및 프로덕션 비밀 정보를 보호할 수는 [Azure 키 자격 증명 모음 구성 공급자](xref:security/key-vault-configuration)합니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-109">You can store and protect Azure test and production secrets with the [Azure Key Vault configuration provider](xref:security/key-vault-configuration).</span></span>
 
-## <a name="environment-variables"></a><span data-ttu-id="09996-113">환경 변수</span><span class="sxs-lookup"><span data-stu-id="09996-113">Environment variables</span></span>
+## <a name="environment-variables"></a><span data-ttu-id="c31e6-110">환경 변수</span><span class="sxs-lookup"><span data-stu-id="c31e6-110">Environment variables</span></span>
 
-<span data-ttu-id="09996-114">코드나 로컬 구성 파일에 응용 프로그램의 보안 정보를 저장하지 않으려면 환경 변수에 보안 정보를 저장합니다. </span><span class="sxs-lookup"><span data-stu-id="09996-114">To avoid storing app secrets in code or in local configuration files, you store secrets in environment variables.</span></span> <span data-ttu-id="09996-115">`AddEnvironmentVariables` 를 호출하면 환경 변수에서 값을 읽도록 [구성](xref:fundamentals/configuration/index) 프레임워크를 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="09996-115">You can setup the [configuration](xref:fundamentals/configuration/index) framework to read values from environment variables by calling `AddEnvironmentVariables`.</span></span> <span data-ttu-id="09996-116">그런 다음, 환경 변수를 사용해서 기존에 지정된 모든 구성 소스의 구성 값을 재지정 할 수 있습니다. </span><span class="sxs-lookup"><span data-stu-id="09996-116">You can then use environment variables to override configuration values for all previously specified configuration sources.</span></span>
+<span data-ttu-id="c31e6-111">응용 프로그램 보안 코드 또는 로컬 구성 파일의 저장소를 방지 하기 위해 환경 변수를 사용 합니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-111">Environment variables are used to avoid storage of app secrets in code or in local configuration files.</span></span> <span data-ttu-id="c31e6-112">환경 변수는 모든 이전에 지정 된 구성 소스에 대 한 구성 값을 재정의 합니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-112">Environment variables override configuration values for all previously specified configuration sources.</span></span>
 
-<span data-ttu-id="09996-117">예를 들어, Visual Studio에서 개별 사용자 계정 옵션으로 새로운 ASP.NET Core 웹 응용 프로그램을 생성하면, 프로젝트의 *appsettings.json* 파일에 `DefaultConnection`이라는 키를 가진 기본 연결 문자열이 추가됩니다.</span><span class="sxs-lookup"><span data-stu-id="09996-117">For example, if you create a new ASP.NET Core web app with individual user accounts, it will add a default connection string to the *appsettings.json* file in the project with the key `DefaultConnection`.</span></span> <span data-ttu-id="09996-118">이 기본 연결 문자열은 사용자 모드에서 실행되고 암호를 요구하지 않는 LocalDB를 사용하도록 구성됩니다. </span><span class="sxs-lookup"><span data-stu-id="09996-118">The default connection string is setup to use LocalDB, which runs in user mode and doesn't require a password.</span></span> <span data-ttu-id="09996-119">응용 프로그램을 테스트 서버나 프로덕션 서버에 배포할 때, `DefaultConnection` 키의 값을 테스트 또는 프로덕션 데이터베이스 서버의 연결 문자열이 지정된(민감한 자격 증명이 포함될 수 있는) 환경 변수 설정으로 재정의할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="09996-119">When you deploy your application to a test or production server, you can override the `DefaultConnection` key value with an environment variable setting that contains the connection string (potentially with sensitive credentials) for a test or production database server.</span></span>
+::: moniker range="<= aspnetcore-1.1"
+<span data-ttu-id="c31e6-113">호출 하 여 환경 변수 값을 읽는 구성 [AddEnvironmentVariables](/dotnet/api/microsoft.extensions.configuration.environmentvariablesextensions.addenvironmentvariables) 에 `Startup` 생성자:</span><span class="sxs-lookup"><span data-stu-id="c31e6-113">Configure the reading of environment variable values by calling [AddEnvironmentVariables](/dotnet/api/microsoft.extensions.configuration.environmentvariablesextensions.addenvironmentvariables) in the `Startup` constructor:</span></span>
 
->[!WARNING]
-> <span data-ttu-id="09996-120">일반적으로 환경 변수는 평문으로 저장되며 암호화되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="09996-120">Environment variables are generally stored in plain text and are not encrypted.</span></span> <span data-ttu-id="09996-121">컴퓨터나 프로세스가 손상될 경우, 신뢰할 수 없는 사용자가 환경 변수에 접근할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="09996-121">If the machine or process is compromised, then environment variables can be accessed by untrusted parties.</span></span> <span data-ttu-id="09996-122">따라서 여전히 사용자의 보안 정보 유출을 방지하기 위한 추가적인 방안이 필요할 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="09996-122">Additional measures to prevent disclosure of user secrets may still be required.</span></span>
+<span data-ttu-id="c31e6-114">[!code-csharp[](app-secrets/samples/1.1/UserSecrets/Startup.cs?name=snippet_StartupConstructor&highlight=10)]</span><span class="sxs-lookup"><span data-stu-id="c31e6-114">[!code-csharp[](app-secrets/samples/1.1/UserSecrets/Startup.cs?name=snippet_StartupConstructor&highlight=10)]</span></span>
+::: moniker-end
 
-## <a name="secret-manager"></a><span data-ttu-id="09996-123">Secret Manager</span><span class="sxs-lookup"><span data-stu-id="09996-123">Secret Manager</span></span>
+<span data-ttu-id="c31e6-115">ASP.NET Core 웹 응용 프로그램 고려 **개별 사용자 계정** 보안을 사용 합니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-115">Consider an ASP.NET Core web app in which **Individual User Accounts** security is enabled.</span></span> <span data-ttu-id="c31e6-116">프로젝트의 기본 데이터베이스 연결 문자열을 포함 되어 *appsettings.json* 키와 파일 `DefaultConnection`합니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-116">A default database connection string is included in the project's *appsettings.json* file with the key `DefaultConnection`.</span></span> <span data-ttu-id="c31e6-117">기본 연결 문자열은 localdb 사용자 모드에서 실행 되 고 암호가 필요 하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-117">The default connection string is for LocalDB, which runs in user mode and doesn't require a password.</span></span> <span data-ttu-id="c31e6-118">응용 프로그램 배포 시는 `DefaultConnection` 환경 변수 값과 키 값을 재정의할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-118">During app deployment, the `DefaultConnection` key value can be overridden with an environment variable's value.</span></span> <span data-ttu-id="c31e6-119">환경 변수는 중요 한 자격 증명으로 완전 한 연결 문자열을 저장할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-119">The environment variable may store the complete connection string with sensitive credentials.</span></span>
 
-<span data-ttu-id="09996-124">Secret Manager 도구는 개발 작업에 필요한 민감한 데이터를 프로젝트의 디렉터리 구조 외부에 저장합니다.</span><span class="sxs-lookup"><span data-stu-id="09996-124">The Secret Manager tool stores sensitive data for development work outside of your project tree.</span></span> <span data-ttu-id="09996-125">암호 관리자 도구는 개발 하는 동안.NET Core 프로젝트에 대 한 기밀 정보를 사용할 수 있는 프로젝트 도구입니다.</span><span class="sxs-lookup"><span data-stu-id="09996-125">The Secret Manager tool is a project tool that can be used to store secrets for a .NET Core project during development.</span></span> <span data-ttu-id="09996-126">Secret Manager 도구를 사용하면 응용 프로그램의 보안 정보를 특정 프로젝트와 연결하고 이를 여러 프로젝트에서 공유할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="09996-126">With the Secret Manager tool, you can associate app secrets with a specific project and share them across multiple projects.</span></span>
+> [!WARNING]
+> <span data-ttu-id="c31e6-120">환경 변수는 일반적으로 암호화 되지 않은 일반 텍스트에 저장 됩니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-120">Environment variables are generally stored in plain, unencrypted text.</span></span> <span data-ttu-id="c31e6-121">컴퓨터 또는 프로세스가 손상 되 면 환경 변수는 신뢰할 수 없는 당사자가 액세스할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-121">If the machine or process is compromised, environment variables can be accessed by untrusted parties.</span></span> <span data-ttu-id="c31e6-122">사용자의 비밀으로 공개 되지 않도록 추가 조치가 필요할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-122">Additional measures to prevent disclosure of user secrets may be required.</span></span>
 
->[!WARNING]
-> <span data-ttu-id="09996-127">암호 관리자 도구 저장 된 암호를 암호화 하지 않습니다 하 고 신뢰할 수 있는 저장소로 처리 하지 않아야 합니다.</span><span class="sxs-lookup"><span data-stu-id="09996-127">The Secret Manager tool doesn't encrypt the stored secrets and shouldn't be treated as a trusted store.</span></span> <span data-ttu-id="09996-128">개발 용도로입니다.</span><span class="sxs-lookup"><span data-stu-id="09996-128">It's for development purposes only.</span></span> <span data-ttu-id="09996-129">키와 값은 사용자 프로필 디렉터리에 위치한 JSON 구성 파일에 저장됩니다. </span><span class="sxs-lookup"><span data-stu-id="09996-129">The keys and values are stored in a JSON configuration file in the user profile directory.</span></span>
+## <a name="secret-manager"></a><span data-ttu-id="c31e6-123">Secret Manager</span><span class="sxs-lookup"><span data-stu-id="c31e6-123">Secret Manager</span></span>
 
-## <a name="installing-the-secret-manager-tool"></a><span data-ttu-id="09996-130">Secret Manager 도구 설치하기</span><span class="sxs-lookup"><span data-stu-id="09996-130">Installing the Secret Manager tool</span></span>
+<span data-ttu-id="c31e6-124">암호 관리자 도구는 ASP.NET Core 프로젝트를 개발 하는 동안 중요 한 데이터를 저장합니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-124">The Secret Manager tool stores sensitive data during the development of an ASP.NET Core project.</span></span> <span data-ttu-id="c31e6-125">이 컨텍스트에서 중요 한 데이터 조각이 응용 프로그램 암호입니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-125">In this context, a piece of sensitive data is an app secret.</span></span> <span data-ttu-id="c31e6-126">앱 암호는 프로젝트 트리에서 별도 위치에 저장 됩니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-126">App secrets are stored in a separate location from the project tree.</span></span> <span data-ttu-id="c31e6-127">앱 암호는 특정 프로젝트와 관련 된 또는 여러 프로젝트 간에 공유 됩니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-127">The app secrets are associated with a specific project or shared across several projects.</span></span> <span data-ttu-id="c31e6-128">앱 암호는 소스 제어에 체크 인 되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-128">The app secrets aren't checked into source control.</span></span>
 
-# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="09996-131">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="09996-131">Visual Studio</span></span>](#tab/visual-studio/)
+> [!WARNING]
+> <span data-ttu-id="c31e6-129">암호 관리자 도구 저장 된 암호를 암호화 하지 않습니다 하 고 신뢰할 수 있는 저장소로 처리 하지 않아야 합니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-129">The Secret Manager tool doesn't encrypt the stored secrets and shouldn't be treated as a trusted store.</span></span> <span data-ttu-id="c31e6-130">개발 용도로입니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-130">It's for development purposes only.</span></span> <span data-ttu-id="c31e6-131">키와 값은 사용자 프로필 디렉터리에 위치한 JSON 구성 파일에 저장됩니다. </span><span class="sxs-lookup"><span data-stu-id="c31e6-131">The keys and values are stored in a JSON configuration file in the user profile directory.</span></span>
 
-<span data-ttu-id="09996-132">마우스 오른쪽 버튼으로 솔루션 탐색기에서 프로젝트를 클릭한 다음, 컨텍스트 메뉴에서 **\<project_name\>.csproj 편집 (Edit \<project_name\>.csproj)** 을 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="09996-132">Right-click the project in Solution Explorer, and select **Edit \<project_name\>.csproj** from the context menu.</span></span> <span data-ttu-id="09996-133">다음에 강조 표시된 줄을 *.csproj* 파일에 추가하고 저장하면 관련된 NuGet 패키지가 복원됩니다.</span><span class="sxs-lookup"><span data-stu-id="09996-133">Add the highlighted line to the *.csproj* file, and save to restore the associated NuGet package:</span></span>
+## <a name="how-the-secret-manager-tool-works"></a><span data-ttu-id="c31e6-132">Secret Manager 도구의 동작 방식</span><span class="sxs-lookup"><span data-stu-id="c31e6-132">How the Secret Manager tool works</span></span>
 
-[!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
+<span data-ttu-id="c31e6-133">Secret Manager 도구는 값이 저장되는 위치 및 방법 같은 구현에 관한 세부적인 내용을 추상화합니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-133">The Secret Manager tool abstracts away the implementation details, such as where and how the values are stored.</span></span> <span data-ttu-id="c31e6-134">이런 세부적인 내용을 모르더라도 Secret Manager 도구를 사용하는 데는 아무런 지장이 없습니다. </span><span class="sxs-lookup"><span data-stu-id="c31e6-134">You can use the tool without knowing these implementation details.</span></span> <span data-ttu-id="c31e6-135">값에 저장 되는 [JSON](https://json.org/) 로컬 컴퓨터에서 시스템으로 보호 된 사용자 프로필 폴더에 구성 파일:</span><span class="sxs-lookup"><span data-stu-id="c31e6-135">The values are stored in a [JSON](https://json.org/) configuration file in a system-protected user profile folder on the local machine:</span></span>
 
-<span data-ttu-id="09996-134">다시 마우스 오른쪽 버튼으로 솔루션 탐색기에서 프로젝트를 클릭한 다음, 컨텍스트 메뉴에서 **사용자 암호 관리 (Manage User Secrets)** 를 선택합니다. </span><span class="sxs-lookup"><span data-stu-id="09996-134">Right-click the project in Solution Explorer again, and select **Manage User Secrets** from the context menu.</span></span> <span data-ttu-id="09996-135">그러면 다음 예제에 강조 표시된 것처럼 *.csproj* 파일의 `PropertyGroup` 노드 하위에 새로운 `UserSecretsId` 노드가 추가됩니다.</span><span class="sxs-lookup"><span data-stu-id="09996-135">This gesture adds a new `UserSecretsId` node within a `PropertyGroup` of the *.csproj* file, as highlighted in the following sample:</span></span>
+* <span data-ttu-id="c31e6-136">Windows: `%APPDATA%\Microsoft\UserSecrets\<user_secrets_id>\secrets.json`</span><span class="sxs-lookup"><span data-stu-id="c31e6-136">Windows: `%APPDATA%\Microsoft\UserSecrets\<user_secrets_id>\secrets.json`</span></span>
+* <span data-ttu-id="c31e6-137">Linux와 macOS: `~/.microsoft/usersecrets/<user_secrets_id>/secrets.json`</span><span class="sxs-lookup"><span data-stu-id="c31e6-137">Linux & macOS: `~/.microsoft/usersecrets/<user_secrets_id>/secrets.json`</span></span>
 
-[!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-after.csproj?highlight=4)]
+<span data-ttu-id="c31e6-138">앞의 파일 경로, 대체 `<user_secrets_id>` 와 `UserSecretsId` 에 지정 된 값의 *.csproj* 파일입니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-138">In the preceding file paths, replace `<user_secrets_id>` with the `UserSecretsId` value specified in the *.csproj* file.</span></span>
 
-<span data-ttu-id="09996-136">수정된 *.csproj* 파일을 저장하면 텍스트 편집기에서 `secrets.json` 파일이 열립니다.</span><span class="sxs-lookup"><span data-stu-id="09996-136">Saving the modified *.csproj* file also opens a `secrets.json` file in the text editor.</span></span> <span data-ttu-id="09996-137">`secrets.json` 파일의 내용을 다음 코드로 대체합니다.</span><span class="sxs-lookup"><span data-stu-id="09996-137">Replace the contents of the `secrets.json` file with the following code:</span></span>
+<span data-ttu-id="c31e6-139">위치 또는 보안 관리자 도구와 함께 저장 되는 데이터의 형식에 의존 하는 코드를 작성 하지 마십시오.</span><span class="sxs-lookup"><span data-stu-id="c31e6-139">Don't write code that depends on the location or format of data saved with the Secret Manager tool.</span></span> <span data-ttu-id="c31e6-140">이러한 구현 정보를 변경할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-140">These implementation details may change.</span></span> <span data-ttu-id="c31e6-141">예를 들어 비밀 값 암호화 되지 않습니다 되지만 나중에 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-141">For example, the secret values aren't encrypted, but could be in the future.</span></span>
 
-```json
-{
-    "MySecret": "ValueOfMySecret"
-}
-```
+::: moniker range="<= aspnetcore-2.0"
+## <a name="install-the-secret-manager-tool"></a><span data-ttu-id="c31e6-142">암호 관리자 도구를 설치 합니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-142">Install the Secret Manager tool</span></span>
 
-# <a name="visual-studio-codetabvisual-studio-code"></a>[<span data-ttu-id="09996-138">Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="09996-138">Visual Studio Code</span></span>](#tab/visual-studio-code/)
+<span data-ttu-id="c31e6-143">암호 관리자 도구는.NET Core SDK 2.1에서.NET Core CLI 함께 제공 됩니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-143">The Secret Manager tool is bundled with the .NET Core CLI in .NET Core SDK 2.1.</span></span> <span data-ttu-id="c31e6-144">.NET Core SDK 2.0 및 이전 버전에서 도구를 설치 해야만 됩니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-144">For .NET Core SDK 2.0 and earlier, tool installation is necessary.</span></span>
 
-<span data-ttu-id="09996-139">추가 `Microsoft.Extensions.SecretManager.Tools` 에 *.csproj* 파일을 실행 [dotnet 복원](/dotnet/core/tools/dotnet-restore)합니다.</span><span class="sxs-lookup"><span data-stu-id="09996-139">Add `Microsoft.Extensions.SecretManager.Tools` to the *.csproj* file and run [dotnet restore](/dotnet/core/tools/dotnet-restore).</span></span> <span data-ttu-id="09996-140">명령줄에서 동일한 단계를 사용해서 Secret Manager 도구를 설치할 수 있습니다. </span><span class="sxs-lookup"><span data-stu-id="09996-140">You can use the same steps to install the Secret Manager Tool using for the command line.</span></span>
+<span data-ttu-id="c31e6-145">설치는 [Microsoft.Extensions.SecretManager.Tools](https://www.nuget.org/packages/Microsoft.Extensions.SecretManager.Tools/) ASP.NET Core 프로젝트에 NuGet 패키지:</span><span class="sxs-lookup"><span data-stu-id="c31e6-145">Install the [Microsoft.Extensions.SecretManager.Tools](https://www.nuget.org/packages/Microsoft.Extensions.SecretManager.Tools/) NuGet package in your ASP.NET Core project:</span></span>
 
-[!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-before.csproj?highlight=10)]
+<span data-ttu-id="c31e6-146">[!code-xml[](app-secrets/samples/1.1/UserSecrets/UserSecrets.csproj?name=snippet_CsprojFile&highlight=13-14)]</span><span class="sxs-lookup"><span data-stu-id="c31e6-146">[!code-xml[](app-secrets/samples/1.1/UserSecrets/UserSecrets.csproj?name=snippet_CsprojFile&highlight=13-14)]</span></span>
 
-<span data-ttu-id="09996-141">다음 명령을 실행해서 Secret Manager 도구를 테스트합니다.</span><span class="sxs-lookup"><span data-stu-id="09996-141">Test the Secret Manager tool by running the following command:</span></span>
+<span data-ttu-id="c31e6-147">도구 설치를 확인 하는 명령 셸에서 다음 명령을 실행 합니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-147">Execute the following command in a command shell to validate the tool installation:</span></span>
 
 ```console
 dotnet user-secrets -h
 ```
 
-<span data-ttu-id="09996-142">그러면 Secret Manager 도구의 사용법, 옵션 및 명령 도움말이 표시됩니다.</span><span class="sxs-lookup"><span data-stu-id="09996-142">The Secret Manager tool will display usage, options and command help.</span></span>
+<span data-ttu-id="c31e6-148">암호 관리자 도구 사용법 예제, 옵션 및 명령 도움말을 표시합니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-148">The Secret Manager tool displays sample usage, options, and command help:</span></span>
+
+```console
+Usage: dotnet user-secrets [options] [command]
+
+Options:
+  -?|-h|--help                        Show help information
+  --version                           Show version information
+  -v|--verbose                        Show verbose output
+  -p|--project <PROJECT>              Path to project. Defaults to searching the current directory.
+  -c|--configuration <CONFIGURATION>  The project configuration to use. Defaults to 'Debug'.
+  --id                                The user secret ID to use.
+
+Commands:
+  clear   Deletes all the application secrets
+  list    Lists all the application secrets
+  remove  Removes the specified user secret
+  set     Sets the user secret to the specified value
+
+Use "dotnet user-secrets [command] --help" for more information about a command.
+```
 
 > [!NOTE]
-> <span data-ttu-id="09996-143">이렇게 *.csproj* 파일의 `DotNetCliToolReference` 노드에 정의된 도구를 실행하려면 *.csproj* 파일과 동일한 디렉터리에 위치해 있어야 합니다. </span><span class="sxs-lookup"><span data-stu-id="09996-143">You must be in the same directory as the *.csproj* file to run tools defined in the *.csproj* file's `DotNetCliToolReference` nodes.</span></span>
+> <span data-ttu-id="c31e6-149">와 같은 디렉터리에 있어야는 *.csproj* 파일에 정의 된 도구를 실행 하는 *.csproj* 파일의 `DotNetCliToolReference` 요소입니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-149">You must be in the same directory as the *.csproj* file to run tools defined in the *.csproj* file's `DotNetCliToolReference` elements.</span></span>
+::: moniker-end
 
-<span data-ttu-id="09996-144">Secret Manager 도구는 사용자 프로필에 저장된 프로젝트별 구성 설정을 대상으로 동작합니다.</span><span class="sxs-lookup"><span data-stu-id="09996-144">The Secret Manager tool operates on project-specific configuration settings that are stored in your user profile.</span></span> <span data-ttu-id="09996-145">사용자 보안 정보를 사용하려면 프로젝트의 *.csproj* 파일에 `UserSecretsId` 값을 지정해야 합니다. </span><span class="sxs-lookup"><span data-stu-id="09996-145">To use user secrets, the project must specify a `UserSecretsId` value in its *.csproj* file.</span></span> <span data-ttu-id="09996-146">`UserSecretsId` 값은 선택적이긴 하지만 일반적으로 프로젝트에 고유합니다.</span><span class="sxs-lookup"><span data-stu-id="09996-146">The value of `UserSecretsId` is arbitrary, but is generally unique to the project.</span></span> <span data-ttu-id="09996-147">개발자는 대부분 `UserSecretsId` 값에 GUID를 생성해서 지정합니다. </span><span class="sxs-lookup"><span data-stu-id="09996-147">Developers typically generate a GUID for the `UserSecretsId`.</span></span>
+## <a name="set-a-secret"></a><span data-ttu-id="c31e6-150">암호를 설정 합니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-150">Set a secret</span></span>
 
-<span data-ttu-id="09996-148">프로젝트의 *.csproj* 파일에 `UserSecretsId` 를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="09996-148">Add a `UserSecretsId` for your project in the *.csproj* file:</span></span>
+<span data-ttu-id="c31e6-151">암호 관리자 도구는 사용자 프로필에 저장 된 프로젝트 관련 구성 설정에서 작동 합니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-151">The Secret Manager tool operates on project-specific configuration settings stored in your user profile.</span></span> <span data-ttu-id="c31e6-152">사용자 암호를 사용 하려면 정의 `UserSecretsId` 요소 내에서 한 `PropertyGroup` 의 *.csproj* 파일입니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-152">To use user secrets, define a `UserSecretsId` element within a `PropertyGroup` of the *.csproj* file.</span></span> <span data-ttu-id="c31e6-153">값 `UserSecretsId` 은 선택적 요소 이지만 프로젝트에 고유 합니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-153">The value of `UserSecretsId` is arbitrary, but is unique to the project.</span></span> <span data-ttu-id="c31e6-154">개발자는 대부분 `UserSecretsId` 값에 GUID를 생성해서 지정합니다. </span><span class="sxs-lookup"><span data-stu-id="c31e6-154">Developers typically generate a GUID for the `UserSecretsId`.</span></span>
 
-[!code-xml[](app-secrets/sample/UserSecrets/UserSecrets-after.csproj?highlight=4)]
+::: moniker range="<= aspnetcore-1.1"
+<span data-ttu-id="c31e6-155">[!code-xml[](app-secrets/samples/1.1/UserSecrets/UserSecrets.csproj?name=snippet_PropertyGroup&highlight=3)]</span><span class="sxs-lookup"><span data-stu-id="c31e6-155">[!code-xml[](app-secrets/samples/1.1/UserSecrets/UserSecrets.csproj?name=snippet_PropertyGroup&highlight=3)]</span></span>
+::: moniker-end
+::: moniker range=">= aspnetcore-2.0"
+<span data-ttu-id="c31e6-156">[!code-xml[](app-secrets/samples/2.1/UserSecrets/UserSecrets.csproj?name=snippet_PropertyGroup&highlight=3)]</span><span class="sxs-lookup"><span data-stu-id="c31e6-156">[!code-xml[](app-secrets/samples/2.1/UserSecrets/UserSecrets.csproj?name=snippet_PropertyGroup&highlight=3)]</span></span>
+::: moniker-end
 
-<span data-ttu-id="09996-149">Secret Manager 도구를 사용해서 보안 정보를 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="09996-149">Use the Secret Manager tool to set a secret.</span></span> <span data-ttu-id="09996-150">예를 들어 프로젝트 디렉터리의 명령 창에 다음과 같이 입력합니다.</span><span class="sxs-lookup"><span data-stu-id="09996-150">For example, in a command window from the project directory, enter the following:</span></span>
+> [!TIP]
+> <span data-ttu-id="c31e6-157">Visual Studio에서 솔루션 탐색기에서 프로젝트를 마우스 오른쪽 단추로 클릭 하 고 선택 **관리 사용자의 비밀** 상황에 맞는 메뉴입니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-157">In Visual Studio, right-click the project in Solution Explorer, and select **Manage User Secrets** from the context menu.</span></span> <span data-ttu-id="c31e6-158">이 제스처 추가 `UserSecretsId` 에 GUID로 채워진 요소는 *.csproj* 파일입니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-158">This gesture adds a `UserSecretsId` element, populated with a GUID, to the *.csproj* file.</span></span> <span data-ttu-id="c31e6-159">Visual Studio가 열릴는 *secrets.json* 파일 텍스트 편집기에서.</span><span class="sxs-lookup"><span data-stu-id="c31e6-159">Visual Studio opens a *secrets.json* file in the text editor.</span></span> <span data-ttu-id="c31e6-160">내용을 대체 *secrets.json* 저장할 키-값 쌍을 포함 합니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-160">Replace the contents of *secrets.json* with the key-value pairs to be stored.</span></span> <span data-ttu-id="c31e6-161">예를 들면 [!INCLUDE[secrets.json file](~/includes/app-secrets/secrets-json-file.md)] 같은 형식입니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-161">For example: [!INCLUDE[secrets.json file](~/includes/app-secrets/secrets-json-file.md)]</span></span>
+
+<span data-ttu-id="c31e6-162">키와 해당 값으로 구성 된 앱 암호를 정의 합니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-162">Define an app secret consisting of a key and its value.</span></span> <span data-ttu-id="c31e6-163">암호는 해당 프로젝트와 관련 `UserSecretsId` 값입니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-163">The secret is associated with the project's `UserSecretsId` value.</span></span> <span data-ttu-id="c31e6-164">예를 들어 있는 디렉터리에서 다음 명령을 실행는 *.csproj* 파일이 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-164">For example, run the following command from the directory in which the *.csproj* file exists:</span></span>
 
 ```console
-dotnet user-secrets set MySecret ValueOfMySecret
+dotnet user-secrets set "Movies:ServiceApiKey" "12345"
 ```
 
-<span data-ttu-id="09996-151">다른 디렉터리에서 Secret Manager 도구를 실행할 수도 있지만, `--project` 옵션을 사용해서 *.csproj* 파일의 경로를 전달해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="09996-151">You can run the Secret Manager tool from other directories, but you must use the `--project` option to pass in the path to the *.csproj* file:</span></span>
+<span data-ttu-id="c31e6-165">앞의 예제에서 콜론 나타냅니다 `Movies` 은 개체 리터럴을 `ServiceApiKey` 속성입니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-165">In the preceding example, the colon denotes that `Movies` is an object literal with a `ServiceApiKey` property.</span></span>
+
+<span data-ttu-id="c31e6-166">암호 관리자 도구는 너무 다른 디렉터리에서 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-166">The Secret Manager tool can be used from other directories too.</span></span> <span data-ttu-id="c31e6-167">사용 하 여는 `--project` 옵션을 파일 시스템 경로 제공 하는 *.csproj* 파일이 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-167">Use the `--project` option to supply the file system path at which the *.csproj* file exists.</span></span> <span data-ttu-id="c31e6-168">예를 들어:</span><span class="sxs-lookup"><span data-stu-id="c31e6-168">For example:</span></span>
 
 ```console
-dotnet user-secrets set MySecret ValueOfMySecret --project c:\work\WebApp1\src\webapp1
+dotnet user-secrets set "Movies:ServiceApiKey" "12345" --project "C:\apps\WebApp1\src\WebApp1"
 ```
 
-<span data-ttu-id="09996-152">Secret Manager 도구를 사용해서 응용 프로그램의 보안 정보의 목록을 나열하거나 제거하고 초기화시킬 수도 있습니다. </span><span class="sxs-lookup"><span data-stu-id="09996-152">You can also use the Secret Manager tool to list, remove and clear app secrets.</span></span>
+## <a name="set-multiple-secrets"></a><span data-ttu-id="c31e6-169">여러 암호를 설정 합니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-169">Set multiple secrets</span></span>
 
----
+<span data-ttu-id="c31e6-170">JSON에 파이프 하 여 보안의 일괄 처리를 설정할 수 있습니다는 `set` 명령입니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-170">A batch of secrets can be set by piping JSON to the `set` command.</span></span> <span data-ttu-id="c31e6-171">다음 예제에서는 *input.json* 파일의 내용으로 파이프 되는 `set` Windows 명령을:</span><span class="sxs-lookup"><span data-stu-id="c31e6-171">In the following example, the *input.json* file's contents are piped to the `set` command on Windows:</span></span>
 
-## <a name="accessing-user-secrets-via-configuration"></a><span data-ttu-id="09996-153">구성을 통해서 사용자 보안 정보에 접근하기</span><span class="sxs-lookup"><span data-stu-id="09996-153">Accessing user secrets via configuration</span></span>
+```console
+type .\input.json | dotnet user-secrets set
+```
 
-<span data-ttu-id="09996-154">구성 시스템을 통해서 Secret Manager 도구의 사용자 보안 정보에 접근할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="09996-154">You access Secret Manager secrets through the configuration system.</span></span> <span data-ttu-id="09996-155">추가 `Microsoft.Extensions.Configuration.UserSecrets` 패키지 및 실행 [dotnet 복원](/dotnet/core/tools/dotnet-restore)합니다.</span><span class="sxs-lookup"><span data-stu-id="09996-155">Add the `Microsoft.Extensions.Configuration.UserSecrets` package and run [dotnet restore](/dotnet/core/tools/dotnet-restore).</span></span>
+<span data-ttu-id="c31e6-172">MacOS 및 Linux에서 다음 명령을 사용 합니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-172">Use the following command on macOS and Linux:</span></span>
 
-<span data-ttu-id="09996-156">그리고 `Startup`의 생성자에 사용자 보안 정보 구성 소스를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="09996-156">Add the user secrets configuration source to the `Startup` method:</span></span>
+```console
+cat ./input.json | dotnet user-secrets set
+```
 
-[!code-csharp[](app-secrets/sample/UserSecrets/Startup.cs?highlight=16-19)]
+## <a name="access-a-secret"></a><span data-ttu-id="c31e6-173">암호에 액세스</span><span class="sxs-lookup"><span data-stu-id="c31e6-173">Access a secret</span></span>
 
-<span data-ttu-id="09996-157">그러면 구성 API를 통해서 사용자 보안 정보에 접근할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="09996-157">You can access user secrets via the configuration API:</span></span>
+<span data-ttu-id="c31e6-174">[ASP.NET Core 구성 API](xref:fundamentals/configuration/index) 보안 관리자 암호에 대 한 액세스를 제공 합니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-174">The [ASP.NET Core Configuration API](xref:fundamentals/configuration/index) provides access to Secret Manager secrets.</span></span> <span data-ttu-id="c31e6-175">.NET Core를 대상으로 1.x 또는.NET Framework 설치는 [Microsoft.Extensions.Configuration.UserSecrets](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.UserSecrets) NuGet 패키지 합니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-175">If targeting .NET Core 1.x or .NET Framework, install the [Microsoft.Extensions.Configuration.UserSecrets](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.UserSecrets) NuGet package.</span></span>
 
-[!code-csharp[](app-secrets/sample/UserSecrets/Startup.cs?highlight=26-29)]
+::: moniker range="<= aspnetcore-1.1"
+<span data-ttu-id="c31e6-176">사용자 암호 구성 소스를 추가 `Startup` 생성자:</span><span class="sxs-lookup"><span data-stu-id="c31e6-176">Add the user secrets configuration source to the `Startup` constructor:</span></span>
 
-## <a name="how-the-secret-manager-tool-works"></a><span data-ttu-id="09996-158">Secret Manager 도구의 동작 방식</span><span class="sxs-lookup"><span data-stu-id="09996-158">How the Secret Manager tool works</span></span>
+<span data-ttu-id="c31e6-177">[!code-csharp[](app-secrets/samples/1.1/UserSecrets/Startup.cs?name=snippet_StartupConstructor&highlight=5-8)]</span><span class="sxs-lookup"><span data-stu-id="c31e6-177">[!code-csharp[](app-secrets/samples/1.1/UserSecrets/Startup.cs?name=snippet_StartupConstructor&highlight=5-8)]</span></span>
+::: moniker-end
 
-<span data-ttu-id="09996-159">Secret Manager 도구는 값이 저장되는 위치 및 방법 같은 구현에 관한 세부적인 내용을 추상화합니다.</span><span class="sxs-lookup"><span data-stu-id="09996-159">The Secret Manager tool abstracts away the implementation details, such as where and how the values are stored.</span></span> <span data-ttu-id="09996-160">이런 세부적인 내용을 모르더라도 Secret Manager 도구를 사용하는 데는 아무런 지장이 없습니다. </span><span class="sxs-lookup"><span data-stu-id="09996-160">You can use the tool without knowing these implementation details.</span></span> <span data-ttu-id="09996-161">현재 버전에서는 사용자 프로필 디렉터리의 [JSON](http://json.org/) 구성 파일에 값이 저장됩니다.</span><span class="sxs-lookup"><span data-stu-id="09996-161">In the current version, the values are stored in a [JSON](http://json.org/) configuration file in the user profile directory:</span></span>
+<span data-ttu-id="c31e6-178">사용자 암호를 통해 검색할 수 있습니다는 `Configuration` API:</span><span class="sxs-lookup"><span data-stu-id="c31e6-178">User secrets can be retrieved via the `Configuration` API:</span></span>
 
-* <span data-ttu-id="09996-162">Windows: `%APPDATA%\microsoft\UserSecrets\<userSecretsId>\secrets.json`</span><span class="sxs-lookup"><span data-stu-id="09996-162">Windows: `%APPDATA%\microsoft\UserSecrets\<userSecretsId>\secrets.json`</span></span>
+::: moniker range="<= aspnetcore-1.1"
+<span data-ttu-id="c31e6-179">[!code-csharp[](app-secrets/samples/1.1/UserSecrets/Startup.cs?name=snippet_StartupClass&highlight=23)]</span><span class="sxs-lookup"><span data-stu-id="c31e6-179">[!code-csharp[](app-secrets/samples/1.1/UserSecrets/Startup.cs?name=snippet_StartupClass&highlight=23)]</span></span>
+::: moniker-end
+::: moniker range=">= aspnetcore-2.0"
+<span data-ttu-id="c31e6-180">[!code-csharp[](app-secrets/samples/2.1/UserSecrets/Startup.cs?name=snippet_StartupClass&highlight=14)]</span><span class="sxs-lookup"><span data-stu-id="c31e6-180">[!code-csharp[](app-secrets/samples/2.1/UserSecrets/Startup.cs?name=snippet_StartupClass&highlight=14)]</span></span>
+::: moniker-end
 
-* <span data-ttu-id="09996-163">Linux: `~/.microsoft/usersecrets/<userSecretsId>/secrets.json`</span><span class="sxs-lookup"><span data-stu-id="09996-163">Linux: `~/.microsoft/usersecrets/<userSecretsId>/secrets.json`</span></span>
+## <a name="string-replacement-with-secrets"></a><span data-ttu-id="c31e6-181">암호와 문자열 대체</span><span class="sxs-lookup"><span data-stu-id="c31e6-181">String replacement with secrets</span></span>
 
-* <span data-ttu-id="09996-164">macOS: `~/.microsoft/usersecrets/<userSecretsId>/secrets.json`</span><span class="sxs-lookup"><span data-stu-id="09996-164">macOS: `~/.microsoft/usersecrets/<userSecretsId>/secrets.json`</span></span>
+<span data-ttu-id="c31e6-182">일반 텍스트에 암호를 저장 하는 것은 위험 합니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-182">Storing passwords in plain text is risky.</span></span> <span data-ttu-id="c31e6-183">데이터베이스 연결 문자열에 저장 하는 예를 들어 *appsettings.json* 지정된 된 사용자에 대 한 암호를 포함 될 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-183">For example, a database connection string stored in *appsettings.json* may include a password for the specified user:</span></span>
 
-<span data-ttu-id="09996-165">여기서 `userSecretsId` 의 값은 *.csproj* 파일에 지정된 값입니다. </span><span class="sxs-lookup"><span data-stu-id="09996-165">The value of `userSecretsId` comes from the value specified in *.csproj* file.</span></span>
+[!code-json[](app-secrets/samples/2.1/UserSecrets/appsettings-unsecure.json?highlight=3)]
 
-<span data-ttu-id="09996-166">이러한 구현 정보 변경 될 수 있으므로 위치나 암호 관리자 도구와 함께 저장 된 데이터의 형식에 따라 달라 지 코드를 작성 하지 않아야 합니다.</span><span class="sxs-lookup"><span data-stu-id="09996-166">You shouldn't write code that depends on the location or format of the data saved with the Secret Manager tool, as these implementation details might change.</span></span> <span data-ttu-id="09996-167">예를 들어, 지금은 보안 정보가 암호화되지 *않지만* 나중에는 암호화될 수도 있습니다.</span><span class="sxs-lookup"><span data-stu-id="09996-167">For example, the secret values are currently *not* encrypted today, but could be someday.</span></span>
+<span data-ttu-id="c31e6-184">암호로 암호를 저장 하는 보다 안전한 방법이입니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-184">A more secure approach is to store the password as a secret.</span></span> <span data-ttu-id="c31e6-185">예를 들어:</span><span class="sxs-lookup"><span data-stu-id="c31e6-185">For example:</span></span>
 
-## <a name="additional-resources"></a><span data-ttu-id="09996-168">추가 자료</span><span class="sxs-lookup"><span data-stu-id="09996-168">Additional resources</span></span>
+```console
+dotnet user-secrets set "DbPassword" "pass123"
+```
 
-* [<span data-ttu-id="09996-169">구성</span><span class="sxs-lookup"><span data-stu-id="09996-169">Configuration</span></span>](xref:fundamentals/configuration/index)
+<span data-ttu-id="c31e6-186">암호를 대체할 *appsettings.json* 을 자리 표시자입니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-186">Replace the password in *appsettings.json* with a placeholder.</span></span> <span data-ttu-id="c31e6-187">다음 예에서 `{0}` 폼에 자리 표시자로 사용 되는 [복합 형식 문자열](/dotnet/standard/base-types/composite-formatting#composite-format-string)합니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-187">In the following example, `{0}` is used as the placeholder to form a [Composite Format String](/dotnet/standard/base-types/composite-formatting#composite-format-string).</span></span>
+
+[!code-json[](app-secrets/samples/2.1/UserSecrets/appsettings.json?highlight=3)]
+
+<span data-ttu-id="c31e6-188">연결 문자열을 완료 하려면 자리 표시자에 암호의 값을 삽입할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-188">The secret's value can be injected into the placeholder to complete the connection string:</span></span>
+
+::: moniker range="<= aspnetcore-1.1"
+<span data-ttu-id="c31e6-189">[!code-csharp[](app-secrets/samples/1.1/UserSecrets/Startup2.cs?name=snippet_StartupClass&highlight=23-25)]</span><span class="sxs-lookup"><span data-stu-id="c31e6-189">[!code-csharp[](app-secrets/samples/1.1/UserSecrets/Startup2.cs?name=snippet_StartupClass&highlight=23-25)]</span></span>
+::: moniker-end
+::: moniker range=">= aspnetcore-2.0"
+<span data-ttu-id="c31e6-190">[!code-csharp[](app-secrets/samples/2.1/UserSecrets/Startup2.cs?name=snippet_StartupClass&highlight=14-16)]</span><span class="sxs-lookup"><span data-stu-id="c31e6-190">[!code-csharp[](app-secrets/samples/2.1/UserSecrets/Startup2.cs?name=snippet_StartupClass&highlight=14-16)]</span></span>
+::: moniker-end
+
+## <a name="list-the-secrets"></a><span data-ttu-id="c31e6-191">암호 나열</span><span class="sxs-lookup"><span data-stu-id="c31e6-191">List the secrets</span></span>
+
+[!INCLUDE[secrets.json file](~/includes/app-secrets/secrets-json-file-and-text.md)]
+
+<span data-ttu-id="c31e6-192">디렉터리에서 다음 명령을 실행는 *.csproj* 파일이 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-192">Run the following command from the directory in which the *.csproj* file exists:</span></span>
+
+```console
+dotnet user-secrets list
+```
+
+<span data-ttu-id="c31e6-193">다음과 같은 출력이 표시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-193">The following output appears:</span></span>
+
+```console
+Movies:ServiceApiKey = 12345
+Movies:ConnectionString = Server=(localdb)\mssqllocaldb;Database=Movie-1;Trusted_Connection=True;MultipleActiveResultSets=true
+```
+
+<span data-ttu-id="c31e6-194">키 이름에 콜론 앞의 예제에서 내에서 개체 계층 구조를 나타냅니다 *secrets.json*합니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-194">In the preceding example, a colon in the key names denotes the object hierarchy within *secrets.json*.</span></span>
+
+## <a name="remove-a-single-secret"></a><span data-ttu-id="c31e6-195">단일 암호를 제거 합니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-195">Remove a single secret</span></span>
+
+[!INCLUDE[secrets.json file](~/includes/app-secrets/secrets-json-file-and-text.md)]
+
+<span data-ttu-id="c31e6-196">디렉터리에서 다음 명령을 실행는 *.csproj* 파일이 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-196">Run the following command from the directory in which the *.csproj* file exists:</span></span>
+
+```console
+dotnet user-secrets remove "Movies:ConnectionString"
+```
+
+<span data-ttu-id="c31e6-197">응용 프로그램의 *secrets.json* 와 연결 된 키-값 쌍을 제거 하려면 파일을 수정한는 `MoviesConnectionString` 키:</span><span class="sxs-lookup"><span data-stu-id="c31e6-197">The app's *secrets.json* file was modified to remove the key-value pair associated with the `MoviesConnectionString` key:</span></span>
+
+```json
+{
+  "Movies": {
+    "ServiceApiKey": "12345"
+  }
+}
+```
+
+<span data-ttu-id="c31e6-198">실행 `dotnet user-secrets list` 다음 메시지가 표시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-198">Running `dotnet user-secrets list` displays the following message:</span></span>
+
+```console
+Movies:ServiceApiKey = 12345
+```
+
+## <a name="remove-all-secrets"></a><span data-ttu-id="c31e6-199">모든 암호를 제거 합니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-199">Remove all secrets</span></span>
+
+[!INCLUDE[secrets.json file](~/includes/app-secrets/secrets-json-file-and-text.md)]
+
+<span data-ttu-id="c31e6-200">디렉터리에서 다음 명령을 실행는 *.csproj* 파일이 있습니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-200">Run the following command from the directory in which the *.csproj* file exists:</span></span>
+
+```console
+dotnet user-secrets clear
+```
+
+<span data-ttu-id="c31e6-201">삭제 된 응용 프로그램에 대 한 모든 사용자 암호는 *secrets.json* 파일:</span><span class="sxs-lookup"><span data-stu-id="c31e6-201">All user secrets for the app have been deleted from the *secrets.json* file:</span></span>
+
+```json
+{}
+```
+
+<span data-ttu-id="c31e6-202">실행 `dotnet user-secrets list` 다음 메시지가 표시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="c31e6-202">Running `dotnet user-secrets list` displays the following message:</span></span>
+
+```console
+No secrets configured for this application.
+```
+
+## <a name="additional-resources"></a><span data-ttu-id="c31e6-203">추가 자료</span><span class="sxs-lookup"><span data-stu-id="c31e6-203">Additional resources</span></span>
+
+* <xref:fundamentals/configuration/index>
+* <xref:security/key-vault-configuration>
