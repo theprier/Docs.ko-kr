@@ -10,17 +10,15 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: content
 uid: mvc/razor-pages/sdk
-ms.openlocfilehash: 2cbebb12ccd1098e1950aa7eeb22fab4ffc689e6
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: acc049a69574968d1e304d6c504cb89243387d6c
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="aspnet-core-razor-sdk"></a>ASP.NET Core Razor SDK
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
-
-[!INCLUDE[](~/includes/2.1.md)]
 
 [!INCLUDE[](~/includes/2.1-SDK.md)]에는 `Microsoft.NET.Sdk.Razor` MSBuild SDK(Razor SDK)가 포함되어 있습니다. Razor SDK:
 
@@ -66,7 +64,7 @@ Razor SDK를 사용하여 Razor 보기 또는 Razor 페이지를 포함하는 �
 | ------------                                  | -------------                                                                 |
 | RazorGenerate                                 | 코드 생성 대상에 입력되는 항목 요소(*.cshtml* 파일). |
 | RazorCompile                                  | Razor 컴파일 대상에 입력되는 항목 요소(.cs 파일). 이 ItemGroup을 사용하여 Razor 어셈블리에 컴파일할 추가 파일을 지정합니다. |
-| RazorAssemblyAttribute                        | 코드에 사용된 항목 요소는 Razor 어셈블리의 특성을 생성합니다. 예:  <br />`<RazorAssemblyAttribute ` <br />  `Include="System.Reflection.AssemblyMetadataAttribute"`<br />`  _Parameter1="BuildSource" _Parameter2="https://docs.asp.net/">` |
+| RazorTargetAssemblyAttribute                  | 코드에 사용된 항목 요소는 Razor 어셈블리의 특성을 생성합니다. 예:  <br />`<RazorAssemblyAttribute ` <br />  `Include="System.Reflection.AssemblyMetadataAttribute"`<br />`  _Parameter1="BuildSource" _Parameter2="https://docs.asp.net/">` |
 | RazorEmbeddedResource                         | 생성된 Razor 어셈블리에 포함 리소스로 추가된 항목 요소 |
 
 | 속성                                      | 설명                                                                   |

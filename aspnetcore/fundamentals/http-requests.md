@@ -11,17 +11,15 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/http-requests
-ms.openlocfilehash: 30ac239a38376feecffc3010387ec5e0009b6db6
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 1f2c7522a10220cd9520d78846d2e897115447c2
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="initiate-http-requests"></a>HTTP 요청 시작
 
 작성자: [Glenn Condron](https://github.com/glennc), [Ryan Nowak](https://github.com/rynowak) 및 [Steve Gordon](https://github.com/stevejgordon)
-
-[!INCLUDE[](~/includes/2.1.md)]
 
 앱에서 [HttpClient](/dotnet/api/system.net.http.httpclient)를 만들고 구성하려면 `IHttpClientFactory`을 등록하고 사용할 수 있습니다. 다음과 같은 이점을 제공합니다.
 
@@ -77,7 +75,7 @@ ms.lasthandoff: 05/03/2018
 
 [!code-csharp[](http-requests/samples/GitHub/GitHubService.cs?name=snippet1&highlight=5)]
 
-위의 코드에서 구성은 형식화된 클라이언트로 이동합니다. `HttpClient` 개체는 공용 속성으로 공개됩니다. `HttpClient` 기능을 공개하는 API 관련 메서드를 정의할 수 있습니다. `GetLatestDocsIssue` 메서드는 GitHub 리포지토리에서 최신 문제를 구문 분석하고 쿼리하는 데 필요한 코드를 캡슐화합니다.
+위의 코드에서 구성은 형식화된 클라이언트로 이동합니다. `HttpClient` 개체는 공용 속성으로 공개됩니다. `HttpClient` 기능을 공개하는 API 관련 메서드를 정의할 수 있습니다. `GetAspNetDocsIssues` 메서드는 GitHub 리포지토리에서 공개된 최신 문제를 구문 분석하고 쿼리하는 데 필요한 코드를 캡슐화합니다.
 
 형식화된 클라이언트를 등록하려면 `AddHttpClient` 확장 메서드는 형식화된 클라이언트 클래스를 지정하면서 `ConfigureServices` 내에서 사용할 수 있습니다.
 

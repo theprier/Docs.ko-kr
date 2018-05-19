@@ -10,23 +10,23 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/app-state
-ms.openlocfilehash: 3a9463e5c501b5f32471f002ecab5ad7a81a5c4a
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 1b41690fce707314f6cd0e891e4180481a2f632b
+ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="session-and-application-state-in-aspnet-core"></a>ASP.NET Core에서 세션 및 응용 프로그램 상태
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT), [Steve Smith](https://ardalis.com/) 및 [Diana LaRose](https://github.com/DianaLaRose)
 
-HTTP는 상태 비저장 프로토콜입니다. 웹 서버는 독립적인 요청으로 각 HTTP 요청을 처리하고 이전 요청에서 사용자 값을 유지하지 않습니다. 이 문서에서는 요청 간에 응용 프로그램 및 세션 상태를 유지하기 위한 다양한 방법을 설명합니다. 
+HTTP는 상태 비저장 프로토콜입니다. 웹 서버는 독립적인 요청으로 각 HTTP 요청을 처리하고 이전 요청에서 사용자 값을 유지하지 않습니다. 이 문서에서는 요청 간에 응용 프로그램 및 세션 상태를 유지하기 위한 다양한 방법을 설명합니다.
 
 ## <a name="session-state"></a>세션 상태
 
 세션 상태는 사용자가 웹 앱을 탐색하는 동안 사용자의 데이터를 저장하기 위해서 사용할 수 있는 ASP.NET Core의 기능입니다. 서버에서 사전 또는 해시 테이블로 구성하여 세션 상태는 브라우저에서 요청 간 데이터를 유지합니다. 세션 데이터는 캐시에 의해 지원됩니다.
 
-ASP.NET Core는 클라이언트에 각 요청과 함께 서버에 전송된 세션 ID를 포함하는 쿠키를 제공하여 세션 상태를 유지합니다. 서버는 세션 ID를 사용하여 세션 데이터를 가져옵니다. 세션 쿠키는 브라우저와 관련되기 때문에 브라우저에서 세션을 공유할 수 없습니다. 세션 쿠키는 브라우저 세션이 끝나면 삭제됩니다. 쿠키가 만료된 세션에 대해 수신되면 동일한 세션 쿠키를 사용하는 새 세션이 생성됩니다. 
+ASP.NET Core는 클라이언트에 각 요청과 함께 서버에 전송된 세션 ID를 포함하는 쿠키를 제공하여 세션 상태를 유지합니다. 서버는 세션 ID를 사용하여 세션 데이터를 가져옵니다. 세션 쿠키는 브라우저와 관련되기 때문에 브라우저에서 세션을 공유할 수 없습니다. 세션 쿠키는 브라우저 세션이 끝나면 삭제됩니다. 쿠키가 만료된 세션에 대해 수신되면 동일한 세션 쿠키를 사용하는 새 세션이 생성됩니다.
 
 서버는 마지막 요청 이후 제한된 시간에 대한 세션을 유지합니다. 세션 제한 시간을 설정하거나 20분의 기본값을 사용합니다. 세션 상태는 특정 세션에 고유한 사용자 데이터를 저장하는 데 이상적이지만 영구적으로 유지될 필요가 없습니다. 데이터는 `Session.Clear`를 호출하거나 세션이 데이터 저장소에서 만료될 때 백업 저장소에서 삭제됩니다. 서버는 브라우저가 닫히는 경우 또는 세션 쿠키가 삭제되는 경우를 알지 못합니다.
 
@@ -35,12 +35,10 @@ ASP.NET Core는 클라이언트에 각 요청과 함께 서버에 전송된 세�
 
 메모리 내 세션 공급자는 로컬 서버에 세션 데이터를 저장합니다. 서버 팜에서 웹앱을 실행하려는 경우 특정 서버에 각 세션을 연결하도록 고정 세션을 사용해야 합니다. Windows Azure 웹 사이트 플랫폼은 고정 세션을 기본값으로 설정합니다(응용 프로그램 요청 라우팅 또는 ARR). 그러나 고정 세션은 확장성에 영향을 주고 웹앱 업데이트를 복잡하게 만들 수 있습니다. 더 나은 옵션은 고정 세션이 필요하지 않은 Redis 또는 SQL Server 분산 캐시를 사용하는 것입니다. 자세한 내용은 [분산 캐시 사용](xref:performance/caching/distributed)을 참조하세요. 서비스 공급자 설정에 대한 자세한 내용은 이 문서의 뒷부분에 나오는 [세션 구성](#configuring-session)을 참조하세요.
 
-<a name="temp"></a>
 ## <a name="tempdata"></a>TempData
 
 ASP.NET Core MVC는 [컨트롤러](/dotnet/api/microsoft.aspnetcore.mvc.controller?view=aspnetcore-2.0)에서 [TempData](/dotnet/api/microsoft.aspnetcore.mvc.controller.tempdata?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_Controller_TempData) 속성을 노출합니다. 이 속성은 판독될 때까지 데이터를 저장합니다. `Keep` 및 `Peek` 메서드를 사용하여 삭제 없이 데이터를 검사할 수 있습니다. `TempData`는 두 개 이상의 요청에 대한 데이터가 필요할 경우 리디렉션에 특히 유용합니다. `TempData`는 TempData 공급자에 의해 구현됩니다(예: 쿠키 또는 세션 상태 사용).
 
-<a name="tempdata-providers"></a>
 ### <a name="tempdata-providers"></a>TempData 공급자
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
@@ -53,9 +51,8 @@ ASP.NET Core 2.0 이상에서 쿠키 기반 TempData 공급자는 TempData를 �
 
 ASP.NET Core 1.0 및 1.1에서는 세션 상태 TempData 공급자가 기본값입니다.
 
---------------
+---
 
-<a name="choose-temp"></a>
 ### <a name="choosing-a-tempdata-provider"></a>TempData 공급자 선택
 
 TempData 공급자를 선택하는 데는 다음과 같은 몇 가지 고려 사항이 수반됩니다.
@@ -67,20 +64,22 @@ TempData 공급자를 선택하는 데는 다음과 같은 몇 가지 고려 사
 > [!NOTE]
 > 대부분의 웹 클라이언트(예: 웹 브라우저)는 각 쿠키의 최대 크기, 쿠키의 총 수 또는 둘 다에 제한을 적용합니다. 따라서 쿠키 TempData 공급자를 사용하는 경우 앱이 이러한 제한을 초과하지 않는지 확인합니다. 암호화의 오버헤드 및 청크를 확인하여 데이터의 전체 크기를 고려합니다.
 
-<a name="config-temp"></a>
 ### <a name="configure-the-tempdata-provider"></a>TempData 공급자 구성
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
 쿠키 기반 TempData 공급자는 기본적으로 활성화됩니다. 다음 `Startup` 클래스 코드는 세션 기반 TempData 공급자를 구성합니다.
 
 [!code-csharp[](app-state/sample/src/WebAppSessionDotNetCore2.0App/StartupTempDataSession.cs?name=snippet_TempDataSession&highlight=4,6,11)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 다음 `Startup` 클래스 코드는 세션 기반 TempData 공급자를 구성합니다.
 
 [!code-csharp[](app-state/sample/src/WebAppSession/StartupTempDataSession.cs?name=snippet_TempDataSession&highlight=4,9)]
 
-* * *
+---
+
 순서 지정은 미들웨어 구성 요소에 중요합니다. 위의 예에서 `UseMvcWithDefaultRoute` 후에 `UseSession`이 호출되는 경우 형식 `InvalidOperationException`의 예외가 발생합니다. 자세한 내용은 [미들웨어 순서 지정](xref:fundamentals/middleware/index#ordering)을 참조하세요.
 
 > [!IMPORTANT]
@@ -92,11 +91,11 @@ TempData 공급자를 선택하는 데는 다음과 같은 몇 가지 고려 사
 
 ## <a name="post-data-and-hidden-fields"></a>데이터 게시 및 숨겨진 필드
 
-데이터는 숨겨진 양식 필드에 저장되고 다음 요청에서 다시 게시될 수 있습니다. 이는 다중 페이지 폼에서 일반적입니다. 그러나 클라이언트는 잠재적으로 데이터를 변조할 수 있으므로 서버는 항상 유효성을 다시 검사해야 합니다. 
+데이터는 숨겨진 양식 필드에 저장되고 다음 요청에서 다시 게시될 수 있습니다. 이는 다중 페이지 폼에서 일반적입니다. 그러나 클라이언트는 잠재적으로 데이터를 변조할 수 있으므로 서버는 항상 유효성을 다시 검사해야 합니다.
 
 ## <a name="cookies"></a>쿠키
 
-쿠키는 웹 응용 프로그램에서 사용자 관련 데이터를 저장하는 방법을 제공합니다. 쿠키는 모든 요청과 함께 전송되므로 해당 크기는 최소로 유지되어야 합니다. 이상적으로 식별자만 서버에 저장된 실제 데이터와 함께 쿠키에 저장되어야 합니다. 대부분의 브라우저는 4096바이트로 쿠키를 제한합니다. 또한 제한된 개수의 쿠키를 각 도메인에 대해 사용할 수 있습니다.  
+쿠키는 웹 응용 프로그램에서 사용자 관련 데이터를 저장하는 방법을 제공합니다. 쿠키는 모든 요청과 함께 전송되므로 해당 크기는 최소로 유지되어야 합니다. 이상적으로 식별자만 서버에 저장된 실제 데이터와 함께 쿠키에 저장되어야 합니다. 대부분의 브라우저는 4096바이트로 쿠키를 제한합니다. 또한 제한된 개수의 쿠키를 각 도메인에 대해 사용할 수 있습니다.
 
 쿠키는 변조될 수 있기 때문에 서버에서 유효성을 검사해야 합니다. 클라이언트에서 쿠키의 지속성은 사용자 작업 및 만료에 종속되지만 일반적으로 클라이언트에서 데이터 지속성의 가장 영구적인 형식입니다.
 
@@ -110,7 +109,6 @@ TempData 공급자를 선택하는 데는 다음과 같은 몇 가지 고려 사
 
 캐싱은 데이터 저장 및 검색하는 효율적인 방법입니다. 시간 및 기타 고려 사항에 따라 캐시된 항목의 수명을 제어할 수 있습니다. [캐시하는 방법](../performance/caching/index.md)에 대해 자세히 알아봅니다.
 
-<a name="session"></a>
 ## <a name="working-with-session-state"></a>세션 상태 사용
 
 ### <a name="configuring-session"></a>세션 구성
@@ -123,20 +121,23 @@ TempData 공급자를 선택하는 데는 다음과 같은 몇 가지 고려 사
 
 다음 코드에서는 메모리 내 세션 공급자를 설정하는 방법을 보여 줍니다.
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
 [!code-csharp[](app-state/sample/src/WebAppSessionDotNetCore2.0App/Startup.cs?highlight=11-19,24)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 [!code-csharp[](app-state/sample/src/WebAppSession/Startup.cs?highlight=11-19,24)]
 
-* * *
+---
+
 설치되고 구성되면 `HttpContext`에서 세션을 참조할 수 있습니다.
 
 `UseSession`이 호출되기 전에 `Session`에 액세스하려는 경우 예외 `InvalidOperationException: Session has not been configured for this application or request`가 throw됩니다.
 
 `Response` 스트림에 이미 작성을 시작한 후 새 `Session`을 만들려는 경우(즉, 세션 쿠키가 만들어지지 않음) 예외 `InvalidOperationException: The session cannot be established after the response has started`가 throw됩니다. 웹 서버 로그에서 예외를 확인할 수 있습니다. 브라우저에 표시되지 않습니다.
 
-### <a name="loading-session-asynchronously"></a>세션을 비동기적으로 로드 
+### <a name="loading-session-asynchronously"></a>세션을 비동기적으로 로드
 
 ASP.NET Core에서 기본 세션 공급자는 [ISession.LoadAsync](/dotnet/api/microsoft.aspnetcore.http.isession#Microsoft_AspNetCore_Http_ISession_LoadAsync) 메서드가 `TryGetValue`, `Set` 또는 `Remove` 메서드 전에 명시적으로 호출된 경우에만 기본 [IDistributedCache](/dotnet/api/microsoft.extensions.caching.distributed.idistributedcache) 저장소에서 비동기적으로 세션 레코드를 로드합니다. `LoadAsync`가 먼저 호출되지 않은 경우 기본 세션 레코드가 동기적으로 로드되며 이는 크기를 조정하는 앱의 기능에 잠재적으로 영향을 줄 수 있습니다.
 
@@ -148,20 +149,27 @@ ASP.NET Core에서 기본 세션 공급자는 [ISession.LoadAsync](/dotnet/api/m
 
 세션 기본값을 재정의하려면 `SessionOptions`를 사용합니다.
 
-#### <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
+
 [!code-csharp[](app-state/sample/src/WebAppSessionDotNetCore2.0App/StartupCopy.cs?name=snippet1&highlight=8-12)]
 
-#### <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
+
 [!code-csharp[](app-state/sample/src/WebAppSession/StartupCopy.cs?name=snippet1&highlight=8-12)]
 
-* * *
+---
+
 서버는 `IdleTimeout` 속성을 사용하여 해당 콘텐츠가 중단되기 전에 유휴 상태일 수 있는 세션의 기간을 결정합니다. 이 속성은 쿠키 만료와 무관합니다. 세션 미들웨어(읽거나 쓰는)를 통해 전달되는 각 요청은 시간 제한을 다시 설정합니다.
 
 `Session`은 *잠기지 않으므로* 두 요청이 모두 세션의 콘텐츠를 수정하려고 하는 경우 마지막 요청이 첫 번째 요청을 재정의합니다. `Session`은 *일관된 세션*으로 구현됩니다. 즉, 모든 콘텐츠는 함께 저장됩니다. 세션의 다른 부분(다른 키)을 수정하는 두 요청은 여전히 서로 영향을 줄 수 있습니다.
 
-### <a name="setting-and-getting-session-values"></a>세션 값 설정 및 가져오기
+### <a name="set-and-get-session-values"></a>세션 값 설정 및 가져오기
 
-세션은 `HttpContext`의 `Session` 속성을 통해 액세스됩니다. 이 속성은 [ISession](/dotnet/api/microsoft.aspnetcore.http.isession) 구현입니다.
+`Context.Session`을 사용하여 Razor 페이지 또는 보기에서 세션에 액세스합니다.
+
+[!code-cshtml[](app-state/sample/src/WebAppSessionDotNetCore2.0App/Views/Home/About.cshtml)]
+
+`HttpContext.Session`을 사용하여 `PageModel` 클래스 또는 컨트롤러에서 세션에 액세스합니다. 이 속성은 [ISession](/dotnet/api/microsoft.aspnetcore.http.isession) 구현입니다.
 
 다음 예제에서는 int 및 문자열 설정 및 가져오기를 보여 줍니다.
 
@@ -174,7 +182,6 @@ ASP.NET Core에서 기본 세션 공급자는 [ISession.LoadAsync](/dotnet/api/m
 다음 샘플에서는 직렬화 가능 개체를 설정하고 가져오는 방법을 보여 줍니다.
 
 [!code-csharp[](app-state/sample/src/WebAppSession/Controllers/HomeController.cs?name=snippet2)]
-
 
 ## <a name="working-with-httpcontextitems"></a>HttpContext.Items 작업
 
@@ -196,7 +203,7 @@ app.Use(async (context, next) =>
 ```csharp
 app.Run(async (context) =>
 {
-    await context.Response.WriteAsync("Verified request? " + 
+    await context.Response.WriteAsync("Verified request? " +
         context.Items["isVerified"]);
 });
 ```
@@ -230,33 +237,33 @@ public class HomeController : Controller
 
 이 방법은 또한 코드의 여러 위치에서 "매직 문자열"의 반복을 제거하는 이점이 있습니다.
 
-<a name="appstate-errors"></a>
-
 ## <a name="application-state-data"></a>응용 프로그램 상태 데이터
 
 [종속성 주입](xref:fundamentals/dependency-injection)을 사용하여 모든 사용자에게 데이터를 사용할 수 있도록 합니다.
 
 1. 데이터를 포함하는 서비스를 정의합니다(예: `MyAppData`라는 클래스).
 
-```csharp
-public class MyAppData
-{
-    // Declare properties/methods/etc.
-} 
-```
+    ```csharp
+    public class MyAppData
+    {
+        // Declare properties/methods/etc.
+    } 
+    ```
+
 2. `ConfigureServices`에 서비스 클래스를 추가합니다(예: `services.AddSingleton<MyAppData>();`).
+
 3. 각 컨트롤러에서 데이터 서비스 클래스를 사용합니다.
 
-```csharp
-public class MyController : Controller
-{
-    public MyController(MyAppData myService)
+    ```csharp
+    public class MyController : Controller
     {
-        // Do something with the service (read some data from it, 
-        // store it in a private field/property, etc.)
-    }
-} 
-```
+        public MyController(MyAppData myService)
+        {
+            // Do something with the service (read some data from it, 
+            // store it in a private field/property, etc.)
+        }
+    } 
+    ```
 
 ## <a name="common-errors-when-working-with-session"></a>세션을 작업할 때 일반적인 오류
 

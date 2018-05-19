@@ -8,11 +8,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: be7d55bf1a5d3da63ff137ed86f71984dc897eff
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 26f516716864bdce81cf3acdacb0f9d2f98407b7
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---sort-filter-paging---3-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 정렬, 필터, 페이징 - 3/8
 
@@ -58,7 +58,7 @@ ms.lasthandoff: 04/06/2018
 
 `?: operator`는 삼진 연산자라고도 합니다.
 
-이러한 두 명령문을 사용하면 뷰에서 다음과 같이 열 제목 하이퍼링크를 설정할 수 있습니다.
+이러한 두 명령문을 사용하면 페이지에서 다음과 같이 열 제목 하이퍼링크를 설정할 수 있습니다.
 
 | 현재 정렬 순서 | 성 하이퍼링크 | 날짜 하이퍼링크 |
 |:--------------------:|:-------------------:|:--------------:|
@@ -77,7 +77,7 @@ ms.lasthandoff: 04/06/2018
 
 `OnGetAsync`는 많은 수의 열이 포함된 자세한 정보를 가져올 수 있습니다.
 
-### <a name="add-column-heading-hyperlinks-to-the-student-index-view"></a>학생 인덱스 뷰에 대한 열 제목 하이퍼링크 추가
+### <a name="add-column-heading-hyperlinks-to-the-student-index-page"></a>학생 인덱스 페이지에 열 제목 하이퍼링크 추가
 
 *Students/Index.cshtml*의 코드를 다음 강조 표시된 코드로 바꿉니다.
 
@@ -122,7 +122,7 @@ ms.lasthandoff: 04/06/2018
 
 참고: 이전 코드는 `IQueryable` 개체에서 `Where` 메서드를 호출하고, 필터는 서버에서 처리됩니다. 일부 시나리오에서 앱은 메모리 내 컬렉션에서 확장 메서드로 `Where` 메서드를 호출할 수 있습니다. 예를 들어 `_context.Students`가 EF Core `DbSet`에서 `IEnumerable` 컬렉션을 반환하는 리포지토리 메서드로 변경되었다고 가정합니다. 결과는 일반적으로 동일하지만 경우에 따라 다를 수 있습니다.
 
-예를 들어 `Contains`의 .NET Framework 구현은 기본적으로 대/소문자 구분 비교를 수행합니다. SQL Server에서 `Contains` 대/소문자 구분은 SQL Server 인스턴스의 컬렉션 설정에 의해 결정됩니다. SQL Serve는 기본적으로 대/소문자를 구분하지 않습니다. `ToUpper`는 테스트가 명시적으로 대/소문자를 구분하지 않도록 하기 위해 호출됩니다.
+예를 들어 `Contains`의 .NET Framework 구현은 기본적으로 대/소문자 구분 비교를 수행합니다. SQL Server에서 `Contains` 대/소문자 구분은 SQL Server 인스턴스의 컬렉션 설정에 의해 결정됩니다. SQL Server는 기본적으로 대/소문자를 구분하지 않습니다. `ToUpper`는 테스트가 명시적으로 대/소문자를 구분하지 않도록 하기 위해 호출됩니다.
 
 `Where(s => s.LastName.ToUpper().Contains(searchString.ToUpper())`
 
@@ -133,9 +133,9 @@ ms.lasthandoff: 04/06/2018
 
 `ToUpper` 호출에 대한 성능 저하가 발생합니다. `ToUpper` 코드는 TSQL SELECT 문의 WHERE 절에 함수를 추가합니다. 추가된 함수는 최적화 프로그램이 인덱스를 사용하지 않도록 합니다. SQL은 대/소문자를 구분하지 않도록 설치되어 있으므로 필요하지 않은 경우 `ToUpper` 호출을 피하는 것이 가장 좋습니다.
 
-### <a name="add-a-search-box-to-the-student-index-view"></a>학생 인덱스 뷰에 검색 상자 추가
+### <a name="add-a-search-box-to-the-student-index-page"></a>학생 인덱스 페이지에 검색 상자 추가
 
-*Views/Student/Index.cshtml*에서 다음 강조 표시된 코드를 추가하여 **검색** 단추와 다양한 크롬을 만듭니다.
+*Pages/Students/Index.cshtml*에서 다음 강조 표시된 코드를 추가하여 **검색** 단추와 다양한 크롬을 만듭니다.
 
 [!code-html[](intro/samples/cu/Pages/Students/Index3.cshtml?highlight=14-23&range=1-25)]
 
@@ -267,7 +267,7 @@ LINQ 문은 등록 날짜별로 학생 엔터티를 그룹화하고 각 그룹�
 
 ### <a name="modify-the-about-razor-page"></a>Razor 페이지 정보 수정
 
-*Views/Home/About.cshtml* 파일의 코드를 다음 코드로 바꿉니다.
+*Pages/About.cshtml* 파일의 코드를 다음 코드로 바꿉니다.
 
 [!code-html[](intro/samples/cu/Pages/About.cshtml)]
 

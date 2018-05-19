@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-iis-errors-reference
-ms.openlocfilehash: 1500f026c245f80de4120d6db4901cb117552966
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: 995890a5e6b0cc1d9cebc21486917a7a39587076
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="common-errors-reference-for-azure-app-service-and-iis-with-aspnet-core"></a>Azure 앱 서비스 및 ASP.NET 코어는 IIS에 대 한 일반적인 오류 참조
 
@@ -198,7 +198,7 @@ ms.lasthandoff: 04/18/2018
   * IIS 통합 미들웨어가 referencedby 호출는 `UseIISIntegration` 메서드를 응용 프로그램의 `WebHostBuilder` (ASP.NET Core 1.x)
   * 앱 사용 하 여는 `CreateDefaultBuilder` 메서드 (ASP.NET Core 2.x).
   
-  [ASP.NET Core에서의 호스팅](xref:fundamentals/hosting)에서 자세한 내용을 참조하세요.
+  참조 [호스트에서 ASP.NET Core](xref:fundamentals/host/index) 대 한 자세한 내용은 합니다.
 
 ## <a name="sub-application-includes-a-handlers-section"></a>하위 응용 프로그램에 \<handlers\> 섹션이 포함되어 있음
 

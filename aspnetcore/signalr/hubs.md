@@ -11,11 +11,11 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: signalr/hubs
-ms.openlocfilehash: cfe9f7a7321094b8f901687d91745df2247e1da6
-ms.sourcegitcommit: 3d071fabaf90e32906df97b08a8d00e602db25c0
+ms.openlocfilehash: 5c477dd64c4cf8b7d6da1f121a290b00f3864f45
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="use-hubs-in-signalr-for-aspnet-core"></a>ASP.NET Core에서 SignalR 허브를 사용 하 여
 
@@ -55,7 +55,8 @@ SignalR 기능에는 ASP.NET Core 응용 프로그램을 추가할 때 호출 �
 | `Caller` | 클라이언트 허브 메서드를 호출한 메서드를 호출 합니다. |
 | `Others` | 메서드를 호출한 클라이언트를 제외한 모든 연결 된 클라이언트에서 메서드를 호출 합니다. |
 
-또한는 `Hub` 클래스에는 다음과 같은 메서드가 들어 있습니다.
+
+또한 `Hub.Clients` 는 다음과 같은 메서드가 들어 있습니다.
 
 | 메서드 | 설명 |
 | ------ | ----------- |

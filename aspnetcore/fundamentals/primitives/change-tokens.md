@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/primitives/change-tokens
-ms.openlocfilehash: 3055eec91adc412b596d4cc73e8523e18ff63331
-ms.sourcegitcommit: 7c8fd9b7445cd77eb7f7d774bfd120c26f3b5d84
+ms.openlocfilehash: 06751e713fbd579a944333cc3c3b2c0c0ad51eba
+ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/19/2018
+ms.lasthandoff: 05/12/2018
 ---
 # <a name="detect-changes-with-change-tokens-in-aspnet-core"></a>ASP.NET Core에서 변경 토큰을 사용하여 변경 내용 검색
 
@@ -108,7 +108,7 @@ config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
 
 [!code-csharp[](change-tokens/sample/Extensions/ConfigurationMonitor.cs?name=snippet2)]
 
-`config.GetReloadToken()`은 토큰을 제공합니다. `InvokeChanged`는 콜백 메서드입니다. 이 인스턴스에서 `state`는 모니터링 상태를 설명하는 문자열입니다. 두 개의 속성이 사용됩니다.
+`config.GetReloadToken()`은 토큰을 제공합니다. `InvokeChanged`는 콜백 메서드입니다. 이 인스턴스의 `state`는 모니터링 상태에 액세스하는 데 사용되는 `IConfigurationMonitor` 인스턴스에 대한 참조입니다. 두 개의 속성이 사용됩니다.
 
 * `MonitoringEnabled`는 콜백이 사용자 지정 코드를 실행해야 하는지를 나타냅니다.
 * `CurrentState`는 UI에서 사용하기 위해 현재 모니터링 상태를 설명합니다.
@@ -116,7 +116,6 @@ config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
 `InvokeChanged` 메서드는 다음을 제외하고 이전 방법과 유사합니다.
 
 * `MonitoringEnabled`가 `true`가 아닌 경우 해당 코드를 실행하지 않습니다.
-* `CurrentState` 속성 문자열을 코드가 실행된 시간을 기록하는 설명 메시지로 설정합니다.
 * `WriteConsole` 출력의 현재 `state`를 기록합니다.
 
 [!code-csharp[](change-tokens/sample/Extensions/ConfigurationMonitor.cs?name=snippet3)]
@@ -201,7 +200,6 @@ var compositeChangeToken =
 
 * [메모리 내 캐시](xref:performance/caching/memory)
 * [분산 캐시 사용](xref:performance/caching/distributed)
-* [변경 토큰을 사용하여 변경 내용 검색](xref:fundamentals/primitives/change-tokens)
 * [응답 캐싱](xref:performance/caching/response)
 * [응답 캐싱 미들웨어](xref:performance/caching/middleware)
 * [캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)

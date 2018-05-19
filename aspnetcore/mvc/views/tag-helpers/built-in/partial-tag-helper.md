@@ -11,17 +11,15 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/tag-helpers/builtin-th/partial-tag-helper
-ms.openlocfilehash: 670663b963f4207da793afff44d55b85ba58b7f8
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: 786c333980db89a9a5a60dc70c0bd1998ca159cd
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="partial-tag-helper-in-aspnet-core"></a>ASP.NET Core의 부분 태그 도우미
 
 작성자: [Scott Addie](https://github.com/scottaddie)
-
-[!INCLUDE [2.1 preview notice](~/includes/2.1.md)]
 
 [예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/built-in/samples)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
@@ -89,4 +87,4 @@ ms.lasthandoff: 04/18/2018
 ## <a name="additional-resources"></a>추가 자료
 
 * [부분 뷰](xref:mvc/views/partial)
-* [약한 형식의 데이터(ViewData 및 ViewBag)](xref:mvc/views/overview#weakly-typed-data-viewdata-and-viewbag)
+* [약한 형식의 데이터(ViewData, ViewData 특성 및 ViewBag)](xref:mvc/views/overview#weakly-typed-data-viewdata-viewdata-attribute-and-viewbag)

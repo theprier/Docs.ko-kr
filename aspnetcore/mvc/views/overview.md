@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/overview
-ms.openlocfilehash: 9af08d8fcbd91a9189fe1f4c6cedd644361773f7
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: b9947de03942bd71616e4bf12263befd9f784915
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="views-in-aspnet-core-mvc"></a>ASP.NET Core MVC에서 뷰
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 05/03/2018
 
 이 문서에서는 ASP.NET Core MVC 응용 프로그램에서 사용된 뷰에 대해 설명합니다. Razor 페이지에 대한 자세한 내용은 [Razor 페이지 소개](xref:mvc/razor-pages/index)를 참조하세요.
 
-MVC(**M**odel-**V**iew-**C**ontroller) 패턴에서는 *뷰*에서 앱의 데이터 프레젠테이션과 사용자 상호 작용을 처리합니다. 뷰는 [Razor 태그](xref:mvc/views/razor)가 포함된 HTML 템플릿입니다. Razor 태그는 클라이언트에 전송된 웹 페이지를 생성하기 위해 HTML과 상호 작용하는 코드입니다.
+MVC(Model-View-Controller) 패턴에서 *보기*는 앱의 데이터 프레젠테이션과 사용자 상호 작용을 처리합니다. 뷰는 [Razor 태그](xref:mvc/views/razor)가 포함된 HTML 템플릿입니다. Razor 태그는 클라이언트에 전송된 웹 페이지를 생성하기 위해 HTML과 상호 작용하는 코드입니다.
 
 ASP.NET Core MVC에서 뷰는 Razor 태그에서 [C# 프로그래밍 언어](/dotnet/csharp/)를 사용하는 *.cshtml* 파일입니다. 일반적으로 뷰 파일은 앱의 [컨트롤러](xref:mvc/controllers/actions) 각각에 대해 명명된 폴더로 그룹화됩니다. 이 폴더는 앱의 루트에서 *Views* 폴더에 저장됩니다.
 
@@ -37,7 +37,7 @@ ASP.NET Core MVC에서 뷰는 Razor 태그에서 [C# 프로그래밍 언어](/do
 
 ## <a name="benefits-of-using-views"></a>뷰 사용 시 이점
 
-뷰를 통해 사용자 인터페이스 태그를 앱의 다른 부분과 구분하여 MVC 앱 내에서 SoC([**S**eparation **o**f **C**oncerns) 디자인](http://deviq.com/separation-of-concerns/)을 설정할 수 있습니다. SoC 디자인을 따르면 앱을 모듈화할 수 있으며 다음과 같은 여러 이점이 제공됩니다.
+보기를 통해 사용자 인터페이스 태그를 앱의 다른 부분과 구분하여 MVC 앱 내에서 SoC([Separation of Concerns) 디자인](http://deviq.com/separation-of-concerns/)을 설정할 수 있습니다. SoC 디자인을 따르면 앱을 모듈화할 수 있으며 다음과 같은 여러 이점이 제공됩니다.
 
 * 앱이 더 잘 구성되어 있기 때문에 유지 관리가 더 쉽습니다. 뷰는 일반적으로 앱 기능별로 그룹화됩니다. 이렇게 하면 기능을 사용할 때 관련 뷰를 보다 쉽게 찾을 수 있습니다.
 * 앱의 일부는 느슨하게 결합되어 있습니다. 비즈니스 논리 및 데이터 액세스 구성 요소와 별도로 앱의 뷰를 작성하고 업데이트할 수 있습니다. 앱의 다른 부분을 업데이트하지 않고도 앱의 뷰를 수정할 수 있습니다.
@@ -123,7 +123,16 @@ return View("./About");
 
 ## <a name="passing-data-to-views"></a>뷰에 데이터 전달
 
-여러 가지 방법으로 뷰에 데이터를 전달할 수 있습니다. 가장 강력한 방법은 뷰에서 [모델](xref:mvc/models/model-binding) 형식을 지정하는 것입니다. 이 모델은 일반적으로 *viewmodel*이라고 합니다. viewmodel 형식의 인스턴스를 작업의 뷰에 전달합니다.
+여러 가지 방법으로 뷰에 데이터를 전달합니다.
+
+* 강력한 형식의 데이터: viewmodel
+* 약한 형식의 데이터
+  - `ViewData` (`ViewDataAttribute`)
+  - `ViewBag`
+
+### <a name="strongly-typed-data-viewmodel"></a>강력한 형식의 데이터(viewmodel)
+
+가장 강력한 방법은 뷰에서 [모델](xref:mvc/models/model-binding) 형식을 지정하는 것입니다. 이 모델은 일반적으로 *viewmodel*이라고 합니다. viewmodel 형식의 인스턴스를 작업의 뷰에 전달합니다.
 
 viewmodel을 사용하여 뷰에 데이터를 전달하면 뷰에서 *강력한* 형식 검사를 활용할 수 있습니다. *강력한 형식화*(또는 *강력한 형식의*)는 모든 변수 및 상수가 명시적으로 정의된 형식(예: `string`, `int` 또는 `DateTime`)을 포함함을 의미합니다. 뷰에 사용된 형식의 유효성 검사는 컴파일 시간에 검사됩니다.
 
@@ -162,7 +171,7 @@ public IActionResult Contact()
 }
 ```
 
-뷰에 제공할 수 있는 모델 유형에 대한 제한은 없습니다. 동작(메서드)가 거의 또는 전혀 정의되지 않은 POCO(**P**lain **O**ld **C**LR **O**bject) viewmodel을 사용하는 것이 좋습니다. 일반적으로 viewmodel 클래스는 앱의 루트에서 *Models* 폴더 또는 별도의 *ViewModels* 폴더에 저장됩니다. 위의 예제에 사용된 *Address* viewmodel은 *Address.cs*라는 파일에 저장된 POCO viewmodel입니다.
+뷰에 제공할 수 있는 모델 유형에 대한 제한은 없습니다. 동작(메서드)가 거의 또는 전혀 정의되지 않은 POCO(Plain Old CLR Object) viewmodel을 사용하는 것이 좋습니다. 일반적으로 viewmodel 클래스는 앱의 루트에서 *Models* 폴더 또는 별도의 *ViewModels* 폴더에 저장됩니다. 위의 예제에 사용된 *Address* viewmodel은 *Address.cs*라는 파일에 저장된 POCO viewmodel입니다.
 
 ```csharp
 namespace WebApplication1.ViewModels
@@ -178,15 +187,13 @@ namespace WebApplication1.ViewModels
 }
 ```
 
-> [!NOTE]
-> viewmodel 형식 및 비즈니스 모델 형식 모두에 같은 클래스를 사용할 수 있습니다. 그러나 별도의 모델을 사용하면 뷰를 통해 앱의 비즈니스 논리 및 데이터 액세스 부분을 독립적으로 구분하도록 할 수 있습니다. 모델과 viewmodel을 분리하면 모델에서 사용자에 의해 앱에 전송된 데이터에 대해 [모델 바인딩](xref:mvc/models/model-binding) 및 [유효성 검사](xref:mvc/models/validation)를 사용할 때 보안상 이점도 제공합니다.
-
+viewmodel 형식 및 비즈니스 모델 형식 모두에 같은 클래스를 사용할 수 있습니다. 그러나 별도의 모델을 사용하면 뷰를 통해 앱의 비즈니스 논리 및 데이터 액세스 부분을 독립적으로 구분하도록 할 수 있습니다. 모델과 viewmodel을 분리하면 모델에서 사용자에 의해 앱에 전송된 데이터에 대해 [모델 바인딩](xref:mvc/models/model-binding) 및 [유효성 검사](xref:mvc/models/validation)를 사용할 때 보안상 이점도 제공합니다.
 
 <a name="VD_VB"></a>
 
-### <a name="weakly-typed-data-viewdata-and-viewbag"></a>약한형 데이터(ViewData 및 ViewBag)
+### <a name="weakly-typed-data-viewdata-viewdata-attribute-and-viewbag"></a>약한 형식의 데이터(ViewData, ViewData 특성 및 ViewBag)
 
-참고: `ViewBag`은 Razor 페이지에서 사용할 수 없습니다.
+`ViewBag` *은 Razor 페이지에서 사용할 수 없습니다.*
 
 강력한 형식의 뷰 외에도, 뷰는 *약한형*(*느슨한 형*이라고도 함) 데이터 컬렉션에 액세스할 수 있습니다. 강력한 형식과 달리, *약한 형식*(또는 *느슨한 형식*)은 사용 중인 데이터 형식을 명시적으로 선언하지 않는 것을 의미합니다. 컨트롤러 및 뷰 간에 적은 양의 데이터를 전달하기 위해 약한형 데이터 컬렉션을 사용할 수 있습니다.
 
@@ -199,7 +206,6 @@ namespace WebApplication1.ViewModels
 이 컬렉션은 컨트롤러 및 뷰의 `ViewData` 또는 `ViewBag` 속성을 통해 참조할 수 있습니다. `ViewData` 속성은 약한형 개체의 사전입니다. `ViewBag` 속성은 기본 `ViewData` 컬렉션에 대해 동적 속성을 제공하는 `ViewData` 주변의 래퍼입니다.
 
 `ViewData` 및 `ViewBag`은 런타임에 동적으로 확인됩니다. 컴파일 시간 형식 검사를 제공하지 않으므로 일반적으로 둘 다 viewmodel을 사용하는 것보다 오류가 발생하기 더 쉽습니다. 이러한 이유로, 일부 개발자는 `ViewData` 및 `ViewBag`을 최소한으로 사용하거나 아예 사용하지 않습니다.
-
 
 <a name="VD"></a>
 
@@ -243,9 +249,49 @@ public IActionResult SomeAction()
 </address>
 ```
 
+::: moniker range=">= aspnetcore-2.1"
+**ViewData 특성**
+
+[ViewDataDictionary](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary)를 사용하는 또 다른 방법은 [ViewDataAttribute](/dotnet/api/microsoft.aspnetcore.mvc.viewdataattribute)입니다. `[ViewData]`로 데코레이팅된 컨트롤러 또는 Razor 페이지 모델의 속성은 값을 사전에서 저장하고 로드됩니다.
+
+다음 예제에서 홈 컨트롤러에는 `[ViewData]`로 데코레이팅된 `Title` 속성이 있습니다. `About` 메서드는 정보 보기에 대한 제목을 설정합니다.
+
+```csharp
+public class HomeController : Controller
+{
+    [ViewData]
+    public string Title { get; set; }
+
+    public IActionResult About()
+    {
+        Title = "About Us";
+        ViewData["Message"] = "Your application description page.";
+
+        return View();
+    }
+}
+```
+
+정보 보기에서 모델 속성인 `Title` 속성에 액세스합니다.
+
+```cshtml
+<h1>@Model.Title</h1>
+```
+
+레이아웃에서 제목은 ViewData 사전에서 읽습니다.
+
+```cshtml
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewData["Title"] - WebApplication</title>
+    ...
+```
+::: moniker-end
+
 **ViewBag**
 
-참고: `ViewBag`은 Razor 페이지에서 사용할 수 없습니다.
+`ViewBag` *은 Razor 페이지에서 사용할 수 없습니다.*
 
 `ViewBag`은 `ViewData`에 저장된 개체에 대한 동적 액세스를 제공하는 [DynamicViewData](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.internal.dynamicviewdata) 개체입니다. 캐스팅이 필요하지 않으므로 `ViewBag`이 작업하기 더 편리할 수 있습니다. 다음 예제에서는 `ViewData`를 사용할 때와 동일한 결과로 `ViewBag`을 사용하는 방법을 보여 줍니다.
 
@@ -278,7 +324,7 @@ public IActionResult SomeAction()
 
 **ViewData 및 ViewBag을 동시에 사용**
 
-참고: `ViewBag`은 Razor 페이지에서 사용할 수 없습니다.
+`ViewBag` *은 Razor 페이지에서 사용할 수 없습니다.*
 
 `ViewData` 및 `ViewBag`은 동일한 기본 `ViewData` 컬렉션을 사용하므로 `ViewData` 및 `ViewBag`을 모두 사용하고 값을 읽고 쓸 때 이들을 혼합 및 일치시킬 수 있습니다.
 

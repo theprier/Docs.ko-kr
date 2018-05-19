@@ -9,23 +9,21 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper
-ms.openlocfilehash: 929156633048b8ee68a66290f44b12026a08c8c9
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 9c1d91fc185a0afecf59af8927ddf6f25eff29ab
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="distributed-cache-tag-helper-in-aspnet-core"></a>ASP.NET Core의 분산 캐시 태그 도우미
 
 작성자: [Peter Kellner](http://peterkellner.net) 
 
-
 분산 캐시 태그 도우미는 콘텐츠를 분산 캐시 원본에 캐싱하여 ASP.NET Core 앱 성능을 획기적으로 개선하는 기능을 제공합니다.
 
-분산 캐시 태그 도우미는 캐시 태그 도우미와 동일한 기본 클래스에서 상속합니다.  캐시 태그 도우미와 연결된 모든 특성은 분산 태그 도우미에서도 작동합니다.
+분산 캐시 태그 도우미는 캐시 태그 도우미와 동일한 기본 클래스에서 상속합니다. 캐시 태그 도우미와 연결된 모든 특성은 분산 태그 도우미에서도 작동합니다.
 
-
-분산 캐시 태그 도우미는 **생성자 주입**이라고도 하는 **명시적 종속성 원칙**을 따릅니다.  특히 `IDistributedCache` 인터페이스 컨테이너는 분산 캐시 태그 도우미의 생성자에 전달됩니다.  `IDistributedCache`의 구체적인 구현이 `ConfigureServices`에 생성되지 않은 경우(주로 startup.cs에서 발견됨) 분산 캐시 태그 도우미는 동일한 메모리 내 공급자를 사용하여 캐시된 데이터를 기본 캐시 태그 도우미로 저장합니다.
+분산 캐시 태그 도우미는 **생성자 주입**이라고도 하는 **명시적 종속성 원칙**을 따릅니다. 특히 `IDistributedCache` 인터페이스 컨테이너는 분산 캐시 태그 도우미의 생성자에 전달됩니다. `IDistributedCache`의 구체적인 구현이 `ConfigureServices`에 생성되지 않은 경우(주로 startup.cs에서 발견됨) 분산 캐시 태그 도우미는 동일한 메모리 내 공급자를 사용하여 캐시된 데이터를 기본 캐시 태그 도우미로 저장합니다.
 
 ## <a name="distributed-cache-tag-helper-attributes"></a>분산 캐시 태그 도우미 특성
 
@@ -43,7 +41,7 @@ ms.lasthandoff: 03/22/2018
 |----------------   |----------------   |
 | string    | "my-distributed-cache-unique-key-101"     |
 
-필수 `name` 특성은 분산 캐시 태그 도우미의 각 인스턴스에 대해 저장된 캐시의 키로 사용됩니다.  razor 페이지의 Razor 페이지 이름 및 태그 도우미 위치를 기준으로 각 캐시 태그 도우미 인스턴스에 키를 할당하는 기본 캐시 태그 도우미와는 달리, 분산 캐시 태그 도우미는 `name` 특성의 키만을 기준으로 합니다.
+필수 `name` 특성은 분산 캐시 태그 도우미의 각 인스턴스에 대해 저장된 캐시의 키로 사용됩니다. razor 페이지의 Razor 페이지 이름 및 태그 도우미 위치를 기준으로 각 캐시 태그 도우미 인스턴스에 키를 할당하는 기본 캐시 태그 도우미와는 달리, 분산 캐시 태그 도우미는 `name` 특성의 키만을 기준으로 합니다.
 
 사용 예제:
 
@@ -55,15 +53,9 @@ ms.lasthandoff: 03/22/2018
 
 ## <a name="distributed-cache-tag-helper-idistributedcache-implementations"></a>분산 캐시 태그 도우미 IDistributedCache 구현
 
-ASP.NET Core에 두 가지 `IDistributedCache` 구현이 기본적으로 제공됩니다.  하나는 **Sql Server** 기반이고 다른 하나는 **Redis** 기반입니다. 이러한 구현의 세부 정보는 아래에서 참조하는 "분산 캐시 작업"이라는 리소스에서 찾을 수 있습니다. 두 구현 모두 ASP.NET Core의 **startup.cs**에서 `IDistributedCache` 인스턴스를 설정해야 합니다.
+ASP.NET Core에 두 가지 `IDistributedCache` 구현이 기본적으로 제공됩니다. 하나는 SQL Server 기반이고 다른 하나는 Redis 기반입니다. 이러한 구현의 세부 정보는 <xref:performance/caching/distributed>에서 찾을 수 있습니다. 두 구현 모두 ASP.NET Core의 *Startup.cs*에서 `IDistributedCache` 인스턴스를 설정해야 합니다.
 
 특정 `IDistributedCache` 구현 사용과 특별히 관련된 태그 특성은 없습니다.
-
-
-
-- - -
-
-
 
 ## <a name="additional-resources"></a>추가 자료
 

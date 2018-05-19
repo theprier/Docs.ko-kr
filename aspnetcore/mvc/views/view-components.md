@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/view-components
-ms.openlocfilehash: a3614024c7f776e4502bc049180ae1c965e31db4
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: cdf44fc15ac64497b2589e8b7b289beb94c5b2c4
+ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="view-components-in-aspnet-core"></a>ASP.NET Core의 보기 구성 요소
 
@@ -21,9 +21,11 @@ ms.lasthandoff: 05/03/2018
 
 [예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/view-components/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
-## <a name="introducing-view-components"></a>뷰 구성 요소 소개
+## <a name="view-components"></a>뷰 구성 요소
 
-ASP.NET Core MVC에 새로 도입된 뷰 구성 요소는 부분 뷰와 유사하지만 훨씬 강력합니다. 뷰 구성 요소는 모델 바인딩을 사용하지 않으며 호출할 때 제공되는 데이터에만 의존합니다. 뷰 구성 요소:
+뷰 구성 요소는 부분 보기와 유사하지만 훨씬 강력합니다. 뷰 구성 요소는 모델 바인딩을 사용하지 않으며 호출할 때 제공되는 데이터에만 의존합니다. 이 아티클은 ASP.NET Core MVC를 사용하여 작성되었지만 뷰 구성 요소는 Razor 페이지로 작업합니다.
+
+뷰 구성 요소:
 
 * 전체 응답보다는 청크를 렌더링합니다.
 * 컨트롤러 및 뷰 간에 확인할 수 있는 동일한 개념 분리 및 테스트 가능성 이점을 포함합니다.

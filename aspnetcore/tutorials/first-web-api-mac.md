@@ -6,24 +6,20 @@ helpviewer_heywords: ASP.NET Core, WebAPI, Web API, REST, mac, macOS, HTTP, Serv
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 04/27/2018
+ms.date: 05/08/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-web-api-mac
-ms.openlocfilehash: 46050f4bbd6ae821c03d92c8750e839d491328cd
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 699fbbf54abf1dc5c4156c559761110cdb375558
+ms.sourcegitcommit: c867d7427bd4a88a78b2322e156367733b532730
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/09/2018
 ---
 # <a name="create-a-web-api-with-aspnet-core-and-visual-studio-for-mac"></a>ASP.NET Core 및 Mac용 Visual Studio를 사용하여 Web API 만들기
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT) 및 [Mike Wasson](https://github.com/mikewasson)
-
-::: moniker range="= aspnetcore-2.1"
-[!INCLUDE[](~/includes/2.1.md)]
-::: moniker-end
 
 이 자습서에서는 “할 일” 항목 목록을 관리하기 위한 웹 API를 빌드합니다. UI는 생성되지 않습니다.
 
@@ -121,7 +117,7 @@ Visual Studio에서 **실행** > **디버깅 시작**을 선택하여 앱을 시
 ["value1","value2"]
 ```
 
-`http://localhost:<port>/api/todo`의 `Todo` 컨트롤러로 이동합니다.
+`http://localhost:<port>/api/todo`의 `Todo` 컨트롤러로 이동합니다. 다음 JSON이 반환됩니다.
 
 ```json
 [{"key":1,"name":"Item1","isComplete":false}]

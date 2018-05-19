@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: advanced
 uid: mvc/razor-pages/ui-class
-ms.openlocfilehash: 731d37a8f4983b18ded114f05470f8a408deb7cd
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 44091ab8ab5d69a5975e191fd00fca1d1d957238
+ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="create-reusable-ui-using-the-razor-class-library-project-in-aspnet-core"></a>ASP.NET Core에서 Razor 클래스 라이브러리 프로젝트를 사용하여 재사용 가능한 UI를 만듭니다.
 
@@ -23,8 +23,6 @@ ms.lasthandoff: 05/03/2018
 Razor 클래스 Library(RCL)에 Razor 보기, 페이지, 컨트롤러, 페이지 모델 및 데이터 모델을 빌드할 수 있습니다. RCL은 패키지되고 재사용될 수 있습니다. 응용 프로그램은 RCL 포함할 수 있고 RCL이 포함하는 보기 및 페이지를 재정의할 수 있습니다. 보기, 부분 보기 또는 Razor 페이지가 웹앱 및 RCL 모두에 있는 경우 웹앱에서 Razor 태그(*.cshtml* 파일)가 우선적으로 적용됩니다.
 
 이 기능을 사용하려면 [!INCLUDE[](~/includes/2.1-SDK.md)]가 필요합니다.
-
-[!INCLUDE[](~/includes/2.1.md)]
 
 [예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/razor-pages/ui-class/samples)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 

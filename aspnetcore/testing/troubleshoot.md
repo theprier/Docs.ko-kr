@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: content
 uid: testing/troubleshoot
-ms.openlocfilehash: f2c785bfe27ddd67db0313b8ee1c077a8cc06e05
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 3bba085c69ee96b5725331b14dcf15350d66e4a4
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="troubleshoot-aspnet-core-projects"></a>ASP.NET Core 프로젝트 문제 해결
 
@@ -66,3 +66,15 @@ ms.lasthandoff: 05/08/2018
 
 * 설치 또는.NET Core SDK 설치 되었는지 확인 합니다.
 * 확인 된 `PATH` 환경 변수는 SDK가 설치 하는 위치를 가리킵니다. 설치 관리자는 일반적으로 설정 된 `PATH`합니다.
+
+::: moniker range=">= aspnetcore-2.1"
+
+### <a name="use-of-ihtmlhelperpartial-may-result-in-application-deadlocks"></a>응용 프로그램 교착 상태에서 IHtmlHelper.Partial 사용 될 수 있습니다.
+
+ASP.NET Core 2.1 이상 버전에서는 호출 `Html.Partial` 교착 상태가 발생할 수 있으므로 분석기 경고를 발생 합니다. 가 경고 메시지:
+
+*응용 프로그램 교착 상태에서 IHtmlHelper.Partial 사용 될 수 있습니다. 사용 하는 것이 좋습니다 `<partial>` 태그 도우미 또는 `IHtmlHelper.PartialAsync`합니다.*
+
+에 대 한 호출이 `@Html.Partial` 으로 대체 해야 `@await Html.PartialAsync` 또는 부분 태그 도우미 `<partial name="_Partial" />`합니다.
+
+::: moniker-end
