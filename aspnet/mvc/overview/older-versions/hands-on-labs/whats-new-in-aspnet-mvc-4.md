@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/whats-new-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 977a6b5a84825ebd087752dcc2ebc0c5410e1657
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 485d2ba7a1274bbb36cfbcbca9322cecc8c8d77c
+ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/10/2018
+ms.lasthandoff: 05/18/2018
 ---
 # <a name="whats-new-in-aspnet-mvc-4"></a>ASP.NET MVC 4의에서 새로운 기능
 
@@ -152,13 +152,10 @@ ASP.NET MVC 4로 시작 됩니다이 실습 랩에서 &quot;인터넷 응용 프
 6. 파일을 열고 **AuthConfig.cs** 아래에 **앱\_시작** 폴더입니다.
 7. 에 대 한 Google 클라이언트를 등록 하 고 마지막 줄에서 주석 제거 *OAuth* 인증 합니다.
 
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample1.cs)]
 
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample1.cs)]
-
-> [!NOTE]
-> Notice you can easily enable authentication using any OpenID or OAuth service like Facebook, Twitter, Microsoft, etc.
-~~~
+    > [!NOTE]
+    > Facebook, Twitter, Microsoft 등과 같은 모든 OAuth 또는 OpenID 서비스를 사용 하 여 인증을 쉽게 사용할 수 있습니다를 확인 합니다.
 8. 키를 눌러 **F5** 하는 솔루션을 실행 하 고 로그인 페이지로 이동 합니다.
 9. 선택 **Google** 서비스에 로그인 합니다.
 
@@ -230,20 +227,16 @@ ASP.NET MVC 4 모바일 앱을 위해 웹 사이트 및 태블릿 브라우저�
 9. 열기  **\_Layout.cshtml**에 있는 **보기 | 공유** 폴더 및 주석 뷰포트 메타 태그입니다. 응용 프로그램을 실행 하지 않은 경우 이미 열리고 차이 확인해 보세요.
 
 
-~~~
 [!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample2.cshtml)]
 
-![The site after commenting the viewport meta tag](whats-new-in-aspnet-mvc-4/_static/image15.png "The site after commenting the viewport meta tag")
+![뷰포트 메타 태그를 주석 처리 한 후 사이트](whats-new-in-aspnet-mvc-4/_static/image15.png "뷰포트 메타 태그를 주석 처리 한 후 사이트")
 
-*The site after commenting the viewport meta tag*
-~~~
+*뷰포트 메타 태그를 주석 처리 한 후 사이트*
 10. 키를 눌러 Visual Studio에서 **SHIFT** + **F5** 응용 프로그램 디버깅을 중지 합니다.
 11. 뷰포트 메타 태그 주석 처리를 제거 합니다.
 
 
-~~~
 [!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample3.cshtml)]
-~~~
 
 <a id="Task_3_-_Using_Adaptive_Rendering"></a>
 #### <a name="task-3---using-adaptive-rendering"></a>작업 3-자동 선택 렌더링을 사용 하 여
@@ -326,17 +319,14 @@ ASP.NET MVC 4 모바일 앱을 위해 웹 사이트 및 태블릿 브라우저�
 
     (코드 조각- *ASP.NET MVC 4-Ex02-랩 갤러리 실행*)
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample4.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample4.cs)]
 7. 키를 눌러 **F5** 솔루션을 실행 하 여 다음 모의 사진 서비스를 테스트 하려면 다음 URL로 이동: `http://localhost:[port]/photo/gallery` ([port] 값 응용 프로그램이 시작 된 현재 포트에 따라 다름). 이 URL로 요청 콘텐츠를 검색 해야는 **Photos.json** 파일입니다.
 
     ![모의 사진 서비스 테스트](whats-new-in-aspnet-mvc-4/_static/image20.png "모의 사진 서비스 테스트")
 
     *모의 사진 서비스 테스트*
 
-실제 구현에서 사용할 수 있습니다 [ASP.NET Web API](../../../../web-api/index.md) 사진 갤러리 서비스를 구현 하 합니다. ASP.NET Web API는 다양 한 브라우저 및 모바일 장치를 포함 한 클라이언트를 연결할 HTTP 서비스를 작성을 용이 하 게 하는 프레임 워크입니다. ASP.NET Web API는 .NET Framework에서 RESTful 응용 프로그램을 빌드하는 데 이상적인 플랫폼입니다.
+실제 구현에서 사용할 수 있습니다 [ASP.NET Web API](../../../../web-api/index.md) 사진 갤러리 서비스를 구현 하 합니다. ASP.NET Web API는 브라우저 및 모바일 장치를 비롯한 광범위한 클라이언트에 연결하는 HTTP 서비스를 쉽게 빌드할 수 있게 해 주는 프레임워크입니다. ASP.NET Web API는 .NET Framework에서 RESTful 응용 프로그램을 빌드하는 데 이상적인 플랫폼입니다.
 
 <a id="Task_2_-_Displaying_the_Photo_Gallery"></a>
 #### <a name="task-2---displaying-the-photo-gallery"></a>작업 2-사진 갤러리를 표시 합니다.
@@ -349,37 +339,25 @@ ASP.NET MVC 4 모바일 앱을 위해 웹 사이트 및 태블릿 브라우저�
 
     (코드 조각- *ASP.NET MVC 4 랩-Ex02-사진 모델*)
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample5.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample5.cs)]
 4. **컨트롤러** 폴더에서 **HomeController.cs** 파일을 엽니다.
 5. 다음 using 문을 추가합니다.
 
     (코드 조각- *ASP.NET MVC 4-Ex02-랩 HomeController Using*)
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample6.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample6.cs)]
 6. 업데이트는 **인덱스** 동작을 사용 하 여 **HttpClient** 갤러리 데이터 검색을 사용 하 여는 **JavaScriptSerializer** 뷰 모델을 deserialize 하는 데 있습니다.
 
     (코드 조각- *ASP.NET MVC 4-Ex02-랩 인덱스 동작*)
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample7.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample7.cs)]
 7. 열기는 **Index.cshtml** 아래에 있는 파일의 **Views\Home** 폴더 및 모든 콘텐츠를 다음 코드로 바꿉니다.
 
     이 코드는 서비스에서 검색 된 모든 사진 하는 순서가 지정 되지 않은 목록으로 표시입니다.
 
     (코드 조각- *ASP.NET MVC 4-Ex02-랩 사진 목록*)
 
-
-~~~
-[!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample8.cshtml)]
-~~~
+    [!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample8.cshtml)]
 8. 에 **솔루션 탐색기**를 마우스 오른쪽 단추로 클릭는 **콘텐츠** 프로젝트 및 선택의 폴더 **추가 | 기존 항목**합니다. 찾아는 **Source\Assets\Content** 이 랩의 폴더를 추가 하 고는 **Site.css** 파일입니다. 대체를 확인 해야 합니다. 있는 경우는 **Site.css** 파일을 열 수, 파일을 다시 로드할지도 확인 해야 합니다.
 9. 파일 탐색기를 열고 전체를 복사 **사진** 폴더 아래에 **Source\Assets** 솔루션 탐색기에서 프로젝트의 루트 폴더에이 랩의 폴더입니다.
 10. 응용 프로그램을 실행합니다. 이제 갤러리에는 사진 표시 홈 페이지가 나타납니다.
@@ -434,10 +412,7 @@ ASP.NET MVC 4에서 키 업데이트 중 하나에 모바일 개발에 대 한 �
 
     (코드 조각- *ASP.NET MVC 4-Ex03-랩 레지스터 모바일 번들*)
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample10.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample10.cs)]
 5. 데스크톱 웹 브라우저를 사용 하 여 응용 프로그램을 실행 합니다.
 6. 열기는 **Windows Phone 7 Emulator** 에 **시작 메뉴 | 모든 프로그램 | Windows Phone SDK 7.1 | Windows Phone 에뮬레이터입니다.**
 7. Phone 시작 화면에서 Internet Explorer를 엽니다. 응용 프로그램을 시작할 URL을 확인 하 고 전화 브라우저와 해당 URL로 이동 (예: `http://localhost:[PortNumber]/`).
@@ -462,22 +437,19 @@ ASP.NET MVC 4에서 키 업데이트 중 하나에 모바일 개발에 대 한 �
 1. 복사는 **Views\Home\Index.cshtml** 확인 하 고 붙여 넣어 복사본을 만들고, 새 파일을 이름를 **Index.Mobile.cshtml**합니다.
 2. 새 만든 열기 **Index.Mobile.cshtml** 보기 및 기존 바꾸기 &lt;ul&gt; 이 코드로 태그입니다. 이 통해 업데이트 됩니다.는 &lt;ul&gt; jQuery 모바일 데이터의 주석에서 jQuery 모바일 테마를 사용 하는 태그입니다.
 
+    [!code-html[Main](whats-new-in-aspnet-mvc-4/samples/sample11.html)]
 
-~~~
-[!code-html[Main](whats-new-in-aspnet-mvc-4/samples/sample11.html)]
-
-> [!NOTE] 
-> 
-> Notice that:
-> 
-> - The **data-role** attribute set to **listview** will render the list using the listview styles.
-> 
-> - The **data-inset** attribute set to true will show the list with rounded border and margin.
-> 
-> - The **data-filter** attribute set to **true** will generate a search box.
-> 
-> You can learn more about jQuery Mobile conventions in the project documentation: [[http://jquerymobile.com/demos/1.1.1/](http://jquerymobile.com/demos/1.1.1/)](http://jquerymobile.com/demos/1.1.1/)
-~~~
+    > [!NOTE] 
+    > 
+    > 다음 사항을 참고하세요.
+    > 
+    > - **데이터 역할** 특성이로 설정 **listview** listview 스타일을 사용 하 여 목록을 렌더링 합니다.
+    > 
+    > - **데이터 inset** 특성이 true로 설정 둥근된 테두리 및 여백을 사용 하 여 목록에 표시 됩니다.
+    > 
+    > - **데이터 필터** 특성이로 설정 **true** 검색 상자를 생성 합니다.
+    > 
+    > JQuery 모바일 규칙 프로젝트 문서에 대해 자세히 알아볼 수 있습니다. [[http://jquerymobile.com/demos/1.1.1/](http://jquerymobile.com/demos/1.1.1/)](http://jquerymobile.com/demos/1.1.1/)
 3. 키를 눌러 **CTRL + S** 여 변경 내용을 저장 합니다.
 4. 전환 하는 **Windows Phone 에뮬레이터** 사이트를 새로 고칩니다. 갤러리 목록 뿐만 아니라 새로운 검색 상자 위쪽에 있는의 새로운 디자인을 확인 합니다. 그런 다음 검색 상자에 단어를 입력 (예를 들어, **Tulips**) 사진 갤러리에서 검색을 시작 하려면.
 
@@ -512,10 +484,7 @@ jQuery Mobile 기본 테마 문자 권한이 부여 된 5 견본 포함 (a, b, c
 2. 열기는  **\_Layout.Mobile.cshtml** 에 있는 파일 **Views\Shared**합니다.
 3. 로 설정 하는 데이터-역할 div 요소를 찾은 &quot;페이지&quot; 하 고 업데이트는 **데이터 테마** 를 &quot; **e**&quot;합니다.
 
-
-~~~
-[!code-html[Main](whats-new-in-aspnet-mvc-4/samples/sample13.html)]
-~~~
+    [!code-html[Main](whats-new-in-aspnet-mvc-4/samples/sample13.html)]
 4. 키를 눌러 **CTRL + S** 여 변경 내용을 저장 합니다.
 5. 사이트 새로 고침의 **Windows Phone 에뮬레이터** 새 색 구성표를 확인 합니다.
 
@@ -570,10 +539,7 @@ jQuery Mobile 기본 테마 문자 권한이 부여 된 5 견본 포함 (a, b, c
 3. Visual Studio로 다시 이동 및 열기는  **\_Layout.cshtml** 보기.
 4. 로그인 섹션을 찾아 렌더링에 대 한 호출을 삽입의  **\_ViewSwitcher** 아래 부분 뷰는  **\_LogOnPartial** 부분 뷰입니다. 그런 다음 눌러 **CTRL + S** 여 변경 내용을 저장 합니다.
 
-
-~~~
-[!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample14.cshtml)]
-~~~
+    [!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample14.cshtml)]
 5. 키를 눌러 **CTRL + S** 여 변경 내용을 저장 합니다.
 6. Windows Phone 에뮬레이터에서 페이지를 새로 고치고 확대 하려면 화면을 두 번 클릭 합니다. 홈 페이지에 이제 표시에 **모바일 보기** 모바일에서 데스크톱 보기로 전환 하는 링크입니다.
 
@@ -603,39 +569,32 @@ jQuery Mobile 기본 테마 문자 권한이 부여 된 5 견본 포함 (a, b, c
 1. 키를 눌러 Visual Studio에서 **SHIFT** + **F5** 응용 프로그램 디버깅을 중지 합니다.
 2. 열기 **Global.asax.cs** 다음 추가 문을 사용 하 여 합니다.
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample15.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample15.cs)]
 3. 응용 프로그램에 다음 강조 표시 된 코드를 추가\_메서드를 시작 합니다.
 
     (코드 조각- *ASP.NET MVC 4 랩-Ex03-iPhone DisplayMode*)
 
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample16.cs)]
 
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample16.cs)]
+새 등록 **라는 DefaultDisplayMode &quot;iPhone&quot;**, 정적 내 **DisplayModeProvider.Instance.Modes** 과 일치 하는 정적 목록 들어오는 각 요청 합니다. 들어오는 요청에는 문자열이 포함 되어 있으면 &quot;iPhone&quot;, ASP.NET MVC에서 이름이 포함 하는 뷰를 찾습니다는 &quot;iPhone&quot; 접미사입니다. 매개 변수 0 특정는 새 모드; 나타냅니다. 이 뷰는 일반적인 보다 구체적인 예를 들어, &quot;.mobile&quot; 모바일 장치의 요청을에서 일치 하는 규칙입니다.
 
-You have registered a new **DefaultDisplayMode named &quot;iPhone&quot;**, within the static **DisplayModeProvider.Instance.Modes** static list, that will be matched against each incoming request. If the incoming request contains the string &quot;iPhone&quot;, ASP.NET MVC will find the views whose name contain the &quot;iPhone&quot; suffix. The 0 parameter indicates how specific is the new mode; for instance, this view is more specific than the general &quot;.mobile&quot; rule that matches requests from mobile devices.
-
-After this code runs, when an iPhone browser generates a request, your application will use the **Views\Shared\\_Layout.iPhone.cshtml** layout you will create in the next steps.
+응용 프로그램을 사용 하는 iPhone 브라우저 요청을 생성 하는 경우이 코드가 실행 된 후 합니다는 **Views\Shared\\_Layout.iPhone.cshtml** 레이아웃에서 다음 단계를 만듭니다.
 
 > [!NOTE]
-> This way of testing the request for iPhone has been simplified for demo purposes and might not work as expected for every iPhone user agent string (for example test is case sensitive).
-~~~
+> 이러한 방식의 iPhone 데모 용도로 간소화 되었습니다 (예에서는 테스트는 대/소문자 구분) 예의 모든 iPhone 사용자 에이전트 문자열에 대해 예상 대로 작동 하지 않을 수에 대 한 요청을 테스트 합니다.
+
 4. 복사본을 만듭니다는  **\_Layout.Mobile.cshtml** 파일에 **Views\Shared** 폴더에 복사본의 이름을 바꾼 및 &quot; **\_Layout.iPhone.csthml**&quot;.
 5. 열기  **\_Layout.iPhone.csthml** 이전 단계에서 만든 합니다.
 6. 데이터 역할 특성 설정 하 여 div 요소를 찾아 **페이지** 변경 하 고는 **데이터 테마** 특성을 &quot; **는**&quot;합니다.
 
 
-~~~
 [!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample17.cshtml)]
 
-Now you have 3 layouts in your ASP.NET MVC 4 application:
+이제 ASP.NET MVC 4 응용 프로그램에서 3 레이아웃을 사용할 수 있습니다.
 
-1. **\_Layout.cshtml**: default layout used for desktop browsers.
-2. **\_Layout.mobile.cshtml**: default layout used for mobile devices.
-3. **\_Layout.iPhone.cshtml**: specific layout for iPhone devices, using a different color scheme to differentiate from \_Layout.mobile.cshtml.
-~~~
+1. **\_Layout.cshtml**: 데스크톱 브라우저의 경우에 사용 되는 기본 레이아웃 합니다.
+2. **\_Layout.mobile.cshtml**: 모바일 장치에 사용 되는 기본 레이아웃 합니다.
+3. **\_Layout.iPhone.cshtml**: 구별 하기 위해 다른 색 구성표를 사용 하는 iPhone 장치에 대 한 특정 레이아웃 \_Layout.mobile.cshtml 합니다.
 7. 키를 눌러 **F5** 응용 프로그램을 실행 하 고 사이트에서 탐색 하 고 **Windows Phone 에뮬레이터**합니다.
 8. 열기는 **iPhone 시뮬레이터** (참조 [부록 C](#AppendixC) 설치 하 고 iPhone 시뮬레이터가 구성 하는 방법에 대 한 지침은), 너무 사이트를 찾습니다. 각 전화는 특정 템플릿을 사용 하 고 있는지 확인 합니다.
 
@@ -666,46 +625,31 @@ Microsoft.NET Framework 4.5에서는 C# 및 Visual Basic로 비동기.NET 프로
 2. 열기는 **HomeController.cs** 에서 클래스는 **컨트롤러** 폴더입니다.
 3. 다음 추가 문을 사용 하 여 합니다.
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample18.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample18.cs)]
 4. 업데이트는 **HomeController** 클래스에서 상속 하도록 **AsyncController**합니다. 컨트롤러 AsyncController에서 파생 되는 비동기 요청을 처리 하는 ASP.NET을 사용 하 고 여전히 서비스 동기 작업 메서드 할 수 있습니다.
 
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample19.cs)]
+5. 추가 **비동기** 키워드를는 **인덱스** 메서드 형식을 반환 하 고 **작업&lt;ActionResult&gt;** 합니다.
 
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample19.cs)]
-~~~
-5. 추가 **비동기** 키워드를는 **인덱스** 메서드 형식을 반환 하 고 **작업&lt;ActionResult&gt;**합니다.
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample20.cs)]
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample20.cs)]
-
-> [!NOTE]
-> The **async** keyword is one of the new keywords the .NET Framework 4.5 provides; it tells the compiler that this method contains asynchronous code. A **Task** object represents an asynchronous operation that may complete at some point in the future.
-~~~
+    > [!NOTE]
+    > **비동기** 키워드를 사용 하면.NET Framework 4.5를 제공 하는 새 키워드 중 하나인;이 메서드에 비동기 코드를 포함 하는 컴파일러 표시 합니다. A **작업** 개체는 특정 시점에 나중에 완료할 수 있는 비동기 작업을 나타냅니다.
 6. 대체는 **클라이언트입니다. GetAsync()** 아래와 같이 await 키워드를 사용 하 여 전체 비동기 버전 사용 하 여 호출 합니다.
 
     (코드 조각- *ASP.NET MVC 4-Ex04-랩 GetAsync*)
 
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample21.cs)]
 
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample21.cs)]
-
-> [!NOTE]
-> In the previous version, you were using the **Result** property from the **Task** object to block the thread until the result is returned (sync version).
-> 
-> Adding the **await** keyword tells the compiler to asynchronously wait for the task returned from the method call. This means that the rest of the code will be executed as a callback only after the awaited method completes. Another thing to notice is that you do not need to change your try-catch block in order to make this work: the exceptions that happen in background or in foreground will still be caught without any extra work using a handler provided by the framework.
-~~~
+    > [!NOTE]
+    > 사용 하 던 이전 버전에서의 **결과** 속성은 **작업** 결과 (동기화 버전)를 반환 될 때까지 스레드를 차단 하는 개체입니다.
+    > 
+    > 추가 **await** 키워드를 메서드 호출에서 반환 된 작업을 비동기적으로 기다리는 컴파일러에 알립니다. 즉, 코드의 나머지 대기 중이 던된 메서드가 완료 된 후에 콜백으로 실행 됩니다. 다른 눈에 띄는 것은이 작동 될 수 있도록 하기 위해 try / catch 블록을 변경할 필요가 없습니다: 프레임 워크에서 제공 된 처리기를 사용 하는 추가 작업 없이 포그라운드 또는 백그라운드에서 발생 하는 예외를 발생 계속 됩니다.
 7. 아래와 같이 새 코드 줄을 대체 하 여 비동기 구현의을 계속 하는 코드 변경
 
     (코드 조각- *ASP.NET MVC 4-Ex04-랩 ReadAsStringAsync*)
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample22.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample22.cs)]
 8. 응용 프로그램을 실행합니다. 크게 변경 되지를 확인할 수 있지만 코드 스레드 풀은 서버 리소스의 더 나은 사용량 및 성능 향상에서 스레드를 차단 하지 않습니다.
 
     > [!NOTE]
@@ -719,44 +663,26 @@ Microsoft.NET Framework 4.5에서는 C# 및 Visual Basic로 비동기.NET 프로
 1. Visual Studio 및 키를 눌러로 돌아가서 **SHIFT + f 5를 눌러** 디버깅을 중지 합니다.
 2. 다음 코드를 추가 하는 문을 사용 하는 **HomeController.cs** 파일입니다.
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample23.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample23.cs)]
 3. 받을 인덱스 동작을 업데이트 한 **CancellationToken** 인수입니다.
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample24.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample24.cs)]
 4. 업데이트는 **GetAsync** 호출 취소 토큰을 전달 합니다.
 
     (코드 조각- *CancellationToken과 함께 ASP.NET MVC 4-Ex04-랩 SendAsync*)
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample25.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample25.cs)]
 5. 데코 레이트는 *인덱스* 메서드는 **AsyncTimeout** 특성이 500 밀리초로 설정 및 **HandleError** 처리 하도록 구성 하는 특성  **TaskCanceledException** 리디렉션하여는 **TimedOut** 보기.
 
     (코드 조각- *ASP.NET MVC 4-Ex04-랩 특성*)
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample26.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample26.cs)]
 6. 열기는 **PhotoController** 클래스 및 업데이트는 **갤러리** 메서드를 장기 실행 작업을 시뮬레이션 하는 실행 1000 밀리초 (1 초)을 지연 합니다.
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample27.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-mvc-4/samples/sample27.cs)]
 7. 열기는 **Web.config** 파일을 다음 요소를 추가 하 여 사용자 지정 오류를 사용 합니다.
 
-
-~~~
-[!code-xml[Main](whats-new-in-aspnet-mvc-4/samples/sample28.xml)]
-~~~
+    [!code-xml[Main](whats-new-in-aspnet-mvc-4/samples/sample28.xml)]
 8. 새 보기 만들기 **Views\Shared** 라는 **TimedOut** 및 기본 레이아웃을 사용 합니다. 솔루션 탐색기에서 마우스 오른쪽 단추로 클릭는 **Views\Shared** 폴더를 선택 **추가 | 보기**합니다.
 
     ![각 모바일 장치에 대 한 서로 다른 뷰를 사용 하 여](whats-new-in-aspnet-mvc-4/_static/image36.png "서로 다른 뷰를 사용 하 여 각 모바일 장치에 대 한")
@@ -764,10 +690,7 @@ Microsoft.NET Framework 4.5에서는 C# 및 Visual Basic로 비동기.NET 프로
     *서로 다른 뷰를 사용 하 여 각 모바일 장치에 대 한*
 9. 업데이트는 **TimedOut** 아래와 같이 콘텐츠를 보고 합니다.
 
-
-~~~
-[!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample29.cshtml)]
-~~~
+    [!code-cshtml[Main](whats-new-in-aspnet-mvc-4/samples/sample29.cshtml)]
 10. 응용 프로그램을 실행 하 고 루트 URL로 이동 합니다. 추가한는 **Thread.Sleep** 1000 밀리초에서 생성 된 시간 제한 오류를 얻게 됩니다는 **AsyncTimeout** 특성과 여 catch는 **HandleError** 특성입니다.
 
     ![처리 시간 제한 예외](whats-new-in-aspnet-mvc-4/_static/image37.png "처리 시간 제한 예외")

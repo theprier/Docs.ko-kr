@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/whats-new-in-web-forms-in-aspnet-45
 msc.type: authoredcontent
-ms.openlocfilehash: db2658ff1feae1d4c20e4cfd19c36cfdf9492761
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: e230faac0dc81b67d74945dc98eee80f83205f65
+ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/18/2018
 ---
 <a name="whats-new-in-web-forms-in-aspnet-45"></a>Asp.net 4.5 Web Forms의 새로운 기능
 ====================
@@ -579,10 +579,7 @@ Web Forms 4.5, ModelState 개체 일관 된 방식으로 페이지에서 모델 
 
 1. 열기는 **ProductDetails.aspx** 페이지. 추가 **비동기** 특성에 **페이지** 요소로 설정 하 고 **true**합니다. 이 특성은 IHttpAsyncHandler 인터페이스를 구현 하는 ASP.NET을 알려 줍니다.
 
-
-~~~
-[!code-aspx[Main](whats-new-in-web-forms-in-aspnet-45/samples/sample35.aspx)]
-~~~
+    [!code-aspx[Main](whats-new-in-web-forms-in-aspnet-45/samples/sample35.aspx)]
 2. 페이지를 실행 하는 스레드에 대 한 세부 정보를 표시 하려면 페이지 맨 아래에 레이블을 추가 합니다.
 
     [!code-aspx[Main](whats-new-in-web-forms-in-aspnet-45/samples/sample36.aspx)]

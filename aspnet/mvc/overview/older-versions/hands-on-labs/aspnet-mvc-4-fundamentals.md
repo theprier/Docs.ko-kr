@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-fundamentals
 msc.type: authoredcontent
-ms.openlocfilehash: a0dd32280321938aba84a2aed5273d80750ed774
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 225dff4663e0e556cfb8966f1078848b4c2b47a5
+ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/18/2018
 ---
 # <a name="aspnet-mvc-4-fundamentals"></a>ASP.NET MVC 4 기본 사항
 
@@ -191,10 +191,7 @@ MVC 프레임 워크를 사용 하지 않는 ASP.NET 응용 프로그램에서 �
 
     (코드 조각- *기본 ASP.NET MVC 4-e x 1 HomeController 인덱스*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample1.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample1.cs)]
 
 <a id="Ex1Task4"></a>
 
@@ -259,18 +256,12 @@ MVC 프레임 워크를 사용 하지 않는 ASP.NET 응용 프로그램에서 �
 
     (코드 조각- *기본 ASP.NET MVC 4-e x 2 StoreController 인덱스*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample2.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample2.cs)]
 2. 추가 **찾아보기** 및 **세부 정보** 메서드. 이렇게 하려면 다음 코드를 추가 **StoreController**:
 
     (코드 조각- *기본 ASP.NET MVC 4-e x 2 StoreController BrowseAndDetails*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample3.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample3.cs)]
 
 <a id="Ex2Task3"></a>
 
@@ -282,9 +273,9 @@ MVC 프레임 워크를 사용 하지 않는 ASP.NET 응용 프로그램에서 �
 1. 키를 눌러 **F5** 응용 프로그램을 실행 합니다.
 2. 프로젝트 시작 날짜는 **홈** 페이지. 각 동작의 구현을 확인 하려면 URL을 변경 합니다.
 
-    1. **/ 저장**합니다. 나타납니다  **&quot;Store.Index()에서 Hello&quot;**합니다.
-    2. **/ 저장소/찾아보기**합니다. 나타납니다  **&quot;Store.Browse()에서 Hello&quot;**합니다.
-    3. **/ 저장소/세부 정보**합니다. 나타납니다  **&quot;Store.Details()에서 Hello&quot;**합니다.
+    1. **/ 저장**합니다. 나타납니다  **&quot;Store.Index()에서 Hello&quot;** 합니다.
+    2. **/ 저장소/찾아보기**합니다. 나타납니다  **&quot;Store.Browse()에서 Hello&quot;** 합니다.
+    3. **/ 저장소/세부 정보**합니다. 나타납니다  **&quot;Store.Details()에서 Hello&quot;** 합니다.
 
         ![StoreBrowse 검색](aspnet-mvc-4-fundamentals/_static/image9.png "StoreBrowse 검색")
 
@@ -319,15 +310,12 @@ MVC 프레임 워크를 사용 하지 않는 ASP.NET 응용 프로그램에서 �
 
     (코드 조각- *기본 ASP.NET MVC 4-Ex3 StoreController BrowseMethod*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample4.cs)]
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample4.cs)]
 
 > [!NOTE]
-> You are using the **HttpUtility.HtmlEncode** utility method to prevents users from injecting Javascript into the View with a link like **/Store/Browse?Genre=&lt;script&gt;window.location='[http://hackersite.com](http://hackersite.com)'&lt;/script&gt;**.
+> 사용 하는 **HttpUtility.HtmlEncode** 같은 링크와 보기에 Javascript 주입에서 사용자가 방지 하는 유틸리티 메서드를   **/저장소/찾아보기? 장르 =&lt;스크립트&gt;window.location='[http://hackersite.com](http://hackersite.com)'&lt;/script&gt;** 합니다.
 > 
-> For further explanation, please visit [this msdn article](https://msdn.microsoft.com/library/a2a4yykt(v=VS.80).aspx).
-~~~
+> 자세한 내용을 보려면 방문 하세요 [이 msdn 문서](https://msdn.microsoft.com/library/a2a4yykt(v=VS.80).aspx)합니다.
 
 <a id="Ex3Task2"></a>
 
@@ -355,10 +343,7 @@ MVC 프레임 워크를 사용 하지 않는 ASP.NET 응용 프로그램에서 �
 
     (코드 조각- *기본 ASP.NET MVC 4-Ex3 StoreController DetailsMethod*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample5.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample5.cs)]
 
 <a id="Ex3Task4"></a>
 
@@ -437,14 +422,11 @@ MVC 프레임 워크를 사용 하지 않는 ASP.NET 응용 프로그램에서 �
 
 이 작업에서는 레이아웃 마스터 페이지를 사용 하 여 HTML 응답을 생성 하는 보기 템플릿을 추가한 하 고 CSS이이 연습에서는 추가 합니다.
 
-1. 사이트의 홈 페이지를 검색할 때 뷰 템플릿을 사용 하려면 먼저 해야 합니다는 문자열을 반환 하는 대신 있음을 **HomeController 인덱스** 메서드는 반환는 **보기**합니다. 열기 **HomeController** 클래스 및 변경의 **인덱스** 반환 하는 메서드는 **ActionResult**, 고 반환 하도록 **View()**합니다.
+1. 사이트의 홈 페이지를 검색할 때 뷰 템플릿을 사용 하려면 먼저 해야 합니다는 문자열을 반환 하는 대신 있음을 **HomeController 인덱스** 메서드는 반환는 **보기**합니다. 열기 **HomeController** 클래스 및 변경의 **인덱스** 반환 하는 메서드는 **ActionResult**, 고 반환 하도록 **View()** 합니다.
 
     (코드 조각- *기본 ASP.NET MVC 4-Ex4 HomeController 인덱스*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample9.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample9.cs)]
 2. 이제는 적절 한 템플릿 보기를 추가 해야 합니다. 이렇게 하려면 **마우스 오른쪽 단추로 클릭** 내는 **인덱스** 동작 메서드와 선택 **뷰 추가**합니다. 그러면 표시 됩니다는 **뷰 추가** 대화 상자.
 
     ![Index 메서드 내에서 뷰 추가](aspnet-mvc-4-fundamentals/_static/image13.png "인덱스 메서드 내에서 뷰를 추가 합니다.")
@@ -469,10 +451,7 @@ MVC 프레임 워크를 사용 하지 않는 ASP.NET 응용 프로그램에서 �
     > 이러한 방식으로 ASP.NET MVC는 뷰를 반환 하려면이 명명 규칙을 사용 하는 경우 이름 또는 뷰 서식 파일의 위치를 명시적으로 지정 하지 않아도 합니다.
 5. 생성된 된 뷰 템플릿을 기반으로  **\_layout.cshtml** 템플릿을 이전에 정의 합니다. ViewBag.Title 속성을 업데이트 **홈**, 주 콘텐츠를 변경 하 고 **는 홈 페이지**아래 코드에 표시 된 것 처럼:
 
-
-~~~
-[!code-cshtml[Main](aspnet-mvc-4-fundamentals/samples/sample10.cshtml)]
-~~~
+    [!code-cshtml[Main](aspnet-mvc-4-fundamentals/samples/sample10.cshtml)]
 6. 선택 **MvcMusicStore** 누릅니다 솔루션 탐색기에서 프로젝트 **F5** 응용 프로그램을 실행 합니다.
 
 <a id="Ex4Task4"></a>
@@ -550,13 +529,10 @@ MVC 프레임 워크를 사용 하지 않는 ASP.NET 응용 프로그램에서 �
 
     (코드 조각- *ASP.NET MVC 4 기본-Ex5 StoreIndexViewModel 속성*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample11.cs)]
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample11.cs)]
 
 > [!NOTE]
-> The **{ get; set; }** notation makes use of C#'s auto-implemented properties feature. It provides the benefits of a property without requiring us to declare a backing field.
-~~~
+> **{get; 설정;을 (를)**  표기법에서 활용 C#의 자동 구현 속성 기능입니다. 지원 필드 선언를 요구 하지 않고 속성의 이점을 제공 합니다.
 
 <a id="Ex5Task3"></a>
 
@@ -576,10 +552,7 @@ MVC 프레임 워크를 사용 하지 않는 ASP.NET 응용 프로그램에서 �
 
     (코드 조각- *ASP.NET MVC 4 기본-Viewmodel를 사용 하 여 Ex5 StoreIndexViewModel*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample12.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample12.cs)]
 3. 변경 된 **StoreController**의 **인덱스** 를 만들고 채우는 동작 메서드는 **StoreIndexViewModel** 개체를 보기 서식 파일에 전달 함께 HTML 응답을 생성 합니다.
 
     > [!NOTE]
@@ -590,13 +563,10 @@ MVC 프레임 워크를 사용 하지 않는 ASP.NET 응용 프로그램에서 �
 
     (코드 조각- *ASP.NET MVC 4 기본-Ex5 StoreController 인덱스 메서드*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample13.cs)]
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample13.cs)]
 
 > [!NOTE]
-> If you're unfamiliar with C#, you may assume that using **var** means that the **viewModel** variable is late-bound. That's not correct - the C# compiler is using type-inference based on what you assign to the variable to determine that **viewModel** is of type **StoreIndexViewModel**. Also, by compiling the local **viewModel** variable as a **StoreIndexViewModel** type you get compile-time checking and Visual Studio code-editor support.
-~~~
+> C#과 함께 잘 모르는 경우 맞는 방법 가정할 수 있으며 **var** 됨을 의미는 **viewModel** 변수는 런타임에 바인딩된 합니다. 틀렸습니다-C# 컴파일러는 형식 유추를 변수에 할당에 따라 사용 하 여 확인 되 **viewModel** 유형의 **StoreIndexViewModel**합니다. 또한 로컬을 컴파일하여 **viewModel** 변수으로 **StoreIndexViewModel** get 컴파일 타임 검사 및 Visual Studio 코드 편집기 지원을 입력 합니다.
 
 <a id="Ex5Task4"></a>
 
@@ -633,24 +603,20 @@ MVC 프레임 워크를 사용 하지 않는 ASP.NET 응용 프로그램에서 �
 > [!NOTE]
 > @ 구문을 사용 합니다 (이 라 불리 &quot;코드 너&quot;) 보기 템플릿 내에서 코드를 실행 합니다.
 
-
 1. 에 **Index.cshtml** 파일 내에서 **저장소** 폴더를 해당 코드를 다음과 같이 바꿉니다.
 
-
-~~~
 [!code-cshtml[Main](aspnet-mvc-4-fundamentals/samples/sample14.cshtml)]
 
-> [!NOTE]
-> As soon as you finish typing the period after the word **Model**, Visual Studio's Intellisense will show a list of possible properties and methods to choose from.
-> 
-> ![](aspnet-mvc-4-fundamentals/_static/image25.png)
-> 
-> *Getting Model properties and methods with Visual Studio's IntelliSense*
-> 
-> The **Model** property references the **StoreIndexViewModel** object that the Controller passed to the View template. This means that you can access all of the data passed from the Controller to the View template via the **Model** property, and format it into an appropriate HTML response within the View template.
-> 
-> You can just select the **NumberOfGenres** property from the Intellisense list rather than typing it in and then it will auto-complete it by pressing the **tab key**.
-~~~
+    > [!NOTE]
+    > As soon as you finish typing the period after the word **Model**, Visual Studio's Intellisense will show a list of possible properties and methods to choose from.
+    > 
+    > ![](aspnet-mvc-4-fundamentals/_static/image25.png)
+    > 
+    > *Getting Model properties and methods with Visual Studio's IntelliSense*
+    > 
+    > The **Model** property references the **StoreIndexViewModel** object that the Controller passed to the View template. This means that you can access all of the data passed from the Controller to the View template via the **Model** property, and format it into an appropriate HTML response within the View template.
+    > 
+    > You can just select the **NumberOfGenres** property from the Intellisense list rather than typing it in and then it will auto-complete it by pressing the **tab key**.
 2. 장르 목록에 대해 루프 **StoreIndexViewModel** HTML 만들고 **&lt;ul&gt;** 사용 하 여 나열는 **foreach** 루프 합니다.
    (C#)
 
@@ -698,19 +664,13 @@ MVC 프레임 워크를 사용 하지 않는 ASP.NET 응용 프로그램에서 �
 
     (코드 조각- *기본 ASP.NET MVC 4-Ex6 장르*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample16.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample16.cs)]
 5. 추가 적으로 동일한 절차는 **앨범** 클래스입니다. 이렇게 하려면 마우스 오른쪽 단추로 클릭는 **모델** 폴더에는 **솔루션 탐색기**선택, **추가** 차례로 **새 항목** 옵션입니다. 아래 **코드**, 선택는 **클래스** 항목 및 파일 이름을 *Album.cs*, 클릭 **추가**합니다.
 6. 앨범 클래스에 두 개의 속성 추가: **장르** 및 **제목**합니다. 이렇게 하려면 다음 코드를 추가 합니다.
 
     (코드 조각- *기본 ASP.NET MVC 4-Ex6 앨범*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample17.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample17.cs)]
 
 <a id="Ex6Task2"></a>
 
@@ -724,25 +684,19 @@ A **StoreBrowseViewModel** 선택한 장르와 일치 하는 앨범 표시 하�
 
     (코드 조각- *기본 ASP.NET MVC 4-Ex6 UsingModel*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample18.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample18.cs)]
 3. 두 속성을 추가 **StoreBrowseViewModel** 클래스: **장르** 및 **앨범**합니다. 이렇게 하려면 다음 코드를 추가 합니다.
 
     (코드 조각- *기본 ASP.NET MVC 4-Ex6 ModelProperties*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample19.cs)]
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample19.cs)]
 
 > [!NOTE]
-> What is **List&lt;Album&gt;** ?: This definition is using the **List&lt;T&gt;** type, where **T** constrains the type to which elements of this **List** belong to, in this case **Album** (or any of its descendants).
+> 이란 **목록&lt;앨범&gt;**  ?:이 정의 사용 하는 **목록&lt;T&gt;**  형식, 여기서 **T** 제한 하는 이 요소 형식을 **목록** 이 경우 속한 **앨범** (또는 해당 하위 항목 중 하나).
 > 
-> This ability to design classes and methods that defer the specification of one or more types until the class or method is declared and instantiated by client code is a feature of the C# language called **Generics**.
+> 클래스 또는 메서드 선언 하 고는 C# 언어의 기능을 클라이언트 코드에 의해 인스턴스화될 때까지 하나 이상의 형식 사양을 연기 하는 클래스와 메서드를 디자인 하는이 기능 호출 **제네릭**합니다.
 > 
-> **List&lt;T&gt;** is the generic equivalent of the **ArrayList** type and is available in the **System.Collections.Generic** namespace. One of the benefits of using **generics** is that since the type is specified, you do not need to take care of type checking operations such as casting the elements into **Album** as you would do with an **ArrayList**.
-~~~
+> **목록&lt;T&gt;**  제네릭 해당는 **ArrayList** 입력 하 고 사용할 수는 **System.Collections.Generic** 네임 스페이스입니다. 사용의 이점 중 하나 **제네릭** 는 형식이 지정 되어 있으므로 불필요 형식 검사에 요소를 캐스팅 하는 등의 작업을 처리 하는 **앨범** 는 와마찬가지로**ArrayList**합니다.
 
 <a id="Ex6Task3"></a>
 
@@ -755,26 +709,17 @@ A **StoreBrowseViewModel** 선택한 장르와 일치 하는 앨범 표시 하�
 
     (코드 조각- *기본 ASP.NET MVC 4-Ex6 UsingModelInController*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample20.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample20.cs)]
 2. 대체는 **찾아보기** 사용 하도록 동작 메서드는 **StoreViewBrowseController** 클래스입니다. 더미 데이터로 장르와 두 개의 새로운 앨범 개체 만듭니다 (다음 실습 랩에는 사용 데이터베이스의 실제 데이터). 이 작업을 수행 하려면 대체는 **찾아보기** 메서드를 다음 코드로:
 
     (코드 조각- *기본 ASP.NET MVC 4-Ex6 BrowseMethod*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample21.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample21.cs)]
 3. 대체는 **세부 정보** 사용 하도록 동작 메서드는 **StoreViewBrowseController** 클래스입니다. 새 만들려는 **앨범** 에 반환 되는 개체는 **보기**합니다. 이 작업을 수행 하려면 대체는 **세부 정보** 메서드를 다음 코드로:
 
     (코드 조각- *기본 ASP.NET MVC 4-Ex6 DetailsMethod*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample22.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample22.cs)]
 
 <a id="Ex6Task4"></a>
 
@@ -889,13 +834,10 @@ ViewBag 동적 컬렉션의 목록을 전달 하는 데 사용할 이제 &quot; 
 
 1. Visual Studio 창에 반환 하는 데 필요한 경우 브라우저를 닫습니다. 열기 **StoreController.cs** 수정 **인덱스** 목록을 만드는 메서드를 ViewModel 컬렉션으로 장르 별모양:
 
+    [!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample26.cs)]
 
-~~~
-[!code-csharp[Main](aspnet-mvc-4-fundamentals/samples/sample26.cs)]
-
-> [!NOTE]
-> You could also use the syntax **ViewBag[&quot;Starred&quot;]** to access the properties.
-~~~
+    > [!NOTE]
+    > 구문을 사용할 수도 있습니다 **ViewBag [&quot;Starred&quot;]** 속성에 액세스할 수 있습니다.
 2. 별표 아이콘 **&quot;starred.png&quot;** 에 포함 된 **Source\Assets\Images** 이 랩의 폴더입니다. 응용 프로그램을 추가 하기 위해 자신의 콘텐츠를 끌어 한 **Windows 탐색기** 창에는 **솔루션 탐색기** Visual Web Developer Express, 아래와 같이에서:
 
     ![솔루션에 추가 별 이미지](aspnet-mvc-4-fundamentals/_static/image34.png "솔루션 별 이미지 추가")

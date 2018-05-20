@@ -12,11 +12,11 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/build-restful-apis-with-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: ded549109ca6e7ad806f1c3f53387766527e5a94
-ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
+ms.openlocfilehash: cb02288e93be801a1e55852741ed1443d8d3617d
+ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 05/18/2018
 ---
 <a name="build-restful-apis-with-aspnet-web-api"></a>ASP.NET Web API 사용 하 여 RESTful Api 빌드
 ====================
@@ -171,10 +171,7 @@ ms.lasthandoff: 04/26/2018
 
     (코드 조각- *웹 API 랩-Ex01-연락처 클래스*)
 
-
-~~~
-[!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample2.cs)]
-~~~
+    [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample2.cs)]
 4. 에 **ContactController** 클래스, 단어를 선택 **문자열** 의 메서드 정의에 **가져오기** 메서드와 해당 단어 입력 *연락처*합니다. 표시기는 단어를으로 입력 되 면 단어의 시작 부분에 표시 됩니다 **연락처**합니다. 키를 누른 채 중 하나는 **Ctrl** 키 마침표 (.) 키를 누르거나 마우스를 사용 하 여 코드 편집기 자동으로 채울에서 지원 대화 상자를 열려면 아이콘을 클릭는 **를 사용 하 여** 는 모델에 대 한 지시문 네임 스페이스입니다.
 
     ![네임 스페이스 선언에 대 한 Intellisense 지원을 사용 하 여](build-restful-apis-with-aspnet-web-api/_static/image12.png)
@@ -222,10 +219,7 @@ ms.lasthandoff: 04/26/2018
     *연락처 리포지토리 서비스 계층에 대 한 코드를 포함 하도록 클래스 파일 만들기*
 4. 사용 하 여 추가 지시문을 **ContactRepository.cs** 모델 네임 스페이스를 포함 하는 파일입니다.
 
-
-~~~
-[!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample4.cs)]
-~~~
+    [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample4.cs)]
 5. 다음 강조 표시 된 코드를 추가 하는 **ContactRepository.cs** GetAllContacts 메서드를 구현 하는 파일입니다.
 
     (코드 조각- *웹 API 랩-Ex01-연락처 리포지토리에*)
@@ -234,10 +228,7 @@ ms.lasthandoff: 04/26/2018
 6. 열기는 **ContactController.cs** 아직 열지 않은 경우에 파일입니다.
 7. 다음 추가 문을 사용 하 여 파일의 네임 스페이스 선언 섹션에 있습니다.
 
-
-~~~
-[!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample6.cs)]
-~~~
+    [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample6.cs)]
 8. 다음 강조 표시 된 코드를 추가 하는 **ContactController.cs** 서비스 구현의 멤버가 만들 수는 클래스의 나머지 부분에 사용 하 여 있도록 저장소의 인스턴스를 나타내는 전용 필드를 추가 하는 클래스입니다.
 
     (코드 조각- *Web API 랩-Ex01-연락처 컨트롤러*)
@@ -356,16 +347,10 @@ ms.lasthandoff: 04/26/2018
 3. 열기는 **Index.cshtml** 에 있는 파일 **뷰/홈** 폴더입니다.
 4. Id가 인 div 요소 내에서 HTML 코드를 바꿉니다 **본문** 다음 코드 처럼 표시 되도록 합니다.
 
-
-~~~
-[!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample13.html)]
-~~~
+    [!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample13.html)]
 5. 웹 API에 HTTP 요청을 수행 하는 파일의 맨 아래에 다음 Javascript 코드를 추가 합니다.
 
-
-~~~
-[!code-cshtml[Main](build-restful-apis-with-aspnet-web-api/samples/sample14.cshtml)]
-~~~
+    [!code-cshtml[Main](build-restful-apis-with-aspnet-web-api/samples/sample14.cshtml)]
 6. 열기는 **ContactController.cs** 아직 열지 않은 경우에 파일입니다.
 7. 중단점을 배치는 **가져오기** 의 메서드는 **ContactController** 클래스입니다.
 
@@ -400,17 +385,11 @@ ms.lasthandoff: 04/26/2018
 
     (코드 조각- *웹 API 랩-Ex03-Post 메서드*)
 
-
-~~~
-[!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample15.cs)]
-~~~
+    [!code-csharp[Main](build-restful-apis-with-aspnet-web-api/samples/sample15.cs)]
 3. 열기는 **Index.cshtml** 열려 있지 않으면 Visual Studio에서 파일입니다.
 4. 이전 태스크에서 추가한 순서가 지정 되지 않은 목록 바로 다음 파일에 아래 HTML 코드를 추가 합니다.
 
-
-~~~
-[!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample16.html)]
-~~~
+    [!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample16.html)]
 5. 문서 맨 아래에 스크립트 요소 내에서 데이터를 게시 Web API HTTP POST 호출을 사용 하는 단추 클릭 이벤트를 처리 하려면 다음 강조 표시 된 코드를 추가 합니다.
 
     [!code-html[Main](build-restful-apis-with-aspnet-web-api/samples/sample17.html)]

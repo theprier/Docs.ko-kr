@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/app-secrets
-ms.openlocfilehash: 4db09d3d41b705597f93d05af91077f2b9236b7e
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
-ms.translationtype: HT
+ms.openlocfilehash: 88b4ee9a963543f8cc97cb66271628a14fe657de
+ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 05/18/2018
 ---
 # <a name="safe-storage-of-app-secrets-in-development-in-aspnet-core"></a>ASP.NET Core에서 개발의 앱 암호의 안전한 저장소
 
@@ -55,8 +55,25 @@ ASP.NET Core 웹 응용 프로그램 고려 **개별 사용자 계정** 보안�
 
 Secret Manager 도구는 값이 저장되는 위치 및 방법 같은 구현에 관한 세부적인 내용을 추상화합니다. 이런 세부적인 내용을 모르더라도 Secret Manager 도구를 사용하는 데는 아무런 지장이 없습니다.  값에 저장 되는 [JSON](https://json.org/) 로컬 컴퓨터에서 시스템으로 보호 된 사용자 프로필 폴더에 구성 파일:
 
-* Windows: `%APPDATA%\Microsoft\UserSecrets\<user_secrets_id>\secrets.json`
-* Linux와 macOS: `~/.microsoft/usersecrets/<user_secrets_id>/secrets.json`
+# <a name="windowstabwindows"></a>[Windows](#tab/windows)
+
+파일 시스템 경로:
+
+`%APPDATA%\Microsoft\UserSecrets\<user_secrets_id>\secrets.json`
+
+# <a name="macostabmacos"></a>[macOS](#tab/macos)
+
+파일 시스템 경로:
+
+`~/.microsoft/usersecrets/<user_secrets_id>/secrets.json`
+
+# <a name="linuxtablinux"></a>[Linux](#tab/linux)
+
+파일 시스템 경로:
+
+`~/.microsoft/usersecrets/<user_secrets_id>/secrets.json`
+
+---
 
 앞의 파일 경로, 대체 `<user_secrets_id>` 와 `UserSecretsId` 에 지정 된 값의 *.csproj* 파일입니다.
 
@@ -133,17 +150,33 @@ dotnet user-secrets set "Movies:ServiceApiKey" "12345" --project "C:\apps\WebApp
 
 ## <a name="set-multiple-secrets"></a>여러 암호를 설정 합니다.
 
-JSON에 파이프 하 여 보안의 일괄 처리를 설정할 수 있습니다는 `set` 명령입니다. 다음 예제에서는 *input.json* 파일의 내용으로 파이프 되는 `set` Windows 명령을:
+JSON에 파이프 하 여 보안의 일괄 처리를 설정할 수 있습니다는 `set` 명령입니다. 다음 예제에서는 *input.json* 파일의 내용으로 파이프 되는 `set` 명령입니다.
 
-```console
-type .\input.json | dotnet user-secrets set
-```
+# <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
-MacOS 및 Linux에서 다음 명령을 사용 합니다.
+명령 셸을 열고 다음 명령을 실행 합니다.
 
-```console
-cat ./input.json | dotnet user-secrets set
-```
+  ```console
+  type .\input.json | dotnet user-secrets set
+  ```
+
+# <a name="macostabmacos"></a>[macOS](#tab/macos)
+
+명령 셸을 열고 다음 명령을 실행 합니다.
+
+  ```console
+  cat ./input.json | dotnet user-secrets set
+  ```
+
+# <a name="linuxtablinux"></a>[Linux](#tab/linux)
+
+명령 셸을 열고 다음 명령을 실행 합니다.
+
+  ```console
+  cat ./input.json | dotnet user-secrets set
+  ```
+
+---
 
 ## <a name="access-a-secret"></a>암호에 액세스
 

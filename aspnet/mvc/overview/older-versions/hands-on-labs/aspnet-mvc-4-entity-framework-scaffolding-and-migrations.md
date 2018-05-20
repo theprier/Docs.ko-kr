@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-entity-framework-scaffolding-and-migrations
 msc.type: authoredcontent
-ms.openlocfilehash: 548afe1926eed49841251832d54dc213da0cb753
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 42a12ee39223a06054382dbe9b4784196a706216
+ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/18/2018
 ---
 # <a name="aspnet-mvc-4-entity-framework-scaffolding-and-migrations"></a>ASP.NET MVC 4 Entity Framework 스 캐 폴딩 및 마이그레이션
 
@@ -108,10 +108,7 @@ ASP.NET MVC 스 캐 폴딩 데이터베이스 계층 상호 작용 하는 응용
 
     (코드 조각- *ASP.NET MVC 4 및 Entity Framework 마이그레이션-e x 1 사람 속성*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample1.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample1.cs)]
 6. 클릭 **빌드 | 솔루션 빌드** 는 변경 내용을 저장 하는 프로젝트를 빌드합니다.
 
     ![응용 프로그램 빌드](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image3.png "응용 프로그램 빌드")
@@ -196,16 +193,10 @@ ASP.NET MVC 스 캐 폴딩 데이터베이스 계층 상호 작용 하는 응용
     *Migrations 폴더*
 3. 열기는 **Configuration.cs** Migrations 폴더에서 파일입니다. 클래스 생성자를 찾아 변경는 **AutomaticMigrationsEnabled** 값을 *true*합니다.
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample3.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample3.cs)]
 4. 사용자 클래스를 열고 있는 사람의 중간 이름을 대 한 특성을 추가 합니다. 이 새 특성으로 모델을 변경 됩니다.
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample4.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample4.cs)]
 5. 선택 **빌드 | 솔루션 빌드** 메뉴에서 응용 프로그램을 빌드합니다.
 
     ![응용 프로그램 빌드](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image13.png "응용 프로그램 빌드")

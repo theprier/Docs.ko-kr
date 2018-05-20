@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/whats-new-in-aspnet-and-web-development-in-visual-studio-2012
 msc.type: authoredcontent
-ms.openlocfilehash: 00b43cc548df44edded925521991a095ed856494
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: f447dc0108dffb36ed6d627fb83b3117fd22c94c
+ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/18/2018
 ---
 <a name="whats-new-in-aspnet-and-web-development-in-visual-studio-2012"></a>ASP.NET 및 Visual Studio 2012에서 웹 개발의 새로운 기능
 ====================
@@ -259,10 +259,7 @@ HTML 편집기 마스터 페이지에는 정의가 있을 수 있지만 페이�
 
 1. 에 **Default.aspx** 페이지에서 추가 된 **H3** 제목 (예를 들어 Visual Studio 2012 돌!) 인 요소입니다.
 
-
-~~~
-[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample5.aspx)]
-~~~
+    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample5.aspx)]
 2. 변경 된 **H3** 태그 및 형식 **H2** 또는 **H1 합니다.**
 
     끝 태그를 자동으로 업데이트 확인 합니다. 시작 태그 업데이트 하도록 적절 하 게 너무 보려면 끝 태그를 수정할 수 있습니다.
@@ -288,13 +285,10 @@ HTML 편집기 마스터 페이지에는 정의가 있을 수 있지만 페이�
     *HTML5 코드 조각 삽입*
 3. 기존 오디오 파일을 가리키도록 오디오 소스를 업데이트 합니다.
 
+    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample6.aspx)]
 
-~~~
-[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample6.aspx)]
-
-> [!NOTE]
-> You will need to add the audio file to the solution.
-~~~
+    > [!NOTE]
+    > 오디오 파일을 솔루션에 추가 해야 합니다.
 4. 키를 눌러 **F5** 사이트를 실행 하 여 오디오를 재생 하 합니다.
 
     ![실행 중인 오디오 컨트롤](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/_static/image29.png "실행 중인 오디오 컨트롤")
@@ -549,37 +543,25 @@ Visual Studio JavaScript 편집기를 꼭 코드 액세스 가능 하 고 구성
 
     새 **Microsoft.Web.Optimization** 네임 스페이스는 파일의 시작 부분에서 주석으로 처리 합니다. 사용 하는 주석 처리 제거 지시문 묶음 및 축소 기능을 포함 하도록 합니다.
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample10.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample10.cs)]
 4. 찾을 **응용 프로그램\_시작** 메서드.
 
     이 방법에서는 아래 코드 조각에 나와 있는 것 처럼 EnableDefaultBundles 호출 주석 처리 제거 합니다. 이렇게 하면 폴더의 CSS 파일의 번들로 묶은 컬렉션에는 해당 폴더의 경로 사용 하 여 참조를 수와 &quot;CSS&quot; 또는 &quot;JS&quot; 접미사입니다.
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample11.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample11.cs)]
 5. 열기는 **Optimization.aspx** 파일을 콘텐츠 컨트롤을 찾으십시오 **HeadContent**합니다.
 
     CSS 파일 참조는 단일 태그가 있어야 JS 파일을 살펴보세요.
 
+    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample12.aspx)]
 
-~~~
-[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample12.aspx)]
-
-> [!NOTE]
-> This code is for demo purposes. Ideally, you will reference the bundles in the Site.Master file. In this sample code, you will find that some of the bundled files are also being referenced by the Site.Master file, making this last reference redundant.
-~~~
+    > [!NOTE]
+    > 이 코드는 데모 목적 됩니다. 이상적으로 Site.Master 파일에 번들을 참조 합니다. 이 샘플 코드를 확인할 수는 모두 함께 제공 된 파일 중 일부가에서 참조 하는 Site.Master 파일이 마지막 참조를 중복 하 합니다.
 6. 링크의 번들 규칙에 사용 하는 것을 알는 **href** 스타일 및 Scripts\custom에서 모든 CSS 또는 JS 파일을 가져올 특성 폴더 각각.
 
     경로 사용할 수 있습니다 **스크립트/사용자 지정/JS** 아래와 같이 축소할 내부에 있는 모든 JS 파일을 번들로 **스크립트/사용자 지정** 폴더입니다. 이것이 기본 번들 기본 동작입니다.
 
-
-~~~
-[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample13.aspx)]
-~~~
+    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample13.aspx)]
 7. 열기는 **Styles\Site.css** 파일입니다.
 
     원래 CSS 파일 들여쓰기 된 코드, 공백 및 파일을 확대 하는 주석을 포함 되어 있는지 확인 합니다. (또한 JavaScript 파일에 빈 공간 및 주석).
@@ -620,18 +602,12 @@ Visual Studio JavaScript 편집기를 꼭 코드 액세스 가능 하 고 구성
 
     파일 위치;에 있지 공지 기본 번들을 통해 또 다른 이점은입니다.
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample14.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample14.cs)]
 4. 열기는 **Optimization.aspx** 파일입니다.
 
     에 대 한 링크 **정적 JS 번들** Global.asax.cs 파일에는 정적 번들을 구성 하는 경우 사용자가 선언한 경로 사용 하는: **/StaticBundle**합니다.
 
-
-~~~
-[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample15.aspx)]
-~~~
+    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample15.aspx)]
 5. 키를 눌러 **F5** 응용 프로그램을 실행 한 다음로 이동 하 여 **최적화** 페이지.
 6. 클릭는 **정적 JS 번들** 링크 파일을 열 수 있습니다.
 
@@ -656,10 +632,7 @@ Visual Studio JavaScript 편집기를 꼭 코드 액세스 가능 하 고 구성
 
     사용 하는 동적 폴더 번들을 정의 하는 **CoffeeMinify** 사용자 지정 축소 프로세서를 사용 하 여 파일에만 적용 됩니다는 &quot; **.coffee** &quot; 확장 드 ( CoffeeScript 파일)입니다. 파일 폴더 내의 같은 번들을 선택 하는 검색 패턴을 사용할 수 있는 알림 '\*.coffee'.
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample16.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample16.cs)]
 3. NuGet 패키지 관리자 콘솔을 엽니다. 이 작업을 수행 하려면 메뉴 사용 **보기** | **다른 창** | **패키지 관리자 콘솔**합니다.
 4. 에 **패키지 관리자 콘솔** 형식 **Install-package CoffeeSharp** 누릅니다 **ENTER**합니다.
 5. 클릭는 **모든 파일 표시** 단추는 **솔루션 탐색기** 창
@@ -676,10 +649,7 @@ Visual Studio JavaScript 편집기를 꼭 코드 액세스 가능 하 고 구성
 
     이 클래스에서 JsMinify 축소할 CoffeeScript 코드 컴파일 얻는 JavaScript 출력을 상속 합니다. 먼저, JavaScript 코드를 생성 하려면 CoffeeScript 컴파일러를 호출 하 고에 전송할 JsMinify.Process 메서드 결과 코드 축소할를 키를 누릅니다.
 
-
-~~~
-[!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample17.cs)]
-~~~
+    [!code-csharp[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample17.cs)]
 8. 열기는 **Script1.coffee** 및 **Script2.coffee** 에서 파일의 **스크립트/번들** 폴더입니다.
 
     이러한 파일 CoffeeMinify 클래스와 함께 번들로 수행 하는 동안 컴파일해야 할 CoffeScript 코드가 포함 됩니다.
@@ -696,10 +666,7 @@ Visual Studio JavaScript 편집기를 꼭 코드 액세스 가능 하 고 구성
 
     에 대 한 링크 **동적 JS 번들** 참조 하는 **스크립트/번들** 를 사용 하 여 폴더는 **커피/** 접미사 동적 폴더 번들에 대 한 구성 합니다.
 
-
-~~~
-[!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample18.aspx)]
-~~~
+    [!code-aspx[Main](whats-new-in-aspnet-and-web-development-in-visual-studio-2012/samples/sample18.aspx)]
 10. 키를 눌러 **F5** 응용 프로그램을 실행 한 다음로 이동 하 여 **최적화** 페이지.
 11. 클릭는 **동적 JS 번들** 링크를 생성된 된 파일을 엽니다.
 

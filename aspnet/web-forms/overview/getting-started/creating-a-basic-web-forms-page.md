@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/creating-a-basic-web-forms-page
 msc.type: authoredcontent
-ms.openlocfilehash: 0dbd3063c9be3564637fad34e60f62c1662dcc07
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 0d44a8f607df3a45ef312820f85f269c7a2c9c1e
+ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/18/2018
 ---
 <a name="creating-a-basic-aspnet-45-web-forms-page-in-visual-studio-2013"></a>기본 ASP.NET 4.5 Web Forms 만들기 페이지에서 Visual Studio 2013
 ====================
@@ -83,7 +83,7 @@ ms.lasthandoff: 04/06/2018
 
  Visual Studio 환경
 
-![Visual Studio Environment](creating-a-basic-web-forms-page/_static/image5.png)
+![Visual Studio 환경](creating-a-basic-web-forms-page/_static/image5.png)
 
 ### <a name="familiarize-yourself-with-the-web-designer"></a>웹 디자이너를 파악
 
@@ -195,13 +195,13 @@ Visual Studio는 페이지에 있는 컨트롤의 속성을 설정 하는 다양
     ![단추 텍스트 설정](creating-a-basic-web-forms-page/_static/image10.png "설정 단추 텍스트")
 3. 로 전환 **소스** 보기.
 
-    **소스** 보기에는 HTML 서버 컨트롤에 대 한 Visual Studio가 생성 하는 요소를 포함 하 여 페이지에 표시 됩니다. 컨트롤이 선언 된 HTML과 유사한 구문을 사용 하 여 태그 접두사를 사용 하는 점을 제외 하 고 **asp:** 특성을 포함 하 고 **runat =&quot;서버&quot;**합니다.
+    **소스** 보기에는 HTML 서버 컨트롤에 대 한 Visual Studio가 생성 하는 요소를 포함 하 여 페이지에 표시 됩니다. 컨트롤이 선언 된 HTML과 유사한 구문을 사용 하 여 태그 접두사를 사용 하는 점을 제외 하 고 **asp:** 특성을 포함 하 고 **runat =&quot;서버&quot;** 합니다.
 
     컨트롤 속성은 특성으로 선언 됩니다. 설정한 경우에 예를 들어는 [텍스트](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.text.aspx) 속성에 대 한는 [단추](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.aspx) 제어 하 고, 1 단계에서 실제로 설정할는 **텍스트** 컨트롤의 태그에 특성입니다.
 
     > [!NOTE] 
     > 
-    > 내 모든 컨트롤은 한 **양식** 특성도 포함 하는 요소를 **runat =&quot;서버&quot;**합니다. **runat =&quot;서버&quot;**  특성 및 **asp:** 접두사 컨트롤 태그 페이지를 실행할 때 서버에서 ASP.NET에서 처리 되기 있도록 컨트롤을 표시 합니다. 외부 코드 **&lt;runat =&quot;서버&quot; &gt;** 및 **&lt;스크립트 runat =&quot;서버&quot; &gt;** 요소를 브라우저에도 때문에 ASP.NET 코드는 여는 태그를 포함 하는 요소 내부에 있어야 합니다. 변경 되지 않은 전송 되는 **runat =&quot;서버&quot;**  특성입니다.
+    > 내 모든 컨트롤은 한 **양식** 특성도 포함 하는 요소를 **runat =&quot;서버&quot;** 합니다. **runat =&quot;서버&quot;**  특성 및 **asp:** 접두사 컨트롤 태그 페이지를 실행할 때 서버에서 ASP.NET에서 처리 되기 있도록 컨트롤을 표시 합니다. 외부 코드 **&lt;runat =&quot;서버&quot; &gt;** 및 **&lt;스크립트 runat =&quot;서버&quot; &gt;** 요소를 브라우저에도 때문에 ASP.NET 코드는 여는 태그를 포함 하는 요소 내부에 있어야 합니다. 변경 되지 않은 전송 되는 **runat =&quot;서버&quot;**  특성입니다.
 4. 다음을 추가 속성을 추가 합니다는 [레이블](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx) 제어 합니다. 후 직접 삽입 지점을 **p: Label** 에 **&lt;p: Label&gt;** 태그, 및 키를 누릅니다 **스페이스바**합니다.
 
     설정할 수 있는 사용 가능한 속성의 목록을 표시 하는 드롭다운 목록이 나타납니다는 [레이블](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx) 제어 합니다. 이 기능으로 이라고 **IntelliSense**에서 사용 하면 **소스** 페이지에 서버 컨트롤, HTML 요소 및 기타 항목의 구문 보기. 다음 그림에서는 **IntelliSense** 에 대 한 드롭다운 목록에서 [레이블](https://msdn.microsoft.com/library/system.web.ui.webcontrols.label.aspx) 제어 합니다.
@@ -247,7 +247,7 @@ Visual Studio는 페이지에 있는 컨트롤의 속성을 설정 하는 다양
 
     [!code-vb[Main](creating-a-basic-web-forms-page/samples/sample2.vb?highlight=2)]
 5. 보기로 다시 전환는 **소스** 마우스 오른쪽 단추로 클릭 하 여 HTML 태그의 보기 *FirstWebPage.aspx* 에 **솔루션 탐색기** 선택 하 고 **보기 태그**합니다.
-6. 스크롤하여는 **&lt;p: Button&gt;** 요소입니다. **&lt;p: Button&gt;** 이제 특성이 요소 **onclick =&quot;Button1\_클릭&quot;**합니다.
+6. 스크롤하여는 **&lt;p: Button&gt;** 요소입니다. **&lt;p: Button&gt;** 이제 특성이 요소 **onclick =&quot;Button1\_클릭&quot;** 합니다.
 
     이 특성 단추의 바인딩합니다 [클릭](https://msdn.microsoft.com/library/system.web.ui.webcontrols.button.click.aspx) 이전 단계에서 코딩 된 처리기 메서드를 이벤트입니다.
 
@@ -315,15 +315,12 @@ Visual Studio는 페이지에 있는 컨트롤의 속성을 설정 하는 다양
     새 이벤트 처리기를 생성 하 라는 코드 숨김 파일에 표시 *FirstWebPage.aspx.cs*합니다.
 2. 완료 된 [SelectionChanged](https://msdn.microsoft.com/library/system.web.ui.webcontrols.calendar.selectionchanged.aspx) 이벤트 처리기를 다음 코드로 합니다.
 
-
-~~~
-[!code-csharp[Main](creating-a-basic-web-forms-page/samples/sample3.cs?highlight=3)]
+    [!code-csharp[Main](creating-a-basic-web-forms-page/samples/sample3.cs?highlight=3)]
 
 
-[!code-vb[Main](creating-a-basic-web-forms-page/samples/sample4.vb?highlight=2)]
-~~~
+    [!code-vb[Main](creating-a-basic-web-forms-page/samples/sample4.vb?highlight=2)]
 
- 위의 코드는 달력 컨트롤에서 선택한 날짜에 레이블 컨트롤의 텍스트를 설정합니다.
+    위의 코드는 달력 컨트롤에서 선택한 날짜에 레이블 컨트롤의 텍스트를 설정합니다.
 
 
 ### <a name="running-the-page"></a>페이지를 실행 하면

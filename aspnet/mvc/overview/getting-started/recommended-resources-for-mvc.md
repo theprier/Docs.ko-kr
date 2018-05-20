@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/recommended-resources-for-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: b328b733914b20b0aa3fe529c9a9f999349171ec
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 7887d81366cc166ad89308b22ad7cc6af0263111
+ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/18/2018
 ---
 <a name="mvc-recommended-resources"></a>MVC 리소스를 권장 합니다.
 ====================
@@ -42,7 +42,6 @@ ms.lasthandoff: 04/06/2018
 ## <a name="new-featured-content"></a>새로운 기능의 콘텐츠
 
 - [ASP.NET에서 지역화에 대 한 문화권을 선택 하면](http://weblog.west-wind.com/posts/2014/Mar/27/Auto-Selecting-Cultures-for-Localization-in-ASPNET)
-- [MVC에서 중첩 레이아웃](http://astutelogic.com/nesting-layouts-in-mvc/) Russell 영 하 여
 - [Facebook 및 Google OAuth2 로그온 ASP.NET MVC 5 앱 만들기](../security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)
 - [이해 ASP.NET MVC 필터 및 특성](http://www.dotnet-tricks.com/Tutorial/mvc/b11a280114-Understanding-ASP.NET-MVC-Filters-and-Attributes.html)
 - [ASP.NET MVC 5 응용 프로그램의 수명 주기](lifecycle-of-an-aspnet-mvc-5-application.md) (PDF)
@@ -208,7 +207,7 @@ ms.lasthandoff: 04/06/2018
 
 <a id="jQueryAjaxJSON"></a>
 
-## <a name="jquery-ajax-json-javascript"></a>jQuery, Ajax, JSON, JavaScript
+## <a name="jquery-ajax-json-javascript"></a>Ajax, JSON, JavaScript, jQuery
 
 - [ASP.NET MVC에 대 한 한 JavascriptResult 만들기](http://tostring.it/2014/01/14/create-a-javascriptresult-for-asp-net-mvc/?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+override%2Ftostring%2Fit+%28override.tostring.it%29)
 - [.NET 서버 쪽 데이터 JavaScript에 전달](http://blog.mariusschulz.com/2014/02/05/passing-net-server-side-data-to-javascript) Marius Schulz 하 여
@@ -292,7 +291,7 @@ ms.lasthandoff: 04/06/2018
 - [개발 하이브리드 네이티브 및 모바일 웹 앱](https://msdn.microsoft.com/magazine/hh852592.aspx)
 - [ASP.NET MVC 4 및 jQuery Mobile 전환할 수 Desktop 및 Mobile 사이트 만들기](http://www.hanselman.com/blog/MakingASwitchableDesktopAndMobileSiteWithASPNETMVC4AndJQueryMobile.aspx)
 - [MVC 4 모바일 친화적 웹 응용 프로그램](http://www.codeproject.com/Articles/455627/MVC4-Mobile-Friendly-Web-Applications)
-- [ASP.NET MVC 4 Mobile](https://channel9.msdn.com/Events/aspConf/aspConf/ASP-NET-MVC-4-Mobile)
+- [ASP.NET MVC 4 모바일](https://channel9.msdn.com/Events/aspConf/aspConf/ASP-NET-MVC-4-Mobile)
 
 <a id="spa"></a>
 

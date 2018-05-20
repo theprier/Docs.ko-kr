@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
 msc.type: authoredcontent
-ms.openlocfilehash: 57477cf15bf6755523f28356d5384517bea24982
-ms.sourcegitcommit: 5ae0c125ee3bbd324edef3818d1d160f4dd84602
+ms.openlocfilehash: 88b3316b116962dd35031f4b971dbfe31ed0e010
+ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 05/18/2018
 ---
 # <a name="aspnet-mvc-4-models-and-data-access"></a>ASP.NET MVC 4 모델 및 데이터 액세스
 
@@ -224,41 +224,27 @@ Code First 접근 방식은 일반적으로 프레임 워크와 연결 되어 �
 
     (코드 조각- *모델 데이터 액세스 및-e x 1 storeDB*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample1.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample1.cs)]
 2. **MusicStoreEntities** 클래스는 데이터베이스의 각 테이블에 대 한 컬렉션 속성을 노출 합니다. 업데이트 **찾아보기** 모든 장르를 가져오려는 작업 메서드는 **앨범**합니다.
 
     (코드 조각- *모델 및 데이터 액세스-e x 1 저장소 찾아보기*)
 
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample2.cs)]
 
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample2.cs)]
-~~~
-
-> [!NOTE]
-> .NET 호출의 기능을 사용 하는 **LINQ** 프로그래밍할 수 있습니다 (통합 언어 쿼리)-이 데이터베이스에 대해 코드를 실행 하 고 반환 하는 이러한 컬렉션에 대 한 강력한 형식의 쿼리 식을 작성 하 개체 합니다.
-> 
-> LINQ에 대 한 자세한 내용은 참조 하십시오는 [msdn 사이트](https://msdn.microsoft.com/library/bb397926&amp;#040;v=vs.110&amp;#041;.aspx)합니다.
-
-
+    > [!NOTE]
+    > .NET 호출의 기능을 사용 하는 **LINQ** 프로그래밍할 수 있습니다 (통합 언어 쿼리)-이 데이터베이스에 대해 코드를 실행 하 고 반환 하는 이러한 컬렉션에 대 한 강력한 형식의 쿼리 식을 작성 하 개체 합니다.
+    > 
+    > LINQ에 대 한 자세한 내용은 참조 하십시오는 [msdn 사이트](https://msdn.microsoft.com/library/bb397926&amp;#040;v=vs.110&amp;#041;.aspx)합니다.
 3. 업데이트 **인덱스** 동작 메서드를 모든 장르를 검색 합니다.
 
     (코드 조각- *모델 및 데이터 액세스-e x 1 저장소 인덱스*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample3.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample3.cs)]
 4. 업데이트 **인덱스** 동작 메서드의 모든 장르를 검색 하 고 목록에 컬렉션을 변환 합니다.
 
     (코드 조각- *모델 및 데이터 액세스-e x 1 저장소 GenreMenu*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample4.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample4.cs)]
 
 <a id="Ex1Task5"></a>
 
@@ -316,18 +302,12 @@ Code First 접근 방식은 일반적으로 프레임 워크와 연결 되어 �
 
     (코드 조각- *모델 및 데이터 액세스-e x 2 글로벌 Asax Using*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample5.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample5.cs)]
 4. 에 **응용 프로그램\_start ()** 메서드 데이터베이스 이니셜라이저를 설정 하려면 다음 줄을 추가 합니다.
 
     (코드 조각- *모델 및 데이터 액세스-e x 2 글로벌 Asax SetInitializer*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample6.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample6.cs)]
 
 <a id="Ex2Task2"></a>
 
@@ -342,10 +322,7 @@ Code First 접근 방식은 일반적으로 프레임 워크와 연결 되어 �
 
     *web.config 파일 위치*
 
-
-~~~
-[!code-xml[Main](aspnet-mvc-4-models-and-data-access/samples/sample7.xml)]
-~~~
+    [!code-xml[Main](aspnet-mvc-4-models-and-data-access/samples/sample7.xml)]
 
 <a id="Ex2Task3"></a>
 
@@ -354,39 +331,29 @@ Code First 접근 방식은 일반적으로 프레임 워크와 연결 되어 �
 
 이미 데이터베이스에 연결을 구성 했으므로 데이터베이스 테이블을 사용 하 여 모델을 연결 됩니다. 이 태스크에서는 Code First로 데이터베이스에 연결할 수 있는 클래스를 만듭니다. 수정 해야 하는 기존 POCO 모델 클래스 임을 기억 합니다.
 
-   > [!NOTE]
+> [!NOTE]
 > 연습 1을 완료 한 경우이 단계는 마법사에 의해 수행 된를 언급 합니다. Code First를 통해 수동으로 데이터 엔터티에 연결 하는 클래스 만듭니다.
-
 
 1. POCO 모델 클래스를 열고 **장르** 에서 **모델** 폴더를 프로젝트 및 ID를 포함 합니다. Int 속성 이름으로 사용 하 여 **GenreId**합니다.
 
     (코드 조각- *모델 및 데이터 액세스-e x 2 코드 첫 번째 장르*)
 
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample8.cs)]
 
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample8.cs)]
-
-> [!NOTE]
-> To work with Code First conventions, the class Genre must have a primary key property that will be automatically detected.
-> 
-> You can read more about Code First Conventions in this [msdn article](https://msdn.microsoft.com/library/hh161541&amp;#040;v=vs.103&amp;#041;.aspx).
-~~~
+    > [!NOTE]
+    > Code First 규칙을 사용 하려면 Genre 클래스에 자동으로 검색 하는 기본 키 속성이 있어야 합니다.
+    > 
+    > 자세한 내용은이 코드의 첫 번째 규칙에 대 한 [msdn 문서](https://msdn.microsoft.com/library/hh161541&amp;#040;v=vs.103&amp;#041;.aspx)합니다.
 2. 이제는 POCO 모델 클래스를 열 **앨범** 에서 **모델** 폴더를 프로젝트 및 외래 키를 포함를 이름으로 속성을 만들 **GenreId** 및  **ArtistId**합니다. 가 이미이 클래스는 **GenreId** 기본 키에 대 한 합니다.
 
     (코드 조각- *모델 및 데이터 액세스-e x 2 코드 첫 번째 앨범*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample9.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample9.cs)]
 3. POCO 모델 클래스를 열고 **아티스트** 포함는 **ArtistId** 속성입니다.
 
     (코드 조각- *모델 및 데이터 액세스-e x 2 코드 첫 번째 아티스트*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample10.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample10.cs)]
 4. 마우스 오른쪽 단추로 클릭는 **모델** 프로젝트 폴더를 선택 **추가 | 클래스**합니다. 파일 이름을 **MusicStoreEntities.cs**합니다. 클릭 **추가 합니다.**
 
     ![클래스 추가](aspnet-mvc-4-models-and-data-access/_static/image20.png "클래스 추가")
@@ -398,21 +365,15 @@ Code First 접근 방식은 일반적으로 프레임 워크와 연결 되어 �
     *클래스 추가*
 5. 방금 만든 클래스를 열고 **MusicStoreEntities.cs**, 네임 스페이스를 포함 하 고 **System.Data.Entity** 및 **System.Data.Entity.Infrastructure**합니다.
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample11.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample11.cs)]
 6. 확장 하는 클래스 선언 대신는 **DbContext** 클래스: 공용 선언 **DBSet** 재정의 **OnModelCreating** 메서드. 이 단계에서는 Entity Framework를 사용 하 여 모델을 연결 하는 도메인 클래스를 받아볼 수 있습니다. 파일을 수집 하려면 클래스 코드를 다음으로 바꿉니다.
 
     (코드 조각- *모델 및 데이터 액세스-e x 2 코드 첫 번째 MusicStoreEntities*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample12.cs)]
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample12.cs)]
 
 > [!NOTE]
-> With Entity Framework **DbContext** and **DBSet** you will be able to query the POCO class Genre. By extending **OnModelCreating** method, you are specifying in the **code** how Genre will be mapped to a database table. You can find more information about DBContext and DBSet in this msdn article: [link](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx)
-~~~
+> Entity Framework와 함께 **DbContext** 및 **DBSet** POCO 클래스 장르를 쿼리할 수 있습니다. 확장 하 여 **OnModelCreating** 에서 지정 하는 메서드를는 **코드** 데이터베이스 테이블에 장르 매핑할 수는 방법입니다. 이 msdn 문서에서 DBContext 및 DBSet에 대 한 자세한 정보를 찾을 수 있습니다: [링크](https://msdn.microsoft.com/library/system.data.entity.dbcontext(v=vs.103).aspx)
 
 <a id="Ex2Task4"></a>
 
@@ -431,39 +392,27 @@ Code First 접근 방식은 일반적으로 프레임 워크와 연결 되어 �
 
     (코드 조각- *모델 데이터 액세스 및-e x 1 storeDB*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample13.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample13.cs)]
 2. **MusicStoreEntities** 클래스는 데이터베이스의 각 테이블에 대 한 컬렉션 속성을 노출 합니다. 업데이트 **찾아보기** 모든 장르를 가져오려는 작업 메서드는 **앨범**합니다.
 
     (코드 조각- *모델 및 데이터 액세스-e x 2 저장소 찾아보기*)
 
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample14.cs)]
 
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample14.cs)]
-
-> [!NOTE]
-> You are using a capability of .NET called **LINQ** (language-integrated query) to write strongly-typed query expressions against these collections - which will execute code against the database and return objects that you can program against.
-> 
-> For more information about LINQ, please visit the [msdn site](https://msdn.microsoft.com/library/bb397926(v=vs.110).aspx).
-~~~
+    > [!NOTE]
+    > .NET 호출의 기능을 사용 하는 **LINQ** 프로그래밍할 수 있습니다 (통합 언어 쿼리)-이 데이터베이스에 대해 코드를 실행 하 고 반환 하는 이러한 컬렉션에 대 한 강력한 형식의 쿼리 식을 작성 하 개체 합니다.
+    > 
+    > LINQ에 대 한 자세한 내용은 참조 하십시오는 [msdn 사이트](https://msdn.microsoft.com/library/bb397926(v=vs.110).aspx)합니다.
 3. 업데이트 **인덱스** 동작 메서드를 모든 장르를 검색 합니다.
 
     (코드 조각- *모델 및 데이터 액세스-e x 2 저장소 인덱스*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample15.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample15.cs)]
 4. 업데이트 **인덱스** 동작 메서드의 모든 장르를 검색 하 고 목록에 컬렉션을 변환 합니다.
 
     (코드 조각- *모델 및 데이터 액세스-e x 2 저장소 GenreMenu*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample16.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample16.cs)]
 
 <a id="Ex2Task5"></a>
 
@@ -494,7 +443,6 @@ Code First 접근 방식은 일반적으로 프레임 워크와 연결 되어 �
 > [!NOTE]
 > 쿼리 결과 모양 지정에 자세한 내용은 다음을 방문 [msdn 문서](https://msdn.microsoft.com/library/bb896272&amp;#040;v=vs.100&amp;#041;.aspx)합니다.
 
-
 <a id="Ex3Task1"></a>
 
 <a id="Task_1_-_Modifying_StoreController_to_Retrieve_Albums_from_Database"></a>
@@ -515,17 +463,14 @@ Code First 접근 방식은 일반적으로 프레임 워크와 연결 되어 �
 
     (코드 조각- *모델 및 데이터 액세스-Ex3 StoreController BrowseMethod*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample17.cs)]
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample17.cs)]
 
 > [!NOTE]
-> To populate a collection of the entity, you need to use the **Include** method to specify you want to retrieve the albums too. You can use the .**Single()** extension in LINQ because in this case only one genre is expected for an album. The **Single()** method takes a Lambda expression as a parameter, which in this case specifies a single Genre object such that its name matches the value defined.
+> 엔터티 컬렉션을 채우려면 사용 해야는 **Include** 너무 앨범을 검색 하려면를 지정 하는 메서드. 사용할 수는 있습니다. **Single()** linq에서 확장 때문이 경우 하나의 장르 앨범에 대 한 합니다. **Single()** 메서드는이 경우 이름이 정의 된 값과 일치 되도록 단일 장르 개체를 지정 하는 매개 변수로 람다 식을 사용 합니다.
 > 
-> You will take advantage of a feature that allows you to indicate other related entities you want loaded as well when the Genre object is retrieved. This feature is called **Query Result Shaping**, and enables you to reduce the number of times needed to access the database to retrieve information. In this scenario, you will want to pre-fetch the Albums for the Genre you retrieve.
+> 장르 개체를 검색할 때도 로드를 원하는 다른 관련된 엔터티를 나타낼 수 있도록 하는 기능을 걸립니다. 라는이 기능은 **쿼리 결과 셰이핑**, 정보를 검색할 데이터베이스에 액세스 하는 데 필요한 시간 수를 줄일 수 있습니다. 이 시나리오에서는 검색할 장르에 대 한 앨범을 프리페치 하도록 합니다.
 > 
-> The query includes **Genres.Include(&quot;Albums&quot;)** to indicate that you want related albums as well. This will result in a more efficient application, since it will retrieve both Genre and Album data in a single database request.
-~~~
+> 쿼리에 포함 된 **Genres.Include (&quot;앨범&quot;)** 관련된 앨범도 지정할 수 있습니다. 이 값은 단일 데이터베이스 요청에서 Genre 및 앨범 모두 데이터를 검색 하므로 보다 효율적인 응용 프로그램에서 발생 합니다.
 
 <a id="Ex3Task2"></a>
 
@@ -553,10 +498,7 @@ Code First 접근 방식은 일반적으로 프레임 워크와 연결 되어 �
 
     (코드 조각- *모델 및 데이터 액세스-Ex3 StoreController DetailsMethod*)
 
-
-~~~
-[!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample18.cs)]
-~~~
+    [!code-csharp[Main](aspnet-mvc-4-models-and-data-access/samples/sample18.cs)]
 
 <a id="Ex3Task4"></a>
 
@@ -574,7 +516,6 @@ Code First 접근 방식은 일반적으로 프레임 워크와 연결 되어 �
 
 > [!NOTE]
 > 다음 Windows Azure 웹 사이트에이 응용 프로그램을 배포할 수는 또한 [부록 b: 게시 웹 배포를 사용 하 여 ASP.NET MVC 4 응용 프로그램](#AppendixB)합니다.
-
 
 * * *
 
