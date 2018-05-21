@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/claims
-ms.openlocfilehash: da308b67be046395bb1baa0f272e767cccbc99c8
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 2464f8cac720dcf5de02f2679e9450e8b77de3ee
+ms.sourcegitcommit: 24c32648ab0c6f0be15333d7c23c1bf680858c43
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/20/2018
 ---
 # <a name="claims-based-authorization-in-aspnet-core"></a>ASP.NET Core에서 클레임 기반 권한 부여
 
@@ -100,6 +100,10 @@ public void ConfigureServices(IServiceCollection services)
     });
 }
 ```
+
+### <a name="add-a-generic-claim-check"></a>일반 클레임 검사를 추가 합니다.
+
+사용 하거나 경우에 단일 값이 아닌 클레임 값 변환, [RequireAssertion](/dotnet/api/microsoft.aspnetcore.authorization.authorizationpolicybuilder.requireassertion)합니다. 자세한 내용은 참조 [func는 정책을 처리 하는 데 사용 하 여](xref:security/authorization/policies#using-a-func-to-fulfill-a-policy)합니다.
 
 ## <a name="multiple-policy-evaluation"></a>다중 정책 평가
 
