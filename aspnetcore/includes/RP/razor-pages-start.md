@@ -13,7 +13,7 @@
 | wwwroot | 정적 파일을 포함합니다. [고정 파일](xref:fundamentals/static-files)을 참조하세요. |
 | 인쇄할 페이지 | [Razor 페이지](xref:mvc/razor-pages/index)에 대한 폴더입니다. | 
 | *appsettings.json* | [구성](xref:fundamentals/configuration/index) |
-| *Program.cs* | ASP.NET Core 앱을 [호스트](xref:fundamentals/hosting)합니다.|
+| *Program.cs* | ASP.NET Core 앱을 [호스트](xref:fundamentals/host/index)합니다.|
 | *Startup.cs* | 서비스 및 요청 파이프라인을 구성합니다. [시작](xref:fundamentals/startup)을 참조하세요.|
 
 ### <a name="the-pages-folder"></a>Pages 폴더

@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/9-working-with-images
-title: "ASP.NET 웹 페이지 (Razor) 사이트에 이미지 작업 | Microsoft Docs"
+title: ASP.NET 웹 페이지 (Razor) 사이트에 이미지 작업 | Microsoft Docs
 author: tfitzmac
-description: "이 장에서 추가, 표시 및 이미지를 조작 하는 방법을 보여줍니다. (크기 조정, 대칭 이동, 및 워터 마크 추가할) 웹 사이트에 있습니다."
+description: 이 장에서 추가, 표시 및 이미지를 조작 하는 방법을 보여줍니다. (크기 조정, 대칭 이동, 및 워터 마크 추가할) 웹 사이트에 있습니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2014
@@ -58,7 +58,7 @@ HTML을 사용 하 여 이미지는 사이트에서 이미 사용할 수 있는 
 
 [!code-html[Main](9-working-with-images/samples/sample1.html)]
 
-이미지를 동적으로 표시 하려면 필요 하지만, 경우에 따라 &#8212; 즉, 어떤 표시할 이미지를 페이지 될 때까지 실행에 대해 모릅니다.
+이미지를 동적으로 표시 하려면 필요 하지만, 경우에 따라 & #8212; 즉, 어떤 표시할 이미지를 페이지 될 때까지 실행에 대해 모릅니다.
 
 이 섹션의 절차에는 사용자가 이미지 이름 목록에서 이미지 파일 이름을 지정 하는 위치에서 바로 이미지를 표시 하는 방법을 보여 줍니다. 드롭 다운 목록에서 이미지의 이름을 선택 하 고 페이지를 전송 하는 경우 선택한 이미지가 표시 됩니다.
 
@@ -109,7 +109,7 @@ HTML을 사용 하 여 이미지는 사이트에서 이미 사용할 수 있는 
 
     *C:\Users\Joe\Pictures\SamplePhoto1.jpg*
 
-    그러나 해당 경로 정보가 되지 않도록 하려면 &#8212; 려는 실제 파일 이름 (*SamplePhoto1.jpg*). 사용 하 여 경로에서 파일만 제거할 수 있습니다는 `Path.GetFileName` 다음과 같이 메서드:
+    그러나 해당 경로 정보가 되지 않도록 하려면 & #8212; 려는 실제 파일 이름 (*SamplePhoto1.jpg*). 사용 하 여 경로에서 파일만 제거할 수 있습니다는 `Path.GetFileName` 다음과 같이 메서드:
 
     [!code-csharp[Main](9-working-with-images/samples/sample4.cs)]
 

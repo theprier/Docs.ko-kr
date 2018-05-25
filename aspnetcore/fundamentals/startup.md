@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/startup
-ms.openlocfilehash: a61f78b2d0e5c6c171a26690fcce256462a82508
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 58ced0ae11f462bc309526b7db7bda7897c33009
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="application-startup-in-aspnet-core"></a>ASP.NET Core에서 응용 프로그램 시작
 
@@ -46,7 +46,7 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 
 `IHostingEnvironment` 삽입의 대안은 규칙 기반 접근 방식을 사용하는 것입니다. 앱은 다양한 환경(예: `StartupDevelopment`)에 대한 별도의 `Startup` 클래스를 정의할 수 있으며 적절한 시작 클래스는 런타임에 선택됩니다. 해당 이름 접미사가 현재 환경과 일치하는 클래스에 우선 순위가 부여됩니다. 앱이 개발 환경에서 실행되고 `Startup` 클래스 및 `StartupDevelopment` 클래스 모두를 포함하는 경우 `StartupDevelopment` 클래스가 사용됩니다. 자세한 내용은 [여러 환경 사용](xref:fundamentals/environments#startup-conventions)를 참조하세요.
 
-`WebHostBuilder`에 대한 자세한 내용은 [호스팅](xref:fundamentals/hosting) 항목을 참조하세요. 시작하는 동안 오류를 처리하는 방법은 [시작 예외 처리](xref:fundamentals/error-handling#startup-exception-handling)를 참조하세요.
+`WebHostBuilder`에 대한 자세한 내용은 [호스팅](xref:fundamentals/host/index) 항목을 참조하세요. 시작하는 동안 오류를 처리하는 방법은 [시작 예외 처리](xref:fundamentals/error-handling#startup-exception-handling)를 참조하세요.
 
 ## <a name="the-configureservices-method"></a>ConfigureServices 메서드
 
@@ -58,7 +58,7 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 
 서비스 컨테이너에 서비스를 추가하면 앱 내 및 `Configure` 메서드에서 사용할 수 있습니다. 서비스는 [종속성 주입](xref:fundamentals/dependency-injection)을 통해 또는 [IApplicationBuilder.ApplicationServices](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder.applicationservices)에서 확인됩니다.
 
-웹 호스트는 `Startup` 메서드가 호출되기 전에 일부 서비스를 구성할 수 있습니다. 세부 정보는 [호스팅](xref:fundamentals/hosting) 항목에서 제공됩니다.
+웹 호스트는 `Startup` 메서드가 호출되기 전에 일부 서비스를 구성할 수 있습니다. 세부 정보는 [ASP.NET Core의 호스트](xref:fundamentals/host/index) 항목에서 제공됩니다.
 
 대부분의 설치가 필요한 기능의 경우 [IServiceCollection](/dotnet/api/Microsoft.Extensions.DependencyInjection.IServiceCollection)에 `Add[Service]` 확장 메서드가 있습니다. 일반적인 웹앱은 Entity Framework, ID 및 MVC에 대한 서비스를 등록합니다.
 
@@ -164,7 +164,7 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 
 ## <a name="additional-resources"></a>추가 자료
 
-* [호스팅](xref:fundamentals/hosting)
+* [호스팅](xref:fundamentals/host/index)
 * [여러 환경 사용](xref:fundamentals/environments)
 * [미들웨어](xref:fundamentals/middleware/index)
 * [로깅](xref:fundamentals/logging/index)

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v3/odata-actions
-title: "ASP.NET Web API 2 OData 작업을 지 원하는 | Microsoft Docs"
+title: ASP.NET Web API 2 OData 작업을 지 원하는 | Microsoft Docs
 author: MikeWasson
-description: "Odata에서 작업은 엔터티에 대 한 CRUD 작업으로 쉽게 정의 되어 있지 않은 서버 쪽 동작을 추가 하는 방법입니다. 작업에 대 한 일부 사용: 구현 중..."
+description: 'Odata에서 작업은 엔터티에 대 한 CRUD 작업으로 쉽게 정의 되어 있지 않은 서버 쪽 동작을 추가 하는 방법입니다. 작업에 대 한 일부 사용: 구현 중...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/25/2014

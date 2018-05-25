@@ -230,7 +230,7 @@ Login 컨트롤이 시점에서 계속 사용 하 여 `Membership.ValidateUser` 
 
 ### <a name="determining-and-validating-the-supplied-credentials"></a>확인 하 고 제공된 된 자격 증명 유효성 검사
 
-Login 컨트롤을 사용 하 여 [ `UserName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.username.aspx) 및 [ `Password` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.password.aspx) 사용자가 입력 한 사용자 이름 및 암호 자격 증명을 확인 하려면. 추가 웹 컨트롤에 입력 된 값을 확인 하기 위해 (같은 `Email` 이전 단계에서 추가 하는 텍스트 상자)를 사용 하 여 *`LoginControlID`* `.FindControl`("*`controlID`*")를 가져올 프로그래밍에 대 한 참조는 서식 파일에서 웹 컨트롤 갖는 `ID` 속성이 *`controlID`*합니다. 예를 들어에 대 한 참조를 얻으려고는 `Email` 텍스트 상자 다음 코드를 사용 합니다.
+Login 컨트롤을 사용 하 여 [ `UserName` ](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.username.aspx) 및 [ `Password` 속성](https://msdn.microsoft.com/library/system.web.ui.webcontrols.login.password.aspx) 사용자가 입력 한 사용자 이름 및 암호 자격 증명을 확인 하려면. 추가 웹 컨트롤에 입력 된 값을 확인 하기 위해 (같은 `Email` 이전 단계에서 추가 하는 텍스트 상자)를 사용 하 여 *`LoginControlID`* `.FindControl`("*`controlID`*")를 가져올 프로그래밍에 대 한 참조는 서식 파일에서 웹 컨트롤 갖는 `ID` 속성이 *`controlID`* 합니다. 예를 들어에 대 한 참조를 얻으려고는 `Email` 텍스트 상자 다음 코드를 사용 합니다.
 
 `TextBox EmailTextBox = myLogin.FindControl("Email") as TextBox;`
 
@@ -310,7 +310,7 @@ Login 컨트롤 표준 로그인 사용자 인터페이스를 렌더링 하 고 
 
 ### <a name="about-the-author"></a>작성자 정보
 
-여러 ASP/ASP.NET 책의 작성자 및 4GuysFromRolla.com의 창립자 Scott Mitchell의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은  *[Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*합니다. Scott에 도달할 수 [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) 또는에서 그의 블로그 통해 [ http://ScottOnWriting.NET ](http://scottonwriting.net/)합니다.
+여러 ASP/ASP.NET 책의 작성자 및 4GuysFromRolla.com의 창립자 Scott Mitchell의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은  *[Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)* 합니다. Scott에 도달할 수 [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) 또는에서 그의 블로그 통해 [ http://ScottOnWriting.NET ](http://scottonwriting.net/)합니다.
 
 ### <a name="special-thanks-to"></a>특별히 감사
 

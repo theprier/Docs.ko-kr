@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/troubleshooting
-title: "SignalR 문제 해결 (SignalR 1.x) | Microsoft Docs"
+title: SignalR 문제 해결 (SignalR 1.x) | Microsoft Docs
 author: pfletcher
-description: "이 문서에서는 SignalR 응용 프로그램을 개발 하는 일반적인 문제를 설명 합니다."
+description: 이 문서에서는 SignalR 응용 프로그램을 개발 하는 일반적인 문제를 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/05/2013

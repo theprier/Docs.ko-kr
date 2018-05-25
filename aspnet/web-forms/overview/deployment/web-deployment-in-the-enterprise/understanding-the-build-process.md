@@ -210,7 +210,7 @@ MSBuild 항목 목록이 작성 하 여이 명령을 처리 **ProjectsToBuild**�
 [!code-xml[Main](understanding-the-build-process/samples/sample11.xml)]
 
 
-이 경우 **%(DbPublishPackages.DatabaseConnectionString)**, **%(DbPublishPackages.TargetDatabase)**, 및 **%(DbPublishPackages.FullPath)** 를 모두 참조 메타 데이터 값은 **DbPublishPackages** 항목 컬렉션입니다.  **\_Cmd** 속성은 사용 된 **Exec** 명령을 호출 하는 작업입니다.
+이 경우 **%(DbPublishPackages.DatabaseConnectionString)**, **%(DbPublishPackages.TargetDatabase)**, 및 **%(DbPublishPackages.FullPath)** 를 모두 참조 메타 데이터 값은 **DbPublishPackages** 항목 컬렉션입니다. **\_Cmd** 속성은 사용 된 **Exec** 명령을 호출 하는 작업입니다.
 
 
 [!code-xml[Main](understanding-the-build-process/samples/sample12.xml)]

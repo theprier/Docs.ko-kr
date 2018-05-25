@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/older-versions/self-host-a-web-api
-title: "자체 호스트 하는 ASP.NET Web API 1 (C#) | Microsoft Docs"
+title: 자체 호스트 하는 ASP.NET Web API 1 (C#) | Microsoft Docs
 author: MikeWasson
-description: "ASP.NET Web API IIS가 필요 하지 않습니다. 호스트 프로세스에 고유한 web API를 자체 호스트할 수 있습니다. 이 자습서에서는 applic 콘솔 내 웹 API를 호스트 하는 방법을 설명..."
+description: ASP.NET Web API IIS가 필요 하지 않습니다. 호스트 프로세스에 고유한 web API를 자체 호스트할 수 있습니다. 이 자습서에서는 applic 콘솔 내 웹 API를 호스트 하는 방법을 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/26/2012
@@ -37,7 +37,7 @@ ms.lasthandoff: 01/24/2018
 
 Visual Studio를 시작 하 고 선택 **새 프로젝트** 에서 **시작** 페이지. 또는에서 **파일** 메뉴 선택 **새로** 차례로 **프로젝트**합니다.
 
-에 **템플릿** 창 선택 **설치 된 템플릿** 확장는 **Visual C#** 노드. 아래 **Visual C#**선택, **Windows**합니다. 프로젝트 템플릿 목록에서 선택 **콘솔 응용 프로그램**합니다. 프로젝트 이름을 &quot;SelfHost&quot; 클릭 **확인**합니다.
+에 **템플릿** 창 선택 **설치 된 템플릿** 확장는 **Visual C#** 노드. 아래 **Visual C#** 선택, **Windows**합니다. 프로젝트 템플릿 목록에서 선택 **콘솔 응용 프로그램**합니다. 프로젝트 이름을 &quot;SelfHost&quot; 클릭 **확인**합니다.
 
 ![](self-host-a-web-api/_static/image1.png)
 

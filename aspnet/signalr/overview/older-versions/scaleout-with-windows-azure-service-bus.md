@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/scaleout-with-windows-azure-service-bus
-title: "Azure 서비스 버스에 SignalR 확장 (SignalR 1.x) | Microsoft Docs"
+title: Azure 서비스 버스에 SignalR 확장 (SignalR 1.x) | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/01/2013
@@ -72,7 +72,7 @@ ms.lasthandoff: 01/24/2018
 
 Visual Studio를 시작합니다. **파일** 메뉴를 클릭 하 여 **새 프로젝트**합니다.
 
-에 **새 프로젝트** 대화 상자에서 **Visual C#**합니다. 아래 **설치 된 템플릿**선택, **클라우드** 선택한 후 **Windows Azure 클라우드 서비스**합니다. 기본.NET Framework 4.5를 유지 합니다. ChatService 응용 프로그램 이름을 지정 하 고 클릭 **확인**합니다.
+에 **새 프로젝트** 대화 상자에서 **Visual C#** 합니다. 아래 **설치 된 템플릿**선택, **클라우드** 선택한 후 **Windows Azure 클라우드 서비스**합니다. 기본.NET Framework 4.5를 유지 합니다. ChatService 응용 프로그램 이름을 지정 하 고 클릭 **확인**합니다.
 
 ![](scaleout-with-windows-azure-service-bus/_static/image4.png)
 

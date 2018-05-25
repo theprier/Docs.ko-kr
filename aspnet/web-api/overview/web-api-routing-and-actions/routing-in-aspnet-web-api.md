@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/web-api-routing-and-actions/routing-in-aspnet-web-api
-title: "ASP.NET Web API의에서 라우팅 | Microsoft Docs"
+title: ASP.NET Web API의에서 라우팅 | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/11/2012

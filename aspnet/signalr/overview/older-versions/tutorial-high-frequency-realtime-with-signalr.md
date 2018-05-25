@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/tutorial-high-frequency-realtime-with-signalr
-title: "SignalR과 높은 주파수 실시간 1.x | Microsoft Docs"
+title: SignalR과 높은 주파수 실시간 1.x | Microsoft Docs
 author: pfletcher
-description: "이 자습서에는 ASP.NET SignalR을 사용 하 여 높은 주파수 메시징 기능을 제공 하는 웹 응용 프로그램을 만드는 방법을 보여 줍니다. 높은 주파수의 메시징 중..."
+description: 이 자습서에는 ASP.NET SignalR을 사용 하 여 높은 주파수 메시징 기능을 제공 하는 웹 응용 프로그램을 만드는 방법을 보여 줍니다. 높은 주파수의 메시징 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/16/2013

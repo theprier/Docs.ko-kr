@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs
-title: "실습 랩: 빌드 ASP.NET Web API 및 Angular.js 단일 페이지 응용 프로그램 (SPA) | Microsoft Docs"
+title: '실습 랩: 빌드 ASP.NET Web API 및 Angular.js 단일 페이지 응용 프로그램 (SPA) | Microsoft Docs'
 author: rick-anderson
-description: "기존 웹 응용 프로그램에서 클라이언트 (브라우저) 페이지를 요청 하 여 서버와의 통신을 시작 합니다. 서버는 다음 요청을 처리 중..."
+description: 기존 웹 응용 프로그램에서 클라이언트 (브라우저) 페이지를 요청 하 여 서버와의 통신을 시작 합니다. 서버는 다음 요청을 처리 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/30/2015
@@ -153,13 +153,13 @@ Web API 프레임 워크는 ASP.NET 스택에서의 일부 이며은 쉽게 일�
 
     > [!NOTE]
     > **Authorize** 를 사용자가 인증 하는 경우 확인을 필터링 합니다. 사용자 인증 되지 않은 경우 다음 작업을 호출 하지 않고 HTTP 상태 코드 401 (권한 없음)를 반환 합니다. 컨트롤러 수준에서 전역적으로 또는 개별 작업 수준에서 필터를 적용할 수 있습니다.
-9. 이제 브랜딩 하 고 웹 페이지의 레이아웃을 사용자 지정할는 있습니다. 이 작업을 수행 하려면 엽니다는  **\_Layout.cshtml** 내 파일의 **보기 | 공유** 폴더의 내용을 업데이트 하 고는  **&lt;제목&gt;**  대체 하 여 요소 *내 ASP.NET 응용 프로그램* 와 *들은 퀴즈* .
+9. 이제 브랜딩 하 고 웹 페이지의 레이아웃을 사용자 지정할는 있습니다. 이 작업을 수행 하려면 엽니다는  **\_Layout.cshtml** 내 파일의 **보기 | 공유** 폴더의 내용을 업데이트 하 고는 **&lt;제목&gt;** 대체 하 여 요소 *내 ASP.NET 응용 프로그램* 와 *들은 퀴즈* .
 
     [!code-cshtml[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample4.cshtml)]
 10. 같은 파일에서 제거 하 여 탐색 모음을 업데이트는 *에 대 한* 및 *연락처* 링크 및 이름 바꾸기는 *홈* 연결할 *재생*합니다. 이름도 변경는 *응용 프로그램 이름* 연결할 *들은 퀴즈*합니다. HTML 탐색 모음에 다음 코드와 같습니다.
 
     [!code-cshtml[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample5.cshtml)]
-11. 레이아웃 페이지의 바닥글을 대체 하 여 업데이트 *내 ASP.NET 응용 프로그램* 와 *들은 퀴즈*합니다. 이 위해의 내용을 대체는  **&lt;바닥글&gt;**  요소 강조 표시 된 다음 코드를 사용 합니다.
+11. 레이아웃 페이지의 바닥글을 대체 하 여 업데이트 *내 ASP.NET 응용 프로그램* 와 *들은 퀴즈*합니다. 이 위해의 내용을 대체는 **&lt;바닥글&gt;** 요소 강조 표시 된 다음 코드를 사용 합니다.
 
     [!code-html[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample6.html)]
 
@@ -421,7 +421,7 @@ Visual Studio의 패키지 관리자 콘솔에서 AngularJS를 설치 하 여 �
 5. 찾을 **대칭 이동 하는 동안 창 뒷면 숨깁니다** 메모 합니다. 설정 하 여 뷰어에서 직면 하는 경우 해당 의견 아래의 스타일 숨깁니다 얼굴 백 측은 **뒷면 가시성** CSS 속성을 *숨겨진*합니다.
 
     [!code-css[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample23.css)]
-6. 열기는 **BundleConfig.cs** 내 파일의 **앱\_시작** 폴더에 대 한 참조를 추가 하 고는 **Flip.css** 파일에  **&quot;~/Content/css&quot;**  스타일 번들
+6. 열기는 **BundleConfig.cs** 내 파일의 **앱\_시작** 폴더에 대 한 참조를 추가 하 고는 **Flip.css** 파일에 **&quot;~/Content/css&quot;** 스타일 번들
 
     [!code-csharp[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample24.cs)]
 7. 키를 눌러 **F5** 솔루션 및 자격 증명을 사용 하 여 로그를 실행 합니다.

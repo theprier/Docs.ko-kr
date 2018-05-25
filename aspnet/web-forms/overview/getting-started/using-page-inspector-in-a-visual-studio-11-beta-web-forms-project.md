@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/using-page-inspector-in-a-visual-studio-11-beta-web-forms-project
-title: "Visual Studio 2012에 ASP.NET Web forms 페이지 검사기를 사용 하 여 | Microsoft Docs"
+title: Visual Studio 2012에 ASP.NET Web forms 페이지 검사기를 사용 하 여 | Microsoft Docs
 author: rick-anderson
-description: "Visual Studio 2012 용 페이지 검사기는 통합 된 브라우저와 웹 개발 도구입니다. 통합된 브라우저 및 페이지 검사기에서 모든 요소를 선택 합니다..."
+description: Visual Studio 2012 용 페이지 검사기는 통합 된 브라우저와 웹 개발 도구입니다. 통합된 브라우저 및 페이지 검사기에서 모든 요소를 선택 합니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/15/2012
@@ -63,7 +63,7 @@ Tim Ammann으로
 
 ## <a name="create-a-web-application"></a>웹 응용 프로그램 만들기
 
-첫째, 페이지 검사기를 사용 하는 웹 응용 프로그램에 만들어집니다. Visual Studio에서 선택 **파일** &gt; **새 프로젝트**합니다. 확장 왼쪽의 **Visual C#**선택, **웹**를 선택한 후 **ASP.NET Web Forms 응용 프로그램**합니다.
+첫째, 페이지 검사기를 사용 하는 웹 응용 프로그램에 만들어집니다. Visual Studio에서 선택 **파일** &gt; **새 프로젝트**합니다. 확장 왼쪽의 **Visual C#** 선택, **웹**를 선택한 후 **ASP.NET Web Forms 응용 프로그램**합니다.
 
 ![새 Web Forms 응용 프로그램](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image1.png)
 
@@ -249,7 +249,7 @@ Visual Studio 2012에서 CSS 편집기에는 쉽게 선택 하 고 색을 삽입
 
 ![Intellisense 값을 필터링 하지만](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image24.png)
 
-이제 콜론을 입력 합니다. 이렇게 하면 전체 배경색 속성 이름이 삽입 됩니다. 형식  **#**  또는 **rgb (**, 색 선택 표시줄이 나타납니다.
+이제 콜론을 입력 합니다. 이렇게 하면 전체 배경색 속성 이름이 삽입 됩니다. 형식 **#** 또는 **rgb (**, 색 선택 표시줄이 나타납니다.
 
 ![CSS 색 선택 막대](using-page-inspector-in-a-visual-studio-11-beta-web-forms-project/_static/image25.png)
 

@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/app-state
-ms.openlocfilehash: 1b41690fce707314f6cd0e891e4180481a2f632b
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: 887aefdeaa45957f7b95bfe8df342eb34d267e3a
+ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/18/2018
 ---
 # <a name="session-and-application-state-in-aspnet-core"></a>ASP.NET Core에서 세션 및 응용 프로그램 상태
 
@@ -45,7 +45,7 @@ ASP.NET Core MVC는 [컨트롤러](/dotnet/api/microsoft.aspnetcore.mvc.controll
 
 ASP.NET Core 2.0 이상에서 쿠키 기반 TempData 공급자는 TempData를 쿠키에 저장하는 데 기본적으로 사용됩니다.
 
-쿠키 데이터는 [Base64UrlTextEncoder](/dotnet/api/microsoft.aspnetcore.webutilities.base64urltextencoder?view=aspnetcore-2.0)로 인코딩됩니다. 쿠키는 암호화되고 청크되므로 ASP.NET Core 1.x에서 확인한 단일 쿠키 크기 제한은 적용되지 않습니다. 암호화된 데이터를 압축하는 것은 [범죄](https://wikipedia.org/wiki/CRIME_(security_exploit)) 및 [위반](https://wikipedia.org/wiki/BREACH_(security_exploit)) 공격과 같은 보안 문제를 일으킬 수 있으므로 쿠키 데이터는 압축되지 않습니다. 쿠키 기반 TempData 공급자에 대한 자세한 내용은 [CookieTempDataProvider](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.ViewFeatures/ViewFeatures/CookieTempDataProvider.cs)를 참조하세요.
+쿠키 데이터는 [IDataProtector](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotector)를 사용하여 암호화되고, [Base64UrlTextEncoder](/dotnet/api/microsoft.aspnetcore.webutilities.base64urltextencoder)로 인코딩된 후 청크 분할됩니다. 쿠키가 청크 분할되므로 ASP.NET Core 1.x에서 확인한 단일 쿠키 크기 제한은 적용되지 않습니다. 암호화된 데이터를 압축하는 것은 [범죄](https://wikipedia.org/wiki/CRIME_(security_exploit)) 및 [위반](https://wikipedia.org/wiki/BREACH_(security_exploit)) 공격과 같은 보안 문제를 일으킬 수 있으므로 쿠키 데이터는 압축되지 않습니다. 쿠키 기반 TempData 공급자에 대한 자세한 내용은 [CookieTempDataProvider](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.ViewFeatures/ViewFeatures/CookieTempDataProvider.cs)를 참조하세요.
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 

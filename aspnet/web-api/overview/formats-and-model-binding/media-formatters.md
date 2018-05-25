@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/formats-and-model-binding/media-formatters
-title: "ASP.NET Web API 2의에서 미디어 포맷터 | Microsoft Docs"
+title: ASP.NET Web API 2의에서 미디어 포맷터 | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/20/2014
@@ -12,24 +12,24 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/formats-and-model-binding/media-formatters
 msc.type: authoredcontent
-ms.openlocfilehash: 9103574597df126a22e21a2f51815f608e46f47f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 1cb1c7e0f832a0a0160276fbd41facc017e2ae3e
+ms.sourcegitcommit: 50d40c83fa641d283c097f986dde5341ebe1b44c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 05/22/2018
 ---
 <a name="media-formatters-in-aspnet-web-api-2"></a>ASP.NET Web API 2의에서 미디어 포맷터
 ====================
 으로 [Mike Wasson](https://github.com/MikeWasson)
 
-이 자습서에서는 ASP.NET Web API에서 추가 미디어 형식을 방법을 지원합니다.
+이 자습서에는 ASP.NET Web API에서 추가 미디어 형식을 지 원하는 방법을 보여 줍니다.
 
 ## <a name="internet-media-types"></a>인터넷 미디어 유형
 
-데이터의 형식을 식별 하는 MIME 형식이 라고도 하는 미디어 유형입니다. HTTP, 미디어 유형에 대해 메시지 본문의 형식은 설명합니다. 미디어 유형은 두 문자열, 형식 및 하위 구성 됩니다. 예:
+데이터의 형식을 식별 하는 MIME 형식이 라고도 하는 미디어 유형입니다. HTTP, 미디어 유형에 대해 메시지 본문의 형식은 설명합니다. 미디어 유형은 두 문자열, 형식 및 하위 구성 됩니다. 예를 들어:
 
-- text/html
-- image/png
+- html 텍스트 /
+- 이미지/png
 - application/json
 
 HTTP 메시지에 엔터티 본문이 포함 되어 있으면, 콘텐츠 형식 헤더는 메시지 본문의 형식을 지정 합니다. 이렇게 하면 수신자는 메시지 본문의 내용을 구문 분석 하는 방법입니다.
@@ -38,7 +38,7 @@ HTTP 메시지에 엔터티 본문이 포함 되어 있으면, 콘텐츠 형식 
 
 [!code-console[Main](media-formatters/samples/sample1.cmd)]
 
-클라이언트 요청 메시지를 보내면 Accept 헤더를 포함할 수 있습니다. Accept 헤더는 미디어 유형의 클라이언트 서버는 서버에서 원하는 지시 합니다. 예:
+클라이언트 요청 메시지를 보내면 Accept 헤더를 포함할 수 있습니다. Accept 헤더는 미디어 유형의 클라이언트 서버는 서버에서 원하는 지시 합니다. 예를 들어:
 
 [!code-console[Main](media-formatters/samples/sample2.cmd)]
 

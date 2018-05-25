@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-routing-conventions
-title: "라우팅 규칙에 ASP.NET Web API 2 Odata | Microsoft Docs"
+title: 라우팅 규칙에 ASP.NET Web API 2 Odata | Microsoft Docs
 author: MikeWasson
-description: "이 문서에서는 OData 끝점에 대 한 Web API를 사용 하는 라우팅 규칙을 설명 합니다."
+description: 이 문서에서는 OData 끝점에 대 한 Web API를 사용 하는 라우팅 규칙을 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/31/2013
@@ -129,7 +129,7 @@ Web API에서 OData 라우팅 규칙을 설명 하기 전에 OData Uri를 이해
 - 탐색 속성에는 키를 포함 하는 경로에 동작에 매개 변수 이름 있어야 *relatedKey*합니다.
 - 데코 레이트 *키* 및 *relatedKey* 와 매개 변수는 **[FromODataUri]** 매개 변수입니다.
 - POST 및 PUT 요청은 엔터티 형식의 매개 변수를 사용 합니다.
-- 형식의 매개 변수를 사용 하는 PATCH 요청 **델타&lt;T&gt;**여기서 *T* 엔터티 형식입니다.
+- 형식의 매개 변수를 사용 하는 PATCH 요청 **델타&lt;T&gt;** 여기서 *T* 엔터티 형식입니다.
 
 참조용으로 모든 기본 OData 라우팅 규칙에 대 한 메서드 서명을 보여 주는 예제는 다음과 같습니다.
 
@@ -147,7 +147,7 @@ Web API에서 OData 라우팅 규칙을 설명 하기 전에 OData Uri를 이해
 
 두 방법에 대 한 규칙에 따라 해당 요청에 적용 되지 않는 경우 메서드가 해야 null을 반환 합니다.
 
-**ODataPath** 매개 변수 구문 분석 된 OData 리소스 경로 나타냅니다. 목록이  **[ODataPathSegment](https://msdn.microsoft.com/library/system.web.http.odata.routing.odatapathsegment.aspx)**  리소스 경로의 각 세그먼트에 대 한 인스턴스. **ODataPathSegment** ; 추상 클래스에서 파생 된 클래스에 의해 표시 되는 각 세그먼트 형식 **ODataPathSegment**합니다.
+**ODataPath** 매개 변수 구문 분석 된 OData 리소스 경로 나타냅니다. 목록이 **[ODataPathSegment](https://msdn.microsoft.com/library/system.web.http.odata.routing.odatapathsegment.aspx)** 리소스 경로의 각 세그먼트에 대 한 인스턴스. **ODataPathSegment** ; 추상 클래스에서 파생 된 클래스에 의해 표시 되는 각 세그먼트 형식 **ODataPathSegment**합니다.
 
 **ODataPath.TemplatePath** 속성은 연결을 나타내는 문자열 경로 세그먼트의 모든 합니다. 예를 들어, URI가 `/Products(1)/Supplier`, 경로 서식 파일은 &quot;~/entityset/key/navigation&quot;합니다. 공지 세그먼트 URI 세그먼트에 직접 해당 하지 않습니다. 엔터티 키 (1)는 자체로 표시 됩니다는 예를 들어 **ODataPathSegment**합니다.
 
@@ -169,7 +169,7 @@ Web API에서 OData 라우팅 규칙을 설명 하기 전에 OData Uri를 이해
 
 1. 파생 되는 I **EntitySetRoutingConvention**때문에 **SelectController** 해당 클래스의 메서드는이 새 라우팅 규칙에 적합 합니다. 즉, 다시 구현 하지 않아도 **SelectController**합니다.
 2. 규칙에 따라 GET 요청에만 적용 되 고 적용 된 경로 템플릿을 경우에 &quot;~/entityset/key/navigation/key&quot;합니다.
-3. 작업 이름이 &quot;{EntityType을 (를) 가져올&quot;여기서 *{EntityType}* 탐색 컬렉션의 형식입니다. 예를 들어 &quot;GetSupplier&quot;합니다. 원하는 모든 명명 규칙 &#8212; 사용할 수 있습니다. 해야 사용자가 컨트롤러 작업이 일치 합니다.
+3. 작업 이름이 &quot;{EntityType을 (를) 가져올&quot;여기서 *{EntityType}* 탐색 컬렉션의 형식입니다. 예를 들어 &quot;GetSupplier&quot;합니다. 원하는 모든 명명 규칙 & #8212; 사용할 수 있습니다. 해야 사용자가 컨트롤러 작업이 일치 합니다.
 4. 두 매개 변수를 수행 하는 동작 *키* 및 *relatedKey*합니다. (목록이 몇 가지 미리 정의 된 매개 변수 이름에 대 한 참조 [ODataRouteConstants](https://msdn.microsoft.com/library/system.web.http.odata.routing.odatarouteconstants.aspx).)
 
 다음 단계를 라우팅 규칙의 목록에 새 규칙을 추가 합니다. 이 상황이 다음 코드에 나와 있는 것 처럼 구성 하는 동안 발생 합니다.

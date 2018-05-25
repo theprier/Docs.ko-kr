@@ -12,11 +12,11 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-remote-agent
 msc.type: authoredcontent
-ms.openlocfilehash: 8cad6ee45a8331513c72c4079f300fbb06c1ed77
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 9f3a55c5e68e61a2d7907c765209d3786e05a485
+ms.sourcegitcommit: 1b94305cc79843e2b0866dae811dab61c21980ad
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/24/2018
 ---
 <a name="configuring-a-web-server-for-web-deploy-publishing-remote-agent"></a>웹 배포 게시 (원격 에이전트)에 대 한 웹 서버를 구성 합니다.
 ====================
@@ -217,7 +217,7 @@ IIS를 설치 하기 전에.NET Framework 4.0을 설치한 경우 실행 해야 
 
 기본적으로 원격 에이전트 서비스는이 URL에서 TCP 포트 80에서 수신:
 
-http:// [<em>서버 이름</em>] / MSDEPLOYAGENTSERVICE
+<http://servername.com/MSDEPLOYAGENTSERVICE>
 
 대부분의 경우에서 웹 서버는 일반적으로 포트 80에서 HTTP 요청에 대 한 수신 대기 하기 때문에 원격 에이전트 서비스에 대 한 모든 추가 방화벽 규칙을 구성할 필요가 없습니다. 비표준 포트에서 수신 하도록 설치를 사용자 지정한 경우에 필요에 따라 방화벽 예외를 구성 해야 합니다.
 

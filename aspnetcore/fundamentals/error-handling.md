@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/error-handling
-ms.openlocfilehash: 5443cbeb1ef95c579e5fc12b625babbfa27c7ec2
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 3ff3a17d14d9ed7c438399191ffe3cf93d555d49
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="handle-errors-in-aspnet-core"></a>ASP.NET Core에서 오류 처리
 
@@ -26,14 +26,14 @@ ms.lasthandoff: 03/22/2018
 
 ## <a name="the-developer-exception-page"></a>개발자 예외 페이지
 
-예외에 대한 자세한 정보가 있는 페이지를 표시하도록 응용 프로그램을 구성하려면 `Microsoft.AspNetCore.Diagnostics` NuGet 패키지를 설치하고 줄을 [시작 클래스에서 메서드를 구성](startup.md)에 추가합니다.
+예외에 대한 자세한 정보가 있는 페이지를 표시하도록 응용 프로그램을 구성하려면 `Microsoft.AspNetCore.Diagnostics` NuGet 패키지를 설치하고 줄을 [시작 클래스에서 메서드를 구성](xref:fundamentals/startup)에 추가합니다.
 
 [!code-csharp[](error-handling/sample/Startup.cs?name=snippet_DevExceptionPage&highlight=7)]
 
 `app.UseMvc`와 같은 예외를 catch하려는 모든 미들웨어 앞에 `UseDeveloperExceptionPage`를 배치합니다.
 
 >[!WARNING]
-> **앱이 개발 환경에서 실행 중인 경우에만** 개발자 예외 페이지를 사용하도록 설정합니다. 프로덕션 환경에서 앱을 실행할 때 자세한 예외 정보를 공개적으로 공유하지 않을 수도 있습니다. [구성 환경에 대해 자세히 알아보세요](environments.md).
+> **앱이 개발 환경에서 실행 중인 경우에만** 개발자 예외 페이지를 사용하도록 설정합니다. 프로덕션 환경에서 앱을 실행할 때 자세한 예외 정보를 공개적으로 공유하지 않을 수도 있습니다. [구성 환경에 대해 자세히 알아보세요](xref:fundamentals/environments).
 
 개발자 예외 페이지를 보려면 샘플 응용 프로그램을 `Development`로 설정된 환경으로 실행하고, `?throw=true`를 앱의 기본 URL에 추가합니다. 페이지에는 예외 및 요청에 대한 정보가 있는 여러 탭이 포함되어 있습니다. 첫 번째 탭에는 스택 추적이 포함됩니다. 
 
@@ -114,11 +114,11 @@ if (statusCodePagesFeature != null)
 
 ## <a name="server-exception-handling"></a>서버 예외 처리
 
-앱에서 논리를 처리하는 예외뿐 아니라 앱을 호스팅하는 [서버](servers/index.md)는 몇 가지 예외 처리를 수행합니다. 헤더를 보내기 전에 서버가 예외를 catch하는 경우 서버는 본문이 없는 *500 내부 서버 오류* 응답을 보냅니다. 헤더를 보낸 후에 서버가 예외를 catch하는 경우 서버는 연결을 닫습니다. 앱으로 처리되지 않는 요청은 서버에서 처리됩니다. 발생하는 모든 예외는 서버의 예외 처리에 의해 처리됩니다. 구성된 모든 사용자 지정 오류 페이지 또는 예외 처리 미들웨어 또는 필터는 이 동작에 영향을 미치지 않습니다.
+앱에서 논리를 처리하는 예외뿐 아니라 앱을 호스팅하는 [서버](xref:fundamentals/servers/index)는 몇 가지 예외 처리를 수행합니다. 헤더를 보내기 전에 서버가 예외를 catch하는 경우 서버는 본문이 없는 *500 내부 서버 오류* 응답을 보냅니다. 헤더를 보낸 후에 서버가 예외를 catch하는 경우 서버는 연결을 닫습니다. 앱으로 처리되지 않는 요청은 서버에서 처리됩니다. 발생하는 모든 예외는 서버의 예외 처리에 의해 처리됩니다. 구성된 모든 사용자 지정 오류 페이지 또는 예외 처리 미들웨어 또는 필터는 이 동작에 영향을 미치지 않습니다.
 
 ## <a name="startup-exception-handling"></a>시작 예외 처리
 
-호스팅 계층만 앱 시작 시 발생하는 예외를 처리할 수 있습니다. `captureStartupErrors` 및 `detailedErrors` 키를 사용하여 [시작 시 오류에 대해 응답의 호스트가 동작하는 방법을 구성](hosting.md#detailed-errors)할 수 있습니다.
+호스팅 계층만 앱 시작 시 발생하는 예외를 처리할 수 있습니다. [웹 호스트](xref:fundamentals/host/web-host)를 사용하면 `captureStartupErrors` 및 `detailedErrors` 키로 [시작 시 오류에 대해 호스트가 응답하는 방법을 구성](xref:fundamentals/host/web-host#detailed-errors)할 수 있습니다.
 
 호스팅은 호스트 주소/포트 바인딩 후에 오류가 발생하는 경우 캡처된 시작 오류에 대한 오류 페이지만 표시할 수 있습니다. 어떤 이유로 바인딩이 실패한 경우 호스팅 계층이 심각한 예외를 기록하고, dotnet 프로세스가 충돌하며, 앱이 [Kestrel](xref:fundamentals/servers/kestrel) 서버에서 실행 중일 때 오류 페이지가 표시되지 않습니다.
 
@@ -130,16 +130,16 @@ if (statusCodePagesFeature != null)
 
 ### <a name="exception-filters"></a>예외 필터
 
-전역으로 또는 MVC 앱에서 컨트롤러당 또는 작업당 기준으로 예외 필터를 구성할 수 있습니다. 이러한 필터는 컨트롤러 작업 또는 다른 필터를 실행하는 동안 발생하는 처리되지 않은 예외를 처리하며, 그 외에는 호출되지 않습니다. [필터](../mvc/controllers/filters.md)에서 예외 필터에 대해 자세히 알아보세요.
+전역으로 또는 MVC 앱에서 컨트롤러당 또는 작업당 기준으로 예외 필터를 구성할 수 있습니다. 이러한 필터는 컨트롤러 작업 또는 다른 필터를 실행하는 동안 발생하는 처리되지 않은 예외를 처리하며, 그 외에는 호출되지 않습니다. [필터](xref:mvc/controllers/filters)에서 예외 필터에 대해 자세히 알아보세요.
 
 >[!TIP]
 > 예외 필터는 MVC 작업 내에서 발생하는 예외를 트래핑하는 데 유용하지만 오류 처리 미들웨어만큼 유연하지는 않습니다. 일반적인 경우에는 미들웨어를 선호하고, 선택한 MVC 작업에 따라 오류 처리를 *다르게* 수행해야 하는 경우에만 필터를 사용합니다.
 
 ### <a name="handling-model-state-errors"></a>모델 상태 오류 처리
 
-[모델 유효성 검사](../mvc/models/validation.md)는 각 컨트롤러 작업을 호출하기 전에 발생하며, `ModelState.IsValid`를 검사하고 적절하게 반응하는 것은 작업 메서드의 책임입니다.
+[모델 유효성 검사](xref:mvc/models/validation)는 각 컨트롤러 작업을 호출하기 전에 발생하며, `ModelState.IsValid`를 검사하고 적절하게 반응하는 것은 작업 메서드의 책임입니다.
 
-[필터](../mvc/controllers/filters.md)가 그러한 정책을 구현하기에 적절한 경우에 일부 앱은 모델 유효성 검사 오류를 처리하는 데 표준 규칙을 따르도록 선택합니다. 잘못된 모델 상태일 때 작업 동작 방식을 테스트해야 합니다. [컨트롤러 논리 테스트](../mvc/controllers/testing.md)에서 자세히 알아보세요.
+[필터](xref:mvc/controllers/filters)가 그러한 정책을 구현하기에 적절한 경우에 일부 앱은 모델 유효성 검사 오류를 처리하는 데 표준 규칙을 따르도록 선택합니다. 잘못된 모델 상태일 때 작업 동작 방식을 테스트해야 합니다. [컨트롤러 논리 테스트](xref:mvc/controllers/testing)에서 자세히 알아보세요.
 
 
 

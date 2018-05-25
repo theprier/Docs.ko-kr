@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: bd739abe4737e0fb9e4da6011c5810d7b05a3a22
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 1a63246dd81a16bbcca22ad2c50bc2010c852c4e
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---read-related-data---6-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 관련 데이터 읽기 - 6/8
 
@@ -101,7 +101,7 @@ ms.lasthandoff: 05/07/2018
 
 위의 코드는 `AsNoTracking`을 추가합니다. 반환된 엔터티는 추적되지 않으므로 `AsNoTracking`이 성능을 개선합니다. 현재 컨텍스트에서 업데이트되지 않으므로 엔터티가 추적되지 않습니다.
 
-*Views/Courses/Index.cshtml*을 다음 강조 표시된 내용으로 업데이트합니다.
+*Pages/Courses/Index.cshtml*을 다음 강조 표시된 내용으로 업데이트합니다.
 
 [!code-html[](intro/samples/cu/Pages/Courses/Index.cshtml?highlight=4,7,15-17,34-36,44)]
 

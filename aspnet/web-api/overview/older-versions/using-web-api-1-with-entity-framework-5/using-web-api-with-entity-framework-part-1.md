@@ -71,7 +71,7 @@ Visual Web Developer Express 또는 정식 버전의 Visual Studio를 사용 하
 
 **시작** 페이지 **새 프로젝트**합니다.
 
-에 **템플릿** 창 선택 **설치 된 템플릿** 확장는 **Visual C#** 노드. 아래 **Visual C#**선택, **웹**합니다. 프로젝트 템플릿 목록에서 선택 **ASP.NET MVC 4 웹 응용 프로그램**합니다. "ProductStore" 프로젝트 이름을 지정 하 고 클릭 **확인**합니다.
+에 **템플릿** 창 선택 **설치 된 템플릿** 확장는 **Visual C#** 노드. 아래 **Visual C#** 선택, **웹**합니다. 프로젝트 템플릿 목록에서 선택 **ASP.NET MVC 4 웹 응용 프로그램**합니다. "ProductStore" 프로젝트 이름을 지정 하 고 클릭 **확인**합니다.
 
 ![](using-web-api-with-entity-framework-part-1/_static/image5.png)
 

@@ -21,7 +21,7 @@ ms.lasthandoff: 03/22/2018
 > [!NOTE]
 > 응답 캐싱은 [ASP.NET Core 2.0을 사용하는 Razor 페이지에서는 지원되지 않습니다.](https://github.com/aspnet/Mvc/issues/6437) 이 기능은 [ASP.NET Core 2.1 릴리스](https://github.com/aspnet/Home/wiki/Roadmap)부터 지원됩니다.
   
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/response/sample) ([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/response/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 응답 캐싱은 클라이언트나 프록시가 웹 서버에 요청하는 회수를 줄여줍니다. 또한 응답 캐싱은 웹 서버가 응답을 생성하기 위해 수행해야 하는 작업의 총량도 줄여줍니다. 응답 캐싱은 클라이언트, 프록시, 및 미들웨어가 응답을 캐싱해야 하는 방식을 지시하는 헤더에 의해 제어됩니다.
 
@@ -36,7 +36,7 @@ ms.lasthandoff: 03/22/2018
 | 지시문                                                       | 작업 |
 | --------------------------------------------------------------- | ------ |
 | [public](https://tools.ietf.org/html/rfc7234#section-5.2.2.5)   | 캐시에 응답을 저장할 수 있습니다. |
-| [private](https://tools.ietf.org/html/rfc7234#section-5.2.2.6) | 공유 캐시는 응답을 저장하지 않습니다. 사설 캐시는 응답을 저장하고 재사용할 수 있습니다. |
+| [private](https://tools.ietf.org/html/rfc7234#section-5.2.2.6)  | 공유 캐시는 응답을 저장하지 않습니다. 사설 캐시는 응답을 저장하고 재사용할 수 있습니다. |
 | [max-age](https://tools.ietf.org/html/rfc7234#section-5.2.1.1)  | 클라이언트는 지정된 초 수보다 오래된 응답을 수락하지 않습니다. 예: `max-age=60` (60초), `max-age=2592000` (1개월) |
 | [no-cache](https://tools.ietf.org/html/rfc7234#section-5.2.1.4) | **요청 시**: 캐시는 저장된 응답을 사용해서 요청에 대응하면 안 됩니다. 주의: 원본 서버는 클라이언트에 대한 응답을 다시 생성하고 미들웨어는 캐시에 저장된 응답을 갱신해야 합니다.<br><br>**응답 시**: 원본 서버에서 유효성을 검사받지 않은 응답을 후속 요청에 사용하면 안 됩니다. |
 | [no-store](https://tools.ietf.org/html/rfc7234#section-5.2.1.5) | **요청 시**: 캐시가 요청을 저장하지 않습니다.<br><br>**응답 시**: 캐시가 응답의 모든 부분에서 응답을 저장하지 않습니다. |
@@ -47,16 +47,16 @@ ms.lasthandoff: 03/22/2018
 | ---------------------------------------------------------- | -------- |
 | [Age](https://tools.ietf.org/html/rfc7234#section-5.1)     | 응답이 생성되거나 원본 서버에서 정상적으로 검증된 이후로부터 지난 초 단위의 총 추정 시간. |
 | [Expires](https://tools.ietf.org/html/rfc7234#section-5.3) | 응답이 만료된 것으로 간주되는 날짜/시간. |
-| [Pragma](https://tools.ietf.org/html/rfc7234#section-5.4)  | `no-cache` 동작 설정에 대한 HTTP/1.0 캐시와의 하위 호환성을 지원하기 위해 존재합니다. `Cache-Control` 헤더가 존재할 경우 `Pragma` 헤더는 무시됩니다. |
+| [Pragma](https://tools.ietf.org/html/rfc7234#section-5.4)  | `no-cache` 동작 설정에 대한 HTTP/1.0 캐시와의 하위 호환성을 지원하기 위해 존재합니다. `Cache-Control` 헤더가 존재할 경우 `Pragma` 헤더는 무시됩니다.  |
 | [Vary](https://tools.ietf.org/html/rfc7231#section-7.1.4)  | 모든 `Vary` 헤더 필드가 캐시된 응답의 원본 요청 및 새 요청 모두와 일치하지 않는 한 캐시된 응답이 전송되지 않도록 지정합니다. |
 
-## <a name="http-based-caching-respects-request-cache-control-directives"></a>HTTP 기반 캐싱은 Cache-Control 지시문을 준수합니다.
+## <a name="http-based-caching-respects-request-cache-control-directives"></a>HTTP 기반 캐싱은 Cache-Control 지시문을 준수합니다
 
 [Cache-Control 헤더에 대한 HTTP 1.1 캐싱 사양](https://tools.ietf.org/html/rfc7234#section-5.2)은 캐시에게 클라이언트가 전송하는 유효한 `Cache-Control` 헤더를 준수할 것을 요구합니다. 클라이언트는 `no-cache` 헤더 값을 설정한 요청을 전송함으로써 모든 요청에 대해 서버가 새로운 응답을 생성하도록 강제할 수 있습니다.
 
 HTTP 캐싱의 목적을 고려했을 때 항상 클라이언트의 `Cache-Control` 요청 헤더를 준수하는 것이 이치에 맞습니다. 공식 사양에서 캐싱은 클라이언트, 프록시 및 서버 간의 네트워크에서 요청의 대기 시간 및 네트워크 오버헤드를 만족스럽게 줄이기 위한 것입니다. 원본 서버에서 부하를 제어하기 위한 방법이 필수적인 것은 아닙니다.
 
-[응답 캐싱 미들웨어](xref:performance/caching/middleware)를 사용할 때 캐싱 동작에 관해서 개발자가 제어할 수 있는 부분은 현재 존재하지 않으며, 그 이유는 미들웨어가 공식 캐싱 사양을 따르고 있기 때문입니다. 캐시된 응답을 제공하기로 결정할 경우 미들웨어가 요청의 `Cache-Control` 헤더를 무시하게 구성할 수 있도록 [향후에는 미들웨어를 개선](https://github.com/aspnet/ResponseCaching/issues/96)할 것입니다. 이렇게 하면 미들웨어를 사용할 때 서버의 부하를 보다 세밀하게 제어할 수 있습니다.
+[응답 캐싱 미들웨어](xref:performance/caching/middleware)를 사용할 때 캐싱 동작에 관해서 개발자가 제어할 수 있는 부분은 현재 존재하지 않으며, 그 이유는 미들웨어가 공식 캐싱 사양을 따르고 있기 때문입니다. 캐시된 응답을 제공하기로 결정할 경우 미들웨어가 요청의 `Cache-Control`` 헤더를 무시하게 구성할 수 있도록 [향후에는 미들웨어를 개선](https://github.com/aspnet/ResponseCaching/issues/96)할 것입니다. 이렇게 하면 미들웨어를 사용할 때 서버의 부하를 보다 세밀하게 제어할 수 있습니다.
 
 ## <a name="other-caching-technology-in-aspnet-core"></a>ASP.NET Core의 다른 캐싱 기술
 
@@ -86,12 +86,12 @@ HTTP 캐싱의 목적을 고려했을 때 항상 클라이언트의 `Cache-Contr
 
 ## <a name="responsecache-attribute"></a>ResponseCache 특성
 
-[ResponseCacheAttribute](/dotnet/api/Microsoft.AspNetCore.Mvc.ResponseCacheAttribute)는 응답 캐싱이 적절한 헤더를 설정하기 위해서 필요한 매개 변수를 지정합니다.
+[ResponseCacheAttribute](/dotnet/api/Microsoft.AspNetCore.Mvc.ResponseCacheAttribute) 는 응답 캐싱이 적절한 헤더를 설정하기 위해서 필요한 매개 변수를 지정합니다.
 
 > [!WARNING]
 > 인증된 클라이언트의 정보를 포함하는 콘텐츠는 캐싱하면 안 됩니다. 사용자 ID 또는 사용자 로그인 여부와 무관하게 변경되지 않는 콘텐츠만 캐싱해야 합니다.
 
-[VaryByQueryKeys](/dotnet/api/microsoft.aspnetcore.mvc.responsecacheattribute.varybyquerykeys) 속성은 지정한 쿼리 키 목록의 값에 따라 저장된 응답을 변경합니다. 단일 값으로 `*`를 지정하면 모든 쿼리 문자열 매개 변수별로 미들웨어의 응답이 달라집니다. `VaryByQueryKeys`를 사용하려면 ASP.NET Core 1.1 이상이 필요합니다.
+[VaryByQueryKeys](/dotnet/api/microsoft.aspnetcore.mvc.responsecacheattribute.varybyquerykeys) 속성은 지정한 쿼리 키 목록의 값에 따라 저장된 응답을 변경합니다. 단일 값으로 `*`를 지정하면 모든 쿼리 문자열 매개 변수별로 미들웨어의 응답이 달라집니다. `VaryByQueryKeys` 를 사용하려면 ASP.NET Core 1.1 이상이 필요합니다.
 
 응답 캐싱 미들웨어는 반드시 `VaryByQueryKeys` 속성을 설정할 수 있어야 합니다. 그렇지 않을 경우 런타임 예외가 발생합니다. `VaryByQueryKeys` 속성에 대응하는 HTTP 헤더는 존재하지 않습니다. 이 속성은 응답 캐싱 미들웨어에 의해서 처리되는 HTTP 기능입니다. 미들웨어가 캐시된 응답을 제공하려면 쿼리 문자열 및 쿼리 문자열 값이 이전 요청과 동일해야 합니다. 예를 들어, 다음 표는 요청 순서에 따른 결과를 보여줍니다.
 
@@ -101,17 +101,17 @@ HTTP 캐싱의 목적을 고려했을 때 항상 클라이언트의 `Cache-Contr
 | `http://example.com?key1=value1` | 미들웨어에서 반환됨 |
 | `http://example.com?key1=value2` | 서버에서 반환됨     |
 
-첫 번째 요청은 서버에서 반환되고 미들웨어에 캐시됩니다. 두 번째 요청은 쿼리 문자열이 이전 요청과 일치하기 때문에 미들웨어에서 반환됩니다. 세 번째 요청은 쿼리 문자열 값이 이전 요청과 일치하지 않기 때문에 미들웨어 캐시에 존재하지 않습니다.
+첫 번째 요청은 서버에서 반환되고 미들웨어에 캐시됩니다. 두 번째 요청은 쿼리 문자열이 이전 요청과 일치하기 때문에 미들웨어에서 반환됩니다. 세 번째 요청은 쿼리 문자열 값이 이전 요청과 일치하지 않기 때문에 미들웨어 캐시에 존재하지 않습니다. 
 
-`ResponseCacheAttribute`는 [ResponseCacheFilter](/dotnet/api/microsoft.aspnetcore.mvc.internal.responsecachefilter)를 구성하고 생성하기 위해서 (`IFilterFactory`를 통해서) 사용됩니다. 그리고 `ResponseCacheFilter`는 응답의 적절한 HTTP 헤더 및 기능을 갱신하는 작업을 수행합니다. 이 필터는:
+`ResponseCacheAttribute` 는 [ResponseCacheFilter](/dotnet/api/microsoft.aspnetcore.mvc.internal.responsecachefilter)를 구성하고 생성하기 위해서 (`IFilterFactory`를 통해서) 사용됩니다. `ResponseCacheFilter` 적절 한 HTTP 헤더 및 응답의 기능을 업데이트 하는 작업을 수행 합니다. 필터:
 
-* 기존에 존재하는 `Vary`, `Cache-Control` 및 `Pragma` 헤더를 모두 제거합니다.
+* 기존에 존재하는 `Vary`, `Cache-Control` 및 `Pragma` 헤더를 모두 제거합니다. 
 * `ResponseCacheAttribute`에 설정된 속성을 기반으로 적절한 헤더를 작성합니다. 
 * `VaryByQueryKeys` 속성이 설정된 경우 응답 캐싱 HTTP 기능을 갱신합니다.
 
 ### <a name="vary"></a>Vary
 
-이 헤더는 `VaryByHeader` 속성이 설정된 경우에만 작성됩니다. 이 속성은 `Vary` 헤더의 값을 설정합니다. 다음 예제는 `VaryByHeader` 속성을 사용합니다.
+이 헤더는 `VaryByHeader` 속성이 설정된 경우에만 작성됩니다. 이 속성은 `Vary` 헤더의 값을 설정합니다. 다음 예제는 `VaryByHeader` 속성을 사용합니다:
 
 [!code-csharp[](response/sample/Controllers/HomeController.cs?name=snippet_VaryByHeader&highlight=1)]
 
@@ -132,7 +132,7 @@ HTTP 캐싱의 목적을 고려했을 때 항상 클라이언트의 `Cache-Contr
 
 [!code-csharp[](response/sample/Controllers/HomeController.cs?name=snippet1&highlight=1)]
 
-그 결과 다음과 같은 헤더가 만들어집니다.
+그 결과 다음과 같은 헤더가 만들어집니다:
 
 ```
 Cache-Control: no-store,no-cache
@@ -146,7 +146,7 @@ Pragma: no-cache
 > [!NOTE]
 > `Location` 옵션의 `Any`와 `Client`는 각각 `Cache-Control` 헤더의 값, `public`과 `private`로 변환됩니다. 앞에서 설명한 것처럼 `Location`을 `None`으로 설정하면 `Cache-Control` 및 `Pragma` 헤더가 모두 `no-cache`로 설정됩니다.
 
-다음은 `Duration`을 설정하고 `Location`을 기본 값 그대로 변경하지 않고 생성하는 헤더를 보여주는 예제입니다.
+다음은 `Duration`을 설정하고 `Location`을 기본 값 그대로 변경하지 않고 생성하는 헤더를 보여주는 예제입니다:
 
 [!code-csharp[](response/sample/Controllers/HomeController.cs?name=snippet_duration&highlight=1)]
 
@@ -164,7 +164,7 @@ Cache-Control: public,max-age=60
 
 [!code-csharp[](response/sample/Startup.cs?name=snippet1)] 
 
-그리고 캐시 프로필을 참조합니다.
+그리고 캐시 프로필을 참조합니다:
 
 [!code-csharp[](response/sample/Controllers/HomeController.cs?name=snippet_controller&highlight=1,4)]
 

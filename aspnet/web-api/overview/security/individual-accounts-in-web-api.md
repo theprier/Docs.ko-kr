@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/security/individual-accounts-in-web-api
-title: "개별 계정 및 로컬 로그인 ASP.NET Web API 2.2의에서 웹 API 보안 | Microsoft Docs"
+title: 개별 계정 및 로컬 로그인 ASP.NET Web API 2.2의에서 웹 API 보안 | Microsoft Docs
 author: MikeWasson
-description: "이 항목에서는 OAuth2를 사용 하 여 멤버 자격 데이터베이스에 대해 인증 하는 웹 API를 보호 하는 방법을 보여 줍니다. 자습서는 Visual Studio 201에 사용 되는 소프트웨어 버전 중..."
+description: 이 항목에서는 OAuth2를 사용 하 여 멤버 자격 데이터베이스에 대해 인증 하는 웹 API를 보호 하는 방법을 보여 줍니다. 자습서는 Visual Studio 201에 사용 되는 소프트웨어 버전 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/15/2014

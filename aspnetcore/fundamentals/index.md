@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: fundamentals/index
-ms.openlocfilehash: ce79118fa025f912d7f04e2c9bff481a04489674
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: 97c0b289b259332d57f8175e05020fe03d505723
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="aspnet-core-fundamentals"></a>ASP.NET Core 기본 사항
 
@@ -155,7 +155,7 @@ ASP.NET Core는 파일 공급자를 사용하여 파일 시스템 액세스를 �
 
 ASP.NET Core 앱은 앱의 시작과 수명 관리를 담당하는 *호스트*를 구성하고 실행합니다.
 
-자세한 내용은 [호스팅](xref:fundamentals/hosting)을 참조하세요.
+자세한 내용은 [ASP.NET Core의 호스트](xref:fundamentals/host/index)를 참조하세요.
 
 ## <a name="session-and-application-state"></a>세션 및 응용 프로그램 상태
 
@@ -189,7 +189,7 @@ ASP.NET Core를 사용해서 다국어 웹 사이트를 만들면 더 광범위�
 
 백그라운드 작업은 *호스티드 서비스*로 구현됩니다. 호스티드 서비스는 [IHostedService](/dotnet/api/microsoft.extensions.hosting.ihostedservice) 인터페이스를 구현하는 백그라운드 작업 논리가 있는 클래스입니다.
 
-자세한 내용은 [호스티드 서비스를 사용하는 백그라운드 작업](xref:fundamentals/hosted-services)을 참조하세요.
+자세한 내용은 [호스티드 서비스를 사용하는 백그라운드 작업](xref:fundamentals/host/hosted-services)을 참조하세요.
 
 ## <a name="open-web-interface-for-net-owin"></a>OWIN(Open Web Interface for .NET)
 

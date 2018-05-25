@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/10-working-with-video
-title: "(Razor) 사이트 페이지는 ASP.NET 웹에서 비디오를 표시 | Microsoft Docs"
+title: (Razor) 사이트 페이지는 ASP.NET 웹에서 비디오를 표시 | Microsoft Docs
 author: tfitzmac
-description: "이 장에서 ASP.NET 웹 페이지에서 Razor 구문 페이지와 비디오를 표시 하는 방법에 설명 합니다."
+description: 이 장에서 ASP.NET 웹 페이지에서 Razor 구문 페이지와 비디오를 표시 하는 방법에 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2014

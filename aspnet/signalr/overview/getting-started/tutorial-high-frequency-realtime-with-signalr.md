@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/getting-started/tutorial-high-frequency-realtime-with-signalr
-title: "자습서: 높은 주파수 실시간 2 SignalR과 | Microsoft Docs"
+title: '자습서: 높은 주파수 실시간 2 SignalR과 | Microsoft Docs'
 author: pfletcher
-description: "이 자습서에는 ASP.NET SignalR을 사용 하 여 높은 주파수 메시징 기능을 제공 하는 웹 응용 프로그램을 만드는 방법을 보여 줍니다. 높은 주파수의 메시징 중..."
+description: 이 자습서에는 ASP.NET SignalR을 사용 하 여 높은 주파수 메시징 기능을 제공 하는 웹 응용 프로그램을 만드는 방법을 보여 줍니다. 높은 주파수의 메시징 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
@@ -102,7 +102,7 @@ ms.lasthandoff: 01/24/2018
 2. 에 **새 ASP.NET 프로젝트** 창 leave **빈** 선택한 클릭 **프로젝트 만들기**합니다.
 
     ![빈 웹 만들기](tutorial-high-frequency-realtime-with-signalr/_static/image3.png)
-3. **솔루션 탐색기**프로젝트를 마우스 오른쪽 단추로 선택 **추가 | SignalR 허브 클래스 (v2)**합니다. 클래스의 이름을 **MoveShapeHub.cs** 프로젝트에 추가 합니다. 이 단계에서는 **MoveShapeHub** 클래스 및 스크립트 파일 및 SignalR을 지 원하는 어셈블리 참조의 집합을 프로젝트에 추가 합니다.
+3. **솔루션 탐색기**프로젝트를 마우스 오른쪽 단추로 선택 **추가 | SignalR 허브 클래스 (v2)** 합니다. 클래스의 이름을 **MoveShapeHub.cs** 프로젝트에 추가 합니다. 이 단계에서는 **MoveShapeHub** 클래스 및 스크립트 파일 및 SignalR을 지 원하는 어셈블리 참조의 집합을 프로젝트에 추가 합니다.
 
     > [!NOTE]
     > 클릭 하 여 SignalR 프로젝트에 추가할 수도 있습니다 **도구 | 라이브러리 패키지 관리자 | 패키지 관리자 콘솔** 하 고 명령을 실행 합니다.

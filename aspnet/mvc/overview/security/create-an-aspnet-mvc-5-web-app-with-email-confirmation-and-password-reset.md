@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset
-title: "확인 및 암호 재설정 (C#) 전자 메일을 로그와 함께 보안 ASP.NET MVC 5 웹 앱 만들기 | Microsoft Docs"
+title: 확인 및 암호 재설정 (C#) 전자 메일을 로그와 함께 보안 ASP.NET MVC 5 웹 앱 만들기 | Microsoft Docs
 author: Rick-Anderson
-description: "이 자습서에서는 전자 메일 확인 및 암호 재설정 ASP.NET Identity 멤버 자격 시스템을 사용 하 여 ASP.NET MVC 5 웹 응용 프로그램을 구축 하는 방법을 보여 줍니다. Ca 중..."
+description: 이 자습서에서는 전자 메일 확인 및 암호 재설정 ASP.NET Identity 멤버 자격 시스템을 사용 하 여 ASP.NET MVC 5 웹 응용 프로그램을 구축 하는 방법을 보여 줍니다. Ca 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/26/2015
@@ -12,11 +12,11 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset
 msc.type: authoredcontent
-ms.openlocfilehash: d55b34135d5bab98ab8de31cc4b12dcc272cbc0a
-ms.sourcegitcommit: d43c84c4c80527c85e49d53691b293669557a79d
+ms.openlocfilehash: bfa5d52019be81374c7a544e255ab7ffb301fa7b
+ms.sourcegitcommit: 50d40c83fa641d283c097f986dde5341ebe1b44c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/20/2018
+ms.lasthandoff: 05/22/2018
 ---
 <a name="create-a-secure-aspnet-mvc-5-web-app-with-log-in-email-confirmation-and-password-reset-c"></a>확인 및 암호 재설정 (C#) 전자 메일을 로그와 함께 보안 ASP.NET MVC 5 웹 앱 만들기
 ====================
@@ -62,7 +62,7 @@ ms.lasthandoff: 02/20/2018
 
 이 자습서에서는 통해 전자 메일 알림을 추가 하는 방법을 보여 줍니다. 하지만 [SendGrid](http://sendgrid.com/), SMTP 및 다른 메커니즘을 사용 하 여 메일을 보낼 수 있습니다 (참조 [추가 리소스](#addRes)).
 
-1. 패키지 관리자 콘솔에서 다음을 입력 다음 명령을: 
+1. 패키지 관리자 콘솔에서 다음 명령을 입력 합니다. 
 
     [!code-console[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample1.cmd)]
 2. 이동 하는 [Azure SendGrid 등록 페이지](https://go.microsoft.com/fwlink/?linkid=271033&clcid=0x409) 무료 SendGrid 계정을 등록 합니다. 다음과 비슷한 코드를 추가 하 여 SendGrid 구성 *App_Start/IdentityConfig.cs*:
@@ -78,7 +78,7 @@ ms.lasthandoff: 02/20/2018
 [!code-xml[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample4.xml)]
 
 > [!WARNING]
-> 보안-소스 코드에서 중요 한 데이터 저장 되지 않습니다. 계정 및 자격 증명 appSetting에 저장 됩니다. Azure에서 안전 하 게에 저장할 수 있습니다 이러한 값은  **[구성](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)**  Azure 포털에서 탭 합니다. 참조 [ASP.NET 및 Azure에 암호 및 기타 중요 한 데이터 배포에 대 한 유용한](../../../identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md)합니다.
+> 보안-소스 코드에서 중요 한 데이터 저장 되지 않습니다. 계정 및 자격 증명 appSetting에 저장 됩니다. Azure에서 안전 하 게에 저장할 수 있습니다 이러한 값은 **[구성](https://blogs.msdn.com/b/webdev/archive/2014/06/04/queuebackgroundworkitem-to-reliably-schedule-and-run-long-background-process-in-asp-net.aspx)** Azure 포털에서 탭 합니다. 참조 [ASP.NET 및 Azure에 암호 및 기타 중요 한 데이터 배포에 대 한 유용한](../../../identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure.md)합니다.
 
 
 ### <a name="enable-email-confirmation-in-the-account-controller"></a>계정 컨트롤러에서 전자 메일 확인을 사용 하도록 설정
@@ -108,7 +108,7 @@ ms.lasthandoff: 02/20/2018
 
 [!code-cshtml[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample8.cshtml)]
 
-추가 [Authorize 특성](https://msdn.microsoft.com/library/system.web.mvc.authorizeattribute(v=vs.118).aspx) 에 `Contact` Home 컨트롤러의 동작 메서드. 클릭을 사용할 수 있습니다는 **연락처** 익명 사용자가 액세스할 수 없는 및 인증 된 사용자가 액세스할 수 있는 권한이 확인 합니다.
+추가 [Authorize 특성](https://msdn.microsoft.com/library/system.web.mvc.authorizeattribute(v=vs.118).aspx) 에 `Contact` Home 컨트롤러의 동작 메서드. 클릭할 수는 **연락처** 익명 사용자가 액세스할 수 없는 및 인증 된 사용자가 액세스할 수 있는 권한이 확인 합니다.
 
 [!code-csharp[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample9.cs?highlight=1)]
 
@@ -148,18 +148,18 @@ ms.lasthandoff: 02/20/2018
 
 [!code-csharp[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample15.cs?highlight=17)]
 
-암호를 다시 보내도록 로그인 메서드를 업데이트 하는 경우 사용자 계정을 확인 되지 경우:
+사용자 계정을 확인 되지 경우 암호를 다시 보내도록 로그인 메서드를 업데이트 합니다.
 
 [!code-csharp[Main](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/samples/sample16.cs?highlight=20)]
 
 <a id="combine"></a>
 ## <a name="combine-social-and-local-login-accounts"></a>공유 및 로컬 로그인 계정을 결합합니다
 
-사용자 전자 메일 링크를 클릭 하 여 로컬 및 소셜 계정을 결합할 수 있습니다. 다음 순서로  **RickAndMSFT@gmail.com**  처음에 로컬 로그인으로 만들면 하지만 로컬 로그인을 추가 다음에서 첫 번째로, 소셜 로그로 계정을 만들 수 있습니다.
+사용자 전자 메일 링크를 클릭 하 여 로컬 및 소셜 계정을 결합할 수 있습니다. 다음 순서로 **RickAndMSFT@gmail.com** 처음에 로컬 로그인으로 만들면 하지만 로컬 로그인을 추가 다음에서 첫 번째로, 소셜 로그로 계정을 만들 수 있습니다.
 
 ![](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/_static/image5.png)
 
-클릭는 **관리** 링크 합니다. 이 계정에 연결 된 참고 0 외부 (소셜 로그인)
+클릭는 **관리** 링크 합니다. 참고는 **외부 로그인: 0** 이 계정과 연결 된 합니다.
 
 ![](create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset/_static/image6.png)
 
@@ -188,7 +188,7 @@ ms.lasthandoff: 02/20/2018
 전자 메일 하지 않고 확인 링크를 테스트 하려면 다운로드는 [완성 된 샘플](https://code.msdn.microsoft.com/MVC-5-with-2FA-email-8f26d952)합니다. 확인 링크 및 확인 코드 페이지에 표시 됩니다.
 
 <a id="addRes"></a>
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 - [ASP.NET Id에 대 한 링크 권장 리소스](../../../identity/overview/getting-started/aspnet-identity-recommended-resources.md)
 - [계정 확인 및 ASP.NET Id와 암호 복구](../../../identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity.md) 암호 복구 및 계정 확인에 대 한 자세한 내용으로 이어집니다.

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/getting-started-with-aspnet-web-api/using-web-api-with-aspnet-web-forms
-title: "Web API를 사용 하 여 ASP.NET Web forms | Microsoft Docs"
+title: Web API를 사용 하 여 ASP.NET Web forms | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/03/2012
@@ -35,7 +35,7 @@ Web Forms 응용 프로그램을 웹 API를 사용 하려면 두 가지 주요 �
 
 Visual Studio를 시작 하 고 선택 **새 프로젝트** 에서 **시작** 페이지. 또는에서 **파일** 메뉴 선택 **새로** 차례로 **프로젝트**합니다.
 
-에 **템플릿** 창 선택 **설치 된 템플릿** 확장는 **Visual C#** 노드. 아래 **Visual C#**선택, **웹**합니다. 프로젝트 템플릿 목록에서 선택 **ASP.NET Web Forms 응용 프로그램**합니다. 프로젝트에 대 한 이름을 입력 하 고 클릭 **확인**합니다.
+에 **템플릿** 창 선택 **설치 된 템플릿** 확장는 **Visual C#** 노드. 아래 **Visual C#** 선택, **웹**합니다. 프로젝트 템플릿 목록에서 선택 **ASP.NET Web Forms 응용 프로그램**합니다. 프로젝트에 대 한 이름을 입력 하 고 클릭 **확인**합니다.
 
 ![](using-web-api-with-aspnet-web-forms/_static/image1.png)
 

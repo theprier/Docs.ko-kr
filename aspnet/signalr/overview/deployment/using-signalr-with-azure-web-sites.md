@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/deployment/using-signalr-with-azure-web-sites
-title: "SignalR을 사용 하 여 Azure 앱 서비스에서 웹 앱과 | Microsoft Docs"
+title: SignalR을 사용 하 여 Azure 앱 서비스에서 웹 앱과 | Microsoft Docs
 author: pfletcher
-description: "이 문서에서는 Microsoft Azure에서 실행 되는 SignalR 응용 프로그램을 구성 하는 방법에 설명 합니다. Visual Studio 2013 또는 Vis.는 자습서에 사용 된 소프트웨어 버전입니다."
+description: 이 문서에서는 Microsoft Azure에서 실행 되는 SignalR 응용 프로그램을 구성 하는 방법에 설명 합니다. Visual Studio 2013 또는 Vis.는 자습서에 사용 된 소프트웨어 버전입니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/01/2015

@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/kestrel
-ms.openlocfilehash: a1162da01fad67f3e8ccb1e70bd646b39c38997f
-ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
+ms.openlocfilehash: 251385b268e75cfadb815c293be52176297ed3e4
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/14/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="kestrel-web-server-implementation-in-aspnet-core"></a>ASP.NET Core에서 Kestrel 웹 서버 구현
 
@@ -276,7 +276,7 @@ Kestrel은 `http://localhost:5000` 및 `https://localhost:5001`에서 수신 대
 * `urls` 호스트 구성 키.
 * `UseUrls` 확장명 메서드.
 
-자세한 내용은 [서버 URLs](xref:fundamentals/hosting#server-urls) 및 [구성 재정의](xref:fundamentals/hosting#overriding-configuration)를 참조합니다.
+자세한 내용은 [서버 URL](xref:fundamentals/host/web-host#server-urls) 및 [구성 재정의](xref:fundamentals/host/web-host#override-configuration)를 참조합니다.
 
 이러한 접근 방식을 사용하여 제공된 값은 하나 이상의 HTTP 및 HTTPS 엔드포인트(기본 인증서가 사용 가능한 경우의 HTTPS)일 수 있습니다. 값을 세미콜론으로 구분된 목록으로 구성합니다(예를 들어, `"Urls": "http://localhost:8000;http://localhost:8001"`).
 
@@ -489,7 +489,7 @@ IIS를 사용하는 경우 IIS 재정의 바인딩에 대한 URL 바인딩은 `L
 * `urls` 호스트 구성 키
 * `ASPNETCORE_URLS` 환경 변수를 포함한 ASP.NET Core 구성 시스템
 
-이러한 메서드에 대한 자세한 내용은 [호스팅](xref:fundamentals/hosting)을 참조하세요.
+이러한 메서드에 대한 자세한 내용은 [호스팅](xref:fundamentals/host/index)을 참조하세요.
 
 **IIS 엔드포인트 구성**
 

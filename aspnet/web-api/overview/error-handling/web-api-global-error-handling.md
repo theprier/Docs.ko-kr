@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/error-handling/web-api-global-error-handling
-title: "ASP.NET Web API 2 처리 하는 전역 오류 | Microsoft Docs"
+title: ASP.NET Web API 2 처리 하는 전역 오류 | Microsoft Docs
 author: davidmatson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/03/2014

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
-title: "ASP.NET Web API 2 (C#) 시작"
+title: ASP.NET Web API 2 (C#) 시작
 author: MikeWasson
-description: "HTTP 웹 페이지를 제공 데 사용 되지 않습니다. 서비스 및 데이터를 노출 하는 Api를 구축 하기 위한 강력한 플랫폼 이기도 합니다. HTTP에는 단순, 유연 하 고, 및 ubiq는 중..."
+description: HTTP 웹 페이지를 제공 데 사용 되지 않습니다. 서비스 및 데이터를 노출 하는 Api를 구축 하기 위한 강력한 플랫폼 이기도 합니다. HTTP에는 단순, 유연 하 고, 및 ubiq는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/28/2017
@@ -43,7 +43,7 @@ ASP.NET Web API는 웹 Api는.NET Framework를 기반으로 구축 하기 위한
 
 Visual Studio를 시작 하 고 선택 **새 프로젝트** 에서 **시작** 페이지. 또는에서 **파일** 메뉴 선택 **새로** 차례로 **프로젝트**합니다.
 
-에 **템플릿** 창 선택 **설치 된 템플릿** 확장는 **Visual C#** 노드. 아래 **Visual C#**선택, **웹**합니다. 프로젝트 템플릿 목록에서 선택 **ASP.NET 웹 응용 프로그램**합니다. "ProductsApp" 프로젝트 이름을 지정 하 고 클릭 **확인**합니다.
+에 **템플릿** 창 선택 **설치 된 템플릿** 확장는 **Visual C#** 노드. 아래 **Visual C#** 선택, **웹**합니다. 프로젝트 템플릿 목록에서 선택 **ASP.NET 웹 응용 프로그램**합니다. "ProductsApp" 프로젝트 이름을 지정 하 고 클릭 **확인**합니다.
 
 ![](tutorial-your-first-web-api/_static/image2.png)
 
@@ -126,7 +126,7 @@ Web API 컨트롤러 메서드를 HTTP 요청을 라우팅하 하는 방법에 �
 
 ![](tutorial-your-first-web-api/_static/image9.png)
 
-에 **새 항목 추가** 대화 상자에서는 **웹** 노드 아래의 **Visual C#**를 선택한 후는 **HTML 페이지** 항목입니다. 페이지 이름을 &quot;index.html&quot;합니다.
+에 **새 항목 추가** 대화 상자에서는 **웹** 노드 아래의 **Visual C#** 를 선택한 후는 **HTML 페이지** 항목입니다. 페이지 이름을 &quot;index.html&quot;합니다.
 
 ![](tutorial-your-first-web-api/_static/image10.png)
 

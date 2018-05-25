@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/aspnet-web-pages-razor-faq
-title: "ASP.NET 웹 페이지 (Razor) FAQ | Microsoft Docs"
+title: ASP.NET 웹 페이지 (Razor) FAQ | Microsoft Docs
 author: tfitzmac
-description: "이 문서에서는 WebMatrix 및 ASP.NET 웹 페이지 (Razor)에 대 한 몇 가지 질문과 대답을 나열 합니다. 에 자습서 ASP.NET 웹 페이지 (오른쪽...를 사용 하는 소프트웨어 버전"
+description: 이 문서에서는 WebMatrix 및 ASP.NET 웹 페이지 (Razor)에 대 한 몇 가지 질문과 대답을 나열 합니다. 에 자습서 ASP.NET 웹 페이지 (오른쪽...를 사용 하는 소프트웨어 버전
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/07/2014

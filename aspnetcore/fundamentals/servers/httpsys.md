@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: ce4edf6f07808d3958c919a1d81561ce020fe52b
-ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
+ms.openlocfilehash: 89d9a51334bdd50b72213d32fa194808ac6a93b9
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/14/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>ASP.NET Core에서 HTTP.sys 웹 서버 구현
 
@@ -133,7 +133,7 @@ HTTP.sys는 많은 유형의 공격으로부터 보호하고 모든 기능을 �
 
    `UrlPrefixes`의 장점은 형식이 잘못된 접두사에 대해 오류 메시지가 즉시 생성된다는 점입니다.
 
-   `UrlPrefixes`의 설정은 `UseUrls`/`urls`/`ASPNETCORE_URLS` 설정을 재정의합니다. 따라서 `UseUrls`, `urls` 및 `ASPNETCORE_URLS` 환경 변수의 장점은 Kestrel과 HTTP.sys 간을 쉽게 전환할 수 있다는 점입니다. `UseUrls`, `urls` 및 `ASPNETCORE_URLS`에 대한 자세한 내용은 [호스팅](xref:fundamentals/hosting)을 참조하세요.
+   `UrlPrefixes`의 설정은 `UseUrls`/`urls`/`ASPNETCORE_URLS` 설정을 재정의합니다. 따라서 `UseUrls`, `urls` 및 `ASPNETCORE_URLS` 환경 변수의 장점은 Kestrel과 HTTP.sys 간을 쉽게 전환할 수 있다는 점입니다. `UseUrls`, `urls` 및 `ASPNETCORE_URLS`에 대한 자세한 내용은 [ASP.NET Core의 호스트](xref:fundamentals/host/index) 항목을 참조하세요.
 
    HTTP.sys는 [HTTP Server API UrlPrefix 문자열 형식](https://msdn.microsoft.com/library/windows/desktop/aa364698.aspx)을 사용합니다.
 
@@ -179,4 +179,4 @@ HTTP.sys는 많은 유형의 공격으로부터 보호하고 모든 기능을 �
 
 * [HTTP Server API](https://msdn.microsoft.com/library/windows/desktop/aa364510.aspx)(HTTP 서버 API)
 * [aspnet/HttpSysServer GitHub 리포지토리(소스 코드)](https://github.com/aspnet/HttpSysServer/)
-* [호스팅](xref:fundamentals/hosting)
+* [ASP.NET Core의 호스트](xref:fundamentals/host/index)

@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/views/using-page-inspector-in-aspnet-mvc
-title: "ASP.NET MVC에서 페이지 검사기를 사용 하 여 | Microsoft Docs"
+title: ASP.NET MVC에서 페이지 검사기를 사용 하 여 | Microsoft Docs
 author: rick-anderson
-description: "Visual Studio 2012에서 페이지 검사기는 통합 된 브라우저와 웹 개발 도구입니다. 페이지 검사기 i 고 통합된 브라우저에서 모든 요소 선택..."
+description: Visual Studio 2012에서 페이지 검사기는 통합 된 브라우저와 웹 개발 도구입니다. 페이지 검사기 i 고 통합된 브라우저에서 모든 요소 선택...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/15/2012
@@ -58,7 +58,7 @@ Tim Ammann으로
 
 ## <a name="create-a-web-application"></a>웹 응용 프로그램 만들기
 
-페이지 검사기를 사용 하는 웹 응용 프로그램을 먼저 만듭니다. Visual Studio에서 선택 **파일** &gt; **새 프로젝트**합니다. 확장 왼쪽의 **Visual C#**선택, **웹**를 선택한 후 **ASP.NET MVC4 웹 응용 프로그램**합니다.
+페이지 검사기를 사용 하는 웹 응용 프로그램을 먼저 만듭니다. Visual Studio에서 선택 **파일** &gt; **새 프로젝트**합니다. 확장 왼쪽의 **Visual C#** 선택, **웹**를 선택한 후 **ASP.NET MVC4 웹 응용 프로그램**합니다.
 
 ![새 ASP.NET MVC 응용 프로그램](using-page-inspector-in-aspnet-mvc/_static/image2.png)
 
@@ -202,7 +202,7 @@ CSS 자동 동기화 기능을 사용 하면 CSS 파일을 직접 편집 하 고
 
 Visual Studio 2012에서 CSS 편집기에는 쉽게 선택 하 고 색을 삽입 하는 색 선택 합니다. 색 선택 표준 색 팔레트가 포함 하 고 표준 색 이름, 해시 코드, RGB, RGBA, HSL 및 HSLA 색을 지원 하며 문서에서 가장 최근에 사용한 색 목록이 유지.
 
-이전 섹션에서의 값을 변경 하는 `background-color` 속성입니다. 색상 선택기를 호출 하려면 속성 이름 및 형식을 후 삽입점을 배치  **#**  또는 **rgb (**합니다.
+이전 섹션에서의 값을 변경 하는 `background-color` 속성입니다. 색상 선택기를 호출 하려면 속성 이름 및 형식을 후 삽입점을 배치 **#** 또는 **rgb (** 합니다.
 
 ![CSS 색 선택 막대](using-page-inspector-in-aspnet-mvc/_static/image36.png)
 
@@ -243,7 +243,7 @@ Visual Studio 2012에서 CSS 편집기에는 쉽게 선택 하 고 색을 삽입
 > SPA 템플릿에 필요는 [ASP.NET 및 웹 도구 2012.2](https://go.microsoft.com/fwlink/?LinkId=282650) 업데이트 합니다.
 
 
-Visual Studio에서 선택 **파일** &gt; **새 프로젝트**합니다. 확장 왼쪽의 **Visual C#**선택, **웹**를 선택한 후 **ASP.NET MVC4 웹 응용 프로그램**합니다. **확인**을 클릭합니다.
+Visual Studio에서 선택 **파일** &gt; **새 프로젝트**합니다. 확장 왼쪽의 **Visual C#** 선택, **웹**를 선택한 후 **ASP.NET MVC4 웹 응용 프로그램**합니다. **확인**을 클릭합니다.
 
 에 **새 ASP.NET MVC 4 프로젝트** 대화 상자에서 **단일 페이지 응용 프로그램**합니다.
 

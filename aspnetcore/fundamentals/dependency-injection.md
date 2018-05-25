@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/dependency-injection
-ms.openlocfilehash: 700ceb081b2067f932ce8ed08c45c62058775e33
-ms.sourcegitcommit: 3d071fabaf90e32906df97b08a8d00e602db25c0
+ms.openlocfilehash: 067d9bd09f6d5e54bbafd953eea169d2df2be34e
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="dependency-injection-in-aspnet-core"></a>ASP.NET Core에서 종속성 주입
 
@@ -72,7 +72,7 @@ public CharactersController(ICharacterRepository characterRepository, string tit
 
 ## <a name="using-framework-provided-services"></a>프레임워크에서 제공한 서비스 사용
 
-`Startup` 클래스의 `ConfigureServices` 메서드는 응용 프로그램이 사용하는 서비스를 정의하는 작업을 담당하며, Entity Framework Core 및 ASP.NET Core MVC와 같은 플랫폼 기능을 포함합니다. 처음에 `ConfigureServices`에 제공된 `IServiceCollection`에는 정의된 다음과 같은 서비스가 있습니다([호스트 구성 방법](xref:fundamentals/hosting)에 따라).
+`Startup` 클래스의 `ConfigureServices` 메서드는 응용 프로그램이 사용하는 서비스를 정의하는 작업을 담당하며, Entity Framework Core 및 ASP.NET Core MVC와 같은 플랫폼 기능을 포함합니다. 처음에 `ConfigureServices`에 제공된 `IServiceCollection`에는 정의된 다음과 같은 서비스가 있습니다([호스트 구성 방법](xref:fundamentals/host/index)에 따라).
 
 | 서비스 종류 | 수명 |
 | ----- | ------- |
@@ -235,7 +235,7 @@ public static void Main(string[] args)
 
 범위가 지정된 서비스는 서비스를 만든 컨테이너에 의해 삭제됩니다. 범위가 지정된 서비스가 루트 컨테이너에서 만들어지는 경우 서비스의 수명은 효과적으로 싱글톤으로 승격됩니다. 해당 서비스는 앱/서버가 종료될 때 루트 컨테이너에 의해서만 삭제되기 때문입니다. 서비스 범위의 유효성 검사는 `BuildServiceProvider`가 호출될 경우 이러한 상황을 catch합니다.
 
-자세한 내용은 [호스팅 토픽의 범위 유효성 검사](xref:fundamentals/hosting#scope-validation)를 참조하세요.
+자세한 내용은 [웹 호스트의 범위 유효성 검사 항목](xref:fundamentals/host/web-host#scope-validation)을 참조하세요.
 
 ## <a name="request-services"></a>요청 서비스
 
@@ -245,7 +245,7 @@ public static void Main(string[] args)
 
 요청 서비스는 사용자가 응용 프로그램의 일부로 구성 및 요청한 서비스를 나타냅니다. 개체가 종속성을 지정한 경우에는 `ApplicationServices`가 아닌 `RequestServices`에 있는 형식으로 충족됩니다.
 
-일반적으로 이러한 속성을 직접 사용해서는 안 됩니다. 대신 클래스의 생성자를 통해 요청한 클래스 형식을 요청하고 프레임워크에서 이러한 종속성을 주입하도록 해야 합니다. 이는 더 쉽게 테스트할 수 있고([테스트 및 디버그](../testing/index.md) 참조) 더 느슨하게 결합되는 클래스를 일시 중단합니다.
+일반적으로 이러한 속성을 직접 사용해서는 안 됩니다. 대신 클래스의 생성자를 통해 요청한 클래스 형식을 요청하고 프레임워크에서 이러한 종속성을 주입하도록 해야 합니다. 이는 더 쉽게 테스트할 수 있고([테스트 및 디버그](xref:testing/index) 참조) 더 느슨하게 결합되는 클래스를 일시 중단합니다.
 
 > [!NOTE]
 > `RequestServices` 컬렉션에 액세스하는 것보다 생성자 매개 변수로 종속성을 요청하는 것을 선호합니다.

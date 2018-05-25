@@ -5,27 +5,22 @@ description: 저장 하 고 ASP.NET Core 응용 프로그램을 개발 하는 �
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 05/16/2018
+ms.date: 05/23/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/app-secrets
-ms.openlocfilehash: 88b4ee9a963543f8cc97cb66271628a14fe657de
-ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
+ms.openlocfilehash: ece2bf541df2b4acac60a88767cc57ede473bd49
+ms.sourcegitcommit: 1b94305cc79843e2b0866dae811dab61c21980ad
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/18/2018
+ms.lasthandoff: 05/24/2018
 ---
 # <a name="safe-storage-of-app-secrets-in-development-in-aspnet-core"></a>ASP.NET Core에서 개발의 앱 암호의 안전한 저장소
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT), [김 Roth](https://github.com/danroth27), 및 [Scott Addie](https://github.com/scottaddie)
 
-::: moniker range="<= aspnetcore-1.1"
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/app-secrets/samples/1.1)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
-::: moniker-end
-::: moniker range=">= aspnetcore-2.0"
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/app-secrets/samples/2.1)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
-::: moniker-end
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/app-secrets/samples)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 이 문서에 저장 하 고 ASP.NET Core 응용 프로그램을 개발 하는 동안 중요 한 데이터를 검색 하는 기술을 설명 합니다. 소스 코드에서 암호 또는 기타 중요 한 데이터를 저장 해서는 안 하 고 개발에서 생산 암호를 사용 하거나 모드를 테스트 하지 않아야 합니다. 저장 하 고 Azure 테스트 및 프로덕션 비밀 정보를 보호할 수는 [Azure 키 자격 증명 모음 구성 공급자](xref:security/key-vault-configuration)합니다.
 
@@ -36,7 +31,7 @@ ms.lasthandoff: 05/18/2018
 ::: moniker range="<= aspnetcore-1.1"
 호출 하 여 환경 변수 값을 읽는 구성 [AddEnvironmentVariables](/dotnet/api/microsoft.extensions.configuration.environmentvariablesextensions.addenvironmentvariables) 에 `Startup` 생성자:
 
-[!code-csharp[](app-secrets/samples/1.1/UserSecrets/Startup.cs?name=snippet_StartupConstructor&highlight=10)]
+[!code-csharp[](app-secrets/samples/1.x/UserSecrets/Startup.cs?name=snippet_StartupConstructor&highlight=10)]
 ::: moniker-end
 
 ASP.NET Core 웹 응용 프로그램 고려 **개별 사용자 계정** 보안을 사용 합니다. 프로젝트의 기본 데이터베이스 연결 문자열을 포함 되어 *appsettings.json* 키와 파일 `DefaultConnection`합니다. 기본 연결 문자열은 localdb 사용자 모드에서 실행 되 고 암호가 필요 하지 않습니다. 응용 프로그램 배포 시는 `DefaultConnection` 환경 변수 값과 키 값을 재정의할 수 있습니다. 환경 변수는 중요 한 자격 증명으로 완전 한 연결 문자열을 저장할 수 있습니다.
@@ -53,7 +48,7 @@ ASP.NET Core 웹 응용 프로그램 고려 **개별 사용자 계정** 보안�
 
 ## <a name="how-the-secret-manager-tool-works"></a>Secret Manager 도구의 동작 방식
 
-Secret Manager 도구는 값이 저장되는 위치 및 방법 같은 구현에 관한 세부적인 내용을 추상화합니다. 이런 세부적인 내용을 모르더라도 Secret Manager 도구를 사용하는 데는 아무런 지장이 없습니다.  값에 저장 되는 [JSON](https://json.org/) 로컬 컴퓨터에서 시스템으로 보호 된 사용자 프로필 폴더에 구성 파일:
+Secret Manager 도구는 값이 저장되는 위치 및 방법 같은 구현에 관한 세부적인 내용을 추상화합니다. 이런 세부적인 내용을 모르더라도 Secret Manager 도구를 사용하는 데는 아무런 지장이 없습니다.  값은 로컬 컴퓨터에서 시스템으로 보호 된 사용자 프로필 폴더에는 JSON 구성 파일에 저장 됩니다.
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
@@ -82,11 +77,20 @@ Secret Manager 도구는 값이 저장되는 위치 및 방법 같은 구현에 
 ::: moniker range="<= aspnetcore-2.0"
 ## <a name="install-the-secret-manager-tool"></a>암호 관리자 도구를 설치 합니다.
 
-암호 관리자 도구는.NET Core SDK 2.1에서.NET Core CLI 함께 제공 됩니다. .NET Core SDK 2.0 및 이전 버전에서 도구를 설치 해야만 됩니다.
+암호 관리자 도구는.NET Core SDK 2.1.300부터.NET Core CLI 함께 제공 됩니다. 2.1.300 이전 버전을.NET Core SDK, 도구를 설치 해야만 됩니다.
 
-설치는 [Microsoft.Extensions.SecretManager.Tools](https://www.nuget.org/packages/Microsoft.Extensions.SecretManager.Tools/) ASP.NET Core 프로젝트에 NuGet 패키지:
+> [!TIP]
+> 실행 `dotnet --version` 명령 셸을 설치 된.NET Core SDK 버전 번호를 확인 합니다.
 
-[!code-xml[](app-secrets/samples/1.1/UserSecrets/UserSecrets.csproj?name=snippet_CsprojFile&highlight=13-14)]
+사용 중인.NET Core SDK 도구를 포함 하는 경우 경고가 표시 됩니다.
+
+```console
+The tool 'Microsoft.Extensions.SecretManager.Tools' is now included in the .NET Core SDK. Information on resolving this warning is available at (https://aka.ms/dotnetclitools-in-box).
+```
+
+설치는 [Microsoft.Extensions.SecretManager.Tools](https://www.nuget.org/packages/Microsoft.Extensions.SecretManager.Tools/) ASP.NET Core 프로젝트에 NuGet 패키지 합니다. 예를 들어:
+
+[!code-xml[](app-secrets/samples/1.x/UserSecrets/UserSecrets.csproj?name=snippet_CsprojFile&highlight=13-14)]
 
 도구 설치를 확인 하는 명령 셸에서 다음 명령을 실행 합니다.
 
@@ -125,10 +129,10 @@ Use "dotnet user-secrets [command] --help" for more information about a command.
 암호 관리자 도구는 사용자 프로필에 저장 된 프로젝트 관련 구성 설정에서 작동 합니다. 사용자 암호를 사용 하려면 정의 `UserSecretsId` 요소 내에서 한 `PropertyGroup` 의 *.csproj* 파일입니다. 값 `UserSecretsId` 은 선택적 요소 이지만 프로젝트에 고유 합니다. 개발자는 대부분 `UserSecretsId` 값에 GUID를 생성해서 지정합니다. 
 
 ::: moniker range="<= aspnetcore-1.1"
-[!code-xml[](app-secrets/samples/1.1/UserSecrets/UserSecrets.csproj?name=snippet_PropertyGroup&highlight=3)]
+[!code-xml[](app-secrets/samples/1.x/UserSecrets/UserSecrets.csproj?name=snippet_PropertyGroup&highlight=3)]
 ::: moniker-end
 ::: moniker range=">= aspnetcore-2.0"
-[!code-xml[](app-secrets/samples/2.1/UserSecrets/UserSecrets.csproj?name=snippet_PropertyGroup&highlight=3)]
+[!code-xml[](app-secrets/samples/2.x/UserSecrets/UserSecrets.csproj?name=snippet_PropertyGroup&highlight=3)]
 ::: moniker-end
 
 > [!TIP]
@@ -180,28 +184,39 @@ JSON에 파이프 하 여 보안의 일괄 처리를 설정할 수 있습니다�
 
 ## <a name="access-a-secret"></a>암호에 액세스
 
-[ASP.NET Core 구성 API](xref:fundamentals/configuration/index) 보안 관리자 암호에 대 한 액세스를 제공 합니다. .NET Core를 대상으로 1.x 또는.NET Framework 설치는 [Microsoft.Extensions.Configuration.UserSecrets](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.UserSecrets) NuGet 패키지 합니다.
-
 ::: moniker range="<= aspnetcore-1.1"
-사용자 암호 구성 소스를 추가 `Startup` 생성자:
+[ASP.NET Core 구성 API](xref:fundamentals/configuration/index) 보안 관리자 암호에 대 한 액세스를 제공 합니다. 설치는 [Microsoft.Extensions.Configuration.UserSecrets](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.UserSecrets) NuGet 패키지 합니다.
 
-[!code-csharp[](app-secrets/samples/1.1/UserSecrets/Startup.cs?name=snippet_StartupConstructor&highlight=5-8)]
+사용자 암호 구성 소스를 호출 하 여 추가 [AddUserSecrets](/dotnet/api/microsoft.extensions.configuration.usersecretsconfigurationextensions.addusersecrets) 에 `Startup` 생성자:
+
+[!code-csharp[](app-secrets/samples/1.x/UserSecrets/Startup.cs?name=snippet_StartupConstructor&highlight=5-8)]
+::: moniker-end
+::: moniker range=">= aspnetcore-2.0"
+[ASP.NET Core 구성 API](xref:fundamentals/configuration/index) 보안 관리자 암호에 대 한 액세스를 제공 합니다. 프로젝트가.NET Framework를 대상으로 하는 경우 설치는 [Microsoft.Extensions.Configuration.UserSecrets](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.UserSecrets) NuGet 패키지 합니다.
+
+ASP.NET Core 2.0 이상에서는 사용자 보안 구성 소스 자동으로 추가 됩니다 개발 모드에서 프로젝트를 호출할 때 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) 미리 구성 된 기본값을 사용 하 여 호스트의 새 인스턴스를 초기화 합니다. `CreateDefaultBuilder` 호출 [AddUserSecrets](/dotnet/api/microsoft.extensions.configuration.usersecretsconfigurationextensions.addusersecrets) 때는 [EnvironmentName](/dotnet/api/microsoft.aspnetcore.hosting.ihostingenvironment.environmentname) 은 [개발](/dotnet/api/microsoft.aspnetcore.hosting.environmentname.development):
+
+[!code-csharp[](app-secrets/samples/2.x/UserSecrets/Program.cs?name=snippet_CreateWebHostBuilder&highlight=2)]
+
+때 `CreateDefaultBuilder` 없는 사용자 암호 구성 소스를 호출 하 여 추가 호스트 생성 하는 동안 호출 [AddUserSecrets](/dotnet/api/microsoft.extensions.configuration.usersecretsconfigurationextensions.addusersecrets) 에 `Startup` 생성자:
+
+[!code-csharp[](app-secrets/samples/1.x/UserSecrets/Startup.cs?name=snippet_StartupConstructor&highlight=5-8)]
 ::: moniker-end
 
 사용자 암호를 통해 검색할 수 있습니다는 `Configuration` API:
 
 ::: moniker range="<= aspnetcore-1.1"
-[!code-csharp[](app-secrets/samples/1.1/UserSecrets/Startup.cs?name=snippet_StartupClass&highlight=23)]
+[!code-csharp[](app-secrets/samples/1.x/UserSecrets/Startup.cs?name=snippet_StartupClass&highlight=23)]
 ::: moniker-end
 ::: moniker range=">= aspnetcore-2.0"
-[!code-csharp[](app-secrets/samples/2.1/UserSecrets/Startup.cs?name=snippet_StartupClass&highlight=14)]
+[!code-csharp[](app-secrets/samples/2.x/UserSecrets/Startup.cs?name=snippet_StartupClass&highlight=14)]
 ::: moniker-end
 
 ## <a name="string-replacement-with-secrets"></a>암호와 문자열 대체
 
 일반 텍스트에 암호를 저장 하는 것은 위험 합니다. 데이터베이스 연결 문자열에 저장 하는 예를 들어 *appsettings.json* 지정된 된 사용자에 대 한 암호를 포함 될 수 있습니다.
 
-[!code-json[](app-secrets/samples/2.1/UserSecrets/appsettings-unsecure.json?highlight=3)]
+[!code-json[](app-secrets/samples/2.x/UserSecrets/appsettings-unsecure.json?highlight=3)]
 
 암호로 암호를 저장 하는 보다 안전한 방법이입니다. 예를 들어:
 
@@ -211,15 +226,15 @@ dotnet user-secrets set "DbPassword" "pass123"
 
 암호를 대체할 *appsettings.json* 을 자리 표시자입니다. 다음 예에서 `{0}` 폼에 자리 표시자로 사용 되는 [복합 형식 문자열](/dotnet/standard/base-types/composite-formatting#composite-format-string)합니다.
 
-[!code-json[](app-secrets/samples/2.1/UserSecrets/appsettings.json?highlight=3)]
+[!code-json[](app-secrets/samples/2.x/UserSecrets/appsettings.json?highlight=3)]
 
 연결 문자열을 완료 하려면 자리 표시자에 암호의 값을 삽입할 수 있습니다.
 
 ::: moniker range="<= aspnetcore-1.1"
-[!code-csharp[](app-secrets/samples/1.1/UserSecrets/Startup2.cs?name=snippet_StartupClass&highlight=23-25)]
+[!code-csharp[](app-secrets/samples/1.x/UserSecrets/Startup2.cs?name=snippet_StartupClass&highlight=23-25)]
 ::: moniker-end
 ::: moniker range=">= aspnetcore-2.0"
-[!code-csharp[](app-secrets/samples/2.1/UserSecrets/Startup2.cs?name=snippet_StartupClass&highlight=14-16)]
+[!code-csharp[](app-secrets/samples/2.x/UserSecrets/Startup2.cs?name=snippet_StartupClass&highlight=14-16)]
 ::: moniker-end
 
 ## <a name="list-the-secrets"></a>암호 나열

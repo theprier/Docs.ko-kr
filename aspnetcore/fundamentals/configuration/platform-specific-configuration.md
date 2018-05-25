@@ -11,11 +11,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/platform-specific-configuration
-ms.openlocfilehash: 9bd54319b312e18e6114cd800231c47e1fa22894
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 793169b491596cd7326d747a3f19d7fdaf7e2b65
+ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="enhance-an-app-from-an-external-assembly-in-aspnet-core-with-ihostingstartup"></a>IHostingStartup을 사용하여 ASP.NET Core의 외부 어셈블리에서 앱 강화
 
@@ -37,7 +37,7 @@ ms.lasthandoff: 05/07/2018
 
 호스팅 시작 어셈블리의 자동 로드를 사용하지 않도록 설정하는 두 가지 방법이 있습니다.
 
-* [호스팅 스타트업 방지](xref:fundamentals/hosting#prevent-hosting-startup) 호스트 구성 설정을 설정합니다.
+* [호스팅 스타트업 방지](xref:fundamentals/host/web-host#prevent-hosting-startup) 호스트 구성 설정을 설정합니다.
 * `ASPNETCORE_PREVENTHOSTINGSTARTUP` 환경 변수를 설정합니다.
 
 호스트 설정 또는 환경 변수를 `true` 또는 `1`로 설정한 경우 호스팅 시작 어셈블리를 자동으로 로드하지 않습니다. 모두 설정하는 경우 호스트 설정은 동작을 제어합니다.
@@ -120,7 +120,7 @@ ASPNETCORE\_HOSTINGSTARTUPASSEMBLIES
 
 호스팅 시작 어셈블리만이 `HostingStartupAttribute`을 검사합니다. 구현의 어셈블리 이름은 이 환경 변수에서 제공됩니다. 샘플 앱은 이 값을 `StartupDiagnostics`로 설정합니다.
 
-[호스팅 스타트업 어셈블리](xref:fundamentals/hosting#hosting-startup-assemblies) 호스트 구성 설정을 사용하여 값을 설정할 수도 있습니다.
+[호스팅 스타트업 어셈블리](xref:fundamentals/host/web-host#hosting-startup-assemblies) 호스트 구성 설정을 사용하여 값을 설정할 수도 있습니다.
 
 DOTNET\_ADDITIONAL\_DEPS
 

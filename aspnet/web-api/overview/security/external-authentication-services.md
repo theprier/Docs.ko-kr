@@ -90,7 +90,7 @@ Visual Studio 2013 선택 시작 **새 프로젝트** 시작 페이지에서. �
 
 [![](external-authentication-services/_static/image6.png "클릭 하 여 이미지를 확장 합니다.")](external-authentication-services/_static/image5.png)
 
-경우는 **새 프로젝트** 대화 상자가 표시 됩니다, 선택 **설치 됨** **템플릿** 확장 **Visual C#**합니다. 아래 **Visual C#**선택, **웹**합니다. 프로젝트 템플릿 목록에서 선택 **ASP.NET 웹 응용 프로그램**합니다. 프로젝트에 대 한 이름을 입력 하 고 클릭 **확인**합니다.
+경우는 **새 프로젝트** 대화 상자가 표시 됩니다, 선택 **설치 됨** **템플릿** 확장 **Visual C#** 합니다. 아래 **Visual C#** 선택, **웹**합니다. 프로젝트 템플릿 목록에서 선택 **ASP.NET 웹 응용 프로그램**합니다. 프로젝트에 대 한 이름을 입력 하 고 클릭 **확인**합니다.
 
 [![](external-authentication-services/_static/image8.png "클릭 하 여 이미지를 확장 합니다.")](external-authentication-services/_static/image7.png)
 

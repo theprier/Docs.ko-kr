@@ -103,7 +103,7 @@ ms.lasthandoff: 04/06/2018
 7. 라는 새 대상 추가 **DeployAppOffline**합니다. 이 대상 내의 배포 하는 MSDeploy.exe 명령을 호출 하면 *앱\_오프 라인* 파일을 대상 웹 서버.
 
     [!code-xml[Main](taking-web-applications-offline-with-web-deploy/samples/sample5.xml)]
-8. 이 예제는 **ContactManagerIisPath** 속성이 프로젝트 파일에서 다른 곳에서 정의 됩니다. 이 단순히 IIS 응용 프로그램 경로, 형태로 *[IIS 웹 사이트 이름] / [응용 프로그램 이름]*합니다. 사용자가 전환할 수 있도록 대상의 조건을 포함 하는 *앱\_오프 라인* 속성 값을 변경 하거나 명령줄 매개 변수를 제공 하 여 배포 설정 하거나 해제 합니다.
+8. 이 예제는 **ContactManagerIisPath** 속성이 프로젝트 파일에서 다른 곳에서 정의 됩니다. 이 단순히 IIS 응용 프로그램 경로, 형태로 *[IIS 웹 사이트 이름] / [응용 프로그램 이름]* 합니다. 사용자가 전환할 수 있도록 대상의 조건을 포함 하는 *앱\_오프 라인* 속성 값을 변경 하거나 명령줄 매개 변수를 제공 하 여 배포 설정 하거나 해제 합니다.
 9. 라는 새 대상 추가 **DeleteAppOffline**합니다. 이 대상 내의 제거 하는 MSDeploy.exe 명령을 호출 하면 *앱\_오프 라인* 대상 웹 서버에서 파일입니다.
 
     [!code-xml[Main](taking-web-applications-offline-with-web-deploy/samples/sample6.xml)]

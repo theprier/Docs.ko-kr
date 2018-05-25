@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/moving-to-aspnet-20/improvements-in-visual-studio-2005
-title: "Visual Studio 2005의 개선 사항 | Microsoft Docs"
+title: Visual Studio 2005의 개선 사항 | Microsoft Docs
 author: microsoft
-description: "Visual Studio 2005 웹 응용 프로그램 개발자에 향상 된 기능 및 향상 된 웹 프로젝트에 긴 목록 제공합니다."
+description: Visual Studio 2005 웹 응용 프로그램 개발자에 향상 된 기능 및 향상 된 웹 프로젝트에 긴 목록 제공합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2005
@@ -319,7 +319,7 @@ Visual Studio 및 ASP.NET 아키텍처에 향상 된 또 다른 훌륭한 기능
 > ASP.NET 웹 응용 프로그램을 미리 컴파일 aspnet/_compile.exe 유틸리티를 사용할 수도 있습니다. 모듈 9에에서 해당 도구를 설명 합니다.
 
 
-경우 아래와 같이 Temporary ASP.NET Files 폴더에 저장 됩니다 게시 웹 사이트를 미리 컴파일된 파일 있습니다. 사용 하 여 파일을 *.compiled* 파일 확장명은 특정 Dll에 대 한 종속성을 정의 하는 XML 파일입니다. 모든 Webform 또는 사용자 정의 컨트롤으로 시작 하는 임의의 Dll로 컴파일되는 *응용 프로그램 /_웹 /_*합니다.
+경우 아래와 같이 Temporary ASP.NET Files 폴더에 저장 됩니다 게시 웹 사이트를 미리 컴파일된 파일 있습니다. 사용 하 여 파일을 *.compiled* 파일 확장명은 특정 Dll에 대 한 종속성을 정의 하는 XML 파일입니다. 모든 Webform 또는 사용자 정의 컨트롤으로 시작 하는 임의의 Dll로 컴파일되는 *응용 프로그램 /_웹 /_* 합니다.
 
 두면는 *미리 컴파일된이 사이트를 업데이트할 수 있도록 허용* checkbox가 선택 태그 Webforms 및 사용자 컨트롤 내에서 배포 후 변경할 수 있도록 하는 DLL로 미리 컴파일된 되지 것입니다. 배포 된 콘텐츠에 대 한 변경이 허용 되지 않습니다 수 있도록 태그 고정 하지 않으려면이 확인란의 선택을 취소 합니다.
 
@@ -445,7 +445,7 @@ Msvsmon.exe를 실행 하면 원격 디버깅 차단 되 고 포트에 대 한 �
 
 ASP.NET 개발 서버는 제한 된 웹 서버. 원격 연결을 허용 하지 않습니다, 그리고 웹 서버를 시작한 사용자 이외의 모든 사용자의 모든 요청을 허용 하지 않습니다. ASP 페이지를 처리 하는 기능이 있는 되지 않습니다. ASP.NET 리소스 및 HTML 리소스 (이미지, CSS 파일 등 포함)만 제공 됩니다.
 
-C:/Windows/Microsoft.NET/Framework/v2.0./에 있는 WebDev.WebServer.exe 파일을 실행 하 여 명령줄을 통해 ASP.NET 개발 서버를 시작할 수 */*  /  */*/*. 다음과 같은 대화 상자가 사용할 수 있는 매개 변수를 표시 합니다.
+C:/Windows/Microsoft.NET/Framework/v2.0./에 있는 WebDev.WebServer.exe 파일을 실행 하 여 명령줄을 통해 ASP.NET 개발 서버를 시작할 수*/* /  */*/*. 다음과 같은 대화 상자가 사용할 수 있는 매개 변수를 표시 합니다.
 
 
 ![](improvements-in-visual-studio-2005/_static/image11.jpg)

@@ -1,14 +1,14 @@
 ---
 uid: visual-studio/overview/2012/aspnet-and-web-tools-20131-for-visual-studio-2012
-title: "ASP.NET 및 Visual Studio 2012 용 2013.1 웹 도구 릴리스 정보 | Microsoft Docs"
+title: ASP.NET 및 Visual Studio 2012 용 2013.1 웹 도구 릴리스 정보 | Microsoft Docs
 author: microsoft
-description: "이 문서에서는 Visual Studio 2012 용 ASP.NET 및 웹 도구 2013.1의 릴리스를 설명 합니다."
+description: 이 문서에서는 Visual Studio 2012 용 ASP.NET 및 웹 도구 2013.1의 릴리스를 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/13/2013
 ms.topic: article
 ms.assetid: ca26e5bb-630e-41d2-8512-2a9386c431cb
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2012/aspnet-and-web-tools-20131-for-visual-studio-2012
 msc.type: authoredcontent
@@ -181,7 +181,7 @@ Visual Studio 2012 (또는 Visual Studio 2012 MVC 5 만든 프로젝트를 Visua
 
 ASP.NET Razor 3 또는 ASP.NET MVC 5로 업그레이드 한 후 tilde(~) 표기법 없습니다 더 이상 제대로 작동 URL 다시 작성을 사용 하는 경우. URL 다시 쓰기에 영향을 줍니다 tilde(~) 표기법에서 HTML 요소와 같은 &lt;A /&gt;, &lt;스크립트 /&gt;, &lt;링크 /&gt;, 결과적으로 물결표 더 이상 매핑되는 루트 디렉터리입니다.
 
-예를 들어에 대 한 요청을 다시 작성할 때 **asp.net/content** 를 **asp.net**에 href 특성이 &lt;A href = "~/content/" /&gt; 확인 **/content/ 콘텐츠 /** 대신  **/** 합니다. 이 변경은 표시 하지 않으려면 설정할 수 있습니다는 **IIS\_WasUrlRewritten** 각 웹 페이지 또는 false로 컨텍스트 **응용 프로그램\_BeginRequest** Global.asax에 있습니다.
+예를 들어에 대 한 요청을 다시 작성할 때 **asp.net/content** 를 **asp.net**에 href 특성이 &lt;A href = "~/content/" /&gt; 확인 **/content/ 콘텐츠 /** 대신 **/** 합니다. 이 변경은 표시 하지 않으려면 설정할 수 있습니다는 **IIS\_WasUrlRewritten** 각 웹 페이지 또는 false로 컨텍스트 **응용 프로그램\_BeginRequest** Global.asax에 있습니다.
 
 <a id="templateissue"></a>
 ### <a name="templates"></a>템플릿
