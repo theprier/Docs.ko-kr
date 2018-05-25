@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/twitter-helper
-title: "Twitter 도우미 ASP.NET 웹 페이지와 | Microsoft Docs"
+title: Twitter 도우미 ASP.NET 웹 페이지와 | Microsoft Docs
 author: tfitzmac
-description: "이 항목 및 응용 프로그램에는 Twitter 도우미를 WebMatrix 3 프로젝트에 추가 하는 방법을 보여 줍니다. Twitter 도우미 코드를 포함 하 고 도우미를 호출 하는 방법을 보여 줍니다. 중..."
+description: 이 항목 및 응용 프로그램에는 Twitter 도우미를 WebMatrix 3 프로젝트에 추가 하는 방법을 보여 줍니다. Twitter 도우미 코드를 포함 하 고 도우미를 호출 하는 방법을 보여 줍니다. 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/07/2014
@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/twitter-helper
 msc.type: authoredcontent
 ms.openlocfilehash: 07d9c4d485c42b78a42c54c9740af5f67cb44763
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 1b94305cc79843e2b0866dae811dab61c21980ad
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 05/25/2018
 ---
 <a name="twitter-helper-with-aspnet-web-pages"></a>ASP.NET 웹 페이지와 twitter 도우미
 ====================
@@ -67,24 +67,24 @@ Twitter.cshtml의 기본 코드를 다음 코드로 바꿉니다.
 
 ### <a name="follow-button"></a>단추
 
-[에 따라 @aspnet)](https://twitter.com/aspnet)<script>! (d, s, id) 함수 {var js fjs d.getElementsByTagName(s) [0], p = /^http:/.test(d.location) =? 'http': 'https'; 경우 (! d.getElementById(id)) {js d.createElement(s); = js.id = js.src; id = p + ': / / platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore (js, fjs);}} (문서, '스크립트 ', ' twitter wjs');</script>
+[에 따라 @aspnet)](https://twitter.com/aspnet)<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
 
 ### <a name="tweet-button"></a>트 윗 단추
 
-[트 윗](https://twitter.com/share)<script>! (d, s, id) 함수 {var js fjs d.getElementsByTagName(s) [0], p = /^http:/.test(d.location) =? 'http': 'https'; 경우 (! d.getElementById(id)) {js d.createElement(s); = js.id = js.src; id = p + ': / / platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore (js, fjs);}} (문서, '스크립트 ', ' twitter wjs');</script>
+[트 윗](https://twitter.com/share)<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
 
 ### <a name="user-timeline-profile"></a>사용자 타임 라인 (프로필)
 
-[하 여 트 윗 @aspnet ](https://twitter.com/aspnet) <script>! (d, s, id) 함수 {var js fjs d.getElementsByTagName(s) [0], p = /^http:/.test(d.location) =? 'http': 'https'; 경우 (! d.getElementById(id)) {js d.createElement(s); = js.id = js.src; id = p + ": / / platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore (js, fjs);}} (문서, "script", "twitter wjs");</script>
+[하 여 트 윗 @aspnet](https://twitter.com/aspnet)<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
 
 ### <a name="favorites"></a>즐겨찾기
 
-[하 여 트 윗 즐겨찾기 @Microsoft ](https://twitter.com/Microsoft/favorites) <script>! (d, s, id) 함수 {var js fjs d.getElementsByTagName(s) [0], p = /^http:/.test(d.location) =? 'http': 'https'; 경우 (! d.getElementById(id)) {js d.createElement(s); = js.id = js.src; id = p + ": / / platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore (js, fjs);}} (문서, "script", "twitter wjs");</script>
+[즐겨 찾는 트 윗 @Microsoft](https://twitter.com/Microsoft/favorites)<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
 
 ### <a name="list"></a>목록
 
-[트 윗에서 @Microsoft/MS \_소비자\_밴드](https://twitter.com/microsoft/ms-consumer-brands/)<script>! (d, s, id) 함수 {var js fjs d.getElementsByTagName(s) [0], p = /^http:/.test(d.location) =? 'http': 'https'; 경우 (! d.getElementById(id)) {js d.createElement(s); = js.id = js.src; id = p + ": / / platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore (js, fjs);}} (문서, "script", "twitter wjs");</script>
+[트 윗에서 @Microsoft/MS \_소비자\_밴드](https://twitter.com/microsoft/ms-consumer-brands/)<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
 
 ### <a name="search"></a>검색
 
-[에 대 한 트 윗 &quot;#asp.net&quot;](https://twitter.com/search?q=%23asp.net)<script>! (d, s, id) 함수 {var js fjs d.getElementsByTagName(s) [0], p = /^http:/.test(d.location) =? 'http': 'https'; 경우 (! d.getElementById(id)) {js d.createElement(s); = js.id = js.src; id = p + ": / / platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore (js, fjs);}} (문서, "script", "twitter wjs");</script>
+[에 대 한 트 윗 &quot;#asp.net&quot;](https://twitter.com/search?q=%23asp.net)<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");</script>
