@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v3/working-with-entity-relations
-title: "Web API 2 OData v3에서 엔터티 관계를 지 원하는 | Microsoft Docs"
+title: Web API 2 OData v3에서 엔터티 관계를 지 원하는 | Microsoft Docs
 author: MikeWasson
-description: "엔터티 간의 관계를 정의 하는 대부분의 데이터 집합: 고객이 주문을; 갖고 책에는 한 작성자입니다. 제품 공급 업체에는 합니다. OData를 사용 하 여 클라이언트를 탐색할 수 있습니다..."
+description: '엔터티 간의 관계를 정의 하는 대부분의 데이터 집합: 고객이 주문을; 갖고 책에는 한 작성자입니다. 제품 공급 업체에는 합니다. OData를 사용 하 여 클라이언트를 탐색할 수 있습니다...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/26/2014

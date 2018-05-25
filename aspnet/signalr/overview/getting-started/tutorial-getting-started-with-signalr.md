@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/getting-started/tutorial-getting-started-with-signalr
-title: "자습서: 2 SignalR 시작 | Microsoft Docs"
+title: '자습서: 2 SignalR 시작 | Microsoft Docs'
 author: pfletcher
-description: "이 자습서에는 SignalR을 사용하여 실시간 채팅 응용 프로그램을 만드는 방법을 보여 줍니다. SignalR 빈 ASP.NET 웹 응용 프로그램에 추가 하 고 HTML pa를 만드는 중..."
+description: 이 자습서에는 SignalR을 사용하여 실시간 채팅 응용 프로그램을 만드는 방법을 보여 줍니다. SignalR 빈 ASP.NET 웹 응용 프로그램에 추가 하 고 HTML pa를 만드는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
@@ -102,7 +102,7 @@ ms.lasthandoff: 01/24/2018
 2. <span data-ttu-id="8bd17-158">에 **새 ASP.NET 프로젝트** 창 leave **빈** 선택한 클릭 **프로젝트 만들기**합니다.</span><span class="sxs-lookup"><span data-stu-id="8bd17-158">In the **New ASP.NET Project** window, leave **Empty** selected and click **Create Project**.</span></span>
 
     ![빈 웹 만들기](tutorial-getting-started-with-signalr/_static/image3.png)
-3. <span data-ttu-id="8bd17-160">**솔루션 탐색기**프로젝트를 마우스 오른쪽 단추로 선택 **추가 | SignalR 허브 클래스 (v2)**합니다.</span><span class="sxs-lookup"><span data-stu-id="8bd17-160">In **Solution Explorer**, right-click the project, select **Add | SignalR Hub Class (v2)**.</span></span> <span data-ttu-id="8bd17-161">클래스의 이름을 **ChatHub.cs** 프로젝트에 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="8bd17-161">Name the class **ChatHub.cs** and add it to the project.</span></span> <span data-ttu-id="8bd17-162">이 단계에서는 **ChatHub** 클래스 및 스크립트 파일 및 SignalR을 지 원하는 어셈블리 참조의 집합을 프로젝트에 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="8bd17-162">This step creates the **ChatHub** class and adds to the project a set of script files and assembly references that support SignalR.</span></span>
+3. <span data-ttu-id="8bd17-160">**솔루션 탐색기**프로젝트를 마우스 오른쪽 단추로 선택 **추가 | SignalR 허브 클래스 (v2)** 합니다.</span><span class="sxs-lookup"><span data-stu-id="8bd17-160">In **Solution Explorer**, right-click the project, select **Add | SignalR Hub Class (v2)**.</span></span> <span data-ttu-id="8bd17-161">클래스의 이름을 **ChatHub.cs** 프로젝트에 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="8bd17-161">Name the class **ChatHub.cs** and add it to the project.</span></span> <span data-ttu-id="8bd17-162">이 단계에서는 **ChatHub** 클래스 및 스크립트 파일 및 SignalR을 지 원하는 어셈블리 참조의 집합을 프로젝트에 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="8bd17-162">This step creates the **ChatHub** class and adds to the project a set of script files and assembly references that support SignalR.</span></span>
 
     > [!NOTE]
     > <span data-ttu-id="8bd17-163">열어 SignalR 프로젝트에 추가할 수도 있습니다는 **도구 | 라이브러리 패키지 관리자 | 패키지 관리자 콘솔** 하 고 명령을 실행 합니다.</span><span class="sxs-lookup"><span data-stu-id="8bd17-163">You can also add SignalR to a project by opening the **Tools | Library Package Manager | Package Manager Console** and running a command:</span></span>

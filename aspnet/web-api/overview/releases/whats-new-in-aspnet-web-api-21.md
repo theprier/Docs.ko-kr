@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/releases/whats-new-in-aspnet-web-api-21
-title: "ASP.NET Web API 2.1의에서 새로운 기능 | Microsoft Docs"
+title: ASP.NET Web API 2.1의에서 새로운 기능 | Microsoft Docs
 author: microsoft
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/20/2014

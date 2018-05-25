@@ -1,0 +1,6 @@
+# <a name="gdpr-sample"></a><span data-ttu-id="f76c9-101">GDPR 샘플</span><span class="sxs-lookup"><span data-stu-id="f76c9-101">GDPR Sample</span></span>
+
+* <span data-ttu-id="f76c9-102">*appsettings.json*설정, `CheckNotConsentNeeded` 를 `false` ; 동의 요구 하도록 그렇지 않으면 생략 또는 true로 설정 합니다.</span><span class="sxs-lookup"><span data-stu-id="f76c9-102">In *appsettings.json*, set `CheckNotConsentNeeded` to `false` to require consent; otherwise set to true or omit.</span></span> <span data-ttu-id="f76c9-103">응용 프로그램을 테스트 `CheckNotConsentNeeded` 로 설정 `false` 로 설정 하 고 `true`합니다.</span><span class="sxs-lookup"><span data-stu-id="f76c9-103">Test the app with `CheckNotConsentNeeded` set to `false` and set to `true`.</span></span>
+* <span data-ttu-id="f76c9-104">필수 및 필수가 아닌 쿠키의 각 변수가 만들기 `CheckConsentNeeded` 당사자의 동의 부여 합니다.</span><span class="sxs-lookup"><span data-stu-id="f76c9-104">Create essential and non-essential cookies with each variation of `CheckConsentNeeded` and consent granted.</span></span>
+* <span data-ttu-id="f76c9-105">사용자를 등록 합니다.</span><span class="sxs-lookup"><span data-stu-id="f76c9-105">Register a user.</span></span>
+* <span data-ttu-id="f76c9-106">쿠키를 삭제 합니다.</span><span class="sxs-lookup"><span data-stu-id="f76c9-106">Delete cookies.</span></span>

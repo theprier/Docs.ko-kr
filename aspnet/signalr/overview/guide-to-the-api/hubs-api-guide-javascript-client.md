@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/guide-to-the-api/hubs-api-guide-javascript-client
-title: "ASP.NET SignalR 허브 API 가이드-JavaScript 클라이언트 | Microsoft Docs"
+title: ASP.NET SignalR 허브 API 가이드-JavaScript 클라이언트 | Microsoft Docs
 author: pfletcher
-description: "이 문서에서는 허브 API를 사용 하 여 SignalR 브라우저 및 Windows 스토어 (WinJS) applicat 같은 JavaScript 클라이언트에서 버전 2에 대 한 소개를 제공..."
+description: 이 문서에서는 허브 API를 사용 하 여 SignalR 브라우저 및 Windows 스토어 (WinJS) applicat 같은 JavaScript 클라이언트에서 버전 2에 대 한 소개를 제공...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2015

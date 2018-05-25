@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/getting-started-with-aspnet-web-api/using-web-api-with-aspnet-web-forms
-title: "Web API를 사용 하 여 ASP.NET Web forms | Microsoft Docs"
+title: Web API를 사용 하 여 ASP.NET Web forms | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/03/2012
@@ -35,7 +35,7 @@ ms.lasthandoff: 12/01/2017
 
 <span data-ttu-id="ba605-111">Visual Studio를 시작 하 고 선택 **새 프로젝트** 에서 **시작** 페이지.</span><span class="sxs-lookup"><span data-stu-id="ba605-111">Start Visual Studio and select **New Project** from the **Start** page.</span></span> <span data-ttu-id="ba605-112">또는에서 **파일** 메뉴 선택 **새로** 차례로 **프로젝트**합니다.</span><span class="sxs-lookup"><span data-stu-id="ba605-112">Or, from the **File** menu, select **New** and then **Project**.</span></span>
 
-<span data-ttu-id="ba605-113">에 **템플릿** 창 선택 **설치 된 템플릿** 확장는 **Visual C#** 노드.</span><span class="sxs-lookup"><span data-stu-id="ba605-113">In the **Templates** pane, select **Installed Templates** and expand the **Visual C#** node.</span></span> <span data-ttu-id="ba605-114">아래 **Visual C#**선택, **웹**합니다.</span><span class="sxs-lookup"><span data-stu-id="ba605-114">Under **Visual C#**, select **Web**.</span></span> <span data-ttu-id="ba605-115">프로젝트 템플릿 목록에서 선택 **ASP.NET Web Forms 응용 프로그램**합니다.</span><span class="sxs-lookup"><span data-stu-id="ba605-115">In the list of project templates, select **ASP.NET Web Forms Application**.</span></span> <span data-ttu-id="ba605-116">프로젝트에 대 한 이름을 입력 하 고 클릭 **확인**합니다.</span><span class="sxs-lookup"><span data-stu-id="ba605-116">Enter a name for the project and click **OK**.</span></span>
+<span data-ttu-id="ba605-113">에 **템플릿** 창 선택 **설치 된 템플릿** 확장는 **Visual C#** 노드.</span><span class="sxs-lookup"><span data-stu-id="ba605-113">In the **Templates** pane, select **Installed Templates** and expand the **Visual C#** node.</span></span> <span data-ttu-id="ba605-114">아래 **Visual C#** 선택, **웹**합니다.</span><span class="sxs-lookup"><span data-stu-id="ba605-114">Under **Visual C#**, select **Web**.</span></span> <span data-ttu-id="ba605-115">프로젝트 템플릿 목록에서 선택 **ASP.NET Web Forms 응용 프로그램**합니다.</span><span class="sxs-lookup"><span data-stu-id="ba605-115">In the list of project templates, select **ASP.NET Web Forms Application**.</span></span> <span data-ttu-id="ba605-116">프로젝트에 대 한 이름을 입력 하 고 클릭 **확인**합니다.</span><span class="sxs-lookup"><span data-stu-id="ba605-116">Enter a name for the project and click **OK**.</span></span>
 
 ![](using-web-api-with-aspnet-web-forms/_static/image1.png)
 

@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/getting-started/tutorial-getting-started-with-signalr-and-mvc
-title: "자습서: SignalR 2 및 MVC 5 시작 | Microsoft Docs"
+title: '자습서: SignalR 2 및 MVC 5 시작 | Microsoft Docs'
 author: pfletcher
-description: "이 자습서에는 실시간 채팅 응용 프로그램을 만들려면 ASP.NET SignalR 2를 사용 하는 방법을 보여 줍니다. SignalR MVC 5 응용 프로그램에 추가 하 고 채팅 보기를 만드는 중..."
+description: 이 자습서에는 실시간 채팅 응용 프로그램을 만들려면 ASP.NET SignalR 2를 사용 하는 방법을 보여 줍니다. SignalR MVC 5 응용 프로그램에 추가 하 고 채팅 보기를 만드는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014

@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/scaleout-with-windows-azure-service-bus
-title: "Azure 서비스 버스에 SignalR 확장 (SignalR 1.x) | Microsoft Docs"
+title: Azure 서비스 버스에 SignalR 확장 (SignalR 1.x) | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/01/2013
@@ -72,7 +72,7 @@ ms.lasthandoff: 01/24/2018
 
 <span data-ttu-id="bcb28-136">Visual Studio를 시작합니다.</span><span class="sxs-lookup"><span data-stu-id="bcb28-136">Start Visual Studio.</span></span> <span data-ttu-id="bcb28-137">**파일** 메뉴를 클릭 하 여 **새 프로젝트**합니다.</span><span class="sxs-lookup"><span data-stu-id="bcb28-137">From the **File** menu, click **New Project**.</span></span>
 
-<span data-ttu-id="bcb28-138">에 **새 프로젝트** 대화 상자에서 **Visual C#**합니다.</span><span class="sxs-lookup"><span data-stu-id="bcb28-138">In the **New Project** dialog box, expand **Visual C#**.</span></span> <span data-ttu-id="bcb28-139">아래 **설치 된 템플릿**선택, **클라우드** 선택한 후 **Windows Azure 클라우드 서비스**합니다.</span><span class="sxs-lookup"><span data-stu-id="bcb28-139">Under **Installed Templates**, select **Cloud** and then select **Windows Azure Cloud Service**.</span></span> <span data-ttu-id="bcb28-140">기본.NET Framework 4.5를 유지 합니다.</span><span class="sxs-lookup"><span data-stu-id="bcb28-140">Keep the default .NET Framework 4.5.</span></span> <span data-ttu-id="bcb28-141">ChatService 응용 프로그램 이름을 지정 하 고 클릭 **확인**합니다.</span><span class="sxs-lookup"><span data-stu-id="bcb28-141">Name the application ChatService and click **OK**.</span></span>
+<span data-ttu-id="bcb28-138">에 **새 프로젝트** 대화 상자에서 **Visual C#** 합니다.</span><span class="sxs-lookup"><span data-stu-id="bcb28-138">In the **New Project** dialog box, expand **Visual C#**.</span></span> <span data-ttu-id="bcb28-139">아래 **설치 된 템플릿**선택, **클라우드** 선택한 후 **Windows Azure 클라우드 서비스**합니다.</span><span class="sxs-lookup"><span data-stu-id="bcb28-139">Under **Installed Templates**, select **Cloud** and then select **Windows Azure Cloud Service**.</span></span> <span data-ttu-id="bcb28-140">기본.NET Framework 4.5를 유지 합니다.</span><span class="sxs-lookup"><span data-stu-id="bcb28-140">Keep the default .NET Framework 4.5.</span></span> <span data-ttu-id="bcb28-141">ChatService 응용 프로그램 이름을 지정 하 고 클릭 **확인**합니다.</span><span class="sxs-lookup"><span data-stu-id="bcb28-141">Name the application ChatService and click **OK**.</span></span>
 
 ![](scaleout-with-windows-azure-service-bus/_static/image4.png)
 

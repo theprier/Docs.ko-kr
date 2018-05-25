@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/tutorial-getting-started-with-signalr
-title: "자습서: SignalR 시작 1.x | Microsoft Docs"
+title: '자습서: SignalR 시작 1.x | Microsoft Docs'
 author: pfletcher
-description: "ASP.NET SignalR을 사용 하 여 HTML 페이지에 실시간 채팅 응용 프로그램을 빌드합니다."
+description: ASP.NET SignalR을 사용 하 여 HTML 페이지에 실시간 채팅 응용 프로그램을 빌드합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013

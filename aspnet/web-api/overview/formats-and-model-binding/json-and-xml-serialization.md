@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/formats-and-model-binding/json-and-xml-serialization
-title: "JSON 및 ASP.NET Web API의에서 XML Serialization | Microsoft Docs"
+title: JSON 및 ASP.NET Web API의에서 XML Serialization | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/30/2012

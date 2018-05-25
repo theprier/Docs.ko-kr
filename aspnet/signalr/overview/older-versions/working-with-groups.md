@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/working-with-groups
-title: "SignalR에서 그룹 작업 1.x | Microsoft Docs"
+title: SignalR에서 그룹 작업 1.x | Microsoft Docs
 author: pfletcher
-description: "이 항목에서는 허브 API 사용 하 여 그룹 멤버 자격 정보를 유지 하는 방법을 설명 합니다."
+description: 이 항목에서는 허브 API 사용 하 여 그룹 멤버 자격 정보를 유지 하는 방법을 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/21/2013

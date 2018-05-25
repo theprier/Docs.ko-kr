@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/overview/understanding-models-views-and-controllers-cs
-title: "이해 모델, 뷰 및 컨트롤러 (C#) | Microsoft Docs"
+title: 이해 모델, 뷰 및 컨트롤러 (C#) | Microsoft Docs
 author: StephenWalther
-description: "모델, 뷰 및 컨트롤러에 대 한 자세한 내용은 이 자습서에서는 Stephen Walther ASP.NET MVC 응용 프로그램의 여러 부분을 소개합니다."
+description: 모델, 뷰 및 컨트롤러에 대 한 자세한 내용은 이 자습서에서는 Stephen Walther ASP.NET MVC 응용 프로그램의 여러 부분을 소개합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/19/2008

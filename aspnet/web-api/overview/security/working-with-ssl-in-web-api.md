@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/security/working-with-ssl-in-web-api
-title: "Web API의에서 SSL 작업 | Microsoft Docs"
+title: Web API의에서 SSL 작업 | Microsoft Docs
 author: MikeWasson
-description: "SSL 클라이언트 인증서를 사용 하는 등 ASP.NET Web API를 함께 SSL을 사용 하는 방법을 보여 줍니다."
+description: SSL 클라이언트 인증서를 사용 하는 등 ASP.NET Web API를 함께 SSL을 사용 하는 방법을 보여 줍니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/12/2012

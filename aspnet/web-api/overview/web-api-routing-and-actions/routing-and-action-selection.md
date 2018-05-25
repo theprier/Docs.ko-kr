@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/web-api-routing-and-actions/routing-and-action-selection
-title: "라우팅 및 ASP.NET Web API의에서 작업 선택 | Microsoft Docs"
+title: 라우팅 및 ASP.NET Web API의에서 작업 선택 | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/27/2012

@@ -1,9 +1,9 @@
 ---
 uid: signalr/overview/performance/using-signalr-performance-counters-in-an-azure-web-role
-title: "SignalR 성능 카운터를 사용 하 여 Azure 웹 역할에서 | Microsoft Docs"
+title: SignalR 성능 카운터를 사용 하 여 Azure 웹 역할에서 | Microsoft Docs
 author: guardrex
-description: "설치 하 고 Azure 웹 역할에서 SignalR 성능 카운터를 사용 하는 방법."
-keywords: "ASP.NET,signalr,performance 카운터, azure 웹 역할"
+description: 설치 하 고 Azure 웹 역할에서 SignalR 성능 카운터를 사용 하는 방법.
+keywords: ASP.NET,signalr,performance 카운터, azure 웹 역할
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/11/2017
@@ -106,7 +106,7 @@ ms.lasthandoff: 02/05/2018
 
     [!code-cshtml[Main](using-signalr-performance-counters-in-an-azure-web-role/samples/sample6.cshtml)]
     
-21. <span data-ttu-id="8b7f0-160">새 폴더 만들기는 **WebRole1** 라는 프로젝트 *허브*합니다.</span><span class="sxs-lookup"><span data-stu-id="8b7f0-160">Create a new folder in the **WebRole1** project named *Hubs*.</span></span> <span data-ttu-id="8b7f0-161">마우스 오른쪽 단추로 클릭는 *허브* 폴더에 **솔루션 탐색기**선택, **웹** > **SignalR**를 선택 하 고  **SignalR 허브 클래스 (v2)**합니다.</span><span class="sxs-lookup"><span data-stu-id="8b7f0-161">Right-click the *Hubs* folder in **Solution Explorer**, select **Web** > **SignalR**, and select **SignalR Hub Class (v2)**.</span></span> <span data-ttu-id="8b7f0-162">새 허브 이름을 *MyHub.cs* 선택 **추가**합니다.</span><span class="sxs-lookup"><span data-stu-id="8b7f0-162">Name the new hub *MyHub.cs* and select **Add**.</span></span>
+21. <span data-ttu-id="8b7f0-160">새 폴더 만들기는 **WebRole1** 라는 프로젝트 *허브*합니다.</span><span class="sxs-lookup"><span data-stu-id="8b7f0-160">Create a new folder in the **WebRole1** project named *Hubs*.</span></span> <span data-ttu-id="8b7f0-161">마우스 오른쪽 단추로 클릭는 *허브* 폴더에 **솔루션 탐색기**선택, **웹** > **SignalR**를 선택 하 고  **SignalR 허브 클래스 (v2)** 합니다.</span><span class="sxs-lookup"><span data-stu-id="8b7f0-161">Right-click the *Hubs* folder in **Solution Explorer**, select **Web** > **SignalR**, and select **SignalR Hub Class (v2)**.</span></span> <span data-ttu-id="8b7f0-162">새 허브 이름을 *MyHub.cs* 선택 **추가**합니다.</span><span class="sxs-lookup"><span data-stu-id="8b7f0-162">Name the new hub *MyHub.cs* and select **Add**.</span></span>
 
     ![새 항목 추가 대화 상자에서 허브 폴더에 추가 하는 SignalR 허브 클래스](using-signalr-performance-counters-in-an-azure-web-role/_static/image13.png)
 
