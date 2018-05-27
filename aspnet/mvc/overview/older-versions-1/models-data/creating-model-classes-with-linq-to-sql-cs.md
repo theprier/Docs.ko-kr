@@ -12,15 +12,15 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/creating-model-classes-with-linq-to-sql-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1f30ff6c97e565059c57c55f26d2dff477774aeb
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 9a56ceb9eab5774906ecc89ce9da570d4f691a82
+ms.sourcegitcommit: 466300d32f8c33e64ee1b419a2cbffe702863cdf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 05/27/2018
 ---
 <a name="creating-model-classes-with-linq-to-sql-c"></a>LINQ to SQL (C#)를 사용 하 여 모델 클래스 만들기
 ====================
-by [Microsoft](https://github.com/microsoft)
+여 [Microsoft](https://github.com/microsoft)
 
 [PDF 다운로드](http://download.microsoft.com/download/1/1/f/11f721aa-d749-4ed7-bb89-a681b68894e6/ASPNET_MVC_Tutorial_10_CS.pdf)
 
@@ -75,7 +75,7 @@ Visual Web Developer를 사용 하는 경우 서버 탐색기 창의 데이터�
 | --- | --- | --- |
 | ID | Int | False |
 | 제목 | Nvarchar(200) | False |
-| 감독 | Nvarchar(50) | False |
+| 감독 | Nvarchar (50) | False |
 
 Id 열에 두 가지 특별 한 작업을 수행 해야 합니다. 먼저, 테이블 디자이너에서 열을 선택 하 고 키 아이콘을 클릭 하 여 Id 열에 기본 키 열으로 표시 해야 합니다. LINQ to SQL 삽입을 수행 하거나 데이터베이스에 대해 업데이트할 때 기본 키 열을 지정 해야 합니다.
 
@@ -149,7 +149,7 @@ LINQ 쿼리는 모든 영화를 검색 하는 DataContext에 대해 수행 되�
 
 ## <a name="using-the-repository-pattern"></a>리포지토리 패턴을 사용 하 여
 
-이전 섹션에서 LINQ to SQL 클래스는 컨트롤러 작업 내에서 직접 사용 했습니다. 사용 하는 `MovieDataContex` t 클래스에서 직접는 `Index()` 컨트롤러 동작 합니다. 잘못 된 간단한 응용 프로그램의 경우이 작업을 수행 하는 일은 없습니다. 그러나 LINQ to SQL에 직접 작업 컨트롤러 클래스에서 더 복잡 한 응용 프로그램을 작성 해야 할 때 문제를 만듭니다.
+이전 섹션에서 LINQ to SQL 클래스는 컨트롤러 작업 내에서 직접 사용 했습니다. 사용 하는 `MovieDataContext` 에서 직접 클래스는 `Index()` 컨트롤러 동작 합니다. 잘못 된 간단한 응용 프로그램의 경우이 작업을 수행 하는 일은 없습니다. 그러나 LINQ to SQL에 직접 작업 컨트롤러 클래스에서 더 복잡 한 응용 프로그램을 작성 해야 할 때 문제를 만듭니다.
 
 컨트롤러 클래스 내에서 LINQ to SQL 사용 하면 나중에 데이터 액세스 기술 전환 하기 어렵습니다. 예를 들어 Microsoft LINQ to SQL 사용 하 여 Microsoft Entity Framework를 사용 하 여 데이터 액세스 기술로 전환할 수도 있습니다. 이 경우 응용 프로그램 내에서 데이터베이스를 액세스 하는 모든 컨트롤러를 다시 작성 해야 합니다.
 

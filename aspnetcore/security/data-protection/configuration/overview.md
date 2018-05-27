@@ -4,16 +4,17 @@ author: rick-anderson
 description: ASP.NET Core에서 데이터 보호를 구성 하는 방법을 알아봅니다.
 manager: wpickett
 ms.author: riande
+ms.custom: mvc
 ms.date: 07/17/2017
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/data-protection/configuration/overview
-ms.openlocfilehash: 300feb42dff7f1bb86bab6fedf3f657273ced8be
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: 803b81f5f69496900791ca1d1976f70f8c266f29
+ms.sourcegitcommit: 466300d32f8c33e64ee1b419a2cbffe702863cdf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 05/27/2018
 ---
 # <a name="configure-aspnet-core-data-protection"></a>ASP.NET Core 데이터 보호를 구성 합니다.
 
@@ -30,6 +31,33 @@ ms.lasthandoff: 04/18/2018
 > 마찬가지로 구성 파일, 데이터 보호 키 링 보호 해야 적절 한 사용 권한을 사용 합니다. 을 미사용 키를 암호화 하도록 선택할 수 있습니다 하지만이 되지 않도록 공격자가 새 키를 만드는 합니다. 따라서 응용 프로그램의 보안이 저하 됩니다. 데이터 보호를 사용 하 여 구성 저장소 위치는 응용 프로그램 구성 파일을 보호 하는 방식과 유사 하 게 자체가으로 제한 된 액세스 권한이 있어야 합니다. 예를 들어 키 링 디스크에 저장 하려는 경우에 파일 시스템 권한을 사용 합니다. id만 보장 웹 앱에서 실행 되는 대 한 읽기, 쓰기 및 해당 디렉터리에 대 한 액세스를 만듭니다. Azure 테이블 저장소를 사용 하는 경우 웹 앱에만 읽기, 쓰기 또는 등 테이블 저장소에 새 항목을 만들 수가 있어야 합니다.
 >
 > 확장 메서드 [AddDataProtection](/dotnet/api/microsoft.extensions.dependencyinjection.dataprotectionservicecollectionextensions.adddataprotection) 반환는 [IDataProtectionBuilder](/dotnet/api/microsoft.aspnetcore.dataprotection.idataprotectionbuilder)합니다. `IDataProtectionBuilder` 는 함께 연이어 호출해서 데이터 보호 옵션을 구성할 수 있는 확장 메서드들을 노출합니다. 
+
+::: moniker range=">= aspnetcore-2.1"
+
+## <a name="protectkeyswithazurekeyvault"></a>ProtectKeysWithAzureKeyVault
+
+키를 저장할 [Azure 키 자격 증명 모음](https://azure.microsoft.com/services/key-vault/), 시스템 구성 [ProtectKeysWithAzureKeyVault](/dotnet/api/microsoft.aspnetcore.dataprotection.azuredataprotectionbuilderextensions.protectkeyswithazurekeyvault) 에 `Startup` 클래스:
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddDataProtection()
+        .PersistKeysToAzureBlobStorage(new Uri("<blobUriWithSasToken>"))
+        .ProtectKeysWithAzureKeyVault("<keyIdentifier>", "<clientId>", "<clientSecret>");
+}
+```
+
+키 링 저장소 위치 설정 (예를 들어 [PersistKeysToAzureBlobStorage](/dotnet/api/microsoft.aspnetcore.dataprotection.azuredataprotectionbuilderextensions.persistkeystoazureblobstorage)). 호출 하기 때문에 위치를 설정 해야 `ProtectKeysWithAzureKeyVault` 구현 하는 [IXmlEncryptor](/dotnet/api/microsoft.aspnetcore.dataprotection.xmlencryption.ixmlencryptor) 키 링 저장소 위치를 포함 한 데이터 자동 보호 설정을 사용 하지 않도록 설정 하는 합니다. 앞의 예제에서는 키 링을 유지 하기 위해 Azure Blob 저장소를 사용 합니다. 자세한 내용은 참조 [키 저장소 공급자: Azure와 Redis](xref:security/data-protection/implementation/key-storage-providers#azure-and-redis)합니다. 사용 하 여 로컬로 키 링을 유지할 수 있습니다 [PersistKeysToFileSystem](xref:security/data-protection/implementation/key-storage-providers#file-system)합니다.
+
+`keyIdentifier` 는 키 암호화에 사용 되는 주요 자격 증명 모음 키 식별자 (예를 들어 `https://contosokeyvault.vault.azure.net/keys/dataprotection/`).
+
+`ProtectKeysWithAzureKeyVault` 오버 로드:
+
+* [ProtectKeysWithAzureKeyVault (IDataProtectionBuilder, KeyVaultClient, String)](/dotnet/api/microsoft.aspnetcore.dataprotection.azuredataprotectionbuilderextensions.protectkeyswithazurekeyvault#Microsoft_AspNetCore_DataProtection_AzureDataProtectionBuilderExtensions_ProtectKeysWithAzureKeyVault_Microsoft_AspNetCore_DataProtection_IDataProtectionBuilder_Microsoft_Azure_KeyVault_KeyVaultClient_System_String_) 사용할 수는 [KeyVaultClient](/dotnet/api/microsoft.azure.keyvault.keyvaultclient) 주요 자격 증명 모음을 사용 하도록 데이터 보호 시스템 수 있도록 합니다.
+* [(IDataProtectionBuilder, String, String, X509Certificate2) ProtectKeysWithAzureKeyVault](/dotnet/api/microsoft.aspnetcore.dataprotection.azuredataprotectionbuilderextensions.protectkeyswithazurekeyvault#Microsoft_AspNetCore_DataProtection_AzureDataProtectionBuilderExtensions_ProtectKeysWithAzureKeyVault_Microsoft_AspNetCore_DataProtection_IDataProtectionBuilder_System_String_System_String_System_Security_Cryptography_X509Certificates_X509Certificate2_) 사용할 수는 `ClientId` 및 [X509Certificate](/dotnet/api/system.security.cryptography.x509certificates.x509certificate2) 주요 자격 증명 모음을 사용 하도록 데이터 보호 시스템 수 있도록 합니다.
+* [(IDataProtectionBuilder, String, String, String) ProtectKeysWithAzureKeyVault](/dotnet/api/microsoft.aspnetcore.dataprotection.azuredataprotectionbuilderextensions.protectkeyswithazurekeyvault#Microsoft_AspNetCore_DataProtection_AzureDataProtectionBuilderExtensions_ProtectKeysWithAzureKeyVault_Microsoft_AspNetCore_DataProtection_IDataProtectionBuilder_System_String_System_String_System_String_) 사용할 수는 `ClientId` 및 `ClientSecret` 주요 자격 증명 모음을 사용 하도록 데이터 보호 시스템 수 있도록 합니다.
+
+::: moniker-end
 
 ## <a name="persistkeystofilesystem"></a>PersistKeysToFileSystem
 
