@@ -9,11 +9,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/logging/index
-ms.openlocfilehash: 7e2a4657211b0142ec87fd792d013f7ef397de2b
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: 8b53a19f4958e97198175d6acea4017d54f827bb
+ms.sourcegitcommit: 1b94305cc79843e2b0866dae811dab61c21980ad
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/24/2018
 ---
 # <a name="logging-in-aspnet-core"></a>ASP.NET Core에 로그인
 
@@ -583,21 +583,22 @@ App Service 앱에 배포할 때 응용 프로그램은 Azure Portal **App Servi
 
 ## <a name="third-party-logging-providers"></a>타사 로깅 공급자
 
-다음은 ASP.NET Core와 호환되는 일부 타사 로깅 프레임워크입니다.
+ASP.NET Core와 호환되는 타사 로깅 프레임워크는 다음과 같습니다.
 
-* [elmah.io](https://github.com/elmahio/Elmah.Io.Extensions.Logging) - Elmah.Io 서비스의 공급자
+* [elmah.io](https://elmah.io/)([GitHub 리포지토리](https://github.com/elmahio/Elmah.Io.Extensions.Logging))
+* [JSNLog](http://jsnlog.com/)([GitHub 리포지토리](https://github.com/mperdeck/jsnlog))
+* [Loggr](http://loggr.net/)([GitHub 리포지토리](https://github.com/imobile3/Loggr.Extensions.Logging))
+* [NLog](http://nlog-project.org/)([GitHub 리포지토리](https://github.com/NLog/NLog.Extensions.Logging))
+* [Serilog](https://serilog.net/)([GitHub 리포지토리](https://github.com/serilog/serilog-extensions-logging))
 
-* [JSNLog](http://jsnlog.com) - 서버 쪽 로그에 JavaScript 예외 및 기타 클라이언트 쪽 이벤트를 기록합니다.
+일부 타사 프레임워크는 [구조적 로깅이라고 하는 의미 체계 로깅](https://softwareengineering.stackexchange.com/questions/312197/benefits-of-structured-logging-vs-basic-logging)을 수행할 수 있습니다.
 
-* [Loggr](https://github.com/imobile3/Loggr.Extensions.Logging) - Loggr 서비스의 공급자
+타사 프레임워크를 사용하는 방법은 다음과 같이 기본 공급자 중 하나를 사용하는 방법과 비슷합니다.
 
-* [NLog](https://github.com/NLog/NLog.Extensions.Logging) - NLog 라이브러리의 공급자
+1. 프로젝트에 NuGet 패키지를 추가합니다.
+1. `ILoggerFactory`에 대한 확장 메서드를 호출합니다.
 
-* [Serilog](https://github.com/serilog/serilog-extensions-logging) - Serilog 라이브러리의 공급자
-
-일부 타사 프레임워크는 [구조적 로깅이라고도 하는 의미 체계 로깅](https://softwareengineering.stackexchange.com/questions/312197/benefits-of-structured-logging-vs-basic-logging)을 수행할 수 있습니다.
-
-타사 프레임워크를 사용하는 방법은 기본 공급자 중 하나를 사용하는 방법과 비슷합니다. 프로젝트에 NuGet 패키지를 추가하고 `ILoggerFactory`에 대한 확장 메서드를 호출하면 됩니다. 자세한 내용은 각 프레임워크의 설명서를 참조하십시오.
+자세한 내용은 각 프레임워크의 설명서를 참조하십시오.
 
 ## <a name="azure-log-streaming"></a>Azure 로그 스트리밍
 

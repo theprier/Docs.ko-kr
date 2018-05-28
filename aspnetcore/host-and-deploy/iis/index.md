@@ -10,11 +10,11 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 3a9479dc1bb09218ebb4a5a76078ea514041d751
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: 6b2c3334798861ebdb14787205480422d7d536ea
+ms.sourcegitcommit: 1b94305cc79843e2b0866dae811dab61c21980ad
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 05/24/2018
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>IIS가 있는 Windows에서 ASP.NET Core 호스팅
 
@@ -113,7 +113,7 @@ services.Configure<IISOptions>(options =>
 
 ### <a name="webconfig-file-location"></a>web.config 파일 위치
 
-.NET Core 앱은 IIS와 Kestrel 서버 간의 역방향 프록시에 호스트됩니다. 역방향 프록시를 만들려면 배포된 앱의 콘텐츠 루트 경로(일반적으로 앱 기본 경로)에 *web.config* 파일이 있어야 합니다. IIS에 제공되는 웹 사이트 실제 경로와 동일한 위치입니다. 웹 배포를 사용하여 여러 앱을 게시하도록 설정하려면 앱의 루트에 *web.config* 파일이 있어야 합니다.
+IIS 및 Kestrel 서버 간의 역방향 프록시를 만들려면 배포된 앱의 콘텐츠 루트 경로(일반적으로 앱 기본 경로)에 *web.config* 파일이 있어야 합니다. IIS에 제공되는 웹 사이트 실제 경로와 동일한 위치입니다. 웹 배포를 사용하여 여러 앱을 게시하도록 설정하려면 앱의 루트에 *web.config* 파일이 있어야 합니다.
 
 중요한 파일은 *\<assembly>.runtimeconfig.json*, *\<assembly>.xml*(XML 문서 주석) 및 *\<assembly>.deps.json*과 같은 앱의 실제 경로에 있습니다. *web.config* 파일이 있고 사이트가 정상적으로 시작되면 IIS는 이러한 중요한 파일이 요청되어도 제공하지 않습니다. *web.config* 파일이 없거나, 이름이 잘못 지정되었거나, 정상적으로 시작되도록 사이트를 구성할 수 없는 경우 IIS에서 중요한 파일을 공개적으로 제공할 수도 있습니다.
 
@@ -172,7 +172,7 @@ services.Configure<IISOptions>(options =>
 1. 호스팅 시스템에 *.NET Core 호스팅 번들*을 설치합니다. 번들은 .NET Core 런타임, .NET Core 라이브러리 및 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)을 설치합니다. 이 모듈은 IIS와 Kestrel 서버 간에 역방향 프록시를 만듭니다. 시스템이 인터넷에 연결되지 않은 경우 [Microsoft Visual C++ 2015 재배포 가능 패키지](https://www.microsoft.com/download/details.aspx?id=53840)를 설치한 후에 .NET Core 호스팅 번들을 설치합니다.
 
    1. [.NET 모든 다운로드 페이지](https://www.microsoft.com/net/download/all)로 이동합니다.
-   1. 목록에서 미리 보기 상태가 아닌 최신 .NET Core 런타임을 선택합니다(**.NET Core** > **런타임** > **.NET Core 런타임 x.y.z**). 미리 보기 소프트웨어로 작업하려는 경우가 아니면 해당 링크 텍스트에서 "미리 보기"라는 단어가 있는 런타임을 사용하지 마십시오.
+   1. 목록에서 미리 보기 상태가 아닌 최신 .NET Core 런타임을 선택합니다(**.NET Core** > **런타임** > **.NET Core 런타임 x.y.z**). 미리 보기 소프트웨어로 작업하려는 경우가 아니면 해당 링크 텍스트에서 “미리 보기” 또는 “rc”(릴리스 후보)라는 단어가 있는 런타임을 사용하지 마세요.
    1. .NET Core 런타임 다운로드 페이지의 **Windows**에서 **호스팅 번들 설치 프로그램** 링크를 선택하여 *.NET Core 호스팅 번들*을 다운로드합니다.
 
    **중요!** IIS 이전에 호스팅 번들이 설치된 경우 번들 설치를 복구해야 합니다. IIS를 설치한 후 호스팅 번들 설치 프로그램을 다시 실행합니다.
