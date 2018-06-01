@@ -12,31 +12,32 @@ ms.topic: article
 uid: host-and-deploy/directory-structure
 ms.openlocfilehash: a5cc1f23d624643facddc9e2006fb246e5ae66dc
 ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33838438"
 ---
 # <a name="aspnet-core-directory-structure"></a>ASP.NET Core 디렉터리 구조
 
 [Luke Latham](https://github.com/guardrex)으로
 
-ASP.NET Core, 게시 된 응용 프로그램 디렉터리에서에서 *게시*, 응용 프로그램 파일, config 파일, 정적 자산, 패키지 및 런타임 구성 됩니다 (에 대 한 [자체 포함된 배포](/dotnet/core/deploying/#self-contained-deployments-scd)).
+ASP.NET Core에서 게시된 응용 프로그램 디렉터리인 *publish*는 응용 프로그램 파일, 구성 파일, 정적 자산, 패키지 및 런타임([자체 포함 배포](/dotnet/core/deploying/#self-contained-deployments-scd)의 경우)으로 구성됩니다.
 
 
-| 앱 유형 | 디렉터리 구조 |
+| 앱 형식 | 디렉터리 구조 |
 | -------- | ------------------- |
-| [프레임 워크 종속 배포](/dotnet/core/deploying/#framework-dependent-deployments-fdd) | <ul><li>publish&dagger;<ul><li>로그&dagger; (stdout 로그를 받을 수 필요로 하지 않는 경우 선택 사항)</li><li>뷰&dagger; (MVC 앱; 뷰 아닌 미리 컴파일하는 경우)</li><li>페이지&dagger; (MVC 또는 Razor 페이지 앱; 페이지가 아닌 미리 컴파일하는 경우)</li><li>wwwroot&dagger;</li><li>*\.dll 파일</li><li>\<어셈블리 이름 >. deps.json</li><li>\<어셈블리 이름 >.dll</li><li>\<어셈블리 이름 >.pdb</li><li>\<어셈블리 이름 >. PrecompiledViews.dll</li><li>\<어셈블리 이름 >. PrecompiledViews.pdb</li><li>\<어셈블리 이름 >. runtimeconfig.json</li><li>web.config (IIS 배포)</li></ul></li></ul> |
-| [자체 포함된 배포](/dotnet/core/deploying/#self-contained-deployments-scd) | <ul><li>publish&dagger;<ul><li>로그&dagger; (stdout 로그를 받을 수 필요로 하지 않는 경우 선택 사항)</li><li>refs&dagger;</li><li>뷰&dagger; (MVC 앱; 뷰 아닌 미리 컴파일하는 경우)</li><li>페이지&dagger; (MVC 또는 Razor 페이지 앱; 페이지가 아닌 미리 컴파일하는 경우)</li><li>wwwroot&dagger;</li><li>\*.dll 파일</li><li>\<어셈블리 이름 >. deps.json</li><li>\<어셈블리 이름 >.exe</li><li>\<어셈블리 이름 >.pdb</li><li>\<어셈블리 이름 >. PrecompiledViews.dll</li><li>\<어셈블리 이름 >. PrecompiledViews.pdb</li><li>\<어셈블리 이름 >. runtimeconfig.json</li><li>web.config (IIS 배포)</li></ul></li></ul> |
+| [프레임워크 종속 배포](/dotnet/core/deploying/#framework-dependent-deployments-fdd) | <ul><li>publish&dagger;<ul><li>logs&dagger;(stdout 로그를 수신하는 데 필요한 경우가 아니면 선택 사항)</li><li>Views&dagger;(MVC 앱, 뷰가 미리 컴파일되지 않은 경우)</li><li>Pages&dagger;(MVC 또는 Razor 페이지 앱, 페이지가 미리 컴파일되지 않은 경우)</li><li>wwwroot&dagger;</li><li>*\.dll 파일</li><li>\<assembly-name>.deps.json</li><li>\<assembly-name>.dll</li><li>\<assembly-name>.pdb</li><li>\<assembly-name>.PrecompiledViews.dll</li><li>\<assembly-name>.PrecompiledViews.pdb</li><li>\<assembly-name>.runtimeconfig.json</li><li>web.config(IIS 배포)</li></ul></li></ul> |
+| [자체 포함 배포](/dotnet/core/deploying/#self-contained-deployments-scd) | <ul><li>publish&dagger;<ul><li>logs&dagger;(stdout 로그를 수신하는 데 필요한 경우가 아니면 선택 사항)</li><li>refs&dagger;</li><li>Views&dagger;(MVC 앱, 뷰가 미리 컴파일되지 않은 경우)</li><li>Pages&dagger;(MVC 또는 Razor 페이지 앱, 페이지가 미리 컴파일되지 않은 경우)</li><li>wwwroot&dagger;</li><li>\*.dll 파일</li><li>\<assembly-name>.deps.json</li><li>\<assembly-name>.exe</li><li>\<assembly-name>.pdb</li><li>\<assembly-name>.PrecompiledViews.dll</li><li>\<assembly-name>.PrecompiledViews.pdb</li><li>\<assembly-name>.runtimeconfig.json</li><li>web.config(IIS 배포)</li></ul></li></ul> |
 
-&dagger;디렉터리를 나타냅니다.
+&dagger;디렉터리를 나타냄
 
-*게시* 디렉터리를 나타냅니다는 *콘텐츠 루트 경로*라고도 하는 *응용 프로그램 기본 경로*를 배포 합니다. 에 원하는 이름이 지정 됩니다는 *게시* 서버에 배포 된 응용 프로그램의 디렉터리를 해당 위치 역할을 서버의 실제 경로 호스팅된 응용 프로그램입니다.
+*publish* 디렉터리는 배포의 *응용 프로그램 기본 경로*라고도 하는 *콘텐츠 루트 경로*를 나타냅니다. 서버에 배포된 앱의 *publish* 디렉터리에 어떤 이름을 지정하더라도 해당 위치는 호스트된 앱에 대한 서버의 실제 경로로 사용됩니다.
 
-*wwwroot* 디렉터리에 있는 경우 정적 자산이 포함만 합니다.
+*wwwroot* 디렉터리(있는 경우)에는 정적 자산만 포함됩니다.
 
-stdout *로그* 다음 두 가지 방법 중 하나를 사용 하 여 배포에 대 한 디렉터리를 만들 수 있습니다.
+다음 두 가지 방법 중 하나를 사용하여 stdout *logs* 디렉터리를 배포용으로 만들 수 있습니다.
 
-* 다음 추가 `<Target>` 프로젝트 파일에는 요소:
+* 다음 `<Target>` 요소를 프로젝트 파일에 추가합니다.
 
    ```xml
    <Target Name="CreateLogsFolder" AfterTargets="Publish">
@@ -49,8 +50,8 @@ stdout *로그* 다음 두 가지 방법 중 하나를 사용 하 여 배포에 
    </Target>
    ```
 
-   `<MakeDir>` 요소는 빈 만듭니다 *로그* 게시 된 출력에는 폴더입니다. 요소를 사용 하 여는 `PublishDir` 폴더를 만들기 위한 대상 위치를 확인 하는 속성입니다. 웹 배포와 같은 몇 가지 배포 방법, 배포 하는 동안 빈 폴더를 건너뜁니다. `<WriteLinesToFile>` 에 파일을 생성 하는 요소는 *로그* 폴더를이 서버에 폴더의 배포를 보장 합니다. 작업자 프로세스가 대상 폴더에 대 한 쓰기 권한이 하지 않는 경우 폴더 만들기 오류가 여전히 발생할 수 있는 참고 합니다.
+   `<MakeDir>` 요소는 게시된 출력에 빈 *Logs* 폴더를 만듭니다. 이 요소는 `PublishDir` 속성을 사용하여 폴더를 만들 대상 위치를 확인합니다. 웹 배포와 같은 여러 배포 방법에서는 배포 중에 빈 폴더를 건너뜁니다. `<WriteLinesToFile>` 요소는 파일이 서버에 배포되도록 *Logs* 폴더에 파일을 생성합니다. 대상 폴더에 대한 쓰기 권한이 작업자 프로세스에 없는 경우에는 폴더 만들기에 실패할 수 있습니다.
 
-* 실제로 만들지는 *로그* 디렉터리는 배포의 서버에 있습니다.
+* 배포 시 서버에서 *Logs* 디렉터리를 실제로 만드세요.
 
-배포 디렉터리에 읽기/Execute 권한이 필요합니다. *로그* 디렉터리에 대 한 읽기/쓰기 권한이 필요 합니다. 추가 디렉터리를이 파일은 읽기/쓰기 권한이 필요 합니다.
+배포 디렉터리에는 읽기/실행 권한이 필요합니다. *Logs* 디렉터리에는 읽기/쓰기 권한이 필요합니다. 파일이 작성되는 추가 디렉터리에는 읽기/쓰기 권한이 필요합니다.

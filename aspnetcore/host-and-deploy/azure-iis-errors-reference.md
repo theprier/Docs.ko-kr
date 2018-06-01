@@ -1,7 +1,7 @@
 ---
-title: Azure 앱 서비스 및 ASP.NET 코어는 IIS에 대 한 일반적인 오류 참조
+title: ASP.NET Core를 사용하는 Azure App Service 및 IIS에 대한 일반적인 오류 참조
 author: guardrex
-description: Azure 앱 서비스 및 IIS에서 ASP.NET Core 응용 프로그램을 호스트 하는 경우에 일반적인 오류를 구분 합니다.
+description: Azure App Service 및 IIS에서 ASP.NET Core 앱을 호스트할 때 일반적인 오류를 구분합니다.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -12,15 +12,16 @@ ms.topic: article
 uid: host-and-deploy/azure-iis-errors-reference
 ms.openlocfilehash: 995890a5e6b0cc1d9cebc21486917a7a39587076
 ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34233341"
 ---
-# <a name="common-errors-reference-for-azure-app-service-and-iis-with-aspnet-core"></a>Azure 앱 서비스 및 ASP.NET 코어는 IIS에 대 한 일반적인 오류 참조
+# <a name="common-errors-reference-for-azure-app-service-and-iis-with-aspnet-core"></a>ASP.NET Core를 사용하는 Azure App Service 및 IIS에 대한 일반적인 오류 참조
 
 [Luke Latham](https://github.com/guardrex)으로
 
-다음은 모든 오류를 나열한 목록이 아닙니다. 여기에 나열 되지 오류가 발생 하는 경우 [새 문제점](https://github.com/aspnet/Docs/issues/new) 오류를 재현 하는 방법을 자세히 설명 합니다.
+다음은 모든 오류를 나열한 목록이 아닙니다. 여기에 나열되지 않은 오류가 발생하면 오류를 재현하기 위한 자세한 지침이 포함된 [새 문제를 엽니다](https://github.com/aspnet/Docs/issues/new).
 
 다음과 같은 정보를 수집합니다.
 
@@ -28,7 +29,7 @@ ms.lasthandoff: 05/17/2018
 * 응용 프로그램 이벤트 로그 항목
 * ASP.NET Core 모듈 stdout 로그 항목
 
-다음과 같은 일반적인 오류에 대 한 정보를 비교 합니다. 일치 하는 항목이 없는 경우 문제 해결 지시를 따릅니다.
+정보를 다음 일반 오류와 비교합니다. 일치하는 항목이 발견되면 문제 해결 권장 사항을 따릅니다.
 
 [!INCLUDE [Azure App Service Preview Notice](../includes/azure-apps-preview-notice.md)]
 
@@ -42,7 +43,7 @@ ms.lasthandoff: 05/17/2018
 
 문제 해결:
 
-* 설치 관리자에서 획득할 수 없거나이 예외가 발생 시스템이 없는 경우 인터넷 액세스 호스팅 번들을 설치 하는 동안,는 *Microsoft Visual c + + 2015 재배포 가능*합니다. 프로그램 설치 관리자를 가져옵니다는 [Microsoft 다운로드 센터](https://www.microsoft.com/download/details.aspx?id=53840)합니다. 설치 관리자에 오류가 발생 하면 서버에서 프레임 워크 종속 배포 (FDD)를 호스트 하는 데 필요한.NET 핵심 런타임을 받지 못할 수 있습니다. FDD 호스팅, 하는 경우 프로그램에서 런타임이 설치 되어 있는지 확인 &amp; 기능입니다. 필요한 경우에서 런타임 설치 관리자를 가져올 [.NET 모든 다운로드](https://www.microsoft.com/net/download/all)합니다. 런타임을 설치한 후 시스템을 다시 시작하거나 명령 프롬프트에서 **net stop was /y**에 이어 **net start w3svc**를 실행하여 IIS를 다시 시작합니다.
+* 시스템에서 호스팅 번들을 설치하는 동안 인터넷에 액세스할 수 없는 경우 이 예외는 설치 관리자에서 ‘Microsoft Visual C++ 2015 재배포 가능 패키지’를 다운로드할 수 없을 때 발생합니다. [Microsoft 다운로드 센터](https://www.microsoft.com/download/details.aspx?id=53840)에서 설치 관리자를 다운로드합니다. 설치 관리자에 오류가 발생하면 서버가 FDD(프레임워크 종속 배포)를 호스트하는 데 필요한 .NET Core 런타임을 받지 못할 수 있습니다. FDD를 호스트하려면 프로그램 및 기능에서 런타임이 설치되어 있는지 확인합니다. 필요한 경우 [.NET 모든 다운로드](https://www.microsoft.com/net/download/all)에서 런타임 설치 관리자를 다운로드합니다. 런타임을 설치한 후 시스템을 다시 시작하거나 명령 프롬프트에서 **net stop was /y**에 이어 **net start w3svc**를 실행하여 IIS를 다시 시작합니다.
 
 ## <a name="os-upgrade-removed-the-32-bit-aspnet-core-module"></a>OS 업그레이드에서 32비트 ASP.NET Core 모듈이 제거됨
 
@@ -50,23 +51,23 @@ ms.lasthandoff: 05/17/2018
 
 문제 해결:
 
-* OS를 업그레이드하는 동안 **C:\Windows\SysWOW64\inetsrv** 디렉터리에 있는 비OS 파일은 보존되지 않습니다. ASP.NET Core 모듈은 이전에 설치 됩니다. 운영 체제 업그레이드와 모든 AppPool 다음은 운영 체제 업그레이드 한 후 32 비트 모드에서 실행 되 면이 문제가 발생 했습니다. OS를 업그레이드한 후에 ASP.NET Core 모듈을 복구합니다. 참조 [.NET Core 호스팅 번들을 설치](xref:host-and-deploy/iis/index#install-the-net-core-hosting-bundle)합니다. 선택 **복구** 설치 관리자를 실행 한 경우.
+* OS를 업그레이드하는 동안 **C:\Windows\SysWOW64\inetsrv** 디렉터리에 있는 비OS 파일은 보존되지 않습니다. OS를 업그레이드하기 전에 ASP.NET Core 모듈을 설치한 다음, OS를 업그레이드한 후에 32비트 모드에서 AppPool을 실행하면 이 문제가 발생합니다. OS를 업그레이드한 후에 ASP.NET Core 모듈을 복구합니다. [.NET Core 호스팅 번들 설치](xref:host-and-deploy/iis/index#install-the-net-core-hosting-bundle)를 참조하세요. 설치 관리자가 실행될 때 **복구**를 선택합니다.
 
 ## <a name="platform-conflicts-with-rid"></a>플랫폼이 RID와 충돌함
 
 * **브라우저:** HTTP 오류 502.5 - 프로세스 오류
 
-* **응용 프로그램 로그:** 응용 프로그램 ' MACHINE/WEBROOT/APPHOST / {어셈블리 (를) ' 실제 루트와 ' c:\{경로}\' commandline와 프로세스를 시작 하지 못했습니다 ' "c:\\{PATH} {어셈블리}. { exe | dll} "', 오류 코드 = ' 0x80004005: ff입니다.
+* **응용 프로그램 로그:** 실제 루트 'C:\{PATH}\'가 있는 응용 프로그램 'MACHINE/WEBROOT/APPHOST/{ASSEMBLY}'에서 '"C:\\{PATH}{assembly}.{exe|dll}" ' 명령줄로 프로세스를 시작하지 못했습니다. 오류 코드 = '0x80004005 : ff.
 
-* **ASP.NET Core 모듈 로그:** 처리 되지 않은 예외: System.BadImageFormatException: 로드할 수 없습니다 파일이 나 어셈블리 '{어셈블리}.dll'. 프로그램을 잘못된 형식으로 로드하려고 했습니다.
+* **ASP.NET Core 모듈 로그:** 처리되지 않은 예외: System.BadImageFormatException: 파일이나 어셈블리 '{assembly}.dll'을 로드할 수 없습니다. 프로그램을 잘못된 형식으로 로드하려고 했습니다.
 
 문제 해결:
 
-* 앱이 Kestrel에서 로컬로 실행되는지 확인합니다. 프로세스 오류는 앱 내의 문제 때문일 수 있습니다. 자세한 내용은 참조 [문제 해결](xref:host-and-deploy/iis/troubleshoot)합니다.
+* 앱이 Kestrel에서 로컬로 실행되는지 확인합니다. 프로세스 오류는 앱 내의 문제 때문일 수 있습니다. 자세한 내용은 [문제 해결](xref:host-and-deploy/iis/troubleshoot)을 참조하세요.
 
-* 확인 하는 `<PlatformTarget>` 에 *.csproj* 의 RID 충돌 하지 않습니다. 예를 들어, 지정 하지 않으면는 `<PlatformTarget>` 의 `x86` 의 RID를 사용 하 여 게시 및 `win10-x64`, 사용 하 여 *dotnet 게시-c 릴리스-r win10 x64* 하거나 설정 하는 `<RuntimeIdentifiers>` 에 *.csproj*  를 `win10-x64`합니다. 프로젝트는 경고 또는 오류 없이 게시되지만 시스템에서 위와 같이 로깅된 예외와 함께 실패합니다.
+* *.csproj*의 `<PlatformTarget>`이 RID와 충돌하지 않는지 확인합니다. 예를 들어 *dotnet publish -c Release -r win10-x64*를 사용하거나 *.csproj*의 `<RuntimeIdentifiers>`를 `win10-x64`로 설정하여 `x86`인 `<PlatformTarget>`을 지정하지 않고 `win10-x64`인 RID를 사용하여 게시하지 않습니다. 프로젝트는 경고 또는 오류 없이 게시되지만 시스템에서 위와 같이 로깅된 예외와 함께 실패합니다.
 
-* 이 예외는 응용 프로그램을 업그레이드 하는 경우 Azure 응용 프로그램 배포에 대 한 발생 하 고 이전 배포에서 모든 파일을 수동으로 삭제 최신 어셈블리를 배포 하는 경우. 호환되지 않는 어셈블리가 오랫동안 남아 있으면 업그레이드된 응용 프로그램을 배포할 때 `System.BadImageFormatException` 예외가 발생할 수 있습니다.
+* Azure 앱 배포에서 앱을 업그레이드하고 새 어셈블리를 배포할 때 이 예외가 발생하면 이전 배포에서 모든 파일을 수동으로 삭제합니다. 호환되지 않는 어셈블리가 오랫동안 남아 있으면 업그레이드된 응용 프로그램을 배포할 때 `System.BadImageFormatException` 예외가 발생할 수 있습니다.
 
 ## <a name="uri-endpoint-wrong-or-stopped-website"></a>URI 끝점이 잘못되었거나 중지된 웹 사이트
 
@@ -78,9 +79,9 @@ ms.lasthandoff: 05/17/2018
 
 문제 해결:
 
-* 사용 되는 앱에 대 한 올바른 URI 끝점을 확인 합니다. 바인딩을 확인 하십시오.
+* 앱에 올바른 URI 끝점을 사용하고 있는지 확인합니다. 바인딩을 확인합니다.
 
-* IIS 웹 사이트에 없음을 확인는 *Stopped* 상태입니다.
+* IIS 웹 사이트가 ‘중지됨’ 상태가 아닌지 확인합니다.
 
 ## <a name="corewebengine-or-w3svc-server-features-disabled"></a>CoreWebEngine 또는 W3SVC 서버 기능이 사용되지 않음
 
@@ -88,9 +89,9 @@ ms.lasthandoff: 05/17/2018
 
 문제 해결:
 
-* 적절 한 역할 및 기능이 설정 되어 있는지 확인 합니다. [IIS 구성](xref:host-and-deploy/iis/index#iis-configuration)을 참조하세요.
+* 적절한 역할 및 기능이 사용 가능한지 확인합니다. [IIS 구성](xref:host-and-deploy/iis/index#iis-configuration)을 참조하세요.
 
-## <a name="incorrect-website-physical-path-or-app-missing"></a>앱이 누락 또는 잘못 된 웹 사이트 실제 경로
+## <a name="incorrect-website-physical-path-or-app-missing"></a>잘못된 웹 사이트 실제 경로 또는 누락된 앱
 
 * **브라우저:** 403 사용할 수 없음 - 액세스가 거부되었습니다. **- 또는 -** 403.14 사용할 수 없음 - 웹 서버가 이 디렉터리의 내용을 표시하지 못하도록 구성되었습니다.
 
@@ -100,7 +101,7 @@ ms.lasthandoff: 05/17/2018
 
 문제 해결:
 
-* IIS 웹 사이트 확인 **기본 설정** 및 실제 응용 프로그램 폴더가 있습니다. IIS 웹 사이트에 있는 폴더에 응용 프로그램 인지 확인 **실제 경로**합니다.
+* IIS 웹 사이트 **기본 설정**과 실제 앱 폴더를 확인합니다. 앱이 IIS 웹 사이트 **실제 경로**의 폴더에 있는지 확인합니다.
 
 ## <a name="incorrect-role-module-not-installed-or-incorrect-permissions"></a>잘못된 역할, 설치되지 않은 모듈 또는 잘못된 권한
 
@@ -112,55 +113,55 @@ ms.lasthandoff: 05/17/2018
 
 문제 해결:
 
-* 적절 한 역할을 활성화 되어 있는지 확인 합니다. [IIS 구성](xref:host-and-deploy/iis/index#iis-configuration)을 참조하세요.
+* 적절한 역할을 사용할 수 있는지 확인합니다. [IIS 구성](xref:host-and-deploy/iis/index#iis-configuration)을 참조하세요.
 
-* **프로그램 &amp; 기능**을 확인하고 **Microsoft ASP.NET Core 모듈**이 설치되어 있는지 확인합니다. **Microsoft ASP.NET Core 모듈**이 설치된 프로그램 목록에 없으면 해당 모듈을 설치합니다. 참조 [번들 호스팅.NET 핵심](xref:host-and-deploy/iis/index#install-the-net-core-hosting-bundle)합니다.
+* **프로그램 &amp; 기능**을 확인하고 **Microsoft ASP.NET Core 모듈**이 설치되어 있는지 확인합니다. **Microsoft ASP.NET Core 모듈**이 설치된 프로그램 목록에 없으면 해당 모듈을 설치합니다. [.NET Core 호스팅 번들 설치](xref:host-and-deploy/iis/index#install-the-net-core-hosting-bundle)를 참조하세요.
 
-* 다음 사항을 확인는 **응용 프로그램 풀** > **프로세스 모델** > **Identity** 로 설정 된 **ApplicationPoolIdentity** 또는 사용자 지정 id는 올바른 권한이 응용 프로그램의 배포 폴더에 액세스할 수 있습니다.
+* **응용 프로그램 풀** > **프로세스 모델** > **ID**가 **ApplicationPoolIdentity**로 설정되어 있는지 또는 사용자 지정 ID에 앱의 배포 폴더에 액세스할 수 있는 올바른 권한이 있는지 확인합니다.
 
-## <a name="incorrect-processpath-missing-path-variable-hosting-bundle-not-installed-systemiis-not-restarted-vc-redistributable-not-installed-or-dotnetexe-access-violation"></a>잘못 된 processPath, 누락 된 경로 변수, 호스팅 번들 설치 되어 있지 않습니다, 시스템/IIS를 다시 시작 하지, VC + + 재배포 가능 패키지가 설치 되지 않은 또는 dotnet.exe 액세스 위반
+## <a name="incorrect-processpath-missing-path-variable-hosting-bundle-not-installed-systemiis-not-restarted-vc-redistributable-not-installed-or-dotnetexe-access-violation"></a>잘못된 processPath, 누락된 PATH 변수, 설치되지 않은 호스팅 번들, 다시 시작되지 않은 시스템/IIS, 설치되지 않은 VC++ 재배포 가능 패키지 또는 dotnet.exe 액세스 위반
 
 * **브라우저:** HTTP 오류 502.5 - 프로세스 오류
 
-* **응용 프로그램 로그:** 응용 프로그램 ' MACHINE/WEBROOT/APPHOST / {어셈블리 (를) ' 실제 루트와 ' c:\\{PATH}\' commandline와 프로세스를 시작 하지 못했습니다 ' ".\{ 어셈블리 (를).exe"', 오류 코드 = ' 0x80070002: 0.
+* **응용 프로그램 로그:** 실제 루트 'C:\\{PATH}\'가 있는 응용 프로그램 'MACHINE/WEBROOT/APPHOST/{ASSEMBLY}'에서 '".\{assembly}.exe" ' 명령줄로 프로세스를 시작하지 못했습니다. 오류 코드 = '0x80070002 : 0.
 
 * **ASP.NET Core 모듈 로그:** 로그 파일이 만들어졌지만 비어 있습니다.
 
 문제 해결:
 
-* 앱이 Kestrel에서 로컬로 실행되는지 확인합니다. 프로세스 오류는 앱 내의 문제 때문일 수 있습니다. 자세한 내용은 참조 [문제 해결](xref:host-and-deploy/iis/troubleshoot)합니다.
+* 앱이 Kestrel에서 로컬로 실행되는지 확인합니다. 프로세스 오류는 앱 내의 문제 때문일 수 있습니다. 자세한 내용은 [문제 해결](xref:host-and-deploy/iis/troubleshoot)을 참조하세요.
 
-* 확인의 *processPath* 특성에 `<aspNetCore>` 요소에 *web.config* 이 있는지 확인 하려면 *dotnet* 프레임 워크 종속 배포 (FDD) 또는 *. \{어셈블리}.exe* 자체 포함된 배포 (SCD)에 대 한 합니다.
+* *web.config*의 `<aspNetCore>` 요소에서 *processPath* 특성을 확인하여 FDD(프레임워크 종속 배포)에 대한 *dotnet*인지 또는 SCD(자체 포함 배포)에 대한 *.\{assembly}.exe*인지 확인합니다.
 
 * FDD의 경우 *dotnet.exe*에서 PATH 설정을 통해 액세스하지 못할 수 있습니다. 시스템 PATH 설정에 *C:\Program Files\dotnet\*이 있는지 확인합니다.
 
-* FDD의 경우 *dotnet.exe*에서 응용 프로그램 풀의 사용자 ID에 액세스하지 못할 수 있습니다. AppPool 사용자 ID에 *C:\Program Files\dotnet* 디렉터리에 대한 액세스 권한이 있는지 확인합니다. AppPool 사용자 id에 대해 구성 된 거부 규칙 확인는 *C:\Program Files\dotnet* 및 응용 프로그램 디렉터리입니다.
+* FDD의 경우 *dotnet.exe*에서 응용 프로그램 풀의 사용자 ID에 액세스하지 못할 수 있습니다. AppPool 사용자 ID에 *C:\Program Files\dotnet* 디렉터리에 대한 액세스 권한이 있는지 확인합니다. *C:\Program Files\dotnet* 및 앱 디렉터리에 AppPool 사용자 ID에 대해 구성된 거부 규칙이 없는지 확인합니다.
 
-* FDD 배포 하 고 IIS를 다시 시작 하지 않고.NET Core를 설치 합니다. 서버를 다시 시작하거나 명령 프롬프트에서 **net stop was /y**에 이어 **net start w3svc**를 실행하여 IIS를 다시 시작합니다.
+* IIS를 다시 시작하지 않은 상태로 FDD를 배포하고 .NET Core를 설치했을 수 있습니다. 서버를 다시 시작하거나 명령 프롬프트에서 **net stop was /y**에 이어 **net start w3svc**를 실행하여 IIS를 다시 시작합니다.
 
-* .NET 핵심 런타임을 호스팅하는 시스템에 설치 하지 않고는 FDD는 배포 했을 수 있습니다. .NET 핵심 런타임을 설치 실패 하는 경우 실행는 **.NET Core 호스팅 번들 installer** 시스템에 있습니다. 참조 [번들 호스팅.NET 핵심](xref:host-and-deploy/iis/index#install-the-net-core-hosting-bundle)합니다. 인터넷 연결 없이 시스템에.NET 핵심 런타임을 설치 하는 동안에서 런타임 가져올 [.NET 모든 다운로드](https://www.microsoft.com/net/download/all) ASP.NET Core 모듈을 설치 하려면 호스팅 번들 설치 관리자를 실행 합니다. 설치를 완료하려면 시스템을 다시 시작하거나 명령 프롬프트에서 **net stop was /y**에 이어 **net start w3svc**를 실행하여 IIS를 다시 시작합니다.
+* 호스팅 시스템에 .NET Core 런타임을 설치하지 않고 FDD를 배포했을 수 있습니다. .NET Core 런타임이 설치되어 있지 않으면 시스템에서 **.NET Core 호스팅 번들 설치 관리자**를 실행합니다. [.NET Core 호스팅 번들 설치](xref:host-and-deploy/iis/index#install-the-net-core-hosting-bundle)를 참조하세요. 인터넷에 연결되지 않은 시스템에 .NET Core 런타임을 설치하려는 경우 [.NET 모든 다운로드](https://www.microsoft.com/net/download/all)에서 런타임을 다운로드한 다음, 호스팅 번들 설치 관리자를 실행하여 ASP.NET Core 모듈을 설치합니다. 설치를 완료하려면 시스템을 다시 시작하거나 명령 프롬프트에서 **net stop was /y**에 이어 **net start w3svc**를 실행하여 IIS를 다시 시작합니다.
 
-* FDD 배포 및 *Microsoft Visual c + + 2015 재배포 가능 (x64)* 시스템에 설치 되어 있지 않습니다. 프로그램 설치 관리자를 가져옵니다는 [Microsoft 다운로드 센터](https://www.microsoft.com/download/details.aspx?id=53840)합니다.
+* FDD를 배포했을 수 있지만 ‘Microsoft Visual C++ 2015 재배포 가능 패키지(x64)’가 시스템에 설치되어 있지 않습니다. [Microsoft 다운로드 센터](https://www.microsoft.com/download/details.aspx?id=53840)에서 설치 관리자를 다운로드합니다.
 
 ## <a name="incorrect-arguments-of-aspnetcore-element"></a>\<aspNetCore\> 요소의 잘못된 인수
 
 * **브라우저:** HTTP 오류 502.5 - 프로세스 오류
 
-* **응용 프로그램 로그:** 응용 프로그램 ' MACHINE/WEBROOT/APPHOST / {어셈블리 (를) ' 실제 루트와 ' c:\\{PATH}\' commandline와 프로세스를 시작 하지 못했습니다 ' "dotnet".\{ (를) 어셈블리.dll ', 오류 코드 = ' 0x80004005: 80008081 합니다.
+* **응용 프로그램 로그:** 실제 루트 'C:\\{PATH}\'가 있는 응용 프로그램 'MACHINE/WEBROOT/APPHOST/{ASSEMBLY}'에서 '"dotnet" .\{assembly}.dll' 명령줄로 프로세스를 시작하지 못했습니다. 오류 코드 = '0x80004005 : 80008081.
 
-* **ASP.NET Core 모듈 로그:** 실행 하려면 응용 프로그램이 없습니다: ' 경로\{어셈블리}.dll '
+* **ASP.NET Core 모듈 로그:** 실행할 응용 프로그램이 없습니다. 'PATH\{assembly}.dll'
 
 문제 해결:
 
-* 앱이 Kestrel에서 로컬로 실행되는지 확인합니다. 프로세스 오류는 앱 내의 문제 때문일 수 있습니다. 자세한 내용은 참조 [문제 해결](xref:host-and-deploy/iis/troubleshoot)합니다.
+* 앱이 Kestrel에서 로컬로 실행되는지 확인합니다. 프로세스 오류는 앱 내의 문제 때문일 수 있습니다. 자세한 내용은 [문제 해결](xref:host-and-deploy/iis/troubleshoot)을 참조하세요.
 
-* 검사는 *인수* 특성에 `<aspNetCore>` 요소에 *web.config* 중 하나 인지 확인 하려면 (a) *.\{ (를) 어셈블리.dll* 프레임 워크 종속 배포 (FDD;)에 대 한 또는 (b)를 표시 하지, 빈 문자열 (*인수 = ""*), 또는 응용 프로그램의 인수 목록 (*인수 "arg1, arg2,..." =*) 자체 포함 배포 (SCD).
+* *web.config*의 `<aspNetCore>` 요소에서 *arguments* 특성을 검사하여 (a) FDD(프레임워크 종속 배포)에 대한 *.\{assembly}.dll*인지, 또는 (b) 없는 경우 빈 문자열(*arguments=""*)이거나 SCD(자체 포함 배포)에 대한 앱의 인수(*arguments="arg1, arg2, ..."*) 목록인지 확인합니다.
 
 ## <a name="missing-net-framework-version"></a>누락된 .NET Framework 버전
 
 * **브라우저:** 502.3 잘못된 게이트웨이 - 요청을 라우팅하는 동안 연결 오류가 발생했습니다.
 
-* **응용 프로그램 로그:** ErrorCode 응용 프로그램 = ' MACHINE/WEBROOT/APPHOST / {어셈블리 (를) ' 실제 루트와 ' c:\\{PATH}\' commandline와 프로세스를 시작 하지 못했습니다 ' "dotnet".\{ (를) 어셈블리.dll ', 오류 코드 = ' 0x80004005: 80008081 합니다.
+* **응용 프로그램 로그:** 오류 코드 = 실제 루트 'C:\\{PATH}\'가 있는 응용 프로그램 'MACHINE/WEBROOT/APPHOST/{ASSEMBLY}'에서 '"dotnet" .\{assembly}.dll' 명령줄로 프로세스를 시작하지 못했습니다. 오류 코드 = '0x80004005 : 80008081.
 
 * **ASP.NET Core 모듈 로그:** 메서드, 파일 또는 어셈블리 예외가 없습니다. 예외에 지정된 메서드, 파일 또는 어셈블리는 .NET Framework 메서드, 파일 또는 어셈블리입니다.
 
@@ -168,7 +169,7 @@ ms.lasthandoff: 05/17/2018
 
 * 시스템에서 누락된 .NET Framework 버전을 설치합니다.
 
-* 프레임 워크 종속 배포 (FDD)에 대 한 올바른 런타임 시스템에 설치 되어 있는지 확인 합니다. 1.1에서 2.0, 호스팅 시스템에 배포 하는 프로젝트를 업그레이드 하는 경우이 예외로 인해 2.0 프레임 워크를 호스팅 시스템에서 있는지 확인 합니다.
+* FDD(프레임워크 종속 배포)의 경우 시스템에 올바른 런타임이 설치되어 있는지 확인합니다. 프로젝트가 1.1에서 2.0으로 업그레이드되고 호스팅 시스템에 배포된 다음, 이 예외가 발생하면 2.0 프레임워크가 호스팅 시스템에 있는지 확인합니다.
 
 ## <a name="stopped-application-pool"></a>중지된 응용 프로그램 풀
 
@@ -180,25 +181,25 @@ ms.lasthandoff: 05/17/2018
 
 문제 해결
 
-* 응용 프로그램 풀에 없음을 확인는 *Stopped* 상태입니다.
+* 응용 프로그램 풀이 ‘중지됨’ 상태가 아닌지 확인합니다.
 
 ## <a name="iis-integration-middleware-not-implemented"></a>IIS 통합 미들웨어가 구현되지 않음
 
 * **브라우저:** HTTP 오류 502.5 - 프로세스 오류
 
-* **응용 프로그램 로그:** 응용 프로그램 ' MACHINE/WEBROOT/APPHOST / {어셈블리 (를) ' 실제 루트와 ' c:\\{PATH}\' 명령줄을 사용 하 여 프로세스를 만든 ' "c:\\{PATH}\{어셈블리}. { exe | dll} "' 하지만 충돌 또는 응답 하지 않았습니다 또는 ErrorCode 지정한 포트 '{PORT}'에서 수신 하지 않은 '0x800705b4' =
+* **응용 프로그램 로그:** 실제 루트 'C:\\{PATH}\'이(가) 있는 응용 프로그램 'MACHINE/WEBROOT/APPHOST/{ASSEMBLY}'에서 '"C:\\{PATH}\{assembly}.{exe|dll}" ' 명령줄로 프로세스를 만들었지만 지정된 포트 '{PORT}'에서 크래시하거나 응답하지 않거나 수신 대기하지 않습니다. 오류 코드 = '0x800705b4'
 
 * **ASP.NET Core 모듈 로그:** 로그 파일이 만들어졌고 정상 작동을 보여 줍니다.
 
 문제 해결
 
-* 앱이 Kestrel에서 로컬로 실행되는지 확인합니다. 프로세스 오류는 앱 내의 문제 때문일 수 있습니다. 자세한 내용은 참조 [문제 해결](xref:host-and-deploy/iis/troubleshoot)합니다.
+* 앱이 Kestrel에서 로컬로 실행되는지 확인합니다. 프로세스 오류는 앱 내의 문제 때문일 수 있습니다. 자세한 내용은 [문제 해결](xref:host-and-deploy/iis/troubleshoot)을 참조하세요.
 
-* 하거나 확인 합니다.
-  * IIS 통합 미들웨어가 referencedby 호출는 `UseIISIntegration` 메서드를 응용 프로그램의 `WebHostBuilder` (ASP.NET Core 1.x)
-  * 앱 사용 하 여는 `CreateDefaultBuilder` 메서드 (ASP.NET Core 2.x).
+* 다음 중 하나를 확인합니다.
+  * IIS 통합 미들웨어를 참조하려면 앱의 `WebHostBuilder`에서 `UseIISIntegration` 메서드를 호출합니다(ASP.NET Core 1.x).
+  * 앱에서 `CreateDefaultBuilder` 메서드를 사용합니다(ASP.NET Core 2.x).
   
-  참조 [호스트에서 ASP.NET Core](xref:fundamentals/host/index) 대 한 자세한 내용은 합니다.
+  자세한 내용은 [ASP.NET Core의 호스트](xref:fundamentals/host/index)를 참조하세요.
 
 ## <a name="sub-application-includes-a-handlers-section"></a>하위 응용 프로그램에 \<handlers\> 섹션이 포함되어 있음
 
@@ -206,32 +207,32 @@ ms.lasthandoff: 05/17/2018
 
 * **응용 프로그램 로그:** 항목 없음
 
-* **ASP.NET Core 모듈 로그:** 로그 파일이 만들어지고 루트 응용 프로그램에 대 한 정상 작동을 보여 줍니다. 로그 파일이 하위 앱에 대 한 생성 되지 않았습니다.
+* **ASP.NET Core 모듈 로그:** 로그 파일이 만들어졌고 루트 앱에 대해 정상 작동을 보여줍니다. 하위 앱에 대한 로그 파일이 만들어지지 않았습니다.
 
 문제 해결
 
 * 하위 앱의 *web.config* 파일에 `<handlers>` 섹션이 포함되어 있지 않은지 확인합니다.
 
-## <a name="stdout-log-path-incorrect"></a>stdout 로그 경로가 올바르지 않습니다.
+## <a name="stdout-log-path-incorrect"></a>stdout 로그 경로가 올바르지 않음
 
-* **브라우저:** 응용 프로그램 정상적으로 응답 합니다.
+* **브라우저:** 앱이 정상적으로 응답합니다.
 
-* **응용 프로그램 로그:** 경고:가 stdoutLogFile를 만들지 못했습니다 \\? \C:\_apps\app_folder\bin\Release\netcoreapp2.0\win10-x64\publish\logs\path_doesnt_exist\stdout_8748_201831835937.log, 오류 코드 =- 2147024893 합니다.
+* **응용 프로그램 로그:** 경고: stdoutLogFile \\?\C:\_apps\app_folder\bin\Release\netcoreapp2.0\win10-x64\publish\logs\path_doesnt_exist\stdout_8748_201831835937.log를 만들 수 없습니다. 오류 코드 = -2147024893.
 
 * **ASP.NET Core 모듈 로그:** 로그 파일이 만들어지지 않았습니다.
 
 문제 해결
 
-* `stdoutLogFile` 에 지정 된 경로 `<aspNetCore>` 요소의 *web.config* 존재 하지 않습니다. 자세한 내용은 참조는 [로그 생성 및 리디렉션](xref:host-and-deploy/aspnet-core-module#log-creation-and-redirection) ASP.NET Core 모듈 구성 참조 항목의 섹션입니다.
+* *web.config*의 `<aspNetCore>` 요소에 지정된 `stdoutLogFile` 경로가 없습니다. 자세한 내용은 ASP.NET Core 모듈 구성 참조 항목의 [로그 만들기 및 리디렉션](xref:host-and-deploy/aspnet-core-module#log-creation-and-redirection) 섹션을 참조하세요.
 
 ## <a name="application-configuration-general-issue"></a>일반적인 응용 프로그램 구성 문제
 
 * **브라우저:** HTTP 오류 502.5 - 프로세스 오류
 
-* **응용 프로그램 로그:** 응용 프로그램 ' MACHINE/WEBROOT/APPHOST / {어셈블리 (를) ' 실제 루트와 ' c:\\{PATH}\' 명령줄을 사용 하 여 프로세스를 만든 ' "c:\\{PATH}\{어셈블리}. { exe | dll} "' 하지만 충돌 또는 응답 하지 않았습니다 또는 ErrorCode 지정한 포트 '{PORT}'에서 수신 하지 않은 '0x800705b4' =
+* **응용 프로그램 로그:** 실제 루트 'C:\\{PATH}\'이(가) 있는 응용 프로그램 'MACHINE/WEBROOT/APPHOST/{ASSEMBLY}'에서 '"C:\\{PATH}\{assembly}.{exe|dll}" ' 명령줄로 프로세스를 만들었지만 지정된 포트 '{PORT}'에서 크래시하거나 응답하지 않거나 수신 대기하지 않습니다. 오류 코드 = '0x800705b4'
 
 * **ASP.NET Core 모듈 로그:** 로그 파일이 만들어졌지만 비어 있습니다.
 
 문제 해결
 
-* 이 일반 예외 프로세스 대부분 응용 프로그램 구성 문제로 인해 시작 되지 않았음을 나타냅니다. 참조 [디렉터리 구조](xref:host-and-deploy/directory-structure)응용 프로그램의 파일을 배포 하는 적절 한 폴더 및 응용 프로그램의 구성 파일이 있는지 확인 하 고 앱 및 환경에 대 한 올바른 설정을 포함 합니다. 자세한 내용은 참조 [문제 해결](xref:host-and-deploy/iis/troubleshoot)합니다.
+* 이 일반 예외는 앱 구성 문제로 인해 프로세스가 시작되지 못했음을 나타냅니다. [디렉터리 구조](xref:host-and-deploy/directory-structure)를 참조하여 앱의 배포된 파일과 폴더가 적절하고, 앱의 구성 파일이 있고, 앱과 환경에 대한 올바른 설정을 포함하고 있는지 확인합니다. 자세한 내용은 [문제 해결](xref:host-and-deploy/iis/troubleshoot)을 참조하세요.

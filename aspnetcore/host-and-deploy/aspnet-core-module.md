@@ -1,7 +1,7 @@
 ---
 title: ASP.NET Core 모듈 구성 참조
 author: guardrex
-description: ASP.NET Core 응용 프로그램을 호스팅하기 위한 ASP.NET Core 모듈을 구성 하는 방법을 알아봅니다.
+description: ASP.NET Core 앱을 호스팅하기 위해 ASP.NET Core 모듈을 구성하는 방법을 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
@@ -12,21 +12,22 @@ ms.topic: article
 uid: host-and-deploy/aspnet-core-module
 ms.openlocfilehash: 954841a1b1465c80e60d5745ad9e22294a88fdf4
 ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31483749"
 ---
 # <a name="aspnet-core-module-configuration-reference"></a>ASP.NET Core 모듈 구성 참조
 
-여 [Luke Latham](https://github.com/guardrex), [Rick Anderson](https://twitter.com/RickAndMSFT), 및 [Sourabh Shirhatti](https://twitter.com/sshirhatti)
+작성자: [Luke Latham](https://github.com/guardrex), [Rick Anderson](https://twitter.com/RickAndMSFT) 및 [Sourabh Shirhatti](https://twitter.com/sshirhatti)
 
-이 문서는 ASP.NET Core 응용 프로그램을 호스팅하기 위한 ASP.NET Core 모듈을 구성 하는 방법에 지침을 제공 합니다. ASP.NET Core 모듈 및 설치 지침에 대 한 소개를 참조 하십시오.는 [ASP.NET Core 모듈 개요](xref:fundamentals/servers/aspnet-core-module)합니다.
+이 문서에서는 ASP.NET Core 앱을 호스트하기 위해 ASP.NET Core 모듈을 구성하는 방법에 대한 지침을 제공합니다. ASP.NET Core 모듈 및 설치 지침에 대한 개요는 [ASP.NET Core 모듈 개요](xref:fundamentals/servers/aspnet-core-module)를 참조하세요.
 
-## <a name="configuration-with-webconfig"></a>Web.config 구성
+## <a name="configuration-with-webconfig"></a>web.config를 사용한 구성
 
-ASP.NET Core 모듈 구성 된는 `aspNetCore` 의 섹션은 `system.webServer` 노드 사이트의 *web.config* 파일입니다.
+ASP.NET Core 모듈은 사이트의 *web.config* 파일에 있는 `system.webServer` 노드의 `aspNetCore` 섹션으로 구성됩니다.
 
-다음 *web.config* 파일이 게시 되는 [프레임 워크 종속 배포](/dotnet/articles/core/deploying/#framework-dependent-deployments-fdd) 사이트 요청을 처리 하도록 ASP.NET Core 모듈을 구성 하 고:
+다음 *web.config* 파일은 [프레임워크 종속 배포](/dotnet/articles/core/deploying/#framework-dependent-deployments-fdd)를 위해 게시되고 사이트 요청을 처리하도록 ASP.NET Core 모듈을 구성합니다.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -43,7 +44,7 @@ ASP.NET Core 모듈 구성 된는 `aspNetCore` 의 섹션은 `system.webServer` 
 </configuration>
 ```
 
-다음 *web.config* 에 대 한 게시는 [자체 포함된 배포](/dotnet/articles/core/deploying/#self-contained-deployments-scd):
+다음 *web.config*는 [자체 포함 배포](/dotnet/articles/core/deploying/#self-contained-deployments-scd)를 위해 게시됩니다.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -59,46 +60,46 @@ ASP.NET Core 모듈 구성 된는 `aspNetCore` 의 섹션은 `system.webServer` 
 </configuration>
 ```
 
-응용 프로그램에 배포 되는 경우 [Azure 앱 서비스](https://azure.microsoft.com/services/app-service/), `stdoutLogFile` 경로가 설정 되었는지 `\\?\%home%\LogFiles\stdout`합니다. Stdout 로그를 저장 하는 경로 *LogFiles* 폴더에 위치를 자동으로 서비스에 의해 만들어진 합니다.
+앱이 [Azure App Service](https://azure.microsoft.com/services/app-service/)에 배포되면 `stdoutLogFile` 경로가 `\\?\%home%\LogFiles\stdout`로 설정됩니다. 이 경로는 서비스에서 자동으로 만들어진 위치인 *LogFiles* 폴더에 stdout 로그를 저장합니다.
 
-참조 [하위 응용 프로그램 구성](xref:host-and-deploy/iis/index#sub-application-configuration) 의 구성에 관련 된 중요 정보에 대 한 *web.config* 하위 앱의 파일입니다.
+하위 앱에서 *web.config* 파일의 구성에 관한 중요 참고 사항은 [하위 응용 프로그램 구성](xref:host-and-deploy/iis/index#sub-application-configuration)을 참조하세요.
 
-### <a name="attributes-of-the-aspnetcore-element"></a>AspNetCore 요소의 특성입니다.
+### <a name="attributes-of-the-aspnetcore-element"></a>aspNetCore 요소의 특성
 
 ::: moniker range="<= aspnetcore-2.0"
 | 특성 | 설명 | 기본 |
 | --------- | ----------- | :-----: |
-| `arguments` | <p>선택적 문자열 특성입니다.</p><p>에 지정 된 실행 파일에 대 한 인수 **processPath**합니다.</p>| |
-| `disableStartUpErrorPage` | 참 또는 거짓입니다.</p><p>True 이면는 **502.5-프로세스 오류** 페이지는 표시 되지 않으며 502 상태 코드 페이지에 구성 된는 *web.config* 우선적으로 적용 합니다.</p> | `false` |
-| `forwardWindowsAuthToken` | 참 또는 거짓입니다.</p><p>True 이면 토큰 요청당 헤더로 ' MS ASPNETCORE WINAUTHTOKEN' % ASPNETCORE_PORT %에서 수신 하는 자식 프로세스에 전달 됩니다. 것은 해당 프로세스를 요청에 따라이 토큰에 CloseHandle 호출의 책임입니다.</p> | `true` |
-| `processPath` | <p>필수 문자열 특성입니다.</p><p>HTTP 요청을 수신 하는 프로세스를 시작 하는 실행 파일 경로입니다. 상대 경로 지원 합니다. 로 시작 하는 경로 경우 `.`, 경로 사이트 루트 기준 것으로 간주 됩니다.</p> | |
-| `rapidFailsPerMinute` | <p>선택적 정수 특성입니다.</p><p>에 지정 된 프로세스의 수를 지정 **processPath** 분당 충돌을 허용 합니다. 이 제한을 초과 하는 나머지 분에서 프로세스 시작 모듈을 중지 합니다.</p> | `10` |
-| `requestTimeout` | <p>선택적 timespan 특성입니다.</p><p>ASP.NET Core 모듈 ASPNETCORE_PORT % %를 수신 하는 프로세스에서 응답에 대 한 대기 기간을 지정 합니다.</p><p>또는 이전 버전에서 ASP.NET Core 2.0의 출시와 함께 제공 되는 ASP.NET Core 모듈의 버전에는 `requestTimeout` 지정 해야이 분 단위로, 그렇지 않으면 기본적으로 2 분입니다.</p> | `00:02:00` |
-| `shutdownTimeLimit` | <p>선택적 정수 특성입니다.</p><p>기간 (초)를 정상적으로 종료 실행 파일에 대 한 모듈에서 대기 하는 경우는 *app_offline.htm* 파일이 검색 될 합니다.</p> | `10` |
-| `startupTimeLimit` | <p>선택적 정수 특성입니다.</p><p>포트에서 수신 하는 프로세스가 시작 되는 파일에 대 한 모듈에서 대기 하는 시간 (초) 기간입니다. 이 시간 제한을 초과 하는 모듈에서 프로세스를 중단 합니다. 모듈에서 새 요청을 수신 하 고 앱이 시작 되지 않는 한 이후 들어오는 요청에서 프로세스를 다시 시작 하려고 계속 경우 프로세스를 다시 시작 하려고 **rapidFailsPerMinute** 지난에서 번 롤링 분입니다.</p> | `120` |
-| `stdoutLogEnabled` | <p>선택적 부울 특성입니다.</p><p>True 이면 **stdout** 및 **stderr** 에 지정 된 프로세스에 대 한 **processPath** 는에 지정 된 파일로 리디렉션할 **가 stdoutLogFile**합니다.</p> | `false` |
-| `stdoutLogFile` | <p>선택적 문자열 특성입니다.</p><p>상대 또는 절대 파일 경로를 지정 **stdout** 및 **stderr** 에 지정 된 프로세스에서 **processPath** 기록 됩니다. 상대 경로 사이트의 루트를 기준으로 합니다. 로 시작 하는 경로 `.` 은 절대 경로로 루트 및 다른 모든 경로 사이트에 상대적인 처리 합니다. 모든 폴더 경로에 제공 된 로그 파일을 만들 모듈에 대 한 순서에 있어야 합니다. 밑줄 구분 기호, 타임 스탬프, 프로세스 ID 및 파일 확장명을 사용 하 여 (*.log*) 세그먼트의 마지막으로 추가 된 **가 stdoutLogFile** 경로입니다. 경우 `.\logs\stdout` 제공 예제 stdout 로그로 저장 된 값으로 *stdout_20180205194132_1934.log* 에 *로그* 19시 41분: 32 1934의 프로세스 id는 2/5/2018에 저장할 경우 폴더입니다.</p> | `aspnetcore-stdout` |
+| `arguments` | <p>선택적 문자열 특성입니다.</p><p>**processPath**에 지정된 실행 파일에 대한 인수입니다.</p>| |
+| `disableStartUpErrorPage` | 참 또는 거짓입니다.</p><p>true인 경우 **502.5 - 프로세스 실패** 페이지가 표시되지 않고 *web.config*에 구성된 502 상태 코드 페이지가 우선 적용됩니다.</p> | `false` |
+| `forwardWindowsAuthToken` | 참 또는 거짓입니다.</p><p>true인 경우 토큰은 %ASPNETCORE_PORT%에서 수신 대기하는 자식 프로세스에 요청별 헤더 'MS-ASPNETCORE-WINAUTHTOKEN'으로 전달됩니다. 이 프로세스는 요청별로 이 토큰에서 CloseHandle을 호출합니다.</p> | `true` |
+| `processPath` | <p>필수 문자열 특성입니다.</p><p>HTTP 요청을 수신 대기하는 프로세스를 시작하는 실행 파일의 경로입니다. 상대 경로가 지원됩니다. 경로가 `.`로 시작되면 경로는 사이트 루트의 상대 경로로 간주됩니다.</p> | |
+| `rapidFailsPerMinute` | <p>선택적 정수 특성입니다.</p><p>**processPath**에 지정된 프로세스의 분당 크래시 허용 횟수를 지정합니다. 이 제한을 초과하면 모듈은 남은 시간 동안 프로세스 시작을 중지합니다.</p> | `10` |
+| `requestTimeout` | <p>선택적 시간 간격 특성입니다.</p><p>ASP.NET Core 모듈이 %ASPNETCORE_PORT%에서 수신 대기하는 프로세스의 응답을 기다리는 기간을 지정합니다.</p><p>ASP.NET Core 2.0 이하 릴리스와 함께 제공되는 ASP.NET Core 모듈 버전에서는 `requestTimeout`을 전체 시간(분)으로만 지정해야 합니다. 그렇지 않으면 기본적으로 2분으로 설정됩니다.</p> | `00:02:00` |
+| `shutdownTimeLimit` | <p>선택적 정수 특성입니다.</p><p>*app_offline.htm* 파일이 검색될 때 실행 파일이 정상적으로 종료될 때까지 모듈이 기다리는 기간(초)입니다.</p> | `10` |
+| `startupTimeLimit` | <p>선택적 정수 특성입니다.</p><p>실행 파일이 포트에서 수신 대기하는 프로세스를 시작할 때까지 모듈이 기다리는 기간(초)입니다. 이 시간 제한을 초과하면 모듈이 프로세스를 종료합니다. 모듈은 새 요청을 수신할 때 프로세스를 다시 시작하려고 하고, 마지막 롤링 기간(분)에 앱이 **rapidFailsPerMinute**번 시작에 실패한 경우가 아니면 이후 요청이 들어올 때 프로세스를 계속 다시 시작하려고 합니다.</p> | `120` |
+| `stdoutLogEnabled` | <p>선택적 부울 특성입니다.</p><p>true인 경우 **processPath**에 지정된 프로세스에 대한 **stdout** 및 **stderr**이 **stdoutLogFile**에 지정된 파일로 리디렉션됩니다.</p> | `false` |
+| `stdoutLogFile` | <p>선택적 문자열 특성입니다.</p><p>**processPath**에 지정된 프로세스에서 **stdout** 및 **stderr**이 기록되는 상대 또는 절대 파일 경로를 지정합니다. 상대 경로는 사이트 루트에 상대적인 경로입니다. `.`로 시작하는 모든 경로는 사이트 루트에 상대적인 경로이고 다른 모든 경로는 절대 경로로 처리됩니다. 모듈이 로그 파일을 만들려면 경로에 제공된 모든 폴더가 있어야 합니다. 타임스탬프, 프로세스 ID 및 파일 확장명(*.log*)은 밑줄 구분 기호를 사용하여 **stdoutLogFile** 경로의 마지막 세그먼트에 추가됩니다. `.\logs\stdout`이 값으로 제공되는 경우 예제 stdout 로그는 2018년 2월 5일 19시 41분 32초에 프로세스 ID 1934를 사용하여 저장될 경우 *logs* 폴더에 *stdout_20180205194132_1934.log*로 저장됩니다.</p> | `aspnetcore-stdout` |
 ::: moniker-end
 ::: moniker range=">= aspnetcore-2.1"
 | 특성 | 설명 | 기본 |
 | --------- | ----------- | :-----: |
-| `arguments` | <p>선택적 문자열 특성입니다.</p><p>에 지정 된 실행 파일에 대 한 인수 **processPath**합니다.</p>| |
-| `disableStartUpErrorPage` | 참 또는 거짓입니다.</p><p>True 이면는 **502.5-프로세스 오류** 페이지는 표시 되지 않으며 502 상태 코드 페이지에 구성 된는 *web.config* 우선적으로 적용 합니다.</p> | `false` |
-| `forwardWindowsAuthToken` | 참 또는 거짓입니다.</p><p>True 이면 토큰 요청당 헤더로 ' MS ASPNETCORE WINAUTHTOKEN' % ASPNETCORE_PORT %에서 수신 하는 자식 프로세스에 전달 됩니다. 것은 해당 프로세스를 요청에 따라이 토큰에 CloseHandle 호출의 책임입니다.</p> | `true` |
-| `processPath` | <p>필수 문자열 특성입니다.</p><p>HTTP 요청을 수신 하는 프로세스를 시작 하는 실행 파일 경로입니다. 상대 경로 지원 합니다. 로 시작 하는 경로 경우 `.`, 경로 사이트 루트 기준 것으로 간주 됩니다.</p> | |
-| `rapidFailsPerMinute` | <p>선택적 정수 특성입니다.</p><p>에 지정 된 프로세스의 수를 지정 **processPath** 분당 충돌을 허용 합니다. 이 제한을 초과 하는 나머지 분에서 프로세스 시작 모듈을 중지 합니다.</p> | `10` |
-| `requestTimeout` | <p>선택적 timespan 특성입니다.</p><p>ASP.NET Core 모듈 ASPNETCORE_PORT % %를 수신 하는 프로세스에서 응답에 대 한 대기 기간을 지정 합니다.</p><p>ASP.NET Core 2.1 이상 릴리스와 함께 제공 된 ASP.NET Core 모듈의 버전에는 `requestTimeout` 시, 분 및 초에 지정 되어 있습니다.</p> | `00:02:00` |
-| `shutdownTimeLimit` | <p>선택적 정수 특성입니다.</p><p>기간 (초)를 정상적으로 종료 실행 파일에 대 한 모듈에서 대기 하는 경우는 *app_offline.htm* 파일이 검색 될 합니다.</p> | `10` |
-| `startupTimeLimit` | <p>선택적 정수 특성입니다.</p><p>포트에서 수신 하는 프로세스가 시작 되는 파일에 대 한 모듈에서 대기 하는 시간 (초) 기간입니다. 이 시간 제한을 초과 하는 모듈에서 프로세스를 중단 합니다. 모듈에서 새 요청을 수신 하 고 앱이 시작 되지 않는 한 이후 들어오는 요청에서 프로세스를 다시 시작 하려고 계속 경우 프로세스를 다시 시작 하려고 **rapidFailsPerMinute** 지난에서 번 롤링 분입니다.</p> | `120` |
-| `stdoutLogEnabled` | <p>선택적 부울 특성입니다.</p><p>True 이면 **stdout** 및 **stderr** 에 지정 된 프로세스에 대 한 **processPath** 는에 지정 된 파일로 리디렉션할 **가 stdoutLogFile**합니다.</p> | `false` |
-| `stdoutLogFile` | <p>선택적 문자열 특성입니다.</p><p>상대 또는 절대 파일 경로를 지정 **stdout** 및 **stderr** 에 지정 된 프로세스에서 **processPath** 기록 됩니다. 상대 경로 사이트의 루트를 기준으로 합니다. 로 시작 하는 경로 `.` 은 절대 경로로 루트 및 다른 모든 경로 사이트에 상대적인 처리 합니다. 모든 폴더 경로에 제공 된 로그 파일을 만들 모듈에 대 한 순서에 있어야 합니다. 밑줄 구분 기호, 타임 스탬프, 프로세스 ID 및 파일 확장명을 사용 하 여 (*.log*) 세그먼트의 마지막으로 추가 된 **가 stdoutLogFile** 경로입니다. 경우 `.\logs\stdout` 제공 예제 stdout 로그로 저장 된 값으로 *stdout_20180205194132_1934.log* 에 *로그* 19시 41분: 32 1934의 프로세스 id는 2/5/2018에 저장할 경우 폴더입니다.</p> | `aspnetcore-stdout` |
+| `arguments` | <p>선택적 문자열 특성입니다.</p><p>**processPath**에 지정된 실행 파일에 대한 인수입니다.</p>| |
+| `disableStartUpErrorPage` | 참 또는 거짓입니다.</p><p>true인 경우 **502.5 - 프로세스 실패** 페이지가 표시되지 않고 *web.config*에 구성된 502 상태 코드 페이지가 우선 적용됩니다.</p> | `false` |
+| `forwardWindowsAuthToken` | 참 또는 거짓입니다.</p><p>true인 경우 토큰은 %ASPNETCORE_PORT%에서 수신 대기하는 자식 프로세스에 요청별 헤더 'MS-ASPNETCORE-WINAUTHTOKEN'으로 전달됩니다. 이 프로세스는 요청별로 이 토큰에서 CloseHandle을 호출합니다.</p> | `true` |
+| `processPath` | <p>필수 문자열 특성입니다.</p><p>HTTP 요청을 수신 대기하는 프로세스를 시작하는 실행 파일의 경로입니다. 상대 경로가 지원됩니다. 경로가 `.`로 시작되면 경로는 사이트 루트의 상대 경로로 간주됩니다.</p> | |
+| `rapidFailsPerMinute` | <p>선택적 정수 특성입니다.</p><p>**processPath**에 지정된 프로세스의 분당 크래시 허용 횟수를 지정합니다. 이 제한을 초과하면 모듈은 남은 시간 동안 프로세스 시작을 중지합니다.</p> | `10` |
+| `requestTimeout` | <p>선택적 시간 간격 특성입니다.</p><p>ASP.NET Core 모듈이 %ASPNETCORE_PORT%에서 수신 대기하는 프로세스의 응답을 기다리는 기간을 지정합니다.</p><p>ASP.NET Core 2.1 이상 릴리스와 함께 제공되는 ASP.NET Core 모듈 버전에서는 `requestTimeout`이 전체 시간, 분, 초로 지정됩니다.</p> | `00:02:00` |
+| `shutdownTimeLimit` | <p>선택적 정수 특성입니다.</p><p>*app_offline.htm* 파일이 검색될 때 실행 파일이 정상적으로 종료될 때까지 모듈이 기다리는 기간(초)입니다.</p> | `10` |
+| `startupTimeLimit` | <p>선택적 정수 특성입니다.</p><p>실행 파일이 포트에서 수신 대기하는 프로세스를 시작할 때까지 모듈이 기다리는 기간(초)입니다. 이 시간 제한을 초과하면 모듈이 프로세스를 종료합니다. 모듈은 새 요청을 수신할 때 프로세스를 다시 시작하려고 하고, 마지막 롤링 기간(분)에 앱이 **rapidFailsPerMinute**번 시작에 실패한 경우가 아니면 이후 요청이 들어올 때 프로세스를 계속 다시 시작하려고 합니다.</p> | `120` |
+| `stdoutLogEnabled` | <p>선택적 부울 특성입니다.</p><p>true인 경우 **processPath**에 지정된 프로세스에 대한 **stdout** 및 **stderr**이 **stdoutLogFile**에 지정된 파일로 리디렉션됩니다.</p> | `false` |
+| `stdoutLogFile` | <p>선택적 문자열 특성입니다.</p><p>**processPath**에 지정된 프로세스에서 **stdout** 및 **stderr**이 기록되는 상대 또는 절대 파일 경로를 지정합니다. 상대 경로는 사이트 루트에 상대적인 경로입니다. `.`로 시작하는 모든 경로는 사이트 루트에 상대적인 경로이고 다른 모든 경로는 절대 경로로 처리됩니다. 모듈이 로그 파일을 만들려면 경로에 제공된 모든 폴더가 있어야 합니다. 타임스탬프, 프로세스 ID 및 파일 확장명(*.log*)은 밑줄 구분 기호를 사용하여 **stdoutLogFile** 경로의 마지막 세그먼트에 추가됩니다. `.\logs\stdout`이 값으로 제공되는 경우 예제 stdout 로그는 2018년 2월 5일 19시 41분 32초에 프로세스 ID 1934를 사용하여 저장될 경우 *logs* 폴더에 *stdout_20180205194132_1934.log*로 저장됩니다.</p> | `aspnetcore-stdout` |
 ::: moniker-end
 
 ### <a name="setting-environment-variables"></a>환경 변수 설정
 
-프로세스에 대 한 환경 변수를 지정할 수 있습니다는 `processPath` 특성입니다. 지정 된 환경 변수는 `environmentVariable` 의 자식 요소는 `environmentVariables` 컬렉션 요소입니다. 이 섹션에 설정 된 환경 변수 보다 우선 적용 시스템 환경 변수.
+`processPath` 특성에서 프로세스에 대한 환경 변수를 지정할 수 있습니다. `environmentVariables` 컬렉션 요소의 `environmentVariable` 자식 요소를 사용하여 환경 변수를 지정합니다. 이 섹션에 설정된 환경 변수가 시스템 환경 변수보다 우선 적용됩니다.
 
-다음 예제에서는 두 개의 환경 변수를 설정합니다. `ASPNETCORE_ENVIRONMENT` 앱의 환경을 구성 `Development`합니다. 개발자에 일시적으로이 값을 설정할 수 있습니다는 *web.config* 강제 파일은 [개발자 예외 페이지](xref:fundamentals/error-handling) 를 응용 프로그램 예외를 디버깅 하는 경우 로드 합니다. `CONFIG_DIR` 한 예로, 사용자 정의 환경 변수 개발자 시작할 응용 프로그램의 구성 파일을 로드 하는 것에 대 한 경로를 구성할 때 값을 읽을 수 있는 코드를 기록 했습니다.
+다음 예제에서는 두 개의 환경 변수를 설정합니다. `ASPNETCORE_ENVIRONMENT`는 앱의 환경을 `Development`로 구성합니다. 앱 예외를 디버그할 때 [개발자 예외 페이지](xref:fundamentals/error-handling)를 강제로 로드하기 위해 개발자가 *web.config* 파일에서 이 값을 일시적으로 설정할 수 있습니다. `CONFIG_DIR`은 개발자가 앱 구성 파일을 로드할 경로를 생성하기 위해 시작 시 값을 읽는 코드를 작성한 사용자 정의 환경 변수의 예입니다.
 
 ```xml
 <aspNetCore processPath="dotnet"
@@ -113,31 +114,31 @@ ASP.NET Core 모듈 구성 된는 `aspNetCore` 의 섹션은 `system.webServer` 
 ```
 
 > [!WARNING]
-> 에 설정는 `ASPNETCORE_ENVIRONMENT` envirnonment 변수를 `Development` 준비 하 고 테스트 인터넷과 같은 신뢰할 수 없는 네트워크에 액세스할 수 없는 서버에 있습니다.
+> 인터넷과 같은 신뢰할 수 없는 네트워크에 액세스할 수 없는 스테이징 및 테스트 서버에서는 `ASPNETCORE_ENVIRONMENT` 환경 변수를 `Development`로 설정하면 됩니다.
 
 ## <a name="appofflinehtm"></a>app_offline.htm
 
-이름 가진 파일이 있으면 *app_offline.htm* 응용 프로그램의 루트 디렉터리에서 검색 된 앱 및 들어오는 요청을 처리 하는 중지 ASP.NET Core 모듈 정상 종료 하려고 합니다. 응용 프로그램에 정의 된 시간 (초)이 지나면 여전히 실행 중인 경우 `shutdownTimeLimit`, ASP.NET Core 모듈에서 실행 중인 프로세스를 중단 합니다.
+응용 프로그램의 루트 디렉터리에서 이름이 *app_offline.htm*인 파일이 검색되면 ASP.NET Core 모듈은 앱을 자동으로 종료하고 들어오는 요청 처리를 중지하려고 합니다. `shutdownTimeLimit`에 정의된 시간(초) 후에도 앱이 계속 실행되면 ASP.NET Core 모듈은 실행 중인 프로세스를 종료합니다.
 
-반면는 *app_offline.htm* 파일이 없으면 ASP.NET Core 모듈 요청에 응답의 내용을 다시 전송 하 여는 *app_offline.htm* 파일입니다. 경우는 *app_offline.htm* 다음 요청 응용 프로그램이 시작, 파일은 제거 됩니다.
+*app_offline.htm* 파일이 있는 동안 ASP.NET Core 모듈은 *app_offline.htm* 파일의 콘텐츠를 다시 보내 요청에 응답합니다. *app_offline.htm* 파일이 제거되면 다음 요청이 앱을 시작합니다.
 
 ## <a name="start-up-error-page"></a>시작 오류 페이지
 
-ASP.NET Core 모듈을 백 엔드 프로세스 또는 백 엔드 프로세스 시작 하지만 구성된 된 포트에서 수신 하도록 실패를 시작할 수 없는 경우는 *502.5 프로세스 오류* 상태 코드 페이지가 나타납니다. 이 페이지를 표시 하지 않는 하 여 기본 IIS 502 상태 코드 페이지로 되돌리려면 사용은 `disableStartUpErrorPage` 특성입니다. 사용자 정의 오류 메시지를 구성 하는 방법에 대 한 자세한 내용은 참조 하십시오. [HTTP 오류 `<httpErrors>` ](/iis/configuration/system.webServer/httpErrors/)합니다.
+ASP.NET Core 모듈이 백 엔드 프로세스를 시작하지 못하거나 백 엔드 프로세스가 시작되지만 구성된 포트에서 수신 대기하지 못하면 ‘502.5 프로세스 실패’ 상태 코드 페이지가 나타납니다. 이 페이지를 표시하지 않고 기본 IIS 502 상태 코드 페이지로 되돌리려면 `disableStartUpErrorPage` 특성을 사용합니다. 사용자 지정 오류 메시지 구성에 대한 자세한 내용은 [HTTP 오류`<httpErrors>`](/iis/configuration/system.webServer/httpErrors/)를 참조하세요.
 
-![502.5 프로세스 오류 상태 코드 페이지](aspnet-core-module/_static/ANCM-502_5.png)
+![502.5 프로세스 실패 상태 코드 페이지](aspnet-core-module/_static/ANCM-502_5.png)
 
 ## <a name="log-creation-and-redirection"></a>로그 만들기 및 리디렉션
 
-ASP.NET Core 모듈 리디렉션합니다 stdout 및 stderr 로그 디스크에 `stdoutLogEnabled` 및 `stdoutLogFile` 의 특성은 `aspNetCore` 요소 설정 됩니다. 에 있는 폴더는 `stdoutLogFile` 경로 로그 파일을 만들 모듈에 대 한 순서에 존재 해야 합니다. 응용 프로그램 풀 로그 작성 된 위치에 쓰기 권한이 있어야 합니다 (사용 하 여 `IIS AppPool\<app_pool_name>` 쓰기 권한이).
+ASP.NET Core 모듈은 `aspNetCore` 요소의 `stdoutLogEnabled` 및 `stdoutLogFile` 특성이 설정된 경우 stdout 및 stderr 로그를 디스크로 리디렉션합니다. 모듈이 로그 파일을 만들려면 `stdoutLogFile` 경로의 모든 폴더가 있어야 합니다. 앱 풀에는 로그가 기록될 위치에 쓰기 권한이 있어야 합니다(`IIS AppPool\<app_pool_name>`을 사용하여 쓰기 권한 제공).
 
-프로세스 재활용/를 다시 시작이 발생 하지 않으면 로그가 회전 되지 않습니다. 것은 로그 사용할 디스크 공간을 제한 하는 호스팅 서비스 공급자의 책임입니다.
+프로세스 재생/다시 시작이 발생하지 않는 한 로그는 회전되지 않습니다. 로그에서 사용하는 디스크 공간을 제한하는 것은 호스터의 책임입니다.
 
-Stdout 로그를 사용 하 여 응용 프로그램 시작 문제 해결에 대해서만 권장 됩니다. 일반 응용 프로그램 로깅 목적 stdout 로그를 사용 하지 마십시오. ASP.NET Core 응용 프로그램의 일상적인 로깅에 대 한 로그 파일 크기를 제한 하 고 로그를 회전 하는 로깅 라이브러리를 사용 합니다. 자세한 내용은 참조 [제 3 자 로깅 공급자](xref:fundamentals/logging/index#third-party-logging-providers)합니다.
+stdout 로그는 앱 시작 문제를 해결하는 경우에만 사용하는 것이 좋습니다. 일반 앱 로깅을 위해 stdout 로그를 사용하지 마세요. ASP.NET Core 앱의 루틴 로깅에는 로그 파일 크기를 제한하고 로그를 회전하는 로깅 라이브러리를 사용합니다. 자세한 내용은 [타사 로깅 공급자](xref:fundamentals/logging/index#third-party-logging-providers)를 참조하세요.
 
-타임 스탬프 및 파일 확장명은 로그 파일을 만들 때 자동으로 추가 됩니다. 타임 스탬프, 프로세스 ID 및 파일 확장명을 추가 하 여 로그 파일 이름이 구성 됩니다 (*.log*)의 마지막 세그먼트에는 `stdoutLogFile` 경로 (일반적으로 *stdout*) 밑줄로 구분 합니다. 경우는 `stdoutLogFile` 로 끝나는 경로 *stdout*, 19시 42분: 32에서 2/5/2018에서 만든 1934의 PID 사용 하 여 앱에 대 한 로그 파일 이름이 *stdout_20180205194132_1934.log*합니다.
+로그 파일이 만들어질 때 타임스탬프 및 파일 확장명이 자동으로 추가됩니다. 로그 파일 이름은 타임스탬프, 프로세스 ID 및 파일 확장명(*.log*)을 밑줄로 구분된 `stdoutLogFile` 경로의 마지막 세그먼트(일반적으로 *stdout*)에 추가하여 작성됩니다. `stdoutLogFile` 경로가 *stdout*으로 끝나는 경우 2018년 2월 5일 19시 42분 32초에 만들어진 PID 1934를 사용하는 앱에 대한 로그의 파일 이름은 *stdout_20180205194132_1934.log*입니다.
 
-다음 샘플 `aspNetCore` 요소 Azure 앱 서비스에서 호스팅되는 앱에 대 한 stdout 로깅을 구성 합니다. 로컬 경로 또는 네트워크 공유 경로 로컬 로깅 있습니다. AppPool 사용자 id 제공 된 경로에 쓸 수 있는 권한이 있는지 확인 합니다.
+다음 샘플 `aspNetCore` 요소는 Azure App Service에서 호스트되는 앱에 대한 stdout 로깅을 구성합니다. 로컬 로깅에는 로컬 경로 또는 네트워크 공유 경로가 허용됩니다. AppPool 사용자 ID에 제공된 경로에 쓸 수 있는 권한이 있는지 확인합니다.
 
 ```xml
 <aspNetCore processPath="dotnet"
@@ -147,45 +148,45 @@ Stdout 로그를 사용 하 여 응용 프로그램 시작 문제 해결에 대�
 </aspNetCore>
 ```
 
-참조 [web.config 사용 하 여 구성을](#configuration-with-webconfig) 의 예는 `aspNetCore` 요소에는 *web.config* 파일입니다.
+*web.config* 파일에 있는 `aspNetCore` 요소의 예제에 대해서는 [web.config를 사용한 구성](#configuration-with-webconfig)을 참조하세요.
 
 ## <a name="proxy-configuration-uses-http-protocol-and-a-pairing-token"></a>프록시 구성은 HTTP 프로토콜 및 페어링 토큰을 사용합니다.
 
-ASP.NET Core 모듈와 Kestrel 사이 프록시는 HTTP 프로토콜을 사용 합니다. HTTP를 사용 하는 성능 최적화 있는 모듈 및 Kestrel 간 트래픽을 수행 되 루프백 주소에 네트워크 인터페이스 오프. 모듈 및 위치는 서버에서 분리에서 Kestrel 간 트래픽을 도청의 위험은 없습니다.
+ASP.NET Core 모듈과 Kestrel 사이에 만들어진 프록시는 HTTP 프로토콜을 사용합니다. HTTP 사용은 모듈과 Kestrel 간의 트래픽이 네트워크 인터페이스에서 분리된 루프백 주소에서 발생하는 성능 최적화입니다. 서버에서 분리된 위치에서 모듈과 Kestrel 간 트래픽 도청의 위험은 없습니다.
 
-페어링 토큰은 Kestrel에서 받은 요청이 IIS에서 프록시되었으며 다른 원본에서 오지 않았다는 것을 보장하는 데 사용됩니다. 페어링 토큰 생성 되어 환경 변수로 설정 (`ASPNETCORE_TOKEN`) 모듈에 의해 합니다. 페어링 토큰은 프록시된 모든 요청에서 헤더(`MSAspNetCoreToken`)로도 설정됩니다. IIS 미들웨어는 수신하는 각 요청을 검사하여 페어링 토큰 헤더 값이 환경 변수 값과 일치하는지 확인합니다. 토큰 값이 일치하지 않는 경우 요청이 기록되고 거부됩니다. 페어링 토큰 환경 변수와 모듈 및 Kestrel 간 트래픽을 서버에서 분리 된 위치에서 액세스할 수 없습니다. 페어링 토큰 값을 알지 못하면 공격자는 IIS 미들웨어에서 검사를 무시하는 요청을 전송할 수 없습니다.
+페어링 토큰은 Kestrel에서 받은 요청이 IIS에서 프록시되었으며 다른 원본에서 오지 않았다는 것을 보장하는 데 사용됩니다. 페어링 토큰은 모듈에 의해 생성되며 환경 변수(`ASPNETCORE_TOKEN`)로 설정됩니다. 페어링 토큰은 프록시된 모든 요청에서 헤더(`MSAspNetCoreToken`)로도 설정됩니다. IIS 미들웨어는 수신하는 각 요청을 검사하여 페어링 토큰 헤더 값이 환경 변수 값과 일치하는지 확인합니다. 토큰 값이 일치하지 않는 경우 요청이 기록되고 거부됩니다. 페어링 토큰 환경 변수와 모듈과 Kestrel 간의 트래픽은 서버에서 분리된 위치에서 액세스할 수 없습니다. 페어링 토큰 값을 알지 못하면 공격자는 IIS 미들웨어에서 검사를 무시하는 요청을 전송할 수 없습니다.
 
-## <a name="aspnet-core-module-with-an-iis-shared-configuration"></a>IIS 사용 하 여 ASP.NET Core 모듈 구성 공유
+## <a name="aspnet-core-module-with-an-iis-shared-configuration"></a>IIS 공유 구성이 포함된 ASP.NET Core 모듈
 
-ASP.NET Core 모듈 설치 관리자의 권한으로 실행 되는 **시스템** 계정. 설치 관리자가 액세스 거부 오류가에서 모듈 설정을 구성 하는 동안 로컬 시스템 계정에서 IIS 공유 구성을 사용 하는 공유 경로 대 한 권한을 수정 하지 않습니다, 때문에 *applicationHost.config* 공유에 있습니다. IIS 공유 구성을 사용 하는 경우 다음이 단계를 따르십시오.
+ASP.NET Core 모듈 설치 관리자는 **SYSTEM** 계정의 권한으로 실행됩니다. 로컬 시스템 계정에는 IIS 공유 구성에서 사용하는 공유 경로에 대한 수정 권한이 없으므로 공유의 *applicationHost.config*에서 모듈 설정을 구성하려고 하면 설치 관리자에서 액세스 거부 오류가 발생합니다. IIS 공유 구성을 사용할 경우 다음 단계를 수행합니다.
 
-1. IIS 공유 구성을 사용 하지 않도록 설정 합니다.
+1. IIS 공유 구성을 사용하지 않도록 설정합니다.
 1. 설치 관리자를 실행합니다.
-1. 업데이트 된 내보내기 *applicationHost.config* 파일을 공유 합니다.
-1. IIS 공유 구성을 다시 설정 합니다.
+1. 업데이트된 *applicationHost.config* 파일을 공유로 내보냅니다.
+1. IIS 공유 구성을 다시 사용하도록 설정합니다.
 
-## <a name="module-version-and-hosting-bundle-installer-logs"></a>모듈의 버전 및 호스팅 번들 설치 관리자 로그
+## <a name="module-version-and-hosting-bundle-installer-logs"></a>모듈 버전 및 호스팅 번들 설치 관리자 로그
 
-확인 하려면 설치 된 ASP.NET Core 모듈 버전:
+설치된 ASP.NET Core 모듈의 버전을 확인하려면:
 
-1. 호스팅 시스템에서로 이동 *%windir%\System32\inetsrv*합니다.
-1. 찾을 *aspnetcore.dll* 파일입니다.
-1. 파일을 마우스 오른쪽 단추로 클릭 하 고 선택 **속성** 상황에 맞는 메뉴에서 합니다.
-1. 선택 된 **세부 정보** 탭 합니다. **파일 버전** 및 **제품 버전** 모듈의 설치 된 버전을 나타냅니다.
+1. 호스팅 시스템에서 *%windir%\System32\inetsrv*로 이동합니다.
+1. *aspnetcore.dll* 파일을 찾습니다.
+1. 파일을 마우스 오른쪽 단추로 클릭하고 상황에 맞는 메뉴에서 **속성**을 선택합니다.
+1. **세부 정보** 탭을 선택합니다. **파일 버전** 및 **제품 버전**은 설치된 모듈 버전을 나타냅니다.
 
-모듈에 대 한 호스팅 번들 설치 관리자 로그에서 발견 되 *c:\\사용자\\% UserName %\\AppData\\로컬\\Temp*합니다. 파일의 이름은 *dd_DotNetCoreWinSvrHosting__\<타임 스탬프 > _000_AspNetCoreModule_x64.log*합니다.
+모듈에 대한 호스팅 번들 설치 관리자 로그는 *C:\\Users\\%UserName%\\AppData\\Local\\Temp*에 있습니다. 파일 이름은 *dd_DotNetCoreWinSvrHosting__\<timestamp>_000_AspNetCoreModule_x64.log*로 지정됩니다.
 
 ## <a name="module-schema-and-configuration-file-locations"></a>모듈, 스키마 및 구성 파일 위치
 
 ### <a name="module"></a>Module
 
-**IIS (x86/amd64):**
+**IIS(x86/amd64):**
 
    * %windir%\System32\inetsrv\aspnetcore.dll
 
    * %windir%\SysWOW64\inetsrv\aspnetcore.dll
 
-**IIS Express (x86/amd64):**
+**IIS Express(x86/amd64):**
 
    * %ProgramFiles%\IIS Express\aspnetcore.dll
 
@@ -211,4 +212,4 @@ ASP.NET Core 모듈 설치 관리자의 권한으로 실행 되는 **시스템**
 
    * .vs\config\applicationHost.config
 
-검색 하 여 파일을 찾을 수 *aspnetcore.dll* 에 *applicationHost.config* 파일입니다. IIS express는 *applicationHost.config* 파일은 기본적으로 존재 하지 않습니다. 파일을 만들  *\<application_root >\\.vs\\config* 때 Visual Studio 솔루션에서 모든 웹 응용 프로그램 프로젝트를 시작 합니다.
+*applicationHost.config* 파일에서 *aspnetcore.dll*을 검색하여 파일을 찾을 수 있습니다. IIS Express의 경우 기본적으로 *applicationHost.config* 파일이 없습니다. Visual Studio 솔루션에서 웹앱 프로젝트를 시작할 때 *\<application_root>\\.vs\\config*에 파일이 만들어집니다.
