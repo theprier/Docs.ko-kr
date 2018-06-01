@@ -9,11 +9,12 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/secure-data
-ms.openlocfilehash: e42f299efcae7c6a0e3d20b157c591eed98c99d0
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 36475776966cfb0cb3bb40477798f6e24df9725d
+ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 05/31/2018
+ms.locfileid: "34688454"
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>권한 부여에 의해 보호 되는 사용자 데이터와 ASP.NET Core 응용 프로그램 만들기
 
@@ -303,9 +304,21 @@ Visual Studio 코드를 사용 하 여 이거나 HTTPS에 대 한 테스트 인�
   * 응용 프로그램을 만들 **개별 사용자 계정**합니다.
   * 네임 스페이스에는 샘플에 사용 된 네임 스페이스와 일치 하므로 "ContactManager" 이름을 지정 합니다.
 
+::: moniker range=">= aspnetcore-2.1"
+
+  ```console
+  dotnet new webapp -o ContactManager -au Individual -uld
+  ```
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
   ```console
   dotnet new razor -o ContactManager -au Individual -uld
   ```
+
+::: moniker-end
 
   * `-uld` SQLite는 대신 LocalDB를 지정합니다.
 

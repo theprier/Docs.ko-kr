@@ -10,17 +10,18 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/gdpr
-ms.openlocfilehash: 3adfd1703dbf6446356886a662168bf1dbf65d56
-ms.sourcegitcommit: 300a1127957dcdbce1b6ad79a7b9dc676f571510
-ms.translationtype: HT
+ms.openlocfilehash: 92a7000f4f8e4c2097065cb530fe106ef0e98545
+ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 05/31/2018
+ms.locfileid: "34688629"
 ---
 # <a name="eu-general-data-protection-regulation-gdpr-support-in-aspnet-core"></a>ASP.NET Core의 EU 일반 데이터 보호 규정 (GDPR) 지원
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-ASP.NET Core Api 및 서식 파일 중 일부를 충족 하기 위해 제공 된 [UE 일반 데이터 보호 규정 (GDPR)](https://www.eugdpr.org/) 요구 사항:
+ASP.NET Core Api 및 서식 파일 중 일부를 충족 하기 위해 제공 된 [EU 일반 데이터 보호 규정 (GDPR)](https://www.eugdpr.org/) 요구 사항:
 
 * 프로젝트 템플릿 등이 확장점 스텁된 태그 개인 정보 및 쿠키 사용 정책으로 바꿀 수 있습니다.
 * 쿠키 동의 기능을 사용 하면 동의 요청 (및 추적할) 사용자가 개인 정보를 저장 합니다. 사용자가 데이터 수집에 동의 하지 및 응용 프로그램으로 설정 된 경우 [CheckConsentNeeded](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyoptions.checkconsentneeded?view=aspnetcore-2.1#Microsoft_AspNetCore_Builder_CookiePolicyOptions_CheckConsentNeeded) 를 `true`, 브라우저에 필수적이 지 않은 쿠키를 전송 되지 것입니다.
@@ -28,9 +29,9 @@ ASP.NET Core Api 및 서식 파일 중 일부를 충족 하기 위해 제공 된
 * [TempData 및 세션 쿠키](#tempdata) 추적을 사용 하지 않도록 설정 하는 경우에 작동 하지 않습니다.
 * [Identity 관리](#pd) 페이지를 다운로드 하 여 사용자 데이터를 삭제 한 링크를 제공 합니다.
 
-[샘플 응용 프로그램](https://github.com/aspnet/Docs/tree/live/aspnetcore/security/gdpr) GDPR 확장점 및 ASP.NET Core 2.1 서식 파일에 추가 하는 Api의 대부분을 테스트할 수 있습니다. 참조는 [ReadMe](https://github.com/aspnet/Docs/tree/live/aspnetcore/security/gdpr) 지침을 테스트 하기 위한 파일입니다.
+[샘플 응용 프로그램](https://github.com/aspnet/Docs/tree/live/aspnetcore/security/gdpr/sample) GDPR 확장점 및 ASP.NET Core 2.1 서식 파일에 추가 하는 Api의 대부분을 테스트할 수 있습니다. 참조는 [ReadMe](https://github.com/aspnet/Docs/tree/live/aspnetcore/security/gdpr/sample) 지침을 테스트 하기 위한 파일입니다.
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/live/aspnetcore/security/gdpr)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/live/aspnetcore/security/gdpr/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="aspnet-core-gdpr-support-in-template-generated-code"></a>생성 된 코드 서식 파일에서 ASP.NET Core GDPR 지원
 
@@ -38,7 +39,7 @@ Razor 페이지 및 MVC 프로젝트 템플릿을 사용 하 여 만든 프로�
 
 * [CookiePolicyOptions](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyoptions?view=aspnetcore-2.0) 및 [UseCookiePolicy](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyappbuilderextensions.usecookiepolicy?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_CookiePolicyAppBuilderExtensions_UseCookiePolicy_Microsoft_AspNetCore_Builder_IApplicationBuilder_) 에 설정 된 `Startup`합니다.
 * *_CookieConsentPartial.cshtml* [부분 뷰](xref:mvc/views/tag-helpers/builtin-th/partial-tag-helper)합니다.
-* *Pages/Privacy.cshtml* 또는 *Home/rivacy.cshtml* 보기 사이트의 개인 정보 취급 방침에 자세히 설명 하는 페이지를 제공 합니다. *_CookieConsentPartial.cshtml* 파일 개인 정보 페이지에 대 한 링크를 생성 합니다.
+* *Pages/Privacy.cshtml* 또는 *Home/Privacy.cshtml* 보기 사이트의 개인 정보 취급 방침에 자세히 설명 하는 페이지를 제공 합니다. *_CookieConsentPartial.cshtml* 파일 개인 정보 페이지에 대 한 링크를 생성 합니다.
 * 개별 사용자 계정을 사용 하 여 만든 응용 프로그램에 대 한 관리 페이지를 다운로드 하 여 삭제는 링크를 제공 [개인 사용자 데이터](#pd)합니다.
 
 ### <a name="cookiepolicyoptions-and-usecookiepolicy"></a>CookiePolicyOptions 및 UseCookiePolicy
@@ -117,6 +118,6 @@ Razor 페이지 및 MVC 프로젝트 템플릿을 사용 하 여 만든 프로�
   * [eCryptfs](https://launchpad.net/ecryptfs)
   * [EncFS](https://github.com/vgough/encfs)합니다.
 
-## <a name="additional-resources"></a>추가 자료
+## <a name="additional-resources"></a>추가 리소스
 
 * [Microsoft.com/GDPR](https://www.microsoft.com/en-us/trustcenter/Privacy/GDPR)

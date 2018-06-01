@@ -9,11 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/windowsauth
-ms.openlocfilehash: a481951812e3498a1172dea98aaa162149b86f2b
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: dbcef095561fe656bdd28c4fa6560c6b269a2db0
+ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 05/31/2018
+ms.locfileid: "34689011"
 ---
 # <a name="configure-windows-authentication-in-aspnet-core"></a>ASP.NET Core에 Windows 인증을 구성 합니다.
 
@@ -56,7 +57,7 @@ Visual Studio 프로젝트 **속성** 페이지의 **디버그** 탭은 Windows 
 
 ## <a name="enable-windows-authentication-with-iis"></a>Iis Windows 인증을 사용 하도록 설정
 
-IIS에서 사용 하는 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module) ASP.NET Core 응용 프로그램 호스트에 있습니다. 모듈 흐름 Windows 인증을 IIS에 기본적으로입니다. Iis에서 응용 프로그램이 아닌 Windows 인증이 구성 됩니다. 다음 섹션에서는 Windows 인증을 사용 하도록 ASP.NET Core 응용 프로그램을 구성 하려면 IIS 관리자를 사용 하는 방법을 보여 줍니다.
+IIS에서 사용 하는 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module) ASP.NET Core 응용 프로그램 호스트에 있습니다. 모듈을 사용 하면 Windows 인증을 기본적으로 IIS에 전달 합니다. Iis에서 응용 프로그램이 아닌 Windows 인증이 구성 됩니다. 다음 섹션에서는 Windows 인증을 사용 하도록 ASP.NET Core 응용 프로그램을 구성 하려면 IIS 관리자를 사용 하는 방법을 보여 줍니다.
 
 ### <a name="create-a-new-iis-site"></a>새 IIS 사이트 만들기
 
