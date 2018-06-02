@@ -12,11 +12,12 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/performance/using-asynchronous-methods-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: cee5fded4d8005df6054ab921f39882c3e5f21b8
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 5b3b9b82fa64155c1dfd2a49649def10d7dae87e
+ms.sourcegitcommit: a0b6319c36f41cdce76ea334372f6e14fc66507e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/02/2018
+ms.locfileid: "34729183"
 ---
 <a name="using-asynchronous-methods-in-aspnet-mvc-4"></a>ASP.NET MVC 4에서 비동기 메서드 사용
 ====================
@@ -43,7 +44,7 @@ ASP.NET MVC 4 [컨트롤러](https://msdn.microsoft.com/library/system.web.mvc.c
 
 ## <a name="processing-asynchronous-requests"></a>비동기 요청 처리
 
-많은 수의 동시 요청 시작 시 표시 되거나 돌발적 부하가 (여기서 동시성이 갑자기 증가)는 웹 응용 프로그램에서 이러한 웹 서비스 호출을 비동기 만드는 응용 프로그램의 응답성을 늘어납니다. 비동기 요청 동기 요청으로 처리 하는 동일한 기간을 사용 합니다. 예를 들어 웹 서비스는 호출을 수행 하는 경우에 2 초를 완료 하려면 요청에서 수행 하는 2 초 동기적 또는 비동기적으로 수행 하는 것이 있는지 여부 필요 합니다. 그러나 비동기 호출 스레드가 첫 번째 요청을 완료를 기다리는 동안 다른 요청에 응답 하지 않도록 차단 되지 않습니다. 따라서 비동기 요청 장기 실행 작업을 호출 하는 많은 동시 요청이 없는 경우 요청 큐 및 스레드 풀 커지지를 않도록 합니다.
+많은 수의 시작 시 동시 요청을 보거나 돌발적 부하가 (여기서 동시성이 갑자기 증가)는 웹 응용 프로그램에서 이러한 웹 서비스 호출을 비동기 만드는 응용 프로그램의 응답성을 늘어납니다. 비동기 요청 동기 요청으로 처리 하는 동일한 기간을 사용 합니다. 예를 들어 웹 서비스는 호출을 수행 하는 경우에 2 초를 완료 하려면 요청에서 수행 하는 2 초 동기적 또는 비동기적으로 수행 하는 것이 있는지 여부 필요 합니다. 그러나 비동기 호출 스레드가 첫 번째 요청을 완료를 기다리는 동안 다른 요청에 응답 하지 않도록 차단 되지 않습니다. 따라서 비동기 요청 장기 실행 작업을 호출 하는 많은 동시 요청이 없는 경우 요청 큐 및 스레드 풀 커지지를 않도록 합니다.
 
 ## <a id="ChoosingSyncVasync"></a>  동기 또는 비동기 작업 메서드를 선택합니다.
 
@@ -61,7 +62,7 @@ ASP.NET MVC 4 [컨트롤러](https://msdn.microsoft.com/library/system.web.mvc.c
 - 작업에는 네트워크 또는 I/o-바인딩된 CPU 바인딩된 대신 합니다.
 - 병렬 처리는 코드의 단순성 보다 더 중요 합니다.
 - 사용자가 장기 실행 요청은 취소할 수 있는 메커니즘을 제공 하려고 합니다.
-- 때 아웃 스레드 전환의 이점은 컨텍스트 전환 비용에 가중치를 적용 합니다. 일반적으로 지정 해야 메서드에 비동기 동기 메서드로 ASP.NET 요청 스레드의 아무 작업도 수행 하는 동안 대기 하는 경우. 호출을 비동기 실행 하 여 ASP.NET 요청 스레드의 되지 동안에 웹 서비스 요청을 완료를 기다리는 동안 작업이 없습니다.
+- 때 스레드 전환의 이점은 컨텍스트 전환 비용을 보다 큽니다. 일반적으로 지정 해야 메서드에 비동기 동기 메서드로 ASP.NET 요청 스레드의 아무 작업도 수행 하는 동안 대기 하는 경우. 호출을 비동기 실행 하 여 ASP.NET 요청 스레드의 되지 동안에 웹 서비스 요청을 완료를 기다리는 동안 작업이 없습니다.
 - 테스트 차단 사이트 성능에 병목 현상이 되 게와 IIS가 차단 되는 이러한 호출에 대 한 비동기 메서드를 사용 하 여 더 많은 요청을 처리할 수 있음을 보여 줍니다.
 
   다운로드 가능한 샘플에는 비동기 작업 메서드를 효율적으로 사용 하는 방법을 보여 줍니다. 제공 된 샘플은.NET 4.5를 사용 하 여 ASP.NET MVC 4의 비동기 프로그래밍의 간단한 데모를 제공 하도록 설계 되었습니다. 이 샘플은 ASP.NET MVC에서 비동기 프로그래밍에 대 한 참조 아키텍처 없습니다. 샘플 프로그램 호출 [ASP.NET Web API](../../../web-api/index.md) 메서드를 호출 하는 [Task.Delay](https://msdn.microsoft.com/library/hh139096(VS.110).aspx) 장기 실행 웹 서비스 호출을 시뮬레이션할 수 있습니다. 대부분의 프로덕션 응용 프로그램에는 비동기 작업 메서드 사용으로 뚜렷한 이점을 표시 되지 않습니다.   
