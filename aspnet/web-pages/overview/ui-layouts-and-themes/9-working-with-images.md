@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26530152"
 ---
 <a name="working-with-images-in-an-aspnet-web-pages-razor-site"></a>ASP.NET 웹 페이지 (Razor) 사이트에 이미지 작업
 ====================
@@ -62,7 +63,7 @@ HTML을 사용 하 여 이미지는 사이트에서 이미 사용할 수 있는 
 
 이 섹션의 절차에는 사용자가 이미지 이름 목록에서 이미지 파일 이름을 지정 하는 위치에서 바로 이미지를 표시 하는 방법을 보여 줍니다. 드롭 다운 목록에서 이미지의 이름을 선택 하 고 페이지를 전송 하는 경우 선택한 이미지가 표시 됩니다.
 
-![[image] ] (9-working-with-images/_static/image1.jpg "ch9images 1.jpg")
+![[image]](9-working-with-images/_static/image1.jpg "ch9images 1.jpg")
 
 1. WebMatrix에서 새 웹 사이트를 만듭니다.
 2. 명명 된 새 페이지 추가 *DynamicImage.cshtml*합니다.
@@ -92,7 +93,7 @@ HTML을 사용 하 여 이미지는 사이트에서 이미 사용할 수 있는 
 
 이전 예제에서는 이미지를 동적으로 표시 하는 방법을 보여 주었습니다. 하지만 웹 사이트에 이미 있던 이미지에만 작동 합니다. 이 절차에서는 사용자가 다음 페이지에 표시 되는 이미지를 업로드 하는 방법을 설명 합니다. Asp.net에서 사용 하 여 즉시에서 이미지를 조작할 수 있습니다는 `WebImage` 도우미에는 만들기, 조작 및 이미지를 저장할 수 있는 방법입니다. `WebImage` 도우미 원하는 모든 공통 웹 이미지 파일 형식에 포함 하 여 *.jpg*, *.png*, 및 *.bmp*합니다. 이 문서 전체에서 사용 하 여 *.jpg* 이미지 형식 중 하나는 이미지, 하지만 있습니다 사용할 수 있습니다.
 
-![[image] ] (9-working-with-images/_static/image2.jpg "ch9images 2.jpg")
+![[image]](9-working-with-images/_static/image2.jpg "ch9images 2.jpg")
 
 1. 새 페이지를 추가 하 고 이름을 *UploadImage.cshtml*합니다.
 2. 다음 페이지에서 기존 내용을 바꿉니다. 
@@ -144,7 +145,7 @@ HTML을 사용 하 여 이미지는 사이트에서 이미 사용할 수 있는 
 
 이 절차에서는 미리 보기를 만들고 웹 사이트의 축소판 그림 및 원본 이미지 저장에 업로드 된 이미지의 크기를 조정 하는 방법을 보여 줍니다. 미리 보기 페이지에 표시 하 고 하이퍼링크를 사용 하 여 큰 이미지를 사용자가 리디렉션할 합니다.
 
-![[image] ] (9-working-with-images/_static/image3.jpg "ch9images 3.jpg")
+![[image]](9-working-with-images/_static/image3.jpg "ch9images 3.jpg")
 
 1. 명명 된 새 페이지 추가 *Thumbnail.cshtml*합니다.
 2. 에 *이미지* 폴더 라는 하위 폴더를 만들 *엄지*합니다.
@@ -165,7 +166,7 @@ HTML을 사용 하 여 이미지는 사이트에서 이미 사용할 수 있는 
 
 `WebImage` 도우미 수도 있습니다 대칭 이동 및 회전 이미지입니다. 이 절차에서는 서버에서 이미지를 가져올 상하로 대칭 이동 이미지 180도 회전 () 저장 하 고 다음 페이지에 대칭 이동한 이미지를 표시 하는 방법을 보여 줍니다. 이 예제에서는 방금 사용 하는 서버에 이미 있는 파일 (*Photo2.jpg*). 아마도 실제 응용 프로그램에서 이미지 이름이 이전 예제에서와 같이 동적으로 가져올 대칭 이동할 것 있습니다.
 
-![[image] ] (9-working-with-images/_static/image4.jpg "ch9images 4.jpg")
+![[image]](9-working-with-images/_static/image4.jpg "ch9images 4.jpg")
 
 1. 명명 된 새 페이지 추가 *FlipImage.cshtml*합니다.
 2. 다음 페이지에서 기존 내용을 바꿉니다. 
@@ -189,7 +190,7 @@ HTML을 사용 하 여 이미지는 사이트에서 이미 사용할 수 있는 
 
 웹 사이트에 이미지를 추가할 때에 페이지에 표시 하거나 저장 하기 전에 워터 마크 이미지를 추가 하는 것이 좋습니다. 사용자는 종종를 이미지에 저작권 정보를 추가 하거나 비즈니스 이름 광고할 워터 마크를 사용 합니다.
 
-![[image] ] (9-working-with-images/_static/image5.jpg "ch9images 5.jpg")
+![[image]](9-working-with-images/_static/image5.jpg "ch9images 5.jpg")
 
 1. 명명 된 새 페이지 추가 *Watermark.cshtml*합니다.
 2. 다음 페이지에서 기존 내용을 바꿉니다. 
@@ -206,7 +207,7 @@ HTML을 사용 하 여 이미지는 사이트에서 이미 사용할 수 있는 
 
 워터 마크에 대 한 텍스트를 사용 하는 대신 다른 이미지를 사용할 수 있습니다. 경우에 따라 사용자를 워터의 회사 로고와 같은 이미지를 사용 하거나 저작권 정보에 대 한 텍스트 대신 워터 마크 이미지를 사용 합니다.
 
-![[image] ] (9-working-with-images/_static/image6.jpg "ch9images 6.jpg")
+![[image]](9-working-with-images/_static/image6.jpg "ch9images 6.jpg")
 
 1. 명명 된 새 페이지 추가 *ImageWatermark.cshtml*합니다.
 2. 이미지를 추가할는 *이미지* 로고로 사용할 수 있으며 이미지의 이름을 바꿀 폴더 *MyCompanyLogo.jpg*합니다. 이 이미지에 표시 될 수 있는 명확 하 게 80 픽셀 너비 및 높이 20 픽셀으로 설정 되 면 이미지 여야 합니다.
