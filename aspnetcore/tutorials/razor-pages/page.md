@@ -10,25 +10,24 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages/page
-ms.openlocfilehash: c2a92cea2fdb3465963df1c4dcb71d1d3c95dcd3
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: 1388249eaf62b7e7a102a87385565c462eef8564
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34729926"
 ---
-# <a name="scaffolded-razor-pages-in-aspnet-core"></a><span data-ttu-id="8195f-103">ASP.NET Core의 스캐폴드된 Razor 페이지</span><span class="sxs-lookup"><span data-stu-id="8195f-103">Scaffolded Razor Pages in ASP.NET Core</span></span>
-
 [!INCLUDE [model1](../../includes/RP/page1.md)]
 
-<span data-ttu-id="8195f-104">Visual Studio에서는 `<form method="post">` 태그를 태그 도우미에 사용되는 독특한 글꼴로 표시합니다.</span><span class="sxs-lookup"><span data-stu-id="8195f-104">Visual Studio displays the `<form method="post">` tag in a distinctive font used for Tag Helpers:</span></span> 
+<span data-ttu-id="13c9f-103">Visual Studio에서는 `<form method="post">` 태그를 태그 도우미에 사용되는 독특한 글꼴로 표시합니다.</span><span class="sxs-lookup"><span data-stu-id="13c9f-103">Visual Studio displays the `<form method="post">` tag in a distinctive font used for Tag Helpers:</span></span> 
 
 ![Create.cshtml 페이지의 VS17 뷰](page/_static/th.png)
 
 [!INCLUDE [model1](../../includes/RP/page2.md)]
 
-<span data-ttu-id="8195f-106">다음 자습서에서는 SQL Server LocalDB 및 데이터베이스 시딩에 대해 설명합니다.</span><span class="sxs-lookup"><span data-stu-id="8195f-106">The next tutorial explains SQL Server LocalDB and seeding the database.</span></span>
+<span data-ttu-id="13c9f-105">다음 자습서에서는 SQL Server LocalDB 및 데이터베이스 시딩에 대해 설명합니다.</span><span class="sxs-lookup"><span data-stu-id="13c9f-105">The next tutorial explains SQL Server LocalDB and seeding the database.</span></span>
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="8195f-107">[이전: 모델 추가](xref:tutorials/razor-pages/model)
-> [다음: SQL Server LocalDB](xref:tutorials/razor-pages/sql)</span><span class="sxs-lookup"><span data-stu-id="8195f-107">[Previous: Adding a model](xref:tutorials/razor-pages/model)
+> <span data-ttu-id="13c9f-106">[이전: 모델 추가](xref:tutorials/razor-pages/model)
+> [다음: SQL Server LocalDB](xref:tutorials/razor-pages/sql)</span><span class="sxs-lookup"><span data-stu-id="13c9f-106">[Previous: Adding a model](xref:tutorials/razor-pages/model)
 [Next: SQL Server LocalDB](xref:tutorials/razor-pages/sql)</span></span>
