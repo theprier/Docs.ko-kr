@@ -10,10 +10,10 @@ ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/twitter-logins
 ms.openlocfilehash: 3f59f7d1bf0280cef8f7757e8cd57d4872769b3d
-ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/31/2018
+ms.lasthandoff: 06/04/2018
 ms.locfileid: "34688998"
 ---
 # <a name="twitter-external-login-setup-with-aspnet-core"></a>ASP.NET Core를 사용 하 여 twitter 외부 로그인 설치

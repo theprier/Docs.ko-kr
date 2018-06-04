@@ -9,12 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/accconfirm
-ms.openlocfilehash: 397d8bf04abf6be811ad8c91d52565251ac61678
-ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
+ms.openlocfilehash: b6dbe234973431448c18d3cc82a6ac98d4f53a3b
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/31/2018
-ms.locfileid: "34688972"
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34730453"
 ---
 # <a name="account-confirmation-and-password-recovery-in-aspnet-core"></a>계정 확인 및 ASP.NET 코어에서 암호 복구
 
@@ -110,7 +110,7 @@ Visual studio의 경우:
 <a name="prevent-login-at-registration"></a>
 ## <a name="require-email-confirmation"></a>전자 메일 확인이 필요
 
-새 사용자 등록의 전자 메일을 확인 하는 것이 좋습니다. 다른 사람을 가장 하지 하는 것을 확인 하는 데 도움이 확인 전자 메일 (즉, 이러한 하지 않은 등록 된 다른 사용자의 전자 메일). 토론 포럼을 가지 며 하지 못하도록 하려는 경우를 가정해 볼 "yli@example.com로 등록" 에서"nolivetto@contoso.com." 전자 메일 확인 하지 않고 "nolivetto@contoso.com" 응용 프로그램에서 원치 않는 전자 메일을 받을 수 있습니다. 사용자는 실수로으로 등록 된다고 가정 합니다 "ylo@example.com" "yli"의 잘못 된 철자를 발견 하지 않은 합니다. 앱이 올바른 전자 메일에 없는 때문에 암호 복구를 사용할 수 없게. 전자 메일 확인에서 봇만 제한 된 보호를 제공합니다. 전자 메일 확인 많은 전자 메일 계정 가진 악의적인 사용자 로부터 보호를 제공 하지 않습니다.
+새 사용자 등록의 전자 메일을 확인 하는 것이 좋습니다. 다른 사람을 가장 하지 하는 것을 확인 하는 데 도움이 확인 전자 메일 (즉, 이러한 하지 않은 등록 된 다른 사용자의 전자 메일). 토론 포럼을 가지 며 하지 못하도록 하려는 경우를 가정해 볼 "yli@example.com로 등록" 에서"nolivetto@contoso.com"입니다. 전자 메일 확인 하지 않고 "nolivetto@contoso.com" 응용 프로그램에서 원치 않는 전자 메일을 받을 수 있습니다. 사용자는 실수로으로 등록 된다고 가정 합니다 "ylo@example.com" "yli"의 잘못 된 철자를 발견 하지 않은 합니다. 앱이 올바른 전자 메일에 없는 때문에 암호 복구를 사용할 수 없게. 전자 메일 확인에서 봇만 제한 된 보호를 제공합니다. 전자 메일 확인 많은 전자 메일 계정 가진 악의적인 사용자 로부터 보호를 제공 하지 않습니다.
 
 일반적으로 새 사용자는 확인 된 전자 메일을 갖기 전에 웹 사이트에 데이터를 게시 하는 것을 방지 하려고 합니다.
 
@@ -307,7 +307,7 @@ Form 요소에 주석 처리 제거 *Views/Account/ForgotPassword.cshtml*합니�
 
 ## <a name="enable-account-confirmation-after-a-site-has-users"></a>사이트에 사용자가 만든 후 계정 확인을 사용 하도록 설정
 
-사이트에서 사용할 수 있도록 계정 확인 사용자와 모든 기존 사용자가 잠급니다. 자신의 계정을 확인 하지 때문에 기존 사용자가 잠겨 있습니다. 사용자 잠금 종료를 해결 하려면 다음 방법 중 하나를 사용 합니다.
+사이트에서 사용할 수 있도록 계정 확인 사용자와 모든 기존 사용자가 잠급니다. 자신의 계정을 확인 하지 때문에 기존 사용자가 잠겨 있습니다. 기존 사용자 잠금을 해결 하려면 다음 방법 중 하나를 사용 합니다.
 
-* 기존의 모든 사용자로 확인 되 고 표시 하도록 데이터베이스를 업데이트
+* 기존의 모든 사용자로 확인 되 고 표시 하도록 데이터베이스를 업데이트 합니다.
 * 기존 사용자를 확인 합니다. 예를 들어 일괄 처리 send 확인 링크가 포함 된 전자 메일입니다.
