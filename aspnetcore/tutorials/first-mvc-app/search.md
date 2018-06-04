@@ -9,13 +9,14 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app/search
-ms.openlocfilehash: 772409f11a43e1d130265d8bba3bad1da5a41b86
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: aee1682755385d9fa292f9ba0814d5d3602f3881
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34729910"
 ---
-[!INCLUDE [adding-model](../../includes/mvc-intro/search1.md)]
+[!INCLUDE [adding-model](~/includes/mvc-intro/search1.md)]
 
 **rename** 명령을 사용하여 `searchString` 매개 변수의 이름을 `id`로 신속하게 바꿀 수 있습니다. `searchString` **> Rename**을 마우스 오른쪽 단추로 클릭합니다.
 
@@ -29,7 +30,7 @@ ms.lasthandoff: 04/06/2018
 
 ![변수를 보여 주는 코드 편집기는 id로 변경되었습니다.](search/_static/rename3.png)
 
-[!INCLUDE [adding-model](../../includes/mvc-intro/search2.md)]
+[!INCLUDE [adding-model](~/includes/mvc-intro/search2.md)]
 
 intelliSense에서 변경 내용 업데이트를 돕는 방법을 확인합니다.
 
@@ -37,11 +38,11 @@ intelliSense에서 변경 내용 업데이트를 돕는 방법을 확인합니�
 
 ![메서드 특성 목록에서 선택한 값이 있는 Intellisense 바로 가기 메뉴](search/_static/int_get.png)
 
-`<form>` 태그에서 눈에 띄는 글꼴을 확인합니다. 눈에 띄는 해당 글꼴은 [태그 도우미](../../mvc/views/tag-helpers/intro.md)에서 지원되는 태그를 나타냅니다.
+`<form>` 태그에서 눈에 띄는 글꼴을 확인합니다. 눈에 띄는 해당 글꼴은 [태그 도우미](~/mvc/views/tag-helpers/intro.md)에서 지원되는 태그를 나타냅니다.
 
 ![자주색 텍스트가 있는 양식 태그](search/_static/th_font.png)
 
-[!INCLUDE [adding-model](../../includes/mvc-intro/search3.md)]
+[!INCLUDE [adding-model](~/includes/mvc-intro/search3.md)]
 
 > [!div class="step-by-step"]
 > [이전](controller-methods-views.md)

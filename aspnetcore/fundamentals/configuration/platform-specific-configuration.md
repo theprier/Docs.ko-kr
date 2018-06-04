@@ -11,11 +11,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/platform-specific-configuration
-ms.openlocfilehash: 793169b491596cd7326d747a3f19d7fdaf7e2b65
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: 618cb4349dcff696db37012af3aee844b82974f2
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34729053"
 ---
 # <a name="enhance-an-app-from-an-external-assembly-in-aspnet-core-with-ihostingstartup"></a>IHostingStartup을 사용하여 ASP.NET Core의 외부 어셈블리에서 앱 강화
 
@@ -68,7 +69,7 @@ ms.lasthandoff: 05/17/2018
 
 ### <a name="update-the-dependencies-file"></a>종속성 파일 업데이트
 
-런타임 위치는 *\*.deps.json* 파일에 지정됩니다. 향상된 기능을 활성화하려면 `runtime` 요소가 해당 기능 런타임 어셈블리의 위치를 지정해야 합니다. `runtime` 위치의 접두사를 `lib/netcoreapp2.0/`로 지정합니다.
+런타임 위치는 *\*.deps.json* 파일에 지정됩니다. 향상된 기능을 활성화하려면 `runtime` 요소가 해당 기능 런타임 어셈블리의 위치를 지정해야 합니다. `runtime` 위치의 접두사를 `lib/<TARGET_FRAMEWORK_MONIKER>/`로 지정합니다.
 
 [!code-json[](platform-specific-configuration/snapshot_sample/StartupEnhancement2.deps.json?range=2-13&highlight=8)]
 
@@ -83,13 +84,13 @@ ms.lasthandoff: 05/17/2018
 사용자 단위 사용의 경우 어셈블리를 사용자 프로필의 런타임 저장소에 배치합니다.
 
 ```
-<DRIVE>\Users\<USER>\.dotnet\store\x64\netcoreapp2.0\<ENHANCEMENT_ASSEMBLY_NAME>\<ENHANCEMENT_VERSION>\lib\netcoreapp2.0\
+<DRIVE>\Users\<USER>\.dotnet\store\x64\<TARGET_FRAMEWORK_MONIKER>\<ENHANCEMENT_ASSEMBLY_NAME>\<ENHANCEMENT_VERSION>\lib\<TARGET_FRAMEWORK_MONIKER>\
 ```
 
 전역 사용의 경우 어셈블리를 .NET Core 설치의 런타임 저장소에 배치합니다.
 
 ```
-<DRIVE>\Program Files\dotnet\store\x64\netcoreapp2.0\<ENHANCEMENT_ASSEMBLY_NAME>\<ENHANCEMENT_VERSION>\lib\netcoreapp2.0\
+<DRIVE>\Program Files\dotnet\store\x64\<TARGET_FRAMEWORK_MONIKER>\<ENHANCEMENT_ASSEMBLY_NAME>\<ENHANCEMENT_VERSION>\lib\<TARGET_FRAMEWORK_MONIKER>\
 ```
 
 런타임 저장소에 어셈블리를 배포할 때 기호 파일도 배포될 수 있지만 향상된 기능이 작동하는 데 필수 조건은 아닙니다.
@@ -101,16 +102,16 @@ ms.lasthandoff: 05/17/2018
 사용자 단위 사용의 경우 파일을 사용자 프로필 `.dotnet` 설정의 `additonalDeps` 폴더에 배치합니다. 
 
 ```
-<DRIVE>\Users\<USER>\.dotnet\x64\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\2.0.0\
+<DRIVE>\Users\<USER>\.dotnet\x64\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\2.1.0\
 ```
 
 전역 사용의 경우 파일을 .NET Core 설치의 `additonalDeps` 폴더에 배치합니다.
 
 ```
-<DRIVE>\Program Files\dotnet\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\2.0.0\
+<DRIVE>\Program Files\dotnet\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\2.1.0\
 ```
 
-버전(`2.0.0`)을 적어두고, 대상 앱이 사용하는 공유 런타임 버전을 반영합니다. 공유 런타임은 *\*.runtimeconfig.json* 파일에 표시됩니다. 샘플 앱에서 공유 런타임은 *HostingStartupSample.runtimeconfig.json* 파일에 지정됩니다.
+버전(`2.1.0`)을 적어두고, 대상 앱이 사용하는 공유 런타임 버전을 반영합니다. 공유 런타임은 *\*.runtimeconfig.json* 파일에 표시됩니다. 샘플 앱에서 공유 런타임은 *HostingStartupSample.runtimeconfig.json* 파일에 지정됩니다.
 
 **환경 변수 설정**
 
@@ -135,7 +136,7 @@ DOTNET\_ADDITIONAL\_DEPS
 전역 사용에서 파일을 .NET Core 설치에 배치하는 경우 파일에 전체 경로를 제공합니다.
 
 ```
-<DRIVE>\Program Files\dotnet\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\2.0.0\<ENHANCEMENT_ASSEMBLY_NAME>.deps.json
+<DRIVE>\Program Files\dotnet\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\2.1.0\<ENHANCEMENT_ASSEMBLY_NAME>.deps.json
 ```
 
 샘플 앱은 이 값을 다음으로 설정합니다.

@@ -10,11 +10,12 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: aspnetcore-1.1
-ms.openlocfilehash: 0e6d9be1798140dbe7a318e53531a26771653ccf
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 6042fa2d5d05f37923adde1be7f8ce57b00196b9
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34566856"
 ---
 # <a name="whats-new-in-aspnet-core-11"></a>ASP.NET Core 1.1의 새로운 기능
 
@@ -25,7 +26,7 @@ ASP.NET Core 1.1에는 다음과 같은 새로운 기능이 포함됩니다.
 - [태그 도우미인 구성 요소 보기](xref:mvc/views/view-components#invoking-a-view-component-as-a-tag-helper)
 - [MVC 필터인 미들웨어](xref:mvc/controllers/filters#using-middleware-in-the-filter-pipeline)
 - [쿠키 기반 TempData 공급자](xref:fundamentals/app-state#tempdata)
-- [Azure App Service 로깅 공급자](xref:fundamentals/logging/index#appservice)
+- [Azure App Service 로깅 공급자](xref:fundamentals/logging/index#azure-app-service-provider)
 - [Azure Key Vault 구성 공급자](xref:security/key-vault-configuration)
 - [Azure 및 Redis 저장소 데이터 보호 키 리포지토리](xref:security/data-protection/implementation/key-storage-providers#azure-and-redis)
 - [Windows용 WebListener 서버](xref:fundamentals/servers/weblistener)

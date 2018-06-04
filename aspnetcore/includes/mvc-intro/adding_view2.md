@@ -1,14 +1,14 @@
 *Views/HelloWorld/Index.cshtml* Razor 보기 파일의 콘텐츠를 다음으로 대체합니다.
 
-[!code-HTML[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/HelloWorld/Index.cshtml)]
+[!code-HTML[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/HelloWorld/Index.cshtml)]
 
 `http://localhost:xxxx/HelloWorld`로 이동합니다. `HelloWorldController`에서 `Index` 메서드는 많은 작업을 수행하지 않았습니다. `return View();` 문을 실행했습니다. 해당 문은 메서드가 브라우저에 대한 응답을 렌더링하기 위해 보기 템플릿 파일을 사용해야 함을 지정했습니다. 보기 템플릿 파일의 이름을 명시적으로 지정하지 않았기 때문에 MVC는 */Views/HelloWorld* 폴더에서 *Index.cshtml* 보기 파일을 사용하도록 기본 설정되었습니다. 아래 이미지는 보기에서 하드 코드된 “Hello from our View Template!” 문자열을 보여줍니다.
 
-![브라우저 창](../../tutorials/first-mvc-app/adding-view/_static/hell_template.png)
+![브라우저 창](~/tutorials/first-mvc-app/adding-view/_static/hell_template.png)
 
 브라우저 창이 작은 경우(예: 모바일 장치) **홈**, **정보** 및 **연락처** 링크를 보기 위해 오른쪽 위에 있는 [부트스트랩 탐색 단추](http://getbootstrap.com/components/#navbar)를 설정/해제(탭)해야 할 수도 있습니다.
 
-![부트스트랩 탐색 단추가 강조 표시된 브라우저 창](../../tutorials/first-mvc-app/adding-view/_static/1.png)
+![부트스트랩 탐색 단추가 강조 표시된 브라우저 창](~/tutorials/first-mvc-app/adding-view/_static/1.png)
 
 ## <a name="changing-views-and-layout-pages"></a>보기 및 레이아웃 페이지 변경
 
@@ -20,16 +20,21 @@
 
 제목 요소에서 `MvcMovie`를 `Movie App`으로 변경합니다. 레이아웃 템플릿에서 앵커 텍스트를 `MvcMovie`에서 `Movie App`로, 컨트롤러를 `Home`에서 아래 강조 표시된 `Movies`로 변경합니다.
 
-참고: ASP.NET Core 2.0 버전은 약간 다릅니다. `@inject ApplicationInsights` 및 `@Html.Raw(JavaScriptSnippet.FullScript)`는 포함하지 않습니다.
+::: moniker range="<= aspnetcore-2.0"
+[!code-html[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Shared/_Layout.cshtml?highlight=7,31)]
 
-[!code-html[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Shared/_Layout.cshtml?highlight=7,31)]
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.1"
+[!code-html[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Shared/_Layout21.cshtml?highlight=6,29)]
+::: moniker-end
 
 >[!WARNING]
 > `Movies` 컨트롤러를 아직 구현하지 않았으므로 해당 링크를 클릭하면 404(찾을 수 없음) 오류가 나타납니다.
 
 변경 내용을 저장하고 **정보** 링크를 누릅니다. 브라우저 탭의 제목에서 **정보 - Mvc 동영상** 대신 **정보 - 동영상 앱**을 표시하는 방법을 확인합니다: 
 
-![정보 탭](../../tutorials/first-mvc-app/adding-view/_static/about2.png)
+![정보 탭](~/tutorials/first-mvc-app/adding-view/_static/about2.png)
 
 **연락처** 링크를 누르고 제목 및 앵커 텍스트가 **동영상 앱**을 표시하는지 확인합니다. 레이아웃 템플릿에 변경 사항을 한 번 적용할 수 있었으며 사이트의 모든 페이지에 새 링크 텍스트 및 새 제목을 반영했습니다.
 
@@ -75,7 +80,7 @@
 
 또한 *Index.cshtml* 보기 템플릿에서 콘텐츠가 *Views/Shared/_Layout.cshtml* 보기 템플릿으로 병합되고 단일 HTML 응답이 브라우저로 전송된 방식을 확인합니다. 레이아웃 템플릿을 사용하면 응용 프로그램의 모든 페이지에 걸쳐 적용되는 변경 내용을 쉽게 만들 수 있습니다. 자세한 내용은 [레이아웃](xref:mvc/views/layout)을 참조하세요.
 
-![동영상 목록 보기](../../tutorials/first-mvc-app/adding-view/_static/hell3.png)
+![동영상 목록 보기](~/tutorials/first-mvc-app/adding-view/_static/hell3.png)
 
 그렇지만 일부 “데이터”(이 경우 “Hello from our View Template!” 메시지)는 하드 코드되었습니다. MVC 응용 프로그램에는 "V"(보기)가 있으며 "C"(컨트롤러)가 있지만 "M"(모델)은 아직 없습니다.
 
@@ -89,7 +94,7 @@
 
 *HelloWorldController.cs* 파일로 돌아가서 `Message` 및 `NumTimes` 값을 `ViewData` 사전에 추가하도록 `Welcome` 메서드를 변경합니다. `ViewData` 사전은 동적 개체입니다. 즉, 원하는 것을 넣을 수 있습니다. 사용자가 어떤 것을 넣을 때까지 `ViewData` 개체에는 정의된 속성이 없습니다. [MVC 모델 바인딩 시스템](xref:mvc/models/model-binding)은 주소 표시줄의 쿼리 문자열에서 메서드의 매개 변수로 명명된 매개 변수(`name` 및 `numTimes`)를 자동으로 매핑합니다. 전체 *HelloWorldController.cs* 파일은 다음과 같습니다.
 
-[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/HelloWorldController.cs?name=snippet_5)]
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/HelloWorldController.cs?name=snippet_5)]
 
 `ViewData` 사전 개체는 보기에 전달되는 데이터를 포함합니다. 
 
@@ -97,7 +102,7 @@
 
 "Hello" `NumTimes`를 표시하는 *Welcome.cshtml* 보기 템플릿에 반복을 만듭니다. *Views/HelloWorld/Welcome.cshtml*의 콘텐츠를 다음으로 대체합니다.
 
-[!code-html[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/HelloWorld/Welcome.cshtml)]
+[!code-html[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/HelloWorld/Welcome.cshtml)]
 
 변경 내용을 저장하고 다음 URL로 이동합니다.
 
@@ -105,7 +110,7 @@
 
 URL에서 데이터를 가져오고 [MVC 모델 바인더](xref:mvc/models/model-binding)를 사용하여 컨트롤러에 전달됩니다. 컨트롤러는 데이터를 `ViewData` 사전으로 패키징하고 해당 개체를 보기에 전달합니다. 그런 다음 보기는 데이터를 HTML로 브라우저에 렌더링합니다.
 
-![시작 레이블 및 네 번 표시되는 구 Hello Rick을 보여 주는 정보 보기](../../tutorials/first-mvc-app/adding-view/_static/rick2.png)
+![시작 레이블 및 네 번 표시되는 구 Hello Rick을 보여 주는 정보 보기](~/tutorials/first-mvc-app/adding-view/_static/rick2.png)
 
 위의 샘플에서 `ViewData` 사전을 사용하여 컨트롤러에서 보기로 데이터를 전달했습니다. 자습서의 뒷부분에서 보기 모델을 사용하여 컨트롤러에서 보기로 데이터를 전달합니다. 데이터를 전달하는 보기 모델 방법은 일반적으로 `ViewData` 사전 접근 방법보다 훨씬 많이 사용됩니다. 자세한 내용은 [MVC에서 ViewModel vs ViewData vs ViewBag vs TempData vs Session](http://www.mytecbits.com/microsoft/dot-net/viewmodel-viewdata-viewbag-tempdata-mvc)을 참조하세요.
 

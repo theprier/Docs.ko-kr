@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/dependency-injection
-ms.openlocfilehash: 067d9bd09f6d5e54bbafd953eea169d2df2be34e
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: 14c3d464773fe78a563a27776bfcd124c22df134
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34566960"
 ---
 # <a name="dependency-injection-in-aspnet-core"></a>ASP.NET Core에서 종속성 주입
 
@@ -245,7 +246,7 @@ public static void Main(string[] args)
 
 요청 서비스는 사용자가 응용 프로그램의 일부로 구성 및 요청한 서비스를 나타냅니다. 개체가 종속성을 지정한 경우에는 `ApplicationServices`가 아닌 `RequestServices`에 있는 형식으로 충족됩니다.
 
-일반적으로 이러한 속성을 직접 사용해서는 안 됩니다. 대신 클래스의 생성자를 통해 요청한 클래스 형식을 요청하고 프레임워크에서 이러한 종속성을 주입하도록 해야 합니다. 이는 더 쉽게 테스트할 수 있고([테스트 및 디버그](xref:testing/index) 참조) 더 느슨하게 결합되는 클래스를 일시 중단합니다.
+일반적으로 이러한 속성을 직접 사용해서는 안 됩니다. 대신 클래스의 생성자를 통해 요청한 클래스 형식을 요청하고 프레임워크에서 이러한 종속성을 주입하도록 해야 합니다. 이는 더 쉽게 테스트할 수 있고([테스트 및 디버그](xref:test/index) 참조) 더 느슨하게 결합되는 클래스를 일시 중단합니다.
 
 > [!NOTE]
 > `RequestServices` 컬렉션에 액세스하는 것보다 생성자 매개 변수로 종속성을 요청하는 것을 선호합니다.
@@ -361,7 +362,7 @@ Singleton 서비스는 스레드로부터 안전해야 합니다. Singleton 서�
 * [컨트롤러에 종속성 주입](xref:mvc/controllers/dependency-injection)
 * [요구 사항 처리기의 종속성 주입](xref:security/authorization/dependencyinjection)
 * [응용 프로그램 시작](xref:fundamentals/startup)
-* [테스트 및 디버그](xref:testing/index)
+* [테스트 및 디버그](xref:test/index)
 * [팩터리 기반 미들웨어 활성화](xref:fundamentals/middleware/extensibility)
 * [종속성 주입으로 ASP.NET Core에 정리 코드 작성(MSDN)](https://msdn.microsoft.com/magazine/mt703433.aspx)
 * [컨테이너 관리 응용 프로그램 디자인, 서막: 컨테이너는 어디에 속합니까?](https://blogs.msdn.microsoft.com/nblumhardt/2008/12/26/container-managed-application-design-prelude-where-does-the-container-belong/)
