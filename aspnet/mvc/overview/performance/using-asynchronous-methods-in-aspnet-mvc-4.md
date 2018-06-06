@@ -12,12 +12,12 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/performance/using-asynchronous-methods-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 5b3b9b82fa64155c1dfd2a49649def10d7dae87e
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
-ms.translationtype: HT
+ms.openlocfilehash: 65ba01dd1b0ed5a43ca5c868608f2858f86b4b59
+ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
+ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 06/04/2018
-ms.locfileid: "34729183"
+ms.locfileid: "34734538"
 ---
 <a name="using-asynchronous-methods-in-aspnet-mvc-4"></a>ASP.NET MVC 4에서 비동기 메서드 사용
 ====================
@@ -44,7 +44,7 @@ ASP.NET MVC 4 [컨트롤러](https://msdn.microsoft.com/library/system.web.mvc.c
 
 ## <a name="processing-asynchronous-requests"></a>비동기 요청 처리
 
-많은 수의 시작 시 동시 요청을 보거나 돌발적 부하가 (여기서 동시성이 갑자기 증가)는 웹 응용 프로그램에서 이러한 웹 서비스 호출을 비동기 만드는 응용 프로그램의 응답성을 늘어납니다. 비동기 요청 동기 요청으로 처리 하는 동일한 기간을 사용 합니다. 예를 들어 웹 서비스는 호출을 수행 하는 경우에 2 초를 완료 하려면 요청에서 수행 하는 2 초 동기적 또는 비동기적으로 수행 하는 것이 있는지 여부 필요 합니다. 그러나 비동기 호출 스레드가 첫 번째 요청을 완료를 기다리는 동안 다른 요청에 응답 하지 않도록 차단 되지 않습니다. 따라서 비동기 요청 장기 실행 작업을 호출 하는 많은 동시 요청이 없는 경우 요청 큐 및 스레드 풀 커지지를 않도록 합니다.
+많은 수의 동시 요청 시작 시 표시 되거나 돌발적 부하가 (여기서 동시성이 갑자기 증가) 하는 웹 앱, 웹 서비스 호출을 비동기 만드는 응용 프로그램의 응답성 데이터를 증가 합니다. 비동기 요청 동기 요청으로 처리 하는 동일한 기간을 사용 합니다. 웹 서비스는 호출을 수행 하는 경우에 2 초를 완료 하려면 요청은 2 초 동기적 또는 비동기적으로 수행 하는 것이 있는지 여부 필요 합니다. 그러나 비동기 호출는 스레드는 첫 번째 요청을 완료를 기다리는 동안 다른 요청에 응답 하지 않도록 차단 되지 않습니다. 따라서 비동기 요청 장기 실행 작업을 호출 하는 많은 동시 요청이 없는 경우 요청 큐 및 스레드 풀 커지지를 않도록 합니다.
 
 ## <a id="ChoosingSyncVasync"></a>  동기 또는 비동기 작업 메서드를 선택합니다.
 

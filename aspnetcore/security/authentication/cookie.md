@@ -9,11 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/cookie
-ms.openlocfilehash: bdaa0e3a5ce54d3822615ac57e22f4fd6beacdcb
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: f84d69f84cb0b80418bbb6de6bfcd7e2172f65ef
+ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34734616"
 ---
 # <a name="use-cookie-authentication-without-aspnet-core-identity"></a>ASP.NET Core Id 없이 쿠키 인증을 사용 하 여
 
@@ -23,23 +24,27 @@ ms.lasthandoff: 05/12/2018
 
 [예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/cookie/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
+샘플 응용 프로그램에서 설명을 위해 Maria Rodriguez 가상의 사용자에 대 한 사용자 계정을 응용 프로그램에 하드 코딩 됩니다. 전자 메일 이름을 사용 하 여 "maria.rodriguez@contoso.com" 및 사용자를 로그인 할 암호입니다. 사용자가 인증 된 `AuthenticateUser` 에서 메서드는 *Pages/Account/Login.cshtml.cs* 파일입니다. 실제 예제에서 데이터베이스에 대해 사용자를 인증 합니다.
+
 ASP.NET Core에서 마이그레이션 쿠키 기반 인증에 대 한 내용은 2.0으로 1.x 참조 [마이그레이션할 인증 및 ASP.NET 코어 2.0 (쿠키 기반 인증) 항목에 Id](xref:migration/1x-to-2x/identity-2x#cookie-based-authentication)합니다.
+
+ASP.NET Core Id를 사용 하려면 참조는 [Id 소개](xref:security/authentication/identity) 항목입니다.
 
 ## <a name="configuration"></a>구성
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 
-사용 하지 않는 경우는 [Microsoft.AspNetCore.All metapackage](xref:fundamentals/metapackage), 버전 2.0 +의 설치는 [Microsoft.AspNetCore.Authentication.Cookies](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Cookies/) NuGet 패키지 합니다.
+응용 프로그램을 사용 하지 않는 경우는 [Microsoft.AspNetCore.App metapackage](xref:fundamentals/metapackage-app)에 대 한 프로젝트 파일에서 패키지 참조를 만들는 [Microsoft.AspNetCore.Authentication.Cookies](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.Cookies/) 패키지 (2.1.0 버전 또는 나중에).
 
 에 `ConfigureServices` 메서드를 사용 하 여 인증 미들웨어 서비스 만들기는 `AddAuthentication` 및 `AddCookie` 메서드:
 
-[!code-csharp[](cookie/sample/Startup.cs?name=snippet1)]
+[!code-csharp[](cookie/samples/2.x/CookieSample/Startup.cs?name=snippet1)]
 
 `AuthenticationScheme` 에 전달 된 `AddAuthentication` 응용 프로그램에 대 한 기본 인증 체계를 설정 합니다. `AuthenticationScheme` 쿠키 인증의 여러 인스턴스가 있고 하려는 경우 유용 [특정 스키마를 가진 권한 부여](xref:security/authorization/limitingidentitybyscheme)합니다. 설정의 `AuthenticationScheme` 를 `CookieAuthenticationDefaults.AuthenticationScheme` 체계 "쿠키"의 값을 제공 합니다. 체계를 구별 하는 임의의 문자열 값을 제공할 수 있습니다.
 
 에 `Configure` 메서드를 사용 하 여는 `UseAuthentication` 설정 하는 인증 미들웨어를 호출 하는 메서드는 `HttpContext.User` 속성입니다. 호출 된 `UseAuthentication` 메서드 호출 하기 전에 `UseMvcWithDefaultRoute` 또는 `UseMvc`:
 
-[!code-csharp[](cookie/sample/Startup.cs?name=snippet2)]
+[!code-csharp[](cookie/samples/2.x/CookieSample/Startup.cs?name=snippet2)]
 
 **AddCookie 옵션**
 
@@ -163,7 +168,7 @@ var cookiePolicyOptions = new CookiePolicyOptions
 | SameSiteMode.Lax      | SameSiteMode.None<br>SameSiteMode.Lax<br>SameSiteMode.Strict | SameSiteMode.Lax<br>SameSiteMode.Lax<br>SameSiteMode.Strict |
 | SameSiteMode.Strict   | SameSiteMode.None<br>SameSiteMode.Lax<br>SameSiteMode.Strict | SameSiteMode.Strict<br>SameSiteMode.Strict<br>SameSiteMode.Strict |
 
-## <a name="creating-an-authentication-cookie"></a>인증 쿠키를 만들기
+## <a name="create-an-authentication-cookie"></a>인증 쿠키를 만드는
 
 사용자 정보를 보관 하는 쿠키를 만들려면 먼저 생성 해야는 [ClaimsPrincipal](/dotnet/api/system.security.claims.claimsprincipal)합니다. 사용자 정보 직렬화 되며 쿠키에 저장 됩니다. 
 
@@ -171,7 +176,7 @@ var cookiePolicyOptions = new CookiePolicyOptions
 
 만들기는 [ClaimsIdentity](/dotnet/api/system.security.claims.claimsidentity) 와 모든 필수 [클레임](/dotnet/api/system.security.claims.claim)s 및 호출 [SignInAsync](/dotnet/api/microsoft.aspnetcore.authentication.authenticationhttpcontextextensions.signinasync?view=aspnetcore-2.0) 사용자 로그인:
 
-[!code-csharp[](cookie/sample/Pages/Account/Login.cshtml.cs?name=snippet1)]
+[!code-csharp[](cookie/samples/2.x/CookieSample/Pages/Account/Login.cshtml.cs?name=snippet1)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 
@@ -189,13 +194,13 @@ await HttpContext.Authentication.SignInAsync(
 
 내부적으로 사용 되는 암호화는 ASP.NET Core [데이터 보호](xref:security/data-protection/using-data-protection#security-data-protection-getting-started) 시스템입니다. 여러 컴퓨터, 앱, 부하 분산 또는 웹 팜을 사용 하 여 응용 프로그램을 호스트 하 고 있는 경우 다음을 수행 해야 [데이터 보호를 구성](xref:security/data-protection/configuration/overview) 동일한 키 링과 응용 프로그램 식별자를 사용 하도록 합니다.
 
-## <a name="signing-out"></a>로그 아웃
+## <a name="sign-out"></a>로그아웃
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 
 로그 아웃 현재 사용자를 해당 쿠키를 삭제 하려면 호출 [SignOutAsync](/dotnet/api/microsoft.aspnetcore.authentication.authenticationhttpcontextextensions.signoutasync?view=aspnetcore-2.0):
 
-[!code-csharp[](cookie/sample/Pages/Account/Login.cshtml.cs?name=snippet2)]
+[!code-csharp[](cookie/samples/2.x/CookieSample/Pages/Account/Login.cshtml.cs?name=snippet2)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 
@@ -210,7 +215,7 @@ await HttpContext.Authentication.SignOutAsync(
 
 사용 하지 않으려면 `CookieAuthenticationDefaults.AuthenticationScheme` (또는 "쿠키")의 체계 (예: "ContosoCookie")로 인증 공급자를 구성할 때 사용 하는 체계를 제공 합니다. 그렇지 않은 경우 기본 구성표가 사용 됩니다.
 
-## <a name="reacting-to-back-end-changes"></a>백 엔드 변경 내용에 응답
+## <a name="react-to-back-end-changes"></a>백 엔드 변경 내용에 대응
 
 쿠키를 만든 후에 id의 단일 원본이 됩니다. 백 엔드 시스템에 사용자를 비활성화 하는 경우에 쿠키 인증 시스템에이 알지 및 해당 쿠키의 유효으로 사용자 로그인 유지 합니다.
 
@@ -422,7 +427,7 @@ await HttpContext.Authentication.SignInAsync(
 
 ---
 
-## <a name="see-also"></a>참고자료
+## <a name="additional-resources"></a>추가 자료
 
 * [Auth 2.0 변경 / 마이그레이션 알림](https://github.com/aspnet/Announcements/issues/262)
 * [구성표로 ID 제한](xref:security/authorization/limitingidentitybyscheme)

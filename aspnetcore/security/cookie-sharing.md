@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/cookie-sharing
-ms.openlocfilehash: 5f77377f168993d48686217adac54a75313766ec
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: f6d62d5f6e446e3e2001ed6bde72a6c409aa2833
+ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34734681"
 ---
 # <a name="share-cookies-among-apps-with-aspnet-and-aspnet-core"></a>ASP.NET 및 ASP.NET Core와 앱 간에 쿠키를 공유
 
@@ -40,7 +41,7 @@ ms.lasthandoff: 05/12/2018
 * ASP.NET Core 응용 프로그램에서 [PersistKeysToFileSystem](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.persistkeystofilesystem) 키 저장소 위치를 설정 하는 데 사용 됩니다. [SetApplicationName](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.setapplicationname) 공통 공유 응용 프로그램 이름을 구성 하는 데 사용 됩니다.
 * .NET Framework 응용 프로그램에서 쿠키 인증 미들웨어는 구현을 사용 [DataProtectionProvider](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionprovider)합니다. `DataProtectionProvider` 암호화 및 인증 쿠키 페이로드 데이터의 암호 해독에 대 한 데이터 보호 서비스를 제공합니다. `DataProtectionProvider` 인스턴스 응용 프로그램의 다른 부분에서 사용 되는 데이터 보호 시스템에서 격리 됩니다.
   * [DataProtectionProvider.Create (System.IO.DirectoryInfo, 작업\<IDataProtectionBuilder >)](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionprovider.create?view=aspnetcore-2.0#Microsoft_AspNetCore_DataProtection_DataProtectionProvider_Create_System_IO_DirectoryInfo_System_Action_Microsoft_AspNetCore_DataProtection_IDataProtectionBuilder__) 허용는 [DirectoryInfo](/dotnet/api/system.io.directoryinfo) 데이터 보호에 대 한 키 저장소에 대 한 위치를 지정 합니다. 경로 제공 하는 샘플 응용 프로그램은 *KeyRing* 폴더 `DirectoryInfo`합니다. [DataProtectionBuilderExtensions.SetApplicationName](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.setapplicationname?view=aspnetcore-2.0#Microsoft_AspNetCore_DataProtection_DataProtectionBuilderExtensions_SetApplicationName_Microsoft_AspNetCore_DataProtection_IDataProtectionBuilder_System_String_) 일반적인 응용 프로그램 이름을 설정 합니다.
-  * [DataProtectionProvider](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionprovider) 를 사용하려면 [Microsoft.AspNetCore.DataProtection.Extensions](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.Extensions/) NuGet 패키지가 필요합니다. ASP.NET Core 2.0 및 최신 앱에 대 한이 패키지를 가져오려면 참조는 [Microsoft.AspNetCore.All](xref:fundamentals/metapackage) metapackage 합니다. .NET Framework를 대상으로 하는 경우에 대 한 패키지 참조 추가 `Microsoft.AspNetCore.DataProtection.Extensions`합니다.
+  * [DataProtectionProvider](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionprovider) 를 사용하려면 [Microsoft.AspNetCore.DataProtection.Extensions](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.Extensions/) NuGet 패키지가 필요합니다. ASP.NET Core 2.1 및 이상 앱에 대 한이 패키지를 가져오려면 참조는 [Microsoft.AspNetCore.App metapackage](xref:fundamentals/metapackage-app)합니다. .NET Framework를 대상으로 하는 경우에 대 한 패키지 참조 추가 `Microsoft.AspNetCore.DataProtection.Extensions`합니다.
 
 ## <a name="share-authentication-cookies-among-aspnet-core-apps"></a>ASP.NET Core 응용 프로그램 간에 인증 쿠키를 공유 합니다.
 

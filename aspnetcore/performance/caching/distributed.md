@@ -5,16 +5,18 @@ author: ardalis
 description: 특히 클라우드나 서버 팜 환경에서 ASP.NET Core의 분산 캐시를 사용하여 응용 프로그램의 성능 및 확장성을 개선하는 방법을 알아봅니다.
 manager: wpickett
 ms.author: riande
+ms.custom: mvc
 ms.date: 02/14/2017
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/caching/distributed
-ms.openlocfilehash: c40209e3b3f2b5bf28450bb2a88cbe40e9e23230
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: 6c595572641604d241c0c8f702d4f392afe34f71
+ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34734460"
 ---
 # <a name="work-with-a-distributed-cache-in-aspnet-core"></a>ASP.NET Core에서 분산 캐시 사용하기
 
@@ -76,13 +78,13 @@ ms.lasthandoff: 05/12/2018
 
 다음 예제는 간단한 미들웨어 구성 요소에서 `IDistributedCache`의 인스턴스를 사용하는 방법을 보여줍니다:
 
-[!code-csharp[](./distributed/sample/src/DistCacheSample/StartTimeHeader.cs?highlight=15,18,21,27,28,29,30,31)]
+[!code-csharp[](distributed/sample/src/DistCacheSample/StartTimeHeader.cs)]
 
 위의 코드는 캐시된 값을 읽기만 하고 작성하지는 않습니다. 이 예제에서 값은 오직 서버가 시작될 때만 설정하고 변경되지 않습니다. 다중 서버 시나리오에서는 가장 최근에 시작된 서버가 다른 서버에 의해 설정된 기존의 모든 값을 덮어쓰게 됩니다. 그리고 `Get` 및 `Set` 메서드는 `byte[]` 형식을 사용합니다. 따라서 문자열 값은 `Encoding.UTF8.GetString`(`Get`을 사용할 때) 또는 `Encoding.UTF8.GetBytes`(`Set`을 사용할 때)를 사용해서 변환해야 합니다.
 
 다음 코드는 *Startup.cs*에서 값이 설정되고 있는 부분을 보여줍니다.
 
-[!code-csharp[](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=2,4,5,6&range=58-66)]
+[!code-csharp[](distributed/sample/src/DistCacheSample/Startup.cs?name=snippet1)]
 
 > [!NOTE]
 > `IDistributedCache` 메서드에서 `ConfigureServices`가 구성되고 나면 이를 `Configure` 메서드의 매개 변수로 전달할 수 있습니다. 매개 변수로 추가 하면 DI를 통해 제공 되는 구성 된 인스턴스.
@@ -95,7 +97,7 @@ ms.lasthandoff: 05/12/2018
 
 예제 코드에서는 서버가 `Staging` 환경으로 구성될 때 `RedisCache` 구현이 사용됩니다. 따라서 `ConfigureStagingServices` 메서드에서 `RedisCache`를 구성합니다:
 
-[!code-csharp[](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=8,9,10,11,12,13&range=27-40)]
+[!code-csharp[](distributed/sample/src/DistCacheSample/Startup.cs?name=snippet2)]
 
 > [!NOTE]
 > Redis를 로컬 컴퓨터에 설치 하려면 chocolatey 패키지 설치 [ https://chocolatey.org/packages/redis-64/ ](https://chocolatey.org/packages/redis-64/) 실행 `redis-server` 명령 프롬프트에서 합니다.
@@ -106,31 +108,42 @@ ms.lasthandoff: 05/12/2018
 SqlServerCache 구현을 사용하면 SQL Server 데이터베이스를 백업 저장소로 이용해서 분산 캐시를 사용할 수 있습니다. 지정한 이름 및 스키마로 테이블을 생성하는 도구인 sql-cache 도구를 이용해서 SQL Server 테이블을 생성할 수 있습니다.
 
 
-sql-cache 캐시 도구를 사용하려면 `SqlConfig.Tools`.csproj`<ItemGroup>` 파일의 *요소에*를 추가하고 dotnet restore를 실행합니다.
+::: moniker range="< aspnetcore-2.1"
 
-[!code-xml[](./distributed/sample/src/DistCacheSample/DistCacheSample.csproj?range=23-25)]
+추가 `SqlConfig.Tools` 에 `<ItemGroup>` 실행 및 프로젝트 파일의 요소 `dotnet restore`합니다.
 
-다음 명령을 실행하면 SqlConfig.Tools를 테스트 할 수 있습니다.
+```xml
+<ItemGroup>
+  <DotNetCliToolReference Include="Microsoft.Extensions.Caching.SqlConfig.Tools" 
+                          Version="2.0.2" />
+</ItemGroup>
+```
 
-```none
-C:\DistCacheSample\src\DistCacheSample>dotnet sql-cache create --help
-   ```
+::: moniker-end
 
-그러면 sql-cache 도구가 사용 방법, 옵션 및 명령 도움말을 출력하며, 이제 "sql-cache create" 명령을 실행하여 Sql Server에 테이블을 생성할 수 있습니다:
+다음 명령을 실행 하 여 SqlConfig.Tools 테스트:
 
-```none
-C:\DistCacheSample\src\DistCacheSample>dotnet sql-cache create "Data Source=(localdb)\v11.0;Initial Catalog=DistCache;Integrated Security=True;" dbo TestCache
-   info: Microsoft.Extensions.Caching.SqlConfig.Tools.Program[0]
-       Table and index were created successfully.
-   ```
+```console
+dotnet sql-cache create --help
+```
+
+SqlConfig.Tools는 사용량, 옵션 및 명령 도움말을 표시합니다.
+
+SQL Server에서 실행 하 여 테이블을 만듭니다는 `sql-cache create` 명령:
+
+```console
+dotnet sql-cache create "Data Source=(localdb)\v11.0;Initial Catalog=DistCache;Integrated Security=True;" dbo TestCache
+info: Microsoft.Extensions.Caching.SqlConfig.Tools.Program[0]
+Table and index were created successfully.
+```
 
 생성된 테이블은 다음과 같은 스키마를 갖고 있습니다.
 
 ![SqlServer 캐시 테이블](distributed/_static/SqlServerCacheTable.png)
 
-다른 모든 캐시 구현과 마찬가지로, 응용 프로그램은 `SqlServerCache`가 아니라 `IDistributedCache`의 인스턴스를 사용해서 캐시 값을 읽고 설정해야 합니다. 예제에서는 `Production` 환경에서 `SqlServerCache`를 구현하고 있습니다(그래서 `ConfigureProductionServices`에 설정되어 있습니다).
+다른 모든 캐시 구현과 마찬가지로, 응용 프로그램은 `SqlServerCache`가 아니라 `IDistributedCache`의 인스턴스를 사용해서 캐시 값을 읽고 설정해야 합니다. 이 샘플 구현 `SqlServerCache` 프로덕션 환경에서 (에 구성 되어 있으므로 `ConfigureProductionServices`).
 
-[!code-csharp[](./distributed/sample/src/DistCacheSample/Startup.cs?highlight=7,8,9,10,11,12&range=42-56)]
+[!code-csharp[](distributed/sample/src/DistCacheSample/Startup.cs?name=snippet3)]
 
 > [!NOTE]
 > 일반적으로 `ConnectionString`은 (그리고 필요한 경우 `SchemaName` 및 `TableName`은) 자격 증명이 포함되어 있을 수도 있기 때문에 소스 제어 외부에 (UserSecrets 같은) 저장되어야 합니다.

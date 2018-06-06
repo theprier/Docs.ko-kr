@@ -11,12 +11,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: performance/response-compression
-ms.openlocfilehash: 152799500577dd09247bcee8c87cde39ca20aa79
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
-ms.translationtype: HT
+ms.openlocfilehash: e970e74547f1f3efaf719c1f9e26918f34788005
+ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
+ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 06/04/2018
-ms.locfileid: "34729576"
+ms.locfileid: "34734629"
 ---
 # <a name="response-compression-middleware-for-aspnet-core"></a>ASP.NET Core에 대 한 응답 압축 미들웨어
 
@@ -83,21 +83,15 @@ IIS, Apache 또는 Nginx 응답 서버 기반 압축 기술을 사용 합니다.
 
 ## <a name="package"></a>패키지
 
-::: moniker range="< aspnetcore-2.0"
+::: moniker range="< aspnetcore-2.1"
 
 미들웨어를 프로젝트에 포함 하려면 추가에 대 한 참조는 [Microsoft.AspNetCore.ResponseCompression](https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCompression/) 패키지 합니다. 미들웨어의 기능은 ASP.NET Core 1.1 이상을 대상으로 하는 응용 프로그램에서 사용할 수 있습니다.
 
 ::: moniker-end
 
-::: moniker range="= aspnetcore-2.0"
+::: moniker range=">= aspnetcore-2.1"
 
-미들웨어를 프로젝트에 포함 하려면 추가에 대 한 참조는 [Microsoft.AspNetCore.ResponseCompression](https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCompression/) 패키지 하거나 사용 하 여는 [Microsoft.AspNetCore.All metapackage](xref:fundamentals/metapackage)합니다.
-
-::: moniker-end
-
-::: moniker range="> aspnetcore-2.0"
-
-미들웨어를 프로젝트에 포함 하려면 추가에 대 한 참조는 [Microsoft.AspNetCore.ResponseCompression](https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCompression/) 패키지 하거나 사용 하 여는 [Microsoft.AspNetCore.App metapackage](xref:fundamentals/metapackage-app)합니다.
+미들웨어를 프로젝트에 포함 하려면 추가에 대 한 참조는 [Microsoft.AspNetCore.ResponseCompression](https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCompression/) 패키지 하거나 사용 하 여는 [Microsoft.AspNetCore.App metapackage](xref:fundamentals/metapackage-app) (ASP.NET Core 2.1 이상).
 
 ::: moniker-end
 
