@@ -11,12 +11,12 @@ ms.prod: aspnet-core
 ms.topic: tutorial
 ms.technology: aspnet
 uid: signalr/get-started
-ms.openlocfilehash: 880abd87805990baf8dd977c340a60582e54d2df
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: ba1db640e5608fd9f5e7fa024283a651bf7772c2
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34729505"
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34819060"
 ---
 # <a name="get-started-with-signalr-on-aspnet-core"></a>SignalR에서 ASP.NET Core 시작
 
@@ -75,7 +75,7 @@ Visual Studio에 포함 되어는 `Microsoft.AspNetCore.SignalR` 서버 라이�
     npm install @aspnet/signalr
     ```     
 
-4. 내부 "signalr" 라는 새 폴더 만들기는 *lib* 프로젝트의 폴더에에서 있습니다. 그런 다음 복사는 *signalr.js* 에서 파일을 *node_modules\\ @aspnet\signalr\dist\browser*  이 폴더에 있습니다.
+4. 내부 "signalr" 라는 새 폴더 만들기는 *lib* 프로젝트의 폴더에에서 있습니다. 복사는 *signalr.js* 에서 파일을 *node_modules\\ @aspnet\signalr\dist\browser*  이 폴더에 있습니다.
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
 
@@ -92,7 +92,7 @@ Visual Studio에 포함 되어는 `Microsoft.AspNetCore.SignalR` 서버 라이�
     npm install @aspnet/signalr
     ```
 
-3. 복사는 *signalr.js* 에서 파일을 *node_modules\\ @aspnet\signalr\dist\browser*  에 *lib* 프로젝트의 폴더에에서 있습니다.
+3. 내부 "signalr" 라는 새 폴더 만들기는 *lib* 프로젝트의 폴더에에서 있습니다. 복사는 *signalr.js* 에서 파일을 *node_modules\\ @aspnet\signalr\dist\browser*  이 폴더에 있습니다.
 
 -----
 
@@ -140,15 +140,16 @@ SignalR 서버 signalr 요청을 전달 하려면 알 수 있도록 구성 되�
 
 ## <a name="create-the-signalr-client-code"></a>SignalR 클라이언트 코드 만들기
 
-1. 에서는 교체 *Pages\Index.cshtml* 를 다음 코드로:
+1. 명명 된 JavaScript 파일을 추가 *chat.js*을 *wwwroot\js* 폴더입니다. 파일에 다음 코드를 추가합니다.
+
+   [!code-javascript[Index](get-started/sample/wwwroot/js/chat.js)]
+
+2. 에서는 교체 *Pages\Index.cshtml* 를 다음 코드로:
 
    [!code-cshtml[Index](get-started/sample/Pages/Index.cshtml)]
 
    위의 HTML 이름 및 메시지 필드 및 전송 단추가 표시 됩니다. 맨 아래에 스크립트 참조를 확인: SignalR에 대 한 참조 및 *chat.js*합니다.
 
-2. 명명 된 JavaScript 파일을 추가 *chat.js*을 *wwwroot\js* 폴더입니다. 파일에 다음 코드를 추가합니다.
-
-   [!code-javascript[Index](get-started/sample/wwwroot/js/chat.js)]
 
 ## <a name="run-the-app"></a>앱 실행
 

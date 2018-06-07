@@ -11,11 +11,12 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: signalr/hubs
-ms.openlocfilehash: 5c477dd64c4cf8b7d6da1f121a290b00f3864f45
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: 495aa156dd5e4641d688d7b16df1e5814c9607f4
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34819086"
 ---
 # <a name="use-hubs-in-signalr-for-aspnet-core"></a>ASP.NET Core에서 SignalR 허브를 사용 하 여
 
@@ -63,12 +64,12 @@ SignalR 기능에는 ASP.NET Core 응용 프로그램을 추가할 때 호출 �
 | `AllExcept` | 지정된 된 연결을 제외한 모든 연결 된 클라이언트에서 메서드를 호출합니다. |
 | `Client` | 특정 연결 된 클라이언트에 메서드를 호출합니다. |
 | `Clients` | 특정 연결 된 클라이언트에서 메서드를 호출합니다. |
-| `Group` | 지정된 된 그룹의 모든 연결에 메시지를 보냅니다.  |
-| `GroupExcept` | 지정된 된 연결을 제외 하 고 지정된 된 그룹의 모든 연결에 메시지를 보냅니다. |
-| `Groups` | 연결의 여러 그룹에 메시지를 보냅니다.  |
-| `OthersInGroup` | 그룹 허브 메서드를 호출한 클라이언트 제외 하 고 연결에 메시지를 보냅니다.  |
-| `User` | 특정 사용자와 관련 된 모든 연결에 메시지를 보냅니다. |
-| `Users` | 지정된 된 사용자와 관련 된 모든 연결에 메시지를 보냅니다. |
+| `Group` | 지정된 된 그룹의 모든 연결에 메서드를 호출합니다.  |
+| `GroupExcept` | 지정된 된 연결을 제외 하 고 지정된 된 그룹의 모든 연결에 메서드를 호출합니다. |
+| `Groups` | 연결의 여러 그룹에 메서드 호출  |
+| `OthersInGroup` | 그룹 허브 메서드를 호출한 클라이언트 제외 하 고 연결에 메서드 호출  |
+| `User` | 특정 사용자와 관련 된 모든 연결에 메서드 호출 |
+| `Users` | 지정된 된 사용자와 관련 된 모든 연결에 메서드 호출 |
 
 위 표의 각 메서드나 속성 반환을 가진 개체는 `SendAsync` 메서드. `SendAsync` 메서드 이름 및 클라이언트 메서드를 호출할 매개 변수를 제공할 수 있습니다.
 

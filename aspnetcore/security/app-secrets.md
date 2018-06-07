@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/app-secrets
-ms.openlocfilehash: ece2bf541df2b4acac60a88767cc57ede473bd49
-ms.sourcegitcommit: 1b94305cc79843e2b0866dae811dab61c21980ad
+ms.openlocfilehash: fd5cf5cdffd7281d7f4e0d96e8230b60be64a7c3
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/24/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34819138"
 ---
 # <a name="safe-storage-of-app-secrets-in-development-in-aspnet-core"></a>ASP.NET Core에서 개발의 앱 암호의 안전한 저장소
 
@@ -39,16 +40,16 @@ ASP.NET Core 웹 응용 프로그램 고려 **개별 사용자 계정** 보안�
 > [!WARNING]
 > 환경 변수는 일반적으로 암호화 되지 않은 일반 텍스트에 저장 됩니다. 컴퓨터 또는 프로세스가 손상 되 면 환경 변수는 신뢰할 수 없는 당사자가 액세스할 수 있습니다. 사용자의 비밀으로 공개 되지 않도록 추가 조치가 필요할 수 있습니다.
 
-## <a name="secret-manager"></a>Secret Manager
+## <a name="secret-manager"></a>암호 관리자
 
 암호 관리자 도구는 ASP.NET Core 프로젝트를 개발 하는 동안 중요 한 데이터를 저장합니다. 이 컨텍스트에서 중요 한 데이터 조각이 응용 프로그램 암호입니다. 앱 암호는 프로젝트 트리에서 별도 위치에 저장 됩니다. 앱 암호는 특정 프로젝트와 관련 된 또는 여러 프로젝트 간에 공유 됩니다. 앱 암호는 소스 제어에 체크 인 되지 않습니다.
 
 > [!WARNING]
-> 암호 관리자 도구 저장 된 암호를 암호화 하지 않습니다 하 고 신뢰할 수 있는 저장소로 처리 하지 않아야 합니다. 개발 용도로입니다. 키와 값은 사용자 프로필 디렉터리에 위치한 JSON 구성 파일에 저장됩니다. 
+> 암호 관리자 도구 저장 된 암호를 암호화 하지 않습니다 하 고 신뢰할 수 있는 저장소로 처리 하지 않아야 합니다. 개발 용도로입니다. 키와 값은 사용자 프로필 디렉터리에는 JSON 구성 파일에 저장 됩니다.
 
-## <a name="how-the-secret-manager-tool-works"></a>Secret Manager 도구의 동작 방식
+## <a name="how-the-secret-manager-tool-works"></a>암호 관리자 도구 작동 방식
 
-Secret Manager 도구는 값이 저장되는 위치 및 방법 같은 구현에 관한 세부적인 내용을 추상화합니다. 이런 세부적인 내용을 모르더라도 Secret Manager 도구를 사용하는 데는 아무런 지장이 없습니다.  값은 로컬 컴퓨터에서 시스템으로 보호 된 사용자 프로필 폴더에는 JSON 구성 파일에 저장 됩니다.
+암호 관리자 도구 값을 저장 하는 위치와 방법을 같은 구현 세부 정보를 추상화 합니다. 이러한 구현 정보를 알 필요 없이 도구를 사용할 수 있습니다. 값은 로컬 컴퓨터에서 시스템으로 보호 된 사용자 프로필 폴더에는 JSON 구성 파일에 저장 됩니다.
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
@@ -126,7 +127,7 @@ Use "dotnet user-secrets [command] --help" for more information about a command.
 
 ## <a name="set-a-secret"></a>암호를 설정 합니다.
 
-암호 관리자 도구는 사용자 프로필에 저장 된 프로젝트 관련 구성 설정에서 작동 합니다. 사용자 암호를 사용 하려면 정의 `UserSecretsId` 요소 내에서 한 `PropertyGroup` 의 *.csproj* 파일입니다. 값 `UserSecretsId` 은 선택적 요소 이지만 프로젝트에 고유 합니다. 개발자는 대부분 `UserSecretsId` 값에 GUID를 생성해서 지정합니다. 
+암호 관리자 도구는 사용자 프로필에 저장 된 프로젝트 관련 구성 설정에서 작동 합니다. 사용자 암호를 사용 하려면 정의 `UserSecretsId` 요소 내에서 한 `PropertyGroup` 의 *.csproj* 파일입니다. 값 `UserSecretsId` 은 선택적 요소 이지만 프로젝트에 고유 합니다. 에 대 한 GUID를 일반적으로 생성 하는 개발자는 `UserSecretsId`합니다.
 
 ::: moniker range="<= aspnetcore-1.1"
 [!code-xml[](app-secrets/samples/1.x/UserSecrets/UserSecrets.csproj?name=snippet_PropertyGroup&highlight=3)]
@@ -214,7 +215,7 @@ ASP.NET Core 2.0 이상에서는 사용자 보안 구성 소스 자동으로 추
 
 ## <a name="string-replacement-with-secrets"></a>암호와 문자열 대체
 
-일반 텍스트에 암호를 저장 하는 것은 위험 합니다. 데이터베이스 연결 문자열에 저장 하는 예를 들어 *appsettings.json* 지정된 된 사용자에 대 한 암호를 포함 될 수 있습니다.
+암호를 일반 텍스트로 저장 안전 하지 않습니다. 데이터베이스 연결 문자열에 저장 하는 예를 들어 *appsettings.json* 지정된 된 사용자에 대 한 암호를 포함 될 수 있습니다.
 
 [!code-json[](app-secrets/samples/2.x/UserSecrets/appsettings-unsecure.json?highlight=3)]
 
@@ -224,17 +225,17 @@ ASP.NET Core 2.0 이상에서는 사용자 보안 구성 소스 자동으로 추
 dotnet user-secrets set "DbPassword" "pass123"
 ```
 
-암호를 대체할 *appsettings.json* 을 자리 표시자입니다. 다음 예에서 `{0}` 폼에 자리 표시자로 사용 되는 [복합 형식 문자열](/dotnet/standard/base-types/composite-formatting#composite-format-string)합니다.
+제거는 `Password` 키-값 쌍의 연결 문자열에서 *appsettings.json*합니다. 예를 들어:
 
 [!code-json[](app-secrets/samples/2.x/UserSecrets/appsettings.json?highlight=3)]
 
-연결 문자열을 완료 하려면 자리 표시자에 암호의 값을 삽입할 수 있습니다.
+암호의 값에 설정할 수는 [SqlConnectionStringBuilder](/dotnet/api/system.data.sqlclient.sqlconnectionstringbuilder) 개체의 [암호](/dotnet/api/system.data.sqlclient.sqlconnectionstringbuilder.password) 연결 문자열을 완료 하는 속성:
 
 ::: moniker range="<= aspnetcore-1.1"
-[!code-csharp[](app-secrets/samples/1.x/UserSecrets/Startup2.cs?name=snippet_StartupClass&highlight=23-25)]
+[!code-csharp[](app-secrets/samples/1.x/UserSecrets/Startup2.cs?name=snippet_StartupClass&highlight=26-29)]
 ::: moniker-end
 ::: moniker range=">= aspnetcore-2.0"
-[!code-csharp[](app-secrets/samples/2.x/UserSecrets/Startup2.cs?name=snippet_StartupClass&highlight=14-16)]
+[!code-csharp[](app-secrets/samples/2.x/UserSecrets/Startup2.cs?name=snippet_StartupClass&highlight=14-17)]
 ::: moniker-end
 
 ## <a name="list-the-secrets"></a>암호 나열

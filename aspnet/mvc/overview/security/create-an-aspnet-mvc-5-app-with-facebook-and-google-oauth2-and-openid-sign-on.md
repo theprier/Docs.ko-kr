@@ -12,11 +12,12 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: c289c209b50f0c2c1f2d8b15a3aedeaebf671d0b
-ms.sourcegitcommit: 24c32648ab0c6f0be15333d7c23c1bf680858c43
+ms.openlocfilehash: aa4c91865f7b720846a5e8deb4281c3ca6933c8e
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/21/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34819099"
 ---
 <a name="create-an-aspnet-mvc-5-app-with-facebook-twitter-linkedin-and-google-oauth2-sign-on-c"></a>Facebook, Twitter, LinkedIn 및 Google OAuth2 로그온 (C#)으로 ASP.NET MVC 5 앱 만들기
 ====================
@@ -174,7 +175,7 @@ Facebook OAuth2 인증에 대 한 Facebook에서 만드는 응용 프로그램�
     ![새 앱 만들기](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image22.png)
 4. 입력 한 **응용 프로그램 이름** 및 **범주**, 클릭 **앱 만들기**합니다.
 
-    Facebook에서 고유 해야 합니다. <strong>앱 Namespace</strong> 앱 하는 인증에 대 한 Facebook 응용 프로그램에 액세스 하는 데 사용할 URL의 일부 (예를 들어 https://apps.facebook.com/{App Namespace}). 지정 하지 않으면는 <strong>앱 Namespace</strong>, <strong>앱 ID</strong> URL에 사용 됩니다. <strong>앱 ID</strong> 긴 시스템에서 생성 된 번호는 다음 단계에 표시 되는입니다.
+    <strong>앱 Namespace</strong> 앱 하는 인증에 대 한 Facebook 응용 프로그램에 액세스 하는 데 사용할 URL의 일부 (예: https\://apps.facebook.com/{App Namespace}). 지정 하지 않으면는 <strong>앱 Namespace</strong>, <strong>앱 ID</strong> URL에 사용 됩니다. <strong>앱 ID</strong> 긴 시스템에서 생성 된 번호는 다음 단계에 표시 되는입니다.
 
     ![새 응용 프로그램 대화 상자 만들기](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image23.png)
 5. 표준 보안 검사를 제출 합니다.
