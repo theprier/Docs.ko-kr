@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/project-properties
 msc.type: authoredcontent
 ms.openlocfilehash: fba3f089bf1693eec873b08b4bc50e3accba06ee
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30879883"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-project-properties"></a>Visual Studio를 사용 하 여 ASP.NET 웹 배포: 프로젝트 속성
 ====================
@@ -39,7 +40,7 @@ ms.lasthandoff: 04/06/2018
 
 ![웹 패키지 및 게시 탭](project-properties/_static/image1.png)
 
-창이 표시 되 면 기본적으로 솔루션에 대 한 현재 활성 나오든 이들 빌드 구성에 대 한 설정을 보여 줍니다. 경우는 **구성** 상자를 나타내지 않습니다 **활성 (Release)**선택, **릴리스** 릴리스 빌드 구성에 대 한 설정을 표시 하려면. 테스트 환경과 프로덕션 환경으로 릴리스 빌드를 배포 합니다.
+창이 표시 되 면 기본적으로 솔루션에 대 한 현재 활성 나오든 이들 빌드 구성에 대 한 설정을 보여 줍니다. 경우는 **구성** 상자를 나타내지 않습니다 **활성 (Release)** 선택, **릴리스** 릴리스 빌드 구성에 대 한 설정을 표시 하려면. 테스트 환경과 프로덕션 환경으로 릴리스 빌드를 배포 합니다.
 
 ![릴리스 빌드 구성 선택](project-properties/_static/image2.png)
 

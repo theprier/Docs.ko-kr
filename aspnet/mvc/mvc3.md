@@ -2,7 +2,7 @@
 uid: mvc/mvc3
 title: ASP.NET MVC 3 | Microsoft Docs
 author: rick-anderson
-description: "(2011 년 4 월 포함 도구 업데이트) ASP.NET MVC 3은 잘 알려진 디자인 패턴을 사용 하 여 확장 가능 하 고 표준 기반 웹 응용 프로그램을 구축 하기 위한 프레임 워크 중..."
+description: (2011 년 4 월 포함 도구 업데이트) ASP.NET MVC 3은 잘 알려진 디자인 패턴을 사용 하 여 확장 가능 하 고 표준 기반 웹 응용 프로그램을 구축 하기 위한 프레임 워크 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2010
@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/mvc3
 msc.type: content
 ms.openlocfilehash: c7eee987b28a5d7f8b40fe89a7bf7517ec06646f
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28034739"
 ---
 <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 ====================
@@ -128,8 +129,8 @@ ASP.NET MVC 3 Razor 다음과 같은 이점을 제공 하 라는 새 뷰 엔진�
 
 일부 새로운 Razor 기능은 다음과 같습니다.
 
-- `@model`뷰에 전달 되는 유형을 지정 하는 구문입니다.
-- `@* *@`주석 구문입니다.
+- `@model` 뷰에 전달 되는 유형을 지정 하는 구문입니다.
+- `@* *@` 주석 구문입니다.
 - 기본값을 지정 하는 기능 (예: `layoutpage`) 전체 사이트에 대해 한 번씩입니다.
 - `Html.Raw` 메서드 HTML 인코딩하지 않고 텍스트를 표시 하기 위한 것입니다.
 - 여러 뷰 간에 코드 공유에 대 한 지원 (*\_viewstart.cshtml* 또는  *\_viewstart.vbhtml* 파일).
@@ -140,7 +141,7 @@ Razor에는 다음과 같은 새 HTML 도우미 포함 됩니다.
 - `WebGrid`. 데이터 표를 완벽 하 게 페이징 및 정렬 기능을 렌더링합니다.
 - `Crypto`. 해시를 올바르게 만들려면 알고리즘을 사용 하 여 솔트된 및 해시 된 암호입니다.
 - `WebImage`. 이미지를 렌더링합니다.
-- `WebMail`. 전자 메일 메시지를 보냅니다.
+- `WebMail`. 이메일 메시지를 보냅니다.
 
 Razor에 대 한 자세한 내용은 다음 리소스를 참조 합니다.
 
@@ -176,7 +177,7 @@ MVC 2 컨트롤러 지원은 `ViewData` 데이터를 전달 하는 런타임에 
 다음 `ActionResult` 형식 및 해당 도우미 메서드는 새로운 기능과 향상 된 MVC 3에서:
 
 - [HttpNotFoundResult](https://msdn.microsoft.com/library/system.web.mvc.httpnotfoundresult(v=vs.98).aspx). 404 HTTP 상태 코드를 클라이언트에 반환합니다.
-- [RedirectResult](https://msdn.microsoft.com/library/system.web.mvc.redirectresult(v=VS.98).aspx). 임시 리디렉션 (HTTP 302 상태 코드) 또는 부울 매개 변수에 따라 영구 리디렉션 (301 HTTP 상태 코드)를 반환합니다. 이러한 변경으로 인해 함께에서 [컨트롤러](https://msdn.microsoft.com/library/system.web.mvc.controller(v=VS.98).aspx) 클래스에는 이제 영구 리디렉션을 수행 하는 3 가지 방법은: `RedirectPermanent`, `RedirectToRoutePermanent`, 및 `RedirectToActionPermanent`합니다. 인스턴스를 반환 하는 이러한 메서드 `RedirectResult` 와 `Permanent` 속성이로 설정 `true`합니다.
+- [된 RedirectResult](https://msdn.microsoft.com/library/system.web.mvc.redirectresult(v=VS.98).aspx)합니다. 임시 리디렉션 (HTTP 302 상태 코드) 또는 부울 매개 변수에 따라 영구 리디렉션 (301 HTTP 상태 코드)를 반환합니다. 이러한 변경으로 인해 함께에서 [컨트롤러](https://msdn.microsoft.com/library/system.web.mvc.controller(v=VS.98).aspx) 클래스에는 이제 영구 리디렉션을 수행 하는 3 가지 방법은: `RedirectPermanent`, `RedirectToRoutePermanent`, 및 `RedirectToActionPermanent`합니다. 인스턴스를 반환 하는 이러한 메서드 `RedirectResult` 와 `Permanent` 속성이로 설정 `true`합니다.
 - [HttpStatusCodeResult](https://msdn.microsoft.com/library/system.web.mvc.httpstatuscoderesult(v=VS.98).aspx). 사용자 지정 HTTP 상태 코드를 반환합니다.
 
 <a id="BM_JavaScript_and_Ajax_Improvements"></a>

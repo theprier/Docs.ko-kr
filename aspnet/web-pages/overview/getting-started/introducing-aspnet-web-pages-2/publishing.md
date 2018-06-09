@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/publishing
 msc.type: authoredcontent
 ms.openlocfilehash: 7b9bffac5cc72e1bea3f1b211cc03be2ccb8e499
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30899592"
 ---
 <a name="introducing-aspnet-web-pages---publishing-a-site-by-using-webmatrix"></a>WebMatrix를 사용 하 여 사이트를 게시 하는 ASP.NET 웹 페이지-소개
 ====================
@@ -215,7 +216,7 @@ ASP.NET을 지 원하는 호스팅 공급자를 나열 하는 Microsoft 사이�
 > 원격 편집 및 다운로드 원격 기능을 WebMatrix 여기에 대 한 더 설명 하지 않습니다. 여러 사용자가 작업 서로 다른 컴퓨터에 동일한 사이트에서 수행 해야 하는 경우 매우 유용 합니다. 자세한 내용은 참조 [게시 및 WebMatrix 2 베타와 원격 사이트 편집](https://go.microsoft.com/fwlink/?LinkId=251591)합니다.
 
 
-## <a name="additional-resources"></a>추가 자료
+## <a name="additional-resources"></a>추가 리소스
 
 - [ASP.NET WebMatrix ASP.NET 웹 페이지 포럼](https://forums.asp.net/1224.aspx/1?WebMatrix+and+ASP+NET+Web+Pages), 게시 하는 좋은 장소 질문 및 답변 합니다.
 

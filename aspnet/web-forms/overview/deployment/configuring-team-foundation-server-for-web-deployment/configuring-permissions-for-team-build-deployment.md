@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-permissions-for-team-build-deployment
 msc.type: authoredcontent
 ms.openlocfilehash: 4698349d664816ec49475bbfe71fb32af79ea96d
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30890283"
 ---
 <a name="configuring-permissions-for-team-build-deployment"></a>팀에 대 한 구성 권한 빌드 배포
 ====================
@@ -38,7 +39,7 @@ Team Foundation Server (TFS) 2010 빌드 서비스를 설치할 때 서비스를
 팀 빌드를 사용 하 여 자동화 하려는 및 Windows 인증을 요구 하는 모든 배포 작업은 빌드 서비스 id를 사용 하 여 실행 됩니다. 따라서 빌드 서비스 id를 웹 서버와 데이터베이스 서버에 필요한 사용 권한을 부여 해야 합니다.
 
 > [!NOTE]
-> 네트워크 서비스 계정으로 시스템 계정을 사용 하 여 다른 컴퓨터를 인증. 컴퓨터 계정에는 다음 양식을 사용 * [도메인 이름]\[컴퓨터 이름] ***$**&#x2014;예를 들어 **FABRIKAM\TFSBUILD$**합니다. 이와 같이 빌드 서비스가 네트워크 서비스 id를 사용 하 여 실행을 빌드 서버에 대 한 컴퓨터 계정 id에 필요한 모든 권한을 부여 해야.
+> 네트워크 서비스 계정으로 시스템 계정을 사용 하 여 다른 컴퓨터를 인증. 컴퓨터 계정에는 다음 양식을 사용 * [도메인 이름]\[컴퓨터 이름] ***$**&#x2014;예를 들어 **FABRIKAM\TFSBUILD$** 합니다. 이와 같이 빌드 서비스가 네트워크 서비스 id를 사용 하 여 실행을 빌드 서버에 대 한 컴퓨터 계정 id에 필요한 모든 권한을 부여 해야.
 
 
 ## <a name="configuring-web-server-permissions"></a>웹 서버 사용 권한 구성

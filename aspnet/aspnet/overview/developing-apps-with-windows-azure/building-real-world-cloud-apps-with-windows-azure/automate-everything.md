@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything
 msc.type: authoredcontent
 ms.openlocfilehash: 2e30ab7831a10f215a08f74e61adf2d147e76543
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30875177"
 ---
 <a name="automate-everything-building-real-world-cloud-apps-with-azure"></a>(Azure 사용 하 여 실제 클라우드 앱 빌드) 모든 것 자동화
 ====================
@@ -29,7 +30,7 @@ ms.lasthandoff: 04/06/2018
 
 살펴보게 처음 세 가지 패턴에는 실제로 소프트웨어 개발 프로젝트에 있지만 특히 클라우드 프로젝트에 적용 됩니다. 이 방법은 개발 작업을 자동화 하는 방법에 대 한 것입니다. 중요 한 항목 이므로 수동 프로세스 속도가 느리고 오류가 발생 하기 쉽습니다. 가능한 쉽게 빠르고 안정적 이며 agile 워크플로 설정할 수 만큼으로 자동화 합니다. 되므로 클라우드 개발에 대 한 고유 하 게 중요 한 온-프레미스 환경에서 자동화 하기 어렵거나 있는 많은 작업을 쉽게 자동화할 수 있습니다. 전체 테스트를 설정할 수는 예를 들어 새 웹 서버와 백 엔드 Vm을 포함 하 여 환경, 데이터베이스, blob 저장소 (파일 저장소), 큐 등입니다.
 
-## <a name="devops-workflow"></a>DevOps Workflow
+## <a name="devops-workflow"></a>DevOps 워크플로
 
 "DevOps." 라는 용어 들은 점점 더 용어를 개발 및 운영 작업을 통합 소프트웨어를 효율적으로 개발 해야 인식 부족 개발. 사용 하도록 설정 하려는 워크플로 유형은 하나 있습니다 수 있는 응용 프로그램을 개발, 배포의 프로덕션 사용에서 배울, 학습 한 내용에 대 한 응답에서 변경할와 빠르고 안정적으로 주기를 반복 합니다.
 

@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/advanced/custom-mvc-templates
 msc.type: authoredcontent
 ms.openlocfilehash: c3ddd4e341511f520927e924b25d890088adb69e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28034609"
 ---
 <a name="custom-mvc-template"></a>사용자 지정 MVC 템플릿
 ====================
@@ -33,7 +34,7 @@ Visual Studio 2010 for MVC 3 도구 업데이트 릴리스에서 MVC 프로젝�
 - [Visual Studio 갤러리](https://visualstudiogallery.msdn.microsoft.com/) 사용자에 게 확장 배포를 용이 하 게 합니다.
 - VSIX 확장 작성 수정 및 사용자 지정 서식 파일에 대 한 업데이트를 더욱 쉽게 업그레이드할 수 있습니다.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 - 사용자는 프로젝트 템플릿, vstemplate 파일 등의 필요한 태그를 포함 하 여 제작 숙지 해야 합니다.
 - 사용자는 Visual Studio Professional가 필요 하 고 이상이 설치 합니다. Express Sku에서 VSIX 프로젝트를 지원 하지 않습니다.
@@ -79,11 +80,11 @@ VSIX 디자이너를 닫은 다음 마우스 오른쪽 단추로 클릭는 **sou
 
 ![대화 상자 열기](custom-mvc-templates/_static/image7.jpg)
 
-만들기는  **&lt;자산&gt;**  요소를 추가 하 고는  **&lt;자산&gt;**  VSIX에 포함 되어야 하는 각 파일에 대 한 요소입니다. **형식** 각 특성  **&lt;자산&gt;**  요소도 설정 되어 있어야 **Microsoft.VisualStudio.Mvc.Template**합니다. MVC 프로젝트 마법사에 대 한 이해 하는 사용자 지정 네임 스페이스입니다. 매니페스트 파일의 레이아웃과 구조에 대 한 자세한 내용은 VSIX 2.0 스키마 설명서를 참조 하십시오.
+만들기는 **&lt;자산&gt;** 요소를 추가 하 고는 **&lt;자산&gt;** VSIX에 포함 되어야 하는 각 파일에 대 한 요소입니다. **형식** 각 특성 **&lt;자산&gt;** 요소도 설정 되어 있어야 **Microsoft.VisualStudio.Mvc.Template**합니다. MVC 프로젝트 마법사에 대 한 이해 하는 사용자 지정 네임 스페이스입니다. 매니페스트 파일의 레이아웃과 구조에 대 한 자세한 내용은 VSIX 2.0 스키마 설명서를 참조 하십시오.
 
-방금 VSIX에 파일을 추가 MVC 마법사로 서식 파일을 등록 하는 충분 하지 않습니다. MVC 마법사 템플릿 이름, 설명, 지원 되는 뷰 엔진 및 프로그래밍 언어와 같은 정보를 제공 해야 합니다. 이 정보에 연결 된 사용자 지정 특성에 전달 되는  **&lt;자산&gt;**  요소 각각에 대해 **vstemplate** 파일입니다.
+방금 VSIX에 파일을 추가 MVC 마법사로 서식 파일을 등록 하는 충분 하지 않습니다. MVC 마법사 템플릿 이름, 설명, 지원 되는 뷰 엔진 및 프로그래밍 언어와 같은 정보를 제공 해야 합니다. 이 정보에 연결 된 사용자 지정 특성에 전달 되는 **&lt;자산&gt;** 요소 각각에 대해 **vstemplate** 파일입니다.
 
-&lt;Asset d:VsixSubPath=&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx&quot;
+&lt;자산 d:VsixSubPath =&quot;ProjectTemplates\MyMvcWebApplicationProjectTemplate.csaspx&quot;
 
 Type=&quot;Microsoft.VisualStudio.Mvc.Template&quot;
 
@@ -114,7 +115,7 @@ Version=&quot;4.0&quot;/&gt;
 - **제목** 아래에 있는 각 프로젝트 템플릿은 MVC 마법사에 표시 되는 간단한 설명을 지정 합니다.
 - **설명** 서식 파일에 대 한 더 자세한 설명을 지정 합니다.
 
-매니페스트에 포함 된 모든 파일을 추가한 후, 저장 점을 확인할 수 있습니다는 **자산** 하지 사용자 지정 특성에 추가 하지만 디자이너의 탭에는 모든 파일 표시 됩니다는  **&lt;자산&gt;**  에 대 한 요소는 **vstemplate** 파일입니다.
+매니페스트에 포함 된 모든 파일을 추가한 후, 저장 점을 확인할 수 있습니다는 **자산** 하지 사용자 지정 특성에 추가 하지만 디자이너의 탭에는 모든 파일 표시 됩니다는 **&lt;자산&gt;** 에 대 한 요소는 **vstemplate** 파일입니다.
 
 ![디자이너의 프로젝트 자산이](custom-mvc-templates/_static/image8.jpg)
 

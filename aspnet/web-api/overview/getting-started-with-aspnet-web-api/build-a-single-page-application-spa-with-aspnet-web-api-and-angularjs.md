@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs
 msc.type: authoredcontent
 ms.openlocfilehash: 9a748628d53878be380869ac5327de0111d2284d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26507262"
 ---
 <a name="hands-on-lab-build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs"></a>ASP.NET Web API 및 Angular.js 단일 페이지 응용 프로그램 (SPA)을 작성 하는 실습 랩:
 ====================
@@ -32,7 +33,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > 이 실습 랩에서 들은 퀴즈를 SPA 개념에 따라 trivia 웹 사이트를 구현 하는 이러한 기술 활용을 걸립니다. 먼저 ASP.NET 웹 api 퀴즈 질문을 검색 하 고 답을 저장할 필요한 끝점을 노출할 서비스 계층을 구현 합니다. 그런 다음, AngularJS 및 CSS3 변환 효과 사용 하 여 풍부 하 고 응답성이 뛰어난 UI를 만들 수 있습니다.
 > 
-> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [http://aka.ms/webcamps-training-kit](http://aka.ms/webcamps-training-kit)합니다.
+> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit)합니다.
 
 
 ## <a name="overview"></a>개요
@@ -47,7 +48,7 @@ ms.lasthandoff: 11/10/2017
 - CSS3 변형이 있는 기능의 UI 환경 향상
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>필수 구성 요소
+### <a name="prerequisites"></a>전제 조건
 
 다음은이 실습 랩을 완료 하려면 필요 합니다.
 
@@ -307,7 +308,7 @@ Web API 컨트롤러 클래스에 대 한 기준을 만드는 데 Visual Studio�
 Visual Studio의 패키지 관리자 콘솔에서 AngularJS를 설치 하 여 시작 합니다. 그런 다음 들은 퀴즈 응용 프로그램 및 퀴즈 질문 및 답변은 AngularJS 템플릿 엔진을 사용 하 여 렌더링 하는 보기의 동작을 제공 하도록 컨트롤러를 만듭니다.
 
 > [!NOTE]
-> AngularJS에 대 한 자세한 내용은를 참조 [ [http://angularjs.org/](http://angularjs.org/)](http://angularjs.org/)합니다.
+> AngularJS에 대 한 자세한 내용은를 참조 [ [ http://angularjs.org/ ](http://angularjs.org/) ](http://angularjs.org/)합니다.
 
 
 1. 열고 **Visual Studio Express 2013 for Web** 엽니다는 **GeekQuiz.sln** 솔루션에 있는 **소스/e x 2-CreatingASPAInterface/시작** 폴더입니다. 또는 계속할 수 있습니다 솔루션으로, 이전 연습에서 가져올 있음을.

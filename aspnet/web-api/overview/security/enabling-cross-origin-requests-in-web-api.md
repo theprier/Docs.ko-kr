@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/security/enabling-cross-origin-requests-in-web-api
-title: "ASP.NET Web API 2의에서 교차 원본 요청을 사용 하도록 설정 | Microsoft Docs"
+title: ASP.NET Web API 2의에서 교차 원본 요청을 사용 하도록 설정 | Microsoft Docs
 author: MikeWasson
-description: "ASP.NET Web API에서 크로스-원본 자원 공유 (CORS)를 지 원하는 방법을 보여 줍니다."
+description: ASP.NET Web API에서 크로스-원본 자원 공유 (CORS)를 지 원하는 방법을 보여 줍니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/15/2014
@@ -13,18 +13,19 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/enabling-cross-origin-requests-in-web-api
 msc.type: authoredcontent
 ms.openlocfilehash: 453ad29ff4f10f9660f3aa8bab358519b4cfd48b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26508382"
 ---
 <a name="enabling-cross-origin-requests-in-aspnet-web-api-2"></a>ASP.NET Web API 2의에서 교차 원본 요청을 사용 하도록 설정
 ====================
 으로 [Mike Wasson](https://github.com/MikeWasson)
 
-> 브라우저 보안 다른 도메인에 대 한 AJAX 요청에서 웹 페이지를 방지 합니다. 이 제한은 라고는 *동일 원본 정책*, 악성 사이트를 다른 사이트에서 중요 한 데이터를 읽을 수 없도록 합니다. 하지만, 경우에 따라 다른 사이트 web API를 호출할 수 있도록 필요할 수 있습니다.
+> 브라우저의 보안 기능은 웹 페이지에서 다른 도메인으로 AJAX 요청을 전송하는 것을 막습니다. 이 제약 사항을 *동일 원본 정책(Same-Origin Policy)* 이라고 부르며, 악의적인 사이트가 다른 사이트의 민감한 데이터를 무차별적으로 읽는 것을 방지합니다. 하지만, 경우에 따라 다른 사이트 web API를 호출할 수 있도록 필요할 수 있습니다.
 > 
-> [교차 원본 자원 공유](http://www.w3.org/TR/cors/) (CORS)는 동일 원본 정책을 완화 하도록 서버를 허용 하는 W3C 표준입니다. CORS를 사용 하는 서버는 다른 사용자를 거부 하는 동안 일부 크로스-원본 요청을 명시적으로 허용할 수 있습니다. 과 같은 CORS를 안전 하 고 이전 기술을 보다 좀 더 융통적 [JSONP](http://en.wikipedia.org/wiki/JSONP)합니다. 이 자습서에는 Web API 응용 프로그램에서 CORS를 사용 하도록 설정 하는 방법을 보여 줍니다.
+> [교차 원본 자원 공유](http://www.w3.org/TR/cors/) (CORS, Cross Origin Resource Sharing)는 서버 측에서 동일 원본 정책을 완화할 수 있게 해주는 W3C 표준입니다. CORS를 사용하면 서버가 명시적으로 특정 교차 원본 요청만 허용하고, 다른 요청은 거부할 수 있습니다. CORS는 [JSONP](http://en.wikipedia.org/wiki/JSONP) 같은 기존의 다른 기술보다 안전하고 유연합니다. 이 자습서에는 Web API 응용 프로그램에서 CORS를 사용 하도록 설정 하는 방법을 보여 줍니다.
 > 
 > ## <a name="software-versions-used-in-the-tutorial"></a>자습서에서 사용 되는 소프트웨어 버전
 > 
@@ -42,19 +43,19 @@ ms.lasthandoff: 11/10/2017
 
 ### <a name="what-is-same-origin"></a>"같은 출처" 이란?
 
-두 Url에는 동일한 구성표, 호스트 및 포트 있는 경우 동일한 원본이 있어야 합니다. ([RFC 6454](http://tools.ietf.org/html/rfc6454))
+두 URL의 스키마, 호스트 및 포트가 모두 동일한 경우, 두 URL의 원본이 동일하다고 말합니다. ([RFC 6454](http://tools.ietf.org/html/rfc6454))
 
-이러한 두 Url에는 동일한 원본이 있어야 합니다.
+다음 두 URL은 동일한 원본입니다.
 
 - `http://example.com/foo.html`
 - `http://example.com/bar.html`
 
-이러한 Url 있는 두 이전 보다 다른 출처:
+반면, 다음 URL들은 위의 두 URL과는 다른 원본입니다.
 
-- `http://example.net`-다른 도메인
-- `http://example.com:9000/foo.html`-다른 포트
-- `https://example.com/foo.html`-다른 구성표
-- `http://www.example.com/foo.html`-다른 하위 도메인
+- `http://example.net` -도메인이 다릅니다
+- `http://example.com:9000/foo.html` -포트가 다릅니다
+- `https://example.com/foo.html` -스키마가 다릅니다
+- `http://www.example.com/foo.html` -하위 도메인이 다릅니다
 
 > [!NOTE]
 > Internet Explorer origin을 비교할 때 포트를 고려 하지 않습니다.
@@ -132,7 +133,7 @@ Visual Studio를 시작 하 고 새 **ASP.NET 웹 응용 프로그램** 프로�
 
 이 섹션에서는 CORS 요청은 HTTP 메시지 수준에서 수행 되는 작업을 설명 합니다. 구성할 수 있도록 CORS의 작동 방식을 이해 해야는 **[EnableCors]** 올바르게 특성 및 작업은 예상 대로 작동 하지 않는 경우 문제를 해결 합니다.
 
-CORS 사양 교차 원본 요청을 사용 하도록 설정 하는 몇 가지 새 HTTP 헤더를 소개 합니다. 크로스-원본 요청;에 대 한 자동으로 이러한 헤더를 설정 브라우저 CORS를 지 원하는 경우 JavaScript 코드에 특수 한 어떤 작업도 수행할 필요가 없습니다.
+CORS 명세에서는 교차 원본 요청을 활성화시키기 위한 용도로 몇 가지 새로운 HTTP 헤더들이 도입되었습니다. 크로스-원본 요청;에 대 한 자동으로 이러한 헤더를 설정 브라우저 CORS를 지 원하는 경우 JavaScript 코드에 특수 한 어떤 작업도 수행할 필요가 없습니다.
 
 크로스-원본 요청의 예를 들면 다음과 같습니다. "원본" 헤더는 요청을 수행 하는 사이트의 도메인을 제공 합니다.
 
@@ -213,7 +214,7 @@ CORS를 사용 하도록 응용 프로그램에서 모든 Web API 컨트롤러�
 
 와일드 카드 값을 사용할 수 있습니다 "\*" 모든 원본에서 요청을 허용 합니다.
 
-모든 원본에서 요청을 허용 하기 전에 신중히 고려해 야 합니다. 모든 웹 사이트에 웹 API에 대 한 AJAX 호출을 만들 수 있음을 의미 합니다.
+모든 원본의 요청을 허용하기 전에 신중히 고민하시기 바랍니다. 모든 웹 사이트에 웹 API에 대 한 AJAX 호출을 만들 수 있음을 의미 합니다.
 
 [!code-csharp[Main](enabling-cross-origin-requests-in-web-api/samples/sample14.cs)]
 
@@ -238,16 +239,16 @@ CORS를 사용 하도록 응용 프로그램에서 모든 Web API 컨트롤러�
 <a id="allowed-response-headers"></a>
 ## <a name="set-the-allowed-response-headers"></a>허용 된 응답 헤더 설정
 
-기본적으로 브라우저 노출 하지 않습니다 모든 응용 프로그램에 대 한 응답 헤더입니다. 기본적으로 사용할 수 있는 응답 헤더에는
+기본적으로 브라우저 노출 하지 않습니다 모든 응용 프로그램에 대 한 응답 헤더입니다. 기본적으로 사용 가능한 응답 헤더들은 다음과 같습니다.
 
 - 캐시 제어
 - Content-language
 - 콘텐츠-유형
-- 만료
-- 마지막 수정
+- Expires
+- Last-Modified
 - Pragma
 
-이러한 호출 하는 CORS 사양 [간단한 응답 헤더](https://dvcs.w3.org/hg/cors/raw-file/tip/Overview.html#simple-response-header)합니다. 다른 헤더를 사용할 수 있도록 응용 프로그램, 설정 된 *exposedHeaders* 의 매개 변수 **[EnableCors]**합니다.
+CORS 명세에서는 이 헤더들을 [단순 응답 헤더(Simple Response Header)](https://dvcs.w3.org/hg/cors/raw-file/tip/Overview.html#simple-response-header) 라고 부릅니다. 다른 헤더를 사용할 수 있도록 응용 프로그램, 설정 된 *exposedHeaders* 의 매개 변수 **[EnableCors]** 합니다.
 
 다음 예제에서는 컨트롤러의에서 `Get` 메서드 ' X 사용자 지정 헤더 ' 라는 사용자 지정 헤더를 설정 합니다. 기본적으로 브라우저에 크로스-원본 요청에이 헤더가 노출 되지는 않습니다. 헤더를 사용 하려면 ' X 사용자 지정 헤더 '에 포함 *exposedHeaders*합니다.
 
@@ -256,17 +257,17 @@ CORS를 사용 하도록 응용 프로그램에서 모든 Web API 컨트롤러�
 <a id="credentials"></a>
 ## <a name="passing-credentials-in-cross-origin-requests"></a>크로스-원본 요청에 자격 증명을 전달
 
-자격 증명에는 CORS 요청에 대 한 특별 한 처리가 필요 합니다. 기본적으로 브라우저 크로스-원본 요청에 자격 증명을 보내지 않습니다. 자격 증명 쿠키 뿐만 아니라 HTTP 인증 스키마를 포함 합니다. 크로스-원본 요청에 자격 증명을 보내려면 클라이언트 설정 해야 **XMLHttpRequest.withCredentials** true로 합니다.
+CORS 요청에서 자격 증명(Credentials)은 특별한 처리를 해야 합니다. 기본적으로 브라우저 크로스-원본 요청에 자격 증명을 보내지 않습니다. 여기에서 말하는 자격 증명에는 쿠키뿐만 아니라 HTTP 인증 스킴도 포함됩니다. 크로스-원본 요청에 자격 증명을 보내려면 클라이언트 설정 해야 **XMLHttpRequest.withCredentials** true로 합니다.
 
 사용 하 여 **XMLHttpRequest** 직접:
 
 [!code-csharp[Main](enabling-cross-origin-requests-in-web-api/samples/sample18.cs)]
 
-jQuery:
+jQuery를 사용할 경우:
 
 [!code-javascript[Main](enabling-cross-origin-requests-in-web-api/samples/sample19.js)]
 
-또한 서버 자격 증명을 허용 해야 합니다. Web API에서 크로스-원본 자격 증명을 허용 하려면 설정는 **SupportsCredentials** 속성을 true로는 **[EnableCors]** 특성:
+또한 서버에서도 자격 증명을 허용해야만 합니다. Web API에서 크로스-원본 자격 증명을 허용 하려면 설정는 **SupportsCredentials** 속성을 true로는 **[EnableCors]** 특성:
 
 [!code-csharp[Main](enabling-cross-origin-requests-in-web-api/samples/sample20.cs)]
 
@@ -283,7 +284,7 @@ jQuery:
 
 [!code-csharp[Main](enabling-cross-origin-requests-in-web-api/samples/sample21.cs)]
 
-모든 위치를 추가 하면는 특성을 적용할 수 이제 **[EnableCors]**합니다.
+모든 위치를 추가 하면는 특성을 적용할 수 이제 **[EnableCors]** 합니다.
 
 [!code-csharp[Main](enabling-cross-origin-requests-in-web-api/samples/sample22.cs)]
 

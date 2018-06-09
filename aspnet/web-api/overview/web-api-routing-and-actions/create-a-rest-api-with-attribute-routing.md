@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
 msc.type: authoredcontent
 ms.openlocfilehash: 1f1e90544c9dd8439a522f2196d81d020ea2f4f2
-ms.sourcegitcommit: 7f92990bad6a6cb901265d621dcbc136794f5f3f
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/28/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30223264"
 ---
 <a name="create-a-rest-api-with-attribute-routing-in-aspnet-web-api-2"></a>ASP.NET Web API 2에서에서의 라우팅 특성으로 REST API 만들기
 ====================
@@ -26,7 +27,7 @@ Web API 2는 새로운 형식을 지 원하는 라우팅 이라고 *특성 라�
 
 | 작업 | 예제 URI |
 | --- | --- |
-| 모든 책 목록을 가져옵니다. | /api/books |
+| 모든 책 목록을 가져옵니다. | / api/설명서 |
 | 책 id 가져오기 | /api/books/1 |
 | 책의 세부 정보를 가져옵니다. | /api/books/1/details |
 | 장르별로 책의 목록을 가져옵니다. | /api/books/fantasy |
@@ -55,7 +56,7 @@ Web API 2는 새로운 형식을 지 원하는 라우팅 이라고 *특성 라�
 
 Visual Studio를 실행 하 여 시작 합니다. **파일** 메뉴 선택 **새로** 선택한 후 **프로젝트**합니다.
 
-에 **템플릿** 창 선택 **설치 된 템플릿** 확장는 **Visual C#** 노드. 아래 **Visual C#**선택, **웹**합니다. 프로젝트 템플릿 목록에서 선택 **ASP.NET MVC 4 웹 응용 프로그램**합니다. 프로젝트 이름을 &quot;BooksAPI&quot;합니다.
+에 **템플릿** 창 선택 **설치 된 템플릿** 확장는 **Visual C#** 노드. 아래 **Visual C#** 선택, **웹**합니다. 프로젝트 템플릿 목록에서 선택 **ASP.NET MVC 4 웹 응용 프로그램**합니다. 프로젝트 이름을 &quot;BooksAPI&quot;합니다.
 
 ![](create-a-rest-api-with-attribute-routing/_static/image1.png)
 

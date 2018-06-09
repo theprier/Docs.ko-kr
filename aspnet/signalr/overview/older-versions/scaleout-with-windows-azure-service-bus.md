@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/older-versions/scaleout-with-windows-azure-service-bus
 msc.type: authoredcontent
 ms.openlocfilehash: b48a7b04701b69f68a492c0f7e08da4a37a92a48
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28036442"
 ---
 <a name="signalr-scaleout-with-azure-service-bus-signalr-1x"></a>Azure 서비스 버스에 SignalR 확장 (SignalR 1.x)
 ====================
@@ -123,7 +124,7 @@ SignalRChat 역할을 마우스 오른쪽 단추로 클릭 하 고 선택 **속�
 
 ![](scaleout-with-windows-azure-service-bus/_static/image9.png)
 
-변경 내용을 저장 합니다.
+변경 내용을 저장합니다.
 
 솔루션 탐색기에서 ChatService 프로젝트를 마우스 오른쪽 단추로 클릭 합니다. **게시**를 선택합니다.
 

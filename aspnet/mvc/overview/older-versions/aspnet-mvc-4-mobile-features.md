@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/aspnet-mvc-4-mobile-features
 msc.type: authoredcontent
 ms.openlocfilehash: 5f38fcdd8e71ce12f7899214b6b2133e21f9910c
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30876841"
 ---
 <a name="aspnet-mvc-4-mobile-features"></a>ASP.NET MVC 4 모바일 기능
 ====================
@@ -125,7 +126,7 @@ ASP.NET MVC 4의 중요 한 새로운 기능은 개별 모바일 브라우저에
 
 이 섹션에서는 모바일 전용 레이아웃 파일을 만들어야 합니다.
 
-복사를 시작 하려면 *Views\Shared\\_Layout.cshtml* 를 *Views\Shared\\_Layout.Mobile.cshtml*합니다. 열기  *\_Layout.Mobile.cshtml* 에서 제목을 변경 하 고 **MVC4 회의** 를 **회의 (모바일)**합니다.
+복사를 시작 하려면 *Views\Shared\\_Layout.cshtml* 를 *Views\Shared\\_Layout.Mobile.cshtml*합니다. 열기  *\_Layout.Mobile.cshtml* 에서 제목을 변경 하 고 **MVC4 회의** 를 **회의 (모바일)** 합니다.
 
 각 `Html.ActionLink` 호출, "찾아보기 기준" 각 링크에 제거 *ActionLink*합니다. 다음 코드는 모바일 레이아웃 파일의 완료 된 본문 섹션을 보여 줍니다.
 

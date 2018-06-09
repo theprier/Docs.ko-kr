@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-helpers-forms-and-validation
 msc.type: authoredcontent
 ms.openlocfilehash: 4cfa98144919c3f1bdb3608970af1a7952fe6ea7
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30878180"
 ---
 # <a name="aspnet-mvc-4-helpers-forms-and-validation"></a>ASP.NET MVC 4 도우미, 폼 및 유효성 검사
 
@@ -605,7 +606,7 @@ StoreManager 인덱스 페이지에 하나 이상의 잠재적인 문제가: 제
 
 이 작업에서는 적절 한 경우 유효성 검사 메시지를 표시 하는 데이터 주석 만들기 및 편집 페이지에 있도록 앨범 모델에 추가 합니다.
 
-간단한 모델 클래스에 대 한 데이터 주석이 방금 처리 추가 추가 하 여 한 **를 사용 하 여** 문을 **System.ComponentModel.DataAnnotation**, 다음 배치는 **[필수]**적절 한 속성에는 특성입니다. 다음 예제에서는 하 게 만드는 **이름** 속성 보기에서 필수 필드입니다.
+간단한 모델 클래스에 대 한 데이터 주석이 방금 처리 추가 추가 하 여 한 **를 사용 하 여** 문을 **System.ComponentModel.DataAnnotation**, 다음 배치는 **[필수]** 적절 한 속성에는 특성입니다. 다음 예제에서는 하 게 만드는 **이름** 속성 보기에서 필수 필드입니다.
 
 [!code-csharp[Main](aspnet-mvc-4-helpers-forms-and-validation/samples/sample18.cs)]
 
@@ -743,7 +744,7 @@ StoreManager 인덱스 페이지에 하나 이상의 잠재적인 문제가: 제
    > 각 클라이언트 유효성 검사 규칙에 대해 비 가시적인 jQuery 추가 데이터를 사용 하 여 특성-val-*rulename*=&quot;*메시지*&quot;합니다. 아래 해당 Unobtrusive는 태그의 목록 jQuery 클라이언트 유효성 검사를 수행 하려면 html 입력된 필드에 삽입 합니다.
    > 
    > - 데이터 val
-   > - Data-val-number
+   > - 데이터-val 수
    > - 데이터 val 범위
    > - 데이터 val-범위 min/데이터 val-범위 최대값
    > - 데이터 val 필요

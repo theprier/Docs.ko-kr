@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-routing-conventions
 msc.type: authoredcontent
 ms.openlocfilehash: 0ab99dd443040b90ffefd2f5b9261a63b91e9463
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28037323"
 ---
 <a name="routing-conventions-in-aspnet-web-api-2-odata"></a>라우팅 규칙에 ASP.NET Web API 2 Odata
 ====================
@@ -47,9 +48,9 @@ Web API에서 OData 라우팅 규칙을 설명 하기 전에 OData Uri를 이해
 
 라우팅에 대 한 중요 한 부분은 리소스 경로입니다. 리소스 경로 세그먼트로 구분 됩니다. 예를 들어 `/Products(1)/Supplier` 세 세그먼트가:
 
-- `Products`이름이 "제품" 엔터티 집합을 가리킵니다.
-- `1`집합에서 단일 엔터티를 선택 하는 엔터티 키입니다.
-- `Supplier`관련된 엔터티를 선택 하는 탐색 속성이입니다.
+- `Products` 이름이 "제품" 엔터티 집합을 가리킵니다.
+- `1` 집합에서 단일 엔터티를 선택 하는 엔터티 키입니다.
+- `Supplier` 관련된 엔터티를 선택 하는 탐색 속성이입니다.
 
 따라서이 경로 공급 업체에 1 제품을 선택 합니다.
 
@@ -67,7 +68,7 @@ Web API에서 OData 라우팅 규칙을 설명 하기 전에 OData Uri를 이해
 | --- | --- | --- | --- |
 | /Entityset 가져오기 | / 제품 | GetEntitySet 또는 Get | GetProducts |
 | /Entityset(key) 가져오기 | /Products(1) | GetEntityType 또는 Get | GetProduct |
-| GET /entityset(key)/cast | /Products(1)/Models.Book | GetEntityType 또는 Get | GetBook |
+| (키) /entityset/캐스팅 | /Products(1)/Models.Book | GetEntityType 또는 Get | GetBook |
 
 자세한 내용은 참조 [읽기 전용 OData 끝점을 만드는](odata-v3/creating-an-odata-endpoint.md)합니다.
 
@@ -76,10 +77,10 @@ Web API에서 OData 라우팅 규칙을 설명 하기 전에 OData Uri를 이해
 | 요청 | 예제 URI | 작업 이름 | 작업 예제 |
 | --- | --- | --- | --- |
 | /Entityset 게시 | / 제품 | PostEntityType 또는 Post | PostProduct |
-| PUT /entityset(key) | /Products(1) | PutEntityType 또는 Put | PutProduct |
-| PUT /entityset(key)/cast | /Products(1)/Models.Book | PutEntityType 또는 Put | PutBook |
+| /Entityset(key) 배치 | /Products(1) | PutEntityType 또는 Put | PutProduct |
+| (키) /entityset PUT/캐스팅 | /Products(1)/Models.Book | PutEntityType 또는 Put | PutBook |
 | /Entityset(key) 패치 | /Products(1) | PatchEntityType 또는 패치 | PatchProduct |
-| PATCH /entityset(key)/cast | /Products(1)/Models.Book | PatchEntityType 또는 패치 | PatchBook |
+| (키) /entityset PATCH/캐스팅 | /Products(1)/Models.Book | PatchEntityType 또는 패치 | PatchBook |
 | /Entityset(key) 삭제 | /Products(1) | DeleteEntityType 또는 삭제 | DeleteProduct |
 | 캐스팅//entityset (키)를 삭제 합니다. | /Products(1)/Models.Book | DeleteEntityType 또는 삭제 | DeleteBook |
 
@@ -88,7 +89,7 @@ Web API에서 OData 라우팅 규칙을 설명 하기 전에 OData Uri를 이해
 | 요청 | 예제 URI | 작업 이름 | 작업 예제 |
 | --- | --- | --- | --- |
 | GET /entityset (키) / 탐색 | / 제품 (1) / 공급자 | GetNavigationFromEntityType 또는 GetNavigation | GetSupplierFromProduct |
-| GET /entityset(key)/cast/navigation | /Products(1)/Models.Book/Author | GetNavigationFromEntityType 또는 GetNavigation | GetAuthorFromBook |
+| (키) /entityset/캐스트/탐색 가져오기 | /Products(1)/Models.Book/Author | GetNavigationFromEntityType 또는 GetNavigation | GetAuthorFromBook |
 
 자세한 내용은 참조 [엔터티 관계 작업](odata-v3/working-with-entity-relations.md)합니다.
 
@@ -96,9 +97,9 @@ Web API에서 OData 라우팅 규칙을 설명 하기 전에 OData Uri를 이해
 
 | 요청 | 예제 URI | 작업 이름 |
 | --- | --- | --- |
-| POST /entityset(key)/$links/navigation | /Products(1)/$links/Supplier | CreateLink |
-| PUT /entityset(key)/$links/navigation | /Products(1)/$links/Supplier | CreateLink |
-| DELETE /entityset(key)/$links/navigation | /Products(1)/$links/Supplier | DeleteLink |
+| POST /entityset (키) / $links/탐색 | / 제품 (1) / $ 링크/공급 업체 | CreateLink |
+| PUT /entityset(key)/$links/navigation | / 제품 (1) / $ 링크/공급 업체 | CreateLink |
+| DELETE /entityset (키) / $links/탐색 | / 제품 (1) / $ 링크/공급 업체 | DeleteLink |
 | DELETE /entityset(key)/$links/navigation(relatedKey) | /Products/(1)/$links/Suppliers(1) | DeleteLink |
 
 자세한 내용은 참조 [엔터티 관계 작업](odata-v3/working-with-entity-relations.md)합니다.
@@ -109,15 +110,15 @@ Web API에서 OData 라우팅 규칙을 설명 하기 전에 OData Uri를 이해
 
 | 요청 | 예제 URI | 작업 이름 | 작업 예제 |
 | --- | --- | --- | --- |
-| GET /entityset(key)/property | /Products(1)/Name | GetPropertyFromEntityType 또는 GetProperty | GetNameFromProduct |
-| GET /entityset(key)/cast/property | /Products(1)/Models.Book/Author | GetPropertyFromEntityType 또는 GetProperty | GetTitleFromBook |
+| GET /entityset (키) / 속성 | / 제품 (1) / 이름 | GetPropertyFromEntityType 또는 GetProperty | GetNameFromProduct |
+| (키) /entityset/캐스트/속성 가져오기 | /Products(1)/Models.Book/Author | GetPropertyFromEntityType 또는 GetProperty | GetTitleFromBook |
 
 **작업**
 
 | 요청 | 예제 URI | 작업 이름 | 작업 예제 |
 | --- | --- | --- | --- |
-| POST /entityset(key)/action | /Products(1)/Rate | ActionNameOnEntityType 또는 ActionName | RateOnProduct |
-| POST /entityset(key)/cast/action | /Products(1)/Models.Book/CheckOut | ActionNameOnEntityType 또는 ActionName | CheckOutOnBook |
+| POST /entityset (키) / 작업 | / 제품 (1) / 속도 | ActionNameOnEntityType 또는 ActionName | RateOnProduct |
+| 후 /entityset (키) / 캐스트/작업 | /Products(1)/Models.Book/CheckOut | ActionNameOnEntityType 또는 ActionName | CheckOutOnBook |
 
 자세한 내용은 참조 [OData 작업](odata-v3/odata-actions.md)합니다.
 
@@ -169,7 +170,7 @@ Web API에서 OData 라우팅 규칙을 설명 하기 전에 OData Uri를 이해
 
 1. 파생 되는 I **EntitySetRoutingConvention**때문에 **SelectController** 해당 클래스의 메서드는이 새 라우팅 규칙에 적합 합니다. 즉, 다시 구현 하지 않아도 **SelectController**합니다.
 2. 규칙에 따라 GET 요청에만 적용 되 고 적용 된 경로 템플릿을 경우에 &quot;~/entityset/key/navigation/key&quot;합니다.
-3. 작업 이름이 &quot;{EntityType을 (를) 가져올&quot;여기서 *{EntityType}* 탐색 컬렉션의 형식입니다. 예를 들어 &quot;GetSupplier&quot;합니다. 원하는 모든 명명 규칙 & #8212; 사용할 수 있습니다. 해야 사용자가 컨트롤러 작업이 일치 합니다.
+3. 작업 이름이 &quot;{EntityType을 (를) 가져올&quot;여기서 *{EntityType}* 탐색 컬렉션의 형식입니다. 예를 들어 &quot;GetSupplier&quot;합니다. 원하는 모든 명명 규칙을 사용할 수 있습니다 &#8212; 해야 사용자가 컨트롤러 작업이 일치 합니다.
 4. 두 매개 변수를 수행 하는 동작 *키* 및 *relatedKey*합니다. (목록이 몇 가지 미리 정의 된 매개 변수 이름에 대 한 참조 [ODataRouteConstants](https://msdn.microsoft.com/library/system.web.http.odata.routing.odatarouteconstants.aspx).)
 
 다음 단계를 라우팅 규칙의 목록에 새 규칙을 추가 합니다. 이 상황이 다음 코드에 나와 있는 것 처럼 구성 하는 동안 발생 합니다.

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/older-versions/creating-a-web-api-that-supports-crud-operations
-title: "ASP.NET Web API 1의에서 CRUD 작업을 사용 하도록 설정 | Microsoft Docs"
+title: ASP.NET Web API 1의에서 CRUD 작업을 사용 하도록 설정 | Microsoft Docs
 author: MikeWasson
-description: "이 자습서에는 ASP.NET Web API를 사용 하 여 HTTP 서비스의 CRUD 작업을 지 원하는 방법을 보여 줍니다. 자습서 Visual Studio 2012 웹 AP에 사용 되는 소프트웨어 버전 중..."
+description: 이 자습서에는 ASP.NET Web API를 사용 하 여 HTTP 서비스의 CRUD 작업을 지 원하는 방법을 보여 줍니다. 자습서 Visual Studio 2012 웹 AP에 사용 되는 소프트웨어 버전 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/28/2012
@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/older-versions/creating-a-web-api-that-supports-crud-operations
 msc.type: authoredcontent
 ms.openlocfilehash: 69b7d5453b6ff36d6e28a69428b016cb8cfd06e9
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "29153010"
 ---
 <a name="enabling-crud-operations-in-aspnet-web-api-1"></a>ASP.NET Web API 1의에서 CRUD 작업을 사용 하도록 설정
 ====================
@@ -50,7 +51,7 @@ ms.lasthandoff: 02/12/2018
 
 경로 있는 제품 ID를 포함 된 Uri의 일부를 확인 합니다. 예를 들어 제품 ID가 28을 가져오려면 클라이언트 보냅니다 GET 요청에 대 한 `http://hostname/api/products/28`합니다.
 
-### <a name="resources"></a>리소스
+### <a name="resources"></a>자료
 
 API 제품 두 개의 리소스 유형에 대 한 Uri를 정의 합니다.
 
@@ -74,7 +75,7 @@ API 제품 두 개의 리소스 유형에 대 한 Uri를 정의 합니다.
 
 Visual Studio를 실행 하 여 시작 하 고 선택 **새 프로젝트** 에서 **시작** 페이지. 또는에서 **파일** 메뉴 선택 **새로** 차례로 **프로젝트**합니다.
 
-에 **템플릿** 창 선택 **설치 된 템플릿** 확장는 **Visual C#** 노드. 아래 **Visual C#**선택, **웹**합니다. 프로젝트 템플릿 목록에서 선택 **ASP.NET MVC 4 웹 응용 프로그램**합니다. 프로젝트 이름을 &quot;ProductStore&quot; 클릭 **확인**합니다.
+에 **템플릿** 창 선택 **설치 된 템플릿** 확장는 **Visual C#** 노드. 아래 **Visual C#** 선택, **웹**합니다. 프로젝트 템플릿 목록에서 선택 **ASP.NET MVC 4 웹 응용 프로그램**합니다. 프로젝트 이름을 &quot;ProductStore&quot; 클릭 **확인**합니다.
 
 ![](creating-a-web-api-that-supports-crud-operations/_static/image1.png)
 
@@ -165,7 +166,7 @@ ProductStore API 몇 가지를 노출 하는 &quot;읽을&quot; HTTP GET 메서�
 
 [!code-csharp[Main](creating-a-web-api-that-supports-crud-operations/samples/sample6.cs)]
 
-메서드 이름으로 시작 &quot;가져오기&quot;이므로 규칙으로 GET 요청에 매핑됩니다. 또한 메서드가 매개 변수 없이 이기 때문에 매핑될 포함 하지 않는 URI는  *&quot;id&quot;*  는 경로의 세그먼트입니다.
+메서드 이름으로 시작 &quot;가져오기&quot;이므로 규칙으로 GET 요청에 매핑됩니다. 또한 메서드가 매개 변수 없이 이기 때문에 매핑될 포함 하지 않는 URI는 *&quot;id&quot;* 는 경로의 세그먼트입니다.
 
 ID 별로 제품을 가져오려면 추가 하려면이 메서드는 `ProductsController` 클래스:
 

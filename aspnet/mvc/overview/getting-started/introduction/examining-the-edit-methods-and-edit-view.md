@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
 ms.openlocfilehash: a3baa8e9af572d4c21813218ba394715a6db65cb
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30874748"
 ---
 <a name="examining-the-edit-methods-and-edit-view"></a>편집 메서드 및 편집 보기 검사
 ====================
@@ -106,7 +107,7 @@ ms.lasthandoff: 04/06/2018
 1. **도구** 메뉴 클릭 **NuGetLibrary 패키지 관리자**, 클릭 하 고 **솔루션에 대 한 NuGet 패키지 관리**합니다.  
   
     ![](examining-the-edit-methods-and-edit-view/_static/image5.png)
-2. 왼쪽된 창에서 선택 <strong>찾아보기*.</strong>* (아래 그림 참조).
+2. 왼쪽된 창에서 선택 <strong>찾아보기 *.</strong>* (아래 그림 참조).
 3. 입력된 상자에 입력 * Globalize * *입니다.  
   
     ![](examining-the-edit-methods-and-edit-view/_static/image6.png) 선택 `jQuery.Validation.Globalize`, 선택 `MvcMovie` 클릭 **설치**합니다. *Scripts\jquery.globalize\globalize.js* 파일을 프로젝트에 추가 됩니다. *Scripts\jquery.globalize\cultures\* 폴더 많은 문화권 JavaScript 파일에 포함 됩니다. Note:이 패키지를 설치 하는 데 5 분이 걸릴 수 있습니다.

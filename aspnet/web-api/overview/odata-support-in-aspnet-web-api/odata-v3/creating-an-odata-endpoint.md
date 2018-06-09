@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/creating-an-odata-endpoint
 msc.type: authoredcontent
 ms.openlocfilehash: 227faacd3f42731e08a4cd2b71075776309961b6
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30874631"
 ---
 <a name="creating-an-odata-v3-endpoint-with-web-api-2"></a>Web API 2 OData v3 끝점 만들기
 ====================
@@ -57,7 +58,7 @@ ms.lasthandoff: 04/06/2018
 
 Visual Studio를 시작 하 고 선택 **새 프로젝트** 시작 페이지에서. 또는에서 **파일** 메뉴 선택 **새로** 차례로 **프로젝트**합니다.
 
-에 **템플릿** 창 선택 **설치 된 템플릿** Visual C# 노드를 확장 합니다. 아래 **Visual C#**선택, **웹**합니다. 선택 **ASP.NET 웹 응용 프로그램** 템플릿.
+에 **템플릿** 창 선택 **설치 된 템플릿** Visual C# 노드를 확장 합니다. 아래 **Visual C#** 선택, **웹**합니다. 선택 **ASP.NET 웹 응용 프로그램** 템플릿.
 
 ![](creating-an-odata-endpoint/_static/image1.png)
 

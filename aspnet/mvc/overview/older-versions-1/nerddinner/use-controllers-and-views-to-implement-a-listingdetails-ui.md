@@ -13,14 +13,15 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-controllers-and-views-to-implement-a-listingdetails-ui
 msc.type: authoredcontent
 ms.openlocfilehash: ac3568941eeef24bd9857c5787471aadea15fc7f
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30875736"
 ---
 <a name="use-controllers-and-views-to-implement-a-listingdetails-ui"></a>컨트롤러와 뷰를 사용 하 여 목록/세부 정보 UI를 구현 하려면
 ====================
-by [Microsoft](https://github.com/microsoft)
+여 [Microsoft](https://github.com/microsoft)
 
 [PDF 다운로드](http://aspnetmvcbook.s3.amazonaws.com/aspnetmvc-nerdinner_v1.pdf)
 
@@ -98,7 +99,7 @@ ASP.NET MVC 컨트롤러 클래스에 Url 매핑하는 방식을 제어 시 유�
 | --- | --- | --- | --- |
 | */Dinners/Details/2* | DinnersController | Details(id) | id=2 |
 | */Dinners/Edit/5* | DinnersController | Edit(id) | id=5 |
-| */Dinners/Create* | DinnersController | Create() | N/A |
+| */Dinners/Create* | DinnersController | Create) | N/A |
 | */Dinners* | DinnersController | Index) | N/A |
 | */Home* | HomeController | Index) | N/A |
 | */* | HomeController | Index) | N/A |

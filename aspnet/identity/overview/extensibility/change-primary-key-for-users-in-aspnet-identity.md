@@ -1,22 +1,23 @@
 ---
 uid: identity/overview/extensibility/change-primary-key-for-users-in-aspnet-identity
-title: "ASP.NET Identity에서 사용자에 대 한 기본 키를 변경 합니다. | Microsoft Docs"
+title: ASP.NET Identity에서 사용자에 대 한 기본 키를 변경 합니다. | Microsoft Docs
 author: tfitzmac
-description: "Visual Studio 2013에서 기본 웹 응용 프로그램 사용자 계정에 대 한 키에 대 한 문자열 값을 사용합니다. ASP.NET Id를 사용 하면의 형식을 변경 하는 중..."
+description: Visual Studio 2013에서 기본 웹 응용 프로그램 사용자 계정에 대 한 키에 대 한 문자열 값을 사용합니다. ASP.NET Id를 사용 하면의 형식을 변경 하는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/30/2014
 ms.topic: article
 ms.assetid: 44925849-5762-4504-a8cd-8f0cd06f6dc3
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/extensibility/change-primary-key-for-users-in-aspnet-identity
 msc.type: authoredcontent
 ms.openlocfilehash: 79812efb4de2461fad3765d6005bbd20393e62b2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26498232"
 ---
 <a name="change-primary-key-for-users-in-aspnet-identity"></a>ASP.NET Identity에서 사용자에 대 한 기본 키를 변경 합니다.
 ====================
@@ -98,7 +99,7 @@ Startup.Auth.cs, 아래 강조 표시 된 대로 OnValidateIdentity 코드를 �
 
 프로젝트의 제네릭 구현을 인식 하지 못합니다는 **GetUserId** 메서드를 버전 2.1에는 ASP.NET Identity NuGet 패키지를 업데이트 해야 할 수 있습니다
 
-ASP.NET Identity에서 사용 하는 인프라 클래스를 많이 변경 했습니다. 프로젝트 컴파일 시도 하면 많은 오류를 확인할 수 있습니다. 다행히 나머지 오류가 모두 비슷합니다. Id 클래스는 키에 대 한 정수 하는데 컨트롤러 (또는 Web Form)는 문자열 값을 전달 하는 있습니다. 각각의 경우에서 호출 하 여 문자열 및 정수 변환 해야 **GetUserId&lt;int&gt;**합니다. 컴파일 오류 목록을 통해 작업 하거나 아래에 변경 내용에 따라 수 있습니다.
+ASP.NET Identity에서 사용 하는 인프라 클래스를 많이 변경 했습니다. 프로젝트 컴파일 시도 하면 많은 오류를 확인할 수 있습니다. 다행히 나머지 오류가 모두 비슷합니다. Id 클래스는 키에 대 한 정수 하는데 컨트롤러 (또는 Web Form)는 문자열 값을 전달 하는 있습니다. 각각의 경우에서 호출 하 여 문자열 및 정수 변환 해야 **GetUserId&lt;int&gt;** 합니다. 컴파일 오류 목록을 통해 작업 하거나 아래에 변경 내용에 따라 수 있습니다.
 
 나머지 변경을 Visual Studio에 설치 된 업데이트를 만드는 프로젝트의 유형에 따라 달라 집니다. 다음 링크를 통해 관련 섹션으로 직접 이동할 수 있습니다.
 
@@ -275,7 +276,7 @@ ManageController.cs 파일을 엽니다. 다음 메서드를 변경 해야 합�
 <a id="other"></a>
 ## <a name="other-resources"></a>기타 리소스
 
-- [ASP.NET Id에 대 한 사용자 지정 저장소 공급자 개요](overview-of-custom-storage-providers-for-aspnet-identity.md)
-- [ASP.NET Id로 기존 웹 사이트 SQL 멤버 자격에서 마이그레이션](../migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)
+- [ASP.NET ID에 대한 사용자 지정 저장소 공급자 개요](overview-of-custom-storage-providers-for-aspnet-identity.md)
+- [기존 웹 사이트를 SQL 멤버 자격에서 ASP.NET ID로 마이그레이션](../migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)
 - [멤버 자격 및 ASP.NET Identity에 대 한 사용자 프로필에 대 한 유니버설 공급자 데이터 마이그레이션](../migrations/migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity.md)
 - [샘플 응용 프로그램](https://aspnet.codeplex.com/SourceControl/latest#Samples/Identity/ChangePK/readme.txt) 변경 된 기본 키가 있는

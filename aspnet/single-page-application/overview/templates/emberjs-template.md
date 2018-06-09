@@ -1,22 +1,23 @@
 ---
 uid: single-page-application/overview/templates/emberjs-template
-title: "EmberJS 템플릿 | Microsoft Docs"
+title: EmberJS 템플릿 | Microsoft Docs
 author: xqiu
-description: "EmberJS 서식 파일"
+description: EmberJS 서식 파일
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/30/2013
 ms.topic: article
 ms.assetid: 04d5f142-5f62-494a-b5ea-4f3d068d34cb
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/templates/emberjs-template
 msc.type: authoredcontent
 ms.openlocfilehash: 1fb7633aee288be648d4f9681b43c8911b7dbab9
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26506802"
 ---
 <a name="emberjs-template"></a>EmberJS 서식 파일
 ====================
@@ -43,7 +44,7 @@ EmberJS SPA 템플릿을 사용 하 여는 [불씨](http://emberjs.com/) JavaScr
 
 다운로드 하 고 위의 다운로드 단추를 클릭 하 여 서식 파일을 설치 합니다. Visual Studio를 다시 시작 해야 합니다.
 
-에 **템플릿** 창 선택 **설치 된 템플릿** 확장는 **Visual C#** 노드. 아래 **Visual C#**선택, **웹**합니다. 프로젝트 템플릿 목록에서 선택 **ASP.NET MVC 4 웹 응용 프로그램**합니다. 프로젝트 이름을 지정 하 고 클릭 **확인**합니다.
+에 **템플릿** 창 선택 **설치 된 템플릿** 확장는 **Visual C#** 노드. 아래 **Visual C#** 선택, **웹**합니다. 프로젝트 템플릿 목록에서 선택 **ASP.NET MVC 4 웹 응용 프로그램**합니다. 프로젝트 이름을 지정 하 고 클릭 **확인**합니다.
 
 ![](emberjs-template/_static/image2.png)
 
@@ -134,7 +135,7 @@ TodoListRoute.js는 setupController 함수를 재정의 하 여는 TodoListRoute
 
 [!code-javascript[Main](emberjs-template/samples/sample11.js)]
 
-불씨는 Url, 경로 이름, 컨트롤러 및 서식 파일에 맞게 명명 규칙을 사용 합니다. 자세한 내용은 참조 [http://emberjs.com/guides/routing/defining-your-routes/](http://emberjs.com/guides/routing/defining-your-routes/) EmberJS 설명서입니다.
+불씨는 Url, 경로 이름, 컨트롤러 및 서식 파일에 맞게 명명 규칙을 사용 합니다. 자세한 내용은 참조 [ http://emberjs.com/guides/routing/defining-your-routes/ ](http://emberjs.com/guides/routing/defining-your-routes/) EmberJS 설명서입니다.
 
 ## <a name="templates"></a>템플릿
 
@@ -146,7 +147,7 @@ TodoListRoute.js는 setupController 함수를 재정의 하 여는 TodoListRoute
 - todoList.hbs:에 대 한 서식 파일은 "/ todo" 경로입니다.
 - \_navbar.hbs: 템플릿은 탐색 메뉴를 정의 합니다.
 
-응용 프로그램 템플릿에서 마스터 페이지 처럼 작동합니다. 여기에 머리글, 바닥글 및 "{{콘센트}}" 경로 따라 다른 서식 파일에 삽입 하려면 포함 됩니다. 불씨의 응용 프로그램 템플릿에 대 한 자세한 내용은 참조 [http://guides.emberjs.com/v1.10.0/templates/the-application-template//](http://guides.emberjs.com/v1.10.0/templates/the-application-template/)합니다.
+응용 프로그램 템플릿에서 마스터 페이지 처럼 작동합니다. 여기에 머리글, 바닥글 및 "{{콘센트}}" 경로 따라 다른 서식 파일에 삽입 하려면 포함 됩니다. 불씨의 응용 프로그램 템플릿에 대 한 자세한 내용은 참조 [ http://guides.emberjs.com/v1.10.0/templates/the-application-template// ](http://guides.emberjs.com/v1.10.0/templates/the-application-template/)합니다.
 
 "/ todoList" 서식 파일에는 두 루프 식이 포함 되어 있습니다. 외부 루프는 `{{#each controller}}`와 안쪽 루프는 `{{#each todos}}`합니다. 다음 코드에서는 기본 제공 `Ember.Checkbox` 보고, 사용자 지정 `App.TodoItemEditView`, 및와 링크는 `deleteTodo` 동작 합니다.
 

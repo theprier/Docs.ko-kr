@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/formats-and-model-binding/content-negotiation
-title: "ASP.NET Web API의에서 협상 내용 | Microsoft Docs"
+title: ASP.NET Web API의에서 협상 내용 | Microsoft Docs
 author: MikeWasson
-description: "ASP.NET Web API HTTP 콘텐츠 협상을 구현 하는 방법에 대해 설명 합니다."
+description: ASP.NET Web API HTTP 콘텐츠 협상을 구현 하는 방법에 대해 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/20/2012
@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/formats-and-model-binding/content-negotiation
 msc.type: authoredcontent
 ms.openlocfilehash: ca373af6754e82889dc100b63f73b76aaa4e4f27
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26507022"
 ---
 <a name="content-negotiation-in-aspnet-web-api"></a>ASP.NET Web API의에서 콘텐츠 협상
 ====================
@@ -95,7 +96,7 @@ CLR 형식으로 리소스를 반환 하는 Web API 컨트롤러, 파이프라�
 - **SupportedMediaTypes** 지원 되는 미디어 형식 목록이 포함 된 컬렉션입니다. 콘텐츠 협상 자 요청 Accept 헤더에 대해이 목록에 일치 시 키 려 합니다. 참고 Accept 헤더가 범위를 포함할 수 있습니다. 예를 들어 "텍스트/plain"은 텍스트와 일치 하는 /\* 또는 \* / \*합니다.
 - **MediaTypeMappings** 목록을 포함 하는 컬렉션 **MediaTypeMapping** 개체입니다. **MediaTypeMapping** 클래스는 HTTP 요청을 미디어 형식과 일치 하는 일반적인 방법을 제공 합니다. 예를 들어 특정 미디어 유형에 사용자 지정 HTTP 헤더를 매핑할 수 것입니다.
 
-여러 개의 일치, 최고 품질 비율 wins와 일치 합니다. 예:
+여러 개의 일치, 최고 품질 비율 wins와 일치 합니다. 예를 들어:
 
 [!code-console[Main](content-negotiation/samples/sample6.cmd)]
 

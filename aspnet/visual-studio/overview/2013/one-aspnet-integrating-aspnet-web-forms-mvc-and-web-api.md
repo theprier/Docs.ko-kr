@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api
 msc.type: authoredcontent
 ms.openlocfilehash: 55109723e566a9f7c66c1a59414377b05dbec760
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26507122"
 ---
 <a name="hands-on-lab-one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api"></a>실습 랩: One ASP.NET: ASP.NET Web Forms, MVC 및 Web API 통합 합니다.
 ====================
@@ -28,7 +29,7 @@ ms.lasthandoff: 11/10/2017
 > 
 > Visual Studio 2013 응용 프로그램을 구축 하 한 프로젝트에서 모든 ASP.NET 기술이 사용할 수 있는 새 통합된 프로젝트 시스템을 소개 합니다. 이 기능은, 스틱 및 프로젝트의 시작 부분에 한 가지 기술 선택 하지 않아도 되며 대신 하나의 프로젝트 내에서 여러 ASP.NET 프레임 워크를 사용 하도록 할.
 > 
-> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [http://aka.ms/webcamps-training-kit](http://aka.ms/webcamps-training-kit)합니다.
+> 모든 샘플 코드와 코드 조각을 웹 캠프 교육 키트에서 사용할 수에 포함 된 [ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit)합니다.
 
 
 <a id="Overview"></a>
@@ -46,7 +47,7 @@ ms.lasthandoff: 11/10/2017
 - 동일한 집합이 각 작업에 대 한 적절 한 도구를 사용 하 여 컴퓨터 및 사람이-읽을 수 있는 형식으로 정보를 노출 합니다.
 
 <a id="Prerequisites"></a>
-### <a name="prerequisites"></a>필수 구성 요소
+### <a name="prerequisites"></a>전제 조건
 
 다음은이 실습 랩을 완료 하려면 필요 합니다.
 
@@ -161,7 +162,7 @@ ms.lasthandoff: 11/10/2017
     *친화적 Url*
 
     > [!NOTE]
-    > URL로 변경 볼 수 있듯이 **문의/** 합니다. 시작 **ASP.NET 4**, URL 라우팅 기능 Web Forms에 추가 된, Url 등 작성할 수 있습니다 *[http://www.mysite.com/products/software](http://www.mysite.com/products/software)* 대신 *[http://www.mysite.com/products.aspx?category=software](http://www.mysite.com/products.aspx?category=software)* 합니다. 자세한 내용은를 참조 [URL 라우팅](../../../web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing.md)합니다.
+    > URL로 변경 볼 수 있듯이 **문의/** 합니다. 시작 **ASP.NET 4**, URL 라우팅 기능 Web Forms에 추가 된, Url 등 작성할 수 있습니다 *[ http://www.mysite.com/products/software ](http://www.mysite.com/products/software)* 대신  *[http://www.mysite.com/products.aspx?category=software](http://www.mysite.com/products.aspx?category=software)*. 자세한 내용은를 참조 [URL 라우팅](../../../web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/url-routing.md)합니다.
 3. 이제 응용 프로그램에 통합 된 인증 흐름을 탐색 합니다. 이 작업을 수행 하려면 **등록** 페이지의 오른쪽 위 모퉁이에 있습니다.
 
     ![새 사용자를 등록 하는 중](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/_static/image8.png)

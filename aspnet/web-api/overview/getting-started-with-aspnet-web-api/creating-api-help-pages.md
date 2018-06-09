@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/getting-started-with-aspnet-web-api/creating-api-help-pages
-title: "ASP.NET Web API에 대 한 도움말 페이지 만들기 | Microsoft Docs"
+title: ASP.NET Web API에 대 한 도움말 페이지 만들기 | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/01/2013
@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/creating-api-help-pages
 msc.type: authoredcontent
 ms.openlocfilehash: 37fd26ebaea192cb540c443eff8a07343ab8c15b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28037905"
 ---
 <a name="creating-help-pages-for-aspnet-web-api"></a>ASP.NET Web API에 대 한 도움말 페이지 만들기
 ====================
@@ -60,9 +61,9 @@ Web API를 만들 때 유용 도움말 페이지를 만들 되 고 다른 개발
 
 **도구** 메뉴 선택 **라이브러리 패키지 관리자**를 선택한 후 **패키지 관리자 콘솔**합니다. 에 [패키지 관리자 콘솔](http://docs.nuget.org/docs/start-here/using-the-package-manager-console) 창에서 다음 명령 중 하나를 입력 합니다.
 
-에 대 한는 **C#** 응용 프로그램:`Install-Package Microsoft.AspNet.WebApi.HelpPage`
+에 대 한는 **C#** 응용 프로그램: `Install-Package Microsoft.AspNet.WebApi.HelpPage`
 
-에 대 한는 **Visual Basic** 응용 프로그램:`Install-Package Microsoft.AspNet.WebApi.HelpPage.VB`
+에 대 한는 **Visual Basic** 응용 프로그램: `Install-Package Microsoft.AspNet.WebApi.HelpPage.VB`
 
 두 개의 패키지, C# 및 Visual basic의 있습니다. 프로젝트와 일치 하는 것을 사용 하 고 있는지 확인 합니다.
 
@@ -88,7 +89,7 @@ Web API를 만들 때 유용 도움말 페이지를 만들 되 고 다른 개발
 
 ![](creating-api-help-pages/_static/image7.png)
 
-에 대 한 코드를 열고 다음으로 `ValuesController` /Controllers/ValuesControler.cs에 정의 된 API 컨트롤러입니다. 일부 문서 주석을 컨트롤러 메서드를 추가 합니다. 예:
+에 대 한 코드를 열고 다음으로 `ValuesController` /Controllers/ValuesControler.cs에 정의 된 API 컨트롤러입니다. 일부 문서 주석을 컨트롤러 메서드를 추가 합니다. 예를 들어:
 
 [!code-csharp[Main](creating-api-help-pages/samples/sample4.cs)]
 

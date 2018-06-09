@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/aspnet-error-handling
 msc.type: authoredcontent
 ms.openlocfilehash: ac5508334bf6d471471a719b98618bdcd3214fb5
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30888931"
 ---
 <a name="aspnet-error-handling"></a>ASP.NET 오류 처리
 ====================
@@ -326,7 +327,7 @@ Microsoft Azure에 웹 응용 프로그램을 배포 하는 방법에 대 한 �
 [Microsoft Azure-무료 평가판](https://azure.microsoft.com/pricing/free-trial/)  
  Microsoft Azure에 웹 사이트를 게시할 저장 하면 시간과 유지 관리 비용. Azure에 웹 앱을 배포 하는 빠른 프로세스입니다. 유지 관리 하 고 웹 응용 프로그램을 모니터링 하려는 경우 Azure는 다양 한 도구 및 서비스를 제공 합니다. 데이터, 트래픽, identity, 메시징, 미디어 및 Azure에서 성능 백업을 관리 합니다. 및이 모두는 매우 비용 효율적인 방식으로 제공 됩니다.
 
-## <a name="additional-resources"></a>추가 자료
+## <a name="additional-resources"></a>추가 리소스
 
 [ASP.NET 상태 모니터링을 사용 하 여 오류 세부 정보를 로깅](../../older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-asp-net-health-monitoring-cs.md)   
 [ELMAH](https://code.google.com/p/elmah/)
@@ -337,7 +338,7 @@ Microsoft Azure에 웹 응용 프로그램을 배포 하는 방법에 대 한 �
 
 - [Alberto Poblacion, MVP &amp; MCT, 스페인](https://mvp.microsoft.com/mvp/Alberto%20Poblacion%20Bolano-36772)
 - [Alex Thissen, 네덜란드](http://blog.alexthissen.nl/) (twitter: [ @alexthissen ](http://twitter.com/alexthissen))
-- [Andre Tournier, USA](http://andret503.wordpress.com/)
+- [Andre Tournier, 미국](http://andret503.wordpress.com/)
 - Apurva Joshi, Microsoft
 - [Bojan Vrhovnik, 슬로베니아](http://twitter.com/bvrhovnik)
 - [Bruno Sonnino, 브라질](http://msmvps.com/blogs/bsonnino) (twitter: [ @bsonnino ](http://twitter.com/bsonnino))
@@ -348,7 +349,7 @@ Microsoft Azure에 웹 응용 프로그램을 배포 하는 방법에 대 한 �
 - Mike 서
 - [Mitchel Sellers, USA](http://www.mitchelsellers.com/) (twitter: [ @MitchelSellers ](http://twitter.com/MitchelSellers))
 - [Paul Cociuba, Microsoft](http://linqto.me/Links/pcociuba)
-- [Paulo Morgado, Portugal](http://paulomorgado.net/)
+- [파울로 Morgado, 포르투갈](http://paulomorgado.net/)
 - [Pranav Rastogi, Microsoft](https://blogs.msdn.com/b/pranav_rastogi)
 - [Tim Ammann, Microsoft](https://blogs.iis.net/timamm/default.aspx)
 - [Tom Dykstra, Microsoft](https://blogs.msdn.com/aspnetue)

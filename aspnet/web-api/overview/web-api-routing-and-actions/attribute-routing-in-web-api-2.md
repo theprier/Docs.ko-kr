@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
-title: "ASP.NET Web API 2에서에서의 라우팅 특성 | Microsoft Docs"
+title: ASP.NET Web API 2에서에서의 라우팅 특성 | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/20/2014
@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
 msc.type: authoredcontent
 ms.openlocfilehash: 173add73a150d3e13ae243d6548463da912dadee
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28038051"
 ---
 <a name="attribute-routing-in-aspnet-web-api-2"></a>ASP.NET Web API 2에서에서 특성의 라우팅
 ====================
@@ -29,7 +30,7 @@ ms.lasthandoff: 01/24/2018
 특성 라우팅을 위한 다양 한 옵션이이 항목와 특성 라우팅을 사용 하도록 설정 하는 방법을 보여 줍니다. 특성 라우팅을 사용 하는 종단 간 자습서를 참조 하십시오. [Web API 2에 특성 라우팅을 사용 하 여 REST API 만들기](create-a-rest-api-with-attribute-routing.md)합니다.
 
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 [Visual Studio 2017](https://www.visualstudio.com/vs/) Community, Professional 또는 Enterprise Edition
 
@@ -151,7 +152,7 @@ URI 템플릿에서 여러 매개 변수를 가질 수 있습니다.
 <a id="prefixes"></a>
 ## <a name="route-prefixes"></a>경로 접두사
 
-대개 동일한 접두사로 시작 하는 컨트롤러의 경로입니다. 예:
+대개 동일한 접두사로 시작 하는 컨트롤러의 경로입니다. 예를 들어:
 
 [!code-csharp[Main](attribute-routing-in-web-api-2/samples/sample10.cs)]
 
@@ -170,7 +171,7 @@ URI 템플릿에서 여러 매개 변수를 가질 수 있습니다.
 <a id="constraints"></a>
 ## <a name="route-constraints"></a>경로 제약 조건
 
-경로 제약 조건이 경로 템플릿 매개 변수를 일치 시키는 방법을 제한할 수 있습니다. 일반 구문은 &quot;{매개 변수: 제약 조건}&quot;합니다. 예:
+경로 제약 조건이 경로 템플릿 매개 변수를 일치 시키는 방법을 제한할 수 있습니다. 일반 구문은 &quot;{매개 변수: 제약 조건}&quot;합니다. 예를 들어:
 
 [!code-csharp[Main](attribute-routing-in-web-api-2/samples/sample14.cs)]
 
@@ -181,7 +182,7 @@ URI 템플릿에서 여러 매개 변수를 가질 수 있습니다.
 | 제약 조건 | 설명 | 예 |
 | --- | --- | --- |
 | 알파 | 일치 하는 항목 대문자 또는 소문자로 라틴어 알파벳 (a ~ z, A-Z) | {x: 알파} |
-| bool | 부울 값을 찾습니다. | {x:bool} |
+| bool | 부울 값을 찾습니다. | {x: bool} |
 | datetime | 일치는 **DateTime** 값입니다. | {x:datetime} |
 | decimal | 10 진수 값을 찾습니다. | {x:decimal} |
 | double | 64 비트 부동 소수점 값을 찾습니다. | {x:double} |
@@ -193,9 +194,9 @@ URI 템플릿에서 여러 매개 변수를 가질 수 있습니다.
 | max | 최대 값을 가진 정수를 찾습니다. | {x:max(10)} |
 | maxlength | 최대 길이가 문자열과 일치합니다. | {x:maxlength(10)} |
 | 분 | 최소 값이 포함 된 정수를 찾습니다. | {x:min(10)} |
-| minlength | 최소 길이가 문자열과 일치합니다. | {x:minlength(10)} |
-| range | 정수 값의 범위 내에서 일치합니다. | {x:range(10,50)} |
-| 정규식 | 정규식과 일치 합니다. | {x:regex(^\d{3}-\d{3}-\d{4}$)} |
+| minlength | 최소 길이가 문자열과 일치합니다. | {x: minlength(10)} |
+| range | 정수 값의 범위 내에서 일치합니다. | {x: range(10,50)} |
+| 정규식 | 정규식과 일치 합니다. | {x: regex(^\d{3}-\d{3}-\d{4}$)} |
 
 공지 여 제약 조건 중 일부는 같은 &quot;min&quot;, 괄호 안에 인수를 사용 합니다. 콜론으로 구분 된 매개 변수에 여러 개의 제약 조건을 적용할 수 있습니다.
 
@@ -269,7 +270,7 @@ Web API에서 모든 경로는 이름이 있습니다. 경로 이름은 HTTP 응
 
 이러한 경로 다음과 같이 정렬 됩니다.
 
-1. orders/details
+1. 주문/세부 정보
 2. 주문 / {id}
 3. orders/{customerName}
 4. orders/{\*date}

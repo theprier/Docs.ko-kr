@@ -1,22 +1,23 @@
 ---
 uid: single-page-application/overview/templates/backbonejs-template
-title: "Backbone 템플릿 | Microsoft Docs"
+title: Backbone 템플릿 | Microsoft Docs
 author: madskristensen
-description: "Backbone.js SPA 서식 파일"
+description: Backbone.js SPA 서식 파일
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/04/2013
 ms.topic: article
 ms.assetid: 00aca413-f067-4108-9bd1-cf21e64a2646
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/templates/backbonejs-template
 msc.type: authoredcontent
 ms.openlocfilehash: 3b8eabd3cefcb96dc40bbf6cc6e3ee81accb0d7c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26506682"
 ---
 <a name="backbone-template"></a>Backbone 서식 파일
 ====================
@@ -39,7 +40,7 @@ Backbone.js SPA 템플릿을 신속 하 게 사용 하 여 대화형 클라이�
 
 다운로드 하 고 위의 다운로드 단추를 클릭 하 여 서식 파일을 설치 합니다. 서식 파일은 확장 VSIX (Visual Studio) 파일로 패키지 됩니다. Visual Studio를 다시 시작 해야 합니다.
 
-에 **템플릿** 창 선택 **설치 된 템플릿** 확장는 **Visual C#** 노드. 아래 **Visual C#**선택, **웹**합니다. 프로젝트 템플릿 목록에서 선택 **ASP.NET MVC 4 웹 응용 프로그램**합니다. 프로젝트 이름을 지정 하 고 클릭 **확인**합니다.
+에 **템플릿** 창 선택 **설치 된 템플릿** 확장는 **Visual C#** 노드. 아래 **Visual C#** 선택, **웹**합니다. 프로젝트 템플릿 목록에서 선택 **ASP.NET MVC 4 웹 응용 프로그램**합니다. 프로젝트 이름을 지정 하 고 클릭 **확인**합니다.
 
 ![](backbonejs-template/_static/image1.png)
 
@@ -61,7 +62,7 @@ Backbone.js SPA 템플릿을 신속 하 게 사용 하 여 대화형 클라이�
 
 **응용 프로그램**
 
-`Application`application.ts에 정의 됩니다. 이 개체는 응용 프로그램을 초기화 하 고 역할을 루트 네임 스페이스입니다. 사용자 로그인 여부와 같은 응용 프로그램에서 공유 되는 구성 및 상태 정보를 유지 관리 합니다.
+`Application` application.ts에 정의 됩니다. 이 개체는 응용 프로그램을 초기화 하 고 역할을 루트 네임 스페이스입니다. 사용자 로그인 여부와 같은 응용 프로그램에서 공유 되는 구성 및 상태 정보를 유지 관리 합니다.
 
 `application.start` 메서드가 모달 뷰가 생성 되 고 사용자 로그인 등의 응용 프로그램 수준 이벤트에 대 한 이벤트 처리기를 연결 합니다. 다음으로 기본 라우터 만들고 모든 클라이언트 쪽 URL 지정 되어 있는지 확인 합니다. 기본 url를 리디렉션합니다. 그렇지 않은 경우 (#! /).
 

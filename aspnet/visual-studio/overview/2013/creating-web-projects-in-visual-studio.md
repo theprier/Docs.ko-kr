@@ -1,22 +1,23 @@
 ---
 uid: visual-studio/overview/2013/creating-web-projects-in-visual-studio
-title: "Visual Studio 2013에서 ASP.NET 웹 프로젝트 만들기 | Microsoft Docs"
+title: Visual Studio 2013에서 ASP.NET 웹 프로젝트 만들기 | Microsoft Docs
 author: tdykstra
-description: "이 항목에서는 Visual Studio 2013 업데이트 3 여기에서 ASP.NET 웹 프로젝트를 만들기 위한 옵션은 웹 개발 c에 대 한 새로운 기능 중 일부에 대해 설명..."
+description: 이 항목에서는 Visual Studio 2013 업데이트 3 여기에서 ASP.NET 웹 프로젝트를 만들기 위한 옵션은 웹 개발 c에 대 한 새로운 기능 중 일부에 대해 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/01/2014
 ms.topic: article
 ms.assetid: 61941e64-0c0d-4996-9270-cb8ccfd0cabc
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/creating-web-projects-in-visual-studio
 msc.type: authoredcontent
 ms.openlocfilehash: aacae7a9ccf483b21d3c6796c0411d558fa3c75b
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28038867"
 ---
 <a name="creating-aspnet-web-projects-in-visual-studio-2013"></a>Visual Studio 2013에서 ASP.NET 웹 프로젝트 만들기
 ====================
@@ -35,7 +36,7 @@ ms.lasthandoff: 01/24/2018
 
 
 <a id="prerequisites"></a>
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 이 문서에 적용 됩니다. [Visual Studio 2013](https://go.microsoft.com/fwlink/?LinkId=306566) 와 [업데이트 3](https://go.microsoft.com/fwlink/?linkid=397827&amp;clcid=0x409) 설치 합니다.
 
@@ -171,7 +172,7 @@ MVC에 대 한 자세한 내용은 참조 [ASP.NET MVC](https://asp.net/mvc)합�
 
 Web API 템플릿을 MVC를 기반으로 하는 API 도움말 페이지를 포함 하 여 웹 API에 따라 샘플 웹 서비스를 만듭니다.
 
-ASP.NET Web API는 다양 한 브라우저 및 모바일 장치를 포함 한 클라이언트를 연결할 HTTP 서비스를 작성을 용이 하 게 하는 프레임 워크입니다. ASP.NET Web API는.NET Framework에서 RESTful 서비스를 구축 하기 위한 이상적인 플랫폼입니다.
+ASP.NET Web API는 브라우저 및 모바일 장치를 비롯한 광범위한 클라이언트에 연결하는 HTTP 서비스를 쉽게 빌드할 수 있게 해 주는 프레임워크입니다. ASP.NET Web API는.NET Framework에서 RESTful 서비스를 구축 하기 위한 이상적인 플랫폼입니다.
 
 Web API 템플릿을 샘플 웹 서비스를 만듭니다. 다음 그림은 샘플 도움말 페이지를 표시합니다.
 
@@ -243,7 +244,7 @@ Visual Studio 2013 프로젝트 템플릿을 사용 하 여 [부트스트랩](ht
 
 또한 쉽게 응용 프로그램의 모양과 느낌에 변경 내용을 적용 하려면 부트스트랩의 테마 설정 기능을 사용할 수 있습니다. 예를 들어 테마를 변경 하려면 다음 단계를 수행할 수 있습니다.
 
-1. 브라우저에서로 이동 [http://Bootswatch.com](http://Bootswatch.com)테마를 선택한 후 클릭 **다운로드**합니다. (그러면 다운로드 *bootstrap.min.css* 기본적으로 CSS 코드를 검사 하려는 경우 가져올 *bootstrap.css* 축소 된 버전 대신 합니다.)
+1. 브라우저에서로 이동 [ http://Bootswatch.com ](http://Bootswatch.com)테마를 선택한 후 클릭 **다운로드**합니다. (그러면 다운로드 *bootstrap.min.css* 기본적으로 CSS 코드를 검사 하려는 경우 가져올 *bootstrap.css* 축소 된 버전 대신 합니다.)
 2. 다운로드 된 CSS 파일의 내용을 복사 합니다.
 3. Visual Studio에서 만드는 새 **스타일 시트** 라는 파일 *부트스트랩 theme.css* 에 *콘텐츠* 에 코드 폴더 및 다운로드 한 CSS 붙여넣기 합니다.
 4. 열기 *앱\_Start/Bundle.config* 변경 *bootstrap.css* 를 *부트스트랩 theme.css*합니다.
@@ -426,4 +427,4 @@ AD는이 응용 프로그램을 식별 하거나 Visual Studio를 하나 만들 
 <a id="nextsteps"></a>
 ## <a name="next-steps"></a>다음 단계
 
-이 문서는 Visual Studio 2013에서 새 ASP.NET 웹 프로젝트를 만들기 위한 몇 가지 기본적인 도움말을 제공 했습니다. Visual studio 웹 개발을 위한 사용 하는 방법에 대 한 자세한 내용은 참조 [https://www.asp.net/visual-studio/](../../index.md)합니다.
+이 문서는 Visual Studio 2013에서 새 ASP.NET 웹 프로젝트를 만들기 위한 몇 가지 기본적인 도움말을 제공 했습니다. Visual studio 웹 개발을 위한 사용 하는 방법에 대 한 자세한 내용은 참조 [ https://www.asp.net/visual-studio/ ](../../index.md)합니다.

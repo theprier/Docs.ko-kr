@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v4/create-an-odata-v4-endpoint
-title: "ASP.NET Web API 2.2 사용 하 여 OData v4 끝점을 만듭니다 | Microsoft Docs"
+title: ASP.NET Web API 2.2 사용 하 여 OData v4 끝점을 만듭니다 | Microsoft Docs
 author: MikeWasson
-description: "개방형 데이터 프로토콜 (OData)는 웹에 대 한 데이터 액세스 프로토콜입니다. OData는 일관 된 방식으로 쿼리 및 조작 CRUD 작업을 통해 데이터 집합을 제공..."
+description: 개방형 데이터 프로토콜 (OData)는 웹에 대 한 데이터 액세스 프로토콜입니다. OData는 일관 된 방식으로 쿼리 및 조작 CRUD 작업을 통해 데이터 집합을 제공...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/24/2014
@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/create-an-odata-v4-endpoint
 msc.type: authoredcontent
 ms.openlocfilehash: a3f94818f9674b0e1e9a45b2a6cc9455edc79726
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26508052"
 ---
 <a name="create-an-odata-v4-endpoint-using-aspnet-web-api-22"></a>ASP.NET Web API 2.2 사용 하 여 OData v4 끝점 만들기
 ====================

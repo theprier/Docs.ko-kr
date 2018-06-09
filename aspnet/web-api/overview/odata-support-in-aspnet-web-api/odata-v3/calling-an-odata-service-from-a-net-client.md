@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v3/calling-an-odata-service-from-a-net-client
-title: ".NET 클라이언트 (C#)에서 OData 서비스를 호출할 | Microsoft Docs"
+title: .NET 클라이언트 (C#)에서 OData 서비스를 호출할 | Microsoft Docs
 author: MikeWasson
-description: "이 자습서에서는 C# 클라이언트 응용 프로그램에서 OData 서비스를 호출 하는 방법을 보여 줍니다. (Visual S 인 works.. 자습서 Visual Studio 2013에서 사용 되는 소프트웨어 버전"
+description: 이 자습서에서는 C# 클라이언트 응용 프로그램에서 OData 서비스를 호출 하는 방법을 보여 줍니다. (Visual S 인 works.. 자습서 Visual Studio 2013에서 사용 되는 소프트웨어 버전
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/26/2014
@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/calling-an-odata-service-from-a-net-client
 msc.type: authoredcontent
 ms.openlocfilehash: 497102cfa98680f2156a56ff9e36d84b7c820020
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28042396"
 ---
 <a name="calling-an-odata-service-from-a-net-client-c"></a>.NET 클라이언트 (C#)에서 OData 서비스를 호출합니다.
 ====================

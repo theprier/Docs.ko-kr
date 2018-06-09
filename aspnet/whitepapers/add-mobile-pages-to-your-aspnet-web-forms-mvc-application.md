@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /whitepapers/add-mobile-pages-to-your-aspnet-web-forms-mvc-application
 msc.type: content
 ms.openlocfilehash: a8358b91ca424f4f3e576057ab43d850081dda60
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/10/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30898985"
 ---
 <a name="how-to-add-mobile-pages-to-your-aspnet-web-forms--mvc-application"></a>방법: ASP.NET Web Forms에 모바일 페이지를 추가 / MVC 응용 프로그램
 ====================
@@ -358,7 +359,7 @@ Web.config 파일의 fiftyOne 섹션에 추가 된 다음 요소는 페이지에
 
 [!code-html[Main](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/samples/sample20.html)]
 
-## <a name="additional-resources"></a>추가 자료
+## <a name="additional-resources"></a>추가 리소스
 
 모바일 장치 에뮬레이터 및 시뮬레이터 모바일 ASP.NET 웹 응용 프로그램을 테스트 하는 데 사용할 수는 목록에 대 한 페이지 참조 [시뮬레이션 테스트를 위한 인기 있는 모바일 장치](../mobile/device-simulators.md)합니다.
 

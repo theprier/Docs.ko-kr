@@ -1,22 +1,23 @@
 ---
 uid: single-page-application/overview/templates/breezeknockout-template
-title: "간편/Knockout 템플릿 | Microsoft Docs"
+title: 간편/Knockout 템플릿 | Microsoft Docs
 author: madskristensen
-description: "간편/Knockout 단일 페이지 응용 프로그램 템플릿"
+description: 간편/Knockout 단일 페이지 응용 프로그램 템플릿
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/30/2013
 ms.topic: article
 ms.assetid: 3bd94827-3c59-448f-abc3-36e6df4858db
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/templates/breezeknockout-template
 msc.type: authoredcontent
 ms.openlocfilehash: 07ec099a0381458fe42c1972a2554f76fd34638c
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "26506702"
 ---
 <a name="breezeknockout-template"></a>간편/Knockout 서식 파일
 ====================
@@ -57,7 +58,7 @@ BreezeJS 라이브러리 할 가장 중요 한 문제는 응용 프로그램 논
 
 다운로드 하 고 위의 다운로드 단추를 클릭 하 여 서식 파일을 설치 합니다. 서식 파일은 확장 VSIX (Visual Studio) 파일로 패키지 됩니다. Visual Studio를 다시 시작 해야 합니다.
 
-에 **템플릿** 창 선택 **설치 된 템플릿** 확장는 **Visual C#** 노드. 아래 **Visual C#**선택, **웹**합니다. 프로젝트 템플릿 목록에서 선택 **ASP.NET MVC 4 웹 응용 프로그램**합니다. 프로젝트 이름을 지정 하 고 클릭 **확인**합니다.
+에 **템플릿** 창 선택 **설치 된 템플릿** 확장는 **Visual C#** 노드. 아래 **Visual C#** 선택, **웹**합니다. 프로젝트 템플릿 목록에서 선택 **ASP.NET MVC 4 웹 응용 프로그램**합니다. 프로젝트 이름을 지정 하 고 클릭 **확인**합니다.
 
 에 **새 프로젝트** 선택 마법사 **간편 Knockout SPA**합니다.
 

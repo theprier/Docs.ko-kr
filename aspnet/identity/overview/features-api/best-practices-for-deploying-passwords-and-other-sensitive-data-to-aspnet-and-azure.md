@@ -1,28 +1,29 @@
 ---
 uid: identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure
-title: "ASP.NET 및 Azure 앱 서비스에 암호 및 기타 중요 한 데이터 배포에 대 한 유용한 | Microsoft Docs"
+title: ASP.NET 및 Azure 앱 서비스에 암호 및 기타 중요 한 데이터 배포에 대 한 유용한 | Microsoft Docs
 author: Rick-Anderson
-description: "이 자습서에서는 어떻게 코드 안전 하 게 저장 하 고 수 보안 정보에 액세스 합니다. 가장 중요 한 점은 암호 또는 다른 보낼 저장 해서는 안 중..."
+description: 이 자습서에서는 어떻게 코드 안전 하 게 저장 하 고 수 보안 정보에 액세스 합니다. 가장 중요 한 점은 암호 또는 다른 보낼 저장 해서는 안 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/21/2015
 ms.topic: article
 ms.assetid: 97902c66-cb61-4d11-be52-73f962f2db0a
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure
 msc.type: authoredcontent
 ms.openlocfilehash: 995d9a088e3095f36a01d2adb19ec08e6a6d1b3e
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28033023"
 ---
 <a name="best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure-app-service"></a>ASP.NET 및 Azure 앱 서비스 암호 및 기타 중요 한 데이터를 배포 하기 위한 모범 사례
 ====================
 으로 [Rick Anderson](https://github.com/Rick-Anderson)
 
-> 이 자습서에서는 어떻게 코드 안전 하 게 저장 하 고 수 보안 정보에 액세스 합니다. 가장 중요 한 점은 소스 코드에서 암호 또는 기타 중요 한 데이터를 저장 하지 않으며 해야 하 고 개발 및 테스트 모드에서 프로덕션 암호를 사용 하지 않아야 합니다.
+> 이 자습서에서는 어떻게 코드 안전 하 게 저장 하 고 수 보안 정보에 액세스 합니다. 무엇보다 중요한 점은 절대로 소스 코드에 암호나 기타 중요한 데이터를 저장하면 안 될 뿐만 아니라, 프로덕션 환경의 보안 정보를 개발 및 테스트 모드에서 사용해서는 안 된다는 것입니다
 > 
 > 샘플 코드는 간단한 WebJob 콘솔 응용 프로그램 및 한 데이터베이스 연결 문자열 암호, Twilio, Google 및 SendGrid 보안 키에 액세스 해야 하는 ASP.NET MVC 응용 프로그램입니다.
 > 
@@ -90,7 +91,7 @@ Visual Studio를 사용 하는 새 ASP.NET 프로젝트를 만듭니다 [LocalDB
 
 Azure에 웹 앱을 배포할 때의 *AppSettingsSecrets.config* (즉, 대상) 파일을 배포 되지 않습니다. 이동 해야 할 수는 [Azure 관리 포털](https://azure.microsoft.com/services/management-portal/) 그렇게 하려면 수동으로 설정 하 고 있습니다.
 
-1. 로 이동 [https://portal.azure.com](https://portal.azure.com), Azure 자격 증명으로 로그인 합니다.
+1. 로 이동 [ https://portal.azure.com ](https://portal.azure.com), Azure 자격 증명으로 로그인 합니다.
 2. 클릭 **찾아보기 &gt; 웹 앱**, 웹 응용 프로그램의 이름을 클릭 합니다.
 3. 클릭 **모든 설정을 &gt; 응용 프로그램 설정**합니다.
 

@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-view
 msc.type: authoredcontent
 ms.openlocfilehash: c9675eb7776116ecbe910d5515abfe9b4391df22
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30873354"
 ---
 <a name="adding-a-view-vb"></a>(VB) 뷰 추가
 ====================
@@ -79,7 +80,7 @@ ms.lasthandoff: 04/06/2018
 
 [!code-vbhtml[Main](adding-a-view/samples/sample5.vbhtml)]
 
-Open *MvcMovie\Views\HelloWorld\Index.vbhtml*. 변경 하는 두 곳: 먼저 텍스트 표시 되는 브라우저의 제목에 찾은 다음 보조 헤더에서 (의 `<h2>` 요소). म 수 있도록 약간 다른는 약간의 코드 변경 응용 프로그램의 어느 부분을 볼 수 있습니다.
+열기 *MvcMovie\Views\HelloWorld\Index.vbhtml*합니다. 변경 하는 두 곳: 먼저 텍스트 표시 되는 브라우저의 제목에 찾은 다음 보조 헤더에서 (의 `<h2>` 요소). म 수 있도록 약간 다른는 약간의 코드 변경 응용 프로그램의 어느 부분을 볼 수 있습니다.
 
 응용 프로그램을 실행 하 고 찾아보기`http://localhost:xx/HelloWorld`합니다. 브라우저 제목, 기본 제목 및 작은 제목이 변경된 것을 확인합니다. 크게 변경 약간 변경 된 응용 프로그램에서 보기에 두는 것이 쉽습니다. (브라우저에서 변경 내용을 확인할 수 없는 경우 캐시된 콘텐츠를 보고 있을 수도 있습니다. 브라우저에서 Ctrl+F5 키를 눌러 로드될 서버에서 응답을 강제로 적용합니다.)
 

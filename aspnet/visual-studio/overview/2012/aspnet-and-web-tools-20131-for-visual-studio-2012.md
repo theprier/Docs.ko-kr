@@ -13,14 +13,15 @@ ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2012/aspnet-and-web-tools-20131-for-visual-studio-2012
 msc.type: authoredcontent
 ms.openlocfilehash: c11e2ef9c33b0cae1f196690533094ce1c342da5
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28036429"
 ---
 <a name="release-notes-for-aspnet-and-web-tools-20131-for-visual-studio-2012"></a>ASP.NET 및 Visual Studio 2012 용 웹 도구 2013.1에 대 한 릴리스 정보
 ====================
-by [Microsoft](https://github.com/microsoft)
+여 [Microsoft](https://github.com/microsoft)
 
 > 이 문서에서는 Visual Studio 2012 용 ASP.NET 및 웹 도구 2013.1의 릴리스를 설명 합니다.
 
@@ -31,7 +32,7 @@ by [Microsoft](https://github.com/microsoft)
 - [소프트웨어 요구 사항](#requirements)
 - ASP.NET 및 Web Tools 2013.1 for Visual Studio 2012의 새로운 기능
 
-    - [Bootstrap](#bootstrap)
+    - [부트스트랩](#bootstrap)
     - [템플릿](#templates)
 
         - [ASP.NET MVC 5 서식 파일](#mvc5template)
@@ -168,7 +169,7 @@ MVC에 대 한이 오류를 해결 하려면 새 스 캐 폴드 항목을 추가
 <a id="browseissue"></a>
 #### <a name="viewing-cshtml-file-withbrowse-withorf5causes-a-server-error"></a>서버 오류 cshtml 파일 withBrowse WithorF5causes 보기
 
-Visual Studio 2012 (또는 Visual Studio 2012 MVC 5 만든 프로젝트를 Visual Studio 2013에서에서 열기)에서 MVC 5 프로젝트를 만들 cshtml 파일 브라우저 또는 f5 키를 사용 하 여 보려고 하는 경우 오류 메시지가 결과로-받습니다 **에서 서버 오류 '/' 응용 프로그램**합니다. 서버를 탐색 하려고 합니다.`http://localhost:XXXX/Views/../XXXX.cshtml`
+Visual Studio 2012 (또는 Visual Studio 2012 MVC 5 만든 프로젝트를 Visual Studio 2013에서에서 열기)에서 MVC 5 프로젝트를 만들 cshtml 파일 브라우저 또는 f5 키를 사용 하 여 보려고 하는 경우 오류 메시지가 결과로-받습니다 **에서 서버 오류 '/' 응용 프로그램**합니다. 서버를 탐색 하려고 합니다. `http://localhost:XXXX/Views/../XXXX.cshtml`
 
 이 문제를 해결 하려면 변경 된 **시작 작업** 프로젝트에서 설정 **특정 페이지**합니다. 페이지에 대 한 값을 제공할 필요가 없습니다.
 

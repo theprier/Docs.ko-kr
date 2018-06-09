@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/views/using-page-inspector-in-aspnet-mvc
 msc.type: authoredcontent
 ms.openlocfilehash: 5b443963a089f96a9dab11b7db4a25451075d6be
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "28034518"
 ---
 <a name="using-page-inspector-in-aspnet-mvc"></a>ASP.NET MVC에서 페이지 검사기 사용
 ====================
@@ -37,14 +38,14 @@ Tim Ammann으로
 > - [페이지 검사기를 사용 하 여 태그를 변경 하려면](#_5_using_page)
 > - [검사 모드 및 HTML 창](#_6_inspection_mode)
 > - [스타일 창에서 CSS 변경 내용 미리 보기](#_7_previewing_css)
-> - [CSS Auto Sync](#css_auto_sync)
+> - [CSS 자동 동기화](#css_auto_sync)
 > - [CSS 색 선택을 사용 하 여](#css_color_picker)
 > - [JavaScript에 매핑 동적 페이지 요소](#map_dynamic_elements)
 
 
 <a id="_prerequisites"></a><a id="_1_prerequisites"></a>
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 - [Visual Studio 2012](https://www.microsoft.com/visualstudio/11) 또는 [Visual Studio Express 2012 for Web](https://www.microsoft.com/visualstudio/11/downloads#express-web)합니다.
 

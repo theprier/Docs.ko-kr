@@ -13,10 +13,11 @@ ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-data-access-layer-cs
 msc.type: authoredcontent
 ms.openlocfilehash: 7e1a457c23ef659bf7ee9c15b66dc5c2d8a31416
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "30891473"
 ---
 <a name="creating-a-data-access-layer-c"></a>데이터 액세스 계층 (C#)을 만들려면
 ====================
@@ -79,12 +80,12 @@ ms.lasthandoff: 04/06/2018
 
 - **GetCategories(),** 하는 모든 범주에 대 한 정보를 반환
 - **GetProducts()**, 하는 모든 제품에 대 한 정보를 반환
-- **GetProductsByCategoryID (*categoryID*)**는 지정된 된 범주에 속하는 모든 제품을 반환 합니다
+- **GetProductsByCategoryID (*categoryID*)** 는 지정된 된 범주에 속하는 모든 제품을 반환 합니다
 - **GetProductByProductID (*productID*)**, 하는 특정 제품에 대 한 정보를 반환
 
 이러한 메서드를 호출 하는 경우 데이터베이스에 연결 하 고 적절 한 쿼리를 실행 하 고 결과 반환 됩니다. 이러한 결과 반환 하는 것이 중요 합니다. 데이터 집합 또는 DataReader 데이터베이스 쿼리를 사용해 이러한 메서드를 반환 하기만 하면 수 있지만 이상적으로 이러한 결과 반환할지를 사용 하 여 *강력한 형식의 개체*합니다. 강력한 형식의 개체는 스키마는 컴파일 타임에 엄격 하 게 정의 된 반면 반대 자유로운 형식의 개체는 스키마 런타임이 될 때까지 알 수 없는 하나.
 
-예를 들어 DataReader와 기본적으로 데이터 집합은 자유로운 형식의 개체 스키마를 채우는 데 사용 되는 데이터베이스 쿼리에서 반환 된 열에 의해 정의 된 이후입니다. 같은 구문을 사용 해야 하는 느슨한 형 DataTable에서 특정 열에 액세스 하려면:  <strong><em>DataTable</em>합니다. 행 [<em>인덱스</em>] ["<em>columnName</em>"]</strong>합니다. 이 예에서 DataTable의 느슨한 입력 문자열 또는 서 수 인덱스를 사용 하 여 열 이름에 액세스 해야 하는 팩트에서 발생 합니다. 강력한 형식의 DataTable 반면에 갖습니다의 각 열 속성으로 구현 되기 때문에 다음과 같은 코드를:  <strong><em>DataTable</em>합니다. 행 [<em>인덱스</em>]. *columnName</strong>*합니다.
+예를 들어 DataReader와 기본적으로 데이터 집합은 자유로운 형식의 개체 스키마를 채우는 데 사용 되는 데이터베이스 쿼리에서 반환 된 열에 의해 정의 된 이후입니다. 같은 구문을 사용 해야 하는 느슨한 형 DataTable에서 특정 열에 액세스 하려면:  <strong><em>DataTable</em>합니다. 행 [<em>인덱스</em>] ["<em>columnName</em>"]</strong>합니다. 이 예에서 DataTable의 느슨한 입력 문자열 또는 서 수 인덱스를 사용 하 여 열 이름에 액세스 해야 하는 팩트에서 발생 합니다. 강력한 형식의 DataTable 반면에 갖습니다의 각 열 속성으로 구현 되기 때문에 다음과 같은 코드를:  <strong><em>DataTable</em>합니다. 행 [<em>인덱스</em>]. *columnName</strong>* 합니다.
 
 강력한 형식의 개체를 반환 하려면 개발자가 자신의 사용자 지정 비즈니스 개체를 만들 하거나 형식화 된 데이터 집합을 사용 합니다. 비즈니스 개체 속성은 일반적으로 비즈니스 개체의 기본 데이터베이스 테이블의 열을 반영 하는 클래스를 나타내는 대로 개발자가 구현 됩니다. 형식화 된 데이터 집합은 데이터베이스 스키마 및 해당 멤버는이 스키마에 따라 강력한 형식에 따라 Visual Studio에서 자동으로 생성 하는 클래스. ADO.NET DataSet, DataTable 및 DataRow 클래스를 확장 하는 클래스의 형식화 된 데이터 집합 자체 구성 됩니다. 뿐만 아니라 강력한 형식의 Datatable 형식화 된 데이터 집합 이제 포함 하는 데이터 집합의 Datatable 채우기 및 수정은 Datatable 내에서 데이터베이스에 다시 전파 하기 위한 메서드를 사용 하 여 클래스입니다.
 
@@ -114,7 +115,7 @@ ms.lasthandoff: 04/06/2018
 
 데이터의 강력한 형식의 컬렉션으로 형식화 된 데이터 집합 사용 강력한 형식의 DataRow 인스턴스의 구성 되어 있으며 각 DataTable 인스턴스 강력한 형식으로 구성 됩니다. 이 자습서 시리즈의 작업할 해야 하는 기본 데이터베이스 테이블의 각 항목에 대 한 강력한 형식의 DataTable를 만듭니다. 에 대 한 데이터 테이블을 만드는 것부터 시작 하겠습니다는 **제품** 테이블입니다.
 
-강력한 형식의 Datatable의 기본 데이터베이스 테이블에서 데이터에 액세스 하는 방법에는 정보를 포함 하지 않는 것을 명심 하십시오. DataTable을 채우는 데 데이터를 검색 하기 위해 데이터 액세스 계층으로 작동 하는 TableAdapter 클래스를 사용 합니다. 에 대 한 우리의 **제품** DataTable TableAdapter에는 메서드가 포함 됩니다 **GetProducts()**, **GetProductByCategoryID (*categoryID*)**등 프레젠테이션 계층에서 호출한입니다. DataTable의 역할은 계층 간에 데이터를 전달 하는 데 사용 하는 강력한 형식의 개체 역할을 합니다.
+강력한 형식의 Datatable의 기본 데이터베이스 테이블에서 데이터에 액세스 하는 방법에는 정보를 포함 하지 않는 것을 명심 하십시오. DataTable을 채우는 데 데이터를 검색 하기 위해 데이터 액세스 계층으로 작동 하는 TableAdapter 클래스를 사용 합니다. 에 대 한 우리의 **제품** DataTable TableAdapter에는 메서드가 포함 됩니다 **GetProducts()**, **GetProductByCategoryID (*categoryID*)** 등 프레젠테이션 계층에서 호출한입니다. DataTable의 역할은 계층 간에 데이터를 전달 하는 데 사용 하는 강력한 형식의 개체 역할을 합니다.
 
 TableAdapter 구성 마법사 사용 하는 데이터베이스를 선택 하 여 시작 합니다. 드롭 다운 목록 서버 탐색기에서 해당 데이터베이스에 나타납니다. 서버 탐색기에 Northwind 데이터베이스를 추가 하지 않은 경우 웹 페이지 그러려면이 이번에 새 연결 단추를 클릭 합니다.
 
@@ -537,7 +538,7 @@ SuppliersAndProducts.aspx.cs
 
 ## <a name="about-the-author"></a>작성자 정보
 
-[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com.](mailto:mitchell@4GuysFromRolla.com) 에서 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
+[Scott Mitchell](http://www.4guysfromrolla.com/ScottMitchell.shtml), 7 ASP/ASP.NET 서적과의 창립자의 작성자 [4GuysFromRolla.com](http://www.4guysfromrolla.com), 1998 이후 Microsoft 웹 기술과 함께 작동 합니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은 [ *Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서*](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)합니다. 에 연결할 수 그 [ mitchell@4GuysFromRolla.com합니다.](mailto:mitchell@4GuysFromRolla.com) 찾을 수 있는 그의 블로그를 통해 또는 [ http://ScottOnWriting.NET ](http://ScottOnWriting.NET)합니다.
 
 ## <a name="special-thanks-to"></a>특별히 감사
 
