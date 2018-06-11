@@ -9,18 +9,18 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/individual
-ms.openlocfilehash: 699def0133f53b922477ac294f70db41998945ef
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: 6d05cd8c0ee6c9029eb9bbafc15d9b19ee7633de
+ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34729552"
+ms.lasthandoff: 06/10/2018
+ms.locfileid: "35252024"
 ---
-# <a name="articles-based-on-aspnet-core-projects-created-with-individual-user-accounts"></a><span data-ttu-id="b309d-103">개별 사용자 계정을 사용 하 여 만든 ASP.NET Core 프로젝트에 따라 문서</span><span class="sxs-lookup"><span data-stu-id="b309d-103">Articles based on ASP.NET Core projects created with individual user accounts</span></span>
+# <a name="articles-based-on-aspnet-core-projects-created-with-individual-user-accounts"></a><span data-ttu-id="61a1c-103">개별 사용자 계정을 사용 하 여 만든 ASP.NET Core 프로젝트에 따라 문서</span><span class="sxs-lookup"><span data-stu-id="61a1c-103">Articles based on ASP.NET Core projects created with individual user accounts</span></span>
 
-<span data-ttu-id="b309d-104">ASP.NET Core Id는 "개별 사용자 계정" 옵션을 사용 하 여 Visual Studio에서 프로젝트 템플릿을에 포함 됩니다.</span><span class="sxs-lookup"><span data-stu-id="b309d-104">ASP.NET Core Identity is included in project templates in Visual Studio with the "Individual User Accounts" option.</span></span>
+<span data-ttu-id="61a1c-104">ASP.NET Core Id는 "개별 사용자 계정" 옵션을 사용 하 여 Visual Studio에서 프로젝트 템플릿을에 포함 됩니다.</span><span class="sxs-lookup"><span data-stu-id="61a1c-104">ASP.NET Core Identity is included in project templates in Visual Studio with the "Individual User Accounts" option.</span></span>
 
-<span data-ttu-id="b309d-105">인증 템플릿와.NET Core CLI에서 사용할 수 있는 `-au Individual`:</span><span class="sxs-lookup"><span data-stu-id="b309d-105">The authentication templates are available in .NET Core CLI with `-au Individual`:</span></span>
+<span data-ttu-id="61a1c-105">인증 템플릿와.NET Core CLI에서 사용할 수 있는 `-au Individual`:</span><span class="sxs-lookup"><span data-stu-id="61a1c-105">The authentication templates are available in .NET Core CLI with `-au Individual`:</span></span>
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -29,6 +29,8 @@ dotnet new mvc -au Individual
 dotnet new webapi -au Individual
 dotnet new webapp -au Individual
 ```
+
+[!INCLUDE[](~/includes/webapp-alias-notice.md)]
 
 ::: moniker-end
 
@@ -42,8 +44,8 @@ dotnet new razor -au Individual
 
 ::: moniker-end
 
-<span data-ttu-id="b309d-106">다음 문서에는 개별 사용자 계정을 사용 하는 ASP.NET Core 서식 파일에서 생성 된 코드를 사용 하는 방법을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="b309d-106">The following articles show how to use the code generated in ASP.NET Core templates that use individual user accounts:</span></span>
+<span data-ttu-id="61a1c-107">다음 문서에는 개별 사용자 계정을 사용 하는 ASP.NET Core 서식 파일에서 생성 된 코드를 사용 하는 방법을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="61a1c-107">The following articles show how to use the code generated in ASP.NET Core templates that use individual user accounts:</span></span>
 
-* [<span data-ttu-id="b309d-107">SMS를 이용한 2단계 인증</span><span class="sxs-lookup"><span data-stu-id="b309d-107">Two-factor authentication with SMS</span></span>](xref:security/authentication/2fa)
-* [<span data-ttu-id="b309d-108">ASP.NET Core의 계정 확인 및 암호 복구</span><span class="sxs-lookup"><span data-stu-id="b309d-108">Account confirmation and password recovery in ASP.NET Core</span></span>](xref:security/authentication/accconfirm)
-* [<span data-ttu-id="b309d-109">권한 부여에 의해 보호 되는 사용자 데이터와 ASP.NET Core 응용 프로그램 만들기</span><span class="sxs-lookup"><span data-stu-id="b309d-109">Create an ASP.NET Core app with user data protected by authorization</span></span>](xref:security/authorization/secure-data)
+* [<span data-ttu-id="61a1c-108">SMS를 이용한 2단계 인증</span><span class="sxs-lookup"><span data-stu-id="61a1c-108">Two-factor authentication with SMS</span></span>](xref:security/authentication/2fa)
+* [<span data-ttu-id="61a1c-109">ASP.NET Core의 계정 확인 및 암호 복구</span><span class="sxs-lookup"><span data-stu-id="61a1c-109">Account confirmation and password recovery in ASP.NET Core</span></span>](xref:security/authentication/accconfirm)
+* [<span data-ttu-id="61a1c-110">권한 부여에 의해 보호 되는 사용자 데이터와 ASP.NET Core 응용 프로그램 만들기</span><span class="sxs-lookup"><span data-stu-id="61a1c-110">Create an ASP.NET Core app with user data protected by authorization</span></span>](xref:security/authorization/secure-data)
