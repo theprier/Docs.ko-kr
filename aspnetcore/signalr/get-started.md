@@ -11,12 +11,12 @@ ms.prod: aspnet-core
 ms.topic: tutorial
 ms.technology: aspnet
 uid: signalr/get-started
-ms.openlocfilehash: ba1db640e5608fd9f5e7fa024283a651bf7772c2
-ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
+ms.openlocfilehash: c71d98f86c15a4c6fbbe400f912123419b4ad076
+ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34819060"
+ms.lasthandoff: 06/10/2018
+ms.locfileid: "35252206"
 ---
 # <a name="get-started-with-signalr-on-aspnet-core"></a>SignalR에서 ASP.NET Core 시작
 
@@ -85,6 +85,8 @@ Visual Studio에 포함 되어는 `Microsoft.AspNetCore.SignalR` 서버 라이�
     dotnet new webapp -o SignalRChat
     ```
 
+    [!INCLUDE[](~/includes/webapp-alias-notice.md)]
+
 2. 사용 하 여 JavaScript 클라이언트 라이브러리를 설치 *npm*합니다.
 
     ```console
@@ -94,7 +96,7 @@ Visual Studio에 포함 되어는 `Microsoft.AspNetCore.SignalR` 서버 라이�
 
 3. 내부 "signalr" 라는 새 폴더 만들기는 *lib* 프로젝트의 폴더에에서 있습니다. 복사는 *signalr.js* 에서 파일을 *node_modules\\ @aspnet\signalr\dist\browser*  이 폴더에 있습니다.
 
------
+---
 
 ## <a name="create-the-signalr-hub"></a>SignalR 허브를 만듭니다.
 

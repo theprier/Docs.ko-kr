@@ -9,12 +9,12 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/secure-data
-ms.openlocfilehash: 36475776966cfb0cb3bb40477798f6e24df9725d
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: 1ffa44d1816284d563b80b2d9a02b7b816116ee1
+ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34688454"
+ms.lasthandoff: 06/10/2018
+ms.locfileid: "35252115"
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>권한 부여에 의해 보호 되는 사용자 데이터와 ASP.NET Core 응용 프로그램 만들기
 
@@ -309,6 +309,8 @@ Visual Studio 코드를 사용 하 여 이거나 HTTPS에 대 한 테스트 인�
   ```console
   dotnet new webapp -o ContactManager -au Individual -uld
   ```
+
+  [!INCLUDE[](~/includes/webapp-alias-notice.md)]
 
 ::: moniker-end
 

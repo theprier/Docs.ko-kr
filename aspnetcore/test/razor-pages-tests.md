@@ -10,12 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: test/razor-pages-tests
-ms.openlocfilehash: 460c35754750691d3d940dac04d06823083133c2
-ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
+ms.openlocfilehash: df74d8e44b2dff00e76139edba47fd8a30ce33ef
+ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "35217697"
+ms.lasthandoff: 06/10/2018
+ms.locfileid: "35252307"
 ---
 # <a name="razor-pages-unit-tests-in-aspnet-core"></a>ASP.NET Core에서 razor 페이지 단위 테스트
 
@@ -34,7 +34,7 @@ ASP.NET Core Razor 페이지 응용 프로그램의 단위 테스트를 지원�
 * [Razor 페이지 시작](xref:tutorials/razor-pages/razor-pages-start)
 * [에서 단위 테스트 C#.NET Core dotnet 테스트, xUnit를 사용 하 여](/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/tests/razor-pages-tests/samples/)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/test/razor-pages-tests/samples)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 샘플 프로젝트에는 두 응용 프로그램이 구성 됩니다.
 
