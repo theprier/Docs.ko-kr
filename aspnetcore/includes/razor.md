@@ -1,7 +1,7 @@
-이 자습서에서는 컨트롤러와 보기를 사용하여 ASP.NET Core MVC 웹 배포에 대해 설명합니다. Razor Pages는 ASP.NET Core 2.0의 새로운 대체 기능으로, 웹 UI를 쉽게 빌드하고 생산성을 높일 수 있는 페이지 기반 프로그래밍 모델입니다. MVC 버전 이전의 [Razor 페이지](xref:tutorials/razor-pages/razor-pages-start) 자습서를 사용해 보는 것이 좋습니다. Razor 페이지 자습서:
+<span data-ttu-id="d7267-101">이 자습서에서는 컨트롤러와 보기를 사용하여 ASP.NET Core MVC 웹 배포에 대해 설명합니다.</span><span class="sxs-lookup"><span data-stu-id="d7267-101">This tutorial teaches ASP.NET Core MVC web development with controllers and views.</span></span> <span data-ttu-id="d7267-102">Razor 페이지는 ASP.NET Core 2.0 이상의 새로운 대체 기능으로, 웹 UI를 쉽게 빌드하고 생산성을 높일 수 있는 페이지 기반 프로그래밍 모델입니다.</span><span class="sxs-lookup"><span data-stu-id="d7267-102">Razor Pages is a new alternative in ASP.NET Core 2.0 and later, a page-based programming model that makes building web UI easier and more productive.</span></span> <span data-ttu-id="d7267-103">MVC 버전 이전의 [Razor 페이지](xref:tutorials/razor-pages/razor-pages-start) 자습서를 사용해 보는 것이 좋습니다.</span><span class="sxs-lookup"><span data-stu-id="d7267-103">We recommend you try the [Razor Pages](xref:tutorials/razor-pages/razor-pages-start) tutorial before the MVC version.</span></span> <span data-ttu-id="d7267-104">Razor 페이지 자습서:</span><span class="sxs-lookup"><span data-stu-id="d7267-104">The Razor Pages tutorial:</span></span>
 
-* 새 응용 프로그램 개발을 위해 선호되는 방법입니다.
-* 자습서 내용을 좀 더 쉽게 진행할 수 있습니다.
-* 더 많은 기능을 다룹니다.
+* <span data-ttu-id="d7267-105">새 응용 프로그램 개발을 위해 선호되는 방법입니다.</span><span class="sxs-lookup"><span data-stu-id="d7267-105">Is the preferred approach for new application development.</span></span>
+* <span data-ttu-id="d7267-106">자습서 내용을 좀 더 쉽게 진행할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d7267-106">Is easier to follow.</span></span>
+* <span data-ttu-id="d7267-107">더 많은 기능을 다룹니다.</span><span class="sxs-lookup"><span data-stu-id="d7267-107">Covers more features.</span></span>
 
-[Razor 페이지](xref:tutorials/razor-pages/razor-pages-start) 버전에 대한 이 자습서를 선택하시는 경우 [이 GitHub 문제](https://github.com/aspnet/Docs/issues/6146)에서 선택 이유를 알려주세요.
+<span data-ttu-id="d7267-108">[Razor 페이지](xref:tutorials/razor-pages/razor-pages-start) 버전에 대한 이 자습서를 선택하시는 경우 [이 GitHub 문제](https://github.com/aspnet/Docs/issues/6146)에서 선택 이유를 알려주세요.</span><span class="sxs-lookup"><span data-stu-id="d7267-108">If you choose this tutorial over the [Razor Pages](xref:tutorials/razor-pages/razor-pages-start) version, let us know why in [this GitHub issue](https://github.com/aspnet/Docs/issues/6146).</span></span>
