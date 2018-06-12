@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: mvc/razor-pages/index
-ms.openlocfilehash: 651d47ce20f3269340f0796f487e2f1a2a155710
-ms.sourcegitcommit: 0063338c2e130409081bb60fcffa0c3f190cd46a
+ms.openlocfilehash: c8611ef9218711410cde9e142202fa25c3e51862
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34729460"
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core의 Razor 페이지 소개
 
@@ -40,17 +41,47 @@ Visual Studio를 사용하여 Razor 페이지 프로젝트를 만드는 방법�
 
 # <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
 
+::: moniker range=">= aspnetcore-2.1"
+
+명령줄에서 `dotnet new webapp`를 실행합니다.
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
 명령줄에서 `dotnet new razor`를 실행합니다.
+
+::: moniker-end
 
 Mac용 Visual Studio에서 생성된 *.csproj* 파일을 엽니다.
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code) 
 
+::: moniker range=">= aspnetcore-2.1"
+
+명령줄에서 `dotnet new webapp`를 실행합니다.
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
 명령줄에서 `dotnet new razor`를 실행합니다.
+
+::: moniker-end
 
 # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli) 
 
+::: moniker range=">= aspnetcore-2.1"
+
+명령줄에서 `dotnet new webapp`를 실행합니다.
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
 명령줄에서 `dotnet new razor`를 실행합니다.
+
+::: moniker-end
 
 ---
 
@@ -116,7 +147,7 @@ db 컨텍스트:
 
 일반적으로 `PageModel` 클래스를 `<PageName>Model`이라고 하고 이 클래스는 페이지와 동일한 네임스페이스에 있습니다.
 
-`PageModel` 클래스를 사용하면 해당 프레젠테이션에서 페이지의 논리를 분리합니다. 페이지에 전송된 요청 및 페이지를 렌더링하는 데 사용되는 데이터에 대한 페이지 처리기를 정의합니다. 이렇게 분리하면 [종속성 주입](xref:fundamentals/dependency-injection)을 통해 페이지 종속성을 관리할 수 있고 [단위 테스트](xref:testing/razor-pages-testing)를 페이지로 관리할 수 있습니다.
+`PageModel` 클래스를 사용하면 해당 프레젠테이션에서 페이지의 논리를 분리합니다. 페이지에 전송된 요청 및 페이지를 렌더링하는 데 사용되는 데이터에 대한 페이지 처리기를 정의합니다. 이렇게 분리하면 [종속성 주입](xref:fundamentals/dependency-injection)을 통해 페이지 종속성을 관리할 수 있고 [단위 테스트](xref:test/razor-pages-tests)를 페이지로 관리할 수 있습니다.
 
 페이지에는 `POST` 요청에서 실행되는 `OnPostAsync` *처리기 메서드*가 있습니다(사용자가 폼을 게시할 때). HTTP 동사에 대한 처리기 메서드를 추가할 수 있습니다. 가장 일반적인 처리기는 다음과 같습니다.
 
@@ -502,4 +533,4 @@ services.AddMvc()
 * [Razor 페이지 시작](xref:tutorials/razor-pages/razor-pages-start)
 * [Razor 페이지 권한 부여 규칙](xref:security/authorization/razor-pages-authorization)
 * [Razor 페이지 사용자 지정 경로 및 페이지 모델 공급자](xref:mvc/razor-pages/razor-pages-conventions)
-* [Razor 페이지 단위 및 통합 테스트](xref:testing/razor-pages-testing)
+* [Razor 페이지 단위 테스트](xref:test/razor-pages-tests)

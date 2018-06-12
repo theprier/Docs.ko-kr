@@ -9,11 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/index
-ms.openlocfilehash: 9cd14a47a512c2a887614e617dd914dbdb25cb9d
-ms.sourcegitcommit: 01db73f2f7ac22b11ea48a947131d6176b0fe9ad
+ms.openlocfilehash: 019224e86f1f5583ce0f212d8be70e8829274c7e
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/26/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34688441"
 ---
 # <a name="aspnet-core-tutorials"></a>ASP.NET Core 자습서
 
@@ -39,7 +40,7 @@ ASP.NET Core 응용 프로그램을 개발하기 위해 다음 단계별 가이�
 * [Visual Studio를 사용하여 ASP.NET Core 및 Entity Framework Core 시작](xref:data/ef-mvc/index)
 * [태그 도우미 만들기](xref:mvc/views/tag-helpers/authoring)
 * [간단한 뷰 구성 요소 만들기](xref:mvc/views/view-components#walkthrough-creating-a-simple-view-component)
-* [dotnet watch를 사용하여 ASP.NET Core 앱 개발](xref:tutorials/dotnet-watch)
+* [파일 감시자를 사용하여 앱 개발](xref:tutorials/dotnet-watch)
 
 ## <a name="build-web-apis"></a>웹 API 개발
 * ASP.NET Core를 사용하여 Web API 만들기
