@@ -6,16 +6,17 @@ manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
 ms.custom: mvc
-ms.date: 05/09/2018
+ms.date: 05/29/2018
 ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: signalr/javascript-client
-ms.openlocfilehash: 1701d9ac5222bf64f9690c1cecdf54ef95fe4a49
-ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
+ms.openlocfilehash: 6ff888d3337bb53d435744009f4cc24b327ebcda
+ms.sourcegitcommit: 7e87671fea9a5f36ca516616fe3b40b537f428d2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 06/12/2018
+ms.locfileid: "35341940"
 ---
 # <a name="aspnet-core-signalr-javascript-client"></a>ASP.NET SignalR JavaScript 코어 클라이언트
 
@@ -78,7 +79,7 @@ JavaScript 클라이언트 공용 메서드를 호출 하 여 허브를 사용 �
 
 위의 코드에서 `connection.on` 서버 쪽 코드를 사용 하 여 호출할 때 실행 되는 `SendAsync` 메서드.
 
-[!code-javascript[Call client-side](javascript-client/sample/hubs/chathub.cs?range=8-11)]
+[!code-csharp[Call client-side](javascript-client/sample/hubs/chathub.cs?range=8-11)]
 
 SignalR 메서드 이름과 일치 하 여 호출 클라이언트 방법을 결정 하 고 인수에 정의 된 `SendAsync` 및 `connection.on`합니다.
 
@@ -104,5 +105,7 @@ SignalR 메서드 이름과 일치 하 여 호출 클라이언트 방법을 결�
 
 ## <a name="related-resources"></a>관련 참고 자료
 
-* [ASP.NET Core SignalR 허브](xref:signalr/hubs)
+* [허브](xref:signalr/hubs)
+* [.NET 클라이언트](xref:signalr/dotnet-client)
+* [Azure에 게시](xref:signalr/publish-to-azure-web-app)
 * [ASP.NET Core에서 크로스-원본 요청 (CORS)를 사용 하도록 설정](xref:security/cors)

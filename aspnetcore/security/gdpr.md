@@ -1,21 +1,22 @@
 ---
 title: 일반 데이터 보호 규정 (GDPR)에서 ASP.NET Core 지원
 author: rick-anderson
-description: 웹 응용 프로그램에서 ASP.NET Core GDPR 확장 지점에 액세스 하는 방법을 보여 줍니다.
+description: ASP.NET Core 웹 앱에서 GDPR 확장 지점에 액세스 하는 방법에 알아봅니다.
 manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
-ms.date: 5/29/2018
+ms.custom: mvc
+ms.date: 05/29/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/gdpr
-ms.openlocfilehash: 92a7000f4f8e4c2097065cb530fe106ef0e98545
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: c3c8a3fcd4a303aea65c57ff6be2ff0434383f33
+ms.sourcegitcommit: 7e87671fea9a5f36ca516616fe3b40b537f428d2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34688629"
+ms.lasthandoff: 06/12/2018
+ms.locfileid: "35341927"
 ---
 # <a name="eu-general-data-protection-regulation-gdpr-support-in-aspnet-core"></a>ASP.NET Core의 EU 일반 데이터 보호 규정 (GDPR) 지원
 
@@ -24,7 +25,7 @@ ms.locfileid: "34688629"
 ASP.NET Core Api 및 서식 파일 중 일부를 충족 하기 위해 제공 된 [EU 일반 데이터 보호 규정 (GDPR)](https://www.eugdpr.org/) 요구 사항:
 
 * 프로젝트 템플릿 등이 확장점 스텁된 태그 개인 정보 및 쿠키 사용 정책으로 바꿀 수 있습니다.
-* 쿠키 동의 기능을 사용 하면 동의 요청 (및 추적할) 사용자가 개인 정보를 저장 합니다. 사용자가 데이터 수집에 동의 하지 및 응용 프로그램으로 설정 된 경우 [CheckConsentNeeded](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyoptions.checkconsentneeded?view=aspnetcore-2.1#Microsoft_AspNetCore_Builder_CookiePolicyOptions_CheckConsentNeeded) 를 `true`, 브라우저에 필수적이 지 않은 쿠키를 전송 되지 것입니다.
+* 쿠키 동의 기능을 사용 하면 동의 요청 (및 추적할) 사용자가 개인 정보를 저장 합니다. 사용자가 데이터 수집에 동의 하지 및 응용 프로그램으로 설정 된 경우 [CheckConsentNeeded](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyoptions.checkconsentneeded) 를 `true`, 브라우저에 필수적이 지 않은 쿠키를 전송 되지 것입니다.
 * 기본적인 쿠키를 표시할 수 있습니다. 필수 쿠키는 사용자가 동의 하지 추적을 사용할 수 없습니다. 경우에 브라우저에 전송 됩니다.
 * [TempData 및 세션 쿠키](#tempdata) 추적을 사용 하지 않도록 설정 하는 경우에 작동 하지 않습니다.
 * [Identity 관리](#pd) 페이지를 다운로드 하 여 사용자 데이터를 삭제 한 링크를 제공 합니다.
@@ -37,18 +38,18 @@ ASP.NET Core Api 및 서식 파일 중 일부를 충족 하기 위해 제공 된
 
 Razor 페이지 및 MVC 프로젝트 템플릿을 사용 하 여 만든 프로젝트에는 다음 GDPR 지원을 포함 합니다.
 
-* [CookiePolicyOptions](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyoptions?view=aspnetcore-2.0) 및 [UseCookiePolicy](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyappbuilderextensions.usecookiepolicy?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_CookiePolicyAppBuilderExtensions_UseCookiePolicy_Microsoft_AspNetCore_Builder_IApplicationBuilder_) 에 설정 된 `Startup`합니다.
+* [CookiePolicyOptions](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyoptions) 및 [UseCookiePolicy](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyappbuilderextensions.usecookiepolicy) 에 설정 된 `Startup`합니다.
 * *_CookieConsentPartial.cshtml* [부분 뷰](xref:mvc/views/tag-helpers/builtin-th/partial-tag-helper)합니다.
 * *Pages/Privacy.cshtml* 또는 *Home/Privacy.cshtml* 보기 사이트의 개인 정보 취급 방침에 자세히 설명 하는 페이지를 제공 합니다. *_CookieConsentPartial.cshtml* 파일 개인 정보 페이지에 대 한 링크를 생성 합니다.
 * 개별 사용자 계정을 사용 하 여 만든 응용 프로그램에 대 한 관리 페이지를 다운로드 하 여 삭제는 링크를 제공 [개인 사용자 데이터](#pd)합니다.
 
 ### <a name="cookiepolicyoptions-and-usecookiepolicy"></a>CookiePolicyOptions 및 UseCookiePolicy
 
-[CookiePolicyOptions](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyoptions?view=aspnetcore-2.0) 에서 초기화 되는 `Startup` 클래스 `ConfigureServices` 메서드:
+[CookiePolicyOptions](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyoptions) 에서 초기화 되는 `Startup` 클래스 `ConfigureServices` 메서드:
 
 [!code-csharp[Main](gdpr/sample/Startup.cs?name=snippet1&highlight=14-20)]
 
-[UseCookiePolicy](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyappbuilderextensions.usecookiepolicy?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_CookiePolicyAppBuilderExtensions_UseCookiePolicy_Microsoft_AspNetCore_Builder_IApplicationBuilder_) 에서 호출 되는 `Startup` 클래스 `Configure` 메서드:
+[UseCookiePolicy](/dotnet/api/microsoft.aspnetcore.builder.cookiepolicyappbuilderextensions.usecookiepolicy) 에서 호출 되는 `Startup` 클래스 `Configure` 메서드:
 
 [!code-csharp[Main](gdpr/sample/Startup.cs?name=snippet1&highlight=49)]
 
@@ -94,7 +95,7 @@ Razor 페이지 및 MVC 프로젝트 템플릿을 사용 하 여 만든 프로�
 
 * 생성 하는 `Account/Manage` 코드 참조, [스 캐 폴드 Identity](xref:security/authentication/scaffold-identity)합니다.
 * 삭제 하 고 영향 기본 id 데이터를 다운로드 합니다. 앱 사용자 지정 사용자 데이터 만들기 삭제/다운로드 사용자 지정 사용자 데이터를 확장 해야 합니다. GitHub 문제 [Id에 사용자 지정 사용자 데이터를 추가/삭제 하는 방법을](https://github.com/aspnet/Docs/issues/6226) 사용자 지정/삭제/다운로드 사용자 지정 사용자 데이터를 만드는 방법에 제안 된 문서를 추적 합니다. 우선 순위를 지정 하는 항목을 참조 하려는 경우에 문제에 반응을 엄지 둡니다.
-* Id 데이터베이스 테이블에 저장 된 사용자에 대 한 토큰을 저장 `AspNetUserTokens` 사용자로 인해 연계 삭제 동작을 통해 삭제 될 때 삭제 되는 [외래 키](https://github.com/aspnet/Identity/blob/b4fc72c944e0589a7e1f076794d7e5d8dcf163bf/src/EF/IdentityUserContext.cs#L152)합니다.
+* Id 데이터베이스 테이블에 저장 된 사용자에 대 한 토큰을 저장 `AspNetUserTokens` 사용자로 인해 연계 삭제 동작을 통해 삭제 될 때 삭제 되는 [외래 키](https://github.com/aspnet/Identity/blob/release/2.1/src/EF/IdentityUserContext.cs#L152)합니다.
 
 ## <a name="encryption-at-rest"></a>미사용 데이터 암호화
 
@@ -107,17 +108,17 @@ Razor 페이지 및 MVC 프로젝트 템플릿을 사용 하 여 만든 프로�
 
 예를 들어:
 
-* Microsoft SQL 및 Azure SQL 제공 [투명 한 데이터 암호화](https://docs.microsoft.com/en-us/sql/relational-databases/security/encryption/transparent-data-encryption?view=sql-server-2017) (TDE).
-* [기본적으로 데이터베이스를 암호화 하는 SQL Azure](https://azure.microsoft.com/en-us/updates/newly-created-azure-sql-databases-encrypted-by-default/)
-* [기본적으로 암호화 되어 azure Blob, 파일, 테이블 및 큐 저장소](https://azure.microsoft.com/en-us/blog/announcing-default-encryption-for-azure-blobs-files-table-and-queue-storage/)합니다.
+* Microsoft SQL 및 Azure SQL 제공 [투명 한 데이터 암호화](/sql/relational-databases/security/encryption/transparent-data-encryption) (TDE).
+* [기본적으로 데이터베이스를 암호화 하는 SQL Azure](https://azure.microsoft.com/updates/newly-created-azure-sql-databases-encrypted-by-default/)
+* [기본적으로 암호화 되어 azure Blob, 파일, 테이블 및 큐 저장소](https://azure.microsoft.com/blog/announcing-default-encryption-for-azure-blobs-files-table-and-queue-storage/)합니다.
 
 기본 제공 암호화를 제공 하지 않는 데이터베이스에 대 한 동일한 보호를 제공 하 디스크 암호화를 사용할 수 있습니다. 예를 들어:
 
-* [Windows 서버에 대 한 Bitlocker](https://docs.microsoft.com/en-us/windows/security/information-protection/bitlocker/bitlocker-how-to-deploy-on-windows-server)
+* [Windows Server에 대 한 BitLocker](/windows/security/information-protection/bitlocker/bitlocker-how-to-deploy-on-windows-server)
 * Linux:
   * [eCryptfs](https://launchpad.net/ecryptfs)
   * [EncFS](https://github.com/vgough/encfs)합니다.
 
 ## <a name="additional-resources"></a>추가 리소스
 
-* [Microsoft.com/GDPR](https://www.microsoft.com/en-us/trustcenter/Privacy/GDPR)
+* [Microsoft.com/GDPR](https://www.microsoft.com/trustcenter/Privacy/GDPR)

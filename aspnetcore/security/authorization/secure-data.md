@@ -9,12 +9,12 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/secure-data
-ms.openlocfilehash: 1ffa44d1816284d563b80b2d9a02b7b816116ee1
-ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
+ms.openlocfilehash: 0b67d4aef198aa418b54fb92db76d331ffa2785a
+ms.sourcegitcommit: 0d6f151e69c159d776ed0142773279e645edbc0a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/10/2018
-ms.locfileid: "35252115"
+ms.lasthandoff: 06/13/2018
+ms.locfileid: "35415035"
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>권한 부여에 의해 보호 되는 사용자 데이터와 ASP.NET Core 응용 프로그램 만들기
 
@@ -111,7 +111,7 @@ Visual Studio를 사용 하는 경우에 HTTPS를 활성화 합니다.
 
 참조를 HTTPS로 HTTP 요청을 리디렉션할 [URL 다시 쓰기 미들웨어](xref:fundamentals/url-rewriting)합니다. Visual Studio 코드를 사용 하 여 이거나 HTTPS에 대 한 테스트 인증서를 포함 되지 않은 로컬 플랫폼에 대 한 테스트:
 
-  설정 `"LocalTest:skipSSL": true` 에 *appsettings 합니다. Developement.json* 파일입니다.
+  설정 `"LocalTest:skipHTTPS": true` 에 *appsettings 합니다. Developement.json* 파일입니다.
 
 ### <a name="require-authenticated-users"></a>인증 된 사용자가 필요 합니다.
 
@@ -273,7 +273,7 @@ Delete 페이지 모델 사용자에 게 연락처에 delete 권한을 확인 �
 
 Visual Studio 코드를 사용 하 여 이거나 HTTPS에 대 한 테스트 인증서를 포함 되지 않은 로컬 플랫폼에 대 한 테스트:
 
-* 설정 `"LocalTest:skipSSL": true` 에 *appsettings 합니다. Developement.json* HTTPS 요구 사항이 하 파일입니다. 개발 컴퓨터에만 Skip HTTPS입니다.
+* 설정 `"LocalTest:skipHTTPS": true` 에 *appsettings 합니다. Developement.json* HTTPS 요구 사항이 하 파일입니다. 개발 컴퓨터에만 Skip HTTPS입니다.
 
 응용 프로그램에 연락처 하는 경우:
 

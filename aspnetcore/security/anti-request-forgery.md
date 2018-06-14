@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/anti-request-forgery
-ms.openlocfilehash: ad50f8b261447d40ccc24c0ee006239aa976bf20
-ms.sourcegitcommit: 7d02ca5f5ddc2ca3eb0258fdd6996fbf538c129a
+ms.openlocfilehash: 3bca96f4a2e247eeeb93140df93221371d88d4d3
+ms.sourcegitcommit: 7e87671fea9a5f36ca516616fe3b40b537f428d2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/03/2018
+ms.lasthandoff: 06/12/2018
+ms.locfileid: "35341862"
 ---
 # <a name="prevent-cross-site-request-forgery-xsrfcsrf-attacks-in-aspnet-core"></a>ASP.NET Core 공격 방지 교차 사이트 요청 위조 XSRF/CSRF)
 
@@ -43,11 +44,13 @@ CSRF 공격의 예:
 1. 제출 단추를 선택합니다. 브라우저 요청을 수행 하 고 요청 된 도메인에 대 한 인증 쿠키를 자동으로 포함 `www.good-banking-site.com`합니다.
 1. 요청에서 실행 되는 `www.good-banking-site.com` 사용자의 인증 컨텍스트를 사용 하는 서버 인증된 된 사용자가을 수행할 수 있는 모든 작업을 수행할 수 있습니다.
 
-사용자가 양식을 전송 하는 단추를 선택 하는 경우 악성 사이트 수행할 수 있습니다.
+사용자가 양식을 전송 하는 단추를 선택 하는 시나리오 뿐 아니라 악성 사이트는 다음을 수행할 수 있습니다.
 
 * 폼을 자동으로 전송 하는 스크립트를 실행 합니다.
-* 양식을 제출을 하 여 AJAX 요청으로 보냅니다. 
-* Css 숨겨진된 폼을 사용 합니다. 
+* 양식 전송이 AJAX 요청으로 보냅니다.
+* CSS를 사용 하 여 폼을 숨깁니다.
+
+이러한 다양 한 시나리오는 모든 작업 또는 처음 악성 사이트를 방문 이외의 사용자의 입력에 필요 하지 않습니다.
 
 HTTPS를 사용 하 여 CSRF 공격을 방지 하지 않습니다. 악성 사이트로 보낼 수는 `https://www.good-banking-site.com/` 안전 하지 않은 요청을 보낼 수 처럼 손쉽게 요청 합니다.
 

@@ -10,12 +10,12 @@ ms.date: 01/26/2017
 ms.prod: asp.net-core
 ms.topic: article
 uid: performance/caching/middleware
-ms.openlocfilehash: 7ceccffa39baf5f13d63c26e78c64a595bb42f60
-ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
+ms.openlocfilehash: abf07ec2d2692a8504caea243eacead6aa6e1a62
+ms.sourcegitcommit: 7e87671fea9a5f36ca516616fe3b40b537f428d2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34734499"
+ms.lasthandoff: 06/12/2018
+ms.locfileid: "35341706"
 ---
 # <a name="response-caching-middleware-in-aspnet-core"></a>ASP.NET Core의 응답 캐싱 미들웨어
 
@@ -27,7 +27,7 @@ ms.locfileid: "34734499"
 
 ## <a name="package"></a>패키지
 
-미들웨어를 프로젝트에 포함 하려면에 대 한 참조를 추가 [Microsoft.AspNetCore.ResponseCompression](https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCompression/) 패키지 하거나 사용 하 여는 [Microsoft.AspNetCore.App metapackage](xref:fundamentals/metapackage-app)에서 사용 하기 위해 사용할 수 ASP.NET Core 2.1 이상
+미들웨어를 프로젝트에 포함 하려면에 대 한 참조를 추가 [Microsoft.AspNetCore.ResponseCaching](https://www.nuget.org/packages/Microsoft.AspNetCore.ResponseCaching/) 패키지 하거나 사용 하 여는 [Microsoft.AspNetCore.App metapackage](xref:fundamentals/metapackage-app), ASP에서 사용 하기 위해 사용할 수 있습니다. NET 핵심 2.1 이상입니다.
 
 ## <a name="configuration"></a>구성
 
