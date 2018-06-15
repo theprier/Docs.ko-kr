@@ -4,12 +4,17 @@
 
 [종속성 주입](xref:fundamentals/dependency-injection)에 대한 기본 제공 지원을 사용하여 서비스 컨테이너에 DB 컨텍스트를 등록합니다. *Startup.cs* 파일의 내용을 다음 코드로 바꿉니다.
 
-::: moniker range="<= aspnetcore-2.0"
-[!code-csharp[](../../tutorials/first-web-api/samples/2.0/TodoApi/Startup.cs?highlight=2,4,12-13)]
-::: moniker-end
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](../../tutorials/first-web-api/samples/2.1/TodoApi/Startup.cs?highlight=3,5,13-14)]
+
 ::: moniker-end
+
+::: moniker range="<= aspnetcore-2.0"
+
+[!code-csharp[](../../tutorials/first-web-api/samples/2.0/TodoApi/Startup.cs?highlight=2,4,12-13)]
+
+::: moniker-end  
 
 위의 코드:
 
