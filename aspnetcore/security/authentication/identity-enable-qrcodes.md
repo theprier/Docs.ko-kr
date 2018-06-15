@@ -9,11 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/identity-enable-qrcodes
-ms.openlocfilehash: c61918d42b407b01484b67d740edc7a682c3a4b0
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 463c1c7b3aef624622e34943f1a7a518e658a037
+ms.sourcegitcommit: 4e3497bda0c3e5011ffba3717eb61a1d46c61c15
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 06/14/2018
+ms.locfileid: "35613036"
 ---
 # <a name="enable-qr-code-generation-for-authenticator-apps-in-aspnet-core"></a>ASP.NET Core에서 인증자 앱에 대 한 QR 코드 생성 사용
 
@@ -89,4 +90,4 @@ QR 코드에 대 한 올바른 형식의 URL은에서 사용할 수는 있습니
 
 ## <a name="totp-client-and-server-time-skew"></a>TOTP 클라이언트 및 서버 시간 차가
 
-TOTP 인증 서버와 인증자 장치 정확한 시간을 필요에 따라 달라 집니다. 토큰 30 초만 지속 됩니다. TOTP 2FA 로그인 실패 하는 경우 서버 시간이 정확 하 고 정확한 NTP 서비스에 동기화 된 가급적 인지 확인 합니다.
+TOTP (시간 기반 일회성 암호) 인증 서버와 인증자 장치 정확한 시간을 필요에 따라 달라 집니다. 토큰 30 초만 지속 됩니다. TOTP 2FA 로그인 실패 하는 경우 서버 시간이 정확 하 고 정확한 NTP 서비스에 동기화 된 가급적 인지 확인 합니다.

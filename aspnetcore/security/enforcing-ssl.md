@@ -9,12 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/enforcing-ssl
-ms.openlocfilehash: 69ce182855878e4d05bff95139fefb9e1312f3d5
-ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
+ms.openlocfilehash: 48a25b7ba7affe84cfa6fe16096409239c510221
+ms.sourcegitcommit: 40b102ecf88e53d9d872603ce6f3f7044bca95ce
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/10/2018
-ms.locfileid: "35252076"
+ms.lasthandoff: 06/15/2018
+ms.locfileid: "35652190"
 ---
 # <a name="enforce-https-in-aspnet-core"></a>ASP.NET Core에 HTTPS를 적용 합니다.
 
@@ -48,8 +48,8 @@ ms.locfileid: "35252076"
 
 앞의 강조 표시 된 코드:
 
-* 집합 [HttpsRedirectionOptions.RedirectStatusCode](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.redirectstatuscode)합니다.
-* 5001를 HTTPS 포트를 설정합니다.
+* 집합 [HttpsRedirectionOptions.RedirectStatusCode](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.redirectstatuscode) 를 `Status307TemporaryRedirect`, 기본값은입니다. 프로덕션 응용 프로그램 호출 해야 [UseHsts](#hsts)합니다.
+* 5001를 HTTPS 포트를 설정합니다. 기본값은 443입니다.
 
 다음과 같은 메커니즘 포트를 자동으로 설정합니다.
 
@@ -77,6 +77,11 @@ ms.locfileid: "35252076"
 * 요청을 리디렉션할 되지 않습니다.
 * 미들웨어는 경고를 기록 합니다.
 
+> [!NOTE]
+> HTTPS 리디렉션 미들웨어를 사용 하는 대신 (`UseHttpsRedirection`) URL 다시 쓰기 미들웨어를 사용 하는 것 (`AddRedirectToHttps`). `AddRedirectToHttps` 리디렉션 실행 될 때 상태 코드 및 포트를 설정할 수도 있습니다. 자세한 내용은 참조 [URL 다시 쓰기 미들웨어](xref:fundamentals/url-rewriting)합니다.
+>
+> 추가 리디렉션 규칙에 대 한 요구 사항 없이 HTTPS로 리디렉션할 때 HTTPS 리디렉션 미들웨어를 사용 하는 것이 좋습니다 (`UseHttpsRedirection`)이이 항목에서 설명 합니다.
+
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.1"
@@ -89,7 +94,7 @@ ms.locfileid: "35252076"
 
 [!code-csharp[](authentication/accconfirm/sample/WebApp1/Startup.cs?name=snippet_AddRedirectToHttps&highlight=7-999)]
 
-자세한 내용은 참조 [URL 다시 쓰기 미들웨어](xref:fundamentals/url-rewriting)합니다.
+자세한 내용은 참조 [URL 다시 쓰기 미들웨어](xref:fundamentals/url-rewriting)합니다. 미들웨어는 또한 리디렉션 실행 될 때 상태 코드 또는 상태 코드와 포트를 설정 하려면 응용 프로그램을 수 있습니다.
 
 전역으로 HTTPS를 요구하는 것이 보안상 가장 안전한 모범 사례입니다 (`options.Filters.Add(new RequireHttpsAttribute());`). 적용 된 `[RequireHttps]` 모든 컨트롤러/Razor 페이지에는 특성으로 전체적으로 HTTPS를 필요로 하는 컨트롤로 안전 하다 고 간주 되지 않습니다. 보장할 수는 `[RequireHttps]` 특성은 새 컨트롤러 및 Razor 페이지 추가 될 때 적용 됩니다.
 

@@ -9,12 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/facebook-logins
-ms.openlocfilehash: cabb5acc6e593c02c20b3403b39c601ce26a4d99
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: f9c28930c1f8a9c54792a2f689d890f16d795a55
+ms.sourcegitcommit: 4e3497bda0c3e5011ffba3717eb61a1d46c61c15
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34688985"
+ms.lasthandoff: 06/14/2018
+ms.locfileid: "35613111"
 ---
 # <a name="facebook-external-login-setup-in-aspnet-core"></a>ASP.NET Core에서 Facebook 외부 로그인 설정
 
@@ -47,6 +47,9 @@ ms.locfileid: "34688985"
 ![클라이언트 OAuth 설정 페이지](index/_static/FBOAuthSetup.png)
 
 * 개발 URI를 입력으로 */signin-facebook* 에 추가 **유효한 OAuth 리디렉션 Uri** 필드 (예: `https://localhost:44320/signin-facebook`). 이 자습서의 뒷부분에 나오는 구성 된 Facebook 인증에는 요청을 자동으로 처리할 */signin-facebook* OAuth 흐름을 구현 하는 경로입니다.
+
+> [!NOTE]
+> URI */signin-facebook* Facebook 인증 공급자의 기본 콜백으로 설정 됩니다. 상속 된 통해 Facebook 인증 미들웨어를 구성 하는 동안 기본 콜백 URI를 변경할 수 있습니다 [RemoteAuthenticationOptions.CallbackPath](/dotnet/api/microsoft.aspnetcore.authentication.remoteauthenticationoptions.callbackpath) 의 속성은 [FacebookOptions](/dotnet/api/microsoft.aspnetcore.authentication.facebook.facebookoptions) 클래스입니다.
 
 * 클릭 **ब ा ळ**합니다.
 
