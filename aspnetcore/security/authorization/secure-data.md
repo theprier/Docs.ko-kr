@@ -9,12 +9,12 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authorization/secure-data
-ms.openlocfilehash: 0b67d4aef198aa418b54fb92db76d331ffa2785a
-ms.sourcegitcommit: 0d6f151e69c159d776ed0142773279e645edbc0a
+ms.openlocfilehash: 53cab4b72980eef47c899a22e49fa697e7497279
+ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/13/2018
-ms.locfileid: "35415035"
+ms.lasthandoff: 06/18/2018
+ms.locfileid: "35726006"
 ---
 # <a name="create-an-aspnet-core-app-with-user-data-protected-by-authorization"></a>권한 부여에 의해 보호 되는 사용자 데이터와 ASP.NET Core 응용 프로그램 만들기
 
@@ -139,6 +139,8 @@ Visual Studio를 사용 하는 경우에 HTTPS를 활성화 합니다.
 ```console
 dotnet user-secrets set SeedUserPW <PW>
 ```
+
+강력한 암호를 사용 하지 않는 경우 예외가 발생 될 때 `SeedData.Initialize` 라고 합니다.
 
 업데이트 `Main` 테스트 암호를 사용 합니다.
 

@@ -9,12 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/twitter-logins
-ms.openlocfilehash: 3f59f7d1bf0280cef8f7757e8cd57d4872769b3d
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: 440695f98714f33cff9e4bf97bfc09477901e14c
+ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34688998"
+ms.lasthandoff: 06/18/2018
+ms.locfileid: "35725993"
 ---
 # <a name="twitter-external-login-setup-with-aspnet-core"></a>ASP.NET Core를 사용 하 여 twitter 외부 로그인 설치
 
@@ -32,7 +32,10 @@ ms.locfileid: "34688998"
 
 ![응용 프로그램 페이지 만들기](index/_static/TwitterCreate.png)
 
-* 개발 URI를 입력으로 */signin-twitter* 에 추가 **유효한 OAuth 리디렉션 Uri** 필드 (예: `https://localhost:44320/signin-twitter`). 이 자습서의 뒷부분에 나오는 구성 된 Twitter 인증 구성표에는 요청을 자동으로 처리할 */signin-twitter* OAuth 흐름을 구현 하는 경로입니다.
+* 개발 URI를 입력으로 `/signin-twitter` 에 추가 **유효한 OAuth 리디렉션 Uri** 필드 (예: `https://localhost:44320/signin-twitter`). 이 자습서의 뒷부분에 나오는 구성 된 Twitter 인증 구성표에는 요청을 자동으로 처리할 `/signin-twitter` OAuth 흐름을 구현 하는 경로입니다.
+
+> [!NOTE]
+> URI 세그먼트 `/signin-twitter` Twitter 인증 공급자의 기본 콜백으로 설정 됩니다. 상속 된 통해 Twitter 인증 미들웨어를 구성 하는 동안 기본 콜백 URI를 변경할 수 있습니다 [RemoteAuthenticationOptions.CallbackPath](/dotnet/api/microsoft.aspnetcore.authentication.remoteauthenticationoptions.callbackpath) 의 속성은 [TwitterOptions](/dotnet/api/microsoft.aspnetcore.authentication.twitter.twitteroptions) 클래스입니다.
 
 * 폼의 나머지 부분을 입력 하 고 탭 **Twitter 응용 프로그램을 만드는**합니다. 새 응용 프로그램 세부 정보가 표시 됩니다.
 

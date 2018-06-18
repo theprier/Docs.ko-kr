@@ -9,12 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/microsoft-logins
-ms.openlocfilehash: a9bf7b49b1cfdfff65c639eed1e14c94c5432350
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: 46973f8a82034bd99a6e6634bbd6da06b1b14f25
+ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34689024"
+ms.lasthandoff: 06/18/2018
+ms.locfileid: "35726032"
 ---
 # <a name="microsoft-account-external-login-setup-with-aspnet-core"></a>ASP.NET Core와 Microsoft 계정 외부 로그인 설정
 
@@ -46,9 +46,12 @@ Microsoft 계정이 없는 경우 탭  **[만드세요!](https://signup.live.com
 
 ![추가 플랫폼 대화 상자](index/_static/MicrosoftDevAppPlatform.png)
 
-* 새 **웹** 플랫폼 섹션에서와 개발 URL 입력 */signin-microsoft* 에 추가 **리디렉션 Url** 필드 (예: `https://localhost:44320/signin-microsoft`). 이 자습서의 뒷부분에 나오는 구성 된 Microsoft 인증 구성표에는 요청을 자동으로 처리할 */signin-microsoft* OAuth 흐름을 구현 하는 경로:
+* 새 **웹** 플랫폼 섹션에서와 개발 URL 입력 `/signin-microsoft` 에 추가 **리디렉션 Url** 필드 (예: `https://localhost:44320/signin-microsoft`). 이 자습서의 뒷부분에 나오는 구성 된 Microsoft 인증 구성표에는 요청을 자동으로 처리할 `/signin-microsoft` OAuth 흐름을 구현 하는 경로:
 
 ![웹 플랫폼 섹션](index/_static/MicrosoftRedirectUri.png)
+
+> [!NOTE]
+> URI 세그먼트 `/signin-microsoft` Microsoft 인증 공급자의 기본 콜백으로 설정 됩니다. 상속 된를 통해 Microsoft 인증 미들웨어를 구성 하는 동안 기본 콜백 URI를 변경할 수 있습니다 [RemoteAuthenticationOptions.CallbackPath](/dotnet/api/microsoft.aspnetcore.authentication.remoteauthenticationoptions.callbackpath) 의 속성은 [MicrosoftAccountOptions](/dotnet/api/microsoft.aspnetcore.authentication.microsoftaccount.microsoftaccountoptions) 클래스입니다.
 
 * 탭 **URL 추가** URL 추가 되었습니다.
 

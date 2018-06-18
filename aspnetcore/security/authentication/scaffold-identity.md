@@ -10,18 +10,18 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/scaffold-identity
-ms.openlocfilehash: e7a2cf3633ed48a0d2030739cdc092441fcae2ff
-ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
+ms.openlocfilehash: 80cd39af61e856d3ce92db1c26e70788bcdca83d
+ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/10/2018
-ms.locfileid: "35252037"
+ms.lasthandoff: 06/18/2018
+ms.locfileid: "35725821"
 ---
 # <a name="scaffold-identity-in-aspnet-core-projects"></a>ASP.NET Core 프로젝트에 스 캐 폴드 Id
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-ASP.NET Core 2.1 이상 제공 [ASP.NET Core Id](xref:security/authentication/identity) 로 [Razor 클래스 라이브러리](xref:mvc/razor-pages/ui-class)합니다. Id가 포함 하는 응용 프로그램에 선택적으로 Identity Razor 클래스 라이브러리 (RCL)에 포함 된 소스 코드를 추가 하려면 scaffolder를 적용할 수 있습니다. 코드를 수정 하 고 동작을 변경할 수 있도록 소스 코드를 생성 수 있습니다. 예를 들어 scaffolder 등록에 사용 하 여 코드를 생성 하도록 지정할 수 있습니다. 생성 된 코드 Identity RCL에서 동일한 코드 보다 우선합니다.
+ASP.NET Core 2.1 이상 제공 [ASP.NET Core Id](xref:security/authentication/identity) 로 [Razor 클래스 라이브러리](xref:mvc/razor-pages/ui-class)합니다. Id가 포함 하는 응용 프로그램에 선택적으로 Identity Razor 클래스 라이브러리 (RCL)에 포함 된 소스 코드를 추가 하려면 scaffolder를 적용할 수 있습니다. 코드를 수정 하 고 동작을 변경할 수 있도록 소스 코드를 생성 수 있습니다. 예를 들어 scaffolder 등록에 사용 하 여 코드를 생성 하도록 지정할 수 있습니다. 생성 된 코드 Identity RCL에서 동일한 코드 보다 우선합니다. UI의 모든 권한을 얻으려고 하 RCL 기본값을 사용 하지 섹션을 참조 [만들기 전체 id UI 소스](#full)합니다.
 
 응용 프로그램을 **하지** 포함 인증 RCL Identity 패키지를 추가 하려면 scaffolder 적용할 수 있습니다. 선택 하는 옵션이 Identity 코드를 생성 해야 합니다.
 
@@ -144,3 +144,24 @@ dotnet aspnet-codegenerator identity -dc MvcAuth.Data.ApplicationDbContext --fil
 [!INCLUDE[](~/includes/scaffold-identity/id-scaffold-dlg-auth.md)]
 
 삭제 된 *페이지/공유* 폴더와 해당 폴더의 파일입니다.
+
+<a name="full"></a>
+
+## <a name="create-full-identity-ui-source"></a>전체 id UI 원본 만들기
+
+Identity UI에 대 한 모든 제어를 유지 하려면 Identity scaffolder를 실행 하 고 선택 **모든 파일을 재정의**합니다.
+
+다음 강조 표시 된 코드에는 ASP.NET Core 2.1 웹 응용 프로그램의 Id를 가진 기본 Identity UI를 바꾸려면 변경을 보여 줍니다. Identity UI의 모든 권한을 가질 수 이렇게 할 수 있습니다.
+
+[!code-csharp[Main](scaffold-identity/sample/StartupFull.cs?name=snippet1&highlight=13-14,17-999)]
+
+다음 코드에서 Identity 기본 대체 됩니다. [!code-csharp[Main](scaffold-identity/sample/StartupFull.cs?name=snippet2)]
+
+다음 코드는 권한 부여를 요구 하는 Identity 페이지 권한을 부여 하는 ASP.NET Core를 구성 합니다. [!code-csharp[Main](scaffold-identity/sample/StartupFull.cs?name=snippet3)]
+
+다음 코드에서는 올바른 Identity 페이지 경로 사용 하도록 Id 쿠키를 설정 합니다.
+[!code-csharp[Main](scaffold-identity/sample/StartupFull.cs?name=snippet3)]
+
+등록 된 `IEmailSender` 구현 예:
+
+[!code-csharp[Main](scaffold-identity/sample/StartupFull.cs?name=snippet4)]

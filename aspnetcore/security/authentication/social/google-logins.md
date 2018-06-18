@@ -9,12 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: security/authentication/google-logins
-ms.openlocfilehash: ccb771dbefefb007aede1bdf05ab50ec363a3089
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: 878c0b16e24f48a0ee84f93393af67af1728e284
+ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34689037"
+ms.lasthandoff: 06/18/2018
+ms.locfileid: "35725967"
 ---
 # <a name="google-external-login-setup-in-aspnet-core"></a>ASP.NET Core에서 Google 외부 로그인 설정
 
@@ -61,7 +61,10 @@ ms.locfileid: "34689037"
 
 * 한 기능 (로그인), 동일한를 입력할 수 있는 Google + 프로젝트 만들기 때문에 **이름** 에서는 프로젝트에 대해 사용 되는 OAuth 2.0 클라이언트 id입니다.
 
-* 개발 URI를 입력으로 */signin-google* 에 추가 **권한이 부여 된 리디렉션 URIs** 필드 (예: `https://localhost:44320/signin-google`). 이 자습서의 뒷부분에 나오는 구성 된 Google 인증에는 요청을 자동으로 처리할 */signin-google* OAuth 흐름을 구현 하는 경로입니다.
+* 개발 URI를 입력으로 `/signin-google` 에 추가 **권한이 부여 된 리디렉션 URIs** 필드 (예: `https://localhost:44320/signin-google`). 이 자습서의 뒷부분에 나오는 구성 된 Google 인증에는 요청을 자동으로 처리할 `/signin-google` OAuth 흐름을 구현 하는 경로입니다.
+
+> [!NOTE]
+> URI 세그먼트 `/signin-google` Google 인증 공급자의 기본 콜백으로 설정 됩니다. 상속 된 통해 Google 인증 미들웨어를 구성 하는 동안 기본 콜백 URI를 변경할 수 있습니다 [RemoteAuthenticationOptions.CallbackPath](/dotnet/api/microsoft.aspnetcore.authentication.remoteauthenticationoptions.callbackpath) 의 속성은 [GoogleOptions](/dotnet/api/microsoft.aspnetcore.authentication.google.googleoptions) 클래스입니다.
 
 * Tab 키를 추가 하는 **권한이 부여 된 리디렉션 URIs** 항목입니다.
 
