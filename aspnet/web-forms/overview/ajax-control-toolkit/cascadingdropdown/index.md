@@ -2,7 +2,7 @@
 uid: web-forms/overview/ajax-control-toolkit/cascadingdropdown/index
 title: CascadingDropdown | Microsoft Docs
 author: rick-anderson
-description: "사용 하는 방법을 보여 주는이 자습서는 CascadingDropDown 만들 컨트롤을 관련된 드롭 다운 사용자는 선택할 때 해당 업데이트를 나열 합니다."
+description: 사용 하는 방법을 보여 주는이 자습서는 CascadingDropDown 만들 컨트롤을 관련된 드롭 다운 사용자는 선택할 때 해당 업데이트를 나열 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown
 msc.type: chapter
 ms.openlocfilehash: 200dc5ce3f27b5123edea2ac63f0a86b8502605d
 ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 02/12/2018
+ms.locfileid: "29152854"
 ---
 <a name="cascadingdropdown"></a>CascadingDropdown
 ====================

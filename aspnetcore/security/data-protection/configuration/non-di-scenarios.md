@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core 데이터 보호에 대한 비-DI 인식 시나리오"
+title: ASP.NET Core 데이터 보호에 대한 비-DI 인식 시나리오
 author: rick-anderson
-description: "종속성 주입으로 제공되는 서비스를 사용할 수 없거나 사용하지 않는 데이터 보호 시나리오를 지원하는 방법에 대해 알아봅니다."
+description: 종속성 주입으로 제공되는 서비스를 사용할 수 없거나 사용하지 않는 데이터 보호 시나리오를 지원하는 방법에 대해 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -14,6 +14,7 @@ ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/02/2018
+ms.locfileid: "29727248"
 ---
 # <a name="non-di-aware-scenarios-for-data-protection-in-aspnet-core"></a>ASP.NET Core 데이터 보호에 대한 비-DI 인식 시나리오
 

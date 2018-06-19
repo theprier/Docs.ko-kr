@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/signalr-1x-hubs-api-guide-server
-title: "ASP.NET SignalR 허브 API 가이드-서버 (SignalR 1.x) | Microsoft Docs"
+title: ASP.NET SignalR 허브 API 가이드-서버 (SignalR 1.x) | Microsoft Docs
 author: pfletcher
-description: "이 문서에서는 코드 샘플 demonstratin와 버전 1.1에서 SignalR에 대 한 ASP.NET SignalR 허브 API의 서버 쪽 프로그래밍에 대 한 소개를 제공..."
+description: 이 문서에서는 코드 샘플 demonstratin와 버전 1.1에서 SignalR에 대 한 ASP.NET SignalR 허브 API의 서버 쪽 프로그래밍에 대 한 소개를 제공...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/17/2013
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28044184"
 ---
 <a name="aspnet-signalr-hubs-api-guide---server-signalr-1x"></a>ASP.NET SignalR 허브 API 가이드-서버 (SignalR 1.x)
 ====================

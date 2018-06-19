@@ -17,6 +17,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30074823"
 ---
 <a name="jquery-ui-1104-on-the-microsoft-ajax-cdn"></a>jQuery UI 1.10.4 Microsoft Ajax CDN에서
 ====================

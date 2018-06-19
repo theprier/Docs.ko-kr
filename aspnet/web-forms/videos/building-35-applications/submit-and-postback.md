@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/submit-and-postback
-title: "제출 하 고 다시 게시 | Microsoft Docs"
+title: 제출 하 고 다시 게시 | Microsoft Docs
 author: JoeStagner
-description: "에 항목의 적합 한이 비디오에서는 소개 &quot;내부적&quot; ASP.NET 응용 프로그램의 브라우저와 서버 상호 작용할 때."
+description: 에 항목의 적합 한이 비디오에서는 소개 &quot;내부적&quot; ASP.NET 응용 프로그램의 브라우저와 서버 상호 작용할 때.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/20/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28882356"
 ---
 <a name="submit-and-postback"></a>제출 하 고 다시 게시
 ====================

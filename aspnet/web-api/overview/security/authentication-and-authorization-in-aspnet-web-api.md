@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/security/authentication-and-authorization-in-aspnet-web-api
-title: "인증 및 ASP.NET Web API의에서 권한 부여 | Microsoft Docs"
+title: 인증 및 ASP.NET Web API의에서 권한 부여 | Microsoft Docs
 author: MikeWasson
-description: "ASP.NET Web API의 인증 및 권한 부여에 대 한 일반적인 개요를 제공 합니다."
+description: ASP.NET Web API의 인증 및 권한 부여에 대 한 일반적인 개요를 제공 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/27/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/02/2018
+ms.locfileid: "29726760"
 ---
 <a name="authentication-and-authorization-in-aspnet-web-api"></a>인증 및 ASP.NET Web API의에서 권한 부여
 ====================

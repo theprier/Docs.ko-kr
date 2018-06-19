@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891723"
 ---
 <a name="forms-authentication-configuration-and-advanced-topics-vb"></a>폼 인증 구성 및 고급 항목 (VB)
 ====================
@@ -179,7 +180,7 @@ Default.aspx의 변경 내용을 저장 한 후 브라우저를 통해 방문 �
 
 티켓의 데이터의 개인 정보 보호를 보장 하려면 폼 인증 시스템에서 티켓 데이터를 암호화할 수 있습니다. 티켓 데이터를 암호화를 일반 텍스트로 네트워크를 통해 잠재적으로 중요 한 정보를 보냅니다.
 
-폼 인증 시스템 해야 티켓의 신뢰성을 보장 하려면 *유효성을 검사* 티켓입니다. 유효성 검사는 데이터의 특정 부분 수정 되지 않은 하 고이 통해 수행 하는 작업을  *[메시지 인증 코드 (MAC)](http://en.wikipedia.org/wiki/Message_authentication_code)*합니다. 간단히 말해서 MAC은 작은 부분에 (이 경우 티켓) 유효성을 검사 해야 하는 데이터를 식별 하는 정보입니다. MAC에서 나타내는 데이터 수정 되 면 다음 MAC 및 데이터는 일치 하지 않습니다. 또한 계산을 통해 데이터를 수정 하 고 수정된 된 데이터와 일치 하도록 자신의 MAC 생성 해커가 하드도 합니다.
+폼 인증 시스템 해야 티켓의 신뢰성을 보장 하려면 *유효성을 검사* 티켓입니다. 유효성 검사는 데이터의 특정 부분 수정 되지 않은 하 고이 통해 수행 하는 작업을  *[메시지 인증 코드 (MAC)](http://en.wikipedia.org/wiki/Message_authentication_code)* 합니다. 간단히 말해서 MAC은 작은 부분에 (이 경우 티켓) 유효성을 검사 해야 하는 데이터를 식별 하는 정보입니다. MAC에서 나타내는 데이터 수정 되 면 다음 MAC 및 데이터는 일치 하지 않습니다. 또한 계산을 통해 데이터를 수정 하 고 수정된 된 데이터와 일치 하도록 자신의 MAC 생성 해커가 하드도 합니다.
 
 만드는 (또는 수정 하 고) 하는 경우 티켓을 폼 인증 시스템 MAC 만들고 티켓의 데이터에 연결 합니다. 후속 요청이 도착 하면 폼 인증 시스템에서 티켓 데이터의 신뢰성을 확인할 MAC 및 티켓 데이터를 비교 합니다. 그림 3이이 워크플로 그래픽으로 보여 줍니다.
 
@@ -433,7 +434,7 @@ ASP.NET 런타임 us에 대 한 이러한 속성 값을 자동으로 동기화 �
 
 ### <a name="about-the-author"></a>작성자 정보
 
-여러 ASP/ASP.NET 책의 작성자 및 4GuysFromRolla.com의 창립자 Scott Mitchell의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은  *[Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*합니다. Scott에 도달할 수 [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) 또는에서 그의 블로그 통해 [ http://ScottOnWriting.NET ](http://scottonwriting.net/)합니다.
+여러 ASP/ASP.NET 책의 작성자 및 4GuysFromRolla.com의 창립자 Scott Mitchell의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은  *[Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)* 합니다. Scott에 도달할 수 [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) 또는에서 그의 블로그 통해 [ http://ScottOnWriting.NET ](http://scottonwriting.net/)합니다.
 
 ### <a name="special-thanks-to"></a>특별히 감사
 

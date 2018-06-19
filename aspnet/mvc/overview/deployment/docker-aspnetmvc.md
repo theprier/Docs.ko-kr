@@ -1,7 +1,7 @@
 ---
 uid: mvc/overview/deployment/docker
-title: "ASP.NET MVC 응용 프로그램을 Windows 컨테이너로 마이그레이션"
-description: "기존 ASP.NET MVC 응용 프로그램을 가져와 Windows Docker 컨테이너에서 실행하는 방법을 알아봅니다."
+title: ASP.NET MVC 응용 프로그램을 Windows 컨테이너로 마이그레이션
+description: 기존 ASP.NET MVC 응용 프로그램을 가져와 Windows Docker 컨테이너에서 실행하는 방법을 알아봅니다.
 keywords: Windows Containers,Docker,ASP.NET MVC
 author: BillWagner
 ms.author: wiwagn
@@ -16,6 +16,7 @@ ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 02/11/2018
+ms.locfileid: "29143191"
 ---
 # <a name="migrating-aspnet-mvc-applications-to-windows-containers"></a>ASP.NET MVC 응용 프로그램을 Windows 컨테이너로 마이그레이션
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30070773"
 ---
 <a name="aspnet-denied-access-to-iis-directories"></a>ASP.NET은 IIS 디렉터리에 대 한 액세스가 거부
 ====================

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30072863"
 ---
 # <a name="policy-based-authorization-in-aspnet-core"></a>ASP.NET Core의 사용자 지정 정책 기반 권한 부여
 

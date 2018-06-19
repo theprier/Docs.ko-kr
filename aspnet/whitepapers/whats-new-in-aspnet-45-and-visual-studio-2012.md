@@ -1,14 +1,14 @@
 ---
 uid: whitepapers/whats-new-in-aspnet-45-and-visual-studio-2012
-title: "ASP.NET 4.5 및 Visual Studio 2012의 새로운 기능 | Microsoft Docs"
+title: ASP.NET 4.5 및 Visual Studio 2012의 새로운 기능 | Microsoft Docs
 author: rick-anderson
-description: "이 문서에서는 새로운 기능 및 ASP.NET 4.5에서 도입 된 향상 된 기능을 설명 합니다. 웹 개발을 위해 수행 하는 향상 된 기능에 대해서도 설명..."
+description: 이 문서에서는 새로운 기능 및 ASP.NET 4.5에서 도입 된 향상 된 기능을 설명 합니다. 웹 개발을 위해 수행 하는 향상 된 기능에 대해서도 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/29/2012
 ms.topic: article
 ms.assetid: ba1fabb4-31a3-4ebf-8327-41a6bbba6eaf
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/whats-new-in-aspnet-45-and-visual-studio-2012
 msc.type: content
@@ -17,6 +17,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28886444"
 ---
 <a name="whats-new-in-aspnet-45-and-visual-studio-2012"></a>ASP.NET 4.5 및 Visual Studio 2012의 새로운 기능
 ====================
@@ -408,7 +409,7 @@ ASP.NET 4.5 Web Forms 데이터로 작업 하기 위한 몇 가지 향상 된 �
 
 [!code-aspx[Main](whats-new-in-aspnet-45-and-visual-studio-2012/samples/sample22.aspx)]
 
-만들는 *GetCategories* 페이지의 코드에서 메서드. 단순한 select 작업에 대 한 메서드 매개 변수 없이 필요 하 고 반환 해야는 *IEnumerable* 또는 *IQueryable* 개체입니다. 하는 경우 새 *ItemType* 속성이 설정 되어 (있도록 하는 강력한 데이터 바인딩 식을 형식에 설명 된 대로 [데이터 컨트롤 강력한 형식의](#_Toc318097386) 이전 버전), 이러한 인터페이스의 제네릭 버전 반환 되어야- *IEnumerable&lt;T&gt;*  또는 *IQueryable&lt;T&gt;*와 *T* 매개 변수 형식과 일치 하는 *ItemType* 속성 (예를 들어 *IQueryable&lt;범주&gt;*).
+만들는 *GetCategories* 페이지의 코드에서 메서드. 단순한 select 작업에 대 한 메서드 매개 변수 없이 필요 하 고 반환 해야는 *IEnumerable* 또는 *IQueryable* 개체입니다. 하는 경우 새 *ItemType* 속성이 설정 되어 (있도록 하는 강력한 데이터 바인딩 식을 형식에 설명 된 대로 [데이터 컨트롤 강력한 형식의](#_Toc318097386) 이전 버전), 이러한 인터페이스의 제네릭 버전 반환 되어야- *IEnumerable&lt;T&gt;*  또는 *IQueryable&lt;T&gt;* 와 *T* 매개 변수 형식과 일치 하는 *ItemType* 속성 (예를 들어 *IQueryable&lt;범주&gt;*).
 
 다음 예제에 대 한 코드는 *GetCategories* 메서드. 이 예제에서는 Northwind 샘플 데이터베이스에서 Entity Framework Code First 모델을 사용 합니다. 코드에서는 쿼리를 통해 범주별 관련된 제품의 세부 정보를 반환 하는지 확인는 *Include* 메서드. (이렇게 하면는 *TemplateField* 태그 요소에에서 필요 없이 각 범주에서 제품의 수를 표시 한 [n + 1 선택](http://stackoverflow.com/questions/97197/what-is-the-n1-selects-problem).)
 

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-detect-browser-capabilities-in-aspnet-web-pages
-title: "[어떻게 할까요?] ASP.NET 웹 페이지에서 브라우저 기능을 검색 합니다. | Microsoft Docs"
+title: '[어떻게 할까요?] ASP.NET 웹 페이지에서 브라우저 기능을 검색 합니다. | Microsoft Docs'
 author: rick-anderson
-description: "이 비디오 Chris Pels에서는 ASP.NET 웹 사이트의 페이지를 볼 때 사용자의 브라우저에 어떤 기능이 있는지를 확인 하는 방법을 보여줍니다. 첫째, 자세한 acc. 하는 방법..."
+description: 이 비디오 Chris Pels에서는 ASP.NET 웹 사이트의 페이지를 볼 때 사용자의 브라우저에 어떤 기능이 있는지를 확인 하는 방법을 보여줍니다. 첫째, 자세한 acc. 하는 방법...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/19/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28884093"
 ---
 <a name="how-do-i-detect-browser-capabilities-in-aspnet-web-pages"></a>[어떻게 할까요?] ASP.NET 웹 페이지에서 브라우저 기능을 검색 합니다.
 ====================

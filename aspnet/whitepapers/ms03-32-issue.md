@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30898215"
 ---
 <a name="fix-for-server-application-unavailable-error-after-applying-security-update-for-ie"></a>IE에 대 한 보안 업데이트를 적용 한 후 '서버 응용 프로그램 사용할 수 없는 오류에 대 한 수정
 ====================

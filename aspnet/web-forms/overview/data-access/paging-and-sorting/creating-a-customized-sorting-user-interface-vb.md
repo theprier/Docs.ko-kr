@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892675"
 ---
 <a name="creating-a-customized-sorting-user-interface-vb"></a>정렬 사용자 지정 사용자 인터페이스 (VB) 만들기
 ====================

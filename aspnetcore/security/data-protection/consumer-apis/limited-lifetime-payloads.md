@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30072025"
 ---
 # <a name="limit-the-lifetime-of-protected-payloads-in-aspnet-core"></a>ASP.NET Core에 보호 된 페이로드의 수명을 제한합니다
 

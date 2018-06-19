@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core의 데이터 보호 키 관리 및 수명"
+title: ASP.NET Core의 데이터 보호 키 관리 및 수명
 author: rick-anderson
-description: "ASP.NET Core의 데이터 보호 키 관리 및 수명에 관해서 알아봅니다."
+description: ASP.NET Core의 데이터 보호 키 관리 및 수명에 관해서 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -14,6 +14,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28887292"
 ---
 # <a name="data-protection-key-management-and-lifetime-in-aspnet-core"></a>ASP.NET Core의 데이터 보호 키 관리 및 수명
 

@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core에서 인증"
+title: ASP.NET Core에서 인증
 author: rick-anderson
-description: "ASP.NET Core 인증 기술에 관련된 항목을 알아봅니다."
+description: ASP.NET Core 인증 기술에 관련된 항목을 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -14,6 +14,7 @@ ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/15/2018
+ms.locfileid: "29903301"
 ---
 # <a name="authentication-in-aspnet-core"></a>ASP.NET Core에서 인증
 

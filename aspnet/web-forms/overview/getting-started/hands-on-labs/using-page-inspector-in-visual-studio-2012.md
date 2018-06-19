@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30891245"
 ---
 <a name="using-page-inspector-in-visual-studio-2012"></a>페이지 검사기를 사용 하 여 Visual Studio 2012에서
 ====================

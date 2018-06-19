@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892298"
 ---
 <a name="configuring-server-environments-for-web-deployment"></a>웹 배포에 대 한 서버 환경 구성
 ====================

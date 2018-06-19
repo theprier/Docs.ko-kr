@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30894319"
 ---
 <a name="how-do-i-discover-application-changes-prior-to-deployment"></a>[어떻게 할까요?] 응용 프로그램을 배포 하기 전에 변경 검색?
 ====================

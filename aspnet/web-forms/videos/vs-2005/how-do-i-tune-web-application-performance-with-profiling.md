@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893796"
 ---
 <a name="how-do-i-tune-web-application-performance-with-profiling"></a>[어떻게 할까요?] 웹 응용 프로그램 성능 프로 파일링과 튜닝?
 ====================

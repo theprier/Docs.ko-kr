@@ -18,6 +18,7 @@ ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 02/05/2018
+ms.locfileid: "28988018"
 ---
 # <a name="using-signalr-performance-counters-in-an-azure-web-role"></a>SignalR 성능 카운터를 사용 하 여 Azure 웹 역할에서
 

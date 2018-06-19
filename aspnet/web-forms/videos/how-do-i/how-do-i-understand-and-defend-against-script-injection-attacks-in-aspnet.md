@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-understand-and-defend-against-script-injection-attacks-in-aspnet
-title: "ASP.NET에서 어떻게 이해 하 고 스크립트 삽입을 방어할 공격 | Microsoft Docs"
+title: ASP.NET에서 어떻게 이해 하 고 스크립트 삽입을 방어할 공격 | Microsoft Docs
 author: JoeStagner
-description: "이 요즘 해결할 웹 개발자를 위한 가장 문제가 보안 문제가 교차 사이트 스크립팅 (XSS)입니다. 이 비디오에서는 Microsoft의 Joe Stagner 프로..."
+description: 이 요즘 해결할 웹 개발자를 위한 가장 문제가 보안 문제가 교차 사이트 스크립팅 (XSS)입니다. 이 비디오에서는 Microsoft의 Joe Stagner 프로...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/13/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28882232"
 ---
 <a name="how-do-i-understand-and-defend-against-script-injection-attacks-in-aspnet"></a>ASP.NET에서 어떻게 이해 하 고 스크립트 삽입을 방어할 공격
 ====================

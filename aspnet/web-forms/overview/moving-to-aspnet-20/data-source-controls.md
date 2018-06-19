@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/moving-to-aspnet-20/data-source-controls
-title: "데이터 소스 컨트롤 | Microsoft Docs"
+title: 데이터 소스 컨트롤 | Microsoft Docs
 author: microsoft
-description: "DataGrid 컨트롤 1.x asp.net에서 웹 응용 프로그램에서 데이터 액세스에서 크게 개선으로 표시 합니다. 그러나 되었을 수 처럼 친숙 않았습니다 중..."
+description: DataGrid 컨트롤 1.x asp.net에서 웹 응용 프로그램에서 데이터 액세스에서 크게 개선으로 표시 합니다. 그러나 되었을 수 처럼 친숙 않았습니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2005
@@ -17,6 +17,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28885897"
 ---
 <a name="data-source-controls"></a>데이터 소스 제어
 ====================

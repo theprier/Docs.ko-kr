@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891297"
 ---
 <a name="the-aspnet-20-page-model"></a>ASP.NET 2.0 페이지 모델
 ====================
@@ -129,7 +130,7 @@ ASP.NET 2.0에서 @ Page 지시문의 새로운 기능으로 다른 기본 클�
 
 [!code-aspx[Main](the-asp-net-2-0-page-model/samples/sample4.aspx)]
 
-**SomeText** 를 기본 클래스에서 SomeText 속성의 초기 값을 설정 하는 @ Page 지시문 특성 *Hello!*합니다. 아래 동영상은 @ Page 지시문을 사용 하 여 기본 클래스의 공용 속성의 초기 값을 설정할 때의 연습 과정입니다.
+**SomeText** 를 기본 클래스에서 SomeText 속성의 초기 값을 설정 하는 @ Page 지시문 특성 *Hello!* 합니다. 아래 동영상은 @ Page 지시문을 사용 하 여 기본 클래스의 공용 속성의 초기 값을 설정할 때의 연습 과정입니다.
 
 
 ![](the-asp-net-2-0-page-model/_static/image1.png)

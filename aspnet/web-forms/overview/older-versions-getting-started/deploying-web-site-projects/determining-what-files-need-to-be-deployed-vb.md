@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889919"
 ---
 <a name="determining-what-files-need-to-be-deployed-vb"></a>(VB)를 배포 해야 할 파일 확인
 ====================
