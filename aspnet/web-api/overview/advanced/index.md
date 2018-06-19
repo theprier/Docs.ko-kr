@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/advanced/index
-title: "ASP.NET Web API에 대 한 고급 항목 | Microsoft Docs"
+title: ASP.NET Web API에 대 한 고급 항목 | Microsoft Docs
 author: rick-anderson
-description: "ASP.NET Web API 개발에 대 한 항목을 더 발전 후 지금까지 학습 기본 사항입니다."
+description: ASP.NET Web API 개발에 대 한 항목을 더 발전 후 지금까지 학습 기본 사항입니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/23/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /web-api/overview/advanced
 msc.type: chapter
 ms.openlocfilehash: dca812e1c88d1aa2692365711d71813199be9ca2
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26506752"
 ---
 <a name="advanced-topics-for-aspnet-web-api"></a>ASP.NET Web API에 대 한 고급 항목
 ====================

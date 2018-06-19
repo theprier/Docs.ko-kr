@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/releases/whats-new-aspnet-web-pages-31
-title: "3.1 페이지는 ASP.NET 웹의 새로운 기능 | Microsoft Docs"
+title: 3.1 페이지는 ASP.NET 웹의 새로운 기능 | Microsoft Docs
 author: microsoft
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/20/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26529512"
 ---
 <a name="whats-new-in-aspnet-web-pages-31"></a>ASP.NET 웹 페이지 3.1의에서 새로운 기능
 ====================

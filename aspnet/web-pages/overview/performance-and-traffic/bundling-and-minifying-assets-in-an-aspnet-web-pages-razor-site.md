@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/performance-and-traffic/bundling-and-minifying-assets-in-an-aspnet-web-pages-razor-site
-title: "묶음 및 축소 자산에는 ASP.NET 웹 페이지 (Razor) 사이트 | Microsoft Docs"
+title: 묶음 및 축소 자산에는 ASP.NET 웹 페이지 (Razor) 사이트 | Microsoft Docs
 author: microsoft
-description: "묶음 및 축소 가지 키를 눌러 사이트를 더 빠르게 만들 수 있습니다. JavaScript (.js) 파일 여러 개 또는 여러 연계 스타일 시트 (...를 결합 하면 번들"
+description: 묶음 및 축소 가지 키를 눌러 사이트를 더 빠르게 만들 수 있습니다. JavaScript (.js) 파일 여러 개 또는 여러 연계 스타일 시트 (...를 결합 하면 번들
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/21/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26528552"
 ---
 <a name="bundling-and-minifying-assets-in-an-aspnet-web-pages-razor-site"></a>묶음 및 축소 ASP.NET 웹 페이지 (Razor) 사이트의 자산
 ====================

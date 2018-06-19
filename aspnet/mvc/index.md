@@ -2,7 +2,7 @@
 uid: mvc/index
 title: ASP.NET MVC | Microsoft Docs
 author: rick-anderson
-description: "ASP.NET MVC를 다운로드 하 고 모델 뷰 컨트롤러 패턴을 사용 하 여 웹 응용 프로그램을 빌드하는 방법에 알아봅니다."
+description: ASP.NET MVC를 다운로드 하 고 모델 뷰 컨트롤러 패턴을 사용 하 여 웹 응용 프로그램을 빌드하는 방법에 알아봅니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/24/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc
 msc.type: categoryindex
 ms.openlocfilehash: d7e59b49250b29409836162f1ba2dcabd88c9925
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26497832"
 ---
 <a name="aspnet-mvc"></a>ASP.NET MVC
 ====================

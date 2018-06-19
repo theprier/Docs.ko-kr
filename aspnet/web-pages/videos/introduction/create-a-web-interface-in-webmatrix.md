@@ -1,8 +1,8 @@
 ---
 uid: web-pages/videos/introduction/create-a-web-interface-in-webmatrix
-title: "WebMatrix에서 웹 인터페이스를 작성 합니다. | Microsoft Docs"
+title: WebMatrix에서 웹 인터페이스를 작성 합니다. | Microsoft Docs
 author: rick-anderson
-description: "6 부 사이트에서 렌더링할 수 있도록 데이터 데이터베이스를 추가 하려면 사용자가 허용 하는 페이지를 빌드하는 방법을 보여 줍니다."
+description: 6 부 사이트에서 렌더링할 수 있도록 데이터 데이터베이스를 추가 하려면 사용자가 허용 하는 페이지를 빌드하는 방법을 보여 줍니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/12/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26529742"
 ---
 <a name="create-a-web-interface-in-webmatrix"></a>WebMatrix에서 웹 인터페이스를 작성 합니다.
 ====================

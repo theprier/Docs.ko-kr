@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/index
-title: "MVC 4를 사용 하 여 EF 5 시작 | Microsoft Docs"
+title: MVC 4를 사용 하 여 EF 5 시작 | Microsoft Docs
 author: rick-anderson
-description: "Entity Framework 5를 사용 하 여 표시 하 고 ASP.NET MVC 4 응용 프로그램에서 데이터를 편집 하는 기본적인 합니다."
+description: Entity Framework 5를 사용 하 여 표시 하 고 ASP.NET MVC 4 응용 프로그램에서 데이터를 편집 하는 기본적인 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/26/2013
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-
 msc.type: chapter
 ms.openlocfilehash: 45d58999934e1d4a3df144f1e5b0e108192f6588
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26502442"
 ---
 <a name="getting-started-with-ef-5-using-mvc-4"></a>MVC 4를 사용 하 여 EF 5 시작
 ====================

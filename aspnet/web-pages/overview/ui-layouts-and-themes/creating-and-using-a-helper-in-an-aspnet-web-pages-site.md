@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/creating-and-using-a-helper-in-an-aspnet-web-pages-site
-title: "에서 만들고 사용 하는 도우미 ASP.NET 웹 페이지 (Razor) 사이트 | Microsoft Docs"
+title: 에서 만들고 사용 하는 도우미 ASP.NET 웹 페이지 (Razor) 사이트 | Microsoft Docs
 author: tfitzmac
-description: "이 문서에서는 ASP.NET 웹 페이지 (Razor) 웹 사이트에서 한 도우미를 만드는 방법을 설명 합니다. 도우미는 코드와 성능에 태그를 포함 하는 재사용 가능한 구성 요소 중..."
+description: 이 문서에서는 ASP.NET 웹 페이지 (Razor) 웹 사이트에서 한 도우미를 만드는 방법을 설명 합니다. 도우미는 코드와 성능에 태그를 포함 하는 재사용 가능한 구성 요소 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/17/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26530002"
 ---
 <a name="creating-and-using-a-helper-in-an-aspnet-web-pages-razor-site"></a>에서 만들고 사용 하는 도우미 ASP.NET 웹 페이지 (Razor) 사이트
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v4/entity-relations-in-odata-v4
-title: "ASP.NET Web API 2.2 사용 하 여 OData v4의 엔터티 관계 | Microsoft Docs"
+title: ASP.NET Web API 2.2 사용 하 여 OData v4의 엔터티 관계 | Microsoft Docs
 author: MikeWasson
-description: "엔터티 간의 관계를 정의 하는 대부분의 데이터 집합: 고객이 주문을; 갖고 책에는 한 작성자입니다. 제품 공급 업체에는 합니다. OData를 사용 하 여 클라이언트를 탐색할 수 있습니다..."
+description: '엔터티 간의 관계를 정의 하는 대부분의 데이터 집합: 고객이 주문을; 갖고 책에는 한 작성자입니다. 제품 공급 업체에는 합니다. OData를 사용 하 여 클라이언트를 탐색할 수 있습니다...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/26/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26508102"
 ---
 <a name="entity-relations-in-odata-v4-using-aspnet-web-api-22"></a>ASP.NET Web API 2.2 사용 하 여 OData v4의 엔터티 관계
 ====================

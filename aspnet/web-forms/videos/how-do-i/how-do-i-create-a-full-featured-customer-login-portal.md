@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-a-full-featured-customer-login-portal
-title: "[어떻게 할까요?] 모든 기능을 갖춘 고객 로그인 포털 만들기 | Microsoft 문서"
+title: '[어떻게 할까요?] 모든 기능을 갖춘 고객 로그인 포털 만들기 | Microsoft 문서'
 author: microsoft
-description: "마스터 페이지, 테마, 멤버 자격, 역할, 사이트 탐색, 사용자 프로필에 대 한 자세한 내용은 가상의 고객 포털의 생성을 통해 수행 하 고..."
+description: 마스터 페이지, 테마, 멤버 자격, 역할, 사이트 탐색, 사용자 프로필에 대 한 자세한 내용은 가상의 고객 포털의 생성을 통해 수행 하 고...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/05/2006
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525302"
 ---
 <a name="how-do-i-create-a-full-featured-customer-login-portal"></a>[어떻게 할까요?] 모든 기능을 갖춘 고객 로그인 포털 만들기
 ====================

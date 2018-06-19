@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-configure-email-notification-for-health-monitoring-on-an-aspnet-web-site
-title: "[어떻게 할까요?] ASP.NET 웹 사이트의 상태 모니터링에 대 한 메일 알림을 구성 | Microsoft Docs"
+title: '[어떻게 할까요?] ASP.NET 웹 사이트의 상태 모니터링에 대 한 메일 알림을 구성 | Microsoft Docs'
 author: rick-anderson
-description: "이 비디오 Chris Pels ASP.NET 웹 사이트의 모니터링 상태에 대 한 전자 메일 알림을 구성 하는 방법을 보여 줍니다. 첫째, e 보내기 구성 하는 방법을 참조 하십시오."
+description: 이 비디오 Chris Pels ASP.NET 웹 사이트의 모니터링 상태에 대 한 전자 메일 알림을 구성 하는 방법을 보여 줍니다. 첫째, e 보내기 구성 하는 방법을 참조 하십시오.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/11/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521762"
 ---
 <a name="how-do-i-configure-email-notification-for-health-monitoring-on-an-aspnet-web-site"></a>[어떻게 할까요?] ASP.NET 웹 사이트에 대 한 모니터링 상태에 대 한 전자 메일 알림 구성
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/index
-title: "ASP.NET 4-엔터프라이즈 배포 시리즈 1 | Microsoft Docs"
+title: ASP.NET 4-엔터프라이즈 배포 시리즈 1 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에서는 많은 절감할 엔터프라이즈급 웹 응용 프로그램의 배포를 관리 하는 경우 발생 하는 문제를 충족 하는 방법을 설명..."
+description: 이 자습서에서는 많은 절감할 엔터프라이즈급 웹 응용 프로그램의 배포를 관리 하는 경우 발생 하는 문제를 충족 하는 방법을 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/16/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise
 msc.type: chapter
 ms.openlocfilehash: 50918b1aef416a7b262e982bcf67607aa36933a3
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26515182"
 ---
 <a name="aspnet-4---enterprise-deployment-series-1"></a>ASP.NET 4-엔터프라이즈 배포 시리즈 1
 ====================

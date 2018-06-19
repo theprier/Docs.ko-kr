@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v4/complex-type-inheritance-in-odata-v4
-title: "ASP.NET web API OData v4에 복합 유형 상속이 | Microsoft Docs"
+title: ASP.NET web API OData v4에 복합 유형 상속이 | Microsoft Docs
 author: microsoft
-description: "OData v4 사양에 복합 유형을 다른 복합 형식에서 상속할 수 있습니다. (복합 형식은 키가 없는 구조적된 형식이입니다.) Web API 중..."
+description: OData v4 사양에 복합 유형을 다른 복합 형식에서 상속할 수 있습니다. (복합 형식은 키가 없는 구조적된 형식이입니다.) Web API 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/16/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26508422"
 ---
 <a name="complex-type-inheritance-in-odata-v4-with-aspnet-web-api"></a>ASP.NET Web API 사용 하 여 OData v4에 복합 형식 상속
 ====================

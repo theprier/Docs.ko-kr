@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/index
-title: "작업 절차 | Microsoft 문서"
+title: 작업 절차 | Microsoft 문서
 author: rick-anderson
-description: "여러 가지 일반적인 작업을 수행 하는 방법입니다."
+description: 여러 가지 일반적인 작업을 수행 하는 방법입니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/videos/how-do-i
 msc.type: chapter
 ms.openlocfilehash: 032183a08f05578c04af0fc2adac0d7535e95790
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526512"
 ---
 <a name="how-do-i"></a>작업 절차
 ====================

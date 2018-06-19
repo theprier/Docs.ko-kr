@@ -1,8 +1,8 @@
 ---
 uid: web-pages/videos/aspnet-razor-pages/index
-title: "ASP.NET Razor 페이지 | Microsoft Docs"
+title: ASP.NET Razor 페이지 | Microsoft Docs
 author: rick-anderson
-description: "비디오 Web Pages 및 WebMatrix를 자세히 볼 수 있습니다."
+description: 비디오 Web Pages 및 WebMatrix를 자세히 볼 수 있습니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/18/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /web-pages/videos/aspnet-razor-pages
 msc.type: chapter
 ms.openlocfilehash: c2656e666e3267895ced67562e0b3e6292d83d3d
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26529932"
 ---
 <a name="aspnet-web-pages"></a>ASP.NET 웹 페이지
 =================

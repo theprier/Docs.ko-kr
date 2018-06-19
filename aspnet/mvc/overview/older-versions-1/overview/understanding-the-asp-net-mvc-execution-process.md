@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/overview/understanding-the-asp-net-mvc-execution-process
-title: "ASP.NET MVC 실행 프로세스를 이해 | Microsoft Docs"
+title: ASP.NET MVC 실행 프로세스를 이해 | Microsoft Docs
 author: microsoft
-description: "ASP.NET MVC 프레임 워크에서 단계별 브라우저 요청을 처리 하는 방법에 대해 알아봅니다."
+description: ASP.NET MVC 프레임 워크에서 단계별 브라우저 요청을 처리 하는 방법에 대해 알아봅니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/27/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26500732"
 ---
 <a name="understanding-the-aspnet-mvc-execution-process"></a>ASP.NET MVC 실행 프로세스 이해
 ====================

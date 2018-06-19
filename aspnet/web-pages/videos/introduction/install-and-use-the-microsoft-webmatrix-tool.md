@@ -1,8 +1,8 @@
 ---
 uid: web-pages/videos/introduction/install-and-use-the-microsoft-webmatrix-tool
-title: "Microsoft WebMatrix 도구 설치 및 사용 | Microsoft Docs"
+title: Microsoft WebMatrix 도구 설치 및 사용 | Microsoft Docs
 author: rick-anderson
-description: "1 부 WebMatrix를 설치 하기를 사용 하는 방법을 소개 합니다."
+description: 1 부 WebMatrix를 설치 하기를 사용 하는 방법을 소개 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/12/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26529722"
 ---
 <a name="install-and-use-the-microsoft-webmatrix-tool"></a>Microsoft WebMatrix 도구 설치 및 사용
 ====================

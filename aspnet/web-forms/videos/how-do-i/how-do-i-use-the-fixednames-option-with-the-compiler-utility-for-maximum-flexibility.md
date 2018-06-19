@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-the-fixednames-option-with-the-compiler-utility-for-maximum-flexibility
-title: "[어떻게 할까요?] 컴파일러 유틸리티로 Fixednames 옵션을 사용 하 여 최대한의 유연성에 대 한 | Microsoft Docs"
+title: '[어떻게 할까요?] 컴파일러 유틸리티로 Fixednames 옵션을 사용 하 여 최대한의 유연성에 대 한 | Microsoft Docs'
 author: rick-anderson
-description: "이 비디오 Chris Pels에서는 컴파일 ou에 일관 된 파일 이름을 생성 하기 위해 aspnet_compiler.exe 유틸리티로 fixednames 옵션을 사용 하는 방법을 보여줍니다 중..."
+description: 이 비디오 Chris Pels에서는 컴파일 ou에 일관 된 파일 이름을 생성 하기 위해 aspnet_compiler.exe 유틸리티로 fixednames 옵션을 사용 하는 방법을 보여줍니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/24/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525932"
 ---
 <a name="how-do-i-use-the-fixednames-option-with-the-compiler-utility-for-maximum-flexibility"></a>[어떻게 할까요?] 컴파일러 유틸리티로 Fixednames 옵션을 사용 하 여 최대한의 유연성에 대 한
 ====================

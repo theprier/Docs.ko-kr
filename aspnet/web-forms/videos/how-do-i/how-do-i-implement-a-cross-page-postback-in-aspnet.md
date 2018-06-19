@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-implement-a-cross-page-postback-in-aspnet
-title: "[어떻게 할까요?] Asp.net에서 페이지 간 포스트백 구현 | Microsoft Docs"
+title: '[어떻게 할까요?] Asp.net에서 페이지 간 포스트백 구현 | Microsoft Docs'
 author: rick-anderson
-description: "이 비디오 Chris Pels에서 ASP.NET, 다른 대상에 다시 게시 이벤트가 있는 원본 페이지에 컨트롤에에서 크로스 페이지 다시 게시를 만드는 방법을 보여 줍니다 중..."
+description: 이 비디오 Chris Pels에서 ASP.NET, 다른 대상에 다시 게시 이벤트가 있는 원본 페이지에 컨트롤에에서 크로스 페이지 다시 게시를 만드는 방법을 보여 줍니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/10/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526312"
 ---
 <a name="how-do-i-implement-a-cross-page-postback-in-aspnet"></a>[어떻게 할까요?] ASP.NET에서 교차 페이지 포스트백을 구현 합니다.
 ====================

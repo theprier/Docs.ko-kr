@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/index
-title: "ASP.NET 4.5 Web Forms 및 Visual Studio 2013 시작 | Microsoft Docs"
+title: ASP.NET 4.5 Web Forms 및 Visual Studio 2013 시작 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서 시리즈 ASP.NET 4.5 및 Visual Studio 2013 Express for Web 사용 하 여 ASP.NET Web Forms 응용 프로그램을 구축 하는 기초 알려 드리겠습니다. Visua 중..."
+description: 이 자습서 시리즈 ASP.NET 4.5 및 Visual Studio 2013 Express for Web 사용 하 여 ASP.NET Web Forms 응용 프로그램을 구축 하는 기초 알려 드리겠습니다. Visua 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/09/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-4
 msc.type: chapter
 ms.openlocfilehash: 1c6e6f08c94d025c3643938de2c6ca2326402f90
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26516542"
 ---
 <a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2013"></a>ASP.NET 4.5 Web Forms 및 Visual Studio 2013 시작
 ====================

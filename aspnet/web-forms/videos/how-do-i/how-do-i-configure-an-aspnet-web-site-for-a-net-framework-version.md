@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-configure-an-aspnet-web-site-for-a-net-framework-version
-title: "[어떻게 할까요?] .NET Framework 버전에 대 한 ASP.NET 웹 사이트를 구성 | Microsoft Docs"
+title: '[어떻게 할까요?] .NET Framework 버전에 대 한 ASP.NET 웹 사이트를 구성 | Microsoft Docs'
 author: rick-anderson
-description: "이 비디오 Chris Pels에서는 ASP.NET/.NET 프레임 워크의 특정 버전을 사용 하도록 ASP.NET 웹 사이트를 구성 하는 방법을 보여줍니다. 먼저 어떤 v를 식별 하는 방법을 참조 하십시오."
+description: 이 비디오 Chris Pels에서는 ASP.NET/.NET 프레임 워크의 특정 버전을 사용 하도록 ASP.NET 웹 사이트를 구성 하는 방법을 보여줍니다. 먼저 어떤 v를 식별 하는 방법을 참조 하십시오.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/20/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525022"
 ---
 <a name="how-do-i-configure-an-aspnet-web-site-for-a-net-framework-version"></a>[어떻게 할까요?] .NET Framework 버전에 대 한 ASP.NET 웹 사이트를 구성 합니다.
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v4/odata-containment-in-web-api-22
-title: "Web API 2.2 사용 하 여 OData v4에 포함 | Microsoft Docs"
+title: Web API 2.2 사용 하 여 OData v4에 포함 | Microsoft Docs
 author: rick-anderson
-description: "일반적으로 엔터티는 엔터티 집합 내에 캡슐화 된 경우에 액세스할 수 없습니다. 하지만 단일 및 Con 두 개의 추가 옵션을 제공 하는 OData v4..."
+description: 일반적으로 엔터티는 엔터티 집합 내에 캡슐화 된 경우에 액세스할 수 없습니다. 하지만 단일 및 Con 두 개의 추가 옵션을 제공 하는 OData v4...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/27/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26508002"
 ---
 <a name="containment-in-odata-v4-using-web-api-22"></a>Web API 2.2 사용 하 여 OData v4에 포함
 ====================

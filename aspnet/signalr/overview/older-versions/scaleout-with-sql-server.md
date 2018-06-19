@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/scaleout-with-sql-server
-title: "SQL Server와 함께 SignalR 확장 (SignalR 1.x) | Microsoft Docs"
+title: SQL Server와 함께 SignalR 확장 (SignalR 1.x) | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/01/2013
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26505612"
 ---
 <a name="signalr-scaleout-with-sql-server-signalr-1x"></a>SQL Server와 함께 SignalR 확장 (SignalR 1.x)
 ====================

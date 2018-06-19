@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870533"
 ---
 <a name="building-real-world-cloud-apps-with-azure"></a>Azure와 실제 클라우드 앱 빌드
 ====================

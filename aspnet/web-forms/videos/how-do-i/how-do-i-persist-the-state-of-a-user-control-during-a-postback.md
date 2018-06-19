@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-persist-the-state-of-a-user-control-during-a-postback
-title: "[어떻게 할까요?]: 다시 게시 하는 동안 사용자 정의 컨트롤의 상태를 유지 하기 | Microsoft Docs"
+title: '[어떻게 할까요?]: 다시 게시 하는 동안 사용자 정의 컨트롤의 상태를 유지 하기 | Microsoft Docs'
 author: rick-anderson
-description: "이 비디오 Chris Pels 사용자 정의 컨트롤에서 하나 이상의 개체의 상태를 유지 하는 방법을 보여 줍니다. 첫째, 고 abilit 나타내는 사용자 컨트롤을 만들..."
+description: 이 비디오 Chris Pels 사용자 정의 컨트롤에서 하나 이상의 개체의 상태를 유지 하는 방법을 보여 줍니다. 첫째, 고 abilit 나타내는 사용자 컨트롤을 만들...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/02/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525972"
 ---
 <a name="how-do-i-persist-the-state-of-a-user-control-during-a-postback"></a>[어떻게 할까요?]: 다시 게시 하는 동안 사용자 정의 컨트롤의 상태를 유지 합니다.
 ====================

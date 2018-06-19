@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/index
-title: "모델 (데이터) | Microsoft Docs"
+title: 모델 (데이터) | Microsoft Docs
 author: rick-anderson
-description: "이 자습서 시리즈 Microsoft Entity Framework와 함께 ASP.NET MVC를 사용 하는 방법에 설명 합니다. 이 자습서의 진행 되는 동안 웹 응용 프로그램 빌드..."
+description: 이 자습서 시리즈 Microsoft Entity Framework와 함께 ASP.NET MVC를 사용 하는 방법에 설명 합니다. 이 자습서의 진행 되는 동안 웹 응용 프로그램 빌드...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/older-versions-1/models-data
 msc.type: chapter
 ms.openlocfilehash: b531a5ad6924840487985a57c178d18d945a0b06
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26499982"
 ---
 <a name="models-data"></a>모델 (데이터)
 ====================

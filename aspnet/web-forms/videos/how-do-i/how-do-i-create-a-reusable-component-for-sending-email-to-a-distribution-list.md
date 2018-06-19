@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-a-reusable-component-for-sending-email-to-a-distribution-list
-title: "[어떻게 할까요?] 메일 그룹으로 전자 메일을 보내기 위한 재사용 가능한 구성 요소 만들기 | Microsoft Docs"
+title: '[어떻게 할까요?] 메일 그룹으로 전자 메일을 보내기 위한 재사용 가능한 구성 요소 만들기 | Microsoft Docs'
 author: rick-anderson
-description: "이 비디오 Chris Pels에서 구성 요소를 만들려면 여러 개의 웹 페이지와 웹 사이트에서 사용할 수 있는 전자 메일 받는 사람 목록에 전송 하는 방법을 보여줍니다. Firs 중..."
+description: 이 비디오 Chris Pels에서 구성 요소를 만들려면 여러 개의 웹 페이지와 웹 사이트에서 사용할 수 있는 전자 메일 받는 사람 목록에 전송 하는 방법을 보여줍니다. Firs 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/04/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525502"
 ---
 <a name="how-do-i-create-a-reusable-component-for-sending-email-to-a-distribution-list"></a>[어떻게 할까요?] 메일 그룹으로 전자 메일을 보내기 위한 재사용 가능한 구성 요소를 만듭니다.
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868037"
 ---
 <a name="aspnet-mvc-storefront-part-16-membership-redo-with-openid"></a>OpenID와 ASP.NET MVC Storefront 16 단계: 멤버 자격 다시 실행 합니다.
 ====================

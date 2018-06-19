@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/releases/upgrading-signalr-1x-projects-to-20
-title: "SignalR 1.x 프로젝트 버전 2로 업그레이드 | Microsoft Docs"
+title: SignalR 1.x 프로젝트 버전 2로 업그레이드 | Microsoft Docs
 author: pfletcher
-description: "Signalr 기존 SignalR 1.x 프로젝트를 업그레이드 하는 방법에 설명, 2.x 및 업그레이드 프로세스 중 발생할 수 있는 문제를 해결 하는 방법..."
+description: Signalr 기존 SignalR 1.x 프로젝트를 업그레이드 하는 방법에 설명, 2.x 및 업그레이드 프로세스 중 발생할 수 있는 문제를 해결 하는 방법...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26505742"
 ---
 <a name="upgrading-signalr-1x-projects-to-version-2"></a>SignalR 1.x 프로젝트 버전 2로 업그레이드
 ====================

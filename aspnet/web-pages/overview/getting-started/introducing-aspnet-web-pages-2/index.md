@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/index
-title: "ASP.NET 웹 페이지를 소개 | Microsoft Docs"
+title: ASP.NET 웹 페이지를 소개 | Microsoft Docs
 author: rick-anderson
-description: "ASP.NET 웹 페이지 2 소개"
+description: ASP.NET 웹 페이지 2 소개
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/18/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-
 msc.type: chapter
 ms.openlocfilehash: 03dd1be4651b95c8f7a496378af33e371cead64f
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26528562"
 ---
 <a name="introducing-aspnet-web-pages"></a>ASP.NET 웹 페이지를 소개합니다.
 ====================

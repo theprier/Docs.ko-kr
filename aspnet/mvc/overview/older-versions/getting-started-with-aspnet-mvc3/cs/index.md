@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/index
-title: "ASP.NET MVC 3 (C#) 시작 | Microsoft Docs"
+title: ASP.NET MVC 3 (C#) 시작 | Microsoft Docs
 author: rick-anderson
-description: "Microsoft Visual Web Developer 2010 Express를 사용 하 여 C#을 사용 하 여 ASP.NET MVC 웹 응용 프로그램을 구축 하는 기초 합니다."
+description: Microsoft Visual Web Developer 2010 Express를 사용 하 여 C#을 사용 하 여 ASP.NET MVC 웹 응용 프로그램을 구축 하는 기초 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/12/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs
 msc.type: chapter
 ms.openlocfilehash: a150ed0d30a2bd695f598d83cd63e321d529f202
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26501612"
 ---
 <a name="getting-started-with-aspnet-mvc-3-c"></a>ASP.NET MVC 3 (C#)를 시작 하기
 ====================

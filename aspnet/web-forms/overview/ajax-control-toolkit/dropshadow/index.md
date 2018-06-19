@@ -2,7 +2,7 @@
 uid: web-forms/overview/ajax-control-toolkit/dropshadow/index
 title: DropShadow | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에서는 패널 뒤에 그림자를 그리는 DropShadow 컨트롤을 사용 하는 방법을 보여 줍니다."
+description: 이 자습서에서는 패널 뒤에 그림자를 그리는 DropShadow 컨트롤을 사용 하는 방법을 보여 줍니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dropshadow
 msc.type: chapter
 ms.openlocfilehash: 60725a1fa9d23831ecbe639d09b54ab57384e384
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26510412"
 ---
 <a name="dropshadow"></a>DropShadow
 ====================

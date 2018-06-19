@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/mapping-users-to-connections
-title: "SignalR 사용자의 SignalR 연결으로 매핑 1.x | Microsoft Docs"
+title: SignalR 사용자의 SignalR 연결으로 매핑 1.x | Microsoft Docs
 author: pfletcher
-description: "이 항목에는 사용자 및 해당 연결에 대 한 정보를 저장 하는 방법을 보여 줍니다."
+description: 이 항목에는 사용자 및 해당 연결에 대 한 정보를 저장 하는 방법을 보여 줍니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28037018"
 ---
 <a name="mapping-signalr-users-to-connections-in-signalr-1x"></a>SignalR 사용자의 SignalR 연결으로 매핑 1.x
 ====================

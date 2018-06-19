@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/views/index
-title: "ASP.NET MVC 뷰 | Microsoft Docs"
+title: ASP.NET MVC 뷰 | Microsoft Docs
 author: rick-anderson
-description: "자습서의이 집합에는 ASP.NET MVC 뷰, 데이터 보기 및 HTML 도우미에 대 한 간략 한 소개를 제공합니다."
+description: 자습서의이 집합에는 ASP.NET MVC 뷰, 데이터 보기 및 HTML 도우미에 대 한 간략 한 소개를 제공합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/older-versions-1/views
 msc.type: chapter
 ms.openlocfilehash: ba9f94794f1a53d9b3a027b1cfdf2e97b5544488
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26500832"
 ---
 <a name="aspnet-mvc-views"></a>ASP.NET MVC 뷰
 ====================

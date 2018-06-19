@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/security/basic-authentication
-title: "ASP.NET Web API의에서 기본 인증 | Microsoft Docs"
+title: ASP.NET Web API의에서 기본 인증 | Microsoft Docs
 author: MikeWasson
-description: "기본 인증을 사용 하 여 ASP.NET Web API에 설명 합니다."
+description: 기본 인증을 사용 하 여 ASP.NET Web API에 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/02/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26508132"
 ---
 <a name="basic-authentication-in-aspnet-web-api"></a>ASP.NET Web API의에서 기본 인증
 ====================

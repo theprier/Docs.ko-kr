@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-the-ability-to-create-groups-with-the-listview-control-for-different-data
-title: "[어떻게 할까요?] 기능을 사용 하 여 다른 데이터에 대 한 ListView 컨트롤을 사용 하 여 그룹을 만들려면 | Microsoft Docs"
+title: '[어떻게 할까요?] 기능을 사용 하 여 다른 데이터에 대 한 ListView 컨트롤을 사용 하 여 그룹을 만들려면 | Microsoft Docs'
 author: rick-anderson
-description: "이 비디오에서는 Chris Pels ListView 컨트롤에서 데이터를 표시할 때 항목을 그룹화 하는 방법을 표시 됩니다. 첫째, ListView 제어에서 항목 레이아웃의 기본 사항을 참조 하십시오."
+description: 이 비디오에서는 Chris Pels ListView 컨트롤에서 데이터를 표시할 때 항목을 그룹화 하는 방법을 표시 됩니다. 첫째, ListView 제어에서 항목 레이아웃의 기본 사항을 참조 하십시오.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/20/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525202"
 ---
 <a name="how-do-i-use-the-ability-to-create-groups-with-the-listview-control-for-different-data"></a>[어떻게 할까요?] 기능을 사용 하 여 다른 데이터에 대 한 ListView 컨트롤을 사용 하 여 그룹을 만들려면
 ====================

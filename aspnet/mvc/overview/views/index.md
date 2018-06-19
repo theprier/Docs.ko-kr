@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/views/index
-title: "ASP.NET MVC UI, 레이아웃 및 테마 | Microsoft Docs"
+title: ASP.NET MVC UI, 레이아웃 및 테마 | Microsoft Docs
 author: rick-anderson
-description: "Razor 구문 및 정보를 표시 하려면 보기 (mvc에서 V)에 사용 하는 방법입니다."
+description: Razor 구문 및 정보를 표시 하려면 보기 (mvc에서 V)에 사용 하는 방법입니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/10/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/views
 msc.type: chapter
 ms.openlocfilehash: 914820b5d086f2f194881ec9d47da2e5db9732a7
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26503282"
 ---
 <a name="aspnet-mvc-ui-layouts-and-themes"></a>ASP.NET MVC UI, 레이아웃 및 테마
 ====================

@@ -2,7 +2,7 @@
 uid: web-api/index
 title: ASP.NET Web API | Microsoft Docs
 author: rick-anderson
-description: "ASP.NET MVC 4를 다운로드 하 고 다양 한 클라이언트 연결할 HTTP 서비스를 빌드하십시오."
+description: ASP.NET MVC 4를 다운로드 하 고 다양 한 클라이언트 연결할 HTTP 서비스를 빌드하십시오.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/17/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /web-api
 msc.type: categoryindex
 ms.openlocfilehash: 208cca850cc18f02c6a317c86b532e9707e9d5cf
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26507052"
 ---
 <a name="aspnet-web-api"></a>ASP.NET Web API
 ====================

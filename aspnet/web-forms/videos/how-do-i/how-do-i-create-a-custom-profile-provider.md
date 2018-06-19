@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-a-custom-profile-provider
-title: "[어떻게 할까요?] 사용자 지정 프로필 공급자 만들기 | Microsoft 문서"
+title: '[어떻게 할까요?] 사용자 지정 프로필 공급자 만들기 | Microsoft 문서'
 author: rick-anderson
-description: "이 비디오에서는 t에서 별도 SQL Server 테이블에서 사용자 프로필에 연결 된 데이터 저장 및 검색을 사용자 지정 프로필 공급자를 만드는 방법에 설명..."
+description: 이 비디오에서는 t에서 별도 SQL Server 테이블에서 사용자 프로필에 연결 된 데이터 저장 및 검색을 사용자 지정 프로필 공급자를 만드는 방법에 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526412"
 ---
 <a name="how-do-i-create-a-custom-profile-provider"></a>[어떻게 할까요?] 사용자 지정 프로필 공급자 만들기
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: mvc/videos/mvc-3/mvc-3-razor-view-engine
-title: "MVC 3-Razor 뷰 엔진 | Microsoft Docs"
+title: MVC 3-Razor 뷰 엔진 | Microsoft Docs
 author: jongalloway
-description: "이 비디오에서는 ASP.NET MVC 3에 포함 된 새로운 Razor 뷰 엔진의 기본 사항에 설명 합니다."
+description: 이 비디오에서는 ASP.NET MVC 3에 포함 된 새로운 Razor 뷰 엔진의 기본 사항에 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/04/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26503822"
 ---
 <a name="mvc-3---razor-view-engine"></a>MVC 3-Razor 뷰 엔진
 ====================

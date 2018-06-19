@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/index
-title: "ASP.NET 4-엔터프라이즈 배포 시리즈 3 TFS 구성 | Microsoft Docs"
+title: ASP.NET 4-엔터프라이즈 배포 시리즈 3 TFS 구성 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에서는 Team Foundation Server (TFS) 2010 솔루션을 구축 하 다양 한 대상 환경에 웹 콘텐츠를 배포를 구성 하는 방법을 보여줍니다."
+description: 이 자습서에서는 Team Foundation Server (TFS) 2010 솔루션을 구축 하 다양 한 대상 환경에 웹 콘텐츠를 배포를 구성 하는 방법을 보여줍니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/16/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server
 msc.type: chapter
 ms.openlocfilehash: e82bcc3d408a47233e2192d9dd9a56ecd06fbaa1
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26515172"
 ---
 <a name="aspnet-4---enterprise-deployment-series-3-configuring-tfs"></a>ASP.NET 4-엔터프라이즈 배포 시리즈 3 TFS를 구성 합니다.
 ====================

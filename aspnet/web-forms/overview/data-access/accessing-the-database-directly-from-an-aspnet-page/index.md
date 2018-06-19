@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/index
-title: "ASP.NET 페이지에서 직접 데이터베이스에 액세스 | Microsoft Docs"
+title: ASP.NET 페이지에서 직접 데이터베이스에 액세스 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에는 프레젠테이션 및 데이터를 엄격 하 게 분리 필요 하지 않을 때 데이터베이스를 직접 쿼리할 수 SqlDataSource 컨트롤을 사용 하는 방법을 표시..."
+description: 이 자습서에는 프레젠테이션 및 데이터를 엄격 하 게 분리 필요 하지 않을 때 데이터베이스를 직접 쿼리할 수 SqlDataSource 컨트롤을 사용 하는 방법을 표시...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-f
 msc.type: chapter
 ms.openlocfilehash: ec6474ccfd2aadc76dc21596fa1e4a5dc7bf01f8
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26511722"
 ---
 <a name="accessing-the-database-directly-from-an-aspnet-page"></a>ASP.NET 페이지에서 직접 데이터베이스에 액세스
 ====================

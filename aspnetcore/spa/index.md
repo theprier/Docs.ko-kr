@@ -17,6 +17,7 @@ ms.sourcegitcommit: 466300d32f8c33e64ee1b419a2cbffe702863cdf
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 05/27/2018
+ms.locfileid: "34555562"
 ---
 # <a name="use-the-single-page-application-templates-with-aspnet-core"></a>ASP.NET Core에서 단일 페이지 응용 프로그램 템플릿 사용
 

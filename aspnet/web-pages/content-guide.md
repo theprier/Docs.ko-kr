@@ -1,8 +1,8 @@
 ---
 uid: web-pages/content-guide
-title: "WebMatrix 콘텐츠 가이드 | Microsoft Docs"
+title: WebMatrix 콘텐츠 가이드 | Microsoft Docs
 author: rick-anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/13/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26528682"
 ---
 <a name="webmatrix-content-guide"></a>WebMatrix 콘텐츠 가이드
 ====================

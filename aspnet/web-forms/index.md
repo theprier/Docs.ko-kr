@@ -2,7 +2,7 @@
 uid: web-forms/index
 title: ASP.NET Web Forms | Microsoft Docs
 author: rick-anderson
-description: "Visual Web Developer Express 다운로드 (&)를 신속 하 게 웹 environ 시각적 디자인에 ASP.NET Web Forms에서 이해 하기 쉬운 컨트롤을 사용 하 여 앱을 만드는 방법을 알아보세요..."
+description: Visual Web Developer Express 다운로드 (&)를 신속 하 게 웹 environ 시각적 디자인에 ASP.NET Web Forms에서 이해 하기 쉬운 컨트롤을 사용 하 여 앱을 만드는 방법을 알아보세요...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/08/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms
 msc.type: categoryindex
 ms.openlocfilehash: f56ac2552017ad2b41debdea58d93c19c56268b9
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26509742"
 ---
 <a name="aspnet-web-forms"></a>ASP.NET Web Forms
 ====================

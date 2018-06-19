@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/index
-title: "이전 버전의 보안 | Microsoft Docs"
+title: 이전 버전의 보안 | Microsoft Docs
 author: rick-anderson
-description: "ASP.NET 4 및 이전 Web Forms 응용 프로그램에 대 한 보안, 인증 및 권한 부여 항목입니다."
+description: ASP.NET 4 및 이전 Web Forms 응용 프로그램에 대 한 보안, 인증 및 권한 부여 항목입니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/18/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/older-versions-security
 msc.type: chapter
 ms.openlocfilehash: 2a21be5f59e1893ce5a85d0ec801abf6750024b9
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26519072"
 ---
 <a name="older-versions---security"></a>이전 버전의 보안
 ====================

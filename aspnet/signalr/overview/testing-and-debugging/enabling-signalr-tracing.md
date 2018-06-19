@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/testing-and-debugging/enabling-signalr-tracing
-title: "SignalR 추적 사용 | Microsoft Docs"
+title: SignalR 추적 사용 | Microsoft Docs
 author: tfitzmac
-description: "이 문서에서는 SignalR 서버와 클라이언트에 대 한 추적을 구성 하는 방법에 설명 합니다. 추적을 사용 하면 이벤트에 대 한 진단 정보를 볼 수 있습니다..."
+description: 이 문서에서는 SignalR 서버와 클라이언트에 대 한 추적을 구성 하는 방법에 설명 합니다. 추적을 사용 하면 이벤트에 대 한 진단 정보를 볼 수 있습니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/08/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28032820"
 ---
 <a name="enabling-signalr-tracing"></a>SignalR 추적 사용
 ====================

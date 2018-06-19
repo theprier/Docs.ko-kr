@@ -1,14 +1,14 @@
 ---
 uid: visual-studio/overview/2013/aspnet-scaffolding-overview
-title: "Visual Studio 2013에서 ASP.NET 스 캐 폴딩 | Microsoft Docs"
+title: Visual Studio 2013에서 ASP.NET 스 캐 폴딩 | Microsoft Docs
 author: tfitzmac
-description: "ASP.NET 스 캐 폴딩은 Visual Studio 2013에 포함 된 새로운 기능입니다."
+description: ASP.NET 스 캐 폴딩은 Visual Studio 2013에 포함 된 새로운 기능입니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/09/2014
 ms.topic: article
 ms.assetid: a41ec9d4-8287-4f31-9e2a-460e7b7f04be
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/aspnet-scaffolding-overview
 msc.type: authoredcontent
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26506732"
 ---
 <a name="aspnet-scaffolding-in-visual-studio-2013"></a>Visual Studio 2013에서 ASP.NET 스 캐 폴딩
 ====================

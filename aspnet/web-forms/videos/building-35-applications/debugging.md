@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/debugging
-title: "디버깅 | Microsoft Docs"
+title: 디버깅 | Microsoft Docs
 author: JoeStagner
-description: "설명: Visual Web Developer 초보자를 위한와 동일 하 게 전문 개발자에 대 한 풍부한 디버깅 환경을 제공합니다. 이 비디오에서는 Joe 됩니다 이동 하는 VW 통해 중..."
+description: '설명: Visual Web Developer 초보자를 위한와 동일 하 게 전문 개발자에 대 한 풍부한 디버깅 환경을 제공합니다. 이 비디오에서는 Joe 됩니다 이동 하는 VW 통해 중...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/30/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26528152"
 ---
 <a name="debugging"></a>디버깅
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-api/videos/getting-started/index
-title: "ASP.NET 웹 API 개요 및 가져오기 시작 동영상 | Microsoft Docs"
+title: ASP.NET 웹 API 개요 및 가져오기 시작 동영상 | Microsoft Docs
 author: rick-anderson
-description: "ASP.NET Web API를 사용할 수 있게 하는 비디오 시리즈를입니다."
+description: ASP.NET Web API를 사용할 수 있게 하는 비디오 시리즈를입니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/16/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /web-api/videos/getting-started
 msc.type: chapter
 ms.openlocfilehash: c06a3e5670839af357a515331cd864521d260c0e
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26508992"
 ---
 <a name="aspnet-web-api-overview-and-getting-started-videos"></a>비디오 시작 하는 ASP.NET 웹 API 개요 및 가져오기
 ====================

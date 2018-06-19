@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/masterdetail/index
-title: "마스터/세부 | Microsoft Docs"
+title: 마스터/세부 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에는 드롭다운 목록 및 세부 정보 GridView 컨트롤에 마스터 레코드를 표시 하는 방법을 보여 줍니다."
+description: 이 자습서에는 드롭다운 목록 및 세부 정보 GridView 컨트롤에 마스터 레코드를 표시 하는 방법을 보여 줍니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/data-access/masterdetail
 msc.type: chapter
 ms.openlocfilehash: d0e8193c008f5457a62cd009873883acc0c5c237
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26514442"
 ---
 <a name="masterdetail"></a>마스터/세부 정보
 ====================

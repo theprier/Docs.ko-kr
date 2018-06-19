@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/releases/index
-title: "ASP.NET Web API를 해제 | Microsoft Docs"
+title: ASP.NET Web API를 해제 | Microsoft Docs
 author: rick-anderson
-description: "최근 웹 API의 새로운 기능을 해제 합니다."
+description: 최근 웹 API의 새로운 기능을 해제 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/13/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /web-api/overview/releases
 msc.type: chapter
 ms.openlocfilehash: 479d39edb071e84587e10ef3bce0ad929fa77c60
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26508032"
 ---
 <a name="aspnet-web-api-releases"></a>ASP.NET Web API를 해제
 ====================

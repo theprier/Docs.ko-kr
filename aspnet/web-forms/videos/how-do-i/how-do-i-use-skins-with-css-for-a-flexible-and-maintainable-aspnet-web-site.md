@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-skins-with-css-for-a-flexible-and-maintainable-aspnet-web-site
-title: "[어떻게 할까요?] 유연 하 고 유지 관리 가능한 ASP.NET 웹 사이트에 대 한 css 스킨을 사용 하 여 | Microsoft Docs"
+title: '[어떻게 할까요?] 유연 하 고 유지 관리 가능한 ASP.NET 웹 사이트에 대 한 css 스킨을 사용 하 여 | Microsoft Docs'
 author: rick-anderson
-description: "이 비디오 Chris Pels ASP.NET 서버 컨트롤 스킨을 만들어 다음 스킨이 contr.의 모양을 제어 하기 위해 CSS 스타일을 통합 하는 방법을 보여 줍니다."
+description: 이 비디오 Chris Pels ASP.NET 서버 컨트롤 스킨을 만들어 다음 스킨이 contr.의 모양을 제어 하기 위해 CSS 스타일을 통합 하는 방법을 보여 줍니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/07/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521772"
 ---
 <a name="how-do-i-use-skins-with-css-for-a-flexible-and-maintainable-aspnet-web-site"></a>[어떻게 할까요?] 유연 하 고 유지 관리할 수 있는 ASP.NET 웹 사이트에 대 한 css 스킨을 사용 하 여
 ====================

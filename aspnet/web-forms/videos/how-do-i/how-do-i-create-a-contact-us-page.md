@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-a-contact-us-page
-title: "연락처 페이지 우리는 어떻게 만드나요"
+title: 연락처 페이지 우리는 어떻게 만드나요
 author: microsoft
-description: "빌드에 Wizard 컨트롤을 통해 사용자의 정보를 수집 합니다. 해당 정보를 확인 하 고는 따라 보낼 System.Net.Mail 클래스를 사용 하는 웹 페이지 중..."
+description: 빌드에 Wizard 컨트롤을 통해 사용자의 정보를 수집 합니다. 해당 정보를 확인 하 고는 따라 보낼 System.Net.Mail 클래스를 사용 하는 웹 페이지 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/24/2006
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525462"
 ---
 <a name="how-do-i-create-a-contact-us-page"></a>[어떻게 할까요?] "사용자 의견" 페이지 만들기
 ====================

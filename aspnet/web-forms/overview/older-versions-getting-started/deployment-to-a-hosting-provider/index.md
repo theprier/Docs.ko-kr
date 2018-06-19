@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/index
-title: "ASP.NET 4-SQL Server Compact Visual Studio를 사용 하 여와 웹 배포 | Microsoft Docs"
+title: ASP.NET 4-SQL Server Compact Visual Studio를 사용 하 여와 웹 배포 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서 시리즈에 사용 하 여 SQL Server Compact 사용할 수 있는 인터넷을 통해 다른 공급 업체 h에 배포 하 여 ASP.NET 웹 응용 프로그램을 만드는 방법을 보여 줍니다 중..."
+description: 이 자습서 시리즈에 사용 하 여 SQL Server Compact 사용할 수 있는 인터넷을 통해 다른 공급 업체 h에 배포 하 여 ASP.NET 웹 응용 프로그램을 만드는 방법을 보여 줍니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/29/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-
 msc.type: chapter
 ms.openlocfilehash: 2674550e6e69c2b8b9f463c5e9cb2d1d3e0713af
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26518102"
 ---
 <a name="aspnet-4---web-deployment-with-sql-server-compact-using-visual-studio"></a>ASP.NET 4-SQL Server Compact Visual Studio를 사용 하 여와 웹 배포
 ====================

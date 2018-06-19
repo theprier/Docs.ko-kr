@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/getting-started/index
-title: "ASP.NET MVC 시작 | Microsoft Docs"
+title: ASP.NET MVC 시작 | Microsoft Docs
 author: rick-anderson
-description: "자세한 배포에 대 한 ASP.NET MVC ASP.NET 고려 사항 및 해당 g 확실히 구분할 수 있도록 하는 동적 웹 사이트를 구축 하는 기능을 강력한 패턴 기반의 방법을 제공..."
+description: 자세한 배포에 대 한 ASP.NET MVC ASP.NET 고려 사항 및 해당 g 확실히 구분할 수 있도록 하는 동적 웹 사이트를 구축 하는 기능을 강력한 패턴 기반의 방법을 제공...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/31/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/getting-started
 msc.type: chapter
 ms.openlocfilehash: 37d374d01ca122046f9fcd7b72331fc7cfe569cf
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26499212"
 ---
 <a name="aspnet-mvc-getting-started"></a>ASP.NET MVC 시작
 ====================

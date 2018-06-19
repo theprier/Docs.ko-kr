@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/index
-title: "필터링 된 DataList 및 반복기 시나리오 | Microsoft Docs"
+title: 필터링 된 DataList 및 반복기 시나리오 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에 마스터 레코드 세부 정보에 대 한 DataList 컨트롤에 대 한 드롭다운 목록을 사용 하 여 마스터/세부 보고서를 표시 하는 방법을 볼 수 있습니다."
+description: 이 자습서에 마스터 레코드 세부 정보에 대 한 DataList 컨트롤에 대 한 드롭다운 목록을 사용 하 여 마스터/세부 보고서를 표시 하는 방법을 볼 수 있습니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-data
 msc.type: chapter
 ms.openlocfilehash: a8a1c2301dc287b49149bc5afe85a7dedad54d58
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26514102"
 ---
 <a name="filtering-scenarios-with-the-datalist-and-repeater"></a>필터링 된 DataList 및 반복기 시나리오
 ====================

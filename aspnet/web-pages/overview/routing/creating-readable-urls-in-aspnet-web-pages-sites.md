@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/routing/creating-readable-urls-in-aspnet-web-pages-sites
-title: "페이지 (Razor) 사이트를 ASP.NET 웹에서 읽을 수 있는 Url을 만들면 | Microsoft Docs"
+title: 페이지 (Razor) 사이트를 ASP.NET 웹에서 읽을 수 있는 Url을 만들면 | Microsoft Docs
 author: tfitzmac
-description: "이 문서는 ASP.NET 웹 페이지 (Razor) 웹 사이트 및 어떻게 이렇게 하면 더 쉽게 읽고 SEO에 더 나은 있는 Url을 사용 하 여의 라우팅 설명 합니다. 합니다..."
+description: 이 문서는 ASP.NET 웹 페이지 (Razor) 웹 사이트 및 어떻게 이렇게 하면 더 쉽게 읽고 SEO에 더 나은 있는 Url을 사용 하 여의 라우팅 설명 합니다. 합니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/17/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26529752"
 ---
 <a name="creating-readable-urls-in-aspnet-web-pages-razor-sites"></a>ASP.NET 웹 페이지 (Razor) 사이트에서 읽을 수 있는 Url 만들기
 ====================

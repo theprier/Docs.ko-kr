@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/index
-title: "이전 버전-1과 2 MVC | Microsoft Docs"
+title: 이전 버전-1과 2 MVC | Microsoft Docs
 author: rick-anderson
-description: "MVC 1과 2를 프로그래밍 하는 방법을 학습 하기 위한 리소스입니다."
+description: MVC 1과 2를 프로그래밍 하는 방법을 학습 하기 위한 리소스입니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/10/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/older-versions-1
 msc.type: chapter
 ms.openlocfilehash: 8cd1868c8729c79dd9dda2067063e427cf3e0b4e
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26500092"
 ---
 <a name="older-versions---mvc-1-and-2"></a>이전 버전의 MVC 1 및 2
 ====================

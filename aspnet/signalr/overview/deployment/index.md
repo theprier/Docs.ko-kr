@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/deployment/index
-title: "SignalR 배포 및 호스팅 | Microsoft Docs"
+title: SignalR 배포 및 호스팅 | Microsoft Docs
 author: rick-anderson
-description: "배포 하는 방법 및 호스트 SignalR 응용 프로그램입니다."
+description: 배포 하는 방법 및 호스트 SignalR 응용 프로그램입니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/19/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /signalr/overview/deployment
 msc.type: chapter
 ms.openlocfilehash: 8c018a2fe92c90e3264326116cb4b21a0070bff4
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26504072"
 ---
 <a name="signalr-deployment-and-hosting"></a>SignalR 배포 및 호스팅
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: mvc/videos/mvc-3/mvc-3-razor-helpers
-title: "MVC 3-Razor 도우미 | Microsoft Docs"
+title: MVC 3-Razor 도우미 | Microsoft Docs
 author: jongalloway
-description: "이 비디오에서는 확장 방법을 모두 사용 하는 방법을 배우게 됩니다 및 선언적 @helper Razor 보기에는 구문입니다."
+description: 이 비디오에서는 확장 방법을 모두 사용 하는 방법을 배우게 됩니다 및 선언적 @helper Razor 보기에는 구문입니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/23/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26503662"
 ---
 <a name="mvc-3---razor-helpers"></a>MVC 3-Razor 도우미
 ====================

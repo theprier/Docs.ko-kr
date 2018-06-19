@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870741"
 ---
 <a name="executing-animations-using-client-side-code-c"></a>클라이언트 쪽 코드 (C#)를 사용 하 여 실행 중인 애니메이션
 ====================

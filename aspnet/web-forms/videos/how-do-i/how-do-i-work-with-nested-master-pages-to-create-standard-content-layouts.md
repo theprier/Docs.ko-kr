@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-work-with-nested-master-pages-to-create-standard-content-layouts
-title: "[어떻게 할까요?] 중첩 된 마스터 페이지 표준 콘텐츠 레이아웃을 만드는 작업 | Microsoft Docs"
+title: '[어떻게 할까요?] 중첩 된 마스터 페이지 표준 콘텐츠 레이아웃을 만드는 작업 | Microsoft Docs'
 author: rick-anderson
-description: "이 비디오 Chris Pels에서 w에 대 한 다른 표준 콘텐츠 레이아웃을 나타내는 개별 마스터 페이지를 만드는 중첩 된 마스터 페이지를 사용 하는 방법을 표시 됩니다..."
+description: 이 비디오 Chris Pels에서 w에 대 한 다른 표준 콘텐츠 레이아웃을 나타내는 개별 마스터 페이지를 만드는 중첩 된 마스터 페이지를 사용 하는 방법을 표시 됩니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/19/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525962"
 ---
 <a name="how-do-i-work-with-nested-master-pages-to-create-standard-content-layouts"></a>[어떻게 할까요?] 중첩 된 마스터 페이지 표준 콘텐츠 레이아웃을 만드는 작업
 ====================

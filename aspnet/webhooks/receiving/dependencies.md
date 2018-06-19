@@ -1,20 +1,21 @@
 ---
 uid: webhooks/receiving/dependencies
-title: "ASP.NET Webhook 수신기 종속성 | Microsoft Docs"
+title: ASP.NET Webhook 수신기 종속성 | Microsoft Docs
 author: rick-anderson
-description: "수신기 종속성 및 ASP.NET Webhook의 종속성 주입 합니다."
+description: 수신기 종속성 및 ASP.NET Webhook의 종속성 주입 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/17/2012
 ms.topic: article
 ms.assetid: 5125e483-c2bb-435b-8cd1-21d3499bfaaf
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 ms.openlocfilehash: f9726c746c8934594e26f2871f9b867c192374bb
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26529912"
 ---
 # <a name="aspnet-webhooks-receiver-dependencies"></a>ASP.NET Webhook 수신기 종속성
 

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-make-greater-use-of-caching
-title: "[어떻게 할까요?] Caching의 큰 사용 하 여 만들기 | Microsoft 문서"
+title: '[어떻게 할까요?] Caching의 큰 사용 하 여 만들기 | Microsoft 문서'
 author: microsoft
-description: "보기 부분 페이지 출력 캐싱 동작, 효율적으로 데이터 표시를 바인딩하는 방법을 보여 주는 캐시 API의 개요..."
+description: 보기 부분 페이지 출력 캐싱 동작, 효율적으로 데이터 표시를 바인딩하는 방법을 보여 주는 캐시 API의 개요...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/16/2006
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526452"
 ---
 <a name="how-do-i-make-greater-use-of-caching"></a>[어떻게 할까요?] Caching의 큰 사용 하 여 만들기
 ====================

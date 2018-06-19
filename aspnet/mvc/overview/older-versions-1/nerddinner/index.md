@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/nerddinner/index
-title: "업그레이드 되었으며 수정 | Microsoft Docs"
+title: 업그레이드 되었으며 수정 | Microsoft Docs
 author: rick-anderson
-description: "ASP.NET MVC 1을 사용 하 여 NerdDinner.com 웹 사이트 작성 하는 방법. ASP.NET MVC 3 버전에 대 한 업그레이드 되었으며 수정 GitHub에 방문."
+description: ASP.NET MVC 1을 사용 하 여 NerdDinner.com 웹 사이트 작성 하는 방법. ASP.NET MVC 3 버전에 대 한 업그레이드 되었으며 수정 GitHub에 방문.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/older-versions-1/nerddinner
 msc.type: chapter
 ms.openlocfilehash: e4791f1fa7d5a23fdd688c294836971735070afc
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26500752"
 ---
 <a name="nerddinner"></a>업그레이드 되었으며 수정
 ====================

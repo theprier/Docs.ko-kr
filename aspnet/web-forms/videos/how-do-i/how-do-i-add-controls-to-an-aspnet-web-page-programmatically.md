@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-add-controls-to-an-aspnet-web-page-programmatically
-title: "[어떻게 할까요?] ASP.NET 웹 페이지에 컨트롤을 프로그래밍 방식으로 추가 | Microsoft Docs"
+title: '[어떻게 할까요?] ASP.NET 웹 페이지에 컨트롤을 프로그래밍 방식으로 추가 | Microsoft Docs'
 author: rick-anderson
-description: "이 비디오 Chris Pels에서 런타임 시 ASP.NET 서버 컨트롤을 프로그래밍 방식으로 만들 페이지에 추가 하는 방법을 표시 됩니다. 첫째, 기본 개념 o 알아보기..."
+description: 이 비디오 Chris Pels에서 런타임 시 ASP.NET 서버 컨트롤을 프로그래밍 방식으로 만들 페이지에 추가 하는 방법을 표시 됩니다. 첫째, 기본 개념 o 알아보기...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/24/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525652"
 ---
 <a name="how-do-i-add-controls-to-an-aspnet-web-page-programmatically"></a>[어떻게 할까요?] ASP.NET 웹 페이지에 컨트롤을 프로그래밍 방식으로 추가
 ====================

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32740298"
 ---
 # <a name="handle-requests-with-controllers-in-aspnet-core-mvc"></a>ASP.NET Core MVC에서 컨트롤러를 사용한 요청 처리
 

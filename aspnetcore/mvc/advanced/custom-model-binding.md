@@ -14,6 +14,7 @@ ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32740623"
 ---
 # <a name="custom-model-binding-in-aspnet-core"></a>ASP.NET Core의 사용자 지정 모델 바인딩
 

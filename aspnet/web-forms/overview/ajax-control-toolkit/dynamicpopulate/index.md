@@ -2,7 +2,7 @@
 uid: web-forms/overview/ajax-control-toolkit/dynamicpopulate/index
 title: DynamicPopulate | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에서는 웹 서비스를 호출 하 고 결과 값 페이지에서 컨트롤에 표시 하는 DynamicPopulate 컨트롤을 사용 하는 방법을 보여 줍니다."
+description: 이 자습서에서는 웹 서비스를 호출 하 고 결과 값 페이지에서 컨트롤에 표시 하는 DynamicPopulate 컨트롤을 사용 하는 방법을 보여 줍니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate
 msc.type: chapter
 ms.openlocfilehash: 1d16b9e1b1f24e21bbc05c31c30c59fbe923b6c5
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26510562"
 ---
 <a name="dynamicpopulate"></a>DynamicPopulate
 ====================

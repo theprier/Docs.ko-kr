@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/index
-title: "이전 버전-Web Forms 시작 | Microsoft Docs"
+title: 이전 버전-Web Forms 시작 | Microsoft Docs
 author: rick-anderson
-description: "ASP.NET Web Forms 4 및 이전 버전에 대 한 설명서입니다."
+description: ASP.NET Web Forms 4 및 이전 버전에 대 한 설명서입니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/18/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/older-versions-getting-started
 msc.type: chapter
 ms.openlocfilehash: 5b8e483c21b91ca1c056f3ad2e686b8faf1e4dc5
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26518052"
 ---
 <a name="older-versions---web-forms-getting-started"></a>이전 버전-Web Forms 시작
 ====================

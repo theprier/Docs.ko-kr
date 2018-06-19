@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872740"
 ---
 <a name="implementing-a-custom-mysql-aspnet-identity-storage-provider"></a>MySQL 사용자 지정 ASP.NET Identity 저장소 공급자 구현
 ====================

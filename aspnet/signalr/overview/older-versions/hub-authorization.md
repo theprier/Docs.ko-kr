@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/hub-authorization
-title: "인증 및 권한 부여 SignalR 허브에 대 한 (SignalR 1.x) | Microsoft Docs"
+title: 인증 및 권한 부여 SignalR 허브에 대 한 (SignalR 1.x) | Microsoft Docs
 author: pfletcher
-description: "이 항목에 있는 사용자 또는 역할에는 허브 메서드에 액세스할 수를 제한 하는 방법을 설명 합니다."
+description: 이 항목에 있는 사용자 또는 역할에는 허브 메서드에 액세스할 수를 제한 하는 방법을 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28042877"
 ---
 <a name="authentication-and-authorization-for-signalr-hubs-signalr-1x"></a>인증 및 권한 부여 SignalR 허브에 대 한 (SignalR 1.x)
 ====================

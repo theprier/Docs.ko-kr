@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-user-selectable-themes-for-a-web-site
-title: "[어떻게 할까요?] 웹 사이트에 대 한 사용자 선택 가능한 테마를 만들 | Microsoft Docs"
+title: '[어떻게 할까요?] 웹 사이트에 대 한 사용자 선택 가능한 테마를 만들 | Microsoft Docs'
 author: rick-anderson
-description: "이 비디오에서는 Chris Pels는 웹 사이트에 대 한 여러 테마를 만들고 다음 사용자가 사이트에 적용 되는 테마를 선택할 수 있도록 하는 방법을 보여 줍니다. 참조 방식 중..."
+description: 이 비디오에서는 Chris Pels는 웹 사이트에 대 한 여러 테마를 만들고 다음 사용자가 사이트에 적용 되는 테마를 선택할 수 있도록 하는 방법을 보여 줍니다. 참조 방식 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/13/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26524952"
 ---
 <a name="how-do-i-create-user-selectable-themes-for-a-web-site"></a>[어떻게 할까요?] 웹 사이트에 대 한 사용자 선택할 수 있는 테마 만들기
 ====================

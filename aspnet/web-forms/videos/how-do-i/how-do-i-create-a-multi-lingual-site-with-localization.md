@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-a-multi-lingual-site-with-localization
-title: "[어떻게 할까요?] 지역화를 사용 하 여 다국어 사이트 만들기 | Microsoft 문서"
+title: '[어떻게 할까요?] 지역화를 사용 하 여 다국어 사이트 만들기 | Microsoft 문서'
 author: microsoft
-description: "추가 코드 없이 문화권 인식 및 로캘 특정 웹 콘텐츠를 만드는 방법에 알아봅니다. 리소스 편집기를 사용 하 여 페이지 수준 및 응용 프로그램 수준을 만드는 중..."
+description: 추가 코드 없이 문화권 인식 및 로캘 특정 웹 콘텐츠를 만드는 방법에 알아봅니다. 리소스 편집기를 사용 하 여 페이지 수준 및 응용 프로그램 수준을 만드는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/06/2006
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525112"
 ---
 <a name="how-do-i-create-a-multi-lingual-site-with-localization"></a>[어떻게 할까요?] 지역화를 사용 하 여 다국어 사이트 만들기
 ====================

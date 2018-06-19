@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870104"
 ---
 <a name="how-do-i-create-a-custom-html-helper-for-an-mvc-application"></a>I: MVC 응용 프로그램에 대 한 사용자 지정 HTML 도우미를 만드는 방법
 ====================

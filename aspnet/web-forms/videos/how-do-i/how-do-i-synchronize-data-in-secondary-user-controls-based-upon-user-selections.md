@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-synchronize-data-in-secondary-user-controls-based-upon-user-selections
-title: "[어떻게 할까요?]: 사용자의 선택 항목에 따라 보조 사용자 컨트롤에서 데이터 동기화 | Microsoft Docs"
+title: '[어떻게 할까요?]: 사용자의 선택 항목에 따라 보조 사용자 컨트롤에서 데이터 동기화 | Microsoft Docs'
 author: rick-anderson
-description: "이 비디오 Chris Pels에서 여기서 두 번째 목록에서 항목을 채우는 첫 번째 목록 항목을 선택 하 두 DropDownList 컨트롤을 만드는 방법을 보여줍니다. Firs 중..."
+description: 이 비디오 Chris Pels에서 여기서 두 번째 목록에서 항목을 채우는 첫 번째 목록 항목을 선택 하 두 DropDownList 컨트롤을 만드는 방법을 보여줍니다. Firs 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/06/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526442"
 ---
 <a name="how-do-i-synchronize-data-in-secondary-user-controls-based-upon-user-selections"></a>[어떻게 할까요?]: 사용자의 선택 항목에 따라 보조 사용자 컨트롤에서 데이터 동기화
 ====================

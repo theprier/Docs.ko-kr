@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28040329"
 ---
 <a name="using-page-inspector-for-visual-studio-2012-in-aspnet-web-forms"></a>페이지 검사기를 사용 하 여 ASP.NET Web Forms에서 Visual Studio 2012 용
 ====================

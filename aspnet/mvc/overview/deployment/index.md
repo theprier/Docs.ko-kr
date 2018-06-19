@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/deployment/index
-title: "배포 | Microsoft Docs"
+title: 배포 | Microsoft Docs
 author: rick-anderson
-description: "서버에 ASP.NET MVC 프로젝트를 배포 하는 방법입니다."
+description: 서버에 ASP.NET MVC 프로젝트를 배포 하는 방법입니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/18/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/deployment
 msc.type: chapter
 ms.openlocfilehash: 8efbf5ee2e24ea6e302177a64e751b00809250fb
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26497882"
 ---
 # <a name="aspnet-mvc-deployment"></a>ASP.NET MVC 배포
 
