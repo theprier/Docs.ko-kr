@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883965"
 ---
 <a name="how-do-i-linq-to-sql-updating-with-stored-procedures"></a>작업 방법: LINQ to SQL: 저장 프로시저를 사용 하는 업데이트
 ====================

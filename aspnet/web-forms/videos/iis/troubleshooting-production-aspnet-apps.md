@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886097"
 ---
 <a name="troubleshooting-production-aspnet-apps"></a>ASP.NET 앱 프로덕션 문제 해결
 ====================

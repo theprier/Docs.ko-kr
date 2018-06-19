@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879558"
 ---
 <a name="code-first-migrations-and-deployment-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Code First 마이그레이션 및 ASP.NET MVC 응용 프로그램에서 Entity Framework와 함께 배포
 ====================
@@ -222,7 +223,7 @@ Azure SQL 데이터베이스에 데이터베이스를 배포 합니다. SQL 데�
   
     ![Students_index_page_with_paging](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/Publish-Site.png)
 
-이 시점에서 프로그램 *SchoolContext* 데이터베이스 선택 했기 때문에 Azure SQL 데이터베이스에 생성 되었음을 **실행 Code First 마이그레이션을 (응용 프로그램 시작 시 실행)**합니다. *Web.config* 배포 된 웹 사이트의 파일이 변경 되어 있도록는 [MigrateDatabaseToLatestVersion](https://msdn.microsoft.com/library/hh829476(v=vs.103).aspx) 이니셜라이저 코드에서 읽거나 (발생 하는 데이터베이스에 데이터를 쓸 처음으로 실행 선택 하는 경우는 **학생** 탭):
+이 시점에서 프로그램 *SchoolContext* 데이터베이스 선택 했기 때문에 Azure SQL 데이터베이스에 생성 되었음을 **실행 Code First 마이그레이션을 (응용 프로그램 시작 시 실행)** 합니다. *Web.config* 배포 된 웹 사이트의 파일이 변경 되어 있도록는 [MigrateDatabaseToLatestVersion](https://msdn.microsoft.com/library/hh829476(v=vs.103).aspx) 이니셜라이저 코드에서 읽거나 (발생 하는 데이터베이스에 데이터를 쓸 처음으로 실행 선택 하는 경우는 **학생** 탭):
 
 ![](https://asp.net/media/4367421/mig.png)
 

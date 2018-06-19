@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882090"
 ---
 <a name="part-3-layout-and-category-menu"></a>3 부: 레이아웃 및 범주 메뉴
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884719"
 ---
 <a name="lesson-7-databinding-to-user-interface-controls"></a>[7 단원:] 사용자 인터페이스 컨트롤에 데이터 바인딩
 ====================

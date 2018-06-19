@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887602"
 ---
 <a name="master-pages-and-site-navigation-c"></a>마스터 페이지 및 사이트 탐색 (C#)
 ====================

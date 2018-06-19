@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30867738"
 ---
 <a name="displaying-a-table-of-database-data"></a>테이블을 데이터베이스 데이터 표시
 ====================

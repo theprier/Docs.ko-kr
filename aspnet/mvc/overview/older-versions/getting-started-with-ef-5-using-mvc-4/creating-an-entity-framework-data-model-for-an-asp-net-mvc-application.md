@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877933"
 ---
 <a name="creating-an-entity-framework-data-model-for-an-aspnet-mvc-application-1-of-10"></a>ASP.NET MVC 응용 프로그램 (1 / 10)에 대 한 Entity Framework 데이터 모델 만들기
 ====================
@@ -313,9 +314,9 @@ Visual Studio 2012 이상 버전에서 LocalDB는 Visual Studio를 사용 하 �
 
    - 컨트롤러 이름: **StudentController**합니다.
    - 서식 파일: **읽기/쓰기 동작 및 뷰가, Entity Framework를 사용 하 여 포함 된 MVC 컨트롤러**합니다.
-   - 모델 클래스: **학생 (ContosoUniversity.Models)**합니다. (드롭 다운 목록에서이 옵션을 표시 되지 않으면, 프로젝트 빌드 및 다시 시도 하십시오.)
-   - 데이터 컨텍스트 클래스: **SchoolContext (ContosoUniversity.Models)**합니다.
-   - 보기: **Razor (CSHTML)**합니다. (기본값입니다.)
+   - 모델 클래스: **학생 (ContosoUniversity.Models)** 합니다. (드롭 다운 목록에서이 옵션을 표시 되지 않으면, 프로젝트 빌드 및 다시 시도 하십시오.)
+   - 데이터 컨텍스트 클래스: **SchoolContext (ContosoUniversity.Models)** 합니다.
+   - 보기: **Razor (CSHTML)** 합니다. (기본값입니다.)
 
      ![Add_Controller_dialog_box_for_Student_controller](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image20.png)
 2. Visual Studio가 열릴는 *Controllers\StudentController.cs* 파일입니다. 클래스 변수 만들어진 데이터베이스 컨텍스트 개체를 인스턴스화하는 것이 표시 됩니다.

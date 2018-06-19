@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872948"
 ---
 <a name="using-modalpopup-with-a-repeater-control-c"></a>반복기 컨트롤 (C#) ModalPopup 사용
 ====================

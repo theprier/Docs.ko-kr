@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876750"
 ---
 <a name="provide-crud-create-read-update-delete-data-form-entry-support"></a>제공 CRUD (만들기, 읽기, 업데이트, 삭제) 데이터 항목 지원 구성
 ====================
@@ -37,7 +38,7 @@ by [Microsoft](https://github.com/microsoft)
 
 ### <a name="urls-handled-by-dinnerscontroller"></a>DinnersController에서 처리 하는 Url
 
-두 Url에 대 한 지원을 구현 DinnersController에 작업 메서드 이전에 추가한: */Dinners* 및 */Dinners/세부 정보 / [id]*합니다.
+두 Url에 대 한 지원을 구현 DinnersController에 작업 메서드 이전에 추가한: */Dinners* 및 */Dinners/세부 정보 / [id]* 합니다.
 
 | **URL** | **VERB** | **용도** |
 | --- | --- | --- |

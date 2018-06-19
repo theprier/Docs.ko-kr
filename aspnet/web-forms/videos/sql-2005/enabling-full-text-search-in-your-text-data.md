@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893497"
 ---
 <a name="enabling-full-text-search-in-your-text-data"></a>텍스트 데이터의 전체 텍스트 검색을 사용 하도록 설정
 ====================

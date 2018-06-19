@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886344"
 ---
 <a name="how-do-i-use-aspnet-ajax-client-templates"></a>작업 방법: ASP.NET AJAX 클라이언트 템플릿 사용
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877127"
 ---
 <a name="displaying-data-with-the-datalist-and-repeater-controls-vb"></a>DataList 및 반복기 컨트롤 (VB)를 사용 하 여 데이터 표시
 ====================

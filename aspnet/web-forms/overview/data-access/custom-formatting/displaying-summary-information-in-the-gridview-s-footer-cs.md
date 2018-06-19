@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877426"
 ---
 <a name="displaying-summary-information-in-the-gridviews-footer-c"></a>GridView의 바닥글 (C#)의 요약 정보를 표시합니다.
 ====================

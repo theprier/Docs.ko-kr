@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886461"
 ---
 <a name="how-do-i-converting-a-net-20-windows-forms-application-to-net-35"></a>[어떻게 할까요?] .NET 3.5는.NET 2.0 Windows Forms 응용 프로그램으로 변환
 ====================

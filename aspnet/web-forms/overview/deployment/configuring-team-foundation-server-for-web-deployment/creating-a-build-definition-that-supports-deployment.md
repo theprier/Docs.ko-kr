@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30880364"
 ---
 <a name="creating-a-build-definition-that-supports-deployment"></a>배포를 지원 하는 빌드 정의 만들기
 ====================

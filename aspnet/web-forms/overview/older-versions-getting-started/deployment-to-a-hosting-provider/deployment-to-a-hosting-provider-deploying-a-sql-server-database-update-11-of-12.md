@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887332"
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-a-sql-server-database-update---11-of-12"></a>SQL Server Compact Visual Studio 또는 Visual Web Developer를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: SQL Server 데이터베이스 업데이트-12 11를 배포 합니다.
 ====================
@@ -85,7 +86,7 @@ Code First 마이그레이션을 사용 하는 경우 SQL Server로 데이터베
 
 [!code-console[Main](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12/samples/sample5.cmd)]
 
-선택 **실행 Code First 마이그레이션을 (응용 프로그램 시작 시 실행)**합니다. (프로그램 버전의 Visual Studio에서 확인란을 레이블이 지정 될 수 있습니다 **Code First 마이그레이션을 적용**.)
+선택 **실행 Code First 마이그레이션을 (응용 프로그램 시작 시 실행)** 합니다. (프로그램 버전의 Visual Studio에서 확인란을 레이블이 지정 될 수 있습니다 **Code First 마이그레이션을 적용**.)
 
 에 대 한 연결 문자열 상자에서 **DefaultConnection**에서 사용한 동일한 값을 입력에서 *Web.Test.config* 이전 자습서에서 변환 파일:
 
@@ -131,7 +132,7 @@ Visual Studio에서 코드 변경 내용을 테스트 환경에 배포 하 고 �
 
 ![Selecting_Cytanium_connection_string](deployment-to-a-hosting-provider-deploying-a-sql-server-database-update-11-of-12/_static/image5.png)
 
-선택 **실행 Code First 마이그레이션 (응용 프로그램 시작 시 실행)**합니다.
+선택 **실행 Code First 마이그레이션 (응용 프로그램 시작 시 실행)** 합니다.
 
 에 대 한 연결 문자열 드롭 다운 목록에서 **DefaultConnection**를 Cytanium 연결 문자열을 선택 합니다.
 

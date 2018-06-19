@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875411"
 ---
 <a name="how-do-i-use-the-combobox-control-vb"></a>ComboBox 컨트롤을 사용 하려면 어떻게 해야 합니까? (VB)
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/performance/scaleout-with-redis
-title: "Redis와 함께 SignalR 확장 | Microsoft Docs"
+title: Redis와 함께 SignalR 확장 | Microsoft Docs
 author: MikeWasson
-description: "이전 버전의에 대 한 내용은이 항목의 버전 2 이전 버전을 Visual Studio 2013.NET 4.5 SignalR이이 항목에서 사용 하는 소프트웨어 버전 중..."
+description: 이전 버전의에 대 한 내용은이 항목의 버전 2 이전 버전을 Visual Studio 2013.NET 4.5 SignalR이이 항목에서 사용 하는 소프트웨어 버전 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28042692"
 ---
 <a name="signalr-scaleout-with-redis"></a>Redis와 함께 SignalR 확장
 ====================

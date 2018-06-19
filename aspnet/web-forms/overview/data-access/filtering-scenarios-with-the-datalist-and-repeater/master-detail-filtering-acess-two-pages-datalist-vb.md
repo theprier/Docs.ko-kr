@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886234"
 ---
 <a name="masterdetail-filtering-across-two-pages-vb"></a>마스터/세부 정보 (VB)의 두 페이지에 걸쳐 필터링
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888970"
 ---
 <a name="masterdetail-using-a-bulleted-list-of-master-records-with-a-details-datalist-c"></a>마스터/세부 글머리 기호 목록이 마스터 레코드를 사용 하 여 사용 세부 정보 (C#)
 ====================
@@ -74,7 +75,7 @@ CSS 클래스를 추가 하 고의 태그를 구성한 후의 `CategoriesAndProd
 
 완료 태그 주변 반복기 및 DataList s로 제어 반복기의 범주 데이터를 바인딩할 준비 된 것입니다. 그러나 범주 그림 1에 글머리 기호 목록에서 볼 수 있듯이 각 범주의 이름 외에 필요는 범주와 관련 된 제품의 수를 표시 해야 합니다. 이 정보에 액세스 하려면 가능 하거나 합니다.
 
-- **ASP.NET 페이지의 코드 숨김 클래스에서이 정보를 확인 합니다.** 특정 *`categoryID`* 호출 하 여 연결 된 제품 수를 확인할 수 있습니다는 `ProductsBLL` s 클래스 `GetProductsByCategoryID(categoryID)` 메서드. 이 메서드는 반환는 `ProductsDataTable` 개체 `Count` 속성 나타냅니다 개수 `ProductsRow` s가 지정 된 제품의 수는 *`categoryID`*합니다. 만들 수 있습니다는 `ItemDataBound` 반복 바인딩된 각 범주에 대 한 호출 하는 반복기에 대 한 이벤트 처리기는 `ProductsBLL` s 클래스 `GetProductsByCategoryID(categoryID)` 메서드 출력의 개수를 포함 합니다.
+- **ASP.NET 페이지의 코드 숨김 클래스에서이 정보를 확인 합니다.** 특정 *`categoryID`* 호출 하 여 연결 된 제품 수를 확인할 수 있습니다는 `ProductsBLL` s 클래스 `GetProductsByCategoryID(categoryID)` 메서드. 이 메서드는 반환는 `ProductsDataTable` 개체 `Count` 속성 나타냅니다 개수 `ProductsRow` s가 지정 된 제품의 수는 *`categoryID`* 합니다. 만들 수 있습니다는 `ItemDataBound` 반복 바인딩된 각 범주에 대 한 호출 하는 반복기에 대 한 이벤트 처리기는 `ProductsBLL` s 클래스 `GetProductsByCategoryID(categoryID)` 메서드 출력의 개수를 포함 합니다.
 - **업데이트는 `CategoriesDataTable` 포함 하도록 입력 데이터 집합에는 `NumberOfProducts` 열입니다.** 그런 다음 업데이트할 수는 `GetCategories()` 에서 메서드는 `CategoriesDataTable` 이 정보를 포함 하거나, 또는 두고 `GetCategories()` 로-이며 새 `CategoriesDataTable` 라는 메서드가 `GetCategoriesAndNumberOfProducts()`합니다.
 
 S 이러한 두 기술 모두를 탐색할 수 있도록 합니다. 첫 번째 방법은 더 간단 하 게 데이터 액세스 계층; 업데이트를 t 필요 하지 않는 것 때문에 구현 그러나 데이터베이스와의 통신을 더 걸립니다. 에 대 한 호출에서 `ProductsBLL` s 클래스 `GetProductsByCategoryID(categoryID)` 에서 메서드는 `ItemDataBound` 이벤트 처리기 반복 표시 된 각 범주에 대 한 추가 데이터베이스 호출을 추가 합니다. 이 기술을 사용 하 여 없는 *N* + 1 데이터베이스 호출, 여기서 *N* 반복기에 표시 되는 범주 수입니다. 두 번째 접근 방식으로 제품 수가에서 각 범주에 대 한 정보가 반환 됩니다는 `CategoriesBLL` s 클래스 `GetCategories()` (또는 `GetCategoriesAndNumberOfProducts()`) 메서드를 사용 하므로 데이터베이스에 한 번만 발생 합니다.

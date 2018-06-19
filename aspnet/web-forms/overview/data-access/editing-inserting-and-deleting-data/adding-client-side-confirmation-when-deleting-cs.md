@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880273"
 ---
 <a name="adding-client-side-confirmation-when-deleting-c"></a>클라이언트 쪽 확인 (C#)을 삭제할 때 추가
 ====================

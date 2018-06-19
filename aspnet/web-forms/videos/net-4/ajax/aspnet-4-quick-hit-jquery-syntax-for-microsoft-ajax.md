@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879974"
 ---
 <a name="aspnet-4-quick-hit---jquery-syntax-for-microsoft-ajax"></a>ASP.NET 4 "빠른 Hit"-jQuery Microsoft Ajax에 대 한 구문
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28042588"
 ---
 <a name="global-error-handling-in-aspnet-web-api-2"></a>ASP.NET Web API 2 처리 하는 전역 오류
 ====================

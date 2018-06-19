@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880738"
 ---
 <a name="how-do-i-aspnet-ajax-enable-an-existing-web-service"></a>[어떻게 할까요?] 기존 웹 서비스를 사용 하는 ASP.NET AJAX 시겠습니까?
 ====================

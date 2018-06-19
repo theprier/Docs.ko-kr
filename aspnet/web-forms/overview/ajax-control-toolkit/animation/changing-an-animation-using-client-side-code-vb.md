@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879155"
 ---
 <a name="changing-an-animation-using-client-side-code-vb"></a>클라이언트 쪽 코드 (VB)를 사용 하 여 애니메이션을 변경 합니다.
 ====================

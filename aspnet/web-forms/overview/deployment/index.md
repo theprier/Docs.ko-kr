@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/index
-title: "배포 | Microsoft Docs"
+title: 배포 | Microsoft Docs
 author: rick-anderson
-description: "서버에 ASP.NET Web Forms 프로젝트를 배포 하는 방법입니다."
+description: 서버에 ASP.NET Web Forms 프로젝트를 배포 하는 방법입니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/18/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/deployment
 msc.type: chapter
 ms.openlocfilehash: 359cd2d349a361be83708262a55b3638461a054d
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26515342"
 ---
 <a name="deployment"></a>배포
 ====================

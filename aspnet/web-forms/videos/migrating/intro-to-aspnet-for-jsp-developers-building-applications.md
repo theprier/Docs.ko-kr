@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885070"
 ---
 <a name="intro-to-aspnet-for-jsp-developers-building-applications"></a>JSP 개발자를 위한 ASP.NET 소개: 응용 프로그램을 구축
 ====================

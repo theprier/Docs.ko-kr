@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885395"
 ---
 <a name="how-to-work-with-datasets-and-filters-from-an-asp-application"></a>ASP 응용 프로그램에서 데이터 집합 및 필터와 함께 작동 하는 방법
 ====================

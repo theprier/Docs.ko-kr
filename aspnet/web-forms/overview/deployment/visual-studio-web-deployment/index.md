@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/visual-studio-web-deployment/index
-title: "Visual Studio를 사용 하 여 ASP.NET 웹 배포 | Microsoft Docs"
+title: Visual Studio를 사용 하 여 ASP.NET 웹 배포 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서 시리즈에는 t를 배포 하 여 인터넷을 통해 SQL Server (하지 SQL Server Compact) 사용할 수 있는 사용 하 여 ASP.NET 웹 응용 프로그램을 만드는 방법을 보여 줍니다 중..."
+description: 이 자습서 시리즈에는 t를 배포 하 여 인터넷을 통해 SQL Server (하지 SQL Server Compact) 사용할 수 있는 사용 하 여 ASP.NET 웹 응용 프로그램을 만드는 방법을 보여 줍니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2013
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment
 msc.type: chapter
 ms.openlocfilehash: de7898f13c132f82b64403061558ba04684f523c
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26515202"
 ---
 <a name="aspnet-web-deployment-using-visual-studio"></a>Visual Studio를 사용 하 여 ASP.NET 웹 배포
 ====================

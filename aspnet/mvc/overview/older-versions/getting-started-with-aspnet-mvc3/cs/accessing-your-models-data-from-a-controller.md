@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872805"
 ---
 <a name="accessing-your-models-data-from-a-controller-c"></a>컨트롤러 (C#)에서 모델의 데이터에 액세스
 ====================
@@ -42,9 +43,9 @@ ms.lasthandoff: 04/06/2018
 
 - 컨트롤러 이름: **MoviesController**합니다. (기본값입니다. )
 - 서식 파일: **Entity Framework를 사용 하 여 읽기/쓰기 동작 및 뷰를 사용 하 여 컨트롤러**합니다.
-- 모델 클래스: **동영상 (MvcMovie.Models)**합니다.
-- 데이터 컨텍스트 클래스: **MovieDBContext (MvcMovie.Models)**합니다.
-- 보기: **Razor (CSHTML)**합니다. (기본값입니다.)
+- 모델 클래스: **동영상 (MvcMovie.Models)** 합니다.
+- 데이터 컨텍스트 클래스: **MovieDBContext (MvcMovie.Models)** 합니다.
+- 보기: **Razor (CSHTML)** 합니다. (기본값입니다.)
 
 [![AddScaffoldedMovieController](accessing-your-models-data-from-a-controller/_static/image2.png "AddScaffoldedMovieController")](accessing-your-models-data-from-a-controller/_static/image1.png)
 

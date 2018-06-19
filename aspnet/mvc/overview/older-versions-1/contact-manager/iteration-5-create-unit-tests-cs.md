@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875580"
 ---
 <a name="iteration-5--create-unit-tests-c"></a>반복 #5-단위 테스트를 만듭니다 (C#)
 ====================

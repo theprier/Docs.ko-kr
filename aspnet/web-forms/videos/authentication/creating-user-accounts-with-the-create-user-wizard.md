@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884544"
 ---
 <a name="creating-user-accounts-with-the-create-user-wizard"></a>사용자 계정으로 생성 된 사용자 만들기 마법사
 ====================

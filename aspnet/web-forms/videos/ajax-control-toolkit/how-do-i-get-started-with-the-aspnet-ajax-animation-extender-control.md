@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880625"
 ---
 <a name="how-do-i-get-started-with-the-aspnet-ajax-animation-extender-control"></a>[어떻게 할까요?] ASP.NET AJAX 애니메이션 Extender 컨트롤에서 시작 하나요?
 ====================

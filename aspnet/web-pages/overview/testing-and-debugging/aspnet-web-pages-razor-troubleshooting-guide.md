@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30898515"
 ---
 <a name="aspnet-web-pages-razor-troubleshooting-guide"></a>ASP.NET 웹 페이지 (Razor) 문제 해결 가이드
 ====================
@@ -54,7 +55,7 @@ ms.lasthandoff: 04/06/2018
 
 이 오류는 서버는 올바른 버전의.NET Framework를 실행 하지 않는 경우에 발생할 수 있습니다. (로컬 또는 원격) 서버를 실행 중인 컴퓨터에 설치 된.NET Framework 4 이상 있는지 확인 합니다. 또한 응용 프로그램 자체 올바른 버전을 실행 하도록 구성 되어 있는지 확인 합니다.
 
-WebMatrix에서 작업 하는 동안이 문제를 로컬로 표시를 클릭는 **사이트** 작업 영역에서 클릭 하 여 treeview에서 다음 **설정을**합니다. 에 **.NET Framework 버전 선택** 목록에서 선택 **.NET 4 (통합)**합니다. 이 버전은 이미 설정 된 경우 관리자 권한으로 WebMatrix를 실행 하십시오.
+WebMatrix에서 작업 하는 동안이 문제를 로컬로 표시를 클릭는 **사이트** 작업 영역에서 클릭 하 여 treeview에서 다음 **설정을**합니다. 에 **.NET Framework 버전 선택** 목록에서 선택 **.NET 4 (통합)** 합니다. 이 버전은 이미 설정 된 경우 관리자 권한으로 WebMatrix를 실행 하십시오.
 
 웹 사이트의 루트에 하나 이상 있는지 확인 *.cshtml* 파일이 들어 있습니다.
 

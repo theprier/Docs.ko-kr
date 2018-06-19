@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883185"
 ---
 <a name="how-do-i-implement-the-persistent-communications-pattern-using-web-services"></a>[어떻게 할까요?] 웹 서비스를 사용 하 여 영구 통신 패턴을 구현
 ====================

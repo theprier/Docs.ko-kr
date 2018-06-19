@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883627"
 ---
 <a name="how-do-i-enable-inline-gridview-editing"></a>인라인 GridView 편집을 어떻게 사용 합니까?
 ====================

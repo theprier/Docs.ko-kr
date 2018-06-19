@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881814"
 ---
 <a name="setting-up-the-contact-manager-solution"></a>Contact Manager 솔루션 설정
 ====================
@@ -58,7 +59,7 @@ MSDN 코드 갤러리에서 않아 예제 응용 프로그램을 다운로드할
 
 **응용 프로그램 서비스 데이터베이스를 만들려면**
 
-1. Visual Studio 2010 명령 프롬프트를 엽니다. 이 작업을 수행 하는 **시작** 메뉴에서 **모든 프로그램**, 클릭 **Microsoft Visual Studio 2010**, 클릭 **Visual Studio Tools**, 한 다음 클릭 **Visual Studio 명령 프롬프트 (2010)**합니다.
+1. Visual Studio 2010 명령 프롬프트를 엽니다. 이 작업을 수행 하는 **시작** 메뉴에서 **모든 프로그램**, 클릭 **Microsoft Visual Studio 2010**, 클릭 **Visual Studio Tools**, 한 다음 클릭 **Visual Studio 명령 프롬프트 (2010)** 합니다.
 2. 명령 프롬프트에서 다음이 명령을 입력 하 고 enter 키를 누릅니다.
 
     [!code-console[Main](setting-up-the-contact-manager-solution/samples/sample1.cmd)]

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30895893"
 ---
 <a name="more-about-column-data-types-and-other-properties"></a>열 데이터 형식 및 기타 속성에 대 한 자세한 정보
 ====================

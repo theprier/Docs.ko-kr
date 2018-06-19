@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874995"
 ---
 <a name="migrating-an-existing-website-from-sql-membership-to-aspnet-identity"></a>ASP.NET Id로 기존 웹 사이트 SQL 멤버 자격에서 마이그레이션
 ====================

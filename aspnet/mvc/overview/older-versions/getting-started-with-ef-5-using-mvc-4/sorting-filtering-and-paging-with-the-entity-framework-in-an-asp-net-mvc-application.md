@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30878232"
 ---
 <a name="sorting-filtering-and-paging-with-the-entity-framework-in-an-aspnet-mvc-application-3-of-10"></a>정렬, 필터링 및 (3 / 10) ASP.NET MVC 응용 프로그램에서 Entity Framework와 함께 페이징
 ====================
@@ -254,7 +255,7 @@ LINQ 문은 등록 날짜별로 학생 엔터티를 그룹화하고 각 그룹�
 
 ### <a name="using-code-first-migrations-to-deploy-the-database"></a>Code First 마이그레이션을 사용 하 여 데이터베이스를 배포
 
-데이터베이스를 배포 하는 Code First 마이그레이션을 사용 합니다. Visual Studio에서 배포에 대 한 설정을 구성 하는 데 사용할 수 있는 게시 프로필을 만들 때에 레이블이 있는 확인란을 선택 합니다 **실행 Code First 마이그레이션을 (응용 프로그램 시작 시 실행)**합니다. 이 설정을 사용 하면 배포 프로세스를 자동으로 응용 프로그램을 구성할 *Web.config* Code First 사용 하 여 있도록 대상 서버에서 파일의 `MigrateDatabaseToLatestVersion` 이니셜라이저 클래스입니다.
+데이터베이스를 배포 하는 Code First 마이그레이션을 사용 합니다. Visual Studio에서 배포에 대 한 설정을 구성 하는 데 사용할 수 있는 게시 프로필을 만들 때에 레이블이 있는 확인란을 선택 합니다 **실행 Code First 마이그레이션을 (응용 프로그램 시작 시 실행)** 합니다. 이 설정을 사용 하면 배포 프로세스를 자동으로 응용 프로그램을 구성할 *Web.config* Code First 사용 하 여 있도록 대상 서버에서 파일의 `MigrateDatabaseToLatestVersion` 이니셜라이저 클래스입니다.
 
 Visual Studio 배포 과정에서 데이터베이스를 사용 하 여 작업을 수행 하지 않습니다. 배포 응용 프로그램 배포 후 처음으로 데이터베이스에 액세스 하면 Code First 자동으로 데이터베이스를 만들거나 데이터베이스 스키마를 최신 버전으로 업데이트 합니다. 응용 프로그램에는 마이그레이션이 구현 하는 경우 `Seed` 메서드, 데이터베이스를 만들거나 스키마 업데이트 후의 메서드를 실행 합니다.
 
@@ -345,8 +346,8 @@ Windows Azure SQL 데이터베이스는 SQL Server 기술을 기반으로 하는
   
     ![성공적으로 유효성이 검사 된 연결](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image27.png)
 7. 열기는 **원격 연결 문자열** 드롭 다운 목록에서 **SchoolContext** 만든 데이터베이스에 대 한 연결 문자열을 선택 합니다.
-8. 선택 **실행 Code First 마이그레이션을 (응용 프로그램 시작 시 실행)**합니다.
-9. 선택을 취소 **런타임에이 연결 문자열을 사용 하 여** 에 대 한는 **UserContext (DefaultConnection)**이 응용 프로그램은 멤버 자격 데이터베이스를 사용 하지 않아야 하므로 합니다.   
+8. 선택 **실행 Code First 마이그레이션을 (응용 프로그램 시작 시 실행)** 합니다.
+9. 선택을 취소 **런타임에이 연결 문자열을 사용 하 여** 에 대 한는 **UserContext (DefaultConnection)** 이 응용 프로그램은 멤버 자격 데이터베이스를 사용 하지 않아야 하므로 합니다.   
   
     ![설정 탭](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image28.png)
 10. **다음**을 클릭합니다.
@@ -367,7 +368,7 @@ Windows Azure SQL 데이터베이스는 SQL Server 기술을 기반으로 하는
   
     ![Students_index_page_with_paging](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image32.png)
 
-이 시점에서 프로그램 *SchoolContext* 데이터베이스 선택 했기 때문에 Windows Azure SQL 데이터베이스에 생성 되었음을 **실행 Code First 마이그레이션을 (응용 프로그램 시작 시 실행)**합니다. *Web.config* 배포 된 웹 사이트의 파일이 변경 되어 있도록는 [MigrateDatabaseToLatestVersion](https://msdn.microsoft.com/library/hh829476(v=vs.103).aspx) 이니셜라이저 코드에서 읽거나 데이터베이스에 데이터를 쓸 처음으로 실행 됩니다 ( 발생 한 선택한 경우에 **학생** 탭):
+이 시점에서 프로그램 *SchoolContext* 데이터베이스 선택 했기 때문에 Windows Azure SQL 데이터베이스에 생성 되었음을 **실행 Code First 마이그레이션을 (응용 프로그램 시작 시 실행)** 합니다. *Web.config* 배포 된 웹 사이트의 파일이 변경 되어 있도록는 [MigrateDatabaseToLatestVersion](https://msdn.microsoft.com/library/hh829476(v=vs.103).aspx) 이니셜라이저 코드에서 읽거나 데이터베이스에 데이터를 쓸 처음으로 실행 됩니다 ( 발생 한 선택한 경우에 **학생** 탭):
 
 ![](sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image33.png)
 

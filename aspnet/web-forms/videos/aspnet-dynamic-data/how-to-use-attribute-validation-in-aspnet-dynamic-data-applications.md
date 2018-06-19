@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886731"
 ---
 <a name="how-to-use-attribute-validation-in-aspnet-dynamic-data-applications"></a>ASP.NET 동적 데이터 응용 프로그램에서 특성 유효성 검사를 사용 하는 방법
 ====================

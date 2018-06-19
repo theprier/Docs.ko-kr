@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887241"
 ---
 <a name="paging-and-sorting-report-data-vb"></a>페이징 및 보고서 데이터 (VB)를 정렬 합니다.
 ====================

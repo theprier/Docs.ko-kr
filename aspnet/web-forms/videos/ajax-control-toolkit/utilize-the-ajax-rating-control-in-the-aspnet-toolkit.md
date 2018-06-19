@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885796"
 ---
 <a name="utilize-the-ajax-rating-control-in-the-aspnet-toolkit"></a>ASP.NET 도구 키트에서 제어 등급 AJAX 활용
 ====================

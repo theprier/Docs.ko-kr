@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-make-use-of-caching
-title: "[어떻게 할까요?] 캐싱 사용 만들기 | Microsoft 문서"
+title: '[어떻게 할까요?] 캐싱 사용 만들기 | Microsoft 문서'
 author: microsoft
-description: "SQL Server 2000 및 SQL Server 2005에 대 한 새 데이터베이스 캐싱을 지원의 개요 페이지 출력 캐싱을의 데모를 확인 하십시오."
+description: SQL Server 2000 및 SQL Server 2005에 대 한 새 데이터베이스 캐싱을 지원의 개요 페이지 출력 캐싱을의 데모를 확인 하십시오.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/16/2006
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526302"
 ---
 <a name="how-do-i-make-use-of-caching"></a>[어떻게 할까요?] 캐싱 사용 만들기
 ====================

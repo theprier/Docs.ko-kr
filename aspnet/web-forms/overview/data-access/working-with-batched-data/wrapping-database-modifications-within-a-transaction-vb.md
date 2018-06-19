@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888707"
 ---
 <a name="wrapping-database-modifications-within-a-transaction-vb"></a>(VB) 트랜잭션 내에서 줄 바꿈 데이터베이스 수정
 ====================

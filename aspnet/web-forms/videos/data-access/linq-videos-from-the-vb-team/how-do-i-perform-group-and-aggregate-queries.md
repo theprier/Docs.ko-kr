@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881151"
 ---
 <a name="how-do-i-perform-group-and-aggregate-queries"></a>[어떻게 할까요?] 그룹 및 집계 쿼리를 수행 하는?
 ====================

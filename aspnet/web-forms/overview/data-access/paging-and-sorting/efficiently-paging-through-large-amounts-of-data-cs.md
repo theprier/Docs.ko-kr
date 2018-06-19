@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889659"
 ---
 <a name="efficiently-paging-through-large-amounts-of-data-c"></a>효율적으로 많은 양의 데이터 (C#)를 통해 페이징
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30878736"
 ---
 <a name="aspnet-mvc-storefront-part-7-routing-and-ui-work"></a>ASP.NET MVC Storefront 단계 7: 라우팅 및 UI 작업
 ====================

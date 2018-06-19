@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883819"
 ---
 <a name="how-do-i-use-the-numericupdown-extender-control"></a>[어떻게 할까요?] NumericUpDown Extender 컨트롤을 사용 하 여?
 ====================

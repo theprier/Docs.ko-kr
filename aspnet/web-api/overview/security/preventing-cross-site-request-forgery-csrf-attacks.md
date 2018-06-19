@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks
-title: "ASP.NET Web API의에서 교차 사이트 요청 위조 (CSRF) 공격 방지 | Microsoft Docs"
+title: ASP.NET Web API의에서 교차 사이트 요청 위조 (CSRF) 공격 방지 | Microsoft Docs
 author: MikeWasson
-description: "교차 사이트 요청 위조 (CSRF) 공격 및 앤티 CSRF 조치 ASP.NET Web API를 구현 하는 방법에 설명 합니다."
+description: 교차 사이트 요청 위조 (CSRF) 공격 및 앤티 CSRF 조치 ASP.NET Web API를 구현 하는 방법에 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/12/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26508152"
 ---
 <a name="preventing-cross-site-request-forgery-csrf-attacks-in-aspnet-web-api"></a>ASP.NET Web API의에서 교차 사이트 요청 위조 (CSRF) 공격 방지
 ====================

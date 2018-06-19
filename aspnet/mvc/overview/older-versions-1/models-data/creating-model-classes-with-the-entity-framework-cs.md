@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874930"
 ---
 <a name="creating-model-classes-with-the-entity-framework-c"></a>Entity Framework (C#)를 사용 하 여 모델 클래스 만들기
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882659"
 ---
 <a name="how-do-i-advance-cascading-style-sheet-features-and-management"></a>[어떻게 할까요?] 연계 스타일 시트 기능 및 관리 진행
 ====================

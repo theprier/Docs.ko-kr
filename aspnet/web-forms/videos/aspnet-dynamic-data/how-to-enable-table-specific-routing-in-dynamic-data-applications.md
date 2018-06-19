@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883341"
 ---
 <a name="how-to-enable-table-specific-routing-in-dynamic-data-applications"></a>동적 데이터 응용 프로그램에서 특정 라우팅 테이블을 사용 하도록 설정 하는 방법
 ====================

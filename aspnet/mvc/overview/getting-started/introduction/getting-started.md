@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868323"
 ---
 <a name="getting-started-with-aspnet-mvc-5"></a>ASP.NET MVC 5 시작
 ====================
@@ -47,7 +48,7 @@ Visual Studio IDE, 또는 통합된 개발 환경입니다. Microsoft Word를 �
 
 ## <a name="creating-your-first-application"></a>응용 프로그램 처음 만들기
 
-클릭 **새 프로젝트**을 다음 선택 Visual C#의 왼쪽에서 다음 **웹** 선택한 후 **ASP.NET 웹 응용 프로그램 (.NET Framework)**합니다. "MvcMovie" 프로젝트 이름을 지정 하 고 클릭 **확인**합니다.
+클릭 **새 프로젝트**을 다음 선택 Visual C#의 왼쪽에서 다음 **웹** 선택한 후 **ASP.NET 웹 응용 프로그램 (.NET Framework)** 합니다. "MvcMovie" 프로젝트 이름을 지정 하 고 클릭 **확인**합니다.
 
 ![](getting-started/_static/image2.png)
 

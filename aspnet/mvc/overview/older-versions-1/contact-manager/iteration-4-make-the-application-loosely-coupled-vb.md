@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873942"
 ---
 <a name="iteration-4--make-the-application-loosely-coupled-vb"></a>반복 #4 – 응용 프로그램을 있도록 느슨하게 결합 된 (VB)
 ====================

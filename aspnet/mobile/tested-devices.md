@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877842"
 ---
 <a name="aspnet-mobile-controls-tested-devices"></a>ASP.NET 모바일 컨트롤 테스트 된 장치
 ====================

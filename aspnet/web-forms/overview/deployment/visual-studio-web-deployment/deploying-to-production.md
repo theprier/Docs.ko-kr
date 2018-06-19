@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889809"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-to-production"></a>Visual Studio를 사용 하 여 ASP.NET 웹 배포: 프로덕션에 배포
 ====================
@@ -148,7 +149,7 @@ Azure 계정이 없는 경우 몇 분에서에서 무료 평가판 계정을 만
       3. 에 **데이터베이스 업데이트 구성** 대화 상자를 클릭 **SQL 스크립트 추가**합니다.
       4. 에 **SQL 스크립트 추가** 상자는 *aspnet-데이터-prod.sql* 솔루션 폴더에 이전에 저장 하 고 클릭 한 다음 스크립트는 **열려**합니다.
       5. 닫기는 **데이터베이스 업데이트 구성** 대화 상자.
-10. 아래 **SchoolContext** 에 **데이터베이스** 섹션에서 **실행 Code First 마이그레이션을 (응용 프로그램 시작 시 실행)**합니다.
+10. 아래 **SchoolContext** 에 **데이터베이스** 섹션에서 **실행 Code First 마이그레이션을 (응용 프로그램 시작 시 실행)** 합니다.
 
     Visual Studio에서 표시 **Code First 마이그레이션 실행** 대신 **데이터베이스 업데이트** 에 대 한 `DbContext` 클래스입니다. 사용 하 여 액세스할 수 있는 데이터베이스를 배포 하려면 마이그레이션 대신 dbDacFx 공급자를 사용 하려는 경우는 `DbContext` 클래스를 참조 하십시오 [마이그레이션 없이 코드 첫 번째 데이터베이스를 어떻게 배포 합니까?](https://msdn.microsoft.com/library/ee942158.aspx#deploy_code_first_without_migrations) 에서 Visual Studio에 대 한 웹 배포 FAQ 및 MSDN에서 ASP.NET을 추가 합니다.
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873458"
 ---
 <a name="drag-and-drop-via-reorderlist-c"></a>끌어 놓기를 통해 ReorderList (C#)
 ====================

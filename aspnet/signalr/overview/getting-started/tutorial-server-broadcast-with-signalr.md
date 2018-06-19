@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876815"
 ---
 <a name="tutorial-server-broadcast-with-signalr-2"></a>자습서: 서버 2 SignalR과 브로드캐스트
 ====================
@@ -127,7 +128,7 @@ ms.lasthandoff: 04/06/2018
 
 까다롭기 때문에 각 StockTickerHub 인스턴스로부터 단일 StockTicker 인스턴스에 대 한 참조를 설정 하는 서버에서 실행 되도록 StockTicker 클래스의 인스턴스가 하나씩 하려는 있습니다. StockTicker 클래스에서 StockTicker 허브 클래스가 아닙니다. 하지만 주식 데이터 개이고 업데이트 트리거 때문에 클라이언트에 브로드캐스트할 수 있어야 합니다. 따라서 StockTicker 클래스는 SignalR 허브 연결 컨텍스트 개체에 대 한 참조를 가져올 해야 합니다. 클라이언트에 브로드캐스트하는 SignalR 연결 컨텍스트 개체를 유도할 수 있습니다.
 
-1. **솔루션 탐색기**프로젝트를 마우스 오른쪽 단추로 클릭 하 고 클릭 **추가 | SignalR 허브 클래스 (v2)**합니다.
+1. **솔루션 탐색기**프로젝트를 마우스 오른쪽 단추로 클릭 하 고 클릭 **추가 | SignalR 허브 클래스 (v2)** 합니다.
 2. 새 허브 이름을 *StockTickerHub.cs*, 클릭 하 고 **추가**합니다. SignalR NuGet 패키지를 프로젝트에 추가 됩니다.
 3. 템플릿 코드를 다음 코드로 바꿉니다.
 

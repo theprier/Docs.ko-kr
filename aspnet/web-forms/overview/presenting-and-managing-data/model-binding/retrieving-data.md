@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889097"
 ---
 <a name="retrieving-and-displaying-data-with-model-binding-and-web-forms"></a>검색 및 모델 바인딩 및 web forms를 사용 하 여 데이터를 표시 합니다.
 ====================

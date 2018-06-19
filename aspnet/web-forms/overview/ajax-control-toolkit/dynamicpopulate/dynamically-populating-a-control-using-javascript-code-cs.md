@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873185"
 ---
 <a name="dynamically-populating-a-control-using-javascript-code-c"></a>JavaScript 코드 (C#)를 사용 하 여 컨트롤을 동적으로 채울
 ====================

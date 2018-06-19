@@ -14,6 +14,7 @@ ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 05/14/2018
+ms.locfileid: "34153575"
 ---
 # <a name="key-storage-format-in-aspnet-core"></a>ASP.NET Core에서 키 저장소 형식
 

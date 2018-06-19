@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875138"
 ---
 <a name="creating-a-custom-ajax-control-toolkit-control-extender-vb"></a>사용자 지정 AJAX 컨트롤 Toolkit 컨트롤 Extender (VB) 만들기
 ====================
@@ -198,7 +199,7 @@ JavaScript 파일에 포함 리소스로 목록 3 컴파일해야 기억 합니�
 2. ScriptManager는 페이지로 끌어옵니다.
 3. TextBox 컨트롤을 페이지로 끕니다.
 4. Button 컨트롤을 페이지로 끕니다.
-5. 속성 창에서 단추 ID 속성 값을 변경 <em>btnSave</em> 및 Text 속성 값을 *저장\**합니다.
+5. 속성 창에서 단추 ID 속성 값을 변경 <em>btnSave</em> 및 Text 속성 값을 *저장\** 합니다.
   
 
 표준 ASP.NET 텍스트 상자 및 단추 컨트롤과 페이지를 만들었는지 여부입니다.

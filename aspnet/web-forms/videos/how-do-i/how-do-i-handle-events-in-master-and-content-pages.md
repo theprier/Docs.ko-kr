@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-handle-events-in-master-and-content-pages
-title: "[어떻게 할까요?] 마스터 및 콘텐츠 페이지에서 이벤트를 처리할 | Microsoft Docs"
+title: '[어떻게 할까요?] 마스터 및 콘텐츠 페이지에서 이벤트를 처리할 | Microsoft Docs'
 author: rick-anderson
-description: "이 비디오에서 Chris Pels 마스터 및 개별 콘텐츠 페이지에서 이벤트 처리 방법을 표시 됩니다. 하지만 마스터 및 개별 conte의 최종 결과 중..."
+description: 이 비디오에서 Chris Pels 마스터 및 개별 콘텐츠 페이지에서 이벤트 처리 방법을 표시 됩니다. 하지만 마스터 및 개별 conte의 최종 결과 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/21/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526002"
 ---
 <a name="how-do-i-handle-events-in-master-and-content-pages"></a>[어떻게 할까요?] 마스터 및 콘텐츠 페이지에서 이벤트 처리
 ====================

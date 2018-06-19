@@ -15,6 +15,7 @@ ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33849990"
 ---
 # <a name="use-gulp-in-aspnet-core"></a>ASP.NET Core에서 Gulp를 사용 합니다.
 

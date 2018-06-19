@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30889074"
 ---
 <a name="displaying-a-custom-error-page-c"></a>사용자 지정 오류 페이지 (C#)를 표시합니다.
 ====================

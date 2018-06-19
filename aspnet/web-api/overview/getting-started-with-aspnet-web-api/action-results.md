@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/getting-started-with-aspnet-web-api/action-results
-title: "Web API 2의에서 동작으로 인해 | Microsoft Docs"
+title: Web API 2의에서 동작으로 인해 | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/03/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28036468"
 ---
 <a name="action-results-in-web-api-2"></a>Web API 2의에서 작업 결과
 ====================
