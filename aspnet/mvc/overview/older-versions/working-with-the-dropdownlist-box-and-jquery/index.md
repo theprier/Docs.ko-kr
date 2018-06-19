@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/index
-title: "3-MVC DropDownList 상자 및 jQuery 사용 | Microsoft Docs"
+title: 3-MVC DropDownList 상자 및 jQuery 사용 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서와 jQuery DropDownList 상자를 사용 하는 방법을 보여 줍니다."
+description: 이 자습서와 jQuery DropDownList 상자를 사용 하는 방법을 보여 줍니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/19/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-an
 msc.type: chapter
 ms.openlocfilehash: 9d498c0fbb0860d50ab76e58e9940f6789e34d6b
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26502592"
 ---
 <a name="mvc-3---working-with-the-dropdownlist-box-and-jquery"></a><span data-ttu-id="05fc4-103">3-MVC DropDownList 상자 및 jQuery 사용</span><span class="sxs-lookup"><span data-stu-id="05fc4-103">MVC 3 - Working with the DropDownList Box and jQuery</span></span>
 ====================

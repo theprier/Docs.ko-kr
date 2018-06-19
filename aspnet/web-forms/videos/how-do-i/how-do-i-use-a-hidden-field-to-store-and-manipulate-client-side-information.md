@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-a-hidden-field-to-store-and-manipulate-client-side-information
-title: "[어떻게 할까요?] 클라이언트 정보를 저장 및 조작 하 여 숨겨진된 필드를 사용 하 여 | Microsoft Docs"
+title: '[어떻게 할까요?] 클라이언트 정보를 저장 및 조작 하 여 숨겨진된 필드를 사용 하 여 | Microsoft Docs'
 author: rick-anderson
-description: "이 비디오에서는 Chris Pels ASP.NET 페이지와 클라이언트 쪽의 통신에 대 한 간단한 상태 관리에 대 한 한 가지 방법은으로 숨겨진된 필드를 사용 하는 방법을 표시 합니다..."
+description: 이 비디오에서는 Chris Pels ASP.NET 페이지와 클라이언트 쪽의 통신에 대 한 간단한 상태 관리에 대 한 한 가지 방법은으로 숨겨진된 필드를 사용 하는 방법을 표시 합니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/24/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525082"
 ---
 <a name="how-do-i-use-a-hidden-field-to-store-and-manipulate-client-side-information"></a><span data-ttu-id="cefda-103">[어떻게 할까요?] 숨겨진된 필드를 사용 하 여 클라이언트 정보를 저장 및 조작</span><span class="sxs-lookup"><span data-stu-id="cefda-103">[How Do I:] Use a Hidden Field to Store and Manipulate Client-Side Information</span></span>
 ====================

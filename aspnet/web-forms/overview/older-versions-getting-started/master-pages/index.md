@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/master-pages/index
-title: "ASP.NET 3.5-Web Forms 마스터 페이지 | Microsoft Docs"
+title: ASP.NET 3.5-Web Forms 마스터 페이지 | Microsoft Docs
 author: rick-anderson
-description: "만들기 및 Web Forms 응용 프로그램에 일관 된 레이아웃을 만들려면 ASP.NET 마스터 페이지 및 콘텐츠 페이지를 사용 하는 방법."
+description: 만들기 및 Web Forms 응용 프로그램에 일관 된 레이아웃을 만들려면 ASP.NET 마스터 페이지 및 콘텐츠 페이지를 사용 하는 방법.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/04/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages
 msc.type: chapter
 ms.openlocfilehash: 7db12550902920339d3bbacdf0a13b2081edc580
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26518042"
 ---
 <a name="aspnet-35---web-forms-master-pages"></a><span data-ttu-id="362ed-103">ASP.NET 3.5-Web Forms 마스터 페이지</span><span class="sxs-lookup"><span data-stu-id="362ed-103">ASP.NET 3.5 - Web Forms Master Pages</span></span>
 ====================

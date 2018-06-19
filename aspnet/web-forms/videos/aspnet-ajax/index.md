@@ -2,7 +2,7 @@
 uid: web-forms/videos/aspnet-ajax/index
 title: ASP.NET AJAX | Microsoft Docs
 author: rick-anderson
-description: "JavaScript 전문가 모르는 경우에 응답성이 높은 페이지를 만드는 ASP.NET AJAX와 함께 작동 하는 방법"
+description: JavaScript 전문가 모르는 경우에 응답성이 높은 페이지를 만드는 ASP.NET AJAX와 함께 작동 하는 방법
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/videos/aspnet-ajax
 msc.type: chapter
 ms.openlocfilehash: ef5d267a6a19382369fc877b3776d9dcdc0fd2d5
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26522502"
 ---
 <a name="aspnet-ajax"></a><span data-ttu-id="35327-103">ASP.NET AJAX</span><span class="sxs-lookup"><span data-stu-id="35327-103">ASP.NET AJAX</span></span>
 ====================

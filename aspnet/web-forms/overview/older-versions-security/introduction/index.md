@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/introduction/index
-title: "ASP.NET 3.5-보안 소개 | Microsoft Docs"
+title: ASP.NET 3.5-보안 소개 | Microsoft Docs
 author: rick-anderson
-description: "이 일련의 자습서의 개별 페이지에 액세스 하는 로그인 폼 (폼 인증)을 사용 하 고 권한을 부여 하는 사용자를 인증 하는 기술을 설명..."
+description: 이 일련의 자습서의 개별 페이지에 액세스 하는 로그인 폼 (폼 인증)을 사용 하 고 권한을 부여 하는 사용자를 인증 하는 기술을 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/04/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/older-versions-security/introduction
 msc.type: chapter
 ms.openlocfilehash: f964a35693e781451db24ae6ed7ca8d5aa7a6917
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26519062"
 ---
 <a name="aspnet-35---introduction-to-security"></a><span data-ttu-id="ac3f9-103">ASP.NET 3.5-보안 소개</span><span class="sxs-lookup"><span data-stu-id="ac3f9-103">ASP.NET 3.5 - Introduction to Security</span></span>
 ====================

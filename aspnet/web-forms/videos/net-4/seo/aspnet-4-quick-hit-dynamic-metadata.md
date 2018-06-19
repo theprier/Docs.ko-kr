@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/net-4/seo/aspnet-4-quick-hit-dynamic-metadata
-title: "동적 메타 데이터 | Microsoft Docs"
+title: 동적 메타 데이터 | Microsoft Docs
 author: JoeStagner
-description: "이 비디오에서는 실행된 ti에서 페이지 메타 데이터를 동적으로 설정할 수 있도록 Page.MetaKeywords 및 Page.MetaDescription 속성에 대 한 배우게 됩니다..."
+description: 이 비디오에서는 실행된 ti에서 페이지 메타 데이터를 동적으로 설정할 수 있도록 Page.MetaKeywords 및 Page.MetaDescription 속성에 대 한 배우게 됩니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/05/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521862"
 ---
 <a name="aspnet-4-quick-hit---dynamic-metadata"></a><span data-ttu-id="681cf-103">ASP.NET 4 "빠른 Hit"-동적 메타 데이터</span><span class="sxs-lookup"><span data-stu-id="681cf-103">ASP.NET 4 "Quick Hit" - Dynamic Metadata</span></span>
 ====================

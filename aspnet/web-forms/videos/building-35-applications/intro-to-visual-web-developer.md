@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/intro-to-visual-web-developer
-title: "Visual Web Developer 소개 | Microsoft Docs"
+title: Visual Web Developer 소개 | Microsoft Docs
 author: JoeStagner
-description: "Microsoft Visual Web Developer는 ASP.NET 응용 프로그램을 개발 하기 위한 Visual Studio의 무료 버전은 합니다. 이 비디오에서는 하 고 설치 하 고 t 가져오는 방법을 보여 중..."
+description: Microsoft Visual Web Developer는 ASP.NET 응용 프로그램을 개발 하기 위한 Visual Studio의 무료 버전은 합니다. 이 비디오에서는 하 고 설치 하 고 t 가져오는 방법을 보여 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/09/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26520862"
 ---
 <a name="intro-to-visual-web-developer"></a><span data-ttu-id="a4004-104">Visual Web Developer 소개</span><span class="sxs-lookup"><span data-stu-id="a4004-104">Intro to Visual Web Developer</span></span>
 ====================

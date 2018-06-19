@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30869987"
 ---
 <a name="dynamically-populating-a-control-using-javascript-code-vb"></a><span data-ttu-id="3d029-103">JavaScript 코드 (VB)를 사용 하 여 컨트롤을 동적으로 채울</span><span class="sxs-lookup"><span data-stu-id="3d029-103">Dynamically Populating a Control Using JavaScript Code (VB)</span></span>
 ====================

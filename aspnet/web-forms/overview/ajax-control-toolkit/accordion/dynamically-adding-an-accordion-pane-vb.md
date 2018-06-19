@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868726"
 ---
 <a name="dynamically-adding-an-accordion-pane-vb"></a><span data-ttu-id="58fe6-104">동적으로 추가 하는 아코디언 창 (VB)</span><span class="sxs-lookup"><span data-stu-id="58fe6-104">Dynamically Adding An Accordion Pane (VB)</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/intro-to-web-forms
-title: "Web Forms 소개 | Microsoft Docs"
+title: Web Forms 소개 | Microsoft Docs
 author: JoeStagner
-description: "ASP.NET Web Forms에는 ASP.NET 응용 프로그램에 대 한 기본 사용자 인터페이스 메커니즘은... 이 비디오에서는 Web Forms를 사용 하 여 개발의 기본을 보여 줍니다."
+description: ASP.NET Web Forms에는 ASP.NET 응용 프로그램에 대 한 기본 사용자 인터페이스 메커니즘은... 이 비디오에서는 Web Forms를 사용 하 여 개발의 기본을 보여 줍니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/09/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521022"
 ---
 <a name="intro-to-web-forms"></a><span data-ttu-id="e5cd1-104">Web Forms 소개</span><span class="sxs-lookup"><span data-stu-id="e5cd1-104">Intro to Web Forms</span></span>
 ====================

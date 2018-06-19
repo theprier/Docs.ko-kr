@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/data-access/linq-videos-from-the-vb-team/index
-title: "VB 팀에서 LINQ 비디오 | Microsoft Docs"
+title: VB 팀에서 LINQ 비디오 | Microsoft Docs
 author: rick-anderson
-description: "이러한 비디오를 한 시간 및 Visual Studio 2008에 포함 된 Visual Basic 9.0의 새로운 LINQ 언어 기능에 집중 하는 콘텐츠의 절반을 통해 제공 합니다."
+description: 이러한 비디오를 한 시간 및 Visual Studio 2008에 포함 된 Visual Basic 9.0의 새로운 LINQ 언어 기능에 집중 하는 콘텐츠의 절반을 통해 제공 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/24/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/videos/data-access/linq-videos-from-the-vb-team
 msc.type: chapter
 ms.openlocfilehash: a33cb02630be7ec688e4fce3d290f4a692f958ff
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525922"
 ---
 <a name="linq-videos-from-the-vb-team"></a><span data-ttu-id="ee6f9-103">VB 팀에서 LINQ 비디오</span><span class="sxs-lookup"><span data-stu-id="ee6f9-103">LINQ Videos from the VB Team</span></span>
 ====================

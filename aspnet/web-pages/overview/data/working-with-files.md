@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "28040225"
 ---
 <a name="working-with-files-in-an-aspnet-web-pages-razor-site"></a><span data-ttu-id="b70e2-103">ASP.NET 웹 페이지 (Razor) 사이트에 대 한 파일 작업</span><span class="sxs-lookup"><span data-stu-id="b70e2-103">Working with Files in an ASP.NET Web Pages (Razor) Site</span></span>
 ====================

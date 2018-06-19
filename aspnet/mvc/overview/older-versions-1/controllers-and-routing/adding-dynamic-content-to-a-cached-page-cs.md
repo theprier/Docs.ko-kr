@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868583"
 ---
 <a name="adding-dynamic-content-to-a-cached-page-c"></a><span data-ttu-id="86f19-104">캐시 된 페이지 (C#)에 동적 콘텐츠 추가</span><span class="sxs-lookup"><span data-stu-id="86f19-104">Adding Dynamic Content to a Cached Page (C#)</span></span>
 ====================

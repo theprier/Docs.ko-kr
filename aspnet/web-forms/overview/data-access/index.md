@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/index
-title: "이전 버전의 데이터 액세스 | Microsoft Docs"
+title: 이전 버전의 데이터 액세스 | Microsoft Docs
 author: rick-anderson
-description: "다양 한 ASP.NET Web Forms 데이터 컨트롤을 사용 하 여 데이터 관련 작업을 수행 하는 방법입니다."
+description: 다양 한 ASP.NET Web Forms 데이터 컨트롤을 사용 하 여 데이터 관련 작업을 수행 하는 방법입니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/data-access
 msc.type: chapter
 ms.openlocfilehash: 9356c58db6ef5d57babdc7c6e6c09b7cc78a8167
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26514202"
 ---
 <a name="older-versions---data-access"></a><span data-ttu-id="81f05-103">이전 버전의 데이터 액세스</span><span class="sxs-lookup"><span data-stu-id="81f05-103">Older Versions - Data Access</span></span>
 ====================

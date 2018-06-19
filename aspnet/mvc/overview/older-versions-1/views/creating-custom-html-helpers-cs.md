@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30869727"
 ---
 <a name="creating-custom-html-helpers-c"></a><span data-ttu-id="e81dd-104">사용자 지정 HTML 도우미 (C#) 만들기</span><span class="sxs-lookup"><span data-stu-id="e81dd-104">Creating Custom HTML Helpers (C#)</span></span>
 ====================

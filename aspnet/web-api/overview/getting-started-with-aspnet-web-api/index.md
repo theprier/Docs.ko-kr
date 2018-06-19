@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/getting-started-with-aspnet-web-api/index
-title: "ASP.NET Web API 시작 | Microsoft Docs"
+title: ASP.NET Web API 시작 | Microsoft Docs
 author: rick-anderson
-description: "자세한 방법에 대 한 ASP.NET 웹 API ASP.NET Web API는 다양 한 브라우저를 포함 한 클라이언트를 연결할 HTTP 서비스를 작성을 용이 하 게 하는 프레임 워크 중..."
+description: 자세한 방법에 대 한 ASP.NET 웹 API ASP.NET Web API는 다양 한 브라우저를 포함 한 클라이언트를 연결할 HTTP 서비스를 작성을 용이 하 게 하는 프레임 워크 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/17/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api
 msc.type: chapter
 ms.openlocfilehash: 31f697935a22bcdbc13055cf8ba5966930ef8fb9
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26506852"
 ---
 <a name="getting-started-with-aspnet-web-api"></a><span data-ttu-id="5dcfc-103">ASP.NET Web API 시작</span><span class="sxs-lookup"><span data-stu-id="5dcfc-103">Getting Started with ASP.NET Web API</span></span>
 ====================

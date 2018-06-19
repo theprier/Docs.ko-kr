@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/index
-title: "이전 버전의 MVC 3 및 4 | Microsoft Docs"
+title: 이전 버전의 MVC 3 및 4 | Microsoft Docs
 author: rick-anderson
-description: "이전 버전의 ASP.NET MVC를 사용 하는 방법을 학습 하기 위한 리소스에 연결 되어 있습니다."
+description: 이전 버전의 ASP.NET MVC를 사용 하는 방법을 학습 하기 위한 리소스에 연결 되어 있습니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/09/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/older-versions
 msc.type: chapter
 ms.openlocfilehash: b017b33346c3d61741f2285896870002d61d3703
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26502572"
 ---
 <a name="older-versions---mvc-3-and-4"></a><span data-ttu-id="013cd-103">이전 버전의 MVC 3 및 4</span><span class="sxs-lookup"><span data-stu-id="013cd-103">Older Versions - MVC 3 and 4</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30867478"
 ---
 <a name="how-do-i-return-json-formatted-data-for-an-ajax-call-in-an-aspnet-mvc-web-application"></a><span data-ttu-id="9a7ea-105">어떻게 수행 할까요 반환 서식이 지정 된 JSON 데이터 ASP.NET MVC 웹 응용 프로그램에서 AJAX 호출 프로그램에 대 한?</span><span class="sxs-lookup"><span data-stu-id="9a7ea-105">How Do I: Return JSON Formatted Data for an AJAX Call in an ASP.NET MVC Web Application?</span></span>
 ====================

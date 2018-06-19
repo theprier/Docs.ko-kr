@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-event-handlers-in-aspnet-web-pages-and-controls
-title: "[어떻게 할까요?] ASP.NET 웹 페이지 및 컨트롤의 이벤트 처리기 | Microsoft Docs"
+title: '[어떻게 할까요?] ASP.NET 웹 페이지 및 컨트롤의 이벤트 처리기 | Microsoft Docs'
 author: rick-anderson
-description: "이 비디오 Chris Pels에서는 ASP.NET 웹 페이지와 웹 서버 컨트롤에 대 한 이벤트 처리기를 만드는 방법을 보여줍니다. 먼저, 페이지 수준 이벤트 f를 만드는 방법을 알아보기..."
+description: 이 비디오 Chris Pels에서는 ASP.NET 웹 페이지와 웹 서버 컨트롤에 대 한 이벤트 처리기를 만드는 방법을 보여줍니다. 먼저, 페이지 수준 이벤트 f를 만드는 방법을 알아보기...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/17/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526042"
 ---
 <a name="how-do-i-event-handlers-in-aspnet-web-pages-and-controls"></a><span data-ttu-id="d4efe-104">[어떻게 할까요?] ASP.NET 웹 페이지 및 컨트롤의 이벤트 처리기</span><span class="sxs-lookup"><span data-stu-id="d4efe-104">[How Do I:] Event Handlers in ASP.NET Web Pages and Controls</span></span>
 ====================

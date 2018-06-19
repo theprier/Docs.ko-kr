@@ -2,7 +2,7 @@
 uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/index
 title: ASP.NET 3.5-AJAX | Microsoft Docs
 author: rick-anderson
-description: "에 대 한 디버깅 및 적어지므로 및 부분 페이지 업데이트, 인증, 지역화 등을 포함 하 여 ASP.NET AJAX 라이브러리."
+description: 에 대 한 디버깅 및 적어지므로 및 부분 페이지 업데이트, 인증, 지역화 등을 포함 하 여 ASP.NET AJAX 라이브러리.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax
 msc.type: chapter
 ms.openlocfilehash: a0b8f4ab1a6f218ea111a4f3364f704f672e3dd6
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26516652"
 ---
 <a name="aspnet-35---ajax"></a><span data-ttu-id="ab6c4-103">ASP.NET 3.5-AJAX</span><span class="sxs-lookup"><span data-stu-id="ab6c4-103">ASP.NET 3.5 - AJAX</span></span>
 ====================

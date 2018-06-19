@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/index
-title: "이전 버전-들어 | Microsoft Docs"
+title: 이전 버전-들어 | Microsoft Docs
 author: rick-anderson
-description: "Ajax 컨트롤 도구 키트에 시작 하는 방법 및 몇 가지 가장 인기 있는 컨트롤을 사용 하는 방법입니다. DevExpress 무료 및 오픈 소싱 Ajax Contr. 유지 관리..."
+description: Ajax 컨트롤 도구 키트에 시작 하는 방법 및 몇 가지 가장 인기 있는 컨트롤을 사용 하는 방법입니다. DevExpress 무료 및 오픈 소싱 Ajax Contr. 유지 관리...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/ajax-control-toolkit
 msc.type: chapter
 ms.openlocfilehash: 75fef51d40352c4bd600bb63056f1d1d5c74cbd6
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26510852"
 ---
 <a name="older-versions---ajax-control-toolkit"></a><span data-ttu-id="ac666-104">이전 버전-들어</span><span class="sxs-lookup"><span data-stu-id="ac666-104">Older Versions - Ajax Control Toolkit</span></span>
 ====================

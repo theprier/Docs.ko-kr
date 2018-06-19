@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-utilize-web-parts-and-personalization
-title: "[어떻게 할까요?] 웹 파트 및 개인 설정 사용? | Microsoft 문서"
+title: '[어떻게 할까요?] 웹 파트 및 개인 설정 사용? | Microsoft 문서'
 author: microsoft
-description: "해당 내용이 사용자 지정 가능한 웹 페이지를 만들 새 웹 파트 및 개인 설정 기능을 사용 하는 방법을 알아봅니다 및 레이아웃을 사용자가 수정할 수 있습니다."
+description: 해당 내용이 사용자 지정 가능한 웹 페이지를 만들 새 웹 파트 및 개인 설정 기능을 사용 하는 방법을 알아봅니다 및 레이아웃을 사용자가 수정할 수 있습니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/16/2006
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526132"
 ---
 <a name="how-do-i-utilize-web-parts-and-personalization"></a><span data-ttu-id="7d18c-104">[어떻게 할까요?] 웹 파트 및 개인 설정 사용?</span><span class="sxs-lookup"><span data-stu-id="7d18c-104">[How Do I:] Utilize Web Parts and Personalization?</span></span>
 ====================

@@ -2,7 +2,7 @@
 uid: web-forms/videos/aspnet-dynamic-data/index
 title: ASP.NET Dynamic Data | Microsoft Docs
 author: rick-anderson
-description: "자동으로 데이터 액세스를 수행 하는 방법을 알고 있는 스 캐 폴드 응용 프로그램을 만드는 ASP.NET 동적 데이터를 사용 하는 방법."
+description: 자동으로 데이터 액세스를 수행 하는 방법을 알고 있는 스 캐 폴드 응용 프로그램을 만드는 ASP.NET 동적 데이터를 사용 하는 방법.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/videos/aspnet-dynamic-data
 msc.type: chapter
 ms.openlocfilehash: a2fc937d18572ac2e1bc41cd28b98569a2490a61
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26522512"
 ---
 <a name="aspnet-dynamic-data"></a><span data-ttu-id="77c05-103">ASP.NET Dynamic Data</span><span class="sxs-lookup"><span data-stu-id="77c05-103">ASP.NET Dynamic Data</span></span>
 ====================

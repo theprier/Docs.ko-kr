@@ -1,8 +1,8 @@
 ---
 uid: web-forms/pluralsight
-title: "웹 폼 Pluralsight의 비디오 교육 | Microsoft Docs"
+title: 웹 폼 Pluralsight의 비디오 교육 | Microsoft Docs
 author: rick-anderson
-description: "Web Forms 비디오 교육 Pluralsight이 ASP.NET Web Forms 개발 과정에서.NET 개발으로 알아야 할 몇 가지 핵심 기술을 소개..."
+description: Web Forms 비디오 교육 Pluralsight이 ASP.NET Web Forms 개발 과정에서.NET 개발으로 알아야 할 몇 가지 핵심 기술을 소개...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/16/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26520142"
 ---
 <a name="web-forms-video-training-from-pluralsight"></a><span data-ttu-id="16081-103">웹 폼 Pluralsight의 비디오 교육</span><span class="sxs-lookup"><span data-stu-id="16081-103">Web Forms Video Training from Pluralsight</span></span>
 ====================

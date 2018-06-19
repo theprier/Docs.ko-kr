@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870377"
 ---
 <a name="intro-to-aspnet-mvc-3-vb"></a><span data-ttu-id="6d21e-103">ASP.NET MVC 3 (VB) 소개</span><span class="sxs-lookup"><span data-stu-id="6d21e-103">Intro to ASP.NET MVC 3 (VB)</span></span>
 ====================

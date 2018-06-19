@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/aspnet-35/visual-studio-editor/index
-title: "Visual Studio 편집기 | Microsoft Docs"
+title: Visual Studio 편집기 | Microsoft Docs
 author: rick-anderson
-description: "이 비디오 시리즈에서는 JavaScript 및 CSS에 대 한 향상 된 지원을 비롯 하 여 Visual Studio 2008 편집기의 새로운 기능 설명 합니다."
+description: 이 비디오 시리즈에서는 JavaScript 및 CSS에 대 한 향상 된 지원을 비롯 하 여 Visual Studio 2008 편집기의 새로운 기능 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/videos/aspnet-35/visual-studio-editor
 msc.type: chapter
 ms.openlocfilehash: 651a5d0e8a61acfad286e4d5eeac3f42136ca97d
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26520652"
 ---
 <a name="visual-studio-editor"></a><span data-ttu-id="35d3d-103">Visual Studio 편집기</span><span class="sxs-lookup"><span data-stu-id="35d3d-103">Visual Studio Editor</span></span>
 ====================

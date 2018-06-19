@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28042461"
 ---
 <a name="aspnet-web-pages-razor-faq"></a><span data-ttu-id="f85b9-104">ASP.NET 웹 페이지 (Razor) FAQ</span><span class="sxs-lookup"><span data-stu-id="f85b9-104">ASP.NET Web Pages (Razor) FAQ</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/testing-and-debugging/index
-title: "테스트 및 디버깅 | Microsoft Docs"
+title: 테스트 및 디버깅 | Microsoft Docs
 author: rick-anderson
-description: "테스트 및 ASP.NET 웹 페이지 응용 프로그램을 디버깅 하는 방법."
+description: 테스트 및 ASP.NET 웹 페이지 응용 프로그램을 디버깅 하는 방법.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /web-pages/overview/testing-and-debugging
 msc.type: chapter
 ms.openlocfilehash: c9c43ce6c25496049c4788efc0cb5e39cb0db42a
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26529522"
 ---
 <a name="testing-and-debugging"></a><span data-ttu-id="d316e-103">테스트 및 디버깅</span><span class="sxs-lookup"><span data-stu-id="d316e-103">Testing and Debugging</span></span>
 ====================

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 05/12/2018
+ms.locfileid: "34094894"
 ---
 # <a name="get-started-with-nswag-and-aspnet-core"></a><span data-ttu-id="6097a-103">NSwag 및 ASP.NET Core 시작</span><span class="sxs-lookup"><span data-stu-id="6097a-103">Get started with NSwag and ASP.NET Core</span></span>
 

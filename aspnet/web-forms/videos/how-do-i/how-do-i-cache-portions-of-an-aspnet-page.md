@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-cache-portions-of-an-aspnet-page
-title: "[어떻게 할까요?] ASP.NET 페이지의 일부 캐시 | Microsoft Docs"
+title: '[어떻게 할까요?] ASP.NET 페이지의 일부 캐시 | Microsoft Docs'
 author: rick-anderson
-description: "이 비디오 Chris Pels OutputCache 페이지에서 사용자 정의 컨트롤을 구현 하 여 ASP.NET 페이지의 여러 부분을 캐시 하는 방법을 보여 줍니다. 첫째는 중..."
+description: 이 비디오 Chris Pels OutputCache 페이지에서 사용자 정의 컨트롤을 구현 하 여 ASP.NET 페이지의 여러 부분을 캐시 하는 방법을 보여 줍니다. 첫째는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/12/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525282"
 ---
 <a name="how-do-i-cache-portions-of-an-aspnet-page"></a><span data-ttu-id="c7365-104">[어떻게 할까요?] ASP.NET 페이지의 부분 캐시</span><span class="sxs-lookup"><span data-stu-id="c7365-104">[How Do I:] Cache Portions of an ASP.NET Page</span></span>
 ====================

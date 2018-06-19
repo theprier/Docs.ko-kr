@@ -1,8 +1,8 @@
 ---
 uid: mvc/videos/mvc-1/conference-presentations/americas-next-top-model-view-controller-framework
-title: "미국 다음 최상위 모델 뷰 컨트롤러 Framework | Microsoft Docs"
+title: 미국 다음 최상위 모델 뷰 컨트롤러 Framework | Microsoft Docs
 author: Haacked
-description: "ASP.NET MVC의 주요 기능 중 일부를 강조 표시 하는 간단한 응용 프로그램을 빌드하는 방법을 참조 하십시오. 또한 일부를 사용 하 여 생산성을 개선 하는 방법에 알아봅니다는 중..."
+description: ASP.NET MVC의 주요 기능 중 일부를 강조 표시 하는 간단한 응용 프로그램을 빌드하는 방법을 참조 하십시오. 또한 일부를 사용 하 여 생산성을 개선 하는 방법에 알아봅니다는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/12/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26503442"
 ---
 <a name="americas-next-top-model-view-controller-framework"></a><span data-ttu-id="2c38f-104">미국 다음 상위 모델 뷰 컨트롤러 프레임 워크</span><span class="sxs-lookup"><span data-stu-id="2c38f-104">America's Next Top Model View Controller Framework</span></span>
 ====================

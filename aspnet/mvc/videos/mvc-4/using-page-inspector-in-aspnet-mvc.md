@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26503682"
 ---
 <a name="using-page-inspector-in-aspnet-mvc"></a><span data-ttu-id="8f325-104">ASP.NET MVC에서 페이지 검사기 사용</span><span class="sxs-lookup"><span data-stu-id="8f325-104">Using Page Inspector in ASP.NET MVC</span></span>
 ====================

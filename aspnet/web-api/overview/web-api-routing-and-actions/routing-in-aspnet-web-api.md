@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26509262"
 ---
 <a name="routing-in-aspnet-web-api"></a><span data-ttu-id="3b96c-102">ASP.NET Web API의 라우팅</span><span class="sxs-lookup"><span data-stu-id="3b96c-102">Routing in ASP.NET Web API</span></span>
 ====================

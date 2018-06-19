@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871833"
 ---
 <a name="search"></a><span data-ttu-id="cc533-102">검색</span><span class="sxs-lookup"><span data-stu-id="cc533-102">Search</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-simple-file-uploads-in-aspnet
-title: "[어떻게 할까요?]  Asp.net에서 단순 File Uploads | Microsoft Docs"
+title: '[어떻게 할까요?]  Asp.net에서 단순 File Uploads | Microsoft Docs'
 author: JoeStagner
-description: "이 비디오에서 살펴보겠습니다, ASP.NET을 사용 하 여, 클라이언트 컴퓨터에서 단일 파일 서버에 업로드 합니다. 이 업로드 하는 일련의 첫 번째 됩니다..."
+description: 이 비디오에서 살펴보겠습니다, ASP.NET을 사용 하 여, 클라이언트 컴퓨터에서 단일 파일 서버에 업로드 합니다. 이 업로드 하는 일련의 첫 번째 됩니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/12/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526112"
 ---
 <a name="how-do-i--simple-file-uploads-in-aspnet"></a><span data-ttu-id="31ad4-104">[어떻게 할까요?]  Asp.net에서 단순 파일 업로드</span><span class="sxs-lookup"><span data-stu-id="31ad4-104">[How Do I:]  Simple File Uploads in ASP.NET</span></span>
 ====================

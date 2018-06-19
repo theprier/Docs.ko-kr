@@ -16,6 +16,7 @@ ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 05/12/2018
+ms.locfileid: "34094284"
 ---
 # <a name="resource-based-authorization-in-aspnet-core"></a><span data-ttu-id="fe308-103">ASP.NET Core에서 리소스 기반의 권한 부여</span><span class="sxs-lookup"><span data-stu-id="fe308-103">Resource-based authorization in ASP.NET Core</span></span>
 

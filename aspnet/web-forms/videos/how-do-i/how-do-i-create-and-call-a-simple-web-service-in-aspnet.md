@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-and-call-a-simple-web-service-in-aspnet
-title: "[어떻게 할까요?] 만들기 및 ASP.NET에서 간단한 웹 서비스를 호출 합니다. | Microsoft Docs"
+title: '[어떻게 할까요?] 만들기 및 ASP.NET에서 간단한 웹 서비스를 호출 합니다. | Microsoft Docs'
 author: rick-anderson
-description: "이 비디오 Chris Pels에서 asp.net에서 웹 서비스를 만들고 다음 다른 ASP.NET 웹 사이트에서 서비스를 호출 하는 방법을 표시 됩니다. 첫째,를 만드는 방법을 알아보기..."
+description: 이 비디오 Chris Pels에서 asp.net에서 웹 서비스를 만들고 다음 다른 ASP.NET 웹 사이트에서 서비스를 호출 하는 방법을 표시 됩니다. 첫째,를 만드는 방법을 알아보기...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/27/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526462"
 ---
 <a name="how-do-i-create-and-call-a-simple-web-service-in-aspnet"></a><span data-ttu-id="b66c3-104">[어떻게 할까요?] 만들기 및 ASP.NET에서 간단한 웹 서비스를 호출 합니다.</span><span class="sxs-lookup"><span data-stu-id="b66c3-104">[How Do I:] Create and Call a Simple Web Service in ASP.NET</span></span>
 ====================

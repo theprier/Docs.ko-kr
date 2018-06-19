@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/data/index
-title: "ASP.NET Web API의에서 데이터로 작업 | Microsoft Docs"
+title: ASP.NET Web API의에서 데이터로 작업 | Microsoft Docs
 author: rick-anderson
-description: "CRUD 프로그래밍 하는 방법 (만들기, 읽기, 업데이트, 삭제) 웹 API의 작업입니다."
+description: CRUD 프로그래밍 하는 방법 (만들기, 읽기, 업데이트, 삭제) 웹 API의 작업입니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/23/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /web-api/overview/data
 msc.type: chapter
 ms.openlocfilehash: d10b37ffcbaf4124bab05045f0c0608e437bd74d
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26506662"
 ---
 <a name="working-with-data-in-aspnet-web-api"></a><span data-ttu-id="3f6be-103">ASP.NET Web API의에서 데이터 작업</span><span class="sxs-lookup"><span data-stu-id="3f6be-103">Working with Data in ASP.NET Web API</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-the-aspnet-cache-object-to-cache-application-information
-title: "[어떻게 할까요?]: ASP.NET 캐시 개체를 사용 하 여 응용 프로그램 정보를 캐시 | Microsoft Docs"
+title: '[어떻게 할까요?]: ASP.NET 캐시 개체를 사용 하 여 응용 프로그램 정보를 캐시 | Microsoft Docs'
 author: rick-anderson
-description: "이 비디오 Chris Pels ASP.NET 캐시 개체를 사용 하 여 응용 프로그램 정보를 저장 하는 방법을 보여 줍니다. 샘플 페이지를 사용 하는 간단한 사용자 인터페이스와 생성 됩니다는 중..."
+description: 이 비디오 Chris Pels ASP.NET 캐시 개체를 사용 하 여 응용 프로그램 정보를 저장 하는 방법을 보여 줍니다. 샘플 페이지를 사용 하는 간단한 사용자 인터페이스와 생성 됩니다는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/26/2009
@@ -17,8 +17,10 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525982"
 ---
-<a name="how-do-i-use-the-aspnet-cache-object-to-cache-application-information"></a><span data-ttu-id="af778-104">[어떻게 할까요?]: ASP.NET 캐시 개체를 사용 하 여 응용 프로그램 정보를 캐시 하려면</span><span class="sxs-lookup"><span data-stu-id="af778-104">[How Do I]: Use the ASP.NET Cache Object to Cache Application Information</span></span>
+<a name="how-do-i-use-the-aspnet-cache-object-to-cache-application-information"></a>[어떻게 할까요?]: ASP.NET 캐시 개체를 사용 하 여 응용 프로그램 정보를 캐시 하려면
+[How Do I]: Use the ASP.NET Cache Object to Cache Application Information
 ====================
 <span data-ttu-id="af778-105">으로 [Chris Pels](https://twitter.com/chrispels)</span><span class="sxs-lookup"><span data-stu-id="af778-105">by [Chris Pels](https://twitter.com/chrispels)</span></span>
 

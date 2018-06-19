@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/advanced/sending-html-form-data-part-2
-title: "ASP.NET Web API의에서 HTML 폼 데이터 보내기: 파일 업로드 및 다중 파트 MIME | Microsoft Docs"
+title: 'ASP.NET Web API의에서 HTML 폼 데이터 보내기: 파일 업로드 및 다중 파트 MIME | Microsoft Docs'
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/21/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28040144"
 ---
 <a name="sending-html-form-data-in-aspnet-web-api-file-upload-and-multipart-mime"></a><span data-ttu-id="6e8e5-102">ASP.NET Web API의에서 HTML 폼 데이터 보내기: 파일 업로드 및 다중 파트 MIME</span><span class="sxs-lookup"><span data-stu-id="6e8e5-102">Sending HTML Form Data in ASP.NET Web API: File Upload and Multipart MIME</span></span>
 ====================

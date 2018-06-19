@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-set-up-the-sql-membership-provider
-title: "[어떻게 할까요?] SQL 멤버 자격 공급자를 설정 | Microsoft Docs"
+title: '[어떻게 할까요?] SQL 멤버 자격 공급자를 설정 | Microsoft Docs'
 author: rick-anderson
-description: "ASP.NET 2.0 웹 사이트에 폼 인증을 추가 하려면 SQL 멤버 자격 공급자를 설정 하는 방법을 설명 하는 대로 Patrick Hynds를 가입 합니다. 몇 가지 팁은 중..."
+description: ASP.NET 2.0 웹 사이트에 폼 인증을 추가 하려면 SQL 멤버 자격 공급자를 설정 하는 방법을 설명 하는 대로 Patrick Hynds를 가입 합니다. 몇 가지 팁은 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/12/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526092"
 ---
 <a name="how-do-i-set-up-the-sql-membership-provider"></a><span data-ttu-id="1c2e3-104">[어떻게 할까요?] SQL 멤버 자격 공급자를 설정</span><span class="sxs-lookup"><span data-stu-id="1c2e3-104">[How Do I:] Set Up the SQL Membership Provider</span></span>
 ====================

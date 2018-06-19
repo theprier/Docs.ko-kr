@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-20-applications/index
-title: "2.0 응용 프로그램을 구축 | Microsoft Docs"
+title: 2.0 응용 프로그램을 구축 | Microsoft Docs
 author: rick-anderson
-description: "ASP.NET 2.0 빌드 응용 프로그램"
+description: ASP.NET 2.0 빌드 응용 프로그램
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/videos/building-20-applications
 msc.type: chapter
 ms.openlocfilehash: 7260e5ba8bc913729c21245a3904a684d94086dd
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521592"
 ---
 <a name="building-20-applications"></a><span data-ttu-id="92eb2-103">2.0 응용 프로그램을 구축</span><span class="sxs-lookup"><span data-stu-id="92eb2-103">Building 2.0 Applications</span></span>
 ====================

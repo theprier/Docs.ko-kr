@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26500992"
 ---
 <a name="understanding-models-views-and-controllers-vb"></a><span data-ttu-id="c254e-104">이해 모델, 뷰 및 컨트롤러 (VB)</span><span class="sxs-lookup"><span data-stu-id="c254e-104">Understanding Models, Views, and Controllers (VB)</span></span>
 ====================

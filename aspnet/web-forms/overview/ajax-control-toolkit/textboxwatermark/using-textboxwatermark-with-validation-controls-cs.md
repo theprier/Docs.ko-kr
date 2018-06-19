@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868882"
 ---
 <a name="using-textboxwatermark-with-validation-controls-c"></a><span data-ttu-id="df728-104">TextBoxWatermark를 사용 하 여 유효성 검사 컨트롤 (C#)</span><span class="sxs-lookup"><span data-stu-id="df728-104">Using TextBoxWatermark With Validation Controls (C#)</span></span>
 ====================

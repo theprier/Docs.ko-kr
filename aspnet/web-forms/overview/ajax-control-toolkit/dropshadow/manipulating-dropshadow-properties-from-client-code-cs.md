@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870338"
 ---
 <a name="manipulating-dropshadow-properties-from-client-code-c"></a><span data-ttu-id="10b48-103">클라이언트 코드 (C#)에서 DropShadow 속성 조작</span><span class="sxs-lookup"><span data-stu-id="10b48-103">Manipulating DropShadow Properties from Client Code (C#)</span></span>
 ====================

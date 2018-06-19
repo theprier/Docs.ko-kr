@@ -1,8 +1,8 @@
 ---
 uid: web-pages/videos/introduction/5-minute-introduction-to-aspnet-web-pages
-title: "ASP.NET 웹 페이지에 5 분 소개 | Microsoft Docs"
+title: ASP.NET 웹 페이지에 5 분 소개 | Microsoft Docs
 author: microsoft
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/12/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26529732"
 ---
 <a name="5-minute-introduction-to-aspnet-web-pages"></a><span data-ttu-id="0c41a-102">ASP.NET 웹 페이지에 5 분 소개</span><span class="sxs-lookup"><span data-stu-id="0c41a-102">5 Minute Introduction to ASP.NET Web Pages</span></span>
 ====================

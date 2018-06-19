@@ -2,7 +2,7 @@
 uid: web-forms/videos/building-35-applications/css
 title: CSS | Microsoft Docs
 author: JoeStagner
-description: "스타일 시트는 최신 웹 개발에 필수적인 기능 도움말을 작성 하는 강력한 CSS의 컬렉션을 포함 하는 Visual Web Developer 2008 및..."
+description: 스타일 시트는 최신 웹 개발에 필수적인 기능 도움말을 작성 하는 강력한 CSS의 컬렉션을 포함 하는 Visual Web Developer 2008 및...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/30/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521482"
 ---
 <a name="css"></a><span data-ttu-id="ad7b5-103">CSS</span><span class="sxs-lookup"><span data-stu-id="ad7b5-103">CSS</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/custom-formatting/index
-title: "사용자 지정 서식을 | Microsoft Docs"
+title: 사용자 지정 서식을 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서는 GridView, DetailsView, FormView 컨트롤의 이벤트 처리기를 사용 하 여 데이터 바인딩 중에 데이터 표시를 사용자 지정 하는 방법을 살펴봅니다."
+description: 이 자습서는 GridView, DetailsView, FormView 컨트롤의 이벤트 처리기를 사용 하 여 데이터 바인딩 중에 데이터 표시를 사용자 지정 하는 방법을 살펴봅니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/data-access/custom-formatting
 msc.type: chapter
 ms.openlocfilehash: afced0e5c310d8843107dde48d97e55e5242dd13
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26513022"
 ---
 <a name="custom-formatting"></a><span data-ttu-id="0c3e4-103">사용자 지정 형식 지정</span><span class="sxs-lookup"><span data-stu-id="0c3e4-103">Custom Formatting</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/intro-to-aspnet-controls
-title: "ASP.NET 컨트롤 소개 | Microsoft Docs"
+title: ASP.NET 컨트롤 소개 | Microsoft Docs
 author: JoeStagner
-description: "실제로 구동 방식 개발 컨트롤 개발 생산성을 높일 수 있습니다. 이 비디오 표준 ASP.NET 컨트롤에 대 한 기본적인 소개를 제공합니다."
+description: 실제로 구동 방식 개발 컨트롤 개발 생산성을 높일 수 있습니다. 이 비디오 표준 ASP.NET 컨트롤에 대 한 기본적인 소개를 제공합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/09/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26520962"
 ---
 <a name="intro-to-aspnet-controls"></a><span data-ttu-id="eb4bf-104">ASP.NET 컨트롤 소개</span><span class="sxs-lookup"><span data-stu-id="eb4bf-104">Intro to ASP.NET Controls</span></span>
 ====================

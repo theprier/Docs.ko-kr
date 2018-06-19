@@ -1,14 +1,14 @@
 ---
 uid: visual-studio/overview/2013/visual-studio-2013-web-editor-features-page-inspector
-title: "Visual Studio 2013 웹 편집기 기능-페이지 검사기 | Microsoft Docs"
+title: Visual Studio 2013 웹 편집기 기능-페이지 검사기 | Microsoft Docs
 author: shanselman
-description: "Scott Hansleman 표시 방법을 Visual Studio 2013에서 페이지 검사기 기능을 사용 하면 렌더링 된 페이지 태그를 완전히 통합 된 w 대화형으로 작업할 수 있습니다..."
+description: Scott Hansleman 표시 방법을 Visual Studio 2013에서 페이지 검사기 기능을 사용 하면 렌더링 된 페이지 태그를 완전히 통합 된 w 대화형으로 작업할 수 있습니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
 ms.topic: article
 ms.assetid: 17b67048-c61c-4ac0-a73a-a8079b493253
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/visual-studio-2013-web-editor-features-page-inspector
 msc.type: video
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26506572"
 ---
 <a name="visual-studio-2013-web-editor-features---page-inspector"></a><span data-ttu-id="e3dde-103">Visual Studio 2013 웹 편집기 기능-페이지 검사기</span><span class="sxs-lookup"><span data-stu-id="e3dde-103">Visual Studio 2013 Web Editor Features - Page Inspector</span></span>
 ====================

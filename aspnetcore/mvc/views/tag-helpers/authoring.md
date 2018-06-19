@@ -15,6 +15,7 @@ ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32741000"
 ---
 # <a name="author-tag-helpers-in-aspnet-core"></a><span data-ttu-id="3153a-103">ASP.NET Core의 작성자 태그 도우미</span><span class="sxs-lookup"><span data-stu-id="3153a-103">Author Tag Helpers in ASP.NET Core</span></span>
 

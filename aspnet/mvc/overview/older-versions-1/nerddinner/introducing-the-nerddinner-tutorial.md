@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868557"
 ---
 <a name="introducing-the-nerddinner-tutorial"></a><span data-ttu-id="49c26-104">업그레이드 되었으며 수정 자습서 소개</span><span class="sxs-lookup"><span data-stu-id="49c26-104">Introducing the NerdDinner Tutorial</span></span>
 ====================

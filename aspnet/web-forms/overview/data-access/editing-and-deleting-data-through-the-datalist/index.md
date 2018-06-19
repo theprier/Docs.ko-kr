@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/index
-title: "DataList 통해 데이터 편집 및 삭제 | Microsoft Docs"
+title: DataList 통해 데이터 편집 및 삭제 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에는 데이터를 수정 하는 사용 하 여 보관할 수 있도록 DataList 컨트롤을 조정 하는 방법을 보여 줍니다."
+description: 이 자습서에는 데이터를 수정 하는 사용 하 여 보관할 수 있도록 DataList 컨트롤을 조정 하는 방법을 보여 줍니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through
 msc.type: chapter
 ms.openlocfilehash: f4056e4c88fd3e270de275dd7dd52e944cfc0862
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26513442"
 ---
 <a name="editing-and-deleting-data-through-the-datalist"></a><span data-ttu-id="e931e-103">DataList 통해 데이터 편집 및 삭제</span><span class="sxs-lookup"><span data-stu-id="e931e-103">Editing and Deleting Data Through the DataList</span></span>
 ====================

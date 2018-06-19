@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871300"
 ---
 <a name="adjusting-the-z-index-of-a-dropshadow-vb"></a><span data-ttu-id="4afbc-104">DropShadow (VB)의 Z 인덱스를 조정합니다.</span><span class="sxs-lookup"><span data-stu-id="4afbc-104">Adjusting the Z-Index of a DropShadow (VB)</span></span>
 ====================

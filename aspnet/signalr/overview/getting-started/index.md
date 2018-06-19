@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/getting-started/index
-title: "SignalR 시작 | Microsoft Docs"
+title: SignalR 시작 | Microsoft Docs
 author: rick-anderson
-description: "자세한에 대 한 ASP.NET SignalR ASP.NET SignalR은 ASP.NET 개발자를 위한 개발 실시간 웹 기능을 더 쉽게 하는 새 라이브러리입니다. SignalR bi를 사용 하면..."
+description: 자세한에 대 한 ASP.NET SignalR ASP.NET SignalR은 ASP.NET 개발자를 위한 개발 실시간 웹 기능을 더 쉽게 하는 새 라이브러리입니다. SignalR bi를 사용 하면...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/19/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /signalr/overview/getting-started
 msc.type: chapter
 ms.openlocfilehash: 23d54a781354fbccfd5c42bfb4280d8c45ee4c30
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26503832"
 ---
 <a name="signalr-getting-started"></a><span data-ttu-id="758f0-104">SignalR 시작</span><span class="sxs-lookup"><span data-stu-id="758f0-104">SignalR Getting Started</span></span>
 ====================

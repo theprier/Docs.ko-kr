@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868999"
 ---
 <a name="authenticating-users-with-windows-authentication-vb"></a><span data-ttu-id="77417-104">Windows 인증 (VB)에서 사용자 인증</span><span class="sxs-lookup"><span data-stu-id="77417-104">Authenticating Users with Windows Authentication (VB)</span></span>
 ====================

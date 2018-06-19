@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868674"
 ---
 <a name="distributed-caching-building-real-world-cloud-apps-with-azure"></a><span data-ttu-id="c4af3-104">분산 캐싱 (실제 클라우드로 응용 프로그램 빌딩 Azure)</span><span class="sxs-lookup"><span data-stu-id="c4af3-104">Distributed Caching (Building Real-World Cloud Apps with Azure)</span></span>
 ====================

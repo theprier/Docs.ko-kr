@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-an-efficient-and-standardized-approach-for-implementing-css-styles
-title: "방법: 만들기 효율적이 고 표준화 된 방법을 CSS 스타일을 구현 하기 위한? | Microsoft 문서"
+title: '방법: 만들기 효율적이 고 표준화 된 방법을 CSS 스타일을 구현 하기 위한? | Microsoft 문서'
 author: rick-anderson
-description: "이 비디오 Chris Pels 구성 하 고 웹 사이트에 표준화 된 모양과 느낌을 제공 하는 CSS 스타일을 구현 하는 방법을 보여 줍니다. 또한 스타일은..."
+description: 이 비디오 Chris Pels 구성 하 고 웹 사이트에 표준화 된 모양과 느낌을 제공 하는 CSS 스타일을 구현 하는 방법을 보여 줍니다. 또한 스타일은...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/15/2010
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521902"
 ---
 <a name="how-do-i-create-an-efficient-and-standardized-approach-for-implementing-css-styles"></a><span data-ttu-id="93e8f-105">방법: 만들기 효율적이 고 표준화 된 방법을 CSS 스타일을 구현 하기 위한?</span><span class="sxs-lookup"><span data-stu-id="93e8f-105">How Do I: Create an Efficient and Standardized Approach for Implementing CSS Styles?</span></span>
 ====================

@@ -1,14 +1,14 @@
 ---
 uid: whitepapers/aspnet-mvc2-upgrade-notes
-title: "ASP.NET mvc 2 1.0 ASP.NET MVC 응용 프로그램을 업그레이드 | Microsoft Docs"
+title: ASP.NET mvc 2 1.0 ASP.NET MVC 응용 프로그램을 업그레이드 | Microsoft Docs
 author: rick-anderson
-description: "이 문서에서는 모두 수동으로 및 마법사와 함께 ASP.NET 1.0 응용 프로그램을 ASP.NET MVC 2로 업그레이드 하는 방법입니다. 이 문서는 d 가능 중..."
+description: 이 문서에서는 모두 수동으로 및 마법사와 함께 ASP.NET 1.0 응용 프로그램을 ASP.NET MVC 2로 업그레이드 하는 방법입니다. 이 문서는 d 가능 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/08/2010
 ms.topic: article
 ms.assetid: f1a01759-d251-4b09-8835-e112e336c6dd
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/aspnet-mvc2-upgrade-notes
 msc.type: content
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26530062"
 ---
 <a name="upgrading-an-aspnet-mvc-10-application-to-aspnet-mvc-2"></a><span data-ttu-id="ab413-104">ASP.NET MVC 2 ASP.NET MVC 1.0 응용 프로그램 업그레이드</span><span class="sxs-lookup"><span data-stu-id="ab413-104">Upgrading an ASP.NET MVC 1.0 Application to ASP.NET MVC 2</span></span>
 ====================

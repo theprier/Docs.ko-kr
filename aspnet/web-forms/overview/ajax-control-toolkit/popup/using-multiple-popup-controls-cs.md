@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30869688"
 ---
 <a name="using-multiple-popup-controls-c"></a><span data-ttu-id="33dca-104">여러 개의 팝업 컨트롤이 (C#)를 사용 하 여</span><span class="sxs-lookup"><span data-stu-id="33dca-104">Using Multiple Popup Controls (C#)</span></span>
 ====================

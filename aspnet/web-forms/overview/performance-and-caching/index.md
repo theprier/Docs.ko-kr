@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/performance-and-caching/index
-title: "성능 | Microsoft Docs"
+title: 성능 | Microsoft Docs
 author: rick-anderson
-description: "성능 향상을 위해 사이트 콘텐츠를 캐시 하는 방법."
+description: 성능 향상을 위해 사이트 콘텐츠를 캐시 하는 방법.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/08/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/performance-and-caching
 msc.type: chapter
 ms.openlocfilehash: 1a7881ba937308ffe07aeeeaafd5e6422f9fcce9
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26519482"
 ---
 <a name="performance"></a><span data-ttu-id="9e8e3-103">성능</span><span class="sxs-lookup"><span data-stu-id="9e8e3-103">Performance</span></span>
 ====================

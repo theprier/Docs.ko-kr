@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879662"
 ---
 <a name="aspnet-mvc-mvc-storefront-part-19-processing-orders-with-windows-workflow"></a><span data-ttu-id="37b50-103">ASP.NET MVC MVC Storefront 단계 19: Windows 워크플로 주문 처리</span><span class="sxs-lookup"><span data-stu-id="37b50-103">ASP.NET MVC MVC Storefront Part 19: Processing Orders With Windows Workflow</span></span>
 ====================

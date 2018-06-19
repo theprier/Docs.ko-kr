@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874657"
 ---
 <a name="adding-aspnet-identity-to-an-empty-or-existing-web-forms-project"></a><span data-ttu-id="0ecef-104">프로젝트를 구성 하는 비어 있거나 기존 웹에 ASP.NET Id 추가</span><span class="sxs-lookup"><span data-stu-id="0ecef-104">Adding ASP.NET Identity to an Empty or Existing Web Forms Project</span></span>
 ====================
@@ -95,7 +96,7 @@ ms.lasthandoff: 04/06/2018
 1. <span data-ttu-id="0ecef-157">에 **보기** 메뉴를 클릭 하 여 **서버 탐색기**합니다.</span><span class="sxs-lookup"><span data-stu-id="0ecef-157">In the **View** menu, click **Server Explorer**.</span></span>  
   
     ![](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project/_static/image7.png)
-2. <span data-ttu-id="0ecef-158">확장 **DefaultConnection (WebFormsIdentity)**를 확장 하 고 **테이블**를 마우스 오른쪽 단추로 클릭 **AspNetUsers** 클릭 **테이블 데이터 표시**합니다.</span><span class="sxs-lookup"><span data-stu-id="0ecef-158">Expand **DefaultConnection (WebFormsIdentity)**, expand **Tables**, right click **AspNetUsers** and click **Show Table Data**.</span></span>  
+2. <span data-ttu-id="0ecef-158">확장 **DefaultConnection (WebFormsIdentity)** 를 확장 하 고 **테이블**를 마우스 오른쪽 단추로 클릭 **AspNetUsers** 클릭 **테이블 데이터 표시**합니다.</span><span class="sxs-lookup"><span data-stu-id="0ecef-158">Expand **DefaultConnection (WebFormsIdentity)**, expand **Tables**, right click **AspNetUsers** and click **Show Table Data**.</span></span>  
   
     ![](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project/_static/image8.png)  
     ![](adding-aspnet-identity-to-an-empty-or-existing-web-forms-project/_static/image9.png)

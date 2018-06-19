@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871209"
 ---
 <a name="creating-a-route-constraint-c"></a><span data-ttu-id="8278a-103">경로 제약 조건 (C#) 만들기</span><span class="sxs-lookup"><span data-stu-id="8278a-103">Creating a Route Constraint (C#)</span></span>
 ====================

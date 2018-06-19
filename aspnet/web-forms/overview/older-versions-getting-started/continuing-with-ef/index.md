@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/index
-title: "ASP.NET 4-4 Entity Framework와 Web Forms를 계속 | Microsoft Docs"
+title: ASP.NET 4-4 Entity Framework와 Web Forms를 계속 | Microsoft Docs
 author: rick-anderson
-description: "ObjectDataSource 컨트롤을 사용 하는 n 계층 응용 프로그램으로 Contoso U 응용 프로그램을 작성 하는 방법 및 동시성을 처리 하 고 성능을 최대화 하는 방법입니다."
+description: ObjectDataSource 컨트롤을 사용 하는 n 계층 응용 프로그램으로 Contoso U 응용 프로그램을 작성 하는 방법 및 동시성을 처리 하 고 성능을 최대화 하는 방법입니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-wit
 msc.type: chapter
 ms.openlocfilehash: aa412b55bddf886f6915dc852599a423c56c9fc3
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26516642"
 ---
 <a name="aspnet-4---continuing-with-entity-framework-4-and-web-forms"></a><span data-ttu-id="05db8-103">ASP.NET 4-4 Entity Framework와 Web Forms를 계속</span><span class="sxs-lookup"><span data-stu-id="05db8-103">ASP.NET 4 - Continuing with Entity Framework 4 and Web Forms</span></span>
 ====================

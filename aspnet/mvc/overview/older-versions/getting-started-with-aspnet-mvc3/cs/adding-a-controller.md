@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868297"
 ---
 <a name="adding-a-controller-c"></a><span data-ttu-id="843ac-103">컨트롤러 (C#)에 추가</span><span class="sxs-lookup"><span data-stu-id="843ac-103">Adding a Controller (C#)</span></span>
 ====================

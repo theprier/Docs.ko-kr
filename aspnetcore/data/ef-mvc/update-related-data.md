@@ -14,6 +14,7 @@ ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 05/14/2018
+ms.locfileid: "34153643"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---update-related-data---7-of-10"></a><span data-ttu-id="88adb-103">ASP.NET Core MVC 및 EF Core - 관련 데이터 업데이트 - 7/10</span><span class="sxs-lookup"><span data-stu-id="88adb-103">ASP.NET Core MVC with EF Core - Update Related Data - 7 of 10</span></span>
 

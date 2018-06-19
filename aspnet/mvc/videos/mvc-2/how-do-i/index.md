@@ -1,8 +1,8 @@
 ---
 uid: mvc/videos/mvc-2/how-do-i/index
-title: "방법-Do-I | Microsoft Docs"
+title: 방법-Do-I | Microsoft Docs
 author: rick-anderson
-description: "이 섹션의 비디오는 ASP.NET MVC에서 ' The Storefront'-끝나기를 처음부터 전체 전자 상거래 응용 프로그램을 빌드하는 방법을 포함 하 여 설명 합니다."
+description: 이 섹션의 비디오는 ASP.NET MVC에서 ' The Storefront'-끝나기를 처음부터 전체 전자 상거래 응용 프로그램을 빌드하는 방법을 포함 하 여 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/15/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/videos/mvc-2/how-do-i
 msc.type: chapter
 ms.openlocfilehash: 54d09894c61d8be19ab6b8a1ceb37312c47497a7
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26504262"
 ---
 <a name="how-do-i"></a><span data-ttu-id="1b28f-103">방법-Do-I</span><span class="sxs-lookup"><span data-stu-id="1b28f-103">How-Do-I</span></span>
 ====================

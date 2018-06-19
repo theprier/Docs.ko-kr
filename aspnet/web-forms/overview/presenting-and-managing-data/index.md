@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/presenting-and-managing-data/index
-title: "ASP.NET Web Forms에서 데이터 사용 | Microsoft Docs"
+title: ASP.NET Web Forms에서 데이터 사용 | Microsoft Docs
 author: rick-anderson
-description: "컨트롤과 요청 간에 정보를 유지 하는 방법을 사용 하 여 데이터에 액세스 하는 방법."
+description: 컨트롤과 요청 간에 정보를 유지 하는 방법을 사용 하 여 데이터에 액세스 하는 방법.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/08/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/presenting-and-managing-data
 msc.type: chapter
 ms.openlocfilehash: fcfe22a67a2d0876e25b867d43a3bc1535149110
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26519762"
 ---
 <a name="working-with-data-in-aspnet-web-forms"></a><span data-ttu-id="36372-103">ASP.NET Web Forms에서 데이터 사용</span><span class="sxs-lookup"><span data-stu-id="36372-103">Working with Data in ASP.NET Web Forms</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/net-4/performance/index
-title: "성능 | Microsoft Docs"
+title: 성능 | Microsoft Docs
 author: rick-anderson
-description: "이 비디오 시리즈에서는 ASP.NET 4에서 Web Forms 페이지를 최적화 하는 새로운 방법을 설명 합니다."
+description: 이 비디오 시리즈에서는 ASP.NET 4에서 Web Forms 페이지를 최적화 하는 새로운 방법을 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/videos/net-4/performance
 msc.type: chapter
 ms.openlocfilehash: e046546fafa487f53b90e106a69c935a1bc187ad
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26522012"
 ---
 <a name="performance"></a><span data-ttu-id="de5e5-103">성능</span><span class="sxs-lookup"><span data-stu-id="de5e5-103">Performance</span></span>
 ====================

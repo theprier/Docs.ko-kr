@@ -1,14 +1,14 @@
 ---
 uid: aspnet/overview/owin-and-katana/enabling-windows-authentication-in-katana
-title: "Katana에서 Windows 인증을 사용 하도록 설정 | Microsoft Docs"
+title: Katana에서 Windows 인증을 사용 하도록 설정 | Microsoft Docs
 author: MikeWasson
-description: "이 문서에서는 Katana에서 Windows 인증을 사용 하도록 설정 하는 방법을 설명 합니다. 두 가지 시나리오를 다룹니다: Katana, 호스트에 IIS를 사용 하 고 HttpListener를 사용 하 여 캐 탈 자체 호스트 하 고 있습니다..."
+description: '이 문서에서는 Katana에서 Windows 인증을 사용 하도록 설정 하는 방법을 설명 합니다. 두 가지 시나리오를 다룹니다: Katana, 호스트에 IIS를 사용 하 고 HttpListener를 사용 하 여 캐 탈 자체 호스트 하 고 있습니다...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/30/2013
 ms.topic: article
 ms.assetid: 82324ef0-3b75-4f63-a217-76ef4036ec93
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/enabling-windows-authentication-in-katana
 msc.type: authoredcontent
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28033972"
 ---
 <a name="enabling-windows-authentication-in-katana"></a><span data-ttu-id="8bdff-104">Katana에서 Windows 인증을 사용 하도록 설정</span><span class="sxs-lookup"><span data-stu-id="8bdff-104">Enabling Windows Authentication in Katana</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/advanced/dependency-injection
-title: "SignalR의 종속성 주입 | Microsoft Docs"
+title: SignalR의 종속성 주입 | Microsoft Docs
 author: MikeWasson
-description: "이전 버전의에 대 한 내용은이 항목의 버전 2 이전 버전을 Visual Studio 2013.NET 4.5 SignalR이이 항목에서 사용 하는 소프트웨어 버전 중..."
+description: 이전 버전의에 대 한 내용은이 항목의 버전 2 이전 버전을 Visual Studio 2013.NET 4.5 SignalR이이 항목에서 사용 하는 소프트웨어 버전 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26504182"
 ---
 <a name="dependency-injection-in-signalr"></a><span data-ttu-id="7d9cd-103">SignalR의 종속성 주입</span><span class="sxs-lookup"><span data-stu-id="7d9cd-103">Dependency Injection in SignalR</span></span>
 ====================

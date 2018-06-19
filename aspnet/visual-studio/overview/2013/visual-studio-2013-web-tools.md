@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "26507132"
 ---
 <a name="hands-on-lab-visual-studio-2013-web-tools"></a><span data-ttu-id="fbb56-104">실습 랩: Visual Studio 2013 웹 도구</span><span class="sxs-lookup"><span data-stu-id="fbb56-104">Hands On Lab: Visual Studio 2013 Web Tools</span></span>
 ====================

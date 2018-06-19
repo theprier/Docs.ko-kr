@@ -1,14 +1,14 @@
 ---
 uid: visual-studio/overview/2013/visual-studio-2013-web-editor-features-html-editor
-title: "Visual Studio 2013 웹 편집기 기능-HTML 편집기 | Microsoft Docs"
+title: Visual Studio 2013 웹 편집기 기능-HTML 편집기 | Microsoft Docs
 author: madskristensen
-description: "HTML 요소에 모든 CSS 클래스에 대 한 전체 IntelliSense를 포함 하 여 Visual Studio 2013의 HTML 편집기 기능 Kristensen 표시 mads 및 프로젝트에서 ID 중..."
+description: HTML 요소에 모든 CSS 클래스에 대 한 전체 IntelliSense를 포함 하 여 Visual Studio 2013의 HTML 편집기 기능 Kristensen 표시 mads 및 프로젝트에서 ID 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/17/2013
 ms.topic: article
 ms.assetid: 5a6b4558-0555-4cac-99c7-06865169007f
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2013/visual-studio-2013-web-editor-features-html-editor
 msc.type: video
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26506722"
 ---
 <a name="visual-studio-2013-web-editor-features---html-editor"></a><span data-ttu-id="9b1f2-103">Visual Studio 2013 웹 편집기 기능-HTML 편집기</span><span class="sxs-lookup"><span data-stu-id="9b1f2-103">Visual Studio 2013 Web Editor Features - HTML Editor</span></span>
 ====================

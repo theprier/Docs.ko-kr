@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/iis/index
-title: "일반적인 IIS 팁 | Microsoft Docs"
+title: 일반적인 IIS 팁 | Microsoft Docs
 author: rick-anderson
-description: "ASP.NET 응용 프로그램을 사용 하도록 IIS를 구성 하는 방법."
+description: ASP.NET 응용 프로그램을 사용 하도록 IIS를 구성 하는 방법.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/videos/iis
 msc.type: chapter
 ms.openlocfilehash: 2fb4da58fd5e0fc6bce8f042a9811d4ef30c1eb4
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525602"
 ---
 <a name="general-iis-tips"></a><span data-ttu-id="d450f-103">일반적인 IIS 팁</span><span class="sxs-lookup"><span data-stu-id="d450f-103">General IIS Tips</span></span>
 ====================

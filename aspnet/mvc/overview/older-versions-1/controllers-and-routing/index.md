@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/controllers-and-routing/index
-title: "컨트롤러 및 라우팅 | Microsoft Docs"
+title: 컨트롤러 및 라우팅 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서 집합 학습 ASP.NET 라우팅에 대 한 ASP.NET MVC 컨트롤러 작업에 대 한 브라우저 요청 매핑되는 합니다."
+description: 이 자습서 집합 학습 ASP.NET 라우팅에 대 한 ASP.NET MVC 컨트롤러 작업에 대 한 브라우저 요청 매핑되는 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing
 msc.type: chapter
 ms.openlocfilehash: fe42077c119599bd169464ec2a7cdc4a0dd008a3
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26499952"
 ---
 <a name="controllers-and-routing"></a><span data-ttu-id="a2440-103">컨트롤러 및 라우팅</span><span class="sxs-lookup"><span data-stu-id="a2440-103">Controllers and Routing</span></span>
 ====================

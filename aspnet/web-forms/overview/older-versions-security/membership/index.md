@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/older-versions-security/membership/index
-title: "ASP.NET 3.5-구성원 | Microsoft Docs"
+title: ASP.NET 3.5-구성원 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서 시리즈 (보안) 기본 제공 멤버 자격 시스템을 사용 하 여 사용자 계정을 만들고 권한 부여 규칙을 구성 하는 기술을 있는지 검사 합니다."
+description: 이 자습서 시리즈 (보안) 기본 제공 멤버 자격 시스템을 사용 하 여 사용자 계정을 만들고 권한 부여 규칙을 구성 하는 기술을 있는지 검사 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/older-versions-security/membership
 msc.type: chapter
 ms.openlocfilehash: bcd354111798d45c6207f0eead00647f6a031fcc
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26519102"
 ---
 <a name="aspnet-35---membership"></a><span data-ttu-id="ebdca-103">ASP.NET 3.5-멤버 자격</span><span class="sxs-lookup"><span data-stu-id="ebdca-103">ASP.NET 3.5 - Membership</span></span>
 ====================

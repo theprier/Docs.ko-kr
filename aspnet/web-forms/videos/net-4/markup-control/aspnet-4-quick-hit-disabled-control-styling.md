@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882106"
 ---
 <a name="aspnet-4-quick-hit---disabled-control-styling"></a><span data-ttu-id="c5564-103">ASP.NET 4 "빠른 Hit"-사용 안 함 컨트롤 스타일 지정</span><span class="sxs-lookup"><span data-stu-id="c5564-103">ASP.NET 4 "Quick Hit" - Disabled Control Styling</span></span>
 ====================

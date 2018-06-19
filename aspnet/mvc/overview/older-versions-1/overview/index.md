@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions-1/overview/index
-title: "개요 | Microsoft Docs"
+title: 개요 | Microsoft Docs
 author: rick-anderson
-description: "MVC 정의 Web Forms에서와 다른 및 ASP.NET 응용 프로그램을 만드는 방법에 알아봅니다."
+description: MVC 정의 Web Forms에서와 다른 및 ASP.NET 응용 프로그램을 만드는 방법에 알아봅니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/28/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/older-versions-1/overview
 msc.type: chapter
 ms.openlocfilehash: c0f4e2747708c0c3ad42f21af680b28541d77252
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26500742"
 ---
 <a name="overview"></a><span data-ttu-id="a5b6c-103">개요</span><span class="sxs-lookup"><span data-stu-id="a5b6c-103">Overview</span></span>
 ====================

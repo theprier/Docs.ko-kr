@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-control-state-to-persist-information-for-a-custom-web-server-control
-title: "[어떻게 할까요?] 컨트롤 상태를 사용 하는 사용자 지정 웹 서버 컨트롤에 대 한 정보를 유지 하도록 | Microsoft Docs"
+title: '[어떻게 할까요?] 컨트롤 상태를 사용 하는 사용자 지정 웹 서버 컨트롤에 대 한 정보를 유지 하도록 | Microsoft Docs'
 author: rick-anderson
-description: "이 비디오에서는 Chris Pels ViewState에 독립적인 컨트롤 상태에 사용자 지정 웹 서버 컨트롤에 관련 된 정보를 저장 하는 방법을 표시 합니다..."
+description: 이 비디오에서는 Chris Pels ViewState에 독립적인 컨트롤 상태에 사용자 지정 웹 서버 컨트롤에 관련 된 정보를 저장 하는 방법을 표시 합니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/17/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526222"
 ---
 <a name="how-do-i-use-control-state-to-persist-information-for-a-custom-web-server-control"></a><span data-ttu-id="2f87b-103">[어떻게 할까요?] 컨트롤 상태를 사용 하는 사용자 지정 웹 서버 컨트롤에 대 한 정보를 유지 하려면</span><span class="sxs-lookup"><span data-stu-id="2f87b-103">[How Do I:] Use Control State to Persist Information for a Custom Web Server Control</span></span>
 ====================

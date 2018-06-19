@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30869935"
 ---
 <a name="use-code-first-migrations-to-seed-the-database"></a><span data-ttu-id="90562-102">Code First 마이그레이션을 사용 하 여 데이터베이스의 초기값</span><span class="sxs-lookup"><span data-stu-id="90562-102">Use Code First Migrations to Seed the Database</span></span>
 ====================

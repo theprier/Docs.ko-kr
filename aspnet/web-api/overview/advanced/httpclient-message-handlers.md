@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/advanced/httpclient-message-handlers
-title: "ASP.NET Web API의에서 HttpClient 메시지 처리기 | Microsoft Docs"
+title: ASP.NET Web API의에서 HttpClient 메시지 처리기 | Microsoft Docs
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/01/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26506792"
 ---
 <a name="httpclient-message-handlers-in-aspnet-web-api"></a><span data-ttu-id="0a267-102">ASP.NET Web API의에서 HttpClient 메시지 처리기</span><span class="sxs-lookup"><span data-stu-id="0a267-102">HttpClient Message Handlers in ASP.NET Web API</span></span>
 ====================

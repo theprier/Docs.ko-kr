@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-embed-an-image-in-an-email-with-aspnet
-title: "[어떻게 할까요?] ASP.NET과 전자 메일에 이미지 포함 | Microsoft Docs"
+title: '[어떻게 할까요?] ASP.NET과 전자 메일에 이미지 포함 | Microsoft Docs'
 author: rick-anderson
-description: "Chris Pels asp.net 전자 메일에 이미지를 포함 하는 방법을 보여 줍니다. 그에 대 한 필드에, 보낸 사람, 제목 및 본문) (포함 하는 웹 폼을 만듭니다, 그리고는 AlternateView를 사용 하 여..."
+description: Chris Pels asp.net 전자 메일에 이미지를 포함 하는 방법을 보여 줍니다. 그에 대 한 필드에, 보낸 사람, 제목 및 본문) (포함 하는 웹 폼을 만듭니다, 그리고는 AlternateView를 사용 하 여...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/06/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525072"
 ---
 <a name="how-do-i-embed-an-image-in-an-email-with-aspnet"></a><span data-ttu-id="e4125-104">[어떻게 할까요?] ASP.NET과 전자 메일에 이미지 포함</span><span class="sxs-lookup"><span data-stu-id="e4125-104">[How Do I:] Embed an Image in an Email with ASP.NET</span></span>
 ====================

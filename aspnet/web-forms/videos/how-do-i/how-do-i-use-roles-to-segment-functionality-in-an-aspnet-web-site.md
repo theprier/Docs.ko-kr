@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-roles-to-segment-functionality-in-an-aspnet-web-site
-title: "[어떻게 할까요?] ASP.NET 웹 사이트에서 기능을 분할 하 고 역할을 사용 하 여 | Microsoft Docs"
+title: '[어떻게 할까요?] ASP.NET 웹 사이트에서 기능을 분할 하 고 역할을 사용 하 여 | Microsoft Docs'
 author: rick-anderson
-description: "이 비디오에서는 Chris Pels은 ASP.NET 멤버 자격을 설정한 후에 ASP.NET 웹 사이트에 역할의 사용을 최대화 하는 방법을 보여 줍니다. 첫째, 역할을 설치 하는 방법 알아보기..."
+description: 이 비디오에서는 Chris Pels은 ASP.NET 멤버 자격을 설정한 후에 ASP.NET 웹 사이트에 역할의 사용을 최대화 하는 방법을 보여 줍니다. 첫째, 역할을 설치 하는 방법 알아보기...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/29/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526532"
 ---
 <a name="how-do-i-use-roles-to-segment-functionality-in-an-aspnet-web-site"></a><span data-ttu-id="2938f-104">[어떻게 할까요?] 역할을 사용 하 여 ASP.NET 웹 사이트에서 기능을 분할 하 고</span><span class="sxs-lookup"><span data-stu-id="2938f-104">[How Do I:] Use Roles to Segment Functionality in an ASP.NET Web Site</span></span>
 ====================

@@ -1,22 +1,23 @@
 ---
 uid: identity/overview/features-api/index
-title: "ASP.NET Id 기능 및 API | Microsoft Docs"
+title: ASP.NET Id 기능 및 API | Microsoft Docs
 author: rick-anderson
-description: "기능 및 API"
+description: 기능 및 API
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/09/2014
 ms.topic: article
 ms.assetid: 70f7c0ac-aeb9-4e21-ae05-deb10640b1b3
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/features-api
 msc.type: chapter
 ms.openlocfilehash: b82c2757123efbcb906afaa29a7df9cab654351e
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26497872"
 ---
 <a name="aspnet-identity-features--api"></a><span data-ttu-id="7f745-103">ASP.NET Id 기능 및 API</span><span class="sxs-lookup"><span data-stu-id="7f745-103">ASP.NET Identity Features & API</span></span>
 ====================

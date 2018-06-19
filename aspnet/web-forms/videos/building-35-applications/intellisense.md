@@ -2,7 +2,7 @@
 uid: web-forms/videos/building-35-applications/intellisense
 title: IntelliSense | Microsoft Docs
 author: JoeStagner
-description: "IntelliSense는 모두 학습.net 프로그래밍으로 코딩 하면 효율성을 가속화 하는 데 중요 한 Visual Studio 기능. 이 비디오에서는 소개 하는 중..."
+description: IntelliSense는 모두 학습.net 프로그래밍으로 코딩 하면 효율성을 가속화 하는 데 중요 한 Visual Studio 기능. 이 비디오에서는 소개 하는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/09/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521202"
 ---
 <a name="intellisense"></a><span data-ttu-id="d34a1-104">IntelliSense</span><span class="sxs-lookup"><span data-stu-id="d34a1-104">IntelliSense</span></span>
 ====================

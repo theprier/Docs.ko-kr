@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/security/forms-authentication
-title: "ASP.NET Web API의에서 폼 인증 | Microsoft Docs"
+title: ASP.NET Web API의에서 폼 인증 | Microsoft Docs
 author: MikeWasson
-description: "폼 인증을 사용 하 여 ASP.NET Web API에 설명 합니다."
+description: 폼 인증을 사용 하 여 ASP.NET Web API에 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/12/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26508312"
 ---
 <a name="forms-authentication-in-aspnet-web-api"></a><span data-ttu-id="ca70a-103">ASP.NET Web API에서에서 폼 인증</span><span class="sxs-lookup"><span data-stu-id="ca70a-103">Forms Authentication in ASP.NET Web API</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/advanced/sending-html-form-data-part-1
-title: "ASP.NET Web API의에서 HTML 폼 데이터 보내기: 양식 인코딩된 데이터 | Microsoft Docs"
+title: 'ASP.NET Web API의에서 HTML 폼 데이터 보내기: 양식 인코딩된 데이터 | Microsoft Docs'
 author: MikeWasson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/15/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26506942"
 ---
 <a name="sending-html-form-data-in-aspnet-web-api-form-urlencoded-data"></a><span data-ttu-id="87d69-102">ASP.NET Web API의에서 HTML 폼 데이터 보내기: 양식 인코딩된 데이터</span><span class="sxs-lookup"><span data-stu-id="87d69-102">Sending HTML Form Data in ASP.NET Web API: Form-urlencoded Data</span></span>
 ====================

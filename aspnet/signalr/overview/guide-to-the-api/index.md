@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/guide-to-the-api/index
-title: "Api SignalR 가이드 | Microsoft Docs"
+title: Api SignalR 가이드 | Microsoft Docs
 author: rick-anderson
-description: "SignalR 허브 API를 사용 하는 방법에 대 한 설명서입니다. 권한 부여 API 보안 탭을 참조 하십시오."
+description: SignalR 허브 API를 사용 하는 방법에 대 한 설명서입니다. 권한 부여 API 보안 탭을 참조 하십시오.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/19/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /signalr/overview/guide-to-the-api
 msc.type: chapter
 ms.openlocfilehash: 119b21af75576c269b5d81769897281bd05b2986
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26503862"
 ---
 <a name="signalr-guide-to-the-api"></a><span data-ttu-id="41822-104">Api SignalR 가이드</span><span class="sxs-lookup"><span data-stu-id="41822-104">SignalR Guide to the API</span></span>
 ====================

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32739856"
 ---
 # <a name="application-parts-in-aspnet-core"></a><span data-ttu-id="0669e-103">ASP.NET Core에서 응용 프로그램 파트</span><span class="sxs-lookup"><span data-stu-id="0669e-103">Application Parts in ASP.NET Core</span></span>
 
