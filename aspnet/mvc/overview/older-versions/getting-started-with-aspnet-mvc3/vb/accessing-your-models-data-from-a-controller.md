@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873146"
 ---
 <a name="accessing-your-models-data-from-a-controller-vb"></a><span data-ttu-id="88cd2-103">컨트롤러 (VB)에서 모델의 데이터에 액세스</span><span class="sxs-lookup"><span data-stu-id="88cd2-103">Accessing your Model's Data from a Controller (VB)</span></span>
 ====================
@@ -39,9 +40,9 @@ ms.lasthandoff: 04/06/2018
 
 - <span data-ttu-id="88cd2-120">컨트롤러 이름: **MoviesController**합니다.</span><span class="sxs-lookup"><span data-stu-id="88cd2-120">Controller name: **MoviesController**.</span></span> <span data-ttu-id="88cd2-121">(기본값입니다.)</span><span class="sxs-lookup"><span data-stu-id="88cd2-121">(This is the default.)</span></span>
 - <span data-ttu-id="88cd2-122">서식 파일: **Entity Framework를 사용 하 여 읽기/쓰기 동작 및 뷰를 사용 하 여 컨트롤러**합니다.</span><span class="sxs-lookup"><span data-stu-id="88cd2-122">Template: **Controller with read/write actions and views, using Entity Framework**.</span></span>
-- <span data-ttu-id="88cd2-123">모델 클래스: **동영상 (MvcMovie.Models)**합니다.</span><span class="sxs-lookup"><span data-stu-id="88cd2-123">Model class: **Movie (MvcMovie.Models)**.</span></span>
-- <span data-ttu-id="88cd2-124">데이터 컨텍스트 클래스: **MovieDBContext (MvcMovie.Models)**합니다.</span><span class="sxs-lookup"><span data-stu-id="88cd2-124">Data context class: **MovieDBContext (MvcMovie.Models)**.</span></span>
-- <span data-ttu-id="88cd2-125">보기: **Razor (CSHTML)**합니다.</span><span class="sxs-lookup"><span data-stu-id="88cd2-125">Views: **Razor (CSHTML)**.</span></span> <span data-ttu-id="88cd2-126">(기본값입니다.)</span><span class="sxs-lookup"><span data-stu-id="88cd2-126">(The default.)</span></span>
+- <span data-ttu-id="88cd2-123">모델 클래스: **동영상 (MvcMovie.Models)** 합니다.</span><span class="sxs-lookup"><span data-stu-id="88cd2-123">Model class: **Movie (MvcMovie.Models)**.</span></span>
+- <span data-ttu-id="88cd2-124">데이터 컨텍스트 클래스: **MovieDBContext (MvcMovie.Models)** 합니다.</span><span class="sxs-lookup"><span data-stu-id="88cd2-124">Data context class: **MovieDBContext (MvcMovie.Models)**.</span></span>
+- <span data-ttu-id="88cd2-125">보기: **Razor (CSHTML)** 합니다.</span><span class="sxs-lookup"><span data-stu-id="88cd2-125">Views: **Razor (CSHTML)**.</span></span> <span data-ttu-id="88cd2-126">(기본값입니다.)</span><span class="sxs-lookup"><span data-stu-id="88cd2-126">(The default.)</span></span>
 
 <span data-ttu-id="88cd2-127">[![5addMovieController](accessing-your-models-data-from-a-controller/_static/image2.png)](accessing-your-models-data-from-a-controller/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="88cd2-127">[![5addMovieController](accessing-your-models-data-from-a-controller/_static/image2.png)](accessing-your-models-data-from-a-controller/_static/image1.png)</span></span>
 

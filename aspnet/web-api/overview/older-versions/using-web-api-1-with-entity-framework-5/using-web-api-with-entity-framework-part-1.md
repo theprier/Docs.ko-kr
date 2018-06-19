@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873328"
 ---
 <a name="part-1-overview-and-creating-the-project"></a><span data-ttu-id="ab40a-102">1 부: 개요 및 프로젝트 만들기</span><span class="sxs-lookup"><span data-stu-id="ab40a-102">Part 1: Overview and Creating the Project</span></span>
 ====================

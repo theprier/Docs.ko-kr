@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871651"
 ---
 <a name="aspnet-mvc-storefront-part-1-architectural-discussion-and-overview"></a><span data-ttu-id="1f618-104">ASP.NET MVC Storefront 1 부: 아키텍처 토론 및 개요</span><span class="sxs-lookup"><span data-stu-id="1f618-104">ASP.NET MVC Storefront Part 1: Architectural Discussion and Overview</span></span>
 ====================

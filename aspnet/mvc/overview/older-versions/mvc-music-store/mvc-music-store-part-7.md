@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879506"
 ---
 <a name="part-7-membership-and-authorization"></a><span data-ttu-id="170d7-104">7 단계: 멤버 자격 및 권한 부여</span><span class="sxs-lookup"><span data-stu-id="170d7-104">Part 7: Membership and Authorization</span></span>
 ====================

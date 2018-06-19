@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887550"
 ---
 <a name="core-differences-between-iis-and-the-aspnet-development-server-vb"></a><span data-ttu-id="9b6e2-104">코어 IIS와 ASP.NET 개발 서버 (VB)의 차이점</span><span class="sxs-lookup"><span data-stu-id="9b6e2-104">Core Differences Between IIS and the ASP.NET Development Server (VB)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875918"
 ---
 <a name="creating-a-custom-ajax-control-toolkit-control-extender-c"></a><span data-ttu-id="8a609-103">사용자 지정 AJAX 컨트롤 Toolkit 컨트롤 Extender (C#) 만들기</span><span class="sxs-lookup"><span data-stu-id="8a609-103">Creating a Custom AJAX Control Toolkit Control Extender (C#)</span></span>
 ====================
@@ -198,7 +199,7 @@ ms.lasthandoff: 04/06/2018
 2. <span data-ttu-id="8a609-225">ScriptManager는 페이지로 끌어옵니다.</span><span class="sxs-lookup"><span data-stu-id="8a609-225">Drag a ScriptManager onto the page.</span></span>
 3. <span data-ttu-id="8a609-226">TextBox 컨트롤을 페이지로 끕니다.</span><span class="sxs-lookup"><span data-stu-id="8a609-226">Drag a TextBox control onto the page.</span></span>
 4. <span data-ttu-id="8a609-227">Button 컨트롤을 페이지로 끕니다.</span><span class="sxs-lookup"><span data-stu-id="8a609-227">Drag a Button control onto the page.</span></span>
-5. <span data-ttu-id="8a609-228">속성 창에서 단추 ID 속성 값을 변경 <em>btnSave</em> 및 Text 속성 값을 *저장\**합니다.</span><span class="sxs-lookup"><span data-stu-id="8a609-228">In the Properties window, change the Button ID property to the value <em>btnSave</em> and the Text property to the value *Save\**.</span></span>
+5. <span data-ttu-id="8a609-228">속성 창에서 단추 ID 속성 값을 변경 <em>btnSave</em> 및 Text 속성 값을 *저장\** 합니다.</span><span class="sxs-lookup"><span data-stu-id="8a609-228">In the Properties window, change the Button ID property to the value <em>btnSave</em> and the Text property to the value *Save\**.</span></span>
   
 
 <span data-ttu-id="8a609-229">표준 ASP.NET 텍스트 상자 및 단추 컨트롤과 페이지를 만들었는지 여부입니다.</span><span class="sxs-lookup"><span data-stu-id="8a609-229">We created a page with a standard ASP.NET TextBox and Button control.</span></span>

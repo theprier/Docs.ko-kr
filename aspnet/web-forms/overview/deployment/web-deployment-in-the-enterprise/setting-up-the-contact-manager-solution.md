@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881814"
 ---
 <a name="setting-up-the-contact-manager-solution"></a><span data-ttu-id="dc12a-103">Contact Manager 솔루션 설정</span><span class="sxs-lookup"><span data-stu-id="dc12a-103">Setting Up the Contact Manager Solution</span></span>
 ====================
@@ -58,7 +59,7 @@ ms.lasthandoff: 04/06/2018
 
 <span data-ttu-id="dc12a-126">**응용 프로그램 서비스 데이터베이스를 만들려면**</span><span class="sxs-lookup"><span data-stu-id="dc12a-126">**To create the application services database**</span></span>
 
-1. <span data-ttu-id="dc12a-127">Visual Studio 2010 명령 프롬프트를 엽니다.</span><span class="sxs-lookup"><span data-stu-id="dc12a-127">Open a Visual Studio 2010 command prompt.</span></span> <span data-ttu-id="dc12a-128">이 작업을 수행 하는 **시작** 메뉴에서 **모든 프로그램**, 클릭 **Microsoft Visual Studio 2010**, 클릭 **Visual Studio Tools**, 한 다음 클릭 **Visual Studio 명령 프롬프트 (2010)**합니다.</span><span class="sxs-lookup"><span data-stu-id="dc12a-128">To do this, on the **Start** menu, point to **All Programs**, click **Microsoft Visual Studio 2010**, click **Visual Studio Tools**, and then click **Visual Studio Command Prompt (2010)**.</span></span>
+1. <span data-ttu-id="dc12a-127">Visual Studio 2010 명령 프롬프트를 엽니다.</span><span class="sxs-lookup"><span data-stu-id="dc12a-127">Open a Visual Studio 2010 command prompt.</span></span> <span data-ttu-id="dc12a-128">이 작업을 수행 하는 **시작** 메뉴에서 **모든 프로그램**, 클릭 **Microsoft Visual Studio 2010**, 클릭 **Visual Studio Tools**, 한 다음 클릭 **Visual Studio 명령 프롬프트 (2010)** 합니다.</span><span class="sxs-lookup"><span data-stu-id="dc12a-128">To do this, on the **Start** menu, point to **All Programs**, click **Microsoft Visual Studio 2010**, click **Visual Studio Tools**, and then click **Visual Studio Command Prompt (2010)**.</span></span>
 2. <span data-ttu-id="dc12a-129">명령 프롬프트에서 다음이 명령을 입력 하 고 enter 키를 누릅니다.</span><span class="sxs-lookup"><span data-stu-id="dc12a-129">At the command prompt, type this command, and then press Enter:</span></span>
 
     [!code-console[Main](setting-up-the-contact-manager-solution/samples/sample1.cmd)]

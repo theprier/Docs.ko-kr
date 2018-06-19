@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30899816"
 ---
 <a name="introducing-aspnet-web-pages---creating-a-consistent-layout"></a><span data-ttu-id="6b216-104">ASP.NET 웹 페이지-일관 된 레이아웃 만들기 소개</span><span class="sxs-lookup"><span data-stu-id="6b216-104">Introducing ASP.NET Web Pages - Creating a Consistent Layout</span></span>
 ====================

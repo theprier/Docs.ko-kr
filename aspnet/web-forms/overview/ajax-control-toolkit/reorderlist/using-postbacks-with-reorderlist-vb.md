@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879493"
 ---
 <a name="using-postbacks-with-reorderlist-vb"></a><span data-ttu-id="e2754-104">포스트백을 사용 하 여 ReorderList (VB)으로</span><span class="sxs-lookup"><span data-stu-id="e2754-104">Using Postbacks with ReorderList (VB)</span></span>
 ====================

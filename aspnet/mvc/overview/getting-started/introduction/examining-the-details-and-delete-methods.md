@@ -17,6 +17,7 @@ ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "33962430"
 ---
 <a name="examining-the-details-and-delete-methods"></a><span data-ttu-id="25a6c-102">세부 정보 및 삭제 메서드를 검사합니다.</span><span class="sxs-lookup"><span data-stu-id="25a6c-102">Examining the Details and Delete Methods</span></span>
 ====================

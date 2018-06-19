@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875437"
 ---
 <a name="queue-centric-work-pattern-building-real-world-cloud-apps-with-azure"></a><span data-ttu-id="72fcb-104">큐 중심 작업 패턴 (Azure로 응용 프로그램 빌딩 실제 클라우드)</span><span class="sxs-lookup"><span data-stu-id="72fcb-104">Queue-Centric Work Pattern (Building Real-World Cloud Apps with Azure)</span></span>
 ====================

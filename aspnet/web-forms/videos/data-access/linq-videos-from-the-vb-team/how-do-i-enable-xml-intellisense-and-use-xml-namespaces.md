@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885899"
 ---
 <a name="how-do-i-enable-xml-intellisense-and-use-xml-namespaces"></a><span data-ttu-id="43588-104">[어떻게 할까요?] XML IntelliSense를 사용 하도록 설정 하 고 XML 네임 스페이스를 사용 하 여?</span><span class="sxs-lookup"><span data-stu-id="43588-104">[How Do I:] Enable XML IntelliSense and Use XML Namespaces?</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888372"
 ---
 <a name="inserting-a-new-record-from-the-gridviews-footer-vb"></a><span data-ttu-id="72ac6-103">GridView의 바닥글 (VB)에서 새 레코드 삽입</span><span class="sxs-lookup"><span data-stu-id="72ac6-103">Inserting a New Record from the GridView's Footer (VB)</span></span>
 ====================

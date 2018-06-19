@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886611"
 ---
 <a name="how-to-dynamically-add-controls-to-a-web-page"></a><span data-ttu-id="688ba-103">동적으로 웹 페이지에 컨트롤을 추가 하는 방법</span><span class="sxs-lookup"><span data-stu-id="688ba-103">How To Dynamically Add Controls to a Web Page</span></span>
 ====================

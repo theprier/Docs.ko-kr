@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886045"
 ---
 <a name="intro-to-aspnet-20-aspnet-20-fundamentals"></a><span data-ttu-id="8995b-103">[ASP.NET 2.0 소개:] ASP.NET 2.0 기본 사항</span><span class="sxs-lookup"><span data-stu-id="8995b-103">[Intro to ASP.NET 2.0:] ASP.NET 2.0 Fundamentals</span></span>
 ====================

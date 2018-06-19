@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886903"
 ---
 <a name="understanding-the-project-file"></a><span data-ttu-id="9f020-104">프로젝트 파일 이해</span><span class="sxs-lookup"><span data-stu-id="9f020-104">Understanding the Project File</span></span>
 ====================

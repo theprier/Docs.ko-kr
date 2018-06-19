@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871001"
 ---
 <a name="authenticating-users-with-forms-authentication-vb"></a><span data-ttu-id="046eb-104">폼 인증 (VB)는 사용자 인증</span><span class="sxs-lookup"><span data-stu-id="046eb-104">Authenticating Users with Forms Authentication (VB)</span></span>
 ====================

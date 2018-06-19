@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882418"
 ---
 <a name="sorting-custom-paged-data-c"></a><span data-ttu-id="21ae9-104">사용자 지정 정렬 하는 것 페이징 데이터 (C#)</span><span class="sxs-lookup"><span data-stu-id="21ae9-104">Sorting Custom Paged Data (C#)</span></span>
 ====================

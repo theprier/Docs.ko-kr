@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877374"
 ---
 <a name="using-existing-stored-procedures-for-the-typed-datasets-tableadapters-vb"></a><span data-ttu-id="2ff88-104">형식화 된 데이터 집합의 Tableadapter (VB)에 대 한 기존 사용 하 여 저장 프로시저</span><span class="sxs-lookup"><span data-stu-id="2ff88-104">Using Existing Stored Procedures for the Typed DataSet's TableAdapters (VB)</span></span>
 ====================

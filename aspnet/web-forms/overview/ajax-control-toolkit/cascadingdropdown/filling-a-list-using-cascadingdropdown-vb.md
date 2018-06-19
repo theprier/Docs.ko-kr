@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873055"
 ---
 <a name="filling-a-list-using-cascadingdropdown-vb"></a><span data-ttu-id="f22ca-103">CascadingDropDown (VB)를 사용 하는 목록 채우기</span><span class="sxs-lookup"><span data-stu-id="f22ca-103">Filling a List Using CascadingDropDown (VB)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890868"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-to-test"></a><span data-ttu-id="7c1d8-103">Visual Studio를 사용 하 여 ASP.NET 웹 배포: 테스트에 배포</span><span class="sxs-lookup"><span data-stu-id="7c1d8-103">ASP.NET Web Deployment using Visual Studio: Deploying to Test</span></span>
 ====================
@@ -244,7 +245,7 @@ ms.lasthandoff: 04/06/2018
     <span data-ttu-id="7c1d8-281">때문에 배포 프로세스 배포 된 Web.config 파일에서이 연결 문자열이 됩니다 **이 연결 문자열을 사용 하 여 런타임 시** 을 선택 합니다.</span><span class="sxs-lookup"><span data-stu-id="7c1d8-281">The deployment process will put this connection string in the deployed Web.config file because **Use this connection string at runtime** is selected.</span></span>
 
     <span data-ttu-id="7c1d8-282">응용 프로그램 데이터베이스 연결 문자열을 얻을 수 있습니다 **서버 탐색기** 멤버 자격을 받은 같은 방법으로 데이터베이스 연결 문자열이 있습니다.</span><span class="sxs-lookup"><span data-stu-id="7c1d8-282">You can also get the application database connection string from **Server Explorer** the same way you got the membership database connection string.</span></span>
-2. <span data-ttu-id="7c1d8-283">선택 **실행 Code First 마이그레이션을 (응용 프로그램 시작 시 실행)**합니다.</span><span class="sxs-lookup"><span data-stu-id="7c1d8-283">Select **Execute Code First Migrations (runs on application start)**.</span></span>
+2. <span data-ttu-id="7c1d8-283">선택 **실행 Code First 마이그레이션을 (응용 프로그램 시작 시 실행)** 합니다.</span><span class="sxs-lookup"><span data-stu-id="7c1d8-283">Select **Execute Code First Migrations (runs on application start)**.</span></span>
 
     <span data-ttu-id="7c1d8-284">이 옵션을 사용 하면 배포 프로세스를 지정 하도록 배포 된 Web.config 파일을 구성 하는 `MigrateDatabaseToLatestVersion` 이니셜라이저입니다.</span><span class="sxs-lookup"><span data-stu-id="7c1d8-284">This option causes the deployment process to configure the deployed Web.config file to specify the `MigrateDatabaseToLatestVersion` initializer.</span></span> <span data-ttu-id="7c1d8-285">자동으로이 이니셜라이저 응용 프로그램 배포 후 처음으로 데이터베이스에 액세스 하는 경우 데이터베이스에서 최신 버전에 게 업데이트 합니다.</span><span class="sxs-lookup"><span data-stu-id="7c1d8-285">This initializer automatically updates the database to the latest version when the application accesses the database for the first time after deployment.</span></span>
 

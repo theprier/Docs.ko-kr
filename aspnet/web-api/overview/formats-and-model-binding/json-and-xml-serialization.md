@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28038103"
 ---
 <a name="json-and-xml-serialization-in-aspnet-web-api"></a><span data-ttu-id="fb9d5-102">JSON 및 ASP.NET Web API의에서 XML 직렬화</span><span class="sxs-lookup"><span data-stu-id="fb9d5-102">JSON and XML Serialization in ASP.NET Web API</span></span>
 ====================

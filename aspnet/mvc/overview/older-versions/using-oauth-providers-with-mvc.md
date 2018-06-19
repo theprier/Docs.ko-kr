@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/using-oauth-providers-with-mvc
-title: "MVC 4와 함께 OAuth 공급자를 사용 하 여 | Microsoft Docs"
+title: MVC 4와 함께 OAuth 공급자를 사용 하 여 | Microsoft Docs
 author: tfitzmac
-description: "이 자습서에서는 사용자가 Facebo 같은 외부 공급자의 자격 증명으로 로그인 할 수 있는 ASP.NET MVC 4 웹 응용 프로그램을 작성 하는 방법..."
+description: 이 자습서에서는 사용자가 Facebo 같은 외부 공급자의 자격 증명으로 로그인 할 수 있는 ASP.NET MVC 4 웹 응용 프로그램을 작성 하는 방법...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/19/2013
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28033577"
 ---
 <a name="using-oauth-providers-with-mvc-4"></a><span data-ttu-id="c48c1-103">MVC 4와 함께 OAuth 공급자 사용</span><span class="sxs-lookup"><span data-stu-id="c48c1-103">Using OAuth Providers with MVC 4</span></span>
 ====================

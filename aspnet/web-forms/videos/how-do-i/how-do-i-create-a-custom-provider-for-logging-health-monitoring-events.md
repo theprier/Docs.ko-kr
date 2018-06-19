@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-a-custom-provider-for-logging-health-monitoring-events
-title: "[어떻게 할까요?] 이벤트를 모니터링 하는 로깅 상태에 대 한 사용자 지정 공급자 만들기 | Microsoft Docs"
+title: '[어떻게 할까요?] 이벤트를 모니터링 하는 로깅 상태에 대 한 사용자 지정 공급자 만들기 | Microsoft Docs'
 author: rick-anderson
-description: "Chris Pels 모니터링 시스템 상태 모니터링-로그 파일에 이벤트를 기록 하는 ASP.NET 상태에 대 한 사용자 지정 공급자를 만드는 방법을 보여 줍니다. Le 중..."
+description: Chris Pels 모니터링 시스템 상태 모니터링-로그 파일에 이벤트를 기록 하는 ASP.NET 상태에 대 한 사용자 지정 공급자를 만드는 방법을 보여 줍니다. Le 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/06/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26524972"
 ---
 <a name="how-do-i-create-a-custom-provider-for-logging-health-monitoring-events"></a><span data-ttu-id="9e7ee-104">[어떻게 할까요?] 이벤트를 모니터링 하는 로깅 상태에 대 한 사용자 지정 공급자 만들기</span><span class="sxs-lookup"><span data-stu-id="9e7ee-104">[How Do I:] Create a Custom Provider for Logging Health Monitoring Events</span></span>
 ====================

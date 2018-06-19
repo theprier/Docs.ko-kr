@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871183"
 ---
 <a name="aspnet-mvc-for-the-rest-of-us-part-4"></a><span data-ttu-id="798bf-103">우리의 나머지 부분에 대 한 ASP.NET MVC: 4 부</span><span class="sxs-lookup"><span data-stu-id="798bf-103">ASP.NET MVC For the Rest of Us: Part 4</span></span>
 ====================

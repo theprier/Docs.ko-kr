@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875281"
 ---
 <a name="iteration-5--create-unit-tests-vb"></a><span data-ttu-id="6bd20-104">반복 #5-단위 테스트 만들기 (VB)</span><span class="sxs-lookup"><span data-stu-id="6bd20-104">Iteration #5 – Create unit tests (VB)</span></span>
 ====================

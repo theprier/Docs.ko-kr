@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881895"
 ---
 <a name="how-do-i-associate-ajax-client-behavior-with-an-aspnet-server-control"></a><span data-ttu-id="d6e9f-105">[어떻게 할까요?] ASP.NET 서버 컨트롤에 AJAX 클라이언트 동작 연결 하나요?</span><span class="sxs-lookup"><span data-stu-id="d6e9f-105">[How Do I:] Associate AJAX Client Behavior with an ASP.NET Server Control?</span></span>
 ====================

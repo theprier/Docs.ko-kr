@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885717"
 ---
 <a name="how-do-i-linq-to-sql-executing-arbitrary-sql"></a><span data-ttu-id="2b2ca-103">작업 방법: LINQ to SQL: 임의의 SQL 실행</span><span class="sxs-lookup"><span data-stu-id="2b2ca-103">How Do I: LINQ to SQL: Executing Arbitrary SQL</span></span>
 ====================

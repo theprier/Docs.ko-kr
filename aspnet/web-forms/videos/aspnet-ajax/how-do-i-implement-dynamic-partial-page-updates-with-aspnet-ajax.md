@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882184"
 ---
 <a name="how-do-i-implement-dynamic-partial-page-updates-with-aspnet-ajax"></a><span data-ttu-id="961bc-105">[어떻게 할까요?] ASP.NET AJAX와 함께 동적 부분 페이지 업데이트를 구현 여부?</span><span class="sxs-lookup"><span data-stu-id="961bc-105">[How Do I:] Implement Dynamic Partial-Page Updates with ASP.NET AJAX?</span></span>
 ====================

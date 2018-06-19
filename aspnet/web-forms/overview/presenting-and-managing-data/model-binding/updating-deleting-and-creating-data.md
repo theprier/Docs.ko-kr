@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885847"
 ---
 <a name="updating-deleting-and-creating-data-with-model-binding-and-web-forms"></a><span data-ttu-id="2907b-104">업데이트, 삭제 및 데이터 모델 바인딩 및 web forms를 사용 하 여 만들기</span><span class="sxs-lookup"><span data-stu-id="2907b-104">Updating, deleting, and creating data with model binding and web forms</span></span>
 ====================

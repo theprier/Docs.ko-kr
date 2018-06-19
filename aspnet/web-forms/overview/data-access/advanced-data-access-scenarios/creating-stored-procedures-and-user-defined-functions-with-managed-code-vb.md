@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30878271"
 ---
 <a name="creating-stored-procedures-and-user-defined-functions-with-managed-code-vb"></a><span data-ttu-id="3ca1f-104">저장 프로시저와 관리 코드 (VB)와 사용자 정의 함수 만들기</span><span class="sxs-lookup"><span data-stu-id="3ca1f-104">Creating Stored Procedures and User-Defined Functions with Managed Code (VB)</span></span>
 ====================

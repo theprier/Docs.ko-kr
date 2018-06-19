@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887709"
 ---
 <a name="urls-in-master-pages-c"></a><span data-ttu-id="7e6d2-104">마스터 페이지 (C#)의 Url</span><span class="sxs-lookup"><span data-stu-id="7e6d2-104">URLs in Master Pages (C#)</span></span>
 ====================

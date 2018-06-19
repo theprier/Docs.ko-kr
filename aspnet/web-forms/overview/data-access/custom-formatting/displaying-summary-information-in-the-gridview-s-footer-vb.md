@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877618"
 ---
 <a name="displaying-summary-information-in-the-gridviews-footer-vb"></a><span data-ttu-id="3f4c8-104">GridView의 바닥글 (VB)의 요약 정보를 표시합니다.</span><span class="sxs-lookup"><span data-stu-id="3f4c8-104">Displaying Summary Information in the GridView's Footer (VB)</span></span>
 ====================

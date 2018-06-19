@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891180"
 ---
 <a name="creating-and-running-a-deployment-command-file"></a><span data-ttu-id="3931d-103">만들기 및 배포 명령 파일을 실행 합니다.</span><span class="sxs-lookup"><span data-stu-id="3931d-103">Creating and Running a Deployment Command File</span></span>
 ====================

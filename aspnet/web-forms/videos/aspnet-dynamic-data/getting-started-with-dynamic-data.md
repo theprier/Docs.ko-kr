@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883569"
 ---
 <a name="getting-started-with-dynamic-data"></a><span data-ttu-id="602e8-103">동적 데이터 시작</span><span class="sxs-lookup"><span data-stu-id="602e8-103">Getting Started with Dynamic Data</span></span>
 ====================

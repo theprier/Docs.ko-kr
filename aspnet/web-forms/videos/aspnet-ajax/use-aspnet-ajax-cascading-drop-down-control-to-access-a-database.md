@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886653"
 ---
 <a name="use-aspnet-ajax-cascading-drop-down-control-to-access-a-database"></a><span data-ttu-id="bd84f-103">ASP.NET AJAX 계단식 드롭다운 컨트롤을 사용 하 여 데이터베이스에 액세스 하려면</span><span class="sxs-lookup"><span data-stu-id="bd84f-103">Use ASP.NET AJAX Cascading Drop Down Control to Access a Database</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889149"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-preparing-for-database-deployment"></a><span data-ttu-id="24990-103">Visual Studio를 사용 하 여 ASP.NET 웹 배포: 데이터베이스 배포 준비</span><span class="sxs-lookup"><span data-stu-id="24990-103">ASP.NET Web Deployment using Visual Studio: Preparing for Database Deployment</span></span>
 ====================

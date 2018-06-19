@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887943"
 ---
 <a name="adding-validation-controls-to-the-editing-and-inserting-interfaces-vb"></a><span data-ttu-id="479c3-103">편집을 유효성 검사 컨트롤을 추가 하 고 인터페이스 (VB)를 삽입 합니다.</span><span class="sxs-lookup"><span data-stu-id="479c3-103">Adding Validation Controls to the Editing and Inserting Interfaces (VB)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881372"
 ---
 <a name="add-custom-data-to-the-authentication-method"></a><span data-ttu-id="d96d7-103">인증 방법에 사용자 지정 데이터 추가</span><span class="sxs-lookup"><span data-stu-id="d96d7-103">Add Custom Data to the Authentication Method</span></span>
 ====================

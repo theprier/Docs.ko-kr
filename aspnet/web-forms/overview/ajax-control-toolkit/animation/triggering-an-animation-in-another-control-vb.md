@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30878999"
 ---
 <a name="triggering-an-animation-in-another-control-vb"></a><span data-ttu-id="8e023-104">다른 컨트롤 (VB) 애니메이션 트리거</span><span class="sxs-lookup"><span data-stu-id="8e023-104">Triggering an Animation in another Control (VB)</span></span>
 ====================

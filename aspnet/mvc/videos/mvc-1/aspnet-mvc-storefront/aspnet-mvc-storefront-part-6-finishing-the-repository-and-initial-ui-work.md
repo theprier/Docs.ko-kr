@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872137"
 ---
 <a name="aspnet-mvc-storefront-part-6-finishing-the-repository-and-initial-ui-work"></a><span data-ttu-id="35420-103">리포지토리 및 초기 UI 작업을 완료 하는 ASP.NET MVC Storefront 6 부:</span><span class="sxs-lookup"><span data-stu-id="35420-103">ASP.NET MVC Storefront Part 6: Finishing The Repository, and Initial UI Work</span></span>
 ====================

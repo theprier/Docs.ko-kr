@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883029"
 ---
 <a name="masterdetail-using-a-selectable-master-gridview-with-a-details-detailview-c"></a><span data-ttu-id="8a86b-104">마스터/세부 정보 DetailView (C#)는 선택 가능한 마스터 GridView 사용</span><span class="sxs-lookup"><span data-stu-id="8a86b-104">Master/Detail Using a Selectable Master GridView with a Details DetailView (C#)</span></span>
 ====================

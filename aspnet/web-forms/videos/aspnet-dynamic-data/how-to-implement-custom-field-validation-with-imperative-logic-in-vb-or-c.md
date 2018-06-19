@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885018"
 ---
 <a name="how-to-implement-custom-field-validation-with-imperative-logic-in-vb-or-c"></a><span data-ttu-id="a71cf-103">VB 또는 C# 명령적 논리와 사용자 지정 필드 유효성 검사를 구현 하는 방법</span><span class="sxs-lookup"><span data-stu-id="a71cf-103">How to Implement Custom Field Validation with Imperative Logic in VB or C#</span></span>
 ====================

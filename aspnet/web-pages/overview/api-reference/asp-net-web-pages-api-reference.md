@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30897586"
 ---
 <a name="aspnet-web-pages-razor-api-quick-reference"></a><span data-ttu-id="65496-103">ASP.NET 웹 페이지 (Razor) API 빠른 참조</span><span class="sxs-lookup"><span data-stu-id="65496-103">ASP.NET Web Pages (Razor) API Quick Reference</span></span>
 ====================

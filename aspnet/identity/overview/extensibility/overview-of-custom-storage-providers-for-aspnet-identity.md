@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876802"
 ---
 <a name="overview-of-custom-storage-providers-for-aspnet-identity"></a><span data-ttu-id="5e1e7-103">ASP.NET Id에 대 한 사용자 지정 저장소 공급자 개요</span><span class="sxs-lookup"><span data-stu-id="5e1e7-103">Overview of Custom Storage Providers for ASP.NET Identity</span></span>
 ====================

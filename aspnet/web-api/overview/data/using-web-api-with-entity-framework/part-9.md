@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868375"
 ---
 <a name="add-a-new-item-to-the-database"></a><span data-ttu-id="6cad4-102">데이터베이스에 새 항목 추가</span><span class="sxs-lookup"><span data-stu-id="6cad4-102">Add a New Item to the Database</span></span>
 ====================

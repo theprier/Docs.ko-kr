@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886799"
 ---
 <a name="using-script-combining-to-improve-ajax-performance"></a><span data-ttu-id="f78b3-103">AJAX 성능 향상을 위해 결합 하는 스크립트를 사용 하 여</span><span class="sxs-lookup"><span data-stu-id="f78b3-103">Using Script Combining to improve AJAX performance</span></span>
 ====================

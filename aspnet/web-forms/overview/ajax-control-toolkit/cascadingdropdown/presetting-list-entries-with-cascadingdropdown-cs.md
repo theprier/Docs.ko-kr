@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868830"
 ---
 <a name="presetting-list-entries-with-cascadingdropdown-c"></a><span data-ttu-id="ea058-103">CascadingDropDown (C#)와 목록 항목을 미리 설정</span><span class="sxs-lookup"><span data-stu-id="ea058-103">Presetting List Entries with CascadingDropDown (C#)</span></span>
 ====================

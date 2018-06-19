@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889529"
 ---
 <a name="strategies-for-database-development-and-deployment-c"></a><span data-ttu-id="24054-104">데이터베이스 개발 및 배포 (C#)에 대 한 전략</span><span class="sxs-lookup"><span data-stu-id="24054-104">Strategies for Database Development and Deployment (C#)</span></span>
 ====================

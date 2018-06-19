@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876490"
 ---
 <a name="custom-buttons-in-the-datalist-and-repeater-c"></a><span data-ttu-id="513cc-103">DataList 및 반복기 (C#)에서 사용자 지정 단추</span><span class="sxs-lookup"><span data-stu-id="513cc-103">Custom Buttons in the DataList and Repeater (C#)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872054"
 ---
 <a name="aspnet-mvc-storefront-part-14-rich-client-interaction"></a><span data-ttu-id="f298c-104">ASP.NET MVC Storefront 부 14: 리치 클라이언트 상호 작용</span><span class="sxs-lookup"><span data-stu-id="f298c-104">ASP.NET MVC Storefront Part 14: Rich Client Interaction</span></span>
 ====================

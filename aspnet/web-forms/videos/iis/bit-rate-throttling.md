@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881177"
 ---
 <a name="bit-rate-throttling"></a><span data-ttu-id="99729-104">비트 전송률 제한</span><span class="sxs-lookup"><span data-stu-id="99729-104">Bit Rate Throttling</span></span>
 ====================

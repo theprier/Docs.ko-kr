@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888450"
 ---
 <a name="adding-validation-controls-to-the-editing-and-inserting-interfaces-c"></a><span data-ttu-id="b912f-103">편집을 유효성 검사 컨트롤을 추가 하 고 삽입 인터페이스 (C#)</span><span class="sxs-lookup"><span data-stu-id="b912f-103">Adding Validation Controls to the Editing and Inserting Interfaces (C#)</span></span>
 ====================

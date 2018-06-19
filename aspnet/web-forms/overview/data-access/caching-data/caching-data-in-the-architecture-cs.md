@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879220"
 ---
 <a name="caching-data-in-the-architecture-c"></a><span data-ttu-id="0144c-104">아키텍처 (C#)에서 데이터 캐싱</span><span class="sxs-lookup"><span data-stu-id="0144c-104">Caching Data in the Architecture (C#)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30895867"
 ---
 <a name="how-do-i-write-code-more-quickly-with-unit-tests"></a><span data-ttu-id="ebe50-105">[어떻게 할까요?] 단위 테스트를 사용 하 여 보다 신속 하 게 코드를 작성 하는?</span><span class="sxs-lookup"><span data-stu-id="ebe50-105">[How Do I:] Write Code More Quickly with Unit Tests?</span></span>
 ====================

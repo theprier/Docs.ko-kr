@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881066"
 ---
 <a name="part-4-listing-products"></a><span data-ttu-id="96f01-104">4 단계: 목록 제품</span><span class="sxs-lookup"><span data-stu-id="96f01-104">Part 4: Listing Products</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28036117"
 ---
 <a name="tutorial-high-frequency-realtime-with-signalr-2"></a><span data-ttu-id="04de9-104">자습서: 높은 주파수 실시간 2 SignalR과</span><span class="sxs-lookup"><span data-stu-id="04de9-104">Tutorial: High-Frequency Realtime with SignalR 2</span></span>
 ====================

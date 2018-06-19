@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30891895"
 ---
 <a name="checkout-and-payment-with-paypal"></a><span data-ttu-id="9a9d3-103">체크 아웃 및 PayPal 지불</span><span class="sxs-lookup"><span data-stu-id="9a9d3-103">Checkout and Payment with PayPal</span></span>
 ====================

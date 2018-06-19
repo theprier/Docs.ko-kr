@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883241"
 ---
 <a name="validating-users-with-the-login-control"></a><span data-ttu-id="b7640-103">사용자 로그인 제어를 사용한 유효성 검사</span><span class="sxs-lookup"><span data-stu-id="b7640-103">Validating Users with the Login Control</span></span>
 ====================

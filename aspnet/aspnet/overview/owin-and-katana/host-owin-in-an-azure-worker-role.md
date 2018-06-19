@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868427"
 ---
 <a name="host-owin-in-an-azure-worker-role"></a><span data-ttu-id="7c55c-104">Azure 작업자 역할에는 OWIN 호스트</span><span class="sxs-lookup"><span data-stu-id="7c55c-104">Host OWIN in an Azure Worker Role</span></span>
 ====================

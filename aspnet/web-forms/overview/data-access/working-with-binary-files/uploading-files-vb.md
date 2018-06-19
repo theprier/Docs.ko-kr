@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30888099"
 ---
 <a name="uploading-files-vb"></a><span data-ttu-id="4679d-103">파일 (VB)를 업로드 하는 중</span><span class="sxs-lookup"><span data-stu-id="4679d-103">Uploading Files (VB)</span></span>
 ====================

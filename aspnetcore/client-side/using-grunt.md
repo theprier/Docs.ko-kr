@@ -14,6 +14,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30897183"
 ---
 # <a name="use-grunt-in-aspnet-core"></a><span data-ttu-id="f92a0-102">ASP.NET Core에서 Grunt를 사용 합니다.</span><span class="sxs-lookup"><span data-stu-id="f92a0-102">Use Grunt in ASP.NET Core</span></span>
 

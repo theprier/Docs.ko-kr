@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882795"
 ---
 <a name="configuring-sql-to-work-with-membership-schemas"></a><span data-ttu-id="e9133-103">멤버 자격 스키마와 함께 SQL 작업을 구성</span><span class="sxs-lookup"><span data-stu-id="e9133-103">Configuring SQL To Work with Membership Schemas</span></span>
 ====================

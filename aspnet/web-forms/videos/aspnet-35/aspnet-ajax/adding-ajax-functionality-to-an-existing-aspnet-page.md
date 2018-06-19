@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885866"
 ---
 <a name="adding-ajax-functionality-to-an-existing-aspnet-page"></a><span data-ttu-id="af9a7-104">기존 ASP.NET 페이지에 AJAX 기능을 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="af9a7-104">Adding AJAX Functionality to an Existing ASP.NET Page</span></span>
 ====================

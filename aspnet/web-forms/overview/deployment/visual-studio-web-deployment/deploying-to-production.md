@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889809"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-to-production"></a><span data-ttu-id="bc901-103">Visual Studio를 사용 하 여 ASP.NET 웹 배포: 프로덕션에 배포</span><span class="sxs-lookup"><span data-stu-id="bc901-103">ASP.NET Web Deployment using Visual Studio: Deploying to Production</span></span>
 ====================
@@ -148,7 +149,7 @@ ms.lasthandoff: 04/06/2018
       3. <span data-ttu-id="bc901-206">에 **데이터베이스 업데이트 구성** 대화 상자를 클릭 **SQL 스크립트 추가**합니다.</span><span class="sxs-lookup"><span data-stu-id="bc901-206">In the **Configure Database Updates** dialog box, click **Add SQL Script**.</span></span>
       4. <span data-ttu-id="bc901-207">에 **SQL 스크립트 추가** 상자는 *aspnet-데이터-prod.sql* 솔루션 폴더에 이전에 저장 하 고 클릭 한 다음 스크립트는 **열려**합니다.</span><span class="sxs-lookup"><span data-stu-id="bc901-207">In the **Add SQL Script** box, navigate to the *aspnet-data-prod.sql* script that you saved earlier in the solution folder, and then click **Open**.</span></span>
       5. <span data-ttu-id="bc901-208">닫기는 **데이터베이스 업데이트 구성** 대화 상자.</span><span class="sxs-lookup"><span data-stu-id="bc901-208">Close the **Configure Database Updates** dialog box.</span></span>
-10. <span data-ttu-id="bc901-209">아래 **SchoolContext** 에 **데이터베이스** 섹션에서 **실행 Code First 마이그레이션을 (응용 프로그램 시작 시 실행)**합니다.</span><span class="sxs-lookup"><span data-stu-id="bc901-209">Under **SchoolContext** in the **Databases** section, select **Execute Code First Migrations (runs on application start)**.</span></span>
+10. <span data-ttu-id="bc901-209">아래 **SchoolContext** 에 **데이터베이스** 섹션에서 **실행 Code First 마이그레이션을 (응용 프로그램 시작 시 실행)** 합니다.</span><span class="sxs-lookup"><span data-stu-id="bc901-209">Under **SchoolContext** in the **Databases** section, select **Execute Code First Migrations (runs on application start)**.</span></span>
 
     <span data-ttu-id="bc901-210">Visual Studio에서 표시 **Code First 마이그레이션 실행** 대신 **데이터베이스 업데이트** 에 대 한 `DbContext` 클래스입니다.</span><span class="sxs-lookup"><span data-stu-id="bc901-210">Visual Studio displays **Execute Code First Migrations** instead of **Update Database** for `DbContext` classes.</span></span> <span data-ttu-id="bc901-211">사용 하 여 액세스할 수 있는 데이터베이스를 배포 하려면 마이그레이션 대신 dbDacFx 공급자를 사용 하려는 경우는 `DbContext` 클래스를 참조 하십시오 [마이그레이션 없이 코드 첫 번째 데이터베이스를 어떻게 배포 합니까?](https://msdn.microsoft.com/library/ee942158.aspx#deploy_code_first_without_migrations) 에서 Visual Studio에 대 한 웹 배포 FAQ 및 MSDN에서 ASP.NET을 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="bc901-211">If you want to use the dbDacFx provider instead of Migrations to deploy a database that you access by using a `DbContext` class, see [How do I deploy a Code First database without Migrations?](https://msdn.microsoft.com/library/ee942158.aspx#deploy_code_first_without_migrations) in the Web Deployment FAQ for Visual Studio and ASP.NET on MSDN.</span></span>
 

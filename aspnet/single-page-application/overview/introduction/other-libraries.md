@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872587"
 ---
 <a name="know-a-library-other-than-knockout"></a><span data-ttu-id="5e02b-104">Knockout 이외의 라이브러리를 알고 있습니까?</span><span class="sxs-lookup"><span data-stu-id="5e02b-104">Know a library other than Knockout?</span></span>
 ====================

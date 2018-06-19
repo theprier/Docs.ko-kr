@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888801"
 ---
 <a name="getting-started-with-entity-framework-40-database-first-and-aspnet-4-web-forms---part-6"></a><span data-ttu-id="06de3-104">먼저 Entity Framework 4.0 데이터베이스와 시작 및 ASP.NET 4 Web Forms-6 부</span><span class="sxs-lookup"><span data-stu-id="06de3-104">Getting Started with Entity Framework 4.0 Database First and ASP.NET 4 Web Forms - Part 6</span></span>
 ====================

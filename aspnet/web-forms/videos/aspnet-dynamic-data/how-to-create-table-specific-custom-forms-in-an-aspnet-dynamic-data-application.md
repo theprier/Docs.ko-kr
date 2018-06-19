@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884836"
 ---
 <a name="how-to-create-table-specific-custom-forms-in-an-aspnet-dynamic-data-application"></a><span data-ttu-id="83653-104">ASP.NET 동적 데이터 응용 프로그램에서 특정 사용자 지정 양식을 테이블을 만드는 방법</span><span class="sxs-lookup"><span data-stu-id="83653-104">How to Create Table Specific Custom Forms in an ASP.NET Dynamic Data Application</span></span>
 ====================

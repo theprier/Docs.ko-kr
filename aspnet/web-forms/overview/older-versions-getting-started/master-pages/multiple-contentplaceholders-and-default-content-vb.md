@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889451"
 ---
 <a name="multiple-contentplaceholders-and-default-content-vb"></a><span data-ttu-id="1dfce-103">여러 contentplaceholders 및 기본 콘텐츠 (VB)</span><span class="sxs-lookup"><span data-stu-id="1dfce-103">Multiple ContentPlaceHolders and Default Content (VB)</span></span>
 ====================

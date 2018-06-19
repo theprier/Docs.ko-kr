@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877803"
 ---
 <a name="aspnet-and-web-tools-for-visual-studio-2013-release-notes"></a><span data-ttu-id="cc494-103">ASP.NET 및 Web Tools for Visual Studio 2013 릴리스 정보</span><span class="sxs-lookup"><span data-stu-id="cc494-103">ASP.NET and Web Tools for Visual Studio 2013 Release Notes</span></span>
 ====================

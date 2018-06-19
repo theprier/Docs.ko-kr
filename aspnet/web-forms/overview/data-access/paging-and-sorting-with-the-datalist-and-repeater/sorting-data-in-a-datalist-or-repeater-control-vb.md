@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891528"
 ---
 <a name="sorting-data-in-a-datalist-or-repeater-control-vb"></a><span data-ttu-id="bffb3-103">DataList 또는 반복기 컨트롤 (VB)에서 데이터 정렬</span><span class="sxs-lookup"><span data-stu-id="bffb3-103">Sorting Data in a DataList or Repeater Control (VB)</span></span>
 ====================

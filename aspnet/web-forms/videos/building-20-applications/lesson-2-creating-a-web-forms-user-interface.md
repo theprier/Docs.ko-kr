@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880075"
 ---
 <a name="lesson-2-creating-a-web-forms-user-interface"></a><span data-ttu-id="10754-104">[2 단원:] Web Forms 사용자 인터페이스 만들기</span><span class="sxs-lookup"><span data-stu-id="10754-104">[Lesson 2:] Creating a Web Forms User Interface</span></span>
 ====================

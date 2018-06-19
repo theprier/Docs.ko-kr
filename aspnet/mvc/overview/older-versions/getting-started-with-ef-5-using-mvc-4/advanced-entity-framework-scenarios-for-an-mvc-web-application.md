@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876711"
 ---
 <a name="advanced-entity-framework-scenarios-for-an-mvc-web-application-10-of-10"></a><span data-ttu-id="586d4-103">MVC 웹 응용 프로그램 (10 / 10)에 대 한 고급 엔터티 프레임 워크 시나리오</span><span class="sxs-lookup"><span data-stu-id="586d4-103">Advanced Entity Framework Scenarios for an MVC Web Application (10 of 10)</span></span>
 ====================

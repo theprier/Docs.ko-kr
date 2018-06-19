@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871495"
 ---
 <a name="owin-middleware-in-the-iis-integrated-pipeline"></a><span data-ttu-id="2c6d9-104">IIS 통합된 파이프라인의 OWIN 미들웨어.</span><span class="sxs-lookup"><span data-stu-id="2c6d9-104">OWIN Middleware in the IIS integrated pipeline</span></span>
 ====================

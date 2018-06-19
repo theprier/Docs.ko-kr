@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886825"
 ---
 <a name="using-query-string-values-to-filter-data-with-model-binding-and-web-forms"></a><span data-ttu-id="12cee-104">데이터를 필터링 하는 쿼리 문자열 값을 사용 하 여 모델 바인딩 및 웹 양식</span><span class="sxs-lookup"><span data-stu-id="12cee-104">Using query string values to filter data with model binding and web forms</span></span>
 ====================

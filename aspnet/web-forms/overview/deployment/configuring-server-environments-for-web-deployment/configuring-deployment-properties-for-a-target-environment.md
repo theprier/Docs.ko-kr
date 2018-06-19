@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881590"
 ---
 <a name="configuring-deployment-properties-for-a-target-environment"></a><span data-ttu-id="38ae8-103">대상 환경에 대 한 배포 속성 구성</span><span class="sxs-lookup"><span data-stu-id="38ae8-103">Configuring Deployment Properties for a Target Environment</span></span>
 ====================

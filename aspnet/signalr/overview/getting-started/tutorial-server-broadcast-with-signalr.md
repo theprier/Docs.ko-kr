@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876815"
 ---
 <a name="tutorial-server-broadcast-with-signalr-2"></a><span data-ttu-id="ef9ab-104">자습서: 서버 2 SignalR과 브로드캐스트</span><span class="sxs-lookup"><span data-stu-id="ef9ab-104">Tutorial: Server Broadcast with SignalR 2</span></span>
 ====================
@@ -127,7 +128,7 @@ ms.lasthandoff: 04/06/2018
 
 <span data-ttu-id="ef9ab-177">까다롭기 때문에 각 StockTickerHub 인스턴스로부터 단일 StockTicker 인스턴스에 대 한 참조를 설정 하는 서버에서 실행 되도록 StockTicker 클래스의 인스턴스가 하나씩 하려는 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ef9ab-177">You only want one instance of the StockTicker class to run on the server, so you'll need to set up a reference from each StockTickerHub instance to the singleton StockTicker instance.</span></span> <span data-ttu-id="ef9ab-178">StockTicker 클래스에서 StockTicker 허브 클래스가 아닙니다. 하지만 주식 데이터 개이고 업데이트 트리거 때문에 클라이언트에 브로드캐스트할 수 있어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="ef9ab-178">The StockTicker class has to be able to broadcast to clients because it has the stock data and triggers updates, but StockTicker is not a Hub class.</span></span> <span data-ttu-id="ef9ab-179">따라서 StockTicker 클래스는 SignalR 허브 연결 컨텍스트 개체에 대 한 참조를 가져올 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="ef9ab-179">Therefore, the StockTicker class has to get a reference to the SignalR Hub connection context object.</span></span> <span data-ttu-id="ef9ab-180">클라이언트에 브로드캐스트하는 SignalR 연결 컨텍스트 개체를 유도할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ef9ab-180">It can then use the SignalR connection context object to broadcast to clients.</span></span>
 
-1. <span data-ttu-id="ef9ab-181">**솔루션 탐색기**프로젝트를 마우스 오른쪽 단추로 클릭 하 고 클릭 **추가 | SignalR 허브 클래스 (v2)**합니다.</span><span class="sxs-lookup"><span data-stu-id="ef9ab-181">In **Solution Explorer**, right-click the project and click **Add | SignalR Hub Class (v2)**.</span></span>
+1. <span data-ttu-id="ef9ab-181">**솔루션 탐색기**프로젝트를 마우스 오른쪽 단추로 클릭 하 고 클릭 **추가 | SignalR 허브 클래스 (v2)** 합니다.</span><span class="sxs-lookup"><span data-stu-id="ef9ab-181">In **Solution Explorer**, right-click the project and click **Add | SignalR Hub Class (v2)**.</span></span>
 2. <span data-ttu-id="ef9ab-182">새 허브 이름을 *StockTickerHub.cs*, 클릭 하 고 **추가**합니다.</span><span class="sxs-lookup"><span data-stu-id="ef9ab-182">Name the new hub *StockTickerHub.cs*, and then click **Add**.</span></span> <span data-ttu-id="ef9ab-183">SignalR NuGet 패키지를 프로젝트에 추가 됩니다.</span><span class="sxs-lookup"><span data-stu-id="ef9ab-183">SignalR NuGet packages will be added to your project.</span></span>
 3. <span data-ttu-id="ef9ab-184">템플릿 코드를 다음 코드로 바꿉니다.</span><span class="sxs-lookup"><span data-stu-id="ef9ab-184">Replace the template code with the following code:</span></span>
 

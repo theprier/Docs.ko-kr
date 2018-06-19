@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871573"
 ---
 <a name="migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity-c"></a><span data-ttu-id="8bf14-103">멤버 자격 및 ASP.NET Identity (C#)에 사용자 프로필에 대 한 유니버설 공급자 데이터 마이그레이션</span><span class="sxs-lookup"><span data-stu-id="8bf14-103">Migrating Universal Provider Data for Membership and User Profiles to ASP.NET Identity (C#)</span></span>
 ====================

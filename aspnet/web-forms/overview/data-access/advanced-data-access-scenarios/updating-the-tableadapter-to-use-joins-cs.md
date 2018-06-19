@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876763"
 ---
 <a name="updating-the-tableadapter-to-use-joins-c"></a><span data-ttu-id="c2068-104">TableAdapter를 사용 하 여 업데이트 조인 (C#)</span><span class="sxs-lookup"><span data-stu-id="c2068-104">Updating the TableAdapter to Use JOINs (C#)</span></span>
 ====================

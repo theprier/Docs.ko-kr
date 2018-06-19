@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876347"
 ---
 <a name="caching-data-at-application-startup-vb"></a><span data-ttu-id="15577-104">응용 프로그램 시작 (VB)에서 데이터 캐싱</span><span class="sxs-lookup"><span data-stu-id="15577-104">Caching Data at Application Startup (VB)</span></span>
 ====================

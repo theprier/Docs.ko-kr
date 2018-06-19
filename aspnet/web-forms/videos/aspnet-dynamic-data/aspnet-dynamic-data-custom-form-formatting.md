@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881027"
 ---
 <a name="aspnet-dynamic-data-custom-form-formatting"></a><span data-ttu-id="f9628-103">ASP.NET 동적 데이터 사용자 지정 양식 서식 지정</span><span class="sxs-lookup"><span data-stu-id="f9628-103">ASP.NET Dynamic Data Custom Form Formatting</span></span>
 ====================

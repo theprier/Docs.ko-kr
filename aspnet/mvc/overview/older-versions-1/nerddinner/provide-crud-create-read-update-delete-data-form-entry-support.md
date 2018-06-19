@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876750"
 ---
 <a name="provide-crud-create-read-update-delete-data-form-entry-support"></a><span data-ttu-id="9f864-103">제공 CRUD (만들기, 읽기, 업데이트, 삭제) 데이터 항목 지원 구성</span><span class="sxs-lookup"><span data-stu-id="9f864-103">Provide CRUD (Create, Read, Update, Delete) Data Form Entry Support</span></span>
 ====================
@@ -37,7 +38,7 @@ ms.lasthandoff: 04/06/2018
 
 ### <a name="urls-handled-by-dinnerscontroller"></a><span data-ttu-id="9f864-112">DinnersController에서 처리 하는 Url</span><span class="sxs-lookup"><span data-stu-id="9f864-112">URLs handled by DinnersController</span></span>
 
-<span data-ttu-id="9f864-113">두 Url에 대 한 지원을 구현 DinnersController에 작업 메서드 이전에 추가한: */Dinners* 및 */Dinners/세부 정보 / [id]*합니다.</span><span class="sxs-lookup"><span data-stu-id="9f864-113">We previously added action methods to DinnersController that implemented support for two URLs: */Dinners* and */Dinners/Details/[id]*.</span></span>
+<span data-ttu-id="9f864-113">두 Url에 대 한 지원을 구현 DinnersController에 작업 메서드 이전에 추가한: */Dinners* 및 */Dinners/세부 정보 / [id]* 합니다.</span><span class="sxs-lookup"><span data-stu-id="9f864-113">We previously added action methods to DinnersController that implemented support for two URLs: */Dinners* and */Dinners/Details/[id]*.</span></span>
 
 | <span data-ttu-id="9f864-114">**URL**</span><span class="sxs-lookup"><span data-stu-id="9f864-114">**URL**</span></span> | <span data-ttu-id="9f864-115">**VERB**</span><span class="sxs-lookup"><span data-stu-id="9f864-115">**VERB**</span></span> | <span data-ttu-id="9f864-116">**용도**</span><span class="sxs-lookup"><span data-stu-id="9f864-116">**Purpose**</span></span> |
 | --- | --- | --- |

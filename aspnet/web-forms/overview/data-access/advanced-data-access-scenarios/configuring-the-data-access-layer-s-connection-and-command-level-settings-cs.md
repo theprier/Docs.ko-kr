@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876113"
 ---
 <a name="configuring-the-data-access-layers-connection--and-command-level-settings-c"></a><span data-ttu-id="822bf-103">데이터 액세스 계층 연결 및 명령 수준 설정 (C#) 구성</span><span class="sxs-lookup"><span data-stu-id="822bf-103">Configuring the Data Access Layer's Connection- and Command-Level Settings (C#)</span></span>
 ====================

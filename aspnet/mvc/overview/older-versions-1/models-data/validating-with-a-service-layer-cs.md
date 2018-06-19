@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30869038"
 ---
 <a name="validating-with-a-service-layer-c"></a><span data-ttu-id="16dd8-104">서비스 계층 (C#)을 사용한 유효성 검사</span><span class="sxs-lookup"><span data-stu-id="16dd8-104">Validating with a Service Layer (C#)</span></span>
 ====================

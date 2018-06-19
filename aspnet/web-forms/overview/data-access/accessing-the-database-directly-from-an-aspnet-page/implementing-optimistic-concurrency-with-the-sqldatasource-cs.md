@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876165"
 ---
 <a name="implementing-optimistic-concurrency-with-the-sqldatasource-c"></a><span data-ttu-id="04e3e-103">SqlDataSource (C#)를 사용 하 여 낙관적 동시성을 구현합니다.</span><span class="sxs-lookup"><span data-stu-id="04e3e-103">Implementing Optimistic Concurrency with the SqlDataSource (C#)</span></span>
 ====================

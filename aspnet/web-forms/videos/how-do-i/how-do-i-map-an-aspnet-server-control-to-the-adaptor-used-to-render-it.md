@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-map-an-aspnet-server-control-to-the-adaptor-used-to-render-it
-title: "[어떻게 할까요?] ASP.NET 서버 컨트롤을 렌더링 하는 데 사용 된 어댑터 매핑할 | Microsoft Docs"
+title: '[어떻게 할까요?] ASP.NET 서버 컨트롤을 렌더링 하는 데 사용 된 어댑터 매핑할 | Microsoft Docs'
 author: rick-anderson
-description: "이 비디오 Chris Pels에서는 컨트롤 어댑터를 사용 하 여 실제로 c를 변경 하지 않고 ASP.NET 서버 컨트롤에 대 한 다른 렌더링을 제공 하는 방법을 보여줍니다 중..."
+description: 이 비디오 Chris Pels에서는 컨트롤 어댑터를 사용 하 여 실제로 c를 변경 하지 않고 ASP.NET 서버 컨트롤에 대 한 다른 렌더링을 제공 하는 방법을 보여줍니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/19/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526062"
 ---
 <a name="how-do-i-map-an-aspnet-server-control-to-the-adaptor-used-to-render-it"></a><span data-ttu-id="58d88-103">[어떻게 할까요?] 지도 ASP.NET 서버 컨트롤을 렌더링 하는 데 사용 된 어댑터</span><span class="sxs-lookup"><span data-stu-id="58d88-103">[How Do I:] Map an ASP.NET Server Control to the Adaptor Used to Render It</span></span>
 ====================

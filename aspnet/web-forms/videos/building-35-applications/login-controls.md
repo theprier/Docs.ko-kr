@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/login-controls
-title: "Login 컨트롤 | Microsoft Docs"
+title: Login 컨트롤 | Microsoft Docs
 author: JoeStagner
-description: "이 비디오 Joe에는 소개 ASP.NET 멤버 자격 asp.net에서 Login 컨트롤 중 일부를 사용 하는 방법을 보여 줍니다."
+description: 이 비디오 Joe에는 소개 ASP.NET 멤버 자격 asp.net에서 Login 컨트롤 중 일부를 사용 하는 방법을 보여 줍니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/04/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26520922"
 ---
 <a name="login-controls"></a><span data-ttu-id="95c76-103">Login 컨트롤</span><span class="sxs-lookup"><span data-stu-id="95c76-103">Login Controls</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887288"
 ---
 <a name="application-lifecycle-management-from-development-to-production"></a><span data-ttu-id="26457-103">응용 프로그램 수명 주기 관리: 프로덕션 개발에서</span><span class="sxs-lookup"><span data-stu-id="26457-103">Application Lifecycle Management: From Development to Production</span></span>
 ====================

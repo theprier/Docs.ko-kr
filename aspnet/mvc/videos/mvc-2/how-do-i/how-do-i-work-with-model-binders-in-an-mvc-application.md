@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875892"
 ---
 <a name="how-do-i-work-with-model-binders-in-an-mvc-application"></a><span data-ttu-id="41e2c-105">MVC 응용 프로그램의 모델 바인더 사용 어떻게 할까요??</span><span class="sxs-lookup"><span data-stu-id="41e2c-105">How Do I: Work with Model Binders in an MVC Application?</span></span>
 ====================

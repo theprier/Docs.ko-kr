@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886598"
 ---
 <a name="how-do-i-add-aspnet-ajax-features-to-an-existing-web-application"></a><span data-ttu-id="89f4c-105">[어떻게 할까요?] 기존 웹 응용 프로그램에는 ASP.NET AJAX 기능 추가</span><span class="sxs-lookup"><span data-stu-id="89f4c-105">[How Do I:] Add ASP.NET AJAX Features to an Existing Web Application?</span></span>
 ====================

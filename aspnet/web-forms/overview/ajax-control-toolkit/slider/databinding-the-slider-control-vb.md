@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879142"
 ---
 <a name="databinding-the-slider-control-vb"></a><span data-ttu-id="00ca3-104">데이터 바인딩 (VB) 슬라이더 컨트롤</span><span class="sxs-lookup"><span data-stu-id="00ca3-104">Databinding the Slider Control (VB)</span></span>
 ====================

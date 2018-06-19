@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882542"
 ---
 <a name="javascript-debugging-in-visual-studio-2008"></a><span data-ttu-id="55408-103">Visual Studio 2008에서 JavaScript 디버깅</span><span class="sxs-lookup"><span data-stu-id="55408-103">JavaScript Debugging in Visual Studio 2008</span></span>
 ====================

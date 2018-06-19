@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872872"
 ---
 <a name="launching-a-modal-popup-window-from-server-code-vb"></a><span data-ttu-id="c8154-104">서버 코드 (VB)에서 모달 팝업 창을 시작</span><span class="sxs-lookup"><span data-stu-id="c8154-104">Launching a Modal Popup Window from Server Code (VB)</span></span>
 ====================

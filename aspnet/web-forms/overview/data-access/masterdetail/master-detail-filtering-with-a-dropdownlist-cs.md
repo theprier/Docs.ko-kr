@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880637"
 ---
 <a name="masterdetail-filtering-with-a-dropdownlist-c"></a><span data-ttu-id="501bd-103">마스터/세부 DropDownList (C#)를 사용 하 여 필터링</span><span class="sxs-lookup"><span data-stu-id="501bd-103">Master/Detail Filtering With a DropDownList (C#)</span></span>
 ====================

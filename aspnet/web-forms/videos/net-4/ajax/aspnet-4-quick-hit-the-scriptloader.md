@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881391"
 ---
 <a name="aspnet-4-quick-hit---the-scriptloader"></a><span data-ttu-id="74d7b-103">ASP.NET 4 "빠른 Hit"-는 ScriptLoader</span><span class="sxs-lookup"><span data-stu-id="74d7b-103">ASP.NET 4 "Quick Hit" - The ScriptLoader</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886994"
 ---
 <a name="users-and-roles-on-the-production-website-vb"></a><span data-ttu-id="fcc97-103">사용자 및 역할 프로덕션 웹 사이트 (VB)에서</span><span class="sxs-lookup"><span data-stu-id="fcc97-103">Users and Roles On The Production Website (VB)</span></span>
 ====================

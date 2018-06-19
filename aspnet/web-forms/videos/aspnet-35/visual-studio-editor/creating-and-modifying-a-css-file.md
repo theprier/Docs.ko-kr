@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880819"
 ---
 <a name="creating-and-modifying-a-css-file"></a><span data-ttu-id="73867-104">CSS 파일 만들기 및 수정</span><span class="sxs-lookup"><span data-stu-id="73867-104">Creating and Modifying a CSS File</span></span>
 ====================

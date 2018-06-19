@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30869896"
 ---
 <a name="presetting-list-entries-with-cascadingdropdown-vb"></a><span data-ttu-id="1c17b-103">목록 항목 CascadingDropDown (VB)으로 미리 설정</span><span class="sxs-lookup"><span data-stu-id="1c17b-103">Presetting List Entries with CascadingDropDown (VB)</span></span>
 ====================

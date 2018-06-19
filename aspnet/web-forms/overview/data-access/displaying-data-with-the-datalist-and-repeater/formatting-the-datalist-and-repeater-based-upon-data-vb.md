@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876594"
 ---
 <a name="formatting-the-datalist-and-repeater-based-upon-data-vb"></a><span data-ttu-id="433f7-103">DataList 및 데이터 (VB)를 기반으로 반복기 서식 지정</span><span class="sxs-lookup"><span data-stu-id="433f7-103">Formatting the DataList and Repeater Based Upon Data (VB)</span></span>
 ====================

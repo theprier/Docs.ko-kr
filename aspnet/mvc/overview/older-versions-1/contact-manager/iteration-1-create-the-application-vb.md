@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877062"
 ---
 <a name="iteration-1--create-the-application-vb"></a><span data-ttu-id="271d1-104">반복 #1 – (VB) 응용 프로그램 만들기</span><span class="sxs-lookup"><span data-stu-id="271d1-104">Iteration #1 – Create the Application (VB)</span></span>
 ====================

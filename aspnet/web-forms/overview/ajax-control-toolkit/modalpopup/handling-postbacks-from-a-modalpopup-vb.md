@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874212"
 ---
 <a name="handling-postbacks-from-a-modalpopup-vb"></a><span data-ttu-id="aa994-104">포스트백 ModalPopup (VB)에서 처리</span><span class="sxs-lookup"><span data-stu-id="aa994-104">Handling Postbacks from a ModalPopup (VB)</span></span>
 ====================

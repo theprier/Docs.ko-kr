@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877205"
 ---
 <a name="working-with-computed-columns-vb"></a><span data-ttu-id="bbd60-103">계산된 열 (VB) 작업</span><span class="sxs-lookup"><span data-stu-id="bbd60-103">Working with Computed Columns (VB)</span></span>
 ====================

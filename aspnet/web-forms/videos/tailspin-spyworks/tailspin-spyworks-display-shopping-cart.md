@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30899699"
 ---
 <a name="tailspin-spyworks---display-shopping-cart"></a><span data-ttu-id="782a8-103">Tailspin Spyworks-쇼핑 카트를 표시 합니다.</span><span class="sxs-lookup"><span data-stu-id="782a8-103">Tailspin Spyworks - Display Shopping Cart</span></span>
 ====================

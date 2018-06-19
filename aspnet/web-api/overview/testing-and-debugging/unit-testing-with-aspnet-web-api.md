@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/testing-and-debugging/unit-testing-with-aspnet-web-api
-title: "단위 테스트 ASP.NET Web API 2 | Microsoft Docs"
+title: 단위 테스트 ASP.NET Web API 2 | Microsoft Docs
 author: tfitzmac
-description: "이 지침과 응용 프로그램에는 Web API 2 응용 프로그램에 대 한 간단한 단위 테스트를 만드는 방법을 보여 줍니다. 단위 테스트 프로젝트를 포함 하는 방법을 보여 주는이 자습서 중..."
+description: 이 지침과 응용 프로그램에는 Web API 2 응용 프로그램에 대 한 간단한 단위 테스트를 만드는 방법을 보여 줍니다. 단위 테스트 프로젝트를 포함 하는 방법을 보여 주는이 자습서 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/05/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28042747"
 ---
 <a name="unit-testing-aspnet-web-api-2"></a><span data-ttu-id="e4560-104">단위 테스트 ASP.NET Web API 2</span><span class="sxs-lookup"><span data-stu-id="e4560-104">Unit Testing ASP.NET Web API 2</span></span>
 ====================

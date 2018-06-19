@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30867985"
 ---
 <a name="adding-a-create-method-and-create-view"></a><span data-ttu-id="69116-104">추가 된 메서드를 만들고 보기 만들기</span><span class="sxs-lookup"><span data-stu-id="69116-104">Adding a Create Method and Create View</span></span>
 ====================

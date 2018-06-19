@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893136"
 ---
 <a name="introduction-to-testing-web-applications-with-team-system"></a><span data-ttu-id="08f6d-103">Team system 테스트 웹 응용 프로그램 소개</span><span class="sxs-lookup"><span data-stu-id="08f6d-103">Introduction to Testing Web Applications with Team System</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879298"
 ---
 <a name="creating-new-stored-procedures-for-the-typed-datasets-tableadapters-c"></a><span data-ttu-id="8a255-104">형식화 된 데이터 집합의 Tableadapter (C#)에 대 한 새로운 저장 프로시저</span><span class="sxs-lookup"><span data-stu-id="8a255-104">Creating New Stored Procedures for the Typed DataSet's TableAdapters (C#)</span></span>
 ====================

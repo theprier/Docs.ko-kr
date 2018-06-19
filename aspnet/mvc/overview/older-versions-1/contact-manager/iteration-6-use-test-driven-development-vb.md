@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877595"
 ---
 <a name="iteration-6--use-test-driven-development-vb"></a><span data-ttu-id="bfaff-104">반복 6-테스트 기반 개발 (VB)를 사용 합니다.</span><span class="sxs-lookup"><span data-stu-id="bfaff-104">Iteration #6 – Use test-driven development (VB)</span></span>
 ====================

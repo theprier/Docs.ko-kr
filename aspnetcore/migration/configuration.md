@@ -14,6 +14,7 @@ ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 05/08/2018
+ms.locfileid: "33851724"
 ---
 # <a name="migrate-configuration-to-aspnet-core"></a><span data-ttu-id="b44d5-103">ASP.NET Core로 구성 마이그레이션</span><span class="sxs-lookup"><span data-stu-id="b44d5-103">Migrate configuration to ASP.NET Core</span></span>
 

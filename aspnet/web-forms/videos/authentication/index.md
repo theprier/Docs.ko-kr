@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/authentication/index
-title: "인증 | Microsoft Docs"
+title: 인증 | Microsoft Docs
 author: rick-anderson
-description: "구현 하 고 ASP.NET 응용 프로그램에서 보안 (인증)를 관리 하는 방법."
+description: 구현 하 고 ASP.NET 응용 프로그램에서 보안 (인증)를 관리 하는 방법.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/videos/authentication
 msc.type: chapter
 ms.openlocfilehash: b9cd2d86bce12795802302b822e945762690a57b
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521732"
 ---
 <a name="authentication"></a><span data-ttu-id="449e5-103">인증</span><span class="sxs-lookup"><span data-stu-id="449e5-103">Authentication</span></span>
 ====================

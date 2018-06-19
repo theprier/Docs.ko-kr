@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868089"
 ---
 <a name="display-item-details"></a><span data-ttu-id="9573e-102">항목 세부 정보를 표시</span><span class="sxs-lookup"><span data-stu-id="9573e-102">Display Item Details</span></span>
 ====================

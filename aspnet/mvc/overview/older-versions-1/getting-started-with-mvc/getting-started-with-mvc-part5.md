@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30876438"
 ---
 <a name="accessing-your-models-data-from-a-controller"></a><span data-ttu-id="fdc76-104">컨트롤러에서 모델의 데이터에 액세스</span><span class="sxs-lookup"><span data-stu-id="fdc76-104">Accessing your Model's Data from a Controller</span></span>
 ====================

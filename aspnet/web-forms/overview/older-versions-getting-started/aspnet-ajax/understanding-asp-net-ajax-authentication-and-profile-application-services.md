@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892142"
 ---
 <a name="understanding-aspnet-ajax-authentication-and-profile-application-services"></a><span data-ttu-id="6eb26-103">ASP.NET AJAX 인증 및 프로필 응용 프로그램 서비스 이해</span><span class="sxs-lookup"><span data-stu-id="6eb26-103">Understanding ASP.NET AJAX Authentication and Profile Application Services</span></span>
 ====================

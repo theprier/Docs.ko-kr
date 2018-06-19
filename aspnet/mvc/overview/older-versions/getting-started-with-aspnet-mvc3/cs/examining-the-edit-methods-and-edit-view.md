@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875814"
 ---
 <a name="examining-the-edit-methods-and-edit-view-c"></a><span data-ttu-id="3b42c-103">편집 메서드 및 편집 보기 (C#) 검사</span><span class="sxs-lookup"><span data-stu-id="3b42c-103">Examining the Edit Methods and Edit View (C#)</span></span>
 ====================

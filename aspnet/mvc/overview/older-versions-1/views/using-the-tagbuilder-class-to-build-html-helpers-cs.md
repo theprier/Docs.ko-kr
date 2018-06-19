@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870390"
 ---
 <a name="using-the-tagbuilder-class-to-build-html-helpers-c"></a><span data-ttu-id="f7c88-104">HTML 도우미 (C#)를 TagBuilder 클래스를 사용 하 여</span><span class="sxs-lookup"><span data-stu-id="f7c88-104">Using the TagBuilder Class to Build HTML Helpers (C#)</span></span>
 ====================

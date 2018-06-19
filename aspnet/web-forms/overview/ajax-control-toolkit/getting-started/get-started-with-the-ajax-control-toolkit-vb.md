@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870208"
 ---
 <a name="get-started-with-the-ajax-control-toolkit-vb"></a><span data-ttu-id="e7f82-103">시작 (VB) 들어</span><span class="sxs-lookup"><span data-stu-id="e7f82-103">Get Started with the AJAX Control Toolkit (VB)</span></span>
 ====================
@@ -71,7 +72,7 @@ ms.lasthandoff: 04/06/2018
 
 <span data-ttu-id="e7f82-131">다음을 새 탭에 들어 컨트롤을 추가 해야 합니다. 아래 단계를 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="e7f82-131">Next, you need to add the AJAX Control Toolkit controls to the new tab. Follow these steps:</span></span>
 
-- <span data-ttu-id="e7f82-132">들어 탭 아래에 있는 마우스 오른쪽 단추로 클릭 하 고 메뉴 옵션을 선택 **항목 선택 (그림 5 참조)**합니다.</span><span class="sxs-lookup"><span data-stu-id="e7f82-132">Right-click beneath the AJAX Control Toolkit tab and select the menu option **Choose Items (see Figure 5)**.</span></span>
+- <span data-ttu-id="e7f82-132">들어 탭 아래에 있는 마우스 오른쪽 단추로 클릭 하 고 메뉴 옵션을 선택 **항목 선택 (그림 5 참조)** 합니다.</span><span class="sxs-lookup"><span data-stu-id="e7f82-132">Right-click beneath the AJAX Control Toolkit tab and select the menu option **Choose Items (see Figure 5)**.</span></span>
 - <span data-ttu-id="e7f82-133">들어에 압축 하 고 AjaxControlToolkit.dll 어셈블리 선택 있는 위치로 이동 합니다.</span><span class="sxs-lookup"><span data-stu-id="e7f82-133">Browse to the location where you unzipped the AJAX Control Toolkit and select the AjaxControlToolkit.dll assembly.</span></span>
 
 

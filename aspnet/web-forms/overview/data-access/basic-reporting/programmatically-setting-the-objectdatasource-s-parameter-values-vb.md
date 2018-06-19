@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876672"
 ---
 <a name="programmatically-setting-the-objectdatasources-parameter-values-vb"></a><span data-ttu-id="2e5f7-104">ObjectDataSource의 매개 변수 값 (VB)를 프로그래밍 방식으로 설정</span><span class="sxs-lookup"><span data-stu-id="2e5f7-104">Programmatically Setting the ObjectDataSource's Parameter Values (VB)</span></span>
 ====================

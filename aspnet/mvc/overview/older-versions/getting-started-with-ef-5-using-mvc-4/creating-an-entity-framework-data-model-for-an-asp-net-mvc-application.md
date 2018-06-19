@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877933"
 ---
 <a name="creating-an-entity-framework-data-model-for-an-aspnet-mvc-application-1-of-10"></a><span data-ttu-id="3ef2f-104">ASP.NET MVC 응용 프로그램 (1 / 10)에 대 한 Entity Framework 데이터 모델 만들기</span><span class="sxs-lookup"><span data-stu-id="3ef2f-104">Creating an Entity Framework Data Model for an ASP.NET MVC Application (1 of 10)</span></span>
 ====================
@@ -313,9 +314,9 @@ ms.lasthandoff: 04/06/2018
 
    - <span data-ttu-id="3ef2f-330">컨트롤러 이름: **StudentController**합니다.</span><span class="sxs-lookup"><span data-stu-id="3ef2f-330">Controller name: **StudentController**.</span></span>
    - <span data-ttu-id="3ef2f-331">서식 파일: **읽기/쓰기 동작 및 뷰가, Entity Framework를 사용 하 여 포함 된 MVC 컨트롤러**합니다.</span><span class="sxs-lookup"><span data-stu-id="3ef2f-331">Template: **MVC controller with read/write actions and views, using Entity Framework**.</span></span>
-   - <span data-ttu-id="3ef2f-332">모델 클래스: **학생 (ContosoUniversity.Models)**합니다.</span><span class="sxs-lookup"><span data-stu-id="3ef2f-332">Model class: **Student (ContosoUniversity.Models)**.</span></span> <span data-ttu-id="3ef2f-333">(드롭 다운 목록에서이 옵션을 표시 되지 않으면, 프로젝트 빌드 및 다시 시도 하십시오.)</span><span class="sxs-lookup"><span data-stu-id="3ef2f-333">(If you don't see this option in the drop-down list, build the project and try again.)</span></span>
-   - <span data-ttu-id="3ef2f-334">데이터 컨텍스트 클래스: **SchoolContext (ContosoUniversity.Models)**합니다.</span><span class="sxs-lookup"><span data-stu-id="3ef2f-334">Data context class: **SchoolContext (ContosoUniversity.Models)**.</span></span>
-   - <span data-ttu-id="3ef2f-335">보기: **Razor (CSHTML)**합니다.</span><span class="sxs-lookup"><span data-stu-id="3ef2f-335">Views: **Razor (CSHTML)**.</span></span> <span data-ttu-id="3ef2f-336">(기본값입니다.)</span><span class="sxs-lookup"><span data-stu-id="3ef2f-336">(The default.)</span></span>
+   - <span data-ttu-id="3ef2f-332">모델 클래스: **학생 (ContosoUniversity.Models)** 합니다.</span><span class="sxs-lookup"><span data-stu-id="3ef2f-332">Model class: **Student (ContosoUniversity.Models)**.</span></span> <span data-ttu-id="3ef2f-333">(드롭 다운 목록에서이 옵션을 표시 되지 않으면, 프로젝트 빌드 및 다시 시도 하십시오.)</span><span class="sxs-lookup"><span data-stu-id="3ef2f-333">(If you don't see this option in the drop-down list, build the project and try again.)</span></span>
+   - <span data-ttu-id="3ef2f-334">데이터 컨텍스트 클래스: **SchoolContext (ContosoUniversity.Models)** 합니다.</span><span class="sxs-lookup"><span data-stu-id="3ef2f-334">Data context class: **SchoolContext (ContosoUniversity.Models)**.</span></span>
+   - <span data-ttu-id="3ef2f-335">보기: **Razor (CSHTML)** 합니다.</span><span class="sxs-lookup"><span data-stu-id="3ef2f-335">Views: **Razor (CSHTML)**.</span></span> <span data-ttu-id="3ef2f-336">(기본값입니다.)</span><span class="sxs-lookup"><span data-stu-id="3ef2f-336">(The default.)</span></span>
 
      ![Add_Controller_dialog_box_for_Student_controller](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image20.png)
 2. <span data-ttu-id="3ef2f-338">Visual Studio가 열릴는 *Controllers\StudentController.cs* 파일입니다.</span><span class="sxs-lookup"><span data-stu-id="3ef2f-338">Visual Studio opens the *Controllers\StudentController.cs* file.</span></span> <span data-ttu-id="3ef2f-339">클래스 변수 만들어진 데이터베이스 컨텍스트 개체를 인스턴스화하는 것이 표시 됩니다.</span><span class="sxs-lookup"><span data-stu-id="3ef2f-339">You see a class variable has been created that instantiates a database context object:</span></span>

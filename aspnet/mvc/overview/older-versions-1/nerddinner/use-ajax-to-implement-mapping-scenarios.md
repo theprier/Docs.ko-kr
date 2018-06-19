@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872717"
 ---
 <a name="use-ajax-to-implement-mapping-scenarios"></a><span data-ttu-id="f8d71-103">AJAX를 사용 하 여 매핑 시나리오를 구현 하려면</span><span class="sxs-lookup"><span data-stu-id="f8d71-103">Use AJAX to Implement Mapping Scenarios</span></span>
 ====================

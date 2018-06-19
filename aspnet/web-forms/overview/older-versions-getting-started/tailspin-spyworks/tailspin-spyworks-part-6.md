@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886812"
 ---
 <a name="part-6-aspnet-membership"></a><span data-ttu-id="27cee-104">6 단계: ASP.NET 멤버 자격</span><span class="sxs-lookup"><span data-stu-id="27cee-104">Part 6: ASP.NET Membership</span></span>
 ====================

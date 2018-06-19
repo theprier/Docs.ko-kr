@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877972"
 ---
 <a name="building-a-custom-database-driven-site-map-provider-vb"></a><span data-ttu-id="27d0b-104">사용자 지정 데이터베이스 기반의 사이트 맵 공급자 (VB) 빌드</span><span class="sxs-lookup"><span data-stu-id="27d0b-104">Building a Custom Database-Driven Site Map Provider (VB)</span></span>
 ====================

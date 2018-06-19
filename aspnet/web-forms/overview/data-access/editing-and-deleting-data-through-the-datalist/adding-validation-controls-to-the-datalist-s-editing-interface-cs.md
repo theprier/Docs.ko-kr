@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889126"
 ---
 <a name="adding-validation-controls-to-the-datalists-editing-interface-c"></a><span data-ttu-id="d3e6e-103">DataList의 편집 인터페이스 (C#)에 유효성 검사 컨트롤 추가</span><span class="sxs-lookup"><span data-stu-id="d3e6e-103">Adding Validation Controls to the DataList's Editing Interface (C#)</span></span>
 ====================

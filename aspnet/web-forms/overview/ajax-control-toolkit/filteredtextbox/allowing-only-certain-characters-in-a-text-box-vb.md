@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870156"
 ---
 <a name="allowing-only-certain-characters-in-a-text-box-vb"></a><span data-ttu-id="25a05-104">텍스트 상자 (VB)에서 특정 문자만 허용</span><span class="sxs-lookup"><span data-stu-id="25a05-104">Allowing Only Certain Characters in a Text Box (VB)</span></span>
 ====================

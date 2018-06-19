@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30878141"
 ---
 <a name="using-parameterized-queries-with-the-sqldatasource-vb"></a><span data-ttu-id="cbb20-104">SqlDataSource (VB)와 매개 변수가 있는 쿼리를 사용 하 여</span><span class="sxs-lookup"><span data-stu-id="cbb20-104">Using Parameterized Queries with the SqlDataSource (VB)</span></span>
 ====================

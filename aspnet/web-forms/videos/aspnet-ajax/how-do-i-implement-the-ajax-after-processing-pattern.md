@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881752"
 ---
 <a name="how-do-i-implement-the-ajax-after-processing-pattern"></a><span data-ttu-id="9799f-105">[어떻게 할까요?] 패턴을 처리 한 후의 AJAX 구현 여부?</span><span class="sxs-lookup"><span data-stu-id="9799f-105">[How Do I:] Implement the AJAX After Processing Pattern?</span></span>
 ====================

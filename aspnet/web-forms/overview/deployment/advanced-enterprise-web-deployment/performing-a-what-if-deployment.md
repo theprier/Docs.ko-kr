@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879987"
 ---
 <a name="performing-a-what-if-deployment"></a><span data-ttu-id="8698f-103">"경우 어떻게" 배포</span><span class="sxs-lookup"><span data-stu-id="8698f-103">Performing a "What If" Deployment</span></span>
 ====================

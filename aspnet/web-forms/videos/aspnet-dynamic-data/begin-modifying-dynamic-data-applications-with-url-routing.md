@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883494"
 ---
 <a name="begin-modifying-dynamic-data-applications-with-url-routing"></a><span data-ttu-id="208fd-103">URL 라우팅을 사용 하 여 동적 데이터 응용 프로그램을 수정 하기</span><span class="sxs-lookup"><span data-stu-id="208fd-103">Begin Modifying Dynamic Data Applications with URL Routing</span></span>
 ====================

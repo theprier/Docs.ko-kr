@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884251"
 ---
 <a name="how-do-i-make-custom-pages"></a><span data-ttu-id="ec07d-104">사용자 지정 페이지를 어떻게 해야 합니까?</span><span class="sxs-lookup"><span data-stu-id="ec07d-104">How Do I Make Custom Pages?</span></span>
 ====================

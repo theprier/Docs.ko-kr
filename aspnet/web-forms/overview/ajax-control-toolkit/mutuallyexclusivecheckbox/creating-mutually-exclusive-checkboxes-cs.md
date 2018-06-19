@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871807"
 ---
 <a name="creating-mutually-exclusive-checkboxes-c"></a><span data-ttu-id="cc159-104">상호 배타적인 확인란 (C#) 만들기</span><span class="sxs-lookup"><span data-stu-id="cc159-104">Creating Mutually Exclusive Checkboxes (C#)</span></span>
 ====================

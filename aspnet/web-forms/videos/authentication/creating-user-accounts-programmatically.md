@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882519"
 ---
 <a name="creating-user-accounts-programmatically"></a><span data-ttu-id="415ac-104">프로그래밍 방식으로 사용자 계정 만들기</span><span class="sxs-lookup"><span data-stu-id="415ac-104">Creating User Accounts Programmatically</span></span>
 ====================

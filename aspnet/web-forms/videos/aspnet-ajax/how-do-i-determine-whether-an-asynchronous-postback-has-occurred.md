@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882171"
 ---
 <a name="how-do-i-determine-whether-an-asynchronous-postback-has-occurred"></a><span data-ttu-id="6086e-105">[어떻게 할까요?] 여부는 비동기 포스트백이 발생 했는지 확인?</span><span class="sxs-lookup"><span data-stu-id="6086e-105">[How Do I:] Determine Whether an Asynchronous Postback has Occurred?</span></span>
 ====================

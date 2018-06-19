@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881635"
 ---
 <a name="use-custom-principal-objects"></a><span data-ttu-id="f0bbf-104">사용 하 여 사용자 지정 보안 주체 개체</span><span class="sxs-lookup"><span data-stu-id="f0bbf-104">Use Custom Principal Objects</span></span>
 ====================

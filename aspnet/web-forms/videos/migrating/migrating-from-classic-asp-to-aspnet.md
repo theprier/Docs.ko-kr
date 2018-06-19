@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884238"
 ---
 <a name="migrating-from-classic-asp-to-aspnet"></a><span data-ttu-id="e1422-104">[에서 마이그레이션] Asp.net 기본 ASP</span><span class="sxs-lookup"><span data-stu-id="e1422-104">[Migrating from] Classic ASP to ASP.NET</span></span>
 ====================

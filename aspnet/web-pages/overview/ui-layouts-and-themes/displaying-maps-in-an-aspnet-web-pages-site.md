@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893864"
 ---
 <a name="displaying-maps-in-an-aspnet-web-pages-razor-site"></a><span data-ttu-id="3159e-103">ASP.NET 웹 페이지 (Razor) 사이트에 지도 표시합니다.</span><span class="sxs-lookup"><span data-stu-id="3159e-103">Displaying Maps in an ASP.NET Web Pages (Razor) Site</span></span>
 ====================

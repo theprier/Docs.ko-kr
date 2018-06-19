@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885653"
 ---
 <a name="aspnet-4-quick-hit--table-free-templated-controls"></a><span data-ttu-id="99b4f-103">ASP.NET 4 무료 템플릿 기반 컨트롤에 테이블 "Hit 빠른" –</span><span class="sxs-lookup"><span data-stu-id="99b4f-103">ASP.NET 4 "Quick Hit" – Table Free Templated Controls</span></span>
 ====================

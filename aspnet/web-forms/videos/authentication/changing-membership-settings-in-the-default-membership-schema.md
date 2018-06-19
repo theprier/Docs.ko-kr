@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886032"
 ---
 <a name="changing-membership-settings-in-the-default-membership-schema"></a><span data-ttu-id="5f858-104">기본 멤버 자격 스키마의 멤버 자격 설정 변경</span><span class="sxs-lookup"><span data-stu-id="5f858-104">Changing Membership Settings in the Default Membership Schema</span></span>
 ====================

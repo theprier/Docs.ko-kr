@@ -1,14 +1,14 @@
 ---
 uid: aspnet/overview/web-development-best-practices/what-not-to-do-in-aspnet-and-what-to-do-instead
-title: "Asp.net에서 수행할 작업을 하지 및 실행 | Microsoft Docs"
+title: Asp.net에서 수행할 작업을 하지 및 실행 | Microsoft Docs
 author: tfitzmac
-description: "이 항목에서는 ASP.NET 웹 프로젝트 내에서 사용자를 확인 하는 몇 가지 일반적인 실수를 설명 합니다. 이러한 commo를 방지 하기 위해 수행 해야 하는 것에 대 한 권장 사항을 제공..."
+description: 이 항목에서는 ASP.NET 웹 프로젝트 내에서 사용자를 확인 하는 몇 가지 일반적인 실수를 설명 합니다. 이러한 commo를 방지 하기 위해 수행 해야 하는 것에 대 한 권장 사항을 제공...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/08/2014
 ms.topic: article
 ms.assetid: c39b9965-545c-4b04-8f55-21be7f28a9e5
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/web-development-best-practices/what-not-to-do-in-aspnet-and-what-to-do-instead
 msc.type: authoredcontent
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28034922"
 ---
 <a name="what-not-to-do-in-aspnet-and-what-to-do-instead"></a><span data-ttu-id="0f4b8-104">ASP.NET 및 대신 수행할 작업에서 작업을 수행 하지 않의 사항을</span><span class="sxs-lookup"><span data-stu-id="0f4b8-104">What not to do in ASP.NET, and what to do instead</span></span>
 ====================

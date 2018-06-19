@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30889201"
 ---
 <a name="uploading-files-c"></a><span data-ttu-id="3d0ef-103">업로드 파일 (C#)</span><span class="sxs-lookup"><span data-stu-id="3d0ef-103">Uploading Files (C#)</span></span>
 ====================

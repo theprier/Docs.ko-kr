@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30877485"
 ---
 <a name="bundling-and-minification"></a><span data-ttu-id="95076-104">묶음 및 축소</span><span class="sxs-lookup"><span data-stu-id="95076-104">Bundling and Minification</span></span>
 ====================

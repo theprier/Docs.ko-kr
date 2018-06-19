@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888395"
 ---
 <a name="part-7-adding-features"></a><span data-ttu-id="c88e5-104">7 단계: 추가 기능</span><span class="sxs-lookup"><span data-stu-id="c88e5-104">Part 7: Adding Features</span></span>
 ====================

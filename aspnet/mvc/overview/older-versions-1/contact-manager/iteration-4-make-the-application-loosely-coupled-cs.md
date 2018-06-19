@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873981"
 ---
 <a name="iteration-4--make-the-application-loosely-coupled-c"></a><span data-ttu-id="98a46-104">반복 #4 – 느슨하게 결합 된 응용 프로그램 (C#)으로 설정</span><span class="sxs-lookup"><span data-stu-id="98a46-104">Iteration #4 – Make the application loosely coupled (C#)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876074"
 ---
 <a name="aspnet-identity-recommended-resources"></a><span data-ttu-id="0e5ca-104">ASP.NET Id 권장 리소스</span><span class="sxs-lookup"><span data-stu-id="0e5ca-104">ASP.NET Identity Recommended Resources</span></span>
 ====================

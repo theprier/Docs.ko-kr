@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881723"
 ---
 <a name="how-do-i-create-a-master-page-in-visual-studio-2008"></a><span data-ttu-id="0d7cf-103">[어떻게 할까요?] Visual Studio 2008에서 마스터 페이지 만들기</span><span class="sxs-lookup"><span data-stu-id="0d7cf-103">[How Do I:] Create a Master Page in Visual Studio 2008</span></span>
 ====================

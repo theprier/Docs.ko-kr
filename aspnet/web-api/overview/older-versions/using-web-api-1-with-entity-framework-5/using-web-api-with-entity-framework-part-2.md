@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30878583"
 ---
 <a name="part-2-creating-the-domain-models"></a><span data-ttu-id="e2b2e-102">2 단계: 도메인 모델 만들기</span><span class="sxs-lookup"><span data-stu-id="e2b2e-102">Part 2: Creating the Domain Models</span></span>
 ====================

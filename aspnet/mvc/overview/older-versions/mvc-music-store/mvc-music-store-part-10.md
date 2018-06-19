@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30878596"
 ---
 <a name="part-10-final-updates-to-navigation-and-site-design-conclusion"></a><span data-ttu-id="4341c-104">10 단계: 탐색 및 사이트 설계, 결론에 대 한 마지막 업데이트</span><span class="sxs-lookup"><span data-stu-id="4341c-104">Part 10: Final Updates to Navigation and Site Design, Conclusion</span></span>
 ====================

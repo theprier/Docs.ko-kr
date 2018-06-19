@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882366"
 ---
 <a name="how-do-i-change-how-my-fields-render"></a><span data-ttu-id="529fc-105">내 필드의 렌더링 방식을 변경 하려면 어떻게 해야 합니까?</span><span class="sxs-lookup"><span data-stu-id="529fc-105">How do I Change how my Fields render?</span></span>
 ====================

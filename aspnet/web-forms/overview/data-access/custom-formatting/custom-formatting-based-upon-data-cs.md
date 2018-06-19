@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876867"
 ---
 <a name="custom-formatting-based-upon-data-c"></a><span data-ttu-id="229f6-104">데이터 (C#)를 기반으로 사용자 지정 형식 지정</span><span class="sxs-lookup"><span data-stu-id="229f6-104">Custom Formatting Based Upon Data (C#)</span></span>
 ====================

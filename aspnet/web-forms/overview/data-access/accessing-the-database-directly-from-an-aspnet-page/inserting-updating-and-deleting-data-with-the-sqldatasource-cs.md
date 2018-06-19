@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877283"
 ---
 <a name="inserting-updating-and-deleting-data-with-the-sqldatasource-c"></a><span data-ttu-id="505cc-104">삽입, 업데이트 및 SqlDataSource (C#)를 사용 하 여 데이터를 삭제 합니다.</span><span class="sxs-lookup"><span data-stu-id="505cc-104">Inserting, Updating, and Deleting Data with the SqlDataSource (C#)</span></span>
 ====================

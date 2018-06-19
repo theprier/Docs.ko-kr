@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890881"
 ---
 <a name="creating-a-site-wide-layout-using-master-pages-vb"></a><span data-ttu-id="23303-104">마스터 페이지 (VB)를 사용 하는 사이트 전체 레이아웃 만들기</span><span class="sxs-lookup"><span data-stu-id="23303-104">Creating a Site-Wide Layout Using Master Pages (VB)</span></span>
 ====================

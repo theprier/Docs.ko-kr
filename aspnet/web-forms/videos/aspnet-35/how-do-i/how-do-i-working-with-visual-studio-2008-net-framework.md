@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881118"
 ---
 <a name="how-do-i-working-with-visual-studio-2008-net-framework"></a><span data-ttu-id="4c0d5-105">[어떻게 할까요?] Visual Studio 2008의.NET Framework 사용</span><span class="sxs-lookup"><span data-stu-id="4c0d5-105">[How Do I:] Working with Visual Studio 2008 .NET Framework</span></span>
 ====================

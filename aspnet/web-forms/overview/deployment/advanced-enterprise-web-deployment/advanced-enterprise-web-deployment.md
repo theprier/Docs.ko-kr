@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879935"
 ---
 <a name="advanced-enterprise-web-deployment"></a><span data-ttu-id="858cc-104">고급 엔터프라이즈 웹 배포</span><span class="sxs-lookup"><span data-stu-id="858cc-104">Advanced Enterprise Web Deployment</span></span>
 ====================

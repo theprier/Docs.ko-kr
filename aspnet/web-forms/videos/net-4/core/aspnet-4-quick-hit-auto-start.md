@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886715"
 ---
 <a name="aspnet-4-quick-hit---auto-start"></a><span data-ttu-id="947b7-103">ASP.NET 4 자동으로 시작 "Hit 빠른"-</span><span class="sxs-lookup"><span data-stu-id="947b7-103">ASP.NET 4 "Quick Hit" - Auto Start</span></span>
 ====================

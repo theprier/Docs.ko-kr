@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879480"
 ---
 <a name="part-4-models-and-data-access"></a><span data-ttu-id="f9547-104">4 부: 모델 및 데이터 액세스</span><span class="sxs-lookup"><span data-stu-id="f9547-104">Part 4: Models and Data Access</span></span>
 ====================

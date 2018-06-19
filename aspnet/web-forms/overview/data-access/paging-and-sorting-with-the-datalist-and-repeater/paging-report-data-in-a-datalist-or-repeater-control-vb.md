@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887319"
 ---
 <a name="paging-report-data-in-a-datalist-or-repeater-control-vb"></a><span data-ttu-id="97b50-103">DataList 또는 반복기 컨트롤 (VB)에서 보고서 데이터를 페이징</span><span class="sxs-lookup"><span data-stu-id="97b50-103">Paging Report Data in a DataList or Repeater Control (VB)</span></span>
 ====================

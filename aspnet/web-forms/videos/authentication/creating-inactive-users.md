@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884404"
 ---
 <a name="creating-inactive-users"></a><span data-ttu-id="1e518-103">비활성 사용자 만들기</span><span class="sxs-lookup"><span data-stu-id="1e518-103">Creating Inactive Users</span></span>
 ====================

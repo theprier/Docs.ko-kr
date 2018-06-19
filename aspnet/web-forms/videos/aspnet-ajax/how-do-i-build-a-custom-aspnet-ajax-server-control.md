@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885551"
 ---
 <a name="how-do-i-build-a-custom-aspnet-ajax-server-control"></a><span data-ttu-id="a7e9e-105">[어떻게 할까요?] 사용자 지정 ASP.NET AJAX 서버 컨트롤을 빌드하는?</span><span class="sxs-lookup"><span data-stu-id="a7e9e-105">[How Do I:] Build a Custom ASP.NET AJAX Server Control?</span></span>
 ====================

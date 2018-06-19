@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891037"
 ---
 <a name="how-do-i-create-excel-spreadsheets-using-linq-to-xml"></a><span data-ttu-id="12772-104">[어떻게 할까요?] LINQ to XML 사용 하 여 Excel 스프레드시트를 만드시겠습니까?</span><span class="sxs-lookup"><span data-stu-id="12772-104">[How Do I:] Create Excel Spreadsheets using LINQ to XML?</span></span>
 ====================

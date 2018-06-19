@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879701"
 ---
 <a name="aspnet-web-forms-connection-resiliency-and-command-interception"></a><span data-ttu-id="67f99-103">ASP.NET Web Forms 연결 복원 력 및 명령 인터 셉 션</span><span class="sxs-lookup"><span data-stu-id="67f99-103">ASP.NET Web Forms Connection Resiliency and Command Interception</span></span>
 ====================

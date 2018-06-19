@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879454"
 ---
 <a name="testing-the-strength-of-a-password-vb"></a><span data-ttu-id="eed00-104">(VB) 암호의 강도 테스트합니다.</span><span class="sxs-lookup"><span data-stu-id="eed00-104">Testing the Strength of a Password (VB)</span></span>
 ====================

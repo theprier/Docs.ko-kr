@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880312"
 ---
 <a name="lesson-6-working-with-stylesheets-and-master-pages"></a><span data-ttu-id="526b3-103">[6 단원:] 스타일 시트 및 마스터 페이지 작업</span><span class="sxs-lookup"><span data-stu-id="526b3-103">[Lesson 6:] Working with Stylesheets and Master Pages</span></span>
 ====================

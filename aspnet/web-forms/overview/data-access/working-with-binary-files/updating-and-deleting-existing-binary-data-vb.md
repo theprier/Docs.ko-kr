@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889711"
 ---
 <a name="updating-and-deleting-existing-binary-data-vb"></a><span data-ttu-id="0b294-104">기존 이진 데이터 (VB) 업데이트 및 삭제</span><span class="sxs-lookup"><span data-stu-id="0b294-104">Updating and Deleting Existing Binary Data (VB)</span></span>
 ====================

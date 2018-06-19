@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28036494"
 ---
 <a name="lifecycle-of-an-aspnet-mvc-5-application"></a><span data-ttu-id="502e6-104">ASP.NET MVC 5 응용 프로그램의 수명 주기</span><span class="sxs-lookup"><span data-stu-id="502e6-104">Lifecycle of an ASP.NET MVC 5 Application</span></span>
 ====================

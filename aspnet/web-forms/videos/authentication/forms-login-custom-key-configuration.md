@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883978"
 ---
 <a name="forms-login-custom-key-configuration"></a><span data-ttu-id="a38cb-104">양식 로그인 사용자 지정 키 구성</span><span class="sxs-lookup"><span data-stu-id="a38cb-104">Forms Login Custom Key Configuration</span></span>
 ====================

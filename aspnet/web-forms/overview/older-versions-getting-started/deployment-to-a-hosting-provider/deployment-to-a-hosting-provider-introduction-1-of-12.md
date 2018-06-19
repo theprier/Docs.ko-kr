@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883286"
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-introduction---1-of-12"></a><span data-ttu-id="ae066-103">SQL Server Compact Visual Studio를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: 1 / 12-소개</span><span class="sxs-lookup"><span data-stu-id="ae066-103">Deploying an ASP.NET Web Application with SQL Server Compact using Visual Studio: Introduction - 1 of 12</span></span>
 ====================

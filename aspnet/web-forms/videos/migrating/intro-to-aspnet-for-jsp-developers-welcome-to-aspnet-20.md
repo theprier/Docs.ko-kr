@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882685"
 ---
 <a name="intro-to-aspnet-for-jsp-developers-welcome-to-aspnet-20"></a><span data-ttu-id="22d22-103">JSP 개발자를 위한 ASP.NET 소개: ASP.NET 2.0 시작</span><span class="sxs-lookup"><span data-stu-id="22d22-103">Intro to ASP.NET for JSP Developers: Welcome to ASP.NET 2.0</span></span>
 ====================

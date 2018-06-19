@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873799"
 ---
 <a name="improving-performance-with-output-caching-c"></a><span data-ttu-id="4da7c-104">출력 캐싱 (C#)를 통해 성능 향상</span><span class="sxs-lookup"><span data-stu-id="4da7c-104">Improving Performance with Output Caching (C#)</span></span>
 ====================

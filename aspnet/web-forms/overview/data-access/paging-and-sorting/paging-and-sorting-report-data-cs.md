@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887306"
 ---
 <a name="paging-and-sorting-report-data-c"></a><span data-ttu-id="fd246-104">페이징 및 정렬에 대 한 보고서 데이터 (C#)</span><span class="sxs-lookup"><span data-stu-id="fd246-104">Paging and Sorting Report Data (C#)</span></span>
 ====================

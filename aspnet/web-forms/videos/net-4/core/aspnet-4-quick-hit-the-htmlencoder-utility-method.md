@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883952"
 ---
 <a name="aspnet-4-quick-hit--the-htmlencoder-utility-method"></a><span data-ttu-id="f0130-103">ASP.NET 4 "빠른 Hit" – HtmlEncoder 유틸리티 메서드</span><span class="sxs-lookup"><span data-stu-id="f0130-103">ASP.NET 4 "Quick Hit" – The HtmlEncoder Utility Method</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873497"
 ---
 <a name="using-ajax-control-toolkit-controls-and-control-extenders-c"></a><span data-ttu-id="9ec8c-103">AJAX 컨트롤 Toolkit 컨트롤 및 컨트롤 Extender (C#)를 사용 하 여</span><span class="sxs-lookup"><span data-stu-id="9ec8c-103">Using AJAX Control Toolkit Controls and Control Extenders (C#)</span></span>
 ====================

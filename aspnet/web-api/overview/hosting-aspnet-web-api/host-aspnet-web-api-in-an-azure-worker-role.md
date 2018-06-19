@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873653"
 ---
 <a name="host-aspnet-web-api-2-in-an-azure-worker-role"></a><span data-ttu-id="8856c-104">ASP.NET Web API 2 Azure 작업자 역할에 호스트</span><span class="sxs-lookup"><span data-stu-id="8856c-104">Host ASP.NET Web API 2 in an Azure Worker Role</span></span>
 ====================

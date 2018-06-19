@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879597"
 ---
 <a name="creating-a-rating-control-c"></a><span data-ttu-id="76333-104">등급 컨트롤 (C#) 만들기</span><span class="sxs-lookup"><span data-stu-id="76333-104">Creating a Rating Control (C#)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884758"
 ---
 <a name="aspnet-4-quick-hit---predictable-client-ids"></a><span data-ttu-id="370f1-103">ASP.NET 4 "빠른 Hit"-예측 가능한 클라이언트 Id</span><span class="sxs-lookup"><span data-stu-id="370f1-103">ASP.NET 4 "Quick Hit" - Predictable Client IDs</span></span>
 ====================

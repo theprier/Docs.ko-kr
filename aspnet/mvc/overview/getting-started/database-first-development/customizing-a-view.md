@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30867660"
 ---
 <a name="ef-database-first-with-aspnet-mvc-customizing-a-view"></a><span data-ttu-id="e4881-104">ASP.NET MVC를 사용 하 여 먼저 EF 데이터베이스: 보기를 사용자 지정</span><span class="sxs-lookup"><span data-stu-id="e4881-104">EF Database First with ASP.NET MVC: Customizing a View</span></span>
 ====================

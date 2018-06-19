@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880117"
 ---
 <a name="batch-deleting-vb"></a><span data-ttu-id="ae958-104">일괄 처리 (VB)를 삭제 합니다.</span><span class="sxs-lookup"><span data-stu-id="ae958-104">Batch Deleting (VB)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887427"
 ---
 <a name="create-an-aspnet-web-forms-app-with-sms-two-factor-authentication-c"></a><span data-ttu-id="ce8ea-104">만들기는 ASP.NET Web Forms 응용 프로그램 SMS 2 단계 인증 (C#)</span><span class="sxs-lookup"><span data-stu-id="ce8ea-104">Create an ASP.NET Web Forms app with SMS Two-Factor Authentication (C#)</span></span>
 ====================

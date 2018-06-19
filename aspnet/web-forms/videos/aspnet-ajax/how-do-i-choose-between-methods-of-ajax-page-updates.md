@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885539"
 ---
 <a name="how-do-i-choose-between-methods-of-ajax-page-updates"></a><span data-ttu-id="5cc78-105">[어떻게 할까요?] AJAX의 메서드 중에서 선택할 업데이트 페이지?</span><span class="sxs-lookup"><span data-stu-id="5cc78-105">[How Do I:] Choose Between Methods of AJAX Page Updates?</span></span>
 ====================

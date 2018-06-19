@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884693"
 ---
 <a name="how-do-i-introducing-the-new-chart-control-in-visual-studio-2010"></a><span data-ttu-id="a6a7f-104">Visual Studio 2010에서 새 차트 컨트롤 소개 어떻게 할까요?</span><span class="sxs-lookup"><span data-stu-id="a6a7f-104">How Do I: Introducing the New Chart Control in Visual Studio 2010</span></span>
 ====================

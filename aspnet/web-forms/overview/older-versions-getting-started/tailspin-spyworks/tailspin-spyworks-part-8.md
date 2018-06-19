@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886273"
 ---
 <a name="part-8-final-pages-exception-handling-and-conclusion"></a><span data-ttu-id="cbb7c-104">8 단계: 최종 페이지, 예외 처리 및 결론</span><span class="sxs-lookup"><span data-stu-id="cbb7c-104">Part 8: Final Pages, Exception Handling, and Conclusion</span></span>
 ====================

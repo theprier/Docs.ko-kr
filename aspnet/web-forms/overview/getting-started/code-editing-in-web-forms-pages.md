@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880754"
 ---
 <a name="code-editing-aspnet-web-forms-in-visual-studio-2013"></a><span data-ttu-id="a40c7-102">Visual Studio 2013에서 코드 편집 ASP.NET Web Forms</span><span class="sxs-lookup"><span data-stu-id="a40c7-102">Code Editing ASP.NET Web Forms in Visual Studio 2013</span></span>
 ====================

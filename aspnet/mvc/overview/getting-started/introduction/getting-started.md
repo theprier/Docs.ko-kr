@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868323"
 ---
 <a name="getting-started-with-aspnet-mvc-5"></a><span data-ttu-id="76944-104">ASP.NET MVC 5 시작</span><span class="sxs-lookup"><span data-stu-id="76944-104">Getting Started with ASP.NET MVC 5</span></span>
 ====================
@@ -47,7 +48,7 @@ ms.lasthandoff: 04/06/2018
 
 ## <a name="creating-your-first-application"></a><span data-ttu-id="76944-119">응용 프로그램 처음 만들기</span><span class="sxs-lookup"><span data-stu-id="76944-119">Creating Your First Application</span></span>
 
-<span data-ttu-id="76944-120">클릭 **새 프로젝트**을 다음 선택 Visual C#의 왼쪽에서 다음 **웹** 선택한 후 **ASP.NET 웹 응용 프로그램 (.NET Framework)**합니다.</span><span class="sxs-lookup"><span data-stu-id="76944-120">Click **New Project**, then select Visual C# on the left, then **Web** and then select **ASP.NET Web Application (.NET Framework)**.</span></span> <span data-ttu-id="76944-121">"MvcMovie" 프로젝트 이름을 지정 하 고 클릭 **확인**합니다.</span><span class="sxs-lookup"><span data-stu-id="76944-121">Name your project "MvcMovie" and then click **OK**.</span></span>
+<span data-ttu-id="76944-120">클릭 **새 프로젝트**을 다음 선택 Visual C#의 왼쪽에서 다음 **웹** 선택한 후 **ASP.NET 웹 응용 프로그램 (.NET Framework)** 합니다.</span><span class="sxs-lookup"><span data-stu-id="76944-120">Click **New Project**, then select Visual C# on the left, then **Web** and then select **ASP.NET Web Application (.NET Framework)**.</span></span> <span data-ttu-id="76944-121">"MvcMovie" 프로젝트 이름을 지정 하 고 클릭 **확인**합니다.</span><span class="sxs-lookup"><span data-stu-id="76944-121">Name your project "MvcMovie" and then click **OK**.</span></span>
 
 ![](getting-started/_static/image2.png)
 

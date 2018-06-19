@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884810"
 ---
 <a name="how-do-i-retrieve-values-from-server-side-ajax-controls"></a><span data-ttu-id="aa362-103">[어떻게 할까요?] 서버 쪽 AJAX 컨트롤에서 값을 검색 합니다.</span><span class="sxs-lookup"><span data-stu-id="aa362-103">[How Do I:] Retrieve Values From Server Side AJAX Controls</span></span>
 ====================

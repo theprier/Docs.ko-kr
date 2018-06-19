@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881603"
 ---
 <a name="how-do-i-display-unknown-datatypes"></a><span data-ttu-id="f84c0-104">어떻게 할까요? 디스플레이 알 수 없는 데이터 형식</span><span class="sxs-lookup"><span data-stu-id="f84c0-104">How do I Display Unknown datatypes?</span></span>
 ====================

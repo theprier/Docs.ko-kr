@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30899118"
 ---
 <a name="aspnet-4-breaking-changes"></a><span data-ttu-id="7ca65-103">ASP.NET 4 주요 변경 내용</span><span class="sxs-lookup"><span data-stu-id="7ca65-103">ASP.NET 4 Breaking Changes</span></span>
 ====================

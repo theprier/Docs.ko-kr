@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30889373"
 ---
 <a name="common-configuration-differences-between-development-and-production-vb"></a><span data-ttu-id="b3bdc-104">개발 및 프로덕션 (VB) 간의 일반적인 구성 차이</span><span class="sxs-lookup"><span data-stu-id="b3bdc-104">Common Configuration Differences Between Development and Production (VB)</span></span>
 ====================

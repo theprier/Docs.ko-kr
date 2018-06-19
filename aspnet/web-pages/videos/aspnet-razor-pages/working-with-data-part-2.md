@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30895208"
 ---
 <a name="working-with-data-part-2"></a><span data-ttu-id="c3ea4-103">(2 부)의 데이터 사용</span><span class="sxs-lookup"><span data-stu-id="c3ea4-103">Working with Data (Part 2)</span></span>
 ====================

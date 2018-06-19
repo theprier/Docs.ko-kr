@@ -1,8 +1,8 @@
 ---
 uid: web-pages/index
-title: "ASP.NET 웹 페이지 | Microsoft Docs"
+title: ASP.NET 웹 페이지 | Microsoft Docs
 author: rick-anderson
-description: "WebMatrix 다운로드 및 HTML와 서버 코드를 결합 하는 간단한 방법을에서 웹 페이지를 신속 하 게 작성 하는 방법을 알아봅니다."
+description: WebMatrix 다운로드 및 HTML와 서버 코드를 결합 하는 간단한 방법을에서 웹 페이지를 신속 하 게 작성 하는 방법을 알아봅니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/18/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /web-pages
 msc.type: categoryindex
 ms.openlocfilehash: d6c2d8a564b5144845e89cd0ee86841b9f305bf5
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26528662"
 ---
 <a name="aspnet-web-pages"></a><span data-ttu-id="0ffe6-103">ASP.NET 웹 페이지</span><span class="sxs-lookup"><span data-stu-id="0ffe6-103">ASP.NET Web Pages</span></span>
 ====================

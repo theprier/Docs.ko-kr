@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30883783"
 ---
 <a name="how-do-i-linq-to-sql-custom-linqdatasource"></a><span data-ttu-id="5c086-103">[어떻게 할까요?] LINQ to SQL: 사용자 지정 LinqDataSource</span><span class="sxs-lookup"><span data-stu-id="5c086-103">[How Do I:] LINQ to SQL: Custom LinqDataSource</span></span>
 ====================

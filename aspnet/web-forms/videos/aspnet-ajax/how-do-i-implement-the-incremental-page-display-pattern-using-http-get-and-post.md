@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886552"
 ---
 <a name="how-do-i-implement-the-incremental-page-display-pattern-using-http-get-and-post"></a><span data-ttu-id="ecb17-105">[어떻게 할까요?] HTTP GET 및 POST를 사용 하 여 증분 페이지 디스플레이 패턴을 구현</span><span class="sxs-lookup"><span data-stu-id="ecb17-105">[How Do I:] Implement the Incremental Page Display Pattern using HTTP GET and POST?</span></span>
 ====================

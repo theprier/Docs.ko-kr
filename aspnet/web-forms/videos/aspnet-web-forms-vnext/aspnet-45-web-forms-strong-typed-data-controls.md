@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884056"
 ---
 <a name="aspnet-45-web-forms-strong-typed-data-controls"></a><span data-ttu-id="e2711-103">ASP.NET 4.5 Web Forms 강력한 형식의 데이터 컨트롤</span><span class="sxs-lookup"><span data-stu-id="e2711-103">ASP.NET 4.5 Web Forms Strong Typed Data Controls</span></span>
 ====================

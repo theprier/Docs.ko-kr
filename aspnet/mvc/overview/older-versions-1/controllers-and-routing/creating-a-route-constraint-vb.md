@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871222"
 ---
 <a name="creating-a-route-constraint-vb"></a><span data-ttu-id="8fda6-103">경로 제약 조건 (VB) 만들기</span><span class="sxs-lookup"><span data-stu-id="8fda6-103">Creating a Route Constraint (VB)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888671"
 ---
 <a name="determining-what-files-need-to-be-deployed-c"></a><span data-ttu-id="36d7e-103">배포 파일에 필요한 확인 (C#)</span><span class="sxs-lookup"><span data-stu-id="36d7e-103">Determining What Files Need to Be Deployed (C#)</span></span>
 ====================

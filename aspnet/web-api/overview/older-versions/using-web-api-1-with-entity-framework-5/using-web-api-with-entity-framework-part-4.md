@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879532"
 ---
 <a name="part-4-adding-an-admin-view"></a><span data-ttu-id="40368-102">4 단계: 관리 보기를 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="40368-102">Part 4: Adding an Admin View</span></span>
 ====================

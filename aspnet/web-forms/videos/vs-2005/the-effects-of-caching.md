@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30895154"
 ---
 <a name="the-effects-of-caching"></a><span data-ttu-id="1a9b5-103">캐싱에 따른 효과</span><span class="sxs-lookup"><span data-stu-id="1a9b5-103">The Effects of Caching</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868232"
 ---
 <a name="how-do-i-work-with-data-in-aspnet-mvc-partial-views"></a><span data-ttu-id="46aed-105">ASP.NET MVC 부분 뷰의 데이터로 작업 방법: 작업?</span><span class="sxs-lookup"><span data-stu-id="46aed-105">How Do I: Work with Data in ASP.NET MVC Partial Views?</span></span>
 ====================

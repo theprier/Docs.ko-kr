@@ -17,6 +17,7 @@ ms.sourcegitcommit: 3a893ae05f010656d99d6ddf55e82f1b5b6933bc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 05/18/2018
+ms.locfileid: "34306834"
 ---
 <a name="whats-new-in-aspnet-and-web-development-in-visual-studio-2012"></a><span data-ttu-id="44968-103">ASP.NET 및 Visual Studio 2012에서 웹 개발의 새로운 기능</span><span class="sxs-lookup"><span data-stu-id="44968-103">What's New in ASP.NET and Web Development in Visual Studio 2012</span></span>
 ====================

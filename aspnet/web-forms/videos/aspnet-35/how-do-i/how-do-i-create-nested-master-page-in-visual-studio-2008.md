@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884417"
 ---
 <a name="how-do-i-create-nested-master-page-in-visual-studio-2008"></a><span data-ttu-id="789c2-104">[어떻게 할까요?] Visual Studio 2008에서 중첩 된 마스터 페이지 만들기</span><span class="sxs-lookup"><span data-stu-id="789c2-104">[How Do I:] Create Nested Master Page in Visual Studio 2008</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30894553"
 ---
 <a name="tailspin-spyworks---implementing-and-using-the-also-purchased-control"></a><span data-ttu-id="adf29-103">Tailspin Spyworks-구현 및 구매한도 컨트롤을 사용 하 여</span><span class="sxs-lookup"><span data-stu-id="adf29-103">Tailspin Spyworks - Implementing and Using the Also Purchased Control</span></span>
 ====================

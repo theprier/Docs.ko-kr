@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882925"
 ---
 <a name="set-up-your-development-environment-for-aspnet-20"></a><span data-ttu-id="77f38-103">ASP.NET 2.0에 대 한 개발 환경 설정</span><span class="sxs-lookup"><span data-stu-id="77f38-103">Set Up Your Development Environment for ASP.NET 2.0</span></span>
 ====================

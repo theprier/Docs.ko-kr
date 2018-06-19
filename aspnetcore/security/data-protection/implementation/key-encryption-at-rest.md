@@ -14,6 +14,7 @@ ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 05/08/2018
+ms.locfileid: "33851120"
 ---
 # <a name="key-encryption-at-rest-in-aspnet-core"></a><span data-ttu-id="4a2ee-103">ASP.NET Core에서 미사용 데이터 암호화 키</span><span class="sxs-lookup"><span data-stu-id="4a2ee-103">Key encryption at rest in ASP.NET Core</span></span>
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888512"
 ---
 <a name="aspnet-hosting-options-c"></a><span data-ttu-id="5bb0d-103">ASP.NET 호스팅 옵션 (C#)</span><span class="sxs-lookup"><span data-stu-id="5bb0d-103">ASP.NET Hosting Options (C#)</span></span>
 ====================

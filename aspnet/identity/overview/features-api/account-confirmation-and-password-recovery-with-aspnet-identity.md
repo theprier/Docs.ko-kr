@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876035"
 ---
 <a name="account-confirmation-and-password-recovery-with-aspnet-identity-c"></a><span data-ttu-id="594a3-104">계정 확인 및 암호 복구 ASP.NET Identity (C#)</span><span class="sxs-lookup"><span data-stu-id="594a3-104">Account Confirmation and Password Recovery with ASP.NET Identity (C#)</span></span>
 ====================

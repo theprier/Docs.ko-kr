@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874384"
 ---
 <a name="secure-applications-using-authentication-and-authorization"></a><span data-ttu-id="9daf7-103">인증 및 권한 부여를 사용 하 여 응용 프로그램 보안</span><span class="sxs-lookup"><span data-stu-id="9daf7-103">Secure Applications Using Authentication and Authorization</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30868362"
 ---
 <a name="creating-a-controller-c"></a><span data-ttu-id="ef6fb-103">컨트롤러 (C#) 만들기</span><span class="sxs-lookup"><span data-stu-id="ef6fb-103">Creating a Controller (C#)</span></span>
 ====================

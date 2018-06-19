@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885083"
 ---
 <a name="part-5-business-logic"></a><span data-ttu-id="33033-104">5 단계: 비즈니스 논리</span><span class="sxs-lookup"><span data-stu-id="33033-104">Part 5: Business Logic</span></span>
 ====================

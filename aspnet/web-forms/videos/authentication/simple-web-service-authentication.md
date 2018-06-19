@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880556"
 ---
 <a name="simple-web-service-authentication"></a><span data-ttu-id="7157c-103">간단한 웹 서비스 인증</span><span class="sxs-lookup"><span data-stu-id="7157c-103">Simple Web Service Authentication</span></span>
 ====================

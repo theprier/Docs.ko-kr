@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882444"
 ---
 <a name="how-do-i-linq-to-sql-querying-the-database"></a><span data-ttu-id="19333-103">[어떻게 할까요?] LINQ to SQL: 데이터베이스 쿼리</span><span class="sxs-lookup"><span data-stu-id="19333-103">[How Do I:] LINQ to SQL: Querying the Database</span></span>
 ====================

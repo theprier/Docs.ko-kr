@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30885540"
 ---
 <a name="how-do-i-use-msbuild-to-automate-the-aspnet-compiler-and-merge-utilities"></a><span data-ttu-id="e7fe7-103">[어떻게 할까요?] MSBuild를 사용 하 여 ASP.NET 컴파일러를 자동화 하 고 유틸리티를 병합 합니다.</span><span class="sxs-lookup"><span data-stu-id="e7fe7-103">[How Do I:] Use MSBuild to Automate the ASP.NET Compiler and Merge Utilities</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30882379"
 ---
 <a name="two-simple-techniques-for-triggering-updates-to-update-panels"></a><span data-ttu-id="7341f-104">패널을 업데이트 하려면 업데이트를 트리거하는 두 가지 간단한 기술</span><span class="sxs-lookup"><span data-stu-id="7341f-104">Two Simple Techniques for Triggering Updates to Update Panels</span></span>
 ====================

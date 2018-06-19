@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887644"
 ---
 <a name="using-basic-forms-authentication-in-aspnet"></a><span data-ttu-id="75822-104">기본 폼 인증을 사용 하 여 ASP.NET에서</span><span class="sxs-lookup"><span data-stu-id="75822-104">Using Basic Forms Authentication in ASP.NET</span></span>
 ====================

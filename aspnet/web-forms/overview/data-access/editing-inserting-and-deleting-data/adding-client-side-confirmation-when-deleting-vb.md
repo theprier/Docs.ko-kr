@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880143"
 ---
 <a name="adding-client-side-confirmation-when-deleting-vb"></a><span data-ttu-id="def0d-104">클라이언트 쪽 확인 (VB)를 삭제할 때 추가</span><span class="sxs-lookup"><span data-stu-id="def0d-104">Adding Client-Side Confirmation When Deleting (VB)</span></span>
 ====================

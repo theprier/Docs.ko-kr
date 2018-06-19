@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872275"
 ---
 <a name="displaying-a-table-of-database-data-vb"></a><span data-ttu-id="bacb3-104">데이터베이스 데이터 (VB)의 테이블 표시</span><span class="sxs-lookup"><span data-stu-id="bacb3-104">Displaying a Table of Database Data (VB)</span></span>
 ====================

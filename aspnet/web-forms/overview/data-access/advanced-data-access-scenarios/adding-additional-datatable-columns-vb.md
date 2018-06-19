@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879051"
 ---
 <a name="adding-additional-datatable-columns-vb"></a><span data-ttu-id="38082-104">추가 DataTable 열 (VB)를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="38082-104">Adding Additional DataTable Columns (VB)</span></span>
 ====================

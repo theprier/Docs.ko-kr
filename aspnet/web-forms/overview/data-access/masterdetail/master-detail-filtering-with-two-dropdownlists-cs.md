@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887254"
 ---
 <a name="masterdetail-filtering-with-two-dropdownlists-c"></a><span data-ttu-id="ac7d3-103">마스터/세부 두 dropdownlist 활용 (C#)를 사용 하 여 필터링</span><span class="sxs-lookup"><span data-stu-id="ac7d3-103">Master/Detail Filtering With Two DropDownLists (C#)</span></span>
 ====================

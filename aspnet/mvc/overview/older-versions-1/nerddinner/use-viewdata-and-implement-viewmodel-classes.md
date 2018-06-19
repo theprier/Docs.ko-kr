@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879428"
 ---
 <a name="use-viewdata-and-implement-viewmodel-classes"></a><span data-ttu-id="85015-103">사용 하 여 ViewData 및 구현 ViewModel 클래스</span><span class="sxs-lookup"><span data-stu-id="85015-103">Use ViewData and Implement ViewModel Classes</span></span>
 ====================
