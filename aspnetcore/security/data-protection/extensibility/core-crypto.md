@@ -14,6 +14,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30896828"
 ---
 # <a name="core-cryptography-extensibility-in-aspnet-core"></a><span data-ttu-id="be12b-103">ASP.NET Core에서 핵심 암호화 확장성</span><span class="sxs-lookup"><span data-stu-id="be12b-103">Core cryptography extensibility in ASP.NET Core</span></span>
 

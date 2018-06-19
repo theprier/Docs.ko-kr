@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30896006"
 ---
 <a name="displaying-data-in-a-grid"></a><span data-ttu-id="89d4c-103">모눈에 데이터를 표시합니다.</span><span class="sxs-lookup"><span data-stu-id="89d4c-103">Displaying Data in a Grid</span></span>
 ====================

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "33962686"
 ---
 # <a name="view-components-in-aspnet-core"></a><span data-ttu-id="fa118-103">ASP.NET Core의 보기 구성 요소</span><span class="sxs-lookup"><span data-stu-id="fa118-103">View components in ASP.NET Core</span></span>
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30896784"
 ---
 <a name="installing-a-helper-in-an-aspnet-web-pages-razor-site"></a><span data-ttu-id="af284-104">ASP.NET 웹 페이지 (Razor) 사이트에 도우미를 설치합니다.</span><span class="sxs-lookup"><span data-stu-id="af284-104">Installing a Helper in an ASP.NET Web Pages (Razor) Site</span></span>
 ====================

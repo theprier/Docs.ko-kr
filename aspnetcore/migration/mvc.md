@@ -14,6 +14,7 @@ ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 05/08/2018
+ms.locfileid: "33851029"
 ---
 # <a name="migrate-from-aspnet-mvc-to-aspnet-core-mvc"></a><span data-ttu-id="686b2-103">ASP.NET MVC에서 ASP.NET Core MVC로 마이그레이션</span><span class="sxs-lookup"><span data-stu-id="686b2-103">Migrate from ASP.NET MVC to ASP.NET Core MVC</span></span>
 

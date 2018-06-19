@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30867777"
 ---
 <a name="aspnet-mvc-controller-overview"></a><span data-ttu-id="2e51d-104">ASP.NET MVC 컨트롤러 개요</span><span class="sxs-lookup"><span data-stu-id="2e51d-104">ASP.NET MVC Controller Overview</span></span>
 ====================

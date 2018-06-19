@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30077856"
 ---
 # <a name="context-headers-in-aspnet-core"></a><span data-ttu-id="ccfdf-103">ASP.NET Core에서 컨텍스트 헤더</span><span class="sxs-lookup"><span data-stu-id="ccfdf-103">Context headers in ASP.NET Core</span></span>
 

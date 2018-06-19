@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890101"
 ---
 <a name="using-asynchronous-methods-in-aspnet-45"></a><span data-ttu-id="526f4-103">비동기 메서드를 사용 하 여 asp.net 4.5</span><span class="sxs-lookup"><span data-stu-id="526f4-103">Using Asynchronous Methods in ASP.NET 4.5</span></span>
 ====================

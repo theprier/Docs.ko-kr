@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/data-access/how-do-i-with-linq/index
-title: "어떻게 할까요? linq | Microsoft Docs"
+title: 어떻게 할까요? linq | Microsoft Docs
 author: rick-anderson
-description: "이 비디오 시리즈를 익숙하게 웹 개발자로 서 LINQ를 사용 하는 데 필요한 모든 항목을 안내 합니다."
+description: 이 비디오 시리즈를 익숙하게 웹 개발자로 서 LINQ를 사용 하는 데 필요한 모든 항목을 안내 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/24/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/videos/data-access/how-do-i-with-linq
 msc.type: chapter
 ms.openlocfilehash: aad424cd891aa0ca8e8179b3899f7c2e3330a11f
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526392"
 ---
 <a name="how-do-i-with-linq"></a><span data-ttu-id="21b21-103">LINQ를 통한 작업 방법</span><span class="sxs-lookup"><span data-stu-id="21b21-103">How Do I with LINQ</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874371"
 ---
 <a name="signalr-scaleout-with-sql-server"></a><span data-ttu-id="15557-103">SQL Server와 함께 SignalR 확장</span><span class="sxs-lookup"><span data-stu-id="15557-103">SignalR Scaleout with SQL Server</span></span>
 ====================

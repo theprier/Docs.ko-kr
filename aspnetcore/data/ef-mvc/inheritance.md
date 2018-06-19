@@ -14,6 +14,7 @@ ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 05/14/2018
+ms.locfileid: "34153435"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---inheritance---9-of-10"></a><span data-ttu-id="e4709-103">ASP.NET Core MVC 및 EF Core - 상속 - 9/10</span><span class="sxs-lookup"><span data-stu-id="e4709-103">ASP.NET Core MVC with EF Core - Inheritance - 9 of 10</span></span>
 

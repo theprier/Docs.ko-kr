@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30869142"
 ---
 <a name="create-a-database"></a><span data-ttu-id="0f437-103">데이터베이스 만들기</span><span class="sxs-lookup"><span data-stu-id="0f437-103">Create a Database</span></span>
 ====================

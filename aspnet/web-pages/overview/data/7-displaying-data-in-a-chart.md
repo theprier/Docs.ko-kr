@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30899725"
 ---
 <a name="displaying-data-in-a-chart-with-aspnet-web-pages-razor"></a><span data-ttu-id="517f8-105">ASP.NET 웹 페이지 (Razor)와 차트에 데이터를 표시합니다.</span><span class="sxs-lookup"><span data-stu-id="517f8-105">Displaying Data in a Chart with ASP.NET Web Pages (Razor)</span></span>
 ====================

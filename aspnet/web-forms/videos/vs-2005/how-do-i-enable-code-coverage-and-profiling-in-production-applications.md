@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893988"
 ---
 <a name="how-do-i-enable-code-coverage-and-profiling-in-production-applications"></a><span data-ttu-id="ce566-104">[어떻게 할까요?] 코드 검사 및 프로덕션 응용 프로그램에서 프로 파일링을 사용 하 시겠습니까?</span><span class="sxs-lookup"><span data-stu-id="ce566-104">[How Do I:] Enable Code Coverage and Profiling in Production Applications?</span></span>
 ====================

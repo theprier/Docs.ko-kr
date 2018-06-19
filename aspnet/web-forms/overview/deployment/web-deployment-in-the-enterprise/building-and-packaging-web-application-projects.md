@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892311"
 ---
 <a name="building-and-packaging-web-application-projects"></a><span data-ttu-id="477e1-103">빌드 및 웹 응용 프로그램 프로젝트를 패키지</span><span class="sxs-lookup"><span data-stu-id="477e1-103">Building and Packaging Web Application Projects</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893848"
 ---
 <a name="custom-extraction-rules-and-coded-web-tests"></a><span data-ttu-id="686a2-103">사용자 지정 추출 규칙 및 코딩 된 웹 테스트</span><span class="sxs-lookup"><span data-stu-id="686a2-103">Custom Extraction Rules and Coded Web Tests</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30899618"
 ---
 <a name="aspnet-mvc-4"></a><span data-ttu-id="43738-103">ASP.NET MVC 4</span><span class="sxs-lookup"><span data-stu-id="43738-103">ASP.NET MVC 4</span></span>
 ====================
@@ -243,7 +244,7 @@ ms.lasthandoff: 04/10/2018
 <a id="_Toc303253813"></a>
 ### <a name="task-support-for-asynchronous-controllers"></a><span data-ttu-id="43738-257">비동기 컨트롤러에 대 한 작업 지원</span><span class="sxs-lookup"><span data-stu-id="43738-257">Task Support for Asynchronous Controllers</span></span>
 
-<span data-ttu-id="43738-258">작성할 수 있습니다 비동기 작업 메서드 형식의 개체를 반환 하는 단일 메서드 *작업* 또는 *작업&lt;ActionResult&gt;*합니다.</span><span class="sxs-lookup"><span data-stu-id="43738-258">You can now write asynchronous action methods as single methods that return an object of type *Task* or *Task&lt;ActionResult&gt;*.</span></span>
+<span data-ttu-id="43738-258">작성할 수 있습니다 비동기 작업 메서드 형식의 개체를 반환 하는 단일 메서드 *작업* 또는 *작업&lt;ActionResult&gt;* 합니다.</span><span class="sxs-lookup"><span data-stu-id="43738-258">You can now write asynchronous action methods as single methods that return an object of type *Task* or *Task&lt;ActionResult&gt;*.</span></span>
 
 <span data-ttu-id="43738-259">예를 들어, Visual C# 5를 사용 하 여 (또는 사용 하 여는 [비동기 CTP](https://msdn.microsoft.com/vstudio/async.aspx))를 다음과 같이 하는 비동기 작업 메서드를 만들 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="43738-259">For example, if you're using Visual C# 5 (or using the [Async CTP](https://msdn.microsoft.com/vstudio/async.aspx)), you can create an asynchronous action method that looks like the following:</span></span>
 

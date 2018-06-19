@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30896243"
 ---
 <a name="how-do-i-use-routing-with-aspnet-web-forms"></a><span data-ttu-id="b1f43-105">ASP.NET Web Forms를 사용 하 여 라우팅 작업 방법:?</span><span class="sxs-lookup"><span data-stu-id="b1f43-105">How Do I: Use Routing with ASP.NET Web Forms?</span></span>
 ====================

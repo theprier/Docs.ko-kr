@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892714"
 ---
 <a name="how-do-i-upgrade-visual-basic-projects-to-enable-linq"></a><span data-ttu-id="d87c8-104">[어떻게 할까요?] LINQ를 사용 하도록 설정 하려면 Visual Basic 프로젝트를 업그레이드 하는?</span><span class="sxs-lookup"><span data-stu-id="d87c8-104">[How Do I:] Upgrade Visual Basic Projects to Enable LINQ?</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30895079"
 ---
 <a name="what-is-a-database"></a><span data-ttu-id="26269-105">데이터베이스는 무엇입니까?</span><span class="sxs-lookup"><span data-stu-id="26269-105">What is a Database?</span></span>
 ====================

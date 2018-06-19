@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30867153"
 ---
 <a name="aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood"></a><span data-ttu-id="e757a-104">제프 Atwood와 ASP.NET MVC Storefront 부 17: 체크 아웃</span><span class="sxs-lookup"><span data-stu-id="e757a-104">ASP.NET MVC Storefront Part 17: Checkout With Jeff Atwood</span></span>
 ====================

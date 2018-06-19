@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870546"
 ---
 <a name="part-3-creating-an-admin-controller"></a><span data-ttu-id="d5d64-102">3 단계: 관리 컨트롤러 만들기</span><span class="sxs-lookup"><span data-stu-id="d5d64-102">Part 3: Creating an Admin Controller</span></span>
 ====================

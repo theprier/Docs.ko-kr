@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892779"
 ---
 <a name="an-overview-of-editing-and-deleting-data-in-the-datalist-vb"></a><span data-ttu-id="b3950-103">DataList (VB)에서 데이터 편집 및 삭제에 대 한 개요</span><span class="sxs-lookup"><span data-stu-id="b3950-103">An Overview of Editing and Deleting Data in the DataList (VB)</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/application-level-objects
-title: "응용 프로그램 수준 개체 | Microsoft Docs"
+title: 응용 프로그램 수준 개체 | Microsoft Docs
 author: JoeStagner
-description: "이 비디오는 응용 프로그램 수준 이벤트 및 개체를 소개 하 고의 개념을 설명 &quot;범위&quot; 관련이 있으므로 해당 합니다."
+description: 이 비디오는 응용 프로그램 수준 이벤트 및 개체를 소개 하 고의 개념을 설명 &quot;범위&quot; 관련이 있으므로 해당 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/20/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521562"
 ---
 <a name="application-level-objects"></a><span data-ttu-id="9609c-103">응용 프로그램 수준 개체</span><span class="sxs-lookup"><span data-stu-id="9609c-103">Application Level Objects</span></span>
 ====================

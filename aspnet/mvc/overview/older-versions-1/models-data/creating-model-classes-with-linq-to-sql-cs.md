@@ -17,6 +17,7 @@ ms.sourcegitcommit: 466300d32f8c33e64ee1b419a2cbffe702863cdf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 05/27/2018
+ms.locfileid: "34555315"
 ---
 <a name="creating-model-classes-with-linq-to-sql-c"></a><span data-ttu-id="84e6c-104">LINQ to SQL (C#)를 사용 하 여 모델 클래스 만들기</span><span class="sxs-lookup"><span data-stu-id="84e6c-104">Creating Model Classes with LINQ to SQL (C#)</span></span>
 ====================

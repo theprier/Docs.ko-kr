@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30077909"
 ---
 # <a name="authenticated-encryption-details-in-aspnet-core"></a><span data-ttu-id="97798-103">ASP.NET Core에서 인증 된 암호화 세부 정보</span><span class="sxs-lookup"><span data-stu-id="97798-103">Authenticated encryption details in ASP.NET Core</span></span>
 

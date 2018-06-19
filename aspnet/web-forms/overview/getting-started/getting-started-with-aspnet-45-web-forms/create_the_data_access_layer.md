@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881466"
 ---
 <a name="create-the-data-access-layer"></a><span data-ttu-id="a3741-103">데이터 액세스 계층 만들기</span><span class="sxs-lookup"><span data-stu-id="a3741-103">Create the Data Access Layer</span></span>
 ====================

@@ -15,6 +15,7 @@ ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 05/08/2018
+ms.locfileid: "33851545"
 ---
 # <a name="migrate-from-aspnet-membership-authentication-to-aspnet-core-20-identity"></a><span data-ttu-id="1b40e-103">ASP.NET 멤버 자격 인증에서 ASP.NET Core 2.0 Id로 마이그레이션</span><span class="sxs-lookup"><span data-stu-id="1b40e-103">Migrate from ASP.NET Membership authentication to ASP.NET Core 2.0 Identity</span></span>
 

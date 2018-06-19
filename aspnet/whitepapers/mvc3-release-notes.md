@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30899105"
 ---
 <a name="aspnet-mvc-3"></a><span data-ttu-id="4ad3e-102">ASP.NET MVC 3</span><span class="sxs-lookup"><span data-stu-id="4ad3e-102">ASP.NET MVC 3</span></span>
 ====================

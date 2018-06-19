@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873081"
 ---
 <a name="transient-fault-handling-building-real-world-cloud-apps-with-azure"></a><span data-ttu-id="88ae8-104">일시적인 오류 처리 (Azure 사용 하 여 실제 클라우드 앱 빌드)</span><span class="sxs-lookup"><span data-stu-id="88ae8-104">Transient Fault Handling (Building Real-World Cloud Apps with Azure)</span></span>
 ====================

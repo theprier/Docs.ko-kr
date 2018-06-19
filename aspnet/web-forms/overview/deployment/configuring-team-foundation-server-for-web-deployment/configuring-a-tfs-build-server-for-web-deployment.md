@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30892519"
 ---
 <a name="configuring-a-tfs-build-server-for-web-deployment"></a><span data-ttu-id="67516-103">웹 배포를 위한 TFS 빌드 서버 구성</span><span class="sxs-lookup"><span data-stu-id="67516-103">Configuring a TFS Build Server for Web Deployment</span></span>
 ====================

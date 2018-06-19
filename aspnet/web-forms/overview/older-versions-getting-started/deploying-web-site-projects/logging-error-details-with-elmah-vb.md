@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30891310"
 ---
 <a name="logging-error-details-with-elmah-vb"></a><span data-ttu-id="0e582-104">오류 세부 정보 ELMAH (VB)를 사용 하 여 로깅</span><span class="sxs-lookup"><span data-stu-id="0e582-104">Logging Error Details with ELMAH (VB)</span></span>
 ====================

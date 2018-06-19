@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30894001"
 ---
 <a name="how-do-i-load-test-a-web-application"></a><span data-ttu-id="88eaf-105">[어떻게 할까요?] 부하 테스트는 웹 응용 프로그램?</span><span class="sxs-lookup"><span data-stu-id="88eaf-105">[How Do I:] Load Test a Web Application?</span></span>
 ====================

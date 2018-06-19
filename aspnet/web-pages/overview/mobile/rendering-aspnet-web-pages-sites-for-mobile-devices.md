@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30897321"
 ---
 <a name="rendering-aspnet-web-pages-razor-sites-for-mobile-devices"></a><span data-ttu-id="62793-104">모바일 장치에 대 한 ASP.NET 웹 페이지 (Razor) 사이트 렌더링</span><span class="sxs-lookup"><span data-stu-id="62793-104">Rendering ASP.NET Web Pages (Razor) Sites for Mobile Devices</span></span>
 ====================

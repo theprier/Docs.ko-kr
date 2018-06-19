@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879779"
 ---
 <a name="how-do-i-use-the-html-editor-control-c"></a><span data-ttu-id="0b2e3-104">HTML 편집기 컨트롤을 사용 하려면 어떻게 해야 합니까?</span><span class="sxs-lookup"><span data-stu-id="0b2e3-104">How do I use the HTML Editor Control?</span></span> <span data-ttu-id="0b2e3-105">(C#)</span><span class="sxs-lookup"><span data-stu-id="0b2e3-105">(C#)</span></span>
 ====================

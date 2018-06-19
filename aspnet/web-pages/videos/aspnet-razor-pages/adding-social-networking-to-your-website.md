@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893936"
 ---
 <a name="adding-social-networking-to-your-website"></a><span data-ttu-id="26a45-103">소셜 네트워킹 웹 사이트에 추가</span><span class="sxs-lookup"><span data-stu-id="26a45-103">Adding Social Networking to Your Website</span></span>
 ====================

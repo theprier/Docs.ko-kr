@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893312"
 ---
 <a name="tailspin-spyworks---adding-user-product-reviews"></a><span data-ttu-id="2ebcc-103">Tailspin Spyworks-사용자 제품 검토를 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="2ebcc-103">Tailspin Spyworks - Adding User Product Reviews</span></span>
 ====================

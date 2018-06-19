@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870169"
 ---
 <a name="validation-with-the-data-annotation-validators-vb"></a><span data-ttu-id="a82f2-104">데이터 주석 유효성 검사기 (VB)와 유효성 검사</span><span class="sxs-lookup"><span data-stu-id="a82f2-104">Validation with the Data Annotation Validators (VB)</span></span>
 ====================

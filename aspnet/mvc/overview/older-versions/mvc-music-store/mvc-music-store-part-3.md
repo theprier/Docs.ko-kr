@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874852"
 ---
 <a name="part-3-views-and-viewmodels"></a><span data-ttu-id="ee721-104">3 부: 뷰와 Viewmodel</span><span class="sxs-lookup"><span data-stu-id="ee721-104">Part 3: Views and ViewModels</span></span>
 ====================

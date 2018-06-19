@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891502"
 ---
 <a name="control-id-naming-in-content-pages-vb"></a><span data-ttu-id="08954-103">콘텐츠 페이지 (VB)에서 이름을 지정 하는 컨트롤 ID</span><span class="sxs-lookup"><span data-stu-id="08954-103">Control ID Naming in Content Pages (VB)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893032"
 ---
 <a name="tailspin-spyworks---directory-organization"></a><span data-ttu-id="d5929-103">Tailspin Spyworks-디렉터리 구성</span><span class="sxs-lookup"><span data-stu-id="d5929-103">Tailspin Spyworks - Directory Organization</span></span>
 ====================

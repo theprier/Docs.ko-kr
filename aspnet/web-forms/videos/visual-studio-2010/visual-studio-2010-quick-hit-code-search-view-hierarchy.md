@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30894719"
 ---
 <a name="visual-studio-2010-quick-hit---code-search-view-hierarchy"></a><span data-ttu-id="b5e01-103">Visual Studio 2010 "빠른 Hit"-코드 검색 뷰 계층 구조</span><span class="sxs-lookup"><span data-stu-id="b5e01-103">Visual Studio 2010 "Quick Hit" - Code Search View Hierarchy</span></span>
 ====================

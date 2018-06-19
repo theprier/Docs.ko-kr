@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892467"
 ---
 <a name="part-1-file--new-project"></a><span data-ttu-id="07e58-104">1 단계: 파일-새 프로젝트 ></span><span class="sxs-lookup"><span data-stu-id="07e58-104">Part 1: File-> New Project</span></span>
 ====================

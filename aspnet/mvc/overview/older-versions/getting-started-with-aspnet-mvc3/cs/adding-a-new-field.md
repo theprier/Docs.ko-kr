@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871560"
 ---
 <a name="adding-a-new-field-to-the-movie-model-and-table-c"></a><span data-ttu-id="9f47b-103">영화 모델 및 테이블 (C#)에 새 필드 추가</span><span class="sxs-lookup"><span data-stu-id="9f47b-103">Adding a New Field to the Movie Model and Table (C#)</span></span>
 ====================

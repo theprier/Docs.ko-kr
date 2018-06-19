@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30876997"
 ---
 <a name="protecting-connection-strings-and-other-configuration-information-vb"></a><span data-ttu-id="9db80-105">연결 문자열 및 기타 구성 정보 (VB)를 보호합니다.</span><span class="sxs-lookup"><span data-stu-id="9db80-105">Protecting Connection Strings and Other Configuration Information (VB)</span></span>
 ====================

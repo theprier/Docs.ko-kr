@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880039"
 ---
 <a name="deploying-a-specific-build"></a><span data-ttu-id="caea8-103">특정 빌드를 배포합니다.</span><span class="sxs-lookup"><span data-stu-id="caea8-103">Deploying a Specific Build</span></span>
 ====================

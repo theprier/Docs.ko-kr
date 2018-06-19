@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30891882"
 ---
 <a name="caching"></a><span data-ttu-id="04f1e-104">캐싱</span><span class="sxs-lookup"><span data-stu-id="04f1e-104">Caching</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30895778"
 ---
 <a name="how-do-i-integrate-defect-tracking-with-testing"></a><span data-ttu-id="cc59c-104">[어떻게 할까요?] 오류 추적 테스트와 통합 되나요?</span><span class="sxs-lookup"><span data-stu-id="cc59c-104">[How Do I:] Integrate Defect Tracking with Testing?</span></span>
 ====================

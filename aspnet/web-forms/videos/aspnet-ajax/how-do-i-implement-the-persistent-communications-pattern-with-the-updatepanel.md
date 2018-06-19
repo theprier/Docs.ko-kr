@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886396"
 ---
 <a name="how-do-i-implement-the-persistent-communications-pattern-with-the-updatepanel"></a><span data-ttu-id="05605-104">[어떻게 할까요?] UpdatePanel 사용 하 여 지속적인 통신 패턴을 구현 여부?</span><span class="sxs-lookup"><span data-stu-id="05605-104">[How Do I:] Implement the Persistent Communications Pattern with the UpdatePanel?</span></span>
 ====================

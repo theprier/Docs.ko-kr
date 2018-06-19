@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30895181"
 ---
 <a name="introduction-to-managing-and-running-tests-with-team-system"></a><span data-ttu-id="a9eb2-104">Team system 테스트 실행 및 관리 소개</span><span class="sxs-lookup"><span data-stu-id="a9eb2-104">Introduction to Managing and Running Tests with Team System</span></span>
 ====================

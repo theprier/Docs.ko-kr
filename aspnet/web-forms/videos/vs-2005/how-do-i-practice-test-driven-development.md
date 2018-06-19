@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30894472"
 ---
 <a name="how-do-i-practice-test-driven-development"></a><span data-ttu-id="f8b23-104">[어떻게 할까요?] 연습 테스트 기반 개발?</span><span class="sxs-lookup"><span data-stu-id="f8b23-104">[How Do I:] Practice Test-Driven Development?</span></span>
 ====================

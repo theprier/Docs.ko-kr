@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892623"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-a-database-update"></a><span data-ttu-id="84d11-103">Visual Studio를 사용 하 여 ASP.NET 웹 배포: 데이터베이스 업데이트를 배포 합니다.</span><span class="sxs-lookup"><span data-stu-id="84d11-103">ASP.NET Web Deployment using Visual Studio: Deploying a Database Update</span></span>
 ====================

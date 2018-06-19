@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872136"
 ---
 <a name="adding-animation-to-a-control-c"></a><span data-ttu-id="307fc-104">애니메이션 컨트롤을 추가 (C#)</span><span class="sxs-lookup"><span data-stu-id="307fc-104">Adding Animation to a Control (C#)</span></span>
 ====================

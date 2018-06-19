@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30894391"
 ---
 <a name="how-do-i-set-up-distributed-load-testing-for-high-volume-tests"></a><span data-ttu-id="30bce-104">[어떻게 할까요?] 고용량 테스트에 대 한 분산된 부하 테스트 설정</span><span class="sxs-lookup"><span data-stu-id="30bce-104">[How Do I:] Set Up Distributed Load Testing for High Volume Tests?</span></span>
 ====================

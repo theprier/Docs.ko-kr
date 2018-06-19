@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30898923"
 ---
 <a name="introducing-aspnet-web-pages---html-form-basics"></a><span data-ttu-id="8d53b-104">HTML 양식 기본 ASP.NET 웹 페이지-소개</span><span class="sxs-lookup"><span data-stu-id="8d53b-104">Introducing ASP.NET Web Pages - HTML Form Basics</span></span>
 ====================

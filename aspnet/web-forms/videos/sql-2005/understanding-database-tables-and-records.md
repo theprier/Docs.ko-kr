@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893617"
 ---
 <a name="understanding-database-tables-and-records"></a><span data-ttu-id="e5128-104">데이터베이스 테이블 이해 및 레코드</span><span class="sxs-lookup"><span data-stu-id="e5128-104">Understanding Database Tables and Records</span></span>
 ====================

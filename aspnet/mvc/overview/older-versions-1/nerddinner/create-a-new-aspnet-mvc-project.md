@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30869259"
 ---
 <a name="create-a-new-aspnet-mvc-project"></a><span data-ttu-id="4d66b-103">새 ASP.NET MVC 프로젝트 만들기</span><span class="sxs-lookup"><span data-stu-id="4d66b-103">Create a New ASP.NET MVC Project</span></span>
 ====================

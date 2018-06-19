@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30898408"
 ---
 <a name="running-different-versions-of-aspnet-web-pages-razor-side-by-side"></a><span data-ttu-id="17682-103">ASP.NET 웹 페이지 (Razor)의 서로 다른 버전을 Side-by-side 실행</span><span class="sxs-lookup"><span data-stu-id="17682-103">Running Different Versions of ASP.NET Web Pages (Razor) Side by Side</span></span>
 ====================

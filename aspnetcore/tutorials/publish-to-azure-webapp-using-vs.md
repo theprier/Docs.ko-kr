@@ -14,6 +14,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30897628"
 ---
 # <a name="publish-an-aspnet-core-app-to-azure-with-visual-studio"></a><span data-ttu-id="0be25-103">Visual Studio를 사용하여 Azure에 ASP.NET Core 앱 게시</span><span class="sxs-lookup"><span data-stu-id="0be25-103">Publish an ASP.NET Core app to Azure with Visual Studio</span></span>
 

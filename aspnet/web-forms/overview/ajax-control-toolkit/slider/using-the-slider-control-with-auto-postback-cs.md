@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879246"
 ---
 <a name="using-the-slider-control-with-auto-postback-c"></a><span data-ttu-id="3d0da-104">슬라이더 컨트롤을 사용 하 여 자동 포스트백 (C#)</span><span class="sxs-lookup"><span data-stu-id="3d0da-104">Using the Slider Control With Auto-Postback (C#)</span></span>
 ====================

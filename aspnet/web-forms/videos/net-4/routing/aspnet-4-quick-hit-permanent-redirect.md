@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30899751"
 ---
 <a name="aspnet-4-quick-hit---permanent-redirect"></a><span data-ttu-id="80612-103">ASP.NET 4 "빠른 Hit"-영구 리디렉션</span><span class="sxs-lookup"><span data-stu-id="80612-103">ASP.NET 4 "Quick Hit" - Permanent Redirect</span></span>
 ====================

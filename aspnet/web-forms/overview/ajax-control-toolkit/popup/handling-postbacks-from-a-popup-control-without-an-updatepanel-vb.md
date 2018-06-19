@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871365"
 ---
 <a name="handling-postbacks-from-a-popup-control-without-an-updatepanel-vb"></a><span data-ttu-id="d500f-104">UpdatePanel (VB) 없이 Popup 컨트롤에서 포스트백을 처리합니다.</span><span class="sxs-lookup"><span data-stu-id="d500f-104">Handling Postbacks from A Popup Control Without an UpdatePanel (VB)</span></span>
 ====================

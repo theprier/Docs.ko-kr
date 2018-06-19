@@ -15,6 +15,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30897806"
 ---
 # <a name="cloud-authentication-in-web-apis-with-azure-active-directory-b2c-in-aspnet-core"></a><span data-ttu-id="00d6b-104">웹 Api와 ASP.NET 코어의 Azure Active Directory B2C에에서 대 한 클라우드 인증</span><span class="sxs-lookup"><span data-stu-id="00d6b-104">Cloud authentication in web APIs with Azure Active Directory B2C in ASP.NET Core</span></span>
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30894898"
 ---
 <a name="how-do-i-publish-and-analyze-test-results"></a><span data-ttu-id="dcdcc-105">[어떻게 할까요?] 게시 및 테스트 결과 분석?</span><span class="sxs-lookup"><span data-stu-id="dcdcc-105">[How Do I:] Publish and Analyze Test Results?</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30899345"
 ---
 <a name="adding-social-networking-to-aspnet-web-pages-razor-sites"></a><span data-ttu-id="0d83c-104">소셜 네트워킹 ASP.NET 웹 페이지 (Razor) 사이트를 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="0d83c-104">Adding Social Networking to ASP.NET Web Pages (Razor) Sites</span></span>
 ====================

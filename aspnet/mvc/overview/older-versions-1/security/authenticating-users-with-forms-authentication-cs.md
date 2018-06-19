@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871261"
 ---
 <a name="authenticating-users-with-forms-authentication-c"></a><span data-ttu-id="d9aa7-104">폼 인증 (C#)는 사용자 인증</span><span class="sxs-lookup"><span data-stu-id="d9aa7-104">Authenticating Users with Forms Authentication (C#)</span></span>
 ====================

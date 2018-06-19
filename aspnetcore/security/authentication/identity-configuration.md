@@ -14,6 +14,7 @@ ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 05/12/2018
+ms.locfileid: "34094631"
 ---
 # <a name="configure-aspnet-core-identity"></a><span data-ttu-id="e2119-103">ASP.NET Core Id 구성</span><span class="sxs-lookup"><span data-stu-id="e2119-103">Configure ASP.NET Core Identity</span></span>
 

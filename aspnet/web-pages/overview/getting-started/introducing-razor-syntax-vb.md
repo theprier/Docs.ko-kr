@@ -17,6 +17,7 @@ ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31483486"
 ---
 <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-visual-basic"></a><span data-ttu-id="d57b2-103">Razor 구문 (Visual Basic)를 사용 하 여 ASP.NET 웹 프로그래밍 소개</span><span class="sxs-lookup"><span data-stu-id="d57b2-103">Introduction to ASP.NET Web Programming Using the Razor Syntax (Visual Basic)</span></span>
 ====================

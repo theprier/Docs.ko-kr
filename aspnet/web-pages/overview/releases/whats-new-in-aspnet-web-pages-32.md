@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30896396"
 ---
 <a name="whats-new-in-aspnet-web-pages-32"></a><span data-ttu-id="0e02f-102">ASP.NET 웹 페이지 3.2의에서 새로운 기능</span><span class="sxs-lookup"><span data-stu-id="0e02f-102">What's New in ASP.NET Web Pages 3.2</span></span>
 ====================

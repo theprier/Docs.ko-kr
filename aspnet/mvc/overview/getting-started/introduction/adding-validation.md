@@ -17,6 +17,7 @@ ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "33966561"
 ---
 <a name="adding-validation"></a><span data-ttu-id="4cd40-102">유효성 검사 추가</span><span class="sxs-lookup"><span data-stu-id="4cd40-102">Adding Validation</span></span>
 ====================

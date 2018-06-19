@@ -17,6 +17,7 @@ ms.sourcegitcommit: 5ab5c5f4bfdb0150f42ba84c2770eadf540cae48
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/28/2018
+ms.locfileid: "30257680"
 ---
 <a name="getting-started-with-owin-and-katana"></a><span data-ttu-id="9f2b1-102">OWIN 및 Katana 시작</span><span class="sxs-lookup"><span data-stu-id="9f2b1-102">Getting Started with OWIN and Katana</span></span>
 ====================

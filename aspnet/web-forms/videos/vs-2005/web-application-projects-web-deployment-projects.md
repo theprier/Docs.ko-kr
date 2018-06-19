@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30894082"
 ---
 <a name="web-application-projects--web-deployment-projects"></a><span data-ttu-id="1f741-103">웹 응용 프로그램 프로젝트 및 웹 배포 프로젝트</span><span class="sxs-lookup"><span data-stu-id="1f741-103">Web Application Projects & Web Deployment Projects</span></span>
 ====================

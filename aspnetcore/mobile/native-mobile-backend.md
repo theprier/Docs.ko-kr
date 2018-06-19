@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30073180"
 ---
 # <a name="create-backend-services-for-native-mobile-apps-with-aspnet-core"></a><span data-ttu-id="00c13-103">ASP.NET Core를 사용하여 네이티브 모바일 앱용 백 엔드 서비스 만들기</span><span class="sxs-lookup"><span data-stu-id="00c13-103">Create backend services for native mobile apps with ASP.NET Core</span></span>
 
