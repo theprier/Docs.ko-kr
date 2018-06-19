@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30891245"
 ---
 <a name="using-page-inspector-in-visual-studio-2012"></a><span data-ttu-id="7007b-104">페이지 검사기를 사용 하 여 Visual Studio 2012에서</span><span class="sxs-lookup"><span data-stu-id="7007b-104">Using Page Inspector in Visual Studio 2012</span></span>
 ====================

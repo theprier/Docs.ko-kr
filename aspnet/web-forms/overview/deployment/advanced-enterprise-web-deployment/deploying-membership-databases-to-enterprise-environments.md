@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892480"
 ---
 <a name="deploying-membership-databases-to-enterprise-environments"></a><span data-ttu-id="c17c8-103">멤버 자격 데이터베이스 엔터프라이즈 환경에 배포</span><span class="sxs-lookup"><span data-stu-id="c17c8-103">Deploying Membership Databases to Enterprise Environments</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892272"
 ---
 <a name="how-do-i-get-started-with-the-aspnet-ajax-control-toolkit"></a><span data-ttu-id="71506-105">[어떻게 할까요?] ASP.NET AJAX 컨트롤 도구 키트에 함께 시작 하나요?</span><span class="sxs-lookup"><span data-stu-id="71506-105">[How Do I:] Get Started with the ASP.NET AJAX Control Toolkit?</span></span>
 ====================

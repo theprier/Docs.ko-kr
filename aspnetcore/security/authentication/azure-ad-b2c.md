@@ -1,7 +1,7 @@
 ---
-title: "클라우드 인증을 ASP.NET 코어의 Azure Active Directory B2C"
+title: 클라우드 인증을 ASP.NET 코어의 Azure Active Directory B2C
 author: camsoper
-description: "ASP.NET Core와 Azure Active Directory B2C 인증을 설정 하는 방법을 알아봅니다."
+description: ASP.NET Core와 Azure Active Directory B2C 인증을 설정 하는 방법을 알아봅니다.
 manager: wpickett
 ms.date: 01/25/2018
 ms.topic: tutorial
@@ -14,6 +14,7 @@ ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/15/2018
+ms.locfileid: "29905077"
 ---
 # <a name="cloud-authentication-with-azure-active-directory-b2c-in-aspnet-core"></a><span data-ttu-id="71427-103">클라우드 인증을 ASP.NET 코어의 Azure Active Directory B2C</span><span class="sxs-lookup"><span data-stu-id="71427-103">Cloud authentication with Azure Active Directory B2C in ASP.NET Core</span></span>
 

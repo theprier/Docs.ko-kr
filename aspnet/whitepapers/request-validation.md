@@ -1,14 +1,14 @@
 ---
 uid: whitepapers/request-validation
-title: "요청 유효성 검사-스크립트 공격 방지 | Microsoft Docs"
+title: 요청 유효성 검사-스크립트 공격 방지 | Microsoft Docs
 author: rick-anderson
-description: "이 문서에서는의 where, 기본적으로 응용 프로그램 수 없거나 인코딩되지 않은 HTML 콘텐츠 submitt 처리 되지 않도록 하는 ASP.NET 요청 유효성 검사 기능을 설명..."
+description: 이 문서에서는의 where, 기본적으로 응용 프로그램 수 없거나 인코딩되지 않은 HTML 콘텐츠 submitt 처리 되지 않도록 하는 ASP.NET 요청 유효성 검사 기능을 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2010
 ms.topic: article
 ms.assetid: fa429113-5f8f-4ef4-97c5-5c04900a19fa
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/request-validation
 msc.type: content
@@ -17,6 +17,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28883557"
 ---
 <a name="request-validation---preventing-script-attacks"></a><span data-ttu-id="4f292-103">요청 유효성 검사-스크립트 공격 방지</span><span class="sxs-lookup"><span data-stu-id="4f292-103">Request Validation - Preventing Script Attacks</span></span>
 ====================

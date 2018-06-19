@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-utilize-the-css-friendly-control-adapters
-title: "[어떻게 할까요?] CSS 친숙 한 컨트롤 어댑터 활용 | Microsoft 문서"
+title: '[어떻게 할까요?] CSS 친숙 한 컨트롤 어댑터 활용 | Microsoft 문서'
 author: rick-anderson
-description: "CSS 친숙 한 컨트롤 어댑터 표준 ASP.NET 2.0 서버 컨트롤에서 렌더링 되는 HTML을 변경할 수 있습니다. 이 비디오에서는 설명 하는 알려주셔서 감사..."
+description: CSS 친숙 한 컨트롤 어댑터 표준 ASP.NET 2.0 서버 컨트롤에서 렌더링 되는 HTML을 변경할 수 있습니다. 이 비디오에서는 설명 하는 알려주셔서 감사...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/01/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 02/05/2018
+ms.locfileid: "28988083"
 ---
 <a name="how-do-i-utilize-the-css-friendly-control-adapters"></a><span data-ttu-id="ee849-105">[어떻게 할까요?] CSS 친숙 한 컨트롤 어댑터 활용</span><span class="sxs-lookup"><span data-stu-id="ee849-105">[How Do I:] Utilize the CSS Friendly Control Adapters?</span></span>
 ====================

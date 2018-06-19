@@ -1,8 +1,8 @@
 ---
 uid: mvc/overview/older-versions/hands-on-labs/index
-title: "ASP.NET MVC 4 실습 교육 | Microsoft Docs"
+title: ASP.NET MVC 4 실습 교육 | Microsoft Docs
 author: rick-anderson
-description: "이러한 랩 자동으로 ASP.NET MVC와 함께 개발 하는 방법에 알아봅니다"
+description: 이러한 랩 자동으로 ASP.NET MVC와 함께 개발 하는 방법에 알아봅니다
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/18/2013
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/overview/older-versions/hands-on-labs
 msc.type: chapter
 ms.openlocfilehash: bfdab4cfd3945401213bcc0b6f282dd5ffbedc5d
 ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/02/2018
+ms.locfileid: "29727173"
 ---
 # <a name="aspnet-mvc-4-hands-on-labs"></a><span data-ttu-id="de6eb-103">ASP.NET MVC 4 실습 교육</span><span class="sxs-lookup"><span data-stu-id="de6eb-103">ASP.NET MVC 4 Hands On Labs</span></span>
 

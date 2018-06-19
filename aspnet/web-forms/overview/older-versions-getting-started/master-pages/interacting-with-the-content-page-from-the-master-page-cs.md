@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891089"
 ---
 <a name="interacting-with-the-content-page-from-the-master-page-c"></a><span data-ttu-id="f3bc4-103">마스터 페이지 (C#)에서 콘텐츠 페이지와 상호 작용</span><span class="sxs-lookup"><span data-stu-id="f3bc4-103">Interacting with the Content Page from the Master Page (C#)</span></span>
 ====================

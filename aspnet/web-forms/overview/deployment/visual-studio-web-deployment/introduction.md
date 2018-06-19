@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890686"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-introduction"></a><span data-ttu-id="0e509-103">Visual Studio를 사용 하 여 ASP.NET 웹 배포: 소개</span><span class="sxs-lookup"><span data-stu-id="0e509-103">ASP.NET Web Deployment using Visual Studio: Introduction</span></span>
 ====================

@@ -1,14 +1,14 @@
 ---
 uid: whitepapers/what-is-new-in-aspnet-mvc
-title: "ASP.NET MVC 2의에서 새로운 기능 | Microsoft Docs"
+title: ASP.NET MVC 2의에서 새로운 기능 | Microsoft Docs
 author: rick-anderson
-description: "이 문서에서는 새로운 기능과 향상 된 ASP.NET MVC 2에서 도입 된에 대해 설명 합니다. 이 문서를 다운로드할 수 이기도합니다."
+description: 이 문서에서는 새로운 기능과 향상 된 ASP.NET MVC 2에서 도입 된에 대해 설명 합니다. 이 문서를 다운로드할 수 이기도합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/20/2010
 ms.topic: article
 ms.assetid: 69a8d6f8-4b10-4602-8822-2d6c05fc432b
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/what-is-new-in-aspnet-mvc
 msc.type: content
@@ -17,6 +17,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28885234"
 ---
 <a name="whats-new-in-aspnet-mvc-2"></a><span data-ttu-id="d5aa6-104">ASP.NET MVC 2의에서 새로운 기능</span><span class="sxs-lookup"><span data-stu-id="d5aa6-104">What's New in ASP.NET MVC 2</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891232"
 ---
 <a name="an-overview-of-inserting-updating-and-deleting-data-c"></a><span data-ttu-id="628e3-103">삽입, 업데이트 및 삭제 (C#)의 개요</span><span class="sxs-lookup"><span data-stu-id="628e3-103">An Overview of Inserting, Updating, and Deleting Data (C#)</span></span>
 ====================

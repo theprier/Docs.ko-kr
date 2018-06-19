@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30072996"
 ---
 # <a name="dependency-injection-in-requirement-handlers-in-aspnet-core"></a><span data-ttu-id="57778-103">ASP.NET Core의 요구 사항 처리기의 종속성 주입</span><span class="sxs-lookup"><span data-stu-id="57778-103">Dependency injection in requirement handlers in ASP.NET Core</span></span>
 

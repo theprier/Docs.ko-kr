@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892883"
 ---
 <a name="web-matrix-and-aspnet-web-pages-razor-beta-3-release-readme"></a><span data-ttu-id="bfa25-103">웹 매트릭스 및 ASP.NET 웹 페이지 (Razor) Beta 3 릴리스에 추가 정보</span><span class="sxs-lookup"><span data-stu-id="bfa25-103">Web Matrix and ASP.NET Web Pages (Razor) Beta 3 Release Readme</span></span>
 ====================

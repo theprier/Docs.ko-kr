@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893331"
 ---
 <a name="tailspin-spyworks---creating-and-using-the-popular-products-control"></a><span data-ttu-id="08806-103">Tailspin Spyworks-만들기 및 인기 있는 제품 컨트롤 사용</span><span class="sxs-lookup"><span data-stu-id="08806-103">Tailspin Spyworks - Creating and Using the Popular Products Control</span></span>
 ====================

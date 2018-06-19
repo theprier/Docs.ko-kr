@@ -15,6 +15,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30899410"
 ---
 # <a name="anchor-tag-helper-in-aspnet-core"></a><span data-ttu-id="e7c05-103">ASP.NET Core의 앵커 태그 도우미</span><span class="sxs-lookup"><span data-stu-id="e7c05-103">Anchor Tag Helper in ASP.NET Core</span></span>
 

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v4/use-open-types-in-odata-v4
-title: "ASP.NET web API OData v4에서 형식을 열 | Microsoft Docs"
+title: ASP.NET web API OData v4에서 형식을 열 | Microsoft Docs
 author: microsoft
-description: "OData v4, 개방형 형식이 형식 정의에 선언 된 모든 속성과 함께 동적 속성을 포함 하는 stuctured 형식 이지만 열기..."
+description: OData v4, 개방형 형식이 형식 정의에 선언 된 모든 속성과 함께 동적 속성을 포함 하는 stuctured 형식 이지만 열기...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/15/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 02/12/2018
+ms.locfileid: "29153274"
 ---
 <a name="open-types-in-odata-v4-with-aspnet-web-api"></a><span data-ttu-id="e289f-104">ASP.NET web API OData v4에서 형식을 열합니다</span><span class="sxs-lookup"><span data-stu-id="e289f-104">Open Types in OData v4 with ASP.NET Web API</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/security/authentication-filters
-title: "ASP.NET Web API 2의에서 인증 필터 | Microsoft Docs"
+title: ASP.NET Web API 2의에서 인증 필터 | Microsoft Docs
 author: MikeWasson
-description: "인증 필터는 HTTP 요청을 인증 하는 구성 요소입니다. 인증 필터를 둘 다 지원 web API 2 및 MVC 5 하지만 약간 다른..."
+description: 인증 필터는 HTTP 요청을 인증 하는 구성 요소입니다. 인증 필터를 둘 다 지원 web API 2 및 MVC 5 하지만 약간 다른...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/25/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 02/12/2018
+ms.locfileid: "29153520"
 ---
 <a name="authentication-filters-in-aspnet-web-api-2"></a><span data-ttu-id="354ad-104">ASP.NET Web API 2의에서 인증 필터</span><span class="sxs-lookup"><span data-stu-id="354ad-104">Authentication Filters in ASP.NET Web API 2</span></span>
 ====================

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30072641"
 ---
 # <a name="subkey-derivation-and-authenticated-encryption-in-aspnet-core"></a><span data-ttu-id="089de-103">하위 키 파생 및 ASP.NET 코어에서 인증 된 암호화</span><span class="sxs-lookup"><span data-stu-id="089de-103">Subkey derivation and authenticated encryption in ASP.NET Core</span></span>
 

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30073525"
 ---
 # <a name="less-sass-and-font-awesome-in-aspnet-core"></a><span data-ttu-id="a6fd7-103">작은 Sass, 및 ASP.NET 코어의 놀라운 글꼴</span><span class="sxs-lookup"><span data-stu-id="a6fd7-103">Less, Sass, and Font Awesome in ASP.NET Core</span></span>
 

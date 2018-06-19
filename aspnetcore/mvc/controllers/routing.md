@@ -14,6 +14,7 @@ ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/15/2018
+ms.locfileid: "29905207"
 ---
 # <a name="routing-to-controller-actions-in-aspnet-core"></a><span data-ttu-id="7f91d-103">ASP.NET Core의 컨트롤러 작업에 라우팅</span><span class="sxs-lookup"><span data-stu-id="7f91d-103">Routing to controller actions in ASP.NET Core</span></span>
 

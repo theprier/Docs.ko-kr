@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-cascading-style-sheets-for-web-page-layout
-title: "[어떻게 할까요?] 스타일 시트를 사용 하 여 웹 페이지 레이아웃에 대 한? | Microsoft 문서"
+title: '[어떻게 할까요?] 스타일 시트를 사용 하 여 웹 페이지 레이아웃에 대 한? | Microsoft 문서'
 author: rick-anderson
-description: "이 비디오를 사용 하는 방법을 알아봅니다 &amp;lt; div&amp;gt; css 스타일 시트 ()를 만드는 강력 하 고 더 높은 성능 웹 p와 조합 하는 요소 중..."
+description: 이 비디오를 사용 하는 방법을 알아봅니다 &amp;lt; div&amp;gt; css 스타일 시트 ()를 만드는 강력 하 고 더 높은 성능 웹 p와 조합 하는 요소 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: d8aa1d314891e981460b5e5c912afb730adbb3ad
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 02/05/2018
+ms.locfileid: "28988005"
 ---
 <a name="how-do-i-use-cascading-style-sheets-for-web-page-layout"></a><span data-ttu-id="9e3e5-104">[어떻게 할까요?] 스타일 시트를 사용 하 여 웹 페이지 레이아웃에 대 한?</span><span class="sxs-lookup"><span data-stu-id="9e3e5-104">[How Do I:] Use Cascading Style Sheets for Web Page Layout?</span></span>
 ====================

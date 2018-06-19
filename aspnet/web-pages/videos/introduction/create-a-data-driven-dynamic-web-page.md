@@ -1,8 +1,8 @@
 ---
 uid: web-pages/videos/introduction/create-a-data-driven-dynamic-web-page
-title: "데이터 기반 동적 웹 페이지 만들기 | Microsoft Docs"
+title: 데이터 기반 동적 웹 페이지 만들기 | Microsoft Docs
 author: rick-anderson
-description: "5 부분은 데이터에 대 한 모든 웹 페이지에서 데이터베이스를 사용 하 고 동적인 확인 하는 방법을 알아봅니다."
+description: 5 부분은 데이터에 대 한 모든 웹 페이지에서 데이터베이스를 사용 하 고 동적인 확인 하는 방법을 알아봅니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/12/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28882518"
 ---
 <a name="create-a-data-driven-dynamic-web-page"></a><span data-ttu-id="03845-103">데이터 기반 동적 웹 페이지 만들기</span><span class="sxs-lookup"><span data-stu-id="03845-103">Create a Data-Driven Dynamic Web Page</span></span>
 ====================

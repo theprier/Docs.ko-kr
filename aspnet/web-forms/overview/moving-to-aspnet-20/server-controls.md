@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/moving-to-aspnet-20/server-controls
-title: "서버 컨트롤 | Microsoft Docs"
+title: 서버 컨트롤 | Microsoft Docs
 author: microsoft
-description: "ASP.NET 2.0에는 여러 가지 방법으로 서버 컨트롤을 향상 시킵니다. 이 단원에서는 ASP.NET 2.0 방법 및 Visual Studio 200에 대 한 아키텍처 변경 사항 중 일부 설명 합니다..."
+description: ASP.NET 2.0에는 여러 가지 방법으로 서버 컨트롤을 향상 시킵니다. 이 단원에서는 ASP.NET 2.0 방법 및 Visual Studio 200에 대 한 아키텍처 변경 사항 중 일부 설명 합니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2005
@@ -17,6 +17,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28885195"
 ---
 <a name="server-controls"></a><span data-ttu-id="daf91-104">서버 컨트롤</span><span class="sxs-lookup"><span data-stu-id="daf91-104">Server Controls</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891219"
 ---
 <a name="showing-multiple-records-per-row-with-the-datalist-control-c"></a><span data-ttu-id="445c4-103">DataList 컨트롤 (C#)와 행당 여러 레코드를 표시합니다.</span><span class="sxs-lookup"><span data-stu-id="445c4-103">Showing Multiple Records per Row with the DataList Control (C#)</span></span>
 ====================

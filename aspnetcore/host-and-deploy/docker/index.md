@@ -15,6 +15,7 @@ ms.sourcegitcommit: d45d766504c2c5aad2453f01f089bc6b696b5576
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/30/2018
+ms.locfileid: "30280097"
 ---
 # <a name="host-aspnet-core-in-docker-containers"></a><span data-ttu-id="7a803-103">Docker 컨테이너에서 ASP.NET Core 호스트</span><span class="sxs-lookup"><span data-stu-id="7a803-103">Host ASP.NET Core in Docker containers</span></span>
 

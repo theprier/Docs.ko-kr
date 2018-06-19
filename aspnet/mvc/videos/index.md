@@ -1,8 +1,8 @@
 ---
 uid: mvc/videos/index
-title: "비디오 | Microsoft Docs"
+title: 비디오 | Microsoft Docs
 author: rick-anderson
-description: 
+description: ''
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/24/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /mvc/videos
 msc.type: book
 ms.openlocfilehash: 03e8129816a2fb8b9261618207b0e1795fb7cf23
 ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 02/12/2018
+ms.locfileid: "29152965"
 ---
 <a name="videos"></a><span data-ttu-id="0fe04-102">비디오</span><span class="sxs-lookup"><span data-stu-id="0fe04-102">Videos</span></span>
 ====================

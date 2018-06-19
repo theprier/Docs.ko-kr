@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30077351"
 ---
 # <a name="key-storage-providers-in-aspnet-core"></a><span data-ttu-id="7fe68-103">ASP.NET Core의 키 저장소 공급자</span><span class="sxs-lookup"><span data-stu-id="7fe68-103">Key storage providers in ASP.NET Core</span></span>
 

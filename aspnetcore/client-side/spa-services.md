@@ -15,6 +15,7 @@ ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31483554"
 ---
 # <a name="use-javascriptservices-to-create-single-page-applications-in-aspnet-core"></a><span data-ttu-id="ce253-103">JavaScriptServices를 사용 하 여 ASP.NET 코어의 단일 페이지 응용 프로그램을 만들려면</span><span class="sxs-lookup"><span data-stu-id="ce253-103">Use JavaScriptServices to Create Single Page Applications in ASP.NET Core</span></span>
 

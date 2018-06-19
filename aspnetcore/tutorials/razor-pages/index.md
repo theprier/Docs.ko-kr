@@ -15,6 +15,7 @@ ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31483130"
 ---
 # <a name="create-a-razor-pages-web-app-with-aspnet-core"></a><span data-ttu-id="80503-103">ASP.NET Core를 사용하여 Razor 페이지 웹앱 만들기</span><span class="sxs-lookup"><span data-stu-id="80503-103">Create a Razor Pages web app with ASP.NET Core</span></span>
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890244"
 ---
 <a name="ui-and-navigation"></a><span data-ttu-id="16042-103">UI 및 탐색</span><span class="sxs-lookup"><span data-stu-id="16042-103">UI and Navigation</span></span>
 ====================

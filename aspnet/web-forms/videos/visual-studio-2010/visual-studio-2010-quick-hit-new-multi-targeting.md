@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30895387"
 ---
 <a name="visual-studio-2010-quick-hit---new-multi-targeting"></a><span data-ttu-id="82e8d-103">새 다중 대상 지정 visual Studio 2010 "빠른 Hit"-</span><span class="sxs-lookup"><span data-stu-id="82e8d-103">Visual Studio 2010 "Quick Hit" - New Multi-Targeting</span></span>
 ====================

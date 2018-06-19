@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/moving-to-aspnet-20/membership
-title: "멤버 자격 | Microsoft Docs"
+title: 멤버 자격 | Microsoft Docs
 author: microsoft
-description: "ASP.NET에서 폼 인증 모델의 성공 여부에 ASP.NET 멤버 자격을 빌드합니다 1.x 합니다. ASP.NET 폼 인증 incorp 하는 편리한 방법을 제공..."
+description: ASP.NET에서 폼 인증 모델의 성공 여부에 ASP.NET 멤버 자격을 빌드합니다 1.x 합니다. ASP.NET 폼 인증 incorp 하는 편리한 방법을 제공...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2005
@@ -17,6 +17,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28885582"
 ---
 <a name="membership"></a><span data-ttu-id="7117d-104">멤버 자격</span><span class="sxs-lookup"><span data-stu-id="7117d-104">Membership</span></span>
 ====================

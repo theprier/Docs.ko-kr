@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891271"
 ---
 <a name="creating-a-site-wide-layout-using-master-pages-c"></a><span data-ttu-id="f1ae1-104">마스터 페이지 (C#)를 사용 하는 사이트 전체 레이아웃 만들기</span><span class="sxs-lookup"><span data-stu-id="f1ae1-104">Creating a Site-Wide Layout Using Master Pages (C#)</span></span>
 ====================

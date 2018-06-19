@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893524"
 ---
 <a name="how-do-i-run-unit-tests-against-a-deployed-database"></a><span data-ttu-id="3f3c1-104">[어떻게 할까요?] 배포 된 데이터베이스에 대해 단위 테스트를 실행?</span><span class="sxs-lookup"><span data-stu-id="3f3c1-104">[How Do I:] Run Unit Tests against a Deployed Database?</span></span>
 ====================

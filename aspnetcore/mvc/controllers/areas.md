@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30072723"
 ---
 # <a name="areas-in-aspnet-core"></a><span data-ttu-id="d28bd-103">ASP.NET Core의 영역</span><span class="sxs-lookup"><span data-stu-id="d28bd-103">Areas in ASP.NET Core</span></span>
 

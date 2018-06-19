@@ -14,6 +14,7 @@ ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 05/14/2018
+ms.locfileid: "34153588"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---crud---2-of-10"></a><span data-ttu-id="2f986-102">ASP.NET Core MVC 및 EF Core - CRUD - 2/10</span><span class="sxs-lookup"><span data-stu-id="2f986-102">ASP.NET Core MVC with EF Core - CRUD - 2 of 10</span></span>
 

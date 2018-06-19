@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892084"
 ---
 <a name="using-the-entity-framework-40-and-the-objectdatasource-control-part-1-getting-started"></a><span data-ttu-id="56724-104">1 부 Entity Framework 4.0 및 ObjectDataSource 컨트롤을 사용 하 여,: 시작 하기</span><span class="sxs-lookup"><span data-stu-id="56724-104">Using the Entity Framework 4.0 and the ObjectDataSource Control, Part 1: Getting Started</span></span>
 ====================

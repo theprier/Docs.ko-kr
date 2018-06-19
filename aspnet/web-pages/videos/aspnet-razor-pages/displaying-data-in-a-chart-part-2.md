@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30895854"
 ---
 <a name="displaying-data-in-a-chart-part-2"></a><span data-ttu-id="28010-103">(2 부) 차트에 데이터를 표시합니다.</span><span class="sxs-lookup"><span data-stu-id="28010-103">Displaying Data in a Chart (Part 2)</span></span>
 ====================

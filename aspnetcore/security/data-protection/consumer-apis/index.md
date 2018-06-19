@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30076414"
 ---
 # <a name="consumer-apis-for-aspnet-core"></a><span data-ttu-id="62d3e-103">ASP.NET Core에 대한 소비자 API</span><span class="sxs-lookup"><span data-stu-id="62d3e-103">Consumer APIs for ASP.NET Core</span></span>
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890504"
 ---
 <a name="choosing-the-right-approach-to-web-deployment"></a><span data-ttu-id="e3493-103">웹 배포에 적합 한 접근 방식을 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="e3493-103">Choosing the Right Approach to Web Deployment</span></span>
 ====================

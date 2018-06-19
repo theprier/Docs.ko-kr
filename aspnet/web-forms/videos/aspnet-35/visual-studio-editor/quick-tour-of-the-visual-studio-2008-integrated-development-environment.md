@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30892610"
 ---
 <a name="quick-tour-of-the-visual-studio-2008-integrated-development-environment"></a><span data-ttu-id="f06ce-104">Visual Studio 2008 통합된 개발 환경의 둘러보기</span><span class="sxs-lookup"><span data-stu-id="f06ce-104">Quick Tour of the Visual Studio 2008 Integrated Development Environment</span></span>
 ====================

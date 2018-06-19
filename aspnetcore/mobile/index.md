@@ -1,7 +1,7 @@
 ---
-title: "ASP.NET Core를 사용한 모바일 개발"
+title: ASP.NET Core를 사용한 모바일 개발
 author: rick-anderson
-description: "ASP.NET Core을 사용한 모바일 개발에 관련된 항목에 대해 알아봅니다."
+description: ASP.NET Core을 사용한 모바일 개발에 관련된 항목에 대해 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
@@ -14,6 +14,7 @@ ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/15/2018
+ms.locfileid: "29902281"
 ---
 # <a name="mobile-development-with-aspnet-core"></a><span data-ttu-id="bd3b1-103">ASP.NET Core를 사용한 모바일 개발</span><span class="sxs-lookup"><span data-stu-id="bd3b1-103">Mobile development with ASP.NET Core</span></span>
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891297"
 ---
 <a name="the-aspnet-20-page-model"></a><span data-ttu-id="6ae00-104">ASP.NET 2.0 페이지 모델</span><span class="sxs-lookup"><span data-stu-id="6ae00-104">The ASP.NET 2.0 Page Model</span></span>
 ====================
@@ -129,7 +130,7 @@ ms.lasthandoff: 04/06/2018
 
 [!code-aspx[Main](the-asp-net-2-0-page-model/samples/sample4.aspx)]
 
-<span data-ttu-id="6ae00-198">**SomeText** 를 기본 클래스에서 SomeText 속성의 초기 값을 설정 하는 @ Page 지시문 특성 *Hello!*합니다.</span><span class="sxs-lookup"><span data-stu-id="6ae00-198">The **SomeText** attribute of the @ Page directive sets the initial value of the SomeText property in the base class to *Hello!*.</span></span> <span data-ttu-id="6ae00-199">아래 동영상은 @ Page 지시문을 사용 하 여 기본 클래스의 공용 속성의 초기 값을 설정할 때의 연습 과정입니다.</span><span class="sxs-lookup"><span data-stu-id="6ae00-199">The video below is a walkthrough of setting the initial value of a public property in a base class using the @ Page directive.</span></span>
+<span data-ttu-id="6ae00-198">**SomeText** 를 기본 클래스에서 SomeText 속성의 초기 값을 설정 하는 @ Page 지시문 특성 *Hello!* 합니다.</span><span class="sxs-lookup"><span data-stu-id="6ae00-198">The **SomeText** attribute of the @ Page directive sets the initial value of the SomeText property in the base class to *Hello!*.</span></span> <span data-ttu-id="6ae00-199">아래 동영상은 @ Page 지시문을 사용 하 여 기본 클래스의 공용 속성의 초기 값을 설정할 때의 연습 과정입니다.</span><span class="sxs-lookup"><span data-stu-id="6ae00-199">The video below is a walkthrough of setting the initial value of a public property in a base class using the @ Page directive.</span></span>
 
 
 ![](the-asp-net-2-0-page-model/_static/image1.png)

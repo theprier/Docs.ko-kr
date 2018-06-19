@@ -17,6 +17,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30071332"
 ---
 <a name="jquery-mobile-145-on-the-microsoft-ajax-cdn"></a><span data-ttu-id="58e43-102">jQuery Mobile 1.4.5 Microsoft Ajax CDN에서</span><span class="sxs-lookup"><span data-stu-id="58e43-102">jQuery Mobile 1.4.5 on the Microsoft Ajax CDN</span></span>
 ====================

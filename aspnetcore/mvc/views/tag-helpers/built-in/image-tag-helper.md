@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30072264"
 ---
 # <a name="image-tag-helper-in-aspnet-core"></a><span data-ttu-id="6eb34-103">ASP.NET Core의 이미지 태그 도우미</span><span class="sxs-lookup"><span data-stu-id="6eb34-103">Image Tag Helper in ASP.NET Core</span></span>
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890270"
 ---
 <a name="specifying-the-master-page-programmatically-vb"></a><span data-ttu-id="2312b-103">마스터 페이지를 프로그래밍 방식으로 지정 (VB)</span><span class="sxs-lookup"><span data-stu-id="2312b-103">Specifying the Master Page Programmatically (VB)</span></span>
 ====================

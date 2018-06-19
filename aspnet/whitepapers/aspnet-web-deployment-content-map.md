@@ -1,14 +1,14 @@
 ---
 uid: whitepapers/aspnet-web-deployment-content-map
-title: "ASP.NET 웹 배포-권장 리소스 | Microsoft Docs"
+title: ASP.NET 웹 배포-권장 리소스 | Microsoft Docs
 author: rick-anderson
-description: "이 항목에서는 설명서의 링크를 배포 하는 방법에 대 한 리소스 (게시) ASP.NET 웹 비주얼 웹 De Visual Studio 2010을 사용 하 여 IIS에 응용 프로그램..."
+description: 이 항목에서는 설명서의 링크를 배포 하는 방법에 대 한 리소스 (게시) ASP.NET 웹 비주얼 웹 De Visual Studio 2010을 사용 하 여 IIS에 응용 프로그램...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/14/2014
 ms.topic: article
 ms.assetid: 58b583cd-c4ab-47a3-8527-8c92c298c91f
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/aspnet-web-deployment-content-map
 msc.type: content
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28048170"
 ---
 <a name="aspnet-web-deployment---recommended-resources"></a><span data-ttu-id="f6816-103">ASP.NET 웹 배포-권장 리소스</span><span class="sxs-lookup"><span data-stu-id="f6816-103">ASP.NET Web Deployment - Recommended Resources</span></span>
 ====================

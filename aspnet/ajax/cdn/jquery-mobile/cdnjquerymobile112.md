@@ -17,6 +17,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30071319"
 ---
 <a name="jquery-mobile-112-on-the-microsoft-ajax-cdn"></a><span data-ttu-id="b4e1f-102">jQuery Mobile 1.1.2 Microsoft Ajax CDN에서</span><span class="sxs-lookup"><span data-stu-id="b4e1f-102">jQuery Mobile 1.1.2 on the Microsoft Ajax CDN</span></span>
 ====================

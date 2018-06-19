@@ -1,14 +1,14 @@
 ---
 uid: whitepapers/aspnet-data-access-content-map
-title: "ASP.NET 데이터 액세스-권장 리소스 | Microsoft Docs"
+title: ASP.NET 데이터 액세스-권장 리소스 | Microsoft Docs
 author: rick-anderson
-description: "이 항목에서는 Entity Framework 및 SQL Se를 사용 하 여 기본적으로 ASP.NET 웹 응용 프로그램의 데이터에 액세스 하는 방법에 대 한 설명서 리소스에 대 한 링크를 제공..."
+description: 이 항목에서는 Entity Framework 및 SQL Se를 사용 하 여 기본적으로 ASP.NET 웹 응용 프로그램의 데이터에 액세스 하는 방법에 대 한 설명서 리소스에 대 한 링크를 제공...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/25/2013
 ms.topic: article
 ms.assetid: f8157be1-4ab9-469e-ad3a-0ccc80b56c00
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/aspnet-data-access-content-map
 msc.type: content
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28048261"
 ---
 <a name="aspnet-data-access---recommended-resources"></a><span data-ttu-id="7c29e-103">ASP.NET 데이터 액세스-권장 리소스</span><span class="sxs-lookup"><span data-stu-id="7c29e-103">ASP.NET Data Access - Recommended Resources</span></span>
 ====================

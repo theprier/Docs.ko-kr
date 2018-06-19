@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30078052"
 ---
 # <a name="purpose-hierarchy-and-multi-tenancy-in-aspnet-core"></a><span data-ttu-id="23b66-103">ASP.NET Core의 용도 계층 구조 및 다중 테넌트</span><span class="sxs-lookup"><span data-stu-id="23b66-103">Purpose hierarchy and multi-tenancy in ASP.NET Core</span></span>
 

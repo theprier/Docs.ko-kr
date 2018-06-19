@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891466"
 ---
 <a name="nested-master-pages-c"></a><span data-ttu-id="7aae5-103">중첩 된 마스터 페이지 (C#)</span><span class="sxs-lookup"><span data-stu-id="7aae5-103">Nested Master Pages (C#)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890179"
 ---
 <a name="processing-unhandled-exceptions-vb"></a><span data-ttu-id="b68b9-103">처리 되지 않은 예외 (VB)를 처리 합니다.</span><span class="sxs-lookup"><span data-stu-id="b68b9-103">Processing Unhandled Exceptions (VB)</span></span>
 ====================

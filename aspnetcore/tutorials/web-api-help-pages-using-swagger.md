@@ -15,6 +15,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30077338"
 ---
 # <a name="aspnet-core-web-api-help-pages-with-swagger--open-api"></a><span data-ttu-id="7819e-103">Swagger/Open API를 사용한 ASP.NET Core Web API 도움말 페이지</span><span class="sxs-lookup"><span data-stu-id="7819e-103">ASP.NET Core Web API help pages with Swagger / Open API</span></span>
 

@@ -17,6 +17,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30071631"
 ---
 <a name="http-cookies-in-aspnet-web-api"></a><span data-ttu-id="6dc6e-102">ASP.NET Web API의에서 HTTP 쿠키</span><span class="sxs-lookup"><span data-stu-id="6dc6e-102">HTTP Cookies in ASP.NET Web API</span></span>
 ====================

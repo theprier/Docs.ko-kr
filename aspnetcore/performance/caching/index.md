@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30070825"
 ---
 # <a name="cache-responses-in-aspnet-core"></a><span data-ttu-id="03246-103">ASP.NET Core에서 캐시 응답</span><span class="sxs-lookup"><span data-stu-id="03246-103">Cache responses in ASP.NET Core</span></span>
 

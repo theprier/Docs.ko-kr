@@ -14,6 +14,7 @@ ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/18/2018
+ms.locfileid: "31483084"
 ---
 # <a name="introduction-to-authorization-in-aspnet-core"></a><span data-ttu-id="7a46c-103">ASP.NET Core에서 권한 부여 소개</span><span class="sxs-lookup"><span data-stu-id="7a46c-103">Introduction to authorization in ASP.NET Core</span></span>
 

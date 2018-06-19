@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893279"
 ---
 <a name="using-the-load-test-agent"></a><span data-ttu-id="4672b-104">부하 테스트 에이전트를 사용 하 여</span><span class="sxs-lookup"><span data-stu-id="4672b-104">Using the Load Test Agent</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/testing-and-debugging/mocking-entity-framework-when-unit-testing-aspnet-web-api-2
-title: "Entity Framework를 모의 때 단위 테스트 ASP.NET Web API 2 | Microsoft Docs"
+title: Entity Framework를 모의 때 단위 테스트 ASP.NET Web API 2 | Microsoft Docs
 author: tfitzmac
-description: "이 지침과 응용 프로그램에는 Entity Framework를 사용 하는 Web API 2 응용 프로그램에 대 한 단위 테스트를 만드는 방법을 보여 줍니다. 수정 하는 방법을 보여 줍니다는 중..."
+description: 이 지침과 응용 프로그램에는 Entity Framework를 사용 하는 Web API 2 응용 프로그램에 대 한 단위 테스트를 만드는 방법을 보여 줍니다. 수정 하는 방법을 보여 줍니다는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 12/13/2013
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 02/12/2018
+ms.locfileid: "29152867"
 ---
 <a name="mocking-entity-framework-when-unit-testing-aspnet-web-api-2"></a><span data-ttu-id="82791-104">Entity Framework를 모의 때 단위 테스트 ASP.NET Web API 2</span><span class="sxs-lookup"><span data-stu-id="82791-104">Mocking Entity Framework when Unit Testing ASP.NET Web API 2</span></span>
 ====================

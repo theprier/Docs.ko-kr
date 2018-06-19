@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-cache-an-aspnet-page-based-upon-information-in-the-http-header
-title: "[어떻게 할까요?]  HTTP 헤더에 대 한 정보를 기반으로 한 ASP.NET 페이지 캐시 | Microsoft Docs"
+title: '[어떻게 할까요?]  HTTP 헤더에 대 한 정보를 기반으로 한 ASP.NET 페이지 캐시 | Microsoft Docs'
 author: rick-anderson
-description: "이 비디오 Chris Pels 페이지의 HTTP 헤더의 정보에 따라 ASP.NET 출력 캐시의 페이지를 유지 하는 방법을 보여 줍니다. 첫 번째, 잠재적인 HTTP hea 중..."
+description: 이 비디오 Chris Pels 페이지의 HTTP 헤더의 정보에 따라 ASP.NET 출력 캐시의 페이지를 유지 하는 방법을 보여 줍니다. 첫 번째, 잠재적인 HTTP hea 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/26/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/30/2018
+ms.locfileid: "28882219"
 ---
 <a name="how-do-i--cache-an-aspnet-page-based-upon-information-in-the-http-header"></a><span data-ttu-id="40784-104">[어떻게 할까요?]  HTTP 헤더에 대 한 정보를 기반으로 한 ASP.NET 페이지 캐시</span><span class="sxs-lookup"><span data-stu-id="40784-104">[How Do I:]  Cache an ASP.NET Page Based Upon Information in the HTTP Header</span></span>
 ====================

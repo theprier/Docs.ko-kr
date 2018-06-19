@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30890657"
 ---
 <a name="configuring-a-website-that-uses-application-services-c"></a><span data-ttu-id="de723-103">응용 프로그램 서비스 (C#)를 사용 하는 웹 사이트를 구성 합니다.</span><span class="sxs-lookup"><span data-stu-id="de723-103">Configuring a Website that Uses Application Services (C#)</span></span>
 ====================

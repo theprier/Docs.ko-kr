@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30072766"
 ---
 # <a name="miscellaneous-aspnet-core-data-protection-apis"></a><span data-ttu-id="9207d-103">기타 ASP.NET Core 데이터 보호 Api</span><span class="sxs-lookup"><span data-stu-id="9207d-103">Miscellaneous ASP.NET Core Data Protection APIs</span></span>
 
