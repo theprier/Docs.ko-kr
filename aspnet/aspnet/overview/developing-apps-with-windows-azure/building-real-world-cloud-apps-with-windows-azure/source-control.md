@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875697"
 ---
 <a name="source-control-building-real-world-cloud-apps-with-azure"></a><span data-ttu-id="8558d-104">소스 제어 (Azure로 응용 프로그램 빌딩 실제 클라우드)</span><span class="sxs-lookup"><span data-stu-id="8558d-104">Source Control (Building Real-World Cloud Apps with Azure)</span></span>
 ====================

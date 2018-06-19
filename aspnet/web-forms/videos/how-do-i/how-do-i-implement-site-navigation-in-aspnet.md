@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-implement-site-navigation-in-aspnet
-title: "[어떻게 할까요?] ASP.NET에서 사이트 탐색을 구현? | Microsoft 문서"
+title: '[어떻게 할까요?] ASP.NET에서 사이트 탐색을 구현? | Microsoft 문서'
 author: rick-anderson
-description: "이 비디오에서는 sitemap를 정의 하 고 메뉴, TreeView 및 Sitemap 서버 컨트롤과 함께 사용 하는 방법에 설명 합니다. 우리는 sitemap 마스터 페이지에서 사용 하는 방법을 참조 하십시오."
+description: 이 비디오에서는 sitemap를 정의 하 고 메뉴, TreeView 및 Sitemap 서버 컨트롤과 함께 사용 하는 방법에 설명 합니다. 우리는 sitemap 마스터 페이지에서 사용 하는 방법을 참조 하십시오.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/18/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525692"
 ---
 <a name="how-do-i-implement-site-navigation-in-aspnet"></a><span data-ttu-id="daaff-105">[어떻게 할까요?] ASP.NET에서 사이트 탐색을 구현?</span><span class="sxs-lookup"><span data-stu-id="daaff-105">[How Do I:] Implement Site Navigation in ASP.NET?</span></span>
 ====================

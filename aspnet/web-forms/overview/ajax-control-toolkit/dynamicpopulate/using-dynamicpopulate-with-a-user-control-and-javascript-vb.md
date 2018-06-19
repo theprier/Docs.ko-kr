@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873003"
 ---
 <a name="using-dynamicpopulate-with-a-user-control-and-javascript-vb"></a><span data-ttu-id="36a27-103">DynamicPopulate를 사용 하 여 사용자 정의 컨트롤 및 JavaScript (VB)</span><span class="sxs-lookup"><span data-stu-id="36a27-103">Using DynamicPopulate with a User Control And JavaScript (VB)</span></span>
 ====================

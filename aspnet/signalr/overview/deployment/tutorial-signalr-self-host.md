@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/deployment/tutorial-signalr-self-host
-title: "자습서: 자체 호스트 하 SignalR | Microsoft Docs"
+title: '자습서: 자체 호스트 하 SignalR | Microsoft Docs'
 author: pfletcher
-description: "이 자습서에는 자체 호스팅된 SignalR 2 서버를 만드는 방법과 JavaScript 클라이언트와 연결 하는 방법을 보여 줍니다. V 자습서에 사용 된 소프트웨어 버전 중..."
+description: 이 자습서에는 자체 호스팅된 SignalR 2 서버를 만드는 방법과 JavaScript 클라이언트와 연결 하는 방법을 보여 줍니다. V 자습서에 사용 된 소프트웨어 버전 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/10/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28036780"
 ---
 <a name="tutorial-signalr-self-host"></a><span data-ttu-id="d6623-104">자습서: SignalR 자체 호스트</span><span class="sxs-lookup"><span data-stu-id="d6623-104">Tutorial: SignalR Self-Host</span></span>
 ====================

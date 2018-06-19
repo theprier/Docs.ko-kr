@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30877985"
 ---
 <a name="using-sql-cache-dependencies-c"></a><span data-ttu-id="8e730-104">SQL 캐시 종속성 (C#)를 사용 하 여</span><span class="sxs-lookup"><span data-stu-id="8e730-104">Using SQL Cache Dependencies (C#)</span></span>
 ====================

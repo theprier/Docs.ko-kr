@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-send-email-asynchronously-with-aspnet
-title: "[어떻게 할까요?] ASP.NET 비동기적으로 전자 메일 보내기 | Microsoft Docs"
+title: '[어떻게 할까요?] ASP.NET 비동기적으로 전자 메일 보내기 | Microsoft Docs'
 author: rick-anderson
-description: "이 비디오에서는 Chris Pels 비동기 전자 메일 메시지를 보내도록 ASP.NET의 System.Net.Mail 클래스를 사용 하는 방법을 보여 줍니다. 첫째, 웹 si를 구성 하는 방법을 참조 하십시오."
+description: 이 비디오에서는 Chris Pels 비동기 전자 메일 메시지를 보내도록 ASP.NET의 System.Net.Mail 클래스를 사용 하는 방법을 보여 줍니다. 첫째, 웹 si를 구성 하는 방법을 참조 하십시오.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/24/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525872"
 ---
 <a name="how-do-i-send-email-asynchronously-with-aspnet"></a><span data-ttu-id="4d6d4-104">[어떻게 할까요?] ASP.NET 비동기적으로 전자 메일 보내기</span><span class="sxs-lookup"><span data-stu-id="4d6d4-104">[How Do I:] Send Email Asynchronously with ASP.NET</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871521"
 ---
 <a name="using-a-confirmbutton-in-a-repeater-c"></a><span data-ttu-id="a26ba-104">ConfirmButton 반복기 (C#)에서 사용 하 여</span><span class="sxs-lookup"><span data-stu-id="a26ba-104">Using a ConfirmButton In a Repeater (C#)</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/security/index
-title: "보안 | Microsoft Docs"
+title: 보안 | Microsoft Docs
 author: rick-anderson
-description: "ASP.NET 웹 페이지 응용 프로그램에 로그인 기능을 추가 하는 방법 및 bot에서 응용 프로그램을 보호 하는 방법입니다."
+description: ASP.NET 웹 페이지 응용 프로그램에 로그인 기능을 추가 하는 방법 및 bot에서 응용 프로그램을 보호 하는 방법입니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /web-pages/overview/security
 msc.type: chapter
 ms.openlocfilehash: 6b493fb9afaa894ec805ebd6684180c33a33b1b0
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26529532"
 ---
 <a name="security"></a><span data-ttu-id="a9562-103">보안</span><span class="sxs-lookup"><span data-stu-id="a9562-103">Security</span></span>
 ====================

@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/performance-and-traffic/index
-title: "성능 | Microsoft Docs"
+title: 성능 | Microsoft Docs
 author: rick-anderson
-description: "성능 향상을 위해 콘텐츠를 캐시 하는 방법 및 사이트 트래픽을 측정 하는 방법입니다."
+description: 성능 향상을 위해 콘텐츠를 캐시 하는 방법 및 사이트 트래픽을 측정 하는 방법입니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /web-pages/overview/performance-and-traffic
 msc.type: chapter
 ms.openlocfilehash: fffeb7c5b5a202a273bfd8b144ad1f63d5743087
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26528522"
 ---
 <a name="performance"></a><span data-ttu-id="2c4e1-103">성능</span><span class="sxs-lookup"><span data-stu-id="2c4e1-103">Performance</span></span>
 ====================

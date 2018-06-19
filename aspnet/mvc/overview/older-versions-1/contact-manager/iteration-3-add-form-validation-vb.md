@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870442"
 ---
 <a name="iteration-3--add-form-validation-vb"></a><span data-ttu-id="d19ed-105">반복 #3-추가 폼 유효성 검사 (VB)</span><span class="sxs-lookup"><span data-stu-id="d19ed-105">Iteration #3 – Add form validation (VB)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872925"
 ---
 <a name="adding-validation-to-the-model-vb"></a><span data-ttu-id="17f20-103">유효성 검사 (VB) 모델에 추가</span><span class="sxs-lookup"><span data-stu-id="17f20-103">Adding Validation to the Model (VB)</span></span>
 ====================

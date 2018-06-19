@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872327"
 ---
 <a name="creating-custom-routes-vb"></a><span data-ttu-id="acc6e-104">사용자 지정 경로 (VB) 만들기</span><span class="sxs-lookup"><span data-stu-id="acc6e-104">Creating Custom Routes (VB)</span></span>
 ====================

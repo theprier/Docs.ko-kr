@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28042224"
 ---
 <a name="working-with-groups-in-signalr"></a><span data-ttu-id="aeac2-103">SignalR에서 그룹 사용</span><span class="sxs-lookup"><span data-stu-id="aeac2-103">Working with Groups in SignalR</span></span>
 ====================

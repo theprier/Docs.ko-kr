@@ -1,14 +1,14 @@
 ---
 uid: single-page-application/overview/introduction/knockoutjs-template
-title: "단일 페이지 응용 프로그램: KnockoutJS 템플릿 | Microsoft Docs"
+title: '단일 페이지 응용 프로그램: KnockoutJS 템플릿 | Microsoft Docs'
 author: MikeWasson
-description: "Knockout 서식 파일"
+description: Knockout 서식 파일
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/30/2013
 ms.topic: article
 ms.assetid: f9c07af0-4b20-4b08-af8f-47fc3df169a2
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /single-page-application/overview/introduction/knockoutjs-template
 msc.type: authoredcontent
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/15/2018
+ms.locfileid: "28036897"
 ---
 <a name="single-page-application-knockoutjs-template"></a><span data-ttu-id="e7133-103">단일 페이지 응용 프로그램: KnockoutJS 서식 파일</span><span class="sxs-lookup"><span data-stu-id="e7133-103">Single Page Application: KnockoutJS template</span></span>
 ====================
@@ -46,7 +47,7 @@ ms.lasthandoff: 03/15/2018
 
 <span data-ttu-id="e7133-121">Visual Studio를 시작 하 고 선택 **새 프로젝트** 시작 페이지에서.</span><span class="sxs-lookup"><span data-stu-id="e7133-121">Start Visual Studio and select **New Project** from the Start page.</span></span> <span data-ttu-id="e7133-122">또는에서 **파일** 메뉴 선택 **새로** 차례로 **프로젝트**합니다.</span><span class="sxs-lookup"><span data-stu-id="e7133-122">Or, from the **File** menu, select **New** and then **Project**.</span></span>
 
-<span data-ttu-id="e7133-123">에 **템플릿** 창 선택 **설치 된 템플릿** 확장는 **Visual C#** 노드.</span><span class="sxs-lookup"><span data-stu-id="e7133-123">In the **Templates** pane, select **Installed Templates** and expand the **Visual C#** node.</span></span> <span data-ttu-id="e7133-124">아래 **Visual C#**선택, **웹**합니다.</span><span class="sxs-lookup"><span data-stu-id="e7133-124">Under **Visual C#**, select **Web**.</span></span> <span data-ttu-id="e7133-125">프로젝트 템플릿 목록에서 선택 **ASP.NET MVC 4 웹 응용 프로그램**합니다.</span><span class="sxs-lookup"><span data-stu-id="e7133-125">In the list of project templates, select **ASP.NET MVC 4 Web Application**.</span></span> <span data-ttu-id="e7133-126">프로젝트 이름을 지정 하 고 클릭 **확인**합니다.</span><span class="sxs-lookup"><span data-stu-id="e7133-126">Name the project and click **OK**.</span></span>
+<span data-ttu-id="e7133-123">에 **템플릿** 창 선택 **설치 된 템플릿** 확장는 **Visual C#** 노드.</span><span class="sxs-lookup"><span data-stu-id="e7133-123">In the **Templates** pane, select **Installed Templates** and expand the **Visual C#** node.</span></span> <span data-ttu-id="e7133-124">아래 **Visual C#** 선택, **웹**합니다.</span><span class="sxs-lookup"><span data-stu-id="e7133-124">Under **Visual C#**, select **Web**.</span></span> <span data-ttu-id="e7133-125">프로젝트 템플릿 목록에서 선택 **ASP.NET MVC 4 웹 응용 프로그램**합니다.</span><span class="sxs-lookup"><span data-stu-id="e7133-125">In the list of project templates, select **ASP.NET MVC 4 Web Application**.</span></span> <span data-ttu-id="e7133-126">프로젝트 이름을 지정 하 고 클릭 **확인**합니다.</span><span class="sxs-lookup"><span data-stu-id="e7133-126">Name the project and click **OK**.</span></span>
 
 ![](knockoutjs-template/_static/image2.png)
 

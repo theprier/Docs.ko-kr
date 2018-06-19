@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871410"
 ---
 <a name="executing-several-animations-after-each-other-c"></a><span data-ttu-id="83e26-104">여러 개의 애니메이션 다른 (C#) 한 후 실행</span><span class="sxs-lookup"><span data-stu-id="83e26-104">Executing Several Animations after Each Other (C#)</span></span>
 ====================

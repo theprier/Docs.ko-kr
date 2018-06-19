@@ -14,6 +14,7 @@ ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32740038"
 ---
 # <a name="role-based-authorization-in-aspnet-core"></a><span data-ttu-id="75a91-103">ASP.NET Core에서 역할 기반 권한 부여</span><span class="sxs-lookup"><span data-stu-id="75a91-103">Role-based authorization in ASP.NET Core</span></span>
 

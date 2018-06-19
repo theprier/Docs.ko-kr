@@ -1,8 +1,8 @@
 ---
 uid: web-api/videos/getting-started/authorization
-title: "ASP.NET Web API, 6 부: 권한 부여 | Microsoft Docs"
+title: 'ASP.NET Web API, 6 부: 권한 부여 | Microsoft Docs'
 author: jongalloway
-description: "참고:이 비디오에서 ASP.NET Web API의 시험판 버전 정보를 포함 합니다."
+description: 참고:이 비디오에서 ASP.NET Web API의 시험판 버전 정보를 포함 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26508972"
 ---
 <a name="aspnet-web-api-part-6-authorization"></a><span data-ttu-id="5d172-103">ASP.NET Web API, 6 부: 권한 부여</span><span class="sxs-lookup"><span data-stu-id="5d172-103">ASP.NET Web API, Part 6: Authorization</span></span>
 ====================

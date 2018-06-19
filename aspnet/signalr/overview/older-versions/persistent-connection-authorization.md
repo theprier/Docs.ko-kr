@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/persistent-connection-authorization
-title: "인증 및 권한 부여 SignalR 영구 연결 (SignalR 1.x) | Microsoft Docs"
+title: 인증 및 권한 부여 SignalR 영구 연결 (SignalR 1.x) | Microsoft Docs
 author: pfletcher
-description: "이 항목에는 영구 연결에서 권한 부여를 적용 하는 방법을 설명 합니다. SignalR 응용 프로그램에 보안을 통합 하는 방법에 대 한 일반적인 내용은..."
+description: 이 항목에는 영구 연결에서 권한 부여를 적용 하는 방법을 설명 합니다. SignalR 응용 프로그램에 보안을 통합 하는 방법에 대 한 일반적인 내용은...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/21/2013
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28036104"
 ---
 <a name="authentication-and-authorization-for-signalr-persistent-connections-signalr-1x"></a><span data-ttu-id="646a3-104">인증 및 권한 부여 SignalR 영구 연결 (SignalR 1.x)</span><span class="sxs-lookup"><span data-stu-id="646a3-104">Authentication and Authorization for SignalR Persistent Connections (SignalR 1.x)</span></span>
 ====================

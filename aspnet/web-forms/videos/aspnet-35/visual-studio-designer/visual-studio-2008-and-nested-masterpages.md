@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/aspnet-35/visual-studio-designer/visual-studio-2008-and-nested-masterpages
-title: "Visual Studio 2008 및 중첩 된 마스터 페이지 | Microsoft Docs"
+title: Visual Studio 2008 및 중첩 된 마스터 페이지 | Microsoft Docs
 author: JoeStagner
-description: "Visual Studio 2008에서 지원 되는 방식 및 마스터 페이지의 사용을 보여 주기 위해 oswd.org에서 웹 서식 파일을 사용 합니다. 특히, th 살펴보겠습니다..."
+description: Visual Studio 2008에서 지원 되는 방식 및 마스터 페이지의 사용을 보여 주기 위해 oswd.org에서 웹 서식 파일을 사용 합니다. 특히, th 살펴보겠습니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/15/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26520562"
 ---
 <a name="visual-studio-2008-and-nested-masterpages"></a><span data-ttu-id="78673-104">Visual Studio 2008 및 중첩 된 마스터 페이지</span><span class="sxs-lookup"><span data-stu-id="78673-104">Visual Studio 2008 and Nested Masterpages</span></span>
 ====================

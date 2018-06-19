@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871846"
 ---
 <a name="iteration-2--make-the-application-look-nice-c"></a><span data-ttu-id="c4ad2-103">반복 #2-확인는 응용 프로그램의 모양을 좋은 (C#)</span><span class="sxs-lookup"><span data-stu-id="c4ad2-103">Iteration #2 – Make the application look nice (C#)</span></span>
 ====================

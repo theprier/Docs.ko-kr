@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873669"
 ---
 <a name="more-patterns-and-guidance-building-real-world-cloud-apps-with-azure"></a><span data-ttu-id="e945a-104">더 많은 패턴 및 지침 (Azure로 응용 프로그램 빌딩 실제 클라우드)</span><span class="sxs-lookup"><span data-stu-id="e945a-104">More Patterns and Guidance (Building Real-World Cloud Apps with Azure)</span></span>
 ====================

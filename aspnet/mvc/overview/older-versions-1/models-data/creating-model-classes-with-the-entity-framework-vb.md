@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874449"
 ---
 <a name="creating-model-classes-with-the-entity-framework-vb"></a><span data-ttu-id="407e4-104">Entity Framework (VB)를 사용 하 여 모델 클래스 만들기</span><span class="sxs-lookup"><span data-stu-id="407e4-104">Creating Model Classes with the Entity Framework (VB)</span></span>
 ====================

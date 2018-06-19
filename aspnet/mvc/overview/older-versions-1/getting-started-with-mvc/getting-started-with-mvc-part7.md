@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871950"
 ---
 <a name="adding-validation-to-the-model"></a><span data-ttu-id="47006-104">모델에 유효성 검사 추가</span><span class="sxs-lookup"><span data-stu-id="47006-104">Adding Validation to the Model</span></span>
 ====================

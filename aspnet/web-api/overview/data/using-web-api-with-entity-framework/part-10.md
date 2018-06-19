@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30867816"
 ---
 <a name="publish-the-app-to-azure-azure-app-service"></a><span data-ttu-id="44561-102">Azure 앱 서비스를 Azure에 앱을 게시</span><span class="sxs-lookup"><span data-stu-id="44561-102">Publish the App to Azure Azure App Service</span></span>
 ====================

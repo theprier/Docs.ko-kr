@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/masterpages
-title: "마스터 페이지 | Microsoft Docs"
+title: 마스터 페이지 | Microsoft Docs
 author: JoeStagner
-description: "ASP.NET 마스터 페이지는 agile 웹 응용 프로그램의 핵심 부분입니다. 이 비디오에서는 마스터 페이지 및에서 중첩 된 마스터 페이지를 사용 하는 기본적인 보여 줍니다."
+description: ASP.NET 마스터 페이지는 agile 웹 응용 프로그램의 핵심 부분입니다. 이 비디오에서는 마스터 페이지 및에서 중첩 된 마스터 페이지를 사용 하는 기본적인 보여 줍니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/08/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26520902"
 ---
 <a name="masterpages"></a><span data-ttu-id="15b29-104">마스터 페이지</span><span class="sxs-lookup"><span data-stu-id="15b29-104">MasterPages</span></span>
 ====================

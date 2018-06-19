@@ -1,8 +1,8 @@
 ---
 uid: web-api/overview/older-versions/index
-title: "이전 버전의 웹 API에 대 한 설명서 | Microsoft Docs"
+title: 이전 버전의 웹 API에 대 한 설명서 | Microsoft Docs
 author: rick-anderson
-description: "이전 버전의 웹 API에 대 한 설명서입니다."
+description: 이전 버전의 웹 API에 대 한 설명서입니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/23/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /web-api/overview/older-versions
 msc.type: chapter
 ms.openlocfilehash: e3cb215e60ba11ec23f4e0c8d03dd08aa39a174f
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26508192"
 ---
 <a name="documentation-on-older-versions-of-web-api"></a><span data-ttu-id="9b6d7-103">이전 버전의 웹 API에 대 한 설명서</span><span class="sxs-lookup"><span data-stu-id="9b6d7-103">Documentation on Older Versions of Web API</span></span>
 ====================

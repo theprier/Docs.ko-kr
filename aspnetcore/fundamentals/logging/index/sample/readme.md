@@ -1,3 +1,3 @@
-# <a name="aspnet-core-logging-sample-application"></a>ASP.NET Core 로깅 샘플 응용 프로그램
+# <a name="aspnet-core-logging-sample-application"></a><span data-ttu-id="4d9e9-101">ASP.NET Core 로깅 샘플 응용 프로그램</span><span class="sxs-lookup"><span data-stu-id="4d9e9-101">ASP.NET Core logging sample application</span></span>
 
-이 샘플 응용 프로그램은 [ASP.NET Core Logging](https://docs.microsoft.com/aspnet/core/fundamentals/logging/index) 아티클용이며 [ASP.NET Core MVC를 사용한 첫 번째 Web API](https://docs.microsoft.com/aspnet/core/tutorials/first-web-api) 자습서용으로 만든 샘플을 기반으로 합니다.
+<span data-ttu-id="4d9e9-102">이 샘플 응용 프로그램은 [ASP.NET Core Logging](https://docs.microsoft.com/aspnet/core/fundamentals/logging/index) 아티클용이며 [ASP.NET Core MVC를 사용한 첫 번째 Web API](https://docs.microsoft.com/aspnet/core/tutorials/first-web-api) 자습서용으로 만든 샘플을 기반으로 합니다.</span><span class="sxs-lookup"><span data-stu-id="4d9e9-102">This sample application is for the [ASP.NET Core Logging](https://docs.microsoft.com/aspnet/core/fundamentals/logging/index) article and is based on the sample created for the [First Web API with ASP.NET Core MVC](https://docs.microsoft.com/aspnet/core/tutorials/first-web-api) tutorial.</span></span>

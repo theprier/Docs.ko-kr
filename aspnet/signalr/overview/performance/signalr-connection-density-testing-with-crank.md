@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/performance/signalr-connection-density-testing-with-crank
-title: "SignalR 연결 밀도 크랭크를 사용 하 여 테스트 | Microsoft Docs"
+title: SignalR 연결 밀도 크랭크를 사용 하 여 테스트 | Microsoft Docs
 author: tfitzmac
-description: "SignalR 연결 밀도 크랭크를 사용 하 여 테스트"
+description: SignalR 연결 밀도 크랭크를 사용 하 여 테스트
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/22/2015
@@ -17,6 +17,7 @@ ms.sourcegitcommit: fe880bf4ed1c8116071c0e47c0babf3623b7f44a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/21/2017
+ms.locfileid: "26535332"
 ---
 <a name="signalr-connection-density-testing-with-crank"></a><span data-ttu-id="41cae-103">SignalR 연결 밀도 크랭크를 사용 하 여 테스트</span><span class="sxs-lookup"><span data-stu-id="41cae-103">SignalR Connection Density Testing with Crank</span></span>
 ====================

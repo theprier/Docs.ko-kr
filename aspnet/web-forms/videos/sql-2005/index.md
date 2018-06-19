@@ -2,7 +2,7 @@
 uid: web-forms/videos/sql-2005/index
 title: SQL 2005 | Microsoft Docs
 author: rick-anderson
-description: "ASP.NET 응용 프로그램에 데이터베이스 기능을 추가 하려면 SQL Server Express를 사용 하는 방법."
+description: ASP.NET 응용 프로그램에 데이터베이스 기능을 추가 하려면 SQL Server Express를 사용 하는 방법.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/videos/sql-2005
 msc.type: chapter
 ms.openlocfilehash: 42fc321b4d1d51ec2fe71e4c8873ae62da43c345
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26522252"
 ---
 <a name="sql-2005"></a><span data-ttu-id="8a676-103">SQL 2005</span><span class="sxs-lookup"><span data-stu-id="8a676-103">SQL 2005</span></span>
 ====================

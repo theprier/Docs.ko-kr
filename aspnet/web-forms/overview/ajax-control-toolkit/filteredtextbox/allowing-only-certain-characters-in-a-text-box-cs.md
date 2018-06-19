@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30869740"
 ---
 <a name="allowing-only-certain-characters-in-a-text-box-c"></a><span data-ttu-id="8ac99-104">텍스트 상자 (C#)에 특정 문자를 허용합니다.</span><span class="sxs-lookup"><span data-stu-id="8ac99-104">Allowing Only Certain Characters in a Text Box (C#)</span></span>
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870520"
 ---
 <a name="validating-with-the-idataerrorinfo-interface-c"></a><span data-ttu-id="1c984-103">IDataErrorInfo 인터페이스 (C#)을 사용한 유효성 검사</span><span class="sxs-lookup"><span data-stu-id="1c984-103">Validating with the IDataErrorInfo Interface (C#)</span></span>
 ====================

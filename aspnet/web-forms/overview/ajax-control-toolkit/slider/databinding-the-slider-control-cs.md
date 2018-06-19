@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870585"
 ---
 <a name="databinding-the-slider-control-c"></a><span data-ttu-id="1f41a-104">데이터 바인딩 슬라이더 컨트롤 (C#)</span><span class="sxs-lookup"><span data-stu-id="1f41a-104">Databinding the Slider Control (C#)</span></span>
 ====================

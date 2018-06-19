@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-to-best-learn-aspnet-web-forms
-title: "ASP.NET Web Forms 가장 자세한 방법 | Microsoft Docs"
+title: ASP.NET Web Forms 가장 자세한 방법 | Microsoft Docs
 author: JoeStagner
-description: "Microsoft의 Joe Stagner ASP.NET Web Forms를 사용 하 여 웹 응용 프로그램을 개발 하는 방법에 알아보려면 해야 표시 됩니다."
+description: Microsoft의 Joe Stagner ASP.NET Web Forms를 사용 하 여 웹 응용 프로그램을 개발 하는 방법에 알아보려면 해야 표시 됩니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/03/2010
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521742"
 ---
 <a name="how-to-best-learn-aspnet-web-forms"></a><span data-ttu-id="00a0d-103">ASP.NET Web Forms 가장 자세한 방법</span><span class="sxs-lookup"><span data-stu-id="00a0d-103">How to Best Learn ASP.NET Web Forms</span></span>
 ====================

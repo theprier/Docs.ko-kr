@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/index
-title: "UI, 레이아웃 및 테마 | Microsoft Docs"
+title: UI, 레이아웃 및 테마 | Microsoft Docs
 author: rick-anderson
-description: "ASP.NET 웹 페이지 응용 프로그램에서 사이트 UI를 사용자 지정 하는 방법."
+description: ASP.NET 웹 페이지 응용 프로그램에서 사이트 UI를 사용자 지정 하는 방법.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/08/2014
@@ -14,9 +14,10 @@ msc.legacyurl: /web-pages/overview/ui-layouts-and-themes
 msc.type: chapter
 ms.openlocfilehash: 3681ff95e4dbd3cc50f74ef9771ff23cd3ae070a
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26529572"
 ---
 <a name="ui-layouts-and-themes"></a><span data-ttu-id="1c8f3-103">UI, 레이아웃 및 테마</span><span class="sxs-lookup"><span data-stu-id="1c8f3-103">UI, Layouts, and Themes</span></span>
 ====================

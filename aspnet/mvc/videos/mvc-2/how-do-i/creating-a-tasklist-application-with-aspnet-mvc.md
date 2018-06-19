@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870468"
 ---
 <a name="creating-a-tasklist-application-with-aspnet-mvc"></a><span data-ttu-id="30d85-104">ASP.NET MVC와 함께 Tasklist \ / s 응용 프로그램 만들기</span><span class="sxs-lookup"><span data-stu-id="30d85-104">Creating a Tasklist Application with ASP.NET MVC</span></span>
 ====================

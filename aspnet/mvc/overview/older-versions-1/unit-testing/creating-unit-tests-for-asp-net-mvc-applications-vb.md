@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30869675"
 ---
 <a name="creating-unit-tests-for-aspnet-mvc-applications-vb"></a><span data-ttu-id="eab13-104">ASP.NET MVC 응용 프로그램 (VB)에 대 한 단위 테스트 만들기</span><span class="sxs-lookup"><span data-stu-id="eab13-104">Creating Unit Tests for ASP.NET MVC Applications (VB)</span></span>
 ====================
@@ -74,7 +75,7 @@ ms.lasthandoff: 04/06/2018
 
 ## <a name="testing-the-view-data-returned-by-a-controller"></a><span data-ttu-id="eab13-144">컨트롤러에 의해 반환 된 데이터 보기를 테스트 합니다.</span><span class="sxs-lookup"><span data-stu-id="eab13-144">Testing the View Data returned by a Controller</span></span>
 
-<span data-ttu-id="eab13-145">MVC 컨트롤러 라는 것을 사용 하 여 데이터 뷰를 전달 *`View Data`*합니다.</span><span class="sxs-lookup"><span data-stu-id="eab13-145">An MVC controller passes data to a view by using something called *`View Data`*.</span></span> <span data-ttu-id="eab13-146">예를 들어, 호출할 때 특정 제품에 대 한 정보를 표시 하 고 가정은 `ProductController Details()` 동작 합니다.</span><span class="sxs-lookup"><span data-stu-id="eab13-146">For example, imagine that you want to display the details for a particular product when you invoke the `ProductController Details()` action.</span></span> <span data-ttu-id="eab13-147">인스턴스를 만들 수는 경우에 `Product` (모델에 정의 됨) 하는 클래스 인스턴스를 전달 하 고는 `Details` 뷰를 이용 하 여 `View Data`합니다.</span><span class="sxs-lookup"><span data-stu-id="eab13-147">In that case, you can create an instance of a `Product` class (defined in your model) and pass the instance to the `Details` view by taking advantage of `View Data`.</span></span>
+<span data-ttu-id="eab13-145">MVC 컨트롤러 라는 것을 사용 하 여 데이터 뷰를 전달 *`View Data`* 합니다.</span><span class="sxs-lookup"><span data-stu-id="eab13-145">An MVC controller passes data to a view by using something called *`View Data`*.</span></span> <span data-ttu-id="eab13-146">예를 들어, 호출할 때 특정 제품에 대 한 정보를 표시 하 고 가정은 `ProductController Details()` 동작 합니다.</span><span class="sxs-lookup"><span data-stu-id="eab13-146">For example, imagine that you want to display the details for a particular product when you invoke the `ProductController Details()` action.</span></span> <span data-ttu-id="eab13-147">인스턴스를 만들 수는 경우에 `Product` (모델에 정의 됨) 하는 클래스 인스턴스를 전달 하 고는 `Details` 뷰를 이용 하 여 `View Data`합니다.</span><span class="sxs-lookup"><span data-stu-id="eab13-147">In that case, you can create an instance of a `Product` class (defined in your model) and pass the instance to the `Details` view by taking advantage of `View Data`.</span></span>
 
 <span data-ttu-id="eab13-148">수정 된 `ProductController` 보기 3의 업데이트 된 포함 `Details()` 제품을 반환 하는 작업입니다.</span><span class="sxs-lookup"><span data-stu-id="eab13-148">The modified `ProductController` in Listing 3 includes an updated `Details()` action that returns a Product.</span></span>
 

@@ -14,6 +14,7 @@ ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 05/03/2018
+ms.locfileid: "32741461"
 ---
 # <a name="migrate-authentication-and-identity-to-aspnet-core-20"></a><span data-ttu-id="1c3e5-103">인증 및 Id ASP.NET 코어 2.0으로 마이그레이션</span><span class="sxs-lookup"><span data-stu-id="1c3e5-103">Migrate authentication and Identity to ASP.NET Core 2.0</span></span>
 

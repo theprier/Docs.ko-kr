@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28038288"
 ---
 <a name="secure-a-web-api-with-individual-accounts-and-local-login-in-aspnet-web-api-22"></a><span data-ttu-id="e78c1-104">개별 계정 및 로컬 로그인 ASP.NET Web API 2.2의에서 웹 API 보안</span><span class="sxs-lookup"><span data-stu-id="e78c1-104">Secure a Web API with Individual Accounts and Local Login in ASP.NET Web API 2.2</span></span>
 ====================

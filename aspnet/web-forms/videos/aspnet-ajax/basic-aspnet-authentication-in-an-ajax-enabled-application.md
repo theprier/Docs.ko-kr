@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30880390"
 ---
 <a name="basic-aspnet-authentication-in-an-ajax-enabled-application"></a><span data-ttu-id="3dccb-103">기본 ASP.NET AJAX에는 인증 사용 응용 프로그램</span><span class="sxs-lookup"><span data-stu-id="3dccb-103">Basic ASP.NET Authentication in an AJAX Enabled Application</span></span>
 ====================

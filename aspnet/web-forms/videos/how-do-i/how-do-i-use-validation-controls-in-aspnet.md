@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-use-validation-controls-in-aspnet
-title: "[어떻게 할까요?]  유효성 검사 컨트롤을 사용 하 여 ASP.NET에서? | Microsoft 문서"
+title: '[어떻게 할까요?]  유효성 검사 컨트롤을 사용 하 여 ASP.NET에서? | Microsoft 문서'
 author: rick-anderson
-description: "이 비디오에서는 ASP.NET에서 사용할 수 있는 유효성 검사 컨트롤을 사용 하 여 웹 페이지에 유효성 검사를 구현 하는 방법을 알아봅니다. 모든 주요 유효성 검사를 제어 등..."
+description: 이 비디오에서는 ASP.NET에서 사용할 수 있는 유효성 검사 컨트롤을 사용 하 여 웹 페이지에 유효성 검사를 구현 하는 방법을 알아봅니다. 모든 주요 유효성 검사를 제어 등...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/26/2007
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525952"
 ---
 <a name="how-do-i--use-validation-controls-in-aspnet"></a><span data-ttu-id="972da-105">[어떻게 할까요?]  유효성 검사 컨트롤을 사용 하 여 ASP.NET에서?</span><span class="sxs-lookup"><span data-stu-id="972da-105">[How Do I:]  Use Validation Controls in ASP.NET?</span></span>
 ====================

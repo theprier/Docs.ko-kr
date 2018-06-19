@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870754"
 ---
 <a name="passing-data-to-view-master-pages-vb"></a><span data-ttu-id="aa312-104">마스터 페이지 보기 (VB)에 대 한 데이터 전달</span><span class="sxs-lookup"><span data-stu-id="aa312-104">Passing Data to View Master Pages (VB)</span></span>
 ====================

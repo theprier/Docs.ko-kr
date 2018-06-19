@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30875346"
 ---
 <a name="connection-resiliency-and-command-interception-with-the-entity-framework-in-an-aspnet-mvc-application"></a><span data-ttu-id="ef6d2-103">연결 복원 력 및 ASP.NET MVC 응용 프로그램에서 Entity Framework와 함께 인터 셉 션 명령</span><span class="sxs-lookup"><span data-stu-id="ef6d2-103">Connection Resiliency and Command Interception with the Entity Framework in an ASP.NET MVC Application</span></span>
 ====================

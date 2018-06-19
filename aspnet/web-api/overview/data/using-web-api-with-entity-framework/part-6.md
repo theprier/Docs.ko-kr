@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879311"
 ---
 <a name="create-the-javascript-client"></a><span data-ttu-id="a3424-102">JavaScript 클라이언트 만들기</span><span class="sxs-lookup"><span data-stu-id="a3424-102">Create the JavaScript Client</span></span>
 ====================

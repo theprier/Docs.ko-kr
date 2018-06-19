@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/moving-to-aspnet-20/index
-title: "이전 버전의 ASP.NET 2.0 | Microsoft Docs"
+title: 이전 버전의 ASP.NET 2.0 | Microsoft Docs
 author: rick-anderson
-description: "ASP.NET 2.0으로 ASP.NET 1.x 응용 프로그램을 마이그레이션하는 방법입니다."
+description: ASP.NET 2.0으로 ASP.NET 1.x 응용 프로그램을 마이그레이션하는 방법입니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/moving-to-aspnet-20
 msc.type: chapter
 ms.openlocfilehash: bccb47a23b4a43ccc02e1bbc8b5fb480c24fd0af
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26516692"
 ---
 <a name="older-versions---aspnet-20"></a><span data-ttu-id="a153a-103">이전 버전의 ASP.NET 2.0</span><span class="sxs-lookup"><span data-stu-id="a153a-103">Older Versions - ASP.NET 2.0</span></span>
 ====================
