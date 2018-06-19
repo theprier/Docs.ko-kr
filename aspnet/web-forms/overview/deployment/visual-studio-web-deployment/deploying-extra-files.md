@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30881765"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-deploying-extra-files"></a>Visual Studio를 사용 하 여 ASP.NET 웹 배포: 그 외의 파일 배포
 ====================
@@ -59,7 +60,7 @@ ms.lasthandoff: 04/06/2018
 
     `Include` 특성을 지정 파일을 찾을 수 있는 폴더 *ExtraFiles*프로젝트 폴더와 같은 수준에 있는 합니다. MSBuild는 해당 폴더와 하위 폴더 (이중 별표는 재귀 하위 폴더를 지정 하는 데 사용)로 재귀적으로에서 모든 파일을 수집 합니다. 이 코드로 수 여러 파일 및 파일에에서 넣으면 포함 된 하위 폴더는 *ExtraFiles* 폴더 및 모든 배포 됩니다.
 
-    `DestinationRelativePath` 요소 폴더와 파일 복사 되어야 함을 동일한 파일 및 폴더 구조에는 대상 웹 사이트의 루트 폴더에서 찾을 수는 지정 된 *ExtraFiles* 폴더입니다. 복사 하려는 경우는 *ExtraFiles* 폴더 자체는 `DestinationRelativePath` 번호 값은 *ExtraFiles\%(RecursiveDir)%(Filename)%(Extension)*합니다.
+    `DestinationRelativePath` 요소 폴더와 파일 복사 되어야 함을 동일한 파일 및 폴더 구조에는 대상 웹 사이트의 루트 폴더에서 찾을 수는 지정 된 *ExtraFiles* 폴더입니다. 복사 하려는 경우는 *ExtraFiles* 폴더 자체는 `DestinationRelativePath` 번호 값은 *ExtraFiles\%(RecursiveDir)%(Filename)%(Extension)* 합니다.
 3. 닫기 전에 파일의 끝에 `</Project>` 태그, 새 대상이 실행 하는 시기를 지정 하는 다음 태그를 추가 합니다.
 
     [!code-xml[Main](deploying-extra-files/samples/sample2.xml)]

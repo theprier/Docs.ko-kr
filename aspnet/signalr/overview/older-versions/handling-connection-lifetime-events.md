@@ -1,8 +1,8 @@
 ---
 uid: signalr/overview/older-versions/handling-connection-lifetime-events
-title: "SignalR에서 연결 수명 이벤트를 처리 하 고 이해 1.x | Microsoft Docs"
+title: SignalR에서 연결 수명 이벤트를 처리 하 고 이해 1.x | Microsoft Docs
 author: pfletcher
-description: "이 문서에서는 허브 API에서 노출 하는 이벤트를 사용 하는 방법을 설명 합니다."
+description: 이 문서에서는 허브 API에서 노출 하는 이벤트를 사용 하는 방법을 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/05/2013
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 01/24/2018
+ms.locfileid: "28036728"
 ---
 <a name="understanding-and-handling-connection-lifetime-events-in-signalr-1x"></a>SignalR에서 연결 수명 이벤트를 처리 하 고 이해 1.x
 ====================

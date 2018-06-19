@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/building-35-applications/validation
-title: "유효성 검사 | Microsoft Docs"
+title: 유효성 검사 | Microsoft Docs
 author: JoeStagner
-description: "이 비디오 Joe은 ASP.NET 사용 하 여 Microsoft Visual Web Developer에서 FormValidation 컨트롤의 사용을 보여줍니다."
+description: 이 비디오 Joe은 ASP.NET 사용 하 여 Microsoft Visual Web Developer에서 FormValidation 컨트롤의 사용을 보여줍니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/04/2009
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525002"
 ---
 <a name="validation"></a>유효성 검사
 ====================

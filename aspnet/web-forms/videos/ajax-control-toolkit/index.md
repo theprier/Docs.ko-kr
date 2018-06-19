@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/index
-title: "들어 | Microsoft Docs"
+title: 들어 | Microsoft Docs
 author: rick-anderson
-description: "신속한 ASP.NET 웹 페이지 Ajax 컨트롤 도구 키트를 사용 하 여 만드는 하는 방법."
+description: 신속한 ASP.NET 웹 페이지 Ajax 컨트롤 도구 키트를 사용 하 여 만드는 하는 방법.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/05/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/videos/ajax-control-toolkit
 msc.type: chapter
 ms.openlocfilehash: fad690c40cac7a344a445dae722ae2a1e89adf6b
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521832"
 ---
 <a name="ajax-control-toolkit"></a>Ajax Control Toolkit
 ====================

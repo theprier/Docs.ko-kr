@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-deploy-a-web-site-using-the-copy-web-site-tool
-title: "[어떻게 할까요?] 웹 사이트 복사 도구를 사용 하 여 웹 사이트 배포 | Microsoft Docs"
+title: '[어떻게 할까요?] 웹 사이트 복사 도구를 사용 하 여 웹 사이트 배포 | Microsoft Docs'
 author: rick-anderson
-description: "이 비디오 Chris Pels에서는 Visual Studio에서 웹 사이트 복사 도구를 사용 하 여 웹 사이트를 배포 하는 방법을 보여줍니다. 먼저 원격 웹 사이트에 연결 하는 방법을 참조 하 고..."
+description: 이 비디오 Chris Pels에서는 Visual Studio에서 웹 사이트 복사 도구를 사용 하 여 웹 사이트를 배포 하는 방법을 보여줍니다. 먼저 원격 웹 사이트에 연결 하는 방법을 참조 하 고...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/03/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26525672"
 ---
 <a name="how-do-i-deploy-a-web-site-using-the-copy-web-site-tool"></a>[어떻게 할까요?] 웹 사이트 복사 도구를 사용 하 여 웹 사이트 배포
 ====================

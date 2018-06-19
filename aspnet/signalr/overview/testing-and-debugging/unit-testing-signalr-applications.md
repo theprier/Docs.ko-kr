@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870845"
 ---
 <a name="unit-testing-signalr-applications"></a>단위 테스트 SignalR 응용 프로그램
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: 037d3900f739dbaa2ba14158e3d7dc81478952ad
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 12/01/2017
+ms.locfileid: "26536082"
 ---
 <a name="using-web-api-with-aspnet-web-forms"></a>Web API를 사용 하 여 ASP.NET Web forms
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871079"
 ---
 <a name="why-aspnet-mvc-3-minute-overview-video-for-decision-makers"></a>이유 ASP.NET MVC? 의사 결정자를 위한 비디오 3 분 개요
 ====================

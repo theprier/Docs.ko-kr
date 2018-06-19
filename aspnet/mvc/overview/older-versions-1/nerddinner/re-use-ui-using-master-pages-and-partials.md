@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30870013"
 ---
 <a name="re-use-ui-using-master-pages-and-partials"></a>마스터 페이지 및 부분을 사용 하 여 UI를 다시 사용
 ====================

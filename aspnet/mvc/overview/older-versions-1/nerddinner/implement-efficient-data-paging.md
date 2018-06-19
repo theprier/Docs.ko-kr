@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873250"
 ---
 <a name="implement-efficient-data-paging"></a>효율적인 데이터 페이징을 구현합니다
 ====================

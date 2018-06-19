@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/index
-title: "ASP.NET 4-4 엔터프라이즈 배포 시리즈 고급 항목 | Microsoft Docs"
+title: ASP.NET 4-4 엔터프라이즈 배포 시리즈 고급 항목 | Microsoft Docs
 author: rick-anderson
-description: "이 자습서에서는 필요 없거나 에이전트 설치가 바람직하지 많은 엔터프라이즈 배포 시나리오는 다양 한 작업을 수행 하는 방법을 보여줍니다."
+description: 이 자습서에서는 필요 없거나 에이전트 설치가 바람직하지 많은 엔터프라이즈 배포 시나리오는 다양 한 작업을 수행 하는 방법을 보여줍니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/16/2012
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment
 msc.type: chapter
 ms.openlocfilehash: 42e80df6040dec0194bc1a5ba6ccc79c09c65ea6
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26515152"
 ---
 <a name="aspnet-4---enterprise-deployment-series-4-advanced-topics"></a>ASP.NET 4-4 엔터프라이즈 배포 시리즈 고급 항목
 ====================

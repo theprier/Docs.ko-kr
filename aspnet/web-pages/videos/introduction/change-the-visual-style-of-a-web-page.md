@@ -1,8 +1,8 @@
 ---
 uid: web-pages/videos/introduction/change-the-visual-style-of-a-web-page
-title: "웹 페이지의 표시 스타일을 변경 | Microsoft Docs"
+title: 웹 페이지의 표시 스타일을 변경 | Microsoft Docs
 author: rick-anderson
-description: "3 부 더 뛰어난 페이지를 확인할 수 있도록 CSS 스타일 시트를 시작할 수를 가져옵니다."
+description: 3 부 더 뛰어난 페이지를 확인할 수 있도록 CSS 스타일 시트를 시작할 수를 가져옵니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/12/2011
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26529982"
 ---
 <a name="change-the-visual-style-of-a-web-page"></a>웹 페이지의 표시 스타일 변경
 ====================

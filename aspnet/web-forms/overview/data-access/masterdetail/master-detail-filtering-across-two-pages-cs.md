@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30887791"
 ---
 <a name="masterdetail-filtering-across-two-pages-c"></a>마스터/세부 두 페이지 (C#)에 대해 필터링
 ====================

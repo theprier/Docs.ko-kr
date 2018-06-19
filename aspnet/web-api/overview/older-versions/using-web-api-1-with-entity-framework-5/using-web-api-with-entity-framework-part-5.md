@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30873812"
 ---
 <a name="part-5-creating-a-dynamic-ui-with-knockoutjs"></a>5 단계: Knockout.js와 동적 UI 만들기
 ====================

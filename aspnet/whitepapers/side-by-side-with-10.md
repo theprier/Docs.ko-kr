@@ -1,14 +1,14 @@
 ---
 uid: whitepapers/side-by-side-with-10
-title: ".NET Framework 1.0 및 1.1의 ASP.NET-Side-by-side 실행 | Microsoft Docs"
+title: .NET Framework 1.0 및 1.1의 ASP.NET-Side-by-side 실행 | Microsoft Docs
 author: rick-anderson
-description: "이 백서는 프레임의 두 버전에서 실행 하는 ASP.NET 웹 응용 프로그램 컴퓨터에.NET 1.0와.NET 1.1을 설치 하는 방법에 설명..."
+description: 이 백서는 프레임의 두 버전에서 실행 하는 ASP.NET 웹 응용 프로그램 컴퓨터에.NET 1.0와.NET 1.1을 설치 하는 방법에 설명...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/10/2010
 ms.topic: article
 ms.assetid: bdea2003-e964-4db5-9092-d56cc7560616
-ms.technology: 
+ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /whitepapers/side-by-side-with-10
 msc.type: content
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26530182"
 ---
 <a name="aspnet-side-by-side-execution-of-net-framework-10-and-11"></a>.NET Framework 1.0 및 1.1의 ASP.NET-Side-by-side 실행
 ====================
@@ -57,7 +58,7 @@ Asp.net에서 실행 되 고 함께 동일한 컴퓨터에 설치 되어 있지�
 4. **확인**을 클릭합니다.  
   
     ![](side-by-side-with-10/_static/image1.gif)
-5. 명령 프롬프트에서.NET Framework의 설치를 시작 하려면 다음 줄을 입력: **Dotnetfx.exe /c: "/noaspupgrade 설치?**합니다.  
+5. 명령 프롬프트에서.NET Framework의 설치를 시작 하려면 다음 줄을 입력: **Dotnetfx.exe /c: "/noaspupgrade 설치?** 합니다.  
   
     ![](side-by-side-with-10/_static/image2.gif)
 6. 클릭 **예** Microsoft.NET Framework 1.1 설치에서 합니다. 이 옵션은.NET Framework 1.1의 설치 프로세스를 시작 합니다.  

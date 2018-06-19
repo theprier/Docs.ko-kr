@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30878349"
 ---
 <a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a>실습 랩: Azure 웹 사이트를 유지 관리 가능한: 변경 및 크기 조정 관리
 ====================
@@ -237,7 +238,7 @@ ms.lasthandoff: 04/06/2018
     ![Alter column SQL 문에서 생성 된](maintainable-azure-websites-managing-change-and-scale/_static/image11.png "Alter column SQL 문에서 생성")
 
     *Alter column SQL 문에서 생성*
-11. **SQL Server 개체 탐색기**, 새로 고침의 **dbo입니다. TriviaQuestions** 테이블을 확인 하 고 **힌트** 열 형식이 **nvarchar(150)**합니다.
+11. **SQL Server 개체 탐색기**, 새로 고침의 **dbo입니다. TriviaQuestions** 테이블을 확인 하 고 **힌트** 열 형식이 **nvarchar(150)** 합니다.
 
     ![새 제약 조건을 보여 주는](maintainable-azure-websites-managing-change-and-scale/_static/image12.png "새 제약 조건을 보여 주는")
 
@@ -400,7 +401,7 @@ ms.lasthandoff: 04/06/2018
     ![준비 된 게시 확인](maintainable-azure-websites-managing-change-and-scale/_static/image35.png "준비 된 게시를 사용 하도록 설정 하려면 예 클릭")
 
     *준비 된 게시를 확인합니다.*
-6. 웹 응용 프로그램의 목록에서 준비 사이트 슬롯을 표시 하 여 웹 응용 프로그램 이름 왼쪽에 있는 표시를 확장 합니다. 다음 웹 앱 이름이 ***(준비)***합니다. 준비 사이트 관리 페이지로 이동 하려면 클릭 합니다.
+6. 웹 응용 프로그램의 목록에서 준비 사이트 슬롯을 표시 하 여 웹 응용 프로그램 이름 왼쪽에 있는 표시를 확장 합니다. 다음 웹 앱 이름이 ***(준비)*** 합니다. 준비 사이트 관리 페이지로 이동 하려면 클릭 합니다.
 
     ![스테이징 웹 앱으로 이동](maintainable-azure-websites-managing-change-and-scale/_static/image36.png "스테이징 웹 앱으로 이동")
 
@@ -429,7 +430,7 @@ ms.lasthandoff: 04/06/2018
     > FTP 호스트 또는 웹 응용 프로그램의 GIT 리포지토리에 콘텐츠를 배포할 때 사용 하 여 인증 해야 합니다는 **배포 자격 증명** 웹 앱에서 만든 **빠른 시작** 또는 **대시보드**  관리 페이지입니다. 배포 자격 증명을 사용 하 여 알 수 없는 경우 관리 포털을 사용 하 여 쉽게 재설정할 수 있습니다. 웹 앱을 열고 **대시보드** 페이지를 클릭 하 고는 **배포 자격 증명 재설정** 링크 합니다. 새 암호를 입력 하 고 클릭 **확인**합니다. 배포 자격 증명은 구독과 연결 된 모든 웹 앱과 함께 사용 하기에 적합 합니다.
 10. Azure에 성공적으로 푸시된 웹 앱을 확인 하기 위해 다시 관리 포털로 이동 하 고 클릭 **웹 사이트**합니다.
 11. 웹 앱을 찾아 준비 사이트 슬롯을 표시 하려면 항목을 확장 합니다. 클릭 하 여 해당 **이름** 관리 페이지로 이동 합니다.
-12. 클릭 **배포** 볼 수는 **배포 기록을**합니다. 되는지 확인 한 **활성 배포** 와 프로그램  *&quot;초기 커밋&quot;*합니다.
+12. 클릭 **배포** 볼 수는 **배포 기록을**합니다. 되는지 확인 한 **활성 배포** 와 프로그램  *&quot;초기 커밋&quot;* 합니다.
 
     ![활성 배포](maintainable-azure-websites-managing-change-and-scale/_static/image40.png)
 
@@ -872,7 +873,7 @@ ms.lasthandoff: 04/06/2018
 20. **솔루션 탐색기**, 두 번 클릭은 **Local.settings** 테스트 설정을 탐색 하는 파일입니다. 기본적으로 Visual Studio 테스트를 실행 하려면 로컬 컴퓨터를 사용 합니다.
 
     > [!NOTE]
-    > 또는 테스트 프로젝트를 사용 하 여 클라우드 부하 테스트 실행을 구성할 수 **온라인 VSO (Visual Studio)**합니다. VSO는 클라우드 기반 부하 테스트 좀 더 현실적인 부하를 시뮬레이션 하는 서비스, 보다 큰 CPU 용량, 사용 가능한 메모리 및 네트워크 대역폭을 같은 로컬 환경 제약 조건은 방지를 제공 합니다. VSO를 사용 하 여 부하 테스트를 실행 하는 방법에 대 한 자세한 내용은 참조 [이 여기서](https://www.visualstudio.com/get-started/load-test-your-app-vs)합니다.
+    > 또는 테스트 프로젝트를 사용 하 여 클라우드 부하 테스트 실행을 구성할 수 **온라인 VSO (Visual Studio)** 합니다. VSO는 클라우드 기반 부하 테스트 좀 더 현실적인 부하를 시뮬레이션 하는 서비스, 보다 큰 CPU 용량, 사용 가능한 메모리 및 네트워크 대역폭을 같은 로컬 환경 제약 조건은 방지를 제공 합니다. VSO를 사용 하 여 부하 테스트를 실행 하는 방법에 대 한 자세한 내용은 참조 [이 여기서](https://www.visualstudio.com/get-started/load-test-your-app-vs)합니다.
 
     ![테스트 설정](maintainable-azure-websites-managing-change-and-scale/_static/image98.png)
 

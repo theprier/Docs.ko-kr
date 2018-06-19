@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871937"
 ---
 <a name="adding-a-new-category-to-the-dropdownlist-using-jquery-ui"></a>JQuery UI를 사용 하 여 드롭다운 목록에 새 범주를 추가 합니다.
 ====================

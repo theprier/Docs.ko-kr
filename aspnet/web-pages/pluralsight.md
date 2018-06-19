@@ -1,8 +1,8 @@
 ---
 uid: web-pages/pluralsight
-title: "WebMatrix 및 웹 페이지 비디오 교육 Pluralsight에서 | Microsoft Docs"
+title: WebMatrix 및 웹 페이지 비디오 교육 Pluralsight에서 | Microsoft Docs
 author: rick-anderson
-description: "WebMatrix &amp; Pluralsight이 심층 분석 과정에서 웹 페이지 교육을 받아 볼 수 실행 되 고 WebMatrix 및 ASP.NET 웹 페이지입니다. Everythi 적용 중..."
+description: WebMatrix &amp; Pluralsight이 심층 분석 과정에서 웹 페이지 교육을 받아 볼 수 실행 되 고 WebMatrix 및 ASP.NET 웹 페이지입니다. Everythi 적용 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 05/18/2012
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26529822"
 ---
 <a name="webmatrix-and-web-pages-video-training-from-pluralsight"></a>Pluralsight에서 WebMatrix 및 웹 페이지 비디오 교육
 ====================

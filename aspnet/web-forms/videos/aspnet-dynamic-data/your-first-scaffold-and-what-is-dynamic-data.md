@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886331"
 ---
 <a name="your-first-scaffold-and-what-is-dynamic-data"></a>첫 번째 사용자 Scaffold 및 동적 데이터 란?
 ====================

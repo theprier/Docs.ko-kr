@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30879274"
 ---
 <a name="using-the-slider-control-with-auto-postback-vb"></a>슬라이더 컨트롤을 사용 하 여 자동 다시 게시 (VB)으로
 ====================

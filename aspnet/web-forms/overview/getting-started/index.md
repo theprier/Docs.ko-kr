@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/getting-started/index
-title: "ASP.NET Web Forms 시작 | Microsoft Docs"
+title: ASP.NET Web Forms 시작 | Microsoft Docs
 author: rick-anderson
-description: "자세한 방법에 대 한 ASP.NET Web Forms ASP.NET Web Forms 친숙 한 끌어서 놓기, 이벤트 기반 모델을 사용 하 여 빌드 동적 웹 사이트 수 있습니다. 디자인 화면 및 hund 중..."
+description: 자세한 방법에 대 한 ASP.NET Web Forms ASP.NET Web Forms 친숙 한 끌어서 놓기, 이벤트 기반 모델을 사용 하 여 빌드 동적 웹 사이트 수 있습니다. 디자인 화면 및 hund 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/08/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/getting-started
 msc.type: chapter
 ms.openlocfilehash: 219379b12e207755e8d27f0b5dae761527215519
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26516572"
 ---
 <a name="getting-started-with-aspnet-web-forms"></a>ASP.NET Web Forms 시작
 ====================

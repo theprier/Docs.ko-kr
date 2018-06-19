@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-create-and-use-a-custom-configuration-section-in-an-aspnet-configuration-file
-title: "[어떻게 할까요?] 만들기 및 사용자 지정 구성 섹션을 사용 하 여 ASP.NET 구성 파일에 | Microsoft Docs"
+title: '[어떻게 할까요?] 만들기 및 사용자 지정 구성 섹션을 사용 하 여 ASP.NET 구성 파일에 | Microsoft Docs'
 author: rick-anderson
-description: "이 비디오에서는 Chris Pels XML 구성 요소를 사용 하는 ASP.NET 구성 설정의 표준 집합을 확장 하는 방법을 표시 됩니다. 첫째, 참조 방법..."
+description: 이 비디오에서는 Chris Pels XML 구성 요소를 사용 하는 ASP.NET 구성 설정의 표준 집합을 확장 하는 방법을 표시 됩니다. 첫째, 참조 방법...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/16/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26528172"
 ---
 <a name="how-do-i-create-and-use-a-custom-configuration-section-in-an-aspnet-configuration-file"></a>[어떻게 할까요?] 만들기 및 ASP.NET 구성 파일에 사용자 지정 구성 섹션을 사용 합니다.
 ====================

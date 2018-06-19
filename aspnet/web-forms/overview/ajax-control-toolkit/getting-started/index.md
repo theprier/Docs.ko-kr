@@ -1,8 +1,8 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/getting-started/index
-title: "시작 | Microsoft Docs"
+title: 시작 | Microsoft Docs
 author: rick-anderson
-description: "이 페이지에는 Ajax 컨트롤 도구 키트를 다운로드 하는 방법 및 Visual Studio 또는 Visual Web Developer 도구 상자 컨트롤은 컨트롤을 추가 하는 방법을 설명 합니다."
+description: 이 페이지에는 Ajax 컨트롤 도구 키트를 다운로드 하는 방법 및 Visual Studio 또는 Visual Web Developer 도구 상자 컨트롤은 컨트롤을 추가 하는 방법을 설명 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/14/2011
@@ -14,9 +14,10 @@ msc.legacyurl: /web-forms/overview/ajax-control-toolkit/getting-started
 msc.type: chapter
 ms.openlocfilehash: a2bee0fa190a0215546bd5ac72e14df23b2be87b
 ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26510502"
 ---
 <a name="getting-started"></a>시작
 ====================
