@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888632"
 ---
 <a name="customizing-the-data-modification-interface-vb"></a>데이터 수정 인터페이스 (VB) 사용자 지정
 ====================

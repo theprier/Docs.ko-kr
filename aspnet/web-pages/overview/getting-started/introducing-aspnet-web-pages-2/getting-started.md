@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30898101"
 ---
 <a name="introducing-aspnet-web-pages---getting-started"></a>ASP.NET 웹 페이지-시작 소개
 ====================
@@ -61,7 +62,7 @@ ms.lasthandoff: 04/06/2018
 에 익숙할 것으로 가정 합니다.
 
 - **HTML**. 없음 심층 전문 지식이 필요 합니다. HTML, 설명 하지 않겠습니다에서는 또한 사용 하지 마십시오 복잡 한 것입니다. 여기서 한다고 생각 유용 HTML 자습서의 링크를 제공 합니다.
-- **Css 스타일 시트 ()**합니다. 와 동일 html 합니다.
+- **Css 스타일 시트 ()** 합니다. 와 동일 html 합니다.
 - **Basic 데이터베이스 아이디어**합니다. 스프레드시트 데이터에 사용 되 고 정렬 되었으며 전문 지식 수준을 아닌 데이터를 필터링 하는 경우 일반적으로 있으리라이 자습서 집합에 대 한 합니다.
 
 또한 기본 프로그래밍 학습에 관심이으로 가정 합니다. ASP.NET 웹 페이지 라는 C# 프로그래밍 언어를 사용 합니다. 프로그래밍에서는 방금 것에 관심 있는 배경 필요가 없습니다. 계속 하기 전에 웹 페이지에서 모든 JavaScript 작성 한, 충분 한 배경 했습니다.

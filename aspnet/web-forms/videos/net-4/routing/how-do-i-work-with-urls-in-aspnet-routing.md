@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893887"
 ---
 <a name="how-do-i-work-with-urls-in-aspnet-routing"></a>ASP.NET 라우팅에서 Url이 포함 된 작업 방법: 작업?
 ====================

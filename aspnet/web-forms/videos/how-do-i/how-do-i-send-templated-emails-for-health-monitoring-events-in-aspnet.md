@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-send-templated-emails-for-health-monitoring-events-in-aspnet
-title: "[어떻게 할까요?] ASP.NET의 이벤트를 모니터링 하는 상태에 대 한 템플릿 기반 전자 메일을 보낼 | Microsoft Docs"
+title: '[어떻게 할까요?] ASP.NET의 이벤트를 모니터링 하는 상태에 대 한 템플릿 기반 전자 메일을 보낼 | Microsoft Docs'
 author: rick-anderson
-description: "이 비디오에서는 Chris Pels에를 사용 하 여 TemplatedEmailWebEventProvider 보내는 상태 모니터링 이벤트는 발생 하면 전자 메일 t에 대 한 템플릿을 사용 하는 방법을 보여 줍니다 중..."
+description: 이 비디오에서는 Chris Pels에를 사용 하 여 TemplatedEmailWebEventProvider 보내는 상태 모니터링 이벤트는 발생 하면 전자 메일 t에 대 한 템플릿을 사용 하는 방법을 보여 줍니다 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 09/18/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521792"
 ---
 <a name="how-do-i-send-templated-emails-for-health-monitoring-events-in-aspnet"></a>[어떻게 할까요?] ASP.NET의 이벤트를 모니터링 하는 상태에 대 한 템플릿 기반 전자 메일 보내기
 ====================

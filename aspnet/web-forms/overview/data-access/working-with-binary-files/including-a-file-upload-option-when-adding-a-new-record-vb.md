@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30888655"
 ---
 <a name="including-a-file-upload-option-when-adding-a-new-record-vb"></a>새 레코드 (VB)를 추가할 때 파일 업로드 옵션을 포함 하 여
 ====================

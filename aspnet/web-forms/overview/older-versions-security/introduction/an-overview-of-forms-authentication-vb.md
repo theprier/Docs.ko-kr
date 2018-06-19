@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891908"
 ---
 <a name="an-overview-of-forms-authentication-vb"></a>폼 인증 (VB)의 개요
 ====================
@@ -270,7 +271,7 @@ FormsAuthentication.RedirectFromLoginPage(UserName.Text, RememberMe.Checked)
 중요 한 정보를 포함 하는 웹 사이트, 하지 않는 한 하기만 하면 됩니다 SSL을 사용 하도록 로그인 페이지에서와 다른 페이지에 일반 텍스트로 네트워크를 통해 그렇지 않은 경우 사용자의 암호가 전송 수입니다. 폼 인증 티켓 있으므로 기본적으로 모두 암호화 되어 디지털 서명 (변조를 방지) 보안에 대 한 걱정할 필요가 없습니다. 폼 인증 티켓 보안에 대 한 보다 철저 한 설명은 다음 자습서에 표시 됩니다.
 
 > [!NOTE]
-> 금융 및 의료 보험 많은 웹 사이트에서 SSL을 사용 하도록 구성 된 *모든* 인증 된 사용자 페이지에 액세스할 수 있습니다. 이러한 웹 사이트를 빌드하는 경우 폼 인증 티켓 보안 연결을 통해 전송할만 폼 인증 시스템을 구성할 수 있습니다. 다음 자습서에서는 다양 한 폼 인증 구성 옵션 살펴보도록 하겠습니다  *[폼 인증 구성 및 고급 항목](../membership/creating-the-membership-schema-in-sql-server-vb.md)*합니다.
+> 금융 및 의료 보험 많은 웹 사이트에서 SSL을 사용 하도록 구성 된 *모든* 인증 된 사용자 페이지에 액세스할 수 있습니다. 이러한 웹 사이트를 빌드하는 경우 폼 인증 티켓 보안 연결을 통해 전송할만 폼 인증 시스템을 구성할 수 있습니다. 다음 자습서에서는 다양 한 폼 인증 구성 옵션 살펴보도록 하겠습니다  *[폼 인증 구성 및 고급 항목](../membership/creating-the-membership-schema-in-sql-server-vb.md)* 합니다.
 
 
 ## <a name="step-4-detecting-authenticated-visitors-and-determining-their-identity"></a>4 단계: 인증 된 방문자를 검색 하 고 해당 Id를 확인 합니다.
@@ -470,7 +471,7 @@ LoginView 컨트롤 외부에서 LoginStatus 이므로 익명 및 인증 된 사
 
 ### <a name="about-the-author"></a>작성자 정보
 
-여러 ASP/ASP.NET 책의 작성자 및 4GuysFromRolla.com의 창립자 Scott Mitchell의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은  *[Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)*합니다. Scott에 도달할 수 [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) 또는에서 그의 블로그 통해 [ http://ScottOnWriting.NET ](http://scottonwriting.net/)합니다.
+여러 ASP/ASP.NET 책의 작성자 및 4GuysFromRolla.com의 창립자 Scott Mitchell의 근무 기간이 Microsoft 웹 기술을 1998 이후입니다. Scott 독립 컨설턴트, 강사, 기술 및 작성기 작동합니다. 그의 최신 서적은  *[Sam 업무량이 직접 ASP.NET 2.0 24 시간 동안에서](https://www.amazon.com/exec/obidos/ASIN/0672327384/4guysfromrollaco)* 합니다. Scott에 도달할 수 [ mitchell@4guysfromrolla.com ](mailto:mitchell@4guysfromrolla.com) 또는에서 그의 블로그 통해 [ http://ScottOnWriting.NET ](http://scottonwriting.net/)합니다.
 
 ### <a name="special-thanks-to"></a>특별히 감사
 

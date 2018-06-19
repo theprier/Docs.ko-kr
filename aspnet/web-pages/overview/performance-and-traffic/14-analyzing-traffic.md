@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/performance-and-traffic/14-analyzing-traffic
-title: "ASP.NET 웹 페이지 (Razor) 사이트에 대 한 추적 방문자 정보 (분석) | Microsoft Docs"
+title: ASP.NET 웹 페이지 (Razor) 사이트에 대 한 추적 방문자 정보 (분석) | Microsoft Docs
 author: tfitzmac
-description: "라인 웹 사이트를 참조 한 후에 웹 사이트 트래픽을 분석 하는 것이 좋습니다."
+description: 라인 웹 사이트를 참조 한 후에 웹 사이트 트래픽을 분석 하는 것이 좋습니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/17/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26528762"
 ---
 <a name="tracking-visitor-information-analytics-for-an-aspnet-web-pages-razor-site"></a>ASP.NET 웹 페이지 (Razor) 사이트에 대 한 방문자 정보 (분석)를 추적합니다.
 ====================

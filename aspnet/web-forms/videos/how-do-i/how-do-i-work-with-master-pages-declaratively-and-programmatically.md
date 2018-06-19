@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-work-with-master-pages-declaratively-and-programmatically
-title: "[어떻게 할까요?] 선언적으로 및 프로그래밍 방식으로 마스터 페이지와 함께 작업 | Microsoft Docs"
+title: '[어떻게 할까요?] 선언적으로 및 프로그래밍 방식으로 마스터 페이지와 함께 작업 | Microsoft Docs'
 author: rick-anderson
-description: "이 비디오 Chris Pels에서 정의 하 고 마스터 페이지를 사용 하 여 ASP.NET 웹 사이트에서의 여러 측면을 표시 됩니다. 첫째, 마스터 페이지 declarati를 만드는 방법을 참조 하십시오."
+description: 이 비디오 Chris Pels에서 정의 하 고 마스터 페이지를 사용 하 여 ASP.NET 웹 사이트에서의 여러 측면을 표시 됩니다. 첫째, 마스터 페이지 declarati를 만드는 방법을 참조 하십시오.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/21/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26526522"
 ---
 <a name="how-do-i-work-with-master-pages-declaratively-and-programmatically"></a>[어떻게 할까요?] 선언적으로 및 프로그래밍 방식으로 마스터 페이지와 함께 작업
 ====================

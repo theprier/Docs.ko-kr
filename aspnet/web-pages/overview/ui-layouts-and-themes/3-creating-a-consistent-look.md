@@ -1,8 +1,8 @@
 ---
 uid: web-pages/overview/ui-layouts-and-themes/3-creating-a-consistent-look
-title: "페이지 (Razor) 사이트를 ASP.NET 웹에서 일관 된 레이아웃 만들기 | Microsoft Docs"
+title: 페이지 (Razor) 사이트를 ASP.NET 웹에서 일관 된 레이아웃 만들기 | Microsoft Docs
 author: tfitzmac
-description: "사이트에 대 한 웹 페이지를 보다 효율적으로 만들, 콘텐츠 (예: 머리글 및 바닥글) 웹 사이트를 가리키고 있습니다 c에 대 한 다시 사용할 수 있는 블록을 만들 수 있습니다..."
+description: '사이트에 대 한 웹 페이지를 보다 효율적으로 만들, 콘텐츠 (예: 머리글 및 바닥글) 웹 사이트를 가리키고 있습니다 c에 대 한 다시 사용할 수 있는 블록을 만들 수 있습니다...'
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/10/2014
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26530242"
 ---
 <a name="creating-a-consistent-layout-in-aspnet-web-pages-razor-sites"></a>ASP.NET 웹 페이지 (Razor) 사이트에서 일관 된 레이아웃 만들기
 ====================

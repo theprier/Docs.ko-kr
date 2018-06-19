@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30898585"
 ---
 <a name="aspnet-mvc-4"></a>ASP.NET MVC 4
 ====================
@@ -153,7 +154,7 @@ ASP.NET Web API에 대 한 자세한 내용은 링크 참조 [ https://www.asp.n
 <a id="_Toc303253813"></a>
 ### <a name="task-support-for-asynchronous-controllers"></a>비동기 컨트롤러에 대 한 작업 지원
 
-작성할 수 있습니다 비동기 작업 메서드 형식의 개체를 반환 하는 단일 메서드 *작업* 또는 *작업&lt;ActionResult&gt;*합니다.
+작성할 수 있습니다 비동기 작업 메서드 형식의 개체를 반환 하는 단일 메서드 *작업* 또는 *작업&lt;ActionResult&gt;* 합니다.
 
  자세한 내용은 참조 [ASP.NET MVC 4의 비동기 메서드를 사용 하 여](../mvc/overview/performance/using-asynchronous-methods-in-aspnet-mvc-4.md)합니다.
 
@@ -232,7 +233,7 @@ ASP.NET MVC 4 릴리스 후보 릴리스 정보는 여기에서 확인할 수 �
 - **콘텐츠 푸시:** 는 *PushStreamContent* 클래스 하려는 시나리오에서 데이터 공급자는 요청 또는 응답 (동기 또는 비동기)는 스트림을 사용 하 여에 직접 쓸 수 있도록 합니다. 경우는 *PushStreamContent* 출력 스트림 사용 하 여 action 대리자를 호출 하는 데이터를 받아들일 준비가 되었습니다. 스트림에 쓸 때 완료 하는 동안 필요한와 종가 대 한 개발자 스트림에 쓸 다음 수 있습니다. *PushStreamContent* 스트림의 닫는 검색 하 고 내부 비동기 완료 *작업* 콘텐츠 작성 하기 위한 합니다.
 - **오류 응답을 만드는:** 사용은 *HttpError* 일관 되 게 오류 정보에서 유효성 검사 오류 및 예외와 같은 여전히 적용 하면서를 나타내는 형식을 *IncludeErrorDetailPolicy*. 새로운 *CreateErrorResponse* 확장 메서드를 쉽게와 오류 응답을 만들 *HttpError* 콘텐츠로 합니다. *HttpError* 콘텐츠 완벽 하 게 콘텐츠를 협상 합니다.
 - **제거 MediaRangeMapping:** 미디어 형식 범위는 이제 기본 콘텐츠 협상 자에 의해 처리 됩니다.
-- **단순 형식 매개 변수에 대 한 기본 매개 변수 바인딩에 이제 [FromUri]:** 모델 바인딩을 사용 하는 단순 형식 매개 변수가 기본 매개 변수 바인딩에 ASP.NET Web API의 이전 릴리스에서 합니다. 단순 형식 매개 변수에 대 한 기본 매개 변수 바인딩에 이제 *[FromUri]*합니다.
+- **단순 형식 매개 변수에 대 한 기본 매개 변수 바인딩에 이제 [FromUri]:** 모델 바인딩을 사용 하는 단순 형식 매개 변수가 기본 매개 변수 바인딩에 ASP.NET Web API의 이전 릴리스에서 합니다. 단순 형식 매개 변수에 대 한 기본 매개 변수 바인딩에 이제 *[FromUri]* 합니다.
 - **작업 선택에 필요한 매개 변수가 인식:** ASP.NET Web API에서 작업 선택은 이제 경우에 선택 동작 URI에서 제공 하는 모든 필수 매개 변수가 제공 됩니다. 동작 메서드 시그니처의 인수에 대 한 기본값을 제공 하 여 매개 변수를 선택적으로 지정할 수 있습니다.
 - **HTTP 매개 변수 바인딩 사용자 지정:** 사용는 *ParameterBindingAttribute* 사용 또는 특정 작업 매개 변수에 대 한 매개 변수 바인딩을 사용자 지정할 수는 *ParameterBindingRules* 에 *HttpConfiguration* 매개 변수 바인딩에 사용자 지정 하려면 보다 광범위 하 게 합니다.
 - **MediaTypeFormatter 개선:** 포맷터 액세스는 완전 하 게 *HttpContent* 인스턴스.

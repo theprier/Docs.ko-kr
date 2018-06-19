@@ -1,8 +1,8 @@
 ---
 uid: web-forms/videos/how-do-i/how-do-i-pass-information-from-one-page-to-another-using-a-query-string
-title: "[어떻게 할까요?] 쿼리 문자열을 사용 하 여 한 페이지에서 정보를 전달 | Microsoft Docs"
+title: '[어떻게 할까요?] 쿼리 문자열을 사용 하 여 한 페이지에서 정보를 전달 | Microsoft Docs'
 author: rick-anderson
-description: "이 비디오에서 Chris Pels 쿼리 문자열을 사용 하 여 다른 하 한 페이지에서 정보에 전달 하는 방법 표시 됩니다. 첫째,에 쿼리 문자열을 생성 하는 방법을 참조 하십시오."
+description: 이 비디오에서 Chris Pels 쿼리 문자열을 사용 하 여 다른 하 한 페이지에서 정보에 전달 하는 방법 표시 됩니다. 첫째,에 쿼리 문자열을 생성 하는 방법을 참조 하십시오.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/26/2008
@@ -17,6 +17,7 @@ ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 11/10/2017
+ms.locfileid: "26521962"
 ---
 <a name="how-do-i-pass-information-from-one-page-to-another-using-a-query-string"></a>[어떻게 할까요?] 쿼리 문자열을 사용 하 여 다른 한 페이지에서 정보 전달
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/10/2018
+ms.locfileid: "30890621"
 ---
 <a name="logging-error-details-with-elmah-c"></a>오류 세부 정보 ELMAH (C#)를 사용 하 여 로깅
 ====================

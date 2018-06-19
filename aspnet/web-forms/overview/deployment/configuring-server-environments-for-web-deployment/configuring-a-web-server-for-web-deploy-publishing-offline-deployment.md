@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30884030"
 ---
 <a name="configuring-a-web-server-for-web-deploy-publishing-offline-deployment"></a>웹 배포 게시 (오프 라인 배포의 경우)에 대 한 웹 서버를 구성 합니다.
 ====================

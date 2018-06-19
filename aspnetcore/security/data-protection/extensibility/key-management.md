@@ -14,6 +14,7 @@ ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 03/22/2018
+ms.locfileid: "30074166"
 ---
 # <a name="key-management-extensibility-in-aspnet-core"></a>ASP.NET Core에서 키 관리 확장성
 

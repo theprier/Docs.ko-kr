@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30894898"
 ---
 <a name="how-do-i-publish-and-analyze-test-results"></a>[어떻게 할까요?] 게시 및 테스트 결과 분석?
 ====================

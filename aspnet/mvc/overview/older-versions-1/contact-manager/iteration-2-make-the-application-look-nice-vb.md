@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30872769"
 ---
 <a name="iteration-2--make-the-application-look-nice-vb"></a>반복 #2-좋은 (VB)을 찾을 응용 프로그램으로 설정
 ====================

@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893539"
 ---
 <a name="how-do-i-automate-testing-using-team-build"></a>[어떻게 할까요?] 팀 빌드를 사용 하 여 테스트를 자동화?
 ====================

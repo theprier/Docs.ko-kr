@@ -14,6 +14,7 @@ ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 05/12/2018
+ms.locfileid: "34094437"
 ---
 # <a name="choose-between-aspnet-and-aspnet-core"></a>ASP.NET 및 ASP.NET Core 중에서 선택
 

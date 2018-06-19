@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30871287"
 ---
 <a name="part-8-shopping-cart-with-ajax-updates"></a>Ajax 업데이트와 8 단계: 쇼핑 카트
 ====================

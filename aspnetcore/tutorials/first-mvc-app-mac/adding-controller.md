@@ -14,6 +14,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30893679"
 ---
 # <a name="add-a-controller-to-an-aspnet-core-mvc-app-with-visual-studio-for-mac"></a>Mac용 Visual Studio를 사용하여 ASP.NET Core MVC 앱에 컨트롤러 추가
 

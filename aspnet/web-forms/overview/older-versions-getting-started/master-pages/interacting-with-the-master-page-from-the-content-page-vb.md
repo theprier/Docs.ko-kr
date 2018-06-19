@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30891284"
 ---
 <a name="interacting-with-the-master-page-from-the-content-page-vb"></a>콘텐츠 페이지 (VB)에서 마스터 페이지와 상호 작용
 ====================

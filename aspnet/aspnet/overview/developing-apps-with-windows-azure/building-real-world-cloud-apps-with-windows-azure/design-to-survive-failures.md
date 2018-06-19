@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30874111"
 ---
 <a name="design-to-survive-failures-building-real-world-cloud-apps-with-azure"></a>에 오류가 발생 했습니다 (Azure로 응용 프로그램 빌딩 실제 클라우드)에 동등한 존속 디자인
 ====================

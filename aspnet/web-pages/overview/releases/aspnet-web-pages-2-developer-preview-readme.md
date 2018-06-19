@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30899092"
 ---
 <a name="aspnet-web-pages-2-developer-preview-readme"></a>ASP.NET 웹 페이지 2 개발자 미리 보기 추가 정보
 ====================

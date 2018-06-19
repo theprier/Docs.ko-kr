@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30886149"
 ---
 <a name="lesson-3--understanding-more-about-events-and-postback"></a>[3 단원:]  이벤트 및 포스트백에 대해 자세히 이해
 ====================

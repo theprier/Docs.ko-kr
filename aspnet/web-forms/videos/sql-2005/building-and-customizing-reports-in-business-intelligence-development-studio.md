@@ -17,6 +17,7 @@ ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 04/06/2018
+ms.locfileid: "30894622"
 ---
 <a name="building-and-customizing-reports-in-business-intelligence-development-studio"></a>빌드 및 Business Intelligence Development Studio에서 보고서를 사용자 지정
 ====================
