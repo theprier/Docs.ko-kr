@@ -36,7 +36,7 @@ ms.lasthandoff: 04/06/2018
 
 [!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspController)]
 
-생성되는 HTML:
+생성된 HTML
 
 ```html
 <a href="/Speaker">All Speakers</a>
