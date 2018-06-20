@@ -1,7 +1,7 @@
 ---
 title: ASP.NET Core의 앵커 태그 도우미
 author: pkellner
-description: ASP.NET Core 앵커 태그 도우미 특성 및 HTML 앵커 태그의 동작을 확장할 때 각 특성이 담당하는 역할을 검색합니다.
+description: ASP.NET Core 앵커 태그 도우미 특성 및 HTML 앵커 태그의 동작을 확장할 때 각 특성이 담당하는 역할을 확인합니다.
 manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
@@ -23,13 +23,13 @@ ms.locfileid: "30899410"
 
 [예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/built-in/samples)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
-[앵커 태그 도우미](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortaghelper)는 새 특성을 추가하여 표준 HTML 앵커(`<a ... ></a>`) 태그를 향상시킵니다. 규칙에 따라 특성 이름의 접두사는 `asp-`입니다. 렌더링된 앵커 요소의 `href` 특성 값은 `asp-` 특성 값에 따라 결정됩니다.
+[앵커 태그 도우미](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortaghelper)는 새로운 특성을 추가함으로써 표준 HTML 앵커(`<a ... ></a>`) 태그를 향상시킵니다. 규칙에 따라 해당 특성들의 이름은 `asp-` 접두사로 시작됩니다. 렌더링 된 앵커 요소의 `href` 특성값은 `asp-` 특성값에 따라 결정됩니다.
 
-*SpeakerController*는 이 문서 전반의 샘플에서 사용됩니다.
+이 문서의 예제 전반에서는 다음의 *SpeakerController*가 사용됩니다. 
 
 [!code-csharp[](samples/TagHelpersBuiltIn/Controllers/SpeakerController.cs?name=snippet_SpeakerController)]
 
-`asp-` 특성의 인벤토리는 다음과 같습니다.
+`asp-` 특성의 목록은 다음과 같습니다.
 
 ## <a name="asp-controller"></a>asp-controller
 
