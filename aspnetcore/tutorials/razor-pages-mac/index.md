@@ -2,20 +2,16 @@
 title: Mac용 Visual Studio를 사용하여 macOS의 ASP.NET Core에서 Razor 페이지 웹앱 만들기
 author: rick-anderson
 description: ASP.NET Core 및 EF Core를 사용하여 Razor 페이지 웹앱을 만듭니다.
-manager: wpickett
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 07/26/2017
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: tutorials/razor-pages-mac/index
-ms.openlocfilehash: 3e7af4b3cc29bdd86fc780c94a81f7e822a65971
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: 469eec966696aa763d701b0019a75d7d6c8b9ec4
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2018
-ms.locfileid: "31483908"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36276713"
 ---
 # <a name="create-a-razor-pages-web-app-with-aspnet-core-on-macos-with-visual-studio-for-mac"></a>Mac용 Visual Studio를 사용하여 macOS의 ASP.NET Core에서 Razor 페이지 웹앱 만들기
 

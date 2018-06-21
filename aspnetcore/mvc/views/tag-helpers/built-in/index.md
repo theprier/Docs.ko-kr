@@ -2,19 +2,15 @@
 title: 기본 제공 ASP.NET Core 태그 도우미
 author: pkellner
 description: 기본 제공 ASP.NET Core 태그 도우미에서 생산성을 향상시키는 방법을 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.date: 09/13/2017
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/views/tag-helpers/builtin-th/Index
-ms.openlocfilehash: f539f96a87b125c0f55855f780bbff005db8c0d9
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 4f2ebf1600f42847db1c1f9517787b020d2e86c9
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "29903210"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36279170"
 ---
 # <a name="aspnet-core-built-in-tag-helpers"></a>기본 제공 ASP.NET Core 태그 도우미
 

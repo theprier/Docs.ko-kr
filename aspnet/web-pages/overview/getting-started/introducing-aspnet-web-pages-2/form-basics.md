@@ -13,10 +13,10 @@ ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/form-basics
 msc.type: authoredcontent
 ms.openlocfilehash: 6f44f74774c2fa6338524987779e15f3940d1830
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/20/2018
 ms.locfileid: "30898923"
 ---
 <a name="introducing-aspnet-web-pages---html-form-basics"></a>HTML 양식 기본 ASP.NET 웹 페이지-소개
@@ -358,7 +358,7 @@ WebMatrix에서 실행 된 *Movies.cshtml* 페이지. 페이지가 장르에 대
 
 [!code-cshtml[Main](form-basics/samples/sample13.cshtml)]
 
-## <a name="additional-resources"></a>추가 자료
+## <a name="additional-resources"></a>추가 리소스
 
 - [Razor 구문을 사용 하 여 ASP.NET 웹 프로그래밍 소개](https://go.microsoft.com/fwlink/?LinkID=202890)
 - [SQL WHERE 절](http://www.w3schools.com/sql/sql_where.asp) W3Schools 사이트
