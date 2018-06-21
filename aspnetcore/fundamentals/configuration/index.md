@@ -1,21 +1,17 @@
 ---
 title: ASP.NET Core의 구성
 author: rick-anderson
-description: 구성 API를 사용하여 여러 가지 방법으로 ASP.NET Core 앱을 구성합니다.
-manager: wpickett
+description: 구성 API를 사용하여 ASP.NET Core 앱을 구성하는 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
 ms.date: 01/11/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 1048554c78e3810206b1261371ae7c41485c436a
-ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
+ms.openlocfilehash: 70e9e73eeb5d08baf9ef190ebfbda998ace60d77
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/10/2018
-ms.locfileid: "35252128"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278327"
 ---
 # <a name="configuration-in-aspnet-core"></a>ASP.NET Core의 구성
 
@@ -102,7 +98,7 @@ ASP.NET Core 1.x 앱은 `AddJsonFile` 및 [AddEnvironmentVariables](/dotnet/api/
 
 [!code-json[](index/sample/appsettings.Staging.json)]
 
-환경이 `Staging`으로 설정되면 다음 `Configure` 메서드가 `MyConfig` 값을 읽습니다.
+다음 코드에서 `Configure`는 `MyConfig` 값을 읽습니다.
 
 [!code-csharp[](index/sample/StartupConfig.cs?name=snippet&highlight=3,4)]
 

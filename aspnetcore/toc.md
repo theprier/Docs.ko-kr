@@ -1,5 +1,9 @@
 # [소개](index.md)
 
+# [새로운 기능](xref:aspnetcore-2.1)
+# [새로운 기능](xref:aspnetcore-2.0)
+# [새로운 기능](xref:aspnetcore-1.1)
+
 # [시작](getting-started.md)
 ## [웹앱 만들기](xref:mvc/razor-pages/index)
 ## [Web API 만들기](xref:tutorials/first-web-api)
@@ -104,6 +108,8 @@
 ### [Mac용 Visual Studio를 사용하는 Web API](xref:tutorials/first-web-api-mac)
 ### [Visual Studio Code를 사용하는 Web API](xref:tutorials/web-api-vsc)
 
+## [파일 감시자를 사용하여 앱 개발](xref:tutorials/dotnet-watch)
+
 ## [모바일 앱에 대한 백 엔드 서비스 만들기](mobile/native-mobile-backend.md)
 
 # [기본 사항](fundamentals/index.md)
@@ -198,15 +204,15 @@
 ### [사용자 지정 서식 지정기](xref:web-api/advanced/custom-formatters)
 ### [응답 데이터 서식 지정](xref:web-api/advanced/formatting)
 
-# [테스트, 디버깅 및 문제 해결](xref:testing/index)
+# [테스트, 디버깅 및 문제 해결](xref:test/index)
 ## [유닛 테스트](/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
-## [통합 테스트](xref:testing/integration-testing)
-## [Razor 페이지 테스트](xref:testing/razor-pages-testing)
+## [통합 테스트](xref:test/integration-tests)
+## [Razor 페이지 단위 테스트](xref:test/razor-pages-tests)
 ## [테스트 컨트롤러](xref:mvc/controllers/testing)
 ## [원격 디버깅](/visualstudio/debugger/remote-debugging-azure)
 ## [스냅숏 디버깅](/azure/application-insights/app-insights-snapshot-debugger)
 ## [Visual Studio에서 스냅숏 디버깅](/visualstudio/debugger/debug-live-azure-applications)
-## [문제 해결](xref:testing/troubleshoot)
+## [문제 해결](xref:test/troubleshoot)
 
 # [EF Core 및 Azure를 사용한 데이터 액세스](data/index.md)
 ## [Visual Studio를 사용하여 Razor 페이지 및 EF Core 시작](xref:data/ef-rp/intro)
@@ -240,7 +246,11 @@
 ## [허브](xref:signalr/hubs)
 ## [JavaScript 클라이언트](xref:signalr/javascript-client)
 ## [.NET 클라이언트](xref:signalr/dotnet-client)
+## [HubContext](xref:signalr/hubcontext)
+## [사용자 및 그룹](xref:signalr/groups)
+## [MessagePack 허브 프로토콜](xref:signalr/messagepackhubprotocol)
 ## [Azure에 게시](xref:signalr/publish-to-azure-web-app)
+## [스트리밍](xref:signalr/streaming)
 ## [지원되는 플랫폼](xref:signalr/supported-platforms)
 
 # [모바일](xref:mobile/index)
@@ -274,6 +284,7 @@
 ## [인증](xref:security/authentication/index)
 ### [ID 소개](xref:security/authentication/identity)
 ### [스캐폴드 ID](xref:security/authentication/scaffold-identity)
+### [사용자 지정 사용자 데이터를 ID에 추가](xref:security/authentication/add-user-data)
 ### [커뮤니티 OSS 인증 옵션](xref:security/authentication/community)
 ### [ID 구성](xref:security/authentication/identity-configuration)
 ### [Windows 인증 구성](xref:security/authentication/windowsauth)
@@ -361,6 +372,7 @@
 ## [응답 압축 미들웨어](xref:performance/response-compression)
 
 # [마이그레이션](xref:migration/index)
+## [ASP.NET Core 2.0 ~ 2.1](xref:migration/20_21)
 ## [ASP.NET에서 ASP.NET Core로](xref:migration/proper-to-2x/index)
 ### [MVC](xref:migration/mvc)
 ### [Web API](xref:migration/webapi)
@@ -373,10 +385,5 @@
 ### [인증 및 ID](xref:migration/1x-to-2x/identity-2x)
 
 # [API 참조](/dotnet/api/?view=aspnetcore-2.0)
-
-# [2.0 릴리스 정보](aspnetcore-2.0.md)
-## [1.1 릴리스 정보](aspnetcore-1.1.md)
-## [이전 릴리스 정보](https://github.com/aspnet/home/releases)
-## [VS 2015/project.json 문서](https://docs.microsoft.com/dotnet/articles/project-json)
 
 # [참가](https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md)

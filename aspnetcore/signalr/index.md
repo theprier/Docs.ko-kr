@@ -5,16 +5,17 @@ description: ASP.NET Core SignalR과 관련된 항목을 살펴봅니다.
 manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
-ms.date: 05/25/2018
+ms.date: 06/18/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: signalr/index
-ms.openlocfilehash: 6e36bb483da8f6744c662841c09c7717e424e0a4
-ms.sourcegitcommit: 466300d32f8c33e64ee1b419a2cbffe702863cdf
+ms.openlocfilehash: 7edcd93582d37ab47a6947ea5125ec6a4404b5f1
+ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/27/2018
+ms.lasthandoff: 06/18/2018
+ms.locfileid: "35725759"
 ---
 # <a name="aspnet-core-signalr"></a>ASP.NET Core SignalR
 
@@ -23,5 +24,9 @@ ms.lasthandoff: 05/27/2018
 * [허브](xref:signalr/hubs)
 * [JavaScript 클라이언트](xref:signalr/javascript-client)
 * [.NET 클라이언트](xref:signalr/dotnet-client)
+* [HubContext](xref:signalr/hubcontext)
+* [사용자 및 그룹](xref:signalr/groups)
+* [MessagePack 허브 프로토콜](xref:signalr/messagepackhubprotocol)
 * [Azure에 게시](xref:signalr/publish-to-azure-web-app)
+* [스트리밍](xref:signalr/streaming)
 * [지원되는 플랫폼](xref:signalr/supported-platforms)

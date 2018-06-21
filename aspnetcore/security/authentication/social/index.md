@@ -2,22 +2,17 @@
 title: ASP.NET Core에서 Facebook, Google 및 외부 공급자 인증
 author: rick-anderson
 description: 이 자습서에는 외부 인증 공급자에 OAuth 2.0을 사용하여 ASP.NET Core 2.x 앱을 빌드하는 방법을 보여줍니다.
-manager: wpickett
 ms.author: riande
 ms.date: 11/01/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/authentication/social/index
-ms.openlocfilehash: 93fa42be9c551f5bbdf3851aec1d9e01139fdb76
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 58045504ce4588f854428273273d3ea8f181e12e
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278000"
 ---
 # <a name="facebook-google-and-external-provider-authentication-in-aspnet-core"></a>ASP.NET Core에서 Facebook, Google 및 외부 공급자 인증
-
-<a name="security-authentication-social-logins"></a>
 
 작성자: [Valeriy Novytskyy](https://github.com/01binary) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -78,13 +73,15 @@ OAuth 2.0은 HTTPS 프로토콜을 통한 인증을 위해 SSL을 사용해야 �
 * [Microsoft](xref:security/authentication/microsoft-logins) 지침
 * [다른 공급자](xref:security/authentication/otherlogins) 지침
 
+[!INCLUDE[](~/includes/chain-auth-providers.md)]
+
 ## <a name="optionally-set-password"></a>필요에 따라 암호 설정
 
 외부 로그인 공급자를 등록하는 경우 앱에 암호를 등록하지 않은 상태입니다. 그러면 사이트에 암호를 만들고 기억하지 않아도 되지만 외부 로그인 공급자에 따라 다르게 적용해야 합니다. 외부 로그인 공급자를 사용할 수 없는 경우 웹 사이트에 로그인할 수 없습니다.
 
 외부 공급자로 로그인하는 프로세스 중에 설정한 전자 메일을 사용하여 암호를 만들고 로그인하려면:
 
-* 오른쪽 위 모서리에 있는 **Hello<email alias>** 링크를 눌러 **관리** 뷰로 이동합니다.
+* 오른쪽 위 모서리에 있는 **Hello &lt;이메일 별칭&gt;** 링크를 눌러 **관리** 보기로 이동합니다.
 
 ![웹 응용 프로그램 관리 뷰](index/_static/pass1a.png)
 
