@@ -1,4 +1,4 @@
-﻿---
+---
 title: ASP.NET Core의 앵커 태그 도우미
 author: pkellner
 description: ASP.NET Core 앵커 태그 도우미 특성 및 HTML 앵커 태그의 동작을 확장할 때 각 특성이 담당하는 역할을 확인합니다.
@@ -21,11 +21,11 @@ ms.locfileid: "30899410"
 
 작성자: [Peter Kellner](http://peterkellner.net) 및 [Scott Addie](https://github.com/scottaddie)
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/built-in/samples) ([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/built-in/samples)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 [앵커 태그 도우미](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortaghelper)는 새로운 특성을 추가함으로써 표준 HTML 앵커(`<a ... ></a>`) 태그를 향상시킵니다. 규칙에 따라 해당 특성들의 이름은 `asp-` 접두사로 시작됩니다. 렌더링 된 앵커 요소의 `href` 특성값은 `asp-` 특성값에 따라 결정됩니다.
 
-이 문서의 예제 전반에서는 다음의 *SpeakerController*가 사용됩니다.
+이 문서의 예제 전반에서는 다음의 *SpeakerController*가 사용됩니다. 
 
 [!code-csharp[](samples/TagHelpersBuiltIn/Controllers/SpeakerController.cs?name=snippet_SpeakerController)]
 
@@ -37,7 +37,7 @@ ms.locfileid: "30899410"
 
 [!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspController)]
 
-생성된 HTML
+생성된 HTML:
 
 ```html
 <a href="/Speaker">All Speakers</a>
@@ -55,7 +55,7 @@ ms.locfileid: "30899410"
 
 [!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspAction)]
 
-생성되는 HTML:
+생성된 HTML:
 
 ```html
 <a href="/Speaker/Evaluations">Speaker Evaluations</a>
@@ -63,17 +63,17 @@ ms.locfileid: "30899410"
 
 `asp-controller` 특성을 지정하지 않으면 현재 뷰를 실행 중인 뷰를 호출하는 기본 컨트롤러가 사용됩니다.
 
-`asp-action` 특성값이 `Index`면 URL에 아무런 액션도 추가되지 않으며 기본 `Index` 액션이 호출됩니다. 지정된 (또는 기본값으로 설정된) 액션은 `asp-controller`에서 참조되는 컨트롤러에 존재해야 합니다.
+`asp-action` 특성값이 `Index`면 URL에 아무런 액션도 추가되지 않으며 기본 `Index` 액션이 호출됩니다. 지정된 (또는 기본값으로 설정된) 액션은 `asp-controller`에서 참조되는 컨트롤러에 존재해야 합니다. 
 
 ## <a name="asp-route-value"></a>asp-route-{value}
 
-[asp-route-{value}](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortaghelper.routevalues) 특성을 사용하면 와일드카드 경로 접두사를 사용할 수 있습니다. `{value}` 자리 표시자에 위치하는 모든 값은 잠재적인 경로 매개 변수로 해석됩니다. 기본 경로가 발견되지 않으면 이 경로 접두사는 생성되는 `href` 특성에 요청 매개 변수 및 값으로 추가됩니다. 그렇지 않으면 경로 템플릿에서 이 경로 접두사가 대체됩니다.
+[asp-route-{value}](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortaghelper.routevalues) 특성을 사용하면 와일드카드 경로 접두사를 사용할 수 있습니다. `{value}` 자리 표시자에 위치하는 모든 값은 잠재적인 경로 매개 변수로 해석됩니다.  기본 경로가 발견되지 않으면 이 경로 접두사는 생성되는 `href` 특성에 요청 매개 변수 및 값으로 추가됩니다. 그렇지 않으면 경로 템플릿에서 이 경로 접두사가 대체됩니다.
 
 다음 컨트롤러 액션을 살펴보시기 바랍니다.
 
 [!code-csharp[](samples/TagHelpersBuiltIn/Controllers/BuiltInTagController.cs?name=snippet_AnchorTagHelperAction)]
 
-*Startup.Configure*에 정의된 기본 경로 템플릿을 사용할 경우:
+*Startup.Configure*에 정의된 기본 경로 템플릿을 사용할 경우: 
 
 [!code-csharp[](samples/TagHelpersBuiltIn/Startup.cs?name=snippet_UseMvc&highlight=8-10)]
 
@@ -91,7 +91,7 @@ ms.locfileid: "30899410"
 </html>
 ```
 
-이 경우 기본 경로의 `{id?}` 자리 표시자가 일치합니다. 따라서 생성되는 HTML은 다음과 같습니다.
+이 경우 기본 경로의 `{id?}` 자리 표시자가 일치합니다. 생성된 HTML:
 
 ```html
 <a href="/Speaker/Detail/12">SpeakerId: 12</a>
@@ -111,7 +111,7 @@ ms.locfileid: "30899410"
 </html>
 ```
 
-이 경우 일치하는 경로에서 `speakerid`를 찾을 수 없기 때문에 생성되는 HTML은 다음과 같습니다.
+이 경우 일치하는 경로에서 `speakerid`를 찾을 수 없기 때문에 생성되는 HTML은 다음과 같습니다. 
 
 ```html
 <a href="/Speaker/Detail?speakerid=12">SpeakerId: 12</a>
@@ -129,13 +129,13 @@ ms.locfileid: "30899410"
 
 [!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspRoute)]
 
-앵커 태그 도우미는 */Speaker/Evaluations* URL을 사용하여 해당 컨트롤러 액션을 직접 가리키는 경로를 생성합니다. 생성되는 HTML은 다음과 같습니다.
+앵커 태그 도우미는 */Speaker/Evaluations* URL을 사용하여 해당 컨트롤러 액션을 직접 가리키는 경로를 생성합니다. 생성된 HTML:
 
 ```html
 <a href="/Speaker/Evaluations">Speaker Evaluations</a>
 ```
 
-`asp-route`와 `asp-controller` 또는 `asp-action`을 동시에 지정하면 기대하는 것과 다른 경로가 생성될 수 있습니다. 경로 충돌을 방지하려면 `asp-route`를 `asp-controller` 및 `asp-action` 특성과 함께 사용하지 않아야 합니다.
+`asp-route` 와 `asp-controller` 또는 `asp-action` 을 동시에 지정하면 기대하는 것과 다른 경로가 생성될 수 있습니다. 경로 충돌을 방지하려면 `asp-route`를 `asp-controller` 및 `asp-action` 특성과 함께 사용하지 않아야 합니다. 
 
 ## <a name="asp-all-route-data"></a>asp-all-route-data
 
@@ -163,7 +163,7 @@ ms.locfileid: "30899410"
 
 [!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspFragment)]
 
-생성되는 HTML:
+생성된 HTML:
 
 ```html
 <a href="/Speaker/Evaluations#SpeakerEvaluations">Speaker Evaluations</a>
@@ -188,18 +188,18 @@ ms.locfileid: "30899410"
         * *_ViewStart.cshtml*
   * **Controllers**
 
-위의 디렉터리 계층 구조에서 *AboutBlog.cshtml* 파일을 참조하는 태그는 다음과 같습니다.
+위의 디렉터리 계층 구조에서 *AboutBlog.cshtml* 파일을 참조하는 태그는 다음과 같습니다. 
 
 [!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspArea)]
 
-생성되는 HTML:
+생성된 HTML:
 
 ```html
 <a href="/Blogs/Home/AboutBlog">About Blog</a>
 ```
 
 > [!TIP]
-> MVC 앱에서 작업하기 위한 영역의 경우, 경로 템플릿에 해당 영역에 대한 참조가 포함되어야 합니다 (존재할 경우). 해당 템플릿은 *Startup.Configure*에서 `routes.MapRoute` 메서드 호출의 두 번째 매개 변수로 표시됩니다.
+> MVC 앱에서 작업하기 위한 영역의 경우, 경로 템플릿에 해당 영역에 대한 참조가 포함되어야 합니다 (존재할 경우). 해당 템플릿은 *Startup.Configure*에서 `routes.MapRoute` 메서드 호출의 두 번째 매개 변수로 표시됩니다. 
 > [!code-csharp[](samples/TagHelpersBuiltIn/Startup.cs?name=snippet_UseMvc&highlight=5)]
 
 ## <a name="asp-protocol"></a>asp-protocol
@@ -208,7 +208,7 @@ ms.locfileid: "30899410"
 
 [!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspProtocol)]
 
-생성되는 HTML:
+생성된 HTML:
 
 ```html
 <a href="https://localhost/Home/About">About</a>
@@ -222,7 +222,7 @@ ms.locfileid: "30899410"
 
 [!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspHost)]
 
-생성되는 HTML:
+생성된 HTML:
 
 ```html
 <a href="https://microsoft.com/Home/About">About</a>
@@ -236,7 +236,7 @@ ms.locfileid: "30899410"
 
 [!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspPage)]
 
-생성되는 HTML:
+생성된 HTML:
 
 ```html
 <a href="/Attendee">All Attendees</a>
@@ -246,7 +246,7 @@ ms.locfileid: "30899410"
 
 [!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspPageAspRouteId)]
 
-생성되는 HTML:
+생성된 HTML:
 
 ```html
 <a href="/Attendee?attendeeid=10">View Attendee</a>
@@ -264,7 +264,7 @@ ms.locfileid: "30899410"
 
 [!code-cshtml[](samples/TagHelpersBuiltIn/Views/Home/Index.cshtml?name=snippet_AspPageHandler)]
 
-생성되는 HTML:
+생성된 HTML:
 
 ```html
 <a href="/Attendee?attendeeid=12&handler=Profile">Attendee Profile</a>
