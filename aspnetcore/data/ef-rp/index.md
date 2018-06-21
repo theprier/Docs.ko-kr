@@ -2,29 +2,25 @@
 title: ASP.NET Core Razor 페이지 및 EF Core - 자습서 시리즈
 author: rick-anderson
 description: ''
-manager: wpickett
 ms.author: riande
 ms.date: 03/15/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: data/ef-rp/index
-ms.openlocfilehash: 4247dff434b83658d18cd6d4bd22d6165258230e
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 0bb700e4ee6b33c65ab519c41bab620def261752
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30070422"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277514"
 ---
-# <a name="aspnet-core-razor-pages-with-ef-core---tutorial-series"></a><span data-ttu-id="91224-102">ASP.NET Core Razor 페이지 및 EF Core - 자습서 시리즈</span><span class="sxs-lookup"><span data-stu-id="91224-102">ASP.NET Core Razor Pages with EF Core - tutorial series</span></span>
+# <a name="aspnet-core-razor-pages-with-ef-core---tutorial-series"></a><span data-ttu-id="d98cb-102">ASP.NET Core Razor 페이지 및 EF Core - 자습서 시리즈</span><span class="sxs-lookup"><span data-stu-id="d98cb-102">ASP.NET Core Razor Pages with EF Core - tutorial series</span></span>
 
-<span data-ttu-id="91224-103">이 일련의 자습서에서는 데이터 액세스를 위해 Entity Framework(EF) Core를 사용하는 ASP.NET Core Razor Pages 웹앱을 만드는 방법을 설명합니다.</span><span class="sxs-lookup"><span data-stu-id="91224-103">This series of tutorials teaches you how to create ASP.NET Core Razor Pages web apps that use Entity Framework (EF) Core for data access.</span></span> <span data-ttu-id="91224-104">이 자습서에는 Visual Studio 2017이 필요합니다.</span><span class="sxs-lookup"><span data-stu-id="91224-104">The tutorials require Visual Studio 2017.</span></span>
+<span data-ttu-id="d98cb-103">이 일련의 자습서에서는 데이터 액세스를 위해 Entity Framework(EF) Core를 사용하는 ASP.NET Core Razor Pages 웹앱을 만드는 방법을 설명합니다.</span><span class="sxs-lookup"><span data-stu-id="d98cb-103">This series of tutorials teaches you how to create ASP.NET Core Razor Pages web apps that use Entity Framework (EF) Core for data access.</span></span> <span data-ttu-id="d98cb-104">이 자습서에는 Visual Studio 2017이 필요합니다.</span><span class="sxs-lookup"><span data-stu-id="d98cb-104">The tutorials require Visual Studio 2017.</span></span>
 
-1. [<span data-ttu-id="91224-105">시작</span><span class="sxs-lookup"><span data-stu-id="91224-105">Get started</span></span>](xref:data/ef-rp/intro)
-1. [<span data-ttu-id="91224-106">만들기, 읽기, 업데이트 및 삭제 작업</span><span class="sxs-lookup"><span data-stu-id="91224-106">Create, Read, Update, and Delete operations</span></span>](xref:data/ef-rp/crud)
-1. [<span data-ttu-id="91224-107">정렬, 필터링, 페이징 및 그룹화</span><span class="sxs-lookup"><span data-stu-id="91224-107">Sorting, filtering, paging, and grouping</span></span>](xref:data/ef-rp/sort-filter-page)
-1. [<span data-ttu-id="91224-108">마이그레이션</span><span class="sxs-lookup"><span data-stu-id="91224-108">Migrations</span></span>](xref:data/ef-rp/migrations)
-1. [<span data-ttu-id="91224-109">복합 데이터 모델 만들기</span><span class="sxs-lookup"><span data-stu-id="91224-109">Create a complex data model</span></span>](xref:data/ef-rp/complex-data-model)
-1. [<span data-ttu-id="91224-110">관련 데이터 읽기</span><span class="sxs-lookup"><span data-stu-id="91224-110">Reading related data</span></span>](xref:data/ef-rp/read-related-data)
-1. [<span data-ttu-id="91224-111">관련 데이터 업데이트</span><span class="sxs-lookup"><span data-stu-id="91224-111">Updating related data</span></span>](xref:data/ef-rp/update-related-data)
-1. [<span data-ttu-id="91224-112">동시성 충돌 처리</span><span class="sxs-lookup"><span data-stu-id="91224-112">Handle concurrency conflicts</span></span>](xref:data/ef-rp/concurrency)
+1. [<span data-ttu-id="d98cb-105">시작</span><span class="sxs-lookup"><span data-stu-id="d98cb-105">Get started</span></span>](xref:data/ef-rp/intro)
+1. [<span data-ttu-id="d98cb-106">만들기, 읽기, 업데이트 및 삭제 작업</span><span class="sxs-lookup"><span data-stu-id="d98cb-106">Create, Read, Update, and Delete operations</span></span>](xref:data/ef-rp/crud)
+1. [<span data-ttu-id="d98cb-107">정렬, 필터링, 페이징 및 그룹화</span><span class="sxs-lookup"><span data-stu-id="d98cb-107">Sorting, filtering, paging, and grouping</span></span>](xref:data/ef-rp/sort-filter-page)
+1. [<span data-ttu-id="d98cb-108">마이그레이션</span><span class="sxs-lookup"><span data-stu-id="d98cb-108">Migrations</span></span>](xref:data/ef-rp/migrations)
+1. [<span data-ttu-id="d98cb-109">복합 데이터 모델 만들기</span><span class="sxs-lookup"><span data-stu-id="d98cb-109">Create a complex data model</span></span>](xref:data/ef-rp/complex-data-model)
+1. [<span data-ttu-id="d98cb-110">관련 데이터 읽기</span><span class="sxs-lookup"><span data-stu-id="d98cb-110">Reading related data</span></span>](xref:data/ef-rp/read-related-data)
+1. [<span data-ttu-id="d98cb-111">관련 데이터 업데이트</span><span class="sxs-lookup"><span data-stu-id="d98cb-111">Updating related data</span></span>](xref:data/ef-rp/update-related-data)
+1. [<span data-ttu-id="d98cb-112">동시성 충돌 처리</span><span class="sxs-lookup"><span data-stu-id="d98cb-112">Handle concurrency conflicts</span></span>](xref:data/ef-rp/concurrency)
