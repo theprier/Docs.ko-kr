@@ -2,26 +2,22 @@
 title: ASP.NET Core 프로젝트에 스 캐 폴드 Id
 author: rick-anderson
 description: Identity ASP.NET Core 프로젝트에 스 캐 폴딩 하는 방법에 알아봅니다.
-manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.date: 5/16/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/authentication/scaffold-identity
-ms.openlocfilehash: 80cd39af61e856d3ce92db1c26e70788bcdca83d
-ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
+ms.openlocfilehash: cf6544d8b671f026c8466fa8dff506027b64cf1f
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/18/2018
-ms.locfileid: "35725821"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36276320"
 ---
 # <a name="scaffold-identity-in-aspnet-core-projects"></a>ASP.NET Core 프로젝트에 스 캐 폴드 Id
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-ASP.NET Core 2.1 이상 제공 [ASP.NET Core Id](xref:security/authentication/identity) 로 [Razor 클래스 라이브러리](xref:mvc/razor-pages/ui-class)합니다. Id가 포함 하는 응용 프로그램에 선택적으로 Identity Razor 클래스 라이브러리 (RCL)에 포함 된 소스 코드를 추가 하려면 scaffolder를 적용할 수 있습니다. 코드를 수정 하 고 동작을 변경할 수 있도록 소스 코드를 생성 수 있습니다. 예를 들어 scaffolder 등록에 사용 하 여 코드를 생성 하도록 지정할 수 있습니다. 생성 된 코드 Identity RCL에서 동일한 코드 보다 우선합니다. UI의 모든 권한을 얻으려고 하 RCL 기본값을 사용 하지 섹션을 참조 [만들기 전체 id UI 소스](#full)합니다.
+ASP.NET Core 2.1 이상 제공 [ASP.NET Core Id](xref:security/authentication/identity) 로 [Razor 클래스 라이브러리](xref:razor-pages/ui-class)합니다. Id가 포함 하는 응용 프로그램에 선택적으로 Identity Razor 클래스 라이브러리 (RCL)에 포함 된 소스 코드를 추가 하려면 scaffolder를 적용할 수 있습니다. 코드를 수정 하 고 동작을 변경할 수 있도록 소스 코드를 생성 수 있습니다. 예를 들어 scaffolder 등록에 사용 하 여 코드를 생성 하도록 지정할 수 있습니다. 생성 된 코드 Identity RCL에서 동일한 코드 보다 우선합니다. UI의 모든 권한을 얻으려고 하 RCL 기본값을 사용 하지 섹션을 참조 [만들기 전체 id UI 소스](#full)합니다.
 
 응용 프로그램을 **하지** 포함 인증 RCL Identity 패키지를 추가 하려면 scaffolder 적용할 수 있습니다. 선택 하는 옵션이 Identity 코드를 생성 해야 합니다.
 
@@ -37,7 +33,7 @@ Identity scaffolder 실행 되는 *ScaffoldingReadme.txt* 파일은 프로젝트
 
 강조 표시 된 다음 호출을 추가 `Startup` 클래스:
 
-[!code-csharp[Main](scaffold-identity/sample/StartupEmpty.cs?name=snippet1&highlight=5,20-23)]
+[!code-csharp[](scaffold-identity/sample/StartupEmpty.cs?name=snippet1&highlight=5,20-23)]
 
 [!INCLUDE[](~/includes/scaffold-identity/hsts.md)]
 
@@ -71,7 +67,7 @@ id가 구성 *Areas/Identity/IdentityHostingStartup.cs*합니다. 자세한 내�
 
 에 `Configure` 의 메서드는 `Startup` 클래스, 호출 [UseAuthentication](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_AuthAppBuilderExtensions_UseAuthentication_Microsoft_AspNetCore_Builder_IApplicationBuilder_) 후 `UseStaticFiles`:
 
-[!code-csharp[Main](scaffold-identity/sample/StartupRPnoAuth.cs?name=snippet1&highlight=29)]
+[!code-csharp[](scaffold-identity/sample/StartupRPnoAuth.cs?name=snippet1&highlight=29)]
 
 [!INCLUDE[](~/includes/scaffold-identity/hsts.md)]
 
@@ -117,7 +113,7 @@ dotnet ef database update
 
 선택 사항: 부분 로그인을 추가 (`_LoginPartial`)에 *Views/Shared/_Layout.cshtml* 파일:
 
-[!code-html[Main](scaffold-identity/sample/_LayoutMvc.cshtml?highlight=37)]
+[!code-html[](scaffold-identity/sample/_LayoutMvc.cshtml?highlight=37)]
 
 * 이동 된 *Pages/Shared/_LoginPartial.cshtml* 파일을 *Views/Shared/_LoginPartial.cshtml*
 
@@ -127,7 +123,7 @@ id가 구성 *Areas/Identity/IdentityHostingStartup.cs*합니다. 자세한 내�
 
 호출 [UseAuthentication](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_AuthAppBuilderExtensions_UseAuthentication_Microsoft_AspNetCore_Builder_IApplicationBuilder_) 후 `UseStaticFiles`:
 
-[!code-csharp[Main](scaffold-identity/sample/StartupMvcNoAuth.cs?name=snippet1&highlight=23)]
+[!code-csharp[](scaffold-identity/sample/StartupMvcNoAuth.cs?name=snippet1&highlight=23)]
 
 [!INCLUDE[](~/includes/scaffold-identity/hsts.md)]
 
@@ -153,15 +149,16 @@ Identity UI에 대 한 모든 제어를 유지 하려면 Identity scaffolder를 
 
 다음 강조 표시 된 코드에는 ASP.NET Core 2.1 웹 응용 프로그램의 Id를 가진 기본 Identity UI를 바꾸려면 변경을 보여 줍니다. Identity UI의 모든 권한을 가질 수 이렇게 할 수 있습니다.
 
-[!code-csharp[Main](scaffold-identity/sample/StartupFull.cs?name=snippet1&highlight=13-14,17-999)]
+[!code-csharp[](scaffold-identity/sample/StartupFull.cs?name=snippet1&highlight=13-14,17-999)]
 
-다음 코드에서 Identity 기본 대체 됩니다. [!code-csharp[Main](scaffold-identity/sample/StartupFull.cs?name=snippet2)]
+다음 코드에서 Identity 기본 대체 됩니다.
 
-다음 코드는 권한 부여를 요구 하는 Identity 페이지 권한을 부여 하는 ASP.NET Core를 구성 합니다. [!code-csharp[Main](scaffold-identity/sample/StartupFull.cs?name=snippet3)]
+[!code-csharp[](scaffold-identity/sample/StartupFull.cs?name=snippet2)]
 
-다음 코드에서는 올바른 Identity 페이지 경로 사용 하도록 Id 쿠키를 설정 합니다.
-[!code-csharp[Main](scaffold-identity/sample/StartupFull.cs?name=snippet3)]
+다음 코드 집합은 [LoginPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.loginpath), [LogoutPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.logoutpath), 및 [AccessDeniedPath](/dotnet/api/microsoft.aspnetcore.authentication.cookies.cookieauthenticationoptions.accessdeniedpath):
+
+[!code-csharp[](scaffold-identity/sample/StartupFull.cs?name=snippet3)]
 
 등록 된 `IEmailSender` 구현 예:
 
-[!code-csharp[Main](scaffold-identity/sample/StartupFull.cs?name=snippet4)]
+[!code-csharp[](scaffold-identity/sample/StartupFull.cs?name=snippet4)]

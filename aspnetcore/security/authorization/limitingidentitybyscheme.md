@@ -2,19 +2,15 @@
 title: ASP.NET Core에서 특정 스키마를 가진 권한 부여
 author: rick-anderson
 description: 이 문서에서는 여러 가지 인증 방법을 사용할 때 id는 특정 체계를 제한 하는 방법을 설명 합니다.
-manager: wpickett
 ms.author: riande
 ms.date: 10/12/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/authorization/limitingidentitybyscheme
-ms.openlocfilehash: 81a01d7de8221fcb3bf90a108d9df6633ca2b696
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 231c664006ee7ff91f471aa8d16c1fd18dcbabb1
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30072700"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278202"
 ---
 # <a name="authorize-with-a-specific-scheme-in-aspnet-core"></a>ASP.NET Core에서 특정 스키마를 가진 권한 부여
 

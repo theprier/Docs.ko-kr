@@ -1,21 +1,17 @@
 ---
 title: ASP.NET Core의 통합 테스트
 author: guardrex
-description: 통합 테스트는 응용 프로그램의 구성 요소는 데이터베이스, 파일 시스템 및 네트워크를 포함 하는 인프라 수준에서 제대로 작동 하는지 확인 방법에 대해 알아봅니다.
-manager: wpickett
+description: 통합 테스트를 사용하여 앱의 구성 요소가 데이터베이스, 파일 시스템 및 네트워크를 비롯한 인프라 수준에서 제대로 작동하는지 확인하는 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
 ms.date: 05/30/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: test/integration-tests
-ms.openlocfilehash: a402c3f5f6a75917eba4058e6cc6926f25b214d4
-ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
+ms.openlocfilehash: 1895b06f1af9a9eb66c14aa5c7834497fc95d583
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "35217684"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277698"
 ---
 # <a name="integration-tests-in-aspnet-core"></a>ASP.NET Core의 통합 테스트
 
@@ -29,7 +25,7 @@ ms.locfileid: "35217684"
 
 샘플 응용 프로그램은 Razor 페이지 앱 및 Razor 페이지의 한 기본적인 지식이 있다고 가정 합니다. Razor 페이지 사용에 익숙하지 않은 경우 다음 항목을 참조 합니다.
 
-* [Razor 페이지 소개](xref:mvc/razor-pages/index)
+* [Razor 페이지 소개](xref:razor-pages/index)
 * [Razor 페이지 시작](xref:tutorials/razor-pages/razor-pages-start)
 * [Razor 페이지 단위 테스트](xref:test/razor-pages-tests)
 

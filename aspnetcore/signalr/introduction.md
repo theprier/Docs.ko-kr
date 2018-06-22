@@ -2,21 +2,17 @@
 title: ASP.NET Core SignalR 소개
 author: rachelappel
 description: 앱에 실시간 기능 추가 ASP.NET Core SignalR 라이브러리를 간소화 하는 방법에 대해 알아봅니다.
-manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
 ms.custom: mvc
 ms.date: 04/25/2018
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: article
 uid: signalr/introduction
-ms.openlocfilehash: f05b7cbf05372dc5d5cdadaf5a534d7a9d9bfecc
-ms.sourcegitcommit: c867d7427bd4a88a78b2322e156367733b532730
+ms.openlocfilehash: 0c833acea139d22883a69a02c2357a71f3ac8db8
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33923357"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277906"
 ---
 # <a name="introduction-to-aspnet-core-signalr"></a>ASP.NET Core SignalR 소개
 
@@ -59,7 +55,7 @@ SignalR 허브를 사용 하 여 클라이언트와 서버 간 통신 합니다.
 
 ## <a name="additional-resources"></a>추가 자료
 
-* [ASP.NET Core 용 SignalR 시작](xref:signalr/get-started)
+* [ASP.NET Core 용 SignalR 시작](xref:tutorials/signalr)
 * [지원되는 플랫폼](xref:signalr/supported-platforms)
 * [허브](xref:signalr/hubs)
 * [JavaScript 클라이언트](xref:signalr/javascript-client)

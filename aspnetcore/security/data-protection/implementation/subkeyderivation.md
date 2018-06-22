@@ -2,19 +2,15 @@
 title: 하위 키 파생 및 ASP.NET 코어에서 인증 된 암호화
 author: rick-anderson
 description: ASP.NET Core 데이터 보호의 구현 세부 정보 파생을 하위 키와 인증 암호화에 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/data-protection/implementation/subkeyderivation
-ms.openlocfilehash: 8c83da40a524896becc07c94c01d5e2b684e4386
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 37e7b01700e8a6b755b5ed16a9d7d75a9eeb970e
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30072641"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275725"
 ---
 # <a name="subkey-derivation-and-authenticated-encryption-in-aspnet-core"></a>하위 키 파생 및 ASP.NET 코어에서 인증 된 암호화
 
@@ -47,7 +43,7 @@ NIST SP800 108 KDF 카운터 모드로 전화를 걸고 여기 (참조 [NIST SP8
 
 * PRF = HMACSHA512
 
-* label = additionalAuthenticatedData
+* 레이블 additionalAuthenticatedData =
 
 * 상황에 맞는 contextHeader = | | keyModifier
 

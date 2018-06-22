@@ -2,20 +2,16 @@
 title: ASP.NET Core 공격 방지 교차 사이트 요청 위조 XSRF/CSRF)
 author: steve-smith
 description: 악성 웹 사이트 클라이언트 브라우저와 응용 프로그램 간의 상호 작용에 적용할 수 있는 웹 응용 프로그램에 대 한 공격을 방지 하는 방법을 검색 합니다.
-manager: wpickett
 ms.author: riande
 ms.custom: mvc
 ms.date: 03/19/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/anti-request-forgery
-ms.openlocfilehash: 3bca96f4a2e247eeeb93140df93221371d88d4d3
-ms.sourcegitcommit: 7e87671fea9a5f36ca516616fe3b40b537f428d2
+ms.openlocfilehash: a00bd4ff4b265a19766e54e6ad6b97b870df56c5
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/12/2018
-ms.locfileid: "35341862"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36279601"
 ---
 # <a name="prevent-cross-site-request-forgery-xsrfcsrf-attacks-in-aspnet-core"></a>ASP.NET Core 공격 방지 교차 사이트 요청 위조 XSRF/CSRF)
 
@@ -138,7 +134,7 @@ HTML 폼 요소에 대 한 antiforgery 토큰의 자동 생성을 비활성화�
   ```
 
 > [!NOTE]
-> [Razor 페이지](xref:mvc/razor-pages/index) XSRF/CSRF에서 자동으로 보호 됩니다. 자세한 내용은 참조 [XSRF/CSRF 및 Razor 페이지](xref:mvc/razor-pages/index#xsrf)합니다.
+> [Razor 페이지](xref:razor-pages/index) XSRF/CSRF에서 자동으로 보호 됩니다. 자세한 내용은 참조 [XSRF/CSRF 및 Razor 페이지](xref:razor-pages/index#xsrf)합니다.
 
 가장 일반적인 방법은 CSRF 공격 으로부터 보호 하는 데 사용 하는 것은 *동기화 장치 토큰 패턴이* (STP). STP은 사용자 양식 데이터로 페이지를 요청할 때 사용 됩니다.
 

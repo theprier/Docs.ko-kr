@@ -2,19 +2,15 @@
 title: ASP.NET Core의 데이터 보호 Api 시작
 author: rick-anderson
 description: 보호 하 고, 응용 프로그램의 데이터를 보호 해제에 대 한 ASP.NET Core 데이터 보호 Api를 사용 하는 방법에 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/data-protection/using-data-protection
-ms.openlocfilehash: 3a69abd2b58e02f87ccaf2317b0a8a2a7e9d7b4a
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: ab2551d87d1a2cd22e9f421cabe0288311cb2ec3
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30076990"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275751"
 ---
 # <a name="get-started-with-the-data-protection-apis-in-aspnet-core"></a>ASP.NET Core의 데이터 보호 Api 시작
 

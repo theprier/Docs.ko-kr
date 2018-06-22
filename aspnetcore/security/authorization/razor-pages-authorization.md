@@ -2,20 +2,16 @@
 title: ASP.NET Core의 razor 페이지 권한 부여 규칙
 author: guardrex
 description: 사용자가 권한을 부여 하 고 익명 사용자가 페이지나 페이지의 하위 폴더에 액세스할 수 있도록 하는 규칙을 사용 하 여 페이지에 대 한 액세스를 제어 하는 방법에 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.custom: mvc
 ms.date: 10/27/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/authorization/razor-pages-authorization
-ms.openlocfilehash: cd1fa7957ca50db0de71f71234f84d3fbc631f45
-ms.sourcegitcommit: 7e87671fea9a5f36ca516616fe3b40b537f428d2
+ms.openlocfilehash: 8856520bf43f2f62cc12c7e883485babdb43fb3e
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/12/2018
-ms.locfileid: "35341745"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36272677"
 ---
 # <a name="razor-pages-authorization-conventions-in-aspnet-core"></a>ASP.NET Core의 razor 페이지 권한 부여 규칙
 
@@ -40,7 +36,7 @@ Razor 페이지 응용 프로그램에서 액세스를 제어 하는 한 가지 
 ::: moniker range=">= aspnetcore-2.1"
 
 > [!NOTE]
-> `AuthorizeFilter` 사용 하는 페이지 모델 클래스에 적용할 수는 `[Authorize]` 필터 특성입니다. 자세한 내용은 참조 [권한 부여 필터 특성](xref:mvc/razor-pages/filter#authorize-filter-attribute)합니다.
+> `AuthorizeFilter` 사용 하는 페이지 모델 클래스에 적용할 수는 `[Authorize]` 필터 특성입니다. 자세한 내용은 참조 [권한 부여 필터 특성](xref:razor-pages/filter#authorize-filter-attribute)합니다.
 
 ::: moniker-end
 
@@ -90,5 +86,5 @@ Razor 페이지 응용 프로그램에서 액세스를 제어 하는 한 가지 
 
 ## <a name="additional-resources"></a>추가 자료
 
-* [Razor 페이지 사용자 지정 경로 및 페이지 모델 공급자](xref:mvc/razor-pages/razor-pages-conventions)
+* [Razor 페이지 사용자 지정 경로 및 페이지 모델 공급자](xref:razor-pages/razor-pages-conventions)
 * [PageConventionCollection](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.pageconventioncollection) 클래스

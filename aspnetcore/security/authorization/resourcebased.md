@@ -2,21 +2,16 @@
 title: ASP.NET Core에서 리소스 기반의 권한 부여
 author: scottaddie
 description: 권한 부여 속성 않습니다 요구 사항을 충족 하는 경우 ASP.NET Core 응용 프로그램의 리소스 기반 권한 부여를 구현 하는 방법을 알아봅니다.
-manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
 ms.date: 11/07/2017
-ms.devlang: csharp
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/authorization/resourcebased
-ms.openlocfilehash: 3be2d9b9aef18763fbdba78e044dd6b68ddcef0c
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: 577af3ba45361aec715a49fa59b9ec9869ced851
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/12/2018
-ms.locfileid: "34094284"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36273349"
 ---
 # <a name="resource-based-authorization-in-aspnet-core"></a>ASP.NET Core에서 리소스 기반의 권한 부여
 

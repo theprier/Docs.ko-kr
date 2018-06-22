@@ -2,20 +2,16 @@
 title: ASP.NET 멤버 자격 인증에서 ASP.NET Core 2.0 Id로 마이그레이션
 author: isaac2004
 description: ASP.NET Core 2.0 Id를 인증 멤버 자격을 사용 하는 기존 ASP.NET 응용 프로그램을 마이그레이션하는 방법에 알아봅니다.
-manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
 ms.date: 04/24/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: migration/proper-to-2x/membership-to-core-identity
-ms.openlocfilehash: f0d1099bfda01d036831350e0888ae3830ad3d58
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 3ec22713997a74b587ef5d18e71a28668a5481e2
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33851545"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274107"
 ---
 # <a name="migrate-from-aspnet-membership-authentication-to-aspnet-core-20-identity"></a>ASP.NET 멤버 자격 인증에서 ASP.NET Core 2.0 Id로 마이그레이션
 
@@ -42,7 +38,7 @@ ASP.NET Core 2.0 Id에 대 한 스키마를 볼 수 있는 가장 빠른 방법�
 
 * **파일** > **새로 만들기** > **프로젝트**를 선택합니다.
 * 새 **ASP.NET Core 웹 응용 프로그램**, 선택한 프로젝트의 이름을 *CoreIdentitySample*합니다.
-* 드롭다운에서 **ASP.NET Core 2.0**을 선택하고 **웹 응용 프로그램**을 선택합니다. 이 서식 파일을 생성 한 [Razor 페이지](xref:mvc/razor-pages/index) 응용 프로그램입니다. 클릭 하기 전에 **확인**, 클릭 **인증 변경**합니다.
+* 드롭다운에서 **ASP.NET Core 2.0**을 선택하고 **웹 응용 프로그램**을 선택합니다. 이 서식 파일을 생성 한 [Razor 페이지](xref:razor-pages/index) 응용 프로그램입니다. 클릭 하기 전에 **확인**, 클릭 **인증 변경**합니다.
 * 선택 **개별 사용자 계정** Identity 템플릿에 대 한 합니다. 마지막으로, 클릭 **확인**, 다음 **확인**합니다. Visual Studio에서 ASP.NET Core Id 템플릿을 사용 하 여 프로젝트를 만듭니다.
 
 사용 하 여 ASP.NET Core 2.0 Identity [Entity Framework Core](/ef/core) 인증 데이터를 저장 하는 데이터베이스와 상호 작용할 수 있습니다. 새로 만든된 응용 프로그램에서 작업을 위해 필요이 데이터를 저장할 데이터베이스를 사용 해야 합니다. 새 응용 프로그램을 만든 후 데이터베이스 환경에서 스키마를 검사 하는 가장 빠른 방법은 Entity Framework 마이그레이션을 사용 하 여 데이터베이스를 만드는 것입니다. 이 프로세스에서는 데이터베이스 중 하나를 로컬로 또는 다른 위치에 해당 스키마를 유사한 합니다. 자세한 내용은 위의 설명서를 검토 합니다.

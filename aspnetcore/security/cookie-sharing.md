@@ -2,20 +2,16 @@
 title: ASP.NET 및 ASP.NET Core와 앱 간에 쿠키를 공유
 author: rick-anderson
 description: ASP.NET 간에 인증 쿠키를 공유 하는 방법에 알아봅니다 4.x 및 ASP.NET Core 응용 프로그램입니다.
-manager: wpickett
 ms.author: riande
 ms.custom: mvc
 ms.date: 01/19/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/cookie-sharing
-ms.openlocfilehash: c22db501a2689feb8c16649eba4866e1190361a4
-ms.sourcegitcommit: 4e3497bda0c3e5011ffba3717eb61a1d46c61c15
+ms.openlocfilehash: 2636688fa50fb36a8cbd07549e8038474ffa30ca
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/14/2018
-ms.locfileid: "35613020"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278468"
 ---
 # <a name="share-cookies-among-apps-with-aspnet-and-aspnet-core"></a>ASP.NET 및 ASP.NET Core와 앱 간에 쿠키를 공유
 

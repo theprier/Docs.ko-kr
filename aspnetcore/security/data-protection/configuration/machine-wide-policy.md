@@ -2,19 +2,15 @@
 title: ASP.NET Core 데이터 보호의 시스템 수준 정책 지원
 author: rick-anderson
 description: ASP.NET Core 데이터 보호를 사용하는 모든 응용 프로그램에 적용되는 시스템 수준의 기본 정책 설정에 대한 지원에 관해서 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/data-protection/configuration/machine-wide-policy
-ms.openlocfilehash: c2d5760cd18f4e3ecaf0261f36414c9298e3f4c5
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 70aaca7afcd3df22cebb4466fbd9845a2277688c
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30076964"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275190"
 ---
 # <a name="data-protection-machine-wide-policy-support-in-aspnet-core"></a>ASP.NET Core 데이터 보호의 시스템 수준 정책 지원
 

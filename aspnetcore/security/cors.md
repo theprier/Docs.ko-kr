@@ -2,19 +2,15 @@
 title: ASP.NET Core에서 크로스-원본 요청 (CORS)를 사용 하도록 설정
 author: rick-anderson
 description: 자세한 방법을 허용 또는 거부 된 ASP.NET Core 응용 프로그램에 대 한 교차 원본 요청에 대 한 표준으로 CORS 합니다.
-manager: wpickett
 ms.author: riande
 ms.date: 05/17/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/cors
-ms.openlocfilehash: 3c5d0840426c7ed52353a7832a1a1959027121de
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 2920917d0a488e72afb94d65bdc6d7034c6f66a9
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30077550"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278663"
 ---
 # <a name="enable-cross-origin-requests-cors-in-aspnet-core"></a>ASP.NET Core에서 크로스-원본 요청 (CORS)를 사용 하도록 설정
 
@@ -163,11 +159,11 @@ CORS의 예비 요청에는 클라이언트 응용 프로그램에서 설정한 
 
 기본적으로 브라우저는 클라이언트 응용 프로그램에 모든 응답 헤더를 노출하지 않습니다. (참조 [ http://www.w3.org/TR/cors/#simple-response-header ](http://www.w3.org/TR/cors/#simple-response-header).) 기본적으로 사용 가능한 응답 헤더들은 다음과 같습니다.
 
-* Cache-Control
+* 캐시 제어
 
 * Content-language
 
-* Content-Type
+* 콘텐츠-유형
 
 * Expires
 
@@ -226,7 +222,7 @@ Access-Control-Max-Age 헤더는 예비 요청에 대한 응답을 캐시할 수
 
 CORS 명세에서는 교차 원본 요청을 활성화시키기 위한 용도로 몇 가지 새로운 HTTP 헤더들이 도입되었습니다. 브라우저에서 CORS를 지 원하는 경우 이러한 헤더가 크로스-원본 요청에 대 한 자동으로 설정 합니다. CORS를 사용 하도록 사용자 지정 JavaScript 코드는 필요 하지 않습니다.
 
-다음은 교차 원본 요청의 실제 사례입니다. `Origin` 헤더는 요청을 수행 하는 사이트의 도메인을 제공 합니다.
+크로스-원본 요청의 예를 들면 다음과 같습니다. `Origin` 헤더는 요청을 수행 하는 사이트의 도메인을 제공 합니다.
 
 ```
 GET http://myservice.azurewebsites.net/api/test HTTP/1.1
@@ -253,27 +249,27 @@ Content-Length: 12
 Test message
 ```
 
-응답에는 액세스 제어-허용-원본 헤더가 포함 되지 않은, AJAX 요청이 실패 합니다. 보다 구체적으로 말해서 브라우저가 요청을 허용하지 않는 것입니다. 성공적인 응답을 반환 하는 서버, 경우에 브라우저 하지 않는 응답을 사용할 수 있도록 클라이언트 응용 프로그램입니다.
+응답에는 액세스 제어-허용-원본 헤더가 포함 되지 않은, AJAX 요청이 실패 합니다. 특히, 브라우저 요청을 허용 하지 않습니다. 성공적인 응답을 반환 하는 서버, 경우에 브라우저 하지 않는 응답을 사용할 수 있도록 클라이언트 응용 프로그램입니다.
 
-### <a name="preflight-requests"></a>예비 요청
+### <a name="preflight-requests"></a>실행 전 요청
 
-브라우저는 일부 CORS 요청에 대해서, 리소스에 대한 실제 요청을 전송하기 전에, "예비 요청(Preflight Requests)"이라고 부르는 별도의 요청을 전송합니다. 다음과 같은 조건들을 만족할 경우, 브라우저는 예비 요청을 생략할 수 있습니다.
+일부 CORS 요청에 대 한 브라우저의 리소스에 대 한 실제 요청을 보내기 전에 "실행 전 요청" 라는 추가 요청을 보냅니다. 다음 조건에 해당할 경우 브라우저에서 실행 전 요청을 건너뛸 수 있습니다.:
 
-* 요청 메서드가 GET, HEAD 또는 POST 이고,
+* 요청 메서드는 GET, HEAD 또는 POST 및
 
 * 응용 프로그램 Accept, Accept-language, Content-language 이외의 모든 요청 헤더를 설정 하지 않는 콘텐츠 형식 또는 마지막-이벤트-ID 및
 
-* Content-Type 헤더가 (지정된 경우) 다음 중 하나인 경우: 
+* 콘텐츠 형식 헤더 (하는 경우 설정) 다음 중 하나입니다.
 
   * application/x-www-form-urlencoded
 
-  * multipart/form-data
+  * multipart/폼 데이터
 
-  * text/plain
+  * 텍스트/일반
 
-이 예비 요청의 헤더 관련 규칙은 `XMLHttpRequest` 개체의 `setRequestHeader`를 호출해서 클라이언트 응용 프로그램이 설정한 헤더들만을 대상으로 합니다. (CORS 명세서에서는 이런 헤더들을 "사용자 지정 요청 헤더(Author Request Headers)"라고 부릅니다.) 규칙은 브라우저 등을 설정할 수, 사용자 에이전트, 호스트 또는 Content-length 헤더에 적용 되지 않습니다.
+요청 헤더에 대 한 규칙 setRequestHeader XMLHttpRequest 개체에서 호출 하 여 응용 프로그램을 설정 하는 헤더에 적용 됩니다. (이러한 작성자 요청 "헤더" CORS 사양을 호출합니다.) 규칙은 브라우저 등을 설정할 수, 사용자 에이전트, 호스트 또는 Content-length 헤더에 적용 되지 않습니다.
 
-다음은 예비 요청의 실제 사례입니다.
+실행 전 요청의 예는 다음과 같습니다.
 
 ```
 OPTIONS http://myservice.azurewebsites.net/api/test HTTP/1.1
@@ -287,13 +283,13 @@ Host: myservice.azurewebsites.net
 Content-Length: 0
 ```
 
-예비 요청에는 HTTP OPTIONS 메서드가 사용됩니다. 그리고 이 요청에는 두 가지 특별한 헤더가 존재합니다.
+전 요청의 HTTP OPTIONS 메서드를 사용합니다. 두 개의 특수 헤더를 포함합니다.
 
-* Access-Control-Request-Method: 실제 요청에 사용될 HTTP 메서드가 지정됩니다.
+* 액세스-컨트롤-요청-방법: 실제 요청에 사용할 HTTP 메서드.
 
-* Access-Control-Request-Headers: 실제 요청에서 응용 프로그램이 설정할 요청 헤더들의 목록입니다. (다시 여기 포함 되지 않습니다 브라우저 설정 하는 헤더입니다.)
+* 액세스 제어-요청-헤더만: 응용 프로그램은 실제 요청에 설정 하는 요청 헤더의 목록. (다시 여기 포함 되지 않습니다 브라우저 설정 하는 헤더입니다.)
 
-다음은 서버가 이 요청을 허용한다고 가정한 경우의 예제 응답입니다.
+다음은 서버에서 요청을 허용 하는 것으로 가정 하는 예제 응답이입니다.
 
 ```
 HTTP/1.1 200 OK
@@ -306,4 +302,4 @@ Access-Control-Allow-Methods: PUT
 Date: Wed, 20 May 2015 06:33:22 GMT
 ```
 
-이 응답에는 허용되는 메서드들의 목록이 담겨 있는 Access-Control-Allow-Methods 헤더가 포함되어 있으며, 허가된 헤더들의 목록이 지정된 Access-Control-Allow-Headers 헤더가 선택적으로 포함되어 있을 수 있습니다. 이 예비 요청이 성공한 경우, 브라우저는 앞에서 살펴봤던 것과 같은 실제 요청을 전송합니다. 
+허용 되는 메서드를 나열 하는 액세스 제어-허용-방법 헤더 및 필요에 따라 허용된 된 헤더를 나열 하는 액세스 제어-허용-헤더만 헤더가 응답에 포함 되어 있습니다. 실행 전 요청이 성공 하면 앞에서 설명한 대로 브라우저 실제 요청을 보냅니다.

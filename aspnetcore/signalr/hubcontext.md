@@ -2,21 +2,17 @@
 title: SignalR HubContext
 author: rachelappel
 description: 알림 허브를 외부에서 클라이언트를 보내기 위한 ASP.NET Core SignalR HubContext 서비스를 사용 하는 방법을 알아봅니다.
-manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
 ms.custom: mvc
 ms.date: 06/13/2018
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: article
 uid: signalr/hubcontext
-ms.openlocfilehash: 79b91a776a38a2e6810cc89ff0b8d15fe836ce66
-ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
+ms.openlocfilehash: ccfcdc8337275fd26e09c1a43db36cf9ab90cf46
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/18/2018
-ms.locfileid: "35726081"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277763"
 ---
 # <a name="send-messages-from-outside-a-hub"></a>허브 외부의 메시지 보내기
 
@@ -62,6 +58,6 @@ app.Use(next => (context) =>
 
 ## <a name="related-resources"></a>관련 참고 자료
 
-* [시작](xref:signalr/get-started)
+* [시작](xref:tutorials/signalr)
 * [허브](xref:signalr/hubs)
 * [Azure에 게시](xref:signalr/publish-to-azure-web-app)

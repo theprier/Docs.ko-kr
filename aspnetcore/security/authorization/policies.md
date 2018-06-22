@@ -2,20 +2,16 @@
 title: ASP.NET Core의 사용자 지정 정책 기반 권한 부여
 author: rick-anderson
 description: ASP.NET Core 응용 프로그램에서 사용자 지정 권한 정책 처리기를 작성 및 사용해서 권한 부여 요구 사항을 적용하는 방법을 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.custom: mvc
 ms.date: 11/21/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/authorization/policies
-ms.openlocfilehash: 411fee90bdccfb45c33f5d4ccd7864c83c614e70
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 81ca6ad9ddba3de094762f5608bb6a5719bca7a1
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30072863"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277984"
 ---
 # <a name="policy-based-authorization-in-aspnet-core"></a>ASP.NET Core의 사용자 지정 정책 기반 권한 부여
 

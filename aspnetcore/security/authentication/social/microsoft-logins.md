@@ -2,19 +2,15 @@
 title: ASP.NET Core와 Microsoft 계정 외부 로그인 설정
 author: rick-anderson
 description: 이 자습서는 기존 ASP.NET Core 응용 프로그램에 Microsoft 계정 사용자 인증의 통합을 보여 줍니다.
-manager: wpickett
 ms.author: riande
 ms.date: 08/24/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/authentication/microsoft-logins
-ms.openlocfilehash: 46973f8a82034bd99a6e6634bbd6da06b1b14f25
-ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
+ms.openlocfilehash: cc4fe8c71b97d29cc6697e2aebf04694afb753ec
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/18/2018
-ms.locfileid: "35726032"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36272778"
 ---
 # <a name="microsoft-account-external-login-setup-with-aspnet-core"></a>ASP.NET Core와 Microsoft 계정 외부 로그인 설정
 

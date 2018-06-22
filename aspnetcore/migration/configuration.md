@@ -2,19 +2,15 @@
 title: ASP.NET Core로 구성 마이그레이션
 author: ardalis
 description: ASP.NET MVC 프로젝트에서 ASP.NET Core MVC 프로젝트 구성을 마이그레이션하는 방법에 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: migration/configuration
-ms.openlocfilehash: ead4f96aa0041cd919caa972d3bb05bd94a857b3
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 40b332f9042a4ce793acd29ef5e3f3e389056a62
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33851724"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275823"
 ---
 # <a name="migrate-configuration-to-aspnet-core"></a>ASP.NET Core로 구성 마이그레이션
 

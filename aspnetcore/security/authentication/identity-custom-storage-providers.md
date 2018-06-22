@@ -2,18 +2,15 @@
 title: ASP.NET Core Id에 대 한 사용자 지정 저장소 공급자
 author: ardalis
 description: ASP.NET Core Id에 대 한 사용자 지정 저장소 공급자를 구성 하는 방법에 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.date: 05/24/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: a50069586c702152e81961773114ea75901ab23d
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 11c49d630c922b0aa91678277e9553bf0c25134d
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278429"
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>ASP.NET Core Id에 대 한 사용자 지정 저장소 공급자
 
@@ -170,7 +167,7 @@ ASP.NET Core Id 관리자와 저장소를 호출 하는 클래스로 구성 됩�
 - **IUserLockoutStore**  
  [o r e&lt;s e r&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iuserlockoutstore-1) 인터페이스 계정 잠금에 대 한 정보를 저장 하기 위해 구현할 메서드를 정의 합니다. 실패 한 액세스 시도 횟수와 잠금 추적을 위한 메서드를 포함 합니다.
 - **IQueryableUserStore**  
- [i q&lt;s e r&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iqueryableuserstore-1) 인터페이스 멤버 구현 쿼리 가능한 사용자 저장소를 제공 하도록 정의 합니다.
+ [i q&lt;s e r&gt; ](/dotnet/api/microsoft.aspnetcore.identity.iqueryableuserstore-1) 인터페이스 쿼리 가능한 사용자 저장소를 제공 하기 위해 구현할 멤버를 정의 합니다.
 
 앱에서 필요한는 인터페이스를 구현 합니다. 예를 들어:
 

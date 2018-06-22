@@ -2,19 +2,15 @@
 title: ASP.NET Core에 Windows 인증을 구성 합니다.
 author: ardalis
 description: 이 문서에서는 IIS Express, IIS, HTTP.sys 및 WebListener를 사용 하 여 ASP.NET Core에 Windows 인증을 구성 하는 방법을 설명 합니다.
-manager: wpickett
 ms.author: riande
 ms.date: 10/24/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/authentication/windowsauth
-ms.openlocfilehash: dbcef095561fe656bdd28c4fa6560c6b269a2db0
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: d3fdf8534e92ea306c2fef7bc4fda6d644c7d911
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34689011"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36276213"
 ---
 # <a name="configure-windows-authentication-in-aspnet-core"></a>ASP.NET Core에 Windows 인증을 구성 합니다.
 

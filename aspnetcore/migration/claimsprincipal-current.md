@@ -2,20 +2,16 @@
 title: ClaimsPrincipal.Current에서 마이그레이션
 author: mjrousos
 description: 현재 인증 된 사용자의 id 및 ASP.NET 코어의 클레임을 검색 하는 ClaimsPrincipal.Current에서 마이그레이션하는 방법에 알아봅니다.
-manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
 ms.date: 05/04/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: migration/claimsprincipal-current
-ms.openlocfilehash: ea43d17e76380baf57cd9debbc508e8812cfa4a6
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 477f9fe8f0249bdfc528e1b401f072851f2f0d23
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33851535"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277188"
 ---
 # <a name="migrate-from-claimsprincipalcurrent"></a>ClaimsPrincipal.Current에서 마이그레이션
 

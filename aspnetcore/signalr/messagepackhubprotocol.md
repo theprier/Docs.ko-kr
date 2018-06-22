@@ -2,27 +2,23 @@
 title: SignalR에서 MessagePack 허브 프로토콜을 사용 하 여 ASP.NET Core에 대 한
 author: rachelappel
 description: ASP.NET Core signalr 허브 MessagePack 프로토콜을 추가 합니다.
-manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
 ms.custom: mvc
 ms.date: 06/04/2018
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: article
 uid: signalr/messagepackhubprotocol
-ms.openlocfilehash: b6c33c4da47a19d67bffbaf84f54d59013edadbe
-ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
+ms.openlocfilehash: 702c77502868d6666cb2634b6959f029e036d14e
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/10/2018
-ms.locfileid: "35252485"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274991"
 ---
 # <a name="use-messagepack-hub-protocol-in-signalr-for-aspnet-core"></a>SignalR에서 MessagePack 허브 프로토콜을 사용 하 여 ASP.NET Core에 대 한
 
 으로 [브 레 넌 Conroy](https://github.com/BrennanConroy)
 
-이 문서에서는 독자가 가정에서 다루는 항목에 잘 알고 [시작](xref:signalr/get-started)합니다.
+이 문서에서는 독자가 가정에서 다루는 항목에 잘 알고 [시작](xref:tutorials/signalr)합니다.
 
 ## <a name="what-is-messagepack"></a>MessagePack 란?
 
@@ -102,6 +98,6 @@ const connection = new signalR.HubConnectionBuilder()
 
 ## <a name="related-resources"></a>관련 참고 자료
 
-* [시작](xref:signalr/get-started)
+* [시작](xref:tutorials/signalr)
 * [.NET 클라이언트](xref:signalr/dotnet-client)
 * [JavaScript 클라이언트](xref:signalr/javascript-client)

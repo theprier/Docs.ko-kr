@@ -2,19 +2,15 @@
 title: ASP.NET Core에서 단순 권한 부여
 author: rick-anderson
 description: ASP.NET Core 컨트롤러 및 동작에 대 한 액세스를 제한 하려면 권한 부여 특성을 사용 하는 방법에 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/authorization/simple
-ms.openlocfilehash: cef5cb146c6c1ff052430748a9a64c6a822d6fa3
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 3c5e9d5dfd65ded40c9828a666143c1868f5562f
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30078246"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36272067"
 ---
 # <a name="simple-authorization-in-aspnet-core"></a>ASP.NET Core에서 단순 권한 부여
 

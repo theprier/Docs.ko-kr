@@ -2,18 +2,15 @@
 title: ASP.NET Core에 azure 키 자격 증명 모음 구성 공급자
 author: guardrex
 description: Azure 키 자격 증명 모음 구성 공급자를 사용 하 여 런타임에 로드 하는 이름-값 쌍을 사용 하 여 응용 프로그램을 구성 하는 방법에 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.date: 08/09/2017
-ms.prod: asp.net-core
-ms.topic: article
 uid: security/key-vault-configuration
-ms.openlocfilehash: cf56515a2a7116f399af7e671547fc81b616619c
-ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
+ms.openlocfilehash: 433a9cee917a36ff7aa950dbe2a631d127c74821
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34734707"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36273439"
 ---
 # <a name="azure-key-vault-configuration-provider-in-aspnet-core"></a>ASP.NET Core에 azure 키 자격 증명 모음 구성 공급자
 

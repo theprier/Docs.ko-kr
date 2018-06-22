@@ -2,21 +2,16 @@
 title: ASP.NET Core에서 번들 및 minifiy 정적 자산
 author: scottaddie
 description: 묶음 및 축소 기술을 적용 하 여 ASP.NET Core 웹 응용 프로그램에서 정적 리소스를 최적화 하는 방법에 알아봅니다.
-manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
 ms.date: 01/10/2018
-ms.devlang: csharp
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: article
 uid: client-side/bundling-and-minification
-ms.openlocfilehash: a3d49315fbb62eb1a42eb1b30885dc19a81c0a91
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: ae9836a6ad0ff0bc834bf2eb10ff5fd97c3c659a
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/12/2018
-ms.locfileid: "34094647"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36279573"
 ---
 # <a name="bundle-and-minifiy-static-assets-in-aspnet-core"></a>ASP.NET Core에서 번들 및 minifiy 정적 자산
 

@@ -2,19 +2,15 @@
 title: ASP.NET Core에서 컨텍스트 헤더
 author: rick-anderson
 description: ASP.NET Core 데이터 보호 컨텍스트 헤더의 구현 세부 정보에 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/data-protection/implementation/context-headers
-ms.openlocfilehash: 5ba247a74e11408145e1f6e87c7cfa251c66707f
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 2343e59898c024eba420390d7fb0bce2fc82a895
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30077856"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274471"
 ---
 # <a name="context-headers-in-aspnet-core"></a>ASP.NET Core에서 컨텍스트 헤더
 
@@ -54,7 +50,7 @@ ms.locfileid: "30077856"
 
 대신, NIST SP800 108 KDF 카운터 모드로 사용 (참조 [NIST SP800-108](http://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-108.pdf), 초 5.1) 된 길이가 0 인 키, 레이블 및 컨텍스트 및 기본 PRF로 HMACSHA512 합니다. 개체를 파생할 | K_E | + | K_H | 바이트의 출력을 다음 분해 결과 K_E 및 K_H 자체입니다. 수학적으로 다음과 같이 표시 됩니다.
 
-( K_E || K_H ) = SP800_108_CTR(prf = HMACSHA512, key = "", label = "", context = "")
+(K_E | | K_H) SP800_108_CTR = (prf HMACSHA512 = 키 = ""을 label = "", 컨텍스트 = "")
 
 ### <a name="example-aes-192-cbc--hmacsha256"></a>예: AES-192-CBC + HMACSHA256
 
@@ -75,7 +71,7 @@ result := F474B1872B3B53E4721DE19C0841DB6F
 
 다음으로 MAC을 계산 (K_H, "") HMACSHA256 위와 같은 K_H 제공에 대 한 합니다.
 
-result := D4791184B996092EE1202F36E8608FA8FBD98ABDFF5402F264B1D7211536220C
+결과: D4791184B996092EE1202F36E8608FA8FBD98ABDFF5402F264B1D7211536220C =
 
 아래 전체 컨텍스트 헤더를 생성합니다.
 
@@ -166,7 +162,7 @@ result := 76EB189B35CF03461DDF877CD9F4B1B4D63A7555
 
 K_E는 CBC 암호화 + HMAC 인증 시나리오에서와 같이 동일한 메커니즘을 사용 하 여 파생 됩니다. 그러나 플레이 여기에 없는 K_H 이므로 기본적으로 있는 | K_H | = 0, 알고리즘을 축소 하 고는 아래 폼입니다.
 
-K_E = SP800_108_CTR(prf = HMACSHA512, key = "", label = "", context = "")
+K_E SP800_108_CTR = (prf HMACSHA512 = 키 = ""을 label = "", 컨텍스트 = "")
 
 ### <a name="example-aes-256-gcm"></a>예: AES 256 GCM
 
@@ -176,7 +172,7 @@ K_E := 22BC6F1B171C08C4AE2F27444AF8FC8B3087A90006CAEA91FDCFB47C1B8733B8
 
 다음으로 Enc_GCM의 인증 태그가 계산 (K_E, nonce, "") AES-256-GCM nonce 제공 = 096 및 K_E 위와 같이 합니다.
 
-result := E7DCCE66DF855A323A6BB7BD7A59BE45
+결과: E7DCCE66DF855A323A6BB7BD7A59BE45 =
 
 아래 전체 컨텍스트 헤더를 생성합니다.
 

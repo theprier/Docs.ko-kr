@@ -2,19 +2,15 @@
 title: ASP.NET Core에서 Google 외부 로그인 설정
 author: rick-anderson
 description: 이 자습서는 기존 ASP.NET Core 응용 프로그램에 Google 계정 사용자 인증의 통합을 보여 줍니다.
-manager: wpickett
 ms.author: riande
 ms.date: 08/02/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/authentication/google-logins
-ms.openlocfilehash: 878c0b16e24f48a0ee84f93393af67af1728e284
-ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
+ms.openlocfilehash: c5b6c992e134a2c4f0314d9d6e0465e6228c54ee
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/18/2018
-ms.locfileid: "35725967"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274913"
 ---
 # <a name="google-external-login-setup-in-aspnet-core"></a>ASP.NET Core에서 Google 외부 로그인 설정
 

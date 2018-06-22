@@ -2,19 +2,15 @@
 title: ASP.NET Web API에서에서 ASP.NET Core로 마이그레이션
 author: ardalis
 description: ASP.NET Core mvc 웹 API 구현 ASP.NET Web API에서 마이그레이션하는 방법에 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.date: 05/10/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: migration/webapi
-ms.openlocfilehash: 8d842877e49e317323d453e71ebb3302245f388d
-ms.sourcegitcommit: 3d071fabaf90e32906df97b08a8d00e602db25c0
+ms.openlocfilehash: 9385805d548bc87f4a50b87f2c06aa74abdaf8af
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34009074"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36272532"
 ---
 # <a name="migrate-from-aspnet-web-api-to-aspnet-core"></a>ASP.NET Web API에서에서 ASP.NET Core로 마이그레이션
 

@@ -2,18 +2,15 @@
 title: 사이트 간 스크립팅 (XSS)에서 ASP.NET Core 방지
 author: rick-anderson
 description: 사이트 간 스크립팅 (XSS) 및 ASP.NET Core 응용 프로그램의이 취약점을 해결 하기 위한 기술에 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/cross-site-scripting
-ms.openlocfilehash: d9263a2c1bb6a376008b7d8a55864e4d15e77cee
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: ce6bb273034c56890e0cd98b890436602b5acc69
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36272450"
 ---
 # <a name="prevent-cross-site-scripting-xss-in-aspnet-core"></a>사이트 간 스크립팅 (XSS)에서 ASP.NET Core 방지
 
@@ -60,7 +57,7 @@ Razor 엔진 MVC에서 자동으로 사용 되는 모든 인코딩합니다 이�
 
 ## <a name="javascript-encoding-using-razor"></a>Razor를 사용 하 여 Javascript 인코딩
 
-보기에서 처리 하는 JavaScript에 값을 삽입 하려는 경우가 있을 수 있습니다. 구체적인 방법은 두 가지입니다. 간단한 값을 삽입 하는 가장 안전한 방법은 하는 태그의 데이터 특성에 값을 배치 하 고 JavaScript에서 검색 됩니다. 예를 들어:
+보기에서 처리 하는 JavaScript에 값을 삽입 하려는 경우가 있을 수 있습니다. 구체적인 방법은 두 가지입니다. 값을 삽입 하는 가장 안전한 방법은 하는 태그의 데이터 특성에 값을 배치 하 고 JavaScript에서 검색 됩니다. 예를 들어:
 
 ```none
 @{
@@ -228,4 +225,4 @@ services.AddSingleton<HtmlEncoder>(
 
 ## <a name="validation-as-an-xss-prevention-technique"></a>XSS 방지 기법으로 유효성 검사
 
-유효성 검사 제한 XSS 공격에 유용한 도구 될 수 있습니다. 예를 들어 0-9를 포함 하는 단순한 숫자 문자열 XSS 공격을 트리거하지 않습니다. 유효성 검사 불가능 하지 않다면 어려울은 HTML 입력을 구문 분석할-사용자 입력의 HTML을 허용 하려는 경우 문제가 더 복잡해 집니다. MarkDown 및 기타 텍스트 형식이 안전한 옵션이 풍부한 입력에 대 한 것입니다. 유효성 검사에 단독에 의존 하지 않아야 합니다. 항상 수행 했는지 유효성에 관계 없이 출력 전에 신뢰할 수 없는 입력을 인코딩하십시오.
+유효성 검사 제한 XSS 공격에 유용한 도구 될 수 있습니다. 예를 들어 0-9를 포함 하는 숫자 문자열 XSS 공격을 트리거하지 않습니다. 유효성 검사 불가능 하지 않다면 어려울은 HTML 입력을 구문 분석할-사용자 입력의 HTML을 허용 하려는 경우 문제가 더 복잡해 집니다. MarkDown 및 기타 텍스트 형식이 안전한 옵션이 풍부한 입력에 대 한 것입니다. 유효성 검사에 단독에 의존 하지 않아야 합니다. 항상 수행 했는지 유효성에 관계 없이 출력 전에 신뢰할 수 없는 입력을 인코딩하십시오.

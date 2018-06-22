@@ -2,20 +2,16 @@
 title: ASP.NET Core에서는 Ws-federation로 사용자를 인증
 author: chlowell
 description: 이 자습서에서는 ASP.NET Core 응용 프로그램의 Ws-federation을 사용 하는 방법을 설명 합니다.
-manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
 ms.date: 02/27/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/authentication/ws-federation
-ms.openlocfilehash: d4621c7b97678903b9f2562e353da3883334b599
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 55504ed28cf8ef1095bf16c101c09a6f374f038c
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30898806"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277441"
 ---
 # <a name="authenticate-users-with-ws-federation-in-aspnet-core"></a>ASP.NET Core에서는 Ws-federation로 사용자를 인증
 
@@ -26,7 +22,7 @@ ASP.NET Core 2.0 응용 프로그램의 경우 Ws-federation 지원은가 제공
 기본적으로 새 미들웨어:
 
 * 원치 않는 로그인을 허용 하지 않습니다. 이 Ws-federation 프로토콜 기능은 XSRF 공격에 취약 합니다. 그러나으로 사용할 수 있습니다는 `AllowUnsolicitedLogins` 옵션입니다.
-* 로그인 메시지에 대 한 모든 폼 게시를 검사 하지 않습니다. 만 요청을 `CallbackPath` 기호 기능에 대 한 검사 `CallbackPath` 기본값으로 `/signin-wsfed` 되지만 변경할 수 있습니다. 이 경로 사용 하 여 다른 인증 공급자와 공유할 수는 `SkipUnrecognizedRequests` 옵션입니다.
+* 로그인 메시지에 대 한 모든 폼 게시를 검사 하지 않습니다. 만 요청을 `CallbackPath` 기호 기능에 대 한 검사 `CallbackPath` 기본값으로 `/signin-wsfed` 되지만 변경할 수 있습니다 통해 상속 된 [RemoteAuthenticationOptions.CallbackPath](/dotnet/api/microsoft.aspnetcore.authentication.remoteauthenticationoptions.callbackpath) 속성은 [ WsFederationOptions](/dotnet/api/microsoft.aspnetcore.authentication.wsfederation.wsfederationoptions) 클래스입니다. 이 경로 사용 하 여 다른 인증 공급자와 공유할 수는 [SkipUnrecognizedRequests](/dotnet/api/microsoft.aspnetcore.authentication.wsfederation.wsfederationoptions.skipunrecognizedrequests) 옵션입니다.
 
 ## <a name="register-the-app-with-active-directory"></a>Active Directory에 앱 등록
 

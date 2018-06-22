@@ -2,20 +2,16 @@
 title: ASP.NET Core에서 razor 페이지 단위 테스트
 author: guardrex
 description: Razor 페이지 앱에 대 한 단위 테스트를 만드는 방법에 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.custom: mvc
 ms.date: 11/27/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: test/razor-pages-tests
-ms.openlocfilehash: df74d8e44b2dff00e76139edba47fd8a30ce33ef
-ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
+ms.openlocfilehash: bde1bef78fcc7ac1d570057d54636ea0f5490de8
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/10/2018
-ms.locfileid: "35252307"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274409"
 ---
 # <a name="razor-pages-unit-tests-in-aspnet-core"></a>ASP.NET Core에서 razor 페이지 단위 테스트
 
@@ -30,7 +26,7 @@ ASP.NET Core Razor 페이지 응용 프로그램의 단위 테스트를 지원�
 
 이 항목에서는 Razor 페이지 앱 및 단위 테스트에 대 한 기본적인 이해 있다고 가정 합니다. Razor 페이지 응용 프로그램 또는 테스트 개념 잘 모르는 경우 다음 항목을 참조 합니다.
 
-* [Razor 페이지 소개](xref:mvc/razor-pages/index)
+* [Razor 페이지 소개](xref:razor-pages/index)
 * [Razor 페이지 시작](xref:tutorials/razor-pages/razor-pages-start)
 * [에서 단위 테스트 C#.NET Core dotnet 테스트, xUnit를 사용 하 여](/dotnet/articles/core/testing/unit-testing-with-dotnet-test)
 

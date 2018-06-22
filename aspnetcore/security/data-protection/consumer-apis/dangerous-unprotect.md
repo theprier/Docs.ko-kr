@@ -2,26 +2,22 @@
 title: 해당 레지스트리 키에서 ASP.NET Core 해지 된 페이로드를 보호 해제
 author: rick-anderson
 description: 이후로 해지 된, ASP.NET Core 응용 프로그램의 키로 보호 된 데이터를 보호 해제 하는 방법에 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/data-protection/consumer-apis/dangerous-unprotect
-ms.openlocfilehash: b721bba63d0673f4e22fd9d1456af33489a2a389
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: ed0c2a309e899f018b09b3edc86b65b299647914
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30077419"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36272388"
 ---
 # <a name="unprotect-payloads-whose-keys-have-been-revoked-in-aspnet-core"></a>해당 레지스트리 키에서 ASP.NET Core 해지 된 페이로드를 보호 해제
 
 
 <a name="data-protection-consumer-apis-dangerous-unprotect"></a>
 
-ASP.NET Core 데이터 보호 API는 무기한 기밀 페이로드의 유지를 목적으로 설계되지 않았습니다. 무기한 저장 시나리오에는 [Windows CNG DPAPI](https://msdn.microsoft.com/library/windows/desktop/hh706794%28v=vs.85%29.aspx) 나 [Azure 권한 관리](https://docs.microsoft.com/rights-management/) 같은 다른 기술이 더 적합하며, 이런 기술들은 그에 상응하는 강력한 키 관리 기능을 갖추고 있습니다. 즉, 개발자는 ASP.NET Core 데이터 보호 Api를 사용 하 여 기밀 데이터의 장기 보호에 대 한 일은 없습니다. 키가 키 링에서 하므로 제거 하지 `IDataProtector.Unprotect` 으로 키가 사용 가능 하 고 유효한에 항상 기존 페이로드를 복구할 수 있습니다.
+ASP.NET Core 데이터 보호 Api는 주로 없습니다 기밀 페이로드의 무한 지 속성. 와 같은 다른 기술은 [Windows CNG DPAPI](https://msdn.microsoft.com/library/windows/desktop/hh706794%28v=vs.85%29.aspx) 및 [Azure 권한 관리](https://docs.microsoft.com/rights-management/) 무한 저장소 시나리오에 보다 적합 한까지 강력한 키 관리 기능을 갖습니다. 즉, 개발자는 ASP.NET Core 데이터 보호 Api를 사용 하 여 기밀 데이터의 장기 보호에 대 한 일은 없습니다. 키가 키 링에서 하므로 제거 하지 `IDataProtector.Unprotect` 으로 키가 사용 가능 하 고 유효한에 항상 기존 페이로드를 복구할 수 있습니다.
 
 그러나 개발자가 폐기된 키를 이용해서 보호된 데이터를 보호 해제하려고 시도할 경우 문제가 발생하는데, `IDataProtector.Unprotect`가 예외를 던지기 때문입니다. 단기 및 임시 페이로드는 (인증 토큰 같은) 시스템에서 손쉽게 재생성 할 수 있으므로 이런 유형의 페이로드는 크게 문제가 되지 않으며, 최악의 경우가 발생하더라도 사용자가 다시 로그인하면 그만입니다. 그러나 영속화된 페이로드의 경우에는 `Unprotect` 메서드가 예외를 던지는 상황이 발생하면 간과할 수 없는 데이터 유실이 발생하게 됩니다.
 

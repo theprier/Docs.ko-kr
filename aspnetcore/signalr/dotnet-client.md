@@ -2,20 +2,17 @@
 title: ASP.NET Core SignalR.NET 클라이언트
 author: rachelappel
 description: ASP.NET Core SignalR.NET 클라이언트에 대 한 정보
-manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: rachelap
 ms.custom: mvc
-ms.date: 05/18/2018
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: article
+ms.date: 05/29/2018
 uid: signalr/dotnet-client
-ms.openlocfilehash: 412d2362575789f1fb4792940df6d3dd24dbdd5a
-ms.sourcegitcommit: 300a1127957dcdbce1b6ad79a7b9dc676f571510
+ms.openlocfilehash: faa4368988971a3e7fcdcd1b044971e16d70f19a
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36273297"
 ---
 # <a name="aspnet-core-signalr-net-client"></a>ASP.NET Core SignalR.NET 클라이언트
 
@@ -27,7 +24,7 @@ Xamarin, WPF, Windows Forms, 콘솔 및.NET Core 응용 프로그램에서 ASP.N
 
 이 문서의 코드 예제는 ASP.NET Core SignalR.NET 클라이언트를 사용 하는 WPF 앱.
 
-## <a name="setup-client"></a>클라이언트를 설치
+## <a name="install-the-signalr-net-client-package"></a>SignalR.NET 클라이언트 패키지를 설치 합니다.
 
 `Microsoft.AspNetCore.SignalR.Client` SignalR 허브에 연결 하는.NET 클라이언트에 대 한 패키지가 필요 합니다. 클라이언트 라이브러리를 설치 하려면에서 다음 명령을 실행의 **패키지 관리자 콘솔** 창:
 

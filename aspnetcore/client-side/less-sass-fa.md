@@ -2,19 +2,15 @@
 title: 작은 Sass, 및 ASP.NET 코어의 놀라운 글꼴
 author: ardalis
 description: ASP.NET Core 응용 프로그램의 작은 Sass, 한 글꼴을 사용 하는 방법에 알아봅니다.
-manager: wpickett
 ms.author: tdykstra
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: client-side/less-sass-fa
-ms.openlocfilehash: 3bb1c9006f8633485a420b52b5fa9b91b1875cc5
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 2229c4e3b0238ff17c15e78f657b9acb10495c72
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30073525"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275567"
 ---
 # <a name="less-sass-and-font-awesome-in-aspnet-core"></a>작은 Sass, 및 ASP.NET 코어의 놀라운 글꼴
 

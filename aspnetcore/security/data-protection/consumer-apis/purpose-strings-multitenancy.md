@@ -2,19 +2,15 @@
 title: ASP.NET Core의 용도 계층 구조 및 다중 테넌트
 author: rick-anderson
 description: ASP.NET Core 데이터 보호 Api에 대 한 관계로 목적 문자열 계층 구조 및 다중 테 넌 트에 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/data-protection/consumer-apis/purpose-strings-multitenancy
-ms.openlocfilehash: a1ca2c32f95a86b877cbbe94d106d23b86800443
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: f0c39d54c164595c2135e0eb0d911796e215dd66
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30078052"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36273613"
 ---
 # <a name="purpose-hierarchy-and-multi-tenancy-in-aspnet-core"></a>ASP.NET Core의 용도 계층 구조 및 다중 테넌트
 

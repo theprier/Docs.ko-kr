@@ -2,20 +2,16 @@
 title: JavaScriptServices를 사용 하 여 ASP.NET 코어의 단일 페이지 응용 프로그램을 만들려면
 author: scottaddie
 description: 단일 페이지 응용 프로그램 (SPA) 뒷받침 되며 ASP.NET Core 만들려는 JavaScriptServices 사용의 이점에 알아봅니다.
-manager: wpickett
 ms.author: scaddie
 ms.custom: H1Hack27Feb2017
 ms.date: 08/02/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: client-side/spa-services
-ms.openlocfilehash: fd893b7c62f38442bf5633a956786983763e6f9f
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: c3f454ddd91fadf94e4ee4faa8930d8a89d13833
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2018
-ms.locfileid: "31483554"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36279625"
 ---
 # <a name="use-javascriptservices-to-create-single-page-applications-in-aspnet-core"></a>JavaScriptServices를 사용 하 여 ASP.NET 코어의 단일 페이지 응용 프로그램을 만들려면
 

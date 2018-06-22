@@ -2,20 +2,16 @@
 title: ASP.NET Core의 사용자 지정 권한 부여 정책 공급자
 author: mjrousos
 description: ASP.NET Core 응용 프로그램의 사용자 지정 IAuthorizationPolicyProvider를 사용 하 여 권한 부여 정책을 동적으로 생성 하는 방법에 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.custom: mvc
 ms.date: 05/02/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/authorization/iauthorizationpolicyprovider
-ms.openlocfilehash: a5bad88b37d38b819b960b1eb27808d891268c01
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: 524928a5b291e02556d11a762d86430a6dc94660
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34233445"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277259"
 ---
 # <a name="custom-authorization-policy-providers-using-iauthorizationpolicyprovider-in-aspnet-core"></a>ASP.NET Core에서 IAuthorizationPolicyProvider를 사용 하 여 사용자 지정 권한 부여 정책 공급자 
 

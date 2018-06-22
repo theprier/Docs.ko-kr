@@ -2,19 +2,15 @@
 title: ASP.NET Core의 키 저장소 공급자
 author: rick-anderson
 description: ASP.NET Core 및 키 저장소 위치를 구성 하는 방법에 대 한 키 저장소 공급자에 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.date: 01/14/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/data-protection/implementation/key-storage-providers
-ms.openlocfilehash: e8b7804e93b812c2e710ab15510c2fbaa7c4866d
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 432c2690f216325470bbea9b974ea772bcdc39ed
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30077351"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36273771"
 ---
 # <a name="key-storage-providers-in-aspnet-core"></a>ASP.NET Core의 키 저장소 공급자
 
@@ -72,7 +68,7 @@ public void ConfigureServices(IServiceCollection services)
 자세한 내용은 다음을 참조하세요.
 
 - [StackExchange.Redis ConnectionMultiplexer](https://github.com/StackExchange/StackExchange.Redis/blob/master/docs/Basics.md)
-- [Azure Redis Cache](https://docs.microsoft.com/azure/redis-cache/cache-dotnet-how-to-use-azure-redis-cache#connect-to-the-cache)
+- [Azure Redis 캐시](https://docs.microsoft.com/azure/redis-cache/cache-dotnet-how-to-use-azure-redis-cache#connect-to-the-cache)
 - [테스트 코드 redis](https://github.com/aspnet/DataProtection/blob/rel/1.1.0/samples/Redis/Program.cs)합니다.
 
 ## <a name="registry"></a>레지스트리
