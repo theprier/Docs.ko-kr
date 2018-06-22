@@ -181,7 +181,7 @@ ASP.NET MVC 4로 시작 됩니다이 실습 랩에서 &quot;인터넷 응용 프
 
        새 테마 마크업 알아보려면 템플릿을 뷰를 찾습니다.
 
-       ![Razor 및 HTML5 태그 About.cshtml를 사용 하 여 새 템플릿. ] (whats-new-in-aspnet-mvc-4/_static/image10.png "About.cshtml Razor 및 HTML5 태그를 사용 하 여 새 서식 파일입니다.")
+       ![Razor 및 HTML5 태그 About.cshtml를 사용 하 여 새 템플릿. ](whats-new-in-aspnet-mvc-4/_static/image10.png "About.cshtml Razor 및 HTML5 태그를 사용 하 여 새 서식 파일입니다.")
 
        *Razor 및 HTML5 태그 (About.cshtml)를 사용 하 여 새 템플릿.*
    - **업데이트 된 JavaScript 라이브러리**
