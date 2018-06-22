@@ -1,4 +1,4 @@
-﻿---
+---
 title: ASP.NET Core의 부분 태그 도우미
 author: scottaddie
 description: ASP.NET Core의 부분 태그 도우미와 각 특성이 부분 뷰를 렌더링할 때 수행하는 역할을 알아봅니다.
@@ -22,11 +22,11 @@ ms.locfileid: "33962596"
 
 작성자: [Scott Addie](https://github.com/scottaddie)
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/built-in/samples) ([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/tag-helpers/built-in/samples)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="overview"></a>개요
 
-부분 태그 도우미는 Razor 페이지 및 MVC 앱에서 [부분 뷰](xref:mvc/views/partial)를 렌더링하는 데 사용됩니다. 부분 태그 도우미는:
+부분 태그 도우미는 Razor 페이지 및 MVC 앱에서 [부분 보기](xref:mvc/views/partial)를 렌더링하는 데 사용됩니다. 고려 사항:
 
 * ASP.NET Core 2.1 이상이 필요합니다.
 * [HTML 도우미 구문](xref:mvc/views/partial#referencing-a-partial-view) 대신 사용할 수 있습니다.
@@ -75,7 +75,7 @@ ms.locfileid: "33962596"
 
 ## <a name="view-data"></a>view-data
 
-`view-data` 특성은 부분 보기에 전달할 [ViewDataDictionary](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary)를 할당합니다. 다음 태그를 사용하면 부분 뷰에서 전체 ViewData 컬렉션에 접근할 수 있습니다.
+`view-data` 특성은 부분 보기에 전달할 [ViewDataDictionary](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary)를 할당합니다. 다음 표시를 사용하면 부분 보기에서 전체 ViewData 컬렉션에 액세스할 수 있습니다.
 
 [!code-cshtml[](samples/TagHelpersBuiltIn/Pages/Product.cshtml?name=snippet_ViewData&highlight=5-)]
 
@@ -88,4 +88,4 @@ ms.locfileid: "33962596"
 ## <a name="additional-resources"></a>추가 자료
 
 * [부분 뷰](xref:mvc/views/partial)
-* [약한 형식의 데이터 (ViewData, ViewData 특성 및 ViewBag)](xref:mvc/views/overview#weakly-typed-data-viewdata-viewdata-attribute-and-viewbag)
+* [약한 형식의 데이터(ViewData, ViewData 특성 및 ViewBag)](xref:mvc/views/overview#weakly-typed-data-viewdata-viewdata-attribute-and-viewbag)
