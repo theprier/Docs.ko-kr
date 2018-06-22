@@ -244,7 +244,7 @@ ASP while입니다. NET의 기본 제공 브라우저 검색 지원이 많은 �
 
 [!code-csharp[Main](add-mobile-pages-to-your-aspnet-web-forms-mvc-application/samples/sample9.cs)]
 
-오류는 먼, 및 URL http:// 되돌려집니다 이제<em>yoursite</em>데스크톱 홈 페이지 및 http://에 도달 하면 /<em>yoursite</em>/mobile/ 모바일 홈 페이지에 도달 합니다.
+오류는 먼, 및 URL http:// 되돌려집니다 이제<em>yoursite</em>데스크톱 홈 페이지 및 http://<em>yoursite</em>/mobile/ 에 도달 하면 모바일 홈 페이지에 도달 합니다.
 
 ### <a name="redirecting-mobile-visitors-to-your-mobile-area"></a>모바일 방문자 모바일 영역으로 리디렉션
 
