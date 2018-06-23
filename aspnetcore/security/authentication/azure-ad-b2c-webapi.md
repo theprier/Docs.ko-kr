@@ -6,12 +6,12 @@ ms.author: casoper
 ms.date: 01/25/2018
 ms.custom: mvc
 uid: security/authentication/azure-ad-b2c-webapi
-ms.openlocfilehash: 82179e52e2c292ec3b7e618b3c61eef6494abc7c
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: c56efda28c668b8f88d28334705b4c26f288870f
+ms.sourcegitcommit: e22097b84d26a812cd1380a6b2d12c93e522c125
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273420"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314164"
 ---
 # <a name="cloud-authentication-in-web-apis-with-azure-active-directory-b2c-in-aspnet-core"></a>웹 Api와 ASP.NET 코어의 Azure Active Directory B2C에에서 대 한 클라우드 인증
 
@@ -173,7 +173,7 @@ Web API에 인증 된 요청을 하려면 전달자 토큰은 필요 합니다. 
    |      <strong>토큰 이름</strong>       |                                  <em>&lt;토큰 이름&gt;</em>                                  |                                                                                                                   토큰에 대 한 설명이 포함 된 이름을 입력 합니다.                                                                                                                    |
    |      <strong>Grant 유형</strong>       |                                           암시적 방법                                            |                                                                                                                                                                                                                                                                              |
    |     <strong>콜백 URL</strong>      |                               `https://getpostman.com/postman`                                |                                                                                                                                                                                                                                                                              |
-   |       <strong>인증 URL</strong>        | `https://login.microsoftonline.com/<tenant domain name>/oauth2/v2.0/authorize?p=B2C_1_SiUpIn` |                                                                                                  대체 <em>&lt;테 넌 트 도메인 이름&gt;</em> 테 넌 트의 도메인 이름을 사용 합니다.                                                                                                  |
+   |       <strong>인증 URL</strong>        | `https://login.microsoftonline.com/tfp/<tenant domain name>/B2C_1_SiUpIn/oauth2/v2.0/authorize` |                                                                                                  대체 <em>&lt;테 넌 트 도메인 이름&gt;</em> 테 넌 트의 도메인 이름을 사용 합니다.                                                                                                  |
    |       <strong>클라이언트 ID</strong>       |                <em>&lt;우체부 응용 프로그램의 입력 <b>응용 프로그램 ID</b>&gt;</em>                 |                                                                                                                                                                                                                                                                              |
    |     <strong>클라이언트 암호</strong>     |                                 <em>&lt;비워&gt;</em>                                  |                                                                                                                                                                                                                                                                              |
    |         <strong>범위</strong>         |         `https://<tenant domain name>/<api>/user_impersonation openid offline_access`         | 대체 <em>&lt;테 넌 트 도메인 이름&gt;</em> 테 넌 트의 도메인 이름을 사용 합니다. 대체 <em>&lt;api&gt;</em> 웹 API 프로젝트 이름으로 합니다. 응용 프로그램 id입니다. 사용할 수도 있습니다. URL에 대 한 패턴은: <em>https://{tenant}.onmicrosoft.com/{app_name_or_id}/{scope 이름}</em>합니다. |

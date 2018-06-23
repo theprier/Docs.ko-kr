@@ -12,12 +12,12 @@ ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 2790f32bc74cecf450f5a258fc1ff5b280a63923
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 1766c11dabec3931ec2bfc4ae2e15332427d7855
+ms.sourcegitcommit: e22097b84d26a812cd1380a6b2d12c93e522c125
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30874995"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314015"
 ---
 <a name="migrating-an-existing-website-from-sql-membership-to-aspnet-identity"></a>ASP.NET Id로 기존 웹 사이트 SQL 멤버 자격에서 마이그레이션
 ====================
@@ -90,12 +90,12 @@ ASP.NET Id 시스템에 필요한 스키마에 기존 데이터베이스를 마�
 | **IdentityUser** | **Type** | **IdentityRole** | **IdentityUserRole** | **IdentityUserLogin** | **IdentityUserClaim** |
 | --- | --- | --- | --- | --- | --- |
 | ID | string | ID | RoleId | ProviderKey | ID |
-| 사용자 이름 | string | 이름 | UserId | UserId | ClaimType |
+| 사용자 이름 | string | name | UserId | UserId | ClaimType |
 | PasswordHash | string |  |  | LoginProvider | ClaimValue |
 | SecurityStamp | string |  |  |  | 사용자\_Id |
 | 메일 | string |  |  |  |  |
 | EmailConfirmed | bool |  |  |  |  |
-| PhoneNumber | string |  |  |  |  |
+| 전화 번호 | string |  |  |  |  |
 | PhoneNumberConfirmed | bool |  |  |  |  |
 | LockoutEnabled | bool |  |  |  |  |
 | LockoutEndDate | DateTime |  |  |  |  |
@@ -107,7 +107,7 @@ ASP.NET Id 시스템에 필요한 스키마에 기존 데이터베이스를 마�
 | --- | --- | --- | --- |
 | IdentityUser | AspnetUsers | ID |  |
 | IdentityRole | AspnetRoles | ID |  |
-| IdentityUserRole | AspnetUserRole | UserId + RoleId | User\_Id-&gt;AspnetUsers RoleId-&gt;AspnetRoles |
+| IdentityUserRole | AspnetUserRole | UserId + RoleId | 사용자\_Id-&gt;AspnetUsers RoleId-&gt;AspnetRoles |
 | IdentityUserLogin | AspnetUserLogins | ProviderKey + UserId + LoginProvider | UserId-&gt;AspnetUsers |
 | IdentityUserClaim | AspnetUserClaims | ID | User\_Id-&gt;AspnetUsers |
 
@@ -116,6 +116,8 @@ ASP.NET Id 시스템에 필요한 스키마에 기존 데이터베이스를 마�
 - EntityFramework 마이그레이션을 설정 하려면 "Enable-migrations" 명령을 실행 합니다.
 - C#에서 데이터베이스를 만들려고 초기 설치 코드를 만듭니다 "add-migration 초기" 명령을 실행 / VB.
 - 마지막 단계를 실행 하는 "Update-database-스크립트" 모델 클래스를 기반으로 SQL 스크립트를 생성 하는 명령입니다.
+
+[!INCLUDE[](../../../includes/identity/alter-command-exception.md)]
 
 여기서 म 합니다 잘 추가 변경 새 열을 추가 하 고 데이터 복사를 시작으로이 데이터베이스 생성 스크립트를 사용할 수 있습니다. 이의 이점은 생성 하는 것입니다는 `_MigrationHistory` EntityFramework 모델 클래스 Identity 릴리스 이후 버전에 대 한 변경 하는 경우 데이터베이스 스키마를 수정 하는 데 사용 되는 테이블입니다. 
 
@@ -146,7 +148,7 @@ SQL 멤버 자격 사용자 정보에 다른 Id 사용자 모델 클래스 즉 �
 
     다음 SQL 멤버 자격 테이블의 정보는 새 Id 시스템에 매핑되는 방식을입니다.
 
-    aspnet\_Roles --&gt; AspNetRoles
+    aspnet\_역할--&gt; AspNetRoles
 
     asp\_netUsers 및 asp\_netMembership-&gt; AspNetUsers
 

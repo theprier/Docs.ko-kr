@@ -4,14 +4,14 @@ author: rick-anderson
 description: 저장 하 고 ASP.NET Core 응용 프로그램을 개발 하는 동안 앱 암호로 중요 한 정보를 검색 하는 방법을 알아봅니다.
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 05/23/2018
+ms.date: 06/21/2018
 uid: security/app-secrets
-ms.openlocfilehash: 8db1d1069958d3b08bbb3b9727ddbc47ae5747df
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: d3b2de1a17012986ef8dea7aaf8636dd35d10fa1
+ms.sourcegitcommit: e22097b84d26a812cd1380a6b2d12c93e522c125
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36275427"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314177"
 ---
 # <a name="safe-storage-of-app-secrets-in-development-in-aspnet-core"></a>ASP.NET Core에서 개발의 앱 암호의 안전한 저장소
 
