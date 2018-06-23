@@ -5,12 +5,12 @@ description: ASP.NET Core mvc 웹 API 구현 ASP.NET Web API에서 마이그레�
 ms.author: riande
 ms.date: 05/10/2018
 uid: migration/webapi
-ms.openlocfilehash: 9385805d548bc87f4a50b87f2c06aa74abdaf8af
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 4f4dc140bd60463037be0757176dcf7a619918bd
+ms.sourcegitcommit: 79b756ea03eae77a716f500ef88253ee9b1464d2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272532"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36327511"
 ---
 # <a name="migrate-from-aspnet-web-api-to-aspnet-core"></a>ASP.NET Web API에서에서 ASP.NET Core로 마이그레이션
 
@@ -131,7 +131,7 @@ Microsoft.AspNetCore.Mvc.WebApiCompatShim에 포함 된 호환성 기능은 다�
         * `CreateResponse<T>`
         * `CreateErrorResponse`
     * 작업 결과 메서드:
-        * `BadResuestErrorMessageResult`
+        * `BadRequestErrorMessageResult`
         * `ExceptionResult`
         * `InternalServerErrorResult`
         * `InvalidModelStateResult`
