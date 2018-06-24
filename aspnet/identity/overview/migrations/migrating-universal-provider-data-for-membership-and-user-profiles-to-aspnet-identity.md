@@ -12,12 +12,12 @@ ms.technology: ''
 ms.prod: .net-framework
 msc.legacyurl: /identity/overview/migrations/migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: f65f93b20543d06ea70a9009b6921e297477c99e
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 75d273d9fdb5d8ff0f7a910f42abe8bcce6e397d
+ms.sourcegitcommit: e22097b84d26a812cd1380a6b2d12c93e522c125
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30871573"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314002"
 ---
 <a name="migrating-universal-provider-data-for-membership-and-user-profiles-to-aspnet-identity-c"></a>멤버 자격 및 ASP.NET Identity (C#)에 사용자 프로필에 대 한 유니버설 공급자 데이터 마이그레이션
 ====================
@@ -106,6 +106,8 @@ SQL 스크립트를 붙여 [ https://raw.github.com/suhasj/UniversalProviders-Id
    이제 'ProfileInfo' 사용자 클래스에서 속성 인지 확인 합니다. 따라서 프로필 데이터로 직접 작업 하는 사용자 클래스를 사용할 수 있습니다.
 
 파일 복사는 **IdentityModels** 및 **IdentityAccount** 다운로드 원본의 폴더 ( [ https://github.com/suhasj/UniversalProviders-Identity-Migrations/tree/master/UniversalProviders-Identity-Migrations ](https://github.com/suhasj/UniversalProviders-Identity-Migrations/tree/master/UniversalProviders-Identity-Migrations) ). 이러한 남은 모델 클래스 및 사용자와 ASP.NET Identity Api를 사용 하 여 역할 관리에 필요한 새 페이지가 포함 됩니다. 사용 하는 방법 SQL 멤버 자격에 비슷합니다. 자세한 설명은 수 있으며 [여기](migrating-an-existing-website-from-sql-membership-to-aspnet-identity.md)합니다.
+
+[!INCLUDE[](../../../includes/identity/alter-command-exception.md)]
 
 ## <a name="copying-profile-data-to-the-new-tables"></a>프로필 데이터를 새 테이블에 복사
 
