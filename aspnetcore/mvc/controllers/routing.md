@@ -2,19 +2,15 @@
 title: ASP.NET Core의 컨트롤러 작업에 라우팅
 author: rick-anderson
 description: ASP.NET Core MVC가 라우팅 미들웨어를 사용하여 들어오는 요청의 URL을 일치시키고 이를 작업에 매핑하는 방법을 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.date: 03/14/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/controllers/routing
-ms.openlocfilehash: 28fe62128d0a094fa08e866a270aed26080b1e51
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 795ca13674f85b6e8c1f84718c225613a7a7125a
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "29905207"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278413"
 ---
 # <a name="routing-to-controller-actions-in-aspnet-core"></a>ASP.NET Core의 컨트롤러 작업에 라우팅
 

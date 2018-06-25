@@ -2,20 +2,16 @@
 title: ASP.NET Core 디렉터리 구조
 author: guardrex
 description: 게시된 ASP.NET Core 앱의 디렉터리 구조에 대해 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.custom: mvc
 ms.date: 04/09/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: host-and-deploy/directory-structure
-ms.openlocfilehash: a5cc1f23d624643facddc9e2006fb246e5ae66dc
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 06d3f097cd93ceb2a23b9f6516a9b7a1f3ca3089
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33838438"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36273675"
 ---
 # <a name="aspnet-core-directory-structure"></a>ASP.NET Core 디렉터리 구조
 

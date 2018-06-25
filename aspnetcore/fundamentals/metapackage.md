@@ -2,20 +2,16 @@
 title: ASP.NET Core 2.0 이상용 Microsoft.AspNetCore.All 메타패키지
 author: Rick-Anderson
 description: Microsoft.AspNetCore.All 메타패키지에는 지원되는 모든 ASP.NET Core 및 Entity Framework Core 패키지와 해당 종속성이 포함됩니다.
-manager: wpickett
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 09/20/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/metapackage
-ms.openlocfilehash: fbb76f41f3178ddc4e51faa14edece1869a30cd0
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: 2fddc59d74dce4b114b5b4ed0646f773eb66ffb9
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34729079"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277822"
 ---
 # <a name="microsoftaspnetcoreall-metapackage-for-aspnet-core-20"></a>ASP.NET Core 2.0용 Microsoft.AspNetCore.All 메타패키지
 

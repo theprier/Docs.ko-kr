@@ -2,21 +2,17 @@
 title: ASP.NET Core에서 Razor 파일 컴파일 및 미리 컴파일
 author: rick-anderson
 description: Razor 파일을 미리 컴파일할 경우의 이점과 ASP.NET Core 앱에서 Razor 파일 미리 컴파일을 구현하는 방법에 대해 알아보세요.
-manager: wpickett
 monikerRange: '>= aspnetcore-1.1'
 ms.author: riande
 ms.custom: mvc
 ms.date: 05/17/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/views/view-compilation
-ms.openlocfilehash: 03b11116a15c291452acd878e32cd015dc553dcc
-ms.sourcegitcommit: 24c32648ab0c6f0be15333d7c23c1bf680858c43
+ms.openlocfilehash: 6ef450a24f57c721021f77f6df5088574caa2645
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/20/2018
-ms.locfileid: "34336280"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274042"
 ---
 # <a name="razor-file-compilation-in-aspnet-core"></a>ASP.NET Core의 Razor 파일 컴파일
 
@@ -29,7 +25,7 @@ Razor 파일은 런타임 시 관련 MVC 뷰가 호출되면 컴파일됩니다.
 Razor 파일은 런타임 시 관련 Razor 페이지 또는 MVC 뷰가 호출되면 컴파일됩니다. 빌드 시 Razor 파일 게시는 지원되지 않습니다. Razor 파일은 필요에 따라 미리 컴파일 도구를 사용하여 앱 게시 및 배포 시 컴파일될 수 있습니다.
 ::: moniker-end
 ::: moniker range=">= aspnetcore-2.1"
-Razor 파일은 런타임 시 관련 Razor 페이지 또는 MVC 뷰가 호출되면 컴파일됩니다. Razor 파일은 [Razor SDK](xref:mvc/razor-pages/sdk)를 사용하여 빌드 및 게시 시 컴파일됩니다.
+Razor 파일은 런타임 시 관련 Razor 페이지 또는 MVC 뷰가 호출되면 컴파일됩니다. Razor 파일은 [Razor SDK](xref:razor-pages/sdk)를 사용하여 빌드 및 게시 시 컴파일됩니다.
 ::: moniker-end
 
 ## <a name="precompilation-considerations"></a>미리 컴파일 고려 사항
@@ -87,12 +83,12 @@ dotnet publish -c Release
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0"
-* <xref:mvc/razor-pages/index>
+* <xref:razor-pages/index>
 * <xref:mvc/views/overview>
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"
-* <xref:mvc/razor-pages/index>
+* <xref:razor-pages/index>
 * <xref:mvc/views/overview>
-* <xref:mvc/razor-pages/sdk>
+* <xref:razor-pages/sdk>
 ::: moniker-end

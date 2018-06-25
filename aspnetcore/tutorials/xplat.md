@@ -2,19 +2,15 @@
 title: ASP.NET Core 자습서
 author: rick-anderson
 description: ASP.NET Core 응용 프로그램을 개발하는 방법을 배우기 위한 단계별 가이드 목록입니다.
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: tutorials/xplat
-ms.openlocfilehash: 097d63d5be5bd83c688a7f377d8ed45ffdd43ff8
-ms.sourcegitcommit: 7f92990bad6a6cb901265d621dcbc136794f5f3f
+ms.openlocfilehash: 9cc2f7a91c081fbd74999f6dc0334a4ee1980864
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/28/2018
-ms.locfileid: "30223075"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277051"
 ---
 # <a name="aspnet-core-tutorials"></a>ASP.NET Core 자습서
 
@@ -22,9 +18,9 @@ ASP.NET Core 응용 프로그램을 개발하기 위해 다음 단계별 가이�
 
 ## <a name="build-web-apps"></a>웹 앱 개발
 
-[Razor 페이지](xref:mvc/razor-pages/index)는 ASP.NET Core 2.0 이상을 사용하여 새로운 웹 UI 앱을 만들 때 권장되는 방법입니다.
+[Razor 페이지](xref:razor-pages/index)는 ASP.NET Core 2.0 이상을 사용하여 새로운 웹 UI 앱을 만들 때 권장되는 방법입니다.
 
-* [ASP.NET Core의 Razor 페이지 소개](xref:mvc/razor-pages/index)
+* [ASP.NET Core의 Razor 페이지 소개](xref:razor-pages/index)
 * ASP.NET Core를 사용하여 Razor 페이지 웹앱 만들기
 
    * [macOS의 Razor 페이지](xref:tutorials/razor-pages-mac/index)

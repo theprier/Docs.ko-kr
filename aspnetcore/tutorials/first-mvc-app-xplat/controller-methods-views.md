@@ -2,19 +2,15 @@
 title: ASP.NET Core의 컨트롤러 메서드 및 보기
 author: rick-anderson
 description: ASP.NET Core에서 컨트롤러 메서드, 보기 및 DataAnnotations를 사용하는 방법을 배웁니다.
-manager: wpickett
 ms.author: riande
 ms.date: 04/07/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: tutorials/first-mvc-app-xplat/controller-methods-views
-ms.openlocfilehash: 0bf9bffbf14ff958b28d9494600f55eb3f8e0c35
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 7cf42807eaba356cd090a08bba9357c3ec237087
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30896941"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278442"
 ---
 # <a name="controller-methods-and-views-in-aspnet-core"></a>ASP.NET Core의 컨트롤러 메서드 및 보기
 

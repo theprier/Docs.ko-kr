@@ -2,19 +2,15 @@
 title: ASP.NET Core의 부분 보기
 author: ardalis
 description: 부분 보기가 어떻게 다른 보기 내에서 렌더링된 보기인지, 언제 ASP.NET Core 앱에서 사용해야 하는지 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.date: 03/14/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/views/partial
-ms.openlocfilehash: 3deaaeb666e5443d0784f2ac6977e58e1b25d711
-ms.sourcegitcommit: 71b93b42cbce8a9b1a12c4d88391e75a4dfb6162
+ms.openlocfilehash: f3782961a63c08293a483ec7a75dadff2031b131
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/20/2018
-ms.locfileid: "30000904"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36279534"
 ---
 # <a name="partial-views-in-aspnet-core"></a>ASP.NET Core의 부분 보기
 

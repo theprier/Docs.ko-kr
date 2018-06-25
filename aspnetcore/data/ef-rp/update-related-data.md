@@ -2,19 +2,15 @@
 title: ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 관련 데이터 업데이트 - 7/8
 author: rick-anderson
 description: 이 자습서에서는 외래 키 필드 및 탐색 속성을 업데이트하여 관련된 데이터를 업데이트합니다.
-manager: wpickett
 ms.author: riande
 ms.date: 11/15/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: data/ef-rp/update-related-data
-ms.openlocfilehash: 2eff6cd5f4bb737cb79875c9b04c889914376cd0
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: e987971f60e5c5a9fb79e30440c7c986df64447e
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32740376"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275296"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---update-related-data---7-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 관련 데이터 업데이트 - 7/8
 
@@ -95,8 +91,6 @@ Razor 페이지는 [Select 태그 도우미](xref:mvc/views/working-with-forms#t
 * 강좌 ID를 표시합니다. 일반적으로 엔터티의 PK(기본 키)는 표시되지 않습니다. PK는 일반적으로 사용자에게 아무런 의미가 없습니다. 이 경우 PK는 강좌 번호입니다.
 * 캡션을 **DepartmentID**에서 **Department**로 변경합니다.
 * `"ViewBag.DepartmentID"`를 `DepartmentNameSL`로 바꿉니다(기본 클래스에서).
-* "부서 선택" 옵션을 추가합니다. 이 변경 내용은 첫 번째 부서 대신 "부서 선택"을 렌더링합니다.
-* 부서가 선택되지 않은 경우 유효성 검사 메시지를 추가합니다.
 
 페이지는 강좌 번호에 대한 숨겨진 필드(`<input type="hidden">`)를 포함합니다. `asp-for="Course.CourseID"`로 `<label>` 태그 도우미를 추가하는 것은 숨겨진 필드에 대한 필요성을 제거하지 않습니다. `<input type="hidden">`은 사용자가 **저장**을 클릭할 때 게시된 데이터에 포함되도록 강좌 번호에 필요합니다.
 

@@ -2,19 +2,15 @@
 title: ASP.NET Core에 대한 Razor 구문 참조
 author: rick-anderson
 description: 웹 페이지에 서버 기반 코드를 포함하는 Razor 태그 구문에 대해 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.date: 10/18/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/views/razor
-ms.openlocfilehash: 224c855b355b8ecde36377bba6966edec251af6a
-ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
+ms.openlocfilehash: d0f4d59cb605cc3cc7cdfa84bfc65399699e475a
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33962494"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36272690"
 ---
 # <a name="razor-syntax-reference-for-aspnet-core"></a>ASP.NET Core에 대한 Razor 구문 참조
 
@@ -549,7 +545,7 @@ Razor는 보기에 전달된 모델에 액세스할 수 있는 `Model` 속성을
 * 네임스페이스(namespace)
 * 함수
 * 상속
-* 모델
+* model
 * section
 * 도우미(현재 ASP.NET Core에서 지원되지 않음)
 

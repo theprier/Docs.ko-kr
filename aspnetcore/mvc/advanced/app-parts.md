@@ -2,19 +2,15 @@
 title: ASP.NET Core에서 응용 프로그램 파트
 author: ardalis
 description: 앱의 리소스에 대한 추상화인 응용 프로그램 파트를 사용하여 어셈블리에서 기능을 검색하거나 로드하지 않도록 하는 방법을 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.date: 01/04/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/extensibility/app-parts
-ms.openlocfilehash: 8f7aeadc7a1218bf203575add8c82c95faf137b4
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: e0290ceadc159d7c3608ec4420d95cd219407d32
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32739856"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36276827"
 ---
 # <a name="application-parts-in-aspnet-core"></a>ASP.NET Core에서 응용 프로그램 파트
 
@@ -65,7 +61,7 @@ services.AddMvc()
 
 응용 프로그램 기능 공급자는 응용 프로그램 파트를 검사하고 해당 파트에 대한 기능을 제공합니다. 다음 MVC 기능에 대한 기본 제공 기능 공급자가 있습니다.
 
-* [컨트롤러](/dotnet/api/microsoft.aspnetcore.mvc.controllers.controllerfeatureprovider)
+* [Controllers](/dotnet/api/microsoft.aspnetcore.mvc.controllers.controllerfeatureprovider)
 * [메타데이터 참조](/dotnet/api/microsoft.aspnetcore.mvc.razor.compilation.metadatareferencefeatureprovider)
 * [태그 도우미](/dotnet/api/microsoft.aspnetcore.mvc.razor.taghelpers.taghelperfeatureprovider)
 * [보기 구성 요소](/dotnet/api/microsoft.aspnetcore.mvc.viewcomponents.viewcomponentfeatureprovider)

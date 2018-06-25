@@ -2,25 +2,21 @@
 title: ASP.NET Core MVC에서 뷰
 author: ardalis
 description: ASP.NET Core MVC에서 뷰가 앱의 데이터 프레젠테이션과 사용자 상호 작용을 처리하는 방식에 대해 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.date: 12/12/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/views/overview
-ms.openlocfilehash: b9947de03942bd71616e4bf12263befd9f784915
-ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
+ms.openlocfilehash: 4d5cb6288711cdef145ebb0b52e4e645c535bdf2
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33965727"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278351"
 ---
 # <a name="views-in-aspnet-core-mvc"></a>ASP.NET Core MVC에서 뷰
 
 작성자: [Steve Smith](https://ardalis.com/) 및 [Luke Latham](https://github.com/guardrex)
 
-이 문서에서는 ASP.NET Core MVC 응용 프로그램에서 사용된 뷰에 대해 설명합니다. Razor 페이지에 대한 자세한 내용은 [Razor 페이지 소개](xref:mvc/razor-pages/index)를 참조하세요.
+이 문서에서는 ASP.NET Core MVC 응용 프로그램에서 사용된 뷰에 대해 설명합니다. Razor 페이지에 대한 자세한 내용은 [Razor 페이지 소개](xref:razor-pages/index)를 참조하세요.
 
 MVC(Model-View-Controller) 패턴에서 *보기*는 앱의 데이터 프레젠테이션과 사용자 상호 작용을 처리합니다. 뷰는 [Razor 태그](xref:mvc/views/razor)가 포함된 HTML 템플릿입니다. Razor 태그는 클라이언트에 전송된 웹 페이지를 생성하기 위해 HTML과 상호 작용하는 코드입니다.
 

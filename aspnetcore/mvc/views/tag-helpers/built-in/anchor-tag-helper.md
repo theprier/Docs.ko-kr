@@ -2,20 +2,16 @@
 title: ASP.NET Core의 앵커 태그 도우미
 author: pkellner
 description: ASP.NET Core 앵커 태그 도우미 특성 및 HTML 앵커 태그의 동작을 확장할 때 각 특성이 담당하는 역할을 확인합니다.
-manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
 ms.date: 01/31/2018
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/views/tag-helpers/builtin-th/anchor-tag-helper
-ms.openlocfilehash: 31ff62b6bedb5e577a51f341c89d241d06a83ad3
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 6bdf71eaf38f134cb15b5950d2cae6ab67f861a4
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30899410"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36273886"
 ---
 # <a name="anchor-tag-helper-in-aspnet-core"></a>ASP.NET Core의 앵커 태그 도우미
 
@@ -111,7 +107,7 @@ ms.locfileid: "30899410"
 </html>
 ```
 
-이 경우 일치하는 경로에서 `speakerid`를 찾을 수 없기 때문에 생성되는 HTML은 다음과 같습니다. 
+일치하는 경로에서 `speakerid`를 찾을 수 없기 때문에 생성된 HTML은 다음과 같습니다.
 
 ```html
 <a href="/Speaker/Detail?speakerid=12">SpeakerId: 12</a>
@@ -121,7 +117,7 @@ ms.locfileid: "30899410"
 
 ## <a name="asp-route"></a>asp-route
 
-[asp-route](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortaghelper.route) 특성은 명명된 경로에 직접 연결되는 URL을 생성하기 위해서 사용됩니다. [라우팅 특성](xref:mvc/controllers/routing#attribute-routing)을 사용하면 `SpeakerController`의 `Evaluations` 액션에 사용된 것처럼 경로에 이름을 지정할 수 있습니다.
+[asp-route](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortaghelper.route) 특성은 명명된 경로에 직접 연결되는 URL을 생성하기 위해서 사용됩니다. [라우팅 특성](xref:mvc/controllers/routing#attribute-routing)을 사용하면 경로가 `SpeakerController`에 표시된 이름으로 지정되고 해당 `Evaluations` 메서드에서 사용할 수 있습니다.
 
 [!code-csharp[](samples/TagHelpersBuiltIn/Controllers/SpeakerController.cs?range=22-24)]
 
@@ -173,7 +169,7 @@ ms.locfileid: "30899410"
 
 ## <a name="asp-area"></a>asp-area
 
-[asp-area](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortaghelper.area) 특성은 적절한 경로를 설정하기 위해 사용되는 영역 이름을 설정합니다. 다음 예제에서는 area 특성으로 인해 경로가 다시 매핑되는 방식을 보여 줍니다. `asp-area`를 "Blogs"로 설정하면 이 앵커 태그에 연결된 컨트롤러 및 뷰의 경로에 *Areas/Blogs* 디렉터리가 접두사로 추가됩니다.
+[asp-area](/dotnet/api/microsoft.aspnetcore.mvc.taghelpers.anchortaghelper.area) 특성은 적절한 경로를 설정하기 위해 사용되는 영역 이름을 설정합니다. 다음 예제에서는 area 특성으로 인해 경로가 다시 매핑되는 방식을 보여 줍니다. `asp-area`를 "Blogs"로 설정하면 이 앵커 태그에 대해 연결된 컨트롤러 및 보기의 경로에 *Areas/Blogs* 디렉터리가 접두사로 붙습니다.
 
 * **<프로젝트 이름\>**
   * **wwwroot**
@@ -272,5 +268,5 @@ ms.locfileid: "30899410"
 
 ## <a name="additional-resources"></a>추가 자료
 
-* [영역](xref:mvc/controllers/areas)
-* [Razor 페이지 소개](xref:mvc/razor-pages/index)
+* [Areas](xref:mvc/controllers/areas)
+* [Razor 페이지 소개](xref:razor-pages/index)

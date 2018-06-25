@@ -2,19 +2,15 @@
 title: ASP.NET Core에서 응용 프로그램 모델 작업
 author: ardalis
 description: MVC 요소가 ASP.NET Core에서 작동하는 방법을 수정하려면 응용 프로그램 모델을 읽고 조작하는 방법을 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/controllers/application-model
-ms.openlocfilehash: a0e38b041f428f8b519fd726643b3214761fb44e
-ms.sourcegitcommit: 466300d32f8c33e64ee1b419a2cbffe702863cdf
+ms.openlocfilehash: 7a03f5eaa561557f3abe9c8dd8f4e46a57413a55
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/27/2018
-ms.locfileid: "34555354"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277594"
 ---
 # <a name="work-with-the-application-model-in-aspnet-core"></a>ASP.NET Core에서 응용 프로그램 모델 작업
 

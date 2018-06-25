@@ -2,20 +2,16 @@
 title: ASP.NET Core를 사용하는 Azure App Service 및 IIS에 대한 일반적인 오류 참조
 author: guardrex
 description: Azure App Service 및 IIS에서 ASP.NET Core 앱을 호스트할 때 일반적인 오류를 구분합니다.
-manager: wpickett
 ms.author: riande
 ms.custom: mvc
 ms.date: 03/13/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: host-and-deploy/azure-iis-errors-reference
-ms.openlocfilehash: 995890a5e6b0cc1d9cebc21486917a7a39587076
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: 30b7f1d8e1cfdfd3d1db865ff428eb2094a84d32
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34233341"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277321"
 ---
 # <a name="common-errors-reference-for-azure-app-service-and-iis-with-aspnet-core"></a>ASP.NET Core를 사용하는 Azure App Service 및 IIS에 대한 일반적인 오류 참조
 

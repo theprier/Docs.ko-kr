@@ -3,19 +3,15 @@ title: ASP.NET Core의 팩터리 기반 미들웨어 활성화
 author: guardrex
 description: ASP.NET Core에서 팩터리 기반 활성화 구현으로 강력한 형식의 미들웨어를 사용하는 방법을 알아봅니다.
 ms.author: riande
-manager: wpickett
 ms.custom: mvc
 ms.date: 01/29/2018
-ms.topic: article
-ms.technology: aspnet
-ms.prod: asp.net-core
 uid: fundamentals/middleware/extensibility
-ms.openlocfilehash: 8cec5b3b498f5a23463d8c3cd5901e14f22f6eab
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: 44987dbc20b0419865a23e64b60a5dc3f436743a
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34729118"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277074"
 ---
 # <a name="factory-based-middleware-activation-in-aspnet-core"></a>ASP.NET Core의 팩터리 기반 미들웨어 활성화
 

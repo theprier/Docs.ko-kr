@@ -2,25 +2,21 @@
 title: ASP.NET Core의 요청 기능
 author: ardalis
 description: ASP.NET Core용 인터페이스에 정의된 HTTP 요청 및 응답과 관련된 웹 서버 구현 세부 사항에 대해 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/request-features
-ms.openlocfilehash: c79ad6001e106a3e3104b0f804a386fe8b0ee30a
-ms.sourcegitcommit: f2a11a89037471a77ad68a67533754b7bb8303e2
+ms.openlocfilehash: d0f3ae521d1f314dd04cb581d9a921da4719273d
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/01/2018
-ms.locfileid: "28913574"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36279495"
 ---
 # <a name="request-features-in-aspnet-core"></a>ASP.NET Core의 요청 기능
 
-작성자 [Steve Smith](https://ardalis.com/)
+작성자: [Steve Smith](https://ardalis.com/)
 
-웹 서버 구현은 HTTP 요청과 관련하여 설명되고 응답은 인터페이스에서 정의됩니다. 이러한 인터페이스는 서버 구현 및 미들웨어에서 응용 프로그램의 호스팅 파이프라인을 만들고 수정하는 데 사용됩니다.
+HTTP 요청 및 응답과 관련된 웹 서버 구현의 세부 사항은 인터페이스를 통해서 정의됩니다. 이러한 인터페이스는 서버 구현 및 미들웨어에서 응용 프로그램의 호스팅 파이프라인을 만들고 수정하는 데 사용됩니다.
 
 ## <a name="feature-interfaces"></a>기능 인터페이스
 
@@ -71,7 +67,7 @@ ASP.NET Core는 `Microsoft.AspNetCore.Http.Features`에서 서버가 지원하�
 
 기능 인터페이스는 특정 요청이 지원할 수 있는 특정 HTTP 기능을 정의합니다. 서버는 기능 컬렉션 및 해당 서버에서 지원하는 초기 기능 집합을 정의하지만, 미들웨어를 사용하여 이러한 기능을 향상할 수 있습니다.
 
-## <a name="additional-resources"></a>추가 리소스
+## <a name="additional-resources"></a>추가 자료
 
 * [서버](xref:fundamentals/servers/index)
 * [미들웨어](xref:fundamentals/middleware/index)

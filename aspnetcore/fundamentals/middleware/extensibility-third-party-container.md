@@ -3,19 +3,15 @@ title: ASP.NET Core에서 타사 컨테이너를 사용한 미들웨어 활성�
 author: guardrex
 description: ASP.NET Core에서 팩터리 기반 활성화 및 타사 컨테이너를 사용하여 강력한 형식의 미들웨어를 사용하는 방법을 배웁니다.
 ms.author: riande
-manager: wpickett
 ms.custom: mvc
 ms.date: 02/02/2018
-ms.topic: article
-ms.technology: aspnet
-ms.prod: asp.net-core
 uid: fundamentals/middleware/extensibility-third-party-container
-ms.openlocfilehash: c55075fd3c6fda4073d26925eab823c35d8656f5
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: 81d52aafd4e4d964aaec1c5fe61e585b023ff915
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34729894"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36279508"
 ---
 # <a name="middleware-activation-with-a-third-party-container-in-aspnet-core"></a>ASP.NET Core에서 타사 컨테이너를 사용한 미들웨어 활성화
 

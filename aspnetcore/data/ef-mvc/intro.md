@@ -2,19 +2,15 @@
 title: Entity Framework Core를 사용한 ASP.NET Core MVC - 자습서 1/10
 author: rick-anderson
 description: ''
-manager: wpickett
 ms.author: tdykstra
 ms.date: 03/15/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: data/ef-mvc/intro
-ms.openlocfilehash: 0eef084c656f68fb1cad9fc0f5cfeee31ff96a30
-ms.sourcegitcommit: a19261eb82b948af6e4a1664fcfb8dabb16150e3
+ms.openlocfilehash: 3c418cc4e331ad19b0ec1be3207fa2cc44bef041
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/14/2018
-ms.locfileid: "34153779"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275673"
 ---
 # <a name="aspnet-core-mvc-with-entity-framework-core---tutorial-1-of-10"></a>Entity Framework Core를 사용한 ASP.NET Core MVC - 자습서 1/10
 
@@ -31,8 +27,7 @@ Contoso University 샘플 웹 응용 프로그램은 EF(Entity Framework) Core 2
 EF Core 2.0은 최신 버전의 EF이지만 EF 6.x의 모든 기능을 가지고 있지 않습니다. EF 6.x 및 EF Core 중에 선택하는 방법에 대한 내용은 [EF Core와  EF6.x 비교](https://docs.microsoft.com/ef/efcore-and-ef6/)를 참조합니다. EF 6.x를 선택하는 경우 [이 자습서 시리즈의 이전 버전](https://docs.microsoft.com/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application)을 참조하세요.
 
 > [!NOTE]
-> * 이 자습서의 ASP.NET Core 1.1 버전의 경우 [PDF 형식에서 이 자습서의 VS 2017 업데이트 2 버전](https://github.com/aspnet/Docs/blob/master/aspnetcore/data/ef-mvc/intro/_static/efmvc1.1.pdf)을 참조하세요.
-> * 이 자습서의 Visual Studio 2015 버전을 보려면 [VS 2015 version of ASP.NET Core documentation in PDF format](https://github.com/aspnet/Docs/blob/master/aspnetcore/common/_static/aspnet-core-project-json.pdf)(ASP.NET Core의 VS 2015 버전 설명서(PDF 형식))을 참조하세요.
+> 이 자습서의 ASP.NET Core 1.1 버전의 경우 [PDF 형식에서 이 자습서의 VS 2017 업데이트 2 버전](https://github.com/aspnet/Docs/blob/master/aspnetcore/data/ef-mvc/intro/_static/efmvc1.1.pdf)을 참조하세요.
 
 ## <a name="prerequisites"></a>전제 조건
 
@@ -42,7 +37,7 @@ EF Core 2.0은 최신 버전의 EF이지만 EF 6.x의 모든 기능을 가지고
 
 해결할 수 없는 문제가 발생한 경우 일반적으로 [완료된 프로젝트](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-mvc/intro/samples/cu-final)와 코드를 비교하여 해결책을 찾을 수 있습니다. 일반적인 오류 목록 및 해결 방법은 [시리즈에서 마지막 자습서의 문제 해결 섹션](advanced.md#common-errors)을 참조하세요. 필요한 내용을 찾지 못한 경우 질문을 [ASP.NET Core](https://stackoverflow.com/questions/tagged/asp.net-core) 또는 [EF Core](https://stackoverflow.com/questions/tagged/entity-framework-core)에 대한 StackOverflow.com에 게시할 수 있습니다.
 
-> [!TIP] 
+> [!TIP]
 > 10 자습서의 시리즈이며, 각각은 이전 자습서에서 수행된 작업을 기반으로 합니다. 각 자습서를 성공적으로 완료한 후에 프로젝트 복사본의 저장을 고려합니다. 그런 다음, 문제가 발생한 경우 전체 시리즈의 처음으로 다시 이동하는 대신 이전 자습서부터 시작할 수 있습니다.
 
 ## <a name="the-contoso-university-web-application"></a>Contoso University 웹 응용 프로그램

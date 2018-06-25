@@ -2,20 +2,16 @@
 title: ASP.NET Core 앱 배포용 Visual Studio 게시 프로필
 author: rick-anderson
 description: Visual Studio에서 게시 프로필을 만들고 다양한 대상에 대한 ASP.NET Core 앱 배포를 관리하는 데 사용하는 방법에 대해 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.custom: mvc
 ms.date: 04/10/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: host-and-deploy/visual-studio-publish-profiles
-ms.openlocfilehash: 3dc858793cd4ddb2630d05a5084f4b7caeaa30eb
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: 280599ab4b4f0a70d154cc4408e7232aaf766d8e
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2018
-ms.locfileid: "31483372"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36279560"
 ---
 # <a name="visual-studio-publish-profiles-for-aspnet-core-app-deployment"></a>ASP.NET Core 앱 배포용 Visual Studio 게시 프로필
 

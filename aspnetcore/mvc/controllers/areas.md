@@ -2,19 +2,15 @@
 title: ASP.NET Core의 영역
 author: rick-anderson
 description: 관련 기능을 별도의 네임스페이스(라우팅용) 및 폴더 구조(보기용)로 그룹화하는 데 사용되는 ASP.NET MVC 기능인 영역에 대해 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.date: 02/14/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/controllers/areas
-ms.openlocfilehash: 61527eb350b5aba9cb37b1de5acdeae1287bf073
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 3e998af42cd6209271495dd8dd97a8aed35717a4
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30072723"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274829"
 ---
 # <a name="areas-in-aspnet-core"></a>ASP.NET Core의 영역
 

@@ -2,20 +2,16 @@
 title: ASP.NET Core에서 종속성 주입
 author: ardalis
 description: ASP.NET Core에서 종속성 주입을 구현하는 방법 및 사용 방법에 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/dependency-injection
-ms.openlocfilehash: 14c3d464773fe78a563a27776bfcd124c22df134
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: 04c52bd47d34cd2135753c469077b6a75ee02f86
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34566960"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278455"
 ---
 # <a name="dependency-injection-in-aspnet-core"></a>ASP.NET Core에서 종속성 주입
 

@@ -2,19 +2,15 @@
 title: ASP.NET Core에서 세계화 및 지역화
 author: rick-anderson
 description: ASP.NET Core에서 다른 언어와 문화권으로의 콘텐츠 지역화를 위한 서비스 및 미들웨어를 제공하는 방법을 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.date: 01/14/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/localization
-ms.openlocfilehash: 929c73c314a15e7003853d3996158d1328e597cb
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: 0f48490af5805e4351c983f3ae519268c8e9c7a7
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/12/2018
-ms.locfileid: "34094602"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274133"
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>ASP.NET Core에서 세계화 및 지역화
 

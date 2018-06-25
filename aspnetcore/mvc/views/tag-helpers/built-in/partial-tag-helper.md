@@ -1,22 +1,18 @@
 ---
 title: ASP.NET Core의 부분 태그 도우미
 author: scottaddie
-description: ASP.NET Core의 부분 태그 도우미와 각 특성이 부분 뷰를 렌더링할 때 수행하는 역할을 알아봅니다.
-manager: wpickett
+description: ASP.NET Core 부분 태그 도우미와 부분 보기를 렌더링할 때 각 특성이 수행하는 역할을 알아봅니다.
 monikerRange: '>= aspnetcore-2.1'
 ms.author: scaddie
 ms.custom: mvc
 ms.date: 04/13/2018
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/views/tag-helpers/builtin-th/partial-tag-helper
-ms.openlocfilehash: 786c333980db89a9a5a60dc70c0bd1998ca159cd
-ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
+ms.openlocfilehash: fea84621f185c4113147cf0dfd173704bc7b6d81
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33962596"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274416"
 ---
 # <a name="partial-tag-helper-in-aspnet-core"></a>ASP.NET Core의 부분 태그 도우미
 
@@ -30,16 +26,16 @@ ms.locfileid: "33962596"
 
 * ASP.NET Core 2.1 이상이 필요합니다.
 * [HTML 도우미 구문](xref:mvc/views/partial#referencing-a-partial-view) 대신 사용할 수 있습니다.
-* 부분 뷰를 비동기적으로 렌더링합니다.
+* 부분 보기를 비동기적으로 렌더링합니다.
 
-부분 뷰를 렌더링하기 위한 HTML 도우미의 옵션은 다음과 같습니다.
+부분 보기 렌더링을 위한 HTML 도우미 옵션은 다음과 같습니다.
 
 * [@await Html.PartialAsync](/dotnet/api/microsoft.aspnetcore.mvc.rendering.htmlhelperpartialextensions.partialasync)
 * [@await Html.RenderPartialAsync](/dotnet/api/microsoft.aspnetcore.mvc.rendering.htmlhelperpartialextensions.renderpartialasync)
 * [@Html.Partial](/dotnet/api/microsoft.aspnetcore.mvc.rendering.htmlhelperpartialextensions.partial)
 * [@Html.RenderPartial](/dotnet/api/microsoft.aspnetcore.mvc.rendering.htmlhelperpartialextensions.renderpartial)
 
-이 문서의 예제 전반에서는 *Product* 모델이 사용됩니다.
+*제품* 모델은 이 문서 전반의 샘플에서 사용됩니다.
 
 [!code-csharp[](samples/TagHelpersBuiltIn/Models/Product.cs)]
 
@@ -69,7 +65,7 @@ ms.locfileid: "33962596"
 
 `model` 특성은 부분 뷰에 전달할 모델의 인스턴스를 할당합니다. `model` 특성은 [for](#for) 특성과 함께 사용할 수 없습니다.
 
-다음 태그에서는 새로운 `Product` 개체의 인스턴스가 생성되어 바인딩을 위해 `model` 특성에 전달됩니다.
+다음 표시에서는 새 `Product` 개체가 인스턴스화되고 바인딩을 위해 `model` 특성에 전달됩니다.
 
 [!code-cshtml[](samples/TagHelpersBuiltIn/Pages/Product.cshtml?name=snippet_Model)]
 

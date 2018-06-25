@@ -1,21 +1,17 @@
 ---
 title: ASP.NET Core와 함께 Visual Studio 및 Git을 사용하여 Azure에 지속적인 배포
 author: rick-anderson
-description: Visual Studio를 사용하여 ASP.NET Core 웹앱을 만들고 지속적인 배포를 위한 Git을 사용하여 Azure App Service에 배포하는 방법을 알아봅니다.
-manager: wpickett
+description: Visual Studio를 사용하여 ASP.NET Core 웹앱을 만들고 연속 배포를 위한 Git을 사용하여 Azure App Service에 배포하는 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: host-and-deploy/azure-apps/azure-continuous-deployment
-ms.openlocfilehash: 4de1893e8c1f7f2f4d9af7278a110067ea777c61
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 0a9a2d9d0de25a4eaab704680c627c1216d146e3
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30897893"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275485"
 ---
 # <a name="continuous-deployment-to-azure-with-visual-studio-and-git-with-aspnet-core"></a>ASP.NET Core와 함께 Visual Studio 및 Git을 사용하여 Azure에 지속적인 배포
 
@@ -25,7 +21,7 @@ ms.locfileid: "30897893"
 
 이 자습서에서는 Visual Studio를 사용하여 ASP.NET Core 웹앱을 만들고 지속적인 배포를 사용하여 Visual Studio에서 Azure App Service에 배포하는 방법을 알아봅니다.
 
-또한 [지속적인 배포를 사용하여 Azure Web App을 빌드하고 게시하기 위해 VSTS 사용](/vsts/build-release/archive/apps/aspnet/aspnet-4-ci-cd-azure-automatic)을 참조하세요. 여기서는 Visual Studio Team Services를 사용하여 [Azure App Service](/azure/app-service/app-service-web-overview)에 대한 CD(지속적인 업데이트) 워크플로를 구성하는 방법을 보여줍니다. Team Services의 Azure 지속적인 업데이트는 Azure App Service에서 호스트되는 앱의 업데이트를 게시하는 강력한 배포 파이프라인을 간단하게 설정합니다. 파이프라인을 빌드하고, 테스트를 실행하고, 스테이징 슬롯에 배포하고, 프로덕션에 배포하도록 Azure Portal에서 구성할 수 있습니다.
+또한 [연속 배포를 사용하여 Azure Web App을 빌드하고 게시하기 위해 VSTS 사용](/vsts/build-release/archive/apps/aspnet/aspnet-4-ci-cd-azure-automatic)을 참조하세요. 여기서는 Visual Studio Team Services를 사용하여 [Azure App Service](/azure/app-service/app-service-web-overview)에 대한 CD(지속적인 업데이트) 워크플로를 구성하는 방법을 보여줍니다. Team Services의 Azure 지속적인 업데이트는 Azure App Service에서 호스트되는 앱의 업데이트를 게시하는 강력한 배포 파이프라인을 간단하게 설정합니다. 파이프라인을 빌드하고, 테스트를 실행하고, 스테이징 슬롯에 배포하고, 프로덕션에 배포하도록 Azure Portal에서 구성할 수 있습니다.
 
 > [!NOTE]
 > 이 자습서를 완료하려면 Microsoft Azure 계정이 필요합니다. 계정을 얻으려면 [MSDN 구독자 혜택을 활성화](https://azure.microsoft.com/pricing/member-offers/credit-for-visual-studio-subscribers/?WT.mc_id=A261C142F)하거나 [평가판에 등록](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)합니다.

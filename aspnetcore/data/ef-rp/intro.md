@@ -2,19 +2,15 @@
 title: ASP.NET Core에서 Entity Framework Core를 사용한 Razor 페이지 - 자습서 1/8
 author: rick-anderson
 description: Entity Framework Core를 사용하여 Razor 페이지 앱을 만드는 방법을 보여 줍니다.
-manager: wpickett
 ms.author: riande
 ms.date: 11/15/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: data/ef-rp/intro
-ms.openlocfilehash: d7cf4740f31f1e0ae56461efc4c1b3d91238270f
-ms.sourcegitcommit: 9a35906446af7ffd4ccfc18daec38874b5abbef7
+ms.openlocfilehash: cadf36f4e1ff3776ad4139e1d7c4e9b73687bc5c
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/18/2018
-ms.locfileid: "35726019"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36279232"
 ---
 # <a name="razor-pages-with-entity-framework-core-in-aspnet-core---tutorial-1-of-8"></a>ASP.NET Core에서 Entity Framework Core를 사용한 Razor 페이지 - 자습서 1/8
 
@@ -30,7 +26,7 @@ Contoso University 샘플 웹앱은 EF(Entity Framework) Core 2.0 및 Visual Stu
 
 [!INCLUDE [](~/includes/net-core-prereqs.md)]
 
-[Razor 페이지](xref:mvc/razor-pages/index)에 익숙함. 신규 프로그래머는 이 시리즈를 시작하기 전에 [Razor 페이지 시작하기](xref:tutorials/razor-pages/razor-pages-start)를 완료해야 합니다.
+[Razor 페이지](xref:razor-pages/index)에 익숙함. 신규 프로그래머는 이 시리즈를 시작하기 전에 [Razor 페이지 시작하기](xref:tutorials/razor-pages/razor-pages-start)를 완료해야 합니다.
 
 ## <a name="troubleshooting"></a>문제 해결
 
@@ -57,7 +53,7 @@ Contoso University 샘플 웹앱은 EF(Entity Framework) Core 2.0 및 Visual Stu
 * 새 ASP.NET Core 웹 응용 프로그램을 만듭니다. 프로젝트 이름을 **ContosoUniversity**로 지정합니다. 코드를 복사/붙여넣을 때 네임스페이스와 일치할 수 있도록 프로젝트 이름을 *ContosoUniversity*로 지정하는 것이 중요합니다.
  ![새 ASP.NET Core 웹 응용 프로그램](intro/_static/np.png)
 * 드롭다운에서 **ASP.NET Core 2.0**을 선택하고 **웹 응용 프로그램**을 선택합니다.
- ![웹 응용 프로그램(Razor 페이지)](../../mvc/razor-pages/index/_static/np2.png)
+ ![웹 응용 프로그램(Razor 페이지)](../../razor-pages/index/_static/np2.png)
 
 **F5** 키를 눌러 디버그 모드에서 앱을 실행하거나 **Ctrl-F5**를 눌러 디버거를 연결하지 않고 실행합니다.
 

@@ -2,19 +2,15 @@
 title: ASP.NET Core에서 이식 가능 개체 지역화 구성
 author: sebastienros
 description: 이 문서는 이식 가능 개체 파일을 소개하고 ASP.NET Core 응용 프로그램에서 Orchard Core 프레임워크와 사용하는 단계를 간략하게 설명합니다.
-manager: wpickett
 ms.author: scaddie
 ms.date: 09/26/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/portable-object-localization
-ms.openlocfilehash: fbf2afd6fbc07c8068a21be15816aa45618f28d6
-ms.sourcegitcommit: 493a215355576cfa481773365de021bcf04bb9c7
+ms.openlocfilehash: 0baa8dbb1f42cdc30185108fe90937f89d0d42bf
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/15/2018
-ms.locfileid: "29904549"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275787"
 ---
 # <a name="configure-portable-object-localization-in-aspnet-core"></a>ASP.NET Core에서 이식 가능 개체 지역화 구성
 
