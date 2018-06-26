@@ -2,19 +2,16 @@
 title: ASP.NET Core 및 Visual Studio Code를 사용하여 Web API 만들기
 author: rick-anderson
 description: ASP.NET Core MVC 및 Visual Studio Code를 사용하여 macOS, Linux 또는 Windows에서 웹 API 빌드
-manager: wpickett
 ms.author: riande
 ms.custom: mvc
 ms.date: 05/08/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: tutorials/web-api-vsc
-ms.openlocfilehash: 9fac4d7b3f687881eafbd63ee71f99bff3b27183
-ms.sourcegitcommit: c867d7427bd4a88a78b2322e156367733b532730
+ms.openlocfilehash: 4c41c949a9b5ca8db8928a0a53aff928fd7c8a4e
+ms.sourcegitcommit: 79b756ea03eae77a716f500ef88253ee9b1464d2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 06/25/2018
+ms.locfileid: "36297252"
 ---
 # <a name="create-a-web-api-with-aspnet-core-and-visual-studio-code"></a>ASP.NET Core 및 Visual Studio Code를 사용하여 Web API 만들기
 
