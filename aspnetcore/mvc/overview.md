@@ -2,19 +2,15 @@
 title: ASP.NET Core MVC 개요
 author: ardalis
 description: 모델-보기-컨트롤러 디자인 패턴을 사용하여 웹앱 및 API를 빌드할 수 있는 풍부한 프레임워크인 ASP.NET Core MVC에 대해 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.date: 01/08/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/overview
-ms.openlocfilehash: 0ebf53e0d14ffb5d9ab969e3d6e038a292f913c1
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: aca34f91e8c7efaa34263ddf830b1662a2518969
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34566908"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36272594"
 ---
 # <a name="overview-of-aspnet-core-mvc"></a>ASP.NET Core MVC 개요
 
@@ -71,7 +67,7 @@ ASP.NET Core MVC는 다음과 같은 기능을 포함하고 있습니다.
 * [모델 유효성 검사](#model-validation)
 * [종속성 주입](../fundamentals/dependency-injection.md)
 * [필터](#filters)
-* [영역](#areas)
+* [Areas](#areas)
 * [Web API](#web-apis)
 * [테스트 가능성](#testability)
 * [Razor 보기 엔진](#razor-view-engine)

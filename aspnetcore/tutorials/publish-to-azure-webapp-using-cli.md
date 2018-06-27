@@ -2,22 +2,17 @@
 title: 명령줄 도구를 사용하여 Azure에 ASP.NET Core 앱 게시
 author: camsoper
 description: Git 명령줄 클라이언트를 사용하여 Azure App Service에 ASP.NET Core 앱을 게시하는 방법을 알아봅니다.
-manager: wpickett
 ms.author: casoper
 ms.custom: mvc
 ms.date: 11/03/2017
-ms.devlang: dotnet
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: get-started-article
 services: multiple
 uid: tutorials/publish-to-azure-webapp-using-cli
-ms.openlocfilehash: 3fc068096a4b8696340787aa15120a2f97d10164
-ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
+ms.openlocfilehash: 526ceef469d473706f39cdc3ee645280e99315b1
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/10/2018
-ms.locfileid: "35252440"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36279248"
 ---
 # <a name="publish-an-aspnet-core-app-to-azure-with-command-line-tools"></a>명령줄 도구를 사용하여 Azure에 ASP.NET Core 앱 게시
 

@@ -2,19 +2,15 @@
 title: 파일 감시자를 사용하여 ASP.NET Core 앱 개발
 author: rick-anderson
 description: 이 자습서에서는 ASP.NET Core 앱에서 .NET Core CLI 파일 감시자(dotnet 조사식) 도구를 사용하는 방법을 보여줍니다.
-manager: wpickett
 ms.author: riande
 ms.date: 05/31/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: tutorials/dotnet-watch
-ms.openlocfilehash: 016ee107ae646ed43d8a98e97fd2d5b41356910e
-ms.sourcegitcommit: 7e87671fea9a5f36ca516616fe3b40b537f428d2
+ms.openlocfilehash: 2a59267b36faf1e00ea2f0cc7e2b9ceb9828f791
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/12/2018
-ms.locfileid: "35341849"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278855"
 ---
 # <a name="develop-aspnet-core-apps-using-a-file-watcher"></a>파일 감시자를 사용하여 ASP.NET Core 앱 개발
 

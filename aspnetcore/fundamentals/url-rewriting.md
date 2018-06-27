@@ -2,19 +2,15 @@
 title: ASP.NET Core에서 URL 재작성 미들웨어
 author: guardrex
 description: ASP.NET Core 응용 프로그램에서 URL 재작성 미들웨어로 URL 재작성 및 리디렉션 하는 방법에 대해 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.date: 08/17/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/url-rewriting
-ms.openlocfilehash: a4ffa512825fedafdc58ade9929097e255593fa9
-ms.sourcegitcommit: 40b102ecf88e53d9d872603ce6f3f7044bca95ce
+ms.openlocfilehash: d3484e222c4412a427d086c1b71a12b81095ba72
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/15/2018
-ms.locfileid: "35652216"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36276349"
 ---
 # <a name="url-rewriting-middleware-in-aspnet-core"></a>ASP.NET Core에서 URL 재작성 미들웨어
 

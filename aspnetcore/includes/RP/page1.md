@@ -108,7 +108,7 @@ Razor는 HTML에서 C# 또는 Razor 관련 태그로 전환될 수 있습니다.
 
 [!code-cshtml[](../../tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Pages/_ViewStart.cshtml)]
 
-이전 태그는 *Pages* 폴더 아래에 있는 모든 Razor 파일에 대한 레이아웃 파일을 *Pages/_Layout.cshtml*로 설정합니다. 자세한 내용은 [레이아웃](xref:mvc/razor-pages/index#layout)을 참조하세요.
+이전 태그는 *Pages* 폴더 아래에 있는 모든 Razor 파일에 대한 레이아웃 파일을 *Pages/_Layout.cshtml*로 설정합니다. 자세한 내용은 [레이아웃](xref:razor-pages/index#layout)을 참조하세요.
 
 ### <a name="update-the-layout"></a>레이아웃 업데이트
 

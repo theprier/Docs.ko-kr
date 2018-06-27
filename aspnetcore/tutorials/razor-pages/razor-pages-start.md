@@ -2,19 +2,15 @@
 title: ASP.NET Core에서 Razor 페이지 시작
 author: rick-anderson
 description: ASP.NET Core Razor 페이지 웹앱을 빌드하는 작업의 기본 사항을 알아봅니다. Razor 페이지는 ASP.NET Core의 웹 워크로드에 권장됩니다.
-manager: wpickett
 ms.author: riande
-ms.date: 5/30/2018
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: get-started-article
+ms.date: 05/30/2018
 uid: tutorials/razor-pages/razor-pages-start
-ms.openlocfilehash: d7cdf7c8fac3b2ac1e526c6eeee8205068964ec9
-ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
+ms.openlocfilehash: e317b49f2ad33c392de33bc32a87f67bb8cb72a0
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/01/2018
-ms.locfileid: "34582819"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278046"
 ---
 # <a name="get-started-with-razor-pages-in-aspnet-core"></a>ASP.NET Core에서 Razor 페이지 시작
 
@@ -82,7 +78,7 @@ Visual Studio 템플릿은 시작 프로젝트를 만듭니다.
 
 * Visual Studio **파일** 메뉴에서 **새로 만들기** > **프로젝트**를 선택합니다.
 * 새 ASP.NET Core 웹 응용 프로그램을 만듭니다. 프로젝트 이름을 **RazorPagesMovie**로 지정합니다. 코드를 복사 후 붙여넣을 때 네임스페이스가 일치하도록 프로젝트 이름을 *RazorPagesMovie*로 지정해야 합니다.
-  ![새 ASP.NET Core 웹 응용 프로그램](../../mvc/razor-pages/index/_static/np.png)
+  ![새 ASP.NET Core 웹 응용 프로그램](../../razor-pages/index/_static/np.png)
 * 드롭다운에서 **ASP.NET Core 2.0**을 선택하고 **웹 응용 프로그램**을 선택합니다.
 
   [!INCLUDE [install 2.0](~/includes/dotnetcore-on-dotnetfx-vs.md)]
