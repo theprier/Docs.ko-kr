@@ -12,12 +12,12 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-team-project-in-tfs
 msc.type: authoredcontent
-ms.openlocfilehash: 79c069a601c0eafd84ae142241895428052acd29
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 96e0ee5fd0b74e7b22b8e346aa8462f7558a3ddc
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30880429"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36960696"
 ---
 <a name="creating-a-team-project-in-tfs"></a>TFS에서 팀 프로젝트 만들기
 ====================
@@ -110,9 +110,8 @@ ms.locfileid: "30880429"
 
    > [!NOTE]
    > 나타날 수 있습니다는 <strong>HTTP 404 찾을 수 없음</strong> 오류 이중 HTTP 인코딩 버그 때문에 발생 합니다. 이 경우이 URL을 바꿉니다.   
-   > [<em>site collection URL</em>]/\_layouts/permsetup.aspx  
-   > 예를 들어:  
-   > http://tfs/sites/Fabrikam%20Web%20Projects/\_layouts/permsetup.aspx
+   > `[site_collection_URL]/_layouts/permsetup.aspx` 예를 들어:  
+   > `http://tfs/sites/Fabrikam%20Web%20Projects/_layouts/permsetup.aspx` 
 8. 에 **그룹이이 사이트에 대 한 설정** 페이지에서 사용자를 팀 프로젝트를 만들고는 추가 **소유자** 그룹을 마우스 클릭 **확인**합니다.
 
     ![](creating-a-team-project-in-tfs/_static/image10.png)
