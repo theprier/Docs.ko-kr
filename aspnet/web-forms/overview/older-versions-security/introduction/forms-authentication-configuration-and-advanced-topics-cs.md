@@ -12,12 +12,12 @@ ms.technology: dotnet-webforms
 ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/forms-authentication-configuration-and-advanced-topics-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d6578737478fb86f64be261925becc3adec33247
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 58d87bd6211ae1b1eea227d34c001239efcf5f1d
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30891782"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36961401"
 ---
 <a name="forms-authentication-configuration-and-advanced-topics-c"></a>폼 인증 구성 및 고급 항목 (C#)
 ====================
@@ -168,7 +168,7 @@ Default.aspx의 변경 내용을 저장 한 후 브라우저를 통해 방문 �
 
 `http://localhost:2448/ASPNET\_Security\_Tutorial\_03\_CS/(F(jaIOIDTJxIr12xYS-VVgkqKCVAuIoW30Bu0diWi6flQC-FyMaLXJfow\_Vd9GZkB2Cv-rfezq0gKadKX0YPZCkA2))/SomePage.aspx`
 
-링크의 URL SomePage.aspx 인증 티켓-를 포함 하는 URL에 자동으로 변환 필요는 전혀 없고 코드가 전혀 작성! Http://로 시작 하는 모든 하이퍼링크에 대 한 URL에 자동으로 포함 될 폼 인증 티켓 또는 /. Response.Redirect에 대 한 호출, 하이퍼링크 컨트롤 또는 HTML 앵커 요소 하이퍼링크가 표시 되 면 문제가 되지 않습니다 (즉, &lt;는 href = "..."&gt;... &lt;/a&gt;). 다음과 같이 URL 없는 상태로 http://www.someserver.com/SomePage.aspx 또는 /SomePage.aspx, 폼 인증 티켓을 수행해 줍니다 포함 됩니다.
+링크의 URL SomePage.aspx 인증 티켓-를 포함 하는 URL에 자동으로 변환 필요는 전혀 없고 코드가 전혀 작성! 폼 인증 티켓으로 시작 하는 모든 하이퍼링크에 대 한 URL에 자동으로 포함 될 `http://` 또는 `/`합니다. Response.Redirect에 대 한 호출, 하이퍼링크 컨트롤 또는 HTML 앵커 요소 하이퍼링크가 표시 되 면 문제가 되지 않습니다 (즉, `<a href="...">...</a>`). 다음과 같이 URL 없는 상태로 `http://www.someserver.com/SomePage.aspx` 또는 `/SomePage.aspx`, 폼 인증 티켓을 수행해 줍니다 포함 됩니다.
 
 > [!NOTE]
 > Cookieless 폼 인증 티켓을 동일한 쿠키 기반 인증 티켓 시간 제한 정책을 준수합니다. 그러나 쿠키 인증 티켓은 URL에서 직접 인증 티켓이 포함 되어 있으므로 재생 공격 가능성이 더 큽니다. 사용자가 웹 사이트를 방문 하 고, 로그인 동료에 게 전자 메일에 URL을 붙여 다음 가정해 보세요. 동료는 만료에 도달 하기 전에 해당 링크를 클릭, 하는 경우 이러한로 기록 됩니다 전자 메일을 보낸 사용자에 게!

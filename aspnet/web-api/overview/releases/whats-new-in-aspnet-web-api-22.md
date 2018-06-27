@@ -12,12 +12,12 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/releases/whats-new-in-aspnet-web-api-22
 msc.type: authoredcontent
-ms.openlocfilehash: 400329dd852ca3c527387ee45e3e902b725e771b
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 89b065fccd0e4864f4a24c37b4caa29a1e127840
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26508402"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36961301"
 ---
 <a name="whats-new-in-aspnet-web-api-22"></a>ASP.NET Web API 2.2의에서 새로운 기능
 ====================
@@ -131,7 +131,7 @@ URL을 포함 하는 문자열 리터럴을 슬래시 (%2F) 인코딩되고 back
 
 서비스는 호스트는 이스케이프 해제 이러한 요청을 수신 하는 것에 웹 API 런타임에 전달 하기 전에 시퀀스 이스케이프 합니다. 이 다음과 같은 공격 으로부터 보호합니다.  
   
- http://www.contoso.com/..%2F..%2F/Windows/System32/cmd.exe?/c+dir+c:
+`http://www.contoso.com/..%2F..%2F/Windows/System32/cmd.exe?/c+dir+c:`
 
 그러면 Web API OData 스택이 404 (찾을 수 없음) 오류를 반환 합니다. 이 오류를 방지 하려면 클라이언트에는 슬래시 (%252F)에 대 한 이중 이스케이프 시퀀스와 백슬래시 (%255 C)를 사용 해야 합니다. /Employees 같은 쿼리 문자열에 대 한이 문제가 발생 하지? $filter Name eq '이름 %2F' =
 

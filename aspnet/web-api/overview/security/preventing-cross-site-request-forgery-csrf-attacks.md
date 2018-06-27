@@ -12,12 +12,12 @@ ms.technology: dotnet-webapi
 ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks
 msc.type: authoredcontent
-ms.openlocfilehash: 1cd03f3b396cc2ece1d8dbe6820f6277c02d8e62
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 5e7b24c697e0bb37f388341abd89609c76f6b64c
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26508152"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36961239"
 ---
 <a name="preventing-cross-site-request-forgery-csrf-attacks-in-aspnet-web-api"></a>ASP.NET Web API의에서 교차 사이트 요청 위조 (CSRF) 공격 방지
 ====================
@@ -27,7 +27,7 @@ ms.locfileid: "26508152"
 
 CSRF 공격의 예는 다음과 같습니다.
 
-1. Www.example.com에 사용자가 사용 하 여 폼 인증 합니다.
+1. 사용자가에 로그인 `www.example.com` 폼 인증을 사용 하 여 합니다.
 2. 서버에서 사용자를 인증 합니다. 서버 로부터 응답 하면 인증 쿠키가 포함 되어 있습니다.
 3. 사용자 로그 아웃을 하지 않고 악성 웹 사이트를 방문 합니다. 이 악성 사이트 다음 HTML 폼을 포함 되어 있습니다. 
 

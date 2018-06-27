@@ -12,12 +12,12 @@ ms.technology: dotnet-mvc
 ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/introduction/adding-validation
 msc.type: authoredcontent
-ms.openlocfilehash: 946d4d5e5a506fb437232f9f4440c98e33a1a9b3
-ms.sourcegitcommit: 74be78285ea88772e7dad112f80146b6ed00e53e
+ms.openlocfilehash: 96dc6724b48daf77034c0741be970be11b81ab37
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33966561"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36961518"
 ---
 <a name="adding-validation"></a>유효성 검사 추가
 ====================
@@ -57,7 +57,7 @@ ASP.NET MVC 및 Entity Framework Code First 제공 하는 유효성 검사 지�
 
 [!code-csharp[Main](adding-validation/samples/sample3.cs)]
 
-`Genre` 필드는 null을 허용 하지는 더 이상 (즉, 값을 입력 해야 합니다). `Rating` 필드의 최대 길이는 5 및 `Title` 60의 최대 길이입니다. 에 3의 최소 길이 `Title` 및 대 범위 `Price` 스키마 변경을 생성 하지 못했습니다.
+`Genre` 필드는 null을 허용 더 이상 (즉, 값을 입력 해야 합니다). `Rating` 필드의 최대 길이는 5 및 `Title` 60의 최대 길이입니다. 에 3의 최소 길이 `Title` 및 대 범위 `Price` 스키마 변경을 생성 하지 못했습니다.
 
 영화 스키마 없는지 확인 합니다.
 

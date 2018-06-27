@@ -5,12 +5,12 @@ description: ASP.NET Core 컨트롤러 및 동작에 대 한 액세스를 제한
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/authorization/simple
-ms.openlocfilehash: 3c5e9d5dfd65ded40c9828a666143c1868f5562f
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 6409def0508b855d3d2a4a1f4d3a3d15bfe5dd32
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272067"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36961125"
 ---
 # <a name="simple-authorization-in-aspnet-core"></a>ASP.NET Core에서 단순 권한 부여
 
@@ -71,5 +71,5 @@ public class AccountController : Controller
 
 이렇게 하면 인증 된 사용자만는 `AccountController`를 제외 하 고는 `Login` / 익명 인증 된 인증 되지 않은 상태에 관계 없이 모든 사용자가 액세스할 수 있는 작업입니다.
 
->[!WARNING]
-> `[AllowAnonymous]` 모든 권한 부여 문을 무시합니다. 결합 되어 감사가 만들어집니다를 적용 하는 경우 `[AllowAnonymous]` 임의의 `[Authorize]` 특성 설정한 다음 권한 부여 특성은 항상 무시 됩니다. 예를 적용 하는 경우 `[AllowAnonymous]` 모든 컨트롤러 수준 `[Authorize]` 내 모든 작업 또는 동일한 컨트롤러에서 특성이 무시 됩니다.
+> [!WARNING]
+> `[AllowAnonymous]` 모든 권한 부여 문을 무시합니다. 결합 하면 `[AllowAnonymous]` 임의의 `[Authorize]` 특성에는 `[Authorize]` 특성은 무시 됩니다. 예를 적용 하는 경우 `[AllowAnonymous]` 컨트롤러 수준에서 모든 `[Authorize]` 동일한 컨트롤러에서 (또는 그 안에 모든 작업에) 특성은 무시 됩니다.
