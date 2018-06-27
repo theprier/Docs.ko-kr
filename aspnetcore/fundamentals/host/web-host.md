@@ -10,23 +10,24 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/host/web-host
-ms.openlocfilehash: ced2a766359894b9b83164c12a3ab69aa13c93a0
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: ce95599ec8e940635ca63c3bf9a3c28784a3f371
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34687492"
 ---
 # <a name="aspnet-core-web-host"></a>ASP.NET Core 웹 호스트
 
 [Luke Latham](https://github.com/guardrex)으로
 
-ASP.NET Core 앱은 *호스트*를 구성 및 실행합니다. 호스트는 앱 시작 및 수명 관리를 담당합니다. 최소한으로 호스트는 서버 및 요청 처리 파이프라인을 구성합니다. 이 항목에서는 웹 호스팅에 유용한 ASP.NET Core 웹 호스트([WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder))를 다룹니다. .NET 일반 호스트([HostBuilder](/dotnet/api/microsoft.extensions.hosting.hostbuilder))에 대한 자세한 내용은 [일반 호스트](xref:fundamentals/host/generic-host) 항목을 참조하세요.
+ASP.NET Core 앱은 *호스트*를 구성 및 실행합니다. 호스트는 앱 시작 및 수명 관리를 담당합니다. 최소한으로 호스트는 서버 및 요청 처리 파이프라인을 구성합니다. 이 항목에서는 웹 호스팅에 유용한 ASP.NET Core 웹 호스트([IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder))를 다룹니다. .NET 일반 호스트([IHostBuilder](/dotnet/api/microsoft.extensions.hosting.ihostbuilder))에 대한 자세한 내용은 [일반 호스트](xref:fundamentals/host/generic-host) 항목을 참조하세요.
 
 ## <a name="set-up-a-host"></a>호스트 설정
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 
-[WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder)의 인스턴스를 사용하여 호스트를 만듭니다. 이는 일반적으로 앱의 진입점에서 수행되는 `Main` 메서드입니다. 프로젝트 템플릿에서 `Main`은 *Program.cs*에 있습니다. 일반적인 *Program.cs*는 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder)를 호출하여 호스트 설정을 시작합니다.
+[IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder)의 인스턴스를 사용하여 호스트를 만듭니다. 이는 일반적으로 앱의 진입점에서 수행되는 `Main` 메서드입니다. 프로젝트 템플릿에서 `Main`은 *Program.cs*에 있습니다. 일반적인 *Program.cs*는 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder)를 호출하여 호스트 설정을 시작합니다.
 
 ```csharp
 public class Program
@@ -44,12 +45,12 @@ public class Program
 
 `CreateDefaultBuilder`는 다음 작업을 수행합니다.
 
-* [Kestrel](xref:fundamentals/servers/kestrel)을 웹 서버로 구성합니다. Kestrel 기본 옵션의 경우 [ASP.NET Core에서 Kestrel 웹 서버 구현의 Kestrel 옵션 섹션](xref:fundamentals/servers/kestrel#kestrel-options)을 참조하세요.
+* [Kestrel](xref:fundamentals/servers/kestrel)을 웹 서버로 구성하고 앱의 호스팅 구성 공급자를 사용하여 서버를 구성합니다. Kestrel 기본 옵션의 경우 [ASP.NET Core에서 Kestrel 웹 서버 구현의 Kestrel 옵션 섹션](xref:fundamentals/servers/kestrel#kestrel-options)을 참조하세요.
 * 콘텐츠 루트를 [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory)에서 반환된 경로로 설정합니다.
-* 다음에서 선택적인 구성을 로드합니다.
+* 다음에서 선택적인 [IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration)을 로드합니다.
   * *appsettings.json*.
   * *appsettings.{Environment}.json*.
-  * [사용자 비밀](xref:security/app-secrets) - 앱이 `Development` 환경에서 실행되는 경우.
+  * 앱이 항목 어셈블리를 사용하여 `Development` 환경에서 실행되는 경우 [사용자 암호](xref:security/app-secrets)입니다.
   * 환경 변수.
   * 명령줄 인수.
 * 콘솔 및 디버그 출력에 대한 [로깅](xref:fundamentals/logging/index)을 구성합니다. 로깅은 *appsettings.json* 또는 *appsettings.{Environment}.json* 파일의 로깅 구성 섹션에 지정된 [로그 필터링](xref:fundamentals/logging/index#log-filtering) 규칙을 포함합니다.

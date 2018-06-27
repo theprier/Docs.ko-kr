@@ -10,11 +10,12 @@ ms.prod: aspnet-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/razor-pages/sql
-ms.openlocfilehash: d1a345fe8c61f6e07ebbe53de6d53e18d6f4c851
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: 92a5965e7a535ca729c0bec13911b6bf051a7b19
+ms.sourcegitcommit: 545ff5a632e2281035c1becec1f99137298e4f5c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 06/01/2018
+ms.locfileid: "34582871"
 ---
 # <a name="work-with-sql-server-localdb-and-aspnet-core"></a>SQL Server LocalDB 및 ASP.NET Core 사용
 
@@ -22,9 +23,22 @@ ms.lasthandoff: 04/18/2018
 
 `MovieContext` 개체는 데이터베이스에 연결하고 데이터베이스 레코드에 `Movie` 개체를 매핑하는 작업을 처리합니다. 데이터베이스 컨텍스트는 *Startup.cs* 파일의 `ConfigureServices` 메서드에서 [종속성 주입](xref:fundamentals/dependency-injection) 컨테이너에 등록됩니다.
 
+::: moniker range="= aspnetcore-2.0"
 [!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Startup.cs?name=snippet_ConfigureServices&highlight=7-8)]
 
-ASP.NET Core [구성](xref:fundamentals/configuration/index) 시스템은 `ConnectionString`을 읽습니다. 로컬 개발의 경우 *appsettings.json* 파일에서 연결 문자열을 가져옵니다.
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.1"
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Startup.cs?name=snippet_ConfigureServices&highlight=12-13)]
+
+`ConfigureServices`에서 사용되는 메서드에 대한 자세한 내용은 다음을 참조하세요.
+
+* `CookiePolicyOptions`에 대한 [EU GDPR(일반 데이터 보호 규정) 지원](xref:security/gdpr)
+* [SetCompatibilityVersion](xref:fundamentals/startup#setcompatibilityversion-for-aspnet-core-mvc)
+
+::: moniker-end
+
+ASP.NET Core [구성](xref:fundamentals/configuration/index) 시스템은 `ConnectionString`을 읽습니다. 로컬 개발의 경우 *appsettings.json* 파일에서 연결 문자열을 가져옵니다. 데이터베이스의 이름 값(`Database={Database name}`)은 생성된 코드에 따라 달라집니다. 이름 값은 임의적입니다.
 
 [!code-json[](razor-pages-start/sample/RazorPagesMovie/appsettings.json?highlight=2&range=8-10)]
 
@@ -55,7 +69,17 @@ LocalDB는 프로그램 개발용으로 대상이 지정된 SQL Server Express �
 
 *Models* 폴더에 `SeedData`라는 새 클래스를 만듭니다. 생성된 코드를 다음으로 바꿉니다.
 
+::: moniker range="= aspnetcore-2.0"
+
 [!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/SeedData.cs?name=snippet_1)]
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.1"
+
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Models/SeedData.cs?name=snippet_1)]
+
+::: moniker-end
 
 DB에 동영상이 있는 경우 시드 이니셜라이저가 반환되고 동영상이 추가되지 않습니다.
 
@@ -68,11 +92,32 @@ if (context.Movie.Any())
 <a name="si"></a>
 ### <a name="add-the-seed-initializer"></a>시드 이니셜라이저 추가
 
-*Program.cs* 파일에서 `Main` 메서드의 끝에 시드 이니셜라이저를 추가합니다.
+*Program.cs*에서 다음을 수행하는 `Main` 메서드를 수정합니다.
+
+* 종속성 주입 컨테이너에서 DB 컨텍스트 인스턴스를 가져옵니다.
+* 컨텍스트를 전달하는 시드 메서드를 호출합니다.
+* 시드 메서드가 완료되면 컨텍스트를 삭제합니다.
+
+다음 코드는 업데이트된 *Program.cs* 파일을 보여 줍니다.
+
+::: moniker range="= aspnetcore-2.0"
 
 [!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Program.cs)]
 
-앱 테스트
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.1"
+
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Program.cs)]
+
+::: moniker-end
+
+프로덕션 앱은 `Database.Migrate`를 호출하지 않습니다. `Update-Database`가 실행되지 않는 경우 다음 예외를 방지하기 위해 위의 코드에 추가됩니다.
+
+SqlException: 로그인에서 요청한 "RazorPagesMovieContext-21" 데이터베이스를 열 수 없습니다. 로그인에 실패했습니다.
+'user name' 사용자에 대한 로그인에 실패했습니다.
+
+### <a name="test-the-app"></a>앱 테스트
 
 * DB의 모든 레코드를 삭제합니다. 브라우저 또는 [SSOX](xref:tutorials/razor-pages/new-field#ssox)에서 삭제 링크를 사용하여 이를 수행할 수 있습니다.
 * 시드 메서드가 실행되도록 앱에서 초기화를 적용하도록 합니다(`Startup` 클래스에서 메서드 호출). 초기화를 적용하려면 IIS Express를 중지하고 다시 시작해야 합니다. 다음 접근 방식 중 하나를 사용하여 이를 수행할 수 있습니다.

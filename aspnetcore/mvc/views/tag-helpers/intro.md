@@ -2,19 +2,16 @@
 title: ASP.NET Core의 태그 도우미
 author: rick-anderson
 description: 태그 도우미란 무엇이며 ASP.NET Core에서 어떻게 사용하는지 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 2/14/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/views/tag-helpers/intro
-ms.openlocfilehash: 0c66b700f9bb3e6349fe2e0c8a7e254b8e7903a5
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: be75667f34eed7ba601eee331e3451c5738ef223
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36273571"
 ---
 # <a name="tag-helpers-in-aspnet-core"></a>ASP.NET Core의 태그 도우미
 
@@ -67,11 +64,11 @@ public class Movie
 
 ### <a name="addtaghelper-makes-tag-helpers-available"></a>`@addTagHelper`는 태그 도우미를 사용할 수 있도록 설정
 
-*AuthoringTagHelpers*라는 새 ASP.NET Core 웹앱을 만들면(인증 없이) *Views/_ViewImports.cshtml* 파일이 프로젝트에 추가됩니다.
+*AuthoringTagHelpers*라는 새 ASP.NET Core 웹앱을 만들면 다음과 같은 *Views/_ViewImports.cshtml* 파일이 프로젝트에 추가됩니다.
 
 [!code-cshtml[](../../../mvc/views/tag-helpers/authoring/sample/AuthoringTagHelpers/src/AuthoringTagHelpers/Views/_ViewImportsCopy.cshtml?highlight=2&range=2-3)]
 
-`@addTagHelper` 지시문은 태그 도우미를 보기에 사용할 수 있게 해줍니다. 이 예에서 보기 파일은 *Views/_ViewImports.cshtml*이며, 기본적으로 *보기* 폴더 및 하위 디렉터리에 있는 모든 보기 파일에서 이 파일을 상속하므로 태그 도우미를 사용할 수 있게 됩니다. 위의 코드에서는 와일드카드 구문("\*")을 사용하여 지정된 어셈블리의 모든 태그 도우미(*Microsoft.AspNetCore.Mvc.TagHelpers*)를 *보기* 디렉터리 또는 하위 디렉터리에 있는 모든 보기 파일에서 사용할 수 있도록 지정합니다. `@addTagHelper` 뒤에 나오는 첫 번째 매개 변수는 로드할 태그 도우미를 지정하고(여기서는 모든 태그 도우미에 "\*" 사용), 두 번째 매개 변수 "Microsoft.AspNetCore.Mvc.TagHelpers"는 태그 도우미를 포함하는 어셈블리를 지정합니다. *Microsoft.AspNetCore.Mvc.TagHelpers*는 기본 제공 ASP.NET Core 태그 도우미에 대한 어셈블리입니다.
+`@addTagHelper` 지시문은 태그 도우미를 보기에 사용할 수 있게 해줍니다. 이 예에서 보기 파일은 *Pages/_ViewImports.cshtml*이며, 기본적으로 *Pages* 폴더 및 하위 폴더에 있는 모든 파일에서 이 파일을 상속하므로 태그 도우미를 사용할 수 있게 됩니다. 위의 코드에서는 와일드카드 구문("\*")을 사용하여 지정된 어셈블리의 모든 태그 도우미(*Microsoft.AspNetCore.Mvc.TagHelpers*)를 *보기* 디렉터리 또는 하위 디렉터리에 있는 모든 보기 파일에서 사용할 수 있도록 지정합니다. `@addTagHelper` 뒤에 나오는 첫 번째 매개 변수는 로드할 태그 도우미를 지정하고(여기서는 모든 태그 도우미에 "\*" 사용), 두 번째 매개 변수 "Microsoft.AspNetCore.Mvc.TagHelpers"는 태그 도우미를 포함하는 어셈블리를 지정합니다. *Microsoft.AspNetCore.Mvc.TagHelpers*는 기본 제공 ASP.NET Core 태그 도우미에 대한 어셈블리입니다.
 
 이 프로젝트의 모든 태그 도우미(*AuthoringTagHelpers*라는 어셈블리를 만드는)를 노출하려면 다음을 사용합니다.
 

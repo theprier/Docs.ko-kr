@@ -3,6 +3,7 @@ title: ASP.NET Core에서 호스팅되는 서비스를 사용하는 백그라운
 author: guardrex
 description: ASP.NET Core에서 호스팅되는 서비스를 사용하는 백그라운드 작업을 구현하는 방법을 배웁니다.
 manager: wpickett
+monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.custom: mvc
 ms.date: 02/15/2018
@@ -10,12 +11,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/host/hosted-services
-ms.openlocfilehash: cc39d125b639719599eca68d627fda014fb107e0
-ms.sourcegitcommit: 466300d32f8c33e64ee1b419a2cbffe702863cdf
+ms.openlocfilehash: 13ac7e266b657bc186188b2b6f40204cfd936fca
+ms.sourcegitcommit: 7e87671fea9a5f36ca516616fe3b40b537f428d2
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/27/2018
-ms.locfileid: "34555302"
+ms.lasthandoff: 06/12/2018
+ms.locfileid: "35341823"
 ---
 # <a name="background-tasks-with-hosted-services-in-aspnet-core"></a>ASP.NET Core에서 호스팅되는 서비스를 사용하는 백그라운드 작업
 
@@ -46,7 +47,7 @@ ASP.NET Core에서 백그라운드 작업은 *호스팅되는 서비스*로 구�
 
 * [StopAsync(CancellationToken)](/dotnet/api/microsoft.extensions.hosting.ihostedservice.stopasync) - 호스트가 정상적으로 종료될 때 트리거됩니다. `StopAsync`에는 백그라운드 작업을 종료하고 관리되지 않는 리소스를 삭제하는 논리가 포함됩니다. 앱이 예기치 않게 종료된 경우(예: 앱의 프로세스가 실패한 경우), `StopAsync`가 호출되지 않을 수 있습니다.
 
-호스팅되는 서비스는 앱 시작 시 한 번 활성화되고 앱 종료 시 정상적으로 종료되는 싱글톤입니다. [IDisposable](/dotnet/api/system.idisposable)이 구현되면 서비스 컨테이너가 삭제될 때 리소스가 삭제될 수 있습니다. 백그라운드 작업을 실행하는 동안 오류가 발생하면 `StopAsync`가 호출되지 않아도 `Dispose`를 호출해야 합니다.
+호스팅되는 서비스는 앱 시작 시 한 번 활성화되고 앱 종료 시 정상적으로 종료됩니다. [IDisposable](/dotnet/api/system.idisposable)이 구현되면 서비스 컨테이너가 삭제될 때 리소스가 삭제될 수 있습니다. 백그라운드 작업을 실행하는 동안 오류가 발생하면 `StopAsync`가 호출되지 않아도 `Dispose`를 호출해야 합니다.
 
 ## <a name="timed-background-tasks"></a>시간이 지정된 백그라운드 작업
 
@@ -54,9 +55,21 @@ ASP.NET Core에서 백그라운드 작업은 *호스팅되는 서비스*로 구�
 
 [!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Services/TimedHostedService.cs?name=snippet1&highlight=15-16,30,37)]
 
-서비스는 `Startup.ConfigureServices`에 등록됩니다.
+::: moniker range=">= aspnetcore-2.1"
+
+서비스는 `AddHostedService` 확장 메서드를 사용하여 `Startup.ConfigureServices`에 등록됩니다.
 
 [!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Startup.cs?name=snippet1)]
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+서비스는 `Startup.ConfigureServices`에 등록됩니다.
+
+[!code-csharp[](hosted-services/samples-snapshot/2.x/BackgroundTasksSample-WebHost/Startup.cs?name=snippet1)]
+
+::: moniker-end
 
 ## <a name="consuming-a-scoped-service-in-a-background-task"></a>백그라운드 작업에서 범위가 지정된 서비스 사용
 
@@ -70,13 +83,25 @@ ASP.NET Core에서 백그라운드 작업은 *호스팅되는 서비스*로 구�
 
 [!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Services/ConsumeScopedServiceHostedService.cs?name=snippet1&highlight=29-36)]
 
-서비스는 `Startup.ConfigureServices`에 등록됩니다.
+::: moniker range=">= aspnetcore-2.1"
+
+서비스는 `Startup.ConfigureServices`에 등록됩니다. `IHostedService` 구현은 `AddHostedService` 확장 메서드를 사용하여 등록됩니다.
 
 [!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Startup.cs?name=snippet2)]
 
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+서비스는 `Startup.ConfigureServices`에 등록됩니다.
+
+[!code-csharp[](hosted-services/samples-snapshot/2.x/BackgroundTasksSample-WebHost/Startup.cs?name=snippet2)]
+
+::: moniker-end
+
 ## <a name="queued-background-tasks"></a>대기 중인 백그라운드 작업
 
-백그라운드 작업 큐는 .NET 4.x [QueueBackgroundWorkItem](/dotnet/api/system.web.hosting.hostingenvironment.queuebackgroundworkitem)([ASP.NET Core 2.2용으로 기본 제공될 예정](https://github.com/aspnet/Hosting/issues/1280))을 기반으로 합니다.
+백그라운드 작업 큐는 .NET 4.x [QueueBackgroundWorkItem](/dotnet/api/system.web.hosting.hostingenvironment.queuebackgroundworkitem)([ASP.NET Core 3.0용으로 기본 제공될 예정](https://github.com/aspnet/Hosting/issues/1280))을 기반으로 합니다.
 
 [!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Services/BackgroundTaskQueue.cs?name=snippet1)]
 
@@ -84,9 +109,21 @@ ASP.NET Core에서 백그라운드 작업은 *호스팅되는 서비스*로 구�
 
 [!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Services/QueuedHostedService.cs?name=snippet1&highlight=30-31,35)]
 
-서비스는 `Startup.ConfigureServices`에 등록됩니다.
+::: moniker range=">= aspnetcore-2.1"
+
+서비스는 `Startup.ConfigureServices`에 등록됩니다. `IHostedService` 구현은 `AddHostedService` 확장 메서드를 사용하여 등록됩니다.
 
 [!code-csharp[](hosted-services/samples/2.x/BackgroundTasksSample-WebHost/Startup.cs?name=snippet3)]
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+서비스는 `Startup.ConfigureServices`에 등록됩니다.
+
+[!code-csharp[](hosted-services/samples-snapshot/2.x/BackgroundTasksSample-WebHost/Startup.cs?name=snippet3)]
+
+::: moniker-end
 
 인덱스 페이지 모델 클래스에서 `IBackgroundTaskQueue`가 생성자로 삽입되고 `Queue`에 할당됩니다.
 

@@ -2,24 +2,21 @@
 title: ASP.NET Core에서 LoggerMessage를 사용한 고성능 로깅
 author: guardrex
 description: LoggerMessage를 사용하여 고성능 로깅 시나리오에 적은 개체 할당을 필요로 하는 캐시 가능한 대리자를 만드는 방법을 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.date: 11/03/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/logging/loggermessage
-ms.openlocfilehash: 24a75cfacfa61ca66e78deeb743baa75718dfb76
-ms.sourcegitcommit: 7ac15eaae20b6d70e65f3650af050a7880115cbf
+ms.openlocfilehash: e952591bac29868d87d765820e88c74b50a1fe88
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/02/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36272437"
 ---
 # <a name="high-performance-logging-with-loggermessage-in-aspnet-core"></a>ASP.NET Core에서 LoggerMessage를 사용한 고성능 로깅
 
 [Luke Latham](https://github.com/guardrex)으로
 
-[LoggerMessage](/dotnet/api/microsoft.extensions.logging.loggermessage) 기능은 `LogInformation`, `LogDebug` 및 `LogError`와 같은 [로거 확장 메서드](/dotnet/api/Microsoft.Extensions.Logging.LoggerExtensions)보다 적은 개체 할당 및 감소된 계산 오버헤드를 필요로 하는 캐시 가능한 대리자를 만듭니다. 고성능 로깅 시나리오의 경우 `LoggerMessage` 패턴을 사용합니다.
+[LoggerMessage](/dotnet/api/microsoft.extensions.logging.loggermessage) 기능은 `LogInformation`, `LogDebug` 및 `LogError`와 같은 [로거 확장 메서드](/dotnet/api/Microsoft.Extensions.Logging.LoggerExtensions)에 비해 적은 개체 할당 및 감소된 계산 오버헤드를 필요로 하는 캐시 가능한 대리자를 만듭니다. 고성능 로깅 시나리오의 경우 `LoggerMessage` 패턴을 사용합니다.
 
 `LoggerMessage`는 로거 확장 메서드에 비해 다음과 같은 성능 이점을 제공합니다.
 
@@ -143,13 +140,9 @@ Parameter name: entity
 
 샘플 앱에는 데이터베이스에서 모든 견적을 삭제하기 위한 **모두 지우기** 단추가 있습니다. 견적은 한 번에 하나를 제거하여 삭제됩니다. 견적이 삭제될 때마다 로거에서 `QuoteDeleted` 메서드가 호출됩니다. 로그 범위가 이러한 로그 메시지에 추가됩니다.
 
-콘솔 로거 옵션에서 `IncludeScopes`를 활성화합니다.
+*appsettings.json*의 콘솔 로거 섹션에서 `IncludeScopes`를 사용하도록 설정합니다.
 
-[!code-csharp[](loggermessage/sample/Program.cs?name=snippet1&highlight=10)]
-
-ASP.NET Core 2.0 앱에서 로그 범위를 활성화하려면 `IncludeScopes`를 설정해야 합니다. *appsettings* 구성 파일을 통한 `IncludeScopes` 설정은 ASP.NET Core 2.1 릴리스에 계획되어 있는 기능입니다.
-
-샘플 앱은 다른 공급자를 지우고 필터를 추가하여 로깅 출력을 줄입니다. 이렇게 하면 `LoggerMessage` 기능을 보여 주는 샘플의 로그 메시지를 쉽게 볼 수 있습니다.
+[!code-csharp[](loggermessage/sample/appsettings.json?highlight=3-5)]
 
 로그 범위를 만들려면 범위에 대한 `Func` 대리자를 보유하는 필드를 추가합니다. 샘플 앱은 `_allQuotesDeletedScope`라는 필드를 만듭니다(*Internal/LoggerExtensions.cs*).
 
@@ -181,6 +174,6 @@ info: LoggerMessageSample.Pages.IndexModel[4]
       Quote deleted (Quote = 'Quote 3' Id = 4)
 ```
 
-## <a name="see-also"></a>참고 항목
+## <a name="additional-resources"></a>추가 자료
 
 * [로깅](xref:fundamentals/logging/index)

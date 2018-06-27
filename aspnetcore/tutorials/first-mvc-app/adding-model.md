@@ -9,27 +9,40 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: get-started-article
 uid: tutorials/first-mvc-app/adding-model
-ms.openlocfilehash: 4204d4e2d474db51692d42751a9f82373e9f0c0d
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 802cb458cb05579b97256022b56d6f97a03d2f1a
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34687794"
 ---
 # <a name="add-a-model-to-an-aspnet-core-mvc-app"></a>ASP.NET Core MVC 앱에 모델 추가
 
-[!INCLUDE [adding-model](../../includes/mvc-intro/adding-model1.md)]
-
-참고: ASP.NET Core 2.0 템플릿은 *Models* 폴더를 포함합니다.
+[!INCLUDE [adding-model](~/Includes/mvc-intro/adding-model1.md)]
 
 *Models* 폴더> **추가** > **클래스**를 마우스 오른쪽 단추로 클릭합니다. 클래스 이름을 **Movie**로 지정하고 다음 속성을 추가합니다.
 
-[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieNoEF.cs?name=snippet_1)]
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieNoEF.cs?name=snippet_1)]
 
 `ID` 필드는 데이터베이스에서 기본 키 대신 필요합니다. 
 
 프로젝트를 빌드하여 오류가 없는지 확인합니다. 이제 **M**VC 앱에 **모**델이 있습니다.
 
 ## <a name="scaffolding-a-controller"></a>컨트롤러 스캐폴딩
+
+::: moniker range=">= aspnetcore-2.1"
+
+**솔루션 탐색기**에서 *Controllers* 폴더를 마우스 오른쪽 단추로 클릭하고 **> 추가 > 스캐폴드 항목 새로 만들기**를 선택합니다.
+
+![위의 단계 보기](adding-model/_static/add_controller21.png)
+
+**스캐폴드 추가** 대화 상자에서 **보기 포함 MVC 컨트롤러, Entity Framework > 추가 사용**을 누릅니다.
+
+![스캐폴드 추가 대화 상자](adding-model/_static/add_scaffold21.png)
+
+::: moniker-end
+
+::: moniker range="<= aspnetcore-2.0"
 
 **솔루션 탐색기**에서 *Controllers* 폴더를 마우스 오른쪽 단추로 클릭하고 **추가 > 컨트롤러**를 선택합니다.
 
@@ -43,6 +56,8 @@ ms.lasthandoff: 04/06/2018
 **스캐폴드 추가** 대화 상자에서 **보기 포함 MVC 컨트롤러, Entity Framework > 추가 사용**을 누릅니다.
 
 ![스캐폴드 추가 대화 상자](adding-model/_static/add_scaffold2.png)
+
+::: moniker-end
 
 **컨트롤러 추가** 대화 상자를 입력합니다.
 
@@ -67,7 +82,7 @@ Visual Studio에서 다음을 만듭니다.
 
 응용 프로그램을 실행하고 **Mvc Movie** 링크를 클릭하면 다음과 유사한 오류가 표시됩니다.
 
-```
+``` error
 An unhandled exception occurred while processing the request.
 
 SqlException: Cannot open database "MvcMovieContext-<GUID removed>" requested by the login. The login failed.
@@ -93,6 +108,20 @@ System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity id
 
 PMC에서 다음 명령을 입력합니다.
 
+::: moniker range=">= aspnetcore-2.1"
+``` PMC
+Add-Migration Initial
+Update-Database
+```
+
+다음 오류 메시지를 무시하세요. 다음 자습서에서 수정했습니다.
+
+*Microsoft.EntityFrameworkCore.Model.Validation[30000]*  
+      *엔터티 형식 'Movie'에서 10진수 열 'Price'의 형식이 지정되지 않았습니다. 그러면 값이 기본 전체 자릿수 및 소수 자릿수에 적합하지 않은 경우 자동으로 잘립니다. 'ForHasColumnType()'를 사용하여 모든 값을 수용할 수 있는 SQL Server 열 형식을 명시적으로 지정합니다.*
+
+::: moniker-end
+::: moniker range="<= aspnetcore-2.0"
+
 ``` PMC
 Install-Package Microsoft.EntityFrameworkCore.Tools
 Add-Migration Initial
@@ -100,6 +129,8 @@ Update-Database
 ```
 
 **참고:** `Install-Package` 명령에서 오류가 발생할 경우 NuGet Package Manager를 열고 `Microsoft.EntityFrameworkCore.Tools` 패키지를 검색하세요. 그러면 패키지를 설치하거나 패키지가 이미 설치되어 있는지 확인할 수 있습니다. 또는 PMC 문제가 있는 경우 [CLI 방식](#cli)을 참조하세요.
+
+::: moniker-end
 
 `Add-Migration` 명령은 초기 데이터베이스 스키마를 만드는 코드를 생성합니다. 스키마는 `DbContext`에 지정된 모델을 기반으로 합니다(*Data/MvcMovieContext.cs* 파일). `Initial` 인수는 마이그레이션 이름을 지정하는 데 사용됩니다. 모든 이름을 사용할 수 있지만 일반적으로 마이그레이션을 설명하는 이름을 선택합니다. 자세한 내용은 [마이그레이션 소개](xref:data/ef-mvc/migrations#introduction-to-migrations)를 참조하세요.
 
@@ -113,23 +144,28 @@ Update-Database
   ```console
   dotnet ef migrations add Initial
   dotnet ef database update
-  ```     
-  
+  ```
+
   앱을 실행하고 오류가 발생하는 경우:
-  
+
   ```text
   SqlException: Cannot open database "Movie" requested by the login.
   The login failed.
   Login failed for user 'user name'.
   ```
 
-` dotnet ef database update`를 실행하지 않았을 수 있습니다.
-  
-[!INCLUDE [adding-model](../../includes/mvc-intro/adding-model3.md)]
+`dotnet ef database update`를 실행하지 않았을 수 있습니다.
 
-[!code-csharp[](../../tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=ConfigureServices&highlight=6-7)]
+[!INCLUDE [adding-model](~/Includes/mvc-intro/adding-model3.md)]
 
-[!INCLUDE [adding-model](../../includes/mvc-intro/adding-model4.md)]
+::: moniker range=">= aspnetcore-2.1"
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie21/Startup.cs?name=ConfigureServices&highlight=13-99)]
+::: moniker-end
+::: moniker range="<= aspnetcore-2.0"
+[!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=ConfigureServices&highlight=6-7)]
+::: moniker-end
+
+[!INCLUDE [adding-model](~/Includes/mvc-intro/adding-model4.md)]
 
 ![ID, 가격, 출시일, 제목에 대해 사용 가능한 속성을 열거하는 모델 항목의 Intellisense 상황별 메뉴](adding-model/_static/ints.png)
 

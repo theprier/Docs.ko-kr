@@ -9,11 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/views/dependency-injection
-ms.openlocfilehash: cc34b9069ec062f08644c0026c1ccdcd00f667ac
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: d33f0253fc7c1329e8bab400ace4c4ce8d10d792
+ms.sourcegitcommit: 4e3497bda0c3e5011ffba3717eb61a1d46c61c15
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
+ms.lasthandoff: 06/14/2018
+ms.locfileid: "35613062"
 ---
 # <a name="dependency-injection-into-views-in-aspnet-core"></a>ASP.NET Core의 보기에 종속성 주입
 
@@ -67,8 +68,8 @@ ASP.NET Core는 보기에 [종속성 주입](xref:fundamentals/dependency-inject
 
 [!code-csharp[](../../mvc/views/dependency-injection/sample/src/ViewInjectSample/Model/Services/ProfileOptionsService.cs?highlight=7,13,24)]
 
->[!TIP]
-> *Startup.cs*의 `ConfigureServices` 메서드에서 종속성 주입을 통해 요청할 유형을 등록하는 것을 잊지 마세요.
+> [!IMPORTANT]
+> `Startup.ConfigureServices`에서 종속성 주입을 통해 요청할 형식을 등록하는 것을 잊지 마세요. 서비스 공급자가 [GetRequiredService](/dotnet/api/microsoft.extensions.dependencyinjection.serviceproviderserviceextensions.getrequiredservice)를 통해 내부적으로 쿼리되기 때문에 등록되지 않은 형식은 런타임 시 예외를 throw합니다.
 
 ## <a name="overriding-services"></a>서비스 재정의
 

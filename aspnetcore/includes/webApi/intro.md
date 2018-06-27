@@ -14,9 +14,9 @@
 
 ![클라이언트는 왼쪽에 상자로 표시되며 요청을 제출하고 오른쪽에 그린 상자인 응용 프로그램에서 응답을 받습니다. 응용 프로그램 상자 내에서 3개의 상자는 컨트롤러, 모델 및 데이터 액세스 계층을 나타냅니다. 요청은 응용 프로그램의 컨트롤러로 들어오고 읽기/쓰기 작업은 컨트롤러와 데이터 액세스 계층 간에 발생합니다. 모델은 직렬화되며 응답에서 클라이언트에 반환됩니다.](../../tutorials/first-web-api/_static/architecture.png)
 
-* 웹 API를 사용하는 어떤 것도 클라이언트에 해당합니다(모바일 앱, 브라우저 등). 이 자습서에서는 클라이언트를 만들지 않습니다. [Postman](https://www.getpostman.com/) 또는 [curl](https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/curl.1.html)은 앱을 테스트하기 위한 클라이언트로 사용됩니다.
+* 웹 API를 사용하는 어떤 것도 클라이언트에 해당합니다(모바일 앱, 브라우저 등). 이 자습서에서는 클라이언트를 만들지 않습니다. [Postman](https://www.getpostman.com/) 또는 [curl](https://curl.haxx.se/docs/manpage.html)은 앱을 테스트하기 위한 클라이언트로 사용됩니다.
 
-* *모델*은 앱에서 데이터를 나타내는 개체입니다. 이 경우 유일한 모델은 할 일 항목입니다. 모델은 C# 클래스로 표현되며 POCO(**P**lain **O**ld **C**# **O**bject)로도 알려져 있습니다.
+* *모델*은 앱에서 데이터를 나타내는 개체입니다. 이 경우 유일한 모델은 할 일 항목입니다. 모델은 C# 클래스로 표현되며 POCO(**P**lain **O**ld **C**LR **O**bject)로도 알려져 있습니다.
 
 * *컨트롤러*는 HTTP 요청을 처리하고 HTTP 응답을 만드는 개체입니다. 이 앱에는 단일 컨트롤러가 있습니다.
 

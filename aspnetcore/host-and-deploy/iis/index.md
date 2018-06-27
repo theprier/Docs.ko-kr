@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 6b2c3334798861ebdb14787205480422d7d536ea
-ms.sourcegitcommit: 1b94305cc79843e2b0866dae811dab61c21980ad
+ms.openlocfilehash: 0cb9bc7d8bf415e5a0125c3798f2430c9e861c98
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/24/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34729654"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>IIS가 있는 Windows에서 ASP.NET Core 호스팅
 
@@ -43,7 +44,7 @@ public static IWebHost BuildWebHost(string[] args) =>
         ...
 ```
 
-ASP.NET Core 모듈은 동적 포트를 생성하여 백 엔드 프로세스에 할당합니다. `UseIISIntegration` 메서드는 동적 포트를 선택하고 `http://localhost:{dynamicPort}/`에서 수신 대기하도록 Kestrel을 구성합니다. 이는 `UseUrls` 또는 [Kestrel의 수신 API](xref:fundamentals/servers/kestrel#endpoint-configuration)에 대한 호출과 같은 다른 URL 구성을 재정의합니다. 따라서 모듈을 사용하는 경우 `UseUrls`에 대한 호출 또는 Kestrel의 `Listen` API가 필요하지 않습니다. `UseUrls` 또는 `Listen`을 호출하는 경우 Kestrel은 IIS 없이 앱을 실행할 때 지정된 포트에서 수신 대기합니다.
+ASP.NET Core 모듈은 동적 포트를 생성하여 백 엔드 프로세스에 할당합니다. `CreateDefaultBuilder`는 메서드는 동적 포트를 선택하고 `http://localhost:{dynamicPort}/`에서 수신 대기하도록 Kestrel을 구성하는 [UseIISIntegration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderiisextensions.useiisintegration) 메서드를 호합니다. 이는 `UseUrls` 또는 [Kestrel의 수신 API](xref:fundamentals/servers/kestrel#endpoint-configuration)에 대한 호출과 같은 다른 URL 구성을 재정의합니다. 따라서 모듈을 사용하는 경우 `UseUrls`에 대한 호출 또는 Kestrel의 `Listen` API가 필요하지 않습니다. `UseUrls` 또는 `Listen`을 호출하는 경우 Kestrel은 IIS 없이 앱을 실행할 때 지정된 포트에서 수신 대기합니다.
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
@@ -89,7 +90,7 @@ services.Configure<IISOptions>(options =>
 
 ### <a name="webconfig-file"></a>web.config 파일
 
-*web.config* 파일은 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)을 구성합니다. *web.config*의 생성, 변환 및 게시는 .NET Core Web SDK(`Microsoft.NET.Sdk.Web`)에서 처리됩니다. SDK는 프로젝트 파일을 기반으로 해서 설정됩니다.
+*web.config* 파일은 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)을 구성합니다. *web.config* 파일을 만들고, 변하고, 게시하는 작업은 프로젝트를 게시할 때 MSBuild 대상(`_TransformWebConfig`)에 의해 처리됩니다. 이 대상은 웹 SDK 대상(`Microsoft.NET.Sdk.Web`)에 나타납니다. SDK는 프로젝트 파일을 기반으로 해서 설정됩니다.
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk.Web">
@@ -172,8 +173,9 @@ IIS 및 Kestrel 서버 간의 역방향 프록시를 만들려면 배포된 앱�
 1. 호스팅 시스템에 *.NET Core 호스팅 번들*을 설치합니다. 번들은 .NET Core 런타임, .NET Core 라이브러리 및 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)을 설치합니다. 이 모듈은 IIS와 Kestrel 서버 간에 역방향 프록시를 만듭니다. 시스템이 인터넷에 연결되지 않은 경우 [Microsoft Visual C++ 2015 재배포 가능 패키지](https://www.microsoft.com/download/details.aspx?id=53840)를 설치한 후에 .NET Core 호스팅 번들을 설치합니다.
 
    1. [.NET 모든 다운로드 페이지](https://www.microsoft.com/net/download/all)로 이동합니다.
-   1. 목록에서 미리 보기 상태가 아닌 최신 .NET Core 런타임을 선택합니다(**.NET Core** > **런타임** > **.NET Core 런타임 x.y.z**). 미리 보기 소프트웨어로 작업하려는 경우가 아니면 해당 링크 텍스트에서 “미리 보기” 또는 “rc”(릴리스 후보)라는 단어가 있는 런타임을 사용하지 마세요.
-   1. .NET Core 런타임 다운로드 페이지의 **Windows**에서 **호스팅 번들 설치 프로그램** 링크를 선택하여 *.NET Core 호스팅 번들*을 다운로드합니다.
+   1. 테이블의 **런타임** 열에 있는 목록(**X.Y 런타임(vX.Y.Z) 다운로드**)에서 최신 미리 보기 상태가 아닌 .NET Core 런타임을 선택합니다. 최신 런타임에는 **현재** 레이블이 포함됩니다. 미리 보기 소프트웨어로 작업하려는 경우가 아니면 해당 링크 텍스트에서 “미리 보기” 또는 “rc”(릴리스 후보)라는 단어가 있는 런타임을 사용하지 마세요.
+   1. .NET Core 런타임 다운로드 페이지의 **Windows**에서 **호스팅 번들 설치 관리자** 링크를 선택하여 *.NET Core 호스팅 번들* 설치 관리자를 다운로드합니다.
+   1. 서버에서 설치 관리자를 실행합니다.
 
    **중요!** IIS 이전에 호스팅 번들이 설치된 경우 번들 설치를 복구해야 합니다. IIS를 설치한 후 호스팅 번들 설치 프로그램을 다시 실행합니다.
    

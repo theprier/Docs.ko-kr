@@ -11,12 +11,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/configuration/platform-specific-configuration
-ms.openlocfilehash: 618cb4349dcff696db37012af3aee844b82974f2
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: 47d3a64ce0cc543162a066eeeaa0aaaf7dc96a5f
+ms.sourcegitcommit: 0d6f151e69c159d776ed0142773279e645edbc0a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34729053"
+ms.lasthandoff: 06/13/2018
+ms.locfileid: "35415010"
 ---
 # <a name="enhance-an-app-from-an-external-assembly-in-aspnet-core-with-ihostingstartup"></a>IHostingStartup을 사용하여 ASP.NET Core의 외부 어셈블리에서 앱 강화
 
@@ -57,7 +57,7 @@ ms.locfileid: "34729053"
 
 [!code-csharp[](platform-specific-configuration/snapshot_sample/StartupEnhancement.cs?name=snippet1)]
 
-클래스는 `IHostingStartup`을 구현합니다. 클래스의 [구성](/dotnet/api/microsoft.aspnetcore.hosting.ihostingstartup.configure) 메서드는 [IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder)를 사용하여 앱에 향상된 기능을 추가합니다.
+클래스는 `IHostingStartup`을 구현합니다. 클래스의 [구성](/dotnet/api/microsoft.aspnetcore.hosting.ihostingstartup.configure) 메서드는 [IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder)를 사용하여 앱에 향상된 기능을 추가합니다. 호스팅 시작 어셈블리의 `IHostingStartup.Configure`는 사용자 코드로 `Startup.Configure` 전에 런타임에서 호출됩니다. 그러면 사용자 코드가 호스팅 시작 어셈블리에서 제공하는 모든 구성을 덮어쓸 수 있습니다.
 
 [!code-csharp[](platform-specific-configuration/snapshot_sample/StartupEnhancement.cs?name=snippet2&highlight=3,5)]
 
@@ -99,31 +99,33 @@ ms.locfileid: "34729053"
 
 이제 구현의 *\*.deps.json* 파일은 액세스할 수 있는 위치에 있어야 합니다.
 
-사용자 단위 사용의 경우 파일을 사용자 프로필 `.dotnet` 설정의 `additonalDeps` 폴더에 배치합니다. 
+사용자 단위 사용의 경우 파일을 사용자 프로필 `.dotnet` 설정의 `additonalDeps` 폴더에 배치합니다.
 
 ```
-<DRIVE>\Users\<USER>\.dotnet\x64\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\2.1.0\
+<DRIVE>\Users\<USER>\.dotnet\x64\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\<SHARED_FRAMEWORK_VERSION>\
 ```
 
 전역 사용의 경우 파일을 .NET Core 설치의 `additonalDeps` 폴더에 배치합니다.
 
 ```
-<DRIVE>\Program Files\dotnet\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\2.1.0\
+<DRIVE>\Program Files\dotnet\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\<SHARED_FRAMEWORK_VERSION>\
 ```
 
-버전(`2.1.0`)을 적어두고, 대상 앱이 사용하는 공유 런타임 버전을 반영합니다. 공유 런타임은 *\*.runtimeconfig.json* 파일에 표시됩니다. 샘플 앱에서 공유 런타임은 *HostingStartupSample.runtimeconfig.json* 파일에 지정됩니다.
+공유 프레임워크 버전은 대상 앱이 사용하는 공유 런타임 버전을 반영합니다. 공유 런타임은 *\*.runtimeconfig.json* 파일에 표시됩니다. 샘플 앱에서 공유 런타임은 *HostingStartupSample.runtimeconfig.json* 파일에 지정됩니다.
 
 **환경 변수 설정**
 
 향상된 기능을 사용하는 앱의 컨텍스트에서 다음 환경 변수를 설정합니다.
 
-ASPNETCORE\_HOSTINGSTARTUPASSEMBLIES
+ASPNETCORE_HOSTINGSTARTUPASSEMBLIES
 
 호스팅 시작 어셈블리만이 `HostingStartupAttribute`을 검사합니다. 구현의 어셈블리 이름은 이 환경 변수에서 제공됩니다. 샘플 앱은 이 값을 `StartupDiagnostics`로 설정합니다.
 
 [호스팅 스타트업 어셈블리](xref:fundamentals/host/web-host#hosting-startup-assemblies) 호스트 구성 설정을 사용하여 값을 설정할 수도 있습니다.
 
-DOTNET\_ADDITIONAL\_DEPS
+여러 개의 호스팅 시작 어셈블이 표시되어 있는 경우 해당 [구성](/dotnet/api/microsoft.aspnetcore.hosting.ihostingstartup.configure) 메서드가 어셈블리가 나열되는 순서대로 실행됩니다.
+
+DOTNET_ADDITIONAL_DEPS
 
 구현 *\*.deps.json* 파일의 위치입니다.
 
@@ -136,7 +138,7 @@ DOTNET\_ADDITIONAL\_DEPS
 전역 사용에서 파일을 .NET Core 설치에 배치하는 경우 파일에 전체 경로를 제공합니다.
 
 ```
-<DRIVE>\Program Files\dotnet\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\2.1.0\<ENHANCEMENT_ASSEMBLY_NAME>.deps.json
+<DRIVE>\Program Files\dotnet\additionalDeps\<ENHANCEMENT_ASSEMBLY_NAME>\shared\Microsoft.NETCore.App\<SHARED_FRAMEWORK_VERSION>\<ENHANCEMENT_ASSEMBLY_NAME>.deps.json
 ```
 
 샘플 앱은 이 값을 다음으로 설정합니다.

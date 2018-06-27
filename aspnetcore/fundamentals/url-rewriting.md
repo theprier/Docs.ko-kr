@@ -9,11 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/url-rewriting
-ms.openlocfilehash: 336a097c2186bc195854bd54211d4554a577ed14
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: a4ffa512825fedafdc58ade9929097e255593fa9
+ms.sourcegitcommit: 40b102ecf88e53d9d872603ce6f3f7044bca95ce
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/15/2018
+ms.locfileid: "35652216"
 ---
 # <a name="url-rewriting-middleware-in-aspnet-core"></a>ASP.NET Core에서 URL 재작성 미들웨어
 
@@ -22,15 +23,16 @@ ms.lasthandoff: 05/12/2018
 [예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/url-rewriting/sample/)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 URL 재작성은 하나 이상의 미리 정의된 규칙을 기반으로 하는 요청 URL을 수정하는 작업입니다. URL 재작성은 위치 및 주소가 밀접하게 연결되지 않도록 리소스 위치와 해당 주소 간의 추상화를 만듭니다. URL 재작성이 중요한 몇 가지 시나리오가 있습니다.
+
 * 서버 리소스에 대한 안정적인 로케이터를 유지하는 동시에 임시 또는 영구적으로 해당 리소스를 이동하거나 교체하기
-* 다른 응용 프로그램 간에 또는 한 응용 프로그램의 여러 영역 간에 요청 처리 분리하기 
+* 다른 응용 프로그램 간에 또는 한 응용 프로그램의 여러 영역 간에 요청 처리 분리하기
 * 들어오는 요청의 URL 세그먼트를 제거, 추가, 또는 재구성하기
-* 검색 엔진 최적화(SEO, Search Engine Optimization)를 위해 공개 URL 최적화하기 
+* 검색 엔진 최적화(SEO, Search Engine Optimization)를 위해 공개 URL 최적화하기
 * 링크로 이동했을 때 제공되는 콘텐츠를 사용자가 예측할 수 있도록 친숙한 공개 URL 사용하기
 * 안전하지 않은 요청을 보안 엔드포인트로 리디렉션하기
 * 이미지 핫링크 방지하기
 
-URL을 변경하기 위한 규칙은 정규식, Apache mod_rewrite 모듈 규칙, IIS 재작성 모듈 규칙, 그리고 사용자 지정 규칙 로직 사용 등의 다양한 방법으로 정의할 수 있습니다. 본문에서는 ASP.NET Core 응용 프로그램에서 URL 재작성 미들웨어를 사용하는 방법에 관한 지침과 URL 재작성에 관해서 살펴봅니다.
+URL을 변경하기 위한 규칙은 Regex, Apache mod_rewrite 모듈 규칙, IIS 재작성 모듈 규칙 및 사용자 지정 규칙 로직 사용 등의 다양한 방법으로 정의할 수 있습니다. 본문에서는 ASP.NET Core 응용 프로그램에서 URL 재작성 미들웨어를 사용하는 방법에 관한 지침과 URL 재작성에 관해서 살펴봅니다.
 
 > [!NOTE]
 > URL 재작성은 응용 프로그램의 성능을 저하시킬 수 있습니다. 가능한 한 규칙의 수와 복잡성을 제한해야 합니다.
@@ -127,8 +129,8 @@ public void Configure(IApplicationBuilder app)
 
 대체 문자열에서, 캡처된 그룹은 캡처의 일련번호가 뒤에 붙는 달러 기호(`$`)를 통해서 문자열에 삽입됩니다. 첫 번째 캡처 그룹 값은 `$1`로 얻을 수 있고, 두 번째 캡처 그룹 값은 `$2`로 얻을 수 있으며, 이는 정규식에 포함된 캡처 그룹에 대해 순차적으로 계속됩니다. 예제 응용 프로그램에서 리디렉션 규칙의 정규식에 캡처된 그룹은 단 하나뿐이므로 대체 문자열에 삽입되는 그룹도 `$1` 하나뿐입니다. 규칙이 적용되고 나면 URL은 `/redirected/1234/5678`로 변환됩니다.
 
-<a name="url-redirect-to-secure-endpoint"></a>
 ### <a name="url-redirect-to-a-secure-endpoint"></a>보안 엔드포인트에 대한 URL 리디렉션
+
 `AddRedirectToHttps`를 사용하면 HTTP 요청을 HTTPS(`https://`)를 사용하는 동일한 호스트 및 경로로 리디렉션할 수 있습니다. 상태 코드를 지정하지 않으면 미들웨어가 기본값인 302(임시 이동)를 설정합니다. 그리고 포트를 지정하지 않으면 미들웨어가 기본값인 `null`을 설정하는데, 이는 프로토콜이 `https://`로 변경되고 클라이언트가 포트 443을 통해서 리소스에 접근함을 뜻합니다. 예제에서는 상태 코드를 301(영구 이동)로 설정하고 포트를 5001로 변경하는 방법을 보여줍니다.
 
 ```csharp
@@ -153,13 +155,16 @@ public void Configure(IApplicationBuilder app)
 }
 ```
 
-예제 응용 프로그램을 통해서 `AddRedirectToHttps` 또는 `AddRedirectToHttpsPermanent`의 사용 방법을 확인해 볼 수 있습니다. 먼저 `RewriteOptions`에 이 확장 메서드를 추가합니다. 모든 URL에서 앱에 대한 안전하지 않은 요청을 만듭니다. 자체 서명된 인증서를 신뢰할 수 없다는 브라우저 보안 경고는 무시하면 됩니다.
+> [!NOTE]
+> 추가 리디렉션 규칙에 대한 요구 사항 없이 HTTPS로 리디렉션하는 경우에 HTTPS 리디렉션 미들웨어를 사용하는 것이 좋습니다. 자세한 내용은 [HTTPS 적용](xref:security/enforcing-ssl#require-https) 항목을 참조하세요.
 
-`AddRedirectToHttps(301, 5001)`에 대한 원본 요청: `/secure`
+예제 응용 프로그램을 통해서 `AddRedirectToHttps` 또는 `AddRedirectToHttpsPermanent`의 사용 방법을 확인해 볼 수 있습니다. 먼저 `RewriteOptions`에 이 확장 메서드를 추가합니다. 모든 URL에서 앱에 대한 안전하지 않은 요청을 만듭니다. 자체 서명된 인증서를 신뢰할 수 없다는 브라우저 보안 경고는 무시하면 됩니다. 또는 인증서를 신뢰할 예외를 만듭니다.
+
+`AddRedirectToHttps(301, 5001)`에 대한 원본 요청: `http://localhost:5000/secure`
 
 ![요청 및 응답을 추적하는 개발자 도구가 있는 브라우저 창](url-rewriting/_static/add_redirect_to_https.png)
 
-`AddRedirectToHttpsPermanent`에 대한 원본 요청: `/secure`
+`AddRedirectToHttpsPermanent`에 대한 원본 요청: `http://localhost:5000/secure`
 
 ![요청 및 응답을 추적하는 개발자 도구가 있는 브라우저 창](url-rewriting/_static/add_redirect_to_https_permanent.png)
 
@@ -255,6 +260,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 ##### <a name="supported-server-variables"></a>지원되는 서버 변수
 
 미들웨어는 다음과 같은 Apache mod_rewrite 서버 변수를 지원합니다:
+
 * CONN_REMOTE_ADDR
 * HTTP_ACCEPT
 * HTTP_CONNECTION
@@ -326,6 +332,7 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
 ASP.NET Core 2.x와 함께 출시된 미들웨어는 다음과 같은 IIS URL 재작성 모듈 기능을 지원하지 않습니다:
+
 * 아웃바운드 규칙
 * 사용자 지정 서버 변수
 * 와일드카드
@@ -334,6 +341,7 @@ ASP.NET Core 2.x와 함께 출시된 미들웨어는 다음과 같은 IIS URL �
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
 
 ASP.NET Core 2.x와 함께 출시된 미들웨어는 다음과 같은 IIS URL 재작성 모듈 기능을 지원하지 않습니다:
+
 * 전역 규칙
 * 아웃바운드 규칙
 * 재작성 맵
@@ -348,6 +356,7 @@ ASP.NET Core 2.x와 함께 출시된 미들웨어는 다음과 같은 IIS URL �
 #### <a name="supported-server-variables"></a>지원되는 서버 변수
 
 미들웨어는 다음과 같은 IIS URL 재작성 모듈 서버 변수를 지원합니다:
+
 * CONTENT_LENGTH
 * CONTENT_TYPE
 * HTTP_ACCEPT

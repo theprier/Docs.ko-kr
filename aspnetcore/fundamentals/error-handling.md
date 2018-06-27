@@ -2,19 +2,16 @@
 title: ASP.NET Core에서 오류 처리
 author: ardalis
 description: ASP.NET Core 응용 프로그램에서 오류를 처리하는 방법을 알아봅니다.
-manager: wpickett
 ms.author: tdykstra
 ms.custom: H1Hack27Feb2017
 ms.date: 11/30/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/error-handling
-ms.openlocfilehash: 3ff3a17d14d9ed7c438399191ffe3cf93d555d49
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: 2fe46ecc32d61a7fafb2ad6e2a35456476608251
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36273711"
 ---
 # <a name="handle-errors-in-aspnet-core"></a>ASP.NET Core에서 오류 처리
 
@@ -49,17 +46,21 @@ ms.lasthandoff: 05/17/2018
 
 ## <a name="configuring-a-custom-exception-handling-page"></a>사용자 지정 예외 처리 페이지 구성
 
-앱이 `Development` 환경에서 실행되고 있지 않는 경우 사용할 예외 처리기 페이지를 구성하는 것이 좋습니다.
+앱이 `Development` 환경에서 실행되고 있지 않는 경우 사용할 예외 처리기 페이지를 구성합니다.
 
 [!code-csharp[](error-handling/sample/Startup.cs?name=snippet_DevExceptionPage&highlight=11)]
 
-MVC 앱에서는 `HttpGet`과 같은 HTTP 메서드 특성을 사용하여 오류 처리기 작업 메서드를 명시적으로 데코레이트하지 마십시오. 명시적 동사를 사용하면 일부 요청이 메서드에 도달하지 못할 수 있습니다.
+Razor Pages 앱에서 [dotnet new](/dotnet/core/tools/dotnet-new) Razor Pages 템플릿은 *Pages* 폴터의 오류 페이지 및 `ErrorModel` 페이지 모델 클래스를 제공합니다.
+
+MVC 앱에서는 `HttpGet`과 같은 HTTP 메서드 특성을 사용하여 오류 처리기 작업 메서드를 데코레이트하지 않습니다. 명시적 동사는 일부 요청이 메서드에 도달하지 않도록 방해합니다. 인증되지 않은 사용자가 오류 보기를 수신할 수 있도록 메서드에 대한 익명 액세스를 허용합니다.
+
+예를 들어 다음 오류 처리기 메서드는 [dotnet new](/dotnet/core/tools/dotnet-new) MVC 템플릿에서 제공하고 홈 컨트롤러에 표시됩니다.
 
 ```csharp
-[Route("/Error")]
-public IActionResult Index()
+[AllowAnonymous]
+public IActionResult Error()
 {
-    // Handle error here
+    return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
 }
 ```
 
@@ -106,6 +107,53 @@ if (statusCodePagesFeature != null)
 }
 ```
 
+앱 내에서 엔드포인트를 가리키는 `UseStatusCodePages*`를 사용하는 경우 엔드포인트에 대해 MVC 보기 또는 Razor Page를 만듭니다. 예를 들어 Razor Pages 앱의 [dotnet new](/dotnet/core/tools/dotnet-new) 템플릿은 다음 페이지와 페이지 모델 클래스를 생성합니다.
+
+*Error.cshtml*:
+
+```cshtml
+@page
+@model ErrorModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+<h1 class="text-danger">Error.</h1>
+<h2 class="text-danger">An error occurred while processing your request.</h2>
+
+@if (Model.ShowRequestId)
+{
+    <p>
+        <strong>Request ID:</strong> <code>@Model.RequestId</code>
+    </p>
+}
+
+<h3>Development Mode</h3>
+<p>
+    Swapping to <strong>Development</strong> environment will display more detailed information about the error that occurred.
+</p>
+<p>
+    <strong>Development environment should not be enabled in deployed applications</strong>, as it can result in sensitive information from exceptions being displayed to end users. For local debugging, development environment can be enabled by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>, and restarting the application.
+</p>
+```
+
+*Error.cshtml.cs*:
+
+```csharp
+public class ErrorModel : PageModel
+{
+    public string RequestId { get; set; }
+
+    public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    public void OnGet()
+    {
+        RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
+    }
+}
+```
+
 ## <a name="exception-handling-code"></a>예외 처리 코드
 
 예외 처리 페이지의 코드는 예외를 throw할 수 있습니다. 종종 프로덕션 오류 페이지에 대해 완전한 정적 콘텐츠를 구성하는 것이 좋습니다.
@@ -132,7 +180,7 @@ if (statusCodePagesFeature != null)
 
 전역으로 또는 MVC 앱에서 컨트롤러당 또는 작업당 기준으로 예외 필터를 구성할 수 있습니다. 이러한 필터는 컨트롤러 작업 또는 다른 필터를 실행하는 동안 발생하는 처리되지 않은 예외를 처리하며, 그 외에는 호출되지 않습니다. [필터](xref:mvc/controllers/filters)에서 예외 필터에 대해 자세히 알아보세요.
 
->[!TIP]
+> [!TIP]
 > 예외 필터는 MVC 작업 내에서 발생하는 예외를 트래핑하는 데 유용하지만 오류 처리 미들웨어만큼 유연하지는 않습니다. 일반적인 경우에는 미들웨어를 선호하고, 선택한 MVC 작업에 따라 오류 처리를 *다르게* 수행해야 하는 경우에만 필터를 사용합니다.
 
 ### <a name="handling-model-state-errors"></a>모델 상태 오류 처리
@@ -140,6 +188,3 @@ if (statusCodePagesFeature != null)
 [모델 유효성 검사](xref:mvc/models/validation)는 각 컨트롤러 작업을 호출하기 전에 발생하며, `ModelState.IsValid`를 검사하고 적절하게 반응하는 것은 작업 메서드의 책임입니다.
 
 [필터](xref:mvc/controllers/filters)가 그러한 정책을 구현하기에 적절한 경우에 일부 앱은 모델 유효성 검사 오류를 처리하는 데 표준 규칙을 따르도록 선택합니다. 잘못된 모델 상태일 때 작업 동작 방식을 테스트해야 합니다. [컨트롤러 논리 테스트](xref:mvc/controllers/testing)에서 자세히 알아보세요.
-
-
-

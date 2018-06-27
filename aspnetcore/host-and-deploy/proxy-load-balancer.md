@@ -2,20 +2,16 @@
 title: 프록시 서버 및 부하 분산 장치를 사용하도록 ASP.NET Core 구성
 author: guardrex
 description: 중요한 요청 정보를 종종 숨기는 프록시 서버 및 부하 분산 장치 뒤에 호스트되는 앱의 구성에 대해 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.custom: mvc
 ms.date: 03/26/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: host-and-deploy/proxy-load-balancer
-ms.openlocfilehash: f18a5c518edc739e0fe667f3aef6ffd38c06366c
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: 1797962d6eada9c48b31cd94e2c7481380301a0d
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32740948"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36276778"
 ---
 # <a name="configure-aspnet-core-to-work-with-proxy-servers-and-load-balancers"></a>프록시 서버 및 부하 분산 장치를 사용하도록 ASP.NET Core 구성
 
@@ -38,7 +34,7 @@ ASP.NET Core의 권장 구성에서 앱은 IIS/ASP.NET Core 모듈, Nginx 또는
 | X-Forwarded-Proto | 원래 체계(HTTP/HTTPS)의 값입니다. 요청이 여러 프록시를 트래버스한 경우에는 값이 체계 목록일 수도 있습니다. |
 | X-Forwarded-Host | 호스트 헤더 필드의 원래 값입니다. 일반적으로 프록시는 호스트 헤더를 수정하지 않습니다. 프록시가 호스트 헤더를 유효성 검사하거나 알려진 정상 값으로 제한하지 않는 시스템에 영향을 미치는 권한 상승 취약성에 대한 자세한 내용은 [Microsoft 보안 공지 CVE-2018-0787](https://github.com/aspnet/Announcements/issues/295)을 참조하세요. |
 
-[Microsoft.AspNetCore.HttpOverrides](https://www.nuget.org/packages/Microsoft.AspNetCore.HttpOverrides/) 패키지의 전달된 헤더 미들웨어는 이러한 헤더를 읽고 [HttpContext](/dotnet/api/microsoft.aspnetcore.http.httpcontext)의 연결된 필드를 채웁니다. 
+[Microsoft.AspNetCore.HttpOverrides](https://www.nuget.org/packages/Microsoft.AspNetCore.HttpOverrides/) 패키지의 전달된 헤더 미들웨어는 이러한 헤더를 읽고 [HttpContext](/dotnet/api/microsoft.aspnetcore.http.httpcontext)의 연결된 필드를 채웁니다.
 
 미들웨어가 다음을 업데이트합니다.
 
@@ -67,7 +63,7 @@ IIS 통합 미들웨어 사용 외에는 전달된 헤더 미들웨어가 기본
 public void ConfigureServices(IServiceCollection services)
 {
     services.AddMvc();
-    
+
     services.Configure<ForwardedHeadersOptions>(options =>
     {
         options.ForwardedHeaders = 
@@ -97,6 +93,14 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 
 > [!NOTE]
 > [ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions)가 `Startup.ConfigureServices`에서 지정되지 않거나 [UseForwardedHeaders(IApplicationBuilder, ForwardedHeadersOptions)](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersextensions.useforwardedheaders?view=aspnetcore-2.0#Microsoft_AspNetCore_Builder_ForwardedHeadersExtensions_UseForwardedHeaders_Microsoft_AspNetCore_Builder_IApplicationBuilder_Microsoft_AspNetCore_Builder_ForwardedHeadersOptions_)를 사용하여 확장 메서드에 대해 직접 지정되지 않은 경우 전달할 기본 헤더는 [ForwardedHeaders.None](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheaders)입니다. [ForwardedHeadersOptions.ForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedheaders) 속성은 전달할 헤더를 사용하여 구성되어야 합니다.
+
+## <a name="nginx-configuration"></a>Nginx 구성
+
+`X-Forwarded-For` 및 `X-Forwarded-Proto` 헤더를 전달하려면 [Nginx를 사용하여 Linux에서 호스트: Nginx 구성](xref:host-and-deploy/linux-nginx#configure-nginx)을 참조하세요. 자세한 내용은 [NGINX: 전달된 헤더 사용](https://www.nginx.com/resources/wiki/start/topics/examples/forwarded/)을 참조하세요.
+
+## <a name="apache-configuration"></a>Apache 구성
+
+`X-Forwarded-For`가 자동으로 추가됩니다( [Apache 모듈 mod_proxy: 역방향 프록시 요청 헤더](https://httpd.apache.org/docs/2.4/mod/mod_proxy.html#x-headers) 참조). `X-Forwarded-Proto`를 헤더 전달하는 방법에 대한 자세한 내용은 [Apache를 사용하여 Linux에서 호스트: Apache 구성](xref:host-and-deploy/linux-apache#configure-apache)을 참조하세요.
 
 ## <a name="forwarded-headers-middleware-options"></a>전달된 헤더 미들웨어 옵션
 

@@ -2,19 +2,15 @@
 title: ASP.NET Core에서 필터링
 author: ardalis
 description: 필터 작동 방법 및 ASP.NET Core MVC에서 사용하는 방법을 자세히 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.date: 4/10/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: mvc/controllers/filters
-ms.openlocfilehash: 49e51a867e47ce375a5048cae5979360c4103365
-ms.sourcegitcommit: 466300d32f8c33e64ee1b419a2cbffe702863cdf
+ms.openlocfilehash: 24551382847fee0896fe6620d52c30a03aca69d1
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/27/2018
-ms.locfileid: "34555406"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36275647"
 ---
 # <a name="filters-in-aspnet-core"></a>ASP.NET Core에서 필터링
 
@@ -23,10 +19,10 @@ ms.locfileid: "34555406"
 ASP.NET Core MVC에서 *필터*를 사용하면 요청 처리 파이프라인의 특정 단계 전후에 코드를 실행할 수 있습니다.
 
 > [!IMPORTANT]
-> 이 항목은 Razor 페이지에 적용되지 **않습니다**. ASP.NET Core 2.1 이상에서는 Razor 페이지에 대해 [IPageFilter](/dotnet/api/microsoft.aspnetcore.mvc.filters.ipagefilter?view=aspnetcore-2.0) 및 [IAsyncPageFilter](/dotnet/api/microsoft.aspnetcore.mvc.filters.iasyncpagefilter?view=aspnetcore-2.0)를 지원합니다. 자세한 내용은 [Razor 페이지에 대한 필터 메서드](xref:mvc/razor-pages/filter)를 참조하세요.
+> 이 항목은 Razor 페이지에 적용되지 **않습니다**. ASP.NET Core 2.1 이상에서는 Razor 페이지에 대해 [IPageFilter](/dotnet/api/microsoft.aspnetcore.mvc.filters.ipagefilter?view=aspnetcore-2.0) 및 [IAsyncPageFilter](/dotnet/api/microsoft.aspnetcore.mvc.filters.iasyncpagefilter?view=aspnetcore-2.0)를 지원합니다. 자세한 내용은 [Razor 페이지에 대한 필터 메서드](xref:razor-pages/filter)를 참조하세요.
 
  기본 제공 필터는 다음과 같은 작업을 처리합니다.
- 
+
  * 권한 부여(사용자가 권한이 없는 리소스에 액세스 방지).
  * 모든 요청이 HTTPS를 사용하는지 확인합니다.
  * 응답 캐싱(요청 파이프라인을 단락하면 캐시된 응답을 반환합니다). 
@@ -78,7 +74,7 @@ ASP.NET Core MVC에서 *필터*를 사용하면 요청 처리 파이프라인의
 
 ### <a name="ifilterfactory"></a>IFilterFactory
 
-`IFilterFactory`는 `IFilter`를 구현합니다. 따라서 `IFilterFactory` 인스턴스를 필터 파이프라인에서 `IFilter` 인스턴스로 사용할 수 있습니다. 프레임워크가 필터를 호출하려고 준비하는 경우 `IFilterFactory`으로 캐스팅을 시도합니다. 해당 캐스트에 성공하면 `CreateInstance` 메서드를 호출하여 호출되는 `IFilter` 인스턴스를 만듭니다. 앱이 시작될 때 정확한 필터 파이프라인을 명시적으로 설정할 필요가 없으므로 유연한 디자인을 제공합니다.
+[IFilterFactory](/dotnet/api/microsoft.aspnetcore.mvc.filters.ifilterfactory)는 [IFilterMetadata](/dotnet/api/microsoft.aspnetcore.mvc.filters.ifiltermetadata)를 구현합니다. 따라서 `IFilterFactory` 인스턴스를 필터 파이프라인에서 `IFilterMetadata` 인스턴스로 사용할 수 있습니다. 프레임워크가 필터를 호출하려고 준비하는 경우 `IFilterFactory`으로 캐스팅을 시도합니다. 해당 캐스트에 성공하면 [CreateInstance](/dotnet/api/microsoft.aspnetcore.mvc.filters.ifilterfactory.createinstance) 메서드를 호출하여 호출되는 `IFilterMetadata` 인스턴스를 만듭니다. 앱이 시작될 때 정확한 필터 파이프라인을 명시적으로 설정할 필요가 없으므로 유연한 디자인을 제공합니다.
 
 필터를 만드는 다른 방법으로 고유한 특성 구현에서 `IFilterFactory`를 구현할 수 있습니다.
 
@@ -221,7 +217,7 @@ System.InvalidOperationException: No service for type
 'FiltersSample.Filters.AddHeaderFilterWithDI' has been registered.
 ```
 
-`ServiceFilterAttribute`는 `IFilterFactory`를 구현합니다. `IFilterFactory`은 `IFilter` 인스턴스를 만들기 위해 `CreateInstance` 메서드를 노출합니다. `CreateInstance` 메서드는 서비스 컨테이너(DI)에서 지정된 형식을 로드합니다.
+`ServiceFilterAttribute`는 `IFilterFactory`를 구현합니다. `IFilterFactory`은 `IFilterMetadata` 인스턴스를 만들기 위해 `CreateInstance` 메서드를 노출합니다. `CreateInstance` 메서드는 서비스 컨테이너(DI)에서 지정된 형식을 로드합니다.
 
 ### <a name="typefilterattribute"></a>TypeFilterAttribute
 

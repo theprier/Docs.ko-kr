@@ -9,11 +9,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: mvc/models/validation
-ms.openlocfilehash: 1ab19fad90eab9f2da58b4d62615a85d71894218
-ms.sourcegitcommit: 5130b3034165f5cf49d829fe7475a84aa33d2693
+ms.openlocfilehash: f6748ef6df865919e43cdd9ee86fcc64dbe9651a
+ms.sourcegitcommit: 63fb07fb3f71b32daf2c9466e132f2e7cc617163
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 06/10/2018
+ms.locfileid: "35252362"
 ---
 # <a name="model-validation-in-aspnet-core-mvc"></a>ASP.NET Core MVC의 모델 유효성 검사
 
@@ -99,9 +100,13 @@ MVC는오류의 최대 수(기본적으로 200개)에 도달할 때까지 필드
 
 다음 샘플에서 비즈니스 규칙에 따르면 사용자가 1960년 이후에 출시된 영화에 대해 장르를 *클래식*으로 설정하지 않을 수 있습니다. `[ClassicMovie]` 특성은 장르를 먼저 확인하고, 클래식인 경우 출시 날짜를 확인하여 1960년보다 이후인지를 확인합니다. 1960년 이후에 출시되었다면 유효성 검사에 실패합니다. 특성은 데이터 유효성을 검사하는 데 사용할 수 있는 연도를 나타내는 정수 매개 변수를 허용합니다. 다음과 같이 특성의 생성자에서 매개 변수의 값을 캡처할 수 있습니다.
 
-[!code-csharp[](validation/sample/ClassicMovieAttribute.cs?range=9-29)]
+[!code-csharp[](validation/sample/ClassicMovieAttribute.cs?range=9-28)]
 
-위의 `movie` 변수는 유효성을 검사할 형식 전송의 데이터를 포함하는 `Movie` 개체를 나타냅니다. 이 경우에 유효성 검사 코드는 규칙에 따라 `ClassicMovieAttribute` 클래스의 `IsValid` 메서드에서 날짜 및 장르를 확인합니다. 유효성 검사에 성공하면 `IsValid`는 `ValidationResult.Success` 코드를 반환하고, 유효성 검사에 실패하면 오류 메시지와 함께 `ValidationResult` 코드를 반환합니다. 사용자가 `Genre` 필드를 수정하고 형식을 제출하는 경우 `ClassicMovieAttribute`의 `IsValid` 메서드는 영화가 클래식인지 확인합니다. 기본 제공 특성과 마찬가지로 `ClassicMovieAttribute`을 `ReleaseDate`와 같은 속성에 적용하여 앞의 코드 샘플에 표시된 대로 유효성 검사를 진행합니다. 이 예제가 `Movie` 형식에서만 작동하므로 더 나은 옵션은 다음 단락에 표시된 대로 `IValidatableObject`를 사용하는 것입니다.
+위의 `movie` 변수는 유효성을 검사할 형식 전송의 데이터를 포함하는 `Movie` 개체를 나타냅니다. 이 경우에 유효성 검사 코드는 규칙에 따라 `ClassicMovieAttribute` 클래스의 `IsValid` 메서드에서 날짜 및 장르를 확인합니다. 유효성을 검사하여 `IsValid`가 `ValidationResult.Success` 코드를 반환합니다. 유효성 검사에 실패하면 오류 메시지가 발생하여 `ValidationResult`가 반환됩니다.
+
+[!code-csharp[](validation/sample/ClassicMovieAttribute.cs?range=55-58)]
+
+사용자가 `Genre` 필드를 수정하고 형식을 제출하는 경우 `ClassicMovieAttribute`의 `IsValid` 메서드는 영화가 클래식인지 확인합니다. 기본 제공 특성과 마찬가지로 `ClassicMovieAttribute`을 `ReleaseDate`와 같은 속성에 적용하여 앞의 코드 샘플에 표시된 대로 유효성 검사를 진행합니다. 이 예제가 `Movie` 형식에서만 작동하므로 더 나은 옵션은 다음 단락에 표시된 대로 `IValidatableObject`를 사용하는 것입니다.
 
 또는 `IValidatableObject` 인터페이스에서 `Validate` 메서드를 구현하여 모델에서 이 동일한 코드를 배치할 수 있습니다. 사용자 지정 유효성 검사 특성이 개별 속성 유효성 검사에서 잘 작동하는 반면 `IValidatableObject`를 구현하는 작업은 다음과 같이 클래스 수준 유효성 검사를 구현하는 데 사용될 수 있습니다.
 

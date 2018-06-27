@@ -2,30 +2,22 @@
 title: Swashbuckle 및 ASP.NET Core 시작
 author: zuckerthoben
 description: ASP.NET Core Web API 프로젝트에 Swashbuckle을 추가하여 Swagger UI를 통합하는 방법을 알아봅니다.
-manager: wpickett
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 05/08/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
+ms.date: 05/31/2018
 uid: tutorials/get-started-with-swashbuckle
-ms.openlocfilehash: 0eb9aa12419cc09899af6bc85dd32a85687dab62
-ms.sourcegitcommit: 9bc34b8269d2a150b844c3b8646dcb30278a95ea
+ms.openlocfilehash: 7a1fdad874211134308ea3feac3110ea38095d49
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/12/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36274458"
 ---
 # <a name="get-started-with-swashbuckle-and-aspnet-core"></a>Swashbuckle 및 ASP.NET Core 시작
 
 작성자: [Shayne Boyer](https://twitter.com/spboyer) 및 [Scott Addie](https://twitter.com/Scott_Addie)
 
-::: moniker range="<= aspnetcore-2.0"
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
-::: moniker-end
-::: moniker range=">= aspnetcore-2.1"
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.Swashbuckle)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
-::: moniker-end
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/web-api-help-pages-using-swagger/samples/)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 Swashbuckle에 대한 세 가지 주 구성 요소는 다음과 같습니다.
 
@@ -86,10 +78,15 @@ dotnet add TodoApi.csproj package Swashbuckle.AspNetCore
 `Startup.ConfigureServices` 메서드의 서비스 컬렉션에 Swagger 생성기를 추가합니다.
 
 ::: moniker range="<= aspnetcore-2.0"
+
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Startup2.cs?name=snippet_ConfigureServices&highlight=8-11)]
+
 ::: moniker-end
+
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.Swashbuckle/Startup2.cs?name=snippet_ConfigureServices&highlight=9-12)]
+
 ::: moniker-end
 
 `Info` 클래스를 사용하기 위해 다음 네임스페이스를 가져옵니다.
@@ -109,7 +106,7 @@ Swagger UI는 `http://localhost:<port>/swagger`에 있습니다. Swagger UI를 �
 >
 > [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Startup3.cs?name=snippet_UseSwaggerUI&highlight=4)]
 
-## <a name="customize--extend"></a>사용자 지정 및 확장
+## <a name="customize-and-extend"></a>사용자 지정 및 확장
 
 Swagger는 개체 모델을 설명하고 테마와 일치하도록 UI를 사용자 지정하는 옵션을 제공합니다.
 
@@ -157,11 +154,22 @@ warning CS1591: Missing XML comment for publicly visible type or member 'TodoCon
 
 생성된 XML 파일을 사용하도록 Swagger를 구성합니다. Linux 또는 Windows가 아닌 운영 체제의 경우 파일 이름 및 경로는 대/소문자를 구분할 수 있습니다. 예를 들어 *TodoApi.XML* 파일은 Windows에는 유효하지만 CentOS에는 그렇지 않습니다.
 
-::: moniker range="<= aspnetcore-2.0"
-[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Startup.cs?name=snippet_ConfigureServices&highlight=30-32)]
+::: moniker range="<= aspnetcore-1.1"
+
+[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Startup1x.cs?name=snippet_ConfigureServices&highlight=30-32)]
+
 ::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Startup.cs?name=snippet_ConfigureServices&highlight=30-32)]
+
+::: moniker-end
+
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.Swashbuckle/Startup.cs?name=snippet_ConfigureServices&highlight=31-33)]
+
 ::: moniker-end
 
 이전 코드에서 [리플렉션](/dotnet/csharp/programming-guide/concepts/reflection)은 Web API 프로젝트의 이름과 일치하는 XML 파일 이름을 빌드하는 데 사용됩니다. 이 방법은 생성된 XML 파일 이름이 프로젝트 이름과 일치하도록 합니다. [AppContext.BaseDirectory](/dotnet/api/system.appcontext.basedirectory#System_AppContext_BaseDirectory) 속성은 XML 파일에 대한 경로를 생성하는 데 사용됩니다.
@@ -206,10 +214,15 @@ UI는 생성된 JSON 스키마에 의해 구동됩니다.
 [\<설명>](/dotnet/csharp/programming-guide/xmldoc/remarks) 요소를 `Create` 작업 메서드 문서에 추가합니다. 이는 `<summary>` 요소에 지정된 정보를 보충하고 더 강력한 Swagger UI를 제공합니다. `<remarks>` 요소 콘텐츠는 텍스트, JSON 또는 XML로 구성될 수 있습니다.
 
 ::: moniker range="<= aspnetcore-2.0"
+
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Controllers/TodoController.cs?name=snippet_Create&highlight=4-14)]
+
 ::: moniker-end
+
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.Swashbuckle/Controllers/TodoController.cs?name=snippet_Create&highlight=4-14)]
+
 ::: moniker-end
 
 이러한 추가 주석이 포함된 향상된 UI 기능을 확인할 수 있습니다.
@@ -253,10 +266,15 @@ UI는 생성된 JSON 스키마에 의해 구동됩니다.
 API 컨트롤러에 `[Produces("application/json")]` 특성을 추가합니다. 이 특성은 컨트롤러 동작이 *application/json*의 응답 콘텐츠 형식을 지원함을 선언하는 데 사용됩니다.
 
 ::: moniker range="<= aspnetcore-2.0"
+
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Controllers/TodoController.cs?name=snippet_TodoController&highlight=1)]
+
 ::: moniker-end
+
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.Swashbuckle/Controllers/TodoController.cs?name=snippet_TodoController&highlight=1)]
+
 ::: moniker-end
 
 컨트롤러 GET 작업의 경우 **응답 콘텐츠 형식** 드롭다운에서 이 콘텐츠 형식이 기본값으로 선택됩니다.
@@ -272,10 +290,15 @@ Web API에서 데이터 주석 사용이 증가하면 UI 및 API 도움말 페�
 `Create` 작업은 성공 시 HTTP 201 상태 코드를 반환합니다. 게시된 요청 본문이 null일 경우 HTTP 400 상태 코드가 반환됩니다. Swagger UI에 적절한 문서가 없으면 소비자는 이러한 예상 결과에 대한 정보를 알 수 없습니다. 다음 예제에서 강조 표시된 줄을 추가하여 해당 문제를 해결합니다.
 
 ::: moniker range="<= aspnetcore-2.0"
+
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Controllers/TodoController.cs?name=snippet_Create&highlight=17,18,20,21)]
+
 ::: moniker-end
+
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.Swashbuckle/Controllers/TodoController.cs?name=snippet_Create&highlight=17,18,20,21)]
+
 ::: moniker-end
 
 이제 Swagger UI에서는 예상 HTTP 응답 코드를 분명히 설명합니다.

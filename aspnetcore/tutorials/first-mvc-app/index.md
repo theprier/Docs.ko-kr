@@ -2,28 +2,27 @@
 title: Windows에서 Visual Studio를 사용하여 ASP.NET Core MVC로 웹앱 만들기
 author: rick-anderson
 description: Windows에서 Visual Studio를 사용한 ASP.NET Core MVC 소개의 목차를 참조하세요.
-manager: wpickett
 ms.author: riande
 ms.date: 10/26/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: tutorials/first-mvc-app/index
-ms.openlocfilehash: 46e98bc0de19ca09921c7505aa0a2f075887cd64
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 78d567589933b641bf5202d230b25034ff06943c
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36276336"
 ---
 # <a name="create-a-web-app-with-aspnet-core-mvc-on-windows-with-visual-studio"></a>Windows에서 Visual Studio를 사용하여 ASP.NET Core MVC로 웹앱 만들기
 
-[!INCLUDE [consider RP](../../includes/razor.md)]
+[!INCLUDE [consider RP](~/includes/razor.md)]
 
 이 자습서는 세 가지 버전이 있습니다.
 
 * Windows: 이 시리즈
 * macOS: [Mac용 Visual Studio를 사용하여 ASP.NET Core MVC 앱 만들기](xref:tutorials/first-mvc-app-mac/start-mvc)
-* macOS, Linux 및 Windows: [Visual Studio Code를 사용하여 ASP.NET Core MVC 앱 만들기](xref:tutorials/first-mvc-app-xplat/start-mvc) 이 자습서 시리즈의 내용은 다음과 같습니다.
+* macOS, Linux 및 Windows: [Visual Studio Code를 사용하여 ASP.NET Core MVC 앱 만들기](xref:tutorials/first-mvc-app-xplat/start-mvc)
+
+자습서 시리즈에는 다음 항목이 포함됩니다.
 
 1. [시작](start-mvc.md)
 1. [컨트롤러 추가](adding-controller.md)

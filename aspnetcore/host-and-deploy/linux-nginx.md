@@ -1,30 +1,30 @@
 ---
 title: Nginx를 사용하여 Linux에서 ASP.NET Core 호스트
 author: rick-anderson
-description: Ubuntu 16.04에서 Nginx를 역방향 프록시로 설정하여 Kestrel에서 실행되는 ASP.NET Core 웹앱에 HTTP 트래픽을 전달하는 방법을 설명합니다.
+description: Ubuntu 16.04에서 Nginx를 역방향 프록시로 설정하여 Kestrel에서 실행되는 ASP.NET Core 웹앱에 HTTP 트래픽을 전달하는 방법을 알아봅니다.
 manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 03/13/2018
+ms.date: 05/22/2018
 ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/linux-nginx
-ms.openlocfilehash: d37aa25c712d715aa4134587a84e5923f9cb5b79
-ms.sourcegitcommit: 50d40c83fa641d283c097f986dde5341ebe1b44c
+ms.openlocfilehash: edef672ca809c560a3f9faa891586e5e255284b5
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/22/2018
-ms.locfileid: "34452557"
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34566817"
 ---
 # <a name="host-aspnet-core-on-linux-with-nginx"></a>Nginx를 사용하여 Linux에서 ASP.NET Core 호스트
 
 작성자: [Sourabh Shirhatti](https://twitter.com/sshirhatti)
 
-이 가이드에서는 Ubuntu 16.04 Server에서 프로덕션 준비 ASP.NET Core 환경을 설정하는 방법을 설명합니다.
+이 가이드에서는 Ubuntu 16.04 Server에서 프로덕션 준비 ASP.NET Core 환경을 설정하는 방법을 설명합니다. 이 지침은 최신 버전의 Ubuntu에서 작동할 수 있지만 최신 버전에서 테스트되지는 않았습니다.
 
 > [!NOTE]
-> Ubuntu 14.04의 경우 Kestrel 프로세스를 모니터링하기 위한 솔루션으로 *supervisord*를 사용하는 것이 좋습니다. *systemd*는 Ubuntu 14.04에서 사용할 수 없습니다. [이 문서의 이전 버전을 참조하세요](https://github.com/aspnet/Docs/blob/e9c1419175c4dd7e152df3746ba1df5935aaafd5/aspnetcore/publishing/linuxproduction.md).
+> Ubuntu 14.04의 경우 Kestrel 프로세스를 모니터링하기 위한 솔루션으로 *supervisord*를 사용하는 것이 좋습니다. *systemd*는 Ubuntu 14.04에서 사용할 수 없습니다. Ubuntu 14.04 지침의 경우 [이 항목의 이전 버전](https://github.com/aspnet/Docs/blob/e9c1419175c4dd7e152df3746ba1df5935aaafd5/aspnetcore/publishing/linuxproduction.md)을 참조하세요.
 
 이 가이드의 내용:
 
@@ -35,31 +35,55 @@ ms.locfileid: "34452557"
 
 ## <a name="prerequisites"></a>전제 조건
 
-1. sudo 권한을 가진 표준 사용자 계정으로 Ubuntu 16.04 Server에 액세스
-1. 기존 ASP.NET Core 앱
+1. sudo 권한을 가진 표준 사용자 계정으로 Ubuntu 16.04 Server에 액세스합니다.
+1. 서버에서 .NET Core 런타임을 설치합니다.
+   1. [.NET Core 모든 다운로드 페이지](https://www.microsoft.com/net/download/all)로 이동합니다.
+   1. **런타임** 아래의 목록에서 최신 미리 보기 상태가 아닌 런타임을 선택합니다.
+   1. Ubuntu 버전의 서버와 일치하는 Ubuntu에 대한 지침을 선택하고 수행합니다.
+1. 기존 ASP.NET Core 앱입니다.
 
-## <a name="copy-over-the-app"></a>앱을 통해 복사
+## <a name="publish-and-copy-over-the-app"></a>앱 게시 및 복사
 
-개발 환경에서 [dotnet publish](/dotnet/core/tools/dotnet-publish)를 실행하여 앱을 서버에서 실행될 수 있는 자체 포함된 디렉터리로 패키지합니다.
+[프레임워크 종속 배포](/dotnet/core/deploying/#framework-dependent-deployments-fdd)인 경우 앱을 구성합니다.
 
-무엇이든 조직의 워크플로에 통합된 도구(예: SCP, FTP)를 사용하여 ASP.NET Core 앱을 서버에 복사합니다. 다음과 같이 앱을 테스트합니다.
+서버에서 실행할 수 있는 디렉터리(예: *bin/Release/&lt;target_framework_moniker&gt;/publish*)로 앱을 패키징하기 위해 개발 환경에서 [dotnet publish](/dotnet/core/tools/dotnet-publish)를 실행합니다.
 
-* 명령줄에서 `dotnet <app_assembly>.dll`을 실행합니다.
-* 브라우저에서 `http://<serveraddress>:<port>`로 이동하여 앱이 Linux에서 작동하는지 확인합니다. 
- 
+```console
+dotnet publish --configuration Release
+```
+
+.NET Core 런타임을 서버에서 유지 관리하지 않으려는 경우 앱은 [자체 포함된 배포](/dotnet/core/deploying/#self-contained-deployments-scd)로 게시될 수도 있습니다.
+
+조직의 워크플로에 통합된 도구(예: SCP, SFTP)를 사용하여 ASP.NET Core 앱을 서버에 복사합니다. *var* 디렉터리(예: *var/aspnetcore/hellomvc*)에서 웹앱을 찾는 것이 일반적입니다.
+
+> [!NOTE]
+> 프로덕션 배포 시나리오에서 지속적인 통합 워크플로는 앱을 게시하고 자산을 서버로 복사하는 워크플로를 수행합니다.
+
+앱을 테스트합니다.
+
+1. 명령줄에서 `dotnet <app_assembly>.dll` 앱을 실행하세요.
+1. 브라우저에서 `http://<serveraddress>:<port>`로 이동하여 앱이 Linux에서 로컬로 작동하는지 확인합니다.
+
 ## <a name="configure-a-reverse-proxy-server"></a>역방향 프록시 서버 구성
 
 역방향 프록시는 동적 웹앱을 지원하기 위한 일반적인 설정입니다. 역방향 프록시는 HTTP 요청을 종료하고 이 요청을 ASP.NET Core 앱에 전달합니다.
 
-### <a name="why-use-a-reverse-proxy-server"></a>역방향 프록시 서버를 사용하는 이유는 무엇인가요?
+::: moniker range=">= aspnetcore-2.0"
+
+> [!NOTE]
+> &mdash;역방향 프록시 서버의 유무에 상관없이&mdash; ASP.NET Core 2.0 이상 앱에 대해 지원되는 유효한 호스팅 구성입니다. 자세한 내용은 [Kestrel를 역방향 프록시와 함께 사용할 경우](xref:fundamentals/servers/kestrel#when-to-use-kestrel-with-a-reverse-proxy)를 참조하세요.
+
+::: moniker-end
+
+### <a name="use-a-reverse-proxy-server"></a>역방향 프록시 서버를 사용합니다.
 
 Kestrel은 ASP.NET Core에서 동적 콘텐츠를 제공하는 데 유용합니다. 그러나 웹 지원 기능은 IIS, Apache 또는 Nginx와 같은 서버만큼 기능이 다양하지 않습니다. 역방향 프록시 서버는 정적 콘텐츠 지원, 요청 캐시, 요청 압축 및 HTTP 서버에서 SSL 종료 같은 작업을 오프로드할 수 있습니다. 역방향 프록시 서버는 전용 컴퓨터에 있거나 HTTP 서버와 함께 배포될 수 있습니다.
 
 이 가이드에서는 Nginx의 단일 인스턴스가 사용됩니다. 이 인스턴스는 HTTP 서버와 함께 동일한 서버에서 실행됩니다. 요구 사항에 따라 다른 설정을 선택할 수 있습니다.
 
-요청이 역방향 프록시를 통해 전달되므로 [Microsoft.AspNetCore.HttpOverrides](https://www.nuget.org/packages/Microsoft.AspNetCore.HttpOverrides/) 패키지의 전달된 헤더 미들웨어를 사용합니다. 이 미들웨어는 `X-Forwarded-Proto` 헤더를 사용하여 `Request.Scheme`을 업데이트하므로 리디렉션 URI 및 기타 보안 정책이 제대로 작동합니다.
+요청이 역방향 프록시를 통해 전달되므로 [Microsoft.AspNetCore.HttpOverrides](https://www.nuget.org/packages/Microsoft.AspNetCore.HttpOverrides/) 패키지의 [전달된 헤더 미들웨어](xref:host-and-deploy/proxy-load-balancer)를 사용합니다. 이 미들웨어는 `X-Forwarded-Proto` 헤더를 사용하여 `Request.Scheme`을 업데이트하므로 리디렉션 URI 및 기타 보안 정책이 제대로 작동합니다.
 
-인증 미들웨어 유형을 사용하는 경우에는 전달된 헤더 미들웨어를 먼저 실행해야 합니다. 이렇게 순서를 지정하면 인증 미들웨어가 헤더 값을 사용하고 올바른 리디렉션 URI를 생성할 수 있습니다.
+전달된 헤더 미들웨어를 호출한 후에 인증, 링크 생성, 리디렉션 및 지리적 위치 등 체계에 따라 달라지는 구성 요소를 배치해야 합니다. 일반 규칙으로 전달된 헤더 미들웨어는 진단 및 오류 처리 미들웨어를 제외한 다른 미들웨어 전에 실행해야 합니다. 이 순서를 지정하면 전달된 헤더 정보에 따라 달라지는 미들웨어는 처리하기 위해 헤더 값을 사용할 수 있습니다.
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
@@ -100,20 +124,28 @@ app.UseFacebookAuthentication(new FacebookOptions()
 
 ### <a name="install-nginx"></a>Nginx 설치
 
+`apt-get`을 사용하여 Nginx를 설치합니다. 설치 관리자는 시스템 시작 시 Nginx를 디먼으로 실행하는 *systemd* 시작 스크립트를 만듭니다. 
+
 ```bash
-sudo apt-get install nginx
+sudo -s
+nginx=stable # use nginx=development for latest development version
+add-apt-repository ppa:nginx/$nginx
+apt-get update
+apt-get install nginx
 ```
 
-> [!NOTE]
-> 선택적 Nginx 모듈이 설치될 경우 소스에서 Nginx를 빌드해야 할 수 있습니다.
+Ubuntu PPA(개인 패키지 보관)는 지원자에서 유지 관리하고 [nginx.org](https://nginx.org/)에서 배포되지 않습니다. 자세한 내용은 [Nginx: 이진 릴리스: 공식 Debian/Ubuntu 패키지](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/#official-debian-ubuntu-packages)를 참조하세요.
 
-`apt-get`을 사용하여 Nginx를 설치합니다. 설치 관리자는 시스템 시작 시 Nginx를 디먼으로 실행하는 System V init 스크립트를 만듭니다. Nginx가 처음 설치되었으므로 다음을 실행하여 명시적으로 시작합니다.
+> [!NOTE]
+> 선택적 Nginx 모듈이 필요한 경우 소스에서 Nginx를 빌드해야 할 수 있습니다.
+
+Nginx가 처음 설치되었으므로 다음을 실행하여 명시적으로 시작합니다.
 
 ```bash
 sudo service nginx start
 ```
 
-브라우저에 Nginx에 대한 기본 방문 페이지가 표시되는지 확인합니다.
+브라우저에 Nginx에 대한 기본 방문 페이지가 표시되는지 확인합니다. 방문 페이지는 `http://<server_IP_address>/index.nginx-debian.html`에 도달할 수 있습니다.
 
 ### <a name="configure-nginx"></a>Nginx 구성
 
@@ -128,8 +160,10 @@ server {
         proxy_http_version 1.1;
         proxy_set_header   Upgrade $http_upgrade;
         proxy_set_header   Connection keep-alive;
-        proxy_set_header   Host $http_host;
+        proxy_set_header   Host $host;
         proxy_cache_bypass $http_upgrade;
+        proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header   X-Forwarded-Proto $scheme;
     }
 }
 ```
@@ -150,6 +184,21 @@ server {
 > 적절한 [server_name 지시문](https://nginx.org/docs/http/server_names.html)을 지정하지 않으면 앱이 보안 취약성에 노출됩니다. 전체 부모 도메인을 제어하는 경우 하위 도메인 와일드카드 바인딩(예: `*.example.com`)에는 이러한 보안 위험이 발생하지 않습니다(취약한 `*.com`과 반대임). 자세한 내용은 [rfc7230 섹션-5.4](https://tools.ietf.org/html/rfc7230#section-5.4)를 참조하세요.
 
 Nginx 구성이 설정되면 `sudo nginx -t`를 실행하여 구성 파일의 구문을 확인합니다. 구성 파일 테스트에 성공하면 `sudo nginx -s reload`를 실행하여 Nginx가 변경 내용을 선택하도록 합니다.
+
+앱을 서버에서 직접 실행하려면:
+
+1. 앱의 디렉터리로 이동합니다.
+1. 앱의 실행 파일인 `./<app_executable>`을 실행합니다.
+
+사용 권한 오류가 발생하는 경우 사용 권한을 변경합니다.
+
+```console
+chmod u+x <app_executable>
+```
+
+앱이 서버에서 실행되지만 인터넷을 통해 응답하지 않는 경우 서버의 방화벽을 확인하고 포트 80이 열려 있는지 확인합니다. Ubuntu Azure VM을 사용하는 경우 인바운드 포트 80 트래픽을 사용하는 NSG(네트워크 보안 그룹) 규칙을 추가합니다. 인바운드 규칙을 사용할 때 아웃바운드 트래픽이 자동으로 부여되므로 아웃바운드 포트 80 규칙을 사용하도록 설정할 필요가 없습니다.
+
+앱 테스트를 완료한 후에 명령 프롬프트에서 `Ctrl+C`를 사용하여 앱을 종료합니다.
 
 ## <a name="monitoring-the-app"></a>앱 모니터링
 
@@ -259,20 +308,6 @@ sudo ufw allow 443/tcp
 
 ### <a name="securing-nginx"></a>Nginx 보안
 
-Nginx의 기본 배포 시에는 SSL이 사용하도록 설정되지 않습니다. 추가 보안 기능을 사용하도록 설정하려면 소스에서 빌드합니다.
-
-#### <a name="download-the-source-and-install-the-build-dependencies"></a>소스 다운로드 및 빌드 종속성 설치
-
-```bash
-# Install the build dependencies
-sudo apt-get update
-sudo apt-get install build-essential zlib1g-dev libpcre3-dev libssl-dev libxslt1-dev libxml2-dev libgd2-xpm-dev libgeoip-dev libgoogle-perftools-dev libperl-dev
-
-# Download Nginx 1.10.0 or latest
-wget http://www.nginx.org/download/nginx-1.10.0.tar.gz
-tar zxf nginx-1.10.0.tar.gz
-```
-
 #### <a name="change-the-nginx-response-name"></a>Nginx 응답 이름 변경
 
 *src/http/ngx_http_header_filter_module.c*를 편집합니다.
@@ -282,20 +317,9 @@ static char ngx_http_server_string[] = "Server: Web Server" CRLF;
 static char ngx_http_server_full_string[] = "Server: Web Server" CRLF;
 ```
 
-#### <a name="configure-the-options-and-build"></a>옵션 구성 및 빌드
+#### <a name="configure-options"></a>옵션 구성
 
-정규식의 경우 PCRE 라이브러리가 필요합니다. 정규식은 ngx_http_rewrite_module에 대한 위치 지시문에서 사용됩니다. http_ssl_module은 HTTPS 프로토콜 지원을 추가합니다.
-
-*ModSecurity* 같은 웹앱 방화벽을 사용하여 앱을 강화해 보세요.
-
-```bash
-./configure
---with-pcre=../pcre-8.38
---with-zlib=../zlib-1.2.8
---with-http_ssl_module
---with-stream
---with-mail=dynamic
-```
+추가 필수 모듈을 사용하여 서버를 구성합니다. [ModSecurity](https://www.modsecurity.org/)와 같은 웹앱 방화벽을 사용하여 앱을 강화해 보세요.
 
 #### <a name="configure-ssl"></a>SSL 구성
 
@@ -337,3 +361,9 @@ sudo nano /etc/nginx/nginx.conf
 ```
 
 줄 `add_header X-Content-Type-Options "nosniff";`를 추가하고 파일을 저장한 다음 Nginx를 다시 시작합니다.
+
+## <a name="additional-resources"></a>추가 자료
+
+* [Nginx: 이진 릴리스: 공식 Debian/Ubuntu 패키지](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/#official-debian-ubuntu-packages)
+* [프록시 서버 및 부하 분산 장치를 사용하도록 ASP.NET Core 구성](xref:host-and-deploy/proxy-load-balancer)
+* [NGINX: 전달된 헤더 사용](https://www.nginx.com/resources/wiki/start/topics/examples/forwarded/)

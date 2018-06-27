@@ -11,12 +11,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/host/generic-host
-ms.openlocfilehash: 15ce81a4226921ce053096751d7678ada36235c0
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: a851f2faf13792b2c232c124371d07710ae1fce3
+ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 06/04/2018
-ms.locfileid: "34728975"
+ms.locfileid: "34734473"
 ---
 # <a name="net-generic-host"></a>.NET 일반 호스트
 
@@ -39,7 +39,7 @@ Visual Studio Code에서 콘솔을 설정하려면:
 
 ## <a name="introduction"></a>소개
 
-일반 호스트 라이브러리는 [Microsoft.Extensions.Hosting 네임스페이스](/dotnet/api/microsoft.extensions.hosting)에서 사용할 수 있으며, [Microsoft.Extensions.Hosting NuGet 패키지](https://www.nuget.org/packages/Microsoft.Extensions.Hosting/)에서 제공합니다. `Microsoft.Extensions.Hosting` 패키지는 [Microsoft.AspNetCore.App](xref:fundamentals/metapackage-app) 메타패키지에 포함되어 있습니다.
+일반 호스트 라이브러리는 [Microsoft.Extensions.Hosting 네임스페이스](/dotnet/api/microsoft.extensions.hosting)에서 사용할 수 있으며, [Microsoft.Extensions.Hosting](https://www.nuget.org/packages/Microsoft.Extensions.Hosting/)에서 제공합니다. `Microsoft.Extensions.Hosting` 패키지는 [Microsoft.AspNetCore.App 메타패키지](xref:fundamentals/metapackage-app)(ASP.NET Core 2.1 이상)에 포함되어 있습니다.
 
 [IHostedService](/dotnet/api/microsoft.extensions.hosting.ihostedservice)는 코드 실행 진입점입니다. 각 `IHostedService` 구현은 [ConfigureServices의 서비스 등록](#configureservices) 순서대로 실행됩니다. [StartAsync](/dotnet/api/microsoft.extensions.hosting.ihostedservice.startasync)는 호스트가 시작될 때 각 `IHostedService`에서 호출되고, [StopAsync](/dotnet/api/microsoft.extensions.hosting.ihostedservice.stopasync)는 호스트가 점진적으로 종료될 때 등록 순서의 역순으로 호출됩니다.
 

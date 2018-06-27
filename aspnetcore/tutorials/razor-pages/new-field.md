@@ -2,19 +2,16 @@
 title: ASP.NET Core의 Razor 페이지에 새 필드 추가
 author: rick-anderson
 description: Entity Framework Core를 사용하여 Razor 페이지에 새 필드를 추가하는 방법을 보여 줍니다.
-manager: wpickett
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
-ms.date: 08/07/2017
-ms.prod: aspnet-core
-ms.technology: aspnet
-ms.topic: get-started-article
+ms.date: 05/30/2018
 uid: tutorials/razor-pages/new-field
-ms.openlocfilehash: 45a39defc9480b0e4fe85ae7ed6bfa654a35264a
-ms.sourcegitcommit: c79fd3592f444d58e17518914f8873d0a11219c0
+ms.openlocfilehash: d9bf8c7cea20bf38aacf432465d7b33514bcd64d
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/18/2018
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277295"
 ---
 # <a name="add-a-new-field-to-a-razor-page-in-aspnet-core"></a>ASP.NET Core의 Razor 페이지에 새 필드 추가
 
@@ -22,13 +19,25 @@ ms.lasthandoff: 04/18/2018
 
 이 섹션에서는 [Entity Framework](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db) Code First 마이그레이션을 사용하여 모델에 새 필드를 추가하고 해당 변경 내용을 데이터베이스로 마이그레이션합니다.
 
-EF Code First를 사용하여 자동으로 데이터베이스를 만들 때 Code First는 데이터베이스에 테이블을 추가하여 데이터베이스의 스키마가 생성된 모델 클래스와 동기화되어 있는지 여부를 추적합니다. 동기화되어 있지 않은 경우 EF에서 예외를 throw합니다. 이렇게 하면 더 쉽게 일관성이 없는 데이터베이스/코드 문제를 찾을 수 있습니다.
+EF Code First를 사용하여 자동으로 데이터베이스를 만들 경우 Code First는
 
-## <a name="adding-a-rating-property-to-the-movie-model"></a>동영상 모델에 등급 속성 추가
+* 데이터베이스에 테이블을 추가하여 데이터베이스의 스키마가 생성된 모델 클래스와 동기화되어 있는지 여부를 추적합니다.
+* 모델 클래스가 DB와 동기화되지 않으면 EF는 예외를 throw합니다. 
+
+동기화된 스키마/모델의 자동 확인을 통해 일관성이 없는 데이터베이스/코드 문제를 쉽게 찾을 수 있습니다.
+
+## <a name="adding-a-rating-property-to-the-movie-model"></a>영화 모델에 등급 속성 추가
 
 *Models/Movie.cs* 파일을 열고 `Rating` 속성을 추가합니다.
-
+::: moniker range="= aspnetcore-2.0"
 [!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.1"
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Models/MovieDateRating.cs?highlight=13&name=snippet)]
+
+::: moniker-end
 
 앱을 빌드합니다(Ctrl+Shift+B).
 
@@ -70,7 +79,13 @@ SqlException: Invalid column name 'Rating'.
 
 [!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/SeedDataRating.cs?name=snippet1&highlight=8)]
 
+::: moniker range="= aspnetcore-2.0"
 [완료된 SeedData.cs 파일](https://github.com/aspnet/Docs/blob/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie/Models/SeedDataRating.cs)을 참조하세요.
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.1"
+[완료된 SeedData.cs 파일](https://github.com/aspnet/Docs/blob/master/aspnetcore/tutorials/razor-pages/razor-pages-start/sample/RazorPagesMovie21/Models/SeedDataRating.cs)을 참조하세요.
+::: moniker-end
 
 솔루션을 빌드합니다.
 

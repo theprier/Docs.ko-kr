@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: 89d9a51334bdd50b72213d32fa194808ac6a93b9
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: dff798b19ad6d10a8ce93001ed4cebe732c54320
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34729317"
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>ASP.NET Core에서 HTTP.sys 웹 서버 구현
 
@@ -63,7 +64,7 @@ HTTP.sys는 많은 유형의 공격으로부터 보호하고 모든 기능을 �
 
 ### <a name="configure-the-aspnet-core-app-to-use-httpsys"></a>HTTP.sys를 사용하도록 ASP.NET Core 앱 구성
 
-1. [Microsoft.AspNetCore.All 메타패키지](xref:fundamentals/metapackage)([nuget.org](https://www.nuget.org/packages/Microsoft.AspNetCore.All/))(ASP.NET Core 2.0 이상)를 사용할 경우 프로젝트 파일의 패키지 참조가 필요하지 않습니다. `Microsoft.AspNetCore.All` 메타패키지를 사용하지 않는 경우 [Microsoft.AspNetCore.Server.HttpSys](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.HttpSys/)에 패키지 참조를 추가합니다.
+1. [Microsoft.AspNetCore.App 메타패키지](xref:fundamentals/metapackage-app)([nuget.org](https://www.nuget.org/packages/Microsoft.AspNetCore.App/))(ASP.NET Core 2.1이상)를 사용할 경우 프로젝트 파일의 패키지 참조가 필요하지 않습니다. `Microsoft.AspNetCore.App` 메타패키지를 사용하지 않는 경우 [Microsoft.AspNetCore.Server.HttpSys](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.HttpSys/)에 패키지 참조를 추가합니다.
 
 2. 웹 호스트를 빌드할 때 [UseHttpSys](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderhttpsysextensions.usehttpsys) 확장 메서드를 호출하여 필요한 [HTTP.sys 옵션](/dotnet/api/microsoft.aspnetcore.server.httpsys.httpsysoptions)을 지정합니다.
 
@@ -167,7 +168,6 @@ HTTP.sys는 많은 유형의 공격으로부터 보호하고 모든 기능을 �
    2. 필요한 경우, 자체 서명 X.509 인증서를 생성합니다.
 
       [!INCLUDE [How to make an X.509 cert](../../includes/make-x509-cert.md)]
-
 
 4. 방화벽 포트를 열어 HTTP.sys에 도달하는 트래픽을 허용합니다. *netsh.exe* 또는 [PowerShell cmdlet](https://technet.microsoft.com/library/jj554906)을 사용합니다.
 

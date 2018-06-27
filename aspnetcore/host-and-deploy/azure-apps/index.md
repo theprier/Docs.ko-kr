@@ -10,11 +10,12 @@ ms.prod: asp.net-core
 ms.technology: aspnet
 ms.topic: article
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: 9e438cef9db61e725b5385da53e8aa2b407218c3
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 4cf81a3e269500a5108f280348fbddd172df10a0
+ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/07/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34687505"
 ---
 # <a name="host-aspnet-core-on-azure-app-service"></a>Azure App Service에서 ASP.NET Core 호스트
 
@@ -103,25 +104,29 @@ Azure App Service/IIS에서 호스트하는 앱의 일반적인 배포 구성 �
 
 ### <a name="install-the-preview-site-extension"></a>미리 보기 사이트 확장 설치
 
-* Azure Portal에서 App Service 블레이드로 이동합니다.
-* 검색 상자에 "ex"를 입력합니다.
-* **확장**을 선택합니다.
-* "추가"를 선택합니다.
+1. Azure Portal에서 App Service 블레이드로 이동합니다.
+1. 웹앱을 선택합니다.
+1. 검색 상자에 "ex"를 입력하거나 관리 창 목록을 **개발 도구** 아래로 스크롤합니다.
+1. **개발 도구** > **확장**을 선택합니다.
+1. **추가**를 선택합니다.
 
-![이전 단계에서 Azure 앱 블레이드](index/_static/x1.png)
+   ![이전 단계에서 Azure 앱 블레이드](index/_static/x1.png)
 
-* **ASP.NET Core 2.1(x86) 런타임** 또는 **ASP.NET Core 2.1(x64) 런타임**을 선택합니다.
-* **확인**을 선택합니다. **확인**을 다시 선택합니다.
+1. **ASP.NET Core 확장**을 선택합니다.
+1. **확인**을 선택하여 적합한 조건을 적용합니다.
+1. 확장을 설치하려면 **확인**을 선택합니다.
 
-추가 작업이 완료되면 최신.NET Core 2.1 미리 보기가 설치됩니다. 콘솔에서 `dotnet --info`를 실행하여 설치를 확인할 수 있습니다. **App Service** 블레이드에서:
+추가 작업이 완료되면 최신.NET Core 미리 보기가 설치됩니다. 콘솔에서 `dotnet --info`를 실행하여 설치를 확인할 수 있습니다. **App Service** 블레이드에서:
 
-* 검색 상자에 "con"을 입력합니다.
-* **콘솔**을 선택합니다.
-* 콘솔에 `dotnet --info`를 입력합니다.
+1. 검색 상자에 "con"을 입력하거나 관리 창 목록을 **개발 도구** 아래로 스크롤합니다.
+1. **개발 도구** > **콘솔**을 선택합니다.
+1. 콘솔에 `dotnet --info`를 입력합니다.
+
+`2.1.300-preview1-008174` 버전이 최신 미리 보기 릴리스인 경우 명령 프롬프트에서 `dotnet --info`를 실행하여 다음과 같은 출력을 가져옵니다.
 
 ![이전 단계에서 Azure 앱 블레이드](index/_static/cons.png)
 
-앞의 이미지는 이 내용이 작성된 현재 시간이었습니다. 다른 버전으로 표시될 수 있습니다.
+위 이미지(`2.1.300-preview1-008174`)에 표시된 ASP.NET Core 버전은 예제입니다. `dotnet --info`를 실행하면 사이트 확장을 구성할 때 최신 미리 보기 버전의 ASP.NET Core가 표시됩니다.
 
 `dotnet --info`는 미리 보기가 설치되어 있는 사이트 확장에 대한 경로를 표시합니다. 기본 *ProgramFiles* 위치 대신 사이트 확장에서 앱이 실행된다고 표시합니다. *ProgramFiles*가 표시되면 사이트를 다시 시작하고 `dotnet --info`를 실행합니다.
 
@@ -142,7 +147,7 @@ ARM 템플릿을 사용하여 앱을 만들고 배포하는 경우 `siteextensio
 
 ### <a name="use-docker-with-web-apps-for-containers"></a>Web Apps for Containers에서 Docker 사용
 
-[Docker 허브](https://hub.docker.com/r/microsoft/aspnetcore/)에는 최신 2.1 미리 보기 Docker 이미지가 포함됩니다. 이미지는 기본 이미지로 사용할 수 있습니다. 이미지를 사용하고 일반적으로 Web App for Containers에 배포합니다.
+[Docker 허브](https://hub.docker.com/r/microsoft/aspnetcore/)에는 최신 미리 보기 Docker 이미지가 포함됩니다. 이미지는 기본 이미지로 사용할 수 있습니다. 이미지를 사용하고 일반적으로 Web App for Containers에 배포합니다.
 
 ## <a name="additional-resources"></a>추가 자료
 

@@ -2,20 +2,16 @@
 title: ASP.NET Core용 Visual Studio의 개발 시간 IIS 지원
 author: shirhatti
 description: Windows Server에서 IIS를 통해 실행될 경우 ASP.NET Core 앱 디버그에 대한 지원을 확인해 보세요.
-manager: wpickett
 ms.author: riande
 ms.custom: mvc
 ms.date: 05/14/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: host-and-deploy/iis/development-time-iis-support
-ms.openlocfilehash: 0bf4585d44e61c5e7e5b89ce9d8dfdfa10d5460e
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: eb8b4369d6d5434adbac187f59b18d7a2b80055c
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34233081"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36277656"
 ---
 # <a name="development-time-iis-support-in-visual-studio-for-aspnet-core"></a>ASP.NET Core용 Visual Studio의 개발 시간 IIS 지원
 
@@ -25,7 +21,10 @@ ms.locfileid: "34233081"
 
 ## <a name="prerequisites"></a>전제 조건
 
-[!INCLUDE[](~/includes/net-core-prereqs-windows.md)]
+* [Windows용 Visual Studio](https://www.microsoft.com/net/download/windows)
+* **ASP.NET 및 웹 개발** 워크로드
+* **.NET Core 플랫폼 간 개발** 워크로드
+* X.509 보안 인증서
 
 ## <a name="enable-iis"></a>IIS 활성화
 
