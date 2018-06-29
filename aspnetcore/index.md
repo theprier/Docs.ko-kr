@@ -4,15 +4,13 @@ author: rick-anderson
 description: 클라우드 기반 인터넷에 연결된 최신 응용 프로그램을 빌드하기 위한 플랫폼 간 고성능 오픈 소스 프레임워크인 ASP.NET Core에 대한 소개를 가져옵니다.
 ms.author: riande
 ms.date: 02/28/2018
-ms.technology: aspnetcore
-ms.topic: conceptual
 uid: index
-ms.openlocfilehash: 3b55390e23f538a298e9fe97c9678fe6841b818c
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 6de7f1bc8229c5de519e4064dda0a7061cf8b9c6
+ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272872"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37077714"
 ---
 # <a name="introduction-to-aspnet-core"></a>ASP.NET Core 소개
 

@@ -1,20 +1,19 @@
 ---
-title: ASP.NET Core에서 인증자 앱에 대 한 QR 코드 생성 사용
+title: ASP.NET Core에서 TOTP authenticator 앱에 대 한 QR 코드 생성 사용
 author: rick-anderson
-description: ASP.NET Core 2 단계 인증을 사용 하는 인증자 앱에 대 한 QR 코드 생성을 활성화 하는 방법을 알아봅니다.
+description: ASP.NET Core 2 단계 인증을 사용 하는 TOTP authenticator 앱에 대 한 QR 코드 생성을 활성화 하는 방법을 알아봅니다.
+monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 09/24/2017
 uid: security/authentication/identity-enable-qrcodes
-ms.openlocfilehash: 7604371eef1e8dcf35a5c47ef11b66c0669cacc5
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: b0d8f104119340b97bd65f1826bb921ca875acf8
+ms.sourcegitcommit: 1faf2525902236428dae6a59e375519bafd5d6d7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274731"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37089973"
 ---
-# <a name="enable-qr-code-generation-for-authenticator-apps-in-aspnet-core"></a>ASP.NET Core에서 인증자 앱에 대 한 QR 코드 생성 사용
-
-참고:이 항목을 적용할 ASP.NET Core 2.x
+# <a name="enable-qr-code-generation-for-totp-authenticator-apps-in-aspnet-core"></a>ASP.NET Core에서 TOTP authenticator 앱에 대 한 QR 코드 생성 사용
 
 ASP.NET Core authenticator 응용 프로그램에서 개별 인증에 대 한 지원이 포함 되어 있습니다. 시간 기반 일회용 암호 알고리즘 (TOTP)를 사용 하 여 요소 인증 (2FA) 인증자 앱, 두 가지 권장 접근법 2FA에 대 한 업계 있습니다. 2FA TOTP를 사용 하 여는 SMS 2FA 하는 것이 좋습니다. Authenticator 앱에 있는 사용자는 자신의 사용자 이름과 암호를 확인 한 후에 들어가야 합니다. 6 to 8 자리 코드를 제공 합니다. 일반적으로 ऍ 스마트 폰에 설치 됩니다.
 
@@ -58,7 +57,7 @@ ASP.NET Core 웹 응용 프로그램 템플릿 인증자를 지원 하지만 QRC
 
 ## <a name="change-the-site-name-in-the-qr-code"></a>QR 코드에 사이트 이름을 변경 합니다.
 
-처음 프로젝트를 만들 때 선택한 프로젝트 이름에서 QR 코드에 사이트 이름을 가져옵니다. 검색 하 여 변경할 수는 `GenerateQrCodeUri(string email, string unformattedKey)` 에서 메서드는 *Pages\Account\Manage\EnableAuthenticator.cshtml.cs* (Razor 페이지) 파일 또는 *Controllers\ManageController.cs* (MVC) 파일입니다. 
+처음 프로젝트를 만들 때 선택한 프로젝트 이름에서 QR 코드에 사이트 이름을 가져옵니다. 검색 하 여 변경할 수는 `GenerateQrCodeUri(string email, string unformattedKey)` 에서 메서드는 *Pages\Account\Manage\EnableAuthenticator.cshtml.cs* (Razor 페이지) 파일 또는 *Controllers\ManageController.cs* (MVC) 파일입니다.
 
 서식 파일에서 기본 코드의 모양은 다음과 같습니다.
 
@@ -82,7 +81,7 @@ private string GenerateQrCodeUri(string email, string unformattedKey)
 QR 코드에 대 한 올바른 형식의 URL은에서 사용할 수는 있습니다.
 
 * `AuthenticatorUri` 모델의 속성입니다.
-* `data-url` 속성에는 `qrCodeData` 요소입니다. 
+* `data-url` 속성에는 `qrCodeData` 요소입니다.
 
 ## <a name="totp-client-and-server-time-skew"></a>TOTP 클라이언트 및 서버 시간 차가
 

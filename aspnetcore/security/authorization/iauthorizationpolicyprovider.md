@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/02/2018
 uid: security/authorization/iauthorizationpolicyprovider
-ms.openlocfilehash: 524928a5b291e02556d11a762d86430a6dc94660
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 218d7a495655598046671093c0cfe7b9622aca5e
+ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277259"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37077604"
 ---
 # <a name="custom-authorization-policy-providers-using-iauthorizationpolicyprovider-in-aspnet-core"></a>ASP.NET Core에서 IAuthorizationPolicyProvider를 사용 하 여 사용자 지정 권한 부여 정책 공급자 
 
@@ -88,7 +88,7 @@ public IActionResult RequiresMinimumAge10()
 사용 하는 경우 `MinimumAgeAuthorizationAttribute`, 권한 부여 정책 이름 패턴을 따를 것 `"MinimumAge" + Age`하므로 사용자 지정 `IAuthorizationPolicyProvider` 권한 부여 정책에서 생성 해야 합니다.
 
 * 정책 이름에서 나 구문 분석 합니다.
-* 사용 하 여 `AuthorizationPolicyBuiler` 새로 만들려면 `AuthorizationPolicy`
+* 사용 하 여 `AuthorizationPolicyBuilder` 새로 만들려면 `AuthorizationPolicy`
 * 와 나가에 따라 정책에 요구 사항 추가 `AuthorizationPolicyBuilder.AddRequirements`합니다. 다른 시나리오에서 사용할 수 있습니다 `RequireClaim`, `RequireRole`, 또는 `RequireUserName` 대신 합니다.
 
 ```CSharp
