@@ -19,7 +19,7 @@ Entity Framework Core가 `Price`를 데이터베이스의 통화에 올바르게
 
 [!code-cshtml[](~/tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Index.cshtml?highlight=16-18&range=32-)]
 
-[태그 도우미](xref:mvc/views/tag-helpers/intro)를 사용하면 서버 쪽 코드를 Razor 파일에서 HTML 요소를 만들고 렌더링하는 데 사용할 수 있습니다. 위의 코드에서 `AnchorTagHelper`는 Razor 페이지에서 HTML `href` 특성 값(경로는 상대적), `asp-page` 및 경로 ID(`asp-route-id`)를 동적으로 생성합니다. 자세한 내용은 [페이지에 대한 URL 생성](xref:mvc/razor-pages/index#url-generation-for-pages)을 참조하세요.
+[태그 도우미](xref:mvc/views/tag-helpers/intro)를 사용하면 서버 쪽 코드를 Razor 파일에서 HTML 요소를 만들고 렌더링하는 데 사용할 수 있습니다. 위의 코드에서 `AnchorTagHelper`는 Razor 페이지에서 HTML `href` 특성 값(경로는 상대적), `asp-page` 및 경로 ID(`asp-route-id`)를 동적으로 생성합니다. 자세한 내용은 [페이지에 대한 URL 생성](xref:razor-pages/index#url-generation-for-pages)을 참조하세요.
 
 선호하는 브라우저에서 **소스 보기**를 사용하여 생성된 표시를 검사합니다. 생성된 HTML의 일부는 다음과 같습니다.
 
@@ -31,7 +31,7 @@ Entity Framework Core가 `Price`를 데이터베이스의 통화에 올바르게
 </td>
 ```
 
-동적으로 생성된 링크는 쿼리 문자열이 포함된 동영상 ID를 전달합니다(예: `http://localhost:5000/Movies/Details?id=2` ). 
+동적으로 생성된 링크는 쿼리 문자열이 포함된 동영상 ID를 전달합니다(예: `http://localhost:5000/Movies/Details?id=2`).
 
 편집, 세부 정보 및 삭제 Razor 페이지를 "{id:int}" 경로 템플릿을 사용하도록 업데이트합니다. 이러한 각 페이지에 대한 page 지시문을 `@page`에서 `@page "{id:int}"`로 변경합니다. 앱을 실행한 다음 소스를 봅니다. 생성된 HTML에서 URL의 경로 부분에 ID를 추가합니다.
 

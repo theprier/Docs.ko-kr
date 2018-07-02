@@ -5,12 +5,12 @@ description: ASP.NET Core의 로깅 프레임워크에 대해 알아봅니다. �
 ms.author: tdykstra
 ms.date: 12/15/2017
 uid: fundamentals/logging/index
-ms.openlocfilehash: 2307df3b4b571840f31808b86b48b0e6fb2de852
-ms.sourcegitcommit: 7003d27b607e529642ded0400aa48ae692a0e666
+ms.openlocfilehash: 4ceb7886cc9410c3b39beec68c2b11ea3578d851
+ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37033315"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37077779"
 ---
 # <a name="logging-in-aspnet-core"></a>ASP.NET Core에 로그인
 
@@ -610,6 +610,10 @@ Azure 로그 스트리밍을 구성하려면:
 **로그 스트리밍** 페이지로 이동하여 응용 프로그램 메시지를 봅니다. 응용 프로그램이 `ILogger` 인터페이스를 통해 기록한 것입니다.
 
 ![Azure Portal 응용 프로그램 로그 스트리밍](index/_static/azure-log-streaming.png)
+
+## <a name="azure-application-insights-trace-logging"></a>Azure Application Insights 추적 로깅
+
+[Application Insights](https://azure.microsoft.com/services/application-insights/) SDK는 ASP.NET Core 로깅 인프라를 통해 생성된 로그에서 추적 원격 분석을 수집할 수 있습니다. 자세한 내용은 [Microsoft/ApplicationInsights-aspnetcore Wiki: Logging](https://github.com/Microsoft/ApplicationInsights-aspnetcore/wiki/Logging)을 참조합니다.
 
 ## <a name="additional-resources"></a>추가 자료
 

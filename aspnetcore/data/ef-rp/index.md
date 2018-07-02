@@ -5,16 +5,16 @@ description: ''
 ms.author: riande
 ms.date: 03/15/2017
 uid: data/ef-rp/index
-ms.openlocfilehash: 0bb700e4ee6b33c65ab519c41bab620def261752
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 56d317e4334ee006c8b52163594e2850c11d23d7
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277514"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36960868"
 ---
 # <a name="aspnet-core-razor-pages-with-ef-core---tutorial-series"></a>ASP.NET Core Razor 페이지 및 EF Core - 자습서 시리즈
 
-이 일련의 자습서에서는 데이터 액세스를 위해 Entity Framework(EF) Core를 사용하는 ASP.NET Core Razor Pages 웹앱을 만드는 방법을 설명합니다. 이 자습서에는 Visual Studio 2017이 필요합니다.
+이 일련의 자습서에서는 데이터 액세스를 위해 Entity Framework(EF) Core를 사용하는 ASP.NET Core Razor Pages 웹앱을 만드는 방법을 설명합니다.
 
 1. [시작](xref:data/ef-rp/intro)
 1. [만들기, 읽기, 업데이트 및 삭제 작업](xref:data/ef-rp/crud)

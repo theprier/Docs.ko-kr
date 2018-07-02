@@ -2,20 +2,16 @@
 title: ASP.NET Core 웹 호스트
 author: guardrex
 description: 앱 시작 및 수명 관리를 담당하는 ASP.NET Core에서의 웹 호스트에 대해 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.custom: mvc
-ms.date: 05/16/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
+ms.date: 06/19/2018
 uid: fundamentals/host/web-host
-ms.openlocfilehash: ce95599ec8e940635ca63c3bf9a3c28784a3f371
-ms.sourcegitcommit: 43bd79667bbdc8a07bd39fb4cd6f7ad3e70212fb
+ms.openlocfilehash: 98070f49c98919e7ebff41ecc69c953249977dcc
+ms.sourcegitcommit: e22097b84d26a812cd1380a6b2d12c93e522c125
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34687492"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314151"
 ---
 # <a name="aspnet-core-web-host"></a>ASP.NET Core 웹 호스트
 
@@ -47,7 +43,10 @@ public class Program
 
 * [Kestrel](xref:fundamentals/servers/kestrel)을 웹 서버로 구성하고 앱의 호스팅 구성 공급자를 사용하여 서버를 구성합니다. Kestrel 기본 옵션의 경우 [ASP.NET Core에서 Kestrel 웹 서버 구현의 Kestrel 옵션 섹션](xref:fundamentals/servers/kestrel#kestrel-options)을 참조하세요.
 * 콘텐츠 루트를 [Directory.GetCurrentDirectory](/dotnet/api/system.io.directory.getcurrentdirectory)에서 반환된 경로로 설정합니다.
-* 다음에서 선택적인 [IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration)을 로드합니다.
+* 다음에서 [호스트 구성](#host-configuration-values)을 로드합니다.
+  * 접두사가 `ASPNETCORE_`인 환경 변수(예: `ASPNETCORE_ENVIRONMENT`)입니다.
+  * 명령줄 인수.
+* 다음에서 앱 구성을 로드합니다.
   * *appsettings.json*.
   * *appsettings.{Environment}.json*.
   * 앱이 항목 어셈블리를 사용하여 `Development` 환경에서 실행되는 경우 [사용자 암호](xref:security/app-secrets)입니다.
@@ -56,6 +55,41 @@ public class Program
 * 콘솔 및 디버그 출력에 대한 [로깅](xref:fundamentals/logging/index)을 구성합니다. 로깅은 *appsettings.json* 또는 *appsettings.{Environment}.json* 파일의 로깅 구성 섹션에 지정된 [로그 필터링](xref:fundamentals/logging/index#log-filtering) 규칙을 포함합니다.
 * IIS 뒤에서 실행하는 경우 [IIS 통합](xref:host-and-deploy/iis/index)을 활성화합니다. [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)을 사용하는 경우 서버가 수신 대기할 기본 경로 및 포트를 구성합니다. 모듈은 IIS와 Kestrel 간에 역방향 프록시를 만듭니다. 또한 [시작 오류를 캡처](#capture-startup-errors)하도록 앱을 구성합니다. IIS 기본 옵션의 경우 [IIS가 있는 Windows에서 ASP.NET Core 호스팅의 IIS 옵션 섹션](xref:host-and-deploy/iis/index#iis-options)을 참조하세요.
 * 앱의 환경이 개발인 경우 [ServiceProviderOptions.ValidateScopes](/dotnet/api/microsoft.extensions.dependencyinjection.serviceprovideroptions.validatescopes)을 `true`으로 설정합니다. 자세한 내용은 [범위 유효성 검사](#scope-validation)를 참조하세요.
+
+`CreateDefaultBuilder`에 의해 정의된 구성은 [ConfigureAppConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configureappconfiguration), [ConfigureLogging](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configurelogging), 기타 메서드 및 [IWebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.iwebhostbuilder)의 확장 메서드로 재정의되고 확대될 수 있습니다. 몇 가지 예제는 다음과 같습니다.
+
+* [ConfigureAppConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.configureappconfiguration)은 앱에 대한 추가 `IConfiguration`을 지정하는 데 사용됩니다. 다음 `ConfigureAppConfiguration` 호출은 *appsettings.xml* 파일에 앱 구성을 포함하는 대리자를 추가합니다. `ConfigureAppConfiguration`이 여러 번 호출될 수 있습니다. 이 구성은 호스트(예: 서버 URL 또는 환경)에 적용되지 않습니다. [호스트 구성 값](#host-configuration-values) 섹션을 참조하세요.
+
+    ```csharp
+    WebHost.CreateDefaultBuilder(args)
+        .ConfigureAppConfiguration((hostingContext, config) =>
+        {
+            config.AddXmlFile("appsettings.xml", optional: true, reloadOnChange: true);
+        })
+        ...
+    ```
+
+* 다음 `ConfigureLogging` 호출은 최소 로깅 수준([SetMinimumLevel](/dotnet/api/microsoft.extensions.logging.loggingbuilderextensions.setminimumlevel))을 [LogLevel.Warning](/dotnet/api/microsoft.extensions.logging.loglevel)으로 구성하는 대리자를 추가합니다. 이 설정은 `CreateDefaultBuilder`에 의해 구성된 *appsettings.Development.json*(`LogLevel.Debug`) 및 *appsettings.Production.json*(`LogLevel.Error`)의 설정을 재정의합니다. `ConfigureLogging`이 여러 번 호출될 수 있습니다.
+
+    ```csharp
+    WebHost.CreateDefaultBuilder(args)
+        .ConfigureLogging(logging => 
+        {
+            logging.SetMinimumLevel(LogLevel.Warning);
+        })
+        ...
+    ```
+
+* [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel)에 대한 다음 호출은 Kestrel이 `CreateDefaultBuilder`에 의해 구성될 때 설정된 30,000,000바이트의 기본 [Limits.MaxRequestBodySize](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits.maxrequestbodysize)를 재정의합니다.
+
+    ```csharp
+    WebHost.CreateDefaultBuilder(args)
+        .UseKestrel(options =>
+        {
+            options.Limits.MaxRequestBodySize = 20000000;
+        });
+        ...
+    ```
 
 *콘텐츠 루트*는 호스트가 MVC 뷰 파일과 같은 콘텐츠 파일을 검색하는 위치를 결정합니다. 앱이 프로젝트의 루트 폴더에서 시작되면 프로젝트의 루트 폴더가 콘텐츠 루트로 사용됩니다. 이것이 [Visual Studio](https://www.visualstudio.com/) 및 [dotnet 새 템플릿](/dotnet/core/tools/dotnet-new)에서 사용되는 기본값입니다.
 
@@ -112,7 +146,7 @@ host.Run();
 [WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder)는 호스트 구성 값을 설정하기 위해 다음 방법을 사용합니다.
 
 * `ASPNETCORE_{configurationKey}` 형식의 환경 변수를 포함하는 호스트 빌더 구성. 예를 들어, `ASPNETCORE_ENVIRONMENT`을 입력합니다.
-* [HostingAbstractionsWebHostBuilderExtensions.UseContentRoot](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.usecontentroot)와 같은 명시적 메서드.
+* [UseContentRoot](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.usecontentroot) 및 [UseConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useconfiguration) 같은 확장입니다([구성 재정의](#override-configuration) 섹션 참조).
 * [UseSetting](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder.usesetting) 및 연결된 키. `UseSetting`을 사용하여 값을 설정할 때 값은 형식에 관계 없이 문자열로 설정됩니다.
 
 호스트는 마지막에 값을 설정한 옵션을 사용합니다. 자세한 내용은 다음 섹션의 [구성 재정의](#override-configuration)를 참조하세요.
@@ -434,33 +468,25 @@ var host = new WebHostBuilder()
 
 ## <a name="override-configuration"></a>구성 재정의
 
-[구성](xref:fundamentals/configuration/index)을 사용하여 호스트를 구성합니다. 다음 예제에서는 호스트 구성이 필요에 따라 *hosting.json* 파일에 지정됩니다. *hosting.json* 파일에서 로드된 모든 구성은 명령줄 인수에 의해 재정의될 수도 있습니다. 기본 제공된 구성(`config`에 있음)은 `UseConfiguration`을 통해 호스트를 구성하는 데 사용됩니다.
+[구성](xref:fundamentals/configuration/index)을 사용하여 웹 호스트를 구성합니다. 다음 예제에서는 호스트 구성이 필요에 따라 *hostsettings.json* 파일에 지정됩니다. *hostsettings.json* 파일에서 로드된 모든 구성은 명령줄 인수에 의해 재정의될 수도 있습니다. 빌드된 구성(`config`에 있음)은 [UseConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useconfiguration)을 통해 호스트를 구성하는 데 사용됩니다. `IWebHostBuilder` 구성이 앱의 구성에 추가되지만 반대의 경우에는 true가 아닙니다. &mdash;`ConfigureAppConfiguration`은 `IWebHostBuilder` 구성에 영향을 주지 않습니다.
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
 
-*hosting.json*:
-
-```json
-{
-    urls: "http://*:5005"
-}
-```
-
-먼저 *hosting.json* 구성으로 `UseUrls`에 의해 제공되는 구성을 재정의하고, 두 번째로 명령줄 인수 구성을 재정의합니다.
+먼저 *hostsettings.json* 구성으로 `UseUrls`에 의해 제공되는 구성을 재정의하고, 두 번째로 명령줄 인수 구성을 재정의합니다.
 
 ```csharp
 public class Program
 {
     public static void Main(string[] args)
     {
-        BuildWebHost(args).Run();
+        CreateWebHostBuilder(args).Build().Run();
     }
 
-    public static IWebHost BuildWebHost(string[] args)
+    public static IWebHostBuilder CreateWebHostBuilder(string[] args)
     {
         var config = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("hosting.json", optional: true)
+            .AddJsonFile("hostsettings.json", optional: true)
             .AddCommandLine(args)
             .Build();
 
@@ -477,9 +503,7 @@ public class Program
 }
 ```
 
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
-*hosting.json*:
+*hostsettings.json*:
 
 ```json
 {
@@ -487,7 +511,9 @@ public class Program
 }
 ```
 
-먼저 *hosting.json* 구성으로 `UseUrls`에 의해 제공되는 구성을 재정의하고, 두 번째로 명령줄 인수 구성을 재정의합니다.
+# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
+
+먼저 *hostsettings.json* 구성으로 `UseUrls`에 의해 제공되는 구성을 재정의하고, 두 번째로 명령줄 인수 구성을 재정의합니다.
 
 ```csharp
 public class Program
@@ -496,7 +522,7 @@ public class Program
     {
         var config = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("hosting.json", optional: true)
+            .AddJsonFile("hostsettings.json", optional: true)
             .AddCommandLine(args)
             .Build();
 
@@ -516,12 +542,22 @@ public class Program
 }
 ```
 
+*hostsettings.json*:
+
+```json
+{
+    urls: "http://*:5005"
+}
+```
+
 ---
 
 > [!NOTE]
 > [UseConfiguration](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useconfiguration) 확장 메서드는 현재 `GetSection`에서 반환되는 구성 섹션을 구문 분석할 수 없습니다(예: `.UseConfiguration(Configuration.GetSection("section"))`). `GetSection` 메서드는 요청된 섹션에 대한 구성 키를 필터링하지만 키에 있는 섹션 이름을 그대로 둡니다(예: `section:urls`, `section:environment`). `UseConfiguration` 메서드에서는 키가 `WebHostBuilder` 키와 일치해야 합니다(예: `urls`, `environment`). 키에서 섹션 이름의 존재는 섹션 값으로 호스트를 구성할 수 없도록 합니다. 이 문제는 향후 릴리스에서 해결될 예정입니다. 자세한 내용 및 해결 방법은 [전체 키를 사용하여 WebHostBuilder.UseConfiguration에 구성 섹션을 전달](https://github.com/aspnet/Hosting/issues/839)을 참조하세요.
+>
+> `UseConfiguration`은 제공된 `IConfiguration`의 키만 호스트 빌더 구성으로 복사합니다. 따라서 JSON, INI 및 XML 설정 파일에 대해 `reloadOnChange: true`를 설정해도 영향을 미치지 않습니다.
 
-특정 URL에서 실행하는 호스트를 지정하려면 [dotnet run](/dotnet/core/tools/dotnet-run) 실행 시 원하는 값을 명령 프롬프트에서 전달할 수 있습니다. 명령줄 인수는 *hosting.json* 파일의 `urls` 값을 재정의하고, 서버는 포트 8080에서 수신합니다.
+특정 URL에서 실행하는 호스트를 지정하려면 [dotnet run](/dotnet/core/tools/dotnet-run) 실행 시 원하는 값을 명령 프롬프트에서 전달할 수 있습니다. 명령줄 인수는 *hostsettings.json* 파일의 `urls` 값을 재정의하고, 서버는 포트 8080에서 수신합니다.
 
 ```console
 dotnet run --urls "http://*:8080"
@@ -766,7 +802,7 @@ public class CustomFileReader
 }
 ```
 
-[규칙 기반 접근 방식](xref:fundamentals/environments#startup-conventions)은 시작할 때 환경에 따라 앱을 구성하는 데 사용할 수 있습니다. 또는 `ConfigureServices`에서 사용할 수 있도록 `IHostingEnvironment`를 `Startup` 생성자에 주입합니다.
+[규칙 기반 접근 방식](xref:fundamentals/environments#environment-based-startup-class-and-methods)은 시작할 때 환경에 따라 앱을 구성하는 데 사용할 수 있습니다. 또는 `ConfigureServices`에서 사용할 수 있도록 `IHostingEnvironment`를 `Startup` 생성자에 주입합니다.
 
 ```csharp
 public class Startup

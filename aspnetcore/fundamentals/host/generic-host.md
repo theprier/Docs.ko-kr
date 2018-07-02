@@ -2,21 +2,17 @@
 title: .NET 일반 호스트
 author: guardrex
 description: 앱 시작 및 수명 관리를 담당하는 .NET의 일반 호스트에 대해 알아봅니다.
-manager: wpickett
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.custom: mvc
 ms.date: 05/16/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/host/generic-host
-ms.openlocfilehash: a851f2faf13792b2c232c124371d07710ae1fce3
-ms.sourcegitcommit: 726ffab258070b4fe6cf950bf030ce10c0c07bb4
+ms.openlocfilehash: 33e5829ce4a09e132743b4174a588cf232a44775
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34734473"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36276264"
 ---
 # <a name="net-generic-host"></a>.NET 일반 호스트
 
@@ -58,7 +54,13 @@ Visual Studio Code에서 콘솔을 설정하려면:
 
 ### <a name="configuration-builder"></a>구성 작성기
 
-호스트 작성기 구성은 [IHostBuilder](/dotnet/api/microsoft.extensions.hosting.ihostbuilder) 구현에서 [ConfigureHostConfiguration](/dotnet/api/microsoft.extensions.hosting.ihostbuilder.configurehostconfiguration)을 호출하여 생성됩니다. `ConfigureHostConfiguration`은 [IConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.iconfigurationbuilder)를 사용하여 호스트의 [IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration)을 만듭니다. 구성 작성기는 앱의 빌드 프로세스에서 사용할 [IHostingEnvironment](/dotnet/api/microsoft.extensions.hosting.ihostingenvironment)를 초기화합니다. `ConfigureHostConfiguration` 항목은 부가적 결과와 함께 여러 번 호출할 수 있습니다. 호스트는 마지막에 값을 설정한 옵션을 사용합니다.
+호스트 작성기 구성은 [IHostBuilder](/dotnet/api/microsoft.extensions.hosting.ihostbuilder) 구현에서 [ConfigureHostConfiguration](/dotnet/api/microsoft.extensions.hosting.ihostbuilder.configurehostconfiguration)을 호출하여 생성됩니다. `ConfigureHostConfiguration`은 [IConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.iconfigurationbuilder)를 사용하여 호스트의 [IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration)을 만듭니다. 구성 작성기는 앱의 빌드 프로세스에서 사용할 [IHostingEnvironment](/dotnet/api/microsoft.extensions.hosting.ihostingenvironment)를 초기화합니다.
+
+환경 변수 구성은 기본적으로 추가되지 않습니다. 호스트 빌더에서 [AddEnvironmentVariables](/dotnet/api/microsoft.extensions.configuration.environmentvariablesextensions.addenvironmentvariables)를 호출하여 환경 변수의 호스트를 구성합니다. `AddEnvironmentVariables`는 선택적 사용자 정의 접두사를 허용합니다. 샘플 앱은 `PREFIX_` 접두사를 사용합니다. 접두사는 환경 변수를 읽을 때 제거됩니다. 샘플 앱의 호스트가 구성되면 `PREFIX_ENVIRONMENT`의 환경 변수 값이 `environment` 키에 대한 호스트 구성 값이 됩니다.
+
+[Visual Studio](https://www.visualstudio.com/)를 사용하거나 `dotnet run`을 통해 앱을 실행할 때 개발하는 동안에 환경 변수는 *Properties/launchSettings.json* 파일에 설정될 수 있습니다. [Visual Studio Code](https://code.visualstudio.com/)에서 환경 변수는 개발하는 동안에 *.vscode/launch.json* 파일에 설정될 수 있습니다. 자세한 내용은 [여러 환경 사용](xref:fundamentals/environments)를 참조하세요.
+
+`ConfigureHostConfiguration` 항목은 부가적 결과와 함께 여러 번 호출할 수 있습니다. 호스트는 마지막에 값을 설정한 옵션을 사용합니다.
 
 *hostsettings.json*:
 
@@ -83,7 +85,7 @@ Visual Studio Code에서 콘솔을 설정하려면:
 **형식**: *string*  
 **기본값**: 앱 어셈블리가 있는 폴더가 기본값으로 지정됩니다.  
 **설정 방법**: `UseContentRoot`  
-**환경 변수**: `ASPNETCORE_CONTENTROOT`
+**환경 변수**: `<PREFIX_>CONTENTROOT`(`<PREFIX_>`는 [선택적이고 사용자 정의됨](#configuration-builder))
 
 경로가 존재하지 않는 경우 호스트가 시작되지 않습니다.
 
@@ -97,9 +99,9 @@ Visual Studio Code에서 콘솔을 설정하려면:
 **형식**: *string*  
 **기본값**: Production  
 **설정 방법**: `UseEnvironment`  
-**환경 변수**: `ASPNETCORE_ENVIRONMENT`
+**환경 변수**: `<PREFIX_>ENVIRONMENT`(`<PREFIX_>`는 [선택적이고 사용자 정의됨](#configuration-builder))
 
-환경은 어떠한 값으로도 설정할 수 있습니다. 프레임워크에서 정의된 값은 `Development`, `Staging` 및 `Production`을 포함합니다. 값은 대/소문자를 구분하지 않습니다. 기본적으로 *환경*은 `ASPNETCORE_ENVIRONMENT` 환경 변수에서 읽습니다. [Visual Studio](https://www.visualstudio.com/)를 사용하는 경우 환경 변수는 *launchSettings.json* 파일에서 설정할 수 있습니다. 자세한 내용은 [여러 환경 사용](xref:fundamentals/environments)를 참조하세요.
+환경은 어떠한 값으로도 설정할 수 있습니다. 프레임워크에서 정의된 값은 `Development`, `Staging` 및 `Production`을 포함합니다. 값은 대/소문자를 구분하지 않습니다.
 
 [!code-csharp[](generic-host/samples-snapshot/2.x/GenericHostSample/Program.cs?name=snippet_UseEnvironment)]
 
