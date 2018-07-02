@@ -2,20 +2,16 @@
 title: ASP.NET Core 기본 사항
 author: rick-anderson
 description: ASP.NET Core 응용 프로그램을 구축하기 위한 기본적인 개념을 알아봅니다.
-manager: wpickett
 ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 09/30/2017
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: get-started-article
 uid: fundamentals/index
-ms.openlocfilehash: 97c0b289b259332d57f8175e05020fe03d505723
-ms.sourcegitcommit: a66f38071e13685bbe59d48d22aa141ac702b432
+ms.openlocfilehash: b51d7b62525944d9924ecb4ce5964312f30a7835
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34233312"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36278871"
 ---
 # <a name="aspnet-core-fundamentals"></a>ASP.NET Core 기본 사항
 
@@ -78,7 +74,7 @@ public class Startup
 
 ## <a name="content-root"></a>콘텐츠 루트
 
-콘텐츠 루트는 앱에서 사용되는 뷰, [Razor 페이지](xref:mvc/razor-pages/index) 및 정적 자산 같은 모든 콘텐츠의 기본 경로입니다. 기본적으로 콘텐츠 루트는 앱을 호스팅하는 실행 파일의 응용 프로그램 기본 경로와 동일합니다. 
+콘텐츠 루트는 앱에서 사용되는 뷰, [Razor 페이지](xref:razor-pages/index) 및 정적 자산 같은 모든 콘텐츠의 기본 경로입니다. 기본적으로 콘텐츠 루트는 앱을 호스팅하는 실행 파일의 응용 프로그램 기본 경로와 동일합니다. 
 
 ## <a name="web-root"></a>웹 루트
 
@@ -106,9 +102,13 @@ ASP.NET Core 앱에서 [OWIN](http://owin.org) 기반 미들웨어를 사용할 
 
 자세한 내용은 [미들웨어](xref:fundamentals/middleware/index) 및 [OWIN(Open Web Interface for .NET)](xref:fundamentals/owin)을 참고하시기 바랍니다.
 
+::: moniker range=">= aspnetcore-2.1"
+
 ## <a name="initiate-http-requests"></a>HTTP 요청 시작
 
 `IHttpClientFactory`를 사용하여 `HttpClient` 인스턴스에 액세스하고 HTTP 요청을 만드는 방법은 [HTTP 요청 시작](xref:fundamentals/http-requests)을 참조하세요.
+
+::: moniker-end
 
 ## <a name="environments"></a>환경
 
@@ -126,7 +126,7 @@ ASP.NET Core는 이름 값 쌍에 기반을 둔 구성 모델을 사용합니다
 
 ASP.NET Core는 다양한 로깅 공급자를 사용하는 로깅 API를 지원합니다. 기본으로 제공되는 공급자는 하나 이상의 대상에 로그를 전송할 수 있습니다. 타사의 로깅 프레임워크를 사용할 수도 있습니다.
 
-[로깅](xref:fundamentals/logging/index)
+자세한 내용은 [로깅](xref:fundamentals/logging/index)을 참조하세요.
 
 ## <a name="error-handling"></a>오류 처리
 
@@ -158,11 +158,11 @@ ASP.NET Core 앱은 앱의 시작과 수명 관리를 담당하는 *호스트*�
 
 자세한 내용은 [ASP.NET Core의 호스트](xref:fundamentals/host/index)를 참조하세요.
 
-## <a name="session-and-application-state"></a>세션 및 응용 프로그램 상태
+## <a name="session-and-app-state"></a>세션 및 앱 상태
 
-세션 상태는 사용자가 웹앱을 탐색하는 동안 사용자 데이터를 저장하는 데 사용할 수 있는 ASP.NET Core의 기능입니다.
+ASP.NET Core는 사용자가 웹앱을 탐색하는 동안 세션 및 앱 상태를 유지할 수 있는 여러 가지 방법을 제공합니다.
 
-자세한 내용은 [세션 및 응용 프로그램 상태](xref:fundamentals/app-state)를 참고하시기 바랍니다.
+자세한 내용은 [세션 및 앱 상태](xref:fundamentals/app-state)를 참조하세요.
 
 ## <a name="servers"></a>서버
 

@@ -2,20 +2,16 @@
 title: ASP.NET Core의 권한 부여
 author: rick-anderson
 description: 앱 사용자에게 권리와 권한을 제공하는 방법을 설명하는 ASP.NET Core 권한 부여 항목을 검색합니다.
-manager: wpickett
 ms.author: riande
 ms.custom: mvc
 ms.date: 02/19/2018
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: security/authorization/index
-ms.openlocfilehash: ef275011cdd87b1d0c861de735d89d064574be5a
-ms.sourcegitcommit: 477d38e33530a305405eaf19faa29c6d805273aa
+ms.openlocfilehash: 344a7e4490d4e92a9ee6efd566b5b7822d049e16
+ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/08/2018
-ms.locfileid: "33851276"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36273847"
 ---
 # <a name="authorization-in-aspnet-core"></a>ASP.NET Core의 권한 부여
 
@@ -33,7 +29,7 @@ ms.locfileid: "33851276"
 
 * [정책 기반 권한 부여](xref:security/authorization/policies)
 
-* [사용자 지정 권한 부여 정책 공급자](xref:security/authorization/iauthorizationpolicyprovider)
+* [인증 정책 공급자](xref:security/authorization/iauthorizationpolicyprovider)
 
 * [요구 사항 처리기의 종속성 주입](xref:security/authorization/dependencyinjection)
 

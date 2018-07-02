@@ -2,19 +2,15 @@
 title: ASP.NET Core에서 라우팅
 author: ardalis
 description: ASP.NET Core 라우팅 기능에서 들어오는 요청을 경로 처리기에 매핑하는 일을 담당하는 방법을 파악합니다.
-manager: wpickett
 ms.author: riande
 ms.date: 10/14/2016
-ms.prod: asp.net-core
-ms.technology: aspnet
-ms.topic: article
 uid: fundamentals/routing
-ms.openlocfilehash: a23e2e1a1dd25a57e5d6189bbd5938c48078515b
-ms.sourcegitcommit: 7e87671fea9a5f36ca516616fe3b40b537f428d2
+ms.openlocfilehash: 4482c865671eb4f5decbd5f1cd6e26f2e68e5c25
+ms.sourcegitcommit: e22097b84d26a812cd1380a6b2d12c93e522c125
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/12/2018
-ms.locfileid: "35341784"
+ms.lasthandoff: 06/22/2018
+ms.locfileid: "36314138"
 ---
 # <a name="routing-in-aspnet-core"></a>ASP.NET Core에서 라우팅
 
@@ -154,7 +150,7 @@ routes.MapRoute(
     dataTokens: new { locale = "en-US" });
 ```
 
-이 템플릿은 `/Products/5`과 같이 URL 경로와 일치시키고 값 `{ controller = Products, action = Details, id = 5 }` 및 데이터 토큰 `{ locale = en-US }`를 추출합니다.
+이 템플릿은 `/en-US/Products/5`와 같은 URL 경로와 일치하고 값 `{ controller = Products, action = Details, id = 5 }` 및 데이터 토큰 `{ locale = en-US }`를 추출합니다.
 
 ![지역 Windows 토큰](routing/_static/tokens.png)
 
@@ -285,6 +281,16 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
 템플릿 사용은 일반적으로 라우팅에 대한 가장 간단한 방식입니다. 제약 조건 및 기본값을 경로 템플릿 외부에서 지정할 수도 있습니다.
 
 팁: [로깅](xref:fundamentals/logging/index)을 활성화하여 `Route`와 같은 기본 제공 라우팅 구현이 요청과 일치시키는 방법을 확인합니다.
+
+## <a name="reserved-routing-names"></a>예약된 라우팅 이름
+
+다음 키워드는 예약된 이름이므로 경로 이름 또는 매개 변수로 사용할 수 없습니다.
+
+* `action`
+* `area`
+* `controller`
+* `handler`
+* `page`
 
 ## <a name="route-constraint-reference"></a>경로 제약 조건 참조
 
