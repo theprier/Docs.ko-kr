@@ -5,14 +5,18 @@ description: 이 자습서에서는 외래 키 필드 및 탐색 속성을 업�
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/update-related-data
-ms.openlocfilehash: 53f1607d96a9a1db98f4e80e9582c124cedf6c8d
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: ef8cb3916e5d1542e4d36cad694351462b94ed32
+ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272652"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37093061"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---update-related-data---7-of-10"></a>ASP.NET Core MVC 및 EF Core - 관련 데이터 업데이트 - 7/10
+
+[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
+
+::: moniker range="= aspnetcore-2.0"
 
 작성자: [Tom Dykstra](https://github.com/tdykstra) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -134,7 +138,7 @@ HttpPost `Edit` 메서드를 다음 코드로 바꿔 사무실 할당 업데이�
         "",
         i => i.FirstMidName, i => i.LastName, i => i.HireDate, i => i.OfficeAssignment))
     ```
-    
+
 -   사무실 위치가 비어 있는 경우 OfficeAssignment 테이블의 관련된 행이 삭제되도록 Instructor.OfficeAssignment 속성을 Null로 설정합니다.
 
     <!-- Snippets don't play well with <ul>  "intro/samples/cu/Controllers/InstructorsController.cs"} -->
@@ -213,7 +217,7 @@ HttpPost `Edit` 메서드를 다음 코드로 바꿔 사무실 할당 업데이�
 *Views/Instructors/Edit.cshtml*에서 **사무실** 필드에 대한 `div` 요소 후와 **저장** 단추에 대한 `div` 요소 전에 다음 코드를 즉시 추가하여 확인란의 배열로 **강좌** 필드를 추가합니다.
 
 <a id="notepad"></a>
-> [!NOTE] 
+> [!NOTE]
 > Visual Studio에서 코드를 붙여 넣을 때 줄 바꿈이 코드를 중단하는 방식으로 변경됩니다.  자동 서식 지정을 실행 취소하려면 Ctrl+Z를 한 번 누릅니다.  여기와 같은 모양이 되도록 줄 바꿈을 수정합니다. 들여쓰기는 완벽할 필요가 없지만 `@</tr><tr>`, `@:<td>`, `@:</td>` 및 `@:</tr>` 줄은 표시된 것처럼 각각 한 줄에 있어야 합니다. 그렇지 않으면 런타임 오류가 발생합니다. 선택된 새 코드의 블록과 함께 Tab 키를 세 번 눌러 기존 코드와 함께 새 코드를 정렬합니다. [여기](https://developercommunity.visualstudio.com/content/problem/147795/razor-editor-malforms-pasted-markup-and-creates-in.html)합니다.에서 이 문제의 상태를 확인할 수 있습니다.
 
 [!code-html[](intro/samples/cu/Views/Instructors/Edit.cshtml?range=35-61)]
@@ -228,7 +232,7 @@ HttpPost `Edit` 메서드를 다음 코드로 바꿔 사무실 할당 업데이�
 
 일부 강좌 할당을 변경하고 저장을 클릭합니다. 변경 내용은 인덱스 페이지에 반영됩니다.
 
-> [!NOTE] 
+> [!NOTE]
 > 강사 강좌 데이터를 편집하기 위해 여기에 적용되는 방법은 제한된 수의 강좌가 있는 경우에 잘 작동합니다. 훨씬 큰 컬렉션의 경우 다른 UI 및 다른 업데이트 메서드가 필요합니다.
 
 ## <a name="update-the-delete-page"></a>삭제 페이지 업데이트
@@ -282,7 +286,7 @@ public ICollection<CourseAssignment> CourseAssignments
 
 [!code-html[](intro/samples/cu/Views/Instructors/Create.cshtml?range=29-61)]
 
-앱을 실행하고 강사를 만들어 테스트합니다. 
+앱을 실행하고 강사를 만들어 테스트합니다.
 
 ## <a name="handling-transactions"></a>트랜잭션 처리
 
@@ -292,6 +296,8 @@ public ICollection<CourseAssignment> CourseAssignments
 
 이제 관련된 데이터 사용에 대한 소개를 완료했습니다. 다음 자습서에서는 동시성 충돌을 처리하는 방법을 확인합니다.
 
+::: moniker-end
+
 > [!div class="step-by-step"]
 > [이전](read-related-data.md)
-> [다음](concurrency.md)  
+> [다음](concurrency.md)

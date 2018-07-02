@@ -5,14 +5,18 @@ description: 이 자습서에서는 ASP.NET Core MVC 응용 프로그램에서 �
 ms.author: tdykstra
 ms.date: 03/15/2018
 uid: data/ef-mvc/migrations
-ms.openlocfilehash: d8b92aeedb252b93e1dc1aca424d26a377305da2
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: f710b33ac1a6017b0e3d7e8c3e528675a41424bb
+ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273587"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37092944"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---migrations---4-of-10"></a>ASP.NET Core MVC 및 EF Core - 마이그레이션 - 4/10
+
+[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
+
+::: moniker range="= aspnetcore-2.0"
 
 작성자: [Tom Dykstra](https://github.com/tdykstra) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -34,7 +38,7 @@ CLI(명령줄 인터페이스)용 EF 도구는 [Microsoft.EntityFrameworkCore.To
 
 [!code-xml[](intro/samples/cu/ContosoUniversity.csproj?range=12-15&highlight=2)]
   
-(이 예제의 버전 번호는 이 자습서가 작성된 당시의 버전 번호입니다.) 
+(이 예제의 버전 번호는 이 자습서가 작성된 당시의 버전 번호입니다.)
 
 ## <a name="change-the-connection-string"></a>연결 문자열 변경
 
@@ -154,14 +158,15 @@ PMC 명령을 위한 EF 명령은 [Microsoft.EntityFrameworkCore.Tools](https://
 
 **중요:** *.csproj* 파일을 편집하여 CLI에 대해 설치한 것과는 다른 패키지입니다. 끝이 `Tools.DotNet`으로 끝나는 CLI 패키지 이름과 달리 이름이 `Tools`로 끝납니다.
 
-CLI 명령에 대한 자세한 내용은 [.NET Core CLI](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet)를 참조하세요. 
+CLI 명령에 대한 자세한 내용은 [.NET Core CLI](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet)를 참조하세요.
 
 PMC 명령에 대한 자세한 내용은 [패키지 관리자 콘솔(Visual Studio)](https://docs.microsoft.com/ef/core/miscellaneous/cli/powershell)을 참조하세요.
 
 ## <a name="summary"></a>요약
 
 이 자습서에서는 첫 번째 마이그레이션을 만들고 적용하는 방법을 살펴보았습니다. 다음 자습서에서는 데이터 모델을 확장하여 더 많은 고급 항목을 살펴봅니다. 방식에 따라 추가 마이그레이션을 만들고 적용하게 됩니다.
+::: moniker-end
 
 > [!div class="step-by-step"]
 > [이전](sort-filter-page.md)
-> [다음](complex-data-model.md)  
+> [다음](complex-data-model.md)

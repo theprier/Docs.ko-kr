@@ -5,14 +5,18 @@ description: 이 자습서에서는 ASP.NET Core 및 Entity Framework Core를 �
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/sort-filter-page
-ms.openlocfilehash: 34097eacad16c0ffb989efb3b6a8656be4a076cd
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 1f80faf0e36332c28e8337ddc331cc8b4c4970d7
+ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273652"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37093090"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---sort-filter-paging---3-of-10"></a>ASP.NET Core MVC 및 EF Core - 정렬, 필터, 페이징 - 3/10
+
+[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
+
+::: moniker range="= aspnetcore-2.0"
 
 작성자: [Tom Dykstra](https://github.com/tdykstra) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -228,7 +232,7 @@ Contoso University 웹 사이트의 **정보** 페이지에는 각 등록 날짜
 [!code-csharp[](intro/samples/cu/Controllers/HomeController.cs?name=snippet_UseDbSet)]
 
 LINQ 문은 등록 날짜별로 학생 엔터티를 그룹화하고 각 그룹의 엔터티 수를 계산하며 결과를 `EnrollmentDateGroup` 뷰 모델 개체의 컬렉션에 저장합니다.
-> [!NOTE] 
+> [!NOTE]
 > Entity Framework Core 1.0 버전에서는 전체 결과 집합이 클라이언트에 반환되고 그룹화가 클라이언트에서 수행됩니다. 일부 시나리오에서는 이로 인해 성능 문제가 발생할 수 있습니다. 프로덕션 볼륨의 데이터로 성능을 테스트하고 필요한 경우 원시 SQL을 사용하여 서버에서 그룹화를 수행합니다. 원시 SQL을 사용하는 방법에 대한 자세한 내용은 [이 시리즈의 마지막 자습서](advanced.md)를 참조하세요.
 
 ### <a name="modify-the-about-view"></a>정보 뷰 수정
@@ -245,6 +249,8 @@ LINQ 문은 등록 날짜별로 학생 엔터티를 그룹화하고 각 그룹�
 
 이 자습서에서는 정렬, 필터링, 페이징 및 그룹화를 수행하는 방법을 살펴보았습니다. 다음 자습서에서 마이그레이션을 사용하여 데이터 모델 변경 내용을 처리하는 방법에 대해 알아봅니다.
 
+::: moniker-end
+
 > [!div class="step-by-step"]
 > [이전](crud.md)
-> [다음](migrations.md)  
+> [다음](migrations.md)

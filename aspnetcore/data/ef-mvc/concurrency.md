@@ -5,14 +5,18 @@ description: 이 자습서에는 여러 사용자가 동시에 같은 엔터티�
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/concurrency
-ms.openlocfilehash: 77e5fba176835f7da9be6c7057084ed017d34bec
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 9bf65621213c9657232dfff1701c9937d5105a9c
+ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278400"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37093025"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---concurrency---8-of-10"></a>ASP.NET Core MVC 및 EF Core - 동시성 - 8/10
+
+[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
+
+::: moniker range="= aspnetcore-2.0"
 
 작성자: [Tom Dykstra](https://github.com/tdykstra) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -207,7 +211,7 @@ _context.Entry(departmentToUpdate).Property("RowVersion").OriginalValue = rowVer
 
 [!code-csharp[](intro/samples/cu/Controllers/DepartmentsController.cs?name=snippet_DeleteGet&highlight=1,10,14-17,21-29)]
 
-메서드는 동시성 오류가 발생한 후 페이지가 다시 표시되고 있는지 여부를 나타내는 선택적 매개 변수를 허용합니다. 이 플래그가 true이고 지정된 부서가 더 이상 존재하지 않는 경우 다른 사용자에 의해 삭제되었습니다. 이 경우 코드는 인덱스 페이지로 리디렉션합니다.  이 플래그가 true이고 부서가 존재하는 경우 다른 사용자에 의해 변경되었습니다. 이 경우 코드는 `ViewData`를 사용하여 보기에 오류 메시지를 보냅니다.  
+메서드는 동시성 오류가 발생한 후 페이지가 다시 표시되고 있는지 여부를 나타내는 선택적 매개 변수를 허용합니다. 이 플래그가 true이고 지정된 부서가 더 이상 존재하지 않는 경우 다른 사용자에 의해 삭제되었습니다. 이 경우 코드는 인덱스 페이지로 리디렉션합니다.  이 플래그가 true이고 부서가 존재하는 경우 다른 사용자에 의해 변경되었습니다. 이 경우 코드는 `ViewData`를 사용하여 보기에 오류 메시지를 보냅니다.
 
 HttpPost `Delete` 메서드의 코드(`DeleteConfirmed`라는)를 다음 코드로 바꿉니다.
 
@@ -276,6 +280,8 @@ public async Task<IActionResult> Delete(Department department)
 
 동시성 충돌 처리에 대한 소개를 완료합니다. EF Core에서 동시성을 처리하는 방법에 대한 자세한 내용은 [동시성 충돌](https://docs.microsoft.com/ef/core/saving/concurrency)을 참조하세요. 다음 자습서에서는 강사 및 학생 엔터티에 대한 계층당 테이블 상속을 구현하는 방법을 보여 줍니다.
 
+::: moniker-end
+
 > [!div class="step-by-step"]
 > [이전](update-related-data.md)
-> [다음](inheritance.md)  
+> [다음](inheritance.md)

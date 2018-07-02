@@ -5,14 +5,18 @@ description: 이 자습서에서는 더 많은 엔터티 및 관계를 추가하
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/complex-data-model
-ms.openlocfilehash: d89ca44917fac57febc2f8b0d632ae004ca7216c
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 1d3c69c8c658b5ca2f0253b790b0dc75d44d3064
+ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277389"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37093116"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---data-model---5-of-10"></a>ASP.NET Core MVC 및 EF Core - 데이터 모델 - 5/10
+
+[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
+
+::: moniker range="= aspnetcore-2.0"
 
 작성자: [Tom Dykstra](https://github.com/tdykstra) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -351,7 +355,7 @@ public Student Student { get; set; }
 
 등록 테이블에 등급 정보가 포함되지 않은 경우 두 개의 외래 키 CourseID 및 StudentID를 포함해야 합니다. 그런 경우에는 데이터베이스에서 페이로드 없는 다대다 조인 테이블(또는 순수 조인 테이블)일 수 있습니다. 강사 및 강좌 엔터티에 그러한 다대다 관계가 있으며, 다음 단계는 페이로드 없는 조인 테이블로 작동하는 엔터티 클래스를 만드는 것입니다.
 
-(EF 6.x는 다대다 관계에 대한 암시적 조인 테이블을 지원하지만 EF Core는 지원하지 않습니다. 자세한 내용은 [EF Core GitHub 리포지토리에서 논의](https://github.com/aspnet/EntityFramework/issues/1368)를 참조하세요.) 
+(EF 6.x는 다대다 관계에 대한 암시적 조인 테이블을 지원하지만 EF Core는 지원하지 않습니다. 자세한 내용은 [EF Core GitHub 리포지토리에서 논의](https://github.com/aspnet/EntityFramework/issues/1368)를 참조하세요.)
 
 ## <a name="the-courseassignment-entity"></a>CourseAssignment 엔터티
 
@@ -437,7 +441,7 @@ Done. To undo this action, use 'ef migrations remove'
 
 기존 데이터로 이 마이그레이션을 수행하려면 새 열에 기본 값을 제공하도록 코드를 변경하고 “Temp”라는 이름의 스텁 부서를 만들어 기본 부서로 작동하도록 합니다. 결과적으로, `Up` 메서드를 실행한 후에 기존 강좌 행은 모두 “Temp” 부서에 연결됩니다.
 
-* *{timestamp}_ComplexDataModel.cs* 파일을 엽니다. 
+* *{timestamp}_ComplexDataModel.cs* 파일을 엽니다.
 
 * DepartmentID 열을 강좌 테이블에 추가하는 코드 줄을 주석으로 처리합니다.
 
@@ -491,7 +495,8 @@ dotnet ef database update
 ## <a name="summary"></a>요약
 
 이제 더 복잡한 데이터 모델 및 해당 데이터베이스가 만들어졌습니다. 다음 자습서에서는 관련된 데이터에 액세스하는 방법에 대해 자세히 설명합니다.
+::: moniker-end
 
 > [!div class="step-by-step"]
 > [이전](migrations.md)
-> [다음](read-related-data.md)  
+> [다음](read-related-data.md)

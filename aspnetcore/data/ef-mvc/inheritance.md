@@ -5,14 +5,18 @@ description: 이 자습서에서는 ASP.NET Core 응용 프로그램에서 Entit
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/inheritance
-ms.openlocfilehash: 818af711c23d37810b29eda8915b3c195a3e48f8
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: a71954297f44f936893a7f1e9d3b0685f81378b9
+ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272856"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37092999"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---inheritance---9-of-10"></a>ASP.NET Core MVC 및 EF Core - 상속 - 9/10
+
+[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
+
+::: moniker range="= aspnetcore-2.0"
 
 작성자: [Tom Dykstra](https://github.com/tdykstra) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -50,7 +54,7 @@ TPT 패턴이 복잡한 조인 쿼리를 초래할 수 있기 때문에 TPC 및 
 
 이 자습서에서는 TPH 상속을 구현하는 방법을 보여 줍니다. TPH는 Entity Framework Core에서 지원하는 유일한 상속 패턴입니다.  사용자는 `Person` 클래스를 만들고, `Person`에서 파생되도록 `Instructor` 및 `Student` 클래스를 변경하며 `DbContext`에 새 클래스를 추가하고, 마이그레이션을 생성합니다.
 
-> [!TIP] 
+> [!TIP]
 > 다음 내용을 변경하기 전에 프로젝트 사본을 저장하는 것이 좋습니다.  그러면 문제가 발생하여 처음부터 다시 시작해야 하는 경우, 이 자습서의 단계를 역순으로 하거나 전체 시리즈의 처음으로 돌아가는 대신 저장된 프로젝트에서 쉽게 시작할 수 있습니다.
 
 ## <a name="create-the-person-class"></a>Person 클래스 만들기
@@ -121,7 +125,7 @@ dotnet ef database update
 
 (프로덕션 시스템에서는 이전 데이터베이스 버전으로 돌아가기 위해 사용해야 할 경우를 대비해서 `Down` 메서드에 해당 변경 내용을 적용합니다. 이 자습서에서는 `Down` 메서드를 사용하지 않습니다.)
 
-> [!NOTE] 
+> [!NOTE]
 > 기존 데이터가 있는 데이터베이스에서 스키마를 변경할 때 다른 오류가 발생할 수 있습니다. 해결할 수 없는 마이그레이션 오류가 발생하면 연결 문자열에서 데이터베이스 이름을 변경하거나 데이터베이스를 삭제할 수 있습니다. 새 데이터베이스에는 마이그레이션할 데이터가 없으므로 update-database 명령은 오류없이 완료될 가능성이 큽니다. 데이터베이스를 삭제하려면 SSOX를 사용하거나 `database drop` CLI 명령을 실행합니다.
 
 ## <a name="test-with-inheritance-implemented"></a>구현된 상속 테스트
@@ -140,6 +144,8 @@ Person 테이블을 마우스 오른쪽 단추로 클릭한 후 **테이블 데�
 
 `Person`, `Student` 및 `Instructor` 클래스에 대해 계층당 하나의 테이블 상속을 구현했습니다. Entity Framework Core의 상속에 대한 자세한 내용은 [상속](https://docs.microsoft.com/ef/core/modeling/inheritance)을 참조하세요. 다음 자습서에서는 다양한 고급 Entity Framework 시나리오를 처리하는 방법을 살펴봅니다.
 
+::: moniker-end
+
 > [!div class="step-by-step"]
 > [이전](concurrency.md)
-> [다음](advanced.md)  
+> [다음](advanced.md)
