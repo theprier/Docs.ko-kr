@@ -9,19 +9,18 @@ ms.date: 07/23/2014
 ms.topic: article
 ms.assetid: 5c890d81-a1a9-4b4f-9221-6947978ae336
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /ajax/cdn/jquery-validate/cdnjqueryvalidate16
 msc.type: content
-ms.openlocfilehash: d781fe9dfc2545b6b2176e0ed27eed248d930ed2
-ms.sourcegitcommit: 24c32648ab0c6f0be15333d7c23c1bf680858c43
+ms.openlocfilehash: c3040e9571f32f7d94eb452245f7459e9641513d
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 05/21/2018
-ms.locfileid: "30075531"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37402082"
 ---
-<a name="jquery-validate-16"></a><span data-ttu-id="58013-102">jQuery 유효성 검사 1.6</span><span class="sxs-lookup"><span data-stu-id="58013-102">jQuery Validate 1.6</span></span>
+<a name="jquery-validate-16"></a><span data-ttu-id="bb8e4-102">jQuery 유효성 검사 1.6</span><span class="sxs-lookup"><span data-stu-id="bb8e4-102">jQuery Validate 1.6</span></span>
 ====================
-<span data-ttu-id="58013-103">다음 파일은 CDN에서 호스트 됩니다.</span><span class="sxs-lookup"><span data-stu-id="58013-103">The following files are hosted on the CDN:</span></span>
+<span data-ttu-id="bb8e4-103">다음 파일은 CDN에서 호스트 됩니다.</span><span class="sxs-lookup"><span data-stu-id="bb8e4-103">The following files are hosted on the CDN:</span></span>
 
 - https://ajax.aspnetcdn.com/ajax/jQuery.Validate/1.6/jQuery.Validate.js
 - https://ajax.aspnetcdn.com/ajax/jQuery.Validate/1.6/jQuery.Validate.min.js

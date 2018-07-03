@@ -2,28 +2,27 @@
 uid: web-api/videos/getting-started/authorization
 title: 'ASP.NET Web API, 6 부: 권한 부여 | Microsoft Docs'
 author: jongalloway
-description: 참고:이 비디오에서 ASP.NET Web API의 시험판 버전 정보를 포함 합니다.
+description: 참고:이 비디오는 시험판 버전의 ASP.NET Web API의 정보가 포함 됩니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/15/2012
 ms.topic: article
 ms.assetid: 14f2554f-ca12-4ffe-af53-1f33b45042ef
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/videos/getting-started/authorization
 msc.type: video
-ms.openlocfilehash: cd42196d82c36266b485dbe6646ca7eb227c0c6d
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 64cc4fbfaf28619f164475765d9be8ab19209442
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26508972"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37402745"
 ---
-<a name="aspnet-web-api-part-6-authorization"></a><span data-ttu-id="5d172-103">ASP.NET Web API, 6 부: 권한 부여</span><span class="sxs-lookup"><span data-stu-id="5d172-103">ASP.NET Web API, Part 6: Authorization</span></span>
+<a name="aspnet-web-api-part-6-authorization"></a><span data-ttu-id="b399f-103">ASP.NET Web API, 6 부: 권한 부여</span><span class="sxs-lookup"><span data-stu-id="b399f-103">ASP.NET Web API, Part 6: Authorization</span></span>
 ====================
-<span data-ttu-id="5d172-104">으로 [Jon Galloway](https://github.com/jongalloway)</span><span class="sxs-lookup"><span data-stu-id="5d172-104">by [Jon Galloway](https://github.com/jongalloway)</span></span>
+<span data-ttu-id="b399f-104">[Jon Galloway](https://github.com/jongalloway)</span><span class="sxs-lookup"><span data-stu-id="b399f-104">by [Jon Galloway](https://github.com/jongalloway)</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="5d172-105">이 비디오는 ASP.NET Web API의 시험판 버전에서 정보를 포함 합니다.</span><span class="sxs-lookup"><span data-stu-id="5d172-105">This video contains information from a pre-release version of ASP.NET Web API.</span></span> <span data-ttu-id="5d172-106">참조에서 업데이트 된 예제 코드 변경 내용에 대 한 내용은 [https://code.msdn.microsoft.com/ASPNET-Web-API-JavaScript-d0d64dd7](https://code.msdn.microsoft.com/ASPNET-Web-API-JavaScript-d0d64dd7)</span><span class="sxs-lookup"><span data-stu-id="5d172-106">For information on what changed, see the updated sample code at [https://code.msdn.microsoft.com/ASPNET-Web-API-JavaScript-d0d64dd7](https://code.msdn.microsoft.com/ASPNET-Web-API-JavaScript-d0d64dd7)</span></span>
+> <span data-ttu-id="b399f-105">이 비디오는 시험판 버전의 ASP.NET Web API에서 정보를 포함합니다.</span><span class="sxs-lookup"><span data-stu-id="b399f-105">This video contains information from a pre-release version of ASP.NET Web API.</span></span> <span data-ttu-id="b399f-106">변경 내용에 대 한 내용은에서 업데이트 된 샘플 코드를 참조 하십시오. [https://code.msdn.microsoft.com/ASPNET-Web-API-JavaScript-d0d64dd7](https://code.msdn.microsoft.com/ASPNET-Web-API-JavaScript-d0d64dd7)</span><span class="sxs-lookup"><span data-stu-id="b399f-106">For information on what changed, see the updated sample code at [https://code.msdn.microsoft.com/ASPNET-Web-API-JavaScript-d0d64dd7](https://code.msdn.microsoft.com/ASPNET-Web-API-JavaScript-d0d64dd7)</span></span>
 
-[<span data-ttu-id="5d172-107">&#9654; 동영상 (2 분) 보기</span><span class="sxs-lookup"><span data-stu-id="5d172-107">&#9654; Watch video (2 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/authorization)
+[<span data-ttu-id="b399f-107">&#9654;비디오 (2 분)</span><span class="sxs-lookup"><span data-stu-id="b399f-107">&#9654; Watch video (2 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/authorization)
