@@ -5,12 +5,12 @@ description: ASP.NET Core Razor 페이지 웹앱을 빌드하는 작업의 기�
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/razor-pages-start
-ms.openlocfilehash: e317b49f2ad33c392de33bc32a87f67bb8cb72a0
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 7148f2d944bd1978b1a83278dfed9051f192e4dd
+ms.sourcegitcommit: 08f1a9baa97060da5168840b332c9c0805b5f901
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278046"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37144939"
 ---
 # <a name="get-started-with-razor-pages-in-aspnet-core"></a>ASP.NET Core에서 Razor 페이지 시작
 
@@ -94,7 +94,7 @@ Visual Studio 템플릿은 시작 프로젝트를 만듭니다.
 * Visual Studio가 [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview)를 시작하고 앱을 실행합니다. 주소 표시줄에 `localhost:port#`이 표시되고 `example.com` 등은 표시되지 않습니다. 그 이유는 `localhost`가 로컬 컴퓨터의 표준 이름이기 때문입니다. Localhost는 로컬 컴퓨터의 웹 요청만 지원합니다. Visual Studio에서 웹 프로젝트를 만들 경우 웹 서버에는 임의 포트가 사용됩니다. 이전 이미지에서 포트 번호는 5000입니다. 앱을 실행할 경우 다른 포트 번호가 표시됩니다.
 * **Ctrl+F5**(디버그 이외 모드)를 사용하여 앱을 시작하면 코드를 변경하고, 파일을 저장하고, 브라우저를 새로 고치고, 코드 변경 내용을 확인할 수 있습니다. 대부분의 개발자는 앱을 빠르게 시작하고 변경 내용을 확인하기 위해 디버그 이외 모드를 사용하려고 합니다.
 
-[!INCLUDE [razor-pages-start](~/includes/RP/2.1/razor-pages-start.md)]
+[!INCLUDE [razor-pages-start](~/includes/RP/razor-pages-start.md)]
 
 ::: moniker-end
 

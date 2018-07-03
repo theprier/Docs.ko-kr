@@ -5,18 +5,22 @@ description: ''
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/intro
-ms.openlocfilehash: 3c418cc4e331ad19b0ec1be3207fa2cc44bef041
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 4e0bcffd1162681aa4d31c4fe74acac5a7e981f1
+ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36275673"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37093129"
 ---
 # <a name="aspnet-core-mvc-with-entity-framework-core---tutorial-1-of-10"></a>Entity Framework Core를 사용한 ASP.NET Core MVC - 자습서 1/10
 
+[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc-21.md)]
+
+::: moniker range="= aspnetcore-2.0"
+
 작성자: [Tom Dykstra](https://github.com/tdykstra) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[!INCLUDE [RP better than MVC](../../includes/RP-EF/rp-over-mvc.md)]
+[!INCLUDE [RP better than MVC](~/includes/RP-EF/rp-over-mvc.md)]
 
 Contoso University 샘플 웹 응용 프로그램은 EF(Entity Framework) Core 2.0 및 Visual Studio 2017을 사용하여 ASP.NET Core 2.0 MVC 웹 응용 프로그램을 만드는 방법을 보여 줍니다.
 
@@ -31,7 +35,7 @@ EF Core 2.0은 최신 버전의 EF이지만 EF 6.x의 모든 기능을 가지고
 
 ## <a name="prerequisites"></a>전제 조건
 
-[!INCLUDE [](~/includes/net-core-prereqs.md)]
+[!INCLUDE [](~/includes/net-core-prereqs.md) [](~/includes/net-core-prereqs.md)]
 
 ## <a name="troubleshooting"></a>문제 해결
 
@@ -104,7 +108,7 @@ CTRL+F5 키를 눌러 프로젝트를 실행하거나 메뉴 모음에서 **디�
 
 프로젝트에 EF Core 지원을 추가하려면 대상으로 지정하려는 데이터베이스 공급자를 설치합니다. 이 자습서에서는 SQL Server를 사용하며 공급자 패키지는 [Microsoft.EntityFrameworkCore.SqlServer](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer/)입니다. 이 패키지는 [Microsoft.AspNetCore.All](xref:fundamentals/metapackage) 메타패키지에 포함되므로 설치할 필요가 없습니다.
 
-이 패키지 및 해당 종속성(`Microsoft.EntityFrameworkCore` 및 `Microsoft.EntityFrameworkCore.Relational`)은 EF에 대한 런타임 지원을 제공합니다. [마이그레이션](migrations.md) 자습서에서 나중에 도구 패키지를 추가합니다. 
+이 패키지 및 해당 종속성(`Microsoft.EntityFrameworkCore` 및 `Microsoft.EntityFrameworkCore.Relational`)은 EF에 대한 런타임 지원을 제공합니다. [마이그레이션](migrations.md) 자습서에서 나중에 도구 패키지를 추가합니다.
 
 Entity Framework Core에 사용할 수 있는 다른 데이터베이스 공급자에 대한 정보는 [데이터베이스 공급자](https://docs.microsoft.com/ef/core/providers/)를 참조하세요.
 
@@ -358,6 +362,8 @@ Entity Framework를 사용하는 비동기 코드를 작성할 때 고려해야 
 ## <a name="summary"></a>요약
 
 이제 Entity Framework Core 및 SQL Server Express LocalDB를 사용하여 데이터를 저장하고 표시하는 간단한 응용 프로그램을 만들었습니다. 다음 자습서에서는 기본 CRUD(만들기, 읽기, 업데이트, 삭제) 작업을 수행하는 방법을 배웁니다.
+
+::: moniker-end
 
 > [!div class="step-by-step"]
 > [다음](crud.md)
