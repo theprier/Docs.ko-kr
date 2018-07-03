@@ -9,20 +9,19 @@ ms.date: 01/17/2012
 ms.topic: article
 ms.assetid: fddf8e5e-c055-4f81-b691-78deef871112
 ms.technology: ''
-ms.prod: .net-framework
-ms.openlocfilehash: 704285fe06e2ece0f6afdc117aedf98f6155ef87
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 7929a06fd7857237c2529aca34d36564c2a89f82
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
-ms.locfileid: "28036767"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37389614"
 ---
 # <a name="aspnet-tutorials"></a>ASP.NET 자습서
 
-ASP.NET 응용 프로그램을 개발 하기 위한 다음 단계별 가이드는 사용할 수 있습니다.
+ASP.NET 응용 프로그램을 개발 하기 위한 다음 단계별 가이드를 사용할 수 있습니다.
 
 > [!NOTE]
-> ASP.NET Core 자습서를 찾고 있나요?  찾을 [여기](https://docs.microsoft.com/aspnet/core/tutorials/)합니다.
+> ASP.NET Core 자습서를 찾으시나요?  찾을 [여기](https://docs.microsoft.com/aspnet/core/tutorials/)합니다.
 
 ## <a name="web-forms"></a>Web Forms
 
@@ -48,7 +47,7 @@ ASP.NET 응용 프로그램을 개발 하기 위한 다음 단계별 가이드�
 
 ## <a name="mvc"></a>MVC
 
-* [5 ASP.NET MVC 시작](mvc/overview/getting-started/introduction/index.md)
+* [ASP.NET MVC 5 시작 ](mvc/overview/getting-started/introduction/index.md)
 * [MVC 5를 사용하여 EF 6 시작](mvc/overview/getting-started/getting-started-with-ef-using-mvc/index.md)
 * [ASP.NET MVC를 사용하는 EF Database First](mvc/overview/getting-started/database-first-development/index.md)
 * [ASP.NET MVC에서 페이지 검사기 사용](mvc/overview/views/using-page-inspector-in-aspnet-mvc.md)
