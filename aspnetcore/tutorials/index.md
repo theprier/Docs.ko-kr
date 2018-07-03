@@ -5,12 +5,12 @@ description: ASP.NET Core 응용 프로그램을 개발하는 방법을 배우�
 ms.author: riande
 ms.date: 10/14/2017
 uid: tutorials/index
-ms.openlocfilehash: 2ec362ea546d7bdb493665fe836bdf9ddb68b1b3
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: d103c351595f0d61e5f0ee14492f9f46b8c17e86
+ms.sourcegitcommit: 08f1a9baa97060da5168840b332c9c0805b5f901
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36279521"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37144952"
 ---
 # <a name="aspnet-core-tutorials"></a>ASP.NET Core 자습서
 
@@ -28,6 +28,7 @@ ASP.NET Core 응용 프로그램을 개발하기 위해 다음 단계별 가이�
    * [VS Code를 사용하는 Razor 페이지](xref:tutorials/razor-pages-vsc/index)  
 
 * [실시간 SignalR 웹앱 만들기](xref:tutorials/signalr)
+* [TypeScript를 사용하여 SignalR 웹앱 만들기](xref:tutorials/signalr-typescript-webpack)
 
 * ASP.NET Core MVC 웹앱 만들기
 

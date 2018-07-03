@@ -4,14 +4,14 @@ author: rick-anderson
 description: ASP.NET Core 응용 프로그램을 구축하기 위한 기본적인 개념을 알아봅니다.
 ms.author: riande
 ms.custom: H1Hack27Feb2017
-ms.date: 09/30/2017
+ms.date: 07/02/2018
 uid: fundamentals/index
-ms.openlocfilehash: b51d7b62525944d9924ecb4ce5964312f30a7835
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 33786bf78567a1aa12a1ac97d44d1a596ec4c3be
+ms.sourcegitcommit: 08f1a9baa97060da5168840b332c9c0805b5f901
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278871"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37144978"
 ---
 # <a name="aspnet-core-fundamentals"></a>ASP.NET Core 기본 사항
 
@@ -202,17 +202,25 @@ ASP.NET Core는 OWIN(Open Web Interface for .NET)을 지원합니다. OWIN을 �
 
 [WebSocket](https://wikipedia.org/wiki/WebSocket)은 TCP 연결을 통한 영구 양방향 통신 채널을 사용하도록 설정하는 프로토콜이며 WebSocket은 채팅, 주식 시세, 게임 등 웹 앱에서 실시간 기능이 필요한 모든 곳에 사용됩니다. ASP.NET Core는 WebSocket 기능을 지원합니다.
 
-자세한 내용은 [WebSocket](xref:fundamentals/websockets)을 참조하세요.
+자세한 내용은 [WebSocket](xref:fundamentals/websockets)을 참고하시기 바랍니다.
 
+::: moniker range=">= aspnetcore-2.1"
+## <a name="microsoftaspnetcoreapp-metapackage"></a>Microsoft.AspNetCore.App 메타패키지
+
+[Microsoft.AspNetCore.App](https://www.nuget.org/packages/Microsoft.AspNetCore.App/) 메타패키지는 패키지 관리를 간소화합니다. 자세한 내용은 [Microsoft.AspNetCore.App 메타패키지](xref:fundamentals/metapackage-app)를 참고하시기 바랍니다.
+
+::: moniker-end
+::: moniker range="= aspnetcore-2.0"
 ## <a name="microsoftaspnetcoreall-metapackage"></a>Microsoft.AspNetCore.All 메타패키지
 
 ASP.NET Core에 대한 [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All) 메타패키지는 다음을 포함합니다.
 
 * ASP.NET Core 팀에서 지원되는 모든 패키지
-* Entity Framework Core에서 지원되는 모든 패키지 
-* ASP.NET Core 및 Entity Framework Core에서 사용하는 내부 및 타사 종속성
+* Entity Framework Core에서 지원되는 모든 패키지
+* ASP.NET Core 및 Entity Framework Core에서 사용되는 내부 및 타사 종속성
 
 자세한 내용은 [Microsoft.AspNetCore.All 메타패키지](xref:fundamentals/metapackage)를 참고하시기 바랍니다.
+::: moniker-end
 
 ## <a name="net-core-vs-net-framework-runtime"></a>.NET Core 및 .NET Framework 런타임
 
