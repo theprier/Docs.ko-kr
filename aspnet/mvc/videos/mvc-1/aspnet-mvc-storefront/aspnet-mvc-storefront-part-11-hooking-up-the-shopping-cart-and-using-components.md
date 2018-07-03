@@ -1,31 +1,30 @@
 ---
 uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-11-hooking-up-the-shopping-cart-and-using-components
-title: 'ASP.NET MVC Storefront 11 단계: 쇼핑 카트 및 구성 요소를 사용 하 여 후크 | Microsoft Docs'
+title: 'ASP.NET MVC Storefront 11 부: 쇼핑 카트 및 구성 요소를 사용 하 여 후크 | Microsoft Docs'
 author: robconery
-description: 이 에피소드 I 쇼핑 카트까지 사이트를 연결 하 고 컨트롤러 내에서 일부 테스트를 실행 합니다. 도 MVC, th의 잘 알려지지 않은 기능을 통해 구성 요소를 작성 하려면...
+description: 이 에피소드에서 쇼핑 카트 최대 사이트 연결 했으며 컨트롤러 내에서 일부 테스트를 실행 합니다. MVC, th의 알려지지 않은 기능을 사용 하 여 구성 요소를 만드나요...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/19/2008
 ms.topic: article
 ms.assetid: 25cc35b4-601e-448b-abf1-bc253b30d232
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-11-hooking-up-the-shopping-cart-and-using-components
 msc.type: video
-ms.openlocfilehash: fb240b723960392515fe5be0e7b3ba51beb7cd01
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 7b4edd7b75f94b57e55a93df120b09b49d131f07
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30879112"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37376638"
 ---
-<a name="aspnet-mvc-storefront-part-11-hooking-up-the-shopping-cart-and-using-components"></a>ASP.NET MVC Storefront 11 단계: 구성 요소를 사용 하 고 쇼핑 카트 시키는
+<a name="aspnet-mvc-storefront-part-11-hooking-up-the-shopping-cart-and-using-components"></a>ASP.NET MVC Storefront 11 부: 쇼핑 카트 연결 및 구성 요소를 사용 하 여
 ====================
-여 [Conery Rob](https://github.com/robconery)
+[Rob Conery](https://github.com/robconery)
 
-이 에피소드 I 쇼핑 카트까지 사이트를 연결 하 고 컨트롤러 내에서 일부 테스트를 실행 합니다. I도 MVC는 System.Web.MVC.ComponentController의 잘 알려지지 않은 기능을 통해 구성 요소를 작성 합니다.
+이 에피소드에서 쇼핑 카트 최대 사이트 연결 했으며 컨트롤러 내에서 일부 테스트를 실행 합니다. 필자는 System.Web.MVC.ComponentController MVC의 알려지지 않은 기능을 사용 하 여 구성 요소 또한 빌드합니다.
 
-[&#9654;(31 분) 비디오를 시청 하세요](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-11-hooking-up-the-shopping-cart-and-using-components)
+[&#9654;비디오 (31 분)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-storefront-part-11-hooking-up-the-shopping-cart-and-using-components)
 
 > [!div class="step-by-step"]
 > [이전](aspnet-mvc-storefront-part-10-shopping-cart-refactor-and-authorization.md)
