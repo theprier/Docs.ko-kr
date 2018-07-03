@@ -2,66 +2,65 @@
 uid: web-forms/overview/ajax-control-toolkit/animation/modifying-animations-from-the-server-side-vb
 title: 서버 쪽 (VB)에서 애니메이션 수정 | Microsoft Docs
 author: wenz
-description: ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트롤 뿐 아니라 애니메이션 컨트롤을 추가 하는 전체 프레임 워크. 애니메이션 있을 수 있습니다...
+description: ASP.NET AJAX Control Toolkit에서 애니메이션 컨트롤 컨트롤 뿐 이지만 컨트롤에 애니메이션을 추가 하는 전체 프레임 워크 아닙니다. 애니메이션 있을 수 있습니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
 ms.topic: article
 ms.assetid: addcf4aa-340a-460b-9c64-506424a1f725
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/modifying-animations-from-the-server-side-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2b9ce85fc5040b2318233b3c553c2cf53dd03555
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: d39a40f2776d5b87bf82d1a6c6282ce920f4a907
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30869272"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37401956"
 ---
 <a name="modifying-animations-from-the-server-side-vb"></a>서버 쪽 (VB)에서 애니메이션 수정
 ====================
-으로 [Christian Wenz](https://github.com/wenz)
+[Christian Wenz](https://github.com/wenz)
 
 [코드를 다운로드](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation9.vb.zip) 또는 [PDF 다운로드](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation9VB.pdf)
 
-> ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트롤 뿐 아니라 애니메이션 컨트롤을 추가 하는 전체 프레임 워크. 애니메이션 서버 쪽에도 변경 될 수 있습니다.
+> ASP.NET AJAX Control Toolkit에서 애니메이션 컨트롤 컨트롤 뿐 이지만 컨트롤에 애니메이션을 추가 하는 전체 프레임 워크 아닙니다. 서버 쪽에서 애니메이션 변경할 수도 있습니다.
 
 
 ## <a name="overview"></a>개요
 
-ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트롤 뿐 아니라 애니메이션 컨트롤을 추가 하는 전체 프레임 워크. 애니메이션 서버 쪽에도 변경 될 수 있습니다.
+ASP.NET AJAX Control Toolkit에서 애니메이션 컨트롤 컨트롤 뿐 이지만 컨트롤에 애니메이션을 추가 하는 전체 프레임 워크 아닙니다. 서버 쪽에서 애니메이션 변경할 수도 있습니다.
 
 ## <a name="steps"></a>단계
 
-우선, 포함 된 `ScriptManager` 페이지; 그런 다음 ASP.NET AJAX 라이브러리 로드 되는 제어 도구 키트를 사용 하 여:
+첫째, 포함 된 `ScriptManager` 페이지 그런 다음 ASP.NET AJAX 라이브러리 로드 되 면 컨트롤 도구 키트를 사용 하 여:
 
 [!code-aspx[Main](modifying-animations-from-the-server-side-vb/samples/sample1.aspx)]
 
-그러면 다음과 같은 텍스트의 패널에 애니메이션 적용 됩니다.
+그러면 다음과 같은 텍스트 패널에 애니메이션 적용 됩니다.
 
 [!code-aspx[Main](modifying-animations-from-the-server-side-vb/samples/sample2.aspx)]
 
-패널에 대 한 연결 된 CSS 클래스 좋은 배경색을 정의 하 고도 패널 고정된 폭을 설정 합니다.
+패널에 대 한 연결 된 CSS 클래스에 유용한 배경 색을 정의 하 고 패널 고정된 너비를 설정할 수도:
 
 [!code-css[Main](modifying-animations-from-the-server-side-vb/samples/sample3.css)]
 
-코드의 나머지 서버 쪽에서 실행 되 고 태그; 사용 하지 않습니다. 대신, 사용 하 여 코드를 만드는 `AnimationExtender` 제어:
+코드의 나머지 서버 쪽에서 실행 되 고 태그;를 사용 하지 않습니다. 대신 사용 하 여 코드 만들기는 `AnimationExtender` 제어 합니다.
 
 [!code-aspx[Main](modifying-animations-from-the-server-side-vb/samples/sample4.aspx)]
 
-그러나 컨트롤 Toolkit 현재 제공 하지 않습니다 개별 애니메이션 만들기에 대 한 API 액세스 합니다. 그러나 설정 하 고는 `AnimationExtender`의 애니메이션 속성을 문자열로 애니메이션을 선언적으로 지정할 때 사용 되는 XML 태그를 포함 합니다. 포함 되지 않아야 하는 XML을 만들기 위해는 `<Animations>` 요소는.NET Framework의 XML을 사용할 수 있습니다 지원 하거나, 다음 코드 에서처럼 방금 제공 된 문자열:
+그러나 Control Toolkit 현재 제공 하지 않습니다 개별 애니메이션 만들기에 대 한 API 액세스 합니다. 하지만 설정할 수는 `AnimationExtender`의 애니메이션 속성 문자열을 포함 하는 애니메이션을 선언적으로 할당할 때 사용 되는 XML 태그입니다. 없어야 하는 XML을 만들기 위해는 `<Animations>` .NET Framework의 XML을 사용할 수 있습니다 지원 요소나, 다음 코드와 같이 문자열을 제공 하면 됩니다.
 
 [!code-vb[Main](modifying-animations-from-the-server-side-vb/samples/sample5.vb)]
 
-마지막으로 추가 된 `AnimationExtender` 내 컨트롤을 현재 페이지는 `<form runat="server">` 애니메이션 포함 되어 있고 실행 요소:
+마지막으로 추가 합니다 `AnimationExtender` 내 현재 페이지로 컨트롤을 `<form runat="server">` 요소에 애니메이션이 포함 되며 실행 되었는지:
 
 [!code-vb[Main](modifying-animations-from-the-server-side-vb/samples/sample6.vb)]
 
 
-[![C# /VB 서버 쪽 코드를 사용 하 여 애니메이션이 만들어집니다.](modifying-animations-from-the-server-side-vb/_static/image2.png)](modifying-animations-from-the-server-side-vb/_static/image1.png)
+[![서버 쪽 C# /VB 코드를 사용 하 여 애니메이션이 만들어집니다.](modifying-animations-from-the-server-side-vb/_static/image2.png)](modifying-animations-from-the-server-side-vb/_static/image1.png)
 
-C# /VB 서버 쪽 코드를 사용 하 여 애니메이션 만들어집니다 ([전체 크기 이미지를 보려면 클릭](modifying-animations-from-the-server-side-vb/_static/image3.png))
+애니메이션은 서버 쪽 C# /VB 코드를 사용 하 여 생성 됩니다 ([클릭 하 여 큰 이미지 보기](modifying-animations-from-the-server-side-vb/_static/image3.png))
 
 > [!div class="step-by-step"]
 > [이전](triggering-an-animation-in-another-control-vb.md)

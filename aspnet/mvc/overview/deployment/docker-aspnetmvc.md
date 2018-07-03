@@ -7,16 +7,15 @@ author: BillWagner
 ms.author: wiwagn
 ms.date: 02/01/2017
 ms.topic: article
-ms.prod: .net-framework
 ms.technology: dotnet-mvc
 ms.devlang: dotnet
 ms.assetid: c9f1d52c-b4bd-4b5d-b7f9-8f9ceaf778c4
-ms.openlocfilehash: 7a580c6c6236b375ea54ef4e9978fff6993d885a
-ms.sourcegitcommit: b83a5f731a9c02bdb1cc1e3f9a8bf273eb5b33e0
+ms.openlocfilehash: fa010e795878b26c79dbe04ef0017373283c4269
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/11/2018
-ms.locfileid: "29143191"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37403021"
 ---
 # <a name="migrating-aspnet-mvc-applications-to-windows-containers"></a>ASP.NET MVC 응용 프로그램을 Windows 컨테이너로 마이그레이션
 
@@ -37,13 +36,13 @@ Windows 컨테이너에서 기존 .NET Framework 기반 응용 프로그램을 �
 
 [완료된 응용 프로그램](https://github.com/dotnet/docs/tree/master/samples/framework/docker/MVCRandomAnswerGenerator)은 GitHub에 있습니다.
 
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 개발 컴퓨터가 실행 중이어야 합니다.
 
 - [Windows 10 1주년 업데이트](https://www.microsoft.com/software-download/windows10/) 이상 또는 [Windows Server 2016](https://www.microsoft.com/cloud-platform/windows-server) 이상
 - [Windows용 Docker](https://docs.docker.com/docker-for-windows/) - 안정적인 버전 1.13.0 또는 1.12 베타 26 이상 버전
-- [Visual Studio 2017](https://www.visualstudio.com/visual-studio-homepage-vs.aspx).
+- [Visual Studio 2017](https://www.visualstudio.com/visual-studio-homepage-vs.aspx)합니다.
 
 > [!IMPORTANT]
 > Windows Server 2016을 사용하는 경우 [컨테이너 호스트 배포 - Windows Server](https://msdn.microsoft.com/virtualization/windowscontainers/deployment/deployment)에 대한 지침을 따르세요.
@@ -75,7 +74,7 @@ Docker 이미지로 로드해야 하는 자산을 모두 한 곳에 수집합니
 Dockerfile에서 Docker 이미지를 정의합니다. Dockerfile에는 기본 이미지, 추가 구성 요소, 실행할 앱 및 기타 구성 이미지에 대한 지침이 포함되어 있습니다.  Dockerfile은 이미지를 만드는 `docker build` 명령에 대한 입력입니다.
 
 [Docker 허브](https://hub.docker.com/r/microsoft/aspnet/)에 있는 `microsoft/aspnet` 이미지를 기반으로 해서 이미지를 빌드합니다.
-기본 이미지인 `microsoft/aspnet`은 Windows Server 이미지입니다. Windows Server Core, IIS 및 ASP.NET 4.6.2 포함 됩니다. 컨테이너에서 이 이미지를 실행하면 IIS 및 설치된 웹 사이트가 자동으로 시작됩니다.
+기본 이미지인 `microsoft/aspnet`은 Windows Server 이미지입니다. Windows Server Core, IIS 및 ASP.NET 4.6.2 포함합니다. 컨테이너에서 이 이미지를 실행하면 IIS 및 설치된 웹 사이트가 자동으로 시작됩니다.
 
 이미지를 만드는 Dockerfile은 다음과 같이 표시됩니다.
 
@@ -89,15 +88,15 @@ FROM microsoft/aspnet
 COPY ./bin/Release/PublishOutput/ /inetpub/wwwroot
 ```
 
-이 Dockerfile에는 `ENTRYPOINT` 명령이 없습니다. 해당 명령은 필요하지 않습니다. IIS와 Windows Server를 실행 하는 경우 IIS 프로세스는 aspnet 기본 이미지에서 시작 하도록 구성 된 진입점.
+이 Dockerfile에는 `ENTRYPOINT` 명령이 없습니다. 해당 명령은 필요하지 않습니다. 에서 Windows Server IIS를 실행 하는 경우 IIS 프로세스는 aspnet 기본 이미지에서 시작 하도록 구성 된 진입점입니다.
 
-Docker 빌드 명령을 실행하여 ASP.NET 앱을 실행하는 이미지를 만듭니다. 이 수행 하려면 프로젝트의 디렉터리에서 PowerShell 창을 열고 솔루션 디렉터리에서 다음 명령을 입력 합니다.
+Docker 빌드 명령을 실행하여 ASP.NET 앱을 실행하는 이미지를 만듭니다. 이 위해 프로젝트의 디렉터리에 PowerShell 창을 열고 솔루션 디렉터리에서 다음 명령을 입력 합니다.
 
 ```console
 docker build -t mvcrandomanswers .
 ```
 
-이 명령은 프로그램 Dockerfile의 지침을 사용 하 여 새 이미지를 작성 합니다 이름 지정 (-t 태그 지정) mvcrandomanswers 이미지입니다. 이 과정에 [Docker Hub](http://hub.docker.com)에서 기본 이미지를 끌어온 다음 해당 이미지에 앱이 추가될 수 있습니다.
+이 명령은 Dockerfile의 지침을 사용 하 여 새 이미지를 빌드합니다. 이름 (-t 태그 지정) mvcrandomanswers 이미지입니다. 이 과정에 [Docker Hub](http://hub.docker.com)에서 기본 이미지를 끌어온 다음 해당 이미지에 앱이 추가될 수 있습니다.
 
 명령이 완료되면 `docker images` 명령을 실행하여 새 이미지에 대한 정보를 확인할 수 있습니다.
 
@@ -118,7 +117,7 @@ docker run -d --name randomanswers mvcrandomanswers
 
 `-d` 인수는 분리된 모드로 이미지를 시작하도록 Docker에 지정합니다. 즉, Docker 이미지가 현재 셸에서 연결이 끊긴 상태로 실행됩니다.
 
-대부분의 docker 예에서-컨테이너와 호스트 포트를 매핑하는 p 표시 될 수 있습니다. 기본 aspnet 이미지는 포트 80에서 수신 하 고 노출 하는 컨테이너를 이미 구성 했습니다. 
+대부분의 docker 예에서-p 컨테이너와 호스트 포트 매핑를 볼 수 있습니다. 기본 aspnet 이미지에 컨테이너 포트 80에서 수신 하 고 노출를 이미 구성 했습니다. 
 
 `--name randomanswers`는 실행 중인 컨테이너에 이름을 제공합니다. 대부분의 명령에서 컨테이너 ID 대신 이 이름을 사용할 수 있습니다.
 
@@ -127,7 +126,7 @@ docker run -d --name randomanswers mvcrandomanswers
 ## <a name="verify-in-the-browser"></a>브라우저에서 확인
 
 > [!NOTE]
-> 찾아볼 수 없습니다는 현재 Windows 컨테이너 버전 `http://localhost`합니다.
+> 찾을 수 없으면 현재 Windows 컨테이너 버전 `http://localhost`합니다.
 > 이 문제는 WinNAT에서 알려진 동작이며 앞으로 해결될 예정입니다. 문제가 해결될 때까지 컨테이너의 IP 주소를 사용해야 합니다.
 
 컨테이너가 시작되면 브라우저에서 실행 중인 컨테이너에 연결할 수 있도록 해당 IP 주소를 찾습니다.
@@ -137,7 +136,7 @@ docker inspect -f "{{ .NetworkSettings.Networks.nat.IPAddress }}" randomanswers
 172.31.194.61
 ```
 
-IPv4 주소를 사용 하 여 실행 중인 컨테이너에 연결 `http://172.31.194.61` 표시 된 예에서입니다. 해당 URL을 브라우저에 입력하면 실행 중인 사이트가 표시됩니다.
+IPv4 주소를 사용 하 여 실행 중인 컨테이너를 연결할 `http://172.31.194.61` 표시 된 예에서입니다. 해당 URL을 브라우저에 입력하면 실행 중인 사이트가 표시됩니다.
 
 > [!NOTE]
 > 일부 VPN 또는 프록시 소프트웨어가 사이트로 이동하지 못하도록 차단할 수도 있습니다.
