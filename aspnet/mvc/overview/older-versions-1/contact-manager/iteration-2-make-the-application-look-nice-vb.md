@@ -1,168 +1,167 @@
 ---
 uid: mvc/overview/older-versions-1/contact-manager/iteration-2-make-the-application-look-nice-vb
-title: '반복 #2-는 응용 프로그램의 좋은 (VB) 모양을 확인 | Microsoft Docs'
+title: '반복 #2 – 응용 프로그램 모양 꾸미기 (VB)를 확인 | Microsoft Docs'
 author: microsoft
-description: 이 반복에서 기본 ASP.NET MVC 뷰 마스터 페이지를 수정 및 스타일 시트를 연계 하 여 응용 프로그램의 모양을 개선 합니다.
+description: 이 반복에서 기본 ASP.NET MVC 보기 마스터 페이지를 수정 및 스타일 시트를 연계 하 여 응용 프로그램의 모양을 개선 합니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/20/2009
 ms.topic: article
 ms.assetid: f65cb436-e493-46fd-9608-384b27385aa1
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-2-make-the-application-look-nice-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8545351b099e52533789b372903cd493f533f834
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: c1209a925a43bd7846a9dc07ce557c55bb1827ae
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30872769"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37381107"
 ---
-<a name="iteration-2--make-the-application-look-nice-vb"></a>반복 #2-좋은 (VB)을 찾을 응용 프로그램으로 설정
+<a name="iteration-2--make-the-application-look-nice-vb"></a>반복 #2 – 응용 프로그램 모양 꾸미기 (VB) 확인
 ====================
-by [Microsoft](https://github.com/microsoft)
+[Microsoft](https://github.com/microsoft)
 
 [코드 다운로드](iteration-2-make-the-application-look-nice-vb/_static/contactmanager_2_vb1.zip)
 
-> 이 반복에서 기본 ASP.NET MVC 뷰 마스터 페이지를 수정 및 스타일 시트를 연계 하 여 응용 프로그램의 모양을 개선 합니다.
+> 이 반복에서 기본 ASP.NET MVC 보기 마스터 페이지를 수정 및 스타일 시트를 연계 하 여 응용 프로그램의 모양을 개선 합니다.
 
 
-## <a name="building-a-contact-management-aspnet-mvc-application-vb"></a>연락처 관리 ASP.NET MVC 응용 프로그램 (VB) 빌드
+## <a name="building-a-contact-management-aspnet-mvc-application-vb"></a>연락처 관리 ASP.NET MVC 응용 프로그램을 작성 (VB)
   
 
-이 일련의 자습서에서는 전체 연락처 관리 응용을 프로그램의 시작 끝나기를 빌드합니다. 관리자에 게 문의 응용 프로그램을 사용 하면 연락처 정보를 저장-이름, 전화 번호 및 전자 메일 주소 – 목록에 대 한 사용자의 수 있습니다.
+이 시리즈의 자습서에서 전체 연락처 관리 응용을 프로그램 시작부터 완료를 빌드합니다. 연락처 관리자 응용 프로그램을 사용 하면 연락처 정보 – 이름, 전화 번호 및 전자 메일 주소 – 목록에 대 한 사용자를 저장할 수 있습니다.
 
-여러 반복을 통해에 응용 프로그램을 빌드합니다. 각 반복에서 점진적으로 응용 프로그램을 개선 했습니다. 이 여러 개의 반복 접근 방법의 목적은 각 변경의 이유를 이해 하는 데 사용할 수 있도록 하는 것입니다.
+여러 반복에 응용 프로그램을 빌드합니다. 각 반복에서 점진적으로 응용 프로그램을 개선 했습니다. 이렇게 여러 반복의 목표는 각 변경의 이유를 이해할 수 있습니다.
 
-- 반복 #1 – 응용 프로그램을 만듭니다. 첫 번째 반복에서는 만듭니다 연락처 관리자에는 가장 간단한 방법은 가능한. 기본적인 데이터베이스 작업에 대 한 지원을 추가 하 여: 만들기, 읽기, 업데이트 및 삭제 (CRUD).
+- 반복 #1 – 응용 프로그램을 만듭니다. 첫 번째 반복에서 연락처 관리자에서에서 만드는 가장 간단한 방법은 가능 합니다. 기본 데이터베이스 작업에 대 한 지원 추가: 만들기, 읽기, 업데이트 및 삭제 (CRUD).
 
-- 반복 #2-모양이 아닌 응용 프로그램을 확인 합니다. 이 반복에서 기본 ASP.NET MVC 뷰 마스터 페이지를 수정 및 스타일 시트를 연계 하 여 응용 프로그램의 모양을 개선 합니다.
+- 반복 #2 – 보기 좋게 응용 프로그램을 확인 합니다. 이 반복에서 기본 ASP.NET MVC 보기 마스터 페이지를 수정 및 스타일 시트를 연계 하 여 응용 프로그램의 모양을 개선 합니다.
 
-- #3-추가 폼 유효성 검사를 반복 합니다. 세 번째 반복에서 기본적인 형태의 유효성 검사를 추가 했습니다. म 중이거나 사용자에서 필수 양식 필드를 완료 하지 않고 폼을 제출 합니다. 또한 전자 메일 주소, 전화 번호를 확인 합니다.
+- 반복 #3-양식 유효성 검사 추가 합니다. 세 번째 반복에서는 기본 양식 유효성 검사를 추가합니다. 사용자를 방지할 수를 필요한 형식의 필드를 완료 하지 않고 폼을 제출 합니다. 또한 전자 메일 주소 및 전화 번호 유효성을 검사 합니다.
 
-- 반복 #4 – 느슨하게 결합 된 응용 프로그램을 확인 합니다. 이 세 번째 반복에서 우리 활용 여러 가지 소프트웨어 디자인 패턴을 쉽게 유지 관리 하 고 않아 응용 프로그램을 수정 합니다. 예를 들어 리팩터링한 리포지토리 패턴 및 종속성 주입 패턴을 사용 하도록 응용 프로그램입니다.
+- 반복 #4 – 응용 프로그램을 느슨하게 결합을 확인 합니다. 이 세 번째 반복에서는 활용 쉽게 유지 관리 하 고 연락처 관리자 응용 프로그램을 수정 하려면 몇 가지 소프트웨어 디자인 패턴입니다. 예를 들어, 리포지토리 패턴 및 종속성 주입 패턴을 사용 하 여 응용 프로그램을 리팩터링 했습니다.
 
-- 반복 #5-단위 테스트를 만듭니다. 다섯 번째 반복에서 하도록 응용 프로그램이 쉽게 유지 관리 및 단위 테스트를 추가 하 여 수정 합니다. 데이터 모델 클래스를 모의 하 고 우리의 컨트롤러 및 유효성 검사 논리에 대 한 단위 테스트를 작성 합니다.
+- 반복 #5-단위 테스트를 만듭니다. 다섯 번째 반복에서에서는 쉽게 응용 프로그램 유지 관리 하 고 단위 테스트를 추가 하 여 수정 합니다. 데이터 모델 클래스를 모의 하 고는 컨트롤러 및 유효성 검사 논리에 대 한 단위 테스트를 작성 합니다.
 
-- 반복 6-테스트 기반 개발을 사용 합니다. 이 6 번째 반복에서에서는 새 기능을 추가할 응용 프로그램 먼저 단위 테스트를 작성 하 고 단위 테스트에 대해 코드를 작성 합니다. 이 반복 메일 그룹을 추가합니다.
+- 반복 #6-테스트 중심 개발을 사용 합니다. 이 여섯 번째 반복에서는 추가 새로운 기능을 응용 프로그램 먼저 단위 테스트를 작성 하 고 단위 테스트에 대 한 코드를 작성 합니다. 이 반복에서는 메일 그룹을 추가합니다.
 
-- #7 – 추가 Ajax 기능을 반복 합니다. 일곱 번째 반복에서 개선할 응용 프로그램의 성능과 응답성 ajax 지원을 추가 하 여 합니다.
+- 반복 #7 – Ajax 기능 추가입니다. 일곱 번째 반복에서 개선할 응용 프로그램의 성능과 응답성 Ajax에 대 한 지원을 추가 하 여 합니다.
 
 ## <a name="this-iteration"></a>이 반복
 
-이 반복의 목표 않아 응용 프로그램의 모양을 개선 하는 것입니다. 현재, 연락처 관리자는 기본 ASP.NET MVC 뷰 마스터 페이지 및 연계 스타일 시트 (그림 1 참조)를 사용 합니다. 이러한 안 불량, 보이지만 원하지 동일 하 게 다른 모든 ASP.NET MVC 웹 사이트를 않아 하지 않습니다. 사용자 지정 파일에 이러한 파일을 대체 하겠습니다.
+이 반복의 목표는 연락처 관리자 응용 프로그램의 모양을 향상 시킬 것입니다. 현재, Contact Manager는 기본 ASP.NET MVC 뷰 마스터 페이지 및 연계 스타일 시트 (그림 1 참조)를 사용 합니다. 이러한 안 불량, 보이지만 t 원하는 모든 다른 ASP.NET MVC 웹 사이트와 마찬가지로 검색할 Contact Manager 하지 않습니다. 사용자 지정 파일을 사용 하 여 이러한 파일을 대체 하려고 합니다.
 
 
 [![새 프로젝트 대화 상자](iteration-2-make-the-application-look-nice-vb/_static/image1.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image1.png)
 
-**그림 01**: ASP.NET MVC 응용 프로그램의 기본 모양을 ([전체 크기 이미지를 보려면 클릭](iteration-2-make-the-application-look-nice-vb/_static/image2.png))
+**그림 01**: ASP.NET MVC 응용 프로그램의 기본 모양을 ([큰 이미지를 보려면 클릭](iteration-2-make-the-application-look-nice-vb/_static/image2.png))
 
 
-이 반복 응용 프로그램의 시각적 디자인을 개선 하는 데 두 가지 방법에 설명 합니다. 첫째, 방법을 보여 무료 ASP.NET MVC 디자인 서식 파일을 다운로드 하려면 ASP.NET MVC 디자인 갤러리를 활용할 수 있습니다. ASP.NET MVC 디자인 갤러리를 사용 하는 작업을 수행 하지 않고 전문 웹 응용 프로그램을 만들 수 있습니다.
+이 반복 응용 프로그램의 시각적 디자인을 향상 시키기 위한 두 가지 방법에 설명 합니다. 먼저 하겠습니다 무료 ASP.NET MVC 디자인 템플릿을 다운로드 하기 위해 ASP.NET MVC 디자인 갤러리를 활용 하는 방법. ASP.NET MVC 디자인 갤러리를 사용 하면 모든 작업을 수행 하지 않고 전문 웹 응용 프로그램을 만들 수 있습니다.
 
-않아 응용 프로그램에 대 한 ASP.NET MVC 디자인 갤러리에서 서식 파일을 사용 하지 않도록 하기로 결정 합니다. 대신, 전문 디자인 회사에서 만든 사용자 지정 디자인을 했습니다. 이 자습서의 두 번째 부분에서 최종 ASP.NET MVC 디자인을 만드는 전문가 디자인 회사와 저는 각 I 설명 합니다.
+연락처 관리자 응용 프로그램에 대 한 ASP.NET MVC 디자인 갤러리에서 템플릿을 사용 하기로 했습니다. 대신, 전문 디자인 회사에서 만든 사용자 지정 디자인을 했습니다. 이 자습서의 2 부에서 최종 ASP.NET MVC 디자인을 만들려면 전문 디자인 회사를 사용 하 여 필자가 하는 방법을 설명 하겠습니다.
 
 ## <a name="the-aspnet-mvc-design-gallery"></a>ASP.NET MVC 디자인 갤러리
 
-ASP.NET MVC 디자인 갤러리에는 Microsoft에서 제공 무료 리소스입니다. ASP.NET MVC 갤러리는 다음 주소에:
+ASP.NET MVC 디자인 갤러리는 Microsoft에서 제공 하는 무료 리소스입니다. ASP.NET MVC 갤러리 다음 주소에 위치한:
 
 [https://www.asp.net/mvc/gallery](https://www.asp.net/mvc/gallery)
 
-ASP.NET MVC 디자인 갤러리 ASP.NET MVC 프로젝트에 사용 하기 위해 생성 된 무료 웹 사이트 디자인의 컬렉션을 호스트 합니다. 설계는 커뮤니티의 회원이 업로드 됩니다. 갤러리 방문자가 즐겨 찾는 설계에 대 한 투표 수 있습니다 (그림 2 참조).
+ASP.NET MVC 디자인 갤러리는 ASP.NET MVC 프로젝트에서 사용 하기 위해 생성 된 무료 웹 사이트 디자인의 컬렉션을 호스팅합니다. 디자인은 커뮤니티의 회원이 업로드 됩니다. 갤러리에는 방문자가 즐겨 찾는 설계에 대해 투표할 수 (그림 2 참조).
 
 
 [![새 프로젝트 대화 상자](iteration-2-make-the-application-look-nice-vb/_static/image2.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image3.png)
 
-**그림 02**: The ASP.NET MVC 디자인 갤러리 ([전체 크기 이미지를 보려면 클릭](iteration-2-make-the-application-look-nice-vb/_static/image4.png))
+**그림 02**: The ASP.NET MVC 디자인 갤러리 ([큰 이미지를 보려면 클릭](iteration-2-make-the-application-look-nice-vb/_static/image4.png))
 
 
-이 자습서를 쓰고 갤러리에서 가장 인기 있는 디자인 David Hauser 여 년 10 월 이라는 노드 구성입니다. 다음 단계를 완료 하 여 ASP.NET MVC 프로젝트에 대 한이 디자인을 사용할 수 있습니다.
+이 자습서를 작성 하는 대로 갤러리에서 가장 인기 있는 디자인은 David Hauser 여 년 10 월 이라는 디자인 합니다. 다음 단계를 완료 하 여 ASP.NET MVC 프로젝트에 대 한이 디자인을 사용할 수 있습니다.
 
-1. 클릭는 **다운로드** 단추를 사용자 컴퓨터로 October.zip 파일을 다운로드 합니다.
-2. 다운로드 한 October.zip 파일을 마우스 오른쪽 단추로 클릭 하 고 클릭는 **차단 해제** 단추 (그림 3 참조).
-3. 10 월 이라는 폴더에 파일을 압축을 풉니다.
-4. 10 월 폴더에 포함 된 DesignTemplate 폴더에서 모든 파일을 선택 합니다. 해당 파일을 마우스 오른쪽 단추로 클릭 하 고 메뉴 옵션을 선택 **복사**합니다.
+1. 클릭 합니다 **다운로드** October.zip 파일을 컴퓨터에 다운로드 하려면 단추입니다.
+2. 다운로드 한 October.zip 파일을 마우스 오른쪽 단추로 클릭 하 고 클릭 합니다 **차단 해제** 단추 (그림 3 참조).
+3. 10 월 라는 폴더에 파일을 압축을 풉니다.
+4. 10 월 폴더에 포함 된 DesignTemplate 폴더에서 모든 파일을 선택 합니다. 파일을 마우스 오른쪽 단추로 클릭 하 고 메뉴 옵션을 선택 **복사**합니다.
 5. Visual Studio 솔루션 탐색기 창에서 ContactManager 프로젝트 노드를 마우스 오른쪽 단추로 클릭 하 고 메뉴 옵션을 선택 **붙여넣기** (그림 4 참조).
-6. Visual Studio 메뉴 옵션을 선택 **편집, 찾기 및 바꾸기, 빠른 바꾸기** 바꾸고 *[MyProjectName]* 와 *ContactManager* (그림 5 참조).
+6. Visual Studio 메뉴 옵션을 선택 **편집, 찾기 및 바꾸기, 빠른 바꾸기** 바꾸고 *[MyProjectName]* 사용 하 여 *ContactManager* (그림 5 참조).
 
 
 [![새 프로젝트 대화 상자](iteration-2-make-the-application-look-nice-vb/_static/image3.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image5.png)
 
-**그림 03**:는 웹에서 다운로드 한 파일을 차단 해제 ([전체 크기 이미지를 보려면 클릭](iteration-2-make-the-application-look-nice-vb/_static/image6.png))
+**그림 03**: 웹에서 다운로드 한 파일을 차단 해제 ([큰 이미지를 보려면 클릭](iteration-2-make-the-application-look-nice-vb/_static/image6.png))
 
 
 [![새 프로젝트 대화 상자](iteration-2-make-the-application-look-nice-vb/_static/image4.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image7.png)
 
-**그림 04**: 솔루션 탐색기에서 파일을 덮어쓰지 ([전체 크기 이미지를 보려면 클릭](iteration-2-make-the-application-look-nice-vb/_static/image8.png))
+**그림 04**: 솔루션 탐색기에서 파일을 덮어쓸 ([큰 이미지를 보려면 클릭](iteration-2-make-the-application-look-nice-vb/_static/image8.png))
 
 
 [![새 프로젝트 대화 상자](iteration-2-make-the-application-look-nice-vb/_static/image5.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image9.png)
 
-**그림 05**: ContactManager [이름] 경로로 바꿉니다 ([전체 크기 이미지를 보려면 클릭](iteration-2-make-the-application-look-nice-vb/_static/image10.png))
+**그림 05**: [ProjectName] ContactManager 바꿉니다 ([큰 이미지를 보려면 클릭](iteration-2-make-the-application-look-nice-vb/_static/image10.png))
 
 
-다음이 단계를 완료 한 후 웹 응용 프로그램의 새로운 디자인을 사용 합니다. 그림 6에 있는 페이지와 년 10 월 디자인 않아 응용 프로그램의 모양을 보여 줍니다.
+다음이 단계를 완료 한 후 웹 응용 프로그램의 새로운 디자인을 사용 합니다. 그림 6에서 페이지 년 10 월 디자인을 사용 하 여 연락처 관리자 응용 프로그램의 모양을 보여 줍니다.
 
 
 [![새 프로젝트 대화 상자](iteration-2-make-the-application-look-nice-vb/_static/image6.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image11.png)
 
-**그림 06**: ContactManager 년 10 월 템플릿으로 ([전체 크기 이미지를 보려면 클릭](iteration-2-make-the-application-look-nice-vb/_static/image12.png))
+**그림 06**: ContactManager 년 10 월 템플릿 사용 하 여 ([큰 이미지를 보려면 클릭](iteration-2-make-the-application-look-nice-vb/_static/image12.png))
 
 
 ## <a name="creating-a-custom-aspnet-mvc-design"></a>사용자 지정 ASP.NET MVC 디자인 만들기
 
-ASP.NET MVC 디자인 갤러리 좋은 선택한 다른 디자인 스타일에 있습니다. 갤러리는 ASP.NET MVC 응용 프로그램의 모양을 사용자 지정할 수 있는 간편한 방법을 제공 합니다. 및 물론, 갤러리가 완전히 들지 큰 이점이 있습니다.
+ASP.NET MVC 디자인 갤러리에는 다양 한 디자인 스타일 좋은 선택입니다. 갤러리는 ASP.NET MVC 응용 프로그램의 모양을 사용자 지정할 수 있는 간편한 방법을 제공 합니다. 그리고 물론 갤러리에 큰 장점이 완전히 무료로 제공 합니다.
 
-그러나 웹 사이트에 대 한 완전히 고유한 디자인을 만드는 할 수 있습니다. 이 경우에 웹 사이트 디자인 회사에서 실행 되도록 것이 좋습니다. 이 접근 방식을 않아 응용 프로그램에 대 한 디자인에 대 한 하기로 결정 합니다.
+그러나 웹 사이트에 대 한 완전히 고유한 설계를 만들 수 해야 합니다. 이런 경우는 웹 사이트 디자인 회사를 사용 하려면 것이 좋습니다. 연락처 관리자 응용 프로그램 디자인에 대 한이 방법을 사용 하기로 했습니다.
 
-반복 # 1에서 연락처 관리자를 압축 하 고 설계 회사에 프로젝트를 전송 합니다. 해당 않았음에도 t 문제를 나타내지 (참에!), Visual Studio를 소유 하지 않았습니다. Microsoft Visual Web Developer를 무료로 다운로드할 수 있었던는 [ https://www.asp.net ](https://www.asp.net) 웹 사이트 및 Visual Web Developer에서 않아 응용 프로그램을 엽니다. 며칠, 그림 7에 디자인 얻은 결과 있습니다.
+반복 # 1의 연락처 관리자를 압축 하 고 프로젝트 디자인 회사에 전송 합니다. 이러한 동작 t 문제가 없는 (아깝다는 에서도!), Visual Studio를 소유 하지 않았습니다. Microsoft Visual Web Developer를 무료로 다운로드할 수 있었습니다 합니다 [ https://www.asp.net ](https://www.asp.net) 웹 사이트 및 Visual Web Developer에서 연락처 관리자 응용 프로그램을 엽니다. 몇 일, 이러한 그림 7의 설계를 생성 했습니다.
 
 
 [![새 프로젝트 대화 상자](iteration-2-make-the-application-look-nice-vb/_static/image7.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image13.png)
 
-**그림 07**: ASP.NET MVC 않아 디자인 ([전체 크기 이미지를 보려면 클릭](iteration-2-make-the-application-look-nice-vb/_static/image14.png))
+**그림 07**: ASP.NET MVC Contact Manager 디자인 ([큰 이미지를 보려면 클릭](iteration-2-make-the-application-look-nice-vb/_static/image14.png))
 
 
-두 가지 주요 파일 하는 구성 된 새로운 디자인: 새 연계 스타일 시트 파일 및 새 뷰 마스터 페이지 파일입니다. 뷰 마스터 페이지 레이아웃 및 ASP.NET MVC 응용 프로그램의 뷰에 대 한 공유 콘텐츠를 포함합니다. 예를 들어 뷰 마스터 페이지 그림 7에서는 머리글, 탐색 탭 및 표시 되는 바닥글을 포함 합니다. 설계 회사에서 새 Site.Master 파일 Views\Shared 폴더에서에서 기존 Site.Master 뷰 마스터 페이지를 덮어쓴 I
+두 개의 주 파일의 새 디자인은: 새 연계 스타일 시트 파일 및 새 보기 마스터 페이지 파일입니다. 보기 마스터 페이지 레이아웃 및 ASP.NET MVC 응용 프로그램의 보기에 대 한 공유 콘텐츠를 포함합니다. 예를 들어, 보기 마스터 페이지 그림 7에 헤더, 탐색 탭 및 표시 되는 바닥글을 포함 합니다. Views\Shared 폴더에서 기존 Site.Master 뷰 마스터 페이지 디자인 회사에서 새 Site.Master 파일을 사용 하 여 덮어쓴 있나요
 
-설계 회사 연계 새 스타일 시트 및 이미지의 집합에도 만들어집니다. 이러한 새 파일의 콘텐츠 폴더에 배치 하 고 기존 Site.css 파일을 덮어썼습니다. 콘텐츠 폴더에 모든 정적 콘텐츠를 넣어야 합니다.
+디자인 회사 연계 하는 새 스타일 시트 및 이미지 집합에도 만들어집니다. 콘텐츠 폴더에 이러한 새 파일을 배치 하 고 기존 Site.css 파일을 덮어썼습니다. 콘텐츠 폴더에 모든 정적 콘텐츠를 배치 해야 합니다.
 
-Contact Manager에 대 한 새로운 디자인에 이미지를 편집 하 고 연락처 삭제를 확인 합니다. 연락처의 HTML 테이블에 각 연락처 옆으로 편집 및 삭제 이미지로가 나타납니다.
+새 디자인에서는 대화 상대 관리자에 대 한 이미지 편집 하 고 연락처를 삭제 하는 중에 알 수 있습니다. 연락처의 HTML 테이블에 있는 각 연락처 옆에 있는 편집 및 삭제 이미지로가 나타납니다.
 
-HTML 렌더링 된 다음 링크를 원래, 합니다. 다음과 같은 도우미 ActionLink():
+HTML을 사용 하 여 렌더링 된 다음 링크를 원래 합니다. 이와 같은 ActionLink() 도우미:
 
 [!code-aspx[Main](iteration-2-make-the-application-look-nice-vb/samples/sample1.aspx)]
 
-Html.ActionLink() 메서드 (HTML 메서드 보안상의 이유로 대 한 링크 텍스트를 인코딩합니다) 이미지를 지원 하지 않습니다. 따라서 다음과 같이 Url.Action() 호출 하 여 Html.ActionLink()에 대 한 호출을 교체 I.
+Html.ActionLink() 메서드 (HTML 메서드는 보안상의 이유로 링크 텍스트를 인코드) 이미지를 지원 하지 않습니다. 따라서 같이 Url.Action() 호출 하 여 Html.ActionLink()에 대 한 호출을 대체 하나요:
 
 [!code-aspx[Main](iteration-2-make-the-application-look-nice-vb/samples/sample2.aspx)]
 
-Html.ActionLink() 메서드는 전체 HTML 하이퍼링크를 렌더링합니다. Url.Action() 메서드 반면에 렌더링 하는 URL만 하지 않고는 &lt;는&gt; 태그입니다.
+Html.ActionLink() 메서드는 전체 HTML 하이퍼링크를 렌더링합니다. Url.Action() 메서드 없이 URL만을 다른 한편으로 렌더링 합니다 &lt;는&gt; 태그입니다.
 
-또한 새로운 디자인에 선택 및 선택 되지 않은 탭이 포함 되어 있는지 확인할 수입니다. 그림 8의 예를 들어는 **새 연락처 만들기** 탭을 선택 및 **내 연락처** 탭이 선택 되지 않습니다.
+표시, 또한 새 디자인 탭을 선택 또는 선택 하지 않은 포함 합니다. 예를 들어, 그림 8에에서는 **새 연락처 만들기** 탭을 선택 하며 **내 연락처** 탭을 선택 하지 않으면.
 
 
 [![새 프로젝트 대화 상자](iteration-2-make-the-application-look-nice-vb/_static/image8.jpg)](iteration-2-make-the-application-look-nice-vb/_static/image15.png)
 
-**그림 08**: 선택한 탭을 선택 하지 않은 ([전체 크기 이미지를 보려면 클릭](iteration-2-make-the-application-look-nice-vb/_static/image16.png))
+**그림 08**: 선택한 탭을 선택 취소 ([큰 이미지를 보려면 클릭](iteration-2-make-the-application-look-nice-vb/_static/image16.png))
 
 
-선택 및 선택 되지 않은 탭 렌더링를 지원 하기 위해 필자는 MenuItemHelper 라는 사용자 지정 HTML 도우미를 만들었습니다. 이 도우미 메서드를 렌더링 하거나는 &lt;li&gt; 태그 또는 &lt;li 클래스 "선택" =&gt; 현재 컨트롤러 및 작업 도우미에 전달 된 컨트롤러 및 작업 이름에 해당 하는 여부에 따라 태그입니다. MenuItemHelper에 대 한 코드 목록 1에 포함 됩니다.
+탭을 선택 또는 선택 하지 않은 렌더링을 지원 하려면 사용자 지정 HTML 도우미는 MenuItemHelper 라는 만들었습니다. 이 도우미 메서드를 렌더링 중 하나를 &lt;li&gt; 태그 또는 &lt;li 클래스 "선택" =&gt; 현재 컨트롤러 및 작업 도우미에 전달 된 컨트롤러 및 작업 이름에 해당 하는 여부에 따라 태그입니다. MenuItemHelper에 대 한 코드는 목록 1에 포함 됩니다.
 
 **1 – Helpers\MenuItemHelper.vb 나열**
 
 [!code-vb[Main](iteration-2-make-the-application-look-nice-vb/samples/sample3.vb)]
 
-MenuItemHelper를 사용 하 여 TagBuilder 클래스 내부적으로 작성 된 &lt;li&gt; HTML 태그입니다. TagBuilder 클래스는 새 HTML 태그를 작성 해야 할 때마다 사용할 수 있는 매우 유용한 유틸리티 클래스입니다. 특성을 추가, CSS 클래스를 추가 하 고, Id, 생성 하 고 s 태그를 수정 하기 위한 메서드 포함 내부 HTML입니다.
+MenuItemHelper 클래스를 사용 하는 TagBuilder 내부적으로 작성 하는 &lt;li&gt; HTML 태그입니다. TagBuilder 클래스는 새 HTML 태그를 작성 해야 할 경우 사용할 수 있는 매우 유용한 유틸리티 클래스입니다. 여기에 특성 추가, CSS 클래스를 추가, Id, 생성 및 s 태그를 수정 하기 위한 메서드 내부 HTML입니다.
 
 ## <a name="summary"></a>요약
 
-이 반복에 ASP.NET MVC 응용 프로그램의 시각적 디자인을 개선 했습니다. 첫째, ASP.NET MVC 디자인 갤러리에 도입 된 있습니다. ASP.NET MVC 응용 프로그램에서 사용할 수 있는 ASP.NET MVC 디자인 갤러리에서 무료 디자인 서식 파일을 다운로드 하는 방법을 배웠습니다.
+이 반복에서 ASP.NET MVC 응용 프로그램의 시각적 디자인을 개선 했습니다. 먼저, ASP.NET MVC 디자인 갤러리를 소개 했습니다. ASP.NET MVC 응용 프로그램에서 사용할 수 있는 ASP.NET MVC 디자인 갤러리에서 무료 디자인 템플릿을 다운로드 하는 방법을 알아보았습니다.
 
-다음으로, 기본 연계 스타일 시트 파일 및 마스터 뷰 페이지 파일을 수정 하 여 사용자 지정 디자인을 만들 수는 방법을 설명 합니다. 새 디자인을 지원 하기 위해 몇 가지 사소한 변경 않아 응용 프로그램을 만들어야 했습니다. 예를 들어 라는 MenuItemHelper 또는 선택 하지 않은 탭이 표시 되는 새 HTML 도우미를 추가 했습니다.
+다음으로, 기본 연계 스타일 시트 파일 및 마스터 뷰 페이지 파일을 수정 하 여 사용자 지정 디자인을 만드는 방법을 설명 합니다. 새 디자인을 지원 하기 위해 연락처 관리자 응용 프로그램에 일부 사소한 변경을 수행 해야 했습니다. 예를 들어 MenuItemHelper 또는 선택 하지 않은 탭이 표시 되는 명명 된 새 HTML 도우미를 추가 했습니다.
 
-다음 반복에서 유효성 검사의 매우 중요 한 주제를 해결할 했습니다. 사용자 먼저 사용자 s 등 필요한 값을 제공 하지 않고 새 연락처를 만들 수 없습니다 및 성을 유효성 검사 코드에 응용 프로그램을 추가 했습니다.
+다음 반복에서는 유효성 검사의 매우 중요 한 주제를 수행할 수 있습니다. 사용자 수 없습니다. 새 연락처를 먼저 사용자가 등 필요한 값을 제공 하지 않고 만들고 있는 성 응용 프로그램 유효성 검사 코드를 추가 합니다.
 
 > [!div class="step-by-step"]
 > [이전](iteration-1-create-the-application-vb.md)

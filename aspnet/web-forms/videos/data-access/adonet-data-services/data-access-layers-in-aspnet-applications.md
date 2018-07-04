@@ -1,31 +1,30 @@
 ---
 uid: web-forms/videos/data-access/adonet-data-services/data-access-layers-in-aspnet-applications
-title: ASP.NET 응용 프로그램에서 데이터 액세스 계층 | Microsoft Docs
+title: ASP.NET 응용 프로그램에서 데이터 액세스 레이어 | Microsoft Docs
 author: JoeStagner
-description: 이 비디오에서는 3의 1 부 Joe Stagner 간단한 ASP.NET 응용 프로그램에 대 한 형식화 된 데이터 집합을 사용 하 여 데이터 액세스 계층을 만듭니다. 에 대 한 자세한 내용은...
+description: 이 비디오에서는 3, 1 부 Joe Stagner는 간단한 ASP.NET 응용 프로그램에 대 한 형식화 된 데이터 집합을 사용 하 여 데이터 액세스 계층을 만듭니다. 에 대 한 추가 정보에 대 한 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/07/2008
 ms.topic: article
 ms.assetid: 536aa7a6-84fb-487c-a14f-6ca3eb8a4a33
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/data-access/adonet-data-services/data-access-layers-in-aspnet-applications
 msc.type: video
-ms.openlocfilehash: e05b95f3c806ac55f7e112783f279b5c881627ef
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: ceb9e21ac874a755c6e8e12475a9b65978d24e29
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30882298"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37395307"
 ---
-<a name="data-access-layers-in-aspnet-applications"></a>ASP.NET 응용 프로그램에서 데이터 액세스 계층
+<a name="data-access-layers-in-aspnet-applications"></a>ASP.NET 응용 프로그램의 데이터 액세스 레이어
 ====================
-으로 [Joe Stagner](https://github.com/JoeStagner)
+[Joe Stagner](https://github.com/JoeStagner)
 
-이 비디오에서는 3의 1 부 Joe Stagner 간단한 ASP.NET 응용 프로그램에 대 한 형식화 된 데이터 집합을 사용 하 여 데이터 액세스 계층을 만듭니다. 이 비디오에 대 한 자세한 내용은 참조는 [데이터 액세스 계층을 만들려면](../../../overview/data-access/introduction/creating-a-data-access-layer-vb.md) 자습서 데이터 액세스 합니다.
+이 비디오에서는 3, 1 부 Joe Stagner는 간단한 ASP.NET 응용 프로그램에 대 한 형식화 된 데이터 집합을 사용 하 여 데이터 액세스 계층을 만듭니다. 이 비디오에 대 한 자세한 내용은 참조는 [데이터 액세스 레이어 만들기](../../../overview/data-access/introduction/creating-a-data-access-layer-vb.md) 데이터 액세스 자습서입니다.
 
-[&#9654;(11 분) 비디오를 시청 하세요](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/data-access-layers-in-aspnet-applications)
+[&#9654;비디오 (11 분)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/data-access-layers-in-aspnet-applications)
 
 > [!div class="step-by-step"]
 > [다음](how-to-manually-bind-a-dataset-to-a-datagrid.md)

@@ -2,30 +2,29 @@
 uid: web-forms/videos/authentication/sql-injection-defense
 title: SQL 주입 방어 | Microsoft Docs
 author: JoeStagner
-description: 응용 프로그램에서 SQL 주입 공격 취약점 전체 하루를 손상 수 있습니다. 이 비디오에서는 Microsoft의 Joe Stagner SQL 주입 공격 happ 수 하는 방법을 설명...
+description: 응용 프로그램에서 SQL 주입 취약점 전체 하루를 손상 수 있습니다. 이 비디오에서는 Microsoft의 Joe Stagner SQL 주입 공격 happ 하는 방법을 설명 하는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 10/29/2009
 ms.topic: article
 ms.assetid: b9fb1e01-06d9-43d9-9e8f-5fa1e4c6a211
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/authentication/sql-injection-defense
 msc.type: video
-ms.openlocfilehash: 9b22721032a12f0a566c3837b80ef4f4fbb41960
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: ddddefa83c268a93225fcfe6c406c26bf3dea369
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30889971"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37393865"
 ---
 <a name="sql-injection-defense"></a>SQL 주입 방어
 ====================
-으로 [Joe Stagner](https://github.com/JoeStagner)
+[Joe Stagner](https://github.com/JoeStagner)
 
-응용 프로그램에서 SQL 주입 공격 취약점 전체 하루를 손상 수 있습니다. 이 비디오에서는 Microsoft의 Joe Stagner SQL 삽입 공격에 발생할 수 있습니다 어떻게, 악성을 수행할 수 있는 및 ASP.NET 응용 프로그램 SQL 주입 공격 취약점 으로부터 보호 하는 방법을 설명 합니다.
+응용 프로그램에서 SQL 주입 취약점 전체 하루를 손상 수 있습니다. 이 비디오에서는 Microsoft의 Joe Stagner SQL 삽입 공격에 발생할 수 있습니다 하는 방법, 악당을 사용 하 여 수행할 수 있는 작업 및 SQL 주입 취약성 으로부터 ASP.NET 응용 프로그램을 보호 하는 방법을 설명 합니다.
 
-[&#9654;(25 분) 비디오를 시청 하세요](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/sql-injection-defense)
+[&#9654;비디오 (25 분)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/sql-injection-defense)
 
 > [!div class="step-by-step"]
 > [이전](creating-inactive-users.md)

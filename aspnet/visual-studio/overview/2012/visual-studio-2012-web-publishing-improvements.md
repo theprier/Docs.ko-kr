@@ -1,26 +1,25 @@
 ---
 uid: visual-studio/overview/2012/visual-studio-2012-web-publishing-improvements
-title: Visual Studio 2012 웹 게시 개선 | Microsoft Docs
+title: Visual Studio 2012 웹 게시 기능 향상 | Microsoft Docs
 author: shanselman
-description: Scott Hanselman Visual Studio 2012의 새로운 웹 게시 기능을 보여 줍니다.
+description: Scott hanselman이 Visual Studio 2012의 새로운 웹 게시 기능을 보여 줍니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/15/2012
 ms.topic: article
 ms.assetid: 61222942-e650-40ee-9ee1-8fcb879ae92f
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /visual-studio/overview/2012/visual-studio-2012-web-publishing-improvements
 msc.type: video
-ms.openlocfilehash: 717468eddb22722e73d128049e4b13e8d2d82ea2
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 6b6a9e0d81b68e6e20625db428af2bf80be89d23
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26506512"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37367799"
 ---
-<a name="visual-studio-2012-web-publishing-improvements"></a>Visual Studio 2012 웹 게시 향상
+<a name="visual-studio-2012-web-publishing-improvements"></a>Visual Studio 2012 웹 게시 기능 향상
 ====================
-으로 [Scott Hanselman](https://github.com/shanselman)
+[Scott Hanselman](https://github.com/shanselman)
 
-[&#9654; (5 분) 비디오를 시청 하세요](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/visual-studio-2012-web-publishing-improvements)
+[&#9654;비디오 (5 분)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/visual-studio-2012-web-publishing-improvements)

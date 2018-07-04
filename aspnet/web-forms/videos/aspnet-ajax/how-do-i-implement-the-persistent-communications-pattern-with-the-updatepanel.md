@@ -1,31 +1,30 @@
 ---
 uid: web-forms/videos/aspnet-ajax/how-do-i-implement-the-persistent-communications-pattern-with-the-updatepanel
-title: '[어떻게 할까요?] UpdatePanel 사용 하 여 지속적인 통신 패턴을 구현 여부? | Microsoft 문서'
+title: '[어떻게 할까요?] UpdatePanel 사용 하 여 지속적인 통신 패턴을 구현 | Microsoft 문서'
 author: JoeStagner
-description: 기존 웹 사이트에서 브라우저와 서버는 진행 중인 통신을 유지 하지 않는 하지만 행동은 수행 하는 사용자에 대 한 응답에만 전달...
+description: 기존 웹 사이트에서 브라우저와 서버는 진행 중인 통신을 유지 하지 않습니다 하지만 통신을 수행 하는 사용자에 대 한 응답에만...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/01/2007
 ms.topic: article
 ms.assetid: 49c7a74d-dce7-4d5c-8282-c7846f478e11
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-implement-the-persistent-communications-pattern-with-the-updatepanel
 msc.type: video
-ms.openlocfilehash: b7572369b461e5261e549c260648dafa6254e246
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 3812b41085f6ad0e08bd37599af845cfa4ff08e8
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30886396"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37380554"
 ---
-<a name="how-do-i-implement-the-persistent-communications-pattern-with-the-updatepanel"></a>[어떻게 할까요?] UpdatePanel 사용 하 여 지속적인 통신 패턴을 구현 여부?
+<a name="how-do-i-implement-the-persistent-communications-pattern-with-the-updatepanel"></a>[어떻게 할까요?] UpdatePanel 사용 하 여 지속적인 통신 패턴을 구현
 ====================
-으로 [Joe Stagner](https://github.com/JoeStagner)
+[Joe Stagner](https://github.com/JoeStagner)
 
-기존 웹 사이트에서 브라우저와 서버는 진행 중인 통신을 유지 하지 않는 하지만 작업을 수행 하는 사용자에 대 한 응답에만 전달 합니다. 페이지 수는 응용 프로그램 컨테이너 수 없는 최신 웹 사이트에서는 브라우저와 페이지 업데이트 작업을 수행 하는 사용자 없이 발생할 수 있도록 진행 중인 통신을 유지 하기 위해 서버에 대 한 수 있습니다. 이 ajax 영구 통신 패턴 이라고 합니다. ASP.NET AJAX 웹 영구 통신 패턴을 구현 하는 개발자를 위한 두 가지 주요 방법으로 제공 합니다. 이 비디오는 구현의 기반으로 ASP.NET AJAX UpdatePanel을 사용 하는 간단한 방법을 보여 줍니다. 나중에 비디오에서 ASP.NET AJAX UpdatePanel 사용 하지 않고 동일한 패턴을 구현 하는 방법을 배웁니다.
+기존 웹 사이트에서 브라우저와 서버 진행 중인 통신을 유지 관리 하지 않습니다 하지만 작업을 수행 하는 사용자에 대 한 응답에만 통신 합니다. 페이지의 응용 프로그램 컨테이너 되는 최신 웹 사이트에 브라우저 및 페이지 업데이트 작업을 수행 하는 사용자 없이 발생할 수 있도록 진행 중인 통신을 유지 하기 위해 서버에 대 한 수 있습니다. 이 AJAX에 대 한 지속적인 통신 패턴 이라고 합니다. ASP.NET AJAX는 지속적인 통신 패턴을 구현 하는 웹 개발자를 위한 두 가지를 제공 합니다. 이 비디오에서는 구현의 기반으로 ASP.NET AJAX UpdatePanel을 사용 하는 간단 합니다. 나중에 비디오에서는 ASP.NET AJAX UpdatePanel을 사용 하지 않고 동일한 패턴을 구현 하는 방법을 배웁니다.
 
-[&#9654;(12 분) 비디오를 시청 하세요](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-implement-the-persistent-communications-pattern-with-the-updatepanel)
+[&#9654;비디오 (12 분)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-implement-the-persistent-communications-pattern-with-the-updatepanel)
 
 > [!div class="step-by-step"]
 > [이전](how-do-i-use-the-conditional-updatemode-of-the-updatepanel.md)

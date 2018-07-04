@@ -1,31 +1,30 @@
 ---
 uid: web-forms/videos/vs-2005/how-do-i-enforce-coding-standards-with-code-analysis
-title: '[어떻게 할까요?] 코드 분석에 코딩 표준을 적용? | Microsoft 문서'
+title: '[어떻게 할까요?] 코드 분석에 코딩 표준 적용? | Microsoft 문서'
 author: rick-anderson
-description: Visual Studio Team System으로 클래스 라이브러리 프로젝트, 웹 사이트 프로젝트 및 소스 코드 co에 적용 되는 코드 분석 규칙 세부적으로 제어할 있는 중...
+description: Visual Studio Team System을 사용 하 여 클래스 라이브러리 프로젝트, 웹 사이트 프로젝트 및 소스 코드 co에 적용 되는 코드 분석 규칙을 통해 세밀 하 게 제어 해야 하는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 07/09/2007
 ms.topic: article
 ms.assetid: ab2eedbc-79b5-4b63-a1df-935940c1545b
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-enforce-coding-standards-with-code-analysis
 msc.type: video
-ms.openlocfilehash: f57e2372ec4a4d1ba7f6a8f9f2f81cdfc275819c
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: b8e68c88ae059e47ca3224adcb957ff745c7bf4d
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30893149"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37381970"
 ---
-<a name="how-do-i-enforce-coding-standards-with-code-analysis"></a>[어떻게 할까요?] 코드 분석에 코딩 표준을 적용?
+<a name="how-do-i-enforce-coding-standards-with-code-analysis"></a>[어떻게 할까요?] 코드 분석에 코딩 표준 적용?
 ====================
-으로 [Chris Menegay](https://twitter.com/CMenegay)
+[Chris Menegay](https://twitter.com/CMenegay)
 
-Visual Studio Team system 클래스 라이브러리 프로젝트, 웹 사이트 프로젝트 및 소스 코드 제어에 적용 되는 코드 분석 규칙 정교 하 게 조정을 해야 합니다. 이 비디오에서는 오류 및 프로젝트 중에 적용 되는 경고를 지정 하는 방법에 설명 빌드 및 코드 기능을 확인 하 고 특정 클래스 멤버에 적용 하 여 특정 규칙을 표시 하는 방법을 표시 합니다. 적용할 수 있습니다이 구성으로 적용할 수 없는 규칙을 보장 하면서 코드의 품질을 개선 하기 위해 코딩 표준이 되지을 방해 합니다.
+Visual Studio Team System을 사용 하 여 클래스 라이브러리 프로젝트, 웹 사이트 프로젝트 및 소스 코드 제어에 적용 되는 코드 분석 규칙 정교 하 게 조정을 해야 합니다. 이 비디오에서는 오류 및 프로젝트 중 적용 되는 경고를 지정 하는 방법에 설명 빌드 및 코드 체크 인 및 특정 클래스 멤버에 적용에서 특정 규칙을 제거 하는 방법을 표시 합니다. 적용할 수 있습니다이 구성으로 적용할 수 없는 규칙을 확인 하는 동안 코드의 품질을 향상 시키는 코딩 표준 프로그램 방식으로 받은 적입니다.
 
-[&#9654;(6 분) 비디오를 시청 하세요](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-enforce-coding-standards-with-code-analysis)
+[&#9654;비디오 (6 분)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-enforce-coding-standards-with-code-analysis)
 
 > [!div class="step-by-step"]
 > [이전](how-do-i-set-up-distributed-load-testing-for-high-volume-tests.md)

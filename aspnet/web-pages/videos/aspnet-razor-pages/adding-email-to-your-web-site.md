@@ -2,30 +2,29 @@
 uid: web-pages/videos/aspnet-razor-pages/adding-email-to-your-web-site
 title: 웹 사이트에 전자 메일 추가 | Microsoft Docs
 author: JoeStagner
-description: 웹 사이트 (파트 1)에 전자 메일 추가
+description: 웹 사이트 (1 부)에 전자 메일 추가
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/25/2011
 ms.topic: article
 ms.assetid: a0eb31aa-068b-4214-8a2b-16576a616aca
 ms.technology: dotnet-webpages
-ms.prod: .net-framework
 msc.legacyurl: /web-pages/videos/aspnet-razor-pages/adding-email-to-your-web-site
 msc.type: video
-ms.openlocfilehash: 2516503658c178d5579311a9866edf61688d1427
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: d14b434ed757fe74955c72c21043d15c7ab3031a
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30895266"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37382022"
 ---
 <a name="adding-email-to-your-web-site"></a>웹 사이트에 전자 메일 추가
 ====================
-으로 [Joe Stagner](https://github.com/JoeStagner)
+[Joe Stagner](https://github.com/JoeStagner)
 
-웹 사이트 (파트 1)에 전자 메일 추가
+웹 사이트 (1 부)에 전자 메일 추가
 
-[&#9654;(10 분) 비디오를 시청 하세요](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/adding-email-to-your-web-site)
+[&#9654;비디오 (10 분)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/adding-email-to-your-web-site)
 
 > [!div class="step-by-step"]
 > [이전](working-with-video.md)

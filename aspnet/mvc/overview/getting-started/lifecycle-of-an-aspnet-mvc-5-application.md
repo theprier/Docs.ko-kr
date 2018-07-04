@@ -9,15 +9,14 @@ ms.date: 02/28/2014
 ms.topic: article
 ms.assetid: 9c1e3a75-b644-4480-8326-11300b1ec4b3
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/lifecycle-of-an-aspnet-mvc-5-application
 msc.type: authoredcontent
-ms.openlocfilehash: 50d58d10c11677fa72ede6a03e686cbde4cbae1d
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: 98735f2e04bdd0f2fec19524e59f6272dbc4ca57
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
-ms.locfileid: "28036494"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37393917"
 ---
 <a name="lifecycle-of-an-aspnet-mvc-5-application"></a>ASP.NET MVC 5 응용 프로그램의 수명 주기
 ====================

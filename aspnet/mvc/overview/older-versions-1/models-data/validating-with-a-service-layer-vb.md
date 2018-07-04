@@ -1,62 +1,61 @@
 ---
 uid: mvc/overview/older-versions-1/models-data/validating-with-a-service-layer-vb
-title: 서비스 계층 (VB)으로 유효성 검사 | Microsoft Docs
+title: 서비스 계층 (VB)를 사용 하 여 유효성 검사 | Microsoft Docs
 author: StephenWalther
-description: 사용자 유효성 검사 논리에서 컨트롤러 작업 및 별도 서비스 계층으로 이동 하는 방법에 알아봅니다. 이 자습서에서는 Stephen Walther 설명 방법을 있습니다...
+description: 사용자 유효성 검사 논리는 별도 서비스 계층 및 컨트롤러 작업에서 이동 하는 방법에 알아봅니다. 이 자습서에서는 Stephen walther가 설명 하는 방법을 있습니다...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/02/2009
 ms.topic: article
 ms.assetid: 344bb38e-4965-4c47-bda1-f6d29ae5b83a
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validating-with-a-service-layer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: bb1191b663f863bf881def620efab4f2f03edc56
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: a914a7351e0faf6babf144d80512994d513ed12f
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30868245"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37393227"
 ---
-<a name="validating-with-a-service-layer-vb"></a>서비스 계층 (VB)으로 유효성 검사
+<a name="validating-with-a-service-layer-vb"></a>서비스 계층 (VB)를 사용 하 여 유효성 검사
 ====================
-으로 [Stephen Walther](https://github.com/StephenWalther)
+[Stephen walther가](https://github.com/StephenWalther)
 
-> 사용자 유효성 검사 논리에서 컨트롤러 작업 및 별도 서비스 계층으로 이동 하는 방법에 알아봅니다. 이 자습서에서는 Stephen Walther 컨트롤러 계층에서 사용자 서비스 계층을 격리 하 여 문제의 날카로운 분리 유지할 수 있습니다에 대해 설명 합니다.
+> 사용자 유효성 검사 논리는 별도 서비스 계층 및 컨트롤러 작업에서 이동 하는 방법에 알아봅니다. 이 자습서에서는 Stephen walther가 컨트롤러 계층에서 서비스 계층을 격리 하 여 중요 한 부분의 분리를 선명 하 게 유지할 수 있습니다에 대해 설명 합니다.
 
 
-이 자습서의 목표는 ASP.NET MVC 응용 프로그램에 유효성 검사를 수행 하는 한 가지 방법은 설명 하는 것입니다. 이 자습서에서는 사용자 유효성 검사 논리에 컨트롤러와 별도 서비스 계층으로 이동 하는 방법에 설명 합니다.
+이 자습서의 목표는 ASP.NET MVC 응용 프로그램에서 유효성 검사를 수행 하는 하나의 메서드를 설명 하는 것입니다. 이 자습서에서는 사용자 유효성 검사 논리에는 컨트롤러를 별도 서비스 계층으로 이동 하는 방법을 알아봅니다.
 
 ## <a name="separating-concerns"></a>문제를 구분합니다.
 
-ASP.NET MVC 응용 프로그램을 빌드할 때에 컨트롤러 작업 내 하지 데이터베이스 논리를 배치 해야 합니다. 데이터베이스와 컨트롤러 논리를 혼합 하면 응용 프로그램 시간이 지날수록 관리 하기가 더 어렵습니다. 별도 저장소 계층에 모든 데이터베이스 논리를 배치 하는 않는 것이 좋습니다.
+ASP.NET MVC 응용 프로그램을 빌드하면 컨트롤러 작업 내에서 데이터베이스 논리를 배치 해서는 안 됩니다. 데이터베이스 및 컨트롤러 논리를 혼합 하면 응용 프로그램 시간이 지남에 따라 유지 관리 하기가 더 어렵습니다. 별도 저장소 계층의 모든 데이터베이스 논리를 배치 하는 하는 것이 좋습니다.
 
-예를 들어 목록 1의 ProductRepository 라는 간단한 리포지토리를 포함 합니다. 제품 저장소는 모든 응용 프로그램에 대 한 데이터 액세스 코드를 포함합니다. 목록에는 제품 저장소 구현 하는 IProductRepository 인터페이스 포함 되어 있습니다.
+예를 들어 목록 1은 ProductRepository 라는 간단한 리포지토리가 포함 되어 있습니다. 제품 리포지토리에 모든 응용 프로그램에 대 한 데이터 액세스 코드를 포함합니다. 목록에는 제품 리포지토리를 구현 하는 IProductRepository 인터페이스도를 포함 됩니다.
 
-**Listing 1 - Models\ProductRepository.vb**
+**1-Models\ProductRepository.vb 나열**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample1.vb)]
 
-목록 2에서 컨트롤러의 index () 및 create () 작업의 저장소 계층을 사용합니다. 이 컨트롤러에는 데이터베이스 논리 없는지 확인 합니다. 저장소 계층을 만드는 문제의 확실 하 게 구분을 유지 관리할 수 있습니다. 컨트롤러 응용 프로그램 흐름 제어 논리를 담당 하 고 저장소는 데이터 액세스 논리를 담당 합니다.
+목록 2의 컨트롤러는 해당 index () 및 create () 작업에서 저장소 계층을 사용합니다. 이 컨트롤러 데이터베이스 논리를 포함 하지 않습니다 확인 합니다. 저장소 계층을 만드는 문제를 깔끔하게 분리를 유지할 수 있습니다. 컨트롤러는 응용 프로그램 흐름 제어 논리를 담당 하 고 리포지토리는 데이터 액세스 논리를 담당 합니다.
 
 **Listing 2 - Controllers\ProductController.vb**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample2.vb)]
 
-## <a name="creating-a-service-layer"></a>서비스 계층을 만들려면
+## <a name="creating-a-service-layer"></a>서비스 레이어 만들기
 
-따라서 응용 프로그램 흐름 제어 논리는 컨트롤러에 속하며 저장소에서 데이터 액세스 논리 속하는 있습니다. 이 경우 않습니다를 배치할 유효성 검사 논리? 첫 번째 방법은 유효성 검사 논리에 배치 하는 *서비스 계층*합니다.
+따라서 응용 프로그램 흐름 제어 논리는 컨트롤러에 속해 및 데이터 액세스 논리 저장소에 속해 있습니다. 이런 경우 여기서 배치 하나요 사용자 유효성 검사 논리? 첫 번째 방법은 사용자 유효성 검사 논리에 배치 하는 *서비스 계층*합니다.
 
-서비스 계층은 컨트롤러와 저장소 계층 간의 통신을 중재 하는 ASP.NET MVC 응용 프로그램에 있는 추가 계층입니다. 서비스 계층에는 비즈니스 논리를 포함 합니다. 특히, 유효성 검사 논리를 포함합니다.
+서비스 계층은 리포지토리 계층과 컨트롤러 간의 통신을 중재 하는 ASP.NET MVC 응용 프로그램에서 레이어를 추가 합니다. 서비스 계층에는 비즈니스 논리가 포함 됩니다. 특히 유효성 검사 논리를 포함합니다.
 
-예를 들어 보기 3의 제품 서비스 계층에 CreateProduct() 메서드가 있습니다. CreateProduct() 메서드는 새 제품을 제품 저장소에 제품을 전달 하기 전에 유효성을 검사 하려면 ValidateProduct() 메서드를 호출 합니다.
+예를 들어 목록 3의 제품 서비스 계층은 CreateProduct() 메서드가 있습니다. CreateProduct() 메서드는 새 제품을 제품 리포지토리에 제품을 전달 하기 전에 유효성을 검사 하려면 ValidateProduct() 메서드를 호출 합니다.
 
-**Listing 3 - Models\ProductService.vb**
+**3-Models\ProductService.vb 나열**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample3.vb)]
 
-저장소 계층 대신 서비스 계층을 사용 하도록 목록 4에는 제품 컨트롤러 업데이트 되었습니다. 컨트롤러 계층의 서비스 계층으로 통신 합니다. 서비스 계층은 저장소 계층을 설명 합니다. 각 레이어에 별도 책임입니다.
+제품 컨트롤러 목록 4 리포지토리 계층 대신 서비스 계층을 사용 하도록 업데이트 되었습니다. 컨트롤러 계층은 서비스 계층에 설명합니다. 서비스 계층은 리포지토리 계층에 설명합니다. 각 계층에는 별도 책임을 갖습니다.
 
 **Listing 4 - Controllers\ProductController.vb**
 
@@ -66,39 +65,39 @@ ASP.NET MVC 응용 프로그램을 빌드할 때에 컨트롤러 작업 내 하�
 
 ## <a name="decoupling-the-service-layer"></a>서비스 계층을 분리
 
-우리는 컨트롤러 및 서비스 계층 한 격리 하지 못했습니다. 컨트롤러 및 서비스 계층에는 모델 상태를 통해 통신합니다. 즉, 서비스 계층 ASP.NET MVC 프레임 워크의 특정 기능에 종속 됩니다.
+에서는 컨트롤러와 한 서비스 계층을 격리 하지 못했습니다. 컨트롤러 및 서비스 계층에는 모델 상태를 통해 통신합니다. 즉, 서비스 계층 ASP.NET MVC 프레임 워크의 특정 기능에서 종속성을 갖습니다.
 
-가능한 한 우리의 컨트롤러 레이어에서 서비스 계층을 분리 하려고 합니다. 이론적으로 모든 종류의 응용 프로그램 및 ASP.NET MVC 응용 프로그램 뿐만 아니라 서비스 계층을 사용할 수 했습니다. 예를 들어 나중에 수 하려고는 WPF 응용 프로그램에 대 한 프런트 엔드를 작성 합니다. 이 서비스 계층에서 ASP.NET MVC에 대 한 종속성을 제거 하는 방법을 모델 상태를 찾을 해야 했습니다.
+가능한 한이 컨트롤러 계층에서 서비스 계층을 격리 하려고 합니다. 이론적으로 응용 프로그램 및 ASP.NET MVC 응용 프로그램 뿐만 아니라 모든 유형의 사용 하 여 서비스 계층을 사용할 수 있어야 합니다. 예를 들어, 앞으로 것이 좋습니다는 WPF 응용 프로그램에 대 한 프런트 엔드를 빌드할 수 있습니다. 이 서비스 계층에서 ASP.NET MVC에 대 한 종속성을 제거 하는 방법을 모델 상태를 찾을 해야 했습니다.
 
-목록 5에서이 서비스 계층에 모델 상태를 더 이상 사용 하도록 업데이트 되었습니다. 대신, IValidationDictionary 인터페이스를 구현 하는 모든 클래스를 사용 합니다.
+목록 5에서이 서비스 계층 모델 상태가 더 이상 사용할 수 있도록 업데이트 되었습니다. 대신 IValidationDictionary 인터페이스를 구현 하는 클래스를 사용 합니다.
 
-**5-Models\ProductService.vb (분리) 목록**
+**5-Models\ProductService.vb (분리)를 나열 합니다.**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample5.vb)]
 
-IValidationDictionary 인터페이스 목록 6에서 정의 됩니다. 이 간단한 인터페이스에는 단일 메서드 및 단일 속성이 있습니다.
+IValidationDictionary 인터페이스 목록 6에서 정의 됩니다. 이 간단한 인터페이스는 단일 메서드와 단일 속성에 있습니다.
 
 **6-Models\IValidationDictionary.cs 나열**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample6.vb)]
 
-ModelStateWrapper 클래스의 이름을 나열 하는 7: 클래스 IValidationDictionary 인터페이스를 구현 합니다. 모델 상태 사전 생성자에 전달 하 여 ModelStateWrapper 클래스를 인스턴스화할 수 있습니다.
+나열 7에서는 ModelStateWrapper 클래스 라는 클래스 IValidationDictionary 인터페이스를 구현 합니다. 모델 상태 사전을 생성자에 전달 하 여 ModelStateWrapper 클래스를 인스턴스화할 수 있습니다.
 
 **Listing 7 - Models\ModelStateWrapper.vb**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample7.vb)]
 
-마지막으로, 목록 8의 업데이트 된 컨트롤러는 해당 생성자에서 서비스 계층을 만들 때는 ModelStateWrapper를 사용 합니다.
+마지막으로 목록 8에서 업데이트 된 컨트롤러는 해당 생성자에서 서비스 계층을 만들면는 ModelStateWrapper를 사용 합니다.
 
 **Listing 8 - Controllers\ProductController.vb**
 
 [!code-vb[Main](validating-with-a-service-layer-vb/samples/sample8.vb)]
 
-IValidationDictionary를 사용 하 여 인터페이스와 ModelStateWrapper 클래스 수 있습니다 완전히 우리의 컨트롤러 계층에서이 서비스 계층을 격리. 서비스 계층은 더 이상 모델 상태에 의존 합니다. 서비스 계층 IValidationDictionary 인터페이스를 구현 하는 모든 클래스를 전달할 수 있습니다. 예를 들어 WPF 응용 프로그램 단순 컬렉션 클래스와 IValidationDictionary 인터페이스를 구현할 수 있습니다.
+IValidationDictionary 인터페이스 및 ModelStateWrapper 클래스 사용을 완전히 우리의 컨트롤러 계층에서이 서비스 계층을 분리할. 서비스 계층은 더 이상 모델 상태에 따라 달라 집니다. 서비스 계층에 IValidationDictionary 인터페이스를 구현 하는 클래스를 전달할 수 있습니다. 예를 들어 WPF 응용 프로그램을 간단한 컬렉션 클래스를 사용 하 여 IValidationDictionary 인터페이스를 구현할 수 있습니다.
 
 ## <a name="summary"></a>요약
 
-이 자습서의 목표 ASP.NET MVC 응용 프로그램에서 유효성 검사를 수행 하는 한 가지 방법을 설명 하는 것 이었습니다. 이 자습서에서는 모든 유효성 검사 논리에 컨트롤러와 별도 서비스 계층으로 이동 하는 방법을 배웠습니다. 또한 ModelStateWrapper 클래스를 만들어 컨트롤러 계층에서 사용자 서비스 계층을 격리 하는 방법을 배웠습니다.
+이 자습서의 목표는 ASP.NET MVC 응용 프로그램에서 유효성 검사를 수행 하는 한 가지 방법은 설명 하는 것 이었습니다. 이 자습서에서는 모든 유효성 검사 논리에 컨트롤러 및 별도 서비스 계층으로 이동 하는 방법을 알아보았습니다. 또한 ModelStateWrapper 클래스를 만들어 컨트롤러 계층에서 서비스 계층을 격리 하는 방법을 배웠습니다.
 
 > [!div class="step-by-step"]
 > [이전](validating-with-the-idataerrorinfo-interface-vb.md)
