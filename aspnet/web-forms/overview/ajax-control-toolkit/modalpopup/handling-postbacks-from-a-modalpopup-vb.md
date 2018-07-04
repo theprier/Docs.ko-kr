@@ -1,69 +1,68 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/modalpopup/handling-postbacks-from-a-modalpopup-vb
-title: 포스트백 ModalPopup (VB)에서 처리 | Microsoft Docs
+title: (VB) ModalPopup에서 포스트백 처리 | Microsoft Docs
 author: wenz
-description: 들어에서 ModalPopup 컨트롤을 클라이언트 쪽 방법을 사용 하 여 모달 팝업을 만드는 간단한 방법을 제공 합니다. Pos 때 특별히 주의 해야 합니다...
+description: AJAX Control Toolkit의 ModalPopup 컨트롤 클라이언트 쪽 의미를 사용 하 여 모달 팝업을 만드는 간단한 방법을 제공 합니다. Pos 때 특별히 주의 해야 하는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
 ms.topic: article
 ms.assetid: f70ac2b3-900f-40fa-858f-ab057904506b
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/handling-postbacks-from-a-modalpopup-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1aa2c42deb67015dd0b35edf4ba72d8d667ec88c
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: e37c26b149c14855574ea777eae49fc40ea83899
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30874212"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37382668"
 ---
-<a name="handling-postbacks-from-a-modalpopup-vb"></a><span data-ttu-id="aa994-104">포스트백 ModalPopup (VB)에서 처리</span><span class="sxs-lookup"><span data-stu-id="aa994-104">Handling Postbacks from a ModalPopup (VB)</span></span>
+<a name="handling-postbacks-from-a-modalpopup-vb"></a><span data-ttu-id="2315a-104">(VB) ModalPopup에서 포스트백 처리</span><span class="sxs-lookup"><span data-stu-id="2315a-104">Handling Postbacks from a ModalPopup (VB)</span></span>
 ====================
-<span data-ttu-id="aa994-105">으로 [Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="aa994-105">by [Christian Wenz](https://github.com/wenz)</span></span>
+<span data-ttu-id="2315a-105">[Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="2315a-105">by [Christian Wenz](https://github.com/wenz)</span></span>
 
-<span data-ttu-id="aa994-106">[코드를 다운로드](http://download.microsoft.com/download/2/4/0/24052038-f942-4336-905b-b60ae56f0dd5/ModalPopup3.vb.zip) 또는 [PDF 다운로드](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/modalpopup3VB.pdf)</span><span class="sxs-lookup"><span data-stu-id="aa994-106">[Download Code](http://download.microsoft.com/download/2/4/0/24052038-f942-4336-905b-b60ae56f0dd5/ModalPopup3.vb.zip) or [Download PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/modalpopup3VB.pdf)</span></span>
+<span data-ttu-id="2315a-106">[코드를 다운로드](http://download.microsoft.com/download/2/4/0/24052038-f942-4336-905b-b60ae56f0dd5/ModalPopup3.vb.zip) 또는 [PDF 다운로드](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/modalpopup3VB.pdf)</span><span class="sxs-lookup"><span data-stu-id="2315a-106">[Download Code](http://download.microsoft.com/download/2/4/0/24052038-f942-4336-905b-b60ae56f0dd5/ModalPopup3.vb.zip) or [Download PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/modalpopup3VB.pdf)</span></span>
 
-> <span data-ttu-id="aa994-107">들어에서 ModalPopup 컨트롤을 클라이언트 쪽 방법을 사용 하 여 모달 팝업을 만드는 간단한 방법을 제공 합니다.</span><span class="sxs-lookup"><span data-stu-id="aa994-107">The ModalPopup control in the AJAX Control Toolkit offers a simple way to create a modal popup using client-side means.</span></span> <span data-ttu-id="aa994-108">팝업 내에서 다시 게시를 만들 때 특별히 주의 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="aa994-108">Special care must be taken when a postback is created from within the popup.</span></span>
+> <span data-ttu-id="2315a-107">AJAX Control Toolkit의 ModalPopup 컨트롤 클라이언트 쪽 의미를 사용 하 여 모달 팝업을 만드는 간단한 방법을 제공 합니다.</span><span class="sxs-lookup"><span data-stu-id="2315a-107">The ModalPopup control in the AJAX Control Toolkit offers a simple way to create a modal popup using client-side means.</span></span> <span data-ttu-id="2315a-108">팝업 내에서 다시 게시를 만들 때 특별히 주의 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="2315a-108">Special care must be taken when a postback is created from within the popup.</span></span>
 
 
-## <a name="overview"></a><span data-ttu-id="aa994-109">개요</span><span class="sxs-lookup"><span data-stu-id="aa994-109">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="2315a-109">개요</span><span class="sxs-lookup"><span data-stu-id="2315a-109">Overview</span></span>
 
-<span data-ttu-id="aa994-110">들어에서 ModalPopup 컨트롤을 클라이언트 쪽 방법을 사용 하 여 모달 팝업을 만드는 간단한 방법을 제공 합니다.</span><span class="sxs-lookup"><span data-stu-id="aa994-110">The ModalPopup control in the AJAX Control Toolkit offers a simple way to create a modal popup using client-side means.</span></span> <span data-ttu-id="aa994-111">팝업 내에서 다시 게시를 만들 때 특별히 주의 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="aa994-111">Special care must be taken when a postback is created from within the popup.</span></span>
+<span data-ttu-id="2315a-110">AJAX Control Toolkit의 ModalPopup 컨트롤 클라이언트 쪽 의미를 사용 하 여 모달 팝업을 만드는 간단한 방법을 제공 합니다.</span><span class="sxs-lookup"><span data-stu-id="2315a-110">The ModalPopup control in the AJAX Control Toolkit offers a simple way to create a modal popup using client-side means.</span></span> <span data-ttu-id="2315a-111">팝업 내에서 다시 게시를 만들 때 특별히 주의 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="2315a-111">Special care must be taken when a postback is created from within the popup.</span></span>
 
-## <a name="steps"></a><span data-ttu-id="aa994-112">단계</span><span class="sxs-lookup"><span data-stu-id="aa994-112">Steps</span></span>
+## <a name="steps"></a><span data-ttu-id="2315a-112">단계</span><span class="sxs-lookup"><span data-stu-id="2315a-112">Steps</span></span>
 
-<span data-ttu-id="aa994-113">ASP.NET AJAX 및 제어 Toolkit의 기능을 활성화 하는 데는 `ScriptManager` 제어 페이지에서 아무 곳 이나 배치 해야 합니다 (하지만 내는 `<form>` 요소):</span><span class="sxs-lookup"><span data-stu-id="aa994-113">In order to activate the functionality of ASP.NET AJAX and the Control Toolkit, the `ScriptManager` control must be put anywhere on the page (but within the `<form>` element):</span></span>
+<span data-ttu-id="2315a-113">ASP.NET AJAX와 Control Toolkit의 기능을 활성화 하기 위해 합니다 `ScriptManager` 컨트롤 페이지의 아무 곳 이나 배치 해야 합니다 (하지만 내는 `<form>` 요소):</span><span class="sxs-lookup"><span data-stu-id="2315a-113">In order to activate the functionality of ASP.NET AJAX and the Control Toolkit, the `ScriptManager` control must be put anywhere on the page (but within the `<form>` element):</span></span>
 
 [!code-aspx[Main](handling-postbacks-from-a-modalpopup-vb/samples/sample1.aspx)]
 
-<span data-ttu-id="aa994-114">다음으로 모달 팝업으로 사용 되는 패널을 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="aa994-114">Next, add a panel which serves as the modal popup.</span></span> <span data-ttu-id="aa994-115">사용자 이름 및 전자 메일 주소를 입력할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="aa994-115">There, the user can enter a name and an email address.</span></span> <span data-ttu-id="aa994-116">팝업을 닫고 정보를 저장 하는 단추 사용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="aa994-116">A button is used to close the popup and save the information.</span></span> <span data-ttu-id="aa994-117">`OnClick` 특성을 설정 하 여 포스트백이이 단추를 클릭할 때 발생 합니다.</span><span class="sxs-lookup"><span data-stu-id="aa994-117">Note that the `OnClick` attribute is set so that a postback occurs when this button is clicked:</span></span>
+<span data-ttu-id="2315a-114">다음으로 모달 팝업으로 사용 되는 패널을 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="2315a-114">Next, add a panel which serves as the modal popup.</span></span> <span data-ttu-id="2315a-115">사용자 이름 및 전자 메일 주소를 입력할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="2315a-115">There, the user can enter a name and an email address.</span></span> <span data-ttu-id="2315a-116">단추 정보를 저장 하 고 팝업을 닫습니다 됩니다.</span><span class="sxs-lookup"><span data-stu-id="2315a-116">A button is used to close the popup and save the information.</span></span> <span data-ttu-id="2315a-117">`OnClick` 특성을 설정 하 여 포스트백이이 단추를 클릭할 때 발생 합니다.</span><span class="sxs-lookup"><span data-stu-id="2315a-117">Note that the `OnClick` attribute is set so that a postback occurs when this button is clicked:</span></span>
 
 [!code-aspx[Main](handling-postbacks-from-a-modalpopup-vb/samples/sample2.aspx)]
 
-<span data-ttu-id="aa994-118">페이지 자체 정확히 동일한 정보에 대 한 두 개의 레이블로 구성 됩니다: 이름 및 전자 메일 주소입니다.</span><span class="sxs-lookup"><span data-stu-id="aa994-118">The page itself consists of two labels for exactly the same information: name and email address.</span></span> <span data-ttu-id="aa994-119">모달 팝업을 트리거하는 단추 사용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="aa994-119">A button is used to trigger the modal popup:</span></span>
+<span data-ttu-id="2315a-118">정확히 동일한 정보에 대 한 두 레이블의 페이지 자체 구성 됩니다: 이름 및 전자 메일 주소입니다.</span><span class="sxs-lookup"><span data-stu-id="2315a-118">The page itself consists of two labels for exactly the same information: name and email address.</span></span> <span data-ttu-id="2315a-119">모달 팝업을 트리거할 단추 사용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="2315a-119">A button is used to trigger the modal popup:</span></span>
 
 [!code-aspx[Main](handling-postbacks-from-a-modalpopup-vb/samples/sample3.aspx)]
 
-<span data-ttu-id="aa994-120">팝업 표시를 확인 하기 위해 추가 된 `ModalPopupExtender` 제어 합니다.</span><span class="sxs-lookup"><span data-stu-id="aa994-120">In order to make the popup appear, add the `ModalPopupExtender` control.</span></span> <span data-ttu-id="aa994-121">설정의 `PopupControlID` 패널의 ID에 특성 및 `TargetControlID` 단추의 id:</span><span class="sxs-lookup"><span data-stu-id="aa994-121">Set the `PopupControlID` attribute to the panel's ID and `TargetControlID` to the button's ID:</span></span>
+<span data-ttu-id="2315a-120">팝업 표시를 하려면 추가 `ModalPopupExtender` 제어 합니다.</span><span class="sxs-lookup"><span data-stu-id="2315a-120">In order to make the popup appear, add the `ModalPopupExtender` control.</span></span> <span data-ttu-id="2315a-121">설정 된 `PopupControlID` 패널의 id 특성 및 `TargetControlID` 단추의 id:</span><span class="sxs-lookup"><span data-stu-id="2315a-121">Set the `PopupControlID` attribute to the panel's ID and `TargetControlID` to the button's ID:</span></span>
 
 [!code-aspx[Main](handling-postbacks-from-a-modalpopup-vb/samples/sample4.aspx)]
 
-<span data-ttu-id="aa994-122">이제 때마다는 `Save` 모달 팝업 내에서 단추를 클릭 하면 서버 쪽 `SaveData()` 메서드를 실행 합니다.</span><span class="sxs-lookup"><span data-stu-id="aa994-122">Now whenever the `Save` button within the modal popup is clicked, the server-side `SaveData()` method is executed.</span></span> <span data-ttu-id="aa994-123">여기에 데이터 저장소에 입력 한 데이터를 저장할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="aa994-123">There, you could save the entered data in a data store.</span></span> <span data-ttu-id="aa994-124">간단한 설명을 위해 새 데이터 레이블을 출력 방금 되:</span><span class="sxs-lookup"><span data-stu-id="aa994-124">For the sake of simplicity, the new data is just output in the label:</span></span>
+<span data-ttu-id="2315a-122">이제 때마다 합니다 `Save` 모달 팝업 내의 단추 서버 쪽 `SaveData()` 메서드를 실행 합니다.</span><span class="sxs-lookup"><span data-stu-id="2315a-122">Now whenever the `Save` button within the modal popup is clicked, the server-side `SaveData()` method is executed.</span></span> <span data-ttu-id="2315a-123">여기에서 데이터 저장소에 입력 된 데이터를 저장할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="2315a-123">There, you could save the entered data in a data store.</span></span> <span data-ttu-id="2315a-124">간단히 하기 위해 새 데이터 레이블에 출력만:</span><span class="sxs-lookup"><span data-stu-id="2315a-124">For the sake of simplicity, the new data is just output in the label:</span></span>
 
 [!code-vb[Main](handling-postbacks-from-a-modalpopup-vb/samples/sample5.vb)]
 
-<span data-ttu-id="aa994-125">또한 모달 팝업 내의 textbox 컨트롤의 현재 이름 및 전자 메일으로 채워야 합니다.</span><span class="sxs-lookup"><span data-stu-id="aa994-125">Also, the textbox controls within the modal popup should be filled with the current name and email.</span></span> <span data-ttu-id="aa994-126">그러나는 필요한 경우에 포스트백에서 발생 합니다.</span><span class="sxs-lookup"><span data-stu-id="aa994-126">However this is only necessary when no postback occurs.</span></span> <span data-ttu-id="aa994-127">다시 게시 인 경우 ASP.NET viewstate 기능을 자동으로 해당 값을 갖는 텍스트 상자를 채웁니다.</span><span class="sxs-lookup"><span data-stu-id="aa994-127">If there is a postback, the ASP.NET viewstate feature will automatically fill the textboxes with the appropriate values.</span></span>
+<span data-ttu-id="2315a-125">또한 현재 이름 및 전자 메일을 사용 하 여 모달 팝업에 textbox 컨트롤이 채워야 합니다.</span><span class="sxs-lookup"><span data-stu-id="2315a-125">Also, the textbox controls within the modal popup should be filled with the current name and email.</span></span> <span data-ttu-id="2315a-126">그러나는 필요한 경우에 포스트백이 발생 합니다.</span><span class="sxs-lookup"><span data-stu-id="2315a-126">However this is only necessary when no postback occurs.</span></span> <span data-ttu-id="2315a-127">다시 게시 인 경우 ASP.NET viewstate 기능을 자동으로 적절 한 값을 사용 하 여 텍스트 상자를 채웁니다.</span><span class="sxs-lookup"><span data-stu-id="2315a-127">If there is a postback, the ASP.NET viewstate feature will automatically fill the textboxes with the appropriate values.</span></span>
 
 [!code-vb[Main](handling-postbacks-from-a-modalpopup-vb/samples/sample6.vb)]
 
 
-<span data-ttu-id="aa994-128">[![모달 팝업은 포스트백을 발생 시킵니다.](handling-postbacks-from-a-modalpopup-vb/_static/image2.png)](handling-postbacks-from-a-modalpopup-vb/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="aa994-128">[![The modal popup causes a postback](handling-postbacks-from-a-modalpopup-vb/_static/image2.png)](handling-postbacks-from-a-modalpopup-vb/_static/image1.png)</span></span>
+<span data-ttu-id="2315a-128">[![모달 팝업은 포스트백을 발생 시키는](handling-postbacks-from-a-modalpopup-vb/_static/image2.png)](handling-postbacks-from-a-modalpopup-vb/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="2315a-128">[![The modal popup causes a postback](handling-postbacks-from-a-modalpopup-vb/_static/image2.png)](handling-postbacks-from-a-modalpopup-vb/_static/image1.png)</span></span>
 
-<span data-ttu-id="aa994-129">모달 팝업 포스트백 ([전체 크기 이미지를 보려면 클릭](handling-postbacks-from-a-modalpopup-vb/_static/image3.png))</span><span class="sxs-lookup"><span data-stu-id="aa994-129">The modal popup causes a postback ([Click to view full-size image](handling-postbacks-from-a-modalpopup-vb/_static/image3.png))</span></span>
+<span data-ttu-id="2315a-129">모달 팝업은 포스트백을 발생 시키는 ([클릭 하 여 큰 이미지 보기](handling-postbacks-from-a-modalpopup-vb/_static/image3.png))</span><span class="sxs-lookup"><span data-stu-id="2315a-129">The modal popup causes a postback ([Click to view full-size image](handling-postbacks-from-a-modalpopup-vb/_static/image3.png))</span></span>
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="aa994-130">[이전](using-modalpopup-with-a-repeater-control-vb.md)
-> [다음](positioning-a-modalpopup-vb.md)</span><span class="sxs-lookup"><span data-stu-id="aa994-130">[Previous](using-modalpopup-with-a-repeater-control-vb.md)
+> <span data-ttu-id="2315a-130">[이전](using-modalpopup-with-a-repeater-control-vb.md)
+> [다음](positioning-a-modalpopup-vb.md)</span><span class="sxs-lookup"><span data-stu-id="2315a-130">[Previous](using-modalpopup-with-a-repeater-control-vb.md)
 [Next](positioning-a-modalpopup-vb.md)</span></span>
