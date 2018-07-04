@@ -1,22 +1,21 @@
 ---
 uid: webhooks/senders
-title: ASP.NET Webhook 보낸 사람 | Microsoft Docs
+title: ASP.NET 웹 후크 발신자 | Microsoft Docs
 author: rick-anderson
-description: ASP.NET Webhook 보낸 사람
+description: ASP.NET 웹 후크 발신자
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/17/2012
 ms.topic: article
 ms.assetid: 33001ae2-8e1b-4807-8b02-16c7fd8ad38d
 ms.technology: ''
-ms.prod: .net-framework
-ms.openlocfilehash: 5c18daffe0711d4831b0a9b438bebb4e030936d1
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 4949ef5be24ade833e556c2602db345426aa7e63
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26529702"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37393705"
 ---
-# <a name="aspnet-webhook-senders"></a>ASP.NET WebHook 보낸 사람
+# <a name="aspnet-webhook-senders"></a>ASP.NET 웹 후크 발신자
 
-블로그를 참조 하십시오. [ASP.NET Webhook 미리 보기와 함께 보내기 Webhook](http://blogs.msdn.com/b/webdev/archive/2015/09/15/sending-webhooks-with-asp-net-webhooks-preview.aspx) 자세한 세부 정보에 대 한 합니다.
+블로그를 참조 하세요 [ASP.NET 웹 후크 미리 보기를 사용 하 여 웹 후크 보내는](http://blogs.msdn.com/b/webdev/archive/2015/09/15/sending-webhooks-with-asp-net-webhooks-preview.aspx) 대 한 자세한 내용은 합니다.

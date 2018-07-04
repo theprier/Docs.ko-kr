@@ -1,6 +1,6 @@
 ---
 uid: mvc/overview/views/dynamic-v-strongly-typed-views
-title: 동적 v입니다. Strongly Typed Views | Microsoft Docs
+title: Dynamic v입니다. Strongly Typed Views | Microsoft Docs
 author: Rick-Anderson
 description: ''
 ms.author: aspnetcontent
@@ -9,41 +9,40 @@ ms.date: 01/27/2011
 ms.topic: article
 ms.assetid: 0cbd88da-0da6-4605-b222-2835c6478304
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/views/dynamic-v-strongly-typed-views
 msc.type: authoredcontent
-ms.openlocfilehash: 8a96d43e04a0a50d5176c10c26aa49918a0e56ef
-ms.sourcegitcommit: 6784510cfb589308c3875ccb5113eb31031766b4
+ms.openlocfilehash: 7622ca8248374da27f4190075df5a6bfc32bb2e6
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "26504092"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37389088"
 ---
-<a name="dynamic-v-strongly-typed-views"></a>동적 v입니다. 강력한 형식의 뷰
+<a name="dynamic-v-strongly-typed-views"></a>Dynamic v입니다. 강력한 형식의 보기
 ====================
-으로 [Rick Anderson](https://github.com/Rick-Anderson)
+[Rick Anderson](https://github.com/Rick-Anderson)
 
-ASP.NET MVC 3의 보기에는 컨트롤러에서 정보를 전달 하는 방법은 세 가지가 있습니다.
+ASP.NET MVC 3에서 뷰 컨트롤러에서 정보를 전달 하는 방법은 세 가지가 있습니다.
 
 1. 강력한 형식의 모델 개체로 반환 합니다.
 2. 동적 형식으로 (사용 하 여 @model 동적)
 3. ViewBag을 사용 하 여
 
-비교 하 고 동적이 고 강력한 형식의 뷰 비교 하는 간단한 MVC 3 상위 블로그 응용 프로그램을 작성 합니다. 컨트롤러는 블로그 단순 목록으로 시작 합니다.
+간단한 MVC 3 위 블로그 응용 프로그램을 비교 및 대조 동적이 고 강력한 형식의 뷰를 작성 했습니다. 컨트롤러 시작 블로그 단순 목록:
 
 [!code-csharp[Main](dynamic-v-strongly-typed-views/samples/sample1.cs)]
 
-IndexNotStonglyTyped() 메서드에서 마우스 오른쪽 단추로 클릭 하 고 Razor 뷰를 추가 합니다.
+IndexNotStonglyTyped() 메서드를 마우스 오른쪽 단추로 클릭 하 고 Razor 뷰를 추가 합니다.
 
 [![8475.NotStronglyTypedView [1]](dynamic-v-strongly-typed-views/_static/image2.png)](dynamic-v-strongly-typed-views/_static/image1.png)
 
-있는지 확인는 **강력한 형식의 뷰 만들기** 확인란을 선택 하지 않습니다. 결과 뷰가 대부분 포함 되어 있지 않습니다.
+있는지 확인 합니다 **강력한 형식의 뷰를 만들** 선택 하지 않으면. 결과 뷰가 대부분 포함 되어 있지 않습니다.
 
 [!code-cshtml[Main](dynamic-v-strongly-typed-views/samples/sample2.cshtml)]
 
 [!code-cshtml[Main](dynamic-v-strongly-typed-views/samples/sample3.cshtml)]
 
-동적 및 강력한 형식의 뷰가 아니라, 사용 하기 때문에 intellisense 도움이 되지 않습니다. 완성 된 코드는 다음과 같습니다.
+동적 및 강력한 형식의 뷰가 아니라를 사용 하므로 intellisense는 데 도움이 되지 않습니다. 완료 된 코드는 다음과 같습니다.
 
 [!code-cshtml[Main](dynamic-v-strongly-typed-views/samples/sample4.cshtml)]
 
@@ -54,11 +53,11 @@ IndexNotStonglyTyped() 메서드에서 마우스 오른쪽 단추로 클릭 하 
 [!code-csharp[Main](dynamic-v-strongly-typed-views/samples/sample5.cs)]
 
 
-정확 하 게는 동일한 반환 View(topBlogs); 것이 확인 비 강력한 형식의 뷰를 호출 합니다. 내부에 마우스 오른쪽 단추로 클릭 *StonglyTypedIndex()* 선택 **뷰 추가**합니다. 이 시간 선택은 **블로그** 선택한 모델 클래스 **목록** 스 캐 폴드 템플릿으로 합니다.
+정확 하 게 된 동일한 반환 View(topBlogs);는 알 수 있습니다. 아닌 강력한 형식의 뷰를 호출 합니다. 내부에서 마우스 오른쪽 단추로 클릭 *StonglyTypedIndex()* 선택한 **뷰 추가**합니다. 이 시간을 선택 합니다 **블로그** 선택한 모델 클래스 **목록** 스 캐 폴드 템플릿으로 합니다.
 
 [![5658.StrongView [1]](dynamic-v-strongly-typed-views/_static/image6.png)](dynamic-v-strongly-typed-views/_static/image5.png)
 
-새 보기 템플릿 내부 intellisense 지원을 구했습니다.
+새 템플릿 보기 내에서 intellisense 지원을 가져옵니다.
 
 [![7002.intellesince [1]](dynamic-v-strongly-typed-views/_static/image8.png)](dynamic-v-strongly-typed-views/_static/image7.png)
 

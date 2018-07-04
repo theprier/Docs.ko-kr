@@ -2,68 +2,67 @@
 uid: web-forms/overview/ajax-control-toolkit/animation/triggering-an-animation-in-another-control-cs
 title: 다른 컨트롤 (C#)에서 애니메이션 트리거 | Microsoft Docs
 author: wenz
-description: ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트롤 뿐 아니라 애니메이션 컨트롤을 추가 하는 전체 프레임 워크. 일반적으로 시작는 중...
+description: ASP.NET AJAX Control Toolkit에서 애니메이션 컨트롤 컨트롤 뿐 이지만 컨트롤에 애니메이션을 추가 하는 전체 프레임 워크 아닙니다. 일반적으로 시작을...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
 ms.topic: article
 ms.assetid: e5d99c2b-d8ee-413c-80d5-c120cffb0a4c
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/triggering-an-animation-in-another-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e94046ca70607e37c1b5ef57d5cedef67a236b94
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 37473217062b48a1e7829efcf07015be12e0c650
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30868115"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37375121"
 ---
 <a name="triggering-an-animation-in-another-control-c"></a>다른 컨트롤 (C#)에서 애니메이션 트리거
 ====================
-으로 [Christian Wenz](https://github.com/wenz)
+[Christian Wenz](https://github.com/wenz)
 
 [코드를 다운로드](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation8.cs.zip) 또는 [PDF 다운로드](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation8CS.pdf)
 
-> ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트롤 뿐 아니라 애니메이션 컨트롤을 추가 하는 전체 프레임 워크. 일반적으로 애니메이션 시작에 의해 트리거될 동일한 컨트롤과 상호 작용 합니다. 그러나 또한 다른 컨트롤을 한 개의 컨트롤 및 애니메이션와 상호 작용할 수 있습니다.
+> ASP.NET AJAX Control Toolkit에서 애니메이션 컨트롤 컨트롤 뿐 이지만 컨트롤에 애니메이션을 추가 하는 전체 프레임 워크 아닙니다. 일반적으로 동일한 컨트롤을 사용 하 여 사용자 상호 작용에 의해 트리거됩니다는 애니메이션을 시작. 하지만 이기도 다른 컨트롤이 컨트롤 및 애니메이션을 사용 하 여 상호 작용할 수 있습니다.
 
 
 ## <a name="overview"></a>개요
 
-ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트롤 뿐 아니라 애니메이션 컨트롤을 추가 하는 전체 프레임 워크. 일반적으로 애니메이션 시작에 의해 트리거될 동일한 컨트롤과 상호 작용 합니다. 그러나 또한 다른 컨트롤을 한 개의 컨트롤 및 애니메이션와 상호 작용할 수 있습니다.
+ASP.NET AJAX Control Toolkit에서 애니메이션 컨트롤 컨트롤 뿐 이지만 컨트롤에 애니메이션을 추가 하는 전체 프레임 워크 아닙니다. 일반적으로 동일한 컨트롤을 사용 하 여 사용자 상호 작용에 의해 트리거됩니다는 애니메이션을 시작. 하지만 이기도 다른 컨트롤이 컨트롤 및 애니메이션을 사용 하 여 상호 작용할 수 있습니다.
 
 ## <a name="steps"></a>단계
 
-우선, 포함 된 `ScriptManager` 페이지; 그런 다음 ASP.NET AJAX 라이브러리 로드 되는 제어 도구 키트를 사용 하 여:
+첫째, 포함 된 `ScriptManager` 페이지 그런 다음 ASP.NET AJAX 라이브러리 로드 되 면 컨트롤 도구 키트를 사용 하 여:
 
 [!code-aspx[Main](triggering-an-animation-in-another-control-cs/samples/sample1.aspx)]
 
-그러면 다음과 같은 텍스트의 패널에 애니메이션 적용 됩니다.
+그러면 다음과 같은 텍스트 패널에 애니메이션 적용 됩니다.
 
 [!code-aspx[Main](triggering-an-animation-in-another-control-cs/samples/sample2.aspx)]
 
-패널에 대 한 연결 된 CSS 클래스 좋은 배경색을 정의 하 고도 패널 고정된 폭을 설정 합니다.
+패널에 대 한 연결 된 CSS 클래스에 유용한 배경 색을 정의 하 고 패널 고정된 너비를 설정할 수도:
 
 [!code-css[Main](triggering-an-animation-in-another-control-cs/samples/sample3.css)]
 
-패널에 애니메이션 적용을 시작 하기 위해 HTML 단추가 사용 됩니다. `<input type="button" />` 들이 통해 좋아하는 `<asp:Button />` 사용자가 해당 단추를 클릭할 때 포스트백을 원치 않으므로 때문입니다.
+패널에 애니메이션 적용을 시작 하기 위해 HTML 단추가 사용 됩니다. 사실은 `<input type="button" />` 들이 통해 좋아하는 `<asp:Button />` 사용자가 해당 단추를 클릭 하면 포스트백 않을 것 이므로 합니다.
 
 [!code-aspx[Main](triggering-an-animation-in-another-control-cs/samples/sample4.aspx)]
 
-그런 다음 추가 `AnimationExtender` 페이지에 제공 하는 `ID`, `TargetControlID` 특성과 반드시 `runat="server"`합니다. 설정 해야 `TargetControlID` 단추 (애니메이션 트리거 요소)의 ID로 패널 (애니메이션 효과가 적용 되는 요소)의 ID로 하지
+그런 다음 추가 `AnimationExtender` 페이지에서 제공 하는 `ID`, `TargetControlID` 특성과 필수 항목 이지만 `runat="server"`. 설정 하는 것이 반드시 `TargetControlID` 단추 (애니메이션 트리거 요소)의 ID로 패널 (애니메이션 효과가 적용 되는 요소)의 ID에 없습니다
 
 [!code-aspx[Main](triggering-an-animation-in-another-control-cs/samples/sample5.aspx)]
 
-내에서 `<Animations>` 노드를 일반적인 방법 대로 위치 애니메이션 합니다. 패널을 변경할 수를 단추가 아닌 설정의 `AnimationTarget` 특성 내에서 모든 애니메이션 요소에 대해 `AnimationExtender`합니다. 에 대 한 값 `AnimationTarget` 패널의 ID는 물론 합니다. 이런 방식으로 애니메이션 트리거 단추와 패널에서 발생 합니다. 다음은 `AnimationExtender` 이 시나리오에 대 한 태그:
+내는 `<Animations>` 노드를 일반적인 방법으로 위치 애니메이션 합니다. 단추가 아닌는 패널을 변경할 수 있도록, 하려면 설정 합니다 `AnimationTarget` 내에서 모든 애니메이션 요소에 대 한 특성 `AnimationExtender`합니다. 에 대 한 값 `AnimationTarget` 물론은 패널의 ID입니다. 이런 방식으로 애니메이션 트리거 단추와 패널을 사용 하 여 발생합니다. 다음은 `AnimationExtender` 이 시나리오에 대 한 태그:
 
 [!code-aspx[Main](triggering-an-animation-in-another-control-cs/samples/sample6.aspx)]
 
-Note 개별 애니메이션이 표시 되는 특별 한 순서입니다. 우선, 애니메이션 실행 되 면 단추 비활성화를 가져옵니다. 없기 때문 없는 `AnimationTarget` 특성에 `<EnableAction>` 요소가이 애니메이션 원본 컨트롤에 적용 되: 단추입니다. 애니메이션을 다음 두 단계는 수행 parallelly (`<Parallel>` 요소). 둘 다의 `AnimationTarget` 특성으로 설정 `"Panel1"`, 따라서 단추가 아니라 패널에 애니메이션을 적용 합니다.
+특별 한 순서는 개별 애니메이션 note 합니다. 첫째, 단추 애니메이션 실행 되 면 비활성화를 가져옵니다. 있기 때문 없습니다 `AnimationTarget` 특성을 `<EnableAction>` 원래 컨트롤 요소를이 애니메이션을 적용할: 단추입니다. Parallelly 애니메이션 다음 두 단계를 수행 됩니다 (`<Parallel>` 요소). 둘 다 해당 `AnimationTarget` 특성으로 설정 `"Panel1"`, 따라서 패널에 단추가 아닌 애니메이션을 적용 합니다.
 
 
-[![패널 애니메이션을 시작 하는 마우스 단추 클릭](triggering-an-animation-in-another-control-cs/_static/image2.png)](triggering-an-animation-in-another-control-cs/_static/image1.png)
+[![창 애니메이션을 시작 하는 단추 마우스 클릭](triggering-an-animation-in-another-control-cs/_static/image2.png)](triggering-an-animation-in-another-control-cs/_static/image1.png)
 
-패널 애니메이션을 시작 하는 마우스 단추 클릭 ([전체 크기 이미지를 보려면 클릭](triggering-an-animation-in-another-control-cs/_static/image3.png))
+창 애니메이션을 시작 하는 단추 마우스 클릭 ([클릭 하 여 큰 이미지 보기](triggering-an-animation-in-another-control-cs/_static/image3.png))
 
 > [!div class="step-by-step"]
 > [이전](disabling-actions-during-animation-cs.md)

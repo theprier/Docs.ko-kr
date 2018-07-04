@@ -9,33 +9,32 @@ ms.date: 06/16/2014
 ms.topic: article
 ms.assetid: 75ef94b1-bbec-4681-9210-452dba816144
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-8
 msc.type: authoredcontent
-ms.openlocfilehash: 94863e94f2a8b3f1ce8a8fb85d877bc0768f3d8a
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 268c44f842cc2beb32a0a3e4c74b83b7ca9fd787
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30868089"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37375188"
 ---
-<a name="display-item-details"></a>항목 세부 정보를 표시
+<a name="display-item-details"></a>항목 세부 정보 표시
 ====================
-으로 [Mike Wasson](https://github.com/MikeWasson)
+[Mike Wasson](https://github.com/MikeWasson)
 
-[완료 된 프로젝트를 다운로드 합니다.](https://github.com/MikeWasson/BookService)
+[완료 된 프로젝트 다운로드](https://github.com/MikeWasson/BookService)
 
-이 섹션에서는 각 책에 대 한 세부 정보를 볼 수 있는 기능을 추가 합니다. App.js의 보기 모델에 다음 코드를 추가 합니다.
+이 섹션에서는 각 책에 대 한 세부 정보를 확인 하는 기능을 추가 합니다. App.js에서 뷰 모델에는 다음 코드를 추가 합니다.
 
 [!code-javascript[Main](part-8/samples/sample1.js)]
 
-Views/Home/Index.cshtml에서 세부 정보 링크에는 데이터를 바인딩 요소를 추가 합니다.
+Views/Home/Index.cshtml에서 데이터를 바인딩 요소를 세부 정보 링크를 추가 합니다.
 
 [!code-html[Main](part-8/samples/sample2.html?highlight=5)]
 
-이 대 한 클릭 처리기를 바인딩하는 &lt;는&gt; 요소를는 `getBookDetail` 의 보기 모델에 대해 함수입니다.
+이 대 한 클릭 처리기를 바인딩하는 &lt;는&gt; 요소를 `getBookDetail` 뷰 모델에서 함수.
 
-동일한 파일에서 다음과 같은 마크업을 바꿉니다.
+동일한 파일에서 다음 마크업을 바꿉니다.
 
 [!code-html[Main](part-8/samples/sample3.html)]
 
@@ -43,13 +42,13 @@ Views/Home/Index.cshtml에서 세부 정보 링크에는 데이터를 바인딩 
 
 [!code-html[Main](part-8/samples/sample4.html)]
 
-이 태그의 속성에 데이터 바인딩된 하는 테이블을 만듭니다는 `detail` 보기 모델에 예측 가능한 합니다.
+이 태그의 속성과 데이터 바인딩된 테이블을 만듭니다는 `detail` 보기 모델의 observable입니다.
 
-"&lt;!-ko-&gt; &quot; 구문을 사용 하면 DOM 요소의 외부 Knockout 바인딩을 포함할 수 있습니다. 이 경우에 `if` 바인딩 표시 되는 태그의이 섹션에서는 경우에만 `details` null입니다.
+"&lt;!-코-&gt; &quot; 구문 DOM 요소를 외부 Knockout 바인딩을 포함할 수 있습니다. 이 경우에 `if` 바인딩을 사용 하면 표시 되는 태그의이 섹션에서는 경우에만 `details` null이 아닌 합니다.
 
 [!code-html[Main](part-8/samples/sample5.html)]
 
-응용 프로그램을 실행 중 하나를 클릭 하는 경우 이제는 &quot;세부&quot; 링크, 응용 프로그램에는 책 세부 정보가 표시 됩니다.
+이제 앱을 실행 하 고 중 하나를 클릭 합니다 &quot;세부 정보&quot; 링크를 앱에는 책 세부 정보가 표시 됩니다.
 
 [![](part-8/_static/image2.png)](part-8/_static/image1.png)
 

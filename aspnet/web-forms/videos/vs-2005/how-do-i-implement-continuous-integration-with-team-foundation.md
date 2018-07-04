@@ -1,31 +1,30 @@
 ---
 uid: web-forms/videos/vs-2005/how-do-i-implement-continuous-integration-with-team-foundation
-title: '[어떻게 할까요?] Team Foundation 사용한 연속 통합을 구현 여부? | Microsoft 문서'
+title: '[어떻게 할까요?] Team Foundation 사용 하 여 연속 통합 구현? | Microsoft 문서'
 author: rick-anderson
-description: Team Foundation Server를 기반으로 작동 하는 연속 통합 도구 수 있으며이 비디오에서 살펴보겠습니다 무료 Norton TeamCI 도구 avail 중...
+description: Team Foundation Server를 기반으로 작동 하는 연속 통합 도구는 여러 가지 및 무료 Norton TeamCI 도구 avail에서 살펴봅니다이 비디오는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/01/2007
 ms.topic: article
 ms.assetid: 525c3f23-586a-4594-a2cf-efb5a1ef6898
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-implement-continuous-integration-with-team-foundation
 msc.type: video
-ms.openlocfilehash: e5f4c3d12df1a868efa513ad22721ea118fccc57
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 5b91f802af672302ec400c5d2ed7305359e8a2c5
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30894027"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37380217"
 ---
-<a name="how-do-i-implement-continuous-integration-with-team-foundation"></a>[어떻게 할까요?] Team Foundation 사용한 연속 통합을 구현 여부?
+<a name="how-do-i-implement-continuous-integration-with-team-foundation"></a>[어떻게 할까요?] Team Foundation 사용 하 여 연속 통합 구현?
 ====================
-으로 [Chris Menegay](https://twitter.com/CMenegay)
+[Chris Menegay](https://twitter.com/CMenegay)
 
-Team Foundation Server를 기반으로 작동 하는 연속 통합 도구 수 있으며이 비디오에서 살펴보겠습니다 무료 [Norton TeamCI](http://teamsystemrocks.com/files/12/tools/entry1018.aspx) 도구에서 사용할 수 있는 [Team System 돌](http://teamsystemrocks.com/)합니다. TeamCI는 주기적으로 검사 업데이트 여부를 Team Foundation Server에 체크 인 된 파일과, 그렇다면는 솔루션을 빌드하고 자동화 된 테스트를 실행 합니다.
+이 비디오에 대해 살펴봅니다 무료 및 Team Foundation Server를 기반으로 작동 하는 연속 통합 도구는 여러 가지가 [Norton TeamCI](http://teamsystemrocks.com/files/12/tools/entry1018.aspx) 에서 사용할 수 있는 도구인 [Team System Rocks](http://teamsystemrocks.com/)합니다. TeamCI는 주기적으로 확인 업데이트 여부를 Team Foundation server 체크 인 된 파일과, 그렇다면는 솔루션을 빌드하고 자동화 된 테스트를 실행 합니다.
 
-[&#9654;(6 분) 비디오를 시청 하세요](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-implement-continuous-integration-with-team-foundation)
+[&#9654;비디오 (6 분)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-implement-continuous-integration-with-team-foundation)
 
 > [!div class="step-by-step"]
 > [이전](how-do-i-discover-application-changes-prior-to-deployment.md)

@@ -9,48 +9,47 @@ ms.date: 01/17/2014
 ms.topic: article
 ms.assetid: bec04f5d-2638-4417-b288-97c58c8d6379
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /aspnet/overview/owin-and-katana/katana-samples
 msc.type: authoredcontent
-ms.openlocfilehash: 815355c00c9c15cfefa5f98dc89da676743b0390
-ms.sourcegitcommit: 060879fcf3f73d2366b5c811986f8695fff65db8
+ms.openlocfilehash: e81da1e650d8dfd24a3e0fda6aa42b7f360ce12d
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/24/2018
-ms.locfileid: "28034492"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37393321"
 ---
 <a name="katana-samples"></a>Katana 샘플
 ====================
-by [Microsoft](https://github.com/microsoft)
+[Microsoft](https://github.com/microsoft)
 
 ## <a name="katana-samples"></a>Katana 샘플
 
-**ASP.NET 라우팅합니다 샘플** | [소스 코드](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/Katana/AspNetRoutes/ReadMe.txt)  
-일부 응용 프로그램 비 OWIN 구성 요소와 함께 Asp.Net 경로 테이블에는 OWIN 구성 요소를 연결 합니다. 이 샘플에서는 MapOwinPath 및 Microsoft.Owin.Host.SystemWeb 제공한 MapOwinRoute RouteCollection 확장 메서드를 사용 하는 방법을 보여 줍니다.
+**ASP.NET 샘플 라우팅합니다** | [소스 코드](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/Katana/AspNetRoutes/ReadMe.txt)  
+일부 응용 프로그램에서 비 OWIN 구성 요소와 함께 Asp.Net 경로 테이블에는 OWIN 구성 요소를 연결 해야 합니다. 이 샘플에서는 MapOwinPath 및 Microsoft.Owin.Host.SystemWeb 제공한 MapOwinRoute RouteCollection 확장 메서드를 사용 하는 방법을 보여 줍니다.
 
 **샘플 파이프라인 분기** | [소스 코드](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/Katana/BranchingPipelines/ReadMe.txt)  
-OWIN 요청 처리 파이프라인을 선형 될 필요가 없습니다, 다른 방법으로 요청을 처리 하는 분기 될 수 있는 합니다. 이 샘플에는 요청 경로 또는 헤더와 같은 다른 요청 데이터에 따라 분기 파이프라인을 생성 하는 방법을 보여 줍니다. 이러한 구성 요소는 Microsoft.Owin.Mapping nuget 패키지에서 사용할 수 있습니다.
+다른 방법으로 요청을 처리 하는 분기 될 수 있는 OWIN 요청 처리 파이프라인 선형 할 필요는 없습니다. 이 샘플에는 헤더와 같은 다른 요청 데이터 또는 요청 경로에 따라 파이프라인을 분기를 생성 하는 방법을 보여 줍니다. 이러한 구성 요소 Microsoft.Owin.Mapping nuget 패키지에 사용할 수 있습니다.
 
 **사용자 지정 서버 샘플** | [소스 코드](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/Katana/CustomServer/MyCustomServer/CustomServer.cs)   
 자체 호스팅하는 경우 사용자 지정 OWIN 서버를 사용 하는 방법을 보여 줍니다. OWIN 합니다.
 
-**샘플에 포함 된** | [소스 코드](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/Katana/Embedded/ReadMe.txt)  
-사용자가 소유한 프로세스 환경 일부 OWIN 서버에서 실행 될 수 있습니다 (&quot;자체 호스트&quot;). 이 샘플에서는 Microsoft.Owin.Hosting nuget 패키지에서 제공 하는 도구를 사용 하 여 OWIN 응용 프로그램을 시작 하는 방법을 보여 줍니다.
+**샘플을 포함** | [소스 코드](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/Katana/Embedded/ReadMe.txt)  
+사용자 고유의 프로세스 내에서 일부 OWIN 서버를 실행할 수 있습니다 (&quot;자체 호스팅&quot;). 이 샘플에서는 Microsoft.Owin.Hosting nuget 패키지에서 제공 하는 도구를 사용 하 여 OWIN 응용 프로그램을 시작 하는 방법을 보여 줍니다.
 
 **HelloWorld 샘플** | [소스 코드](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/Katana/HelloWorld/ReadMe.txt)  
-OWIN은 HTTP 서버 응용 프로그램 이식성을 통해 다양 한 서버 간에 API 추상화입니다. 이 샘플에서는 일부를 사용 하 여 Hello World 응용 프로그램을 작성 하는 방법을 보여 줍니다. **간단한 래퍼** ASP.NET 웹 서버에 같은 원시 OWIN 추상화 및 실행 합니다.
+OWIN은 HTTP 서버에서 다양 한 서버 응용 프로그램 이식성을 수 있는 API 추상화를입니다. 이 샘플에서는 일부를 사용 하 여 Hello World 응용 프로그램을 작성 하는 방법을 보여 줍니다 **간단한 래퍼** ASP.NET 웹 서버에서 같은 원시 OWIN 추상화 및 실행 합니다.
 
-**Hello World 원시 OWIN 샘플** | [소스 코드](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/Katana/HelloWorldRawOwin/ReadMe.txt)  
-이 샘플에 사용 하 여 Hello World 응용 프로그램을 작성 하는 방법을 보여 줍니다는 **원시** OWIN 추상화 및 Asp.Net과 같은 웹 서버에서 실행 합니다.
+**Hello World 원시 OWIN 예제** | [소스 코드](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/Katana/HelloWorldRawOwin/ReadMe.txt)  
+이 샘플을 사용 하 여 Hello World 응용 프로그램을 작성 하는 방법에 설명 합니다 **원시** OWIN 추상화 및 Asp.Net과 같은 웹 서버에서 실행 합니다.
 
 **SignalR 샘플** | [소스 코드](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/Katana/SignalR/Program.cs)  
-SignalR OWIN를 사용 하 여 자체 호스트 하는 방법을 보여 줍니다. / Katana 합니다. 자체 호스팅을 SignalR에 대 한 자세한 내용은 참조 하십시오. [자습서: 자체 호스트 하는 SignalR](../../../signalr/overview/deployment/tutorial-signalr-self-host.md)합니다.
+OWIN을 사용 하 여 SignalR 자체 호스트 하는 방법을 보여 줍니다 / Katana 합니다. 자체 호스팅 SignalR에 대 한 자세한 내용은 참조 하세요. [자습서: SignalR 자체 호스팅](../../../signalr/overview/deployment/tutorial-signalr-self-host.md)합니다.
 
-**정적 샘플 파일** | [소스 코드](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/Katana/StaticFilesSample/Startup.cs)   
-OWIN를 사용 하 여 정적 파일에 대 한 HTTP 요청을 지 원하는 방법을 보여 줍니다. / Katana 합니다.
+**정적 파일 샘플** | [소스 코드](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/Katana/StaticFilesSample/Startup.cs)   
+OWIN을 사용 하 여 정적 파일에 대 한 HTTP 요청을 지 원하는 방법을 보여 줍니다 / Katana 합니다.
 
-**Web API** | [소스 코드](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/Katana/WebApi/ReadMe.txt)   
-이 예제에는 OWIN IIS에서 호스트 웹 API OWIN 파이프라인을 추가 하는 방법을 보여 줍니다.
+**웹 API** | [소스 코드](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/Katana/WebApi/ReadMe.txt)   
+이 샘플에는 IIS에서 OWIN 호스트 OWIN 파이프라인에 Web API를 추가 하는 방법을 보여 줍니다.
 
 **웹 소켓 샘플** | [소스 코드](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/Katana/WebSocketSample/WebSocketServer/Startup.cs)   
-사용 하 여 웹 소켓 OWIN에서 지 원하는 방법을 보여 줍니다는 [System.Net.WebSockets.WebSocket](https://msdn.microsoft.com/library/system.net.websockets.websocket(v=vs.110).aspx) 클래스입니다.
+사용 하 여 OWIN에서 Websocket을 지원 하는 방법을 보여 줍니다 합니다 [System.Net.WebSockets.WebSocket](https://msdn.microsoft.com/library/system.net.websockets.websocket(v=vs.110).aspx) 클래스입니다.

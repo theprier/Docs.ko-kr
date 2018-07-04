@@ -1,31 +1,30 @@
 ---
 uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-maskededit-controls
-title: '[어떻게 할까요?] ASP.NET AJAX MaskedEdit 컨트롤을 사용 하 여? | Microsoft 문서'
+title: '[어떻게 할까요?] ASP.NET AJAX MaskedEdit 컨트롤 사용 | Microsoft 문서'
 author: JoeStagner
-description: ASP.NET AJAX 컨트롤 Toolkit MaskedEdit 컨트롤 및 프롬프트, 스타일 및 d를 확인 하기 위해 함께 작동 하는 MaskedEditValidator 컨트롤을 제공...
+description: ASP.NET AJAX Control Toolkit에 MaskedEdit 컨트롤 줄어들고 MaskedEditValidator 컨트롤 함께 작동 하는 프롬프트, 스타일 및 d의 유효성을 검사 하는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 04/04/2007
 ms.topic: article
 ms.assetid: 806a8bfe-54be-4c96-8ffd-66303cc2b2f9
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-maskededit-controls
 msc.type: video
-ms.openlocfilehash: e79d8517028337b0693234dd28d6c0903c12e2f6
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: b725819313eae960ba96847d0a8db00668eb7ed0
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30882233"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37392557"
 ---
-<a name="how-do-i-use-the-aspnet-ajax-maskededit-controls"></a>[어떻게 할까요?] ASP.NET AJAX MaskedEdit 컨트롤을 사용 하 여?
+<a name="how-do-i-use-the-aspnet-ajax-maskededit-controls"></a>[어떻게 할까요?] ASP.NET AJAX MaskedEdit 컨트롤 사용
 ====================
-으로 [Joe Stagner](https://github.com/JoeStagner)
+[Joe Stagner](https://github.com/JoeStagner)
 
-ASP.NET AJAX 컨트롤 Toolkit MaskedEdit 컨트롤 및 프롬프트를 스타일을 선택한 사용자가 텍스트 상자에 입력 데이터 유효성을 검사 하기 위해 함께 작동 하는 MaskedEditValidator 컨트롤을 제공 합니다. 이렇게 하면 웹 페이지를 사용자에 게 입력 된 데이터가 올바른 형식 및 형식 인지에 시각적 피드백을 즉시 제공 합니다.
+ASP.NET AJAX Control Toolkit MaskedEdit 컨트롤 및 프롬프트, 스타일, 사용자가 텍스트 상자에 입력 데이터 유효성 검사를 함께 작동 하는 MaskedEditValidator 컨트롤을 제공 합니다. 이렇게 하면 올바른 형식 및 형식으로 입력 된 데이터 인지에 즉각적인 시각적 피드백을 사용 하 여 사용자를 제공 하는 웹 페이지입니다.
 
-[&#9654;(17 분) 비디오를 시청 하세요](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-maskededit-controls)
+[&#9654;비디오 (17 분)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-use-the-aspnet-ajax-maskededit-controls)
 
 > [!div class="step-by-step"]
 > [이전](how-do-i-use-the-aspnet-ajax-dropdown-control.md)
