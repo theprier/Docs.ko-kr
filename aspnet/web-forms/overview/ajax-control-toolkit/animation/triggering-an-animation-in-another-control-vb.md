@@ -1,71 +1,70 @@
 ---
 uid: web-forms/overview/ajax-control-toolkit/animation/triggering-an-animation-in-another-control-vb
-title: 다른 컨트롤 (VB) 애니메이션 트리거 | Microsoft Docs
+title: 다른 컨트롤 (VB)에서 애니메이션 트리거 | Microsoft Docs
 author: wenz
-description: ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트롤 뿐 아니라 애니메이션 컨트롤을 추가 하는 전체 프레임 워크. 일반적으로 시작는 중...
+description: ASP.NET AJAX Control Toolkit에서 애니메이션 컨트롤 컨트롤 뿐 이지만 컨트롤에 애니메이션을 추가 하는 전체 프레임 워크 아닙니다. 일반적으로 시작을...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 06/02/2008
 ms.topic: article
 ms.assetid: 25ebaf1f-5a9f-423d-98c7-1d694e93664f
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/triggering-an-animation-in-another-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 262a17e7521a8ea16c81e8dfdc6d3b6614c18eea
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: b316b22bf355d7abb0909e43f0c2c38ea3e68f24
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30878999"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37367812"
 ---
-<a name="triggering-an-animation-in-another-control-vb"></a><span data-ttu-id="8e023-104">다른 컨트롤 (VB) 애니메이션 트리거</span><span class="sxs-lookup"><span data-stu-id="8e023-104">Triggering an Animation in another Control (VB)</span></span>
+<a name="triggering-an-animation-in-another-control-vb"></a><span data-ttu-id="00834-104">다른 컨트롤 (VB)에서 애니메이션 트리거</span><span class="sxs-lookup"><span data-stu-id="00834-104">Triggering an Animation in another Control (VB)</span></span>
 ====================
-<span data-ttu-id="8e023-105">으로 [Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="8e023-105">by [Christian Wenz](https://github.com/wenz)</span></span>
+<span data-ttu-id="00834-105">[Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="00834-105">by [Christian Wenz](https://github.com/wenz)</span></span>
 
-<span data-ttu-id="8e023-106">[코드를 다운로드](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation8.vb.zip) 또는 [PDF 다운로드](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation8VB.pdf)</span><span class="sxs-lookup"><span data-stu-id="8e023-106">[Download Code](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation8.vb.zip) or [Download PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation8VB.pdf)</span></span>
+<span data-ttu-id="00834-106">[코드를 다운로드](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation8.vb.zip) 또는 [PDF 다운로드](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation8VB.pdf)</span><span class="sxs-lookup"><span data-stu-id="00834-106">[Download Code](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation8.vb.zip) or [Download PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation8VB.pdf)</span></span>
 
-> <span data-ttu-id="8e023-107">ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트롤 뿐 아니라 애니메이션 컨트롤을 추가 하는 전체 프레임 워크.</span><span class="sxs-lookup"><span data-stu-id="8e023-107">The Animation control in the ASP.NET AJAX Control Toolkit is not just a control but a whole framework to add animations to a control.</span></span> <span data-ttu-id="8e023-108">일반적으로 애니메이션 시작에 의해 트리거될 동일한 컨트롤과 상호 작용 합니다.</span><span class="sxs-lookup"><span data-stu-id="8e023-108">Generally, launching an animation is triggered by user interaction with the same control.</span></span> <span data-ttu-id="8e023-109">그러나 또한 다른 컨트롤을 한 개의 컨트롤 및 애니메이션와 상호 작용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="8e023-109">It is however also possible to interact with one control and then animation another control.</span></span>
+> <span data-ttu-id="00834-107">ASP.NET AJAX Control Toolkit에서 애니메이션 컨트롤 컨트롤 뿐 이지만 컨트롤에 애니메이션을 추가 하는 전체 프레임 워크 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="00834-107">The Animation control in the ASP.NET AJAX Control Toolkit is not just a control but a whole framework to add animations to a control.</span></span> <span data-ttu-id="00834-108">일반적으로 동일한 컨트롤을 사용 하 여 사용자 상호 작용에 의해 트리거됩니다는 애니메이션을 시작.</span><span class="sxs-lookup"><span data-stu-id="00834-108">Generally, launching an animation is triggered by user interaction with the same control.</span></span> <span data-ttu-id="00834-109">하지만 이기도 다른 컨트롤이 컨트롤 및 애니메이션을 사용 하 여 상호 작용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="00834-109">It is however also possible to interact with one control and then animation another control.</span></span>
 
 
-## <a name="overview"></a><span data-ttu-id="8e023-110">개요</span><span class="sxs-lookup"><span data-stu-id="8e023-110">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="00834-110">개요</span><span class="sxs-lookup"><span data-stu-id="00834-110">Overview</span></span>
 
-<span data-ttu-id="8e023-111">ASP.NET AJAX 컨트롤 도구 키트에서 애니메이션 컨트롤은 컨트롤 뿐 아니라 애니메이션 컨트롤을 추가 하는 전체 프레임 워크.</span><span class="sxs-lookup"><span data-stu-id="8e023-111">The Animation control in the ASP.NET AJAX Control Toolkit is not just a control but a whole framework to add animations to a control.</span></span> <span data-ttu-id="8e023-112">일반적으로 애니메이션 시작에 의해 트리거될 동일한 컨트롤과 상호 작용 합니다.</span><span class="sxs-lookup"><span data-stu-id="8e023-112">Generally, launching an animation is triggered by user interaction with the same control.</span></span> <span data-ttu-id="8e023-113">그러나 또한 다른 컨트롤을 한 개의 컨트롤 및 애니메이션와 상호 작용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="8e023-113">It is however also possible to interact with one control and then animation another control.</span></span>
+<span data-ttu-id="00834-111">ASP.NET AJAX Control Toolkit에서 애니메이션 컨트롤 컨트롤 뿐 이지만 컨트롤에 애니메이션을 추가 하는 전체 프레임 워크 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="00834-111">The Animation control in the ASP.NET AJAX Control Toolkit is not just a control but a whole framework to add animations to a control.</span></span> <span data-ttu-id="00834-112">일반적으로 동일한 컨트롤을 사용 하 여 사용자 상호 작용에 의해 트리거됩니다는 애니메이션을 시작.</span><span class="sxs-lookup"><span data-stu-id="00834-112">Generally, launching an animation is triggered by user interaction with the same control.</span></span> <span data-ttu-id="00834-113">하지만 이기도 다른 컨트롤이 컨트롤 및 애니메이션을 사용 하 여 상호 작용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="00834-113">It is however also possible to interact with one control and then animation another control.</span></span>
 
-## <a name="steps"></a><span data-ttu-id="8e023-114">단계</span><span class="sxs-lookup"><span data-stu-id="8e023-114">Steps</span></span>
+## <a name="steps"></a><span data-ttu-id="00834-114">단계</span><span class="sxs-lookup"><span data-stu-id="00834-114">Steps</span></span>
 
-<span data-ttu-id="8e023-115">우선, 포함 된 `ScriptManager` 페이지; 그런 다음 ASP.NET AJAX 라이브러리 로드 되는 제어 도구 키트를 사용 하 여:</span><span class="sxs-lookup"><span data-stu-id="8e023-115">First of all, include the `ScriptManager` in the page; then, the ASP.NET AJAX library is loaded, making it possible to use the Control Toolkit:</span></span>
+<span data-ttu-id="00834-115">첫째, 포함 된 `ScriptManager` 페이지 그런 다음 ASP.NET AJAX 라이브러리 로드 되 면 컨트롤 도구 키트를 사용 하 여:</span><span class="sxs-lookup"><span data-stu-id="00834-115">First of all, include the `ScriptManager` in the page; then, the ASP.NET AJAX library is loaded, making it possible to use the Control Toolkit:</span></span>
 
 [!code-aspx[Main](triggering-an-animation-in-another-control-vb/samples/sample1.aspx)]
 
-<span data-ttu-id="8e023-116">그러면 다음과 같은 텍스트의 패널에 애니메이션 적용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="8e023-116">The animation will be applied to a panel of text which looks like this:</span></span>
+<span data-ttu-id="00834-116">그러면 다음과 같은 텍스트 패널에 애니메이션 적용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="00834-116">The animation will be applied to a panel of text which looks like this:</span></span>
 
 [!code-aspx[Main](triggering-an-animation-in-another-control-vb/samples/sample2.aspx)]
 
-<span data-ttu-id="8e023-117">패널에 대 한 연결 된 CSS 클래스 좋은 배경색을 정의 하 고도 패널 고정된 폭을 설정 합니다.</span><span class="sxs-lookup"><span data-stu-id="8e023-117">In the associated CSS class for the panel, define a nice background color and also set a fixed width for the panel:</span></span>
+<span data-ttu-id="00834-117">패널에 대 한 연결 된 CSS 클래스에 유용한 배경 색을 정의 하 고 패널 고정된 너비를 설정할 수도:</span><span class="sxs-lookup"><span data-stu-id="00834-117">In the associated CSS class for the panel, define a nice background color and also set a fixed width for the panel:</span></span>
 
 [!code-css[Main](triggering-an-animation-in-another-control-vb/samples/sample3.css)]
 
-<span data-ttu-id="8e023-118">패널에 애니메이션 적용을 시작 하기 위해 HTML 단추가 사용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="8e023-118">In order to start animating the panel, an HTML button is used.</span></span> <span data-ttu-id="8e023-119">`<input type="button" />` 들이 통해 좋아하는 `<asp:Button />` 사용자가 해당 단추를 클릭할 때 포스트백을 원치 않으므로 때문입니다.</span><span class="sxs-lookup"><span data-stu-id="8e023-119">Note that `<input type="button" />` is favoured over `<asp:Button />` since we do not want a postback when the user clicks on that button.</span></span>
+<span data-ttu-id="00834-118">패널에 애니메이션 적용을 시작 하기 위해 HTML 단추가 사용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="00834-118">In order to start animating the panel, an HTML button is used.</span></span> <span data-ttu-id="00834-119">사실은 `<input type="button" />` 들이 통해 좋아하는 `<asp:Button />` 사용자가 해당 단추를 클릭 하면 포스트백 않을 것 이므로 합니다.</span><span class="sxs-lookup"><span data-stu-id="00834-119">Note that `<input type="button" />` is favoured over `<asp:Button />` since we do not want a postback when the user clicks on that button.</span></span>
 
 [!code-aspx[Main](triggering-an-animation-in-another-control-vb/samples/sample4.aspx)]
 
-<span data-ttu-id="8e023-120">그런 다음 추가 `AnimationExtender` 페이지에 제공 하는 `ID`, `TargetControlID` 특성과 반드시 `runat="server"`합니다.</span><span class="sxs-lookup"><span data-stu-id="8e023-120">Then, add the `AnimationExtender` to the page, providing an `ID`, the `TargetControlID` attribute and the obligatory `runat="server"`.</span></span> <span data-ttu-id="8e023-121">설정 해야 `TargetControlID` 단추 (애니메이션 트리거 요소)의 ID로 패널 (애니메이션 효과가 적용 되는 요소)의 ID로 하지</span><span class="sxs-lookup"><span data-stu-id="8e023-121">It is important to set `TargetControlID` to the ID of the button (the element triggering the animation), not to the ID of the panel (the element being animated)</span></span>
+<span data-ttu-id="00834-120">그런 다음 추가 `AnimationExtender` 페이지에서 제공 하는 `ID`, `TargetControlID` 특성과 필수 항목 이지만 `runat="server"`.</span><span class="sxs-lookup"><span data-stu-id="00834-120">Then, add the `AnimationExtender` to the page, providing an `ID`, the `TargetControlID` attribute and the obligatory `runat="server"`.</span></span> <span data-ttu-id="00834-121">설정 하는 것이 반드시 `TargetControlID` 단추 (애니메이션 트리거 요소)의 ID로 패널 (애니메이션 효과가 적용 되는 요소)의 ID에 없습니다</span><span class="sxs-lookup"><span data-stu-id="00834-121">It is important to set `TargetControlID` to the ID of the button (the element triggering the animation), not to the ID of the panel (the element being animated)</span></span>
 
 [!code-aspx[Main](triggering-an-animation-in-another-control-vb/samples/sample5.aspx)]
 
-<span data-ttu-id="8e023-122">내에서 `<Animations>` 노드를 일반적인 방법 대로 위치 애니메이션 합니다.</span><span class="sxs-lookup"><span data-stu-id="8e023-122">Within the `<Animations>` node, place animations as usual.</span></span> <span data-ttu-id="8e023-123">패널을 변경할 수를 단추가 아닌 설정의 `AnimationTarget` 특성 내에서 모든 애니메이션 요소에 대해 `AnimationExtender`합니다.</span><span class="sxs-lookup"><span data-stu-id="8e023-123">In order to make them change the panel, not the button, set the `AnimationTarget` attribute for every animation element within `AnimationExtender`.</span></span> <span data-ttu-id="8e023-124">에 대 한 값 `AnimationTarget` 패널의 ID는 물론 합니다.</span><span class="sxs-lookup"><span data-stu-id="8e023-124">The value for `AnimationTarget` is the ID of the panel, of course.</span></span> <span data-ttu-id="8e023-125">이런 방식으로 애니메이션 트리거 단추와 패널에서 발생 합니다.</span><span class="sxs-lookup"><span data-stu-id="8e023-125">That way, the animations happen with the panel, not with the triggering button.</span></span> <span data-ttu-id="8e023-126">다음은 `AnimationExtender` 이 시나리오에 대 한 태그:</span><span class="sxs-lookup"><span data-stu-id="8e023-126">Here is the `AnimationExtender` markup for this scenario:</span></span>
+<span data-ttu-id="00834-122">내는 `<Animations>` 노드를 일반적인 방법으로 위치 애니메이션 합니다.</span><span class="sxs-lookup"><span data-stu-id="00834-122">Within the `<Animations>` node, place animations as usual.</span></span> <span data-ttu-id="00834-123">단추가 아닌는 패널을 변경할 수 있도록, 하려면 설정 합니다 `AnimationTarget` 내에서 모든 애니메이션 요소에 대 한 특성 `AnimationExtender`합니다.</span><span class="sxs-lookup"><span data-stu-id="00834-123">In order to make them change the panel, not the button, set the `AnimationTarget` attribute for every animation element within `AnimationExtender`.</span></span> <span data-ttu-id="00834-124">에 대 한 값 `AnimationTarget` 물론은 패널의 ID입니다.</span><span class="sxs-lookup"><span data-stu-id="00834-124">The value for `AnimationTarget` is the ID of the panel, of course.</span></span> <span data-ttu-id="00834-125">이런 방식으로 애니메이션 트리거 단추와 패널을 사용 하 여 발생합니다.</span><span class="sxs-lookup"><span data-stu-id="00834-125">That way, the animations happen with the panel, not with the triggering button.</span></span> <span data-ttu-id="00834-126">다음은 `AnimationExtender` 이 시나리오에 대 한 태그:</span><span class="sxs-lookup"><span data-stu-id="00834-126">Here is the `AnimationExtender` markup for this scenario:</span></span>
 
 [!code-aspx[Main](triggering-an-animation-in-another-control-vb/samples/sample6.aspx)]
 
-<span data-ttu-id="8e023-127">Note 개별 애니메이션이 표시 되는 특별 한 순서입니다.</span><span class="sxs-lookup"><span data-stu-id="8e023-127">Note the special order in which the individual animations appear.</span></span> <span data-ttu-id="8e023-128">우선, 애니메이션 실행 되 면 단추 비활성화를 가져옵니다.</span><span class="sxs-lookup"><span data-stu-id="8e023-128">First of all, the button gets deactivated once the animation runs.</span></span> <span data-ttu-id="8e023-129">없기 때문 없는 `AnimationTarget` 특성에 `<EnableAction>` 요소가이 애니메이션 원본 컨트롤에 적용 되: 단추입니다.</span><span class="sxs-lookup"><span data-stu-id="8e023-129">Since there is no `AnimationTarget` attribute in the `<EnableAction>` element, this animation is applied to the originating control: the button.</span></span> <span data-ttu-id="8e023-130">애니메이션을 다음 두 단계는 수행 parallelly (`<Parallel>` 요소).</span><span class="sxs-lookup"><span data-stu-id="8e023-130">The next two animation steps shall be carried out parallelly (`<Parallel>` element).</span></span> <span data-ttu-id="8e023-131">둘 다의 `AnimationTarget` 특성으로 설정 `"Panel1"`, 따라서 단추가 아니라 패널에 애니메이션을 적용 합니다.</span><span class="sxs-lookup"><span data-stu-id="8e023-131">Both have their `AnimationTarget` attributes set to `"Panel1"`, thus animating the panel, not the button.</span></span>
+<span data-ttu-id="00834-127">특별 한 순서는 개별 애니메이션 note 합니다.</span><span class="sxs-lookup"><span data-stu-id="00834-127">Note the special order in which the individual animations appear.</span></span> <span data-ttu-id="00834-128">첫째, 단추 애니메이션 실행 되 면 비활성화를 가져옵니다.</span><span class="sxs-lookup"><span data-stu-id="00834-128">First of all, the button gets deactivated once the animation runs.</span></span> <span data-ttu-id="00834-129">있기 때문 없습니다 `AnimationTarget` 특성을 `<EnableAction>` 원래 컨트롤 요소를이 애니메이션을 적용할: 단추입니다.</span><span class="sxs-lookup"><span data-stu-id="00834-129">Since there is no `AnimationTarget` attribute in the `<EnableAction>` element, this animation is applied to the originating control: the button.</span></span> <span data-ttu-id="00834-130">Parallelly 애니메이션 다음 두 단계를 수행 됩니다 (`<Parallel>` 요소).</span><span class="sxs-lookup"><span data-stu-id="00834-130">The next two animation steps shall be carried out parallelly (`<Parallel>` element).</span></span> <span data-ttu-id="00834-131">둘 다 해당 `AnimationTarget` 특성으로 설정 `"Panel1"`, 따라서 패널에 단추가 아닌 애니메이션을 적용 합니다.</span><span class="sxs-lookup"><span data-stu-id="00834-131">Both have their `AnimationTarget` attributes set to `"Panel1"`, thus animating the panel, not the button.</span></span>
 
 
-<span data-ttu-id="8e023-132">[![패널 애니메이션을 시작 하는 마우스 단추 클릭](triggering-an-animation-in-another-control-vb/_static/image2.png)](triggering-an-animation-in-another-control-vb/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="8e023-132">[![A mouse click on the button starts the panel animation](triggering-an-animation-in-another-control-vb/_static/image2.png)](triggering-an-animation-in-another-control-vb/_static/image1.png)</span></span>
+<span data-ttu-id="00834-132">[![창 애니메이션을 시작 하는 단추 마우스 클릭](triggering-an-animation-in-another-control-vb/_static/image2.png)](triggering-an-animation-in-another-control-vb/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="00834-132">[![A mouse click on the button starts the panel animation](triggering-an-animation-in-another-control-vb/_static/image2.png)](triggering-an-animation-in-another-control-vb/_static/image1.png)</span></span>
 
-<span data-ttu-id="8e023-133">패널 애니메이션을 시작 하는 마우스 단추 클릭 ([전체 크기 이미지를 보려면 클릭](triggering-an-animation-in-another-control-vb/_static/image3.png))</span><span class="sxs-lookup"><span data-stu-id="8e023-133">A mouse click on the button starts the panel animation ([Click to view full-size image](triggering-an-animation-in-another-control-vb/_static/image3.png))</span></span>
+<span data-ttu-id="00834-133">창 애니메이션을 시작 하는 단추 마우스 클릭 ([클릭 하 여 큰 이미지 보기](triggering-an-animation-in-another-control-vb/_static/image3.png))</span><span class="sxs-lookup"><span data-stu-id="00834-133">A mouse click on the button starts the panel animation ([Click to view full-size image](triggering-an-animation-in-another-control-vb/_static/image3.png))</span></span>
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="8e023-134">[이전](disabling-actions-during-animation-vb.md)
-> [다음](modifying-animations-from-the-server-side-vb.md)</span><span class="sxs-lookup"><span data-stu-id="8e023-134">[Previous](disabling-actions-during-animation-vb.md)
+> <span data-ttu-id="00834-134">[이전](disabling-actions-during-animation-vb.md)
+> [다음](modifying-animations-from-the-server-side-vb.md)</span><span class="sxs-lookup"><span data-stu-id="00834-134">[Previous](disabling-actions-during-animation-vb.md)
 [Next](modifying-animations-from-the-server-side-vb.md)</span></span>
