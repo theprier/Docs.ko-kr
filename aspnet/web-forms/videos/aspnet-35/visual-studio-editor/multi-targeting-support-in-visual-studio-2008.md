@@ -1,33 +1,32 @@
 ---
 uid: web-forms/videos/aspnet-35/visual-studio-editor/multi-targeting-support-in-visual-studio-2008
-title: Visual Studio 2008에서 지원 대상으로 하는 다중 | Microsoft Docs
+title: 다중 타기 팅 Visual Studio 2008의 지원 | Microsoft Docs
 author: JoeStagner
-description: Visual Studio 2008의 MultiTarget 기능을 설명 합니다. 이전에 대상된.NET versi 일치 하도록 Visual Studio의 버전을 선택 해야...
+description: Visual Studio 2008의 멀티 타기 팅 기능을 설명 합니다. 이전에 대상된.NET versi에 맞게 Visual Studio의 버전을 선택 해야 하는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 11/15/2007
 ms.topic: article
 ms.assetid: 297bd67d-10d9-406d-9c6e-9db0bbe35491
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/aspnet-35/visual-studio-editor/multi-targeting-support-in-visual-studio-2008
 msc.type: video
-ms.openlocfilehash: e1e16946761939876ff95bf92e483ca1b43e3a10
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 468fe1b3560d87c274785ac64d0fda74b7afaa1d
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30884287"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37374891"
 ---
-<a name="multi-targeting-support-in-visual-studio-2008"></a><span data-ttu-id="cecf6-104">Visual Studio 2008에서 지원 대상으로 하는 다중</span><span class="sxs-lookup"><span data-stu-id="cecf6-104">Multi Targeting Support in Visual Studio 2008</span></span>
+<a name="multi-targeting-support-in-visual-studio-2008"></a><span data-ttu-id="1a429-104">다중 타기 팅 Visual Studio 2008에서 지원</span><span class="sxs-lookup"><span data-stu-id="1a429-104">Multi Targeting Support in Visual Studio 2008</span></span>
 ====================
-<span data-ttu-id="cecf6-105">으로 [Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="cecf6-105">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="1a429-105">[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="1a429-105">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="cecf6-106">Visual Studio 2008의 MultiTarget 기능을 설명 합니다.</span><span class="sxs-lookup"><span data-stu-id="cecf6-106">I will illustrate the MultiTarget feature of Visual Studio 2008.</span></span> <span data-ttu-id="cecf6-107">이전에 대상된.NET 버전과 일치 하도록 Visual Studio의 버전을 선택 해야 했습니다.</span><span class="sxs-lookup"><span data-stu-id="cecf6-107">In the past, you had to choose the version of Visual Studio to match the targeted .NET version.</span></span> <span data-ttu-id="cecf6-108">예를 들어.NET 2.5와 Visual Studio 2005 했습니다.</span><span class="sxs-lookup"><span data-stu-id="cecf6-108">For example, Visual Studio 2005 worked with .NET 2.5.</span></span> <span data-ttu-id="cecf6-109">이제 Visual Studio 2008과 함께.NET 응용 프로그램에 대 한 적절 한 버전을 선택할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="cecf6-109">Now, with Visual Studio 2008 you can choose the version of .NET appropriate for your application.</span></span>
+<span data-ttu-id="1a429-106">Visual Studio 2008의 멀티 타기 팅 기능을 설명 합니다.</span><span class="sxs-lookup"><span data-stu-id="1a429-106">I will illustrate the MultiTarget feature of Visual Studio 2008.</span></span> <span data-ttu-id="1a429-107">과거에는 대상으로 지정 된.NET 버전에 맞게 Visual Studio의 버전을 선택 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="1a429-107">In the past, you had to choose the version of Visual Studio to match the targeted .NET version.</span></span> <span data-ttu-id="1a429-108">예를 들어, Visual Studio 2005는.NET 2.5를 사용 하 여 작동 합니다.</span><span class="sxs-lookup"><span data-stu-id="1a429-108">For example, Visual Studio 2005 worked with .NET 2.5.</span></span> <span data-ttu-id="1a429-109">이제 Visual Studio 2008을 사용 하 여.NET 응용 프로그램에 대 한 적절 한 버전을 선택할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="1a429-109">Now, with Visual Studio 2008 you can choose the version of .NET appropriate for your application.</span></span>
 
-[<span data-ttu-id="cecf6-110">&#9654;(5 분) 비디오를 시청 하세요</span><span class="sxs-lookup"><span data-stu-id="cecf6-110">&#9654; Watch video (5 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/multi-targeting-support-in-visual-studio-2008)
+[<span data-ttu-id="1a429-110">&#9654;비디오 (5 분)</span><span class="sxs-lookup"><span data-stu-id="1a429-110">&#9654; Watch video (5 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/multi-targeting-support-in-visual-studio-2008)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="cecf6-111">[이전](javascript-debugging-in-visual-studio-2008.md)
-> [다음](intellisense-for-jscript-and-aspnet-ajax.md)</span><span class="sxs-lookup"><span data-stu-id="cecf6-111">[Previous](javascript-debugging-in-visual-studio-2008.md)
+> <span data-ttu-id="1a429-111">[이전](javascript-debugging-in-visual-studio-2008.md)
+> [다음](intellisense-for-jscript-and-aspnet-ajax.md)</span><span class="sxs-lookup"><span data-stu-id="1a429-111">[Previous](javascript-debugging-in-visual-studio-2008.md)
 [Next](intellisense-for-jscript-and-aspnet-ajax.md)</span></span>
