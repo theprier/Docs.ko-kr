@@ -1,28 +1,27 @@
 ---
 uid: web-forms/videos/how-do-i/build-your-first-asp-net-application-with-asp-net-mvc
-title: ASP.NET MVC와 함께 첫 번째 ASP.NET 응용 프로그램을 빌드하도록 | Microsoft Docs
+title: ASP.NET MVC를 사용 하 여 첫 ASP.NET 응용 프로그램 만들기 | Microsoft Docs
 author: lmoroney
-description: Microsoft의 Laurence Moroney ASP.NET MVC와 함께 첫 번째 ASP.NET 응용 프로그램을 빌드하는 방법을 보여 줍니다.
+description: Microsoft의 Laurence moroney가 ASP.NET MVC를 사용 하 여 첫 번째 ASP.NET 응용 프로그램을 빌드하는 방법을 보여 줍니다.
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 03/09/2010
 ms.topic: article
 ms.assetid: a4daa181-8da2-4883-998e-d08f34259b1f
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/how-do-i/build-your-first-asp-net-application-with-asp-net-mvc
 msc.type: video
-ms.openlocfilehash: 5d4d4cb3faf1f282c591331bc8a823c64f4a29db
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 1b5960bd177af8d9fa9f518e3cf8dceb0b86871d
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26525172"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37391902"
 ---
-<a name="build-your-first-aspnet-application-with-aspnet-mvc"></a>ASP.NET MVC와 함께 첫 번째 ASP.NET 응용 프로그램 빌드
+<a name="build-your-first-aspnet-application-with-aspnet-mvc"></a>ASP.NET MVC를 사용 하 여 첫 ASP.NET 응용 프로그램 만들기
 ====================
-으로 [Laurence Moroney](https://github.com/lmoroney)
+[Laurence Moroney](https://github.com/lmoroney)
 
-Microsoft의 Laurence Moroney ASP.NET MVC와 함께 첫 번째 ASP.NET 응용 프로그램을 빌드하는 방법을 보여 줍니다.
+Microsoft의 Laurence moroney가 ASP.NET MVC를 사용 하 여 첫 번째 ASP.NET 응용 프로그램을 빌드하는 방법을 보여 줍니다.
 
-[&#9654; (18 분) 비디오를 시청 하세요](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/build-your-first-asp-net-application-with-asp-net-mvc)
+[&#9654;비디오 (18 분)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/build-your-first-asp-net-application-with-asp-net-mvc)

@@ -1,31 +1,30 @@
 ---
 uid: web-forms/videos/vs-2005/the-effects-of-viewstate
-title: ViewState 효과 | Microsoft Docs
+title: ViewState의 효과 | Microsoft Docs
 author: rick-anderson
-description: 자동으로 앞 이나 뒤로 브라우저 요구 사항 간에 데이터를 실행 하 여 응용 프로그램 상태를 유지 관리 ViewState 메커니즘을 제공 하는 ASP.NET 프레임 워크 중...
+description: ASP.NET 프레임 워크는 자동으로 브라우저 요구 사항 간에 앞뒤로 데이터를 수행 하 여 응용 프로그램 상태를 유지 하기 위해 ViewState 메커니즘을 제공 하는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/26/2007
 ms.topic: article
 ms.assetid: 112e3efc-6865-4296-80a0-35910c4b3b12
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/vs-2005/the-effects-of-viewstate
 msc.type: video
-ms.openlocfilehash: 8792f06583ed2ff82093f2cfd63cd1c1e4ac80cd
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: a5ea15eb05917db5935b04c9ce2aa20e1cb8e196
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30899436"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37391801"
 ---
 <a name="the-effects-of-viewstate"></a>ViewState의 효과
 ====================
-의해서 Eric lee에 공저
+Eric Lee 여
 
-ASP.NET 프레임 워크는 자동으로 앞 이나 뒤로 브라우저 요청 간에 데이터를 실행 하 여 응용 프로그램 상태를 유지 관리 ViewState 메커니즘을 제공 합니다. 이 비디오에서는 DropDownList 같은 일부 ASP.NET을 제어 하는 방법을 표시 하 고 텍스트 상자에서 스마트 개발자 불필요 한 뷰 상태의 설정을 해제 하려면 ViewState 보다는 다시 게시 폼 값에 따라 상태를 유지할 키를 누릅니다. Visual Studio Team System을 사용 하 여 볼 수 있습니다이 크게 요청 및 응답 데이터의 크기를 줄이는 방법과 성능과 응용 프로그램의 확장성이 향상 됩니다.
+ASP.NET 프레임 워크는 자동으로 브라우저 요청 간에 앞뒤로 데이터를 수행 하 여 응용 프로그램 상태를 유지 하기 위해 ViewState 메커니즘을 제공 합니다. 이 비디오에서는 고 것을 알 DropDownList 같은 일부 ASP.NET 컨트롤 하는 방법을 TextBox ViewState, 불필요 한 ViewState를 사용 하지 않도록 설정 하려면 스마트 개발자 대신 포스트백 폼 값에 따라 상태를 유지 합니다. Visual Studio Team System을 사용 하 여이 크게 요청 및 응답 데이터의 크기를 줄이는 방법과 성능 및 응용 프로그램의 확장성 향상을 볼 수 있습니다.
 
-[&#9654;(10 분) 비디오를 시청 하세요](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/the-effects-of-viewstate)
+[&#9654;비디오 (10 분)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/the-effects-of-viewstate)
 
 > [!div class="step-by-step"]
 > [이전](using-the-load-test-agent.md)

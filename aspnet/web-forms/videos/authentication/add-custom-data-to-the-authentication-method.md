@@ -1,6 +1,6 @@
 ---
 uid: web-forms/videos/authentication/add-custom-data-to-the-authentication-method
-title: 사용자 지정 데이터는 인증 방법과 추가 | Microsoft Docs
+title: 인증 방법에 사용자 지정 데이터 추가 | Microsoft Docs
 author: JoeStagner
 description: Joe Stagner 인증 티켓에 사용자 지정 데이터를 추가 하는 인증 방법을 구성 하 여 ASP.NET 인증의 탐색을 계속 합니다.
 ms.author: aspnetcontent
@@ -9,23 +9,22 @@ ms.date: 07/16/2008
 ms.topic: article
 ms.assetid: 940bdecc-ae0f-448f-a189-405efa614049
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/authentication/add-custom-data-to-the-authentication-method
 msc.type: video
-ms.openlocfilehash: 1cc2328486da8d988271b5a609346b03b2d140d7
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: b86e3ef9d2fdf3b654ea41b175b4876d0ed65504
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30881372"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37390707"
 ---
 <a name="add-custom-data-to-the-authentication-method"></a>인증 방법에 사용자 지정 데이터 추가
 ====================
-으로 [Joe Stagner](https://github.com/JoeStagner)
+[Joe Stagner](https://github.com/JoeStagner)
 
-Joe Stagner ASP.NET 인증 탐색 ASP.NET에서 사용 되는 인증 티켓에 사용자 지정 데이터를 추가 하는 인증 방법을 구성 하 여 계속 합니다. 이 데모에서 자세한 정보에 대 한 자습서 위치한 [여기](../../overview/older-versions-security/introduction/forms-authentication-configuration-and-advanced-topics-vb.md)합니다.
+Joe Stagner는 ASP.NET에서 사용 되는 인증 티켓에 사용자 지정 데이터를 추가 하는 인증 방법을 구성 하 여 ASP.NET 인증의 탐색을 계속 합니다. 이 데모에 대 한 자세한 내용은 자습서 위치한 [여기](../../overview/older-versions-security/introduction/forms-authentication-configuration-and-advanced-topics-vb.md)합니다.
 
-[&#9654;(14 분) 비디오를 시청 하세요](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/add-custom-data-to-the-authentication-method)
+[&#9654;비디오 (14 분)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/add-custom-data-to-the-authentication-method)
 
 > [!div class="step-by-step"]
 > [이전](forms-login-custom-key-configuration.md)

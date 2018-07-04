@@ -1,6 +1,6 @@
 ---
 uid: ajax/cdn/jquery-ui/cdnjqueryui1818
-title: jQuery UI 1.8.18 Microsoft Ajax CDN에서 | Microsoft Docs
+title: jQuery UI 1.8.18 Microsoft Ajax CDN | Microsoft Docs
 author: rick-anderson
 description: ''
 ms.author: aspnetcontent
@@ -9,28 +9,27 @@ ms.date: 07/23/2014
 ms.topic: article
 ms.assetid: 238fdd84-6095-466e-955d-6c7e3a2a6b94
 ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: /ajax/cdn/jquery-ui/cdnjqueryui1818
 msc.type: content
-ms.openlocfilehash: f45391448882db6d1dfcb52108bd716edc749755
-ms.sourcegitcommit: 48beecfe749ddac52bc79aa3eb246a2dcdaa1862
+ms.openlocfilehash: 804ab23a54ec8946beab9f3c51f9d707e40661e3
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 03/22/2018
-ms.locfileid: "30076035"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37378403"
 ---
-<a name="jquery-ui-1818-on-the-microsoft-ajax-cdn"></a>jQuery UI 1.8.18 Microsoft Ajax CDN에서
+<a name="jquery-ui-1818-on-the-microsoft-ajax-cdn"></a>jQuery UI 1.8.18 Microsoft Ajax CDN
 ====================
-JQuery UI 1.8.18 라이브러리에는 다음 파일이 포함 됩니다.
+JQuery UI 1.8.18 라이브러리는 다음 파일이 포함 되어 있습니다.
 
 - https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.18/jquery-ui.js
 - https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.18/jquery-ui.min.js
 
 ## <a name="themes"></a>테마
 
-모든 표준 jQuery UI 테마가이 CDN에 호스팅됩니다.
+모든 표준 jQuery UI 테마가이 CDN에서 호스팅됩니다.
 
-JQuery UI ThemeRoller에서 해당 테마를 보려는 테마 이미지 중 하나를 클릭 합니다.
+JQuery UI ThemeRoller에서 해당 테마를 보려면 테마 이미지 중 하나를 클릭 합니다.
 
 Themeâ €의 전체 URL을 선택 하려면 입력된 필드 중 하나를 클릭&trade;의CSS 파일을 호스트 합니다.
 
@@ -50,7 +49,7 @@ Themeâ €의 전체 URL을 선택 하려면 입력된 필드 중 하나를 클
 * * *
 
 
-**Dark-Hive**  
+**진한 Hive**  
 [![Image](cdnjqueryui1818/_static/image4.png)](http://jqueryui.com/themeroller/#ffDefault=Verdana%2C+Arial%2C+sans-serif&amp;fwDefault=normal&amp;fsDefault=1.1em&amp;cornerRadius=6px&amp;bgColorHeader=444444&amp;bgTextureHeader=03_highlight_soft.png&amp;bgImgOpacityHeader=44&amp;borderColorHeader=333333&amp;fcHeader=ffffff&amp;iconColorHeader=ffffff&amp;bgColorContent=000000&amp;bgTextureContent=14_loop.png&amp;bgImgOpacityContent=25&amp;borderColorContent=555555&amp;fcContent=ffffff&amp;iconColorContent=cccccc&amp;bgColorDefault=222222&amp;bgTextureDefault=03_highlight_soft.png&amp;bgImgOpacityDefault=35&amp;borderColorDefault=444444&amp;fcDefault=eeeeee&amp;iconColorDefault=cccccc&amp;bgColorHover=003147&amp;bgTextureHover=03_highlight_soft.png&amp;bgImgOpacityHover=33&amp;borderColorHover=0b93d5&amp;fcHover=ffffff&amp;iconColorHover=ffffff&amp;bgColorActive=0972a5&amp;bgTextureActive=04_highlight_hard.png&amp;bgImgOpacityActive=20&amp;borderColorActive=26b3f7&amp;fcActive=ffffff&amp;iconColorActive=222222&amp;bgColorHighlight=eeeeee&amp;bgTextureHighlight=03_highlight_soft.png&amp;bgImgOpacityHighlight=80&amp;borderColorHighlight=cccccc&amp;fcHighlight=2e7db2&amp;iconColorHighlight=4b8e0b&amp;bgColorError=ffc73d&amp;bgTextureError=02_glass.png&amp;bgImgOpacityError=40&amp;borderColorError=ffb73d&amp;fcError=111111&amp;iconColorError=a83300&amp;bgColorOverlay=5c5c5c&amp;bgTextureOverlay=01_flat.png&amp;bgImgOpacityOverlay=50&amp;opacityOverlay=80&amp;bgColorShadow=cccccc&amp;bgTextureShadow=01_flat.png&amp;bgImgOpacityShadow=30&amp;opacityShadow=60&amp;thicknessShadow=7px&amp;offsetTopShadow=-7px&amp;offsetLeftShadow=-7px&amp;cornerRadiusShadow=8px)  
 - https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.18/themes/dark-hive/jquery-ui.css
 
@@ -86,7 +85,7 @@ Themeâ €의 전체 URL을 선택 하려면 입력된 필드 중 하나를 클
 [![Image](cdnjqueryui1818/_static/image10.png)](http://jqueryui.com/themeroller/#tr=ffDefault=Helvetica,Arial,sans-serif&amp;fwDefault=normal&amp;fsDefault=1.1em&amp;cornerRadius=6px&amp;bgColorHeader=cb842e&amp;bgTextureHeader=02_glass.png&amp;bgImgOpacityHeader=25&amp;borderColorHeader=d49768&amp;fcHeader=ffffff&amp;iconColorHeader=ffffff&amp;bgColorContent=f4f0ec&amp;bgTextureContent=05_inset_soft.png&amp;bgImgOpacityContent=100&amp;borderColorContent=e0cfc2&amp;fcContent=1e1b1d&amp;iconColorContent=c47a23&amp;bgColorDefault=ede4d4&amp;bgTextureDefault=02_glass.png&amp;bgImgOpacityDefault=70&amp;borderColorDefault=cdc3b7&amp;fcDefault=3f3731&amp;iconColorDefault=f08000&amp;bgColorHover=f5f0e5&amp;bgTextureHover=02_glass.png&amp;bgImgOpacityHover=100&amp;borderColorHover=f5ad66&amp;fcHover=a46313&amp;iconColorHover=f08000&amp;bgColorActive=f4f0ec&amp;bgTextureActive=04_highlight_hard.png&amp;bgImgOpacityActive=100&amp;borderColorActive=e0cfc2&amp;fcActive=b85700&amp;iconColorActive=f35f07&amp;bgColorHighlight=f5f5b5&amp;bgTextureHighlight=04_highlight_hard.png&amp;bgImgOpacityHighlight=75&amp;borderColorHighlight=d9bb73&amp;fcHighlight=060200&amp;iconColorHighlight=cb672b&amp;bgColorError=fee4bd&amp;bgTextureError=04_highlight_hard.png&amp;bgImgOpacityError=65&amp;borderColorError=f8893f&amp;fcError=592003&amp;iconColorError=ff7519&amp;bgColorOverlay=aaaaaa&amp;bgTextureOverlay=01_flat.png&amp;bgImgOpacityOverlay=75&amp;opacityOverlay=30&amp;bgColorShadow=aaaaaa&amp;bgTextureShadow=01_flat.png&amp;bgImgOpacityShadow=75&amp;opacityShadow=30&amp;thicknessShadow=8px&amp;offsetTopShadow=-8px&amp;offsetLeftShadow=-8px&amp;cornerRadiusShadow=8px)  
 - https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.18/themes/humanity/jquery-ui.css
 
-**Le 개구리**  
+**Le Frog**  
 [![Image](cdnjqueryui1818/_static/image11.png)](http://jqueryui.com/themeroller/#ffDefault=Lucida+Grande%2C+Lucida+Sans%2C+Arial%2C+sans-serif&amp;fwDefault=normal&amp;fsDefault=1.1em&amp;cornerRadius=10px&amp;bgColorHeader=3a8104&amp;bgTextureHeader=03_highlight_soft.png&amp;bgImgOpacityHeader=33&amp;borderColorHeader=3f7506&amp;fcHeader=ffffff&amp;iconColorHeader=ffffff&amp;bgColorContent=285c00&amp;bgTextureContent=05_inset_soft.png&amp;bgImgOpacityContent=10&amp;borderColorContent=72b42d&amp;fcContent=ffffff&amp;iconColorContent=72b42d&amp;bgColorDefault=4ca20b&amp;bgTextureDefault=03_highlight_soft.png&amp;bgImgOpacityDefault=60&amp;borderColorDefault=45930b&amp;fcDefault=ffffff&amp;iconColorDefault=ffffff&amp;bgColorHover=4eb305&amp;bgTextureHover=03_highlight_soft.png&amp;bgImgOpacityHover=50&amp;borderColorHover=8bd83b&amp;fcHover=ffffff&amp;iconColorHover=ffffff&amp;bgColorActive=285c00&amp;bgTextureActive=04_highlight_hard.png&amp;bgImgOpacityActive=30&amp;borderColorActive=72b42d&amp;fcActive=ffffff&amp;iconColorActive=ffffff&amp;bgColorHighlight=fbf5d0&amp;bgTextureHighlight=02_glass.png&amp;bgImgOpacityHighlight=55&amp;borderColorHighlight=f9dd34&amp;fcHighlight=363636&amp;iconColorHighlight=4eb305&amp;bgColorError=ffdc2e&amp;bgTextureError=08_diagonals_thick.png&amp;bgImgOpacityError=95&amp;borderColorError=fad000&amp;fcError=2b2b2b&amp;iconColorError=cd0a0a&amp;bgColorOverlay=444444&amp;bgTextureOverlay=08_diagonals_thick.png&amp;bgImgOpacityOverlay=15&amp;opacityOverlay=30&amp;bgColorShadow=aaaaaa&amp;bgTextureShadow=07_diagonals_small.png&amp;bgImgOpacityShadow=0&amp;opacityShadow=30&amp;thicknessShadow=0px&amp;offsetTopShadow=4px&amp;offsetLeftShadow=4px&amp;cornerRadiusShadow=4px)  
 - https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.18/themes/le-frog/jquery-ui.css
 
@@ -102,7 +101,7 @@ Themeâ €의 전체 URL을 선택 하려면 입력된 필드 중 하나를 클
 [![Image](cdnjqueryui1818/_static/image13.png)](http://jqueryui.com/themeroller/#ffDefault=Trebuchet+MS%2C+Helvetica%2C+Arial%2C+sans-serif&amp;fwDefault=bold&amp;fsDefault=1.1em&amp;cornerRadius=6px&amp;bgColorHeader=dddddd&amp;bgTextureHeader=02_glass.png&amp;bgImgOpacityHeader=35&amp;borderColorHeader=bbbbbb&amp;fcHeader=444444&amp;iconColorHeader=999999&amp;bgColorContent=c9c9c9&amp;bgTextureContent=05_inset_soft.png&amp;bgImgOpacityContent=50&amp;borderColorContent=aaaaaa&amp;fcContent=333333&amp;iconColorContent=999999&amp;bgColorDefault=eeeeee&amp;bgTextureDefault=02_glass.png&amp;bgImgOpacityDefault=60&amp;borderColorDefault=cccccc&amp;fcDefault=3383bb&amp;iconColorDefault=70b2e1&amp;bgColorHover=f8f8f8&amp;bgTextureHover=02_glass.png&amp;bgImgOpacityHover=100&amp;borderColorHover=bbbbbb&amp;fcHover=599fcf&amp;iconColorHover=3383bb&amp;bgColorActive=999999&amp;bgTextureActive=06_inset_hard.png&amp;bgImgOpacityActive=75&amp;borderColorActive=999999&amp;fcActive=ffffff&amp;iconColorActive=454545&amp;bgColorHighlight=eeeeee&amp;bgTextureHighlight=01_flat.png&amp;bgImgOpacityHighlight=55&amp;borderColorHighlight=ffffff&amp;fcHighlight=444444&amp;iconColorHighlight=3383bb&amp;bgColorError=c0402a&amp;bgTextureError=01_flat.png&amp;bgImgOpacityError=55&amp;borderColorError=c0402a&amp;fcError=ffffff&amp;iconColorError=fbc856&amp;bgColorOverlay=eeeeee&amp;bgTextureOverlay=01_flat.png&amp;bgImgOpacityOverlay=0&amp;opacityOverlay=80&amp;bgColorShadow=aaaaaa&amp;bgTextureShadow=01_flat.png&amp;bgImgOpacityShadow=0&amp;opacityShadow=60&amp;thicknessShadow=4px&amp;offsetTopShadow=-4px&amp;offsetLeftShadow=-4px&amp;cornerRadiusShadow=0pxdow%3D0px)  
 - https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.18/themes/overcast/jquery-ui.css
 
-**Pepper-Grinder**  
+**고추를 각각 나타냅니다-연 삭 기**  
 [![Image](cdnjqueryui1818/_static/image14.png)](http://jqueryui.com/themeroller/#ffDefault=Trebuchet+MS%2C+Tahoma%2C+Verdana%2C+Arial%2C+sans-serif&amp;fwDefault=bold&amp;fsDefault=1.1em&amp;cornerRadius=6px&amp;bgColorHeader=ffffff&amp;bgTextureHeader=23_fine_grain.png&amp;bgImgOpacityHeader=15&amp;borderColorHeader=d4d1bf&amp;fcHeader=453821&amp;iconColorHeader=b83400&amp;bgColorContent=eceadf&amp;bgTextureContent=23_fine_grain.png&amp;bgImgOpacityContent=10&amp;borderColorContent=d9d6c4&amp;fcContent=1f1f1f&amp;iconColorContent=222222&amp;bgColorDefault=f8f7f6&amp;bgTextureDefault=23_fine_grain.png&amp;bgImgOpacityDefault=10&amp;borderColorDefault=cbc7bd&amp;fcDefault=654b24&amp;iconColorDefault=b83400&amp;bgColorHover=654b24&amp;bgTextureHover=23_fine_grain.png&amp;bgImgOpacityHover=65&amp;borderColorHover=654b24&amp;fcHover=ffffff&amp;iconColorHover=ffffff&amp;bgColorActive=eceadf&amp;bgTextureActive=23_fine_grain.png&amp;bgImgOpacityActive=15&amp;borderColorActive=d9d6c4&amp;fcActive=140f06&amp;iconColorActive=8c291d&amp;bgColorHighlight=f7f3de&amp;bgTextureHighlight=23_fine_grain.png&amp;bgImgOpacityHighlight=15&amp;borderColorHighlight=b2a266&amp;fcHighlight=3a3427&amp;iconColorHighlight=3572ac&amp;bgColorError=b83400&amp;bgTextureError=23_fine_grain.png&amp;bgImgOpacityError=68&amp;borderColorError=681818&amp;fcError=ffffff&amp;iconColorError=fbdb93&amp;bgColorOverlay=6e4f1c&amp;bgTextureOverlay=16_diagonal_maze.png&amp;bgImgOpacityOverlay=20&amp;opacityOverlay=60&amp;bgColorShadow=000000&amp;bgTextureShadow=16_diagonal_maze.png&amp;bgImgOpacityShadow=40&amp;opacityShadow=60&amp;thicknessShadow=5px&amp;offsetTopShadow=0&amp;offsetLeftShadow=-10px&amp;cornerRadiusShadow=18px)  
 - https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.18/themes/pepper-grinder/jquery-ui.css
 
@@ -146,7 +145,7 @@ Themeâ €의 전체 URL을 선택 하려면 입력된 필드 중 하나를 클
 * * *
 
 
-**UI-Darkness**  
+**UI 어두움**  
 [![Image](cdnjqueryui1818/_static/image22.png)](http://jqueryui.com/themeroller/#ffDefault=Segoe+UI%2C+Arial%2C+sans-serif&amp;fwDefault=bold&amp;fsDefault=1.1em&amp;cornerRadius=6px&amp;bgColorHeader=333333&amp;bgTextureHeader=12_gloss_wave.png&amp;bgImgOpacityHeader=25&amp;borderColorHeader=333333&amp;fcHeader=ffffff&amp;iconColorHeader=ffffff&amp;bgColorContent=000000&amp;bgTextureContent=05_inset_soft.png&amp;bgImgOpacityContent=25&amp;borderColorContent=666666&amp;fcContent=ffffff&amp;iconColorContent=cccccc&amp;bgColorDefault=555555&amp;bgTextureDefault=02_glass.png&amp;bgImgOpacityDefault=20&amp;borderColorDefault=666666&amp;fcDefault=eeeeee&amp;iconColorDefault=cccccc&amp;bgColorHover=0078a3&amp;bgTextureHover=02_glass.png&amp;bgImgOpacityHover=40&amp;borderColorHover=59b4d4&amp;fcHover=ffffff&amp;iconColorHover=ffffff&amp;bgColorActive=f58400&amp;bgTextureActive=05_inset_soft.png&amp;bgImgOpacityActive=30&amp;borderColorActive=ffaf0f&amp;fcActive=ffffff&amp;iconColorActive=222222&amp;bgColorHighlight=eeeeee&amp;bgTextureHighlight=03_highlight_soft.png&amp;bgImgOpacityHighlight=80&amp;borderColorHighlight=cccccc&amp;fcHighlight=2e7db2&amp;iconColorHighlight=4b8e0b&amp;bgColorError=ffc73d&amp;bgTextureError=02_glass.png&amp;bgImgOpacityError=40&amp;borderColorError=ffb73d&amp;fcError=111111&amp;iconColorError=a83300&amp;bgColorOverlay=5c5c5c&amp;bgTextureOverlay=01_flat.png&amp;bgImgOpacityOverlay=50&amp;opacityOverlay=80&amp;bgColorShadow=cccccc&amp;bgTextureShadow=01_flat.png&amp;bgImgOpacityShadow=30&amp;opacityShadow=60&amp;thicknessShadow=7px&amp;offsetTopShadow=-7px&amp;offsetLeftShadow=-7px&amp;cornerRadiusShadow=8px)  
 - https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.18/themes/ui-darkness/jquery-ui.css
 
@@ -161,4 +160,4 @@ Themeâ €의 전체 URL을 선택 하려면 입력된 필드 중 하나를 클
 
 ## <a name="internationalizationlocalization"></a>국제화/지역화
 
-I18n 폴더 jQuery UI 라이브러리에 대 한 지역화 정보가 포함 되어 있습니다.
+I18n 폴더 jQuery UI 라이브러리에 대 한 지역화 정보를 포함합니다.
