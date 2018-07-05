@@ -4,19 +4,16 @@ title: (C#)를 삭제할 때 클라이언트 쪽 확인 추가 | Microsoft Docs
 author: rick-anderson
 description: 사용자는 지금까지 만든 인터페이스의 편집 단추 클릭을 의미 하는 경우 삭제 단추를 클릭 하 여 데이터를 실수로 삭제할 수 있습니다. 이 t...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/17/2006
-ms.topic: article
 ms.assetid: f6e2a12a-2b5e-48fd-8db3-1e94a500c19a
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/adding-client-side-confirmation-when-deleting-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7ad66e24198a83d32edeb9fddf7a6b648b993fcc
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 6cf3bfed1b445e95f24aa31fe3948cf8eba375fa
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37386564"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37842236"
 ---
 <a name="adding-client-side-confirmation-when-deleting-c"></a>(C#)를 삭제할 때 클라이언트 쪽 확인 추가
 ====================

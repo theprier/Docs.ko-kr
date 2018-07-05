@@ -4,19 +4,16 @@ title: 서버 코드 (C#)에서 모달 팝업 창 시작 | Microsoft Docs
 author: wenz
 description: AJAX Control Toolkit의 ModalPopup 컨트롤 클라이언트 쪽 의미를 사용 하 여 모달 팝업을 만드는 간단한 방법을 제공 합니다. 그러나 일부 시나리오는 t 해야 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: 2f67d8ef-73ca-447d-a0cc-6e3168431e6a
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/launching-a-modal-popup-window-from-server-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a13915f5748f8ad9b79fb787cc5e0682faa19388
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: b7b486c4b99e5ddcb9bc244a9c5dcf193d33b696
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37374093"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37815306"
 ---
 <a name="launching-a-modal-popup-window-from-server-code-c"></a>서버 코드 (C#)에서 모달 팝업 창 시작
 ====================

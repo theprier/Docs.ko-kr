@@ -4,19 +4,16 @@ title: '[어떻게 할까요?] Aspnet_merge.exe 유틸리티를 사용 하 여 �
 author: rick-anderson
 description: 이 비디오에서는 Chris Pels aspnet_merge.exe 유틸리티를 사용 하 여 aspnet_compiler.exe 유틸리티를 사용 하 여 컴파일된 어셈블리를 결합 하는 방법을 알아보겠습니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/26/2008
-ms.topic: article
 ms.assetid: 2bfd5353-2a35-449e-aeff-0fb94cf10030
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-use-the-aspnet_mergeexe-utility-to-merge-assemblies
 msc.type: video
-ms.openlocfilehash: f00c1b23ec907711fdaf0e24e4a4a20ff1d2f556
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 2e5fc2e53518c0dcfe16842b7bd6eccec1d67e83
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37378626"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37829533"
 ---
 <a name="how-do-i-use-the-aspnetmergeexe-utility-to-merge-assemblies"></a>[어떻게 할까요?] Aspnet_merge.exe 유틸리티를 사용 하 여 어셈블리 병합
 ====================

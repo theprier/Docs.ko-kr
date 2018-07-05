@@ -4,19 +4,16 @@ title: ASP.NET MVC를 사용 하 여 다른 버전의 IIS (C#) | Microsoft Docs
 author: microsoft
 description: 이 자습서에서는 ASP.NET MVC 및 URL 라우팅 인터넷 정보 서비스의 서로 다른 버전을 사용 하는 방법을 알아봅니다. 다른 전략에 알아봅니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/19/2008
-ms.topic: article
 ms.assetid: b0cf4a34-2c1d-4717-bb54-ff029e722990
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/deployment/using-asp-net-mvc-with-different-versions-of-iis-cs
 msc.type: authoredcontent
-ms.openlocfilehash: ddf7bc4548099ba5d95b4c0bb6f94a31ab38beb6
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 0d0c625552c87a8e63e48d145eb14266998cc5e2
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37371728"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37814878"
 ---
 <a name="using-aspnet-mvc-with-different-versions-of-iis-c"></a>ASP.NET MVC를 사용 하 여 다른 버전의 IIS (C#)
 ====================

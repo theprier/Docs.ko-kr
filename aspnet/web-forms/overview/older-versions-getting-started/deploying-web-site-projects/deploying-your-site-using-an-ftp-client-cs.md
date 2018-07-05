@@ -4,19 +4,16 @@ title: FTP 클라이언트 (C#)를 사용 하 여 사이트를 배포 합니다.
 author: rick-anderson
 description: ASP.NET 응용 프로그램을 배포 하는 가장 간단한 방법은 개발 환경에서 프로덕션 환경에 필요한 파일을 수동으로 복사 방법은입니다. 이번...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/01/2009
-ms.topic: article
 ms.assetid: a3599cf7-8474-4006-954a-3bc693736b66
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-an-ftp-client-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1fa0c72beb18ceabefeae41bec64dda036372d79
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 50e1522a39cb7b8ea2ee4c664f166b45f22ff070
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37385329"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37842285"
 ---
 <a name="deploying-your-site-using-an-ftp-client-c"></a>FTP 클라이언트 (C#)를 사용 하 여 사이트 배포
 ====================

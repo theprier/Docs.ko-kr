@@ -4,19 +4,16 @@ title: 인증 및 권한 부여를 사용 하 여 응용 프로그램 보안 | M
 author: microsoft
 description: 9 단계에는 사용자를 등록 해야 합니다. 추가할 인증 및 권한 부여 NerdDinner 응용 프로그램을 보호 하는 방법을 보여 줍니다 만들려는 사이트에 로그인 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/27/2010
-ms.topic: article
 ms.assetid: 9e4d5cac-b071-440c-b044-20b6d0c964fb
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/secure-applications-using-authentication-and-authorization
 msc.type: authoredcontent
-ms.openlocfilehash: d28102c8b80433b58a42cadc70b26c9fb5bc4404
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 0005b99dbf7d59e96313f025880c46cdec4838b6
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37369886"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37801394"
 ---
 <a name="secure-applications-using-authentication-and-authorization"></a>인증 및 권한 부여를 사용 하 여 응용 프로그램 보안
 ====================

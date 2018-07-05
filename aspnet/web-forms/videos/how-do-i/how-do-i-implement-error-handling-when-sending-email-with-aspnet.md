@@ -4,19 +4,16 @@ title: '[어떻게 할까요?] ASP.NET 사용 하 여 전자 메일을 보낼 �
 author: rick-anderson
 description: Chris Pels ASP.NET 사용 하 여 전자 메일을 전송 하는 경우 오류 처리를 구현 하는 방법을 보여 줍니다. 그 전자 메일을 보내는 ASP.NET 웹 페이지를 만듭니다, 그리고 lt. 구성 하는 방법을 보여 줍니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/06/2008
-ms.topic: article
 ms.assetid: c02ffd50-aa19-4cdc-b1bf-760989979a61
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-implement-error-handling-when-sending-email-with-aspnet
 msc.type: video
-ms.openlocfilehash: 9a49e51ccdb3781e6c77e815d74202755eca7a3e
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: ebe6f451cad2ba4a9311b5882337b637de7f381e
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37384853"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37814729"
 ---
 <a name="how-do-i-implement-error-handling-when-sending-email-with-aspnet"></a>[어떻게 할까요?] ASP.NET 사용 하 여 전자 메일을 보낼 때 오류 처리를 구현 합니다.
 ====================

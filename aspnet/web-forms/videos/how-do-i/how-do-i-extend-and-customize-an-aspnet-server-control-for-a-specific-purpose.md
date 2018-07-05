@@ -4,19 +4,16 @@ title: '[어떻게 할까요?] 확장 및 특정 목적을 위해 ASP.NET 서버
 author: rick-anderson
 description: 이 비디오 Chris Pels는 표준 ASP.NET 서버 컨트롤을 확장 하 고 특정 목적을 위해 사용자 지정 하는 방법을 보여줍니다. 특수 한 컨트롤은 c를 제공 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/20/2008
-ms.topic: article
 ms.assetid: ed460e6b-8f4e-4fcb-83c4-2495180c1f14
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-extend-and-customize-an-aspnet-server-control-for-a-specific-purpose
 msc.type: video
-ms.openlocfilehash: 2fbe4da52f59801438bf9f0b46506f6bfafaa52c
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: e0642e094592b858bd0932f5f5b6374591b4262b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37375923"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37841518"
 ---
 <a name="how-do-i-extend-and-customize-an-aspnet-server-control-for-a-specific-purpose"></a>[어떻게 할까요?] 확장 및 특정 목적을 위해 ASP.NET 서버 컨트롤을 사용자 지정
 ====================

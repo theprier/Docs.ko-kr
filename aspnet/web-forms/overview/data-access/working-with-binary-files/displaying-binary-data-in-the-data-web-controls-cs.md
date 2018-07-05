@@ -4,19 +4,16 @@ title: 데이터 웹에 이진 데이터 표시 제어 (C#) | Microsoft Docs
 author: rick-anderson
 description: 이 자습서에서는 이진 데이터를 이미지 파일의 표시 및 f '다운로드' 링크의 프로 비전을 비롯 한 웹 페이지를 표시 하는 옵션에 살펴보겠습니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/27/2007
-ms.topic: article
 ms.assetid: 5cbeb9f8-5f92-4ba8-87ae-0b4d460ae6d4
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/displaying-binary-data-in-the-data-web-controls-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7c3e2b75b74198877b19e0be3a6428cabaf2cf25
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 62cc931b670931677b4e9632dccd6634715b3c71
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37366772"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37814856"
 ---
 <a name="displaying-binary-data-in-the-data-web-controls-c"></a>데이터 웹 컨트롤 (C#)에 이진 데이터 표시
 ====================

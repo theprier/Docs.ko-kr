@@ -4,19 +4,16 @@ title: ObjectDataSource (C#)를 사용 하 여 데이터를 표시 합니다. | 
 author: rick-anderson
 description: 이 자습서는 havi 없이 이전 자습서에서 만든 BLL에서 검색 된 데이터를 바인딩할 수 있습니다이 컨트롤을 사용 하 여 ObjectDataSource 컨트롤 살펴보고...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/31/2010
-ms.topic: article
 ms.assetid: af882aef-56f5-4e9a-8f95-3977fde20e74
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/displaying-data-with-the-objectdatasource-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7d4d292104703f9aebf131035920a058317011af
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f10745eee9f6ac04e670d710a4ac999c9ddda50b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37395388"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37814927"
 ---
 <a name="displaying-data-with-the-objectdatasource-c"></a>ObjectDataSource (C#)를 사용 하 여 데이터를 표시합니다.
 ====================

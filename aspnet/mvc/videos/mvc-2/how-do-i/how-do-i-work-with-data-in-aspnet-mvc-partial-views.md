@@ -4,19 +4,16 @@ title: ASP.NET MVC 부분 보기에서 데이터 사용 어떻게 할까요? | M
 author: rick-anderson
 description: 이 비디오 Chris Pels 구성 부분 뷰와 MVC 응용 프로그램에서 데이터를 전달 하는 방법을 보여 줍니다. 샘플 MVC 응용 프로그램 도메인을 포함 하는 중... 만들어집니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 12/11/2009
-ms.topic: article
 ms.assetid: 2f0d41d2-2860-4113-8f5e-0efdd29abf7b
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/how-do-i-work-with-data-in-aspnet-mvc-partial-views
 msc.type: video
-ms.openlocfilehash: 055efbaf76f608d8b88b458068be9803f341e315
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 5048e04d21b76696cc7f9575d0484029a768897b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37388437"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37815319"
 ---
 <a name="how-do-i-work-with-data-in-aspnet-mvc-partial-views"></a>ASP.NET MVC 부분 보기에서 데이터 사용 어떻게 할까요?
 ====================

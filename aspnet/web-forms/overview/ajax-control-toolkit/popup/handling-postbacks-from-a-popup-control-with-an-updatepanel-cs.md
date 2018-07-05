@@ -4,19 +4,16 @@ title: UpdatePanel (C#)를 사용 하 여 팝업 컨트롤에서 포스트백 �
 author: wenz
 description: AJAX Control Toolkit의 PopupControl extender는 쉽게 다른 컨트롤이 활성화 될 때 팝업을 트리거할 수를 제공 합니다. 특별 한 주의 수행 해야 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: 1f68f59d-9c1e-4cf3-b304-c13ae6b7203e
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/popup/handling-postbacks-from-a-popup-control-with-an-updatepanel-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 758ed5eef32be0fb596d8b9dbf903729816746bd
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 9fdf2821e005bfcb691134bb6994c01fa72b7abd
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37377975"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37815384"
 ---
 <a name="handling-postbacks-from-a-popup-control-with-an-updatepanel-c"></a>UpdatePanel (C#)를 사용 하 여 팝업 컨트롤에서 포스트백 처리
 ====================

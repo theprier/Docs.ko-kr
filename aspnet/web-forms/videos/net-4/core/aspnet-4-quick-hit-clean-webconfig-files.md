@@ -4,19 +4,16 @@ title: Web.Config 파일 정리 | Microsoft Docs
 author: JoeStagner
 description: 이 비디오에서는 주요 구성 요소를 machine.config 파일에 옮겨진 어떻게 나타납니다. 이렇게 하면 Web.config 파일에 ASP.NET 4 응용...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/11/2009
-ms.topic: article
 ms.assetid: 12aa35dd-16f7-408a-9a3b-a70c0aca791f
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/net-4/core/aspnet-4-quick-hit-clean-webconfig-files
 msc.type: video
-ms.openlocfilehash: cbbd06258f3de67193e61e3647edc5353f4a1f39
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 6a44989e308096797fe33c8cec525eb968e9239b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37382061"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37842781"
 ---
 <a name="aspnet-4-quick-hit---clean-webconfig-files"></a>ASP.NET 4 "Hit 빠른"-Web.Config 파일을 정리
 ====================

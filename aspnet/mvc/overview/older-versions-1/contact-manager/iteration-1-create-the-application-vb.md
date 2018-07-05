@@ -4,19 +4,16 @@ title: '반복 #1 – (VB) 응용 프로그램 만들기 | Microsoft Docs'
 author: microsoft
 description: '첫 번째 반복에서 연락처 관리자에서에서 만드는 가장 간단한 방법은 가능 합니다. 기본 데이터베이스 작업에 대 한 지원 추가: 만들기, 읽기, 업데이트 및 D....'
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/20/2009
-ms.topic: article
 ms.assetid: 5b033582-1646-42c2-b20d-7edc8814e970
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-1-create-the-application-vb
 msc.type: authoredcontent
-ms.openlocfilehash: cf2fe15a0db8e3bd90a3bc8a7ef4f0367a047a33
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: aee177164293c178fa7d2d4acfb60f85dc98bb05
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37367336"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37803008"
 ---
 <a name="iteration-1--create-the-application-vb"></a>반복 #1 – (VB) 응용 프로그램 만들기
 ====================

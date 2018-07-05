@@ -4,19 +4,16 @@ title: 사용자 계정 만들기를 사용자 만들기 마법사 | Microsoft D
 author: JoeStagner
 description: 이 비디오에서는 Joe Stagner에 ASP.NET 및 Visual Studio에 로그인 컨트롤 컬렉션에 함께 제공 되는 사용자 만들기 마법사를 사용 하 여 사용자를 만드는 방법을 보여 줍니다. 6....
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/22/2008
-ms.topic: article
 ms.assetid: fe023ad0-a25e-48e6-a43a-304e113f1fca
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/authentication/creating-user-accounts-with-the-create-user-wizard
 msc.type: video
-ms.openlocfilehash: f78737238679075d049e40dc0222e80803689a22
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 992e5488e5586416a3f9079f98de14e825cefef7
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37397073"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37842298"
 ---
 <a name="creating-user-accounts-with-the-create-user-wizard"></a>사용자 계정 만들기를 사용자 만들기 마법사
 ====================

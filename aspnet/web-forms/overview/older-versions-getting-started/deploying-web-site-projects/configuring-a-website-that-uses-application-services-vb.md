@@ -4,19 +4,16 @@ title: 응용 프로그램 서비스 (VB)를 사용 하는 웹 사이트 구성 
 author: rick-anderson
 description: ASP.NET 버전 2.0 일련의.NET Framework의 일부인 구성 요소 모음인 서비스는 yo 때 역할을 하며 응용 프로그램 서비스를 도입 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/23/2009
-ms.topic: article
 ms.assetid: 9c31a42f-d8bb-4c0f-9ccc-597d4f70ac42
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-a-website-that-uses-application-services-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 69c8bb4061c2ed7fcc44038aa3bf0268ac86c9ab
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 6d4852fe4a8589ddcb23c7afa4ed5c5e74ef0af1
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37387496"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37841694"
 ---
 <a name="configuring-a-website-that-uses-application-services-vb"></a>응용 프로그램 서비스 (VB)를 사용 하는 웹 사이트를 구성 합니다.
 ====================

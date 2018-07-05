@@ -4,19 +4,16 @@ title: '7 부: 멤버 자격 및 권한 부여 | Microsoft Docs'
 author: jongalloway
 description: 이 자습서 시리즈 모든 ASP.NET MVC Music Store 샘플 응용 프로그램 빌드를 수행 하는 단계를 자세히 설명 합니다. 7 부에서는 멤버 자격 및 권한 부여를 설명합니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/13/2010
-ms.topic: article
 ms.assetid: c8511ebe-68bc-4240-87c3-d5ced84a3f37
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-7
 msc.type: authoredcontent
-ms.openlocfilehash: 41b17315cbe1f6d93001a736bc24bf003df24061
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 1f2ad9de3a21366931efe6ca2466f4efc23a6192
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37393172"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37802541"
 ---
 <a name="part-7-membership-and-authorization"></a>7 부: 멤버 자격 및 권한 부여
 ====================

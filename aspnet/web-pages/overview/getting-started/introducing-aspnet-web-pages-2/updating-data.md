@@ -4,19 +4,16 @@ title: ASP.NET 웹 페이지 소개-데이터베이스 데이터를 업데이트
 author: tfitzmac
 description: 이 자습서에서는 ASP.NET Web Pages (Razor)를 사용 하는 경우 기존 데이터베이스 (변경) 항목을 업데이트 하는 방법을 보여 줍니다. 시리즈를 완료 했다고 가정 하기 번째...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/02/2018
-ms.topic: article
 ms.assetid: ac86ec9c-6b69-485b-b9e0-8b9127b13e6b
-ms.technology: dotnet-webpages
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/updating-data
 msc.type: authoredcontent
-ms.openlocfilehash: 259034a795b9dff7001165a182bc0e84bb690491
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 948f5b5933669a43bf37dc0317ad644660dc67e9
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37377060"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37842904"
 ---
 <a name="introducing-aspnet-web-pages---updating-database-data"></a>ASP.NET 웹 페이지 소개-데이터베이스 데이터를 업데이트 하는 중
 ====================

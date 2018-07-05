@@ -4,19 +4,16 @@ title: '[단원 7:] 사용자 인터페이스 컨트롤에 데이터 바인딩 |
 author: microsoft
 description: 이 단원에서는 ASP.NET에서 데이터를 표시 하는 방법을 배우게 됩니다&#160;2.0 웹 응용 프로그램의 일부 새 데이터 바인딩된 컨트롤을 통해.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/29/2005
-ms.topic: article
 ms.assetid: 49625de7-06c3-484c-bd76-d322b9ca41ea
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/building-20-applications/lesson-7-databinding-to-user-interface-controls
 msc.type: video
-ms.openlocfilehash: aa7d2143e60d504041302f85322970aeffbc1011
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 868072c6a3ccc8d461cd86d2092b5b8c82ed7fc9
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37361404"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37802231"
 ---
 <a name="lesson-7-databinding-to-user-interface-controls"></a>[단원 7:] 사용자 인터페이스 컨트롤에 데이터 바인딩
 ====================

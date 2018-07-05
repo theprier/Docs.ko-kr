@@ -4,19 +4,16 @@ title: 사용자 계정 (C#) 만들기 | Microsoft Docs
 author: rick-anderson
 description: 이 자습서에서는 새 사용자 계정을 만드는 (SqlMembershipProvider)를 통해 멤버 자격 프레임 워크를 사용 하 여 살펴봅니다. 미국 새로 만드는 방법을 살펴보겠습니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/18/2008
-ms.topic: article
 ms.assetid: f175278c-6079-4d91-b9b4-2493ed43d9ec
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/creating-user-accounts-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 161d7b71f169252699e0c33ad969bef9c2c62d5f
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 7caa6b614bbe6545929a9b201de7f30fe95e6481
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37386600"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37842626"
 ---
 <a name="creating-user-accounts-c"></a>사용자 계정 만들기 (C#)
 ====================

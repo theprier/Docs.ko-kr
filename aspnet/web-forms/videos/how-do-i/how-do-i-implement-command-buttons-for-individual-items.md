@@ -4,19 +4,16 @@ title: '[어떻게 할까요?] 개별 항목에 대 한 명령 단추 구현 | M
 author: rick-anderson
 description: 이 비디오에서는 Chris Pels ListView 컨트롤과 같은 데이터 바인딩된 컨트롤의 각 항목에는 단추 컨트롤과 관련 된 이벤트를 처리 하는 방법을 표시 됩니다. 첫 번째...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/24/2008
-ms.topic: article
 ms.assetid: b883989d-4735-478e-ab56-411a2ed98f73
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-implement-command-buttons-for-individual-items
 msc.type: video
-ms.openlocfilehash: b1e310db54912785d3af66009b4b4650e9ec60f6
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 3dbb82e6de7100c51764f11f0a9ad72eed26cf99
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37384380"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37815936"
 ---
 <a name="how-do-i-implement-command-buttons-for-individual-items"></a>[어떻게 할까요?] 개별 항목에 대 한 명령 단추 구현
 ====================

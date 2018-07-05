@@ -4,19 +4,16 @@ title: 관련 웹 응용 프로그램은 오프 라인 웹 배포 | Microsoft Do
 author: jrjlee
 description: 이 항목에서는 웹 응용 프로그램을 오프 라인으로 인터넷 정보 서비스 (IIS) 웹 배포 관리자를 사용 하 여 자동화 된 배포 중에 사용 하는 방법을 설명 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: 3e9f6e7d-8967-4586-94d5-d3a122f12529
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/taking-web-applications-offline-with-web-deploy
 msc.type: authoredcontent
-ms.openlocfilehash: 1e9e5e9fef99a1179c1b830a42df6e6cb6b0e69d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: b8dc1ff26bbbe7dee1ee90fd929b2e98de5360db
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37382515"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37829517"
 ---
 <a name="taking-web-applications-offline-with-web-deploy"></a>관련 웹 응용 프로그램은 오프 라인 웹 배포
 ====================
