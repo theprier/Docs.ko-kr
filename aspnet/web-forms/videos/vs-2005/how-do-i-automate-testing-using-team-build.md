@@ -1,33 +1,32 @@
 ---
 uid: web-forms/videos/vs-2005/how-do-i-automate-testing-using-team-build
-title: '[어떻게 할까요?] 팀 빌드를 사용 하 여 테스트를 자동화? | Microsoft 문서'
+title: '[어떻게 할까요?] Team Build를 사용 하 여 테스트 자동화 | Microsoft 문서'
 author: rick-anderson
-description: 이 비디오에서는 Visual Studio Team System을 사용 하 여 팀 빌드 중에 실행 되는 자동화 된 테스트를 정의 하는 방법과 어떻게 म 드릴 다운할 수를 배울 중...
+description: 이 비디오에서는 Visual Studio Team System을 사용 하 여 팀 빌드 중에 실행할 자동화 된 테스트를 정의 하는 방법과 어떻게 드릴 다운할 수 있습니다를 배울...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 08/01/2007
 ms.topic: article
 ms.assetid: 8e8fd5a9-0e98-415a-93f5-9ad7524ae9bb
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-automate-testing-using-team-build
 msc.type: video
-ms.openlocfilehash: 27bfa997ae68ea5214c696cce9ac8f77945645a0
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 7ef9f8543d2893d8731edb450cb173069c319cca
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30893539"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37385864"
 ---
-<a name="how-do-i-automate-testing-using-team-build"></a><span data-ttu-id="17417-104">[어떻게 할까요?] 팀 빌드를 사용 하 여 테스트를 자동화?</span><span class="sxs-lookup"><span data-stu-id="17417-104">[How Do I:] Automate Testing using Team Build?</span></span>
+<a name="how-do-i-automate-testing-using-team-build"></a><span data-ttu-id="bca09-104">[어떻게 할까요?] Team Build를 사용 하 여 테스트 자동화</span><span class="sxs-lookup"><span data-stu-id="bca09-104">[How Do I:] Automate Testing using Team Build?</span></span>
 ====================
-<span data-ttu-id="17417-105">으로 [Chris Menegay](https://twitter.com/CMenegay)</span><span class="sxs-lookup"><span data-stu-id="17417-105">by [Chris Menegay](https://twitter.com/CMenegay)</span></span>
+<span data-ttu-id="bca09-105">[Chris Menegay](https://twitter.com/CMenegay)</span><span class="sxs-lookup"><span data-stu-id="bca09-105">by [Chris Menegay](https://twitter.com/CMenegay)</span></span>
 
-<span data-ttu-id="17417-106">이 비디오에서는 Visual Studio Team System을 사용 하 여 팀 빌드 중에 실행 되는 자동화 된 테스트를 정의 하는 방법과 어떻게 म 드릴 다운할 수는 테스트 결과를 배울 합니다.</span><span class="sxs-lookup"><span data-stu-id="17417-106">In this video we learn how to use Visual Studio Team System to define the automated tests that will run during a team build, and how we can drill down in to the results of those tests.</span></span> <span data-ttu-id="17417-107">에서는 또한에 대해 설명 하는 [테스트 도구 빌드 작업](https://msdn.microsoft.com/vstudio/aa718351.aspx#bttt) 팀 빌드 중 실행할 테스트를 지정 하는 대체 방법을 설명 합니다.</span><span class="sxs-lookup"><span data-stu-id="17417-107">We also learn that the [Test Tools Build Task](https://msdn.microsoft.com/vstudio/aa718351.aspx#bttt) provides an alternative way of specifying the tests to run during a team build.</span></span>
+<span data-ttu-id="bca09-106">이 비디오에서는 Visual Studio Team System을 사용 하 여 팀 빌드 중에 실행할 자동화 된 테스트를 정의 하는 방법과 어떻게 드릴 다운할 수 있습니다 이러한 테스트의 결과에 알아봅니다 했습니다.</span><span class="sxs-lookup"><span data-stu-id="bca09-106">In this video we learn how to use Visual Studio Team System to define the automated tests that will run during a team build, and how we can drill down in to the results of those tests.</span></span> <span data-ttu-id="bca09-107">에서는 또한에 대해 설명 하는 [테스트 도구 빌드 작업](https://msdn.microsoft.com/vstudio/aa718351.aspx#bttt) 팀 빌드 중 실행할 테스트를 지정 하는 대체 방법을 제공 합니다.</span><span class="sxs-lookup"><span data-stu-id="bca09-107">We also learn that the [Test Tools Build Task](https://msdn.microsoft.com/vstudio/aa718351.aspx#bttt) provides an alternative way of specifying the tests to run during a team build.</span></span>
 
-[<span data-ttu-id="17417-108">&#9654;(6 분) 비디오를 시청 하세요</span><span class="sxs-lookup"><span data-stu-id="17417-108">&#9654; Watch video (6 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-automate-testing-using-team-build)
+[<span data-ttu-id="bca09-108">&#9654;비디오 (6 분)</span><span class="sxs-lookup"><span data-stu-id="bca09-108">&#9654; Watch video (6 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-automate-testing-using-team-build)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="17417-109">[이전](how-do-i-implement-continuous-integration-with-team-foundation.md)
-> [다음](how-do-i-deploy-a-web-application-during-a-team-build.md)</span><span class="sxs-lookup"><span data-stu-id="17417-109">[Previous](how-do-i-implement-continuous-integration-with-team-foundation.md)
+> <span data-ttu-id="bca09-109">[이전](how-do-i-implement-continuous-integration-with-team-foundation.md)
+> [다음](how-do-i-deploy-a-web-application-during-a-team-build.md)</span><span class="sxs-lookup"><span data-stu-id="bca09-109">[Previous](how-do-i-implement-continuous-integration-with-team-foundation.md)
 [Next](how-do-i-deploy-a-web-application-during-a-team-build.md)</span></span>
