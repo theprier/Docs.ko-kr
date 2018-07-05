@@ -4,19 +4,16 @@ title: Razor 구문 (Visual Basic)를 사용 하 여 ASP.NET 웹 프로그래밍
 author: tfitzmac
 description: 이 부록 개요를 제공 ASP.NET 웹 페이지를 사용 하 여 프로그래밍의 Visual basic에서는 Razor 구문을 사용 합니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/07/2014
-ms.topic: article
 ms.assetid: 5da59646-e973-41cd-88a9-c6b2c0594027
-ms.technology: dotnet-webpages
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d4be7e2ed1b847d8b4167872728815330dbfe432
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 72f995e62141df4e8f4cd082b4873d82067af8c1
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37378743"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37816550"
 ---
 <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-visual-basic"></a>Razor 구문 (Visual Basic)를 사용 하 여 ASP.NET 웹 프로그래밍 소개
 ====================

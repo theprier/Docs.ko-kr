@@ -4,19 +4,16 @@ title: 프로덕션 데이터베이스 (C#)를 사용 하도록 프로덕션 웹
 author: rick-anderson
 description: 이전 자습서에서 설명 했 듯이 드물지 않습니다 구성 정보를 개발 및 프로덕션 환경에 따라 다릅니다. 이 es...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/23/2009
-ms.topic: article
 ms.assetid: 0177dabd-d888-449f-91b2-24190cf5e842
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-the-production-web-application-to-use-the-production-database-cs
 msc.type: authoredcontent
-ms.openlocfilehash: b6899c199ea593e74d4d423cfc3f832e38bd7e57
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 559697a08200e43e955697a7ad8613f1a495c073
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37374952"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37803018"
 ---
 <a name="configuring-the-production-web-application-to-use-the-production-database-c"></a>프로덕션 데이터베이스 (C#)를 사용 하도록 프로덕션 웹 응용 프로그램 구성
 ====================

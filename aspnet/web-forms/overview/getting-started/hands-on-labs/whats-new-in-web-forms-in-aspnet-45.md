@@ -4,19 +4,16 @@ title: ASP.NET 4.5의에서 Forms 웹의 새로운 기능 | Microsoft Docs
 author: rick-anderson
 description: 새 버전의 ASP.NET Web Forms 다양 한 데이터로 작업 하는 경우 사용자 환경 개선에 집중 하는 향상 된 기능을 소개 합니다. 이전 버전의...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/18/2013
-ms.topic: article
 ms.assetid: 0a1f88bd-97da-4ed1-86f1-605199dc75a4
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/whats-new-in-web-forms-in-aspnet-45
 msc.type: authoredcontent
-ms.openlocfilehash: 4e8c8f303851b7f1a01744cab58e27a9b37127a6
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f36c50b64ed2363ba648297a1424b638bf9d4af5
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37389233"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37830414"
 ---
 <a name="whats-new-in-web-forms-in-aspnet-45"></a>Asp.net 4.5 Web Forms의 새로운 기능
 ====================
