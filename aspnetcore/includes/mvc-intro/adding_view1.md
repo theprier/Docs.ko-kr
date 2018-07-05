@@ -1,4 +1,4 @@
-# <a name="adding-a-view-to-an-aspnet-core-mvc-app"></a>ASP.NET Core MVC 앱에 뷰 추가
+# <a name="add-a-view-to-an-aspnet-core-mvc-app"></a>ASP.NET Core MVC 앱에 보기 추가
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 

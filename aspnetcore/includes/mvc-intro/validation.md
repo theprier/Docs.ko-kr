@@ -1,4 +1,4 @@
-# <a name="adding-validation"></a>유효성 검사 추가
+# <a name="add-validation-to-an-aspnet-core-mvc-app"></a>ASP.NET Core MVC 앱에 유효성 검사 추가
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 

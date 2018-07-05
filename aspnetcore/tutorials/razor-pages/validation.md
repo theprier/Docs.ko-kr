@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/07/2017
 uid: tutorials/razor-pages/validation
-ms.openlocfilehash: 569c5b977d832aec3657321cad8d0f9520aae031
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: cabf3d955ef2eb17b3bcb40170a9de7b53ffd107
+ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277776"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37077633"
 ---
 # <a name="add-validation-to-an-aspnet-core-razor-page"></a>ASP.NET Core Razor 페이지에 유효성 검사 추가
 
@@ -45,7 +45,7 @@ Razor 페이지에서 제공하는 유효성 검사 지원 및 Entity Framework�
 유효성 검사 특성은 모델 속성에 적용되는 동작을 지정합니다.
 
 * `Required` 및 `MinimumLength` 특성은 속성에 값이 있어야 함을 나타냅니다. 그러나 사용자는 nullable 형식에 대한 유효성 검사 제약 조건을 만족하기 위해 공백을 입력할 수 있습니다. nullable 형식이 아닌 [값 형식](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/value-types)(`decimal`, `int`, `float`,`DateTime`)은 기본적으로 필요하며 `Required` 특성은 필요하지 않습니다.
-* `RegularExpression` 특성은 사용자가 입력할 수 있는 문자를 제한합니다. 위의 코드에서 `Genre` 및 `Rating`은 문자만을 사용해야 합니다(공백, 숫자 및 특수 문자가 허용되지 않음).
+* `RegularExpression` 특성은 사용자가 입력할 수 있는 문자를 제한합니다. 위의 코드에서 `Genre`는 하나 이상의 대문자로 시작하고 0개 이상의 문자, 작은따옴표 또는 큰따옴표, 공백 문자 또는 대시를 사용해야 합니다. `Rating`은 하나 이상의 대문자로 시작하고 0개 이상의 문자, 숫자, 작은따옴표 또는 큰따옴표, 공백 문자 또는 대시를 사용해야 합니다.
 * `Range` 특성은 지정된 범위로 값을 제한합니다.
 * `StringLength` 특성은 문자열의 최대 길이 및 필요에 따라 최소 길이를 설정합니다. 
 

@@ -4,14 +4,14 @@ author: zuckerthoben
 description: ASP.NET Core Web API 프로젝트에 Swashbuckle을 추가하여 Swagger UI를 통합하는 방법을 알아봅니다.
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 05/31/2018
+ms.date: 06/29/2018
 uid: tutorials/get-started-with-swashbuckle
-ms.openlocfilehash: 7a1fdad874211134308ea3feac3110ea38095d49
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 70a1503a1ddbfe7f569d12b0034d967b220c9c44
+ms.sourcegitcommit: 2941e24d7f3fd3d5e88d27e5f852aaedd564deda
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274458"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37126250"
 ---
 # <a name="get-started-with-swashbuckle-and-aspnet-core"></a>Swashbuckle 및 ASP.NET Core 시작
 
@@ -126,19 +126,55 @@ XML 주석은 다음 방법으로 사용하도록 설정할 수 있습니다.
 
 # <a name="visual-studiotabvisual-studio-xml"></a>[Visual Studio](#tab/visual-studio-xml/)
 
-* **솔루션 탐색기**에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 **속성** 선택
-* **빌드** 탭의 **출력** 섹션에서 **XML 문서 파일** 상자 선택
+::: moniker range=">= aspnetcore-2.0"
+
+* **솔루션 탐색기**에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 **<project_name>.csproj 편집**을 선택합니다.
+* 강조 표시된 줄을 *.csproj* 파일에 수동으로 추가합니다.
+
+[!code-xml[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.Swashbuckle/TodoApi.csproj?name=snippet_SuppressWarnings&highlight=1-2,4)]
+
+::: moniker-end
+
+::: moniker range="<= aspnetcore-1.1"
+
+* **솔루션 탐색기**에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 **속성**을 선택합니다.
+* **빌드** 탭의 **출력** 섹션에서 **XML 설명서 파일** 상자를 선택합니다.
+
+::: moniker-end
 
 # <a name="visual-studio-for-mactabvisual-studio-mac-xml"></a>[Visual Studio for Mac](#tab/visual-studio-mac-xml/)
 
-* **프로젝트 옵션** 대화 상자 열기 > **빌드** > **컴파일러** 선택
+::: moniker range=">= aspnetcore-2.0"
+
+* *Solution Pad*에서 **control** 키를 누르고 프로젝트 이름을 클릭합니다. **도구** > **파일 편집**으로 이동합니다.
+* 강조 표시된 줄을 *.csproj* 파일에 수동으로 추가합니다.
+
+[!code-xml[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.Swashbuckle/TodoApi.csproj?name=snippet_SuppressWarnings&highlight=1-2,4)]
+
+::: moniker-end
+
+::: moniker range="<= aspnetcore-1.1"
+
+* **프로젝트 옵션** 대화 상자 > **빌드** > **컴파일러**를 엽니다.
 * **일반 옵션** 섹션에서 **XML 문서 생성** 상자 선택
+
+::: moniker-end
 
 # <a name="visual-studio-codetabvisual-studio-code-xml"></a>[Visual Studio Code](#tab/visual-studio-code-xml/)
 
-*.csproj* 파일에 다음 코드 조각을 수동으로 추가합니다.
+강조 표시된 줄을 *.csproj* 파일에 수동으로 추가합니다.
 
-[!code-xml[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/TodoApi.csproj?name=snippet_SuppressWarnings&highlight=2)]
+::: moniker range=">= aspnetcore-2.0"
+
+[!code-xml[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.Swashbuckle/TodoApi.csproj?name=snippet_SuppressWarnings&highlight=1-2,4)]
+
+::: moniker-end
+
+::: moniker range="<= aspnetcore-1.1"
+
+[!code-xml[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/TodoApi.csproj?name=snippet_SuppressWarnings&highlight=1-2,4)]
+
+::: moniker-end
 
 ---
 
@@ -148,15 +184,25 @@ XML 주석을 사용하면 문서화되지 않은 public 형식과 멤버에 대
 warning CS1591: Missing XML comment for publicly visible type or member 'TodoController.GetAll()'
 ```
 
-*.csproj* 파일에서 무시할 경고 코드의 세미콜론으로 구분된 목록을 정의하여 경고를 표시하지 않습니다.
+*.csproj* 파일에서 무시할 경고 코드의 세미콜론으로 구분된 목록을 정의하여 경고를 표시하지 않습니다. `$(NoWarn);`에 경고 코드를 추가하는 작업은 C# 기본 값을 적용합니다.
 
-[!code-xml[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/TodoApi.csproj?name=snippet_SuppressWarnings&highlight=3)]
+::: moniker range=">= aspnetcore-2.0"
 
-생성된 XML 파일을 사용하도록 Swagger를 구성합니다. Linux 또는 Windows가 아닌 운영 체제의 경우 파일 이름 및 경로는 대/소문자를 구분할 수 있습니다. 예를 들어 *TodoApi.XML* 파일은 Windows에는 유효하지만 CentOS에는 그렇지 않습니다.
+[!code-xml[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.Swashbuckle/TodoApi.csproj?name=snippet_SuppressWarnings&highlight=3)]
+
+::: moniker-end
 
 ::: moniker range="<= aspnetcore-1.1"
 
-[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Startup1x.cs?name=snippet_ConfigureServices&highlight=30-32)]
+[!code-xml[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/TodoApi.csproj?name=snippet_SuppressWarnings&highlight=3)]
+
+::: moniker-end
+
+생성된 XML 파일을 사용하도록 Swagger를 구성합니다. Linux 또는 Windows가 아닌 운영 체제의 경우 파일 이름 및 경로는 대/소문자를 구분할 수 있습니다. 예를 들어 *TodoApi.XML* 파일은 Windows에는 유효하지만 CentOS에는 그렇지 않습니다.
+
+::: moniker range=">= aspnetcore-2.1"
+
+[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.Swashbuckle/Startup.cs?name=snippet_ConfigureServices&highlight=31-33)]
 
 ::: moniker-end
 
@@ -166,13 +212,13 @@ warning CS1591: Missing XML comment for publicly visible type or member 'TodoCon
 
 ::: moniker-end
 
-::: moniker range=">= aspnetcore-2.1"
+::: moniker range="<= aspnetcore-1.1"
 
-[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.Swashbuckle/Startup.cs?name=snippet_ConfigureServices&highlight=31-33)]
+[!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Startup1x.cs?name=snippet_ConfigureServices&highlight=30-32)]
 
 ::: moniker-end
 
-이전 코드에서 [리플렉션](/dotnet/csharp/programming-guide/concepts/reflection)은 Web API 프로젝트의 이름과 일치하는 XML 파일 이름을 빌드하는 데 사용됩니다. 이 방법은 생성된 XML 파일 이름이 프로젝트 이름과 일치하도록 합니다. [AppContext.BaseDirectory](/dotnet/api/system.appcontext.basedirectory#System_AppContext_BaseDirectory) 속성은 XML 파일에 대한 경로를 생성하는 데 사용됩니다.
+이전 코드에서 [리플렉션](/dotnet/csharp/programming-guide/concepts/reflection)은 Web API 프로젝트의 이름과 일치하는 XML 파일 이름을 빌드하는 데 사용됩니다. [AppContext.BaseDirectory](/dotnet/api/system.appcontext.basedirectory#System_AppContext_BaseDirectory) 속성은 XML 파일에 대한 경로를 생성하는 데 사용됩니다.
 
 작업에 3중 슬래시 주석을 추가하면 섹션 헤더에 설명이 추가되어 Swagger UI가 향상됩니다. `Delete` 작업 위에 [\<요약>](/dotnet/csharp/programming-guide/xmldoc/summary) 요소를 추가합니다.
 

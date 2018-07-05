@@ -1,16 +1,16 @@
 ---
-title: SQLite 및 ASP.NET Core MVC 작업
+title: ASP.NET Core MVC 앱에서 SQLite 작업
 author: rick-anderson
 description: 기본 MVC 앱으로 SQLite 사용
 ms.author: riande
 ms.date: 04/07/2017
 uid: tutorials/first-mvc-app-mac/working-with-sql
-ms.openlocfilehash: 71fc108655a26342bacb5ba4f8e108dfa93b4ccd
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 9b2ea42a22a255b230b37e51bce800334d1b64b8
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36279092"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36960881"
 ---
 [!INCLUDE [adding-model](../../includes/mvc-intro/sql.md)]
 

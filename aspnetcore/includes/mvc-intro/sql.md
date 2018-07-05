@@ -1,4 +1,4 @@
-# <a name="working-with-sqlite-in-an-aspnet-core-mvc-project"></a>ASP.NET Core MVC 프로젝트에서 SQLite 작업
+# <a name="work-with-sqlite-in-an-aspnet-core-mvc-app"></a>ASP.NET Core MVC 앱에서 SQLite 작업
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 

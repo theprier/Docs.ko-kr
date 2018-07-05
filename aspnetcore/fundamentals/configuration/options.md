@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 11/28/2017
 uid: fundamentals/configuration/options
-ms.openlocfilehash: 1fe05fbc5035ffa2d01bc6be55436146f1434d17
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 96d7d2956fa9bf72706cde0532ee7f4ff753b72c
+ms.sourcegitcommit: 2941e24d7f3fd3d5e88d27e5f852aaedd564deda
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278546"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37126263"
 ---
 # <a name="options-pattern-in-aspnet-core"></a>ASP.NET Core의 옵션 패턴
 
@@ -53,6 +53,20 @@ ms.locfileid: "36278546"
 ```html
 option1 = value1_from_json, option2 = -1
 ```
+
+> [!NOTE]
+> 사용자 지정 [ConfigurationBuilder](/dotnet/api/system.configuration.configurationbuilder)를 사용하여 설정 파일에서 옵션 구성을 로드할 때 기본 경로가 정확히 설정되었는지 확인합니다.
+>
+> ```csharp
+> var configBuilder = new ConfigurationBuilder()
+>    .SetBasePath(Directory.GetCurrentDirectory())
+>    .AddJsonFile("appsettings.json", optional: true);
+> var config = configBuilder.Build();
+>
+> services.Configure<MyOptions>(config);
+> ```
+>
+> [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder)를 통해 설정 파일에서 옵션 구성을 로드할 때 명시적으로 기본 경로를 설정하는 작업은 필요하지 않습니다.
 
 ## <a name="configure-simple-options-with-a-delegate"></a>대리자로 간단한 옵션 구성
 

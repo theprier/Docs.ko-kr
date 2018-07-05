@@ -1,4 +1,4 @@
-# <a name="adding-search-to-an-aspnet-core-mvc-app"></a>ASP.NET Core MVC 앱에 검색 추가
+# <a name="add-search-to-an-aspnet-core-mvc-app"></a>ASP.NET Core MVC 앱에 검색 추가
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 

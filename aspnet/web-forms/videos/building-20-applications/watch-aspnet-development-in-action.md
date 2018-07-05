@@ -1,31 +1,30 @@
 ---
 uid: web-forms/videos/building-20-applications/watch-aspnet-development-in-action
-title: 작업에서 ASP.NET 개발 시청 | Microsoft Docs
+title: ASP.NET 실제 개발을 시청 하세요. | Microsoft Docs
 author: JoeStagner
-description: 작성 하는 것이 얼마나 쉬운지 감시는 ' do'에 ASP.NET 2.0, ASP.NET AJAX, SQL Server Express 및 Visual Web Developer를 사용 하 여 처음부터 목록 응용 프로그램 작업 합니다. Mic 중...
+description: 빌드를 얼마나 쉬운지 보기는 ' do'를 ASP.NET 2.0, ASP.NET AJAX, SQL Server Express 및 Visual Web Developer를 사용 하 여 처음부터 목록 응용 프로그램 작업. Mic...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 02/24/2009
 ms.topic: article
 ms.assetid: 23bdc2a7-417a-4ea8-b1ee-e3e1bd272223
 ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/building-20-applications/watch-aspnet-development-in-action
 msc.type: video
-ms.openlocfilehash: a90767d45c02929148535e56e5582a685be2d5fd
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: d81dab148181ee67c0024f1098d8e91999011d27
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30885120"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37396151"
 ---
-<a name="watch-aspnet-development-in-action"></a>동작에서 ASP.NET 개발 시청
+<a name="watch-aspnet-development-in-action"></a>ASP.NET 실제 개발을 시청 하세요.
 ====================
-으로 [Joe Stagner](https://github.com/JoeStagner)
+[Joe Stagner](https://github.com/JoeStagner)
 
-작성 하는 것이 얼마나 쉬운지 감시는 "를" ASP.NET 2.0, ASP.NET AJAX, SQL Server Express 및 Visual Web Developer를 사용 하 여 처음부터 목록 응용 프로그램 작업 합니다. Microsoft의 Joe Stagner 새 데이터베이스와 해당 데이터에 액세스 하는 코드를 만들어 시작 합니다. 그런 다음 표시 되 고 데이터베이스에 콘텐츠를 업데이트 하는 할 일 목록 페이지를 정의 하는 방법을 보면 됩니다. 마지막으로 사용자 환경을 개선 하기 위해 페이지에 AJAX 기능을 추가 하는 방법을 배울 합니다.
+빌드를 얼마나 쉬운지 보기를 "할" ASP.NET 2.0, ASP.NET AJAX, SQL Server Express 및 Visual Web Developer를 사용 하 여 처음부터 응용 프로그램 목록 작업입니다. Microsoft의 Joe Stagner 새 데이터베이스 및 해당 데이터에 액세스 하는 코드를 만들어 시작 합니다. 데이터베이스의 콘텐츠를 업데이트 하 고 표시 하는 할 일 목록 페이지를 정의 하는 방법을 다음 참조 하세요. 마지막으로 사용자 환경을 개선 하기 위해 페이지에 AJAX 기능을 추가 하는 방법을 알아보겠습니다.
 
-[&#9654;(20 분) 비디오를 시청 하세요](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/watch-aspnet-development-in-action)
+[&#9654;비디오 (20 분)](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/watch-aspnet-development-in-action)
 
 > [!div class="step-by-step"]
 > [이전](lesson-8-working-with-the-gridview-and-formview.md)

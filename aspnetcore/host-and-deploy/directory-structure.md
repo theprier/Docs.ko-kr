@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 04/09/2018
 uid: host-and-deploy/directory-structure
-ms.openlocfilehash: 06d3f097cd93ceb2a23b9f6516a9b7a1f3ca3089
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 8e2693397f826d0e9a36ff52aa1d1d623b31043d
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273675"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36960829"
 ---
 # <a name="aspnet-core-directory-structure"></a>ASP.NET Core 디렉터리 구조
 
@@ -22,8 +22,8 @@ ASP.NET Core에서 게시된 응용 프로그램 디렉터리인 *publish*는 �
 
 | 앱 형식 | 디렉터리 구조 |
 | -------- | ------------------- |
-| [프레임워크 종속 배포](/dotnet/core/deploying/#framework-dependent-deployments-fdd) | <ul><li>publish&dagger;<ul><li>logs&dagger;(stdout 로그를 수신하는 데 필요한 경우가 아니면 선택 사항)</li><li>Views&dagger;(MVC 앱, 뷰가 미리 컴파일되지 않은 경우)</li><li>Pages&dagger;(MVC 또는 Razor 페이지 앱, 페이지가 미리 컴파일되지 않은 경우)</li><li>wwwroot&dagger;</li><li>*\.dll 파일</li><li>\<assembly-name>.deps.json</li><li>\<assembly-name>.dll</li><li>\<assembly-name>.pdb</li><li>\<assembly-name>.PrecompiledViews.dll</li><li>\<assembly-name>.PrecompiledViews.pdb</li><li>\<assembly-name>.runtimeconfig.json</li><li>web.config(IIS 배포)</li></ul></li></ul> |
-| [자체 포함 배포](/dotnet/core/deploying/#self-contained-deployments-scd) | <ul><li>publish&dagger;<ul><li>logs&dagger;(stdout 로그를 수신하는 데 필요한 경우가 아니면 선택 사항)</li><li>refs&dagger;</li><li>Views&dagger;(MVC 앱, 뷰가 미리 컴파일되지 않은 경우)</li><li>Pages&dagger;(MVC 또는 Razor 페이지 앱, 페이지가 미리 컴파일되지 않은 경우)</li><li>wwwroot&dagger;</li><li>\*.dll 파일</li><li>\<assembly-name>.deps.json</li><li>\<assembly-name>.exe</li><li>\<assembly-name>.pdb</li><li>\<assembly-name>.PrecompiledViews.dll</li><li>\<assembly-name>.PrecompiledViews.pdb</li><li>\<assembly-name>.runtimeconfig.json</li><li>web.config(IIS 배포)</li></ul></li></ul> |
+| [프레임워크 종속 배포](/dotnet/core/deploying/#framework-dependent-deployments-fdd) | <ul><li>publish&dagger;<ul><li>Logs&dagger;(stdout 로그를 수신하는 데 필요한 경우가 아니면 선택 사항)</li><li>Views&dagger;(MVC 앱, 뷰가 미리 컴파일되지 않은 경우)</li><li>Pages&dagger;(MVC 또는 Razor 페이지 앱, 페이지가 미리 컴파일되지 않은 경우)</li><li>wwwroot&dagger;</li><li>*\.dll 파일</li><li>\<assembly-name>.deps.json</li><li>\<assembly-name>.dll</li><li>\<assembly-name>.pdb</li><li>\<assembly-name>.PrecompiledViews.dll</li><li>\<assembly-name>.PrecompiledViews.pdb</li><li>\<assembly-name>.runtimeconfig.json</li><li>web.config(IIS 배포)</li></ul></li></ul> |
+| [자체 포함 배포](/dotnet/core/deploying/#self-contained-deployments-scd) | <ul><li>publish&dagger;<ul><li>Logs&dagger;(stdout 로그를 수신하는 데 필요한 경우가 아니면 선택 사항)</li><li>refs&dagger;</li><li>Views&dagger;(MVC 앱, 뷰가 미리 컴파일되지 않은 경우)</li><li>Pages&dagger;(MVC 또는 Razor 페이지 앱, 페이지가 미리 컴파일되지 않은 경우)</li><li>wwwroot&dagger;</li><li>\*.dll 파일</li><li>\<assembly-name>.deps.json</li><li>\<assembly-name>.exe</li><li>\<assembly-name>.pdb</li><li>\<assembly-name>.PrecompiledViews.dll</li><li>\<assembly-name>.PrecompiledViews.pdb</li><li>\<assembly-name>.runtimeconfig.json</li><li>web.config(IIS 배포)</li></ul></li></ul> |
 
 &dagger;디렉터리를 나타냄
 
@@ -31,7 +31,7 @@ ASP.NET Core에서 게시된 응용 프로그램 디렉터리인 *publish*는 �
 
 *wwwroot* 디렉터리(있는 경우)에는 정적 자산만 포함됩니다.
 
-다음 두 가지 방법 중 하나를 사용하여 stdout *logs* 디렉터리를 배포용으로 만들 수 있습니다.
+다음 두 가지 방법 중 하나를 사용하여 stdout *Logs* 디렉터리를 배포용으로 만들 수 있습니다.
 
 * 다음 `<Target>` 요소를 프로젝트 파일에 추가합니다.
 

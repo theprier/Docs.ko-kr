@@ -3,20 +3,24 @@ title: ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 데이터 모�
 author: rick-anderson
 description: 이 자습서에서는 더 많은 엔터티 및 관계를 추가하고, 서식 지정, 유효성 검사 및 매핑 규칙을 지정하여 데이터 모델을 사용자 지정합니다.
 ms.author: riande
-ms.date: 10/25/2017
+ms.date: 6/31/2017
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: a885809205f13e1090a957496710cc0d9c7257c0
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: d96ce7a3f81c54d3c4c0fe26d3fb588d9ce2e0ce
+ms.sourcegitcommit: 1faf2525902236428dae6a59e375519bafd5d6d7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274543"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37089999"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---data-model---5-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 데이터 모델 - 5/8
 
+[!INCLUDE[2.0 version](~/includes/RP-EF/20-pdf.md)]
+
+::: moniker range=">= aspnetcore-2.1"
+
 작성자: [Tom Dykstra](https://github.com/tdykstra) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[!INCLUDE [about the series](../../includes/RP-EF/intro.md)]
+[!INCLUDE [about the series](~/includes/RP-EF/intro.md)]
 
 이전 자습서에서는 세 가지 엔터티로 구성된 기본 데이터 모델을 사용했습니다. 이 자습서에서:
 
@@ -27,7 +31,8 @@ ms.locfileid: "36274543"
 
 ![엔터티 다이어그램](complex-data-model/_static/diagram.png)
 
-해결할 수 없는 문제가 발생한 경우 [이 단계에 완성된 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part5-complex)을 다운로드합니다.
+해결할 수 없는 문제가 발생한 경우 [완성된 앱](
+https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples)을 다운로드합니다.
 
 ## <a name="customize-the-data-model-with-attributes"></a>특성을 사용하여 데이터 모델 사용자 지정
 
@@ -39,7 +44,7 @@ ms.locfileid: "36274543"
 
 *Models/Student.cs*를 다음 강조 표시된 코드로 업데이트합니다.
 
-[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_DataType&highlight=3,12-13)]
+[!code-csharp[](intro/samples/cu21/Models/Student.cs?name=snippet_DataType&highlight=3,12-13)]
 
 [DataType](/dotnet/api/system.componentmodel.dataannotations.datatypeattribute?view=netframework-4.7.1) 특성은 데이터베이스 내장 형식보다 구체적인 데이터 형식을 지정합니다. 이 경우 날짜 및 시간이 아닌 날짜만 표시되어야 합니다. [DataType 열거형](/dotnet/api/system.componentmodel.dataannotations.datatype?view=netframework-4.7.1)은 날짜, 시간, 전화 번호, 통화, 이메일 주소 등과 같은 많은 데이터 형식을 제공합니다. `DataType` 특성을 통해 앱에서 자동으로 유형별 기능을 제공하도록 설정할 수도 있습니다. 예:
 
@@ -75,7 +80,7 @@ ms.locfileid: "36274543"
 
 `Student` 모델을 다음 코드로 업데이트합니다.
 
-[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_StringLength&highlight=10,12)]
+[!code-csharp[](intro/samples/cu21/Models/Student.cs?name=snippet_StringLength&highlight=10,12)]
 
 위의 코드는 이름을 최대 50자로 제한합니다. `StringLength` 특성은 이름에 공백을 입력할 수 있습니다. [RegularExpression](/dotnet/api/system.componentmodel.dataannotations.regularexpressionattribute?view=netframework-4.7.1) 특성은 입력에 제한을 적용하는 데 사용됩니다. 예를 들어 다음 코드는 첫 번째 문자가 대문자여야 하고, 나머지 문자는 사전순이어야 합니다.
 
@@ -107,7 +112,7 @@ DB가 만들어질 때 모델의 속성 이름은 열 이름에 사용됩니다(
 
 *Student.cs* 파일을 다음 강조 표시된 코드로 업데이트합니다.
 
-[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_Column&highlight=4,14)]
+[!code-csharp[](intro/samples/cu21/Models/Student.cs?name=snippet_Column&highlight=4,14)]
 
 이전 변경으로 인해 앱의 `Student.FirstMidName`은 `Student` 테이블의 `FirstName` 열로 매핑됩니다.
 
@@ -121,12 +126,23 @@ DB를 업데이트하려면:
 * 프로젝트를 빌드합니다.
 * 프로젝트 폴더의 명령 창을 엽니다. 다음 명령을 입력하여 새 마이그레이션을 만들고 DB를 업데이트합니다.
 
-    ```console
-    dotnet ef migrations add ColumnFirstName
-    dotnet ef database update
-    ```
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-`dotnet ef migrations add ColumnFirstName` 명령은 다음과 같은 경고 메시지를 생성합니다.
+```PMC
+Add-Migration ColumnFirstName
+Update-Database
+```
+
+# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
+
+```console
+dotnet ef migrations add ColumnFirstName
+dotnet ef database update
+```
+
+------
+
+`migrations add ColumnFirstName` 명령은 다음과 같은 경고 메시지를 생성합니다.
 
 ```text
 An operation was scaffolded that may result in the loss of data.
@@ -152,7 +168,7 @@ SSOX에서 학생 테이블을 엽니다.
 
 *Models/Student.cs*를 다음 코드로 업데이트합니다.
 
-[!code-csharp[](intro/samples/cu/Models/Student.cs?name=snippet_BeforeInheritance&highlight=11,13,15,18,22,24-31)]
+[!code-csharp[](intro/samples/cu21/Models/Student.cs?name=snippet_BeforeInheritance&highlight=11,13,15,18,22,24-31)]
 
 ### <a name="the-required-attribute"></a>필수 특성
 
@@ -180,9 +196,7 @@ public string LastName { get; set; }
 
 다음 코드로 *Models/Instructor.cs*를 만듭니다.
 
-[!code-csharp[](intro/samples/cu/Models/Instructor.cs?name=snippet_BeforeInheritance)]
-
-`Student` 및 `Instructor` 엔터티의 여러 속성은 동일합니다. 이 시리즈의 뒷부분에 나오는 상속 구현 자습서에서 이 코드는 중복을 제거하도록 리팩터링됩니다.
+[!code-csharp[](intro/samples/cu21/Models/Instructor.cs)]
 
 한 줄에 여러 특성이 있을 수 있습니다. `HireDate` 특성은 다음과 같이 작성될 수 있습니다.
 
@@ -226,7 +240,7 @@ public OfficeAssignment OfficeAssignment { get; set; }
 
 다음 코드로 *Models/OfficeAssignment.cs*를 만듭니다.
 
-[!code-csharp[](intro/samples/cu/Models/OfficeAssignment.cs)]
+[!code-csharp[](intro/samples/cu21/Models/OfficeAssignment.cs)]
 
 ### <a name="the-key-attribute"></a>키 특성
 
@@ -275,7 +289,7 @@ public Instructor Instructor { get; set; }
 
 *Models/Course.cs*를 다음 코드로 업데이트합니다.
 
-[!code-csharp[](intro/samples/cu/Models/Course.cs?name=snippet_Final&highlight=2,10,13,16,19,21,23)]
+[!code-csharp[](intro/samples/cu21/Models/Course.cs?name=snippet_Final&highlight=2,10,13,16,19,21,23)]
 
 `Course` 엔터티에는 FK(외래 키) 속성 `DepartmentID`가 있습니다. `DepartmentID`는 관련된 `Department` 엔터티를 가리킵니다. `Course` 엔터티에는 `Department` 탐색 속성이 있습니다.
 
@@ -333,7 +347,7 @@ public ICollection<CourseAssignment> CourseAssignments { get; set; }
 
 다음 코드로 *Models/Department.cs*를 만듭니다.
 
-[!code-csharp[](intro/samples/cu/Models/Department.cs?name=snippet_Begin)]
+[!code-csharp[](intro/samples/cu21/Models/Department.cs?name=snippet_Begin)]
 
 ### <a name="the-column-attribute"></a>열 특성
 
@@ -386,7 +400,7 @@ public ICollection<Course> Courses { get; set; }
 
 위의 코드는 부서 강사 관계에서 계단식 삭제를 비활성화합니다.
 
-## <a name="update-the-enrollment-entity"></a>등록 엔터티 업데이트
+## <a name="update-the-enrollment-entityupdate-the-enrollment-entity"></a>등록 엔터티 업데이트등록 엔터티 업데이트
 
 등록 레코드는 한 명의 학생이 수행하는 하나의 강좌에 대한 것입니다.
 
@@ -394,7 +408,7 @@ public ICollection<Course> Courses { get; set; }
 
 *Models/Enrollment.cs*를 다음 코드로 업데이트합니다.
 
-[!code-csharp[](intro/samples/cu/Models/Enrollment.cs?name=snippet_Final&highlight=1-2,16)]
+[!code-csharp[](intro/samples/cu21/Models/Enrollment.cs?name=snippet_Final&highlight=1-2,16)]
 
 ### <a name="foreign-key-and-navigation-properties"></a>외래 키 및 탐색 속성
 
@@ -436,7 +450,7 @@ public Student Student { get; set; }
 
 다음 코드로 *Models/CourseAssignment.cs*를 만듭니다.
 
-[!code-csharp[](intro/samples/cu/Models/CourseAssignment.cs)]
+[!code-csharp[](intro/samples/cu21/Models/CourseAssignment.cs)]
 
 ### <a name="instructor-to-courses"></a>강사-강좌
 
@@ -470,7 +484,7 @@ FK는 Null을 허용하지 않습니다. `CourseAssignment`에서 두 개의 FK(
 
 다음 강조 표시된 코드를 *Data/SchoolContext.cs*에 추가합니다.
 
-[!code-csharp[](intro/samples/cu/Data/SchoolContext.cs?name=snippet_BeforeInheritance&highlight=15-18,25-31)]
+[!code-csharp[](intro/samples/cu21/Data/SchoolContext.cs?name=snippet_BeforeInheritance&highlight=15-18,25-31)]
 
 위의 코드는 새 엔터티를 추가하고 `CourseAssignment` 엔터티의 복합 PK를 구성합니다.
 
@@ -520,7 +534,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 
 *Data/DbInitializer.cs*에서 코드를 업데이트합니다.
 
-[!code-csharp[](intro/samples/cu/Data/DbInitializer.cs?name=snippet_Final)]
+[!code-csharp[](intro/samples/cu21/Data/DbInitializer.cs?name=snippet_Final)]
 
 위의 코드는 새 엔터티에 대한 시드 데이터를 제공합니다. 이 코드의 대부분은 새 엔터티 개체를 만들고 샘플 데이터를 로드합니다. 샘플 데이터는 테스트를 위해 사용됩니다. 위의 코드는 다음과 같은 다대다 관계를 만듭니다.
 
@@ -531,11 +545,21 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 
 ## <a name="add-a-migration"></a>마이그레이션 추가
 
-프로젝트를 빌드합니다. 프로젝트 폴더에서 명령 창을 열고 다음 명령을 입력합니다.
+프로젝트를 빌드합니다.
+
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
+
+```PMC
+Add-Migration ComplexDataModel
+```
+
+# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 
 ```console
 dotnet ef migrations add ComplexDataModel
 ```
+
+------
 
 위의 명령은 가능한 데이터 손실에 대한 경고를 표시합니다.
 
@@ -554,42 +578,40 @@ database "ContosoUniversity", table "dbo.Department", column 'DepartmentID'.
 
 마이그레이션이 기존 데이터로 실행될 때 기존 데이터로 충족되지 않는 FK 제약 조건이 있을 수 있습니다. 이 자습서의 경우 새 DB가 만들어지므로 FK 제약 조건 위반이 없습니다. 현재 DB에서 FK 위반을 수정하는 방법에 대한 지침은 [레거시 데이터로 외래 키 제약 조건 수정](#fk)을 참조하세요.
 
-## <a name="change-the-connection-string-and-update-the-db"></a>연결 문자열 변경 및 DB 업데이트
+### <a name="drop-and-update-the-database"></a>데이터베이스 삭제 및 업데이트
 
-업데이트된 `DbInitializer`의 코드는 새 엔터티에 대한 시드 데이터를 추가합니다. EF Core에서 새로운 빈 DB를 만들도록 하려면:
+업데이트된 `DbInitializer`의 코드는 새 엔터티에 대한 시드 데이터를 추가합니다. EF Core가 새로운 DB를 만들도록 강제하려면 DB를 삭제하고 업데이트합니다.
 
-* *appsettings.json*의 DB 연결 문자열 이름을 ContosoUniversity3으로 변경합니다. 새 이름은 컴퓨터에서 사용되지 않은 이름이어야 합니다.
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-    ```json
-    {
-      "ConnectionStrings": {
-        "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=ContosoUniversity3;Trusted_Connection=True;MultipleActiveResultSets=true"
-      },
-    ```
+PMC(**패키지 관리자 콘솔**)에서 다음 명령을 입력합니다.
 
-* 또는 다음을 사용하여 DB를 삭제합니다.
-
-  * **SQL Server 개체 탐색기**(SSOX)
-  * `database drop` CLI 명령:
-
-    ```console
-    dotnet ef database drop
-    ```
-
-명령 창에서 `database update`를 실행합니다.
-
-```console
-dotnet ef database update
+```PMC
+Drop-Database
+Update-Database
 ```
 
-위의 명령은 모든 마이그레이션을 실행합니다.
+PMC에서 `Get-Help about_EntityFrameworkCore`를 실행하여 도움말 정보를 가져옵니다.
+
+# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
+
+명령 창을 열고 프로젝트 폴더로 이동합니다. 프로젝트 폴더에는 *Startup.cs* 파일이 포함되어 있습니다.
+
+명령 창에서 다음을 입력합니다.
+
+ ```console
+ dotnet ef database drop
+dotnet ef database update
+ ```
+
+------
 
 앱을 실행합니다. 앱을 실행하면 `DbInitializer.Initialize` 메서드를 실행합니다. `DbInitializer.Initialize`는 새 DB를 채웁니다.
 
 SSOX에서 DB를 엽니다.
 
-* **테이블** 노드를 확장합니다. 생성된 테이블이 표시됩니다.
 * SSOX가 이전에 열려 있던 경우 **새로 고침** 단추를 클릭합니다.
+* **테이블** 노드를 확장합니다. 생성된 테이블이 표시됩니다.
 
 ![SSOX의 테이블](complex-data-model/_static/ssox-tables.png)
 
@@ -638,6 +660,8 @@ SSOX에서 DB를 엽니다.
 * `Course.DepartmentID`에 대해 "Temp" 부서 또는 기본값을 사용하지 않습니다.
 
 다음 자습서에서는 관련된 데이터를 설명합니다.
+
+::: moniker-end
 
 > [!div class="step-by-step"]
 > [이전](xref:data/ef-rp/migrations)

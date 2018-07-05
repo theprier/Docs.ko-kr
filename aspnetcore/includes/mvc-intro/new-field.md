@@ -1,5 +1,5 @@
 <!-- This include not used by windows version -->
-# <a name="adding-a-new-field"></a>새 필드 추가
+# <a name="add-a-new-field-to-an-aspnet-core-mvc-app"></a>ASP.NET Core MVC 앱에 새 필드 추가
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 

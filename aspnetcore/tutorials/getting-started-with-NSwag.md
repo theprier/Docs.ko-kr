@@ -4,24 +4,29 @@ author: zuckerthoben
 description: NSwag를 사용하여 ASP.NET Core Web API의 설명서 및 도움말 페이지를 생성하는 방법을 알아봅니다.
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 05/08/2018
+ms.date: 06/29/2018
 uid: tutorials/get-started-with-nswag
-ms.openlocfilehash: f4cc9ec1f32ef2bd0056ba8d0cbbbe9228834d85
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: c0811593609b7d1e3529d5253e8b053f180281f3
+ms.sourcegitcommit: 2941e24d7f3fd3d5e88d27e5f852aaedd564deda
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36279206"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37126276"
 ---
 # <a name="get-started-with-nswag-and-aspnet-core"></a>NSwag 및 ASP.NET Core 시작
 
 작성자: [Christoph Nienaber](https://twitter.com/zuckerthoben) 및 [Rico Suter](https://rsuter.com)
 
-::: moniker range="<= aspnetcore-2.0"
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.NSwag)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
-::: moniker-end
 ::: moniker range=">= aspnetcore-2.1"
+
 [예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.NSwag)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+
+::: moniker-end
+
+::: moniker range="<= aspnetcore-2.0"
+
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.NSwag)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+
 ::: moniker-end
 
 ASP.NET Core 미들웨어에서 [NSwag](https://github.com/RSuter/NSwag)를 사용하려면 [NSwag.AspNetCore](https://www.nuget.org/packages/NSwag.AspNetCore/) NuGet 패키지가 필요합니다. 이 패키지는 Swagger 생성기, Swagger UI(v2 및 v3) 및 [ReDoc UI](https://github.com/Rebilly/ReDoc)로 구성됩니다.
@@ -194,19 +199,55 @@ XML 주석은 다음과 같은 방법으로 활성화됩니다.
 
 # <a name="visual-studiotabvisual-studio-xml"></a>[Visual Studio](#tab/visual-studio-xml/)
 
+::: moniker range=">= aspnetcore-2.0"
+
+* **솔루션 탐색기**에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 **<project_name>.csproj 편집**을 선택합니다.
+* 강조 표시된 줄을 *.csproj* 파일에 수동으로 추가합니다.
+
+[!code-xml[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.NSwag/TodoApi.csproj?name=snippet_DocumentationFileElement&highlight=1-2,4)]
+
+::: moniker-end
+
+::: moniker range="<= aspnetcore-1.1"
+
 * **솔루션 탐색기**에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 **속성** 선택
 * **빌드** 탭의 **출력** 섹션에서 **XML 문서 파일** 상자 선택
 
+::: moniker-end
+
 # <a name="visual-studio-for-mactabvisual-studio-mac-xml"></a>[Visual Studio for Mac](#tab/visual-studio-mac-xml/)
 
-* **프로젝트 옵션** 대화 상자 열기 > **빌드** > **컴파일러** 선택
+::: moniker range=">= aspnetcore-2.0"
+
+* *Solution Pad*에서 **control** 키를 누르고 프로젝트 이름을 클릭합니다. **도구** > **파일 편집**으로 이동합니다.
+* 강조 표시된 줄을 *.csproj* 파일에 수동으로 추가합니다.
+
+[!code-xml[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.NSwag/TodoApi.csproj?name=snippet_DocumentationFileElement&highlight=1-2,4)]
+
+::: moniker-end
+
+::: moniker range="<= aspnetcore-1.1"
+
+* **프로젝트 옵션** 대화 상자 > **빌드** > **컴파일러**를 엽니다.
 * **일반 옵션** 섹션에서 **XML 문서 생성** 상자 선택
+
+::: moniker-end
 
 # <a name="visual-studio-codetabvisual-studio-code-xml"></a>[Visual Studio Code](#tab/visual-studio-code-xml/)
 
-*.csproj* 파일에 다음 코드 조각을 수동으로 추가합니다.
+강조 표시된 줄을 *.csproj* 파일에 수동으로 추가합니다.
 
-[!code-xml[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.NSwag/TodoApi.csproj?name=snippet_DocumentationFileElement)]
+::: moniker range=">= aspnetcore-2.0"
+
+[!code-xml[](../tutorials/web-api-help-pages-using-swagger/samples/2.1/TodoApi.NSwag/TodoApi.csproj?name=snippet_DocumentationFileElement&highlight=1-2,4)]
+
+::: moniker-end
+
+::: moniker range="<= aspnetcore-1.1"
+
+[!code-xml[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.NSwag/TodoApi.csproj?name=snippet_DocumentationFileElement&highlight=1-2,4)]
+
+::: moniker-end
 
 ---
 

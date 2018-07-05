@@ -5,12 +5,12 @@ description: Entity Framework Core(EF Core)를 사용하여 데이터베이스�
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/model
-ms.openlocfilehash: 508cca07fa96c20e228d2c55c9fb101f7fc3cb02
-ms.sourcegitcommit: 79b756ea03eae77a716f500ef88253ee9b1464d2
+ms.openlocfilehash: ed8faf8b3049adc7bcc7953d63ad805b0a836bd9
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36327554"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36961177"
 ---
 # <a name="add-a-model-to-a-razor-pages-app-in-aspnet-core"></a>ASP.NET Core에서 Razor 페이지 앱에 모델 추가
 
@@ -53,6 +53,36 @@ ms.locfileid: "36327554"
 * **추가**를 선택합니다.
 
 ![이전 지침의 이미지입니다.](model/_static/arp.png)
+
+스캐폴드 프로세스는 다음 파일을 생성하고 변경했습니다.
+
+### <a name="files-created"></a>생성된 파일
+
+* *Pages/Movies* 만들기, 삭제, 세부 정보, 편집, 인덱스입니다. 이러한 페이지는 다음 자습서에서 자세히 설명합니다.
+* *Data/RazorPagesMovieContext.cs*
+
+### <a name="files-updates"></a>파일 업데이트
+
+* *Startup.cs*: 이 파일의 변경 내용은 다음 섹션에서 자세히 설명합니다.
+* *appsettings.json*: 로컬 데이터베이스에 연결하는 데 사용된 연결 문자열이 추가됩니다.
+
+## <a name="examine-the-context-registered-with-dependency-injection"></a>종속성 주입을 사용하여 등록된 컨텍스트 검사
+
+ASP.NET Core는 [종속성 주입](xref:fundamentals/dependency-injection)을 사용하여 빌드됩니다. 서비스(예: EF Core DB 컨텍스트)는 응용 프로그램 시작 중에 종속성 주입에 등록됩니다. 이러한 서비스(예: Razor 페이지)가 필요한 구성 요소에는 생성자 매개 변수를 통해 이러한 서비스가 제공됩니다. DB 컨텍스트 인스턴스를 가져오는 생성자 코드는 자습서 뒷부분에 나옵니다.
+
+스캐폴딩 도구는 자동으로 DB 컨텍스트를 생성하고 종속성 주입 컨테이너에 등록했습니다.
+
+`Startup.ConfigureServices` 메서드를 검사합니다. 강조 표시된 줄은 스캐폴더에서 추가되었습니다.
+
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Startup.cs?name=snippet_ConfigureServices&highlight=12-13)]
+
+특정 데이터 모델에 맞게 EF Core 기능을 조정하는 주 클래스는 DB 컨텍스트 클래스입니다. 데이터 컨텍스트는 [Microsoft.EntityFrameworkCore.DbContext](/dotnet/api/microsoft.entityframeworkcore.dbcontext)에서 파생됩니다. 데이터 컨텍스트는 데이터 모델에 포함되는 엔터티를 지정합니다. 이 프로젝트에서 클래스 이름은 `RazorPagesMovieContext`로 지정됩니다.
+
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Data/RazorPagesMovieContext.cs)]
+
+이전 코드에서는 엔터티 집합에 대해 [DbSet\<Movie>](/dotnet/api/microsoft.entityframeworkcore.dbset-1) 속성을 만듭니다. Entity Framework 용어에서 엔터티 집합은 일반적으로 데이터베이스 테이블에 해당합니다. 엔터티는 테이블의 행에 해당합니다.
+
+[DbContextOptions](/dotnet/api/microsoft.entityframeworkcore.dbcontextoptions) 개체에서 메서드를 호출하여 연결 문자열의 이름을 컨텍스트에 전달합니다. 로컬 개발의 경우 [ASP.NET Core 구성 시스템](xref:fundamentals/configuration/index)은 *appsettings.json* 파일에서 연결 문자열을 읽습니다.
 
 <a name="pmc"></a>
 ## <a name="perform-initial-migration"></a>초기 마이그레이션 수행
@@ -194,4 +224,4 @@ SQL 예외가 발생하는 경우 마이그레이션을 실행했는지와 데�
 
 > [!div class="step-by-step"]
 > [이전: 시작](xref:tutorials/razor-pages/razor-pages-start)
-> [다음: 스캐폴드된 Razor 페이지](xref:tutorials/razor-pages/page)    
+> [다음: 스캐폴드된 Razor 페이지](xref:tutorials/razor-pages/page)

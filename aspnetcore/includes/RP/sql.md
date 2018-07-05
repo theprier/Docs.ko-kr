@@ -1,4 +1,4 @@
-# <a name="working-with-sqlite-in-and-razor-pages"></a>SQLite 및 Razor 페이지 작업
+# <a name="work-with-sqlite-in-an-aspnet-core-razor-pages-app"></a>ASP.NET Core Razor Pages 앱에서 SQLite 작업
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 

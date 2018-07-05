@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/16/2018
 uid: fundamentals/host/generic-host
-ms.openlocfilehash: 33e5829ce4a09e132743b4174a588cf232a44775
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 40d297257895a4defeb89cef9c5ec6deea64a985
+ms.sourcegitcommit: 7003d27b607e529642ded0400aa48ae692a0e666
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276264"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37033357"
 ---
 # <a name="net-generic-host"></a>.NET 일반 호스트
 
@@ -394,7 +394,7 @@ public class MyClass
 | [ApplicationStopped](/dotnet/api/microsoft.extensions.hosting.iapplicationlifetime.applicationstopped) | 호스트가 정상적으로 종료되었습니다. 모든 요청이 처리되어야 합니다. 종료는 이 이벤트가 완료될 때까지 차단합니다. |
 | [ApplicationStopping](/dotnet/api/microsoft.extensions.hosting.iapplicationlifetime.applicationstopping) | 호스트가 정상적으로 종료되고 있습니다. 요청은 계속 처리할 수 있습니다. 종료는 이 이벤트가 완료될 때까지 차단합니다. |
 
-클래스에 대한 `IApplicationLifetime` 서비스 생성자 주입을 수행합니다. [샘플 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/host/generic-host/samples/)은 `LifetimeEventsHostedService` 클래스(`IHostedService` 구현)에 대한 생성자 주입을 통해 이벤트를 등록합니다.
+클래스에 대한 `IApplicationLifetime` 서비스 생성자 주입을 수행합니다. [샘플 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/host/generic-host/samples/)은 `LifetimeEventsHostedService` 클래스(`IHostedService` 구현)에 대한 생성자 주입을 사용하여 이벤트를 등록합니다.
 
 *LifetimeEventsHostedService.cs*:
 

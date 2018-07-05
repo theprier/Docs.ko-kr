@@ -1,4 +1,4 @@
-# <a name="adding-search-to-a-razor-pages-app"></a>Razor 페이지 앱에 검색 추가
+# <a name="add-search-to-an-aspnet-core-razor-pages-app"></a>ASP.NET Core Razor Pages 앱에 검색 추가
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 

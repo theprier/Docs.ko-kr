@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 10/14/2016
 uid: fundamentals/owin
-ms.openlocfilehash: 864580edd62032ad1409c1d3263cb5d464fa59fe
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 04042eedc52b4e6f57685e2d9ec1a75cd130fd8d
+ms.sourcegitcommit: 08f1a9baa97060da5168840b332c9c0805b5f901
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273626"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37144965"
 ---
 # <a name="open-web-interface-for-net-owin-with-aspnet-core"></a>ASP.NET Core가 있는 OWIN(Open Web Interface for .NET)
 
@@ -20,12 +20,14 @@ ms.locfileid: "36273626"
 ASP.NET Core는 OWIN(Open Web Interface for .NET)을 지원합니다. OWIN을 사용하면 웹 앱을 웹 서버에서 분리할 수 있습니다. 미들웨어를 파이프라인에서 사용하고 요청 및 관련된 응답을 처리하기 위한 표준 방법을 정의합니다. ASP.NET Core 응용 프로그램 및 미들웨어는 OWIN 기반 응용 프로그램, 서버 및 미들웨어와 상호 운용할 수 있습니다.
 
 OWIN은 서로 다른 개체 모델이 있는 두 프레임워크를 함께 사용할 수 있도록 허용하는 분리 계층을 제공합니다. `Microsoft.AspNetCore.Owin` 패키지는 두 개의 어댑터 구현을 제공합니다.
-- ASP.NET Core에서 OWIN으로 
-- OWIN에서 ASP.NET Core로
+
+* ASP.NET Core에서 OWIN으로 
+* OWIN에서 ASP.NET Core로
 
 이렇게 하면 ASP.NET Core를 OWIN 호환 가능한 서버/호스트를 기반으로 호스팅하거나 다른 OWIN 호환 가능한 구성 요소를 ASP.NET Core를 기반으로 실행되도록 할 수 있습니다.
 
-참고: 이러한 어댑터를 사용하면 성능 비용이 수반됩니다. ASP.NET Core 구성 요소만을 사용하는 응용 프로그램은 Owin 패키지 또는 어댑터를 사용하면 안 됩니다.
+> [!NOTE]
+> 이러한 어댑터를 사용하면 성능 비용이 수반됩니다. ASP.NET Core 구성 요소만을 사용하는 앱은 `Microsoft.AspNetCore.Owin` 패키지 또는 어댑터를 사용하면 안 됩니다.
 
 [예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/owin/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 

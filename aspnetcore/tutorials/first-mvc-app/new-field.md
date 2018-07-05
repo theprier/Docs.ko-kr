@@ -1,18 +1,18 @@
 ---
-title: ASP.NET Core 앱에 새 필드 추가
+title: ASP.NET Core MVC 앱에 새 필드 추가
 author: rick-anderson
 description: Entity Framework Code First 마이그레이션을 사용하여 모델에 새 필드를 추가하고 해당 변경 내용을 데이터베이스로 마이그레이션하는 방법을 알아봅니다.
 ms.author: riande
 ms.date: 10/14/2016
 uid: tutorials/first-mvc-app/new-field
-ms.openlocfilehash: 0077205e0f10037c9b24eab80337cb76f027e688
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: eb98ebcde1086ad605127dddc055a18d4874c722
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278780"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36961037"
 ---
-# <a name="add-a-new-field-to-an-aspnet-core-app"></a>ASP.NET Core 앱에 새 필드 추가
+# <a name="add-a-new-field-to-an-aspnet-core-mvc-app"></a>ASP.NET Core MVC 앱에 새 필드 추가
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 

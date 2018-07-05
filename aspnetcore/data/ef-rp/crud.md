@@ -3,26 +3,30 @@ title: ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - CRUD - 2/8
 author: rick-anderson
 description: EF Core를 사용한 만들기, 읽기, 업데이트, 삭제 방법을 보여 줍니다.
 ms.author: riande
-ms.date: 10/15/2017
+ms.date: 6/31/2017
 uid: data/ef-rp/crud
-ms.openlocfilehash: 17d48cae50745508a64a9fb8a153b7b891e64a23
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: dfc79964cc4f15851b42822bb97d14800f54b878
+ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278689"
+ms.lasthandoff: 06/29/2018
+ms.locfileid: "37093012"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---crud---2-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - CRUD - 2/8
 
+[!INCLUDE[2.0 version](~/includes/RP-EF/20-pdf.md)]
+
+::: moniker range=">= aspnetcore-2.1"
+
 작성자: [Tom Dykstra](https://github.com/tdykstra), [Jon P Smith](https://twitter.com/thereformedprog) 및 [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-[!INCLUDE [about the series](../../includes/RP-EF/intro.md)]
+[!INCLUDE [about the series](~/includes/RP-EF/intro.md)]
 
 이 자습서에서는 스캐폴드된 CRUD(만들기, 읽기, 업데이트, 삭제) 코드를 검토 및 사용자 지정합니다.
 
-참고: 복잡성을 최소화하고 이러한 자습서의 초점을 EF Core로 유지하기 위해 Razor 페이지 페이지 모델에 EF Core 코드가 사용됩니다. 일부 개발자는 UI(Razor 페이지) 및 데이터 액세스 계층 간에 추상화 계층을 생성하도록 서비스 계층 또는 리포지토리 패턴을 사용합니다.
+복잡성을 최소화하고 이러한 자습서의 초점을 EF Core로 유지하기 위해 페이지 모델에 EF Core 코드를 사용합니다. 일부 개발자는 UI(Razor 페이지) 및 데이터 액세스 계층 간에 추상화 계층을 생성하도록 서비스 계층 또는 리포지토리 패턴을 사용합니다.
 
-이 자습서에서는 *학생* 폴더의 만들기, 편집, 삭제 및 세부 정보 Razor 페이지가 수정됩니다.
+이 자습서에서는 *Student* 폴더에서 Razor Pages 만들기, 편집, 삭제 및 세부 정보가 검사됩니다.
 
 스캐폴드된 코드는 만들기, 편집 및 삭제 페이지에 대해 다음과 같은 패턴을 사용합니다.
 
@@ -31,41 +35,40 @@ ms.locfileid: "36278689"
 
 인덱스 및 세부 정보 페이지는 HTTP GET 메서드 `OnGetAsync`로 요청된 데이터를 가져오고 표시합니다.
 
-## <a name="replace-singleordefaultasync-with-firstordefaultasync"></a>SingleOrDefaultAsync를 FirstOrDefaultAsync로 바꾸기
+## <a name="singleordefaultasync-vs-firstordefaultasync"></a>SingleOrDefaultAsync 및 FirstOrDefaultAsync
 
-생성된 코드는 [SingleOrDefaultAsync](/dotnet/api/microsoft.entityframeworkcore.entityframeworkqueryableextensions.singleordefaultasync?view=efcore-2.0#Microsoft_EntityFrameworkCore_EntityFrameworkQueryableExtensions_SingleOrDefaultAsync__1_System_Linq_IQueryable___0__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken_)를 사용하여 요청된 엔터티를 페치합니다. 엔터티를 하나 페치할 때는 [FirstOrDefaultAsync](/dotnet/api/microsoft.entityframeworkcore.entityframeworkqueryableextensions.firstordefaultasync?view=efcore-2.0#Microsoft_EntityFrameworkCore_EntityFrameworkQueryableExtensions_FirstOrDefaultAsync__1_System_Linq_IQueryable___0__System_Threading_CancellationToken_)가 더 효율적입니다.
+생성된 코드는 [SingleOrDefaultAsync](/dotnet/api/microsoft.entityframeworkcore.entityframeworkqueryableextensions.singleordefaultasync#Microsoft_EntityFrameworkCore_EntityFrameworkQueryableExtensions_SingleOrDefaultAsync__1_System_Linq_IQueryable___0__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken_)보다 일반적으로 선호되는 [FirstOrDefaultAsync](/dotnet/api/microsoft.entityframeworkcore.entityframeworkqueryableextensions.firstordefaultasync#Microsoft_EntityFrameworkCore_EntityFrameworkQueryableExtensions_FirstOrDefaultAsync__1_System_Linq_IQueryable___0__System_Threading_CancellationToken_)를 사용합니다.
 
-* 쿼리에서 반환된 엔터티가 두 개 이상이 아닌지 코드에서 확인해야 하는 경우 제외. 
+ 하나의 엔터티를 페치할 때 `SingleOrDefaultAsync`보다 `FirstOrDefaultAsync`가 더 효율적입니다.
+
+* 쿼리에서 반환된 엔터티가 두 개 이상이 아닌지 코드에서 확인해야 하는 경우 제외.
 * `SingleOrDefaultAsync`는 더 많은 데이터를 페치하고 불필요한 작업을 수행합니다.
 * `SingleOrDefaultAsync`는 필터 파트에 맞는 엔터티가 둘 이상인 경우 예외를 throw합니다.
-*  `FirstOrDefaultAsync`는 필터 파트에 맞는 엔터티가 둘 이상인 경우 예외를 throw하지 않습니다.
-
-전체적으로 `SingleOrDefaultAsync`를 `FirstOrDefaultAsync`로 바꿉니다. 5곳에서 `SingleOrDefaultAsync`가 사용됩니다.
-
-* 세부 정보 페이지의 `OnGetAsync`.
-* 편집 및 삭제 페이지의 `OnGetAsync` 및 `OnPostAsync`.
+* `FirstOrDefaultAsync`는 필터 파트에 맞는 엔터티가 둘 이상인 경우 예외를 throw하지 않습니다.
 
 <a name="FindAsync"></a>
+
 ### <a name="findasync"></a>FindAsync
 
-스캐폴드된 코드의 대부분에서 [FindAsync](/dotnet/api/microsoft.entityframeworkcore.dbcontext.findasync?view=efcore-2.0#Microsoft_EntityFrameworkCore_DbContext_FindAsync_System_Type_System_Object___)를 `FirstOrDefaultAsync` 또는 `SingleOrDefaultAsync` 대신 사용할 수 있습니다. 
+스캐폴드된 코드의 대부분에서 [FindAsync](/dotnet/api/microsoft.entityframeworkcore.dbcontext.findasync#Microsoft_EntityFrameworkCore_DbContext_FindAsync_System_Type_System_Object___)를 `FirstOrDefaultAsync` 대신 사용할 수 있습니다.
 
 `FindAsync`:
 
 * PK(기본 키)가 있는 엔터티를 찾습니다. PK가 있는 엔터티를 컨텍스트에서 추적하는 경우 요청 없이 DB에 반환됩니다.
 * 단순하고 간결합니다.
 * 단일 엔터티를 조회하도록 최적화되었습니다.
-* 일부 상황에서 성능 이점을 가질 수 있으나 일반 웹 시나리오에서는 거의 작동하지 않습니다.
-* [SingleAsync](/dotnet/api/microsoft.entityframeworkcore.entityframeworkqueryableextensions.singleasync?view=efcore-2.0#Microsoft_EntityFrameworkCore_EntityFrameworkQueryableExtensions_SingleAsync__1_System_Linq_IQueryable___0__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken_) 대신 [FirstAsync](/dotnet/api/microsoft.entityframeworkcore.entityframeworkqueryableextensions.firstasync?view=efcore-2.0#Microsoft_EntityFrameworkCore_EntityFrameworkQueryableExtensions_FirstAsync__1_System_Linq_IQueryable___0__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken_)를 암시적으로 사용합니다.
-하지만 다른 엔터티를 포함하려는 경우 찾기는 더 이상 적합하지 않습니다. 즉, 찾기를 취소하고 앱 진행에 따라 쿼리로 이동해야 할 수 있습니다.
+* 일부 상황에서 성능 이점을 가질 수 있으나 일반적인 웹앱에서는 거의 발생하지 않습니다.
+* [SingleAsync](/dotnet/api/microsoft.entityframeworkcore.entityframeworkqueryableextensions.singleasync#Microsoft_EntityFrameworkCore_EntityFrameworkQueryableExtensions_SingleAsync__1_System_Linq_IQueryable___0__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken_) 대신 [FirstAsync](/dotnet/api/microsoft.entityframeworkcore.entityframeworkqueryableextensions.firstasync#Microsoft_EntityFrameworkCore_EntityFrameworkQueryableExtensions_FirstAsync__1_System_Linq_IQueryable___0__System_Linq_Expressions_Expression_System_Func___0_System_Boolean___System_Threading_CancellationToken_)를 암시적으로 사용합니다.
 
-## <a name="customize-the-details-page"></a>세부 정보 화면 사용자 지정
+하지만 다른 엔터티를 `Include`하려는 경우 `FindAsync`는 더 이상 적합하지 않습니다. 즉, `FindAsync`를 취소하고 앱 진행에 따라 쿼리로 이동해야 할 수 있습니다.
+
+## <a name="customize-the-details-page"></a>세부 정보 사용자 지정 페이지
 
 `Pages/Students` 페이지로 이동합니다. **편집**, **세부 정보** 및 **삭제** 링크는 *Pages/Students/Index.cshtml* 파일에서 [앵커 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper)에 의해 생성됩니다.
 
-[!code-cshtml[](intro/samples/cu/Pages/Students/Index1.cshtml?range=40-44)]
+[!code-cshtml[](intro/samples/cu21/Pages/Students/Index1.cshtml?name=snippet)]
 
-세부 정보 링크를 선택합니다. URL은 `http://localhost:5000/Students/Details?id=2` 양식입니다. 학생 ID는 쿼리 문자열(`?id=2`)을 사용하여 전달됩니다.
+앱을 실행하고 **세부 정보** 링크를 선택합니다. URL은 `http://localhost:5000/Students/Details?id=2` 양식입니다. 학생 ID는 쿼리 문자열(`?id=2`)을 사용하여 전달됩니다.
 
 `"{id:int}"` 경로 템플릿을 사용하도록 편집, 세부 정보 및 삭제 Razor 페이지를 업데이트합니다. 이러한 각 페이지에 대한 page 지시문을 `@page`에서 `@page "{id:int}"`로 변경합니다.
 
@@ -87,17 +90,17 @@ ms.locfileid: "36278689"
 
 *Pages/Students/Details.cshtml.cs*의 `OnGetAsync` 메서드는 `FirstOrDefaultAsync` 메서드를 사용하여 단일 `Student` 엔터티를 검색합니다. 다음 강조 표시된 코드를 추가합니다.
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Details.cshtml.cs?name=snippet_Details&highlight=8-12)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Details.cshtml.cs?name=snippet_Details&highlight=8-12)]
 
-`Include` 및 `ThenInclude` 메서드로 인해 컨텍스트가 `Student.Enrollments` 탐색 속성 및 각 등록 내 `Enrollment.Course` 탐색 속성을 로드합니다. 이러한 메서드는 읽기 관련 데이터 자습서에서 자세히 검토합니다.
+[Include](/dotnet/api/microsoft.entityframeworkcore.entityframeworkqueryableextensions.include) 및 [ThenInclude](/dotnet/api/microsoft.entityframeworkcore.entityframeworkqueryableextensions.theninclude#Microsoft_EntityFrameworkCore_EntityFrameworkQueryableExtensions_ThenInclude__3_Microsoft_EntityFrameworkCore_Query_IIncludableQueryable___0_System_Collections_Generic_IEnumerable___1___System_Linq_Expressions_Expression_System_Func___1___2___) 메서드로 인해 컨텍스트가 `Student.Enrollments` 탐색 속성 및 각 등록 내에서 `Enrollment.Course` 탐색 속성을 로드합니다. 이러한 메서드는 읽기 관련 데이터 자습서에서 자세히 검토합니다.
 
-`AsNoTracking` 메서드는 반환된 엔터티가 현재 컨텍스트에서 업데이트되지 않는 시나리오에서 성능을 향상시킵니다. `AsNoTracking`은 이 자습서의 뒷부분에서 설명합니다.
+[AsNoTracking](/dotnet/api/microsoft.entityframeworkcore.entityframeworkqueryableextensions.asnotracking#Microsoft_EntityFrameworkCore_EntityFrameworkQueryableExtensions_AsNoTracking__1_System_Linq_IQueryable___0__) 메서드는 반환된 엔터티가 현재 컨텍스트에서 업데이트되지 않는 시나리오에서 성능을 향상시킵니다. `AsNoTracking`은 이 자습서의 뒷부분에서 설명합니다.
 
 ### <a name="display-related-enrollments-on-the-details-page"></a>세부 정보 페이지에 관련된 등록 표시
 
 *Pages/Students/Details.cshtml*을 엽니다. 등록의 목록을 표시하려면 다음 강조 표시된 코드를 추가합니다.
 
- <!--2do ricka. if doesn't change, remove dup --> [!code-cshtml[](intro/samples/cu/Pages/Students/Details1.cshtml?highlight=32-53)]
+[!code-cshtml[](intro/samples/cu21/Pages/Students/Details.cshtml?highlight=32-53)]
 
 코드를 붙여넣은 후 코드 들여쓰기가 잘못된 경우 CTRL-K-D를 눌러 수정합니다.
 
@@ -109,28 +112,30 @@ ms.locfileid: "36278689"
 
 다음 코드로 *Pages/Students/Create.cshtml.cs*의 `OnPostAsync` 메서드를 업데이트합니다.
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Create.cshtml.cs?name=snippet_OnPostAsync)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Create.cshtml.cs?name=snippet_OnPostAsync)]
 
 <a name="TryUpdateModelAsync"></a>
+
 ### <a name="tryupdatemodelasync"></a>TryUpdateModelAsync
 
 [TryUpdateModelAsync](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.tryupdatemodelasync#Microsoft_AspNetCore_Mvc_ControllerBase_TryUpdateModelAsync_System_Object_System_Type_System_String_) 코드를 검사합니다.
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Create.cshtml.cs?name=snippet_TryUpdateModelAsync)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Create.cshtml.cs?name=snippet_TryUpdateModelAsync)]
 
-위의 코드에서 `TryUpdateModelAsync<Student>`는 [PageModel](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.pagemodel?view=aspnetcore-2.0)의 [PageContext](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.pagemodel.pagecontext?view=aspnetcore-2.0#Microsoft_AspNetCore_Mvc_RazorPages_PageModel_PageContext) 속성에서 게시된 양식 값을 사용하여 `emptyStudent` 개체를 업데이트하려고 시도합니다. `TryUpdateModelAsync`는 나열된 속성만 업데이트합니다(`s => s.FirstMidName, s => s.LastName, s => s.EnrollmentDate`).
+위의 코드에서 `TryUpdateModelAsync<Student>`는 [PageModel](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.pagemodel)의 [PageContext](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.pagemodel.pagecontext#Microsoft_AspNetCore_Mvc_RazorPages_PageModel_PageContext) 속성에서 게시된 양식 값을 사용하여 `emptyStudent` 개체를 업데이트하려고 시도합니다. `TryUpdateModelAsync`는 나열된 속성만 업데이트합니다(`s => s.FirstMidName, s => s.LastName, s => s.EnrollmentDate`).
 
 앞의 예제에서:
 
-* 두 번째 인수(` "student", // Prefix`)는 값 조회에 사용하는 접두사입니다. 대/소문자를 구분하지 않습니다.
+* 두 번째 인수(`"student", // Prefix`)는 값 조회에 사용하는 접두사입니다. 대/소문자를 구분하지 않습니다.
 * 게시된 양식 값은 [모델 바인딩](xref:mvc/models/model-binding#how-model-binding-works)을 사용한 `Student` 모델의 형식으로 변환됩니다.
 
 <a id="overpost"></a>
+
 ### <a name="overposting"></a>초과 게시
 
 게시된 값으로 `TryUpdateModel`을 사용하는 것은 초과 게시가 방지되는 보안 모범 사례입니다. 예를 들어, 학생 엔터티가 이 웹 페이지가 업데이트하거나 추가해서는 안 되는 `Secret` 속성을 포함한다고 가정합니다.
 
-[!code-csharp[](intro/samples/cu/Models/StudentZsecret.cs?name=snippet_Intro&highlight=7)]
+[!code-csharp[](intro/samples/cu21/Models/StudentZsecret.cs?name=snippet_Intro&highlight=7)]
 
 앱에 만들기/업데이트 Razor 페이지의 `Secret` 필드가 없는 경우에도 해커는 초과 게시를 통해 `Secret` 값을 설정할 수 있습니다. 해커가 Fiddler와 같은 도구를 사용하거나 일부 JavaScript를 작성하여 `Secret` 양식 값을 게시할 수 있습니다. 원본 코드는 학생 인스턴스를 만들 때 모델 바인더가 사용하는 필드를 제한하지 않습니다.
 
@@ -141,35 +146,36 @@ ms.locfileid: "36278689"
 값 “OverPost”가 삽입된 된 행의 `Secret` 속성에 성공적으로 추가되었습니다. 앱 디자이너는 `Secret` 속성이 만들기 페이지를 통해 설정되는 것을 의도하지 않았습니다.
 
 <a name="vm"></a>
+
 ### <a name="view-model"></a>뷰 모델
 
 뷰 모델은 일반적으로 응용 프로그램에서 사용되는 모델에 포함된 속성의 하위 집합을 포함합니다. 응용 프로그램 모델은 흔히 도메인 모델이라고 합니다. 도메인 모델은 일반적으로 DB의 해당 엔터티에 필요한 모든 속성을 포함합니다. 뷰 모델은 UI 계층에 필요한 속성만 포함합니다(예: 만들기 페이지). 뷰 모델 외에도 일부 앱은 바인딩 모델 또는 입력 모델을 사용하여 Razor 페이지 페이지 모델 클래스와 브라우저 간에 데이터를 전달합니다. 다음 `Student` 뷰 모델을 살펴보세요.
 
-[!code-csharp[](intro/samples/cu/Models/StudentVM.cs)]
+[!code-csharp[](intro/samples/cu21/Models/StudentVM.cs)]
 
 뷰 모델은 초과 게시를 방지하기 위한 다른 방법을 제공합니다. 뷰 모델은 확인(표시)하거나 업데이트하는 속성만 포함합니다.
 
 다음 코드는 `StudentVM` 뷰 모델을 사용하여 새 학생을 만듭니다.
 
-[!code-csharp[](intro/samples/cu/Pages/Students/CreateVM.cshtml.cs?name=snippet_OnPostAsync)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/CreateVM.cshtml.cs?name=snippet_OnPostAsync)]
 
-[SetValues](/dotnet/api/microsoft.entityframeworkcore.changetracking.propertyvalues.setvalues?view=efcore-2.0#Microsoft_EntityFrameworkCore_ChangeTracking_PropertyValues_SetValues_System_Object_) 메서드는 다른 [PropertyValues](/dotnet/api/microsoft.entityframeworkcore.changetracking.propertyvalues) 개체의 값을 읽어서 이 개체의 값을 설정합니다. `SetValues`는 속성 이름 일치를 사용합니다. 뷰 모델 형식은 모델 형식과 연결될 필요는 없으며 일치하는 속성만 있으면 됩니다.
+[SetValues](/dotnet/api/microsoft.entityframeworkcore.changetracking.propertyvalues.setvalues#Microsoft_EntityFrameworkCore_ChangeTracking_PropertyValues_SetValues_System_Object_) 메서드는 다른 [PropertyValues](/dotnet/api/microsoft.entityframeworkcore.changetracking.propertyvalues) 개체의 값을 읽어서 이 개체의 값을 설정합니다. `SetValues`는 속성 이름 일치를 사용합니다. 뷰 모델 형식은 모델 형식과 연결될 필요는 없으며 일치하는 속성만 있으면 됩니다.
 
-`StudentVM`을 사용하려면 `Student` 대신 `StudentVM`을 사용하도록 [CreateVM.cshtml](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/cu/Pages/Students/CreateVM.cshtml)을 업데이트해야 합니다.
+`StudentVM`을 사용하려면 `Student` 대신 `StudentVM`을 사용하도록 [CreateVM.cshtml](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/cu21/Pages/Students/CreateVM.cshtml)을 업데이트해야 합니다.
 
-Razor 페이지에서 `PageModel` 파생 클래스는 뷰 모델입니다. 
+Razor 페이지에서 `PageModel` 파생 클래스는 뷰 모델입니다.
 
 ## <a name="update-the-edit-page"></a>편집 페이지 업데이트
 
 편집 페이지를 위한 페이지 모델을 업데이트합니다. 주요 변경 내용은 강조 표시되어 있습니다.
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Edit.cshtml.cs?name=snippet_OnPostAsync&highlight=20,36)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Edit.cshtml.cs?name=snippet_OnPostAsync&highlight=20,36)]
 
 코드 변경은 만들기 페이지와 유사합니다. 단, 다음과 같은 몇 가지 예외가 있습니다.
 
 * `OnPostAsync`에는 선택적 `id` 매개 변수가 있습니다.
 * 현재 학생은 빈 학생을 만드는 대신 DB에서 페치됩니다.
-* `FirstOrDefaultAsync`는 [FindAsync](/dotnet/api/microsoft.entityframeworkcore.dbset-1.findasync?view=efcore-2.0)로 대체되었습니다. `FindAsync`는 기본 키의 엔터티를 선택하는 경우 적합합니다. 자세한 내용은 [FindAsync](#FindAsync)를 참조하세요.
+* `FirstOrDefaultAsync`는 [FindAsync](/dotnet/api/microsoft.entityframeworkcore.dbset-1.findasync)로 대체되었습니다. `FindAsync`는 기본 키의 엔터티를 선택하는 경우 적합합니다. 자세한 내용은 [FindAsync](#FindAsync)를 참조하세요.
 
 ### <a name="test-the-edit-and-create-pages"></a>편집 및 만들기 페이지 테스트
 
@@ -177,9 +183,9 @@ Razor 페이지에서 `PageModel` 파생 클래스는 뷰 모델입니다.
 
 ## <a name="entity-states"></a>엔터티 상태
 
-DB 컨텍스트는 메모리의 엔터티가 해당하는 DB의 행과 동기화하는지 여부를 추적합니다. DB 컨텍스트 동기화 정보는 `SaveChanges`가 호출될 때 수행할 작업을 결정합니다. 예를 들어 새 엔터티가 `Add` 메서드에 전달된 경우 해당 엔터티의 상태가 `Added`로 설정됩니다. `SaveChanges`가 호출되면 DB 컨텍스트가 SQL INSERT 명령을 발급합니다.
+DB 컨텍스트는 메모리의 엔터티가 해당하는 DB의 행과 동기화하는지 여부를 추적합니다. DB 컨텍스트 동기화 정보는 [SaveChangesAsync](/dotnet/api/microsoft.entityframeworkcore.dbcontext.savechangesasync#Microsoft_EntityFrameworkCore_DbContext_SaveChangesAsync_System_Threading_CancellationToken_)가 호출될 때 수행할 작업을 결정합니다. 예를 들어 새 엔터티가 [AddAsync](/dotnet/api/microsoft.entityframeworkcore.dbcontext.addasync) 메서드에 전달된 경우 해당 엔터티의 상태가 [추가됨](/dotnet/api/microsoft.entityframeworkcore.entitystate#Microsoft_EntityFrameworkCore_EntityState_Added)으로 설정됩니다. `SaveChangesAsync`가 호출되면 DB 컨텍스트가 SQL INSERT 명령을 발급합니다.
 
-엔터티는 다음 상태 중 하나일 수 있습니다.
+엔터티는 [다음 상태](/dotnet/api/microsoft.entityframeworkcore.entitystate) 중 하나일 수 있습니다.
 
 * `Added`: 엔터티가 아직 DB에 존재하지 않습니다. `SaveChanges` 메서드가 INSERT 문을 발급합니다.
 
@@ -199,11 +205,11 @@ DB 컨텍스트는 메모리의 엔터티가 해당하는 DB의 행과 동기화
 
 이 섹션에서는 `SaveChanges`에 대한 호출이 실패하는 경우 사용자 지정 오류 메시지를 구현하도록 코드가 추가됩니다. 가능한 오류 메시지를 포함하는 문자열을 추가합니다.
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Delete.cshtml.cs?name=snippet1&highlight=12)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Delete.cshtml.cs?name=snippet1&highlight=12)]
 
 `OnGetAsync` 메서드를 다음 코드로 바꿉니다.
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Delete.cshtml.cs?name=snippet_OnGetAsync&highlight=1,9,17-20)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Delete.cshtml.cs?name=snippet_OnGetAsync&highlight=1,9,17-20)]
 
 위의 코드는 선택적 매개 변수 `saveChangesError`를 포함합니다. `saveChangesError`는 학생 개체 삭제에 실패한 후 메서드가 호출되는지 여부를 나타냅니다. 일시적인 네트워크 문제로 인해 삭제 작업이 실패할 수 있습니다. 일시적인 네트워크 오류는 클라우드에서 발생 가능성이 더 큽니다. `saveChangesError`는 삭제 페이지 `OnGetAsync`가 UI에서 호출되는 경우 false입니다. `OnGetAsync`가 `OnPostAsync`에 의해 호출되면(삭제 작업이 실패했으므로) `saveChangesError` 매개 변수는 true입니다.
 
@@ -211,9 +217,9 @@ DB 컨텍스트는 메모리의 엔터티가 해당하는 DB의 행과 동기화
 
 `OnPostAsync`를 다음 코드로 바꿉니다.
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Delete.cshtml.cs?name=snippet_OnPostAsync)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Delete.cshtml.cs?name=snippet_OnPostAsync)]
 
-앞의 코드는 선택한 엔터티를 검색한 다음, `Remove` 메서드를 호출하여 엔터티의 상태를 `Deleted`로 설정합니다. `SaveChanges`가 호출되면 SQL DELETE 명령이 생성됩니다. `Remove`가 실패하는 경우:
+앞의 코드는 선택한 엔터티를 검색한 다음, [Remove](/dotnet/api/microsoft.entityframeworkcore.dbcontext.remove#Microsoft_EntityFrameworkCore_DbContext_Remove_System_Object_) 메서드를 호출하여 엔터티의 상태를 `Deleted`로 설정합니다. `SaveChanges`가 호출되면 SQL DELETE 명령이 생성됩니다. `Remove`가 실패하는 경우:
 
 * DB 예외가 catch되었습니다.
 * 삭제 페이지 `OnGetAsync` 메서드가 `saveChangesError=true`로 호출됩니다.
@@ -221,8 +227,10 @@ DB 컨텍스트는 메모리의 엔터티가 해당하는 DB의 행과 동기화
 ### <a name="update-the-delete-razor-page"></a>삭제 Razor 페이지 업데이트
 
 다음 강조 표시된 오류 메시지를 삭세 Razor 페이지에 추가합니다.
-
-[!code-cshtml[](intro/samples/cu/Pages/Students/Delete.cshtml?range=1-13&highlight=10)]
+<!--
+[!code-cshtml[](intro/samples/cu21/Pages/Students/Delete.cshtml?name=snippet&highlight=11)]
+-->
+[!code-cshtml[](intro/samples/cu21/Pages/Students/Delete.cshtml?range=1-13&highlight=10)]
 
 삭제를 테스트합니다.
 
@@ -237,6 +245,8 @@ Razor 페이지에 올바른 `@page` 지시문이 포함되어 있는지 확인�
 ```
 
 각 Razor 페이지는 `@page` 지시문을 포함해야 합니다.
+
+::: moniker-end
 
 > [!div class="step-by-step"]
 > [이전](xref:data/ef-rp/intro)

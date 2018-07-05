@@ -7,12 +7,12 @@ ms.author: rachelap
 ms.custom: mvc
 ms.date: 05/22/2018
 uid: tutorials/signalr
-ms.openlocfilehash: 8762a4be1032d58014dd32dfdd3707197e14c6f9
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 62cef2d6f032caa2f048cfdd49a225d975dad10d
+ms.sourcegitcommit: 7003d27b607e529642ded0400aa48ae692a0e666
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36297202"
+ms.lasthandoff: 06/27/2018
+ms.locfileid: "37033344"
 ---
 # <a name="get-started-with-signalr-on-aspnet-core"></a>ASP.NET Core에서 SignalR 시작
 
@@ -29,9 +29,9 @@ ms.locfileid: "36297202"
 > * 클라이언트에 콘텐츠를 푸시하는 SignalR Hub를 만듭니다.
 > * `Startup` 클래스를 수정하고 앱을 구성합니다.
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/signalr/get-started/sample/)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/tutorials/signalr/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
-# <a name="prerequisites"></a>전제 조건
+## <a name="prerequisites"></a>전제 조건
 
 다음 소프트웨어를 설치합니다.
 
@@ -100,7 +100,7 @@ Visual Studio에는 **ASP.NET Core 웹 응용 프로그램** 템플릿의 일부
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
 
-1. **파일** > **새로 만들기** > **파일**을 선택하고 **Visual C# 클래스**를 선택하여 클래스를 프로젝트에 추가합니다. 파일 이름을 *ChatHub*로 지정합니다.
+1. **파일** > **새로 만들기** > **파일**을 선택하고 **Visual C# 클래스**를 선택하여 클래스를 프로젝트에 추가합니다. `ChatHub` 클래스 및 *ChatHub.cs* 파일의 이름을 지정합니다.
 
 2. `Microsoft.AspNetCore.SignalR.Hub`에서 상속합니다. `Hub` 클래스는 데이터 전송 및 수신뿐만 아니라, 연결 및 그룹 관리를 위한 속성 및 이벤트도 포함합니다.
 
@@ -112,13 +112,13 @@ Visual Studio에는 **ASP.NET Core 웹 응용 프로그램** 템플릿의 일부
 
 1. Visual Studio Code에서 *SignalRChat* 폴더를 엽니다.
 
-2. 메뉴에서 **파일** > **새 파일**을 선택하여 프로젝트에 클래스를 추가합니다.
+2. 메뉴에서 **파일** > **새 파일**을 선택하여 프로젝트에 클래스를 추가합니다. `ChatHub` 클래스 및 *ChatHub.cs* 파일의 이름을 지정합니다.
 
 3. `Microsoft.AspNetCore.SignalR.Hub`에서 상속합니다. `Hub` 클래스는 클라이언트에 대한 데이터 전송 및 수신뿐만 아니라, 연결 및 그룹 관리를 위한 속성 및 이벤트를 포함합니다.
 
 4. 클래스에 `SendMessage` 메서드를 추가합니다. `SendMessage` 메서드는 연결된 모든 채팅 클라이언트에 메시지를 보냅니다. SignalR은 비동기이기 때문에 [작업](/dotnet/api/system.threading.tasks.task)을 반환합니다. 비동기 코드는 더 잘 확장됩니다.
 
-   [!code-csharp[Startup](signalr/sample/Hubs/ChatHub.cs?range=6-12)]
+   [!code-csharp[Startup](signalr/sample/Hubs/ChatHub.cs)]
 
 -----
 
