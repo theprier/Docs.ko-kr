@@ -4,24 +4,21 @@ title: '[어떻게 할까요?] 전체 기능 고객 로그인 포털 만들기 |
 author: microsoft
 description: 마스터 페이지, 테마, 멤버 자격, 역할, 사이트 탐색, 사용자 프로필에 대해 자세히 알아보려면 가상 고객 포털 생성 과정을 따라 및...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/05/2006
-ms.topic: article
 ms.assetid: dfaffea8-c71c-4fa0-9f97-585c9ac95529
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-create-a-full-featured-customer-login-portal
 msc.type: video
-ms.openlocfilehash: 8875dc76961c274cf216d4bfa84ef401ac19fbe3
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f6c1dedbac2c3b4679e53cd1979ef894a9a6b414
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37378864"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37842852"
 ---
-<a name="how-do-i-create-a-full-featured-customer-login-portal"></a><span data-ttu-id="81d1d-104">[어떻게 할까요?] 전체 기능 고객 로그인 포털 만들기</span><span class="sxs-lookup"><span data-stu-id="81d1d-104">[How Do I:] Create a Full-Featured Customer Login Portal?</span></span>
+<a name="how-do-i-create-a-full-featured-customer-login-portal"></a><span data-ttu-id="e6c97-104">[어떻게 할까요?] 전체 기능 고객 로그인 포털 만들기</span><span class="sxs-lookup"><span data-stu-id="e6c97-104">[How Do I:] Create a Full-Featured Customer Login Portal?</span></span>
 ====================
-<span data-ttu-id="81d1d-105">[Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="81d1d-105">by [Microsoft](https://github.com/microsoft)</span></span>
+<span data-ttu-id="e6c97-105">[Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="e6c97-105">by [Microsoft](https://github.com/microsoft)</span></span>
 
-<span data-ttu-id="81d1d-106">마스터 페이지, 테마, 멤버 자격, 역할, 사이트 탐색, 사용자 프로필 및 웹 사이트 관리 도구에 대해 자세히 알아보려면 가상 고객 포털 생성을 통해 수행 합니다.</span><span class="sxs-lookup"><span data-stu-id="81d1d-106">Follow along through the creation of a fictitious customer portal to learn about master pages, themes, membership, roles, site navigation, user profiles, and the Web Site Administration Tool.</span></span>
+<span data-ttu-id="e6c97-106">마스터 페이지, 테마, 멤버 자격, 역할, 사이트 탐색, 사용자 프로필 및 웹 사이트 관리 도구에 대해 자세히 알아보려면 가상 고객 포털 생성을 통해 수행 합니다.</span><span class="sxs-lookup"><span data-stu-id="e6c97-106">Follow along through the creation of a fictitious customer portal to learn about master pages, themes, membership, roles, site navigation, user profiles, and the Web Site Administration Tool.</span></span>
 
-[<span data-ttu-id="81d1d-107">&#9654;비디오 (27 분)</span><span class="sxs-lookup"><span data-stu-id="81d1d-107">&#9654; Watch video (27 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-create-a-full-featured-customer-login-portal)
+[<span data-ttu-id="e6c97-107">&#9654;비디오 (27 분)</span><span class="sxs-lookup"><span data-stu-id="e6c97-107">&#9654; Watch video (27 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-create-a-full-featured-customer-login-portal)
