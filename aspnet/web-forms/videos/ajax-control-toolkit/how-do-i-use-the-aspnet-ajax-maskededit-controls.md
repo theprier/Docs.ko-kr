@@ -4,19 +4,16 @@ title: '[어떻게 할까요?] ASP.NET AJAX MaskedEdit 컨트롤 사용 | Micros
 author: JoeStagner
 description: ASP.NET AJAX Control Toolkit에 MaskedEdit 컨트롤 줄어들고 MaskedEditValidator 컨트롤 함께 작동 하는 프롬프트, 스타일 및 d의 유효성을 검사 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/04/2007
-ms.topic: article
 ms.assetid: 806a8bfe-54be-4c96-8ffd-66303cc2b2f9
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-maskededit-controls
 msc.type: video
-ms.openlocfilehash: b725819313eae960ba96847d0a8db00668eb7ed0
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 57a6d27512912d512c6fbf538a7208370843c85b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37392557"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37829838"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-maskededit-controls"></a>[어떻게 할까요?] ASP.NET AJAX MaskedEdit 컨트롤 사용
 ====================

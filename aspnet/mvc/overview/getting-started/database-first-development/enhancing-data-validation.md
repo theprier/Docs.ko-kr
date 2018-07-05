@@ -4,19 +4,16 @@ title: 'ASP.NET MVC를 사용 하 여 먼저 EF Database: 데이터 유효성 �
 author: tfitzmac
 description: MVC, Entity Framework 및 ASP.NET 스 캐 폴딩을 사용 하 여, 기존 데이터베이스에 대 한 인터페이스를 제공 하는 웹 응용 프로그램을 만들 수 있습니다. 이 자습서 seri...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 12/29/2014
-ms.topic: article
 ms.assetid: 0ed5e67a-34c0-4b57-84a6-802b0fb3cd00
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/enhancing-data-validation
 msc.type: authoredcontent
-ms.openlocfilehash: a328aa8aec2c512d77ddabec31b3785b8742e018
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 9a7c6e200caa72aea61a80d6496ec1a1569e5e48
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37376716"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37816320"
 ---
 <a name="ef-database-first-with-aspnet-mvc-enhancing-data-validation"></a>ASP.NET MVC를 사용 하 여 먼저 EF Database: 데이터 유효성 검사 향상
 ====================

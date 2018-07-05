@@ -4,19 +4,16 @@ title: 마스터/세부 정보 (VB) 세부 정보 DataList와 함께 마스터 �
 author: rick-anderson
 description: 이 자습서에서 압축할 이전 자습서의 2 페이지 분량 마스터/세부 정보 보고서를 단일 페이지에 t에 범주 이름 글머리 기호 목록을 표시 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/17/2006
-ms.topic: article
 ms.assetid: ee20742f-6fb7-49a0-a009-058fe363aacb
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5b7fdcb5ba38e89b073960d6bce473c3a5aadf8b
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 90629046869460869d6c85e179980811b7bede51
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37389640"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37841994"
 ---
 <a name="masterdetail-using-a-bulleted-list-of-master-records-with-a-details-datalist-vb"></a>마스터/세부 정보 (VB) 세부 정보 DataList와 함께 마스터 레코드의 글머리 기호 목록을 사용 하 여
 ====================

@@ -4,19 +4,16 @@ title: '반복 #4 – 확인 응용 프로그램을 느슨하게 결합 (C#) | M
 author: microsoft
 description: 이 세 번째 반복에서는 활용 쉽게 유지 관리 하 고 연락처 관리자 응용 프로그램을 수정 하려면 몇 가지 소프트웨어 디자인 패턴입니다. For...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/20/2009
-ms.topic: article
 ms.assetid: 829f589f-e201-4f6e-9ae6-08ae84322065
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-4-make-the-application-loosely-coupled-cs
 msc.type: authoredcontent
-ms.openlocfilehash: b440508a245c1db0c85693f8f8d2b60acf63472f
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 8eff8088398d0f7afc020b2bbdf41526ae51591a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37372529"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37829501"
 ---
 <a name="iteration-4--make-the-application-loosely-coupled-c"></a>반복 #4 – 응용 프로그램을 느슨하게 결합 (C#) 확인
 ====================

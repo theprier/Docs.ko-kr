@@ -4,19 +4,16 @@ title: 일괄 처리 삽입 (C#) | Microsoft Docs
 author: rick-anderson
 description: 단일 작업에서 여러 데이터베이스 레코드를 삽입 하는 방법에 알아봅니다. 사용자 인터페이스 계층에서 사용자를 여러 n을 입력할 수 있도록 GridView 확장 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/26/2007
-ms.topic: article
 ms.assetid: cf025e08-48fc-4385-b176-8610aa7b5565
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-inserting-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 347cd862afc70fa9e3386246ae14d989c5de1ba6
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 9979a991935d97ef7c3b2ac62666da318b95d063
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37370329"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37829061"
 ---
 <a name="batch-inserting-c"></a>일괄 삽입 (C#)
 ====================

@@ -4,19 +4,16 @@ title: 웹 배포용 Team Foundation Server 구성 | Microsoft Docs
 author: jrjlee
 description: 이 자습서에서는 Team Foundation Server (TFS) 2010 솔루션을 빌드하고 다양 한 대상 환경에 웹 콘텐츠를 배포할 수를 구성 하는 방법을 보여줍니다. 이 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: ff55233a-e795-4007-a4fc-861fe1bb590b
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-team-foundation-server-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 6430a96a8e430a8a30d062ec22868de829680806
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 0155f8dc4ca05a91ed8921f83aa6fa1b0b59c1a5
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37365343"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37829689"
 ---
 <a name="configuring-team-foundation-server-for-web-deployment"></a>웹 배포용 Team Foundation Server 구성
 ====================

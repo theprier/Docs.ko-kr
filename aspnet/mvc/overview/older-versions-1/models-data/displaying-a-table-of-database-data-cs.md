@@ -4,19 +4,16 @@ title: 데이터베이스 데이터 (C#)의 테이블 표시 | Microsoft Docs
 author: microsoft
 description: 이 자습서에서는 데이터베이스 레코드 집합을 표시 하는 두 가지 방법에 살펴보겠습니다. 서식 지정 된 HTML에서 데이터베이스 레코드 집합 데이터는 두 가지 방법을 알아보겠습니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/07/2008
-ms.topic: article
 ms.assetid: d6e758b6-6571-484d-a132-34ee6c47747a
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/displaying-a-table-of-database-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 06dc5c9398adb45d5a5ff8f57ff42816c983ee04
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 8409df940e0b5276c4f108531423aadeb2545ca3
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37395982"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37828181"
 ---
 <a name="displaying-a-table-of-database-data-c"></a>데이터베이스 데이터 (C#)의 테이블 표시
 ====================

@@ -4,19 +4,16 @@ title: 마스터/세부 정보 필터링 (VB) DropDownList 한 개로 | Microsof
 author: rick-anderson
 description: 이 자습서에서는 단일 웹 페이지 'master' 레코드 및 DataList displ 표시할 Dropdownlist를 사용 하 여 마스터/세부 정보 보고서를 표시 하는 방법을 표시 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/18/2007
-ms.topic: article
 ms.assetid: ad0f1014-1eff-465f-bdc6-93058de00e44
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/filtering-scenarios-with-the-datalist-and-repeater/master-detail-filtering-with-a-dropdownlist-datalist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e58448da80f1024c2007e23b07c9a1f676ab0980
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: e88a7459529e003b73ef5a42456de3501e3db461
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37377349"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37829323"
 ---
 <a name="masterdetail-filtering-with-a-dropdownlist-vb"></a>마스터/세부 정보 (VB) DropDownList 한 개로 필터링
 ====================

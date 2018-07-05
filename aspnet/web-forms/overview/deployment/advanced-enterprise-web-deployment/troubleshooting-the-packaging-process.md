@@ -4,19 +4,16 @@ title: 패키징 프로세스 문제 해결 | Microsoft Docs
 author: jrjlee
 description: 이 항목에서는 M EnablePackageProcessLoggingAndAssert 속성을 사용 하 여 패키징 프로세스에 대 한 자세한 정보를 수집 하는 방법 설명 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: 794bd819-00fc-47e2-876d-fc5d15e0de1c
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/troubleshooting-the-packaging-process
 msc.type: authoredcontent
-ms.openlocfilehash: 22086d3c154214457fe35794998accdf6109471c
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: e262968ffb1f847e393e13b4e82d4f1a6029028e
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37384146"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37802917"
 ---
 <a name="troubleshooting-the-packaging-process"></a>패키징 프로세스 문제 해결
 ====================

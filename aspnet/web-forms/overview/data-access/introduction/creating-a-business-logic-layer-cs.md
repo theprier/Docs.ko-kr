@@ -4,19 +4,16 @@ title: 비즈니스 논리 레이어 (C#) 만들기 | Microsoft Docs
 author: rick-anderson
 description: 이 자습서에는 계층 BLL (비즈니스 논리) t 간의 데이터 교환 위한 중간자로 사용 되는 비즈니스 규칙에 중앙 집중화 하는 방법을 살펴보겠습니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/31/2010
-ms.topic: article
 ms.assetid: 85554606-47cb-4e4f-9848-eed9da579056
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-business-logic-layer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 191b85b4e57055041d3fc281a9ff30e397b51ec7
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 1e9fc60d9f6867063c3d4dc4faa8d73a683ec87c
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37373148"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37803138"
 ---
 <a name="creating-a-business-logic-layer-c"></a>비즈니스 논리 레이어 (C#) 만들기
 ====================

@@ -4,19 +4,16 @@ title: 편집기 컨트롤 | Microsoft Docs
 author: JoeStagner
 description: 이 비디오에서는 Microsoft AJAX Control Toolkit에서 새 편집기 WYSIWYG 편집기 컨트롤을 사용 하는 방법을 보여 줍니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/13/2009
-ms.topic: article
 ms.assetid: 8c766d28-60c0-423b-afaa-7cb2a93f8d7e
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/editor-control
 msc.type: video
-ms.openlocfilehash: 6498deb68897a81647c3478de2d1ab8939adbfb3
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 5389e7d681d20f13e043778c557c8159221b4f91
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37387353"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37842473"
 ---
 <a name="editor-control"></a>편집기 컨트롤
 ====================

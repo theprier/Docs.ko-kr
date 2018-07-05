@@ -4,19 +4,16 @@ title: '[어떻게 할까요?] 선언적으로 프로그래밍 방식으로 마�
 author: rick-anderson
 description: 이 비디오 Chris Pels의 몇 가지 측면을 정의 하 고 ASP.NET 웹 사이트에서 마스터 페이지를 사용 하 여 표시 됩니다. 첫째, 마스터 페이지 declarati를 만드는 방법 보기...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/21/2008
-ms.topic: article
 ms.assetid: 4f5f7805-373f-4dc3-b7f6-219edf7e66a3
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-work-with-master-pages-declaratively-and-programmatically
 msc.type: video
-ms.openlocfilehash: 928f633372c3a65419dcf988c53f3b2ca73fe524
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: dc0569a457e2aea378a0fa49e80d9f1e794c256f
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37385877"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37802424"
 ---
 <a name="how-do-i-work-with-master-pages-declaratively-and-programmatically"></a>[어떻게 할까요?] 선언적으로 프로그래밍 방식으로 마스터 페이지 작업
 ====================

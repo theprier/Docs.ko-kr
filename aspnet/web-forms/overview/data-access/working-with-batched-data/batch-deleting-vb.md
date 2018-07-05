@@ -4,19 +4,16 @@ title: 일괄 처리 (VB)를 삭제 합니다. | Microsoft Docs
 author: rick-anderson
 description: 단일 작업에서 여러 데이터베이스 레코드를 삭제 하는 방법에 알아봅니다. 사용자 인터페이스 계층에는 향상 된 GridView에서 만든 이전 tut 시 빌드...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/26/2007
-ms.topic: article
 ms.assetid: 4fb72f75-32ab-4bf7-a764-be20367be726
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-deleting-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c99ec343d9197e5d2aa7b1a7e49278d13b4e16cf
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: c7a0db8708c95cc348619cadd21514f4bea2e553
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37368248"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37815991"
 ---
 <a name="batch-deleting-vb"></a>일괄 삭제 (VB)
 ====================

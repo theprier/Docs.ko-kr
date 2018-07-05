@@ -4,19 +4,16 @@ title: 마스터/세부 정보 필터링 (VB) DropDownList 한 개로 | Microsof
 author: rick-anderson
 description: 이 자습서에서는 마스터 레코드 DropDownList 컨트롤과 GridView에서 선택한 목록 항목의 세부 정보를 표시 하는 방법을 살펴보겠습니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/31/2010
-ms.topic: article
 ms.assetid: ea44717e-ab2e-46cd-a692-e4a9c0de194c
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-with-a-dropdownlist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d15348812abf88fa35485c0d3415b2683225b6b5
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a1bd1a20950376244c1d461d139f3eee6bc9a9cc
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37386697"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37816258"
 ---
 <a name="masterdetail-filtering-with-a-dropdownlist-vb"></a>마스터/세부 정보 (VB) DropDownList 한 개로 필터링
 ====================

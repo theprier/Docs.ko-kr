@@ -4,19 +4,16 @@ title: ASP.NET Web API 2에서에서 종속성 주입 | Microsoft Docs
 author: MikeWasson
 description: 이 자습서에서는 ASP.NET Web API 컨트롤러에 종속성을 주입 하는 방법을 보여줍니다. 자습서 웹 API 2 Unity Application Block에 사용 되는 소프트웨어 버전 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/20/2014
-ms.topic: article
 ms.assetid: e3d3e7ba-87f0-4032-bdd3-31f3c1aa9d9c
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/overview/advanced/dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: 92ce5eadc7f371540295c1c4279f817dba09f8e3
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a470c778fd5998006a0bf8edb08b62a75d72c48c
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37369174"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37802677"
 ---
 <a name="dependency-injection-in-aspnet-web-api-2"></a>ASP.NET Web API 2에서에서 종속성 주입
 ====================

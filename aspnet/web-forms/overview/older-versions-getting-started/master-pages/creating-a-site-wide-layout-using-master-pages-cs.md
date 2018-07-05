@@ -4,19 +4,16 @@ title: 마스터 페이지 (C#)를 사용 하 여 사이트 전체 레이아웃 
 author: rick-anderson
 description: 이 자습서에서는 기본 사항 마스터 페이지를 보여 줍니다. 즉, 마스터 페이지 있을까요 하나 마스터 페이지를 만들고, cr은 어떻게 콘텐츠 자리 표시자를 이란...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/21/2008
-ms.topic: article
 ms.assetid: 78f8d194-03b9-44a5-8255-90e7cd1c2ee1
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/creating-a-site-wide-layout-using-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: cea5894b269209326391de49003ec1d19c8e87f2
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: cf9264f6569fe1a5c0369b17a2358c5207cad6ad
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37398552"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37829281"
 ---
 <a name="creating-a-site-wide-layout-using-master-pages-c"></a>마스터 페이지 (C#)를 사용 하 여 사이트 전체 레이아웃 만들기
 ====================

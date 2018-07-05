@@ -4,19 +4,16 @@ title: (4 / 10) ASP.NET MVC 응용 프로그램을 위한 더 복잡 한 데이�
 author: tdykstra
 description: Contoso University 샘플 웹 응용 프로그램에는 Entity Framework 5 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 4 응용 프로그램을 만드는 방법을 보여 줍니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/30/2013
-ms.topic: article
 ms.assetid: f81f3d80-3674-4d8e-a9b1-87feed1a93c9
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-a-more-complex-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: a7fbcf8dc41086764e1e8ba9055929bde132192a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: beda9585a3050e35c250d0cb7ab1dc8a464efa3d
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37375741"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37816245"
 ---
 <a name="creating-a-more-complex-data-model-for-an-aspnet-mvc-application-4-of-10"></a>(4 / 10) ASP.NET MVC 응용 프로그램을 위한 더 복잡 한 데이터 모델 만들기
 ====================

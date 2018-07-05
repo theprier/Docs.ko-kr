@@ -4,19 +4,16 @@ title: 사용자 및 역할 프로덕션 웹 사이트 (C#) | Microsoft Docs
 author: rick-anderson
 description: ASP.NET 웹 사이트 관리 도구 (WSAT) 멤버 자격 및 역할 설정을 구성 하 고 만들기를 위한 웹 기반 사용자 인터페이스를 제공 편집을 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/09/2009
-ms.topic: article
 ms.assetid: dbc54313-5d05-4285-98b3-726edea6d0c9
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/users-and-roles-on-the-production-website-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a97241cc41d2e2ffd923eafa5e09d5ea82a640f7
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f8e714aea2839cc654dac0da310db779f632a26c
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37389960"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37802460"
 ---
 <a name="users-and-roles-on-the-production-website-c"></a>프로덕션 웹 사이트 (C#)의 사용자 및 역할
 ====================

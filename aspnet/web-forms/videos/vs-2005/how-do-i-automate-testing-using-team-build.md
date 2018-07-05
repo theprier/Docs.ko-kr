@@ -4,19 +4,16 @@ title: '[어떻게 할까요?] Team Build를 사용 하 여 테스트 자동화 
 author: rick-anderson
 description: 이 비디오에서는 Visual Studio Team System을 사용 하 여 팀 빌드 중에 실행할 자동화 된 테스트를 정의 하는 방법과 어떻게 드릴 다운할 수 있습니다를 배울...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/01/2007
-ms.topic: article
 ms.assetid: 8e8fd5a9-0e98-415a-93f5-9ad7524ae9bb
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-automate-testing-using-team-build
 msc.type: video
-ms.openlocfilehash: 7ef9f8543d2893d8731edb450cb173069c319cca
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 8d1e75ed391a34771d247330a984c5de2e0fbc99
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37385864"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37829116"
 ---
 <a name="how-do-i-automate-testing-using-team-build"></a>[어떻게 할까요?] Team Build를 사용 하 여 테스트 자동화
 ====================

@@ -4,19 +4,16 @@ title: 모델에 열 추가 | Microsoft Docs
 author: shanselman
 description: ASP.NET MVC의 기본 사항을 소개 하는 초보자를 위한 자습서입니다. 읽기 및 쓰기 데이터베이스에서 간단한 웹 응용 프로그램을 만듭니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/14/2010
-ms.topic: article
 ms.assetid: 7ae696b9-348f-4993-8ebb-a838acbe0c28
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part8
 msc.type: authoredcontent
-ms.openlocfilehash: 241f9108394561fecb15db5b6efa2661fdb128d6
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 5dbda1280c073d5d4f2d71918ca31bc44475f64d
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37361762"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37817203"
 ---
 <a name="adding-a-column-to-the-model"></a>모델에 열 추가
 ====================

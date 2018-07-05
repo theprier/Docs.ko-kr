@@ -4,19 +4,16 @@ title: '[어떻게 할까요?] 패턴 처리 후 AJAX 구현? | Microsoft 문서
 author: JoeStagner
 description: ASP.NET AJAX 프레임 워크에 연결 하 고 다양 한 클라이언트 쪽 이벤트에 응답 하도록 서버 쪽 코드를 허용 합니다. 이 비디오는 Aft를 구현 하는 방법을 알아보겠습니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/21/2007
-ms.topic: article
 ms.assetid: 9a382d8e-ea3a-4fa4-bd24-b56f9051f4db
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-implement-the-ajax-after-processing-pattern
 msc.type: video
-ms.openlocfilehash: f4a83f9c3bb827f732b8d1833b3191ae42d061c2
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: b9edac497aec78f8a8af6b782120c04975b96b3c
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37397502"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37830395"
 ---
 <a name="how-do-i-implement-the-ajax-after-processing-pattern"></a>[어떻게 할까요?] 패턴 처리 후 AJAX 구현?
 ====================

@@ -4,19 +4,16 @@ title: 데이터베이스 데이터 (VB)의 테이블 표시 | Microsoft Docs
 author: microsoft
 description: 이 자습서에서는 데이터베이스 레코드 집합을 표시 하는 두 가지 방법에 살펴보겠습니다. 서식 지정 된 HTML에서 데이터베이스 레코드 집합 데이터는 두 가지 방법을 알아보겠습니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/07/2008
-ms.topic: article
 ms.assetid: 5bb4587f-5bcd-44f5-b368-3c1709162b35
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/displaying-a-table-of-database-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f5d9062d901f28b1d64f400e13ed5eb0ca788ab8
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 0b796c424cfe3fb03f3d6eddd8812438ceea2026
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37362494"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37830275"
 ---
 <a name="displaying-a-table-of-database-data-vb"></a>데이터베이스 데이터 (VB)의 테이블 표시
 ====================

@@ -4,19 +4,16 @@ title: 프로젝트 Katana 개요 | Microsoft Docs
 author: howarddierking
 description: ASP.NET 프레임 워크는 10 년 넘게 오랫동안 및 수많은 웹 사이트 및 서비스의 개발 플랫폼이 사용 하도록 설정 합니다. 웹 응용 프로그램으로 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/30/2013
-ms.topic: article
 ms.assetid: 0ee21741-c1bf-4025-a9b0-24580cae24bc
-ms.technology: ''
 msc.legacyurl: /aspnet/overview/owin-and-katana/an-overview-of-project-katana
 msc.type: authoredcontent
-ms.openlocfilehash: 212594b503bfc17d3faa6df03e01402d2862522f
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a4c7d6cb5dc40ad68280a87acd89f60106a260a8
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37390190"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37803096"
 ---
 <a name="an-overview-of-project-katana"></a>프로젝트 Katana 개요
 ====================

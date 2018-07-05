@@ -4,19 +4,16 @@ title: 배포 게시용 웹에 대 한 데이터베이스 서버 구성 | Micros
 author: jrjlee
 description: 이 항목에서는 웹 배포 및 게시를 지원 하도록 SQL Server 2008 R2 데이터베이스 서버를 구성 하는 방법을 설명 합니다. 이 항목에 설명 된 작업은 공동...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: e7c447f9-eddf-4bbe-9f18-3326d965d093
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-database-server-for-web-deploy-publishing
 msc.type: authoredcontent
-ms.openlocfilehash: 5563b737e3fd200070951f8d281ed8015137ae35
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 9ec938298ea63609c276aed807a67722bf9bd66d
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37384461"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37841981"
 ---
 <a name="configuring-a-database-server-for-web-deploy-publishing"></a>웹 배포 게시용 데이터베이스 서버 구성
 ====================

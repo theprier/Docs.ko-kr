@@ -4,19 +4,16 @@ title: 추가 DataTable 열 (VB)를 추가 합니다. | Microsoft Docs
 author: rick-anderson
 description: 입력 데이터 집합을 만들려면 TableAdapter 마법사를 사용 하는 경우 해당 DataTable 기본 데이터베이스 쿼리에서 반환 되는 열을 포함 합니다. 하지만 있습니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/18/2007
-ms.topic: article
 ms.assetid: 1e8e65f9-fe3e-4250-810b-c90227786bed
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/adding-additional-datatable-columns-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 84cb5f267a79fe7787ea23f1dc924e10e4d6fe13
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a36f7267591e01ac2bd552385eeb22e1fda68c6e
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37402787"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37803235"
 ---
 <a name="adding-additional-datatable-columns-vb"></a>추가 DataTable 열 추가 (VB)
 ====================

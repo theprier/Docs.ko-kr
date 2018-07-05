@@ -4,19 +4,16 @@ title: 삽입, 업데이트 및 삭제 (VB)를 사용 하 여 연결 된 이벤�
 author: rick-anderson
 description: 이전, 도중 및 삽입 이후 발생 하는 이벤트를 사용 하 여 살펴보겠습니다이 자습서에서는 업데이트 또는 ASP.NET 데이터 웹 컨트롤의 작업을 삭제 합니다. W...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/17/2006
-ms.topic: article
 ms.assetid: c9bd10a7-eff8-4d8c-bec9-963c2aef2d6e
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/examining-the-events-associated-with-inserting-updating-and-deleting-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 483ff296bb6fcda14c224c085fc87209bb548700
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 548bfecc4215fbb2b36e0e2be42c7c08ee884270
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37387912"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37817164"
 ---
 <a name="examining-the-events-associated-with-inserting-updating-and-deleting-vb"></a>삽입, 업데이트 및 삭제 (VB)를 사용 하 여 연결 된 이벤트 검사
 ====================

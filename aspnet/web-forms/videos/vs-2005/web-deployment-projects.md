@@ -4,19 +4,16 @@ title: 웹 배포 프로젝트 | Microsoft Docs
 author: BradleyBartz
 description: Bradley Bartz 및 Richard Ersek 웹 배포 프로젝트 구성에 대 한 추가 기능을 제공 하는 방법을 보여 줍니다 만들고 웹 사이트에 대 한 응용 프로그램을 배포 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 09/21/2006
-ms.topic: article
 ms.assetid: eca1b75a-2f32-4004-842e-aa555175a3ea
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/vs-2005/web-deployment-projects
 msc.type: video
-ms.openlocfilehash: 14320f98c17e741c6e6dab1299102ce3e48fedb0
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: b0b5174e5f07e16cea30d743f0e7d8eac5892159
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37382009"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37842207"
 ---
 <a name="web-deployment-projects"></a>웹 배포 프로젝트
 ====================

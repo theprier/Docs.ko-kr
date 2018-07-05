@@ -4,19 +4,16 @@ title: 사용자 지정 된 정렬 사용자 인터페이스 (C#) 만들기 | Mi
 author: rick-anderson
 description: 데이터 정렬의 긴 목록을 표시 하는 경우에 매우 유용할 수 있습니다 행 구분 기호를 도입 하 여 관련된 데이터를 그룹화 합니다. 이 자습서에서는 살펴보겠습니다 자격 방법...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/15/2006
-ms.topic: article
 ms.assetid: 6f81b633-9d01-4e52-ae4a-2ea6bc109475
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sorting-user-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7671c86d105f7d8a4ef5ce65da500250dce47db0
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 96f52b3caf812fcfe82012c2de091acb91b8e0ae
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37369556"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37842334"
 ---
 <a name="creating-a-customized-sorting-user-interface-c"></a>사용자 지정 된 정렬 사용자 인터페이스 (C#) 만들기
 ====================

@@ -4,19 +4,16 @@ title: 검사의 편집 메서드 및 편집 보기 (C#) | Microsoft Docs
 author: Rick-Anderson
 description: 이 자습서는 Microsoft Visual Web Developer 2010 Express 서비스 팩 1, 인를 사용 하 여 ASP.NET MVC 웹 응용 프로그램을 빌드하는 기본 사항을 설명 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/12/2011
-ms.topic: article
 ms.assetid: 1d266bf0-a61e-423b-a3d2-13773d7dafe2
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: ea4f940af7c3b598daad66542c6d07003cfe75b6
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 1451788f11e398c5ca713183721f4bbeb980bb83
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37375806"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37828698"
 ---
 <a name="examining-the-edit-methods-and-edit-view-c"></a>편집 메서드 및 편집 보기 (C#)를 검사합니다.
 ====================

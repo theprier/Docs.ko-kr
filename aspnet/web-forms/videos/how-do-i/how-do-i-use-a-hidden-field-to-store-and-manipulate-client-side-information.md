@@ -4,19 +4,16 @@ title: '[어떻게 할까요?] 숨겨진된 필드를 사용 하 여 저장 하 
 author: rick-anderson
 description: 이 비디오에서는 Chris Pels ASP.NET 페이지에 클라이언트 쪽 통신 하기 위한 간단한 상태 관리에 대 한 한 가지 방법은 숨겨진된 필드를 사용 하는 방법을 알아보겠습니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/24/2008
-ms.topic: article
 ms.assetid: 576ede31-e83a-4222-8f82-0aabb1dafe6a
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-use-a-hidden-field-to-store-and-manipulate-client-side-information
 msc.type: video
-ms.openlocfilehash: 83aeef1b7331dfeab727139ca9031cb5b8305e31
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 84cb7ff3005eca8eaaed665d2a9cdcaa675a14d4
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37385932"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37842181"
 ---
 <a name="how-do-i-use-a-hidden-field-to-store-and-manipulate-client-side-information"></a>[어떻게 할까요?] 숨겨진된 필드를 사용 하 여 저장 하 고 클라이언트 쪽 정보를 조작 합니다.
 ====================

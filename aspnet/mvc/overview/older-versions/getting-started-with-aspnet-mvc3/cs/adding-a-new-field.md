@@ -4,19 +4,16 @@ title: 영화 모델 및 테이블 (C#)에 새 필드 추가 | Microsoft Docs
 author: Rick-Anderson
 description: 이 자습서는 Microsoft Visual Web Developer 2010 Express 서비스 팩 1, 인를 사용 하 여 ASP.NET MVC 웹 응용 프로그램을 빌드하는 기본 사항을 설명 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/12/2011
-ms.topic: article
 ms.assetid: b4e76c1a-f66e-43a0-aa72-f39df79c07c1
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-new-field
 msc.type: authoredcontent
-ms.openlocfilehash: 3408afe6665d353e9570acc2740b5f1b7ba916da
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 91b02f9991b714f8da2aa736c9ba5e58a7228350
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37367159"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37829074"
 ---
 <a name="adding-a-new-field-to-the-movie-model-and-table-c"></a>영화 모델 및 테이블 (C#)에 새 필드 추가
 ====================

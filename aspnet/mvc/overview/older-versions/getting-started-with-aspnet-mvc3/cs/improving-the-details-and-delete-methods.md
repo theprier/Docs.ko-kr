@@ -4,19 +4,16 @@ title: 세부 정보 및 삭제 메서드 (C#)를 향상 | Microsoft Docs
 author: Rick-Anderson
 description: 이 자습서는 Microsoft Visual Web Developer 2010 Express 서비스 팩 1, 인를 사용 하 여 ASP.NET MVC 웹 응용 프로그램을 빌드하는 기본 사항을 설명 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/12/2011
-ms.topic: article
 ms.assetid: 3f42edd9-c5b8-4712-9055-970f7d38e350
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/improving-the-details-and-delete-methods
 msc.type: authoredcontent
-ms.openlocfilehash: 185b757b0d6e385c4fcd0fd9e6560d922f5ece02
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 17789aa9e9388f3b05ece953cfc0f50ffa510f52
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37384240"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37803774"
 ---
 <a name="improving-the-details-and-delete-methods-c"></a>세부 정보 및 삭제 메서드 (C#) 개선
 ====================

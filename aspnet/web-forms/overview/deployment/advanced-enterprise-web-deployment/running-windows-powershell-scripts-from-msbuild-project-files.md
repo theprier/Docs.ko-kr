@@ -4,19 +4,16 @@ title: MSBuild 프로젝트 파일에서 Windows PowerShell 스크립트 실행 
 author: jrjlee
 description: 이 항목에서는 빌드 및 배포 프로세스의 일부로 Windows PowerShell 스크립트를 실행 하는 방법을 설명 합니다. 스크립트를 로컬로 실행할 수 있습니다 (즉, b에....
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: 55f1ae45-fcb5-43a9-8415-fa5b935fc9c9
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/running-windows-powershell-scripts-from-msbuild-project-files
 msc.type: authoredcontent
-ms.openlocfilehash: ddb658d8a8f224a7c417321df3e17ce0610d2473
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: faedcee480b6c50dc560055206fedbe7af4d5f67
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37362897"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37803151"
 ---
 <a name="running-windows-powershell-scripts-from-msbuild-project-files"></a>MSBuild 프로젝트 파일에서 Windows PowerShell 스크립트를 실행합니다.
 ====================
@@ -59,7 +56,7 @@ Windows PowerShell 스크립트를 자동화 하거나 단일 단계 배포 프�
 라는 샘플 Windows PowerShell 스크립트를 사용 하 여이 항목의 태스크 **LogDeploy.ps1** MSBuild에서 스크립트를 실행 하는 방법을 보여 줍니다. 합니다 **LogDeploy.ps1** 스크립트 줄 항목을 로그 파일에 기록 하는 간단한 함수를 포함 합니다.
 
 
-[!code-javascript[Main](running-windows-powershell-scripts-from-msbuild-project-files/samples/sample1.js)]
+[!code-powershell[Main](running-windows-powershell-scripts-from-msbuild-project-files/samples/sample1.ps1)]
 
 
 합니다 **LogDeploy.ps1** 스크립트는 두 개의 매개 변수를 수락 합니다. 첫 번째 매개 변수는 항목을 추가 하려는 로그 파일에 전체 경로 나타내는 나타내고 두 번째 매개 변수를 로그 파일에 기록 하려면 배포 대상입니다. 스크립트를 실행 하면 줄이 형식으로 로그 파일에 추가 합니다.

@@ -1,16 +1,16 @@
 ---
 title: ASP.NET Core Identity 소개
 author: rick-anderson
-description: ASP.NET Core 응용 프로그램과 함께 Id를 사용 합니다. 암호 요구 사항 설정 (RequireDigit, RequiredLength, RequiredUniqueChars 등) 포함 되어 있습니다.
+description: ASP.NET Core 앱을 사용 하 여 Id를 사용 합니다. 설정 암호 요구 (RequireDigit, RequiredLength, RequiredUniqueChars 등) 포함 됩니다.
 ms.author: riande
 ms.date: 01/24/2018
 uid: security/authentication/identity
-ms.openlocfilehash: 57d9abbf82aedadd4d8c5eaabd21a5d31d5c6c61
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: c231a7619a4433ce004342ce68564e4c3892e702
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272703"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37829304"
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>ASP.NET Core Identity 소개
 
@@ -111,7 +111,7 @@ ASP.NET Core Identity는 SQL Server 데이터베이스에 사용자 이름, 비�
 
    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_login&highlight=13-14)]
 
-   기본 `Controller` 클래스는 컨트롤러의 메서드에서 접근할 수 있는 `User` 속성을 제공합니다. 예를 들어, 열거할 수 있습니다 `User.Claims` 을 권한 부여 결정을 내립니다. 자세한 내용은 참조 [권한 부여](xref:security/authorization/index)합니다.
+   기본 `Controller` 클래스는 컨트롤러의 메서드에서 접근할 수 있는 `User` 속성을 제공합니다. 예를 들어, 열거할 수 있습니다 `User.Claims` 을 권한 부여 결정을 내립니다. 자세한 내용은 [권한 부여](xref:security/authorization/index)합니다.
 
 5. 로그아웃
 
@@ -124,7 +124,7 @@ ASP.NET Core Identity는 SQL Server 데이터베이스에 사용자 이름, 비�
 <a name="pw"></a>
 6. 구성
 
-   Identity는 응용 프로그램의 시작 클래스에서 재지정할 수 있는 몇 가지 기본적인 동작을 갖고 있습니다. 기본 동작을 사용하고자 하는 경우에는 `IdentityOptions` 를 구성할 필요가 없습니다. 다음 코드는 여러 가지 암호 강도 옵션을 설정합니다.
+   Identity는 응용 프로그램의 시작 클래스에서 재지정할 수 있는 몇 가지 기본적인 동작을 갖고 있습니다. 기본 동작을 사용하고자 하는 경우에는 `IdentityOptions` 를 구성할 필요가 없습니다. 다음 코드를 여러 암호 강도 옵션을 설정 합니다.
 
    # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 
@@ -142,7 +142,7 @@ ASP.NET Core Identity는 SQL Server 데이터베이스에 사용자 이름, 비�
 
 7. 데이터베이스 살펴보기
 
-   응용 프로그램에서 SQL Server 데이터베이스를 사용할 경우 (Windows 및 Visual Studio 사용자에 대한 기본값), 응용 프로그램이 생성한 데이터베이스를 확인할 수 있습니다. 이때 **SQL Server Management Studio** 를 사용할 수 있습니다 또는 Visual Studio에서 **보기**  >  **SQL Server 개체 탐색기**를 선택합니다. 그리고 **(localdb) \MSSQLLocalDB**에 연결합니다. 그러면 **aspnet-<*프로젝트명*>-<*날짜 문자열*>** 형태의 이름을 가진 데이터베이스가 표시됩니다.
+   응용 프로그램에서 SQL Server 데이터베이스를 사용할 경우 (Windows 및 Visual Studio 사용자에 대한 기본값), 응용 프로그램이 생성한 데이터베이스를 확인할 수 있습니다. 이때 **SQL Server Management Studio** 를 사용할 수 있습니다 또는 Visual Studio에서 **보기**  >  **SQL Server 개체 탐색기**를 선택합니다. 그리고 **(localdb) \MSSQLLocalDB**에 연결합니다. 일치 하는 이름을 사용 하 여 데이터베이스 `aspnet-<name of your project>-<guid>` 표시 됩니다.
 
    ![AspNetUsers 데이터베이스 테이블에 대한 컨텍스트 메뉴](identity/_static/04-db.png)
 
@@ -167,17 +167,17 @@ ASP.NET Core Identity는 SQL Server 데이터베이스에 사용자 이름, 비�
 
     # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 
-    명령 창을 열고 `.csproj` 파일이 위치한 프로젝트의 루트 디렉터리로 이동합니다. 실행의 [실행 dotnet](/dotnet/core/tools/dotnet-run) 명령을 앱을 실행 하려면:
+    명령 창을 열고 `.csproj` 파일이 위치한 프로젝트의 루트 디렉터리로 이동합니다. 실행 합니다 [dotnet 실행](/dotnet/core/tools/dotnet-run) 앱을 실행 하는 명령:
 
     ```csharp
     dotnet run 
     ```
 
-    검색의 출력에 지정 된 URL의 [dotnet 실행](/dotnet/core/tools/dotnet-run) 명령입니다. 이 URL은 생성된 포트 번호가 지정된 `localhost`를 가리켜야 합니다. 브라우저에서 **About** 페이지로 이동합니다. 이제 인증된 사용자만 **About** 페이지에 액세스할 수 있으므로 사용자가 로그인하거나 등록할 수 있도록 로그인 페이지로 리디렉션됩니다.
+    출력에서 지정 된 URL을 검색 합니다 [dotnet 실행](/dotnet/core/tools/dotnet-run) 명령입니다. 이 URL은 생성된 포트 번호가 지정된 `localhost`를 가리켜야 합니다. 브라우저에서 **About** 페이지로 이동합니다. 이제 인증된 사용자만 **About** 페이지에 액세스할 수 있으므로 사용자가 로그인하거나 등록할 수 있도록 로그인 페이지로 리디렉션됩니다.
 
     ---
 
-## <a name="identity-components"></a>Identity 구성 요소
+## <a name="identity-components"></a>Id 구성 요소
 
 Identity 시스템의 기본 참조 어셈블리는 `Microsoft.AspNetCore.Identity` 입니다. ASP.NET Core Identity에 대한 주요 인터페이스 모음을 포함하고 있는 이 패키지는 `Microsoft.AspNetCore.Identity.EntityFrameworkCore`에 포함되어 있습니다.
 
@@ -191,7 +191,7 @@ ASP.NET Core 응용 프로그램에서 Identity 시스템을 사용하려면 다
 
 ## <a name="migrating-to-aspnet-core-identity"></a>ASP.NET Identity로 마이그레이션하기
 
-추가 정보 및 기존 본인 마이그레이션하는 방법에 대 한 지침을 참조 저장 [마이그레이션할 인증 및 Id](xref:migration/identity)합니다.
+추가 정보 및 기존 Id를 마이그레이션에 대 한 지침 참조 스토어 [인증 및 Id 마이그레이션](xref:migration/identity)합니다.
 
 ## <a name="setting-password-strength"></a>암호 강도 설정합니다.
 

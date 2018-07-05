@@ -4,19 +4,16 @@ title: '[어떻게 할까요?] ASP.NET AJAX 사용 하 여 동적 부분 페이�
 author: JoeStagner
 description: 이 비디오에서는 Microsoft ASP.NET AJAX를 사용 하 여 ASP.NET 응용 프로그램에 동적 부분 페이지 업데이트를 추가 하는 방법을 배웁니다. 특히 나타납니다 호...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/25/2007
-ms.topic: article
 ms.assetid: 7559a912-2753-4866-a140-a4c6cefee00c
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-implement-dynamic-partial-page-updates-with-aspnet-ajax
 msc.type: video
-ms.openlocfilehash: 51e032c3a23619291fee0f13d2ff40cdc08ddbb6
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 5eb178edc60a379fd960bee3ca86a73b931e36fe
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37376060"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37803696"
 ---
 <a name="how-do-i-implement-dynamic-partial-page-updates-with-aspnet-ajax"></a>[어떻게 할까요?] ASP.NET AJAX 사용 하 여 동적 부분 페이지 업데이트 구현?
 ====================
