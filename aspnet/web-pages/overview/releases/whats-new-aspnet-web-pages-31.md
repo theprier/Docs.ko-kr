@@ -1,6 +1,6 @@
 ---
 uid: web-pages/overview/releases/whats-new-aspnet-web-pages-31
-title: 3.1 페이지는 ASP.NET 웹의 새로운 기능 | Microsoft Docs
+title: 3.1 페이지 Asp.net의 새로운 기능 | Microsoft Docs
 author: microsoft
 description: ''
 ms.author: aspnetcontent
@@ -9,30 +9,29 @@ ms.date: 01/20/2014
 ms.topic: article
 ms.assetid: 97ac3da0-2141-4904-aa05-27e280db1e4e
 ms.technology: dotnet-webpages
-ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/releases/whats-new-aspnet-web-pages-31
 msc.type: authoredcontent
-ms.openlocfilehash: 82f77e8481cb04a68d81c1ef78c65f0b033410ae
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
+ms.openlocfilehash: 3ccbe87e980acf7b11da1e4b54f8b2bb01157fe0
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26529512"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37400080"
 ---
-<a name="whats-new-in-aspnet-web-pages-31"></a>ASP.NET 웹 페이지 3.1의에서 새로운 기능
+<a name="whats-new-in-aspnet-web-pages-31"></a>ASP.NET Web Pages 3.1의에서 새로운 기능
 ====================
-여 [Microsoft](https://github.com/microsoft)
+[Microsoft](https://github.com/microsoft)
 
-이 항목에서는 ASP.NET 웹 페이지 3.1의 새로운 기능을 설명 합니다.
+이 항목에서는 ASP.NET Web Pages 3.1의 새로운 기능을 설명 합니다.
 
-이 릴리스의 버그를 수정 하 고 새로운 기능을 제공 하지는 않습니다.
+이 릴리스는 버그를 수정 및 새로운 기능을 제공 하지 않습니다.
 
 <a id="download"></a>
 ## <a name="download"></a>다운로드
 
-런타임 기능은 NuGet 갤러리에서 NuGet 패키지로 해제 됩니다. 모든 런타임 패키지에 따라는 [의미 체계 버전 관리](http://semver.org/) 사양입니다. ASP.NET 웹 페이지 3.1 RTM 최신 패키지에는 다음 버전: "3.1.2"입니다. 설치 또는 업데이트를 통해 이러한 패키지 [NuGet](http://www.nuget.org/packages/Microsoft.AspNet.WebPages/)합니다. 릴리스에 NuGet에 해당 지역화 된 패키지도 포함 됩니다.
+NuGet 갤러리에서 NuGet 패키지로 런타임 기능 해제 됩니다. 모든 런타임 패키지를 수행 합니다 [유의 적 버전](http://semver.org/) 사양입니다. 다음 버전이 최신 ASP.NET Web Pages 3.1 RTM 패키지: "3.1.2"입니다. 설치 하거나 이러한 패키지를 통해 업데이트할 수 있습니다 [NuGet](http://www.nuget.org/packages/Microsoft.AspNet.WebPages/)합니다. 릴리스에 NuGet의 해당 지역화 된 패키지도 포함 됩니다.
 
-설치 하거나 NuGet 패키지 관리자 콘솔을 사용 하 여 출시 된 NuGet 패키지를 업데이트할 수 있습니다.
+설치 하거나 NuGet 패키지 관리자 콘솔을 사용 하 여 릴리스된 NuGet 패키지를 업데이트할 수 있습니다.
 
 [!code-console[Main](whats-new-aspnet-web-pages-31/samples/sample1.cmd)]
 
