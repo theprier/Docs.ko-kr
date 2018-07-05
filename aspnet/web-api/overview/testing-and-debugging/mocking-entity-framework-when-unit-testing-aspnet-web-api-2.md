@@ -1,6 +1,6 @@
 ---
 uid: web-api/overview/testing-and-debugging/mocking-entity-framework-when-unit-testing-aspnet-web-api-2
-title: Entity Framework를 모의 때 단위 테스트 ASP.NET Web API 2 | Microsoft Docs
+title: Entity Framework 머킹 때 단위 테스트 ASP.NET Web API 2 | Microsoft Docs
 author: tfitzmac
 description: 이 지침과 응용 프로그램에는 Entity Framework를 사용 하는 Web API 2 응용 프로그램에 대 한 단위 테스트를 만드는 방법을 보여 줍니다. 수정 하는 방법을 보여 줍니다는 중...
 ms.author: aspnetcontent
@@ -9,29 +9,28 @@ ms.date: 12/13/2013
 ms.topic: article
 ms.assetid: cd844025-ccad-41ce-8694-595f1022a49f
 ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/testing-and-debugging/mocking-entity-framework-when-unit-testing-aspnet-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: abfde7edec85812de3560f4edefb110c3e374580
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
+ms.openlocfilehash: f1ff2fda85a6d56a6bbb76b1bff740301ab0c70d
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2018
-ms.locfileid: "29152867"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37371871"
 ---
-<a name="mocking-entity-framework-when-unit-testing-aspnet-web-api-2"></a>Entity Framework를 모의 때 단위 테스트 ASP.NET Web API 2
+<a name="mocking-entity-framework-when-unit-testing-aspnet-web-api-2"></a>Entity Framework 머킹 때 단위 테스트 ASP.NET Web API 2
 ====================
-으로 [Tom FitzMacken](https://github.com/tfitzmac)
+[Tom FitzMacken](https://github.com/tfitzmac)
 
-[완료 된 프로젝트를 다운로드 합니다.](http://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-e2867d4d)
+[완료 된 프로젝트 다운로드](http://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-e2867d4d)
 
-> 이 지침과 응용 프로그램에는 Entity Framework를 사용 하는 Web API 2 응용 프로그램에 대 한 단위 테스트를 만드는 방법을 보여 줍니다. 테스트를 위해 컨텍스트 개체를 전달할 수 있도록 스 캐 폴드 컨트롤러를 수정 하는 방법과 Entity Framework와 함께 작동 하는 테스트 개체를 만드는 방법을 보여 줍니다.
+> 이 지침과 응용 프로그램에는 Entity Framework를 사용 하는 Web API 2 응용 프로그램에 대 한 단위 테스트를 만드는 방법을 보여 줍니다. 테스트에 대 한 컨텍스트 개체를 전달 하도록 설정 하는 스 캐 폴드 된 컨트롤러를 수정 하는 방법 및 Entity Framework와 함께 작동 하는 테스트 개체를 만드는 방법을 보여 줍니다.
 > 
-> ASP.NET Web API를 사용한 단위 테스트에 대 한 소개를 참조 하십시오. [ASP.NET Web API 2를 사용 하 여 단위 테스트](unit-testing-with-aspnet-web-api.md)합니다.
+> ASP.NET Web API를 사용한 단위 테스트 소개를 참조 하세요 [ASP.NET Web API 2를 사용 하 여 단위 테스트](unit-testing-with-aspnet-web-api.md)합니다.
 > 
-> 이 자습서에서는 ASP.NET Web API의 기본 개념에 익숙한 가정 합니다. 있는 소개 자습서를 참조 하십시오. [ASP.NET Web API 2 시작](../getting-started-with-aspnet-web-api/tutorial-your-first-web-api.md)합니다.
+> 이 자습서에서는 ASP.NET Web API의 기본 개념에 익숙하다고 가정 합니다. 입문 용 자습서는를 참조 하세요 [ASP.NET Web API 2 시작](../getting-started-with-aspnet-web-api/tutorial-your-first-web-api.md)합니다.
 > 
-> ## <a name="software-versions-used-in-the-tutorial"></a>자습서에서 사용 되는 소프트웨어 버전
+> ## <a name="software-versions-used-in-the-tutorial"></a>이 자습서에 사용 되는 소프트웨어 버전
 > 
 > 
 > - [Visual Studio 2017](https://www.visualstudio.com/vs/)
@@ -44,7 +43,7 @@ ms.locfileid: "29152867"
 
 - [필수 조건](#prereqs)
 - [코드 다운로드](#download)
-- [응용 프로그램 단위 테스트 프로젝트 만들기](#appwithunittest)
+- [단위 테스트 프로젝트를 사용 하 여 응용 프로그램 만들기](#appwithunittest)
 - [모델 클래스 만들기](#modelclass)
 - [컨트롤러 추가](#controller)
 - [추가 종속성 주입](#dependency)
@@ -53,35 +52,35 @@ ms.locfileid: "29152867"
 - [테스트 만들기](#tests)
 - [테스트 실행](#runtests)
 
-단계를 이미 완료 한 경우 [ASP.NET Web API 2를 사용 하 여 단위 테스트](unit-testing-with-aspnet-web-api.md), 섹션으로 건너뛸 수 [컨트롤러 추가](#controller)합니다.
+단계를 이미 완료 하는 경우 [ASP.NET Web API 2를 사용 하 여 단위 테스트](unit-testing-with-aspnet-web-api.md), 섹션으로 건너뛸 수 있습니다 [컨트롤러를 추가](#controller)합니다.
 
 <a id="prereqs"></a>
-## <a name="prerequisites"></a>필수 구성 요소
+## <a name="prerequisites"></a>전제 조건
 
 Visual Studio 2017 Community, Professional 또는 Enterprise edition
 
 <a id="download"></a>
 ## <a name="download-code"></a>코드 다운로드
 
-다운로드는 [완료 된 프로젝트](https://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-1374bc11)합니다. 및이 항목에 대 한 단위 테스트 코드를 포함 하는 다운로드 가능한 프로젝트는 [단위 테스트 ASP.NET Web API 2](unit-testing-with-aspnet-web-api.md) 항목입니다.
+다운로드 합니다 [완성 된 프로젝트](https://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-1374bc11)합니다. 다운로드 가능한 프로젝트 및이 항목에 대 한 단위 테스트 코드를 포함 합니다 [단위 테스트 ASP.NET Web API 2](unit-testing-with-aspnet-web-api.md) 항목입니다.
 
 <a id="appwithunittest"></a>
-## <a name="create-application-with-unit-test-project"></a>응용 프로그램 단위 테스트 프로젝트 만들기
+## <a name="create-application-with-unit-test-project"></a>단위 테스트 프로젝트를 사용 하 여 응용 프로그램 만들기
 
-응용 프로그램을 만들 때 단위 테스트 프로젝트를 만들 하거나 기존 응용 프로그램 단위 테스트 프로젝트를 추가할 수 있습니다. 이 자습서에서는 응용 프로그램을 만들 때 단위 테스트 프로젝트를 만드는 합니다.
+응용 프로그램을 만들 때 단위 테스트 프로젝트 만들기 또는 기존 응용 프로그램에 단위 테스트 프로젝트를 추가 합니다. 이 자습서에서는 응용 프로그램을 만들 때 단위 테스트 프로젝트 만들기를 보여 줍니다.
 
-라는 새 ASP.NET 웹 응용 프로그램 만들기 **StoreApp**합니다.
+명명 된 새 ASP.NET 웹 응용 프로그램 만들기 **StoreApp**합니다.
 
-새 ASP.NET 프로젝트 창, 선택는 **빈** 템플릿 폴더를 추가 하 고 웹 API에 대 한 참조를 핵심입니다. 선택 된 **단위 테스트 추가** 옵션입니다. 단위 테스트 프로젝트의 이름이 자동으로 **StoreApp.Tests**합니다. 이 이름을 유지할 수 있습니다.
+새 ASP.NET 프로젝트 창에서 선택 합니다 **빈** 템플릿 폴더를 추가 하 고 웹 API에 대 한 참조를 핵심입니다. 선택 된 **단위 테스트 추가** 옵션입니다. 단위 테스트 프로젝트 이름은 자동으로 **StoreApp.Tests**합니다. 이 이름을 유지할 수 있습니다.
 
 ![단위 테스트 프로젝트 만들기](mocking-entity-framework-when-unit-testing-aspnet-web-api-2/_static/image1.png)
 
-응용 프로그램을 만든 후 나타납니다-두 개의 프로젝트가 포함 된 **StoreApp** 및 **StoreApp.Tests**합니다.
+응용 프로그램을 만든 후 보면 두 개의 프로젝트-포함 **StoreApp** 하 고 **StoreApp.Tests**합니다.
 
 <a id="modelclass"></a>
 ## <a name="create-the-model-class"></a>모델 클래스 만들기
 
-StoreApp 프로젝트에 클래스 파일을 추가 **모델** 라는 폴더 **Product.cs**합니다. 파일의 내용을 다음 코드로 바꿉니다.
+StoreApp 프로젝트에서 클래스 파일을 추가 합니다 **모델** 폴더가 **Product.cs**합니다. 파일의 내용을 다음 코드로 바꿉니다.
 
 [!code-csharp[Main](mocking-entity-framework-when-unit-testing-aspnet-web-api-2/samples/sample1.cs)]
 
@@ -90,7 +89,7 @@ StoreApp 프로젝트에 클래스 파일을 추가 **모델** 라는 폴더 **P
 <a id="controller"></a>
 ## <a name="add-the-controller"></a>컨트롤러 추가
 
-Controllers 폴더를 마우스 오른쪽 단추로 클릭 하 고 선택 **추가** 및 **스 캐 폴드 된 새 항목**합니다. Entity Framework를 사용 하 여 동작이 포함 된 Web API 2 컨트롤러를 선택 합니다.
+컨트롤러 폴더를 마우스 오른쪽 단추로 누르고 **추가** 하 고 **새 스 캐 폴드 된 항목**합니다. Entity Framework를 사용 하 여 작업을 사용 하 여 Web API 2 컨트롤러를 선택 합니다.
 
 ![새 컨트롤러 추가](mocking-entity-framework-when-unit-testing-aspnet-web-api-2/_static/image2.png)
 
@@ -98,42 +97,42 @@ Controllers 폴더를 마우스 오른쪽 단추로 클릭 하 고 선택 **추�
 
 - 컨트롤러 이름: **ProductController**
 - 모델 클래스: **제품**
-- 데이터 컨텍스트 클래스: [선택 **새 데이터 컨텍스트에** 아래 에서처럼 값을 입력 하는 단추]
+- 데이터 컨텍스트 클래스: [선택 **새 데이터 컨텍스트에** 아래와 값을 채웁니다 단추]
 
 ![컨트롤러를 지정 합니다.](mocking-entity-framework-when-unit-testing-aspnet-web-api-2/_static/image3.png)
 
-클릭 **추가** 컨트롤러 자동으로 생성 된 코드를 만들려고 합니다. 코드 생성, 검색, 업데이트 및 제품 클래스의 인스턴스를 삭제 하기 위한 메서드를 포함 합니다. 다음 코드는 메서드를 보여 줍니다.에 대 한 제품을 추가 합니다. 메서드가의 인스턴스를 반환 한다고 확인 **IHttpActionResult**합니다.
+클릭 **추가** 자동으로 생성 된 코드를 사용 하 여 컨트롤러를 만들려고 합니다. 코드 생성, 검색, 업데이트 및 Product 클래스의 인스턴스를 삭제 하는 메서드를 포함 합니다. 다음 코드는 메서드를 보여 줍니다.에 대 한 제품을 추가 합니다. 메서드는 인스턴스를 반환 하는 알 수 있습니다 **IHttpActionResult**합니다.
 
 [!code-csharp[Main](mocking-entity-framework-when-unit-testing-aspnet-web-api-2/samples/sample2.cs)]
 
-IHttpActionResult Web API 2의 새로운 기능 중 하나 이며 단위 테스트 개발을 간소화 합니다.
+IHttpActionResult을 사용 하면 Web API 2의 새로운 기능 중 하나인 및 단위 테스트 개발을 간소화 합니다.
 
-다음 섹션에서 사용자 지정할 용이 하 게 생성 된 코드는 컨트롤러에 테스트 개체를 전달 합니다.
+다음 섹션에서는 용이 하 게 생성된 된 코드를 사용자 지정은 컨트롤러에 테스트 개체를 전달 합니다.
 
 <a id="dependency"></a>
 ## <a name="add-dependency-injection"></a>추가 종속성 주입
 
-현재 ProductController 클래스 StoreAppContext 클래스의 인스턴스를 사용 하도록 하드 코드입니다. 응용 프로그램을 수정 하 고 해당 하드 코드 된 종속성을 제거 하는 종속성 주입 이라는 패턴을 사용 합니다. 이 종속성을 끊음 으로써 테스트할 때 모의 개체에 전달할 수 있습니다.
+현재 ProductController 클래스 StoreAppContext 클래스의 인스턴스를 사용 하도록 하드 코드 되어 있습니다. 종속성 주입 이라고 하는 패턴을 사용 하 여 응용 프로그램을 수정 하는 하드 코드 된 종속성을 제거 됩니다. 이 종속성을 분리 하 여 테스트할 때 모의 개체에 전달할 수 있습니다.
 
-마우스 오른쪽 단추로 클릭는 **모델** 폴더 라는 새 인터페이스를 추가 하 고 **IStoreAppContext**합니다.
+마우스 오른쪽 단추로 클릭 합니다 **모델** 폴더를 라는 새 인터페이스를 추가 하 고 **IStoreAppContext**합니다.
 
 코드를 다음 코드로 바꿉니다.
 
 [!code-csharp[Main](mocking-entity-framework-when-unit-testing-aspnet-web-api-2/samples/sample3.cs)]
 
-StoreAppContext.cs 파일을 열고 다음 강조 표시 된 변경 합니다. 에 중요 한 변경이 합니다.
+StoreAppContext.cs 파일을 열고 다음 강조 표시 된 변경 내용을 확인 합니다. 에 중요 한 변경 내용은 다음과 같습니다.
 
 - StoreAppContext 클래스 IStoreAppContext 인터페이스를 구현합니다.
-- MarkAsModified 메서드는 구현
+- MarkAsModified 메서드가 구현
 
 
 [!code-csharp[Main](mocking-entity-framework-when-unit-testing-aspnet-web-api-2/samples/sample4.cs?highlight=6,14-17)]
 
-ProductController.cs 파일을 엽니다. 강조 표시 된 코드와 일치 하도록 기존 코드를 변경 합니다. 이러한 변경 내용은 StoreAppContext에 종속성을 해제 하 고 상황에 맞는 클래스에 대 한 다른 개체에 전달 하는 다른 클래스를 사용 하도록 설정 합니다. 이렇게이 변경을 사용 하면 단위 테스트 중 테스트 컨텍스트에 전달할 수 있습니다.
+ProductController.cs 파일을 엽니다. 강조 표시 된 코드와 일치 하도록 기존 코드를 변경 합니다. 이러한 변경 내용은 StoreAppContext에서 종속성을 중단 하 고 컨텍스트 클래스에 대 한 다른 개체에 전달할 다른 클래스를 사용 하도록 설정 합니다. 이 변경을 사용 하면 단위 테스트 중 테스트 컨텍스트를 전달할 수 있습니다.
 
 [!code-csharp[Main](mocking-entity-framework-when-unit-testing-aspnet-web-api-2/samples/sample5.cs?highlight=4,7-12)]
 
-ProductController에서 수행 해야 하는 한 가지 더 많은 변경이 있습니다. 에 **PutProduct** 메서드, replace 엔터티 상태를 설정 하는 줄 MarkAsModified 메서드를 호출 하 여 수정 합니다.
+가지 더 변경 ProductController 해야 있습니다. 에 **PutProduct** 메서드를 대체 엔터티 상태를 설정 하는 줄 MarkAsModified 메서드를 호출 하 여 수정 합니다.
 
 [!code-csharp[Main](mocking-entity-framework-when-unit-testing-aspnet-web-api-2/samples/sample6.cs?highlight=14-15)]
 
@@ -144,19 +143,19 @@ ProductController에서 수행 해야 하는 한 가지 더 많은 변경이 있
 <a id="testpackages"></a>
 ## <a name="install-nuget-packages-in-test-project"></a>테스트 프로젝트에서 NuGet 패키지를 설치 합니다.
 
-빈 서식 파일을 사용 하 여 응용 프로그램을 만들 때 단위 테스트 프로젝트 (StoreApp.Tests)는 모든 설치 된 NuGet 패키지를 포함 하지 않습니다. 단위 테스트 프로젝트에서 일부 NuGet 패키지를 포함 하는 Web API 템플릿 같은 다른 서식 파일. 이 자습서에서는 Entity Framework packge와 테스트 프로젝트에 Microsoft ASP.NET Web API 2 Core 패키지를 포함 해야 합니다.
+빈 템플릿을 사용 하 여 응용 프로그램을 만들 때 단위 테스트 프로젝트 (StoreApp.Tests)는 설치 된 모든 NuGet 패키지를 포함 하지 않습니다. Web API 템플릿과 같은 다른 템플릿을 단위 테스트 프로젝트에 일부 NuGet 패키지를 포함합니다. 이 자습서에서는 Entity Framework 패키지 및 Microsoft ASP.NET 웹 API 2 코어 패키지 테스트 프로젝트를 포함 해야 합니다.
 
-StoreApp.Tests 프로젝트를 마우스 오른쪽 단추로 클릭 하 고 선택 **NuGet 패키지 관리**합니다. 해당 프로젝트에 패키지를 추가 하려면 StoreApp.Tests 프로젝트를 선택 해야 합니다.
+StoreApp.Tests 프로젝트를 마우스 오른쪽 단추로 누르고 **NuGet 패키지 관리**합니다. 해당 프로젝트에 패키지를 추가 하려면 StoreApp.Tests 프로젝트를 선택 해야 합니다.
 
 ![패키지 관리](mocking-entity-framework-when-unit-testing-aspnet-web-api-2/_static/image4.png)
 
-온라인 패키지를 찾아 EntityFramework 패키지 (버전 6.0 이상)를 설치 합니다. EntityFramework 패키지가 이미 설치 되어 있는지, 표시 되는 경우 StoreApp.Tests 프로젝트 대신 StoreApp 프로젝트를 선택 있을 수 있습니다.
+패키지를 온라인에서 찾아 EntityFramework 패키지 (버전 6.0 이상)를 설치 합니다. EntityFramework 패키지가 이미 설치 되어 있는지, 표시 되는 경우 StoreApp.Tests 프로젝트 대신 StoreApp 프로젝트를 선택한 수 있습니다.
 
-![엔터티 프레임 워크 추가](mocking-entity-framework-when-unit-testing-aspnet-web-api-2/_static/image5.png)
+![Entity Framework를 추가 합니다.](mocking-entity-framework-when-unit-testing-aspnet-web-api-2/_static/image5.png)
 
-찾기 및 Microsoft ASP.NET Web API 2 Core 패키지를 설치 합니다.
+찾기 및 Microsoft ASP.NET 웹 API 2 코어 패키지를 설치 합니다.
 
-![web api core 패키지를 설치 합니다.](mocking-entity-framework-when-unit-testing-aspnet-web-api-2/_static/image6.png)
+![웹 api core 패키지를 설치 합니다.](mocking-entity-framework-when-unit-testing-aspnet-web-api-2/_static/image6.png)
 
 NuGet 패키지 관리 창을 닫습니다.
 
@@ -187,7 +186,7 @@ NuGet 패키지 관리 창을 닫습니다.
 <a id="runtests"></a>
 ## <a name="run-tests"></a>테스트 실행
 
-이제 테스트를 실행할 준비가 되었습니다. 로 표시 된 메서드의 모든는 **TestMethod** 특성을 테스트 합니다. **테스트** 메뉴 항목을 테스트를 실행 합니다.
+이제 테스트를 실행할 준비가 되었습니다. 로 표시 되는 메서드의 모든 합니다 **TestMethod** 특성을 테스트 합니다. **테스트** 메뉴 항목, 테스트를 실행 합니다.
 
 ![테스트 실행](mocking-entity-framework-when-unit-testing-aspnet-web-api-2/_static/image7.png)
 

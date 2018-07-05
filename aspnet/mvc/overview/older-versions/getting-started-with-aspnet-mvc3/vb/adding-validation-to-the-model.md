@@ -2,115 +2,114 @@
 uid: mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-validation-to-the-model
 title: 유효성 검사 (VB) 모델에 추가 | Microsoft Docs
 author: Rick-Anderson
-description: 이 자습서에서는 Microsoft Visual Web Developer 2010 Express 서비스 팩 1, 즉를 사용 하 여 ASP.NET MVC 웹 응용 프로그램을 구축 하는 기초 설명...
+description: 이 자습서는 Microsoft Visual Web Developer 2010 Express 서비스 팩 1, 인를 사용 하 여 ASP.NET MVC 웹 응용 프로그램을 빌드하는 기본 사항을 설명 하는 중...
 ms.author: aspnetcontent
 manager: wpickett
 ms.date: 01/12/2011
 ms.topic: article
 ms.assetid: 878f6c31-972d-45f4-8849-5c633b511409
 ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-validation-to-the-model
 msc.type: authoredcontent
-ms.openlocfilehash: 86058530aa00ecbc00aeebc6ed7b5cf019fdad72
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+ms.openlocfilehash: 25d11eb018e571d17c0ef1d91c1d47c8a7023722
+ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30872925"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37397826"
 ---
 <a name="adding-validation-to-the-model-vb"></a>유효성 검사 (VB) 모델에 추가
 ====================
-으로 [Rick Anderson](https://github.com/Rick-Anderson)
+[Rick Anderson](https://github.com/Rick-Anderson)
 
-> 이 자습서에서는 Microsoft Visual Web Developer 2010 Express 서비스 팩 1, 즉 Microsoft Visual Studio의 무료 버전을 사용 하 여 ASP.NET MVC 웹 응용 프로그램을 구축 하는 기초 설명 합니다. 시작 하기 전에 아래에 나열 된 필수 구성 요소가 설치 되어 있는지 확인 합니다. 다음 링크를 클릭 하 여 모두를 설치할 수 있습니다: [웹 플랫폼 설치 관리자](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)합니다. 또는 다음 링크를 사용 하 여 필수 구성 요소를 개별적으로 설치할 수 있습니다.
+> 이 자습서는 Microsoft Visual Web Developer 2010 Express 서비스 팩 1, Microsoft Visual Studio의 무료 버전인를 사용 하 여 ASP.NET MVC 웹 응용 프로그램을 빌드하는 기본 사항을 설명 합니다. 시작 하기 전에 아래에 나열 된 필수 구성 요소를 설치한 다음 있는지 확인 합니다. 다음 링크를 클릭 하 여 이들 모두를 설치할 수 있습니다: [웹 플랫폼 설치 관리자](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)합니다. 또는 다음 링크를 사용 하 여 필수 구성 요소를 개별적으로 설치할 수 있습니다.
 > 
 > - [Visual Studio Web Developer Express SP1 필수 구성 요소](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)
 > - [ASP.NET MVC 3 도구 업데이트](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=MVC3)
 > - [SQL Server Compact 4.0](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLCE;SQLCEVSTools_4_0)(런타임 + 도구 지원)
 > 
-> Visual Studio 2010 Visual Web Developer 2010 대신를 사용 하는 경우 다음 링크를 클릭 하 여 필수 구성 요소 설치: [Visual Studio 2010 필수 구성 요소](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack)합니다.
+> Visual Studio 2010 Visual Web Developer 2010 대신를 사용 하는 경우 다음 링크를 클릭 하 여 필수 구성 요소를 설치 합니다. [Visual Studio 2010 필수 구성 요소](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack)합니다.
 > 
-> 이 항목에 수반 VB.NET 소스 코드를 사용 하 여 Visual Web Developer 프로젝트 ´ ù. [VB.NET 버전을 다운로드](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098)합니다. 원하는 경우 C#으로 전환 된 [C# 버전](../cs/adding-validation-to-the-model.md) 이 자습서의 합니다.
+> VB.NET 소스 코드를 사용 하 여 Visual Web Developer 프로젝트는 다음이 항목과 함께 사용할 수 있습니다. [VB.NET 버전](https://code.msdn.microsoft.com/Introduction-to-MVC-3-10d1b098)합니다. 원하는 경우 C#으로 전환 합니다 [C# 버전](../cs/adding-validation-to-the-model.md) 이 자습서의 합니다.
 
 
-이 섹션에서는 유효성 검사 논리를 추가 합니다는 `Movie` 모델과 하면 사용자가 만들거나 응용 프로그램을 사용 하 여 동영상을 편집 하는 언제 든 지 유효성 검사 규칙이 적용 되도록 유지 됩니다.
+이 섹션에서는 유효성 검사 논리를 추가 합니다 `Movie` 모델 및 있습니다 유효성 검사 규칙을 만들거나 응용 프로그램을 사용 하 여 동영상을 편집 하려면 사용자가 언제 든 지 사항이 적용 되도록 확인 됩니다.
 
-## <a name="keeping-things-dry"></a>건조 구성을
+## <a name="keeping-things-dry"></a>작업을 반복 금지 유지
 
-ASP.NET MVC의 핵심 디자인 개념 중 하나 드라이 ("하지 않는 반복 직접")입니다. ASP.NET MVC 기능 또는 동작을 한 번만 지정 한 다음 응용 프로그램에 everywhere 반영 하는 것이 권장 합니다. 이를 작성 해야 하는 코드의 양을 줄이고 유지 하기 위해 훨씬 쉽게 작성 하는 코드를 만들기.
+ASP.NET MVC의 핵심 디자인 개념 중 하나 ("하지 반복 직접")는 시험입니다. ASP.NET MVC 기능이 나 동작을 한 번만 지정 한 후 응용 프로그램에서 모든 곳에 반영 될 것을 권장 합니다. 작성 해야 하는 코드의 양을 줄이고는 코드를 작성 하는 훨씬 더 쉽게 유지 관리 합니다.
 
-ASP.NET MVC 및 Entity Framework Code First 제공 하는 유효성 검사 지원은 동작의 건조 원칙의 좋은 예입니다. (모델 클래스)의 한 지점에서 유효성 검사 규칙을 선언적으로 지정할 수 있습니다 및 다음 해당 규칙이 응용 프로그램의 모든 위치에서 적용 됩니다.
+ASP.NET MVC 및 Entity Framework Code First에서 제공 되는 유효성 검사 지원은 작업에서 반복 금지 원칙의 좋은 예입니다. (모델 클래스)의 한 곳에서 유효성 검사 규칙을 선언적으로 지정할 수 있습니다 하 고 해당 규칙이 응용 프로그램의 어디에서 나 다음 적용 됩니다.
 
-있습니다 사용할 수 있는 방법을이 유효성 검사 지원의 영화 응용 프로그램에서 살펴보겠습니다.
+동영상 응용 프로그램에서이 유효성 검사 지원 활용을 걸릴 수 있습니다 하는 방법을 살펴보겠습니다.
 
 ## <a name="adding-validation-rules-to-the-movie-model"></a>영화 모델에 유효성 검사 규칙 추가
 
 일부 유효성 검사 논리를 추가 하 여 먼저는 `Movie` 클래스입니다.
 
-열기는 *Movie.vb* 파일입니다. 추가 `Imports` 문을 참조 하는 파일 맨 위에 있는 [ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) 네임 스페이스:
+엽니다는 *Movie.vb* 파일입니다. 추가 된 `Imports` 문을 참조 하는 파일의 맨 위에 있는 합니다 [ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) 네임 스페이스:
 
 [!code-vb[Main](adding-validation-to-the-model/samples/sample1.vb)]
 
-네임 스페이스에는.NET Framework의 일부입니다. 모든 클래스 또는 속성에 선언적으로 적용할 수 있는 유효성 검사 특성의 기본 제공 된 집합을 제공 합니다.
+네임 스페이스에는.NET Framework의 일부입니다. 모든 클래스 또는 속성에 선언적으로 적용할 수 있는 유효성 검사 특성의 기본 제공 집합을 제공 합니다.
 
-이제 업데이트 된 `Movie` 클래스는 기본 제공 기능을 활용 하려면 [ `Required` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx), [ `StringLength` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx), 및 [ `Range` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) 유효성 검사 특성 . 특성을 적용 대상의 예를 들어 다음 코드를 사용 합니다.
+이제 업데이트 된 `Movie` 기본 제공 기능을 활용 하는 클래스 [ `Required` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.requiredattribute.aspx)를 [ `StringLength` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.stringlengthattribute.aspx), 및 [ `Range` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.rangeattribute.aspx) 유효성 검사 특성 . 특성을 적용 하는 예로 다음 코드를 사용 합니다.
 
 [!code-vb[Main](adding-validation-to-the-model/samples/sample2.vb)]
 
-이 유효성 검사 특성은 적용되는 모델 속성에 시행하려는 동작을 지정합니다. `Required` 특성 나타냅니다 속성 값을 가져야 합니다;이 샘플에서는 동영상은에 대 한 값은 `Title`, `ReleaseDate`, `Genre`, 및 `Price` 유효 하려면 속성입니다. `Range` 특성은 지정된 범위 내의 값을 제한합니다. `StringLength` 특성을 사용하면 문자열 속성의 최대 길이와, 필요에 따라 최소 길이를 설정할 수 있습니다.
+이 유효성 검사 특성은 적용되는 모델 속성에 시행하려는 동작을 지정합니다. 합니다 `Required` 특성 속성 값을 가져야 합니다 나타내고이 샘플에서는 영화에 대 한 값에는 `Title`, `ReleaseDate`, `Genre`, 및 `Price` 유효 하기 위해 속성입니다. `Range` 특성은 지정된 범위 내의 값을 제한합니다. `StringLength` 특성을 사용하면 문자열 속성의 최대 길이와, 필요에 따라 최소 길이를 설정할 수 있습니다.
 
-코드는 먼저 응용 프로그램 데이터베이스에 변경 내용을 저장 하기 전에 모델 클래스에서 지정 된 유효성 검사 규칙 적용 되도록 보장 합니다. 예를 들어 아래 코드는 예외를 throw 할 때는 `SaveChanges` 메서드는, 여러 필요 하기 때문에 `Movie` 속성 값이 누락 되 고 가격 기본값은 0 (이 범위를 벗어났습니다).
+먼저 코드 하면 응용 프로그램 데이터베이스에 변경 내용을 저장 하기 전에 모델 클래스에서 지정 유효성 검사 규칙 적용 됩니다. 아래 코드는 예외를 throw 하는 예를 들어 경우는 `SaveChanges` 여러 필요 하기 때문에 메서드가 호출 되 `Movie` 속성 값은 누락 이며 가격은 0 (유효 범위를 벗어난)입니다.
 
 [!code-vb[Main](adding-validation-to-the-model/samples/sample3.vb)]
 
-.NET Framework에 의해 자동으로 적용 하는 유효성 검사 규칙을 만드는 것 사용 하면 확인 응용 프로그램 보다 강력 합니다. 또한 유효성 검사를 잊거나, 데이터베이스에 불량 데이터가 실수로 들어가지 않게 할 수 있습니다.
+.NET Framework에 의해 자동으로 적용 하는 유효성 검사 규칙 사용 하면 확인 응용 프로그램 보다 강력 합니다. 또한 유효성 검사를 잊거나, 데이터베이스에 불량 데이터가 실수로 들어가지 않게 할 수 있습니다.
 
-다음은 업데이트 된 항목에 대 한 전체 코드 *Movie.vb* 파일:
+업데이트 된 전체 코드 다음과 같습니다 *Movie.vb* 파일:
 
 [!code-vb[Main](adding-validation-to-the-model/samples/sample4.vb)]
 
 ## <a name="validation-error-ui-in-aspnet-mvc"></a>ASP.NET MVC에서 UI 유효성 검사 오류
 
-응용 프로그램을 다시 실행을 탐색 하 고 */Movies* URL입니다.
+응용 프로그램을 다시 실행 하 고 이동 합니다 */Movies* URL입니다.
 
-클릭는 **만들 영화** 새 동영상을 추가 하는 링크입니다. 일부 잘못 된 값으로 양식을 작성 한 다음 클릭는 **만들기** 단추입니다.
+클릭 합니다 **영화 만들기** 새 동영상을 추가 하는 링크입니다. 일부 잘못 된 값을 사용 하 여 양식을 입력 하 고 클릭 합니다 **만들기** 단추입니다.
 
 [![8_validationErrors](adding-validation-to-the-model/_static/image2.png)](adding-validation-to-the-model/_static/image1.png)
 
-어떻게 폼이 자동으로를 사용 하는 배경색 각 옆에 있는 적절 한 유효성 검사 오류 메시지가 방사 및 잘못 된 데이터를 포함 하는 텍스트 상자에 강조 표시를 확인 합니다. 주석이 지정 하면 지정 된 오류 문자열은 일치 하는 오류 메시지는 `Movie` 클래스입니다. 오류 (경우에 사용자가 JavaScript를 사용 하지 않도록 설정) (JavaScript 사용) 하는 클라이언트 쪽 및 서버측 모두 적용 됩니다.
+폼에 자동으로 사용 하는 방법을 배경색 잘못 된 데이터를 포함 하 고 각각 옆에 있는 적절 한 유효성 검사 오류 메시지를 내보낼에 있는 입력란을 강조 표시를 확인 합니다. 주석이 하는 경우 지정 된 오류 문자열을 일치 하는 오류 메시지는 `Movie` 클래스입니다. 오류 (경우에 사용자가 JavaScript를 사용 하지 않도록 설정) (JavaScript를 사용 하 여) 하는 클라이언트 쪽 및 서버측 모두 적용 됩니다.
 
-실제 혜택은 한 줄의 코드를 변경 해야 하지 않은 `MoviesController` 클래스 또는 *Create.vbhtml* UI이 유효성이 검사를 사용 하도록 설정 하려면 보기. 컨트롤러 및 자동으로이 자습서의 앞부분에서 만든 보기에서 특성을 사용 하 여 지정 된 유효성 검사 규칙을 받아서는 `Movie` 모델 클래스입니다.
+실제 혜택은 코드 한 줄도 변경할 필요가 없었습니다 합니다 `MoviesController` 클래스 또는 합니다 *Create.vbhtml* 이 유효성 검사 UI를 사용 하기 위해. 유효성 검사 규칙에 특성을 사용 하 여 지정한 공개적인 컨트롤러 및 자동으로이 자습서의 앞부분에서 만든 뷰는 `Movie` 모델 클래스입니다.
 
-## <a name="how-validation-occurs-in-the-create-view-and-create-action-method"></a>만들기 확인 하 고 작업 메서드를 작성할 유효성 검사에서 발생 하는 방법
+## <a name="how-validation-occurs-in-the-create-view-and-create-action-method"></a>만들기를 살펴보고 작업 메서드를 만들어 유효성 검사에서 발생 하는 방법
 
-컨트롤러나 보기에서 코드에 대한 업데이트 없이 어떻게 유효성 검사 UI가 생성되는지 궁금할 것입니다. 다음 목록에서는 `Create` 의 메서드는 `MovieController` 클래스 표시 합니다. 만든 방법으로이 자습서의 앞부분에 나오는 것에서 변경 하기가 되지 않습니다.
+컨트롤러나 보기에서 코드에 대한 업데이트 없이 어떻게 유효성 검사 UI가 생성되는지 궁금할 것입니다. 다음 목록을 보여 줍니다 합니다 `Create` 의 메서드는 `MovieController` 클래스 형태입니다. 없는 것 이므로 만든 방법으로이 자습서의 앞부분에서 변경 합니다.
 
 [!code-vb[Main](adding-validation-to-the-model/samples/sample5.vb)]
 
-첫 번째 작업 메서드 초기 만들기 폼이 표시 됩니다. 두 번째 폼 post를 처리 합니다. 두 번째 `Create` 메서드 호출 `ModelState.IsValid` 동영상에 모든 유효성 검사 오류가 있는지 확인 합니다. 이 메서드 호출에서는 개체에 적용된 모든 유효성 검사 특성을 평가합니다. 개체 유효성 검사 오류가 있으면는 `Create` 메서드 다시 표시 되 고 있습니다. 오류가 없으면 메서드가 데이터베이스에 새 동영상을 저장합니다.
+첫 번째 작업 메서드는 최초 만들기 양식을 표시합니다. 두 번째 폼 post를 처리합니다. 두 번째 `Create` 메서드 호출 `ModelState.IsValid` 동영상에 유효성 검사 오류가 발생 했는지 여부를 확인 합니다. 이 메서드 호출에서는 개체에 적용된 모든 유효성 검사 특성을 평가합니다. 개체 유효성 검사 오류가 있으면는 `Create` 메서드 다시 표시 되 고 있습니다. 오류가 없으면 메서드가 데이터베이스에 새 동영상을 저장합니다.
 
-다음은 이러한는 *Create.vbhtml* 자습서의 앞부분에 나오는 스 캐 폴드 된 템플릿 보기. 이 항목은 위 두 작업 메서드에서 최초 양식을 표시하고 오류 시 다시 표시하기 위해 사용됩니다.
+다음은 *Create.vbhtml* 자습서의 앞부분에서 스 캐 폴드 하는 템플릿 보기. 이 항목은 위 두 작업 메서드에서 최초 양식을 표시하고 오류 시 다시 표시하기 위해 사용됩니다.
 
 [!code-vbhtml[Main](adding-validation-to-the-model/samples/sample6.vbhtml)]
 
-코드 사용 하는 여는 `Html.EditorFor` 출력 하는 도우미는 `<input>` 요소 각각에 대해 `Movie` 속성. 이 도우미 옆에 대 한 호출 되는 `Html.ValidationMessageFor` 도우미 메서드입니다. 이러한 두 개의 도우미 메서드를 보기에는 컨트롤러에 의해 전달 되는 모델 개체 사용 (이 경우는 `Movie` 개체). 적절 하 게 모델 및 표시 오류 메시지에 지정 된 유효성 검사 특성에 대 한 자동으로 검색 합니다.
+코드를 사용 하는 방법을 확인할 수 있습니다는 `Html.EditorFor` 도우미 출력에 `<input>` 요소 각각에 대해 `Movie` 속성. 이 도우미 옆에 있는 호출 되는 `Html.ValidationMessageFor` 도우미 메서드입니다. 이러한 두 가지 도우미 메서드를 컨트롤러에서 보기로 전달 되는 모델 개체 사용 (이 경우에 `Movie` 개체). 적절 하 게 모델 및 표시 오류 메시지에 지정 된 유효성 검사 특성에 대 한 자동으로 찾습니다.
 
-이 방법에 대 한 훌륭한은 컨트롤러도 아니고 만들기 보기 템플릿이 알고 있는 아무 것도 표시 되는 특정 오류 메시지 또는 적용을 실제 유효성 검사 규칙에 대 한입니다. 유효성 검사 규칙 및 오류 문자열은 `Movie` 클래스에서만 지정됩니다.
+이 방법을 사용 하는 방법에 대 한 훌륭한 점은 컨트롤러도 아니고 보기 템플릿 만들기가 알고 있는 아무 것도 표시 되는 특정 오류 메시지 또는 적용 되는 실제 유효성 검사 규칙에 대 한입니다. 유효성 검사 규칙 및 오류 문자열은 `Movie` 클래스에서만 지정됩니다.
 
-유효성 검사 논리를 나중에 변경 하려는 경우 정확 하 게 한 곳에서 그렇게 할 수 있습니다. 모든 유효성 검사 논리가 한 곳에 정의되어 모든 곳에서 사용되므로 응용 프로그램의 서로 다른 부분이 규칙 적용 방법에 부합하는지 우려하지 않아도 됩니다. 이렇게 하면 코드가 매우 깔끔해지고 유지 관리 및 확장이 간편합니다. 또한 반복 금지 원칙에 완전히 부합하게 됩니다.
+나중에 유효성 검사 논리를 변경 하려는 경우이 정확 하 게 한 곳에서 수행할 수 있습니다. 모든 유효성 검사 논리가 한 곳에 정의되어 모든 곳에서 사용되므로 응용 프로그램의 서로 다른 부분이 규칙 적용 방법에 부합하는지 우려하지 않아도 됩니다. 이렇게 하면 코드가 매우 깔끔해지고 유지 관리 및 확장이 간편합니다. 또한 반복 금지 원칙에 완전히 부합하게 됩니다.
 
-## <a name="adding-formatting-to-the-movie-model"></a>영화 모델에 서식 추가
+## <a name="adding-formatting-to-the-movie-model"></a>영화 모델 형식 추가
 
-열기는 *Movie.vb* 파일입니다. [ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) 네임 스페이스는 기본 제공 유효성 검사 특성 집합 외에 서식 특성을 제공 합니다. 적용 하는 [ `DisplayFormat` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) 특성 및 [ `DataType` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) 출시 날짜에 시작 및 끝 price 필드 열거형 값입니다. 다음 코드는 `ReleaseDate` 및 `Price` 는 적절 한 속성 [ `DisplayFormat` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) 특성입니다.
+엽니다는 *Movie.vb* 파일입니다. 합니다 [ `System.ComponentModel.DataAnnotations` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.aspx) 네임 스페이스는 기본 제공 유효성 검사 특성 집합 외에도 서식 특성을 제공 합니다. 적용 된 [ `DisplayFormat` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) 특성 및 [ `DataType` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.datatype.aspx) 출시일을 가격 필드를 열거형 값입니다. 다음 코드에서는 합니다 `ReleaseDate` 하 고 `Price` 적절 한 속성 [ `DisplayFormat` ](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.displayformatattribute.aspx) 특성입니다.
 
 [!code-vb[Main](adding-validation-to-the-model/samples/sample7.vb)]
 
-명시적으로 설정 수 또는 [ `DataFormatString` ](https://msdn.microsoft.com/library/system.string.format.aspx) 값입니다. 다음 코드와 날짜 형식 문자열을 사용 하 여 릴리스 날짜 속성 (즉, "d"). 않으려면 시간 릴리스 날짜의 일환으로 지정 하려면이 사용 합니다.
+명시적으로 설정 수 또는 [ `DataFormatString` ](https://msdn.microsoft.com/library/system.string.format.aspx) 값입니다. 다음 코드는 날짜 형식 문자열을 사용 하 여 릴리스 날짜 속성을 보여 줍니다 (즉, "d"). 이 사용 하면는 않으려는 시간 출시일의 일부로 지정 됩니다.
 
 [!code-vb[Main](adding-validation-to-the-model/samples/sample8.vb)]
 
-다음 코드 형식에서 `Price` 통화로 속성입니다.
+다음 코드 형식은 `Price` 통화로 속성입니다.
 
 [!code-vb[Main](adding-validation-to-the-model/samples/sample9.vb)]
 
@@ -118,11 +117,11 @@ ASP.NET MVC 및 Entity Framework Code First 제공 하는 유효성 검사 지�
 
 [!code-vb[Main](adding-validation-to-the-model/samples/sample10.vb)]
 
-응용 프로그램을 실행 하 고를 찾습니다는 `Movies` 컨트롤러입니다.
+응용 프로그램을 실행 하 고 이동 하 여 `Movies` 컨트롤러입니다.
 
 ![8_format_SM](adding-validation-to-the-model/_static/image3.png)
 
-시리즈의 다음 부분에서는 합니다 응용 프로그램을 검토 하 고을 자동으로 생성 된 몇 가지 개선 `Details` 및 `Delete` 방법...
+시리즈의 다음 부분에서는에서는 응용 프로그램을 검토 하 고 자동으로 생성 된 몇 가지 개선 `Details` 고 `Delete` 메서드...
 
 > [!div class="step-by-step"]
 > [이전](adding-a-new-field.md)
