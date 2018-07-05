@@ -4,19 +4,16 @@ title: 'Visual Studio를 사용 하 여 ASP.NET 웹 배포: 명령줄 배포 | M
 author: tdykstra
 description: 이 자습서 시리즈를 배포 하는 방법을 보여 줍니다. ASP.NET (게시)에서 실행 중인 웹 응용 프로그램을 Azure App Service Web Apps 또는 타사 호스팅 공급자...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/15/2013
-ms.topic: article
 ms.assetid: 82b8dea0-f062-4ee4-8784-3ffa30fbb1ca
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/command-line-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 5673a4733257fae88fb66a3da43dfceb98c3b37a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f079beabccd253ff13c19d3192181ddbdf00b3bf
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37390876"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37830969"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-command-line-deployment"></a>Visual Studio를 사용 하 여 ASP.NET 웹 배포: 명령줄 배포
 ====================

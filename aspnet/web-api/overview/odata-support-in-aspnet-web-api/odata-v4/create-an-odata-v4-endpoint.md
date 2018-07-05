@@ -4,19 +4,16 @@ title: ASP.NET Web API 2.2 사용 하 여 OData v4 엔드포인트 만들기 | M
 author: MikeWasson
 description: Open Data Protocol (OData)는 웹에 대 한 데이터 액세스 프로토콜. OData 쿼리 및 CRUD 작업을 통해 데이터 집합을 조작할 일관 된 방식으로 제공 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/24/2014
-ms.topic: article
 ms.assetid: 1e1927c0-ded1-4752-80fd-a146628d2f09
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/create-an-odata-v4-endpoint
 msc.type: authoredcontent
-ms.openlocfilehash: 55cfae975f0202e29908edaa84c6ef33416f2a54
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 04fad9b569972f11256c6b7288db34d4996ca8bf
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37397806"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37804214"
 ---
 <a name="create-an-odata-v4-endpoint-using-aspnet-web-api-22"></a>ASP.NET Web API 2.2 사용 하 여 OData v4 엔드포인트 만들기
 ====================

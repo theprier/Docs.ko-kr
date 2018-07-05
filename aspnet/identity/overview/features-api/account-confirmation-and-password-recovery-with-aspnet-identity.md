@@ -4,19 +4,16 @@ title: 계정 확인 및 암호 복구 ASP.NET id (C#) | Microsoft Docs
 author: HaoK
 description: 먼저 완료 해야 하는이 자습서를 수행 하기 전에 로그인, 전자 메일 확인 및 암호 재설정을 사용 하 여 보안 ASP.NET MVC 5 웹 앱을 만듭니다. 이 자습서는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/26/2015
-ms.topic: article
 ms.assetid: 8d54180d-f826-4df7-b503-7debf5ed9fb3
-ms.technology: ''
 msc.legacyurl: /identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 38b908d145986102ff1b1734cdcef75b320bd0ab
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 08a954f8fab4a92b84bd79b4f644bcc1f55b1bc6
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37384133"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37831085"
 ---
 <a name="account-confirmation-and-password-recovery-with-aspnet-identity-c"></a>계정 확인 및 ASP.NET Id (C#)를 사용 하 여 암호 복구
 ====================

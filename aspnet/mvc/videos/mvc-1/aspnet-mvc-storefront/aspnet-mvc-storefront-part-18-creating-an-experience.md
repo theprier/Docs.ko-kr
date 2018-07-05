@@ -4,19 +4,16 @@ title: 'ASP.NET MVC Storefront 18 부: 환경 만들기 | Microsoft Docs'
 author: robconery
 description: 이 에피소드는 일관 된 '환경을' 구매자를 형성 하는 기술 부분은 전혀 풀에서 작동 합니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/16/2008
-ms.topic: article
 ms.assetid: 1636464e-900e-4926-bd5a-88adb5315ff9
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-18-creating-an-experience
 msc.type: video
-ms.openlocfilehash: e468c836cac44ac1ed3bfce00b5fc91827df7456
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: fd061364bfc5419e43fa4b4cba15c013ccf07310
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37366892"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37804334"
 ---
 <a name="aspnet-mvc-storefront-part-18-creating-an-experience"></a>ASP.NET MVC Storefront 18 부: 환경 만들기
 ====================

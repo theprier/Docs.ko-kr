@@ -4,19 +4,16 @@ title: '6 부: ASP.NET 멤버 자격 | Microsoft Docs'
 author: JoeStagner
 description: 이 자습서 시리즈 모든 Tailspin Spyworks 샘플 응용 프로그램 빌드를 수행 하는 단계를 자세히 설명 합니다. 6 부 ASP.NET 멤버 자격을 추가합니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/21/2010
-ms.topic: article
 ms.assetid: f70a310c-9557-4743-82cb-655265676d39
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-6
 msc.type: authoredcontent
-ms.openlocfilehash: 6d01a745ca1428f065f564f676d483ee807eb52e
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 303c1edf548db1da9ef61d94bdd8157d6afbb2e4
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37368475"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37804422"
 ---
 <a name="part-6-aspnet-membership"></a>6 부: ASP.NET 멤버 자격
 ====================

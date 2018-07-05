@@ -4,19 +4,16 @@ title: Redis로 SignalR 규모 확장 | Microsoft Docs
 author: MikeWasson
 description: 이전 버전의에 대 한 내용은이 항목의 버전 2 이전 버전을이 항목에서는 Visual Studio 2013.NET 4.5 SignalR에서 사용 하는 소프트웨어 버전...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/10/2014
-ms.topic: article
 ms.assetid: 6ecd08c1-e364-4cd7-ad4c-806521911585
-ms.technology: dotnet-signalr
 msc.legacyurl: /signalr/overview/performance/scaleout-with-redis
 msc.type: authoredcontent
-ms.openlocfilehash: e08e0fdcd0df65bea6802838a8ed55d6b86ce1a3
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 8c125070aa2bc8f0070d9933b77e09a5c84b797a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37381957"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37831008"
 ---
 <a name="signalr-scaleout-with-redis"></a>Redis로 SignalR 규모 확장
 ====================

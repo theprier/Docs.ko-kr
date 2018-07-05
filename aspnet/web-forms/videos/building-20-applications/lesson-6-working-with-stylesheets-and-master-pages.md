@@ -4,19 +4,16 @@ title: '[단원 6:] 스타일 시트 및 마스터 페이지 작업 | Microsoft 
 author: microsoft
 description: 이 단원에서는 웹 응용 프로그램의 모든 페이지에 대 한 일관 된 모양을 유지 하기 위해 스타일 시트 및 마스터 페이지 수 사용 하는 방법을 알아봅니다.를 시작 합니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/28/2005
-ms.topic: article
 ms.assetid: 321513ca-a52e-4142-9124-24eacb6048b4
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/building-20-applications/lesson-6-working-with-stylesheets-and-master-pages
 msc.type: video
-ms.openlocfilehash: 35731b07bb6a40a0d54a16a905ba73c087f4ad46
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 5b7ada81d03d4a53b7db9ede82e58b3c2b19a14b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37397093"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37803670"
 ---
 <a name="lesson-6-working-with-stylesheets-and-master-pages"></a>[단원 6:] 스타일 시트 및 마스터 페이지 작업
 ====================

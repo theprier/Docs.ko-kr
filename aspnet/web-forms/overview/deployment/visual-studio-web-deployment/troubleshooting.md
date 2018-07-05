@@ -4,19 +4,16 @@ title: 'Visual Studio를 사용 하 여 ASP.NET 웹 배포: 문제 해결 | Micr
 author: tdykstra
 description: 이 자습서 시리즈를 배포 하는 방법을 보여 줍니다. ASP.NET (게시)에서 실행 중인 웹 응용 프로그램을 Azure App Service Web Apps 또는 타사 호스팅 공급자...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/01/2015
-ms.topic: article
 ms.assetid: c0090595-ab3b-4b9b-9e16-7a1891e8cb2f
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/troubleshooting
 msc.type: authoredcontent
-ms.openlocfilehash: 0b57a91c29ba15463e6c534693b951aee8286ad2
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: b2be5d2f5aa0b7628f7b9338c860593660ef5893
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37364004"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37830894"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-troubleshooting"></a>Visual Studio를 사용 하 여 ASP.NET 웹 배포: 문제 해결
 ====================

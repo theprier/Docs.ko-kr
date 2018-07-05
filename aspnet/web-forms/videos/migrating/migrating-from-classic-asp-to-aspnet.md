@@ -4,19 +4,16 @@ title: '[에서 마이그레이션] Asp.net 클래식 ASP | Microsoft Docs'
 author: microsoft
 description: Microsoft ASP.NET 2.0 기본 ASP에서 마이그레이션하도록 계획 입니까? 이 웹캐스트 시리즈에서는 중요 한 아키텍처 설계 고려 사항을 안내 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/25/2006
-ms.topic: article
 ms.assetid: af5736dd-e01d-45d6-8ac0-01ec0fe49023
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/migrating/migrating-from-classic-asp-to-aspnet
 msc.type: video
-ms.openlocfilehash: 05a99ec6efec7f39fc7afb07a848e4806699718e
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 2ae5a0549279eb756fa9fdf3d7a1be8818942fb8
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37374697"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37817498"
 ---
 <a name="migrating-from-classic-asp-to-aspnet"></a>[에서 마이그레이션] Asp.net 클래식 ASP
 ====================

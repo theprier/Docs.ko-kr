@@ -4,19 +4,16 @@ title: '나머지에 대 한 ASP.NET MVC: 1 부 | Microsoft Docs'
 author: JoeStagner
 description: 이 비디오 Microsoft Joe Stagner t로 보기, 컨트롤러 논리 및 사용자 지정 모델을 추가 하 여 ASP.NET MVC 응용 프로그램에 대 한 ' 문의처 ' 기능을 작성 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/22/2010
-ms.topic: article
 ms.assetid: c56355c3-821f-43e2-9058-9499a1d63f80
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/videos/mvc-2/aspnet-mvc-for-the-rest-of-us/aspnet-mvc-for-the-rest-of-us-part-1
 msc.type: video
-ms.openlocfilehash: aad19b9754d1da4f0f99b86d16eff0075c3cd4f3
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 77dfb28fccb25fb217cf1298c6032214d085197f
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37376693"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37830638"
 ---
 <a name="aspnet-mvc-for-the-rest-of-us-part-1"></a>나머지에 대 한 ASP.NET MVC: 1 부
 ====================

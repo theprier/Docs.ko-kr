@@ -4,19 +4,16 @@ title: 서버 쪽 (C#)에서 애니메이션 수정 | Microsoft Docs
 author: wenz
 description: ASP.NET AJAX Control Toolkit에서 애니메이션 컨트롤 컨트롤 뿐 이지만 컨트롤에 애니메이션을 추가 하는 전체 프레임 워크 아닙니다. 애니메이션 있을 수 있습니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: b0abec39-a1c9-422d-ba9a-ef16f6185af8
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/modifying-animations-from-the-server-side-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 83ce54b1cd2c226db36be75f61321a0fb710e0ca
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 8954f025873ea553fde26c6e2330ce6e5be2b539
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37376664"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37804056"
 ---
 <a name="modifying-animations-from-the-server-side-c"></a>서버 쪽 (C#)에서 애니메이션 수정
 ====================

@@ -4,19 +4,16 @@ title: ASP.NET 4 및 Visual Studio 2010 웹 개발 개요 | Microsoft Docs
 author: rick-anderson
 description: 이 문서는.net Framework 4 및 Visual Studio 2010에 포함 된 ASP.NET에 대 한 다양 한 새 기능에 대 한 개요를 제공 합니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/10/2010
-ms.topic: article
 ms.assetid: d7729af4-1eda-4ff2-8b61-dbbe4fc11d10
-ms.technology: ''
 msc.legacyurl: /whitepapers/aspnet4
 msc.type: content
-ms.openlocfilehash: 7a75b0c39c923bb500368dbb2304b534d8ed994d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 5c7aa95b18bc0a97f42cc981476c110830286fa5
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37380781"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37829045"
 ---
 <a name="aspnet-4-and-visual-studio-2010-web-development-overview"></a>ASP.NET 4 및 Visual Studio 2010 웹 개발 개요
 ====================
