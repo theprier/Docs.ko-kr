@@ -1,21 +1,21 @@
 ---
-title: ASP.NET Core Razor 페이지에 검색 추가
+title: ASP.NET Core Razor Pages 앱에 검색 추가
 author: rick-anderson
 description: ASP.NET Core Razor 페이지에 검색을 추가하는 방법을 보여 줍니다.
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/07/2017
 uid: tutorials/razor-pages-mac/search
-ms.openlocfilehash: 16248e5203bfa53ea03c756d9b6683f6fb24c5a3
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 6374a6aaac403a7bc4b637fe8cd5c14adcdd49db
+ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278033"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36960781"
 ---
 [!INCLUDE [Search](../../includes/RP/search.md)]
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="6cde9-103">[이전: 페이지 업데이트](xref:tutorials/razor-pages-mac/da1)
-> [다음: 새 필드 추가](xref:tutorials/razor-pages/new-field)</span><span class="sxs-lookup"><span data-stu-id="6cde9-103">[Previous: Updating the pages](xref:tutorials/razor-pages-mac/da1)
+> <span data-ttu-id="c7066-103">[이전: 페이지 업데이트](xref:tutorials/razor-pages-mac/da1)
+> [다음: 새 필드 추가](xref:tutorials/razor-pages/new-field)</span><span class="sxs-lookup"><span data-stu-id="c7066-103">[Previous: Updating the pages](xref:tutorials/razor-pages-mac/da1)
 [Next: Adding a new field](xref:tutorials/razor-pages/new-field)</span></span>

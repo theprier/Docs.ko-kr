@@ -3,286 +3,290 @@ title: ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 정렬, 필터,
 author: rick-anderson
 description: 이 자습서에서는 ASP.NET Core 및 Entity Framework Core를 사용하여 페이지에 정렬, 필터링 및 페이징 기능을 추가합니다.
 ms.author: riande
-ms.date: 10/22/2017
+ms.date: 6/31/2017
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: abbd8337ed62428982a6c52cdaab684ea2c7d329
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: fce524a5cb386fbf286907be42e920be13115ca6
+ms.sourcegitcommit: 1faf2525902236428dae6a59e375519bafd5d6d7
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36275004"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37089869"
 ---
-# <a name="razor-pages-with-ef-core-in-aspnet-core---sort-filter-paging---3-of-8"></a><span data-ttu-id="3f79e-103">ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 정렬, 필터, 페이징 - 3/8</span><span class="sxs-lookup"><span data-stu-id="3f79e-103">Razor Pages with EF Core in ASP.NET Core - Sort, Filter, Paging - 3 of 8</span></span>
+# <a name="razor-pages-with-ef-core-in-aspnet-core---sort-filter-paging---3-of-8"></a><span data-ttu-id="ce343-103">ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 정렬, 필터, 페이징 - 3/8</span><span class="sxs-lookup"><span data-stu-id="ce343-103">Razor Pages with EF Core in ASP.NET Core - Sort, Filter, Paging - 3 of 8</span></span>
 
-<span data-ttu-id="3f79e-104">작성자: [Tom Dykstra](https://github.com/tdykstra), [Rick Anderson](https://twitter.com/RickAndMSFT) 및 [Jon P Smith](https://twitter.com/thereformedprog)</span><span class="sxs-lookup"><span data-stu-id="3f79e-104">By [Tom Dykstra](https://github.com/tdykstra), [Rick Anderson](https://twitter.com/RickAndMSFT), and [Jon P Smith](https://twitter.com/thereformedprog)</span></span>
+[!INCLUDE[2.0 version](~/includes/RP-EF/20-pdf.md)]
 
-[!INCLUDE [about the series](../../includes/RP-EF/intro.md)]
+::: moniker range=">= aspnetcore-2.1"
 
-<span data-ttu-id="3f79e-105">이 자습서에서는 정렬, 필터링, 그룹화 및 페이징 기능이 추가됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-105">In this tutorial, sorting, filtering, grouping, and paging, functionality is added.</span></span>
+<span data-ttu-id="ce343-104">작성자: [Tom Dykstra](https://github.com/tdykstra), [Rick Anderson](https://twitter.com/RickAndMSFT) 및 [Jon P Smith](https://twitter.com/thereformedprog)</span><span class="sxs-lookup"><span data-stu-id="ce343-104">By [Tom Dykstra](https://github.com/tdykstra), [Rick Anderson](https://twitter.com/RickAndMSFT), and [Jon P Smith](https://twitter.com/thereformedprog)</span></span>
 
-<span data-ttu-id="3f79e-106">다음 그림은 완료된 페이지를 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-106">The following illustration shows a completed page.</span></span> <span data-ttu-id="3f79e-107">열 제목은 열을 정렬하는 클릭할 수 있는 링크입니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-107">The column headings are clickable links to sort the column.</span></span> <span data-ttu-id="3f79e-108">열 제목을 반복적으로 클릭하면 오름차순과 내림차순 정렬 순서 사이로 전환됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-108">Clicking a column heading repeatedly switches between ascending and descending sort order.</span></span>
+[!INCLUDE [about the series](~/includes/RP-EF/intro.md)]
+
+<span data-ttu-id="ce343-105">이 자습서에서는 정렬, 필터링, 그룹화 및 페이징 기능이 추가됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-105">In this tutorial, sorting, filtering, grouping, and paging, functionality is added.</span></span>
+
+<span data-ttu-id="ce343-106">다음 그림은 완료된 페이지를 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-106">The following illustration shows a completed page.</span></span> <span data-ttu-id="ce343-107">열 제목은 열을 정렬하는 클릭할 수 있는 링크입니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-107">The column headings are clickable links to sort the column.</span></span> <span data-ttu-id="ce343-108">열 제목을 반복적으로 클릭하면 오름차순과 내림차순 정렬 순서 사이로 전환됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-108">Clicking a column heading repeatedly switches between ascending and descending sort order.</span></span>
 
 ![학생 인덱스 페이지](sort-filter-page/_static/paging.png)
 
-<span data-ttu-id="3f79e-110">해결할 수 없는 문제가 발생한 경우 [이 단계에 완성된 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part3-sorting)을 다운로드합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-110">If you run into problems you can't solve, download the [completed app for this stage](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part3-sorting).</span></span>
+<span data-ttu-id="ce343-110">해결할 수 없는 문제가 발생한 경우 [완성된 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples)을 다운로드합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-110">If you run into problems you can't solve, download the [completed app](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples).</span></span>
 
-## <a name="add-sorting-to-the-index-page"></a><span data-ttu-id="3f79e-111">인덱스 페이지에 정렬 추가</span><span class="sxs-lookup"><span data-stu-id="3f79e-111">Add sorting to the Index page</span></span>
+## <a name="add-sorting-to-the-index-page"></a><span data-ttu-id="ce343-111">인덱스 페이지에 정렬 추가</span><span class="sxs-lookup"><span data-stu-id="ce343-111">Add sorting to the Index page</span></span>
 
-<span data-ttu-id="3f79e-112">정렬 매개 변수를 포함하도록 문자열을 *Students/Index.cshtml.cs* `PageModel`에 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-112">Add strings to the *Students/Index.cshtml.cs* `PageModel` to contain the sorting paramaters:</span></span>
+<span data-ttu-id="ce343-112">정렬 매개 변수를 포함하도록 문자열을 *Students/Index.cshtml.cs* `PageModel`에 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-112">Add strings to the *Students/Index.cshtml.cs* `PageModel` to contain the sorting parameters:</span></span>
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet1&highlight=10-13)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet1&highlight=10-13)]
 
+<span data-ttu-id="ce343-113">다음 코드로 *Students/Index.cshtml.cs* `OnGetAsync`를 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-113">Update the *Students/Index.cshtml.cs* `OnGetAsync` with the following code:</span></span>
 
-<span data-ttu-id="3f79e-113">다음 코드로 *Students/Index.cshtml.cs* `OnGetAsync`를 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-113">Update the *Students/Index.cshtml.cs* `OnGetAsync` with the following code:</span></span>
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortOnly)]
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortOnly)]
-
-<span data-ttu-id="3f79e-114">이전 코드는 URL의 쿼리 문자열에서 `sortOrder` 매개 변수를 받습니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-114">The preceding code receives a `sortOrder` parameter from the query string in the URL.</span></span> <span data-ttu-id="3f79e-115">URL(쿼리 문자열 포함)이 [앵커 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper
-)에서 생성됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-115">The URL (including the query string) is generated by the [Anchor Tag Helper](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper
+<span data-ttu-id="ce343-114">이전 코드는 URL의 쿼리 문자열에서 `sortOrder` 매개 변수를 받습니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-114">The preceding code receives a `sortOrder` parameter from the query string in the URL.</span></span> <span data-ttu-id="ce343-115">URL(쿼리 문자열 포함)이 [앵커 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper
+)에서 생성됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-115">The URL (including the query string) is generated by the [Anchor Tag Helper](xref:mvc/views/tag-helpers/builtin-th/anchor-tag-helper
 )</span></span>
 
-<span data-ttu-id="3f79e-116">`sortOrder` 매개 변수는 “Name” 또는 “Date”입니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-116">The `sortOrder` parameter is either "Name" or "Date."</span></span> <span data-ttu-id="3f79e-117">`sortOrder` 매개 변수의 뒤에 오는 “_desc”는 내림차순 순서를 지정하기 위한 옵션입니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-117">The `sortOrder` parameter is optionally followed by "_desc" to specify descending order.</span></span> <span data-ttu-id="3f79e-118">기본 정렬 순서는 오름차순입니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-118">The default sort order is ascending.</span></span>
+<span data-ttu-id="ce343-116">`sortOrder` 매개 변수는 “Name” 또는 “Date”입니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-116">The `sortOrder` parameter is either "Name" or "Date."</span></span> <span data-ttu-id="ce343-117">`sortOrder` 매개 변수의 뒤에 오는 “_desc”는 내림차순 순서를 지정하기 위한 옵션입니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-117">The `sortOrder` parameter is optionally followed by "_desc" to specify descending order.</span></span> <span data-ttu-id="ce343-118">기본 정렬 순서는 오름차순입니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-118">The default sort order is ascending.</span></span>
 
-<span data-ttu-id="3f79e-119">인덱스 페이지가 **학생** 링크에서 요청되는 경우 쿼리 문자열이 없습니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-119">When the Index page is requested from the **Students** link, there's no query string.</span></span> <span data-ttu-id="3f79e-120">학생은 성 기준 오름차순으로 표시됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-120">The students are displayed in ascending order by last name.</span></span> <span data-ttu-id="3f79e-121">`switch` 문에서 성 기준 오름차순이 기본값(제어 이동 사례)입니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-121">Ascending order by last name is the default (fall-through case) in the `switch` statement.</span></span> <span data-ttu-id="3f79e-122">사용자가 열 제목 링크를 클릭하면 적절한 `sortOrder` 값이 쿼리 문자열 값에 제공됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-122">When the user clicks a column heading link, the appropriate `sortOrder` value is provided in the query string value.</span></span>
+<span data-ttu-id="ce343-119">인덱스 페이지가 **학생** 링크에서 요청되는 경우 쿼리 문자열이 없습니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-119">When the Index page is requested from the **Students** link, there's no query string.</span></span> <span data-ttu-id="ce343-120">학생은 성 기준 오름차순으로 표시됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-120">The students are displayed in ascending order by last name.</span></span> <span data-ttu-id="ce343-121">`switch` 문에서 성 기준 오름차순이 기본값(제어 이동 사례)입니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-121">Ascending order by last name is the default (fall-through case) in the `switch` statement.</span></span> <span data-ttu-id="ce343-122">사용자가 열 제목 링크를 클릭하면 적절한 `sortOrder` 값이 쿼리 문자열 값에 제공됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-122">When the user clicks a column heading link, the appropriate `sortOrder` value is provided in the query string value.</span></span>
 
-<span data-ttu-id="3f79e-123">열 제목 하이퍼링크를 적절한 쿼리 문자열 값으로 구성하기 위해 `NameSort` 및 `DateSort`가 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-123">`NameSort` and `DateSort` are used by the Razor Page to configure the column heading hyperlinks with the appropriate query string values:</span></span>
+<span data-ttu-id="ce343-123">열 제목 하이퍼링크를 적절한 쿼리 문자열 값으로 구성하기 위해 `NameSort` 및 `DateSort`가 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-123">`NameSort` and `DateSort` are used by the Razor Page to configure the column heading hyperlinks with the appropriate query string values:</span></span>
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortOnly&highlight=3-4)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortOnly&highlight=3-4)]
 
-<span data-ttu-id="3f79e-124">다음 코드는 C# [?: operator](https://docs.microsoft.com/dotnet/csharp/language-reference/operators/conditional-operator)를 포함합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-124">The following code contains the C# [?: operator](https://docs.microsoft.com/dotnet/csharp/language-reference/operators/conditional-operator):</span></span>
+<span data-ttu-id="ce343-124">다음 코드는 C# 조건적 [?: 연산자](https://docs.microsoft.com/dotnet/csharp/language-reference/operators/conditional-operator)를 포함합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-124">The following code contains the C# conditional [?: operator](https://docs.microsoft.com/dotnet/csharp/language-reference/operators/conditional-operator):</span></span>
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_Ternary)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_Ternary)]
 
-<span data-ttu-id="3f79e-125">첫 번째 줄은 `sortOrder`가 null이거나 비어 있는 경우 `NameSort`가 “name_desc”로 설정되도록 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-125">The first line specifies that when `sortOrder` is null or empty, `NameSort` is set to "name_desc."</span></span> <span data-ttu-id="3f79e-126">`sortOrder`가 null 또는 비어 있지 **않은** 경우 `NameSort`는 빈 문자열로 설정됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-126">If `sortOrder` is **not** null or empty, `NameSort` is set to an empty string.</span></span>
+<span data-ttu-id="ce343-125">첫 번째 줄은 `sortOrder`가 null이거나 비어 있는 경우 `NameSort`가 “name_desc”로 설정되도록 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-125">The first line specifies that when `sortOrder` is null or empty, `NameSort` is set to "name_desc."</span></span> <span data-ttu-id="ce343-126">`sortOrder`가 null 또는 비어 있지 **않은** 경우 `NameSort`는 빈 문자열로 설정됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-126">If `sortOrder` is **not** null or empty, `NameSort` is set to an empty string.</span></span>
 
-<span data-ttu-id="3f79e-127">`?: operator`는 삼진 연산자라고도 합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-127">The `?: operator` is also known as the ternary operator.</span></span>
+<span data-ttu-id="ce343-127">`?: operator`는 삼진 연산자라고도 합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-127">The `?: operator` is also known as the ternary operator.</span></span>
 
-<span data-ttu-id="3f79e-128">이러한 두 명령문을 사용하면 페이지에서 다음과 같이 열 제목 하이퍼링크를 설정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-128">These two statements enable the page to set the column heading hyperlinks as follows:</span></span>
+<span data-ttu-id="ce343-128">이러한 두 명령문을 사용하면 페이지에서 다음과 같이 열 제목 하이퍼링크를 설정할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-128">These two statements enable the page to set the column heading hyperlinks as follows:</span></span>
 
-| <span data-ttu-id="3f79e-129">현재 정렬 순서</span><span class="sxs-lookup"><span data-stu-id="3f79e-129">Current sort order</span></span> | <span data-ttu-id="3f79e-130">성 하이퍼링크</span><span class="sxs-lookup"><span data-stu-id="3f79e-130">Last Name Hyperlink</span></span> | <span data-ttu-id="3f79e-131">날짜 하이퍼링크</span><span class="sxs-lookup"><span data-stu-id="3f79e-131">Date Hyperlink</span></span> |
+| <span data-ttu-id="ce343-129">현재 정렬 순서</span><span class="sxs-lookup"><span data-stu-id="ce343-129">Current sort order</span></span> | <span data-ttu-id="ce343-130">성 하이퍼링크</span><span class="sxs-lookup"><span data-stu-id="ce343-130">Last Name Hyperlink</span></span> | <span data-ttu-id="ce343-131">날짜 하이퍼링크</span><span class="sxs-lookup"><span data-stu-id="ce343-131">Date Hyperlink</span></span> |
 |:--------------------:|:-------------------:|:--------------:|
-| <span data-ttu-id="3f79e-132">성 오름차순</span><span class="sxs-lookup"><span data-stu-id="3f79e-132">Last Name ascending</span></span> | <span data-ttu-id="3f79e-133">descending</span><span class="sxs-lookup"><span data-stu-id="3f79e-133">descending</span></span>        | <span data-ttu-id="3f79e-134">ascending</span><span class="sxs-lookup"><span data-stu-id="3f79e-134">ascending</span></span>      |
-| <span data-ttu-id="3f79e-135">성 내림차순</span><span class="sxs-lookup"><span data-stu-id="3f79e-135">Last Name descending</span></span> | <span data-ttu-id="3f79e-136">ascending</span><span class="sxs-lookup"><span data-stu-id="3f79e-136">ascending</span></span>           | <span data-ttu-id="3f79e-137">ascending</span><span class="sxs-lookup"><span data-stu-id="3f79e-137">ascending</span></span>      |
-| <span data-ttu-id="3f79e-138">날짜 오름차순</span><span class="sxs-lookup"><span data-stu-id="3f79e-138">Date ascending</span></span>       | <span data-ttu-id="3f79e-139">ascending</span><span class="sxs-lookup"><span data-stu-id="3f79e-139">ascending</span></span>           | <span data-ttu-id="3f79e-140">descending</span><span class="sxs-lookup"><span data-stu-id="3f79e-140">descending</span></span>     |
-| <span data-ttu-id="3f79e-141">날짜 내림차순</span><span class="sxs-lookup"><span data-stu-id="3f79e-141">Date descending</span></span>      | <span data-ttu-id="3f79e-142">ascending</span><span class="sxs-lookup"><span data-stu-id="3f79e-142">ascending</span></span>           | <span data-ttu-id="3f79e-143">ascending</span><span class="sxs-lookup"><span data-stu-id="3f79e-143">ascending</span></span>      |
+| <span data-ttu-id="ce343-132">성 오름차순</span><span class="sxs-lookup"><span data-stu-id="ce343-132">Last Name ascending</span></span> | <span data-ttu-id="ce343-133">descending</span><span class="sxs-lookup"><span data-stu-id="ce343-133">descending</span></span>        | <span data-ttu-id="ce343-134">ascending</span><span class="sxs-lookup"><span data-stu-id="ce343-134">ascending</span></span>      |
+| <span data-ttu-id="ce343-135">성 내림차순</span><span class="sxs-lookup"><span data-stu-id="ce343-135">Last Name descending</span></span> | <span data-ttu-id="ce343-136">ascending</span><span class="sxs-lookup"><span data-stu-id="ce343-136">ascending</span></span>           | <span data-ttu-id="ce343-137">ascending</span><span class="sxs-lookup"><span data-stu-id="ce343-137">ascending</span></span>      |
+| <span data-ttu-id="ce343-138">날짜 오름차순</span><span class="sxs-lookup"><span data-stu-id="ce343-138">Date ascending</span></span>       | <span data-ttu-id="ce343-139">ascending</span><span class="sxs-lookup"><span data-stu-id="ce343-139">ascending</span></span>           | <span data-ttu-id="ce343-140">descending</span><span class="sxs-lookup"><span data-stu-id="ce343-140">descending</span></span>     |
+| <span data-ttu-id="ce343-141">날짜 내림차순</span><span class="sxs-lookup"><span data-stu-id="ce343-141">Date descending</span></span>      | <span data-ttu-id="ce343-142">ascending</span><span class="sxs-lookup"><span data-stu-id="ce343-142">ascending</span></span>           | <span data-ttu-id="ce343-143">ascending</span><span class="sxs-lookup"><span data-stu-id="ce343-143">ascending</span></span>      |
 
-<span data-ttu-id="3f79e-144">메서드는 LINQ to Entities를 사용하여 정렬할 기준이 되는 열을 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-144">The method uses LINQ to Entities to specify the column to sort by.</span></span> <span data-ttu-id="3f79e-145">코드는 `IQueryable<Student> `를 switch 문 앞에서 초기화하고 switch 문에서 수정합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-145">The code initializes an `IQueryable<Student> ` before the switch statement, and modifies it in the switch statement:</span></span>
+<span data-ttu-id="ce343-144">메서드는 LINQ to Entities를 사용하여 정렬할 기준이 되는 열을 지정합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-144">The method uses LINQ to Entities to specify the column to sort by.</span></span> <span data-ttu-id="ce343-145">코드는 `IQueryable<Student>`를 switch 문 앞에서 초기화하고 switch 문에서 수정합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-145">The code initializes an `IQueryable<Student>` before the switch statement, and modifies it in the switch statement:</span></span>
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortOnly&highlight=6-999)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortOnly&highlight=6-999)]
 
- <span data-ttu-id="3f79e-146">`IQueryable`을 만들거나 수정하는 경우 데이터베이스에 쿼리가 전송되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-146">When an`IQueryable` is created or modified, no query is sent to the database.</span></span> <span data-ttu-id="3f79e-147">쿼리는 `IQueryable` 개체가 컬렉션으로 변환될 때까지 실행되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-147">The query isn't executed until the `IQueryable` object is converted into a collection.</span></span> <span data-ttu-id="3f79e-148">`ToListAsync`와 같은 메서드를 호출하면 `IQueryable`이 컬렉션으로 변환됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-148">`IQueryable` are converted to a collection by calling a method such as `ToListAsync`.</span></span> <span data-ttu-id="3f79e-149">따라서 `IQueryable` 코드는 다음 명령문까지 실행되지 않는 단일 쿼리가 됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-149">Therefore, the `IQueryable` code results in a single query that's not executed until the following statement:</span></span>
+ <span data-ttu-id="ce343-146">`IQueryable`을 만들거나 수정하는 경우 데이터베이스에 쿼리가 전송되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-146">When an`IQueryable` is created or modified, no query is sent to the database.</span></span> <span data-ttu-id="ce343-147">쿼리는 `IQueryable` 개체가 컬렉션으로 변환될 때까지 실행되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-147">The query isn't executed until the `IQueryable` object is converted into a collection.</span></span> <span data-ttu-id="ce343-148">`ToListAsync`와 같은 메서드를 호출하면 `IQueryable`이 컬렉션으로 변환됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-148">`IQueryable` are converted to a collection by calling a method such as `ToListAsync`.</span></span> <span data-ttu-id="ce343-149">따라서 `IQueryable` 코드는 다음 명령문까지 실행되지 않는 단일 쿼리가 됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-149">Therefore, the `IQueryable` code results in a single query that's not executed until the following statement:</span></span>
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortOnlyRtn)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortOnlyRtn)]
 
-<span data-ttu-id="3f79e-150">`OnGetAsync`는 많은 수의 열이 포함된 자세한 정보를 가져올 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-150">`OnGetAsync` could get verbose with a large number of columns.</span></span>
+<span data-ttu-id="ce343-150">`OnGetAsync`는 많은 수의 정렬 가능한 열이 포함된 자세한 정보를 가져올 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-150">`OnGetAsync` could get verbose with a large number of sortable columns.</span></span>
 
-### <a name="add-column-heading-hyperlinks-to-the-student-index-page"></a><span data-ttu-id="3f79e-151">학생 인덱스 페이지에 열 제목 하이퍼링크 추가</span><span class="sxs-lookup"><span data-stu-id="3f79e-151">Add column heading hyperlinks to the Student Index page</span></span>
+### <a name="add-column-heading-hyperlinks-to-the-student-index-page"></a><span data-ttu-id="ce343-151">학생 인덱스 페이지에 열 제목 하이퍼링크 추가</span><span class="sxs-lookup"><span data-stu-id="ce343-151">Add column heading hyperlinks to the Student Index page</span></span>
 
-<span data-ttu-id="3f79e-152">*Students/Index.cshtml*의 코드를 다음 강조 표시된 코드로 바꿉니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-152">Replace the code in *Students/Index.cshtml*, with the following highlighted code:</span></span>
+<span data-ttu-id="ce343-152">*Students/Index.cshtml*의 코드를 다음 강조 표시된 코드로 바꿉니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-152">Replace the code in *Students/Index.cshtml*, with the following highlighted code:</span></span>
 
-[!code-html[](intro/samples/cu/Pages/Students/Index2.cshtml?highlight=17-19,25-27)]
+[!code-html[](intro/samples/cu21/Pages/Students/Index2.cshtml?highlight=17-19,25-27)]
 
-<span data-ttu-id="3f79e-153">위의 코드:</span><span class="sxs-lookup"><span data-stu-id="3f79e-153">The preceding code:</span></span>
+<span data-ttu-id="ce343-153">위의 코드:</span><span class="sxs-lookup"><span data-stu-id="ce343-153">The preceding code:</span></span>
 
-* <span data-ttu-id="3f79e-154">하이퍼링크를 `LastName` 및 `EnrollmentDate` 열 머리글에 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-154">Adds hyperlinks to the `LastName` and `EnrollmentDate` column headings.</span></span>
-* <span data-ttu-id="3f79e-155">`NameSort` 및 `DateSort`의 정보를 사용하여 현재 정렬 순서 값으로 하이퍼링크를 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-155">Uses the information in `NameSort` and `DateSort` to set up hyperlinks with the current sort order values.</span></span>
+* <span data-ttu-id="ce343-154">하이퍼링크를 `LastName` 및 `EnrollmentDate` 열 머리글에 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-154">Adds hyperlinks to the `LastName` and `EnrollmentDate` column headings.</span></span>
+* <span data-ttu-id="ce343-155">`NameSort` 및 `DateSort`의 정보를 사용하여 현재 정렬 순서 값으로 하이퍼링크를 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-155">Uses the information in `NameSort` and `DateSort` to set up hyperlinks with the current sort order values.</span></span>
 
-<span data-ttu-id="3f79e-156">정렬이 작동하는지 확인하려면 다음을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-156">To verify that sorting works:</span></span>
+<span data-ttu-id="ce343-156">정렬이 작동하는지 확인하려면 다음을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-156">To verify that sorting works:</span></span>
 
-* <span data-ttu-id="3f79e-157">앱을 실행하고 **학생** 탭을 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-157">Run the app and select the **Students** tab.</span></span>
-* <span data-ttu-id="3f79e-158">**성**을 클릭합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-158">Click **Last Name**.</span></span>
-* <span data-ttu-id="3f79e-159">**등록 날짜**를 클릭합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-159">Click **Enrollment Date**.</span></span>
+* <span data-ttu-id="ce343-157">앱을 실행하고 **학생** 탭을 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-157">Run the app and select the **Students** tab.</span></span>
+* <span data-ttu-id="ce343-158">**성**을 클릭합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-158">Click **Last Name**.</span></span>
+* <span data-ttu-id="ce343-159">**등록 날짜**를 클릭합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-159">Click **Enrollment Date**.</span></span>
 
-<span data-ttu-id="3f79e-160">코드를 더 잘 이해하려면 다음을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-160">To get a better understanding of the code:</span></span>
+<span data-ttu-id="ce343-160">코드를 더 잘 이해하려면 다음을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-160">To get a better understanding of the code:</span></span>
 
-* <span data-ttu-id="3f79e-161">*Student/Index.cshtml.cs*에서 `switch (sortOrder)`에 중단점을 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-161">In *Student/Index.cshtml.cs*, set a breakpoint on `switch (sortOrder)`.</span></span>
-* <span data-ttu-id="3f79e-162">`NameSort` 및 `DateSort`에 대한 조사식을 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-162">Add a watch for `NameSort` and `DateSort`.</span></span>
-* <span data-ttu-id="3f79e-163">*Student/Index.cshtml*에서 `@Html.DisplayNameFor(model => model.Student[0].LastName)`에 중단점을 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-163">In *Student/Index.cshtml*, set a breakpoint on `@Html.DisplayNameFor(model => model.Student[0].LastName)`.</span></span>
+* <span data-ttu-id="ce343-161">*Student/Index.cshtml.cs*에서 `switch (sortOrder)`에 중단점을 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-161">In *Student/Index.cshtml.cs*, set a breakpoint on `switch (sortOrder)`.</span></span>
+* <span data-ttu-id="ce343-162">`NameSort` 및 `DateSort`에 대한 조사식을 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-162">Add a watch for `NameSort` and `DateSort`.</span></span>
+* <span data-ttu-id="ce343-163">*Student/Index.cshtml*에서 `@Html.DisplayNameFor(model => model.Student[0].LastName)`에 중단점을 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-163">In *Student/Index.cshtml*, set a breakpoint on `@Html.DisplayNameFor(model => model.Student[0].LastName)`.</span></span>
 
-<span data-ttu-id="3f79e-164">디버거를 단계별로 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-164">Step through the debugger.</span></span>
+<span data-ttu-id="ce343-164">디버거를 단계별로 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-164">Step through the debugger.</span></span>
 
-## <a name="add-a-search-box-to-the-students-index-page"></a><span data-ttu-id="3f79e-165">학생 인덱스 페이지에 검색 상자 추가</span><span class="sxs-lookup"><span data-stu-id="3f79e-165">Add a Search Box to the Students Index page</span></span>
+## <a name="add-a-search-box-to-the-students-index-page"></a><span data-ttu-id="ce343-165">학생 인덱스 페이지에 검색 상자 추가</span><span class="sxs-lookup"><span data-stu-id="ce343-165">Add a Search Box to the Students Index page</span></span>
 
-<span data-ttu-id="3f79e-166">학생 인덱스 페이지에 필터링을 추가하려면 다음을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-166">To add filtering to the Students Index page:</span></span>
+<span data-ttu-id="ce343-166">학생 인덱스 페이지에 필터링을 추가하려면 다음을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-166">To add filtering to the Students Index page:</span></span>
 
-* <span data-ttu-id="3f79e-167">텍스트 상자 및 전송 단추가 Razor 페이지에 추가됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-167">A text box and a submit button is added to the Razor Page.</span></span> <span data-ttu-id="3f79e-168">텍스트 상자는 첫 번째 또는 마지막 이름에 검색 문자열을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-168">The text box supplies a search string on the first or last name.</span></span>
-* <span data-ttu-id="3f79e-169">페이지 모델이 텍스트 상자 값을 사용하도록 업데이트됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-169">The page model is updated to use the text box value.</span></span>
+* <span data-ttu-id="ce343-167">텍스트 상자 및 전송 단추가 Razor 페이지에 추가됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-167">A text box and a submit button is added to the Razor Page.</span></span> <span data-ttu-id="ce343-168">텍스트 상자는 첫 번째 또는 마지막 이름에 검색 문자열을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-168">The text box supplies a search string on the first or last name.</span></span>
+* <span data-ttu-id="ce343-169">페이지 모델이 텍스트 상자 값을 사용하도록 업데이트됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-169">The page model is updated to use the text box value.</span></span>
 
-### <a name="add-filtering-functionality-to-the-index-method"></a><span data-ttu-id="3f79e-170">인덱스 메서드에 필터링 기능 추가</span><span class="sxs-lookup"><span data-stu-id="3f79e-170">Add filtering functionality to the Index method</span></span>
+### <a name="add-filtering-functionality-to-the-index-method"></a><span data-ttu-id="ce343-170">인덱스 메서드에 필터링 기능 추가</span><span class="sxs-lookup"><span data-stu-id="ce343-170">Add filtering functionality to the Index method</span></span>
 
-<span data-ttu-id="3f79e-171">다음 코드로 *Students/Index.cshtml.cs* `OnGetAsync`를 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-171">Update the *Students/Index.cshtml.cs* `OnGetAsync` with the following code:</span></span>
+<span data-ttu-id="ce343-171">다음 코드로 *Students/Index.cshtml.cs* `OnGetAsync`를 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-171">Update the *Students/Index.cshtml.cs* `OnGetAsync` with the following code:</span></span>
 
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilter&highlight=1,5,9-13)]
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortFilter&highlight=1,5,9-13)]
 
-<span data-ttu-id="3f79e-172">위의 코드:</span><span class="sxs-lookup"><span data-stu-id="3f79e-172">The preceding code:</span></span>
+<span data-ttu-id="ce343-172">위의 코드:</span><span class="sxs-lookup"><span data-stu-id="ce343-172">The preceding code:</span></span>
 
-* <span data-ttu-id="3f79e-173">`searchString` 매개 변수를 `OnGetAsync` 메서드에 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-173">Adds the `searchString` parameter to the `OnGetAsync` method.</span></span> <span data-ttu-id="3f79e-174">다음 섹션에서 추가되는 텍스트 상자에서 검색 문자열 값이 수신됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-174">The search string value is received from a text box that's added in the next section.</span></span>
-* <span data-ttu-id="3f79e-175">LINQ 문 및 `Where` 절을 추가했습니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-175">Added to the LINQ statement a `Where` clause.</span></span> <span data-ttu-id="3f79e-176">`Where` 절은 이름 또는 성에 검색 문자열이 포함된 학생만 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-176">The `Where` clause selects only students whose first name or last name contains the search string.</span></span> <span data-ttu-id="3f79e-177">LINQ 문은 검색할 값이 있는 경우에만 실행됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-177">The LINQ statement is executed only if there's a value to search for.</span></span>
+* <span data-ttu-id="ce343-173">`searchString` 매개 변수를 `OnGetAsync` 메서드에 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-173">Adds the `searchString` parameter to the `OnGetAsync` method.</span></span> <span data-ttu-id="ce343-174">다음 섹션에서 추가되는 텍스트 상자에서 검색 문자열 값이 수신됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-174">The search string value is received from a text box that's added in the next section.</span></span>
+* <span data-ttu-id="ce343-175">LINQ 문 및 `Where` 절을 추가했습니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-175">Added to the LINQ statement a `Where` clause.</span></span> <span data-ttu-id="ce343-176">`Where` 절은 이름 또는 성에 검색 문자열이 포함된 학생만 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-176">The `Where` clause selects only students whose first name or last name contains the search string.</span></span> <span data-ttu-id="ce343-177">LINQ 문은 검색할 값이 있는 경우에만 실행됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-177">The LINQ statement is executed only if there's a value to search for.</span></span>
 
-<span data-ttu-id="3f79e-178">참고: 이전 코드는 `IQueryable` 개체에서 `Where` 메서드를 호출하고, 필터는 서버에서 처리됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-178">Note: The preceding code calls the `Where` method on an `IQueryable` object, and the filter is processed on the server.</span></span> <span data-ttu-id="3f79e-179">일부 시나리오에서 앱은 메모리 내 컬렉션에서 확장 메서드로 `Where` 메서드를 호출할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-179">In some scenarios, the app might be calling the `Where` method as an extension method on an in-memory collection.</span></span> <span data-ttu-id="3f79e-180">예를 들어 `_context.Students`가 EF Core `DbSet`에서 `IEnumerable` 컬렉션을 반환하는 리포지토리 메서드로 변경되었다고 가정합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-180">For example, suppose `_context.Students` changes from EF Core `DbSet` to a repository method that returns an `IEnumerable` collection.</span></span> <span data-ttu-id="3f79e-181">결과는 일반적으로 동일하지만 경우에 따라 다를 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-181">The result would normally be the same but in some cases may be different.</span></span>
+<span data-ttu-id="ce343-178">참고: 이전 코드는 `IQueryable` 개체에서 `Where` 메서드를 호출하고, 필터는 서버에서 처리됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-178">Note: The preceding code calls the `Where` method on an `IQueryable` object, and the filter is processed on the server.</span></span> <span data-ttu-id="ce343-179">일부 시나리오에서 앱은 메모리 내 컬렉션에서 확장 메서드로 `Where` 메서드를 호출할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-179">In some scenarios, the app might be calling the `Where` method as an extension method on an in-memory collection.</span></span> <span data-ttu-id="ce343-180">예를 들어 `_context.Students`가 EF Core `DbSet`에서 `IEnumerable` 컬렉션을 반환하는 리포지토리 메서드로 변경되었다고 가정합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-180">For example, suppose `_context.Students` changes from EF Core `DbSet` to a repository method that returns an `IEnumerable` collection.</span></span> <span data-ttu-id="ce343-181">결과는 일반적으로 동일하지만 경우에 따라 다를 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-181">The result would normally be the same but in some cases may be different.</span></span>
 
-<span data-ttu-id="3f79e-182">예를 들어 `Contains`의 .NET Framework 구현은 기본적으로 대/소문자 구분 비교를 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-182">For example, the .NET Framework implementation of `Contains` performs a case-sensitive comparison by default.</span></span> <span data-ttu-id="3f79e-183">SQL Server에서 `Contains` 대/소문자 구분은 SQL Server 인스턴스의 컬렉션 설정에 의해 결정됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-183">In SQL Server, `Contains` case-sensitivity is determined by the collation setting of the SQL Server instance.</span></span> <span data-ttu-id="3f79e-184">SQL Server는 기본적으로 대/소문자를 구분하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-184">SQL Server defaults to case-insensitive.</span></span> <span data-ttu-id="3f79e-185">`ToUpper`는 테스트가 명시적으로 대/소문자를 구분하지 않도록 하기 위해 호출됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-185">`ToUpper` could be called to make the test explicitly case-insensitive:</span></span>
+<span data-ttu-id="ce343-182">예를 들어 `Contains`의 .NET Framework 구현은 기본적으로 대/소문자 구분 비교를 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-182">For example, the .NET Framework implementation of `Contains` performs a case-sensitive comparison by default.</span></span> <span data-ttu-id="ce343-183">SQL Server에서 `Contains` 대/소문자 구분은 SQL Server 인스턴스의 컬렉션 설정에 의해 결정됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-183">In SQL Server, `Contains` case-sensitivity is determined by the collation setting of the SQL Server instance.</span></span> <span data-ttu-id="ce343-184">SQL Server는 기본적으로 대/소문자를 구분하지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-184">SQL Server defaults to case-insensitive.</span></span> <span data-ttu-id="ce343-185">`ToUpper`는 테스트가 명시적으로 대/소문자를 구분하지 않도록 하기 위해 호출됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-185">`ToUpper` could be called to make the test explicitly case-insensitive:</span></span>
 
 `Where(s => s.LastName.ToUpper().Contains(searchString.ToUpper())`
 
-<span data-ttu-id="3f79e-186">위의 코드는 코드가 `IEnumerable`을 사용하도록 변경된 경우 결과가 대/소문자를 구분하지 않는지 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-186">The preceding code would ensure that results are case-insensitive if the code changes to use `IEnumerable`.</span></span> <span data-ttu-id="3f79e-187">`Contains`가 `IEnumerable` 컬렉션에서 호출된 경우 .NET Core 구현이 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-187">When `Contains` is called on an `IEnumerable` collection, the .NET Core implementation is used.</span></span> <span data-ttu-id="3f79e-188">`Contains`가 `IQueryable` 개체에서 호출된 경우 데이터베이스 구현이 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-188">When `Contains` is called on an `IQueryable` object, the database implementation is used.</span></span> <span data-ttu-id="3f79e-189">리포지토리에서 `IEnumerable`을 반환하면 상당한 성능 저하가 발생할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-189">Returning an `IEnumerable` from a repository can have a significant performance penality:</span></span>
+<span data-ttu-id="ce343-186">위의 코드는 코드가 `IEnumerable`을 사용하도록 변경된 경우 결과가 대/소문자를 구분하지 않는지 확인합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-186">The preceding code would ensure that results are case-insensitive if the code changes to use `IEnumerable`.</span></span> <span data-ttu-id="ce343-187">`Contains`가 `IEnumerable` 컬렉션에서 호출된 경우 .NET Core 구현이 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-187">When `Contains` is called on an `IEnumerable` collection, the .NET Core implementation is used.</span></span> <span data-ttu-id="ce343-188">`Contains`가 `IQueryable` 개체에서 호출된 경우 데이터베이스 구현이 사용됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-188">When `Contains` is called on an `IQueryable` object, the database implementation is used.</span></span> <span data-ttu-id="ce343-189">리포지토리에서 `IEnumerable`을 반환하면 상당한 성능 저하가 발생할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-189">Returning an `IEnumerable` from a repository can have a significant performance penality:</span></span>
 
-1. <span data-ttu-id="3f79e-190">모든 행이 DB 서버에서 반환됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-190">All the rows are returned from the DB server.</span></span>
-1. <span data-ttu-id="3f79e-191">필터는 응용 프로그램에서 반환된 모든 행에 적용됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-191">The filter is applied to all the returned rows in the application.</span></span>
+1. <span data-ttu-id="ce343-190">모든 행이 DB 서버에서 반환됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-190">All the rows are returned from the DB server.</span></span>
+1. <span data-ttu-id="ce343-191">필터는 응용 프로그램에서 반환된 모든 행에 적용됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-191">The filter is applied to all the returned rows in the application.</span></span>
 
-<span data-ttu-id="3f79e-192">`ToUpper` 호출에 대한 성능 저하가 발생합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-192">There's a performance penalty for calling `ToUpper`.</span></span> <span data-ttu-id="3f79e-193">`ToUpper` 코드는 TSQL SELECT 문의 WHERE 절에 함수를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-193">The `ToUpper` code adds a function in the WHERE clause of the TSQL SELECT statement.</span></span> <span data-ttu-id="3f79e-194">추가된 함수는 최적화 프로그램이 인덱스를 사용하지 않도록 합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-194">The added function prevents the optimizer from using an index.</span></span> <span data-ttu-id="3f79e-195">SQL은 대/소문자를 구분하지 않도록 설치되어 있으므로 필요하지 않은 경우 `ToUpper` 호출을 피하는 것이 가장 좋습니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-195">Given that SQL is installed as case-insensitive, it's best to avoid the `ToUpper` call when it's not needed.</span></span>
+<span data-ttu-id="ce343-192">`ToUpper` 호출에 대한 성능 저하가 발생합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-192">There's a performance penalty for calling `ToUpper`.</span></span> <span data-ttu-id="ce343-193">`ToUpper` 코드는 TSQL SELECT 문의 WHERE 절에 함수를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-193">The `ToUpper` code adds a function in the WHERE clause of the TSQL SELECT statement.</span></span> <span data-ttu-id="ce343-194">추가된 함수는 최적화 프로그램이 인덱스를 사용하지 않도록 합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-194">The added function prevents the optimizer from using an index.</span></span> <span data-ttu-id="ce343-195">SQL은 대/소문자를 구분하지 않도록 설치되어 있으므로 필요하지 않은 경우 `ToUpper` 호출을 피하는 것이 가장 좋습니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-195">Given that SQL is installed as case-insensitive, it's best to avoid the `ToUpper` call when it's not needed.</span></span>
 
-### <a name="add-a-search-box-to-the-student-index-page"></a><span data-ttu-id="3f79e-196">학생 인덱스 페이지에 검색 상자 추가</span><span class="sxs-lookup"><span data-stu-id="3f79e-196">Add a Search Box to the Student Index page</span></span>
+### <a name="add-a-search-box-to-the-student-index-page"></a><span data-ttu-id="ce343-196">학생 인덱스 페이지에 검색 상자 추가</span><span class="sxs-lookup"><span data-stu-id="ce343-196">Add a Search Box to the Student Index page</span></span>
 
-<span data-ttu-id="3f79e-197">*Pages/Students/Index.cshtml*에서 다음 강조 표시된 코드를 추가하여 **검색** 단추와 다양한 크롬을 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-197">In *Pages/Students/Index.cshtml*, add the following highlighted code to create a **Search** button and assorted chrome.</span></span>
+<span data-ttu-id="ce343-197">*Pages/Students/Index.cshtml*에서 다음 강조 표시된 코드를 추가하여 **검색** 단추와 다양한 크롬을 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-197">In *Pages/Students/Index.cshtml*, add the following highlighted code to create a **Search** button and assorted chrome.</span></span>
 
-[!code-html[](intro/samples/cu/Pages/Students/Index3.cshtml?highlight=14-23&range=1-25)]
+[!code-html[](intro/samples/cu21/Pages/Students/Index3.cshtml?highlight=14-23&range=1-25)]
 
-<span data-ttu-id="3f79e-198">이전 코드는 `<form>` [태그 도우미](xref:mvc/views/tag-helpers/intro)를 사용하여 검색 텍스트 상자 및 단추를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-198">The preceding code uses the `<form>` [tag helper](xref:mvc/views/tag-helpers/intro) to add the search text box and button.</span></span> <span data-ttu-id="3f79e-199">기본적으로 `<form>` 태그 도우미는 POST로 양식 데이터를 전송합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-199">By default, the `<form>` tag helper submits form data with a POST.</span></span> <span data-ttu-id="3f79e-200">POST를 사용하면 매개 변수가 URL에 없는 HTTP 메시지 본문에 전달됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-200">With POST, the parameters are passed in the HTTP message body and not in the URL.</span></span> <span data-ttu-id="3f79e-201">HTTP GET을 사용하는 경우 양식 데이터가 URL에 쿼리 문자열로 전달됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-201">When HTTP GET is used, the form data is passed in the URL as query strings.</span></span> <span data-ttu-id="3f79e-202">사용자는 쿼리 문자열로 데이터를 전달하여 URL을 책갈피로 표시할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-202">Passing the data with query strings enables users to bookmark the URL.</span></span> <span data-ttu-id="3f79e-203">[W3C 지침](https://www.w3.org/2001/tag/doc/whenToUseGet.html)에 따라 작업이 업데이트되지 않을 때 GET을 사용해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-203">The [W3C guidelines](https://www.w3.org/2001/tag/doc/whenToUseGet.html) recommend that GET should be used when the action doesn't result in an update.</span></span>
+<span data-ttu-id="ce343-198">이전 코드는 `<form>` [태그 도우미](xref:mvc/views/tag-helpers/intro)를 사용하여 검색 텍스트 상자 및 단추를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-198">The preceding code uses the `<form>` [tag helper](xref:mvc/views/tag-helpers/intro) to add the search text box and button.</span></span> <span data-ttu-id="ce343-199">기본적으로 `<form>` 태그 도우미는 POST로 양식 데이터를 전송합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-199">By default, the `<form>` tag helper submits form data with a POST.</span></span> <span data-ttu-id="ce343-200">POST를 사용하면 매개 변수가 URL에 없는 HTTP 메시지 본문에 전달됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-200">With POST, the parameters are passed in the HTTP message body and not in the URL.</span></span> <span data-ttu-id="ce343-201">HTTP GET을 사용하는 경우 양식 데이터가 URL에 쿼리 문자열로 전달됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-201">When HTTP GET is used, the form data is passed in the URL as query strings.</span></span> <span data-ttu-id="ce343-202">사용자는 쿼리 문자열로 데이터를 전달하여 URL을 책갈피로 표시할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-202">Passing the data with query strings enables users to bookmark the URL.</span></span> <span data-ttu-id="ce343-203">[W3C 지침](https://www.w3.org/2001/tag/doc/whenToUseGet.html)에 따라 작업이 업데이트되지 않을 때 GET을 사용해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-203">The [W3C guidelines](https://www.w3.org/2001/tag/doc/whenToUseGet.html) recommend that GET should be used when the action doesn't result in an update.</span></span>
 
-<span data-ttu-id="3f79e-204">앱을 테스트합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-204">Test the app:</span></span>
+<span data-ttu-id="ce343-204">앱을 테스트합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-204">Test the app:</span></span>
 
-* <span data-ttu-id="3f79e-205">**학생** 탭을 선택하고 검색 문자열을 입력합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-205">Select the **Students** tab and enter a search string.</span></span>
-* <span data-ttu-id="3f79e-206">**검색**을 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-206">Select **Search**.</span></span>
+* <span data-ttu-id="ce343-205">**학생** 탭을 선택하고 검색 문자열을 입력합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-205">Select the **Students** tab and enter a search string.</span></span>
+* <span data-ttu-id="ce343-206">**검색**을 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-206">Select **Search**.</span></span>
 
-<span data-ttu-id="3f79e-207">URL에 검색 문자열이 포함되어 있음을 확인하세요.</span><span class="sxs-lookup"><span data-stu-id="3f79e-207">Notice that the URL contains the search string.</span></span>
+<span data-ttu-id="ce343-207">URL에 검색 문자열이 포함되어 있음을 확인하세요.</span><span class="sxs-lookup"><span data-stu-id="ce343-207">Notice that the URL contains the search string.</span></span>
 
 ```html
 http://localhost:5000/Students?SearchString=an
 ```
 
-<span data-ttu-id="3f79e-208">페이지가 책갈피로 표시된 경우 책갈피에는 페이지에 대한 URL 및 `SearchString` 쿼리 문자열이 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-208">If the page is bookmarked, the bookmark contains the URL to the page and the `SearchString` query string.</span></span> <span data-ttu-id="3f79e-209">`form` 태그의 `method="get"`으로 인해 쿼리 문자열이 생성됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-209">The `method="get"` in the `form` tag is what caused the query string to be generated.</span></span>
+<span data-ttu-id="ce343-208">페이지가 책갈피로 표시된 경우 책갈피에는 페이지에 대한 URL 및 `SearchString` 쿼리 문자열이 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-208">If the page is bookmarked, the bookmark contains the URL to the page and the `SearchString` query string.</span></span> <span data-ttu-id="ce343-209">`form` 태그의 `method="get"`으로 인해 쿼리 문자열이 생성됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-209">The `method="get"` in the `form` tag is what caused the query string to be generated.</span></span>
 
-<span data-ttu-id="3f79e-210">현재 열 제목 정렬 링크를 선택하면 **검색** 상자에서 필터 값이 손실됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-210">Currently, when a column heading sort link is selected, the filter value from the **Search** box is lost.</span></span> <span data-ttu-id="3f79e-211">손실된 필터 값은 다음 섹션에서 수정됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-211">The lost filter value is fixed in the next section.</span></span>
+<span data-ttu-id="ce343-210">현재 열 제목 정렬 링크를 선택하면 **검색** 상자에서 필터 값이 손실됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-210">Currently, when a column heading sort link is selected, the filter value from the **Search** box is lost.</span></span> <span data-ttu-id="ce343-211">손실된 필터 값은 다음 섹션에서 수정됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-211">The lost filter value is fixed in the next section.</span></span>
 
-## <a name="add-paging-functionality-to-the-students-index-page"></a><span data-ttu-id="3f79e-212">학생 인덱스 페이지에 페이징 기능 추가</span><span class="sxs-lookup"><span data-stu-id="3f79e-212">Add paging functionality to the Students Index page</span></span>
+## <a name="add-paging-functionality-to-the-students-index-page"></a><span data-ttu-id="ce343-212">학생 인덱스 페이지에 페이징 기능 추가</span><span class="sxs-lookup"><span data-stu-id="ce343-212">Add paging functionality to the Students Index page</span></span>
 
-<span data-ttu-id="3f79e-213">이 섹션에서는 페이징을 지원하기 위해 `PaginatedList` 클래스를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-213">In this section, a `PaginatedList` class is created to support paging.</span></span> <span data-ttu-id="3f79e-214">`PaginatedList` 클래스는 `Skip` 및 `Take` 문을 사용하여 테이블의 모든 행을 검색하는 대신 서버에 있는 데이터를 필터링합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-214">The `PaginatedList` class uses `Skip` and `Take` statements to filter data on the server instead of retrieving all rows of the table.</span></span> <span data-ttu-id="3f79e-215">다음 그림에는 페이징 단추가 나와 있습니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-215">The following illustration shows the paging buttons.</span></span>
-
-![페이징 링크가 있는 학생 인덱스 페이지](sort-filter-page/_static/paging.png)
-
-<span data-ttu-id="3f79e-217">프로젝트 폴더에서 다음 코드로 `PaginatedList.cs`를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-217">In the project folder, create `PaginatedList.cs` with the following code:</span></span>
-
-[!code-csharp[](intro/samples/cu/PaginatedList.cs)]
-
-<span data-ttu-id="3f79e-218">이전 코드에서 `CreateAsync` 메서드는 페이지 크기 및 페이지 번호를 사용하고 적절한 `Skip` 및 `Take` 문을 `IQueryable`에 적용합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-218">The `CreateAsync` method in the preceding code takes page size and page number and applies the appropriate `Skip` and `Take` statements to the `IQueryable`.</span></span> <span data-ttu-id="3f79e-219">`IQueryable`에서 `ToListAsync`를 호출하면 요청된 페이지만 포함하는 목록을 반환합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-219">When `ToListAsync` is called on the `IQueryable`, it returns a List containing only the requested page.</span></span> <span data-ttu-id="3f79e-220">**이전** 및 **다음** 페이징 단추를 사용 또는 사용하지 않도록 설정하는 데 `HasPreviousPage` 및 `HasNextPage` 속성을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-220">The properties `HasPreviousPage` and `HasNextPage` are used to enable or disable **Previous** and **Next** paging buttons.</span></span>
-
-<span data-ttu-id="3f79e-221">`CreateAsync` 메서드는 `PaginatedList<T>`를 만드는 데 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-221">The `CreateAsync` method is used to create the `PaginatedList<T>`.</span></span> <span data-ttu-id="3f79e-222">생성자를 `PaginatedList<T>` 개체를 만들 수 없고, 생성자는 비동기 코드를 실행할 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-222">A constructor can't create the `PaginatedList<T>` object, constructors can't run asynchronous code.</span></span>
-
-## <a name="add-paging-functionality-to-the-index-method"></a><span data-ttu-id="3f79e-223">인덱스 메서드에 페이징 기능 추가</span><span class="sxs-lookup"><span data-stu-id="3f79e-223">Add paging functionality to the Index method</span></span>
-
-<span data-ttu-id="3f79e-224">*Students/Index.cshtml.cs*에서 `Student`의 형식을 `IList<Student>`에서 `PaginatedList<Student>`로 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-224">In *Students/Index.cshtml.cs*, update the type of `Student` from `IList<Student>` to `PaginatedList<Student>`:</span></span>
-
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPageType)]
-
-<span data-ttu-id="3f79e-225">다음 코드로 *Students/Index.cshtml.cs* `OnGetAsync`를 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-225">Update the *Students/Index.cshtml.cs* `OnGetAsync` with the following code:</span></span>
-
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage&highlight=1-4,7-14,41-999)]
-
-<span data-ttu-id="3f79e-226">이전 코드는 페이지 인덱스, 현재 `sortOrder` 및 `currentFilter`를 메서드 서명에 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-226">The preceding code adds the page index, the current `sortOrder`, and the `currentFilter` to the method signature.</span></span>
-
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage2)]
-
-<span data-ttu-id="3f79e-227">모든 매개 변수는 다음 경우에 null입니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-227">All the parameters are null when:</span></span>
-
-* <span data-ttu-id="3f79e-228">페이지가 **학생** 링크에서 호출됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-228">The page is called from the **Students** link.</span></span>
-* <span data-ttu-id="3f79e-229">사용자가 페이징 또는 정렬 링크를 클릭하지 않았습니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-229">The user hasn't clicked a paging or sorting link.</span></span>
-
-<span data-ttu-id="3f79e-230">페이징 링크를 클릭하면 페이지 인덱스 변수에 표시할 페이지 번호가 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-230">When a paging link is clicked, the page index variable contains the page number to display.</span></span>
-
-<span data-ttu-id="3f79e-231">`CurrentSort`는 Razor 페이지를 현재 정렬 순서로 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-231">`CurrentSort` provides the Razor Page with the current sort order.</span></span> <span data-ttu-id="3f79e-232">현재 정렬 순서는 페이징하는 동안 정렬 순서를 유지하기 위해 페이징 링크에 포함되어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-232">The current sort order must be included in the paging links to keep the sort order while paging.</span></span>
-
-<span data-ttu-id="3f79e-233">`CurrentFilter`는 Razor 페이지를 현재 필터 문자열로 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-233">`CurrentFilter` provides the Razor Page with the current filter string.</span></span> <span data-ttu-id="3f79e-234">`CurrentFilter` 값은:</span><span class="sxs-lookup"><span data-stu-id="3f79e-234">The `CurrentFilter` value:</span></span>
-
-* <span data-ttu-id="3f79e-235">페이징하는 동안 필터 설정을 유지하기 위해 페이징 링크에 포함되어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-235">Must be included in the paging links in order to maintain the filter settings during paging.</span></span>
-* <span data-ttu-id="3f79e-236">페이지를 다시 표시하는 경우 텍스트 상자에 복원되어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-236">Must be restored to the text box when the page is redisplayed.</span></span>
-
-<span data-ttu-id="3f79e-237">검색 문자열이 페이징하는 동안 변경되면 페이지가 1로 다시 설정됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-237">If the search string is changed while paging, the page is reset to 1.</span></span> <span data-ttu-id="3f79e-238">새 필터로 인해 다른 데이터가 표시될 수 있으므로 페이지는 1로 재설정되어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-238">The page has to be reset to 1 because the new filter can result in different data to display.</span></span> <span data-ttu-id="3f79e-239">검색 값을 입력하는 경우 및 **전송**을 선택한 경우:</span><span class="sxs-lookup"><span data-stu-id="3f79e-239">When a search value is entered and **Submit** is selected:</span></span>
-
-* <span data-ttu-id="3f79e-240">검색 문자열이 변경됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-240">The search string is changed.</span></span>
-* <span data-ttu-id="3f79e-241">`searchString` 매개 변수가 null이 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-241">The `searchString` parameter isn't null.</span></span>
-
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage3)]
-
-<span data-ttu-id="3f79e-242">`PaginatedList.CreateAsync` 메서드가 학생 쿼리를 페이징을 지원하는 컬렉션 형식의 단일 학생 페이지로 변환합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-242">The `PaginatedList.CreateAsync` method converts the student query to a single page of students in a collection type that supports paging.</span></span> <span data-ttu-id="3f79e-243">해당 단일 학생 페이지가 Razor 페이지에 전달됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-243">That single page of students is passed to the Razor Page.</span></span>
-
-[!code-csharp[](intro/samples/cu/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage4)]
-
-<span data-ttu-id="3f79e-244">`PaginatedList.CreateAsync`에서 두 개의 물음표는 [Null 병합 연산자](https://docs.microsoft.com/ dotnet/csharp/language-reference/operators/null-conditional-operator)를 나타냅니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-244">The two question marks in `PaginatedList.CreateAsync` represent the [null-coalescing operator](https://docs.microsoft.com/ dotnet/csharp/language-reference/operators/null-conditional-operator).</span></span> <span data-ttu-id="3f79e-245">Null 병합 연산자는 null 허용 형식에 대한 기본값을 정의합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-245">The null-coalescing operator defines a default value for a nullable type.</span></span> <span data-ttu-id="3f79e-246">식 `(pageIndex ?? 1)`은 값이 있는 경우 `pageIndex`의 값을 반환함을 의미합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-246">The expression `(pageIndex ?? 1)` means return the value of `pageIndex` if it has a value.</span></span> <span data-ttu-id="3f79e-247">`pageIndex`에 값이 없으면 1을 반환합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-247">If `pageIndex` doesn't have a value, return 1.</span></span>
-
-## <a name="add-paging-links-to-the-student-razor-page"></a><span data-ttu-id="3f79e-248">학생 Razor 페이지에 페이징 링크 추가</span><span class="sxs-lookup"><span data-stu-id="3f79e-248">Add paging links to the student Razor Page</span></span>
-
-<span data-ttu-id="3f79e-249">*Students/Index.cshtml*의 표시를 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-249">Update the markup in *Students/Index.cshtml*.</span></span> <span data-ttu-id="3f79e-250">변경 내용은 강조 표시되어 있습니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-250">The changes are highlighted:</span></span>
-
-[!code-html[](intro/samples/cu/Pages/Students/Index.cshtml?highlight=28-31,37-40,68-999)]
-
-<span data-ttu-id="3f79e-251">열 제목 링크는 쿼리 문자열을 사용하여 현재 검색 문자열을 `OnGetAsync` 메서드에 전달하므로 사용자가 필터 결과 내에서 정렬할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-251">The column header links use the query string to pass the current search string to the `OnGetAsync` method so that the user can sort within filter results:</span></span>
-
-[!code-html[](intro/samples/cu/Pages/Students/Index.cshtml?range=28-31)]
-
-<span data-ttu-id="3f79e-252">태그 도우미에 페이징 단추가 표시됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-252">The paging buttons are displayed by tag helpers:</span></span>
-
-[!code-html[](intro/samples/cu/Pages/Students/Index.cshtml?range=72-)]
-
-<span data-ttu-id="3f79e-253">앱을 실행하고 학생 페이지로 이동합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-253">Run the app and navigate to the students page.</span></span>
-
-* <span data-ttu-id="3f79e-254">페이징이 작동하는지 확인하려면 다른 정렬 순서의 페이징 링크를 클릭합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-254">To make sure paging works, click the paging links in different sort orders.</span></span>
-* <span data-ttu-id="3f79e-255">정렬 및 필터링을 통해 페이징이 제대로 작동하는지 확인하려면 검색 문자열을 입력하고 페이징을 다시 시도합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-255">To verify that paging works correctly with sorting and filtering, enter a search string and try paging.</span></span>
+<span data-ttu-id="ce343-213">이 섹션에서는 페이징을 지원하기 위해 `PaginatedList` 클래스를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-213">In this section, a `PaginatedList` class is created to support paging.</span></span> <span data-ttu-id="ce343-214">`PaginatedList` 클래스는 `Skip` 및 `Take` 문을 사용하여 테이블의 모든 행을 검색하는 대신 서버에 있는 데이터를 필터링합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-214">The `PaginatedList` class uses `Skip` and `Take` statements to filter data on the server instead of retrieving all rows of the table.</span></span> <span data-ttu-id="ce343-215">다음 그림에는 페이징 단추가 나와 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-215">The following illustration shows the paging buttons.</span></span>
 
 ![페이징 링크가 있는 학생 인덱스 페이지](sort-filter-page/_static/paging.png)
 
-<span data-ttu-id="3f79e-257">코드를 더 잘 이해하려면 다음을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-257">To get a better understanding of the code:</span></span>
+<span data-ttu-id="ce343-217">프로젝트 폴더에서 다음 코드로 `PaginatedList.cs`를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-217">In the project folder, create `PaginatedList.cs` with the following code:</span></span>
 
-* <span data-ttu-id="3f79e-258">*Student/Index.cshtml.cs*에서 `switch (sortOrder)`에 중단점을 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-258">In *Student/Index.cshtml.cs*, set a breakpoint on `switch (sortOrder)`.</span></span>
-* <span data-ttu-id="3f79e-259">`NameSort`, `DateSort`, `CurrentSort` 및 `Model.Student.PageIndex`에 대한 조사식을 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-259">Add a watch for `NameSort`, `DateSort`, `CurrentSort`, and `Model.Student.PageIndex`.</span></span>
-* <span data-ttu-id="3f79e-260">*Student/Index.cshtml*에서 `@Html.DisplayNameFor(model => model.Student[0].LastName)`에 중단점을 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-260">In *Student/Index.cshtml*, set a breakpoint on `@Html.DisplayNameFor(model => model.Student[0].LastName)`.</span></span>
+[!code-csharp[](intro/samples/cu21/PaginatedList.cs)]
 
-<span data-ttu-id="3f79e-261">디버거를 단계별로 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-261">Step through the debugger.</span></span>
+<span data-ttu-id="ce343-218">이전 코드에서 `CreateAsync` 메서드는 페이지 크기 및 페이지 번호를 사용하고 적절한 `Skip` 및 `Take` 문을 `IQueryable`에 적용합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-218">The `CreateAsync` method in the preceding code takes page size and page number and applies the appropriate `Skip` and `Take` statements to the `IQueryable`.</span></span> <span data-ttu-id="ce343-219">`IQueryable`에서 `ToListAsync`를 호출하면 요청된 페이지만 포함하는 목록을 반환합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-219">When `ToListAsync` is called on the `IQueryable`, it returns a List containing only the requested page.</span></span> <span data-ttu-id="ce343-220">**이전** 및 **다음** 페이징 단추를 사용 또는 사용하지 않도록 설정하는 데 `HasPreviousPage` 및 `HasNextPage` 속성을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-220">The properties `HasPreviousPage` and `HasNextPage` are used to enable or disable **Previous** and **Next** paging buttons.</span></span>
 
-## <a name="update-the-about-page-to-show-student-statistics"></a><span data-ttu-id="3f79e-262">학생 통계를 표시하도록 정보 페이지를 업데이트</span><span class="sxs-lookup"><span data-stu-id="3f79e-262">Update the About page to show student statistics</span></span>
+<span data-ttu-id="ce343-221">`CreateAsync` 메서드는 `PaginatedList<T>`를 만드는 데 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-221">The `CreateAsync` method is used to create the `PaginatedList<T>`.</span></span> <span data-ttu-id="ce343-222">생성자를 `PaginatedList<T>` 개체를 만들 수 없고, 생성자는 비동기 코드를 실행할 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-222">A constructor can't create the `PaginatedList<T>` object, constructors can't run asynchronous code.</span></span>
 
-<span data-ttu-id="3f79e-263">이 단계에서는 각 등록 날짜에 대해 등록한 학생 수를 표시하도록 *Pages/About.cshtml*을 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-263">In this step, *Pages/About.cshtml* is updated to display how many students have enrolled for each enrollment date.</span></span> <span data-ttu-id="3f79e-264">업데이트는 그룹화를 사용하며 다음 단계를 포함합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-264">The update uses grouping and includes the following steps:</span></span>
+## <a name="add-paging-functionality-to-the-index-method"></a><span data-ttu-id="ce343-223">인덱스 메서드에 페이징 기능 추가</span><span class="sxs-lookup"><span data-stu-id="ce343-223">Add paging functionality to the Index method</span></span>
 
-* <span data-ttu-id="3f79e-265">**정보** 페이지에서 사용되는 데이터에 대한 보기 모델 클래스를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-265">Create a view model class for the data used by the **About** Page.</span></span>
-* <span data-ttu-id="3f79e-266">Razor 페이지 정보 및 페이지 모델을 수정합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-266">Modify the About Razor Page and page model.</span></span>
+<span data-ttu-id="ce343-224">*Students/Index.cshtml.cs*에서 `Student`의 형식을 `IList<Student>`에서 `PaginatedList<Student>`로 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-224">In *Students/Index.cshtml.cs*, update the type of `Student` from `IList<Student>` to `PaginatedList<Student>`:</span></span>
 
-### <a name="create-the-view-model"></a><span data-ttu-id="3f79e-267">뷰 모델 만들기</span><span class="sxs-lookup"><span data-stu-id="3f79e-267">Create the view model</span></span>
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPageType)]
 
-<span data-ttu-id="3f79e-268">*Models* 폴더에 *SchoolViewModels* 폴더를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-268">Create a *SchoolViewModels* folder in the *Models* folder.</span></span>
+<span data-ttu-id="ce343-225">다음 코드로 *Students/Index.cshtml.cs* `OnGetAsync`를 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-225">Update the *Students/Index.cshtml.cs* `OnGetAsync` with the following code:</span></span>
 
-<span data-ttu-id="3f79e-269">*SchoolViewModels* 폴더에서 다음 코드로 *EnrollmentDateGroup.cs*를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-269">In the *SchoolViewModels* folder, add a *EnrollmentDateGroup.cs* with the following code:</span></span>
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage&highlight=1-4,7-14,41-999)]
 
-[!code-csharp[](intro/samples/cu/Models/SchoolViewModels/EnrollmentDateGroup.cs)]
+<span data-ttu-id="ce343-226">이전 코드는 페이지 인덱스, 현재 `sortOrder` 및 `currentFilter`를 메서드 서명에 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-226">The preceding code adds the page index, the current `sortOrder`, and the `currentFilter` to the method signature.</span></span>
 
-### <a name="update-the-about-page-model"></a><span data-ttu-id="3f79e-270">페이지 모델 정보 업데이트</span><span class="sxs-lookup"><span data-stu-id="3f79e-270">Update the About page model</span></span>
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage2)]
 
-<span data-ttu-id="3f79e-271">*Pages/About.cshtml.cs* 파일을 다음 코드로 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-271">Update the *Pages/About.cshtml.cs* file with the following code:</span></span>
+<span data-ttu-id="ce343-227">모든 매개 변수는 다음 경우에 null입니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-227">All the parameters are null when:</span></span>
 
-[!code-csharp[](intro/samples/cu/Pages/About.cshtml.cs)]
+* <span data-ttu-id="ce343-228">페이지가 **학생** 링크에서 호출됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-228">The page is called from the **Students** link.</span></span>
+* <span data-ttu-id="ce343-229">사용자가 페이징 또는 정렬 링크를 클릭하지 않았습니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-229">The user hasn't clicked a paging or sorting link.</span></span>
 
-<span data-ttu-id="3f79e-272">LINQ 문은 등록 날짜별로 학생 엔터티를 그룹화하고 각 그룹의 엔터티 수를 계산하며 결과를 `EnrollmentDateGroup` 뷰 모델 개체의 컬렉션에 저장합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-272">The LINQ statement groups the student entities by enrollment date, calculates the number of entities in each group, and stores the results in a collection of `EnrollmentDateGroup` view model objects.</span></span>
+<span data-ttu-id="ce343-230">페이징 링크를 클릭하면 페이지 인덱스 변수에 표시할 페이지 번호가 포함됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-230">When a paging link is clicked, the page index variable contains the page number to display.</span></span>
 
-<span data-ttu-id="3f79e-273">참고: LINQ `group` 명령은 현재 EF Core에서 지원되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-273">Note: The LINQ `group` command isn't currently supported by EF Core.</span></span> <span data-ttu-id="3f79e-274">위의 코드에서 모든 학생 레코드는 SQL Server에서 반환됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-274">In the preceding code, all the student records are returned from SQL Server.</span></span> <span data-ttu-id="3f79e-275">`group` 명령은 SQL 서버에 없는 Razor 페이지 앱에 적용됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-275">The `group` command is applied in the Razor Pages app, not on the SQL Server.</span></span> <span data-ttu-id="3f79e-276">EF Core 2.1은 이 LINQ `group` 연산자를 지원하며, 그룹화는 SQL Server에서 발생합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-276">EF Core 2.1 will support this LINQ `group` operator, and the grouping occurs on the SQL Server.</span></span> <span data-ttu-id="3f79e-277">[관계: GroupBy()를 SQL로 변환 지원](https://github.com/aspnet/EntityFrameworkCore/issues/2341)을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="3f79e-277">See [Relational: Support translating GroupBy() to SQL](https://github.com/aspnet/EntityFrameworkCore/issues/2341).</span></span> <span data-ttu-id="3f79e-278">[EF 코어 2.1](https://github.com/aspnet/EntityFrameworkCore/wiki/roadmap)은 .NET Core 2.1을 통해 릴리스될 예정입니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-278">[EF Core 2.1](https://github.com/aspnet/EntityFrameworkCore/wiki/roadmap) will be released with .NET Core 2.1.</span></span> <span data-ttu-id="3f79e-279">자세한 내용은 [.NET Core 로드맵](https://github.com/dotnet/core/blob/master/roadmap.md)을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="3f79e-279">For more information, see the [.NET Core Roadmap](https://github.com/dotnet/core/blob/master/roadmap.md).</span></span>
+<span data-ttu-id="ce343-231">`CurrentSort`는 Razor 페이지를 현재 정렬 순서로 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-231">`CurrentSort` provides the Razor Page with the current sort order.</span></span> <span data-ttu-id="ce343-232">현재 정렬 순서는 페이징하는 동안 정렬 순서를 유지하기 위해 페이징 링크에 포함되어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-232">The current sort order must be included in the paging links to keep the sort order while paging.</span></span>
 
-### <a name="modify-the-about-razor-page"></a><span data-ttu-id="3f79e-280">Razor 페이지 정보 수정</span><span class="sxs-lookup"><span data-stu-id="3f79e-280">Modify the About Razor Page</span></span>
+<span data-ttu-id="ce343-233">`CurrentFilter`는 Razor 페이지를 현재 필터 문자열로 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-233">`CurrentFilter` provides the Razor Page with the current filter string.</span></span> <span data-ttu-id="ce343-234">`CurrentFilter` 값은:</span><span class="sxs-lookup"><span data-stu-id="ce343-234">The `CurrentFilter` value:</span></span>
 
-<span data-ttu-id="3f79e-281">*Pages/About.cshtml* 파일의 코드를 다음 코드로 바꿉니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-281">Replace the code in the *Pages/About.cshtml* file with the following code:</span></span>
+* <span data-ttu-id="ce343-235">페이징하는 동안 필터 설정을 유지하기 위해 페이징 링크에 포함되어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-235">Must be included in the paging links in order to maintain the filter settings during paging.</span></span>
+* <span data-ttu-id="ce343-236">페이지를 다시 표시하는 경우 텍스트 상자에 복원되어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-236">Must be restored to the text box when the page is redisplayed.</span></span>
 
-[!code-html[](intro/samples/cu/Pages/About.cshtml)]
+<span data-ttu-id="ce343-237">검색 문자열이 페이징하는 동안 변경되면 페이지가 1로 다시 설정됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-237">If the search string is changed while paging, the page is reset to 1.</span></span> <span data-ttu-id="ce343-238">새 필터로 인해 다른 데이터가 표시될 수 있으므로 페이지는 1로 재설정되어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-238">The page has to be reset to 1 because the new filter can result in different data to display.</span></span> <span data-ttu-id="ce343-239">검색 값을 입력하는 경우 및 **전송**을 선택한 경우:</span><span class="sxs-lookup"><span data-stu-id="ce343-239">When a search value is entered and **Submit** is selected:</span></span>
 
-<span data-ttu-id="3f79e-282">앱을 실행하고 정보 페이지로 이동합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-282">Run the app and navigate to the About page.</span></span> <span data-ttu-id="3f79e-283">각 등록 날짜에 대한 학생 수가 테이블에 표시됩니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-283">The count of students for each enrollment date is displayed in a table.</span></span>
+* <span data-ttu-id="ce343-240">검색 문자열이 변경됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-240">The search string is changed.</span></span>
+* <span data-ttu-id="ce343-241">`searchString` 매개 변수가 null이 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-241">The `searchString` parameter isn't null.</span></span>
 
-<span data-ttu-id="3f79e-284">해결할 수 없는 문제가 발생한 경우 [이 단계에 완성된 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part3-sorting)을 다운로드합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-284">If you run into problems you can't solve, download the [completed app for this stage](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part3-sorting).</span></span>
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage3)]
+
+<span data-ttu-id="ce343-242">`PaginatedList.CreateAsync` 메서드가 학생 쿼리를 페이징을 지원하는 컬렉션 형식의 단일 학생 페이지로 변환합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-242">The `PaginatedList.CreateAsync` method converts the student query to a single page of students in a collection type that supports paging.</span></span> <span data-ttu-id="ce343-243">해당 단일 학생 페이지가 Razor 페이지에 전달됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-243">That single page of students is passed to the Razor Page.</span></span>
+
+[!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage4)]
+
+<span data-ttu-id="ce343-244">`PaginatedList.CreateAsync`에서 두 개의 물음표는 [Null 병합 연산자](https://docs.microsoft.com/ dotnet/csharp/language-reference/operators/null-conditional-operator)를 나타냅니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-244">The two question marks in `PaginatedList.CreateAsync` represent the [null-coalescing operator](https://docs.microsoft.com/ dotnet/csharp/language-reference/operators/null-conditional-operator).</span></span> <span data-ttu-id="ce343-245">Null 병합 연산자는 null 허용 형식에 대한 기본값을 정의합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-245">The null-coalescing operator defines a default value for a nullable type.</span></span> <span data-ttu-id="ce343-246">식 `(pageIndex ?? 1)`은 값이 있는 경우 `pageIndex`의 값을 반환함을 의미합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-246">The expression `(pageIndex ?? 1)` means return the value of `pageIndex` if it has a value.</span></span> <span data-ttu-id="ce343-247">`pageIndex`에 값이 없으면 1을 반환합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-247">If `pageIndex` doesn't have a value, return 1.</span></span>
+
+## <a name="add-paging-links-to-the-student-razor-page"></a><span data-ttu-id="ce343-248">학생 Razor 페이지에 페이징 링크 추가</span><span class="sxs-lookup"><span data-stu-id="ce343-248">Add paging links to the student Razor Page</span></span>
+
+<span data-ttu-id="ce343-249">*Students/Index.cshtml*의 표시를 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-249">Update the markup in *Students/Index.cshtml*.</span></span> <span data-ttu-id="ce343-250">변경 내용은 강조 표시되어 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-250">The changes are highlighted:</span></span>
+
+[!code-html[](intro/samples/cu21/Pages/Students/Index.cshtml?highlight=28-31,37-40,68-999)]
+
+<span data-ttu-id="ce343-251">열 제목 링크는 쿼리 문자열을 사용하여 현재 검색 문자열을 `OnGetAsync` 메서드에 전달하므로 사용자가 필터 결과 내에서 정렬할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-251">The column header links use the query string to pass the current search string to the `OnGetAsync` method so that the user can sort within filter results:</span></span>
+
+[!code-html[](intro/samples/cu21/Pages/Students/Index.cshtml?range=28-31)]
+
+<span data-ttu-id="ce343-252">태그 도우미에 페이징 단추가 표시됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-252">The paging buttons are displayed by tag helpers:</span></span>
+
+[!code-html[](intro/samples/cu21/Pages/Students/Index.cshtml?range=72-)]
+
+<span data-ttu-id="ce343-253">앱을 실행하고 학생 페이지로 이동합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-253">Run the app and navigate to the students page.</span></span>
+
+* <span data-ttu-id="ce343-254">페이징이 작동하는지 확인하려면 다른 정렬 순서의 페이징 링크를 클릭합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-254">To make sure paging works, click the paging links in different sort orders.</span></span>
+* <span data-ttu-id="ce343-255">정렬 및 필터링을 통해 페이징이 제대로 작동하는지 확인하려면 검색 문자열을 입력하고 페이징을 다시 시도합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-255">To verify that paging works correctly with sorting and filtering, enter a search string and try paging.</span></span>
+
+![페이징 링크가 있는 학생 인덱스 페이지](sort-filter-page/_static/paging.png)
+
+<span data-ttu-id="ce343-257">코드를 더 잘 이해하려면 다음을 수행합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-257">To get a better understanding of the code:</span></span>
+
+* <span data-ttu-id="ce343-258">*Student/Index.cshtml.cs*에서 `switch (sortOrder)`에 중단점을 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-258">In *Student/Index.cshtml.cs*, set a breakpoint on `switch (sortOrder)`.</span></span>
+* <span data-ttu-id="ce343-259">`NameSort`, `DateSort`, `CurrentSort` 및 `Model.Student.PageIndex`에 대한 조사식을 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-259">Add a watch for `NameSort`, `DateSort`, `CurrentSort`, and `Model.Student.PageIndex`.</span></span>
+* <span data-ttu-id="ce343-260">*Student/Index.cshtml*에서 `@Html.DisplayNameFor(model => model.Student[0].LastName)`에 중단점을 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-260">In *Student/Index.cshtml*, set a breakpoint on `@Html.DisplayNameFor(model => model.Student[0].LastName)`.</span></span>
+
+<span data-ttu-id="ce343-261">디버거를 단계별로 실행합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-261">Step through the debugger.</span></span>
+
+## <a name="update-the-about-page-to-show-student-statistics"></a><span data-ttu-id="ce343-262">학생 통계를 표시하도록 정보 페이지를 업데이트</span><span class="sxs-lookup"><span data-stu-id="ce343-262">Update the About page to show student statistics</span></span>
+
+<span data-ttu-id="ce343-263">이 단계에서는 각 등록 날짜에 대해 등록한 학생 수를 표시하도록 *Pages/About.cshtml*을 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-263">In this step, *Pages/About.cshtml* is updated to display how many students have enrolled for each enrollment date.</span></span> <span data-ttu-id="ce343-264">업데이트는 그룹화를 사용하며 다음 단계를 포함합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-264">The update uses grouping and includes the following steps:</span></span>
+
+* <span data-ttu-id="ce343-265">**정보** 페이지에서 사용되는 데이터에 대한 보기 모델을 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-265">Create a view model for the data used by the **About** Page.</span></span>
+* <span data-ttu-id="ce343-266">정보 페이지를 업데이트하여 보기 모델을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-266">Update the About page to use the view model.</span></span>
+
+### <a name="create-the-view-model"></a><span data-ttu-id="ce343-267">뷰 모델 만들기</span><span class="sxs-lookup"><span data-stu-id="ce343-267">Create the view model</span></span>
+
+<span data-ttu-id="ce343-268">*Models* 폴더에 *SchoolViewModels* 폴더를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-268">Create a *SchoolViewModels* folder in the *Models* folder.</span></span>
+
+<span data-ttu-id="ce343-269">*SchoolViewModels* 폴더에서 다음 코드로 *EnrollmentDateGroup.cs*를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-269">In the *SchoolViewModels* folder, add a *EnrollmentDateGroup.cs* with the following code:</span></span>
+
+[!code-csharp[](intro/samples/cu21/Models/SchoolViewModels/EnrollmentDateGroup.cs)]
+
+### <a name="update-the-about-page-model"></a><span data-ttu-id="ce343-270">페이지 모델 정보 업데이트</span><span class="sxs-lookup"><span data-stu-id="ce343-270">Update the About page model</span></span>
+
+<span data-ttu-id="ce343-271">*Pages/About.cshtml.cs* 파일을 다음 코드로 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-271">Update the *Pages/About.cshtml.cs* file with the following code:</span></span>
+
+[!code-csharp[](intro/samples/cu21/Pages/About.cshtml.cs)]
+
+<span data-ttu-id="ce343-272">LINQ 문은 등록 날짜별로 학생 엔터티를 그룹화하고 각 그룹의 엔터티 수를 계산하며 결과를 `EnrollmentDateGroup` 뷰 모델 개체의 컬렉션에 저장합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-272">The LINQ statement groups the student entities by enrollment date, calculates the number of entities in each group, and stores the results in a collection of `EnrollmentDateGroup` view model objects.</span></span>
+
+<span data-ttu-id="ce343-273">참고: LINQ `group` 명령은 현재 EF Core에서 지원되지 않습니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-273">Note: The LINQ `group` command isn't currently supported by EF Core.</span></span> <span data-ttu-id="ce343-274">위의 코드에서 모든 학생 레코드는 SQL Server에서 반환됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-274">In the preceding code, all the student records are returned from SQL Server.</span></span> <span data-ttu-id="ce343-275">`group` 명령은 SQL 서버에 없는 Razor 페이지 앱에 적용됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-275">The `group` command is applied in the Razor Pages app, not on the SQL Server.</span></span> <span data-ttu-id="ce343-276">EF Core 2.1은 이 LINQ `group` 연산자를 지원하며, 그룹화는 SQL Server에서 발생합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-276">EF Core 2.1 will support this LINQ `group` operator, and the grouping occurs on the SQL Server.</span></span> <span data-ttu-id="ce343-277">[관계: GroupBy()를 SQL로 변환 지원](https://github.com/aspnet/EntityFrameworkCore/issues/2341)을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="ce343-277">See [Relational: Support translating GroupBy() to SQL](https://github.com/aspnet/EntityFrameworkCore/issues/2341).</span></span> <span data-ttu-id="ce343-278">[EF 코어 2.1](https://github.com/aspnet/EntityFrameworkCore/wiki/roadmap)은 .NET Core 2.1을 통해 릴리스될 예정입니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-278">[EF Core 2.1](https://github.com/aspnet/EntityFrameworkCore/wiki/roadmap) will be released with .NET Core 2.1.</span></span> <span data-ttu-id="ce343-279">자세한 내용은 [.NET Core 로드맵](https://github.com/dotnet/core/blob/master/roadmap.md)을 참조하세요.</span><span class="sxs-lookup"><span data-stu-id="ce343-279">For more information, see the [.NET Core Roadmap](https://github.com/dotnet/core/blob/master/roadmap.md).</span></span>
+
+### <a name="modify-the-about-razor-page"></a><span data-ttu-id="ce343-280">Razor 페이지 정보 수정</span><span class="sxs-lookup"><span data-stu-id="ce343-280">Modify the About Razor Page</span></span>
+
+<span data-ttu-id="ce343-281">*Pages/About.cshtml* 파일의 코드를 다음 코드로 바꿉니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-281">Replace the code in the *Pages/About.cshtml* file with the following code:</span></span>
+
+[!code-html[](intro/samples/cu21/Pages/About.cshtml)]
+
+<span data-ttu-id="ce343-282">앱을 실행하고 정보 페이지로 이동합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-282">Run the app and navigate to the About page.</span></span> <span data-ttu-id="ce343-283">각 등록 날짜에 대한 학생 수가 테이블에 표시됩니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-283">The count of students for each enrollment date is displayed in a table.</span></span>
+
+<span data-ttu-id="ce343-284">해결할 수 없는 문제가 발생한 경우 [이 단계에 완성된 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part3-sorting)을 다운로드합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-284">If you run into problems you can't solve, download the [completed app for this stage](https://github.com/aspnet/Docs/tree/master/aspnetcore/data/ef-rp/intro/samples/StageSnapShots/cu-part3-sorting).</span></span>
 
 ![정보 페이지](sort-filter-page/_static/about.png)
 
-## <a name="additional-resources"></a><span data-ttu-id="3f79e-286">추가 자료</span><span class="sxs-lookup"><span data-stu-id="3f79e-286">Additional resources</span></span>
+## <a name="additional-resources"></a><span data-ttu-id="ce343-286">추가 자료</span><span class="sxs-lookup"><span data-stu-id="ce343-286">Additional resources</span></span>
 
-* [<span data-ttu-id="3f79e-287">ASP.NET Core 2.x 소스 디버깅</span><span class="sxs-lookup"><span data-stu-id="3f79e-287">Debugging ASP.NET Core 2.x source</span></span>](https://github.com/aspnet/Docs/issues/4155)
+* [<span data-ttu-id="ce343-287">ASP.NET Core 2.x 소스 디버깅</span><span class="sxs-lookup"><span data-stu-id="ce343-287">Debugging ASP.NET Core 2.x source</span></span>](https://github.com/aspnet/Docs/issues/4155)
 
-<span data-ttu-id="3f79e-288">다음 자습서에서는 앱은 마이그레이션을 사용하여 데이터 모델을 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="3f79e-288">In the next tutorial, the app uses migrations to update the data model.</span></span>
+<span data-ttu-id="ce343-288">다음 자습서에서는 앱은 마이그레이션을 사용하여 데이터 모델을 업데이트합니다.</span><span class="sxs-lookup"><span data-stu-id="ce343-288">In the next tutorial, the app uses migrations to update the data model.</span></span>
+::: moniker-end
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="3f79e-289">[이전](xref:data/ef-rp/crud)
-> [다음](xref:data/ef-rp/migrations)</span><span class="sxs-lookup"><span data-stu-id="3f79e-289">[Previous](xref:data/ef-rp/crud)
+> <span data-ttu-id="ce343-289">[이전](xref:data/ef-rp/crud)
+> [다음](xref:data/ef-rp/migrations)</span><span class="sxs-lookup"><span data-stu-id="ce343-289">[Previous](xref:data/ef-rp/crud)
 [Next](xref:data/ef-rp/migrations)</span></span>
