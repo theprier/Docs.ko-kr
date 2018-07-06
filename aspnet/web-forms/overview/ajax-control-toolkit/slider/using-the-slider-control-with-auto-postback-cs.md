@@ -4,64 +4,61 @@ title: 슬라이더 컨트롤을 사용 하 여 포스트백 (C#) | Microsoft Do
 author: wenz
 description: AJAX Control Toolkit의 슬라이더 컨트롤에 마우스를 사용 하 여 제어할 수 있는 그래픽 슬라이더를 제공 합니다. 슬라이더 autopost를 확인 하는 것이 불가능 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: 4d85e9fb-91e6-41f2-9c13-754549b19c27
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/slider/using-the-slider-control-with-auto-postback-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8e855bebf557536b5f9e2b2730f828e54c63221e
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: b5cb3c041f2a8a499d27cbcbc2f8975eedcac12e
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37366834"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37834153"
 ---
-<a name="using-the-slider-control-with-auto-postback-c"></a><span data-ttu-id="a6b97-104">슬라이더 컨트롤을 사용 하 여 포스트백 (C#)</span><span class="sxs-lookup"><span data-stu-id="a6b97-104">Using the Slider Control With Auto-Postback (C#)</span></span>
+<a name="using-the-slider-control-with-auto-postback-c"></a><span data-ttu-id="a5cd2-104">슬라이더 컨트롤을 사용 하 여 포스트백 (C#)</span><span class="sxs-lookup"><span data-stu-id="a5cd2-104">Using the Slider Control With Auto-Postback (C#)</span></span>
 ====================
-<span data-ttu-id="a6b97-105">[Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="a6b97-105">by [Christian Wenz](https://github.com/wenz)</span></span>
+<span data-ttu-id="a5cd2-105">[Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="a5cd2-105">by [Christian Wenz](https://github.com/wenz)</span></span>
 
-<span data-ttu-id="a6b97-106">[코드를 다운로드](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/Slider1.cs.zip) 또는 [PDF 다운로드](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/slider1CS.pdf)</span><span class="sxs-lookup"><span data-stu-id="a6b97-106">[Download Code](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/Slider1.cs.zip) or [Download PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/slider1CS.pdf)</span></span>
+<span data-ttu-id="a5cd2-106">[코드를 다운로드](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/Slider1.cs.zip) 또는 [PDF 다운로드](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/slider1CS.pdf)</span><span class="sxs-lookup"><span data-stu-id="a5cd2-106">[Download Code](http://download.microsoft.com/download/9/3/f/93f8daea-bebd-4821-833b-95205389c7d0/Slider1.cs.zip) or [Download PDF](http://download.microsoft.com/download/b/6/a/b6ae89ee-df69-4c87-9bfb-ad1eb2b23373/slider1CS.pdf)</span></span>
 
-> <span data-ttu-id="a6b97-107">AJAX Control Toolkit의 슬라이더 컨트롤에 마우스를 사용 하 여 제어할 수 있는 그래픽 슬라이더를 제공 합니다.</span><span class="sxs-lookup"><span data-stu-id="a6b97-107">The Slider control in the AJAX Control Toolkit provides a graphical slider that can be controlled using the mouse.</span></span> <span data-ttu-id="a6b97-108">슬라이더 autopostback을 해당 값이 변경 되 면 확인 하는 것이 가능 합니다.</span><span class="sxs-lookup"><span data-stu-id="a6b97-108">It is possible to make the slider autopostback once its value changes.</span></span>
+> <span data-ttu-id="a5cd2-107">AJAX Control Toolkit의 슬라이더 컨트롤에 마우스를 사용 하 여 제어할 수 있는 그래픽 슬라이더를 제공 합니다.</span><span class="sxs-lookup"><span data-stu-id="a5cd2-107">The Slider control in the AJAX Control Toolkit provides a graphical slider that can be controlled using the mouse.</span></span> <span data-ttu-id="a5cd2-108">슬라이더 autopostback을 해당 값이 변경 되 면 확인 하는 것이 가능 합니다.</span><span class="sxs-lookup"><span data-stu-id="a5cd2-108">It is possible to make the slider autopostback once its value changes.</span></span>
 
 
-## <a name="overview"></a><span data-ttu-id="a6b97-109">개요</span><span class="sxs-lookup"><span data-stu-id="a6b97-109">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="a5cd2-109">개요</span><span class="sxs-lookup"><span data-stu-id="a5cd2-109">Overview</span></span>
 
-<span data-ttu-id="a6b97-110">AJAX Control Toolkit의 슬라이더 컨트롤에 마우스를 사용 하 여 제어할 수 있는 그래픽 슬라이더를 제공 합니다.</span><span class="sxs-lookup"><span data-stu-id="a6b97-110">The Slider control in the AJAX Control Toolkit provides a graphical slider that can be controlled using the mouse.</span></span> <span data-ttu-id="a6b97-111">슬라이더 autopostback을 해당 값이 변경 되 면 확인 하는 것이 가능 합니다.</span><span class="sxs-lookup"><span data-stu-id="a6b97-111">It is possible to make the slider autopostback once its value changes.</span></span>
+<span data-ttu-id="a5cd2-110">AJAX Control Toolkit의 슬라이더 컨트롤에 마우스를 사용 하 여 제어할 수 있는 그래픽 슬라이더를 제공 합니다.</span><span class="sxs-lookup"><span data-stu-id="a5cd2-110">The Slider control in the AJAX Control Toolkit provides a graphical slider that can be controlled using the mouse.</span></span> <span data-ttu-id="a5cd2-111">슬라이더 autopostback을 해당 값이 변경 되 면 확인 하는 것이 가능 합니다.</span><span class="sxs-lookup"><span data-stu-id="a5cd2-111">It is possible to make the slider autopostback once its value changes.</span></span>
 
-## <a name="steps"></a><span data-ttu-id="a6b97-112">단계</span><span class="sxs-lookup"><span data-stu-id="a6b97-112">Steps</span></span>
+## <a name="steps"></a><span data-ttu-id="a5cd2-112">단계</span><span class="sxs-lookup"><span data-stu-id="a5cd2-112">Steps</span></span>
 
-<span data-ttu-id="a6b97-113">슬라이더를 변경 하면 자동으로 다시 게시 하려면 두 텍스트 상자에 특성을 추가 해야 `AutoPostBack="true"`: 자체 슬라이더에 텍스트 상자 및 슬라이더의 위치를 보유 하는 텍스트 상자입니다.</span><span class="sxs-lookup"><span data-stu-id="a6b97-113">In order to make the slider automatically postback upon a change, both text boxes need the attribute `AutoPostBack="true"`: The text box that will become the slider itself, and the text box that holds the slider's position.</span></span> <span data-ttu-id="a6b97-114">에 대 한 필수 태그는 다음과 같습니다.</span><span class="sxs-lookup"><span data-stu-id="a6b97-114">Here is the required markup for that:</span></span>
+<span data-ttu-id="a5cd2-113">슬라이더를 변경 하면 자동으로 다시 게시 하려면 두 텍스트 상자에 특성을 추가 해야 `AutoPostBack="true"`: 자체 슬라이더에 텍스트 상자 및 슬라이더의 위치를 보유 하는 텍스트 상자입니다.</span><span class="sxs-lookup"><span data-stu-id="a5cd2-113">In order to make the slider automatically postback upon a change, both text boxes need the attribute `AutoPostBack="true"`: The text box that will become the slider itself, and the text box that holds the slider's position.</span></span> <span data-ttu-id="a5cd2-114">에 대 한 필수 태그는 다음과 같습니다.</span><span class="sxs-lookup"><span data-stu-id="a5cd2-114">Here is the required markup for that:</span></span>
 
 [!code-aspx[Main](using-the-slider-control-with-auto-postback-cs/samples/sample1.aspx)]
 
-<span data-ttu-id="a6b97-115">`SliderExtender` ASP.NET AJAX Control Toolkit에서 컨트롤의 두 텍스트 상자에 슬라이더 기능을 할당 합니다.</span><span class="sxs-lookup"><span data-stu-id="a6b97-115">The `SliderExtender` control from the ASP.NET AJAX Control Toolkit assigns the slider functionality to the two text boxes:</span></span>
+<span data-ttu-id="a5cd2-115">`SliderExtender` ASP.NET AJAX Control Toolkit에서 컨트롤의 두 텍스트 상자에 슬라이더 기능을 할당 합니다.</span><span class="sxs-lookup"><span data-stu-id="a5cd2-115">The `SliderExtender` control from the ASP.NET AJAX Control Toolkit assigns the slider functionality to the two text boxes:</span></span>
 
 [!code-aspx[Main](using-the-slider-control-with-auto-postback-cs/samples/sample2.aspx)]
 
-<span data-ttu-id="a6b97-116">추가 레이블 요소 포스트백의 사용자에 게 알려 나중에 사용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="a6b97-116">An additional label element will later be used to inform the user of a postback:</span></span>
+<span data-ttu-id="a5cd2-116">추가 레이블 요소 포스트백의 사용자에 게 알려 나중에 사용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="a5cd2-116">An additional label element will later be used to inform the user of a postback:</span></span>
 
 [!code-aspx[Main](using-the-slider-control-with-auto-postback-cs/samples/sample3.aspx)]
 
-<span data-ttu-id="a6b97-117">마지막으로 `ScriptManager` ASP.NET AJAX의 컨트롤 컨트롤 도구 키트 작동 하려면 필요한 JavaScript를 로드 합니다.</span><span class="sxs-lookup"><span data-stu-id="a6b97-117">Finally, the `ScriptManager` control of ASP.NET AJAX loads the required JavaScript for the Control Toolkit to work:</span></span>
+<span data-ttu-id="a5cd2-117">마지막으로 `ScriptManager` ASP.NET AJAX의 컨트롤 컨트롤 도구 키트 작동 하려면 필요한 JavaScript를 로드 합니다.</span><span class="sxs-lookup"><span data-stu-id="a5cd2-117">Finally, the `ScriptManager` control of ASP.NET AJAX loads the required JavaScript for the Control Toolkit to work:</span></span>
 
 [!code-aspx[Main](using-the-slider-control-with-auto-postback-cs/samples/sample4.aspx)]
 
-<span data-ttu-id="a6b97-118">이제 슬라이더는 포스트백; 서버 쪽에서이 이벤트 수 발견 되 고 취해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="a6b97-118">Now the slider is posting back; on the server-side, this event may be caught and acted upon:</span></span>
+<span data-ttu-id="a5cd2-118">이제 슬라이더는 포스트백; 서버 쪽에서이 이벤트 수 발견 되 고 취해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="a5cd2-118">Now the slider is posting back; on the server-side, this event may be caught and acted upon:</span></span>
 
 [!code-aspx[Main](using-the-slider-control-with-auto-postback-cs/samples/sample5.aspx)]
 
 
-<span data-ttu-id="a6b97-119">[![포스트백을 트리거하는 슬라이더를 이동 합니다.](using-the-slider-control-with-auto-postback-cs/_static/image2.png)](using-the-slider-control-with-auto-postback-cs/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="a6b97-119">[![Moving the slider triggers a postback](using-the-slider-control-with-auto-postback-cs/_static/image2.png)](using-the-slider-control-with-auto-postback-cs/_static/image1.png)</span></span>
+<span data-ttu-id="a5cd2-119">[![포스트백을 트리거하는 슬라이더를 이동 합니다.](using-the-slider-control-with-auto-postback-cs/_static/image2.png)](using-the-slider-control-with-auto-postback-cs/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="a5cd2-119">[![Moving the slider triggers a postback](using-the-slider-control-with-auto-postback-cs/_static/image2.png)](using-the-slider-control-with-auto-postback-cs/_static/image1.png)</span></span>
 
-<span data-ttu-id="a6b97-120">포스트백을 트리거하는 슬라이더를 이동 ([클릭 하 여 큰 이미지 보기](using-the-slider-control-with-auto-postback-cs/_static/image3.png))</span><span class="sxs-lookup"><span data-stu-id="a6b97-120">Moving the slider triggers a postback ([Click to view full-size image](using-the-slider-control-with-auto-postback-cs/_static/image3.png))</span></span>
+<span data-ttu-id="a5cd2-120">포스트백을 트리거하는 슬라이더를 이동 ([클릭 하 여 큰 이미지 보기](using-the-slider-control-with-auto-postback-cs/_static/image3.png))</span><span class="sxs-lookup"><span data-stu-id="a5cd2-120">Moving the slider triggers a postback ([Click to view full-size image](using-the-slider-control-with-auto-postback-cs/_static/image3.png))</span></span>
 
 
-<span data-ttu-id="a6b97-121">[![레이블을이 변경의 날짜 이후에 작성 된](using-the-slider-control-with-auto-postback-cs/_static/image5.png)](using-the-slider-control-with-auto-postback-cs/_static/image4.png)</span><span class="sxs-lookup"><span data-stu-id="a6b97-121">[![Afterwards, the date of this change is written in the label](using-the-slider-control-with-auto-postback-cs/_static/image5.png)](using-the-slider-control-with-auto-postback-cs/_static/image4.png)</span></span>
+<span data-ttu-id="a5cd2-121">[![레이블을이 변경의 날짜 이후에 작성 된](using-the-slider-control-with-auto-postback-cs/_static/image5.png)](using-the-slider-control-with-auto-postback-cs/_static/image4.png)</span><span class="sxs-lookup"><span data-stu-id="a5cd2-121">[![Afterwards, the date of this change is written in the label](using-the-slider-control-with-auto-postback-cs/_static/image5.png)](using-the-slider-control-with-auto-postback-cs/_static/image4.png)</span></span>
 
-<span data-ttu-id="a6b97-122">그런 다음이 변경의 날짜 레이블을 작성 됩니다 ([클릭 하 여 큰 이미지 보기](using-the-slider-control-with-auto-postback-cs/_static/image6.png))</span><span class="sxs-lookup"><span data-stu-id="a6b97-122">Afterwards, the date of this change is written in the label ([Click to view full-size image](using-the-slider-control-with-auto-postback-cs/_static/image6.png))</span></span>
+<span data-ttu-id="a5cd2-122">그런 다음이 변경의 날짜 레이블을 작성 됩니다 ([클릭 하 여 큰 이미지 보기](using-the-slider-control-with-auto-postback-cs/_static/image6.png))</span><span class="sxs-lookup"><span data-stu-id="a5cd2-122">Afterwards, the date of this change is written in the label ([Click to view full-size image](using-the-slider-control-with-auto-postback-cs/_static/image6.png))</span></span>
 
 > [!div class="step-by-step"]
-> [<span data-ttu-id="a6b97-123">다음</span><span class="sxs-lookup"><span data-stu-id="a6b97-123">Next</span></span>](databinding-the-slider-control-cs.md)
+> [<span data-ttu-id="a5cd2-123">다음</span><span class="sxs-lookup"><span data-stu-id="a5cd2-123">Next</span></span>](databinding-the-slider-control-cs.md)
