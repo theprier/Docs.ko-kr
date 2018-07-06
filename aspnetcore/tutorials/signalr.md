@@ -7,12 +7,12 @@ ms.author: rachelap
 ms.custom: mvc
 ms.date: 05/22/2018
 uid: tutorials/signalr
-ms.openlocfilehash: 62cef2d6f032caa2f048cfdd49a225d975dad10d
-ms.sourcegitcommit: 7003d27b607e529642ded0400aa48ae692a0e666
+ms.openlocfilehash: ca9145d9e16c23e34bbc1d84ff01ce02709187ce
+ms.sourcegitcommit: 08f1a9baa97060da5168840b332c9c0805b5f901
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37033344"
+ms.lasthandoff: 07/02/2018
+ms.locfileid: "37144874"
 ---
 # <a name="get-started-with-signalr-on-aspnet-core"></a>ASP.NET Core에서 SignalR 시작
 
@@ -128,9 +128,9 @@ SignalR 서버는 SignalR에 요청을 전달할 수 있도록 구성되어야 �
 
 1. SignalR 프로젝트를 구성하려면 프로젝트의 `Startup.ConfigureServices` 메서드를 수정합니다.
 
-   `services.AddSignalR`은 [미들웨어](xref:fundamentals/middleware/index) 파이프라인의 일부로 SignalR을 추가합니다.
+   `services.AddSignalR`을 통해 [종속성 주입](xref:fundamentals/dependency-injection) 시스템에 SignalR 서비스를 사용할 수 있습니다.
 
-2. `UseSignalR`을 사용하여 허브에 대한 경로를 구성합니다.
+1. `Configure` 메서드에서 `UseSignalR`을 사용하여 허브에 대한 경로를 구성합니다. `app.UseSignalR`은 [미들웨어](xref:fundamentals/middleware/index) 파이프라인에 SignalR을 추가합니다.
 
    [!code-csharp[Startup](signalr/sample/Startup.cs?highlight=37,57-60)]
 
