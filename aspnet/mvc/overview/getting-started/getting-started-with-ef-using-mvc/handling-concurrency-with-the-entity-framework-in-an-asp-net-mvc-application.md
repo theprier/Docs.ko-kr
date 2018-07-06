@@ -4,19 +4,16 @@ title: ASP.NET MVC 5 응용 프로그램 (10 / 12)에서 Entity Framework 6 사�
 author: tdykstra
 description: Contoso University 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 12/08/2014
-ms.topic: article
 ms.assetid: be0c098a-1fb2-457e-b815-ddca601afc65
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: d513fbd962a8f545e0ca2511a2eba926af065324
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: b971e4ca16ecbf79f47e0aab8303a05452279b68
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37369317"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37837233"
 ---
 <a name="handling-concurrency-with-the-entity-framework-6-in-an-aspnet-mvc-5-application-10-of-12"></a>ASP.NET MVC 5 응용 프로그램 (10 / 12)에서 Entity Framework 6 사용 하 여 동시성 처리
 ====================

@@ -4,19 +4,16 @@ title: 일괄 업데이트 (C#)를 수행 합니다. | Microsoft Docs
 author: rick-anderson
 description: 완벽 하 게 편집할 만드는 방법 알아보기 DataList에 있는 모든 해당 항목의 편집 모드와 ' 모두 업데이트 ' 단추를 클릭 하 여 해당 값을 저장할 수 있습니다 합니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/30/2006
-ms.topic: article
 ms.assetid: 57743ca7-5695-4e07-aed1-44b297f245a9
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/performing-batch-updates-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 94bff897d28adfec001f7d818c2dc17329651e80
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 3528444269a3595681696251d3906a204090410c
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37371209"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37807807"
 ---
 <a name="performing-batch-updates-c"></a>일괄 처리 업데이트 수행 (C#)
 ====================

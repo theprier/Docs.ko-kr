@@ -4,19 +4,16 @@ title: ADO.NET Data Services ASP.NET AJAX 지원 | Microsoft Docs
 author: GrabYourPitchforks
 description: 어떻게 ADO.NET 데이터 서비스와 통합할 수 있습니다 ASP.NET AJAX 지원 원활 하 게 하는 방법을 알아봅니다. ADP.NET 데이터 서비스 기술을 ASP.NET 3.5 5. 사용할 수 있습니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 12/20/2007
-ms.topic: article
 ms.assetid: c7aa9192-8859-403f-a9a8-c372081f75bd
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-35/aspnet-ajax/adonet-data-services-with-aspnet-ajax-support
 msc.type: video
-ms.openlocfilehash: 871c8bc01135a136e63b4837adaa58687a850220
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 26095c89d3e2a6135bc1e7c49ba11601f254c4ea
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37385342"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37836203"
 ---
 <a name="adonet-data-services-with-aspnet-ajax-support"></a>ADO.NET Data Services ASP.NET AJAX 지원
 ====================

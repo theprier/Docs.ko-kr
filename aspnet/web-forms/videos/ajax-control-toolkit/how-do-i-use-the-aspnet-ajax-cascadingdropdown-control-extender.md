@@ -4,19 +4,16 @@ title: '[어떻게 할까요?] ASP.NET AJAX CascadingDropDown Control Extender �
 author: JoeStagner
 description: 이 비디오에서는 어떻게 ASP 합니다. NET의 표준 DropDownList AJAX 지원 ASP.NET AJAX 컨트롤에서 CascadingDropDown 컨트롤 extender를 사용 하 여 될 수 있습니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/24/2007
-ms.topic: article
 ms.assetid: 7dca3704-474b-4b0b-8294-5599279964d9
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-cascadingdropdown-control-extender
 msc.type: video
-ms.openlocfilehash: e4589de3d7db2db27f528f91bf745eebcb33504c
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f2160bfc9905adbe5b9c206237fb8066068ad6cc
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37390736"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37806298"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-cascadingdropdown-control-extender"></a>[어떻게 할까요?] ASP.NET AJAX CascadingDropDown Control Extender 사용
 ====================

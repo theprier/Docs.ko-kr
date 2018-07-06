@@ -4,19 +4,16 @@ title: 쿼리 문자열 값을 사용 하 여 모델 바인딩을 사용 하 여
 author: tfitzmac
 description: 이 자습서 시리즈에서는 모델 바인딩을 사용 하 여 ASP.NET Web Forms 프로젝트의 기본 사항을 보여 줍니다. 모델 바인딩을 통해 데이터 상호 작용 자세한 직선-...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/27/2014
-ms.topic: article
 ms.assetid: b90978bd-795d-4871-9ade-1671caff5730
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/using-query-string-values-to-retrieve-data
 msc.type: authoredcontent
-ms.openlocfilehash: 495489479ef912afcb89c267b56fb11e07f959ec
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: b4615d004a32d00b91635bc321a2d4ea792fddbe
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37374732"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37837265"
 ---
 <a name="using-query-string-values-to-filter-data-with-model-binding-and-web-forms"></a>모델 바인딩 및 web forms를 사용 하 여 데이터를 필터링 하는 쿼리 문자열 값을 사용 하 여
 ====================

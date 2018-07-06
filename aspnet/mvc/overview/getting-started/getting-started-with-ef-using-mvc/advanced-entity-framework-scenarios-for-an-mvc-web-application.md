@@ -4,19 +4,16 @@ title: Entity Framework 6 시나리오 (12는 12) MVC 5 웹 응용 프로그램�
 author: tdykstra
 description: Contoso University 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 12/08/2014
-ms.topic: article
 ms.assetid: f35a9b0c-49ef-4cde-b06d-19d1543feb0b
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 43d7dec02a104b2bb29f598c17d252b0476a53f7
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 82fe650712d39558668ab02b7cc410ab0540d00f
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37390490"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37836696"
 ---
 <a name="advanced-entity-framework-6-scenarios-for-an-mvc-5-web-application-12-of-12"></a>MVC 5 웹 응용 프로그램 (12는 12)에 대 한 고급 Entity Framework 6 시나리오
 ====================

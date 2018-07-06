@@ -4,19 +4,16 @@ title: IIS의 OWIN 미들웨어 파이프라인 통합 | Microsoft Docs
 author: Praburaj
 description: 실행 되는 OMC 파이프라인 이벤트를 설정 하는 방법 및이 문서에서는 IIS 통합된 파이프라인의 OWIN 미들웨어 구성 요소 (OMCs)를 실행 하는 방법을 보여 줍니다. 다음 작업을 수행 해야 합니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/07/2013
-ms.topic: article
 ms.assetid: d031c021-33c2-45a5-bf9f-98f8fa78c2ab
-ms.technology: ''
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-middleware-in-the-iis-integrated-pipeline
 msc.type: authoredcontent
-ms.openlocfilehash: 1c2f7a9b948331eae2f5b44f25219adb76a0c745
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: e78ded1dcafd40097d6477a757406c7170dd1bb7
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37379062"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37828100"
 ---
 <a name="owin-middleware-in-the-iis-integrated-pipeline"></a>IIS 통합된 파이프라인의 OWIN 미들웨어입니다.
 ====================

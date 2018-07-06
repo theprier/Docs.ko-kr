@@ -4,19 +4,16 @@ title: '실습: Visual Studio 2013 Web Tools | Microsoft Docs'
 author: rick-anderson
 description: Visual Studio는는 뛰어난 개발 환경입니다. NET 기반의 Windows 및 웹 프로젝트를 제공 합니다. 쉽게 사용할 수 있는 강력한 텍스트 편집기를 포함 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/16/2014
-ms.topic: article
 ms.assetid: 09e82351-816b-402d-acd1-0f9ac6901d16
-ms.technology: ''
 msc.legacyurl: /visual-studio/overview/2013/visual-studio-2013-web-tools
 msc.type: authoredcontent
-ms.openlocfilehash: 8f0f19a184d50cdc6e8e5a2da0e55a0e8ca44dc5
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 9553d3129ff4c942eacbba628d1daaf6c4e33635
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37399402"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37807530"
 ---
 <a name="hands-on-lab-visual-studio-2013-web-tools"></a>실습: Visual Studio 2013 Web Tools
 ====================

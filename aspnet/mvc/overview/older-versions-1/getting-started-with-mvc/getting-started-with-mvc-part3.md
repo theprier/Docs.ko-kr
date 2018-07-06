@@ -4,19 +4,16 @@ title: 뷰 추가 | Microsoft Docs
 author: shanselman
 description: ASP.NET MVC의 기본 사항을 소개 하는 초보자를 위한 자습서입니다. 읽기 및 쓰기 데이터베이스에서 간단한 웹 응용 프로그램을 만듭니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/14/2010
-ms.topic: article
 ms.assetid: e8f1515c-c277-47ff-a23e-224118f13f02
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part3
 msc.type: authoredcontent
-ms.openlocfilehash: 942d329cf0451101a24da4c3facd38b2813653d1
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: e3b923aa5572781261c5a75546700faf223703d4
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37365674"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37834506"
 ---
 <a name="adding-a-view"></a>뷰 추가
 ====================

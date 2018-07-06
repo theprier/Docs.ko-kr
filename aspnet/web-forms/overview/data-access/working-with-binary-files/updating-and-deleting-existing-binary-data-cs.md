@@ -4,19 +4,16 @@ title: 기존 이진 데이터 (C#) 업데이트 및 삭제 | Microsoft Docs
 author: rick-anderson
 description: 이전 자습서에서 어떻게 GridView 컨트롤을 간단히 편집 및 텍스트 데이터를 삭제 하는 것이 살펴보았습니다. 이 자습서에서 GridView 컨트롤도 확인 하는 방법을 참조 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/27/2007
-ms.topic: article
 ms.assetid: 35798f21-1606-434b-83f8-30166906ef49
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/updating-and-deleting-existing-binary-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2eb9b4cb9403f5d793605fe023e4e0757bcda6f4
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: d38f549004265810e80d09eeacd30bc6d640ae6c
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37372014"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37804254"
 ---
 <a name="updating-and-deleting-existing-binary-data-c"></a>기존 이진 데이터 (C#) 업데이트 및 삭제
 ====================

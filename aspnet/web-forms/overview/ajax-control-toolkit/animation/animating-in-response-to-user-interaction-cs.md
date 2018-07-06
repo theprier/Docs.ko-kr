@@ -4,19 +4,16 @@ title: 사용자 상호 작용 (C#)에 대 한 응답으로 애니메이션 효�
 author: wenz
 description: ASP.NET AJAX Control Toolkit에서 애니메이션 컨트롤 컨트롤 뿐 이지만 컨트롤에 애니메이션을 추가 하는 전체 프레임 워크 아닙니다. 애니메이션 별 있습니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: ea26549d-fbbf-4973-a108-b14cd1d6de26
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/animating-in-response-to-user-interaction-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9dea9daf3df76558eb19a524475cedd8e2085297
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 5e8ebf5ec7fc0875e0eb43923321513bf0a08899
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37379821"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37826133"
 ---
 <a name="animating-in-response-to-user-interaction-c"></a>사용자 상호 작용 (C#)에 대 한 응답으로 애니메이션 적용
 ====================

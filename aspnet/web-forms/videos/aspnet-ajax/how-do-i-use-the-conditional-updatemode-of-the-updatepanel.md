@@ -4,19 +4,16 @@ title: '[어떻게 할까요?] UpdatePanel의 조건부 UpdateMode 사용 | Micr
 author: JoeStagner
 description: ASP.NET AJAX UpdatePanel 'Always' 또는 '조건부'로 설정할 수 있습니다 하는 UpdateMode 속성을 포함 합니다. 기본값은 항상 하는 경우는 UpdatePan...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/01/2007
-ms.topic: article
 ms.assetid: 10b5bad3-4c18-464f-9454-0b3e60b7b8be
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-use-the-conditional-updatemode-of-the-updatepanel
 msc.type: video
-ms.openlocfilehash: a63c5687e52dd89e1a967bdd7d0dd0539e32ff37
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 04b37874bcbdd580edc9182b54eecc9a6f77cb61
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37397385"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37826814"
 ---
 <a name="how-do-i-use-the-conditional-updatemode-of-the-updatepanel"></a>[어떻게 할까요?] UpdatePanel의 조건부 UpdateMode 사용
 ====================

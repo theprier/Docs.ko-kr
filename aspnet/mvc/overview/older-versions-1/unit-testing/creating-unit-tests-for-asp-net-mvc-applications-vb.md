@@ -4,19 +4,16 @@ title: ASP.NET MVC 응용 프로그램 (VB)에 대 한 단위 테스트 만들�
 author: StephenWalther
 description: 컨트롤러 작업에 대 한 단위 테스트를 만드는 방법에 알아봅니다. 이 자습서에서는 Stephen walther가 컨트롤러 작업을 parti 반환 하는지 여부를 테스트 하는 방법에 설명 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/19/2008
-ms.topic: article
 ms.assetid: eb35710d-1d99-44ac-b61f-e50af8cb328a
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/unit-testing/creating-unit-tests-for-asp-net-mvc-applications-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8edd134f6534b2a53be7f475cf0cb35ca93d3067
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 3a8f142063a7addc8acca2b1a515295e36b26e29
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37384085"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37837184"
 ---
 <a name="creating-unit-tests-for-aspnet-mvc-applications-vb"></a>ASP.NET MVC 응용 프로그램 (VB)에 대 한 단위 테스트 만들기
 ====================

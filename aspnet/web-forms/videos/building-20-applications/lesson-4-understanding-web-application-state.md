@@ -4,19 +4,16 @@ title: '[단원 4:] 웹 응용 프로그램 상태 이해 | Microsoft Docs'
 author: microsoft
 description: 이 단원에서는 asp.net에서 ASP.NET 2.0 응용 프로그램에 대 한 정보를 저장 하 여 다양 한 개체를 포함 하 여 상태를 유지 하는 방법을 표시 됩니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/28/2005
-ms.topic: article
 ms.assetid: 22ddc59d-cd84-4def-a58b-ec3ca57f0d85
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/building-20-applications/lesson-4-understanding-web-application-state
 msc.type: video
-ms.openlocfilehash: ed804d37f94845bcc2043bf21e16a27b12f64f83
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: ca9c6fc3d87fd961069b1777668f181f2fca1943
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37400579"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37834538"
 ---
 <a name="lesson-4-understanding-web-application-state"></a>[단원 4:] 웹 응용 프로그램 상태 이해
 ====================

@@ -4,19 +4,16 @@ title: Code First 마이그레이션 및 ASP.NET MVC 응용 프로그램에서 E
 author: tdykstra
 description: Contoso University 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/07/2014
-ms.topic: article
 ms.assetid: d4dfc435-bda6-4621-9762-9ba270f8de4e
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 836711b05599087b540ad16bb5f462dd6baa287f
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 7c7092b770231b26fd666786af2e202acd70bc8a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37400220"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37838688"
 ---
 <a name="code-first-migrations-and-deployment-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Code First 마이그레이션 및 ASP.NET MVC 응용 프로그램에서 Entity Framework 사용 하 여 배포
 ====================

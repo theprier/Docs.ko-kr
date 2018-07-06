@@ -4,19 +4,16 @@ title: DynamicData 데이터 그리드에서 열을 제거 하는 방법 | Micro
 author: JoeStagner
 description: 이 비디오는 전체 열 스 캐 폴딩을 활용 하지만 여전히 프로그램 사용자 인터페이스에서 표시 하지 않을 테이블 열을 제외 하는 방법을 표시 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 12/11/2008
-ms.topic: article
 ms.assetid: 5fb54eb6-d1e1-4537-91ff-e1a9040c13ce
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-dynamic-data/how-to-remove-columns-from-your-dynamicdata-data-grids
 msc.type: video
-ms.openlocfilehash: 8492f47fc850c79b9e60e43443b04a02c0a0a0a2
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 7b61b7ed92d49ce8206c6f522b1489ef5f60c047
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37386489"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37836219"
 ---
 <a name="how-to-remove-columns-from-your-dynamicdata-data-grids"></a>DynamicData 데이터 그리드에서 열을 제거 하는 방법
 ====================

@@ -4,19 +4,16 @@ title: 특정 빌드 배포 | Microsoft Docs
 author: jrjlee
 description: 이 항목에서는 웹 패키지 및 특정 이전 빌드에서를 스테이징 또는 프로덕션은 순서도 같은 새 대상 데이터베이스 스크립트를 배포 하는 방법을 설명 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: c979535f-48a3-4ec4-a633-a77889b86ddb
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/deploying-a-specific-build
 msc.type: authoredcontent
-ms.openlocfilehash: 6d55497dbc13133aa9c8b8eaecca0f6915fd9ed0
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 312cd6f42463722b76996a3a848102946e0ca265
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37388226"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37832470"
 ---
 <a name="deploying-a-specific-build"></a>특정 빌드 배포
 ====================

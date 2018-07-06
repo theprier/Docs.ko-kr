@@ -4,19 +4,16 @@ title: '[어떻게 할까요?] HTML 요소를 서버 쪽 코드에서 액세스�
 author: rick-anderson
 description: 이 비디오 Chris Pels 알아보겠습니다 표준 HTML 요소.aspx 페이지에 액세스할 수 있도록 서버 쪽 코드에서 페이지 처리에 사용할 수 있도록 하는 방법...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/29/2008
-ms.topic: article
 ms.assetid: 1e2bafaa-ae6a-4c4c-839b-ff2dfe836902
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-make-html-elements-accessible-from-server-side-code
 msc.type: video
-ms.openlocfilehash: a10259c310091f133e4be5fed5e05b1424cddd36
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 06b1a0ecf226dce36a8a9d068d60fdb99defdeea
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37396974"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37834389"
 ---
 <a name="how-do-i-make-html-elements-accessible-from-server-side-code"></a>[어떻게 할까요?] HTML 요소를 서버 쪽 코드에서 액세스할 수 있도록 설정
 ====================

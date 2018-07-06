@@ -4,19 +4,16 @@ title: '[어떻게 할까요?] ASP.NET AJAX 기록 컨트롤 사용 | Microsoft 
 author: scottgolightly
 description: 일반적인 AJAX 응용 프로그램에서 직면 하는 한 가지 문제점은 부분 페이지 업데이트를 웹 브라우저의 기록에 추가 되지 않습니다. 따라서 브라우저의 B....
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/21/2007
-ms.topic: article
 ms.assetid: 557b0118-fde8-48c9-bf6d-829f9043706b
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-use-the-aspnet-ajax-history-control
 msc.type: video
-ms.openlocfilehash: 7b3408dcc4f2fea2d8ef5b7d4bf74dcc529ddb0b
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 50a74721860c992de4f1f06a171469e7799ef23c
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37384175"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37837911"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-history-control"></a>[어떻게 할까요?] ASP.NET AJAX 기록 컨트롤 사용
 ====================

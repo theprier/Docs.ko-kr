@@ -4,19 +4,16 @@ title: 고급 엔터프라이즈 웹 배포 | Microsoft Docs
 author: jrjlee
 description: 이 자습서에서는 필수 또는 다양 한 엔터프라이즈 배포 시나리오에서에서 적합할 수 있는 다양 한 작업을 수행 하는 방법을 보여줍니다. 이탈리아어 translati는에 대 한 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: 7dcaba80-f2ec-4db3-ad98-daadc3afdb49
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/advanced-enterprise-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 7b4546079d15649ff2371ced6746a29a90bdfc85
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: adadd921a96b5643eb54cd6f6384ef881ca6ba50
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37401875"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37835081"
 ---
 <a name="advanced-enterprise-web-deployment"></a>고급 엔터프라이즈 웹 배포
 ====================

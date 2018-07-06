@@ -4,19 +4,16 @@ title: 대체 봇 (VB) | Microsoft Docs
 author: wenz
 description: 자동화 된 봇 스팸, 사용자 개입 없이 주석 양식을 제출를 사용 하 여 웹 로그 및 기타 웹 사이트를 석고 합니다. ASP.NET AJAX Con NoBot 컨트롤 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: e9803150-452d-4521-97e3-d75d5599383c
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/nobot/fighting-bots-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1f919d130cc97b5f892cc01d58a0bcba790a98e3
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: e79a973f721c1feeddb00ecbf9d6a76786afb4bb
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37362520"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37833445"
 ---
 <a name="fighting-bots-vb"></a>대체 봇 (VB)
 ====================

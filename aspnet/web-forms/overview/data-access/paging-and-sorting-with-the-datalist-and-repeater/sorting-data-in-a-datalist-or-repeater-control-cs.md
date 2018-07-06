@@ -4,19 +4,16 @@ title: DataList 또는 Repeater 컨트롤 (C#)에서 데이터 정렬 | Microsof
 author: rick-anderson
 description: 이 자습서에서는 정렬 DataList 및 반복기를의 지원을 포함 하는 방법 뿐만 아니라 데이터 수 DataList 또는 반복기를 생성 하는 방법을 살펴보겠습니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/13/2006
-ms.topic: article
 ms.assetid: f52c302a-1b7c-46fe-8a13-8412c95cbf6d
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/sorting-data-in-a-datalist-or-repeater-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 85b59040cce266165353fe1627ffd983473bdcb6
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f394487523a7da112d32fb18b622bc73d5077aaa
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37371641"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37839994"
 ---
 <a name="sorting-data-in-a-datalist-or-repeater-control-c"></a>DataList 또는 Repeater 컨트롤 (C#)에서 데이터 정렬
 ====================

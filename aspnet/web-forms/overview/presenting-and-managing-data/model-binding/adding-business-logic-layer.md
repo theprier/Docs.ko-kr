@@ -4,19 +4,16 @@ title: 모델 바인딩 및 web forms를 사용 하는 프로젝트에 추가 �
 author: tfitzmac
 description: 이 자습서 시리즈에서는 모델 바인딩을 사용 하 여 ASP.NET Web Forms 프로젝트의 기본 사항을 보여 줍니다. 모델 바인딩을 통해 데이터 상호 작용 자세한 직선-...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/27/2014
-ms.topic: article
 ms.assetid: 7ef664b3-1cc8-4cbf-bb18-9f0f3a3ada2b
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/adding-business-logic-layer
 msc.type: authoredcontent
-ms.openlocfilehash: be69bf56c6a1c5bf601a47e90e4e1c67c48a760f
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 70e7ae6ad12c26ea5001ff68b25c0431a7440a77
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37386502"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37837875"
 ---
 <a name="adding-business-logic-layer-to-a-project-that-uses-model-binding-and-web-forms"></a>모델 바인딩 및 web forms를 사용 하는 프로젝트에 비즈니스 논리 레이어 추가
 ====================

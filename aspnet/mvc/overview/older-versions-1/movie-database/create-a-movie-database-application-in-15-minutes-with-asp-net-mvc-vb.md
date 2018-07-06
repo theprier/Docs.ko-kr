@@ -4,19 +4,16 @@ title: ASP.NET MVC (VB)를 사용 하 여 15 분만에 영화 데이터베이스
 author: StephenWalther
 description: Stephen walther가 전체 데이터베이스 기반의 ASP.NET MVC 응용 프로그램 시작부터 완료를 빌드합니다. 이 자습서는 새로운는 사람들에 대 한 훌륭한 소개 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/27/2009
-ms.topic: article
 ms.assetid: e4ba9786-734c-4eb3-91bb-089793325d0d
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/movie-database/create-a-movie-database-application-in-15-minutes-with-asp-net-mvc-vb
 msc.type: authoredcontent
-ms.openlocfilehash: a64d140eba4ebf489486af1a0be6269a8b904c13
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: d852dd2797f6df40cd233759648ec442259d4d26
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37372597"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37831202"
 ---
 <a name="create-a-movie-database-application-in-15-minutes-with-aspnet-mvc-vb"></a>ASP.NET MVC (VB)를 사용 하 여 15 분만에 영화 데이터베이스 응용 프로그램 만들기
 ====================

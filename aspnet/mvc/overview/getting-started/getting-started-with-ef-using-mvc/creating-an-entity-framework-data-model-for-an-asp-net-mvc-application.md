@@ -4,19 +4,16 @@ title: Entity Framework 6 Code First MVC 5를 사용 하 여 시작 | Microsoft 
 author: tdykstra
 description: '이 자습서 시리즈의 최신 버전을 사용할 수 있습니다: ASP.NET Core 및 Visual Studio 2015를 사용 하 여 Entity Framework Core를 사용 하 여 시작 합니다. Contoso Universi...'
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/22/2015
-ms.topic: article
 ms.assetid: 00bc8b51-32ed-4fd3-9745-be4c2a9c1eaf
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 1b8d78954746cd6908f9ca9c2a51591f45fa01f7
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f03ddcf7dcc8b5d20c5459a7fb0015ab20f340c5
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37403089"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37837171"
 ---
 <a name="getting-started-with-entity-framework-6-code-first-using-mvc-5"></a>MVC 5를 사용하여 Entity Framework 6 Code First 시작
 ====================

@@ -4,19 +4,16 @@ title: 'Visual Studio vNext 비디오: HTML 편집기의 스마트 작업과 이
 author: madskristensen
 description: 이 비디오에서는 Mads Kristensen 일반 작업 수행을 간소화 하는 Visual Studio vNext HTML 편집기의 향상 된 방법을 보여 줍니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/30/2011
-ms.topic: article
 ms.assetid: 3aa5b073-1359-41ac-8f4f-b09c1c8cb4bd
-ms.technology: ''
 msc.legacyurl: /visual-studio/overview/2012/visual-studio-vnext-videos-html-editor-smart-tasks-and-event-handler-generation
 msc.type: video
-ms.openlocfilehash: 4df0776a3ba575425f6b22cb63d93607de787819
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a88b9fc3148ebb9bb608d6fdafb2e116801fb9b3
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37395411"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37825797"
 ---
 <a name="visual-studio-vnext-videos-html-editor-smart-tasks-and-event-handler-generation"></a>Visual Studio vNext 비디오: HTML 편집기의 스마트 작업과 이벤트 처리기 생성
 ====================

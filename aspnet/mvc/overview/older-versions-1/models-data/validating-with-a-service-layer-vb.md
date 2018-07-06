@@ -4,19 +4,16 @@ title: 서비스 계층 (VB)를 사용 하 여 유효성 검사 | Microsoft Docs
 author: StephenWalther
 description: 사용자 유효성 검사 논리는 별도 서비스 계층 및 컨트롤러 작업에서 이동 하는 방법에 알아봅니다. 이 자습서에서는 Stephen walther가 설명 하는 방법을 있습니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/02/2009
-ms.topic: article
 ms.assetid: 344bb38e-4965-4c47-bda1-f6d29ae5b83a
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validating-with-a-service-layer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: a914a7351e0faf6babf144d80512994d513ed12f
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 673e9be46e37e9a805f1dae4944f69939b087dda
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37393227"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37836567"
 ---
 <a name="validating-with-a-service-layer-vb"></a>서비스 계층 (VB)를 사용 하 여 유효성 검사
 ====================

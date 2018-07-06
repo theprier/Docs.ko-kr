@@ -4,19 +4,16 @@ title: '[어떻게 할까요?] ASP.NET 서버 컨트롤에 JavaScript 이벤트 
 author: rick-anderson
 description: 이 비디오에서는 Chris Pels 하는 방법을 제공 클라이언트 쪽 ASP.NET 서버 컨트롤을 사용 하 여 JavaScript 메서드를 인터페이스 server contr. 기능...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/20/2008
-ms.topic: article
 ms.assetid: 4e8d3220-3299-41ad-897b-bbf62e2e667f
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-add-javascript-event-handlers-to-aspnet-server-controls
 msc.type: video
-ms.openlocfilehash: ba0ebf2529450597116c1d098c599c95e8149f1e
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: e0d77926f49e8517af9495420943dd96036cd49b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37402641"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37831789"
 ---
 <a name="how-do-i-add-javascript-event-handlers-to-aspnet-server-controls"></a>[어떻게 할까요?] ASP.NET 서버 컨트롤에 JavaScript 이벤트 처리기 추가
 ====================

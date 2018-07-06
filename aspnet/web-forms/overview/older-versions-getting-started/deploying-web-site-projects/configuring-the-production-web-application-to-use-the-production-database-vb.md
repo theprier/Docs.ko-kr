@@ -4,19 +4,16 @@ title: 프로덕션 데이터베이스 (VB)를 사용 하도록 프로덕션 웹
 author: rick-anderson
 description: 이전 자습서에서 설명 했 듯이 드물지 않습니다 구성 정보를 개발 및 프로덕션 환경에 따라 다릅니다. 이 es...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/23/2009
-ms.topic: article
 ms.assetid: a64a7aa0-6608-449e-83bf-1ef8cceee504
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-the-production-web-application-to-use-the-production-database-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7b5afb17f405bc8652431dd0a13a9e810fdfd74b
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 952bdafd06143ce24e9e8beb0d6e6343400ffdc6
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37371066"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37840702"
 ---
 <a name="configuring-the-production-web-application-to-use-the-production-database-vb"></a>프로덕션 데이터베이스 (VB)를 사용 하도록 프로덕션 웹 응용 프로그램 구성
 ====================

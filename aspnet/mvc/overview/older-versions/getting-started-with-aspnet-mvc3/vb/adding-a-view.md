@@ -4,19 +4,16 @@ title: 뷰 (VB) 추가 | Microsoft Docs
 author: Rick-Anderson
 description: 이 자습서는 Microsoft Visual Web Developer 2010 Express 서비스 팩 1, 인를 사용 하 여 ASP.NET MVC 웹 응용 프로그램을 빌드하는 기본 사항을 설명 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/12/2011
-ms.topic: article
 ms.assetid: d3633f64-5d3c-45c9-ae4b-cb1563e3739f
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/vb/adding-a-view
 msc.type: authoredcontent
-ms.openlocfilehash: 840f925aea40963c45787a8b5af20e99ff31f3d8
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 140dc8a7302c52112c2d8873325b2567e3ba66a1
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37386788"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37829984"
 ---
 <a name="adding-a-view-vb"></a>뷰 (VB) 추가
 ====================

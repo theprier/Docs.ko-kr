@@ -4,19 +4,16 @@ title: 웹 배포용 서버 환경 구성 | Microsoft Docs
 author: jrjlee
 description: 이 자습서에서는 한 번의 클릭 또는 자동화 된 지원, 웹 사이트 배포 및 다양 한 다른 시나리오에는 게시 서버 환경을 설정 하는 방법을 보여 줍니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: 0bf0959b-4ca8-45de-bd13-b15347543b5a
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-server-environments-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 520239c926b853b91638ed2687daebfb561fb99a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: df40cc9d16b9e6b3fe0b659b405106e68cee62b5
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37365272"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37835565"
 ---
 <a name="configuring-server-environments-for-web-deployment"></a>웹 배포용 서버 환경 구성
 ====================

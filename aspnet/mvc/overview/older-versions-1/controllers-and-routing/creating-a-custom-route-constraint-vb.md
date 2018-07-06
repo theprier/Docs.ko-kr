@@ -4,19 +4,16 @@ title: 사용자 지정 경로 제약 조건 (VB) 만들기 | Microsoft Docs
 author: StephenWalther
 description: Stephen walther가 사용자 지정 경로 제약 조건을 만드는 방법을 보여 줍니다. 간단한 구현 되는 경로 방지 하는 사용자 지정 제약 조건 w 일치 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/16/2009
-ms.topic: article
 ms.assetid: 892edb27-1cc2-4eaf-8314-dbc2efc6228a
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-a-custom-route-constraint-vb
 msc.type: authoredcontent
-ms.openlocfilehash: cc30cfd49402b10274e22eb27abba73329811b7e
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 72389d11467cbf7baea4cc9452266edb8ab81125
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37385497"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37840477"
 ---
 <a name="creating-a-custom-route-constraint-vb"></a>사용자 지정 경로 제약 조건 (VB) 만들기
 ====================

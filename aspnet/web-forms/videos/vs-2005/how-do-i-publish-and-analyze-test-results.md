@@ -4,19 +4,16 @@ title: '[어떻게 할까요?] 게시 및 테스트 결과 분석? | Microsoft �
 author: rick-anderson
 description: Visual Studio Team System을 사용 하면 프로젝트 진행에 따라 프로젝트의 코드 품질 차트 변경을 할 수 있습니다. 이 비디오는 publ. 하는 방법에 지침을 제공...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/16/2007
-ms.topic: article
 ms.assetid: 9fb155e0-1379-482c-963d-af7dc0397d76
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-publish-and-analyze-test-results
 msc.type: video
-ms.openlocfilehash: 2beeac7c4d8157787a156af03a42f9c1f7dbbd17
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: eb59591d32191ed736786fda236f74b5104ef868
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37379518"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37833078"
 ---
 <a name="how-do-i-publish-and-analyze-test-results"></a>[어떻게 할까요?] 게시 및 테스트 결과 분석?
 ====================

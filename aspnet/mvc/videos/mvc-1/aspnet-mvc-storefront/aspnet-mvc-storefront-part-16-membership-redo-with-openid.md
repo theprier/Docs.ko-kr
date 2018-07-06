@@ -4,19 +4,16 @@ title: 'ASP.NET MVC Storefront 16 부: OpenID 사용 하 여 멤버 자격 다�
 author: robconery
 description: Rob 멤버 자격 시스템을 변경 및 확장의 세 서비스/부분으로 분할 합니다. Rob Jon Galloway OpenID에 대 한 이야기를 사용 하 여 다음 위치 및 단순 방법...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/16/2008
-ms.topic: article
 ms.assetid: afc038e6-555e-4dfa-ae45-f4d3d50e8f96
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-16-membership-redo-with-openid
 msc.type: video
-ms.openlocfilehash: 45bfe925229a0b283afb6c1a971f0660c95af98c
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: efd2311a0d0d4165b94e4d26989d66f563181fa5
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37396645"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37838778"
 ---
 <a name="aspnet-mvc-storefront-part-16-membership-redo-with-openid"></a>OpenID 사용 하 여 ASP.NET MVC Storefront 16 부: 멤버 자격 다시 실행 합니다.
 ====================

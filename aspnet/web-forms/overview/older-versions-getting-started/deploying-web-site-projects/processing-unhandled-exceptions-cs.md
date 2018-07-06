@@ -4,19 +4,16 @@ title: 처리 하는 처리 되지 않은 예외 (C#) | Microsoft Docs
 author: rick-anderson
 description: 프로덕션 환경에서 웹 응용 프로그램에서 런타임 오류가 발생 하는 경우 것이 중요 개발자에 게 알림 하는 데는 la에서 진단 수 있도록 오류를 기록 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/09/2009
-ms.topic: article
 ms.assetid: 5bc1afd5-2484-4528-b158-ab218ba150e8
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 784290f1390668518ad88df9d38b60c0179a5923
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 07272a10ac9b1ddf3afd6b089b05a3f071834efe
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37371858"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37832631"
 ---
 <a name="processing-unhandled-exceptions-c"></a>처리 되지 않은 예외 (C#)를 처리 합니다.
 ====================

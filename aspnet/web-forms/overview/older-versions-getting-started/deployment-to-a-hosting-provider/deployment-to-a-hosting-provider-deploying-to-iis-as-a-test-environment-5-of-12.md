@@ -4,19 +4,16 @@ title: 'SQL Server Compact Visual Studio 또는 Visual Web Developer를 사용 �
 author: tdykstra
 description: 이 시리즈의 자습서에서는 배포 하는 방법을 보여 줍니다 (게시) ASP.NET 웹 응용 프로그램 프로젝트 Visual Stu를 사용 하 여 SQL Server Compact 데이터베이스를 포함 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/17/2011
-ms.topic: article
 ms.assetid: 493b2a66-816c-485c-8315-952ed1085ccc
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-to-iis-as-a-test-environment-5-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 70bc1b8e3c5d01470c2cebfbabd0c119e8f6d360
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 46d986aad52b0ab5a235eade2e17b0cf9f8cdb9f
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37394718"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37835203"
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-to-iis-as-a-test-environment---5-of-12"></a>SQL Server Compact Visual Studio 또는 Visual Web Developer를 사용 하 여를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: IIS 5 12-테스트 환경으로 배포
 ====================

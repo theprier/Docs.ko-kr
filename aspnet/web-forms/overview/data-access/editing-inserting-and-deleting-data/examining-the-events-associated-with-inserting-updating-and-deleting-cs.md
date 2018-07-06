@@ -4,19 +4,16 @@ title: 삽입, 업데이트 및 삭제 (C#)와 관련 된 이벤트 검사 | Mic
 author: rick-anderson
 description: 이전, 도중 및 삽입 이후 발생 하는 이벤트를 사용 하 여 살펴보겠습니다이 자습서에서는 업데이트 또는 ASP.NET 데이터 웹 컨트롤의 작업을 삭제 합니다. W...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/17/2006
-ms.topic: article
 ms.assetid: dab291a0-a8b5-46fa-9dd8-3d35b249201f
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/examining-the-events-associated-with-inserting-updating-and-deleting-cs
 msc.type: authoredcontent
-ms.openlocfilehash: cec25809038cbe6a114b0e36ef7265d84bbe9b92
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 003d71bd05fcc3462b73c9c8c4bc5d63764b82ba
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37363302"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37836174"
 ---
 <a name="examining-the-events-associated-with-inserting-updating-and-deleting-c"></a>삽입, 업데이트 및 삭제 (C#)와 관련 된 이벤트 검사
 ====================

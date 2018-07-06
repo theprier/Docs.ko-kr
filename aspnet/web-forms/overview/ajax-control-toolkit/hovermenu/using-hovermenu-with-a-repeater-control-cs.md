@@ -4,19 +4,16 @@ title: Repeater 컨트롤 (C#)에 HoverMenu 사용 | Microsoft Docs
 author: wenz
 description: 'AJAX Control Toolkit에 HoverMenu 컨트롤은 간단한 팝업 효과 제공 합니다: 팝업을 specifi에 표시 되는 요소 위로 마우스 포인터를 가져가면...'
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: e7700e7b-edc3-4183-a713-70e507cc7490
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/hovermenu/using-hovermenu-with-a-repeater-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 309cd64d8b62505c1546317a8aced7f50048af0c
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f3135eb52bab1550b1c89dd6ce62044640e80198
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37384696"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37831999"
 ---
 <a name="using-hovermenu-with-a-repeater-control-c"></a>Repeater 컨트롤 (C#)에 HoverMenu 사용
 ====================

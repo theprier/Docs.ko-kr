@@ -4,19 +4,16 @@ title: AJAX의 비즈니스 가치 측정 | Microsoft Docs
 author: rick-anderson
 description: ASP.NET AJAX는 웹 응용 프로그램의 사용자 환경을 개선 하는 기능에 대 한 잘 알려진입니다. Visual Studio Team system을 busine를 측정할 수 있습니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/23/2007
-ms.topic: article
 ms.assetid: 60bb771b-e938-490f-944e-c80bc6bbdc12
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/vs-2005/measuring-the-business-value-of-ajax
 msc.type: video
-ms.openlocfilehash: 7a4dcb19b5cab8dcb1f3834daa4aafa604fa9534
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: fa15ed06f20502aa53ec139d0673a4f35c16ea45
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37385825"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37831870"
 ---
 <a name="measuring-the-business-value-of-ajax"></a>AJAX의 비즈니스 가치 측정
 ====================

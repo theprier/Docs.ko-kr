@@ -4,19 +4,16 @@ title: '단일 페이지 응용 프로그램: KnockoutJS 템플릿 | Microsoft D
 author: MikeWasson
 description: Knockout 템플릿
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/30/2013
-ms.topic: article
 ms.assetid: f9c07af0-4b20-4b08-af8f-47fc3df169a2
-ms.technology: ''
 msc.legacyurl: /single-page-application/overview/introduction/knockoutjs-template
 msc.type: authoredcontent
-ms.openlocfilehash: 75169836d1d9a647bdd4ac3742cb1dc1f31f2a32
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 9e48c7033cefe8b6e4c456577b7a6448f9815d0b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37377904"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37832531"
 ---
 <a name="single-page-application-knockoutjs-template"></a>단일 페이지 응용 프로그램: KnockoutJS 템플릿
 ====================

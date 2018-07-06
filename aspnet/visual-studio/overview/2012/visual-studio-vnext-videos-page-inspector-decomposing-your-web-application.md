@@ -4,19 +4,16 @@ title: 'Visual Studio vNext 비디오: 페이지 검사기-웹 응용 프로그�
 author: gabosom
 description: 이 비디오에서는 Jorge Gabuardi Gonzalez Visual Studio vNext에서 페이지 검사기를 사용 하 여 HTML 및 ASP.NET 응용 프로그램에서 스타일 문제를 해결 하는 방법을 표시 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/30/2011
-ms.topic: article
 ms.assetid: 527a3d23-2e22-4a79-accd-eda47ab40350
-ms.technology: ''
 msc.legacyurl: /visual-studio/overview/2012/visual-studio-vnext-videos-page-inspector-decomposing-your-web-application
 msc.type: video
-ms.openlocfilehash: e229240b85b815ff56ce5bedf777fd637ea64b1d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 2a55a3c1f57f2f51a5cf3cb19c73962d2c627b44
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37396587"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37838467"
 ---
 <a name="visual-studio-vnext-videos-page-inspector---decomposing-your-web-application"></a>Visual Studio vNext 비디오: 페이지 검사기-웹 응용 프로그램 분해
 ====================

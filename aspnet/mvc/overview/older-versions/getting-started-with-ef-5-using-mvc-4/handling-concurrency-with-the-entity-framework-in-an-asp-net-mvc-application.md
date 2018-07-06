@@ -4,19 +4,16 @@ title: (7 / 10) ASP.NET MVC 응용 프로그램에서 Entity Framework 사용 �
 author: tdykstra
 description: Contoso University 샘플 웹 응용 프로그램에는 Entity Framework 5 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 4 응용 프로그램을 만드는 방법을 보여 줍니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/30/2013
-ms.topic: article
 ms.assetid: b83f47c4-8521-4d0a-8644-e8f77e39733e
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/handling-concurrency-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 15dfce05d808a8af5ddfa6bbeb0b0baf449c7691
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: eadadd1ac98191d0f802dc742294938eb48d86b3
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37378361"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37809007"
 ---
 <a name="handling-concurrency-with-the-entity-framework-in-an-aspnet-mvc-application-7-of-10"></a>(7 / 10) ASP.NET MVC 응용 프로그램에서 Entity Framework 사용 하 여 동시성 처리
 ====================

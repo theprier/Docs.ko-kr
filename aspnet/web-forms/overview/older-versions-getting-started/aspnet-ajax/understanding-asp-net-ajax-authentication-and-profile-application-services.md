@@ -4,19 +4,16 @@ title: ASP.NET AJAX 인증 및 프로필 응용 프로그램 서비스 이해 | 
 author: scottcate
 description: 인증 서비스 사용자가 인증 쿠키를 수신 하기 위해 자격 증명을 제공할 수 있으며 사용자를 허용 하려면 게이트웨이 서비스는...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/14/2008
-ms.topic: article
 ms.assetid: 6ab4efb6-aab6-45ac-ad2c-bdec5848ef9e
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-authentication-and-profile-application-services
 msc.type: authoredcontent
-ms.openlocfilehash: 323fec56f18281b5b5a3d312a2e4c4c7133e3f03
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 6c08cffacb9ebde6f29398f53b2e568b4bd59d5d
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37393063"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37831682"
 ---
 <a name="understanding-aspnet-ajax-authentication-and-profile-application-services"></a>ASP.NET AJAX 인증 및 프로필 응용 프로그램 서비스 이해
 ====================

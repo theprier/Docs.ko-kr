@@ -4,19 +4,16 @@ title: '[어떻게 할까요?] NumericUpDown Extender 컨트롤 사용 | Microso
 author: JoeStagner
 description: 이 비디오에서는 ASP.NET AJAX Control Toolkit에서 NumericUpDown extender 컨트롤을 살펴봅니다. NumericUpDown extender 'up' 및 '아래쪽'를 추가 하는 방법을 표시 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/12/2007
-ms.topic: article
 ms.assetid: 2aee17e4-06d1-4875-985e-8fb817dc8bcd
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-numericupdown-extender-control
 msc.type: video
-ms.openlocfilehash: 0c01e6cf4aa65b52342c6376061d0735f8a282fb
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a85f89f9c46fb2a6b17f20a97fee896e24374389
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37401742"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37840448"
 ---
 <a name="how-do-i-use-the-numericupdown-extender-control"></a>[어떻게 할까요?] NumericUpDown Extender 컨트롤 사용
 ====================

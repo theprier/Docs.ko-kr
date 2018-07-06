@@ -4,19 +4,16 @@ title: 많은 (C#)에서 사용자 계정 하나를 선택 하는 인터페이�
 author: rick-anderson
 description: 이 자습서에서는 페이징, 필터링 가능 표를 사용 하 여 사용자 인터페이스를 빌드합니다. 특히 사용자 인터페이스에 대 한 Linkbutton의 일련의 구성 됩니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/01/2008
-ms.topic: article
 ms.assetid: 9e4e687c-b4ec-434f-a4ef-edb0b8f365e4
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/building-an-interface-to-select-one-user-account-from-many-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4adc24033f44892671d2c9b4ec759aaec77e0bc9
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a4d5b4c332cd256007db2f857c89fe3133205315
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37378594"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37832845"
 ---
 <a name="building-an-interface-to-select-one-user-account-from-many-c"></a>많은 (C#)에서 사용자 계정 하나를 선택 하는 인터페이스 빌드
 ====================

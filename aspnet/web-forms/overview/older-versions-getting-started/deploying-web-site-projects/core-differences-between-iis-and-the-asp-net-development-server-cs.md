@@ -4,19 +4,16 @@ title: IIS와 ASP.NET 개발 서버 (C#) 간의 차이점을 핵심 | Microsoft 
 author: rick-anderson
 description: ASP.NET 응용 프로그램을 로컬로 테스트 하는 경우에 ASP.NET 개발 웹 서버를 사용 하는 것이 경우가 있습니다. 그러나 프로덕션 웹 사이트는 가장 가능성이 높은 pow...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/01/2009
-ms.topic: article
 ms.assetid: 13a5a423-9235-4dde-b408-2fd10f791d63
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/core-differences-between-iis-and-the-asp-net-development-server-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 50f3115fd124cf058e70cab71b8c0168d242ff21
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f4284a46fbae9ed609554b77c4e19f936b80595d
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37363418"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37839689"
 ---
 <a name="core-differences-between-iis-and-the-aspnet-development-server-c"></a>IIS와 ASP.NET 개발 서버 (C#) 간의 주요 차이점
 ====================

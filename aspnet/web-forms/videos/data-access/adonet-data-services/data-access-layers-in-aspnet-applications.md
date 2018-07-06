@@ -4,19 +4,16 @@ title: ASP.NET 응용 프로그램에서 데이터 액세스 레이어 | Microso
 author: JoeStagner
 description: 이 비디오에서는 3, 1 부 Joe Stagner는 간단한 ASP.NET 응용 프로그램에 대 한 형식화 된 데이터 집합을 사용 하 여 데이터 액세스 계층을 만듭니다. 에 대 한 추가 정보에 대 한 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/07/2008
-ms.topic: article
 ms.assetid: 536aa7a6-84fb-487c-a14f-6ca3eb8a4a33
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/data-access/adonet-data-services/data-access-layers-in-aspnet-applications
 msc.type: video
-ms.openlocfilehash: ceb9e21ac874a755c6e8e12475a9b65978d24e29
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 7da39466777ba4aaec0c40d813fd31750f623bf2
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37395307"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37838031"
 ---
 <a name="data-access-layers-in-aspnet-applications"></a>ASP.NET 응용 프로그램의 데이터 액세스 레이어
 ====================

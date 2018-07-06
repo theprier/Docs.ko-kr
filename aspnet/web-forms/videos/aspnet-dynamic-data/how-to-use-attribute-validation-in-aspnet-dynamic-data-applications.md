@@ -4,19 +4,16 @@ title: ASP.NET Dynamic Data 응용 프로그램에서 특성 유효성 검사를
 author: JoeStagner
 description: 이 비디오는 동적 데이터 응용 프로그램의 데이터 액세스 계층에서 Partial 클래스를 수정 소개 하 고 포커스 o 하 여 특성을 사용 하 여 시작 됩니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/23/2008
-ms.topic: article
 ms.assetid: dcaaaa8d-7dbd-4f5f-be2a-226c2517872a
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-dynamic-data/how-to-use-attribute-validation-in-aspnet-dynamic-data-applications
 msc.type: video
-ms.openlocfilehash: ac668078772fbef243bfbcb3bdb96a4d55a30d08
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 601d8a2749e319ba6fe3a112ac82576f4f3d92f0
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37385191"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37831776"
 ---
 <a name="how-to-use-attribute-validation-in-aspnet-dynamic-data-applications"></a>ASP.NET Dynamic Data 응용 프로그램에서 특성 유효성 검사를 사용 하는 방법
 ====================

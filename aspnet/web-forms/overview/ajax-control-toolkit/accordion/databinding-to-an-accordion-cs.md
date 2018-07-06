@@ -4,19 +4,16 @@ title: Accordion (C#)에 데이터 바인딩 | Microsoft Docs
 author: wenz
 description: AJAX Control Toolkit의 Accordion 컨트롤 여러 창을 제공 하 고 둘 중 한 번에 표시할 수 있습니다. 일반적으로 패널 w 선언 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: 9c8f0054-e319-46f8-80c0-35b606d2fbd4
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/accordion/databinding-to-an-accordion-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8441eb15d369085b93297ae896d595a40d4099fd
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 05adc7158725bd5a6ba276b81222de04158d3c64
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37394024"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37833542"
 ---
 <a name="databinding-to-an-accordion-c"></a>Accordion (C#)에 데이터 바인딩
 ====================

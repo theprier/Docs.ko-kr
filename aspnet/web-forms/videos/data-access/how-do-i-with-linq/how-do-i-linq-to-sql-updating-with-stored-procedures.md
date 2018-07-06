@@ -4,19 +4,16 @@ title: '방법: LINQ to SQL: 저장 프로시저를 사용 하 여 업데이트 
 author: scottstanfield
 description: 저장된 프로시저를 통해 고유의 작업으로 생성 된 ORM update/delete/insert 논리를 재정의 합니다. 비디오 방법도 자세히 SQL Profiler를 사용 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/13/2008
-ms.topic: article
 ms.assetid: b041ea07-a174-4a57-b2a8-4ce64232bdae
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-updating-with-stored-procedures
 msc.type: video
-ms.openlocfilehash: cc4a7ea1067ecb71cc9a6d862e37b4f5ab84080b
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a8150937aff608c866b5fb8b0da1544f602594a3
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37384958"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37825829"
 ---
 <a name="how-do-i-linq-to-sql-updating-with-stored-procedures"></a>방법: LINQ to SQL: 저장 프로시저 업데이트
 ====================

@@ -4,19 +4,16 @@ title: 컨트롤러의 이해, 컨트롤러 작업 및 작업 결과 | Microsoft
 author: StephenWalther
 description: 이 자습서에서는 Stephen walther가 ASP.NET MVC 컨트롤러를 소개합니다. 새 컨트롤러를 만들고 다양 한 유형의 작업 응답을 반환 하는 방법을 배웁니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/20/2008
-ms.topic: article
 ms.assetid: 2456a5da-d376-4d45-8275-9e0dc46bf7dd
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/understanding-controllers-controller-actions-and-action-results
 msc.type: video
-ms.openlocfilehash: 0038408f028a56bdcdf5b972e9d2e69e6d89a0e2
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 7a9172a09d9be23cd5b83121cbaebdfb03386fcf
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37393188"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37837557"
 ---
 <a name="understanding-controllers-controller-actions-and-action-results"></a>컨트롤러의 이해, 컨트롤러 작업 및 작업 결과
 ====================

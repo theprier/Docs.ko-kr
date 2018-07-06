@@ -4,19 +4,16 @@ title: ASP.NET Web API 2에서에서 크로스-원본 요청을 사용 하도록
 author: MikeWasson
 description: ASP.NET Web API에서 크로스-원본 자원 공유 (CORS)를 지 원하는 방법을 보여 줍니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/15/2014
-ms.topic: article
 ms.assetid: 9b265a5a-6a70-4a82-adce-2d7c56ae8bdd
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/overview/security/enabling-cross-origin-requests-in-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 603eb55f8fa0b629d0287b66086b9495ef55faf7
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 7ac6158c2365aa324cefe97db044f568a1a43795
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37381091"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37805414"
 ---
 <a name="enabling-cross-origin-requests-in-aspnet-web-api-2"></a>ASP.NET Web API 2에서에서 크로스-원본 요청을 사용 하도록 설정
 ====================

@@ -4,19 +4,16 @@ title: 서버 컨트롤 | Microsoft Docs
 author: microsoft
 description: ASP.NET 2.0에는 여러 가지 방법으로 서버 컨트롤 강화합니다. 이 모듈에서는 다루게 방식으로 ASP.NET 2.0 및 Visual Studio 200 아키텍처 변경 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/20/2005
-ms.topic: article
 ms.assetid: 43f6ac47-76fc-4cf7-8e9f-c18ce673dfd8
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/server-controls
 msc.type: authoredcontent
-ms.openlocfilehash: 989986c45e76a65582f35172c7d837a78484d09a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: da06429f3949a47a02fccef45666d1220781e473
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37374226"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37837071"
 ---
 <a name="server-controls"></a>서버 컨트롤
 ====================

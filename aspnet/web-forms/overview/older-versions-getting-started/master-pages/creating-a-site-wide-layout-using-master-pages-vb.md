@@ -4,19 +4,16 @@ title: 마스터 페이지 (VB)를 사용 하 여 사이트 전체 레이아웃 
 author: rick-anderson
 description: 이 자습서에서는 기본 사항 마스터 페이지를 보여 줍니다. 즉, 마스터 페이지 있을까요 하나 마스터 페이지를 만들고, cr은 어떻게 콘텐츠 자리 표시자를 이란...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/21/2008
-ms.topic: article
 ms.assetid: 30945276-8ed9-4b27-8e50-4309244d3559
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/creating-a-site-wide-layout-using-master-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b47f2d838cef8e43df83d49eecff2bae8553889e
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 182f45c28dc37633b429fead333d401818299e36
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37377316"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37827824"
 ---
 <a name="creating-a-site-wide-layout-using-master-pages-vb"></a>마스터 페이지 (VB)를 사용 하 여 사이트 전체 레이아웃 만들기
 ====================

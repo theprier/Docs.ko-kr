@@ -4,19 +4,16 @@ title: Repeater 컨트롤 (C#)에 ModalPopup 사용 | Microsoft Docs
 author: wenz
 description: AJAX Control Toolkit의 ModalPopup 컨트롤 클라이언트 쪽 의미를 사용 하 여 모달 팝업을 만드는 간단한 방법을 제공 합니다. 이 contr.를 사용 하는 것도 가능...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: d686d84a-1c58-492e-8a77-3eb5a0cfe918
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/using-modalpopup-with-a-repeater-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7e6136bac48b7c1b0931cada66501d303be8e927
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 72d0f16d22911d867f9a91faf273e236453e7b3a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37371079"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37833626"
 ---
 <a name="using-modalpopup-with-a-repeater-control-c"></a>Repeater 컨트롤 (C#)에 ModalPopup 사용
 ====================

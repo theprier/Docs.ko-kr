@@ -4,19 +4,16 @@ title: DataList 또는 Repeater 컨트롤 (VB)에서 보고서 데이터 페이�
 author: rick-anderson
 description: DataList 또는 Repeater 모두 제품 자동 페이징 또는 정렬 지원을 하는 동안이 자습서에서는 DataList 또는 Repeater를 페이징 지원을 추가 하는 방법을 보여 줍니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/13/2006
-ms.topic: article
 ms.assetid: bbd6b7f7-b98a-48b4-93f3-341d6a4f53c0
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/paging-report-data-in-a-datalist-or-repeater-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: da3c851a8752d4ef5c210a6d8fe552412ecbc9b0
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: b1c3858e232d950d2cf9af0621f60cb9ba4ae767
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37385394"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37835219"
 ---
 <a name="paging-report-data-in-a-datalist-or-repeater-control-vb"></a>DataList 또는 Repeater 컨트롤 (VB)에서 보고서 데이터 페이징
 ====================

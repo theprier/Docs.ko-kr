@@ -4,19 +4,16 @@ title: 모눈에 데이터를 표시 합니다. | Microsoft Docs
 author: JoeStagner
 description: 표 자습서에서 데이터 표시를 비디오 하겠지만
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/25/2011
-ms.topic: article
 ms.assetid: 76ac6b38-ca93-4d8f-8a72-9e46c82054ab
-ms.technology: dotnet-webpages
 msc.legacyurl: /web-pages/videos/aspnet-razor-pages/displaying-data-in-a-grid
 msc.type: video
-ms.openlocfilehash: 5071d0ca527743b62ebe211eb31e878c18395f91
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 092dbfbfe27a1751802904ad254f1e08d49e401a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37396200"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37838047"
 ---
 <a name="displaying-data-in-a-grid"></a>모눈에 데이터를 표시합니다.
 ====================

@@ -4,19 +4,16 @@ title: 배포 게시용 웹에 대 한 웹 서버 구성 (웹 배포 처리기) 
 author: jrjlee
 description: 이 항목에서는 웹 게시 및 IIS 웹 배포 Han를 사용 하 여 배포를 지원 하기 위해 인터넷 정보 서비스 (IIS) 웹 서버를 구성 하는 방법을 설명 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: 90ebf911-1c46-4470-b876-1335bd0f590f
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler
 msc.type: authoredcontent
-ms.openlocfilehash: 2d262aab8fd6e755330acbaffa6d18c29688666f
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 3296bb9b6460bbe80782746c9d398aa67815dcee
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37394218"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37833337"
 ---
 <a name="configuring-a-web-server-for-web-deploy-publishing-web-deploy-handler"></a>배포 게시용 웹에 대 한 웹 서버 구성 (웹 배포 처리기)
 ====================

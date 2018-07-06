@@ -4,19 +4,16 @@ title: 컨트롤러 추가 | Microsoft Docs
 author: Rick-Anderson
 description: '참고: 업데이트 된이이 자습서는 ASP.NET MVC 5 및 Visual Studio 2013을 사용 하는 있습니다. 것이 더 안전 하 고 더 간단 하 게 따르고 데모 중...'
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/28/2012
-ms.topic: article
 ms.assetid: 0267d31c-892f-49a1-9e7a-3ae8cc12b2ca
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: 100f5623bafa33548f9c979e98765c92327eb369
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: b9ba4336b2239d835b648b82674bd4cfa8ca43dc
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37373291"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37809036"
 ---
 <a name="adding-a-controller"></a>컨트롤러 추가
 ====================

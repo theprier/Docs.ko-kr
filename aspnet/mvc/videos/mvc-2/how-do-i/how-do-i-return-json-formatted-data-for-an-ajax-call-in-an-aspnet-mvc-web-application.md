@@ -4,19 +4,16 @@ title: 수행 할까요 반환 하는 방법을 ASP.NET MVC 웹 응용 프로그
 author: rick-anderson
 description: Chris Pels에서는 클래스의 인스턴스를 JSON으로 반환 하는 JsonResult 및 Json 클래스를 사용 하는 방법을 보여 줍니다.이 비디오에서는 형식이 지정 된 데이터입니다. 먼저 MVC 샘플 웹 응용...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/22/2009
-ms.topic: article
 ms.assetid: 7ed06ca2-fab6-41a3-a1cc-a3ccebb639f6
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/how-do-i-return-json-formatted-data-for-an-ajax-call-in-an-aspnet-mvc-web-application
 msc.type: video
-ms.openlocfilehash: 3f52f4161ae6689a14ddac69149dfaad41a4d90e
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 5bb38259c1beda0059bf20aec5a4bac4901efbec
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37363756"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37825663"
 ---
 <a name="how-do-i-return-json-formatted-data-for-an-ajax-call-in-an-aspnet-mvc-web-application"></a>수행 할까요 반환 하는 방법을 ASP.NET MVC 웹 응용 프로그램에서 AJAX 호출에 대 한 JSON 형식 데이터?
 ====================

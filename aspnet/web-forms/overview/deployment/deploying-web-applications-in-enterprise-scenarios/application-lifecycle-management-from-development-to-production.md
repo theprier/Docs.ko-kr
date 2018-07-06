@@ -4,19 +4,16 @@ title: '응용 프로그램 수명 주기 관리: 개발부터 프로덕션까�
 author: jrjlee
 description: 이 항목에서는 가상의 회사 par로 테스트, 스테이징 및 프로덕션 환경을 통해 ASP.NET 웹 응용 프로그램의 배포를 관리 하는 방법을 보여 줍니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: f97a1145-6470-4bca-8f15-ccfb25fb903c
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/application-lifecycle-management-from-development-to-production
 msc.type: authoredcontent
-ms.openlocfilehash: fdd51d2b6836c7fed04132f7c05bbede772d21e0
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 47af9504bdef294b987cdd23ab1bcefbeadd4681
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37362812"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37808981"
 ---
 <a name="application-lifecycle-management-from-development-to-production"></a>응용 프로그램 수명 주기 관리: 개발부터 프로덕션까지
 ====================

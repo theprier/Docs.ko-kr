@@ -4,19 +4,16 @@ title: ASP.NET Web Forms 연결 복원 력 및 명령 인터 셉 션 | Microsoft
 author: Erikre
 description: 이 자습서에서는 연결 복원 력 및 명령 인터 셉 션을 지원 하기 위해 샘플 응용 프로그램을 수정 하는 방법을 설명 합니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/31/2014
-ms.topic: article
 ms.assetid: 6d497001-fa80-4765-b4cc-181fe90b894e
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/advanced/aspnet-web-forms-connection-resiliency-and-command-interception
 msc.type: authoredcontent
-ms.openlocfilehash: 8b8f592c4e79cf9dbe1255c93fac2fe18f1d9409
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 9a66b297608a5a8cd536b9af2a9ae4bb600a6bbb
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37368323"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37807091"
 ---
 <a name="aspnet-web-forms-connection-resiliency-and-command-interception"></a>ASP.NET Web Forms 연결 복원 력 및 명령 인터 셉 션
 ====================

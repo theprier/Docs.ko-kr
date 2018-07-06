@@ -4,19 +4,16 @@ title: 폼 인증 (VB)의 개요 | Microsoft Docs
 author: rick-anderson
 description: 이 자습서에서는 기능을 단순한 토론에서 구현 됩니다. 특히, 폼 인증을 구현 살펴봅니다. 웹 응용 프로그램 w...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/14/2008
-ms.topic: article
 ms.assetid: 83267f7d-64d9-41ee-82cf-da91b1bf534d
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/an-overview-of-forms-authentication-vb
 msc.type: authoredcontent
-ms.openlocfilehash: df8b0595cbc02a99a39c5b39be9ddb2e92bc34aa
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 757cdebc436a4cb799f92374744ee9cb69eb0e0b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37385893"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37809461"
 ---
 <a name="an-overview-of-forms-authentication-vb"></a>폼 인증 (VB) 개요
 ====================

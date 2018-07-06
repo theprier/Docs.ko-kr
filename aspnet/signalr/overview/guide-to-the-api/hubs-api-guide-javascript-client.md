@@ -4,19 +4,16 @@ title: ASP.NET SignalR 허브 API 가이드-JavaScript 클라이언트 | Microso
 author: pfletcher
 description: 이 문서에서는 허브 API를 사용 하 여 SignalR 브라우저 등 Windows 스토어 (WinJS) applicat JavaScript 클라이언트에서 버전 2에 대 한 소개를 제공 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 09/28/2015
-ms.topic: article
 ms.assetid: a9fd4dc0-1b96-4443-82ca-932a5b4a8ea4
-ms.technology: dotnet-signalr
 msc.legacyurl: /signalr/overview/guide-to-the-api/hubs-api-guide-javascript-client
 msc.type: authoredcontent
-ms.openlocfilehash: 155ad6599f7f790bf52b0bd59053290f3a662a90
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: ed25843f5eb6145d29ef90f6205715bdd341d1a4
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37398221"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37839728"
 ---
 <a name="aspnet-signalr-hubs-api-guide---javascript-client"></a>ASP.NET SignalR 허브 API 가이드-JavaScript 클라이언트
 ====================

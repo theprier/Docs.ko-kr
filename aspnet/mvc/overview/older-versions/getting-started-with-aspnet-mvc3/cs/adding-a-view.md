@@ -4,19 +4,16 @@ title: 추가 보기 (C#) | Microsoft Docs
 author: Rick-Anderson
 description: 이 자습서는 Microsoft Visual Web Developer 2010 Express 서비스 팩 1, 인를 사용 하 여 ASP.NET MVC 웹 응용 프로그램을 빌드하는 기본 사항을 설명 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/12/2011
-ms.topic: article
 ms.assetid: abc7c78d-cb09-4a4c-a887-61bc401d40e3
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-view
 msc.type: authoredcontent
-ms.openlocfilehash: e9496f801024bd2d4a135eefbb79b162017197b7
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 4a4eacfdcb0b53da377e9b6812a7ce50aa94b551
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37366218"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37831708"
 ---
 <a name="adding-a-view-c"></a>추가 보기 (C#)
 ====================

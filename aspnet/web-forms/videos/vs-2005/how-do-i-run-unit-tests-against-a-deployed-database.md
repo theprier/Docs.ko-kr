@@ -4,19 +4,16 @@ title: '[어떻게 할까요?] 배포 데이터베이스에 대해 단위 테스
 author: pjhacker
 description: ASP.NET 응용 프로그램은 웹 사이트와 함께 데이터베이스를 배포 하도록 구성 된, 경우 어떻게 수 하는 유효한 데이터베이스 인스턴스를 배포 되었는지 확인?...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/22/2007
-ms.topic: article
 ms.assetid: 83792674-f769-4c9a-889b-701cfc52de8b
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-run-unit-tests-against-a-deployed-database
 msc.type: video
-ms.openlocfilehash: c82222a2ab77e6821af631d90be051cec0ac73cf
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: e624a46a4ff01eb63dccbe282f3a12ddd0793abb
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37374597"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37831556"
 ---
 <a name="how-do-i-run-unit-tests-against-a-deployed-database"></a>[어떻게 할까요?] 배포 데이터베이스에 대해 단위 테스트를 실행할?
 ====================

@@ -4,19 +4,16 @@ title: 인라인 GridView 편집 사용 하려면 어떻게 하나요? | Microso
 author: shanselman
 description: 이제 편집 및 세부 정보 보기를 사용 하 여 사이트를 만든 방법을 수행할 수 있도록 인라인 GridView 컨트롤의 편집? 이 비디오에서는 살펴보고 방법과 touc...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/08/2008
-ms.topic: article
 ms.assetid: 026e7932-aea4-42c9-8661-c1392407dc4f
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-dynamic-data/how-do-i-enable-inline-gridview-editing
 msc.type: video
-ms.openlocfilehash: 804203c7c1d8b739b58f02f74daf01a3aa4a5179
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 2e8f5d48c4af7999b81eabfbd7c2c5ef7a3d1e57
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37364658"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37810960"
 ---
 <a name="how-do-i-enable-inline-gridview-editing"></a>인라인 GridView 편집 사용 하려면 어떻게 하나요?
 ====================

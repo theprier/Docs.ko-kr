@@ -4,19 +4,16 @@ title: '[2 단원:] Web Forms 만들기 사용자 인터페이스 | Microsoft Do
 author: microsoft
 description: 이 단원에서는 다양 한 ASP.NET 살펴봅니다&#160;2.0 서버 컨트롤 Visual Web Developer Express Edition에서 사용할 수 있습니다. 또한를 시작 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/25/2005
-ms.topic: article
 ms.assetid: 7eac8f6b-6911-4585-87e8-ba662c1578fb
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/building-20-applications/lesson-2-creating-a-web-forms-user-interface
 msc.type: video
-ms.openlocfilehash: 99d7c5cc9cd99cfb33f7916311c8da500efa3295
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 95e150a6f86be62864a5f98d600e7a05a0c95359
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37379678"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37831325"
 ---
 <a name="lesson-2-creating-a-web-forms-user-interface"></a>[2 단원:] Web Forms 사용자 인터페이스 만들기
 ====================

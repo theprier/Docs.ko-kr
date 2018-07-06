@@ -4,19 +4,16 @@ title: 동작 및 ASP.NET Web API 2.2 사용 하 여 OData v4의 기능 | Micros
 author: MikeWasson
 description: OData에서 동작 및 함수는 엔터티에 대 한 CRUD 작업으로 쉽게 정의 되어 있지 않은 서버 쪽 동작을 추가 하는 방법입니다. 이 자습서에서는 방법...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/27/2014
-ms.topic: article
 ms.assetid: 0e6fb03c-b16d-4bb0-ab0b-552bd2b6ece1
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/odata-actions-and-functions
 msc.type: authoredcontent
-ms.openlocfilehash: c78a9acabcb346b33a4fe53aa0d18ef67ddcaf33
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a34361a2b298a6cb1efaa386d0a60011f4a578fa
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37371965"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37834976"
 ---
 <a name="actions-and-functions-in-odata-v4-using-aspnet-web-api-22"></a>작업 및 ASP.NET Web API 2.2 사용 하 여 OData v4의 함수
 ====================

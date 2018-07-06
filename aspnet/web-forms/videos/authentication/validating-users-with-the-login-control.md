@@ -4,19 +4,16 @@ title: 로그인 컨트롤을 사용 하 여 사용자 유효성 검사 | Micros
 author: JoeStagner
 description: 이 비디오에서는 Joe Stagner는 사용자 인증 대신 사용자 지정 양식을 작성 하 고 인증을 사용 하는 API를 호출 하는 대체 방법을 탐색 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/22/2008
-ms.topic: article
 ms.assetid: 6c11816b-504a-4512-b67e-9bd15947a7f8
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/authentication/validating-users-with-the-login-control
 msc.type: video
-ms.openlocfilehash: 9e08d09821f3c16c847a1a2d494b943f778cb2e7
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 35aa776fd87a7ebc411f5dde1d675660c459328d
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37390665"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37835708"
 ---
 <a name="validating-users-with-the-login-control"></a>로그인 컨트롤을 사용 하 여 사용자 유효성 검사
 ====================

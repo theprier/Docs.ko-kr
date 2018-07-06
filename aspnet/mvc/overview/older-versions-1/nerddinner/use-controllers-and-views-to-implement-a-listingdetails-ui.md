@@ -4,19 +4,16 @@ title: 컨트롤러 및 뷰 목록/세부 정보 UI 구현를 사용 하 여 | M
 author: microsoft
 description: 4 단계 데이터 목록/세부 정보 탐색 환경을 제공 하기 위해 모델을 활용 하는 응용 프로그램에는 컨트롤러를 추가 하는 방법을 표시 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/27/2010
-ms.topic: article
 ms.assetid: 64116e56-1c9a-4f07-8097-bb36cbb6e57f
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-controllers-and-views-to-implement-a-listingdetails-ui
 msc.type: authoredcontent
-ms.openlocfilehash: 4fe065e29950a076de07d73205a97399f82f07d6
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 7a0a057efb52a869a72722b24d7283cb883db858
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37377878"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37838587"
 ---
 <a name="use-controllers-and-views-to-implement-a-listingdetails-ui"></a>컨트롤러 및 뷰를 사용 하 여 목록/세부 정보 UI 구현
 ====================

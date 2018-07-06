@@ -4,19 +4,16 @@ title: ASP.NET MVC 4 종속성 주입 | Microsoft Docs
 author: rick-anderson
 description: 참고:이 실습 랩에서 ASP.NET MVC 및 ASP.NET MVC 4 필터에 대 한 기본 지식이 있다고 가정 합니다. ASP.NET MVC 4 필터 하기 전에 사용 하지 않은 rec... 하는 경우
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/18/2013
-ms.topic: article
 ms.assetid: 84c7baca-1c54-4c44-8f52-4282122d6acb
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: 715444a6fbf491d7b99918294cfd2d0d0216cd09
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 44c8f2055fb62d589e874683cbf43eed87a8c447
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37388046"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37812345"
 ---
 # <a name="aspnet-mvc-4-dependency-injection"></a>ASP.NET MVC 4 종속성 주입
 

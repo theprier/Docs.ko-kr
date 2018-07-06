@@ -4,19 +4,16 @@ title: Mobile Apps 및 ASP.NET 사용 하 여 사이트 | Microsoft Docs
 author: rick-anderson
 description: 어떻게 ASP.NET 손쉽게 모바일 웹 응용 프로그램에 대해 알아봅니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/28/2011
-ms.topic: article
 ms.assetid: 1febce65-cdd4-47da-bdb5-1e6022ccd20a
-ms.technology: ''
 msc.legacyurl: /mobile
 msc.type: content
-ms.openlocfilehash: 5b128220f49624a1a8e14658b8f619409107f46e
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 613cb6ccd303b1dd2054210ad90bfd5dc1fbb8cc
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37378377"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37834128"
 ---
 <a name="mobile-apps--sites-with-aspnet"></a>Mobile Apps 및 ASP.NET 사용한 사이트
 ====================

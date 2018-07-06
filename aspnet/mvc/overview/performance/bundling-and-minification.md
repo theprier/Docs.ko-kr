@@ -4,19 +4,16 @@ title: 묶음 및 축소 | Microsoft Docs
 author: Rick-Anderson
 description: 묶음 및 축소는 두 가지 기술을 요청 로드 시간을 개선 하기 위해 ASP.NET 4.5에서 사용할 수 있습니다. 묶음 및 축소 reducin 여 로드 시간을 개선 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/23/2012
-ms.topic: article
 ms.assetid: 5894dc13-5d45-4dad-8096-136499120f1d
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/performance/bundling-and-minification
 msc.type: authoredcontent
-ms.openlocfilehash: 4f21184f0917cd957e9e1719c63769e1a027961c
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 090bb58f762302e0f58db7b8c005fe584e5ec419
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37384783"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37827377"
 ---
 <a name="bundling-and-minification"></a>묶음 및 축소
 ====================

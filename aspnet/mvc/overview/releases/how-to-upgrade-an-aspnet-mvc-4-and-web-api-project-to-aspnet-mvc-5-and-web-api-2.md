@@ -4,19 +4,16 @@ title: 웹 API 프로젝트를 ASP.NET MVC 5 및 Web API 2 및 ASP.NET MVC 4를 
 author: Rick-Anderson
 description: ASP.NET MVC 5 및 Web API 2 호스트 특성 라우팅, 인증 필터 및 등을 포함 하 여 새 기능을 제공 합니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/17/2013
-ms.topic: article
 ms.assetid: db0d02d9-58e8-4a0b-8d7d-b8df8ea97b88
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: 7ccdc1bf7a1b1b8d5d9c5906eeeab9535b26df6c
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 8a50c188a2283af46789739e710be69159799695
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37369249"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37826746"
 ---
 <a name="how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2"></a>ASP.NET MVC 5 및 Web API 2에는 ASP.NET MVC 4 및 Web API 프로젝트를 업그레이드 하는 방법
 ====================

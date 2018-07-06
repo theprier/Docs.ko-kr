@@ -4,19 +4,16 @@ title: 추가 (VB) GridView에 단추를 하 고 응답 | Microsoft Docs
 author: rick-anderson
 description: 이 자습서는 템플릿에 GridView 또는 DetailsView 컨트롤의 필드에 사용자 지정 단추를 추가 하는 방법을 살펴보겠습니다. 특히 빌드를 합니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 09/13/2006
-ms.topic: article
 ms.assetid: 06c6bbd2-4bdc-435b-87a3-df2c868f4baa
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions/adding-and-responding-to-buttons-to-a-gridview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 458f90bf70d6f10402583623ef62bf1572040ce4
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 1e35c6655506b5ec79efe8a5000e136e865854f2
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37365060"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37831695"
 ---
 <a name="adding-and-responding-to-buttons-to-a-gridview-vb"></a>추가 (VB) GridView에 단추를 하 고 응답
 ====================

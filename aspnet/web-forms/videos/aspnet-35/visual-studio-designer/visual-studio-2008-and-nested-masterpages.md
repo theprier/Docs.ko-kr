@@ -4,19 +4,16 @@ title: Visual Studio 2008 및 중첩 된 마스터 페이지 | Microsoft Docs
 author: JoeStagner
 description: 마스터 페이지 및 Visual Studio 2008에서 지 원하는 방법을 보여 주기 위해 oswd.org에서 웹 템플릿을 사용 하겠습니다. 특히, th 하겠습니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/15/2007
-ms.topic: article
 ms.assetid: 18637656-3733-4549-b365-94652c596a7b
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-35/visual-studio-designer/visual-studio-2008-and-nested-masterpages
 msc.type: video
-ms.openlocfilehash: 6ba439392bdf7c4ad1bc6dc1c171f05fa994c4fb
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: b31e75e2b1a70054964eee77941e6a30ca119d0c
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37400592"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37833739"
 ---
 <a name="visual-studio-2008-and-nested-masterpages"></a>Visual Studio 2008 및 중첩 된 마스터 페이지
 ====================

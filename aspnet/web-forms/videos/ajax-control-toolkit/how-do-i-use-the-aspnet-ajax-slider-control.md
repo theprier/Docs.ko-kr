@@ -4,19 +4,16 @@ title: '[어떻게 할까요?] ASP.NET AJAX 슬라이더 컨트롤 사용 | Micr
 author: JoeStagner
 description: ASP.NET AJAX Control Toolkit에서 슬라이더 컨트롤에 숫자 값을 선택 하려면 사용자에 대 한 간단 하 고 세련 된 방법을 제공 합니다. 이 비디오에서는 ad 방법...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/13/2007
-ms.topic: article
 ms.assetid: 958e1bc8-65a8-4fe0-ad2d-f98691d5fdf1
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-slider-control
 msc.type: video
-ms.openlocfilehash: f97142a44d3a925d08311a7d301d9bb8aa81a47d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 278a90c60ac39b0162cfa4b09b985a163c55c1d5
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37401729"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37832243"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-slider-control"></a>[어떻게 할까요?] ASP.NET AJAX 슬라이더 컨트롤 사용
 ====================

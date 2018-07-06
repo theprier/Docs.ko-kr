@@ -4,19 +4,16 @@ title: 정렬, 페이징 및 모델 바인딩 및 web forms를 사용 하 여 �
 author: tfitzmac
 description: 이 자습서 시리즈에서는 모델 바인딩을 사용 하 여 ASP.NET Web Forms 프로젝트의 기본 사항을 보여 줍니다. 모델 바인딩을 통해 데이터 상호 작용 자세한 직선-...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/27/2014
-ms.topic: article
 ms.assetid: 266e7866-e327-4687-b29d-627a0925e87d
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/presenting-and-managing-data/model-binding/sorting-paging-and-filtering-data
 msc.type: authoredcontent
-ms.openlocfilehash: 7529c811e6196327094f8f735de1bd65be76ee3a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: ded398bcbbb8d7d9e5c882a598bf9d6faa6ea81e
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37398309"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37833878"
 ---
 <a name="sorting-paging-and-filtering-data-with-model-binding-and-web-forms"></a>정렬, 페이징 및 모델 바인딩 및 web forms를 사용 하 여 데이터를 필터링 합니다.
 ====================

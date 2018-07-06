@@ -4,19 +4,16 @@ title: 스크립트 결합을 사용 하 여 AJAX 성능 향상을 위해 | Micr
 author: rick-anderson
 description: Betrand Le Roy samp 사용 하 여 간단한 페이지를 활용 하 여 스크립트를 결합 이라는 새로운 기능을 사용 하 여 Ajax 응용 프로그램의 성능을 향상 시키는 방법에 간략하게 설명 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/08/2008
-ms.topic: article
 ms.assetid: f5445f4a-bc78-4950-b74f-de748bf8b0be
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-35/aspnet-ajax/using-script-combining-to-improve-ajax-performance
 msc.type: video
-ms.openlocfilehash: 67188ff83350809944b41ea6572b996eaf969e5e
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 982b4f74f4bf4fc3a44240cc182c86bab0f83d01
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37398879"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37813170"
 ---
 <a name="using-script-combining-to-improve-ajax-performance"></a>스크립트 결합을 사용 하 여 AJAX 성능 향상을 위해
 ====================
