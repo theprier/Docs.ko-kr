@@ -4,19 +4,16 @@ title: (VB) ReorderList에 포스트백 사용 | Microsoft Docs
 author: wenz
 description: ReorderList 컨트롤이 AJAX Control Toolkit에서 끌어서 놓기를 통해 사용자에 의해 다시 정렬할 수 있는 목록을 제공 합니다. 목록 순서를 바꿀 때마다 po...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: e5b6ed70-19ed-4024-ba4f-6d78e8acdc0f
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/reorderlist/using-postbacks-with-reorderlist-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c99d4dcbb884b15aadd6165871749939239e0a8b
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 20214db1c038f417944bd374bdaa8ce55d6d44aa
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37401911"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37839001"
 ---
 <a name="using-postbacks-with-reorderlist-vb"></a>(VB) ReorderList에 포스트백 사용
 ====================

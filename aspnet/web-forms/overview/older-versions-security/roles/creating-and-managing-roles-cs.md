@@ -4,19 +4,16 @@ title: 만들기 및 관리 역할 (C#) | Microsoft Docs
 author: rick-anderson
 description: 이 자습서에서는 역할 프레임 워크를 구성 하는 데 필요한 단계를 검토 합니다. 그런 다음, 웹 페이지를 만들고 역할을 삭제 하려면 빌드합니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/24/2008
-ms.topic: article
 ms.assetid: 113f10b3-a19a-471b-8ff6-db3c79ce8a91
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/creating-and-managing-roles-cs
 msc.type: authoredcontent
-ms.openlocfilehash: af7f3a1c45f0e87f146e8fb1f3aff37a13847ba8
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 84b9624aaae0cc98f1908b4521cee43bce6e856d
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37390791"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37806874"
 ---
 <a name="creating-and-managing-roles-c"></a>만들기 및 관리 역할 (C#)
 ====================

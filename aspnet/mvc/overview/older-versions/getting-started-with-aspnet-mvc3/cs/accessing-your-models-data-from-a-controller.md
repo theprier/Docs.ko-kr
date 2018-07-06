@@ -4,19 +4,16 @@ title: 컨트롤러 (C#)에서 모델의 데이터에 액세스 | Microsoft Docs
 author: Rick-Anderson
 description: 이 자습서는 Microsoft Visual Web Developer 2010 Express 서비스 팩 1, 인를 사용 하 여 ASP.NET MVC 웹 응용 프로그램을 빌드하는 기본 사항을 설명 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/12/2011
-ms.topic: article
 ms.assetid: 002ada5c-f114-47ab-a441-57dbdb728ea0
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/accessing-your-models-data-from-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: 9984e8dbe4485093dd0061895bc4308574f3aaea
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a1a39cf06b7ab9109117e89051c8adf47062a926
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37380871"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37805615"
 ---
 <a name="accessing-your-models-data-from-a-controller-c"></a>컨트롤러 (C#)에서 모델의 데이터에 액세스
 ====================

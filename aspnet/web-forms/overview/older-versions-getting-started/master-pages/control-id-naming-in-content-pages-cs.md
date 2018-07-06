@@ -4,19 +4,16 @@ title: 콘텐츠 페이지 (C#)에서 ID 명명 제어 | Microsoft Docs
 author: rick-anderson
 description: Contentplaceholder 명명 컨테이너 역할을 하 고 따라서 (FindConrol)를 통해 어려운 컨트롤을 사용 하 여 프로그래밍 방식으로 작업을 확인 하는 방법을 보여 줍니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/10/2008
-ms.topic: article
 ms.assetid: 1c7d0916-0988-4b4f-9a03-935e4b5af6af
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/control-id-naming-in-content-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0ad9224e4cb580e9ef671f39bbd3da39df692a56
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: b7ae15095b972a456f274e1326221d168f323256
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37377300"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37805877"
 ---
 <a name="control-id-naming-in-content-pages-c"></a>콘텐츠 페이지 (C#)의 이름을 지정 하는 컨트롤 ID
 ====================

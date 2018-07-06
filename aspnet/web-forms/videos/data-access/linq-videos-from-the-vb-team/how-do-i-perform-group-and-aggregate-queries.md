@@ -4,19 +4,16 @@ title: '[어떻게 할까요?] 그룹 및 집계 쿼리 수행? | Microsoft 문�
 author: bethmassi
 description: Visual Basic 프로그래머는 비즈니스 개체 컬렉션에 대해 그룹 및 집계 쿼리를 수행 하는 방법과 관련 된 표에 표시 하는 방법을 배웁니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/15/2007
-ms.topic: article
 ms.assetid: 8d07ae36-c4f3-48d7-87d3-cfe9a5bb336e
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/data-access/linq-videos-from-the-vb-team/how-do-i-perform-group-and-aggregate-queries
 msc.type: video
-ms.openlocfilehash: 34a9ae7c035126ca8d868f0fc18ebfce5f967bf4
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 7fe1ee787e367616bcfd26e70cb37be9cf2eb95b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37390506"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37822264"
 ---
 <a name="how-do-i-perform-group-and-aggregate-queries"></a>[어떻게 할까요?] 그룹 및 집계 쿼리 수행?
 ====================

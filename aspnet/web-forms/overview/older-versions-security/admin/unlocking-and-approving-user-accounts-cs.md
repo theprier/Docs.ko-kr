@@ -4,19 +4,16 @@ title: 잠금 해제 및 승인 사용자 계정 (C#) | Microsoft Docs
 author: rick-anderson
 description: 이 자습서에서는 관리자가 관리 하는 웹 페이지를 빌드하는 방법을 보여 줍니다. 사용자의 잠긴 및 상태를 승인 합니다. 새 사용자 o를 승인 하는 방법 또한 살펴보겠습니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/01/2008
-ms.topic: article
 ms.assetid: 5346aab1-9974-489f-a065-ae3883b8a350
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/unlocking-and-approving-user-accounts-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f6bf76579898a8ff36b18380100ce4ab2e74fc8d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: ab6fa1b460de671559dc16ca85f2a4df1e3d5922
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37392715"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37818306"
 ---
 <a name="unlocking-and-approving-user-accounts-c"></a>사용자 계정 잠금 해제 및 승인 (C#)
 ====================

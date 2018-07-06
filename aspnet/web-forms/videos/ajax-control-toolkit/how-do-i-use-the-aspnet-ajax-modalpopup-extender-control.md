@@ -4,19 +4,16 @@ title: '[어떻게 할까요?] ASP.NET AJAX ModalPopup Extender 컨트롤 사용
 author: JoeStagner
 description: ASP.NET AJAX Control Toolkit를 사용 하 여 제공 되는 ASP.NET AJAX ModalPopup extender 컨트롤을 사용 하는 방법을 알아봅니다. 이 비디오는 ModalPopup extender는 사용 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/26/2007
-ms.topic: article
 ms.assetid: 37c50e6c-e34d-4fd0-b272-01950ada7667
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-modalpopup-extender-control
 msc.type: video
-ms.openlocfilehash: ddd8a1c00343b75ebbf2112a5b1589bfe69fbc6d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f872c0f858d636acf92790dc9b1a5135633e1a7e
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37401768"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37841505"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-modalpopup-extender-control"></a>[어떻게 할까요?] ASP.NET AJAX ModalPopup Extender 컨트롤 사용
 ====================

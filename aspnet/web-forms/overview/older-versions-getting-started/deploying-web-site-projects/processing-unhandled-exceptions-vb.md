@@ -4,19 +4,16 @@ title: 처리 되지 않은 예외 (VB)를 처리 합니다. | Microsoft Docs
 author: rick-anderson
 description: 프로덕션 환경에서 웹 응용 프로그램에서 런타임 오류가 발생 하는 경우 것이 중요 개발자에 게 알림 하는 데는 la에서 진단 수 있도록 오류를 기록 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/09/2009
-ms.topic: article
 ms.assetid: 051296f0-9519-4e78-835c-d868da13b0a0
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/processing-unhandled-exceptions-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6c0f6883f2a19d060aff1573238cc1df1838e824
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f925a2e2a8cf2785aa2df89c82d2a29965a543d9
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37365986"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37835232"
 ---
 <a name="processing-unhandled-exceptions-vb"></a>처리 되지 않은 예외 (VB)를 처리 합니다.
 ====================

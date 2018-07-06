@@ -4,19 +4,16 @@ title: 웹 팜 프레임 워크를 사용 하 여 서버 팜 만들기 | Microso
 author: jrjlee
 description: 이 항목에서는 만들고 컬렉션의 서버에서 웹 서버 팜을 구성 하는 팜 프레임 워크 WFF (웹) 2.0을 사용 하는 방법을 설명 합니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: 656dd06d-806c-467c-863d-9fc45e5ba3ab
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/creating-a-server-farm-with-the-web-farm-framework
 msc.type: authoredcontent
-ms.openlocfilehash: ad557306cb4d3c62932c640b598f82d692bc74cf
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 5fdd1088f1f4e21f5e79b8c8379b7865f825ad53
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37388295"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37808942"
 ---
 <a name="creating-a-server-farm-with-the-web-farm-framework"></a>웹 팜 프레임 워크를 사용 하 여 서버 팜 만들기
 ====================

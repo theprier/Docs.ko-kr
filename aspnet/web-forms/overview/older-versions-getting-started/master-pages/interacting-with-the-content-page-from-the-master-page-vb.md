@@ -4,19 +4,16 @@ title: 마스터 페이지 (VB)에서 콘텐츠 페이지와 상호 작용 | Mic
 author: rick-anderson
 description: 메서드를 호출, 마스터 페이지의 코드에서 콘텐츠 페이지의 등 속성을 설정 하는 방법을 검사 합니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/11/2008
-ms.topic: article
 ms.assetid: a6e2e1a0-c925-43e9-b711-1f178fdd72d7
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-content-page-from-the-master-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2222cb67c1d327e43f6bb54b34a3241fbbcdaaa4
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 41cfd5e65fbe0a5ef4930ce3a4c84556cedcdfd6
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37381311"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37807650"
 ---
 <a name="interacting-with-the-content-page-from-the-master-page-vb"></a>마스터 페이지 (VB)에서 콘텐츠 페이지와 상호 작용
 ====================

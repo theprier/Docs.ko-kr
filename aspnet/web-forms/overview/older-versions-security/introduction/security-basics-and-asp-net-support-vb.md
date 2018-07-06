@@ -4,19 +4,16 @@ title: 보안 기본 사항 및 ASP.NET 지원 (VB) | Microsoft Docs
 author: rick-anderson
 description: 이 일련의 참여에 대 한 액세스 권한을 부여 하는 web form 통해 방문자를 인증 하는 기술을 살펴봅니다는 자습서의 첫 번째 자습서...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/13/2008
-ms.topic: article
 ms.assetid: ab68a92b-fc81-40a4-a7dc-406625d2c5d4
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/security-basics-and-asp-net-support-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2213f2ac323e59fa67e51d6c9dcc8c2efdd2619e
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: ebd4e52720fc36bfcf86b7ef4205afcca7e2bc4a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37398513"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37820878"
 ---
 <a name="security-basics-and-aspnet-support-vb"></a>보안 기본 사항 및 ASP.NET 지원 (VB)
 ====================

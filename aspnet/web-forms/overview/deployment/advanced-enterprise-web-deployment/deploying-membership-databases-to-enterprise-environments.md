@@ -4,19 +4,16 @@ title: 엔터프라이즈 환경에 멤버 자격 데이터베이스 배포 | Mi
 author: jrjlee
 description: 이 항목에서는 주요 고려 사항 및 ASP.NET 응용 프로그램 서비스 데이터베이스 (보다 일반적...를 프로 비전 할 때 해결 해야 하는 문제를 설명 합니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: 3cf765df-d311-4f68-a295-c9685ceea830
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/deploying-membership-databases-to-enterprise-environments
 msc.type: authoredcontent
-ms.openlocfilehash: 432951b54fc7cc6b0384dfb4dbd255b16a546e76
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 9df152866b54f55c2b00611331e868f98bd2f3e4
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37370337"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37827190"
 ---
 <a name="deploying-membership-databases-to-enterprise-environments"></a>엔터프라이즈 환경에 멤버 자격 데이터베이스 배포
 ====================

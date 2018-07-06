@@ -4,19 +4,16 @@ title: '방법: 만들기 효율적이 고 표준화 된 접근 방식을 구현
 author: rick-anderson
 description: 이 비디오 Chris Pels 구성 하 고 웹 사이트에 표준화 된 모양 및 느낌을 제공 하는 CSS 스타일을 구현 하는 방법을 보여 줍니다. 또한 스타일은...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/15/2010
-ms.topic: article
 ms.assetid: 1d902492-c6a3-4ab8-8e3d-57384ac893d5
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-create-an-efficient-and-standardized-approach-for-implementing-css-styles
 msc.type: video
-ms.openlocfilehash: 1e2068bbf6e88182094c08b829ec00b0ff4c7749
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 04ff5486d6fd8db172ece96891e959691330c3dc
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37379610"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37831387"
 ---
 <a name="how-do-i-create-an-efficient-and-standardized-approach-for-implementing-css-styles"></a>방법: 만들기 효율적이 고 표준화 된 접근 방식을 구현 하는 CSS 스타일에 대 한?
 ====================

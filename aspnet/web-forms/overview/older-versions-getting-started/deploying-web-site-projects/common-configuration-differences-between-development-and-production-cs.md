@@ -4,19 +4,16 @@ title: 일반적인 구성 차이 개발 및 프로덕션 (C#) | Microsoft Docs
 author: rick-anderson
 description: 이전 자습서에서 모든 관련 파일을 개발 환경에서 프로덕션 환경으로 복사 하 여 웹 사이트를 배포 했습니다. 그러나 필자는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/01/2009
-ms.topic: article
 ms.assetid: 721a5c37-7e21-48e0-832e-535c6351dcae
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/common-configuration-differences-between-development-and-production-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6c88a74d2135503f310c2822eefc60dd93607f34
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 5b3476cdb25a0fc87ce233d7e26de094a0b7b17c
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37399083"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37808910"
 ---
 <a name="common-configuration-differences-between-development-and-production-c"></a>일반적인 구성 차이 개발 및 프로덕션 (C#)
 ====================

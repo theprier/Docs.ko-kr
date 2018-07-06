@@ -4,19 +4,16 @@ title: GridView의 바닥글 (VB)에서 요약 정보를 표시 합니다. | Mic
 author: rick-anderson
 description: 요약 정보를 요약 행 내에서 보고서의 맨 아래에 종종 표시 됩니다. GridView 컨트롤 pr 수 인 셀에 바닥글 행을 포함할 수 있습니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/31/2010
-ms.topic: article
 ms.assetid: 41c818b7-603a-402b-8847-890a63547b6f
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/displaying-summary-information-in-the-gridview-s-footer-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4299cf7dc684c1080600789a91349011e495d391
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a625211555d0e4351305c92b10559a4019d7e8bf
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37400641"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37837145"
 ---
 <a name="displaying-summary-information-in-the-gridviews-footer-vb"></a>GridView의 바닥글 (VB)에서 요약 정보를 표시합니다.
 ====================

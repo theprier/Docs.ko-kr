@@ -4,19 +4,16 @@ title: 'ASP.NET Web API, 4 부: 페이징 및 쿼리 | Microsoft Docs'
 author: jongalloway
 description: 참고:이 비디오는 시험판 버전의 ASP.NET Web API의 정보가 포함 됩니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/15/2012
-ms.topic: article
 ms.assetid: 44fa9b58-c8b0-4219-83f4-4ef328da2a09
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/videos/getting-started/paging-and-querying
 msc.type: video
-ms.openlocfilehash: 9640df721cc0d72031b7c30bf1fe1a41a82339cb
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 58e43809a89e79e3a1ea2f0a13bd9910ec90e345
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37390942"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37809604"
 ---
 <a name="aspnet-web-api-part-4-paging-and-querying"></a>ASP.NET Web API, 4 부: 페이징 및 쿼리
 ====================

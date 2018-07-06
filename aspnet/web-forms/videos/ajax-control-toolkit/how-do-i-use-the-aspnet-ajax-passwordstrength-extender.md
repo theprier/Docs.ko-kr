@@ -4,19 +4,16 @@ title: '[어떻게 할까요?] ASP.NET AJAX PasswordStrength Extender 사용 | M
 author: JoeStagner
 description: PasswordStrength extender 컨트롤의 선택한 암호 강도 대 한 사용자에 게 즉각적이 고 동적 피드백을 제공 하는 방법에 대해 알아봅니다. 피드백 c...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/01/2007
-ms.topic: article
 ms.assetid: 4acc8d48-845f-4451-8a83-0d6d935c4564
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-passwordstrength-extender
 msc.type: video
-ms.openlocfilehash: 22fde8a5587b8ead669dcf8e8ea04e92f79bd6cf
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 639e7ef3d3a7547ca7e1bc4e6d7634540bc8d17d
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37401836"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37806965"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-passwordstrength-extender"></a>[어떻게 할까요?] ASP.NET AJAX PasswordStrength Extender 사용
 ====================

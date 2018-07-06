@@ -4,19 +4,16 @@ title: 클라이언트 쪽 코드 (C#)를 사용 하 여 애니메이션 변경 
 author: wenz
 description: ASP.NET AJAX Control Toolkit에서 애니메이션 컨트롤 컨트롤 뿐 이지만 컨트롤에 애니메이션을 추가 하는 전체 프레임 워크 아닙니다. 애니메이션을 선택 하십시오.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: 2bfbc5cc-f942-44b7-a62d-a29520f1da9a
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/changing-an-animation-using-client-side-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 4bf480401e244661e2c316adcde3cbde647a6dc3
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 9711e93ee6f119ec1825e32bdad64535435970c9
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37393076"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37808958"
 ---
 <a name="changing-an-animation-using-client-side-code-c"></a>클라이언트 쪽 코드 (C#)를 사용 하 여 애니메이션 변경
 ====================

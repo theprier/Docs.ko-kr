@@ -4,19 +4,16 @@ title: (실제 클라우드 앱 빌드 azure) 장애를 견딜 수 디자인 | M
 author: MikeWasson
 description: 실제 세계 클라우드 앱 빌드 Azure 전자책을 사용 하 여 Scott Guthrie를 개발한 프레젠테이션을 기반으로 합니다. 13 패턴과 그을 수 있는 방법을 설명 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/12/2014
-ms.topic: article
 ms.assetid: 364ce84e-5af8-4e08-afc9-75a512b01f84
-ms.technology: ''
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/design-to-survive-failures
 msc.type: authoredcontent
-ms.openlocfilehash: db7398cfd9ed51d716cb595d977b482fd0da131e
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 29a430a223fb62d9530ea00a60d458a6dbc5199a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37372464"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37820657"
 ---
 <a name="design-to-survive-failures-building-real-world-cloud-apps-with-azure"></a>(실제 클라우드 앱 빌드 azure) 장애를 견딜 수 디자인
 ====================

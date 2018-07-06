@@ -4,19 +4,16 @@ title: ASP.NET 웹 페이지-Getting Started 소개 | Microsoft Docs
 author: tfitzmac
 description: WebMatrix는 더 이상 권장 통합된 개발 환경으로 ASP.NET 웹 페이지에 대 한 합니다. Visual Studio 또는 Visual Studio Code를 사용 합니다. 이 설명서는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/28/2015
-ms.topic: article
 ms.assetid: a36d3bdf-ef1b-47a4-b932-3a0cf4cad716
-ms.technology: dotnet-webpages
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/getting-started
 msc.type: authoredcontent
-ms.openlocfilehash: 3717fe230f818f251ac5d0378701c28f6b427df8
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: b4f554d2bf8bf564fd69239fcc7cc605158c83c3
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37382074"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37825039"
 ---
 <a name="introducing-aspnet-web-pages---getting-started"></a>시작-ASP.NET 웹 페이지 소개
 ====================

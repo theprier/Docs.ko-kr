@@ -4,19 +4,16 @@ title: 'I: 사용자 지정 하려면 어떻게 ASP.NET AJAX UpdatePanel의 오�
 author: rick-anderson
 description: ASP.NET AJAX UpdatePanel에 의해 트리거되는 포스트백을 처리 하는 동안 오류가 발생 하는 경우 클라이언트 쪽 PageRequestManager 경고를 표시 됩니다 (. NE....
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 12/18/2009
-ms.topic: article
 ms.assetid: 28bd411b-e708-4eab-baed-76981d6cd0dc
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-customize-error-handling-for-the-aspnet-ajax-updatepanel
 msc.type: video
-ms.openlocfilehash: 116366377d2c6b27cb2394ac089848c91110bd4f
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f297d7bf916b0fedc6b26bd19dd8e9d35569af74
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37367605"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37807543"
 ---
 <a name="how-do-i-customize-error-handling-for-the-aspnet-ajax-updatepanel"></a>어떻게 수행 할까요 오류 처리 사용자 지정 ASP.NET AJAX UpdatePanel에 대 한
 ====================

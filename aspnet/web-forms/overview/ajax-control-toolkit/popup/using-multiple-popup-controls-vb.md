@@ -4,19 +4,16 @@ title: 여러 팝업 컨트롤 (VB)를 사용 하 여 | Microsoft Docs
 author: wenz
 description: AJAX Control Toolkit의 PopupControl extender는 쉽게 다른 컨트롤이 활성화 될 때 팝업을 트리거할 수를 제공 합니다. M을 사용 하는 것도 가능...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: 4da43d77-f6c4-43a8-9124-f1e8e1c8f0a2
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/popup/using-multiple-popup-controls-vb
 msc.type: authoredcontent
-ms.openlocfilehash: accb9134cc355e0c042114873973bcbfe9a4a0a4
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 5a2be36ecf17a95d53e5e912ba0a90113f70f2fb
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37384563"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37807637"
 ---
 <a name="using-multiple-popup-controls-vb"></a>여러 팝업 컨트롤 (VB)를 사용 하 여
 ====================

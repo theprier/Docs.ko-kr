@@ -4,19 +4,16 @@ title: Single Sign-on (실제 클라우드 앱 빌드 azure) | Microsoft Docs
 author: MikeWasson
 description: 실제 세계 클라우드 앱 빌드 Azure 전자책을 사용 하 여 Scott Guthrie를 개발한 프레젠테이션을 기반으로 합니다. 13 패턴과 그을 수 있는 방법을 설명 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/12/2014
-ms.topic: article
 ms.assetid: 7d82d5e9-0619-4f22-9e03-32a6d52940a5
-ms.technology: ''
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/single-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: 213b8fe091bcac7f55fd62ab305c77fcbc5a77ad
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: c988b4864ce7096de7f3ad69b845d3961b7dbc9e
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37374382"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37819116"
 ---
 <a name="single-sign-on-building-real-world-cloud-apps-with-azure"></a>Single sign On (실제 클라우드 앱 빌드 Azure 사용 하 여)
 ====================

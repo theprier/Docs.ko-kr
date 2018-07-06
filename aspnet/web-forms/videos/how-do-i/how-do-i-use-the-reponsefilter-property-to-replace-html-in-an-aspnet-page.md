@@ -4,19 +4,16 @@ title: '[어떻게 할까요?] Reponse.Filter 속성을 사용 하 여 ASP.NET �
 author: rick-anderson
 description: 이 비디오 Chris Pels을 가로채는 HTML 페이지로 전송 되 고 alter Reponse.Filter 속성을 사용 하는 방법을 보여 줍니다. 먼저 샘플 페이지를 w를 만듭니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/29/2009
-ms.topic: article
 ms.assetid: 3e5ae74a-9798-47d8-a2b3-0d8ad42dd4bc
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-use-the-reponsefilter-property-to-replace-html-in-an-aspnet-page
 msc.type: video
-ms.openlocfilehash: f871a3969da21a22bfe10e3a85f43db3e0e522e8
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: bf1936e5710b67185977f71bea03240e6c6abf41
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37382363"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37808105"
 ---
 <a name="how-do-i-use-the-reponsefilter-property-to-replace-html-in-an-aspnet-page"></a>[어떻게 할까요?] Reponse.Filter 속성을 사용 하 여 ASP.NET 페이지의 HTML 바꾸기
 ====================

@@ -4,19 +4,16 @@ title: '[어떻게 할까요?]  ASP.NET에서 간단한 파일 업로드 | Micro
 author: JoeStagner
 description: 이 비디오에서 살펴보겠습니다, ASP.NET을 사용 하 여, 서버에 클라이언트 컴퓨터에서 단일 파일 업로드 합니다. 이 시리즈 업로드 중 첫 번째 됩니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/12/2008
-ms.topic: article
 ms.assetid: 310aa6ba-dc99-47ac-8f68-aac7529664b2
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-simple-file-uploads-in-aspnet
 msc.type: video
-ms.openlocfilehash: 28a6df1205e04f3e8676db9e37d040cb4ab154d1
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: c719eea78315a521c8ba58efc762d36022509de5
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37379652"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37819716"
 ---
 <a name="how-do-i--simple-file-uploads-in-aspnet"></a>[어떻게 할까요?]  ASP.NET에서 간단한 파일 업로드
 ====================

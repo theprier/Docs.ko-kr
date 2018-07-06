@@ -4,19 +4,16 @@ title: 기존 저장 프로시저 사용 (VB) 형식화 된 데이터 집합의 
 author: rick-anderson
 description: 이전 자습서에서 TableAdapter 마법사를 사용 하 여 새 저장된 프로시저를 생성 하는 방법을 알게 되었습니다. 이 자습서에서는 설명 하는 방법 같은 TableAdapter...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/18/2007
-ms.topic: article
 ms.assetid: 2da25f6a-757e-4e7b-a812-1575288d8f7a
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/using-existing-stored-procedures-for-the-typed-dataset-s-tableadapters-vb
 msc.type: authoredcontent
-ms.openlocfilehash: a478b52387a6bbf726872978a0ad4a83c22c9911
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 586b46acf1df19cb1bdd56c4242e92d2019c7b8a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37382898"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37805628"
 ---
 <a name="using-existing-stored-procedures-for-the-typed-datasets-tableadapters-vb"></a>기존 저장 프로시저 사용 (VB) 형식화 된 데이터 집합의 Tableadapter에 대 한
 ====================

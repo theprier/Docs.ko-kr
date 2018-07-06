@@ -4,19 +4,16 @@ title: 일괄 업데이트 (VB) | Microsoft Docs
 author: rick-anderson
 description: 단일 작업에서 여러 데이터베이스 레코드를 업데이트 하는 방법에 알아봅니다. 사용자 인터페이스 계층의 각 행이 편집 가능한 GridView를 빌드합니다. 데이터에서...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/26/2007
-ms.topic: article
 ms.assetid: d191a204-d7ea-458d-b81c-0b9049ecb55f
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-updating-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7830e010ea8dbf6ce9bd59154c10eb4c30a3dceb
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 7e5062898ca683571df2929eba5d824f9d77accd
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37363315"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37833403"
 ---
 <a name="batch-updating-vb"></a>일괄 업데이트 (VB)
 ====================

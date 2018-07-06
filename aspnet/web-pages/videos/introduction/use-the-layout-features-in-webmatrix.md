@@ -4,19 +4,16 @@ title: WebMatrix의 레이아웃 기능 사용 | Microsoft Docs
 author: rick-anderson
 description: 4 부에서는 레이아웃 및 사용 하는 방법을 레이아웃 WebMatrix에서 공통 코드에 대 한 페이지에서 알려 줍니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/12/2011
-ms.topic: article
 ms.assetid: 37504e9f-3c62-41ac-88c3-9daf9fdd5d9a
-ms.technology: dotnet-webpages
 msc.legacyurl: /web-pages/videos/introduction/use-the-layout-features-in-webmatrix
 msc.type: video
-ms.openlocfilehash: 334ef60b0a8ccb02a177e5bf034ce7d87327764f
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 0fdfee948971009ea9fa3c7b5d9ac64e34061168
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37394650"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37812862"
 ---
 <a name="use-the-layout-features-in-webmatrix"></a>WebMatrix의 레이아웃 기능을 사용 합니다.
 ====================

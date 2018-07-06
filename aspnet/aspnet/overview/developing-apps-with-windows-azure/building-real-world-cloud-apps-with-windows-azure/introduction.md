@@ -4,19 +4,16 @@ title: Azure 사용 하 여 실제 클라우드 앱 빌드 | Microsoft Docs
 author: MikeWasson
 description: 이 전자책에서는 실제 클라우드 솔루션을 빌드하는 패턴 기반 접근 방식을 설명 합니다. 패턴은 적용에 개발 프로세스에는...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/12/2014
-ms.topic: article
 ms.assetid: accfa16a-ab15-4c26-9ad4-babdc2a77d2e
-ms.technology: ''
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: 15e5c0a0411e3cd9433544e9a09b6373311daf6b
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 11388b9c58d2d21c7a337a343c10d33c7257ccf1
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37396216"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37840500"
 ---
 <a name="building-real-world-cloud-apps-with-azure"></a>Azure 사용 하 여 실제 클라우드 앱 빌드
 ====================

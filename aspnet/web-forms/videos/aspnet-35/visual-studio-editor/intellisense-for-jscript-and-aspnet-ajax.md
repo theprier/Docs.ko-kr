@@ -4,19 +4,16 @@ title: Jscript 및 ASP.NET AJAX 용 IntelliSense | Microsoft Docs
 author: rick-anderson
 description: 이 비디오 개요를 제공 합니다. 핵심 JavaScript 메서드를 포함 하 여 Visual Studio 2008의 JavaScript에 대 한 새 Intellisense 기능을 외부.js 파일 i...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/15/2007
-ms.topic: article
 ms.assetid: 9d490341-f228-432e-a386-e6e51476c165
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-35/visual-studio-editor/intellisense-for-jscript-and-aspnet-ajax
 msc.type: video
-ms.openlocfilehash: 30b0bdd8f29b5230543914aabc8f83a6b1070457
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 762ff320e3db6d9f7f3dbad5911e419c0574bcb7
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37382448"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37819928"
 ---
 <a name="intellisense-for-jscript-and-aspnet-ajax"></a>Jscript 및 ASP.NET AJAX 용 IntelliSense
 ====================

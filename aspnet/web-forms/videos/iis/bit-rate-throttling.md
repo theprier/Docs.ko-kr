@@ -4,19 +4,16 @@ title: 비트 전송률 제한 | Microsoft Docs
 author: JoeStagner
 description: 이 비디오에서는 설치 및 새로운 멋진 IIS7 기능 – 비트 전송률 제한을 구성 하는 방법에 알아봅니다. BRT를 사용 하 여 미디어 파일 또는 큰 다운로드 withou를 제공할 수 있습니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/09/2009
-ms.topic: article
 ms.assetid: 8dc90862-97d6-48d1-8bfc-79c70d622474
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/iis/bit-rate-throttling
 msc.type: video
-ms.openlocfilehash: 7eed091306f157c71a9a8d46fcfb3a21814c3e51
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 5a617333b0c0528605ce28f1f99d12abd2a2c44f
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37402542"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37811116"
 ---
 <a name="bit-rate-throttling"></a>비트 전송률 제한
 ====================

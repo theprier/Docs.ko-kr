@@ -4,19 +4,16 @@ title: ASP.NET MVC 4 모바일 기능 | Microsoft Docs
 author: Rick-Anderson
 description: 이제 ASP.NET MVC 5 모바일 웹 응용 프로그램에서 Azure 웹 사이트 배포에서 코드 샘플을 사용 하 여이 자습서는 MVC 5 버전이입니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/15/2012
-ms.topic: article
 ms.assetid: 27dc4fc8-1b51-43b0-933f-fc1b52476523
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/aspnet-mvc-4-mobile-features
 msc.type: authoredcontent
-ms.openlocfilehash: 5b029aa7e87f064622d72feacaf7e97ea4da5cca
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: c852f4a853d14badb6c9a1c2c1ddb7b069bc3441
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37384818"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37806589"
 ---
 <a name="aspnet-mvc-4-mobile-features"></a>ASP.NET MVC 4 모바일 기능
 ====================

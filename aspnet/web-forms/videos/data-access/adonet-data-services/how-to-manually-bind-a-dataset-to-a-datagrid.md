@@ -4,19 +4,16 @@ title: 수동으로 데이터 집합을 Datagrid에 바인딩하는 방법 | Mic
 author: JoeStagner
 description: 이 비디오에서는 3, 2 부 Joe Stagner 1 부에서 만든 예제 ASP 응용 프로그램을 사용 하 여 수동으로 데이터 집합을 datagrid에 바인딩하는 방법을 보여 줍니다. For...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/07/2008
-ms.topic: article
 ms.assetid: 1e339f8a-72ea-463a-b186-c09dd7b12993
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/data-access/adonet-data-services/how-to-manually-bind-a-dataset-to-a-datagrid
 msc.type: video
-ms.openlocfilehash: 2f9d550dd244b532354eb5aca6e69d982d116911
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 25c3ef065ef1681f3d85bb24cacaa1fc56359ae7
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37382048"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37817999"
 ---
 <a name="how-to-manually-bind-a-dataset-to-a-datagrid"></a>수동으로 데이터 집합을 Datagrid에 바인딩하는 방법
 ====================

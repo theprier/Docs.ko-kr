@@ -4,19 +4,16 @@ title: 자동 포스트백 (Vb)를 사용 하 여 사용 하 여 | Microsoft Doc
 author: wenz
 description: AJAX Control Toolkit에서 CascadingDropDown 컨트롤 하나 DropDownList 로드 변경에 관련 된 값이 anoth에 있도록 DropDownList 컨트롤을 확장 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: 0b34f7f6-a0cc-4b9f-9761-643fb0bb3ece
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/using-auto-postback-with-cascadingdropdown-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 274189184b82734e89a30c9450079d7e07971f3c
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f0ed4c88789504c09649254ea98a89b01bdd20c5
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37378163"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37813843"
 ---
 <a name="using-auto-postback-with-cascadingdropdown-vb"></a>자동 포스트백 (Vb) 사용
 ====================

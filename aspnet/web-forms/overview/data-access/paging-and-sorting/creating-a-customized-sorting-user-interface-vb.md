@@ -4,19 +4,16 @@ title: 사용자 지정 된 정렬 사용자 인터페이스 (VB) 만들기 | Mi
 author: rick-anderson
 description: 데이터 정렬의 긴 목록을 표시 하는 경우에 매우 유용할 수 있습니다 행 구분 기호를 도입 하 여 관련된 데이터를 그룹화 합니다. 이 자습서에서는 살펴보겠습니다 자격 방법...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/15/2006
-ms.topic: article
 ms.assetid: f3897a74-cc6a-4032-8f68-465f155e296a
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/creating-a-customized-sorting-user-interface-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 27ff1efb47f8e74c3b9f090af646229a9121661b
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 8e94bbda0ca89b409515db1e223637e3a554cd31
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37394562"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37835870"
 ---
 <a name="creating-a-customized-sorting-user-interface-vb"></a>사용자 지정 된 정렬 사용자 인터페이스 (VB) 만들기
 ====================

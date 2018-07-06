@@ -4,19 +4,16 @@ title: 보기 마스터 페이지 (VB)에 데이터 전달 | Microsoft Docs
 author: microsoft
 description: 이 자습서의 목표는 보기 마스터 페이지에는 컨트롤러에서 데이터를 전달 하는 방법을 설명 합니다. 살펴봅니다 m 보기로 데이터를 전달 하기 위한 두 가지 전략을 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/16/2008
-ms.topic: article
 ms.assetid: 37a1ebae-8773-408f-8645-d21da7ff9ae1
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/views/passing-data-to-view-master-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e70f15d98101336dbef31b4f9d8b958632e46c01
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 2daab1e8596035c1a70fb0f86ba752837d468ef2
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37388521"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37822246"
 ---
 <a name="passing-data-to-view-master-pages-vb"></a>보기 마스터 페이지 (VB)에 데이터 전달
 ====================

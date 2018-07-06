@@ -4,19 +4,16 @@ title: 요청 유효성 검사-스크립트 공격 방지 | Microsoft Docs
 author: rick-anderson
 description: 이 문서에서는 여기서 기본적으로 응용 프로그램 금지에서 인코딩되지 않은 HTML 콘텐츠 submitt 처리 하는 asp.net 요청 유효성 검사 기능을 설명 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/10/2010
-ms.topic: article
 ms.assetid: fa429113-5f8f-4ef4-97c5-5c04900a19fa
-ms.technology: ''
 msc.legacyurl: /whitepapers/request-validation
 msc.type: content
-ms.openlocfilehash: 783fb1ae27d88f9c6d6d3484d26d3e206e7f2fba
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 0dfbfcae70792c57d530fc5e6fb73f8f96ec6e02
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37372931"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37809747"
 ---
 <a name="request-validation---preventing-script-attacks"></a>요청 유효성 검사-스크립트 공격 방지
 ====================

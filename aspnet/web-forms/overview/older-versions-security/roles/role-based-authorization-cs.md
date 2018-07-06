@@ -4,19 +4,16 @@ title: 역할 기반 권한 부여 (C#) | Microsoft Docs
 author: rick-anderson
 description: 이 자습서를 살펴보고 역할 프레임 워크의 보안 컨텍스트를 사용 하 여 사용자의 역할에 연결 하는 방법을 시작 합니다. 다음 역할을 기준으로 URL을 적용 하는 방법을 검사 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/24/2008
-ms.topic: article
 ms.assetid: 4d9b63fa-c3d4-4e85-82b1-26ae3ba3ca1c
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/role-based-authorization-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c8c22f140478deddc2e44f0933edfe0e499bb471
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 243a386bf682d63e3095a4e90ca0a0f08d24b503
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37397165"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37839949"
 ---
 <a name="role-based-authorization-c"></a>역할 기반 권한 부여 (C#)
 ====================

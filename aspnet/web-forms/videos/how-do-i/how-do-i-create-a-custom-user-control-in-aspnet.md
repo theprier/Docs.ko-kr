@@ -4,19 +4,16 @@ title: '[어떻게 할까요?]  ASP.NET에서 사용자 정의 컨트롤 만들�
 author: rick-anderson
 description: 이 비디오에서는 Chris Pels에서는 많은 웹 사이트 또는 웹 사이트 전체에서 사용할 수 있는 ASP.NET에서 사용자 정의 컨트롤을 만드는 방법을 보여 줍니다. Sta....
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/26/2007
-ms.topic: article
 ms.assetid: 76e0f17c-c31b-4237-89b5-a46efe602ece
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-create-a-custom-user-control-in-aspnet
 msc.type: video
-ms.openlocfilehash: 8ca06fef4b04cacb98e142a39f50a4df59e58944
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a8b8d528e1aa569798ae892ba3a41dd9d61ca702
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37381983"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37808449"
 ---
 <a name="how-do-i--create-a-custom-user-control-in-aspnet"></a>[어떻게 할까요?]  ASP.NET에서 사용자 정의 컨트롤 만들기
 ====================

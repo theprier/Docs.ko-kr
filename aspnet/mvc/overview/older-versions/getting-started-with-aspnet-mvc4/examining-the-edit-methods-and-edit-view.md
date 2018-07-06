@@ -4,19 +4,16 @@ title: 편집 메서드 및 편집 보기 검사 | Microsoft Docs
 author: Rick-Anderson
 description: '참고: 업데이트 된이이 자습서는 ASP.NET MVC 5 및 Visual Studio 2013을 사용 하는 있습니다. 것이 더 안전 하 고 더 간단 하 게 따르고 데모 중...'
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/28/2012
-ms.topic: article
 ms.assetid: 41eb99ca-e88f-4720-ae6d-49a958da8116
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: 61db62d138be8234db0c5b04373e7cb25acc5d3c
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f8d66343ad74e45f167701f405c5e6e2fef0dd13
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37365739"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37824376"
 ---
 <a name="examining-the-edit-methods-and-edit-view"></a>편집 메서드 및 편집 보기 검사
 ====================

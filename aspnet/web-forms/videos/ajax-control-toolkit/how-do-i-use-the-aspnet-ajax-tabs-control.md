@@ -4,19 +4,16 @@ title: '[어떻게 할까요?] ASP.NET AJAX 탭 컨트롤 사용 | Microsoft 문
 author: JoeStagner
 description: 이 비디오에서는에서 콘텐츠를 구성 하는 탭 집합을 만들 수 있습니다는 ASP.NET AJAX Control Toolkit에서 탭 컨트롤의 기본 사항...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/01/2007
-ms.topic: article
 ms.assetid: f85fcce9-a897-4f43-b12f-5c6f5f2733cd
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-tabs-control
 msc.type: video
-ms.openlocfilehash: 049320f4981563a846b319fa1e7017be5098d2ac
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 23fa24c15f6aafaecb22aa7a44ea2b2659640f20
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37398963"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37807248"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-tabs-control"></a>[어떻게 할까요?] ASP.NET AJAX 탭 컨트롤 사용
 ====================

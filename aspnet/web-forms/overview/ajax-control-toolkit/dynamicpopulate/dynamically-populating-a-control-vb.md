@@ -4,19 +4,16 @@ title: 동적으로 컨트롤 (VB)를 채우기 | Microsoft Docs
 author: wenz
 description: ASP.NET AJAX Control Toolkit에 DynamicPopulate 컨트롤은 웹 서비스 (또는 페이지 메서드)를 호출 하 고 t 대상 컨트롤에 결과 값을 채웁니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: 27305347-7b5d-4519-97b7-197a357e7f6e
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populating-a-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: fd55b59f9375eb320711ffea8d971a8d86179c43
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: d82f8302ddd861531ba517d785a8695d7b914fa0
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37368662"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37806347"
 ---
 <a name="dynamically-populating-a-control-vb"></a>동적으로 채울 컨트롤 (VB)
 ====================

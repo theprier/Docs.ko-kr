@@ -4,19 +4,16 @@ title: ASP.NET 웹 페이지 (Razor) 사이트에서 이미지 작업 | Microsof
 author: tfitzmac
 description: 이 장에서 추가, 표시 및 이미지를 조작 하는 방법 (크기 조정, 대칭 이동 및 워터 마크 추가) 웹 사이트의.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/20/2014
-ms.topic: article
 ms.assetid: 778c4e58-4372-4d25-bab9-aec4a8d8e38d
-ms.technology: dotnet-webpages
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/9-working-with-images
 msc.type: authoredcontent
-ms.openlocfilehash: 32cfb9cc3c3eabcd6d724e05b85c5bf1160a39f6
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a091d942f60242748b0a1d78bf0654b222d1bdb3
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37362929"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37840987"
 ---
 <a name="working-with-images-in-an-aspnet-web-pages-razor-site"></a>ASP.NET 웹 페이지 (Razor) 사이트에서 이미지 작업
 ====================

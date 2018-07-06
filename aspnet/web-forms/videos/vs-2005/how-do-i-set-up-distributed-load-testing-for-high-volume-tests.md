@@ -4,19 +4,16 @@ title: '[어떻게 할까요?] 대용량 테스트에 대 한 분산된 부하 �
 author: rick-anderson
 description: Visual Studio Team System을 사용 하면 하나의 원격 컴퓨터에 multipl 컨트롤러를 구성 하는 분산 부하 '간접' 테스트를 만들어 테스트를 설정할 수 있습니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/09/2007
-ms.topic: article
 ms.assetid: d5c42efc-1457-4e75-87e8-5b41c9ee8a80
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-set-up-distributed-load-testing-for-high-volume-tests
 msc.type: video
-ms.openlocfilehash: fccd22161eb45abf49dfe194e86c7956a7d80a88
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 6afccdf517da82852f1bdb4398e56e20656d4f35
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37372626"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37821514"
 ---
 <a name="how-do-i-set-up-distributed-load-testing-for-high-volume-tests"></a>[어떻게 할까요?] 대용량 테스트에 대 한 분산된 부하 테스트 설정?
 ====================

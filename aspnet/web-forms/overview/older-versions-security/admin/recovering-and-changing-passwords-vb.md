@@ -4,19 +4,16 @@ title: 복구 암호 및 변경 (VB) | Microsoft Docs
 author: rick-anderson
 description: ASP.NET 지원 암호 복구 및 변경 하기 위한 두 개의 웹 컨트롤을 포함 합니다. PasswordRecovery 컨트롤을 사용 하면 방문자가 손실된 pa를 복구 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/01/2008
-ms.topic: article
 ms.assetid: f9adcb5d-6d70-4885-a3bf-ed95efb4da1a
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/recovering-and-changing-passwords-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 68b70708904a46e31639331bbfd0dd31240ea421
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: bb52204b58bcdbb3d03390868e52b8a6f74df5e4
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37393998"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37822915"
 ---
 <a name="recovering-and-changing-passwords-vb"></a>복구 암호 및 변경 (VB)
 ====================

@@ -4,19 +4,16 @@ title: Visual Studio (C#)를 사용 하 여 사이트를 배포 합니다. | Mic
 author: rick-anderson
 description: Visual Studio에는 웹 사이트를 배포 하기 위한 도구가 포함 됩니다. 이 자습서에서는 이러한 도구에 대 한 자세한 정보를 알아봅니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/01/2009
-ms.topic: article
 ms.assetid: cde4ee53-a5d0-4937-a54b-67877e8266c3
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-your-site-using-visual-studio-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d549c615ea822d58ae71876ff3acd28c5f773d8a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 38fb133a30f8b4516078b14cd67b2a0d53c7d482
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37399762"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37810133"
 ---
 <a name="deploying-your-site-using-visual-studio-c"></a>Visual Studio (C#)를 사용 하 여 사이트 배포
 ====================

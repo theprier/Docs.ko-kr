@@ -4,19 +4,16 @@ title: 사용자 지정 MVC 템플릿 | Microsoft Docs
 author: joeloff
 description: VSIX 확장으로 템플릿을 만듭니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 12/10/2012
-ms.topic: article
 ms.assetid: b0a214c7-2f38-4dbc-b47f-bd7bd9df97bd
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/advanced/custom-mvc-templates
 msc.type: authoredcontent
-ms.openlocfilehash: 715990e2d7151ad1ce8288169ef4bdd5c4243369
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 67cb01e0fae036f01b1851695ae5a4358136d28e
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37367246"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37809779"
 ---
 <a name="custom-mvc-template"></a>사용자 지정 MVC 템플릿
 ====================

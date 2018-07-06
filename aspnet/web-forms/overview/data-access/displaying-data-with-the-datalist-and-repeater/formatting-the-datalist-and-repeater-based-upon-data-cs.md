@@ -4,19 +4,16 @@ title: 데이터 (C#)를 기반으로 DataList 및 반복기 서식 지정 | Mic
 author: rick-anderson
 description: 이 자습서에서는 서식을에서는 서식 지정 함수를 사용 하 여 DataList 및 반복기 컨트롤의 모양을 지정 방법의 예제를 통해 단계별로...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 09/13/2006
-ms.topic: article
 ms.assetid: 83e3d759-82b8-41e6-8d62-f0f4b3edec41
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/formatting-the-datalist-and-repeater-based-upon-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: bc595064de2910dc25077d0241ef9a150fdd4cd1
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: cfb23a65c288ed155625a1f8a4d7db1330ab2407
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37368342"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37840260"
 ---
 <a name="formatting-the-datalist-and-repeater-based-upon-data-c"></a>DataList 및 반복기 (C#) 데이터를 기반으로 서식 지정
 ====================

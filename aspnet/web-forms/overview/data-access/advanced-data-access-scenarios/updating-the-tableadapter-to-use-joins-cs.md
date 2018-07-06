@@ -4,19 +4,16 @@ title: Join을 사용 하도록 TableAdapter 업데이트 (C#) | Microsoft Docs
 author: rick-anderson
 description: 데이터베이스를 사용 하 여 작업 하는 경우 여러 테이블에 걸쳐 요청 데이터에 공통적으로 적용 됩니다. 서로 다른 두 테이블에서 데이터를 검색 하거나 사용할 수 있습니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/18/2007
-ms.topic: article
 ms.assetid: 675531a7-cb54-4dd6-89ac-2636e4c285a5
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/updating-the-tableadapter-to-use-joins-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 5ff63f1dc7c01f2be66dd99e1e00e2c2bb70058d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: c59ab13eb5e5e548055c6c8c9343a8d5c4cabe7d
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37391003"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37841123"
 ---
 <a name="updating-the-tableadapter-to-use-joins-c"></a>Join을 사용 하도록 TableAdapter 업데이트 (C#)
 ====================

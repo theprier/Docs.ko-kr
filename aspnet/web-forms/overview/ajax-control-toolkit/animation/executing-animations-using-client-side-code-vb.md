@@ -4,19 +4,16 @@ title: 클라이언트 쪽 코드 (VB)를 사용 하 여 애니메이션 실행 
 author: wenz
 description: ASP.NET AJAX Control Toolkit에서 애니메이션 컨트롤 컨트롤 뿐 이지만 컨트롤에 애니메이션을 추가 하는 전체 프레임 워크 아닙니다. 애니메이션을 실행 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: f7073f50-d765-456d-9957-926ce60f35f6
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/executing-animations-using-client-side-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5408c51c1330a0394b89281e4ddce00df455a418
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 9b180ad17e0e3d2dffa6262d10a83a8353e0a1d0
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37371222"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37811888"
 ---
 <a name="executing-animations-using-client-side-code-vb"></a>클라이언트 쪽 코드 (VB)를 사용 하 여 실행 중인 애니메이션
 ====================

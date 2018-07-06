@@ -4,19 +4,16 @@ title: 데이터베이스 프로젝트 배포 | Microsoft Docs
 author: jrjlee
 description: '참고: 다 수의 엔터프라이즈 배포 시나리오에 필요한 배포 된 데이터베이스를 증분 업데이트를 게시 하는 기능입니다. 대안은를 다시 만드는 중...'
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: 832f226a-1aa3-4093-8c29-ce4196793259
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/deploying-database-projects
 msc.type: authoredcontent
-ms.openlocfilehash: 3d261acbd6f8dab60a02c21546d8bc276de486ba
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 1e5af29a91f5f432f9241dc3ba0c8fc0bfcf773f
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37374965"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37804985"
 ---
 <a name="deploying-database-projects"></a>데이터베이스 프로젝트 배포
 ====================

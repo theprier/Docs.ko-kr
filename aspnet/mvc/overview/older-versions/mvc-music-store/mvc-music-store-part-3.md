@@ -4,19 +4,16 @@ title: '3 부: 보기 및 ViewModels | Microsoft Docs'
 author: jongalloway
 description: 이 자습서 시리즈 모든 ASP.NET MVC Music Store 샘플 응용 프로그램 빌드를 수행 하는 단계를 자세히 설명 합니다. 3 부에서는 보기 및 ViewModels를 설명합니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/21/2011
-ms.topic: article
 ms.assetid: 94297aa0-1f2d-4d72-bbcb-63f64653e0c0
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: 0cfdc2864221a0efc81eb362571c72f20eb05af8
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 8fd89c2a448877bf13a7828f545ffcd400f63bb1
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37368737"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37837412"
 ---
 <a name="part-3-views-and-viewmodels"></a>3 부: 보기 및 ViewModels
 ====================

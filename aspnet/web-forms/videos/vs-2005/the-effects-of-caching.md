@@ -4,19 +4,16 @@ title: 캐싱의 효과 | Microsoft Docs
 author: rick-anderson
 description: 현재 거의 모든 웹 응용 프로그램 데이터베이스에서 데이터에 액세스 해야 하지만이 일반적인 작업의 전반적인 성능에 실제 영향을 미칠 수는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/26/2007
-ms.topic: article
 ms.assetid: 806acc93-7f97-4ba1-92a5-f90146bd51f8
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/vs-2005/the-effects-of-caching
 msc.type: video
-ms.openlocfilehash: b993accea77aa1d70ea119f220da74f53ee929fb
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: dba8501da58c1bd9ad34eaab2b6526b8545c74fb
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37396791"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37808796"
 ---
 <a name="the-effects-of-caching"></a>캐싱의 효과
 ====================

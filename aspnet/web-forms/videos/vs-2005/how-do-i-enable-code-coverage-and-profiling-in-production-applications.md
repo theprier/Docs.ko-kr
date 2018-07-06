@@ -4,19 +4,16 @@ title: '[어떻게 할까요?] 코드 검사 및 프로덕션 응용 프로그�
 author: rick-anderson
 description: 코드 검사와 Vi 내에서 실행 되는 응용 프로그램 보다는 배포 된 ASP.NET 응용 프로그램에서 프로 파일링에 대 한 계측을 설정 하는 방법 알아보기...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/22/2007
-ms.topic: article
 ms.assetid: a0437314-e310-425a-b67b-0dc06878dbe2
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-enable-code-coverage-and-profiling-in-production-applications
 msc.type: video
-ms.openlocfilehash: 2d07d4d90a64da75dc7720aa99b5e1cb54ad744a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 56f133d2b7be5b611605f203ef7361fa2687d1c3
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37364289"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37806907"
 ---
 <a name="how-do-i-enable-code-coverage-and-profiling-in-production-applications"></a>[어떻게 할까요?] 코드 검사 및 프로덕션 응용 프로그램에서 프로 파일링을 사용 하 시겠습니까?
 ====================

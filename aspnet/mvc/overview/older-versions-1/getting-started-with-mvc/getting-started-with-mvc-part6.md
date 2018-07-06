@@ -4,19 +4,16 @@ title: 추가 된 메서드를 만들고 보기 | Microsoft Docs
 author: shanselman
 description: ASP.NET MVC의 기본 사항을 소개 하는 초보자를 위한 자습서입니다. 읽기 및 쓰기 데이터베이스에서 간단한 웹 응용 프로그램을 만듭니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/14/2010
-ms.topic: article
 ms.assetid: a3a90963-0286-4fa0-9b3d-c230cc18b0a3
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part6
 msc.type: authoredcontent
-ms.openlocfilehash: 976df78ea22c30c094f70a57792d287f15d2c62d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: cf0d721b551c38e8c38e35f82b73ee1b14cd068f
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37400910"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37840968"
 ---
 <a name="adding-a-create-method-and-create-view"></a>추가 된 메서드를 만들고 보기
 ====================

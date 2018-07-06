@@ -4,19 +4,16 @@ title: Visual Studio 2005의 향상 | Microsoft Docs
 author: microsoft
 description: Visual Studio 2005 웹 응용 프로그램 개발자가 향상 된 기능 및 향상 된 웹 프로젝트의 긴 목록을 제공합니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/20/2005
-ms.topic: article
 ms.assetid: 72d90cd0-b3d9-454c-b2eb-ed0d9812f32c
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/improvements-in-visual-studio-2005
 msc.type: authoredcontent
-ms.openlocfilehash: 35ebb6e94c3da105b802c843e36f193f81a45782
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 0a42699381fd326891898e01b4e98662e9ce22bf
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37397641"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37811372"
 ---
 <a name="improvements-in-visual-studio-2005"></a>Visual Studio 2005의 향상 된 기능
 ====================

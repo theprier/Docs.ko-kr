@@ -4,19 +4,16 @@ title: 클라이언트 코드 (VB)에서 DropShadow 속성 조작 | Microsoft Do
 author: wenz
 description: AJAX Control Toolkit에서 DropShadow 컨트롤 그림자를 사용 하 여 패널을 확장합니다. 이 extender의 속성 JavaScrip 클라이언트를 사용 하 여 변경할 수 있습니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: 11be4211-2fb9-4e15-b6d4-2aa623d81f3e
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dropshadow/manipulating-dropshadow-properties-from-client-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: b2be6964e3f46a007cda7ddba4dda14d03449d34
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: b9220eecca224c2b1e0f19c972c6c2a4dc9c7d35
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37378925"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37841411"
 ---
 <a name="manipulating-dropshadow-properties-from-client-code-vb"></a>클라이언트 코드 (VB)에서 DropShadow 속성 조작
 ====================

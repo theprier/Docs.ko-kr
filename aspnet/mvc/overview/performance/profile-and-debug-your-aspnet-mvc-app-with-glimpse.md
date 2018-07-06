@@ -4,19 +4,16 @@ title: 프로 파일링 및 디버깅 Glimpse 사용해 ASP.NET MVC 앱 | Micros
 author: Rick-Anderson
 description: Glimpse은 번성 하 고 자세한 성능을 제공 하는 오픈 소스 NuGet 패키지의 제품군 증가, 디버깅 및 ASP.NET에 대 한 진단 정보는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/26/2015
-ms.topic: article
 ms.assetid: c205805f-efdd-4fa7-9616-f26eab180611
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/performance/profile-and-debug-your-aspnet-mvc-app-with-glimpse
 msc.type: authoredcontent
-ms.openlocfilehash: ef65b512645d3f013ea34d3557da93254425c419
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 4d044217d6c33594b39747a765165b8702338027
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37391072"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37808543"
 ---
 <a name="profile-and-debug-your-aspnet-mvc-app-with-glimpse"></a>프로 파일링 및 디버깅 Glimpse 사용해 ASP.NET MVC 앱
 ====================

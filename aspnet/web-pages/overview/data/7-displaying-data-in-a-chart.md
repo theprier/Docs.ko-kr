@@ -4,19 +4,16 @@ title: ASP.NET Web Pages (Razor)를 사용 하 여 차트의 데이터를 표시
 author: microsoft
 description: 이 차트에 데이터를 표시 하는 방법을 설명 합니다. 이전 장에서 수동으로 및 표에 데이터를 표시 하는 방법을 알아보았습니다. 이 장에서 설명 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/22/2012
-ms.topic: article
 ms.assetid: f889fd46-4dac-4ecb-83d8-60e64c22036e
-ms.technology: dotnet-webpages
 msc.legacyurl: /web-pages/overview/data/7-displaying-data-in-a-chart
 msc.type: authoredcontent
-ms.openlocfilehash: 41af8ac4dba0ba5ad478df7075628186a96f48c4
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 161dfa1b2c0676c79baebb00e303e8cb9df1d4e8
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37393758"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37812583"
 ---
 <a name="displaying-data-in-a-chart-with-aspnet-web-pages-razor"></a>ASP.NET 웹 페이지 (Razor)를 사용 하 여 차트에 데이터 표시
 ====================

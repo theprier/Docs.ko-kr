@@ -4,19 +4,16 @@ title: (8 / 10) ASP.NET MVC 응용 프로그램에서 Entity Framework 사용한
 author: tdykstra
 description: Contoso University 샘플 웹 응용 프로그램에는 Entity Framework 5 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 4 응용 프로그램을 만드는 방법을 보여 줍니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/30/2013
-ms.topic: article
 ms.assetid: a5c3feff-5335-4cdd-a97d-f7a8785c2494
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-inheritance-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: d3c3d19a62f601d007b0fac031ade1eef9f35771
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: b39fc609007d437dd0845f9087dd5a32272cebe9
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37378938"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37821278"
 ---
 <a name="implementing-inheritance-with-the-entity-framework-in-an-aspnet-mvc-application-8-of-10"></a>(8 / 10) ASP.NET MVC 응용 프로그램에서 Entity Framework 사용한 상속 구현
 ====================

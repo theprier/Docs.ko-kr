@@ -4,19 +4,16 @@ title: 게시 (원격 에이전트)를 배포할 웹에 대 한 웹 서버 구�
 author: jrjlee
 description: 이 항목에서는 웹 게시 및 IIS 웹 배포를 사용 하 여 배포를 지원 하기 위해 인터넷 정보 서비스 (IIS) 웹 서버를 구성 하는 방법을 설명 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: 239c7aa8-d09a-4d02-9c0e-6bd52be5f0d5
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-remote-agent
 msc.type: authoredcontent
-ms.openlocfilehash: cb3191a260eb10a47f1aaf818052fcae023ff74a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 348c618fe6ec726e8087b4f3acb66cddbef1d225
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37392769"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37819645"
 ---
 <a name="configuring-a-web-server-for-web-deploy-publishing-remote-agent"></a>웹 배포 게시용 (원격 에이전트) 웹 서버 구성
 ====================

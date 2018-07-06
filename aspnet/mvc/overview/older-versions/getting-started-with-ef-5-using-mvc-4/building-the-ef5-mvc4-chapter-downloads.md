@@ -4,19 +4,16 @@ title: 4 개의 자습서 5 EF MVC에 대 한 다운로드 장 구축 | Microsof
 author: Rick-Anderson
 description: Contoso University 샘플 웹 응용 프로그램에는 Entity Framework 5 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 4 응용 프로그램을 만드는 방법을 보여 줍니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/30/2013
-ms.topic: article
 ms.assetid: d0a89089-eed8-4f61-a478-c5ffa30186f5
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/building-the-ef5-mvc4-chapter-downloads
 msc.type: authoredcontent
-ms.openlocfilehash: 6f1a28a2703fa543430d0210cc7792cb19439136
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 0433c07bc42d7d5f397772704a6cb7aa2e03f8e2
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37379922"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37810791"
 ---
 <a name="building-the-chapter-downloads-for-the-ef-5-mvc-4-tutorials"></a>4 개의 자습서 5 EF MVC에 대 한 다운로드 장 빌드
 ====================

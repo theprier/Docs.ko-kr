@@ -4,19 +4,16 @@ title: SignalR 소개 | Microsoft Docs
 author: pfletcher
 description: 이 문서에서는 설명 SignalR 이란, 일부 솔루션을 만들도록 설계 되었습니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/10/2014
-ms.topic: article
 ms.assetid: 0fab5e35-8c1f-43d4-8635-b8aba8766a71
-ms.technology: dotnet-signalr
 msc.legacyurl: /signalr/overview/getting-started/introduction-to-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 0798f149b25ab34dfc9b4233e74dc575ef0e7b4d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 4c34f99674a8213966c44aa434a0e00690b30f44
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37364121"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37820190"
 ---
 <a name="introduction-to-signalr"></a>SignalR 소개
 ====================

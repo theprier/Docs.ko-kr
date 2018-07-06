@@ -4,19 +4,16 @@ title: 게시 (오프 라인 배포) 배포 웹에 대 한 웹 서버 구성 | M
 author: jrjlee
 description: 이 항목에서는 오프 라인 웹 게시 및 배포를 지원 하기 위해 IIS 웹 서버를 구성 하는 방법을 설명 합니다. 인터넷 정보 서비스를 사용 하 여 작업할 때 (I....
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: ba92788f-9f03-44b1-b6b2-af8413e6a35d
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/configuring-a-web-server-for-web-deploy-publishing-offline-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 555b4b3c79d8efc641b1c179482993371735dbe2
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 048cd1855e3f03a6f348521c00acb03ddee8c630
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37397579"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37824676"
 ---
 <a name="configuring-a-web-server-for-web-deploy-publishing-offline-deployment"></a>웹 배포 게시용 (오프 라인 배포) 웹 서버 구성
 ====================

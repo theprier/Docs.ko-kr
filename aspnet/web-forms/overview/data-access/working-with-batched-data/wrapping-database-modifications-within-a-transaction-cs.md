@@ -4,19 +4,16 @@ title: 데이터베이스 수정 (C#) 트랜잭션 내에서 줄 바꿈 | Micros
 author: rick-anderson
 description: 이 자습서는 4 개 업데이트, 삭제 및 데이터의 일괄 처리 삽입에 보이는 첫 번째입니다. 이 자습서에서는 데이터베이스 트랜잭션을 사용 하는 방법 알아보기...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/26/2007
-ms.topic: article
 ms.assetid: b45fede3-c53a-4ea1-824b-20200808dbae
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/wrapping-database-modifications-within-a-transaction-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 5bddf8aaee20b072e703ecc907aedfd5bb58450d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: a87ba758abd6b3e89be4f5aa64d658b734f99d9e
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37363930"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37810931"
 ---
 <a name="wrapping-database-modifications-within-a-transaction-c"></a>트랜잭션 (C#) 내에서 래핑된 데이터베이스 수정
 ====================

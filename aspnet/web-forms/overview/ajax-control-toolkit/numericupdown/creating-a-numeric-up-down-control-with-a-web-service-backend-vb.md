@@ -4,19 +4,16 @@ title: 웹 서비스 백 엔드 (VB)를 사용 하 여 숫자 위로/아래로 �
 author: wenz
 description: 확인 상자에 값을 입력 하는 사용자를 대신 숫자 위로/아래로 컨트롤 (Windows 및 기타 운영 체제에 있는) 점점 더 많은 c 증명 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: afa59dfa-fef1-43d3-8fdd-aea3be36ed3c
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/numericupdown/creating-a-numeric-up-down-control-with-a-web-service-backend-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9e63c76a69002e7cc66f7a8a1bc28e36796eb42c
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: bebf70093dacb81331c009c6642c2f2d649b8567
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37375488"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37805375"
 ---
 <a name="creating-a-numeric-updown-control-with-a-web-service-backend-vb"></a>웹 서비스 백 엔드 (VB)를 사용 하 여 숫자 위로/아래로 컨트롤 만들기
 ====================

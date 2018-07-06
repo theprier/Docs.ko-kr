@@ -4,19 +4,16 @@ title: 동적 데이터를 사용 하 여 시작 | Microsoft Docs
 author: JoeStagner
 description: 이 비디오에서 빌드 해 보겠습니다 전체 ASP.NET 응용 프로그램을 ASP.NET Dynamic Data를 사용 하 여 scaffoldi를 생성 하는 동적 데이터의 코드를 사용 하 여 Northwind 데이터를 사용 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/23/2008
-ms.topic: article
 ms.assetid: 2011925a-789d-4160-af31-4667097727f1
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-dynamic-data/getting-started-with-dynamic-data
 msc.type: video
-ms.openlocfilehash: eca479a859813c01dfe854f729198ef84143b212
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: d0a59996fbf7ec5f1c1888489144179d73deb238
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37376085"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37812901"
 ---
 <a name="getting-started-with-dynamic-data"></a>동적 데이터를 사용 하 여 시작
 ====================
