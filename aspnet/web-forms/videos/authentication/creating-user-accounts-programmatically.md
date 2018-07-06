@@ -4,29 +4,26 @@ title: 프로그래밍 방식으로 사용자 계정 만들기 | Microsoft Docs
 author: JoeStagner
 description: Joe Stagner이 비디오에서는 사용자 지정 하는 방법에 설명 하지 사용자 만들기 마법사를 사용 하는 동안 사용자 웹 폼을 프로그래밍 방식으로 만듭니다. 에 대 한 추가 있나요...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/22/2008
-ms.topic: article
 ms.assetid: 33087707-9876-4575-9042-42e0d0947fa5
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/authentication/creating-user-accounts-programmatically
 msc.type: video
-ms.openlocfilehash: ac8a0210368873c357fb9ee50626b07a0521f0cd
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 8d99f769f6bf04fa05b3dd85dec6dc3a2e5618fc
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37374923"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37813419"
 ---
-<a name="creating-user-accounts-programmatically"></a><span data-ttu-id="b473e-104">프로그래밍 방식으로 사용자 계정 만들기</span><span class="sxs-lookup"><span data-stu-id="b473e-104">Creating User Accounts Programmatically</span></span>
+<a name="creating-user-accounts-programmatically"></a><span data-ttu-id="3ba7c-104">프로그래밍 방식으로 사용자 계정 만들기</span><span class="sxs-lookup"><span data-stu-id="3ba7c-104">Creating User Accounts Programmatically</span></span>
 ====================
-<span data-ttu-id="b473e-105">[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="b473e-105">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
+<span data-ttu-id="3ba7c-105">[Joe Stagner](https://github.com/JoeStagner)</span><span class="sxs-lookup"><span data-stu-id="3ba7c-105">by [Joe Stagner](https://github.com/JoeStagner)</span></span>
 
-<span data-ttu-id="b473e-106">Joe Stagner이 비디오에서는 사용자 지정 하는 방법에 설명 하지 사용자 만들기 마법사를 사용 하는 동안 사용자 웹 폼을 프로그래밍 방식으로 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="b473e-106">In this video, Joe Stagner demonstrates how to create a custom create user web form programmatically while not using the Create User wizard.</span></span> <span data-ttu-id="b473e-107">이 비디오에 대 한 자세한 내용은 "사용자 계정 만들기" 보안 자습서를 읽어 보세요. ([C#](../../overview/older-versions-security/membership/creating-user-accounts-cs.md)하십시오 [VB](../../overview/older-versions-security/membership/creating-user-accounts-vb.md)).</span><span class="sxs-lookup"><span data-stu-id="b473e-107">For additional information about this video, read the "Creating User Accounts" security tutorial ([C#](../../overview/older-versions-security/membership/creating-user-accounts-cs.md), [VB](../../overview/older-versions-security/membership/creating-user-accounts-vb.md)).</span></span>
+<span data-ttu-id="3ba7c-106">Joe Stagner이 비디오에서는 사용자 지정 하는 방법에 설명 하지 사용자 만들기 마법사를 사용 하는 동안 사용자 웹 폼을 프로그래밍 방식으로 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="3ba7c-106">In this video, Joe Stagner demonstrates how to create a custom create user web form programmatically while not using the Create User wizard.</span></span> <span data-ttu-id="3ba7c-107">이 비디오에 대 한 자세한 내용은 "사용자 계정 만들기" 보안 자습서를 읽어 보세요. ([C#](../../overview/older-versions-security/membership/creating-user-accounts-cs.md)하십시오 [VB](../../overview/older-versions-security/membership/creating-user-accounts-vb.md)).</span><span class="sxs-lookup"><span data-stu-id="3ba7c-107">For additional information about this video, read the "Creating User Accounts" security tutorial ([C#](../../overview/older-versions-security/membership/creating-user-accounts-cs.md), [VB](../../overview/older-versions-security/membership/creating-user-accounts-vb.md)).</span></span>
 
-[<span data-ttu-id="b473e-108">&#9654;비디오 (19 분)</span><span class="sxs-lookup"><span data-stu-id="b473e-108">&#9654; Watch video (19 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/creating-user-accounts-programmatically)
+[<span data-ttu-id="3ba7c-108">&#9654;비디오 (19 분)</span><span class="sxs-lookup"><span data-stu-id="3ba7c-108">&#9654; Watch video (19 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/creating-user-accounts-programmatically)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="b473e-109">[이전](creating-user-accounts-with-the-create-user-wizard.md)
-> [다음](validating-users-manually.md)</span><span class="sxs-lookup"><span data-stu-id="b473e-109">[Previous](creating-user-accounts-with-the-create-user-wizard.md)
+> <span data-ttu-id="3ba7c-109">[이전](creating-user-accounts-with-the-create-user-wizard.md)
+> [다음](validating-users-manually.md)</span><span class="sxs-lookup"><span data-stu-id="3ba7c-109">[Previous](creating-user-accounts-with-the-create-user-wizard.md)
 [Next](validating-users-manually.md)</span></span>

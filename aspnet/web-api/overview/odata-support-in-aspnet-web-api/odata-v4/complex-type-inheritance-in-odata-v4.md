@@ -4,77 +4,74 @@ title: ASP.NET Web API 사용 하 여 OData v4의 복합 형식 상속은 | Micr
 author: microsoft
 description: OData v4 사양에 따라 복합 형식은 다른 복합 형식에서 상속할 수 있습니다. (복합 형식은 키가 없는 구조적된 형식을.) Web API는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 09/16/2014
-ms.topic: article
 ms.assetid: a00d3600-9c2a-41bc-9460-06cc527904e2
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/complex-type-inheritance-in-odata-v4
 msc.type: authoredcontent
-ms.openlocfilehash: 84a887b445959c4aa6d1ee372f067f93cd725d77
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: d295a6ae20f5771ae1f4f28166f7e651b6ec5c58
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37372059"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37824032"
 ---
-<a name="complex-type-inheritance-in-odata-v4-with-aspnet-web-api"></a><span data-ttu-id="795e6-104">ASP.NET Web API 사용 하 여 OData v4의 복합 형식 상속</span><span class="sxs-lookup"><span data-stu-id="795e6-104">Complex Type Inheritance in OData v4 with ASP.NET Web API</span></span>
+<a name="complex-type-inheritance-in-odata-v4-with-aspnet-web-api"></a><span data-ttu-id="0cd8f-104">ASP.NET Web API 사용 하 여 OData v4의 복합 형식 상속</span><span class="sxs-lookup"><span data-stu-id="0cd8f-104">Complex Type Inheritance in OData v4 with ASP.NET Web API</span></span>
 ====================
-<span data-ttu-id="795e6-105">[Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="795e6-105">by [Microsoft](https://github.com/microsoft)</span></span>
+<span data-ttu-id="0cd8f-105">[Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="0cd8f-105">by [Microsoft](https://github.com/microsoft)</span></span>
 
-> <span data-ttu-id="795e6-106">OData v4에 따라 [사양](http://www.odata.org/documentation/odata-version-4-0/), 복합 형식은 다른 복합 형식에서 상속할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="795e6-106">According to the OData v4 [specification](http://www.odata.org/documentation/odata-version-4-0/), a complex type can inherit from another complex type.</span></span> <span data-ttu-id="795e6-107">(A *복잡 한* 형식은 키가 없는 구조적된 형식입니다.) Web API OData 5.3 복합 형식 상속은 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="795e6-107">(A *complex* type is a structured type without a key.) Web API OData 5.3 supports complex type inheritance.</span></span>
+> <span data-ttu-id="0cd8f-106">OData v4에 따라 [사양](http://www.odata.org/documentation/odata-version-4-0/), 복합 형식은 다른 복합 형식에서 상속할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="0cd8f-106">According to the OData v4 [specification](http://www.odata.org/documentation/odata-version-4-0/), a complex type can inherit from another complex type.</span></span> <span data-ttu-id="0cd8f-107">(A *복잡 한* 형식은 키가 없는 구조적된 형식입니다.) Web API OData 5.3 복합 형식 상속은 지원합니다.</span><span class="sxs-lookup"><span data-stu-id="0cd8f-107">(A *complex* type is a structured type without a key.) Web API OData 5.3 supports complex type inheritance.</span></span>
 > 
-> <span data-ttu-id="795e6-108">이 항목에서는 복잡 한 상속 형식을 사용 하 여 엔터티 데이터 모델 (EDM)를 빌드하는 방법을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="795e6-108">This topic shows how to build an entity data model (EDM) with complex inheritance types.</span></span> <span data-ttu-id="795e6-109">전체 소스 코드를 보려면 [OData 복합 형식 상속 샘플](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/WebApi/OData/v4/ODataComplexTypeInheritanceSample/ReadMe.txt)합니다.</span><span class="sxs-lookup"><span data-stu-id="795e6-109">For the complete source code, see [OData Complex Type Inheritance Sample](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/WebApi/OData/v4/ODataComplexTypeInheritanceSample/ReadMe.txt).</span></span>
+> <span data-ttu-id="0cd8f-108">이 항목에서는 복잡 한 상속 형식을 사용 하 여 엔터티 데이터 모델 (EDM)를 빌드하는 방법을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="0cd8f-108">This topic shows how to build an entity data model (EDM) with complex inheritance types.</span></span> <span data-ttu-id="0cd8f-109">전체 소스 코드를 보려면 [OData 복합 형식 상속 샘플](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/WebApi/OData/v4/ODataComplexTypeInheritanceSample/ReadMe.txt)합니다.</span><span class="sxs-lookup"><span data-stu-id="0cd8f-109">For the complete source code, see [OData Complex Type Inheritance Sample](http://aspnet.codeplex.com/sourcecontrol/latest#Samples/WebApi/OData/v4/ODataComplexTypeInheritanceSample/ReadMe.txt).</span></span>
 > 
-> ## <a name="software-versions-used-in-the-tutorial"></a><span data-ttu-id="795e6-110">이 자습서에 사용 되는 소프트웨어 버전</span><span class="sxs-lookup"><span data-stu-id="795e6-110">Software versions used in the tutorial</span></span>
+> ## <a name="software-versions-used-in-the-tutorial"></a><span data-ttu-id="0cd8f-110">이 자습서에 사용 되는 소프트웨어 버전</span><span class="sxs-lookup"><span data-stu-id="0cd8f-110">Software versions used in the tutorial</span></span>
 > 
 > 
-> - <span data-ttu-id="795e6-111">Web API OData 5.3</span><span class="sxs-lookup"><span data-stu-id="795e6-111">Web API OData 5.3</span></span>
-> - <span data-ttu-id="795e6-112">OData v4</span><span class="sxs-lookup"><span data-stu-id="795e6-112">OData v4</span></span>
+> - <span data-ttu-id="0cd8f-111">Web API OData 5.3</span><span class="sxs-lookup"><span data-stu-id="0cd8f-111">Web API OData 5.3</span></span>
+> - <span data-ttu-id="0cd8f-112">OData v4</span><span class="sxs-lookup"><span data-stu-id="0cd8f-112">OData v4</span></span>
 
 
-## <a name="model-hierarchy"></a><span data-ttu-id="795e6-113">모델 계층 구조</span><span class="sxs-lookup"><span data-stu-id="795e6-113">Model Hierarchy</span></span>
+## <a name="model-hierarchy"></a><span data-ttu-id="0cd8f-113">모델 계층 구조</span><span class="sxs-lookup"><span data-stu-id="0cd8f-113">Model Hierarchy</span></span>
 
-<span data-ttu-id="795e6-114">복합 형식 상속은 보여 주기 위해 다음 클래스 계층 구조를 사용 하겠습니다.</span><span class="sxs-lookup"><span data-stu-id="795e6-114">To illustrate complex type inheritance, we'll use the following class hierarchy.</span></span>
+<span data-ttu-id="0cd8f-114">복합 형식 상속은 보여 주기 위해 다음 클래스 계층 구조를 사용 하겠습니다.</span><span class="sxs-lookup"><span data-stu-id="0cd8f-114">To illustrate complex type inheritance, we'll use the following class hierarchy.</span></span>
 
 ![](complex-type-inheritance-in-odata-v4/_static/image1.png)
 
-<span data-ttu-id="795e6-115">`Shape` 추상 복합 형식이입니다.</span><span class="sxs-lookup"><span data-stu-id="795e6-115">`Shape` is an abstract complex type.</span></span> <span data-ttu-id="795e6-116">`Rectangle`를 `Triangle`, 및 `Circle` 에서 파생 된 복합 형식 `Shape`, 및 `RoundRectangle` 에서 파생 `Rectangle`합니다.</span><span class="sxs-lookup"><span data-stu-id="795e6-116">`Rectangle`, `Triangle`, and `Circle` are complex types derived from `Shape`, and `RoundRectangle` derives from `Rectangle`.</span></span> <span data-ttu-id="795e6-117">`Window` 엔터티 형식 및 포함 된 `Shape` 인스턴스.</span><span class="sxs-lookup"><span data-stu-id="795e6-117">`Window` is an entity type and contains a `Shape` instance.</span></span>
+<span data-ttu-id="0cd8f-115">`Shape` 추상 복합 형식이입니다.</span><span class="sxs-lookup"><span data-stu-id="0cd8f-115">`Shape` is an abstract complex type.</span></span> <span data-ttu-id="0cd8f-116">`Rectangle`를 `Triangle`, 및 `Circle` 에서 파생 된 복합 형식 `Shape`, 및 `RoundRectangle` 에서 파생 `Rectangle`합니다.</span><span class="sxs-lookup"><span data-stu-id="0cd8f-116">`Rectangle`, `Triangle`, and `Circle` are complex types derived from `Shape`, and `RoundRectangle` derives from `Rectangle`.</span></span> <span data-ttu-id="0cd8f-117">`Window` 엔터티 형식 및 포함 된 `Shape` 인스턴스.</span><span class="sxs-lookup"><span data-stu-id="0cd8f-117">`Window` is an entity type and contains a `Shape` instance.</span></span>
 
-<span data-ttu-id="795e6-118">이러한 형식을 정의 하는 CLR 클래스는 다음과 같습니다.</span><span class="sxs-lookup"><span data-stu-id="795e6-118">Here are the CLR classes that define these types.</span></span>
+<span data-ttu-id="0cd8f-118">이러한 형식을 정의 하는 CLR 클래스는 다음과 같습니다.</span><span class="sxs-lookup"><span data-stu-id="0cd8f-118">Here are the CLR classes that define these types.</span></span>
 
 [!code-csharp[Main](complex-type-inheritance-in-odata-v4/samples/sample1.cs)]
 
-## <a name="build-the-edm-model"></a><span data-ttu-id="795e6-119">EDM 모델 빌드</span><span class="sxs-lookup"><span data-stu-id="795e6-119">Build the EDM Model</span></span>
+## <a name="build-the-edm-model"></a><span data-ttu-id="0cd8f-119">EDM 모델 빌드</span><span class="sxs-lookup"><span data-stu-id="0cd8f-119">Build the EDM Model</span></span>
 
-<span data-ttu-id="795e6-120">EDM을 만들려면 사용할 수 있습니다 **ODataConventionModelBuilder**, CLR 형식에서 상속 관계를 유추 하 합니다.</span><span class="sxs-lookup"><span data-stu-id="795e6-120">To create the EDM, you can use **ODataConventionModelBuilder**, which infers the inheritance relationships from the CLR types.</span></span>
+<span data-ttu-id="0cd8f-120">EDM을 만들려면 사용할 수 있습니다 **ODataConventionModelBuilder**, CLR 형식에서 상속 관계를 유추 하 합니다.</span><span class="sxs-lookup"><span data-stu-id="0cd8f-120">To create the EDM, you can use **ODataConventionModelBuilder**, which infers the inheritance relationships from the CLR types.</span></span>
 
 [!code-csharp[Main](complex-type-inheritance-in-odata-v4/samples/sample2.cs)]
 
-<span data-ttu-id="795e6-121">빌드할 수도 있습니다 EDM 명시적으로 사용 하 여 **된 ODataModelBuilder**합니다.</span><span class="sxs-lookup"><span data-stu-id="795e6-121">You can also build the EDM explicitly, using **ODataModelBuilder**.</span></span> <span data-ttu-id="795e6-122">더 많은 코드를 걸리지만 EDM 통해 더 많은 제어를 제공 합니다.</span><span class="sxs-lookup"><span data-stu-id="795e6-122">This takes more code, but gives you more control over the EDM.</span></span>
+<span data-ttu-id="0cd8f-121">빌드할 수도 있습니다 EDM 명시적으로 사용 하 여 **된 ODataModelBuilder**합니다.</span><span class="sxs-lookup"><span data-stu-id="0cd8f-121">You can also build the EDM explicitly, using **ODataModelBuilder**.</span></span> <span data-ttu-id="0cd8f-122">더 많은 코드를 걸리지만 EDM 통해 더 많은 제어를 제공 합니다.</span><span class="sxs-lookup"><span data-stu-id="0cd8f-122">This takes more code, but gives you more control over the EDM.</span></span>
 
 [!code-csharp[Main](complex-type-inheritance-in-odata-v4/samples/sample3.cs)]
 
-<span data-ttu-id="795e6-123">이러한 두 예제에서는 동일한 EDM 스키마를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="795e6-123">These two examples create the same EDM schema.</span></span>
+<span data-ttu-id="0cd8f-123">이러한 두 예제에서는 동일한 EDM 스키마를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="0cd8f-123">These two examples create the same EDM schema.</span></span>
 
-## <a name="metadata-document"></a><span data-ttu-id="795e6-124">메타 데이터 문서</span><span class="sxs-lookup"><span data-stu-id="795e6-124">Metadata Document</span></span>
+## <a name="metadata-document"></a><span data-ttu-id="0cd8f-124">메타 데이터 문서</span><span class="sxs-lookup"><span data-stu-id="0cd8f-124">Metadata Document</span></span>
 
-<span data-ttu-id="795e6-125">복합 형식 상속을 보여 주는 OData 메타 데이터 문서는 다음과 같습니다.</span><span class="sxs-lookup"><span data-stu-id="795e6-125">Here is the OData metadata document, showing complex type inheritance.</span></span>
+<span data-ttu-id="0cd8f-125">복합 형식 상속을 보여 주는 OData 메타 데이터 문서는 다음과 같습니다.</span><span class="sxs-lookup"><span data-stu-id="0cd8f-125">Here is the OData metadata document, showing complex type inheritance.</span></span>
 
 [!code-xml[Main](complex-type-inheritance-in-odata-v4/samples/sample4.xml?highlight=13,17,25,30)]
 
-<span data-ttu-id="795e6-126">메타 데이터 문서에서 볼 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="795e6-126">From the metadata document, you can see that:</span></span>
+<span data-ttu-id="0cd8f-126">메타 데이터 문서에서 볼 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="0cd8f-126">From the metadata document, you can see that:</span></span>
 
-- <span data-ttu-id="795e6-127">`Shape` 복합 형식이 추상 인지 합니다.</span><span class="sxs-lookup"><span data-stu-id="795e6-127">The `Shape` complex type is abstract.</span></span>
-- <span data-ttu-id="795e6-128">합니다 `Rectangle`, `Triangle`, 및 `Circle` 복합 형식의 기본 형식이 `Shape`합니다.</span><span class="sxs-lookup"><span data-stu-id="795e6-128">The `Rectangle`, `Triangle`, and `Circle` complex type have the base type `Shape`.</span></span>
-- <span data-ttu-id="795e6-129">합니다 `RoundRectangle` 형식은 기본 형식 `Rectangle`합니다.</span><span class="sxs-lookup"><span data-stu-id="795e6-129">The `RoundRectangle` type has the base type `Rectangle`.</span></span>
+- <span data-ttu-id="0cd8f-127">`Shape` 복합 형식이 추상 인지 합니다.</span><span class="sxs-lookup"><span data-stu-id="0cd8f-127">The `Shape` complex type is abstract.</span></span>
+- <span data-ttu-id="0cd8f-128">합니다 `Rectangle`, `Triangle`, 및 `Circle` 복합 형식의 기본 형식이 `Shape`합니다.</span><span class="sxs-lookup"><span data-stu-id="0cd8f-128">The `Rectangle`, `Triangle`, and `Circle` complex type have the base type `Shape`.</span></span>
+- <span data-ttu-id="0cd8f-129">합니다 `RoundRectangle` 형식은 기본 형식 `Rectangle`합니다.</span><span class="sxs-lookup"><span data-stu-id="0cd8f-129">The `RoundRectangle` type has the base type `Rectangle`.</span></span>
 
-## <a name="casting-complex-types"></a><span data-ttu-id="795e6-130">복합 형식 캐스팅</span><span class="sxs-lookup"><span data-stu-id="795e6-130">Casting Complex Types</span></span>
+## <a name="casting-complex-types"></a><span data-ttu-id="0cd8f-130">복합 형식 캐스팅</span><span class="sxs-lookup"><span data-stu-id="0cd8f-130">Casting Complex Types</span></span>
 
-<span data-ttu-id="795e6-131">복합 형식에서 캐스팅 이제 지원 됩니다.</span><span class="sxs-lookup"><span data-stu-id="795e6-131">Casting on complex types is now supported.</span></span> <span data-ttu-id="795e6-132">예를 들어 다음 쿼리 캐스트를 `Shape` 에 `Rectangle`합니다.</span><span class="sxs-lookup"><span data-stu-id="795e6-132">For example, the following query casts a `Shape` to a `Rectangle`.</span></span>
+<span data-ttu-id="0cd8f-131">복합 형식에서 캐스팅 이제 지원 됩니다.</span><span class="sxs-lookup"><span data-stu-id="0cd8f-131">Casting on complex types is now supported.</span></span> <span data-ttu-id="0cd8f-132">예를 들어 다음 쿼리 캐스트를 `Shape` 에 `Rectangle`합니다.</span><span class="sxs-lookup"><span data-stu-id="0cd8f-132">For example, the following query casts a `Shape` to a `Rectangle`.</span></span>
 
 [!code-console[Main](complex-type-inheritance-in-odata-v4/samples/sample5.cmd)]
 
-<span data-ttu-id="795e6-133">응답 페이로드는 다음과 같습니다.</span><span class="sxs-lookup"><span data-stu-id="795e6-133">Here's the response payload:</span></span>
+<span data-ttu-id="0cd8f-133">응답 페이로드는 다음과 같습니다.</span><span class="sxs-lookup"><span data-stu-id="0cd8f-133">Here's the response payload:</span></span>
 
 [!code-console[Main](complex-type-inheritance-in-odata-v4/samples/sample6.cmd)]

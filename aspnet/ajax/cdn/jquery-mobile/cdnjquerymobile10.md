@@ -4,23 +4,20 @@ title: Microsoft Ajax CDN의 jQuery Mobile 1.0 | Microsoft Docs
 author: rick-anderson
 description: ''
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/23/2014
-ms.topic: article
 ms.assetid: f236d9f1-1e1c-47a0-be96-40758bf1c22f
-ms.technology: ''
 msc.legacyurl: /ajax/cdn/jquery-mobile/cdnjquerymobile10
 msc.type: content
-ms.openlocfilehash: f83887baa7129aa97661d274c3e890874f1038ee
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 1110cd7663eb5619b5670147a5704af024b0445b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37365775"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37823137"
 ---
-<a name="jquery-mobile-10-on-the-microsoft-ajax-cdn"></a><span data-ttu-id="322f4-102">Microsoft Ajax CDN의 jQuery Mobile 1.0</span><span class="sxs-lookup"><span data-stu-id="322f4-102">jQuery Mobile 1.0 on the Microsoft Ajax CDN</span></span>
+<a name="jquery-mobile-10-on-the-microsoft-ajax-cdn"></a><span data-ttu-id="529cd-102">Microsoft Ajax CDN의 jQuery Mobile 1.0</span><span class="sxs-lookup"><span data-stu-id="529cd-102">jQuery Mobile 1.0 on the Microsoft Ajax CDN</span></span>
 ====================
-<span data-ttu-id="322f4-103">JQuery Mobile 1.0 라이브러리에는 다음 파일이 포함 됩니다.</span><span class="sxs-lookup"><span data-stu-id="322f4-103">The jQuery Mobile 1.0 library includes the following files:</span></span>
+<span data-ttu-id="529cd-103">JQuery Mobile 1.0 라이브러리에는 다음 파일이 포함 됩니다.</span><span class="sxs-lookup"><span data-stu-id="529cd-103">The jQuery Mobile 1.0 library includes the following files:</span></span>
 
 - https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.0/jquery.mobile-1.0.js
 - https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.0/jquery.mobile-1.0.min.js
