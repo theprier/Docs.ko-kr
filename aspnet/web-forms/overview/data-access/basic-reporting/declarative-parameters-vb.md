@@ -4,19 +4,16 @@ title: 선언적 매개 변수 (VB) | Microsoft Docs
 author: rick-anderson
 description: 이 자습서에서는 DetailsView 컨트롤에서 표시할 데이터를 선택 하려면 하드 코드 된 값으로 설정 하는 매개 변수를 사용 하는 방법을 설명할 것입니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/31/2010
-ms.topic: article
 ms.assetid: dc1234a3-114f-4c9a-8d25-50ca03cc8e8e
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/declarative-parameters-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 86590faf30b41acdd8a0922f9cc33feabfded23f
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 01330d6c743fa9534cdb5dfa42bde5dbbe954c40
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37397732"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37839231"
 ---
 <a name="declarative-parameters-vb"></a>선언적 매개 변수 (VB)
 ====================

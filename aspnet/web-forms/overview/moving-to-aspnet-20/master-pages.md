@@ -4,19 +4,16 @@ title: 마스터 페이지 | Microsoft Docs
 author: microsoft
 description: 성공적인 웹 사이트에 대 한 주요 구성 요소 중 하나는 일관 된 모양과 느낌입니다. Asp.net에서 1.x에서 개발자는 일반적인 페이지 소형을 복제 하기 위해 사용자 정의 컨트롤을 사용...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/20/2005
-ms.topic: article
 ms.assetid: 9c0cce4d-efd9-4c14-b0e8-a1a140abb3f4
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/master-pages
 msc.type: authoredcontent
-ms.openlocfilehash: b31627fec45f153f5832afa6e317f2dd2b296d02
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 631aa39c51601f1ae843079d8cd930f77b1093ab
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37382623"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37819217"
 ---
 <a name="master-pages"></a>마스터 페이지
 ====================

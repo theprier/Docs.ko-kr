@@ -4,19 +4,16 @@ title: 잠금 해제 하 고 사용자 계정 (VB)를 승인 합니다. | Micros
 author: rick-anderson
 description: 이 자습서에서는 관리자가 관리 하는 웹 페이지를 빌드하는 방법을 보여 줍니다. 사용자의 잠긴 및 상태를 승인 합니다. 새 사용자 o를 승인 하는 방법 또한 살펴보겠습니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/01/2008
-ms.topic: article
 ms.assetid: 041854a5-ea8c-4de0-82f1-121ba6cb2893
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/unlocking-and-approving-user-accounts-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 64d1f465eb96863478facc54dc6734b0f903a143
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 4e41cee6f722d3fe6c19d8179b3f27800de80077
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37384396"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37811298"
 ---
 <a name="unlocking-and-approving-user-accounts-vb"></a>사용자 계정 (VB)이 잠금 해제 및 승인
 ====================

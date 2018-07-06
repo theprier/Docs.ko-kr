@@ -4,19 +4,16 @@ title: ASP.NET 웹 배포-권장 리소스 | Microsoft Docs
 author: rick-anderson
 description: 이 항목에서는 설명서의 링크를 배포 하는 방법에 대 한 리소스 (게시) ASP.NET 웹 Visual 웹 De Visual Studio 2010을 사용 하 여 IIS에 응용 프로그램...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/14/2014
-ms.topic: article
 ms.assetid: 58b583cd-c4ab-47a3-8527-8c92c298c91f
-ms.technology: ''
 msc.legacyurl: /whitepapers/aspnet-web-deployment-content-map
 msc.type: content
-ms.openlocfilehash: d29ea65ee5b7056d04f2aa637c36b8216fdff411
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f46a588144fb1af958737b07b73acbff60318fe6
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37363185"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37809422"
 ---
 <a name="aspnet-web-deployment---recommended-resources"></a>ASP.NET 웹 배포-권장 리소스
 ====================

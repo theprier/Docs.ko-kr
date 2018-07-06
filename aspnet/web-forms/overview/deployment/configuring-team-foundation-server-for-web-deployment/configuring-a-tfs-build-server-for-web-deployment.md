@@ -4,19 +4,16 @@ title: 웹 배포에 대 한 빌드 서버를 TFS 구성 | Microsoft Docs
 author: jrjlee
 description: 이 항목에서는 빌드 및 팀 빌드 및 인터넷 Informat를 사용 하 여 솔루션을 배포 하는 Team Foundation Server (TFS) 빌드 서버를 준비 하는 방법을 설명 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: f8400241-4f4b-4bbd-9994-54fb64909e6e
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-a-tfs-build-server-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 12a18f601a75b607c97c46ecb7f68947ca3a342b
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 7f57ad0392a068964bb910fbbaafea105fdbb3d3
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37382535"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37841343"
 ---
 <a name="configuring-a-tfs-build-server-for-web-deployment"></a>웹 배포용 TFS 빌드 서버 구성
 ====================

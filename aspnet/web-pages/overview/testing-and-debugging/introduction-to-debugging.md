@@ -4,19 +4,16 @@ title: ASP.NET 웹 디버깅 소개 페이지 (Razor) 사이트 | Microsoft Docs
 author: tfitzmac
 description: 디버깅은 찾기 및 코드 페이지에 오류를 수정 하는 과정입니다. 이 장에서 몇 가지 도구 및 기술을 디버그 하는 데 사용할 수 및 분석 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/20/2014
-ms.topic: article
 ms.assetid: 68de4326-7611-4b9b-b5f6-79b7adc3069f
-ms.technology: dotnet-webpages
 msc.legacyurl: /web-pages/overview/testing-and-debugging/introduction-to-debugging
 msc.type: authoredcontent
-ms.openlocfilehash: 0d189eb8640346ca7850d9013961cbf45aaefd6f
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: b8a492b065902fa10d3e4c5cccd50e63ea356709
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37375864"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37823805"
 ---
 <a name="introduction-to-debugging-aspnet-web-pages-razor-sites"></a>ASP.NET 웹 디버깅 소개 페이지 (Razor) 사이트
 ====================

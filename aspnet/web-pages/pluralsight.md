@@ -4,19 +4,16 @@ title: Pluralsight의 WebMatrix 및 웹 페이지 비디오 교육 | Microsoft D
 author: rick-anderson
 description: WebMatrix &amp; 이 깊이 있는 코스 Pluralsight의 교육 웹 페이지를 얻게 됩니다 실행 WebMatrix 및 ASP.NET Web Pages를 사용 하 여 합니다. Everythi 설명 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/18/2012
-ms.topic: article
 ms.assetid: 79eca52c-e7ad-44ab-a3e4-d8093e9da5a7
-ms.technology: dotnet-webpages
 msc.legacyurl: /web-pages/pluralsight
 msc.type: content
-ms.openlocfilehash: 43155f278187c193683fb04148b87377f63a9265
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 07fe95b0b7779988fc80639777402930f5af5334
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37385763"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37819697"
 ---
 <a name="webmatrix-and-web-pages-video-training-from-pluralsight"></a>Pluralsight의 WebMatrix 및 웹 페이지 비디오 교육
 ====================

@@ -4,19 +4,16 @@ title: 페이지 (Razor) 사이트를 ASP.NET 웹에서 일관적인 레이아�
 author: tfitzmac
 description: '보다 효과적으로 만들 웹 페이지 사이트에 대 한 확인을 다시 사용할 수 있는 콘텐츠의 블록입니다 (예: 머리글 및 바닥글) 웹 사이트 및 있습니다 c를 만들 수 있습니다...'
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/10/2014
-ms.topic: article
 ms.assetid: d7bd001b-6db2-4422-9b78-f3d08b743b00
-ms.technology: dotnet-webpages
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/3-creating-a-consistent-look
 msc.type: authoredcontent
-ms.openlocfilehash: 91cabc8c026cbdbc89812577bdeaa939bfa828d4
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: d27cdc70417f380d596f4d07384a615586427643
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37378435"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37821216"
 ---
 <a name="creating-a-consistent-layout-in-aspnet-web-pages-razor-sites"></a>ASP.NET 웹 페이지 (Razor) 사이트에서 일관적인 레이아웃 만들기
 ====================

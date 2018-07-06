@@ -4,19 +4,16 @@ title: '자습서: SignalR 2 사용 하 여 서버 브로드캐스트 한다 | M
 author: tdykstra
 description: 이 자습서에는 ASP.NET SignalR 2를 사용 하 여 서버 브로드캐스트 기능을 제공 하는 웹 응용 프로그램을 만드는 방법을 보여 줍니다. 서버 브로드캐스트는 commun 의미 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/13/2014
-ms.topic: article
 ms.assetid: 1568247f-60b5-4eca-96e0-e661fbb2b273
-ms.technology: dotnet-signalr
 msc.legacyurl: /signalr/overview/getting-started/tutorial-server-broadcast-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: ff1eeee407ac7628afd587ca8b9102d0191ea356
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 0e86fbea9c5668e20fce7a494c76c52f9c089c09
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37367930"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37820699"
 ---
 <a name="tutorial-server-broadcast-with-signalr-2"></a>자습서: SignalR 2 사용 하 여 서버 브로드캐스트 한다
 ====================
@@ -196,7 +193,7 @@ Singleton StockTicker 인스턴스에 대 한 참조를 각 StockTickerHub 인�
 
 ### <a name="register-the-signalr-route"></a>SignalR 경로 등록
 
-서버를 가로채 고 signalr 직접 URL을 알고 있어야 합니다. 추가 수행 하려면 OWIN 시작 클래스.
+서버를 가로채 고 signalr 직접 URL을 알고 있어야 합니다. 이렇게 하려면 OWIN 시작 클래스를 추가 합니다.
 
 1. **솔루션 탐색기**프로젝트를 마우스 오른쪽 단추로 클릭 한 다음 클릭 **추가 | OWIN 시작 클래스**합니다. 클래스의 이름을 **Startup.cs**합니다.
 2. 코드를 바꿔 **Startup.cs** 다음을 사용 하 여 합니다.

@@ -4,19 +4,16 @@ title: '[어떻게 할까요?] 웹 사이트 복사 도구를 사용 하 여 웹
 author: rick-anderson
 description: 이 비디오 Chris Pels에서 Visual Studio에서 웹 사이트 복사 도구를 사용 하 여 웹 사이트를 배포 하는 방법을 표시 됩니다. 원격 웹 사이트에 연결 하는 방법은 먼저 및...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/03/2008
-ms.topic: article
 ms.assetid: 4926a73c-fa70-4f47-b57d-b33556447377
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-deploy-a-web-site-using-the-copy-web-site-tool
 msc.type: video
-ms.openlocfilehash: cac0323682b2b4830b49bdb16c702cc13ad51015
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: b922996542fd11c1c0b13913a8d8ed48acf1bbf5
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37391947"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37824811"
 ---
 <a name="how-do-i-deploy-a-web-site-using-the-copy-web-site-tool"></a>[어떻게 할까요?] 웹 사이트 복사 도구를 사용 하 여 웹 사이트 배포
 ====================

@@ -4,19 +4,16 @@ title: 업로드 파일 (C#) | Microsoft Docs
 author: rick-anderson
 description: '웹 사이트 중 하나는 서버의 파일 시스템에 저장 될 수 있는 위치에 이진 파일 (예: Word 또는 PDF 문서)를 업로드할 수 있도록 하는 방법 알아보기...'
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/27/2007
-ms.topic: article
 ms.assetid: b381b1da-feb3-4776-bc1b-75db53eb90ab
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/uploading-files-cs
 msc.type: authoredcontent
-ms.openlocfilehash: aaa81014a03fc04e68ea7b8014933cf87002af2e
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f420797b7c06b9063b70b784a5b61c7d02162c1d
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37388330"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37820077"
 ---
 <a name="uploading-files-c"></a>파일 업로드 (C#)
 ====================

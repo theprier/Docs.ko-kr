@@ -4,19 +4,16 @@ title: Tailspin Spyworks-디렉터리 구성 | Microsoft Docs
 author: JoeStagner
 description: Joe Stagner Tailspin Spyworks 샘플 Web Forms 응용 프로그램에 대 한 기본 디렉터리 구조를 수정합니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/12/2010
-ms.topic: article
 ms.assetid: bec45728-da0d-4876-a92e-5eea3e52c868
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/tailspin-spyworks/tailspin-spyworks-directory-organization
 msc.type: video
-ms.openlocfilehash: b27de4c8942405d28a6d41556f664be15117598a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: e3318a25fd899fa761635d1196f27d352cae02da
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37385799"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37839200"
 ---
 <a name="tailspin-spyworks---directory-organization"></a>Tailspin Spyworks-디렉터리 구성
 ====================

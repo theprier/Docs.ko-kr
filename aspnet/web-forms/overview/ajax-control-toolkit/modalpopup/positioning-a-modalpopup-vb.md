@@ -4,19 +4,16 @@ title: (VB) ModalPopup 위치 지정 | Microsoft Docs
 author: wenz
 description: AJAX Control Toolkit의 ModalPopup 컨트롤 클라이언트 쪽 의미를 사용 하 여 모달 팝업을 만드는 간단한 방법을 제공 합니다. 그러나 컨트롤을 제공 하지 않습니다는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: 8a07210c-eb0e-485e-9ee8-82a101520e65
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/positioning-a-modalpopup-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 1578a1bd6d5e3b595eba526552b8723daefb2ba1
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: e36d22b5c2f503ed849f373153e263bdd9546452
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37387834"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37821763"
 ---
 <a name="positioning-a-modalpopup-vb"></a>(VB) ModalPopup 위치 지정
 ====================

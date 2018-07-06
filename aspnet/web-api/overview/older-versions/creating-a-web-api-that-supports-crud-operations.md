@@ -4,19 +4,16 @@ title: ASP.NET Web API 1에서에서 CRUD 작업을 사용 하도록 설정 | Mi
 author: MikeWasson
 description: 이 자습서에서는 ASP.NET Web API를 사용 하 여 HTTP 서비스에서 CRUD 작업을 지 원하는 방법을 보여 줍니다. 소프트웨어 버전 자습서 Visual Studio 2012 웹 AP에서 사용 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/28/2012
-ms.topic: article
 ms.assetid: c125ca47-606a-4d6f-a1fc-1fc62928af93
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/overview/older-versions/creating-a-web-api-that-supports-crud-operations
 msc.type: authoredcontent
-ms.openlocfilehash: 1658e120225cd3c9425168238981133c96ff398a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 4ea9d4ce9a14e77fa1a63ee82bc1447b6e41378c
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37402930"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37814364"
 ---
 <a name="enabling-crud-operations-in-aspnet-web-api-1"></a>ASP.NET Web API 1에서에서 CRUD 작업을 사용 하도록 설정
 ====================

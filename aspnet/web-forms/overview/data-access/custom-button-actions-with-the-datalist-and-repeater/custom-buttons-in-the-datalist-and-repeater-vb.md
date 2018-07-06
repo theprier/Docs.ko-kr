@@ -4,19 +4,16 @@ title: DataList 및 반복기 (VB)의 사용자 지정 단추 | Microsoft Docs
 author: rick-anderson
 description: 이 자습서에서는 해당 associ에 표시할 단추를 제공 하는 각 범주를 사용 하 여 시스템에서 범주를 나열 하는 반복기를 사용 하는 인터페이스를 빌드 해 보겠습니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/13/2006
-ms.topic: article
 ms.assetid: 1afdb14d-6e49-4e1f-aead-2934730d472e
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions-with-the-datalist-and-repeater/custom-buttons-in-the-datalist-and-repeater-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7dc738e22f7670aa3eeb07d69888a4df47c1fc82
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: ab580a706b76325fc4c0eccfc130ffa7db22fbd3
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37371586"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37812953"
 ---
 <a name="custom-buttons-in-the-datalist-and-repeater-vb"></a>DataList 및 반복기 (VB)의 사용자 지정 단추
 ====================

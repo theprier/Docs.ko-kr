@@ -4,19 +4,16 @@ title: 읽기, 쓰기 및 ASP.NET에서 쿠키를 삭제 합니다. | Microsoft 
 author: rick-anderson
 description: 이 비디오 Chris Pels에서 읽고, 쓰고, ASP.NET 응용 프로그램에서 쿠키를 삭제 하는 방법을 표시 됩니다. 먼저 cooki 조작에 대 한 기본 작업 알아보기...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/10/2008
-ms.topic: article
 ms.assetid: 228b575b-8bf9-4c1a-b8e9-1a878861a6b3
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/read-write-and-delete-cookies-in-aspnet
 msc.type: video
-ms.openlocfilehash: f15a6d5780b1aca9c4792042b47c8f9b6b210d6d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: c24d1a8d34172cc718783eab4eb78a9d2c09aa48
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37398374"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37822223"
 ---
 <a name="read-write-and-delete-cookies-in-aspnet"></a>읽기, 쓰기 및 ASP.NET에서 쿠키를 삭제 합니다.
 ====================

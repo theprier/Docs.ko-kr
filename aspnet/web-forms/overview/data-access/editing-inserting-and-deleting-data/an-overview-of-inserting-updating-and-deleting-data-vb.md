@@ -4,19 +4,16 @@ title: 삽입, 업데이트 및 삭제 (VB)의 개요 | Microsoft Docs
 author: rick-anderson
 description: 이 자습서에서는 ObjectDataSource의 insert (), update ()를 매핑하는 방법을 확인 하 고 구성 하는 방법 뿐만 아니라 클래스 BLL의 메서드에 delete () 메서드...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/17/2006
-ms.topic: article
 ms.assetid: 35b40b8f-2ca8-4ab3-9c19-f361a91a3647
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/an-overview-of-inserting-updating-and-deleting-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9d0b971e221eeb4f4f52745e029289cf1fe4d0e6
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: bd17d87d3fa82d8ef288ce4747876ecb53e3c625
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37388729"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37820300"
 ---
 <a name="an-overview-of-inserting-updating-and-deleting-data-vb"></a>삽입, 업데이트 및 삭제 (VB) 개요
 ====================

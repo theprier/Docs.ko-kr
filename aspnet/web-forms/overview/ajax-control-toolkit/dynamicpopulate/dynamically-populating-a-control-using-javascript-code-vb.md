@@ -4,19 +4,16 @@ title: JavaScript 코드 (VB)를 사용 하는 컨트롤을 동적으로 채울 
 author: wenz
 description: ASP.NET AJAX Control Toolkit에 DynamicPopulate 컨트롤은 웹 서비스 (또는 페이지 메서드)를 호출 하 고 t 대상 컨트롤에 결과 값을 채웁니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: 90582e54-3e90-432a-9da5-689fb39ed56b
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/dynamically-populating-a-control-using-javascript-code-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9df2a66bd49ecba52b0dd8b1d52a65b36c38a5dc
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: fae87d87b0783dff6fc8f5f282a73b05ee64affa
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37366850"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37812742"
 ---
 <a name="dynamically-populating-a-control-using-javascript-code-vb"></a>JavaScript 코드 (VB)를 사용 하는 컨트롤을 동적으로 채우기
 ====================

@@ -4,19 +4,16 @@ title: Visual Studio 2013에서 ASP.NET 웹 프로젝트 만들기 | Microsoft D
 author: tdykstra
 description: 이 항목에서는 Visual Studio 2013 업데이트 3 여기에서 ASP.NET 웹 프로젝트를 만들기 위한 옵션은 웹 개발 c에 대 한 새로운 기능 중 일부를 설명 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 12/01/2014
-ms.topic: article
 ms.assetid: 61941e64-0c0d-4996-9270-cb8ccfd0cabc
-ms.technology: ''
 msc.legacyurl: /visual-studio/overview/2013/creating-web-projects-in-visual-studio
 msc.type: authoredcontent
-ms.openlocfilehash: 6033163b7b8e9e1d0524935217dc53f938470cb6
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: b57492a51f65e7ca861a7c354ded6ab170a92488
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37363470"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37814522"
 ---
 <a name="creating-aspnet-web-projects-in-visual-studio-2013"></a>Visual Studio 2013에서 ASP.NET 웹 프로젝트 만들기
 ====================

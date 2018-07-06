@@ -4,19 +4,16 @@ title: '반복 #7 – Ajax 기능 추가 (VB) | Microsoft Docs'
 author: microsoft
 description: 일곱 번째 반복에서 개선할 응용 프로그램의 성능과 응답성 Ajax에 대 한 지원을 추가 하 여 합니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/20/2009
-ms.topic: article
 ms.assetid: f640e063-150e-453d-8cfc-7e54a6ce0f1e
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-7-add-ajax-functionality-vb
 msc.type: authoredcontent
-ms.openlocfilehash: f951135014c46ef2685955700dc5649581539989
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f5ea425c69dec803bfbdcb9f319a1d24e816bcf7
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37394257"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37840134"
 ---
 <a name="iteration-7--add-ajax-functionality-vb"></a>반복 #7 – Ajax 기능 추가 (VB)
 ====================

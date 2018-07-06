@@ -3,20 +3,18 @@ uid: overview
 title: ASP.NET 개요 | Microsoft Docs
 author: rick-anderson
 description: 웹 사이트, 웹 응용 프로그램 및 Web API를 만들 수 있는 무료 프레임워크 ASP.NET을 소개합니다.
-ms.author: aspnetcontent
-manager: wpickett
-ms.date: 03/12/2010
-ms.topic: article
 ms.assetid: 3a309468-f1ca-4e51-b9c3-536af79d7a8b
-ms.technology: ''
+ms.author: aspnetcontent
+ms.date: 03/12/2010
+ms.technology: aspnet
 msc.legacyurl: ''
 msc.type: content
-ms.openlocfilehash: de094258984e3ca09e4eadf21169cad9bfc67b22
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: d477db5f38fff6549f0a7f62963a48ee89b74101
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37362264"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37809487"
 ---
 # <a name="aspnet-overview"></a>ASP.NET 개요
 

@@ -4,19 +4,16 @@ title: '[어떻게 할까요?] 웹 사이트 또는 웹 응용 프로그램 프�
 author: rick-anderson
 description: 이 비디오 Chris Pels에서 ASP.NET 웹 사이트 프로젝트와 웹 응용 프로그램 프로젝트의 차이점 비교 합니다. 사용 시 고려 사항에 알아봅니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/22/2008
-ms.topic: article
 ms.assetid: 2fba2d1d-1bd3-451a-ae94-8acf4faa75ec
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-determine-whether-to-use-a-web-site-or-a-web-application-project
 msc.type: video
-ms.openlocfilehash: a3311838b9a3e07e0772273ffda43e79b6c78022
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: b19e0f775a85aa31bdcea10b18424f3d5440697d
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37401346"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37813460"
 ---
 <a name="how-do-i-determine-whether-to-use-a-web-site-or-a-web-application-project"></a>[어떻게 할까요?] 웹 사이트 또는 웹 응용 프로그램 프로젝트를 사용 하 여 결정 합니다.
 ====================

@@ -4,19 +4,16 @@ title: '3 부: 레이아웃 및 범주 메뉴 | Microsoft Docs'
 author: JoeStagner
 description: 이 자습서 시리즈 모든 Tailspin Spyworks 샘플 응용 프로그램 빌드를 수행 하는 단계를 자세히 설명 합니다. 3 부에서는 레이아웃 및 범주 메뉴를 추가 합니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/21/2010
-ms.topic: article
 ms.assetid: 94ea1a70-a9bc-4241-8f36-08366d64bab9
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: 72642610c203127b431e03214b2f1bc85a85b5fb
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 3047c53e21a418aef8617bd772a247bc46edb98f
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37366649"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37817527"
 ---
 <a name="part-3-layout-and-category-menu"></a>3 부: 레이아웃 및 범주 메뉴
 ====================

@@ -4,19 +4,16 @@ title: '[어떻게 할까요?] ASP.NET AJAX와 함께 여러 페이지 영역을
 author: scottgolightly
 description: 이 비디오에서는 ASP.NET AJAX UpdatePanel 컨트롤에 관한에서 웹 페이지의 여러 영역 업데이트 하는 데 사용할 수 있는 두 개 속성도 제공 있는지 알아보기...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/09/2007
-ms.topic: article
 ms.assetid: 7572654d-6fa2-4ea3-a43b-56a8578af0f6
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-update-multiple-regions-of-a-page-with-aspnet-ajax
 msc.type: video
-ms.openlocfilehash: 090f47975e10cf10b64e1194cfc2af202cac8998
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 8ee08c07999f59153a6757faa24803bdabf420f3
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37397437"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37820686"
 ---
 <a name="how-do-i-update-multiple-regions-of-a-page-with-aspnet-ajax"></a>[어떻게 할까요?] ASP.NET AJAX와 함께 여러 페이지 영역을 업데이트 하 시겠습니까?
 ====================

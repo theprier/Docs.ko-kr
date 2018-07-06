@@ -4,19 +4,16 @@ title: ASP.NET (VB) 페이지에서 BLL 및 DAL 수준의 예외 처리 | Micros
 author: rick-anderson
 description: 이 자습서에서는 삽입, 업데이트 또는 삭제 작업을 하는 동안 예외가 발생 해야 표시, 정보 오류 메시지를 표시 하는 방법에 살펴보겠습니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/17/2006
-ms.topic: article
 ms.assetid: 129d4338-1315-4f40-89b5-2b84b807707d
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/editing-inserting-and-deleting-data/handling-bll-and-dal-level-exceptions-in-an-asp-net-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 41a0ec0db4cb2093d7fadd2de7e65ee4874f0063
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: de181391a074ec837d2f9d98d55f912883d76be2
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37394685"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37808994"
 ---
 <a name="handling-bll--and-dal-level-exceptions-in-an-aspnet-page-vb"></a>ASP.NET (VB) 페이지에서 BLL 및 DAL 수준의 예외 처리
 ====================

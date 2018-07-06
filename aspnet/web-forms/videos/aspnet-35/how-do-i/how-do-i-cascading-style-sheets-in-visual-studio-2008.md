@@ -4,19 +4,16 @@ title: '[어떻게 할까요?] Visual Studio 2008에서 cascading Style Sheet | 
 author: rick-anderson
 description: 이 비디오에서는 외부 연계 스타일 시트를 만들기 위한 향상 된 도구를 검토 하겠습니다. CSS에 모든 잘 설계 된 웹 사이트 및 Visual Studio 2에 중요 한 대상...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/14/2008
-ms.topic: article
 ms.assetid: fa9c74b0-c692-4553-805c-b89f8bf2c4da
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-35/how-do-i/how-do-i-cascading-style-sheets-in-visual-studio-2008
 msc.type: video
-ms.openlocfilehash: 19651964955c68b02e653379f938253d51e0280d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 7ff360f32265235d679dad973fb065f8fbc20545
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37398892"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37813473"
 ---
 <a name="how-do-i-cascading-style-sheets-in-visual-studio-2008"></a>[어떻게 할까요?] Visual Studio 2008에서 스타일 시트
 ====================

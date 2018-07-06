@@ -4,19 +4,16 @@ title: 데이터베이스 테이블 및 레코드 이해 | Microsoft Docs
 author: microsoft
 description: SQL Server 초보자는 두 번째이 비디오에서는 데이터 형식, 속성, 키 등의 정의와 테이블에 알아봅니다. 확인해 테이블 행, 열을 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/29/2006
-ms.topic: article
 ms.assetid: 9ebe8ebc-eae6-41c1-83a6-38410b610331
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/sql-2005/understanding-database-tables-and-records
 msc.type: video
-ms.openlocfilehash: b5ad4e92ca0902be8550808efd7ecc73caa4f683
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: fc481ab10ce77aee0cbf3022b33d4b4911e396c5
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37383479"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37825609"
 ---
 <a name="understanding-database-tables-and-records"></a>데이터베이스 테이블 이해 및 레코드
 ====================

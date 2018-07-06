@@ -4,19 +4,16 @@ title: Web API 2.2 사용 하 여 OData v4의 제약 | Microsoft Docs
 author: rick-anderson
 description: 일반적으로 엔터티는 엔터티 집합 내에서 캡슐화 된 경우에 액세스할 수 없습니다. 하지만 OData v4 Singleton 및 Con 두 개의 추가 옵션을 제공 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/27/2014
-ms.topic: article
 ms.assetid: 5fbfefad-a17a-4c46-8646-f1ccd154cd56
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/odata-containment-in-web-api-22
 msc.type: authoredcontent
-ms.openlocfilehash: 33ff49f69d70dd3a8179445d2895c418d2185e49
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 56e550b56e9ad237dbf4fab04f2bd545164ee90a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37365609"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37824914"
 ---
 <a name="containment-in-odata-v4-using-web-api-22"></a>Web API 2.2 사용 하 여 OData v4의 제약
 ====================

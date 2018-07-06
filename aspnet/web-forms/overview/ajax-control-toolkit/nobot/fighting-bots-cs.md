@@ -4,19 +4,16 @@ title: 대체 봇 (C#) | Microsoft Docs
 author: wenz
 description: 자동화 된 봇 스팸, 사용자 개입 없이 주석 양식을 제출를 사용 하 여 웹 로그 및 기타 웹 사이트를 석고 합니다. ASP.NET AJAX Con NoBot 컨트롤 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: 0a1917e0-884a-4576-8e93-9ed660faae51
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/nobot/fighting-bots-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 41e8fda5138e4a94e7b8c4af0a5c2bd68e50e9e1
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: ed03b46c8a4859a79322290106a5181867392d0a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37402722"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37824201"
 ---
 <a name="fighting-bots-c"></a>대체 봇 (C#)
 ====================

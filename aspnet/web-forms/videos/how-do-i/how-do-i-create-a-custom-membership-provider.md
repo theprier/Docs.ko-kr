@@ -4,19 +4,16 @@ title: '[어떻게 할까요?] 사용자 지정 멤버 자격 공급자 만들�
 author: rick-anderson
 description: 멤버 자격 공급자는 웹 응용 프로그램을 사용자에 대 한 멤버 자격 데이터 저장 및 검색 있으며 표준 ASP.NET 멤버 자격 공급자 사용 하 여 미리 정의 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/05/2007
-ms.topic: article
 ms.assetid: a250a97d-e04d-403a-816e-cd6efda396cd
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-create-a-custom-membership-provider
 msc.type: video
-ms.openlocfilehash: 732a996f1c73c7fdaeed5dde355a5c242de8b7c6
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: f329323eb17bb8d8f8ef8f3591eeab706d95a90f
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37372649"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37812914"
 ---
 <a name="how-do-i-create-a-custom-membership-provider"></a>[어떻게 할까요?] 사용자 지정 멤버 자격 공급자 만들기
 ====================

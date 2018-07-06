@@ -4,19 +4,16 @@ title: 컨트롤 (VB)에 애니메이션 추가 | Microsoft Docs
 author: wenz
 description: ASP.NET AJAX Control Toolkit에서 애니메이션 컨트롤 컨트롤 뿐 이지만 컨트롤에 애니메이션을 추가 하는 전체 프레임 워크 아닙니다. 이 자습서에서는 방법...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: c120187e-963e-4439-bb85-32771bc7f1f4
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/adding-animation-to-a-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3909422dc5d261b39f3efd7d7eaeb5cfb1976f2b
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 7ae2fd6c680ed89022772c62bb6148808d2f4daf
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37364928"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37818128"
 ---
 <a name="adding-animation-to-a-control-vb"></a>애니메이션 컨트롤을 추가 (VB)
 ====================

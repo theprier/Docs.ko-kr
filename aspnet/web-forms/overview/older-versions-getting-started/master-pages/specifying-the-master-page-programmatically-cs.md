@@ -4,19 +4,16 @@ title: 마스터 페이지를 프로그래밍 방식으로 지정 (C#) | Microso
 author: rick-anderson
 description: PreInit 이벤트 처리기를 통해 프로그래밍 방식으로 콘텐츠 페이지의 마스터 페이지를 설정 하는 방법을 살펴봅니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/28/2008
-ms.topic: article
 ms.assetid: 7c4a3445-2440-4aee-b9fd-779c05e6abb2
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/specifying-the-master-page-programmatically-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2b3fbd95a8088e20382c426fcdcc6a4b6e67d44b
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: fa5de936d3b515e5c60223002fe51dbc23fed66c
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37370392"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37809273"
 ---
 <a name="specifying-the-master-page-programmatically-c"></a>마스터 페이지를 프로그래밍 방식으로 지정 (C#)
 ====================

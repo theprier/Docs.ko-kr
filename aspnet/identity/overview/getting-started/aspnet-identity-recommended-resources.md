@@ -4,19 +4,16 @@ title: ASP.NET Id 권장 리소스 | Microsoft Docs
 author: Rick-Anderson
 description: 이 항목에서는 ASP.NET Id를 사용 하는 방법에 대 한 설명서 리소스에 대 한 링크를 제공 합니다. 훌륭한 블로그 게시물, stackoverflow 스레드 또는 다른 lin... 알고 있는 경우
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/09/2015
-ms.topic: article
 ms.assetid: 0f78aec2-f509-46fa-b20f-d5208425d8ec
-ms.technology: ''
 msc.legacyurl: /identity/overview/getting-started/aspnet-identity-recommended-resources
 msc.type: authoredcontent
-ms.openlocfilehash: f0ba9fcd2fb2e5479dd76e59e9001f2d5ea27538
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 893956f4abcb3f337879ca43c63650d62663aa91
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37390380"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37811917"
 ---
 <a name="aspnet-identity-recommended-resources"></a>ASP.NET Id 권장 리소스
 ====================

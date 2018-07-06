@@ -4,19 +4,16 @@ title: 리포지토리 및 작업 패턴 단위 (9 / 10) ASP.NET MVC 응용 프�
 author: tdykstra
 description: Contoso University 샘플 웹 응용 프로그램에는 Entity Framework 5 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 4 응용 프로그램을 만드는 방법을 보여 줍니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/30/2013
-ms.topic: article
 ms.assetid: 44761193-04ba-4990-9f90-145d3c10a716
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 0ca67c67b763d003e5f395ddd4bac0c5ec28f1f1
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 9de8b33e4c533b90b7653544a6814d1ee756cf50
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37366371"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37814571"
 ---
 <a name="implementing-the-repository-and-unit-of-work-patterns-in-an-aspnet-mvc-application-9-of-10"></a>(9 / 10) ASP.NET MVC 응용 프로그램에서 리포지토리 및 작업 패턴 단위 구현
 ====================

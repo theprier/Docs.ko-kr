@@ -4,19 +4,16 @@ title: 사용자 지정 HTML 도우미 (C#) 만들기 | Microsoft Docs
 author: microsoft
 description: MVC 뷰 내에서 사용할 수 있는 사용자 지정 HTML 도우미를 만드는 방법을 보여 주기 위해이 자습서의 목표가입니다. HTML 도우미를 활용 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/07/2008
-ms.topic: article
 ms.assetid: e454c67d-a86e-4119-a858-eb04bbec2dff
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/views/creating-custom-html-helpers-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 1e5bb247f52162aba02e0d5775bced73f76d2081
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 0606ec3b5595fbe73918b82e32b393871e8533a1
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37365174"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37839411"
 ---
 <a name="creating-custom-html-helpers-c"></a>사용자 지정 HTML 도우미 만들기 (C#)
 ====================

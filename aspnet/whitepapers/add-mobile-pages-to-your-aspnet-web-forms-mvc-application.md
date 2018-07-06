@@ -4,19 +4,16 @@ title: '방법: ASP.NET Web forms에 모바일 페이지 추가 / MVC 응용 프
 author: rick-anderson
 description: 이 방법에 ASP.NET Web Forms에서 모바일 장치에 대 한 액세스에 최적화 된 페이지를 제공 하는 다양 한 방법에 설명 / MVC 응용 프로그램 아키텍처를 제안 하 고...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/20/2011
-ms.topic: article
 ms.assetid: 3124f28e-cc32-418a-afe3-519fa56f4c36
-ms.technology: ''
 msc.legacyurl: /whitepapers/add-mobile-pages-to-your-aspnet-web-forms-mvc-application
 msc.type: content
-ms.openlocfilehash: 075329087cb5e07d85bba0c546538e7cc55ac463
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 59b81184852a7fe0ad2dcad9718b572a8c756918
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37366759"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37823357"
 ---
 <a name="how-to-add-mobile-pages-to-your-aspnet-web-forms--mvc-application"></a>방법: ASP.NET Web forms에 모바일 페이지 추가 / MVC 응용 프로그램
 ====================

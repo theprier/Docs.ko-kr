@@ -4,19 +4,16 @@ title: '[어떻게 할까요?] MSBuild를 사용 하 여 ASP.NET 컴파일러를
 author: rick-anderson
 description: 이 비디오 Chris Pels에서 ASP 위한 aspnet_compiler 및 aspnet_merge 유틸리티 실행을 오케스트레이션 하는 MSBuild 프로젝트를 만드는 방법을 보여 줍니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/07/2008
-ms.topic: article
 ms.assetid: 14f2b333-59f5-4ae4-88db-2a78f809cef3
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-35/how-do-i/how-do-i-use-msbuild-to-automate-the-aspnet-compiler-and-merge-utilities
 msc.type: video
-ms.openlocfilehash: b2803bbd9d63cb5e79ced227719e762eaf697aa6
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 8414489f495ae2b194a503bf3129467c3219ce8c
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37392113"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37818193"
 ---
 <a name="how-do-i-use-msbuild-to-automate-the-aspnet-compiler-and-merge-utilities"></a>[어떻게 할까요?] MSBuild를 사용 하 여 ASP.NET 컴파일러를 자동화 하 고 유틸리티 병합
 ====================

@@ -4,19 +4,16 @@ title: MVC 권장 리소스 | Microsoft Docs
 author: Rick-Anderson
 description: 이 항목에서는 ASP.NET MVC 5에 대 한 설명서 리소스에 대 한 링크를 제공합니다. 훌륭한 블로그 게시물, stackoverflow 스레드 또는 다른 모든 링크는 알고 있는 경우...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/10/2014
-ms.topic: article
 ms.assetid: 7958d725-e958-4566-a85b-535eeb985f94
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/getting-started/recommended-resources-for-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 2098dc48e2c253f146e270866765a509e302081f
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 2b9ec425654307a6685537cc058bfd25ff2ca8de
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37363286"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37821750"
 ---
 <a name="mvc-recommended-resources"></a>MVC 권장 리소스
 ====================

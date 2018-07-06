@@ -4,19 +4,16 @@ title: '[어떻게 할까요?] 처음부터 ASP.NET AJAX Extender 만들기 | Mi
 author: rick-anderson
 description: 표준 ASP.NET 서버 컨트롤에 대 한 ASP.NET AJAX extender를 만드는 방법에 알아봅니다. 서버 쪽 속성 및 클라이언트 쪽 JavaScript를 추가 하는 방법을 표시 됩니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 09/01/2007
-ms.topic: article
 ms.assetid: 526b4ec1-4a80-4fae-bf0d-af5cb78f5d02
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-create-an-aspnet-ajax-extender-from-scratch
 msc.type: video
-ms.openlocfilehash: b759c7a9924e633679d91e7a38e7db7e470f23a2
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 4e82ac4351e7af361140d38f79fb3a1bfde5834a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37382425"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37810071"
 ---
 <a name="how-do-i-create-an-aspnet-ajax-extender-from-scratch"></a>[어떻게 할까요?] 처음부터 ASP.NET AJAX Extender 만들기
 ====================

@@ -4,19 +4,16 @@ title: 구조화 되지 않은 Blob 저장소 (실제 클라우드 앱 빌드 az
 author: MikeWasson
 description: 실제 세계 클라우드 앱 빌드 Azure 전자책을 사용 하 여 Scott Guthrie를 개발한 프레젠테이션을 기반으로 합니다. 13 패턴과 그을 수 있는 방법을 설명 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/30/2015
-ms.topic: article
 ms.assetid: 9f05ccb1-2004-4661-ad8b-c370e6c09c8e
-ms.technology: ''
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage
 msc.type: authoredcontent
-ms.openlocfilehash: 1840bea3b4183838ffdfe710e987b864a05d53fb
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 55937854546fe02c36b15b7141d90b4c0785f32b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37364186"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37823464"
 ---
 <a name="unstructured-blob-storage-building-real-world-cloud-apps-with-azure"></a>구조화 되지 않은 Blob 저장소 (Azure 사용 하 여 빌드 실제 클라우드 앱)
 ====================

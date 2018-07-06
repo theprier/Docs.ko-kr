@@ -4,19 +4,16 @@ title: 빌드 배포 팀에 대 한 권한 구성 | Microsoft Docs
 author: jrjlee
 description: 이 항목에서는 웹 서버 및 데이터베이스 서버에는 자동화 된 b의 일부분으로 콘텐츠를 배포 하 여 빌드 서버를 사용 하도록 설정 하는 권한을 구성 하는 방법을 설명 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/04/2012
-ms.topic: article
 ms.assetid: 2488a91e-b0a8-465a-b874-3233f724b56b
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/configuring-permissions-for-team-build-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: f84e72bd5991b0407008ccdaff5243979cbb986e
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: b577d887b4a4476b6796ae9f1df538d16eededa3
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37384664"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37820362"
 ---
 <a name="configuring-permissions-for-team-build-deployment"></a>빌드 배포 팀에 대 한 권한 구성
 ====================

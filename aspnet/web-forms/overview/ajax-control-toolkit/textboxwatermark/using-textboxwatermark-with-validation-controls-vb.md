@@ -4,19 +4,16 @@ title: 유효성 검사 (VB) 컨트롤에 TextBoxWatermark 사용 | Microsoft Do
 author: wenz
 description: AJAX Control Toolkit에서 TextBoxWatermark 컨트롤은 텍스트 상자 내에서 표시 되도록 입력란을 확장 합니다. 상자에 사용자가 클릭 하 고 있나요...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: e6c2cb98-f745-4bc8-973a-813879c8a891
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/textboxwatermark/using-textboxwatermark-with-validation-controls-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 25a18bf4ad514fbeadd321f50d3b715b38d656cd
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 67e7a715545b35c25147c6dbf6684e0e1634027b
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37376580"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37811567"
 ---
 <a name="using-textboxwatermark-with-validation-controls-vb"></a>유효성 검사 (VB) 컨트롤에 TextBoxWatermark 사용
 ====================

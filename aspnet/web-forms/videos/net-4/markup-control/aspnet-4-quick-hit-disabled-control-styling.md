@@ -4,19 +4,16 @@ title: 컨트롤 스타일 지정을 사용 하지 않도록 설정 | Microsoft 
 author: JoeStagner
 description: 이 비디오에서는 비 입력 컨트롤을 사용 하지 않도록 설정 잘못 된 스타일을 렌더링 되지 것입니다 있도록 controlRenderingCompatibility 설정을 사용 하는 방법을 배웁니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/16/2009
-ms.topic: article
 ms.assetid: edb30028-1fc4-4730-9d6f-1013b6fd5637
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/net-4/markup-control/aspnet-4-quick-hit-disabled-control-styling
 msc.type: video
-ms.openlocfilehash: e635831f49b62275fb4276c51bc366ebd38a4b7e
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 759e9ea5790aa871851b04de573db0665fdf0982
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37393849"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37814173"
 ---
 <a name="aspnet-4-quick-hit---disabled-control-styling"></a>ASP.NET 4 "빠른 Hit"-사용 하지 않도록 설정 컨트롤 스타일 지정
 ====================

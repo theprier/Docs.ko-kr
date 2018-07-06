@@ -4,19 +4,16 @@ title: 상호 배타적인 확인란 (C#) 만들기 | Microsoft Docs
 author: wenz
 description: '일련의 옵션 중 하나만 선택할 수 있습니다, 라디오 단추는 일반적으로 사용 합니다. 그러나 단점은는: 그룹에 하나의 라디오 단추를 선택 하면...'
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: 8e11b813-ba0d-4c29-b0f8-f65db6dbef1e
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/mutuallyexclusivecheckbox/creating-mutually-exclusive-checkboxes-cs
 msc.type: authoredcontent
-ms.openlocfilehash: b5850c2e8d053d61e6230d3a24ddbbfe215bc531
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 1bce8cd94ed11551f75e48b19cd9cc50b9d023c9
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37396138"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37818069"
 ---
 <a name="creating-mutually-exclusive-checkboxes-c"></a>상호 배타적인 확인란 만들기 (C#)
 ====================

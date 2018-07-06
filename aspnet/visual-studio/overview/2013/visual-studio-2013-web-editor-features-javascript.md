@@ -4,19 +4,16 @@ title: Visual Studio 2013 웹 편집기 기능-JavaScript | Microsoft Docs
 author: shanselman
 description: Scott hanselman이 Visual Studio 2013에서 JavaScript 편집기 기능을 설명합니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 10/17/2013
-ms.topic: article
 ms.assetid: 1de7c3df-203c-4d2c-bba0-ddc6ffb6c9c5
-ms.technology: ''
 msc.legacyurl: /visual-studio/overview/2013/visual-studio-2013-web-editor-features-javascript
 msc.type: video
-ms.openlocfilehash: 85f8dbfd62e77e28d5061c38aa81a269b5a48e27
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 5313862b7b51175e3ff9b3f7b82bb6c34a88c278
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37376677"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37820573"
 ---
 <a name="visual-studio-2013-web-editor-features---javascript"></a>Visual Studio 2013 웹 편집기 기능-JavaScript
 ====================

@@ -4,19 +4,16 @@ title: '4 부: 제품 나열 | Microsoft Docs'
 author: JoeStagner
 description: 이 자습서 시리즈 모든 Tailspin Spyworks 샘플 응용 프로그램 빌드를 수행 하는 단계를 자세히 설명 합니다. 4 부에서는 GridView contr. 제품 목록 설명...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/21/2010
-ms.topic: article
 ms.assetid: 4fab47d5-a6ec-4fdc-91f0-651a093a24b9
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-4
 msc.type: authoredcontent
-ms.openlocfilehash: 929d88d747c25ca7c4f6f991421cb3aa9456aa45
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: ec349a2564a63fd950ca5f6a171e6ffd1199c28a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37368811"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37813077"
 ---
 <a name="part-4-listing-products"></a>4 부: 제품 나열
 ====================

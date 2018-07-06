@@ -4,19 +4,16 @@ title: 통합 Windows 인증 | Microsoft Docs
 author: MikeWasson
 description: 통합 Windows 인증을 사용 하 여 ASP.NET Web API에 설명 합니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 12/18/2012
-ms.topic: article
 ms.assetid: 71ee4c78-c500-4d1c-b761-b4e161a291b5
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/overview/security/integrated-windows-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: f11b9fe5d98118a252c6c00dd2997b2ee9a3da7a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: c15677b7aa66619f1ff32819585340ff497b937d
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37381605"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37820408"
 ---
 <a name="integrated-windows-authentication"></a>통합된 Windows 인증
 ====================

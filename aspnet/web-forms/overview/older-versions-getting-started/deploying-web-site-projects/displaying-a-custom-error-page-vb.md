@@ -4,19 +4,16 @@ title: 사용자 지정 오류 페이지 (VB)를 표시 합니다. | Microsoft D
 author: rick-anderson
 description: 표시 되는 내용에 사용자는 ASP.NET 웹 응용 프로그램에서 런타임 오류가 발생 하는 경우 답변 하는 방법에 따라 달라 집니다 웹 사이트 &lt;customErrors&gt; 구성 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/09/2009
-ms.topic: article
 ms.assetid: 14873c5d-81a9-455b-bd71-30fb555583e7
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/displaying-a-custom-error-page-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 732aad689b5d427ceb50b0062e7c00de0b7fb401
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 749b754903fb8e164b77edff4216fb2e2cf057b6
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37362618"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37812927"
 ---
 <a name="displaying-a-custom-error-page-vb"></a>사용자 지정 오류 페이지 (VB)를 표시합니다.
 ====================

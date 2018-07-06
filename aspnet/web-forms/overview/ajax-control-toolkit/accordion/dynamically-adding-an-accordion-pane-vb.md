@@ -4,19 +4,16 @@ title: 동적으로 Accordion 창 (VB)를 추가 | Microsoft Docs
 author: wenz
 description: AJAX Control Toolkit의 Accordion 컨트롤 여러 창을 제공 하 고 둘 중 한 번에 표시할 수 있습니다. 일반적으로 패널 w 선언 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: fae968c9-1902-487d-b053-86a46dd52c3f
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/accordion/dynamically-adding-an-accordion-pane-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3dd82fab03e06aa5dd3baba7dd24734fa964b350
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 1fdb95ee1ee93bc011a257e4e21c876dbbc7d2a9
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37378964"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37820028"
 ---
 <a name="dynamically-adding-an-accordion-pane-vb"></a>동적으로 Accordion 창 (VB)를 추가
 ====================

@@ -4,19 +4,16 @@ title: 추가 모델 (C#) | Microsoft Docs
 author: Rick-Anderson
 description: '참고: 업데이트 된이이 자습서는 ASP.NET MVC 5 및 Visual Studio 2013을 사용 하는 있습니다. 것이 더 안전 하 고 더 간단 하 게 따르고 데모 중...'
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/12/2011
-ms.topic: article
 ms.assetid: 42355b95-5f1f-413e-8d16-14cdfaaefcd8
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-model
 msc.type: authoredcontent
-ms.openlocfilehash: 797a4b26960881c9df60a47389a0f979b00e45cf
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 61ba86e4bfbb0557b34d245555bc56a320335628
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37371602"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37820774"
 ---
 <a name="adding-a-model-c"></a>모델 (C#)를 추가합니다.
 ====================

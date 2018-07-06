@@ -4,18 +4,15 @@ title: ASP.NET Web API 2 (C#)를 사용 하 여 시작
 author: MikeWasson
 description: HTTP를 단순히 웹 페이지를 제공 합니다. 서비스 및 데이터를 노출 하는 Api를 빌드하기 위한 강력한 플랫폼 이기도 합니다. HTTP에는 단순 하 고 유연 하 고 ubiq는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/28/2017
-ms.topic: article
-ms.technology: dotnet-webapi
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: adda92a6a06bc30b9217d440bbd38066ef9ea24f
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 170e361c46631e7ecdbe026061c181158dcf803f
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37368866"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37823422"
 ---
 <a name="get-started-with-aspnet-web-api-2-c"></a>ASP.NET Web API 2 (C#)를 사용 하 여 시작
 ====================

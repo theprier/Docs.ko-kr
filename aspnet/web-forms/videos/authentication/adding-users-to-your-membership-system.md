@@ -4,19 +4,16 @@ title: 멤버 자격 시스템에 사용자 추가 | Microsoft Docs
 author: JoeStagner
 description: 이 비디오에서는 Joe Stagner 방법을 보여 줍니다 멤버 자격 리포지토리에 새 사용자를 추가 합니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/29/2010
-ms.topic: article
 ms.assetid: fc0f145a-ba00-495e-b8aa-a6e8ad4e80f5
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/authentication/adding-users-to-your-membership-system
 msc.type: video
-ms.openlocfilehash: 2abcb565530c2f6d1b6990df5c50d9a0d1c07b1a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 756a7875cddeab6a8132e95a8219ae1617ee8398
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37373944"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37812328"
 ---
 <a name="adding-users-to-your-membership-system"></a>멤버 자격 시스템에 사용자 추가
 ====================

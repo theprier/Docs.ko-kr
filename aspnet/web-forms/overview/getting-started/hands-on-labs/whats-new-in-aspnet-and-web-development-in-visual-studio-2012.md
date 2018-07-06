@@ -4,19 +4,16 @@ title: ASP.NET 및 웹 개발에 Visual Studio 2012의 새로운 기능 | Micros
 author: rick-anderson
 description: 새 버전의 Visual Studio 웹 기술을 사용할 경우 환경 및 성능이 향상에 집중 하는 향상 된 여러 가지를 소개 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/18/2013
-ms.topic: article
 ms.assetid: 6d40d276-1642-4a77-b6c9-02ac914f6805
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/getting-started/hands-on-labs/whats-new-in-aspnet-and-web-development-in-visual-studio-2012
 msc.type: authoredcontent
-ms.openlocfilehash: d037ccb62693a07ab8e2640b2d930ec7093b35da
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 474df5c8e2cee820a3bdd80ba45e6504a025cdf1
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37375887"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37823610"
 ---
 <a name="whats-new-in-aspnet-and-web-development-in-visual-studio-2012"></a>ASP.NET 및 웹 개발에 Visual Studio 2012의 새로운 기능
 ====================

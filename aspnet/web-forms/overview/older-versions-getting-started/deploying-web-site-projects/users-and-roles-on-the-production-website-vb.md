@@ -4,19 +4,16 @@ title: 프로덕션 웹 사이트 (VB)의 사용자 및 역할 | Microsoft Docs
 author: rick-anderson
 description: ASP.NET 웹 사이트 관리 도구 (WSAT) 멤버 자격 및 역할 설정을 구성 하 고 만들기를 위한 웹 기반 사용자 인터페이스를 제공 편집을 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/09/2009
-ms.topic: article
 ms.assetid: 491ed5ae-9be1-4191-87be-65e4e1c57690
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/users-and-roles-on-the-production-website-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5b2a5ea84c5c16ad5bf4e3041d31ad29660d965f
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 0b4b5edef5c0b78abefb007f05d856fddd567b5f
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37380378"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37820904"
 ---
 <a name="users-and-roles-on-the-production-website-vb"></a>프로덕션 웹 사이트 (VB)의 사용자 및 역할
 ====================

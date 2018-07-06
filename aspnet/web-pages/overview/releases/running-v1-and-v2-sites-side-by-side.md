@@ -4,19 +4,16 @@ title: 다른 버전의 ASP.NET 웹 페이지 (Razor) Side-by-side 실행 | Micr
 author: tfitzmac
 description: 이 문서에서는 웹 사이트는 서로 다른 버전을 사용 하도록 구성 된 경우 동일한 컴퓨터 또는 서버에서 ASP.NET Web Pages (Razor) 웹 사이트를 실행 하는 방법에 설명 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/10/2014
-ms.topic: article
 ms.assetid: a861409b-4ae6-4868-9e09-87edfac3535f
-ms.technology: dotnet-webpages
 msc.legacyurl: /web-pages/overview/releases/running-v1-and-v2-sites-side-by-side
 msc.type: authoredcontent
-ms.openlocfilehash: aa2bf41054540cc67b7c0b4669e356e732fed8d1
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 86b1d5babac747eb4fa7ba8abde0e6155c8b17fb
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37402459"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37810058"
 ---
 <a name="running-different-versions-of-aspnet-web-pages-razor-side-by-side"></a>ASP.NET 웹 페이지 (Razor)의 다른 버전을 나란히 실행
 ====================

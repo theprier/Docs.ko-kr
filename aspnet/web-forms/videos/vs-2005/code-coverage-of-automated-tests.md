@@ -4,19 +4,16 @@ title: 코드 검사의 자동화 된 테스트 | Microsoft Docs
 author: rick-anderson
 description: 이 비디오를 기준으로 코드 검사를 사용 하 여 ASP.NET 웹 응용 프로그램의 효율성은 테스트를 결정 하는 방법에 설명 합니다. 테스트 후에 com...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/23/2007
-ms.topic: article
 ms.assetid: b1a7fbfc-523f-473e-a454-8e6b90099b1e
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/vs-2005/code-coverage-of-automated-tests
 msc.type: video
-ms.openlocfilehash: cf851c001c0e06c0fb2b108b2b54b0496c14042c
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 78ebddc2535384657d03ba6f79cf6dbb22457507
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37395268"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37822210"
 ---
 <a name="code-coverage-of-automated-tests"></a>자동화 된 테스트의 코드 검사
 ====================

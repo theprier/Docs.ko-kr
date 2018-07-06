@@ -4,19 +4,16 @@ title: 데이터베이스 만들기 | Microsoft Docs
 author: shanselman
 description: ASP.NET MVC의 기본 사항을 소개 하는 초보자를 위한 자습서입니다. 읽기 및 쓰기 데이터베이스에서 간단한 웹 응용 프로그램을 만듭니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/14/2010
-ms.topic: article
 ms.assetid: 742df67f-484d-4ef3-af6b-8c791e556b43
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/getting-started-with-mvc/getting-started-with-mvc-part4
 msc.type: authoredcontent
-ms.openlocfilehash: 0e72359095e4c40ef7e56f1290a45ded257143c9
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: fff974edfaffeb164879c10b8e70bd3482c47554
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37362358"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37813762"
 ---
 <a name="creating-a-database"></a>데이터베이스 만들기
 ====================

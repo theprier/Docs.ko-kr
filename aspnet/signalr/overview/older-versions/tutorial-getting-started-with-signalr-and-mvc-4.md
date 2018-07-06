@@ -4,19 +4,16 @@ title: '자습서: 시작 SignalR 1.x 및 MVC 4 | Microsoft Docs'
 author: pfletcher
 description: ASP.NET SignalR 및 ASP.NET MVC 4를 사용 하 여 실시간 채팅 응용 프로그램을 빌드합니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/29/2013
-ms.topic: article
 ms.assetid: eeef9f73-6de3-49f9-b50b-9af22108f2ce
-ms.technology: dotnet-signalr
 msc.legacyurl: /signalr/overview/older-versions/tutorial-getting-started-with-signalr-and-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: cced40f65700eff073aa4cff4560a137a50bbc5b
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 2d9f983a859f2920154d2021bb313ffa7300198e
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37399966"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37823477"
 ---
 <a name="tutorial-getting-started-with-signalr-1x-and-mvc-4"></a>자습서: 시작 SignalR 1.x 및 MVC 4
 ====================

@@ -4,19 +4,16 @@ title: '방법: ASP.NET AJAX 클라이언트 템플릿 사용 | Microsoft Docs'
 author: rick-anderson
 description: AJAX 상호 작용을 빌드, 비동기적으로 서비스 호출 및 결과 데이터를 사용 하 여 페이지를 업데이트 하는 데 참여할는 두 가지 주요 단계가 있습니다. ASP.NET AJAX h...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 12/18/2009
-ms.topic: article
 ms.assetid: 2ab9d1eb-25b7-4bb6-b334-b83e45e9fcbb
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-use-aspnet-ajax-client-templates
 msc.type: video
-ms.openlocfilehash: f2873c9ec4ae57f34f7e41bdf7662d890df40d0f
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 6bbeaf163ddba014ece439e22a2aaae0831a3e43
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37367524"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37820177"
 ---
 <a name="how-do-i-use-aspnet-ajax-client-templates"></a>방법: ASP.NET AJAX 클라이언트 템플릿 사용
 ====================

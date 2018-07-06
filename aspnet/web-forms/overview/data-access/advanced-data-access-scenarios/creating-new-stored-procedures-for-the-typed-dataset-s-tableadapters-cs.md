@@ -4,19 +4,16 @@ title: 새로운 저장 프로시저 만들기 (C#) 형식화 된 데이터 집�
 author: rick-anderson
 description: 이전 자습서에서 코드에서 SQL 문을 생성 하 고 문을 실행 하려면 데이터베이스에 전달 합니다. 또 다른 방법은 s를 사용 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/18/2007
-ms.topic: article
 ms.assetid: 751282ca-5870-4d66-84e4-6cefae23eb4a
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c17cc0bd6cb97ddf21e2f8d6b177b7f97a28575d
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 420c4f33a6df2d7d99daeaac7682ede12adfb122
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37368773"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37824772"
 ---
 <a name="creating-new-stored-procedures-for-the-typed-datasets-tableadapters-c"></a>새로운 저장 프로시저 만들기 (C#) 형식화 된 데이터 집합의 Tableadapter에 대 한
 ====================

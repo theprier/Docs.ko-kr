@@ -4,19 +4,16 @@ title: 사용자 지정 형식 지정 데이터를 기반으로 (C#) | Microsoft
 author: rick-anderson
 description: GridView, DetailsView 또는 FormView에 바인딩된 데이터를 기반으로 형식을 조정 하는 여러 가지 방법으로 수행할 수 있습니다. 이 자습서에서는 l을 합니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/31/2010
-ms.topic: article
 ms.assetid: 871a4574-f89c-4214-b786-79253ed3653b
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/custom-formatting-based-upon-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 505081890ac0eb7a1f248569fda1b14351119275
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 05f83fc178cb3f79a86638d0159e692aef4410ca
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37397986"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37819275"
 ---
 <a name="custom-formatting-based-upon-data-c"></a>사용자 지정 형식 지정 데이터를 기반으로 (C#)
 ====================

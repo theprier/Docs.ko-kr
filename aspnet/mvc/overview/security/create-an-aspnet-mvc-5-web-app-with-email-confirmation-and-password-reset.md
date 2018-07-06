@@ -4,19 +4,16 @@ title: 전자 메일 확인 및 암호 재설정 기능이 (C#), 로그를 사�
 author: Rick-Anderson
 description: 이 자습서에서는 전자 메일 확인 및 ASP.NET Id 멤버 자격 시스템을 사용 하 여 암호를 사용 하 여 ASP.NET MVC 5 웹 앱을 빌드하는 방법을 보여 줍니다. Ca는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/26/2015
-ms.topic: article
 ms.assetid: d4911cb3-1afb-4805-b860-10818c4b1280
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset
 msc.type: authoredcontent
-ms.openlocfilehash: 56c1a5c414fdcece8d827d1187144b4948d8eb93
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 1387c3e9c03e011b610a070aa0c273ded23b463e
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37387045"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37823549"
 ---
 <a name="create-a-secure-aspnet-mvc-5-web-app-with-log-in-email-confirmation-and-password-reset-c"></a>전자 메일 확인 및 암호 재설정 기능이 (C#), 로그를 사용 하 여 보안 ASP.NET MVC 5 웹 앱 만들기
 ====================

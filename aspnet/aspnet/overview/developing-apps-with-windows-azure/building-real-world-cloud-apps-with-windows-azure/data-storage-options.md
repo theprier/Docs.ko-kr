@@ -4,19 +4,16 @@ title: 데이터 저장소 옵션 (실제 클라우드 앱 빌드 azure) | Micro
 author: MikeWasson
 description: 실제 세계 클라우드 앱 빌드 Azure 전자책을 사용 하 여 Scott Guthrie를 개발한 프레젠테이션을 기반으로 합니다. 13 패턴과 그을 수 있는 방법을 설명 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/12/2014
-ms.topic: article
 ms.assetid: e51fcecb-cb33-4f9e-8428-6d2b3d0fe1bf
-ms.technology: ''
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/data-storage-options
 msc.type: authoredcontent
-ms.openlocfilehash: 43e7a03f3bebcca820452ea10e13459d8d275b5a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 16388bf00c291ee21eec7bc72a9c01c33cec9371
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37363509"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37820336"
 ---
 <a name="data-storage-options-building-real-world-cloud-apps-with-azure"></a>데이터 저장소 옵션 (실제 클라우드 앱 빌드 Azure 사용 하 여)
 ====================
