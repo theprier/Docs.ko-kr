@@ -4,29 +4,26 @@ title: MVC2-모델 유효성 검사 | Microsoft Docs
 author: microsoft
 description: 이 비디오에서는 데이터 주석 특성을 사용 하 여 유효성 검사 규칙을 정의 하는 방법 및 클라이언트 쪽 (AJAX) 유효성 검사를 사용 하는 방법에 대 한 배웁니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/23/2010
-ms.topic: article
 ms.assetid: fe3676fd-ecec-4756-8c8d-269da9754c31
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/mvc2-model-validation
 msc.type: video
-ms.openlocfilehash: bbe68e7295480751e2e796ff9676aa18f8b6d7ad
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 018e335d168312e50ecae245a02e2ad72a61bd3e
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37370907"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37832304"
 ---
-<a name="mvc2---model-validation"></a><span data-ttu-id="cf7c6-103">MVC2-모델 유효성 검사</span><span class="sxs-lookup"><span data-stu-id="cf7c6-103">MVC2 - Model Validation</span></span>
+<a name="mvc2---model-validation"></a><span data-ttu-id="ecf57-103">MVC2-모델 유효성 검사</span><span class="sxs-lookup"><span data-stu-id="ecf57-103">MVC2 - Model Validation</span></span>
 ====================
-<span data-ttu-id="cf7c6-104">[Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="cf7c6-104">by [Microsoft](https://github.com/microsoft)</span></span>
+<span data-ttu-id="ecf57-104">[Microsoft](https://github.com/microsoft)</span><span class="sxs-lookup"><span data-stu-id="ecf57-104">by [Microsoft](https://github.com/microsoft)</span></span>
 
-<span data-ttu-id="cf7c6-105">이 비디오에서는 데이터 주석 특성을 사용 하 여 유효성 검사 규칙을 정의 하는 방법 및 클라이언트 쪽 (AJAX) 유효성 검사를 사용 하는 방법에 대 한 배웁니다.</span><span class="sxs-lookup"><span data-stu-id="cf7c6-105">In this video you will learn about how to use Data Annotation Attributes to define your validation rules, and how to enable client-side (AJAX) validation.</span></span>
+<span data-ttu-id="ecf57-105">이 비디오에서는 데이터 주석 특성을 사용 하 여 유효성 검사 규칙을 정의 하는 방법 및 클라이언트 쪽 (AJAX) 유효성 검사를 사용 하는 방법에 대 한 배웁니다.</span><span class="sxs-lookup"><span data-stu-id="ecf57-105">In this video you will learn about how to use Data Annotation Attributes to define your validation rules, and how to enable client-side (AJAX) validation.</span></span>
 
-[<span data-ttu-id="cf7c6-106">&#9654;비디오 (4 분)</span><span class="sxs-lookup"><span data-stu-id="cf7c6-106">&#9654; Watch video (4 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/mvc2-model-validation)
+[<span data-ttu-id="ecf57-106">&#9654;비디오 (4 분)</span><span class="sxs-lookup"><span data-stu-id="ecf57-106">&#9654; Watch video (4 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/mvc2-model-validation)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="cf7c6-107">[이전](mvc2-stronglytyped-helpers.md)
-> [다음](mvc2-template-customization.md)</span><span class="sxs-lookup"><span data-stu-id="cf7c6-107">[Previous](mvc2-stronglytyped-helpers.md)
+> <span data-ttu-id="ecf57-107">[이전](mvc2-stronglytyped-helpers.md)
+> [다음](mvc2-template-customization.md)</span><span class="sxs-lookup"><span data-stu-id="ecf57-107">[Previous](mvc2-stronglytyped-helpers.md)
 [Next](mvc2-template-customization.md)</span></span>
