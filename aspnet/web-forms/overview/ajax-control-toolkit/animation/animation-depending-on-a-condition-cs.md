@@ -4,63 +4,60 @@ title: 조건 (C#)에 따라 애니메이션 | Microsoft Docs
 author: wenz
 description: ASP.NET AJAX Control Toolkit에서 애니메이션 컨트롤 컨트롤 뿐 이지만 컨트롤에 애니메이션을 추가 하는 전체 프레임 워크 아닙니다. 애니메이션 인지 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: b7a28c0d-efb9-443a-80a4-1a5ee54671cd
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/animation-depending-on-a-condition-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c28f4583e6f0d1bb5c1438322980a44aa53fbd89
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: cb08c330d6fbc86035a2f21ad382cc009411bcd6
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37391365"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37808426"
 ---
-<a name="animation-depending-on-a-condition-c"></a><span data-ttu-id="d51ed-104">조건 (C#)에 따라 애니메이션</span><span class="sxs-lookup"><span data-stu-id="d51ed-104">Animation Depending On a Condition (C#)</span></span>
+<a name="animation-depending-on-a-condition-c"></a><span data-ttu-id="9d547-104">조건 (C#)에 따라 애니메이션</span><span class="sxs-lookup"><span data-stu-id="9d547-104">Animation Depending On a Condition (C#)</span></span>
 ====================
-<span data-ttu-id="d51ed-105">[Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="d51ed-105">by [Christian Wenz](https://github.com/wenz)</span></span>
+<span data-ttu-id="9d547-105">[Christian Wenz](https://github.com/wenz)</span><span class="sxs-lookup"><span data-stu-id="9d547-105">by [Christian Wenz](https://github.com/wenz)</span></span>
 
-<span data-ttu-id="d51ed-106">[코드를 다운로드](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation4.cs.zip) 또는 [PDF 다운로드](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation4CS.pdf)</span><span class="sxs-lookup"><span data-stu-id="d51ed-106">[Download Code](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation4.cs.zip) or [Download PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation4CS.pdf)</span></span>
+<span data-ttu-id="9d547-106">[코드를 다운로드](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation4.cs.zip) 또는 [PDF 다운로드](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation4CS.pdf)</span><span class="sxs-lookup"><span data-stu-id="9d547-106">[Download Code](http://download.microsoft.com/download/f/9/a/f9a26acd-8df4-4484-8a18-199e4598f411/Animation4.cs.zip) or [Download PDF](http://download.microsoft.com/download/6/7/1/6718d452-ff89-4d3f-a90e-c74ec2d636a3/animation4CS.pdf)</span></span>
 
-> <span data-ttu-id="d51ed-107">ASP.NET AJAX Control Toolkit에서 애니메이션 컨트롤 컨트롤 뿐 이지만 컨트롤에 애니메이션을 추가 하는 전체 프레임 워크 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="d51ed-107">The Animation control in the ASP.NET AJAX Control Toolkit is not just a control but a whole framework to add animations to a control.</span></span> <span data-ttu-id="d51ed-108">여부 애니메이션 실행 되는 여부 일부 JavaScript 코드의 형태로 조건에도 달라질 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d51ed-108">Whether an animation is run or not can also depend on a condition in form of some JavaScript code.</span></span>
+> <span data-ttu-id="9d547-107">ASP.NET AJAX Control Toolkit에서 애니메이션 컨트롤 컨트롤 뿐 이지만 컨트롤에 애니메이션을 추가 하는 전체 프레임 워크 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="9d547-107">The Animation control in the ASP.NET AJAX Control Toolkit is not just a control but a whole framework to add animations to a control.</span></span> <span data-ttu-id="9d547-108">여부 애니메이션 실행 되는 여부 일부 JavaScript 코드의 형태로 조건에도 달라질 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="9d547-108">Whether an animation is run or not can also depend on a condition in form of some JavaScript code.</span></span>
 
 
-## <a name="overview"></a><span data-ttu-id="d51ed-109">개요</span><span class="sxs-lookup"><span data-stu-id="d51ed-109">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="9d547-109">개요</span><span class="sxs-lookup"><span data-stu-id="9d547-109">Overview</span></span>
 
-<span data-ttu-id="d51ed-110">ASP.NET AJAX Control Toolkit에서 애니메이션 컨트롤 컨트롤 뿐 이지만 컨트롤에 애니메이션을 추가 하는 전체 프레임 워크 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="d51ed-110">The Animation control in the ASP.NET AJAX Control Toolkit is not just a control but a whole framework to add animations to a control.</span></span> <span data-ttu-id="d51ed-111">여부 애니메이션 실행 되는 여부 일부 JavaScript 코드의 형태로 조건에도 달라질 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d51ed-111">Whether an animation is run or not can also depend on a condition in form of some JavaScript code.</span></span>
+<span data-ttu-id="9d547-110">ASP.NET AJAX Control Toolkit에서 애니메이션 컨트롤 컨트롤 뿐 이지만 컨트롤에 애니메이션을 추가 하는 전체 프레임 워크 아닙니다.</span><span class="sxs-lookup"><span data-stu-id="9d547-110">The Animation control in the ASP.NET AJAX Control Toolkit is not just a control but a whole framework to add animations to a control.</span></span> <span data-ttu-id="9d547-111">여부 애니메이션 실행 되는 여부 일부 JavaScript 코드의 형태로 조건에도 달라질 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="9d547-111">Whether an animation is run or not can also depend on a condition in form of some JavaScript code.</span></span>
 
-## <a name="steps"></a><span data-ttu-id="d51ed-112">단계</span><span class="sxs-lookup"><span data-stu-id="d51ed-112">Steps</span></span>
+## <a name="steps"></a><span data-ttu-id="9d547-112">단계</span><span class="sxs-lookup"><span data-stu-id="9d547-112">Steps</span></span>
 
-<span data-ttu-id="d51ed-113">첫째, 포함 된 `ScriptManager` 페이지 그런 다음 ASP.NET AJAX 라이브러리 로드 되 면 컨트롤 도구 키트를 사용 하 여:</span><span class="sxs-lookup"><span data-stu-id="d51ed-113">First of all, include the `ScriptManager` in the page; then, the ASP.NET AJAX library is loaded, making it possible to use the Control Toolkit:</span></span>
+<span data-ttu-id="9d547-113">첫째, 포함 된 `ScriptManager` 페이지 그런 다음 ASP.NET AJAX 라이브러리 로드 되 면 컨트롤 도구 키트를 사용 하 여:</span><span class="sxs-lookup"><span data-stu-id="9d547-113">First of all, include the `ScriptManager` in the page; then, the ASP.NET AJAX library is loaded, making it possible to use the Control Toolkit:</span></span>
 
 [!code-aspx[Main](animation-depending-on-a-condition-cs/samples/sample1.aspx)]
 
-<span data-ttu-id="d51ed-114">그러면 다음과 같은 텍스트 패널에 애니메이션 적용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="d51ed-114">The animation will be applied to a panel of text which looks like this:</span></span>
+<span data-ttu-id="9d547-114">그러면 다음과 같은 텍스트 패널에 애니메이션 적용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="9d547-114">The animation will be applied to a panel of text which looks like this:</span></span>
 
 [!code-aspx[Main](animation-depending-on-a-condition-cs/samples/sample2.aspx)]
 
-<span data-ttu-id="d51ed-115">패널에 대 한 연결 된 CSS 클래스에 유용한 배경 색을 정의 하 고 패널 고정된 너비를 설정할 수도:</span><span class="sxs-lookup"><span data-stu-id="d51ed-115">In the associated CSS class for the panel, define a nice background color and also set a fixed width for the panel:</span></span>
+<span data-ttu-id="9d547-115">패널에 대 한 연결 된 CSS 클래스에 유용한 배경 색을 정의 하 고 패널 고정된 너비를 설정할 수도:</span><span class="sxs-lookup"><span data-stu-id="9d547-115">In the associated CSS class for the panel, define a nice background color and also set a fixed width for the panel:</span></span>
 
 [!code-css[Main](animation-depending-on-a-condition-cs/samples/sample3.css)]
 
-<span data-ttu-id="d51ed-116">그런 다음 추가 `AnimationExtender` 페이지에서 제공 하는 `ID`, `TargetControlID` 특성과 필수 항목 이지만 `runat="server":`</span><span class="sxs-lookup"><span data-stu-id="d51ed-116">Then, add the `AnimationExtender` to the page, providing an `ID`, the `TargetControlID` attribute and the obligatory `runat="server":`</span></span>
+<span data-ttu-id="9d547-116">그런 다음 추가 `AnimationExtender` 페이지에서 제공 하는 `ID`, `TargetControlID` 특성과 필수 항목 이지만 `runat="server":`</span><span class="sxs-lookup"><span data-stu-id="9d547-116">Then, add the `AnimationExtender` to the page, providing an `ID`, the `TargetControlID` attribute and the obligatory `runat="server":`</span></span>
 
 [!code-aspx[Main](animation-depending-on-a-condition-cs/samples/sample4.aspx)]
 
-<span data-ttu-id="d51ed-117">내 합니다 `<Animations>` 노드를 사용 하 여 `<OnLoad>` 페이지가 완전히 로드 되 면 애니메이션을 실행 합니다.</span><span class="sxs-lookup"><span data-stu-id="d51ed-117">Within the `<Animations>` node, use `<OnLoad>` to run the animations once the page has been fully loaded.</span></span> <span data-ttu-id="d51ed-118">대신 일반 애니메이션 중 하나는 `<Condition>` 요소 고려해 야 합니다.</span><span class="sxs-lookup"><span data-stu-id="d51ed-118">Instead of one of the regular animations, the `<Condition>` element comes into play.</span></span> <span data-ttu-id="d51ed-119">값으로 제공 하는 JavaScript 코드는 `ConditionScript` 특성은 런타임 시 실행 됩니다.</span><span class="sxs-lookup"><span data-stu-id="d51ed-119">The JavaScript code provided as the value of the `ConditionScript` attribute is executed at runtime.</span></span> <span data-ttu-id="d51ed-120">True로 평가 될 경우 애니메이션 실행 되어이 고, 그렇지 없습니다.</span><span class="sxs-lookup"><span data-stu-id="d51ed-120">If it evaluates to true, the animation is executed, otherwise not.</span></span> <span data-ttu-id="d51ed-121">다음 태그는 임의 시 사례의 50%에서 실행 되 고 각 두 애니메이션을 제공 합니다.</span><span class="sxs-lookup"><span data-stu-id="d51ed-121">The following markup provides two animations, each of them being executed in 50% of cases upon random.</span></span> <span data-ttu-id="d51ed-122">내에서 애니메이션 하나 수만 있으므로 `<OnLoad>`, 두 개의 `<Condition>` 애니메이션 사용 하 여 함께 조인 되는 `<Sequence>` 요소:</span><span class="sxs-lookup"><span data-stu-id="d51ed-122">Since there may only be one animation within `<OnLoad>`, the two `<Condition>` animations are joined together using the `<Sequence>` element:</span></span>
+<span data-ttu-id="9d547-117">내 합니다 `<Animations>` 노드를 사용 하 여 `<OnLoad>` 페이지가 완전히 로드 되 면 애니메이션을 실행 합니다.</span><span class="sxs-lookup"><span data-stu-id="9d547-117">Within the `<Animations>` node, use `<OnLoad>` to run the animations once the page has been fully loaded.</span></span> <span data-ttu-id="9d547-118">대신 일반 애니메이션 중 하나는 `<Condition>` 요소 고려해 야 합니다.</span><span class="sxs-lookup"><span data-stu-id="9d547-118">Instead of one of the regular animations, the `<Condition>` element comes into play.</span></span> <span data-ttu-id="9d547-119">값으로 제공 하는 JavaScript 코드는 `ConditionScript` 특성은 런타임 시 실행 됩니다.</span><span class="sxs-lookup"><span data-stu-id="9d547-119">The JavaScript code provided as the value of the `ConditionScript` attribute is executed at runtime.</span></span> <span data-ttu-id="9d547-120">True로 평가 될 경우 애니메이션 실행 되어이 고, 그렇지 없습니다.</span><span class="sxs-lookup"><span data-stu-id="9d547-120">If it evaluates to true, the animation is executed, otherwise not.</span></span> <span data-ttu-id="9d547-121">다음 태그는 임의 시 사례의 50%에서 실행 되 고 각 두 애니메이션을 제공 합니다.</span><span class="sxs-lookup"><span data-stu-id="9d547-121">The following markup provides two animations, each of them being executed in 50% of cases upon random.</span></span> <span data-ttu-id="9d547-122">내에서 애니메이션 하나 수만 있으므로 `<OnLoad>`, 두 개의 `<Condition>` 애니메이션 사용 하 여 함께 조인 되는 `<Sequence>` 요소:</span><span class="sxs-lookup"><span data-stu-id="9d547-122">Since there may only be one animation within `<OnLoad>`, the two `<Condition>` animations are joined together using the `<Sequence>` element:</span></span>
 
 [!code-aspx[Main](animation-depending-on-a-condition-cs/samples/sample5.aspx)]
 
-<span data-ttu-id="d51ed-123">보다 작음 부호 (`<`)에 `ConditionScript` 이스케이프 ()을 설정 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="d51ed-123">Note that the less than sign (`<`) in the `ConditionScript` attribute must be escaped ().</span></span> <span data-ttu-id="d51ed-124">경우 하거나 애니메이션 실행이 없습니다,이 스크립트를 실행 하면 아니라 둘 중 하나 또는 둘 다 수행 합니다.</span><span class="sxs-lookup"><span data-stu-id="d51ed-124">When you run this script, either no animation runs, or one of the two does, or both do.</span></span>
+<span data-ttu-id="9d547-123">보다 작음 부호 (`<`)에 `ConditionScript` 이스케이프 ()을 설정 해야 합니다.</span><span class="sxs-lookup"><span data-stu-id="9d547-123">Note that the less than sign (`<`) in the `ConditionScript` attribute must be escaped ().</span></span> <span data-ttu-id="9d547-124">경우 하거나 애니메이션 실행이 없습니다,이 스크립트를 실행 하면 아니라 둘 중 하나 또는 둘 다 수행 합니다.</span><span class="sxs-lookup"><span data-stu-id="9d547-124">When you run this script, either no animation runs, or one of the two does, or both do.</span></span>
 
 
-<span data-ttu-id="d51ed-125">[![패널은 페이드아웃 크기 조정 없이 첫 번째 두 번째 애니메이션 실행 하지 않은 하므로](animation-depending-on-a-condition-cs/_static/image2.png)](animation-depending-on-a-condition-cs/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="d51ed-125">[![The panel is fading out without resizing, so the second animation runs, the first one didn't](animation-depending-on-a-condition-cs/_static/image2.png)](animation-depending-on-a-condition-cs/_static/image1.png)</span></span>
+<span data-ttu-id="9d547-125">[![패널은 페이드아웃 크기 조정 없이 첫 번째 두 번째 애니메이션 실행 하지 않은 하므로](animation-depending-on-a-condition-cs/_static/image2.png)](animation-depending-on-a-condition-cs/_static/image1.png)</span><span class="sxs-lookup"><span data-stu-id="9d547-125">[![The panel is fading out without resizing, so the second animation runs, the first one didn't](animation-depending-on-a-condition-cs/_static/image2.png)](animation-depending-on-a-condition-cs/_static/image1.png)</span></span>
 
-<span data-ttu-id="d51ed-126">패널은 페이드아웃 크기 조정 없이 첫 번째 두 번째 애니메이션 실행 하지 않은 하도록 ([클릭 하 여 큰 이미지 보기](animation-depending-on-a-condition-cs/_static/image3.png))</span><span class="sxs-lookup"><span data-stu-id="d51ed-126">The panel is fading out without resizing, so the second animation runs, the first one didn't ([Click to view full-size image](animation-depending-on-a-condition-cs/_static/image3.png))</span></span>
+<span data-ttu-id="9d547-126">패널은 페이드아웃 크기 조정 없이 첫 번째 두 번째 애니메이션 실행 하지 않은 하도록 ([클릭 하 여 큰 이미지 보기](animation-depending-on-a-condition-cs/_static/image3.png))</span><span class="sxs-lookup"><span data-stu-id="9d547-126">The panel is fading out without resizing, so the second animation runs, the first one didn't ([Click to view full-size image](animation-depending-on-a-condition-cs/_static/image3.png))</span></span>
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="d51ed-127">[이전](executing-several-animations-after-each-other-cs.md)
-> [다음](picking-one-animation-out-of-a-list-cs.md)</span><span class="sxs-lookup"><span data-stu-id="d51ed-127">[Previous](executing-several-animations-after-each-other-cs.md)
+> <span data-ttu-id="9d547-127">[이전](executing-several-animations-after-each-other-cs.md)
+> [다음](picking-one-animation-out-of-a-list-cs.md)</span><span class="sxs-lookup"><span data-stu-id="9d547-127">[Previous](executing-several-animations-after-each-other-cs.md)
 [Next](picking-one-animation-out-of-a-list-cs.md)</span></span>
