@@ -4,19 +4,16 @@ title: 사용 하도록 TableAdapter 업데이트 (VB)를 조인 | Microsoft Doc
 author: rick-anderson
 description: 데이터베이스를 사용 하 여 작업 하는 경우 여러 테이블에 걸쳐 요청 데이터에 공통적으로 적용 됩니다. 서로 다른 두 테이블에서 데이터를 검색 하거나 사용할 수 있습니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/18/2007
-ms.topic: article
 ms.assetid: e624a3e0-061b-4efc-8b0e-5877f9ff6714
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/updating-the-tableadapter-to-use-joins-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9987d4dab7de4fc19d36625fcebc9d63e21acbe8
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 43e0caf63600858f7f2211f3d2e98aa2c6425820
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37377174"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37832382"
 ---
 <a name="updating-the-tableadapter-to-use-joins-vb"></a>사용 하도록 TableAdapter 업데이트 (VB)를 조인
 ====================

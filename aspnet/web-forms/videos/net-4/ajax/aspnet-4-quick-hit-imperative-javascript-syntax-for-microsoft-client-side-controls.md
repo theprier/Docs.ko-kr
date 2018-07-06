@@ -4,19 +4,16 @@ title: Visual Studio 2010 빠른 적중-명령적 JavaScript 구문 Microsoft �
 author: JoeStagner
 description: 이 비디오에서는 Microsoft 클라이언트 쪽 컨트롤에 대 한 명령적 JavaScript 구문에 배웁니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 11/16/2009
-ms.topic: article
 ms.assetid: d4df6c61-9ca2-4e7c-8b65-749847f15d2c
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/net-4/ajax/aspnet-4-quick-hit-imperative-javascript-syntax-for-microsoft-client-side-controls
 msc.type: video
-ms.openlocfilehash: 0f7cdd10ce8515aa6ed8aad22deefcf6fa60d995
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 9c00958a9832a393492b67fef198d9cd9b8fe2c5
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37383492"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37836683"
 ---
 <a name="aspnet-4-quick-hit---imperative-javascript-syntax-for-microsoft-client-side-controls"></a>ASP.NET 4 "빠른 Hit"-Microsoft 클라이언트 쪽에 대 한 명령적 JavaScript 구문 제어
 ====================

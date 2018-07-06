@@ -4,19 +4,16 @@ title: (C#) Repeater에 ConfirmButton 사용 | Microsoft Docs
 author: wenz
 description: AJAX Control Toolkit의 ConfirmButton extender 만듭니다 Yes/사용자가 단추를 클릭할 때 팝업 없습니다 (LinkButton 컨트롤 포함). 경우에만 예는...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/02/2008
-ms.topic: article
 ms.assetid: a973ed3e-400c-4925-ace2-0b086b479301
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/confirmbutton/using-a-confirmbutton-in-a-repeater-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d3706578427442a7a1034596bdd9bd89eecf5f67
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: fd0cdde5db44d1437000008f1fb5e7b13f0ca77a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37369753"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37805238"
 ---
 <a name="using-a-confirmbutton-in-a-repeater-c"></a>(C#) Repeater에 ConfirmButton 사용
 ====================

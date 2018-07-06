@@ -4,19 +4,16 @@ title: 추가 컨트롤러 (C#) | Microsoft Docs
 author: Rick-Anderson
 description: 이 자습서는 Microsoft Visual Web Developer 2010 Express 서비스 팩 1에는 i를 사용 하 여 ASP.NET MVC 웹 응용 프로그램을 빌드하는 기본 사항을 설명 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 01/12/2011
-ms.topic: article
 ms.assetid: 0b8c56b5-fdf3-42dd-a866-98fbe0ab78a0
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: ba6cc715f8c8eaf624ab5314e3afbfd68da11485
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 0c13248960384e8d773f9c5ba3d927b6a8502938
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37370894"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37805861"
 ---
 <a name="adding-a-controller-c"></a>컨트롤러 (C#) 추가
 ====================

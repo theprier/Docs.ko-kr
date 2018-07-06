@@ -4,19 +4,16 @@ title: SignalR에서 그룹 사용 | Microsoft Docs
 author: pfletcher
 description: 이 항목에서는 허브 API를 사용 하 여 그룹 멤버 자격 정보를 유지 하는 방법을 설명 합니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 06/10/2014
-ms.topic: article
 ms.assetid: cd378ecd-3e9e-4236-b902-65916d85a048
-ms.technology: dotnet-signalr
 msc.legacyurl: /signalr/overview/guide-to-the-api/working-with-groups
 msc.type: authoredcontent
-ms.openlocfilehash: b4ac3053a5b324de11d69865c92c6783aadab7f8
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: c1df772c19bfa89c1d780d09d56c6bc4a79967c6
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37378260"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37806195"
 ---
 <a name="working-with-groups-in-signalr"></a>SignalR에서 그룹 작업
 ====================

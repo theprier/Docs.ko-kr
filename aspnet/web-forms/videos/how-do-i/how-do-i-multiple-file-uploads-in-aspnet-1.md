@@ -4,19 +4,16 @@ title: '[어떻게 할까요?]  ASP.NET 1에서에서 여러 파일 업로드 | 
 author: JoeStagner
 description: 이 비디오에서는 ASP.NET 응용 프로그램에 여러 파일을 업로드에 대해서는 자세히는 필자입니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/12/2008
-ms.topic: article
 ms.assetid: 2e95bedf-4741-4c9c-ab7a-0edfb171efcd
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-multiple-file-uploads-in-aspnet-1
 msc.type: video
-ms.openlocfilehash: f875aa3b9e56710ad90346a71dcc6aeeb19447d9
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 9e5ecc452cc6ea40090a9b21a08fafab2331e0ed
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37400511"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37833891"
 ---
 <a name="how-do-i--multiple-file-uploads-in-aspnet-1"></a>[어떻게 할까요?]  ASP.NET 1에서에서 여러 파일 업로드
 ====================

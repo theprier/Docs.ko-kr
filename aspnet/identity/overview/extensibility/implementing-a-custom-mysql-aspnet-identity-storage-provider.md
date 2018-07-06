@@ -4,19 +4,16 @@ title: 사용자 지정 MySQL ASP.NET Id 저장소 공급자 구현 | Microsoft 
 author: raquelsa
 description: ASP.NET Id는 사용자 고유의 저장소 공급자를 만들고 응용은 작업이 다시 실행 하지 않고 응용 프로그램에 연결할 수 있는 확장 가능한 시스템...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/22/2015
-ms.topic: article
 ms.assetid: 248f5fe7-39ba-40ea-ab1e-71a69b0bd649
-ms.technology: ''
 msc.legacyurl: /identity/overview/extensibility/implementing-a-custom-mysql-aspnet-identity-storage-provider
 msc.type: authoredcontent
-ms.openlocfilehash: 44c21b749377c5df445a20deee3f1b689c7c84c0
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: e5784991a95dcff0db38d87707bc83555da716df
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37381129"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37805677"
 ---
 <a name="implementing-a-custom-mysql-aspnet-identity-storage-provider"></a>사용자 지정 MySQL ASP.NET Id 저장소 공급자 구현
 ====================

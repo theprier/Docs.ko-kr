@@ -4,19 +4,16 @@ title: IDataErrorInfo 인터페이스 (VB)를 사용 하 여 유효성 검사 | 
 author: StephenWalther
 description: Stephen walther가 모델 클래스에서 IDataErrorInfo 인터페이스를 구현 하 여 사용자 지정 유효성 검사 오류 메시지를 표시 하는 방법을 보여 줍니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/02/2009
-ms.topic: article
 ms.assetid: 3a8a9d9f-82dd-4959-b7c6-960e9ce95df1
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validating-with-the-idataerrorinfo-interface-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 9faaab92b7baf0af5f0d8718e1d80e26c29bcca0
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 55716b48a7991424a4d03bbbc7d96f8f12f8dabb
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37399476"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37834021"
 ---
 <a name="validating-with-the-idataerrorinfo-interface-vb"></a>IDataErrorInfo 인터페이스 (VB)를 사용 하 여 유효성 검사
 ====================

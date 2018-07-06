@@ -4,19 +4,16 @@ title: Entity Framework 시나리오는 MVC 웹 응용 프로그램 (10 / 10)에
 author: tdykstra
 description: Contoso University 샘플 웹 응용 프로그램에는 Entity Framework 5 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 4 응용 프로그램을 만드는 방법을 보여 줍니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 07/30/2013
-ms.topic: article
 ms.assetid: 64906a1d-f734-41cf-9615-ee95f8740996
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/advanced-entity-framework-scenarios-for-an-mvc-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: e4e0a754163ad6b44ca02678fe6a0407e71ec3e6
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 5a75d85140a40660314ab267fdd74a8058d791fc
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37398199"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37832677"
 ---
 <a name="advanced-entity-framework-scenarios-for-an-mvc-web-application-10-of-10"></a>MVC 웹 응용 프로그램 (10 / 10)에 대 한 고급 Entity Framework 시나리오
 ====================

@@ -4,19 +4,16 @@ title: 컨트롤러에서 모델의 데이터에 액세스 | Microsoft Docs
 author: Rick-Anderson
 description: '참고: 업데이트 된이이 자습서는 ASP.NET MVC 5 및 Visual Studio 2013을 사용 하는 있습니다. 것이 더 안전 하 고 더 간단 하 게 따르고 데모 중...'
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/28/2012
-ms.topic: article
 ms.assetid: 61e0206d-7f32-4018-992d-0a51b48b37dc
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/accessing-your-models-data-from-a-controller
 msc.type: authoredcontent
-ms.openlocfilehash: fb052b85d033f2c60f1fab6f5d5a1773aad22d35
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: cf1d27088c1e65d55a6820825eebe63f7fdcb515
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37368614"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37804939"
 ---
 <a name="accessing-your-models-data-from-a-controller"></a>컨트롤러에서 모델의 데이터에 액세스
 ====================
