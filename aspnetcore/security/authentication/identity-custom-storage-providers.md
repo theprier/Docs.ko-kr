@@ -5,12 +5,12 @@ description: ASP.NET Core Id에 대 한 사용자 지정 저장소 공급자를 
 ms.author: riande
 ms.date: 05/24/2017
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: d7baa8ed142a7d3337adceff2dc93274604bde4c
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: bdde9b93449c2f3f8d43cc4ff86472ed8a60ed1c
+ms.sourcegitcommit: a09820f91e71a7d98b7347bf93210abb9e995e22
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37831338"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37889170"
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>ASP.NET Core Id에 대 한 사용자 지정 저장소 공급자
 
@@ -51,7 +51,7 @@ ASP.NET Core Id 관리자 및 저장소를 호출 하는 클래스로 구성 됩
 
 새 인스턴스를 만들 때 `UserManager` 또는 `RoleManager` 사용자 클래스의 형식을 제공 하 고 저장소 클래스의 인스턴스를 인수로 전달 합니다. 이 방법을 사용 하면 ASP.NET Core에 사용자 지정된 클래스를 연결할 수 있습니다. 
 
-[새 저장소 공급자를 사용 하도록 앱을 다시 구성](#reconfigure-app-to-use-new-storage-provider) 인스턴스화하는 방법을 보여 줍니다 `UserManager` 고 `RoleManager` 사용자 지정된 저장소를 사용 하 여 합니다.
+[새 저장소 공급자를 사용 하도록 앱을 다시 구성](#reconfigure-app-to-use-a-new-storage-provider) 인스턴스화하는 방법을 보여 줍니다 `UserManager` 고 `RoleManager` 사용자 지정된 저장소를 사용 하 여 합니다.
 
 ## <a name="aspnet-core-identity-stores-data-types"></a>ASP.NET Core Id 데이터 형식 저장
 
