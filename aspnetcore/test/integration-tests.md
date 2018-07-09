@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/30/2018
 uid: test/integration-tests
-ms.openlocfilehash: 2893ff41a104b4bef1277675afaf7dd1c758ecd6
-ms.sourcegitcommit: 79d2457989fc5b08925582dab0f1511ab11ad741
+ms.openlocfilehash: e18c5704c9d4db9669d8f831f1b556d1723a0fc1
+ms.sourcegitcommit: ea7ec8d47f94cfb8e008d771f647f86bbb4baa44
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37347254"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37894168"
 ---
 # <a name="integration-tests-in-aspnet-core"></a>ASP.NET Core에서 통합 테스트
 
@@ -71,7 +71,7 @@ ASP.NET Core에서 통합 테스트 하려면 다음 항목이 필요 합니다.
 1. 앱에 대 한 요청을 제출 하는 테스트 서버 클라이언트 생성 됩니다.
 1. *정렬* 테스트 단계가 실행 됩니다: 테스트 응용 프로그램 요청을 준비 합니다.
 1. *Act* 테스트 단계가 실행 됩니다: 클라이언트 요청을 제출 하 고 응답을 수신 합니다.
-1. *Assert* 테스트 단계가 실행 됩니다: 합니다 *실제* 응답으로 유효성을 검사를 *전달* 또는 *실패* 기반는 *필요 합니다.*  응답 합니다.
+1. *Assert* 테스트 단계가 실행 됩니다: 합니다 *실제* 응답으로 유효성을 검사를 *전달* 또는 *실패* 기반는 *필요 합니다. * 응답 합니다.
 1. 프로세스가 모든 테스트 실행 될 때까지 계속 됩니다.
 1. 테스트 결과 보고 됩니다.
 
@@ -96,10 +96,16 @@ ASP.NET Core에서 통합 테스트 하려면 다음 항목이 필요 합니다.
 
 테스트 프로젝트는 다음 작업을 수행 해야합니다.
 
-* 에 대 한 패키지 참조 [Microsoft.AspNetCore.App](https://www.nuget.org/packages/Microsoft.AspNetCore.App/)합니다.
-* 웹 SDK를 사용 하 여 프로젝트 파일에서 (`<Project Sdk="Microsoft.NET.Sdk.Web">`).
+* 다음 패키지를 참조 합니다.
+  - [Microsoft.AspNetCore.App](https://www.nuget.org/packages/Microsoft.AspNetCore.App/)
+  - [Microsoft.AspNetCore.Mvc.Testing](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc.Testing/)
+* Web SDK 프로젝트 파일에 지정 (`<Project Sdk="Microsoft.NET.Sdk.Web">`). 웹 SDK를 참조할 때 필요 합니다 [Microsoft.AspNetCore.App 메타 패키지](xref:fundamentals/metapackage-app)합니다.
 
-이러한 prerequesities에서 볼 수 있습니다 합니다 [샘플 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/test/integration-tests/samples/)합니다. 검사는 *tests/RazorPagesProject.Tests/RazorPagesProject.Tests.csproj* 파일입니다.
+이러한 필수 구성이 요소에서 볼 수 있습니다 합니다 [샘플 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/test/integration-tests/samples/)합니다. 검사는 *tests/RazorPagesProject.Tests/RazorPagesProject.Tests.csproj* 파일입니다. 샘플 앱에서는 합니다 [xUnit](https://xunit.github.io/) 테스트 프레임 워크와 [AngleSharp](https://anglesharp.github.io/) 파서 라이브러리, 샘플 앱 참조 하므로:
+
+* [xunit](https://www.nuget.org/packages/xunit/)
+* [xunit.runner.visualstudio](https://www.nuget.org/packages/xunit.runner.visualstudio/)
+* [AngleSharp](https://www.nuget.org/packages/AngleSharp/)
 
 ## <a name="basic-tests-with-the-default-webapplicationfactory"></a>Basic는 WebApplicationFactory 기본값을 사용 하 여 테스트
 

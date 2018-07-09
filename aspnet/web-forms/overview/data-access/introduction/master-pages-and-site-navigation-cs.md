@@ -4,19 +4,16 @@ title: 마스터 페이지 및 사이트 탐색 (C#) | Microsoft Docs
 author: rick-anderson
 description: 친숙 한 웹 사이트의 일반적인 특징 중 하나는 일관 되 고 사이트 전체 페이지 레이아웃 및 탐색 체계를가지고 있다고 합니다. 이 자습서는 방법을 찾고 y...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/31/2010
-ms.topic: article
 ms.assetid: 5aee8202-a4e3-4aa9-8a95-cd5d156cea4c
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/introduction/master-pages-and-site-navigation-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7f152dcd32b1a7e3022d939c27860a81396a34b0
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 0ad86398122f3a47721bda689b7f5afc706047bc
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37370363"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37816498"
 ---
 <a name="master-pages-and-site-navigation-c"></a>마스터 페이지 및 사이트 탐색 (C#)
 ====================
