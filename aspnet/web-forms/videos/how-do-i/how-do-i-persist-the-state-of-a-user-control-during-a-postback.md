@@ -4,25 +4,22 @@ title: '[How Do I]: Persist the State of a User Control During a Postback | Micr
 author: rick-anderson
 description: 이 비디오 Chris Pels 사용자 컨트롤에 하나 이상의 개체의 상태를 유지 하는 방법을 보여 줍니다. 먼저는 abilit 나타내는 사용자 컨트롤을 만들...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 04/02/2009
-ms.topic: article
 ms.assetid: d1bca4c6-838c-40f7-87ec-80bb67e483e5
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-persist-the-state-of-a-user-control-during-a-postback
 msc.type: video
-ms.openlocfilehash: fde95af4f639d778a108a0267fb738ac2e0a2d46
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 7862d83d3df3ca5407b7d8fd465cf42da8e7228a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37372613"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37805180"
 ---
 <a name="how-do-i-persist-the-state-of-a-user-control-during-a-postback"></a>[방법]: 포스트백 하는 동안 사용자 정의 컨트롤의 상태를 유지 합니다.
 [How Do I]: Persist the State of a User Control During a Postback
 ====================
-<span data-ttu-id="bb48e-104">[Chris Pels](https://twitter.com/chrispels)</span><span class="sxs-lookup"><span data-stu-id="bb48e-104">by [Chris Pels](https://twitter.com/chrispels)</span></span>
+<span data-ttu-id="e2280-104">[Chris Pels](https://twitter.com/chrispels)</span><span class="sxs-lookup"><span data-stu-id="e2280-104">by [Chris Pels](https://twitter.com/chrispels)</span></span>
 
-<span data-ttu-id="bb48e-105">이 비디오 Chris Pels 사용자 컨트롤에 하나 이상의 개체의 상태를 유지 하는 방법을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="bb48e-105">In this video Chris Pels shows how to persist the state of one or more objects in a user control.</span></span> <span data-ttu-id="bb48e-106">첫째, 사용자 검색에 대 한 필터 조건을 지정 하는 기능을 나타내는 사용자 정의 컨트롤을 만들어집니다.</span><span class="sxs-lookup"><span data-stu-id="bb48e-106">First, a user control is created that represents the ability for a user to specify filter criteria for a search.</span></span> <span data-ttu-id="bb48e-107">또한 필터 클래스과 함께 필터 정보를 저장할 만들어집니다.</span><span class="sxs-lookup"><span data-stu-id="bb48e-107">In addition, a companion Filter class is created to store the filter information.</span></span> <span data-ttu-id="bb48e-108">여러 사용자 인터페이스 요소와 함께 일부 메서드 및 필터 클래스 인스턴스에서 현재 필터 정보를 저장 하는 속성 필터 컨트롤에 추가 됩니다.</span><span class="sxs-lookup"><span data-stu-id="bb48e-108">Several user interface elements are added to the filter control along with some methods and properties to store the current filter information in the Filter class instance.</span></span> <span data-ttu-id="bb48e-109">다음으로, 사용자 컨트롤 지 속성 RegisterRequiresControlState 메서드 및 연결 된 저장 또는 복원할 메서드를 사용 하 여 구현 됩니다.</span><span class="sxs-lookup"><span data-stu-id="bb48e-109">Next, the user control persistence is implemented using the RegisterRequiresControlState method and associated Save/Restore methods.</span></span> <span data-ttu-id="bb48e-110">이러한 메서드는 페이지 포스트백 중 필터 클래스 및 해당 데이터의 인스턴스를 저장합니다.</span><span class="sxs-lookup"><span data-stu-id="bb48e-110">These methods store the instance of the filter class and its data during page postbacks.</span></span> <span data-ttu-id="bb48e-111">마지막으로 컨트롤 상태 구현에 여러 개체를 저장 하는 방법 설명 하는 합니다.</span><span class="sxs-lookup"><span data-stu-id="bb48e-111">Finally, there is a discussion of how to store multiple objects in control state implementation.</span></span>
+<span data-ttu-id="e2280-105">이 비디오 Chris Pels 사용자 컨트롤에 하나 이상의 개체의 상태를 유지 하는 방법을 보여 줍니다.</span><span class="sxs-lookup"><span data-stu-id="e2280-105">In this video Chris Pels shows how to persist the state of one or more objects in a user control.</span></span> <span data-ttu-id="e2280-106">첫째, 사용자 검색에 대 한 필터 조건을 지정 하는 기능을 나타내는 사용자 정의 컨트롤을 만들어집니다.</span><span class="sxs-lookup"><span data-stu-id="e2280-106">First, a user control is created that represents the ability for a user to specify filter criteria for a search.</span></span> <span data-ttu-id="e2280-107">또한 필터 클래스과 함께 필터 정보를 저장할 만들어집니다.</span><span class="sxs-lookup"><span data-stu-id="e2280-107">In addition, a companion Filter class is created to store the filter information.</span></span> <span data-ttu-id="e2280-108">여러 사용자 인터페이스 요소와 함께 일부 메서드 및 필터 클래스 인스턴스에서 현재 필터 정보를 저장 하는 속성 필터 컨트롤에 추가 됩니다.</span><span class="sxs-lookup"><span data-stu-id="e2280-108">Several user interface elements are added to the filter control along with some methods and properties to store the current filter information in the Filter class instance.</span></span> <span data-ttu-id="e2280-109">다음으로, 사용자 컨트롤 지 속성 RegisterRequiresControlState 메서드 및 연결 된 저장 또는 복원할 메서드를 사용 하 여 구현 됩니다.</span><span class="sxs-lookup"><span data-stu-id="e2280-109">Next, the user control persistence is implemented using the RegisterRequiresControlState method and associated Save/Restore methods.</span></span> <span data-ttu-id="e2280-110">이러한 메서드는 페이지 포스트백 중 필터 클래스 및 해당 데이터의 인스턴스를 저장합니다.</span><span class="sxs-lookup"><span data-stu-id="e2280-110">These methods store the instance of the filter class and its data during page postbacks.</span></span> <span data-ttu-id="e2280-111">마지막으로 컨트롤 상태 구현에 여러 개체를 저장 하는 방법 설명 하는 합니다.</span><span class="sxs-lookup"><span data-stu-id="e2280-111">Finally, there is a discussion of how to store multiple objects in control state implementation.</span></span>
 
-[<span data-ttu-id="bb48e-112">&#9654;비디오 (23 분)</span><span class="sxs-lookup"><span data-stu-id="bb48e-112">&#9654; Watch video (23 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-persist-the-state-of-a-user-control-during-a-postback)
+[<span data-ttu-id="e2280-112">&#9654;비디오 (23 분)</span><span class="sxs-lookup"><span data-stu-id="e2280-112">&#9654; Watch video (23 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/how-do-i-persist-the-state-of-a-user-control-during-a-postback)
