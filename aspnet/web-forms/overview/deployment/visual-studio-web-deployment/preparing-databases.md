@@ -4,19 +4,16 @@ title: 'Visual Studio를 사용 하 여 ASP.NET 웹 배포: 배포 데이터베�
 author: tdykstra
 description: 이 자습서 시리즈를 배포 하는 방법을 보여 줍니다. ASP.NET (게시)에서 실행 중인 웹 응용 프로그램을 Azure App Service Web Apps 또는 타사 호스팅 공급자...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/15/2013
-ms.topic: article
 ms.assetid: ae4def81-fa37-4883-a13e-d9896cbf6c36
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/preparing-databases
 msc.type: authoredcontent
-ms.openlocfilehash: 21b4a924115daff6ee79ce045330c748b58246ee
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: a9ddeda3bfe4315c835cd447f6178669797dceb2
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37388542"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37803193"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-preparing-for-database-deployment"></a>Visual Studio를 사용 하 여 ASP.NET 웹 배포: 배포 데이터베이스에 대 한 준비
 ====================
@@ -64,103 +61,103 @@ Code First 마이그레이션을 사용 하 여 배포한와 Contoso University 
 
 응용 프로그램 데이터베이스를 배포할 때 일반적으로 하지 단순히에 데이터를 모두 사용 하 여 개발 데이터베이스를 프로덕션에 배포할 이므로 대부분의 데이터에 있는 아마도 테스트용 으로만 합니다. 예를 들어, 학생 이름을 테스트 데이터베이스에는 가상입니다. 반면, 자주 배포할 수 없습니다에 데이터가 없는 데이터베이스 구조만 전혀 합니다. 테스트 데이터베이스에 있는 데이터의 일부 실제 데이터를 사용할 수 있으며 사용자가 응용 프로그램을 사용 하기 시작 하는 경우 있습니다 여야 합니다. 예를 들어 데이터베이스 유효한 등급 값 또는 실제 부서 이름을 포함 하는 테이블이 있다고 가정 합니다.
 
-이 일반적인 시나리오를 시뮬레이션 하려면 Code First 마이그레이션을 구성 `Seed` 데이터베이스에 있는 프로덕션 환경에서 원하는 데이터만 삽입 하는 메서드. DAL 프로젝트를 선택 합니다 `Seed`기본 프로젝트 드롭 다운 목록을 합니다 패키지 관리자 콘솔 때문에  Code First를 포함 하는 프로젝트에서 명령을 실행 해야 컨텍스트 클래스입니다.
+이 일반적인 시나리오를 시뮬레이션 하려면 Code First 마이그레이션을 구성 `Seed` 데이터베이스에 있는 프로덕션 환경에서 원하는 데이터만 삽입 하는 메서드. 이 `Seed` 메서드는 Code First 프로덕션 환경에서 데이터베이스를 만든 후 프로덕션 환경에서 실행 되므로 테스트 데이터를 삽입 하지 않아야 합니다.
 
-해당 클래스는 클래스 라이브러리 프로젝트의 경우 Code First 마이그레이션 솔루션에 대 한 시작 프로젝트에서 데이터베이스 연결 문자열을 찾습니다. ContosoUniversity 솔루션에서 웹 프로젝트를 시작 프로젝트로 설정한 합니다. Visual Studio에서 시작 프로젝트와 연결 문자열을 포함 하는 프로젝트를 지정 하지 않으려는 경우에 PowerShell 명령에서 시작 프로젝트를 지정할 수 있습니다. 명령 구문을 보려면에서 명령을 입력 `enable Migrations. Then you'll update the `합니다.
+이전 버전의 Code First 마이그레이션을 릴리스되기 전에 것이 일반적 이었습니다 `Seed` 삽입 하는 메서드 테스트 데이터 또한 했으므로 개발 하는 동안 모델 바뀔 때마다 데이터베이스 완전히 삭제 하 고 처음부터 다시 만들어야 합니다. Code First 마이그레이션, 데이터베이스 변경 후 데이터는 유지 하는 테스트의 테스트 데이터를 포함 하므로 `Seed` 메서드는 필요 없습니다. 다운로드 한 프로젝트의 모든 데이터를 포함 하 여의 메서드를 사용 합니다 `Seed` 이니셜라이저 클래스의 메서드. 이 자습서에서는 이니셜라이저 클래스는 비활성화 됩니다 및 `enable Migrations. Then you'll update the `초기값 ' 마이그레이션 구성에 대 한 메서드 클래스는 프로덕션 환경에서 삽입 하려는 데이터를 삽입 합니다.
 
-데이터베이스가 이미 있기 때문에 자동으로 명령을 첫 번째 마이그레이션을 생성 합니다.
+다음 다이어그램에서는 응용 프로그램 데이터베이스의 스키마를 보여 줍니다.
 
 [![School_database_diagram](preparing-databases/_static/image2.png)](preparing-databases/_static/image1.png)
 
-대 안으로 마이그레이션 데이터베이스를 만듭니다. 이렇게 하려면 사용 하 여 서버 탐색기 하거나 SQL Server 개체 탐색기 마이그레이션을 사용 하기 전에 ContosoUniversity 데이터베이스를 삭제 하려면.
+이 자습서에서는 라고 가정 하는 `Student` 및 `Enrollment` 사이트를 처음 배포할 때 테이블이 비어 있어야 합니다. 다른 테이블을 때 응용 프로그램이 라이브 미리 로드 해야 하는 데이터를 포함 합니다.
 
-### <a name="disable-the-initializer"></a>마이그레이션을 사용 하도록 설정 하면 첫 번째 마이그레이션 수동으로 만들 "추가 마이그레이션 InitialCreate" 명령을 입력 하 여.
+### <a name="disable-the-initializer"></a>이니셜라이저를 사용 하지 않도록 설정
 
-다음 명령은 "-데이터베이스 업데이트"를 입력 하 여 데이터베이스를 만들 수 있습니다. Seed 메서드 설정 이 자습서에 대 한 코드를 추가 하 여 고정된 데이터가 추가 됩니다는 `appSettings` Code First 마이그레이션을 메서드의 * 클래스입니다.
+Code First 마이그레이션을 사용 하 고는, 필요가 없습니다 사용 하 여 `DropCreateDatabaseIfModelChanges` Code First 이니셜라이저입니다. 이 이니셜라이저에 대 한 코드를 *SchoolInitializer.cs* ContosoUniversity.DAL 프로젝트의 파일입니다. 설정 된 `appSettings` 의 요소를 *Web.config* 파일 하면 응용 프로그램이 처음 데이터베이스에 액세스 하려고 하는 때마다 실행 되도록이 이니셜라이저:
 
 [!code-xml[Main](preparing-databases/samples/sample1.xml?highlight=3)]
 
-첫 번째 마이그레이션을 호출 코드는 * 모든 마이그레이션 후 메서드. 이후는 `appSettings` 모든 마이그레이션 후 실행 되는 메서드, 데이터가 이미 테이블의 첫 번째 마이그레이션 후 합니다.
+응용 프로그램을 엽니다 *Web.config* 파일을 제거 하거나 주석 처리를 `add` Code First 이니셜라이저 클래스를 지정 하는 요소입니다. `appSettings` 요소는 이제 다음과 같이 표시 합니다.
 
 [!code-xml[Main](preparing-databases/samples/sample2.xml)]
 
 > [!NOTE]
-> 사용 하 여이 상황을 처리 하는 `Database.SetInitializer` 아직 없는 경우 삽입 하거나 이미 삽입 된 행을 업데이트 하는 방법입니다. 메서드 시나리오에 가장 적합 한 되지 않을 수 있습니다.
+> 이니셜라이저 클래스를 지정 하는 또 다른 방법은 호출 하 여 수행 됩니다 `Database.SetInitializer` 에 `Application_Start` 에서 메서드는 *Global.asax* 파일입니다. 해당 메서드를 사용 하 여 이니셜라이저를 지정 하는 프로젝트에서 Migrations를 사용 하는 경우 해당 코드 줄을 제거 합니다.
 
 
 > [!NOTE]
-> 자세한 내용은 EF 4.3 AddOrUpdate 메서드를 사용 하 여 주의 Julie Lerman의 블로그입니다. 엽니다는 Configuration.cs 에 있는 메모를 바꾸고 파일을  메서드를 다음 코드로: 에 대 한 참조  필요가 없기 때문에 그 아래에 있는 빨간색의 구불구불한 선이는  아직 문을 해당 네임 스페이스에 대 한 합니다.
+> Visual Studio 2013을 사용 하는 경우 단계 2와 3 간의 다음 단계를 추가: (a)의 PMC 입력 "업데이트 패키지 entityframework-6.1.1 버전" 현재 버전의 EF 가져오려고 합니다. 다음 (b) 빌드 프로젝트 빌드 오류 목록을 가져오려면를 해결할 수 있습니다. 문을 사용 하 여 더 이상 존재 마우스 오른쪽 단추로 클릭 하 고, 필요한 곳 문을 사용 하 여 추가 확인을 클릭 하는 네임 스페이스를 삭제 하 고 System.Data.Entity.EntityState System.Data.EntityState 개 변경 합니다.
 
 
-### <a name="enable-code-first-migrations"></a>인스턴스 중 하나를 마우스 오른쪽 단추로 클릭  을 클릭 해결를 클릭 하 고 System.Collections.Generic를 사용 하 여입니다.
+### <a name="enable-code-first-migrations"></a>Code First 마이그레이션 사용
 
-1. 문을 사용 하 여 해결 다음 코드를 추가 하는이 메뉴를 선택 합니다 ** 문을 파일의 맨 위 근처 합니다. 프로젝트를 빌드하려면 CTRL-SHIFT-B를 누릅니다.
-2. 이제 프로젝트를 배포할 준비가 된 **ContosoUniversity** 데이터베이스입니다.
+1. ContosoUniversity 프로젝트 (없습니다 ContosoUniversity.DAL)를 시작 프로젝트로 설정 되어 있는지 확인 합니다. **솔루션 탐색기**ContosoUniversity 프로젝트를 마우스 오른쪽 단추로 클릭 하 고 선택 **시작 프로젝트로 설정**합니다. Code First 마이그레이션을 데이터베이스 연결 문자열을 찾을 시작 프로젝트에 표시 됩니다.
+2. **도구** 메뉴에서 클릭 **라이브러리 패키지 관리자** (또는 **NuGet 패키지 관리자**) 차례로 **패키지 관리자 콘솔**합니다.
 
     ![Selecting_Package_Manager_Console](preparing-databases/_static/image3.png)
-3. 배포 응용 프로그램을 처음 실행 하 고 데이터베이스에 액세스 하는 페이지로 이동 하 고 나면 Code First는 데이터베이스를 만들고 실행 ** 메서드.
+3. 맨 위에 있는 합니다 **패키지 관리자 콘솔** 창 선택 ContosoUniversity.DAL 그 다음으로 기본 프로젝트에 `PM>` 프롬프트 "enable-마이그레이션"을 입력 합니다.
 
-    ![코드를 추가 합니다  메서드는 데이터베이스에 고정된 데이터를 삽입할 수 있는 여러 가지 방법 중 하나입니다.](preparing-databases/_static/image4.png)
+    ![마이그레이션을 사용 하도록 설정 명령](preparing-databases/_static/image4.png)
 
-    대안은 코드를 추가 하는 *고* 각 마이그레이션 클래스의 메서드.
+    (표시 된 오류를 받게 되 면 합니다 *마이그레이션을 사용 하도록 설정* 명령이 인식 되지, 명령을 입력 합니다 *업데이트 패키지 EntityFramework-다시 설치* 하 고 다시 시도 하세요.)
 
-    합니다 *고* 메서드는 데이터베이스 변경 내용을 구현 하는 코드를 포함 합니다.
+    이 명령은 만듭니다는 *마이그레이션을* ContosoUniversity.DAL 프로젝트에서 폴더 두 파일을 해당 폴더에 저장:는 *Configuration.cs* 마이그레이션과 를구성하는데사용할수있는파일*InitialCreate.cs* 데이터베이스를 만드는 첫 번째 마이그레이션에 대 한 파일입니다.
 
-    ![예제에 표시 합니다 데이터베이스 업데이트 배포 자습서입니다.](preparing-databases/_static/image5.png)
+    ![마이그레이션 폴더](preparing-databases/_static/image5.png)
 
-    사용 하 여 SQL 문을 실행 하는 코드를 작성할 수도 있습니다는 ** 메서드. 예를 들어, 예산 열 Department 테이블을 추가 했습니다 하는 마이그레이션의 일환으로 모든 부서 예산을 $ 1, 000.00를 초기화 하려는 경우 다음 줄의 코드를 추가할 수는  마이그레이션에 대 한 메서드: 멤버 자격 데이터베이스 배포를 위한 스크립트 만들기 Contoso University 응용 프로그램 인증 및 사용자 권한 부여는 ASP.NET 멤버 자격 시스템 및 폼 인증을 사용 합니다. 합니다 `get-help enable-migrations`업데이트 크레딧 페이지는 관리자 역할이 있는 사용자만 액세스할 수 있습니다.
+    DAL 프로젝트를 선택 합니다 **기본 프로젝트** 드롭 다운 목록을 합니다 **패키지 관리자 콘솔** 때문에 `enable-migrations` Code First를 포함 하는 프로젝트에서 명령을 실행 해야 컨텍스트 클래스입니다. 해당 클래스는 클래스 라이브러리 프로젝트의 경우 Code First 마이그레이션 솔루션에 대 한 시작 프로젝트에서 데이터베이스 연결 문자열을 찾습니다. ContosoUniversity 솔루션에서 웹 프로젝트를 시작 프로젝트로 설정한 합니다. Visual Studio에서 시작 프로젝트와 연결 문자열을 포함 하는 프로젝트를 지정 하지 않으려는 경우에 PowerShell 명령에서 시작 프로젝트를 지정할 수 있습니다. 명령 구문을 보려면에서 명령을 입력 `get-help enable-migrations`합니다.
 
-    응용 프로그램을 실행 하 고 클릭 `enable-migrations`코스를 클릭 하 고 업데이트 크레딧합니다. 업데이트 크레딧을 클릭 합니다. **에 로그인** 때문에 페이지가 표시 됩니다는 **업데이트 크레딧** 페이지 관리 권한이 필요 합니다. 입력 admin 사용자 이름으로 및 devpwd 암호와 클릭 로그인합니다. 로그인 페이지
+    `enable-migrations` 데이터베이스가 이미 있기 때문에 자동으로 명령을 첫 번째 마이그레이션을 생성 합니다. 대 안으로 마이그레이션 데이터베이스를 만듭니다. 이렇게 하려면 사용 하 여 **서버 탐색기** 하거나 **SQL Server 개체 탐색기** 마이그레이션을 사용 하기 전에 ContosoUniversity 데이터베이스를 삭제 하려면. 마이그레이션을 사용 하도록 설정 하면 첫 번째 마이그레이션 수동으로 만들 "추가 마이그레이션 InitialCreate" 명령을 입력 하 여. 다음 명령은 "-데이터베이스 업데이트"를 입력 하 여 데이터베이스를 만들 수 있습니다.
 
-### <a name="set-up-the-seed-method"></a>합니다 업데이트 크레딧 페이지가 나타납니다.
+### <a name="set-up-the-seed-method"></a>Seed 메서드 설정
 
-크레딧 페이지 업데이트 사용자 및 역할 정보를 `Seed`aspnet ContosoUniversity 하 여 지정 된 데이터베이스에는 DefaultConnection 에서 연결 문자열을 Web.config 파일.
+이 자습서에 대 한 코드를 추가 하 여 고정된 데이터가 추가 됩니다는 `Seed` Code First 마이그레이션을 메서드의 `Configuration` 클래스입니다. 첫 번째 마이그레이션을 호출 코드는 `Seed` 모든 마이그레이션 후 메서드.
 
-이 데이터베이스는 Entity Framework Code First에서 관리 되지 배포 마이그레이션을 사용할 수 없습니다. 데이터베이스 스키마를 배포 하려면 dbDacFx 공급자 사용 및 데이터베이스 테이블에 초기 데이터를 삽입 하는 스크립트를 실행 하려면 게시 프로필을 구성 합니다. 새 ASP.NET 멤버 자격 시스템 (이제 ASP.NET Id 라고 함)는 Visual Studio 2013을 사용 하 여 도입 되었습니다. 새 시스템을 사용 하면 응용 프로그램 및 멤버 자격 테이블을 모두 동일한 데이터베이스에 유지 하 고 Code First 마이그레이션을 사용 하 여 모두를 배포 하 합니다.
+이후는 `Seed` 모든 마이그레이션 후 실행 되는 메서드, 데이터가 이미 테이블의 첫 번째 마이그레이션 후 합니다. 사용 하 여이 상황을 처리 하는 `AddOrUpdate` 아직 없는 경우 삽입 하거나 이미 삽입 된 행을 업데이트 하는 방법입니다. `AddOrUpdate` 메서드 시나리오에 가장 적합 한 되지 않을 수 있습니다. 자세한 내용은 [EF 4.3 AddOrUpdate 메서드를 사용 하 여 주의](http://thedatafarm.com/blog/data-access/take-care-with-ef-4-3-addorupdate-method/) Julie Lerman의 블로그입니다.
 
-1. Code First 마이그레이션을 사용 하 여 배포할 수 없습니다는 이전 ASP.NET 멤버 자격 시스템을 사용 하는 샘플 응용 프로그램입니다.
+1. 엽니다는 *Configuration.cs* 에 있는 메모를 바꾸고 파일을 `Seed` 메서드를 다음 코드로:
 
     [!code-csharp[Main](preparing-databases/samples/sample3.cs)]
-2. 이 멤버 자격 데이터베이스를 배포 하는 절차는 응용 프로그램이 Entity Framework Code First에서 만들어지지 있는 SQL Server 데이터베이스를 배포 해야 하는 다른 모든 시나리오에도 적용 됩니다. 여기도 일반적으로 원하지 개발에서 해야 하는 프로덕션 환경에서 동일한 데이터입니다.
+2. 에 대 한 참조 `List` 필요가 없기 때문에 그 아래에 있는 빨간색의 구불구불한 선이는 `using` 아직 문을 해당 네임 스페이스에 대 한 합니다. 인스턴스 중 하나를 마우스 오른쪽 단추로 클릭 `List` 을 클릭 **해결**를 클릭 하 고 **System.Collections.Generic를 사용 하 여**입니다.
 
-    ![처음으로 사이트를 배포 하 때 대부분 또는 모든 테스트를 위해 만든 사용자 계정을 제외에 공통적으로 적용 합니다.](preparing-databases/_static/image6.png)
+    ![문을 사용 하 여 해결](preparing-databases/_static/image6.png)
 
-    따라서 다운로드 한 프로젝트에 두 개의 멤버 자격 데이터베이스: `using`aspnet ContosoUniversity.mdf 개발 사용자를 사용 하 여 및 aspnet-ContosoUniversity-Prod.mdf 프로덕션 사용자를 사용 하 여 합니다.
+    다음 코드를 추가 하는이 메뉴를 선택 합니다 `using` 문을 파일의 맨 위 근처 합니다.
 
     [!code-csharp[Main](preparing-databases/samples/sample4.cs)]
-3. 이 자습서에 대 한 사용자 이름을 동일 두 데이터베이스 모두에: admin 하 고 nonadmin합니다.
+3. 프로젝트를 빌드하려면 CTRL-SHIFT-B를 누릅니다.
 
-두 명의 암호 *devpwd* 개발 데이터베이스에서 및 prodpwd 프로덕션 데이터베이스에 있습니다. 개발 사용자 테스트 환경 및 사용자에 게는 프로덕션 스테이징 및 프로덕션에 배포 합니다.
+이제 프로젝트를 배포할 준비가 된 *ContosoUniversity* 데이터베이스입니다. 배포 응용 프로그램을 처음 실행 하 고 데이터베이스에 액세스 하는 페이지로 이동 하 고 나면 Code First는 데이터베이스를 만들고 실행 `Seed` 메서드.
 
 > [!NOTE]
-> 이렇게 하려면이 자습서에서 개발 및 프로덕션 환경에 대해 하나씩 두 개의 SQL 스크립트를 만들어야 하 고 나중에 자습서에서 실행 하는 게시 프로세스를 구성 합니다. 멤버 자격 데이터베이스 계정 암호의 해시를 저장 합니다. 다른 컴퓨터에서 계정에 배포 하려면 원본 컴퓨터에서 수행할 때 보다 해시 루틴이 대상 서버의 다른 해시를 생성 하지 않도록 해야 합니다. 생성 동일한 해시 ASP.NET Universal Providers를 사용 하는 경우 기본 알고리즘을 변경 하지 않으면으로 합니다.
+> 코드를 추가 합니다 `Seed` 메서드는 데이터베이스에 고정된 데이터를 삽입할 수 있는 여러 가지 방법 중 하나입니다. 대안은 코드를 추가 하는 `Up` 고 `Down` 각 마이그레이션 클래스의 메서드. 합니다 `Up` 고 `Down` 메서드는 데이터베이스 변경 내용을 구현 하는 코드를 포함 합니다. 예제에 표시 합니다 [데이터베이스 업데이트 배포](deploying-a-database-update.md) 자습서입니다.
 > 
-> 기본 알고리즘 HMACSHA256 이며에 지정 된를 `Sql`유효성 검사 특성을  machineKey  Web.config 파일의 요소입니다. SQL Server Management Studio (SSMS)를 사용 하 여 또는 타사 도구를 사용 하 여 데이터 배포 스크립트를 수동으로 만들 수 있습니다.
+> 사용 하 여 SQL 문을 실행 하는 코드를 작성할 수도 있습니다는 `Sql` 메서드. 예를 들어, 예산 열 Department 테이블을 추가 했습니다 하는 마이그레이션의 일환으로 모든 부서 예산을 $ 1, 000.00를 초기화 하려는 경우 다음 줄의 코드를 추가할 수는 `Up` 마이그레이션에 대 한 메서드:
 > 
 > `Sql("UPDATE Department SET Budget = 1000");`
 
 
-## <a name="create-scripts-for-membership-database-deployment"></a>이 자습서의 나머지이 부분은 SSMS에서 수행 하는 방법을 표시 되지만 설치 하 고 SSMS를 사용 하지 않을 경우에 프로젝트의 완성된 된 버전에서 스크립트를 가져올 고 저장할 해당 솔루션 폴더에서 섹션을 건너뛸 수 있습니다.
+## <a name="create-scripts-for-membership-database-deployment"></a>멤버 자격 데이터베이스 배포를 위한 스크립트 만들기
 
-에 데이터베이스 연결 대화 상자에서 클릭 추가 로 이동한 다음를 aspnet-ContosoUniversity-Prod.mdf 파일을 앱 데이터 폴더입니다. .Mdf 파일 연결을 추가 하는 SSMS
+Contoso University 응용 프로그램 인증 및 사용자 권한 부여는 ASP.NET 멤버 자격 시스템 및 폼 인증을 사용 합니다. 합니다 **업데이트 크레딧** 페이지는 관리자 역할이 있는 사용자만 액세스할 수 있습니다.
 
-프로덕션 파일에 대 한 스크립트를 만들려면 이전에 사용한 동일한 절차를 따릅니다.
+응용 프로그램을 실행 하 고 클릭 **코스**를 클릭 하 고 **업데이트 크레딧**합니다.
 
-![스크립트 파일의 이름을 aspnet-데이터-prod.sql합니다.](preparing-databases/_static/image7.png)
+![업데이트 크레딧을 클릭 합니다.](preparing-databases/_static/image7.png)
 
-두 데이터베이스를 배포할 준비가 됩니다 하 고 솔루션 폴더에 두 개의 데이터 배포 스크립트를 해야 합니다.
+**에 로그인** 때문에 페이지가 표시 됩니다는 **업데이트 크레딧** 페이지 관리 권한이 필요 합니다.
 
-데이터 배포 스크립트
+입력 *admin* 사용자 이름으로 및 *devpwd* 암호와 클릭 **로그인**합니다.
 
-![다음 자습서에서는 배포에 영향을 주는 프로젝트 설정을 구성 하 고 자동 설정한 Web.config 파일은 배포 된 응용 프로그램에서 서로 달라 야 하는 설정에 대 한 변환 합니다.](preparing-databases/_static/image8.png)
+![로그인 페이지](preparing-databases/_static/image8.png)
 
-NuGet에 대 한 자세한 내용은 참조 하세요. **NuGet 사용 하 여 프로젝트 라이브러리 관리** 하 고 NuGet 설명서합니다.
+합니다 **업데이트 크레딧** 페이지가 나타납니다.
 
-![NuGet을 사용 하지 않으려는 경우 설치 될 때 무엇을 확인 하는 NuGet 패키지를 분석 하는 방법을 알아보려면 해야 합니다.](preparing-databases/_static/image9.png)
+![크레딧 페이지 업데이트](preparing-databases/_static/image9.png)
 
-(예를 들어 구성할 수 있습니다 *Web.config* 변환 등 빌드 시간에 실행 하도록 PowerShell 스크립트를 구성 합니다.)
+사용자 및 역할 정보를 *aspnet ContosoUniversity* 하 여 지정 된 데이터베이스에는 **DefaultConnection** 에서 연결 문자열을 *Web.config* 파일.
 
-NuGet의 작동 원리에 대 한 자세한 내용은를 참조 하세요. 는 패키지 만들기 및 게시 하 고 구성 파일 및 소스 코드 변환합니다. 데이터베이스 스키마를 배포 하려면 dbDacFx 공급자 사용 및 데이터베이스 테이블에 초기 데이터를 삽입 하는 스크립트를 실행 하려면 게시 프로필을 구성 합니다.
+이 데이터베이스는 Entity Framework Code First에서 관리 되지 배포 마이그레이션을 사용할 수 없습니다. 데이터베이스 스키마를 배포 하려면 dbDacFx 공급자 사용 및 데이터베이스 테이블에 초기 데이터를 삽입 하는 스크립트를 실행 하려면 게시 프로필을 구성 합니다.
 
 > [!NOTE]
 > 새 ASP.NET 멤버 자격 시스템 (이제 ASP.NET Id 라고 함)는 Visual Studio 2013을 사용 하 여 도입 되었습니다. 새 시스템을 사용 하면 응용 프로그램 및 멤버 자격 테이블을 모두 동일한 데이터베이스에 유지 하 고 Code First 마이그레이션을 사용 하 여 모두를 배포 하 합니다. Code First 마이그레이션을 사용 하 여 배포할 수 없습니다는 이전 ASP.NET 멤버 자격 시스템을 사용 하는 샘플 응용 프로그램입니다. 이 멤버 자격 데이터베이스를 배포 하는 절차는 응용 프로그램이 Entity Framework Code First에서 만들어지지 있는 SQL Server 데이터베이스를 배포 해야 하는 다른 모든 시나리오에도 적용 됩니다.
