@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 05/12/2018
 uid: razor-pages/index
-ms.openlocfilehash: 9d7d4d49dbb55e327a208df99a0e3ca744de8609
-ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
+ms.openlocfilehash: 49bed6cc150a74ff8b72848f276c55c2490b6fa5
+ms.sourcegitcommit: a09820f91e71a7d98b7347bf93210abb9e995e22
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37077750"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37889144"
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core의 Razor 페이지 소개
 
@@ -322,7 +322,7 @@ services.AddMvc()
 
 ::: moniker range=">= aspnetcore-2.1"
 
-레이아웃은 *Shared/Pages* 폴더에 있습니다. 페이지는 현재 페이지와 동일한 폴더에서 시작하여 다른 뷰(레이아웃, 템플릿, 부분)를 계층 구조로 검색합니다. *Shared/Pages* 폴더의 레이아웃은 *Pages* 폴더 아래의 Razor 페이지에서 사용될 수 있습니다.
+레이아웃은 *Pages/Shared* 폴더에 있습니다. 페이지는 현재 페이지와 동일한 폴더에서 시작하여 다른 뷰(레이아웃, 템플릿, 부분)를 계층 구조로 검색합니다. *Pages/Shared* 폴더의 레이아웃은 *Pages* 폴더 아래의 Razor 페이지에서 사용될 수 있습니다.
 
 레이아웃 파일은 *Pages/Shared* 폴더로 이동해야 합니다.
 

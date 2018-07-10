@@ -4,19 +4,16 @@ title: ASP.NET MVC 보기 개요 (C#) | Microsoft Docs
 author: StephenWalther
 description: ASP.NET MVC 뷰를 무엇이 고 HTML 페이지에서와 어떻게 합니까? 이 자습서에서는 Stephen walther가 보기 소개 하 고 t 하는 방법을 보여 줍니다....
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 02/16/2008
-ms.topic: article
 ms.assetid: 152ab1e5-aec2-4ea7-b8cc-27a24dd9acb8
-ms.technology: dotnet-mvc
 msc.legacyurl: /mvc/overview/older-versions-1/views/asp-net-mvc-views-overview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: adf995529b34c84969125adcc6249ba8e22a7af4
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: d2fc96f7e991dd7c4e0b3e9ff5c589c1075010ac
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37387792"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37833661"
 ---
 <a name="aspnet-mvc-views-overview-c"></a>ASP.NET MVC 보기 개요 (C#)
 ====================

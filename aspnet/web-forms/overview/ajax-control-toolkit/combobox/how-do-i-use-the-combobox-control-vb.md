@@ -4,19 +4,16 @@ title: ComboBox 컨트롤을 사용 하는 방법 (VB) | Microsoft Docs
 author: microsoft
 description: 콤보 상자에 사용자가 선택할 수 있는 옵션의 목록을 사용 하 여 텍스트의 유연성을 결합 하는 ASP.NET AJAX 컨트롤입니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/12/2009
-ms.topic: article
 ms.assetid: e887e7b2-a6e7-4a28-a134-ba334494badb
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/combobox/how-do-i-use-the-combobox-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 3241641b3e136b24c8cff75026e496ddf8eb04ac
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 745871b7e8cca14b3458d9004d581dfacf55ea24
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37371910"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37837726"
 ---
 <a name="how-do-i-use-the-combobox-control-vb"></a>ComboBox 컨트롤을 사용 하는 방법 (VB)
 ====================

@@ -143,7 +143,7 @@ ANTI-XSRF 시스템에는 "anonymous"가 정의 되어 있는 사용자로 익�
 
 ### <a name="oauth--openid-authentication"></a>OAuth / OpenID 인증
 
-마지막으로, ANTI-XSRF 시설에 OAuth 또는 OpenID 인증을 사용 하는 응용 프로그램에 대 한 특별 한 지원이 있습니다. 이 지원은 추론 기반: 경우 현재 *IIdentity.Name* username 비교를 수행할 수는 다음에 http:// 또는 https://로 시작 기본 OrdinalIgnoreCase 비교자를 사용 하지 않고 서 수는 비교자를 사용 하 여 합니다.
+마지막으로, ANTI-XSRF 시설에 OAuth 또는 OpenID 인증을 사용 하는 응용 프로그램에 대 한 특별 한 지원이 있습니다. 이 지원은 추론 기반: 경우 현재 *IIdentity.Name* username 비교를 수행할 수는 다음에 http:// 또는 https:// 로 시작 기본 OrdinalIgnoreCase 비교자를 사용 하지 않고 서 수는 비교자를 사용 하 여 합니다.
 
 <a id="_Configuration_and_extensibility"></a>
 

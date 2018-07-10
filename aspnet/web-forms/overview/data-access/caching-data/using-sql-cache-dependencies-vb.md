@@ -4,19 +4,16 @@ title: SQL 캐시 종속성 (VB)를 사용 하 여 | Microsoft Docs
 author: rick-anderson
 description: 가장 간단한 캐싱 전략 지정 된 기간 후에 만료 되도록 캐시 된 데이터를 허용 하는 것입니다. 하지만 이렇게 간단한 방식으로 캐시 된 데이터 maintai 의미 하는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/30/2007
-ms.topic: article
 ms.assetid: bd347d93-4251-4532-801c-a36f2dfa7f96
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/caching-data/using-sql-cache-dependencies-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 74692fb7018cd75e29afc6d5852caddfdac1ed06
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 7929966d9eb82994b9d427d0c3fd7f08c41212fc
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37379847"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37821647"
 ---
 <a name="using-sql-cache-dependencies-vb"></a>SQL 캐시 종속성 (VB)를 사용 하 여
 ====================
@@ -148,7 +145,7 @@ SQL 캐시 종속성을 선언적으로 사용을 보여 주기 위해 엽니다
 
 [![ProductsDataSourceDeclarative 라는 새로운 ObjectDataSource는 만들기](using-sql-cache-dependencies-vb/_static/image5.gif)](using-sql-cache-dependencies-vb/_static/image3.png)
 
-**그림 10**: 합니다 `ProductsDataSourceDeclarative` 하 고 [ Dropdownlist를 포함 하는 (없음) 옵션 (](using-sql-cache-dependencies-vb/_static/image4.png)클릭 하 여 큰 이미지 보기)
+**그림 5**: 명명 된 새 ObjectDataSource 만들려면 `ProductsDataSourceDeclarative` ([클릭 하 여 큰 이미지 보기](using-sql-cache-dependencies-vb/_static/image4.png))
 
 
 ObjectDataSource를 사용 하 여 구성 합니다 `ProductsBLL` 클래스 및 드롭다운 목록을 선택 탭에서 설정 `GetProducts()`합니다. 업데이트 탭을 선택 합니다 `UpdateProduct` 세 개의 입력된 매개 변수를 사용 하 여 오버 로드 `productName`를 `unitPrice`, 및 `productID`합니다. INSERT 및 DELETE 탭에서 드롭 다운 목록을 (없음)을 설정 합니다.

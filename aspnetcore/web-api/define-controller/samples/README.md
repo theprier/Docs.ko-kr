@@ -8,5 +8,5 @@
 
 이 샘플에서는 다양한 Web API 컨트롤러를 만듭니다.
 
-- [ControllerBase에서 클래스 파생](https://docs.microsoft.com/en-us/aspnet/core/web-api/define-controller#derive-class-from-controllerbase)
-- [ApiControllerAttribute로 클래스에 주석 달기](https://docs.microsoft.com/en-us/aspnet/core/web-api/define-controller#annotate-class-with-apicontrollerattribute)
+- [ControllerBase에서 클래스 파생](https://docs.microsoft.com/aspnet/core/web-api#derive-class-from-controllerbase)
+- [ApiControllerAttribute로 클래스에 주석 달기](https://docs.microsoft.com/aspnet/core/web-api#annotate-class-with-apicontrollerattribute)

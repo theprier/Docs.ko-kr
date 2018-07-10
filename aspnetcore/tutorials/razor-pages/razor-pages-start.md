@@ -5,12 +5,12 @@ description: ASP.NET Core Razor 페이지 웹앱을 빌드하는 작업의 기�
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/razor-pages-start
-ms.openlocfilehash: 7148f2d944bd1978b1a83278dfed9051f192e4dd
-ms.sourcegitcommit: 08f1a9baa97060da5168840b332c9c0805b5f901
+ms.openlocfilehash: 10e9174b0bf094f7a4ea820a5afcf2705f900327
+ms.sourcegitcommit: 18339e3cb5a891a3ca36d8146fa83cf91c32e707
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37144939"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37433908"
 ---
 # <a name="get-started-with-razor-pages-in-aspnet-core"></a>ASP.NET Core에서 Razor 페이지 시작
 
@@ -38,7 +38,7 @@ ms.locfileid: "37144939"
 
 ## <a name="prerequisites"></a>전제 조건
 
-[!INCLUDE [](~/includes/net-core-prereqs-windows.md) [](~/includes/net-core-prereqs-windows.md)]
+[!INCLUDE [Prerequisites](~/includes/net-core-prereqs-windows.md)]
 
 ## <a name="create-a-razor-web-app"></a>Razor 웹앱 만들기
 
@@ -72,7 +72,7 @@ Visual Studio 템플릿은 시작 프로젝트를 만듭니다.
 
 ## <a name="prerequisites"></a>전제 조건
 
-[!INCLUDE [](~/includes/net-core-prereqs-windows.md) [](~/includes/net-core-prereqs-windows.md)]
+[!INCLUDE [Prerequisites](~/includes/net-core-prereqs-windows.md)]
 
 ## <a name="create-a-razor-web-app"></a>Razor 웹앱 만들기
 

@@ -4,19 +4,16 @@ title: 마스터/세부 정보 필터링 (VB)의 두 페이지에 걸쳐 | Micro
 author: rick-anderson
 description: 이 자습서에서는 데이터베이스에 공급자를 나열 하는 GridView를 사용 하 여이 패턴에서는 구현 합니다. GridView의 각 공급 업체 행을 Vie 포함 됩니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 03/31/2010
-ms.topic: article
 ms.assetid: 361d6a44-3f1f-4daf-85df-d4c2b8bf065d
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-across-two-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 80b2ba88237b0eb956f69cd144bc919e1b06def0
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 88bd06c8b9e4a4b369c538c902b213e444ad6790
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37388505"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37810717"
 ---
 <a name="masterdetail-filtering-across-two-pages-vb"></a>마스터/세부 정보 필터링 (VB)의 두 페이지에 걸쳐
 ====================

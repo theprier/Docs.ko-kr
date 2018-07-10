@@ -4,14 +4,14 @@ author: scottaddie
 description: ASP.NET Core에서 Web API를 빌드하는 데 사용할 수 있는 기능과 각 기능을 사용하기에 적합한 시기에 대해 알아봅니다.
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 04/24/2018
+ms.date: 07/06/2018
 uid: web-api/index
-ms.openlocfilehash: ab672667d1ca349d80c4ca80f8d1f32f4871c7e6
-ms.sourcegitcommit: 18339e3cb5a891a3ca36d8146fa83cf91c32e707
+ms.openlocfilehash: 84e4a51a8a8ab031752ef054cba834bd202a4927
+ms.sourcegitcommit: ea7ec8d47f94cfb8e008d771f647f86bbb4baa44
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/04/2018
-ms.locfileid: "36274968"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37894217"
 ---
 # <a name="build-web-apis-with-aspnet-core"></a>ASP.NET Core에서 Web API 빌드
 
@@ -26,22 +26,32 @@ ms.locfileid: "36274968"
 Web API를 제공할 목적으로 컨트롤의 [ControllerBase](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase) 클래스에서 상속합니다. 예:
 
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Controllers/PetsController.cs?name=snippet_PetsController&highlight=3)]
-::: moniker-end
-::: moniker range="<= aspnetcore-2.0"
-[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api.Pre21/Controllers/PetsController.cs?name=snippet_PetsController&highlight=3)]
+
 ::: moniker-end
 
-`ControllerBase` 클래스는 다양한 속성 및 메서드에 대한 액세스를 제공합니다. 앞의 예제에서는 이러한 메서드에 [BadRequest](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.badrequest) 및 [CreatedAtAction](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.createdataction)이 포함됩니다. 이러한 메서드는 각각 HTTP 400와 201 상태 코드를 반환하는 작업 메서드 내에서 호출됩니다. 요청 모델 유효성 검사를 수행하기 위해 `ControllerBase`에 의해서도 제공된 [ModelState](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.modelstate) 속성에 액세스합니다.
+::: moniker range="<= aspnetcore-2.0"
+
+[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api.Pre21/Controllers/PetsController.cs?name=snippet_PetsController&highlight=3)]
+
+::: moniker-end
+
+`ControllerBase` 클래스는 여러 속성 및 메서드에 대한 액세스를 제공합니다. 앞의 코드에서 예제에는 [BadRequest](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.badrequest) 및 [CreatedAtAction](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.createdataction)이 포함됩니다. 이러한 메서드는 각각 HTTP 400와 201 상태 코드를 반환하는 작업 메서드 내에서 호출됩니다. 요청 모델 유효성 검사를 처리하기 위해 `ControllerBase`에 의해서도 제공된 [ModelState](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.modelstate) 속성에 액세스합니다.
 
 ::: moniker range=">= aspnetcore-2.1"
+
 ## <a name="annotate-class-with-apicontrollerattribute"></a>ApiControllerAttribute로 클래스에 주석 달기
 
 ASP.NET Core 2.1에서는 Web API 컨트롤러 클래스를 나타내는 [[ApiController]](/dotnet/api/microsoft.aspnetcore.mvc.apicontrollerattribute) 특성을 소개합니다. 예:
 
 [!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Controllers/ProductsController.cs?name=snippet_ControllerSignature&highlight=2)]
 
-이 특성은 일반적으로 유용한 메서드 및 특성에 대한 액세스 권한을 얻기 위해 `ControllerBase`와 결합됩니다. `ControllerBase`는 [NotFound](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.notfound) 및 [File](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.file)과 같은 메서드에 대한 액세스를 제공합니다.
+[SetCompatibilityVersion](/dotnet/api/microsoft.extensions.dependencyinjection.mvccoremvcbuilderextensions.setcompatibilityversion)을 통해 설정된 호환성 버전 2.1 이상은 이 특성을 사용해야 합니다. 예를 들어 *Startup.ConfigureServices*에서 강조 표시된 코드는 2.1 호환성 플래그를 설정합니다.
+
+[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Startup.cs?name=snippet_SetCompatibilityVersion&highlight=2)]
+
+`[ApiController]` 특성은 일반적으로 `ControllerBase`와 함께 컨트롤러에 대한 REST 특정 동작을 사용하도록 설정합니다. `ControllerBase`는 [NotFound](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.notfound) 및 [File](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.file)과 같은 메서드에 대한 액세스를 제공합니다.
 
 다른 방법은 `[ApiController]` 특성으로 주석 지정된 사용자 지정 기본 컨트롤러 클래스를 만드는 것입니다.
 
@@ -55,7 +65,7 @@ ASP.NET Core 2.1에서는 Web API 컨트롤러 클래스를 나타내는 [[ApiCo
 
 [!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api.Pre21/Controllers/PetsController.cs?range=46-49)]
 
-이 기본 동작은 *Startup.ConfigureServices*에서 다음 코드와 함께 사용하지 않도록 설정됩니다.
+[SuppressModelStateInvalidFilter](/dotnet/api/microsoft.aspnetcore.mvc.apibehavioroptions.suppressmodelstateinvalidfilter) 속성이 `true`로 설정된 경우 기본 동작이 사용되지 않습니다. `services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);` 뒤에 *Startup.ConfigureServices*에서 다음 코드를 추가합니다.
 
 [!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Startup.cs?name=snippet_ConfigureApiBehaviorOptions&highlight=5)]
 
@@ -72,8 +82,8 @@ ASP.NET Core 2.1에서는 Web API 컨트롤러 클래스를 나타내는 [[ApiCo
 |**[[FromRoute]](/dotnet/api/microsoft.aspnetcore.mvc.fromrouteattribute)**   | 현재 요청의 경로 데이터 |
 |**[[FromServices]](xref:mvc/controllers/dependency-injection#action-injection-with-fromservices)** | 작업 매개 변수로 삽입된 요청 서비스 |
 
-> [!NOTE]
-> `%2f`는 `/`에 대해 이스케이프되지 않으므로 값에 `%2f`(즉, `/`)가 포함될 가능성이 있으면 `[FromRoute]`를 사용하지 **마세요**. 값에 `%2f`가 포함될 수 있으면 `[FromQuery]`를 사용합니다.
+> [!WARNING]
+> 값에 `%2f`(즉, `/`)이 포함될 수 있는 경우 `[FromRoute]`를 사용하지 않습니다. `%2f`는 `/`로 이스케이프가 해제되지 않습니다. 값에 `%2f`가 포함될 수 있으면 `[FromQuery]`를 사용합니다.
 
 `[ApiController]` 특성 없이, 바인딩 소스 특성이 명시적으로 정의됩니다. 다음 예제에서 `[FromQuery]` 특성은 `discontinuedOnly` 매개 변수 값이 요청 URL의 쿼리 문자열에 제공됨을 나타냅니다.
 
@@ -86,10 +96,10 @@ ASP.NET Core 2.1에서는 Web API 컨트롤러 클래스를 나타내는 [[ApiCo
 [!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Controllers/TestController.cs?name=snippet_ActionsCausingExceptions)]
 
 * **[FromForm]** 은 [IFormFile](/dotnet/api/microsoft.aspnetcore.http.iformfile) 및 [IFormFileCollection](/dotnet/api/microsoft.aspnetcore.http.iformfilecollection) 형식의 작업 매개 변수에 대해 유추됩니다. 단순 또는 사용자 정의 형식에 대해서는 유추되지 않습니다.
-* **[FromRoute]** 는 경로 템플릿에서 매개 변수와 일치하는 작업 매개 변수 이름에 대해 유추됩니다. 여러 경로가 작업 매개 변수와 일치하는 경우 모든 경로 값은 `[FromRoute]`로 간주됩니다.
+* **[FromRoute]** 는 경로 템플릿에서 매개 변수와 일치하는 작업 매개 변수 이름에 대해 유추됩니다. 둘 이상의 경로가 작업 매개 변수와 일치하는 경우 모든 경로 값은 `[FromRoute]`로 간주됩니다.
 * **[FromQuery]** 는 다른 작업 매개 변수에 대해 유추됩니다.
 
-기본 유추 규칙은 *Startup.ConfigureServices*에서 다음 코드와 함께 사용하지 않도록 설정됩니다.
+[SuppressInferBindingSourcesForParameters](/dotnet/api/microsoft.aspnetcore.mvc.apibehavioroptions.suppressinferbindingsourcesforparameters) 속성이 `true`로 설정되는 경우 기본 유추 규칙을 사용하지 않습니다. `services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);` 뒤에 *Startup.ConfigureServices*에서 다음 코드를 추가합니다.
 
 [!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Startup.cs?name=snippet_ConfigureApiBehaviorOptions&highlight=4)]
 
@@ -97,7 +107,7 @@ ASP.NET Core 2.1에서는 Web API 컨트롤러 클래스를 나타내는 [[ApiCo
 
 작업 매개 변수를 [[FromForm]](/dotnet/api/microsoft.aspnetcore.mvc.fromformattribute) 특성으로 주석 처리하는 경우 `multipart/form-data` 요청 콘텐츠 형식이 유추됩니다.
 
-기본 동작은 *Startup.ConfigureServices*에서 다음 코드와 함께 사용하지 않도록 설정됩니다.
+[SuppressConsumesConstraintForFormFileParameters](/dotnet/api/microsoft.aspnetcore.mvc.apibehavioroptions.suppressconsumesconstraintforformfileparameters) 속성이 `true`로 설정되는 경우 기본 동작이 사용되지 않습니다. `services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);` 뒤에 *Startup.ConfigureServices*에서 다음 코드를 추가합니다.
 
 [!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Startup.cs?name=snippet_ConfigureApiBehaviorOptions&highlight=3)]
 
@@ -108,12 +118,13 @@ ASP.NET Core 2.1에서는 Web API 컨트롤러 클래스를 나타내는 [[ApiCo
 [!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api/Controllers/ProductsController.cs?name=snippet_ControllerSignature&highlight=1)]
 
 작업은 [UseMvc](/dotnet/api/microsoft.aspnetcore.builder.mvcapplicationbuilderextensions.usemvc#Microsoft_AspNetCore_Builder_MvcApplicationBuilderExtensions_UseMvc_Microsoft_AspNetCore_Builder_IApplicationBuilder_System_Action_Microsoft_AspNetCore_Routing_IRouteBuilder__)에 정의된 [규칙 기반 경로](xref:mvc/controllers/routing#conventional-routing)를 통해 또는 *Startup.Configure*의 [UseMvcWithDefaultRoute](/dotnet/api/microsoft.aspnetcore.builder.mvcapplicationbuilderextensions.usemvcwithdefaultroute#Microsoft_AspNetCore_Builder_MvcApplicationBuilderExtensions_UseMvcWithDefaultRoute_Microsoft_AspNetCore_Builder_IApplicationBuilder_)에 의해 액세스할 수 없습니다.
+
 ::: moniker-end
 
 ## <a name="additional-resources"></a>추가 자료
 
-* [컨트롤러 작업 반환 형식](xref:web-api/action-return-types)
-* [사용자 지정 서식 지정기](xref:web-api/advanced/custom-formatters)
-* [응답 데이터 서식 지정](xref:web-api/advanced/formatting)
-* [Swagger를 사용한 도움말 페이지](xref:tutorials/web-api-help-pages-using-swagger)
-* [컨트롤러 작업에 라우팅](xref:mvc/controllers/routing)
+* <xref:web-api/action-return-types>
+* <xref:web-api/advanced/custom-formatters>
+* <xref:web-api/advanced/formatting>
+* <xref:tutorials/web-api-help-pages-using-swagger>
+* <xref:mvc/controllers/routing>

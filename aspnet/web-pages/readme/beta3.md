@@ -423,7 +423,7 @@ ms.locfileid: "37831834"
 
 ### <a name="publishing-applications"></a>응용 프로그램 게시
 
-#### <a name="issue-site-might-not-work-after-publishing-if-the-destination-url-field-is-not-prefixed-with-http-or-https"></a>문제: 사이트 "대상 URL" 필드는 http:// 또는 https://로 시작 하지 않는 경우 게시 한 후 작동 하지 않을 수 있습니다.
+#### <a name="issue-site-might-not-work-after-publishing-if-the-destination-url-field-is-not-prefixed-with-http-or-https"></a>문제: 사이트 "대상 URL" 필드는 http:// 또는 https:// 로 시작 하지 않는 경우 게시 한 후 작동 하지 않을 수 있습니다.
 
 > 에 **게시 설정** 대화 상자에서 대상 URL로 시작 하지 않는 경우 `http://` 또는 `https://`, 사이트 배포 후 작동 하지 않을 수 있습니다.
 > 

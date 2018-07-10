@@ -4,19 +4,16 @@ title: 도구 키트 컨트롤 Extender (VB)를 제어 하는 사용자 지정 A
 author: microsoft
 description: 사용자 지정 Extender를 사용 하 여 사용자 지정 하 고 새 클래스를 만들 필요 없이 ASP.NET 컨트롤의 기능을 확장할 수 있습니다.
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/12/2009
-ms.topic: article
 ms.assetid: 18b29834-c991-4e0c-b533-44d358fbfc9c
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/getting-started/creating-a-custom-ajax-control-toolkit-control-extender-vb
 msc.type: authoredcontent
-ms.openlocfilehash: a996409e8e9d37806fcbee8b7cc1c509dd9700fa
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: b44918cff161088e98f7baaca7714348b0b6a8de
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37394549"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37814620"
 ---
 <a name="creating-a-custom-ajax-control-toolkit-control-extender-vb"></a>사용자 지정 AJAX 컨트롤 도구 키트 컨트롤 Extender (VB) 만들기
 ====================

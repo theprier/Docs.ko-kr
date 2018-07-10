@@ -4,19 +4,16 @@ title: 관리 되는 코드 (C#) 저장된 프로시저 및 사용자 정의 함
 author: rick-anderson
 description: Microsoft SQL Server 2005 개발자는 관리 되는 코드를 통해 데이터베이스 개체를 만들 수 있도록.NET 공용 언어 런타임 통합 됩니다. 이 자습서는 중...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/03/2007
-ms.topic: article
 ms.assetid: 213eea41-1ab4-4371-8b24-1a1a66c515de
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-stored-procedures-and-user-defined-functions-with-managed-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 93c1496f28e6a4e29b5fe46c6c20635c05ce78c3
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 33ec7cfbb029c1a0e5200eb61aa4e39b02d991f3
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37388954"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37824418"
 ---
 <a name="creating-stored-procedures-and-user-defined-functions-with-managed-code-c"></a>저장 프로시저 및 관리 코드 (C#)를 사용 하 여 사용자 정의 함수 만들기
 ====================
@@ -156,90 +153,90 @@ S를 모든 단종 된 제품을 반환 하는 저장된 프로시저를 추가 
 
 [!code-csharp[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/samples/sample3.cs)]
 
-새 쿼리 창을 열고 실행 하 여이 확인 된 [ 저장 프로시저입니다. 다음 오류 메시지를 받게 됩니다..NET Framework에서 사용자 코드의 실행이 비활성화 됩니다. Clr 사용 구성 옵션을 사용 하도록 설정 합니다. 검사 Northwind의 데이터베이스 구성 정보를 입력 하 고 명령을 실행 [ 쿼리 창에서.
+모든 관리 되는 데이터베이스 개체에 액세스할 수는 [ `SqlContext` 개체](https://msdn.microsoft.com/library/ms131108.aspx) 호출자의 컨텍스트를 나타내는입니다. 합니다 `SqlContext` 에 액세스할 수는 [ `SqlPipe` 개체](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlpipe.aspx) 를 통해 해당 [ `Pipe` 속성](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlcontext.pipe.aspx)합니다. 이 `SqlPipe` 개체는 SQL Server 데이터베이스와 호출 응용 프로그램 간에 정보를 ferry 사용 됩니다. 이름에서 알 수 있듯이 합니다 [ `ExecuteAndSend` 메서드](https://msdn.microsoft.com/library/microsoft.sqlserver.server.sqlpipe.executeandsend.aspx) 전달에 실행 `SqlCommand` 개체 및 결과 클라이언트 응용 프로그램에 다시 보냅니다.
 
 > [!NOTE]
-> 이 설정을 사용 하도록 설정 하는 clr 현재 0으로 설정 되어 있는지 보여 줍니다. Clr 사용 되도록 설정 되어 현재 설정 0 그림 12: clr 활성화 되도록 설정 되어 현재 설정 0 (큰 이미지를 보려면 클릭) 그림 12에 각 구성 설정에 나열 된 4 개의 값: 최소 및 최대 값과 구성 및 실행된 값입니다. Clr 사용 설정에 대 한 구성 값을 업데이트 하려면 다음 명령을 실행 합니다.
+> 관리 되는 데이터베이스 개체는 저장된 프로시저 및 Udf 집합 기반 논리 보다는 절차적 논리를 사용 하는 가장 적합 합니다. 절차적 논리 없이 행 단위로 기준 데이터 집합을 사용 하 여 작업 또는 스칼라 데이터와 함께 작업 해야 합니다. 그러나 `GetDiscontinuedProducts` 방금 만든 방법은 절차적 논리 없이 없습니다. 따라서이 구현 하는 것이 좋습니다 T-SQL 저장 프로시저. 만들기 및 배포 하는 데 필요한 단계를 설명 하기 위해 관리 되는 저장된 프로시저는 저장된 프로시저를 관리 하는 대로 구현 됩니다.
 
 
-## <a name="step-4-deploying-the-managed-stored-procedure"></a>다시 실행 하는 경우는  위의 문은 1을 사용 하도록 설정 하는 clr 설정의 구성 값을 업데이트 하는 하지만 실행된 값을 0으로 계속 설정 되어 있는지 표시 됩니다.
+## <a name="step-4-deploying-the-managed-stored-procedure"></a>4 단계: 배포 관리 되는 저장 프로시저
 
-이 구성 변경 내용을 적용 하려면 실행 해야 합니다   명령, 실행된 값을 현재 구성 값으로 설정 됩니다는 합니다. 단순히 입력  쿼리 창에서 도구 모음에서 실행 아이콘을 클릭 합니다. 실행 하는 경우  이제 clr 설정의 구성에 대 한 1의 값이 표시 하 고 값을 실행 해야 합니다. Clr 사용 구성 완료를 사용 하 여 관리 되는 실행 준비가 기꺼이 `ManagedDatabaseConstructs` 저장 프로시저입니다. 쿼리 창에서 입력 하 고 명령을 실행 합니다  합니다. 해당 관리 되는 코드를 사용 하면 저장된 프로시저를 호출 합니다  메서드를 실행 합니다. 이 코드가 실행을 `sp_dbcmptlevel` 쿼리 지원 및 SQL Server Management Studio에서이 인스턴스는 호출 응용 프로그램에이 데이터를 반환 하는 모든 제품을 반환 합니다.
+전체이 코드에서는 Northwind 데이터베이스에 배포할 준비가 된 것입니다. SQL Server 프로젝트를 배포에서 코드를 어셈블리로 컴파일합니다, 그리고 데이터베이스를 사용 하 여 어셈블리를 등록 하 고 어셈블리의 적절 한 메서드에 연결 하 여 데이터베이스에서 해당 개체를 만듭니다. 배포 옵션으로 수행 하는 작업의 정확한 집합은 보다 정확 하 게 13 단계에서에서 명시 됩니다. 마우스 오른쪽 단추로 클릭는 `ManagedDatabaseConstructs` 프로젝트 솔루션 탐색기에서 이름 및 배포 옵션을 선택 합니다. 다음 오류로 인해 배포가 실패 하는 반면: '외부' 근처의 구문이 잘못 되었습니다. 이 기능을 사용 하도록 설정 하려면 더 높은 값으로 현재 데이터베이스의 호환성 수준을 설정 해야 합니다. 참조 된 저장된 프로시저에 대 한 도움말 `sp_dbcmptlevel`합니다.
 
-Management Studio는 이러한 결과 수신 및 결과 창에 표시 합니다. 모든 저장된 프로시저 반환 GetDiscontinuedProducts 단종 된 제품만 그림 13: 합니다  저장 프로시저 반환 모든 지원 되지 않는 제품 (클릭 하 여 큰 이미지 보기) 5 단계: 관리 되는 만들기는 저장 프로시저 입력된 매개 변수를 수락 합니다. 다양 한 쿼리 및이 자습서 전체에서 만든 저장된 프로시저를 사용한 매개 변수합니다.
+이 오류 메시지에는 Northwind 데이터베이스를 사용 하 여 어셈블리를 등록 하려고 할 때 발생 합니다. SQL Server 2005 데이터베이스를 사용 하 여 어셈블리를 등록 하기 위해 데이터베이스의 호환성 수준이 90으로 설정 되어야 합니다. 기본적으로 새 SQL Server 2005 데이터베이스 90의 호환성 수준이 있습니다. 그러나 Microsoft SQL Server 2000을 사용 하 여 만든 데이터베이스의 기본 호환성 수준을 80의 경우. Northwind 데이터베이스는 Microsoft SQL Server 2000 데이터베이스 처음 되었으므로 해당 호환성 수준이 80으로 현재 설정 된 하 고 따라서 관리 되는 데이터베이스 개체를 등록 하려면 90을 늘릴 수 해야 합니다.
 
-예를 들어 합니다 새 저장 프로시저 만들기 형식화 된 데이터 집합의 Tableadapter에 대 한 자습서 라는 저장된 프로시저를 만들었습니다  라는 입력된 매개 변수를 수락 하는 합니다.
+데이터베이스의 호환성 수준을 업데이트 하려면 Management Studio에서 새 쿼리 창을 열고 입력:
 
 
 [!code-sql[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/samples/sample4.sql)]
 
-저장된 프로시저가 반환한 모든 제품입니다  필드에 제공 된 값과 일치  매개 변수입니다.
+위의 쿼리를 실행 하려면 도구 모음에서 실행 아이콘을 클릭 합니다.
 
 
-[![입력된 매개 변수를 허용 하는 관리 되는 저장된 프로시저를 만들려면 s 메서드 정의에서 이러한 매개 변수를 지정 하면 됩니다.](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/_static/image16.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/_static/image15.png)
+[![Northwind 데이터베이스의 호환성 수준을 업데이트합니다](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/_static/image16.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/_static/image15.png)
 
-**예를 들어 let s 다른 관리 되는 저장된 프로시저를 추가 합니다 **라는 프로젝트**합니다.
-
-
-이 관리 되는 저장된 프로시저는 가격을 지정 하는 입력된 매개 변수를 수락 하 고 모든 제품을 반환 합니다 인  필드를 사용 하면 매개 변수의 값 보다 작습니다. 프로젝트에 새 저장된 프로시저를 추가 하려면 마우스 오른쪽 단추로 클릭는  프로젝트 이름 및 새 저장된 프로시저를 추가 하려면 선택 합니다.
-
-3 단계에서에서 보았듯이 라는 메서드를 사용 하 여 새 C# 클래스 파일을 만들기는이  내에 배치 합니다  클래스 합니다. 업데이트를  허용 하도록 s 메서드 정의    라는 입력된 매개 변수  실행 하 고 쿼리 결과 반환 하는 코드를 작성 및: 합니다 `ManagedDatabaseConstructs` 정 및 코드의 유사한 메서드의 정 및 코드는  3 단계에서에서 만든 메서드.
+**그림 9**: Northwind 데이터베이스 호환성 수준이 s 업데이트 ([큰 이미지를 보려면 클릭](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/_static/image17.png))
 
 
-![마법사의 마지막 화면을 사용 하면 사용 되는 데이터 액세스 패턴 및 결과 메서드의 이름을 지정할 수 있습니다.](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/_static/image18.png)
+호환성 수준이 업데이트 한 후 SQL Server 프로젝트를 다시 배포 합니다. 이 이번 배포 오류 없이 완료 해야 합니다.
 
-**메서드를 확인 하는 확인란 및 이름을 모두를 둡니다 **고**입니다.
-
-
-마법사를 완료 하려면 마침을 클릭 합니다. 메서드 FillByDiscontinued 이름과 GetDiscontinuedProducts 그림 18`ManagedDatabaseConstructs`: 메서드 이름을  하 고  (클릭 하 여 큰 이미지 보기) 라는 메서드를 만들려면 다음이 단계를 반복 `GetDiscontinuedProducts` 및 `GetDiscontinuedProducts` 에  에 대 한는  저장된 프로시저를 관리 합니다. 그림 19 메서드를 추가한 후 데이터 집합 디자이너의 스크린샷이 나와 합니다  에 대 한 합니다  및  저장된 프로시저를 관리 합니다.
+SQL Server Management Studio로 돌아가서, 개체 탐색기에서 Northwind 데이터베이스를 마우스 오른쪽 단추로 클릭 하 고 새로 고침을 선택 합니다. 다음으로, 프로그래밍 기능 폴더를 드릴 다운 하 고 어셈블리 폴더를 확장 합니다. Northwind 데이터베이스에서 생성 된 어셈블리를 이제 포함 그림 10과 같이 `ManagedDatabaseConstructs` 프로젝트입니다.
 
 
-![ProductsTableAdapter이이 단계에서 추가한 새 메서드를 포함 합니다.](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/_static/image19.png)
+![ManagedDatabaseConstructs 어셈블리가 Northwind 데이터베이스를 사용 하 여 지금 등록](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/_static/image18.png)
 
-**그림 19**: 합니다 `GetDiscontinuedProducts` 이 단계에서는 새 메서드 추가 포함 (클릭 하 여 큰 이미지 보기)
-
-
-비즈니스 논리 계층에 해당 메서드를 추가 하는 7 단계: 4-5 단계에서 추가한 관리 되는 저장된 프로시저를 호출 하는 것에 대 한 메서드를 포함 하도록 데이터 액세스 계층을 업데이트 했으므로 해당 하는 메서드가 비즈니스 논리 계층에 추가 해야 합니다. 다음 두 가지 메서드를 추가 합니다  클래스: 두 메서드는 단순히 해당 DAL 메서드 호출 및 반환 된  인스턴스.
-
-`exec sp_configure` 각 메서드 위의 태그 하면 이러한 메서드를 ObjectDataSource가의 데이터 소스 구성 마법사의 선택 탭의 드롭다운 목록에 포함 되어야 합니다. 8 단계: 관리 되는 호출에서 저장 프로시저는 프레젠테이션 계층
+**그림 10**:는 `ManagedDatabaseConstructs` 어셈블리는 이제 Northwind 데이터베이스에 등록
 
 
-[![비즈니스 논리 및 데이터 액세스 계층을 사용 하 여 호출에 대 한 지원을 포함 하도록 확장 합니다 [ 및 ![ 저장된 프로시저를 관리 되는 이러한 이제 표시할 수 있습니다 ASP.NET 페이지를 통해 프로시저 결과 저장 합니다.](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/_static/image21.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/_static/image20.png)
-
-**엽니다는 **페이지에서** 폴더 및 도구 상자에서 GridView를 디자이너로 끌어 옵니다.
+또한 저장 프로시저 폴더를 확장 합니다. 표시 됩니다. 저장된 프로시저 이름이 `GetDiscontinuedProducts`합니다. 지점을 확인 하 고 배포 프로세스에서이 저장된 프로시저가 만들어진 합니다 `GetDiscontinuedProducts` 의 메서드는 `ManagedDatabaseConstructs` 어셈블리입니다. 경우는 `GetDiscontinuedProducts` 저장된 프로시저를 실행, 차례로 실행 합니다 `GetDiscontinuedProducts` 메서드. Management Studio를 통해 편집할 수 없으며 관리 되는 저장된 프로시저 이므로 (따라서 저장된 프로시저 이름 옆에 있는 자물쇠 아이콘).
 
 
-집합 GridView s  속성을  및 스마트 태그를 바인딩할 라는 새로운 ObjectDataSource는 합니다. ObjectDataSource에서 해당 데이터를 가져오도록 구성 합니다  s 클래스  메서드.
+![GetDiscontinuedProducts 저장 프로시저는 저장 프로시저 폴더에 나열 됩니다.](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/_static/image19.png)
+
+**그림 11**:는 `GetDiscontinuedProducts` 저장 프로시저는 저장 프로시저 폴더에 나열 됩니다
+
+
+관리 되는 저장된 프로시저 호출 수 전에 해결 해야 또 하나의 장애물은 여전히: 관리 코드의 실행을 방지 하기 위해 데이터베이스가 구성 되어 있습니다. 새 쿼리 창을 열고 실행 하 여이 확인 된 `GetDiscontinuedProducts` 저장 프로시저입니다. 다음 오류 메시지를 받게 됩니다..NET Framework에서 사용자 코드의 실행이 비활성화 됩니다. Clr 사용 구성 옵션을 사용 하도록 설정 합니다.
+
+검사 Northwind의 데이터베이스 구성 정보를 입력 하 고 명령을 실행 `exec sp_configure` 쿼리 창에서. 이 설정을 사용 하도록 설정 하는 clr 현재 0으로 설정 되어 있는지 보여 줍니다.
+
+
+[![Clr 사용 되도록 설정 되어 현재 설정 0](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/_static/image21.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/_static/image20.png)
+
+**그림 12**: clr 활성화 되도록 설정 되어 현재 설정 0 ([큰 이미지를 보려면 클릭](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/_static/image22.png))
+
+
+그림 12에 각 구성 설정에 나열 된 4 개의 값: 최소 및 최대 값과 구성 및 실행된 값입니다. Clr 사용 설정에 대 한 구성 값을 업데이트 하려면 다음 명령을 실행 합니다.
 
 
 [!code-sql[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/samples/sample5.sql)]
 
-그림 20: ObjectDataSource 사용 하도록 구성 된  클래스 (클릭 하 여 큰 이미지 보기) GetDiscontinuedProducts 메서드 선택 탭의 드롭다운 목록에서 선택 그림 21: 선택 된  선택 탭의 드롭다운 목록에서 메서드 (클릭 하 여 큰 이미지 보기) 이 표는 표시 제품 정보만 데, 때문에 UPDATE, INSERT에서에서 드롭 다운 목록을 설정 한 탭 (없음)을 삭제 하 고 마침을 클릭 키를 누릅니다.
+다시 실행 하는 경우는 `exec sp_configure` 위의 문은 1을 사용 하도록 설정 하는 clr 설정의 구성 값을 업데이트 하는 하지만 실행된 값을 0으로 계속 설정 되어 있는지 표시 됩니다. 이 구성 변경 내용을 적용 하려면 실행 해야 합니다 [ `RECONFIGURE` 명령](https://msdn.microsoft.com/library/ms176069.aspx), 실행된 값을 현재 구성 값으로 설정 됩니다는 합니다. 단순히 입력 `RECONFIGURE` 쿼리 창에서 도구 모음에서 실행 아이콘을 클릭 합니다. 실행 하는 경우 `exec sp_configure` 이제 clr 설정의 구성에 대 한 1의 값이 표시 하 고 값을 실행 해야 합니다.
 
-마법사를 완료 하면 Visual Studio는 자동으로 추가 BoundField 또는 CheckBoxField에서 각 데이터 필드에 대 한는 `GetDiscontinuedProducts`합니다. 잠시 시간을 제외 하 고이 필드를 제거할 `exec` 및 `GetDiscontinuedProducts`, 하는 시점에 GridView 및 ObjectDataSource가 선언적 태그는 다음과 유사 합니다. 브라우저를 통해이 페이지를 보려면 잠시 시간이 소요 됩니다. 해당 페이지를 방문 하는 경우, ObjectDataSource 호출을 `SELECT` s 클래스  메서드. 이 메서드는 DAL에 호출 7 단계에서에서 보았듯이  s 클래스  메서드를 호출 하는  저장 프로시저입니다.
-
-
-[![이 저장된 프로시저 되어 관리 되는 저장 프로시저는 지원 되지 않는 제품을 반환 합니다. 3 단계에서에서 만든 코드를 실행 합니다.](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/_static/image24.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/_static/image23.png)
-
-**관리 되는 저장된 프로시저에서 반환 된 결과에 패키지 되는 ** dal 다음 GridView에 바인딩됩니다 및 표시 되는 프레젠테이션 계층으로 반환 하는 BLL을 하기 위해 반환한 합니다.
+Clr 사용 구성 완료를 사용 하 여 관리 되는 실행 준비가 기꺼이 `GetDiscontinuedProducts` 저장 프로시저입니다. 쿼리 창에서 입력 하 고 명령을 실행 합니다 `exec` `GetDiscontinuedProducts`합니다. 해당 관리 되는 코드를 사용 하면 저장된 프로시저를 호출 합니다 `GetDiscontinuedProducts` 메서드를 실행 합니다. 이 코드가 실행을 `SELECT` 쿼리 지원 및 SQL Server Management Studio에서이 인스턴스는 호출 응용 프로그램에이 데이터를 반환 하는 모든 제품을 반환 합니다. Management Studio는 이러한 결과 수신 및 결과 창에 표시 합니다.
 
 
-## <a name="step-5-creating-managed-stored-procedures-that-accept-input-parameters"></a>예상 대로 표 단종 된 제품을 나열 합니다.
+[![모든 저장된 프로시저 반환 GetDiscontinuedProducts 단종 된 제품만](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/_static/image24.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/_static/image23.png)
 
-지원 되지 않는 제품 나와 있습니다. 사용자 정의 함수의 장단점 관리 코드에서 SQL Server 2005 개체 만들기
+**그림 13**: 합니다 `GetDiscontinuedProducts` 저장 프로시저 반환 모든 지원 되지 않는 제품 ([클릭 하 여 큰 이미지 보기](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/_static/image25.png))
 
-SQL Server 2005의에서 관리 되는 코드를 사용 하 여 트리거를 만드는 중 방법: 만들기 및 실행 CLR SQL Server 저장 프로시저 방법: 만들기 및 CLR SQL Server 사용자 정의 함수를 실행 합니다.
 
-방법: 편집 된  SQL 개체를 실행 하는 스크립트 파일 이름을 `GetProductsWithPriceLessThan.cs`로 지정합니다. 소개 사용자 정의 함수
+## <a name="step-5-creating-managed-stored-procedures-that-accept-input-parameters"></a>5 단계: 관리 되는 만들기는 저장 프로시저 입력된 매개 변수를 수락 합니다.
 
-관리 코드와 SQL Server 2005 (비디오)
+다양 한 쿼리 및이 자습서 전체에서 만든 저장된 프로시저를 사용한 *매개 변수*합니다. 예를 들어 합니다 [새 저장 프로시저 만들기 형식화 된 데이터 집합의 Tableadapter에 대 한](creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-cs.md) 자습서 라는 저장된 프로시저를 만들었습니다 `GetProductsByCategoryID` 라는 입력된 매개 변수를 수락 하는 `@CategoryID`합니다. 저장된 프로시저가 반환한 모든 제품입니다 `CategoryID` 필드에 제공 된 값과 일치 `@CategoryID` 매개 변수입니다.
+
+입력된 매개 변수를 허용 하는 관리 되는 저장된 프로시저를 만들려면 s 메서드 정의에서 이러한 매개 변수를 지정 하면 됩니다. 예를 들어 let s 다른 관리 되는 저장된 프로시저를 추가 합니다 `ManagedDatabaseConstructs` 라는 프로젝트 `GetProductsWithPriceLessThan`합니다. 이 관리 되는 저장된 프로시저는 가격을 지정 하는 입력된 매개 변수를 수락 하 고 모든 제품을 반환 합니다 인 `UnitPrice` 필드를 사용 하면 매개 변수의 값 보다 작습니다.
+
+프로젝트에 새 저장된 프로시저를 추가 하려면 마우스 오른쪽 단추로 클릭는 `ManagedDatabaseConstructs` 프로젝트 이름 및 새 저장된 프로시저를 추가 하려면 선택 합니다. 파일 이름을 `GetProductsWithPriceLessThan.cs`로 지정합니다. 3 단계에서에서 보았듯이 라는 메서드를 사용 하 여 새 C# 클래스 파일을 만들기는이 `GetProductsWithPriceLessThan` 내에 배치 합니다 `partial` 클래스 `StoredProcedures`합니다.
+
+업데이트를 `GetProductsWithPriceLessThan` 허용 하도록 s 메서드 정의 [ `SqlMoney` ](https://msdn.microsoft.com/library/system.data.sqltypes.sqlmoney.aspx) 라는 입력된 매개 변수 `price` 실행 하 고 쿼리 결과 반환 하는 코드를 작성 및:
 
 
 [!code-csharp[Main](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/samples/sample6.cs)]
 
-TRANSACT-SQL 참조 연습: 관리 코드에서 저장된 프로시저 만들기
+합니다 `GetProductsWithPriceLessThan` 정 및 코드의 유사한 메서드의 정 및 코드는 `GetDiscontinuedProducts` 3 단계에서에서 만든 메서드. 하는 유일한 차이점은는 `GetProductsWithPriceLessThan` 메서드에서 입력된 매개 변수로 (`price`), `SqlCommand` s 쿼리 매개 변수를 포함 (`@MaxPrice`), 매개 변수를 추가한 합니다 `SqlCommand` s `Parameters` 컬렉션은 및 값이 할당 된 `price` 변수입니다.
 
-이 자습서에 대 한 선행 검토자가 ren Jacob Lauritsen 했습니다. 이 문서에서는, S ren도 검토 하는 것 외에도 수동으로 관리 되는 데이터베이스 개체를 컴파일하는 데이 아티클의 다운로드에 포함 된 Visual C# Express Edition 프로젝트를 만들었습니다. 새 항목을 표시 해야 `GetProductsWithPriceLessThan`합니다. 쿼리 창에서 입력 하 고 명령을 실행 `exec GetProductsWithPriceLessThan 25`는 그림 14와 같이 $25 미만의 모든 제품 목록 됩니다.
+이 코드를 추가한 후 SQL Server 프로젝트를 다시 배포 합니다. 다음으로, SQL Server Management Studio로 돌아가서 고 Stored Procedures 폴더를 새로 고칩니다. 새 항목을 표시 해야 `GetProductsWithPriceLessThan`합니다. 쿼리 창에서 입력 하 고 명령을 실행 `exec GetProductsWithPriceLessThan 25`는 그림 14와 같이 $25 미만의 모든 제품 목록 됩니다.
 
 
 [![제품에서 25 달러 표시 됩니다.](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/_static/image27.png)](creating-stored-procedures-and-user-defined-functions-with-managed-code-cs/_static/image26.png)
