@@ -1,17 +1,17 @@
 ---
 title: ASP.NET Core에서 오류 처리
 author: ardalis
-description: ASP.NET Core 응용 프로그램에서 오류를 처리하는 방법을 알아봅니다.
+description: ASP.NET Core 앱에서 오류를 처리하는 방법을 알아봅니다.
 ms.author: tdykstra
-ms.custom: H1Hack27Feb2017
-ms.date: 11/30/2016
+ms.custom: mvc
+ms.date: 07/05/2018
 uid: fundamentals/error-handling
-ms.openlocfilehash: 2fe46ecc32d61a7fafb2ad6e2a35456476608251
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 126a782bfd32f9ecd0596045218371ef5ccc82f2
+ms.sourcegitcommit: ea7ec8d47f94cfb8e008d771f647f86bbb4baa44
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273711"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37894142"
 ---
 # <a name="handle-errors-in-aspnet-core"></a>ASP.NET Core에서 오류 처리
 
@@ -19,20 +19,36 @@ ms.locfileid: "36273711"
 
 이 문서에서는 ASP.NET Core 앱에서 오류를 처리하기 위한 일반적인 접근법을 다룹니다.
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/error-handling/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/error-handling/samples/2.x/ErrorHandlingSample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="the-developer-exception-page"></a>개발자 예외 페이지
 
-예외에 대한 자세한 정보가 있는 페이지를 표시하도록 응용 프로그램을 구성하려면 `Microsoft.AspNetCore.Diagnostics` NuGet 패키지를 설치하고 줄을 [시작 클래스에서 메서드를 구성](xref:fundamentals/startup)에 추가합니다.
+::: moniker range=">= aspnetcore-2.1"
 
-[!code-csharp[](error-handling/sample/Startup.cs?name=snippet_DevExceptionPage&highlight=7)]
+예외에 대한 자세한 정보를 표시하는 페이지를 표시하는 앱을 구성하려면 *개발자 예외 페이지*를 사용합니다. [Microsoft.AspNetCore.Diagnostics](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics/) 패키지가 사용할 수 있게 된 페이지는 [Microsoft.AspNetCore.App 메타 패키지](xref:fundamentals/metapackage-app)에서 사용할 수 있습니다. `Startup.Configure` 메서드에 줄을 추가합니다.
 
-`app.UseMvc`와 같은 예외를 catch하려는 모든 미들웨어 앞에 `UseDeveloperExceptionPage`를 배치합니다.
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+예외에 대한 자세한 정보를 표시하는 페이지를 표시하는 앱을 구성하려면 *개발자 예외 페이지*를 사용합니다. [Microsoft.AspNetCore.Diagnostics](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics/) 패키지가 사용할 수 있게 된 페이지는 [Microsoft.AspNetCore.All 메타 패키지](xref:fundamentals/metapackage)에서 사용할 수 있습니다. `Startup.Configure` 메서드에 줄을 추가합니다.
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+예외에 대한 자세한 정보를 표시하는 페이지를 표시하는 앱을 구성하려면 *개발자 예외 페이지*를 사용합니다. 프로젝트 파일 내 [Microsoft.AspNetCore.Diagnostics](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics/) 패키지에 대한 패키지 참조를 추가하여 해당 페이지를 사용할 수 있습니다. `Startup.Configure` 메서드에 줄을 추가합니다.
+
+::: moniker-end
+
+[!code-csharp[](error-handling/samples/2.x/ErrorHandlingSample/Startup.cs?name=snippet_DevExceptionPage&highlight=7)]
+
+`app.UseMvc`과 같은 예외를 캐치하려는 미들웨어 앞에 [UseDeveloperExceptionPage](/dotnet/api/microsoft.aspnetcore.builder.developerexceptionpageextensions.usedeveloperexceptionpage) 호출을 둡니다.
 
 >[!WARNING]
 > **앱이 개발 환경에서 실행 중인 경우에만** 개발자 예외 페이지를 사용하도록 설정합니다. 프로덕션 환경에서 앱을 실행할 때 자세한 예외 정보를 공개적으로 공유하지 않을 수도 있습니다. [구성 환경에 대해 자세히 알아보세요](xref:fundamentals/environments).
 
-개발자 예외 페이지를 보려면 샘플 응용 프로그램을 `Development`로 설정된 환경으로 실행하고, `?throw=true`를 앱의 기본 URL에 추가합니다. 페이지에는 예외 및 요청에 대한 정보가 있는 여러 탭이 포함되어 있습니다. 첫 번째 탭에는 스택 추적이 포함됩니다. 
+개발자 예외 페이지를 보려면 샘플 앱을 `Development`로 설정된 환경으로 실행하고, `?throw=true`를 앱의 기본 URL에 추가합니다. 페이지에는 예외 및 요청에 대한 정보가 있는 여러 탭이 포함되어 있습니다. 첫 번째 탭에는 스택 추적이 포함됩니다.
 
 ![스택 추적](error-handling/_static/developer-exception-page.png)
 
@@ -40,7 +56,7 @@ ms.locfileid: "36273711"
 
 ![쿼리 문자열 매개 변수](error-handling/_static/developer-exception-page-query.png)
 
-이 요청에는 쿠키가 없지만, 만약 있는 경우 **쿠키** 탭에 표시됩니다. 마지막 탭에서 전달된 헤더를 볼 수 있습니다.
+요청에 쿠키가 있는 경우 **쿠키** 탭에 표시됩니다. 헤더는 마지막 탭에 표시됩니다.
 
 ![헤더](error-handling/_static/developer-exception-page-headers.png)
 
@@ -48,7 +64,7 @@ ms.locfileid: "36273711"
 
 앱이 `Development` 환경에서 실행되고 있지 않는 경우 사용할 예외 처리기 페이지를 구성합니다.
 
-[!code-csharp[](error-handling/sample/Startup.cs?name=snippet_DevExceptionPage&highlight=11)]
+[!code-csharp[](error-handling/samples/2.x/ErrorHandlingSample/Startup.cs?name=snippet_DevExceptionPage&highlight=11)]
 
 Razor Pages 앱에서 [dotnet new](/dotnet/core/tools/dotnet-new) Razor Pages 템플릿은 *Pages* 폴터의 오류 페이지 및 `ErrorModel` 페이지 모델 클래스를 제공합니다.
 
@@ -60,7 +76,8 @@ MVC 앱에서는 `HttpGet`과 같은 HTTP 메서드 특성을 사용하여 오�
 [AllowAnonymous]
 public IActionResult Error()
 {
-    return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    return View(new ErrorViewModel 
+        { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
 }
 ```
 
@@ -72,13 +89,13 @@ public IActionResult Error()
 app.UseStatusCodePages();
 ```
 
-기본적으로 상태 코드 페이지 미들웨어는 404와 같은 일반적인 상태 코드에 대한 간단한 텍스트 전용 처리기를 추가합니다.
+기본적으로 상태 코드 페이지 미들웨어는 404와 같은 일반적인 상태 코드에 대한 텍스트 전용 처리기를 추가합니다.
 
 ![404 페이지](error-handling/_static/default-404-status-code.png)
 
 미들웨어는 몇 가지 확장 메서드를 지원합니다. 한 가지 메서드는 람다 식을 사용합니다.
 
-[!code-csharp[](error-handling/sample/Startup.cs?name=snippet_StatusCodePages)]
+[!code-csharp[](error-handling/samples/2.x/ErrorHandlingSample/Startup.cs?name=snippet_StatusCodePages)]
 
 또 다른 메서드는 콘텐츠 형식 및 형식 문자열을 사용합니다.
 
@@ -86,9 +103,9 @@ app.UseStatusCodePages();
 app.UseStatusCodePages("text/plain", "Status code page, status code: {0}");
 ```
 
-또한 리디렉션 및 다시 실행 확장 메서드도 있습니다. 리디렉션 메서드는 302 상태 코드를 클라이언트에 보냅니다.
+또한 리디렉션 및 다시 실행 확장 메서드도 있습니다. 리디렉션 메서드는 *302 있음* 상태 코드를 클라이언트에 보냅니다.
 
-[!code-csharp[](error-handling/sample/Startup.cs?name=snippet_StatusCodePagesWithRedirect)]
+[!code-csharp[](error-handling/samples/2.x/ErrorHandlingSample/Startup.cs?name=snippet_StatusCodePagesWithRedirect)]
 
 다시 실행 메서드는 원래 상태 코드를 클라이언트에 반환할 뿐만 아니라 리디렉션 URL에 대한 처리기도 실행합니다.
 
@@ -130,10 +147,15 @@ if (statusCodePagesFeature != null)
 
 <h3>Development Mode</h3>
 <p>
-    Swapping to <strong>Development</strong> environment will display more detailed information about the error that occurred.
+    Swapping to <strong>Development</strong> environment will display more detailed 
+    information about the error that occurred.
 </p>
 <p>
-    <strong>Development environment should not be enabled in deployed applications</strong>, as it can result in sensitive information from exceptions being displayed to end users. For local debugging, development environment can be enabled by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>, and restarting the application.
+    <strong>Development environment should not be enabled in deployed applications
+    </strong>, as it can result in sensitive information from exceptions being 
+    displayed to end users. For local debugging, development environment can be 
+    enabled by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment 
+    variable to <strong>Development</strong>, and restarting the application.
 </p>
 ```
 
@@ -146,7 +168,8 @@ public class ErrorModel : PageModel
 
     public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, 
+        NoStore = true)]
     public void OnGet()
     {
         RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
@@ -178,13 +201,18 @@ public class ErrorModel : PageModel
 
 ### <a name="exception-filters"></a>예외 필터
 
-전역으로 또는 MVC 앱에서 컨트롤러당 또는 작업당 기준으로 예외 필터를 구성할 수 있습니다. 이러한 필터는 컨트롤러 작업 또는 다른 필터를 실행하는 동안 발생하는 처리되지 않은 예외를 처리하며, 그 외에는 호출되지 않습니다. [필터](xref:mvc/controllers/filters)에서 예외 필터에 대해 자세히 알아보세요.
+전역으로 또는 MVC 앱에서 컨트롤러당 또는 작업당 기준으로 예외 필터를 구성할 수 있습니다. 이러한 필터는 컨트롤러 작업 또는 다른 필터를 실행하는 동안 발생하는 처리되지 않은 예외를 처리합니다. 그렇지 않으면 이러한 필터는 호출되지 않습니다. 자세한 내용은 [필터](xref:mvc/controllers/filters)를 참조하세요.
 
 > [!TIP]
-> 예외 필터는 MVC 작업 내에서 발생하는 예외를 트래핑하는 데 유용하지만 오류 처리 미들웨어만큼 유연하지는 않습니다. 일반적인 경우에는 미들웨어를 선호하고, 선택한 MVC 작업에 따라 오류 처리를 *다르게* 수행해야 하는 경우에만 필터를 사용합니다.
+> 예외 필터는 MVC 작업 내에서 발생하는 예외를 트래핑하는 데 유용하지만 오류 처리 미들웨어만큼 유연하지는 않습니다. 일반적인 경우에는 미들웨어를 선호하고, 선택한 MVC 작업에 따라 오류 처리를 *다르게* 해야 하는 경우에만 필터를 사용합니다.
 
 ### <a name="handling-model-state-errors"></a>모델 상태 오류 처리
 
 [모델 유효성 검사](xref:mvc/models/validation)는 각 컨트롤러 작업을 호출하기 전에 발생하며, `ModelState.IsValid`를 검사하고 적절하게 반응하는 것은 작업 메서드의 책임입니다.
 
-[필터](xref:mvc/controllers/filters)가 그러한 정책을 구현하기에 적절한 경우에 일부 앱은 모델 유효성 검사 오류를 처리하는 데 표준 규칙을 따르도록 선택합니다. 잘못된 모델 상태일 때 작업 동작 방식을 테스트해야 합니다. [컨트롤러 논리 테스트](xref:mvc/controllers/testing)에서 자세히 알아보세요.
+[필터](xref:mvc/controllers/filters)가 이러한 정책을 구현하기에 적절한 경우에 일부 앱은 모델 유효성 검사 오류를 처리하는 표준 규칙을 따르도록 선택합니다. 잘못된 모델 상태일 때 작업 동작 방식을 테스트해야 합니다. [컨트롤러 논리 테스트](xref:mvc/controllers/testing)에서 자세히 알아보세요.
+
+## <a name="additional-resources"></a>추가 자료
+
+* <xref:host-and-deploy/azure-iis-errors-reference>
+* <xref:host-and-deploy/azure-apps/troubleshoot>

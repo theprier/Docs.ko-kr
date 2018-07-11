@@ -5,12 +5,12 @@ description: ASP.NET Core에서 다른 언어와 문화권으로의 콘텐츠 �
 ms.author: riande
 ms.date: 01/14/2017
 uid: fundamentals/localization
-ms.openlocfilehash: 0f48490af5805e4351c983f3ae519268c8e9c7a7
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 9647b605d4b9a23b365085e3677fb0e9b93f0da4
+ms.sourcegitcommit: 18339e3cb5a891a3ca36d8146fa83cf91c32e707
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274133"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37434015"
 ---
 # <a name="globalization-and-localization-in-aspnet-core"></a>ASP.NET Core에서 세계화 및 지역화
 
@@ -158,6 +158,27 @@ Razor 보기에서 `@inject IViewLocalizer`를 사용하는 리소스 파일은 
 * Resources/Views.Home.About.fr.resx
 
 `ResourcesPath` 옵션을 사용하지 않는 경우 보기에 대한 *.resx* 파일은 보기와 동일한 폴더에 위치합니다.
+
+### <a name="rootnamespaceattribute"></a>RootNamespaceAttribute 
+
+[RootNamespace](/dotnet/api/microsoft.extensions.localization.rootnamespaceattribute?view=aspnetcore-2.1) 속성은 어셈블리의 루트 네임 스페이스가 어셈블리 이름과 다른 경우 어셈블리의 루트 네임 스페이스를 제공합니다. 
+
+어셈블리의 루트 네임 스페이스가 어셈블리 이름과 다른 경우:
+
+* 지역화는 기본적으로 작동하지 않습니다.
+* 지역화는 리소스가 어셈블리 내에서 검색되는 방식으로 인해 실패합니다. `RootNamespace`는 실행 중인 프로세스에 사용할 수 없는 빌드 시간 값입니다. 
+
+`RootNamespace`가 `AssemblyName`과 다른 경우, 다음을 *AssemblyInfo.cs*에 포함합니다(매개 변수 값을 실제 값으로 대체하여 사용).
+
+```Csharp
+using System.Reflection;
+using Microsoft.Extensions.Localization;
+
+[assembly: ResourceLocation("Resource Folder Name")]
+[assembly: RootNamespace("App Root Namespace")]
+```
+
+이전 코드를 사용하면 resx 파일을 해결할 수 있습니다.
 
 ## <a name="culture-fallback-behavior"></a>문화권 대체 동작
 

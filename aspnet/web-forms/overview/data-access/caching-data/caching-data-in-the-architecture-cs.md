@@ -4,19 +4,16 @@ title: 아키텍처 (C#)에서 데이터 캐싱 | Microsoft Docs
 author: rick-anderson
 description: 이전 자습서에서 프레젠테이션 계층 캐싱 적용 하는 방법을 알게 되었습니다. 이 자습서에서는 계층화 된 architectu를 활용 하는 방법을 알아봅니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/30/2007
-ms.topic: article
 ms.assetid: d29a7c41-0628-4a23-9dfc-bfea9c6c1054
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-in-the-architecture-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 20c3c0cb5f3d13e66fbbceab77083c89f3015c53
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
+ms.openlocfilehash: 80805bae14654d6817328232453031384ceadad6
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37402911"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37820460"
 ---
 <a name="caching-data-in-the-architecture-c"></a>아키텍처 (C#)에서 데이터 캐싱
 ====================
@@ -141,7 +138,7 @@ ASP.NET 페이지가 코드 숨김 클래스에서 데이터 캐시를 통해 �
 
 [!code-csharp[Main](caching-data-in-the-architecture-cs/samples/sample8.cs)]
 
-적절 한 데이터 수정 비즈니스 논리 계층 메서드를 호출 하지만 응답이 반환 되기 전에 캐시를 무효화 해야 합니다. 그러나 캐시를 무효화 하지 않습니다 간단 하기 때문에 `ProductsCL` s 클래스 `GetProducts()` 하 고 `GetProductsByCategoryID(categoryID)` 메서드 각 항목이 캐시에 추가할 다른 키를 가진 및 `GetProductsByCategoryID(categoryID)` 메서드 각각에 대 한 다양 한 캐시 항목을 추가 고유 *categoryID*합니다.
+이후를  CL에서 사용 하는 오버 로드만 이러한 필드는 편집할 수 있도록 편집된 제품 s 이름과 가격 제한 GridView를 허용 합니다. 그러나 캐시를 무효화 하지 않습니다 간단 하기 때문에 `ProductsCL` s 클래스 `GetProducts()` 하 고 `GetProductsByCategoryID(categoryID)` 메서드 각 항목이 캐시에 추가할 다른 키를 가진 및 `GetProductsByCategoryID(categoryID)` 메서드 각각에 대 한 다양 한 캐시 항목을 추가 고유 *categoryID*합니다.
 
 캐시를 무효화 하는 경우 제거 해야 *모든* 가 추가 했을 수 있는 항목의 합니다 `ProductsCL` 클래스입니다. 연결 하 여이 작업을 수행할 수 있습니다는 *캐시 종속성* 캐시에 추가 되는 각 항목을 사용 하 여는 `AddCacheItem(key, value)` 메서드. 일반적으로 캐시 종속성을 캐시에서 파일 시스템 또는 Microsoft SQL Server 데이터베이스에서 데이터 파일을 다른 항목을 수 있습니다. 때 종속성이 변경 되거나 캐시에서 제거, 연결 된 캐시 항목은 자동으로 캐시에서 제거 합니다. 이 자습서에 대 한 역할을 통해 모든 항목에 대 한 캐시 종속성을 추가 하는 캐시에 추가 항목을 생성 하려는 `ProductsCL` 클래스입니다. 이런 방식으로 이러한 항목을 모두 제거할 수 있습니다 캐시에서 캐시 종속성을 제거 하기만 하면.
 

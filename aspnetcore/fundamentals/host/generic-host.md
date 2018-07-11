@@ -7,18 +7,18 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/16/2018
 uid: fundamentals/host/generic-host
-ms.openlocfilehash: 40d297257895a4defeb89cef9c5ec6deea64a985
-ms.sourcegitcommit: 7003d27b607e529642ded0400aa48ae692a0e666
+ms.openlocfilehash: 879f31a5916646a4d63f9f503173dc9ff4c53434
+ms.sourcegitcommit: ea7ec8d47f94cfb8e008d771f647f86bbb4baa44
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/27/2018
-ms.locfileid: "37033357"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37894155"
 ---
 # <a name="net-generic-host"></a>.NET 일반 호스트
 
 [Luke Latham](https://github.com/guardrex)으로
 
-.NET 앱은 *호스트*를 구성 및 실행합니다. 호스트는 앱 시작 및 수명 관리를 담당합니다. 이 항목에서는 HTTP 요청을 처리하지 않는 앱을 호스팅하는 데 유용한 ASP.NET Core 일반 호스트([HostBuilder](/dotnet/api/microsoft.extensions.hosting.hostbuilder))를 다룹니다. 웹 호스트([WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder))에 대한 자세한 내용은 [웹 호스트](xref:fundamentals/host/web-host) 항목을 참조하세요.
+.NET 앱은 *호스트*를 구성 및 실행합니다. 호스트는 앱 시작 및 수명 관리를 담당합니다. 이 항목에서는 HTTP 요청을 처리하지 않는 앱을 호스팅하는 데 유용한 ASP.NET Core 일반 호스트([HostBuilder](/dotnet/api/microsoft.extensions.hosting.hostbuilder))를 다룹니다. 웹 호스트([WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder))에 대한 자세한 내용은 <xref:fundamentals/host/web-host>을 참조하세요.
 
 일반 호스트의 목표는 웹 호스트 API에서 HTTP 파이프라인을 분리하여 호스트 시나리오의 더 광범위한 배열을 구현하는 것입니다. 일반 호스트에 기반을 둔 메시징, 백그라운드 작업 및 기타 HTTP 이외 워크로드는 구성, 종속성 주입(DI) 및 로깅과 같은 교차 편집 기능에서 이점을 얻습니다.
 
@@ -58,7 +58,7 @@ Visual Studio Code에서 콘솔을 설정하려면:
 
 환경 변수 구성은 기본적으로 추가되지 않습니다. 호스트 빌더에서 [AddEnvironmentVariables](/dotnet/api/microsoft.extensions.configuration.environmentvariablesextensions.addenvironmentvariables)를 호출하여 환경 변수의 호스트를 구성합니다. `AddEnvironmentVariables`는 선택적 사용자 정의 접두사를 허용합니다. 샘플 앱은 `PREFIX_` 접두사를 사용합니다. 접두사는 환경 변수를 읽을 때 제거됩니다. 샘플 앱의 호스트가 구성되면 `PREFIX_ENVIRONMENT`의 환경 변수 값이 `environment` 키에 대한 호스트 구성 값이 됩니다.
 
-[Visual Studio](https://www.visualstudio.com/)를 사용하거나 `dotnet run`을 통해 앱을 실행할 때 개발하는 동안에 환경 변수는 *Properties/launchSettings.json* 파일에 설정될 수 있습니다. [Visual Studio Code](https://code.visualstudio.com/)에서 환경 변수는 개발하는 동안에 *.vscode/launch.json* 파일에 설정될 수 있습니다. 자세한 내용은 [여러 환경 사용](xref:fundamentals/environments)를 참조하세요.
+[Visual Studio](https://www.visualstudio.com/)를 사용하거나 `dotnet run`을 통해 앱을 실행할 때 개발하는 동안에 환경 변수는 *Properties/launchSettings.json* 파일에 설정될 수 있습니다. [Visual Studio Code](https://code.visualstudio.com/)에서 환경 변수는 개발하는 동안에 *.vscode/launch.json* 파일에 설정될 수 있습니다. 자세한 내용은 <xref:fundamentals/environments>을 참조하세요.
 
 `ConfigureHostConfiguration` 항목은 부가적 결과와 함께 여러 번 호출할 수 있습니다. 호스트는 마지막에 값을 설정한 옵션을 사용합니다.
 
@@ -76,6 +76,21 @@ Visual Studio Code에서 콘솔을 설정하려면:
 ### <a name="extension-method-configuration"></a>확장 메서드 구성
 
 확장 메서드는 콘텐츠 루트 및 환경을 구성하기 위해 `IHostBuilder` 구현에서 호출됩니다.
+
+#### <a name="application-key-name"></a>응용 프로그램 키(이름)
+
+호스트를 생성하는 동안 호스트 구성에서 [IHostingEnvironment.ApplicationName](/dotnet/api/microsoft.extensions.hosting.ihostingenvironment.applicationname) 속성을 설정합니다. 값을 명시적으로 설정하려면 [HostDefaults.ApplicationKey](/dotnet/api/microsoft.extensions.hosting.hostdefaults.applicationkey)를 사용합니다.
+
+**키**: applicationName  
+**형식**: *string*  
+**기본값**: 앱의 진입점을 포함하는 어셈블리의 이름입니다.  
+**설정 방법**: `UseSetting`  
+**환경 변수**: `<PREFIX_>APPLICATIONKEY`(`<PREFIX_>`는 [선택적이고 사용자 정의됨](#configuration-builder))
+
+```csharp
+WebHost.CreateDefaultBuilder(args)
+    .UseSetting(WebHostDefaults.ApplicationKey, "CustomApplicationName")
+```
 
 #### <a name="content-root"></a>콘텐츠 루트
 
@@ -128,11 +143,19 @@ Visual Studio Code에서 콘솔을 설정하려면:
 > [!NOTE]
 > [AddConfiguration](/dotnet/api/microsoft.extensions.configuration.chainedbuilderextensions.addconfiguration) 확장 메서드는 현재 [GetSection](/dotnet/api/microsoft.extensions.configuration.iconfiguration.getsection)에서 반환되는 구성 섹션을 구문 분석할 수 없습니다(예: `.AddConfiguration(Configuration.GetSection("section"))`). `GetSection` 메서드는 요청된 섹션에 대한 구성 키를 필터링하지만 키에 있는 섹션 이름을 그대로 둡니다(예: `section:Logging:LogLevel:Default`). `AddConfiguration` 메서드는 구성 키에 대한 정확한 일치를 예상합니다(예: `Logging:LogLevel:Default`). 키에서 섹션 이름의 존재는 섹션 값으로 앱을 구성할 수 없도록 합니다. 이 문제는 향후 릴리스에서 해결될 예정입니다. 자세한 내용 및 해결 방법은 [전체 키를 사용하여 WebHostBuilder.UseConfiguration에 구성 섹션을 전달](https://github.com/aspnet/Hosting/issues/839)을 참조하세요.
 
+출력 디렉터리로 설정 파일을 이동하려면, 설정 파일을 프로젝트 파일 내 [MSBuild 프로젝트 항목](/visualstudio/msbuild/common-msbuild-project-items)으로 지정합니다. 샘플 앱은 다음 **&lt;콘텐츠, &gt;** 항목과 함께 JSON 앱 설정 파일과 *hostsettings.json*을 이동합니다.
+
+```xml
+<ItemGroup>
+  <Content Include="**\*.json" CopyToOutputDirectory="PreserveNewest" />
+</ItemGroup>
+```
+
 ## <a name="configureservices"></a>ConfigureServices
 
 [ConfigureServices](/dotnet/api/microsoft.extensions.hosting.hostinghostbuilderextensions.configureservices)는 앱의 [종속성 주입](xref:fundamentals/dependency-injection) 컨테이너에 서비스를 추가합니다. `ConfigureServices` 항목은 부가적 결과와 함께 여러 번 호출할 수 있습니다.
 
-호스티드 서비스는 [IHostedService](/dotnet/api/microsoft.extensions.hosting.ihostedservice) 인터페이스를 구현하는 백그라운드 작업 논리가 있는 클래스입니다. 자세한 내용은 [호스티드 서비스를 사용하는 백그라운드 작업](xref:fundamentals/host/hosted-services) 항목을 참조하세요.
+호스티드 서비스는 [IHostedService](/dotnet/api/microsoft.extensions.hosting.ihostedservice) 인터페이스를 구현하는 백그라운드 작업 논리가 있는 클래스입니다. 자세한 내용은 <xref:fundamentals/host/hosted-services>을 참조하세요.
 
 [샘플 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/host/generic-host/samples/)은 `AddHostedService` 확장 메서드를 사용하여 수명 이벤트, `LifetimeEventsHostedService` 및 시간 제한 백그라운드 작업에 대한 서비스 `TimedHostedService`를 앱에 추가합니다.
 
@@ -382,7 +405,7 @@ public class MyClass
 }
 ```
 
-자세한 내용은 [여러 환경 사용](xref:fundamentals/environments)를 참조하세요.
+자세한 내용은 <xref:fundamentals/environments>을 참조하세요.
 
 ## <a name="iapplicationlifetime-interface"></a>IApplicationLifetime 인터페이스
 
@@ -421,5 +444,5 @@ public class MyClass
 
 ## <a name="additional-resources"></a>추가 자료
 
-* [호스티드 서비스를 사용하는 백그라운드 작업](xref:fundamentals/host/hosted-services)
+* <xref:fundamentals/host/hosted-services>
 * [GitHub의 호스팅 리포지토리 샘플](https://github.com/aspnet/Hosting/tree/release/2.1/samples)

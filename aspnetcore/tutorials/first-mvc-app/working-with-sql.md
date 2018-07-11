@@ -5,12 +5,12 @@ description: 간단한 ASP.NET Core MVC 앱에서 SQL Server LocalDB를 사용�
 ms.author: riande
 ms.date: 03/07/2017
 uid: tutorials/first-mvc-app/working-with-sql
-ms.openlocfilehash: 05bd76038e5856d2a3e392e3b00e589dbc26fcc6
-ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
+ms.openlocfilehash: 2981035222681e6badbb0d917e4091baa96b9af1
+ms.sourcegitcommit: a09820f91e71a7d98b7347bf93210abb9e995e22
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36961060"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37889131"
 ---
 # <a name="work-with-sql-server-localdb-in-aspnet-core"></a>ASP.NET Core에서 SQL Server LocalDB 사용
 
@@ -70,6 +70,8 @@ if (context.Movie.Any())
 
 <a name="si"></a>
 ### <a name="add-the-seed-initializer"></a>시드 이니셜라이저 추가
+
+*Program.cs*의 내용을 다음 코드로 바꿉니다.
 
 ::: moniker range=">= aspnetcore-2.1"
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie21/Program.cs)]

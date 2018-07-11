@@ -2,16 +2,17 @@
 title: ASP.NET Core에서 WebSocket 지원
 author: rick-anderson
 description: ASP.NET Core에서 Websocket을 시작하는 방법을 알아봅니다.
+monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 02/15/2018
+ms.date: 06/28/2018
 uid: fundamentals/websockets
-ms.openlocfilehash: ee529f1aaadb6b6062bed56003c51f161eae7e72
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: a9fe13ef7895ea3ab43257dbbaf4521f883c0804
+ms.sourcegitcommit: 18339e3cb5a891a3ca36d8146fa83cf91c32e707
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273799"
+ms.lasthandoff: 07/03/2018
+ms.locfileid: "37433989"
 ---
 # <a name="websockets-support-in-aspnet-core"></a>ASP.NET Core에서 WebSocket 지원
 
@@ -46,16 +47,9 @@ ms.locfileid: "36273799"
 
 WebSockets를 사용하여 소켓 연결로 직접 작업하세요. 예를 들어, 실시간 게임에서 가능한 최상의 성능을 얻으려면 WebSockets를 사용하세요.
 
-[ASP.NET SignalR](/aspnet/signalr/overview/getting-started/introduction-to-signalr)은 실시간 기능을 지원하는 보다 풍부한 앱 모델을 제공하지만, ASP.NET 4.x에서만 실행되며 ASP.NET Core에서는 사용할 수 없습니다. SignalR의 ASP.NET Core 버전은 ASP.NET Core 2.1와 함께 출시될 예정입니다. [ASP.NET Core 2.1 대략적 계획](https://github.com/aspnet/Announcements/issues/288)을 참조하세요.
+[ASP.NET Core SignalR](xref:signalr/introduction)은 앱에 실시간 웹 기능을 추가하는 것을 간소화하는 라이브러리입니다. 가능하면 Websocket을 사용합니다.
 
-SignalR Core가 출시될 때까지 WebSockets를 사용할 수 있습니다. 그러나 SignalR이 제공하는 기능은 개발자가 제공하고 지원해야 합니다. 예:
-
-* 대체 전송 방식에 대한 자동 폴백을 통해서 보다 다양한 브라우저 버전을 지원합니다.
-* 연결이 끊어지면 자동으로 다시 연결합니다.
-* 서버의 메서드를 호출하는 클라이언트, 또는 반대로 클라이언트의 메서드를 호출하는 서버를 지원합니다.
-* 여러 서버에 대한 확장을 지원합니다.
-
-## <a name="how-to-use-it"></a>사용 방법
+## <a name="how-to-use-websockets"></a>WebSocket 사용 방법
 
 * [Microsoft.AspNetCore.WebSockets](https://www.nuget.org/packages/Microsoft.AspNetCore.WebSockets/) 패키지를 설치합니다.
 * 미들웨어를 구성합니다.

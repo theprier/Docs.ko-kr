@@ -7,12 +7,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 06/29/2018
 uid: tutorials/signalr-typescript-webpack
-ms.openlocfilehash: e4b00fa61ea0becba7d678a0b7c94d2d30f06740
-ms.sourcegitcommit: 2941e24d7f3fd3d5e88d27e5f852aaedd564deda
+ms.openlocfilehash: 03cb0c8ca2f6e4b48ebcbb4af0ed9c42c55f419a
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37126475"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37808323"
 ---
 # <a name="use-aspnet-core-signalr-with-typescript-and-webpack"></a>TypeScript 및 WebPack과 함께 ASP.NET Core SignalR 사용
 
@@ -39,7 +39,7 @@ ms.locfileid: "37126475"
 
 * [.NET Core SDK 2.1 이상](https://www.microsoft.com/net/download/all)
 * [npm](https://www.npmjs.com/) 포함 [Node.js](https://nodejs.org/)
-* [Visual Studio 2017](https://www.visualstudio.com/downloads/) 버전 15.7 이상(**ASP.NET 및 웹 개발** 워크로드 포함)
+* [Visual Studio 2017](https://www.visualstudio.com/downloads/) 버전 15.7.3 이상(**ASP.NET 및 웹 개발** 워크로드 포함)
 
 # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 
