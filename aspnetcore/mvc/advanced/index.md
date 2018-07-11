@@ -5,12 +5,12 @@ description: ASP.NET Core MVC 배포에 대한 고급 항목을 검색합니다.
 ms.author: riande
 ms.date: 01/05/2016
 uid: mvc/advanced/index
-ms.openlocfilehash: 34ea2bd70d991e4a94c55953e0a2e70d44f1dc98
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 3504ed71263d02b7207cb37a1f25d596fb86c9cf
+ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278111"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37938173"
 ---
 # <a name="advanced-topics-for-aspnet-core-mvc"></a>ASP.NET Core MVC에 대한 고급 항목
 
