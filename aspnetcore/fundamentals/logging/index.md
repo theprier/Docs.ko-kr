@@ -5,12 +5,12 @@ description: ASP.NET Core의 로깅 프레임워크에 대해 알아봅니다. �
 ms.author: tdykstra
 ms.date: 12/15/2017
 uid: fundamentals/logging/index
-ms.openlocfilehash: 969ad303c3fee06aa40d43140153ffbf58b735db
-ms.sourcegitcommit: 2941e24d7f3fd3d5e88d27e5f852aaedd564deda
+ms.openlocfilehash: dde01129bb7ea29544c4c416dfe9b5522a738d01
+ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37126289"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37938487"
 ---
 # <a name="logging-in-aspnet-core"></a>ASP.NET Core에 로그인
 
@@ -29,6 +29,8 @@ ASP.NET Core는 다양한 로깅 공급자를 사용하는 로깅 API를 지원�
 [예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/index/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ::: moniker-end
+
+IIS를 사용하여 호스트하는 경우의 stdout 로깅에 대한 내용은 <xref:host-and-deploy/iis/troubleshoot#aspnet-core-module-stdout-log>를 참조하세요. Azure App Service를 사용한 stdout 로깅에 대한 내용은 <xref:host-and-deploy/azure-apps/troubleshoot#aspnet-core-module-stdout-log>를 참조하세요.
 
 ## <a name="how-to-create-logs"></a>로그를 만드는 방법
 
