@@ -255,6 +255,8 @@
 ### [JavaScript 클라이언트](xref:signalr/javascript-client)
 ### [.NET 클라이언트](xref:signalr/dotnet-client)
 ### [WebPack 및 TypeScript](xref:tutorials/signalr-typescript-webpack)
+### [JavaScript API](/javascript/api/?view=signalr-js-latest)
+
 ## [구성](xref:signalr/configuration)
 ## [MessagePack 허브 프로토콜](xref:signalr/messagepackhubprotocol)
 ## [스트리밍](xref:signalr/streaming)
