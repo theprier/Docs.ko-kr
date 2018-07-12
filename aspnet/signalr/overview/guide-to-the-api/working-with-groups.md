@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: cd378ecd-3e9e-4236-b902-65916d85a048
 msc.legacyurl: /signalr/overview/guide-to-the-api/working-with-groups
 msc.type: authoredcontent
-ms.openlocfilehash: c1df772c19bfa89c1d780d09d56c6bc4a79967c6
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: ea396764bfba0a20347dc231acf40cb36adc1e37
+ms.sourcegitcommit: 260abb706ed17f07a53288d8a0c3e69fc13e7468
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37806195"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38966733"
 ---
 <a name="working-with-groups-in-signalr"></a>SignalR에서 그룹 작업
 ====================
@@ -73,7 +73,7 @@ SignalR에서 그룹에 연결 된 클라이언트의 지정 된 하위 집합�
 
 [!code-csharp[Main](working-with-groups/samples/sample2.cs?highlight=1,3)]
 
-일반적으로 포함 하면 안 `await` 호출 하는 경우는 `Groups.Remove` 메서드 하므로 제거 하려고 하는 연결 id를 더 이상 사용할 수 없습니다. 이런 경우 `TaskCanceledException` 요청 시간이 초과 되 면 throw 됩니다. 경우 응용 프로그램 사용자 그룹에 메시지를 보내기 전에 그룹에서 제거 되어 있는지 확인 해야 합니다를 추가할 수 있습니다 `await` Groups.Remove를 하 고 다음 catch 하기 전에 `TaskCanceledException` throw 될 수 있는 예외입니다.
+일반적으로 포함 하면 안 `await` 호출 하는 경우는 `Groups.Remove` 메서드 하므로 제거 하려고 하는 연결 id를 더 이상 사용할 수 없습니다. 이런 경우 `TaskCanceledException` 요청 시간이 초과 되 면 throw 됩니다. 경우 응용 프로그램 사용자 그룹에 메시지를 보내기 전에 그룹에서 제거 되어 있는지 확인 해야 합니다를 추가할 수 있습니다 `await` 하기 전에 `Groups.Remove`, 및 catch 한 다음는 `TaskCanceledException` throw 될 수 있는 예외입니다.
 
 <a id="call"></a>
 
