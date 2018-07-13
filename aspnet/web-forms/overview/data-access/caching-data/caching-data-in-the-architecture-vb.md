@@ -4,19 +4,16 @@ title: 아키텍처 (VB)에서 데이터 캐싱 | Microsoft Docs
 author: rick-anderson
 description: 이전 자습서에서 프레젠테이션 계층 캐싱 적용 하는 방법을 알게 되었습니다. 이 자습서에서는 계층화 된 architectu를 활용 하는 방법을 알아봅니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 05/30/2007
-ms.topic: article
 ms.assetid: 5e189dd7-f4f9-4f28-9b3a-6cb7d392e9c7
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-in-the-architecture-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7776fb01d31d9f84e57de2d5d899726b52c26d19
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: a8431c2b516a1a41f1d096b1bdb1071cc8a5ab66
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37402008"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37835381"
 ---
 <a name="caching-data-in-the-architecture-vb"></a>아키텍처 (VB)에서 데이터 캐싱
 ====================
@@ -136,38 +133,38 @@ ASP.NET 페이지가 코드 숨김 클래스에서 데이터 캐시를 통해 �
 
 데이터 검색 방법을 함께 캐싱 레이어를 삽입, 업데이트 및 데이터 삭제에 대 한 BLL과 같은 메서드를 제공 해야 합니다. CL의 데이터 수정 메서드에 캐시 된 데이터를 수정 하지 마십시오 있지만 대신 BLL s 해당 데이터 수정 메서드를 호출 하 고 캐시를 무효화 합니다. 이전 자습서에서 보았듯이이 ObjectDataSource의 캐싱 기능을 사용할 경우 적용 되는 동일한 동작 및 해당 `Insert`, `Update`, 또는 `Delete` 메서드가 호출 됩니다.
 
-변경 된 `UpdateProduct` 속성의 기본값을 다시 , 및 GridView 페이징, 정렬 및 편집을 지원 하도록 구성 합니다.
+다음 `UpdateProduct` 오버 로드에 CL에서 데이터 수정 메서드를 구현 하는 방법을 보여 줍니다.
 
 
 [!code-vb[Main](caching-data-in-the-architecture-vb/samples/sample8.vb)]
 
-이후를  CL에서 사용 하는 오버 로드만 이러한 필드는 편집할 수 있도록 편집된 제품 s 이름과 가격 제한 GridView를 허용 합니다. GridView에 대 한 필드를 포함 하려면 이전 자습서에서 정의한 합니다 `ProductsCL`, `GetProducts()`, 및 `GetProductsByCategoryID(categoryID)` 필드입니다.
+이후를  CL에서 사용 하는 오버 로드만 이러한 필드는 편집할 수 있도록 편집된 제품 s 이름과 가격 제한 GridView를 허용 합니다. 그러나 캐시를 무효화 하지 않습니다 간단 하기 때문에 `ProductsCL` s 클래스 `GetProducts()` 하 고 `GetProductsByCategoryID(categoryID)` 메서드 각 항목이 캐시에 추가할 다른 키를 가진 및 `GetProductsByCategoryID(categoryID)` 메서드 각각에 대 한 다양 한 캐시 항목을 추가 고유 *categoryID*합니다.
 
-이 서식 지정 및 구조를 복제할 자유롭게,이 경우 GridView 및 ObjectDataSource s를 선언적 태그는 다음과 비슷하게 표시 됩니다. 이 시점에서 캐싱 계층을 사용 하는 페이지를 했습니다. 작업에서 캐시를 보려면에 중단점을 설정 합니다  s 클래스  및  메서드. 정렬 하는 경우 코드를 단계별로 브라우저의 페이지를 방문 하 고 캐시에서 가져온 데이터를 확인 하기 위해 페이징 합니다. 그런 다음 레코드를 업데이트 하 고 캐시를 무효화 되며, 따라서 검색 BLL에서 데이터를 GridView에 다시 바인딩되는 경우. 이 기사의 다운로드에 제공 된 캐싱 계층은 완전 하지 않습니다.
+캐시를 무효화 하는 경우 제거 해야 *모든* 가 추가 했을 수 있는 항목의 합니다 `ProductsCL` 클래스입니다. 연결 하 여이 작업을 수행할 수 있습니다는 *캐시 종속성* 캐시에 추가 되는 각 항목을 사용 하 여는 `AddCacheItem(key, value)` 메서드. 일반적으로 캐시 종속성을 캐시에서 파일 시스템 또는 Microsoft SQL Server 데이터베이스에서 데이터 파일을 다른 항목을 수 있습니다. 때 종속성이 변경 되거나 캐시에서 제거, 연결 된 캐시 항목은 자동으로 캐시에서 제거 합니다. 이 자습서에 대 한 역할을 통해 모든 항목에 대 한 캐시 종속성을 추가 하는 캐시에 추가 항목을 생성 하려는 `ProductsCL` 클래스입니다. 이런 방식으로 이러한 항목을 모두 제거할 수 있습니다 캐시에서 캐시 종속성을 제거 하기만 하면.
 
-클래스가 하나만 포함 `AddCacheItem(key, value)`, 메서드의 소수의 스포츠는 합니다.
+Let s 업데이트는 `AddCacheItem(key, value)` 메서드는 캐시에이 메서드를 통해 추가 된 각 항목 있도록 연관 된 단일 캐시 종속성:
 
 
 [!code-vb[Main](caching-data-in-the-architecture-vb/samples/sample9.vb)]
 
-`MasterCacheKeyArray` 또한 단일 ASP.NET 페이지를 사용 CL (`MasterCacheKeyArray`) 다른 모든 여전히 BLL을 직접 참조 합니다. CL는 응용 프로그램에서 사용 하려는 경우 프레젠테이션 계층의 모든 호출은 해야 CL 해야 하는 CL의 클래스 이동한 메서드 프레젠테이션 계층에서 현재 사용 하는 BLL에 이러한 메서드와 클래스를 설명 합니다. 캐싱을 적용할 수 프레젠테이션 계층을 ASP.NET 2.0의 SqlDataSource 및 ObjectDataSource 컨트롤, 하는 동안 이상적으로 책임을 캐싱는 위임할 수 아키텍처에서 별도 계층입니다. 이 자습서에서는 프레젠테이션 계층 및 비즈니스 논리 계층 사이 있는 캐싱 계층을 만들었습니다. 캐싱 계층 클래스 BLL에 존재 하 고 프레젠테이션 계층에서 호출 되는 메서드 및 동일한 집합을 제공 해야 합니다. 이 단원과 이전 자습서에서 살펴본 계층 캐싱 예제 표시 반응 형 로드합니다. 사후 로드를 사용 하 여 데이터에 대 한 요청은 캐시에서 해당 데이터가 누락 된 경우에 데이터를 캐시에 로드 됩니다. 데이터 일 수도 있습니다 사전에 로드 된 캐시에 기술 로드 하는 데이터를 캐시에 실제로 필요 하기 전에 합니다. 다음 자습서에서 응용 프로그램 시작 시 캐시에 정적 값을 저장 하는 방법에 살펴봅니다 때 사전 로드 하는 예제를 살펴보겠습니다. 즐거운 프로그래밍!
+`MasterCacheKeyArray` ProductsCache 단일 값을 보유 하는 문자열 배열이입니다. 첫째, 캐시 항목을 캐시에 추가 되 고 현재 날짜 및 시간을 할당 합니다. 캐시 항목이 이미 있는 경우 업데이트 됩니다. 다음으로, 캐시 종속성을 만들어집니다. 합니다 [ `CacheDependency` 클래스](https://msdn.microsoft.com/library/system.web.caching.cachedependency(VS.80).aspx) s 생성자의 오버 로드가 번호가 이지만 여기에 사용 되 고 두 `String` 입력 배열입니다. 첫 번째 종속성으로 사용할 파일의 집합을 지정 합니다. T 값의 모든 파일 기반 종속성을 사용 하려는 것 이므로 `Nothing` 첫 번째 입력 매개 변수에 사용 됩니다. 두 번째 입력된 매개 변수 종속성으로 사용할 캐시 키 집합을 지정 합니다. 이 단일 종속성 지정 여기 `MasterCacheKeyArray`합니다. 합니다 `CacheDependency` 에 전달 되는 `Insert` 메서드.
 
-저자 소개
+이 수정 된 `AddCacheItem(key, value)`invaliding, 캐시 종속성을 제거 하는 것으로 간단 합니다.
 
 
 [!code-vb[Main](caching-data-in-the-architecture-vb/samples/sample10.vb)]
 
-## <a name="step-5-calling-the-caching-layer-from-the-presentation-layer"></a>Scott Mitchell, 7 ASP/ASP.NET 서적의 저자 이자 설립자입니다 4GuysFromRolla.com, 1998 Microsoft 웹 기술을 사용 하 여 왔습니다.
+## <a name="step-5-calling-the-caching-layer-from-the-presentation-layer"></a>5 단계: 프레젠테이션 계층에서 캐싱 레이어를 호출합니다.
 
-Scott는 독립 컨설턴트, 강사, 그리고 기록기로 작동합니다. 최근 저서는 `ProductsCL` `FromTheArchitecture.aspx`Sams 설명 직접 ASP.NET 2.0 24 시간 동안의`Caching`합니다. 그에 도달할 수 있습니다  합니다. 찾을 수 있는 저자의 블로그를 통해 또는 `ProductsCL`  합니다.
-
-
-[![특별히 감사](caching-data-in-the-architecture-vb/_static/image5.png)](caching-data-in-the-architecture-vb/_static/image4.png)
-
-**이 자습서 시리즈는 많은 유용한 검토자가 검토 되었습니다.
+캐싱 계층의 클래스 및 메서드를 사용할 수 있습니다 데이터로 작업 하는 기술을 사용 하 여에서는이 자습서 전체에서 ve. 캐시 된 데이터를 사용 하 여 작업을 설명 하기 위해 변경 내용을 저장 합니다 `ProductsCL` 클래스를 열고는 `FromTheArchitecture.aspx` 페이지에서 `Caching` 폴더 GridView를 추가 하 고 합니다. GridView가 스마트 태그에서 새 ObjectDataSource를 만듭니다. 마법사가 첫 번째 단계에 표시 됩니다는 `ProductsCL` 드롭 다운 목록에서 옵션 중 하나로 클래스입니다.
 
 
-이 자습서에 대 한 선행 검토자 Teresa Murphy 했습니다. 내 향후 MSDN 문서를 검토에 관심이 있으십니까? 그렇다면 삭제 나에서 선 `GetProducts()` `UpdateProducts`합니다.
+[![비즈니스 개체 드롭다운 목록에 포함 되어 ProductsCL 클래스](caching-data-in-the-architecture-vb/_static/image5.png)](caching-data-in-the-architecture-vb/_static/image4.png)
+
+**그림 4**: 합니다 `ProductsCL` 클래스가 비즈니스 개체 드롭다운 목록에 포함 되어 ([클릭 하 여 큰 이미지 보기](caching-data-in-the-architecture-vb/_static/image6.png))
+
+
+선택한 후 `ProductsCL`, 다음을 클릭 합니다. 선택 탭의 드롭다운 목록에 두 개의 항목이- `GetProducts()` 하 고 `GetProductsByCategoryID(categoryID)` [업데이트] 탭에 있는 유일한 및 `UpdateProduct` 오버 로드 합니다. 선택 된 `GetProducts()` 선택 탭에서 메서드 및 `UpdateProducts` 클릭 하 고 업데이트 탭에서 메서드를 완료 합니다.
 
 
 [![드롭다운 목록에 s ProductsCL 클래스 메서드가 나와](caching-data-in-the-architecture-vb/_static/image8.png)](caching-data-in-the-architecture-vb/_static/image7.png)

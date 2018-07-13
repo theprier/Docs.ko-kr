@@ -18,7 +18,6 @@
 ### [검색 추가](xref:tutorials/razor-pages/search)
 ### [새 필드 추가](xref:tutorials/razor-pages/new-field)
 ### [유효성 검사 추가](xref:tutorials/razor-pages/validation)
-### [파일 업로드](xref:tutorials/razor-pages/uploading-files)
 ## [실시간 SignalR 웹앱 만들기](xref:tutorials/signalr)
 ## [TypeScript를 사용하여 SignalR 웹앱 만들기](xref:tutorials/signalr-typescript-webpack)
 ## [MVC 웹앱 만들기](tutorials/first-mvc-app/index.md)
@@ -159,6 +158,7 @@
 ## [Razor 페이지에 대한 필터 메서드](xref:razor-pages/filter)
 ## [Razor 클래스 라이브러리 만들기](xref:razor-pages/ui-class)
 ## [경로 및 앱 규칙](xref:razor-pages/razor-pages-conventions)
+## [Razor 페이지에 파일 업로드](xref:razor-pages/upload-files)
 ## [Razor SDK](xref:razor-pages/sdk)
 
 # [MVC](xref:mvc/overview)
