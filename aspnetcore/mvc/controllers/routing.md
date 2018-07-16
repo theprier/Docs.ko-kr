@@ -5,12 +5,12 @@ description: ASP.NET Core MVC가 라우팅 미들웨어를 사용하여 들어�
 ms.author: riande
 ms.date: 03/14/2017
 uid: mvc/controllers/routing
-ms.openlocfilehash: 795ca13674f85b6e8c1f84718c225613a7a7125a
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 081332fd1007db5292a8812fc6ae934cb07dffb5
+ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278413"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37952983"
 ---
 # <a name="routing-to-controller-actions-in-aspnet-core"></a>ASP.NET Core의 컨트롤러 작업에 라우팅
 
@@ -696,7 +696,7 @@ public class ProductsController : Controller
 
 `IActionConstraint`를 구현하는 가장 간단한 방법은 `System.Attribute`에서 파생된 클래스를 만들어서 작업 및 컨트롤러에 배치하는 것입니다. MVC는 특성으로 적용된 `IActionConstraint`를 자동으로 검색합니다. 응용 프로그램 모델을 사용하여 제약 조건을 적용할 수 있으며, 제약 조건이 적용되는 방식을 개발자가 메타프로그래밍할 수 있는 가장 유연한 접근 방식일 것입니다.
 
-다음 예의 제약 조건은 경로 데이터의 *국가 코드*를 기반으로 작업을 선택합니다. [GitHub의 전체 샘플](https://github.com/aspnet/Entropy/blob/dev/samples/Mvc.ActionConstraintSample.Web/CountrySpecificAttribute.cs).
+다음 예의 제약 조건은 경로 데이터의 *국가 코드*를 기반으로 작업을 선택합니다. [GitHub의 전체 샘플](https://github.com/aspnet/Entropy/blob/master/samples/Mvc.ActionConstraintSample.Web/CountrySpecificAttribute.cs).
 
 ```csharp
 public class CountrySpecificAttribute : Attribute, IActionConstraint

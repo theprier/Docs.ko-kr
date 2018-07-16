@@ -5,12 +5,12 @@ description: 이 자습서에서는 관련된 데이터 즉, Entity Framework에
 ms.author: riande
 ms.date: 11/05/2017
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: 4e0aa7151cc54f666202458ba60500a7c04f5ebb
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: fa3147cc4ad121784911eef802e04ca91f16448f
+ms.sourcegitcommit: e12f45ddcbe99102a74d4077df27d6c0ebba49c1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276762"
+ms.lasthandoff: 07/15/2018
+ms.locfileid: "39063314"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---read-related-data---6-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 관련 데이터 읽기 - 6/8
 
@@ -74,19 +74,11 @@ ms.locfileid: "36276762"
 * 다음 명령을 실행합니다.
 
   ```console
+  dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version 2.1.0
   dotnet aspnet-codegenerator razorpage -m Course -dc SchoolContext -udl -outDir Pages\Courses --referenceScriptLibraries
   ```
 
 위의 명령은 `Course` 모델을 스캐폴드합니다. Visual Studio에서 프로젝트를 엽니다.
-
-프로젝트를 빌드합니다. 빌드는 다음과 같은 오류를 생성합니다.
-
-`1>Pages/Courses/Index.cshtml.cs(26,37,26,43): error CS1061: 'SchoolContext' does not
- contain a definition for 'Course' and no extension method 'Course' accepting a first
- argument of type 'SchoolContext' could be found (are you missing a using directive or
- an assembly reference?)`
-
- 전체적으로 `_context.Course`를 `_context.Courses`로 변경합니다(즉, “s”를 `Course`에 추가). 7개 항목이 발견되어 업데이트됩니다.
 
 *Pages/Courses/Index.cshtml.cs*를 열고 `OnGetAsync` 메서드를 검사합니다. 스캐폴딩 엔진은 `Department` 탐색 속성에 대한 즉시 로드를 지정했습니다. `Include` 메서드가 즉시 로드를 지정합니다.
 

@@ -5,12 +5,12 @@ description: 이 자습서에서는 관련 데이터 즉, Entity Framework에서
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/read-related-data
-ms.openlocfilehash: d5c9b665a80003ef5029754d7ad1780b3254e97e
-ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
+ms.openlocfilehash: a310c9e4b9cec6e2ab2477461f395c9bbd3fa364
+ms.sourcegitcommit: e12f45ddcbe99102a74d4077df27d6c0ebba49c1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37092986"
+ms.lasthandoff: 07/15/2018
+ms.locfileid: "39063288"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---read-related-data---6-of-10"></a>ASP.NET Core MVC 및 EF Core - 관련 데이터 읽기 - 6/10
 
@@ -155,7 +155,7 @@ Entity Framework와 같은 ORM(개체-관계형 매핑) 소프트웨어에서 �
 위 코드를 아래 코드 대신 사용합니다.
 
 ```csharp
-.Where(I => i.ID == id.Value).Single()
+.Where(i => i.ID == id.Value).Single()
 ```
 
 다음으로 강좌를 선택한 경우 선택한 강좌가 보기 모델의 강좌 목록에서 검색됩니다. 보기 모델의 `Enrollments` 속성은 해당 강좌의 `Enrollments` 탐색 속성에서 등록 엔터티로 로드됩니다.

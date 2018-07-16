@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/07/2017
 uid: tutorials/razor-pages/validation
-ms.openlocfilehash: cabf3d955ef2eb17b3bcb40170a9de7b53ffd107
-ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
+ms.openlocfilehash: 0d35de827ca6fea530229f1ef263ea7b9351e5ad
+ms.sourcegitcommit: 19cbda409bdbbe42553dc385ea72d2a8e246509c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37077633"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38992830"
 ---
 # <a name="add-validation-to-an-aspnet-core-razor-page"></a>ASP.NET Core Razor 페이지에 유효성 검사 추가
 
@@ -157,6 +157,8 @@ public DateTime ReleaseDate { get; set; }
 
 Azure에 이 앱을 게시하는 방법에 관한 지침은 [Visual Studio를 사용하여 Azure App Service에 ASP.NET Core 웹앱 게시](xref:tutorials/publish-to-azure-webapp-using-vs)를 참조하세요.
 
+Razor 페이지에 대한 이 소개를 완료해 주셔서 감사합니다. 소중한 의견에 감사합니다. [MVC 및 EF Core 시작](xref:data/ef-mvc/intro)은 이 자습서의 유용한 후속편입니다.
+
 ## <a name="additional-resources"></a>추가 자료
 
 * [양식 사용](xref:mvc/views/working-with-forms)
@@ -166,4 +168,3 @@ Azure에 이 앱을 게시하는 방법에 관한 지침은 [Visual Studio를 �
 
 > [!div class="step-by-step"]
 > [이전: 새 필드 추가](xref:tutorials/razor-pages/new-field)
-> [다음: 파일 업로드](xref:tutorials/razor-pages/uploading-files)

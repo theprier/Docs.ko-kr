@@ -5,12 +5,12 @@ description: 이 자습서에서는 ASP.NET Core 앱에서 .NET Core CLI 파일 
 ms.author: riande
 ms.date: 05/31/2018
 uid: tutorials/dotnet-watch
-ms.openlocfilehash: 2a59267b36faf1e00ea2f0cc7e2b9ceb9828f791
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: fc08efa433f688a0b9009aed35fdee2b0c228619
+ms.sourcegitcommit: e12f45ddcbe99102a74d4077df27d6c0ebba49c1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278855"
+ms.lasthandoff: 07/15/2018
+ms.locfileid: "39063301"
 ---
 # <a name="develop-aspnet-core-apps-using-a-file-watcher"></a>파일 감시자를 사용하여 ASP.NET Core 앱 개발
 
@@ -179,4 +179,4 @@ dotnet watch msbuild /t:Test
 
 ## <a name="dotnet-watch-in-github"></a>GitHub의 `dotnet-watch`
 
-`dotnet-watch`는 GitHub [DotNetTools 리포지토리](https://github.com/aspnet/DotNetTools/tree/dev/src/dotnet-watch)의 일부입니다.
+`dotnet-watch`는 GitHub [DotNetTools 리포지토리](https://github.com/aspnet/DotNetTools/tree/master/src/dotnet-watch)의 일부입니다.
