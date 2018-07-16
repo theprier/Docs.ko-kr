@@ -258,6 +258,8 @@
 ### [JavaScript API](/javascript/api/?view=signalr-js-latest)
 
 ## [구성](xref:signalr/configuration)
+## [인증 및 권한 부여](xref:signalr/authn-and-authz)
+## [보안 고려 사항](xref:signalr/security)
 ## [MessagePack 허브 프로토콜](xref:signalr/messagepackhubprotocol)
 ## [스트리밍](xref:signalr/streaming)
 ## [SignalR 버전 간의 차이](xref:signalr/version-differences)

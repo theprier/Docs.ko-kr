@@ -7,19 +7,19 @@ ms.author: riande
 ms.date: 1/27/2018
 uid: tutorials/razor-pages-mac/page
 ms.openlocfilehash: 430200af20a2a97c432a9632c731f91997837124
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276999"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38156854"
 ---
 [!INCLUDE [model1](../../includes/RP/page1.md)]
 
 [!INCLUDE [model1](../../includes/RP/page2.md)]
 
-<span data-ttu-id="fee21-103">다음 자습서에서는 SQLite 및 데이터베이스 시딩에 대해 설명합니다.</span><span class="sxs-lookup"><span data-stu-id="fee21-103">The next tutorial explains SQLite and seeding the database.</span></span>
+<span data-ttu-id="d6050-103">다음 자습서에서는 SQLite 및 데이터베이스 시딩에 대해 설명합니다.</span><span class="sxs-lookup"><span data-stu-id="d6050-103">The next tutorial explains SQLite and seeding the database.</span></span>
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="fee21-104">[이전: 모델 추가](xref:tutorials/razor-pages-mac/model)
-> [다음: SQLite ](xref:tutorials/razor-pages-mac/sql)</span><span class="sxs-lookup"><span data-stu-id="fee21-104">[Previous: Adding a model](xref:tutorials/razor-pages-mac/model)
+> <span data-ttu-id="d6050-104">[이전: 모델 추가](xref:tutorials/razor-pages-mac/model)
+> [다음: SQLite ](xref:tutorials/razor-pages-mac/sql)</span><span class="sxs-lookup"><span data-stu-id="d6050-104">[Previous: Adding a model](xref:tutorials/razor-pages-mac/model)
 [Next: SQLite ](xref:tutorials/razor-pages-mac/sql)</span></span>
