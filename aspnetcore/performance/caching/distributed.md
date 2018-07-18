@@ -7,19 +7,19 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 02/14/2017
 uid: performance/caching/distributed
-ms.openlocfilehash: 5ddc3a6927652f773ab38f93db1e222c5a1900b3
-ms.sourcegitcommit: 931b6a2d7eb28a0f1295e8a95690b8c4c5f58477
+ms.openlocfilehash: 861664fcad576c11abe052837b72367eb2b9479a
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37077701"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095683"
 ---
 # <a name="work-with-a-distributed-cache-in-aspnet-core"></a>ASP.NET Core에서 분산 캐시 사용하기
 
 
 작성자: [Steve Smith](https://ardalis.com/)
 
-분산 캐시는 ASP.NET Core 응용 프로그램이 특히 클라우드나 서버 팜 환경에서 호스팅될 때 성능 및 확장성을 개선할 수 있습니다. 이 문서에서는 ASP.NET Core가 기본으로 제공하는 분산 캐시 추상화 및 구현의 사용 방법을 설명합니다.
+분산 된 캐시는 클라우드 또는 서버 팜을 호스트 하는 경우에 특히 성능 및 ASP.NET Core 앱의 확장성을 개선할 수 있습니다.
 
 [예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/performance/caching/distributed/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
@@ -53,7 +53,7 @@ ms.locfileid: "37077701"
 
 문자열 키를 사용해서 (`byte[]`로) 캐시에 항목을 추가합니다.
 
-**새로 고침, RefreshAsync**
+**RefreshAsync 새로 고침**
 
 키를 기반으로 캐시 항목을 새로 고치고, 캐시 항목의 슬라이딩 만료 시간 제한을 재설정합니다(필요한 경우).
 
@@ -83,7 +83,7 @@ ms.locfileid: "37077701"
 [!code-csharp[](distributed/sample/src/DistCacheSample/Startup.cs?name=snippet1)]
 
 > [!NOTE]
-> `IDistributedCache` 메서드에서 `ConfigureServices`가 구성되고 나면 이를 `Configure` 메서드의 매개 변수로 전달할 수 있습니다. 매개 변수로 추가 하면 DI를 통해 제공 되는 구성 된 인스턴스.
+> `IDistributedCache` 메서드에서 `ConfigureServices`가 구성되고 나면 이를 `Configure` 메서드의 매개 변수로 전달할 수 있습니다. 매개 변수로 추가 하면 DI를 통해 제공 인스턴스를 구성된 합니다.
 
 ## <a name="using-a-redis-distributed-cache"></a>Redis 분산 캐시 사용하기
 
@@ -106,7 +106,7 @@ SqlServerCache 구현을 사용하면 SQL Server 데이터베이스를 백업 �
 
 ::: moniker range="< aspnetcore-2.1"
 
-추가 `SqlConfig.Tools` 에 `<ItemGroup>` 실행 및 프로젝트 파일의 요소 `dotnet restore`합니다.
+추가 `SqlConfig.Tools` 에 `<ItemGroup>` 프로젝트 파일과 실행 요소의 `dotnet restore`합니다.
 
 ```xml
 <ItemGroup>
@@ -117,7 +117,7 @@ SqlServerCache 구현을 사용하면 SQL Server 데이터베이스를 백업 �
 
 ::: moniker-end
 
-다음 명령을 실행 하 여 SqlConfig.Tools 테스트:
+다음 명령을 실행 하 여 SqlConfig.Tools를 테스트 합니다.
 
 ```console
 dotnet sql-cache create --help
@@ -125,7 +125,7 @@ dotnet sql-cache create --help
 
 SqlConfig.Tools는 사용량, 옵션 및 명령 도움말을 표시합니다.
 
-SQL Server에서 실행 하 여 테이블을 만듭니다는 `sql-cache create` 명령:
+SQL Server에서 실행 하 여 테이블을 만들기는 `sql-cache create` 명령:
 
 ```console
 dotnet sql-cache create "Data Source=(localdb)\v11.0;Initial Catalog=DistCache;Integrated Security=True;" dbo TestCache
@@ -135,9 +135,9 @@ Table and index were created successfully.
 
 생성된 테이블은 다음과 같은 스키마를 갖고 있습니다.
 
-![SqlServer 캐시 테이블](distributed/_static/SqlServerCacheTable.png)
+![Sql Server 캐시 테이블](distributed/_static/SqlServerCacheTable.png)
 
-다른 모든 캐시 구현과 마찬가지로, 응용 프로그램은 `SqlServerCache`가 아니라 `IDistributedCache`의 인스턴스를 사용해서 캐시 값을 읽고 설정해야 합니다. 이 샘플 구현 `SqlServerCache` 프로덕션 환경에서 (에 구성 되어 있으므로 `ConfigureProductionServices`).
+다른 모든 캐시 구현과 마찬가지로, 응용 프로그램은 `SqlServerCache`가 아니라 `IDistributedCache`의 인스턴스를 사용해서 캐시 값을 읽고 설정해야 합니다. 이 샘플에서는 구현 `SqlServerCache` 프로덕션 환경에서 (에 구성 되어 있으므로 `ConfigureProductionServices`).
 
 [!code-csharp[](distributed/sample/src/DistCacheSample/Startup.cs?name=snippet3)]
 
@@ -152,9 +152,10 @@ Table and index were created successfully.
 
 * [Azure Redis Cache](https://azure.microsoft.com/documentation/services/redis-cache/)
 * [Azure SQL Database](https://azure.microsoft.com/documentation/services/sql-database/)
-* [메모리 내 캐시](xref:performance/caching/memory)
-* [변경 토큰을 이용해서 변경 감지하기](xref:fundamentals/primitives/change-tokens)
-* [응답 캐싱](xref:performance/caching/response)
-* [응답 캐싱 미들웨어](xref:performance/caching/middleware)
-* [캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper)
-* [분산 캐시 태그 도우미](xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper)
+* <xref:performance/caching/memory>
+* <xref:fundamentals/primitives/change-tokens>
+* <xref:performance/caching/response>
+* <xref:performance/caching/middleware>
+* <xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper>
+* <xref:mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper>
+* <xref:host-and-deploy/web-farm>

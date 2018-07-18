@@ -1,18 +1,18 @@
 ---
 title: 인증 및 ASP.NET Core SignalR의 권한 부여
-author: rachelappel
+author: tdykstra
 description: ASP.NET Core SignalR의 인증 및 권한 부여를 사용 하는 방법에 알아봅니다.
 monikerRange: '>= aspnetcore-2.1'
 ms.author: anurse
 ms.custom: mvc
 ms.date: 06/29/2018
 uid: signalr/authn-and-authz
-ms.openlocfilehash: 32e5fcf2fd3f888e0e131fa47bd9a74eede3c26d
-ms.sourcegitcommit: 32626efaa7316c9b283c96be6516e637d548c5e5
+ms.openlocfilehash: d4259e04a0e3bb9ff517a10465323ccb5e2895a5
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39028465"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095173"
 ---
 # <a name="authentication-and-authorization-in-aspnet-core-signalr"></a>인증 및 ASP.NET Core SignalR의 권한 부여
 
@@ -54,7 +54,7 @@ var connection = new HubConnectionBuilder()
 
 표준 웹 Api에서 HTTP 헤더에서 전달자 토큰이 전송 됩니다. 그러나 SignalR은 일부 전송을 사용 하는 경우 브라우저에서 이러한 헤더를 설정할 수 없습니다. Websocket 및 Server-Sent 이벤트를 사용 하는 경우 토큰은 쿼리 문자열 매개 변수로 전송 됩니다. 이 서버에서 지원 하기 위해 추가 구성이 필요 합니다.
 
-[!code-csharp[Configure Server to accept access token from Query String](authn-and-authz/sample/Startup.cs?range=33-34,42-80,90)]
+[!code-csharp[Configure Server to accept access token from Query String](authn-and-authz/sample/Startup.cs?name=snippet)]
 
 ### <a name="windows-authentication"></a>Windows 인증
 

@@ -1,18 +1,18 @@
 ---
-title: ASP.NET Core에 HTTPS를 적용 합니다.
+title: ASP.NET Core에서 HTTPS 적용
 author: rick-anderson
-description: 웹 응용 프로그램에서 ASP.NET Core HTTPS/TLS를 요청 하는 방법을 보여 줍니다.
+description: 웹 앱을 ASP.NET Core에서 HTTPS/TLS를 요구 하는 방법에 보여 줍니다.
 ms.author: riande
 ms.date: 2/9/2018
 uid: security/enforcing-ssl
-ms.openlocfilehash: 6a16bb2253fcb6e81a294f1c484db1a3e80796e2
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 331c17de33b5c13221385ffb4282bc16bde32289
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277272"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095719"
 ---
-# <a name="enforce-https-in-aspnet-core"></a>ASP.NET Core에 HTTPS를 적용 합니다.
+# <a name="enforce-https-in-aspnet-core"></a>ASP.NET Core에서 HTTPS 적용
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -22,77 +22,77 @@ ms.locfileid: "36277272"
 * 모든 HTTP 요청을 HTTPS로 리디렉션하는 방법.
 
 > [!WARNING]
-> 수행 **하지** 사용 [RequireHttpsAttribute](/dotnet/api/microsoft.aspnetcore.mvc.requirehttpsattribute) 중요 한 정보를 수신 하는 웹 Api에 있습니다. `RequireHttpsAttribute` HTTP 상태 코드를 사용 하 여 HTTP에서 HTTPS로 브라우저를 리디렉션합니다. API 클라이언트 이해 하지 못하거나 리디렉션을 HTTP에서 HTTPS로 준수 수 있습니다. 이러한 클라이언트는 HTTP를 통해 정보를 보낼 수 있습니다. 웹 Api 하거나 수행 해야합니다.
+> 수행할 **되지** 사용 하 여 [RequireHttpsAttribute](/dotnet/api/microsoft.aspnetcore.mvc.requirehttpsattribute) 중요 한 정보를 수신 하는 Web Api에서 합니다. `RequireHttpsAttribute` 브라우저는 HTTP에서 HTTPS로 리디렉션하 HTTP 상태 코드를 사용 합니다. API 클라이언트 이해 하지 못하거나 HTTP에서 HTTPS로 리디렉션 준수 될 수 있습니다. 이러한 클라이언트는 HTTP를 통해 정보를 보낼 수 있습니다. Web Api을 수행 해야합니다.
 >
-> * HTTP에서 수신 하지 않습니다.
-> * 상태 코드 400 (잘못 된 요청)와 연결을 닫고 요청을 처리 하지 마십시오.
+> * HTTP에서 수신 대기할 수 없습니다.
+> * 상태 코드 400 (잘못 된 요청)를 사용 하 여 연결을 닫고 요청을 제공 하지 마십시오.
 
 <a name="require"></a>
 ## <a name="require-https"></a>HTTPS가 필요
 
 ::: moniker range=">= aspnetcore-2.1"
 
-모든 ASP.NET Core 웹 앱 HTTPS 리디렉션 미들웨어를 호출 하는 것이 좋습니다 ([UseHttpsRedirection](/dotnet/api/microsoft.aspnetcore.builder.httpspolicybuilderextensions.usehttpsredirection))를 HTTPS로 모든 HTTP 요청을 리디렉션합니다.
+모든 ASP.NET Core 웹 앱 HTTPS 리디렉션을 미들웨어를 호출 하는 것이 좋습니다 ([UseHttpsRedirection](/dotnet/api/microsoft.aspnetcore.builder.httpspolicybuilderextensions.usehttpsredirection)) HTTPS로 모든 HTTP 요청을 리디렉션할 수 있습니다.
 
-다음 호출 코드 `UseHttpsRedirection` 에 `Startup` 클래스:
+다음 코드 호출 `UseHttpsRedirection` 에 `Startup` 클래스:
 
 [!code-csharp[](enforcing-ssl/sample/Startup.cs?name=snippet1&highlight=13)]
 
-다음 호출 코드 [AddHttpsRedirection](/dotnet/api/microsoft.aspnetcore.builder.httpsredirectionservicesextensions.addhttpsredirection) 미들웨어 옵션을 구성 하려면:
+다음 코드 호출 [AddHttpsRedirection](/dotnet/api/microsoft.aspnetcore.builder.httpsredirectionservicesextensions.addhttpsredirection) 미들웨어 옵션을 구성 하려면:
 
 [!code-csharp[](enforcing-ssl/sample/Startup.cs?name=snippet2&highlight=14-99)]
 
-앞의 강조 표시 된 코드:
+위의 강조 표시 된 코드:
 
-* 집합 [HttpsRedirectionOptions.RedirectStatusCode](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.redirectstatuscode) 를 `Status307TemporaryRedirect`, 기본값은입니다. 프로덕션 응용 프로그램 호출 해야 [UseHsts](#hsts)합니다.
-* 5001를 HTTPS 포트를 설정합니다. 기본값은 443입니다.
+* 집합 [HttpsRedirectionOptions.RedirectStatusCode](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.redirectstatuscode) 에 `Status307TemporaryRedirect`, 기본 값입니다. 프로덕션 앱에서 호출 해야 [UseHsts](#hsts)합니다.
+* HTTPS 포트를 5001로 설정합니다. 기본값은 443입니다.
 
-다음과 같은 메커니즘 포트를 자동으로 설정합니다.
+다음과 같은 메커니즘 포트를 자동으로 설정 합니다.
 
-* 미들웨어를 통해 포트를 검색할 수 [IServerAddressesFeature](/dotnet/api/microsoft.aspnetcore.hosting.server.features.iserveraddressesfeature) 다음과 같은 조건이 적용 되는 경우:
-  - Kestrel 또는 HTTP.sys HTTPS 끝점과 직접 사용 됩니다 (Visual Studio 코드의 디버거를 사용 응용 프로그램을 실행에 적용 됩니다).
-  - 만 **하나의 HTTPS 포트** 응용 프로그램에서 사용 됩니다.
+* 미들웨어를 통해 포트를 검색할 수 있습니다 [IServerAddressesFeature](/dotnet/api/microsoft.aspnetcore.hosting.server.features.iserveraddressesfeature) 다음 조건이 적용 되는 경우:
+  - Kestrel 또는 HTTPS 끝점으로 직접 사용 됩니다 (Visual Studio Code의 디버거를 사용 하 여 앱을 실행 하도 적용 됨).
+  - 만 **하나의 HTTPS 포트** 앱에서 사용 됩니다.
 * Visual Studio는 사용 합니다.
-  - IIS Express에 HTTPS를 사용할 수 있습니다.
+  - IIS Express에 HTTPS를 사용 해야 합니다.
   - *launchSettings.json* 설정의 `sslPort` IIS Express에 대 한 합니다.
 
 > [!NOTE]
-> 응용 프로그램 (예를 들어, IIS, IIS Express) 역방향 프록시 뒤에 실행 될 때 `IServerAddressesFeature` 사용할 수 없습니다. 포트가 수동으로 구성 되어야 합니다. 포트 설정 되지 않은 경우에 요청을 리디렉션할 되지 않습니다.
+> 앱 (예를 들어, IIS, IIS Express) 역방향 프록시 뒤에 실행 될 때 `IServerAddressesFeature` 사용할 수 없습니다. 포트를 수동으로 구성 해야 합니다. 포트 설정 되지 않은 경우 요청을 리디렉션할 되지 않습니다.
 
-설정 하 여 포트를 구성할 수는 있습니다.
+설정 하 여 포트를 구성할 수 있습니다 합니다.
 
 * `ASPNETCORE_HTTPS_PORT` 환경 변수.
-* `http_port` 호스트 구성 키 (예를 들어 통해 *hostsettings.json* 또는 명령줄 인수).
-* [HttpsRedirectionOptions.HttpsPort](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.httpsport)합니다. 포트 5001를 설정 하는 방법을 보여 주는 앞의 예제를 참조 하십시오.
+* `http_port` 호스트 구성 키 (예를 통해 *hostsettings.json* 명령줄 인수 또는).
+* [HttpsRedirectionOptions.HttpsPort](/dotnet/api/microsoft.aspnetcore.httpspolicy.httpsredirectionoptions.httpsport)합니다. 포트를 5001로 설정 하는 방법을 보여 주는 앞의 예제를 참조 하세요.
 
 > [!NOTE]
-> URL로 설정 하 여 포트를 직접 구성할 수 있습니다는 `ASPNETCORE_URLS` 환경 변수입니다. 환경 변수는 서버를 구성 및 다음 미들웨어 직접 검색 되지 HTTPS 포트를 통해 `IServerAddressesFeature`합니다.
+> URL을 설정 하 여 포트를 직접 구성할 수 있습니다는 `ASPNETCORE_URLS` 환경 변수입니다. 환경 변수를 구성 서버에을 수행한 후 미들웨어 직접 검색 되지 HTTPS 포트를 통해 `IServerAddressesFeature`합니다.
 
-포트가 없는 설정 되어 있습니다.
+경우 포트가 없는 설정 됩니다.
 
 * 요청을 리디렉션할 되지 않습니다.
 * 미들웨어는 경고를 기록 합니다.
 
 > [!NOTE]
-> HTTPS 리디렉션 미들웨어를 사용 하는 대신 (`UseHttpsRedirection`) URL 다시 쓰기 미들웨어를 사용 하는 것 (`AddRedirectToHttps`). `AddRedirectToHttps` 리디렉션 실행 될 때 상태 코드 및 포트를 설정할 수도 있습니다. 자세한 내용은 참조 [URL 다시 쓰기 미들웨어](xref:fundamentals/url-rewriting)합니다.
+> HTTPS 리디렉션을 미들웨어를 사용 하는 대신 (`UseHttpsRedirection`) URL 재작성 미들웨어를 사용 하는 것 (`AddRedirectToHttps`). `AddRedirectToHttps` 리디렉션 실행 될 때 상태 코드 및 포트를 설정할 수도 있습니다. 자세한 내용은 [URL 재작성 미들웨어](xref:fundamentals/url-rewriting)합니다.
 >
-> 추가 리디렉션 규칙에 대 한 요구 사항 없이 HTTPS로 리디렉션할 때 HTTPS 리디렉션 미들웨어를 사용 하는 것이 좋습니다 (`UseHttpsRedirection`)이이 항목에서 설명 합니다.
+> 추가 리디렉션 규칙을 요구 하지 않고 HTTPS로 리디렉션, 하는 경우 HTTPS 리디렉션을 미들웨어를 사용 하는 것이 좋습니다 (`UseHttpsRedirection`)이이 항목에서 설명 합니다.
 
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.1"
 
-[RequireHttpsAttribute](/dotnet/api/microsoft.aspnetcore.mvc.requirehttpsattribute) HTTPS가 필요 하는 데 사용 됩니다. `[RequireHttpsAttribute]` 컨트롤러 또는 메서드를 데코레이팅 할 수 있습니다 또는 전역으로 적용 될 수 있습니다. 특성을 전역으로 적용 하려면 다음 코드를 추가 `ConfigureServices` 에 `Startup`:
+합니다 [RequireHttpsAttribute](/dotnet/api/microsoft.aspnetcore.mvc.requirehttpsattribute) HTTPS가 필요 하는 데 사용 됩니다. `[RequireHttpsAttribute]` 컨트롤러 또는 메서드를 데코레이팅 할 수 있습니다 또는 전체적으로 적용할 수 있습니다. 특성을 전역적으로 적용 하려면 다음 코드를 추가 합니다 `ConfigureServices` 에서 `Startup`:
 
-[!code-csharp[](authentication/accconfirm/sample/WebApp1/Startup.cs?name=snippet2&highlight=4-999)]
+[!code-csharp[](~/security/authentication/accconfirm/sample/WebApp1/Startup.cs?name=snippet2&highlight=4-999)]
 
 위의 강조 표시된 코드는 모든 요청에 `HTTPS` 를 사용하도록 강제하며, 그 결과 HTTP 요청은 무시됩니다. 다음에 강조 표시된 코드는 모든 HTTP 요청을 HTTPS로 리디렉션합니다.
 
 [!code-csharp[](authentication/accconfirm/sample/WebApp1/Startup.cs?name=snippet_AddRedirectToHttps&highlight=7-999)]
 
-자세한 내용은 참조 [URL 다시 쓰기 미들웨어](xref:fundamentals/url-rewriting)합니다. 미들웨어는 또한 리디렉션 실행 될 때 상태 코드 또는 상태 코드와 포트를 설정 하려면 응용 프로그램을 수 있습니다.
+자세한 내용은 [URL 재작성 미들웨어](xref:fundamentals/url-rewriting)합니다. 또한 미들웨어 리디렉션 실행 될 때 상태 코드 또는 상태 코드와 포트를 설정 하려면 앱을 허용 합니다.
 
-전역으로 HTTPS를 요구하는 것이 보안상 가장 안전한 모범 사례입니다 (`options.Filters.Add(new RequireHttpsAttribute());`). 적용 된 `[RequireHttps]` 모든 컨트롤러/Razor 페이지에는 특성으로 전체적으로 HTTPS를 필요로 하는 컨트롤로 안전 하다 고 간주 되지 않습니다. 보장할 수는 `[RequireHttps]` 특성은 새 컨트롤러 및 Razor 페이지 추가 될 때 적용 됩니다.
+전역으로 HTTPS를 요구하는 것이 보안상 가장 안전한 모범 사례입니다 (`options.Filters.Add(new RequireHttpsAttribute());`). 적용 된 `[RequireHttps]` 모든 컨트롤러/Razor 페이지에는 특성에 전역적으로 HTTPS를 요구 하는 것 만큼 안전로 간주 되지 않습니다. 보장할 수 없습니다는 `[RequireHttps]` 새 컨트롤러 및 Razor 페이지는 추가 특성이 적용 됩니다.
 
 ::: moniker-end
 
@@ -101,24 +101,24 @@ ms.locfileid: "36277272"
 <a name="hsts"></a>
 ## <a name="http-strict-transport-security-protocol-hsts"></a>HTTP 엄격한 전송 보안 프로토콜 (HSTS)
 
-당 [OWASP](https://www.owasp.org/index.php/About_The_Open_Web_Application_Security_Project), [HTTP 엄격한 전송 보안 (HSTS)](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet) 는 특별 한 응답 헤더를 사용 하 여 웹 응용 프로그램에 의해 지정 된 옵트인 보안 향상 합니다. 지원 되는 브라우저는이 헤더를 수신 되 면 해당 브라우저의 통신을 지정한 도메인에 HTTP를 통해 보낼 수 없게 됩니다 및 HTTPS를 통해 모든 통신 송신할 대신 합니다. 또한 브라우저에 대 한 프롬프트를 통해 HTTPS 클릭을 수 없습니다.
+당 [OWASP](https://www.owasp.org/index.php/About_The_Open_Web_Application_Security_Project)하십시오 [HTTP 엄격한 전송 보안 (HSTS)](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet) 특수 응답 헤더를 사용 하 여 웹 응용 프로그램에서 지정 하는 옵트인 보안 향상 된 기능입니다. 지원 되는 브라우저가이 헤더를 받으면 해당 브라우저는 모든 통신을 지정한 도메인에 HTTP를 통해 보낼 수 없게 하 고 HTTPS를 통해 모든 커뮤니케이션을 보내도록 대신 됩니다. 또한 브라우저에서 프롬프트를 통해 HTTPS 클릭을 수 없습니다.
 
-ASP.NET Core 2.1 이상 HSTS와 구현 하는 `UseHsts` 확장 메서드. 다음 호출 코드 `UseHsts` 앱에 없는 경우 [개발 모드](xref:fundamentals/environments):
+ASP.NET Core 2.1 이상을 사용 하 여 HSTS를 구현 합니다 `UseHsts` 확장 메서드. 다음 코드 호출 `UseHsts` 에 앱이 없는 경우 [개발 모드](xref:fundamentals/environments):
 
 [!code-csharp[](enforcing-ssl/sample/Startup.cs?name=snippet1&highlight=10)]
 
-`UseHsts` 권장 되지 않습니다 개발에서 HSTS 헤더는 항상 캐시 가능 하기 때문에 브라우저에서. 기본적으로 `UseHsts` 로컬 루프백 주소를 제외 합니다.
+`UseHsts` 권장 되지 않습니다 개발에서 HSTS 헤더 캐시가 이므로 브라우저에서. 기본적으로 `UseHsts` 로컬 루프백 주소를 제외 합니다.
 
 다음 예를 참조하십시오.
 
 [!code-csharp[](enforcing-ssl/sample/Startup.cs?name=snippet2&highlight=5-12)]
 
-* Strict-전송-보안 헤더의 미리 로드 매개 변수를 설정 합니다. 미리 로드를가의 일부가 [RFC HSTS 사양](https://tools.ietf.org/html/rfc6797), 있지만 HSTS 사이트 설치에 미리 로드 하려면 웹 브라우저에서 지원 됩니다. 자세한 내용은 [https://hstspreload.org/](https://hstspreload.org/)를 참조하세요.
-* 수 있도록 [includeSubDomain](https://tools.ietf.org/html/rfc6797#section-6.1.2), 하위 도메인의 호스트에 HSTS 정책을 적용 합니다. 
-* 60 일 Strict-전송-보안 헤더의 최대 처리 기간 매개 변수를 명시적으로 설정합니다. 그렇지 않은 경우 30 일에 기본값을 설정 합니다. 참조는 [최대 처리 기간 지시문](https://tools.ietf.org/html/rfc6797#section-6.1.1) 자세한 정보에 대 한 합니다.
-* 추가 `example.com` 제외 하는 호스트의 목록에 있습니다.
+* Strict-전송-보안 헤더의 미리 로드 매개 변수를 설정합니다. 미리 로드 되지 부분 합니다 [RFC HSTS 사양](https://tools.ietf.org/html/rfc6797), 있지만 HSTS 새로 설치할 때 사이트를 미리 로드 하려면 웹 브라우저에서 지원 됩니다. 자세한 내용은 [https://hstspreload.org/](https://hstspreload.org/)를 참조하세요.
+* 사용 하도록 설정 [includeSubDomain](https://tools.ietf.org/html/rfc6797#section-6.1.2), 호스트 하위 도메인에 HSTS 정책을 적용 합니다. 
+* 60 일로 Strict-전송-보안 헤더의 최대 처리 기간 매개 변수를 명시적으로 설정합니다. 설정 하지 않으면 기본값은 30 일입니다. 참조 된 [최대 처리 기간 지시문](https://tools.ietf.org/html/rfc6797#section-6.1.1) 자세한 내용은 합니다.
+* 추가 `example.com` 를 제외 하는 호스트의 목록입니다.
 
-`UseHsts` 다음과 같은 루프백 호스트는 제외 됩니다.
+`UseHsts` 다음 루프백 호스트를 제외:
 
 * `localhost` : IPv4 루프백 주소입니다.
 * `127.0.0.1` : IPv4 루프백 주소입니다.
@@ -130,15 +130,15 @@ ASP.NET Core 2.1 이상 HSTS와 구현 하는 `UseHsts` 확장 메서드. 다음
 ::: moniker range=">= aspnetcore-2.1"
 
 <a name="https"></a>
-## <a name="opt-out-of-https-on-project-creation"></a>옵트아웃 HTTPS의 프로젝트 생성 시
+## <a name="opt-out-of-https-on-project-creation"></a>옵트아웃 https 프로젝트 생성 시
 
-(Visual Studio 또는 dotnet 명령줄)에서 ASP.NET Core 2.1 이상 웹 응용 프로그램 템플릿을 사용 [HTTPS 리디렉션](#require) 및 [HSTS](#hsts)합니다. HTTPS를 필요로 하지 않는 배포의 경우 있습니다 수 옵트아웃 https입니다. 예를 들어 일부 백 엔드 서비스에 HTTPS 처리 되 고 외부에서 경계 면 HTTPS를 사용 하 여 각 노드에서 필요 하지 않습니다.
+ASP.NET Core 2.1 이상 웹 응용 프로그램 템플릿 (Visual Studio 또는 dotnet 명령 줄)에서 사용 하도록 설정 [HTTPS 간의 리디렉션으로](#require) 하 고 [HSTS](#hsts)합니다. HTTPS를 요구 하지 않는 배포에 대 한 있습니다 옵트아웃할 수 https입니다. 예를 들어, 일부 백 엔드 서비스는 HTTPS 처리 되 고 외부 가장자리에 HTTPS를 사용 하 여 각 노드에서 필요 하지 않습니다.
 
-되지 않게 하려면 https:
+옵트아웃 하려면 https:
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio) 
 
-취소는 **HTTPS에 대 한 구성** 확인란을 선택 합니다.
+선택 취소 합니다 **HTTPS에 대 한 구성** 확인란을 선택 합니다.
 
 ![엔터티 다이어그램](enforcing-ssl/_static/out.png)
 
@@ -158,7 +158,7 @@ dotnet new webapp --no-https
 
 ::: moniker range=">= aspnetcore-2.1"
 
-## <a name="how-to-setup-a-developer-certificate-for-docker"></a>Docker에 대 한 개발자 인증서를 설치 하는 방법
+## <a name="how-to-setup-a-developer-certificate-for-docker"></a>Docker에 대 한 개발자 인증서를 설정 하는 방법
 
 참조 [이 GitHub 문제](https://github.com/aspnet/Docs/issues/6199)합니다.
 

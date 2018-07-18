@@ -5,12 +5,12 @@ description: ASP.NET Core 앱을 사용 하 여 Id를 사용 합니다. 설정 �
 ms.author: riande
 ms.date: 01/24/2018
 uid: security/authentication/identity
-ms.openlocfilehash: c231a7619a4433ce004342ce68564e4c3892e702
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 50ddb96000e6a3f9e1762e9bb3e1f215f20d4356
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37829304"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095641"
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>ASP.NET Core Identity 소개
 
@@ -199,7 +199,8 @@ ASP.NET Core 응용 프로그램에서 Identity 시스템을 사용하려면 다
 
 ## <a name="next-steps"></a>다음 단계
 
-* [인증 및 Id 마이그레이션](xref:migration/identity)
-* [계정 확인 및 비밀번호 복구](xref:security/authentication/accconfirm)
-* [SMS를 이용한 2단계 인증](xref:security/authentication/2fa)
-* [Facebook, Google 및 기타 외부 공급자를 이용한 인증 활성화](xref:security/authentication/social/index)
+* <xref:migration/identity>
+* <xref:security/authentication/accconfirm>
+* <xref:security/authentication/2fa>
+* <xref:security/authentication/social/index>
+* <xref:host-and-deploy/web-farm>

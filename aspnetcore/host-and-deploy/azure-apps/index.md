@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 01/29/2018
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: 2890b2e6cdb536850b3764b5a78084cca335b489
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 83965e69249ca8196d0f226528735444936567ad
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36275764"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095615"
 ---
 # <a name="host-aspnet-core-on-azure-app-service"></a>Azure App Service에서 ASP.NET Core 호스트
 
@@ -151,11 +151,12 @@ ARM 템플릿을 사용하여 앱을 만들고 배포하는 경우 `siteextensio
 * [Azure App Service: .NET 앱을 호스트하기에 가장 좋은 서비스(55분 개요 비디오)](https://channel9.msdn.com/events/dotnetConf/2017/T222)
 * [Azure Friday: Azure App Service 진단 및 문제 해결 환경(12분 비디오)](https://channel9.msdn.com/Shows/Azure-Friday/Azure-App-Service-Diagnostic-and-Troubleshooting-Experience)
 * [Azure App Service 진단 개요](/azure/app-service/app-service-diagnostics)
+* <xref:host-and-deploy/web-farm>
 
 Windows Server의 Azure App Service는 [IIS(인터넷 정보 서비스)](https://www.iis.net/)를 사용합니다. 다음 항목은 기본 IIS 기술과 관련이 있습니다.
 
-* [IIS가 있는 Windows에서 ASP.NET Core 호스팅](xref:host-and-deploy/iis/index)
-* [ASP.NET Core 모듈 소개](xref:fundamentals/servers/aspnet-core-module)
-* [ASP.NET Core 모듈 구성 참조](xref:host-and-deploy/aspnet-core-module)
-* [IIS 모듈 및 ASP.NET Core](xref:host-and-deploy/iis/modules)
+* <xref:host-and-deploy/iis/index>
+* <xref:fundamentals/servers/aspnet-core-module>
+* <xref:host-and-deploy/aspnet-core-module>
+* <xref:host-and-deploy/iis/modules>
 * [Microsoft TechNet 라이브러리: Windows Server](/windows-server/windows-server-versions)

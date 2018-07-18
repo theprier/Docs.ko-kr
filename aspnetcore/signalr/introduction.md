@@ -1,61 +1,61 @@
 ---
 title: ASP.NET Core SignalR 소개
-author: rachelappel
-description: 앱에 실시간 기능 추가 ASP.NET Core SignalR 라이브러리를 간소화 하는 방법에 대해 알아봅니다.
+author: tdykstra
+description: ASP.NET Core SignalR 라이브러리를 앱에 실시간 기능 추가 간소화 하는 방법에 대해 알아봅니다.
 monikerRange: '>= aspnetcore-2.1'
-ms.author: rachelap
+ms.author: tdykstra
 ms.custom: mvc
 ms.date: 04/25/2018
 uid: signalr/introduction
-ms.openlocfilehash: 0c833acea139d22883a69a02c2357a71f3ac8db8
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: bc6f25c3f35e7fb0c2c68220697f2e0fdc6a9958
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277906"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095391"
 ---
 # <a name="introduction-to-aspnet-core-signalr"></a>ASP.NET Core SignalR 소개
 
 작성자: [Rachel Appel](https://twitter.com/rachelappel)
 
-## <a name="what-is-signalr"></a>SignalR 란?
+## <a name="what-is-signalr"></a>SignalR 이란?
 
-ASP.NET Core SignalR은 간소화 실시간 웹 기능을 응용 프로그램을 추가 하는 라이브러리입니다. 실시간 웹 기능을 통해 서버 쪽 코드를 클라이언트에 푸시 콘텐츠 즉시 합니다.
+ASP.NET Core SignalR은 실시간 웹 기능을 앱에 추가 간소화 하는 라이브러리. 실시간 웹 기능 클라이언트로 푸시 콘텐츠를 서버 쪽 코드를 즉시 있습니다.
 
-SignalR 하기에 적합 합니다.
+SignalR에 대 한 것이 좋습니다.
 
-* 서버에서 자주 발생 하는 업데이트를 필요로 하는 앱입니다. 예로 게임, 소셜 네트워크, 투표, 경매, 맵 및 GPS 앱에는 있습니다.
-* 대시보드 및 모니터링 응용 프로그램입니다. 예로 회사 대시보드를 인스턴트 판매 업데이트 하거나 경고를 이동 합니다.
-* 공동 작업 응용 프로그램입니다. 화이트 보드 앱과 소프트웨어를 충족 하는 팀은 공동 작업 응용 프로그램의 예입니다.
-* 알림이 필요로 하는 앱입니다. 소셜 네트워크, 전자 메일, 채팅, 게임, 여행 경고 및 다른 많은 응용 프로그램 알림을 사용합니다.
+* 서버에서 자주 업데이트가 필요한 앱입니다. 게임, 소셜 네트워크, 투표, 경매, 지도 및 GPS 앱을 예로 들 수 있습니다.
+* 대시보드 및 모니터링 앱입니다. 예를 들어 회사 대시보드, 즉석 판매 업데이트 또는 여행 경고가.
+* 공동 작업 앱입니다. 화이트 보드 앱 및 팀 회의 소프트웨어가 공동 작업 앱의 예입니다.
+* 알림이 필요한 앱입니다. 소셜 네트워크, 이메일, 채팅, 게임, 여행 경고 및 다른 많은 앱 알림을 사용합니다.
 
-서버-클라이언트를 만들기 위한 API를 제공 하는 SignalR [원격 프로시저 호출 (RPC)](https://wikipedia.org/wiki/Remote_procedure_call)합니다. Rpc 서버 쪽.NET Core 코드에서 클라이언트에서 JavaScript 함수를 호출 합니다.
+서버에서 클라이언트를 만들기 위한 API를 제공 하는 SignalR [원격 프로시저 호출 (RPC)](https://wikipedia.org/wiki/Remote_procedure_call)합니다. Rpc 서버 쪽.NET Core 코드에서 클라이언트에서 JavaScript 함수를 호출합니다.
 
-ASP.NET Core 용 SignalR:
+ASP.NET core SignalR:
 
 * 연결 관리를 자동으로 처리합니다.
-* 연결 된 모든 클라이언트에 동시에 메시지를 브로드캐스트를 사용 합니다. 예를 들어: 채트 방 합니다.
-* 특정 클라이언트 또는 그룹의 클라이언트에 메시지를 보낼 수 있습니다.
-* 오픈 소스는 [GitHub](https://github.com/aspnet/signalr)합니다.
+* 메시지가 연결 된 모든 클라이언트에 동시에 브로드캐스트할 수 있습니다. 예를 들어 대화방입니다.
+* 특정 클라이언트 또는 클라이언트 그룹에 메시지를 보낼 수 있습니다.
+* 오픈 소싱할 [GitHub](https://github.com/aspnet/signalr)합니다.
 * 확장 가능 합니다.
 
-클라이언트와 서버 간의 연결이 HTTP 연결과 달리 지속 됩니다.
+클라이언트와 서버 간의 연결이 영구적 이므로, HTTP 연결과 달리 합니다.
 
 ## <a name="transports"></a>전송
 
-다양 한 기술을 갖추고 실시간 웹 응용 프로그램을 통해 SignalR 간단히 설명 합니다. [Websocket](https://tools.ietf.org/html/rfc7118) 는 최적의 전송 되지만 해당 장치가 사용할 수 없는 경우 Server-Sent 이벤트 및 긴 폴링와 같은 다른 기법을 사용할 수 있습니다. SignalR에서는 자동으로 검색 하 고 서버와 클라이언트에서 지원 되는 기능을 기반으로 적절 한 전송을 초기화 합니다.
+실시간 웹 응용 프로그램을 구축 하는 방법의 여러 SignalR 요약 합니다. [Websocket](https://tools.ietf.org/html/rfc7118) 최적의 전송 이지만 Server-Sent 이벤트 및 Long Polling과 같은 다른 기술을 사용할 수 없는 해당 하는 경우 사용할 수 있습니다. SignalR은 자동으로 감지 하 고 서버 및 클라이언트에서 지원 되는 기능을 기반으로 하는 적절 한 전송을 초기화 합니다.
 
 ## <a name="hubs"></a>허브
 
-SignalR 허브를 사용 하 여 클라이언트와 서버 간 통신 합니다.
+SignalR 허브를 사용 하 여 클라이언트와 서버 간 통신.
 
-허브는 클라이언트와 서버에서 다른 메서드를 호출할 수 있는 높은 수준의 파이프라인입니다. 클라이언트가 서버에서 로컬 메서드로 쉽게 그 반대의으로 메서드를 호출할 수 있도록 자동으로 컴퓨터 경계 간 디스패치 SignalR에서 처리 합니다. 허브 모델 바인딩 수 있는 강력한 형식의 매개 변수 하는 메서드에 전달 되도록 허용 합니다. 두 개의 기본 제공 허브 프로토콜을 제공 하는 SignalR: JSON 및 기반 이진 프로토콜을 기반으로 텍스트 프로토콜 [MessagePack](https://msgpack.org/)합니다.  MessagePack은 일반적으로 JSON을 사용할 때 보다 작은 메시지를 만듭니다. 이전 버전의 브라우저를 지원 해야 [XHR 수준 2](https://caniuse.com/#feat=xhr2) MessagePack 프로토콜 지원을 제공 하기 위해 합니다.
+허브는 클라이언트와 서버에서 서로 다른 메서드를 호출할 수 있도록 하는 높은 수준의 파이프라인. 클라이언트가 서버에서 로컬 메서드로 쉽게 이동 하 고 그 반대의 경우로 메서드를 호출할 수 있도록 자동으로 컴퓨터 경계를 넘어 디스패치 SignalR에서 처리 합니다. 허브 모델 바인딩을 활성화 하는 방법에 강력한 형식의 매개 변수를 전달할 수 있도록 합니다. SignalR 제공 두 가지 기본 제공 허브 프로토콜: JSON 및 기반 이진 프로토콜을 기반으로 하는 텍스트 프로토콜 [MessagePack](https://msgpack.org/)합니다.  MessagePack은 일반적으로 JSON을 사용할 때 보다 작은 메시지를 만듭니다. 이전 버전의 브라우저를 지원 해야 합니다 [XHR 수준 2](https://caniuse.com/#feat=xhr2) MessagePack 프로토콜 지원을 제공 합니다.
 
-활성 전송을 사용 하 여 메시지를 전송 하 여 클라이언트 쪽 코드를 호출 하는 허브입니다. 메시지 이름 및 클라이언트 쪽 메서드의 매개 변수를 포함 합니다. 메서드 매개 변수로 보낸 개체 구성 된 프로토콜을 사용 하 여 deserialize 됩니다. 클라이언트는 클라이언트 쪽 코드의 메서드에 대 한 이름과 일치 하도록 시도 합니다. 일치 하는 경우 클라이언트 메서드는 deserialize 된 매개 변수 데이터를 사용 하 여 실행 합니다.
+허브 활성 전송을 사용 하 여 메시지를 전송 하 여 클라이언트 쪽 코드를 호출 합니다. 메시지 이름 및 클라이언트 쪽 메서드의 매개 변수를 포함 합니다. 메서드 매개 변수로 보낸 개체는 구성된 된 프로토콜을 사용 하 여 역직렬화 됩니다. 클라이언트는 클라이언트 쪽 코드에서 메서드 이름을 찾으려고 합니다. 일치 하는 경우 클라이언트 메서드는 deserialize 된 매개 변수 데이터를 사용 하 여 실행 합니다.
 
 ## <a name="additional-resources"></a>추가 자료
 
-* [ASP.NET Core 용 SignalR 시작](xref:tutorials/signalr)
+* [ASP.NET core SignalR을 사용 하 여 시작](xref:tutorials/signalr)
 * [지원되는 플랫폼](xref:signalr/supported-platforms)
 * [허브](xref:signalr/hubs)
 * [JavaScript 클라이언트](xref:signalr/javascript-client)

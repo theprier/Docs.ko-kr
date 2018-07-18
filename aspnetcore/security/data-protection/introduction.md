@@ -1,22 +1,22 @@
 ---
 title: ASP.NET Core 데이터 보호
 author: rick-anderson
-description: 데이터 보호의 개념 및 ASP.NET Core 데이터 보호 Api의 디자인 원칙에 알아봅니다.
+description: 데이터 보호의 개념 및 ASP.NET Core 데이터 보호 Api의 디자인 원칙을 알아봅니다.
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/data-protection/introduction
-ms.openlocfilehash: c043de3fc472357c0722a5a736d7e811f1b77002
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 29a2bbef6f2fd9b61541173af143926ca82bfad7
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273912"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095697"
 ---
 # <a name="aspnet-core-data-protection"></a>ASP.NET Core 데이터 보호
 
-웹 응용 프로그램은 종종 보안이 중요 한 데이터를 저장 해야 합니다. Windows 데스크톱 응용 프로그램에 대 한 DPAPI를 제공 하지만 웹 응용 프로그램에 적합 하지 않습니다. ASP.NET Core 데이터 보호 스택의 개발자 키 관리 및 회전을 포함 한 데이터를 보호 사용할 수 있는 간단 하 고 사용 하기 쉬운 암호화 API를 제공 합니다.
+종종 웹 응용 프로그램 보안에 민감한 데이터를 저장 해야 합니다. Windows 데스크톱 응용 프로그램에 대 한 DPAPI를 제공 하지만이 웹 응용 프로그램에 적합 하지 않습니다. ASP.NET Core 데이터 보호 스택이 개발자 키 관리 등 회전 하는 데이터를 보호 하 여 간단 하 고 사용 하기 쉬운 암호화 API를 제공 합니다.
 
-ASP.NET Core 데이터 보호 스택의 장기적으로 대체도 충족 하도록 디자인 되었습니다는 &lt;machineKey&gt; asp.net에서 요소 1.x-4.x 합니다. 기존 암호화 스택의 많은 단점을 해결하는 한편, 현대적인 응용 프로그램에서 접할 수 있는 대부분의 사용 사례에 즉각적으로 대응할 수 있는 솔루션을 제공하도록 설계되었습니다.
+ASP.NET Core 데이터 보호 스택이을 장기 대체 제공 하도록 설계 되었기 합니다 &lt;machineKey&gt; 요소 asp.net에서 1.x-4.x 합니다. 기존 암호화 스택의 많은 단점을 해결하는 한편, 현대적인 응용 프로그램에서 접할 수 있는 대부분의 사용 사례에 즉각적으로 대응할 수 있는 솔루션을 제공하도록 설계되었습니다.
 
 ## <a name="problem-statement"></a>문제 설명
 
@@ -38,40 +38,44 @@ ASP.NET Core 데이터 보호 스택의 장기적으로 대체도 충족 하도�
 
 * 간단한 소비자 지향적인 API를 제공해야 합니다. 이 API는 올바르게 사용하기는 쉽고 잘못 사용하기는 어려워야 합니다.
 
-* 개발자는 키 관리 원칙 배울 하지 않아야 합니다. 알고리즘 선택 및 개발자의를 대신 하 여 키 수명 시스템이 처리 해야 합니다. 이상적으로 개발자 원시 키 자료에 액세스를 권한이 하지 않습니다.
+* 개발자는 키 관리 하기 위한 원칙을 알아봅니다 해서는 안 됩니다. 알고리즘 선택 및 개발자를 대신해 키 수명 시스템 처리 해야 합니다. 이상적으로 개발자 원시 키 자료에 액세스를 해야 적입니다.
 
-* 가능 하면 저장 된 상태의 키를 보호 해야 합니다. 시스템에서는 적절 한 기본 보호 메커니즘을 파악 하 고 자동으로 적용 해야 합니다.
+* 가능한 경우 미사용 키를 보호 되어야 합니다. 시스템에서는 적절 한 기본 보호 메커니즘을 파악 하 고 자동으로 적용 해야 합니다.
 
-이러한 원칙을 염두 우리는 간단한 개발 [사용 하기 쉬운](xref:security/data-protection/using-data-protection) 데이터 보호 스택의 합니다.
+단순 하 고 염두에서 이러한 원칙을 사용 하 여 개발할 [사용 하기 쉬운](xref:security/data-protection/using-data-protection) 데이터 보호 스택이 있습니다.
 
-ASP.NET Core 데이터 보호 Api는 주로 없습니다 기밀 페이로드의 무한 지 속성. 와 같은 다른 기술은 [Windows CNG DPAPI](https://msdn.microsoft.com/library/windows/desktop/hh706794%28v=vs.85%29.aspx) 및 [Azure 권한 관리](https://docs.microsoft.com/rights-management/) 무한 저장소 시나리오에 보다 적합 한까지 강력한 키 관리 기능을 갖습니다. 즉, 개발자는 ASP.NET Core 데이터 보호 Api를 사용 하 여 기밀 데이터의 장기 보호에 대 한 일은 없습니다.
+ASP.NET Core 데이터 보호 Api는 하지 주로 기밀 페이로드 무기한 유지 됩니다. 와 같은 다른 기술이 [Windows CNG DPAPI](https://msdn.microsoft.com/library/windows/desktop/hh706794%28v=vs.85%29.aspx) 하 고 [Azure Rights Management](https://docs.microsoft.com/rights-management/) 무기한 저장 하는 시나리오에 보다 적합 한 마찬가지로 강력한 키 관리 기능을 갖습니다. 즉, ASP.NET Core 데이터 보호 Api를 사용 하 여 기밀 데이터의 장기 보호에 대 한 개발자를 금지 하는 항목이 없는 합니다.
 
 ## <a name="audience"></a>대상 사용자
 
-데이터 보호 시스템 주 다섯 개의 패키지로으로 구분 됩니다. 이러한 Api의 다양 한 측면에는 세 가지 주요 대상; 대상
+데이터 보호 시스템 5 주 패키지도 나뉩니다. 이러한 Api의 다양 한 측면에는 세 가지 주요 대상; 대상
 
-1. [소비자 Api 개요](xref:security/data-protection/consumer-apis/overview) 대상 프레임 워크 및 응용 프로그램 개발자.
+1. 합니다 [소비자 Api 개요](xref:security/data-protection/consumer-apis/overview) 응용 프로그램 및 프레임 워크 개발자 대상으로 합니다.
 
-   "싶지 스택 작동 하는 방법에 대 한 또는 구성 된 방식에 대 한 자세한 내용을 알아보려면 합니다. 단순히 하겠습니다 일부로 작업을 수행에 단순한 방식으로 가능한 Api를 사용 하 여 성공적으로 확률이 높은. "
+   "스택에서 작동 하는 방법에 대 한 또는 구성 하는 방법에 대 한 자세한 내용을 알아보려면 원하는 하지 않습니다. 간단히 수행 하려는 일부 작업에서 간단한 방식으로 최대한 성공적으로 Api를 사용 하 여 높은 확률을 사용 하 여. "
 
-2. [구성 Api](xref:security/data-protection/configuration/overview) 응용 프로그램 개발자 및 시스템 관리자가 대상으로 합니다.
+2. 합니다 [구성 Api](xref:security/data-protection/configuration/overview) 응용 프로그램 개발자 및 시스템 관리자를 대상으로 합니다.
 
-   "기본이 아닌 경로 또는 설정 내 환경 필요 함을 데이터 보호 시스템에 알려 하고자 합니다."
+   "내 환경에 필요한 기본이 아닌 경로 또는 설정을 데이터 보호 시스템에 알릴 하고자 합니다."
 
-3. 확장성 개발자는 Api 대상 사용자 지정 정책을 구현 하는 일을 담당 합니다. 이러한 Api에 드문 경우로 제한 되 고 개발자가 인식 하는 보안을 발생 합니다.
+3. 확장성 Api 대상 개발자가 사용자 지정 정책을 구현 해야 합니다. 이러한 Api에 드문 경우로 제한 되 고 보안 인식 개발자가 발생 합니다.
 
-   "하고자 실제로 고유 동작 요구 사항을 때문에 시스템 내에서 전체 구성 요소를 대체 합니다. 하겠습니다 내 요구 사항을 충족 하는 플러그 인을 작성 하기 위해 API 화면의 프로토콜과 사용 하지 않는 부분에 알아보려면. "
+   "해야 진정으로 고유한 동작 요구 사항 때문에 시스템 내에서 전체 구성 요소를 대체 합니다. 의사가 내 요구 사항을 충족 하는 플러그 인을 빌드하려면 드물게 사용 되는 부분 API 화면에 알아봅니다. "
 
 ## <a name="package-layout"></a>패키지 레이아웃
 
-데이터 보호 스택의 다섯 개의 패키지로 구성 됩니다.
+데이터 보호 스택이 다섯 개의 패키지로 구성 됩니다.
 
-* Microsoft.AspNetCore.DataProtection.Abstractions 기본 IDataProtectionProvider 및 IDataProtector 인터페이스를 포함합니다. 또한 이러한 형식 (예: 오버 로드의 IDataProtector.Protect) 작업을 지원할 수 있는 유용한 확장 메서드를 포함 합니다. 자세한 내용은 소비자 인터페이스 단원을 참조 하십시오. 다른 사람에 게는 데이터 보호 시스템 인스턴스화를 담당 하는 경우 단순히 Api를 사용 하는 Microsoft.AspNetCore.DataProtection.Abstractions 참조 합니다.
+* Microsoft.AspNetCore.DataProtection.Abstractions 기본 IDataProtectionProvider 및 IDataProtector 인터페이스를 포함합니다. 또한 이러한 유형 (예를 들어 오버 로드 IDataProtector.Protect) 작업에 도움이 되는 유용한 확장 메서드를 포함 합니다. 자세한 내용은 소비자 인터페이스 섹션을 참조 하세요. 다른 사람에 게는 데이터 보호 시스템 인스턴스화를 담당 하 고 단순히 Api를 사용 하는 경우 Microsoft.AspNetCore.DataProtection.Abstractions 참조 하는 것이 좋습니다.
 
-* Microsoft.AspNetCore.DataProtection 핵심 암호화 작업, 키 관리, 구성 및 확장성을 포함 하 여 데이터 보호 시스템의 핵심 구현을 포함 합니다. 데이터 보호 시스템 인스턴스화를 담당 하는 경우 (예:에 추가 IServiceCollection)를 수정 하거나 해당 동작을 확장 해야 Microsoft.AspNetCore.DataProtection 참조 또는 합니다.
+* Microsoft.AspNetCore.DataProtection 핵심 암호화 작업, 키 관리, 구성 및 확장성을 포함 하 여 데이터 보호 시스템의 핵심 구현은 포함 합니다. 데이터 보호 시스템 인스턴스화를 담당 경우 (예를 들어 추가 IServiceCollection을)를 수정 하거나 해당 동작을 확장 하려는 Microsoft.AspNetCore.DataProtection 참조 또는 합니다.
 
-* Microsoft.AspNetCore.DataProtection.Extensions는 개발자가 유용할 수 있지만 코어 패키지에 속해 있지 않습니다는 추가 Api를 포함 합니다. 예를 들어,이 패키지는 간단한 "종속성 주입 설치 하지 않고도 특정 키 저장소 디렉터리를 가리키는 시스템 인스턴스화할" API (추가 정보)를 포함합니다. 또한 보호 된 페이로드 (추가 정보)의 수명을 제한 하기 위한 확장 메서드를 포함 합니다.
+* Microsoft.AspNetCore.DataProtection.Extensions-개발자가 유용 하지만 코어 패키지에 속하지 않는 추가 Api를 포함 합니다. 예를 들어이 패키지는 간단한 "종속성 주입 설치 하지 않고도 특정 키 저장소 디렉터리를 가리키는 시스템 인스턴스화할" API (자세한 정보)를 포함합니다. 또한 (자세한 정보) 보호 된 페이로드의 수명 제한에 대 한 확장 메서드를 포함 합니다.
 
-* Microsoft.AspNetCore.DataProtection.SystemWeb 리디렉션하려면 기존 ASP.NET 4.x 응용 프로그램에 설치할 수 있습니다는 &lt;machineKey&gt; 대신 새 데이터 보호 스택을 사용 하 여 작업 합니다. 보다 자세한 정보는 [호환성](xref:security/data-protection/compatibility/replacing-machinekey#compatibility-replacing-machinekey) 을 참고하시기 바랍니다.
+* Microsoft.AspNetCore.DataProtection.SystemWeb 리디렉션할 기존 ASP.NET 4.x 응용 프로그램에 설치할 수 있습니다 해당 &lt;machineKey&gt; 대신 새 데이터 보호 스택이 사용 하 여 작업 합니다. 보다 자세한 정보는 [호환성](xref:security/data-protection/compatibility/replacing-machinekey#compatibility-replacing-machinekey) 을 참고하시기 바랍니다.
 
-* Microsoft.AspNetCore.Cryptography.KeyDerivation 루틴 해시 PBKDF2 암호의 구현을 제공 하 고 사용자 암호를 안전 하 게 처리 하는 데 필요한 시스템에서 사용 될 수 있습니다. 참조 [암호 해시](xref:security/data-protection/consumer-apis/password-hashing) 자세한 정보에 대 한 합니다.
+* Microsoft.AspNetCore.Cryptography.KeyDerivation 루틴 해시 PBKDF2 암호의 구현을 제공 및 사용자 암호를 안전 하 게 처리 해야 하는 시스템에서 사용할 수 있습니다. 참조 [암호를 해시](xref:security/data-protection/consumer-apis/password-hashing) 자세한 내용은 합니다.
+
+## <a name="additional-resources"></a>추가 자료
+
+<xref:host-and-deploy/web-farm>
