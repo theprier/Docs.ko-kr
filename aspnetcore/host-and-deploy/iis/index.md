@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 03/13/2018
 uid: host-and-deploy/iis/index
-ms.openlocfilehash: 96a4403653e474bb056374909b3ee66998bc99be
-ms.sourcegitcommit: 19cbda409bdbbe42553dc385ea72d2a8e246509c
+ms.openlocfilehash: 607bdb7ee830c9a3bbb83ca2aec4661772a285b2
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38992817"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095842"
 ---
 # <a name="host-aspnet-core-on-windows-with-iis"></a>IIS가 있는 Windows에서 ASP.NET Core 호스팅
 
@@ -168,9 +168,8 @@ IIS 및 Kestrel 서버 간의 역방향 프록시를 만들려면 배포된 앱�
 
 1. 호스팅 시스템에 *.NET Core 호스팅 번들*을 설치합니다. 번들은 .NET Core 런타임, .NET Core 라이브러리 및 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)을 설치합니다. 이 모듈은 IIS와 Kestrel 서버 간에 역방향 프록시를 만듭니다. 시스템이 인터넷에 연결되지 않은 경우 [Microsoft Visual C++ 2015 재배포 가능 패키지](https://www.microsoft.com/download/details.aspx?id=53840)를 설치한 후에 .NET Core 호스팅 번들을 설치합니다.
 
-   1. [.NET 모든 다운로드 페이지](https://www.microsoft.com/net/download/all)로 이동합니다.
-   1. 테이블의 **런타임** 열에 있는 목록(**X.Y 런타임(vX.Y.Z) 다운로드**)에서 최신 미리 보기 상태가 아닌 .NET Core 런타임을 선택합니다. 최신 런타임에는 **현재** 레이블이 포함됩니다. 미리 보기 소프트웨어로 작업하려는 경우가 아니면 해당 링크 텍스트에서 “미리 보기” 또는 “rc”(릴리스 후보)라는 단어가 있는 런타임을 사용하지 마세요.
-   1. .NET Core 런타임 다운로드 페이지의 **Windows**에서 **호스팅 번들 설치 관리자** 링크를 선택하여 *.NET Core 호스팅 번들* 설치 관리자를 다운로드합니다.
+   1. [.NET 다운로드 페이지](https://www.microsoft.com/net/download/windows)로 이동합니다.
+   1. **.NET Core** 아래에서 **앱 실행** 레이블 옆에 있는 **.NET Core 런타임 다운로드** 단추를 선택합니다. 설치 관리자 실행 파일의 파일 이름에는 "hosting"이라는 단어가 포함됩니다(예: *dotnet-hosting-2.1.2-win.exe*).
    1. 서버에서 설치 관리자를 실행합니다.
 
    **중요!** IIS 이전에 호스팅 번들이 설치된 경우 번들 설치를 복구해야 합니다. IIS를 설치한 후 호스팅 번들 설치 프로그램을 다시 실행합니다.

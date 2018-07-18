@@ -5,12 +5,12 @@ description: ASP.NET Core 앱의 여러 환경에서 앱 동작을 제어하는 
 ms.author: riande
 ms.date: 07/03/2018
 uid: fundamentals/environments
-ms.openlocfilehash: 8983a0ce81beb16d68c799d30bfbfce6e7b693b1
-ms.sourcegitcommit: 18339e3cb5a891a3ca36d8146fa83cf91c32e707
+ms.openlocfilehash: 3394113de37da2571ab6398405751961117f12d2
+ms.sourcegitcommit: 19cbda409bdbbe42553dc385ea72d2a8e246509c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37433950"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38992875"
 ---
 # <a name="use-multiple-environments-in-aspnet-core"></a>ASP.NET Core에서 여러 환경 사용
 
@@ -204,19 +204,50 @@ set ASPNETCORE_ENVIRONMENT=Development
 $Env:ASPNETCORE_ENVIRONMENT = "Development"
 ```
 
-이러한 명령은 현재 창에만 적용됩니다. 창이 닫히면 `ASPNETCORE_ENVIRONMENT` 설정이 기본 설정 또는 컴퓨터 값으로 되돌아갑니다. Windows에서 전역으로 값을 설정하려면 **제어판** > **시스템** > **고급 시스템 설정**을 열고 `ASPNETCORE_ENVIRONMENT` 값을 추가하거나 편집합니다.
+이러한 명령은 현재 창에만 적용됩니다. 창이 닫히면 `ASPNETCORE_ENVIRONMENT` 설정이 기본 설정 또는 컴퓨터 값으로 되돌아갑니다.
 
-![시스템 고급 속성](environments/_static/systemsetting_environment.png)
+Windows에서 전역적으로 값을 설정하려면 다음 방법 중 하나를 사용합니다.
 
-![ASPNET Core 환경 변수](environments/_static/windows_aspnetcore_environment.png)
+* **제어판** > **시스템** > **고급 시스템 설정**을 열고 `ASPNETCORE_ENVIRONMENT` 값을 추가하거나 편집합니다.
+
+  ![시스템 고급 속성](environments/_static/systemsetting_environment.png)
+
+  ![ASPNET Core 환경 변수](environments/_static/windows_aspnetcore_environment.png)
+
+* 관리 명령 프롬프트를 열고 `setx` 명령을 사용하거나 관리 PowerShell 명령 프롬프트를 열고 `[Environment]::SetEnvironmentVariable`을 사용합니다.
+
+  **명령 프롬프트**
+
+  ```console
+  setx ASPNETCORE_ENVIRONMENT=Development /M
+  ```
+
+  `/M` 스위치는 시스템 수준에서 환경 변수를 설정함을 나타냅니다. `/M` 스위치를 사용하지 않으면 환경 변수가 사용자 계정으로 설정됩니다.
+
+  **PowerShell**
+
+  ```powershell
+  [Environment]::SetEnvironmentVariable("ASPNETCORE_ENVIRONMENT", "Development", "Machine")
+  ```
+
+  `Machine` 옵션 값은 시스템 수준에서 환경 변수를 설정함을 나타냅니다. 옵션 값이 `User`로 변경되면 환경 변수가 사용자 계정으로 설정됩니다.
+
+`ASPNETCORE_ENVIRONMENT` 환경 변수를 전역적으로 설정하면 값이 설정된 후 열리는 모든 명령 창에서 `dotnet run`에 대해 적용됩니다.
 
 **web.config**
 
-[ASP.NET Core 모듈 구성 참조](xref:host-and-deploy/aspnet-core-module#setting-environment-variables) 주제의 *환경 변수 설정하기* 항목을 참고하시기 바랍니다
+*web.config*를 사용하여 `ASPNETCORE_ENVIRONMENT`환경 변수를 설정하려면 <xref:host-and-deploy/aspnet-core-module#setting-environment-variables>의 *환경 변수 설정* 섹션을 참조하세요. `ASPNETCORE_ENVIRONMENT` 환경 변수를 *web.config*로 설정하면 해당 값이 시스템 수준의 설정을 재정의합니다.
 
 **IIS 응용 프로그램 풀마다**
 
-격리된 응용 프로그램 풀에서 실행되는 (IIS 10.0 이상에서 지원됨) 개별 앱에 대한 환경 변수를 설정하려면, [ 환경 변수 &lt;environmentVariables&gt;](/iis/configuration/system.applicationHost/applicationPools/add/environmentVariables/#appcmdexe) 항목의 *AppCmd.exe 명령* 섹션을 참조하세요.
+격리된 응용 프로그램 풀에서 실행되는(IIS 10.0 이상에서 지원됨) 앱에 대한 `ASPNETCORE_ENVIRONMENT` 환경 변수를 설정하려면, [ 환경 변수 &lt;environmentVariables&gt;](/iis/configuration/system.applicationHost/applicationPools/add/environmentVariables/#appcmdexe) 항목의 *AppCmd.exe 명령* 섹션을 참조하세요. `ASPNETCORE_ENVIRONMENT` 환경 변수를 앱 풀에 대해 설정하면 해당 값이 시스템 수준의 설정을 재정의합니다.
+
+> [!IMPORTANT]
+> IIS에서 앱을 호스팅하고 `ASPNETCORE_ENVIRONMENT` 환경 변수를 추가 또는 변경할 때 다음 방법 중 하나를 사용하여 앱에서 선택한 새 값을 가져옵니다.
+>
+> * 앱의 앱 풀을 다시 시작합니다.
+> * 명령 프롬프트에서 `net stop was /y` 다음에 `net start w3svc`를 실행합니다.
+> * 서버를 다시 시작합니다.
 
 ### <a name="macos"></a>macOS
 
@@ -244,17 +275,125 @@ Linux 배포의 경우 세션 기반 변수 설정에 대한 명령 프롬프트
 
 ### <a name="configuration-by-environment"></a>환경별 구성
 
-자세한 내용은 [환경에 의한 구성](xref:fundamentals/configuration/index#configuration-by-environment)을 참조하세요.
+<xref:fundamentals/configuration/index#configuration-by-environment>의 *환경별 구성* 섹션을 참조하세요.
 
 ## <a name="environment-based-startup-class-and-methods"></a>환경에 따른 시작 클래스 및 메서드
 
-ASP.NET Core 앱이 시작되면 [시작 클래스](xref:fundamentals/startup)가 앱을 부트스트랩합니다. `Startup{EnvironmentName}` 클래스가 존재하는 경우 해당 클래스가 `EnvironmentName`에 대해 호출됩니다.
+### <a name="startup-class-conventions"></a>시작 클래스 규칙
 
-[!code-csharp[](environments/sample/EnvironmentsSample/StartupDev.cs?name=snippet&highlight=1)]
+ASP.NET Core 앱이 시작되면 [시작 클래스](xref:fundamentals/startup)가 앱을 부트스트랩합니다. 앱은 다양한 환경(예: `StartupDevelopment`)에 대한 별도의 `Startup` 클래스를 정의할 수 있으며 적절한 `Startup` 클래스는 런타임에 선택됩니다. 해당 이름 접미사가 현재 환경과 일치하는 클래스에 우선 순위가 부여됩니다. 일치하는 `Startup{EnvironmentName}` 클래스를 찾을 수 없으면 `Startup` 클래스가 사용됩니다.
 
-[WebHostBuilder.UseStartup&lt;TStartup&gt;](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderextensions.usestartup#Microsoft_AspNetCore_Hosting_WebHostBuilderExtensions_UseStartup__1_Microsoft_AspNetCore_Hosting_IWebHostBuilder_)은 구성 섹션을 재정의합니다.
+환경 기반 `Startup` 클래스를 구현하려면 사용 중인 각 환경에 대한 `Startup{EnvironmentName}` 클래스와 폴백 `Startup` 클래스를 만듭니다.
 
-[Configure](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure) 및 [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configureservices)는 `Configure{EnvironmentName}` 및 `Configure{EnvironmentName}Services` 양식의 환경 특정 버전을 지원합니다.
+```csharp
+// Startup class to use in the Development environment
+public class StartupDevelopment
+{
+    public void ConfigureServices(IServiceCollection services)
+    {
+        ...
+    }
+
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    {
+        ...
+    }
+}
+
+// Startup class to use in the Production environment
+public class StartupProduction
+{
+    public void ConfigureServices(IServiceCollection services)
+    {
+        ...
+    }
+
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    {
+        ...
+    }
+}
+
+// Fallback Startup class
+// Selected if the environment doesn't match a Startup{EnvironmentName} class
+public class Startup
+{
+    public void ConfigureServices(IServiceCollection services)
+    {
+        ...
+    }
+
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    {
+        ...
+    }
+}
+```
+
+어셈블리 이름을 허용하는 [UseStartup(IWebHostBuilder, String)](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.usestartup) 오버로드를 사용합니다.
+
+::: moniker range=">= aspnetcore-2.1"
+
+```csharp
+public static void Main(string[] args)
+{
+    CreateWebHostBuilder(args).Build().Run();
+}
+
+public static IWebHostBuilder CreateWebHostBuilder(string[] args)
+{
+    var assemblyName = typeof(Startup).GetTypeInfo().Assembly.FullName;
+
+    return WebHost.CreateDefaultBuilder(args)
+        .UseStartup(assemblyName);
+}
+```
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+```csharp
+public static void Main(string[] args)
+{
+    CreateWebHost(args).Run();
+}
+
+public static IWebHost CreateWebHost(string[] args)
+{
+    var assemblyName = typeof(Startup).GetTypeInfo().Assembly.FullName;
+
+    return WebHost.CreateDefaultBuilder(args)
+        .UseStartup(assemblyName)
+        .Build();
+}
+```
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+```csharp
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        var assemblyName = typeof(Startup).GetTypeInfo().Assembly.FullName;
+
+        var host = new WebHostBuilder()
+            .UseStartup(assemblyName)
+            .Build();
+
+        host.Run();
+    }
+}
+```
+
+::: moniker-end
+
+### <a name="startup-method-conventions"></a>시작 메서드 규칙
+
+[Configure](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure) 및 [ConfigureServices](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configureservices)는 `Configure<EnvironmentName>` 및 `Configure<EnvironmentName>Services` 양식의 환경 특정 버전을 지원합니다.
 
 [!code-csharp[](environments/sample/EnvironmentsSample/Startup.cs?name=snippet_all&highlight=15,51)]
 

@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 02/07/2018
 uid: host-and-deploy/iis/troubleshoot
-ms.openlocfilehash: d57196693feb6413560ec25e09cf74e9babf93bf
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: cbbdee6849768004476d94c58be4a0e7cc2d6f9e
+ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276167"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37938474"
 ---
 # <a name="troubleshoot-aspnet-core-on-iis"></a>IIS에서 ASP.NET Core 문제 해결
 
@@ -31,6 +31,9 @@ App Service는 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-modul
 
 [Visual Studio를 사용하여 디버깅하는 자세한 내용](/visualstudio/debugger/getting-started-with-the-debugger)  
 이 항목에서는 Visual Studio 디버거의 기능을 소개합니다.
+
+[Debugging with Visual Studio Code](https://code.visualstudio.com/docs/editor/debugging)(Visual Studio Code를 사용한 디버깅)  
+Visual Studio Code에 기본 제공되는 디버깅 지원에 대해 알아봅니다.
 
 ## <a name="app-startup-errors"></a>앱 시작 오류
 

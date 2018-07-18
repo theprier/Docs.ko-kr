@@ -3,14 +3,14 @@ title: 계정 확인 및 ASP.NET Core에서 암호 복구
 author: rick-anderson
 description: 전자 메일 확인 및 암호 재설정을 사용 하 여 ASP.NET Core 앱을 빌드하는 방법에 알아봅니다.
 ms.author: riande
-ms.date: 2/11/2018
+ms.date: 7/11/2018
 uid: security/authentication/accconfirm
-ms.openlocfilehash: 8e175cd19ca4a9de1e7cf6b330b3d82f309b6501
-ms.sourcegitcommit: e12f45ddcbe99102a74d4077df27d6c0ebba49c1
-ms.translationtype: HT
+ms.openlocfilehash: af3ba8b27148d94c4a905c688b8165f49b9f2927
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/15/2018
-ms.locfileid: "39063340"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095748"
 ---
 ::: moniker range="<= aspnetcore-2.0"
 
@@ -34,7 +34,7 @@ ms.locfileid: "39063340"
 
 ## <a name="prerequisites"></a>전제 조건
 
-[!INCLUDE [](~/includes/2.1-SDK.md) [](~/includes/2.1-SDK.md)]
+[!INCLUDE](~/includes/2.1-SDK.md) [](~/includes/2.1-SDK.md)]
 
 ## <a name="create-a-web--app-and-scaffold-identity"></a>웹 앱 만들기 및 Identity를 스 캐 폴드
 

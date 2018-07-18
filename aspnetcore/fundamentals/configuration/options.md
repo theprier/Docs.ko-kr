@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 11/28/2017
 uid: fundamentals/configuration/options
-ms.openlocfilehash: 96d7d2956fa9bf72706cde0532ee7f4ff753b72c
-ms.sourcegitcommit: 2941e24d7f3fd3d5e88d27e5f852aaedd564deda
+ms.openlocfilehash: c996ac6ab05b98bcca72d0993fe412f553b58106
+ms.sourcegitcommit: 19cbda409bdbbe42553dc385ea72d2a8e246509c
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37126263"
+ms.lasthandoff: 07/12/2018
+ms.locfileid: "38992966"
 ---
 # <a name="options-pattern-in-aspnet-core"></a>ASP.NET Core의 옵션 패턴
 
@@ -154,13 +154,29 @@ subOption1 = subvalue1_from_json, subOption2 = 200
 
 ![옵션 값 옵션 1: value1_from_json 및 옵션 2: -1은 모델에서 로드되며 보기에 주입됩니다.](options/_static/view.png)
 
+::: moniker range=">= aspnetcore-1.1"
+
 ## <a name="reload-configuration-data-with-ioptionssnapshot"></a>IOptionsSnapshot을 사용하여 구성 데이터 다시 로드
 
 `IOptionsSnapshot`을 사용하여 구성 데이터를 다시 로드하는 것은 [샘플 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/configuration/options/sample)에서 예제 &num;5에 설명되어 있습니다.
 
-*ASP.NET Core 1.1 이상이 필요합니다.*
+[IOptionsSnapshot](/dotnet/api/microsoft.extensions.options.ioptionssnapshot-1)은 최소한의 처리 오버헤드로 옵션의 다시 로드를 지원합니다.
 
-[IOptionsSnapshot](/dotnet/api/microsoft.extensions.options.ioptionssnapshot-1)은 최소한의 처리 오버헤드로 옵션의 다시 로드를 지원합니다. ASP.NET Core 1.1에서 `IOptionsSnapshot`은 [IOptionsMonitor&lt;TOptions&gt;](/dotnet/api/microsoft.extensions.options.ioptionsmonitor-1)의 스냅샷으로, 모니터 트리거가 데이터 원본 변경에 따라 변경될 때마다 자동으로 업데이트됩니다. ASP.NET Core 2.0 이상에서 옵션은 요청의 수명 동안 액세스되고 캐시될 때 요청당 한 번 계산됩니다.
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.0"
+
+옵션은 요청의 수명 동안 액세스되고 캐시될 때 요청당 한 번 계산됩니다.
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+`IOptionsSnapshot`은 [IOptionsMonitor&lt;TOptions&gt;](/dotnet/api/microsoft.extensions.options.ioptionsmonitor-1)의 스냅샷으로, 모니터 트리거가 데이터 원본 변경에 따라 변경될 때마다 자동으로 업데이트됩니다.
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-1.1"
 
 다음 예제에는 *appsettings.json*이 변경된 후 새 `IOptionsSnapshot`을 만드는 방법이 설명되어 있습니다(*Pages/Index.cshtml.cs*). 서버에 대한 여러 요청은 파일이 변경되고 구성이 다시 로드될 때까지 *appsettings.json* 파일에서 제공하는 상수 값을 반환합니다.
 
@@ -182,11 +198,13 @@ snapshot option1 = value1_from_json, snapshot option2 = -1
 snapshot option1 = value1_from_json UPDATED, snapshot option2 = 200
 ```
 
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.0"
+
 ## <a name="named-options-support-with-iconfigurenamedoptions"></a>IConfigureNamedOptions로 명명된 옵션 지원
 
 [IConfigureNamedOptions](/dotnet/api/microsoft.extensions.options.iconfigurenamedoptions-1)로 명명된 옵션 지원은 [샘플 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/configuration/options/sample)에서 예제 &num;6으로 설명되어 있습니다.
-
-*ASP.NET Core 2.0 이상이 필요합니다.*
 
 앱은 *명명된 옵션* 지원을 통해 명명된 옵션 구성들을 구분할 수 있습니다. 샘플 앱에서 명명된 옵션은 [OptionsServiceCollectionExtensions.Configure&lt;TOptions&gt;(IServiceCollection, String, Action&lt;TOptions&gt;)](/dotnet/api/microsoft.extensions.dependencyinjection.optionsservicecollectionextensions.configure)로 선언되었습니다. 그러면 확장명 메서드 [ConfigureNamedOptions&lt;TOptions&gt;.Configure](/dotnet/api/microsoft.extensions.options.configurenamedoptions-1.configure) 메서드를 호출합니다.
 
@@ -229,11 +247,9 @@ named_options_2: option1 = ConfigureAll replacement value, option2 = 5
 ```
 
 > [!NOTE]
-> ASP.NET Core 2.0 이상에서는 모든 옵션이 명명된 인스턴스입니다. 기존 `IConfigureOption` 인스턴스는 `Options.DefaultName` 인스턴스를 대상 지정하는 것으로 처리됩니다(즉, `string.Empty`). 또한 `IConfigureNamedOptions`는 `IConfigureOptions`를 구현합니다. [IOptionsFactory&lt;TOptions&gt;](/dotnet/api/microsoft.extensions.options.ioptionsfactory-1)의 기본 구현([참조 소스](https://github.com/aspnet/Options/blob/release/2.0/src/Microsoft.Extensions.Options/IOptionsFactory.cs)에는 각각 적절하게 사용하기 위한 논리가 있습니다. `null` 명명된 옵션은 특정 명명된 인스턴스 대신 모든 명명된 인스턴스를 대상 지정하는 데 사용됩니다([ConfigureAll](/dotnet/api/microsoft.extensions.dependencyinjection.optionsservicecollectionextensions.configureall) 및 [PostConfigureAll](/dotnet/api/microsoft.extensions.dependencyinjection.optionsservicecollectionextensions.postconfigureall)에서 이 규칙을 사용).
+> 모든 옵션은 명명된 인스턴스입니다. 기존 `IConfigureOption` 인스턴스는 `Options.DefaultName` 인스턴스를 대상 지정하는 것으로 처리됩니다(즉, `string.Empty`). 또한 `IConfigureNamedOptions`는 `IConfigureOptions`를 구현합니다. [IOptionsFactory&lt;TOptions&gt;](/dotnet/api/microsoft.extensions.options.ioptionsfactory-1)의 기본 구현([참조 소스](https://github.com/aspnet/Options/blob/release/2.0/src/Microsoft.Extensions.Options/IOptionsFactory.cs)에는 각각 적절하게 사용하기 위한 논리가 있습니다. `null` 명명된 옵션은 특정 명명된 인스턴스 대신 모든 명명된 인스턴스를 대상 지정하는 데 사용됩니다([ConfigureAll](/dotnet/api/microsoft.extensions.dependencyinjection.optionsservicecollectionextensions.configureall) 및 [PostConfigureAll](/dotnet/api/microsoft.extensions.dependencyinjection.optionsservicecollectionextensions.postconfigureall)에서 이 규칙을 사용).
 
 ## <a name="ipostconfigureoptions"></a>IPostConfigureOptions
-
-*ASP.NET Core 2.0 이상이 필요합니다.*
 
 [IPostConfigureOptions&lt;TOptions&gt;](/dotnet/api/microsoft.extensions.options.ipostconfigureoptions-1)로 사후 구성을 설정합니다. 사후 구성은 [IConfigureOptions&lt;TOptions&gt;](/dotnet/api/microsoft.extensions.options.iconfigureoptions-1) 구성이 발생한 후에 실행됩니다.
 
@@ -262,13 +278,19 @@ services.PostConfigureAll<MyOptions>("named_options_1", myOptions =>
 });
 ```
 
+::: moniker-end
+
 ## <a name="options-factory-monitoring-and-cache"></a>옵션 팩터리, 모니터링 및 캐시
 
 [IOptionsMonitor](/dotnet/api/microsoft.extensions.options.ioptionsmonitor-1)는 `TOptions` 인스턴스가 변경될 때 알림에 사용됩니다. `IOptionsMonitor`는 다시 로드할 수 있는 옵션, 변경 알림 및 `IPostConfigureOptions`를 지원합니다.
 
-[IOptionsFactory&lt;TOptions&gt;](/dotnet/api/microsoft.extensions.options.ioptionsfactory-1)(ASP.NET Core 2.0 이상)는 새로운 옵션 인스턴스를 만듭니다. 단일 [Create](/dotnet/api/microsoft.extensions.options.ioptionsfactory-1.create) 메서드가 있습니다. 기본 구현에서는 등록된 모든 `IConfigureOptions` 및 `IPostConfigureOptions`를 사용하며 먼저 구성을 모두 실행한 다음, 사후 구성을 수행합니다. `IConfigureNamedOptions`와 `IConfigureOptions`를 구별하며 적절한 인터페이스만 호출합니다.
+::: moniker range=">= aspnetcore-2.0"
 
-[IOptionsMonitorCache&lt;TOptions&gt;](/dotnet/api/microsoft.extensions.options.ioptionsmonitorcache-1)(ASP.NET Core 2.0 이상)는 `IOptionsMonitor`에서 `TOptions` 인스턴스를 캐시하는 데 사용됩니다. `IOptionsMonitorCache`는 모니터에서 옵션 인스턴스를 무효화하므로 값이 다시 계산됩니다([TryRemove](/dotnet/api/microsoft.extensions.options.ioptionsmonitorcache-1.tryremove)). 또한 [TryAdd](/dotnet/api/microsoft.extensions.options.ioptionsmonitorcache-1.tryadd)로 값을 수동으로 도입할 수 있습니다. 모든 명명된 인스턴스를 필요에 따라 다시 생성해야 하는 경우 [Clear](/dotnet/api/microsoft.extensions.options.ioptionsmonitorcache-1.clear) 메서드가 사용됩니다.
+[IOptionsFactory&lt;TOptions&gt;](/dotnet/api/microsoft.extensions.options.ioptionsfactory-1)는 새로운 옵션 인스턴스를 만듭니다. 단일 [Create](/dotnet/api/microsoft.extensions.options.ioptionsfactory-1.create) 메서드가 있습니다. 기본 구현에서는 등록된 모든 `IConfigureOptions` 및 `IPostConfigureOptions`를 사용하며 먼저 구성을 모두 실행한 다음, 사후 구성을 수행합니다. `IConfigureNamedOptions`와 `IConfigureOptions`를 구별하며 적절한 인터페이스만 호출합니다.
+
+[IOptionsMonitorCache&lt;TOptions&gt;](/dotnet/api/microsoft.extensions.options.ioptionsmonitorcache-1)는 `IOptionsMonitor`에서 `TOptions` 인스턴스를 캐시하는 데 사용됩니다. `IOptionsMonitorCache`는 모니터에서 옵션 인스턴스를 무효화하므로 값이 다시 계산됩니다([TryRemove](/dotnet/api/microsoft.extensions.options.ioptionsmonitorcache-1.tryremove)). 또한 [TryAdd](/dotnet/api/microsoft.extensions.options.ioptionsmonitorcache-1.tryadd)로 값을 수동으로 도입할 수 있습니다. 모든 명명된 인스턴스를 필요에 따라 다시 생성해야 하는 경우 [Clear](/dotnet/api/microsoft.extensions.options.ioptionsmonitorcache-1.clear) 메서드가 사용됩니다.
+
+::: moniker-end
 
 ## <a name="accessing-options-during-startup"></a>시작하는 동안 옵션 액세스
 

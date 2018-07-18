@@ -5,12 +5,12 @@ description: Entity Framework Core(EF Core)를 사용하여 데이터베이스�
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/model
-ms.openlocfilehash: ed8faf8b3049adc7bcc7953d63ad805b0a836bd9
-ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
+ms.openlocfilehash: 9e0fd0ee98c84bb2336749640b2a3c103e4639b6
+ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36961177"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37938328"
 ---
 # <a name="add-a-model-to-a-razor-pages-app-in-aspnet-core"></a>ASP.NET Core에서 Razor 페이지 앱에 모델 추가
 

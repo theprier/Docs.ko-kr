@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 03/26/2018
 uid: host-and-deploy/proxy-load-balancer
-ms.openlocfilehash: 1623c6dbe377ce24c380b75a828c3ec5653dd7dd
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b04219803477c9dc1c25077cde117fc629f8b6fb
+ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37827500"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37938500"
 ---
 # <a name="configure-aspnet-core-to-work-with-proxy-servers-and-load-balancers"></a>프록시 서버 및 부하 분산 장치를 사용하도록 ASP.NET Core 구성
 
@@ -42,12 +42,13 @@ ASP.NET Core의 권장 구성에서 앱은 IIS/ASP.NET Core 모듈, Nginx 또는
 * [HttpContext.Request.Scheme](/dotnet/api/microsoft.aspnetcore.http.httprequest.scheme) &ndash; `X-Forwarded-Proto` 헤더 값을 사용하여 설정합니다.
 * [HttpContext.Request.Host](/dotnet/api/microsoft.aspnetcore.http.httprequest.host) &ndash; `X-Forwarded-Host` 헤더 값을 사용하여 설정합니다.
 
-일부 네트워크 어플라이언스는 `X-Forwarded-For` 및 `X-Forwarded-Proto` 헤더를 추가하려면 추가 구성이 필요합니다. 프록시된 요청이 앱에 도달할 때 이러한 헤더를 포함하지 않는 경우에는 어플라이언스 제조업체의 지침을 참조하세요.
-
 전달된 헤더 미들웨어 [기본 설정](#forwarded-headers-middleware-options)을 구성할 수 있습니다. 기본 설정은 다음과 같습니다.
 
 * 앱과 요청 소스 사이에는 ‘하나의 프록시’만 있습니다.
 * 알려진 프록시 및 알려진 네트워크의 경우 루프백 주소만 구성됩니다.
+* 전달된 헤더의 이름은 `X-Forwarded-For` 및 `X-Forwarded-Proto`입니다.
+
+일부 네트워크 어플라이언스는 `X-Forwarded-For` 및 `X-Forwarded-Proto` 헤더를 추가하려면 추가 구성이 필요합니다. 프록시된 요청이 앱에 도달할 때 이러한 헤더를 포함하지 않는 경우에는 어플라이언스 제조업체의 지침을 참조하세요. 어플라이언스가 `X-Forwarded-For` 및 `X-Forwarded-Proto`와 다른 헤더 이름을 사용하는 경우 어플라이언스에서 사용하는 헤더 이름과 일치하도록 [ForwardedForHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedforheadername) 및 [ForwardedProtoHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedprotoheadername) 옵션을 설정합니다. 자세한 내용은 [전달된 헤더 미들웨어 옵션](#forwarded-headers-middleware-options) 및 [다른 헤더 이름을 사용하는 프록시 구성](#configuration-for-a-proxy-that-uses-different-header-names)을 참조하세요.
 
 ## <a name="iisiis-express-and-aspnet-core-module"></a>IIS/IIS Express 및 ASP.NET Core 모듈
 
@@ -96,32 +97,37 @@ public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 
 ## <a name="nginx-configuration"></a>Nginx 구성
 
-`X-Forwarded-For` 및 `X-Forwarded-Proto` 헤더를 전달하려면 [Nginx를 사용하여 Linux에서 호스트: Nginx 구성](xref:host-and-deploy/linux-nginx#configure-nginx)을 참조하세요. 자세한 내용은 [NGINX: 전달된 헤더 사용](https://www.nginx.com/resources/wiki/start/topics/examples/forwarded/)을 참조하세요.
+`X-Forwarded-For` 및 `X-Forwarded-Proto` 헤더를 전달하려면 <xref:host-and-deploy/linux-nginx#configure-nginx>를 참조하세요. 자세한 내용은 [NGINX: 전달된 헤더 사용](https://www.nginx.com/resources/wiki/start/topics/examples/forwarded/)을 참조하세요.
 
 ## <a name="apache-configuration"></a>Apache 구성
 
-`X-Forwarded-For`가 자동으로 추가됩니다( [Apache 모듈 mod_proxy: 역방향 프록시 요청 헤더](https://httpd.apache.org/docs/2.4/mod/mod_proxy.html#x-headers) 참조). `X-Forwarded-Proto`를 헤더 전달하는 방법에 대한 자세한 내용은 [Apache를 사용하여 Linux에서 호스트: Apache 구성](xref:host-and-deploy/linux-apache#configure-apache)을 참조하세요.
+`X-Forwarded-For`가 자동으로 추가됩니다( [Apache 모듈 mod_proxy: 역방향 프록시 요청 헤더](https://httpd.apache.org/docs/2.4/mod/mod_proxy.html#x-headers) 참조). `X-Forwarded-Proto` 헤더를 전달하는 방법에 대한 내용은 <xref:host-and-deploy/linux-apache#configure-apache>를 참조하세요.
 
 ## <a name="forwarded-headers-middleware-options"></a>전달된 헤더 미들웨어 옵션
 
-[ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions)는 전달된 헤더 미들웨어의 동작을 제어합니다.
+[ForwardedHeadersOptions](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions)는 전달된 헤더 미들웨어의 동작을 제어합니다. 다음 예제에서는 기본값을 변경합니다.
+
+* 전달된 헤더의 항목 수를 `2`로 제한합니다.
+* `127.0.10.1`의 알려진 프록시 주소를 추가합니다.
+* 전달된 헤더 이름을 기본값 `X-Forwarded-For`에서 `X-Forwarded-For-My-Custom-Header-Name`으로 변경합니다.
 
 ```csharp
 services.Configure<ForwardedHeadersOptions>(options =>
 {
     options.ForwardLimit = 2;
     options.KnownProxies.Add(IPAddress.Parse("127.0.10.1"));
-    options.ForwardedForHeaderName = "X-Forwarded-For-Custom-Header-Name";
+    options.ForwardedForHeaderName = "X-Forwarded-For-My-Custom-Header-Name";
 });
 ```
 
-::: moniker range="<= aspnetcore-2.0"
+::: moniker range=">= aspnetcore-2.1"
 | 옵션 | 설명 |
 | ------ | ----------- |
-| [ForwardedForHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedforheadername) | [ForwardedHeadersDefaults.XForwardedForHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xforwardedforheadername)에서 지정된 헤더 대신 이 속성에서 지정된 헤더를 사용합니다.<br><br>기본값은 `X-Forwarded-For`입니다. |
+| AllowedHosts | `X-Forwarded-Host` 헤더에 의한 호스트를 제공된 값으로 제한합니다.<ul><li>값은 ordinal-ignore-case를 사용하여 비교됩니다.</li><li>포트 번호는 제외해야 합니다.</li><li>목록이 비어 있으면 모든 호스트가 허용됩니다.</li><li>최상위 수준 와일드카드 `*`는 비어 있지 않은 모든 호스트를 허용합니다.</li><li>하위 도메인 와일드카드는 허용되지만 루트 도메인과 일치하지 않습니다. 예를 들어 `*.contoso.com`은 하위 도메인 `foo.contoso.com`과 일치하지만 루트 도메인 `contoso.com`과 일치하지 않습니다.</li><li>유니코드 호스트 이름은 허용되지만 일치시킬 [Punycode](https://tools.ietf.org/html/rfc3492)로 변환됩니다.</li><li>[IPv6 주소](https://tools.ietf.org/html/rfc4291)는 경계 대괄호를 포함하고 [기존 형식](https://tools.ietf.org/html/rfc4291#section-2.2)이어야 합니다(예: `[ABCD:EF01:2345:6789:ABCD:EF01:2345:6789]`). IPv6 주소는 서로 다른 형식 간에 논리적 같음을 확인하기 위해 특별히 처리되지 않으며 정규화가 수행되지 않습니다.</li><li>허용된 호스트를 제한하지 못하면 공격자가 서비스에서 생성된 링크를 스푸핑할 수 있습니다.</li></ul>기본값은 빈 [IList\<string>](/dotnet/api/system.collections.generic.ilist-1)입니다. |
+| [ForwardedForHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedforheadername) | [ForwardedHeadersDefaults.XForwardedForHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xforwardedforheadername)에서 지정된 헤더 대신 이 속성에서 지정된 헤더를 사용합니다. 이 옵션은 프록시/전달자가 `X-Forwarded-For` 헤더를 사용하지 않고 일부 다른 헤더를 사용하여 정보를 전달할 때 사용됩니다.<br><br>기본값은 `X-Forwarded-For`입니다. |
 | [ForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedheaders) | 처리해야 할 전달자를 알려줍니다. 적용되는 필드 목록은 [ForwardedHeaders 열거형](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheaders)을 참조하세요. 이 속성에 할당된 일반적인 값은 <code>ForwardedHeaders.XForwardedFor &#124; ForwardedHeaders.XForwardedProto</code>입니다.<br><br>기본값은 [ForwardedHeaders.None](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheaders)입니다. |
-| [ForwardedHostHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedhostheadername) | [ForwardedHeadersDefaults.XForwardedHostHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xforwardedhostheadername)에서 지정된 헤더 대신 이 속성에서 지정된 헤더를 사용합니다.<br><br>기본값은 `X-Forwarded-Host`입니다. |
-| [ForwardedProtoHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedprotoheadername) | [ForwardedHeadersDefaults.XForwardedProtoHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xforwardedprotoheadername)에서 지정된 헤더 대신 이 속성에서 지정된 헤더를 사용합니다.<br><br>기본값은 `X-Forwarded-Proto`입니다. |
+| [ForwardedHostHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedhostheadername) | [ForwardedHeadersDefaults.XForwardedHostHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xforwardedhostheadername)에서 지정된 헤더 대신 이 속성에서 지정된 헤더를 사용합니다. 이 옵션은 프록시/전달자가 `X-Forwarded-Host` 헤더를 사용하지 않고 일부 다른 헤더를 사용하여 정보를 전달할 때 사용됩니다.<br><br>기본값은 `X-Forwarded-Host`입니다. |
+| [ForwardedProtoHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedprotoheadername) | [ForwardedHeadersDefaults.XForwardedProtoHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xforwardedprotoheadername)에서 지정된 헤더 대신 이 속성에서 지정된 헤더를 사용합니다. 이 옵션은 프록시/전달자가 `X-Forwarded-Proto` 헤더를 사용하지 않고 일부 다른 헤더를 사용하여 정보를 전달할 때 사용됩니다.<br><br>기본값은 `X-Forwarded-Proto`입니다. |
 | [ForwardLimit](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardlimit) | 처리되는 헤더의 항목 수를 제한합니다. 제한을 사용하지 않도록 `null`로 설정하지만, `KnownProxies` 또는 `KnownNetworks`가 구성된 경우에만 사용해야 합니다.<br><br>기본값은 1입니다. |
 | [KnownNetworks](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.knownnetworks) | 전달된 헤더를 허용하기 위한 알려진 프록시의 주소 범위입니다. CIDR(Classless Interdomain Routing) 표기법을 사용하여 IP 범위를 제공합니다.<br><br>기본값은 `IPAddress.Loopback`에 대한 단일 항목을 포함하는 [IList](/dotnet/api/system.collections.generic.ilist-1)\<[IPNetwork](/dotnet/api/microsoft.aspnetcore.httpoverrides.ipnetwork)>입니다. |
 | [KnownProxies](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.knownproxies) | 전달된 헤더를 허용하기 위한 알려진 프록시의 주소입니다. `KnownProxies`를 사용하여 정확한 IP 주소 일치 항목을 지정합니다.<br><br>기본값은 `IPAddress.IPv6Loopback`에 대한 단일 항목을 포함하는 [IList](/dotnet/api/system.collections.generic.ilist-1)\<[IPAddress](/dotnet/api/system.net.ipaddress)>입니다. |
@@ -130,14 +136,13 @@ services.Configure<ForwardedHeadersOptions>(options =>
 | [OriginalProtoHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.originalprotoheadername) | [ForwardedHeadersDefaults.XOriginalProtoHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xoriginalprotoheadername)에서 지정된 헤더 대신 이 속성에서 지정된 헤더를 사용합니다.<br><br>기본값은 `X-Original-Proto`입니다. |
 | [RequireHeaderSymmetry](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.requireheadersymmetry) | 처리 중인 [ForwardedHeadersOptions.ForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedheaders) 간에 동기화할 헤더 값 수가 필요합니다.<br><br>ASP.NET Core 1.x의 기본값은 `true`입니다. ASP.NET Core 2.0 이상의 기본값은 `false`입니다. |
 ::: moniker-end
-::: moniker range=">= aspnetcore-2.1"
+::: moniker range="<= aspnetcore-2.0"
 | 옵션 | 설명 |
 | ------ | ----------- |
-| AllowedHosts | `X-Forwarded-Host` 헤더에 의한 호스트를 제공된 값으로 제한합니다.<ul><li>값은 ordinal-ignore-case를 사용하여 비교됩니다.</li><li>포트 번호는 제외해야 합니다.</li><li>목록이 비어 있으면 모든 호스트가 허용됩니다.</li><li>최상위 수준 와일드카드 `*`는 비어 있지 않은 모든 호스트를 허용합니다.</li><li>하위 도메인 와일드카드는 허용되지만 루트 도메인과 일치하지 않습니다. 예를 들어 `*.contoso.com`은 하위 도메인 `foo.contoso.com`과 일치하지만 루트 도메인 `contoso.com`과 일치하지 않습니다.</li><li>유니코드 호스트 이름은 허용되지만 일치시킬 [Punycode](https://tools.ietf.org/html/rfc3492)로 변환됩니다.</li><li>[IPv6 주소](https://tools.ietf.org/html/rfc4291)는 경계 대괄호를 포함하고 [기존 형식](https://tools.ietf.org/html/rfc4291#section-2.2)이어야 합니다(예: `[ABCD:EF01:2345:6789:ABCD:EF01:2345:6789]`). IPv6 주소는 서로 다른 형식 간에 논리적 같음을 확인하기 위해 특별히 처리되지 않으며 정규화가 수행되지 않습니다.</li><li>허용된 호스트를 제한하지 못하면 공격자가 서비스에서 생성된 링크를 스푸핑할 수 있습니다.</li></ul>기본값은 빈 [IList\<string>](/dotnet/api/system.collections.generic.ilist-1)입니다. |
-| [ForwardedForHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedforheadername) | [ForwardedHeadersDefaults.XForwardedForHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xforwardedforheadername)에서 지정된 헤더 대신 이 속성에서 지정된 헤더를 사용합니다.<br><br>기본값은 `X-Forwarded-For`입니다. |
+| [ForwardedForHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedforheadername) | [ForwardedHeadersDefaults.XForwardedForHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xforwardedforheadername)에서 지정된 헤더 대신 이 속성에서 지정된 헤더를 사용합니다. 이 옵션은 프록시/전달자가 `X-Forwarded-For` 헤더를 사용하지 않고 일부 다른 헤더를 사용하여 정보를 전달할 때 사용됩니다.<br><br>기본값은 `X-Forwarded-For`입니다. |
 | [ForwardedHeaders](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedheaders) | 처리해야 할 전달자를 알려줍니다. 적용되는 필드 목록은 [ForwardedHeaders 열거형](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheaders)을 참조하세요. 이 속성에 할당된 일반적인 값은 <code>ForwardedHeaders.XForwardedFor &#124; ForwardedHeaders.XForwardedProto</code>입니다.<br><br>기본값은 [ForwardedHeaders.None](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheaders)입니다. |
-| [ForwardedHostHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedhostheadername) | [ForwardedHeadersDefaults.XForwardedHostHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xforwardedhostheadername)에서 지정된 헤더 대신 이 속성에서 지정된 헤더를 사용합니다.<br><br>기본값은 `X-Forwarded-Host`입니다. |
-| [ForwardedProtoHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedprotoheadername) | [ForwardedHeadersDefaults.XForwardedProtoHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xforwardedprotoheadername)에서 지정된 헤더 대신 이 속성에서 지정된 헤더를 사용합니다.<br><br>기본값은 `X-Forwarded-Proto`입니다. |
+| [ForwardedHostHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedhostheadername) | [ForwardedHeadersDefaults.XForwardedHostHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xforwardedhostheadername)에서 지정된 헤더 대신 이 속성에서 지정된 헤더를 사용합니다. 이 옵션은 프록시/전달자가 `X-Forwarded-Host` 헤더를 사용하지 않고 일부 다른 헤더를 사용하여 정보를 전달할 때 사용됩니다.<br><br>기본값은 `X-Forwarded-Host`입니다. |
+| [ForwardedProtoHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedprotoheadername) | [ForwardedHeadersDefaults.XForwardedProtoHeaderName](/dotnet/api/microsoft.aspnetcore.httpoverrides.forwardedheadersdefaults.xforwardedprotoheadername)에서 지정된 헤더 대신 이 속성에서 지정된 헤더를 사용합니다. 이 옵션은 프록시/전달자가 `X-Forwarded-Proto` 헤더를 사용하지 않고 일부 다른 헤더를 사용하여 정보를 전달할 때 사용됩니다.<br><br>기본값은 `X-Forwarded-Proto`입니다. |
 | [ForwardLimit](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardlimit) | 처리되는 헤더의 항목 수를 제한합니다. 제한을 사용하지 않도록 `null`로 설정하지만, `KnownProxies` 또는 `KnownNetworks`가 구성된 경우에만 사용해야 합니다.<br><br>기본값은 1입니다. |
 | [KnownNetworks](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.knownnetworks) | 전달된 헤더를 허용하기 위한 알려진 프록시의 주소 범위입니다. CIDR(Classless Interdomain Routing) 표기법을 사용하여 IP 범위를 제공합니다.<br><br>기본값은 `IPAddress.Loopback`에 대한 단일 항목을 포함하는 [IList](/dotnet/api/system.collections.generic.ilist-1)\<[IPNetwork](/dotnet/api/microsoft.aspnetcore.httpoverrides.ipnetwork)>입니다. |
 | [KnownProxies](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.knownproxies) | 전달된 헤더를 허용하기 위한 알려진 프록시의 주소입니다. `KnownProxies`를 사용하여 정확한 IP 주소 일치 항목을 지정합니다.<br><br>기본값은 `IPAddress.IPv6Loopback`에 대한 단일 항목을 포함하는 [IList](/dotnet/api/system.collections.generic.ilist-1)\<[IPAddress](/dotnet/api/system.net.ipaddress)>입니다. |
@@ -173,7 +178,7 @@ app.Use((context, next) =>
 app.UsePathBase("/foo");
 ```
 
-미들웨어가 역방향으로 다시 호출되면 원래 경로 및 경로 기준이 다시 적용됩니다. 미들웨어 순서 처리에 대한 자세한 내용은 [미들웨어](xref:fundamentals/middleware/index)를 참조하세요.
+미들웨어가 역방향으로 다시 호출되면 원래 경로 및 경로 기준이 다시 적용됩니다. 미들웨어 순서 처리에 대한 자세한 내용은 <xref:fundamentals/middleware/index>를 참조하세요.
 
 프록시가 경로를 자르는 경우(예: `/foo/api/1`을 `/api/1`에 전달) 요청의 [PathBase](/dotnet/api/microsoft.aspnetcore.http.httprequest.pathbase) 속성을 설정하여 리디렉션 및 링크를 수정합니다.
 
@@ -196,6 +201,18 @@ app.Use((context, next) =>
     }
 
     return next();
+});
+```
+
+### <a name="configuration-for-a-proxy-that-uses-different-header-names"></a>다른 헤더 이름을 사용하는 프록시에 대한 구성
+
+프록시가 프록시 주소/포트 및 원래 스키마 정보를 전달하기 위해 `X-Forwarded-For` 및 `X-Forwarded-Proto`라는 헤더를 사용하지 않는 경우, 프록시에서 사용하는 헤더 이름과 일치하도록 [ForwardedForHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedforheadername) 및 [ForwardedProtoHeaderName](/dotnet/api/microsoft.aspnetcore.builder.forwardedheadersoptions.forwardedprotoheadername) 옵션을 설정합니다.
+
+```csharp
+services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedForHeaderName = "Header_Name_Used_By_Proxy_For_X-Forwarded-For_Header";
+    options.ForwardedProtoHeaderName = "Header_Name_Used_By_Proxy_For_X-Forwarded-Proto_Header";
 });
 ```
 
@@ -242,4 +259,4 @@ X-Forwarded-* 헤더가 서버에서 예상한 값으로 수신되는지 확인�
 
 ## <a name="additional-resources"></a>추가 자료
 
-* [Microsoft Security Advisory CVE-2018-0787: ASP.NET Core Elevation Of Privilege Vulnerability](https://github.com/aspnet/Announcements/issues/295)(Microsoft 보안 공지 CVE-2018-0787: ASP.NET Core 권한 상승 취약성)
+[Microsoft Security Advisory CVE-2018-0787: ASP.NET Core Elevation Of Privilege Vulnerability](https://github.com/aspnet/Announcements/issues/295)(Microsoft 보안 공지 CVE-2018-0787: ASP.NET Core 권한 상승 취약성)

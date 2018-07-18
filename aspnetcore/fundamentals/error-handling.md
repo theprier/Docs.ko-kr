@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 07/05/2018
 uid: fundamentals/error-handling
-ms.openlocfilehash: 126a782bfd32f9ecd0596045218371ef5ccc82f2
-ms.sourcegitcommit: ea7ec8d47f94cfb8e008d771f647f86bbb4baa44
+ms.openlocfilehash: 6aded9525a0abd31dec8441c7fba60d8845c7d93
+ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37894142"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37938243"
 ---
 # <a name="handle-errors-in-aspnet-core"></a>ASP.NET Core에서 오류 처리
 
@@ -193,7 +193,7 @@ public class ErrorModel : PageModel
 
 호스팅은 호스트 주소/포트 바인딩 후에 오류가 발생하는 경우 캡처된 시작 오류에 대한 오류 페이지만 표시할 수 있습니다. 어떤 이유로 바인딩이 실패한 경우 호스팅 계층이 심각한 예외를 기록하고, dotnet 프로세스가 충돌하며, 앱이 [Kestrel](xref:fundamentals/servers/kestrel) 서버에서 실행 중일 때 오류 페이지가 표시되지 않습니다.
 
-[IIS](/iis) 또는 [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview)에서 실행 중일 때, 프로세스를 시작할 수 없는 경우 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)에서 *502.5 프로세스 실패*를 반환합니다. [IIS에서 ASP.NET Core 문제 해결](xref:host-and-deploy/iis/troubleshoot) 토픽의 문제 해결 방법에 대한 조언을 따릅니다.
+[IIS](/iis) 또는 [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview)에서 실행 중일 때, 프로세스를 시작할 수 없는 경우 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)에서 *502.5 프로세스 실패*를 반환합니다. IIS를 사용하여 호스팅할 때 시작 문제 해결에 대한 내용은 <xref:host-and-deploy/iis/troubleshoot>을 참조하세요. Azure App Service의 시작 문제 해결에 대한 내용은 <xref:host-and-deploy/azure-apps/troubleshoot>을 참조하세요.
 
 ## <a name="aspnet-mvc-error-handling"></a>ASP.NET MVC 오류 처리
 
@@ -215,4 +215,5 @@ public class ErrorModel : PageModel
 ## <a name="additional-resources"></a>추가 자료
 
 * <xref:host-and-deploy/azure-iis-errors-reference>
+* <xref:host-and-deploy/iis/troubleshoot>
 * <xref:host-and-deploy/azure-apps/troubleshoot>

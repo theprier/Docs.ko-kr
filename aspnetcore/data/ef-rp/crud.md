@@ -5,12 +5,12 @@ description: EF Core를 사용한 만들기, 읽기, 업데이트, 삭제 방법
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/crud
-ms.openlocfilehash: dfc79964cc4f15851b42822bb97d14800f54b878
-ms.sourcegitcommit: c6ed2f00c7a08223d79090396b85793718b0dd69
+ms.openlocfilehash: 0a8d386104d9c62f37d0a94e66344d3f1e23bae9
+ms.sourcegitcommit: e12f45ddcbe99102a74d4077df27d6c0ebba49c1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37093012"
+ms.lasthandoff: 07/15/2018
+ms.locfileid: "39063353"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---crud---2-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - CRUD - 2/8
 
@@ -236,9 +236,9 @@ DB 컨텍스트는 메모리의 엔터티가 해당하는 DB의 행과 동기화
 
 ## <a name="common-errors"></a>일반적인 오류
 
-Student/Home 또는 다른 링크가 작동하지 않습니다.
+Student/Index 또는 다른 링크가 작동하지 않습니다.
 
-Razor 페이지에 올바른 `@page` 지시문이 포함되어 있는지 확인합니다. 예를 들어 Student/Home Razor 페이지는 경로 템플릿을 포함해서는 **안 됩니다**.
+Razor 페이지에 올바른 `@page` 지시문이 포함되어 있는지 확인합니다. 예를 들어 Student/Index Razor 페이지는 경로 템플릿을 포함해서는 **안 됩니다**.
 
 ```cshtml
 @page "{id:int}"

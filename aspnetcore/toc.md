@@ -287,6 +287,7 @@
 ### [Docker용 Visual Studio Tools](xref:host-and-deploy/docker/visual-studio-tools-for-docker)
 ### [Docker 이미지에 게시](https://azure.microsoft.com/documentation/articles/vs-azure-tools-docker-hosting-web-apps-in-docker/)
 ## [프록시 및 부하 분산 장치 구성](xref:host-and-deploy/proxy-load-balancer)
+## [웹 팜에서 호스트](xref:host-and-deploy/web-farm)
 ## [Visual Studio 게시 프로필](xref:host-and-deploy/visual-studio-publish-profiles)
 ## [디렉터리 구조](xref:host-and-deploy/directory-structure)
 ## [Azure App Service 및 IIS에 대한 일반적인 오류 참조](xref:host-and-deploy/azure-iis-errors-reference)

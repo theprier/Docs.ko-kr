@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/04/2018
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: bce09a500160f0bf13926786d277f8b1e88c1bf8
-ms.sourcegitcommit: ea7ec8d47f94cfb8e008d771f647f86bbb4baa44
+ms.openlocfilehash: e9e10b0bc99b2c54bf342121b1a454be5dac66c6
+ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37894259"
+ms.lasthandoff: 07/10/2018
+ms.locfileid: "37938199"
 ---
 # <a name="host-aspnet-core-in-a-windows-service"></a>Windows 서비스에서 ASP.NET Core 호스트
 
@@ -19,7 +19,7 @@ ms.locfileid: "37894259"
 
 IIS를 [Windows 서비스](/dotnet/framework/windows-services/introduction-to-windows-service-applications)로 사용하지 않고 Windows에서 ASP.NET Core 앱을 호스트할 수 있습니다. Windows 서비스로 호스트된 앱은 사용자 개입 없이 앱이 다시 부팅되거나 크래시된 후에 자동으로 시작될 수 있습니다.
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/windows-service/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/host-and-deploy/windows-service/samples)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="get-started"></a>시작
 
@@ -28,12 +28,40 @@ IIS를 [Windows 서비스](/dotnet/framework/windows-services/introduction-to-wi
 1. 프로젝트 파일에서:
 
    1. 런타임 식별자의 존재 여부를 확인하거나 이를 대상 프레임워크를 포함하는 **\<PropertyGroup>** 에 추가합니다.
+
+      ::: moniker range=">= aspnetcore-2.1"
+
       ```xml
       <PropertyGroup>
         <TargetFramework>netcoreapp2.1</TargetFramework>
         <RuntimeIdentifier>win7-x64</RuntimeIdentifier>
       </PropertyGroup>
       ```
+
+      ::: moniker-end
+
+      ::: moniker range="= aspnetcore-2.0"
+
+      ```xml
+      <PropertyGroup>
+        <TargetFramework>netcoreapp2.0</TargetFramework>
+        <RuntimeIdentifier>win7-x64</RuntimeIdentifier>
+      </PropertyGroup>
+      ```
+
+      ::: moniker-end
+
+      ::: moniker range="< aspnetcore-2.0"
+
+      ```xml
+      <PropertyGroup>
+        <TargetFramework>netcoreapp1.1</TargetFramework>
+        <RuntimeIdentifier>win7-x64</RuntimeIdentifier>
+      </PropertyGroup>
+      ```
+
+      ::: moniker-end
+
    1. [Microsoft.AspNetCore.Hosting.WindowsServices](https://www.nuget.org/packages/Microsoft.AspNetCore.Hosting.WindowsServices/)에 패키지 참조를 추가합니다.
 
 1. `Program.Main`에서 다음과 같이 변경합니다.
@@ -44,13 +72,13 @@ IIS를 [Windows 서비스](/dotnet/framework/windows-services/introduction-to-wi
 
      ::: moniker range=">= aspnetcore-2.0"
 
-     [!code-csharp[](windows-service/sample/Program.cs?name=ServiceOnly&highlight=3-4,7,11)]
+     [!code-csharp[](windows-service/samples/2.x/AspNetCoreService/Program.cs?name=ServiceOnly&highlight=8-9,12)]
 
      ::: moniker-end
 
      ::: moniker range="< aspnetcore-2.0"
 
-     [!code-csharp[](windows-service/sample_snapshot/Program.cs?name=ServiceOnly&highlight=3-4,8,13)]
+     [!code-csharp[](windows-service/samples_snapshot/1.x/AspNetCoreService/Program.cs?name=ServiceOnly&highlight=3-4,8,13)]
 
      ::: moniker-end
 
@@ -77,7 +105,7 @@ IIS를 [Windows 서비스](/dotnet/framework/windows-services/introduction-to-wi
    관리자 권한으로 명령 셸을 열고 다음 명령을 실행합니다.
 
    ```console
-   sc create MyService binPath= "c:\my_services\aspnetcoreservice\bin\release\<TARGET_FRAMEWORK>\publish\aspnetcoreservice.exe"
+   sc create MyService binPath= "c:\my_services\AspNetCoreService\bin\Release\<TARGET_FRAMEWORK>\publish\AspNetCoreService.exe"
    ```
    
    > [!IMPORTANT]
@@ -143,15 +171,18 @@ IIS를 [Windows 서비스](/dotnet/framework/windows-services/introduction-to-wi
 
 ::: moniker range=">= aspnetcore-2.0"
 
-[!code-csharp[](windows-service/sample/Program.cs?name=ServiceOrConsole)]
+[!code-csharp[](windows-service/samples/2.x/AspNetCoreService/Program.cs?name=ServiceOrConsole)]
 
 ASP.NET Core 구성에 명령줄 인수에 대한 이름 값 쌍이 필요하기 때문에 인수가 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder)에 전달되기 전에 `--console` 스위치를 제거합니다.
+
+> [!NOTE]
+> [통합 테스트](xref:test/integration-tests)가 제대로 작동하려면 `CreateWebHostBuilder`의 서명이 `CreateWebHostBuilder(string[])`이어야 하므로 `isService`는 `Main`에서 `CreateWebHostBuilder`로 전달되지 않습니다.
 
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.0"
 
-[!code-csharp[](windows-service/sample_snapshot/Program.cs?name=ServiceOrConsole)]
+[!code-csharp[](windows-service/samples_snapshot/1.x/AspNetCoreService/Program.cs?name=ServiceOrConsole)]
 
 ::: moniker-end
 
@@ -161,29 +192,32 @@ ASP.NET Core 구성에 명령줄 인수에 대한 이름 값 쌍이 필요하기
 
 1. [WebHostService](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostservice)에서 파생되는 클래스를 만듭니다.
 
-   [!code-csharp[](windows-service/sample/CustomWebHostService.cs?name=NoLogging)]
+   [!code-csharp[](windows-service/samples/2.x/AspNetCoreService/CustomWebHostService.cs?name=NoLogging)]
 
 2. 사용자 지정 `WebHostService`를 [ServiceBase.Run](/dotnet/api/system.serviceprocess.servicebase.run)에 전달하는 [IWebHost](/dotnet/api/microsoft.aspnetcore.hosting.iwebhost)에 대한 확장 메서드를 만듭니다.
 
-   [!code-csharp[](windows-service/sample/WebHostServiceExtensions.cs?name=ExtensionsClass)]
+   [!code-csharp[](windows-service/samples/2.x/AspNetCoreService/WebHostServiceExtensions.cs?name=ExtensionsClass)]
 
 3. `Program.Main`에서 [RunAsService](/dotnet/api/microsoft.aspnetcore.hosting.windowsservices.webhostwindowsserviceextensions.runasservice) 대신 새 확장 메서드(`RunAsCustomService`)를 호출합니다.
 
    ::: moniker range=">= aspnetcore-2.0"
 
-   [!code-csharp[](windows-service/sample/Program.cs?name=HandleStopStart&highlight=27)]
+   [!code-csharp[](windows-service/samples/2.x/AspNetCoreService/Program.cs?name=HandleStopStart&highlight=14)]
+
+   > [!NOTE]
+   > [통합 테스트](xref:test/integration-tests)가 제대로 작동하려면 `CreateWebHostBuilder`의 서명이 `CreateWebHostBuilder(string[])`이어야 하므로 `isService`는 `Main`에서 `CreateWebHostBuilder`로 전달되지 않습니다.
 
    ::: moniker-end
 
    ::: moniker range="< aspnetcore-2.0"
 
-   [!code-csharp[](windows-service/sample_snapshot/Program.cs?name=HandleStopStart&highlight=27)]
+   [!code-csharp[](windows-service/samples_snapshot/1.x/AspNetCoreService/Program.cs?name=HandleStopStart&highlight=27)]
 
    ::: moniker-end
 
 사용자 지정 `WebHostService` 코드에 종속성 주입의 서비스(예: 로거)가 필요한 경우 [IWebHost.Services](/dotnet/api/microsoft.aspnetcore.hosting.iwebhost.services) 속성에서 서비스를 가져옵니다.
 
-[!code-csharp[](windows-service/sample/CustomWebHostService.cs?name=Logging&highlight=7)]
+[!code-csharp[](windows-service/samples/2.x/AspNetCoreService/CustomWebHostService.cs?name=Logging&highlight=7-8)]
 
 ## <a name="proxy-server-and-load-balancer-scenarios"></a>프록시 서버 및 부하 분산 장치 시나리오
 

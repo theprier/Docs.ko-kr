@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 08/07/2017
 uid: host-and-deploy/index
-ms.openlocfilehash: 31444475e39a12d526dd624bb508770429e414ca
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: e62b68c4cfad29bb8bea3b9fbb2c231a4afeccea
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277152"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095670"
 ---
 # <a name="host-and-deploy-aspnet-core"></a>ASP.NET Core 호스트 및 배포
 
@@ -71,6 +71,10 @@ ASP.NET Core 앱은 서버가 부팅되고 작동 중단 후 다시 시작될 �
 ## <a name="publishing-to-azure"></a>Azure에 게시
 
 Visual Studio를 사용하여 Azure에 앱을 게시하는 방법에 관한 지침은 [Visual Studio를 사용하여 Azure App Service에 ASP.NET Core 웹앱 게시](xref:tutorials/publish-to-azure-webapp-using-vs)를 참조하세요. [명령줄](xref:tutorials/publish-to-azure-webapp-using-cli)에서도 앱을 Azure에 게시할 수 있습니다.
+
+## <a name="host-in-a-web-farm"></a>웹 팜에서 호스트
+
+웹 팜 환경에서 ASP.NET Core 앱을 호스팅하는 구성에 대한 자세한 내용(예: 확장성을 위해 앱의 여러 인스턴스 배포)은 <xref:host-and-deploy/web-farm>을 참조하세요.
 
 ## <a name="additional-resources"></a>추가 자료
 

@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 4/13/2018
 uid: fundamentals/startup
-ms.openlocfilehash: f0b907e4322809dfe2bcd287bb064f35f5ebe150
-ms.sourcegitcommit: 79b756ea03eae77a716f500ef88253ee9b1464d2
+ms.openlocfilehash: 285d74c0d12e3aca4d8c33d39467dfda02712993
+ms.sourcegitcommit: e12f45ddcbe99102a74d4077df27d6c0ebba49c1
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/25/2018
-ms.locfileid: "36314122"
+ms.lasthandoff: 07/15/2018
+ms.locfileid: "39063262"
 ---
 # <a name="application-startup-in-aspnet-core"></a>ASP.NET Core에서 응용 프로그램 시작
 
@@ -41,7 +41,7 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 
 [!code-csharp[](startup/snapshot_sample/Startup2.cs)]
 
-`IHostingEnvironment` 삽입의 대안은 규칙 기반 접근 방식을 사용하는 것입니다. 앱은 다양한 환경(예: `StartupDevelopment`)에 대한 별도의 `Startup` 클래스를 정의할 수 있으며 적절한 시작 클래스는 런타임에 선택됩니다. 해당 이름 접미사가 현재 환경과 일치하는 클래스에 우선 순위가 부여됩니다. 앱이 개발 환경에서 실행되고 `Startup` 클래스 및 `StartupDevelopment` 클래스 모두를 포함하는 경우 `StartupDevelopment` 클래스가 사용됩니다. 자세한 내용은 [여러 환경 사용](xref:fundamentals/environments#environment-based-startup-class-and-methods)를 참조하세요.
+`IHostingEnvironment` 삽입의 대안은 규칙 기반 접근 방식을 사용하는 것입니다. 앱은 다양한 환경(예: `StartupDevelopment`)에 대한 별도의 `Startup` 클래스를 정의할 수 있으며 적절한 `Startup` 클래스는 런타임에 선택됩니다. 해당 이름 접미사가 현재 환경과 일치하는 클래스에 우선 순위가 부여됩니다. 앱이 개발 환경에서 실행되고 `Startup` 클래스 및 `StartupDevelopment` 클래스 모두를 포함하는 경우 `StartupDevelopment` 클래스가 사용됩니다. 자세한 내용은 [여러 환경 사용](xref:fundamentals/environments#environment-based-startup-class-and-methods)를 참조하세요.
 
 `WebHostBuilder`에 대한 자세한 내용은 [호스팅](xref:fundamentals/host/index) 항목을 참조하세요. 시작하는 동안 오류를 처리하는 방법은 [시작 예외 처리](xref:fundamentals/error-handling#startup-exception-handling)를 참조하세요.
 
@@ -84,8 +84,8 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 
 다음 코드는 다음 동작을 제외하고, 호환성 모드를 ASP.NET Core 2.1로 설정합니다.
 
-* [AllowCombiningAuthorizeFilters](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs)
-* [InputFormatterExceptionPolicy](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs)
+* [AllowCombiningAuthorizeFilters](https://github.com/aspnet/Mvc/blob/master/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs)
+* [InputFormatterExceptionPolicy](https://github.com/aspnet/Mvc/blob/master/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs)
 
 [!code-csharp[Main](startup/sampleCompatibility/Startup2.cs?name=snippet1)]
 
@@ -94,7 +94,7 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 * 최신 릴리스를 사용하고 특정 주요 동작 변경 내용을 옵트아웃(opt out)할 수 있습니다.
 * 최신 변경 내용과 함께 작동하도록 앱을 업데이트할 시간을 제공합니다.
 
-[MvcOptions](https://github.com/aspnet/Mvc/blob/dev/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs) 클래스 소스 주석에는 변경된 내용과 변경 내용이 대부분의 사용자에게 향상된 기능인 이유가 잘 설명되어 있습니다.
+[MvcOptions](https://github.com/aspnet/Mvc/blob/master/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs) 클래스 소스 주석에는 변경된 내용과 변경 내용이 대부분의 사용자에게 향상된 기능인 이유가 잘 설명되어 있습니다.
 
 이후에 [ASP.NET Core 3.0 버전](https://github.com/aspnet/Home/wiki/Roadmap)이 나올 예정입니다. 호환성 스위치가 지원하는 이전 동작은 3.0 버전에서 제거됩니다. 거의 모든 사용자에게 혜택을 주는 긍정적인 변화라고 생각합니다. 이제 이러한 변경 내용을 도입함으로써 대부분의 앱이 혜택을 받을 수 있으며, 다른 사람은 응용 프로그램을 업데이트할 시간을 얻게 됩니다.
 
