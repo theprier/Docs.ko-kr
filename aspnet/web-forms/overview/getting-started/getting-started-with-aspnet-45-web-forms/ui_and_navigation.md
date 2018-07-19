@@ -8,12 +8,12 @@ ms.date: 09/08/2014
 ms.assetid: 5c76891d-e515-4885-b576-76bd2c494efe
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/ui_and_navigation
 msc.type: authoredcontent
-ms.openlocfilehash: ef1b226d673d18ec333c35f193dbe6bd21e54225
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 2807560484d03122ed68ee3efb49a50e45150e12
+ms.sourcegitcommit: cb0c27fa0184f954fce591d417e6ab2a51d8bb22
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37842917"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39123803"
 ---
 <a name="ui-and-navigation"></a>UI 및 탐색
 ====================
@@ -164,7 +164,7 @@ Visual Studio 2013 프로젝트 템플릿을 사용 하 여 [부트스트랩](ht
 3. 이름 바꾸기는 *bootstrap.min.css* 하 *부트스트랩 original.min.css*합니다.
 4. **솔루션 탐색기**를 마우스 오른쪽 단추로 클릭 합니다 *콘텐츠* 폴더를 선택 **파일 탐색기에서 폴더 열기**합니다.  
    파일 탐색기에 표시 됩니다. 이 위치에 다운로드 한 부트스트랩 CSS 파일에 저장 됩니다.
-5. 브라우저에서로 이동 [ http://Bootswatch.com ](http://bootswatch.com/)합니다.
+5. 브라우저에서로 이동 [ https://bootswatch.com/3/ ](https://bootswatch.com/3/)합니다.
 6. Cerulean 테마 표시 될 때까지 브라우저 창을 스크롤하십시오. 
 
     ![UI 및 탐색-Cerulean 테마](ui_and_navigation/_static/image5.png)

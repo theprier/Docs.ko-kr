@@ -7,12 +7,12 @@ ms.author: anurse
 ms.custom: mvc
 ms.date: 06/29/2018
 uid: signalr/authn-and-authz
-ms.openlocfilehash: d4259e04a0e3bb9ff517a10465323ccb5e2895a5
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: fceae37ce53a0d5a219e6dc466e9cc6df0277494
+ms.sourcegitcommit: cb0c27fa0184f954fce591d417e6ab2a51d8bb22
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095173"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39123774"
 ---
 # <a name="authentication-and-authorization-in-aspnet-core-signalr"></a>인증 및 ASP.NET Core SignalR의 권한 부여
 
@@ -88,6 +88,19 @@ public void ConfigureServices(IServiceCollection services)
     services.AddSingleton<IUserIdProvider, NameUserIdProvider>();
 }
 ```
+
+.NET 클라이언트에서 Windows 인증을 설정 하 여 사용 해야 합니다 [UseDefaultCredentials](/dotnet/api/microsoft.aspnetcore.http.connections.client.httpconnectionoptions.usedefaultcredentials) 속성:
+
+```csharp
+var connection = new HubConnectionBuilder()
+    .WithUrl("https://example.com/myhub", options =>
+    {
+        options.UseDefaultCredentials = true;
+    })
+    .Build();
+```
+
+Windows 인증은 Microsoft Internet Explorer 또는 Microsoft Edge를 사용 하는 경우에 브라우저 클라이언트에서 지원 됩니다.
 
 ## <a name="authorize-users-to-access-hubs-and-hub-methods"></a>액세스 허브 및 허브 메서드에 대 한 사용자 권한 부여
 

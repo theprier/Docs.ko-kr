@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 02/14/2017
 uid: performance/caching/distributed
-ms.openlocfilehash: 861664fcad576c11abe052837b72367eb2b9479a
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: 9c41a6e008045231bd2e1c1f53a9161e11daafa9
+ms.sourcegitcommit: cb0c27fa0184f954fce591d417e6ab2a51d8bb22
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095683"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39123842"
 ---
 # <a name="work-with-a-distributed-cache-in-aspnet-core"></a>ASP.NET Core에서 분산 캐시 사용하기
 
@@ -82,12 +82,13 @@ ms.locfileid: "39095683"
 
 [!code-csharp[](distributed/sample/src/DistCacheSample/Startup.cs?name=snippet1)]
 
-> [!NOTE]
-> `IDistributedCache` 메서드에서 `ConfigureServices`가 구성되고 나면 이를 `Configure` 메서드의 매개 변수로 전달할 수 있습니다. 매개 변수로 추가 하면 DI를 통해 제공 인스턴스를 구성된 합니다.
+`IDistributedCache` 메서드에서 `ConfigureServices`가 구성되고 나면 이를 `Configure` 메서드의 매개 변수로 전달할 수 있습니다. 매개 변수로 추가 하면 DI를 통해 제공 인스턴스를 구성된 합니다.
 
 ## <a name="using-a-redis-distributed-cache"></a>Redis 분산 캐시 사용하기
 
 [Redis](https://redis.io/)는 분산 캐시로 흔히 사용되는 오픈 소스 메모리 내 데이터 저장소입니다. 로컬에서 사용할 수도 있고 Azure에서 호스팅되는 응용 프로그램에 대한 [Azure Redis Cache](https://azure.microsoft.com/services/cache/)를 구성할 수도 있습니다.  ASP.NET Core 응용 프로그램은 `RedisDistributedCache`의 인스턴스를 사용해서 캐시 구현을 구성합니다.
+
+Redis cache 필요 [Microsoft.Extensions.Caching.Redis](https://www.nuget.org/packages/Microsoft.Extensions.Caching.Redis/)
 
 `ConfigureServices`에서 Redis 구현을 구성한 다음 응용 프로그램 코드에서 `IDistributedCache`의 인스턴스를 요청하여 이에 접근합니다(위의 코드 참조).
 
@@ -95,8 +96,7 @@ ms.locfileid: "39095683"
 
 [!code-csharp[](distributed/sample/src/DistCacheSample/Startup.cs?name=snippet2)]
 
-> [!NOTE]
-> Redis를 로컬 컴퓨터에 설치 하려면 chocolatey 패키지 설치 [ https://chocolatey.org/packages/redis-64/ ](https://chocolatey.org/packages/redis-64/) 실행 `redis-server` 명령 프롬프트에서 합니다.
+Redis를 로컬 컴퓨터에 설치 하려면 chocolatey 패키지 설치 [ https://chocolatey.org/packages/redis-64/ ](https://chocolatey.org/packages/redis-64/) 실행 `redis-server` 명령 프롬프트에서 합니다.
 
 ## <a name="using-a-sql-server-distributed-cache"></a>SQL Server 분산 캐시 사용하기
 
