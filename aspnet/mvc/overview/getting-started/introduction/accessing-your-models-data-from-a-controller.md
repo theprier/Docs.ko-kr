@@ -49,7 +49,7 @@ ms.locfileid: "38120155"
 
 Visual Studio에서 자동으로 작성 된 [CRUD](http://en.wikipedia.org/wiki/Create,_read,_update_and_delete) (만들기, 읽기, 업데이트 및 삭제) 작업 메서드와 뷰 있습니다 (자동으로 만들도록 CRUD 작업 메서드와 뷰 스 캐 폴딩이라고). 이제 모든 기능을 갖춘 웹 응용 프로그램을 만들기, 나열, 편집 및 동영상 항목을 삭제할 수 있습니다.
 
-응용 프로그램을 실행 하 고 클릭 합니다 **MVC 동영상** 링크 (찾아보거나 합니다 `Movies` 추가 하 여 컨트롤러 */Movies* 브라우저의 주소 표시줄에서 URL로). 응용 프로그램은 기본 라우팅을 의존 하기 때문에 (에 정의 된를 *앱\_start\* 파일), 브라우저 요청 `http://localhost:xxxxx/Movies` 기본값으로 라우팅됩니다 `Index` 합니다 의동작메서드`Movies` 컨트롤러입니다. 브라우저 요청 말해 `http://localhost:xxxxx/Movies` 같습니다 효과적으로 브라우저 요청 `http://localhost:xxxxx/Movies/Index`합니다. 결과 빈 목록을 영화, 이므로 아직 추가 하지 않았습니다.
+응용 프로그램을 실행 하 고 클릭 합니다 **MVC 동영상** 링크 (찾아보거나 합니다 `Movies` 추가 하 여 컨트롤러 */Movies* 브라우저의 주소 표시줄에서 URL로). 응용 프로그램은 기본 라우팅을 의존 하기 때문에 (에 정의 된를 앱\_start\ 파일), 브라우저 요청 `http://localhost:xxxxx/Movies` 기본값으로 라우팅됩니다 `Index` 합니다 의동작메서드`Movies` 컨트롤러입니다. 브라우저 요청 말해 `http://localhost:xxxxx/Movies` 같습니다 효과적으로 브라우저 요청 `http://localhost:xxxxx/Movies/Index`합니다. 결과 빈 목록을 영화, 이므로 아직 추가 하지 않았습니다.
 
 ![](accessing-your-models-data-from-a-controller/_static/image4.png)
 
