@@ -8,12 +8,12 @@ ms.date: 04/03/2015
 ms.assetid: 81ee500f-fc37-40d6-8722-f1b64720fbb6
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: 6af4990f726bfcd0c45eb6991418661f9b8ccbf6
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: f36b73aac2e7844367e1e52b2c721bfe6b3575e2
+ms.sourcegitcommit: 7097dba14d5b858e82758ee031ac62dbe3611339
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37824708"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39138521"
 ---
 <a name="create-an-aspnet-mvc-5-app-with-facebook-twitter-linkedin-and-google-oauth2-sign-on-c"></a>Facebook, Twitter, LinkedIn 및 Google OAuth2 sign-on (C#)를 사용 하 여 ASP.NET MVC 5 앱 만들기
 ====================
@@ -162,55 +162,6 @@ Google 및 Facebook과 같은 인증 공급자에 연결 하려면 IIS Express S
 > [!WARNING]
 > 현재 Facebook OAuth2 인증 지침을 참조 하세요. [구성 Facebook 인증](/aspnet/core/security/authentication/social/facebook-logins)
 
-Facebook OAuth2 인증을 위해 Facebook에서 만든 응용 프로그램에서 일부 설정의 프로젝트에 복사 해야 합니다.
-
-1. 브라우저에서로 이동 [ https://developers.facebook.com/apps ](https://developers.facebook.com/apps) Facebook 자격 증명을 입력 하 여 로그인 합니다.
-2. 이미 Facebook 개발자로 등록 되지 경우 클릭 **개발자로 등록** 등록 지침을 따릅니다.
-3. 에 **앱** 탭을 클릭 **Create New App**합니다.
-
-    ![새 앱 만들기](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image22.png)
-4. 입력을 **앱 이름** 하 고 **범주**, 클릭 **앱 만들기**합니다.
-
-    합니다 <strong>앱 Namespace</strong> 앱 인증을 위해 Facebook 응용 프로그램에 액세스를 사용 하 여 URL 부분 (예를 들어 https\://apps.facebook.com/{App Namespace}). 지정 하지 않으면를 <strong>앱 Namespace</strong>서 <strong>앱 ID</strong> URL에 사용 됩니다. 합니다 <strong>앱 ID</strong> 는 다음 단계에서 표시 되는 장기 시스템에서 생성 된 숫자입니다.
-
-    ![새 앱 대화 상자 만들기](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image23.png)
-5. 표준 보안 검사를 제출 합니다.
-
-    ![보안 검사](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image24.png)
-6. 선택 **설정을** 왼쪽된 메뉴 모음에 대 한![ Facebook 개발자의 메뉴 모음](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image25.png)
-7. 에 **기본** 페이지의 설정 섹션 선택 **플랫폼 추가** 웹 사이트 응용 프로그램을 추가 하는 지정 합니다. ![기본 설정](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image26.png)
-8. 선택 **웹 사이트** 플랫폼 선택 항목에서입니다.  
-  
-    ![플랫폼 선택](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image27.png)
-9. 기록해 하 **앱 ID** 및 **App Secret** 이 자습서의 뒷부분에 나오는 MVC 응용 프로그램에 모두 추가할 수 있도록 합니다. 또한 사이트 URL을 추가 (`https://localhost:44300/`) MVC 응용 프로그램을 테스트 합니다. 또한 추가 된 **Contact Email**합니다. 그런 다음 선택 **변경 내용 저장**합니다.   
-
-    ![기본 응용 프로그램 세부 정보 페이지](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image28.png)
-
-    > [!NOTE]
-    > 등록 한 전자 메일 별칭을 사용 하 여 인증할 수만 note 합니다. 다른 사용자와 테스트 계정을 등록할 수 되지 않습니다. Facebook 응용 프로그램에 대 한 다른 Facebook 계정 액세스를 부여할 수 있습니다 **개발자 역할** 탭 합니다.
-10. Visual Studio에서 엽니다 *앱\_Start\Startup.Auth.cs*합니다.
-11. 복사 및 붙여넣기 합니다 **AppId** 및 **App Secret** 에 `UseFacebookAuthentication` 메서드. 합니다 **AppId** 하 고 **App Secret** 아래 표시 된 값은 샘플 및 작동 하지 것입니다.
-
-    [!code-csharp[Main](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/samples/sample3.cs?highlight=33-35,38-39)]
-12. 클릭 **변경 내용을 저장**합니다.
-13. 키를 눌러 **ctrl+f5** 응용 프로그램을 실행 합니다.
-
-
-선택 **로그인** 로그인 페이지를 표시 합니다. 클릭 **Facebook** 아래에서 **다른 서비스를 사용 하 여 로그인 합니다.**
-
-Facebook 자격 증명을 입력 합니다.
-
-![](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image29.png)
-
-공개 프로필 및 친구 목록에 액세스 하려면 응용 프로그램에 대 한 권한을 부여 하 라는 메시지가 표시 됩니다.
-
-![Facebook 앱 세부 정보](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image30.png)
-
-이제 로그인 됩니다. 이제 응용 프로그램을 사용 하 여이 계정에 등록할 수 있습니다.
-
-![](create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on/_static/image31.png)
-
-항목에 추가 됩니다을 등록할 때 합니다 *사용자* 멤버 자격 데이터베이스의 테이블입니다.
 
 <a id="mdb"></a>
 ## <a name="examine-the-membership-data"></a>멤버 자격 데이터를 검사 합니다.
