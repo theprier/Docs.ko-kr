@@ -5,12 +5,12 @@ description: 이 자습서에서는 ASP.NET Core 및 Entity Framework Core를 �
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: 86321538f02ccf1a36ee9e50729e63e007f10327
-ms.sourcegitcommit: ee2b26c7d08b38c908c668522554b52ab8efa221
+ms.openlocfilehash: ee5a0dae41ba0afba518f0bd6fbd379fdbbfb1c1
+ms.sourcegitcommit: a3675f9704e4e73ecc7cbbbf016a13d2a5c4d725
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39146899"
+ms.lasthandoff: 07/23/2018
+ms.locfileid: "39202616"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---sort-filter-paging---3-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 정렬, 필터, 페이징 - 3/8
 
@@ -263,8 +263,6 @@ http://localhost:5000/Students?SearchString=an
 [!code-csharp[](intro/samples/cu21/Pages/About.cshtml.cs)]
 
 LINQ 문은 등록 날짜별로 학생 엔터티를 그룹화하고 각 그룹의 엔터티 수를 계산하며 결과를 `EnrollmentDateGroup` 뷰 모델 개체의 컬렉션에 저장합니다.
-
-참고: LINQ `group` 명령은 현재 EF Core에서 지원되지 않습니다. 위의 코드에서 모든 학생 레코드는 SQL Server에서 반환됩니다. `group` 명령은 SQL 서버에 없는 Razor 페이지 앱에 적용됩니다. EF Core 2.1은 이 LINQ `group` 연산자를 지원하며, 그룹화는 SQL Server에서 발생합니다. [관계: GroupBy()를 SQL로 변환 지원](https://github.com/aspnet/EntityFrameworkCore/issues/2341)을 참조하세요. [EF 코어 2.1](https://github.com/aspnet/EntityFrameworkCore/wiki/roadmap)은 .NET Core 2.1을 통해 릴리스될 예정입니다. 자세한 내용은 [.NET Core 로드맵](https://github.com/dotnet/core/blob/master/roadmap.md)을 참조하세요.
 
 ### <a name="modify-the-about-razor-page"></a>Razor 페이지 정보 수정
 
