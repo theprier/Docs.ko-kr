@@ -333,7 +333,7 @@ ASP.NET MVC 4에서 없는 실제 WYSIWYG 그대로 스타일 문제를 대부�
     ![요소를 검사할](using-page-inspector-in-visual-studio-2012/_static/image29.png "요소를 검사 합니다.")
 
     *요소를 검사합니다.*
-7. 클릭 합니다 **검사 모드 설정/해제** 단추 (![Select-the-HTML-tab-to-display-the-HTML-code-rendered-in-the-Page-Inspector-browser.] (using-page-inspector-in-visual-studio-2012/_static/image30.png "Select-the-HTML-tab-to-display-the-HTML-code-rendered-in-the-Page-Inspector-browser 합니다.") ), 커서를 사용 하지 않도록 설정 페이지 검사기 탭에 있습니다.
+7. 클릭 합니다 **검사 모드 설정/해제** 단추 (![Select-the-HTML-tab-to-display-the-HTML-code-rendered-in-the-Page-Inspector-browser.](using-page-inspector-in-visual-studio-2012/_static/image30.png "Select-the-HTML-tab-to-display-the-HTML-code-rendered-in-the-Page-Inspector-browser 합니다.") ), 커서를 사용 하지 않도록 설정 페이지 검사기 탭에 있습니다.
 8. 선택 된 **HTML** 탭 페이지 검사기 브라우저에서 렌더링 된 HTML 코드를 표시 합니다.
 9. HTML 코드에서 Koala 링크를 사용 하 여 목록 항목을 찾아 선택 합니다.
 

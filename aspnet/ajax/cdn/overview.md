@@ -1056,7 +1056,7 @@ JQuery DataTables 플러그인의 다음 릴리스에서이 CDN에서 호스트 
 
 ### <a name="bootstrap-touchcarousel-releases-on-the-cdn"></a>CDN에서 부트스트랩 TouchCarousel 릴리스
 
-다음 릴리스에서 [ https://github.com/ixisio/bootstrap-touch-carousel ] (https://github.com/ixisio/bootstrap-touch-carousel " https://github.com/ixisio/bootstrap-touch-carousel ") 부트스트랩 TouchCarousel 릴리스 CDN에서 호스팅됩니다.
+다음 릴리스에서 [https://github.com/ixisio/bootstrap-touch-carousel](https://github.com/ixisio/bootstrap-touch-carousel "https://github.com/ixisio/bootstrap-touch-carousel") 부트스트랩 TouchCarousel 릴리스 CDN에서 호스팅됩니다.
 
 #### <a name="bootstrap-touchcarousel-version-080"></a>부트스트랩 TouchCarousel 버전 0.8.0
 
@@ -1067,7 +1067,7 @@ JQuery DataTables 플러그인의 다음 릴리스에서이 CDN에서 호스트 
 
 ### <a name="hammerjs-releases-on-the-cdn"></a>CDN에서 Hammer.js 릴리스
 
-다음 릴리스에서 [ http://hammerjs.github.io/ ] (http://hammerjs.github.io/ " http://hammerjs.github.io/ ") Hammer.js 릴리스 CDN에서 호스팅됩니다.
+다음 릴리스에서 [http://hammerjs.github.io/](http://hammerjs.github.io/ "http://hammerjs.github.io/") Hammer.js 릴리스 CDN에서 호스팅됩니다.
 
 #### <a name="hammerjs-version-204"></a>Hammer.js 버전 2.0.4
 

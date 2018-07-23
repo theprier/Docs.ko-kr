@@ -1,17 +1,17 @@
 ---
-title: ASP.NET Core 2.0 이상용 Microsoft.AspNetCore.All 메타패키지
+title: ASP.NET Core 2.0용 Microsoft.AspNetCore.All 메타패키지
 author: Rick-Anderson
 description: Microsoft.AspNetCore.All 메타패키지에는 지원되는 모든 ASP.NET Core 및 Entity Framework Core 패키지와 해당 종속성이 포함됩니다.
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 09/20/2017
 uid: fundamentals/metapackage
-ms.openlocfilehash: 2fddc59d74dce4b114b5b4ed0646f773eb66ffb9
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: fbc0f5465dc37a612b81c293f1a58b53ea4b2238
+ms.sourcegitcommit: cb0c27fa0184f954fce591d417e6ab2a51d8bb22
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277822"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39123829"
 ---
 # <a name="microsoftaspnetcoreall-metapackage-for-aspnet-core-20"></a>ASP.NET Core 2.0용 Microsoft.AspNetCore.All 메타패키지
 
@@ -23,8 +23,8 @@ ms.locfileid: "36277822"
 ASP.NET Core에 대한 [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All) 메타패키지에는 다음 패키지들이 포함되어 있습니다.
 
 * ASP.NET Core 팀에서 지원되는 모든 패키지
-* Entity Framework Core에서 지원되는 모든 패키지 
-* ASP.NET Core 및 Entity Framework Core에서 사용되는 내부 및 타사 종속성 
+* Entity Framework Core에서 지원되는 모든 패키지
+* ASP.NET Core 및 Entity Framework Core에서 사용되는 내부 및 타사 종속성
 
 ASP.NET Core 2.x 및 Entity Framework Core 2.x의 모든 기능은 `Microsoft.AspNetCore.All` 패키지에 포함됩니다. ASP.NET Core 2.0을 대상으로 하는 기본 프로젝트 템플릿에는 이 패키지를 사용합니다.
 

@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 06/14/2018
 uid: fundamentals/app-state
-ms.openlocfilehash: 9c63d9313acb055e6c692a7fef3d28e94cb37093
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 072699113a45056ec3ea79436ad56896ba0a4197
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272885"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095816"
 ---
 # <a name="session-and-app-state-in-aspnet-core"></a>ASP.NET Core에서 세션 및 앱 상태
 
@@ -441,3 +441,7 @@ app.Run(async (context) =>
   예를 들어 사용자는 세션에 쇼핑 카트를 저장합니다. 사용자가 카트에 항목을 추가하지만 커밋이 실패합니다. 앱은 실패에 대해 알지 못하므로 항목이 카트에 추가되었다고 보고하지만, 이는 사실이 아닙니다.
 
   권장되는 오류 확인 방법은 앱이 세션에 작성을 완료하면 앱 코드에서 `await feature.Session.CommitAsync();`를 호출하는 것입니다. 백업 저장소를 사용할 수 없는 경우 `CommitAsync`에서 예외를 throw합니다. `CommitAsync`가 실패하면 앱에서 예외를 처리할 수 있습니다. `LoadAsync`는 같은 조건에서 데이터 저장소를 사용할 수 없는 경우 throw됩니다.
+
+## <a name="additional-resources"></a>추가 자료
+
+<xref:host-and-deploy/web-farm>

@@ -5,12 +5,12 @@ description: 이 자습서에서는 ASP.NET Core 및 Entity Framework Core를 �
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/sort-filter-page
-ms.openlocfilehash: fce524a5cb386fbf286907be42e920be13115ca6
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 86321538f02ccf1a36ee9e50729e63e007f10327
+ms.sourcegitcommit: ee2b26c7d08b38c908c668522554b52ab8efa221
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38216280"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39146899"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---sort-filter-paging---3-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 정렬, 필터, 페이징 - 3/8
 
@@ -210,7 +210,7 @@ http://localhost:5000/Students?SearchString=an
 
 [!code-csharp[](intro/samples/cu21/Pages/Students/Index.cshtml.cs?name=snippet_SortFilterPage4)]
 
-`PaginatedList.CreateAsync`에서 두 개의 물음표는 [Null 병합 연산자](https://docs.microsoft.com/ dotnet/csharp/language-reference/operators/null-conditional-operator)를 나타냅니다. Null 병합 연산자는 null 허용 형식에 대한 기본값을 정의합니다. 식 `(pageIndex ?? 1)`은 값이 있는 경우 `pageIndex`의 값을 반환함을 의미합니다. `pageIndex`에 값이 없으면 1을 반환합니다.
+`PaginatedList.CreateAsync`에서 두 개의 물음표는 [Null 병합 연산자](/dotnet/csharp/language-reference/operators/null-conditional-operator)를 나타냅니다. Null 병합 연산자는 null 허용 형식에 대한 기본값을 정의합니다. 식 `(pageIndex ?? 1)`은 값이 있는 경우 `pageIndex`의 값을 반환함을 의미합니다. `pageIndex`에 값이 없으면 1을 반환합니다.
 
 ## <a name="add-paging-links-to-the-student-razor-page"></a>학생 Razor 페이지에 페이징 링크 추가
 

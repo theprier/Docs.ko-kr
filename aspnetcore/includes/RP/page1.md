@@ -71,8 +71,7 @@ Razor는 HTML에서 C# 또는 Razor 관련 태그로 전환될 수 있습니다.
 [HTML Helpers 2](xref:aspnet/mvc/overview/older-versions-1/views/creating-custom-html-helpers-cs)
 -->
 
-<a name="vd">
-</a>
+<a name="vd"></a>
 ### ViewData 및 레이아웃
 
 다음 코드를 살펴보세요.

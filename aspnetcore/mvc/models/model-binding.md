@@ -1,17 +1,17 @@
 ---
 title: ASP.NET Core의 모델 바인딩
-author: rachelappel
+author: tdykstra
 description: ASP.NET Core MVC의 모델 바인딩이 HTTP 요청의 데이터를 작업 메서드 매개 변수에 매핑하는 방법을 알아봅니다.
 ms.assetid: 0be164aa-1d72-4192-bd6b-192c9c301164
-ms.author: rachelap
+ms.author: tdykstra
 ms.date: 01/22/2018
 uid: mvc/models/model-binding
-ms.openlocfilehash: 4c1cfddf82e077e22e9069777393bc5e6086de83
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 200e2c22e02ec9e24b7cdb3883cf6f2f93f2f4b7
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278387"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095735"
 ---
 # <a name="model-binding-in-aspnet-core"></a>ASP.NET Core의 모델 바인딩
 
