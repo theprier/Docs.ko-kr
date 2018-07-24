@@ -5,12 +5,12 @@ description: 전자 메일 확인 및 암호 재설정을 사용 하 여 ASP.NET
 ms.author: riande
 ms.date: 7/11/2018
 uid: security/authentication/accconfirm
-ms.openlocfilehash: af3ba8b27148d94c4a905c688b8165f49b9f2927
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: 84eb3580107572f66f0c3b565b8e76ba401c0ddb
+ms.sourcegitcommit: 8f8924ce4eb9effeaf489f177fb01b66867da16f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095748"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39219409"
 ---
 ::: moniker range="<= aspnetcore-2.0"
 
@@ -34,13 +34,13 @@ ms.locfileid: "39095748"
 
 ## <a name="prerequisites"></a>전제 조건
 
-[!INCLUDE](~/includes/2.1-SDK.md) [](~/includes/2.1-SDK.md)]
+[!INCLUDE [](~/includes/2.1-SDK.md)]
 
 ## <a name="create-a-web--app-and-scaffold-identity"></a>웹 앱 만들기 및 Identity를 스 캐 폴드
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio) 
 
-* Visual Studio에서 만드는 새 **웹 응용 프로그램** 프로젝트입니다.
+* Visual Studio에서 만드는 새 **웹 응용 프로그램** 라는 프로젝트가 **WebPWrecover**합니다.
 * 선택 **ASP.NET Core 2.1**합니다.
 * 기본값을 유지 **Authentication** 로 설정 **인증 안 함**합니다. 다음 단계에 인증 추가 됩니다.
 
