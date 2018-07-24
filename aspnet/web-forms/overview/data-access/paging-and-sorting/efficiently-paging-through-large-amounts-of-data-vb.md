@@ -4,19 +4,16 @@ title: 많은 양의 데이터 (VB)를 효율적으로 페이징 | Microsoft Doc
 author: rick-anderson
 description: 많은 양의 데이터를 해당 기본 데이터 소스 컨트롤 retriev로 작업할 때 데이터 프레젠테이션 컨트롤의 기본 페이징 옵션이 적합 하지 않습니다...
 ms.author: aspnetcontent
-manager: wpickett
 ms.date: 08/15/2006
-ms.topic: article
 ms.assetid: 3e20e64a-8808-4b49-88d6-014e2629d56f
-ms.technology: dotnet-webforms
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/efficiently-paging-through-large-amounts-of-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7d3b9f816e8e940d3ba109aeaf6055616f38d12a
-ms.sourcegitcommit: 953ff9ea4369f154d6fd0239599279ddd3280009
-ms.translationtype: HT
+ms.openlocfilehash: 9b00e18287bdb791a353b7ebd1bbb6cc0ab586b5
+ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37382681"
+ms.lasthandoff: 07/05/2018
+ms.locfileid: "37805508"
 ---
 <a name="efficiently-paging-through-large-amounts-of-data-vb"></a>많은 양의 데이터 (VB)를 효율적으로 페이징
 ====================
