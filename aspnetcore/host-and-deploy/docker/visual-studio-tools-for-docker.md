@@ -4,14 +4,14 @@ author: spboyer
 description: Visual Studio 2017 도구 및 Windows용 Docker를 사용하여 ASP.NET Core 앱을 컨테이너화하는 방법에 대해 알아봅니다.
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 12/12/2017
+ms.date: 07/18/2018
 uid: host-and-deploy/docker/visual-studio-tools-for-docker
-ms.openlocfilehash: fd485416ff0fab2508ab8ffd3f0ad309be338723
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: afa7b05820ba021c50d9c23804095f7edd8b71f1
+ms.sourcegitcommit: ee2b26c7d08b38c908c668522554b52ab8efa221
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276856"
+ms.lasthandoff: 07/19/2018
+ms.locfileid: "39146886"
 ---
 # <a name="visual-studio-tools-for-docker-with-aspnet-core"></a>Visual Studio Tools for Docker 및 ASP.NET Core
 
@@ -41,9 +41,9 @@ ASP.NET Core 프로젝트에 Docker 지원을 추가하려면 프로젝트가 .N
 
 ### <a name="new-app"></a>새 앱
 
-**ASP.NET Core 웹 응용 프로그램** 프로젝트 템플릿을 사용하여 새 앱을 만들 때 **Docker 지원 활성화** 확인란을 선택합니다.
+**ASP.NET Core 웹 응용 프로그램** 프로젝트 템플릿을 사용하여 새 앱을 만들 때 **Docker 지원 사용** 확인란을 선택합니다.
 
-![Docker 지원 활성화 확인란](visual-studio-tools-for-docker/_static/enable-docker-support-checkbox.png)
+![Docker 지원 사용 확인란](visual-studio-tools-for-docker/_static/enable-docker-support-check box.png)
 
 대상 프레임워크가 .NET Core인 경우 **OS** 드롭다운에서 컨테이너 유형을 선택할 수 있습니다.
 
@@ -56,7 +56,7 @@ Visual Studio Tools for Docker는 .NET Framework를 대상으로 하는 기존 A
 
 ## <a name="docker-assets-overview"></a>Docker 자산 개요
 
-Visual Studio Tools for Docker는 다음을 포함하여 솔루션에 *docker-compose* 프로젝트를 추가합니다.
+Visual Studio Tools for Docker는 다음 파일을 포함하여 솔루션에 *docker-compose* 프로젝트를 추가합니다.
 
 * *.dockerignore*: 빌드 컨텍스트를 생성할 때 제외할 파일 및 디렉터리 패턴의 목록을 포함합니다.
 * *docker-compose.yml*: 빌드되어 `docker-compose build` 및 `docker-compose run`으로 각각 실행할 이미지 컬렉션을 정의하는 데 사용되는 기본 [Docker Compose](https://docs.docker.com/compose/overview/) 파일입니다.
@@ -83,9 +83,9 @@ Visual Studio Tools for Docker는 다음을 포함하여 솔루션에 *docker-co
 * *microsoft/aspnetcore* 런타임 이미지를 가져옵니다(캐시에 아직 없는 경우).
 * *microsoft/aspnetcore-build* compile/publish 이미지를 가져옵니다(캐시에 아직 없는 경우).
 * *ASPNETCORE_ENVIRONMENT* 환경 변수는 컨테이너 내에서 `Development`로 설정됩니다.
-* 포트 80이 노출되고 동적으로 할당된 localhost용 포트에 매핑됩니다. 포트는 Docker 호스트에 의해 결정되며 `docker ps` 명령을 사용하여 쿼리할 수 있습니다.
+* 포트 80이 공개되고 localhost의 동적으로 할당된 포트에 매핑됩니다. 포트는 Docker 호스트에 의해 결정되며 `docker ps` 명령을 사용하여 쿼리할 수 있습니다.
 * 앱이 컨테이너에 복사됩니다.
-* 컨테이너에 연결된 디버거와 함께 기본 브라우저가 시작되며 동적으로 할당된 포트를 사용합니다. 
+* 컨테이너에 연결된 디버거와 함께 기본 브라우저가 시작되며 동적으로 할당된 포트를 사용합니다.
 
 결과 Docker 이미지는 앱의 *dev* 이미지이며 *microsoft/aspnetcore* 이미지가 기본 이미지입니다. **패키지 관리자 콘솔**(PMC) 창에서 `docker images` 명령을 실행합니다. 컴퓨터의 이미지가 표시됩니다.
 
@@ -109,9 +109,9 @@ baf9a678c88d        hellodockertools:dev   "C:\\remote_debugge..."   21 seconds 
 
 ## <a name="edit-and-continue"></a>편집하며 계속하기
 
-정적 파일 및 Razor 뷰에 대한 변경 사항은 자동으로 업데이트되므로 컴파일 단계가 필요하지 않습니다. 내용을 변경 및 저장하고 브라우저를 새로 고쳐 업데이트를 확인합니다.  
+정적 파일 및 Razor 뷰에 대한 변경 사항은 자동으로 업데이트되므로 컴파일 단계가 필요하지 않습니다. 내용을 변경 및 저장하고 브라우저를 새로 고쳐 업데이트를 확인합니다.
 
-코드 파일을 수정하려면 컨테이너 내에서 컴파일하고 Kestrel을 다시 시작해야 합니다. 변경 후 컨테이너 내에서 CTRL + F5를 사용하여 프로세스를 수행하고 앱을 시작합니다. Docker 컨테이너는 다시 빌드되거나 중지되지 않습니다. PMC에서 `docker ps` 명령을 실행합니다. 원래 컨테이너는 10분 이전을 기준으로 여전히 실행됩니다.
+코드 파일을 수정하려면 컨테이너 내에서 컴파일하고 Kestrel을 다시 시작해야 합니다. 변경 후 컨테이너 내에서 `CTRL+F5`를 사용하여 프로세스를 수행하고 앱을 시작합니다. Docker 컨테이너는 다시 빌드되거나 중지되지 않습니다. PMC에서 `docker ps` 명령을 실행합니다. 원래 컨테이너는 10분 이전을 기준으로 여전히 실행됩니다.
 
 ```console
 CONTAINER ID        IMAGE                  COMMAND                   CREATED             STATUS              PORTS                   NAMES
@@ -120,7 +120,7 @@ baf9a678c88d        hellodockertools:dev   "C:\\remote_debugge..."   10 minutes 
 
 ## <a name="publish-docker-images"></a>Docker 이미지 게시
 
-앱의 개발 및 디버그 주기를 완료한 후 앱의 프로덕션 이미지를 만들 때 Visual Studio Tools for Docker를 사용할 수 있습니다. 구성 드롭다운을 **릴리스**로 변경하고 앱을 빌드합니다. 도구에서 ‘최신’ 태그로 이미지를 생성하면 이를 개인 레지스트리 또는 Docker Hub에 푸시할 수 있습니다. 
+앱의 개발 및 디버그 주기를 완료한 후 앱의 프로덕션 이미지를 만들 때 Visual Studio Tools for Docker를 사용할 수 있습니다. 구성 드롭다운을 **릴리스**로 변경하고 앱을 빌드합니다. 도구에서 ‘최신’ 태그로 이미지를 생성하면 이를 개인 레지스트리 또는 Docker Hub에 푸시할 수 있습니다.
 
 PMC에서 `docker images` 명령을 실행하여 이미지의 목록을 봅니다.
 
@@ -136,3 +136,8 @@ microsoft/aspnetcore         2.0-nanoserver-1709   8872347d7e5d        40 hours 
 > `docker images` 명령은 *\<없음>*(위에 나열되지 않음)으로 식별된 리포지토리 이름 및 태그로 매개자 이미지를 반환합니다. 이러한 이름이 지정되지 않는 이미지는 [다단계 빌드](https://docs.docker.com/engine/userguide/eng-image/multistage-build/) *Dockerfile*에 의해 생성됩니다. 최종 이미지 빌드의 효율성을 향상시키며&mdash;변경될 때 필요한 레이어만 다시 빌드됩니다. 더 이상 매개자 이미지가 필요하지 않은 경우 [docker rmi](https://docs.docker.com/engine/reference/commandline/rmi/) 명령을 사용하여 삭제합니다.
 
 *dev* 이미지와 비교하여 프로덕션 또는 릴리스 이미지의 크기가 작을 수 있습니다. 볼륨 매핑으로 인해 디버거 및 앱은 컨테이너 내부가 아닌 로컬 컴퓨터에서 실행되었습니다. *최신* 이미지는 호스트 컴퓨터에서 앱을 실행하는 데 필요한 앱 코드를 패키징했습니다. 따라서 델타는 앱 코드의 크기입니다.
+
+## <a name="additional-resources"></a>추가 자료
+
+* [Docker 관련 Visual Studio 2017 개발 문제 해결](/azure/vs-azure-tools-docker-troubleshooting-docker-errors)
+* [Visual Studio Tools for Docker GitHub 리포지토리](https://github.com/Microsoft/DockerTools)

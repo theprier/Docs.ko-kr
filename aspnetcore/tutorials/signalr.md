@@ -1,22 +1,20 @@
 ---
 title: ASP.NET Core에서 SignalR 시작
-author: rachelappel
+author: tdykstra
 description: 이 자습서에서는 ASP.NET Core용 SignalR을 사용하여 앱을 만듭니다.
 monikerRange: '>= aspnetcore-2.1'
-ms.author: rachelap
+ms.author: tdykstra
 ms.custom: mvc
 ms.date: 05/22/2018
 uid: tutorials/signalr
-ms.openlocfilehash: 6b8222ee04573ca7157b4e1125ed5a4453b2b9a9
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 83be28b30cf06eeea37e8d76b3f6444ffd9a10e8
+ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37830557"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39095493"
 ---
 # <a name="get-started-with-signalr-on-aspnet-core"></a>ASP.NET Core에서 SignalR 시작
-
-작성자: [Rachel Appel](https://twitter.com/rachelappel)
 
 이 자습서에서는 ASP.NET Core용 SignalR을 사용하여 실시간 앱을 빌드하는 방법에 대한 기본 사항을 설명합니다.
 
@@ -39,14 +37,14 @@ ms.locfileid: "37830557"
 
 * [.NET Core SDK 2.1 이상](https://www.microsoft.com/net/download/all)
 * [Visual Studio 2017](https://www.visualstudio.com/downloads/) 버전 15.7.3 이상(**ASP.NET 및 웹 개발** 워크로드 포함)
-* [npm](https://www.npmjs.com/get-npm)
+* [npm](https://www.npmjs.com/get-npm)(Node.js에 대한 패키지 관리자)
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 
 * [.NET Core SDK 2.1 이상](https://www.microsoft.com/net/download/all)
 * [Visual Studio Code](https://code.visualstudio.com/download)
 * [Visual Studio Code용 C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
-* [npm](https://www.npmjs.com/get-npm)
+* [npm](https://www.npmjs.com/get-npm)(Node.js에 대한 패키지 관리자)
 
 -----
 
@@ -71,7 +69,7 @@ Visual Studio에는 **ASP.NET Core 웹 응용 프로그램** 템플릿의 일부
     npm install @aspnet/signalr
     ```
 
-4. 프로젝트의 *lib* 폴더 안에 "signalr"라는 새 폴더를 만듭니다. *signalr.js* 파일을 *node_modules\\@aspnet\signalr\dist\browser*에서 이 폴더로 복사합니다.
+4. 프로젝트의 *wwwroot/lib* 폴더 안에 “signalr”이라는 새 폴더를 만듭니다. *signalr.js* 파일을 *node_modules\\@aspnet\signalr\dist\browser*에서 이 폴더로 복사합니다.
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
 
