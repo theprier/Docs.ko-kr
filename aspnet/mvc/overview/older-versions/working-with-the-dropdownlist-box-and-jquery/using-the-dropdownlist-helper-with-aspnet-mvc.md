@@ -8,12 +8,12 @@ ms.date: 01/12/2012
 ms.assetid: 53767e05-c8ab-42e1-a94b-22d906195200
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/using-the-dropdownlist-helper-with-aspnet-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 9f16c01515bde80d3994618d26818c2d93f69d87
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 6dbffe715990de5c0b3b834e354379e414925816
+ms.sourcegitcommit: 8f8924ce4eb9effeaf489f177fb01b66867da16f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37828379"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39219058"
 ---
 <a name="using-the-dropdownlist-helper-with-aspnet-mvc"></a>ASP.NET MVC DropDownList 도우미 사용
 ====================
@@ -190,7 +190,7 @@ Harvest [선택한](http://harvesthq.github.com/chosen/) HTML에 jQuery 플러�
 
 [!code-cshtml[Main](using-the-dropdownlist-helper-with-aspnet-mvc/samples/sample12.cshtml)]
 
-위의 코드에서 추가 HTML 특성 및 특성 값 `class = "chzn-select"`합니다. @ 문자 앞에 클래스는 관련이 Razor 보기 엔진을 사용 하 여 합니다. `class` [C# 키워드](https://msdn.microsoft.com/library/x53a06bb.aspx)합니다. 접두사로 @을 포함 하지 않는 한 C# 키워드를 식별자로 사용할 수 없습니다. 위의 예에서 `@class` 올바른 식별자가 있지만 **클래스** 아니므로 **클래스** 는 키워드입니다.
+위의 코드에서 추가 HTML 특성 및 특성 값 `class = "chzn-select"`합니다. \@ 문자 앞 클래스는 Razor 보기 엔진을 사용 하 여 관련이 있습니다. `class` [C# 키워드](https://msdn.microsoft.com/library/x53a06bb.aspx)합니다. 기호가 없으면 C# 키워드를 식별자로 사용할 수 없습니다 \@ 접두사로 합니다. 위의 예에서 `@class` 올바른 식별자가 있지만 **클래스** 아니므로 **클래스** 는 키워드입니다.
 
 에 대 한 참조를 추가 합니다 *Chosen/chosen.jquery.js* 하 고 *Chosen/chosen.css* 파일입니다. 합니다 *Chosen/chosen.jquery.js* 구현 및는 기능적의 선택한 플러그 인입니다. 합니다 *Chosen/chosen.css* 파일은 스타일을 제공 합니다. 맨 아래에 다음이 참조를 추가 합니다 *Views\Home\MultiSelectCountry.cshtml* 파일입니다. 다음 코드에는 선택한 플러그 인을 참조 하는 방법을 보여 줍니다.
 
