@@ -142,7 +142,7 @@ ms.locfileid: "37833674"
     ![Inspectingelements](using-page-inspector-in-visual-studio-2012/_static/image6.png)
 
     *요소를 검사합니다.*
-7. 클릭 합니다 **검사 모드 설정/해제** 단추 (![HTML 탭을 선택 하 고 페이지 검사기 브라우저에서 렌더링 된 HTML 코드를 표시 합니다.] (using-page-inspector-in-visual-studio-2012/_static/image7.png "페이지 검사기 브라우저에서 렌더링 된 HTML 코드를 표시할 HTML 탭을 선택 합니다.") ) 커서를 사용 하지 않도록 설정 합니다.
+7. 클릭 합니다 **검사 모드 설정/해제** 단추 (![HTML 탭을 선택 하 고 페이지 검사기 브라우저에서 렌더링 된 HTML 코드를 표시 합니다.](using-page-inspector-in-visual-studio-2012/_static/image7.png "페이지 검사기 브라우저에서 렌더링 된 HTML 코드를 표시할 HTML 탭을 선택 합니다.") ) 커서를 사용 하지 않도록 설정 합니다.
 8. 선택 된 **HTML** 탭 페이지 검사기 브라우저에서 렌더링 된 HTML 코드를 표시 합니다.
 9. HTML 태그에서 Koala 링크를 사용 하 여 목록 항목을 찾아 선택 합니다.
 
