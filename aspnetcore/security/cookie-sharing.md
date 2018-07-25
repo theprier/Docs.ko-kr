@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 01/19/2017
 uid: security/cookie-sharing
-ms.openlocfilehash: f8347b52f68165cdbe4ab77a76664e4767bc4cdf
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: ed3496db3f7a63a704f0e57faef6b2f6c085a8bd
+ms.sourcegitcommit: b4c7b1a4c48dec0865f27874275c73da1f75e918
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095479"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39228600"
 ---
 # <a name="share-cookies-among-apps-with-aspnet-and-aspnet-core"></a>ASP.NET 및 ASP.NET Core를 사용 하 여 앱 간 쿠키 공유
 
@@ -51,6 +51,12 @@ ASP.NET Core Id를 사용 하 여 하는 경우:
 
 앱 이름과 데이터 보호 키는 앱 간에 공유 해야 합니다. 샘플 앱에서 `GetKeyRingDirInfo` 일반적인 키 저장 위치를 반환 합니다 [PersistKeysToFileSystem](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.persistkeystofilesystem) 메서드. 사용 하 여 [SetApplicationName](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.setapplicationname) 일반적인 공유 앱 이름을 구성 하려면 (`SharedCookieApp` 예제의). 자세한 내용은 [데이터 보호 구성](xref:security/data-protection/configuration/overview)합니다.
 
+하위 도메인 간에 쿠키 공유 하는 앱을 호스팅하는 경우에 공용 도메인을 지정 합니다 [Cookie.Domain](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.domain) 속성입니다. 에 앱 간에 쿠키 공유를 `contoso.com`와 같은 `first_subdomain.contoso.com` 및 `second_subdomain.contoso.com`를 지정 합니다 `Cookie.Domain` 으로 `.contoso.com`:
+
+```csharp
+options.Cookie.Domain = ".contoso.com";
+```
+
 참조를 *CookieAuthWithIdentity.Core* 프로젝트에 [샘플 코드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/cookie-sharing/sample/) ([다운로드 방법](xref:tutorials/index#how-to-download-a-sample)).
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
@@ -89,7 +95,13 @@ app.AddIdentity<ApplicationUser, IdentityRole>(options =>
 
 [!code-csharp[](cookie-sharing/sample/CookieAuth.Core/Startup.cs?name=snippet1)]
 
-앱 이름과 데이터 보호 키는 앱 간에 공유 해야 합니다. 샘플 앱에서 `GetKeyRingDirInfo` 일반적인 키 저장 위치를 반환 합니다 [PersistKeysToFileSystem](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.persistkeystofilesystem) 메서드. 사용 하 여 [SetApplicationName](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.setapplicationname) 일반적인 공유 앱 이름을 구성 하려면 (`SharedCookieApp` 예제의). 자세한 내용은 [데이터 보호 구성](xref:security/data-protection/configuration/overview)합니다. 
+앱 이름과 데이터 보호 키는 앱 간에 공유 해야 합니다. 샘플 앱에서 `GetKeyRingDirInfo` 일반적인 키 저장 위치를 반환 합니다 [PersistKeysToFileSystem](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.persistkeystofilesystem) 메서드. 사용 하 여 [SetApplicationName](/dotnet/api/microsoft.aspnetcore.dataprotection.dataprotectionbuilderextensions.setapplicationname) 일반적인 공유 앱 이름을 구성 하려면 (`SharedCookieApp` 예제의). 자세한 내용은 [데이터 보호 구성](xref:security/data-protection/configuration/overview)합니다.
+
+하위 도메인 간에 쿠키 공유 하는 앱을 호스팅하는 경우에 공용 도메인을 지정 합니다 [Cookie.Domain](/dotnet/api/microsoft.aspnetcore.http.cookiebuilder.domain) 속성입니다. 에 앱 간에 쿠키 공유를 `contoso.com`와 같은 `first_subdomain.contoso.com` 및 `second_subdomain.contoso.com`를 지정 합니다 `Cookie.Domain` 으로 `.contoso.com`:
+
+```csharp
+options.Cookie.Domain = ".contoso.com";
+```
 
 참조를 *CookieAuth.Core* 프로젝트에 [샘플 코드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/cookie-sharing/sample/) ([다운로드 방법](xref:tutorials/index#how-to-download-a-sample)).
 
