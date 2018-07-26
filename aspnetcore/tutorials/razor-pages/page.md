@@ -7,23 +7,23 @@ ms.author: riande
 ms.date: 09/27/2017
 uid: tutorials/razor-pages/page
 ms.openlocfilehash: 65d3b045d831621ec4f8b385b2aba16722809f67
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.sourcegitcommit: c8e62aa766641aa55105f7db79cdf2b27a6e5977
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2018
+ms.lasthandoff: 07/26/2018
 ms.locfileid: "38214917"
 ---
 [!INCLUDE [model1](../../includes/RP/page1.md)]
 
-<span data-ttu-id="fb11b-103">Visual Studio에서는 `<form method="post">` 태그를 태그 도우미에 사용되는 독특한 글꼴로 표시합니다.</span><span class="sxs-lookup"><span data-stu-id="fb11b-103">Visual Studio displays the `<form method="post">` tag in a distinctive font used for Tag Helpers:</span></span> 
+<span data-ttu-id="f6e93-103">Visual Studio에서는 `<form method="post">` 태그를 태그 도우미에 사용되는 독특한 글꼴로 표시합니다.</span><span class="sxs-lookup"><span data-stu-id="f6e93-103">Visual Studio displays the `<form method="post">` tag in a distinctive font used for Tag Helpers:</span></span> 
 
 ![Create.cshtml 페이지의 VS17 뷰](page/_static/th.png)
 
 [!INCLUDE [model1](../../includes/RP/page2.md)]
 
-<span data-ttu-id="fb11b-105">다음 자습서에서는 SQL Server LocalDB 및 데이터베이스 시딩에 대해 설명합니다.</span><span class="sxs-lookup"><span data-stu-id="fb11b-105">The next tutorial explains SQL Server LocalDB and seeding the database.</span></span>
+<span data-ttu-id="f6e93-105">다음 자습서에서는 SQL Server LocalDB 및 데이터베이스 시딩에 대해 설명합니다.</span><span class="sxs-lookup"><span data-stu-id="f6e93-105">The next tutorial explains SQL Server LocalDB and seeding the database.</span></span>
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="fb11b-106">[이전: 모델 추가](xref:tutorials/razor-pages/model)
-> [다음: SQL Server LocalDB](xref:tutorials/razor-pages/sql)</span><span class="sxs-lookup"><span data-stu-id="fb11b-106">[Previous: Adding a model](xref:tutorials/razor-pages/model)
+> <span data-ttu-id="f6e93-106">[이전: 모델 추가](xref:tutorials/razor-pages/model)
+> [다음: SQL Server LocalDB](xref:tutorials/razor-pages/sql)</span><span class="sxs-lookup"><span data-stu-id="f6e93-106">[Previous: Adding a model](xref:tutorials/razor-pages/model)
 [Next: SQL Server LocalDB](xref:tutorials/razor-pages/sql)</span></span>
