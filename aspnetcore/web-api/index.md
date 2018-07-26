@@ -6,12 +6,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 07/06/2018
 uid: web-api/index
-ms.openlocfilehash: 0ff0bbc629930666d46247d6c1257fac8bfaf7c2
-ms.sourcegitcommit: 260abb706ed17f07a53288d8a0c3e69fc13e7468
+ms.openlocfilehash: ccee4f7bae0abe1b36088d58e5c1e1362d8de9f0
+ms.sourcegitcommit: 5338b1ed9e2ef225ab565d6cba072b474fd9324d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38966811"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39243099"
 ---
 # <a name="build-web-apis-with-aspnet-core"></a>ASP.NET Core에서 Web API 빌드
 
@@ -63,7 +63,7 @@ ASP.NET Core 2.1에서는 Web API 컨트롤러 클래스를 나타내는 [[ApiCo
 
 유효성 검사 오류 시 HTTP 400 응답이 자동으로 트리거됩니다. 다음 코드는 실제 작업 시 불필요하게 됩니다.
 
-[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api.Pre21/Controllers/PetsController.cs?range=46-49)]
+[!code-csharp[](../web-api/define-controller/samples/WebApiSample.Api.Pre21/Controllers/PetsController.cs?name=snippet_ModelStateIsValidCheck)]
 
 [SuppressModelStateInvalidFilter](/dotnet/api/microsoft.aspnetcore.mvc.apibehavioroptions.suppressmodelstateinvalidfilter) 속성이 `true`로 설정된 경우 기본 동작이 사용되지 않습니다. `services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);` 뒤에 *Startup.ConfigureServices*에서 다음 코드를 추가합니다.
 
