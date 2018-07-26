@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 01/11/2018
 uid: fundamentals/configuration/index
-ms.openlocfilehash: 70e9e73eeb5d08baf9ef190ebfbda998ace60d77
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 59ab0cd0f6975d15bd01ce7e4128521938182c24
+ms.sourcegitcommit: b4c7b1a4c48dec0865f27874275c73da1f75e918
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278327"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39228626"
 ---
 # <a name="configuration-in-aspnet-core"></a>ASP.NET Core의 구성
 
@@ -34,6 +34,40 @@ ms.locfileid: "36278327"
 옵션 패턴은 옵션 클래스를 사용하여 관련 설정 그룹을 나타냅니다. 옵션 패턴 사용에 대한 자세한 내용은 [옵션](xref:fundamentals/configuration/options) 항목을 참조하세요.
 
 [예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/configuration/index/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
+
+::: moniker range=">= aspnetcore-2.1"
+
+이 항목에서 제공하는 예제는 다음을 사용합니다.
+
+* [SetBasePath](/dotnet/api/microsoft.extensions.configuration.fileconfigurationextensions.setbasepath)를 사용하여 앱의 기본 경로 설정 `SetBasePath`는 [Microsoft.Extensions.Configuration.FileExtensions](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.FileExtensions/) 패키지를 참조하여 앱에 사용할 수 있습니다.
+* [GetSection](/dotnet/api/microsoft.extensions.configuration.configurationsection.getsection)을 사용하여 구성 파일의 섹션 확인 `GetSection`은 [Microsoft.Extensions.Configuration](https://www.nuget.org/packages/Microsoft.Extensions.Configuration/) 패키지를 참조하여 앱에 사용할 수 있습니다.
+* [Bind](/dotnet/api/microsoft.extensions.configuration.configurationbinder.bind)를 사용하여 바인딩 구성 `Bind`는 [Microsoft.Extensions.Configuration.Binder](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Binder/) 패키지를 참조하여 앱에 사용할 수 있습니다.
+
+이러한 패키지는 [Microsoft.AspNetCore.App 메타패키지](xref:fundamentals/metapackage-app)에 포함되어 있습니다.
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+이 항목에서 제공하는 예제는 다음을 사용합니다.
+
+* [SetBasePath](/dotnet/api/microsoft.extensions.configuration.fileconfigurationextensions.setbasepath)를 사용하여 앱의 기본 경로 설정 `SetBasePath`는 [Microsoft.Extensions.Configuration.FileExtensions](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.FileExtensions/) 패키지를 참조하여 앱에 사용할 수 있습니다.
+* [GetSection](/dotnet/api/microsoft.extensions.configuration.configurationsection.getsection)을 사용하여 구성 파일의 섹션 확인 `GetSection`은 [Microsoft.Extensions.Configuration](https://www.nuget.org/packages/Microsoft.Extensions.Configuration/) 패키지를 참조하여 앱에 사용할 수 있습니다.
+* [Bind](/dotnet/api/microsoft.extensions.configuration.configurationbinder.bind)를 사용하여 바인딩 구성 `Bind`는 [Microsoft.Extensions.Configuration.Binder](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Binder/) 패키지를 참조하여 앱에 사용할 수 있습니다.
+
+이러한 패키지는 [Microsoft.AspNetCore.All 메타패키지](xref:fundamentals/metapackage)에 포함되어 있습니다.
+
+::: moniker-end
+
+::: moniker range="<= aspnetcore-1.1"
+
+이 항목에서 제공하는 예제는 다음을 사용합니다.
+
+* [SetBasePath](/dotnet/api/microsoft.extensions.configuration.fileconfigurationextensions.setbasepath)를 사용하여 앱의 기본 경로 설정 `SetBasePath`는 [Microsoft.Extensions.Configuration.FileExtensions](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.FileExtensions/) 패키지를 참조하여 앱에 사용할 수 있습니다.
+* [GetSection](/dotnet/api/microsoft.extensions.configuration.configurationsection.getsection)을 사용하여 구성 파일의 섹션 확인 `GetSection`은 [Microsoft.Extensions.Configuration](https://www.nuget.org/packages/Microsoft.Extensions.Configuration/) 패키지를 참조하여 앱에 사용할 수 있습니다.
+* [Bind](/dotnet/api/microsoft.extensions.configuration.configurationbinder.bind)를 사용하여 바인딩 구성 `Bind`는 [Microsoft.Extensions.Configuration.Binder](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Binder/) 패키지를 참조하여 앱에 사용할 수 있습니다.
+
+::: moniker-end
 
 ## <a name="json-configuration"></a>JSON 구성
 

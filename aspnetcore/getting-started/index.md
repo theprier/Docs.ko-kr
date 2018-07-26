@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/31/2018
 uid: getting-started
-ms.openlocfilehash: 22e9c982921cc03d89506e18ff99bf481027dda6
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: 7ab9f303d74786c4ac76f002d0f2c66371e78cb8
+ms.sourcegitcommit: b4c7b1a4c48dec0865f27874275c73da1f75e918
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "38216215"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39228584"
 ---
 # <a name="get-started-with-aspnet-core"></a>ASP.NET Core 시작
 
@@ -25,7 +25,7 @@ ms.locfileid: "38216215"
     dotnet new webapp -o aspnetcoreapp
     ```
 
-    [!INCLUDE [](~/includes/webapp-alias-notice.md) [](~/includes/webapp-alias-notice.md)]
+    [!INCLUDE [](~/includes/webapp-alias-notice.md)]
 
 3. HTTPS 개발 인증서 신뢰:
 
@@ -35,11 +35,11 @@ ms.locfileid: "38216215"
     dotnet dev-certs https --trust
     ```
 
-    The preceding command displays the following dialog:
+   이전 명령으로 인해 다음 대화 상자가 표시됩니다.
 
-    ![Security warning dialog](_static/cert.png)
+   ![보안 경고 대화 상자](_static/cert.png)
 
-    Select **Yes** if you agree to trust the development certificate.
+   개발 인증서를 신뢰하는 데 동의하는 경우 **예**를 선택합니다.
 
 # <a name="macostabmacos"></a>[macOS](#tab/macos)
 
@@ -47,18 +47,15 @@ ms.locfileid: "38216215"
     dotnet dev-certs https --trust
     ```
 
-    The preceding command displays the following message:
+   이전 명령으로 인해 다음 메시지가 표시됩니다.
 
-    *Trusting the HTTPS development certificate was requested. If the certificate is not already trusted we will run the following command:*
-    `'sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain <<certificate>>'`
-    *This command might prompt you for your password to install the certificate on the system keychain.
-    Password:*
+   *HTTPS 개발 인증서를 신뢰해야 합니다. 인증서를 신뢰할 수 없는 경우 다음 명령을 실행합니다.*`'sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain <<certificate>>'`*이 명령은 시스템 키 집합에 인증서를 설치하기 위해 암호를 묻는 메시지를 표시할 수 있습니다.    암호:*
 
-    Enter your password if you agree to trust the development certificate.
+   개발 인증서를 신뢰하는 데 동의하는 경우 암호를 입력합니다.
 
 # <a name="linuxtablinux"></a>[Linux](#tab/linux)
 
-    See the documentation for your Linux distribution on how to trust the HTTPS development certificate
+   <a name="see-the-documentation-for-your-linux-distribution-on-how-to-trust-the-https-development-certificate"></a>HTTPS 개발 인증서를 신뢰하는 방법은 Linux 배포에 대한 설명서를 참조하세요.
 ---
 
 4. 앱을 실행합니다.
