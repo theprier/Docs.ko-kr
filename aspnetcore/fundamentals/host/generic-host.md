@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/16/2018
 uid: fundamentals/host/generic-host
-ms.openlocfilehash: 879f31a5916646a4d63f9f503173dc9ff4c53434
-ms.sourcegitcommit: ea7ec8d47f94cfb8e008d771f647f86bbb4baa44
+ms.openlocfilehash: 0f3b548c2065245f6ed8a6a6f981ece4eb78535e
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37894155"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342057"
 ---
 # <a name="net-generic-host"></a>.NET 일반 호스트
 
@@ -84,12 +84,15 @@ Visual Studio Code에서 콘솔을 설정하려면:
 **키**: applicationName  
 **형식**: *string*  
 **기본값**: 앱의 진입점을 포함하는 어셈블리의 이름입니다.  
-**설정 방법**: `UseSetting`  
+**설정 방법**: `HostBuilderContext.HostingEnvironment.ApplicationName`  
 **환경 변수**: `<PREFIX_>APPLICATIONKEY`(`<PREFIX_>`는 [선택적이고 사용자 정의됨](#configuration-builder))
 
 ```csharp
-WebHost.CreateDefaultBuilder(args)
-    .UseSetting(WebHostDefaults.ApplicationKey, "CustomApplicationName")
+var host = new HostBuilder()
+    .ConfigureAppConfiguration((hostContext, configApp) =>
+    {
+        hostContext.HostingEnvironment.ApplicationName = "CustomApplicationName";
+    })
 ```
 
 #### <a name="content-root"></a>콘텐츠 루트

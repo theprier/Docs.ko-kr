@@ -5,12 +5,12 @@ description: 캐시 태그 도우미 사용 방법 소개
 ms.author: riande
 ms.date: 02/14/2017
 uid: mvc/views/tag-helpers/builtin-th/distributed-cache-tag-helper
-ms.openlocfilehash: d33c22802030eb9bc77baa64b83c9bbd7e902195
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: a35a5795c086273e773c613c483fc6343c694bf2
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36275177"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342174"
 ---
 # <a name="distributed-cache-tag-helper-in-aspnet-core"></a>ASP.NET Core의 분산 캐시 태그 도우미
 
@@ -57,7 +57,7 @@ ASP.NET Core에 두 가지 `IDistributedCache` 구현이 기본적으로 제공�
 ## <a name="additional-resources"></a>추가 자료
 
 * <xref:mvc/views/tag-helpers/builtin-th/cache-tag-helper>
-* <xref:fundamentals/dependency-injection#service-lifetimes-and-registration-options>
+* <xref:fundamentals/dependency-injection>
 * <xref:performance/caching/distributed>
 * <xref:performance/caching/memory>
 * <xref:security/authentication/identity>

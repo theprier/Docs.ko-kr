@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 11/28/2017
 uid: fundamentals/configuration/options
-ms.openlocfilehash: c996ac6ab05b98bcca72d0993fe412f553b58106
-ms.sourcegitcommit: 19cbda409bdbbe42553dc385ea72d2a8e246509c
+ms.openlocfilehash: aa9c490aff873d12c9417e7b611991617207c0d3
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38992966"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342447"
 ---
 # <a name="options-pattern-in-aspnet-core"></a>ASP.NET Core의 옵션 패턴
 
@@ -36,7 +36,7 @@ ms.locfileid: "38992966"
 
 [!code-csharp[](options/sample/Startup.cs?name=snippet_Example1)]
 
-다음 페이지 모델은 [IOptions&lt;TOptions&gt;](/dotnet/api/Microsoft.Extensions.Options.IOptions-1)를 통해 [생성자 종속성 주입](xref:fundamentals/dependency-injection#what-is-dependency-injection)을 사용하여 설정에 액세스합니다(*Pages/Index.cshtml.cs*).
+다음 페이지 모델은 [IOptions&lt;TOptions&gt;](/dotnet/api/Microsoft.Extensions.Options.IOptions-1)를 통해 [생성자 종속성 주입](xref:mvc/controllers/dependency-injection)을 사용하여 설정에 액세스합니다(*Pages/Index.cshtml.cs*).
 
 [!code-csharp[](options/sample/Pages/Index.cshtml.cs?range=9)]
 

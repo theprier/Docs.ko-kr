@@ -5,12 +5,12 @@ description: ASP.NET Core Id에 대 한 사용자 지정 저장소 공급자를 
 ms.author: riande
 ms.date: 05/24/2017
 uid: security/authentication/identity-custom-storage-providers
-ms.openlocfilehash: bdde9b93449c2f3f8d43cc4ff86472ed8a60ed1c
-ms.sourcegitcommit: a09820f91e71a7d98b7347bf93210abb9e995e22
+ms.openlocfilehash: 7fb64f0b911c11750946697d782488c2107a3637
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37889170"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342525"
 ---
 # <a name="custom-storage-providers-for-aspnet-core-identity"></a>ASP.NET Core Id에 대 한 사용자 지정 저장소 공급자
 
@@ -41,7 +41,7 @@ dotnet new webapi -au Individual
 
 ## <a name="the-aspnet-core-identity-architecture"></a>ASP.NET Core Id 아키텍처
 
-ASP.NET Core Id 관리자 및 저장소를 호출 하는 클래스로 구성 됩니다. *관리자* 는 앱 개발자는 Id 사용자를 만드는 등의 작업을 수행 하는 상위 수준 클래스입니다. *저장소* 사용자 역할과 같은 엔터티를 유지 되는 방법을 지정 하는 하위 클래스입니다. 저장소를 수행 합니다 [리포지토리 패턴](http://deviq.com/repository-pattern/) 고 지 속성 메커니즘을 사용 하 여 결합 되어 밀접 하 게 됩니다. 관리자 (구성) 제외 하 고 응용 프로그램 코드 변경 없이 지 속성 메커니즘을 바꿀 수 있습니다 즉 저장소에서 분리 됩니다.
+ASP.NET Core Id 관리자 및 저장소를 호출 하는 클래스로 구성 됩니다. *관리자* 는 앱 개발자는 Id 사용자를 만드는 등의 작업을 수행 하는 상위 수준 클래스입니다. *저장소* 사용자 역할과 같은 엔터티를 유지 되는 방법을 지정 하는 하위 클래스입니다. 저장소를 수행 합니다 [리포지토리 패턴](xref:fundamentals/repository-pattern) 고 지 속성 메커니즘을 사용 하 여 결합 되어 밀접 하 게 됩니다. 관리자 (구성) 제외 하 고 응용 프로그램 코드 변경 없이 지 속성 메커니즘을 바꿀 수 있습니다 즉 저장소에서 분리 됩니다.
 
 다음 다이어그램에서는 저장소 데이터 액세스 계층 상호 작용 하는 동안 웹 앱 관리자 상호 작용 하는 방법을 보여 줍니다.
 
