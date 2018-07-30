@@ -5,12 +5,12 @@ description: Visual Studio를 사용하여 Azure App Service에 ASP.NET Core 앱
 ms.author: riande
 ms.date: 12/16/2017
 uid: tutorials/publish-to-azure-webapp-using-vs
-ms.openlocfilehash: b6ff7d4873e6863fe2c64f48952e59fe3593bd9e
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 7211da268c1c52e7b859e6f98ce433fd19b218ff
+ms.sourcegitcommit: 516d0645c35ea784a3ae807be087ae70446a46ee
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273899"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39320728"
 ---
 # <a name="publish-an-aspnet-core-app-to-azure-with-visual-studio"></a>Visual Studio를 사용하여 Azure에 ASP.NET Core 앱 게시
 
@@ -24,7 +24,7 @@ App Service 배포 문제를 해결하려면 [Azure App Service에서 ASP.NET Co
 
 ## <a name="set-up"></a>설치
 
-* 계정이 없는 경우 [체험 Azure 계정](https://aka.ms/K5y5yh)을 엽니다. 
+* 계정이 없는 경우 [체험 Azure 계정](https://azure.microsoft.com/free/dotnet/)을 엽니다. 
 
 ## <a name="create-a-web-app"></a>웹앱 만들기
 
