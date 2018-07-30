@@ -5,12 +5,12 @@ description: ASP.NET Core의 로깅 프레임워크에 대해 알아봅니다. �
 ms.author: tdykstra
 ms.date: 07/24/2018
 uid: fundamentals/logging/index
-ms.openlocfilehash: 0181566aeab1fa055435ac90887c019eef52878c
-ms.sourcegitcommit: b4c7b1a4c48dec0865f27874275c73da1f75e918
+ms.openlocfilehash: f629b062afb5c17cd05040a9ef0281aa7121aabc
+ms.sourcegitcommit: 516d0645c35ea784a3ae807be087ae70446a46ee
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39228639"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39320754"
 ---
 # <a name="logging-in-aspnet-core"></a>ASP.NET Core에 로그인
 
@@ -56,7 +56,7 @@ ASP.NET Core는 비동기 로거 메서드를 제공하지 않습니다. 비동�
 
 [!code-csharp[](index/sample2/Program.cs?name=snippet_ExpandDefault&highlight=16,17)]
 
-기본 프로젝트 템플릿을 사용하면 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder?view=aspnetcore-2.0#Microsoft_AspNetCore_WebHost_CreateDefaultBuilder_System_String___) 메서드를 사용하여 로깅할 수 있습니다.
+기본 프로젝트 템플릿은 *Program.cs*의 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) 확장 메서드 호출을 통해 콘솔 및 디버그 로깅 공급자를 지원합니다.
 
 [!code-csharp[](index/sample2/Program.cs?name=snippet_TemplateCode&highlight=7)]
 
@@ -77,11 +77,21 @@ ASP.NET Core [DI(종속성 주입](xref:fundamentals/dependency-injection))는 `
 
 ::: moniker-end
 
-각 [기본 제공 로깅 공급자](#built-in-logging-providers)에 대한 정보와 [타사 로깅 공급자](#third-party-logging-providers)의 링크는 문서의 뒷부분에서 찾을 수 있습니다.
+[기본 제공 로깅 공급자](#built-in-logging-providers)에 대해 자세히 알아보고 문서의 뒷부분에 나오는 [타사 로깅 공급자](#third-party-logging-providers)에 대한 링크를 확인해 보세요.
 
-## <a name="settings-file-configuration"></a>파일 구성 설정
+## <a name="configuration"></a>구성
 
-앞서 [공급자를 추가하는 방법](#how-to-add-providers) 섹션의 예제는 각각 앱 설정 파일의 `Logging` 섹션에서 로그 공급자 구성을 로드합니다. 다음 예제에서는 일반적인 *appsettings.Development.json* 파일의 콘텐츠를 보여줍니다.
+로깅 공급자 구성은 하나 이상의 구성 공급자에서 제공합니다.
+
+* 파일 형식(INI, JSON 및 XML).
+* 명령줄 인수.
+* 환경 변수.
+* 메모리 내 .NET 개체.
+* 암호화되지 않은 [암호 관리자](xref:security/app-secrets) 저장소.
+* 암호화된 사용자 저장소(예:[Azure Key Vault](xref:security/key-vault-configuration)).
+* 사용자 지정 공급자(설치 또는 생성된).
+
+예를 들어 로깅 구성은 일반적으로 앱 설정 파일의 `Logging` 섹션에서 제공됩니다. 다음 예제에서는 일반적인 *appsettings.Development.json* 파일의 콘텐츠를 보여줍니다.
 
 ::: moniker range=">= aspnetcore-2.1"
 
@@ -122,6 +132,8 @@ ASP.NET Core [DI(종속성 주입](xref:fundamentals/dependency-injection))는 `
 `LogLevel` 키는 로그 이름을 나타냅니다. `Default` 키는 명시적으로 나열되지 않은 로그에 적용됩니다. 값은 지정된 로그에 적용된 [로그 수준](#log-level)을 나타냅니다.
 
 ::: moniker-end
+
+구성 공급자 구현에 대한 자세한 내용은 <xref:fundamentals/configuration/index>를 참조하세요.
 
 ## <a name="sample-logging-output"></a>샘플 로깅 출력
 
@@ -436,7 +448,7 @@ System.Exception: Item not found exception.
 > [!NOTE]
 > 범위 기반 로깅을 사용하려면 `IncludeScopes` 콘솔 로거 옵션을 구성해야 합니다.
 >
-> `IncludeScopes`는 *appsettings* 구성 파일을 통해 구성할 수 있습니다. 자세한 내용은 [파일 구성 설정](#settings-file-configuration) 섹션을 참조하세요.
+> 구성에 대한 자세한 내용은 [구성](#Configuration) 섹션을 참조하세요.
 
 ::: moniker-end
 
