@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 02/14/2017
 uid: mvc/views/working-with-forms
-ms.openlocfilehash: 3e4e597fde829ae2e2ce4dbd19a4ec0b42d078df
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 34a553c7ff8a18c367bf5e8079e2ea71f968bf3b
+ms.sourcegitcommit: 75bf5fdbfdcb6a7cfe8fe207b9ff37655ccbacd4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274855"
+ms.lasthandoff: 07/27/2018
+ms.locfileid: "39219422"
 ---
 # <a name="tag-helpers-in-forms-in-aspnet-core"></a>ASP.NET Core 형식의 태그 도우미
 
@@ -169,7 +169,7 @@ Type expected
 
 ### <a name="expression-names"></a>식 이름
 
-`asp-for` 특성 값은 `ModelExpression`이며 람다 식의 오른쪽입니다. 따라서 `asp-for="Property1"`은 생성된 코드에서 `m => m.Property1`이 됩니다. 따라서 `Model`과 함께 접두사로 사용할 필요가 없습니다. "@" 문자를 사용하여 인라인 식을 시작하고 `m.` 앞으로 이동할 수 있습니다.
+`asp-for` 특성 값은 `ModelExpression`이며 람다 식의 오른쪽입니다. 따라서 `asp-for="Property1"`은 생성된 코드에서 `m => m.Property1`이 됩니다. 따라서 `Model`과 함께 접두사로 사용할 필요가 없습니다. “\@” 문자를 사용하여 인라인 식을 시작하고 `m.` 앞으로 이동할 수 있습니다.
 
 ```HTML
 @{

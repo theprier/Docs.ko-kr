@@ -4,14 +4,14 @@ author: scottaddie
 description: ASP.NET Core Web API에서 다양한 컨트롤러 작업 메서드 반환 형식을 사용하는 방법을 알아봅니다.
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 03/21/2018
+ms.date: 07/23/2018
 uid: web-api/action-return-types
-ms.openlocfilehash: 422db97da222fb5e742e1d8e6ae410edc90dbc18
-ms.sourcegitcommit: ee2b26c7d08b38c908c668522554b52ab8efa221
+ms.openlocfilehash: 82d18d866d4d18613cccb950b2f30ae81bd749de
+ms.sourcegitcommit: 6425baa92cec4537368705f8d27f3d0e958e43cd
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/20/2018
-ms.locfileid: "36273558"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39220614"
 ---
 # <a name="controller-action-return-types-in-aspnet-core-web-api"></a>ASP.NET Core Web API에서 컨트롤러 작업 반환 형식
 
@@ -21,14 +21,19 @@ ms.locfileid: "36273558"
 
 ASP.NET Core에서는 Web API 컨트롤러 작업 반환 형식에 다음 옵션을 제공합니다.
 
-::: moniker range="<= aspnetcore-2.0"
-* [특정 형식](#specific-type)
-* [IActionResult](#iactionresult-type)
-::: moniker-end
 ::: moniker range=">= aspnetcore-2.1"
+
 * [특정 형식](#specific-type)
 * [IActionResult](#iactionresult-type)
 * [ActionResult\<T>](#actionresultt-type)
+
+::: moniker-end
+
+::: moniker range="<= aspnetcore-2.0"
+
+* [특정 형식](#specific-type)
+* [IActionResult](#iactionresult-type)
+
 ::: moniker-end
 
 이 문서에서는 각 반환 형식을 사용하는 것이 가장 적합한 경우를 설명합니다.
@@ -70,12 +75,25 @@ ASP.NET Core에서는 Web API 컨트롤러 작업 반환 형식에 다음 옵션
 이전 동작의 기타 알려진 반환 코드는 201이며 [CreatedAtAction](/dotnet/api/microsoft.aspnetcore.mvc.controllerbase.createdataction) 도우미 메서드에서 생성합니다. 이 경로에 `Product` 개체가 반환됩니다.
 
 ::: moniker range=">= aspnetcore-2.1"
+
 ## <a name="actionresultt-type"></a>ActionResult\<T> 형식
 
 ASP.NET Core 2.1은 Web API 컨트롤러 작업에 대해 [ActionResult\<T>](/dotnet/api/microsoft.aspnetcore.mvc.actionresult-1) 반환 형식을 소개합니다. [ActionResult](/dotnet/api/microsoft.aspnetcore.mvc.actionresult)에서 파생된 형식을 반환하거나 [특정 형식](#specific-type)을 반환할 수 있습니다. `ActionResult<T>`는 [IActionResult 형식](#iactionresult-type)을 통해 다음과 같은 혜택을 제공합니다.
 
-* [[ProducesResponseType]](/dotnet/api/microsoft.aspnetcore.mvc.producesresponsetypeattribute) 특성의 `Type` 속성을 제외할 수 있습니다.
+* [[ProducesResponseType]](/dotnet/api/microsoft.aspnetcore.mvc.producesresponsetypeattribute) 특성의 `Type` 속성을 제외할 수 있습니다. 예를 들어 `[ProducesResponseType(200, Type = typeof(Product))]`은 `[ProducesResponseType(200)]`으로 단순화됩니다. 작업의 예상 반환 형식은 대신 `ActionResult<T>`의 `T`에서 유추됩니다.
 * [암시적 캐스트 연산자](/dotnet/csharp/language-reference/keywords/implicit)는 `T` 및 `ActionResult` 모두를 `ActionResult<T>`로 변환하도록 지원합니다. `T`는 [ObjectResult](/dotnet/api/microsoft.aspnetcore.mvc.objectresult)로 변환합니다. 즉, `return new ObjectResult(T);`는 `return T;`로 간소화됩니다.
+
+C#은 인터페이스에서 암시적 캐스트 연산자를 지원하지 않습니다. 따라서 인터페이스를 구체적인 형식으로 전환하려면 `ActionResult<T>`를 사용해야 합니다. 예를 들어 다음 예제에서 `IEnumerable`을 사용하면 작동하지 않습니다.
+
+    ```csharp
+    [HttpGet]
+    public ActionResult<IEnumerable<Product>> Get()
+    {
+        return _repository.GetProducts();
+    }
+    ```
+
+이전 코드를 수정하는 한 가지 옵션으로 `_repository.GetProducts().ToList();`를 반환해 볼 수 있습니다.
 
 대부분의 작업에는 특정 반환 형식이 있습니다. 작업을 실행하는 동안 예기치 않은 조건이 발생할 수 있습니다. 이 경우에 특정 형식이 반환되지 않습니다. 예를 들어 작업의 입력 매개 변수는 모델 유효성 검사에 실패할 수 있습니다. 이러한 경우에 일반적으로 특정 형식이 아닌 적절한 `ActionResult` 형식을 반환합니다.
 
@@ -100,10 +118,11 @@ ASP.NET Core 2.1은 Web API 컨트롤러 작업에 대해 [ActionResult\<T>](/do
 
 > [!TIP]
 > ASP.NET Core 2.1을 기준으로 작업 매개 변수 바인딩 원본 유추는 컨트롤러 클래스를 `[ApiController]` 특성으로 데코레이팅할 때 사용합니다. 복합 형식 매개 변수는 요청 본문을 사용하여 자동으로 바인딩됩니다. 따라서 위 작업의 `product` 매개 변수가 [[FromBody]](/dotnet/api/microsoft.aspnetcore.mvc.frombodyattribute) 특성을 사용하여 명시적으로 주석으로 추가되지 않습니다.
+
 ::: moniker-end
 
 ## <a name="additional-resources"></a>추가 자료
 
-* [컨트롤러 작업](xref:mvc/controllers/actions)
-* [모델 유효성 검사](xref:mvc/models/validation)
-* [Swagger를 사용한 Web API 도움말 페이지](xref:tutorials/web-api-help-pages-using-swagger)
+* <xref:mvc/controllers/actions>
+* <xref:mvc/models/validation>
+* <xref:tutorials/web-api-help-pages-using-swagger>
