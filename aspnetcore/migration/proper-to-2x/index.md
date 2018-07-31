@@ -5,12 +5,12 @@ description: 기존 ASP.NET MVC 또는 Web API 앱을 ASP.NET Core.web으로 마
 ms.author: scaddie
 ms.date: 08/27/2017
 uid: migration/proper-to-2x/index
-ms.openlocfilehash: 285f252767e4eacbb6a9ccc50bd98d1916e26bd4
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 2f42ca6f9da8d9941e5bab40afc36c95360c3550
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273510"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342187"
 ---
 # <a name="migrate-from-aspnet-to-aspnet-core"></a>ASP.NET에서 ASP.NET Core로 마이그레이션
 
@@ -136,7 +136,7 @@ Unity를 사용한 종속성 주입 설정의 예로는 `UnityContainer`를 래�
 Unity에서 삽입한 것처럼 리포지토리는 어디든지 삽입될 수 있습니다.
 
 > [!NOTE]
-> ASP.NET Core의 종속성 주입에 대한 자세한 내용은 [ASP.NET Core의 종속성 주입](xref:fundamentals/dependency-injection#replacing-the-default-services-container)을 참조하세요.
+> 종속성 주입에 대한 자세한 내용은 [종속성 주입](xref:fundamentals/dependency-injection)을 참조하세요.
 
 ## <a name="serve-static-files"></a>정적 파일 제공
 

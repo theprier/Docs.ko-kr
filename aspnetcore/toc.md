@@ -141,6 +141,7 @@
 ### [Kestrel](xref:fundamentals/servers/kestrel)
 ### [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)
 ### [HTTP.sys](xref:fundamentals/servers/httpsys)
+## [리포지토리 패턴](xref:fundamentals/repository-pattern)
 ## [전역화 및 지역화](xref:fundamentals/localization)
 ### [Orchard Core를 사용하여 이식 가능 개체 지역화 구성](xref:fundamentals/portable-object-localization)
 ## [HTTP 요청 시작](xref:fundamentals/http-requests)

@@ -1,16 +1,16 @@
 ---
 title: ASP.NET에서 ASP.NET Core 2.0으로 마이그레이션
 author: isaac2004
-description: 기존 ASP.NET MVC 또는 Web API 응용 프로그램을 마이그레이션하여 ASP.NET 코어 2.0에 대 한 지침을 수신 합니다.
+description: 마이그레이션 기존 ASP.NET MVC 또는 Web API 응용 프로그램을 ASP.NET Core 2.0에 대 한 지침을 받습니다.
 ms.author: scaddie
 ms.date: 08/27/2017
 uid: migration/mvc2
-ms.openlocfilehash: 68b00ead1b0bf785211638692cdbeab226a2cb4e
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: d8a3f76bb5125a1ec76d0435ff3317f939a4ec67
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278637"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342259"
 ---
 # <a name="migrate-from-aspnet-to-aspnet-core-20"></a>ASP.NET에서 ASP.NET Core 2.0으로 마이그레이션
 
@@ -20,12 +20,12 @@ ms.locfileid: "36278637"
 
 ## <a name="prerequisites"></a>전제 조건
 
-설치 **하나의** 에서 다음 중 [.NET 다운로드: Windows](https://www.microsoft.com/net/download/windows):
+설치할 **하나** 에서 다음 중 [.NET 다운로드: Windows](https://www.microsoft.com/net/download/windows):
 
 * .NET Core SDK
 * Windows 용 visual Studio
-  * **ASP.NET 및 웹 개발** 작업
-  * **.NET core 플랫폼 간 개발** 작업
+  * **ASP.NET 및 웹 개발** 워크로드
+  * **.NET Core 플랫폼 간 개발** 워크로드
 
 ## <a name="target-frameworks"></a>대상 프레임워크
 ASP.NET Core 2.0 프로젝트를 사용하면 개발자가 유연하게 .NET Core, .NET Framework 또는 두 항목을 모두 대상으로 지정하거나 둘 다 대상으로 지정할 수 있습니다. 가장 적절한 대상 프레임워크를 결정하려면 [서버 앱에 대해 .NET Core와 .NET Framework 중에서 선택](https://docs.microsoft.com/dotnet/standard/choosing-core-framework-server)을 참조하세요.
@@ -110,11 +110,12 @@ services.Configure<AppConfiguration>(Configuration.GetSection("AppConfiguration"
 **참고:** ASP.NET Core 구성에 대한 자세한 내용은 [ASP.NET Core의 구성](xref:fundamentals/configuration/index)을 참조하세요.
 
 ## <a name="native-dependency-injection"></a>네이티브 종속성 주입
-크고 확장 가능한 응용 프로그램을 빌드할 때 중요한 목표는 구성 요소와 서비스를 느슨하게 결합하는 것입니다. [종속성 주입](xref:fundamentals/dependency-injection)은 이 목표를 위해 널리 사용되는 기술이고 ASP.NET Core의 네이티브 구성 요소입니다.
 
-ASP.NET 응용 프로그램에서 개발자는 타사 라이브러리를 사용하여 종속성 주입을 구현합니다. 이러한 라이브러리 중 하나는 Microsoft Patterns & Practices에서 제공하는 [Unity](https://github.com/unitycontainer/unity)입니다. 
+크고 확장 가능한 응용 프로그램을 빌드할 때 중요한 목표는 구성 요소와 서비스를 느슨하게 결합하는 것입니다. [종속성 주입](xref:fundamentals/dependency-injection) 은이 목표를 위해 널리 사용 되는 기술이 고 ASP.NET Core의 네이티브 구성 요소는 것입니다.
 
-Unity를 사용한 종속성 주입 설정의 예로는 `UnityContainer`를 래핑하는 `IDependencyResolver`를 구현하는 것입니다.
+개발자는 ASP.NET 응용 프로그램에서 종속성 주입을 구현 하는 타사 라이브러리에 의존 합니다. 이러한 라이브러리 중 하나는 Microsoft Patterns & Practices에서 제공하는 [Unity](https://github.com/unitycontainer/unity)입니다.
+
+Unity 사용한 종속성 주입 설정의 예로 구현 `IDependencyResolver` 래핑하는 `UnityContainer`:
 
 [!code-csharp[](../../../aspnet/web-api/overview/advanced/dependency-injection/samples/sample8.cs)]
 
@@ -126,15 +127,16 @@ Unity를 사용한 종속성 주입 설정의 예로는 `UnityContainer`를 래�
 
 [!code-csharp[](../../../aspnet/web-api/overview/advanced/dependency-injection/samples/sample5.cs)]
 
-종속성 주입은 ASP.NET Core의 일부이므로 *Startup.cs*의 `ConfigureServices` 메서드에서 서비스를 추가할 수 있습니다.
+종속성 주입은 ASP.NET Core의 일부를 서비스에 추가할 수 있습니다는 `Startup.ConfigureServices`:
 
 [!code-csharp[](samples/configure-services.cs)]
 
 Unity에서 삽입한 것처럼 리포지토리는 어디든지 삽입될 수 있습니다.
 
-**참고:** ASP.NET Core의 종속성 주입에 대한 자세한 내용은 [ASP.NET Core의 종속성 주입](xref:fundamentals/dependency-injection#replacing-the-default-services-container)을 참조하세요.
+ASP.NET Core에서 종속성 주입에 대 한 자세한 내용은 참조 하세요. [종속성 주입](xref:fundamentals/dependency-injection)합니다.
 
 ## <a name="serving-static-files"></a>정적 파일 지원
+
 웹 개발의 중요한 부분은 정적 클라이언트 쪽 자산을 지원하는 기능입니다. 정적 파일의 가장 일반적인 예로는 HTML, CSS, Javascript 및 이미지가 있습니다. 이러한 파일은 앱(또는 CDN)의 게시된 위치에 저장되고 요청을 통해 로드될 수 있도록 참조되어야 합니다. 이 프로세스는 ASP.NET Core에서 변경되었습니다.
 
 ASP.NET에서 정적 파일은 다양한 디렉터리에 저장되고 뷰에서 참조됩니다.
@@ -147,7 +149,7 @@ ASP.NET Core에서 정적 파일은 별도로 구성되지 않는 한 “웹 루
 
 예를 들어 *wwwroot/images* 폴더의 이미지 자산은 `http://<app>/images/<imageFileName>`과 같은 위치의 브라우저에 액세스할 수 있습니다.
 
-**참고:** ASP.NET Core에 정적 파일 처리에 대 한 자세한 참조를 참조 하십시오. [정적 파일](xref:fundamentals/static-files)합니다.
+**참고:** ASP.NET Core에서 정적 파일 지원에 대 한 자세한 참조를 참조 하세요. [정적 파일](xref:fundamentals/static-files)합니다.
 
 ## <a name="additional-resources"></a>추가 자료
 
