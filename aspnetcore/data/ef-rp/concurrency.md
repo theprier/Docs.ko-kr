@@ -5,12 +5,12 @@ description: 이 자습서에는 여러 사용자가 동시에 같은 엔터티�
 ms.author: riande
 ms.date: 11/15/2017
 uid: data/ef-rp/concurrency
-ms.openlocfilehash: ff9e52df63f9c9f47ee659a68beb28b773a114a1
-ms.sourcegitcommit: a3675f9704e4e73ecc7cbbbf016a13d2a5c4d725
+ms.openlocfilehash: a010e2ed660bea56b112799e850f2fb0ff37579e
+ms.sourcegitcommit: 8f8924ce4eb9effeaf489f177fb01b66867da16f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39202694"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39219396"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---concurrency---8-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 동시성 - 8/8
 
@@ -153,24 +153,23 @@ dotnet ef database update
 <a name="scaffold"></a>
 ## <a name="scaffold-the-departments-model"></a>부서 모델 스캐폴드
 
-* Visual Studio를 끝냅니다.
-* 프로젝트 디렉터리(*Program.cs*, *Startup.cs* 및 *.csproj* 파일이 포함된 디렉터리)에서 명령 창을 엽니다.
-* 다음 명령을 실행합니다.
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio) 
+
+[학생 모델 스캐폴드](xref:data/ef-rp/intro#scaffold-the-student-model)의 지침을 따르고 `Department`를 모델 클래스로 사용합니다.
+
+# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
+
+ 다음 명령을 실행합니다.
 
   ```console
   dotnet aspnet-codegenerator razorpage -m Department -dc SchoolContext -udl -outDir Pages\Departments --referenceScriptLibraries
   ```
 
+------
+
 위의 명령은 `Department` 모델을 스캐폴드합니다. Visual Studio에서 프로젝트를 엽니다.
 
-프로젝트를 빌드합니다. 빌드는 다음과 같은 오류를 생성합니다.
-
-`1>Pages/Departments/Index.cshtml.cs(26,37,26,43): error CS1061: 'SchoolContext' does not
- contain a definition for 'Department' and no extension method 'Department' accepting a first
- argument of type 'SchoolContext' could be found (are you missing a using directive or
- an assembly reference?)`
-
- 전체적으로 `_context.Department`를 `_context.Departments`로 변경합니다(즉, “s”를 `Department`에 추가). 7개 항목이 발견되어 업데이트됩니다.
+프로젝트를 빌드합니다.
 
 ### <a name="update-the-departments-index-page"></a>부서 인덱스 페이지 업데이트
 
