@@ -5,12 +5,12 @@ description: 이 자습서에서는 관련된 데이터 즉, Entity Framework에
 ms.author: riande
 ms.date: 11/05/2017
 uid: data/ef-rp/read-related-data
-ms.openlocfilehash: bcea6aa6018a937979b8e0aaa2edcdd96da41559
-ms.sourcegitcommit: a3675f9704e4e73ecc7cbbbf016a13d2a5c4d725
+ms.openlocfilehash: bb1d087a5449c6e26c40e572d161dd9644ac2323
+ms.sourcegitcommit: 8f8924ce4eb9effeaf489f177fb01b66867da16f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39202681"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39219344"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---read-related-data---6-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 관련 데이터 읽기 - 6/8
 
@@ -69,14 +69,19 @@ ms.locfileid: "39202681"
 <a name="scaffold"></a>
 ### <a name="scaffold-the-course-model"></a>과정 모델 스캐폴드
 
-* Visual Studio를 끝냅니다.
-* 프로젝트 디렉터리(*Program.cs*, *Startup.cs* 및 *.csproj* 파일이 포함된 디렉터리)에서 명령 창을 엽니다.
-* 다음 명령을 실행합니다.
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio) 
+
+[학생 모델 스캐폴드](xref:data/ef-rp/intro#scaffold-the-student-model)의 지침을 따르고 `Course`를 모델 클래스로 사용합니다.
+
+# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
+
+ 다음 명령을 실행합니다.
 
   ```console
-  dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version 2.1.0
   dotnet aspnet-codegenerator razorpage -m Course -dc SchoolContext -udl -outDir Pages\Courses --referenceScriptLibraries
   ```
+
+------
 
 위의 명령은 `Course` 모델을 스캐폴드합니다. Visual Studio에서 프로젝트를 엽니다.
 
@@ -150,21 +155,21 @@ ms.locfileid: "39202681"
 
 ### <a name="scaffold-the-instructor-model"></a>강사 모델 스캐폴드
 
-* Visual Studio를 끝냅니다.
-* 프로젝트 디렉터리(*Program.cs*, *Startup.cs* 및 *.csproj* 파일이 포함된 디렉터리)에서 명령 창을 엽니다.
-* 다음 명령을 실행합니다.
+# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio) 
+
+[학생 모델 스캐폴드](xref:data/ef-rp/intro#scaffold-the-student-model)의 지침을 따르고 `Instructor`를 모델 클래스로 사용합니다.
+
+# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
+
+ 다음 명령을 실행합니다.
 
   ```console
   dotnet aspnet-codegenerator razorpage -m Instructor -dc SchoolContext -udl -outDir Pages\Instructors --referenceScriptLibraries
   ```
 
-위의 명령은 `Instructor` 모델을 스캐폴드합니다. Visual Studio에서 프로젝트를 엽니다.
+------
 
-프로젝트를 빌드합니다. 빌드에서 오류를 생성합니다.
-
-`_context.Instructor`를 `_context.Instructors`로 전역으로 변경합니다(즉, “s”를 `Instructor`에 추가). 7개 항목이 발견되어 업데이트됩니다.
-
-앱을 실행하고 강사 페이지로 이동합니다.
+위의 명령은 `Instructor` 모델을 스캐폴드합니다. 앱을 실행하고 강사 페이지로 이동합니다.
 
 *Pages/Instructors/Index.cshtml.cs*를 다음 코드로 바꿉니다.
 

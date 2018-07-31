@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 07/05/2018
 uid: fundamentals/error-handling
-ms.openlocfilehash: 6aded9525a0abd31dec8441c7fba60d8845c7d93
-ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
+ms.openlocfilehash: d7e60c0f615841461a17b093bffe5fb3f82f8616
+ms.sourcegitcommit: 506a199274e9fe5fb4070b273ba94f29f14cb619
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37938243"
+ms.lasthandoff: 07/28/2018
+ms.locfileid: "39332277"
 ---
 # <a name="handle-errors-in-aspnet-core"></a>ASP.NET Core에서 오류 처리
 
@@ -103,11 +103,11 @@ app.UseStatusCodePages();
 app.UseStatusCodePages("text/plain", "Status code page, status code: {0}");
 ```
 
-또한 리디렉션 및 다시 실행 확장 메서드도 있습니다. 리디렉션 메서드는 *302 있음* 상태 코드를 클라이언트에 보냅니다.
+또한 리디렉션 및 다시 실행 확장 메서드도 있습니다. 리디렉션 메서드는 *302 있음* 상태 코드를 클라이언트에 보내서 클라이언트를 제공된 위치 URL 템플릿으로 리디렉션합니다. 템플릿에는 상태 코드에 대한 `{0}` 자리 표시자가 포함될 수 있습니다. `~`로 시작되는 URL 앞에는 기본 경로가 추가됩니다. `~`로 시작하지 않는 URL은 그대로 사용됩니다.
 
 [!code-csharp[](error-handling/samples/2.x/ErrorHandlingSample/Startup.cs?name=snippet_StatusCodePagesWithRedirect)]
 
-다시 실행 메서드는 원래 상태 코드를 클라이언트에 반환할 뿐만 아니라 리디렉션 URL에 대한 처리기도 실행합니다.
+다시 실행 메서드는 원래 상태 코드를 클라이언트에 반환하고 대체 경로를 사용하여 요청 파이프 라인을 다시 실행하여 응답 본문이 생성되도록 지정합니다. 이 경로에는 상태 코드에 대한 `{0}` 자리 표시자가 포함될 수 있습니다.
 
 ```csharp
 app.UseStatusCodePagesWithReExecute("/error/{0}");

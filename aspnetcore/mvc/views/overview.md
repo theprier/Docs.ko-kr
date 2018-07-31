@@ -5,12 +5,12 @@ description: ASP.NET Core MVC에서 뷰가 앱의 데이터 프레젠테이션�
 ms.author: riande
 ms.date: 12/12/2017
 uid: mvc/views/overview
-ms.openlocfilehash: 4d5cb6288711cdef145ebb0b52e4e645c535bdf2
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 276540a5d77b1d65119d1b2104508d77f45d5588
+ms.sourcegitcommit: 8f8924ce4eb9effeaf489f177fb01b66867da16f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278351"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39219370"
 ---
 # <a name="views-in-aspnet-core-mvc"></a>ASP.NET Core MVC에서 뷰
 
@@ -39,7 +39,7 @@ ASP.NET Core MVC에서 뷰는 Razor 태그에서 [C# 프로그래밍 언어](/do
 * 앱이 더 잘 구성되어 있기 때문에 유지 관리가 더 쉽습니다. 뷰는 일반적으로 앱 기능별로 그룹화됩니다. 이렇게 하면 기능을 사용할 때 관련 뷰를 보다 쉽게 찾을 수 있습니다.
 * 앱의 일부는 느슨하게 결합되어 있습니다. 비즈니스 논리 및 데이터 액세스 구성 요소와 별도로 앱의 뷰를 작성하고 업데이트할 수 있습니다. 앱의 다른 부분을 업데이트하지 않고도 앱의 뷰를 수정할 수 있습니다.
 * 뷰는 별도의 단위이므로 앱의 사용자 인터페이스 부분을 보다 쉽게 테스트할 수 있습니다.
-* 더 나은 구성으로 사용자 인터페이스 섹션을 실수로 반복하는 일이 줄어듭니다.
+* 구성이 개선되어 사용자 인터페이스 섹션을 실수로 반복하는 일이 줄어듭니다.
 
 ## <a name="creating-a-view"></a>뷰 만들기
 
@@ -124,8 +124,8 @@ return View("./About");
 
 * 강력한 형식의 데이터: viewmodel
 * 약한 형식의 데이터
-  - `ViewData` (`ViewDataAttribute`)
-  - `ViewBag`
+  * `ViewData` (`ViewDataAttribute`)
+  * `ViewBag`
 
 ### <a name="strongly-typed-data-viewmodel"></a>강력한 형식의 데이터(viewmodel)
 
@@ -192,7 +192,7 @@ viewmodel 형식 및 비즈니스 모델 형식 모두에 같은 클래스를 �
 
 `ViewBag` *은 Razor 페이지에서 사용할 수 없습니다.*
 
-강력한 형식의 뷰 외에도, 뷰는 *약한형*(*느슨한 형*이라고도 함) 데이터 컬렉션에 액세스할 수 있습니다. 강력한 형식과 달리, *약한 형식*(또는 *느슨한 형식*)은 사용 중인 데이터 형식을 명시적으로 선언하지 않는 것을 의미합니다. 컨트롤러 및 뷰 간에 적은 양의 데이터를 전달하기 위해 약한형 데이터 컬렉션을 사용할 수 있습니다.
+강력한 형식의 뷰 외에도, 뷰는 *약한 형식*(*느슨한 형식*이라고도 함) 데이터 컬렉션에 액세스할 수 있습니다. 강력한 형식과 달리, *약한 형식*(또는 *느슨한 형식*)은 사용 중인 데이터 형식을 명시적으로 선언하지 않는 것을 의미합니다. 컨트롤러 및 뷰 간에 적은 양의 데이터를 전달하기 위해 약한 형식의 데이터 컬렉션을 사용할 수 있습니다.
 
 | 다음 사이에 데이터 전달 ...                        | 예                                                                        |
 | ------------------------------------------------- | ------------------------------------------------------------------------------ |
@@ -200,7 +200,7 @@ viewmodel 형식 및 비즈니스 모델 형식 모두에 같은 클래스를 �
 | 뷰 및 [레이아웃 뷰](xref:mvc/views/layout)   | 뷰 파일의 레이아웃 뷰에서 **\<title>** 요소 콘텐츠를 설정합니다.  |
 | [부분 뷰](xref:mvc/views/partial) 및 뷰 | 사용자가 요청한 웹 페이지에 따라 데이터를 표시하는 위젯입니다.      |
 
-이 컬렉션은 컨트롤러 및 뷰의 `ViewData` 또는 `ViewBag` 속성을 통해 참조할 수 있습니다. `ViewData` 속성은 약한형 개체의 사전입니다. `ViewBag` 속성은 기본 `ViewData` 컬렉션에 대해 동적 속성을 제공하는 `ViewData` 주변의 래퍼입니다.
+이 컬렉션은 컨트롤러 및 뷰의 `ViewData` 또는 `ViewBag` 속성을 통해 참조할 수 있습니다. `ViewData` 속성은 약한 형식 개체의 사전입니다. `ViewBag` 속성은 기본 `ViewData` 컬렉션에 대해 동적 속성을 제공하는 `ViewData` 주변의 래퍼입니다.
 
 `ViewData` 및 `ViewBag`은 런타임에 동적으로 확인됩니다. 컴파일 시간 형식 검사를 제공하지 않으므로 일반적으로 둘 다 viewmodel을 사용하는 것보다 오류가 발생하기 더 쉽습니다. 이러한 이유로, 일부 개발자는 `ViewData` 및 `ViewBag`을 최소한으로 사용하거나 아예 사용하지 않습니다.
 
@@ -247,6 +247,7 @@ public IActionResult SomeAction()
 ```
 
 ::: moniker range=">= aspnetcore-2.1"
+
 **ViewData 특성**
 
 [ViewDataDictionary](/dotnet/api/microsoft.aspnetcore.mvc.viewfeatures.viewdatadictionary)를 사용하는 또 다른 방법은 [ViewDataAttribute](/dotnet/api/microsoft.aspnetcore.mvc.viewdataattribute)입니다. `[ViewData]`로 데코레이팅된 컨트롤러 또는 Razor 페이지 모델의 속성은 값을 사전에서 저장하고 로드됩니다.
@@ -284,6 +285,7 @@ public class HomeController : Controller
     <title>@ViewData["Title"] - WebApplication</title>
     ...
 ```
+
 ::: moniker-end
 
 **ViewBag**

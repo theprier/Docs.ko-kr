@@ -5,12 +5,12 @@ description: 이 자습서에서는 더 많은 엔터티 및 관계를 추가하
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/complex-data-model
-ms.openlocfilehash: 6888df174e92ab2ddf8add7b8927250be320bff8
-ms.sourcegitcommit: a3675f9704e4e73ecc7cbbbf016a13d2a5c4d725
+ms.openlocfilehash: 88d727b0545f1dacb56ea889e45b02f947867b19
+ms.sourcegitcommit: 6425baa92cec4537368705f8d27f3d0e958e43cd
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39202655"
+ms.lasthandoff: 07/24/2018
+ms.locfileid: "39220601"
 ---
 # <a name="razor-pages-with-ef-core-in-aspnet-core---data-model---5-of-8"></a>ASP.NET Core에서 EF Core를 사용한 Razor 페이지 - 데이터 모델 - 5/8
 
@@ -400,7 +400,7 @@ public ICollection<Course> Courses { get; set; }
 
 위의 코드는 부서 강사 관계에서 계단식 삭제를 비활성화합니다.
 
-## <a name="update-the-enrollment-entityupdate-the-enrollment-entity"></a>등록 엔터티 업데이트등록 엔터티 업데이트
+## <a name="update-the-enrollment-entity"></a>등록 엔터티 업데이트
 
 등록 레코드는 한 명의 학생이 수행하는 하나의 강좌에 대한 것입니다.
 

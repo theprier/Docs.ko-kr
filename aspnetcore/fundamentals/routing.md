@@ -3,14 +3,14 @@ title: ASP.NET Core에서 라우팅
 author: ardalis
 description: ASP.NET Core 라우팅 기능에서 들어오는 요청을 경로 처리기에 매핑하는 일을 담당하는 방법을 파악합니다.
 ms.author: riande
-ms.date: 10/14/2016
+ms.date: 07/25/2018
 uid: fundamentals/routing
-ms.openlocfilehash: 4482c865671eb4f5decbd5f1cd6e26f2e68e5c25
-ms.sourcegitcommit: e22097b84d26a812cd1380a6b2d12c93e522c125
+ms.openlocfilehash: 19265ac4d19915462c50628061600b1fde04694b
+ms.sourcegitcommit: c8e62aa766641aa55105f7db79cdf2b27a6e5977
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/22/2018
-ms.locfileid: "36314138"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39254885"
 ---
 # <a name="routing-in-aspnet-core"></a>ASP.NET Core에서 라우팅
 
@@ -322,17 +322,24 @@ public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
 | `regex(expression)` | `{ssn:regex(^\\d{{3}}-\\d{{2}}-\\d{{4}}$)}` | `123-45-6789` | 문자열은 정규식과 일치해야 합니다(정규식 정의에 대한 팁 참조). |
 | `required`  | `{name:required}` | `Rick` |  URL을 생성하는 동안 비-매개 변수 값이 있도록 하는 데 사용됨 |
 
+콜론으로 구분된 여러 개의 제약 조건을 단일 매개 변수에 적용할 수 있습니다. 예를 들어 다음 제약 조건은 매개 변수를 1 이상의 정수 값으로 제한합니다.
+
+```csharp
+[Route("users/{id:int:min(1)}")]
+public User GetUserById(int id) { }
+```
+
 >[!WARNING]
 > CLR 형식(예: `int` 또는 `DateTime`)으로 변환될 수 있는 URL을 확인하는 경로 제약 조건은 항상 고정 문화권을 사용합니다. URL은 지역화될 수 없다고 가정합니다. 프레임워크에서 제공한 경로 제약 조건은 경로 값에 저장된 값을 수정하지 않습니다. URL에서 구문 분석되는 모든 경로 값은 문자열로 저장됩니다. 예를 들어 [부동 경로 제약 조건](https://github.com/aspnet/Routing/blob/1.0.0/src/Microsoft.AspNetCore.Routing/Constraints/FloatRouteConstraint.cs#L44-L60)은 경로 값을 부동으로 변환하려고 하지만 변환된 값은 부동으로 변환될 수 있는지 확인하는 데만 사용됩니다.
 
-## <a name="regular-expressions"></a>정규식 
+## <a name="regular-expressions"></a>정규식
 
 ASP.NET Core 프레임워크는 정규식 생성자에 `RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.CultureInvariant`를 추가합니다. 이러한 멤버에 대한 설명은 [RegexOptions 열거](/dotnet/api/system.text.regularexpressions.regexoptions)를 참조하세요.
 
-정규식은 라우팅 및 C# 언어에서 사용하는 것과 유사한 구분 기호 및 토큰을 사용합니다. 정규식 토큰은 이스케이프되어야 합니다. 예를 들어 라우팅에서 `^\d{3}-\d{2}-\d{4}$` 정규식을 사용하려면 `\` 문자열 이스케이프 문자를 이스케이프하도록 C# 원본 파일에서 `\\`로 입력된 `\` 문자를 가져야 합니다([약어 문자열 리터럴](https://docs.microsoft.com/dotnet/csharp/language-reference/keywords/string)을 사용하지 않는 한). `{`, `}`, '['및']' 문자는 라우팅 매개 변수 구분 기호 문자를 이스케이프하도록 이중으로 처리하여 이스케이프되어야 합니다.  아래 표는 정규식 및 이스케이프된 버전을 보여 줍니다.
+정규식은 라우팅 및 C# 언어에서 사용하는 것과 유사한 구분 기호 및 토큰을 사용합니다. 정규식 토큰은 이스케이프되어야 합니다. 예를 들어 라우팅에서 `^\d{3}-\d{2}-\d{4}$` 정규식을 사용하려면 `\` 문자열 이스케이프 문자를 이스케이프하도록 C# 원본 파일에서 `\\`로 입력된 `\` 문자를 가져야 합니다([약어 문자열 리터럴](/dotnet/csharp/language-reference/keywords/string)을 사용하지 않는 한). `{`, `}`, '['및']' 문자는 라우팅 매개 변수 구분 기호 문자를 이스케이프하도록 이중으로 처리하여 이스케이프되어야 합니다.  아래 표는 정규식 및 이스케이프된 버전을 보여 줍니다.
 
 | 식               | 참고 |
-| ----------------- | ------------ | 
+| ----------------- | ------------ |
 | `^\d{3}-\d{2}-\d{4}$` | 정규식 |
 | `^\\d{{3}}-\\d{{2}}-\\d{{4}}$` | 이스케이프됨  |
 | `^[a-z]{2}$` | 정규식 |
@@ -341,7 +348,7 @@ ASP.NET Core 프레임워크는 정규식 생성자에 `RegexOptions.IgnoreCase 
 라우팅에 사용된 정규식은 종종 `^` 문자(문자열의 시작 위치와 일치)로 시작하고 `$` 문자(문자열의 끝 위치와 일치)로 끝납니다. `^` 및 `$` 문자는 정규식이 전체 경로 매개 변수 값과 일치하도록 합니다. `^` 및 `$` 문자 없이 정규식은 문자열 내의 모든 하위 문자열과 일치합니다. 이는 종종 원하는 것이 아닙니다. 아래 표는 몇 가지 예를 보여 주고 일치하거나 일치에 실패하는 이유를 설명합니다.
 
 | 식               | 문자열 | 일치 | 주석 |
-| ----------------- | ------------ |  ------------ |  ------------ | 
+| ----------------- | ------------ |  ------------ |  ------------ |
 | `[a-z]{2}` | hello | 예 | 부분 문자열 일치 |
 | `[a-z]{2}` | 123abc456 | 예 | 부분 문자열 일치 |
 | `[a-z]{2}` | mz | 예 | 식 일치 |

@@ -5,14 +5,14 @@ description: ASP.NET Core 부분 태그 도우미와 부분 보기를 렌더링�
 monikerRange: '>= aspnetcore-2.1'
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 07/06/2018
+ms.date: 07/25/2018
 uid: mvc/views/tag-helpers/builtin-th/partial-tag-helper
-ms.openlocfilehash: a289a946a6d3eb491a08103dcefdd688eab52072
-ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
+ms.openlocfilehash: cb63357b1859c3709b2eae9f4e380c4a74e5e448
+ms.sourcegitcommit: c8e62aa766641aa55105f7db79cdf2b27a6e5977
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37938341"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39254755"
 ---
 # <a name="partial-tag-helper-in-aspnet-core"></a>ASP.NET Core의 부분 태그 도우미
 
@@ -43,7 +43,7 @@ ms.locfileid: "37938341"
 
 ## <a name="name"></a>name
 
-`name` 특성은 필수입니다. 이 특성은 렌더링할 부분 뷰의 이름 또는 경로를 나타냅니다. 부분 뷰의 이름을 지정할 경우 [뷰 탐색](xref:mvc/views/overview#view-discovery) 과정이 시작됩니다. 명시적인 경로가 지정될 경우에는 이 과정이 생략됩니다.
+`name` 특성은 필수입니다. 이 특성은 렌더링할 부분 뷰의 이름 또는 경로를 나타냅니다. 부분 뷰의 이름을 지정할 경우 [뷰 탐색](xref:mvc/views/overview#view-discovery) 과정이 시작됩니다. 명시적인 경로가 지정될 경우에는 이 과정이 생략됩니다. 허용되는 모든 `name` 값은 [부분 보기 검색](xref:mvc/views/partial#partial-view-discovery)을 참조하세요.
 
 다음 태그는 명시적인 경로를 사용해서 *Shared* 폴더의 *_ProductPartial.cshtml*을 로드하도록 지시합니다. [for](#for) 특성을 사용하면 바인딩을 위한 모델이 부분 뷰에 전달됩니다.
 
