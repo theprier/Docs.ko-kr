@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.date: 6/16/2018
 uid: security/authentication/add-user-data
-ms.openlocfilehash: ecd0e6d1c71b24309fab70fbb06af7731463bb0e
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 6f583d65460803c816bf1ccd314216952710cd55
+ms.sourcegitcommit: e955a722c05ce2e5e21b4219f7d94fb878e255a6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38215937"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39378617"
 ---
 # <a name="add-download-and-delete-custom-user-data-to-identity-in-an-aspnet-core-project"></a>추가, 다운로드 및 ASP.NET Core 프로젝트에서 Id에 사용자 지정 사용자 데이터를 삭제 합니다.
 
@@ -61,8 +61,8 @@ dotnet new webapp -o WebApp1
   * 재정의 하려면 다음 파일을 선택 합니다.
     * **계정/등록**
     * **계정 / / 인덱스 관리**
-  * 선택 된 **+** 새 단추 **데이터 컨텍스트 클래스**합니다. 형식을 수락 (**WebApp1.Models.WebApp1Context** 프로젝트 이름을 지정한 경우 **WebApp1**).
-  * 선택 된 **+** 새 단추 **사용자 클래스**합니다. 형식을 수락 (**WebApp1User** 프로젝트 이름을 지정한 경우 **WebApp1**) > **추가**합니다.
+  * 선택 된 **+** 새 단추 **데이터 컨텍스트 클래스**합니다. 형식을 수락 (**WebApp1.Models.WebApp1Context** 프로젝트의 이름이 **WebApp1**).
+  * 선택 된 **+** 새 단추 **사용자 클래스**합니다. 형식을 수락 (**WebApp1User** 프로젝트의 이름이 **WebApp1**) > **추가**합니다.
 * 선택 **추가**합니다.
 
 # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
