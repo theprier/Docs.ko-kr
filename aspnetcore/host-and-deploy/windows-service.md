@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/04/2018
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: 4fd0cc881eff3b1bbdfdf51e223d0fd42051c31d
-ms.sourcegitcommit: 516d0645c35ea784a3ae807be087ae70446a46ee
+ms.openlocfilehash: 4aded0b87ca14a5c09844cc378efb1ac0c12a289
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/27/2018
-ms.locfileid: "39320741"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342158"
 ---
 # <a name="host-aspnet-core-in-a-windows-service"></a>Windows 서비스에서 ASP.NET Core 호스트
 
@@ -82,7 +82,7 @@ IIS를 [Windows 서비스](/dotnet/framework/windows-services/introduction-to-wi
 
      ::: moniker-end
 
-1. 앱을 게시합니다. [dotnet publish](/dotnet/articles/core/tools/dotnet-publish) 또는 [Visual Studio 게시 프로필](xref:host-and-deploy/visual-studio-publish-profiles)을 사용합니다.
+1. 앱을 게시합니다. [dotnet publish](/dotnet/articles/core/tools/dotnet-publish) 또는 [Visual Studio 게시 프로필](xref:host-and-deploy/visual-studio-publish-profiles)을 사용합니다. Visual Studio를 사용할 때 **FolderProfile**을 선택합니다.
 
    명령줄에서 샘플 앱을 게시하려면 프로젝트 폴더의 콘솔 창에서 다음 명령을 실행합니다.
 
@@ -96,16 +96,19 @@ IIS를 [Windows 서비스](/dotnet/framework/windows-services/introduction-to-wi
    sc create <SERVICE_NAME> binPath= "<PATH_TO_SERVICE_EXECUTABLE>"
    ```
 
-   프로젝트 폴더에서 게시된 서비스의 경우 *publish* 폴더에 대한 경로를 사용하여 서비스를 만듭니다. 다음 예제에서 서비스는 다음과 같습니다.
+   프로젝트 폴더에서 게시된 서비스의 경우 *publish* 폴더에 대한 경로를 사용하여 서비스를 만듭니다. 다음 예제에서는
 
-   * **MyService**라는 이름을 지정합니다.
-   * *c:\\my_services\\AspNetCoreService\\bin\\Release\\&lt;TARGET_FRAMEWORK&gt;\\publish* 폴더에 게시합니다.
-   * *AspNetCoreService.exe*라는 앱 실행 파일에서 나타냅니다.
+   * 프로젝트는 `c:\my_services\AspNetCoreService` 폴더에 있습니다.
+   * 프로젝트는 `Release` 구성에 게시됩니다.
+   * TFM(대상 프레임워크 모니커)은 `netcoreapp2.1`입니다.
+   * RID(런타임 ID)는 `win7-x64`입니다.
+   * 앱 실행 파일의 이름은 *AspNetCoreService.exe*입니다.
+   * 서비스의 이름은 **MyService**입니다.
 
-   관리자 권한으로 명령 셸을 열고 다음 명령을 실행합니다.
+   예제:
 
    ```console
-   sc create MyService binPath= "c:\my_services\AspNetCoreService\bin\Release\<TARGET_FRAMEWORK>\publish\AspNetCoreService.exe"
+   sc create MyService binPath= "c:\my_services\AspNetCoreService\bin\Release\netcoreapp2.1\win7-x64\publish\AspNetCoreService.exe"
    ```
    
    > [!IMPORTANT]
@@ -113,7 +116,7 @@ IIS를 [Windows 서비스](/dotnet/framework/windows-services/introduction-to-wi
    
    다른 폴더의 서비스를 게시하고 시작하려면:
    
-   1. `dotnet publish` 명령에 대해 [--output &lt;OUTPUT_DIRECTORY&gt;](/dotnet/core/tools/dotnet-publish#options) 옵션을 사용합니다.
+      1. `dotnet publish` 명령에 대해 [--output &lt;OUTPUT_DIRECTORY&gt;](/dotnet/core/tools/dotnet-publish#options) 옵션을 사용합니다. Visual Studio를 사용하는 경우 **게시** 단추를 선택하기 전에 **FolderProfile** 게시 속성 페이지에 **대상 위치**를 구성하세요.
    1. 출력 폴더 경로를 사용하는 `sc.exe` 명령으로 서비스를 만듭니다. `binPath`에 제공된 경로에 서비스의 실행 파일 이름을 포함합니다.
 
 1. `sc start <SERVICE_NAME>` 명령을 사용하여 서비스를 시작합니다.
