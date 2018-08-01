@@ -5,12 +5,12 @@ description: ASP.NET Core의 로깅 프레임워크에 대해 알아봅니다. �
 ms.author: tdykstra
 ms.date: 07/24/2018
 uid: fundamentals/logging/index
-ms.openlocfilehash: 5d31c5609c0e98a81d76ce0581f1c63f349d14d0
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: 60777d4f8664b7f02c806abb6ca40a29602d207f
+ms.sourcegitcommit: e955a722c05ce2e5e21b4219f7d94fb878e255a6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342473"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39378653"
 ---
 # <a name="logging-in-aspnet-core"></a>ASP.NET Core에 로그인
 
@@ -448,7 +448,7 @@ System.Exception: Item not found exception.
 > [!NOTE]
 > 범위 기반 로깅을 사용하려면 `IncludeScopes` 콘솔 로거 옵션을 구성해야 합니다.
 >
-> 구성에 대한 자세한 내용은 [구성](#Configuration) 섹션을 참조하세요.
+> 구성에 대한 자세한 내용은 [구성](#configuration) 섹션을 참조하세요.
 
 ::: moniker-end
 
