@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/30/2018
 uid: test/integration-tests
-ms.openlocfilehash: 2a5adafd30aeca163063ea76857378e97163d0b9
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: 8d304397fb7f218b395374c2b8c696fef9d9f8ad
+ms.sourcegitcommit: 571d76fbbff05e84406b6d909c8fe9cbea2c8ff1
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342083"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39410184"
 ---
 # <a name="integration-tests-in-aspnet-core"></a>ASP.NET Core에서 통합 테스트
 
@@ -209,6 +209,56 @@ clientOptions.HandleCookies = true;
 clientOptions.MaxAutomaticRedirections = 7;
 
 _client = _factory.CreateClient(clientOptions);
+```
+
+## <a name="inject-mock-services"></a>모의 서비스를 삽입 합니다.
+
+서비스에 대 한 호출을 사용 하 여 테스트에서 재정의할 수 있습니다 [ConfigureTestServices](/dotnet/api/microsoft.aspnetcore.testhost.webhostbuilderextensions.configuretestservices) 호스트 작성기입니다. **모의 서비스를 삽입할는 SUT 있어야를 `Startup` 클래스는 `Startup.ConfigureServices` 메서드.**
+
+샘플 SUT 견적을 반환 하는 범위가 지정 된 서비스를 포함 합니다. 견적은 인덱스 페이지가 요청 될 때 인덱스 페이지의 숨겨진된 필드에 포함 됩니다.
+
+*Services/IQuoteService.cs*:
+
+[!code-csharp[](integration-tests/samples/2.x/IntegrationTestsSample/src/RazorPagesProject/Services/IQuoteService.cs?name=snippet1)]
+
+*Services/QuoteService.cs*:
+
+[!code-csharp[](integration-tests/samples/2.x/IntegrationTestsSample/src/RazorPagesProject/Services/QuoteService.cs?name=snippet1)]
+
+*Startup.cs*:
+
+[!code-csharp[](integration-tests/samples/2.x/IntegrationTestsSample/src/RazorPagesProject/Startup.cs?name=snippet2)]
+
+*Pages/Index.cshtml.cs*:
+
+[!code-csharp[](integration-tests/samples/2.x/IntegrationTestsSample/src/RazorPagesProject/Pages/Index.cshtml.cs?name=snippet1&highlight=4,9,20,26)]
+
+*Pages/Index.cs*:
+
+[!code-cshtml[](integration-tests/samples/2.x/IntegrationTestsSample/src/RazorPagesProject/Pages/Index.cshtml?name=snippet_Quote)]
+
+다음 태그는 SUT 앱이 실행 될 때 생성 됩니다.
+
+```html
+<input id="quote" type="hidden" value="Come on, Sarah. We&#x27;ve an appointment in 
+    London, and we&#x27;re already 30,000 years late.">
+```
+
+서비스 및 견적 주입 통합 테스트에서를 테스트 하려면 테스트에서 모의 서비스는는 SUT에 주입 됩니다. 모의 서비스 응용 프로그램의 대체 `QuoteService` 테스트 앱에서 제공 하는 서비스를 사용 하 여 호출 `TestQuoteService`:
+
+*IntegrationTests.IndexPageTests.cs*:
+
+[!code-csharp[](integration-tests/samples/2.x/IntegrationTestsSample/tests/RazorPagesProject.Tests/IntegrationTests/IndexPageTests.cs?name=snippet4)]
+
+`ConfigureTestServices` 호출 되 고 범위가 지정 된 서비스에 등록 됩니다.
+
+[!code-csharp[](integration-tests/samples/2.x/IntegrationTestsSample/tests/RazorPagesProject.Tests/IntegrationTests/IndexPageTests.cs?name=snippet5&highlight=7-10,17,20-21)]
+
+테스트의 실행 중에 생성 된 태그를 반영 하 여 제공 된 견적 텍스트 `TestQuoteService`, 따라서 어설션 전달 합니다.
+
+```html
+<input id="quote" type="hidden" value="Something&#x27;s interfering with time, 
+    Mr. Scarman, and time is my business.">
 ```
 
 ## <a name="how-the-test-infrastructure-infers-the-app-content-root-path"></a>테스트 인프라에서 앱 콘텐츠 루트 경로 유추 하는 방법
