@@ -5,12 +5,12 @@ description: ASP.NET Core MVC 컨트롤러가 ASP.NET Core의 종속성 주입�
 ms.author: riande
 ms.date: 10/14/2016
 uid: mvc/controllers/dependency-injection
-ms.openlocfilehash: 23c91a4363223a135c50ceca51e6af22ed69fe3b
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 9dec9807e8fc2883144b2da518f36a7eb8ddc871
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276453"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342135"
 ---
 # <a name="dependency-injection-into-controllers-in-aspnet-core"></a>ASP.NET Core의 컨트롤러에 종속성 주입
 
@@ -74,7 +74,7 @@ InvalidOperationException: Multiple constructors accepting all given argument ty
 Microsoft.Extensions.DependencyInjection.ActivatorUtilities.FindApplicableConstructor(Type instanceType, Type[] argumentTypes, ConstructorInfo& matchingConstructor, Nullable`1[]& parameterMap)
 ```
 
-오류 메시지에 나타난 대로 생성자가 하나여야 이 문제를 해결할 수 있습니다. 또한 [기본 종속성 주입 지원을 제3자 구현으로 대체](../../fundamentals/dependency-injection.md#replacing-the-default-services-container)할 수 있습니다. 다수는 여러 생성자를 지원합니다.
+오류 메시지에 나타난 대로 단일 생성자를 사용하여 이 문제를 해결할 수 있습니다. 또한 [기본 종속성 주입 컨테이너를 타사 구현으로 대체](xref:fundamentals/dependency-injection#default-service-container-replacement)할 수 있습니다. 다수는 여러 생성자를 지원합니다.
 
 ## <a name="action-injection-with-fromservices"></a>FromServices로 작업 삽입
 

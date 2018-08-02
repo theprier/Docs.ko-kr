@@ -4,14 +4,14 @@ author: rick-anderson
 description: ASP.NET Core MVC 및 Visual Studio Code를 사용하여 macOS, Linux 또는 Windows에서 웹 API 빌드
 ms.author: riande
 ms.custom: mvc
-ms.date: 05/08/2018
+ms.date: 07/30/2018
 uid: tutorials/web-api-vsc
-ms.openlocfilehash: 4c41c949a9b5ca8db8928a0a53aff928fd7c8a4e
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 4ce808ec4241ab2fc3c2fb81c3fdb15dd853cd90
+ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38216239"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39342278"
 ---
 # <a name="create-a-web-api-with-aspnet-core-and-visual-studio-code"></a>ASP.NET Core 및 Visual Studio Code를 사용하여 Web API 만들기
 
@@ -61,15 +61,20 @@ VS Code 사용에 대한 팁은 [Visual Studio Code 도움말](#visual-studio-co
 
 ## <a name="add-support-for-entity-framework-core"></a>Entity Framework Core에 대한 지원 추가
 
+:::moniker range=">= aspnetcore-2.1"
+
+ASP.NET Core 2.1 이상에서 새 프로젝트를 만들면 *TodoApi.csproj* 파일에 [Microsoft.AspNetCore.App](https://www.nuget.org/packages/Microsoft.AspNetCore.App) 패키지 참조를 추가합니다. 아직 지정하지 않았으면 `Version` 특성을 추가합니다.
+
+[!code-xml[](first-web-api/samples/2.1/TodoApi/TodoApi.csproj?name=snippet_Metapackage&highlight=2)]
+
+:::moniker-end
+
 :::moniker range="<= aspnetcore-2.0"
+
 ASP.NET Core 2.0에서 새 프로젝트를 만들면 *TodoApi.csproj* 파일에 [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All) 패키지 참조를 추가합니다.
 
 [!code-xml[](first-web-api/samples/2.0/TodoApi/TodoApi.csproj?name=snippet_Metapackage&highlight=2)]
-:::moniker-end
-:::moniker range=">= aspnetcore-2.1"
-ASP.NET Core 2.1 이상에서 새 프로젝트를 만들면 *TodoApi.csproj* 파일에 [Microsoft.AspNetCore.App](https://www.nuget.org/packages/Microsoft.AspNetCore.App) 패키지 참조를 추가합니다.
 
-[!code-xml[](first-web-api/samples/2.1/TodoApi/TodoApi.csproj?name=snippet_Metapackage&highlight=2)]
 :::moniker-end
 
 [Entity Framework Core InMemory](/ef/core/providers/in-memory/) 데이터베이스 공급자를 별도로 설치할 필요가 없습니다. 이 데이터베이스 공급자를 설치하면 Entity Framework Core를 메모리 내 데이터베이스에서 사용할 수 있습니다.
