@@ -5,12 +5,12 @@ description: 웹 앱을 ASP.NET Core에서 HTTPS/TLS를 요구 하는 방법에 
 ms.author: riande
 ms.date: 2/9/2018
 uid: security/enforcing-ssl
-ms.openlocfilehash: a4ab91ef23a798c919a23a44f5a050bd3c09d56a
-ms.sourcegitcommit: d99a8554c91f626cf5e466911cf504dcbff0e02e
+ms.openlocfilehash: d8bf11d7d2df8d8b197f001570a8fab1f3262814
+ms.sourcegitcommit: 4e34ce61e1e7f1317102b16012ce0742abf2cca6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39356690"
+ms.lasthandoff: 08/04/2018
+ms.locfileid: "39514806"
 ---
 # <a name="enforce-https-in-aspnet-core"></a>ASP.NET Core에서 HTTPS 적용
 
@@ -112,13 +112,15 @@ WebHost.CreateDefaultBuilder(args)
 <a name="hsts"></a>
 ## <a name="http-strict-transport-security-protocol-hsts"></a>HTTP 엄격한 전송 보안 프로토콜 (HSTS)
 
-당 [OWASP](https://www.owasp.org/index.php/About_The_Open_Web_Application_Security_Project)하십시오 [HTTP 엄격한 전송 보안 (HSTS)](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet) 특수 응답 헤더를 사용 하 여 웹 응용 프로그램에서 지정 하는 옵트인 보안 향상 된 기능입니다. 지원 되는 브라우저가이 헤더를 받으면 해당 브라우저는 모든 통신을 지정한 도메인에 HTTP를 통해 보낼 수 없게 하 고 HTTPS를 통해 모든 커뮤니케이션을 보내도록 대신 됩니다. 또한 브라우저에서 프롬프트를 통해 HTTPS 클릭을 수 없습니다.
+당 [OWASP](https://www.owasp.org/index.php/About_The_Open_Web_Application_Security_Project)하십시오 [HTTP 엄격한 전송 보안 (HSTS)](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet) 특수 응답 헤더를 사용 하 여 웹 앱에서 지정 하는 옵트인 보안 향상 된 기능입니다. HSTS를 지 원하는 브라우저에서이 헤더를 수신 하는 경우 모든 통신이 HTTP를 통해 보낼 수 없습니다 하 고 대신 HTTPS를 통해 모든 통신을 강제로 수행 하는 도메인에 대 한 구성을 저장 합니다. 또한 사용자가 일시적으로 이러한 인증서를 신뢰 하도록 브라우저 프롬프트를 사용 하지 않도록 설정, 신뢰할 수 없거나 잘못 된 인증서를 사용 하 여 사용자를 방지 합니다.
 
 ASP.NET Core 2.1 이상을 사용 하 여 HSTS를 구현 합니다 `UseHsts` 확장 메서드. 다음 코드 호출 `UseHsts` 에 앱이 없는 경우 [개발 모드](xref:fundamentals/environments):
 
 [!code-csharp[](enforcing-ssl/sample/Startup.cs?name=snippet1&highlight=10)]
 
 `UseHsts` 권장 되지 않습니다 개발에서 HSTS 헤더 캐시가 이므로 브라우저에서. 기본적으로 `UseHsts` 로컬 루프백 주소를 제외 합니다.
+
+처음에 대 한 HTTPS를 구현 하는 프로덕션 환경에서는 초기 HSTS 값을 작은 값으로 설정 합니다. 값을 설정할 시간에서 전혀 보다 하루를 HTTP로 HTTPS 인프라를 되돌려야 하는 경우. HTTPS 구성의 유지 가능성에 확신한 후 늘릴 HSTS 최대 처리 기간 값 자주 사용 되는 값은 1 년입니다. 
 
 다음 예를 참조하십시오.
 
