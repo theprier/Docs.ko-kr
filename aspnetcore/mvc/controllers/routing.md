@@ -5,12 +5,12 @@ description: ASP.NET Core MVC가 라우팅 미들웨어를 사용하여 들어�
 ms.author: riande
 ms.date: 03/14/2017
 uid: mvc/controllers/routing
-ms.openlocfilehash: 081332fd1007db5292a8812fc6ae934cb07dffb5
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 0d328d930ecb932c22fec524babb1c856b656b95
+ms.sourcegitcommit: 4e34ce61e1e7f1317102b16012ce0742abf2cca6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37952983"
+ms.lasthandoff: 08/04/2018
+ms.locfileid: "39514780"
 ---
 # <a name="routing-to-controller-actions-in-aspnet-core"></a>ASP.NET Core의 컨트롤러 작업에 라우팅
 
@@ -589,13 +589,14 @@ TagHelper는 `form` TagHelper 및 `<a>` TagHelper를 통해 URL을 생성합니�
 `ControllerBase` 및 `Controller` 기본 클래스는 다른 작업을 참조하는 작업 결과에 대한 편의 메서드를 제공합니다. 한 가지 일반적인 사용법은 사용자 입력을 수락한 후 리디렉션하는 것입니다.
 
 ```csharp
-public Task<IActionResult> Edit(int id, Customer customer)
+public IActionResult Edit(int id, Customer customer)
 {
     if (ModelState.IsValid)
     {
         // Update DB with new details.
         return RedirectToAction("Index");
     }
+    return View(customer);
 }
 ```
 
