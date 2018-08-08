@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/04/2018
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: 4aded0b87ca14a5c09844cc378efb1ac0c12a289
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: b156cd0755d7918d5f8433fcbe5c870ad04ac13e
+ms.sourcegitcommit: a25b572eaed21791230c85416f449f66a405ec19
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342158"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39396223"
 ---
 # <a name="host-aspnet-core-in-a-windows-service"></a>Windows 서비스에서 ASP.NET Core 호스트
 
@@ -225,6 +225,10 @@ ASP.NET Core 구성에 명령줄 인수에 대한 이름 값 쌍이 필요하기
 ## <a name="proxy-server-and-load-balancer-scenarios"></a>프록시 서버 및 부하 분산 장치 시나리오
 
 인터넷 또는 회사 네트워크의 요청과 상호 작용하고 프록시 또는 부하 분산 장치 뒤에 있는 서비스에는 추가 구성이 필요합니다. 자세한 내용은 <xref:host-and-deploy/proxy-load-balancer>을 참조하세요.
+
+## <a name="configure-https"></a>HTTPS 구성
+
+[Kestrel 서버 HTTPS 엔드포인트 구성](xref:fundamentals/servers/kestrel#endpoint-configuration)을 지정합니다.
 
 ## <a name="additional-resources"></a>추가 자료
 

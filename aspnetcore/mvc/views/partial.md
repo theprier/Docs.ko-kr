@@ -6,18 +6,18 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 07/06/2018
 uid: mvc/views/partial
-ms.openlocfilehash: 983f3caae34b21b46d8f556e70673cf3c97abbd3
-ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
+ms.openlocfilehash: 7cb20fc30609adad83cb40e91316da115817f035
+ms.sourcegitcommit: e955a722c05ce2e5e21b4219f7d94fb878e255a6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37938461"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39378685"
 ---
 # <a name="partial-views-in-aspnet-core"></a>ASP.NET Core의 부분 보기
 
 작성자: [Steve Smith](https://ardalis.com/), [Maher JENDOUBI](https://twitter.com/maherjend), [Rick Anderson](https://twitter.com/RickAndMSFT) 및 [Scott Sauber](https://twitter.com/scottsauber)
 
-ASP.NET Core MVC는 부분 보기를 지원합니다. 이 기능은 웹 페이지의 재사용 가능한 부분을 다른 보기에서 공유하려는 경우에 유용합니다.
+ASP.NET Core는 부분 보기를 지원합니다. 부분 보기는 여러 보기에서 웹 페이지의 재사용 가능한 파트를 공유하는 데 사용됩니다.
 
 [예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/mvc/views/partial/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
@@ -35,8 +35,7 @@ ASP.NET Core MVC는 부분 보기를 지원합니다. 이 기능은 웹 페이�
 
 논리 조각으로 구성된 복잡한 페이지를 사용하는 경우 고유한 부분 보기로 각 부분을 작업하는 것이 유용합니다. 페이지의 나머지 부분과 분리해서 페이지의 각 부분을 볼 수 있습니다. 전체 페이지 구조와 부분 보기를 렌더링하기 위한 호출만 포함하기 때문에 페이지 자체에 대한 보기가 더 간단해집니다.
 
-> [!TIP]
-> 보기에서 [반복 금지 원칙](https://deviq.com/don-t-repeat-yourself/)을 따릅니다.
+ASP.NET Core MVC 컨트롤러에는 작업 메서드에서 호출되는 [PartialView](/dotnet/api/microsoft.aspnetcore.mvc.controller.partialview#Microsoft_AspNetCore_Mvc_Controller_PartialView) 메서드가 있습니다. Razor Pages에는 동일한 `PartialView` 메서드가 없습니다.
 
 ## <a name="declare-partial-views"></a>부분 보기 선언
 

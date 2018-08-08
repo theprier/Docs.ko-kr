@@ -5,12 +5,12 @@ description: 모델-보기-컨트롤러 디자인 패턴을 사용하여 웹앱 
 ms.author: riande
 ms.date: 01/08/2018
 uid: mvc/overview
-ms.openlocfilehash: aca34f91e8c7efaa34263ddf830b1662a2518969
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 7f8aab02c0ee37dad49ff224b182ec455e837a7a
+ms.sourcegitcommit: e955a722c05ce2e5e21b4219f7d94fb878e255a6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272594"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39378640"
 ---
 # <a name="overview-of-aspnet-core-mvc"></a>ASP.NET Core MVC 개요
 
@@ -165,8 +165,7 @@ ASP.NET Core는 기본적으로 [DI(종속성 주입 )](../fundamentals/dependen
 
 ### <a name="filters"></a>필터
 
-[필터](controllers/filters.md)는 개발자가 예외 처리 또는 권한 부여 같은 교차 편집 문제를 캡슐화하도록 도와줍니다. 필터는 작업 메서드에 대한 사용자 지정 전처리 및 후처리 논리 실행을 지원하며, 지정된 요청에 대한 실행 파이프라인 내부의 특정 지점에서 실행되도록 구성할 수 있습니다. 필터는 컨트롤러 또는 작업에 특성으로 적용할 수 있습니다(또는 전체적으로 실행 가능). 여러 필터(예: `Authorize`)가 프레임워크에 포함되어 있습니다.
-
+[필터](controllers/filters.md)는 개발자가 예외 처리 또는 권한 부여 같은 교차 편집 문제를 캡슐화하도록 도와줍니다. 필터는 작업 메서드에 대한 사용자 지정 전처리 및 후처리 논리 실행을 지원하며, 지정된 요청에 대한 실행 파이프라인 내부의 특정 지점에서 실행되도록 구성할 수 있습니다. 필터는 컨트롤러 또는 작업에 특성으로 적용할 수 있습니다(또는 전체적으로 실행 가능). 여러 필터(예: `Authorize`)가 프레임워크에 포함되어 있습니다. `[Authorize]`는 MVC 권한 부여 필터를 만드는 데 사용되는 특성입니다.
 
 ```csharp
 [Authorize]

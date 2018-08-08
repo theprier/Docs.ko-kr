@@ -3,14 +3,14 @@ title: ASP.NET Core MVC의 모델 유효성 검사
 author: tdykstra
 description: ASP.NET Core MVC의 모델 유효성 검사에 대해 알아봅니다.
 ms.author: riande
-ms.date: 12/18/2016
+ms.date: 07/31/2018
 uid: mvc/models/validation
-ms.openlocfilehash: 9c2ba1c1fad3ac077a886b3465142acfd4d639af
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: f407903577e40b6501737ef5b78d90e1e3e60c06
+ms.sourcegitcommit: e955a722c05ce2e5e21b4219f7d94fb878e255a6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095829"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39378669"
 ---
 # <a name="model-validation-in-aspnet-core-mvc"></a>ASP.NET Core MVC의 모델 유효성 검사
 
@@ -118,7 +118,7 @@ MVC는오류의 최대 수(기본적으로 200개)에 도달할 때까지 필드
 
 [!code-cshtml[](validation/sample/Views/Shared/_ValidationScriptsPartial.cshtml)]
 
-[jQuery 비간섭 유효성 검사](https://github.com/aspnet/jquery-validation-unobtrusive) 스크립트는 널리 사용되는 [jQuery 유효성 검사](https://jqueryvalidation.org/) 플러그 인에 기반한 사용자 지정 Microsoft 프런트 엔드 라이브러리입니다. jQuery 비간섭 유효성 검사를 사용하지 않고 두 위치(모델 속성에 대한 서버 쪽 유효성 검사 특성에서 한 번 및 클라이언트 쪽 스크립트에서 다시 한 번)에서 동일한 유효성 검사 논리를 코딩해야 합니다. (jQuery 유효성 검사의 [`validate()`](https://jqueryvalidation.org/validate/) 메서드에 대한 예제는 복잡함을 보여줍니다.) 대신 MVC의 [태그 도우미](xref:mvc/views/tag-helpers/intro) 및 [HTML 도우미](xref:mvc/views/overview)는 모델 속성의 유효성 검사 특성 및 형식 메타데이터를 사용하여 유효성 검사가 필요한 형식 요소에서 HTML 5 [데이터 특성](http://w3c.github.io/html/dom.html#embedding-custom-non-visible-data-with-the-data-attributes)을 렌더링할 수 있습니다. MVC에서는 기본 제공 및 사용자 지정 특성에 대한 `data-` 특성을 생성합니다. jQuery 비간섭 유효성 검사는 `data-` 특성을 구문 분석한 다음, jQuery 유효성 검사에 대한 논리를 전달하여 효과적으로 서버 쪽 유효성 검사 논리를 클라이언트에 "복사"합니다. 다음과 같이 관련 태그 도우미를 사용하여 클라이언트에서 유효성 검사 오류를 표시할 수 있습니다.
+[jQuery 비간섭 유효성 검사](https://github.com/aspnet/jquery-validation-unobtrusive) 스크립트는 널리 사용되는 [jQuery 유효성 검사](https://jqueryvalidation.org/) 플러그 인에 기반한 사용자 지정 Microsoft 프런트 엔드 라이브러리입니다. jQuery 비간섭 유효성 검사를 사용하지 않고 두 위치(모델 속성에 대한 서버 쪽 유효성 검사 특성에서 한 번 및 클라이언트 쪽 스크립트에서 다시 한 번)에서 동일한 유효성 검사 논리를 코딩해야 합니다. (jQuery 유효성 검사의 [`validate()`](https://jqueryvalidation.org/validate/) 메서드에 대한 예제는 복잡함을 보여줍니다.) 대신 MVC의 [태그 도우미](xref:mvc/views/tag-helpers/intro) 및 [HTML 도우미](xref:mvc/views/overview)는 모델 속성의 유효성 검사 특성 및 형식 메타데이터를 사용하여 유효성 검사가 필요한 형식 요소에서 HTML 5 [데이터 특성](http://w3c.github.io/html/dom.html#embedding-custom-non-visible-data-with-the-data-attributes)을 렌더링할 수 있습니다. MVC에서는 기본 제공 및 사용자 지정 특성에 대한 `data-` 특성을 생성합니다. jQuery 비간섭 유효성 검사는 `data-` 특성을 구문 분석하고 jQuery 유효성 검사에 대한 논리를 전달하여 효과적으로 서버 쪽 유효성 검사 논리를 클라이언트에 “복사”합니다. 다음과 같이 관련 태그 도우미를 사용하여 클라이언트에서 유효성 검사 오류를 표시할 수 있습니다.
 
 [!code-cshtml[](validation/sample/Views/Movies/Create.cshtml?highlight=4,5&range=19-25)]
 
@@ -208,11 +208,11 @@ $.get({
     id="ReleaseDate" name="ReleaseDate" value="" />
 ```
 
-비간섭 유효성 검사는 `data-` 특성에서 데이터를 사용하여 오류 메시지를 표시합니다. 그러나 jQuery는 jQuery의 `validator` 개체에 추가될 때까지 규칙 또는 메시지를 인식하지 못합니다. 아래 예제에서 jQuery `validator` 개체에 대한 사용자 지정 클라이언트 유효성 검사 코드가 포함된 `classicmovie`라는 메서드를 추가합니다. unobtrusive.adapters.add 메서드에 대한 설명은 [여기](http://bradwilson.typepad.com/blog/2010/10/mvc3-unobtrusive-validation.html)에서 확인할 수 있습니다.
+비간섭 유효성 검사는 `data-` 특성에서 데이터를 사용하여 오류 메시지를 표시합니다. 그러나 jQuery는 jQuery의 `validator` 개체에 추가될 때까지 규칙 또는 메시지를 인식하지 못합니다. 이는 사용자 지정 `classicmovie` 클라이언트 유효성 검사 메서드를 jQuery `validator` 개체에 추가하는 다음 예제에서 확인할 수 있습니다. `unobtrusive.adapters.add` 메서드에 대한 설명은 [Unobtrusive Client Validation in ASP.NET MVC](http://bradwilson.typepad.com/blog/2010/10/mvc3-unobtrusive-validation.html)(ASP.NET MVC의 비간섭 클라이언트 유효성 검사)를 참조하세요.
 
-[!code-javascript[](validation/sample/Views/Movies/Create.cshtml?range=71-93)]
+[!code-javascript[](validation/sample/Views/Movies/Create.cshtml?name=snippet_UnobtrusiveValidation)]
 
-이제 jQuery에는 유효성 검사 코드가 false를 반환하는 경우 표시할 오류 메시지뿐만 아니라 사용자 지정 JavaScript 유효성 검사를 실행하는 정보도 포함됩니다.
+앞의 코드를 사용하면 `classicmovie` 메서드는 영화 개봉 날짜에 클라이언트 쪽 유효성 검사를 수행합니다. 메서드가 `false`를 반환하는 경우 오류 메시지가 표시됩니다.
 
 ## <a name="remote-validation"></a>원격 유효성 검사
 
@@ -222,11 +222,14 @@ $.get({
 
 [!code-csharp[](validation/sample/User.cs?range=7-8)]
 
-두 번째 단계는 `[Remote]` 특성에 정의된 대로 해당 작업 메서드에서 유효성 검사 코드를 지정하는 것입니다. jQuery 유효성 검사 [`remote()`](https://jqueryvalidation.org/remote-method/) 메서드 설명서에 따라:
+두 번째 단계는 `[Remote]` 특성에 정의된 대로 해당 작업 메서드에서 유효성 검사 코드를 지정하는 것입니다. jQuery 유효성 검사 [remote](https://jqueryvalidation.org/remote-method/) 메서드 설명서에 따라 서버 응답은 다음 중 하나인 JSON 문자열이어야 합니다.
 
-> 서버 쪽 응답은 기본 오류 메시지를 사용하며 유효한 요소에 대해 `"true"`인 JSON 문자열이며 잘못된 요소에 대해 `"false"`, `undefined` 또는 `null`일 수 있습니다. 서버 쪽 응답이 문자열인 경우(예: `"That name is already taken, try peter123 instead"`) 이 문자열은 기본값 대신 사용자 지정 오류 메시지로 표시됩니다.
+* 유효한 요소의 경우 `"true"`.
+* 잘못된 요소의 경우 `"false"`, `undefined` 또는 `null`(기본 오류 메시지 사용).
 
-`VerifyEmail()` 메서드의 정의는 아래 표시된 대로 이러한 규칙을 따릅니다. 이메일을 사용한 경우 유효성 검사 오류 메시지가 반환됩니다. 또는 이메일이 무료인 경우 `true`이며 `JsonResult` 개체에서 결과를 래핑합니다. 클라이언트 쪽은 반환 값을 계속 사용하거나 필요한 경우 오류를 표시할 수 있습니다.
+서버 응답이 문자열(예: `"That name is already taken, try peter123 instead"`)인 경우 문자열은 기본 문자열 대신 사용자 지정 오류 메시지로 표시됩니다.
+
+`VerifyEmail` 메서드의 정의는 아래 표시된 대로 이러한 규칙을 따릅니다. 이메일을 사용한 경우 유효성 검사 오류 메시지가 반환됩니다. 또는 이메일이 무료인 경우 `true`이며 `JsonResult` 개체에서 결과를 래핑합니다. 클라이언트 쪽은 반환 값을 계속 사용하거나 필요한 경우 오류를 표시할 수 있습니다.
 
 [!code-csharp[](validation/sample/UsersController.cs?range=19-28)]
 
@@ -243,7 +246,7 @@ $.get({
 이제 사용자가 이름과 성을 입력할 때 JavaScript:
 
 * 해당 쌍의 이름을 사용 중인지 확인하기 위해 원격 호출을 수행합니다.
-* 쌍이 사용 중인 경우 오류 메시지가 표시됩니다. 
+* 쌍이 사용 중인 경우 오류 메시지가 표시됩니다.
 * 그렇지 않은 경우 사용자는 형식을 전송할 수 있습니다.
 
 `[Remote]` 특성을 포함하는 두 개 이상의 추가 필드 유효성을 검사해야 하는 경우 쉼표로 구분된 목록으로 제공합니다. 예를 들어 `MiddleName` 특성을 메서드에 추가하고, 다음 코드에 표시된 대로 `[Remote]` 특성을 설정합니다.

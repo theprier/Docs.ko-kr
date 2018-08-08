@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 4/13/2018
 uid: fundamentals/startup
-ms.openlocfilehash: 285d74c0d12e3aca4d8c33d39467dfda02712993
-ms.sourcegitcommit: e12f45ddcbe99102a74d4077df27d6c0ebba49c1
+ms.openlocfilehash: a576f3840e66fc4ed877f7575aa3f3e36b37ae4d
+ms.sourcegitcommit: d99a8554c91f626cf5e466911cf504dcbff0e02e
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/15/2018
-ms.locfileid: "39063262"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39356752"
 ---
 # <a name="application-startup-in-aspnet-core"></a>ASP.NET Core에서 응용 프로그램 시작
 
@@ -34,10 +34,13 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 
 [!code-csharp[](../common/samples/WebApplication1DotNetCore2.0App/Program.cs?name=snippet_Main&highlight=10)]
 
-`Startup` 클래스 생성자는 호스트에 의해 정의된 종속성을 허용합니다. `Startup` 클래스에 대한 [종속성 주입](xref:fundamentals/dependency-injection)의 일반적인 용도는 다음을 삽입하는 것입니다.
+웹 호스트는 `Startup` 클래스 생성자에 사용할 수 있는 몇 가지 서비스를 제공합니다. 앱은 `ConfigureServices`를 통해 추가 서비스를 추가합니다. 그러면 호스트 및 앱 서비스 모두를 `Configure` 및 앱 전체에서 사용할 수 있습니다.
+
+`Startup` 클래스에 대한 [종속성 주입](xref:fundamentals/dependency-injection)의 일반적인 용도는 다음을 삽입하는 것입니다.
 
 * 환경에서 서비스를 구성하는 [IHostingEnvironment](/dotnet/api/Microsoft.AspNetCore.Hosting.IHostingEnvironment)
-* 시작하는 동안 앱을 구성하는 [IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration)
+* 구성을 읽는 [IConfiguration](/dotnet/api/microsoft.extensions.configuration.iconfiguration)
+* `Startup.ConfigureServices`에서 로거를 만드는 [ILoggerFactory](/dotnet/api/microsoft.extensions.logging.iloggerfactory)
 
 [!code-csharp[](startup/snapshot_sample/Startup2.cs)]
 
@@ -65,7 +68,7 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 
 <a name="setcompatibilityversion"></a>
 
-### <a name="setcompatibilityversion-for-aspnet-core-mvc"></a>ASP.NET Core MVC용 SetCompatibilityVersion 
+### <a name="setcompatibilityversion-for-aspnet-core-mvc"></a>ASP.NET Core MVC용 SetCompatibilityVersion
 
 `SetCompatibilityVersion` 메서드를 사용하면 ASP.NET MVC Core 2.1+에서 도입된 주요 동작 변경 내용을 앱이 옵트인(opt-in) 또는 옵트아웃(opt-out)할 수 있습니다. 이 주요 동작 변경 내용은 일반적으로 MVC 하위 시스템의 작동 방식과 런타임에서 **코드**를 호출하는 방법과 관련이 있습니다. 옵트인을 하면 ASP.NET Core의 최신 동작과 장기 동작을 가져올 수 있습니다.
 
@@ -73,14 +76,14 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 
 [!code-csharp[Main](startup/sampleCompatibility/Startup.cs?name=snippet1)]
 
-최신 버전(`CompatibilityVersion.Version_2_1`)을 사용하여 응용 프로그램을 테스트하는 것이 좋습니다. 대부분의 응용 프로그램은 최신 버전을 사용하여 주요 동작을 변경하지 않을 것으로 예상합니다. 
+최신 버전(`CompatibilityVersion.Version_2_1`)을 사용하여 앱을 테스트하는 것이 좋습니다. 대부분의 앱은 최신 버전을 사용하여 주요 동작을 변경하지 않을 것으로 예상합니다.
 
-`SetCompatibilityVersion(CompatibilityVersion.Version_2_0)`을 호출하는 응용 프로그램은 ASP.NET Core 2.1 MVC 및 이후의 2.x 버전에서 도입된 주요 동작 변경으로부터 보호됩니다. 이 보호:
+`SetCompatibilityVersion(CompatibilityVersion.Version_2_0)`을 호출하는 앱은 ASP.NET Core 2.1 MVC 및 이후의 2.x 버전에서 도입된 주요 동작 변경으로부터 보호됩니다. 이 보호:
 
 * 2.1 이상의 모든 변경 내용에 적용되지는 않으며, MVC 하위 시스템의 주요 ASP.NET Core 런타임 동작 변경을 대상으로 합니다.
 * 다음의 주 버전으로 확장되지 않습니다.
 
-`SetCompatibilityVersion`을 호출하지 **않는** ASP.NET Core 2.1 및 이후 2.x 응용 프로그램의 기본 호환성은 2.0 호환성입니다. 즉, `SetCompatibilityVersion`을 호출하지 않는 것은 `SetCompatibilityVersion(CompatibilityVersion.Version_2_0)`을 호출하는 것과 같습니다.
+`SetCompatibilityVersion`을 호출하지 **않는** ASP.NET Core 2.1 및 이후 2.x 앱의 기본 호환성은 2.0 호환성입니다. 즉, `SetCompatibilityVersion`을 호출하지 않는 것은 `SetCompatibilityVersion(CompatibilityVersion.Version_2_0)`을 호출하는 것과 같습니다.
 
 다음 코드는 다음 동작을 제외하고, 호환성 모드를 ASP.NET Core 2.1로 설정합니다.
 
@@ -96,13 +99,9 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 
 [MvcOptions](https://github.com/aspnet/Mvc/blob/master/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs) 클래스 소스 주석에는 변경된 내용과 변경 내용이 대부분의 사용자에게 향상된 기능인 이유가 잘 설명되어 있습니다.
 
-이후에 [ASP.NET Core 3.0 버전](https://github.com/aspnet/Home/wiki/Roadmap)이 나올 예정입니다. 호환성 스위치가 지원하는 이전 동작은 3.0 버전에서 제거됩니다. 거의 모든 사용자에게 혜택을 주는 긍정적인 변화라고 생각합니다. 이제 이러한 변경 내용을 도입함으로써 대부분의 앱이 혜택을 받을 수 있으며, 다른 사람은 응용 프로그램을 업데이트할 시간을 얻게 됩니다.
+이후에 [ASP.NET Core 3.0 버전](https://github.com/aspnet/Home/wiki/Roadmap)이 나올 예정입니다. 호환성 스위치가 지원하는 이전 동작은 3.0 버전에서 제거됩니다. 거의 모든 사용자에게 혜택을 주는 긍정적인 변화라고 생각합니다. 이제 이러한 변경 내용을 도입함으로써 대부분의 앱이 혜택을 받을 수 있으며, 다른 사람은 앱을 업데이트할 시간을 얻게 됩니다.
 
 ::: moniker-end
-
-## <a name="services-available-in-startup"></a>시작 시 사용할 수 있는 서비스
-
-웹 호스트는 `Startup` 클래스 생성자에 사용할 수 있는 몇 가지 서비스를 제공합니다. 앱은 `ConfigureServices`를 통해 추가 서비스를 추가합니다. 그러면 호스트와 앱 서비스 모두는 `Configure` 및 응용 프로그램 전체에서 사용할 수 있습니다.
 
 ## <a name="the-configure-method"></a>Configure 메서드
 
@@ -161,9 +160,9 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 
 ## <a name="additional-resources"></a>추가 자료
 
-* [호스팅](xref:fundamentals/host/index)
-* [여러 환경 사용](xref:fundamentals/environments)
-* [미들웨어](xref:fundamentals/middleware/index)
-* [로깅](xref:fundamentals/logging/index)
-* [구성](xref:fundamentals/configuration/index)
+* <xref:fundamentals/host/index>
+* <xref:fundamentals/environments>
+* <xref:fundamentals/middleware/index>
+* <xref:fundamentals/logging/index>
+* <xref:fundamentals/configuration/index>
 * [StartupLoader 클래스: FindStartupType 메서드(참조 원본)](https://github.com/aspnet/Hosting/blob/rel/2.0.0/src/Microsoft.AspNetCore.Hosting/Internal/StartupLoader.cs#L66-L116)

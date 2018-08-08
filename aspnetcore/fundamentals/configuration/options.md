@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 11/28/2017
 uid: fundamentals/configuration/options
-ms.openlocfilehash: aa9c490aff873d12c9417e7b611991617207c0d3
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: fd3e55ec821be336501f523550f547f6049c9937
+ms.sourcegitcommit: 4e34ce61e1e7f1317102b16012ce0742abf2cca6
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342447"
+ms.lasthandoff: 08/04/2018
+ms.locfileid: "39514754"
 ---
 # <a name="options-pattern-in-aspnet-core"></a>ASP.NET Core의 옵션 패턴
 
@@ -294,10 +294,17 @@ services.PostConfigureAll<MyOptions>("named_options_1", myOptions =>
 
 ## <a name="accessing-options-during-startup"></a>시작하는 동안 옵션 액세스
 
-서비스는 `Configure` 메서드가 실행되기 전에 빌드되므로 `IOptions`를 `Configure`에서 사용할 수 있습니다. 옵션에 액세스하기 위해 서비스 공급자가 `ConfigureServices`에서 기본 제공되는 경우 서비스 공급자가 빌드된 후 제공되는 옵션 구성을 포함하지 않습니다. 따라서 서비스 등록의 순서 지정으로 인해 일관성 없는 옵션 상태가 있을 수 있습니다.
+서비스는 `Configure` 메서드가 실행되기 전에 빌드되므로 `IOptions`를 `Startup.Configure`에서 사용할 수 있습니다.
 
-옵션은 일반적으로 구성에서 로드되므로 구성은 `Configure` 및 `ConfigureServices` 모두에서 시작에 사용될 수 있습니다. 시작하는 동안 구성 사용에 관한 예제는 [응용 프로그램 시작](xref:fundamentals/startup) 항목을 참조하세요.
+```csharp
+public void Configure(IApplicationBuilder app, IOptions<MyOptions> optionsAccessor)
+{
+    var option1 = optionsAccessor.Value.Option1;
+}
+```
 
-## <a name="see-also"></a>참고 항목
+`IOptions`는 `Startup.ConfigureServices`에서 사용할 수 없습니다. 서비스 등록의 순서 지정으로 인해 일관성 없는 옵션 상태가 있을 수 있습니다.
 
-* [구성](xref:fundamentals/configuration/index)
+## <a name="additional-resources"></a>추가 자료
+
+* <xref:fundamentals/configuration/index>
