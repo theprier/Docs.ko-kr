@@ -5,12 +5,12 @@ description: 웹 앱을 ASP.NET Core에서 HTTPS/TLS를 요구 하는 방법에 
 ms.author: riande
 ms.date: 2/9/2018
 uid: security/enforcing-ssl
-ms.openlocfilehash: d8bf11d7d2df8d8b197f001570a8fab1f3262814
-ms.sourcegitcommit: 4e34ce61e1e7f1317102b16012ce0742abf2cca6
+ms.openlocfilehash: 3bea8661e17fec5128e822d98741d1f8ed7434e5
+ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/04/2018
-ms.locfileid: "39514806"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39655500"
 ---
 # <a name="enforce-https-in-aspnet-core"></a>ASP.NET Core에서 HTTPS 적용
 
@@ -66,8 +66,8 @@ ms.locfileid: "39514806"
 
 설정 하 여 포트를 구성할 수 있습니다 합니다 [https_port 웹 호스트 구성 설정을](xref:fundamentals/host/web-host#https-port):
 
-**키**: https_port **형식을**: *문자열*
-**기본**: 기본값이 설정 되지 않습니다.
+**키**: https_port **형식**: ‘문자열’
+**기본값**: 기본값이 설정되어 있지 않습니다.
 **사용 하 여 설정할**: `UseSetting` 
  **환경 변수**: `<PREFIX_>HTTPS_PORT` (접두사는 `ASPNETCORE_` 웹 호스트를 사용 하는 경우입니다.)
 
@@ -112,7 +112,10 @@ WebHost.CreateDefaultBuilder(args)
 <a name="hsts"></a>
 ## <a name="http-strict-transport-security-protocol-hsts"></a>HTTP 엄격한 전송 보안 프로토콜 (HSTS)
 
-당 [OWASP](https://www.owasp.org/index.php/About_The_Open_Web_Application_Security_Project)하십시오 [HTTP 엄격한 전송 보안 (HSTS)](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet) 특수 응답 헤더를 사용 하 여 웹 앱에서 지정 하는 옵트인 보안 향상 된 기능입니다. HSTS를 지 원하는 브라우저에서이 헤더를 수신 하는 경우 모든 통신이 HTTP를 통해 보낼 수 없습니다 하 고 대신 HTTPS를 통해 모든 통신을 강제로 수행 하는 도메인에 대 한 구성을 저장 합니다. 또한 사용자가 일시적으로 이러한 인증서를 신뢰 하도록 브라우저 프롬프트를 사용 하지 않도록 설정, 신뢰할 수 없거나 잘못 된 인증서를 사용 하 여 사용자를 방지 합니다.
+당 [OWASP](https://www.owasp.org/index.php/About_The_Open_Web_Application_Security_Project)하십시오 [HTTP 엄격한 전송 보안 (HSTS)](https://www.owasp.org/index.php/HTTP_Strict_Transport_Security_Cheat_Sheet) 응답 헤더를 사용 하 여 웹 앱에서 지정 하는 옵트인 보안 향상 된 기능입니다. 경우 HSTS를 지 원하는 브라우저는이 헤더를 받습니다.
+
+* 브라우저에는 모든 통신이 HTTP를 통해 보낼 수 없는 도메인에 대 한 구성을 저장 합니다. 브라우저 강제로 HTTPS를 통해 모든 통신을 수행합니다. 
+* 브라우저에서 신뢰할 수 없거나 잘못 된 인증서를 사용 하 여 사용자를 방지 합니다. 브라우저 사용자가 일시적으로 이러한 인증서를 신뢰 하는 프롬프트를 비활성화 합니다.
 
 ASP.NET Core 2.1 이상을 사용 하 여 HSTS를 구현 합니다 `UseHsts` 확장 메서드. 다음 코드 호출 `UseHsts` 에 앱이 없는 경우 [개발 모드](xref:fundamentals/environments):
 

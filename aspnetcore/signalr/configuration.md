@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 07/31/2018
 uid: signalr/configuration
-ms.openlocfilehash: 32c0ad94fba09fa099c2ab4a6b1d6d79a5542d7f
-ms.sourcegitcommit: a25b572eaed21791230c85416f449f66a405ec19
+ms.openlocfilehash: eac1202828edbcd295d7e52aa424cd625ee70e34
+ms.sourcegitcommit: 29dfe436f54a27fbb4f6494bc639d16c75001fab
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39396064"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "39722466"
 ---
 # <a name="aspnet-core-signalr-configuration"></a>ASP.NET Core SignalR 구성
 
@@ -234,7 +234,7 @@ let connection = new signalR.HubConnectionBuilder()
 | `Credentials` | 구성 가능 * | Empty | 모든 HTTP 요청과 함께 보낼 자격 증명입니다. |
 | `CloseTimeout` | 구성 가능 * | 5초 | Websocket에만 해당 합니다. 최대 기간 클라이언트 닫기 요청을 승인 하기 위해 서버에 대해 닫는 태그 뒤 대기 합니다. 서버는이 시간 내 닫기를 승인 하지 않습니다, 경우에 클라이언트 연결을 끊습니다. |
 | `Headers` | 구성 가능 * | Empty | 모든 HTTP 요청과 함께 보낼 추가 HTTP 헤더의 사전입니다. |
-| `HttpMessageHandlerFactory` | 구성 가능 * | `null` | 구성 또는 교체를 사용할 수 있는 대리자를 `HttpMessageHandler` HTTP 요청을 보내는 데 사용 합니다. WebSocket 연결에 대 한 사용 되지 않습니다. 이 대리자는 null이 아닌 값을 반환 해야 하 고 기본 값을 매개 변수로 수신. 기본값에서 설정을 수정 하 고 반환 하는 등 또는 완전히 새로운 반환 `HttpMessageHandler` 인스턴스. |
+| `HttpMessageHandlerFactory` | 구성 가능 * | `null` | 구성 또는 교체를 사용할 수 있는 대리자를 `HttpMessageHandler` HTTP 요청을 보내는 데 사용 합니다. WebSocket 연결에 대 한 사용 되지 않습니다. 이 대리자는 null이 아닌 값을 반환 해야 하 고 기본 값을 매개 변수로 수신. 기본값에서 설정을 수정 하 고 반환 하는 등 또는 새 반환 `HttpMessageHandler` 인스턴스. **그렇지 않은 경우 처리기를 교체 해야 제공된 된 처리기에서 유지 하려는 설정을 복사, 구성된 옵션 (예: 쿠키 및 헤더) 새 처리기에 적용 되지 않습니다.** |
 | `Proxy` | 구성 가능 * | `null` | HTTP 요청을 보낼 때 사용할 HTTP 프록시입니다. |
 | `UseDefaultCredentials` | 구성 가능 * | `false` | HTTP 및 WebSockets 요청에 대 한 기본 자격 증명을 보내려고이 부울 값을 설정 합니다. 이 통해 Windows 인증을 사용 합니다. |
 | `WebSocketConfiguration` | 구성 가능 * | `null` | 추가 WebSocket 옵션을 구성 하는 대리자입니다. 인스턴스를 받아서 [ClientWebSocketOptions](/dotnet/api/system.net.websockets.clientwebsocketoptions) 옵션을 구성 하려면 사용할 수 있습니다. |

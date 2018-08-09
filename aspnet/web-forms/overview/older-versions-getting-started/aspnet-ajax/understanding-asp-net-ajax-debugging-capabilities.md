@@ -8,12 +8,12 @@ ms.date: 03/28/2008
 ms.assetid: 7f9380c6-19f7-4c82-a019-916ec6dffc9c
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-debugging-capabilities
 msc.type: authoredcontent
-ms.openlocfilehash: 9d420a41f50d06541d04a1dd3cb78a2e6beaaa9a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 95c2487f26109cbdd8c76dc6f269f37264f5e34b
+ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37813830"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39655448"
 ---
 <a name="understanding-aspnet-ajax-debugging-capabilities"></a>ASP.NET AJAX 디버깅 기능 이해
 ====================
@@ -55,8 +55,8 @@ Internet Explorer에서 페이지를 디버깅 하려고 하기 전에 몇 가�
 
 디버깅을 설정한, 되 면 스크립트 디버거 라는 보기 메뉴에 표시 되는 새 메뉴 항목을 볼 수 있습니다. 다음 문에서 열고 중단 비롯 하 여 사용할 수 있는 두 가지 옵션이 있습니다. 오픈을 선택한 경우 Visual Studio 2008 (참고는 Visual Web Developer Express 사용할 수도 있습니다 디버깅용)에서 페이지를 디버그 하 라는 메시지가 됩니다. Visual Studio는 현재 실행 중인 경우 해당 인스턴스를 사용 하거나 새 인스턴스를 만들고 선택할 수 있습니다. 다음 문장에서 중단을 선택 하면 JavaScript 코드를 실행할 때 페이지를 디버그 하 라는 메시지가 됩니다. 페이지의 onLoad 이벤트의 JavaScript 코드를 실행 하는 경우 디버그 세션을 트리거하려면 페이지를 새로 고칠 수 있습니다. JavaScript 코드는 단추를 클릭 한 후 실행 되 면 단추를 클릭 한 후에 즉시 디버거가 실행 됩니다.
 
-> *> [!NOTE] 사용 하 여 액세스 제어 (UAC (사용자)을 사용 하는 Windows Vista에서 실행 하는 경우 관리자 권한으로 실행 되도록 설정 하는 Visual Studio 2008 있으면, Visual Studio 연결 하 라는 메시지가 나타나면 프로세스에 연결 하지 못합니다. 이 문제를 해결 하려면 먼저 Visual Studio를 시작 하 고 해당 인스턴스를 사용 하 여 디버그 합니다.*
-
+> [!NOTE]
+> 사용 하 여 액세스 제어 (UAC (사용자)을 사용 하는 Windows Vista에서 실행 하 고 관리자 권한으로 실행 되도록 설정 하는 Visual Studio 2008에 Visual Studio 연결 하 라는 메시지가 나타나면 프로세스에 연결 하지 못합니다. 이 문제를 해결 하려면 먼저 Visual Studio를 시작 하 고 해당 인스턴스를 사용 하 여 디버그 합니다.
 
 다음 섹션에서는 Visual Studio 2008 내에서 직접 ASP.NET AJAX 페이지를 디버그 하는 방법을 보여 줍니다, 하지만 Internet Explorer 스크립트 디버거 옵션을 사용 하 여 유용 페이지가 이미 열려 있고 자세히 검사 하려는 경우.
 
@@ -98,8 +98,8 @@ Visual Studio 2008 디버거 외부 JavaScript 파일에 다른 페이지에 포
 
 이 대화 상자는 하지 않기 때문에 Visual Studio.NET 있는지 시작 페이지에서 참조 하는 스크립트의 일부 소스 코드 하는 방법에 표시 됩니다. 매우 번거로울 수 있지만이 처음에 간단한 수정 합니다. 디버그 세션을 시작 하 고 중단점에 도달 했으면, Visual Studio 2008 메뉴의 Windows 스크립트 탐색기 디버그 창으로 이동 하거나 Ctrl + Alt + N 바로 가기 키를 사용 합니다.
 
-> *> [!NOTE] 나열 된 스크립트 탐색기 메뉴를 보이지 않으면 도구 이동할* *사용자 지정* *VISUAL Studio 메뉴에서 명령입니다. 범주 섹션에서 디버그 항목을 찾아 모든 사용 가능한 메뉴 항목을 표시 하도록 클릭 합니다. 명령 목록의 스크립트 탐색기 스크롤하고 디버그를 위로 끌어* *Windows 메뉴에 앞에서 언급 한 합니다. 이 수행 하는 사용할 수 있도록 스크립트 탐색기 메뉴 항목이 VISUAL Studio를 실행할 때마다 합니다.*
-
+> [!NOTE]
+> 나열 된 스크립트 탐색기 메뉴를 보이지 않으면 이동할 **도구** > **사용자 지정** > **명령을** VISUAL Studio 메뉴에서. 찾을 합니다 **디버그** 범주의 항목 섹션 및 모든 사용 가능한 메뉴 항목을 표시 하려면 클릭 합니다. 명령 목록의 스크립트 탐색기 스크롤하고 메뉴에서 앞에서 언급 한 디버그 Windows로 끕니다. 이 수행 하는 사용할 수 있도록 스크립트 탐색기 메뉴 항목이 VISUAL Studio를 실행할 때마다 합니다.
 
 스크립트 탐색기 페이지에서 사용 되는 모든 스크립트를 보려면 코드 편집기에서 열을 사용할 수 있습니다. 스크립트 탐색기를 연 후 코드 편집기 창에서 열려는 현재 디버깅 중인.aspx 페이지에서 두 번 클릭 합니다. 모든 스크립트 탐색기에 표시 된 다른 스크립트에 대해 동일한 작업을 수행 합니다. 모든 스크립트 있습니다 코드 창에서 열기 되 면 코드를 단계별로 실행 하려면 F11 키를 누릅니다 (및 다른 디버그 바로 가기 키를 사용 하 여). 그림 3에는 스크립트 탐색기의 예가 나와 있습니다. 두 개의 사용자 지정 스크립트 및 ASP.NET AJAX ScriptManager에서 페이지에 동적으로 삽입 하는 두 개의 스크립트 뿐만 아니라 현재 디버깅 중인 파일 (Demo.aspx) 나열 합니다.
 

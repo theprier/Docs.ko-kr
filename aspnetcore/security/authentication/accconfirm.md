@@ -5,12 +5,12 @@ description: 전자 메일 확인 및 암호 재설정을 사용 하 여 ASP.NET
 ms.author: riande
 ms.date: 7/11/2018
 uid: security/authentication/accconfirm
-ms.openlocfilehash: 84eb3580107572f66f0c3b565b8e76ba401c0ddb
-ms.sourcegitcommit: 8f8924ce4eb9effeaf489f177fb01b66867da16f
+ms.openlocfilehash: 3ca6d014245bb2a9bc4b1c90285f47eec7cefe84
+ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39219409"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39655474"
 ---
 ::: moniker range="<= aspnetcore-2.0"
 
@@ -78,24 +78,11 @@ dotnet build
 
 앱 실행을 선택 합니다 **등록** 링크를 선택한 사용자를 등록 합니다. 이 시점에서 전자 메일에만 유효성 검사 된 합니다 [[EmailAddress]](/dotnet/api/system.componentmodel.dataannotations.emailaddressattribute) 특성입니다. 등록을 제출 후 앱에 로그인 됩니다. 자습서의 뒷부분에 나오는 코드에는 전자 메일의 유효성을 검사할 때까지 새 사용자가 로그인 할 수 없습니다 있도록 업데이트 됩니다.
 
-## <a name="view-the-identity-database"></a>Id 데이터베이스 보기
-
-# <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio) 
-
-* **뷰** 메뉴에서 **SQL Server 개체 탐색기** (SSOX).
-* 이동할 **(localdb) (SQL Server 13) MSSQLLocalDB**합니다. 마우스 오른쪽 단추로 클릭 **dbo입니다. AspNetUsers** > **데이터를 볼**:
-
-![SQL Server 개체 탐색기에서 AspNetUsers 테이블의 상황에 맞는 메뉴](accconfirm/_static/ssox.png)
+[!INCLUDE[](~/includes/view-identity-db.md)]
 
 테이블의 유의 `EmailConfirmed` 필드는 `False`합니다.
 
 앱에서 확인 전자 메일을 보낼 때 다음 단계에서는이 전자 메일에 다시 사용 하려는. 선택한 행을 마우스 오른쪽 단추로 클릭 **삭제**합니다. 전자 메일 별칭을 삭제 하면 쉽게 다음 단계에 있습니다.
-
-# <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
-
-참조 [ASP.NET Core MVC 프로젝트에서 SQLite 작업](xref:tutorials/first-mvc-app-xplat/working-with-sql) SQLite 데이터베이스를 보는 방법에 대 한 지침은 합니다.
-
-------
 
 <a name="prevent-login-at-registration"></a>
 ## <a name="require-email-confirmation"></a>전자 메일 확인이 필요
@@ -113,8 +100,6 @@ dotnet build
 ### <a name="configure-email-provider"></a>전자 메일 공급자 구성
 
 이 자습서에서는 [SendGrid](https://sendgrid.com) 전자 메일을 보내는 데 사용 됩니다. SendGrid 계정 및 전자 메일을 보내는 키 필요 합니다. 다른 이메일 공급자를 사용할 수 있습니다. ASP.NET Core 2.x 포함 `System.Net.Mail`, 앱에서 전자 메일을 보낼 수 있습니다. 전자 메일을 보내려면 SendGrid 또는 다른 전자 메일 서비스를 사용 하는 것이 좋습니다. SMTP를 보호 하 고 올바르게 설정 하기가 어렵습니다.
-
-합니다 [옵션 패턴](xref:fundamentals/configuration/options) 사용자 계정 및 키 설정에 액세스 하는 데 사용 됩니다. 자세한 내용은 [구성](xref:fundamentals/configuration/index)합니다.
 
 전자 메일 보안 키를 인출 하는 클래스를 만듭니다. 이 샘플을 만들 *Services/AuthMessageSenderOptions.cs*:
 
@@ -143,6 +128,8 @@ Windows, 암호 관리자의 키/값 쌍 저장 하는 *secrets.json* 파일을 
     "SendGridKey": "<key removed>"
   }
   ```
+ 
+자세한 내용은 참조는 [옵션 패턴](xref:fundamentals/configuration/options) 및 [구성](xref:fundamentals/configuration/index)합니다.
 
 ### <a name="install-sendgrid"></a>SendGrid를 설치 합니다.
 
