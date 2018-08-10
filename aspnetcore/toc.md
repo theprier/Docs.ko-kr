@@ -35,7 +35,7 @@
 ## [웹 API 개발](xref:web-api/index)
 ### [Visual Studio Code에서 Web API 만들기](xref:tutorials/web-api-vsc)
 ### [Mac용 Visual Studio에서 Web API 만들기](xref:tutorials/first-web-api-mac)
-### [Windows용 Visual Studio에서 Web API 만들기](xref:tutorials/first-web-api)
+### [Visual Studio에서 Web API 만들기](xref:tutorials/first-web-api)
 ### [네이티브 모바일 앱에 대한 백 엔드 서비스 만들기](xref:mobile/native-mobile-backend)
 ### [Swagger를 사용한 도움말 페이지](xref:tutorials/web-api-help-pages-using-swagger)
 #### [NSwag 시작](xref:tutorials/get-started-with-nswag)
@@ -218,7 +218,7 @@
 ## [Visual Studio에서 스냅숏 디버깅](/visualstudio/debugger/debug-live-azure-applications)
 ## [문제 해결](xref:test/troubleshoot)
 
-# [EF Core 및 Azure를 사용한 데이터 액세스](data/index.md)
+# [EF Core를 사용한 데이터 액세스](xref:data/index)
 ## [Visual Studio를 사용하여 Razor 페이지 및 EF Core 시작](xref:data/ef-rp/intro)
 ## [Visual Studio를 사용하여 ASP.NET Core 및 EF Core 시작](data/ef-mvc/index.md)
 ## [ASP.NET Core 및 EF Core - 새로운 데이터베이스](https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db)
@@ -229,6 +229,15 @@
 ### [Blob Storage 및 Visual Studio 연결된 서비스 시작](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-blobs/)
 ### [Get Started with Queue Storage and Visual Studio Connected Services](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-queues/)(Queue Storage 및 Visual Studio 연결된 서비스 시작)
 ### [Table Storage 및 Visual Studio 연결된 서비스 시작](https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-tables/)
+
+# [Azure 지침](xref:azure/index)
+## ASP.NET Core 및 Azure에서 DevOps
+### [소개](xref:azure/devops/index)
+### [도구 및 다운로드](xref:azure/devops/tools-and-downloads)
+### [App Service에 배포](xref:azure/devops/deploy-to-app-service)
+### [연속 통합 및 배포](xref:azure/devops/cicd)
+### [모니터링 및 문제 해결](xref:azure/devops/monitor)
+### [다음 단계](xref:azure/devops/next-steps)
 
 # [클라이언트 쪽 개발](xref:client-side/index)
 ## [Gulp 사용](xref:client-side/using-gulp)
