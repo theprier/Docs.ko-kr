@@ -5,20 +5,23 @@ description: ASP.NET Core SignalR.NET 클라이언트에 대 한 정보
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 05/29/2018
+ms.date: 08/07/2018
 uid: signalr/dotnet-client
-ms.openlocfilehash: ce5be911e67831cbf6c09e24744111e73ffdbe63
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: 970888a410b2486a20f98ce77a8674f8ec357f50
+ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095036"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39655254"
 ---
 # <a name="aspnet-core-signalr-net-client"></a>ASP.NET Core SignalR.NET 클라이언트
 
 작성자: [Rachel Appel](http://twitter.com/rachelappel)
 
 Xamarin, WPF, Windows Forms, 콘솔 및.NET Core 앱에서 ASP.NET Core SignalR.NET 클라이언트를 사용할 수 있습니다. 같은 합니다 [JavaScript 클라이언트](xref:signalr/javascript-client),.NET 클라이언트를 사용 하면 수신 및 송신 및 실시간으로 허브에 메시지를 수신 하 합니다.
+
+> [!NOTE]
+> Xamarin에는 Visual Studio 버전에 대 한 특별 한 요구 사항이 있습니다. 자세한 내용은 [Xamarin에서 SignalR 클라이언트 2.1.1](https://github.com/aspnet/Announcements/issues/305)합니다.
 
 [예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/live/aspnetcore/signalr/dotnet-client/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
