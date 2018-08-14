@@ -1,19 +1,19 @@
 ---
-title: ASP.NET Core 및 Windows용 Visual Studio를 사용하여 Web API 만들기
+title: ASP.NET Core 및 Visual Studio를 사용하여 Web API 만들기
 author: rick-anderson
-description: ASP.NET Core MVC 및 Windows용 Visual Studio를 사용하여 Web API 빌드
+description: Windows에서 ASP.NET Core MVC 및 Visual Studio를 사용하여 Web API 빌드
 ms.author: riande
 ms.custom: mvc
 ms.date: 05/17/2018
 uid: tutorials/first-web-api
-ms.openlocfilehash: 3da22cbbbe0db7771656997a13587521e182fb2a
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 2694388324cdbd246aad6c88d8439171704dfe89
+ms.sourcegitcommit: 29dfe436f54a27fbb4f6494bc639d16c75001fab
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38164602"
+ms.lasthandoff: 08/09/2018
+ms.locfileid: "39722518"
 ---
-# <a name="create-a-web-api-with-aspnet-core-and-visual-studio-for-windows"></a>ASP.NET Core 및 Windows용 Visual Studio를 사용하여 Web API 만들기
+# <a name="create-a-web-api-with-aspnet-core-and-visual-studio"></a>ASP.NET Core 및 Visual Studio를 사용하여 Web API 만들기
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT) 및 [Mike Wasson](https://github.com/mikewasson)
 
@@ -21,7 +21,7 @@ ms.locfileid: "38164602"
 
 이 자습서는 다음 세 가지 버전으로 제공됩니다.
 
-* Windows: Windows용 Visual Studio를 사용한 Web API(이 자습서)
+* Windows: Windows에서 Visual Studio를 사용한 Web API(이 자습서)
 * macOS: [Mac용 Visual Studio를 사용한 Web API](xref:tutorials/first-web-api-mac)
 * macOS, Linux, Windows: [Visual Studio Code를 사용한 Web API](xref:tutorials/web-api-vsc)
 

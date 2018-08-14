@@ -39,7 +39,7 @@
 ]
 ```
 
-자습서의 뒷부분에서는 HTTP 응답을 [Postman](https://www.getpostman.com/) 또는 [curl](https://developer.apple.com/legacy/library/documentation/Darwin/Reference/ManPages/man1/curl.1.html)로 볼 수 있는 방법을 설명합니다.
+자습서의 뒷부분에서는 HTTP 응답을 [Postman](https://www.getpostman.com/) 또는 [curl](https://curl.haxx.se/docs/manpage.html)로 볼 수 있는 방법을 설명합니다.
 
 ### <a name="routing-and-url-paths"></a>라우팅 및 URL 경로
 

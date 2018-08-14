@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 07/06/2018
 uid: mvc/views/partial
-ms.openlocfilehash: 7cb20fc30609adad83cb40e91316da115817f035
-ms.sourcegitcommit: e955a722c05ce2e5e21b4219f7d94fb878e255a6
+ms.openlocfilehash: 2223f3c6e42927def4b91ff9da58c228e5904756
+ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39378685"
+ms.lasthandoff: 08/08/2018
+ms.locfileid: "39655325"
 ---
 # <a name="partial-views-in-aspnet-core"></a>ASP.NET Core의 부분 보기
 
@@ -35,7 +35,7 @@ ASP.NET Core는 부분 보기를 지원합니다. 부분 보기는 여러 보기
 
 논리 조각으로 구성된 복잡한 페이지를 사용하는 경우 고유한 부분 보기로 각 부분을 작업하는 것이 유용합니다. 페이지의 나머지 부분과 분리해서 페이지의 각 부분을 볼 수 있습니다. 전체 페이지 구조와 부분 보기를 렌더링하기 위한 호출만 포함하기 때문에 페이지 자체에 대한 보기가 더 간단해집니다.
 
-ASP.NET Core MVC 컨트롤러에는 작업 메서드에서 호출되는 [PartialView](/dotnet/api/microsoft.aspnetcore.mvc.controller.partialview#Microsoft_AspNetCore_Mvc_Controller_PartialView) 메서드가 있습니다. Razor Pages에는 동일한 `PartialView` 메서드가 없습니다.
+ASP.NET Core MVC 컨트롤러에는 작업 메서드에서 호출되는 [PartialView](/dotnet/api/microsoft.aspnetcore.mvc.controller.partialview#Microsoft_AspNetCore_Mvc_Controller_PartialView) 메서드가 있습니다. Razor Pages에는 [PageModel](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.pagemodel)의 동일한 `PartialView` 메서드가 없습니다.
 
 ## <a name="declare-partial-views"></a>부분 보기 선언
 
