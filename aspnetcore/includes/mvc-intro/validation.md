@@ -6,7 +6,7 @@
 
 ## <a name="keeping-things-dry"></a>반복 금지
 
-MVC의 디자인 개념 중 하나는 [DRY](https://wikipedia.org/wiki/Don%27t_repeat_yourself)(반복 금지, Don't Repeat Yourself)입니다. ASP.NET MVC에서는 기능 또는 동작을 한 번만 지정한 다음 앱의 모든 곳에 반영되게 하는 것을 권장합니다. 이렇게 하면 작성할 코드 규모가 줄어들고 코드 작성에서 오류가 발생할 가능성도 낮아지며 테스트 및 유지 관리가 더 용이해집니다.
+MVC의 디자인 개념 중 하나는 [DRY](https://wikipedia.org/wiki/Don%27t_repeat_yourself)(반복 금지, Don't Repeat Yourself)입니다. ASP.NET Core MVC에서는 기능 또는 동작을 한 번만 지정한 다음, 앱의 모든 곳에 반영되게 하는 것을 권장합니다. 이렇게 하면 작성할 코드 규모가 줄어들고 코드 작성에서 오류가 발생할 가능성도 낮아지며 테스트 및 유지 관리가 더 용이해집니다.
 
 MVC에서 제공하는 유효성 검사 지원 및 Entity Framework Core Code First는 반복 금지 원칙의 좋은 예제입니다. 유효성 검사 규칙을 한 위치(모델 클래스에서)에서 선언적으로 지정하고 앱의 모든 위치에서 규칙을 시행할 수 있습니다.
 
@@ -25,7 +25,7 @@ MVC에서 제공하는 유효성 검사 지원 및 Entity Framework Core Code Fi
 
 이 유효성 검사 특성은 적용되는 모델 속성에 시행하려는 동작을 지정합니다. `Required` 및 `MinimumLength` 특성은 속성에 값이 있어야 하지만 사용자가 이 유효성 검사를 만족하기 위해 공백을 입력하는 것을 예방할 수 없다는 것을 나타냅니다. `RegularExpression` 특성은 입력될 수 있는 문자를 제한하는 데 사용됩니다. 위의 코드에서 `Genre` 및 `Rating`은 문자만을 사용해야 합니다(첫 번째 문자 대문자, 공백, 숫자 및 특수 문자가 허용되지 않음). `Range` 특성은 지정된 범위 내의 값을 제한합니다. `StringLength` 특성을 사용하면 문자열 속성의 최대 길이와, 필요에 따라 최소 길이를 설정할 수 있습니다. 값 형식(예: `decimal`, `int`, `float`, `DateTime`)은 기본적으로 필요하며 `[Required]` 특성은 필요하지 않습니다.
 
-ASP.NET에 의해 자동으로 적용되는 유효성 검사 규칙을 사용하면 앱을 보다 강력하게 합니다. 또한 유효성 검사를 잊거나, 데이터베이스에 불량 데이터가 실수로 들어가지 않게 할 수 있습니다.
+ASP.NET Core에 의해 자동으로 적용되는 유효성 검사 규칙을 사용하면 앱을 더욱 강력하게 합니다. 또한 유효성 검사를 잊거나, 데이터베이스에 불량 데이터가 실수로 들어가지 않게 할 수 있습니다.
 
 ## <a name="validation-error-ui-in-mvc"></a>MVC에서 유효성 검사 오류 UI
 
