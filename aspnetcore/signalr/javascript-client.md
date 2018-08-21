@@ -9,7 +9,7 @@ ms.date: 05/29/2018
 uid: signalr/javascript-client
 ms.openlocfilehash: c13c41b0344b0c880e842f2799d6ee97bd7fff7e
 ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 07/17/2018
 ms.locfileid: "39095426"
@@ -31,7 +31,7 @@ SignalR JavaScript 클라이언트 라이브러리를 전달 되는 [npm](https:
    npm install @aspnet/signalr
   ```
 
-Npm에서 패키지 콘텐츠를 설치 합니다 *node_modules\\ @aspnet\signalr\dist\browser*  폴더입니다. 라는 새 폴더를 만듭니다 *signalr* 아래의 합니다 *wwwroot\\lib* 폴더입니다. 복사 합니다 *signalr.js* 파일을 합니다 *wwwroot\lib\signalr* 폴더입니다.
+Npm에서 패키지 콘텐츠를 설치 합니다 *node_modules\\@aspnet\signalr\dist\browser* 폴더입니다. 라는 새 폴더를 만듭니다 *signalr* 아래의 합니다 *wwwroot\\lib* 폴더입니다. 복사 합니다 *signalr.js* 파일을 합니다 *wwwroot\lib\signalr* 폴더입니다.
 
 ## <a name="use-the-signalr-javascript-client"></a>SignalR JavaScript 클라이언트 사용
 
