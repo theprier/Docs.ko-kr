@@ -3,21 +3,21 @@ uid: ajax/cdn/jquery-datatables/cdnjquerydatatables104
 title: jQuery DataTables 1.10.4 | Microsoft Docs
 author: rick-anderson
 description: ''
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/15/2015
 ms.assetid: a313fb9c-93c8-40ef-9c81-e1651ecaffa3
 msc.legacyurl: /ajax/cdn/jquery-datatables/cdnjquerydatatables104
 msc.type: content
-ms.openlocfilehash: 8c8566c24e114d3abfc3b86c8fb57df7dc759f80
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 03eace40b341eeb4139d8bc10473dc85d649976f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37815677"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836633"
 ---
-<a name="jquery-datatables-1104"></a><span data-ttu-id="7f3f6-102">jQuery DataTables 1.10.4</span><span class="sxs-lookup"><span data-stu-id="7f3f6-102">jQuery DataTables 1.10.4</span></span>
+<a name="jquery-datatables-1104"></a><span data-ttu-id="1683b-102">jQuery DataTables 1.10.4</span><span class="sxs-lookup"><span data-stu-id="1683b-102">jQuery DataTables 1.10.4</span></span>
 ====================
-<span data-ttu-id="7f3f6-103">CDN에서 jQuery DataTables 플러그 인에 대 한 다음 파일이 호스팅됩니다.</span><span class="sxs-lookup"><span data-stu-id="7f3f6-103">The following files for the jQuery DataTables plugins are hosted on the CDN:</span></span>
+<span data-ttu-id="1683b-103">CDN에서 jQuery DataTables 플러그 인에 대 한 다음 파일이 호스팅됩니다.</span><span class="sxs-lookup"><span data-stu-id="1683b-103">The following files for the jQuery DataTables plugins are hosted on the CDN:</span></span>
 
 - https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.10.4/jquery.dataTables.js
 - https://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.10.4/jquery.dataTables.min.js
