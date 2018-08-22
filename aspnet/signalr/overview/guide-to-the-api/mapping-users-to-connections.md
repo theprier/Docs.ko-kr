@@ -3,17 +3,17 @@ uid: signalr/overview/guide-to-the-api/mapping-users-to-connections
 title: SignalR 사용자를 연결에 매핑 | Microsoft Docs
 author: tfitzmac
 description: 이 항목에서는 사용자 및 해당 연결에 대 한 정보를 유지 하는 방법을 보여 줍니다. Patrick Fletcher이 도움말이 항목을 작성 하는 데 도움이 되었습니다. 이 항목에서 사용 되는 소프트웨어 버전 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 12/30/2014
 ms.assetid: f80c08b1-3f1f-432c-980c-c7b6edeb31b1
 msc.legacyurl: /signalr/overview/guide-to-the-api/mapping-users-to-connections
 msc.type: authoredcontent
-ms.openlocfilehash: bee743c5b201f4eef04cb80aa860ec67c4afe773
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 765f85a4e07966d32bdfc9a0b533040f14a2843e
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37840440"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41827754"
 ---
 <a name="mapping-signalr-users-to-connections"></a>SignalR 사용자를 연결에 매핑
 ====================

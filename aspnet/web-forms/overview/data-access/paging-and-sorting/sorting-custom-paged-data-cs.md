@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/paging-and-sorting/sorting-custom-paged-data
 title: 사용자 지정 페이징 정렬 데이터 (C#) | Microsoft Docs
 author: rick-anderson
 description: 이전 자습서에서 웹 페이지에서 데이터를 presentating 때 사용자 지정 페이징을 구현 하는 방법을 알게 되었습니다. 이 자습서에서는 이전 확장 하는 방법을 표시 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/15/2006
 ms.assetid: 778baa4e-4af8-4665-947e-7a01d1a4dff2
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/sorting-custom-paged-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8057b11f9d2d812b9b2bf8d9e016ed17cff4e2f2
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: cc0ca571957f29afd7e3a2657e58272f804fc6ef
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37816748"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41827814"
 ---
 <a name="sorting-custom-paged-data-c"></a>사용자 지정 페이징 정렬 데이터 (C#)
 ====================

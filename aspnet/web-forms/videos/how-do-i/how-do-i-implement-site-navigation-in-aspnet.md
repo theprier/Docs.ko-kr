@@ -3,17 +3,17 @@ uid: web-forms/videos/how-do-i/how-do-i-implement-site-navigation-in-aspnet
 title: '[어떻게 할까요?] ASP.NET에서 사이트 탐색 구현? | Microsoft 문서'
 author: rick-anderson
 description: 이 비디오에서는 구동 정의 메뉴, 트리 뷰 및 Sitemap 서버 컨트롤과 함께 사용 하는 방법에 알아봅니다. 마스터 페이지에는 사이트 맵을 사용 하는 방법을 표시 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/18/2007
 ms.assetid: 889e8100-a80c-41c0-bfeb-7d466c754548
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-implement-site-navigation-in-aspnet
 msc.type: video
-ms.openlocfilehash: 1995ce735698f0c7827e2721c07c1d98922a7ba3
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: ee5b79587672b9bf076439b28aad9de3f0c7dd98
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37822433"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41829702"
 ---
 <a name="how-do-i-implement-site-navigation-in-aspnet"></a>[어떻게 할까요?] ASP.NET에서 사이트 탐색 구현?
 ====================

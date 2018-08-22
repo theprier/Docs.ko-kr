@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-ajax/how-do-i-choose-between-methods-of-ajax-page-u
 title: '[어떻게 할까요?] AJAX의 방법 중에서 선택 페이지 업데이트? | Microsoft 문서'
 author: JoeStagner
 description: 이 비디오에서 Joe Stagner는 ASP.NET 응용 프로그램에서 AJAX 방식의 페이지 업데이트를 수행 하는 두 가지 주요 방법 비교 합니다. 첫 번째 메서드는 Upd를 사용 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/09/2007
 ms.assetid: a5e33a7d-ccb2-483f-a955-3d39f72ba4ec
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-choose-between-methods-of-ajax-page-updates
 msc.type: video
-ms.openlocfilehash: 226fb0423ea05ad9034c909037358331918f2892
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 9f146c36ab2225e732a2a35d84bc4e6a616b22d5
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37838441"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830238"
 ---
 <a name="how-do-i-choose-between-methods-of-ajax-page-updates"></a>[어떻게 할까요?] AJAX의 방법 중에서 선택 페이지 업데이트?
 ====================

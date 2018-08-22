@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-ajax/how-do-i-use-javascript-to-refresh-an-aspnet-a
 title: '[어떻게 할까요?] JavaScript를 사용 하 여 ASP.NET AJAX UpdatePanel 새로 고침? | Microsoft 문서'
 author: JoeStagner
 description: 이 비디오에서는 ASP.NET AJAX UpdatePanel 컨트롤의 콘텐츠를 새로 고칠 JavaScript 논리를 사용 하 여 두 가지 방법에 알아봅니다. 첫 번째 방법은 추가 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/25/2007
 ms.assetid: b4d5b7ce-c322-4313-985d-455df98d619a
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-use-javascript-to-refresh-an-aspnet-ajax-updatepanel
 msc.type: video
-ms.openlocfilehash: 51875f1dde1ed2ac1d8e0928a9ffe73c6005fde9
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 93a39765abac7affa36c55ff191a1e9a023d80e6
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37823247"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41833497"
 ---
 <a name="how-do-i-use-javascript-to-refresh-an-aspnet-ajax-updatepanel"></a>[어떻게 할까요?] JavaScript를 사용 하 여 ASP.NET AJAX UpdatePanel 새로 고침?
 ====================

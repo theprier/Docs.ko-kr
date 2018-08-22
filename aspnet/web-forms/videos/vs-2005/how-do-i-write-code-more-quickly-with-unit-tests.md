@@ -3,17 +3,17 @@ uid: web-forms/videos/vs-2005/how-do-i-write-code-more-quickly-with-unit-tests
 title: '[어떻게 할까요?] 단위 테스트를 사용 하 여 보다 신속 하 게 코드 쓰기 | Microsoft 문서'
 author: rick-anderson
 description: 이 비디오에서는 단위 테스트를 늘리려면 어떻게 생산성 디버깅 프로세스를 간소화 하 여 알아봅니다. Visual Studio Team System을 끝내려면 생성 어떻게 표시...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/21/2007
 ms.assetid: 4618499e-1925-414e-a432-16952bb967f4
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-write-code-more-quickly-with-unit-tests
 msc.type: video
-ms.openlocfilehash: c2ba4f3433d19654ff1dfe543cabec1673bdc5c5
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: d0950ec711e85435c5a25028e357d9519817f7b9
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37840412"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837876"
 ---
 <a name="how-do-i-write-code-more-quickly-with-unit-tests"></a>[어떻게 할까요?] 단위 테스트를 사용 하 여 보다 신속 하 게 코드 쓰기
 ====================

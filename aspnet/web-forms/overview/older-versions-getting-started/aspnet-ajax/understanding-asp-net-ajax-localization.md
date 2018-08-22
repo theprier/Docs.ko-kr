@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding
 title: ASP.NET AJAX 지역화 이해 | Microsoft Docs
 author: scottcate
 description: 지역화는 응용 프로그램 또는 응용 프로그램 구성 요소는 특정 언어와 문화권에 대 한 지원을 통합 및 설계 프로세스입니다. Mic...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/14/2008
 ms.assetid: c1a35f18-bab9-41f7-8497-15530c37a09d
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-localization
 msc.type: authoredcontent
-ms.openlocfilehash: ce6404ce4faa1018a4f8118f6167a4f93956abd3
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 86cbf150708f1db711b40ccbc25345afeb3e542a
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37815012"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830236"
 ---
 <a name="understanding-aspnet-ajax-localization"></a>ASP.NET AJAX 지역화 이해
 ====================

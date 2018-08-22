@@ -4,18 +4,28 @@ author: tdykstra
 description: SignalR 및 ASP.NET Core SignalR의 차이점
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
-ms.date: 06/30/2018
+ms.date: 08/20/2018
 uid: signalr/version-differences
-ms.openlocfilehash: 6ed7e2e1ecadef08d71c4d7a7c3469738d07bcda
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: b904f57af3700b6e1e2143913dfa08da9bf8bbd2
+ms.sourcegitcommit: d27317c16f113e7c111583042ec7e4c5a26adf6f
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095010"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "41824149"
 ---
-# <a name="differences-between-signalr-and-aspnet-core-signalr"></a>SignalR 및 ASP.NET Core SignalR의 차이점
+# <a name="differences-between-aspnet-signalr-and-aspnet-core-signalr"></a>ASP.NET SignalR 및 ASP.NET Core SignalR의 차이점
 
-ASP.NET Core SignalR 클라이언트 또는 ASP.NET SignalR에 대 한 서버와 호환 되지 않습니다. 이 문서는 ASP.NET Core SignalR에서 변경 되거나 제거 된 기능을 자세히 설명 합니다.
+ASP.NET Core SignalR 클라이언트 또는 ASP.NET SignalR에 대 한 서버와 호환 되지 않습니다. 이 문서에서는 ASP.NET Core SignalR에서 변경 되거나 제거 된 기능을 자세히 설명 합니다.
+
+## <a name="how-to-identify-the-signalr-version"></a>SignalR 버전을 식별 하는 방법
+
+|                      | ASP.NET SignalR | ASP.NET Core SignalR |
+| -------------------- | --------------- | -------------------- |
+| Server NuGet 패키지 | [Microsoft.AspNet.SignalR](https://www.nuget.org/packages/Microsoft.AspNet.SignalR/) | [Microsoft.AspNetCore.App](https://www.nuget.org/packages/Microsoft.AspNetCore.App/) (.NET Core)<br>[Microsoft.AspNetCore.SignalR](https://www.nuget.org/packages/Microsoft.AspNetCore.SignalR/) (.NET Framework) |
+| 클라이언트 NuGet 패키지 | [Microsoft.AspNet.SignalR.Client](https://www.nuget.org/packages/Microsoft.AspNet.SignalR.Client/)<br>[Microsoft.AspNet.SignalR.JS](https://www.nuget.org/packages/Microsoft.AspNet.SignalR.JS/) | [Microsoft.AspNetCore.SignalR.Client](https://www.nuget.org/packages/Microsoft.AspNetCore.SignalR.Client/) |
+| 클라이언트 npm 패키지 | [signalr](https://www.npmjs.com/package/signalr) | [@aspnet/signalr](https://www.npmjs.com/package/@aspnet/signalr) |
+| 서버 앱 유형 | ASP.NET (System.Web) 또는 OWIN 자체 호스트 | ASP.NET Core |
+| 지원 되는 서버 플랫폼 | .NET framework 4.5 이상 | .NET Framework 4.6.1 이상<br>.NET core 2.1 이상 |
 
 ## <a name="feature-differences"></a>기능 차이점
 
@@ -29,15 +39,15 @@ ASP.NET Core SignalR 기반 새 이진 프로토콜 뿐만 아니라 JSON 지원
 
 ## <a name="differences-on-the-server"></a>서버에서 차이점
 
-SignalR 서버 쪽 라이브러리에 포함 된 합니다 `Microsoft.AspNetCore.App` 패키지의 일부인 합니다 **ASP.NET Core 웹 응용 프로그램** Razor 및 MVC 프로젝트 템플릿.
+ASP.NET Core SignalR의 서버 쪽 라이브러리에 포함 된 합니다 [Microsoft.AspNetCore.App 메타 패키지](xref:fundamentals/metapackage-app) 패키지의 일부인 합니다 **ASP.NET Core 웹 응용 프로그램** Razor 및 MVC에 대 한 템플릿 프로젝트입니다.
 
-SignalR은 ASP.NET Core 미들웨어를 호출 하 여 구성 해야 하므로 `AddSignalR` 에서 `Startup.ConfigureServices`합니다.
+ASP.NET Core SignalR은 ASP.NET Core 미들웨어를 호출 하 여 구성 해야 하므로 [AddSignalR](/dotnet/api/microsoft.extensions.dependencyinjection.signalrdependencyinjectionextensions.addsignalr) 에서 `Startup.ConfigureServices`합니다.
 
 ```csharp
-services.AddSignalR();
+services.AddSignalR()
 ```
 
-에 라우팅을 구성 하려면 경로 내에서 허브에 매핑하는 `UseSignalR` 메서드 호출을 `Startup.Configure` 메서드.
+에 라우팅을 구성 하려면 경로 내에서 허브에 매핑하는 [UseSignalR](/dotnet/api/microsoft.aspnetcore.builder.signalrappbuilderextensions.usesignalr) 메서드 호출을 `Startup.Configure` 메서드.
 
 ```csharp
 app.UseSignalR(routes =>
@@ -48,7 +58,7 @@ app.UseSignalR(routes =>
 
 ### <a name="sticky-sessions-now-required"></a>이제 필요한 고정 세션
 
-클라이언트는 이전 버전의 SignalR에서 스케일 아웃 작동 하는 방법으로 인해 다시 연결을 팜의 모든 서버에 메시지를 보낼 수 있습니다. 다시 연결을 지원 하지 않는 뿐만 아니라 확장 모델을 변경으로 인해이 더 이상 지원 되지. 이제 클라이언트가 서버에 연결 되 면 연결 기간에 대 한 동일한 서버를 사용 하 여 상호 작용 하도록 해야 합니다.
+ASP.NET SignalR에서 스케일 아웃 작동 하는 방법으로 인해 클라이언트가 다시 연결을 팜의 모든 서버에 메시지를 보낼 수 있습니다. 다시 연결을 지원 하지 않는 뿐만 아니라 확장 모델을 변경으로 인해이 더 이상 지원 되지. 클라이언트가 서버에 연결 되 면 연결 기간에 대 한 동일한 서버 상호 작용 해야 하 합니다.
 
 ### <a name="single-hub-per-connection"></a>단일 허브 연결당
 
@@ -56,7 +66,7 @@ ASP.NET Core SignalR의 연결 모델이 간소화 되었습니다. 여러 허�
 
 ### <a name="streaming"></a>스트리밍
 
-SignalR에서 지 원하는 [스트리밍 데이터](xref:signalr/streaming) 클라이언트에 허브에서 합니다.
+ASP.NET Core SignalR 지원 [스트리밍 데이터](xref:signalr/streaming) 클라이언트에 허브에서 합니다.
 
 ### <a name="state"></a>시스템 상태
 
@@ -66,11 +76,11 @@ SignalR에서 지 원하는 [스트리밍 데이터](xref:signalr/streaming) 클
 
 ### <a name="typescript"></a>TypeScript
 
-ASP.NET Core 버전의 SignalR 작성 [TypeScript](https://www.typescriptlang.org/)합니다. 사용 하는 경우 JavaScript 또는 TypeScript에서 작성할 수는 [JavaScript 클라이언트](xref:signalr/javascript-client)합니다.
+ASP.NET Core SignalR 클라이언트 쓰여질 [TypeScript](https://www.typescriptlang.org/)합니다. 사용 하는 경우 JavaScript 또는 TypeScript에서 작성할 수는 [JavaScript 클라이언트](xref:signalr/javascript-client)합니다.
 
 ### <a name="the-javascript-client-is-hosted-at-npmhttpswwwnpmjscom"></a>JavaScript 클라이언트에서 호스팅되는 [npm](https://www.npmjs.com/)
 
-이전 버전에서는 Visual Studio의 NuGet 패키지를 통해 JavaScript 클라이언트가 받았습니다. Core 버전을 [ @aspnet/signalr npm 패키지](https://www.npmjs.com/package/@aspnet/signalr) JavaScript 라이브러리가 포함 되어 있습니다. 이 패키지에 포함 되지 합니다 **ASP.NET Core 웹 응용 프로그램** 템플릿. Npm을 사용 하 여 설치 하는 `@aspnet/signalr` npm 패키지 있습니다.
+이전 버전에서는 Visual Studio의 NuGet 패키지를 통해 JavaScript 클라이언트가 받았습니다. Core 버전에 대 한 합니다 [ @aspnet/signalr ](https://www.npmjs.com/package/@aspnet/signalr) npm 패키지는 JavaScript 라이브러리를 포함 합니다. 이 패키지에 포함 되지 합니다 **ASP.NET Core 웹 응용 프로그램** 템플릿. Npm을 사용 하 여 설치 하는 `@aspnet/signalr` npm 패키지 있습니다.
 
 ```console
 npm init -y
@@ -83,7 +93,7 @@ JQuery에 대 한 종속성이 제거 되었습니다, 프로젝트에는 jQuery
 
 ### <a name="javascript-client-method-syntax"></a>JavaScript 클라이언트 메서드 구문
 
-이전 버전의 SignalR에서 JavaScript 구문이 변경 되었습니다. 사용 하는 대신 합니다 `$connection` 개체를 사용 하 여 연결을 만듭니다는 `HubConnectionBuilder` API.
+이전 버전의 SignalR에서 JavaScript 구문이 변경 되었습니다. 사용 하지 않고는 `$connection` 개체를 사용 하 여 연결 합니다 [HubConnectionBuilder](/javascript/api/%40aspnet/signalr/hubconnectionbuilder) API.
 
 ```javascript
 const connection = new signalR.HubConnectionBuilder()
@@ -91,7 +101,7 @@ const connection = new signalR.HubConnectionBuilder()
     .build();
 ```
 
-사용 하 여 `connection.on` 허브를 호출할 수 있는 클라이언트 메서드를 지정 합니다.
+사용 된 [에서](/javascript/api/@aspnet/signalr/HubConnection#on) 허브를 호출할 수 있는 클라이언트 메서드를 지정 하는 방법입니다.
 
 ```javascript
 connection.on("ReceiveMessage", (user, message) => {
@@ -101,7 +111,7 @@ connection.on("ReceiveMessage", (user, message) => {
 });
 ```
 
-클라이언트 메서드를 만든 후 허브 연결을 시작 합니다. 체인을 `catch` 메서드를 기록 하거나 오류를 처리 합니다.
+클라이언트 메서드를 만든 후 허브 연결을 시작 합니다. 체인을 [catch](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise/catch) 메서드를 기록 하거나 오류를 처리 합니다.
 
 ```javascript
 connection.start().catch(err => console.error(err.toString()));
@@ -109,13 +119,13 @@ connection.start().catch(err => console.error(err.toString()));
 
 ### <a name="hub-proxies"></a>허브 프록시
 
-허브 프록시 더 이상 자동으로 생성 됩니다. 메서드 이름에 전달 되는 대신는 `invoke` 문자열로 API.
+허브 프록시 더 이상 자동으로 생성 됩니다. 메서드 이름에 전달 되는 대신 합니다 [호출할](/javascript/api/%40aspnet/signalr/hubconnection#invoke) 문자열로 API.
 
 ### <a name="net-and-other-clients"></a>.NET 및 기타 클라이언트
 
 `Microsoft.AspNetCore.SignalR.Client` NuGet 패키지는 ASP.NET Core SignalR에 대 한.NET 클라이언트 라이브러리를 포함 합니다.
 
-사용 된 `HubConnectionBuilder` 을 작성 하는 허브에 대 한 연결의 인스턴스.
+사용 된 [HubConnectionBuilder](/dotnet/api/microsoft.aspnetcore.signalr.client.hubconnectionbuilder) 을 작성 하는 허브에 대 한 연결의 인스턴스.
 
 ```csharp
 connection = new HubConnectionBuilder()

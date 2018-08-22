@@ -3,17 +3,17 @@ uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-togglebu
 title: '[어떻게 할까요?] ASP.NET AJAX ToggleButton Extender 사용 | Microsoft 문서'
 author: JoeStagner
 description: 사용자를 강화 하기 위해 표준 ASP.NET CheckBox 컨트롤의 모양과 동작을 수정 하려면 ToggleButton extender 컨트롤 간 사용을 보여 줍니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/01/2007
 ms.assetid: 3116e9bc-681c-48f9-813e-1bcfcec145da
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-togglebutton-extender
 msc.type: video
-ms.openlocfilehash: bd1b58d843839a60b24513796359d0bd502e5e6f
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 44fe6258c0973a9598a3fe586aa18a9a7ea909ff
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37802952"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41823718"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-togglebutton-extender"></a>[어떻게 할까요?] ASP.NET AJAX ToggleButton Extender 사용
 ====================

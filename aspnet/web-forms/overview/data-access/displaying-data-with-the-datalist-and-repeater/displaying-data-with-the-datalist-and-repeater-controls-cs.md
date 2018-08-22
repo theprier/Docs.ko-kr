@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeat
 title: DataList 및 반복기 컨트롤 (C#)를 사용 하 여 데이터를 표시 합니다. | Microsoft Docs
 author: rick-anderson
 description: 이전 자습서에서 데이터를 표시 하는 GridView 컨트롤을 사용 했습니다. 이 자습서를 시작에 대해 살펴봅니다와 일반적인 보고 패턴을 작성 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 09/13/2006
 ms.assetid: 0591cacc-b34b-4cf6-885e-2c9953bb0946
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/displaying-data-with-the-datalist-and-repeater-controls-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6368580d43e6216ea75d3013fb13aa59d9eeb6ba
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: a58a9501a546a437b44e078c628d7db010700b5c
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37805948"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41829402"
 ---
 <a name="displaying-data-with-the-datalist-and-repeater-controls-c"></a>DataList 및 반복기 컨트롤 (C#)를 사용 하 여 데이터 표시
 ====================

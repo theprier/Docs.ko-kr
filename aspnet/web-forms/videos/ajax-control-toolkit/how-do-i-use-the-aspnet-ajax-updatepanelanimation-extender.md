@@ -3,17 +3,17 @@ uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-updatepa
 title: '[어떻게 할까요?] ASP.NET AJAX UpdatePanelAnimation Extender 사용 | Microsoft 문서'
 author: JoeStagner
 description: 부분 페이지 업데이트로 업데이트, 발생 하는 경우 사용자에 게 알릴 수에서는 애니메이션을 추가 하 여 완료 했습니다. UpdatePanelAnimation extender는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/16/2007
 ms.assetid: 56f5ec0f-38f7-4ebc-90d9-9baf0c693bd4
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-updatepanelanimation-extender
 msc.type: video
-ms.openlocfilehash: 7acb260f39cd78de67a79855fab256e76fd5df48
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 3245db2c98e894b4489f186e12ce87c4acacdf29
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37822929"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41829465"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-updatepanelanimation-extender"></a>[어떻게 할까요?] ASP.NET AJAX UpdatePanelAnimation Extender 사용
 ====================

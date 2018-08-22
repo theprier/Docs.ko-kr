@@ -1,51 +1,51 @@
 ---
-title: ASP.NET 멤버 자격 인증에서 ASP.NET Core 2.0 Id로 마이그레이션
+title: 인증 ASP.NET 멤버 자격에서에서 ASP.NET Core 2.0 Id로 마이그레이션
 author: isaac2004
-description: ASP.NET Core 2.0 Id를 인증 멤버 자격을 사용 하는 기존 ASP.NET 응용 프로그램을 마이그레이션하는 방법에 알아봅니다.
+description: ASP.NET Core 2.0 Id 멤버 자격 인증을 사용 하 여 기존 ASP.NET 앱을 마이그레이션하는 방법에 알아봅니다.
 ms.author: scaddie
 ms.custom: mvc
 ms.date: 04/24/2018
 uid: migration/proper-to-2x/membership-to-core-identity
-ms.openlocfilehash: 3ec22713997a74b587ef5d18e71a28668a5481e2
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 82158ec500151a0bb61fb1da55a53684367d9a4e
+ms.sourcegitcommit: 2e054638b69f2b14f6d67d9fa3664999172ee1b2
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274107"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "41827722"
 ---
-# <a name="migrate-from-aspnet-membership-authentication-to-aspnet-core-20-identity"></a>ASP.NET 멤버 자격 인증에서 ASP.NET Core 2.0 Id로 마이그레이션
+# <a name="migrate-from-aspnet-membership-authentication-to-aspnet-core-20-identity"></a>인증 ASP.NET 멤버 자격에서에서 ASP.NET Core 2.0 Id로 마이그레이션
 
 작성자: [Isaac Levin](https://isaaclevin.com)
 
-이 문서 구성원 인증 ASP.NET 코어 2.0 id를 사용 하 여 ASP.NET 응용 프로그램에 대 한 데이터베이스 스키마를 마이그레이션하는 방법을 보여 줍니다.
+이 문서에서는 ASP.NET Core 2.0 Id 멤버 자격 인증을 사용 하 여 ASP.NET 앱에 대 한 데이터베이스 스키마를 마이그레이션하는 방법을 보여 줍니다.
 
 > [!NOTE]
-> 이 문서는 ASP.NET Core Id에 사용 되는 데이터베이스 스키마를 ASP.NET 멤버 자격 기반 앱에 대 한 데이터베이스 스키마를 마이그레이션하는 데 필요한 단계를 제공 합니다. ASP.NET Id에 ASP.NET 멤버 자격 기반 인증에서 마이그레이션에 대 한 자세한 내용은 참조 [SQL 멤버 자격에서 ASP.NET Identity에는 기존 응용 프로그램을 마이그레이션할](/aspnet/identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity)합니다. ASP.NET Core Id에 대 한 자세한 내용은 참조 [ASP.NET Core에 Id 소개](xref:security/authentication/identity)합니다.
+> 이 문서에서는 ASP.NET Core Id에 사용 되는 데이터베이스 스키마를 ASP.NET 멤버 자격 기반 앱에 대 한 데이터베이스 스키마를 마이그레이션하는 데 필요한 단계를 제공 합니다. ASP.NET 멤버 자격 기반 인증에서 ASP.NET Id로 마이그레이션에 대 한 자세한 내용은 참조 하세요. [SQL 멤버 자격에서 ASP.NET Id로 기존 앱을 마이그레이션](/aspnet/identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity)합니다. ASP.NET Core Id에 대 한 자세한 내용은 참조 하세요. [ASP.NET core Id 소개](xref:security/authentication/identity)합니다.
 
-## <a name="review-of-membership-schema"></a>멤버 자격 스키마의 검토
+## <a name="review-of-membership-schema"></a>멤버 자격 스키마 검토
 
-ASP.NET 2.0 이전 버전의 앱에 대 한 전체 인증 및 권한 부여 프로세스를 만드는 개발자 해야 된 합니다. ASP.NET 2.0을 ASP.NET 앱 내에서 보안을 처리 하는 상용구 솔루션 제공 멤버 자격 도입 되었습니다. 개발자와 SQL Server 데이터베이스에 스키마를 부트스트랩 하 못했습니다 이제는 [aspnet_regsql.exe](https://msdn.microsoft.com/library/ms229862.aspx) 명령입니다. 이 명령을 실행 한 후 다음 표에서 데이터베이스에 만들어졌습니다.
+ASP.NET 2.0 이전 개발자를 해당 앱에 대 한 전체 인증 및 권한 부여 프로세스를 작성 해야 했습니다. ASP.NET 2.0을 사용 하 여 ASP.NET 앱 내에서 보안을 처리 하는 상용구 솔루션 제공 멤버 자격 도입 되었습니다. 개발자가 사용 하 여 SQL Server 데이터베이스에 스키마를 부트스트랩 하 이제 있었습니다 합니다 [aspnet_regsql.exe](https://msdn.microsoft.com/library/ms229862.aspx) 명령입니다. 이 명령은 실행 한 후 다음 표에 데이터베이스에서 생성 되었습니다.
 
   ![멤버 자격 테이블](identity/_static/membership-tables.png)
 
-ASP.NET Core 2.0 Id를 기존 앱으로 마이그레이션할 하려면 이러한 테이블의 데이터를 새 Id 스키마에서 사용 하는 테이블을 마이그레이션할 수 있어야 합니다.
+기존 앱을 ASP.NET Core 2.0 Id로 마이그레이션하기 위해 이러한 테이블의 데이터를 새 Id 스키마에서 사용 하는 테이블을 마이그레이션할 해야 합니다.
 
 ## <a name="aspnet-core-identity-20-schema"></a>ASP.NET Core Identity 2.0 스키마
 
-ASP.NET Core 2.0 뒤에 오는 [Identity](/aspnet/identity/index) 원칙 ASP.NET 4.5에서 도입 되었습니다. ASP.NET Core의 버전 간에 서로 다른는 프레임 워크 간에 구현을 원칙 전체에서 공유 하는 경우 (참조 [ASP.NET 코어 2.0 인증 및 Id로](xref:migration/1x-to-2x/index)).
+ASP.NET Core 2.0을 따릅니다 합니다 [Identity](/aspnet/identity/index) 원칙 ASP.NET 4.5에서 도입 되었습니다. 프레임 워크 간에 구현은 ASP.NET Core의 버전 간에 다양 한 원칙을 공유 하지만 (참조 [ASP.NET Core 2.0으로 인증 및 Id 마이그레이션](xref:migration/1x-to-2x/index)).
 
-ASP.NET Core 2.0 Id에 대 한 스키마를 볼 수 있는 가장 빠른 방법은 새 ASP.NET 코어 2.0 응용 프로그램을 만드는 것입니다. Visual Studio 2017에 다음이 단계를 수행 합니다.
+ASP.NET Core 2.0 Id에 대 한 스키마를 볼 수 있는 가장 빠른 방법은 새 ASP.NET Core 2.0 앱을 만드는 것입니다. Visual Studio 2017에서 다음이 단계를 수행 합니다.
 
 * **파일** > **새로 만들기** > **프로젝트**를 선택합니다.
-* 새 **ASP.NET Core 웹 응용 프로그램**, 선택한 프로젝트의 이름을 *CoreIdentitySample*합니다.
-* 드롭다운에서 **ASP.NET Core 2.0**을 선택하고 **웹 응용 프로그램**을 선택합니다. 이 서식 파일을 생성 한 [Razor 페이지](xref:razor-pages/index) 응용 프로그램입니다. 클릭 하기 전에 **확인**, 클릭 **인증 변경**합니다.
-* 선택 **개별 사용자 계정** Identity 템플릿에 대 한 합니다. 마지막으로, 클릭 **확인**, 다음 **확인**합니다. Visual Studio에서 ASP.NET Core Id 템플릿을 사용 하 여 프로젝트를 만듭니다.
+* 새 **ASP.NET Core 웹 응용 프로그램** 하 고 프로젝트 이름을 *CoreIdentitySample*합니다.
+* 선택 **ASP.NET Core 2.0** 한 다음 선택한 드롭다운 **웹 응용 프로그램**합니다. 이 템플릿에서 생성 된 [Razor 페이지](xref:razor-pages/index) 앱. 클릭 하기 전에 **확인**, 클릭 **인증 변경**합니다.
+* 선택할 **개별 사용자 계정** Identity 템플릿에 대 한 합니다. 마지막으로, 클릭 **확인**, 한 다음 **확인**합니다. Visual Studio ASP.NET Core Id 템플릿을 사용 하 여 프로젝트를 만듭니다.
 
-사용 하 여 ASP.NET Core 2.0 Identity [Entity Framework Core](/ef/core) 인증 데이터를 저장 하는 데이터베이스와 상호 작용할 수 있습니다. 새로 만든된 응용 프로그램에서 작업을 위해 필요이 데이터를 저장할 데이터베이스를 사용 해야 합니다. 새 응용 프로그램을 만든 후 데이터베이스 환경에서 스키마를 검사 하는 가장 빠른 방법은 Entity Framework 마이그레이션을 사용 하 여 데이터베이스를 만드는 것입니다. 이 프로세스에서는 데이터베이스 중 하나를 로컬로 또는 다른 위치에 해당 스키마를 유사한 합니다. 자세한 내용은 위의 설명서를 검토 합니다.
+사용 하 여 ASP.NET Core 2.0 Identity [Entity Framework Core](/ef/core) 인증 데이터를 저장 하는 데이터베이스를 사용 하 여 상호 작용할 수 있습니다. 새로 만든 앱이 작동 하려면 순서로 필요이 데이터를 저장할 데이터베이스 여야 합니다. 새 앱을 만든 후 데이터베이스 환경에서 스키마를 검사 하는 가장 빠른 방법은 Entity Framework 마이그레이션을 사용 하 여 데이터베이스를 만드는 것입니다. 이 프로세스에서는 데이터베이스, 로컬로 또는 다른 곳에서 해당 스키마를 모방 하는 합니다. 자세한 내용은 이전 설명서를 검토 합니다.
 
-ASP.NET Core Id 스키마를 사용 하 여 데이터베이스를 만들려면 실행는 `Update-Database` Visual Studio에서 명령을 **패키지 관리자 콘솔** (PMC) 창&mdash;에 위치한 **도구**  >  **NuGet 패키지 관리자** > **패키지 관리자 콘솔**합니다. PMC는 Entity Framework 명령 실행을 지원합니다.
+ASP.NET Core Id 스키마를 사용 하 여 데이터베이스를 만들려면 다음을 실행 합니다 `Update-Database` Visual studio의 명령을 **패키지 관리자 콘솔** (PMC) 창&mdash;에 있는 **도구**  >  **NuGet 패키지 관리자** > **패키지 관리자 콘솔**합니다. PMC는 Entity Framework 명령 실행을 지원합니다.
 
-에 지정 된 데이터베이스에 대 한 연결 문자열을 사용 하는 entity Framework 명령을 *appsettings.json*합니다. 다음 연결 문자열에는 데이터베이스를 대상으로 *localhost* 라는 *asp net-코어 id*합니다. Entity Framework 사용 하도록 구성 된이 설정에는 `DefaultConnection` 연결 문자열입니다.
+지정 된 데이터베이스에 대 한 연결 문자열을 사용 하는 엔터티 프레임 워크 명령 *appsettings.json*합니다. 다음 연결 문자열에 데이터베이스를 대상 *localhost* 라는 *asp net-core id*합니다. 이 설정을 사용 하면 Entity Framework 사용 하도록 구성 되는 `DefaultConnection` 연결 문자열입니다.
 
 ```json
 {
@@ -55,13 +55,13 @@ ASP.NET Core Id 스키마를 사용 하 여 데이터베이스를 만들려면 �
 }
 ```
 
-이 명령은 스키마와 함께 지정 된 데이터베이스 및 응용 프로그램 초기화에 필요한 모든 데이터를 빌드합니다. 다음 그림에서는 위의 단계를 사용 하 여 만든 테이블 구조를 보여 줍니다.
+이 명령은 앱 초기화에 필요한 모든 데이터 및 스키마를 사용 하 여 지정 된 데이터베이스를 빌드합니다. 다음 이미지에서는 이전 단계를 사용 하 여 만든 테이블 구조를 보여 줍니다.
 
    ![Identity 테이블](identity/_static/identity-tables.png)
 
 ## <a name="migrate-the-schema"></a>스키마 마이그레이션
 
-테이블 구조와 멤버 자격 및 ASP.NET 코어 Id 모두에 대 한 필드에서 약간의 차이가 있습니다. ASP.NET 및 ASP.NET Core 응용 프로그램과 인증/권한 부여에 대 한 패턴 크게 변경 되었습니다. Id를 가진 여전히 사용 되는 주요 개체는 *사용자* 및 *역할*합니다. 다음에 대 한 매핑 테이블은 *사용자*, *역할*, 및 *UserRoles*합니다.
+테이블 구조와 멤버 및 ASP.NET Core Id에 대 한 필드에 미묘한 차이가 있습니다. ASP.NET 및 ASP.NET Core 앱을 사용 하 여 인증/권한 부여에 대 한 패턴은 크게 변경 되었습니다. Id로도 사용 되는 키 개체는 *사용자가* 하 고 *역할*입니다. 매핑 테이블에는 다음과 같습니다 *사용자*하십시오 *역할*, 및 *UserRoles*합니다.
 
 ### <a name="users"></a>사용자
 
@@ -77,7 +77,7 @@ ASP.NET Core Id 스키마를 사용 하 여 데이터베이스를 만들려면 �
 |`LockoutEnabled` | 비트 | `aspnet_Membership.IsLockedOut` | 비트
 
 > [!NOTE]
-> 일부 필드 매핑 ASP.NET Core Id에 멤버 자격에서 한 일 관계와 유사합니다. 앞의 표에에서는 기본 멤버 자격 사용자 스키마 및 ASP.NET 코어 Id 스키마로 매핑합니다. 멤버 자격에 사용 된 다른 모든 사용자 지정 필드를 수동으로 매핑할 수 해야 합니다. 이 매핑이 암호의 맵이 없습니다 암호 기준과 암호 솔트 둘 간의 마이그레이션 하지 않습니다. **null로 암호를 그대로 두고가 암호를 재설정 하도록 요청 하려면 것이 좋습니다.** ASP.NET Core Id에서 `LockoutEnd` 경우에 사용자가 잠겨 일부 미래 날짜를 설정 해야 합니다. 마이그레이션 스크립트에서이 확인할 수 있습니다.
+> 일부 필드 매핑이 ASP.NET Core Id 멤버 자격에서 한 일 관계와 유사합니다. 앞의 표에 기본 멤버 자격 사용자 스키마 및 ASP.NET Core Id 스키마에 매핑됩니다. 멤버 자격에 사용 된 다른 사용자 지정 필드를 수동으로 매핑할 수 해야 합니다. 이 매핑에 암호에 대 한 맵이 없습니다 암호 조건 및 암호 솔트 둘 사이 마이그레이션되지 않습니다. **null로 암호를 그대로 두고 자신의 암호를 재설정 하도록 요청 하려면 해당 하는 것이 좋습니다.** ASP.NET Core Id에 `LockoutEnd` 사용자 잠겨 있으면 일부 미래 날짜를 설정 해야 합니다. 이 작업은 마이그레이션 스크립트에서 표시 됩니다.
 
 ### <a name="roles"></a>역할
 
@@ -96,7 +96,7 @@ ASP.NET Core Id 스키마를 사용 하 여 데이터베이스를 만들려면 �
 |`RoleId` | string | `RoleId` | string
 |`UserId` | string | `UserId` | string
 
-에 대 한 마이그레이션 스크립트를 만들 때 앞의 매핑 테이블을 참조할 *사용자* 및 *역할*합니다. 다음 예제에서는 두 개의 데이터베이스가 데이터베이스 서버에 있는 가정 합니다. 한 데이터베이스는 기존 ASP.NET 멤버 자격 스키마와 데이터를 포함합니다. 다른 데이터베이스를 앞에서 설명한 단계를 사용 하 여 만들어졌습니다. 주석은 자세한 세부 정보에 대 한 인라인에 포함된 되어 있습니다.
+에 대 한 마이그레이션 스크립트를 만들 때 이전 매핑 테이블을 참조할 *사용자가* 하 고 *역할*입니다. 다음 예제에서는 두 개의 데이터베이스가 데이터베이스 서버에 있는 것을 가정 합니다. 하나의 데이터베이스에는 기존 ASP.NET 멤버 자격 스키마와 데이터를 포함합니다. 다른 데이터베이스 앞에서 설명한 단계를 사용 하 여 만들어졌습니다. 주석은 대 한 자세한 내용은 인라인으로 포함된 합니다.
 
 ```sql
 -- THIS SCRIPT NEEDS TO RUN FROM THE CONTEXT OF THE MEMBERSHIP DB
@@ -124,7 +124,7 @@ SELECT aspnet_users.userid,
        aspnet_users.loweredusername,
        --Creates an empty password since passwords don't map between the two schemas
        '',
-       --Security Stamp is a token used to verify the state of an account and is subject to change at any time. It should be intialized as a new ID.
+       --Security Stamp is a token used to verify the state of an account and is subject to change at any time. It should be initialized as a new ID.
        NewID(),
        --EmailConfirmed is set when a new user is created and confirmed via email. Users must have this set during migration to ensure they're able to reset passwords.
        1,
@@ -174,15 +174,15 @@ IF @@ERROR <> 0
 COMMIT TRANSACTION MigrateUsersAndRoles
 ```
 
-이 스크립트의 작업이 완료 되 면 앞에서 만든 ASP.NET Core Id 응용 프로그램 멤버 자격 사용자로 채워집니다. 사용자 로그인 시 암호를 변경 해야 합니다.
+이 스크립트를 완료 하면 앞에서 만든 ASP.NET Core Id 앱은 멤버 자격 사용자를 사용 하 여 채워집니다. 사용자 로그인 시 자신의 암호를 변경 해야 합니다.
 
 > [!NOTE]
-> 멤버 자격 시스템에는 사용자가 자신의 전자 메일 주소를 일치 하지 않는 사용자 이름으로, 변경 내용이 수용 하기 위해 앞에서 만든 앱에 필요한 됩니다. 기본 서식 파일에서는 `UserName` 및 `Email` 동일 해야 합니다. 다른 하는 경우에 대 한 로그인 프로세스를 사용 하도록 수정 해야 `UserName` 대신 `Email`합니다.
+> 멤버 자격 시스템에는 사용자가 자신의 전자 메일 주소를 일치 하지 않는 사용자 이름으로,이 수용 하기 위해 앞에서 만든 앱에 필요한 변경 내용이 됩니다. 기본 템플릿을 예상 `UserName` 및 `Email` 동일 해야 합니다. 경우에는 다른 지 알아두면에 대 한 로그인 프로세스를 사용 하 여 수정 해야 `UserName` 대신 `Email`합니다.
 
-에 `PageModel` 에 있는 로그인 페이지의 *Pages\Account\Login.cshtml.cs*, 제거는 `[EmailAddress]` 에서 특성의 *전자 메일* 속성입니다. 이 파일 이름을 *UserName*합니다. 이렇게 변경 하려면 때마다 `EmailAddress` 에서 언급 되는 *보기* 및 *PageModel*합니다. 결과 다음과 같습니다.
+에 `PageModel` 위치한 로그인 페이지의 *Pages\Account\Login.cshtml.cs*, 제거를 `[EmailAddress]` 에서 특성을 *전자 메일* 속성. 이 파일 이름을 *UserName*합니다. 이 변경 해야 때마다 `EmailAddress` 에서 언급 되는 *보기* 및 *PageModel*. 결과 다음과 같습니다.
 
  ![고정된 로그인](identity/_static/fixed-login.png)
 
 ## <a name="next-steps"></a>다음 단계
 
-이 자습서에서는 SQL 멤버 자격에서 사용자가 ASP.NET 코어 2.0 Id로 이식 하는 방법을 배웠습니다. ASP.NET Core Id에 대 한 자세한 내용은 참조 [Id 소개](xref:security/authentication/identity)합니다.
+이 자습서에서는 ASP.NET Core 2.0 Id를 SQL 멤버 자격에서 사용자를 이식 하는 방법을 알아보았습니다. ASP.NET Core Id에 대 한 자세한 내용은 [Id 소개](xref:security/authentication/identity)합니다.

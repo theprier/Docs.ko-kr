@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/nerddinner/use-ajax-to-implement-mapping-scen
 title: AJAX를 사용 하 여 매핑 시나리오 구현 | Microsoft Docs
 author: microsoft
 description: 11 단계 NerdDinner 응용 프로그램을 작성, 편집 또는 l을 보려는 dinners 보기는 사용자를 사용 하도록 설정 하면 AJAX 매핑 지원을 통합 하는 방법을 표시 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/27/2010
 ms.assetid: f731990a-0a81-4d62-81df-87d676cdedd6
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-ajax-to-implement-mapping-scenarios
 msc.type: authoredcontent
-ms.openlocfilehash: f8b9704e966c0211a690156555f4a272a823023a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: f7de23ca46e6dc00fe8075e28068a8b3f95d02cd
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37825981"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41823821"
 ---
 <a name="use-ajax-to-implement-mapping-scenarios"></a>AJAX를 사용 하 여 매핑 시나리오 구현
 ====================

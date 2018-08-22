@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/models-data/creating-model-classes-with-the-e
 title: Entity Framework (VB)를 사용 하 여 모델 클래스 만들기 | Microsoft Docs
 author: microsoft
 description: 이 자습서에서는 Microsoft Entity Framework를 사용 하 여 ASP.NET MVC를 사용 하는 방법을 알아봅니다. ADO.NET 엔터티 데이터를 만들려는 엔터티 마법사를 사용 하는 방법에 알아봅니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/27/2009
 ms.assetid: ff8322c9-12f3-4e24-aba6-a38046b9bb0d
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/creating-model-classes-with-the-entity-framework-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 15415547763cfcd48dc845827d8c6b12afd18d75
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: c1f64f57d4c23fe225a8268042104254e17dc456
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37810406"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41829621"
 ---
 <a name="creating-model-classes-with-the-entity-framework-vb"></a>Entity Framework (VB)를 사용 하 여 모델 클래스 만들기
 ====================

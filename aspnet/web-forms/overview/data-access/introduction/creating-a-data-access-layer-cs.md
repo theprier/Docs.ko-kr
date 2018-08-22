@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/introduction/creating-a-data-access-layer-cs
 title: 데이터 액세스 레이어 (C#) 만들기 | Microsoft Docs
 author: rick-anderson
 description: 이 자습서에서는 처음부터 시작 하 고 만들기 DAL 데이터 액세스 계층 (), 형식화 된 데이터 집합을 사용 하 여 데이터베이스의 정보에 액세스할 수 합니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/05/2010
 ms.assetid: cfe2a6a0-1e56-4dc8-9537-c8ec76ba96a4
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-data-access-layer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 556771994fd80773ec1e86bcbab0f60f2bb821e4
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: fca6119b2e78c246724d6dd7277d5c4dc521f49c
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37838756"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41828015"
 ---
 <a name="creating-a-data-access-layer-c"></a>데이터 액세스 레이어 (C#) 만들기
 ====================

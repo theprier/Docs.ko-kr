@@ -5,14 +5,14 @@ description: ASP.NET Core SignalR JavaScript 클라이언트의 개요입니다.
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 05/29/2018
+ms.date: 08/14/2018
 uid: signalr/javascript-client
-ms.openlocfilehash: c13c41b0344b0c880e842f2799d6ee97bd7fff7e
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
-ms.translationtype: HT
+ms.openlocfilehash: 639c30f1d145a3da5e4f5857f32c1b573c1bfce2
+ms.sourcegitcommit: 2c158fcfd325cad97ead608a816e525fe3dcf757
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095426"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "41829606"
 ---
 # <a name="aspnet-core-signalr-javascript-client"></a>ASP.NET Core SignalR JavaScript 클라이언트
 
@@ -27,11 +27,11 @@ ASP.NET Core SignalR JavaScript 클라이언트 라이브러리를 사용 하면
 SignalR JavaScript 클라이언트 라이브러리를 전달 되는 [npm](https://www.npmjs.com/) 패키지 있습니다. Visual Studio를 사용 하는 경우 실행할 `npm install` 에서 합니다 **패키지 관리자 콘솔** 루트 폴더에 있는 동안. Visual Studio Code에서 명령을 실행 합니다 **통합 터미널**합니다.
 
   ```console
-   npm init -y
-   npm install @aspnet/signalr
+  npm init -y
+  npm install @aspnet/signalr
   ```
 
-Npm에서 패키지 콘텐츠를 설치 합니다 *node_modules\\@aspnet\signalr\dist\browser* 폴더입니다. 라는 새 폴더를 만듭니다 *signalr* 아래의 합니다 *wwwroot\\lib* 폴더입니다. 복사 합니다 *signalr.js* 파일을 합니다 *wwwroot\lib\signalr* 폴더입니다.
+npm에서 패키지 콘텐츠를 설치 합니다 *node_modules\\ @aspnet\signalr\dist\browser*  폴더입니다. 라는 새 폴더를 만듭니다 *signalr* 아래의 합니다 *wwwroot\\lib* 폴더입니다. 복사 합니다 *signalr.js* 파일을 합니다 *wwwroot\lib\signalr* 폴더입니다.
 
 ## <a name="use-the-signalr-javascript-client"></a>SignalR JavaScript 클라이언트 사용
 
@@ -57,50 +57,51 @@ SignalR JavaScript 클라이언트에서 참조 된 `<script>` 요소입니다.
 
 ## <a name="call-hub-methods-from-client"></a>클라이언트에서 허브 메서드를 호출 합니다.
 
-JavaScript 클라이언트 공용 메서드를 호출 하 여 허브를 사용 하 여 `connection.invoke`입니다. `invoke` 메서드는 두 인수를 허용 합니다.
+JavaScript 클라이언트를 통해 허브에서 공용 메서드를 호출 합니다 [호출](/javascript/api/%40aspnet/signalr/hubconnection#invoke) 메서드는 [HubConnection](/javascript/api/%40aspnet/signalr/hubconnection)합니다. `invoke` 메서드는 두 인수를 허용 합니다.
 
-* 허브 메서드의 이름입니다. 다음 예제에서는 허브 이름은 `SendMessage`합니다.
+* 허브 메서드의 이름입니다. 다음 예제에서는 메서드 허브 이름은 `SendMessage`합니다.
 * 허브 메서드에 정의 된 모든 인수입니다. 다음 예제에서는 인수 이름은 `message`합니다.
 
-[!code-javascript[Call hub methods](javascript-client/sample/wwwroot/js/chat.js?range=24)]
+  [!code-javascript[Call hub methods](javascript-client/sample/wwwroot/js/chat.js?range=24)]
 
 ## <a name="call-client-methods-from-hub"></a>허브에서 클라이언트 메서드를 호출
 
-허브에서 메시지를 받으려면 사용 하는 메서드를 정의 합니다 `connection.on` 메서드.
+허브에서 메시지를 받으려면 사용 하는 메서드를 정의 합니다 [에](/javascript/api/%40aspnet/signalr/hubconnection#on) 메서드는 `HubConnection`합니다.
 
 * JavaScript 클라이언트 메서드의 이름입니다. 다음 예제에서는 메서드 이름은 `ReceiveMessage`합니다.
 * 허브 메서드에 전달 된 인수입니다. 다음 예제에서는 인수 값은 `message`합니다.
 
 [!code-javascript[Receive calls from hub](javascript-client/sample/wwwroot/js/chat.js?range=14-19)]
 
-위의 코드에서 `connection.on` 서버 쪽 코드를 사용 하 여 호출 될 때 실행 되는 `SendAsync` 메서드.
+위의 코드에서 `connection.on` 서버 쪽 코드를 사용 하 여 호출 될 때 실행 되는 [SendAsync](/dotnet/api/microsoft.aspnetcore.signalr.clientproxyextensions.sendasync) 메서드.
 
 [!code-csharp[Call client-side](javascript-client/sample/hubs/chathub.cs?range=8-11)]
 
 SignalR 클라이언트 호출할 메서드를 메서드 이름을 일치 시켜를 결정 하 고에 정의 된 인수 `SendAsync` 고 `connection.on`입니다.
 
 > [!NOTE]
-> 호출 하는 것이 좋습니다 `connection.start` 후 `connection.on` 처리기는 모든 메시지를 수신 하기 전에 등록 됩니다.
+> 호출 하는 것이 좋습니다 합니다 [시작](/javascript/api/%40aspnet/signalr/hubconnection#start) 메서드는 `HubConnection` 후 `on`합니다. 이렇게 하면 모든 메시지를 수신 하기 전에 처리기 등록 됩니다.
 
 ## <a name="error-handling-and-logging"></a>오류 처리 및 로깅
 
-체인을 `catch` 의 끝에 메서드를 `connection.start` 클라이언트 쪽 오류를 처리 하는 방법입니다. 사용 하 여 `console.error` 브라우저의 콘솔에 출력 오류입니다.
+체인을 `catch` 의 끝에 메서드를 `start` 클라이언트 쪽 오류를 처리 하는 방법입니다. 사용 하 여 `console.error` 브라우저의 콘솔에 출력 오류입니다.
 
 [!code-javascript[Error handling](javascript-client/sample/wwwroot/js/chat.js?range=28)]
 
 연결이 설정 되 면 로그로 거와 이벤트의 형식을 전달 하 여 클라이언트 쪽 로그 추적을 설정 합니다. 지정 된 로그 수준을 사용 하 여 이상 메시지가 기록 됩니다. 사용 가능한 로그 수준은 아래와 같습니다.
 
-* `signalR.LogLevel.Error` : 오류 메시지입니다. 로그 `Error` 메시지만 해당 합니다.
-* `signalR.LogLevel.Warning` : 잠재적 오류에 대 한 경고 메시지입니다. 로그 `Warning`, 및 `Error` 메시지입니다.
-* `signalR.LogLevel.Information` : 오류 없이 상태 메시지입니다. 로그 `Information`하십시오 `Warning`, 및 `Error` 메시지입니다.
-* `signalR.LogLevel.Trace` : 메시지를 추적 합니다. 허브와 클라이언트 간에 전송 되는 데이터를 포함 하 여 모든 기록 합니다.
+* `signalR.LogLevel.Error` &ndash; 오류 메시지입니다. 로그 `Error` 메시지만 해당 합니다.
+* `signalR.LogLevel.Warning` &ndash; 잠재적 오류에 대 한 경고 메시지입니다. 로그 `Warning`, 및 `Error` 메시지입니다.
+* `signalR.LogLevel.Information` &ndash; 오류 없이 상태 메시지입니다. 로그 `Information`하십시오 `Warning`, 및 `Error` 메시지입니다.
+* `signalR.LogLevel.Trace` &ndash; 메시지를 추적 합니다. 허브와 클라이언트 간에 전송 되는 데이터를 포함 하 여 모든 기록 합니다.
 
-사용 된 `configureLogging` 메서드를 `HubConnectionBuilder` 로그 수준을 구성 하려면. 메시지는 브라우저 콘솔에 기록 됩니다.
+사용 된 [configureLogging](/javascript/api/%40aspnet/signalr/hubconnectionbuilder#configurelogging) 메서드를 [HubConnectionBuilder](/javascript/api/%40aspnet/signalr/hubconnectionbuilder) 로그 수준을 구성 하려면. 메시지는 브라우저 콘솔에 기록 됩니다.
 
 [!code-javascript[Logging levels](javascript-client/sample/wwwroot/js/chat.js?range=9-12)]
 
 ## <a name="related-resources"></a>관련 참고 자료
 
+* [JavaScript API 참조](/javascript/api/)
 * [허브](xref:signalr/hubs)
 * [.NET 클라이언트](xref:signalr/dotnet-client)
 * [Azure에 게시](xref:signalr/publish-to-azure-web-app)

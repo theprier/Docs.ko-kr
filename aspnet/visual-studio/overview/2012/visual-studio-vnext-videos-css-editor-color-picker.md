@@ -3,17 +3,17 @@ uid: visual-studio/overview/2012/visual-studio-vnext-videos-css-editor-color-pic
 title: 'Visual Studio vNext 비디오: CSS 편집기 색 선택 | Microsoft Docs'
 author: madskristensen
 description: 이 비디오에서는 Mads Kristensen 현재 스프레드시트에 색이 표시를 제공 하는 Visual Studio vNext CSS 편집기에서 색 선택 방법을 설명 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/30/2011
 ms.assetid: c0c084d3-1b12-4de1-b904-30fbbda59a30
 msc.legacyurl: /visual-studio/overview/2012/visual-studio-vnext-videos-css-editor-color-picker
 msc.type: video
-ms.openlocfilehash: d0a2404945c05d27d5a87db3748c4a80101d4112
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0b926fd683c8b3e63ab10f54c9ffff82254529d2
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37805148"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41828005"
 ---
 <a name="visual-studio-vnext-videos-css-editor-color-picker"></a>Visual Studio vNext 비디오: CSS 편집기 색 선택
 ====================

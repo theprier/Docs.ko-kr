@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/working-with-binary-files/including-a-file-u
 title: 파일을 포함 하 여 업로드 옵션 (VB) 새 레코드를 추가 하는 경우 | Microsoft Docs
 author: rick-anderson
 description: 이 자습서에는 텍스트 데이터를 모두 입력 한 이진 파일을 업로드할 수 있는 웹 인터페이스를 만드는 방법을 보여 줍니다. T 사용 가능한 옵션을 설명 하기 위해 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/27/2007
 ms.assetid: 5776281d-4637-4d1e-a65b-2621d2cade44
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/including-a-file-upload-option-when-adding-a-new-record-vb
 msc.type: authoredcontent
-ms.openlocfilehash: eac86318136d6f28ecf6551b8b8a6b691a8969d7
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 22ca0d85fac598b2f845be4bd5c18fdcbd3bc3a8
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37807754"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41828676"
 ---
 <a name="including-a-file-upload-option-when-adding-a-new-record-vb"></a>새 레코드 (VB)를 추가할 때 파일 업로드 옵션 포함
 ====================

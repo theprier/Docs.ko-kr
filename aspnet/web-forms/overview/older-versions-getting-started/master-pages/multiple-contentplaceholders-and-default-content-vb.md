@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/master-pages/multiple-con
 title: 여러 ContentPlaceHolders 및 기본 콘텐츠 (VB) | Microsoft Docs
 author: rick-anderson
 description: 마스터 페이지에 여러 콘텐츠 자리 표시자를 추가 하는 방법 뿐만 아니라 콘텐츠 자리 표시자에 기본 콘텐츠를 지정 하는 방법을 검사 합니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/21/2008
 ms.assetid: 866a7177-6884-451e-88f4-c934b1dd1af5
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/multiple-contentplaceholders-and-default-content-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 98cb78e03f9f7aff4a36625416188aba04512f6a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 18e2dfdf5cf3d5802bf94d797795fc0f12bdc95b
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37839702"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41829741"
 ---
 <a name="multiple-contentplaceholders-and-default-content-vb"></a>여러 ContentPlaceHolders 및 기본 콘텐츠 (VB)
 ====================

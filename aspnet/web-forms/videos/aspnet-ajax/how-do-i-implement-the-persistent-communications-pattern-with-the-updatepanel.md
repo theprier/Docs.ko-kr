@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-ajax/how-do-i-implement-the-persistent-communicatio
 title: '[어떻게 할까요?] UpdatePanel 사용 하 여 지속적인 통신 패턴을 구현 | Microsoft 문서'
 author: JoeStagner
 description: 기존 웹 사이트에서 브라우저와 서버는 진행 중인 통신을 유지 하지 않습니다 하지만 통신을 수행 하는 사용자에 대 한 응답에만...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/01/2007
 ms.assetid: 49c7a74d-dce7-4d5c-8282-c7846f478e11
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-implement-the-persistent-communications-pattern-with-the-updatepanel
 msc.type: video
-ms.openlocfilehash: 89dea5c2c44e8bdd9c12a127864428f681a66fb2
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: e826aa7b6597a8272b5b6987b85755f62a4a59ac
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37833150"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830230"
 ---
 <a name="how-do-i-implement-the-persistent-communications-pattern-with-the-updatepanel"></a>[어떻게 할까요?] UpdatePanel 사용 하 여 지속적인 통신 패턴을 구현
 ====================

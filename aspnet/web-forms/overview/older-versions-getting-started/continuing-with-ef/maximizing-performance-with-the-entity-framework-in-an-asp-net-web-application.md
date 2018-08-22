@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/continuing-with-ef/maximi
 title: ASP.NET 4 웹 응용 프로그램에서 Entity Framework 4.0으로 성능 극대화 | Microsoft Docs
 author: tdykstra
 description: 이 자습서 시리즈의 Entity Framework 4.0 자습서 시리즈를 사용 하 여 시작 하 여 만든 Contoso University 웹 응용 프로그램 기반으로 합니다. 필자는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/26/2011
 ms.assetid: 4e43455e-dfa1-42db-83cb-c987703f04b5
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/continuing-with-ef/maximizing-performance-with-the-entity-framework-in-an-asp-net-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 2c5aa6c8a512ccd2ff4b94f5a8a60b31aaa39fc5
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 7d7c66289f09179a98e09532172477d5b06c70bd
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37828282"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824097"
 ---
 <a name="maximizing-performance-with-the-entity-framework-40-in-an-aspnet-4-web-application"></a>ASP.NET 4 웹 응용 프로그램에서 Entity Framework 4.0으로 성능 극대화
 ====================
@@ -112,7 +112,7 @@ Contoso University 응용 프로그램에 대 한 개체 컨텍스트에 자동�
 
 ## <a name="using-the-notracking-merge-option"></a>NoTracking 병합 옵션을 사용 하 여
 
-Entity Framework 및 ObjectDataSource를 사용 하 여: 사용자 지정 페이징을합니다. 작성 ContosoUniversity 응용 프로그램에 이러한 자습서에서 만든에서 페이징을 구현 하는 방법에 설명 하는 블로그 게시물을 Departments.aspx 페이지입니다. 다음 자습서에는 버전 4의에서 새로운 Entity Framework에 중요 한 향상 된 몇 가지 검토 합니다.
+개체 컨텍스트 데이터베이스 행을 검색 하 고 해당 내용을 나타내는 엔터티 개체를 만듭니다를 기본적으로 또한 추적의 개체 상태 관리자를 사용 하 여 해당 엔터티 개체입니다. 이 추적 데이터는 역할을 캐시 하 고는 엔터티를 업데이트할 때 사용 됩니다. 일반적으로 웹 응용 프로그램의 수명이 짧은 개체 컨텍스트 인스턴스가 있으므로 자주 읽고 엔터티에 다시 사용 되기 전에 읽어옵니다 개체 컨텍스트를 삭제는 추적할 필요가 없는 데이터를 반환 쿼리나 업데이트 합니다.
 
 Entity Framework를 지정할 수 있습니다 개체 컨텍스트를 설정 하 여 엔터티 개체를 추적 하는지 여부를 *병합 옵션*합니다. 엔터티 집합 또는 개별 쿼리에 대 한 병합 옵션을 설정할 수 있습니다. 엔터티 집합에 대해 설정한 경우 즉, 해당 엔터티 집합에 대해 만들어진 모든 쿼리에 대 한 기본 병합 옵션을 설정 합니다.
 

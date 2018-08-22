@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding
 title: ASP.NET AJAX 웹 서비스 이해 | Microsoft Docs
 author: scottcate
 description: 웹 서비스는 분산된 시스템 간에 데이터를 교환 하기 위한 플랫폼 간 솔루션을 제공 하는.NET framework의 필수적인 부분입니다. 하지만 웹...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/28/2008
 ms.assetid: 3332d6e7-e2e1-4144-b805-e71d51e7e415
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-web-services
 msc.type: authoredcontent
-ms.openlocfilehash: b98ef4c27ab7b4b729e9e5b68e7d2642a6418ab6
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 5e59077373b68b907391eff5349e1925222792a3
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37838603"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41829927"
 ---
 <a name="understanding-aspnet-ajax-web-services"></a>ASP.NET AJAX 웹 서비스 이해
 ====================

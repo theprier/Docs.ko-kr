@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-ajax/how-do-i-build-custom-server-controls-that-wor
 title: '[어떻게 할까요?] ASP.NET AJAX 없이 작동 하는 사용자 지정 서버 컨트롤을 빌드하 시겠습니까? | Microsoft 문서'
 author: rick-anderson
 description: 아직 하는 데 이용 ASP.NET AJAX의 사용 가능한 경우, ASP.NET AJAX 없이 작동 해야 하는 사용자 지정 서버 컨트롤에 대 한 아이디어를 해야 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 09/01/2007
 ms.assetid: db9e13d3-c8f5-4051-ad9d-dc5649b1c41f
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-build-custom-server-controls-that-work-with-or-without-aspnet-ajax
 msc.type: video
-ms.openlocfilehash: 68edaa6f0f46a76f848a905e0787fdb16634a8b6
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: ed086491e459e2277f155aa6abe6f0b2904344f9
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37811493"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41827554"
 ---
 <a name="how-do-i-build-custom-server-controls-that-work-with-or-without-aspnet-ajax"></a>[어떻게 할까요?] ASP.NET AJAX 없이 작동 하는 사용자 지정 서버 컨트롤을 빌드하 시겠습니까?
 ====================

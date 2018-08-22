@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/working-with-binary-files/updating-and-delet
 title: 기존 이진 데이터 (VB) 업데이트 및 삭제 | Microsoft Docs
 author: rick-anderson
 description: 이전 자습서에서 어떻게 GridView 컨트롤을 간단히 편집 및 텍스트 데이터를 삭제 하는 것이 살펴보았습니다. 이 자습서에서 GridView 컨트롤도 확인 하는 방법을 참조 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/27/2007
 ms.assetid: 3a052ced-9cf5-47b8-a400-934f0b687c26
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/updating-and-deleting-existing-binary-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: dd5aea4bfc1a38dc3364cdf2657d3dca2b82022c
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 9a0f9e5ebb8bc8227e869f2af085394262a31663
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37830457"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837242"
 ---
 <a name="updating-and-deleting-existing-binary-data-vb"></a>기존 이진 데이터 (VB) 업데이트 및 삭제
 ====================

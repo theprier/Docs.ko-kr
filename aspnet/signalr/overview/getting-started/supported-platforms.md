@@ -3,17 +3,17 @@ uid: signalr/overview/getting-started/supported-platforms
 title: 지원 되는 플랫폼 | Microsoft Docs
 author: pfletcher
 description: 이 문서에서는 어떤 클라이언트 및 서버에 SignalR 지 설명 합니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/18/2018
 ms.assetid: eac31beb-0f46-4afa-9def-e80904dea4f0
 msc.legacyurl: /signalr/overview/getting-started/supported-platforms
 msc.type: authoredcontent
-ms.openlocfilehash: 5d77db71c5c6b0c297756921b5b7cb79add03998
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: d522602c3523d97a12c74b2d901391bd00d4f2b9
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37805813"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41829949"
 ---
 <a name="supported-platforms"></a>지원되는 플랫폼
 ====================

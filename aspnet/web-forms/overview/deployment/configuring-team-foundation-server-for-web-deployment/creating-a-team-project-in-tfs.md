@@ -3,17 +3,17 @@ uid: web-forms/overview/deployment/configuring-team-foundation-server-for-web-de
 title: TFS에서 팀 프로젝트를 만들면 | Microsoft Docs
 author: jrjlee
 description: 이 항목에서는 Team Foundation Server (TFS) 2010에서 새 팀 프로젝트를 만드는 방법을 설명 합니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: b28d3e2d-0bb4-4e29-a780-af810b964722
 msc.legacyurl: /web-forms/overview/deployment/configuring-team-foundation-server-for-web-deployment/creating-a-team-project-in-tfs
 msc.type: authoredcontent
-ms.openlocfilehash: 98725b9d2f669e6520f24c3a8122be086002e96a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 9218a22ff221dc7067662c58ccd3e758fca493b7
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37810226"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824135"
 ---
 <a name="creating-a-team-project-in-tfs"></a>TFS에서 팀 프로젝트 만들기
 ====================

@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/views/passing-data-to-view-master-pages-cs
 title: 보기 마스터 페이지 (C#)에 데이터 전달 | Microsoft Docs
 author: microsoft
 description: 이 자습서의 목표는 보기 마스터 페이지에는 컨트롤러에서 데이터를 전달 하는 방법을 설명 합니다. 살펴봅니다 m 보기로 데이터를 전달 하기 위한 두 가지 전략을 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/16/2008
 ms.assetid: 5fee879b-8bde-42a9-a434-60ba6b1cf747
 msc.legacyurl: /mvc/overview/older-versions-1/views/passing-data-to-view-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: bd2d3e85ac518a066d72541d40ab87543b1a70d1
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: e04a9b274b735af05a8e08dc7d8f34f0d83605be
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37818984"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41828209"
 ---
 <a name="passing-data-to-view-master-pages-c"></a>보기 마스터 페이지 (C#)에 데이터 전달
 ====================

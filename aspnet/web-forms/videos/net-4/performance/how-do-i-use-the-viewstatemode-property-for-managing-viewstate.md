@@ -3,17 +3,17 @@ uid: web-forms/videos/net-4/performance/how-do-i-use-the-viewstatemode-property-
 title: 사용 하려면 어떻게 할까요 ViewStateMode 속성 ViewState 관리에 대 한? | Microsoft 문서
 author: rick-anderson
 description: 이 비디오 Chris Pels ASP.NET에서 웹 사이트에 대 한 ViewState를 디자인할 때 ViewStateMode 속성을 사용 하는 방법을 보여 줍니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 09/17/2010
 ms.assetid: e5b1cc5e-fe11-4ede-9e28-af6477277b0c
 msc.legacyurl: /web-forms/videos/net-4/performance/how-do-i-use-the-viewstatemode-property-for-managing-viewstate
 msc.type: video
-ms.openlocfilehash: 73ee00dedc37d6ca7be444e4e1f11b47a295148d
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 462b6705cf43cca930545f461e2ca8eedf0a43b9
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37806521"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831861"
 ---
 <a name="how-do-i-use-the-viewstatemode-property-for-managing-viewstate"></a>사용 하려면 어떻게 할까요 ViewStateMode 속성 ViewState 관리에 대 한?
 ====================

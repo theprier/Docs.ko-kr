@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/modalpopup/handling-postbacks-from-
 title: (VB) ModalPopup에서 포스트백 처리 | Microsoft Docs
 author: wenz
 description: AJAX Control Toolkit의 ModalPopup 컨트롤 클라이언트 쪽 의미를 사용 하 여 모달 팝업을 만드는 간단한 방법을 제공 합니다. Pos 때 특별히 주의 해야 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: f70ac2b3-900f-40fa-858f-ab057904506b
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/modalpopup/handling-postbacks-from-a-modalpopup-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c4c067401f88c0bba7269406d08b7b3857f022d6
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 3f81a2bf1866d026046fdba815fdbae1b162c1dd
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37804370"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824085"
 ---
 <a name="handling-postbacks-from-a-modalpopup-vb"></a>(VB) ModalPopup에서 포스트백 처리
 ====================

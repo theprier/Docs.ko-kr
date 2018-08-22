@@ -3,17 +3,17 @@ uid: web-api/overview/formats-and-model-binding/json-and-xml-serialization
 title: ASP.NET Web API에서에서 JSON 및 XML | Microsoft Docs
 author: MikeWasson
 description: ''
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/30/2012
 ms.assetid: 1cd7525d-de5e-4ab6-94f0-51480d3255d1
 msc.legacyurl: /web-api/overview/formats-and-model-binding/json-and-xml-serialization
 msc.type: authoredcontent
-ms.openlocfilehash: c6610eebbc6bd03426771087f0112c1ffa63aa15
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 47967e6e1dd0e84b6059c07d7544c0e755fdf510
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37836323"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824116"
 ---
 <a name="json-and-xml-serialization-in-aspnet-web-api"></a>JSON 및 XML 직렬화에 ASP.NET Web API
 ====================

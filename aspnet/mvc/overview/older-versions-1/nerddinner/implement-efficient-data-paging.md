@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/nerddinner/implement-efficient-data-paging
 title: 효율적인 데이터 페이징 구현 | Microsoft Docs
 author: microsoft
 description: 8 단계 대신 dinners 한 번에 수천 개의 표시만 표시 됩니다에서 10 향후 dinners 있도록 /Dinners URL 페이징 지원을 추가 하는 방법을 보여 줍니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/27/2010
 ms.assetid: adea836d-dbc2-4005-94ea-53aef09e9e34
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/implement-efficient-data-paging
 msc.type: authoredcontent
-ms.openlocfilehash: bcd7fdf59fac8328752aa2ebab61c1d50a8b6b0d
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 2bef690355cd1f89a15a67f0c49775296d551136
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37842145"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837531"
 ---
 <a name="implement-efficient-data-paging"></a>효율적인 데이터 페이징 구현
 ====================

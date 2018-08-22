@@ -3,17 +3,17 @@ uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-clou
 title: 더 많은 패턴 및 지침 (실제 클라우드 앱 빌드 azure) | Microsoft Docs
 author: MikeWasson
 description: 실제 세계 클라우드 앱 빌드 Azure 전자책을 사용 하 여 Scott Guthrie를 개발한 프레젠테이션을 기반으로 합니다. 13 패턴과 그을 수 있는 방법을 설명 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/12/2014
 ms.assetid: 7e97cfc3-d830-4002-8ff7-5790d1ff49e6
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/more-patterns-and-guidance
 msc.type: authoredcontent
-ms.openlocfilehash: 648d797d6e7c38f938a91c90cfd7e18cc9fd3f19
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 071ac0246411d02006e9df84adc154775b110248
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37822676"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41827785"
 ---
 <a name="more-patterns-and-guidance-building-real-world-cloud-apps-with-azure"></a>더 많은 패턴 및 지침 (Azure 사용 하 여 빌드 실제 클라우드 앱)
 ====================

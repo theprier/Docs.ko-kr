@@ -3,17 +3,17 @@ uid: web-forms/videos/vs-2005/the-effects-of-viewstate
 title: ViewState의 효과 | Microsoft Docs
 author: rick-anderson
 description: ASP.NET 프레임 워크는 자동으로 브라우저 요구 사항 간에 앞뒤로 데이터를 수행 하 여 응용 프로그램 상태를 유지 하기 위해 ViewState 메커니즘을 제공 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/26/2007
 ms.assetid: 112e3efc-6865-4296-80a0-35910c4b3b12
 msc.legacyurl: /web-forms/videos/vs-2005/the-effects-of-viewstate
 msc.type: video
-ms.openlocfilehash: e03eba9f1f9ae300c6bb1a4efbde39a2715e6fd2
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: fcca0f533a77bf794644adb8879966f26a452ff8
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37802382"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836542"
 ---
 <a name="the-effects-of-viewstate"></a>ViewState의 효과
 ====================

@@ -3,17 +3,17 @@ uid: web-api/overview/testing-and-debugging/unit-testing-controllers-in-web-api
 title: ASP.NET Web API 2의에서 단위 테스트 컨트롤러 | Microsoft Docs
 author: MikeWasson
 description: 이 항목에서는 Web API 2의 단위 테스트 컨트롤러에 대 한 몇 가지 특정 기술을 설명 합니다. 이 항목을 읽기 전에 자습서 단위를 읽기만 하는 것이 좋습니다는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/11/2014
 ms.assetid: 43a6cce7-a3ef-42aa-ad06-90d36d49f098
 msc.legacyurl: /web-api/overview/testing-and-debugging/unit-testing-controllers-in-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: bc6d4d7e65c84036dc35fe39ed25685ed8b213b3
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 7b0d5266757219a05b25fc3d1d4cba8514a4dff7
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37823691"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41829870"
 ---
 <a name="unit-testing-controllers-in-aspnet-web-api-2"></a>ASP.NET Web API 2의에서 단위 테스트 컨트롤러
 ====================

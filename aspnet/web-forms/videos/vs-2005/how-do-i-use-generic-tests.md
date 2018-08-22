@@ -3,17 +3,17 @@ uid: web-forms/videos/vs-2005/how-do-i-use-generic-tests
 title: '[어떻게 할까요?] 제네릭 테스트 사용 | Microsoft 문서'
 author: rick-anderson
 description: 제네릭 테스트는 래핑된 이며 Visual Studio Team System에서 테스트로 사용할 수 있는 기존 프로그램입니다. 이 비디오는 방법의 데모를 보려면 했습니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/16/2007
 ms.assetid: e129b2c2-8587-4ff1-b455-7f14cb28bcf9
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-use-generic-tests
 msc.type: video
-ms.openlocfilehash: e50ab271328145a0fde80d857b1416f733bcf712
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: fabeff4743a28015b55c98071e8df40015710dd1
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37807137"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41829445"
 ---
 <a name="how-do-i-use-generic-tests"></a>[어떻게 할까요?] 제네릭 테스트 사용
 ====================

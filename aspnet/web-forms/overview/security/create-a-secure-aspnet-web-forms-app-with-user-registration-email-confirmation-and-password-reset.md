@@ -3,17 +3,17 @@ uid: web-forms/overview/security/create-a-secure-aspnet-web-forms-app-with-user-
 title: 전자 메일 확인 및 암호 재설정 기능이 (C#) 사용자 등록을 사용 하 여 보안 ASP.NET Web Forms 앱 만들기 | Microsoft Docs
 author: Erikre
 description: 이 자습서에서는 사용자 등록, 전자 메일 확인 및 ASP.NET Id 멤버를 사용 하 여 암호를 사용 하 여 ASP.NET Web Forms 앱을 빌드하는 방법을 보여 줍니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/02/2014
 ms.assetid: 0a8d6044-5fab-4213-82d6-5618d5601358
 msc.legacyurl: /web-forms/overview/security/create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset
 msc.type: authoredcontent
-ms.openlocfilehash: 1c230c3f33bd8261312485e9d77f6f88adb49e9e
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b964257165f8a50bef5cb5d8cee4fb30a5e91cf0
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37812771"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41828512"
 ---
 <a name="create-a-secure-aspnet-web-forms-app-with-user-registration-email-confirmation-and-password-reset-c"></a>전자 메일 확인 및 암호 재설정 기능이 (C#) 사용자 등록을 사용 하 여 보안 ASP.NET Web Forms 앱 만들기
 ====================

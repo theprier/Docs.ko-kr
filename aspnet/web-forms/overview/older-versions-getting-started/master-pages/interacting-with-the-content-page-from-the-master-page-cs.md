@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/master-pages/interacting-
 title: 마스터 페이지 (C#)에서 콘텐츠 페이지와 상호 작용 | Microsoft Docs
 author: rick-anderson
 description: 메서드를 호출, 마스터 페이지의 코드에서 콘텐츠 페이지의 등 속성을 설정 하는 방법을 검사 합니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/11/2008
 ms.assetid: 3282df5e-516c-4972-8666-313828b90fb5
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/interacting-with-the-content-page-from-the-master-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 293e4dab6142393c9d57836a2f04244388e54cec
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 815752ee70eb761d7f9da24c9eada9d4c0c833a7
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37808368"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41829468"
 ---
 <a name="interacting-with-the-content-page-from-the-master-page-c"></a>마스터 페이지 (C#)에서 콘텐츠 페이지와 상호 작용
 ====================

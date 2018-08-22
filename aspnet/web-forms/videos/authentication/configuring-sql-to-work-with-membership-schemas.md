@@ -3,17 +3,17 @@ uid: web-forms/videos/authentication/configuring-sql-to-work-with-membership-sch
 title: 멤버 자격 스키마와 함께 작동 하도록 SQL 구성 | Microsoft Docs
 author: JoeStagner
 description: 이 비디오 Joe Stagner는 특정 ASP 서비스 멤버 자격 프로필을 사용 하도록 SQL 인스턴스를 구성 하는 방법을 설명합니다 뿐만 아니라 응용 구성...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/04/2008
 ms.assetid: b3edd71d-b43e-4ccb-93e5-b89bb723312c
 msc.legacyurl: /web-forms/videos/authentication/configuring-sql-to-work-with-membership-schemas
 msc.type: video
-ms.openlocfilehash: ae5e335e05df010996c9cb84f4af01874ce6005f
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 1748f40aea66022e928b8f2b0584efab48047fd3
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37810506"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41829898"
 ---
 <a name="configuring-sql-to-work-with-membership-schemas"></a>멤버 자격 스키마와 함께 작동 하도록 SQL 구성
 ====================

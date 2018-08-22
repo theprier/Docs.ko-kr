@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/collapsiblepanel/collapsing-and-exp
 title: 축소 및 확장 (VB) JavaScript에서 패널 | Microsoft Docs
 author: wenz
 description: ASP.NET AJAX Control Toolkit의 CollapsiblePanel 컨트롤 패널을 확장 하 고 해당 콘텐츠를 축소 하 고 확장 하는 기능을 사용 하 여 제공을 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 298789b4-2964-49f5-a0a8-d4dbeb9ff2c2
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/collapsiblepanel/collapsing-and-expanding-a-panel-from-javascript-vb
 msc.type: authoredcontent
-ms.openlocfilehash: da1bc6958dba99ffc5ef54fbfbc003bb26050495
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 1f80a6979966a887db0557b4f1b98570e10b1ab7
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37812507"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41829727"
 ---
 <a name="collapsing-and-expanding-a-panel-from-javascript-vb"></a>확장 및 JavaScript (VB)에서 패널 축소
 ====================

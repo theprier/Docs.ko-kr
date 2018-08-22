@@ -3,17 +3,17 @@ uid: mvc/overview/getting-started/mvc-learning-sequence
 title: MVC 권장 자습서 및 문서 | Microsoft Docs
 author: Rick-Anderson
 description: 이 페이지는 ASP.NET MVC 자습서 및 이러한 규칙에 따라 제안 된 시퀀스에 대 한 링크를 포함 합니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/22/2015
 ms.assetid: 8513a57a-2d45-4d6b-881c-15a01c5cbb1c
 msc.legacyurl: /mvc/overview/getting-started/mvc-learning-sequence
 msc.type: authoredcontent
-ms.openlocfilehash: 7b9431123ea670b87949ed756aaf8e6d80011bc5
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 9ebe068cac7c4afaf223c948936afb66d6130fb1
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37827018"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41828344"
 ---
 <a name="mvc-recommended-tutorials-and-articles"></a>MVC 권장 자습서 및 문서
 ====================

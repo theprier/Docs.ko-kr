@@ -3,17 +3,17 @@ uid: web-api/overview/older-versions/build-restful-apis-with-aspnet-web-api
 title: ASP.NET Web API 사용 하 여 RESTful Api 빌드 | Microsoft Docs
 author: rick-anderson
 description: 최근 몇 년 동안에서 HTTP HTML 페이지를 제공 하는 동안만 아님을 지우기 되었습니다 있습니다. 몇 o를 사용 하 여 웹 Api를 빌드하기 위한 강력한 플랫폼 이기도 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/18/2013
 ms.assetid: 87daa99f-3810-407e-b969-dd28a192959d
 msc.legacyurl: /web-api/overview/older-versions/build-restful-apis-with-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 9866b5f75771c633165587ba04e694f72a1e626c
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 00304f67138873318b63c5e2ad0cd69aa7449521
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37835601"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837245"
 ---
 <a name="build-restful-apis-with-aspnet-web-api"></a>ASP.NET Web API 사용 하 여 RESTful Api 빌드
 ====================

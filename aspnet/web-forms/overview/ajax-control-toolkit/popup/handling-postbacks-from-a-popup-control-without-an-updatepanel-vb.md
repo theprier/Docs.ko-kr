@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/popup/handling-postbacks-from-a-pop
 title: UpdatePanel (VB) 하지 않고 팝업 컨트롤에서 포스트백 처리 | Microsoft Docs
 author: wenz
 description: AJAX Control Toolkit의 PopupControl extender는 쉽게 다른 컨트롤이 활성화 될 때 팝업을 트리거할 수를 제공 합니다. Su에서 포스트백을 발생 하면...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: a0b9186c-0912-4fff-916a-6d17e696a50b
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/popup/handling-postbacks-from-a-popup-control-without-an-updatepanel-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 8530d62b931782af662cd6445db78d666b32e329
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 6dcb2b09279ec6400465f79fadc2a1b6c72f8f07
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37808196"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41828669"
 ---
 <a name="handling-postbacks-from-a-popup-control-without-an-updatepanel-vb"></a>UpdatePanel (VB) 하지 않고 팝업 컨트롤에서 포스트백 처리
 ====================

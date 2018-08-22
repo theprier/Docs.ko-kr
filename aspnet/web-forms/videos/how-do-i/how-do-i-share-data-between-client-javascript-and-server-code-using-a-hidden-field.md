@@ -3,17 +3,17 @@ uid: web-forms/videos/how-do-i/how-do-i-share-data-between-client-javascript-and
 title: '[어떻게 할까요?] 클라이언트 JavaScript에서 숨겨진된 필드를 사용 하 여 서버 코드 사이 데이터 공유 | Microsoft Docs'
 author: rick-anderson
 description: 이 비디오 Chris Pels는 ASP.NET 페이지의 숨겨진된 필드를 사용 하 여 JavaScript 서버 쪽 코드 사이의 데이터를 공유 하는 방법을 보여줍니다. 배우는 것이 어떻게 t...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/13/2008
 ms.assetid: bf0a7434-a017-4506-a240-2bd27e360a2f
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-share-data-between-client-javascript-and-server-code-using-a-hidden-field
 msc.type: video
-ms.openlocfilehash: 980cf1264b67b8fced0bf5e51cf9d4880dcfde15
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 537eed0ecc73e31f6be1ab1d8900ac22b486c6f4
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37835122"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41829757"
 ---
 <a name="how-do-i-share-data-between-client-javascript-and-server-code-using-a-hidden-field"></a>[어떻게 할까요?] 클라이언트 JavaScript에서 숨겨진된 필드를 사용 하 여 서버 코드 사이 데이터를 공유 합니다.
 ====================

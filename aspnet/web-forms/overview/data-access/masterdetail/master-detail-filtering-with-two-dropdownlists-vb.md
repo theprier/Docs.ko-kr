@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/masterdetail/master-detail-filtering-with-tw
 title: 마스터/세부 정보 필터링 (VB) Dropdownlist 두 개로 | Microsoft Docs
 author: rick-anderson
 description: 이 자습서는 두 DropDownList 컨트롤을 사용 하 여 원하는 부모 및 최상위 항목 레코드를 선택, 세 번째 계층을 추가 하려면 마스터/세부 관계를 확장 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/31/2010
 ms.assetid: 11ae4f64-01ba-4823-95f4-a2fe1f84f7d7
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-filtering-with-two-dropdownlists-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 17bbaa346925585b5b184127fa80fd2203869492
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 20df98f1aacb046bb9ec9fa5ad03e008dc234509
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37805287"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831915"
 ---
 <a name="masterdetail-filtering-with-two-dropdownlists-vb"></a>마스터/세부 정보 (VB) Dropdownlist 두 개로 필터링
 ====================

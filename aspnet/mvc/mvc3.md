@@ -3,17 +3,17 @@ uid: mvc/mvc3
 title: ASP.NET MVC 3 | Microsoft Docs
 author: rick-anderson
 description: (2011 년 4 월 포함 Tools 업데이트) ASP.NET MVC 3 체계적인 디자인 패턴을 사용 하 여 확장성이 뛰어난 표준 기반 웹 응용 프로그램을 빌드하기 위한 프레임 워크는...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/05/2010
 ms.assetid: dddc8812-a0bc-49f9-aafb-caf2064c2b8c
 msc.legacyurl: /mvc/mvc3
 msc.type: content
-ms.openlocfilehash: 2c2d53734cd62e59ee4f550713b0576a73b0e32b
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 82d18865815568c5df9768fd9dd403f11ebd1714
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37834772"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837248"
 ---
 <a name="aspnet-mvc-3"></a>ASP.NET MVC 3
 ====================

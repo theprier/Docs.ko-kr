@@ -3,17 +3,17 @@ uid: mvc/overview/getting-started/getting-started-with-ef-using-mvc/migrations-a
 title: Code First 마이그레이션 및 ASP.NET MVC 응용 프로그램에서 Entity Framework 사용 하 여 배포 | Microsoft Docs
 author: tdykstra
 description: Contoso University 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/07/2014
 ms.assetid: d4dfc435-bda6-4621-9762-9ba270f8de4e
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 7c7092b770231b26fd666786af2e202acd70bc8a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 4c1f852bab5e8f77b35239c356d11b5058cbdaef
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37838688"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41828019"
 ---
 <a name="code-first-migrations-and-deployment-with-the-entity-framework-in-an-aspnet-mvc-application"></a>Code First 마이그레이션 및 ASP.NET MVC 응용 프로그램에서 Entity Framework 사용 하 여 배포
 ====================
@@ -32,7 +32,7 @@ ms.locfileid: "37838688"
 
 소스 제어를 사용 하 여 지속적인 통합 프로세스를 사용 하 여 배포에 대 한 있지만이 자습서에서는 해당 항목을 다루지 않습니다 하는 것이 좋습니다. 자세한 내용은 참조는 [소스 제어](xref:aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control) 및 [연속 통합](xref:aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery) 챕터의를 [Azure 사용 하 여 실제 클라우드 앱 빌드](xref:aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction) 전자책.
 
-## <a name="enable-code-first-migrations"></a>인스턴스 중 하나를 마우스 오른쪽 단추로 클릭  을 클릭 해결를 클릭 하 고 System.Collections.Generic를 사용 하 여입니다.
+## <a name="enable-code-first-migrations"></a>Code First 마이그레이션 사용
 
 새 응용 프로그램을 개발하는 경우 데이터 모델은 자주 변경되며 모델이 변경될 때마다 데이터베이스와 동기화를 가져옵니다. 자동으로 삭제 하 고 데이터 모델을 변경할 때마다 데이터베이스를 다시 만들지를 Entity Framework를 구성 했습니다. 때 추가, 제거 또는 엔터티 클래스를 변경 하거나 변경 하 `DbContext` 클래스 다음에 응용 프로그램을 실행할 때 자동으로 기존 데이터베이스를 삭제, 모델을 테스트 데이터로 시드합니다를 새로 만듭니다.
 
@@ -54,13 +54,13 @@ ms.locfileid: "37838688"
     `enable-migrations`  
     `add-migration InitialCreate`
 
-    ![코드를 추가 합니다  메서드는 데이터베이스에 고정된 데이터를 삽입할 수 있는 여러 가지 방법 중 하나입니다.](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image1.png)
+    ![마이그레이션을 사용 하도록 설정 명령](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image1.png)
 
     `enable-migrations` 명령은 만듭니다는 *마이그레이션을* ContosoUniversity 프로젝트에서 폴더는 폴더에 저장을 *Configuration.cs* 파일을 편집 하 여 마이그레이션을 구성할 수 있습니다.
 
     (데이터베이스 이름을 변경 하도록 안내 하는 위의 단계를 놓친 경우는 기존 데이터베이스 마이그레이션과 자동으로 수행 된 `add-migration` 명령입니다. 뭐, 뜻 데이터베이스를 배포 하기 전에 마이그레이션 코드의 테스트를 실행 하지 않습니다. 실행할 때 이상는 `update-database` 명령 데이터베이스는 이미 존재 하므로 아무 작업도 수행 합니다.)
 
-    ![예제에 표시 합니다 데이터베이스 업데이트 배포 자습서입니다.](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image2.png)
+    ![마이그레이션 폴더](migrations-and-deployment-with-the-entity-framework-in-an-asp-net-mvc-application/_static/image2.png)
 
     이니셜라이저 클래스는 이전에 본 것 처럼 합니다 `Configuration` 클래스에 포함 되어는 `Seed` 메서드.
 

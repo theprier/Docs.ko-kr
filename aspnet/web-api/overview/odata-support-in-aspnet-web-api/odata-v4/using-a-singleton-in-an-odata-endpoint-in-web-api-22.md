@@ -3,17 +3,17 @@ uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v4/using-a-singleton
 title: Web API 2.2 사용 하 여 OData v4에서 Singleton 만들기 | Microsoft Docs
 author: rick-anderson
 description: 이 항목에서는 Web API 2.2에서 OData 끝점에는 단일 항목을 정의 하는 방법을 보여 줍니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/27/2014
 ms.assetid: 4064ab14-26ee-4d5c-ae58-1bdda525ad06
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/using-a-singleton-in-an-odata-endpoint-in-web-api-22
 msc.type: authoredcontent
-ms.openlocfilehash: baccfed79949ae4efd45395bed3ad0058549cb4c
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 7562a90ae34b216dca2dd3cf541d086585735212
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37830518"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831877"
 ---
 <a name="create-a-singleton-in-odata-v4-using-web-api-22"></a>Web API 2.2 사용 하 여 OData v4에서 Singleton 만들기
 ====================

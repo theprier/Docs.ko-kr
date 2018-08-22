@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeat
 title: DataList 컨트롤 (C#)를 사용 하 여 행 마다 여러 레코드 표시 | Microsoft Docs
 author: rick-anderson
 description: 이 간략 한 자습서에서는 해당 RepeatColumns 및 RepeatDirection 속성을 통해 DataList의 레이아웃을 사용자 지정 하는 방법을 살펴봅니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 09/13/2006
 ms.assetid: cf5acaf5-d4f6-4957-badc-b89956b285f3
 msc.legacyurl: /web-forms/overview/data-access/displaying-data-with-the-datalist-and-repeater/showing-multiple-records-per-row-with-the-datalist-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 096959d0bf166b88f76e47e0efbd978cc23ce086
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: f79c446a0c9407309ab65cd993df544e883afb22
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37808173"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41828220"
 ---
 <a name="showing-multiple-records-per-row-with-the-datalist-control-c"></a>DataList 컨트롤 (C#)를 사용 하 여 행 마다 여러 레코드 표시
 ====================

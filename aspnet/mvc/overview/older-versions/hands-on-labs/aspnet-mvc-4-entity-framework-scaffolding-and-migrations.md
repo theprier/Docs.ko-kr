@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-entity-framework-sca
 title: ASP.NET MVC 4 Entity Framework 스 캐 폴딩 및 마이그레이션 | Microsoft Docs
 author: rick-anderson
 description: ASP.NET MVC 4 컨트롤러 메서드를 사용 하 여 익숙한 또는 완료 하는 경우는 &quot;도우미, 폼 및 유효성 검사&quot; 실습 알아야 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/18/2013
 ms.assetid: 093c1362-f10b-407c-a708-be370f4b62b0
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-entity-framework-scaffolding-and-migrations
 msc.type: authoredcontent
-ms.openlocfilehash: 31f593f294c4865f621a8556cb43d0d9c42f2660
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 10a61b70ef52aa9f5bb9004df3dba9e323d021db
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37814124"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831483"
 ---
 # <a name="aspnet-mvc-4-entity-framework-scaffolding-and-migrations"></a>ASP.NET MVC 4 Entity Framework 스 캐 폴딩 및 마이그레이션
 
@@ -187,7 +187,7 @@ ASP.NET MVC 4 컨트롤러 메서드를 사용 하 여 익숙한 또는 완료 �
 
     ![마이그레이션 폴더](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/_static/image12.png "마이그레이션 폴더")
 
-    *예제에 표시 합니다 *데이터베이스 업데이트 배포* 자습서입니다.*
+    *마이그레이션 폴더*
 3. 엽니다는 **Configuration.cs** 마이그레이션 폴더에는 파일입니다. 클래스 생성자를 찾아서 변경 합니다 **AutomaticMigrationsEnabled** 값을 *true*합니다.
 
     [!code-csharp[Main](aspnet-mvc-4-entity-framework-scaffolding-and-migrations/samples/sample3.cs)]

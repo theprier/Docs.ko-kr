@@ -3,17 +3,17 @@ uid: signalr/overview/performance/scaleout-with-sql-server
 title: SQL Server로 SignalR 규모 확장 | Microsoft Docs
 author: MikeWasson
 description: 이전 버전의에 대 한 내용은이 항목의 버전 2 이전 버전을이 항목에서는 Visual Studio 2013.NET 4.5 SignalR에서 사용 하는 소프트웨어 버전...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/10/2014
 ms.assetid: 98358b6e-9139-4239-ba3a-2d7dd74dd664
 msc.legacyurl: /signalr/overview/performance/scaleout-with-sql-server
 msc.type: authoredcontent
-ms.openlocfilehash: fb21bee1737c5783d47abd2642af2c613b5d087b
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: c99b38e9326ee60bfedbd7ec2f383685343cf3c0
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37810213"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41828436"
 ---
 <a name="signalr-scaleout-with-sql-server"></a>SQL Server로 SignalR 규모 확장
 ====================

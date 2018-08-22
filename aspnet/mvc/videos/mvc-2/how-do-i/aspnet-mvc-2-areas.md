@@ -3,17 +3,17 @@ uid: mvc/videos/mvc-2/how-do-i/aspnet-mvc-2-areas
 title: ASP.NET MVC 2-영역 | Microsoft Docs
 author: jongalloway
 description: 이 비디오에서는 쉽게 다른 funct에 나누어 대규모 ASP.NET MVC 응용 프로그램을 구성 하려면 영역 기능을 사용 하는 방법을 배우게 됩니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/22/2010
 ms.assetid: 6ec738b6-c34c-4647-b8bf-9acb8d2a259d
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/aspnet-mvc-2-areas
 msc.type: video
-ms.openlocfilehash: 95f3ea6a054d1e02cca2902fd6eea54ef33d347d
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 24284cf9a703c5b7bb385395f9fe2ab3d3f2325b
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37827581"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41829479"
 ---
 <a name="aspnet-mvc-2---areas"></a>ASP.NET MVC 2-영역
 ====================

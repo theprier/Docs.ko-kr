@@ -3,17 +3,17 @@ uid: web-api/overview/security/individual-accounts-in-web-api
 title: 개별 계정 및 ASP.NET Web API 2.2에서에서 로컬 로그인을 사용 하 여 Web API 보안 유지 | Microsoft Docs
 author: MikeWasson
 description: 이 항목에서는 OAuth2를 사용 하 여 멤버 자격 데이터베이스에 대해 인증 하는 웹 API를 보호 하는 방법을 보여 줍니다. 자습서는 Visual Studio 201에 사용 되는 소프트웨어 버전 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/15/2014
 ms.assetid: 92c84846-f0ea-4b5e-94b6-5004874eb060
 msc.legacyurl: /web-api/overview/security/individual-accounts-in-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 0a520333492a60014f7e9f9182a16f0ce514ba1d
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 01d117260ef458453bee79285a37a8977221998c
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37842087"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41827111"
 ---
 <a name="secure-a-web-api-with-individual-accounts-and-local-login-in-aspnet-web-api-22"></a>개별 계정 및 ASP.NET Web API 2.2에서에서 로컬 로그인을 사용 하 여 Web API 보안 유지
 ====================

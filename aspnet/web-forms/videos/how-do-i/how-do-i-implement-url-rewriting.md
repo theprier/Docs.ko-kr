@@ -3,17 +3,17 @@ uid: web-forms/videos/how-do-i/how-do-i-implement-url-rewriting
 title: '[어떻게 할까요?] URL 다시 쓰기 구현? | Microsoft 문서'
 author: scottgolightly
 description: 이 비디오에서 Scott Golightly에 쓸 '' URL 웹 페이지에 대 한 요청이 들어올 때 ASP.NET HttpModule을 만드는 방법을 보여 줍니다. 다시 작성 하려고 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/01/2007
 ms.assetid: aa0c328c-edff-4908-b052-31b6b06f8555
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-implement-url-rewriting
 msc.type: video
-ms.openlocfilehash: 91a5e9c5aa78688b7845e5081c6d0dec23e5c561
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: da4b3e5c77a2863a9e50a6c68617f1fd748ec665
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37836881"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830343"
 ---
 <a name="how-do-i-implement-url-rewriting"></a>[어떻게 할까요?] URL 다시 쓰기 구현?
 ====================

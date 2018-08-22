@@ -3,17 +3,17 @@ uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v3/odata-actions
 title: ASP.NET Web API 2에서에서 OData 작업을 지 원하는 | Microsoft Docs
 author: MikeWasson
 description: 'Odata에서 작업은 엔터티에 대 한 CRUD 작업으로 쉽게 정의 되어 있지 않은 서버 쪽 동작을 추가 하는 방법입니다. 작업에 대 한 일부 사용: 구현 하는 중...'
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/25/2014
 ms.assetid: 2d7b3aa2-aa47-4e6e-b0ce-3d65a1c6fe02
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/odata-actions
 msc.type: authoredcontent
-ms.openlocfilehash: e02ab21b864e328fe6892a00e5d5aca3f88eb9a2
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 71c0f91f709aca0deb5548bdbcad60d79a2702f6
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37837774"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41827090"
 ---
 <a name="supporting-odata-actions-in-aspnet-web-api-2"></a>ASP.NET Web API 2 OData 작업 지원
 ====================

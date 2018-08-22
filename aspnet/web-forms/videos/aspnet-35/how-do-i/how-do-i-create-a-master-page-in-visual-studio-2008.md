@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-35/how-do-i/how-do-i-create-a-master-page-in-visual
 title: '[어떻게 할까요?] Visual Studio 2008에서 마스터 페이지 만들기 | Microsoft Docs'
 author: rick-anderson
 description: 이 비디오에서는 Visual Studio 2008에.NET 3.5를 사용 하 여 간단한 마스터 페이지를 만드는 방법을 설명 하겠습니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/14/2008
 ms.assetid: b0a08145-5569-482c-abca-18df242628ec
 msc.legacyurl: /web-forms/videos/aspnet-35/how-do-i/how-do-i-create-a-master-page-in-visual-studio-2008
 msc.type: video
-ms.openlocfilehash: 7a70608e2545576682df21016588da2f575cae17
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0e660fce7536ebc44587faa192605cb6e990bf85
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37831601"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41827552"
 ---
 <a name="how-do-i-create-a-master-page-in-visual-studio-2008"></a>[어떻게 할까요?] Visual Studio 2008에서 마스터 페이지 만들기
 ====================

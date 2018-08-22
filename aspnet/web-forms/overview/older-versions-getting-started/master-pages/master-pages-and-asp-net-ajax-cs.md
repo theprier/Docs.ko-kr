@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/master-pages/master-pages
 title: 마스터 페이지 및 ASP.NET AJAX (C#) | Microsoft Docs
 author: rick-anderson
 description: ASP.NET AJAX 및 마스터 페이지를 사용 하기 위한 옵션에 설명 합니다. ScriptManagerProxy 클래스를 사용 하 여 살펴봅니다. 다양 한 JS 파일은 dependi를 로드 하는 방법에 대해 설명 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/11/2008
 ms.assetid: 0c55eb66-ba44-4d49-98e8-5c87fd9b1111
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/master-pages-and-asp-net-ajax-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e8a4f9780b41c5ff77b996894d9f91a532877245
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 47201a0cfeb5d1e548721094d11488e9e804dc9c
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37842486"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41828696"
 ---
 <a name="master-pages-and-aspnet-ajax-c"></a>마스터 페이지 및 ASP.NET AJAX (C#)
 ====================

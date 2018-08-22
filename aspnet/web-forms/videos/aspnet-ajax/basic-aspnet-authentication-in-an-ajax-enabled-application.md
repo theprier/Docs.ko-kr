@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-ajax/basic-aspnet-authentication-in-an-ajax-enabled
 title: AJAX의 기본 ASP.NET 인증 사용 응용 프로그램 | Microsoft Docs
 author: JoeStagner
 description: 이 비디오에서는 기본 ASP.NET forms를 사용 하 여 AJAX 사용 웹 응용 프로그램에서 인증 기반 인증 설명 하겠습니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/10/2008
 ms.assetid: 782eca6d-51d6-4c8e-b2ea-59dfa567740a
 msc.legacyurl: /web-forms/videos/aspnet-ajax/basic-aspnet-authentication-in-an-ajax-enabled-application
 msc.type: video
-ms.openlocfilehash: 19e93fc79fd7cfa3d6442b8a2b749a99f3ce4af9
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 02454f4d6b9f728fe7bf3a7627dbe5c26d857927
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37806434"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41832725"
 ---
 <a name="basic-aspnet-authentication-in-an-ajax-enabled-application"></a>AJAX의 기본 ASP.NET 인증 사용 응용 프로그램
 ====================

@@ -3,17 +3,17 @@ uid: mobile/tested-devices
 title: ASP.NET 모바일 컨트롤 테스트 마친된 장치 | Microsoft Docs
 author: rick-anderson
 description: 다음 장치 및 브라우저 Microsoft Mobile Internet Toolkit v1.0 및 ASP.NET 모바일 컨트롤을 사용 하 여 테스트 되었습니다. Microsoft Mobile 인터넷을 사용 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/28/2011
 ms.assetid: 51b447d5-eaa1-4df1-917c-f4f2746ed62d
 msc.legacyurl: /mobile/tested-devices
 msc.type: content
-ms.openlocfilehash: dba860d74e2dbded832d4f6e9da6edfecbf4c303
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 4576e176f3b5d6e3a1fbec16f098c64ec3f0d54d
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37815878"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41828521"
 ---
 <a name="aspnet-mobile-controls-tested-devices"></a>ASP.NET 모바일 컨트롤 테스트 마친된 장치
 ====================

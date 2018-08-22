@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-security/roles/role-based-authorization-v
 title: 역할 기반 권한 부여 (VB) | Microsoft Docs
 author: rick-anderson
 description: 이 자습서를 살펴보고 역할 프레임 워크의 보안 컨텍스트를 사용 하 여 사용자의 역할에 연결 하는 방법을 시작 합니다. 다음 역할을 기준으로 URL을 적용 하는 방법을 검사 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/24/2008
 ms.assetid: 83b4f5a4-4f5a-4380-ba33-f0b5c5ac6a75
 msc.legacyurl: /web-forms/overview/older-versions-security/roles/role-based-authorization-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 6bf9e1f0832b811ce8e2033dd45f94dc3baaeea6
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 593eddfafae7c864a705ce65e6bbb59c9b41ea14
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37829647"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41832693"
 ---
 <a name="role-based-authorization-vb"></a>역할 기반 권한 부여 (VB)
 ====================

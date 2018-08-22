@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/dropshadow/manipulating-dropshadow-
 title: 클라이언트 코드 (C#)에서 DropShadow 속성 조작 | Microsoft Docs
 author: wenz
 description: DataList의 편집 인터페이스 사용자 지정
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: c83ca3e6-c0bf-4158-a166-40c1ab0f33da
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dropshadow/manipulating-dropshadow-properties-from-client-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7255e8b2b4c3c5f1c5ebf5a05851c13c07e49c5e
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: f751e2378621a6ab74f9f15fe51fd18bdd8b4070
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37820313"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831535"
 ---
 <a name="manipulating-dropshadow-properties-from-client-code-c"></a>클라이언트 코드 (C#)에서 DropShadow 속성 조작
 ====================

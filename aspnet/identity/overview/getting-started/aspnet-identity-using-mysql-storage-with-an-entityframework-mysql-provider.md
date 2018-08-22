@@ -3,17 +3,17 @@ uid: identity/overview/getting-started/aspnet-identity-using-mysql-storage-with-
 title: 'ASP.NET Id: EntityFramework MySQL 공급자 (C#)와 MySQL 저장소를 사용 하 여 | Microsoft Docs'
 author: maumar
 description: 이 자습서에서는 MySQL 견실한 EntityFramework (SQL 클라이언트 공급자)를 사용 하 여 기본 데이터 저장소 메커니즘에 ASP.NET Id에 대 한 대체 하는 방법...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 12/10/2013
 ms.assetid: 15253312-a92c-43ba-908e-b5dacd3d08b8
 msc.legacyurl: /identity/overview/getting-started/aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider
 msc.type: authoredcontent
-ms.openlocfilehash: 13cb1d9a862429bfb4e20a8d9700fc17eb721c6b
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 3856b40b31a3deb6ad1c6c5d2cd678e183f012d7
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37812677"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824113"
 ---
 <a name="aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider-c"></a>ASP.NET Id: EntityFramework MySQL 공급자 (C#)를 사용 하 여 MySQL 저장소 사용
 ====================
@@ -71,7 +71,7 @@ ms.locfileid: "37812677"
   
    [확장 하려면 다음 이미지를 클릭 합니다. ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image14.png)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image13.png)
-4. 에 **새 ASP.NET 프로젝트** 대화 상자에서 선택 합니다 **MVC** templatewith; 기본 옵션을 구성 하이는 **개별 사용자 계정** 인증 방법으로 합니다. 클릭 **확인**:  
+4. 에 **새 ASP.NET 프로젝트** 대화 상자에서 선택 합니다 **MVC** templatewith; 기본 옵션을 구성 하이는 **개별 사용자 계정** 인증 방법으로 합니다. **확인**을 클릭합니다.  
   
    [확장 하려면 다음 이미지를 클릭 합니다. ]  
     [![](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image16.png)](aspnet-identity-using-mysql-storage-with-an-entityframework-mysql-provider/_static/image15.png)

@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/dropshadow/adjusting-the-z-index-of
 title: (C#) DropShadow의 Z-인덱스 조정 | Microsoft Docs
 author: wenz
 description: AJAX Control Toolkit에서 DropShadow 컨트롤 그림자를 사용 하 여 패널을 확장합니다. 그러나이 섀도 경우에 따라 설치에 대 한 다른 컨트롤을 사용 하 여 충돌 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 14133833-e518-4347-87b9-6b6f71f14a77
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dropshadow/adjusting-the-z-index-of-a-dropshadow-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2470972e038b0bb58601e100dd568a17281e2abe
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 5cee2acfac74c0790a7ad82bbfb503a8a16f6b47
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37827439"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41828340"
 ---
 <a name="adjusting-the-z-index-of-a-dropshadow-c"></a>(C#) DropShadow의 Z-인덱스 조정
 ====================

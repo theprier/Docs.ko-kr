@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-security/membership/validating-user-crede
 title: 멤버 자격 사용자 저장소 (VB)에 대 한 사용자 자격 증명 유효성 검사 | Microsoft Docs
 author: rick-anderson
 description: 이 자습서에서는 프로그래밍 방식으로 및 로그인 컨트롤을 사용 하 여 멤버 자격 사용자 저장소에 대 한 사용자의 자격 증명의 유효성을 검사 하는 방법을 살펴보겠습니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/18/2008
 ms.assetid: 17772912-b47b-4557-9ce9-80f22df642f7
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/validating-user-credentials-against-the-membership-user-store-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c5eeb67c8d175173f38ffcbc1b01fd5a5931866e
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: f5f1121bacdf287e346419d70ac155f47bc826ac
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37821406"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41829437"
 ---
 <a name="validating-user-credentials-against-the-membership-user-store-vb"></a>멤버 자격 사용자 저장소 (VB)에 대 한 사용자 자격 증명 유효성 검사
 ====================

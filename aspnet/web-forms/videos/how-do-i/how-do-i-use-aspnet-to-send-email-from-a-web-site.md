@@ -3,17 +3,17 @@ uid: web-forms/videos/how-do-i/how-do-i-use-aspnet-to-send-email-from-a-web-site
 title: '[어떻게 할까요?] ASP.NET을 사용 하 여 웹 사이트에서 전자 메일을 보낼 | Microsoft Docs'
 author: rick-anderson
 description: 이 비디오 Chris Pels 만들고 ASP.NET 웹 사이트에서 전자 메일을 전송 하는 방법을 보여 줍니다. 먼저 System.Net.Mail 네임 스페이스 f의 핵심 클래스에 대 한 알아보기...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/28/2008
 ms.assetid: 97f7323a-efc6-4e32-9a16-b011ed2a781b
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-use-aspnet-to-send-email-from-a-web-site
 msc.type: video
-ms.openlocfilehash: 4f06fe1a831aa96b1cac5735887c6c6cb889783c
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 27f38e2638533928031d00da53692d50ab1e98cb
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37838192"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41829947"
 ---
 <a name="how-do-i-use-aspnet-to-send-email-from-a-web-site"></a>[어떻게 할까요?] ASP.NET를 사용 하 여 웹 사이트에서 전자 메일 보내기
 ====================

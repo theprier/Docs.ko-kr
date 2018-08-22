@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-ajax/how-do-i-use-the-aspnet-ajax-profile-services
 title: '[어떻게 할까요?] ASP.NET AJAX 프로필 서비스 사용 | Microsoft 문서'
 author: rick-anderson
 description: ASP.NET 2.0에는 ASP.NET 웹 응용 프로그램의 각 사용자에 대 한 세부 정보를 저장할 수 있는 프로필 속성이 도입 되었습니다. ASP.NET AJAX 프로필 서비스를 사용 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/16/2007
 ms.assetid: 8fc77048-4d1f-42bf-a947-ecc9a02b25c9
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-use-the-aspnet-ajax-profile-services
 msc.type: video
-ms.openlocfilehash: 5a059e503262b33b0bf6f21f244715e92f46ca16
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b3cb1bdbd6be4fcdc956b8dc475888b9ab0a440e
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37840091"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41828395"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-profile-services"></a>[어떻게 할까요?] ASP.NET AJAX 프로필 서비스 사용
 ====================

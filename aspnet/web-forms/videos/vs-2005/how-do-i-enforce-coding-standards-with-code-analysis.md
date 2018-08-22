@@ -3,17 +3,17 @@ uid: web-forms/videos/vs-2005/how-do-i-enforce-coding-standards-with-code-analys
 title: '[어떻게 할까요?] 코드 분석에 코딩 표준 적용? | Microsoft 문서'
 author: rick-anderson
 description: Visual Studio Team System을 사용 하 여 클래스 라이브러리 프로젝트, 웹 사이트 프로젝트 및 소스 코드 co에 적용 되는 코드 분석 규칙을 통해 세밀 하 게 제어 해야 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/09/2007
 ms.assetid: ab2eedbc-79b5-4b63-a1df-935940c1545b
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-enforce-coding-standards-with-code-analysis
 msc.type: video
-ms.openlocfilehash: 6a3260c4427cb3f895da29a1b280c71333e87faa
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 609f91090520cc36f312a68d63ba6d7356bb008d
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37832275"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41827748"
 ---
 <a name="how-do-i-enforce-coding-standards-with-code-analysis"></a>[어떻게 할까요?] 코드 분석에 코딩 표준 적용?
 ====================

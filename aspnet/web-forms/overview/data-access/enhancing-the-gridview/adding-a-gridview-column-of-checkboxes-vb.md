@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/enhancing-the-gridview/adding-a-gridview-col
 title: (VB) 확인란의 GridView 열 추가 | Microsoft Docs
 author: rick-anderson
 description: 이 자습서는 G의 여러 행을 선택 하는 직관적인 방법을 사용 하 여 사용자를 제공 하는 GridView 컨트롤에 확인란의 열을 추가 하는 방법을 살펴봅니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/06/2007
 ms.assetid: 39253d05-75c0-41c7-b9d4-a6c58ecf69ce
 msc.legacyurl: /web-forms/overview/data-access/enhancing-the-gridview/adding-a-gridview-column-of-checkboxes-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 01515e0034d69c563cbc96dceb6ae2ee481cc1a0
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: be7fc4fe93d15e7550f873adffa15e82384d25be
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37819576"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41829399"
 ---
 <a name="adding-a-gridview-column-of-checkboxes-vb"></a>(VB) 확인란의 GridView 열 추가
 ====================

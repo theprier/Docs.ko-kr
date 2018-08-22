@@ -3,17 +3,17 @@ uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/publishin
 title: Introducing ASP.NET Web Pages-WebMatrix를 사용 하 여 사이트를 게시 | Microsoft Docs
 author: tfitzmac
 description: 이 자습서는 ASP.NET Web Pages 및 Microsoft WebMatrix를 소개 하는 자습서 집합에서 마지막 3 부입니다. T 사이트를 게시 하는 방법에 설명 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/28/2015
 ms.assetid: 7e85c70e-1a88-4408-8b3d-29611c7713ed
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/publishing
 msc.type: authoredcontent
-ms.openlocfilehash: a20adc0b42d39424abf301e0b0f4094ef04932fb
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 58e3e8dc681571e833ec54c2668295c77a58c896
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37836987"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837239"
 ---
 <a name="introducing-aspnet-web-pages---publishing-a-site-by-using-webmatrix"></a>ASP.NET Web Pages-WebMatrix를 사용 하 여 사이트를 게시 소개
 ====================

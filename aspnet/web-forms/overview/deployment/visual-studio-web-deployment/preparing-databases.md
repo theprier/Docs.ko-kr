@@ -3,17 +3,17 @@ uid: web-forms/overview/deployment/visual-studio-web-deployment/preparing-databa
 title: 'Visual Studio를 사용 하 여 ASP.NET 웹 배포: 배포 데이터베이스에 대 한 준비 | Microsoft Docs'
 author: tdykstra
 description: 이 자습서 시리즈를 배포 하는 방법을 보여 줍니다. ASP.NET (게시)에서 실행 중인 웹 응용 프로그램을 Azure App Service Web Apps 또는 타사 호스팅 공급자...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/15/2013
 ms.assetid: ae4def81-fa37-4883-a13e-d9896cbf6c36
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/preparing-databases
 msc.type: authoredcontent
-ms.openlocfilehash: a9ddeda3bfe4315c835cd447f6178669797dceb2
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 7bdf443fbce7376ac057c848df146717955203f9
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37803193"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41829748"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-preparing-for-database-deployment"></a>Visual Studio를 사용 하 여 ASP.NET 웹 배포: 배포 데이터베이스에 대 한 준비
 ====================

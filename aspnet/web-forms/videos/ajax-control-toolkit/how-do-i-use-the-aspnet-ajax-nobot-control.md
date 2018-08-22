@@ -3,17 +3,17 @@ uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-nobot-co
 title: '[어떻게 할까요?] ASP.NET AJAX NoBot 컨트롤 사용 | Microsoft 문서'
 author: JoeStagner
 description: ASP.NET AJAX Control Toolkit에서 NoBot 컨트롤 웹 응용 프로그램에 특정 종류의 무단된 액세스를 방지할 수 있습니다. 이 비디오에서 표시 하는 방법을 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/29/2007
 ms.assetid: 15282963-2ec5-4013-b6bc-f1fcf272818e
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-nobot-control
 msc.type: video
-ms.openlocfilehash: 56276b427197459c916361c3f5652491e1f175c5
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 275bbbeb9859662c94bb795f9a91b15a28fe2184
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37811862"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836539"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-nobot-control"></a>[어떻게 할까요?] ASP.NET AJAX NoBot 컨트롤 사용
 ====================

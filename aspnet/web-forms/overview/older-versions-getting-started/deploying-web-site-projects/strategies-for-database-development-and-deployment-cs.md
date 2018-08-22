@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projec
 title: 데이터베이스 개발 및 배포 (C#)에 대 한 전략 | Microsoft Docs
 author: rick-anderson
 description: 처음으로 데이터 기반 응용 프로그램을 배포 하는 경우 프로덕션 환경으로 개발 환경에서 데이터베이스를 맹목적으로 복사할 수 있습니다. B....
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/23/2009
 ms.assetid: 3e8b0627-3eb7-488e-807e-067cba7cec05
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/strategies-for-database-development-and-deployment-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0cec51d7b0e87f3073e27eb9bbdb4187d61307f2
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 029c17d5f996f595aef1af68c3ddb9b21f99f5cf
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37823672"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831478"
 ---
 <a name="strategies-for-database-development-and-deployment-c"></a>데이터베이스 개발 및 배포 (C#) 전략
 ====================

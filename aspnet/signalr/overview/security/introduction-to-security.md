@@ -3,17 +3,17 @@ uid: signalr/overview/security/introduction-to-security
 title: SignalR 보안 소개 | Microsoft Docs
 author: pfletcher
 description: SignalR 응용 프로그램을 개발할 때 고려해 야 할 보안 문제를 설명 합니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/10/2014
 ms.assetid: ed562717-8591-4936-8e10-c7e63dcb570a
 msc.legacyurl: /signalr/overview/security/introduction-to-security
 msc.type: authoredcontent
-ms.openlocfilehash: d701d76f446d63558d7af631e10ac4479492d539
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 62f835349697d02ebe7363b00a032a5353d3dfc2
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37805135"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41829879"
 ---
 <a name="introduction-to-signalr-security"></a>SignalR 보안 소개
 ====================
@@ -106,7 +106,7 @@ SignalR은 발신자의 id 유효성을 검사 하 여 악의적인 명령을 �
 
 CSRF 공격의 예는 다음과 같습니다.
 
-1. 사용자 www.example.com, 로그인 폼 인증을 사용 하 여 합니다.
+1. 사용자  www.example.com , 로그인 폼 인증을 사용 하 여 합니다.
 2. 서버에서 사용자를 인증 합니다. 인증 쿠키를 포함 하는 서버에서 응답 합니다.
 3. 로그 아웃을 하지 않고 사용자가 악성 웹 사이트를 방문 합니다. 다음 HTML 양식을 포함 하는이 악성 사이트: 
 

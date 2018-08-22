@@ -3,17 +3,17 @@ uid: mvc/overview/getting-started/lifecycle-of-an-aspnet-mvc-5-application
 title: ASP.NET MVC 5 응용 프로그램의 수명 주기 | Microsoft Docs
 author: cephalin
 description: ASP.NET MVC 5 응용 프로그램의 수명 주기를 차트로 보여주는 PDF 문서를 다운로드합니다. 이 수명 주기 문서는 MVC 수명 주기에 대한 개요를 제공합니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/28/2014
 ms.assetid: 9c1e3a75-b644-4480-8326-11300b1ec4b3
 msc.legacyurl: /mvc/overview/getting-started/lifecycle-of-an-aspnet-mvc-5-application
 msc.type: authoredcontent
-ms.openlocfilehash: cceaa377e77a7229edb2e33a67d000e26b43358a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 5523217ae5674ac4e5898a150f9e5f0ae3a70d26
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37839257"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41823780"
 ---
 <a name="lifecycle-of-an-aspnet-mvc-5-application"></a>ASP.NET MVC 5 응용 프로그램의 수명 주기
 ====================

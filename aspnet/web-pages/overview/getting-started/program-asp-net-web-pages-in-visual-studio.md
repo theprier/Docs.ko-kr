@@ -3,17 +3,17 @@ uid: aspnet/web-pages/overview/getting-started/program-asp-net-web-pages-in-visu
 title: 프로그래밍 ASP.NET 웹 페이지 (Razor)를 사용 하 여 Visual Studio | Microsoft Docs
 author: tfitzmac
 description: 이 부록에서는 ASP.NET 웹 페이지 Razor 구문 사용 하 여 프로그램을 Visual Studio 2010 또는 Visual Web Developer 2010 Express를 사용 하는 방법을 설명 합니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/13/2014
 ms.assetid: 0acfec5a-48f2-4766-a801-a0f426966f0a
 msc.legacyurl: /web-pages/overview/getting-started/program-asp-net-web-pages-in-visual-studio
 msc.type: authoredcontent
-ms.openlocfilehash: 46807b464499b2e60d995d37f161ca129d38f439
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 41cb1048b9dab21516e38cfff0772b8b690d474f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37834457"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41827089"
 ---
 <a name="programming-aspnet-web-pages-razor-using-visual-studio"></a>Visual Studio를 사용 하 여 ASP.NET 웹 페이지 (Razor) 프로그래밍
 ====================

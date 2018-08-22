@@ -3,17 +3,17 @@ uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-pagingbulletedlist-e
 title: '[어떻게 할까요?] PagingBulletedList Extender 컨트롤 사용 | Microsoft 문서'
 author: JoeStagner
 description: 이 비디오는 ASP.NET AJAX Control Toolkit에서 PagingBulletedList extender 컨트롤의 사용을 보여 줍니다. 배울 방법 PagingBulletedList extende...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/12/2007
 ms.assetid: 7f2231f1-c105-499e-b980-c24824bed56a
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-pagingbulletedlist-extender-control
 msc.type: video
-ms.openlocfilehash: 9c660eb834c8e858efacacf6104099d34e91baa4
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 90a3c7917777b8432f8e9096e5b0cea920e5be4d
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37814329"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824047"
 ---
 <a name="how-do-i-use-the-pagingbulletedlist-extender-control"></a>[어떻게 할까요?] PagingBulletedList Extender 컨트롤 사용
 ====================

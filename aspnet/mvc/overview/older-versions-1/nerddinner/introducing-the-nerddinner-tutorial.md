@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/nerddinner/introducing-the-nerddinner-tutoria
 title: NerdDinner 자습서 소개 | Microsoft Docs
 author: shanselman
 description: 새로운 프레임 워크는 가장 좋은 방법은 작업을 작성 하는 경우 이 자습서에서는 ASP.NE를 사용 하 여 완료 하지만 크기가 작은 응용 프로그램을 작성 하는 방법을 설명 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/27/2010
 ms.assetid: 397522d5-0402-4b94-b810-a2fb564f869d
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/introducing-the-nerddinner-tutorial
 msc.type: authoredcontent
-ms.openlocfilehash: 9188df1eca7f488502640bc17d5034f93f4ac82c
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: d5efab525841b5c526aa3b656f27b1c42cc74648
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37805112"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41827779"
 ---
 <a name="introducing-the-nerddinner-tutorial"></a>NerdDinner 자습서 소개
 ====================

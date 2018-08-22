@@ -3,17 +3,17 @@ uid: mvc/overview/getting-started/database-first-development/generating-views
 title: 'ASP.NET MVC를 사용 하 여 먼저 EF Database: 뷰 생성 | Microsoft Docs'
 author: tfitzmac
 description: MVC, Entity Framework 및 ASP.NET 스 캐 폴딩을 사용 하 여, 기존 데이터베이스에 대 한 인터페이스를 제공 하는 웹 응용 프로그램을 만들 수 있습니다. 이 자습서 seri...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 12/29/2014
 ms.assetid: 669367cf-8e30-4eb6-821d-10a7d9bb906c
 msc.legacyurl: /mvc/overview/getting-started/database-first-development/generating-views
 msc.type: authoredcontent
-ms.openlocfilehash: 9c85b330ac415d8c73d58b31a5108197b754669f
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 74c7abdc2d0f8fff9ad769d013fb001e2b9e427b
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37835330"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41828434"
 ---
 <a name="ef-database-first-with-aspnet-mvc-generating-views"></a>ASP.NET MVC를 사용 하 여 먼저 EF Database: 뷰를 생성 합니다.
 ====================

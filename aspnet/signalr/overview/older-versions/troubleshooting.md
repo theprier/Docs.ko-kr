@@ -3,17 +3,17 @@ uid: signalr/overview/older-versions/troubleshooting
 title: SignalR 문제 해결 (SignalR 1.x) | Microsoft Docs
 author: pfletcher
 description: 이 문서는 SignalR 응용 프로그램을 개발 하는 일반적인 문제를 설명 합니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/05/2013
 ms.assetid: 347210ba-c452-4feb-886f-b51d89f58971
 msc.legacyurl: /signalr/overview/older-versions/troubleshooting
 msc.type: authoredcontent
-ms.openlocfilehash: a869c04a18be6d3917eb93ec98a8a568b7dc5dba
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: df949347cecd9ac617a52ad798f37bebdb8524fa
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37826759"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41835700"
 ---
 <a name="signalr-troubleshooting-signalr-1x"></a>SignalR 문제 해결 (SignalR 1.x)
 ====================

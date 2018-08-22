@@ -3,17 +3,17 @@ uid: web-forms/videos/how-do-i/how-do-i-create-and-use-classes-in-javascript
 title: 어떻게 수행 할까요를 만들고 JavaScript에서 클래스를 사용? | Microsoft 문서
 author: rick-anderson
 description: 이 비디오에서는 Chris Pels 만드는 방법을 보여 줍니다 클래스 javascript에서 기능을 사용 하 여 개체 지향 capabilitie 사용 하 여 다른 프로그래밍 언어와 유사한...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/08/2010
 ms.assetid: 348d1bda-69e0-4cb5-a59f-a104133c2f93
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-create-and-use-classes-in-javascript
 msc.type: video
-ms.openlocfilehash: bc0ea2ab8aa61cc9855704b41031e602557fe8bd
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: cbb0159ab181946c25c14e7ba0f3cb4e63f2252a
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37812468"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41835701"
 ---
 <a name="how-do-i-create-and-use-classes-in-javascript"></a>어떻게 수행 할까요를 만들고 JavaScript에서 클래스를 사용?
 ====================

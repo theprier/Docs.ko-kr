@@ -3,17 +3,17 @@ uid: mvc/videos/mvc-2/how-do-i/how-do-i-create-a-custom-html-helper-for-an-mvc-a
 title: 'I: MVC 응용 프로그램에 대 한 사용자 지정 HTML 도우미를 만드는 방법 | Microsoft 문서'
 author: rick-anderson
 description: 이 비디오에서는 Chris Pels에 MVC 응용 프로그램의 표준 집합에서 사용할 수 없는 사용자 지정 HtmlHelper를 만드는 방법을 보여 줍니다. 첫 번째는 샘플 MVC 응용 프로그램...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 12/11/2009
 ms.assetid: 58b5eb15-4160-4ce2-ae70-6ba94262ea73
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/how-do-i-create-a-custom-html-helper-for-an-mvc-application
 msc.type: video
-ms.openlocfilehash: d3acd32a951ecc9968c42932cdc0daac6e4c4d8a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 4061c06cfeab2278e5732295b034f81f7995c2a4
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37807741"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41832728"
 ---
 <a name="how-do-i-create-a-custom-html-helper-for-an-mvc-application"></a>I: MVC 응용 프로그램에 대 한 사용자 지정 HTML 도우미를 만드는 방법
 ====================

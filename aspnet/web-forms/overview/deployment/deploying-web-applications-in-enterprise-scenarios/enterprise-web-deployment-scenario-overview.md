@@ -3,17 +3,17 @@ uid: web-forms/overview/deployment/deploying-web-applications-in-enterprise-scen
 title: '엔터프라이즈 웹 배포: 시나리오 개요 | Microsoft Docs'
 author: jrjlee
 description: 이 자습서 집합 현실적인 수준의 복잡성을 가상의 엔터프라이즈 배포 시나리오와 함께 샘플 솔루션을를 사용 하 여 ref를 제공 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/03/2012
 ms.assetid: aa862153-4cd8-4e33-beeb-abf502c6664f
 msc.legacyurl: /web-forms/overview/deployment/deploying-web-applications-in-enterprise-scenarios/enterprise-web-deployment-scenario-overview
 msc.type: authoredcontent
-ms.openlocfilehash: ce533b246b14c9e041c89a778c022784f09d01a0
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: ec5b62f3991fa256bc8efe7abe9b953d61d1a515
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37836748"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41829380"
 ---
 <a name="enterprise-web-deployment-scenario-overview"></a>엔터프라이즈 웹 배포: 시나리오 개요
 ====================

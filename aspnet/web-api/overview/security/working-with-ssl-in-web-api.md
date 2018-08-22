@@ -3,17 +3,17 @@ uid: web-api/overview/security/working-with-ssl-in-web-api
 title: Web API에서에서 SSL 사용 | Microsoft Docs
 author: MikeWasson
 description: SSL 클라이언트 인증서를 사용 하 여 ASP.NET Web API를 사용 하 여 SSL을 사용 하는 방법을 보여 줍니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 12/12/2012
 ms.assetid: 97f6164f-59cf-45c0-b820-e4aa29b45396
 msc.legacyurl: /web-api/overview/security/working-with-ssl-in-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 0e0ca75c6ff1af397fce91079bcd8e9304b025ef
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b11b35f58a1f033423f5e6ea5f5373df0d1fcb5f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37829812"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830256"
 ---
 <a name="working-with-ssl-in-web-api"></a>Web API에서에서 SSL 사용
 ====================

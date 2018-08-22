@@ -3,17 +3,17 @@ uid: web-forms/videos/data-access/linq-videos-from-the-vb-team/how-do-i-get-star
 title: '[어떻게 할까요?] LINQ to XML 사용 하 여 시작 합니다. | Microsoft 문서'
 author: bethmassi
 description: Visual Basic 개발자는 Visual basic의 XML 리터럴, 포함 된 식 및 XML 축 속성 만들기, 쿼리를 사용 하 여 XML을 사용 하는 방법을 익힐 수 및...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/15/2007
 ms.assetid: dc3dedcd-5daf-4f0e-9afa-9ccad94f2ce0
 msc.legacyurl: /web-forms/videos/data-access/linq-videos-from-the-vb-team/how-do-i-get-started-with-linq-to-xml
 msc.type: video
-ms.openlocfilehash: d2e27e0049078ade239b79ee55f9a74a3131e321
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: c7ca1a1361157afc6d1032dc4bcded3fdc2fbe38
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37817098"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41828397"
 ---
 <a name="how-do-i-get-started-with-linq-to-xml"></a>[어떻게 할까요?] LINQ to XML 사용 하 여 시작 합니다.
 ====================

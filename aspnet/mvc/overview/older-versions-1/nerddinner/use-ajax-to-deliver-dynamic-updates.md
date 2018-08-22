@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/nerddinner/use-ajax-to-deliver-dynamic-update
 title: AJAX를 사용 하 여 동적 업데이트를 제공 하도록 | Microsoft Docs
 author: microsoft
 description: 10 단계 구현 dinner 세부 정보에 통합 하는 Ajax 기반 접근 방식을 사용 하는 dinner 참석 사람들이 관심 RSVP에 로그인 한 사용자에 대 한 지원...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/27/2010
 ms.assetid: 18700815-8e6c-4489-91af-7ea9dab6529e
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/use-ajax-to-deliver-dynamic-updates
 msc.type: authoredcontent
-ms.openlocfilehash: 9f11c4c15c0ac9bab8d53b18a4e07be4b864b2c7
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: e902881d3dab6a902cb747a197a32f317d199723
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37825203"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41827139"
 ---
 <a name="use-ajax-to-deliver-dynamic-updates"></a>AJAX를 사용 하 여 동적 업데이트를 제공 합니다.
 ====================

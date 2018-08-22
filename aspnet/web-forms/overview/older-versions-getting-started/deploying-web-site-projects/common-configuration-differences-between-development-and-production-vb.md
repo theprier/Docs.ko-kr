@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projec
 title: 일반적인 구성 차이 개발 및 프로덕션 (VB) | Microsoft Docs
 author: rick-anderson
 description: 이전 자습서에서 모든 관련 파일을 개발 환경에서 프로덕션 환경으로 복사 하 여 웹 사이트를 배포 했습니다. 그러나 필자는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/01/2009
 ms.assetid: 548e75f6-4d6c-4cb4-8da8-417915eb8393
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/common-configuration-differences-between-development-and-production-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 083c07a42fab1f655798f8cfb444ed0e6aa38ff0
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: ec1d575fac4527db8f5bcab5f0d84e1f17eac46b
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37842807"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831459"
 ---
 <a name="common-configuration-differences-between-development-and-production-vb"></a>일반적인 구성 차이 개발 및 프로덕션 (VB)
 ====================

@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/working-with-batched-data/batch-updating-cs
 title: 일괄 업데이트 (C#) | Microsoft Docs
 author: rick-anderson
 description: 단일 작업에서 여러 데이터베이스 레코드를 업데이트 하는 방법에 알아봅니다. 사용자 인터페이스 계층의 각 행이 편집 가능한 GridView를 빌드합니다. 데이터에서...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/26/2007
 ms.assetid: 4e849bcc-c557-4bc3-937e-f7453ee87265
 msc.legacyurl: /web-forms/overview/data-access/working-with-batched-data/batch-updating-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 0cb55689ac3a6dc36ed18459ecece82ff0b073b7
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: c878056273ea821e4dd4481fa1b6f7690f22b285
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37842194"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41827733"
 ---
 <a name="batch-updating-c"></a>일괄 업데이트 (C#)
 ====================

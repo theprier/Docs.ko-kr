@@ -3,17 +3,17 @@ uid: web-forms/videos/how-do-i/how-do-i-implement-health-monitoring-for-an-aspne
 title: '[어떻게 할까요?]  ASP.NET 응용 프로그램에 대 한 상태 모니터링 구현? | Microsoft 문서'
 author: rick-anderson
 description: 이 비디오 Chris Pels에서 ASP.NET 응용 프로그램에 대 한 자세한 런타임 정보를 모니터링 하는 상태를 구현 하는 방법을 표시 됩니다. 강력한 알아봅니다 및...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/05/2007
 ms.assetid: b3abd282-840a-42e3-ac27-cddbb22c5e33
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-implement-health-monitoring-for-an-aspnet-application
 msc.type: video
-ms.openlocfilehash: 19161f76de27826d15ad0c68392fb1af40292614
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 23b7b12b0f22548951b5801205fd225e580b5c8c
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37806482"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836281"
 ---
 <a name="how-do-i--implement-health-monitoring-for-an-aspnet-application"></a>[어떻게 할까요?]  ASP.NET 응용 프로그램에 대 한 상태 모니터링 구현?
 ====================

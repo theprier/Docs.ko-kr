@@ -3,17 +3,17 @@ uid: web-forms/videos/net-4/core/aspnet-4-quick-hit-auto-start
 title: 자동으로 시작 | Microsoft Docs
 author: JoeStagner
 description: 이 비디오에서는 initializ 응용 프로그램 풀을 시작 하는 것에 대 한 제어 되는 방법을 제공 하는 새 자동 시작 확장성 기능에 대해 배우게 됩니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/11/2009
 ms.assetid: ff2bba8e-4dbb-4b73-95fe-0bba17152ef5
 msc.legacyurl: /web-forms/videos/net-4/core/aspnet-4-quick-hit-auto-start
 msc.type: video
-ms.openlocfilehash: de8ddc85510b5ae2699cd91eb51fa80ad2db4533
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 1afc9adfae0060b3c598c731d73d917c9e3f5673
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37823818"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41823808"
 ---
 <a name="aspnet-4-quick-hit---auto-start"></a>ASP.NET 4 자동 시작 "Hit 빠른"-
 ====================

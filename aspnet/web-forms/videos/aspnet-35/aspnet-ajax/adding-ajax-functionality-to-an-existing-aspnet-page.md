@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-35/aspnet-ajax/adding-ajax-functionality-to-an-exis
 title: 기존 ASP.NET 페이지에 AJAX 기능 추가 | Microsoft Docs
 author: tmiranda
 description: ASP.NET 페이지에서 AJAX를 사용 하 여 성능을 향상 하 고 응용 프로그램의 전반적인 사용자 환경을 개선할 수 있습니다. 필요한 경우가 아니라면 기존 페이지를 다시 작성 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/15/2007
 ms.assetid: a4eb03b2-8efa-42ea-848d-b26918b80c33
 msc.legacyurl: /web-forms/videos/aspnet-35/aspnet-ajax/adding-ajax-functionality-to-an-existing-aspnet-page
 msc.type: video
-ms.openlocfilehash: b2f7abca23e6b25e0b83edbe25ac9d58caad5149
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 1b69fecfb444300db2545b782bb9c63d97f93c12
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37822275"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41827598"
 ---
 <a name="adding-ajax-functionality-to-an-existing-aspnet-page"></a>기존 ASP.NET 페이지에 AJAX 기능 추가
 ====================

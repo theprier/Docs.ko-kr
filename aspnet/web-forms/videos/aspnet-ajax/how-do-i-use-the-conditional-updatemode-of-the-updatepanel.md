@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-ajax/how-do-i-use-the-conditional-updatemode-of-the
 title: '[어떻게 할까요?] UpdatePanel의 조건부 UpdateMode 사용 | Microsoft 문서'
 author: JoeStagner
 description: ASP.NET AJAX UpdatePanel 'Always' 또는 '조건부'로 설정할 수 있습니다 하는 UpdateMode 속성을 포함 합니다. 기본값은 항상 하는 경우는 UpdatePan...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/01/2007
 ms.assetid: 10b5bad3-4c18-464f-9454-0b3e60b7b8be
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-use-the-conditional-updatemode-of-the-updatepanel
 msc.type: video
-ms.openlocfilehash: 04b37874bcbdd580edc9182b54eecc9a6f77cb61
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 96d7bc95fd80e410feb332264695835e68793ae2
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37826814"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831914"
 ---
 <a name="how-do-i-use-the-conditional-updatemode-of-the-updatepanel"></a>[어떻게 할까요?] UpdatePanel의 조건부 UpdateMode 사용
 ====================

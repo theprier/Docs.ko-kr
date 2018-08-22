@@ -3,17 +3,17 @@ uid: web-api/overview/security/authentication-and-authorization-in-aspnet-web-ap
 title: 인증 및 ASP.NET Web API에서에서 권한 부여 | Microsoft Docs
 author: MikeWasson
 description: ASP.NET Web API에 인증 및 권한 부여의 일반적인 개요를 제공합니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/27/2012
 ms.assetid: 6dfb51ea-9f4d-4e70-916c-8ef8344a88d6
 msc.legacyurl: /web-api/overview/security/authentication-and-authorization-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: f882a9bb2922d0eb28eee7cdba0896bdc5318c2a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: a78606a74b2149e68e3b01f4fe204f4a13edf4b5
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37812836"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41834746"
 ---
 <a name="authentication-and-authorization-in-aspnet-web-api"></a>인증 및 ASP.NET Web API에서에서 권한 부여
 ====================
@@ -117,6 +117,6 @@ Web API 호스트에서 발생 하는 인증을 가정 합니다. 웹 호스팅�
 
 ### <a name="authorization-inside-a-controller-action"></a>내부 컨트롤러 작업 권한 부여
 
-경우에 따라 계속 되지만 원칙을 기반으로 동작을 변경 하는 요청을 허용할 수도 있습니다. 예를 들어, 정보를 반환 하는 사용자의 역할에 따라 변경 될 수 있습니다. 컨트롤러 메서드 내에서 현재 사용자를 가져올 수 있습니다 합니다 **ApiController.User** 속성입니다.
+경우에 따라 계속 되지만 원칙을 기반으로 동작을 변경 하는 요청을 허용할 수도 있습니다. 예를 들어, 정보를 반환 하는 사용자의 역할에 따라 변경 될 수 있습니다. 컨트롤러 메서드 내에서 현재 주 서버를 가져올 수 있습니다 합니다 **ApiController.User** 속성입니다.
 
 [!code-csharp[Main](authentication-and-authorization-in-aspnet-web-api/samples/sample7.cs)]

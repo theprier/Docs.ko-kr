@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/numericupdown/creating-a-numeric-up
 title: 웹 서비스 백 엔드 (C#)를 사용 하 여 숫자 위로/아래로 컨트롤 만들기 | Microsoft Docs
 author: wenz
 description: 확인 상자에 값을 입력 하는 사용자를 대신 숫자 위로/아래로 컨트롤 (Windows 및 기타 운영 체제에 있는) 점점 더 많은 c 증명 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: c99bbc72-d4de-41ed-92a4-9a4632368363
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/numericupdown/creating-a-numeric-up-down-control-with-a-web-service-backend-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 56ca7f8fec0ed8e746453103ba3410313d5ff975
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: ffefed61e259994990315d17a545ef74074092a6
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37833028"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41823849"
 ---
 <a name="creating-a-numeric-updown-control-with-a-web-service-backend-c"></a>웹 서비스 백 엔드 (C#)를 사용 하 여 숫자 위로/아래로 컨트롤 만들기
 ====================

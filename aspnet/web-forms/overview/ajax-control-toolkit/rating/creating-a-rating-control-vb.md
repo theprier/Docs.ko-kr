@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/rating/creating-a-rating-control-vb
 title: 등급 컨트롤 (VB) 만들기 | Microsoft Docs
 author: wenz
 description: 전자 상거래 커뮤니티 사이트에서 여러 웹 사이트 비율 문서 또는 항목을 사용자에 게 제공합니다. 이 일반적으로 몇 가지 코딩 작업이 필요 하지만 사항은 합니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 6d0d70f4-725e-4258-8ae8-24a6ba1ddbf7
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/rating/creating-a-rating-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: cb8bd8ab400bf5633b8218e724ad86cf7271699d
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b229d0155fbab0437c644b41424164e4c655f5e5
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37811975"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41823804"
 ---
 <a name="creating-a-rating-control-vb"></a>등급 컨트롤 (VB) 만들기
 ====================

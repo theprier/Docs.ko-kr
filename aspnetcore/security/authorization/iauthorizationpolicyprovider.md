@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/02/2018
 uid: security/authorization/iauthorizationpolicyprovider
-ms.openlocfilehash: 6e46172ec8c5271ffcbad87e4ea5cc98465b78b0
-ms.sourcegitcommit: 41d3c4b27309d56f567fd1ad443929aab6587fb1
+ms.openlocfilehash: e3a534d3c3da5af4cfd3f72d105fac83e15135f0
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/07/2018
-ms.locfileid: "37910252"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41829501"
 ---
 # <a name="custom-authorization-policy-providers-using-iauthorizationpolicyprovider-in-aspnet-core"></a>ASP.NET Core에서 IAuthorizationPolicyProvider를 사용 하 여 사용자 지정 권한 부여 정책 공급자 
 
@@ -25,16 +25,19 @@ ms.locfileid: "37910252"
 * (다른 방 번호 또는 예를 들어 연령대)에 광범위 한 정책 사용 하므로 것은 의미가 없습니다 사용 하 여 각 개별 권한 부여 정책을 추가 하는 `AuthorizationOptions.AddPolicy` 호출 합니다.
 * 외부 데이터 원본 (예: 데이터베이스)에 대 한 정보를 기반으로 하는 런타임 시 정책 만들기 또는 다른 메커니즘을 통해 권한 부여 요구 사항을 동적으로 결정 합니다.
 
-## <a name="customizing-policy-retrieval"></a>사용자 지정 정책 검색
+[샘플 코드 보기 또는 다운로드](https://github.com/aspnet/AuthSamples/tree/master/samples/CustomPolicyProvider) 에서 합니다 [aspnet/AuthSamples GitHub 리포지토리](https://github.com/aspnet/AuthSamples)합니다. Aspnet/AuthSamples 리포지토리 ZIP 파일을 다운로드 합니다.
+압축을 풉니다 합니다 *AuthSamples master.zip* 파일입니다. 로 이동 합니다 *샘플/CustomPolicyProvider* 프로젝트 폴더입니다.
 
-ASP.NET Core 앱의 구현을 사용 합니다 `IAuthorizationPolicyProvider` 권한 부여 정책을 검색 하는 인터페이스입니다. 기본적으로 [DefaultAuthorizationPolicyProvider](https://docs.microsoft.com/dotnet/api/microsoft.aspnetcore.authorization.defaultauthorizationpolicyprovider) 등록 되 고 사용 합니다. `DefaultAuthorizationPolicyProvider` 정책을 반환 합니다.는 `AuthorizationOptions` 에서 제공 되는 `IServiceCollection.AddAuthorization` 호출 합니다.
+## <a name="customize-policy-retrieval"></a>정책 검색을 사용자 지정
+
+ASP.NET Core 앱의 구현을 사용 합니다 `IAuthorizationPolicyProvider` 권한 부여 정책을 검색 하는 인터페이스입니다. 기본적으로 [DefaultAuthorizationPolicyProvider](/dotnet/api/microsoft.aspnetcore.authorization.defaultauthorizationpolicyprovider) 등록 되 고 사용 합니다. `DefaultAuthorizationPolicyProvider` 정책을 반환 합니다.는 `AuthorizationOptions` 에서 제공 되는 `IServiceCollection.AddAuthorization` 호출 합니다.
 
 다른 등록 하 여이 동작을 사용자 지정할 수 있습니다 `IAuthorizationPolicyProvider` 앱의 구현을 [종속성 주입](xref:fundamentals/dependency-injection) 컨테이너입니다. 
 
 `IAuthorizationPolicyProvider` 인터페이스 두 Api가 포함 됩니다.
 
-* [GetPolicyAsync](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationpolicyprovider.getpolicyasync?view=aspnetcore-2.0#Microsoft_AspNetCore_Authorization_IAuthorizationPolicyProvider_GetPolicyAsync_System_String_) 지정 된 이름에 대 한 권한 부여 정책을 반환 합니다.
-* [GetDefaultPolicyAsync](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationpolicyprovider.getdefaultpolicyasync?view=aspnetcore-2.0) 기본 권한 부여 정책을 반환 합니다 (에 사용 된 정책 `[Authorize]` 지정 된 정책 없이 특성). 
+* [GetPolicyAsync](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationpolicyprovider.getpolicyasync#Microsoft_AspNetCore_Authorization_IAuthorizationPolicyProvider_GetPolicyAsync_System_String_) 지정 된 이름에 대 한 권한 부여 정책을 반환 합니다.
+* [GetDefaultPolicyAsync](/dotnet/api/microsoft.aspnetcore.authorization.iauthorizationpolicyprovider.getdefaultpolicyasync) 기본 권한 부여 정책을 반환 합니다 (에 사용 된 정책 `[Authorize]` 지정 된 정책 없이 특성). 
 
 이러한 두 가지 Api를 구현 하 여 권한 부여 정책을 제공 하는 방식을 사용자 지정할 수 있습니다.
 
@@ -46,7 +49,7 @@ ASP.NET Core 앱의 구현을 사용 합니다 `IAuthorizationPolicyProvider` �
 
 권한 부여 정책 이름으로 식별 됩니다. 사용자 지정 `MinimumAgeAuthorizeAttribute` 설명 이전에 해당 하는 권한 부여 정책을 검색 하는 문자열에 인수를 매핑하는 데 필요한 합니다. 파생 하 여이 수행할 수 있습니다 `AuthorizeAttribute` 줄어들고 합니다 `Age` 속성 줄 바꿈 합니다 `AuthorizeAttribute.Policy` 속성입니다.
 
-```CSharp
+```csharp
 internal class MinimumAgeAuthorizeAttribute : AuthorizeAttribute
 {
     const string POLICY_PREFIX = "MinimumAge";
@@ -76,7 +79,7 @@ internal class MinimumAgeAuthorizeAttribute : AuthorizeAttribute
 
 동일한 방식으로 다른 작업에 적용할 수 있습니다 `Authorize` 매개 변수로 정수 소요 되는 점을 제외 하 고 특성입니다.
 
-```CSharp
+```csharp
 [MinimumAgeAuthorize(10)]
 public IActionResult RequiresMinimumAge10()
 ```
@@ -91,7 +94,7 @@ public IActionResult RequiresMinimumAge10()
 * 사용 하 여 `AuthorizationPolicyBuilder` 새로 만들려면 `AuthorizationPolicy`
 * 사용 하 여 보존 기간에 따라 정책에 요구 사항 추가 `AuthorizationPolicyBuilder.AddRequirements`합니다. 다른 시나리오에서는 사용할 수 있습니다 `RequireClaim`하십시오 `RequireRole`, 또는 `RequireUserName` 대신 합니다.
 
-```CSharp
+```csharp
 internal class MinimumAgePolicyProvider : IAuthorizationPolicyProvider
 {
     const string POLICY_PREFIX = "MinimumAge";
@@ -130,7 +133,7 @@ internal class MinimumAgePolicyProvider : IAuthorizationPolicyProvider
 
 대부분의 경우이 권한 부여 특성 하기만 인증된 된 사용자에 대 한 호출을 사용 하 여 필요한 정책을 있도록 `RequireAuthenticatedUser`:
 
-```CSharp
+```csharp
 public Task<AuthorizationPolicy> GetDefaultPolicyAsync() => 
     Task.FromResult(new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build());
 ```
@@ -140,14 +143,14 @@ public Task<AuthorizationPolicy> GetDefaultPolicyAsync() =>
 * 기본 권한 부여 정책은 사용할 수 없습니다.
 * 기본 정책을 검색 하는 대체 (fallback)에 위임할 수 있습니다 `IAuthorizationPolicyProvider`합니다.
 
-## <a name="using-a-custom-iauthorizationpolicyprovider"></a>사용자 지정 IAuthorizationPolicyProvider를 사용 하 여
+## <a name="use-a-custom-iauthorizationpolicyprovider"></a>사용자 지정 IAuthorizationPolicyProvider 사용
 
 사용자 지정 정책을 사용 하는 `IAuthorizationPolicyProvider`를 수행 해야 합니다.
 
 * 적절 한 등록 `AuthorizationHandler` 종속성 주입을 사용 하 여 형식 (에서 설명한 [정책 기반 권한 부여](xref:security/authorization/policies#authorization-handlers)), 모든 정책 기반 권한 부여 시나리오와 마찬가지로 합니다.
 * 사용자 지정 등록 `IAuthorizationPolicyProvider` 앱의 종속성 주입 서비스 컬렉션의 형식 (에서 `Startup.ConfigureServices`) 기본 정책 공급자를 교체할 수 있습니다.
 
-```CSharp
+```csharp
 services.AddTransient<IAuthorizationPolicyProvider, MinimumAgePolicyProvider>();
 ```
 

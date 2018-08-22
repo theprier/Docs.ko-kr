@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions/creating-a-mvc-3-application-with-razor-and-uno
 title: 만들기는 MVC 3 Application with Razor and Unobtrusive JavaScript | Microsoft Docs
 author: microsoft
 description: 사용자 목록 샘플 웹 응용 프로그램에서는 Razor 보기 엔진을 사용 하 여 ASP.NET MVC 3 응용 프로그램을 만드는 얼마나 간단한 지 보여 줍니다. 샘플 응용 프로그램 s...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/01/2010
 ms.assetid: 658b149b-d770-46bf-8b4b-4e47cca242f3
 msc.legacyurl: /mvc/overview/older-versions/creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript
 msc.type: authoredcontent
-ms.openlocfilehash: 136c87cba70525da53c1f74576c50c12f8759539
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: f60ca3e76fda8a18da1ad83e955e5e4759f5e3af
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37840470"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41829856"
 ---
 <a name="creating-a-mvc-3-application-with-razor-and-unobtrusive-javascript"></a>만들기는 MVC 3 Razor 및 비간섭 JavaScript를 사용 하 여 응용 프로그램
 ====================

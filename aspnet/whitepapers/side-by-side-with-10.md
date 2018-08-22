@@ -3,17 +3,17 @@ uid: whitepapers/side-by-side-with-10
 title: .NET Framework 1.0 및 1.1의 ASP.NET-Side-by-side 실행 | Microsoft Docs
 author: rick-anderson
 description: 이 백서는 타이밍의 버전 중 하나에서 실행 되도록 ASP.NET 웹 응용 프로그램 수 있도록 컴퓨터에.NET 1.0와.NET 1.1을 설치 하는 방법에 설명 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/10/2010
 ms.assetid: bdea2003-e964-4db5-9092-d56cc7560616
 msc.legacyurl: /whitepapers/side-by-side-with-10
 msc.type: content
-ms.openlocfilehash: 1018845e3d2c6603732bfbbde78f4a9183e49d5d
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b5457a62e127ba555674fbe3b9f75552cad041c7
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37808397"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41832271"
 ---
 <a name="aspnet-side-by-side-execution-of-net-framework-10-and-11"></a>.NET Framework 1.0 및 1.1의 ASP.NET-Side-by-side 실행
 ====================

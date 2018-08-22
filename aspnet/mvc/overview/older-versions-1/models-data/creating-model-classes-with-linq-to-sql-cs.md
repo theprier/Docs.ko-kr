@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/models-data/creating-model-classes-with-linq-
 title: LINQ to SQL (C#)를 사용 하 여 모델 클래스 만들기 | Microsoft Docs
 author: microsoft
 description: 이 자습서의 목표는 한 가지 방법은 ASP.NET MVC 응용 프로그램에 대 한 모델 클래스 만들기를 설명 합니다. 이 자습서에서는 모델 c를 빌드하는 방법 알아보기...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/07/2008
 ms.assetid: f84b4a16-e8bb-49e8-87a0-1832879a3501
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/creating-model-classes-with-linq-to-sql-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 35fa1e882268eaa1bfbd3589c8173e853ad5c5a7
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: c76e92ebfab1db162151ea5753888a60a4d54e59
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37815852"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41828629"
 ---
 <a name="creating-model-classes-with-linq-to-sql-c"></a>LINQ to SQL (C#)를 사용 하 여 모델 클래스 만들기
 ====================

@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-35/visual-studio-editor/quick-tour-of-the-visual-st
 title: 둘러보기 Visual Studio 2008의 통합 개발 환경 | Microsoft Docs
 author: rick-anderson
 description: Visual Studio 2008에서 ide의 새로운 기능과 변경 사항 둘러보기입니다. 업데이트 된 웹 페이지 편집기, WPF 폼 디자이너, CSS 편집기, 등을 참조 하세요.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/15/2007
 ms.assetid: f20c5f1c-e49c-4909-b18f-8b5a442eafe3
 msc.legacyurl: /web-forms/videos/aspnet-35/visual-studio-editor/quick-tour-of-the-visual-studio-2008-integrated-development-environment
 msc.type: video
-ms.openlocfilehash: f25baf2dac16473be97c3c25d01d8a004ee3759e
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 8c94be873fdc7424e66b932f0389ad8738fb3f1f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37822112"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41835131"
 ---
 <a name="quick-tour-of-the-visual-studio-2008-integrated-development-environment"></a>Visual Studio 2008 통합된 개발 환경 둘러보기
 ====================

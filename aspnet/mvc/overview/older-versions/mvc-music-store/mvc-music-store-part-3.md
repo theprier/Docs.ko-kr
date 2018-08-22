@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-3
 title: '3 부: 보기 및 ViewModels | Microsoft Docs'
 author: jongalloway
 description: 이 자습서 시리즈 모든 ASP.NET MVC Music Store 샘플 응용 프로그램 빌드를 수행 하는 단계를 자세히 설명 합니다. 3 부에서는 보기 및 ViewModels를 설명합니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/21/2011
 ms.assetid: 94297aa0-1f2d-4d72-bbcb-63f64653e0c0
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-3
 msc.type: authoredcontent
-ms.openlocfilehash: 8fd89c2a448877bf13a7828f545ffcd400f63bb1
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 828ff18abcc5932f82be71a45ebde589eeb051fa
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37837412"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41827537"
 ---
 <a name="part-3-views-and-viewmodels"></a>3 부: 보기 및 ViewModels
 ====================
@@ -214,7 +214,7 @@ HomeController를 사용 하 여 전에 수행한 것과 같이 새 보기 템�
 
 ![](mvc-music-store-part-3/_static/image18.png)
 
-이 "foreach" 루프 내에서 Visual Web Developer 임을 알고 있습니다 각 항목 Genre 형식의 각 IntelliSence 보 장르 형식.
+"foreach" 루프 내에서 Visual Web Developer는 각 항목 이므로 Genre 형식의 각각에 대해 IntelliSense를 볼 장르 형식 알고 있습니다.
 
 ![](mvc-music-store-part-3/_static/image19.png)
 

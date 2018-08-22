@@ -3,17 +3,17 @@ uid: web-forms/videos/how-do-i/how-do-i-implement-tracing-in-an-aspnet-web-site
 title: '[어떻게 할까요?]  ASP.NET 웹 사이트에서 추적을 구현? | Microsoft 문서'
 author: rick-anderson
 description: 이 비디오에서는 Chris Pels 됩니다 하는 방법을 모니터링 하거나 성능을 측정 하 고 오류를 진단 하는 ASP.NET 웹 사이트에 추적을 구현 합니다. 알아보기 호...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/05/2007
 ms.assetid: b3abbbef-ddac-4c8e-a068-5bab31db5931
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-implement-tracing-in-an-aspnet-web-site
 msc.type: video
-ms.openlocfilehash: 308777a764fb175d45c24f893884dc8e6bda1393
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 1e6b1fb1a258e325ace3f29a20684018ff862842
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37835776"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41829677"
 ---
 <a name="how-do-i--implement-tracing-in-an-aspnet-web-site"></a>[어떻게 할까요?]  ASP.NET 웹 사이트에서 추적을 구현?
 ====================

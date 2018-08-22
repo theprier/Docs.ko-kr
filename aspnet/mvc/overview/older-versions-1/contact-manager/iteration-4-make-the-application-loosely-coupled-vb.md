@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/contact-manager/iteration-4-make-the-applicat
 title: '반복 #4 – 응용 프로그램을 느슨하게 결합 (VB)를 확인 | Microsoft Docs'
 author: microsoft
 description: 이 네 번째 반복에서는 활용 쉽게 유지 관리 하 고 연락처 관리자 응용 프로그램을 수정 하려면 몇 가지 소프트웨어 디자인 패턴입니다. For...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/20/2009
 ms.assetid: 92c70297-4430-4e4e-919a-9c2333a8d09a
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-4-make-the-application-loosely-coupled-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 68e7ebf987d03139f63ae9b06a712366a9679bc3
-ms.sourcegitcommit: a25b572eaed21791230c85416f449f66a405ec19
+ms.openlocfilehash: be6ddbdfbe8da33871355c2a7917a7ce7008d81b
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39395963"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836575"
 ---
 <a name="iteration-4--make-the-application-loosely-coupled-vb"></a>반복 #4 – 응용 프로그램을 느슨하게 결합 (VB) 확인
 ====================

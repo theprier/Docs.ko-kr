@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-acce
 title: ASP.NET MVC 4 모델 및 데이터 액세스 | Microsoft Docs
 author: rick-anderson
 description: 참고:이 실습 랩에서 ASP.NET MVC에 대 한 기본 지식이 있다고 가정 합니다. 전에 ASP.NET MVC에서 사용 하지 않은 경우 좋습니다 ASP.NET MVC 4를 초과 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/18/2013
 ms.assetid: 634ea84b-f904-4afe-b71b-49cccef4d9cc
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-models-and-data-access
 msc.type: authoredcontent
-ms.openlocfilehash: bbb726f9f4abb2f9c72153a8c7986c5c83a9a840
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 26896e6ee3c02e8f939296ecbfb8b7d500940765
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37818374"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41828556"
 ---
 # <a name="aspnet-mvc-4-models-and-data-access"></a>ASP.NET MVC 4 모델 및 데이터 액세스
 

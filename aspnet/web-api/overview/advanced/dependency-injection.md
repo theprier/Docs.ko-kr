@@ -3,17 +3,17 @@ uid: web-api/overview/advanced/dependency-injection
 title: ASP.NET Web API 2에서에서 종속성 주입 | Microsoft Docs
 author: MikeWasson
 description: 이 자습서에서는 ASP.NET Web API 컨트롤러에 종속성을 주입 하는 방법을 보여줍니다. 자습서 웹 API 2 Unity Application Block에 사용 되는 소프트웨어 버전 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/20/2014
 ms.assetid: e3d3e7ba-87f0-4032-bdd3-31f3c1aa9d9c
 msc.legacyurl: /web-api/overview/advanced/dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: a470c778fd5998006a0bf8edb08b62a75d72c48c
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 41db1af79ed63ff4dd12be37e9cc76e16f1bf5e4
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37802677"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831892"
 ---
 <a name="dependency-injection-in-aspnet-web-api-2"></a>ASP.NET Web API 2에서에서 종속성 주입
 ====================
@@ -33,7 +33,7 @@ ms.locfileid: "37802677"
 
 ## <a name="what-is-dependency-injection"></a>종속성 주입 이란?
 
-A *종속성* 다른 개체는 개체입니다. 예를 들어 정의에 공통적으로 적용 되는 [리포지토리](http://martinfowler.com/eaaCatalog/repository.html) 데이터 액세스를 처리 하는 합니다. 예를 들어 살펴보겠습니다. 첫째, 도메인 모델을 정의 합니다.
+‘종속성’은 다른 개체에 필요한 모든 개체입니다. 예를 들어 정의에 공통적으로 적용 되는 [리포지토리](http://martinfowler.com/eaaCatalog/repository.html) 데이터 액세스를 처리 하는 합니다. 예를 들어 살펴보겠습니다. 첫째, 도메인 모델을 정의 합니다.
 
 [!code-csharp[Main](dependency-injection/samples/sample1.cs)]
 

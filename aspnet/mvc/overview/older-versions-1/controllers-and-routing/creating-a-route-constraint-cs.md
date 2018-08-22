@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/controllers-and-routing/creating-a-route-cons
 title: 경로 제약 조건 (C#) 만들기 | Microsoft Docs
 author: StephenWalther
 description: 이 자습서에서는 Stephen walther가 브라우저 정규식을 사용 하 여 경로 제약 조건을 만들면 일치 경로 요청 하는 방법을 제어 하는 방법을 보여 줍니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/16/2009
 ms.assetid: 0bfd06b1-12d3-4fbb-9779-a82e5eb7fe7d
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-a-route-constraint-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f0dbbb880bc679da934444b87ef24d040b69e2f7
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 51d76248a59968e1d6befd5d5404f7bf6c2878e4
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37828256"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41824080"
 ---
 <a name="creating-a-route-constraint-c"></a>경로 제약 조건 (C#) 만들기
 ====================

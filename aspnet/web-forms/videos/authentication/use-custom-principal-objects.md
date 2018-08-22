@@ -3,17 +3,17 @@ uid: web-forms/videos/authentication/use-custom-principal-objects
 title: 사용 하 여 사용자 지정 보안 주체 개체 | Microsoft Docs
 author: JoeStagner
 description: Joe Stagner는 사용자 인증 데이터를 저장 하기 위해 보안 주체 개체에서 사용자 지정 id를 구현 하는 방법을 보여 줍니다. 이 데모에 대 한 자세한 내용은...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/16/2008
 ms.assetid: 368733eb-0822-4b97-8e5a-127be6c88a61
 msc.legacyurl: /web-forms/videos/authentication/use-custom-principal-objects
 msc.type: video
-ms.openlocfilehash: a5f7ba2cf2998b3c41fd28258081b6d638f0ede9
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 5cc5e0e492f5de324e094ecd58ee3cbded873dea
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37838496"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41827970"
 ---
 <a name="use-custom-principal-objects"></a>사용 하 여 사용자 지정 보안 주체 개체
 ====================

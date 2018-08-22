@@ -3,17 +3,17 @@ uid: web-forms/overview/moving-to-aspnet-20/caching
 title: 캐싱 | Microsoft Docs
 author: microsoft
 description: 캐싱의 이해가 우수한 ASP.NET 응용 프로그램에 대 한 중요 합니다. ASP.NET 1.x 캐싱;에 대 한 세 가지 다른 옵션 제공 캐싱, 출력 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/20/2005
 ms.assetid: 2bb109d2-e299-46ea-9054-fa0263b59165
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/caching
 msc.type: authoredcontent
-ms.openlocfilehash: 0c38092c47060e6d02791f9672df6703852f4b5a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 5c97464ee50291338a80120a86b1b86b07bc672d
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37829488"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41832075"
 ---
 <a name="caching"></a>캐싱
 ====================

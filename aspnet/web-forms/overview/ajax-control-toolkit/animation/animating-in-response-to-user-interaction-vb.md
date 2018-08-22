@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/animation/animating-in-response-to-
 title: 사용자 상호 작용 (VB)에 대 한 응답으로 애니메이션 효과 주는 | Microsoft Docs
 author: wenz
 description: ASP.NET AJAX Control Toolkit에서 애니메이션 컨트롤 컨트롤 뿐 이지만 컨트롤에 애니메이션을 추가 하는 전체 프레임 워크 아닙니다. 애니메이션 별 있습니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: c8204c05-ec27-40fe-933d-88e4e727a482
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/animating-in-response-to-user-interaction-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 4b774a058e715e4a98e767daf92886f24e627822
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0d9a3bf853afdbde0a419b90d1563fc06d3f9979
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37815527"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41827076"
 ---
 <a name="animating-in-response-to-user-interaction-vb"></a>사용자 상호 작용 (VB)에 대 한 응답으로 애니메이션 적용
 ====================

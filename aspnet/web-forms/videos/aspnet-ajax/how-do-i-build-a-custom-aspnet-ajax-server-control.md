@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-ajax/how-do-i-build-a-custom-aspnet-ajax-server-con
 title: '[어떻게 할까요?] 사용자 지정 ASP.NET AJAX 서버 컨트롤을 빌드할 수 있나요? | Microsoft 문서'
 author: rick-anderson
 description: Microsoft AJAX Library AJAX 확장을 사용 하는 ASP.NET AJAX 기능을 사용 하 여 사용자 지정 웹 서버 컨트롤을 만드는 방법에 알아봅니다. 이 비디오 안내 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/25/2007
 ms.assetid: 1165e0b4-2240-4dc2-aa94-ef6664c71a8c
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-build-a-custom-aspnet-ajax-server-control
 msc.type: video
-ms.openlocfilehash: 06a95297fa3f9d8a581267e0604cbf2880429a85
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: ae685bc2b8a236729f86ead591874421e92a642a
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37828503"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831896"
 ---
 <a name="how-do-i-build-a-custom-aspnet-ajax-server-control"></a>[어떻게 할까요?] 사용자 지정 ASP.NET AJAX 서버 컨트롤을 빌드할 수 있나요?
 ====================

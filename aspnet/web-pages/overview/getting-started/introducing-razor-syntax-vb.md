@@ -3,17 +3,17 @@ uid: web-pages/overview/getting-started/introducing-razor-syntax-vb
 title: Razor 구문 (Visual Basic)를 사용 하 여 ASP.NET 웹 프로그래밍 소개 | Microsoft Docs
 author: tfitzmac
 description: 이 부록 개요를 제공 ASP.NET 웹 페이지를 사용 하 여 프로그래밍의 Visual basic에서는 Razor 구문을 사용 합니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/07/2014
 ms.assetid: 5da59646-e973-41cd-88a9-c6b2c0594027
 msc.legacyurl: /web-pages/overview/getting-started/introducing-razor-syntax-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 72f995e62141df4e8f4cd082b4873d82067af8c1
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: cbec035533c37723afcd5bf4aa0c6e1c83dbae23
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37816550"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41834766"
 ---
 <a name="introduction-to-aspnet-web-programming-using-the-razor-syntax-visual-basic"></a>Razor 구문 (Visual Basic)를 사용 하 여 ASP.NET 웹 프로그래밍 소개
 ====================
@@ -273,30 +273,88 @@ Razor 구문 주석은 코드 블록 내에서 사용 하거나 작은따옴표�
 다음 표에서 변수에 대 한 몇 가지 일반적인 변환 및 테스트 메서드를 나열합니다.
 
 
-::: 행:::::: 열::: <strong>메서드</strong> ::: 열 끝:::::: 열::: <strong>설명</strong> ::: 열 끝:::::: 열::: <strong>예제</strong> ::: 열 끝:::::: 행 끝:::
+:::row:::
+    :::column:::
+        <strong>메서드</strong>
+    :::column-end:::
+    :::column:::
+        <strong>설명</strong>
+    :::column-end:::
+    :::column:::
+        <strong>예제</strong>
+    :::column-end:::
+:::row-end:::
 * * *
-::: 행:::::: 열::: `AsInt(), IsInt()` ::: 열 끝:::::: 열::: 정수를 나타내는 문자열을 변환 합니다 (같은 &quot;593&quot;)는 정수입니다.
-::: 종료 열:::::: 열::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample23.vb)]
-    ::: 종료 열:::::: 행 끝:::
+:::row:::
+    :::column:::
+        `AsInt(), IsInt()`
+    :::column-end:::
+    :::column:::
+        정수를 나타내는 문자열을 변환 합니다 (같은 &quot;593&quot;)는 정수입니다.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample23.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 행:::::: 열::: `AsBool(), IsBool()` ::: 열 끝:::::: 열:::와 같은 문자열 변환 &quot;true&quot; 또는 &quot;false&quot; 부울 형식입니다.
-::: 종료 열:::::: 열::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample24.vb)]
-    ::: 종료 열:::::: 행 끝:::
+:::row:::
+    :::column:::
+        `AsBool(), IsBool()`
+    :::column-end:::
+    :::column:::
+        와 같은 문자열 변환 &quot;true&quot; 또는 &quot;false&quot; 부울 형식입니다.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample24.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 행:::::: 열::: `AsFloat(), IsFloat()` ::: 열 끝:::::: 열:::와 같은 10 진수 값이 있는 문자열로 변환 &quot;1.3&quot; 또는 &quot;7.439&quot; 부동 소수점 수입니다.
-::: 종료 열:::::: 열::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample25.vb)]
-    ::: 종료 열:::::: 행 끝:::
+:::row:::
+    :::column:::
+        `AsFloat(), IsFloat()`
+    :::column-end:::
+    :::column:::
+        와 같은 10 진수 값이 있는 문자열로 변환 &quot;1.3&quot; 또는 &quot;7.439&quot; 부동 소수점 수입니다.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample25.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 행:::::: 열::: `AsDecimal(), IsDecimal()` ::: 종료 열:::::: 열::: 같은 10 진수 값이 있는 문자열로 변환 &quot;1.3&quot; 또는 &quot;7.439&quot; 소수입니다. (ASP.NET, 10 진수는 부동 소수점 숫자를 보다 정확 합니다.) ::: 종료 열:::::: 열::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample26.vb)]
-    ::: 종료 열:::::: 행 끝:::
+:::row:::
+    :::column:::
+        `AsDecimal(), IsDecimal()`
+    :::column-end:::
+    :::column:::
+        와 같은 10 진수 값이 있는 문자열로 변환 &quot;1.3&quot; 하거나 &quot;7.439&quot; 소수입니다. (ASP.NET, 10 진수는 부동 소수점 숫자를 보다 정확 합니다.) :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample26.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 행:::::: 열::: `AsDateTime(), IsDateTime()` ::: 열 끝:::::: 열::: asp.net 날짜 및 시간 값을 나타내는 문자열을 변환 `DateTime` 형식입니다.
-::: 종료 열:::::: 열::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample27.vb)]
-    ::: 종료 열:::::: 행 끝:::
+:::row:::
+    :::column:::
+        `AsDateTime(), IsDateTime()`
+    :::column-end:::
+    :::column:::
+        Asp.net은 날짜 및 시간 값을 나타내는 문자열을 변환 `DateTime` 형식입니다.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample27.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 행:::::: 열::: `ToString()` ::: 종료 열:::::: 열::: 다른 데이터 형식 문자열로 변환 합니다.
-::: 종료 열:::::: 열::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample28.vb)]
-    ::: 종료 열:::::: 행 끝:::
+:::row:::
+    :::column:::
+        `ToString()`
+    :::column-end:::
+    :::column:::
+        다른 데이터 형식 문자열로 변환합니다.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample28.vb)]
+    :::column-end:::
+:::row-end:::
 
 
 ## <a name="operators"></a>연산자
@@ -304,47 +362,137 @@ Razor 구문 주석은 코드 블록 내에서 사용 하거나 작은따옴표�
 연산자는 키워드 또는 식에서 수행할 수 있는 명령의 종류를 ASP.NET에 지시 하는 문자입니다. Visual Basic에서는 다양 한 연산자를 지원 하지만 ASP.NET 웹 페이지 개발을 시작 하려면 몇 가지를 인식 해야 합니다. 다음 표에서 가장 일반적인 연산자를 보여 줍니다.
 
 
-::: 행:::::: 열::: <strong>연산자</strong> ::: 열 끝:::::: 열::: <strong>설명</strong> ::: 열 끝:::::: 열::: <strong>예제</strong> ::: 열 끝:::::: 행 끝:::
+:::row:::
+    :::column:::
+        <strong>Operator</strong>
+    :::column-end:::
+    :::column:::
+        <strong>설명</strong>
+    :::column-end:::
+    :::column:::
+        <strong>예제</strong>
+    :::column-end:::
+:::row-end:::
 * * *
-::: 행:::::: 열::: `+ - * /` ::: 종료 열:::::: 열::: 숫자 식에 사용 되는 수학 연산자입니다.
-::: 종료 열:::::: 열::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample29.vb)]
-    ::: 종료 열:::::: 행 끝:::
+:::row:::
+    :::column:::
+        `+ - * /`
+    :::column-end:::
+    :::column:::
+        숫자 식에 사용 되는 수학 연산자.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample29.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 행:::::: 열::: `=` ::: 종료 열:::::: 열::: 할당 및 같음. 컨텍스트에 따라 왼쪽에 있는 개체 문의 오른쪽에 있는 값을 할당 하거나 하거나 같음에 대 한 값을 확인 합니다.
-::: 종료 열:::::: 열::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample30.vb)]
-    ::: 종료 열:::::: 행 끝:::
+:::row:::
+    :::column:::
+        `=`
+    :::column-end:::
+    :::column:::
+        할당 및 같음입니다. 컨텍스트에 따라 왼쪽에 있는 개체 문의 오른쪽에 있는 값을 할당 하거나 하거나 같음에 대 한 값을 확인 합니다.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample30.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 행:::::: 열::: `<>` ::: 종료 열:::::: 열::: 같지 않음. 반환 `True` 값 같지 않은 경우.
-::: 종료 열:::::: 열::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample31.vb)]
-    ::: 종료 열:::::: 행 끝:::
+:::row:::
+    :::column:::
+        `<>`
+    :::column-end:::
+    :::column:::
+        같지 않음 반환 `True` 값 같지 않은 경우.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample31.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 행:::::: 열::: `< > <= >=` ::: 종료 열:::::: 열::: 보다 작은지, 보다 큼, 작거나 보다 같음, 및 보다 크거나 같으면 합니다.
-::: 종료 열:::::: 열::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample32.vb)]
-    ::: 종료 열:::::: 행 끝:::
+:::row:::
+    :::column:::
+        `< > <= >=`
+    :::column-end:::
+    :::column:::
+        보다 작음, 보다 큼, 작거나 보다 같음, 및 보다 크거나 같음.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample32.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 행:::::: 열::: `&` ::: 열 끝:::::: 열::: 연결 문자열을 조인 하는 데 사용 됩니다.
-::: 종료 열:::::: 열::: [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample33.vbhtml)]
-    ::: 종료 열:::::: 행 끝:::
+:::row:::
+    :::column:::
+        `&`
+    :::column-end:::
+    :::column:::
+        연결 문자열을 조인 하는 데 사용 됩니다.
+    :::column-end:::
+    :::column:::
+        [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample33.vbhtml)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 행:::::: 열::: `+= -=` ::: 종료 열:::::: 열:::를 추가 및 변수에서 각각 1을 뺌 증가 및 감소 연산자입니다.
-::: 종료 열:::::: 열::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample34.vb)]
-    ::: 종료 열:::::: 행 끝:::
+:::row:::
+    :::column:::
+        `+= -=`
+    :::column-end:::
+    :::column:::
+        증가 및 감소 연산자의 추가 하 고 변수에서 각각 1을 뺍니다.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample34.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 행:::::: 열::: `.` ::: 종료 열:::::: 열::: 점입니다. 개체 및 해당 속성 및 메서드를 구분 하는 데 사용 합니다.
-::: 종료 열:::::: 열::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample35.vb)]
-    ::: 종료 열:::::: 행 끝:::
+:::row:::
+    :::column:::
+        `.`
+    :::column-end:::
+    :::column:::
+        점입니다. 개체 및 해당 속성 및 메서드를 구분 하는 데 사용 합니다.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample35.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 행:::::: 열::: `()` ::: 종료 열:::::: 열::: 괄호입니다. 그룹 식에 사용 하 여 배열 및 컬렉션의 멤버에 액세스 하는 방법에 매개 변수를 전달 합니다.
-::: 종료 열:::::: 열::: [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample36.vbhtml)]
-    ::: 종료 열:::::: 행 끝:::
+:::row:::
+    :::column:::
+        `()`
+    :::column-end:::
+    :::column:::
+        괄호입니다. 그룹 식에 사용 하 여 배열 및 컬렉션의 멤버에 액세스 하는 방법에 매개 변수를 전달 합니다.
+    :::column-end:::
+    :::column:::
+        [!code-vbhtml[Main](introducing-razor-syntax-vb/samples/sample36.vbhtml)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 행:::::: 열::: `Not` ::: 종료 열:::::: 열::: 없습니다. False로 또는 그 반대로 true 값을 반대로 바꿉니다. 일반적으로 테스트 하는 약식 방법으로 사용 `False` (즉,에 대 한 없습니다 `True`).
-::: 종료 열:::::: 열::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample37.vb)]
-    ::: 종료 열:::::: 행 끝:::
+:::row:::
+    :::column:::
+        `Not`
+    :::column-end:::
+    :::column:::
+        되지 않습니다. False로 또는 그 반대로 true 값을 반대로 바꿉니다. 일반적으로 테스트 하는 약식 방법으로 사용 `False` (즉,에 대 한 없습니다 `True`).
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample37.vb)]
+    :::column-end:::
+:::row-end:::
 * * *
-::: 행:::::: 열::: `AndAlso OrElse` ::: 열 끝:::::: 열::: 논리적이 고 또는 및 연결 하는 데 사용 되는 조건 그룹화 합니다.
-::: 종료 열:::::: 열::: [!code-vb[Main](introducing-razor-syntax-vb/samples/sample38.vb)]
-    ::: 종료 열:::::: 행 끝:::
+:::row:::
+    :::column:::
+        `AndAlso OrElse`
+    :::column-end:::
+    :::column:::
+        논리적 AND 또는 및 연결 하는 데 사용 되는 조건 그룹화 합니다.
+    :::column-end:::
+    :::column:::
+        [!code-vb[Main](introducing-razor-syntax-vb/samples/sample38.vb)]
+    :::column-end:::
+:::row-end:::
 
 ## <a name="working-with-file-and-folder-paths-in-code"></a>파일 및 코드의 폴더 경로 사용 하 여 작업
 

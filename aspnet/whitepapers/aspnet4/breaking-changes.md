@@ -3,17 +3,17 @@ uid: whitepapers/aspnet4/breaking-changes
 title: ASP.NET 4 주요 변경 내용 | Microsoft Docs
 author: rick-anderson
 description: 이 문서에서는 적용 된.NET Framework 버전 4 일 릴리스를 사용 하 여 만든 응용 프로그램에는 영향을 줄 수 있는 변경 내용을 설명 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/10/2010
 ms.assetid: d601c540-f86b-4feb-890c-20c806b3da6c
 msc.legacyurl: /whitepapers/aspnet4/breaking-changes
 msc.type: content
-ms.openlocfilehash: e6d7972c333e302bb8b6b2d23ea7123b8757b2f4
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 112483abdd920649fb530959a538b1d5ed6064d7
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37842522"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41829642"
 ---
 <a name="aspnet-4-breaking-changes"></a>ASP.NET 4 주요 변경 내용
 ====================
