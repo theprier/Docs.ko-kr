@@ -3,17 +3,17 @@ uid: web-forms/videos/how-do-i/build-your-first-asp-net-application-with-asp-net
 title: ASP.NET Web Forms 사용 하 여 첫 ASP.NET 응용 프로그램 만들기 | Microsoft Docs
 author: lmoroney
 description: Microsoft의 Laurence moroney가 ASP.NET Web Forms를 사용 하 여 첫 번째 ASP.NET 응용 프로그램을 빌드하는 방법을 보여 줍니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/09/2010
 ms.assetid: 3cb6c701-7b39-4009-8214-47130021c616
 msc.legacyurl: /web-forms/videos/how-do-i/build-your-first-asp-net-application-with-asp-net-web-forms
 msc.type: video
-ms.openlocfilehash: 2a113cab82d598b69e572496c522d1ed563ca3b1
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 8e53688765e4207a57487adb23396080c4646751
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37806959"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836579"
 ---
 <a name="build-your-first-aspnet-application-with-aspnet-web-forms"></a>ASP.NET Web Forms 사용 하 여 첫 ASP.NET 응용 프로그램 만들기
 ====================

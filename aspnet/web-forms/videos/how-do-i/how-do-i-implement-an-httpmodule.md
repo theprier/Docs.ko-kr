@@ -3,17 +3,17 @@ uid: web-forms/videos/how-do-i/how-do-i-implement-an-httpmodule
 title: '[어떻게 할까요?] HttpModule 구현? | Microsoft 문서'
 author: scottgolightly
 description: 이 비디오에서 Scott Golightly는 요청에 대 한 일부 데이터를 저장 하는 BeginRequest 및 EndRequest 이벤트를 사용 하는 간단한 HttpModule을 구현 하는 방법을 보여 줍니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/12/2007
 ms.assetid: 45daf6e2-c652-49c0-a9b4-2263f4ceada8
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-implement-an-httpmodule
 msc.type: video
-ms.openlocfilehash: da4d9e5167801eb0fa79e59abeb1322c25f859e7
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 7955fdc72c0b2ee4481062d11a2d1e5134cad8c0
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37838489"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836581"
 ---
 <a name="how-do-i-implement-an-httpmodule"></a>[어떻게 할까요?] HttpModule 구현?
 ====================

@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/custom-button-actions/adding-and-responding-
 title: 추가 (C#) GridView에 단추를 하 고 응답 | Microsoft Docs
 author: rick-anderson
 description: 이 자습서는 템플릿에 GridView 또는 DetailsView 컨트롤의 필드에 사용자 지정 단추를 추가 하는 방법을 살펴보겠습니다. 특히 빌드를 합니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 09/13/2006
 ms.assetid: 128fdb5f-4c5e-42b5-b485-f3aee90a8e38
 msc.legacyurl: /web-forms/overview/data-access/custom-button-actions/adding-and-responding-to-buttons-to-a-gridview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 92743d252e6d8895ac1bff104456ec5874202ec9
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 3a081b1633e7762560aea68500f5bd614e4fb5a6
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37804748"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836907"
 ---
 <a name="adding-and-responding-to-buttons-to-a-gridview-c"></a>추가 (C#) GridView에 단추를 하 고 응답
 ====================
@@ -78,7 +78,7 @@ ms.locfileid: "37804748"
 
 [![SuppliersDataSource 라는 새로운 ObjectDataSource는 만들기](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image10.png)](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image9.png)
 
-**그림 10**: 합니다 `SuppliersDataSource` 하 고 [ Dropdownlist를 포함 하는 (없음) 옵션 (](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image11.png)클릭 하 여 큰 이미지 보기)
+**그림 5**: 명명 된 새 ObjectDataSource 만들려면 `SuppliersDataSource` ([클릭 하 여 큰 이미지 보기](adding-and-responding-to-buttons-to-a-gridview-cs/_static/image11.png))
 
 
 쿼리는이 새 ObjectDataSource를 구성 합니다 `SuppliersBLL` 클래스의 `GetSuppliers()` 메서드 (그림 6 참조). 이후이 FormView 공급 업체 정보, 선택 [업데이트] 탭의 드롭다운 목록에서 옵션 (없음)를 업데이트 하기 위한 인터페이스를 제공 하지 않습니다.
