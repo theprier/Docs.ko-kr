@@ -3,17 +3,17 @@ uid: whitepapers/aspnet-and-web-tools-20122-release-notes
 title: ASP.NET 및 Web Tools 2012.2 릴리스 정보 | Microsoft Docs
 author: rick-anderson
 description: ASP.NET 및 웹 도구 2012.2 릴리스 정보입니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/14/2013
 ms.assetid: bdb18d02-9f61-4676-836d-6fdea94f9282
 msc.legacyurl: /whitepapers/aspnet-and-web-tools-20122-release-notes
 msc.type: content
-ms.openlocfilehash: 687eca7d1a7368338bb16c5de24fbe99e9ba500d
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 50e96251f8add00f70193977e73f9af194571c49
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37806409"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41828594"
 ---
 <a name="aspnet-and-web-tools-20122-release-notes"></a>ASP.NET 및 Web Tools 2012.2 릴리스 정보
 ====================

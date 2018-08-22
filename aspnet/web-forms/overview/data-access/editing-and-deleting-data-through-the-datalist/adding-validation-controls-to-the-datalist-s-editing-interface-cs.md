@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/editing-and-deleting-data-through-the-datali
 title: DataList에 유효성 검사 컨트롤 추가 편집 인터페이스 (C#) | Microsoft Docs
 author: rick-anderson
 description: 이 자습서를 간단 명료 편집 사용자 없는 정수를 제공 하기 위해 DataList의 EditItemTemplate에 유효성 검사 컨트롤을 추가할 얼마나 쉬운지 살펴보겠습니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/30/2006
 ms.assetid: 3ecc21c5-da0e-40ab-abb4-fac1e47398ad
 msc.legacyurl: /web-forms/overview/data-access/editing-and-deleting-data-through-the-datalist/adding-validation-controls-to-the-datalist-s-editing-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8a9fe298b7b9cc9fadc4dfd131a7a61d6029da04
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 2fe85d6513a229f11b3aad7c7cc6c7124c94d70f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37842707"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41828527"
 ---
 <a name="adding-validation-controls-to-the-datalists-editing-interface-c"></a>DataList의 편집 인터페이스 (C#)에 유효성 검사 컨트롤 추가
 ====================

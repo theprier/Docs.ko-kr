@@ -3,17 +3,17 @@ uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/customizin
 title: 여러 환경에 대 한 데이터베이스 배포를 사용자 지정 | Microsoft Docs
 author: jrjlee
 description: '이 항목에서는 배포 프로세스의 일부로 특정 대상 환경에 데이터베이스의 속성을 조정 하는 방법을 설명 합니다. 참고: 항목 번째 가정 하는 중...'
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: a172979a-1318-4318-a9c6-4f9560d26267
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/customizing-database-deployments-for-multiple-environments
 msc.type: authoredcontent
-ms.openlocfilehash: 2ecd73e4eb3cb00545b5ba090ac5f8428586941b
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 52fb2539ef388d129f88aa8aa87088e2d4a41ccf
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37804295"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41828590"
 ---
 <a name="customizing-database-deployments-for-multiple-environments"></a>여러 환경에 대 한 사용자 지정 데이터베이스 배포
 ====================

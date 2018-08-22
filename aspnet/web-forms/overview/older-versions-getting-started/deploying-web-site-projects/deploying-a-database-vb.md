@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projec
 title: 데이터베이스 (VB) 배포 | Microsoft Docs
 author: rick-anderson
 description: ASP.NET 웹 응용 프로그램 개발 환경에서 프로덕션 환경에 필요한 파일 및 리소스를 시작 하는 작업을 수반 합니다. 에 대 한 da...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/23/2009
 ms.assetid: 96ac3e69-04c7-4917-ad06-5f8968c3fbf1
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/deploying-a-database-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c49b963cb5cfc40d8a0b03eb3ca722e3b789eab2
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 9a0ec3ef1879839e3100f52ca2f2320a5aabdf7a
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37836277"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41828677"
 ---
 <a name="deploying-a-database-vb"></a>배포 데이터베이스 (VB)
 ====================
