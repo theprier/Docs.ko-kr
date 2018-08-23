@@ -3,27 +3,27 @@ uid: web-forms/videos/vs-2005/code-coverage-of-automated-tests
 title: 코드 검사의 자동화 된 테스트 | Microsoft Docs
 author: rick-anderson
 description: 이 비디오를 기준으로 코드 검사를 사용 하 여 ASP.NET 웹 응용 프로그램의 효율성은 테스트를 결정 하는 방법에 설명 합니다. 테스트 후에 com...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/23/2007
 ms.assetid: b1a7fbfc-523f-473e-a454-8e6b90099b1e
 msc.legacyurl: /web-forms/videos/vs-2005/code-coverage-of-automated-tests
 msc.type: video
-ms.openlocfilehash: 78ebddc2535384657d03ba6f79cf6dbb22457507
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 557cfa59aa64839aa9339a3c5ccc82ac3f3c12bf
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37822210"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41828741"
 ---
-<a name="code-coverage-of-automated-tests"></a><span data-ttu-id="fa4ed-104">자동화 된 테스트의 코드 검사</span><span class="sxs-lookup"><span data-stu-id="fa4ed-104">Code Coverage of Automated Tests</span></span>
+<a name="code-coverage-of-automated-tests"></a><span data-ttu-id="73a3f-104">자동화 된 테스트의 코드 검사</span><span class="sxs-lookup"><span data-stu-id="73a3f-104">Code Coverage of Automated Tests</span></span>
 ====================
-<span data-ttu-id="fa4ed-105">Eric Lee 여</span><span class="sxs-lookup"><span data-stu-id="fa4ed-105">by Eric Lee</span></span>
+<span data-ttu-id="73a3f-105">Eric Lee 여</span><span class="sxs-lookup"><span data-stu-id="73a3f-105">by Eric Lee</span></span>
 
-<span data-ttu-id="fa4ed-106">이 비디오를 기준으로 코드 검사를 사용 하 여 ASP.NET 웹 응용 프로그램의 효율성은 테스트를 결정 하는 방법에 설명 합니다.</span><span class="sxs-lookup"><span data-stu-id="fa4ed-106">This video demonstrates how to use code coverage as a metric for determining how effective our testing is of an ASP.NET Web application.</span></span> <span data-ttu-id="fa4ed-107">테스트를 완료 하면 Visual Studio Team System를 보고 실행 되 고 녹색 배경 사용 하 여 실행된 코드를 나타내며 빨간색 배경이 사용 하 여 실행 되지 않은 코드는 코드 비율을 쉽게 테스트에서 검사 하는 코드를 참조 하세요.</span><span class="sxs-lookup"><span data-stu-id="fa4ed-107">After a test has completed, Visual Studio Team System reports on the percentage of code that was executed and indicates executed code with a green background and unexecuted code with a red background, making it easy to see the code that was covered by the test.</span></span> <span data-ttu-id="fa4ed-108">또한 자동화 된 테스트를 확장 하려면 C# 또는 Visual Basic를 사용 하는 방법을 배웁니다.</span><span class="sxs-lookup"><span data-stu-id="fa4ed-108">You will also learn how you can use C# or Visual Basic to extend the automated test.</span></span>
+<span data-ttu-id="73a3f-106">이 비디오를 기준으로 코드 검사를 사용 하 여 ASP.NET 웹 응용 프로그램의 효율성은 테스트를 결정 하는 방법에 설명 합니다.</span><span class="sxs-lookup"><span data-stu-id="73a3f-106">This video demonstrates how to use code coverage as a metric for determining how effective our testing is of an ASP.NET Web application.</span></span> <span data-ttu-id="73a3f-107">테스트를 완료 하면 Visual Studio Team System를 보고 실행 되 고 녹색 배경 사용 하 여 실행된 코드를 나타내며 빨간색 배경이 사용 하 여 실행 되지 않은 코드는 코드 비율을 쉽게 테스트에서 검사 하는 코드를 참조 하세요.</span><span class="sxs-lookup"><span data-stu-id="73a3f-107">After a test has completed, Visual Studio Team System reports on the percentage of code that was executed and indicates executed code with a green background and unexecuted code with a red background, making it easy to see the code that was covered by the test.</span></span> <span data-ttu-id="73a3f-108">또한 자동화 된 테스트를 확장 하려면 C# 또는 Visual Basic를 사용 하는 방법을 배웁니다.</span><span class="sxs-lookup"><span data-stu-id="73a3f-108">You will also learn how you can use C# or Visual Basic to extend the automated test.</span></span>
 
-[<span data-ttu-id="fa4ed-109">&#9654;비디오 (6 분)</span><span class="sxs-lookup"><span data-stu-id="fa4ed-109">&#9654; Watch video (6 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/code-coverage-of-automated-tests)
+[<span data-ttu-id="73a3f-109">&#9654;비디오 (6 분)</span><span class="sxs-lookup"><span data-stu-id="73a3f-109">&#9654; Watch video (6 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/code-coverage-of-automated-tests)
 
 > [!div class="step-by-step"]
-> <span data-ttu-id="fa4ed-110">[이전](measuring-the-business-value-of-ajax.md)
-> [다음](custom-extraction-rules-and-coded-web-tests.md)</span><span class="sxs-lookup"><span data-stu-id="fa4ed-110">[Previous](measuring-the-business-value-of-ajax.md)
+> <span data-ttu-id="73a3f-110">[이전](measuring-the-business-value-of-ajax.md)
+> [다음](custom-extraction-rules-and-coded-web-tests.md)</span><span class="sxs-lookup"><span data-stu-id="73a3f-110">[Previous](measuring-the-business-value-of-ajax.md)
 [Next](custom-extraction-rules-and-coded-web-tests.md)</span></span>

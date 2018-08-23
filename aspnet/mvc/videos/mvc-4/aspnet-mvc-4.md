@@ -3,20 +3,20 @@ uid: mvc/videos/mvc-4/aspnet-mvc-4
 title: ASP.NET MVC 4 | Microsoft Docs
 author: shanselman
 description: Scott hanselman이 ASP.NET MVC 4의 새로운 기능을 보여 줍니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/15/2012
 ms.assetid: 8a6417d5-801d-4fd7-8a06-164cd5441d3d
 msc.legacyurl: /mvc/videos/mvc-4/aspnet-mvc-4
 msc.type: video
-ms.openlocfilehash: 41971ded7826a3dedb9570d7122d0acd15d9a284
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 826113d580bf7f0b62eff61420ed5a838fc6d1ae
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37838386"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836301"
 ---
-<a name="aspnet-mvc-4"></a><span data-ttu-id="ad3f1-103">ASP.NET MVC 4</span><span class="sxs-lookup"><span data-stu-id="ad3f1-103">ASP.NET MVC 4</span></span>
+<a name="aspnet-mvc-4"></a><span data-ttu-id="f47f1-103">ASP.NET MVC 4</span><span class="sxs-lookup"><span data-stu-id="f47f1-103">ASP.NET MVC 4</span></span>
 ====================
-<span data-ttu-id="ad3f1-104">[Scott Hanselman](https://github.com/shanselman)</span><span class="sxs-lookup"><span data-stu-id="ad3f1-104">by [Scott Hanselman](https://github.com/shanselman)</span></span>
+<span data-ttu-id="f47f1-104">[Scott Hanselman](https://github.com/shanselman)</span><span class="sxs-lookup"><span data-stu-id="f47f1-104">by [Scott Hanselman](https://github.com/shanselman)</span></span>
 
-[<span data-ttu-id="ad3f1-105">&#9654;비디오 (7 분)</span><span class="sxs-lookup"><span data-stu-id="ad3f1-105">&#9654; Watch video (7 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-4)
+[<span data-ttu-id="f47f1-105">&#9654;비디오 (7 분)</span><span class="sxs-lookup"><span data-stu-id="f47f1-105">&#9654; Watch video (7 minutes)</span></span>](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-mvc-4)
