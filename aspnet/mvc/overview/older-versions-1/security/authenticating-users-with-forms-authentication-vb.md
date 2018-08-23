@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/security/authenticating-users-with-forms-auth
 title: 인증 (VB)를 Forms 인증으로 사용자 | Microsoft Docs
 author: microsoft
 description: '[Authorize] 특성을 사용 하는 방법을 알아봅니다 암호로 MVC 응용 프로그램의 특정 페이지를 보호 합니다. 관리 웹 사이트도 사용 하는 방법을 배웁니다.'
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/27/2009
 ms.assetid: 4341f5b1-6fe5-44c5-8b8a-18fa84f80177
 msc.legacyurl: /mvc/overview/older-versions-1/security/authenticating-users-with-forms-authentication-vb
 msc.type: authoredcontent
-ms.openlocfilehash: a9d55df3132a5b5ceeb49ed6d0b83b847f2f1e3b
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: af91ae24cae505125dc237adfaa11b0ea4d60922
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37828856"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837376"
 ---
 <a name="authenticating-users-with-forms-authentication-vb"></a>폼 인증 (VB)를 사용 하 여 사용자 인증
 ====================

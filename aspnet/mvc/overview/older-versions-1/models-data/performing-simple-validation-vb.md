@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/models-data/performing-simple-validation-vb
 title: 간단한 유효성 검사 (VB)를 수행 합니다. | Microsoft Docs
 author: StephenWalther
 description: ASP.NET MVC 응용 프로그램에서 유효성 검사를 수행 하는 방법에 알아봅니다. 이 자습서에서는 Stephen walther가 모델 상태 및 유효성 검사 HTML 도우미를 소개 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/02/2009
 ms.assetid: df6cf4b7-0bb3-4c4e-b17a-bd78a759a6bc
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/performing-simple-validation-vb
 msc.type: authoredcontent
-ms.openlocfilehash: a8320e87cb4ef418fe5c8308b9dacceb5d6bbac8
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 1d0bd6917bab61b17d1cafcf0cd9eb1983275dc8
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37830787"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41838608"
 ---
 <a name="performing-simple-validation-vb"></a>간단한 유효성 검사 (VB)를 수행합니다.
 ====================

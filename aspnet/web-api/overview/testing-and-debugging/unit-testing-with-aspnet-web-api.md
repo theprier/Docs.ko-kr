@@ -3,23 +3,23 @@ uid: web-api/overview/testing-and-debugging/unit-testing-with-aspnet-web-api
 title: 단위 테스트 ASP.NET Web API 2 | Microsoft Docs
 author: tfitzmac
 description: 이 지침과 응용 프로그램에는 Web API 2 응용 프로그램에 대 한 간단한 단위 테스트를 만드는 방법을 보여 줍니다. 이 자습서에서는 단위 테스트 프로젝트를 포함 하는 방법을 보여 줍니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/05/2014
 ms.assetid: bf20f78d-ff91-48be-abd1-88e23dcc70ba
 msc.legacyurl: /web-api/overview/testing-and-debugging/unit-testing-with-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 701ced855ff2848182fdbf8d4b9e2bcf0c33341b
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0a3f9ddde725995359de85c5e0783106f5de02bd
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37806217"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41828879"
 ---
 <a name="unit-testing-aspnet-web-api-2"></a>단위 테스트 ASP.NET Web API 2
 ====================
 [Tom FitzMacken](https://github.com/tfitzmac)
 
-[완료 된 프로젝트 다운로드](http://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-e2867d4d)
+[완료 된 프로젝트 다운로드](https://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-1374bc11)
 
 > 이 지침과 응용 프로그램에는 Web API 2 응용 프로그램에 대 한 간단한 단위 테스트를 만드는 방법을 보여 줍니다. 이 자습서에서는 솔루션에 단위 테스트 프로젝트를 포함 하 고 컨트롤러 메서드에서 반환된 된 값을 확인 하는 테스트 메서드를 작성 하는 방법을 보여 줍니다.
 > 

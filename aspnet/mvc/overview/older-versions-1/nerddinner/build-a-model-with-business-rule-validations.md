@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/nerddinner/build-a-model-with-business-rule-v
 title: 비즈니스 규칙 유효성 검사를 사용 하 여 모델 빌드 | Microsoft Docs
 author: microsoft
 description: 3 단계에는 두 쿼리를 사용 하 여 고 NerdDinner 응용 프로그램 데이터베이스를 업데이트할 수 있습니다는 모델을 만드는 방법을 보여 줍니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/27/2010
 ms.assetid: 0bc191b2-4311-479a-a83a-7f1b1c32e6fe
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/build-a-model-with-business-rule-validations
 msc.type: authoredcontent
-ms.openlocfilehash: 4bed4dd794c7c34551cd3c7543e08ed12d83505a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b735c414c629b9ff6617dbf80782d57543306c00
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37836777"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41838322"
 ---
 <a name="build-a-model-with-business-rule-validations"></a>비즈니스 규칙 유효성 검사를 사용 하 여 모델 빌드
 ====================

@@ -3,17 +3,17 @@ uid: mvc/videos/mvc-2/how-do-i/an-introduction-to-url-routing
 title: URL 라우팅 소개 | Microsoft Docs
 author: StephenWalther
 description: 이 자습서에서는 Stephen walther가 브라우저 요청 URL 라우팅을 통해 컨트롤러 작업에 매핑되는 방법을 보여 줍니다. 또한는 cust를 만드는 방법에 알아봅니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/20/2008
 ms.assetid: ad0f4d26-6366-4464-968f-a24a380e6dc6
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/an-introduction-to-url-routing
 msc.type: video
-ms.openlocfilehash: f239bc6e781cf45090e16a197ff5adf9849f6f92
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 632208e44a8494b56fab277e6be253fc1b59587f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37839056"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41838924"
 ---
 <a name="an-introduction-to-url-routing"></a>URL 라우팅 소개
 ====================

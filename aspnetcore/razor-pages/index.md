@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 05/12/2018
 uid: razor-pages/index
-ms.openlocfilehash: 49bed6cc150a74ff8b72848f276c55c2490b6fa5
-ms.sourcegitcommit: a09820f91e71a7d98b7347bf93210abb9e995e22
+ms.openlocfilehash: f5549a24c5b5fe2e6b33bd55960f87a8bf86bd19
+ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37889144"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "41870882"
 ---
 # <a name="introduction-to-razor-pages-in-aspnet-core"></a>ASP.NET Core의 Razor 페이지 소개
 
@@ -261,7 +261,7 @@ public void OnHead()
 }
 ```
 
-HEAD 처리기(`OnHead`)가 정의되지 않으면 Razor 페이지는 ASP.NET Core 2.1 이상에서 GET 페이지 처리기(`OnGet`) 호출로 대체됩니다. ASP.NET Core 2.1~2.x에 대한 `Startup.Configure`의 [SetCompatibilityVersion 메서드](xref:fundamentals/startup#setcompatibilityversion-for-aspnet-core-mvc)로 이 동작을 옵트인(opt in)합니다.
+HEAD 처리기(`OnHead`)가 정의되지 않으면 Razor 페이지는 ASP.NET Core 2.1 이상에서 GET 페이지 처리기(`OnGet`) 호출로 대체됩니다. ASP.NET Core 2.1~2.x에 대한 `Startup.Configure`의 [SetCompatibilityVersion 메서드](xref:mvc/compatibility-version)로 이 동작을 옵트인(opt in)합니다.
 
 ```csharp
 services.AddMvc()
@@ -272,7 +272,6 @@ services.AddMvc()
 
 `SetCompatibilityVersion`을 사용하여 모든 2.1 동작을 옵트인하는 대신 특정 동작을 명시적으로 옵트인할 수 있습니다. 다음 코드는 HEAD 요청을 GET 처리기에 매핑을 옵트인합니다.
 
-
 ```csharp
 services.AddMvc()
     .AddRazorPagesOptions(options =>
@@ -280,6 +279,7 @@ services.AddMvc()
         options.AllowMappingHeadRequestsToGetHandler = true;
     });
 ```
+
 ::: moniker-end
 
 <a name="xsrf"></a>

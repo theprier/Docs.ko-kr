@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/13/2018
 uid: signalr/hubcontext
-ms.openlocfilehash: 6b955c2064d7d6a045594e56326e2f7df282675f
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: a02588dc98283a375e9deb7c8561c59f6d886eb0
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095309"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836150"
 ---
 # <a name="send-messages-from-outside-a-hub"></a>허브를 외부에서 메시지 보내기
 
@@ -27,7 +27,7 @@ SignalR 허브는 SignalR 서버에 연결 하는 클라이언트에 메시지�
 ASP.NET Core SignalR의 인스턴스에 액세스할 수 있습니다 `IHubContext` 종속성 주입을 통해. 인스턴스를 삽입할 수 있습니다 `IHubContext` 컨트롤러, 미들웨어 또는 다른 DI 서비스입니다. 클라이언트에 메시지를 보내는 인스턴스를 사용 합니다.
 
 > [!NOTE]
-> 이와 달리 GlobalHost를 액세스를 제공 하는 ASP.NET SignalR에서는 `IHubContext`합니다. ASP.NET Core는 전역이 단일 항목에 대 한 필요성을 제거 하는 종속성 주입 프레임 워크입니다.
+> ASP.NET에서이 반해 GlobalHost에 대 한 액세스를 제공 하는 데는 SignalR 4.x는 `IHubContext`합니다. ASP.NET Core는 전역이 단일 항목에 대 한 필요성을 제거 하는 종속성 주입 프레임 워크입니다.
 
 ### <a name="inject-an-instance-of-ihubcontext-in-a-controller"></a>인스턴스를 주입 `IHubContext` 컨트롤러에서
 

@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 09/22/2017
 uid: client-side/using-browserlink
-ms.openlocfilehash: 5ab15c841c472e6c9d47bad70fcf5e0c6dc3010f
-ms.sourcegitcommit: ea7ec8d47f94cfb8e008d771f647f86bbb4baa44
+ms.openlocfilehash: 452ba5149563c186750466f471c7b950f0017614
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37894181"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41838614"
 ---
 # <a name="browser-link-in-aspnet-core"></a>ASP.NET Core에서 브라우저 링크
 
@@ -139,7 +139,7 @@ CSS 자동 동기화를 사용 하는 경우 연결 된 브라우저는 자동�
 
 ## <a name="how-it-works"></a>작동 방법
 
-브라우저 링크 SignalR을 사용 하 여 Visual Studio와 브라우저 간에 통신 채널을 만듭니다. 브라우저 링크를 사용 하는 경우 Visual Studio는 여러 클라이언트 (브라우저)에 연결할 수 있는 SignalR 서버로 작동 합니다. 브라우저 링크는 또한 ASP.NET 요청 파이프라인에 미들웨어 구성 요소를 등록합니다. 이 구성 요소를 특수 삽입 `<script>` 서버에서 모든 페이지 요청에 대 한 참조입니다. 선택 하 여 스크립트 파일에 대 한 참조를 확인할 수 있습니다 **소스 보기** 브라우저 및 스크롤의 끝에는 `<body>` 콘텐츠 태그:
+브라우저 링크 SignalR을 사용 하 여 Visual Studio와 브라우저 간에 통신 채널을 만듭니다. 브라우저 링크를 사용 하는 경우 Visual Studio는 여러 클라이언트 (브라우저)에 연결할 수 있는 SignalR 서버로 작동 합니다. 브라우저 링크는 또한 ASP.NET Core 요청 파이프라인에 미들웨어 구성 요소를 등록합니다. 이 구성 요소를 특수 삽입 `<script>` 서버에서 모든 페이지 요청에 대 한 참조입니다. 선택 하 여 스크립트 파일에 대 한 참조를 확인할 수 있습니다 **소스 보기** 브라우저 및 스크롤의 끝에는 `<body>` 콘텐츠 태그:
 
 ```html
     <!-- Visual Studio Browser Link -->

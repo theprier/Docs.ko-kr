@@ -1,18 +1,18 @@
 ---
-title: ASP.NET Core의 데이터 보호 Api 시작
+title: ASP.NET core에서 데이터 보호 Api 시작
 author: rick-anderson
-description: 보호 하 고, 응용 프로그램의 데이터를 보호 해제에 대 한 ASP.NET Core 데이터 보호 Api를 사용 하는 방법에 알아봅니다.
+description: 보호 하 고 앱에서 데이터를 보호 해제에 대 한 ASP.NET Core 데이터 보호 Api를 사용 하는 방법에 알아봅니다.
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/data-protection/using-data-protection
-ms.openlocfilehash: ab2551d87d1a2cd22e9f421cabe0288311cb2ec3
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 25bf099a3d9edd7e6e0872725cbc3707750314e6
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36275751"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41838615"
 ---
-# <a name="get-started-with-the-data-protection-apis-in-aspnet-core"></a>ASP.NET Core의 데이터 보호 Api 시작
+# <a name="get-started-with-the-data-protection-apis-in-aspnet-core"></a>ASP.NET core에서 데이터 보호 Api 시작
 
 <a name="security-data-protection-getting-started"></a>
 
@@ -24,7 +24,7 @@ ms.locfileid: "36275751"
 
 3. 평문으로 되돌릴 데이터를 대상으로 `Unprotect` 메서드를 호출합니다.
 
-ASP.NET이나 SignalR 같은 대부분의 프레임워크 및 앱 모델은 이미 내부적으로 데이터 보호 시스템을 구성해서 서비스 컨테이너에 추가해주기 때문에 종속성 주입을 통해서 접근할 수 있습니다. 다음 예제는 종속성 주입을 위한 서비스 컨테이너의 구성 방법과 데이터 보호 스택을 등록하는 방법, DI를 통해서 데이터 보호 공급자를 가져오는 방법, 보호자를 생성하는 방법, 그리고 데이터를 보호했다가 다시 보호 해제하는 방법을 보여줍니다
+대부분의 프레임 워크 및 ASP.NET Core SignalR 등 앱 모델을 이미 데이터 보호 시스템을 구성 하 고 종속성 주입을 통해 액세스 하는 서비스 컨테이너에 추가 합니다. 다음 샘플 종속성 주입을 위한 서비스 컨테이너를 구성 및 데이터 보호 스택이 등록, DI 통해 데이터 보호 공급자를 받는, 보호기를 만들고 데이터를 보호 한 다음 보호 해제 하는 방법을 보여 줍니다.
 
 [!code-csharp[](../../security/data-protection/using-data-protection/samples/protectunprotect.cs?highlight=26,34,35,36,37,38,39,40)]
 

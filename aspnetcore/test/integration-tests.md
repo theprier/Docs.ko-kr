@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/30/2018
 uid: test/integration-tests
-ms.openlocfilehash: 8d304397fb7f218b395374c2b8c696fef9d9f8ad
-ms.sourcegitcommit: 571d76fbbff05e84406b6d909c8fe9cbea2c8ff1
+ms.openlocfilehash: 758162eed6d6522986e1c7b93664c55d56216452
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39410184"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836435"
 ---
 # <a name="integration-tests-in-aspnet-core"></a>ASP.NET Core에서 통합 테스트
 
@@ -29,6 +29,9 @@ ms.locfileid: "39410184"
 * [Razor 페이지 소개](xref:razor-pages/index)
 * [Razor 페이지 시작](xref:tutorials/razor-pages/razor-pages-start)
 * [Razor 페이지 단위 테스트](xref:test/razor-pages-tests)
+
+> [!NOTE]
+> Spa를 테스트 하는 것에 대 한 것이 좋습니다는 도구와 같은 [Selenium](https://www.seleniumhq.org/)는 브라우저를 자동화할 수 있습니다.
 
 ## <a name="introduction-to-integration-tests"></a>통합 테스트 소개
 
@@ -342,7 +345,7 @@ SUT는 다음 특성을 사용 하 여 Razor 페이지 메시지 시스템:
 
 &#8224;EF 항목인 [inmemory 테스트](/ef/core/miscellaneous/testing/in-memory), MSTest 사용한 테스트에 대 한 메모리 내 데이터베이스를 사용 하는 방법에 설명 합니다. 이 항목에서는 사용 된 [xUnit](https://xunit.github.io/) 테스트 프레임 워크입니다. 테스트 개념 다른 테스트 프레임 워크에서 구현 테스트와 유사 하지만 동일 하지입니다.
 
-앱 사용 하지 않지만 합니다 [리포지토리 패턴](xref:fundamentals/repository-pattern) 하는 효과적인 예가 [작업 단위 (UoW) 패턴](https://martinfowler.com/eaaCatalog/unitOfWork.html), Razor 페이지는 이러한 패턴을 개발을 지원 합니다. 자세한 내용은 [인프라 지 속성 계층 디자인](/dotnet/standard/microservices-architecture/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design)를 [리포지토리 및 작업 패턴 단위를 ASP.NET MVC 응용 프로그램에서 구현](/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application), 및 [테스트 컨트롤러 논리](/aspnet/core/mvc/controllers/testing) (샘플 리포지토리 패턴을 구현 하는 데 사용).
+앱 사용 하지 않지만 합니다 [리포지토리 패턴](xref:fundamentals/repository-pattern) 하는 효과적인 예가 [작업 단위 (UoW) 패턴](https://martinfowler.com/eaaCatalog/unitOfWork.html), Razor 페이지는 이러한 패턴을 개발을 지원 합니다. 자세한 내용은 [인프라 지 속성 계층 디자인](/dotnet/standard/microservices-architecture/microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design)를 <xref:fundamentals/repository-pattern>, 및 [컨트롤러 논리 테스트](/aspnet/core/mvc/controllers/testing) (샘플 리포지토리 패턴을 구현 하는 데 사용).
 
 ### <a name="test-app-organization"></a>테스트 앱 구성
 

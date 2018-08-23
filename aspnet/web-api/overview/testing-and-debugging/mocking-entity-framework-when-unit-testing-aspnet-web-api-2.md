@@ -3,23 +3,23 @@ uid: web-api/overview/testing-and-debugging/mocking-entity-framework-when-unit-t
 title: Entity Framework 머킹 때 단위 테스트 ASP.NET Web API 2 | Microsoft Docs
 author: tfitzmac
 description: 이 지침과 응용 프로그램에는 Entity Framework를 사용 하는 Web API 2 응용 프로그램에 대 한 단위 테스트를 만드는 방법을 보여 줍니다. 수정 하는 방법을 보여 줍니다는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 12/13/2013
 ms.assetid: cd844025-ccad-41ce-8694-595f1022a49f
 msc.legacyurl: /web-api/overview/testing-and-debugging/mocking-entity-framework-when-unit-testing-aspnet-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: dc50965a2757defb254d05f0b8a5fd46a90dc75f
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0bc5ab59583a2be3f889ba05d26c6cda4589057d
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37804402"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837381"
 ---
 <a name="mocking-entity-framework-when-unit-testing-aspnet-web-api-2"></a>Entity Framework 머킹 때 단위 테스트 ASP.NET Web API 2
 ====================
 [Tom FitzMacken](https://github.com/tfitzmac)
 
-[완료 된 프로젝트 다운로드](http://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-e2867d4d)
+[완료 된 프로젝트 다운로드](https://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-1374bc11)
 
 > 이 지침과 응용 프로그램에는 Entity Framework를 사용 하는 Web API 2 응용 프로그램에 대 한 단위 테스트를 만드는 방법을 보여 줍니다. 테스트에 대 한 컨텍스트 개체를 전달 하도록 설정 하는 스 캐 폴드 된 컨트롤러를 수정 하는 방법 및 Entity Framework와 함께 작동 하는 테스트 개체를 만드는 방법을 보여 줍니다.
 > 

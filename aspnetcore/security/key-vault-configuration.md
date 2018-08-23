@@ -5,12 +5,12 @@ description: Azure 키 자격 증명 모음 구성 공급자를 사용 하 여 �
 ms.author: riande
 ms.date: 08/01/2018
 uid: security/key-vault-configuration
-ms.openlocfilehash: 6474b9f5cb9e441854565a7891c4aac7f781c810
-ms.sourcegitcommit: 571d76fbbff05e84406b6d909c8fe9cbea2c8ff1
+ms.openlocfilehash: 829c6c7e2750879b51bf3ce8225c6e472900f2ad
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39410132"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41828878"
 ---
 # <a name="azure-key-vault-configuration-provider-in-aspnet-core"></a>ASP.NET Core에서 azure Key Vault 구성 공급자
 
@@ -155,7 +155,7 @@ Configuration.Reload();
 
 ## <a name="troubleshooting"></a>문제 해결
 
-오류 메시지에 기록 됩니다 앱 공급자를 사용 하 여 구성을 로드 하지 못하면 합니다 [ASP.NET 로깅 인프라](xref:fundamentals/logging/index)합니다. 다음 조건 하면 구성을 로드에서 하지 것입니다.
+오류 메시지에 기록 됩니다 앱 공급자를 사용 하 여 구성을 로드 하지 못하면 합니다 [ASP.NET Core 로깅 인프라](xref:fundamentals/logging/index)합니다. 다음 조건 하면 구성을 로드에서 하지 것입니다.
 
 * 앱은 Azure Active Directory에 올바르게 구성 되지 않았습니다.
 * Key vault는 Azure Key Vault에 존재 하지 않습니다.
