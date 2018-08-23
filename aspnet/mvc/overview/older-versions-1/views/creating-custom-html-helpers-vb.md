@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/views/creating-custom-html-helpers-vb
 title: 사용자 지정 HTML 도우미 (VB) 만들기 | Microsoft Docs
 author: microsoft
 description: MVC 뷰 내에서 사용할 수 있는 사용자 지정 HTML 도우미를 만드는 방법을 보여 주기 위해이 자습서의 목표가입니다. HTML 도우미를 활용 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/07/2008
 ms.assetid: f96f4800-19ef-44c0-b457-55e777eb5de8
 msc.legacyurl: /mvc/overview/older-versions-1/views/creating-custom-html-helpers-vb
 msc.type: authoredcontent
-ms.openlocfilehash: ed3f86d3f316d3e1630c6008c20c72c31d7864da
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: e62e47bceddc516af7aa18fc66ed4ca4d704d277
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37821528"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41838202"
 ---
 <a name="creating-custom-html-helpers-vb"></a>사용자 지정 HTML 도우미 만들기 (VB)
 ====================

@@ -3,17 +3,17 @@ uid: web-forms/overview/deployment/advanced-enterprise-web-deployment/excluding-
 title: 배포에서 파일 및 폴더 제외 | Microsoft Docs
 author: jrjlee
 description: 이 설명 하는 방법에서 제외할 수 있습니다 파일 및 폴더 웹 배포 패키지를 빌드하고 웹 응용 프로그램 프로젝트를 패키지 합니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: f4cc2d40-6a78-429b-b06f-07d000d4caad
 msc.legacyurl: /web-forms/overview/deployment/advanced-enterprise-web-deployment/excluding-files-and-folders-from-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 33eecfea86842a93eac705e7823f1eba9519670e
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: fd7357a94ab09effcec86f3725a37cfb2ef4746a
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37816680"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41838595"
 ---
 <a name="excluding-files-and-folders-from-deployment"></a>배포에서 파일 및 폴더 제외
 ====================

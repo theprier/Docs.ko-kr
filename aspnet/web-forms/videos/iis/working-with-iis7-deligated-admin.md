@@ -3,17 +3,17 @@ uid: web-forms/videos/iis/working-with-iis7-deligated-admin
 title: IIS7 사용 하 여 작업 관리를 위임 | Microsoft Docs
 author: JoeStagner
 description: 이 비디오에서는 IIS7 관리자 용으로 작성 된 흥미로운 새 원격 관리 기능을 소개 합니다. 시작으로 서버와 클라이언트 구성 설명...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/09/2009
 ms.assetid: 7ece1ff3-febd-43c0-9c4f-b5c15c3309f7
 msc.legacyurl: /web-forms/videos/iis/working-with-iis7-deligated-admin
 msc.type: video
-ms.openlocfilehash: d9d22b4f6b4b5f2c24d1a2410163184618697ad6
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 58ba56d42259474fa04f061106249c94daf50588
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37822689"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41838837"
 ---
 <a name="working-with-iis7-delegated-admin"></a>IIS7 사용 하 여 작업 관리 위임
 ====================

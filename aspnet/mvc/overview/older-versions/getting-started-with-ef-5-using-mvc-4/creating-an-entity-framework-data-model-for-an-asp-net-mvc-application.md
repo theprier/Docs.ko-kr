@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-
 title: (1 / 10) ASP.NET MVC 응용 프로그램에 대 한 Entity Framework 데이터 모델 만들기 | Microsoft Docs
 author: tdykstra
 description: 이 자습서 시리즈의 최신 버전이 Visual Studio 2013, Entity Framework 6 및 MVC 5에 대 한 사용 가능 합니다. Contoso University 샘플 웹 응용 프로그램 de...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/30/2013
 ms.assetid: 4ba029b6-ee7c-4e45-a0e7-b703c37e5d9a
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: ae9a4f0f13b01d8e093030bb1def2f21580a9e48
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 037f67d679762a037eaef9f0a4060156b94d97b1
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37815161"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41829193"
 ---
 <a name="creating-an-entity-framework-data-model-for-an-aspnet-mvc-application-1-of-10"></a>(1 / 10) ASP.NET MVC 응용 프로그램에 대 한 Entity Framework 데이터 모델 만들기
 ====================
@@ -208,7 +208,7 @@ Visual Studio 2012 및 이후 버전에서는 LocalDB Visual Studio를 사용 �
 
 를 처음 시작 하면 응용 프로그램을 개발할 때 데이터 모델 변경 자주 그리고 될 때마다 모델 변경 내용을 가져와서 데이터베이스와 동기화 합니다. Entity Framework를 자동으로 삭제 하 고 데이터 모델을 변경할 때마다 데이터베이스를 다시 만들지를 구성할 수 있습니다. 테스트 데이터를 쉽게 다시 만들 하지만 일반적으로 데이터베이스를 삭제 하지 않고 데이터베이스 스키마를 업데이트 하려면 프로덕션에 배포한 후에 개발 초기에 문제가 되지 않습니다. 삭제 하 고 다시 작성 하지 않고 데이터베이스를 업데이트 하려면 Code First 마이그레이션 기능 사용 하도록 설정 합니다. 새 프로젝트의 개발 주기의 초기 단계에서 사용 하려는 [DropCreateDatabaseIfModelChanges](https://msdn.microsoft.com/library/gg679604(v=vs.103).aspx) 모델 변경 될 때마다 삭제, 다시 만들고 다시 데이터베이스를 시드할 하 합니다. 응용 프로그램을 배포할 준비가 얻게 하나, 마이그레이션 방법 변환할 수 있습니다. 이 자습서에 대 한 마이그레이션만 사용할 수 있습니다. 자세한 내용은 [Code First 마이그레이션을](https://msdn.microsoft.com/data/jj591621) 하 고 [마이그레이션을 스크린 캐스트 시리즈가](https://blogs.msdn.com/b/adonet/archive/2014/03/12/migrations-screencast-series.aspx)합니다.
 
-### <a name="enable-code-first-migrations"></a>인스턴스 중 하나를 마우스 오른쪽 단추로 클릭  을 클릭 해결를 클릭 하 고 System.Collections.Generic를 사용 하 여입니다.
+### <a name="enable-code-first-migrations"></a>Code First 마이그레이션 사용
 
 1. **도구** 메뉴에서 클릭 **라이브러리 패키지 관리자** 차례로 **패키지 관리자 콘솔**합니다.
 
@@ -217,11 +217,11 @@ Visual Studio 2012 및 이후 버전에서는 LocalDB Visual Studio를 사용 �
 
     [!code-powershell[Main](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/samples/sample9.ps1)]
 
-    ![코드를 추가 합니다  메서드는 데이터베이스에 고정된 데이터를 삽입할 수 있는 여러 가지 방법 중 하나입니다.](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image11.png)
+    ![마이그레이션을 사용 하도록 설정 명령](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image11.png)
 
     이 명령은 만듭니다는 *마이그레이션을* ContosoUniversity 프로젝트에서 폴더는 폴더에 저장을 *Configuration.cs* 파일을 편집 하 여 마이그레이션을 구성할 수 있습니다.
 
-    ![예제에 표시 합니다 데이터베이스 업데이트 배포 자습서입니다.](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image12.png)
+    ![마이그레이션 폴더](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image12.png)
 
     합니다 `Configuration` 클래스에 포함 되어는 `Seed` 데이터베이스를 만들 때와 데이터 모델 변경 후 업데이트 될 때마다 호출 되는 메서드입니다.
 

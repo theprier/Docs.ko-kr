@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/controllers-and-routing/creating-a-controller
 title: 컨트롤러 (C#) 만들기 | Microsoft Docs
 author: StephenWalther
 description: 이 자습서에서는 Stephen walther가 ASP.NET MVC 응용 프로그램에 컨트롤러를 추가할 수는 방법을 보여 줍니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/02/2009
 ms.assetid: 719d50d4-2305-454c-98b4-bae64937c48f
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/creating-a-controller-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 3b3b663f76b6271a213e5980756ba63372ef6fe9
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 6fe880775a5d477aefcf0fe6cedb3e719760ed90
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37804271"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41835550"
 ---
 <a name="creating-a-controller-c"></a>컨트롤러 (C#) 만들기
 ====================

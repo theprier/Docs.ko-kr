@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions/hands-on-labs/whats-new-in-aspnet-mvc-4
 title: ASP.NET MVC 4의에서 새로운 기능 | Microsoft Docs
 author: rick-anderson
 description: ASP.NET MVC 4는 체계적인 디자인 패턴 및 ASP.NET의 기능을 사용 하 여 확장성이 뛰어난 표준 기반 웹 응용 프로그램을 빌드하기 위한 프레임 워크 및...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/18/2013
 ms.assetid: 48f7feb3-872f-485d-b96f-e30011ff8c4a
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/whats-new-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 718a31de3d2d60788ba4affb0463a4ae871ef89a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b1d80928d765bc71ea1579272662b6697371c47b
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37805352"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837231"
 ---
 # <a name="whats-new-in-aspnet-mvc-4"></a>ASP.NET MVC 4의에서 새로운 기능
 

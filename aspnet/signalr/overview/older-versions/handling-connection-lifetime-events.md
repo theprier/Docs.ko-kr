@@ -3,17 +3,17 @@ uid: signalr/overview/older-versions/handling-connection-lifetime-events
 title: 이해 및 SignalR에 대 한 연결 수명 이벤트를 처리 1.x | Microsoft Docs
 author: pfletcher
 description: 이 문서에서는 Hubs API에서 노출 하는 이벤트를 사용 하는 방법을 설명 합니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/05/2013
 ms.assetid: e608e263-264d-448b-b0eb-6eeb77713b22
 msc.legacyurl: /signalr/overview/older-versions/handling-connection-lifetime-events
 msc.type: authoredcontent
-ms.openlocfilehash: 807cd64f39c91e4e651872e2ef13d1e463810f70
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 5a0e912540bf24abd8a7e91c73c87ed9213be487
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37811155"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41835555"
 ---
 <a name="understanding-and-handling-connection-lifetime-events-in-signalr-1x"></a>이해 및 SignalR에 대 한 연결 수명 이벤트를 처리 1.x
 ====================

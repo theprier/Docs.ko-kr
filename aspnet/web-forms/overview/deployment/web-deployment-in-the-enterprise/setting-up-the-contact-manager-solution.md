@@ -3,17 +3,17 @@ uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/setting-up-t
 title: Contact Manager 솔루션 설정 | Microsoft Docs
 author: jrjlee
 description: 이 항목에서는 다운로드 개발자 워크스테이션에서 로컬로 실행 하려면 Contact Manager 솔루션을 구성 하는 방법을 설명 합니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: 200b973c-776b-4a9b-9e82-39fda6120a52
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/setting-up-the-contact-manager-solution
 msc.type: authoredcontent
-ms.openlocfilehash: 479dbb8d2edbe9fb953ea9e1312ffb8fdbd3e2fe
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: d834e6fbd2b46dca8bd7eeadc1eb68b33e62bb38
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37802133"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837297"
 ---
 <a name="setting-up-the-contact-manager-solution"></a>Contact Manager 솔루션 설정
 ====================

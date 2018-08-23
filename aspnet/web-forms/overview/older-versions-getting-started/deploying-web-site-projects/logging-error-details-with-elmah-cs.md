@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projec
 title: ELMAH (C#)를 사용 하 여 오류 세부 정보 로깅 | Microsoft Docs
 author: rick-anderson
 description: 오류 로깅 모듈 및 처리기의 ELMAH ()는 프로덕션 환경에서 런타임 오류를 기록 하는 다른 방법은 제공 합니다. ELMAH는 무료 오픈 소스 오류...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/09/2009
 ms.assetid: 11f6fe44-64ef-4a38-a3b4-35c7bb992352
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/logging-error-details-with-elmah-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 2432b22bd5dec1668fdb134eaeb92e372062ddda
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 4337500e0da3c6a75737438f3eeed731350847dd
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37834140"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837229"
 ---
 <a name="logging-error-details-with-elmah-c"></a>ELMAH (C#)를 사용 하 여 오류 세부 정보 로깅
 ====================

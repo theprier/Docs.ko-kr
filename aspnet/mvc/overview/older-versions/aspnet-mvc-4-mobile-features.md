@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions/aspnet-mvc-4-mobile-features
 title: ASP.NET MVC 4 모바일 기능 | Microsoft Docs
 author: Rick-Anderson
 description: 이제 ASP.NET MVC 5 모바일 웹 응용 프로그램에서 Azure 웹 사이트 배포에서 코드 샘플을 사용 하 여이 자습서는 MVC 5 버전이입니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/15/2012
 ms.assetid: 27dc4fc8-1b51-43b0-933f-fc1b52476523
 msc.legacyurl: /mvc/overview/older-versions/aspnet-mvc-4-mobile-features
 msc.type: authoredcontent
-ms.openlocfilehash: c852f4a853d14badb6c9a1c2c1ddb7b069bc3441
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: a3cb2414775b2c29617296dcf0c2dc5729153cdd
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37806589"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836966"
 ---
 <a name="aspnet-mvc-4-mobile-features"></a>ASP.NET MVC 4 모바일 기능
 ====================
@@ -212,7 +212,7 @@ ASP.NET MVC 4의 중요 한 새로운 기능에는 모바일 브라우저는 개
 [!code-csharp[Main](aspnet-mvc-4-mobile-features/samples/sample11.cs?highlight=26)]
 
 > [!NOTE]
-> Internet Explorer 9를 사용 하 고 표시 되지 않는 경우는 `BundleMobileConfig` 줄 위에 노란색 강조 표시를 클릭 합니다 [호환성 보기 단추](https://windows.microsoft.com/windows7/How-to-use-Compatibility-View-in-Internet-Explorer-9)![(해제) 호환성 뷰 단추 그림] (http://res2.windows.microsoft.com/resbox/en/Windows 7/main/f080e77f-9b66-4ac8-9af0-803c4f8a859c_15.jpg " (해제) 호환성 뷰 단추 그림") 개요에서 변경 아이콘을 ie ![(해제) 호환성 뷰 단추 그림](http://res2.windows.microsoft.com/resbox/en/Windows 7/main/f080e77f-9b66-4ac8-9af0-803c4f8a859c_15.jpg "(해제) 호환성 뷰 단추 그림 ") 단색 ![(켜기) 호환성 뷰 단추 그림](http://res1.windows.microsoft.com/resbox/en/Windows 7/main/156805ff-3130-481b-a12d-4d3a96470f36_14.jpg "(on) 호환성 뷰 단추 그림")합니다. 또는 FireFox 또는 Chrome에서이 자습서를 볼 수 있습니다.
+> Internet Explorer 9를 사용 하 고 표시 되지 않는 경우는 `BundleMobileConfig` 줄 위에 노란색 강조 표시를 클릭 합니다 [호환성 보기 단추](https://windows.microsoft.com/windows7/How-to-use-Compatibility-View-in-Internet-Explorer-9)![(해제) 호환성 뷰 단추 그림](http://res2.windows.microsoft.com/resbox/en/Windows 7/main/f080e77f-9b66-4ac8-9af0-803c4f8a859c_15.jpg " (해제) 호환성 뷰 단추 그림") 개요에서 변경 아이콘을 ie ![(해제) 호환성 뷰 단추 그림](http://res2.windows.microsoft.com/resbox/en/Windows 7/main/f080e77f-9b66-4ac8-9af0-803c4f8a859c_15.jpg "(해제) 호환성 뷰 단추 그림 ") 단색 ![(켜기) 호환성 뷰 단추 그림](http://res1.windows.microsoft.com/resbox/en/Windows 7/main/156805ff-3130-481b-a12d-4d3a96470f36_14.jpg "(on) 호환성 뷰 단추 그림")합니다. 또는 FireFox 또는 Chrome에서이 자습서를 볼 수 있습니다.
 
 
 엽니다는 *MvcMobile\Views\Shared\\_Layout.Mobile.cshtml* 파일과 후 직접 다음 태그를 추가 합니다 `Html.Partial` 호출:

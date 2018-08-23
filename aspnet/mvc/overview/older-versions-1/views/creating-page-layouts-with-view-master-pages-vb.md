@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/views/creating-page-layouts-with-view-master-
 title: 보기 마스터 페이지 (VB)를 사용 하 여 페이지 레이아웃 만들기 | Microsoft Docs
 author: microsoft
 description: 이 자습서에서는 보기 마스터 페이지를 활용 하 여 응용 프로그램에서 여러 페이지에 대 한 일반적인 페이지 레이아웃을 만드는 방법을 알아봅니다. 사용할 수는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/16/2008
 ms.assetid: d34f90a1-6de3-482a-a326-f87fdcbaaaff
 msc.legacyurl: /mvc/overview/older-versions-1/views/creating-page-layouts-with-view-master-pages-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 75db98647b9595deedc601905f6a0c0ddc596302
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 4ff74b1dc1d83b7ec1c8ecf6eca341a5cd14403f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37824692"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41838176"
 ---
 <a name="creating-page-layouts-with-view-master-pages-vb"></a>보기 마스터 페이지 (VB)를 사용 하 여 페이지 레이아웃 만들기
 ====================

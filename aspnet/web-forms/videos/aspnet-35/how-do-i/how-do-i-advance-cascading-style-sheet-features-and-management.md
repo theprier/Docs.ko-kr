@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-35/how-do-i/how-do-i-advance-cascading-style-sheet-
 title: '[어떻게 할까요?] 연계 스타일 시트 기능 및 관리를 계속 진행 하세요 | Microsoft Docs'
 author: rick-anderson
 description: 이 비디오에서는 이전 비디오에서 기본 Cascading Style Sheet으로 빌드합니다. 우리는 진행 향상 된 기능 요소 방금 만든 및...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/14/2008
 ms.assetid: 6a7e8bea-2a0d-4011-ad71-3f3b5f152fe4
 msc.legacyurl: /web-forms/videos/aspnet-35/how-do-i/how-do-i-advance-cascading-style-sheet-features-and-management
 msc.type: video
-ms.openlocfilehash: 0a2094ceef8973cf0c9445bff8fb400c1d5612c1
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b670ed68bf75d52df9696288e628d6ae07eedb3e
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37836521"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41838187"
 ---
 <a name="how-do-i-advance-cascading-style-sheet-features-and-management"></a>[어떻게 할까요?] 연계 스타일 시트 기능 및 관리를 진행 합니다.
 ====================

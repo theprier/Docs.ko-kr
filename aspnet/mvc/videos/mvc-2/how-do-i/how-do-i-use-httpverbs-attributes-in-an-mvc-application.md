@@ -3,17 +3,17 @@ uid: mvc/videos/mvc-2/how-do-i/how-do-i-use-httpverbs-attributes-in-an-mvc-appli
 title: '방법: 사용 하 여 HttpVerbs 특성 MVC 응용 프로그램에서? | Microsoft 문서'
 author: rick-anderson
 description: 이 비디오 Chris Pels HttpVerbs 특성을 사용 하 여 MVC 작업에 대 한 액세스를 제어 하는 방법을 보여 줍니다. 먼저, 샘플 응용 프로그램을 기본 공동을 사용 하 여 생성 됩니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 12/30/2009
 ms.assetid: d2488a1d-0f3f-4994-8fbe-4f59b8c9503e
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/how-do-i-use-httpverbs-attributes-in-an-mvc-application
 msc.type: video
-ms.openlocfilehash: 2932480ba7e573e3e093ccfd69ac88e8e95df623
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: d55151dc12c35c172a854d0caafe30a4f70c8c52
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37809951"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41838881"
 ---
 <a name="how-do-i-use-httpverbs-attributes-in-an-mvc-application"></a>방법: 사용 하 여 HttpVerbs 특성 MVC 응용 프로그램에서?
 ====================

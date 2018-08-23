@@ -3,17 +3,17 @@ uid: web-forms/videos/how-do-i/how-do-i-use-a-visual-studio-2008-web-deployment-
 title: '[어떻게 할까요?] Visual Studio 2008 웹 배포 프로젝트를 사용 하 여 | Microsoft Docs'
 author: rick-anderson
 description: 이 비디오에서는 Chris Pels을 세밀 하는 방법에 대 한 제어를 사용 하 여 배포 프로젝트를 만들려면 Visual Studio 2008 웹 배포 추가 기능을 사용 하는 방법을 표시 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 09/11/2008
 ms.assetid: 9517a342-e414-4c93-b0a6-5b52b391c908
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-use-a-visual-studio-2008-web-deployment-project
 msc.type: video
-ms.openlocfilehash: 183ac4543fb294ca9815ec99f4c8c017fe637e8f
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 9649c76496c186b13521f6e4de787a00bca89e02
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37803485"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836925"
 ---
 <a name="how-do-i-use-a-visual-studio-2008-web-deployment-project"></a>[어떻게 할까요?] Visual Studio 2008 웹 배포 프로젝트 사용
 ====================

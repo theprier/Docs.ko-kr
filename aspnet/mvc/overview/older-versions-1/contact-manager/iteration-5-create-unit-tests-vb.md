@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/contact-manager/iteration-5-create-unit-tests
 title: '반복 #5-단위 테스트 만들기 (VB) | Microsoft Docs'
 author: microsoft
 description: 다섯 번째 반복에서에서는 쉽게 응용 프로그램 유지 관리 하 고 단위 테스트를 추가 하 여 수정 합니다. 데이터 모델 클래스를 모의 하 고 o에 대 한 단위 테스트를 빌드하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/20/2009
 ms.assetid: c6e5c036-2265-4fa7-a9eb-47f197bdc262
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-5-create-unit-tests-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 49e8b3eb6c0e8fb7199816d0c2b0843e0519872a
-ms.sourcegitcommit: a25b572eaed21791230c85416f449f66a405ec19
+ms.openlocfilehash: 6aee4c01c1555dd2ea95d26a005d61ddab09f6fe
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39396092"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836130"
 ---
 <a name="iteration-5--create-unit-tests-vb"></a>반복 #5-단위 테스트 만들기 (VB)
 ====================

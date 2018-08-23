@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/advanced-data-access-scenarios/creating-new-
 title: 새로운 저장 프로시저 만들기 (VB) 형식화 된 데이터 집합의 Tableadapter에 대 한 | Microsoft Docs
 author: rick-anderson
 description: 이전 자습서에서 코드에서 SQL 문을 생성 하 고 문을 실행 하려면 데이터베이스에 전달 합니다. 또 다른 방법은 s를 사용 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/18/2007
 ms.assetid: a5a4a9ba-d18d-489a-a6b0-a3c26d6b0274
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-new-stored-procedures-for-the-typed-dataset-s-tableadapters-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 601883ea0e0bbea08e564d77eea5ce7d19956cb7
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: bc640564cfb67f0c1512bc7f4fae9ea7e6bc981f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37829615"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41839179"
 ---
 <a name="creating-new-stored-procedures-for-the-typed-datasets-tableadapters-vb"></a>새로운 저장 프로시저 만들기 (VB) 형식화 된 데이터 집합의 Tableadapter에 대 한
 ====================

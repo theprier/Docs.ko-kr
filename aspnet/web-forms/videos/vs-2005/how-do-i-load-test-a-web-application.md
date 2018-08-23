@@ -3,17 +3,17 @@ uid: web-forms/videos/vs-2005/how-do-i-load-test-a-web-application
 title: '[어떻게 할까요?] 웹 응용 프로그램 테스트를 로드 하는? | Microsoft 문서'
 author: rick-anderson
 description: 이 비디오에서는 웹 테스트를 기록 하 고 여러 사용자를 시뮬레이션 하는 부하 테스트를 재생 하는 과정을 안내 합니다. Visual Studio 표시 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/01/2007
 ms.assetid: 2b0649d3-d072-446a-9918-b2648de26472
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-load-test-a-web-application
 msc.type: video
-ms.openlocfilehash: 6adc67a30890792da9b8337e18b6f2bb4a58cf07
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 9171b4aeb806b20d9e5a8464d503551761d3b2b6
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37830108"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41835559"
 ---
 <a name="how-do-i-load-test-a-web-application"></a>[어떻게 할까요?] 웹 응용 프로그램 테스트를 로드 하는?
 ====================

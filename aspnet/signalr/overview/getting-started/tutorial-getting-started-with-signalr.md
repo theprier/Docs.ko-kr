@@ -3,17 +3,17 @@ uid: signalr/overview/getting-started/tutorial-getting-started-with-signalr
 title: '자습서: SignalR 2 시작 | Microsoft Docs'
 author: pfletcher
 description: 이 자습서에는 SignalR을 사용하여 실시간 채팅 응용 프로그램을 만드는 방법을 보여 줍니다. SignalR 빈 ASP.NET 웹 응용 프로그램에 추가 하 고는 HTML pa 만들기...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/10/2014
 ms.assetid: a8b3b778-f009-4369-85c7-e90f9878d8b4
 msc.legacyurl: /signalr/overview/getting-started/tutorial-getting-started-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 798838af099cceb12652b7c6c66633a03a73e538
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 647dab496acd63dc774236ed448bd6b37b19c707
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37841844"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41838830"
 ---
 <a name="tutorial-getting-started-with-signalr-2"></a>자습서: SignalR 2 시작
 ====================

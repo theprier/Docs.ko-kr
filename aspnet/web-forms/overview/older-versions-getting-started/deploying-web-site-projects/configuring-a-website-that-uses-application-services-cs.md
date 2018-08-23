@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projec
 title: 응용 프로그램 서비스 (C#)를 사용 하는 웹 사이트 구성 | Microsoft Docs
 author: rick-anderson
 description: ASP.NET 버전 2.0 일련의.NET Framework의 일부인 구성 요소 모음인 서비스는 yo 때 역할을 하며 응용 프로그램 서비스를 도입 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/23/2009
 ms.assetid: 1e33d1c6-3f9f-4c26-81e2-2a8f8907bb05
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-a-website-that-uses-application-services-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9bbf6d84c3ca25a3476901ec3d7996d5ca197446
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 4cec939795c2b3abfd51c894f985dfd2eb7bc361
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37837654"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41838567"
 ---
 <a name="configuring-a-website-that-uses-application-services-c"></a>응용 프로그램 서비스 (C#)를 사용 하는 웹 사이트를 구성 합니다.
 ====================

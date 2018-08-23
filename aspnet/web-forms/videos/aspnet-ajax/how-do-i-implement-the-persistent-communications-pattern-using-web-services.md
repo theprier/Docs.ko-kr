@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-ajax/how-do-i-implement-the-persistent-communicatio
 title: '[어떻게 할까요?] 웹 서비스를 사용 하 여 지속적인 통신 패턴을 구현 하는 무엇입니까? | Microsoft 문서'
 author: JoeStagner
 description: 기존 웹 사이트에서 브라우저와 서버는 진행 중인 통신을 유지 하지 않습니다 하지만 통신을 수행 하는 사용자에 대 한 응답에만...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/22/2007
 ms.assetid: 424c06cd-6d61-43cd-a1f2-d1a6b62e47b1
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-implement-the-persistent-communications-pattern-using-web-services
 msc.type: video
-ms.openlocfilehash: b1cc0ad7ba9ce608a54bcf158bd71cf8a65c51ed
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: e8508fa445d412be8358d6a9a40b6e1c249eacd0
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37826470"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837657"
 ---
 <a name="how-do-i-implement-the-persistent-communications-pattern-using-web-services"></a>[어떻게 할까요?] 웹 서비스를 사용 하 여 지속적인 통신 패턴을 구현 하는 무엇입니까?
 ====================

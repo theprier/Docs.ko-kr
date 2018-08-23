@@ -3,17 +3,17 @@ uid: web-pages/overview/releases/aspnet-web-pages-2-developer-preview-readme
 title: ASP.NET 웹 페이지 2 개발자 미리 보기 추가 정보 | Microsoft Docs
 author: microsoft
 description: ''
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 09/14/2011
 ms.assetid: 159a92e2-e011-4da7-b61d-2edde2a967da
 msc.legacyurl: /web-pages/overview/releases/aspnet-web-pages-2-developer-preview-readme
 msc.type: authoredcontent
-ms.openlocfilehash: 0a89216c0f65d49d00c96a27a5ab33e3872f9bc5
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 93e3f9c9d7c90f1ebfd9f482166aeb833cae73e9
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37818348"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837615"
 ---
 <a name="aspnet-web-pages-2-developer-preview-readme"></a>ASP.NET 웹 페이지 2 개발자 미리 보기 추가 정보
 ====================

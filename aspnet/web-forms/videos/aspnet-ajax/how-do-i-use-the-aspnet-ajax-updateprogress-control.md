@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-ajax/how-do-i-use-the-aspnet-ajax-updateprogress-co
 title: '[어떻게 할까요?] ASP.NET AJAX UpdateProgress 컨트롤 사용 | Microsoft 문서'
 author: JoeStagner
 description: AJAX 응용 프로그램의 경우 종종 브라우저 응답을 받을 시간과 브라우저에 네트워크 요청 시간 간에 눈에 띄는 일시 중지 T....
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/20/2007
 ms.assetid: fadc5c5a-e481-4472-b339-715cc036dc4e
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-use-the-aspnet-ajax-updateprogress-control
 msc.type: video
-ms.openlocfilehash: f4dcf89da332c303c5bb8e3c1093a9a2b8b68c34
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 4b6f7fcd8d987cd1c105d53cc76f86f0b82b473e
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37808157"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41838857"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-updateprogress-control"></a>[어떻게 할까요?] ASP.NET AJAX UpdateProgress 컨트롤 사용
 ====================

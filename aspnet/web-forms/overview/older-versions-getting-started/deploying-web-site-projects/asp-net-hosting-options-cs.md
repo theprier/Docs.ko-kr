@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projec
 title: ASP.NET 호스팅 옵션 (C#) | Microsoft Docs
 author: rick-anderson
 description: ASP.NET 웹 응용 프로그램은 일반적으로 설계, 생성 및 로컬 개발 환경에서 테스트 및 프로덕션 환경 o에 배포 해야 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/01/2009
 ms.assetid: 89a1d2bc-fdfd-4c5c-a3b0-49a08baaf63a
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/asp-net-hosting-options-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 12d4e0e4332cf611e304799155b45f5d668da8f6
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 3adad579c5893fb4f40e7043b9ece78740080f65
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37804189"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837967"
 ---
 <a name="aspnet-hosting-options-c"></a>ASP.NET 호스팅 옵션 (C#)
 ====================

@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/working-with-binary-files/displaying-binary-
 title: 데이터 웹에 이진 데이터 표시 제어 (C#) | Microsoft Docs
 author: rick-anderson
 description: 이 자습서에서는 이진 데이터를 이미지 파일의 표시 및 f '다운로드' 링크의 프로 비전을 비롯 한 웹 페이지를 표시 하는 옵션에 살펴보겠습니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/27/2007
 ms.assetid: 5cbeb9f8-5f92-4ba8-87ae-0b4d460ae6d4
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/displaying-binary-data-in-the-data-web-controls-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 62cc931b670931677b4e9632dccd6634715b3c71
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 50d7f8eceb4772c628f7f6ef71f110de03dd9348
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37814856"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41838726"
 ---
 <a name="displaying-binary-data-in-the-data-web-controls-c"></a>데이터 웹 컨트롤 (C#)에 이진 데이터 표시
 ====================
@@ -53,7 +53,7 @@ ms.locfileid: "37814856"
 디자이너 도구 상자에서 GridView 드래그 하 여 시작 합니다 `DisplayOrDownloadData.aspx` 페이지에 `BinaryData` 폴더. 집합 GridView s `ID` 에 `Categories` GridView가 스마트 태그를 통해 새 데이터 원본에 연결 하려면 선택 합니다. 특히, 명명 된 ObjectDataSource에 바인딩할 `CategoriesDataSource` 사용 하 여 데이터를 검색 하는 `CategoriesBLL` s 개체 `GetCategories()` 메서드.
 
 
-[![범주 및 공급 업체 Dropdownlist 포함 (None) 옵션](displaying-binary-data-in-the-data-web-controls-cs/_static/image2.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image3.png)
+[![CategoriesDataSource 라는 새로운 ObjectDataSource는 만들기](displaying-binary-data-in-the-data-web-controls-cs/_static/image2.gif)](displaying-binary-data-in-the-data-web-controls-cs/_static/image3.png)
 
 **그림 2**: 명명 된 새 ObjectDataSource 만들려면 `CategoriesDataSource` ([클릭 하 여 큰 이미지 보기](displaying-binary-data-in-the-data-web-controls-cs/_static/image4.png))
 

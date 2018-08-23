@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding
 title: ASP.NET AJAX 디버깅 기능 이해 | Microsoft Docs
 author: scottcate
 description: 코드를 디버그 하는 기능은 모든 개발자를 사용 하는 기술에 상관 없이 해당 셈에 있어야 하는 기술입니다. 대부분의 개발자는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/28/2008
 ms.assetid: 7f9380c6-19f7-4c82-a019-916ec6dffc9c
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/aspnet-ajax/understanding-asp-net-ajax-debugging-capabilities
 msc.type: authoredcontent
-ms.openlocfilehash: 95c2487f26109cbdd8c76dc6f269f37264f5e34b
-ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
+ms.openlocfilehash: 13fd8f05cd994ff1c902bd067fb4ed425010d64e
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39655448"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41838224"
 ---
 <a name="understanding-aspnet-ajax-debugging-capabilities"></a>ASP.NET AJAX 디버깅 기능 이해
 ====================

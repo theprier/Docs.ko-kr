@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/database-driven-site-maps/building-a-custom-
 title: 사용자 지정 데이터베이스 중심 사이트 맵 공급자 (C#) 빌드 | Microsoft Docs
 author: rick-anderson
 description: ASP.NET 2.0의 기본 사이트 맵 공급자는 정적 XML 파일에서 해당 데이터를 검색합니다. XML 기반 공급자가 여러 소규모 및 중간 크기에 적합 한 동안...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/26/2007
 ms.assetid: 04b7591d-106f-4f05-87e9-d416cb65a8a6
 msc.legacyurl: /web-forms/overview/data-access/database-driven-site-maps/building-a-custom-database-driven-site-map-provider-cs
 msc.type: authoredcontent
-ms.openlocfilehash: fdc6ddeac800279a638911f1f64772c49fff5449
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 4db59ed13aef81e94feba61299e710bfddd78a76
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37807114"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41838579"
 ---
 <a name="building-a-custom-database-driven-site-map-provider-c"></a>사용자 지정 데이터베이스 중심 사이트 맵 공급자 (C#) 빌드
 ====================

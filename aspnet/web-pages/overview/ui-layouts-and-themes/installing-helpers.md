@@ -3,17 +3,17 @@ uid: web-pages/overview/ui-layouts-and-themes/installing-helpers
 title: (Razor) 사이트 페이지는 ASP.NET 웹 도우미 설치 | Microsoft Docs
 author: tfitzmac
 description: 이 문서에서는 ASP.NET Web Pages (Razor) 웹 사이트에서 도우미를 설치 하는 방법을 설명 합니다. 도우미는 코드 및 당 태그를 포함 하는 재사용 가능한 구성 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/18/2014
 ms.assetid: 5e968ead-906a-45ea-ac2a-c70e57e1a9b1
 msc.legacyurl: /web-pages/overview/ui-layouts-and-themes/installing-helpers
 msc.type: authoredcontent
-ms.openlocfilehash: db3dff9f2d70577bb0618335c0100b9899e87727
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 8629d91e1e297244228898e28f70616c7ccf1acf
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37838616"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41838275"
 ---
 <a name="installing-a-helper-in-an-aspnet-web-pages-razor-site"></a>ASP.NET 웹 페이지 (Razor) 사이트에서 도우미 설치
 ====================

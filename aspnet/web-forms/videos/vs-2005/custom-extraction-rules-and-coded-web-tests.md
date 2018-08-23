@@ -3,17 +3,17 @@ uid: web-forms/videos/vs-2005/custom-extraction-rules-and-coded-web-tests
 title: 사용자 지정 추출 규칙 및 코딩 된 웹 테스트 | Microsoft Docs
 author: rick-anderson
 description: Visual Studio Team System 쉽게 응용 프로그램을 사용 하 여 사용자의 상호 작용을 기록 하 고 다음 re를 반복 해 서 재생 하 여 웹 응용 프로그램을 테스트 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/26/2007
 ms.assetid: 7e2efe4c-8632-4d61-a82f-8e0bbd47c175
 msc.legacyurl: /web-forms/videos/vs-2005/custom-extraction-rules-and-coded-web-tests
 msc.type: video
-ms.openlocfilehash: 62f7a581b300eae4e19c0267176a7f3230abacf2
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 7cc64911bbbe87096ec6626a8913827437c61b8c
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37838308"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41838184"
 ---
 <a name="custom-extraction-rules-and-coded-web-tests"></a>사용자 지정 추출 규칙 및 코딩 된 웹 테스트
 ====================

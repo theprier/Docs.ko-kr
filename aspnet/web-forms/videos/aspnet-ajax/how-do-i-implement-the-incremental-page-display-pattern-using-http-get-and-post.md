@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-ajax/how-do-i-implement-the-incremental-page-displa
 title: '[어떻게 할까요?] HTTP GET 및 POST를 사용 하 여 증분식 페이지 표시 패턴을 구현 하는 무엇입니까? | Microsoft 문서'
 author: JoeStagner
 description: 이 비디오는 또 다른 형태는 AJAX 증분식 페이지 표시 패턴에는 웹 페이지를 검색 하 고 증분 방식으로 표시 합니다. 이 비디오는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/13/2007
 ms.assetid: 28d5bb59-9aad-4cdd-8088-1e9d3d230ac5
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-implement-the-incremental-page-display-pattern-using-http-get-and-post
 msc.type: video
-ms.openlocfilehash: 5b694836abd377259b72e8b48ce2a3b70196bfc1
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: c36b6d59dfa8d66f23542be466a1c614dfb263f2
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37842515"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836912"
 ---
 <a name="how-do-i-implement-the-incremental-page-display-pattern-using-http-get-and-post"></a>[어떻게 할까요?] HTTP GET 및 POST를 사용 하 여 증분식 페이지 표시 패턴을 구현 하는 무엇입니까?
 ====================

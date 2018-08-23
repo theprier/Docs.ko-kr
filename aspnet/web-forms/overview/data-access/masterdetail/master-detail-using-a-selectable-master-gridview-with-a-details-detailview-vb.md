@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/masterdetail/master-detail-using-a-selectabl
 title: 마스터/세부 정보 (VB) 세부 정보 DetailView와 함께 선택 가능한 마스터 GridView를 사용 하 여 | Microsoft Docs
 author: rick-anderson
 description: 이 자습서는 GridView 행이 있는 이름과 선택 단추와 함께 각 제품의 가격을 포함 해야 합니다. particu에 대 한 선택 단추를 클릭 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/31/2010
 ms.assetid: 1d1a7c93-971d-4690-9c5e-dac0e5014a09
 msc.legacyurl: /web-forms/overview/data-access/masterdetail/master-detail-using-a-selectable-master-gridview-with-a-details-detailview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 17885b2f4892011629e04596b24ca677de2fa8b7
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0bf724741ffbc01aa7611d8b075d89827bf83777
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37820926"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41838580"
 ---
 <a name="masterdetail-using-a-selectable-master-gridview-with-a-details-detailview-vb"></a>마스터/세부 정보 (VB) 세부 정보 DetailView와 함께 선택 가능한 마스터 GridView를 사용 하 여
 ====================

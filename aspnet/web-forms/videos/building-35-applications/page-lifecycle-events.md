@@ -3,17 +3,17 @@ uid: web-forms/videos/building-35-applications/page-lifecycle-events
 title: 페이지 수명 주기 이벤트 | Microsoft Docs
 author: JoeStagner
 description: ASP.NET는 ASP.NET 페이지 수명 주기의 모든 중요 한 시간 인스턴스를 후크를 사용 하 여 매우 다양 한 이벤트 메커니즘을 제공 합니다. 이 동영상 열거 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/09/2009
 ms.assetid: 11237821-220e-4357-9fa6-38245084e093
 msc.legacyurl: /web-forms/videos/building-35-applications/page-lifecycle-events
 msc.type: video
-ms.openlocfilehash: 117ec9402dc42e8c8e13e4fe666c07deca81b2a7
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: f70b4998245554a5db4b980e7754d33882492ea9
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37809805"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837659"
 ---
 <a name="page-lifecycle-events"></a>페이지 수명 주기 이벤트
 ====================

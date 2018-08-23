@@ -3,17 +3,17 @@ uid: mvc/videos/mvc-2/how-do-i/aspnet-mvc-2-render-action
 title: ASP.NET MVC 2-렌더링 작업 | Microsoft Docs
 author: jongalloway
 description: 이 비디오를 보기 컨트롤러 작업의 결과 쓸 Html.RenderAction를 사용 하는 방법에 알아봅니다. Html.RenderAction fr와 어떻게 다른 지 살펴보겠습니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/22/2010
 ms.assetid: 11906982-0a64-4bc8-be23-6443afee8b88
 msc.legacyurl: /mvc/videos/mvc-2/how-do-i/aspnet-mvc-2-render-action
 msc.type: video
-ms.openlocfilehash: 6b4157cb4fdc9aecfcdc74f815b5b107990ee065
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 03331292bf212ec462fe776769da73402c2bf820
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37819437"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837926"
 ---
 <a name="aspnet-mvc-2---render-action"></a>ASP.NET MVC 2-렌더링 작업
 ====================

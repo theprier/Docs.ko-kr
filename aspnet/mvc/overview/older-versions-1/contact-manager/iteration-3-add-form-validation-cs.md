@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/contact-manager/iteration-3-add-form-validati
 title: '반복 #3-양식 유효성 검사 추가 (C#) | Microsoft Docs'
 author: microsoft
 description: 세 번째 반복에서는 기본 양식 유효성 검사를 추가합니다. 사용자를 방지할 수를 필요한 형식의 필드를 완료 하지 않고 폼을 제출 합니다. 또한 emai 유효성을 검사 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/20/2009
 ms.assetid: 51a0d175-913b-43d8-95e3-840fb96ad1a9
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-3-add-form-validation-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d7f5d183b98ea123a780714dec2d806e4e794c2d
-ms.sourcegitcommit: a25b572eaed21791230c85416f449f66a405ec19
+ms.openlocfilehash: 4115b3898415d63ffb122f3d0fea93022f2baa02
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39396078"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837964"
 ---
 <a name="iteration-3--add-form-validation-c"></a>반복 #3-양식 유효성 검사 추가 (C#)
 ====================

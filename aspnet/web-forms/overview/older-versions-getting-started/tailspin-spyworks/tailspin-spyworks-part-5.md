@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspi
 title: '5 부: 비즈니스 논리 | Microsoft Docs'
 author: JoeStagner
 description: 이 자습서 시리즈 모든 Tailspin Spyworks 샘플 응용 프로그램 빌드를 수행 하는 단계를 자세히 설명 합니다. 5 부 일부 비즈니스 논리를 추가합니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/21/2010
 ms.assetid: eaef475a-ca91-47ea-a4a7-d074005ed80c
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/tailspin-spyworks/tailspin-spyworks-part-5
 msc.type: authoredcontent
-ms.openlocfilehash: fdb73c01d7b6076bc292c640376aa35cc5f52ea6
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: e18acb66dbdb3bd3e0dfa21193f617dad82afc74
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37827050"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41835543"
 ---
 <a name="part-5-business-logic"></a>5 부: 비즈니스 논리
 ====================

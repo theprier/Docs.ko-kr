@@ -3,17 +3,17 @@ uid: aspnet/overview/owin-and-katana/owin-oauth-20-authorization-server
 title: OWIN OAuth 2.0 권한 부여 서버 | Microsoft Docs
 author: hongyes
 description: 이 자습서에서 OAuth OWIN 미들웨어를 사용 하 여 OAuth 2.0 권한 부여 서버를 구현 하는 방법을 안내 합니다. 이 고급 자습서는 해당만 outlin 됩니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/20/2014
 ms.assetid: 20acee16-c70c-41e9-b38f-92bfcf9a4c1c
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-oauth-20-authorization-server
 msc.type: authoredcontent
-ms.openlocfilehash: e3b5b37b4f22f3c59d3c1f4043e9b52e46a8926b
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 7b9ba2ca0cd0269ebb3e0e4ae056d4597a198a03
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37828421"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41838548"
 ---
 <a name="owin-oauth-20-authorization-server"></a>OWIN OAuth 2.0 권한 부여 서버
 ====================

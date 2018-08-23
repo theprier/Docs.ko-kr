@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/nerddinner/re-use-ui-using-master-pages-and-p
 title: 마스터 페이지 및 부분을 사용 하 여 UI를 다시 사용할 | Microsoft Docs
 author: microsoft
 description: 7 단계 템플릿 부분 보기 및 마스터 페이지를 사용 하 여, 코드 중복을 제거 하는 보기 템플릿 내에서 ' 반복 금지 원칙의 ' 적용할 수 있습니다 하는 방법에 살펴봅니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/27/2010
 ms.assetid: d4243a4a-e91c-4116-9ae0-5c08e5285677
 msc.legacyurl: /mvc/overview/older-versions-1/nerddinner/re-use-ui-using-master-pages-and-partials
 msc.type: authoredcontent
-ms.openlocfilehash: 961378d6d710c678a0cd223a5c31544f014ace7f
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0da32e6ac38f10df6e581517989b3b1fd2f2328c
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37839596"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837987"
 ---
 <a name="re-use-ui-using-master-pages-and-partials"></a>마스터 페이지 및 부분을 사용 하 여 UI를 다시 사용
 ====================

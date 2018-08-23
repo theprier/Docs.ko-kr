@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/master-pages/master-pages
 title: 마스터 페이지 및 ASP.NET AJAX (VB) | Microsoft Docs
 author: rick-anderson
 description: ASP.NET AJAX 및 마스터 페이지를 사용 하기 위한 옵션에 설명 합니다. ScriptManagerProxy 클래스를 사용 하 여 살펴봅니다. 다양 한 JS 파일은 dependi를 로드 하는 방법에 대해 설명 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/11/2008
 ms.assetid: 0ee9318c-29bb-4d58-b1dc-94e575b8ae10
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/master-pages-and-asp-net-ajax-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e0ec5359c83bf13398a8a935921cc2a319638ef1
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: aa511b8bd2f4d739cbe1f04b2a9cf03bf6928182
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37803300"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41838570"
 ---
 <a name="master-pages-and-aspnet-ajax-vb"></a>마스터 페이지 및 ASP.NET AJAX (VB)
 ====================

@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/overview/asp-net-mvc-overview
 title: ASP.NET MVC 개요 | Microsoft Docs
 author: microsoft
 description: ASP.NET MVC 응용 프로그램 및 ASP.NET Web Forms 응용 프로그램 간의 차이점에 알아봅니다. ASP.NET MVC 응용 프로그램을 구축 하는 시점을 결정 하는 방법에 알아봅니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/27/2009
 ms.assetid: 2dcb44a4-5cbf-4d62-b363-718104082d86
 msc.legacyurl: /mvc/overview/older-versions-1/overview/asp-net-mvc-overview
 msc.type: authoredcontent
-ms.openlocfilehash: 6f40bd19e19f05b91fbee59aefb2914e623d6f25
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 61a7841ee238ec365b7d1909221bbe3d834faf84
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37802333"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41838839"
 ---
 <a name="aspnet-mvc-overview"></a>ASP.NET MVC 개요
 ====================

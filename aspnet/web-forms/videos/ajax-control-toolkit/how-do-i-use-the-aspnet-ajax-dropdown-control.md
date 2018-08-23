@@ -3,17 +3,17 @@ uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-dropdown
 title: '[어떻게 할까요?] ASP.NET AJAX 드롭다운 컨트롤 사용 | Microsoft 문서'
 author: JoeStagner
 description: ASP.NET AJAX Control Toolkit에서 드롭다운 컨트롤 extender를 사용 하 여 부분-pa를 트리거하는 옵션의 드롭다운 목록을 사용 하 여 사용자를 제공할 수 있습니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/30/2007
 ms.assetid: a997a9f8-9f71-4b9e-b7ed-f8e3a0daa576
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-dropdown-control
 msc.type: video
-ms.openlocfilehash: 6394818f52509a8784c8d12b54965710f4ece057
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 8e253f4213af4a1ffe5e5ee133dec931fcf4a46d
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37833199"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836967"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-dropdown-control"></a>[어떻게 할까요?] ASP.NET AJAX 드롭다운 컨트롤 사용
 ====================

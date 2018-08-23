@@ -3,17 +3,17 @@ uid: single-page-application/overview/introduction/other-libraries
 title: Knockout 이외의 라이브러리를 알고 있습니까? | Microsoft 문서
 author: madskristensen
 description: Knockout 이외의 라이브러리를 알고 있습니까?
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/05/2013
 ms.assetid: a8367c6d-ef94-4dff-a010-5eff9e6eea96
 msc.legacyurl: /single-page-application/overview/introduction/other-libraries
 msc.type: authoredcontent
-ms.openlocfilehash: 69006df6a5de3290ac294a309756eb0a53baa975
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 53c97580b45bb40a6c3256c8038ec5c8b861b69f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37834596"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837327"
 ---
 <a name="know-a-library-other-than-knockout"></a>Knockout 이외의 라이브러리를 알고 있습니까?
 ====================

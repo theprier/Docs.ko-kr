@@ -3,17 +3,17 @@ uid: web-forms/videos/tailspin-spyworks/tailspin-spyworks-creating-and-using-the
 title: Tailspin Spyworks-만들기 및 인기 있는 제품 컨트롤 사용 | Microsoft Docs
 author: JoeStagner
 description: Joe Stagner가 만들고 Tailspin Spyworks 샘플 Web Forms 응용 프로그램에서 인기 있는 제품 컨트롤을 사용 합니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/26/2010
 ms.assetid: 66944300-804e-484d-8176-6cfe8c128cfc
 msc.legacyurl: /web-forms/videos/tailspin-spyworks/tailspin-spyworks-creating-and-using-the-popular-products-control
 msc.type: video
-ms.openlocfilehash: 42455c26ac1d5a6caa5e2263a95211b9a27fb7f7
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: f0134ed7ca793cec1fbb0264d620d270e7be0e03
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37802473"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837366"
 ---
 <a name="tailspin-spyworks---creating-and-using-the-popular-products-control"></a>Tailspin Spyworks-만들기 및 인기 있는 제품 컨트롤 사용
 ====================

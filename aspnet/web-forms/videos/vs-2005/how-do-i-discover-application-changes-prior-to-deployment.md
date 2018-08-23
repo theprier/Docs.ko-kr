@@ -3,17 +3,17 @@ uid: web-forms/videos/vs-2005/how-do-i-discover-application-changes-prior-to-dep
 title: '[어떻게 할까요?] 응용 프로그램을 배포 하기 전에 변경 검색? | Microsoft 문서'
 author: pjhacker
 description: Ensur 하는 웹 응용 프로그램에 적용 된 변경 내용을 검색 하려면 Visual Studio Team System에서 소스 제어 탐색기를 사용 하는 방법 알아보기...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/25/2007
 ms.assetid: 6945a637-cab3-4a13-a678-f6d2d83c2587
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-discover-application-changes-prior-to-deployment
 msc.type: video
-ms.openlocfilehash: f9310d618f5498eb8d2e0641ea9bd9ab100cb712
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: c6870e33ba7707ca06633876c1f453576811ce7f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37810987"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41838561"
 ---
 <a name="how-do-i-discover-application-changes-prior-to-deployment"></a>[어떻게 할까요?] 응용 프로그램을 배포 하기 전에 변경 검색?
 ====================

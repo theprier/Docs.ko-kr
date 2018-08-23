@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-ajax/how-do-i-determine-whether-an-asynchronous-pos
 title: '[어떻게 할까요?] 여부는 비동기 포스트백이 발생 했는지 확인? | Microsoft 문서'
 author: JoeStagner
 description: ASP.NET Web form의 Page_Load 메서드는 표준 전체 페이지 포스트백 또는 asychnronous 부분 페이지 포스트백 하는 동안 실행 됩니다. 이 비디오는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/25/2007
 ms.assetid: aabc168b-582a-4668-90b1-3d700285aa1a
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-determine-whether-an-asynchronous-postback-has-occurred
 msc.type: video
-ms.openlocfilehash: f2d6e00521937b1bf31b9e5111260ab588c23e5e
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 60f2145c1d77dd0cc51dae77873017303d3d4a5a
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37830058"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836063"
 ---
 <a name="how-do-i-determine-whether-an-asynchronous-postback-has-occurred"></a>[어떻게 할까요?] 여부는 비동기 포스트백이 발생 했는지 확인?
 ====================

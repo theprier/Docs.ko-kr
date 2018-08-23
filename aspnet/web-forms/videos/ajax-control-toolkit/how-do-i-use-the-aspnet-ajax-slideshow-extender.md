@@ -3,17 +3,17 @@ uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-slidesho
 title: '[어떻게 할까요?] ASP.NET AJAX 슬라이드 쇼 Extender 사용 | Microsoft 문서'
 author: JoeStagner
 description: 이 비디오에서 보여 주는 방법을 ASP.NET AJAX Control Toolkit에서 슬라이드 쇼 extender 바뀝니다 표준 ASP.NET 이미지 컨트롤을 완벽 하 게 작동 sl...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/16/2007
 ms.assetid: dfc9f5bb-5e51-46ec-8e1d-2ef9942d258b
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-slideshow-extender
 msc.type: video
-ms.openlocfilehash: ca4edb59eabce98d2c2bdbe6bf99d9863cb29ea3
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 3aaeb417bd4e137839256cb3768f59dc6dda1785
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37801212"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41839121"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-slideshow-extender"></a>[어떻게 할까요?] ASP.NET AJAX 슬라이드 쇼 Extender 사용
 ====================

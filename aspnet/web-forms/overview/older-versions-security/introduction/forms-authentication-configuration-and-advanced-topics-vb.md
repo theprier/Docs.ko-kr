@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-security/introduction/forms-authenticatio
 title: 폼 인증 구성 및 고급 항목 (VB) | Microsoft Docs
 author: rick-anderson
 description: 이 자습서에서는 다양 한 폼 인증 설정을 검사 하 고 폼 요소를 통해 수정 하는 방법을 참조 하세요. 자세한 수반 됩니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/14/2008
 ms.assetid: 829d2f56-5c48-445b-b826-3418a450c788
 msc.legacyurl: /web-forms/overview/older-versions-security/introduction/forms-authentication-configuration-and-advanced-topics-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d740694772b0fc5ad1c9c4eb5763004523586631
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: eb533cf763c2f3132ea0a5420b4d4cbea16c61cd
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37831144"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41835554"
 ---
 <a name="forms-authentication-configuration-and-advanced-topics-vb"></a>폼 인증 구성 및 고급 항목 (VB)
 ====================

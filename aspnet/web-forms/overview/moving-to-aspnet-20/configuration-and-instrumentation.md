@@ -3,17 +3,17 @@ uid: web-forms/overview/moving-to-aspnet-20/configuration-and-instrumentation
 title: 구성 및 계측 | Microsoft Docs
 author: microsoft
 description: 구성의 주요 변경 사항 및 ASP.NET 2.0의 계측 됩니다. 새 ASP.NET 구성 API pr 되도록 구성 변경 내용을 허용 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/20/2005
 ms.assetid: 21ebbaee-7ed8-45ae-b6c1-c27c88342e48
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/configuration-and-instrumentation
 msc.type: authoredcontent
-ms.openlocfilehash: 8437b13cae83208983f26e0a5042a5f6c19e516e
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: ba116140faa0667d504e0ff101c274db9f46079e
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37822909"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837222"
 ---
 <a name="configuration-and-instrumentation"></a>구성 및 계측
 ====================

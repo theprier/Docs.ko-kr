@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6
 title: '6 부: 모델 유효성 검사에 대 한 데이터 주석 사용 | Microsoft Docs'
 author: jongalloway
 description: 이 자습서 시리즈 모든 ASP.NET MVC Music Store 샘플 응용 프로그램 빌드를 수행 하는 단계를 자세히 설명 합니다. 6 부에서는 V 모델에 대 한 데이터 주석 사용을 설명 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/21/2011
 ms.assetid: b3193d33-2d0b-4d98-9712-58bd897c62ec
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-6
 msc.type: authoredcontent
-ms.openlocfilehash: 10884f569f0f5d95517b73daab31fbd269a4726a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b666c3cef0b09c6d68cee581a3c27c08e3357cca
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37825955"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837558"
 ---
 <a name="part-6-using-data-annotations-for-model-validation"></a>6 부: 모델 유효성 검사에 대 한 데이터 주석 사용
 ====================

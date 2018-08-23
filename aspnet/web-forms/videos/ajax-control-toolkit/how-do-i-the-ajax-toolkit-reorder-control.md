@@ -3,17 +3,17 @@ uid: web-forms/videos/ajax-control-toolkit/how-do-i-the-ajax-toolkit-reorder-con
 title: '[어떻게 할까요?] AJAX Toolkit 재정렬 컨트롤 | Microsoft Docs'
 author: JoeStagner
 description: 이 비디오 AJAX toolkit를 사용 하 여 제공 되는 순서를 변경 제어의 사용에 설명 합니다. 재정렬 컨트롤 목록 o 사용자에 게 제공할 수 있습니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/21/2008
 ms.assetid: 1bc7e41a-633c-4ade-ba7a-486c9484a0ba
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-the-ajax-toolkit-reorder-control
 msc.type: video
-ms.openlocfilehash: 09e435b0c34bd889f0d7d320a6f6ca3a0e219c7a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: d16ecfca0783622e4616863e680b3de78c445762
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37839453"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837818"
 ---
 <a name="how-do-i-the-ajax-toolkit-reorder-control"></a>[어떻게 할까요?] AJAX Toolkit 재정렬 컨트롤
 ====================

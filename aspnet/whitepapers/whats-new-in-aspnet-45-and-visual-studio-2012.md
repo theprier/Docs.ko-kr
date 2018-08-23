@@ -3,17 +3,17 @@ uid: whitepapers/whats-new-in-aspnet-45-and-visual-studio-2012
 title: ASP.NET 4.5 및 Visual Studio 2012의 새로운 기능 | Microsoft Docs
 author: rick-anderson
 description: 이 문서에서는 새로운 기능과 향상 된 ASP.NET 4.5에서 도입 되는 설명 합니다. 웹 개발에 대해 수행 되는 향상 된 기능에 대해서도 설명 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/29/2012
 ms.assetid: ba1fabb4-31a3-4ebf-8327-41a6bbba6eaf
 msc.legacyurl: /whitepapers/whats-new-in-aspnet-45-and-visual-studio-2012
 msc.type: content
-ms.openlocfilehash: cfe9b1a7f05b43d5eb638c8fa7cb581d1edac9d5
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 6bbfb4aa7f29e4c189da4dfdca6f2113c7550b68
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37835815"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41838137"
 ---
 <a name="whats-new-in-aspnet-45-and-visual-studio-2012"></a>ASP.NET 4.5 및 Visual Studio 2012의 새로운 기능
 ====================

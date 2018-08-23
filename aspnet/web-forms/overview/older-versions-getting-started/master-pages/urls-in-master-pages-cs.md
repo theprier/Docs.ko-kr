@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/master-pages/urls-in-mast
 title: 마스터 페이지 (C#)의 Url | Microsoft Docs
 author: rick-anderson
 description: 마스터 페이지의 Url이 마스터 페이지 파일의 콘텐츠 페이지 이외의 다른 상대 디렉터리에 있는 것으로 인해 중단 될 수 있습니다 하는 방법을 다룹니다. 기준 주소 다시 지정 하는 방법을 살펴봅니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/10/2008
 ms.assetid: 48b58a18-5ea4-468c-b326-f35331b3e1e9
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/master-pages/urls-in-master-pages-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 827c471074fbfeb049613f5cc5ffb82937284f00
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 6f22159c4e70beeb590039ea0d4b8126c5424bd5
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37821562"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836958"
 ---
 <a name="urls-in-master-pages-c"></a>마스터 페이지 (C#)의 Url
 ====================

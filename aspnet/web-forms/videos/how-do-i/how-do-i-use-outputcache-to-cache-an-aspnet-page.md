@@ -3,17 +3,17 @@ uid: web-forms/videos/how-do-i/how-do-i-use-outputcache-to-cache-an-aspnet-page
 title: '[어떻게 할까요?] OutputCache를 사용 하 여 ASP.NET 페이지 캐시 | Microsoft Docs'
 author: rick-anderson
 description: 이 비디오 Chris Pels 다시 렌더링 되어야 하지 않아도 되므로 페이지 캐시에 저장 하는 ASP.NET의 기본 제공 캐싱을 활용 하는 방법을 보여 줍니다. 첫 번째는...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/05/2009
 ms.assetid: 651c54da-becb-467e-9076-d6ace7456351
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-use-outputcache-to-cache-an-aspnet-page
 msc.type: video
-ms.openlocfilehash: f5f36a5267cff7631b78c15f2456736929701e33
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: a920803ea65dd16a0dd7b4c1a54ccff949c72427
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37805916"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41838172"
 ---
 <a name="how-do-i-use-outputcache-to-cache-an-aspnet-page"></a>[어떻게 할까요?] OutputCache를 사용 하 여 ASP.NET 페이지 캐시
 ====================

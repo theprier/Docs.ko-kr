@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/views/using-the-tagbuilder-class-to-build-htm
 title: HTML 도우미 (C#)를 빌드하는 TagBuilder 클래스를 사용 하 여 | Microsoft Docs
 author: StephenWalther
 description: Stephen walther가 ASP.NET MVC 프레임 워크는 TagBuilder 클래스 라는의 유용한 유틸리티 클래스를 소개 합니다. TagBuilder 클래스를 쉽게 사용할 수 있습니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/02/2009
 ms.assetid: 3975a52f-bd15-4edd-8f3d-1df93672515b
 msc.legacyurl: /mvc/overview/older-versions-1/views/using-the-tagbuilder-class-to-build-html-helpers-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 9990fc7ad8093643a564a5e02ff65264d4a7fe15
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 9759ea9b05ba5eba268901d3d2d1a15b2afe6202
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37813228"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41838544"
 ---
 <a name="using-the-tagbuilder-class-to-build-html-helpers-c"></a>HTML 도우미 (C#)를 빌드하는 TagBuilder 클래스를 사용 하 여
 ====================

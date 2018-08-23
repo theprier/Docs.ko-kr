@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/animation/disabling-actions-during-
 title: 애니메이션 (VB) 중 작업 사용 안 함 | Microsoft Docs
 author: wenz
 description: ASP.NET AJAX Control Toolkit에서 애니메이션 컨트롤 컨트롤 뿐 이지만 컨트롤에 애니메이션을 추가 하는 전체 프레임 워크 아닙니다. 또한 작업을 지원 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: a86c0276-6481-46ee-8b4f-8c2009399ee9
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/disabling-actions-during-animation-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 18c1eb74c73876b3fc6f1e37f69c31642806d043
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 811e1d75f79885f3f4c561d9211fec625fcf1807
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37830881"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837634"
 ---
 <a name="disabling-actions-during-animation-vb"></a>애니메이션 (VB) 중 작업 사용 안 함
 ====================

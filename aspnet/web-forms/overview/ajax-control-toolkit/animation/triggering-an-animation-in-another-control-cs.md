@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/animation/triggering-an-animation-i
 title: 다른 컨트롤 (C#)에서 애니메이션 트리거 | Microsoft Docs
 author: wenz
 description: ASP.NET AJAX Control Toolkit에서 애니메이션 컨트롤 컨트롤 뿐 이지만 컨트롤에 애니메이션을 추가 하는 전체 프레임 워크 아닙니다. 일반적으로 시작을...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: e5d99c2b-d8ee-413c-80d5-c120cffb0a4c
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/animation/triggering-an-animation-in-another-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a7eeb522ae982cd5a84aa9c8e4228871c8c78440
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: ad6dfecf71a7577215e43222a8788e5c48d0c4c2
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37810804"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41839096"
 ---
 <a name="triggering-an-animation-in-another-control-c"></a>다른 컨트롤 (C#)에서 애니메이션 트리거
 ====================

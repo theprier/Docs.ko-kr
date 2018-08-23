@@ -3,17 +3,17 @@ uid: aspnet/overview/web-development-best-practices/what-not-to-do-in-aspnet-and
 title: ASP.NET에서 안 되 고 대신 | Microsoft Docs
 author: tfitzmac
 description: 이 항목에서는 ASP.NET 웹 프로젝트 내에서 사용자를 확인 하는 몇 가지 일반적인 실수를 설명 합니다. 무엇을 해야 이러한 공용을 방지 하기 위한 권장 사항을 제공 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/08/2014
 ms.assetid: c39b9965-545c-4b04-8f55-21be7f28a9e5
 msc.legacyurl: /aspnet/overview/web-development-best-practices/what-not-to-do-in-aspnet-and-what-to-do-instead
 msc.type: authoredcontent
-ms.openlocfilehash: 9e9b192126995ac8a461b15bce69b60d57ca9ba1
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 7f2366ef8cb258a08c3cb96407f605864e5ec9a9
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37806020"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836945"
 ---
 <a name="what-not-to-do-in-aspnet-and-what-to-do-instead"></a>ASP.NET에서 안 되 고 대신
 ====================

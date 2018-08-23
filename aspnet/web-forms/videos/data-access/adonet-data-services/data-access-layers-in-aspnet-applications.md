@@ -3,17 +3,17 @@ uid: web-forms/videos/data-access/adonet-data-services/data-access-layers-in-asp
 title: ASP.NET 응용 프로그램에서 데이터 액세스 레이어 | Microsoft Docs
 author: JoeStagner
 description: 이 비디오에서는 3, 1 부 Joe Stagner는 간단한 ASP.NET 응용 프로그램에 대 한 형식화 된 데이터 집합을 사용 하 여 데이터 액세스 계층을 만듭니다. 에 대 한 추가 정보에 대 한 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/07/2008
 ms.assetid: 536aa7a6-84fb-487c-a14f-6ca3eb8a4a33
 msc.legacyurl: /web-forms/videos/data-access/adonet-data-services/data-access-layers-in-aspnet-applications
 msc.type: video
-ms.openlocfilehash: 7da39466777ba4aaec0c40d813fd31750f623bf2
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: f084f54c32cb31c5787b073751764efbe1643fbc
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37838031"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837909"
 ---
 <a name="data-access-layers-in-aspnet-applications"></a>ASP.NET 응용 프로그램의 데이터 액세스 레이어
 ====================

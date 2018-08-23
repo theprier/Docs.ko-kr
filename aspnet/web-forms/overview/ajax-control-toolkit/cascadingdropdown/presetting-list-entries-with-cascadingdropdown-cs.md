@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/cascadingdropdown/presetting-list-e
 title: CascadingDropDown (C#)를 사용 하 여 목록 항목 미리 설정 | Microsoft Docs
 author: wenz
 description: AJAX Control Toolkit에서 CascadingDropDown 컨트롤 하나 DropDownList 로드 변경에 관련 된 값이 anoth에 있도록 DropDownList 컨트롤을 확장 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 04c79748-0f21-4a3b-aba5-e1ce3161c32e
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/presetting-list-entries-with-cascadingdropdown-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 7797aa91452bfbed2695fd26e3b9d2a5783dd216
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 2599b5015f288b2e8d02577a0865252a862574a4
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37825091"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837001"
 ---
 <a name="presetting-list-entries-with-cascadingdropdown-c"></a>CascadingDropDown (C#)를 사용 하 여 목록 항목 미리 설정
 ====================

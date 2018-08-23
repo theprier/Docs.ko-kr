@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-dynamic-data/how-to-implement-custom-field-validati
 title: VB 또는 C#에서 명령적 논리를 사용 하 여 사용자 지정 필드 유효성 검사를 구현 하는 방법 | Microsoft Docs
 author: JoeStagner
 description: 이 비디오는 이전 동적 데이터 비디오에서 구현에서는 선언적 필드 유효성 검사에서 빌드를 val에 사용자 지정 프로그래밍 논리를 추가 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 12/11/2008
 ms.assetid: 22fb5270-7685-4f3a-919b-c23e180efe49
 msc.legacyurl: /web-forms/videos/aspnet-dynamic-data/how-to-implement-custom-field-validation-with-imperative-logic-in-vb-or-c
 msc.type: video
-ms.openlocfilehash: 52cd90ddbe48e42e8043ca3d1c79db5e85796c46
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: cd6a97f1c31cbb0c19b2cbfb867cd983144ffa8c
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37802801"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837916"
 ---
 <a name="how-to-implement-custom-field-validation-with-imperative-logic-in-vb-or-c"></a>VB 또는 C#에서 명령적 논리를 사용 하 여 사용자 지정 필드 유효성 검사를 구현 하는 방법
 ====================

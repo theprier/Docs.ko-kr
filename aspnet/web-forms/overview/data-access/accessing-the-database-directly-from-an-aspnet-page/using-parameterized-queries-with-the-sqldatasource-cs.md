@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/accessing-the-database-directly-from-an-aspn
 title: SqlDataSource (C#)를 사용 하 여 매개 변수가 있는 쿼리를 사용 하 여 | Microsoft Docs
 author: rick-anderson
 description: 이 자습서에서는 살펴보겠습니다 SqlDataSource 컨트롤을 계속 하 고 매개 변수가 있는 쿼리를 정의 하는 방법을 알아봅니다. 매개 변수를 지정할 수 있습니다 모두 선언 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/20/2007
 ms.assetid: 9128aaac-afe2-449f-84b2-bb1d035083c4
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/using-parameterized-queries-with-the-sqldatasource-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e4612c48259bfee12a68080ec902c589b2a378b0
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 654c0ce5520a206e5e8e2fd20bed92ac1075bfe9
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37819752"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837556"
 ---
 <a name="using-parameterized-queries-with-the-sqldatasource-c"></a>SqlDataSource (C#)를 사용 하 여 매개 변수가 있는 쿼리를 사용 하 여
 ====================

@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/controllers-and-routing/aspnet-mvc-controller
 title: ASP.NET MVC 컨트롤러 개요 (C#) | Microsoft Docs
 author: StephenWalther
 description: 이 자습서에서는 Stephen walther가 ASP.NET MVC 컨트롤러를 소개합니다. 새 컨트롤러를 만들고 다양 한 유형의 작업 응답을 반환 하는 방법을 배웁니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/16/2008
 ms.assetid: b985c49a-3668-455c-a366-f85f6bc64b12
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/aspnet-mvc-controllers-overview-cs
 msc.type: authoredcontent
-ms.openlocfilehash: f8ff1ed19e6357a9a4e98f755a677d05ae5c2ec4
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: e9ec460d323866e231072ce587c25239141da711
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37821724"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837592"
 ---
 <a name="aspnet-mvc-controller-overview-c"></a>ASP.NET MVC 컨트롤러 개요 (C#)
 ====================

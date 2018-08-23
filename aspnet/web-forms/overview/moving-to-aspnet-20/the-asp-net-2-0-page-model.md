@@ -3,17 +3,17 @@ uid: web-forms/overview/moving-to-aspnet-20/the-asp-net-2-0-page-model
 title: ASP.NET 2.0 페이지 모델 | Microsoft Docs
 author: microsoft
 description: Asp.net에서 1.x에서 개발자는 인라인 코드 모델 및 코드 숨김 코드 모델 중에서 선택 해야 했습니다. 코드 숨김의 Src attr 중 하나를 사용 하 여 구현할 수 있습니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/20/2005
 ms.assetid: af4575a3-0ae3-4638-ba4d-218fad7a1642
 msc.legacyurl: /web-forms/overview/moving-to-aspnet-20/the-asp-net-2-0-page-model
 msc.type: authoredcontent
-ms.openlocfilehash: 2c8a0624af30d93d2ba68dc4b0b0880d6e371616
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 4452169a01276cbc60f2a2057e6b560022ccd7c0
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37811703"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41838802"
 ---
 <a name="the-aspnet-20-page-model"></a>ASP.NET 2.0 페이지 모델
 ====================

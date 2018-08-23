@@ -3,17 +3,17 @@ uid: web-forms/videos/ajax-control-toolkit/create-a-new-custom-extender
 title: 새 사용자 지정 Extender 만들기 | Microsoft Docs
 author: JoeStagner
 description: 이 비디오 Joe의 AJAX Control Toolkit를 사용 하 여 새 사용자 지정 AJAX Control Extender를 만드는 방법을 보여 줍니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/22/2009
 ms.assetid: dacc2d88-5768-4721-8624-c603e2088670
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/create-a-new-custom-extender
 msc.type: video
-ms.openlocfilehash: f5099f896af82ffbdb68a8db0f1fe631da290dc5
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 2fbb725b8d8a40bf08b61e657b54d9f3b75c3590
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37810110"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837854"
 ---
 <a name="create-a-new-custom-extender"></a>새 사용자 지정 Extender 만들기
 ====================

@@ -3,17 +3,17 @@ uid: web-forms/videos/sql-2005/enabling-full-text-search-in-your-text-data
 title: 텍스트 데이터의 전체 텍스트 검색을 사용 하도록 설정 | Microsoft Docs
 author: microsoft
 description: 전체 텍스트 검색을 사용 하면 데이터베이스에도 Microsoft Word 문서 또는 다른 파일 형식-텍스트의 큰 부분을 저장 하 고 복잡 한 qu. 수행 수 있습니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/14/2006
 ms.assetid: f42dba2b-7efd-4f1e-8bed-f3816edcf44a
 msc.legacyurl: /web-forms/videos/sql-2005/enabling-full-text-search-in-your-text-data
 msc.type: video
-ms.openlocfilehash: 7b5936daf55c821324a0b870e106257b481b6e90
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: e01c586446d5b98b5cc81b1529e75876b0f60d28
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37818387"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837365"
 ---
 <a name="enabling-full-text-search-in-your-text-data"></a>텍스트 데이터의 전체 텍스트 검색을 사용 하도록 설정
 ====================

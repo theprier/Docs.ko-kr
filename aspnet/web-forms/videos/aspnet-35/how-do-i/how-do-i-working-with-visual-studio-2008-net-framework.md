@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-35/how-do-i/how-do-i-working-with-visual-studio-200
 title: '[어떻게 할까요?] Visual Studio 2008.NET Framework를 사용 하 여 작업 | Microsoft Docs'
 author: rick-anderson
 description: 이 비디오에서는 Visual Studio 2008을 사용 하 여 다양 한 버전의.NET framework 사용 하 여 작업 하는 방법을 하겠습니다. 이 다중 대상 지정 이라고 합니다. 또한 됩니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/14/2008
 ms.assetid: babf24f7-f830-4091-a415-02a2661c724b
 msc.legacyurl: /web-forms/videos/aspnet-35/how-do-i/how-do-i-working-with-visual-studio-2008-net-framework
 msc.type: video
-ms.openlocfilehash: a946906ef5e4c1fb6149bf70d0c92dae283f1aec
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: dc3a3f8b4b4bd67fb74b704f97d90fd2bfe75d11
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37809367"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41835544"
 ---
 <a name="how-do-i-working-with-visual-studio-2008-net-framework"></a>[어떻게 할까요?] Visual Studio 2008.NET Framework로 작업
 ====================

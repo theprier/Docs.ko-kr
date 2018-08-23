@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/contact-manager/iteration-2-make-the-applicat
 title: '반복 #2 – 확인 응용 프로그램 모양 꾸미기 (C#) | Microsoft Docs'
 author: microsoft
 description: 이 반복에서 기본 ASP.NET MVC 보기 마스터 페이지를 수정 및 스타일 시트를 연계 하 여 응용 프로그램의 모양을 개선 합니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/20/2009
 ms.assetid: f1173feb-11ee-4017-8f3f-86599ea6ae13
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-2-make-the-application-look-nice-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 89dc31d8ab0d73aac3a79a0a942121bb9a240eb7
-ms.sourcegitcommit: a25b572eaed21791230c85416f449f66a405ec19
+ms.openlocfilehash: c8bbd20cb64fb27a0a6de2cdc14743f6961f4bf0
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39396142"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837910"
 ---
 <a name="iteration-2--make-the-application-look-nice-c"></a>반복 #2 – 응용 프로그램 모양 꾸미기 (C#) 확인
 ====================

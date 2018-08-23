@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/custom-formatting/using-templatefields-in-th
 title: (C#) DetailsView 컨트롤에서 TemplateFields 사용 | Microsoft Docs
 author: rick-anderson
 description: GridView를 사용 하 여 사용 가능한 동일한 TemplateFields 기능 DetailsView 컨트롤과 함께 사용할 수 있습니다. 이 자습서에서는 제품 중 하나가 표시 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/31/2010
 ms.assetid: 83efb21f-b231-446e-9356-f4c6cbcc6713
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-templatefields-in-the-detailsview-control-cs
 msc.type: authoredcontent
-ms.openlocfilehash: a6467f6532ff72a82f4f416de2286377766ea264
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 47c486737a3320bea631605621baac54dc6d257a
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37823964"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837645"
 ---
 <a name="using-templatefields-in-the-detailsview-control-c"></a>(C#) DetailsView 컨트롤에서 TemplateFields 사용
 ====================

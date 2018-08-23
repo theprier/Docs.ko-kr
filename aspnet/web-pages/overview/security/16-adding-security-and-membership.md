@@ -3,17 +3,17 @@ uid: web-pages/overview/security/16-adding-security-and-membership
 title: 페이지 (Razor) 사이트를 ASP.NET 웹 보안 및 멤버 자격 추가 | Microsoft Docs
 author: tfitzmac
 description: 이 챕터의 일부 페이지에 로그인 하는 사용자만 사용할 수 있도록 웹 사이트를 보호 하는 방법을 보여 줍니다. (또한 표시 페이지 tha...를 만드는 방법
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/24/2014
 ms.assetid: 7a77c2c0-deea-4290-a9c3-97958891758e
 msc.legacyurl: /web-pages/overview/security/16-adding-security-and-membership
 msc.type: authoredcontent
-ms.openlocfilehash: 722d4bc8ab6b7d8eedac87961abdf4b9f900c613
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: ae574706ecd14f1cafdb2d8b6340477e50246a32
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37817320"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41828503"
 ---
 <a name="adding-security-and-membership-to-an-aspnet-web-pages-razor-site"></a>ASP.NET 웹 페이지 (Razor) 사이트에 보안 및 멤버 자격 추가
 ====================

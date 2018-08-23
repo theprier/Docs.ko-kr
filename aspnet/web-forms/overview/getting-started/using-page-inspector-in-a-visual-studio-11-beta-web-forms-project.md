@@ -3,17 +3,17 @@ uid: web-forms/overview/getting-started/using-page-inspector-in-a-visual-studio-
 title: Visual Studio 2012에 ASP.NET Web forms 페이지 검사기 사용 | Microsoft Docs
 author: rick-anderson
 description: Visual Studio 2012 용 페이지 검사기는 통합 된 브라우저를 사용 하 여 웹 개발 도구입니다. 통합 된 브라우저 및 페이지 검사기에서 모든 요소를 선택 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/15/2012
 ms.assetid: 2ece0bf4-aae5-4ff4-8f62-28e0819d4f86
 msc.legacyurl: /web-forms/overview/getting-started/using-page-inspector-in-a-visual-studio-11-beta-web-forms-project
 msc.type: authoredcontent
-ms.openlocfilehash: 8e914b87305fa729659822ec1166e9d1947e59cb
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: d2c377f8466f8f324b75ce60860aa00c11bc0ffe
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37806276"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837675"
 ---
 <a name="using-page-inspector-for-visual-studio-2012-in-aspnet-web-forms"></a>ASP.NET Web Forms에서 Visual Studio 2012 용 페이지 검사기 사용
 ====================

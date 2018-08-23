@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/advanced-data-access-scenarios/protecting-co
 title: 연결 문자열 및 기타 구성 정보 (VB) 보호 | Microsoft Docs
 author: rick-anderson
 description: 일반적으로 ASP.NET 응용 프로그램 Web.config 파일에서 구성 정보를 저장 합니다. 이 정보 중 일부 중요 한 및 보호를 보장 합니다. 규정...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/03/2007
 ms.assetid: cd17dbe1-c5e1-4be8-ad3d-57233d52cef1
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/protecting-connection-strings-and-other-configuration-information-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7007496ad3aa137d8a6a9d4ba8e486d6b32ec295
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 9713bbd983c4e922273a23356cbbb3848a8b7c50
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37810906"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41838556"
 ---
 <a name="protecting-connection-strings-and-other-configuration-information-vb"></a>연결 문자열 및 기타 구성 정보 (VB)를 보호합니다.
 ====================

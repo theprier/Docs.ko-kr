@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/cascadingdropdown/using-auto-postba
 title: CascadingDropDown (C#)를 사용 하 여 자동 포스트백을 사용 하 여 | Microsoft Docs
 author: wenz
 description: AJAX Control Toolkit에서 CascadingDropDown 컨트롤 하나 DropDownList 로드 변경에 관련 된 값이 anoth에 있도록 DropDownList 컨트롤을 확장 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 6755d8d9-14be-4a1d-86e5-1a6110f3dea8
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/using-auto-postback-with-cascadingdropdown-cs
 msc.type: authoredcontent
-ms.openlocfilehash: bece4f78b46c44db988e04e0e987450d94c37aab
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 7c84951691935d9976f961f65f96fa70633ecbce
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37819382"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41838792"
 ---
 <a name="using-auto-postback-with-cascadingdropdown-c"></a>CascadingDropDown (C#)를 사용 하 여 자동 포스트백을 사용 하 여
 ====================

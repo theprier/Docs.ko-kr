@@ -3,17 +3,17 @@ uid: web-forms/videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-overvi
 title: '[어떻게 할까요?] LINQ to SQL: 개요 | Microsoft Docs'
 author: scottstanfield
 description: C# 및 VB 언어 기능을 새 SQL 작성 하지 않고도 코드에서 직접 데이터 액세스를 지원 합니다. 이 비디오에서는 LINQ (언어 정수...를 사용 하는 최소 단계 보여 줍니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/15/2007
 ms.assetid: f8d01146-8048-4750-a43b-aae53e3bd5f6
 msc.legacyurl: /web-forms/videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-overview
 msc.type: video
-ms.openlocfilehash: fa15b1c7749b0fee07f721ac92b1e55d800fd894
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b3984707c63db3e1f26bbf3723a92530f2a0b598
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37818873"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837019"
 ---
 <a name="how-do-i-linq-to-sql-overview"></a>[어떻게 할까요?] LINQ to SQL: 개요
 ====================

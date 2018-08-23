@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/reorderlist/drag-and-drop-via-reord
 title: ReorderList (C#)를 통해 끌어서 놓기 | Microsoft Docs
 author: wenz
 description: ReorderList 컨트롤이 AJAX Control Toolkit에서 끌어서 놓기를 통해 사용자에 의해 다시 정렬할 수 있는 목록을 제공 합니다. 현재 순서 목록에는...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 6350ee8e-11d6-4aff-b51c-942878014835
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/reorderlist/drag-and-drop-via-reorderlist-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 6c31e1e9b88d07fb4fe2881ac24b7c9c10126c96
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 15ae6ae60381f3f656f667a97dac72dbb283c80e
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37803721"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41837225"
 ---
 <a name="drag-and-drop-via-reorderlist-c"></a>ReorderList (C#)를 통해 끌어서 놓기
 ====================
