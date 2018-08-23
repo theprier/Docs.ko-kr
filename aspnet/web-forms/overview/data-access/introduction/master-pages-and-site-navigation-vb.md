@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/introduction/master-pages-and-site-navigatio
 title: 마스터 페이지 및 사이트 탐색 (VB) | Microsoft Docs
 author: rick-anderson
 description: 친숙 한 웹 사이트의 일반적인 특징 중 하나는 일관 되 고 사이트 전체 페이지 레이아웃 및 탐색 체계를가지고 있다고 합니다. 이 자습서는 방법을 찾고 y...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/31/2010
 ms.assetid: 022801d8-a327-4d0c-8780-6094c9cee00d
 msc.legacyurl: /web-forms/overview/data-access/introduction/master-pages-and-site-navigation-vb
 msc.type: authoredcontent
-ms.openlocfilehash: d00e535445551a7cfe2d4c46be36abccea31c770
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 2a814fe8ed4a902061b2c50fd9d63983c4f6b2e8
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37810817"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831505"
 ---
 <a name="master-pages-and-site-navigation-vb"></a>마스터 페이지 및 사이트 탐색 (VB)
 ====================
