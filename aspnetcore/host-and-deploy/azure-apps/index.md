@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 07/24/2018
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: ece61a3e362ec5e2ff8f415351a0f9257fc72098
-ms.sourcegitcommit: b4c7b1a4c48dec0865f27874275c73da1f75e918
+ms.openlocfilehash: 9a7d20378cac597b748d8a60eb0f0bf17c9ba082
+ms.sourcegitcommit: d27317c16f113e7c111583042ec7e4c5a26adf6f
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39228613"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "41748581"
 ---
 # <a name="host-aspnet-core-on-azure-app-service"></a>Azure App Service에서 ASP.NET Core 호스트
 
@@ -99,7 +99,7 @@ Azure App Service/IIS에서 호스트하는 앱의 일반적인 배포 구성 �
 다음과 같은 방법으로 Azure App Service에 ASP.NET Core 미리 보기 앱을 배포할 수 있습니다.
 
 * [미리 보기 사이트 확장 설치](#install-the-preview-site-extension)
-* [자체 포함된 앱 배포](#deploy-the-app-self-contained)
+<!-- * [Deploy the app self-contained](#deploy-the-app-self-contained) -->
 * [Web Apps for Containers에서 Docker 사용](#use-docker-with-web-apps-for-containers)
 
 미리 보기 사이트 확장을 사용하는 데 문제가 발생하는 경우 [GitHub](https://github.com/aspnet/azureintegration/issues/new)에서 문제를 엽니다.
@@ -138,14 +138,16 @@ ARM 템플릿을 사용하여 앱을 만들고 배포하는 경우 `siteextensio
 
 [!code-json[Main](index/sample/arm.json?highlight=2)]
 
-### <a name="deploy-the-app-self-contained"></a>자체 포함된 앱 배포
+<!--
+### Deploy the app self-contained
 
-배포에 미리 보기 런타임을 전달하는 [자체 포함된 앱](/dotnet/core/deploying/#self-contained-deployments-scd)을 배포할 수 있습니다. 자체 포함된 앱을 배포하는 경우:
+A [self-contained app](/dotnet/core/deploying/#self-contained-deployments-scd) can be deployed that carries the preview runtime in the deployment. When deploying a self-contained app:
 
-* 사이트는 준비할 필요가 없습니다.
-* 공유 런타임 및 서버의 호스트를 사용하여 프레임워크 종속 배포를 위해 게시할 때와 다르게 앱을 게시해야 합니다.
+* The site doesn't need to be prepared.
+* The app must be published differently than when publishing for a framework-dependent deployment with the shared runtime and host on the server.
 
-자체 포함된 앱은 모든 ASP.NET Core 앱에 대한 옵션입니다.
+Self-contained apps are an option for all ASP.NET Core apps.
+-->
 
 ### <a name="use-docker-with-web-apps-for-containers"></a>Web Apps for Containers에서 Docker 사용
 
