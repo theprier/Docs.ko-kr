@@ -3,17 +3,17 @@ uid: web-api/overview/odata-support-in-aspnet-web-api/odata-v3/creating-an-odata
 title: Web API 2 OData v3 엔드포인트 만들기 | Microsoft Docs
 author: MikeWasson
 description: Open Data Protocol (OData)는 웹에 대 한 데이터 액세스 프로토콜. OData는 데이터 구조, 데이터를 쿼리 및 데이터를 조작 하는 일관 된 방식을 제공 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/25/2014
 ms.assetid: 262843d6-43a2-4f1c-82d9-0b90ae6df0cf
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/creating-an-odata-endpoint
 msc.type: authoredcontent
-ms.openlocfilehash: 67a41f37a09d089336dc96d393f929e56661c4f8
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 654f697c8d095d45ba31e2808c52f9ad24b606c8
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37813710"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836334"
 ---
 <a name="creating-an-odata-v3-endpoint-with-web-api-2"></a>Web API 2 OData v3 엔드포인트 만들기
 ====================

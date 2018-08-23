@@ -3,17 +3,17 @@ uid: web-forms/videos/how-do-i/how-do-i-save-and-load-view-state-information-for
 title: '[어떻게 할까요?] 저장 및 사용자 지정에 대 한 부하 뷰 상태 정보에 대 한 웹 서버 컨트롤 | Microsoft Docs'
 author: rick-anderson
 description: 이 비디오 Chris Pels 됩니다 유지 및 사용자 정의 컨트롤의 ViewState에 정보를 복원 하는 방법을 보여줍니다. 먼저 간단한 값을 유지 하는 방법 알아보기...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/18/2008
 ms.assetid: 20750baf-ad6d-4754-a1f5-644b952f2ebb
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-save-and-load-view-state-information-for-a-custom-web-server-control
 msc.type: video
-ms.openlocfilehash: bcac44c0578ec0923a9bbae61640cfd363220c22
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 0996dbfa68f41de72fd5ec81bd056b6a41f0744c
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37826438"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836393"
 ---
 <a name="how-do-i-save-and-load-view-state-information-for-a-custom-web-server-control"></a>[어떻게 할까요?] 저장 및 사용자 지정 웹 서버 컨트롤에 대 한 부하 뷰 상태 정보
 ====================

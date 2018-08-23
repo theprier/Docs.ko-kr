@@ -3,17 +3,17 @@ uid: web-forms/videos/how-do-i/how-do-i-use-the-aspnet-iis-registration-tool-to-
 title: 사용 하는 방법 ASP.NET IIS 등록 도구를 ASP.NET 구성 | Microsoft Docs
 author: rick-anderson
 description: 이 비디오 Chris Pels ASP.NET 구성 ASP.NET IIS 등록 도구를 사용 하는 방법을 보여 줍니다. 첫째, 파일 확장명의 asp.net에 매핑되는 방법을 참조 합니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/01/2008
 ms.assetid: 2565839b-30b8-45e1-946e-34fffe940c48
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-use-the-aspnet-iis-registration-tool-to-configure-aspnet
 msc.type: video
-ms.openlocfilehash: 9e577901e04c9c92113f754cc5ef13ad21274afa
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: e8cc195c24117be165d92633d3c163032c8f2607
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37818824"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41835716"
 ---
 <a name="how-do-i-use-the-aspnet-iis-registration-tool-to-configure-aspnet"></a>ASP.NET을 구성 하는 ASP.NET IIS 등록 도구를 사용 하는 방법
 ====================

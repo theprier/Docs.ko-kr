@@ -3,17 +3,17 @@ uid: web-forms/videos/jquery/how-do-i-make-ajax-calls-using-jquery
 title: '방법: Ajax 호출 하 jQuery를 사용 하 여? | Microsoft 문서'
 author: rick-anderson
 description: 이 비디오 Chris Pels jQuery 라이브러리를 사용 하 여 Ajax 호출을 수행 하는 방법을 보여 줍니다. 샘플 웹 사이트를 반환 하는 간단한 웹 서비스를 포함 하는 중... 만들어집니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/12/2010
 ms.assetid: 112b6255-ec37-4311-b967-c1aacce78bc8
 msc.legacyurl: /web-forms/videos/jquery/how-do-i-make-ajax-calls-using-jquery
 msc.type: video
-ms.openlocfilehash: 2ae43ad45fd823a814156ab1f863484e2d113a63
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 91a959da3405926980fb69aaeaa230ddec6cdc4e
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37807205"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41835189"
 ---
 <a name="how-do-i-make-ajax-calls-using-jquery"></a>방법: Ajax 호출 하 jQuery를 사용 하 여?
 ====================

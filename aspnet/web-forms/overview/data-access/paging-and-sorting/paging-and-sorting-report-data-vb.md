@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report
 title: 페이징 및 정렬 보고서 데이터 (VB) | Microsoft Docs
 author: rick-anderson
 description: 페이징 및 정렬 기능이 두 가지 매우 일반적인 온라인 응용 프로그램에서 데이터를 표시 하는 경우입니다. 이 자습서에서는 살펴보겠습니다는 첫 번째 정렬를 추가 하 고...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/15/2006
 ms.assetid: b895e37e-0e69-45cc-a7e4-17ddd2e1b38d
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/paging-and-sorting-report-data-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e8e33bc11074815b5beacd92c49c95f8ea9da2c0
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 2e1cc844122b0fdebbc0be09f88baa11a461ab8e
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37808462"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41828803"
 ---
 <a name="paging-and-sorting-report-data-vb"></a>페이징 및 정렬 보고서 데이터 (VB)
 ====================

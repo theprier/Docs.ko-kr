@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projec
 title: 표시를 사용자 지정 오류 페이지 (C#) | Microsoft Docs
 author: rick-anderson
 description: 표시 되는 내용에 사용자는 ASP.NET 웹 응용 프로그램에서 런타임 오류가 발생 하는 경우 답변 하는 방법에 따라 달라 집니다 웹 사이트 &lt;customErrors&gt; 구성 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/09/2009
 ms.assetid: cb061642-faf3-41b2-9372-69e13444d458
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/displaying-a-custom-error-page-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 8cd10806b3c803269d00265156ca618aef1db13a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 449b8eb26f3f6018fdd6c6dcc1de1c8d58214ac3
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37828685"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836684"
 ---
 <a name="displaying-a-custom-error-page-c"></a>사용자 지정 오류 페이지 (C#)를 표시합니다.
 ====================

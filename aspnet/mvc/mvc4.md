@@ -3,17 +3,17 @@ uid: mvc/mvc4
 title: ASP.NET MVC 4 | Microsoft Docs
 author: rick-anderson
 description: ASP.NET MVC 4 ASP.NET MVC 4는 체계적인 디자인 패턴 및 AS. 기능을 사용 하 여 확장성이 뛰어난 표준 기반 웹 응용 프로그램을 빌드하기 위한 프레임 워크...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 09/12/2011
 ms.assetid: 1279f5b1-390f-4b4b-9e6e-f947cb1ef5f5
 msc.legacyurl: /mvc/mvc4
 msc.type: content
-ms.openlocfilehash: 0e96bd0184fc3bff66d677bb0b3ebb119b9ad3e7
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: fe66e81734efda20dad515452bb13661dcbf0815
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37814538"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41835456"
 ---
 <a name="aspnet-mvc-4"></a>ASP.NET MVC 4
 ====================

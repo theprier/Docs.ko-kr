@@ -3,17 +3,17 @@ uid: web-forms/videos/vs-2005/how-do-i-create-my-own-bug-work-item
 title: '[어떻게 할까요?] 나만의 버그 작업 항목 만들기 | Microsoft 문서'
 author: rick-anderson
 description: 이 비디오에는 Visual Studio Team System의 사용에 대 한 고유한 버그 작업 항목 정의 만드는 방법을 보여 줍니다. XML 파일에서 작업 항목 정의 방법을 표시 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/12/2007
 ms.assetid: ab0805a3-76ff-4557-8750-a24d0f79a4c9
 msc.legacyurl: /web-forms/videos/vs-2005/how-do-i-create-my-own-bug-work-item
 msc.type: video
-ms.openlocfilehash: 0f90d890d19d58875f0d01b794b4331dc4291d12
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: fafe6a0f4e1c525252921805e33b68638729d8bf
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37811285"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831597"
 ---
 <a name="how-do-i-create-my-own-bug-work-item"></a>[어떻게 할까요?] 나만의 버그 작업 항목 만들기
 ====================

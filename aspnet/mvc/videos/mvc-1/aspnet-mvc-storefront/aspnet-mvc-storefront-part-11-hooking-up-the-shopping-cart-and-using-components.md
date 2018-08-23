@@ -3,17 +3,17 @@ uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-11-hookin
 title: 'ASP.NET MVC Storefront 11 부: 쇼핑 카트 및 구성 요소를 사용 하 여 후크 | Microsoft Docs'
 author: robconery
 description: 이 에피소드에서 쇼핑 카트 최대 사이트 연결 했으며 컨트롤러 내에서 일부 테스트를 실행 합니다. MVC, th의 알려지지 않은 기능을 사용 하 여 구성 요소를 만드나요...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/19/2008
 ms.assetid: 25cc35b4-601e-448b-abf1-bc253b30d232
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-11-hooking-up-the-shopping-cart-and-using-components
 msc.type: video
-ms.openlocfilehash: d3cf98f60b19c0594cc49514e8c8263d20c4057e
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 6346362aa885f4da667ad329993b0d816c71120a
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37824363"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836306"
 ---
 <a name="aspnet-mvc-storefront-part-11-hooking-up-the-shopping-cart-and-using-components"></a>ASP.NET MVC Storefront 11 부: 쇼핑 카트 연결 및 구성 요소를 사용 하 여
 ====================

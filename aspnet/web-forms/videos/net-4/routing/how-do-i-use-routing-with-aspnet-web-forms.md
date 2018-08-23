@@ -3,17 +3,17 @@ uid: web-forms/videos/net-4/routing/how-do-i-use-routing-with-aspnet-web-forms
 title: ASP.NET Web Forms를 사용 하 여 사용 하 여 라우팅 어떻게 할까요? | Microsoft 문서
 author: rick-anderson
 description: 이 비디오에서는 Chris Pels ASP.NET 4에서 Web Forms에 대 한 라우팅을 구현 하는 방법을 보여 줍니다. 먼저 URL 라우팅의 개념을 p URL 매핑 비교할...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 10/15/2010
 ms.assetid: a3ab6cd9-8f71-4b73-9336-21c0de078269
 msc.legacyurl: /web-forms/videos/net-4/routing/how-do-i-use-routing-with-aspnet-web-forms
 msc.type: video
-ms.openlocfilehash: 4b570df24b7a931b3853c5117a29d405ca8ecf24
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b1bba2725f893032f49fa1d43dbc7348f2c21e6e
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37830204"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836107"
 ---
 <a name="how-do-i-use-routing-with-aspnet-web-forms"></a>ASP.NET Web Forms를 사용 하 여 사용 하 여 라우팅 어떻게 할까요?
 ====================

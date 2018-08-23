@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-security/membership/creating-user-account
 title: 사용자 계정 (VB) 만들기 | Microsoft Docs
 author: rick-anderson
 description: 이 자습서에서는 새 사용자 계정을 만드는 (SqlMembershipProvider)를 통해 멤버 자격 프레임 워크를 사용 하 여 살펴봅니다. 미국 새로 만드는 방법을 살펴보겠습니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/18/2008
 ms.assetid: 9ef3e893-bebe-4b13-9fe5-8b71720dd85e
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/creating-user-accounts-vb
 msc.type: authoredcontent
-ms.openlocfilehash: fe5e55df3fa9f65a94199c2064a785255f231537
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: c7f5f4ec6ce27c1a52569e6414b8f96892f68574
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37815345"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831521"
 ---
 <a name="creating-user-accounts-vb"></a>사용자 계정 만들기 (VB)
 ====================

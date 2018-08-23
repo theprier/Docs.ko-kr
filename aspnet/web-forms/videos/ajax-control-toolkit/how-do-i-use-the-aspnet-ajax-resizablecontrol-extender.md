@@ -3,17 +3,17 @@ uid: web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-resizabl
 title: '[어떻게 할까요?] ASP.NET AJAX ResizableControl Extender 사용 | Microsoft 문서'
 author: JoeStagner
 description: ASP.NET AJAX Control Toolkit에서 ResizableControl extender를 사용 하면 사용자 크기를 조정할 수 있는 웹 페이지의 지역을 지정 하도록 개발자 동적...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/01/2007
 ms.assetid: 99b23369-dac6-458b-b002-56be35f43236
 msc.legacyurl: /web-forms/videos/ajax-control-toolkit/how-do-i-use-the-aspnet-ajax-resizablecontrol-extender
 msc.type: video
-ms.openlocfilehash: da3f54e84602bd9276f4b063ebdddab099f03691
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: d597b8bbb60827e3cbcea16c49e5deb9d20ee357
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37808118"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836298"
 ---
 <a name="how-do-i-use-the-aspnet-ajax-resizablecontrol-extender"></a>[어떻게 할까요?] ASP.NET AJAX ResizableControl Extender 사용
 ====================

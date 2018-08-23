@@ -3,17 +3,17 @@ uid: web-api/overview/formats-and-model-binding/content-negotiation
 title: 콘텐츠 협상 ASP.NET Web API에서에서 | Microsoft Docs
 author: MikeWasson
 description: ASP.NET Web API HTTP 콘텐츠 협상을 구현 하는 방법을 설명 합니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/20/2012
 ms.assetid: 0dd51b30-bf5a-419f-a1b7-2817ccca3c7d
 msc.legacyurl: /web-api/overview/formats-and-model-binding/content-negotiation
 msc.type: authoredcontent
-ms.openlocfilehash: 2314a263a12c74e80c08391ae03425955a82458a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: e936bdfa52f786ec86d3e84eac3cd644225b6f92
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37810319"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41835183"
 ---
 <a name="content-negotiation-in-aspnet-web-api"></a>ASP.NET Web API에서에서 콘텐츠 협상
 ====================

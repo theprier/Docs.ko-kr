@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/basic-reporting/programmatically-setting-the
 title: 프로그래밍 방식으로 설정 ObjectDataSource의 매개 변수 값 (C#) | Microsoft Docs
 author: rick-anderson
 description: 이 자습서는 단일 입력된 매개 변수를 수락 하 고 데이터를 반환 하는 BLL 및 DAL에 메서드를 추가 하는 방법을 살펴보겠습니다. 이 예제에서는이 매개 변수를 설정 하 고...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/31/2010
 ms.assetid: 1c4588bb-255d-4088-b319-5208da756f4d
 msc.legacyurl: /web-forms/overview/data-access/basic-reporting/programmatically-setting-the-objectdatasource-s-parameter-values-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 561b197aae925eb432a3e93d37b347a081f64a2b
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 78de288977f55ffe73c5b34329cd5b5c5c84334f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37827354"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836635"
 ---
 <a name="programmatically-setting-the-objectdatasources-parameter-values-c"></a>ObjectDataSource의 매개 변수 값 (C#)를 프로그래밍 방식으로 설정
 ====================

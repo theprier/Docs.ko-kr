@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/advanced-data-access-scenarios/configuring-t
 title: 데이터 액세스 레이어의 연결 및 명령 수준 설정 (C#) 구성 | Microsoft Docs
 author: rick-anderson
 description: 자동으로 입력 데이터 집합에서 TableAdapters 데이터베이스에 연결 명령을 실행 하 고 결과 사용 하 여 DataTable을 채우는 주의 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/03/2007
 ms.assetid: cd330dd9-6254-4305-9351-dd727384c83b
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/configuring-the-data-access-layer-s-connection-and-command-level-settings-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 835f17c35d85658a855072bf6d9355fdae9f63ab
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 142c8e93422ac03d2f2205b6635f88b982b4c9e2
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37837839"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836695"
 ---
 <a name="configuring-the-data-access-layers-connection--and-command-level-settings-c"></a>데이터 액세스 레이어의 연결 및 명령 수준 설정 (C#) 구성
 ====================

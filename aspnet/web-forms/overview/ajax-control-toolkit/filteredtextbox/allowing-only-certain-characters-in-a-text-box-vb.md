@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/filteredtextbox/allowing-only-certa
 title: (VB) 텍스트 상자에 특정 문자만 허용 | Microsoft Docs
 author: wenz
 description: ASP.NET 유효성 검사 컨트롤은 사용자 입력에 특정 문자만 허용 됩니다 있는지 확인할 수 있습니다. 그러나이 여전히 해도 사용자 입력 으로부터 잘못 된...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 33af23f1-4016-4740-8fb2-37d1773452cd
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/filteredtextbox/allowing-only-certain-characters-in-a-text-box-vb
 msc.type: authoredcontent
-ms.openlocfilehash: e53d7282237c94b88c712e53bf607dcb94ccf1f2
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: aec5a3af98cf40e460f4164fb8950e8029002937
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37830748"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41835999"
 ---
 <a name="allowing-only-certain-characters-in-a-text-box-vb"></a>(VB) 텍스트 상자에 특정 문자만 허용
 ====================

@@ -3,17 +3,17 @@ uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/deploying-da
 title: 데이터베이스 프로젝트 배포 | Microsoft Docs
 author: jrjlee
 description: '참고: 다 수의 엔터프라이즈 배포 시나리오에 필요한 배포 된 데이터베이스를 증분 업데이트를 게시 하는 기능입니다. 대안은를 다시 만드는 중...'
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: 832f226a-1aa3-4093-8c29-ce4196793259
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/deploying-database-projects
 msc.type: authoredcontent
-ms.openlocfilehash: 1e5af29a91f5f432f9241dc3ba0c8fc0bfcf773f
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 43fa197a1d5a3cf521f4d2202754ff0d121cebe3
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37804985"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836562"
 ---
 <a name="deploying-database-projects"></a>데이터베이스 프로젝트 배포
 ====================

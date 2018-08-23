@@ -3,17 +3,17 @@ uid: web-forms/videos/aspnet-ajax/how-do-i-trigger-an-updatepanel-refresh-from-a
 title: '[어떻게 할까요?] DropDownList 컨트롤에서 UpdatePanel 새로 고침을 트리거할? | Microsoft 문서'
 author: JoeStagner
 description: 대부분의 ASP.NET AJAX UpdatePanel의 비디오에서 해당 콘텐츠를 새로 고칠 UpdatePanel을 단추 컨트롤을 사용 했습니다. 아직 모든 이벤트를 사용할 수 있습니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/22/2007
 ms.assetid: e90defdb-b6b1-4f38-8f6a-7adccbb426ef
 msc.legacyurl: /web-forms/videos/aspnet-ajax/how-do-i-trigger-an-updatepanel-refresh-from-a-dropdownlist-control
 msc.type: video
-ms.openlocfilehash: 832af51b42312cde51f99fb81943103b525fcfab
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 21dedc5a8d934e9284cf13b2075dbff637a130de
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37834837"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831513"
 ---
 <a name="how-do-i-trigger-an-updatepanel-refresh-from-a-dropdownlist-control"></a>[어떻게 할까요?] DropDownList 컨트롤에서 UpdatePanel 새로 고침을 트리거할?
 ====================

@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/custom-formatting/using-the-formview-s-templ
 title: FormView의 템플릿 (C#)를 사용 하 여 | Microsoft Docs
 author: rick-anderson
 description: 하지 DetailsView를 달리 FormView 필드로 구성 됩니다. 대신, FormView 템플릿을 사용 하 여 렌더링 됩니다. 이 자습서의 6.를 사용 하 여 살펴보겠습니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/31/2010
 ms.assetid: d3f062af-88cf-426d-af44-e41f32c41672
 msc.legacyurl: /web-forms/overview/data-access/custom-formatting/using-the-formview-s-templates-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 637f0778bd959d2bae52edccb5c5ac259f4d3644
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 1a7cf17d8cbd0a5a17a387b9a70336a1b06efde7
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37824019"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41835154"
 ---
 <a name="using-the-formviews-templates-c"></a>FormView의 템플릿 (C#)를 사용 하 여
 ====================

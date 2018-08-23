@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/slider/databinding-the-slider-contr
 title: 슬라이더 컨트롤 (VB) 데이터 바인딩 | Microsoft Docs
 author: wenz
 description: AJAX Control Toolkit의 슬라이더 컨트롤에 마우스를 사용 하 여 제어할 수 있는 그래픽 슬라이더를 제공 합니다. 현재 positio 바인딩하는 것이 불가능 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 4f3ba53f-d166-422d-b29c-403348057836
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/slider/databinding-the-slider-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c55ba530bbe7eee7c02e5dfb2e80dddafabc9325
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 284a650d1b63ceed887deb3ddd639fe9fd27019f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37836430"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836400"
 ---
 <a name="databinding-the-slider-control-vb"></a>데이터 바인딩 슬라이더 컨트롤 (VB)
 ====================

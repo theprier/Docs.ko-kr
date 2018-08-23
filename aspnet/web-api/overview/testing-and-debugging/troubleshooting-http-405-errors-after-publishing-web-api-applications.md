@@ -3,17 +3,17 @@ uid: web-api/overview/testing-and-debugging/troubleshooting-http-405-errors-afte
 title: 해결 HTTP 405 오류 게시 후 Web API 2 응용 프로그램 | Microsoft Docs
 author: rmcmurray
 description: 이 자습서에는 프로덕션 웹 서버에 Web API 응용 프로그램을 게시 한 후 HTTP 405 오류를 해결 하는 방법을 설명 합니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/01/2014
 ms.assetid: 07ec7d37-023f-43ea-b471-60b08ce338f7
 msc.legacyurl: /web-api/overview/testing-and-debugging/troubleshooting-http-405-errors-after-publishing-web-api-applications
 msc.type: authoredcontent
-ms.openlocfilehash: 7dd7fd1fc6be9bc2f843c293222179a9774dff3c
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 735b8ceeafa63e0546529ef17f103070dc760794
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37827866"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836553"
 ---
 <a name="troubleshooting-http-405-errors-after-publishing-web-api-2-applications"></a>해결 HTTP 405 오류 게시 후 Web API 2 응용 프로그램
 ====================

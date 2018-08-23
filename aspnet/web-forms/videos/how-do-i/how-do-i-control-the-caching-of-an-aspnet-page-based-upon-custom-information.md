@@ -3,17 +3,17 @@ uid: web-forms/videos/how-do-i/how-do-i-control-the-caching-of-an-aspnet-page-ba
 title: '[어떻게 할까요?] 사용자 지정 정보에 따라 ASP.NET 페이지의 캐싱 컨트롤 | Microsoft Docs'
 author: rick-anderson
 description: 이 비디오 Chris Pels 캐싱 사용자 지정 정보에 따라 ASP.NET 페이지에 대 한 조건을 제어 하는 방법을 보여 줍니다. 샘플 페이지 만들어집니다 및 O. 다음...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/19/2009
 ms.assetid: f230c316-1313-4b8f-967c-62f9684fe378
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-control-the-caching-of-an-aspnet-page-based-upon-custom-information
 msc.type: video
-ms.openlocfilehash: d069b7798d3659e9f6786fb8d63862817fbdd68b
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: a9ed2baad3460441bc57d97bf74f6de5977db0c9
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37808696"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836294"
 ---
 <a name="how-do-i-control-the-caching-of-an-aspnet-page-based-upon-custom-information"></a>[어떻게 할까요?] 사용자 지정 정보에 따라 ASP.NET 페이지의 캐싱 컨트롤
 ====================

@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/accessing-the-database-directly-from-an-aspn
 title: SqlDataSource 컨트롤 (VB)를 사용 하 여 데이터 쿼리 | Microsoft Docs
 author: rick-anderson
 description: 이전 자습서에서 완벽 하 게 데이터 액세스 계층에서 프레젠테이션 계층을 분리 하 ObjectDataSource 컨트롤을 사용 했습니다. 이 안내가 사용 하 여 시작 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/20/2007
 ms.assetid: b12f752d-3502-40a4-b695-fc7b7d08cfd3
 msc.legacyurl: /web-forms/overview/data-access/accessing-the-database-directly-from-an-aspnet-page/querying-data-with-the-sqldatasource-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 2fa26eeb640ddf096d5002b9bffbb48a87cfccd9
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 341cd518b5875b6cc7739f88fc1a35687ea0e090
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37830534"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41829140"
 ---
 <a name="querying-data-with-the-sqldatasource-control-vb"></a>SqlDataSource 컨트롤 (VB)를 사용 하 여 데이터를 쿼리합니다.
 ====================

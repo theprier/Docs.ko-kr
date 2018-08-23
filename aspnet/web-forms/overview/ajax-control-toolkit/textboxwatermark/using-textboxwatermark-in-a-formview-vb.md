@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/textboxwatermark/using-textboxwater
 title: (VB) FormView에서 TextBoxWatermark 사용 | Microsoft Docs
 author: wenz
 description: AJAX Control Toolkit에서 TextBoxWatermark 컨트롤은 텍스트 상자 내에서 표시 되도록 입력란을 확장 합니다. 상자에 사용자가 클릭 하 고 있나요...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 41497361-7fba-4825-b36c-f58d79522a88
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/textboxwatermark/using-textboxwatermark-in-a-formview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 5f401b98adf0b07e8a0c6e2f1e078832d4918332
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b9a731be89d0582ebd411809a6bbcbee801fea2a
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37840634"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41829077"
 ---
 <a name="using-textboxwatermark-in-a-formview-vb"></a>(VB) FormView에서 TextBoxWatermark 사용
 ====================

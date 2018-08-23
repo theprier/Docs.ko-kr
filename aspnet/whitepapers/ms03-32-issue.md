@@ -3,17 +3,17 @@ uid: whitepapers/ms03-32-issue
 title: IE 용 보안 업데이트를 적용 한 후 '서버 응용 프로그램이 사용할 수 없음' 오류 수정 | Microsoft Docs
 author: rick-anderson
 description: 이 문서에서는 마법사를 실행 하는 ASP.NET 1.0 응용 프로그램에 영향을 주는 Internet Explorer에 대 한 m s 03-32 보안 업데이트를 사용 하 여 문제를 해결 하는 패치를 설명 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/10/2010
 ms.assetid: 1365eebb-bdf7-4a05-8d18-7f200531be55
 msc.legacyurl: /whitepapers/ms03-32-issue
 msc.type: content
-ms.openlocfilehash: 1a289379229335a9841dec48e577c19173419891
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: ce2d705a93577b0c6d28f86069873c6ecd891db6
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37836725"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836726"
 ---
 <a name="fix-for-server-application-unavailable-error-after-applying-security-update-for-ie"></a>IE 용 보안 업데이트를 적용 한 후 '서버 응용 프로그램이 사용할 수 없음' 오류에 대 한 수정
 ====================

@@ -3,17 +3,17 @@ uid: mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-13-depend
 title: 'ASP.NET MVC Storefront 13 부: 종속성 주입 | Microsoft Docs'
 author: robconery
 description: Jeremy Miller CodeBetter/structuremap, 여기서 그 표시 종속성 주입의 장단점을 사용 하 여 공동 개발 세션입니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/19/2008
 ms.assetid: 296fbe12-a28a-4fd8-bbc9-d1dc7468566a
 msc.legacyurl: /mvc/videos/mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-13-dependency-injection
 msc.type: video
-ms.openlocfilehash: 814013e07b45cfc7f37cc10371ac5884f219ba7a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: aba9f324c2230ee833bf02d69962392b5d69a519
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37821322"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41835523"
 ---
 <a name="aspnet-mvc-storefront-part-13-dependency-injection"></a>ASP.NET MVC Storefront 13 부: 종속성 주입
 ====================

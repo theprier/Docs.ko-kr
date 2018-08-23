@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/dynamicpopulate/using-dynamicpopula
 title: 사용자 정의 컨트롤 및 JavaScript (VB)에 DynamicPopulate 사용 | Microsoft Docs
 author: wenz
 description: ASP.NET AJAX Control Toolkit에 DynamicPopulate 컨트롤은 웹 서비스 (또는 페이지 메서드)를 호출 하 고 t 대상 컨트롤에 결과 값을 채웁니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 778b9009-76f2-4665-940e-afc0e35bc917
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/dynamicpopulate/using-dynamicpopulate-with-a-user-control-and-javascript-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c2fe7fbe0d57c6cf64fe31607215c920e67ed736
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: a275eed17552d26b63f98762c6c870bd53dd455d
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37841317"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836048"
 ---
 <a name="using-dynamicpopulate-with-a-user-control-and-javascript-vb"></a>사용자 정의 컨트롤 및 JavaScript (VB)에 DynamicPopulate 사용
 ====================

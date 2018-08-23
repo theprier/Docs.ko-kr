@@ -3,17 +3,17 @@ uid: aspnet/overview/developing-apps-with-windows-azure/building-real-world-clou
 title: Azure 사용 하 여 실제 클라우드 앱 빌드 | Microsoft Docs
 author: MikeWasson
 description: 이 전자책에서는 실제 클라우드 솔루션을 빌드하는 패턴 기반 접근 방식을 설명 합니다. 패턴은 적용에 개발 프로세스에는...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/12/2014
 ms.assetid: accfa16a-ab15-4c26-9ad4-babdc2a77d2e
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/introduction
 msc.type: authoredcontent
-ms.openlocfilehash: 11388b9c58d2d21c7a337a343c10d33c7257ccf1
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: eade14bc27e2bface84fb0bdd2f3c5bf8ef28432
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37840500"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836047"
 ---
 <a name="building-real-world-cloud-apps-with-azure"></a>Azure 사용 하 여 실제 클라우드 앱 빌드
 ====================
@@ -121,7 +121,7 @@ Scott Guthrie의 감시 하는 사람 *실제 세계 클라우드 앱 빌드 Azu
 
 표준 Visual Studio 웹 프로젝트입니다. ASP.NET MVC를 기반으로 하는 하 고 SQL Server 데이터베이스를 사용 합니다. IIS Express에서 로컬로 실행할 수 있습니다 하 고 클라우드에서 실행 하도록 Azure 웹 사이트에 배포할 수 있습니다. 폼 인증 및 로컬 데이터베이스를 사용 하 여 이나 Google 같은 소셜 공급자를 사용 하 여 기록할 수 있습니다. (나중에 살펴보겠습니다 Active Directory 조직 계정으로 로그인 하는 방법.)
 
-![다음 자습서에서는 배포에 영향을 주는 프로젝트 설정을 구성 하 고 자동 설정한 Web.config 파일은 배포 된 응용 프로그램에서 서로 달라 야 하는 설정에 대 한 변환 합니다.](introduction/_static/image2.png)
+![로그인 페이지](introduction/_static/image2.png)
 
 로그인 되 면에서 티켓을 작성, 사용자에 게, 할당 및 업로드할 수 수정 하려는 항목의 그림입니다.
 

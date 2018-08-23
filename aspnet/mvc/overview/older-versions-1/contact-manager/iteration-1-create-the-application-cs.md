@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/contact-manager/iteration-1-create-the-applic
 title: '반복 #1 – 응용 프로그램 (C#) 만들기 | Microsoft Docs'
 author: microsoft
 description: '첫 번째 반복에서 연락처 관리자에서에서 만드는 가장 간단한 방법은 가능 합니다. 기본 데이터베이스 작업에 대 한 지원 추가: 만들기, 읽기, 업데이트 및 D....'
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/20/2009
 ms.assetid: db0f160b-901c-46d3-865e-7ab6cd4ed68d
 msc.legacyurl: /mvc/overview/older-versions-1/contact-manager/iteration-1-create-the-application-cs
 msc.type: authoredcontent
-ms.openlocfilehash: cecb295a54ac8bdfb63a3fee7ea0693c6998748b
-ms.sourcegitcommit: a25b572eaed21791230c85416f449f66a405ec19
+ms.openlocfilehash: 78b488263fbb0c646d9bf6ee8c4ace2ff63ccf9d
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39395947"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41835755"
 ---
 <a name="iteration-1--create-the-application-c"></a>반복 #1 – 응용 프로그램 (C#) 만들기
 ====================

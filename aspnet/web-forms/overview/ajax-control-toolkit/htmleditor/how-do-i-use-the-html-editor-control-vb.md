@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/htmleditor/how-do-i-use-the-html-ed
 title: HTML 편집기 컨트롤을 사용 하는 방법 (VB) | Microsoft Docs
 author: microsoft
 description: HTMLEditor에 쉽게 작성 하 고 도구 모음 단추를 통해 HTML 콘텐츠를 편집할 수 있도록 ASP.NET AJAX 컨트롤입니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/12/2009
 ms.assetid: 32ec9321-7c8c-4b0f-8234-99acb56df6b5
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/htmleditor/how-do-i-use-the-html-editor-control-vb
 msc.type: authoredcontent
-ms.openlocfilehash: bff352161693c5e3871c20b8b469fb09f473686e
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 11d9251644f1daf4257e1bfa3c9405fc0c46a5d3
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37801530"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836116"
 ---
 <a name="how-do-i-use-the-html-editor-control-vb"></a>HTML 편집기 컨트롤을 사용 하는 방법 (VB)
 ====================

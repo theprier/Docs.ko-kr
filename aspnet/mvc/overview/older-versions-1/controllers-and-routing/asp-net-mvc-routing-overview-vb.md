@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-routing-o
 title: ASP.NET MVC 라우팅 개요 (VB) | Microsoft Docs
 author: StephenWalther
 description: 이 자습서에서는 Stephen walther가 ASP.NET MVC 프레임 워크에 브라우저 요청이 컨트롤러 작업에 매핑하는 방법 보여 줍니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/19/2008
 ms.assetid: 4bc8d19a-80f1-44b4-adbf-95ed22d691ca
 msc.legacyurl: /mvc/overview/older-versions-1/controllers-and-routing/asp-net-mvc-routing-overview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7511bc98667ac3acfccf78ea74b1369cf47bdc3b
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: c20626b24e43031fc4103365396fc26b6a6daf93
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37813393"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41828758"
 ---
 <a name="aspnet-mvc-routing-overview-vb"></a>ASP.NET MVC 라우팅 개요 (VB)
 ====================

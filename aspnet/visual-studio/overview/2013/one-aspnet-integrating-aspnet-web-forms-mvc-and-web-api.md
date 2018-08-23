@@ -3,17 +3,17 @@ uid: visual-studio/overview/2013/one-aspnet-integrating-aspnet-web-forms-mvc-and
 title: '실습: 하나의 ASP.NET: ASP.NET Web Forms, MVC 및 Web API 통합 | Microsoft Docs'
 author: rick-anderson
 description: ASP.NET은 웹 사이트, 앱 및 MVC, Web API 등과 같은 특수 한 기술을 사용 하 여 서비스를 빌드하기 위한 프레임 워크입니다. 확장과 ASP.NET h...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 07/16/2014
 ms.assetid: 4fe2558d-67cc-4d12-a5c1-6fb9f6f16137
 msc.legacyurl: /visual-studio/overview/2013/one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 276207a6e7d2388ce53778928665c35de9327318
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b6ac0dca92ab3d75eb871099882dcea549264354
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37837307"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836587"
 ---
 <a name="hands-on-lab-one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api"></a>실습: 하나의 ASP.NET: ASP.NET Web Forms, MVC 및 Web API 통합
 ====================

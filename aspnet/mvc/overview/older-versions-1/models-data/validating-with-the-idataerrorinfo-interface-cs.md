@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/models-data/validating-with-the-idataerrorinf
 title: IDataErrorInfo 인터페이스 (C#)를 사용 하 여 유효성 검사 | Microsoft Docs
 author: StephenWalther
 description: Stephen walther가 모델 클래스에서 IDataErrorInfo 인터페이스를 구현 하 여 사용자 지정 유효성 검사 오류 메시지를 표시 하는 방법을 보여 줍니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/02/2009
 ms.assetid: 4733b9f1-9999-48fb-8b73-6038fbcc5ecb
 msc.legacyurl: /mvc/overview/older-versions-1/models-data/validating-with-the-idataerrorinfo-interface-cs
 msc.type: authoredcontent
-ms.openlocfilehash: d3d3e379e5b2cfdd1385d724c0d9bf2a83ce339a
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b80535db32c4567135407aeb99967bb40c279ddb
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37836029"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41829164"
 ---
 <a name="validating-with-the-idataerrorinfo-interface-c"></a>IDataErrorInfo 인터페이스 (C#)를 사용 하 여 유효성 검사
 ====================

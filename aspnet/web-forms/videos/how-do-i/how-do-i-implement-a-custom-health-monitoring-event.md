@@ -3,17 +3,17 @@ uid: web-forms/videos/how-do-i/how-do-i-implement-a-custom-health-monitoring-eve
 title: '[어떻게 할까요?] 사용자 지정 상태 모니터링 이벤트 구현 | Microsoft Docs'
 author: rick-anderson
 description: 이 비디오 Chris Pels에서 ASP.NET의 이벤트를 모니터링 하는 표준 상태를 확장 하는 이벤트를 모니터링 하는 사용자 지정 상태를 만드는 방법을 표시 됩니다. Pro 사용자 지정 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 12/17/2007
 ms.assetid: 5fa365a1-d709-40e2-b7bf-489ff687f2ce
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-implement-a-custom-health-monitoring-event
 msc.type: video
-ms.openlocfilehash: 161ed55459f5aaf93f6418bd4beeda98cbb464ff
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: d3d5955cbb432390c48b7174c3cb35e6c282bf79
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37828782"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41828748"
 ---
 <a name="how-do-i-implement-a-custom-health-monitoring-event"></a>[어떻게 할까요?] 사용자 지정 상태 모니터링 이벤트 구현
 ====================

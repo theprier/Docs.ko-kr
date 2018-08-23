@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/security/authenticating-users-with-windows-au
 title: Windows 인증 (VB)를 사용 하 여 사용자 인증 | Microsoft Docs
 author: microsoft
 description: MVC 응용 프로그램의 컨텍스트에서 Windows 인증을 사용 하는 방법에 알아봅니다. 응용 프로그램의 웹 co 내에서 Windows 인증을 사용 하는 방법에 알아봅니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/27/2009
 ms.assetid: 532fa051-7d5c-4d6d-87f6-339ce4b84c44
 msc.legacyurl: /mvc/overview/older-versions-1/security/authenticating-users-with-windows-authentication-vb
 msc.type: authoredcontent
-ms.openlocfilehash: c3c7f7bfc15483451ede5382bf3fc02db47dea0e
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: e37508dedd4243dd1a1638e68760f6f4310e61a8
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37811690"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831602"
 ---
 <a name="authenticating-users-with-windows-authentication-vb"></a>Windows 인증 (VB)를 사용 하 여 사용자 인증
 ====================

@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/advanced-data-access-scenarios/debugging-sto
 title: 저장된 프로시저 (C#) 디버깅 | Microsoft Docs
 author: rick-anderson
 description: Visual Studio Professional 및 Team System edition 저장 디버깅 중단점을 설정 하 여 SQL Server 내에서 저장 프로시저의 단계를 허용 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/03/2007
 ms.assetid: c655c324-2ffa-4c21-8265-a254d79a693d
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/debugging-stored-procedures-cs
 msc.type: authoredcontent
-ms.openlocfilehash: e1eb9f6ea7d1704061157cca6898ad8330780929
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: a377dde0c4ed25aed549ca1f3b8eeeecece79517
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37824214"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836345"
 ---
 <a name="debugging-stored-procedures-c"></a>저장된 프로시저 디버깅 (C#)
 ====================

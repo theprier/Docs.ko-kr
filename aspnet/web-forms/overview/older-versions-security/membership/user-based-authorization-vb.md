@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-security/membership/user-based-authorizat
 title: 사용자 기반 권한 부여 (VB) | Microsoft Docs
 author: rick-anderson
 description: 이 자습서에서는 살펴보겠습니다 페이지에 대 한 액세스를 제한 하 고 다양 한 기술을 통해 페이지 수준 기능을 제한 합니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/18/2008
 ms.assetid: bc937e9d-5c14-4fc4-aec7-440da924dd18
 msc.legacyurl: /web-forms/overview/older-versions-security/membership/user-based-authorization-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 107983494350ddc06b6d3a20557baff4f4e6f9f4
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 263b421cbce68cbc9a596e40a6be4ff140edc0d4
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37834376"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41835520"
 ---
 <a name="user-based-authorization-vb"></a>사용자 기반 권한 부여 (VB)
 ====================

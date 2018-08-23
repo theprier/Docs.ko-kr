@@ -3,17 +3,17 @@ uid: identity/overview/migrations/migrating-an-existing-website-from-sql-members
 title: SQL 멤버 자격에서 ASP.NET Id로 기존 웹 사이트를 마이그레이션 | Microsoft Docs
 author: Rick-Anderson
 description: 이 자습서에서는 사용자와 역할 데이터를 새 ASP.NET Id s로 SQL 멤버 자격을 사용 하 여 만든 기존 웹 응용 프로그램을 마이그레이션하는 단계를를 보여 줍니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 12/19/2014
 ms.assetid: 220d3d75-16b2-4240-beae-a5b534f06419
 msc.legacyurl: /identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 4acb8c82c9b05de9d587466170f8fac4ef9b6dde
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 51b97ee413ea0304177d5963b5fd9d7253778d4f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37812253"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41835479"
 ---
 <a name="migrating-an-existing-website-from-sql-membership-to-aspnet-identity"></a>SQL 멤버 자격에서 ASP.NET Id로 기존 웹 사이트를 마이그레이션
 ====================

@@ -3,17 +3,17 @@ uid: web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-ap
 title: '실습: ASP.NET Web API 및 Angular.js를 사용 하 여 단일 페이지 응용 프로그램 (SPA) 빌드 | Microsoft Docs'
 author: rick-anderson
 description: 기존 웹 응용 프로그램에서 클라이언트 (브라우저) 페이지를 요청 하 여 서버와의 통신을 시작 합니다. 서버는 다음 요청을 처리 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 09/30/2015
 ms.assetid: 719727b7-bef3-45ad-bfe9-ba5bcdb2305f
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs
 msc.type: authoredcontent
-ms.openlocfilehash: 8e9cc082d982aec0a4385a3cefecd118c937e641
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 24ab1c470a22b5b328d1f3bc400400978eb31600
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37811522"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836049"
 ---
 <a name="hands-on-lab-build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs"></a>실습: ASP.NET Web API 및 Angular.js를 사용 하 여 단일 페이지 응용 프로그램 (SPA) 빌드
 ====================

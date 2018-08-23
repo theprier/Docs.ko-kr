@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/working-with-binary-files/uploading-files-vb
 title: 파일 업로드 (VB) | Microsoft Docs
 author: rick-anderson
 description: '웹 사이트 중 하나는 서버의 파일 시스템에 저장 될 수 있는 위치에 이진 파일 (예: Word 또는 PDF 문서)를 업로드할 수 있도록 하는 방법 알아보기...'
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 03/27/2007
 ms.assetid: f7c00fbd-652c-433d-8ed3-0e5168a4d4df
 msc.legacyurl: /web-forms/overview/data-access/working-with-binary-files/uploading-files-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 412a809de63f22fd3fddf99ad34d06c079f73fd0
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: fdf7b351152d9c64b0ac4b1bc9d558962e704543
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37802723"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41828831"
 ---
 <a name="uploading-files-vb"></a>파일 업로드 (VB)
 ====================

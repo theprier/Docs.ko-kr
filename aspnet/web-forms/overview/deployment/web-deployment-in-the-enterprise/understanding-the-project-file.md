@@ -3,17 +3,17 @@ uid: web-forms/overview/deployment/web-deployment-in-the-enterprise/understandin
 title: 프로젝트 파일 이해 | Microsoft Docs
 author: jrjlee
 description: Microsoft Build Engine (MSBuild) 프로젝트 파일은 빌드 및 배포 프로세스의 핵심입니다. 이 항목에서는 MSBuild에 대 한 개념적인 개요를 시작 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: 07978d9d-341c-4524-bcba-62976f390f77
 msc.legacyurl: /web-forms/overview/deployment/web-deployment-in-the-enterprise/understanding-the-project-file
 msc.type: authoredcontent
-ms.openlocfilehash: 7e117459f5953be7bac53267700dfb9f69802aec
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 114dd21002ef41627f3a101c0197a85fd5208887
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37836845"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41835686"
 ---
 <a name="understanding-the-project-file"></a>프로젝트 파일 이해
 ====================

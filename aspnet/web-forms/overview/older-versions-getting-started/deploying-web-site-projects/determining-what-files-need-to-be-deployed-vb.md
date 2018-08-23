@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projec
 title: (VB)를 배포할 수 하는 데 필요한 파일 확인 | Microsoft Docs
 author: rick-anderson
 description: 개발 환경에서 프로덕션 환경에 배포 해야 하는 파일에 일부 의존 하는지 여부를 ASP.NET 응용 프로그램이 빌드된 주세요...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/01/2009
 ms.assetid: ea918f62-c9d6-4a7f-9bc6-e054d3764b2c
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/determining-what-files-need-to-be-deployed-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 52ba518ec1c911b2eb659c0b36a2a718fbdd0c36
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 22461b681ea195225c6b7b0306b6f49956a2890b
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37825704"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41828744"
 ---
 <a name="determining-what-files-need-to-be-deployed-vb"></a>(VB)를 배포할 수 하는 데 필요한 파일 확인
 ====================

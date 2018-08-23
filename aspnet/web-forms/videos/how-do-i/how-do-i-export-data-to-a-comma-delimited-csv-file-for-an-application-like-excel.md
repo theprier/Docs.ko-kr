@@ -3,17 +3,17 @@ uid: web-forms/videos/how-do-i/how-do-i-export-data-to-a-comma-delimited-csv-fil
 title: '[어떻게 할까요?] Excel 같은 응용 프로그램에 대 한 데이터를 쉼표로 구분 된 (CSV) 파일로 내보내기 | Microsoft Docs'
 author: rick-anderson
 description: 이 비디오에서는 Chris Pels 데이터베이스 또는 다른 원본에서 데이터를 가져오고는 응용 프로그램 li에서 사용할 수 있는 쉼표로 구분 된 파일로 내보내야 하는 방법을 표시 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 01/22/2009
 ms.assetid: c9df86ad-aec2-43d5-bb8a-413ebb666673
 msc.legacyurl: /web-forms/videos/how-do-i/how-do-i-export-data-to-a-comma-delimited-csv-file-for-an-application-like-excel
 msc.type: video
-ms.openlocfilehash: dda5af297e7b0c968de2433fd809a9c4f7c7aaef
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 401df30b8f35355ecca5226883bb16b46bf88507
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37827678"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41832098"
 ---
 <a name="how-do-i-export-data-to-a-comma-delimited-csv-file-for-an-application-like-excel"></a>[어떻게 할까요?] Excel 같은 응용 프로그램에 대 한 데이터를 쉼표로 구분 된 (CSV) 파일로 내보내기
 ====================

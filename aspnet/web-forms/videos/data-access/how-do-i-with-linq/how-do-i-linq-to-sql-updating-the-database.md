@@ -3,17 +3,17 @@ uid: web-forms/videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-updati
 title: '[어떻게 할까요?] LINQ to SQL: 데이터베이스 업데이트 | Microsoft Docs'
 author: scottstanfield
 description: 이 비디오를 만드는 방법을 설명한, 업데이트 하 고 LINQ, 간단한 트랜잭션, 관계 및 사용자 지정 열 전체에서 업데이트를 통해 레코드를 삭제 하 고...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 11/15/2007
 ms.assetid: d37b9859-1fc1-4669-89ea-b16f3c349d82
 msc.legacyurl: /web-forms/videos/data-access/how-do-i-with-linq/how-do-i-linq-to-sql-updating-the-database
 msc.type: video
-ms.openlocfilehash: c015991a3a12b6f523467ed947e0f72f990ab457
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: e50420921bc3e88c51f86ad0ea5aade99fee552a
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37829663"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831889"
 ---
 <a name="how-do-i-linq-to-sql-updating-the-database"></a>[어떻게 할까요?] LINQ to SQL: 데이터베이스 업데이트
 ====================

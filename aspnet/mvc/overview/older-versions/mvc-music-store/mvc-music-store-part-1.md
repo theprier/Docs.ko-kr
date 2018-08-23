@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-1
 title: '1 부: 개요 및 파일-> 새 프로젝트 | Microsoft Docs'
 author: jongalloway
 description: 이 자습서 시리즈 모든 ASP.NET MVC Music Store 샘플 응용 프로그램 빌드를 수행 하는 단계를 자세히 설명 합니다. 1 부에서는 개요 및 파일-> 새 프로젝트입니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/21/2011
 ms.assetid: bd356ca3-5bdb-4067-9dac-c9e9923a86e8
 msc.legacyurl: /mvc/overview/older-versions/mvc-music-store/mvc-music-store-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: 57856a4a78a650e4abe872004e5be5f8f3b2dbcd
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: d84a525221e40b79853be55069367134d17fb5ec
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37816345"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41829169"
 ---
 <a name="part-1-overview-and-file-new-project"></a>1 부: 개요 및 파일-> 새 프로젝트
 ====================

@@ -3,17 +3,17 @@ uid: web-pages/overview/getting-started/introducing-aspnet-web-pages-2/form-basi
 title: HTML 양식 기본 ASP.NET Web Pages-소개 | Microsoft Docs
 author: tfitzmac
 description: 이 자습서에서는 입력된 폼을 만드는 방법 및 ASP.NET Web Pages (Razor)를 사용 하는 경우 사용자의 입력을 처리 하는 방법의 기본 사항을 보여 줍니다. 그리고 이제...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/28/2015
 ms.assetid: 81ed82bf-b940-44f1-b94a-555d0cb7cc98
 msc.legacyurl: /web-pages/overview/getting-started/introducing-aspnet-web-pages-2/form-basics
 msc.type: authoredcontent
-ms.openlocfilehash: 609c1c06ed8f29db82b5dd565a935440d4430819
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 5cf628b63e868e3f76aa19879d4af554241979c0
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37815397"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836008"
 ---
 <a name="introducing-aspnet-web-pages---html-form-basics"></a>HTML 양식 기본 ASP.NET 웹 페이지 소개
 ====================

@@ -3,17 +3,17 @@ uid: web-forms/overview/deployment/configuring-server-environments-for-web-deplo
 title: '시나리오: 웹 배포용 스테이징 환경 구성 | Microsoft Docs'
 author: jrjlee
 description: 이 항목에서는 스테이징 환경에 대 한 일반적인 웹 배포 시나리오를 설명 하 고 유사한 env 설정 하기 위해 완료 해야 하는 태스크를 설명 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/04/2012
 ms.assetid: 5a8e49b7-5317-4125-b107-7e2466b47bb3
 msc.legacyurl: /web-forms/overview/deployment/configuring-server-environments-for-web-deployment/scenario-configuring-a-staging-environment-for-web-deployment
 msc.type: authoredcontent
-ms.openlocfilehash: 9c0f12645f10820996a03c232d20ee87031aefaa
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: bee856c2ece6fda90ec35a87d111715def990603
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37820803"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41828774"
 ---
 <a name="scenario-configuring-a-staging-environment-for-web-deployment"></a>시나리오: 웹 배포용 스테이징 환경 구성
 ====================

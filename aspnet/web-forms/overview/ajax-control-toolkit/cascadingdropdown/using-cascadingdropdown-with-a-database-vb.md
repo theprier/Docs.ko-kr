@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/cascadingdropdown/using-cascadingdr
 title: (VB) 데이터베이스에 CascadingDropDown 사용 | Microsoft Docs
 author: wenz
 description: AJAX Control Toolkit에서 CascadingDropDown 컨트롤 하나 DropDownList 로드 변경에 관련 된 값이 anoth에 있도록 DropDownList 컨트롤을 확장 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 06/02/2008
 ms.assetid: 97a3d33c-c856-43f3-8acb-f1ccbc48221a
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/cascadingdropdown/using-cascadingdropdown-with-a-database-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 48e52fce4e26ec08403c3d86a4c3f85c103baa82
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 98e07764a3bd6afc8045221e9c016e57be44f5f7
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37824233"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41829090"
 ---
 <a name="using-cascadingdropdown-with-a-database-vb"></a>CascadingDropDown을 사용 하 여 데이터베이스 (VB)
 ====================

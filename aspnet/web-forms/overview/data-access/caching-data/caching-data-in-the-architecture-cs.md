@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/caching-data/caching-data-in-the-architectur
 title: 아키텍처 (C#)에서 데이터 캐싱 | Microsoft Docs
 author: rick-anderson
 description: 이전 자습서에서 프레젠테이션 계층 캐싱 적용 하는 방법을 알게 되었습니다. 이 자습서에서는 계층화 된 architectu를 활용 하는 방법을 알아봅니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/30/2007
 ms.assetid: d29a7c41-0628-4a23-9dfc-bfea9c6c1054
 msc.legacyurl: /web-forms/overview/data-access/caching-data/caching-data-in-the-architecture-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 80805bae14654d6817328232453031384ceadad6
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 3971140aa7a6c829287e74df804694c19e34adcf
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37820460"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836325"
 ---
 <a name="caching-data-in-the-architecture-c"></a>아키텍처 (C#)에서 데이터 캐싱
 ====================

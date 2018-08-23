@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-getting-started/deploying-web-site-projec
 title: 프로덕션 데이터베이스 (VB)를 사용 하도록 프로덕션 웹 응용 프로그램 구성 | Microsoft Docs
 author: rick-anderson
 description: 이전 자습서에서 설명 했 듯이 드물지 않습니다 구성 정보를 개발 및 프로덕션 환경에 따라 다릅니다. 이 es...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/23/2009
 ms.assetid: a64a7aa0-6608-449e-83bf-1ef8cceee504
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deploying-web-site-projects/configuring-the-production-web-application-to-use-the-production-database-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 952bdafd06143ce24e9e8beb0d6e6343400ffdc6
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 3d6e25de44a7c84ef0919d1cfd8ab4c6b368e0ea
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37840702"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836112"
 ---
 <a name="configuring-the-production-web-application-to-use-the-production-database-vb"></a>프로덕션 데이터베이스 (VB)를 사용 하도록 프로덕션 웹 응용 프로그램 구성
 ====================
