@@ -3,14 +3,15 @@ title: ASP.NET Core에 로그인
 author: ardalis
 description: ASP.NET Core의 로깅 프레임워크에 대해 알아봅니다. 기본 제공 로깅 공급자를 살펴보고 인기 있는 타사 공급자에 대해 알아봅니다.
 ms.author: tdykstra
-ms.date: 07/24/2018
+ms.custom: mvc
+ms.date: 08/21/2018
 uid: fundamentals/logging/index
-ms.openlocfilehash: 35bb7fa51db541f825a79151fb7fbe85d48e1998
-ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
+ms.openlocfilehash: 38a395a97e9a0b7ccb0bfef0d1947ef379bf748c
+ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39655361"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "41886764"
 ---
 # <a name="logging-in-aspnet-core"></a>ASP.NET Core에 로그인
 
@@ -18,29 +19,39 @@ ms.locfileid: "39655361"
 
 ASP.NET Core는 다양한 로깅 공급자를 사용하는 로깅 API를 지원합니다. 기본 공급자를 통해 하나 이상의 대상에 로그를 보낼 수 있으며, 타사 로깅 프레임워크를 연결할 수 있습니다. 이 문서에서는 코드에 기본 제공 로깅 API 및 공급자를 사용하는 방법을 보여 줍니다.
 
-::: moniker range=">= aspnetcore-2.0"
-
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/index/sample2)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
-
-::: moniker-end
-
-::: moniker range="< aspnetcore-2.0"
-
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/index/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
-
-::: moniker-end
-
 IIS를 사용하여 호스트하는 경우의 stdout 로깅에 대한 내용은 <xref:host-and-deploy/iis/troubleshoot#aspnet-core-module-stdout-log>를 참조하세요. Azure App Service를 사용한 stdout 로깅에 대한 내용은 <xref:host-and-deploy/azure-apps/troubleshoot#aspnet-core-module-stdout-log>를 참조하세요.
+
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/index/samples)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="how-to-create-logs"></a>로그를 만드는 방법
 
 로그를 만들려면 [종속성 주입](xref:fundamentals/dependency-injection) 컨테이너에서 [ILogger&lt;TCategoryName&gt;](/dotnet/api/microsoft.extensions.logging.ilogger-1) 개체를 구현합니다.
 
-[!code-csharp[](index/sample/Controllers/TodoController.cs?name=snippet_LoggerDI&highlight=7)]
+::: moniker range=">= aspnetcore-2.0"
+
+[!code-csharp[](index/samples/2.x/TodoApiSample/Controllers/TodoController.cs?name=snippet_LoggerDI&highlight=7)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+[!code-csharp[](index/samples/1.x/TodoApiSample/Controllers/TodoController.cs?name=snippet_LoggerDI&highlight=7)]
+
+::: moniker-end
 
 그런 다음 해당 로거 개체에 대해 로깅 메서드를 호출합니다.
 
-[!code-csharp[](index/sample/Controllers/TodoController.cs?name=snippet_CallLogMethods&highlight=3,7)]
+::: moniker range=">= aspnetcore-2.0"
+
+[!code-csharp[](index/samples/2.x/TodoApiSample/Controllers/TodoController.cs?name=snippet_CallLogMethods&highlight=3,7)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+[!code-csharp[](index/samples/1.x/TodoApiSample/Controllers/TodoController.cs?name=snippet_CallLogMethods&highlight=3,7)]
+
+::: moniker-end
 
 이 예에서는 *범주*로 `TodoController` 클래스를 사용하여 로그를 만듭니다. 범주는 [이 문서의 뒷부분](#log-category)에 설명되어 있습니다.
 
@@ -54,11 +65,11 @@ ASP.NET Core는 비동기 로거 메서드를 제공하지 않습니다. 비동�
 
 공급자를 사용하려면 *Program.cs*에서 공급자의 `Add<ProviderName>` 확장 메서드를 호출합니다.
 
-[!code-csharp[](index/sample2/Program.cs?name=snippet_ExpandDefault&highlight=16,17)]
+[!code-csharp[](index/samples/2.x/TodoApiSample/Program.cs?name=snippet_ExpandDefault&highlight=16,17)]
 
 기본 프로젝트 템플릿은 *Program.cs*의 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder) 확장 메서드 호출을 통해 콘솔 및 디버그 로깅 공급자를 지원합니다.
 
-[!code-csharp[](index/sample2/Program.cs?name=snippet_TemplateCode&highlight=7)]
+[!code-csharp[](index/samples/2.x/TodoApiSample/Program.cs?name=snippet_TemplateCode&highlight=7)]
 
 ::: moniker-end
 
@@ -68,12 +79,12 @@ ASP.NET Core는 비동기 로거 메서드를 제공하지 않습니다. 비동�
 
 공급자를 사용하려면 다음 예제처럼 NuGet 패키지를 설치하고 [ILoggerFactory](/dotnet/api/microsoft.extensions.logging.iloggerfactory) 인스턴스에서 공급자의 확장 메서드를 호출합니다.
 
-[!code-csharp[](index/sample//Startup.cs?name=snippet_AddConsoleAndDebug&highlight=3,5-7)]
+[!code-csharp[](index/samples/1.x/TodoApiSample//Startup.cs?name=snippet_AddConsoleAndDebug&highlight=3,5-7)]
 
 ASP.NET Core [DI(종속성 주입](xref:fundamentals/dependency-injection))는 `ILoggerFactory` 인스턴스를 제공합니다. `AddConsole` 및 `AddDebug` 확장 메서드는 [Microsoft.Extensions.Logging.Console](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Console/) 및 [Microsoft.Extensions.Logging.Debug](https://www.nuget.org/packages/Microsoft.Extensions.Logging.Debug/) 패키지에 정의됩니다. 각 확장 메서드는 `ILoggerFactory.AddProvider` 메서드를 호출하고, 공급자 인스턴스를 전달합니다.
 
 > [!NOTE]
-> [샘플 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/index/sample)은 `Startup.Configure` 메서드에서 로그 공급자를 추가합니다. 먼저 실행되는 코드의 로그 출력을 가져오려면 `Startup` 클래스 생성자에서 로그 공급자를 추가합니다.
+> [1.x 샘플 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/logging/index/samples/1.x)은 `Startup.Configure` 메서드에서 로그 공급자를 추가합니다. 먼저 실행되는 코드의 로그 출력을 가져오려면 `Startup` 클래스 생성자에서 로그 공급자를 추가합니다.
 
 ::: moniker-end
 
@@ -184,11 +195,31 @@ Microsoft.AspNetCore.Hosting.Internal.WebHost:Information: Request finished in 3
 
 범주를 문자열로 지정하거나 형식에서 범주가 파생되는 확장 메서드를 사용할 수 있습니다. 범주를 문자열로 지정하려면 아래와 같이 `ILoggerFactory` 인스턴스에 대해 `CreateLogger`를 호출합니다.
 
-[!code-csharp[](index/sample//Controllers/TodoController.cs?name=snippet_CreateLogger&highlight=7,10)]
+::: moniker range=">= aspnetcore-2.0"
+
+[!code-csharp[](index/samples/2.x/TodoApiSample/Controllers/TodoController.cs?name=snippet_CreateLogger&highlight=7,10)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+[!code-csharp[](index/samples/1.x/TodoApiSample/Controllers/TodoController.cs?name=snippet_CreateLogger&highlight=7,10)]
+
+::: moniker-end
 
 대부분의 경우 다음 예제와 같이 `ILogger<T>`를 사용하는 편이 더 쉽습니다.
 
-[!code-csharp[](index/sample//Controllers/TodoController.cs?name=snippet_LoggerDI&highlight=7)]
+::: moniker range=">= aspnetcore-2.0"
+
+[!code-csharp[](index/samples/2.x/TodoApiSample/Controllers/TodoController.cs?name=snippet_LoggerDI&highlight=7)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+[!code-csharp[](index/samples/1.x/TodoApiSample/Controllers/TodoController.cs?name=snippet_LoggerDI&highlight=7)]
+
+::: moniker-end
 
 이것은 정규화된 형식 이름 `T`를 사용하여 `CreateLogger`를 호출하는 것과 동일합니다.
 
@@ -198,7 +229,17 @@ Microsoft.AspNetCore.Hosting.Internal.WebHost:Information: Request finished in 3
 
 다음 코드 예제에서 메서드 이름(예: `LogWarning`)은 로그 수준을 지정합니다. 첫 번째 매개 변수는 [Log event ID](#log-event-id)입니다. 두 번째 매개 변수는 [message template](#log-message-template)으로, 나머지 메서드 매개 변수에서 인수 값에 대한 자리 표시자를 제공합니다. 메서드 매개 변수는 이 문서의 뒷부분에 자세히 설명되어 있습니다.
 
-[!code-csharp[](index/sample//Controllers/TodoController.cs?name=snippet_CallLogMethods&highlight=3,7)]
+::: moniker range=">= aspnetcore-2.0"
+
+[!code-csharp[](index/samples/2.x/TodoApiSample/Controllers/TodoController.cs?name=snippet_CallLogMethods&highlight=3,7)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+[!code-csharp[](index/samples/1.x/TodoApiSample/Controllers/TodoController.cs?name=snippet_CallLogMethods&highlight=3,7)]
+
+::: moniker-end
 
 메서드 이름에 수준을 포함하는 로그 메서드는 [ILogger에 대한 확장 메서드](/dotnet/api/microsoft.extensions.logging.loggerextensions)입니다. 백그라운드에서 이러한 메서드는 `LogLevel` 매개 변수를 사용하는 `Log` 메서드를 호출합니다. 이러한 확장 메서드 중 하나를 호출하는 대신 `Log` 메서드를 직접 호출할 수 있지만, 구문이 비교적 복잡합니다. 자세한 내용은 [ILogger 인터페이스](/dotnet/api/microsoft.extensions.logging.ilogger) 및 [로거 확장 소스 코드](https://github.com/aspnet/Logging/blob/master/src/Microsoft.Extensions.Logging.Abstractions/LoggerExtensions.cs)를 참조하세요.
 
@@ -265,9 +306,21 @@ info: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
 
 로그를 쓸 때마다 *이벤트 ID*를 지정합니다. 샘플 앱은 로컬로 정의된 `LoggingEvents` 클래스를 사용하여 이 작업을 수행합니다.
 
-[!code-csharp[](index/sample//Controllers/TodoController.cs?name=snippet_CallLogMethods&highlight=3,7)]
+::: moniker range=">= aspnetcore-2.0"
 
-[!code-csharp[](index/sample//Core/LoggingEvents.cs?name=snippet_LoggingEvents)]
+[!code-csharp[](index/samples/2.x/TodoApiSample/Controllers/TodoController.cs?name=snippet_CallLogMethods&highlight=3,7)]
+
+[!code-csharp[](index/samples/2.x/TodoApiSample/Core/LoggingEvents.cs?name=snippet_LoggingEvents)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+[!code-csharp[](index/samples/1.x/TodoApiSample/Controllers/TodoController.cs?name=snippet_CallLogMethods&highlight=3,7)]
+
+[!code-csharp[](index/samples/1.x/TodoApiSample/Core/LoggingEvents.cs?name=snippet_LoggingEvents)]
+
+::: moniker-end
 
 이벤트 ID는 로깅된 이벤트 집합을 서로 연결하는 데 사용할 수 있는 정수 값입니다. 예를 들어 장바구니에 항목 추가에 대한 로그는 이벤트 ID 1000이고 구매 완료에 대한 로그는 이벤트 ID 1001입니다.
 
@@ -284,7 +337,17 @@ warn: TodoApi.Controllers.TodoController[4000]
 
 로그 메시지를 쓸 때마다 메시지 템플릿을 제공합니다. 메시지 템플릿은 문자열일 수도 있고, 인수 값이 배치되는 명명된 자리 표시자를 포함할 수도 있습니다. 템플릿은 형식 문자열이 아니고, 자리 표시자는 번호가 아닌 이름이 지정되어야 합니다.
 
-[!code-csharp[](index/sample//Controllers/TodoController.cs?name=snippet_CallLogMethods&highlight=3,7)]
+::: moniker range=">= aspnetcore-2.0"
+
+[!code-csharp[](index/samples/2.x/TodoApiSample/Controllers/TodoController.cs?name=snippet_CallLogMethods&highlight=3,7)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+[!code-csharp[](index/samples/1.x/TodoApiSample/Controllers/TodoController.cs?name=snippet_CallLogMethods&highlight=3,7)]
+
+::: moniker-end
 
 값을 제공하는 데 사용되는 매개 변수를 결정하는 것은 자리 표시자의 번호가 아닌 이름입니다. 다음과 같은 코드를 가정해 봅니다.
 
@@ -312,7 +375,17 @@ _logger.LogInformation("Getting item {ID} at {RequestTime}", id, DateTime.Now);
 
 로거 메서드는 다음 예제와 같이 예외를 전달할 수 있는 오버로드를 갖고 있습니다.
 
-[!code-csharp[](index/sample//Controllers/TodoController.cs?name=snippet_LogException&highlight=3)]
+::: moniker range=">= aspnetcore-2.0"
+
+[!code-csharp[](index/samples/2.x/TodoApiSample/Controllers/TodoController.cs?name=snippet_LogException&highlight=3)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+[!code-csharp[](index/samples/1.x/TodoApiSample/Controllers/TodoController.cs?name=snippet_LogException&highlight=3)]
+
+::: moniker-end
 
 공급자들은 다양한 방식으로 예외 정보를 처리합니다. 다음은 위에서 보여드린 코드의 디버그 공급자 출력의 예제입니다.
 
@@ -335,11 +408,11 @@ System.Exception: Item not found exception.
 
 프로젝트 템플릿은 콘솔 및 디버그 공급자에 대한 로깅을 설정하는 `CreateDefaultBuilder`를 호출하는 코드를 만듭니다. 또한 `CreateDefaultBuilder` 메서드는 다음과 같은 코드를 사용하여 `Logging` 섹션에서 구성을 조회하는 로깅을 설정합니다.
 
-[!code-csharp[](index/sample2/Program.cs?name=snippet_ExpandDefault&highlight=15)]
+[!code-csharp[](index/samples/2.x/TodoApiSample/Program.cs?name=snippet_ExpandDefault&highlight=15)]
 
 구성 데이터는 다음 예제와 같이 공급자 및 범주별로 최소 로그 수준을 지정합니다.
 
-[!code-json[](index/sample2/appsettings.json)]
+[!code-json[](index/samples/2.x/TodoApiSample/appsettings.json)]
 
 이 JSON은 6개의 필터 규칙을 만드는데, 하나는 디버그 공급자용이고, 4개는 콘솔 공급자용이고, 나머지 하나는 모든 공급자에 적용됩니다. `ILogger` 개체가 생성될 때 각 공급자에 대해 이러한 규칙 중 하나를 선택하는 방법은 나중에 살펴보겠습니다.
 
@@ -347,7 +420,7 @@ System.Exception: Item not found exception.
 
 다음 예제와 같이 코드에서 필터 규칙을 등록할 수 있습니다.
 
-[!code-csharp[](index/sample2/Program.cs?name=snippet_FilterInCode&highlight=4-5)]
+[!code-csharp[](index/samples/2.x/TodoApiSample/Program.cs?name=snippet_FilterInCode&highlight=4-5)]
 
 두 번째 `AddFilter`는 형식 이름을 사용하여 디버그 공급자를 지정합니다. 첫 번째 `AddFilter`는 공급자 형식을 지정하지 않으며, 따라서 모든 공급자에 적용됩니다.
 
@@ -397,7 +470,7 @@ System.Exception: Item not found exception.
 
 특정 공급자 및 범주에 대한 구성 또는 코드의 규칙이 적용되지 않는 경우에만 효력이 있는 최소 수준 설정이 있습니다. 다음 예제는 최소 수준을 설정하는 방법을 보여 줍니다.
 
-[!code-csharp[](index/sample2/Program.cs?name=snippet_MinLevel&highlight=3)]
+[!code-csharp[](index/samples/2.x/TodoApiSample/Program.cs?name=snippet_MinLevel&highlight=3)]
 
 최소 수준을 명시적으로 설정하지 않으면 `Trace` 및 `Debug` 로그를 무시하는 `Information`이 기본값으로 설정됩니다.
 
@@ -405,7 +478,7 @@ System.Exception: Item not found exception.
 
 필터 함수에서 필터링 규칙을 적용할 코드를 작성할 수 있습니다. 필터 함수는 구성 또는 코드를 통해 규칙이 할당되지 않은 모든 공급자와 범주에 대해 호출됩니다. 함수의 코드는 공급자 형식, 범주 및 로그 수준에 액세스하여 메시지를 기록할 것인지 여부를 결정할 수 있습니다. 예:
 
-[!code-csharp[](index/sample2/Program.cs?name=snippet_FilterFunction&highlight=5-13)]
+[!code-csharp[](index/samples/2.x/TodoApiSample/Program.cs?name=snippet_FilterFunction&highlight=5-13)]
 
 ::: moniker-end
 
@@ -415,13 +488,13 @@ System.Exception: Item not found exception.
 
 `AddConsole` 및 `AddDebug` 확장 메서드는 필터링 조건을 전달할 수 있는 오버로드를 제공합니다. 다음 샘플 코드는 콘솔 공급자가 `Warning` 수준 미만의 로그를 무시하게 만들고, 디버그 공급자는 프레임워크에서 만드는 로그를 무시합니다.
 
-[!code-csharp[](index/sample/Startup.cs?name=snippet_AddConsoleAndDebugWithFilter&highlight=6-7)]
+[!code-csharp[](index/samples/1.x/TodoApiSample/Startup.cs?name=snippet_AddConsoleAndDebugWithFilter&highlight=6-7)]
 
 `AddEventLog` 메서드는 `EventLogSettings` 인스턴스를 사용하는 오버로드를 갖고 있으며, 이 인스턴스의 `Filter` 속성에는 필터링 함수가 포함될 수 있습니다. TraceSource 공급자는 오버로드를 제공하지 않습니다. 로깅 수준 및 기타 매개 변수가 사용하는 `SourceSwitch` 및 `TraceListener`를 기반으로 하기 때문입니다.
 
 `WithFilter` 확장 메서드를 사용하여 `ILoggerFactory` 인스턴스에 등록된 모든 공급자에 대한 필터링 규칙을 설정할 수 있습니다. 아래 예제는 프레임워크 로그(범주가 "Microsoft" 또는 "시스템"으로 시작)를 경고로 제한하고 디버그 수준에서 앱 로그를 허용합니다.
 
-[!code-csharp[](index/sample/Startup.cs?name=snippet_FactoryFilter&highlight=6-11)]
+[!code-csharp[](index/samples/1.x/TodoApiSample/Startup.cs?name=snippet_FactoryFilter&highlight=6-11)]
 
 필터링을 사용하여 특정 범주에 대한 로그를 기록하지 못하게 하려면 해당 범주의 최소 로그 수준으로 `LogLevel.None`을 지정하면 됩니다. `LogLevel.None`의 정수 값은 `LogLevel.Critical`(5)보다 높은 6입니다.
 
@@ -435,7 +508,7 @@ System.Exception: Item not found exception.
 
 범위는 [ILogger.BeginScope&lt;TState&gt;](/dotnet/api/microsoft.extensions.logging.ilogger.beginscope) 메서드에서 반환하는 `IDisposable` 형식이며 삭제될 때까지 유지됩니다. 다음과 같이 로거 호출을 `using` 블록에 래핑하여 범위를 사용합니다.
 
-[!code-csharp[](index/sample//Controllers/TodoController.cs?name=snippet_Scopes&highlight=4-5,13)]
+[!code-csharp[](index/samples/1.x/TodoApiSample/Controllers/TodoController.cs?name=snippet_Scopes&highlight=4-5,13)]
 
 다음은 콘솔 공급자에 대한 범위를 사용하도록 설정하는 코드입니다.
 
@@ -443,7 +516,7 @@ System.Exception: Item not found exception.
 
 *Program.cs*:
 
-[!code-csharp[](index/sample2/Program.cs?name=snippet_Scopes&highlight=4)]
+[!code-csharp[](index/samples/2.x/TodoApiSample/Program.cs?name=snippet_Scopes&highlight=4)]
 
 > [!NOTE]
 > 범위 기반 로깅을 사용하려면 `IncludeScopes` 콘솔 로거 옵션을 구성해야 합니다.
@@ -456,7 +529,7 @@ System.Exception: Item not found exception.
 
 *Program.cs*:
 
-[!code-csharp[](index/sample2/Program.cs?name=snippet_Scopes&highlight=4)]
+[!code-csharp[](index/samples/2.x/TodoApiSample/Program.cs?name=snippet_Scopes&highlight=4)]
 
 > [!NOTE]
 > 범위 기반 로깅을 사용하려면 `IncludeScopes` 콘솔 로거 옵션을 구성해야 합니다.
@@ -467,7 +540,7 @@ System.Exception: Item not found exception.
 
 *Startup.cs*:
 
-[!code-csharp[](index/sample/Startup.cs?name=snippet_Scopes&highlight=6)]
+[!code-csharp[](index/samples/1.x/TodoApiSample/Startup.cs?name=snippet_Scopes&highlight=6)]
 
 ::: moniker-end
 
@@ -523,7 +596,7 @@ loggerFactory.AddConsole(Configuration.GetSection("Logging"));
 
 이 코드는 *appSettings.json* 파일의 `Logging` 섹션을 참조합니다.
 
-[!code-json[](index/sample//appsettings.json)]
+[!code-json[](index/samples/1.x/TodoApiSample//appsettings.json)]
 
 [로그 필터링](#log-filtering) 섹션에서 설명했듯이, 제한 프레임워크를 표시한 설정은 경고에 기록되는 한편 앱이 디버그 수준에서 기록하는 것을 허용합니다. 자세한 내용은 [구성](xref:fundamentals/configuration/index)을 참고하시기 바랍니다.
 
@@ -627,7 +700,17 @@ loggerFactory.AddTraceSource(sourceSwitchName);
 
 다음은 `Warning` 이상 메시지를 콘솔 창에 기록하는 `TraceSource` 공급자를 구성하는 예제입니다.
 
-[!code-csharp[](index/sample/Startup.cs?name=snippet_TraceSource&highlight=9-12)]
+::: moniker range=">= aspnetcore-2.0"
+
+[!code-csharp[](index/samples/2.x/TodoApiSample/Startup.cs?name=snippet_TraceSource&highlight=9-12)]
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+[!code-csharp[](index/samples/1.x/TodoApiSample/Startup.cs?name=snippet_TraceSource&highlight=9-12)]
+
+::: moniker-end
 
 ### <a name="azure-app-service-provider"></a>Azure App Service 공급자
 

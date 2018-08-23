@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/getting-started/using-ajax-control-
 title: AJAX 컨트롤 도구 키트 컨트롤 및 컨트롤 Extenders 사용 (VB)를 사용 하 여 | Microsoft Docs
 author: microsoft
 description: ASP.NET 페이지에 AJAX Control Toolkit 컨트롤 및 extender를 추가 하는 방법에 알아봅니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/12/2009
 ms.assetid: 763650a9-ffde-46a9-b779-7a9145dd5d88
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/getting-started/using-ajax-control-toolkit-controls-and-control-extenders-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 292a6e41740538d41e26b01fa76ff59f9af21221
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: f1cf40ec3ba299ee2702258a93aa1192a2112e7f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37825362"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41827980"
 ---
 <a name="using-ajax-control-toolkit-controls-and-control-extenders-vb"></a>AJAX 컨트롤 도구 키트 컨트롤 및 컨트롤 Extenders 사용 (VB)를 사용 하 여
 ====================

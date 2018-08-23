@@ -3,17 +3,17 @@ uid: web-forms/overview/ajax-control-toolkit/getting-started/creating-a-custom-a
 title: 도구 키트 컨트롤 Extender (C#)를 제어 하는 사용자 지정 AJAX 만들기 | Microsoft Docs
 author: microsoft
 description: 사용자 지정 Extender를 사용 하 여 사용자 지정 하 고 새 클래스를 만들 필요 없이 ASP.NET 컨트롤의 기능을 확장할 수 있습니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/12/2009
 ms.assetid: 96b56eca-a892-45a4-96b4-67e61178650a
 msc.legacyurl: /web-forms/overview/ajax-control-toolkit/getting-started/creating-a-custom-ajax-control-toolkit-control-extender-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 525975c9e0bddc6ef539b477e9f5db3cfd7ee8c3
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: b9a3b9a8d5c86cc7aac6aeb8b4bac48af2e2edc7
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37814267"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41835477"
 ---
 <a name="creating-a-custom-ajax-control-toolkit-control-extender-c"></a>사용자 지정 AJAX 컨트롤 도구 키트 컨트롤 Extender (C#) 만들기
 ====================

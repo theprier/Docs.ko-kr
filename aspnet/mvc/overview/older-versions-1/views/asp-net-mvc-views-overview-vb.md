@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/views/asp-net-mvc-views-overview-vb
 title: ASP.NET MVC 보기 개요 (VB) | Microsoft Docs
 author: StephenWalther
 description: ASP.NET MVC 뷰를 무엇이 고 HTML 페이지에서와 어떻게 합니까? 이 자습서에서는 Stephen walther가 보기 소개 하 고 t 하는 방법을 보여 줍니다....
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 02/16/2008
 ms.assetid: c28ba88d-3a93-47f5-a306-049bd766714d
 msc.legacyurl: /mvc/overview/older-versions-1/views/asp-net-mvc-views-overview-vb
 msc.type: authoredcontent
-ms.openlocfilehash: eeba2bd251e837d6d6eb43fd1506eba9e3d18680
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: a7f4afd70a17281123a7448a00896c186b9a00f8
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37827925"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41830321"
 ---
 <a name="aspnet-mvc-views-overview-vb"></a>ASP.NET MVC 보기 개요 (VB)
 ====================

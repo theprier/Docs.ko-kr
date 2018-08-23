@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/paging-and-sorting/efficiently-paging-throug
 title: 많은 양의 데이터 (C#)를 효율적으로 페이징 | Microsoft Docs
 author: rick-anderson
 description: 많은 양의 데이터를 해당 기본 데이터 소스 컨트롤 retriev로 작업할 때 데이터 프레젠테이션 컨트롤의 기본 페이징 옵션이 적합 하지 않습니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/15/2006
 ms.assetid: 59c01998-9326-4ecb-9392-cb9615962140
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting/efficiently-paging-through-large-amounts-of-data-cs
 msc.type: authoredcontent
-ms.openlocfilehash: bb10524e7973894ea60663da3813673742ae4ab4
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: feebee845a19a7cb462127a893a30ac7e0761965
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37825842"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41828621"
 ---
 <a name="efficiently-paging-through-large-amounts-of-data-c"></a>많은 양의 데이터 (C#)를 효율적으로 페이징
 ====================

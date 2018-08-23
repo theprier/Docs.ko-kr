@@ -3,17 +3,17 @@ uid: web-forms/overview/older-versions-security/admin/building-an-interface-to-s
 title: 많은 (VB)에서 사용자 계정 하나를 선택 하는 인터페이스 빌드 | Microsoft Docs
 author: rick-anderson
 description: 이 자습서에서는 페이징, 필터링 가능 표를 사용 하 여 사용자 인터페이스를 빌드합니다. 특히 사용자 인터페이스에 대 한 Linkbutton의 일련의 구성 됩니다...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 04/01/2008
 ms.assetid: da53380c-a16b-41c7-a20d-24343c735c52
 msc.legacyurl: /web-forms/overview/older-versions-security/admin/building-an-interface-to-select-one-user-account-from-many-vb
 msc.type: authoredcontent
-ms.openlocfilehash: af2a9692e03f147dfc1389f8c13b7d4fd758d62e
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: bb30c5d3ce6e04f60d8192e8ed0404b89031b4b9
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37803259"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41834811"
 ---
 <a name="building-an-interface-to-select-one-user-account-from-many-vb"></a>많은 (VB)에서 사용자 계정 하나를 선택 하는 인터페이스 빌드
 ====================

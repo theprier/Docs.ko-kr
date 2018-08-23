@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/caching-data/using-sql-cache-dependencies-vb
 title: SQL 캐시 종속성 (VB)를 사용 하 여 | Microsoft Docs
 author: rick-anderson
 description: 가장 간단한 캐싱 전략 지정 된 기간 후에 만료 되도록 캐시 된 데이터를 허용 하는 것입니다. 하지만 이렇게 간단한 방식으로 캐시 된 데이터 maintai 의미 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 05/30/2007
 ms.assetid: bd347d93-4251-4532-801c-a36f2dfa7f96
 msc.legacyurl: /web-forms/overview/data-access/caching-data/using-sql-cache-dependencies-vb
 msc.type: authoredcontent
-ms.openlocfilehash: 7929966d9eb82994b9d427d0c3fd7f08c41212fc
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: f47cc7c1fd4fd0d1e41bef31a2e68dd34393d52e
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37821647"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41836147"
 ---
 <a name="using-sql-cache-dependencies-vb"></a>SQL 캐시 종속성 (VB)를 사용 하 여
 ====================

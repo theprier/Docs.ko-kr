@@ -3,17 +3,17 @@ uid: web-forms/overview/data-access/advanced-data-access-scenarios/creating-stor
 title: 관리 되는 코드 (C#) 저장된 프로시저 및 사용자 정의 함수 만들기 | Microsoft Docs
 author: rick-anderson
 description: Microsoft SQL Server 2005 개발자는 관리 되는 코드를 통해 데이터베이스 개체를 만들 수 있도록.NET 공용 언어 런타임 통합 됩니다. 이 자습서는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/03/2007
 ms.assetid: 213eea41-1ab4-4371-8b24-1a1a66c515de
 msc.legacyurl: /web-forms/overview/data-access/advanced-data-access-scenarios/creating-stored-procedures-and-user-defined-functions-with-managed-code-cs
 msc.type: authoredcontent
-ms.openlocfilehash: 33ec7cfbb029c1a0e5200eb61aa4e39b02d991f3
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: fb4a867d5868e8000fcd10130401a9e169b6f49f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37824418"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41829766"
 ---
 <a name="creating-stored-procedures-and-user-defined-functions-with-managed-code-c"></a>저장 프로시저 및 관리 코드 (C#)를 사용 하 여 사용자 정의 함수 만들기
 ====================

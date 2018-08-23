@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions-1/overview/understanding-models-views-and-contr
 title: 모델, 뷰 및 컨트롤러 이해 (C#) | Microsoft Docs
 author: StephenWalther
 description: 모델, 뷰 및 컨트롤러에 대 한 자세한 내용은 이 자습서에서는 Stephen walther가 ASP.NET MVC 응용 프로그램의 여러 부분을 소개합니다.
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/19/2008
 ms.assetid: 87313792-0a96-4caf-89fc-1457d54e5c1e
 msc.legacyurl: /mvc/overview/older-versions-1/overview/understanding-models-views-and-controllers-cs
 msc.type: authoredcontent
-ms.openlocfilehash: c4c5247ac4b880c1be60f0419ebc9fc9b790c639
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 5e9186a6c261266de8f1a1509a49b84b359bd920
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37823398"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41827152"
 ---
 <a name="understanding-models-views-and-controllers-c"></a>모델, 뷰 및 컨트롤러 이해 (C#)
 ====================
@@ -110,7 +110,7 @@ ASP.NET 응용 프로그램을 처음 시작 되 면 응용 프로그램\_start 
 
 작업 세부 정보 =
 
-Id = 3
+id = 3
 
 Global.asax 파일에 정의 된 기본 경로 세 매개 변수 모두에 대 한 기본 값을 포함 합니다. 기본 컨트롤러는 홈, 기본 작업은 인덱스 및 Id 기본값은 빈 문자열입니다. 염두에서 이러한 기본값을 사용 하 여 다음 URL을 구문 분석 방법을 하는 것이 좋습니다.
 

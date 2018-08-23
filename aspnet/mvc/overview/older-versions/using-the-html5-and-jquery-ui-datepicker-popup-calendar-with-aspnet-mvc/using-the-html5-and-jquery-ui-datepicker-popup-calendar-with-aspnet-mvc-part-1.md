@@ -3,17 +3,17 @@ uid: mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-
 title: ASP.NET MVC-파트 1에서 HTML5 및 jQuery UI Datepicker 팝업 일정 사용 | Microsoft Docs
 author: Rick-Anderson
 description: 이 자습서는 편집기 템플릿, 표시 템플릿 및 jQuery UI datepicker 팝업 일정을 ASP.NET MV에서 사용 하는 방법의 기본 사항을 설명 하는 중...
-ms.author: aspnetcontent
+ms.author: riande
 ms.date: 08/29/2011
 ms.assetid: c23d27f7-b0cf-44f2-8445-fb69e045c674
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: dccebd7fb53f947bf782a486f5643bf4c05542d1
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: c98c77d5e9e965fb82efbe6ed88700c89bc67b4c
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37841437"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41831487"
 ---
 <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-1"></a>ASP.NET MVC-파트 1에서 HTML5 및 jQuery UI Datepicker 팝업 일정 사용
 ====================
