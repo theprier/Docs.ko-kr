@@ -5,12 +5,12 @@ description: ASP.NET Core의 인증, 권한 부여 및 보안 기본 사항에 �
 ms.author: tdykstra
 ms.date: 11/01/2017
 uid: security/index
-ms.openlocfilehash: ed64594c85d555d8417903947fc3ce927dc04cec
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: 3a1c1ea1ad28fccbe5ae91b0be193938b095f60b
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095764"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41746091"
 ---
 # <a name="overview-of-aspnet-core-security"></a>ASP.NET Core 보안 개요
 
@@ -35,9 +35,9 @@ ASP.NET Core 및 EF는 앱을 보호하고 보안 위반을 방지하는 기능�
 * [CSRF(사이트 간 요청 위조)](xref:security/anti-request-forgery)
 * [오픈 리디렉션 공격](xref:security/preventing-open-redirects)
 
-그 외에도 알고 계셔야 하는 취약점이 더 있습니다. 자세한 내용은 이 문서의 *ASP.NET 보안 설명서*에 대한 섹션을 참조하세요.
+그 외에도 알고 계셔야 하는 취약점이 더 있습니다. 자세한 내용은 이 문서의 *ASP.NET Core 보안 설명서*에 대한 섹션을 참조하세요.
 
-## <a name="aspnet-security-documentation"></a>ASP.NET 보안 설명서
+## <a name="aspnet-core-security-documentation"></a>ASP.NET Core 보안 설명서
 
 *   [인증](xref:security/authentication/index)
     *   [ID 소개](xref:security/authentication/identity)
