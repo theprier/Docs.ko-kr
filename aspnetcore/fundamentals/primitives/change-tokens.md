@@ -5,12 +5,12 @@ description: 변경 토큰을 사용하여 변경 내용을 추적하는 방법�
 ms.author: riande
 ms.date: 11/10/2017
 uid: fundamentals/primitives/change-tokens
-ms.openlocfilehash: 165602587d73907416f47a7ce82a3081e8d74c4b
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: ac80e4c9da6d38e5f1acf8aa6f7ac3f4803ffb33
+ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276895"
+ms.lasthandoff: 08/25/2018
+ms.locfileid: "42927854"
 ---
 # <a name="detect-changes-with-change-tokens-in-aspnet-core"></a>ASP.NET Core에서 변경 토큰을 사용하여 변경 내용 검색
 
@@ -54,9 +54,9 @@ ms.locfileid: "36276895"
 
 ## <a name="monitoring-for-configuration-changes"></a>구성 변경 모니터링
 
-기본적으로 ASP.NET Core 템플릿은 [JSON 구성 파일](xref:fundamentals/configuration/index#json-configuration)(*appsettings.json*, *appsettings.Development.json*, and *appsettings.Production.json*)을 사용하여 앱 구성 설정을 로드합니다.
+기본적으로 ASP.NET Core 템플릿은 [JSON 구성 파일](xref:fundamentals/configuration/index#json-configuration-provider)(*appsettings.json*, *appsettings.Development.json*, and *appsettings.Production.json*)을 사용하여 앱 구성 설정을 로드합니다.
 
-이러한 파일은 `reloadOnChange` 매개 변수를 받아들이는 [ConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.configurationbuilder)에서 [AddJsonFile(IConfigurationBuilder, String, Boolean, Boolean)](/dotnet/api/microsoft.extensions.configuration.jsonconfigurationextensions.addjsonfile?view=aspnetcore-2.0#Microsoft_Extensions_Configuration_JsonConfigurationExtensions_AddJsonFile_Microsoft_Extensions_Configuration_IConfigurationBuilder_System_String_System_Boolean_System_Boolean_) 확장 메서드를 사용하여 구성합니다(ASP.NET Core 1.1 이상). `reloadOnChange`는 파일 변경 시 구성을 다시 로드해야 하는지를 나타냅니다. [WebHost](/dotnet/api/microsoft.aspnetcore.webhost) 편의 메서드 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder)에서 이 설정을 참조하세요.
+이러한 파일은 `reloadOnChange` 매개 변수를 받아들이는 [ConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.configurationbuilder)에서 [AddJsonFile(IConfigurationBuilder, String, Boolean, Boolean)](/dotnet/api/microsoft.extensions.configuration.jsonconfigurationextensions.addjsonfile#Microsoft_Extensions_Configuration_JsonConfigurationExtensions_AddJsonFile_Microsoft_Extensions_Configuration_IConfigurationBuilder_System_String_System_Boolean_System_Boolean_) 확장 메서드를 사용하여 구성합니다(ASP.NET Core 1.1 이상). `reloadOnChange`는 파일 변경 시 구성을 다시 로드해야 하는지를 나타냅니다. [WebHost](/dotnet/api/microsoft.aspnetcore.webhost) 편의 메서드 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder)에서 이 설정을 참조하세요.
 
 ```csharp
 config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)

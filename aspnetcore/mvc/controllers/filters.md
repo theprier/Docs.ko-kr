@@ -3,14 +3,14 @@ title: ASP.NET Core에서 필터링
 author: ardalis
 description: 필터 작동 방법 및 ASP.NET Core MVC에서 사용하는 방법을 자세히 알아봅니다.
 ms.author: riande
-ms.date: 4/10/2018
+ms.date: 08/15/2018
 uid: mvc/controllers/filters
-ms.openlocfilehash: 24551382847fee0896fe6620d52c30a03aca69d1
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 6b3d5446b1c9aafc02d4c31ad57a234f16513e3f
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36275647"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751757"
 ---
 # <a name="filters-in-aspnet-core"></a>ASP.NET Core에서 필터링
 
