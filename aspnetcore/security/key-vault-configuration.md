@@ -2,37 +2,25 @@
 title: ASP.NET Core에서 azure Key Vault 구성 공급자
 author: guardrex
 description: Azure 키 자격 증명 모음 구성 공급자를 사용 하 여 런타임에 로드 하는 이름-값 쌍을 사용 하 여 앱을 구성 하는 방법을 알아봅니다.
+monikerRange: '>= aspnetcore-1.1'
 ms.author: riande
+ms.custom: mvc
 ms.date: 08/01/2018
 uid: security/key-vault-configuration
-ms.openlocfilehash: 829c6c7e2750879b51bf3ce8225c6e472900f2ad
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: 933f4fb1f2c1c412d318af5974cc9653805242ca
+ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41828878"
+ms.lasthandoff: 08/25/2018
+ms.locfileid: "42927989"
 ---
 # <a name="azure-key-vault-configuration-provider-in-aspnet-core"></a>ASP.NET Core에서 azure Key Vault 구성 공급자
 
 하 여 [Luke Latham](https://github.com/guardrex) 고 [Andrew Stanton-nurse](https://github.com/anurse)
 
-# <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x)
-
-보기 또는 2.x 용 샘플 코드를 다운로드 합니다.
-
-* [기본 샘플](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/basic-sample/2.x) ([다운로드 하는 방법을](xref:tutorials/index#how-to-download-a-sample))-앱에 비밀 값을 읽습니다.
-* [키 이름 접두사 샘플](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/key-name-prefix-sample/2.x) ([다운로드 하는 방법을](xref:tutorials/index#how-to-download-a-sample))-다양 한 각 앱 버전에 대 한 비밀 값을 로드할 수 있는 앱의 버전을 나타내는 키 이름 접두사를 사용 하 여 읽기 비밀 값입니다.
-
-# <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x)
-
-보기 또는 1.x 용 샘플 코드를 다운로드 합니다.
-
-* [기본 샘플](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/basic-sample/1.x) ([다운로드 하는 방법을](xref:tutorials/index#how-to-download-a-sample))-앱에 비밀 값을 읽습니다.
-* [키 이름 접두사 샘플](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples/key-name-prefix-sample/1.x) ([다운로드 하는 방법을](xref:tutorials/index#how-to-download-a-sample))-다양 한 각 앱 버전에 대 한 비밀 값을 로드할 수 있는 앱의 버전을 나타내는 키 이름 접두사를 사용 하 여 읽기 비밀 값입니다.
-
----
-
 이 문서를 사용 하는 방법에 설명 합니다 [Microsoft Azure Key Vault](https://azure.microsoft.com/services/key-vault/) 구성 공급자를 Azure Key Vault 암호에서 앱 구성 값을 로드 합니다. Azure Key Vault는 암호화 키 및 앱 및 서비스에서 사용 하는 비밀을 보호 하는데 도움이 되는 클라우드 기반 서비스입니다. FIPS 140-2의 요구 사항을 충족 Level 2 유효성 검사가 하드웨어 보안 모듈 (HSM의) 구성 데이터를 저장 하는 경우 및 일반적인 시나리오에 중요 한 구성 데이터에 대 한 액세스 제어 포함 됩니다. 이 기능은 ASP.NET Core 1.1을 대상으로 하는 앱에 대해 사용할 수 있습니다.
+
+[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/key-vault-configuration/samples)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
 ## <a name="package"></a>패키지
 
@@ -52,7 +40,7 @@ ms.locfileid: "41828878"
 
 [!code-csharp[Program](key-vault-configuration/samples/basic-sample/2.x/Program.cs?name=snippet1)]
 
-## <a name="creating-key-vault-secrets-and-loading-configuration-values-basic-sample"></a>Key vault 비밀 만들기 및 구성 값 (basic-샘플)를 로드 합니다.
+## <a name="create-key-vault-secrets-and-load-configuration-values-basic-sample"></a>Key vault 비밀 만들기 및 구성 값 (basic-샘플)를 로드 합니다.
 
 1. Key vault 만들기 및 Azure Active Directory (Azure AD)의 지침에 따라 앱에 대 한 설정 [Azure Key Vault를 사용 하 여 시작](https://azure.microsoft.com/documentation/articles/key-vault-get-started/)합니다.
    * 사용 하 여 키 자격 증명 모음에 비밀을 추가 합니다 [AzureRM Key Vault PowerShell 모듈](/powershell/module/azurerm.keyvault) 에서 사용할 수 있습니다는 [PowerShell 갤러리](https://www.powershellgallery.com/packages/AzureRM.KeyVault)의 [Azure Key Vault REST API](/rest/api/keyvault/), 또는 합니다 [Azure Portal](https://portal.azure.com/)합니다. 암호 중 하나로 만들어집니다 *수동* 하거나 *인증서* 비밀입니다. *인증서* 비밀 앱 및 서비스 사용에 대 한 인증서가 있지만 구성 공급자에서 지원 되지 않습니다. 사용 해야 합니다 *수동* 구성 공급자를 사용 하 여 사용 하 여 비밀 이름-값 쌍을 만드는 옵션입니다.
@@ -75,7 +63,7 @@ ms.locfileid: "41828878"
 
 ![Azure 키 자격 증명 모음 구성 공급자를 통해 로드 하는 비밀 값을 표시 하는 브라우저 창](key-vault-configuration/_static/sample1.png)
 
-## <a name="creating-prefixed-key-vault-secrets-and-loading-configuration-values-key-name-prefix-sample"></a>접두사가 지정 된 key vault 비밀 만들기 및 구성 값 (키-이름-접두사-샘플)를 로드 합니다.
+## <a name="create-prefixed-key-vault-secrets-and-load-configuration-values-key-name-prefix-sample"></a>접두사가 지정 된 key vault 비밀 만들기 및 구성 값 (키-이름-접두사-샘플)를 로드 합니다.
 
 `AddAzureKeyVault` 구현의 받아들이는 오버 로드가 제공 `IKeyVaultSecretManager`, 구성 키에 변환 된 키 자격 증명 모음 비밀을 제어할 수 있습니다. 예를 들어, 앱 시작 시 제공한 접두사 값을 기반으로 하는 비밀 값을 로드 하는 인터페이스를 구현할 수 있습니다. 이렇게 하면 앱의 버전을 기반으로 하는 비밀 정보를 로드 하려면 예를 들어 있습니다.
 
@@ -117,7 +105,7 @@ ms.locfileid: "41828878"
 
    ![브라우저 창에 앱의 버전 5.1.0.0 완료 되 면 Azure 키 자격 증명 모음 구성 공급자를 통해 로드 된 비밀 값 표시](key-vault-configuration/_static/sample2-2.png)
 
-## <a name="controlling-access-to-the-clientsecret"></a>ClientSecret에 대 한 액세스를 제어합니다.
+## <a name="control-access-to-the-clientsecret"></a>ClientSecret에 대 한 액세스 제어
 
 사용 합니다 [암호 관리자 도구](xref:security/app-secrets) 유지 하기 위해는 `ClientSecret` 프로젝트 트리 외부에 원본입니다. 암호 관리자 사용 하 여 특정 프로젝트를 사용 하 여 앱 암호를 연결을 여러 프로젝트 간에 공유 합니다.
 
@@ -141,7 +129,7 @@ config.AddAzureKeyVault(
 store.Close();
 ```
 
-## <a name="reloading-secrets"></a>암호를 다시 로드
+## <a name="reload-secrets"></a>암호를 다시 로드
 
 될 때까지 캐시 된 비밀 `IConfigurationRoot.Reload()` 라고 합니다. 만료를 비활성화 하 고 key vault에 암호를 업데이트 될 때까지 앱에서 준수 하지 않을 `Reload` 실행 됩니다.
 
@@ -153,7 +141,7 @@ Configuration.Reload();
 
 사용 안 함 및 만료 된 암호를 throw 한 `KeyVaultClientException`합니다. 앱에서 throw를 방지 하려면 앱 바꾸거나 사용 안 함/만료 된 암호를 업데이트 합니다.
 
-## <a name="troubleshooting"></a>문제 해결
+## <a name="troubleshoot"></a>문제 해결
 
 오류 메시지에 기록 됩니다 앱 공급자를 사용 하 여 구성을 로드 하지 못하면 합니다 [ASP.NET Core 로깅 인프라](xref:fundamentals/logging/index)합니다. 다음 조건 하면 구성을 로드에서 하지 것입니다.
 
