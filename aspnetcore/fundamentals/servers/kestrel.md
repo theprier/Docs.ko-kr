@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 05/02/2018
 uid: fundamentals/servers/kestrel
-ms.openlocfilehash: 797fce6273eba29d19e640c301d2f4d2059370cc
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: 7c7ff337256792dde057c04a5b96a1eb1c093387
+ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342200"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "41902634"
 ---
 # <a name="kestrel-web-server-implementation-in-aspnet-core"></a>ASP.NET Core에서 Kestrel 웹 서버 구현
 
@@ -788,7 +788,7 @@ public class HostFilteringMiddleware
 }
 ```
 
-`Startup.Configure`에 위의 `HostFilteringMiddleware`을 등록합니다. [미들웨어 등록 순서](xref:fundamentals/middleware/index#ordering)가 중요합니다. 등록은 진단 미들웨어 등록 후 즉시 이뤄져야 합니다(예: `app.UseExceptionHandler`).
+`Startup.Configure`에 위의 `HostFilteringMiddleware`을 등록합니다. [미들웨어 등록 순서](xref:fundamentals/middleware/index#order)가 중요합니다. 등록은 진단 미들웨어 등록 후 즉시 이뤄져야 합니다(예: `app.UseExceptionHandler`).
 
 ```csharp
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
