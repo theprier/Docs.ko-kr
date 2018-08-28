@@ -4,14 +4,14 @@ author: rick-anderson
 description: ASP.NET Core 프로젝트에서 Identity를 스 캐 폴드 하는 방법을 알아봅니다.
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
-ms.date: 5/16/2018
+ms.date: 08/16/2018
 uid: security/authentication/scaffold-identity
-ms.openlocfilehash: 07163941d0bd1fea6f9b3d9867536580d8a9e9d8
-ms.sourcegitcommit: e12f45ddcbe99102a74d4077df27d6c0ebba49c1
+ms.openlocfilehash: e35836fa9c20729da7c857243410833749b3a595
+ms.sourcegitcommit: 847cc1de5526ff42a7303491e6336c2dbdb45de4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/15/2018
-ms.locfileid: "39063275"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43055850"
 ---
 # <a name="scaffold-identity-in-aspnet-core-projects"></a>ASP.NET Core 프로젝트에서 스 캐 폴드 Id
 
@@ -26,6 +26,9 @@ ASP.NET Core 2.1 이상에서 제공 [ASP.NET Core Id](xref:security/authenticat
 Identity 스 캐 폴더를 실행 하는 경우는 *ScaffoldingReadme.txt* 파일은 프로젝트 디렉터리에 만들어집니다. 합니다 *ScaffoldingReadme.txt* 파일 Identity 스 캐 폴딩 업데이트를 완료 하려면 필요한에 대 한 일반 지침을 포함 합니다. 이 문서에는 보다 자세한 지침이 포함 되어 있습니다.는 *ScaffoldingReadme.txt* 파일입니다.
 
 파일 차이 보여 줍니다. 변경 내용을에서 백업할 수 있습니다 하는 소스 제어 시스템을 사용 하는 것이 좋습니다. Identity 스 캐 폴더를 실행 한 후 변경 내용을 검사 합니다.
+
+> [!NOTE]
+> 사용 하는 경우 필요한 서비스를 [2 단계 인증이](xref:security/authentication/identity-enable-qrcodes)를 [계정 확인 및 암호 복구](xref:security/authentication/accconfirm), 및 Id와 기타 보안 기능입니다. Identity를 스 캐 폴딩 하는 경우 서비스 또는 서비스 스텁을 생성 되지 않습니다. 이러한 기능을 사용 하도록 서비스를 수동으로 추가 되어야 합니다. 예를 들어, 참조 [전자 메일 확인 필요](xref:security/authentication/accconfirm#require-email-confirmation)합니다.
 
 ## <a name="scaffold-identity-into-an-empty-project"></a>빈 프로젝트에 스 캐 폴드 identity
 
@@ -94,7 +97,8 @@ dotnet aspnet-codegenerator identity -dc RPauth.Data.ApplicationDbContext --file
 [!INCLUDE[](~/includes/webapp-alias-notice.md)]
 -->
 
-[!INCLUDE[](~/includes/scaffold-identity/id-scaffold-dlg-auth.md)] 일부 Id 옵션에 구성 된 *Areas/Identity/IdentityHostingStartup.cs*합니다. 자세한 내용은 [IHostingStartup](xref:fundamentals/configuration/platform-specific-configuration)합니다.
+[!INCLUDE[](~/includes/scaffold-identity/id-scaffold-dlg-auth.md)]
+일부 Id 옵션에 구성 된 *Areas/Identity/IdentityHostingStartup.cs*합니다. 자세한 내용은 [IHostingStartup](xref:fundamentals/configuration/platform-specific-configuration)합니다.
 
 ## <a name="scaffold-identity-into-an-mvc-project-without-existing-authorization"></a>기존 권한 부여 없이 MVC 프로젝트에 스 캐 폴드 identity
 

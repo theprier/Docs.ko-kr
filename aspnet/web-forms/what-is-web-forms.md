@@ -8,12 +8,12 @@ ms.date: 02/21/2014
 ms.assetid: 5fa1daf9-1161-4cfa-bd4c-658f48b2c229
 msc.legacyurl: /web-forms/what-is-web-forms
 msc.type: content
-ms.openlocfilehash: ccb0e6096b0281e5ef8af63bfd84b172e7f209b9
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: e135cfa2945b9e7e5269eb436ff0c1dff20aacdf
+ms.sourcegitcommit: 847cc1de5526ff42a7303491e6336c2dbdb45de4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41828502"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43055714"
 ---
 <a name="what-is-web-forms"></a>Web Forms 란
 ====================
@@ -21,7 +21,7 @@ ASP.NET Web Forms은 ASP.NET 웹 응용 프로그램 프레임 워크의 일부 
 
 Web Forms는 사용자가 브라우저를 사용 하 여 요청 하는 페이지입니다. HTML 조합 하 여 이러한 페이지를 작성할 수 있습니다 클라이언트 스크립트, 서버 컨트롤 및 서버 코드입니다. 사용자가 페이지 요청을 컴파일 및 프레임 워크에 의해 서버에서 실행 및 프레임 워크는 브라우저에서 렌더링할 수 있는 HTML 태그를 생성 하는 다음입니다. ASP.NET Web Forms 페이지를 브라우저 또는 클라이언트 장치에서 사용자에 게 정보를 제공 합니다.
 
-Visual Studio를 사용 하 여 ASP.NET Web Forms를 만들 수 있습니다. Visual Studio 통합 개발 환경 (IDE)을 사용 하면 Web Forms 페이지의 레이아웃에 서버 컨트롤을 끌어서를 수행할 수 있습니다. 그런 다음 쉽게 설정할 수 있습니다 속성, 메서드 및 페이지 로그 자체 또는 페이지의 컨트롤에 대 한 이벤트입니다. 웹 페이지의 동작, 모양과 느낌 및 등을 정의 하는 이러한 속성, 메서드 및 이벤트 사용 됩니다. 서버 페이지에 대 한 논리를 처리 하는 코드를 작성 하려면 Visual Basic 또는 C#과 같은.NET 언어를 사용할 수 있습니다.
+Visual Studio를 사용 하 여 ASP.NET Web Forms를 만들 수 있습니다. Visual Studio 통합 개발 환경 (IDE)을 사용 하면 Web Forms 페이지의 레이아웃에 서버 컨트롤을 끌어서를 수행할 수 있습니다. 그런 다음 쉽게 설정할 수 있습니다 속성, 메서드 및 이벤트 자체 페이지 또는 페이지의 컨트롤에 대 한 합니다. 웹 페이지의 동작, 모양과 느낌 및 등을 정의 하는 이러한 속성, 메서드 및 이벤트 사용 됩니다. 서버 페이지에 대 한 논리를 처리 하는 코드를 작성 하려면 Visual Basic 또는 C#과 같은.NET 언어를 사용할 수 있습니다.
 
 > [!NOTE] 
 > 
