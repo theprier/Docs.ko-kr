@@ -2,14 +2,15 @@
 uid: index
 layout: HubPage
 ms.topic: hub-page
+ms.author: riande
 title: ASP.NET 설명서 | Microsoft Docs
-description: ''
-ms.openlocfilehash: cc887183fba9d3c46fbb1068d13d612a3e1806e6
-ms.sourcegitcommit: f8852267f463b62d7f975e56bea9aa3f68fbbdeb
+description: ASP.NET 및 ASP.NET 웹 응용 프로그램을 개발하는 방법을 알아봅니다. 설명서, 예제 코드, 자습서 등을 가져옵니다.
+ms.openlocfilehash: 9b63e7a708e1b0551e1f48cea2080528d29bdfa9
+ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 04/06/2018
-ms.locfileid: "30866817"
+ms.lasthandoff: 08/25/2018
+ms.locfileid: "42927925"
 ---
 <div id="main" class="v2">
     <div class="container">
