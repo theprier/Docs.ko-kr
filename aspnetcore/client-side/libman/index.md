@@ -6,12 +6,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 08/14/2018
 uid: client-side/libman/index
-ms.openlocfilehash: b21ab0dbeda043dceda5376bcd95ccd334707c5a
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: a6ff0cc3342cfac74739387aa17046ed5050232f
+ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41909916"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43312361"
 ---
 # <a name="client-side-library-acquisition-in-aspnet-core-with-libman"></a>LibMan을 사용하여 ASP.NET Core에서 클라이언트 쪽 라이브러리 획득
 
@@ -34,4 +34,5 @@ LibMan은 패키지 관리 시스템이 아닙니다. npm 또는 [yarn](https://
 ## <a name="additional-resources"></a>추가 자료
 
 * <xref:client-side/libman/libman-vs>
+* <xref:client-side/libman/libman-cli>
 * [LibMan GitHub 리포지토리](https://github.com/aspnet/LibraryManager)
