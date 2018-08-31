@@ -5,12 +5,12 @@ description: 이 자습서에서는 Entity Framework Core를 사용하는 ASP.NE
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/advanced
-ms.openlocfilehash: be44ef115ce72e1571bbdea2c609ea6c53792c59
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 25916365b4e682a8e296e0affbcddd4f1e5846b1
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38194044"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751681"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---advanced---10-of-10"></a>ASP.NET Core MVC 및 EF Core - 고급 - 10/10
 
@@ -187,7 +187,7 @@ Entity Framework Core 소스는 [https://github.com/aspnet/EntityFrameworkCore](
 
 ## <a name="next-steps"></a>다음 단계
 
-이것으로 ASP.NET MVC 응용 프로그램에서 Entity Framework Core 사용에 대한 자습서 시리즈를 마칩니다.
+이것으로 ASP.NET Core MVC 응용 프로그램에서 Entity Framework Core 사용에 대한 자습서 시리즈를 마칩니다.
 
 EF Core에 대한 자세한 내용은 [Entity Framework Core 설명서](https://docs.microsoft.com/ef/core)를 참조하세요. 다음 설명서도 제공됩니다. [Entity Framework Core in Action(영문)](https://www.manning.com/books/entity-framework-core-in-action).
 

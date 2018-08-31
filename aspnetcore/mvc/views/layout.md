@@ -5,18 +5,18 @@ description: ASP.NET Core 앱에서 뷰를 렌더링하기 전에 일반적인 �
 ms.author: riande
 ms.date: 10/14/2016
 uid: mvc/views/layout
-ms.openlocfilehash: a99b239a0aeeb14492b1eee962dc1149f056f0eb
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: ad0b339572f387be8a636204015ffc361947acb8
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274120"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751530"
 ---
 # <a name="layout-in-aspnet-core"></a>ASP.NET Core의 레이아웃
 
 작성자: [Steve Smith](https://ardalis.com/)
 
-뷰는 시각적 개체 및 프로그래밍 요소를 자주 공유합니다. 이 문서에서는 ASP.NET 앱에서 뷰를 렌더링하기 전에 일반적인 레이아웃을 사용하고, 지시문을 공유하며, 공용 코드를 실행하는 방법에 대해 알아봅니다.
+뷰는 시각적 개체 및 프로그래밍 요소를 자주 공유합니다. 이 문서에서는 ASP.NET Core 앱에서 뷰를 렌더링하기 전에 일반적인 레이아웃을 사용하고, 지시문을 공유하며, 공용 코드를 실행하는 방법에 대해 알아봅니다.
 
 ## <a name="what-is-a-layout"></a>레이아웃이란
 
@@ -26,7 +26,7 @@ ms.locfileid: "36274120"
 
 스크립트 및 스타일시트와 같은 공통 HTML 구조는 앱 내에서 여러 페이지에서도 자주 사용됩니다. 이러한 모든 공유 요소를 *레이아웃* 파일에 정의한 후 앱 내에 사용된 모든 뷰에서 참조할 수 있습니다. 레이아웃은 뷰에서 중복 코드를 줄여 [DRY(반복 금지) 원칙](http://deviq.com/don-t-repeat-yourself/)을 따르도록 도와줍니다.
 
-규칙에 따라, ASP.NET 앱의 기본 레이아웃 이름을 `_Layout.cshtml`로 지정합니다. Visual Studio ASP.NET Core MVC 프로젝트 템플릿은 `Views/Shared` 폴더에 이 레이아웃 파일을 포함합니다.
+규칙에 따라, ASP.NET Core 앱의 기본 레이아웃 이름을 `_Layout.cshtml`로 지정합니다. Visual Studio ASP.NET Core MVC 프로젝트 템플릿은 `Views/Shared` 폴더에 이 레이아웃 파일을 포함합니다.
 
 ![솔루션 탐색기의 뷰 폴더](layout/_static/web-project-views.png)
 

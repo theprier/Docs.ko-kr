@@ -5,12 +5,12 @@ description: 모델-보기-컨트롤러 디자인 패턴을 사용하여 웹앱 
 ms.author: riande
 ms.date: 01/08/2018
 uid: mvc/overview
-ms.openlocfilehash: 7f8aab02c0ee37dad49ff224b182ec455e837a7a
-ms.sourcegitcommit: e955a722c05ce2e5e21b4219f7d94fb878e255a6
+ms.openlocfilehash: d2a50e48c20fe69b1fe691bfc9c91a27d4219922
+ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39378640"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "41902601"
 ---
 # <a name="overview-of-aspnet-core-mvc"></a>ASP.NET Core MVC 개요
 
@@ -251,3 +251,9 @@ MVC의 Razor 보기는 모델을 기반으로 하는 강력한 형식의 보기�
 ### <a name="view-components"></a>보기 구성 요소
 
 [보기 구성 요소](views/view-components.md)를 통해 렌더링 논리를 패키지하여 응용 프로그램에서 다시 사용할 수 있습니다. 보기 구성 요소는 [부분 보기](views/partial.md)와 비슷하지만, 논리가 연결되어 있습니다.
+
+## <a name="compatibility-version"></a>호환성 버전
+
+<xref:Microsoft.Extensions.DependencyInjection.MvcCoreMvcBuilderExtensions.SetCompatibilityVersion*> 메서드를 사용하면 ASP.NET Core MVC 2.1 이상에서 도입된 주요 동작 변경 내용을 앱이 옵트인(opt-in) 또는 옵트아웃(opt-out)할 수 있습니다.
+
+자세한 내용은 <xref:mvc/compatibility-version>을 참조하세요.

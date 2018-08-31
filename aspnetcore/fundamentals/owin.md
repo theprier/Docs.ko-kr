@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 10/14/2016
 uid: fundamentals/owin
-ms.openlocfilehash: 04042eedc52b4e6f57685e2d9ec1a75cd130fd8d
-ms.sourcegitcommit: 08f1a9baa97060da5168840b332c9c0805b5f901
+ms.openlocfilehash: db28eeff88a13dc95c469f3b7c0746c807da830f
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37144965"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751635"
 ---
 # <a name="open-web-interface-for-net-owin-with-aspnet-core"></a>ASP.NET Core가 있는 OWIN(Open Web Interface for .NET)
 
@@ -31,7 +31,7 @@ OWIN은 서로 다른 개체 모델이 있는 두 프레임워크를 함께 사�
 
 [예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/owin/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
-## <a name="running-owin-middleware-in-the-aspnet-pipeline"></a>ASP.NET 파이프라인에서 OWIN 미들웨어 실행
+## <a name="running-owin-middleware-in-the-aspnet-core-pipeline"></a>ASP.NET Core 파이프라인에서 OWIN 미들웨어 실행
 
 ASP.NET Core의 OWIN 지원은 `Microsoft.AspNetCore.Owin` 패키지의 일부로 배포됩니다. 이 패키지를 설치하여 OWIN 지원을 프로젝트로 가져올 수 있습니다.
 
@@ -56,7 +56,7 @@ public Task OwinHello(IDictionary<string, object> environment)
 
 샘플 서명은 `Task`를 반환하고 OWIN에 필요한 `IDictionary<string, object>`를 수락합니다.
 
-다음 코드는 `UseOwin` 확장 메서드로 `OwinHello` 미들웨어(위에 표시된)를 ASP.NET 파이프라인에 추가하는 방법을 보여 줍니다.
+다음 코드는 `UseOwin` 확장 메서드로 `OwinHello` 미들웨어(위에 표시된)를 ASP.NET Core 파이프라인에 추가하는 방법을 보여줍니다.
 
 ```csharp
 public void Configure(IApplicationBuilder app)
@@ -90,9 +90,9 @@ app.UseOwin(pipeline =>
 
 <a name="hosting-on-owin"></a>
 
-## <a name="using-aspnet-hosting-on-an-owin-based-server"></a>OWIN 기반 서버에서 호스팅하는 ASP.NET 사용
+## <a name="using-aspnet-core-hosting-on-an-owin-based-server"></a>OWIN 기반 서버에서 호스팅하는 ASP.NET Core 사용
 
-OWIN 기반 서버는 ASP.NET 응용 프로그램을 호스팅할 수 있습니다. 이러한 서버는 [Nowin](https://github.com/Bobris/Nowin), .NET OWIN 웹 서버입니다. 이 문서에 대한 샘플에서는 Nowin을 참조하고 자체 호스팅 ASP.NET Core가 가능한 `IServer`를 만드는 데 사용하는 프로젝트를 추가했습니다.
+OWIN 기반 서버는 ASP.NET Core 앱을 호스팅할 수 있습니다. 이러한 서버는 [Nowin](https://github.com/Bobris/Nowin), .NET OWIN 웹 서버입니다. 이 문서에 대한 샘플에서는 Nowin을 참조하고 자체 호스팅 ASP.NET Core가 가능한 `IServer`를 만드는 데 사용하는 프로젝트를 추가했습니다.
 
 [!code-csharp[](owin/sample/src/NowinSample/Program.cs?highlight=15)]
 

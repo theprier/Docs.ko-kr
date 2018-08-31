@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 01/18/2018
 uid: fundamentals/static-files
-ms.openlocfilehash: 7ecbcc81423af20f8da79ebc026b1ac01a250b90
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 33fad930e617c74d9a8c07f850764a6b81fa8ab5
+ms.sourcegitcommit: 2c158fcfd325cad97ead608a816e525fe3dcf757
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36279219"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "41751573"
 ---
 # <a name="static-files-in-aspnet-core"></a>ASP.NET Core의 고정 파일
 
@@ -102,7 +102,7 @@ HTML, CSS, 이미지 및 JavaScript와 같은 정적 파일은 ASP.NET Core 앱�
 
 [HeaderDictionaryExtensions.Append](/dotnet/api/microsoft.aspnetcore.http.headerdictionaryextensions.append) 메서드는 [Microsoft.AspNetCore.Http](https://www.nuget.org/packages/Microsoft.AspNetCore.Http/) 패키지에 있습니다.
 
-파일은 10분(600초) 동안 공개적으로 캐시할 수 있습니다.
+개발 환경에서 파일은 10분(600초) 동안 공개적으로 캐시할 수 있습니다.
 
 ![추가된 캐시 제어 헤더를 보여 주는 응답 헤더](static-files/_static/add-header.png)
 

@@ -2,15 +2,16 @@
 title: ASP.NET Core에서 WebListener 웹 서버 구현
 author: rick-anderson
 description: IIS 없이 인터넷에 직접 연결하는 데 사용할 수 있는 Windows의 ASP.NET Core용 웹 서버인 WebListener에 대해 알아봅니다.
+monikerRange: < aspnetcore-2.0
 ms.author: riande
-ms.date: 03/13/2018
+ms.date: 08/15/2018
 uid: fundamentals/servers/weblistener
-ms.openlocfilehash: 68aea99d6ce6af12655ef5fdb13130e9279e448a
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 5602c1ddbe76879587de12bcd82722c103dee03f
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274871"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751693"
 ---
 # <a name="weblistener-web-server-implementation-in-aspnet-core"></a>ASP.NET Core에서 WebListener 웹 서버 구현
 
@@ -45,11 +46,15 @@ WebListener는 IIS를 사용하지 않고 인터넷에 서버를 직접 노출�
 
 ![WebListener는 인터넷과 직접 통신합니다.](weblistener/_static/weblistener-to-internet.png)
 
-Http.Sys를 기반으로 하기 때문에 WebListener는 공격으로부터 보호하기 위한 역방향 프록시 서버가 필요하지 않습니다. Http.Sys는 많은 유형의 공격으로부터 보호하고 모든 기능을 갖춘 웹 서버의 견고성, 보안 및 확장성을 제공하는 완성도 높은 기술입니다. IIS 자체는 Http.Sys 위에 HTTP 수신기로 실행됩니다. 
+Http.Sys를 기반으로 하기 때문에 WebListener는 공격으로부터 보호하기 위한 역방향 프록시 서버가 필요하지 않습니다. Http.Sys는 많은 유형의 공격으로부터 보호하고 모든 기능을 갖춘 웹 서버의 견고성, 보안 및 확장성을 제공하는 완성도 높은 기술입니다. IIS 자체는 Http.Sys 위에 HTTP 수신기로 실행됩니다.
 
 WebListener는 Kestrel을 사용하여 가져올 수 없는 제공하는 기능 중 하나가 필요할 때 내부 배포에 대한 적합한 선택이기도 합니다.
 
 ![WebListener는 내부 네트워크와 직접 통신합니다.](weblistener/_static/weblistener-to-internal.png)
+
+## <a name="kernel-mode-authentication-with-kerberos"></a>Kerberos를 사용하여 커널 모드 인증
+
+WebListener는 Kerberos 인증 프로토콜을 사용하여 커널 모드 인증에 위임합니다. 사용자 모드 인증은 Kerberos 및 WebListener로 지원되지 않습니다. 머신 계정은 Active Directory에서 가져온 Kerberos 토큰/티켓의 암호를 해독하는 데 사용되고 사용자를 인증하는 서버에 클라이언트에 의해 전달되어야 합니다. 앱의 사용자가 아닌 호스트에 대해 SPN(서비스 사용자 이름)을 등록합니다.
 
 ## <a name="how-to-use-weblistener"></a>WebListener 사용 방법
 

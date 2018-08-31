@@ -5,12 +5,12 @@ description: ''
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/intro
-ms.openlocfilehash: 4e0bcffd1162681aa4d31c4fe74acac5a7e981f1
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: cbef7e5edf2950a87a4cd4155c63a22fff2990fe
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38216314"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751720"
 ---
 # <a name="aspnet-core-mvc-with-entity-framework-core---tutorial-1-of-10"></a>Entity Framework Core를 사용한 ASP.NET Core MVC - 자습서 1/10
 
@@ -35,7 +35,7 @@ EF Core 2.0은 최신 버전의 EF이지만 EF 6.x의 모든 기능을 가지고
 
 ## <a name="prerequisites"></a>전제 조건
 
-[!INCLUDE [](~/includes/net-core-prereqs.md) [](~/includes/net-core-prereqs.md)]
+[!INCLUDE [](~/includes/net-core-prereqs.md)]
 
 ## <a name="troubleshooting"></a>문제 해결
 
@@ -80,7 +80,7 @@ Visual Studio를 열고 "ContosoUniversity"라는 새로운 ASP.NET Core C# 웹 
 
 * **확인**을 클릭합니다.
 
-  ![새 ASP.NET 프로젝트 대화 상자](intro/_static/new-aspnet.png)
+  ![새 ASP.NET Core 프로젝트 대화 상자](intro/_static/new-aspnet.png)
 
 ## <a name="set-up-the-site-style"></a>사이트 스타일 설정
 
@@ -273,7 +273,7 @@ CRUD 작업 메서드와 보기를 자동으로 만드는 작업을 스캐폴딩
 
 [!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_Context&highlight=5,7,9)]
 
-ASP.NET 종속성 주입은 `SchoolContext`의 인스턴스를 컨트롤러에 전달하는 것을 담당합니다. 이전에 *Startup.cs* 파일에서 구성했습니다.
+ASP.NET Core 종속성 주입은 `SchoolContext`의 인스턴스를 컨트롤러에 전달하는 것을 담당합니다. 이전에 *Startup.cs* 파일에서 구성했습니다.
 
 컨트롤러는 데이터베이스에 모든 학생을 표시하는 `Index` 작업 메서드를 포함합니다. 메서드는 데이터베이스 컨텍스트 인스턴스의 `Students` 속성을 읽어 학생 엔터티 집합에서 학생의 목록을 가져옵니다.
 

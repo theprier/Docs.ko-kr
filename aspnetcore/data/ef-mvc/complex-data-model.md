@@ -5,12 +5,12 @@ description: 이 자습서에서는 더 많은 엔터티 및 관계를 추가하
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/complex-data-model
-ms.openlocfilehash: 1d3c69c8c658b5ca2f0253b790b0dc75d44d3064
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: c97acd2b943e1d4c466c060247220b3b8bab6d6b
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38194093"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751783"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---data-model---5-of-10"></a>ASP.NET Core MVC 및 EF Core - 데이터 모델 - 5/10
 
@@ -66,7 +66,7 @@ Contoso University 웹 응용 프로그램 예제는 Entity Framework Core 및 V
 
 ### <a name="the-stringlength-attribute"></a>StringLength 특성
 
-특성을 사용하여 데이터 유효성 검사 규칙 및 유효성 검사 오류 메시지를 지정할 수 있습니다. `StringLength` 특성은 데이터베이스의 최대 길이를 설정하고, ASP.NET MVC에 대한 클라이언트 쪽 및 서버 쪽 유효성을 검사를 제공합니다. 이 특성의 최소 문자열 길이를 지정할 수도 있지만, 최소값은 데이터베이스 스키마에 영향을 주지 않습니다.
+특성을 사용하여 데이터 유효성 검사 규칙 및 유효성 검사 오류 메시지를 지정할 수 있습니다. `StringLength` 특성은 데이터베이스의 최대 길이를 설정하고, ASP.NET Core MVC에 대한 클라이언트 쪽 및 서버 쪽 유효성을 검사를 제공합니다. 이 특성의 최소 문자열 길이를 지정할 수도 있지만, 최소값은 데이터베이스 스키마에 영향을 주지 않습니다.
 
 사용자가 이름을 50자 이하로 입력하였는지를 확인한다고 가정합니다. 이 제한 사항을 추가하려면 다음 예제와 같이 `StringLength` 특성을 `LastName` 및 `FirstMidName` 속성에 추가합니다.
 

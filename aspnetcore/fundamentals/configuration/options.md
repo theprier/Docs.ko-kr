@@ -6,23 +6,43 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 11/28/2017
 uid: fundamentals/configuration/options
-ms.openlocfilehash: ef6b0117b88c4c79771f0280267bd99993028ac8
-ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
+ms.openlocfilehash: 6258530beedced9570111478fea630b1556e1a1e
+ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39655422"
+ms.lasthandoff: 08/25/2018
+ms.locfileid: "42927960"
 ---
 # <a name="options-pattern-in-aspnet-core"></a>ASP.NET Core의 옵션 패턴
 
 [Luke Latham](https://github.com/guardrex)으로
 
-옵션 패턴은 클래스를 사용하여 관련 설정 그룹을 나타냅니다. 구성 설정이 기능에 따라 별도 클래스로 격리된 경우 앱은 두 가지 중요한 소프트웨어 엔지니어링 원칙을 따릅니다.
+옵션 패턴은 클래스를 사용하여 관련 설정 그룹을 나타냅니다. [구성 설정](xref:fundamentals/configuration/index)이 시나리오에 따라 별도 클래스로 격리된 경우 앱은 두 가지 중요한 소프트웨어 엔지니어링 원칙을 따릅니다.
 
-* [ISP(Interface Segregation Principle, 인터페이스 분리 원칙)](http://deviq.com/interface-segregation-principle/): 구성 설정에 의해 결정되는 기능(클래스)은 사용하는 구성 설정에 의해서만 결정됩니다.
+* [ISP(Interface Segregation Principle, 인터페이스 분리 원칙)](http://deviq.com/interface-segregation-principle/): 구성 설정에 의해 결정되는 시나리오(클래스)는 사용하는 구성 설정에 의해서만 결정됩니다.
 * [관심사의 분리](http://deviq.com/separation-of-concerns/): 앱의 다른 부분에 대한 설정은 다른 설정에 종속되거나 연결되지 않습니다.
 
 [샘플 코드 보기 또는 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/configuration/options/sample)([다운로드 하는 방법](xref:tutorials/index#how-to-download-a-sample)) 이 문서는 샘플 앱으로 따라하기 더 쉽습니다.
+
+## <a name="prerequisites"></a>전제 조건
+
+::: moniker range=">= aspnetcore-2.1"
+
+[Microsoft.AspNetCore.App 메타패키지](xref:fundamentals/metapackage-app)를 참조하거나 [Microsoft.Extensions.Options.ConfigurationExtensions](https://www.nuget.org/packages/Microsoft.Extensions.Options.ConfigurationExtensions/) 패키지에 패키지 참조를 추가합니다.
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+[Microsoft.AspNetCore.All 메타패키지](xref:fundamentals/metapackage)를 참조하거나 [Microsoft.Extensions.Options.ConfigurationExtensions](https://www.nuget.org/packages/Microsoft.Extensions.Options.ConfigurationExtensions/) 패키지에 패키지 참조를 추가합니다.
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+[Microsoft.Extensions.Options.ConfigurationExtensions](https://www.nuget.org/packages/Microsoft.Extensions.Options.ConfigurationExtensions/) 패키지에 패키지 참조를 추가합니다.
+
+::: moniker-end
 
 ## <a name="basic-options-configuration"></a>기본 옵션 구성
 
@@ -102,7 +122,7 @@ delegate_option1 = value1_configured_by_delgate, delegate_option2 = 500
 
 하위 옵션 구성은 [샘플 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/fundamentals/configuration/options/sample)에 예제 &num;3으로 설명되어 있습니다.
 
-앱은 앱의 특정 기능 그룹(클래스)과 관련된 옵션 클래스를 만들어야 합니다. 구성 값을 필요로 하는 앱의 일부는 사용하는 구성 값에 액세스할 수 있어야 합니다.
+앱은 앱의 특정 시나리오 그룹(클래스)과 관련된 옵션 클래스를 만들어야 합니다. 구성 값을 필요로 하는 앱의 일부는 사용하는 구성 값에 액세스할 수 있어야 합니다.
 
 옵션을 구성에 바인딩하는 경우 옵션 형식의 각 속성은 `property[:sub-property:]` 양식의 구성 키에 바인딩됩니다. 예를 들어 `MyOptions.Option1` 속성은 키 `Option1`에 바인딩되어 *appsettings.json*의 `option1` 속성에서 읽습니다.
 

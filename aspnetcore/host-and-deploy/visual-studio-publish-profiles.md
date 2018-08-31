@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 04/10/2018
 uid: host-and-deploy/visual-studio-publish-profiles
-ms.openlocfilehash: 280599ab4b4f0a70d154cc4408e7232aaf766d8e
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 2958b83de13207b93790004a4fa60b0509af3cd2
+ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36279560"
+ms.lasthandoff: 08/22/2018
+ms.locfileid: "41902588"
 ---
 # <a name="visual-studio-publish-profiles-for-aspnet-core-app-deployment"></a>ASP.NET Core 앱 배포용 Visual Studio 게시 프로필
 
@@ -505,3 +505,4 @@ Azure App Service 웹앱 배포에 있는 파일을 보려면 [Kudu 서비스](h
 
 * [웹 배포](https://www.iis.net/downloads/microsoft/web-deploy)(MSDeploy)는 IIS 서버에 대한 웹앱 및 웹 사이트 배포를 간소화합니다.
 * [https://github.com/aspnet/websdk](https://github.com/aspnet/websdk/issues): 배포에 대한 파일 문제 및 요청 기능.
+* [Visual Studio에서 Azure VM에 ASP.NET 웹앱 게시](/azure/virtual-machines/windows/publish-web-app-from-visual-studio)

@@ -2,16 +2,16 @@
 title: ASP.NET Core에서 HTTP.sys 웹 서버 구현
 author: guardrex
 description: Windows의 ASP.NET Core에 대한 웹 서버인 HTTP.sys에 대해 알아봅니다. HTTP.sys 커널 모드 드라이버를 기반으로 한 HTTP.sys는 IIS 없이 인터넷에 대한 직접 연결에 사용될 수 있는 Kestrel에 대한 대안입니다.
+monikerRange: '>= aspnetcore-2.0'
 ms.author: tdykstra
-ms.custom: mvc
-ms.date: 03/13/2018
+ms.date: 08/15/2018
 uid: fundamentals/servers/httpsys
-ms.openlocfilehash: aabfd99b7a28e80c665798fab86264b2b11954c2
-ms.sourcegitcommit: 7097dba14d5b858e82758ee031ac62dbe3611339
+ms.openlocfilehash: 58f71596b8ad54dd500699265ab022dc57c4f7a3
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39138573"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751777"
 ---
 # <a name="httpsys-web-server-implementation-in-aspnet-core"></a>ASP.NET Core에서 HTTP.sys 웹 서버 구현
 
@@ -54,7 +54,11 @@ HTTP.sys는 다음과 같은 배포에 유용합니다.
 
   ![HTTP.sys는 내부 네트워크와 직접 통신합니다.](httpsys/_static/httpsys-to-internal.png)
 
-HTTP.sys는 많은 유형의 공격으로부터 보호하고 모든 기능을 갖춘 웹 서버의 견고성, 보안 및 확장성을 제공하는 완성도 높은 기술입니다. IIS 자체는 HTTP.sys 위에 HTTP 수신기로 실행됩니다. 
+HTTP.sys는 많은 유형의 공격으로부터 보호하고 모든 기능을 갖춘 웹 서버의 견고성, 보안 및 확장성을 제공하는 완성도 높은 기술입니다. IIS 자체는 HTTP.sys 위에 HTTP 수신기로 실행됩니다.
+
+## <a name="kernel-mode-authentication-with-kerberos"></a>Kerberos를 사용하여 커널 모드 인증
+
+HTTP.sys는 Kerberos 인증 프로토콜을 사용하여 커널 모드 인증에 위임합니다. 사용자 모드 인증은 Kerberos 및 HTTP.sys로 지원되지 않습니다. 머신 계정은 Active Directory에서 가져온 Kerberos 토큰/티켓의 암호를 해독하는 데 사용되고 사용자를 인증하는 서버에 클라이언트에 의해 전달되어야 합니다. 앱의 사용자가 아닌 호스트에 대해 SPN(서비스 사용자 이름)을 등록합니다.
 
 ## <a name="how-to-use-httpsys"></a>HTTP.sys 사용 방법
 

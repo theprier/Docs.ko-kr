@@ -4,14 +4,14 @@ author: zuckerthoben
 description: ASP.NET Core Web API 프로젝트에 Swashbuckle을 추가하여 Swagger UI를 통합하는 방법을 알아봅니다.
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 07/27/2018
+ms.date: 08/20/2018
 uid: tutorials/get-started-with-swashbuckle
-ms.openlocfilehash: 06f0ebae70fe43506d7edecbd0508968d1d00635
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: daaf26d927fa8134c02426ee40db1784d027b487
+ms.sourcegitcommit: 15d7bd0b2c4e6fe9ac335d658bab71a45ca5bc72
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342317"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "41751417"
 ---
 # <a name="get-started-with-swashbuckle-and-aspnet-core"></a>Swashbuckle 및 ASP.NET Core 시작
 
@@ -96,6 +96,8 @@ dotnet add TodoApi.csproj package Swashbuckle.AspNetCore
 `Startup.Configure` 메서드에서 생성된 JSON 문서 및 Swagger UI를 지원하기 위해 미들웨어를 사용하도록 설정합니다.
 
 [!code-csharp[](../tutorials/web-api-help-pages-using-swagger/samples/2.0/TodoApi.Swashbuckle/Startup2.cs?name=snippet_Configure&highlight=4,8-11)]
+
+위의 `UseSwaggerUI` 메서드 호출은 [정적 파일 미들웨어](xref:fundamentals/static-files)를 활성화합니다. .NET Framework 또는 NET Core 1.x를 대상으로 하는 경우 [Microsoft.AspNetCore.StaticFiles](https://www.nuget.org/packages/Microsoft.AspNetCore.StaticFiles/) NuGet 패키지를 프로젝트에 추가합니다.
 
 앱을 시작하고 `http://localhost:<port>/swagger/v1/swagger.json`으로 이동합니다. 엔드포인트를 설명하는 생성된 문서는 [Swagger 사양(swagger.json)](xref:tutorials/web-api-help-pages-using-swagger#swagger-specification-swaggerjson)에 표시된 것처럼 나타납니다.
 

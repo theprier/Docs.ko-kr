@@ -5,12 +5,12 @@ description: ASP.NET Core에서 보기 구성 요소가 사용되는 방법 및 
 ms.author: riande
 ms.date: 02/14/2017
 uid: mvc/views/view-components
-ms.openlocfilehash: 2b196d8d46942604d1c85eb5f2f073661e5acb30
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: c4e4de6e4ffb634a636bccdb2a929a524baebecf
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36278364"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751503"
 ---
 # <a name="view-components-in-aspnet-core"></a>ASP.NET Core의 보기 구성 요소
 
@@ -75,8 +75,9 @@ ms.locfileid: "36278364"
 
 런타임은 다음 경로에서 뷰를 검색합니다.
 
-   * Views/\<controller_name>/Components/\<view_component_name>/\<view_name>
-   * Views/Shared/Components/\<view_component_name>/\<view_name>
+* /Pages/Components/<component name>/\<view_name>
+* Views/\<controller_name>/Components/\<view_component_name>/\<view_name>
+* Views/Shared/Components/\<view_component_name>/\<view_name>
 
 뷰 구성 요소에 대한 기본 뷰 이름은 *Default*이며 이것은 일반적으로 뷰 파일의 이름이 *Default.cshtml*로 지정됨을 의미합니다. 뷰 구성 요소 결과를 만들거나 `View` 메서드를 호출할 때 다른 뷰 이름을 지정할 수 있습니다.
 

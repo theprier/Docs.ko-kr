@@ -5,12 +5,12 @@ description: 캐시 태그 도우미 사용 방법 소개
 ms.author: riande
 ms.date: 02/14/2017
 uid: mvc/views/tag-helpers/builtin-th/cache-tag-helper
-ms.openlocfilehash: 969716e21211513053f52049368a0a7190ffba47
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 425d8c2235f0070665bc0c967d2498f2cff2a4a6
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276554"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751674"
 ---
 # <a name="cache-tag-helper-in-aspnet-core-mvc"></a>ASP.NET Core MVC의 캐시 태그 도우미
 
@@ -181,7 +181,7 @@ routes.MapRoute(
 | 문자열            | ".AspNetCore.Identity.Application"                |
 |                   | ".AspNetCore.Identity.Application,HairColor" |
 
-헤더 값이 변경되면 캐시 새로 고침을 트리거하는 단일 헤더 값 또는 쉼표로 구분된 헤더 값 목록을 허용합니다. 다음 예제에서는 ASP.NET ID와 연결된 쿠키를 살펴봅니다. 사용자가 인증되면 캐시 새로 고침을 트리거하는 요청 쿠키를 설정해야 합니다.
+헤더 값이 변경되면 캐시 새로 고침을 트리거하는 단일 헤더 값 또는 쉼표로 구분된 헤더 값 목록을 허용합니다. 다음 예제에서는 ASP.NET Core ID와 연결된 쿠키를 살펴봅니다. 사용자가 인증되면 캐시 새로 고침을 트리거하는 요청 쿠키를 설정해야 합니다.
 
 예제:
 

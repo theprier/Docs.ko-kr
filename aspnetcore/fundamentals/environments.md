@@ -5,12 +5,12 @@ description: ASP.NET Core 앱의 여러 환경에서 앱 동작을 제어하는 
 ms.author: riande
 ms.date: 07/03/2018
 uid: fundamentals/environments
-ms.openlocfilehash: eaa6fa44ed90d0c85a11f5e67a4bb9a91e84c196
-ms.sourcegitcommit: c8e62aa766641aa55105f7db79cdf2b27a6e5977
+ms.openlocfilehash: 720e5ef9fb63b83499ce1801a1c3f9df4786d748
+ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39254872"
+ms.lasthandoff: 08/25/2018
+ms.locfileid: "42927944"
 ---
 # <a name="use-multiple-environments-in-aspnet-core"></a>ASP.NET Core에서 여러 환경 사용
 
@@ -275,7 +275,11 @@ Linux 배포의 경우 세션 기반 변수 설정에 대한 명령 프롬프트
 
 ### <a name="configuration-by-environment"></a>환경별 구성
 
-<xref:fundamentals/configuration/index#configuration-by-environment>의 *환경별 구성* 섹션을 참조하세요.
+환경별 구성을 로드하려면 다음을 권장합니다.
+
+* *appsettings* 파일(*appsettings.&lt;<Environment>&gt;.json) [구성: 파일 구성 공급자](xref:fundamentals/configuration/index#file-configuration-provider)를 참조하세요.
+* 환경 변수(앱이 호스팅되는 각 시스템에서 설정) [구성: 파일 구성 공급자](xref:fundamentals/configuration/index#file-configuration-provider) 및 [개발에서 앱 비밀의 안전한 저장소: 환경 변수](xref:security/app-secrets#environment-variables)를 참조하세요.
+* 비밀 관리자(개발 환경에만 해당) <xref:security/app-secrets>을 참조하세요.
 
 ## <a name="environment-based-startup-class-and-methods"></a>환경에 따른 시작 클래스 및 메서드
 

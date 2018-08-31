@@ -5,12 +5,12 @@ description: 앱의 리소스에 대한 추상화인 응용 프로그램 파트�
 ms.author: riande
 ms.date: 01/04/2017
 uid: mvc/extensibility/app-parts
-ms.openlocfilehash: e0290ceadc159d7c3608ec4420d95cd219407d32
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 377217870743e70f5e20544da43cb80c2c916c42
+ms.sourcegitcommit: 15d7bd0b2c4e6fe9ac335d658bab71a45ca5bc72
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276827"
+ms.lasthandoff: 08/20/2018
+ms.locfileid: "41751625"
 ---
 # <a name="application-parts-in-aspnet-core"></a>ASP.NET Core에서 응용 프로그램 파트
 
@@ -37,7 +37,7 @@ services.AddMvc()
 
 기본적으로 MVC는 (다른 어셈블리에서도) 종속성 트리를 검색하고 컨트롤러를 찾습니다. 임의의 어셈블리를 로드하려면(예: 컴파일 타임 시 참조되지 않는 플러그 인에서) 응용 프로그램 파트를 사용할 수 있습니다.
 
-응용 프로그램 파트를 사용하여 특정 어셈블리 또는 위치에서 컨트롤러를 찾지 않도록 *방지*할 수 있습니다. `ApplicationPartManager`의 `ApplicationParts` 컬렉션을 수정하여 앱에 사용할 수 있는 파트(또는 어셈블리)를 제어할 수 있습니다. `ApplicationParts` 컬렉션에 있는 항목의 순서는 중요하지 않습니다. 컨테이너에서 서비스를 구성하는 데 사용하기 전에 `ApplicationPartManager`를 완전히 구성해야 합니다. 예를 들어 `AddControllersAsServices`를 호출하기 전에 `ApplicationPartManager`를 완벽하게 구성해야 합니다. 이 작업에 실패하면메서드 호출이 이후에 추가된 응용 프로그램 파트의 컨트롤러가 응용 프로그램에 잘못된 동작이 발생할 수 있는 영향을 받지 않는다는 것을 의미합니다(서비스로 등록되지 않음).
+응용 프로그램 파트를 사용하여 특정 어셈블리 또는 위치에서 컨트롤러를 찾지 않도록 *방지*할 수 있습니다. `ApplicationPartManager`의 `ApplicationParts` 컬렉션을 수정하여 앱에 사용할 수 있는 파트(또는 어셈블리)를 제어할 수 있습니다. `ApplicationParts` 컬렉션에 있는 항목의 순서는 중요하지 않습니다. 컨테이너에서 서비스를 구성하는 데 사용하기 전에 `ApplicationPartManager`를 완전히 구성해야 합니다. 예를 들어 `AddControllersAsServices`를 호출하기 전에 `ApplicationPartManager`를 완벽하게 구성해야 합니다. 이 작업에 실패하면 메서드 호출이 이후에 추가된 응용 프로그램 파트의 컨트롤러가 응용 프로그램에 잘못된 동작이 발생할 수 있는 영향을 받지 않는다는 것을 의미합니다(서비스로 등록되지 않음).
 
 사용하지 않을 컨트롤러를 포함하는 어셈블리가 있는 경우 `ApplicationPartManager`에서 제거합니다.
 

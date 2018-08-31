@@ -2,16 +2,17 @@
 title: ASP.NET Core의 팩터리 기반 미들웨어 활성화
 author: guardrex
 description: ASP.NET Core에서 팩터리 기반 활성화 구현으로 강력한 형식의 미들웨어를 사용하는 방법을 알아봅니다.
+monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.custom: mvc
-ms.date: 01/29/2018
+ms.date: 08/14/2018
 uid: fundamentals/middleware/extensibility
-ms.openlocfilehash: 44987dbc20b0419865a23e64b60a5dc3f436743a
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 346f5e7b28a9cd17a03a864772ed8b2e4be9455b
+ms.sourcegitcommit: 2c158fcfd325cad97ead608a816e525fe3dcf757
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277074"
+ms.lasthandoff: 08/14/2018
+ms.locfileid: "41751756"
 ---
 # <a name="factory-based-middleware-activation-in-aspnet-core"></a>ASP.NET Core의 팩터리 기반 미들웨어 활성화
 
@@ -47,7 +48,7 @@ ms.locfileid: "36277074"
 
 `MiddlewareFactory`에 따라 미들웨어 활성화:
 
-[!code-csharp[](extensibility/sample/Middleware/IMiddlewareMiddleware.cs?name=snippet1)]
+[!code-csharp[](extensibility/sample/Middleware/FactoryActivatedMiddleware.cs?name=snippet1)]
 
 확장은 미들웨어에 대해 생성됩니다.
 
@@ -56,11 +57,11 @@ ms.locfileid: "36277074"
 개체를 `UseMiddleware`를 사용하여 팩터리 활성화된 미들웨어에 전달할 수 없습니다.
 
 ```csharp
-public static IApplicationBuilder UseIMiddlewareMiddleware(
+public static IApplicationBuilder UseFactoryActivatedMiddleware(
     this IApplicationBuilder builder, bool option)
 {
     // Passing 'option' as an argument throws a NotSupportedException at runtime.
-    return builder.UseMiddleware<IMiddlewareMiddleware>(option);
+    return builder.UseMiddleware<FactoryActivatedMiddleware>(option);
 }
 ```
 
@@ -70,15 +71,15 @@ public static IApplicationBuilder UseIMiddlewareMiddleware(
 
 두 미들웨어는 모두 `Configure`의 요청 처리 파이프라인에 등록됩니다.
 
-[!code-csharp[](extensibility/sample/Startup.cs?name=snippet2&highlight=13-14)]
+[!code-csharp[](extensibility/sample/Startup.cs?name=snippet2&highlight=14-15)]
 
 ## <a name="imiddlewarefactory"></a>IMiddlewareFactory
 
 [IMiddlewareFactory](/dotnet/api/microsoft.aspnetcore.http.imiddlewarefactory)는 미들웨어를 만드는 메서드를 제공합니다. 미들웨어 팩터리 구현은 범위가 지정된 서비스로 컨테이너에 등록됩니다.
 
-기본 `IMiddlewareFactory` 구현인 [MiddlewareFactory](/dotnet/api/microsoft.aspnetcore.http.middlewarefactory)는 [Microsoft.AspNetCore.Http](https://www.nuget.org/packages/Microsoft.AspNetCore.Http/) 패키지에 있습니다([참조 소스](https://github.com/aspnet/HttpAbstractions/blob/release/2.0/src/Microsoft.AspNetCore.Http/MiddlewareFactory.cs)).
+기본 `IMiddlewareFactory` 구현인 [MiddlewareFactory](/dotnet/api/microsoft.aspnetcore.http.middlewarefactory)는 [Microsoft.AspNetCore.Http](https://www.nuget.org/packages/Microsoft.AspNetCore.Http/) 패키지에 있습니다.
 
 ## <a name="additional-resources"></a>추가 자료
 
-* [미들웨어](xref:fundamentals/middleware/index)
-* [타사 컨테이너를 사용하여 미들웨어 활성화](xref:fundamentals/middleware/extensibility-third-party-container)
+* <xref:fundamentals/middleware/index>
+* <xref:fundamentals/middleware/extensibility-third-party-container>

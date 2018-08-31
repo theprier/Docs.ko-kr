@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: H1Hack27Feb2017
 ms.date: 2/14/2018
 uid: mvc/views/tag-helpers/intro
-ms.openlocfilehash: be75667f34eed7ba601eee331e3451c5738ef223
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: c2af9099fe439e1cdbf9ba86ffae3b2b0f67391e
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36273571"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751415"
 ---
 # <a name="tag-helpers-in-aspnet-core"></a>ASP.NET Core의 태그 도우미
 
@@ -130,7 +130,7 @@ FQN을 사용하여 보기에 태그 도우미를 추가하려면 먼저 FQN(`Au
 
 ## <a name="intellisense-support-for-tag-helpers"></a>태그 도우미에 대한 IntelliSense 지원
 
-Visual Studio에서 새 ASP.NET 웹앱을 만들면 "Microsoft.AspNetCore.Razor.Tools" NuGet 패키지가 추가됩니다. 이 패키지는 태그 도우미 도구를 추가하는 패키지입니다.
+Visual Studio에서 새 ASP.NET Core 웹앱을 만들면 "Microsoft.AspNetCore.Razor.Tools" NuGet 패키지가 추가됩니다. 이 패키지는 태그 도우미 도구를 추가하는 패키지입니다.
 
 HTML `<label>` 요소를 작성하는 방안을 고려해 보세요. Visual Studio 편집기에서 `<l`를 입력하는 즉시 IntelliSense는 일치하는 요소를 표시합니다.
 

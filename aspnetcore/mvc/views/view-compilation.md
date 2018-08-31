@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/17/2018
 uid: mvc/views/view-compilation
-ms.openlocfilehash: 9355d467ca819ea8c6292963b31367ad5ca36d55
-ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
+ms.openlocfilehash: 05ebc2b51401f8ce8d76d7d121e351cd9ca42c80
+ms.sourcegitcommit: 67a0a04ebb3b21c826e5b9600bacfc897abd6a46
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37938539"
+ms.lasthandoff: 08/24/2018
+ms.locfileid: "42899859"
 ---
 # <a name="razor-file-compilation-in-aspnet-core"></a>ASP.NET Core의 Razor 파일 컴파일
 
@@ -39,9 +39,12 @@ Razor 파일은 런타임 시 관련 Razor 페이지 또는 MVC 뷰가 호출되
 ## <a name="deploy-precompiled-files"></a>미리 컴파일된 파일 배포
 
 ::: moniker range=">= aspnetcore-2.1"
+
 Razor 파일의 빌드 및 게시 시점 컴파일은 Razor SDK에서 기본적으로 사용하도록 설정됩니다. 업데이트된 후에 Razor 파일을 편집하는 작업은 빌드 시 지원됩니다. 기본적으로 컴파일된 *Views.dll*만이 앱과 함께 배포되고 *cshtml* 파일은 배포되지 않습니다.
 
 > [!IMPORTANT]
+> 미리 컴파일 도구는 ASP.NET Core 3.0에서 제거됩니다. [Razor Sdk](xref:razor-pages/sdk)로 마이그레이션하는 것이 좋습니다.
+>
 > Razor SDK는 미리 컴파일 특정 속성이 프로젝트 파일에서 설정되지 않은 경우에만 유효합니다. 예를 들어 *.csproj* 파일의 `MvcRazorCompileOnPublish` 속성을 `true`로 설정하면 Razor SDK가 비활성화됩니다.
 ::: moniker-end
 
@@ -55,6 +58,8 @@ Razor 파일의 빌드 및 게시 시점 컴파일은 Razor SDK에서 기본적�
 ASP.NET Core 2.x 프로젝트 템플릿은 기본적으로 `MvcRazorCompileOnPublish` 속성을 암시적으로 `true`로 설정합니다. 다라서 이 요소는 *.csproj* 파일에서 안전하게 제거할 수 있습니다.
 
 > [!IMPORTANT]
+> 미리 컴파일 도구는 ASP.NET Core 3.0에서 제거됩니다. [Razor Sdk](xref:razor-pages/sdk)로 마이그레이션하는 것이 좋습니다.
+>
 > ASP.NET Core 2.0에서 [SCD(자체 포함 배포)](/dotnet/core/deploying/#self-contained-deployments-scd)를 수행하는 경우 Razor 파일 미리 컴파일은 사용 불가능합니다.
 ::: moniker-end
 

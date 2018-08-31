@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/04/2018
 uid: host-and-deploy/windows-service
-ms.openlocfilehash: b156cd0755d7918d5f8433fcbe5c870ad04ac13e
-ms.sourcegitcommit: a25b572eaed21791230c85416f449f66a405ec19
+ms.openlocfilehash: 68afe77b05a717cffecc32188f18e9fde208b81f
+ms.sourcegitcommit: 3ca20ed63bf1469f4365f0c1fbd00c98a3191c84
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/01/2018
-ms.locfileid: "39396223"
+ms.lasthandoff: 08/17/2018
+ms.locfileid: "41751534"
 ---
 # <a name="host-aspnet-core-in-a-windows-service"></a>Windows 서비스에서 ASP.NET Core 호스트
 
@@ -72,7 +72,7 @@ IIS를 [Windows 서비스](/dotnet/framework/windows-services/introduction-to-wi
 
      ::: moniker range=">= aspnetcore-2.0"
 
-     [!code-csharp[](windows-service/samples/2.x/AspNetCoreService/Program.cs?name=ServiceOnly&highlight=8-9,12)]
+     [!code-csharp[](windows-service/samples/2.x/AspNetCoreService/Program.cs?name=ServiceOnly&highlight=8-9,16)]
 
      ::: moniker-end
 
@@ -205,7 +205,7 @@ ASP.NET Core 구성에 명령줄 인수에 대한 이름 값 쌍이 필요하기
 
    ::: moniker range=">= aspnetcore-2.0"
 
-   [!code-csharp[](windows-service/samples/2.x/AspNetCoreService/Program.cs?name=HandleStopStart&highlight=14)]
+   [!code-csharp[](windows-service/samples/2.x/AspNetCoreService/Program.cs?name=HandleStopStart&highlight=17)]
 
    > [!NOTE]
    > [통합 테스트](xref:test/integration-tests)가 제대로 작동하려면 `CreateWebHostBuilder`의 서명이 `CreateWebHostBuilder(string[])`이어야 하므로 `isService`는 `Main`에서 `CreateWebHostBuilder`로 전달되지 않습니다.
@@ -229,6 +229,13 @@ ASP.NET Core 구성에 명령줄 인수에 대한 이름 값 쌍이 필요하기
 ## <a name="configure-https"></a>HTTPS 구성
 
 [Kestrel 서버 HTTPS 엔드포인트 구성](xref:fundamentals/servers/kestrel#endpoint-configuration)을 지정합니다.
+
+## <a name="current-directory-and-content-root"></a>현재 디렉터리 및 콘텐츠 루트
+
+Windows 서비스에 대해 `Directory.GetCurrentDirectory()`를 호출하여 반환된 현재 작업 디렉터리는 *C:\WINDOWS\system32* 폴더입니다. *system32* 폴더는 서비스의 파일(예: 설정 파일)을 저장을 저장하는 데 적절한 위치가 아닙니다. 다음 방법 중 하나를 사용하여 [IConfigurationBuilder](/dotnet/api/microsoft.extensions.configuration.iconfigurationbuilder)를 사용할 때 [FileConfigurationExtensions.SetBasePath](/dotnet/api/microsoft.extensions.configuration.fileconfigurationextensions.setbasepath)로 서비스의 자산 및 설정 파일을 유지 관리 및 액세스합니다.
+
+* 콘텐츠 루트 경로를 사용합니다. `IHostingEnvironment.ContentRootPath`는 서비스가 만들어질 때 `binPath` 인수에 제공된 동일한 경로입니다. 설정 파일에 대한 경로를 만들려면 `Directory.GetCurrentDirectory()`를 사용하는 대신 콘텐츠 루트 경로를 사용하고 앱의 콘텐츠 루트의 파일을 유지 관리합니다.
+* 디스크의 적합한 위치에 파일을 저장합니다. 파일을 포함하는 폴더에 `SetBasePath`로 절대 경로를 지정합니다.
 
 ## <a name="additional-resources"></a>추가 자료
 

@@ -4,14 +4,14 @@ author: tdykstra
 description: ASP.NET Core MVC의 모델 바인딩이 HTTP 요청의 데이터를 작업 메서드 매개 변수에 매핑하는 방법을 알아봅니다.
 ms.assetid: 0be164aa-1d72-4192-bd6b-192c9c301164
 ms.author: tdykstra
-ms.date: 01/22/2018
+ms.date: 08/14/2018
 uid: mvc/models/model-binding
-ms.openlocfilehash: 200e2c22e02ec9e24b7cdb3883cf6f2f93f2f4b7
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: 0ce20a8040c6b19da1f57e1c053a7ef81d8bcb23
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095735"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751660"
 ---
 # <a name="model-binding-in-aspnet-core"></a>ASP.NET Core의 모델 바인딩
 
@@ -99,6 +99,31 @@ MVC에는 기본 모델 바인딩 동작을 다른 원본으로 전달하는 데
 
 특성은 모델 바인딩의 기본 동작을 재정의해야 할 때 매우 유용한 도구입니다.
 
+## <a name="customize-model-binding-and-validation-globally"></a>모델 바인딩 사용자 지정 및 전역으로 유효성 검사
+
+모델 바인딩 및 시스템 동작의 유효성 검사는 다음을 설명하는 [ModelMetadata](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.modelmetadata)를 기반으로 합니다.
+
+* 모델이 바인딩되는 방법
+* 형식 및 해당 속성에서 유효성 검사가 발생하는 방법
+
+[MvcOptions.ModelMetadataDetailsProviders](/dotnet/api/microsoft.aspnetcore.mvc.mvcoptions.modelmetadatadetailsproviders#Microsoft_AspNetCore_Mvc_MvcOptions_ModelMetadataDetailsProviders)에 세부 정보 공급자를 추가하여 시스템의 동작 측면을 전역적으로 구성할 수 있습니다. MVC에는 특정 형식에 대한 모델 바인딩 또는 유효성 검사 비활성화와 같은 동작 구성을 허용하는 몇 가지 기본 제공 정보 공급자가 있습니다.
+
+특정 형식의 모든 모델에 대한 모델 바인딩을 비활성화하려면 `Startup.ConfigureServices`에서 [ExcludeBindingMetadataProvider](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.metadata.excludebindingmetadataprovider)를 추가합니다. 예를 들어 `System.Version` 형식의 모든 모델에 대한 모델 바인딩을 비활성화하려면:
+
+```csharp
+services.AddMvc().AddMvcOptions(options =>
+    options.ModelMetadataDetailsProviders.Add(
+        new ExcludeBindingMetadataProvider(typeof(System.Version))));
+```
+
+특정 형식의 속성에 대한 유효성 검사를 비활성화하려면 `Startup.ConfigureServices`에 [SuppressChildValidationMetadataProvider](/dotnet/api/microsoft.aspnetcore.mvc.modelbinding.suppresschildvalidationmetadataprovider)를 추가합니다. 예를 들어 `System.Guid` 형식의 속성에 대한 유효성 검사를 비활성화하려면:
+
+```csharp
+services.AddMvc().AddMvcOptions(options =>
+    options.ModelMetadataDetailsProviders.Add(
+        new SuppressChildValidationMetadataProvider(typeof(System.Guid))));
+```
+
 ## <a name="bind-formatted-data-from-the-request-body"></a>요청 본문에서 형식이 지정된 데이터 바인딩
 
 요청 데이터는 JSON, XML 및 기타 여러 가지 형식으로 제공될 수 있습니다. [FromBody] 특성을 사용하여 매개 변수를 요청 본문의 데이터에 바인딩하려는 것을 표시하는 경우, MVC는 구성된 포맷터 집합을 사용하여 해당 콘텐츠 형식을 기반으로 요청 데이터를 처리합니다. 기본적으로 MVC에는 JSON 데이터를 처리하기 위한 `JsonInputFormatter` 클래스가 포함되어 있지만 XML 및 기타 사용자 지정 형식을 처리하기 위한 포맷터를 더 추가할 수 있습니다.
@@ -109,7 +134,7 @@ MVC에는 기본 모델 바인딩 동작을 다른 원본으로 전달하는 데
 > [!NOTE]
 > `JsonInputFormatter`은 기본 포맷터이며 [Json.NET](https://www.newtonsoft.com/json)을 기반으로 합니다.
 
-ASP.NET은 다르게 지정되는 특성이 적용되지 않는 한, [Content-Type](https://www.w3.org/Protocols/rfc1341/4_Content-Type.html) 헤더와 매개 변수의 형식을 기반으로 입력 포맷터를 선택합니다. XML 또는 다른 형식을 사용하려면 *Startup.cs* 파일에서 구성해야 하지만 NuGet을 사용하여 먼저 `Microsoft.AspNetCore.Mvc.Formatters.Xml`에 대한 참조를 얻어야 할 수도 있습니다. 시작 코드는 다음과 비슷합니다.
+ASP.NET Core는 다르게 지정되는 특성이 적용되지 않는 한, [Content-Type](https://www.w3.org/Protocols/rfc1341/4_Content-Type.html) 헤더와 매개 변수의 형식을 기반으로 입력 포맷터를 선택합니다. XML 또는 다른 형식을 사용하려면 *Startup.cs* 파일에서 구성해야 하지만 NuGet을 사용하여 먼저 `Microsoft.AspNetCore.Mvc.Formatters.Xml`에 대한 참조를 얻어야 할 수도 있습니다. 시작 코드는 다음과 비슷합니다.
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -119,7 +144,7 @@ public void ConfigureServices(IServiceCollection services)
    }
 ```
 
-*Startup.cs* 파일의 코드에는 ASP.NET 앱용 서비스를 빌드하는 데 사용할 수 있는 `services` 인수가 있는 `ConfigureServices` 메서드가 포함되어 있습니다. 이 샘플에서는 MVC가 이 앱에 대해 제공할 서비스로 XML 포맷터를 추가하고 있습니다. `AddMvc` 메서드에 전달된 `options` 인수를 통해 앱 시작 시 MVC의 필터, 포맷터 및 기타 시스템 옵션을 추가하고 관리할 수 있습니다. 그런 다음, 컨트롤러 클래스나 작업 메서드에 `Consumes` 특성을 적용하여 원하는 형식으로 작업합니다.
+*Startup.cs* 파일의 코드에는 ASP.NET Core 앱용 서비스를 빌드하는 데 사용할 수 있는 `services` 인수가 있는 `ConfigureServices` 메서드가 포함되어 있습니다. 이 샘플에서는 MVC가 이 앱에 대해 제공할 서비스로 XML 포맷터를 추가하고 있습니다. `AddMvc` 메서드에 전달된 `options` 인수를 통해 앱 시작 시 MVC의 필터, 포맷터 및 기타 시스템 옵션을 추가하고 관리할 수 있습니다. 그런 다음, 컨트롤러 클래스나 작업 메서드에 `Consumes` 특성을 적용하여 원하는 형식으로 작업합니다.
 
 ### <a name="custom-model-binding"></a>사용자 지정 모델 바인딩
 

@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 02/07/2018
 uid: host-and-deploy/iis/troubleshoot
-ms.openlocfilehash: cbbdee6849768004476d94c58be4a0e7cc2d6f9e
-ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
+ms.openlocfilehash: f22914c9b0d6d1902dd37c9b21b80a18894c97e7
+ms.sourcegitcommit: d1c4580f56656b503cf528ec9f5ba570d790b57d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37938474"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "41751618"
 ---
 # <a name="troubleshoot-aspnet-core-on-iis"></a>IIS에서 ASP.NET Core 문제 해결
 
@@ -97,6 +97,7 @@ stdout 로그를 사용하고 보려면:
 1. 호스팅 시스템에서 사이트의 배포 폴더로 이동합니다.
 1. *logs* 폴더가 없으면 폴더를 만듭니다. MSBuild를 사용하여 배포에서 *logs* 폴더를 자동으로 만드는 방법에 대한 지침은 [디렉터리 구조](xref:host-and-deploy/directory-structure) 항목을 참조하세요.
 1. *web.config* 파일을 편집합니다. **stdoutLogEnabled**를 `true`로 설정하고 **stdoutLogFile** 경로가 *logs* 폴더를 가리키도록 변경합니다(예: `.\logs\stdout`). 경로의 `stdout`은 로그 파일 이름 접두사입니다. 로그가 만들어질 때 타임스탬프, 프로세스 ID 및 파일 확장명이 자동으로 추가됩니다. `stdout`을 파일 이름 접두사로 사용하여 일반적인 로그 파일의 이름은 *stdout_20180205184032_5412.log*로 지정됩니다. 
+1. 응용 프로그램 풀의 ID에 *로그* 폴더에 대한 쓰기 권한이 있는지 확인합니다.
 1. 업데이트된 *web.config* 파일을 저장합니다.
 1. 앱에 대한 요청을 실행합니다.
 1. *logs* 폴더로 이동합니다. 가장 최근의 stdout 로그를 찾아서 엽니다.

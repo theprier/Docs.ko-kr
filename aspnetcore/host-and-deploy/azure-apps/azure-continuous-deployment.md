@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 10/14/2016
 uid: host-and-deploy/azure-apps/azure-continuous-deployment
-ms.openlocfilehash: 0a9a2d9d0de25a4eaab704680c627c1216d146e3
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 3470d9278574a95115b14f25b90a0a93bb3b8a67
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36275485"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751743"
 ---
 # <a name="continuous-deployment-to-azure-with-visual-studio-and-git-with-aspnet-core"></a>ASP.NET Core와 함께 Visual Studio 및 Git을 사용하여 Azure에 지속적인 배포
 
@@ -46,7 +46,7 @@ ms.locfileid: "36275485"
 
 1. **새 ASP.NET Core 프로젝트** 대화 상자에서 ASP.NET Core **빈** 템플릿을 선택한 후 **확인**을 클릭합니다.
 
-   ![새 ASP.NET 프로젝트 대화 상자](azure-continuous-deployment/_static/02-web-site-template.png)
+   ![새 ASP.NET Core 프로젝트 대화 상자](azure-continuous-deployment/_static/02-web-site-template.png)
 
 > [!NOTE]
 > 최신 .NET Core 릴리스는 2.0입니다.

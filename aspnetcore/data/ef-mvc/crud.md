@@ -5,12 +5,12 @@ description: ''
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/crud
-ms.openlocfilehash: 1c724da918640c514acbc24c390de4e735f8bf49
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: 626b828e2391d3982ff2cf393f0c9e0748c12810
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342434"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751639"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---crud---2-of-10"></a>ASP.NET Core MVC 및 EF Core - CRUD - 2/10
 
@@ -117,7 +117,7 @@ http://localhost:1230/Instructor/Index?id=1&CourseID=2021
 
 [!code-csharp[](intro/samples/cu/Controllers/StudentsController.cs?name=snippet_Create&highlight=4,6-7,14-21)]
 
-이 코드는 ASP.NET MVC 모델 바인더에서 만든 학생 엔터티를 학생 엔터티 설정에 추가한 다음, 데이터베이스에 변경 내용을 저장합니다. (모델 바인더는 양식에서 전송한 데이터를 쉽게 사용할 수 있도록 하는 ASP.NET MVC 기능을 참조합니다. 모델 바인더는 게시된 양식 값을 CLR 형식으로 변환하고 매개 변수의 동작 메서드에 전달합니다. 이 경우 모델 바인더는 양식 컬렉션에서 속성 값을 사용하여 학생 엔터티를 인스턴스화합니다.)
+이 코드는 ASP.NET Core MVC 모델 바인더에서 만든 학생 엔터티를 학생 엔터티 설정에 추가한 다음, 데이터베이스에 변경 내용을 저장합니다. (모델 바인더는 양식에서 전송한 데이터를 쉽게 사용할 수 있도록 하는 ASP.NET Core MVC 기능을 참조합니다. 모델 바인더는 게시된 양식 값을 CLR 형식으로 변환하고 매개 변수의 동작 메서드에 전달합니다. 이 경우 모델 바인더는 양식 컬렉션에서 속성 값을 사용하여 학생 엔터티를 인스턴스화합니다.)
 
 ID는 행이 삽입될 때 SQL 서버가 자동으로 설정하는 기본 키 값이므로 `Bind` 특성에서 `ID`를 제거했습니다. 사용자의 입력은 ID 값을 설정하지 않습니다.
 
@@ -273,7 +273,7 @@ HttpPost `Delete` 작업 메서드(`DeleteConfirmed`라는)를 실제 삭제 작
 
 데이터베이스 연결이 유지하는 리소스를 해제하려면 컨텍스트 인스턴스는 작업을 완료했을 때 가능한 빨리 삭제되어야 합니다. ASP.NET Core 기본 제공 [종속성 주입](../../fundamentals/dependency-injection.md)은 해당 작업을 담당합니다.
 
-*Startup.cs*에서 [AddDbContext 확장 메서드](https://github.com/aspnet/EntityFrameworkCore/blob/03bcb5122e3f577a84498545fcf130ba79a3d987/src/Microsoft.EntityFrameworkCore/EntityFrameworkServiceCollectionExtensions.cs)를 호출하여 ASP.NET DI 컨테이너에서 `DbContext` 클래스를 프로비전합니다. 해당 메서드는 서비스 수명을 기본적으로 `Scoped`로 설정합니다. `Scoped`는 웹 요청 수명과 일치하는 컨텍스트 개체 수명을 의미하며, `Dispose` 메서드는 웹 요청이 끝날 때 자동으로 호출됩니다.
+*Startup.cs*에서 [AddDbContext 확장 메서드](https://github.com/aspnet/EntityFrameworkCore/blob/03bcb5122e3f577a84498545fcf130ba79a3d987/src/Microsoft.EntityFrameworkCore/EntityFrameworkServiceCollectionExtensions.cs)를 호출하여 ASP.NET Core DI 컨테이너에서 `DbContext` 클래스를 프로비전합니다. 해당 메서드는 서비스 수명을 기본적으로 `Scoped`로 설정합니다. `Scoped`는 웹 요청 수명과 일치하는 컨텍스트 개체 수명을 의미하며, `Dispose` 메서드는 웹 요청이 끝날 때 자동으로 호출됩니다.
 
 ## <a name="handling-transactions"></a>트랜잭션 처리
 

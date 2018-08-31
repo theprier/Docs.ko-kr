@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 4/13/2018
 uid: fundamentals/startup
-ms.openlocfilehash: a576f3840e66fc4ed877f7575aa3f3e36b37ae4d
-ms.sourcegitcommit: d99a8554c91f626cf5e466911cf504dcbff0e02e
+ms.openlocfilehash: 465d33cc1f19428d5189b3a6fa7088ac402a9751
+ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39356752"
+ms.lasthandoff: 08/25/2018
+ms.locfileid: "42927973"
 ---
 # <a name="application-startup-in-aspnet-core"></a>ASP.NET Core에서 응용 프로그램 시작
 
@@ -64,50 +64,11 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 
 [!code-csharp[](../common/samples/WebApplication1/Startup.cs?highlight=4,7,11&start=40&end=55)]
 
-::: moniker range=">= aspnetcore-2.1"
-
-<a name="setcompatibilityversion"></a>
-
-### <a name="setcompatibilityversion-for-aspnet-core-mvc"></a>ASP.NET Core MVC용 SetCompatibilityVersion
-
-`SetCompatibilityVersion` 메서드를 사용하면 ASP.NET MVC Core 2.1+에서 도입된 주요 동작 변경 내용을 앱이 옵트인(opt-in) 또는 옵트아웃(opt-out)할 수 있습니다. 이 주요 동작 변경 내용은 일반적으로 MVC 하위 시스템의 작동 방식과 런타임에서 **코드**를 호출하는 방법과 관련이 있습니다. 옵트인을 하면 ASP.NET Core의 최신 동작과 장기 동작을 가져올 수 있습니다.
-
-다음 코드는 호환성 모드를 ASP.NET Core 2.1로 설정합니다.
-
-[!code-csharp[Main](startup/sampleCompatibility/Startup.cs?name=snippet1)]
-
-최신 버전(`CompatibilityVersion.Version_2_1`)을 사용하여 앱을 테스트하는 것이 좋습니다. 대부분의 앱은 최신 버전을 사용하여 주요 동작을 변경하지 않을 것으로 예상합니다.
-
-`SetCompatibilityVersion(CompatibilityVersion.Version_2_0)`을 호출하는 앱은 ASP.NET Core 2.1 MVC 및 이후의 2.x 버전에서 도입된 주요 동작 변경으로부터 보호됩니다. 이 보호:
-
-* 2.1 이상의 모든 변경 내용에 적용되지는 않으며, MVC 하위 시스템의 주요 ASP.NET Core 런타임 동작 변경을 대상으로 합니다.
-* 다음의 주 버전으로 확장되지 않습니다.
-
-`SetCompatibilityVersion`을 호출하지 **않는** ASP.NET Core 2.1 및 이후 2.x 앱의 기본 호환성은 2.0 호환성입니다. 즉, `SetCompatibilityVersion`을 호출하지 않는 것은 `SetCompatibilityVersion(CompatibilityVersion.Version_2_0)`을 호출하는 것과 같습니다.
-
-다음 코드는 다음 동작을 제외하고, 호환성 모드를 ASP.NET Core 2.1로 설정합니다.
-
-* [AllowCombiningAuthorizeFilters](https://github.com/aspnet/Mvc/blob/master/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs)
-* [InputFormatterExceptionPolicy](https://github.com/aspnet/Mvc/blob/master/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs)
-
-[!code-csharp[Main](startup/sampleCompatibility/Startup2.cs?name=snippet1)]
-
-적절한 호환성 스위치를 사용하여 주요 동작 변경 내용이 발생하는 앱의 경우:
-
-* 최신 릴리스를 사용하고 특정 주요 동작 변경 내용을 옵트아웃(opt out)할 수 있습니다.
-* 최신 변경 내용과 함께 작동하도록 앱을 업데이트할 시간을 제공합니다.
-
-[MvcOptions](https://github.com/aspnet/Mvc/blob/master/src/Microsoft.AspNetCore.Mvc.Core/MvcOptions.cs) 클래스 소스 주석에는 변경된 내용과 변경 내용이 대부분의 사용자에게 향상된 기능인 이유가 잘 설명되어 있습니다.
-
-이후에 [ASP.NET Core 3.0 버전](https://github.com/aspnet/Home/wiki/Roadmap)이 나올 예정입니다. 호환성 스위치가 지원하는 이전 동작은 3.0 버전에서 제거됩니다. 거의 모든 사용자에게 혜택을 주는 긍정적인 변화라고 생각합니다. 이제 이러한 변경 내용을 도입함으로써 대부분의 앱이 혜택을 받을 수 있으며, 다른 사람은 앱을 업데이트할 시간을 얻게 됩니다.
-
-::: moniker-end
-
 ## <a name="the-configure-method"></a>Configure 메서드
 
 [Configure](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure) 메서드는 앱이 HTTP 요청에 응답하는 방식을 지정하는 데 사용됩니다. 요청 파이프라인은 [미들웨어](xref:fundamentals/middleware/index) 구성 요소를 [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder) 인스턴스에 추가하여 구성됩니다. `IApplicationBuilder`는 `Configure` 메서드에 사용할 수 있지만 서비스 컨테이너에 등록되지 않습니다. 호스팅은 `IApplicationBuilder`를 만들고 `Configure`에 직접 전달합니다([참조 원본](https://github.com/aspnet/Hosting/blob/release/2.0.0/src/Microsoft.AspNetCore.Hosting/Internal/WebHost.cs#L179-L192)).
 
-[ASP.NET Core 템플릿](/dotnet/core/tools/dotnet-new)은 개발자 예외 페이지, [BrowserLink](http://vswebessentials.com/features/browserlink), 오류 페이지, 정적 파일 및 ASP.NET MVC에 대한 지원으로 파이프라인을 구성합니다.
+[ASP.NET Core 템플릿](/dotnet/core/tools/dotnet-new)은 개발자 예외 페이지, [BrowserLink](http://vswebessentials.com/features/browserlink), 오류 페이지, 정적 파일 및 ASP.NET Core MVC에 대한 지원으로 파이프라인을 구성합니다.
 
 [!code-csharp[](../common/samples/WebApplication1DotNetCore2.0App/Startup.cs?range=28-48&highlight=5,6,10,13,15)]
 
@@ -129,7 +90,7 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 
 [IStartupFilter](/dotnet/api/microsoft.aspnetcore.hosting.istartupfilter)를 사용하여 앱의 [구성](#the-configure-method) 미들웨어 파이프라인의 시작 또는 끝에 미들웨어를 구성합니다. `IStartupFilter`는 미들웨어가 앱의 요청 처리 파이프라인의 시작 또는 끝에 라이브러리에 의해 추가되는 미들웨어 전이나 후에 실행되도록 하는데 유용합니다.
 
-`IStartupFilter`는 `Action<IApplicationBuilder>`를 받고 반환하는 단일 메서드, [Configure](/dotnet/api/microsoft.aspnetcore.hosting.istartupfilter.configure)를 구성합니다. [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder)는 앱의 요청 파이프라인을 구성하는 클래스를 정의합니다. 자세한 내용은 [IApplicationBuilder로 미들웨어 파이프라인 만들기](xref:fundamentals/middleware/index#creating-a-middleware-pipeline-with-iapplicationbuilder)를 참조하세요.
+`IStartupFilter`는 `Action<IApplicationBuilder>`를 받고 반환하는 단일 메서드, [Configure](/dotnet/api/microsoft.aspnetcore.hosting.istartupfilter.configure)를 구성합니다. [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder)는 앱의 요청 파이프라인을 구성하는 클래스를 정의합니다. 자세한 내용은 [IApplicationBuilder로 미들웨어 파이프라인 만들기](xref:fundamentals/middleware/index#create-a-middleware-pipeline-with-iapplicationbuilder)를 참조하세요.
 
 각 `IStartupFilter`는 요청 파이프라인에서 하나 이상의 미들웨어를 구현합니다. 필터는 서비스 컨테이너에 추가된 순서 대로 호출됩니다. 필터는 다음 필터에 컨트롤을 전달하기 전이나 후에 미들웨어를 추가할 수 있으므로 앱 파이프라인의 시작 또는 끝에 추가합니다.
 
@@ -154,7 +115,7 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 * 여러 `IStartupFilter` 구현은 동일한 개체와 상호 작용할 수 있습니다. 순서 지정이 중요한 경우 해당 미들웨어가 실행해야 하는 순서와 일치하도록 해당 `IStartupFilter` 서비스 등록의 순서를 지정합니다.
 * 라이브러리는 `IStartupFilter`로 등록된 다른 앱 미들웨어 전이나 후에 실행하는 하나 이상의 `IStartupFilter` 구현으로 미들웨어를 추가할 수 있습니다. 라이브러리의 `IStartupFilter`에 의해 추가되는 미들웨어 전에 `IStartupFilter` 미들웨어를 호출하려면 라이브러리가 서비스 컨테이너에 추가되기 전에 서비스 등록의 위치를 지정합니다. 나중에 호출하려면 라이브러리가 추가된 후에 서비스 등록의 위치를 지정합니다.
 
-## <a name="adding-configuration-at-startup-from-an-external-assembly"></a>외부 어셈블리의 시작 시 구성 추가
+## <a name="add-configuration-at-startup-from-an-external-assembly"></a>외부 어셈블리의 시작 시 구성 추가
 
 [IHostingStartup](/dotnet/api/microsoft.aspnetcore.hosting.ihostingstartup) 구현에서는 시작 시 앱의 `Startup` 클래스 외부에 있는 외부 어셈블리에서 앱에 향상된 기능을 추가할 수 있습니다. 자세한 내용은 [외부 어셈블리에서 앱 강화](xref:fundamentals/configuration/platform-specific-configuration)를 참조하세요.
 

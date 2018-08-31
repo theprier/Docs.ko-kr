@@ -7,18 +7,18 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/16/2018
 uid: fundamentals/host/generic-host
-ms.openlocfilehash: 0f3b548c2065245f6ed8a6a6f981ece4eb78535e
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: de9044875c8ebc62c80a129d721e7d37be5d846d
+ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342057"
+ms.lasthandoff: 08/25/2018
+ms.locfileid: "42927811"
 ---
 # <a name="net-generic-host"></a>.NET 일반 호스트
 
 [Luke Latham](https://github.com/guardrex)으로
 
-.NET 앱은 *호스트*를 구성 및 실행합니다. 호스트는 앱 시작 및 수명 관리를 담당합니다. 이 항목에서는 HTTP 요청을 처리하지 않는 앱을 호스팅하는 데 유용한 ASP.NET Core 일반 호스트([HostBuilder](/dotnet/api/microsoft.extensions.hosting.hostbuilder))를 다룹니다. 웹 호스트([WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder))에 대한 자세한 내용은 <xref:fundamentals/host/web-host>을 참조하세요.
+.NET Core 앱은 *호스트*를 구성 및 실행합니다. 호스트는 앱 시작 및 수명 관리를 담당합니다. 이 항목에서는 HTTP 요청을 처리하지 않는 앱을 호스팅하는 데 유용한 ASP.NET Core 일반 호스트([HostBuilder](/dotnet/api/microsoft.extensions.hosting.hostbuilder))를 다룹니다. 웹 호스트([WebHostBuilder](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilder))에 대한 자세한 내용은 <xref:fundamentals/host/web-host>을 참조하세요.
 
 일반 호스트의 목표는 웹 호스트 API에서 HTTP 파이프라인을 분리하여 호스트 시나리오의 더 광범위한 배열을 구현하는 것입니다. 일반 호스트에 기반을 둔 메시징, 백그라운드 작업 및 기타 HTTP 이외 워크로드는 구성, 종속성 주입(DI) 및 로깅과 같은 교차 편집 기능에서 이점을 얻습니다.
 

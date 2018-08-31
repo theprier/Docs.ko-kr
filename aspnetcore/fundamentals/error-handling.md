@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 07/05/2018
 uid: fundamentals/error-handling
-ms.openlocfilehash: d7e60c0f615841461a17b093bffe5fb3f82f8616
-ms.sourcegitcommit: 506a199274e9fe5fb4070b273ba94f29f14cb619
+ms.openlocfilehash: ff04ebeb6a682ec924afe896fd6716010a63f7cd
+ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/28/2018
-ms.locfileid: "39332277"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "41751599"
 ---
 # <a name="handle-errors-in-aspnet-core"></a>ASP.NET Core에서 오류 처리
 
@@ -195,7 +195,7 @@ public class ErrorModel : PageModel
 
 [IIS](/iis) 또는 [IIS Express](/iis/extensions/introduction-to-iis-express/iis-express-overview)에서 실행 중일 때, 프로세스를 시작할 수 없는 경우 [ASP.NET Core 모듈](xref:fundamentals/servers/aspnet-core-module)에서 *502.5 프로세스 실패*를 반환합니다. IIS를 사용하여 호스팅할 때 시작 문제 해결에 대한 내용은 <xref:host-and-deploy/iis/troubleshoot>을 참조하세요. Azure App Service의 시작 문제 해결에 대한 내용은 <xref:host-and-deploy/azure-apps/troubleshoot>을 참조하세요.
 
-## <a name="aspnet-mvc-error-handling"></a>ASP.NET MVC 오류 처리
+## <a name="aspnet-core-mvc-error-handling"></a>ASP.NET Core MVC 오류 처리
 
 [MVC](xref:mvc/overview) 앱에는 예외 필터 구성 및 모델 유효성 검사 수행과 같이 오류를 처리하기 위한 몇 가지 추가 옵션이 있습니다.
 
