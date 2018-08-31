@@ -6,12 +6,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 08/20/2018
 uid: client-side/libman/libman-vs
-ms.openlocfilehash: b44769f1d0925f38523d6570858de17f37e32c2b
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: a653b1a5c07feca8672ba38e0cda3ddc30482c5a
+ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41909881"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43312181"
 ---
 # <a name="use-libman-with-aspnet-core-in-visual-studio"></a>Visual Studio에서 ASP.NET Core와 함께 사용 하 여 LibMan
 
@@ -100,7 +100,7 @@ LibMan 다음 매니페스트 파일을 사용 하 여에 정의 된 구성에 �
 
 * 하위 집합 [jQuery](https://jquery.com/) 버전 3.3.1 CDNJS 공급자에서 검색 됩니다. 하위 집합에 정의 되어는 `files` 속성&mdash;*jquery.min.js*에 *jquery.js*, 및 *jquery.min.map*합니다. 프로젝트의 파일이 배치 되도록 *wwwroot/lib/jquery* 폴더입니다.
 * 전체 [부트스트랩](https://getbootstrap.com/) 4.1.3 버전을 검색 하 고 배치를 *wwwroot/lib/부트스트랩* 폴더입니다. 개체 리터럴의 `provider` 속성 재정의 `defaultProvider` 속성 값입니다. LibMan은 unpkg 공급자에서 부트스트랩 파일을 검색 합니다.
-* 하위 집합 [및 Lodash](https://lodash.com/) 조직 내 관리 본문을 승인 합니다. 합니다 *lodash.js* 하 고 *lodash.min.js* 파일에 로컬 파일 시스템에서 검색 됩니다 *c:\\tmp\\*합니다. 프로젝트의 파일을 복사할 *wwwroot/lib/및 lodash* 폴더입니다.
+* 하위 집합 [및 Lodash](https://lodash.com/) 조직 내 관리 본문을 승인 합니다. *lodash.js* 하 고 *lodash.min.js* 파일에 로컬 파일 시스템에서 검색 됩니다 *c:\\temp\\및 lodash\\*합니다. 프로젝트의 파일을 복사할 *wwwroot/lib/및 lodash* 폴더입니다.
 
 [!code-json[](samples/LibManSample/libman.json)]
 
@@ -193,7 +193,7 @@ Clean libraries operation completed
 2 libraries were successfully deleted in 1.91 secs
 ```
 
-만 정리 작업 프로젝트에서 파일을 삭제합니다. 라이브러리 파일은 이후 복원 작업에서 빠른 검색을 위해 캐시에 남아 있습니다. 로컬 컴퓨터의 캐시에 저장 된 라이브러리 파일을 관리 하려면 LibMan CLI를 사용 합니다.
+만 정리 작업 프로젝트에서 파일을 삭제합니다. 라이브러리 파일은 이후 복원 작업에서 빠른 검색을 위해 캐시에 남아 있습니다. 로컬 컴퓨터의 캐시에 저장 된 라이브러리 파일을 관리 하려면 사용 합니다 [LibMan CLI](xref:client-side/libman/libman-cli)합니다.
 
 ## <a name="uninstall-library-files"></a>라이브러리 파일을 제거
 
@@ -231,4 +231,5 @@ LibMan 설치 된 버전 보다 최신 라이브러리 버전을 확인 합니�
 
 ## <a name="additional-resources"></a>추가 자료
 
+* <xref:client-side/libman/libman-cli>
 * [LibMan GitHub 리포지토리](https://github.com/aspnet/LibraryManager)

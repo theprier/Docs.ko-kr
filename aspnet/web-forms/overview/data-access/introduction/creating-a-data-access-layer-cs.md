@@ -8,18 +8,18 @@ ms.date: 04/05/2010
 ms.assetid: cfe2a6a0-1e56-4dc8-9537-c8ec76ba96a4
 msc.legacyurl: /web-forms/overview/data-access/introduction/creating-a-data-access-layer-cs
 msc.type: authoredcontent
-ms.openlocfilehash: fca6119b2e78c246724d6dd7277d5c4dc521f49c
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 4a6942df142ef40b92a8461afbc5f61fdfbde4ba
+ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41828015"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43312398"
 ---
 <a name="creating-a-data-access-layer-c"></a>데이터 액세스 레이어 (C#) 만들기
 ====================
 [Scott Mitchell](https://twitter.com/ScottOnWriting)
 
-[샘플 앱을 다운로드](http://download.microsoft.com/download/4/6/3/463cf87c-4724-4cbc-b7b5-3f866f43ba50/ASPNET_Data_Tutorial_1_CS.exe) 또는 [PDF 다운로드](creating-a-data-access-layer-cs/_static/datatutorial01cs1.pdf)
+[PDF 다운로드](creating-a-data-access-layer-cs/_static/datatutorial01cs1.pdf)
 
 > 이 자습서에서는 처음부터 시작 하 고 만들기 DAL 데이터 액세스 계층 (), 형식화 된 데이터 집합을 사용 하 여 데이터베이스의 정보에 액세스할 수 합니다.
 

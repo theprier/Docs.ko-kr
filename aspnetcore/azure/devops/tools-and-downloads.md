@@ -5,16 +5,16 @@ description: Azure에서 호스팅되는 ASP.NET Core 앱에 대한 DevOps 파�
 ms.author: casoper
 ms.date: 08/07/2018
 uid: azure/devops/tools-and-downloads
-ms.openlocfilehash: 3cf99f4d497bf2edd8759ab9afdee66ad49fac3d
-ms.sourcegitcommit: 29dfe436f54a27fbb4f6494bc639d16c75001fab
+ms.openlocfilehash: a63e97d9ab9eb0ed2fbd30e8c2e033f0c048d33e
+ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "42909988"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43312303"
 ---
 # <a name="tools-and-downloads"></a>도구 및 다운로드
 
-Azure에 프로 비전 및와 같은 리소스를 관리 하기 위한 몇 가지 인터페이스를 [Azure portal](https://portal.azure.com)를 [Azure CLI](https://docs.microsoft.com/cli/azure/)를 [Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/overview), [Azure 클라우드 셸](https://shell.azure.com/bash), 및 Visual Studio입니다. 이 가이드는 최소 방식을 사용 하 고는 데 필요한 단계를 줄이기 위해 가능 하면 Azure Cloud Shell를 사용 합니다. 그러나 일부에 대 한 Azure portal은 사용 해야 합니다.
+Azure에 프로 비전 및와 같은 리소스를 관리 하기 위한 몇 가지 인터페이스를 [Azure portal](https://portal.azure.com)를 [Azure CLI](https://docs.microsoft.com/cli/azure/)를 [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview), [Azure 클라우드 셸](https://shell.azure.com/bash), 및 Visual Studio입니다. 이 가이드는 최소 방식을 사용 하 고는 데 필요한 단계를 줄이기 위해 가능 하면 Azure Cloud Shell를 사용 합니다. 그러나 일부에 대 한 Azure portal은 사용 해야 합니다.
 
 ## <a name="prerequisites"></a>전제 조건
 

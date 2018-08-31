@@ -5,12 +5,12 @@ description: 권한 부여로 보호 되는 사용자 데이터를 사용 하 �
 ms.author: riande
 ms.date: 7/24/2018
 uid: security/authorization/secure-data
-ms.openlocfilehash: ba59e8d6243965188397c4ba7a130eec42acfb91
-ms.sourcegitcommit: 847cc1de5526ff42a7303491e6336c2dbdb45de4
+ms.openlocfilehash: 9f264daa4a6b63478077cadb06a697f274014199
+ms.sourcegitcommit: a669c4e3f42e387e214a354ac4143555602e6f66
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43055882"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43336013"
 ---
 ::: moniker range="<= aspnetcore-1.1"
 
@@ -19,7 +19,7 @@ ms.locfileid: "43055882"
 
 ::: moniker range="= aspnetcore-2.0"
 
-참조의 [이 pdf] (https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/asp.net_repo_pdf_July16_18.pdf)
+참조 [이 pdf](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authorization/secure-data/asp.net_repo_pdf_July16_18.pdf)
 
 ::: moniker-end
 
@@ -75,7 +75,13 @@ ms.locfileid: "43055882"
 * [권한 부여](xref:security/authorization/index)
 * [Entity Framework Core](xref:data/ef-mvc/intro)
 
-이 자습서와 다운로드 코드에는 ASP.NET Core 2.2 미리 보기 1 이상이 필요합니다. 참조 [이 GitHub 문제](https://github.com/aspnet/Identity/issues/1813#issuecomment-394543909) 해결에 대 한 합니다.
+::: moniker-end
+::: moniker range="= aspnetcore-2.1"
+
+ASP.NET Core 2.1에서 `User.IsInRole` 사용 하는 경우 실패 `AddDefaultIdentity`합니다. 이 자습서에서는 `AddDefaultIdentity` ASP.NET Core 2.2 미리 보기 1 이상이 필요 합니다. 참조 [이 GitHub 문제](https://github.com/aspnet/Identity/issues/1813#issuecomment-394543909) 해결에 대 한 합니다.
+
+::: moniker-end
+::: moniker range=">= aspnetcore-2.1"
 
 ## <a name="the-starter-and-completed-app"></a>시작 및 완료 된 앱
 

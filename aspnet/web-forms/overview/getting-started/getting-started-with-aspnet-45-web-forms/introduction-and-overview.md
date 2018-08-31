@@ -8,12 +8,12 @@ ms.date: 09/08/2014
 ms.assetid: 9b96eaa1-8ef0-4338-a2e8-e0f970bfaf68
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/introduction-and-overview
 msc.type: authoredcontent
-ms.openlocfilehash: ad5e97cd596e146f742c4c5e882d3938005070d1
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 8e3ae964dafc73bdf703cd7cbab430bbc99a6188
+ms.sourcegitcommit: a669c4e3f42e387e214a354ac4143555602e6f66
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41830332"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43336026"
 ---
 <a name="getting-started-with-aspnet-45-web-forms-and-visual-studio-2013"></a>ASP.NET 4.5 Web Forms 및 Visual Studio 2013 시작
 ====================
@@ -21,9 +21,7 @@ ms.locfileid: "41830332"
 
 [Wingtip Toys 샘플 프로젝트 (C#)를 다운로드](http://go.microsoft.com/fwlink/?LinkID=389434&clcid=0x409) 또는 [전자책 (PDF) 다운로드](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20ASP.NET%204.5%20Web%20Forms%20and%20Visual%20Studio%202013.pdf)
 
-> 이 단계별 자습서 시리즈는 ASP.NET 4.5와 Microsoft Visual Studio Express 2013 for Web 사용 하 여 ASP.NET Web Forms 응용 프로그램을 빌드하는 기본 사항을 설명 합니다. [ASP.NET Web Forms 퀴즈](http://quizapp.cloudapp.net/?quiz=ASP.NET)  
-> ASP.NET Web Forms 퀴즈를 수행 하 여 주요 개념을 보강 및 지식을 테스트 합니다. 이 자습서 시리즈에 포함 된 콘텐츠에서이 퀴즈 설계 되었습니다. 각 질문 퀴즈에 대 한 추가 지침에 대 한 링크와 함께 설명이 표시 됩니다.
-
+이 단계별 자습서 시리즈는 ASP.NET 4.5와 Microsoft Visual Studio Express 2013 for Web 사용 하 여 ASP.NET Web Forms 응용 프로그램을 빌드하는 기본 사항을 설명 합니다. [ASP.NET Web Forms 퀴즈](http://quizapp.cloudapp.net/?quiz=ASP.NET)  
 
 ## <a name="introduction"></a>소개
 
