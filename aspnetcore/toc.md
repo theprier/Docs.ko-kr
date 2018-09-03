@@ -265,6 +265,7 @@
 ## [Gulp 사용](xref:client-side/using-gulp)
 ## [Grunt 사용](xref:client-side/using-grunt)
 ## [LibMan 사용](xref:client-side/libman/index)
+### [LibMan CLI](xref:client-side/libman/libman-cli)
 ### [Visual Studio의 LibMan](xref:client-side/libman/libman-vs)
 ## [Bower를 사용하여 클라이언트 쪽 패키지 관리](xref:client-side/bower)
 ## [부트스트랩을 사용하여 반응이 빠른 사이트 빌드](xref:client-side/bootstrap)
