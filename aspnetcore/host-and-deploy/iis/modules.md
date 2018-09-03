@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 04/04/2018
 uid: host-and-deploy/iis/modules
-ms.openlocfilehash: 1ff0fdcaae066b493eeebf6a061e383f88c81052
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 40af94f9cbb83f27f22d90b6b0f2854090687d34
+ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36272739"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43312348"
 ---
 # <a name="iis-modules-with-aspnet-core"></a>IIS 모듈 및 ASP.NET Core
 
@@ -30,7 +30,7 @@ ASP.NET Core 앱은 역방향 프록시 구성에서 IIS가 호스트합니다. 
 | **클라이언트 인증 매핑 인증**<br>`CertificateMappingAuthenticationModule` | 예 | |
 | **CGI**<br>`CgiModule` | 아니요 | |
 | **구성 유효성 검사**<br>`ConfigurationValidationModule` | 예 | |
-| **HTTP 오류**<br>`CustomErrorModule` | 아니요 | [상태 코드 페이지 미들웨어](xref:fundamentals/error-handling#configuring-status-code-pages) |
+| **HTTP 오류**<br>`CustomErrorModule` | 아니요 | [상태 코드 페이지 미들웨어](xref:fundamentals/error-handling#configure-status-code-pages) |
 | **사용자 지정 로깅**<br>`CustomLoggingModule` | 예 | |
 | **기본 문서**<br>`DefaultDocumentModule` | 아니요 | [기본 파일 미들웨어](xref:fundamentals/static-files#serve-a-default-document) |
 | **다이제스트 인증**<br>`DigestAuthenticationModule` | 예 | |
