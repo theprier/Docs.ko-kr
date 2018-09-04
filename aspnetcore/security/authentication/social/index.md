@@ -5,12 +5,12 @@ description: 이 자습서에는 외부 인증 공급자에 OAuth 2.0을 사용�
 ms.author: riande
 ms.date: 11/01/2016
 uid: security/authentication/social/index
-ms.openlocfilehash: b2176ef40faaee02c5ef53dbb92a802212e58e8b
-ms.sourcegitcommit: e12f45ddcbe99102a74d4077df27d6c0ebba49c1
+ms.openlocfilehash: 48a01ab241f9a6ad6ad3fb2ee9e210f459075c33
+ms.sourcegitcommit: a669c4e3f42e387e214a354ac4143555602e6f66
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/15/2018
-ms.locfileid: "39063327"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43336122"
 ---
 # <a name="facebook-google-and-external-provider-authentication-in-aspnet-core"></a>ASP.NET Core에서 Facebook, Google 및 외부 공급자 인증
 
@@ -97,3 +97,5 @@ OAuth 2.0은 HTTPS 프로토콜을 통한 인증을 위해 SSL을 사용해야 �
 * 이 문서는 외부 인증을 고새하고 ASP.NET Core 앱에 외부 로그인을 추가하는 데 필요한 필수 구성 요소를 설명합니다.
 
 * 앱에 필요한 공급자에 대한 로그인을 구성하기 위해 공급자 관련 페이지를 참조합니다.
+
+* 사용자와 해당 액세스 및 새로 고침 토큰에 대한 추가 데이터를 유지할 수 있습니다. 자세한 내용은 <xref:security/authentication/social/additional-claims>을 참조하세요.
