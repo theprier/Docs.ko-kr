@@ -5,37 +5,37 @@ description: ASP.NET Core 앱을 사용 하 여 Id를 사용 합니다. 암호 �
 ms.author: riande
 ms.date: 08/08/2018
 uid: security/authentication/identity
-ms.openlocfilehash: fd5fa2fd1e069bf10f3baea38b1fe9f951dc4a7d
-ms.sourcegitcommit: fd461c60b5e36c7019f81da0138cc859d0fddaa2
+ms.openlocfilehash: bc69b1db56361dc185f582032148a4fb8078fdda
+ms.sourcegitcommit: 4cd8dce371d63a66d780e4af1baab2bcf9d61b24
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "41833287"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43893235"
 ---
-# <a name="introduction-to-identity-on-aspnet-core"></a><span data-ttu-id="d3b2a-104">ASP.NET Core Identity 소개</span><span class="sxs-lookup"><span data-stu-id="d3b2a-104">Introduction to Identity on ASP.NET Core</span></span>
+# <a name="introduction-to-identity-on-aspnet-core"></a><span data-ttu-id="17419-104">ASP.NET Core Identity 소개</span><span class="sxs-lookup"><span data-stu-id="17419-104">Introduction to Identity on ASP.NET Core</span></span>
 
-<span data-ttu-id="d3b2a-105">작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="d3b2a-105">By [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
+<span data-ttu-id="17419-105">작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)</span><span class="sxs-lookup"><span data-stu-id="17419-105">By [Rick Anderson](https://twitter.com/RickAndMSFT)</span></span>
 
-<span data-ttu-id="d3b2a-106">ASP.NET Core Id는 ASP.NET Core 앱에 로그인 기능을 추가 하는 멤버 자격 시스템입니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-106">ASP.NET Core Identity is a membership system that adds login functionality to ASP.NET Core apps.</span></span> <span data-ttu-id="d3b2a-107">사용자 Id에 저장 된 로그인 정보를 사용 하 여 계정을 만들 수 있습니다 하거나 외부 로그인 공급자를 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-107">Users can create an account with the login information stored in Identity or they can use an external login provider.</span></span> <span data-ttu-id="d3b2a-108">지원 되는 외부 로그인 공급자를 포함 [Facebook, Google, Microsoft 계정 및 Twitter](xref:security/authentication/social/index)합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-108">Supported external login providers include [Facebook, Google, Microsoft Account, and Twitter](xref:security/authentication/social/index).</span></span>
+<span data-ttu-id="17419-106">ASP.NET Core Id는 ASP.NET Core 앱에 로그인 기능을 추가 하는 멤버 자격 시스템입니다.</span><span class="sxs-lookup"><span data-stu-id="17419-106">ASP.NET Core Identity is a membership system that adds login functionality to ASP.NET Core apps.</span></span> <span data-ttu-id="17419-107">사용자 Id에 저장 된 로그인 정보를 사용 하 여 계정을 만들 수 있습니다 하거나 외부 로그인 공급자를 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="17419-107">Users can create an account with the login information stored in Identity or they can use an external login provider.</span></span> <span data-ttu-id="17419-108">지원 되는 외부 로그인 공급자를 포함 [Facebook, Google, Microsoft 계정 및 Twitter](xref:security/authentication/social/index)합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-108">Supported external login providers include [Facebook, Google, Microsoft Account, and Twitter](xref:security/authentication/social/index).</span></span>
 
-<span data-ttu-id="d3b2a-109">사용자 이름, 암호 및 프로필 데이터를 저장 하는 SQL Server 데이터베이스를 사용 하 여 id는 구성할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-109">Identity can be configured using a SQL Server database to store user names, passwords, and profile data.</span></span> <span data-ttu-id="d3b2a-110">또는 다른 영구 저장소 예를 들어, Azure Table Storage 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-110">Alternatively, another persistent store can be used, for example, Azure Table Storage.</span></span>
+<span data-ttu-id="17419-109">사용자 이름, 암호 및 프로필 데이터를 저장 하는 SQL Server 데이터베이스를 사용 하 여 id는 구성할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="17419-109">Identity can be configured using a SQL Server database to store user names, passwords, and profile data.</span></span> <span data-ttu-id="17419-110">또는 다른 영구 저장소 예를 들어, Azure Table Storage 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="17419-110">Alternatively, another persistent store can be used, for example, Azure Table Storage.</span></span>
 
-[<span data-ttu-id="d3b2a-111">예제 코드 살펴보기 및 다운로드</span><span class="sxs-lookup"><span data-stu-id="d3b2a-111">View or download the sample code.</span></span>](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample/src/ASPNETCore-IdentityDemoComplete/) [<span data-ttu-id="d3b2a-112">(다운로드 방법)</span><span class="sxs-lookup"><span data-stu-id="d3b2a-112">(How to download)</span></span>](xref:tutorials/index#how-to-download-a-sample)
+[<span data-ttu-id="17419-111">예제 코드 살펴보기 및 다운로드</span><span class="sxs-lookup"><span data-stu-id="17419-111">View or download the sample code.</span></span>](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample/src/ASPNETCore-IdentityDemoComplete/) [<span data-ttu-id="17419-112">(다운로드 방법)</span><span class="sxs-lookup"><span data-stu-id="17419-112">(How to download)</span></span>](xref:tutorials/index#how-to-download-a-sample)
 
-<span data-ttu-id="d3b2a-113">이 항목의 Id를 사용 하 여 등록, 로그인 하는 방법을 알아보고는 사용자를 로그 아웃 합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-113">In this topic, you learn how to use Identity to register, log in, and log out a user.</span></span> <span data-ttu-id="d3b2a-114">Identity를 사용 하는 앱을 만드는 방법에 대 한 자세한 내용은이 문서의 끝에 있는 다음 단계 섹션을 참조 하세요.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-114">For more detailed instructions about creating apps that use Identity, see the Next Steps section at the end of this article.</span></span>
+<span data-ttu-id="17419-113">이 항목의 Id를 사용 하 여 등록, 로그인 하는 방법을 알아보고는 사용자를 로그 아웃 합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-113">In this topic, you learn how to use Identity to register, log in, and log out a user.</span></span> <span data-ttu-id="17419-114">Identity를 사용 하는 앱을 만드는 방법에 대 한 자세한 내용은이 문서의 끝에 있는 다음 단계 섹션을 참조 하세요.</span><span class="sxs-lookup"><span data-stu-id="17419-114">For more detailed instructions about creating apps that use Identity, see the Next Steps section at the end of this article.</span></span>
 
-## <a name="create-a-web-app-with-authentication"></a><span data-ttu-id="d3b2a-115">인증을 사용 하 여 웹 앱 만들기</span><span class="sxs-lookup"><span data-stu-id="d3b2a-115">Create a Web app with authentication</span></span>
+## <a name="create-a-web-app-with-authentication"></a><span data-ttu-id="17419-115">인증을 사용 하 여 웹 앱 만들기</span><span class="sxs-lookup"><span data-stu-id="17419-115">Create a Web app with authentication</span></span>
 
-<span data-ttu-id="d3b2a-116">개별 사용자 계정으로 새로운 ASP.NET Core 웹 응용 프로그램 생성하기.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-116">Create an ASP.NET Core Web Application project with Individual User Accounts.</span></span>
+<span data-ttu-id="17419-116">개별 사용자 계정으로 새로운 ASP.NET Core 웹 응용 프로그램 생성하기.</span><span class="sxs-lookup"><span data-stu-id="17419-116">Create an ASP.NET Core Web Application project with Individual User Accounts.</span></span>
 
-# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="d3b2a-117">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="d3b2a-117">Visual Studio</span></span>](#tab/visual-studio)
+# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="17419-117">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="17419-117">Visual Studio</span></span>](#tab/visual-studio)
 
-* <span data-ttu-id="d3b2a-118">**파일** > **새로 만들기** > **프로젝트**를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-118">Select **File** > **New** > **Project**.</span></span> 
-* <span data-ttu-id="d3b2a-119">**새 ASP.NET Core 웹 응용 프로그램**을 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-119">Select **ASP.NET Core Web Application**.</span></span> <span data-ttu-id="d3b2a-120">프로젝트 이름을 **WebApp1** 프로젝트 다운로드와 같은 네임 스페이스에 있어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-120">Name the project **WebApp1** to have the same namespace as the project download.</span></span> <span data-ttu-id="d3b2a-121">**확인**을 클릭합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-121">Click **OK**.</span></span>
-* <span data-ttu-id="d3b2a-122">ASP.NET Core를 선택 **웹 응용 프로그램** ASP.NET Core 2.1에 대 한 선택한 **인증 변경**합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-122">Select an ASP.NET Core **Web Application** for ASP.NET Core 2.1, then select **Change Authentication**.</span></span>
-* <span data-ttu-id="d3b2a-123">선택 **개별 사용자 계정** 누릅니다 **확인**합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-123">Select **Individual User Accounts** and click **OK**.</span></span>
+* <span data-ttu-id="17419-118">**파일** > **새로 만들기** > **프로젝트**를 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-118">Select **File** > **New** > **Project**.</span></span> 
+* <span data-ttu-id="17419-119">**새 ASP.NET Core 웹 응용 프로그램**을 선택합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-119">Select **ASP.NET Core Web Application**.</span></span> <span data-ttu-id="17419-120">프로젝트 이름을 **WebApp1** 프로젝트 다운로드와 같은 네임 스페이스에 있어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-120">Name the project **WebApp1** to have the same namespace as the project download.</span></span> <span data-ttu-id="17419-121">**확인**을 클릭합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-121">Click **OK**.</span></span>
+* <span data-ttu-id="17419-122">ASP.NET Core를 선택 **웹 응용 프로그램** ASP.NET Core 2.1에 대 한 선택한 **인증 변경**합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-122">Select an ASP.NET Core **Web Application** for ASP.NET Core 2.1, then select **Change Authentication**.</span></span>
+* <span data-ttu-id="17419-123">선택 **개별 사용자 계정** 누릅니다 **확인**합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-123">Select **Individual User Accounts** and click **OK**.</span></span>
 
-# <a name="net-core-clitabnetcore-cli"></a>[<span data-ttu-id="d3b2a-124">.NET Core CLI</span><span class="sxs-lookup"><span data-stu-id="d3b2a-124">.NET Core CLI</span></span>](#tab/netcore-cli)
+# <a name="net-core-clitabnetcore-cli"></a>[<span data-ttu-id="17419-124">.NET Core CLI</span><span class="sxs-lookup"><span data-stu-id="17419-124">.NET Core CLI</span></span>](#tab/netcore-cli)
 
 ```cli
 dotnet new webapp --auth Individual -o WebApp1
@@ -43,28 +43,28 @@ dotnet new webapp --auth Individual -o WebApp1
 
 ---
 
-<span data-ttu-id="d3b2a-125">생성된 된 프로젝트를 제공 [ASP.NET Core Id](xref:security/authentication/identity) 으로 [Razor 클래스 라이브러리](xref:razor-pages/ui-class)합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-125">The generated project provides [ASP.NET Core Identity](xref:security/authentication/identity) as a [Razor Class Library](xref:razor-pages/ui-class).</span></span>
+<span data-ttu-id="17419-125">생성된 된 프로젝트를 제공 [ASP.NET Core Id](xref:security/authentication/identity) 으로 [Razor 클래스 라이브러리](xref:razor-pages/ui-class)합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-125">The generated project provides [ASP.NET Core Identity](xref:security/authentication/identity) as a [Razor Class Library](xref:razor-pages/ui-class).</span></span>
 
-### <a name="test-register-and-login"></a><span data-ttu-id="d3b2a-126">테스트 등록 및 로그인</span><span class="sxs-lookup"><span data-stu-id="d3b2a-126">Test Register and Login</span></span>
+### <a name="test-register-and-login"></a><span data-ttu-id="17419-126">테스트 등록 및 로그인</span><span class="sxs-lookup"><span data-stu-id="17419-126">Test Register and Login</span></span>
 
-<span data-ttu-id="d3b2a-127">앱을 실행 하 고 사용자를 등록 합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-127">Run the app and register a user.</span></span> <span data-ttu-id="d3b2a-128">화면 크기에 따라 탐색 설정/해제 단추를 선택 해야 합니다 **등록** 하 고 **로그인** 링크 합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-128">Depending on your screen size, you might need to select the navigation toggle button to see the **Register** and **Login** links.</span></span>
+<span data-ttu-id="17419-127">앱을 실행 하 고 사용자를 등록 합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-127">Run the app and register a user.</span></span> <span data-ttu-id="17419-128">화면 크기에 따라 탐색 설정/해제 단추를 선택 해야 합니다 **등록** 하 고 **로그인** 링크 합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-128">Depending on your screen size, you might need to select the navigation toggle button to see the **Register** and **Login** links.</span></span>
 
 ![탐색 모음 설정/해제 단추](identity/_static/navToggle.png)
 
 [!INCLUDE[](~/includes/view-identity-db.md)]
 
 <a name="pw"></a>
-### <a name="configure-identity-services"></a><span data-ttu-id="d3b2a-130">Id 서비스를 구성 합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-130">Configure Identity services</span></span>
+### <a name="configure-identity-services"></a><span data-ttu-id="17419-130">Id 서비스를 구성 합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-130">Configure Identity services</span></span>
 
-<span data-ttu-id="d3b2a-131">서비스에 추가 된 `ConfigureServices`합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-131">Services are added in `ConfigureServices`.</span></span>
+<span data-ttu-id="17419-131">서비스에 추가 된 `ConfigureServices`합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-131">Services are added in `ConfigureServices`.</span></span> <span data-ttu-id="17419-132">다음 코드는 생성 된 템플릿을 포함 되지 않습니다 `CookiePolicyOptions`:</span><span class="sxs-lookup"><span data-stu-id="17419-132">The following code doesn't include the template generated `CookiePolicyOptions`:</span></span>
 
 ::: moniker range=">= aspnetcore-2.1"
 
    [!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/Startup.cs?name=snippet_configureservices)]
 
-<span data-ttu-id="d3b2a-132">위의 코드는 기본 옵션 값을 사용 하 여 Identity를 구성합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-132">The preceding code configures Identity with default option values.</span></span> <span data-ttu-id="d3b2a-133">서비스를 통해 앱에 제공 됩니다 [종속성 주입](xref:fundamentals/dependency-injection)합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-133">Services are made available to the app through [dependency injection](xref:fundamentals/dependency-injection).</span></span>
+<span data-ttu-id="17419-133">위의 코드는 기본 옵션 값을 사용 하 여 Identity를 구성합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-133">The preceding code configures Identity with default option values.</span></span> <span data-ttu-id="17419-134">서비스를 통해 앱에 제공 됩니다 [종속성 주입](xref:fundamentals/dependency-injection)합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-134">Services are made available to the app through [dependency injection](xref:fundamentals/dependency-injection).</span></span>
 
-   <span data-ttu-id="d3b2a-134">호출 하 여 id를 활성화 [UseAuthentication](/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication#Microsoft_AspNetCore_Builder_AuthAppBuilderExtensions_UseAuthentication_Microsoft_AspNetCore_Builder_IApplicationBuilder_)합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-134">Identity is enabled by calling [UseAuthentication](/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication#Microsoft_AspNetCore_Builder_AuthAppBuilderExtensions_UseAuthentication_Microsoft_AspNetCore_Builder_IApplicationBuilder_).</span></span> <span data-ttu-id="d3b2a-135">`UseAuthentication`은 요청 파이프라인에 인증 [미들웨어](xref:fundamentals/middleware/index)를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-135">`UseAuthentication` adds authentication [middleware](xref:fundamentals/middleware/index) to the request pipeline.</span></span>
+   <span data-ttu-id="17419-135">호출 하 여 id를 활성화 [UseAuthentication](/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication#Microsoft_AspNetCore_Builder_AuthAppBuilderExtensions_UseAuthentication_Microsoft_AspNetCore_Builder_IApplicationBuilder_)합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-135">Identity is enabled by calling [UseAuthentication](/dotnet/api/microsoft.aspnetcore.builder.authappbuilderextensions.useauthentication#Microsoft_AspNetCore_Builder_AuthAppBuilderExtensions_UseAuthentication_Microsoft_AspNetCore_Builder_IApplicationBuilder_).</span></span> <span data-ttu-id="17419-136">`UseAuthentication`은 요청 파이프라인에 인증 [미들웨어](xref:fundamentals/middleware/index)를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-136">`UseAuthentication` adds authentication [middleware](xref:fundamentals/middleware/index) to the request pipeline.</span></span>
 
    [!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/Startup.cs?name=snippet_configure&highlight=18)]
 
@@ -74,9 +74,9 @@ dotnet new webapp --auth Individual -o WebApp1
 
    [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,11-28,30-42)]
 
-   <span data-ttu-id="d3b2a-136">서비스를 통해 응용 프로그램에 제공 됩니다 [종속성 주입](xref:fundamentals/dependency-injection)합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-136">Services are made available to the application through [dependency injection](xref:fundamentals/dependency-injection).</span></span>
+   <span data-ttu-id="17419-137">서비스를 통해 응용 프로그램에 제공 됩니다 [종속성 주입](xref:fundamentals/dependency-injection)합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-137">Services are made available to the application through [dependency injection](xref:fundamentals/dependency-injection).</span></span>
 
-   <span data-ttu-id="d3b2a-137">`Configure` 메서드에서 `UseAuthentication` 메서드를 호출하면 응용 프로그램에서 Identity가 활성화됩니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-137">Identity is enabled for the application by calling `UseAuthentication` in the `Configure` method.</span></span> <span data-ttu-id="d3b2a-138">`UseAuthentication`은 요청 파이프라인에 인증 [미들웨어](xref:fundamentals/middleware/index)를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-138">`UseAuthentication` adds authentication [middleware](xref:fundamentals/middleware/index) to the request pipeline.</span></span>
+   <span data-ttu-id="17419-138">`Configure` 메서드에서 `UseAuthentication` 메서드를 호출하면 응용 프로그램에서 Identity가 활성화됩니다.</span><span class="sxs-lookup"><span data-stu-id="17419-138">Identity is enabled for the application by calling `UseAuthentication` in the `Configure` method.</span></span> <span data-ttu-id="17419-139">`UseAuthentication`은 요청 파이프라인에 인증 [미들웨어](xref:fundamentals/middleware/index)를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-139">`UseAuthentication` adds authentication [middleware](xref:fundamentals/middleware/index) to the request pipeline.</span></span>
 
    [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo/Startup.cs?name=snippet_configure&highlight=17)]
 
@@ -86,28 +86,28 @@ dotnet new webapp --auth Individual -o WebApp1
 
    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configureservices&highlight=7-9,13-33)]
 
-   <span data-ttu-id="d3b2a-139">이 서비스들은 응용 프로그램에서 [종속성 주입](xref:fundamentals/dependency-injection)을 통해서 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-139">These services are made available to the application through [dependency injection](xref:fundamentals/dependency-injection).</span></span>
+   <span data-ttu-id="17419-140">이 서비스들은 응용 프로그램에서 [종속성 주입](xref:fundamentals/dependency-injection)을 통해서 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="17419-140">These services are made available to the application through [dependency injection](xref:fundamentals/dependency-injection).</span></span>
 
-   <span data-ttu-id="d3b2a-140">`Configure` 메서드에서 `UseIdentity` 메서드를 호출하면 응용 프로그램에서 Identity가 활성화됩니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-140">Identity is enabled for the application by calling `UseIdentity` in the `Configure` method.</span></span> <span data-ttu-id="d3b2a-141">`UseIdentity`는 요청 파이프라인에 쿠키 기반의 인증 [미들웨어](xref:fundamentals/middleware/index)를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-141">`UseIdentity` adds cookie-based authentication [middleware](xref:fundamentals/middleware/index) to the request pipeline.</span></span>
+   <span data-ttu-id="17419-141">`Configure` 메서드에서 `UseIdentity` 메서드를 호출하면 응용 프로그램에서 Identity가 활성화됩니다.</span><span class="sxs-lookup"><span data-stu-id="17419-141">Identity is enabled for the application by calling `UseIdentity` in the `Configure` method.</span></span> <span data-ttu-id="17419-142">`UseIdentity`는 요청 파이프라인에 쿠키 기반의 인증 [미들웨어](xref:fundamentals/middleware/index)를 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-142">`UseIdentity` adds cookie-based authentication [middleware](xref:fundamentals/middleware/index) to the request pipeline.</span></span>
 
    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Startup.cs?name=snippet_configure&highlight=21)]
 
 ::: moniker-end
 
-<span data-ttu-id="d3b2a-142">자세한 내용은 참조는 [IdentityOptions 클래스](/dotnet/api/microsoft.aspnetcore.identity.identityoptions) 하 고 [응용 프로그램 시작](xref:fundamentals/startup).</span><span class="sxs-lookup"><span data-stu-id="d3b2a-142">For more information, see the [IdentityOptions Class](/dotnet/api/microsoft.aspnetcore.identity.identityoptions) and [Application Startup](xref:fundamentals/startup).</span></span>
+<span data-ttu-id="17419-143">자세한 내용은 참조는 [IdentityOptions 클래스](/dotnet/api/microsoft.aspnetcore.identity.identityoptions) 하 고 [응용 프로그램 시작](xref:fundamentals/startup).</span><span class="sxs-lookup"><span data-stu-id="17419-143">For more information, see the [IdentityOptions Class](/dotnet/api/microsoft.aspnetcore.identity.identityoptions) and [Application Startup](xref:fundamentals/startup).</span></span>
 
-## <a name="scaffold-register-login-and-logout"></a><span data-ttu-id="d3b2a-143">스 캐 폴드 등록, 로그인 및 로그 아웃</span><span class="sxs-lookup"><span data-stu-id="d3b2a-143">Scaffold Register, Login, and LogOut</span></span>
+## <a name="scaffold-register-login-and-logout"></a><span data-ttu-id="17419-144">스 캐 폴드 등록, 로그인 및 로그 아웃</span><span class="sxs-lookup"><span data-stu-id="17419-144">Scaffold Register, Login, and LogOut</span></span>
 
-<span data-ttu-id="d3b2a-144">수행 합니다 [identity 권한 부여를 사용 하 여 Razor 프로젝트에 스 캐 폴드](xref:security/authentication/scaffold-identity#scaffold-identity-into-a-razor-project-with-authorization) 지침입니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-144">Follow the [Scaffold identity into a Razor project with authorization](xref:security/authentication/scaffold-identity#scaffold-identity-into-a-razor-project-with-authorization) instructions.</span></span>
+<span data-ttu-id="17419-145">수행 합니다 [identity 권한 부여를 사용 하 여 Razor 프로젝트에 스 캐 폴드](xref:security/authentication/scaffold-identity#scaffold-identity-into-a-razor-project-with-authorization) 지침입니다.</span><span class="sxs-lookup"><span data-stu-id="17419-145">Follow the [Scaffold identity into a Razor project with authorization](xref:security/authentication/scaffold-identity#scaffold-identity-into-a-razor-project-with-authorization) instructions.</span></span>
 
-# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="d3b2a-145">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="d3b2a-145">Visual Studio</span></span>](#tab/visual-studio)
+# <a name="visual-studiotabvisual-studio"></a>[<span data-ttu-id="17419-146">Visual Studio</span><span class="sxs-lookup"><span data-stu-id="17419-146">Visual Studio</span></span>](#tab/visual-studio)
 
-<span data-ttu-id="d3b2a-146">등록, 로그인 및 로그 아웃 파일을 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-146">Add the Register, Login, and LogOut files.</span></span>
+<span data-ttu-id="17419-147">등록, 로그인 및 로그 아웃 파일을 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-147">Add the Register, Login, and LogOut files.</span></span>
 
 
-# <a name="net-core-clitabnetcore-cli"></a>[<span data-ttu-id="d3b2a-147">.NET Core CLI</span><span class="sxs-lookup"><span data-stu-id="d3b2a-147">.NET Core CLI</span></span>](#tab/netcore-cli)
+# <a name="net-core-clitabnetcore-cli"></a>[<span data-ttu-id="17419-148">.NET Core CLI</span><span class="sxs-lookup"><span data-stu-id="17419-148">.NET Core CLI</span></span>](#tab/netcore-cli)
 
-<span data-ttu-id="d3b2a-148">이름으로 프로젝트를 만든 경우 **WebApp1**, 다음 명령을 실행 합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-148">If you created the project with name **WebApp1**, run the following commands.</span></span> <span data-ttu-id="d3b2a-149">그렇지 않은 경우에 대 한 올바른 네임 스페이스를 사용 합니다 `ApplicationDbContext`:</span><span class="sxs-lookup"><span data-stu-id="d3b2a-149">Otherwise, use the correct namespace for the `ApplicationDbContext`:</span></span>
+<span data-ttu-id="17419-149">이름으로 프로젝트를 만든 경우 **WebApp1**, 다음 명령을 실행 합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-149">If you created the project with name **WebApp1**, run the following commands.</span></span> <span data-ttu-id="17419-150">그렇지 않은 경우에 대 한 올바른 네임 스페이스를 사용 합니다 `ApplicationDbContext`:</span><span class="sxs-lookup"><span data-stu-id="17419-150">Otherwise, use the correct namespace for the `ApplicationDbContext`:</span></span>
 
 
 ```cli
@@ -115,125 +115,125 @@ dotnet aspnet-codegenerator identity -dc WebApp1.Data.ApplicationDbContext --fil
 
 ```
 
-<span data-ttu-id="d3b2a-150">PowerShell 명령 구분 기호로 세미콜론을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-150">PowerShell uses semicolon as a command separator.</span></span> <span data-ttu-id="d3b2a-151">PowerShell을 사용 하는 경우 파일 목록에 세미콜론을 이스케이프 하거나 이전 예제와 같이 큰따옴표로 파일 목록을 저장 합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-151">When using PowerShell, escape the semicolons in the file list or put the file list in double quotes, as the preceding example shows.</span></span>
+<span data-ttu-id="17419-151">PowerShell 명령 구분 기호로 세미콜론을 사용합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-151">PowerShell uses semicolon as a command separator.</span></span> <span data-ttu-id="17419-152">PowerShell을 사용 하는 경우 파일 목록에 세미콜론을 이스케이프 하거나 이전 예제와 같이 큰따옴표로 파일 목록을 저장 합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-152">When using PowerShell, escape the semicolons in the file list or put the file list in double quotes, as the preceding example shows.</span></span>
 
 ---
 
-### <a name="examine-register"></a><span data-ttu-id="d3b2a-152">등록 확인</span><span class="sxs-lookup"><span data-stu-id="d3b2a-152">Examine Register</span></span>
+### <a name="examine-register"></a><span data-ttu-id="17419-153">등록 확인</span><span class="sxs-lookup"><span data-stu-id="17419-153">Examine Register</span></span>
 
 ::: moniker range=">= aspnetcore-2.1"
 
-   <span data-ttu-id="d3b2a-153">클릭할 때 합니다 **등록** 링크를 `RegisterModel.OnPostAsync` 동작이 호출 합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-153">When a user clicks the **Register** link, the `RegisterModel.OnPostAsync` action is invoked.</span></span> <span data-ttu-id="d3b2a-154">사용자가 만든 [CreateAsync](/dotnet/api/microsoft.aspnetcore.identity.usermanager-1.createasync#Microsoft_AspNetCore_Identity_UserManager_1_CreateAsync__0_System_String_) 에 `_userManager` 개체입니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-154">The user is created by [CreateAsync](/dotnet/api/microsoft.aspnetcore.identity.usermanager-1.createasync#Microsoft_AspNetCore_Identity_UserManager_1_CreateAsync__0_System_String_) on the `_userManager` object.</span></span> <span data-ttu-id="d3b2a-155">`_userManager` 가 제공한 종속성 주입):</span><span class="sxs-lookup"><span data-stu-id="d3b2a-155">`_userManager` is provided by dependency injection):</span></span>
+   <span data-ttu-id="17419-154">클릭할 때 합니다 **등록** 링크를 `RegisterModel.OnPostAsync` 동작이 호출 합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-154">When a user clicks the **Register** link, the `RegisterModel.OnPostAsync` action is invoked.</span></span> <span data-ttu-id="17419-155">사용자가 만든 [CreateAsync](/dotnet/api/microsoft.aspnetcore.identity.usermanager-1.createasync#Microsoft_AspNetCore_Identity_UserManager_1_CreateAsync__0_System_String_) 에 `_userManager` 개체입니다.</span><span class="sxs-lookup"><span data-stu-id="17419-155">The user is created by [CreateAsync](/dotnet/api/microsoft.aspnetcore.identity.usermanager-1.createasync#Microsoft_AspNetCore_Identity_UserManager_1_CreateAsync__0_System_String_) on the `_userManager` object.</span></span> <span data-ttu-id="17419-156">`_userManager` 가 제공한 종속성 주입):</span><span class="sxs-lookup"><span data-stu-id="17419-156">`_userManager` is provided by dependency injection):</span></span>
 
    [!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/Register.cshtml.cs?name=snippet&highlight=7,22)]
 
 ::: moniker-end
 ::: moniker range="= aspnetcore-2.0"
 
-   <span data-ttu-id="d3b2a-156">클릭할 때 합니다 **등록** 링크를 `Register` 에서 동작이 호출 될 `AccountController`.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-156">When a user clicks the **Register** link, the `Register` action is invoked on `AccountController`.</span></span> <span data-ttu-id="d3b2a-157">`Register` 액션은 `_userManager` 개체의 (종속성 주입으로 `AccountController`에 제공된) `CreateAsync`를 호출해서 사용자를 생성합니다:</span><span class="sxs-lookup"><span data-stu-id="d3b2a-157">The `Register` action creates the user by calling `CreateAsync` on the `_userManager` object (provided to `AccountController` by dependency injection):</span></span>
+   <span data-ttu-id="17419-157">클릭할 때 합니다 **등록** 링크를 `Register` 에서 동작이 호출 될 `AccountController`.</span><span class="sxs-lookup"><span data-stu-id="17419-157">When a user clicks the **Register** link, the `Register` action is invoked on `AccountController`.</span></span> <span data-ttu-id="17419-158">`Register` 액션은 `_userManager` 개체의 (종속성 주입으로 `AccountController`에 제공된) `CreateAsync`를 호출해서 사용자를 생성합니다:</span><span class="sxs-lookup"><span data-stu-id="17419-158">The `Register` action creates the user by calling `CreateAsync` on the `_userManager` object (provided to `AccountController` by dependency injection):</span></span>
 
    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_register&highlight=11)]
 
 ::: moniker-end
 
-   <span data-ttu-id="d3b2a-158">사용자가 정상적으로 생성되면 `_signInManager.SignInAsync` 가 호출되어 사용자가 즉시 로그인됩니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-158">If the user was created successfully, the user is logged in by the call to `_signInManager.SignInAsync`.</span></span>
+   <span data-ttu-id="17419-159">사용자가 정상적으로 생성되면 `_signInManager.SignInAsync` 가 호출되어 사용자가 즉시 로그인됩니다.</span><span class="sxs-lookup"><span data-stu-id="17419-159">If the user was created successfully, the user is logged in by the call to `_signInManager.SignInAsync`.</span></span>
 
-   <span data-ttu-id="d3b2a-159">**참고:** 사용자 등록 즉시 로그인을 방지하는 방법은 [계정 확인](xref:security/authentication/accconfirm#prevent-login-at-registration) 을 참고하시기 바랍니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-159">**Note:** See [account confirmation](xref:security/authentication/accconfirm#prevent-login-at-registration) for steps to prevent immediate login at registration.</span></span>
+   <span data-ttu-id="17419-160">**참고:** 사용자 등록 즉시 로그인을 방지하는 방법은 [계정 확인](xref:security/authentication/accconfirm#prevent-login-at-registration) 을 참고하시기 바랍니다.</span><span class="sxs-lookup"><span data-stu-id="17419-160">**Note:** See [account confirmation](xref:security/authentication/accconfirm#prevent-login-at-registration) for steps to prevent immediate login at registration.</span></span>
 
-### <a name="log-in"></a><span data-ttu-id="d3b2a-160">로그인</span><span class="sxs-lookup"><span data-stu-id="d3b2a-160">Log in</span></span>
+### <a name="log-in"></a><span data-ttu-id="17419-161">로그인</span><span class="sxs-lookup"><span data-stu-id="17419-161">Log in</span></span>
 
 ::: moniker range=">= aspnetcore-2.1"
 
-<span data-ttu-id="d3b2a-161">로그인 양식이 표시 되는 경우:</span><span class="sxs-lookup"><span data-stu-id="d3b2a-161">The Login form is displayed when:</span></span>
+<span data-ttu-id="17419-162">로그인 양식이 표시 되는 경우:</span><span class="sxs-lookup"><span data-stu-id="17419-162">The Login form is displayed when:</span></span>
 
-* <span data-ttu-id="d3b2a-162">합니다 **로그인** 링크를 선택 합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-162">The **Log in** link  is selected.</span></span>
-* <span data-ttu-id="d3b2a-163">사용자는 인증 되지 않은 페이지를 액세스 하는 경우 **또는** 로그인 페이지로 리디렉션되어 인증 합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-163">When a user accesses a page where they are not authenticated **or** authorized, they are redirected to the Login page.</span></span> 
+* <span data-ttu-id="17419-163">합니다 **로그인** 링크를 선택 합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-163">The **Log in** link  is selected.</span></span>
+* <span data-ttu-id="17419-164">사용자는 인증 되지 않은 페이지를 액세스 하는 경우 **또는** 로그인 페이지로 리디렉션되어 인증 합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-164">When a user accesses a page where they are not authenticated **or** authorized, they are redirected to the Login page.</span></span> 
 
-<span data-ttu-id="d3b2a-164">로그인 페이지의 양식을 제출 되 면는 `OnPostAsync` 작업 이라고 합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-164">When the form on the Login page is submitted, the `OnPostAsync` action is called.</span></span> <span data-ttu-id="d3b2a-165">`PasswordSignInAsync` 라고 하는 `_signInManager` 개체 (종속성 주입으로 제공 됨).</span><span class="sxs-lookup"><span data-stu-id="d3b2a-165">`PasswordSignInAsync` is called on the `_signInManager` object (provided by dependency injection).</span></span>
+<span data-ttu-id="17419-165">로그인 페이지의 양식을 제출 되 면는 `OnPostAsync` 작업 이라고 합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-165">When the form on the Login page is submitted, the `OnPostAsync` action is called.</span></span> <span data-ttu-id="17419-166">`PasswordSignInAsync` 라고 하는 `_signInManager` 개체 (종속성 주입으로 제공 됨).</span><span class="sxs-lookup"><span data-stu-id="17419-166">`PasswordSignInAsync` is called on the `_signInManager` object (provided by dependency injection).</span></span>
 
    [!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/Login.cshtml.cs?name=snippet&highlight=10-11)]
 
-   <span data-ttu-id="d3b2a-166">기본 `Controller` 클래스는 컨트롤러의 메서드에서 접근할 수 있는 `User` 속성을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-166">The base `Controller` class exposes a `User` property that you can access from controller methods.</span></span> <span data-ttu-id="d3b2a-167">예를 들어, 열거할 수 있습니다 `User.Claims` 을 권한 부여 결정을 내립니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-167">For instance, you can enumerate `User.Claims` and make authorization decisions.</span></span> <span data-ttu-id="d3b2a-168">자세한 내용은 [권한 부여](xref:security/authorization/index)합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-168">For more information, see [Authorization](xref:security/authorization/index).</span></span>
+   <span data-ttu-id="17419-167">기본 `Controller` 클래스는 컨트롤러의 메서드에서 접근할 수 있는 `User` 속성을 제공합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-167">The base `Controller` class exposes a `User` property that you can access from controller methods.</span></span> <span data-ttu-id="17419-168">예를 들어, 열거할 수 있습니다 `User.Claims` 을 권한 부여 결정을 내립니다.</span><span class="sxs-lookup"><span data-stu-id="17419-168">For instance, you can enumerate `User.Claims` and make authorization decisions.</span></span> <span data-ttu-id="17419-169">자세한 내용은 [권한 부여](xref:security/authorization/index)합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-169">For more information, see [Authorization](xref:security/authorization/index).</span></span>
 
 ::: moniker-end
 ::: moniker range="= aspnetcore-2.0"
 
-<span data-ttu-id="d3b2a-169">사용자가 선택할 때 로그인 양식이 표시 되는 **로그인** 연결 또는 인증을 요구 하는 페이지에 액세스할 때 자동으로 리디렉션됩니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-169">The Login form is displayed when users select the **Log in** link or are redirected when accessing a page that requires authentication.</span></span> <span data-ttu-id="d3b2a-170">사용자가 Login 페이지의 양식을 제출하면 `AccountController`의 `Login` 액션이 호출됩니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-170">When the user submits the form on the Login page, the `AccountController` `Login` action is called.</span></span>
+<span data-ttu-id="17419-170">사용자가 선택할 때 로그인 양식이 표시 되는 **로그인** 연결 또는 인증을 요구 하는 페이지에 액세스할 때 자동으로 리디렉션됩니다.</span><span class="sxs-lookup"><span data-stu-id="17419-170">The Login form is displayed when users select the **Log in** link or are redirected when accessing a page that requires authentication.</span></span> <span data-ttu-id="17419-171">사용자가 Login 페이지의 양식을 제출하면 `AccountController`의 `Login` 액션이 호출됩니다.</span><span class="sxs-lookup"><span data-stu-id="17419-171">When the user submits the form on the Login page, the `AccountController` `Login` action is called.</span></span>
 
-<span data-ttu-id="d3b2a-171">`Login` 액션은 `_signInManager` 개체의 (종속성 주입으로 `AccountController` 에 제공된) `PasswordSignInAsync`를 호출합니다. </span><span class="sxs-lookup"><span data-stu-id="d3b2a-171">The `Login` action calls `PasswordSignInAsync` on the `_signInManager` object (provided to `AccountController` by dependency injection).</span></span>
+<span data-ttu-id="17419-172">`Login` 액션은 `_signInManager` 개체의 (종속성 주입으로 `AccountController` 에 제공된) `PasswordSignInAsync`를 호출합니다. </span><span class="sxs-lookup"><span data-stu-id="17419-172">The `Login` action calls `PasswordSignInAsync` on the `_signInManager` object (provided to `AccountController` by dependency injection).</span></span>
 
 [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_login&highlight=13-14)]
 
-<span data-ttu-id="d3b2a-172">기본 (`Controller` 나 `PageModel`) 클래스는 `User` 속성입니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-172">The base (`Controller` or `PageModel`) class exposes a `User` property.</span></span> <span data-ttu-id="d3b2a-173">예를 들어 `User.Claims` 권한 부여 결정을 열거할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-173">For example, `User.Claims` can be enumerated to make authorization decisions.</span></span>
+<span data-ttu-id="17419-173">기본 (`Controller` 나 `PageModel`) 클래스는 `User` 속성입니다.</span><span class="sxs-lookup"><span data-stu-id="17419-173">The base (`Controller` or `PageModel`) class exposes a `User` property.</span></span> <span data-ttu-id="17419-174">예를 들어 `User.Claims` 권한 부여 결정을 열거할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="17419-174">For example, `User.Claims` can be enumerated to make authorization decisions.</span></span>
 
 ::: moniker-end
 
-### <a name="log-out"></a><span data-ttu-id="d3b2a-174">로그 아웃</span><span class="sxs-lookup"><span data-stu-id="d3b2a-174">Log out</span></span>
+### <a name="log-out"></a><span data-ttu-id="17419-175">로그 아웃</span><span class="sxs-lookup"><span data-stu-id="17419-175">Log out</span></span>
 
 ::: moniker range=">= aspnetcore-2.1"
 
-<span data-ttu-id="d3b2a-175">합니다 **로그 아웃** 링크를 호출 하는 `LogoutModel.OnPost` 동작 합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-175">The **Log out** link invokes the `LogoutModel.OnPost` action.</span></span> 
+<span data-ttu-id="17419-176">합니다 **로그 아웃** 링크를 호출 하는 `LogoutModel.OnPost` 동작 합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-176">The **Log out** link invokes the `LogoutModel.OnPost` action.</span></span> 
 
 [!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/Logout.cshtml.cs)]
 
-<span data-ttu-id="d3b2a-176">[SignOutAsync](/dotnet/api/microsoft.aspnetcore.identity.signinmanager-1.signoutasync#Microsoft_AspNetCore_Identity_SignInManager_1_SignOutAsync) 쿠키에 저장 하는 사용자의 클레임을 지웁니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-176">[SignOutAsync](/dotnet/api/microsoft.aspnetcore.identity.signinmanager-1.signoutasync#Microsoft_AspNetCore_Identity_SignInManager_1_SignOutAsync) clears the user's claims stored in a cookie.</span></span> <span data-ttu-id="d3b2a-177">호출 후 리디렉션 하지 `SignOutAsync` 또는 사용자에 게 **하지** 로그 아웃 합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-177">Don't redirect after calling `SignOutAsync` or the user will **not** be signed out.</span></span>
+<span data-ttu-id="17419-177">[SignOutAsync](/dotnet/api/microsoft.aspnetcore.identity.signinmanager-1.signoutasync#Microsoft_AspNetCore_Identity_SignInManager_1_SignOutAsync) 쿠키에 저장 하는 사용자의 클레임을 지웁니다.</span><span class="sxs-lookup"><span data-stu-id="17419-177">[SignOutAsync](/dotnet/api/microsoft.aspnetcore.identity.signinmanager-1.signoutasync#Microsoft_AspNetCore_Identity_SignInManager_1_SignOutAsync) clears the user's claims stored in a cookie.</span></span> <span data-ttu-id="17419-178">호출 후 리디렉션 하지 `SignOutAsync` 또는 사용자에 게 **하지** 로그 아웃 합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-178">Don't redirect after calling `SignOutAsync` or the user will **not** be signed out.</span></span>
 
-<span data-ttu-id="d3b2a-178">게시물에 지정 된 *Pages/Shared/_LoginPartial.cshtml*:</span><span class="sxs-lookup"><span data-stu-id="d3b2a-178">Post is specified in the *Pages/Shared/_LoginPartial.cshtml*:</span></span>
+<span data-ttu-id="17419-179">게시물에 지정 된 *Pages/Shared/_LoginPartial.cshtml*:</span><span class="sxs-lookup"><span data-stu-id="17419-179">Post is specified in the *Pages/Shared/_LoginPartial.cshtml*:</span></span>
 
 [!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/_LoginPartial.cshtml?highlight=10)]
 
 ::: moniker-end
 ::: moniker range="= aspnetcore-2.0"
-   <span data-ttu-id="d3b2a-179">**LogOut** 링크를 클릭하면 `LogOut` 액션이 호출됩니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-179">Clicking the **Log out** link calls the `LogOut` action.</span></span>
+   <span data-ttu-id="17419-180">**LogOut** 링크를 클릭하면 `LogOut` 액션이 호출됩니다.</span><span class="sxs-lookup"><span data-stu-id="17419-180">Clicking the **Log out** link calls the `LogOut` action.</span></span>
 
    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_logout&highlight=7)]
 
-   <span data-ttu-id="d3b2a-180">이전 호출의 `_signInManager.SignOutAsync` 메서드.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-180">The preceding code calls the `_signInManager.SignOutAsync` method.</span></span> <span data-ttu-id="d3b2a-181">`SignOutAsync`메서드는 쿠키에 저장된 사용자의 클레임을 삭제합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-181">The `SignOutAsync` method clears the user's claims stored in a cookie.</span></span>
+   <span data-ttu-id="17419-181">이전 호출의 `_signInManager.SignOutAsync` 메서드.</span><span class="sxs-lookup"><span data-stu-id="17419-181">The preceding code calls the `_signInManager.SignOutAsync` method.</span></span> <span data-ttu-id="17419-182">`SignOutAsync`메서드는 쿠키에 저장된 사용자의 클레임을 삭제합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-182">The `SignOutAsync` method clears the user's claims stored in a cookie.</span></span>
 ::: moniker-end
 
-## <a name="test-identity"></a><span data-ttu-id="d3b2a-182">테스트 Id</span><span class="sxs-lookup"><span data-stu-id="d3b2a-182">Test Identity</span></span>
+## <a name="test-identity"></a><span data-ttu-id="17419-183">테스트 Id</span><span class="sxs-lookup"><span data-stu-id="17419-183">Test Identity</span></span>
 
-<span data-ttu-id="d3b2a-183">기본 웹 프로젝트 템플릿 홈 페이지에 대 한 익명 액세스를 허용 합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-183">The default web project templates allow anonymous access to the home pages.</span></span> <span data-ttu-id="d3b2a-184">Id를 테스트 하려면 추가 [ `[Authorize]` ](/dotnet/api/microsoft.aspnetcore.authorization.authorizeattribute) 정보 페이지에 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-184">To test Identity, add [`[Authorize]`](/dotnet/api/microsoft.aspnetcore.authorization.authorizeattribute) to the About page.</span></span>
+<span data-ttu-id="17419-184">기본 웹 프로젝트 템플릿 홈 페이지에 대 한 익명 액세스를 허용 합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-184">The default web project templates allow anonymous access to the home pages.</span></span> <span data-ttu-id="17419-185">Id를 테스트 하려면 추가 [ `[Authorize]` ](/dotnet/api/microsoft.aspnetcore.authorization.authorizeattribute) 정보 페이지에 있습니다.</span><span class="sxs-lookup"><span data-stu-id="17419-185">To test Identity, add [`[Authorize]`](/dotnet/api/microsoft.aspnetcore.authorization.authorizeattribute) to the About page.</span></span>
 
 [!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/About.cshtml.cs)]
 
-<span data-ttu-id="d3b2a-185">에 로그인 하는 경우 로그 아웃 합니다. 앱을 실행 하 고 선택 합니다 **에 대 한** 링크 합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-185">If you are signed in, sign out. Run the app and select the **About** link.</span></span> <span data-ttu-id="d3b2a-186">로그인 페이지로 리디렉션됩니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-186">You are redirected to the login page.</span></span>
+<span data-ttu-id="17419-186">에 로그인 하는 경우 로그 아웃 합니다. 앱을 실행 하 고 선택 합니다 **에 대 한** 링크 합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-186">If you are signed in, sign out. Run the app and select the **About** link.</span></span> <span data-ttu-id="17419-187">로그인 페이지로 리디렉션됩니다.</span><span class="sxs-lookup"><span data-stu-id="17419-187">You are redirected to the login page.</span></span>
 
 ::: moniker range=">= aspnetcore-2.1"
 
-### <a name="explore-identity"></a><span data-ttu-id="d3b2a-187">Identity를 탐색 합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-187">Explore Identity</span></span>
+### <a name="explore-identity"></a><span data-ttu-id="17419-188">Identity를 탐색 합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-188">Explore Identity</span></span>
 
-<span data-ttu-id="d3b2a-188">Identity를 자세히 탐색:</span><span class="sxs-lookup"><span data-stu-id="d3b2a-188">To explore Identity in more detail:</span></span>
+<span data-ttu-id="17419-189">Identity를 자세히 탐색:</span><span class="sxs-lookup"><span data-stu-id="17419-189">To explore Identity in more detail:</span></span>
 
-* [<span data-ttu-id="d3b2a-189">전체 id UI 원본 만들기</span><span class="sxs-lookup"><span data-stu-id="d3b2a-189">Create full identity UI source</span></span>](xref:security/authentication/scaffold-identity#create-full-identity-ui-source)
-* <span data-ttu-id="d3b2a-190">각 페이지 및 디버거를 단계별로의 소스를 검사 합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-190">Examine the source of each page and step through the debugger.</span></span>
+* [<span data-ttu-id="17419-190">전체 id UI 원본 만들기</span><span class="sxs-lookup"><span data-stu-id="17419-190">Create full identity UI source</span></span>](xref:security/authentication/scaffold-identity#create-full-identity-ui-source)
+* <span data-ttu-id="17419-191">각 페이지 및 디버거를 단계별로의 소스를 검사 합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-191">Examine the source of each page and step through the debugger.</span></span>
 
 ::: moniker-end
 
-## <a name="identity-components"></a><span data-ttu-id="d3b2a-191">Id 구성 요소</span><span class="sxs-lookup"><span data-stu-id="d3b2a-191">Identity Components</span></span>
+## <a name="identity-components"></a><span data-ttu-id="17419-192">Id 구성 요소</span><span class="sxs-lookup"><span data-stu-id="17419-192">Identity Components</span></span>
 
 ::: moniker range=">= aspnetcore-2.1"
 
-<span data-ttu-id="d3b2a-192">에 포함 된 모든 Identity 종속 된 NuGet 패키지를 [Microsoft.AspNetCore.App 메타 패키지](xref:fundamentals/metapackage-app)합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-192">All the Identity dependent NuGet packages are included in the [Microsoft.AspNetCore.App metapackage](xref:fundamentals/metapackage-app).</span></span>
+<span data-ttu-id="17419-193">에 포함 된 모든 Identity 종속 된 NuGet 패키지를 [Microsoft.AspNetCore.App 메타 패키지](xref:fundamentals/metapackage-app)합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-193">All the Identity dependent NuGet packages are included in the [Microsoft.AspNetCore.App metapackage](xref:fundamentals/metapackage-app).</span></span>
 ::: moniker-end
 
-<span data-ttu-id="d3b2a-193">Id에 대 한 기본 패키지가 [Microsoft.AspNetCore.Identity](https://www.nuget.org/packages/Microsoft.AspNetCore.Identity/)합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-193">The primary package for Identity is [Microsoft.AspNetCore.Identity](https://www.nuget.org/packages/Microsoft.AspNetCore.Identity/).</span></span> <span data-ttu-id="d3b2a-194">ASP.NET Core Identity에 대한 주요 인터페이스 모음을 포함하고 있는 이 패키지는 `Microsoft.AspNetCore.Identity.EntityFrameworkCore`에 포함되어 있습니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-194">This package contains the core set of interfaces for ASP.NET Core Identity, and is included by `Microsoft.AspNetCore.Identity.EntityFrameworkCore`.</span></span>
+<span data-ttu-id="17419-194">Id에 대 한 기본 패키지가 [Microsoft.AspNetCore.Identity](https://www.nuget.org/packages/Microsoft.AspNetCore.Identity/)합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-194">The primary package for Identity is [Microsoft.AspNetCore.Identity](https://www.nuget.org/packages/Microsoft.AspNetCore.Identity/).</span></span> <span data-ttu-id="17419-195">ASP.NET Core Identity에 대한 주요 인터페이스 모음을 포함하고 있는 이 패키지는 `Microsoft.AspNetCore.Identity.EntityFrameworkCore`에 포함되어 있습니다.</span><span class="sxs-lookup"><span data-stu-id="17419-195">This package contains the core set of interfaces for ASP.NET Core Identity, and is included by `Microsoft.AspNetCore.Identity.EntityFrameworkCore`.</span></span>
 
-## <a name="migrating-to-aspnet-core-identity"></a><span data-ttu-id="d3b2a-195">ASP.NET Identity로 마이그레이션하기</span><span class="sxs-lookup"><span data-stu-id="d3b2a-195">Migrating to ASP.NET Core Identity</span></span>
+## <a name="migrating-to-aspnet-core-identity"></a><span data-ttu-id="17419-196">ASP.NET Identity로 마이그레이션하기</span><span class="sxs-lookup"><span data-stu-id="17419-196">Migrating to ASP.NET Core Identity</span></span>
 
-<span data-ttu-id="d3b2a-196">자세한 내용 및 기존 Id 저장소에 마이그레이션하는 방법에 대 한 지침을 참조 하세요 [인증 및 Id 마이그레이션](xref:migration/identity)합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-196">For more information and guidance on migrating your existing Identity store, see [Migrate Authentication and Identity](xref:migration/identity).</span></span>
+<span data-ttu-id="17419-197">자세한 내용 및 기존 Id 저장소에 마이그레이션하는 방법에 대 한 지침을 참조 하세요 [인증 및 Id 마이그레이션](xref:migration/identity)합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-197">For more information and guidance on migrating your existing Identity store, see [Migrate Authentication and Identity](xref:migration/identity).</span></span>
 
-## <a name="setting-password-strength"></a><span data-ttu-id="d3b2a-197">암호 강도 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-197">Setting password strength</span></span>
+## <a name="setting-password-strength"></a><span data-ttu-id="17419-198">암호 강도 설정합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-198">Setting password strength</span></span>
 
-<span data-ttu-id="d3b2a-198">참조 [구성](#pw) 최소 암호 요구 사항을 설정 하는 샘플입니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-198">See [Configuration](#pw) for a sample that sets the minimum password requirements.</span></span>
+<span data-ttu-id="17419-199">참조 [구성](#pw) 최소 암호 요구 사항을 설정 하는 샘플입니다.</span><span class="sxs-lookup"><span data-stu-id="17419-199">See [Configuration](#pw) for a sample that sets the minimum password requirements.</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="d3b2a-199">다음 단계</span><span class="sxs-lookup"><span data-stu-id="d3b2a-199">Next Steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="17419-200">다음 단계</span><span class="sxs-lookup"><span data-stu-id="17419-200">Next Steps</span></span>
 
-* [<span data-ttu-id="d3b2a-200">ID 구성</span><span class="sxs-lookup"><span data-stu-id="d3b2a-200">Configure Identity</span></span>](xref:security/authentication/identity-configuration)
+* [<span data-ttu-id="17419-201">ID 구성</span><span class="sxs-lookup"><span data-stu-id="17419-201">Configure Identity</span></span>](xref:security/authentication/identity-configuration)
 * <xref:security/authorization/secure-data>
 * <xref:security/authentication/add-user-data>
 * <xref:security/authentication/identity-enable-qrcodes>
-* <span data-ttu-id="d3b2a-201">[Id 기본 키 데이터 형식 구성](xref:security/authentication/identity-primary-key-configuration)합니다.</span><span class="sxs-lookup"><span data-stu-id="d3b2a-201">[Configure Identity primary keys data type](xref:security/authentication/identity-primary-key-configuration).</span></span>
+* <span data-ttu-id="17419-202">[Id 기본 키 데이터 형식 구성](xref:security/authentication/identity-primary-key-configuration)합니다.</span><span class="sxs-lookup"><span data-stu-id="17419-202">[Configure Identity primary keys data type](xref:security/authentication/identity-primary-key-configuration).</span></span>
 * <xref:migration/identity>
 * <xref:security/authentication/accconfirm>
 * <xref:security/authentication/2fa>
