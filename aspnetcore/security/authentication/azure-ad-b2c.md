@@ -5,12 +5,12 @@ description: ASP.NET Core를 사용 하 여 Azure Active Directory B2C 인증을
 ms.date: 01/25/2018
 ms.custom: mvc
 uid: security/authentication/azure-ad-b2c
-ms.openlocfilehash: 731b25cac6f0d56fd34d12114a73e5cb5265dda6
-ms.sourcegitcommit: a3675f9704e4e73ecc7cbbbf016a13d2a5c4d725
+ms.openlocfilehash: 73a66cea1533cc835796f673021bfa45c35f5935
+ms.sourcegitcommit: 4cd8dce371d63a66d780e4af1baab2bcf9d61b24
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39202642"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43893196"
 ---
 # <a name="cloud-authentication-with-azure-active-directory-b2c-in-aspnet-core"></a>ASP.NET Core에서 Azure Active Directory B2C를 사용 하 여 클라우드 인증
 
@@ -107,7 +107,7 @@ Azure AD B2C 설명서의 단계를 사용 [등록 또는 로그인 정책 만�
 
 ## <a name="run-the-app"></a>앱 실행
 
-Visual Studio에서 눌러 **F5** 를 빌드하고 앱을 실행 합니다. 웹 앱이 시작 되 면 선택 **로그인**합니다.
+Visual Studio에서 눌러 **F5** 를 빌드하고 앱을 실행 합니다. 웹 앱이 시작 되 면 선택 **Accept** (메시지 표시) 하는 경우 쿠키 사용을 받아들이고 선택한 **로그인**합니다.
 
 ![앱에 로그인](./azure-ad-b2c/_static/signin.png)
 
