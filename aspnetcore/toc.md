@@ -393,6 +393,7 @@
 ## [사이트 간 스크립팅 방지](xref:security/cross-site-scripting)
 ## [원본 간 요청(CORS) 사용](xref:security/cors)
 ## [앱 간 쿠키 공유](xref:security/cookie-sharing)
+## [IP 수신 허용 목록](xref:security/ip-safelist)
 
 # [성능](xref:performance/index)
 ## [응답 캐시](xref:performance/caching/index)
