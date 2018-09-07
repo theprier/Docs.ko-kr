@@ -5,12 +5,12 @@ description: ASP.NET Core의 인증, 권한 부여 및 보안 기본 사항에 �
 ms.author: tdykstra
 ms.date: 11/01/2017
 uid: security/index
-ms.openlocfilehash: 3a1c1ea1ad28fccbe5ae91b0be193938b095f60b
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: d371d37690b6d641f8e584f5e51dcc074a581622
+ms.sourcegitcommit: 08bf41d4b3e696ab512b044970e8304816f8cc56
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41746091"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44040084"
 ---
 # <a name="overview-of-aspnet-core-security"></a>ASP.NET Core 보안 개요
 
@@ -104,3 +104,4 @@ ASP.NET Core 및 EF는 앱을 보호하고 보안 위반을 방지하는 기능�
 *   [사이트 간 스크립팅 방지](xref:security/cross-site-scripting)
 *   [원본 간 요청(CORS) 사용](xref:security/cors)
 *   [앱 간 쿠키 공유](xref:security/cookie-sharing)
+*   [IP 수신 허용 목록](xref:security/ip-safelist)
