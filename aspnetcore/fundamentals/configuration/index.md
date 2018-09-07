@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 08/13/2018
 uid: fundamentals/configuration/index
-ms.openlocfilehash: a0c57e75b28bc7c5590d20a8fa59b00b6bb9af4e
-ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
+ms.openlocfilehash: 288f8ba5b45cdecd8c9eae060fee2c2c25dec7f9
+ms.sourcegitcommit: 4cd8dce371d63a66d780e4af1baab2bcf9d61b24
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42927880"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43893248"
 ---
 # <a name="configuration-in-aspnet-core"></a>ASP.NET Core의 구성
 
@@ -261,7 +261,7 @@ public void ConfigureServices(IServiceCollection services)
 
 * *appsettings.json* 및 *appsettings.&lt;Environment&gt;.json*에서 선택적 구성
 * [사용자 비밀(비밀 관리자)](xref:security/app-secrets)(개발 환경에서)
-* 환경 변수
+* 환경 변수.
 
 `CreateDefaultBuilder`는 명령줄 구성 공급자를 마지막에 추가합니다. 따라서 런타임에 전달된 명령줄 인수가 다른 공급자에서 설정한 구성을 재정의합니다.
 
@@ -489,7 +489,7 @@ var host = new WebHostBuilder()
 
 * ASPNETCORE_
 * urls
-* Logging
+* 로깅
 * ENVIRONMENT
 * contentRoot
 * AllowedHosts
@@ -671,9 +671,9 @@ JSON 파일 구성을 활성화하려면 <xref:Microsoft.Extensions.Configuratio
 
 `CreateDefaultBuilder`는 다음 항목도 로드합니다.
 
-* 환경 변수
+* 환경 변수.
 * [사용자 비밀(비밀 관리자)](xref:security/app-secrets)(개발 환경에서)
-* 명령줄 인수
+* 명령줄 인수.
 
 JSON 구성 공급자를 먼저 설정합니다. 따라서 사용자 비밀, 환경 변수 및 명령줄 인수가 *appsettings* 파일에서 설정한 구성을 재정의할 수 있습니다.
 
@@ -1074,7 +1074,7 @@ var children = configSection.GetChildren();
 
 ::: moniker range=">= aspnetcore-2.0"
 
-### <a name="exists"></a>Exists
+### <a name="exists"></a>있음
 
 [ConfigurationExtensions.Exists](xref:Microsoft.Extensions.Configuration.ConfigurationExtensions.Exists*)를 사용하면 구성 섹션이 있는지 확인할 수 있습니다.
 
@@ -1122,7 +1122,7 @@ var sectionExists = _config.GetSection("section2:subsection2").Exists();
 
 다음 구성 키-값 쌍이 생성됩니다.
 
-| 키                   | 값                                             |
+| Key                   | 값                                             |
 | --------------------- | ------------------------------------------------- |
 | starship:name         | USS Enterprise                                    |
 | starship:registry     | NCC-1701                                          |
@@ -1230,7 +1230,7 @@ viewModel.TvShow = tvShow;
 
 다음 표에 표시된 구성 키 및 값을 사용하세요.
 
-| 키     | 값  |
+| Key     | 값  |
 | :-----: | :----: |
 | array:0 | value0 |
 | array:1 | value1 |
@@ -1317,7 +1317,7 @@ _config.GetSection("array").Bind(arrayExample);
 
 ::: moniker range=">= aspnetcore-2.0"
 
-`ConfigureAppConfiguration`의 경우:
+`ConfigureAppConfiguration`의 경우
 
 ```csharp
 config.AddJsonFile("missing_value.json", optional: false, reloadOnChange: false);
@@ -1370,7 +1370,7 @@ JSON 파일에 배열이 포함된 경우 0부터 시작하는 섹션 인덱스�
 
 JSON 구성 공급자는 구성 데이터를 다음 키-값 쌍으로 읽습니다.
 
-| 키                     | 값  |
+| Key                     | 값  |
 | ----------------------- | :----: |
 | json_array:key          | valueA |
 | json_array:subsection:0 | valueB |
@@ -1475,17 +1475,17 @@ JSON 구성 공급자는 구성 데이터를 다음 키-값 쌍으로 읽습니�
 
 `AddEFConfiguration` 확장 메서드를 사용하여 구성 소스를 `ConfigurationBuilder`에 추가할 수 있습니다.
 
-*EFConfigurationProvider/EFConfigurationExtensions.cs*:
+*Extensions/EntityFrameworkExtensions.cs*:
 
 ::: moniker range=">= aspnetcore-2.0"
 
-[!code-csharp[](index/samples/2.x/ConfigurationSample/EFConfigurationProvider/EFConfigurationExtensions.cs?name=snippet1)]
+[!code-csharp[](index/samples/2.x/ConfigurationSample/Extensions/EntityFrameworkExtensions.cs?name=snippet1)]
 
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.0"
 
-[!code-csharp[](index/samples/1.x/ConfigurationSample/EFConfigurationProvider/EFConfigurationExtensions.cs?name=snippet1)]
+[!code-csharp[](index/samples/1.x/ConfigurationSample/Extensions/EntityFrameworkExtensions.cs?name=snippet1)]
 
 ::: moniker-end
 
