@@ -6,21 +6,22 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 08/31/2018
 uid: security/ip-safelist
-ms.openlocfilehash: 40fe7b67359efd1692490099c3fb529ba4a6148f
-ms.sourcegitcommit: 08bf41d4b3e696ab512b044970e8304816f8cc56
+ms.openlocfilehash: 362d1ded00bda3f328e029fb467f2b3eeaa01396
+ms.sourcegitcommit: 8268cc67beb1bb1ca470abb0e28b15a7a71b8204
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44040116"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44126711"
 ---
 # <a name="client-ip-safelist-for-aspnet-core"></a>ASP.NET Core에 대 한 클라이언트 IP 수신
 
 하 여 [Damien Bowden](https://twitter.com/damien_bod) 고 [Tom Dykstra](https://github.com/tdykstra)
  
-이 아티클에서 IP 수신 (라고도: 화이트 리스트)을 구현 하는 두 가지 방법:
+이 아티클에서 IP 수신 (라고도: 화이트 리스트) ASP.NET Core 앱을 구현 하는 세 가지 방법에 설명 합니다. 사용할 수 있습니다.
 
-* ASP.NET Core 미들웨어를 사용 하 여 모든 요청 원격 IP 주소를 확인 합니다.
-* 특정 작업 메서드에 대 한 요청 된 원격 IP 주소를 확인 하려면 ASP.NET Core 작업 필터를 사용 합니다.
+* 모든 요청 원격 IP 주소를 확인 하는 미들웨어입니다.
+* 특정 컨트롤러 또는 작업 메서드에 대 한 요청 된 원격 IP 주소를 확인 하려면 작업 필터입니다.
+* Razor 페이지 필터를 Razor 페이지에 대 한 요청 된 원격 IP 주소를 확인 합니다.
 
 샘플 앱은 두 가지 방법을 모두 보여 줍니다. 각 경우에서는 승인 된 클라이언트 IP 주소를 포함 하는 문자열을 앱 설정에 저장 됩니다. 미들웨어 또는 필터를 목록으로 문자열을 구문 분석 하 고 원격 IP 목록 인지 확인 합니다. 그렇지 않은 경우는 HTTP 403 사용 권한 없음 상태 코드가 반환 됩니다.
 

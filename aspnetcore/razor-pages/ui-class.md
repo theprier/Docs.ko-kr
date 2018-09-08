@@ -4,16 +4,16 @@ author: Rick-Anderson
 description: 클래스 라이브러리에서 재사용 가능한 Razor UI를 만드는 방법을 설명합니다.
 monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
-ms.date: 07/21/2018
+ms.date: 09/07/2018
 uid: razor-pages/ui-class
-ms.openlocfilehash: 1f0ef59ce3f3294d6a3bde015ca34800770b1be4
-ms.sourcegitcommit: e955a722c05ce2e5e21b4219f7d94fb878e255a6
+ms.openlocfilehash: 7e9ab07a9060b16c09afb1e88950f6a3e55b13cb
+ms.sourcegitcommit: 8268cc67beb1bb1ca470abb0e28b15a7a71b8204
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "42909141"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44126750"
 ---
-# <a name="create-reusable-ui-using-the-razor-class-library-project-in-aspnet-core"></a>ASP.NET Core에서 Razor 클래스 라이브러리 프로젝트를 사용하여 재사용 가능한 UI를 만듭니다.
+# <a name="create-reusable-ui-using-the-razor-class-library-project-in-aspnet-core"></a>ASP.NET Core에서 Razor 클래스 라이브러리 프로젝트를 사용 하 여 다시 사용할 수 있는 UI 만들기
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 
@@ -41,7 +41,7 @@ Razor 클래스 라이브러리에는 다음 프로젝트 파일에 있습니다
 
 명령줄에서 `dotnet new razorclasslib`을 실행합니다. 예를 들어:
 
-``` CLI
+```console
 dotnet new razorclasslib -o RazorUIClassLib
 ```
 
@@ -75,15 +75,16 @@ Visual Studio에서 *.sln* 파일을 엽니다. 앱을 실행합니다.
 
 *cli* 디렉터리의 명령 프롬프트에서 RCL 및 웹앱을 빌드합니다.
 
-``` CLI
+```console
 dotnet build
 ```
 
 *WebApp1* 디렉터리로 이동해 앱을 실행합니다.
 
-``` CLI
+```console
 dotnet run
 ```
+
 ------
 
 [WebApp1 테스트](#test)의 지침 준수
@@ -107,7 +108,7 @@ RCL 프로젝트를 만듭니다.
 
 명령줄에서 다음을 실행하세요.
 
-``` CLI
+```console
 dotnet new razorclasslib -o RazorUIClassLib
 dotnet new page -n _Message -np -o RazorUIClassLib/Areas/MyFeature/Pages/Shared
 dotnet new viewstart -o RazorUIClassLib/Areas/MyFeature/Pages
@@ -117,33 +118,33 @@ dotnet new viewstart -o RazorUIClassLib/Areas/MyFeature/Pages
 
 * `RazorUIClassLib` Razor 클래스 라이브러리(RCL)를 만듭니다.
 * Razor _Message 페이지를 만들어 RCL에 추가합니다. `-np` 매개 변수는 `PageModel`가 없는 페이지를 만듭니다.
-* [viewstart](xref:mvc/views/layout#running-code-before-each-view) 파일을 만들어 RCL에 추가합니다.
+* 만듭니다는 [_ViewStart.cshtml](xref:mvc/views/layout#running-code-before-each-view) 파일과 RCL에 추가 합니다.
 
-viewstart 파일은 Razor 페이지 프로젝트(다음 섹션에서 추가된)의 레이아웃을 사용해야 합니다.
+합니다 *_ViewStart.cshtml* 파일 (다음 섹션에 추가 됩니다)이 표시 되는 Razor 페이지 프로젝트의 레이아웃을 사용 해야 합니다.
 
 ------
 
-### <a name="add-razor-files-and-folders-to-the-project"></a>Razor 파일 및 폴더를 프로젝트에 추가합니다.
+### <a name="add-razor-files-and-folders-to-the-project"></a>Razor 파일 및 폴더를 프로젝트에 추가
 
 * *RazorUIClassLib/Areas/MyFeature/Pages/Shared/_Message.cshtml*에서 태그를 다음 코드로 바꿉니다.
 
-[!code-html[Main](ui-class/samples/cli/RazorUIClassLib/Areas/MyFeature/Pages/Shared/_Message.cshtml)]
+[!code-cshtml[Main](ui-class/samples/cli/RazorUIClassLib/Areas/MyFeature/Pages/Shared/_Message.cshtml)]
 
 * *RazorUIClassLib/Areas/MyFeature/Pages/Page1.cshtml*에서 태그를 다음 코드로 바꿉니다.
 
-[!code-html[Main](ui-class/samples/cli/RazorUIClassLib/Areas/MyFeature/Pages/Page1.cshtml)]
+[!code-cshtml[Main](ui-class/samples/cli/RazorUIClassLib/Areas/MyFeature/Pages/Page1.cshtml)]
 
 `@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers`은 부분 보기(`<partial name="_Message" />`)를 사용해야 합니다. `@addTagHelper` 지시문을 포함하지 않고 *_ViewImports.cshtml* 파일을 추가할 수 있습니다. 예를 들어:
 
-``` CLI
+```console
 dotnet new viewimports -o RazorUIClassLib/Areas/MyFeature/Pages
 ```
 
-자세한 내용은 [공유된 지시문 가져오기](xref:mvc/views/layout#importing-shared-directives)를 참조
+에 대 한 자세한 *_ViewImports.cshtml*를 참조 하세요 [공유 된 지시문 가져오기](xref:mvc/views/layout#importing-shared-directives)
 
 * 컴파일러 오류가 없는지 확인하려면 클래스 라이브러리를 빌드하십시오.
 
-``` CLI
+```console
 dotnet build RazorUIClassLib
 ```
 
@@ -202,7 +203,7 @@ Razor UI 클래스 라이브러리를 사용하고 있는지 확인합니다.
 
 ## <a name="override-views-partial-views-and-pages"></a>보기, 부분 보기 및 페이지 재정의
 
-보기, 부분 보기 또는 Razor 페이지가 웹앱 및 Razor 클래스 라이브러리 모두에 있는 경우 웹앱에서 Razor 태그(*.cshtml* 파일)가 우선적으로 적용됩니다. 예를 들어 *WebApp1/Areas/MyFeature/Pages/Page1.cshtml*을 WebApp1에 추가하면 WebApp1의 페이지1은 Razor 클래스 라이브러리의 페이지1에 비해 우선 적용됩니다.
+보기, 부분 보기 또는 Razor 페이지가 웹앱 및 Razor 클래스 라이브러리 모두에 있는 경우 웹앱에서 Razor 태그(*.cshtml* 파일)가 우선적으로 적용됩니다. 예를 들어, 추가 *WebApp1/Areas/MyFeature/Pages/Page1.cshtml* WebApp1, 하는 구성이 WebApp1의 Page1 Razor 클래스 라이브러리의 Page1 우선적으로 적용 됩니다 및 합니다.
 
 샘플 다운로드에서 *WebApp1/Areas/MyFeature2*를 *WebApp1/Areas/MyFeature*로 이름을 바꾸어 우선적으로 테스트합니다.
 
@@ -212,17 +213,17 @@ Razor UI 클래스 라이브러리를 사용하고 있는지 확인합니다.
 
 ### <a name="rcl-pages-layout"></a>RCL 페이지 레이아웃
 
-RCL 콘텐츠를 웹 앱의 페이지 폴더의 일부인 것 처럼 참조 하려면 다음과 같은 파일 구조를 사용 하 여 RCL 프로젝트를 만듭니다.
+RCL 콘텐츠 웹 앱의 일부인 것 처럼 참조 *페이지* 폴더를 다음 파일 구조로 RCL 프로젝트를 만듭니다.
 
 * *RazorUIClassLib/페이지*
 * *RazorUIClassLib/페이지/공유*
 
-가정 *RazorUIClassLib/페이지/Shared* 두 부분 파일이 *_Header.cshtml* 하 고 *_Footer.cshtml*. 합니다 <partial> 태그를 추가할 수 없습니다 *_Layout.cshtml* 파일: 
+가정 *RazorUIClassLib/페이지/Shared* 부분 파일이 두: *_Header.cshtml* 하 고 *_Footer.cshtml*합니다. 합니다 `<partial>` 태그를 추가할 수 없습니다 *_Layout.cshtml* 파일:
   
-```
-  <body>
-    <partial name="_Header">
-    @RenderBody()
-    <partial name="_Footer">
-  </body>
+```cshtml
+<body>
+  <partial name="_Header">
+  @RenderBody()
+  <partial name="_Footer">
+</body>
 ```
