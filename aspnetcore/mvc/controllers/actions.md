@@ -31,7 +31,7 @@ ms.locfileid: "36275661"
 * 클래스가 이름에 접미사 “Controller”가 붙는 클래스에서 상속
 * 클래스가 `[Controller]` 특성으로 데코레이트됨
 
-컨트롤러 클래스에는 연결된 `[NonController]` 특성이 있어야 합니다.
+컨트롤러 클래스에는 반드시 연결된 `[NonController]` 특성이 없어야 합니다.
 
 컨트롤러는 [명시적 종속성 원칙](http://deviq.com/explicit-dependencies-principle/)을 따라야 합니다. 이 원칙을 구현하는 방법에는 몇 가지가 있습니다. 여러 컨트롤러 작업에서 동일한 서비스가 필요한 경우 해당 종속성을 요청하는 데 [생성자 주입](xref:mvc/controllers/dependency-injection#constructor-injection)을 사용하는 것을 고려합니다. 서비스가 단일 작업 메서드에 필요한 경우에는 종속성을 요청하는 데 [작업 주입](xref:mvc/controllers/dependency-injection#action-injection-with-fromservices)을 사용하는 것을 고려합니다.
 
