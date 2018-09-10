@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 06/19/2018
 uid: fundamentals/host/web-host
-ms.openlocfilehash: dfef2bf21f325f11d147379f75a8d81a8bd05eec
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: abb687c864ebe863c2bba265131c29939961cac0
+ms.sourcegitcommit: a669c4e3f42e387e214a354ac4143555602e6f66
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41886748"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43336068"
 ---
 # <a name="aspnet-core-web-host"></a>ASP.NET Core 웹 호스트
 
@@ -338,6 +338,23 @@ HTTPS 리디렉션 포트를 설정합니다. [HTTPS 적용](xref:security/enfor
 ```csharp
 WebHost.CreateDefaultBuilder(args)
     .UseSetting("https_port", "8080")
+```
+
+### <a name="hosting-startup-exclude-assemblies"></a>호스팅 시작 어셈블리 제외
+
+설명
+
+**키**: hostingStartupExcludeAssemblies  
+**형식**: *string*  
+**기본값**: 빈 문자열  
+**설정 방법**: `UseSetting`  
+**환경 변수**: `ASPNETCORE_HOSTINGSTARTUPEXCLUDEASSEMBLIES`
+
+시작 시 제외할 호스팅 시작 어셈블리의 세미콜론으로 구분된 문자열입니다.
+
+```csharp
+WebHost.CreateDefaultBuilder(args)
+    .UseSetting(WebHostDefaults.HostingStartupExcludeAssembliesKey, "assembly1;assembly2")
 ```
 
 ::: moniker-end

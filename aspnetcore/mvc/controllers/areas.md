@@ -5,12 +5,12 @@ description: 관련 기능을 별도의 네임스페이스(라우팅용) 및 폴
 ms.author: riande
 ms.date: 02/14/2017
 uid: mvc/controllers/areas
-ms.openlocfilehash: 3e998af42cd6209271495dd8dd97a8aed35717a4
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: b78bb5146f1ab9039fa9ff015471654510718ed6
+ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36274829"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43312220"
 ---
 # <a name="areas-in-aspnet-core"></a>ASP.NET Core의 영역
 
@@ -34,9 +34,9 @@ ms.locfileid: "36274829"
 
 * 각 영역에는 고유한 컨트롤러, 모델 및 뷰가 있습니다.
 
-* 대규모 MVC 프로젝트를 독립적으로 작업할 수 있는 여러 개의 고급 구성 요소로 구성할 수 있습니다.
+* 영역을 사용하면 대규모 MVC 프로젝트를 독립적으로 작업할 수 있는 여러 개의 고급 구성 요소로 구성할 수 있습니다.
 
-* 컨트롤러에 서로 다른 *영역*이 있는 한, 동일한 이름의 컨트롤러를 여러 개 지원합니다.
+* 영역은 컨트롤러에 서로 다른 *영역*이 있는 한, 동일한 이름의 여러 컨트롤러를 지원합니다.
 
 영역을 만들고 사용하는 방법을 보여주는 예를 살펴 보겠습니다. 컨트롤러와 뷰의 두 가지 구분된 그룹인 제품 및 서비스가 있는 스토어 앱이 있다고 가정해 보겠습니다. MVC 영역을 사용하는 일반적인 폴더 구조는 다음과 같습니다.
 

@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 02/15/2018
 uid: fundamentals/host/hosted-services
-ms.openlocfilehash: 087ff4e1e169e1a1f76e93d4993441e47bafc945
-ms.sourcegitcommit: 7097dba14d5b858e82758ee031ac62dbe3611339
+ms.openlocfilehash: cc8f7fa00436a847ab1d1ba0976fb5e3899576ee
+ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/19/2018
-ms.locfileid: "39138599"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43312130"
 ---
 # <a name="background-tasks-with-hosted-services-in-aspnet-core"></a>ASP.NET Core에서 호스팅되는 서비스를 사용하는 백그라운드 작업
 
@@ -35,7 +35,7 @@ ASP.NET Core에서 백그라운드 작업은 *호스팅되는 서비스*로 구�
 
 호스팅되는 서비스는 [IHostedService](/dotnet/api/microsoft.extensions.hosting.ihostedservice) 인터페이스를 구현합니다. 인터페이스는 호스트에 의해 관리되는 개체에 대한 두 가지 메서드를 정의합니다.
 
-* [StartAsync(CancellationToken)](/dotnet/api/microsoft.extensions.hosting.ihostedservice.startasync) - 서버가 시작되고 [IApplicationLifetime.ApplicationStarted](/dotnet/api/microsoft.aspnetcore.hosting.iapplicationlifetime.applicationstarted)가 트리거된 후에 호출됩니다. `StartAsync`에는 백그라운드 작업을 시작하는 논리가 포함됩니다.
+* [StartAsync(CancellationToken)](/dotnet/api/microsoft.extensions.hosting.ihostedservice.startasync) - `StartAsync`에는 백그라운드 작업을 시작하는 논리가 포함됩니다. [웹 호스트](xref:fundamentals/host/web-host)를 사용하는 경우 `StartAsync`는 서버가 시작되고 [IApplicationLifetime.ApplicationStarted](/dotnet/api/microsoft.aspnetcore.hosting.iapplicationlifetime.applicationstarted)가 트리거된 후에 호출됩니다. [제네릭 호스트](xref:fundamentals/host/generic-host)를 사용하는 경우 `ApplicationStarted`가 트리거되기 전에 `StartAsync`가 호출됩니다.
 
 * [StopAsync(CancellationToken)](/dotnet/api/microsoft.extensions.hosting.ihostedservice.stopasync) - 호스트가 정상적으로 종료될 때 트리거됩니다. `StopAsync`에는 백그라운드 작업을 종료하고 관리되지 않는 리소스를 삭제하는 논리가 포함됩니다. 앱이 예기치 않게 종료된 경우(예: 앱의 프로세스가 실패한 경우), `StopAsync`가 호출되지 않을 수 있습니다.
 

@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 05/02/2018
 uid: fundamentals/servers/kestrel
-ms.openlocfilehash: 7c7ff337256792dde057c04a5b96a1eb1c093387
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: a32b6e047ed0c2295f9f0bd95ffac010a7570ca5
+ms.sourcegitcommit: a669c4e3f42e387e214a354ac4143555602e6f66
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41902634"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43336135"
 ---
 # <a name="kestrel-web-server-implementation-in-aspnet-core"></a>ASP.NET Core에서 Kestrel 웹 서버 구현
 
@@ -71,7 +71,7 @@ Kestrel을 단독으로 사용하거나 IIS, Nginx 또는 Apache 같은 *역방�
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 
-[Microsoft.AspNetCore.Server.Kestrel](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.Kestrel/) 패키지는 [Microsoft.AspNetCore.App 메타패키지] (xref:fundamentals/metapackage-app) (ASP.NET Core 2.1 이상)에 포함되어 있습니다.
+[Microsoft.AspNetCore.Server.Kestrel](https://www.nuget.org/packages/Microsoft.AspNetCore.Server.Kestrel/) 패키지는 [Microsoft.AspNetCore.App 메타패키지](xref:fundamentals/metapackage-app)(ASP.NET Core 2.1 이상)에 포함되어 있습니다.
 
 ASP.NET Core 프로젝트 템플릿은 기본적으로 Kestrel을 사용합니다. *Program.cs*에서 템플릿 코드는 [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel) 숨은 기능을 호출하는 [CreateDefaultBuilder](/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder)를 호출합니다.
 
@@ -275,7 +275,7 @@ Kestrel은 `http://localhost:5000` 및 `https://localhost:5001`에서 수신 대
 
 자세한 내용은 [서버 URL](xref:fundamentals/host/web-host#server-urls) 및 [구성 재정의](xref:fundamentals/host/web-host#override-configuration)를 참조합니다.
 
-이러한 접근 방식을 사용하여 제공된 값은 하나 이상의 HTTP 및 HTTPS 엔드포인트(기본 인증서가 사용 가능한 경우의 HTTPS)일 수 있습니다. 값을 세미콜론으로 구분된 목록으로 구성합니다(예를 들어, `"Urls": "http://localhost:8000;http://localhost:8001"`).
+이러한 접근 방식을 사용하여 제공된 값은 하나 이상의 HTTP 및 HTTPS 엔드포인트(기본 인증서가 사용 가능한 경우의 HTTPS)일 수 있습니다. 값을 세미콜론으로 구분된 목록으로 구성합니다(예를 들어, `"Urls": "http://localhost:8000; http://localhost:8001"`).
 
 *구성에서 기본 인증서를 바꿈*
 
@@ -441,7 +441,7 @@ WebHost.CreateDefaultBuilder()
 
 [!code-csharp[](kestrel/samples/2.x/KestrelSample/Program.cs?name=snippet_TCPSocket&highlight=9-16)]
 
-예제에서는 [ListenOptions](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.listenoptions)를 사용하여 끝점에 대한 SSL을 구성합니다. 동일한 API를 사용하여 특정 엔드포인트에 대한 다른 Kestrel 설정을 구성합니다.
+예제에서는 [ListenOptions](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.listenoptions)를 사용하여 엔드포인트에 대한 SSL을 구성합니다. 동일한 API를 사용하여 특정 엔드포인트에 대한 다른 Kestrel 설정을 구성합니다.
 
 [!INCLUDE [How to make an X.509 cert](~/includes/make-x509-cert.md)]
 
@@ -465,7 +465,7 @@ Listening on the following addresses: http://127.0.0.1:48508
 
 **UseUrls, --urls 명령 줄 인수, urls 호스트 구성 키 및 ASPNETCORE_URLS 환경 변수 제한 사항**
 
-다음 방법으로 엔트포인트를 구성합니다.
+다음 방법으로 엔드포인트를 구성합니다.
 
 * [UseUrls](/dotnet/api/microsoft.aspnetcore.hosting.hostingabstractionswebhostbuilderextensions.useurls)
 * `--urls` 명령줄 인수
@@ -474,7 +474,7 @@ Listening on the following addresses: http://127.0.0.1:48508
 
 이러한 메서드는 코드를 Kestrel이 아닌 서버와 작동하도록 하려는 경우 유용합니다. 그러나 이러한 제한 사항을 고려해야 합니다.
 
-* HTTPS 끝점 구성에서 기본 인증서를 제공하지 않는 한 이러한 방법으로는 SSL을 사용할 수 없습니다(예: 이 항목의 앞부분에 표시된 것처럼 `KestrelServerOptions` 구성 또는 구성 파일 사용).
+* HTTPS 엔드포인트 구성에서 기본 인증서를 제공하지 않는 한 이러한 방법으로는 SSL을 사용할 수 없습니다(예: 이 항목의 앞부분에 표시된 것처럼 `KestrelServerOptions` 구성 또는 구성 파일 사용).
 * `Listen` 및 `UseUrls` 방식 모두를 동시에 사용할 경우 `Listen` 엔드포인트는 `UseUrls` 엔드포인트를 재정의합니다.
 
 **IIS 엔드포인트 구성**

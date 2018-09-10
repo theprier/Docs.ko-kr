@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.1'
 ms.author: riande
 ms.date: 09/20/2017
 uid: fundamentals/metapackage-app
-ms.openlocfilehash: e82c219635bbbebe1d6f5639308490c37361b286
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 95fd6b7e73cf325674f1c1e03f9eea88cbc1af13
+ms.sourcegitcommit: f3538693a12cf55b7f124a6519677239170b7c43
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37952957"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43114777"
 ---
 # <a name="microsoftaspnetcoreapp-metapackage-for-aspnet-core-21"></a>ASP.NET Core 2.1용 Microsoft.AspNetCore.App 메타패키지
 
@@ -53,6 +53,15 @@ ASP.NET Core 2.1 이상 Entity Framework Core 2.1 이상의 모든 기능은 `Mi
 
 `Microsoft.AspNetCore.App` 참조의 버전 번호는 해당 버전의 공유 프레임워크가 선택된다고 보장할 수 **없습니다**. 예를 들어 `2.1.1` 버전을 지정했는데 `2.1.3`이 설치되는 경우가 있습니다. 이 경우 앱은 `2.1.3`을 사용합니다. 권장되는 방법은 아니지만 롤포워드 동작을 비활성화할 수 있습니다(패치 및/또는 부 버전). 패키지 버전 롤포워드 동작에 대한 자세한 내용은 [dotnet 호스트 롤포워드](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/roll-forward-on-no-candidate-fx.md)를 참조하세요.
 
+## <a name="update-aspnet-core"></a>ASP.NET Core 업데이트
+
 `Microsoft.AspNetCore.App` [메타패키지](/dotnet/core/packages#metapackages)는 NuGet에서 업데이트된 기존 패키지가 아닙니다. `Microsoft.NETCore.App`과 유사한 `Microsoft.AspNetCore.App`은 공유 런타임을 나타내며, NuGet 외부에서 처리되는 특별한 버전 관리 의미 체계가 있습니다. 자세한 내용은 [패키지, 메타패키지 및 프레임워크](/dotnet/core/packages)를 참조하세요.
+
+ASP.NET Core를 업데이트하려면:
+
+* 개발 머신 및 빌드 서버: 다운로드 및 설치 합니다 [.NET Core SDK](https://www.microsoft.com/net/download)를 다운로드하여 설치합니다.
+* 배포 서버: [.NET Core 런타임](https://www.microsoft.com/net/download)을 다운로드하여 설치합니다.
+
+ 응용 프로그램을 다시 시작하면 응용 프로그램이 최신 설치 버전으로 롤포워드됩니다. 프로젝트 파일에서 `Microsoft.AspNetCore.App` 버전 번호를 업데이트할 필요는 없습니다. 자세한 내용은 [Framework 종속 앱 롤포워드](/dotnet/core/versions/selection#framework-dependent-apps-roll-forward)를 참조하세요.
 
 응용 프로그램에서 이전에 `Microsoft.AspNetCore.All`을 사용한 경우 [Microsoft.AspNetCore.All에서 Microsoft.AspNetCore.App으로 마이그레이션](xref:fundamentals/metapackage#migrate)을 참조하세요.

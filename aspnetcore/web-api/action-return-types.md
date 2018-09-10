@@ -6,12 +6,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 07/23/2018
 uid: web-api/action-return-types
-ms.openlocfilehash: 82d18d866d4d18613cccb950b2f30ae81bd749de
-ms.sourcegitcommit: 6425baa92cec4537368705f8d27f3d0e958e43cd
+ms.openlocfilehash: 179a3e23ebc13a40b8e2d955b6adcc23d9a0f323
+ms.sourcegitcommit: 8268cc67beb1bb1ca470abb0e28b15a7a71b8204
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/24/2018
-ms.locfileid: "39220614"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44126724"
 ---
 # <a name="controller-action-return-types-in-aspnet-core-web-api"></a>ASP.NET Core Web API에서 컨트롤러 작업 반환 형식
 
@@ -85,13 +85,13 @@ ASP.NET Core 2.1은 Web API 컨트롤러 작업에 대해 [ActionResult\<T>](/do
 
 C#은 인터페이스에서 암시적 캐스트 연산자를 지원하지 않습니다. 따라서 인터페이스를 구체적인 형식으로 전환하려면 `ActionResult<T>`를 사용해야 합니다. 예를 들어 다음 예제에서 `IEnumerable`을 사용하면 작동하지 않습니다.
 
-    ```csharp
-    [HttpGet]
-    public ActionResult<IEnumerable<Product>> Get()
-    {
-        return _repository.GetProducts();
-    }
-    ```
+```csharp
+[HttpGet]
+public ActionResult<IEnumerable<Product>> Get()
+{
+    return _repository.GetProducts();
+}
+```
 
 이전 코드를 수정하는 한 가지 옵션으로 `_repository.GetProducts().ToList();`를 반환해 볼 수 있습니다.
 

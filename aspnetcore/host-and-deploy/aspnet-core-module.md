@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 02/15/2018
 uid: host-and-deploy/aspnet-core-module
-ms.openlocfilehash: 8d4283c61163a586557135fddfb85440251aaf29
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 2eff8c9cf2661a3ba9870e8c908d0471a6672481
+ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36275621"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43312268"
 ---
 # <a name="aspnet-core-module-configuration-reference"></a>ASP.NET Core 모듈 구성 참조
 
@@ -126,7 +126,7 @@ ASP.NET Core 모듈이 백 엔드 프로세스를 시작하지 못하거나 백 
 
 ## <a name="log-creation-and-redirection"></a>로그 만들기 및 리디렉션
 
-ASP.NET Core 모듈은 `aspNetCore` 요소의 `stdoutLogEnabled` 및 `stdoutLogFile` 특성이 설정된 경우 stdout 및 stderr 로그를 디스크로 리디렉션합니다. 모듈이 로그 파일을 만들려면 `stdoutLogFile` 경로의 모든 폴더가 있어야 합니다. 앱 풀에는 로그가 기록될 위치에 쓰기 권한이 있어야 합니다(`IIS AppPool\<app_pool_name>`을 사용하여 쓰기 권한 제공).
+ASP.NET Core 모듈은 `aspNetCore` 요소의 `stdoutLogEnabled` 및 `stdoutLogFile` 특성이 설정된 경우 stdout 및 stderr 콘솔 출력을 디스크로 리디렉션합니다. 모듈이 로그 파일을 만들려면 `stdoutLogFile` 경로의 모든 폴더가 있어야 합니다. 앱 풀에는 로그가 기록될 위치에 쓰기 권한이 있어야 합니다(`IIS AppPool\<app_pool_name>`을 사용하여 쓰기 권한 제공).
 
 프로세스 재생/다시 시작이 발생하지 않는 한 로그는 회전되지 않습니다. 로그에서 사용하는 디스크 공간을 제한하는 것은 호스터의 책임입니다.
 

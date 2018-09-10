@@ -5,12 +5,12 @@ description: ''
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/intro
-ms.openlocfilehash: cbef7e5edf2950a87a4cd4155c63a22fff2990fe
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: 46cc5144a289637a0fb1c1c2ac22aba2d881af52
+ms.sourcegitcommit: a669c4e3f42e387e214a354ac4143555602e6f66
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41751720"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43336109"
 ---
 # <a name="aspnet-core-mvc-with-entity-framework-core---tutorial-1-of-10"></a>Entity Framework Core를 사용한 ASP.NET Core MVC - 자습서 1/10
 
@@ -132,7 +132,7 @@ Entity Framework Core에 사용할 수 있는 다른 데이터베이스 공급�
 
 `ID` 속성은 이 클래스에 해당하는 데이터베이스 테이블의 기본 키 열이 됩니다. 기본적으로 Entity Framework는 `ID` 또는 `classnameID`로 명명된 속성을 기본 키로 해석합니다.
 
-`Enrollments` 속성은 탐색 속성입니다. 탐색 속성은 이 엔터티와 관련된 다른 엔터티를 포함합니다. 이 경우 `Student entity`의 `Enrollments` 속성은 해당 `Student` 엔터티에 관련된 모든 `Enrollment` 엔터티를 포함합니다. 즉, 데이터베이스의 지정된 학생 행에 두 개의 관련된 등록 행(해당 StudentID 외래 키 열에 해당 학생의 기본 키 값을 포함하는 행)이 있는 경우 해당 `Student` 엔터티의 `Enrollments` 탐색 속성은 두 개의 `Enrollment` 엔터티를 포함합니다.
+`Enrollments` 속성은 [탐색 속성](/ef/core/modeling/relationships)입니다. 탐색 속성은 이 엔터티와 관련된 다른 엔터티를 포함합니다. 이 경우 `Student entity`의 `Enrollments` 속성은 해당 `Student` 엔터티에 관련된 모든 `Enrollment` 엔터티를 포함합니다. 즉, 데이터베이스의 지정된 학생 행에 두 개의 관련된 등록 행(해당 StudentID 외래 키 열에 해당 학생의 기본 키 값을 포함하는 행)이 있는 경우 해당 `Student` 엔터티의 `Enrollments` 탐색 속성은 두 개의 `Enrollment` 엔터티를 포함합니다.
 
 탐색 속성이 여러 엔터티를 포함할 수 있는 경우(다대다 또는 일대다 관계로), 해당 형식은 `ICollection<T>`와 같이 항목이 추가, 삭제 및 업데이트될 수 있는 목록이어야 합니다. `List<T>` 또는 `HashSet<T>`와 같은 형식 또는 `ICollection<T>`를 지정할 수 있습니다. `ICollection<T>`를 지정하는 경우 EF는 기본적으로 `HashSet<T>` 컬렉션을 만듭니다.
 

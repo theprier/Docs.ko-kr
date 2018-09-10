@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 07/05/2018
 uid: fundamentals/error-handling
-ms.openlocfilehash: ff04ebeb6a682ec924afe896fd6716010a63f7cd
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: 7ea944bc423001aa47ce684443b96104cf9174bf
+ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41751599"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43312249"
 ---
 # <a name="handle-errors-in-aspnet-core"></a>ASP.NET Core에서 오류 처리
 
@@ -25,19 +25,19 @@ ms.locfileid: "41751599"
 
 ::: moniker range=">= aspnetcore-2.1"
 
-예외에 대한 자세한 정보를 표시하는 페이지를 표시하는 앱을 구성하려면 *개발자 예외 페이지*를 사용합니다. [Microsoft.AspNetCore.Diagnostics](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics/) 패키지가 사용할 수 있게 된 페이지는 [Microsoft.AspNetCore.App 메타 패키지](xref:fundamentals/metapackage-app)에서 사용할 수 있습니다. `Startup.Configure` 메서드에 줄을 추가합니다.
+예외에 대한 자세한 정보를 보여주는 페이지를 표시하는 앱을 구성하려면 *개발자 예외 페이지*를 사용합니다. [Microsoft.AspNetCore.Diagnostics](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics/) 패키지가 사용할 수 있게 된 페이지는 [Microsoft.AspNetCore.App 메타패키지](xref:fundamentals/metapackage-app)에서 사용할 수 있습니다. `Startup.Configure` 메서드에 줄을 추가합니다.
 
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0"
 
-예외에 대한 자세한 정보를 표시하는 페이지를 표시하는 앱을 구성하려면 *개발자 예외 페이지*를 사용합니다. [Microsoft.AspNetCore.Diagnostics](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics/) 패키지가 사용할 수 있게 된 페이지는 [Microsoft.AspNetCore.All 메타 패키지](xref:fundamentals/metapackage)에서 사용할 수 있습니다. `Startup.Configure` 메서드에 줄을 추가합니다.
+예외에 대한 자세한 정보를 보여주는 페이지를 표시하는 앱을 구성하려면 *개발자 예외 페이지*를 사용합니다. [Microsoft.AspNetCore.Diagnostics](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics/) 패키지가 사용할 수 있게 된 페이지는 [Microsoft.AspNetCore.All 메타 패키지](xref:fundamentals/metapackage)에서 사용할 수 있습니다. `Startup.Configure` 메서드에 줄을 추가합니다.
 
 ::: moniker-end
 
 ::: moniker range="< aspnetcore-2.0"
 
-예외에 대한 자세한 정보를 표시하는 페이지를 표시하는 앱을 구성하려면 *개발자 예외 페이지*를 사용합니다. 프로젝트 파일 내 [Microsoft.AspNetCore.Diagnostics](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics/) 패키지에 대한 패키지 참조를 추가하여 해당 페이지를 사용할 수 있습니다. `Startup.Configure` 메서드에 줄을 추가합니다.
+예외에 대한 자세한 정보를 보여주는 페이지를 표시하는 앱을 구성하려면 *개발자 예외 페이지*를 사용합니다. 프로젝트 파일 내 [Microsoft.AspNetCore.Diagnostics](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics/) 패키지에 대한 패키지 참조를 추가하여 해당 페이지를 사용할 수 있습니다. `Startup.Configure` 메서드에 줄을 추가합니다.
 
 ::: moniker-end
 
@@ -45,7 +45,7 @@ ms.locfileid: "41751599"
 
 `app.UseMvc`과 같은 예외를 캐치하려는 미들웨어 앞에 [UseDeveloperExceptionPage](/dotnet/api/microsoft.aspnetcore.builder.developerexceptionpageextensions.usedeveloperexceptionpage) 호출을 둡니다.
 
->[!WARNING]
+> [!WARNING]
 > **앱이 개발 환경에서 실행 중인 경우에만** 개발자 예외 페이지를 사용하도록 설정합니다. 프로덕션 환경에서 앱을 실행할 때 자세한 예외 정보를 공개적으로 공유하지 않을 수도 있습니다. [구성 환경에 대해 자세히 알아보세요](xref:fundamentals/environments).
 
 개발자 예외 페이지를 보려면 샘플 앱을 `Development`로 설정된 환경으로 실행하고, `?throw=true`를 앱의 기본 URL에 추가합니다. 페이지에는 예외 및 요청에 대한 정보가 있는 여러 탭이 포함되어 있습니다. 첫 번째 탭에는 스택 추적이 포함됩니다.
@@ -60,7 +60,7 @@ ms.locfileid: "41751599"
 
 ![헤더](error-handling/_static/developer-exception-page-headers.png)
 
-## <a name="configuring-a-custom-exception-handling-page"></a>사용자 지정 예외 처리 페이지 구성
+## <a name="configure-a-custom-exception-handling-page"></a>사용자 지정 예외 처리 페이지 구성
 
 앱이 `Development` 환경에서 실행되고 있지 않는 경우 사용할 예외 처리기 페이지를 구성합니다.
 
@@ -81,13 +81,35 @@ public IActionResult Error()
 }
 ```
 
-## <a name="configuring-status-code-pages"></a>상태 코드 페이지 구성
+## <a name="configure-status-code-pages"></a>상태 코드 페이지 구성
 
-기본적으로 앱은 *404 찾을 수 없음*과 같은 HTTP 상태 코드에 대한 다양한 상태 코드 페이지를 제공하지 않습니다. 상태 코드 페이지를 제공하려면 `Startup.Configure` 메서드에 줄을 추가하여 상태 코드 페이지 미들웨어를 구성합니다.
+기본적으로 앱은 *404 찾을 수 없음*과 같은 HTTP 상태 코드에 대한 다양한 상태 코드 페이지를 제공하지 않습니다. 상태 코드 페이지를 제공하려면 상태 코드 페이지 미들웨어를 사용합니다.
+
+::: moniker range=">= aspnetcore-2.1"
+
+[Microsoft.AspNetCore.Diagnostics](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics/) 패키지가 사용할 수 있게 된 미들웨어는 [Microsoft.AspNetCore.App 메타패키지](xref:fundamentals/metapackage-app)에서 사용할 수 있습니다.
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0"
+
+[Microsoft.AspNetCore.Diagnostics](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics/) 패키지가 사용할 수 있게 된 미들웨어는 [Microsoft.AspNetCore.AII 메타패키지](xref:fundamentals/metapackage)에서 사용할 수 있습니다.
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.0"
+
+프로젝트 파일 내 [Microsoft.AspNetCore.Diagnostics](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics/) 패키지에 대한 패키지 참조를 추가하여 미들웨어를 사용할 수 있습니다.
+
+::: moniker-end
+
+`Startup.Configure` 메서드에 줄을 추가합니다.
 
 ```csharp
 app.UseStatusCodePages();
 ```
+
+<xref:Microsoft.AspNetCore.Builder.StatusCodePagesExtensions.UseStatusCodePages*>는 파이프라인에서 요청 처리 미들웨어(예: 정적 파일 미들웨어 및 MVC 미들웨어) 전에 호출해야 합니다.
 
 기본적으로 상태 코드 페이지 미들웨어는 404와 같은 일반적인 상태 코드에 대한 텍스트 전용 처리기를 추가합니다.
 

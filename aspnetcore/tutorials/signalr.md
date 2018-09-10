@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 08/20/2018
 uid: tutorials/signalr
-ms.openlocfilehash: db7f31963f6a4280069f1f4f82a547e2879e64bb
-ms.sourcegitcommit: d27317c16f113e7c111583042ec7e4c5a26adf6f
+ms.openlocfilehash: a2573e2817a2d8921954264ca17bc3a7e2a010a8
+ms.sourcegitcommit: 847cc1de5526ff42a7303491e6336c2dbdb45de4
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/20/2018
-ms.locfileid: "41751696"
+ms.lasthandoff: 08/27/2018
+ms.locfileid: "43055834"
 ---
 # <a name="tutorial-get-started-with-signalr-on-aspnet-core"></a>자습서: ASP.NET Core에서 SignalR 시작
 
@@ -95,7 +95,7 @@ ms.locfileid: "41751696"
 
 ## <a name="add-the-signalr-client-library"></a>SignalR 클라이언트 라이브러리 추가
 
-SignalR 서버 라이브러리는 [Microsoft.AspNetCore.App 메타패키지](xref:fundamentals/metapackage-app)에 포함되어 있습니다. 하지만 npm, Node.js 패키지 관리자에서 JavaScript 클라이언트 라이브러리를 가져와야 합니다.
+SignalR 서버 라이브러리는 [Microsoft.AspNetCore.App 메타패키지](xref:fundamentals/metapackage-app)에 포함되어 있습니다. 하지만 [npm, Node.js 패키지 관리자](https://www.npmjs.com/get-npm)에서 JavaScript 클라이언트 라이브러리를 가져와야 합니다.
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
 
