@@ -287,7 +287,7 @@
 ### [Visual Studio를 사용하여 Azure에 게시](xref:tutorials/publish-to-azure-webapp-using-vs)
 ### [CLI 도구를 사용하여 Azure에 게시](xref:tutorials/publish-to-azure-webapp-using-cli)
 ### [Visual Studio 및 Git을 사용하여 Azure에 연속 배포](xref:host-and-deploy/azure-apps/azure-continuous-deployment)
-### [VSTS를 사용하여 Azure에 연속 배포](https://www.visualstudio.com/docs/build/aspnet/core/quick-to-azure)
+### [Azure Pipelines를 사용하여 Azure에 지속적인 배포](/azure/devops/pipelines/get-started-yaml)
 ### [Azure App Service에서 ASP.NET Core 문제 해결](xref:host-and-deploy/azure-apps/troubleshoot)
 ## [IIS를 사용하여 Windows에서 호스트](xref:host-and-deploy/iis/index)
 ### [IIS에서 ASP.NET Core 문제 해결](xref:host-and-deploy/iis/troubleshoot)
