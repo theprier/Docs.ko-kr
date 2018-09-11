@@ -5,12 +5,12 @@ description: Azure에서 호스팅되는 ASP.NET Core 앱에 대한 DevOps 파�
 ms.author: casoper
 ms.date: 08/07/2018
 uid: azure/devops/index
-ms.openlocfilehash: f2eb2499a61ce639457f30f4d182dac6ff677a0f
-ms.sourcegitcommit: 6d02e26748a09eabeb0e11740a398cc2bc90b098
+ms.openlocfilehash: 53667831f5e33107178a947f23d957ff22e8c1a0
+ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "41750307"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44340097"
 ---
 # <a name="devops-with-aspnet-core-and-azure"></a>ASP.NET Core 및 Azure에서 DevOps
 
@@ -46,7 +46,7 @@ Azure App Service에 ASP.NET Core 앱을 배포하는 다양한 방법을 알아
 
 ### <a name="continuous-integration-and-deploymentxrefazuredevopscicd"></a>[연속 통합 및 배포](xref:azure/devops/cicd)
 
-GitHub, VSTS 및 Azure를 사용하여 종단 간 연속 통합 및 ASP.NET Core 앱에 대한 배포 솔루션을 빌드합니다.
+GitHub, Azure DevOps Services, Azure를 사용하여 종단 간 연속 통합 및 ASP.NET Core 앱에 대한 배포 솔루션을 빌드합니다.
 
 ### <a name="monitor-and-debugxrefazuredevopsmonitor"></a>[모니터링 및 디버그](xref:azure/devops/monitor)
 
