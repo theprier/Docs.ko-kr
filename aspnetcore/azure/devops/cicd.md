@@ -5,27 +5,27 @@ description: Azure에서 호스팅되는 ASP.NET Core 앱에 대한 DevOps 파�
 ms.author: scaddie
 ms.date: 08/17/2018
 uid: azure/devops/cicd
-ms.openlocfilehash: e084a6115dc7e176c17b2b318233b7a003b39a83
-ms.sourcegitcommit: 1cf65c25ed16495e27f35ded98b3952a30c68f36
+ms.openlocfilehash: 0bfe1545da4c0778055d7c81c1588d3267d2e711
+ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "42909195"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44340110"
 ---
 # <a name="continuous-integration-and-deployment"></a>지속적인 통합 및 배포
 
-이전 장에서 간단한 피드 판독기 앱에 대 한 로컬 Git 리포지토리를 만들었습니다. 이 챕터에서는 해당 코드는 GitHub 리포지토리를 게시 하 고 Visual Studio Team Services (VSTS) DevOps 파이프라인을 생성 합니다. 파이프라인에는 연속 빌드 및 앱의 배포 가능합니다. GitHub 리포지토리에 커밋 빌드 및 Azure 웹 앱의 스테이징 슬롯에 배포를 트리거합니다.
+이전 장에서 간단한 피드 판독기 앱에 대 한 로컬 Git 리포지토리를 만들었습니다. 이 챕터에서는 해당 코드는 GitHub 리포지토리를 게시 하 고 Azure 파이프라인을 사용 하 여 Azure DevOps 서비스 파이프라인을 생성 합니다. 파이프라인에는 연속 빌드 및 앱의 배포 가능합니다. GitHub 리포지토리에 커밋 빌드 및 Azure 웹 앱의 스테이징 슬롯에 배포를 트리거합니다.
 
 이 섹션에서는 다음 작업을 완료 합니다.
 
 * 앱의 코드를 GitHub에 게시
 * 로컬 Git 배포를 연결 끊기
-* VSTS 계정 만들기
-* VSTS에서 팀 프로젝트 만들기
+* Azure DevOps 조직 만들기
+* Azure DevOps 서비스에서 팀 프로젝트 만들기
 * 빌드 정의 만들기
 * 릴리스 파이프라인을 만들려면
 * GitHub에 변경 내용 커밋 및 자동으로 Azure에 배포
-* VSTS DevOps 파이프라인 검토
+* Azure 파이프라인 파이프라인 검토
 
 ## <a name="publish-the-apps-code-to-github"></a>앱의 코드를 GitHub에 게시
 
@@ -53,7 +53,7 @@ ms.locfileid: "42909195"
 
 ## <a name="disconnect-local-git-deployment"></a>로컬 Git 배포를 연결 끊기
 
-다음 단계를 사용 하 여 로컬 Git 배포를 제거 합니다. VSTS 대체와 해당 기능을 보완 합니다.
+다음 단계를 사용 하 여 로컬 Git 배포를 제거 합니다. Azure 파이프라인 (Azure DevOps 서비스) 모두 대체 하 고 해당 기능을 보완 합니다.
 
 1. 열기는 [Azure portal](https://portal.azure.com/)로 이동 합니다 *준비 (mywebapp\<unique_number\>준비 /)* 웹 앱. 입력 하 여 웹 앱을 신속 하 게 찾을 수 있습니다 *준비* 포털의 검색 상자에서:
 
@@ -63,26 +63,26 @@ ms.locfileid: "42909195"
 1. 로 이동 합니다 *mywebapp < unique_number >* App Service입니다. 참고로, 포털의 검색 상자 빨리 App Service를 찾는 데 사용할 수 있습니다.
 1. 클릭 **배포 옵션**합니다. 새 패널이 표시 됩니다. 클릭 **연결 끊기** 이전 장에서 추가 된 로컬 Git 소스 제어 구성 제거 합니다. 클릭 하 여 제거 작업을 확인 합니다 **예** 단추입니다.
 
-## <a name="create-a-vsts-account"></a>VSTS 계정 만들기
+## <a name="create-an-azure-devops-organization"></a>Azure DevOps 조직 만들기
 
-1. 브라우저를 열고로 이동 합니다 [VSTS 계정 만들기 페이지](https://go.microsoft.com/fwlink/?LinkId=307137)합니다.
-1. 에 고유한 이름을 입력 합니다 **기억 하기 쉬운 이름을 선택** VSTS 계정에 액세스 하기 위한 url을 텍스트 상자에 붙여넣습니다.
+1. 브라우저를 열고로 이동 합니다 [Azure DevOps 조직 만들기 페이지](https://go.microsoft.com/fwlink/?LinkId=307137)합니다.
+1. 에 고유한 이름을 입력 합니다 **기억 하기 쉬운 이름을 선택** Azure DevOps 조직에 액세스 하기 위한 url을 텍스트 상자에 붙여넣습니다.
 1. 선택 된 **Git** 라디오 단추, 코드는 GitHub 리포지토리에 호스트 되는 때문입니다.
 1. **계속** 단추를 클릭합니다. 짧은 대기 시간, 계정 및 팀 프로젝트, 후 이름이 *MyFirstProject*에 만들어집니다.
 
-    ![VSTS 계정 만들기 페이지](media/cicd/vsts-account-creation.png)
+    ![Azure DevOps 조직 만들기 페이지](media/cicd/vsts-account-creation.png)
 
-1. VSTS 계정 및 프로젝트에서 사용 하기 위해 준비 되었는지 나타내는 확인 전자 메일을 엽니다. 클릭 합니다 **프로젝트를 시작** 단추:
+1. Azure DevOps 조직 및 프로젝트에서 사용 하기 위해 준비 되었는지 나타내는 확인 전자 메일을 엽니다. 클릭 합니다 **프로젝트를 시작** 단추:
 
     ![시작 프로젝트 단추](media/cicd/vsts-start-project.png)
 
 1. 브라우저를 엽니다  *\<account_name\>. visualstudio.com*합니다. 클릭 합니다 *MyFirstProject* 프로젝트의 DevOps 파이프라인을 구성 하려면 먼저 연결 합니다.
 
-## <a name="configure-the-devops-pipeline"></a>DevOps 파이프라인 구성
+## <a name="configure-the-azure-pipelines-pipeline"></a>Azure 파이프라인 파이프라인 구성
 
 완료 하려면 다음 세 가지 단계가 있습니다. Operational DevOps 파이프라인의 다음 세 가지 섹션에서는 결과의 단계를 완료 합니다.
 
-### <a name="grant-vsts-access-to-the-github-repository"></a>GitHub 리포지토리를 VSTS 액세스 권한 부여
+### <a name="grant-azure-devops-access-to-the-github-repository"></a>GitHub 리포지토리에 대 한 Grant Azure DevOps 액세스
 
 1. 확장 된 **또는 외부 리포지토리에서 코드 빌드** accordion 합니다. 클릭 합니다 **설치 빌드** 단추:
 
@@ -92,12 +92,12 @@ ms.locfileid: "42909195"
 
     ![소스-GitHub를 선택 합니다.](media/cicd/vsts-select-source.png)
 
-1. VSTS는 GitHub 리포지토리에 액세스 하기 전에 권한 부여 필요 합니다. 입력 *< GitHub_username > GitHub 연결* 에 **연결 이름** 텍스트 상자에 붙여넣습니다. 예를 들어:
+1. Azure DevOps GitHub 리포지토리에 액세스 하기 전에 권한 부여 필요 합니다. 입력 *< GitHub_username > GitHub 연결* 에 **연결 이름** 텍스트 상자에 붙여넣습니다. 예를 들어:
 
     ![GitHub 연결 이름](media/cicd/vsts-repo-authz.png)
 
 1. GitHub 계정에 다단계 인증을 사용 하는 경우 개인용 액세스 토큰은 필요 합니다. 이 경우 클릭 합니다 **GitHub 개인용 액세스 토큰을 사용 하 여 권한 부여** 링크 합니다. 참조 된 [공식 GitHub 개인용 액세스 토큰 만들기 지침](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) 도움말에 대 한 합니다. 만 *리포지토리* 사용 권한 범위는 필요 합니다. 그렇지 않은 경우 클릭 합니다 **OAuth를 사용 하 여 권한 부여** 단추입니다.
-1. 메시지가 표시 되 면 GitHub 계정에 로그인 합니다. VSTS 계정에 대 한 액세스 권한을 부여 하려면 권한 부여를 선택 합니다. 성공 하면 새 서비스 끝점 생성 됩니다.
+1. 메시지가 표시 되 면 GitHub 계정에 로그인 합니다. Azure DevOps 조직에 대 한 액세스 권한을 부여 하려면 권한 부여를 선택 합니다. 성공 하면 새 서비스 끝점 생성 됩니다.
 1. 그런 다음 줄임표 단추를 클릭 합니다 **리포지토리** 단추입니다. 선택 된 *< GitHub_username > / 간단한 피드 판독기* 리포지토리 목록에서. 클릭 합니다 **선택** 단추입니다.
 1. 선택 된 *마스터* 에서 분기를 **수동 및 예약 된 빌드의 기본 분기** 드롭 다운 합니다. **계속** 단추를 클릭합니다. 템플릿 선택 페이지가 표시 됩니다.
 
@@ -205,7 +205,7 @@ ms.locfileid: "42909195"
 
     ![연속 통합을 사용 하도록 설정](media/cicd/enable-ci.png)
 
-1. 이동할 합니다 **대기** 탭을 **빌드 및 릴리스** > **빌드** VSTS에서 페이지. 분기 및 빌드를 트리거한 커밋 대기 중인된 빌드를 보여 줍니다.
+1. 이동할를 **대기** 탭의 **Azure 파이프라인** > **빌드** Azure DevOps 서비스에서 페이지. 분기 및 빌드를 트리거한 커밋 대기 중인된 빌드를 보여 줍니다.
 
     ![큐에 대기 중인된 빌드](media/cicd/build-queued.png)
 
@@ -213,7 +213,7 @@ ms.locfileid: "42909195"
 
     ![업데이트 된 앱](media/cicd/updated-app-v4.png)
 
-## <a name="examine-the-vsts-devops-pipeline"></a>VSTS DevOps 파이프라인 검토
+## <a name="examine-the-azure-pipelines-pipeline"></a>Azure 파이프라인 파이프라인 검토
 
 ### <a name="build-definition"></a>빌드 정의
 
@@ -275,6 +275,6 @@ Azure 구독, 서비스 유형, 웹 앱 이름, 리소스 그룹 및 배포 슬�
 
 ## <a name="additional-reading"></a>추가 참조 항목
 
-* [ASP.NET Core 앱 빌드](https://docs.microsoft.com/vsts/build-release/apps/aspnet/build-aspnet-core)
-* [Azure 웹 앱을 빌드하고 배포](https://docs.microsoft.com/vsts/build-release/apps/cd/azure/aspnet-core-to-azure-webapp)
-* [GitHub 리포지토리에 대 한 CI 빌드 프로세스 정의](https://docs.microsoft.com/vsts/pipelines/build/ci-build-github)
+* [Azure Pipelines를 사용하여 첫 번째 파이프라인 만들기](/azure/devops/pipelines/get-started-yaml)
+* [빌드 및.NET Core 프로젝트](/azure/devops/pipelines/languages/dotnet-core)
+* [Azure 파이프라인을 사용 하 여 웹 앱 배포](/azure/devops/pipelines/targets/webapp)

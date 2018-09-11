@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 09/06/2018
 uid: signalr/configuration
-ms.openlocfilehash: fee6e3382c14e818dff408f95770e711603f769d
-ms.sourcegitcommit: 08bf41d4b3e696ab512b044970e8304816f8cc56
+ms.openlocfilehash: b7c9c3713faa952c2b5bd142ab4887ccbc120ea2
+ms.sourcegitcommit: 1a2fc47fb5d3da0f2a3c3269613ab20eb3b0da2c
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44039993"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44373373"
 ---
 # <a name="aspnet-core-signalr-configuration"></a>ASP.NET Core SignalR 구성
 
@@ -26,13 +26,13 @@ JSON serialization을 사용 하 여 서버에 구성할 수 있습니다 합니
 
 ```csharp
 services.AddSignalR()
-    .AddJsonHubProtocol(options => {
+    .AddJsonProtocol(options => {
         options.PayloadSerializerSettings.ContractResolver = 
         new DefaultContractResolver();
     });
 ```
 
-.NET 클라이언트에서 동일한 `AddJsonHubProtocol` 에 있는 확장 메서드 [HubConnectionBuilder](/dotnet/api/microsoft.aspnetcore.signalr.client.hubconnectionbuilder)합니다. `Microsoft.Extensions.DependencyInjection` 확장 메서드를 해결 하려면 네임 스페이스를 가져올 수 있어야 합니다.
+.NET 클라이언트에서 동일한 `AddJsonProtocol` 에 있는 확장 메서드 [HubConnectionBuilder](/dotnet/api/microsoft.aspnetcore.signalr.client.hubconnectionbuilder)합니다. `Microsoft.Extensions.DependencyInjection` 확장 메서드를 해결 하려면 네임 스페이스를 가져올 수 있어야 합니다.
 
 ```csharp
 // At the top of the file:
@@ -40,10 +40,10 @@ using Microsoft.Extensions.DependencyInjection;
 
 // When constructing your connection:
 var connection = new HubConnectionBuilder()
-.AddJsonHubProtocol(options => {
-    options.PayloadSerializerSettings.ContractResolver = 
-        new DefaultContractResolver();
-});
+    .AddJsonProtocol(options => {
+        options.PayloadSerializerSettings.ContractResolver = 
+            new DefaultContractResolver();
+    });
 ```
 
 > [!NOTE]

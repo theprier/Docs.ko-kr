@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: eaece9f5-f80c-428b-b771-5db66d275b7d
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery
 msc.type: authoredcontent
-ms.openlocfilehash: 787aacfd843f5f72e567670d601fb036a2c474bc
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 7a92a68ce8bbeec604a22e082975d33f9f3377c1
+ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41831565"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44340071"
 ---
 <a name="continuous-integration-and-continuous-delivery-building-real-world-cloud-apps-with-azure"></a>연속 통합 및 지속적인 업데이트 (Azure 사용 하 여 빌드 실제 클라우드 앱)
 ====================
@@ -40,9 +40,9 @@ ms.locfileid: "41831565"
 
 Azure에서 이러한 프로세스를 자동화 하는 것은 쉽습니다. 를 실행 중인 모든 클라우드에 있으므로 구입 하거나 빌드 또는 테스트 환경에 대 한 서버를 관리할 필요가 없습니다. 및 테스트에 사용할 수 있도록 서버를 기다릴 필요가 없습니다. 수행 하는 모든 빌드를 사용 하 여 automation 스크립트, 실행된 승인 테스트 또는 한 심도 있는 더 많은 테스트를 사용 하 여 Azure에서 테스트 환경을 스핀업 하 고 방금 완료 되 면 중단할 수 있습니다. 이며만 2 시간 8 시간 또는 하루에 해당 서버를 실행 하면에 대 한 요금을 지불 해야 할 금액 최소화 하기 때문에 컴퓨터를 실제로 실행 되는 시간에만 지불 합니다. 예를 들어, 환경에 필요한 수정 프로그램 응용 프로그램 기본적으로 비용이 시간당 약 1% 무료 수준에서 한 계층을 이동 하는 경우. 한 달에 걸쳐 한 번에 한 시간 환경만 실행 하는 경우 테스트 환경의 아마도 비용은 커피숍에서 구입할 수 있는 latte 미만입니다.
 
-## <a name="visual-studio-team-services-vsts"></a>VSTS(Visual Studio Team Services)
+## <a name="azure-devops-services"></a>Azure DevOps 서비스 
 
-VSTS에서 배포 하려는 응용 프로그램 개발에 도움이 기능의 수를 제공 합니다.
+Azure DevOps 서비스에서 배포 하려는 응용 프로그램 개발에 도움이 기능의 수를 제공 합니다.
 
 - (분산) Git 및 TFVC (중앙 집중식) 소스 제어를 모두 지원 합니다.
 - 즉, 동적으로 빌드 서버 필요할 때 만들고 완료 되 면 아래로 이동 탄력적인 빌드 서비스를 제공 합니다. 소스 코드 변경 내용을 체크 인할 때 할당 한 고 유휴 시간의 대부분을 특정 사용자 지정 빌드 서버에 대 한 지불 필요가 자동으로 빌드 시작할 수 있습니다. 빌드가 서비스는 특정 빌드 수를 초과 하지 않습니다. 많은 양의 빌드를 수행 하려는 경우 예약 된 빌드 서버를 약간 추가 결제할 수 있습니다.
@@ -52,9 +52,9 @@ VSTS에서 배포 하려는 응용 프로그램 개발에 도움이 기능의 �
 - Agile 프로젝트 관리를 지원합니다.
 
 
-연속 통합 및 VSTS의 배달 기능에 대 한 자세한 내용은 참조 하세요. [Visual Studio Team Services](https://www.visualstudio.com/team-services/)합니다.
+연속 통합 및 배달 기능 Azure DevOps 서비스에 대 한 자세한 내용은 참조 하세요. [Azure DevOps 설명서](/azure/devops/index)합니다.
 
-원하는 턴키 프로젝트 관리, 팀 공동 작업 및 소스 제어 솔루션을 체크 아웃 VSTS 합니다. 서비스는 최대 5 명 사용자까지 무료이 고에서 등록할 수 있습니다 [Visual Studio Team Services](https://www.visualstudio.com/team-services/)합니다.
+Azure DevOps 서비스 턴키 프로젝트 관리, 팀 공동 작업 및 소스 제어 솔루션을 확인 찾고 있는 경우 합니다. 등록할 [Azure DevOps 서비스](https://dev.azure.com/)합니다.
 
 ## <a name="summary"></a>요약
 

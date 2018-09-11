@@ -5,12 +5,12 @@ description: Azure에서 호스팅되는 ASP.NET Core 앱에 대한 DevOps 파�
 ms.author: casoper
 ms.date: 08/07/2018
 uid: azure/devops/deploy-to-app-service
-ms.openlocfilehash: abd7167b313e131dc8b7ea6a49b774e14ae53bb9
-ms.sourcegitcommit: 29dfe436f54a27fbb4f6494bc639d16c75001fab
+ms.openlocfilehash: 710e65a048fdc062219e90b0db323e8e96fd8e9d
+ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/09/2018
-ms.locfileid: "42909431"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44340136"
 ---
 # <a name="deploy-an-app-to-app-service"></a>App Service에 앱 배포
 
@@ -234,7 +234,7 @@ Visual Studio 빌드하고 Azure에 앱을 배포 합니다. 웹 앱 URL로 이�
 * 스테이징 슬롯에 대 한 업데이트를 배포합니다.
 * 스테이징 및 프로덕션 슬롯을 교환 합니다.
 
-다음 섹션에서는 Azure 및 Visual Studio Team Services를 사용 하 여 DevOps 파이프라인을 빌드하는 방법에 알아봅니다.
+다음 섹션에서는 Azure 파이프라인을 사용 하 여 DevOps 파이프라인을 빌드하는 방법에 알아봅니다.
 
 ## <a name="additional-reading"></a>추가 참조 항목
 

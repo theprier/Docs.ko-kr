@@ -5,12 +5,12 @@ description: Azure에서 호스팅되는 ASP.NET Core 앱에 대한 DevOps 파�
 ms.author: casoper
 ms.date: 08/07/2018
 uid: azure/devops/tools-and-downloads
-ms.openlocfilehash: a63e97d9ab9eb0ed2fbd30e8c2e033f0c048d33e
-ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
+ms.openlocfilehash: 5529068b83db475315784571fbf4151d7ecd0d5d
+ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43312303"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44340162"
 ---
 # <a name="tools-and-downloads"></a>도구 및 다운로드
 
@@ -21,7 +21,7 @@ Azure에 프로 비전 및와 같은 리소스를 관리 하기 위한 몇 가�
 다음 구독이 필요 합니다.
 
 * Azure &mdash; 계정이 없다면 [무료 평가판 받기](https://azure.microsoft.com/free/)합니다.
-* Visual Studio Team Services (VSTS) &mdash; 4 장에에서이 계정이 만들어집니다.
+* Azure DevOps 서비스 &mdash; Azure DevOps 구독 및 조직 4 장의 만들어집니다.
 * GitHub &mdash; 계정이 없다면 [무료로 등록](https://github.com/join)합니다.
 
 다음 도구가 필요 합니다.
