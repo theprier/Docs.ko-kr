@@ -5,12 +5,12 @@ description: Entity Framework Core(EF Core)를 사용하여 데이터베이스�
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/model
-ms.openlocfilehash: 9e0fd0ee98c84bb2336749640b2a3c103e4639b6
-ms.sourcegitcommit: 661d30492d5ef7bbca4f7e709f40d8f3309d2dac
+ms.openlocfilehash: fb3a287725fa68ff9feb9935d7e6c5c2b8316517
+ms.sourcegitcommit: 4cd8dce371d63a66d780e4af1baab2bcf9d61b24
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37938328"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43893122"
 ---
 # <a name="add-a-model-to-a-razor-pages-app-in-aspnet-core"></a>ASP.NET Core에서 Razor 페이지 앱에 모델 추가
 
@@ -103,14 +103,14 @@ Add-Migration Initial
 Update-Database
 ```
 
-또는 다음 .NET Core CLI 명령을 사용할 수 있습니다.
+또는 프로젝트 폴더에서 다음 .NET Core CLI 명령을 사용할 수 있습니다.
 
 ```console
 dotnet ef migrations add Initial
 dotnet ef database update
 ```
 
-다음과 같은 경고 메시지를 무시합니다. 해당 문제를 다음 자습서에서 해결합니다.
+다음과 같은 경고 메시지를 무시합니다. 해당 문제를 나중에 자습서에서 해결합니다.
 
 `Microsoft.EntityFrameworkCore.Model.Validation[30000]`
 

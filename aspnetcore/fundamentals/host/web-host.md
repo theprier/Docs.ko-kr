@@ -4,14 +4,14 @@ author: guardrex
 description: 앱 시작 및 수명 관리를 담당하는 ASP.NET Core에서의 웹 호스트에 대해 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 06/19/2018
+ms.date: 09/01/2018
 uid: fundamentals/host/web-host
-ms.openlocfilehash: abb687c864ebe863c2bba265131c29939961cac0
-ms.sourcegitcommit: a669c4e3f42e387e214a354ac4143555602e6f66
+ms.openlocfilehash: 7440ab26534840b190a346614f645860fc2b7d78
+ms.sourcegitcommit: 7211ae2dd702f67d36365831c490d6178c9a46c8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43336068"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44089901"
 ---
 # <a name="aspnet-core-web-host"></a>ASP.NET Core 웹 호스트
 
@@ -80,6 +80,25 @@ public class Program
         ...
     ```
 
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.2"
+
+* `ConfigureKestrel`에 대한 다음 호출은 Kestrel이 `CreateDefaultBuilder`에 의해 구성될 때 설정된 30,000,000바이트의 기본 [Limits.MaxRequestBodySize](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits.maxrequestbodysize)를 재정의합니다.
+
+    ```csharp
+    WebHost.CreateDefaultBuilder(args)
+        .ConfigureKestrel((context, options) =>
+        {
+            options.Limits.MaxRequestBodySize = 20000000;
+        });
+        ...
+    ```
+
+::: moniker-end
+
+::: moniker range="= aspnetcore-2.0 || aspnetcore-2.1"
+
 * [UseKestrel](/dotnet/api/microsoft.aspnetcore.hosting.webhostbuilderkestrelextensions.usekestrel)에 대한 다음 호출은 Kestrel이 `CreateDefaultBuilder`에 의해 구성될 때 설정된 30,000,000바이트의 기본 [Limits.MaxRequestBodySize](/dotnet/api/microsoft.aspnetcore.server.kestrel.core.kestrelserverlimits.maxrequestbodysize)를 재정의합니다.
 
     ```csharp
@@ -90,6 +109,10 @@ public class Program
         });
         ...
     ```
+
+::: moniker-end
+
+::: moniker range=">= aspnetcore-2.0"
 
 *콘텐츠 루트*는 호스트가 MVC 뷰 파일과 같은 콘텐츠 파일을 검색하는 위치를 결정합니다. 앱이 프로젝트의 루트 폴더에서 시작되면 프로젝트의 루트 폴더가 콘텐츠 루트로 사용됩니다. 이것이 [Visual Studio](https://www.visualstudio.com/) 및 [dotnet 새 템플릿](/dotnet/core/tools/dotnet-new)에서 사용되는 기본값입니다.
 

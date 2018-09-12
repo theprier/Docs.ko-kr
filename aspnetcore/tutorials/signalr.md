@@ -5,14 +5,14 @@ description: 이 자습서에서는 ASP.NET Core용 SignalR을 사용하는 채�
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 08/20/2018
+ms.date: 08/31/2018
 uid: tutorials/signalr
-ms.openlocfilehash: a2573e2817a2d8921954264ca17bc3a7e2a010a8
-ms.sourcegitcommit: 847cc1de5526ff42a7303491e6336c2dbdb45de4
+ms.openlocfilehash: 6d96331a4630f766ca11edb056fd3e13b52b6ae4
+ms.sourcegitcommit: 4cd8dce371d63a66d780e4af1baab2bcf9d61b24
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43055834"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43893167"
 ---
 # <a name="tutorial-get-started-with-signalr-on-aspnet-core"></a>자습서: ASP.NET Core에서 SignalR 시작
 
@@ -34,22 +34,19 @@ ms.locfileid: "43055834"
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-* [Visual Studio 2017 버전 15.7.3 이상](https://www.visualstudio.com/downloads/)(**ASP.NET 및 웹 개발** 워크로드 포함)
+* [Visual Studio 2017 버전 15.8 이상](https://www.visualstudio.com/downloads/)(**ASP.NET 및 웹 개발** 워크로드 포함)
 * [.NET Core SDK 2.1 이상](https://www.microsoft.com/net/download/all)
-* [npm](https://www.npmjs.com/get-npm)(SignalR JavaScript 클라이언트 라이브러리에 사용되는 Node.js용 패키지 관리자)
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code)
 
 * [Visual Studio Code](https://code.visualstudio.com/download)
 * [.NET Core SDK 2.1 이상](https://www.microsoft.com/net/download/all)
 * [Visual Studio Code용 C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
-* [npm](https://www.npmjs.com/get-npm)(SignalR JavaScript 클라이언트 라이브러리에 사용되는 Node.js용 패키지 관리자)
 
 # <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
 
 * [Mac용 Visual Studio 버전 7.5.4 이상](https://www.visualstudio.com/downloads/)
 * [.NET Core SDK 2.1 이상](https://www.microsoft.com/net/download/all)(Visual Studio 설치에 포함됨)
-* [npm](https://www.npmjs.com/get-npm)(SignalR JavaScript 클라이언트 라이브러리에 사용되는 Node.js용 패키지 관리자)
 
 ---
 
@@ -95,76 +92,85 @@ ms.locfileid: "43055834"
 
 ## <a name="add-the-signalr-client-library"></a>SignalR 클라이언트 라이브러리 추가
 
-SignalR 서버 라이브러리는 [Microsoft.AspNetCore.App 메타패키지](xref:fundamentals/metapackage-app)에 포함되어 있습니다. 하지만 [npm, Node.js 패키지 관리자](https://www.npmjs.com/get-npm)에서 JavaScript 클라이언트 라이브러리를 가져와야 합니다.
+SignalR 서버 라이브러리는 [Microsoft.AspNetCore.App 메타패키지](xref:fundamentals/metapackage-app)에 포함되어 있습니다. JavaScript 클라이언트 라이브러리는 프로젝트에 자동으로 포함되지 않습니다. 이 자습서에서는 [라이브러리 관리자(LibMan)](xref:client-side/libman/index)를 사용하여 *unpkg*에서 클라이언트 라이브러리를 가져옵니다. [unpkg](https://unpkg.com/#/)는 [npm, Node.js 패키지 관리자](https://www.npmjs.com/get-npm)에서 찾은 내용을 전달할 수 있는 [콘텐츠 배달 네트워크](https://wikipedia.org/wiki/Content_delivery_network)입니다.
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio/)
 
-* **패키지 관리자 콘솔**(PMC)에서 프로젝트 폴더로 변경합니다(*SignalRChat.csproj* 파일을 포함하는 폴더).
+* **솔루션 탐색기**에서 프로젝트를 마우스 오른쪽 단추로 클릭하고 **Add** > **Client-Side Library**(클라이언트 쪽 라이브러리 추가)를 선택합니다.
 
-  ```console
-  cd SignalRChat
-  ```
+* **Add Client-Side Library**(클라이언트 쪽 라이브러리 추가) 대화 상자에서 **공급자**에 대해 **unpkg**를 선택합니다. 
+
+* **라이브러리**에 대해 _@aspnet/signalr@1_을 입력하고 미리 보기가 아닌 최신 버전을 선택합니다.
+
+  ![Add Client-Side Library(클라이언트 쪽 라이브러리 추가) 대화 상자 - 라이브러리 선택](signalr/_static/libman1.png)
+
+* **Choose specific files**(특정 파일 선택)를 선택하고 *dist/browser* 폴더를 확장한 후 *signalr.js* 및 *signalr.min.js*를 선택합니다.
+
+* **대상 위치**를 *wwwroot/lib/signalr/* 로 설정하고 **설치**를 선택합니다.
+
+  ![Add Client-Side Library(클라이언트 쪽 라이브러리 추가) 대화 상자 - 파일 및 대상 선택](signalr/_static/libman2.png)
+
+  [LibMan](xref:client-side/libman/index)은 *wwwroot/lib/signalr* 폴더를 생성하고 선택한 파일을 여기에 복사합니다.
 
 # <a name="visual-studio-codetabvisual-studio-code"></a>[Visual Studio Code](#tab/visual-studio-code/)
 
-2. 새 프로젝트 폴더로 변경합니다.
+* **통합 터미널**에서 다음 명령을 실행하여 LibMan을 설치합니다.
 
   ```console
-  cd SignalRChat
-  ``` 
+  dotnet tool install -g Microsoft.Web.LibraryManager.Cli
+  ```
+
+* 프로젝트 폴더로 이동합니다(*SignalRChat.csproj* 파일을 포함하는 폴더).
+
+* 다음 명령을 실행하고 LibMan을 사용하여 SignalR 클라이언트 라이브러리를 가져옵니다. 출력이 표시되기 전에 잠시 기다려야 할 수도 있습니다.
+
+  ```console
+  libman install @aspnet/signalr -p unpkg -d wwwroot\lib\signalr --files dist/browser/signalr.js --files dist/browser/signalr.min.js
+  ```
+
+  매개 변수는 다음 옵션을 지정합니다.
+  * unpkg 공급자를 사용합니다.
+  * 파일을 *wwwroot/lib/signalr* 대상으로 복사합니다.
+  * 지정된 파일만 복사합니다.
+
+  출력은 다음 예와 같습니다.
+
+  ```console
+  wwwroot/lib/signalr/dist/browser/signalr.js written to disk
+  wwwroot/lib/signalr/dist/browser/signalr.min.js written to disk
+  Installed library "@aspnet/signalr@1.0.3" to "wwwroot\lib\signalr"
+  ```
 
 # <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
 
-* **터미널**에서 프로젝트 폴더로 이동합니다(*SignalRChat.csproj* 파일을 포함하는 폴더).
+* **터미널**에서 다음 명령을 실행하여 LibMan을 설치합니다.
+
+  ```console
+  dotnet tool install -g Microsoft.Web.LibraryManager.Cli
+  ```
+
+* 프로젝트 폴더로 이동합니다(*SignalRChat.csproj* 파일을 포함하는 폴더).
+
+* 다음 명령을 실행하고 LibMan을 사용하여 SignalR 클라이언트 라이브러리를 가져옵니다.
+
+  ```console
+  libman install @aspnet/signalr -p unpkg -d wwwroot\lib\signalr --files dist/browser/signalr.js --files dist/browser/signalr.min.js
+  ```
+
+  매개 변수는 다음 옵션을 지정합니다.
+  * unpkg 공급자를 사용합니다.
+  * 파일을 *wwwroot/lib/signalr* 대상으로 복사합니다.
+  * 지정된 파일만 복사합니다.
+
+  출력은 다음 예와 같습니다.
+
+  ```console
+  wwwroot/lib/signalr/dist/browser/signalr.js written to disk
+  wwwroot/lib/signalr/dist/browser/signalr.min.js written to disk
+  Installed library "@aspnet/signalr@1.0.3" to "wwwroot\lib\signalr"
+  ```
 
 ---
-
-* npm 이니셜라이저를 실행하여 *package.json* 파일을 만듭니다.
-
-  ```console
-  npm init -y
-  ```
-
-  명령은 다음 예제와 유사한 출력을 만듭니다.
-
-  ```console
-  Wrote to C:\tmp\SignalRChat\package.json:
-  {
-    "name": "SignalRChat",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC"0
-  }
-  ```
-
-* 클라이언트 라이브러리 패키지를 설치합니다.
-
-  ```console
-  npm install @aspnet/signalr
-  ```
-
-  명령은 다음 예제와 유사한 출력을 만듭니다.
-
-  ```
-  npm notice created a lockfile as package-lock.json. You should commit this file.
-  npm WARN signalrchat@1.0.0 No description
-  npm WARN signalrchat@1.0.0 No repository field.
-
-  + @aspnet/signalr@1.0.2
-  added 1 package in 0.98s
-  ```
-
-`npm install` 명령은 *node_modules* 아래의 하위 폴더에 JavaScript 클라이언트 라이브러리를 다운로드했습니다. 여기에서 채팅 앱 웹 페이지에서 참조할 수 있는 *wwwroot* 아래의 폴더에 복사합니다.
-
-* *wwwroot/lib*에 *signalr* 폴더를 만듭니다.
-
-* *node_modules/@aspnet/signalr/dist/browser*에서 새 *wwwroot/lib/signalr* 폴더로 *signalr.js* 파일을 복사합니다.
 
 ## <a name="create-the-signalr-hub"></a>SignalR 허브 만들기
 
@@ -192,7 +198,7 @@ SignalR 서버는 SignalR에 SignalR 요청을 전달하도록 구성되어야 �
 
 ## <a name="create-the-signalr-client-code"></a>SignalR 클라이언트 코드 만들기
 
-* *Pages\Index.cshtml*의 콘텐츠를 다음으로 바꿉니다.
+* *Pages\Index.cshtml*의 콘텐츠를 다음 코드로 바꿉니다.
 
   [!code-cshtml[Index](signalr/sample/Pages/Index.cshtml)]
 

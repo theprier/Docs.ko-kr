@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 07/05/2018
 uid: fundamentals/error-handling
-ms.openlocfilehash: 7ea944bc423001aa47ce684443b96104cf9174bf
-ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
+ms.openlocfilehash: df7af9fd05c19c42357989bbd8a81da062a564cc
+ms.sourcegitcommit: 4cd8dce371d63a66d780e4af1baab2bcf9d61b24
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43312249"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43893105"
 ---
 # <a name="handle-errors-in-aspnet-core"></a>ASP.NET Core에서 오류 처리
 
@@ -66,7 +66,7 @@ ms.locfileid: "43312249"
 
 [!code-csharp[](error-handling/samples/2.x/ErrorHandlingSample/Startup.cs?name=snippet_DevExceptionPage&highlight=11)]
 
-Razor Pages 앱에서 [dotnet new](/dotnet/core/tools/dotnet-new) Razor Pages 템플릿은 *Pages* 폴터의 오류 페이지 및 `ErrorModel` 페이지 모델 클래스를 제공합니다.
+Razor Pages 앱에서 [dotnet new](/dotnet/core/tools/dotnet-new) Razor Pages 템플릿은 *Pages* 폴더의 오류 페이지 및 오류 `PageModel` 클래스를 제공합니다.
 
 MVC 앱에서는 `HttpGet`과 같은 HTTP 메서드 특성을 사용하여 오류 처리기 작업 메서드를 데코레이트하지 않습니다. 명시적 동사는 일부 요청이 메서드에 도달하지 않도록 방해합니다. 인증되지 않은 사용자가 오류 보기를 수신할 수 있도록 메서드에 대한 익명 액세스를 허용합니다.
 

@@ -6,12 +6,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 4/13/2018
 uid: fundamentals/startup
-ms.openlocfilehash: 465d33cc1f19428d5189b3a6fa7088ac402a9751
-ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
+ms.openlocfilehash: 923d17be9c2bb1a9d338599d1cdc4c34302cddab
+ms.sourcegitcommit: 08bf41d4b3e696ab512b044970e8304816f8cc56
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42927973"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44040097"
 ---
 # <a name="application-startup-in-aspnet-core"></a>ASP.NET Core에서 응용 프로그램 시작
 
@@ -56,6 +56,8 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 * `Configure` 메서드 전에 웹 호스트에 의해 호출되어 앱의 서비스를 구성합니다.
 * 여기서 [구성 옵션](xref:fundamentals/configuration/index)은 규칙에 의해 설정됩니다.
 
+일반적인 패턴은 모든 `Add{Service}` 메서드를 호출한 후 모든 `services.Configure{Service}` 메서드를 호출하는 것입니다. 예는 [ID 서비스 구성](xref:security/authentication/identity#pw)을 참조하세요.
+
 서비스 컨테이너에 서비스를 추가하면 앱 내 및 `Configure` 메서드에서 사용할 수 있습니다. 서비스는 [종속성 주입](xref:fundamentals/dependency-injection)을 통해 또는 [IApplicationBuilder.ApplicationServices](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder.applicationservices)에서 확인됩니다.
 
 웹 호스트는 `Startup` 메서드가 호출되기 전에 일부 서비스를 구성할 수 있습니다. 세부 정보는 [ASP.NET Core의 호스트](xref:fundamentals/host/index) 항목에서 제공됩니다.
@@ -66,7 +68,7 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 
 ## <a name="the-configure-method"></a>Configure 메서드
 
-[Configure](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure) 메서드는 앱이 HTTP 요청에 응답하는 방식을 지정하는 데 사용됩니다. 요청 파이프라인은 [미들웨어](xref:fundamentals/middleware/index) 구성 요소를 [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder) 인스턴스에 추가하여 구성됩니다. `IApplicationBuilder`는 `Configure` 메서드에 사용할 수 있지만 서비스 컨테이너에 등록되지 않습니다. 호스팅은 `IApplicationBuilder`를 만들고 `Configure`에 직접 전달합니다([참조 원본](https://github.com/aspnet/Hosting/blob/release/2.0.0/src/Microsoft.AspNetCore.Hosting/Internal/WebHost.cs#L179-L192)).
+[Configure](/dotnet/api/microsoft.aspnetcore.hosting.startupbase.configure) 메서드는 앱이 HTTP 요청에 응답하는 방식을 지정하는 데 사용됩니다. 요청 파이프라인은 [미들웨어](xref:fundamentals/middleware/index) 구성 요소를 [IApplicationBuilder](/dotnet/api/microsoft.aspnetcore.builder.iapplicationbuilder) 인스턴스에 추가하여 구성됩니다. `IApplicationBuilder`는 `Configure` 메서드에 사용할 수 있지만 서비스 컨테이너에 등록되지 않습니다. 호스팅은 `IApplicationBuilder`를 만들고 `Configure`에 직접 전달합니다.
 
 [ASP.NET Core 템플릿](/dotnet/core/tools/dotnet-new)은 개발자 예외 페이지, [BrowserLink](http://vswebessentials.com/features/browserlink), 오류 페이지, 정적 파일 및 ASP.NET Core MVC에 대한 지원으로 파이프라인을 구성합니다.
 
@@ -86,7 +88,7 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 
 [!code-csharp[](startup/snapshot_sample/Program.cs?highlight=18,22)]
 
-## <a name="startup-filters"></a>시작 필터
+## <a name="extend-startup-with-startup-filters"></a>시작 필터로 시작 확장
 
 [IStartupFilter](/dotnet/api/microsoft.aspnetcore.hosting.istartupfilter)를 사용하여 앱의 [구성](#the-configure-method) 미들웨어 파이프라인의 시작 또는 끝에 미들웨어를 구성합니다. `IStartupFilter`는 미들웨어가 앱의 요청 처리 파이프라인의 시작 또는 끝에 라이브러리에 의해 추가되는 미들웨어 전이나 후에 실행되도록 하는데 유용합니다.
 
@@ -102,9 +104,9 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 
 [!code-csharp[](startup/sample/RequestSetOptionsStartupFilter.cs?name=snippet1&highlight=7)]
 
-`IStartupFilter`는 `ConfigureServices`의 서비스 컨테이너에 등록됩니다.
+`IStartupFilter`는 [IWebHostBuilder.ConfigureServices](xref:Microsoft.AspNetCore.Hosting.IWebHostBuilder.ConfigureServices*)의 서비스 컨테이너에 등록되어 시작 필터가 `Startup` 클래스 외부에서 `Startup`을 확대하는 방법을 보여 줍니다.
 
-[!code-csharp[](startup/sample/Startup.cs?name=snippet1&highlight=3)]
+[!code-csharp[](startup/sample/Program.cs?name=snippet1&highlight=4-5)]
 
 `option`에 대한 쿼리 문자열 매개 변수가 제공되는 경우 미들웨어는 MVC 미들웨어가 응답을 렌더링하기 전에 값 할당을 처리합니다.
 
@@ -126,4 +128,3 @@ ASP.NET Core 앱은 규칙에 따라 `Startup`으로 이름이 지정된 `Startu
 * <xref:fundamentals/middleware/index>
 * <xref:fundamentals/logging/index>
 * <xref:fundamentals/configuration/index>
-* [StartupLoader 클래스: FindStartupType 메서드(참조 원본)](https://github.com/aspnet/Hosting/blob/rel/2.0.0/src/Microsoft.AspNetCore.Hosting/Internal/StartupLoader.cs#L66-L116)

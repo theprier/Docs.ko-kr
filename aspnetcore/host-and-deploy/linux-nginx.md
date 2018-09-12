@@ -6,18 +6,20 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/22/2018
 uid: host-and-deploy/linux-nginx
-ms.openlocfilehash: aba9ed41ac3650d8c645d71fb772e2a8e4f32f02
-ms.sourcegitcommit: c8e62aa766641aa55105f7db79cdf2b27a6e5977
+ms.openlocfilehash: d94640075f6fe5db06672f7dc641470c71076a16
+ms.sourcegitcommit: 08bf41d4b3e696ab512b044970e8304816f8cc56
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39254859"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44040015"
 ---
 # <a name="host-aspnet-core-on-linux-with-nginx"></a>Nginx를 사용하여 Linux에서 ASP.NET Core 호스트
 
 작성자: [Sourabh Shirhatti](https://twitter.com/sshirhatti)
 
 이 가이드에서는 Ubuntu 16.04 Server에서 프로덕션 준비 ASP.NET Core 환경을 설정하는 방법을 설명합니다. 이 지침은 최신 버전의 Ubuntu에서 작동할 수 있지만 최신 버전에서 테스트되지는 않았습니다.
+
+ASP.NET Core에서 지원하는 다른 Linux 배포에 대한 자세한 내용은 [Linux에서 .NET Core의 필수 구성 요소](/dotnet/core/linux-prerequisites)를 참조하세요.
 
 > [!NOTE]
 > Ubuntu 14.04의 경우 Kestrel 프로세스를 모니터링하기 위한 솔루션으로 *supervisord*를 사용하는 것이 좋습니다. *systemd*는 Ubuntu 14.04에서 사용할 수 없습니다. Ubuntu 14.04 지침의 경우 [이 항목의 이전 버전](https://github.com/aspnet/Docs/blob/e9c1419175c4dd7e152df3746ba1df5935aaafd5/aspnetcore/publishing/linuxproduction.md)을 참조하세요.
@@ -174,7 +176,7 @@ server {
 }
 ```
 
-이전 구성 파일과 기본 서버를 사용하여 Nginx는 포트 80에서 호스트 헤더 `example.com` 또는 `*.example.com`가 포함된 공용 트래픽을 허용합니다. 이러한 호스트와 일치하지 않는 요청은 Kestrel로 전달되지 않습니다. Nginx는 일치하는 요청을 `http://localhost:5000`의 Kestrel에 전달합니다. 자세한 내용은 [How nginx processes a request](https://nginx.org/docs/http/request_processing.html)(nginx가 요청을 처리하는 방법)를 참조하세요. Kestrel의 IP/포트를 변경 하려면 [Kestrel: 끝점 구성](xref:fundamentals/servers/kestrel#endpoint-configuration)을 참조합니다.
+이전 구성 파일과 기본 서버를 사용하여 Nginx는 포트 80에서 호스트 헤더 `example.com` 또는 `*.example.com`가 포함된 공용 트래픽을 허용합니다. 이러한 호스트와 일치하지 않는 요청은 Kestrel로 전달되지 않습니다. Nginx는 일치하는 요청을 `http://localhost:5000`의 Kestrel에 전달합니다. 자세한 내용은 [How nginx processes a request](https://nginx.org/docs/http/request_processing.html)(nginx가 요청을 처리하는 방법)를 참조하세요. Kestrel의 IP/포트를 변경 하려면 [Kestrel: 엔드포인트 구성](xref:fundamentals/servers/kestrel#endpoint-configuration)을 참조합니다.
 
 > [!WARNING]
 > 적절한 [server_name 지시문](https://nginx.org/docs/http/server_names.html)을 지정하지 않으면 앱이 보안 취약성에 노출됩니다. 전체 부모 도메인을 제어하는 경우 하위 도메인 와일드카드 바인딩(예: `*.example.com`)에는 이러한 보안 위험이 발생하지 않습니다(취약한 `*.com`과 반대임). 자세한 내용은 [rfc7230 섹션-5.4](https://tools.ietf.org/html/rfc7230#section-5.4)를 참조하세요.
@@ -383,6 +385,7 @@ sudo nano /etc/nginx/nginx.conf
 
 ## <a name="additional-resources"></a>추가 자료
 
+* [Linux에서 .NET Core의 필수 구성 요소](/dotnet/core/linux-prerequisites)
 * [Nginx: 이진 릴리스: 공식 Debian/Ubuntu 패키지](https://www.nginx.com/resources/wiki/start/topics/tutorials/install/#official-debian-ubuntu-packages)
 * [프록시 서버 및 부하 분산 장치를 사용하도록 ASP.NET Core 구성](xref:host-and-deploy/proxy-load-balancer)
 * [NGINX: 전달된 헤더 사용](https://www.nginx.com/resources/wiki/start/topics/examples/forwarded/)

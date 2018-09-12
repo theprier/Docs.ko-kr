@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/16/2018
 uid: fundamentals/host/generic-host
-ms.openlocfilehash: de9044875c8ebc62c80a129d721e7d37be5d846d
-ms.sourcegitcommit: 25150f4398de83132965a89f12d3a030f6cce48d
+ms.openlocfilehash: e19a8a78b4c02fbae3d3acd23ee357c6003c35cf
+ms.sourcegitcommit: 08bf41d4b3e696ab512b044970e8304816f8cc56
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42927811"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44039967"
 ---
 # <a name="net-generic-host"></a>.NET 일반 호스트
 
@@ -196,16 +196,32 @@ var host = new HostBuilder()
 
 ## <a name="extensibility"></a>확장성
 
-`IHostBuilder`에서 확장 메서드를 사용하여 호스트 확장성이 수행됩니다. 다음 예에서는 확장 메서드가 [RabbitMQ](https://www.rabbitmq.com/)를 사용하여 `IHostBuilder` 구현을 확장하는 방법을 보여줍니다. 확장 메서드(앱의 다른 곳)는 RabbitMQ `IHostedService`를 등록합니다.
+`IHostBuilder`에서 확장 메서드를 사용하여 호스트 확장성이 수행됩니다. 다음 예제는 <xref:fundamentals/host/hosted-services>에 설명된 [TimedHostedService](xref:fundamentals/host/hosted-services#timed-background-tasks) 예제를 사용하여 확장 메서드가 `IHostBuilder` 구현을 확장하는 방법을 보여줍니다.
 
 ```csharp
-// UseRabbitMq is an extension method that sets up RabbitMQ to handle incoming
-// messages.
 var host = new HostBuilder()
-    .UseRabbitMq<MyMessageHandler>()
+    .UseHostedService<TimedHostedService>()
     .Build();
 
 await host.StartAsync();
+```
+
+앱은 `UseHostedService` 확장 메서드를 설정하여 `T`에서 전달되는 호스티드 서비스를 등록합니다.
+
+```csharp
+using System;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+
+public static class Extensions
+{
+    public static IHostBuilder UseHostedService<T>(this IHostBuilder hostBuilder)
+        where T : class, IHostedService, IDisposable
+    {
+        return hostBuilder.ConfigureServices(services =>
+            services.AddHostedService<T>());
+    }
+}
 ```
 
 ## <a name="manage-the-host"></a>호스트 관리
