@@ -19,7 +19,7 @@ Identity 스 캐 폴더를 실행 합니다.
 
 # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 
-ASP.NET 스 캐 폴더를 이전에 설치 하지 않은 경우 지금 설치 합니다.
+ASP.NET Core 스 캐 폴더를 이전에 설치 하지 않은 경우 지금 설치 합니다.
 
 ```cli
 dotnet tool install -g dotnet-aspnet-codegenerator
@@ -44,4 +44,9 @@ dotnet aspnet-codegenerator identity -h
 dotnet aspnet-codegenerator identity -dc MyWeb.Data.ApplicationDbContext --files Account.Register
 ```
 
+Powershell 명령 구분 기호로 세미콜론을 사용합니다. Powershell을 사용 하는 경우 파일 목록에 세미콜론을 이스케이프 또는 큰따옴표로 파일 목록을 저장 합니다. 예를 들어:
+
+```cli
+dotnet aspnet-codegenerator identity -dc MyWeb.Data.ApplicationDbContext --files "Account.Register;Account.Login;Account.Logout"
+```
 -------------

@@ -11,7 +11,7 @@ Identity 스 캐 폴더를 실행 합니다.
 
 # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 
-ASP.NET 스 캐 폴더를 이전에 설치 하지 않은 경우 지금 설치 합니다.
+ASP.NET Core 스 캐 폴더를 이전에 설치 하지 않은 경우 지금 설치 합니다.
 
 ```cli
 dotnet tool install -g dotnet-aspnet-codegenerator

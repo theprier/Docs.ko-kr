@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 05/01/2018
 uid: signalr/hubs
-ms.openlocfilehash: be39666373e2b099054bb71f4a7fcf17aeb9a01c
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: e583676ab0eed45aeaf6391d8cdf8c1485aa914e
+ms.sourcegitcommit: e7e1e531b80b3f4117ff119caadbebf4dcf5dcb7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095283"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44510339"
 ---
 # <a name="use-hubs-in-signalr-for-aspnet-core"></a>SignalR에서 허브를 사용 하 여 ASP.NET Core에 대 한
 
@@ -42,9 +42,29 @@ ASP.NET Core 앱에 SignalR 기능을 추가 하는 경우 호출 하 여 Signal
 
 반환 형식 및 C# 메서드에서 마찬가지로 복합 형식 및 배열 등 매개 변수를 지정할 수 있습니다. SignalR은 serialization 및 deserialization 복잡 한 개체 및 배열 매개 변수 및 반환 값을 처리합니다.
 
+## <a name="the-context-object"></a>컨텍스트 개체
+
+합니다 `Hub` 클래스에는 `Context` 연결에 대 한 정보를 사용 하 여 다음 속성을 포함 하는 속성:
+
+| 속성 | 설명 |
+| ------ | ----------- |
+| `ConnectionId` | SignalR에서 할당 된 연결에 대 한 고유 ID를 가져옵니다. 각 연결에 대 한 연결 ID를 하나 있습니다.|
+| `UserIdentifier` | 가져옵니다 합니다 [사용자 식별자](xref:signalr/groups)합니다. SignalR 기본적으로 사용 합니다 `ClaimTypes.NameIdentifier` 에서 `ClaimsPrincipal` 사용자 식별자로 연결과 관련 된 합니다. |
+| `User` | 가져옵니다는 `ClaimsPrincipal` 현재 사용자와 연결 합니다. |
+| `Items` | 이 연결의 범위 내에서 데이터를 공유할 수 있는 키/값 컬렉션을 가져옵니다. 이 컬렉션의 데이터를 저장할 수 있습니다 하 고 연결에 대 한 다양 한 허브 메서드 호출 간에 유지 됩니다. |
+| `Features` | 연결에서 사용할 수 있는 기능의 컬렉션을 가져옵니다. 지금은 자세히 아직 문서화 되지 않습니다 있도록이 컬렉션은 대부분의 시나리오에서 필요 하지 않습니다. |
+| `ConnectionAborted` | 가져옵니다는 `CancellationToken` 연결이 중단 될 때를 알리는 합니다. |
+
+`Hub.Context` 또한 다음 메서드를 포함 되어 있습니다.
+
+| 메서드 | 설명 |
+| ------ | ----------- |
+| `GetHttpContext` | 반환 된 `HttpContext` 연결에 대해 또는 `null` 연결 HTTP 요청을 사용 하 여 연결 되지 않은 경우. HTTP 연결에 대 한 HTTP 헤더 및 쿼리 문자열과 같은 정보를 가져오려면이 메서드를 사용할 수 있습니다. |
+| `Abort` | 연결을 중단합니다. |
+
 ## <a name="the-clients-object"></a>클라이언트 개체
 
-각 인스턴스는 `Hub` 클래스 라는 속성이 `Clients` 서버와 클라이언트 간의 통신에 대 한 다음 멤버를 포함 하는:
+합니다 `Hub` 클래스에는 `Clients` 서버와 클라이언트 간의 통신에 대 한 다음 속성을 포함 하는 속성:
 
 | 속성 | 설명 |
 | ------ | ----------- |
@@ -53,7 +73,7 @@ ASP.NET Core 앱에 SignalR 기능을 추가 하는 경우 호출 하 여 Signal
 | `Others` | 메서드를 호출한 클라이언트를 제외한 모든 연결 된 클라이언트에서 메서드를 호출 합니다. |
 
 
-또한 `Hub.Clients` 다음 메서드를 포함 합니다.
+`Hub.Clients` 또한 다음 메서드를 포함 되어 있습니다.
 
 | 메서드 | 설명 |
 | ------ | ----------- |
