@@ -5,12 +5,12 @@ description: ASP.NET Core 앱을 사용 하 여 Id를 사용 합니다. 암호 �
 ms.author: riande
 ms.date: 08/08/2018
 uid: security/authentication/identity
-ms.openlocfilehash: 96f446ad9ec1ef5d807a8648e68308ee20583365
-ms.sourcegitcommit: 08bf41d4b3e696ab512b044970e8304816f8cc56
+ms.openlocfilehash: af07adcc7f9513845bb91eb233f0a9840e1bd6f4
+ms.sourcegitcommit: 4db337bd47d70c06fff91000c58bc048a491ccec
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44040030"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44749310"
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>ASP.NET Core Identity 소개
 
@@ -23,6 +23,21 @@ ASP.NET Core Id는 ASP.NET Core 앱에 로그인 기능을 추가 하는 멤버 
 [예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/authentication/identity/sample/src/ASPNETCore-IdentityDemoComplete/) [(다운로드 방법)](xref:tutorials/index#how-to-download-a-sample)
 
 이 항목의 Id를 사용 하 여 등록, 로그인 하는 방법을 알아보고는 사용자를 로그 아웃 합니다. Identity를 사용 하는 앱을 만드는 방법에 대 한 자세한 내용은이 문서의 끝에 있는 다음 단계 섹션을 참조 하세요.
+
+::: moniker range=">= aspnetcore-2.1"
+
+<a name="adi"></a>
+## <a name="adddefaultidentity-and-addidentity"></a>AddDefaultIdentity 및 AddIdentity
+
+[AddDefaultIdentity](/dotnet/api/microsoft.extensions.dependencyinjection.identityservicecollectionuiextensions.adddefaultidentity?view=aspnetcore-2.1#Microsoft_Extensions_DependencyInjection_IdentityServiceCollectionUIExtensions_AddDefaultIdentity__1_Microsoft_Extensions_DependencyInjection_IServiceCollection_System_Action_Microsoft_AspNetCore_Identity_IdentityOptions__) ASP에서 도입 되었습니다. Core 2.1입니다. 호출 `AddDefaultIdentity` 다음 호출 하는 것과 비슷합니다.
+
+* [AddIdentity](/dotnet/api/microsoft.extensions.dependencyinjection.identityservicecollectionextensions.addidentity?view=aspnetcore-2.1#Microsoft_Extensions_DependencyInjection_IdentityServiceCollectionExtensions_AddIdentity__2_Microsoft_Extensions_DependencyInjection_IServiceCollection_System_Action_Microsoft_AspNetCore_Identity_IdentityOptions__)
+* [AddDefaultUI](/dotnet/api/microsoft.aspnetcore.identity.identitybuilderuiextensions.adddefaultui?view=aspnetcore-2.1#Microsoft_AspNetCore_Identity_IdentityBuilderUIExtensions_AddDefaultUI_Microsoft_AspNetCore_Identity_IdentityBuilder_)
+* [AddDefaultTokenProviders](/dotnet/api/microsoft.aspnetcore.identity.identitybuilderextensions.adddefaulttokenproviders?view=aspnetcore-2.1#Microsoft_AspNetCore_Identity_IdentityBuilderExtensions_AddDefaultTokenProviders_Microsoft_AspNetCore_Identity_IdentityBuilder_)
+
+참조 [AddDefaultIdentity 원본](https://github.com/aspnet/Identity/blob/2634637fd535b229762b5e4a49cdd128f4d8f12e/src/UI/IdentityServiceCollectionUIExtensions.cs#L47-L64) 자세한 내용은 합니다.
+
+::: moniker-end
 
 ## <a name="create-a-web-app-with-authentication"></a>인증을 사용 하 여 웹 앱 만들기
 
@@ -56,7 +71,7 @@ dotnet new webapp --auth Individual -o WebApp1
 <a name="pw"></a>
 ### <a name="configure-identity-services"></a>Id 서비스를 구성 합니다.
 
-서비스에 추가 된 `ConfigureServices`합니다. 일반적인 패턴은 모든 호출 하는 것은 `Add{Service}` 메서드 및 호출을 `services.Configure{Service}` 메서드. 다음 코드는 생성 된 템플릿을 포함 되지 않습니다 `CookiePolicyOptions`:
+서비스에 추가 된 `ConfigureServices`합니다. 일반적인 패턴은 모든 `Add{Service}` 메서드를 호출한 후 모든 `services.Configure{Service}` 메서드를 호출하는 것입니다. 다음 코드는 생성 된 템플릿을 포함 되지 않습니다 `CookiePolicyOptions`:
 
 ::: moniker range=">= aspnetcore-2.1"
 

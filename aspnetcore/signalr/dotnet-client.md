@@ -7,16 +7,14 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 09/10/2018
 uid: signalr/dotnet-client
-ms.openlocfilehash: 205ca8ca228dcc2cc77f7e9b6431943851a3b152
-ms.sourcegitcommit: 1a2fc47fb5d3da0f2a3c3269613ab20eb3b0da2c
+ms.openlocfilehash: ef84ede2ed45ddc3b64d4ce8f5bd0018a681faf6
+ms.sourcegitcommit: 4db337bd47d70c06fff91000c58bc048a491ccec
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44373321"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44749323"
 ---
 # <a name="aspnet-core-signalr-net-client"></a>ASP.NET Core SignalR.NET 클라이언트
-
-작성자: [Rachel Appel](http://twitter.com/rachelappel)
 
 ASP.NET Core SignalR.NET 클라이언트 라이브러리를 사용 하면.NET 앱에서 SignalR 허브와 통신할 수 있습니다.
 
@@ -39,7 +37,26 @@ Install-Package Microsoft.AspNetCore.SignalR.Client
 
 연결을 설정 하려면 만듭니다는 `HubConnectionBuilder` 호출 `Build`합니다. 연결을 만드는 동안 허브 URL, 프로토콜, 전송 종류, 로그 수준, 헤더 및 기타 옵션을 구성할 수 있습니다. 중 하나를 삽입 하 여 필요한 모든 옵션을 구성 합니다 `HubConnectionBuilder` 메서드를 `Build`입니다. 사용 하 여 연결을 시작할 `StartAsync`합니다.
 
-[!code-csharp[Build hub connection](dotnet-client/sample/signalrchatclient/MainWindow.xaml.cs?name=snippet_MainWindowClass&highlight=14-16,32)]
+[!code-csharp[Build hub connection](dotnet-client/sample/signalrchatclient/MainWindow.xaml.cs?name=snippet_MainWindowClass&highlight=15-17,39)]
+
+## <a name="handle-lost-connection"></a>연결 해제를 처리 합니다.
+
+사용 된 <xref:Microsoft.AspNetCore.SignalR.Client.HubConnection.Closed> 끊긴된 연결에 응답 하는 이벤트입니다. 예를 들어, 다음 다시 연결을 자동화 하는 것이 좋습니다.
+
+`Closed` 반환 하는 대리자를 요구 하는 이벤트를 `Task`, 비동기 코드를 사용 하지 않고 실행할 수 있는 `async void`합니다. 대리자 시그니처를 충족 하는 `Closed` 실행을 동기적으로 반환 하는 이벤트 처리기 `Task.CompletedTask`:
+
+```csharp
+connection.Closed += (error) => {
+    // Do your close logic.
+    return Task.CompletedTask;
+};
+```
+
+비동기 지원에 대 한 주된 이유 이므로 연결을 다시 시작할 수 있습니다. 연결을 시작 하는 비동기 작업입니다.
+
+에 `Closed` 연결을 다시 시작 하는 처리기는 다음 예와에서 같이 서버 오버 로드를 방지 하려면 임의의 지연 시간을 기다리는 것이 좋습니다.
+
+[!code-csharp[Use Closed event handler to automate reconnection](dotnet-client/sample/signalrchatclient/MainWindow.xaml.cs?name=snippet_ClosedRestart)]
 
 ## <a name="call-hub-methods-from-client"></a>클라이언트에서 허브 메서드를 호출 합니다.
 
