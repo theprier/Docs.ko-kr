@@ -29,12 +29,15 @@ EF Code First를 사용하여 자동으로 데이터베이스를 만들 경우 C
 ## <a name="adding-a-rating-property-to-the-movie-model"></a>영화 모델에 등급 속성 추가
 
 *Models/Movie.cs* 파일을 열고 `Rating` 속성을 추가합니다.
+
 ::: moniker range="= aspnetcore-2.0"
+
 [!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]
 
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Models/MovieDateRating.cs?highlight=13&name=snippet)]
 
 ::: moniker-end
