@@ -5,14 +5,14 @@ description: ASP.NET Core SignalR에서 허브를 사용 하는 방법에 알아
 monikerRange: '>= aspnetcore-2.1'
 ms.author: tdykstra
 ms.custom: mvc
-ms.date: 05/01/2018
+ms.date: 09/12/2018
 uid: signalr/hubs
-ms.openlocfilehash: e583676ab0eed45aeaf6391d8cdf8c1485aa914e
-ms.sourcegitcommit: e7e1e531b80b3f4117ff119caadbebf4dcf5dcb7
+ms.openlocfilehash: 17e3ee23967bc1097a3121b3e3e5b58cebe3887d
+ms.sourcegitcommit: a742b55e4b8276a48b8b4394784554fecd883c84
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44510339"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45538364"
 ---
 # <a name="use-hubs-in-signalr-for-aspnet-core"></a>SignalR에서 허브를 사용 하 여 ASP.NET Core에 대 한
 
@@ -94,6 +94,22 @@ ASP.NET Core 앱에 SignalR 기능을 추가 하는 경우 호출 하 여 Signal
 특정 클라이언트에 대 한 호출을 하려면 속성을 사용 합니다 `Clients` 개체입니다. 다음 예제에서는 `SendMessageToCaller` 메서드 허브 메서드 호출 연결에 메시지를 보내는 방법을 보여 줍니다. 합니다 `SendMessageToGroups` 메서드에 저장 된 그룹에 메시지를 보냅니다는 `List` 라는 `groups`합니다.
 
 [!code-csharp[Send messages](hubs/sample/hubs/chathub.cs?range=15-24)]
+
+## <a name="strongly-typed-hubs"></a>강력한 형식의 허브
+
+사용 하 여의 단점은 `SendAsync` 클라이언트 메서드 호출 수를 지정 하는 매직 문자열에는 사용 됩니다. 이 코드 open 메서드 이름의 철자가 잘못 되어 경우 런타임 오류 또는 클라이언트에서 누락 된 경우.
+
+사용 하는 대신 `SendAsync` 강력 하 게 입력 하는 것은 `Hub` 사용 하 여 <xref:Microsoft.AspNetCore.SignalR.Hub`1>입니다. 다음 예제에서는 `ChatHub` 클라이언트 메서드 호출 하는 인터페이스에 확장 추출 된 `IChatClient`합니다.  
+
+[!code-csharp[Interface for IChatClient](hubs/sample/hubs/ichatclient.cs?name=snippet_IChatClient)]
+
+이 인터페이스는 위의 리팩터링 데 사용할 수 있습니다 `ChatHub` 예제입니다.
+
+[!code-csharp[Strongly typed ChatHub](hubs/sample/hubs/StronglyTypedChatHub.cs?range=8-18,36)]
+
+사용 하 여 `Hub<IChatClient>` 클라이언트 메서드의 컴파일 타임 검사를 사용 하도록 설정 합니다. 이후 매직 문자열을 사용 하 여 발생 하는 문제를 방지 하는이 `Hub<T>` 인터페이스에 메서드를 정의에 액세스할 수 있습니다.
+
+사용 하 여 강력한 형식의 `Hub<T>` 사용 하는 기능을 사용 하지 않도록 설정 `SendAsync`합니다.
 
 ## <a name="handle-events-for-a-connection"></a>연결에 대 한 이벤트를 처리 합니다.
 
