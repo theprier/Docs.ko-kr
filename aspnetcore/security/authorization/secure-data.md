@@ -5,12 +5,12 @@ description: 권한 부여로 보호 되는 사용자 데이터를 사용 하 �
 ms.author: riande
 ms.date: 7/24/2018
 uid: security/authorization/secure-data
-ms.openlocfilehash: a263b092194763ae4ff3360fc0d76e8ee494b5a6
-ms.sourcegitcommit: e7e1e531b80b3f4117ff119caadbebf4dcf5dcb7
+ms.openlocfilehash: e4a54c95aa8131441d29a835751ce6241aac2ed3
+ms.sourcegitcommit: 70fb7c9d5f2ddfcf4747382a9f7159feca7a6aa7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44510365"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45601771"
 ---
 ::: moniker range="<= aspnetcore-1.1"
 
@@ -269,9 +269,12 @@ Entity Framework Core를 사용 하 여 서비스에 등록 해야 합니다 [�
 
 [!code-csharp[](secure-data/samples/final2.1/Pages/Contacts/Details.cshtml.cs?name=snippet)]
 
-## <a name="add-a-user-to-a-role"></a>역할에 사용자 추가
+## <a name="add-or-remove-a-user-to-a-role"></a>추가 하거나 역할에 사용자를 제거 합니다.
 
-역할 Id 쿠키에 저장 됩니다. 쿠키를 다시 생성 될 때까지 역할 쿠키에 유지 되지 않습니다 사용자 또는 사용자로 변경 아웃 하 고 로그인 합니다. 사용자 역할에 추가 응용 프로그램을 호출 해야 `SignInManager.RefreshSignInAsync(user)` 쿠키를 업데이트 합니다.
+참조 [이 문제](https://github.com/aspnet/Docs/issues/8502) 에 대 한 내용은:
+
+* 사용자의 권한을 제거 합니다. 예를 들어 음소거 채팅 앱에서 사용자입니다.
+* 사용자에 권한을 추가 합니다.
 
 ## <a name="test-the-completed-app"></a>완성된 된 앱 테스트
 
