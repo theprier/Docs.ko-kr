@@ -29,13 +29,16 @@ ms.locfileid: "36277295"
 ## <a name="adding-a-rating-property-to-the-movie-model"></a><span data-ttu-id="2fe36-110">영화 모델에 등급 속성 추가</span><span class="sxs-lookup"><span data-stu-id="2fe36-110">Adding a Rating Property to the Movie Model</span></span>
 
 <span data-ttu-id="2fe36-111">*Models/Movie.cs* 파일을 열고 `Rating` 속성을 추가합니다.</span><span class="sxs-lookup"><span data-stu-id="2fe36-111">Open the *Models/Movie.cs* file and add a `Rating` property:</span></span>
+
 ::: moniker range="= aspnetcore-2.0"
-<span data-ttu-id="2fe36-112">[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]</span><span class="sxs-lookup"><span data-stu-id="2fe36-112">[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]</span></span>
+
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]
 
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"
-<span data-ttu-id="2fe36-113">[!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Models/MovieDateRating.cs?highlight=13&name=snippet)]</span><span class="sxs-lookup"><span data-stu-id="2fe36-113">[!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Models/MovieDateRating.cs?highlight=13&name=snippet)]</span></span>
+
+[!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Models/MovieDateRating.cs?highlight=13&name=snippet)]
 
 ::: moniker-end
 
