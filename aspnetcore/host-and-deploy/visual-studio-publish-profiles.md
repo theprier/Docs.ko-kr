@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 04/10/2018
 uid: host-and-deploy/visual-studio-publish-profiles
-ms.openlocfilehash: 2958b83de13207b93790004a4fa60b0509af3cd2
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: 751f25f74a0e24eb9ce4f2bd6b2fa462ccb03ecb
+ms.sourcegitcommit: a742b55e4b8276a48b8b4394784554fecd883c84
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41902588"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45538403"
 ---
 # <a name="visual-studio-publish-profiles-for-aspnet-core-app-deployment"></a>ASP.NET Core 앱 배포용 Visual Studio 게시 프로필
 
@@ -31,7 +31,7 @@ ms.locfileid: "41902588"
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.1.4" />
   </ItemGroup>
 
   <ItemGroup>
@@ -301,7 +301,7 @@ MSBuild 사용:
 msbuild /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
 ```
 
-## <a name="publish-to-an-msdeploy-endpoint-from-the-command-line"></a>명령줄에서 MSDeploy 끝점에 게시
+## <a name="publish-to-an-msdeploy-endpoint-from-the-command-line"></a>명령줄에서 MSDeploy 엔드포인트에 게시
 
 .NET Core CLI 또는 MSBuild를 사용하여 게시를 수행할 수 있습니다. `dotnet publish`는 .NET Core의 컨텍스트에서 실행됩니다. `msbuild` 명령의 경우 명령을 Windows 환경으로 제한하는 .NET Framework가 필요합니다.
 

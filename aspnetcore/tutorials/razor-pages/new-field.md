@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 05/30/2018
 uid: tutorials/razor-pages/new-field
-ms.openlocfilehash: d9bf8c7cea20bf38aacf432465d7b33514bcd64d
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 6c23e5ab21dbb94c69ba50200a1d76647e22410a
+ms.sourcegitcommit: 4afaa55918262c8dcbd3efa9584959a731b47681
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36277295"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45613455"
 ---
 # <a name="add-a-new-field-to-a-razor-page-in-aspnet-core"></a>ASP.NET Core의 Razor 페이지에 새 필드 추가
 
