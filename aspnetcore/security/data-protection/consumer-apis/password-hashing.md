@@ -5,12 +5,12 @@ description: ASP.NET Core 데이터 보호 Api를 사용 하 여 암호를 해�
 ms.author: riande
 ms.date: 10/14/2016
 uid: security/data-protection/consumer-apis/password-hashing
-ms.openlocfilehash: 882ac9b256b0cdf5fd19dc4bd2757cac7e8ecad3
-ms.sourcegitcommit: a742b55e4b8276a48b8b4394784554fecd883c84
+ms.openlocfilehash: 70301ffffbaaf3c5ff0642b19b80e40be83aa438
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45538379"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46010964"
 ---
 # <a name="hash-passwords-in-aspnet-core"></a>ASP.NET Core에서 해시 암호
 
@@ -26,4 +26,4 @@ ms.locfileid: "45538379"
 
 [!code-csharp[](password-hashing/samples/passwordhasher.cs)]
 
-[소스]를 참조 하세요 (https://github.com/aspnet/Identity/blob/master/src/Core/PasswordHasher.cs) ASP.NET Core Id에 대 한 `PasswordHasher` 실제 유형을 사용 사례입니다.
+참조 된 [소스 코드](https://github.com/aspnet/Identity/blob/master/src/Core/PasswordHasher.cs) ASP.NET Core Id에 대 한 `PasswordHasher` 실제 유형을 사용 사례입니다.

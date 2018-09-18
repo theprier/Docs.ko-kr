@@ -5,12 +5,12 @@ description: ASP.NET Core Id 기본 값을 이해 하 고 사용자 지정 값�
 ms.author: riande
 ms.date: 08/14/2018
 uid: security/authentication/identity-configuration
-ms.openlocfilehash: c597eacbb21ed0968e6195f7b6dcb46d37ba80a5
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: 0faab001b981c79f6afa16b2a8cf80c1ef141b11
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41870919"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011302"
 ---
 # <a name="configure-aspnet-core-identity"></a>ASP.NET Core Id를 구성 합니다.
 
@@ -66,6 +66,7 @@ ASP.NET Core Id는 암호 정책, 잠금 쿠키 구성과 같은 설정에 대 �
 ::: moniker-end
 
 ::: moniker range="= aspnetcore-2.0"
+
 [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo-Configuration/Startup.cs?range=29-37,50-52)]
 
 ::: moniker-end
@@ -102,6 +103,7 @@ ASP.NET Core Id는 암호 정책, 잠금 쿠키 구성과 같은 설정에 대 �
 ::: moniker-end
 
 ::: moniker range="<= aspnetcore-2.0"
+
 [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo-Configuration/Startup.cs?range=29-30,44-46,50-52)] 
 
 ::: moniker-end
@@ -143,9 +145,11 @@ ASP.NET Core Id는 암호 정책, 잠금 쿠키 구성과 같은 설정에 대 �
 구성에서 앱의 쿠키 `Startup.ConfigureServices`합니다. [ConfigureApplicationCookie](/dotnet/api/microsoft.extensions.dependencyinjection.identityservicecollectionextensions.configureapplicationcookie#Microsoft_Extensions_DependencyInjection_IdentityServiceCollectionExtensions_ConfigureApplicationCookie_Microsoft_Extensions_DependencyInjection_IServiceCollection_System_Action_Microsoft_AspNetCore_Authentication_Cookies_CookieAuthenticationOptions__) 를 호출 해야 합니다 **한 후** 호출 `AddIdentity` 또는 `AddDefaultIdentity`합니다.
 
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](identity-configuration/sample/Startup.cs?name=snippet_cookie)]
 
 ::: moniker-end
+
 ::: moniker range="= aspnetcore-2.0"
 
 [!code-csharp[](identity/sample/src/ASPNETv2-IdentityDemo-Configuration/Startup.cs?name=snippet_configurecookie)]

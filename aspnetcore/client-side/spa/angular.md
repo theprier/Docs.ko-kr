@@ -7,12 +7,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 02/21/2018
 uid: spa/angular
-ms.openlocfilehash: 811e28af2b67c356ff038d8d673e2164bb56578e
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 763b4fff7c64432328af660c66e6ff3f8f697f71
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36291466"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011361"
 ---
 # <a name="use-the-angular-project-template-with-aspnet-core"></a>ASP.NET Core에서 Angular 프로젝트 템플릿 사용
 
@@ -34,9 +34,10 @@ ms.locfileid: "36291466"
 ASP.NET Core 2.0을 사용하는 경우 [업데이트된 React 프로젝트 템플릿을 설치](xref:spa/index#installation)했는지 확인합니다.
 
 ::: moniker-end
+
 ::: moniker range=">= aspnetcore-2.1"
 
-ASP.NET Core 2.1이 설치 되어 있을 경우 각 프로젝트 템플릿은 설치할 필요가 없습니다.
+ASP.NET Core 2.1이 설치되어 있는 경우 Angular 프로젝트 템플릿을 설치할 필요가 없습니다.
 
 ::: moniker-end
 

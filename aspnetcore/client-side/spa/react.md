@@ -7,12 +7,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 02/21/2018
 uid: spa/react
-ms.openlocfilehash: 721ea1d4197ddd17dde657924f12dee2a6858d97
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: c83b119e81d7d0abfd727cb8c72abb09763d9448
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36291506"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011431"
 ---
 # <a name="use-the-react-project-template-with-aspnet-core"></a>ASP.NET Core에 React 프로젝트 템플릿 사용
 
@@ -34,9 +34,10 @@ ms.locfileid: "36291506"
 ASP.NET Core 2.0을 사용하는 경우 [업데이트된 React 프로젝트 템플릿을 설치](xref:spa/index#installation)했는지 확인합니다.
 
 ::: moniker-end
+
 ::: moniker range=">= aspnetcore-2.1"
 
-ASP.NET Core 2.1이 설치 되어 있을 경우 React 프로젝트 템플릿을 설치할 필요가 없습니다.
+ASP.NET Core 2.1이 설치되어 있는 경우 React 프로젝트 템플릿을 설치할 필요가 없습니다.
 
 ::: moniker-end
 

@@ -5,12 +5,12 @@ description: ASP.NET Core 앱을 사용 하 여 Id를 사용 합니다. 암호 �
 ms.author: riande
 ms.date: 08/08/2018
 uid: security/authentication/identity
-ms.openlocfilehash: af07adcc7f9513845bb91eb233f0a9840e1bd6f4
-ms.sourcegitcommit: 4db337bd47d70c06fff91000c58bc048a491ccec
+ms.openlocfilehash: ca83d07f7d93bd0cc61cd17cc373096b8e6aa2e1
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44749310"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46010977"
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>ASP.NET Core Identity 소개
 
@@ -143,6 +143,7 @@ PowerShell 명령 구분 기호로 세미콜론을 사용합니다. PowerShell�
    [!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/Register.cshtml.cs?name=snippet&highlight=7,22)]
 
 ::: moniker-end
+
 ::: moniker range="= aspnetcore-2.0"
 
    클릭할 때 합니다 **등록** 링크를 `Register` 에서 동작이 호출 될 `AccountController`. `Register` 액션은 `_userManager` 개체의 (종속성 주입으로 `AccountController`에 제공된) `CreateAsync`를 호출해서 사용자를 생성합니다:
@@ -171,6 +172,7 @@ PowerShell 명령 구분 기호로 세미콜론을 사용합니다. PowerShell�
    기본 `Controller` 클래스는 컨트롤러의 메서드에서 접근할 수 있는 `User` 속성을 제공합니다. 예를 들어, 열거할 수 있습니다 `User.Claims` 을 권한 부여 결정을 내립니다. 자세한 내용은 [권한 부여](xref:security/authorization/index)합니다.
 
 ::: moniker-end
+
 ::: moniker range="= aspnetcore-2.0"
 
 사용자가 선택할 때 로그인 양식이 표시 되는 **로그인** 연결 또는 인증을 요구 하는 페이지에 액세스할 때 자동으로 리디렉션됩니다. 사용자가 Login 페이지의 양식을 제출하면 `AccountController`의 `Login` 액션이 호출됩니다.
@@ -198,12 +200,15 @@ PowerShell 명령 구분 기호로 세미콜론을 사용합니다. PowerShell�
 [!code-csharp[](identity/sample/src/ASPNETv2.1-IdentityDemo/_LoginPartial.cshtml?highlight=10)]
 
 ::: moniker-end
+
 ::: moniker range="= aspnetcore-2.0"
+
    **LogOut** 링크를 클릭하면 `LogOut` 액션이 호출됩니다.
 
    [!code-csharp[](identity/sample/src/ASPNET-IdentityDemo/Controllers/AccountController.cs?name=snippet_logout&highlight=7)]
 
    이전 호출의 `_signInManager.SignOutAsync` 메서드. `SignOutAsync`메서드는 쿠키에 저장된 사용자의 클레임을 삭제합니다.
+
 ::: moniker-end
 
 ## <a name="test-identity"></a>테스트 Id
@@ -230,6 +235,7 @@ Identity를 자세히 탐색:
 ::: moniker range=">= aspnetcore-2.1"
 
 에 포함 된 모든 Identity 종속 된 NuGet 패키지를 [Microsoft.AspNetCore.App 메타 패키지](xref:fundamentals/metapackage-app)합니다.
+
 ::: moniker-end
 
 Id에 대 한 기본 패키지가 [Microsoft.AspNetCore.Identity](https://www.nuget.org/packages/Microsoft.AspNetCore.Identity/)합니다. ASP.NET Core Identity에 대한 주요 인터페이스 모음을 포함하고 있는 이 패키지는 `Microsoft.AspNetCore.Identity.EntityFrameworkCore`에 포함되어 있습니다.

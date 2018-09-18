@@ -4,14 +4,14 @@ author: guardrex
 description: 경로 및 앱 모델 공급자 규칙을 통해 페이지 라우팅, 검색 및 처리를 제어하는 방법을 검색합니다.
 monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
-ms.date: 04/12/2018
+ms.date: 09/17/2018
 uid: razor-pages/razor-pages-conventions
-ms.openlocfilehash: 5a5d580b4260767e411571ccacc19d6e8fe12559
-ms.sourcegitcommit: 028ad28c546de706ace98066c76774de33e4ad20
+ms.openlocfilehash: ea4f785dc8a64b430e312fd122a4d3184b61949e
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "42910028"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011864"
 ---
 # <a name="razor-pages-route-and-app-conventions-in-aspnet-core"></a>ASP.NET Core에서 Razor 페이지 경로 및 앱 규칙
 
@@ -69,6 +69,26 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
+## <a name="route-order"></a>경로 순서
+
+경로 지정을 <xref:Microsoft.AspNetCore.Mvc.ApplicationModels.AttributeRouteModel.Order*> (경로 일치)을 처리 합니다.
+
+| 순서            | 동작 |
+| :--------------: | -------- |
+| -1               | 경로 다른 경로 처리 되기 전에 처리 됩니다. |
+| 0                | 순서 지정 하지 않으면 (기본값). 할당 되지 `Order` (`Order = null`) 경로 기본값 `Order` 처리를 위해 0 (영)입니다. |
+| 1, 2, &hellip; n | 경로 처리 순서를 지정합니다. |
+
+경로 처리 규칙에 따라 설정 됩니다.
+
+* 경로 순서 대로 처리 됩니다 (-1, 0, 1, 2, &hellip; n).
+* 경로 있는 경우 동일한 `Order`가장 덜 구체적인 경로 뒤에 먼저 특정 경로가 일치 합니다.
+* 때 동일한 경로 `Order` 매개 변수 수가 같은 일치 요청 URL을 경로에 추가 된 순서 대로 처리 되는 <xref:Microsoft.AspNetCore.Mvc.ApplicationModels.PageConventionCollection>합니다.
+
+가능 하면 설정 된 경로 처리 순서에 따라 하지 마세요. 일반적으로 라우팅 URL 일치 하는 올바른 경로 선택합니다. 경로 설정 해야 하는 경우 `Order` 아마도 클라이언트로 복잡 하 고 유지 하기 위해 취약 한 응용 프로그램의 라우팅 체계는 속성 경로를 올바르게 요청 합니다. 앱의 라우팅 체계를 간소화 하기 위해 검색 합니다. 샘플 앱은 단일 앱을 사용 하는 여러 라우팅 시나리오를 시연 하려면 처리 명시적인 경로 필요 합니다. 그러나 설정 경로의 연습을 방지 하려고 해야 `Order` 프로덕션 앱에서.
+
+라우팅 razor 페이지 및 MVC 컨트롤러 라우팅 구현 공유 합니다. MVC 항목의 경로 순서에 대 한 정보에서 제공 됩니다 [컨트롤러 작업에 라우팅: 특성 경로 순서 지정](xref:mvc/controllers/routing#ordering-attribute-routes)합니다.
+
 ## <a name="model-conventions"></a>모델 규칙
 
 [IPageConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageconvention)의 대리자를 추가하여 Razor 페이지에 적용되는 [모델 규칙](xref:mvc/controllers/application-model#conventions)을 추가합니다.
@@ -81,8 +101,13 @@ public void ConfigureServices(IServiceCollection services)
 
 [!code-csharp[](razor-pages-conventions/sample/Conventions/GlobalTemplatePageRouteModelConvention.cs?name=snippet1)]
 
-> [!NOTE]
-> `AttributeRouteModel`에 대한 `Order` 속성을 `-1`로 설정합니다. 이렇게 하면 단일 경로 값이 제공될 때 이 템플릿에 첫 번째 경로 데이터 값 위치에 대한 우선 순위가 주어지며, 또한 자동으로 생성된 Razor 페이지 경로보다 우선하게 됩니다. 예를 들어 샘플은 항목의 뒷부분에서 `{aboutTemplate?}` 경로 템플릿을 추가합니다. `{aboutTemplate?}` 템플릿이 `1`의 `Order`로 제공됩니다. `/About/RouteDataValue`에서 정보 페이지를 요청하는 경우 "RouteDataValue"는 `Order` 속성 설정으로 인해 `RouteData.Values["aboutTemplate"]`(`Order = 1`)이 아닌 `RouteData.Values["globalTemplate"]`(`Order = -1`)으로 로드됩니다.
+<xref:Microsoft.AspNetCore.Mvc.ApplicationModels.AttributeRouteModel>에 대한 <xref:Microsoft.AspNetCore.Mvc.ApplicationModels.AttributeRouteModel.Order*> 속성을 `1`로 설정합니다. 이렇게 하면 샘플 앱의 동작을 일치 하는 다음 경로:
+
+* 에 대 한 경로 템플릿을 `TheContactPage/{text?}` 항목의 뒷부분에 나오는 추가 됩니다. 연락처 페이지 경로는 기본 순서 `null` (`Order = 0`) 하기 전에 일치 하도록는 `{globalTemplate?}` 경로 템플릿입니다.
+* `{aboutTemplate?}` 항목의 뒷부분에 나오는 경로 템플릿이 추가 됩니다. `{aboutTemplate?}` 템플릿이 `2`의 `Order`로 제공됩니다. `/About/RouteDataValue`에서 정보 페이지를 요청하는 경우 "RouteDataValue"는 `Order` 속성 설정으로 인해 `RouteData.Values["aboutTemplate"]`(`Order = 2`)이 아닌 `RouteData.Values["globalTemplate"]`(`Order = 1`)으로 로드됩니다.
+* `{otherPagesTemplate?}` 항목의 뒷부분에 나오는 경로 템플릿이 추가 됩니다. `{otherPagesTemplate?}` 템플릿이 `2`의 `Order`로 제공됩니다. 모든 페이지는 *페이지/OtherPages* 폴더 경로 매개 변수를 사용 하 여 요청 (예를 들어 `/OtherPages/Page1/RouteDataValue`), "RouteDataValue"는 로드 `RouteData.Values["globalTemplate"]` (`Order = 1`) 및 not `RouteData.Values["otherPagesTemplate"]` (`Order = 2`) 설정으로 인해는 `Order` 속성입니다.
+
+가능 하면 설정 하지 않은 합니다 `Order`, 그러면 `Order = 0`합니다. 올바른 경로 선택 하려면 라우팅에 의존 합니다.
 
 [규칙](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.razorpagesoptions.conventions) 추가와 같은 Razor 페이지 옵션은 MVC가 `Startup.ConfigureServices`의 서비스 컬렉션에 추가될 때 추가됩니다. 예제는 [샘플 앱](https://github.com/aspnet/Docs/tree/master/aspnetcore/razor-pages/razor-pages-conventions/sample/)을 참조하세요.
 
@@ -111,6 +136,7 @@ public void ConfigureServices(IServiceCollection services)
 ![정보 페이지의 응답 헤더는 GlobalHeader가 추가되었음을 보여줍니다.](razor-pages-conventions/_static/about-page-global-header.png)
 
 ::: moniker range=">= aspnetcore-2.1"
+
 **모든 페이지에 처리기 모델 규칙 추가**
 
 [규칙](/dotnet/api/microsoft.aspnetcore.mvc.razorpages.razorpagesoptions.conventions)을 사용하여 [IPageHandlerModelConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipagehandlermodelconvention)을 만들고, 페이지 처리기 모델을 구축하는 동안 적용되는 [IPageConvention](/dotnet/api/microsoft.aspnetcore.mvc.applicationmodels.ipageconvention) 인스턴스의 컬렉션에 추가합니다.
@@ -135,6 +161,7 @@ services.AddMvc()
             options.Conventions.Add(new GlobalPageHandlerModelConvention());
         });
 ```
+
 ::: moniker-end
 
 ## <a name="page-route-action-conventions"></a>페이지 경로 작업 규칙
@@ -149,8 +176,9 @@ services.AddMvc()
 
 [!code-csharp[](razor-pages-conventions/sample/Startup.cs?name=snippet3)]
 
-> [!NOTE]
-> `AttributeRouteModel`에 대한 `Order` 속성을 `1`로 설정합니다. 그러면 단일 경로 값을 제공하는 경우 `{globalTemplate?}`에 대한 템플릿(항목의 앞에서 설정함)이 첫 번째 경로 데이터 값 위치에 지정된 우선 순위가 됩니다. `/OtherPages/Page1/RouteDataValue`에서 Page1 페이지를 요청하는 경우 "RouteDataValue"는 `Order` 속성 설정으로 인해 `RouteData.Values["otherPagesTemplate"]`(`Order = 1`)이 아닌 `RouteData.Values["globalTemplate"]`(`Order = -1`)으로 로드됩니다.
+<xref:Microsoft.AspNetCore.Mvc.ApplicationModels.AttributeRouteModel>에 대한 <xref:Microsoft.AspNetCore.Mvc.ApplicationModels.AttributeRouteModel.Order*> 속성을 `2`로 설정합니다. 이렇게 하면에 대 한 템플릿을 `{globalTemplate?}` (항목의 앞부분에서 설정 `1`) 단일 경로 값을 제공 하는 경우 첫 번째 경로 데이터 값 위치에 대 한 우선 순위가 지정 됩니다. 경우 페이지에는 *페이지/OtherPages* 폴더 경로 매개 변수 값을 사용 하 여 요청 (예를 들어 `/OtherPages/Page1/RouteDataValue`), "RouteDataValue"는 로드 `RouteData.Values["globalTemplate"]` (`Order = 1`) 및 not `RouteData.Values["otherPagesTemplate"]` (`Order = 2`) 설정으로 인해는 `Order` 속성입니다.
+
+가능 하면 설정 하지 않은 합니다 `Order`, 그러면 `Order = 0`합니다. 올바른 경로 선택 하려면 라우팅에 의존 합니다.
 
 `localhost:5000/OtherPages/Page1/GlobalRouteValue/OtherPagesRouteValue`에서 샘플의 Page1 페이지를 요청하고 결과를 검사합니다.
 
@@ -164,8 +192,9 @@ services.AddMvc()
 
 [!code-csharp[](razor-pages-conventions/sample/Startup.cs?name=snippet4)]
 
-> [!NOTE]
-> `AttributeRouteModel`에 대한 `Order` 속성을 `1`로 설정합니다. 그러면 단일 경로 값을 제공하는 경우 `{globalTemplate?}`에 대한 템플릿(항목의 앞에서 설정함)이 첫 번째 경로 데이터 값 위치에 지정된 우선 순위가 됩니다. `/About/RouteDataValue`에서 정보 페이지를 요청하는 경우 "RouteDataValue"는 `Order` 속성 설정으로 인해 `RouteData.Values["aboutTemplate"]`(`Order = 1`)이 아닌 `RouteData.Values["globalTemplate"]`(`Order = -1`)으로 로드됩니다.
+<xref:Microsoft.AspNetCore.Mvc.ApplicationModels.AttributeRouteModel>에 대한 <xref:Microsoft.AspNetCore.Mvc.ApplicationModels.AttributeRouteModel.Order*> 속성을 `2`로 설정합니다. 이렇게 하면에 대 한 템플릿을 `{globalTemplate?}` (항목의 앞부분에서 설정 `1`) 단일 경로 값을 제공 하는 경우 첫 번째 경로 데이터 값 위치에 대 한 우선 순위가 지정 됩니다. 경로 매개 변수 값에서 정보 페이지를 요청 하는 경우 `/About/RouteDataValue`, "RouteDataValue"는 로드 `RouteData.Values["globalTemplate"]` (`Order = 1`) 및 not `RouteData.Values["aboutTemplate"]` (`Order = 2`) 설정으로 인해는 `Order` 속성입니다.
+
+가능 하면 설정 하지 않은 합니다 `Order`, 그러면 `Order = 0`합니다. 올바른 경로 선택 하려면 라우팅에 의존 합니다.
 
 `localhost:5000/About/GlobalRouteValue/AboutRouteValue`에서 샘플의 정보 페이지를 요청하고 결과를 검사합니다.
 
