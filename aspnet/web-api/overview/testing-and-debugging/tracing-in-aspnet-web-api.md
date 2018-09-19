@@ -8,12 +8,12 @@ ms.date: 02/25/2014
 ms.assetid: 66a837e9-600b-4b72-97a9-19804231c64a
 msc.legacyurl: /web-api/overview/testing-and-debugging/tracing-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 697e7e91ae2d9d5712d9306a291635793063117b
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 02805eda4f8dceb467547fa4e00aef8ea956f228
+ms.sourcegitcommit: c684eb6c0999d11d19e15e65939e5c7f99ba47df
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41838817"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46292286"
 ---
 <a name="tracing-in-aspnet-web-api-2"></a>ASP.NET Web API 2에서 추적
 ====================
@@ -114,7 +114,7 @@ Microsoft.AspNet.WebApi.Tracing 패키지는 Web API는 보다 일반적인 추�
 
 ## <a name="how-web-api-tracing-works"></a>어떻게 작동을 추적 하는 API를 웹
 
-Web API 사용 시에 웹 API를 사용 하 여 추적을 *외관* 패턴: Web API 추적을 사용 하는 경우 추적 호출을 수행 하는 클래스를 사용 하 여 요청 파이프라인의 다양 한 부분을 래핑합니다.
+Web API에서 추적에 사용 된 *외관* 패턴: Web API 추적 호출을 수행 하는 클래스를 사용 하 여 요청 파이프라인의 여러 부분을 래핑하고 추적을 사용 하는 경우.
 
 예를 들어 컨트롤러를 선택할 때 파이프라인을 사용 하 여 **IHttpControllerSelector** 인터페이스입니다. pipleline 사용 하도록 설정 하는 추적 기능을 구현 하는 클래스를 삽입 **IHttpControllerSelector** 하지만 실제 구현을 통해 호출 합니다.
 
