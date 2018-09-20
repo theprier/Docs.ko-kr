@@ -7,14 +7,16 @@ ms.assetid: fddf8e5e-c055-4f81-b691-78deef871112
 ms.author: riande
 ms.date: 09/20/2017
 ms.technology: aspnet
-ms.openlocfilehash: fa7fe92ae0a6545986f816c04c18e659718846f1
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 8f45f73c691600ae5138170db5cc4794246c4f2e
+ms.sourcegitcommit: 8bf4dff3069e62972c1b0839a93fb444e502afe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41837261"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46482972"
 ---
 # <a name="aspnet-tutorials"></a>ASP.NET 자습서
+
+[!INCLUDE[](~/includes/rp.md)]
 
 ASP.NET 응용 프로그램을 개발 하기 위한 다음 단계별 가이드를 사용할 수 있습니다.
 
@@ -23,8 +25,6 @@ ASP.NET 응용 프로그램을 개발 하기 위한 다음 단계별 가이드�
 
 ## <a name="web-forms"></a>Web Forms
 
-* [ASP.NET 4.5 Web Forms 및 Visual Studio 2013 시작](web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/index.md)
-* [Visual Studio 2013에서 기본적인 Web Forms 페이지 만들기](web-forms/overview/getting-started/creating-a-basic-web-forms-page.md)
 * [Visual Studio 2013의 코드 편집 ASP.NET Web Forms](web-forms/overview/getting-started/code-editing-in-web-forms-pages.md)
 * [Visual Studio 2012에서 페이지 검사기 사용](web-forms/overview/getting-started/hands-on-labs/using-page-inspector-in-visual-studio-2012.md)
 * [Visual Studio 2013의 모델 바인딩 및 Web Forms](web-forms/overview/presenting-and-managing-data/model-binding/index.md)
@@ -45,9 +45,6 @@ ASP.NET 응용 프로그램을 개발 하기 위한 다음 단계별 가이드�
 
 ## <a name="mvc"></a>MVC
 
-* [ASP.NET MVC 5 시작 ](mvc/overview/getting-started/introduction/index.md)
-* [MVC 5를 사용하여 EF 6 시작](mvc/overview/getting-started/getting-started-with-ef-using-mvc/index.md)
-* [ASP.NET MVC를 사용하는 EF Database First](mvc/overview/getting-started/database-first-development/index.md)
 * [ASP.NET MVC에서 페이지 검사기 사용](mvc/overview/views/using-page-inspector-in-aspnet-mvc.md)
 * [Facebook, Twitter, LinkedIn 및 Google OAuth2 로그온을 제공하는 ASP.NET MVC 5 앱 만들기(C#)](mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on.md)
 * [로그인, 전자 메일 확인 및 암호 재설정 기능이 있는 보안 ASP.NET MVC 5 웹앱 만들기(C#)](mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset.md)

@@ -4,14 +4,14 @@ author: rick-anderson
 description: ASP.NET Core에서 데이터를 메모리에 캐시하는 방법을 알아봅니다.
 ms.author: riande
 ms.custom: mvc
-ms.date: 7/22/2018
+ms.date: 09/15/2018
 uid: performance/caching/memory
-ms.openlocfilehash: 091d00ca7a30b61bdd83618e055bf23e0f2753c4
-ms.sourcegitcommit: 67a0a04ebb3b21c826e5b9600bacfc897abd6a46
+ms.openlocfilehash: 2570ad7d939d67530b3de8cd0147815c2e25ecc8
+ms.sourcegitcommit: 8bf4dff3069e62972c1b0839a93fb444e502afe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42899846"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46482985"
 ---
 # <a name="cache-in-memory-in-aspnet-core"></a>ASP.NET Core의 메모리 내 캐시
 
@@ -31,7 +31,19 @@ ASP.NET Core는 몇 가지 다른 종류의 캐시를 지원합니다. 가장 �
 
 메모리 내 캐시는 모든 개체를 저장할 수 있는 반면, 분산 캐시 인터페이스는 `byte[]`만 저장할 수 있습니다.
 
-### <a name="cache-guidelines"></a>캐시 지침
+## <a name="systemruntimecachingmemorycache"></a>System.Runtime.Caching/MemoryCache
+
+<xref:System.Runtime.Caching>/<xref:System.Runtime.Caching.MemoryCache> ([NuGet 패키지](https://www.nuget.org/packages/System.Runtime.Caching/)) 함께 사용할 수 있습니다.
+
+* .NET 표준 2.0 이상입니다.
+* 모든 [.NET 구현](/dotnet/standard/net-standard#net-implementation-support) .NET Standard 2.0 이상을 대상으로 합니다. 예를 들어, ASP.NET Core 2.0 이상.
+* .NET framework 4.5 이상
+
+[Microsoft.Extensions.Caching.Memory](https://www.nuget.org/packages/Microsoft.Extensions.Caching.Memory/) / `IMemoryCache` (이 항목에서 설명)는 것이 좋습니다 `System.Runtime.Caching` / `MemoryCache` ASP.NET Core를 더 잘 통합 되기 때문입니다. 예를 들어 `IMemoryCache` ASP.NET Core를 사용 하 여 고유 하 게 작동 [종속성 주입](xref:fundamentals/dependency-injection)합니다.
+
+사용 하 여 `System.Runtime.Caching` / `MemoryCache` ASP.NET에서 코드를 이식 하는 경우 호환성 다리 4.x ASP.NET Core에서.
+
+## <a name="cache-guidelines"></a>캐시 지침
 
 * 코드에서 데이터를 인출 하는 대체 (fallback) 옵션을 항상 있어야 하 고 **되지** 사용할 수 있는 캐시 된 값에 따라 달라 집니다.
 * 캐시는 메모리 부족 한 리소스를 사용합니다. 캐시 증가 제한 합니다.

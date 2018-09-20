@@ -7,12 +7,12 @@ ms.author: mimengis
 ms.custom: mvc
 ms.date: 09/06/2018
 uid: signalr/java-client
-ms.openlocfilehash: f110f5391ac34f5cb4a72f64c16d86c8a37369a2
-ms.sourcegitcommit: 4cd8dce371d63a66d780e4af1baab2bcf9d61b24
+ms.openlocfilehash: 0eba59a05ea6fd3fed46fcab86ac20caf40ebb65
+ms.sourcegitcommit: 8bf4dff3069e62972c1b0839a93fb444e502afe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43995421"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46482920"
 ---
 # <a name="aspnet-core-signalr-java-client"></a>ASP.NET Core SignalR Java 클라이언트
 
@@ -26,12 +26,12 @@ Java 클라이언트 Android 앱을 포함 하 여 Java 코드에서 ASP.NET Cor
 
 ## <a name="install-the-signalr-java-client-package"></a>SignalR Java 클라이언트 패키지를 설치 합니다.
 
-합니다 *signalr 0.1.0-preview1 35029* JAR 파일에는 클라이언트가 SignalR 허브에 연결할 수 있습니다. 최신 JAR 파일 버전 번호를 찾으려면 다음을 참조 합니다 [Maven 검색 결과](https://search.maven.org/search?q=g:com.microsoft.aspnet%20AND%20a:signalr&core=gav)합니다.
+합니다 *signalr-0.1.0-preview2-35174* JAR 파일에는 클라이언트가 SignalR 허브에 연결할 수 있습니다. 최신 JAR 파일 버전 번호를 찾으려면 다음을 참조 합니다 [Maven 검색 결과](https://search.maven.org/search?q=g:com.microsoft.aspnet%20AND%20a:signalr&core=gav)합니다.
 
 Gradle을 사용 하는 경우에 다음 줄을 추가 합니다 `dependencies` 의 섹션에 *build.gradle* 파일:
 
 ```gradle
-implementation 'com.microsoft.aspnet:signalr:0.1.0-preview1-35029'
+implementation 'com.microsoft.aspnet:signalr:0.1.0-preview2-35174'
 ```
 
 Maven을 사용 하 여 내에 다음 줄을 추가 합니다 `<dependencies>` 의 요소에 *pom.xml* 파일:
@@ -63,12 +63,12 @@ Maven을 사용 하 여 내에 다음 줄을 추가 합니다 `<dependencies>` �
 * 기본 형식만 매개 변수로 사용할 수 및 반환 형식입니다.
 * Api는 동기입니다.
 * 이 이번에는 "송신" 호출 유형만 지원 됩니다. "호출" 및 반환 값의 스트리밍 지원 되지 않습니다.
-* 클라이언트에서 현재 지원 하지 않습니다 합니다 [Azure SignalR Service](/azure/azure-signalr/)합니다.
 * JSON 프로토콜에만 지원 됩니다.
 * Websocket 전송만 지원 됩니다.
 
 ## <a name="additional-resources"></a>추가 자료
 
+* [Java API 참조](/java/api/com.microsoft.aspnet.signalr?view=aspnet-signalr-java)
 * <xref:signalr/hubs>
 * <xref:signalr/javascript-client>
 * <xref:signalr/publish-to-azure-web-app>

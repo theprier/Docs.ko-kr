@@ -8,16 +8,18 @@ ms.date: 03/03/2014
 ms.assetid: a2f1c635-0817-4a9a-8c13-d5b5d29727c0
 msc.legacyurl: /web-forms/overview/getting-started/creating-a-basic-web-forms-page
 msc.type: authoredcontent
-ms.openlocfilehash: 3efd772854cb97c805d61b63c03f6bae031619de
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: fda6922c0703ca442d4f1ebc5b39dabeb5ee58cd
+ms.sourcegitcommit: 8bf4dff3069e62972c1b0839a93fb444e502afe7
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41838308"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46483024"
 ---
 <a name="creating-a-basic-aspnet-45-web-forms-page-in-visual-studio-2013"></a>기본 ASP.NET 4.5 Web Forms 페이지 만들기 Visual Studio 2013
 ====================
 [Erik Reitan](https://github.com/Erikre)
+
+[!INCLUDE[](~/includes/rp.md)]
 
 이 연습에서 웹 개발 환경에 대 한 소개를 사용 하면 메시지를 표시 합니다 [Microsoft Visual Studio 2013](https://www.microsoft.com/visualstudio/11/downloads#vs) 고 [Microsoft Visual Studio Express 2013 for Web](https://www.microsoft.com/visualstudio/11/downloads#express-web)합니다. 이 연습에서는 간단한 ASP.NET Web Forms 페이지를 만드는 과정을 안내 하 고 새 페이지를 만들고, 컨트롤을 추가 하 고 코드를 작성 하는 기본적인 기술을 보여 줍니다.
 
