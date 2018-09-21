@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: 4b559e6c-4fb0-4a04-9812-45cf08ae5779
 msc.legacyurl: /signalr/overview/testing-and-debugging/troubleshooting
 msc.type: authoredcontent
-ms.openlocfilehash: 77eedeb962bed06f1375284bcf05c4e4ffcdde3b
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 9ef69ece2558260f0409e9388751f77ac84a06f1
+ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41838178"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46523079"
 ---
 <a name="signalr-troubleshooting"></a>SignalR 문제 해결
 ====================
@@ -157,7 +157,7 @@ Windows 7 같은 클라이언트 운영 체제에서 전체 버전의 IIS 사용
 
 ## <a name="configuring-iis-websockets-to-pingpong-to-detect-a-dead-client"></a>IIS websocket ping/핑퐁 비활성 클라이언트 검색을 구성 합니다.
 
-SignalR 서버 클라이언트 인지 배달 못 한 편지와 서로 연결 실패에 대 한 기본 websocket에서 알림, OnClose 콜백 하는 경우 알 수 없습니다. 이 문제를 해결 하려면 ping/핑퐁 하기 위해 IIS websockets를 구성 하는 것입니다. 이렇게 하면 예기치 않게 중단 연결이 종료 됩니다. 자세한 내용은 참조 [이 stackoverflow 게시물](http://stackoverflow.com/questions/19502755/websocket-clients-state-not-changing-on-network-loss)합니다.
+SignalR 서버 클라이언트 인지 배달 못 한 편지 및 즉 연결 실패에 대 한 기본 websocket에서 알림을 사용 하는 경우 알지는 `OnClose` 콜백 합니다. 이 문제를 해결 하려면 ping/핑퐁 하기 위해 IIS websockets를 구성 하는 것입니다. 이렇게 하면 예기치 않게 중단 연결이 종료 됩니다. 자세한 내용은 참조 [이 stackoverflow 게시물](http://stackoverflow.com/questions/19502755/websocket-clients-state-not-changing-on-network-loss)합니다.
 
 <a id="other"></a>
 

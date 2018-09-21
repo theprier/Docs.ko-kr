@@ -6,12 +6,12 @@ ms.author: scaddie
 ms.custom: H1Hack27Feb2017
 ms.date: 08/02/2017
 uid: client-side/spa-services
-ms.openlocfilehash: 6ac922d82e5c93343cd0e9df312719c6df121dcb
-ms.sourcegitcommit: 18339e3cb5a891a3ca36d8146fa83cf91c32e707
+ms.openlocfilehash: 6d6a92427d5d4b853248e60a12625573c4375515
+ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37434002"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46523300"
 ---
 # <a name="use-javascriptservices-to-create-single-page-applications-in-aspnet-core"></a>JavaScriptServices를 사용 하 여 ASP.NET Core의 단일 페이지 응용 프로그램을 만들려면
 
@@ -19,20 +19,20 @@ ms.locfileid: "37434002"
 
 단일 페이지 응용 프로그램 (SPA)에 내재 된 풍부한 사용자 경험으로 인해 웹 응용 프로그램의 인기 있는 형식입니다. 클라이언트 쪽 SPA 프레임 워크 또는 라이브러리와 같은 통합 [Angular](https://angular.io/) 또는 [반응](https://facebook.github.io/react/), ASP.NET Core 어려울 수와 같은 서버 쪽 프레임 워크를 사용 하 여 합니다. [JavaScriptServices](https://github.com/aspnet/JavaScriptServices) 통합 프로세스의 마찰을 줄이기 위해 개발 되었습니다. 클라이언트 및 서버 기술 스택 간의 원활한 작업 수 있습니다.
 
-[예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/client-side/spa-services/sample)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
-
 <a name="what-is-js-services"></a>
 
-## <a name="what-is-javascriptservices"></a>JavaScriptServices 란?
+## <a name="what-is-javascriptservices"></a>JavaScriptServices 란
 
 JavaScriptServices는 ASP.NET Core에 대 한 클라이언트 쪽 기술 컬렉션입니다. ASP.NET Core Spa를 구축 하기 위한 개발자의 기본 서버 쪽 플랫폼으로 배치 하려면 해당 목표가입니다.
 
 JavaScriptServices 세 가지 고유 NuGet 패키지 이루어져 있습니다.
+
 * [Microsoft.AspNetCore.NodeServices](https://www.nuget.org/packages/Microsoft.AspNetCore.NodeServices/) (NodeServices)
 * [Microsoft.AspNetCore.SpaServices](https://www.nuget.org/packages/Microsoft.AspNetCore.SpaServices/) (SpaServices)
 * [Microsoft.AspNetCore.SpaTemplates](https://www.nuget.org/packages/Microsoft.AspNetCore.SpaTemplates/) (SpaTemplates)
 
 이러한 패키지는 유용한 경우 있습니다.
+
 * 서버에서 JavaScript를 실행 합니다.
 * SPA 프레임 워크 나 라이브러리를 사용 하 여
 * Webpack 사용 하 여 클라이언트 쪽 자산 빌드
@@ -41,11 +41,12 @@ JavaScriptServices 세 가지 고유 NuGet 패키지 이루어져 있습니다.
 
 <a name="what-is-spa-services"></a>
 
-## <a name="what-is-spaservices"></a>SpaServices 란?
+## <a name="what-is-spaservices"></a>SpaServices 란
 
 ASP.NET Core Spa를 구축 하기 위한 개발자의 기본 서버 쪽 플랫폼으로 배치 하려면 SpaServices 만들어졌습니다. SpaServices 개발 ASP.NET Core를 사용 하 여 Spa를 필요 하지 않습니다 하 고 특정 클라이언트 프레임 워크에 사용자를 잠글 하지 않습니다.
 
 SpaServices 같은 유용한 인프라를 제공 합니다.
+
 * [서버 쪽 사전 렌더링이](#server-prerendering)
 * [Webpack 개발 미들웨어](#webpack-dev-middleware)
 * [핫 모듈 교체](#hot-module-replacement)
@@ -58,6 +59,7 @@ SpaServices 같은 유용한 인프라를 제공 합니다.
 ## <a name="prerequisites-for-using-spaservices"></a>SpaServices 사용 하기 위한 필수 구성 요소
 
 SpaServices를 사용 하려면 다음을 설치 합니다.
+
 * [Node.js](https://nodejs.org/) (버전 6 이상) npm을 사용 하 여
   * 이러한 구성 요소 설치 되 고 있을 수를 확인 하려면 명령줄에서 다음을 실행 합니다.
 
@@ -84,6 +86,7 @@ ASP.NET Core [태그 도우미](xref:mvc/views/tag-helpers/intro) 제공한 SpaS
 ### <a name="prerequisites"></a>전제 조건
 
 다음을 설치합니다.
+
 * [aspnet 사전 렌더링이](https://www.npmjs.com/package/aspnet-prerendering) npm 패키지:
 
     ```console
@@ -136,11 +139,14 @@ ASP.NET Core [태그 도우미](xref:mvc/views/tag-helpers/intro) 제공한 SpaS
 
 [Webpack 개발 미들웨어](https://webpack.github.io/docs/webpack-dev-middleware.html) Webpack 주문형 리소스를 작성 하는 반면 간소화 된 개발 워크플로 소개 합니다. 미들웨어가 자동으로 컴파일하고 브라우저에서 페이지를 다시 로드 되 면 클라이언트 쪽 리소스를 제공 합니다. 대체 방법은 타사 종속성 또는 사용자 지정 코드를 변경 하는 경우 프로젝트의 npm 빌드 스크립트를 통해 Webpack를 수동으로 호출할 것입니다. Npm에서 스크립트를 작성 합니다 *package.json* 파일 다음 예제에 표시 됩니다.
 
-[!code-json[](../client-side/spa-services/sample/SpaServicesSampleApp/package.json?range=5)]
+```json
+"build": "npm run build:vendor && npm run build:custom",
+```
 
 ### <a name="prerequisites"></a>전제 조건
 
 다음을 설치합니다.
+
 * [aspnet webpack](https://www.npmjs.com/package/aspnet-webpack) npm 패키지:
 
     ```console
@@ -168,6 +174,7 @@ Webpack의 생각할 [핫 모듈 교체](https://webpack.js.org/concepts/hot-mod
 ### <a name="prerequisites"></a>전제 조건
 
 다음을 설치합니다.
+
 * [webpack 실행 부하 과다 미들웨어](https://www.npmjs.com/package/webpack-hot-middleware) npm 패키지:
 
     ```console
@@ -205,6 +212,7 @@ app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions {
 ### <a name="prerequisites"></a>전제 조건
 
 다음을 설치합니다.
+
 * 클라이언트 쪽 라우팅 npm 패키지입니다. 예를 들어 Angular를 사용합니다.
 
     ```console
@@ -250,12 +258,13 @@ dotnet new angular
 ### <a name="set-the-runtime-configuration-mode"></a>런타임 구성 모드 설정
 
 다음과 같은 두 가지 기본 런타임 구성 모드
+
 * **개발**:
-    * 디버깅을 쉽게 수행 하려면 소스 맵이 포함 되어 있습니다.
-    * 성능에 대 한 클라이언트 쪽 코드를 최적화 하지 않습니다.
+  * 디버깅을 쉽게 수행 하려면 소스 맵이 포함 되어 있습니다.
+  * 성능에 대 한 클라이언트 쪽 코드를 최적화 하지 않습니다.
 * **프로덕션**:
-    * 소스 맵 제외합니다.
-    * 묶음 및 축소를 통해 클라이언트 쪽 코드를 최적화합니다.
+  * 소스 맵 제외합니다.
+  * 묶음 및 축소를 통해 클라이언트 쪽 코드를 최적화합니다.
 
 ASP.NET Core 라는 환경 변수를 사용 하 여 `ASPNETCORE_ENVIRONMENT` 구성 모드를 저장 합니다. 참조 **[환경을 설정할](xref:fundamentals/environments#set-the-environment)** 자세한 내용은 합니다.
 
@@ -277,7 +286,7 @@ Localhost에 따라 응용 프로그램을 시작 합니다 [런타임 구성 �
 
 ### <a name="running-with-visual-studio-2017"></a>Visual Studio 2017을 사용 하 여 실행
 
-열기는 *.csproj* 에서 생성 된 파일을 [새 dotnet](/dotnet/core/tools/dotnet-new) 명령입니다. 프로젝트를 열고 시 필요한 NuGet 및 npm 패키지를 자동으로 복원 됩니다. 이 복원 프로세스는 몇 분 정도 걸릴 수 있습니다 하 고 응용 프로그램은 작업이 완료 될 때 실행 하도록 준비 합니다. 누르거나 녹색 실행된 단추를 클릭 `Ctrl + F5`, 브라우저 응용 프로그램의 방문 페이지를 엽니다. Localhost에 따라 응용 프로그램을 실행 합니다 [런타임 구성 모드](#runtime-config-mode)합니다. 
+열기는 *.csproj* 에서 생성 된 파일을 [새 dotnet](/dotnet/core/tools/dotnet-new) 명령입니다. 프로젝트를 열고 시 필요한 NuGet 및 npm 패키지를 자동으로 복원 됩니다. 이 복원 프로세스는 몇 분 정도 걸릴 수 있습니다 하 고 응용 프로그램은 작업이 완료 될 때 실행 하도록 준비 합니다. 누르거나 녹색 실행된 단추를 클릭 `Ctrl + F5`, 브라우저 응용 프로그램의 방문 페이지를 엽니다. Localhost에 따라 응용 프로그램을 실행 합니다 [런타임 구성 모드](#runtime-config-mode)합니다.
 
 <a name="app-testing"></a>
 
@@ -308,6 +317,7 @@ npm test
 [!code-xml[](../client-side/spa-services/sample/SpaServicesSampleApp/SpaServicesSampleApp.csproj?range=31-45)]
 
 MSBuild 대상에는 다음 책임이 있습니다.
+
 1. Npm 패키지를 복원 합니다.
 1. 제 3 자, 클라이언트 쪽 자산 프로덕션 급 빌드 만들기
 1. 프로덕션 급 빌드 사용자 지정 클라이언트 쪽 자산 만들기
