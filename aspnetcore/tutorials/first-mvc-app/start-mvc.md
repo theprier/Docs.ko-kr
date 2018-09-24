@@ -5,12 +5,12 @@ description: ASP.NET Core MVC 및 Visual Studio를 시작하는 방법을 배웁
 ms.author: riande
 ms.date: 10/07/2017
 uid: tutorials/first-mvc-app/start-mvc
-ms.openlocfilehash: 1fb3947023843341403f4355c6ae1e61d7e4f6b1
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 41f986a06ec46dc025c4e8218745b4a513e8ee2a
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38217980"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011708"
 ---
 # <a name="get-started-with-aspnet-core-mvc-and-visual-studio"></a>ASP.NET Core MVC 및 Visual Studio 시작
 
@@ -28,7 +28,7 @@ ms.locfileid: "38217980"
 
 ::: moniker range=">= aspnetcore-2.1"
 
-[!INCLUDE [](~/includes/net-core-prereqs-windows.md) [](~/includes/net-core-prereqs-windows.md)]
+[!INCLUDE [](~/includes/net-core-prereqs-windows.md)]
 
 ## <a name="create-a-web-app"></a>웹앱 만들기
 
@@ -83,7 +83,7 @@ Visual Studio에서는 방금 만든 MVC 프로젝트에 대한 기본 템플릿
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
 
-[!INCLUDE [](~/includes/net-core-prereqs.md) [](~/includes/net-core-prereqs.md)]
+[!INCLUDE [](~/includes/net-core-prereqs.md)]
 
 # <a name="aspnet-core-1xtabaspnetcore1x"></a>[ASP.NET Core 1.x](#tab/aspnetcore1x/)
 
@@ -165,5 +165,6 @@ Visual Studio에서는 방금 만든 MVC 프로젝트에 대한 기본 템플릿
 이 자습서의 다음 부분에서는 MVC에 대해 알아보고 일부 코드 작성을 시작합니다.
 
 ::: moniker-end
+
 > [!div class="step-by-step"]
 > [다음](adding-controller.md)  

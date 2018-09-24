@@ -5,12 +5,12 @@ description: 이 자습서에서는 더 많은 엔터티 및 관계를 추가하
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/complex-data-model
-ms.openlocfilehash: c97acd2b943e1d4c466c060247220b3b8bab6d6b
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: 3714cf7ce705a52653394319fef1728a6ddcc3ee
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41751783"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011772"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---data-model---5-of-10"></a>ASP.NET Core MVC 및 EF Core - 데이터 모델 - 5/10
 
@@ -495,6 +495,7 @@ dotnet ef database update
 ## <a name="summary"></a>요약
 
 이제 더 복잡한 데이터 모델 및 해당 데이터베이스가 만들어졌습니다. 다음 자습서에서는 관련된 데이터에 액세스하는 방법에 대해 자세히 설명합니다.
+
 ::: moniker-end
 
 > [!div class="step-by-step"]

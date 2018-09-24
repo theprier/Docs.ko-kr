@@ -1,4 +1,5 @@
 ::: moniker range=">= aspnetcore-2.1"
+
 `[Column]` 특성에서 빨간색 물결선 > **빠른 작업 및 리팩터링**을 마우스 오른쪽 단추로 클릭하고 `using System.ComponentModel.DataAnnotations.Schema;`를 선택합니다.
 
 Entity Framework Core가 `Price`를 데이터베이스의 통화에 올바르게 매핑할 수 있도록 `[Column(TypeName = "decimal(18, 2)")]` 데이터 주석이 필요합니다. 자세한 내용은 [데이터 형식](/ef/core/modeling/relational/data-types)을 참조하세요.
@@ -75,11 +76,13 @@ Entity Framework Core가 `Price`를 데이터베이스의 통화에 올바르게
 *Pages/Movies/Edit.cshtml.cs* 파일을 검사합니다.
 
 ::: moniker range="= aspnetcore-2.0"
+
 [!code-csharp[](~/tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Edit.cshtml.cs?name=snippet2)]
 
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](~/tutorials/razor-pages/razor-pages-start/snapshot_sample/RazorPagesMovie/Pages/Movies/Edit21.cshtml.cs?name=snippet2)]
 
 ::: moniker-end

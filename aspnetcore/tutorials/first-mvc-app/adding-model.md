@@ -5,12 +5,12 @@ description: 간단한 ASP.NET Core 앱에 모델을 추가합니다.
 ms.author: riande
 ms.date: 12/8/2017
 uid: tutorials/first-mvc-app/adding-model
-ms.openlocfilehash: 28a63498bc1a3c7b6ad6be038209dacdb49e44ee
-ms.sourcegitcommit: 356c8d394aaf384c834e9c90cabab43bfe36e063
+ms.openlocfilehash: 5a820789ee3a761025d09aa78f3c42e59fc5fa38
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36960670"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011380"
 ---
 [!INCLUDE [adding-model](~/Includes/mvc-intro/adding-model1.md)]
 
@@ -102,6 +102,7 @@ System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity id
 PMC에서 다음 명령을 입력합니다.
 
 ::: moniker range=">= aspnetcore-2.1"
+
 ``` PMC
 Add-Migration Initial
 Update-Database
@@ -113,6 +114,7 @@ Update-Database
       *엔터티 형식 'Movie'에서 10진수 열 'Price'의 형식이 지정되지 않았습니다. 그러면 값이 기본 전체 자릿수 및 소수 자릿수에 적합하지 않은 경우 자동으로 잘립니다. 'ForHasColumnType()'를 사용하여 모든 값을 수용할 수 있는 SQL Server 열 형식을 명시적으로 지정합니다.*
 
 ::: moniker-end
+
 ::: moniker range="<= aspnetcore-2.0"
 
 ``` PMC
@@ -152,10 +154,15 @@ Update-Database
 [!INCLUDE [adding-model](~/Includes/mvc-intro/adding-model3.md)]
 
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie21/Startup.cs?name=ConfigureServices&highlight=13-99)]
+
 ::: moniker-end
+
 ::: moniker range="<= aspnetcore-2.0"
+
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=ConfigureServices&highlight=6-7)]
+
 ::: moniker-end
 
 [!INCLUDE [adding-model](~/Includes/mvc-intro/adding-model4.md)]

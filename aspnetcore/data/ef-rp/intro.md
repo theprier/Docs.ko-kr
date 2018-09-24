@@ -5,12 +5,12 @@ description: Entity Framework Core를 사용하여 Razor 페이지 앱을 만드
 ms.author: riande
 ms.date: 6/31/2017
 uid: data/ef-rp/intro
-ms.openlocfilehash: d74d0909f03fe4d504f21c3880ec2447cadc8b13
-ms.sourcegitcommit: a669c4e3f42e387e214a354ac4143555602e6f66
+ms.openlocfilehash: 89002f7b4a5af17a9404b14822086c7a9a6ec265
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43336096"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011461"
 ---
 # <a name="razor-pages-with-entity-framework-core-in-aspnet-core---tutorial-1-of-8"></a>ASP.NET Core에서 Entity Framework Core를 사용한 Razor 페이지 - 자습서 1/8
 
@@ -309,6 +309,7 @@ EF Core를 사용하는 비동기 코드를 작성할 때 고려해야 할 몇 �
 .NET에서의 비동기 프로그래밍에 대한 자세한 내용은 [비동기 개요](/dotnet/articles/standard/async) 및 [Async 및 Await를 사용한 비동기 프로그래밍](/dotnet/csharp/programming-guide/concepts/async/)을 참조하세요.
 
 다음 자습서에서는 기본 CRUD(만들기, 읽기, 업데이트, 삭제) 작업을 검사합니다.
+
 ::: moniker-end
 
 > [!div class="step-by-step"]

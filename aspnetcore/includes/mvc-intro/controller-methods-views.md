@@ -32,18 +32,23 @@ ASP.NET Core는 `http://localhost:1234/Movies/Edit/4`를 매개 변수 `Id`가 4
 `Movies` 컨트롤러를 열고 두 `Edit` 작업 메서드를 검사합니다. 다음 코드는 동영상을 페치하여 *Edit.cshtml* Razor 파일에서 생성된 편집 양식에 기입하는 `HTTP GET Edit` 메서드를 보여 줍니다. 
 
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie21/Controllers/MC1.cs?name=snippet_edit1)]
 
 다음 코드는게시된 동영상 값을 처리하는 `HTTP POST Edit` 메서드를 보여 줍니다.
 
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MC1.cs?name=snippet_edit2)]
+
 ::: moniker-end
+
 ::: moniker range="<= aspnetcore-2.0"
+
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MC1.cs?name=snippet_edit1)]
 
 다음 코드는게시된 동영상 값을 처리하는 `HTTP POST Edit` 메서드를 보여 줍니다.
 
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MC1.cs?name=snippet_edit2)]
+
 ::: moniker-end
 
 `[Bind]` 특성은 하나의 [과도 게시](/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application#overpost) 방지 방법입니다. 변경하려는 속성만 `[Bind]` 특성에 포함해야 합니다. 자세한 내용은 [과도 게시로부터 컨트롤러 보호](/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application)를 참조하세요. [ViewModels](http://rachelappel.com/use-viewmodels-to-manage-data-amp-organize-code-in-asp-net-mvc-applications/)는 과도 게시를 방지하기 위한 다른 방법을 제공합니다.
@@ -51,10 +56,15 @@ ASP.NET Core는 `http://localhost:1234/Movies/Edit/4`를 매개 변수 `Id`가 4
 두 번째 `Edit` 작업 메서드는 `[HttpPost]` 특성 뒤에 옵니다.
 
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie21/Controllers/MC1.cs?name=snippet_edit2&highlight=1)]
+
 ::: moniker-end
+
 ::: moniker range="<= aspnetcore-2.0"
+
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MC1.cs?name=snippet_edit2&highlight=4)]
+
 ::: moniker-end
 
 `HttpPost` 특성은 이 `Edit` 메서드가 `POST` 요청에 *대해서만* 호출될 수 있음을 지정합니다. `[HttpGet]` 특성을 첫 번째 편집 메서드에 적용할 수 있으나 `[HttpGet]`이 기본값이므로 그럴 필요가 없습니다.
@@ -68,10 +78,15 @@ ASP.NET Core는 `http://localhost:1234/Movies/Edit/4`를 매개 변수 `Id`가 4
 `HttpGet Edit` 메서드는 동영상 `ID` 매개 변수를 취하며, Entity Framework `SingleOrDefaultAsync` 메서드를 사용하여 동영상을 검색하고, 선택된 동영상을 편집 보기에 반환합니다. 동영상을 찾을 수 없는 경우 `NotFound`(HTTP 404)를 반환합니다.
 
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie21/Controllers/MC1.cs?name=snippet_edit1)]
+
 ::: moniker-end
+
 ::: moniker range="<= aspnetcore-2.0"
+
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MC1.cs?name=snippet_edit1)]
+
 ::: moniker-end
 
 편집 보기에서 스캐폴딩 시스템이 만들어질 때 `Movie` 클래스를 조사하고 클래스의 각 속성에 대해 `<label>` 및 `<input>` 요소를 렌더링하기 위한 코드를 만들었습니다. 다음 예제에서는 Visual Studio 스캐 폴딩 시스템에서 생성된 편집 보기를 보여 줍니다.
@@ -93,10 +108,15 @@ ASP.NET Core는 `http://localhost:1234/Movies/Edit/4`를 매개 변수 `Id`가 4
 다음 목록은 `Edit` 작업 메서드의 `[HttpPost]` 버전을 보여 줍니다.
 
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie21/Controllers/MC1.cs?name=snippet_edit2)]
+
 ::: moniker-end
+
 ::: moniker range="<= aspnetcore-2.0"
+
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Controllers/MC1.cs?name=snippet_edit2)]
+
 ::: moniker-end
 
 `[ValidateAntiForgeryToken]` 특성은 [Form 태그 도우미](xref:mvc/views/working-with-forms)의 위조 방지 토큰 생성기에서 생성된 숨겨진 [XSRF](xref:security/anti-request-forgery) 토큰의 유효성을 검사합니다.

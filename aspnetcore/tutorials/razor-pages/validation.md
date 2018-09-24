@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/07/2017
 uid: tutorials/razor-pages/validation
-ms.openlocfilehash: ea3f26f9377715ea27f19908932d2dcf3cfcbea6
-ms.sourcegitcommit: a3675f9704e4e73ecc7cbbbf016a13d2a5c4d725
+ms.openlocfilehash: e27253e3f02fa808136494ed5373059ef6e0df0d
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39202603"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011595"
 ---
 # <a name="add-validation-to-an-aspnet-core-razor-page"></a>ASP.NET Core Razor 페이지에 유효성 검사 추가
 
@@ -32,6 +32,7 @@ Razor 페이지에서 제공하는 유효성 검사 지원 및 Entity Framework�
 `Required`, `StringLength`, `RegularExpression` 및 `Range` 유효성 검사 특성을 활용하도록 `Movie` 클래스를 업데이트합니다.
 
 ::: moniker range="= aspnetcore-2.0"
+
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieDateRatingDA.cs?name=snippet1)]
 
 ::: moniker-end
@@ -113,7 +114,9 @@ ASP.NET Core에 의해 자동으로 적용되는 유효성 검사 규칙을 사�
 `DataType.Date`는 표시되는 날짜의 서식을 지정하지 않습니다. 기본적으로 데이터 필드는 서버 `CultureInfo`의 기본 형식에 따라 표시됩니다.
 
 ::: moniker range=">= aspnetcore-2.1"
+
 Entity Framework Core가 `Price`를 데이터베이스의 통화에 올바르게 매핑할 수 있도록 `[Column(TypeName = "decimal(18, 2)")]` 데이터 주석이 필요합니다. 자세한 내용은 [데이터 형식](/ef/core/modeling/relational/data-types)을 참조하세요.
+
 ::: moniker-end
 
 `DisplayFormat` 특성은 날짜 형식을 명시적으로 지정하는 데 사용됩니다.
@@ -142,11 +145,13 @@ public DateTime ReleaseDate { get; set; }
 다음 코드는 한 줄에 결합 특성을 보여 줍니다.
 
 ::: moniker range="= aspnetcore-2.0"
+
 [!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Models/MovieDateRatingDAmult.cs?name=snippet1)]
 
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Models/MovieDateRatingDAmult.cs?name=snippet1)]
 
 ::: moniker-end

@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/08/2018
 uid: tutorials/first-web-api-mac
-ms.openlocfilehash: 4caa6d9057de8d0e821c4abefe22985f43ff95ad
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 40f9bd9c57b97826edfddeb00cb4fb38a026d46e
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38156142"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011627"
 ---
 # <a name="create-a-web-api-with-aspnet-core-and-visual-studio-for-mac"></a>ASP.NET Core 및 Mac용 Visual Studio를 사용하여 Web API 만들기
 
@@ -126,14 +126,19 @@ Visual Studio에서 **실행** > **디버깅 시작**을 선택하여 앱을 시
 ### <a name="create"></a>만들기
 
 ::: moniker range="<= aspnetcore-2.0"
+
 [!code-csharp[](first-web-api/samples/2.0/TodoApi/Controllers/TodoController.cs?name=snippet_Create)]
 
 이전 메서드는 [[HttpPost]](/dotnet/api/microsoft.aspnetcore.mvc.httppostattribute) 특성으로 표시되는 HTTP POST에 응답합니다. [[FromBody]](/dotnet/api/microsoft.aspnetcore.mvc.frombodyattribute) 특성은 HTTP 요청 본문에서 할 일 항목 값을 가져오도록 MVC에 지시합니다.
+
 ::: moniker-end
+
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](first-web-api/samples/2.1/TodoApi/Controllers/TodoController.cs?name=snippet_Create)]
 
 이전 메서드는 [[HttpPost]](/dotnet/api/microsoft.aspnetcore.mvc.httppostattribute) 특성으로 표시되는 HTTP POST에 응답합니다. MVC는 HTTP 요청 본문에서 할 일 항목 값을 가져옵니다.
+
 ::: moniker-end
 
 `CreatedAtRoute` 메서드는 201 응답을 반환합니다. 이는 서버에서 새 리소스를 만드는 HTTP POST 메서드의 표준 응답입니다. `CreatedAtRoute`는 응답에 대한 위치 헤더도 추가합니다. 위치 헤더는 새로 만들어진 할 일 항목의 URI를 지정합니다. [10.2.2 201 Created](https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)(10.2.2 201 생성됨)를 참조하세요.
@@ -162,8 +167,10 @@ Visual Studio에서 **실행** > **디버깅 시작**을 선택하여 앱을 시
 * **보내기** 단추를 클릭합니다.
 
 ::: moniker range=">= aspnetcore-2.1"
+
 > [!TIP]
 > **보내기**를 클릭한 후 응답이 표시되지 않는 경우 **SSL 인증 유효성 검사** 옵션을 사용하지 않습니다. 이 옵션은 **파일** > **설정** 아래에 있습니다. 설정을 사용하지 못하게 한 후 **보내기** 단추를 다시 클릭합니다.
+
 ::: moniker-end
 
 **응답** 창에서 **헤더** 탭을 클릭하고 **위치** 헤더 값을 복사합니다.
@@ -179,10 +186,15 @@ Visual Studio에서 **실행** > **디버깅 시작**을 선택하여 앱을 시
 ### <a name="update"></a>업데이트
 
 ::: moniker range="<= aspnetcore-2.0"
+
 [!code-csharp[](first-web-api/samples/2.0/TodoApi/Controllers/TodoController.cs?name=snippet_Update)]
+
 ::: moniker-end
+
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](first-web-api/samples/2.1/TodoApi/Controllers/TodoController.cs?name=snippet_Update)]
+
 ::: moniker-end
 
 `Update`는 `Create`와 비슷하지만 HTTP PUT을 사용합니다. 응답은 [204(콘텐츠 없음)](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)입니다. HTTP 사양에 따라 PUT 요청의 경우 클라이언트는 델타만이 아니라 전체 업데이트된 엔터티를 보내야 합니다. 부분 업데이트를 지원하려면 HTTP PATCH를 사용합니다.

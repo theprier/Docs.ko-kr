@@ -6,12 +6,12 @@ monikerRange: '>= aspnetcore-2.0'
 ms.author: riande
 ms.date: 08/07/2017
 uid: tutorials/razor-pages/sql
-ms.openlocfilehash: ef4e1fb3bf1ac1b3695ff89d6692ac6fa1641e31
-ms.sourcegitcommit: 5a2456cbf429069dc48aaa2823cde14100e4c438
+ms.openlocfilehash: 20e2353eb2e453235c2fb04c696a7e3d27bed5bf
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/22/2018
-ms.locfileid: "41820161"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011276"
 ---
 # <a name="work-with-sql-server-localdb-and-aspnet-core"></a>SQL Server LocalDB 및 ASP.NET Core 사용
 
@@ -20,11 +20,13 @@ ms.locfileid: "41820161"
 `MovieContext` 개체는 데이터베이스에 연결하고 데이터베이스 레코드에 `Movie` 개체를 매핑하는 작업을 처리합니다. 데이터베이스 컨텍스트는 *Startup.cs* 파일의 `ConfigureServices` 메서드에서 [종속성 주입](xref:fundamentals/dependency-injection) 컨테이너에 등록됩니다.
 
 ::: moniker range="= aspnetcore-2.0"
+
 [!code-csharp[](razor-pages-start/sample/RazorPagesMovie/Startup.cs?name=snippet_ConfigureServices&highlight=7-8)]
 
 ::: moniker-end
 
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](razor-pages-start/sample/RazorPagesMovie21/Startup.cs?name=snippet_ConfigureServices&highlight=12-13)]
 
 `ConfigureServices`에서 사용되는 메서드에 대한 자세한 내용은 다음을 참조하세요.

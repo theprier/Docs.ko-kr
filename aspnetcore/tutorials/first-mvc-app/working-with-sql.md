@@ -5,12 +5,12 @@ description: 간단한 ASP.NET Core MVC 앱에서 SQL Server LocalDB를 사용�
 ms.author: riande
 ms.date: 03/07/2017
 uid: tutorials/first-mvc-app/working-with-sql
-ms.openlocfilehash: 2981035222681e6badbb0d917e4091baa96b9af1
-ms.sourcegitcommit: a09820f91e71a7d98b7347bf93210abb9e995e22
+ms.openlocfilehash: fadd7be793b1ff6e863b549271acd5b6b2cc9305
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37889131"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011851"
 ---
 # <a name="work-with-sql-server-localdb-in-aspnet-core"></a>ASP.NET Core에서 SQL Server LocalDB 사용
 
@@ -19,10 +19,15 @@ ms.locfileid: "37889131"
 `MvcMovieContext` 개체는 데이터베이스에 연결하고 데이터베이스 레코드에 `Movie` 개체를 매핑하는 작업을 처리합니다. 데이터베이스 컨텍스트는 *Startup.cs* 파일의 `ConfigureServices` 메서드에서 [종속성 주입](xref:fundamentals/dependency-injection) 컨테이너에 등록됩니다.
 
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie21/Startup.cs?name=ConfigureServices&highlight=13-99)]
+
 ::: moniker-end
+
 ::: moniker range="<= aspnetcore-2.0"
+
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Startup.cs?name=ConfigureServices&highlight=6-7)]
+
 ::: moniker-end
 
 ASP.NET Core [구성](xref:fundamentals/configuration/index) 시스템은 `ConnectionString`을 읽습니다. 로컬 개발의 경우 *appsettings.json* 파일에서 연결 문자열을 가져옵니다.
@@ -74,8 +79,11 @@ if (context.Movie.Any())
 *Program.cs*의 내용을 다음 코드로 바꿉니다.
 
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie21/Program.cs)]
+
 ::: moniker-end
+
 ::: moniker range="<= aspnetcore-2.0"
 
 # <a name="aspnet-core-2xtabaspnetcore2x"></a>[ASP.NET Core 2.x](#tab/aspnetcore2x/)
@@ -91,6 +99,7 @@ if (context.Movie.Any())
 [!code-csharp[](start-mvc/sample/MvcMovie/Startup.cs?highlight=9&name=snippet_seed)]
 
 ---
+
 ::: moniker-end
 
 앱 테스트

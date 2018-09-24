@@ -5,12 +5,12 @@ description: 이 자습서에서는 Entity Framework Core를 사용하는 ASP.NE
 ms.author: tdykstra
 ms.date: 03/15/2017
 uid: data/ef-mvc/advanced
-ms.openlocfilehash: 25916365b4e682a8e296e0affbcddd4f1e5846b1
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: 5cdba79c0b8edd9b865bda8328c86356cbe6a0a2
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41751681"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46010925"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---advanced---10-of-10"></a>ASP.NET Core MVC 및 EF Core - 고급 - 10/10
 
@@ -244,6 +244,7 @@ dotnet ef database drop
 해결책:
 
 연결 문자열을 확인합니다. 데이터베이스 파일을 수동으로 삭제한 경우 새 데이터베이스로 시작하도록 생성 문자열에서 데이터베이스 이름을 변경합니다.
+
 ::: moniker-end
 
 > [!div class="step-by-step"]

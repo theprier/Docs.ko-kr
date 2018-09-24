@@ -14,4 +14,5 @@
 * 새 응용 프로그램 개발을 위해 선호되는 방법입니다.
 
 [Razor Pages](xref:data/ef-rp/intro) 버전에서 이 자습서를 선택하는 경우 [이 GitHub 토론](https://github.com/aspnet/Docs/issues/6146)에서 선택한 이유를 알려주세요.
+
 ::: moniker-end

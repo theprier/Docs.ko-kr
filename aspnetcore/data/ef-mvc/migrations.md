@@ -5,12 +5,12 @@ description: 이 자습서에서는 ASP.NET Core MVC 응용 프로그램에서 �
 ms.author: tdykstra
 ms.date: 03/15/2018
 uid: data/ef-mvc/migrations
-ms.openlocfilehash: f710b33ac1a6017b0e3d7e8c3e528675a41424bb
-ms.sourcegitcommit: b8a2f14bf8dd346d7592977642b610bbcb0b0757
+ms.openlocfilehash: 556d7d4ad05679ebfce6c909b29610482bb3f350
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38194172"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46011471"
 ---
 # <a name="aspnet-core-mvc-with-ef-core---migrations---4-of-10"></a>ASP.NET Core MVC 및 EF Core - 마이그레이션 - 4/10
 
@@ -165,6 +165,7 @@ PMC 명령에 대한 자세한 내용은 [패키지 관리자 콘솔(Visual Stud
 ## <a name="summary"></a>요약
 
 이 자습서에서는 첫 번째 마이그레이션을 만들고 적용하는 방법을 살펴보았습니다. 다음 자습서에서는 데이터 모델을 확장하여 더 많은 고급 항목을 살펴봅니다. 방식에 따라 추가 마이그레이션을 만들고 적용하게 됩니다.
+
 ::: moniker-end
 
 > [!div class="step-by-step"]

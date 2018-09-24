@@ -5,12 +5,12 @@ description: Entity Framework Code First 마이그레이션을 사용하여 모�
 ms.author: riande
 ms.date: 10/06/2017
 uid: tutorials/first-mvc-app/new-field
-ms.openlocfilehash: 74f7a98143c80504d534c5ee4fd06b3dd076a2f2
-ms.sourcegitcommit: ecf2cd4e0613569025b28e12de3baa21d86d4258
+ms.openlocfilehash: b63bad99c4a966703634c711e5406d86e5bd140c
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43312233"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46010886"
 ---
 # <a name="add-a-new-field-to-an-aspnet-core-mvc-app"></a>ASP.NET Core MVC 앱에 새 필드 추가
 
@@ -25,10 +25,15 @@ EF Code First를 사용하여 자동으로 데이터베이스를 만들 때 Code
 *Models/Movie.cs* 파일을 열고 `Rating` 속성을 추가합니다.
 
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie21/Models/MovieDateRating.cs?highlight=13&name=snippet)]
+
 ::: moniker-end
+
 ::: moniker range="<= aspnetcore-2.0"
+
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieDateRating.cs?highlight=11&range=7-18)]
+
 ::: moniker-end
 
 앱을 빌드합니다(Ctrl+Shift+B).

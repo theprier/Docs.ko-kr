@@ -5,12 +5,12 @@ description: ASP.NET Core에서 보기 구성 요소가 사용되는 방법 및 
 ms.author: riande
 ms.date: 02/14/2017
 uid: mvc/views/view-components
-ms.openlocfilehash: c4e4de6e4ffb634a636bccdb2a929a524baebecf
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: 0410e2025019bae45d941e61f556f4b2b57bd30f
+ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41751503"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46010912"
 ---
 # <a name="view-components-in-aspnet-core"></a>ASP.NET Core의 보기 구성 요소
 
@@ -68,16 +68,16 @@ ms.locfileid: "41751503"
 * `IViewComponentResult`를 반환하는 `InvokeAsync` 메서드를 정의합니다.
 * 일반적으로 모델을 초기화하고 `ViewComponent` `View` 메서드를 호출하여 뷰에 전달합니다.
 * 매개 변수는 HTTP가 아닌 호출 메서드에서 가져오며 모델 바인딩이 없습니다.
-* HTTP 끝점으로 직접 연결할 수 없으며 코드(일반적으로 뷰에서)에서 호출됩니다. 뷰 구성 요소는 요청을 처리하지 않습니다.
+* HTTP 엔드포인트로 직접 연결할 수 없으며 코드(일반적으로 뷰에서)에서 호출됩니다. 뷰 구성 요소는 요청을 처리하지 않습니다.
 * 현재 HTTP 요청의 세부 정보가 아닌 서명에 오버로드됩니다.
 
 ### <a name="view-search-path"></a>뷰 검색 경로
 
 런타임은 다음 경로에서 뷰를 검색합니다.
 
-* /Pages/Components/<component name>/\<view_name>
-* Views/\<controller_name>/Components/\<view_component_name>/\<view_name>
-* Views/Shared/Components/\<view_component_name>/\<view_name>
+* /Pages/Components/\<view_component_name>/\<view_name>
+* /Views/\<controller_name>/Components/\<view_component_name>/\<view_name>
+* /Views/Shared/Components/\<view_component_name>/\<view_name>
 
 뷰 구성 요소에 대한 기본 뷰 이름은 *Default*이며 이것은 일반적으로 뷰 파일의 이름이 *Default.cshtml*로 지정됨을 의미합니다. 뷰 구성 요소 결과를 만들거나 `View` 메서드를 호출할 때 다른 뷰 이름을 지정할 수 있습니다.
 
@@ -130,7 +130,7 @@ ASP.NET Core 1.1 이상에서는 뷰 구성 요소를 [태그 도우미](xref:mv
 
 ### <a name="invoking-a-view-component-directly-from-a-controller"></a>컨트롤러에서 뷰 구성 요소 직접 호출
 
-일반적으로 뷰 구성 요소는 뷰에서 호출되지만 컨트롤러 메서드에서 직접 호출할 수 있습니다. 뷰 구성 요소는 컨트롤러와 같은 끝점을 정의하지 않지만 `ViewComponentResult`의 내용을 반환하는 컨트롤러 동작을 쉽게 구현할 수 있습니다.
+일반적으로 뷰 구성 요소는 뷰에서 호출되지만 컨트롤러 메서드에서 직접 호출할 수 있습니다. 뷰 구성 요소는 컨트롤러와 같은 엔드포인트를 정의하지 않지만 `ViewComponentResult`의 내용을 반환하는 컨트롤러 동작을 쉽게 구현할 수 있습니다.
 
 이 예제에서는 뷰 구성 요소가 컨트롤러에서 직접 호출됩니다.
 
