@@ -6,12 +6,12 @@ ms.author: scaddie
 ms.custom: mvc
 ms.date: 01/10/2018
 uid: client-side/bundling-and-minification
-ms.openlocfilehash: bab2f288f3c6956e44ff929bfd2e257301a5806a
-ms.sourcegitcommit: d99a8554c91f626cf5e466911cf504dcbff0e02e
+ms.openlocfilehash: 45200d34974cbbb44787616eba7508458882416c
+ms.sourcegitcommit: 4d5f8680d68b39c411b46c73f7014f8aa0f12026
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39356703"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47028143"
 ---
 # <a name="bundle-and-minify-static-assets-in-aspnet-core"></a>번들 및 ASP.NET Core에서 정적 자산을 축소
 
@@ -201,7 +201,7 @@ dotnet bundle
 > 또는 다음 와일드 카드 사용 패턴을 사용할 수 있습니다.
 >
 > ```json
-> "inputFiles": ["wwwroot/**/*(*.css|!(*.min.css)"]
+> "inputFiles": ["wwwroot/**/*(*.css|!(*.min.css))"]
 > ```
 >
 > 모든 CSS 파일과 일치 하는 축소 된 파일 패턴을 제외 하는이 와일드 카드 사용 패턴입니다.

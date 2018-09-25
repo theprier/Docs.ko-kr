@@ -4,14 +4,14 @@ author: rick-anderson
 description: 저장 하 고 ASP.NET Core 앱을 개발 하는 동안 앱 암호 '로 중요 한 정보를 검색 하는 방법에 알아봅니다.
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 08/16/2018
+ms.date: 09/24/2018
 uid: security/app-secrets
-ms.openlocfilehash: 35c316230c19aa69a0dac26ec25a6e017f102237
-ms.sourcegitcommit: 1cf65c25ed16495e27f35ded98b3952a30c68f36
+ms.openlocfilehash: 1ecd9b87b9e4aa2c511349fe407c0cea9dc9f921
+ms.sourcegitcommit: 4d5f8680d68b39c411b46c73f7014f8aa0f12026
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "41836154"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47028273"
 ---
 # <a name="safe-storage-of-app-secrets-in-development-in-aspnet-core"></a>ASP.NET Core에서 개발 앱 암호의 안전한 저장소
 
@@ -19,7 +19,7 @@ ms.locfileid: "41836154"
 
 [예제 코드 살펴보기 및 다운로드](https://github.com/aspnet/Docs/tree/master/aspnetcore/security/app-secrets/samples)([다운로드 방법](xref:tutorials/index#how-to-download-a-sample))
 
-이 문서에 저장 하 고 ASP.NET Core 앱을 개발 하는 동안 중요 한 데이터를 검색 하는 기술을 설명 합니다. 소스 코드에서 암호 또는 기타 중요 한 데이터를 저장 하지 말아야 하 고 개발에서 프로덕션 비밀을 사용 하거나 모드를 테스트 하면 안 됩니다. [Azure Key Vault 구성 제공자](xref:security/key-vault-configuration)로 Azure 테스트 및 프로덕션 암호를 저장하고 보호할 수 있습니다.
+이 문서에 저장 하 고 ASP.NET Core 앱을 개발 하는 동안 중요 한 데이터를 검색 하는 기술을 설명 합니다. 소스 코드에서 암호 또는 기타 중요 한 데이터를 저장 하지 마십시오. 프로덕션 비밀을 사용할 수 없습니다 개발 또는 테스트에 대 한 합니다. [Azure Key Vault 구성 제공자](xref:security/key-vault-configuration)로 Azure 테스트 및 프로덕션 암호를 저장하고 보호할 수 있습니다.
 
 ## <a name="environment-variables"></a>환경 변수
 

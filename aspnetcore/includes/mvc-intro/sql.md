@@ -37,10 +37,15 @@ if (context.Movie.Any())
 *Program.cs* 파일에서 `Main` 메서드에 시드 이니셜라이저를 추가합니다.
 
 ::: moniker range=">= aspnetcore-2.1"
+
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie21/Program.cs)]
+
 ::: moniker-end
+
 ::: moniker range="<= aspnetcore-2.0"
+
 [!code-csharp[](~/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Program.cs?highlight=6,16-32)]
+
 ::: moniker-end
 
 ### <a name="test-the-app"></a>앱 테스트
