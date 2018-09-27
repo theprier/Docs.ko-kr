@@ -5,12 +5,12 @@ description: ASP.NET Core 및 키 저장소 위치를 구성 하는 방법에 �
 ms.author: riande
 ms.date: 07/16/2018
 uid: security/data-protection/implementation/key-storage-providers
-ms.openlocfilehash: e712ff09b5306bc4481c4cc105448d7cbfa39f3a
-ms.sourcegitcommit: d99a8554c91f626cf5e466911cf504dcbff0e02e
+ms.openlocfilehash: 0e64a65ab1d65efa9f2e4d36a23663b607f206d7
+ms.sourcegitcommit: 9bdba90b2c97a4016188434657194b2d7027d6e3
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/31/2018
-ms.locfileid: "39356768"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47402070"
 ---
 # <a name="key-storage-providers-in-aspnet-core"></a>ASP.NET Core에서 키 저장소 공급자
 
@@ -78,6 +78,24 @@ public void ConfigureServices(IServiceCollection services)
 
 > [!IMPORTANT]
 > 사용 하는 것이 좋습니다 [Windows DPAPI](xref:security/data-protection/implementation/key-encryption-at-rest) 미사용 키를 암호화 합니다.
+
+::: moniker range=">= aspnetcore-2.2"
+
+## <a name="entity-framework-core"></a>Entity Framework Core
+
+합니다 [Microsoft.AspNetCore.DataProtection.EntityFrameworkCore](https://www.nuget.org/packages/Microsoft.AspNetCore.DataProtection.EntityFrameworkCore/) 패키지 Entity Framework Core를 사용 하 여 데이터베이스에 데이터 보호 키를 저장 하기 위한 메커니즘을 제공 합니다. 합니다 `Microsoft.AspNetCore.DataProtection.EntityFrameworkCore` NuGet 패키지 추가 해야 프로젝트 파일에 없는 부분을 [Microsoft.AspNetCore.App 메타 패키지](xref:fundamentals/metapackage-app)합니다.
+
+이 패키지를 사용 하 여 키를 웹 앱의 여러 인스턴스에서 공유할 수 있습니다.
+
+EF Core 공급자를 구성 하려면 다음을 호출 합니다 [ `PersistKeysToDbContext<TContext>` ](/dotnet/api/microsoft.aspnetcore.dataprotection.entityframeworkcoredataprotectionextensions.persistkeystodbcontext) 메서드:
+
+[!code-csharp[Main](key-storage-providers/sample/Startup.cs?name=snippet&highlight=13-15)]
+
+제네릭 매개 변수 `TContext`에서 상속 되어야 [DbContext](/dotnet/api/microsoft.entityframeworkcore.dbcontext) 하 고 [IDataProtectionKeyContext](/dotnet/api/microsoft.aspnetcore.dataprotection.entityframeworkcore.idataprotectionkeycontext):
+
+[!code-csharp[Main](key-storage-providers/sample/MyKeysContext.cs)]
+
+::: moniker-end
 
 ## <a name="custom-key-repository"></a>사용자 지정 키 저장소
 
