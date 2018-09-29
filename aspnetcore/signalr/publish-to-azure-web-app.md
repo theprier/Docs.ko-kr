@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 04/20/2018
 uid: signalr/publish-to-azure-web-app
-ms.openlocfilehash: b0126771a9ba3a28a7af14adf5b5959c7591e5fb
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: a6a0e44f5c67fefdac6bd26b3772c23e75f8bfc1
+ms.sourcegitcommit: 32f5ee0690604d451f61e9a5c28881c9fcf85738
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39095296"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "47454728"
 ---
 # <a name="publish-an-aspnet-core-signalr-app-to-an-azure-web-app"></a>게시는 ASP.NET Core SignalR 앱을 Azure 웹 앱
 
@@ -23,7 +23,7 @@ ms.locfileid: "39095296"
 
 ## <a name="publish-the-app"></a>앱 게시
 
-Visual Studio를 Azure 웹 앱 게시에 대 한 기본 제공 도구를 제공합니다. Visual Studio Code 사용자 사용할 수 있습니다 [Azure CLI](/cli/azure) Azure에 앱을 게시 하는 명령입니다. 이 문서에서는 Visual Studio에서 도구를 사용 하 여 게시에 대해 설명 합니다. Azure CLI를 사용 하 여 앱을 게시 하려면 참조 [명령줄 도구를 사용 하 여 Azure에 ASP.NET Core 앱을 게시](xref:tutorials/publish-to-azure-webapp-using-cli)합니다.
+Visual Studio를 Azure 웹 앱 게시에 대 한 기본 제공 도구를 제공합니다. Visual Studio Code 사용자 사용할 수 있습니다 [Azure CLI](/cli/azure) Azure에 앱을 게시 하는 명령입니다. 이 문서에서는 Visual Studio에서 도구를 사용 하 여 게시에 대해 설명 합니다. Azure CLI를 사용 하 여 앱을 게시 하려면 참조 [명령줄 도구를 사용 하 여 Azure에 ASP.NET Core 앱을 게시](/azure/app-service/app-service-web-get-started-dotnet)합니다.
 
 프로젝트를 마우스 오른쪽 단추로 클릭 **솔루션 탐색기** 선택한 **게시**합니다. 확인 **새로 만들기** 체크 인 합니다 **게시 대상 선택** 대화 상자에서 선택한 **게시**합니다.
 
@@ -63,6 +63,6 @@ Azure portal로 이동 **앱 설정** 웹 앱에 대 한 합니다. 설정 **Web
 
 ## <a name="related-resources"></a>관련 참고 자료
 
-* [명령줄 도구를 사용 하 여 Azure에 ASP.NET Core 앱 게시](xref:tutorials/publish-to-azure-webapp-using-cli?tabs=windows)
+* [명령줄 도구를 사용 하 여 Azure에 ASP.NET Core 앱 게시](/azure/app-service/app-service-web-get-started-dotnet)
 * [Visual Studio 사용 하 여 Azure에 ASP.NET Core 앱 게시](xref:tutorials/publish-to-azure-webapp-using-vs)
 * [호스트 및 Azure에서 ASP.NET Core 미리 보기 앱 배포](xref:host-and-deploy/azure-apps/index#deploy-aspnet-core-preview-release-to-azure-app-service)

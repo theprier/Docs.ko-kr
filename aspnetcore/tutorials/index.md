@@ -5,12 +5,12 @@ description: ASP.NET Core 응용 프로그램을 개발하는 방법을 배우�
 ms.author: riande
 ms.date: 10/14/2017
 uid: tutorials/index
-ms.openlocfilehash: d103c351595f0d61e5f0ee14492f9f46b8c17e86
-ms.sourcegitcommit: 08f1a9baa97060da5168840b332c9c0805b5f901
+ms.openlocfilehash: 3d2fbb453c8f6510806d8dc263ea344023aa4cda
+ms.sourcegitcommit: 32f5ee0690604d451f61e9a5c28881c9fcf85738
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/02/2018
-ms.locfileid: "37144952"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "47454793"
 ---
 # <a name="aspnet-core-tutorials"></a>ASP.NET Core 자습서
 
@@ -82,7 +82,7 @@ ASP.NET Core 응용 프로그램을 개발하기 위해 다음 단계별 가이�
 ## <a name="host-and-deploy"></a>호스트 및 배포
 
 * [Visual Studio를 사용하여 Azure에 ASP.NET Core 웹앱 배포](xref:tutorials/publish-to-azure-webapp-using-vs)
-* [명령줄을 사용하여 Azure에 ASP.NET Core 웹앱 배포](xref:tutorials/publish-to-azure-webapp-using-cli)
+* [명령줄을 사용하여 Azure에 ASP.NET Core 웹앱 배포](/azure/app-service/app-service-web-get-started-dotnet)
 * [연속 배포를 사용하여 Azure 웹앱에 게시](xref:host-and-deploy/azure-apps/azure-continuous-deployment)
 * [원격 Docker 호스트에 ASP.NET 컨테이너 배포](/azure/vs-azure-tools-docker-hosting-web-apps-in-docker)
 * [ASP.NET Core 및 Azure Service Fabric](/azure/service-fabric/service-fabric-add-a-web-frontend)
