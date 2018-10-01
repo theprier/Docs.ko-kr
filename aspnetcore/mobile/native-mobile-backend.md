@@ -5,12 +5,12 @@ description: ASP.NET Core MVC를 사용하여 네이티브 모바일 앱을 지�
 ms.author: riande
 ms.date: 10/14/2016
 uid: mobile/native-mobile-backend
-ms.openlocfilehash: 27051cd3c4e2c3aa1ebf6d5510db4645651120e8
-ms.sourcegitcommit: a1afd04758e663d7062a5bfa8a0d4dca38f42afc
+ms.openlocfilehash: 3ebd30ad1ffbd66b256e7f3954a07d682f76a754
+ms.sourcegitcommit: 517bb1366da2a28b0014e384fa379755c21b47d8
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36276128"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47230180"
 ---
 # <a name="create-backend-services-for-native-mobile-apps-with-aspnet-core"></a>ASP.NET Core를 사용하여 네이티브 모바일 앱용 백 엔드 서비스 만들기
 
@@ -151,3 +151,7 @@ Postman으로 테스트하려면 동사를 PUT으로 변경합니다. 요청의 
 앱에 대해 백 엔드 서비스를 개발하는 경우 교차 편집 문제 처리를 위해 일관적인 규칙의 집합 또는 정책을 찾을 수 있습니다. 예를 들어 위에 표시된 서비스에서 발견되지 않았던 특정 레코드에 대한 요청은 `BadRequest` 응답 대신 `NotFound` 응답을 받았습니다. 마찬가지로, 모델 바인딩 형식을 전달한 이 서비스에 대해 만든 명령은 항상 `ModelState.IsValid`를 확인했고 잘못된 모델 유형에 대해 `BadRequest`를 반환했습니다.
 
 API에 대한 일반적인 정책을 식별했으면 [필터](../mvc/controllers/filters.md)에서 캡슐화할 수 있습니다. [ASP.NET Core MVC 응용 프로그램에서 일반적인 API 정책을 캡슐화하는 방법](https://msdn.microsoft.com/magazine/mt767699.aspx)에 대해 자세히 알아봅니다.
+
+## <a name="additional-resources"></a>추가 자료
+
+* [인증 및 권한 부여](/xamarin/xamarin-forms/enterprise-application-patterns/authentication-and-authorization)

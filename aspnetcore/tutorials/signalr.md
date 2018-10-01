@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 08/31/2018
 uid: tutorials/signalr
-ms.openlocfilehash: 8581628b3f0cf878b8cc1d0684046d22a8374af9
-ms.sourcegitcommit: c12ebdab65853f27fbb418204646baf6ce69515e
+ms.openlocfilehash: 6f93d6dc664f68425ef0fa0d02f9011e4875bc33
+ms.sourcegitcommit: 9bdba90b2c97a4016188434657194b2d7027d6e3
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46523222"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47402135"
 ---
 # <a name="tutorial-get-started-with-signalr-on-aspnet-core"></a>자습서: ASP.NET Core에서 SignalR 시작
 
@@ -123,7 +123,7 @@ SignalR 서버 라이브러리는 [Microsoft.AspNetCore.App 메타패키지](xre
 * 다음 명령을 실행하고 LibMan을 사용하여 SignalR 클라이언트 라이브러리를 가져옵니다. 출력이 표시되기 전에 잠시 기다려야 할 수도 있습니다.
 
   ```console
-  libman install @aspnet/signalr -p unpkg -d wwwroot\lib\signalr --files dist/browser/signalr.js --files dist/browser/signalr.min.js
+  libman install @aspnet/signalr -p unpkg -d wwwroot/lib/signalr --files dist/browser/signalr.js --files dist/browser/signalr.min.js
   ```
 
   매개 변수는 다음 옵션을 지정합니다.
@@ -136,7 +136,7 @@ SignalR 서버 라이브러리는 [Microsoft.AspNetCore.App 메타패키지](xre
   ```console
   wwwroot/lib/signalr/dist/browser/signalr.js written to disk
   wwwroot/lib/signalr/dist/browser/signalr.min.js written to disk
-  Installed library "@aspnet/signalr@1.0.3" to "wwwroot\lib\signalr"
+  Installed library "@aspnet/signalr@1.0.3" to "wwwroot/lib/signalr"
   ```
 
 # <a name="visual-studio-for-mactabvisual-studio-mac"></a>[Visual Studio for Mac](#tab/visual-studio-mac)
@@ -152,7 +152,7 @@ SignalR 서버 라이브러리는 [Microsoft.AspNetCore.App 메타패키지](xre
 * 다음 명령을 실행하고 LibMan을 사용하여 SignalR 클라이언트 라이브러리를 가져옵니다.
 
   ```console
-  libman install @aspnet/signalr -p unpkg -d wwwroot\lib\signalr --files dist/browser/signalr.js --files dist/browser/signalr.min.js
+  libman install @aspnet/signalr -p unpkg -d wwwroot/lib/signalr --files dist/browser/signalr.js --files dist/browser/signalr.min.js
   ```
 
   매개 변수는 다음 옵션을 지정합니다.
@@ -165,7 +165,7 @@ SignalR 서버 라이브러리는 [Microsoft.AspNetCore.App 메타패키지](xre
   ```console
   wwwroot/lib/signalr/dist/browser/signalr.js written to disk
   wwwroot/lib/signalr/dist/browser/signalr.min.js written to disk
-  Installed library "@aspnet/signalr@1.0.3" to "wwwroot\lib\signalr"
+  Installed library "@aspnet/signalr@1.0.3" to "wwwroot/lib/signalr"
   ```
 
 ---
