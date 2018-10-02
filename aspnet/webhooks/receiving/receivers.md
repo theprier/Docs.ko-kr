@@ -6,12 +6,12 @@ description: ASP.NET 웹 후크 수신기
 ms.author: riande
 ms.date: 01/17/2012
 ms.assetid: 6cdea089-15b2-4732-8c68-921ca561a8f1
-ms.openlocfilehash: 376cb3e3fdc0bc7bd248da1f57e1064fb27b3cef
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: d771a588b23abcd7b1b33e694af17b219683fc48
+ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41833291"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47860916"
 ---
 # <a name="aspnet-webhooks-receivers"></a>ASP.NET 웹 후크 수신기
 
@@ -33,7 +33,7 @@ https://<host>/api/webhooks/incoming/<receiver>/{id}
 
 보안상의 이유로 많은 WebHook 수신기를 사용 하려면 URI는 *https* URI 및 일부 경우에도 포함 해야는 의도 된 파티 위의 URI에 웹 후크를 보낼 수만 적용 하는 데 사용 되는 추가 쿼리 매개 변수 .
 
-합니다 <em> <receiver> </em> 구성 요소는 수신기의 이름 예를 들어 <em>github</em> 하거나 <em>slack</em>합니다.
+합니다 `<receiver>` 구성 요소는 수신기의 이름 예를 들어 `github` 또는 `slack`합니다.
 
 합니다 *{id}* 특정 WebHook 수신기 구성을 식별 하는 선택적 식별자입니다. 이 특정 수신기를 사용 하 여 N 웹 후크를 등록 수 있습니다. 예를 들어, 세 가지 독립적인 웹 후크에 대 한 등록 하는 다음 세 가지 Uri는 사용할 수 있습니다.:
 

@@ -5,12 +5,12 @@ description: ASP.NET Core 앱을 사용 하 여 Id를 사용 합니다. 암호 �
 ms.author: riande
 ms.date: 08/08/2018
 uid: security/authentication/identity
-ms.openlocfilehash: ca83d07f7d93bd0cc61cd17cc373096b8e6aa2e1
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: d427932bb175c09105534379be4d71760f4e04e5
+ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46010977"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47860955"
 ---
 # <a name="introduction-to-identity-on-aspnet-core"></a>ASP.NET Core Identity 소개
 
@@ -45,7 +45,7 @@ ASP.NET Core Id는 ASP.NET Core 앱에 로그인 기능을 추가 하는 멤버 
 
 # <a name="visual-studiotabvisual-studio"></a>[Visual Studio](#tab/visual-studio)
 
-* **파일** > **새로 만들기** > **프로젝트**를 선택합니다. 
+* **파일** > **새로 만들기** > **프로젝트**를 선택합니다.
 * **새 ASP.NET Core 웹 응용 프로그램**을 선택합니다. 프로젝트 이름을 **WebApp1** 프로젝트 다운로드와 같은 네임 스페이스에 있어야 합니다. **확인**을 클릭합니다.
 * ASP.NET Core를 선택 **웹 응용 프로그램** ASP.NET Core 2.1에 대 한 선택한 **인증 변경**합니다.
 * 선택 **개별 사용자 계정** 누릅니다 **확인**합니다.
@@ -119,15 +119,12 @@ dotnet new webapp --auth Individual -o WebApp1
 
 등록, 로그인 및 로그 아웃 파일을 추가 합니다.
 
-
 # <a name="net-core-clitabnetcore-cli"></a>[.NET Core CLI](#tab/netcore-cli)
 
 이름으로 프로젝트를 만든 경우 **WebApp1**, 다음 명령을 실행 합니다. 그렇지 않은 경우에 대 한 올바른 네임 스페이스를 사용 합니다 `ApplicationDbContext`:
 
-
 ```cli
 dotnet aspnet-codegenerator identity -dc WebApp1.Data.ApplicationDbContext --files "Account.Register;Account.Login;Account.Logout"
-
 ```
 
 PowerShell 명령 구분 기호로 세미콜론을 사용합니다. PowerShell을 사용 하는 경우 파일 목록에 세미콜론을 이스케이프 하거나 이전 예제와 같이 큰따옴표로 파일 목록을 저장 합니다.
@@ -163,7 +160,7 @@ PowerShell 명령 구분 기호로 세미콜론을 사용합니다. PowerShell�
 로그인 양식이 표시 되는 경우:
 
 * 합니다 **로그인** 링크를 선택 합니다.
-* 사용자는 인증 되지 않은 페이지를 액세스 하는 경우 **또는** 로그인 페이지로 리디렉션되어 인증 합니다. 
+* 사용자는 인증 되지 않은 페이지를 액세스 하는 경우 **또는** 로그인 페이지로 리디렉션되어 인증 합니다.
 
 로그인 페이지의 양식을 제출 되 면는 `OnPostAsync` 작업 이라고 합니다. `PasswordSignInAsync` 라고 하는 `_signInManager` 개체 (종속성 주입으로 제공 됨).
 
@@ -254,7 +251,6 @@ Id에 대 한 기본 패키지가 [Microsoft.AspNetCore.Identity](https://www.nu
 * <xref:security/authorization/secure-data>
 * <xref:security/authentication/add-user-data>
 * <xref:security/authentication/identity-enable-qrcodes>
-* [Id 기본 키 데이터 형식 구성](xref:security/authentication/identity-primary-key-configuration)합니다.
 * <xref:migration/identity>
 * <xref:security/authentication/accconfirm>
 * <xref:security/authentication/2fa>

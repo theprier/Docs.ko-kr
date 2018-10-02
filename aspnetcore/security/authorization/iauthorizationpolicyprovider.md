@@ -6,12 +6,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 05/02/2018
 uid: security/authorization/iauthorizationpolicyprovider
-ms.openlocfilehash: e3a534d3c3da5af4cfd3f72d105fac83e15135f0
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: fdd8f9232c4332aa8307b9dbdfba6af48dfafa72
+ms.sourcegitcommit: 317f9be24db600499e79d25872d743af74bd86c0
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41829501"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48045499"
 ---
 # <a name="custom-authorization-policy-providers-using-iauthorizationpolicyprovider-in-aspnet-core"></a>ASP.NET Core에서 IAuthorizationPolicyProvider를 사용 하 여 사용자 지정 권한 부여 정책 공급자 
 
@@ -151,7 +151,7 @@ public Task<AuthorizationPolicy> GetDefaultPolicyAsync() =>
 * 사용자 지정 등록 `IAuthorizationPolicyProvider` 앱의 종속성 주입 서비스 컬렉션의 형식 (에서 `Startup.ConfigureServices`) 기본 정책 공급자를 교체할 수 있습니다.
 
 ```csharp
-services.AddTransient<IAuthorizationPolicyProvider, MinimumAgePolicyProvider>();
+services.AddSingleton<IAuthorizationPolicyProvider, MinimumAgePolicyProvider>();
 ```
 
 전체 사용자 지정 `IAuthorizationPolicyProvider` 샘플에서 사용할 수는 [aspnet/AuthSamples GitHub 리포지토리](https://github.com/aspnet/AuthSamples/tree/master/samples/CustomPolicyProvider)합니다.
