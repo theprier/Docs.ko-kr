@@ -8,41 +8,37 @@ ms.date: 06/26/2014
 ms.assetid: 72657550-ec09-4779-9bfc-2fb15ecd51c7
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/entity-relations-in-odata-v4
 msc.type: authoredcontent
-ms.openlocfilehash: 80173519f1c8abd77b4138b7d29f780ffc60a188
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: d07ddab83462ee1bc84ba8ab15fe906937f506e6
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41828799"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795394"
 ---
 <a name="entity-relations-in-odata-v4-using-aspnet-web-api-22"></a>ASP.NET Web API 2.2 사용 하 여 OData v4의 엔터티 관계
 ====================
 [Mike Wasson](https://github.com/MikeWasson)
 
 > 엔터티 간의 관계를 정의 하는 대부분의 데이터 집합: 고객은 주문; 온라인 설명서가 작성자; 제품 공급 업체에 있습니다. OData를 클라이언트 엔터티 관계 탐색할 수 있습니다. 제품에 지정 된 공급자를 찾을 수 있습니다. 만들기 또는 관계를 제거할 수도 있습니다. 예를 들어, 제품 공급 업체를 설정할 수 있습니다.
-> 
+>
 > 이 자습서에는 ASP.NET Web API를 사용 하 여 OData v4의 이러한 작업을 지 원하는 방법을 보여 줍니다. 자습서를 기반으로 한 자습서 [OData v4 끝점 사용 하 여 ASP.NET 웹 API 2 만들](create-an-odata-v4-endpoint.md)합니다.
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>이 자습서에 사용 되는 소프트웨어 버전
-> 
-> 
+>
 > - Web API 2.1
 > - OData v4
-> - [Visual Studio 2013 업데이트 2](https://www.visualstudio.com/downloads/download-visual-studio-vs)
+> - Visual Studio 2013 (Visual Studio 2017 다운로드 [여기](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017))
 > - Entity Framework 6
 > - .NET 4.5
-> 
-> 
+>
 > ## <a name="tutorial-versions"></a>자습서 버전
-> 
+>
 > OData 버전 3에 대 한 참조 [OData v3의 엔터티 관계를 지 원하는](https://asp.net/web-api/overview/odata-support-in-aspnet-web-api/odata-v3/working-with-entity-relations)합니다.
-
 
 ## <a name="add-a-supplier-entity"></a>Supplier 엔터티를 추가 합니다.
 
 > [!NOTE]
 > 자습서를 기반으로 한 자습서 [OData v4 끝점 사용 하 여 ASP.NET 웹 API 2 만들](create-an-odata-v4-endpoint.md)합니다.
-
 
 첫째, 관련된 엔터티를 해야합니다. 라는 클래스를 추가 `Supplier` Models 폴더에 있습니다.
 

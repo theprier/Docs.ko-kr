@@ -8,12 +8,12 @@ ms.date: 05/28/2015
 ms.assetid: e879487e-dbcd-4b33-b092-d67c37ae768c
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-1
 msc.type: authoredcontent
-ms.openlocfilehash: 4abe0e06dfd927765efd8e566584e111cf4117d5
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: d65c0ea35ec766ef9d9093c6502230f9de72a3f3
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41827756"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795216"
 ---
 <a name="using-web-api-2-with-entity-framework-6"></a>Entity Framework 6 사용 하 여 Web API 2 사용 하 여
 ====================
@@ -22,16 +22,14 @@ ms.locfileid: "41827756"
 [완료 된 프로젝트 다운로드](https://github.com/MikeWasson/BookService)
 
 > 이 자습서는 ASP.NET Web API를 사용 하 여 웹 응용 프로그램 만들기의 기본 사항을 백 엔드 배우게를 보여 줍니다. 자습서를 사용 하면 데이터 계층 Knockout.js 위해 Entity Framework 6을 사용 하는 클라이언트 쪽 JavaScript 응용 프로그램에 대 한 합니다. 또한 자습서에는 Azure App Service Web Apps에 앱을 배포 하는 방법을 보여 줍니다.
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>이 자습서에 사용 되는 소프트웨어 버전
-> 
-> 
+>
 > - Web API 2.1
-> - [Visual Studio 2013 업데이트 2](https://www.visualstudio.com/downloads/download-visual-studio-vs)
+> - Visual Studio 2013 (Visual Studio 2017 다운로드 [여기](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017))
 > - Entity Framework 6
 > - .NET 4.5
 > - [Knockout.js](http://knockoutjs.com/) 3.1
-
 
 이 자습서에서는 백 엔드 데이터베이스를 조작 하는 웹 응용 프로그램을 만드는 Entity Framework 6을 사용 하 여 ASP.NET Web API 2를 사용 합니다. 만들려는 응용 프로그램의 스크린샷은 다음과 같습니다.
 

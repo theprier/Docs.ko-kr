@@ -7,12 +7,12 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/04/2018
 uid: signalr/messagepackhubprotocol
-ms.openlocfilehash: 78b708c50ce7a8101c9eaa558171540e61c0d7f0
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: c04834b0d395d08782b51b56e79badba078a5b91
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39094997"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48794839"
 ---
 # <a name="use-messagepack-hub-protocol-in-signalr-for-aspnet-core"></a>SignalR에서 MessagePack Hub 프로토콜을 사용 하 여 ASP.NET Core에 대 한
 
@@ -50,6 +50,9 @@ services.AddSignalR()
 ```
 
 ## <a name="configure-messagepack-on-the-client"></a>클라이언트에서 MessagePack 구성
+
+> [!NOTE]
+> 지원 되는 클라이언트에 대 한 JSON이 기본적으로 사용 됩니다. 클라이언트에서는 단일 프로토콜을 지원할 수 있습니다. 프로토콜 구성 MessagePack 지원 바뀝니다 모든 이전에 추가 합니다.
 
 ### <a name="net-client"></a>.NET 클라이언트
 

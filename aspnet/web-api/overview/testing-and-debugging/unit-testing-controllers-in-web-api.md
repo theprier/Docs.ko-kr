@@ -8,22 +8,22 @@ ms.date: 06/11/2014
 ms.assetid: 43a6cce7-a3ef-42aa-ad06-90d36d49f098
 msc.legacyurl: /web-api/overview/testing-and-debugging/unit-testing-controllers-in-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 7b0d5266757219a05b25fc3d1d4cba8514a4dff7
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: e1bb1aa120ced95db7674eae1831f2a2c7356fc0
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41829870"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48794826"
 ---
 <a name="unit-testing-controllers-in-aspnet-web-api-2"></a>ASP.NET Web API 2의에서 단위 테스트 컨트롤러
 ====================
 [Mike Wasson](https://github.com/MikeWasson)
 
 > 이 항목에서는 Web API 2의 단위 테스트 컨트롤러에 대 한 몇 가지 특정 기술을 설명 합니다. 이 항목을 읽기 전에 하려는 경우 자습서를 읽어 보세요 [단위 테스트 ASP.NET Web API 2](unit-testing-with-aspnet-web-api.md), 단위 테스트 프로젝트를 솔루션에 추가 하는 방법을 보여 줍니다.
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>이 자습서에 사용 되는 소프트웨어 버전
-> 
-> - [Visual Studio 2017](https://www.visualstudio.com/vs/)
+>
+> - [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)
 > - Web API 2
 > - [Moq](https://github.com/Moq) 4.5.30
 

@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: 1bc333c5-f096-4ea7-b170-779accc21c1a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
 msc.type: authoredcontent
-ms.openlocfilehash: 6f4fa7cf3746da0a6cdd4bd037fea509d488a59d
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 435ee61a9c28ad0035457990cd3a889f5b240517
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
 ms.lasthandoff: 10/04/2018
-ms.locfileid: "48578018"
+ms.locfileid: "48795540"
 ---
 <a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>부록: 수정이 샘플 응용 프로그램 (Azure 사용 하 여 실제 클라우드 앱 빌드)
 ====================
@@ -22,7 +22,6 @@ ms.locfileid: "48578018"
 [이 프로젝트 수정 프로그램을 다운로드](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)
 
 > 합니다 **실제 세계 클라우드 앱 빌드 Azure** 전자책 Scott Guthrie를 개발한 프레젠테이션을 기반으로 합니다. 13 패턴 설명 하 고 도움이 될 수 있는 사례 성공적인 클라우드를 위한 웹 앱을 개발할 수 있습니다. 전자책에 대 한 정보를 참조 하세요 [첫 번째 장에서](introduction.md)합니다.
-
 
 이 부록에는 실제 세계 클라우드 앱 빌드 Azure 전자책 Fix It 샘플 응용 프로그램을 다운로드할 수 있습니다 하는 방법에 대 한 추가 정보를 제공 하는 다음 섹션을 포함 합니다.
 
@@ -177,11 +176,11 @@ AutoFac를 자동으로 삭제 하는 참고를 `FixItTaskRepository` 인스턴�
 
 비동기 메서드는 값을 반환할 필요가 없습니다, 하는 경우 반환 된 `Task` 형식 대신 `void`.
 
-이 예제에서는 `FixItQueueManager` 클래스: 
+이 예제에서는 `FixItQueueManager` 클래스:
 
 [!code-csharp[Main](the-fix-it-sample-application/samples/sample15.cs)]
 
-사용 해야 `async void` 최상위 이벤트 처리기에 대해서만 합니다. 메서드를 정의 하는 경우 `async void`를 호출자에 게 없습니다 **await** 메서드 또는 메서드에서 throw 한 예외를 catch 합니다. 자세한 내용은 [비동기 프로그래밍의 모범 사례](https://msdn.microsoft.com/magazine/jj991977.aspx)합니다. 
+사용 해야 `async void` 최상위 이벤트 처리기에 대해서만 합니다. 메서드를 정의 하는 경우 `async void`를 호출자에 게 없습니다 **await** 메서드 또는 메서드에서 throw 한 예외를 catch 합니다. 자세한 내용은 [비동기 프로그래밍의 모범 사례](https://msdn.microsoft.com/magazine/jj991977.aspx)합니다.
 
 ### <a name="use-a-cancellation-token-to-break-from-worker-role-loop"></a>취소 토큰을 사용 하 여 작업자 역할 루프 중단
 
@@ -216,8 +215,8 @@ Fix It 응용 프로그램을 실행 하는 방법은 두 가지 있습니다.
 <a id="runbase"></a>
 ### <a name="run-the-base-application"></a>기본 응용 프로그램 실행
 
-1. 설치할 [Visual Studio 2013 또는 Visual Studio 2013 Express for Web](https://www.visualstudio.com/downloads)합니다.
-2. 설치는 [Azure SDK for Visual Studio 2013 용.NET.](https://go.microsoft.com/fwlink/p/?linkid=323510&amp;clcid=0x409)
+1. 설치할 [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)합니다.
+2. 설치 합니다 [Azure SDK for.NET for Visual Studio](https://azure.microsoft.com/downloads/)합니다.
 3. .zip 파일을 다운로드 합니다 [MSDN 코드 갤러리](https://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4)합니다.
 4. 파일 탐색기에서.zip 파일을 마우스 오른쪽 단추로 클릭 속성을 클릭 하 고 속성 창에서 차단 해제를 클릭 합니다.
 5. 파일을 압축을 풉니다.
@@ -225,7 +224,7 @@ Fix It 응용 프로그램을 실행 하는 방법은 두 가지 있습니다.
 7. 도구 메뉴에서 라이브러리 패키지 관리자를 패키지 관리자 콘솔을 클릭 합니다.
 8. 관리자 콘솔 (PMC (패키지)에서 복원을 클릭 합니다.
 9. Visual Studio를 끝냅니다.
-10. 시작 합니다 [Azure storage 에뮬레이터](https://msdn.microsoft.com/library/windowsazure/hh403989.aspx)합니다.
+10. 시작 합니다 [Azure storage 에뮬레이터](/azure/storage/common/storage-use-emulator)합니다.
 11. 이전 단계에서 닫은 솔루션 파일을 열고 Visual Studio를 다시 시작 합니다.
 12. FixIt 프로젝트를 시작 프로젝트로 설정 되어 있는지 확인 하 고 프로젝트를 실행 하려면 ctrl+f5를 누릅니다.
 
@@ -234,24 +233,24 @@ Fix It 응용 프로그램을 실행 하는 방법은 두 가지 있습니다.
 
 1. 지침을 따릅니다 [기본 응용 프로그램을 실행](#runbase), 브라우저를 닫고 Visual Studio를 닫습니다.
 2. 관리자 권한으로 Visual Studio를 시작 합니다. (Azure 계산 에뮬레이터를 사용할 수 및는 관리자 권한이 필요 합니다.)
-3. 응용 프로그램에서 *Web.config* 파일을 *MyFixIt* (웹 프로젝트) 프로젝트에서 값을 변경 `appSettings/UseQueues` "true"로 합니다. 
+3. 응용 프로그램에서 *Web.config* 파일을 *MyFixIt* (웹 프로젝트) 프로젝트에서 값을 변경 `appSettings/UseQueues` "true"로 합니다.
 
     [!code-console[Main](the-fix-it-sample-application/samples/sample19.cmd?highlight=3)]
 4. 경우는 [Azure storage 에뮬레이터](https://msdn.microsoft.com/library/windowsazure/hh403989.aspx) 아직 실행 되지 않습니다. 다시 시작 합니다.
 5. FixIt 웹 프로젝트 및 MyFixItCloudService 프로젝트를 동시에 실행 합니다.
 
-    Visual Studio 2013을 사용 합니다.
+    Visual Studio를 사용 합니다.
 
-   1. F5 키를 눌러 FixIt 프로젝트를 실행 합니다.
-   2. **솔루션 탐색기**MyFixItCloudService 프로젝트를 마우스 오른쪽 단추로 클릭 한 다음 클릭 **디버그** -- **새 인스턴스 시작**합니다.
+   1. 키를 눌러 **F5** FixIt 프로젝트를 실행 합니다.
+   2. **솔루션 탐색기**MyFixItCloudService 프로젝트를 마우스 오른쪽 단추로 클릭 한 다음 클릭 **디버그** > **새 인스턴스 시작**합니다.
 
-      Visual Studio 2013 Express for Web 사용:
+    Visual Studio 2013 Express for Web 사용:
 
    3. 솔루션 탐색기에서 FixIt 솔루션을 마우스 오른쪽 단추로 클릭 하 고 선택 **속성**합니다.
-   4. 선택 **여러 개의 시작 프로젝트**...
+   4. 선택 **여러 개의 시작 프로젝트**합니다.
    5. 에 **동작** MyFixIt 및 MyFixItCloudService, 드롭다운 목록 선택 **시작**합니다.
    6. **확인**을 클릭합니다.
-   7. F5 키를 눌러 두 프로젝트를 실행 합니다.
+   7. 키를 눌러 **F5** 두 프로젝트를 실행 합니다.
 
       MyFixItCloudService 프로젝트를 실행 하면 Visual Studio는 Azure 계산 에뮬레이터를 시작 합니다. 방화벽 구성에 따라 방화벽을 통해 에뮬레이터를 허용 해야 합니다.
 
@@ -354,8 +353,7 @@ Fix It 응용 프로그램을 실행 하는 방법은 두 가지 있습니다.
 
 - `Get-AzureWebsite`
 - `Get-AzureSqlDatabaseServer`
-- `Get-AzureSqlDatabase`:이 cmdlet을 실행 하려면 다음을 수행 합니다 데이터베이스 서버 이름을 파이프할 `Get-AzureSqlDatabase`:  
-    `Get-AzureSqlDatabaseServer | Get-AzureSqlDatabase.`
+- `Get-AzureSqlDatabase`:이 cmdlet을 실행 하려면 다음을 수행 합니다 데이터베이스 서버 이름을 파이프할 `Get-AzureSqlDatabase`:   `Get-AzureSqlDatabaseServer | Get-AzureSqlDatabase.`
 
 이러한 리소스를 삭제 하려면 다음 명령을 사용 합니다. 데이터베이스 서버를 삭제 하면 자동으로 삭제 하면 서버에 연결 된 데이터베이스를 참고 합니다.
 
@@ -366,7 +364,7 @@ Fix It 응용 프로그램을 실행 하는 방법은 두 가지 있습니다.
 <a id="deployqueues"></a>
 ## <a name="how-to-deploy-the-app-with-queue-processing-to-azure-app-service-web-apps-and-an-azure-cloud-service"></a>Azure App Service Web Apps 및 Azure 클라우드 서비스를 처리 하는 큐를 사용 하 여 앱을 배포 하는 방법
 
-큐를 사용 하려면 MyFixIt\Web.config 파일에 다음 변경 내용을 확인 합니다. 아래 `appSettings`의 값을 변경 `UseQueues` "true"로 합니다. 
+큐를 사용 하려면 MyFixIt\Web.config 파일에 다음 변경 내용을 확인 합니다. 아래 `appSettings`의 값을 변경 `UseQueues` "true"로 합니다.
 
 [!code-xml[Main](the-fix-it-sample-application/samples/sample31.xml)]
 

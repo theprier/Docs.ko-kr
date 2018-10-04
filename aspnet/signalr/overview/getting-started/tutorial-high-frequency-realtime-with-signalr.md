@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: 9f969dda-78ea-4329-b1e3-e51c02210a2b
 msc.legacyurl: /signalr/overview/getting-started/tutorial-high-frequency-realtime-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: e710980cecf9093ea9046b5790379befb5b61841
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 008cbc8ec7ca0af4b20e5e3974cf3862efa7677e
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41837045"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48794882"
 ---
 <a name="tutorial-high-frequency-realtime-with-signalr-2"></a>자습서: 고주파수 SignalR 2 사용 하 여
 ====================
@@ -213,7 +213,7 @@ ms.locfileid: "41837045"
 
 ## <a name="further-steps"></a>추가 단계
 
-이 자습서에서는 클라이언트와 서버 간의 빈도가 높은 메시지를 보내는 SignalR 응용 프로그램을 프로그래밍 하는 방법을 알아보았습니다. 이 통신 패러다임은 온라인 게임 및 다른 시뮬레이션와 같은 개발 하기 위한 유용한 [SignalR을 사용 하 여 만든 ShootR 게임](http://shootr.signalr.net)합니다.
+이 자습서에서는 클라이언트와 서버 간의 빈도가 높은 메시지를 보내는 SignalR 응용 프로그램을 프로그래밍 하는 방법을 알아보았습니다. 이 통신 패러다임은 온라인 게임 및 다른 시뮬레이션와 같은 개발 하기 위한 유용한 [SignalR을 사용 하 여 만든 ShootR 게임](https://shootr.azurewebsites.net/)합니다.
 
 이 자습서에서 만든 전체 응용 프로그램에서 다운로드할 수 있습니다 [코드 갤러리](https://code.msdn.microsoft.com/SignalR-20-MoveShape-Demo-6285b83a)합니다.
 

@@ -7,12 +7,12 @@ author: BillWagner
 ms.author: wiwagn
 ms.date: 02/01/2017
 ms.assetid: c9f1d52c-b4bd-4b5d-b7f9-8f9ceaf778c4
-ms.openlocfilehash: c2374e7c9ac89c2af26436529c7fa58a2d2d6ba6
-ms.sourcegitcommit: b28cd0313af316c051c2ff8549865bff67f2fbb4
+ms.openlocfilehash: 1343bd100f521326477ecd831aa627b4394bad44
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37814160"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795355"
 ---
 # <a name="migrating-aspnet-mvc-applications-to-windows-containers"></a>ASP.NET MVC 응용 프로그램을 Windows 컨테이너로 마이그레이션
 
@@ -35,16 +35,16 @@ Windows 컨테이너에서 기존 .NET Framework 기반 응용 프로그램을 �
 
 ## <a name="prerequisites"></a>전제 조건
 
-개발 컴퓨터가 실행 중이어야 합니다.
+개발 컴퓨터에는 다음 소프트웨어가 있어야 합니다.
 
-- [Windows 10 1주년 업데이트](https://www.microsoft.com/software-download/windows10/) 이상 또는 [Windows Server 2016](https://www.microsoft.com/cloud-platform/windows-server) 이상
+- [Windows 10 1 주년 업데이트](https://www.microsoft.com/software-download/windows10/) (또는 이상) 또는 [Windows Server 2016](https://www.microsoft.com/cloud-platform/windows-server) (또는 이상)
 - [Windows용 Docker](https://docs.docker.com/docker-for-windows/) - 안정적인 버전 1.13.0 또는 1.12 베타 26 이상 버전
-- [Visual Studio 2017](https://www.visualstudio.com/visual-studio-homepage-vs.aspx)합니다.
+- [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)
 
 > [!IMPORTANT]
 > Windows Server 2016을 사용하는 경우 [컨테이너 호스트 배포 - Windows Server](https://msdn.microsoft.com/virtualization/windowscontainers/deployment/deployment)에 대한 지침을 따르세요.
 
-Docker를 설치 및 시작한 후 트레이 아이콘을 마우스 오른쪽 단추로 클릭하고 **Switch to Windows containers**(Windows 컨테이너로 전환)를 선택합니다. 이를 위해서는 Windows를 기반으로 하는 Docker 이미지를 실행해야 합니다. 이 명령을 실행하는 데 몇 초 정도 걸립니다.
+선택한 트레이 아이콘에서 마우스 오른쪽 단추로 Docker를 설치 및 시작한 후 **Windows 컨테이너로 전환**합니다. 이를 위해서는 Windows를 기반으로 하는 Docker 이미지를 실행해야 합니다. 이 명령을 실행하는 데 몇 초 정도 걸립니다.
 
 ![Windows 컨테이너][windows-container]
 
@@ -114,7 +114,7 @@ docker run -d --name randomanswers mvcrandomanswers
 
 `-d` 인수는 분리된 모드로 이미지를 시작하도록 Docker에 지정합니다. 즉, Docker 이미지가 현재 셸에서 연결이 끊긴 상태로 실행됩니다.
 
-대부분의 docker 예에서-p 컨테이너와 호스트 포트 매핑를 볼 수 있습니다. 기본 aspnet 이미지에 컨테이너 포트 80에서 수신 하 고 노출를 이미 구성 했습니다. 
+대부분의 docker 예에서-p 컨테이너와 호스트 포트 매핑를 볼 수 있습니다. 기본 aspnet 이미지에 컨테이너 포트 80에서 수신 하 고 노출를 이미 구성 했습니다.
 
 `--name randomanswers`는 실행 중인 컨테이너에 이름을 제공합니다. 대부분의 명령에서 컨테이너 ID 대신 이 이름을 사용할 수 있습니다.
 

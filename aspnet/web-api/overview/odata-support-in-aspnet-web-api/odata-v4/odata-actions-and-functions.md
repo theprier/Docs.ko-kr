@@ -8,32 +8,29 @@ ms.date: 06/27/2014
 ms.assetid: 0e6fb03c-b16d-4bb0-ab0b-552bd2b6ece1
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v4/odata-actions-and-functions
 msc.type: authoredcontent
-ms.openlocfilehash: 4e61c6b4bf59792b6570e32e6d24635d4f5e5ac3
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 45b84ec4ee76e83ece99bf6841c28e13c3ab7728
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41829143"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795269"
 ---
 <a name="actions-and-functions-in-odata-v4-using-aspnet-web-api-22"></a>작업 및 ASP.NET Web API 2.2 사용 하 여 OData v4의 함수
 ====================
 [Mike Wasson](https://github.com/MikeWasson)
 
 > OData에서 동작 및 함수는 엔터티에 대 한 CRUD 작업으로 쉽게 정의 되어 있지 않은 서버 쪽 동작을 추가 하는 방법입니다. 이 자습서에는 Web API 2.2를 사용 하 여 OData v4 끝점 동작 및 함수를 추가 하는 방법을 보여 줍니다. 이 자습서를 기반으로 자습서 [OData v4 끝점 사용 하 여 ASP.NET Web API 2 만들기](create-an-odata-v4-endpoint.md)
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>이 자습서에 사용 되는 소프트웨어 버전
-> 
-> 
+>
 > - Web API 2.2
 > - OData v4
-> - [Visual Studio 2013 업데이트 2](https://www.visualstudio.com/downloads/download-visual-studio-vs)
+> - Visual Studio 2013 (Visual Studio 2017 다운로드 [여기](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017))
 > - .NET 4.5
-> 
-> 
+>
 > ## <a name="tutorial-versions"></a>자습서 버전
-> 
+>
 > OData 버전 3을 참조 하세요 [ASP.NET Web API 2 OData 작업](../odata-v3/odata-actions.md)합니다.
-
 
 차이점 *작업* 하 고 *함수* 작업 부작용이 있을 수 고 함수는 하지 않습니다. 동작과 함수 둘 다 데이터를 반환할 수 있습니다. 작업에 대 한 몇 가지 용도 다음과 같습니다.
 

@@ -4,18 +4,18 @@ author: scottaddie
 description: 묶음 및 축소 기술을 적용 하 여 ASP.NET Core 웹 응용 프로그램에서 정적 리소스를 최적화 하는 방법에 알아봅니다.
 ms.author: scaddie
 ms.custom: mvc
-ms.date: 01/10/2018
+ms.date: 10/04/2018
 uid: client-side/bundling-and-minification
-ms.openlocfilehash: 45200d34974cbbb44787616eba7508458882416c
-ms.sourcegitcommit: 4d5f8680d68b39c411b46c73f7014f8aa0f12026
+ms.openlocfilehash: 152f3c810b587d734c1b1076a09ea38d13872e2d
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47028143"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795407"
 ---
 # <a name="bundle-and-minify-static-assets-in-aspnet-core"></a>번들 및 ASP.NET Core에서 정적 자산을 축소
 
-작성자: [Scott Addie](https://twitter.com/Scott_Addie)
+하 여 [Scott Addie](https://twitter.com/Scott_Addie) 고 [David 소나무](https://twitter.com/davidpine7)
 
 이 문서에서는 묶음 및 축소, ASP.NET Core 웹 앱을 사용 하 여 이러한 기능을 사용할 수 있는 방법을 포함 하 여 적용 하는 이점에 설명 합니다.
 

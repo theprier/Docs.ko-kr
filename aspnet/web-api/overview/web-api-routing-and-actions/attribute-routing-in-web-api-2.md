@@ -8,12 +8,12 @@ ms.date: 01/20/2014
 ms.assetid: 979d6c9f-0129-4e5b-ae56-4507b281b86d
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: f13720c5e9de99fb4ae5b27a757c257cac881f89
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 35cf3bf555218b6b49b30f48186e4c67aff4ff7b
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41835773"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795553"
 ---
 <a name="attribute-routing-in-aspnet-web-api-2"></a>ASP.NET Web API 2에서에서 특성 라우팅
 ====================
@@ -25,10 +25,9 @@ ms.locfileid: "41835773"
 
 이 항목에서는 특성 라우팅을 사용 하도록 설정 하는 방법을 보여 줍니다 하 고 특성 라우팅에 대 한 다양 한 옵션을 설명 합니다. 특성 라우팅을 사용 하는 종단 간 자습서를 참조 하세요 [Web API 2에서 특성 라우팅을 사용 하 여 REST API를 만들고](create-a-rest-api-with-attribute-routing.md)합니다.
 
-
 ## <a name="prerequisites"></a>전제 조건
 
-[Visual Studio 2017](https://www.visualstudio.com/vs/) Community, Professional 또는 Enterprise Edition
+[Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) Community, Professional 또는 Enterprise edition
 
 또는, NuGet 패키지 관리자를 사용 하 여 필요한 패키지를 설치 합니다. **도구** Visual Studio에서 메뉴 **라이브러리 패키지 관리자**을 선택한 후 **패키지 관리자 콘솔**합니다. 패키지 관리자 콘솔 창에서 다음 명령을 입력 합니다.
 
@@ -55,21 +54,21 @@ ms.locfileid: "41835773"
 
 이 예제에서는 "/ 제품/api/v1" 보다 다른 컨트롤러에 게 회람 "/ 제품/api/v2" 것입니다.
 
-`/api/v1/products`  
+`/api/v1/products`
 `/api/v2/products`
 
 **오버 로드 된 URI 세그먼트**
 
 이 예제에서는 주문 번호를 "1"은 있지만 컬렉션에 "보류 중"으로 매핑합니다.
 
-`/orders/1`  
+`/orders/1`
 `/orders/pending`
 
 **여러 매개 변수 유형**
 
 이 예제에서는 주문 번호를 "1"은 있지만 "2013/06/16" 날짜를 지정 합니다.
 
-`/orders/1`  
+`/orders/1`
 `/orders/2013/06/16`
 
 <a id="enable"></a>
@@ -175,7 +174,7 @@ URI 템플릿을 여러 매개 변수를 포함할 수 있습니다.
 
 다음 표에서 지원 되는 제약 조건을 나열 합니다.
 
-| 제약 조건 | 설명 | 예 |
+| 제약 조건 | 설명 | 예제 |
 | --- | --- | --- |
 | 알파 | 일치 대문자 또는 소문자로 라틴어 알파벳 문자 (a-z A-z) | {x: 알파} |
 | bool | 부울 값과 일치 합니다. | {x: bool} |
@@ -251,7 +250,7 @@ Web API에서 모든 경로는 이름이 있습니다. 경로 이름은 HTTP 응
 전체 순서를 결정 하는 방법을 다음과 같습니다.
 
 1. 비교는 **RouteOrder** 경로 특성의 속성입니다.
-2. 경로 템플릿에 각 URI 세그먼트를 살펴봅니다. 각 세그먼트에 대 한 다음과 같은 정렬 합니다. 
+2. 경로 템플릿에 각 URI 세그먼트를 살펴봅니다. 각 세그먼트에 대 한 다음과 같은 정렬 합니다.
 
     1. 리터럴 세그먼트입니다.
     2. 제약 조건으로 경로 매개 변수입니다.

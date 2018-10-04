@@ -9,12 +9,12 @@ ms.date: 03/12/2010
 ms.technology: aspnet
 msc.legacyurl: ''
 msc.type: content
-ms.openlocfilehash: 5bdebcc226050afc2469840dc4a4dc97ec6b80b2
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 2dc48e1262b1807a77a9889f7e0e62c9b9ea463e
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41827154"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48794813"
 ---
 # <a name="aspnet-overview"></a>ASP.NET 개요
 
@@ -24,7 +24,7 @@ ASP.NET은 HTML, CSS 및 JavaScript를 사용하여 유용한 웹 사이트와 �
 
 ## <a name="get-started"></a>시작
 
-[Visual Studio Community 2017](https://www.visualstudio.com/downloads/)는 Windows에서 사용할 수 있는 ASP.NET용 무료 IDE입니다.
+설치할 [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) Community edition, Windows의 ASP.NET 용 무료 IDE입니다.
 
 ## <a name="websites-and-web-applications"></a>웹 사이트 및 웹 응용 프로그램
 
@@ -34,7 +34,7 @@ ASP.NET은 HTML, CSS 및 JavaScript를 사용하여 유용한 웹 사이트와 �
 
 아래는 각 프레임워크의 개요와 프레임워크 선택 요령입니다. 비디오를 선호하는 경우 [ASP.NET으로 웹 사이트 만들기](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/Making-Websites-with-ASPNET) 및 [웹 도구란?](https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/what-is-web-tools)을 참조하세요.
 
-|   | 다음 분야에 대한 경험이 있는 경우 | 개발 스타일 | 전문 지식 | 
+|   | 다음 분야에 대한 경험이 있는 경우 | 개발 스타일 | 전문 지식 |
 |-----------|----------------------|-----------------------------------------------------|----------------|
 | Web Forms | Win Forms, WPF, .NET | HTML 표시를 캡슐화하는 풍부한 컨트롤 라이브러리를 사용하여 신속하게 개발 | 중간 수준, 고급 RAD |
 | MVC       | Ruby on Rails, .NET  | HTML 표시를 완벽하게 제어할 수 있고, 코드와 표시가 분리되고, 테스트를 쉽게 작성할 수 있습니다. 모바일 및 단일 페이지 응용 프로그램(SPA)에 적합합니다. | 중간 수준, 고급 |
@@ -42,13 +42,13 @@ ASP.NET은 HTML, CSS 및 JavaScript를 사용하여 유용한 웹 사이트와 �
 
 ### <a name="web-forms"></a>Web Forms
 
-ASP.NET Web Forms를 사용하면 익숙한 끌어서 놓기, 이벤트 중심 모델을 사용하여 동적 웹 사이트를 빌드할 수 있습니다. 디자인 화면과 수백 개의 컨트롤 및 구성 요소를 통해 데이터 액세스를 지원하는 정교하고 강력한 UI 중심 사이트를 신속하게 빌드할 수 있습니다. 
+ASP.NET Web Forms를 사용하면 익숙한 끌어서 놓기, 이벤트 중심 모델을 사용하여 동적 웹 사이트를 빌드할 수 있습니다. 디자인 화면과 수백 개의 컨트롤 및 구성 요소를 통해 데이터 액세스를 지원하는 정교하고 강력한 UI 중심 사이트를 신속하게 빌드할 수 있습니다.
 
 [Web Forms에 대한 자세한 정보](web-forms/index.md)
 
 ### <a name="mvc"></a>MVC
 
-즐겁고, 민첩한 개발을 위해 전체 제어 태그를 제공하여 명확한 영역 분리를 사용할 수 있는 동적 웹 사이트를 만들도록 강력한 패턴 기반의 방법인 ASP.NET MVC를 사용합니다. ASP.NET MVC에는 최신 웹 표준을 사용하는 정교한 응용 프로그램을 만들기 위한 TDD 친화적 개발을 지원하는 여러 기능이 포함되어 있습니다. 
+즐겁고, 민첩한 개발을 위해 전체 제어 태그를 제공하여 명확한 영역 분리를 사용할 수 있는 동적 웹 사이트를 만들도록 강력한 패턴 기반의 방법인 ASP.NET MVC를 사용합니다. ASP.NET MVC에는 최신 웹 표준을 사용하는 정교한 응용 프로그램을 만들기 위한 TDD 친화적 개발을 지원하는 여러 기능이 포함되어 있습니다.
 
 [MVC에 대한 자세한 정보](mvc/index.md)
 
@@ -80,7 +80,7 @@ ASP.NET SignalR은 실시간 웹 기능을 좀 더 쉽게 개발할 수 있도�
 
 <!-- Put first under SignalR TOC:  Watch video (6 minutes) https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/signalr-and-the-real-time-web -->
 
-## <a name="mobile-apps-and-sites"></a>모바일 앱 및 사이트 
+## <a name="mobile-apps-and-sites"></a>모바일 앱 및 사이트
 
 ASP.NET은 Web API 백 엔드로 네이티브 모바일 앱을 활용할 수 있을 뿐 아니라 Twitter Bootstrap 같은 반응형 디자인 프레임워크를 사용하여 모바일 웹 사이트를 만들 수 있습니다. 네이티브 모바일 앱을 빌드하는 경우 데이터 액세스, 인증, 앱의 푸시 알림을 처리하는 JSON 기반 Web API를 손쉽게 만들 수 있습니다. 반응형 모바일 사이트를 빌드하는 경우 선호하는 CSS 프레임워크 또는 오픈 그리드 시스템을 사용해도 되고, jQuery Mobile 또는 Sencha 같은 강력한 모바일 시스템과 PhoneGap 같은 뛰어난 모바일 응용 프로그램을 선택해도 됩니다.
 
@@ -88,7 +88,7 @@ ASP.NET은 Web API 백 엔드로 네이티브 모바일 앱을 활용할 수 있
 
 <!-- Put first under mobile TOC:  Watch video (11 minutes) https://channel9.msdn.com/Blogs/ASP-NET-Site-Videos/aspnet-and-mobile -->
 
-## <a name="single-page-applications"></a>단일 페이지 응용 프로그램 
+## <a name="single-page-applications"></a>단일 페이지 응용 프로그램
 
 ASP.NET SPA(단일 페이지 응용 프로그램)는 HTML 5, CSS 3 및 JavaScript를 사용하여 중요한 클라이언트 쪽 상호 작용을 포함하는 응용 프로그램을 빌드할 수 있도록 도와줍니다. Visual Studio에는 knockout.js 및 ASP.NET Web API를 사용하여 단일 페이지 응용 프로그램을 구축할 수 있는 템플릿이 포함되어 있습니다. 기본 제공 SPA 템플릿 외에도 커뮤니티에서 만든 SPA 템플릿을 다운로드할 수 있습니다.
 

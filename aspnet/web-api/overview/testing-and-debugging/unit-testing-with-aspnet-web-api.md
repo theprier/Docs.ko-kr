@@ -8,12 +8,12 @@ ms.date: 06/05/2014
 ms.assetid: bf20f78d-ff91-48be-abd1-88e23dcc70ba
 msc.legacyurl: /web-api/overview/testing-and-debugging/unit-testing-with-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 0a3f9ddde725995359de85c5e0783106f5de02bd
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: 91cca2789b66b7b8983f8786b506c5fc71db8b75
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41828879"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795436"
 ---
 <a name="unit-testing-aspnet-web-api-2"></a>단위 테스트 ASP.NET Web API 2
 ====================
@@ -22,17 +22,15 @@ ms.locfileid: "41828879"
 [완료 된 프로젝트 다운로드](https://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-1374bc11)
 
 > 이 지침과 응용 프로그램에는 Web API 2 응용 프로그램에 대 한 간단한 단위 테스트를 만드는 방법을 보여 줍니다. 이 자습서에서는 솔루션에 단위 테스트 프로젝트를 포함 하 고 컨트롤러 메서드에서 반환된 된 값을 확인 하는 테스트 메서드를 작성 하는 방법을 보여 줍니다.
-> 
+>
 > 이 자습서에서는 ASP.NET Web API의 기본 개념에 익숙하다고 가정 합니다. 입문 용 자습서는를 참조 하세요 [ASP.NET Web API 2 시작](../getting-started-with-aspnet-web-api/tutorial-your-first-web-api.md)합니다.
-> 
+>
 > 이 항목의 단위 테스트를 간단한 데이터 시나리오를 의도적으로 제한 됩니다. 고급 데이터 시나리오를 테스트 하는 장치에 대 한 참조 [Entity Framework 머킹 때 단위 테스트 ASP.NET Web API 2](mocking-entity-framework-when-unit-testing-aspnet-web-api-2.md)합니다.
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>이 자습서에 사용 되는 소프트웨어 버전
-> 
-> 
-> - [Visual Studio 2017](https://www.visualstudio.com/vs/)
+>
+> - [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)
 > - Web API 2
-
 
 ## <a name="in-this-topic"></a>항목 내용
 
@@ -41,7 +39,6 @@ ms.locfileid: "41828879"
 - [필수 조건](#prereqs)
 - [코드 다운로드](#download)
 - [단위 테스트 프로젝트를 사용 하 여 응용 프로그램 만들기](#appwithunittest)
-
     - [응용 프로그램을 만들 때 단위 테스트 프로젝트 추가](#whencreate)
     - [기존 응용 프로그램에 단위 테스트 프로젝트 추가](#addtoexisting)
 - [Web API 2 응용 프로그램 설정](#setupproject)
@@ -52,7 +49,7 @@ ms.locfileid: "41828879"
 <a id="prereqs"></a>
 ## <a name="prerequisites"></a>전제 조건
 
-Visual Studio 2017 Community, Professional 또는 Enterprise edition
+[Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) Community, Professional 또는 Enterprise edition
 
 <a id="download"></a>
 ## <a name="download-code"></a>코드 다운로드

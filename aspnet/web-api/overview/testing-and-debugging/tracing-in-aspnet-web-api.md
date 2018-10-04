@@ -8,30 +8,28 @@ ms.date: 02/25/2014
 ms.assetid: 66a837e9-600b-4b72-97a9-19804231c64a
 msc.legacyurl: /web-api/overview/testing-and-debugging/tracing-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 02805eda4f8dceb467547fa4e00aef8ea956f228
-ms.sourcegitcommit: c684eb6c0999d11d19e15e65939e5c7f99ba47df
+ms.openlocfilehash: 426e3500c504a651a325eec021e2d9e8b9cc1d32
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46292286"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795282"
 ---
 <a name="tracing-in-aspnet-web-api-2"></a>ASP.NET Web API 2에서 추적
 ====================
 [Mike Wasson](https://github.com/MikeWasson)
 
 > 웹 기반 응용 프로그램을 디버그 하려는 경우에 좋은 집합이 추적 로그에 대 한 조치는 없습니다. 이 자습서에서는 ASP.NET Web API에서 추적을 사용 하는 방법을 보여줍니다. Web API 프레임 워크에 컨트롤러 호출 전후에 추적 하려면이 기능을 사용할 수 있습니다. 사용자 고유의 코드를 추적에 사용할 수 있습니다.
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>이 자습서에 사용 되는 소프트웨어 버전
-> 
-> 
-> - [Visual Studio 2017](https://www.visualstudio.com/downloads/) (Visual Studio 2015를 사용 하 여 작동)
+>
+> - [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) (Visual Studio 2015를 사용 하 여 작동)
 > - Web API 2
 > - [Microsoft.AspNet.WebApi.Tracing](http://www.nuget.org/packages/Microsoft.AspNet.WebApi.Tracing)
 
-
 ## <a name="enable-systemdiagnostics-tracing-in-web-api"></a>Web API에서에서 추적 System.Diagnostics를 사용 하도록 설정
 
-먼저 새 ASP.NET 웹 응용 프로그램 프로젝트를 만듭니다. Visual Studio에서에서 **파일** 메뉴에서 **새로 만들기**, 한 다음 **프로젝트**합니다. 아래 **템플릿을**를 **웹**를 선택 **ASP.NET 웹 응용 프로그램**합니다.
+먼저 새 ASP.NET 웹 응용 프로그램 프로젝트를 만듭니다. Visual Studio에서에서 합니다 **파일** 메뉴에서 **새로 만들기** > **프로젝트**합니다. 아래 **템플릿을**를 **웹**를 선택 **ASP.NET 웹 응용 프로그램**합니다.
 
 [![](tracing-in-aspnet-web-api/_static/image2.png)](tracing-in-aspnet-web-api/_static/image1.png)
 

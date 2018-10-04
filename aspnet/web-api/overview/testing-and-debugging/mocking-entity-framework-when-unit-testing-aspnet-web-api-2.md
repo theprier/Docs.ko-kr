@@ -8,12 +8,12 @@ ms.date: 12/13/2013
 ms.assetid: cd844025-ccad-41ce-8694-595f1022a49f
 msc.legacyurl: /web-api/overview/testing-and-debugging/mocking-entity-framework-when-unit-testing-aspnet-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: 0bc5ab59583a2be3f889ba05d26c6cda4589057d
-ms.sourcegitcommit: d53e0cc71542b92de867bcce51575b054886f529
+ms.openlocfilehash: 8945f913abe8fb8397d07a5994000fff2348f1f7
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41837381"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795381"
 ---
 <a name="mocking-entity-framework-when-unit-testing-aspnet-web-api-2"></a>Entity Framework 머킹 때 단위 테스트 ASP.NET Web API 2
 ====================
@@ -22,17 +22,15 @@ ms.locfileid: "41837381"
 [완료 된 프로젝트 다운로드](https://code.msdn.microsoft.com/Unit-Testing-with-ASPNET-1374bc11)
 
 > 이 지침과 응용 프로그램에는 Entity Framework를 사용 하는 Web API 2 응용 프로그램에 대 한 단위 테스트를 만드는 방법을 보여 줍니다. 테스트에 대 한 컨텍스트 개체를 전달 하도록 설정 하는 스 캐 폴드 된 컨트롤러를 수정 하는 방법 및 Entity Framework와 함께 작동 하는 테스트 개체를 만드는 방법을 보여 줍니다.
-> 
+>
 > ASP.NET Web API를 사용한 단위 테스트 소개를 참조 하세요 [ASP.NET Web API 2를 사용 하 여 단위 테스트](unit-testing-with-aspnet-web-api.md)합니다.
-> 
+>
 > 이 자습서에서는 ASP.NET Web API의 기본 개념에 익숙하다고 가정 합니다. 입문 용 자습서는를 참조 하세요 [ASP.NET Web API 2 시작](../getting-started-with-aspnet-web-api/tutorial-your-first-web-api.md)합니다.
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>이 자습서에 사용 되는 소프트웨어 버전
-> 
-> 
-> - [Visual Studio 2017](https://www.visualstudio.com/vs/)
+>
+> - [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)
 > - Web API 2
-
 
 ## <a name="in-this-topic"></a>항목 내용
 

@@ -7,12 +7,12 @@ ms.author: riande
 ms.date: 11/28/2017
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 14796ce31187a0f6a6331b46477fadc77e281c3b
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 62e99a41ba935470c39476c9aea8ee4193543425
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41832290"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48795295"
 ---
 <a name="get-started-with-aspnet-web-api-2-c"></a>ASP.NET Web API 2 (C#)를 사용 하 여 시작
 ====================
@@ -21,14 +21,13 @@ ms.locfileid: "41832290"
 [완료 된 프로젝트 다운로드](https://code.msdn.microsoft.com/Sample-code-of-Getting-c56ccb28)
 
 HTTP를 단순히 웹 페이지를 제공 합니다. HTTP은 서비스 및 데이터를 노출 하는 Api를 빌드하기 위한 강력한 플랫폼 이기도 합니다. HTTP는 간단 하 고 유연 하며 유비쿼터스는입니다. 생각할 수 있는 거의 모든 플랫폼에서 HTTP 라이브러리도 있으므로 HTTP 서비스는 광범위 한 브라우저, 모바일 장치 및 기존 데스크톱 응용 프로그램 등의 클라이언트를 확보할 수 있습니다.
- 
+
 ASP.NET Web API는 web Api는.NET Framework를 빌드하기 위한 프레임 워크입니다. 이 자습서에서는 제품의 목록을 반환 하는 web API를 만들려면 ASP.NET Web API를 사용 합니다.
 
- 
- ## <a name="software-versions-used-in-the-tutorial"></a>이 자습서에 사용 되는 소프트웨어 버전
-  
- - [Visual Studio 2017](https://www.visualstudio.com/downloads/)
- - Web API 2
+## <a name="software-versions-used-in-the-tutorial"></a>이 자습서에 사용 되는 소프트웨어 버전
+
+- [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)
+- Web API 2
 
 참조 [ASP.NET Core 및 Windows에 대 한 Visual Studio를 사용 하 여 web API 만들기](https://docs.microsoft.com/aspnet/core/tutorials/first-web-api) 이 자습서의 최신 버전입니다.
 

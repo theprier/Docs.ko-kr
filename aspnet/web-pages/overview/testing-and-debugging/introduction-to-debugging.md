@@ -8,38 +8,38 @@ ms.date: 02/20/2014
 ms.assetid: 68de4326-7611-4b9b-b5f6-79b7adc3069f
 msc.legacyurl: /web-pages/overview/testing-and-debugging/introduction-to-debugging
 msc.type: authoredcontent
-ms.openlocfilehash: da04158c58054a8c0b8e31d3a55bea2dcbae7a05
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: fb9a69d568e10ddafd71e2b9600b3dae21576807
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41832707"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48794991"
 ---
 <a name="introduction-to-debugging-aspnet-web-pages-razor-sites"></a>ASP.NET 웹 디버깅 소개 페이지 (Razor) 사이트
 ====================
 [Tom FitzMacken](https://github.com/tfitzmac)
 
 > 이 문서에서는 ASP.NET Web Pages (Razor) 웹 사이트에서 페이지를 디버깅 하는 다양 한 방법에 설명 합니다. 디버깅은 찾기 및 코드 페이지에 오류를 수정 하는 과정입니다.
-> 
-> **학습할 내용:** 
-> 
+>
+> **학습할 내용:**
+>
 > - 도움이 되는 정보를 표시 하는 방법 분석 및 페이지를 디버깅 합니다.
 > - Visual Studio에서 디버깅을 사용 하는 방법 도구입니다.
->   
-> 
+>
+>
 > 다음은 문서에 도입 된 ASP.NET 기능입니다.
-> 
+>
 > - `ServerInfo` 도우미입니다.
 > - `ObjectInfo` 도우미입니다.
->   
-> 
+>
+>
 > ## <a name="software-versions"></a>소프트웨어 버전
-> 
-> 
+>
+>
 > - ASP.NET Web Pages (Razor) 3
 > - Visual Studio 2013
->   
-> 
+>
+>
 > 이 자습서는 ASP.NET 웹 페이지 2 에서도 작동합니다. WebMatrix 3를 사용할 수 있지만 통합된 된 디버거 지원 되지 않습니다.
 
 
@@ -54,8 +54,8 @@ ms.locfileid: "41832707"
 
     추가할 수는 `ServerInfo` 페이지의 코드입니다. 하지만 끝에 추가 됩니다 출력 별도로 유지 하 여 다른 페이지 콘텐츠를 쉽게 읽을 수 있습니다.
 
-    > [!NOTE] 
-    > 
+    > [!NOTE]
+    >
     > **중요 한** 프로덕션 서버에 웹 페이지를 이동 하기 전에 웹 페이지에서 모든 진단 코드를 제거 해야 합니다. 이 적용 됩니다는 `ServerInfo` 도우미 뿐만 아니라 다른 진단이 문서는 기술 페이지로 코드를 추가 합니다. 이러한 종류의 정보는 악의적인 의도 가진 사용자에 게 유용할 수 있으므로 비슷한 세부 정보를 확인 하 고 서버에서 서버 이름, 사용자 이름, 경로 대 한 내용은 웹 사이트 방문자가 하지 않으려고 합니다.
 3. 페이지를 저장 하 고 브라우저에서 실행 합니다.
 
@@ -119,7 +119,7 @@ ms.locfileid: "41832707"
 
 ## <a name="using-debugging-tools-in-visual-studio"></a>Visual Studio에서 디버깅 도구를 사용 하 여
 
-보다 포괄적인 디버깅 환경을 사용 하 여 Visual Studio 2013 또는 무료 [Visual Studio Express 2013 for Web](https://www.visualstudio.com/downloads/download-visual-studio-vs#d-2013-express)합니다. Visual Studio를 사용 하 여 조사 하려는 줄에서 코드에 중단점을 설정할 수 있습니다.
+보다 포괄적인 디버깅 환경을 사용 하 여 [Visual Studio](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)합니다. Visual Studio를 사용 하 여 조사 하려는 줄에서 코드에 중단점을 설정할 수 있습니다.
 
 ![중단점 설정](introduction-to-debugging/_static/image1.png)
 
