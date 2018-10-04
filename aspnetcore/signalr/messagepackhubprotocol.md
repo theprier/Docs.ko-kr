@@ -7,36 +7,36 @@ ms.author: tdykstra
 ms.custom: mvc
 ms.date: 06/04/2018
 uid: signalr/messagepackhubprotocol
-ms.openlocfilehash: 78b708c50ce7a8101c9eaa558171540e61c0d7f0
-ms.sourcegitcommit: 3ca527f27c88cfc9d04688db5499e372fbc2c775
+ms.openlocfilehash: c04834b0d395d08782b51b56e79badba078a5b91
+ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39094997"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48794839"
 ---
-# <a name="use-messagepack-hub-protocol-in-signalr-for-aspnet-core"></a><span data-ttu-id="3e238-103">SignalR에서 MessagePack Hub 프로토콜을 사용 하 여 ASP.NET Core에 대 한</span><span class="sxs-lookup"><span data-stu-id="3e238-103">Use MessagePack Hub Protocol in SignalR for ASP.NET Core</span></span>
+# <a name="use-messagepack-hub-protocol-in-signalr-for-aspnet-core"></a><span data-ttu-id="a1d7b-103">SignalR에서 MessagePack Hub 프로토콜을 사용 하 여 ASP.NET Core에 대 한</span><span class="sxs-lookup"><span data-stu-id="a1d7b-103">Use MessagePack Hub Protocol in SignalR for ASP.NET Core</span></span>
 
-<span data-ttu-id="3e238-104">[브 레 넌 Conroy](https://github.com/BrennanConroy)</span><span class="sxs-lookup"><span data-stu-id="3e238-104">By [Brennan Conroy](https://github.com/BrennanConroy)</span></span>
+<span data-ttu-id="a1d7b-104">[브 레 넌 Conroy](https://github.com/BrennanConroy)</span><span class="sxs-lookup"><span data-stu-id="a1d7b-104">By [Brennan Conroy](https://github.com/BrennanConroy)</span></span>
 
-<span data-ttu-id="3e238-105">이 문서에 설명 된 항목을 알고 있다고 가정 [시작](xref:tutorials/signalr)합니다.</span><span class="sxs-lookup"><span data-stu-id="3e238-105">This article assumes the reader is familiar with the topics covered in [Get Started](xref:tutorials/signalr).</span></span>
+<span data-ttu-id="a1d7b-105">이 문서에 설명 된 항목을 알고 있다고 가정 [시작](xref:tutorials/signalr)합니다.</span><span class="sxs-lookup"><span data-stu-id="a1d7b-105">This article assumes the reader is familiar with the topics covered in [Get Started](xref:tutorials/signalr).</span></span>
 
-## <a name="what-is-messagepack"></a><span data-ttu-id="3e238-106">MessagePack 란?</span><span class="sxs-lookup"><span data-stu-id="3e238-106">What is MessagePack?</span></span>
+## <a name="what-is-messagepack"></a><span data-ttu-id="a1d7b-106">MessagePack 란?</span><span class="sxs-lookup"><span data-stu-id="a1d7b-106">What is MessagePack?</span></span>
 
-<span data-ttu-id="3e238-107">[MessagePack](https://msgpack.org/index.html) 은 빠르고 compact는 이진 serialization 형식입니다.</span><span class="sxs-lookup"><span data-stu-id="3e238-107">[MessagePack](https://msgpack.org/index.html) is a binary serialization format that is fast and compact.</span></span> <span data-ttu-id="3e238-108">에 비해 크기가 작은 메시지를 만들기 때문에 성능 및 대역폭은 중요 한 경우에 유용 [JSON](https://www.json.org/)합니다.</span><span class="sxs-lookup"><span data-stu-id="3e238-108">It's useful when performance and bandwidth are a concern because it creates smaller messages compared to [JSON](https://www.json.org/).</span></span> <span data-ttu-id="3e238-109">이진 형식 이므로 바이트 MessagePack 파서를 통과 하지 않는 한 네트워크 추적 및 로그를 조사 하는 경우 메시지를 읽을 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="3e238-109">Because it's a binary format, messages are unreadable when looking at network traces and logs unless the bytes are passed through a MessagePack parser.</span></span> <span data-ttu-id="3e238-110">SignalR은 MessagePack 형식에 대 한 기본 제공 지원 하 고 사용 하 여 클라이언트와 서버에 대 한 Api를 제공 합니다.</span><span class="sxs-lookup"><span data-stu-id="3e238-110">SignalR has built-in support for the MessagePack format, and provides APIs for the client and server to use.</span></span>
+<span data-ttu-id="a1d7b-107">[MessagePack](https://msgpack.org/index.html) 은 빠르고 compact는 이진 serialization 형식입니다.</span><span class="sxs-lookup"><span data-stu-id="a1d7b-107">[MessagePack](https://msgpack.org/index.html) is a binary serialization format that is fast and compact.</span></span> <span data-ttu-id="a1d7b-108">에 비해 크기가 작은 메시지를 만들기 때문에 성능 및 대역폭은 중요 한 경우에 유용 [JSON](https://www.json.org/)합니다.</span><span class="sxs-lookup"><span data-stu-id="a1d7b-108">It's useful when performance and bandwidth are a concern because it creates smaller messages compared to [JSON](https://www.json.org/).</span></span> <span data-ttu-id="a1d7b-109">이진 형식 이므로 바이트 MessagePack 파서를 통과 하지 않는 한 네트워크 추적 및 로그를 조사 하는 경우 메시지를 읽을 수 없습니다.</span><span class="sxs-lookup"><span data-stu-id="a1d7b-109">Because it's a binary format, messages are unreadable when looking at network traces and logs unless the bytes are passed through a MessagePack parser.</span></span> <span data-ttu-id="a1d7b-110">SignalR은 MessagePack 형식에 대 한 기본 제공 지원 하 고 사용 하 여 클라이언트와 서버에 대 한 Api를 제공 합니다.</span><span class="sxs-lookup"><span data-stu-id="a1d7b-110">SignalR has built-in support for the MessagePack format, and provides APIs for the client and server to use.</span></span>
 
-## <a name="configure-messagepack-on-the-server"></a><span data-ttu-id="3e238-111">MessagePack 서버의 구성</span><span class="sxs-lookup"><span data-stu-id="3e238-111">Configure MessagePack on the server</span></span>
+## <a name="configure-messagepack-on-the-server"></a><span data-ttu-id="a1d7b-111">MessagePack 서버의 구성</span><span class="sxs-lookup"><span data-stu-id="a1d7b-111">Configure MessagePack on the server</span></span>
 
-<span data-ttu-id="3e238-112">서버에서 MessagePack Hub 프로토콜을 사용 하려면 설치 된 `Microsoft.AspNetCore.SignalR.Protocols.MessagePack` 앱의 패키지입니다.</span><span class="sxs-lookup"><span data-stu-id="3e238-112">To enable the MessagePack Hub Protocol on the server, install the `Microsoft.AspNetCore.SignalR.Protocols.MessagePack` package in your app.</span></span> <span data-ttu-id="3e238-113">Startup.cs 파일에 추가 `AddMessagePackProtocol` 에 `AddSignalR` 서버의 MessagePack 지원을 사용 하도록 호출 합니다.</span><span class="sxs-lookup"><span data-stu-id="3e238-113">In the Startup.cs file add `AddMessagePackProtocol` to the `AddSignalR` call to enable MessagePack support on the server.</span></span>
+<span data-ttu-id="a1d7b-112">서버에서 MessagePack Hub 프로토콜을 사용 하려면 설치 된 `Microsoft.AspNetCore.SignalR.Protocols.MessagePack` 앱의 패키지입니다.</span><span class="sxs-lookup"><span data-stu-id="a1d7b-112">To enable the MessagePack Hub Protocol on the server, install the `Microsoft.AspNetCore.SignalR.Protocols.MessagePack` package in your app.</span></span> <span data-ttu-id="a1d7b-113">Startup.cs 파일에 추가 `AddMessagePackProtocol` 에 `AddSignalR` 서버의 MessagePack 지원을 사용 하도록 호출 합니다.</span><span class="sxs-lookup"><span data-stu-id="a1d7b-113">In the Startup.cs file add `AddMessagePackProtocol` to the `AddSignalR` call to enable MessagePack support on the server.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="3e238-114">JSON은 기본적으로 사용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="3e238-114">JSON is enabled by default.</span></span> <span data-ttu-id="3e238-115">MessagePack 추가 JSON 및 MessagePack 클라이언트용 지원할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="3e238-115">Adding MessagePack enables support for both JSON and MessagePack clients.</span></span>
+> <span data-ttu-id="a1d7b-114">JSON은 기본적으로 사용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="a1d7b-114">JSON is enabled by default.</span></span> <span data-ttu-id="a1d7b-115">MessagePack 추가 JSON 및 MessagePack 클라이언트용 지원할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="a1d7b-115">Adding MessagePack enables support for both JSON and MessagePack clients.</span></span>
 
 ```csharp
 services.AddSignalR()
     .AddMessagePackProtocol();
 ```
 
-<span data-ttu-id="3e238-116">MessagePack 데이터에는 서식을 지정 하는 방법을 사용자 지정 하려면 `AddMessagePackProtocol` 옵션을 구성 하는 것에 대 한 대리자를 사용 합니다.</span><span class="sxs-lookup"><span data-stu-id="3e238-116">To customize how MessagePack will format your data, `AddMessagePackProtocol` takes a delegate for configuring options.</span></span> <span data-ttu-id="3e238-117">해당 대리자에서는 `FormatterResolvers` MessagePack serialization 옵션을 구성 하려면 속성을 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="3e238-117">In that delegate, the `FormatterResolvers` property can be used to configure MessagePack serialization options.</span></span> <span data-ttu-id="3e238-118">해결 프로그램은 어떻게 작동 하는지에 대 한 자세한 내용은 MessagePack 라이브러리를 방문 [MessagePack CSharp](https://github.com/neuecc/MessagePack-CSharp)합니다.</span><span class="sxs-lookup"><span data-stu-id="3e238-118">For more information on how the resolvers work, visit the MessagePack library at [MessagePack-CSharp](https://github.com/neuecc/MessagePack-CSharp).</span></span> <span data-ttu-id="3e238-119">특성을 처리 하는 방법을 정의로 직렬화 할 개체에 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="3e238-119">Attributes can be used on the objects you want to serialize to define how they should be handled.</span></span>
+<span data-ttu-id="a1d7b-116">MessagePack 데이터에는 서식을 지정 하는 방법을 사용자 지정 하려면 `AddMessagePackProtocol` 옵션을 구성 하는 것에 대 한 대리자를 사용 합니다.</span><span class="sxs-lookup"><span data-stu-id="a1d7b-116">To customize how MessagePack will format your data, `AddMessagePackProtocol` takes a delegate for configuring options.</span></span> <span data-ttu-id="a1d7b-117">해당 대리자에서는 `FormatterResolvers` MessagePack serialization 옵션을 구성 하려면 속성을 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="a1d7b-117">In that delegate, the `FormatterResolvers` property can be used to configure MessagePack serialization options.</span></span> <span data-ttu-id="a1d7b-118">해결 프로그램은 어떻게 작동 하는지에 대 한 자세한 내용은 MessagePack 라이브러리를 방문 [MessagePack CSharp](https://github.com/neuecc/MessagePack-CSharp)합니다.</span><span class="sxs-lookup"><span data-stu-id="a1d7b-118">For more information on how the resolvers work, visit the MessagePack library at [MessagePack-CSharp](https://github.com/neuecc/MessagePack-CSharp).</span></span> <span data-ttu-id="a1d7b-119">특성을 처리 하는 방법을 정의로 직렬화 할 개체에 사용할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="a1d7b-119">Attributes can be used on the objects you want to serialize to define how they should be handled.</span></span>
 
 ```csharp
 services.AddSignalR()
@@ -49,11 +49,14 @@ services.AddSignalR()
     });
 ```
 
-## <a name="configure-messagepack-on-the-client"></a><span data-ttu-id="3e238-120">클라이언트에서 MessagePack 구성</span><span class="sxs-lookup"><span data-stu-id="3e238-120">Configure MessagePack on the client</span></span>
+## <a name="configure-messagepack-on-the-client"></a><span data-ttu-id="a1d7b-120">클라이언트에서 MessagePack 구성</span><span class="sxs-lookup"><span data-stu-id="a1d7b-120">Configure MessagePack on the client</span></span>
 
-### <a name="net-client"></a><span data-ttu-id="3e238-121">.NET 클라이언트</span><span class="sxs-lookup"><span data-stu-id="3e238-121">.NET client</span></span>
+> [!NOTE]
+> <span data-ttu-id="a1d7b-121">지원 되는 클라이언트에 대 한 JSON이 기본적으로 사용 됩니다.</span><span class="sxs-lookup"><span data-stu-id="a1d7b-121">JSON is enabled by default for the supported clients.</span></span> <span data-ttu-id="a1d7b-122">클라이언트에서는 단일 프로토콜을 지원할 수 있습니다.</span><span class="sxs-lookup"><span data-stu-id="a1d7b-122">Clients can only support a single protocol.</span></span> <span data-ttu-id="a1d7b-123">프로토콜 구성 MessagePack 지원 바뀝니다 모든 이전에 추가 합니다.</span><span class="sxs-lookup"><span data-stu-id="a1d7b-123">Adding MessagePack support will replace any previously configured protocols.</span></span>
 
-<span data-ttu-id="3e238-122">MessagePack.NET 클라이언트에서를 설치 합니다 `Microsoft.AspNetCore.SignalR.Protocols.MessagePack` 패키지 및 호출 `AddMessagePackProtocol` 에서 `HubConnectionBuilder`합니다.</span><span class="sxs-lookup"><span data-stu-id="3e238-122">To enable MessagePack in the .NET Client, install the `Microsoft.AspNetCore.SignalR.Protocols.MessagePack` package and call `AddMessagePackProtocol` on `HubConnectionBuilder`.</span></span>
+### <a name="net-client"></a><span data-ttu-id="a1d7b-124">.NET 클라이언트</span><span class="sxs-lookup"><span data-stu-id="a1d7b-124">.NET client</span></span>
+
+<span data-ttu-id="a1d7b-125">MessagePack.NET 클라이언트에서를 설치 합니다 `Microsoft.AspNetCore.SignalR.Protocols.MessagePack` 패키지 및 호출 `AddMessagePackProtocol` 에서 `HubConnectionBuilder`합니다.</span><span class="sxs-lookup"><span data-stu-id="a1d7b-125">To enable MessagePack in the .NET Client, install the `Microsoft.AspNetCore.SignalR.Protocols.MessagePack` package and call `AddMessagePackProtocol` on `HubConnectionBuilder`.</span></span>
 
 ```csharp
 var hubConnection = new HubConnectionBuilder()
@@ -63,20 +66,20 @@ var hubConnection = new HubConnectionBuilder()
 ```
 
 > [!NOTE]
-> <span data-ttu-id="3e238-123">이 `AddMessagePackProtocol` 서버와 마찬가지로 옵션을 구성 하는 데는 대리자를 호출 합니다.</span><span class="sxs-lookup"><span data-stu-id="3e238-123">This `AddMessagePackProtocol` call takes a delegate for configuring options just like the server.</span></span>
+> <span data-ttu-id="a1d7b-126">이 `AddMessagePackProtocol` 서버와 마찬가지로 옵션을 구성 하는 데는 대리자를 호출 합니다.</span><span class="sxs-lookup"><span data-stu-id="a1d7b-126">This `AddMessagePackProtocol` call takes a delegate for configuring options just like the server.</span></span>
 
-### <a name="javascript-client"></a><span data-ttu-id="3e238-124">JavaScript 클라이언트</span><span class="sxs-lookup"><span data-stu-id="3e238-124">JavaScript client</span></span>
+### <a name="javascript-client"></a><span data-ttu-id="a1d7b-127">JavaScript 클라이언트</span><span class="sxs-lookup"><span data-stu-id="a1d7b-127">JavaScript client</span></span>
 
-<span data-ttu-id="3e238-125">Javascript 클라이언트에 대 한 지원은 MessagePack가 제공 된 `@aspnet/signalr-protocol-msgpack` NPM 패키지 합니다.</span><span class="sxs-lookup"><span data-stu-id="3e238-125">MessagePack support for the Javascript client is provided by the `@aspnet/signalr-protocol-msgpack` NPM package.</span></span>
+<span data-ttu-id="a1d7b-128">Javascript 클라이언트에 대 한 지원은 MessagePack가 제공 된 `@aspnet/signalr-protocol-msgpack` NPM 패키지 합니다.</span><span class="sxs-lookup"><span data-stu-id="a1d7b-128">MessagePack support for the Javascript client is provided by the `@aspnet/signalr-protocol-msgpack` NPM package.</span></span>
 
 ```console
 npm install @aspnet/signalr-protocol-msgpack
 ```
 
-<span data-ttu-id="3e238-126">Npm 패키지를 설치한 후 모듈을 사용 하거나 수 있습니다 JavaScript 모듈 로더를 통해 직접 참조 하 여 브라우저에 가져온 합니다 *node_modules\\@aspnet\signalr-protocol-msgpack\dist\browser\signalr-protocol-msgpack.js* 파일입니다.</span><span class="sxs-lookup"><span data-stu-id="3e238-126">After installing the npm package, the module can be used directly via a JavaScript module loader or imported into the browser by referencing the *node_modules\\@aspnet\signalr-protocol-msgpack\dist\browser\signalr-protocol-msgpack.js* file.</span></span> <span data-ttu-id="3e238-127">브라우저에서을 `msgpack5` 라이브러리 참조 되어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="3e238-127">In a browser the `msgpack5` library must also be referenced.</span></span> <span data-ttu-id="3e238-128">사용 된 `<script>` 대 한 참조를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="3e238-128">Use a `<script>` tag to create a reference.</span></span> <span data-ttu-id="3e238-129">라이브러리에서 찾을 수 있습니다 *node_modules\msgpack5\dist\msgpack5.js*합니다.</span><span class="sxs-lookup"><span data-stu-id="3e238-129">The library can be found at *node_modules\msgpack5\dist\msgpack5.js*.</span></span>
+<span data-ttu-id="a1d7b-129">Npm 패키지를 설치한 후 모듈을 사용 하거나 수 있습니다 JavaScript 모듈 로더를 통해 직접 참조 하 여 브라우저에 가져온 합니다 *node_modules\\@aspnet\signalr-protocol-msgpack\dist\browser\signalr-protocol-msgpack.js* 파일입니다.</span><span class="sxs-lookup"><span data-stu-id="a1d7b-129">After installing the npm package, the module can be used directly via a JavaScript module loader or imported into the browser by referencing the *node_modules\\@aspnet\signalr-protocol-msgpack\dist\browser\signalr-protocol-msgpack.js* file.</span></span> <span data-ttu-id="a1d7b-130">브라우저에서을 `msgpack5` 라이브러리 참조 되어야 합니다.</span><span class="sxs-lookup"><span data-stu-id="a1d7b-130">In a browser the `msgpack5` library must also be referenced.</span></span> <span data-ttu-id="a1d7b-131">사용 된 `<script>` 대 한 참조를 만듭니다.</span><span class="sxs-lookup"><span data-stu-id="a1d7b-131">Use a `<script>` tag to create a reference.</span></span> <span data-ttu-id="a1d7b-132">라이브러리에서 찾을 수 있습니다 *node_modules\msgpack5\dist\msgpack5.js*합니다.</span><span class="sxs-lookup"><span data-stu-id="a1d7b-132">The library can be found at *node_modules\msgpack5\dist\msgpack5.js*.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="3e238-130">사용 하는 경우는 `<script>` 요소 순서는 중요 합니다.</span><span class="sxs-lookup"><span data-stu-id="3e238-130">When using the `<script>` element, the order is important.</span></span> <span data-ttu-id="3e238-131">하는 경우 *signalr-프로토콜-msgpack.js* 하기 전에 참조 *msgpack5.js*, MessagePack를 사용 하 여 연결 하려고 할 때 오류가 발생 합니다.</span><span class="sxs-lookup"><span data-stu-id="3e238-131">If *signalr-protocol-msgpack.js* is referenced before *msgpack5.js*, an error occurs when trying to connect with MessagePack.</span></span> <span data-ttu-id="3e238-132">*signalr.js* 전에 필요 *signalr-프로토콜-msgpack.js*합니다.</span><span class="sxs-lookup"><span data-stu-id="3e238-132">*signalr.js* is also required before *signalr-protocol-msgpack.js*.</span></span>
+> <span data-ttu-id="a1d7b-133">사용 하는 경우는 `<script>` 요소 순서는 중요 합니다.</span><span class="sxs-lookup"><span data-stu-id="a1d7b-133">When using the `<script>` element, the order is important.</span></span> <span data-ttu-id="a1d7b-134">하는 경우 *signalr-프로토콜-msgpack.js* 하기 전에 참조 *msgpack5.js*, MessagePack를 사용 하 여 연결 하려고 할 때 오류가 발생 합니다.</span><span class="sxs-lookup"><span data-stu-id="a1d7b-134">If *signalr-protocol-msgpack.js* is referenced before *msgpack5.js*, an error occurs when trying to connect with MessagePack.</span></span> <span data-ttu-id="a1d7b-135">*signalr.js* 전에 필요 *signalr-프로토콜-msgpack.js*합니다.</span><span class="sxs-lookup"><span data-stu-id="a1d7b-135">*signalr.js* is also required before *signalr-protocol-msgpack.js*.</span></span>
 
 ```html
 <script src="~/lib/signalr/signalr.js"></script>
@@ -84,7 +87,7 @@ npm install @aspnet/signalr-protocol-msgpack
 <script src="~/lib/signalr/signalr-protocol-msgpack.js"></script>
 ```
 
-<span data-ttu-id="3e238-133">추가 `.withHubProtocol(new signalR.protocols.msgpack.MessagePackHubProtocol())` 에 `HubConnectionBuilder` 서버에 연결할 때 MessagePack 프로토콜을 사용 하도록 클라이언트를 구성 합니다.</span><span class="sxs-lookup"><span data-stu-id="3e238-133">Adding `.withHubProtocol(new signalR.protocols.msgpack.MessagePackHubProtocol())` to the `HubConnectionBuilder` will configure the client to use the MessagePack protocol when connecting to a server.</span></span>
+<span data-ttu-id="a1d7b-136">추가 `.withHubProtocol(new signalR.protocols.msgpack.MessagePackHubProtocol())` 에 `HubConnectionBuilder` 서버에 연결할 때 MessagePack 프로토콜을 사용 하도록 클라이언트를 구성 합니다.</span><span class="sxs-lookup"><span data-stu-id="a1d7b-136">Adding `.withHubProtocol(new signalR.protocols.msgpack.MessagePackHubProtocol())` to the `HubConnectionBuilder` will configure the client to use the MessagePack protocol when connecting to a server.</span></span>
 
 ```javascript
 const connection = new signalR.HubConnectionBuilder()
@@ -94,10 +97,10 @@ const connection = new signalR.HubConnectionBuilder()
 ```
 
 > [!NOTE]
-> <span data-ttu-id="3e238-134">이때 JavaScript 클라이언트에서 MessagePack 프로토콜에 대 한 아무런 구성 옵션이 있습니다.</span><span class="sxs-lookup"><span data-stu-id="3e238-134">At this time, there are no configuration options for the MessagePack protocol on the JavaScript client.</span></span>
+> <span data-ttu-id="a1d7b-137">이때 JavaScript 클라이언트에서 MessagePack 프로토콜에 대 한 아무런 구성 옵션이 있습니다.</span><span class="sxs-lookup"><span data-stu-id="a1d7b-137">At this time, there are no configuration options for the MessagePack protocol on the JavaScript client.</span></span>
 
-## <a name="related-resources"></a><span data-ttu-id="3e238-135">관련 참고 자료</span><span class="sxs-lookup"><span data-stu-id="3e238-135">Related resources</span></span>
+## <a name="related-resources"></a><span data-ttu-id="a1d7b-138">관련 참고 자료</span><span class="sxs-lookup"><span data-stu-id="a1d7b-138">Related resources</span></span>
 
-* [<span data-ttu-id="3e238-136">시작</span><span class="sxs-lookup"><span data-stu-id="3e238-136">Get Started</span></span>](xref:tutorials/signalr)
-* [<span data-ttu-id="3e238-137">.NET 클라이언트</span><span class="sxs-lookup"><span data-stu-id="3e238-137">.NET client</span></span>](xref:signalr/dotnet-client)
-* [<span data-ttu-id="3e238-138">JavaScript 클라이언트</span><span class="sxs-lookup"><span data-stu-id="3e238-138">JavaScript client</span></span>](xref:signalr/javascript-client)
+* [<span data-ttu-id="a1d7b-139">시작</span><span class="sxs-lookup"><span data-stu-id="a1d7b-139">Get Started</span></span>](xref:tutorials/signalr)
+* [<span data-ttu-id="a1d7b-140">.NET 클라이언트</span><span class="sxs-lookup"><span data-stu-id="a1d7b-140">.NET client</span></span>](xref:signalr/dotnet-client)
+* [<span data-ttu-id="a1d7b-141">JavaScript 클라이언트</span><span class="sxs-lookup"><span data-stu-id="a1d7b-141">JavaScript client</span></span>](xref:signalr/javascript-client)
