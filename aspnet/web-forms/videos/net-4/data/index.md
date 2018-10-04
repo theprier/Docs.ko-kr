@@ -3,25 +3,21 @@ uid: web-forms/videos/net-4/data/index
 title: 데이터 | Microsoft Docs
 author: rick-anderson
 description: 이 비디오는 ASP.NET 4 데이터 컨트롤에 대 한 새로운 기능을 보여줍니다.
-ms.author: aspnetcontent
-manager: wpickett
+ms.author: riande
 ms.date: 11/14/2011
-ms.topic: article
 ms.assetid: fdc32a00-aab5-458b-8303-67147cbd9277
-ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/videos/net-4/data
 msc.type: chapter
-ms.openlocfilehash: c35a2b5338f8f34b076c5449c3784b8241ecb807
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: HT
+ms.openlocfilehash: 174ebad3529d242c43c719c5fcfb1ea0dd1e8967
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26526152"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48254284"
 ---
-<a name="data"></a><span data-ttu-id="4e674-103">데이터</span><span class="sxs-lookup"><span data-stu-id="4e674-103">Data</span></span>
+<a name="data"></a><span data-ttu-id="92098-103">데이터</span><span class="sxs-lookup"><span data-stu-id="92098-103">Data</span></span>
 ====================
-> <span data-ttu-id="4e674-104">이 비디오는 ASP.NET 4 데이터 컨트롤에 대 한 새로운 기능을 보여줍니다.</span><span class="sxs-lookup"><span data-stu-id="4e674-104">This video shows you new features for ASP.NET 4 data controls.</span></span>
+> <span data-ttu-id="92098-104">이 비디오는 ASP.NET 4 데이터 컨트롤에 대 한 새로운 기능을 보여줍니다.</span><span class="sxs-lookup"><span data-stu-id="92098-104">This video shows you new features for ASP.NET 4 data controls.</span></span>
 
 
-- [<span data-ttu-id="4e674-105">영구 GridView 행 선택</span><span class="sxs-lookup"><span data-stu-id="4e674-105">Persistent GridView Row Selection</span></span>](aspnet-4-quick-hit-persistent-gridview-row-selection.md)
+- [<span data-ttu-id="92098-105">영구 GridView 행 선택</span><span class="sxs-lookup"><span data-stu-id="92098-105">Persistent GridView Row Selection</span></span>](aspnet-4-quick-hit-persistent-gridview-row-selection.md)
