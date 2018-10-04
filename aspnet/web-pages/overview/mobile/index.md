@@ -2,26 +2,22 @@
 uid: web-pages/overview/mobile/index
 title: 모바일 | Microsoft Docs
 author: rick-anderson
-description: ASP.NET 웹 페이지 응용 프로그램에 모바일 장치와 작동 하는 방법.
-ms.author: aspnetcontent
-manager: wpickett
+description: ASP.NET Web Pages 응용 프로그램에서 모바일 장치를 사용 하는 방법입니다.
+ms.author: riande
 ms.date: 09/08/2014
-ms.topic: article
 ms.assetid: ce83fbc9-ef24-4f59-8e76-7ca1b983bf9a
-ms.technology: dotnet-webpages
-ms.prod: .net-framework
 msc.legacyurl: /web-pages/overview/mobile
 msc.type: chapter
-ms.openlocfilehash: a972010a9b6bc041f2424de1da78f93fc67ae37f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: HT
+ms.openlocfilehash: cfaf011e33238ccc96812510ac856567b5f2dbf6
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26528632"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48256035"
 ---
 <a name="mobile"></a>휴대폰
 ====================
-> ASP.NET 웹 페이지 응용 프로그램에 모바일 장치와 작동 하는 방법.
+> ASP.NET Web Pages 응용 프로그램에서 모바일 장치를 사용 하는 방법입니다.
 
 
-- [모바일 장치를 위한 사이트 페이지를 렌더링 하는 ASP.NET 웹](rendering-aspnet-web-pages-sites-for-mobile-devices.md)
+- [모바일 장치를 위한 ASP.NET 웹 페이지 사이트 렌더링](rendering-aspnet-web-pages-sites-for-mobile-devices.md)

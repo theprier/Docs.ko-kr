@@ -2,27 +2,23 @@
 uid: web-api/overview/error-handling/index
 title: ASP.NET Web API에서에서 오류 처리 | Microsoft Docs
 author: rick-anderson
-description: ASP.NET Web API의 예외를 처리 하는 방법.
-ms.author: aspnetcontent
-manager: wpickett
+description: ASP.NET Web API에서 예외를 처리 하는 방법입니다.
+ms.author: riande
 ms.date: 10/23/2014
-ms.topic: article
 ms.assetid: 0b2f1edb-816c-4a86-95bc-0c55797eb3af
-ms.technology: dotnet-webapi
-ms.prod: .net-framework
 msc.legacyurl: /web-api/overview/error-handling
 msc.type: chapter
-ms.openlocfilehash: 955c334f1e11b9dc28e2cc0a0fc055226fa0607f
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: HT
+ms.openlocfilehash: 6c66910237fbf8686d5f9fce023e8efea35c06f7
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26506782"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48256274"
 ---
 <a name="error-handling-in-aspnet-web-api"></a>ASP.NET Web API에서에서 오류 처리
 ====================
-> ASP.NET Web API의 예외를 처리 하는 방법.
+> ASP.NET Web API에서 예외를 처리 하는 방법입니다.
 
 
-- [Web API의에서 예외 처리](exception-handling.md)
-- [Web API 2에서에서 처리 하는 전역 오류](web-api-global-error-handling.md)
+- [Web API에서 예외 처리](exception-handling.md)
+- [Web API 2에서 전역 오류 처리](web-api-global-error-handling.md)

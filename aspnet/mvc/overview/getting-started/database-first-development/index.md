@@ -1,30 +1,26 @@
 ---
 uid: mvc/overview/getting-started/database-first-development/index
-title: Entity Framework 6 데이터베이스 시작 MVC 5를 처음 사용 하 여 | Microsoft Docs
+title: Entity Framework 6 Database를 사용 하 여 시작 먼저 MVC 5를 사용 하 여 | Microsoft Docs
 author: rick-anderson
-description: 이 시리즈에서는 Entity Framework와 함께 MVC 5 응용 프로그램을 만들기 위한 첫 번째 데이터베이스 개발을 사용 하는 방법을 보여 줍니다.
-ms.author: aspnetcontent
-manager: wpickett
+description: 이 시리즈에서는 Entity Framework를 사용 하 여 MVC 5 응용 프로그램을 만드는 첫 번째 데이터베이스 개발을 사용 하는 방법을 보여 줍니다.
+ms.author: riande
 ms.date: 09/17/2013
-ms.topic: article
 ms.assetid: 3437215a-c4ba-46ed-8378-d61c79c9d38c
-ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/overview/getting-started/database-first-development
 msc.type: chapter
-ms.openlocfilehash: 5d31e4527305c4efd47f706c70a700d62d3d0896
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: HT
+ms.openlocfilehash: 70795eb6502231846639b445d5b06948dc37b009
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26498042"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48254820"
 ---
-<a name="getting-started-with-entity-framework-6-database-first-using-mvc-5"></a>Entity Framework 6 데이터베이스 시작 MVC 5를 처음 사용 하 여
+<a name="getting-started-with-entity-framework-6-database-first-using-mvc-5"></a>Entity Framework 6 Database를 사용 하 여 시작 먼저 MVC 5를 사용 하 여
 ====================
-> 이 시리즈에서는 Entity Framework와 함께 MVC 5 응용 프로그램을 만들기 위한 첫 번째 데이터베이스 개발을 사용 하는 방법을 보여 줍니다.
+> 이 시리즈에서는 Entity Framework를 사용 하 여 MVC 5 응용 프로그램을 만드는 첫 번째 데이터베이스 개발을 사용 하는 방법을 보여 줍니다.
 
 
-- [Entity Framework 6 Database First MVC 5를 사용 하 여 시작 하기](setting-up-database.md)
+- [MVC 5를 사용하여 Entity Framework 6 Database First 시작](setting-up-database.md)
 - [웹 응용 프로그램 및 데이터 모델 만들기](creating-the-web-application.md)
 - [뷰 생성](generating-views.md)
 - [데이터베이스 변경](changing-the-database.md)

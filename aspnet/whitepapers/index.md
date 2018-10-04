@@ -2,22 +2,18 @@
 uid: whitepapers/index
 title: 백서 | Microsoft Docs
 author: rick-anderson
-description: 이 페이지에서 설치 하 고 ASP.NET을 구성 하 고 안전 하며 속도 및 유연한 ASP.NET 응용 프로그램을 작성 하는 데 도움이 되도록 백서를 찾을 수 있습니다.
-ms.author: aspnetcontent
-manager: wpickett
+description: 이 페이지에서 설치 하 고 ASP.NET을 구성 하는 데 빠르고 유연한 보안 ASP.NET 응용 프로그램을 작성 하는 데 도움이 하는 백서를 찾을 수 있습니다.
+ms.author: riande
 ms.date: 11/15/2011
-ms.topic: article
 ms.assetid: 3824e2d7-446f-406b-9c8b-5a1634359a78
-ms.technology: ''
-ms.prod: .net-framework
 msc.legacyurl: ''
 msc.type: content
-ms.openlocfilehash: 5d335017a28f3dcbb8332b5361a2b068bddd2cce
-ms.sourcegitcommit: a510f38930abc84c4b302029d019a34dfe76823b
-ms.translationtype: HT
+ms.openlocfilehash: 3e463e0fb8e6af228480fc4795e1bd0ee5badac9
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 01/30/2018
-ms.locfileid: "28883805"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48254481"
 ---
 <a name="whitepapers"></a>백서
 ====================
@@ -28,7 +24,7 @@ ms.locfileid: "28883805"
     - [ASP.NET 4 주요 변경 내용](aspnet4/breaking-changes.md)
 - [ASP.NET MVC 1.0 응용 프로그램을 ASP.NET MVC 2로 업그레이드](aspnet-mvc2-upgrade-notes.md)
 - [ASP.NET에서 IIS 디렉터리에 대한 액세스 거부](denied-access-to-iis-directories.md)
-- [ASP.NET MVC 2의에서 새로운 기능](what-is-new-in-aspnet-mvc.md)
+- [ASP.NET MVC 2의 새로운 기능](what-is-new-in-aspnet-mvc.md)
 - [ASP.NET MVC 3](mvc3-release-notes.md)
 - [ASP.NET MVC 4](mvc4-beta-release-notes.md)
 - [IIS 6.0에서 ASP.NET 1.1 실행](aspnet-and-iis6.md)

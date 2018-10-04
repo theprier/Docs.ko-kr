@@ -3,21 +3,17 @@ uid: mvc/videos/index
 title: 비디오 | Microsoft Docs
 author: rick-anderson
 description: ''
-ms.author: aspnetcontent
-manager: wpickett
+ms.author: riande
 ms.date: 06/24/2011
-ms.topic: article
 ms.assetid: e618c37c-68f3-49aa-9fda-f86cb3b578b9
-ms.technology: dotnet-mvc
-ms.prod: .net-framework
 msc.legacyurl: /mvc/videos
 msc.type: book
-ms.openlocfilehash: 03e8129816a2fb8b9261618207b0e1795fb7cf23
-ms.sourcegitcommit: 016f4d58663bcd442930227022de23fb3abee0b3
-ms.translationtype: HT
+ms.openlocfilehash: 1f284bb52bb45880d656592f173b3e57fbc47118
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 02/12/2018
-ms.locfileid: "29152965"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48255859"
 ---
 <a name="videos"></a>비디오
 ====================
@@ -50,7 +46,7 @@ ms.locfileid: "29152965"
         - [ASP.NET MVC: 개발자를 위한 사용 방법 10분 기술 비디오](mvc-2/how-do-i/aspnet-mvc-how-10-minute-technical-video-for-developers.md)
         - [ASP.NET MVC 웹 응용 프로그램에서 AJAX 호출에 대해 JSON 형식 데이터 반환](mvc-2/how-do-i/how-do-i-return-json-formatted-data-for-an-ajax-call-in-an-aspnet-mvc-web-application.md)
         - [ASP.NET MVC 부분 보기에서 데이터 작업](mvc-2/how-do-i/how-do-i-work-with-data-in-aspnet-mvc-partial-views.md)
-        - [ASP.NET MVC 뷰에 대 한 데이터를 관리 하는 보기 모델을 구현 합니다.](mvc-2/how-do-i/how-do-i-implement-view-models-to-manage-data-for-aspnet-mvc-views.md)
+        - [ASP.NET MVC 뷰에 대 한 데이터를 관리 하는 보기 모델 구현](mvc-2/how-do-i/how-do-i-implement-view-models-to-manage-data-for-aspnet-mvc-views.md)
         - [MVC 응용 프로그램에 대한 사용자 지정 HTML 도우미 만들기](mvc-2/how-do-i/how-do-i-create-a-custom-html-helper-for-an-mvc-application.md)
         - [MVC 응용 프로그램에서 모델 바인더 사용](mvc-2/how-do-i/how-do-i-work-with-model-binders-in-an-mvc-application.md)
         - [MVC 응용 프로그램에서 HttpVerbs 특성 사용](mvc-2/how-do-i/how-do-i-use-httpverbs-attributes-in-an-mvc-application.md)
@@ -95,7 +91,7 @@ ms.locfileid: "29152965"
         - [ASP.NET MVC Storefront 16부: OpenID로 멤버 자격 다시 실행](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-16-membership-redo-with-openid.md)
         - [ASP.NET MVC Storefront 17부: Jeff Atwood로 체크 아웃](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-17-checkout-with-jeff-atwood.md)
         - [ASP.NET MVC Storefront 18부: 환경 만들기](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-18-creating-an-experience.md)
-        - [ASP.NET MVC Storefront 19 단계: Windows 워크플로 주문 처리](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19-processing-orders-with-windows-workflow.md)
+        - [ASP.NET MVC Storefront 19부: Windows 워크플로를 사용하여 주문 처리](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19-processing-orders-with-windows-workflow.md)
         - [ASP.NET MVC Storefront 19a: Windows 워크플로 후속 작업](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-19a-windows-workflow-followup.md)
         - [ASP.NET MVC Storefront 20부: 로깅](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-20-logging.md)
         - [ASP.NET MVC Storefront 21부: 주문 관리자 및 개인 설정](mvc-1/aspnet-mvc-storefront/aspnet-mvc-storefront-part-21-order-manager-and-personalization.md)

@@ -2,27 +2,23 @@
 uid: signalr/overview/deployment/index
 title: SignalR 배포 및 호스팅 | Microsoft Docs
 author: rick-anderson
-description: 배포 하는 방법 및 호스트 SignalR 응용 프로그램입니다.
-ms.author: aspnetcontent
-manager: wpickett
+description: 배포 하 여 SignalR 응용 프로그램을 호스트 하는 방법입니다.
+ms.author: riande
 ms.date: 09/19/2014
-ms.topic: article
 ms.assetid: 62482bdd-e2a4-46e5-b909-6d0c6bc07114
-ms.technology: dotnet-signalr
-ms.prod: .net-framework
 msc.legacyurl: /signalr/overview/deployment
 msc.type: chapter
-ms.openlocfilehash: 8c018a2fe92c90e3264326116cb4b21a0070bff4
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: HT
+ms.openlocfilehash: df56c36ba757192169fa6aac0fa48a120dfc717c
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26504072"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48256154"
 ---
 <a name="signalr-deployment-and-hosting"></a>SignalR 배포 및 호스팅
 ====================
-> 배포 하는 방법 및 호스트 SignalR 응용 프로그램입니다.
+> 배포 하 여 SignalR 응용 프로그램을 호스트 하는 방법입니다.
 
 
-- [자습서: SignalR 자체 호스트](tutorial-signalr-self-host.md)
-- [Azure 앱 서비스에서 웹 앱과 SignalR을 사용 하 여](using-signalr-with-azure-web-sites.md)
+- [자습서: SignalR 자체 호스팅](tutorial-signalr-self-host.md)
+- [Azure App Service에서 Web Apps에 SignalR 사용](using-signalr-with-azure-web-sites.md)

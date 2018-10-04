@@ -1,30 +1,26 @@
 ---
 uid: web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater/index
-title: 페이징 및 정렬과 반복기와 DataList | Microsoft Docs
+title: DataList 및 반복기를 사용 하 여 정렬 및 페이징 | Microsoft Docs
 author: rick-anderson
-description: 이 자습서에 DataList 또는 반복기 만들 컨트롤을 유연 하 게 UI를 페이징 및 정렬에 대 한 페이징 지원을 추가 하는 방법을 보여 줍니다.
-ms.author: aspnetcontent
-manager: wpickett
+description: 이러한 자습서에는 페이징 및 정렬에 대 한 매우 유연한 UI를 만들기 위해 DataList 또는 Repeater 컨트롤 페이징 지원을 추가 하는 방법을 보여 줍니다.
+ms.author: riande
 ms.date: 10/05/2011
-ms.topic: article
 ms.assetid: 8996b59e-042c-4395-b28a-f1ab95ac16af
-ms.technology: dotnet-webforms
-ms.prod: .net-framework
 msc.legacyurl: /web-forms/overview/data-access/paging-and-sorting-with-the-datalist-and-repeater
 msc.type: chapter
-ms.openlocfilehash: e05b1a691a3a6378859847d4530f11bbe4d8c1d3
-ms.sourcegitcommit: 9a9483aceb34591c97451997036a9120c3fe2baf
-ms.translationtype: HT
+ms.openlocfilehash: d92c21dc854f849cea22ae3e4feb5559cb50270e
+ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 11/10/2017
-ms.locfileid: "26514422"
+ms.lasthandoff: 08/16/2018
+ms.locfileid: "48256298"
 ---
 <a name="paging-and-sorting-with-the-datalist-and-repeater"></a>페이징 및 DataList 및 반복기를 사용 하 여 정렬
 ====================
-> 이 자습서에 DataList 또는 반복기 만들 컨트롤을 유연 하 게 UI를 페이징 및 정렬에 대 한 페이징 지원을 추가 하는 방법을 보여 줍니다.
+> 이러한 자습서에는 페이징 및 정렬에 대 한 매우 유연한 UI를 만들기 위해 DataList 또는 Repeater 컨트롤 페이징 지원을 추가 하는 방법을 보여 줍니다.
 
 
-- [반복기 컨트롤 (C#) 또는 DataList에서 보고서 데이터를 페이징](paging-report-data-in-a-datalist-or-repeater-control-cs.md)
-- [DataList 또는 반복기 컨트롤 (C#)의 데이터 정렬](sorting-data-in-a-datalist-or-repeater-control-cs.md)
-- [DataList 또는 반복기 컨트롤 (VB)에서 보고서 데이터를 페이징](paging-report-data-in-a-datalist-or-repeater-control-vb.md)
-- [DataList 또는 반복기 컨트롤 (VB)에서 데이터 정렬](sorting-data-in-a-datalist-or-repeater-control-vb.md)
+- [DataList 또는 반복기 컨트롤에서 보고서 데이터 페이징(C#)](paging-report-data-in-a-datalist-or-repeater-control-cs.md)
+- [DataList 또는 반복기 컨트롤에서 데이터 정렬(C#)](sorting-data-in-a-datalist-or-repeater-control-cs.md)
+- [DataList 또는 반복기 컨트롤에서 보고서 데이터 페이징(VB)](paging-report-data-in-a-datalist-or-repeater-control-vb.md)
+- [DataList 또는 반복기 컨트롤에서 데이터 정렬(VB)](sorting-data-in-a-datalist-or-repeater-control-vb.md)
