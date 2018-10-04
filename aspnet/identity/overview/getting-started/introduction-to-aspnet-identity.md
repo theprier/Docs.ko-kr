@@ -8,16 +8,16 @@ ms.date: 10/17/2013
 ms.assetid: 38717fc1-5989-43cf-952d-4007cc1dd923
 msc.legacyurl: /identity/overview/getting-started/introduction-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 24674adf1f28b3ffc0822a4b112c972d1e7ed5b4
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 1938de2b57c8fafa7ea8a656c0a42d2d3f1a6c81
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41837244"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577875"
 ---
 <a name="introduction-to-aspnet-identity"></a>ASP.NET Id 소개
 ====================
-하 여 [Jon Galloway](https://github.com/jongalloway)를 [Pranav Rastogi](https://github.com/rustd)하십시오 [Rick Anderson](https://github.com/Rick-Anderson), [Tom Dykstra](https://github.com/tdykstra)
+하 여 [Jon Galloway](https://github.com/jongalloway)를 [Pranav Rastogi](https://github.com/rustd)하십시오 [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Tom Dykstra](https://github.com/tdykstra)
 
 > ASP.NET 멤버 자격 시스템에 도입 되었습니다 ASP.NET 2.0 백 이후 2005 년에 웹 응용 프로그램 인증 및 권한 부여를 일반적으로 처리 하는 방법에 많은 변경 내용이 다음. ASP.NET Id가 보안 정책 살펴보기 멤버 자격 시스템 웹, 휴대폰 또는 태블릿 용 최신 응용 프로그램을 작성 하는 경우 여야 합니다.
 > 

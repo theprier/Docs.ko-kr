@@ -8,16 +8,16 @@ ms.date: 09/15/2015
 ms.assetid: 053e23c4-13c9-40fa-87cb-3e9b0823b31e
 msc.legacyurl: /identity/overview/features-api/two-factor-authentication-using-sms-and-email-with-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 4454f011960f74c20ac590c3d034028cfc867e7d
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 4b253923696e35e59c196578a232f53c11671d16
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41837617"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577979"
 ---
 <a name="two-factor-authentication-using-sms-and-email-with-aspnet-identity"></a>ASP.NET Id와 SMS 및 전자 메일을 사용 하 여 2 단계 인증
 ====================
-하 여 [Hao 둘러싼](https://github.com/HaoK)를 [Pranav Rastogi](https://github.com/rustd)하십시오 [Rick Anderson](https://github.com/Rick-Anderson), [Suhas Joshi](https://github.com/suhasj)
+하 여 [Hao 둘러싼](https://github.com/HaoK)를 [Pranav Rastogi](https://github.com/rustd)하십시오 [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Suhas Joshi](https://github.com/suhasj)
 
 > 이 자습서에서는 SMS 및 전자 메일을 사용 하 여 2 단계 인증 (2FA)을 설정 하는 방법을 보여줍니다.
 > 

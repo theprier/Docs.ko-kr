@@ -8,12 +8,12 @@ ms.date: 07/16/2014
 ms.assetid: ecfd0eb4-c4ad-44e6-9db9-a2a66611ff6a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
 msc.type: authoredcontent
-ms.openlocfilehash: a26f22a7cf39593ee068fb8e8d57200120c97ccb
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 05181ae1b2d857eea45983d378b28011c1cd755a
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41827087"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48578135"
 ---
 <a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a>실습: Azure Websites 유지: 변경 및 규모 관리
 ====================
@@ -22,17 +22,17 @@ ms.locfileid: "41827087"
 [웹 캠프 학습 키트 다운로드](http://aka.ms/webcamps-training-kit)
 
 > Microsoft Azure를 통해 쉽게 빌드 및 프로덕션 환경에 웹 사이트를 배포 합니다. 응용 프로그램 라이브 되 면 완료 되지 않았음을 있습니다 하지만 하면 이제 막 시작! 변경 요구 사항, 데이터베이스 업데이트, 확장성 등을 처리 해야 합니다. 다행 스럽게도 Azure App Service에서는 다양 한 원활 하 게 실행 하 여 사이트를 유지 하는 데 유용한 기능을 사용 하 여 설명 합니다.
-> 
+>
 > Azure는 안전 하 고 유연한 개발, 배포 및 확장 크기 웹 응용 프로그램에 대 한 옵션을 제공 합니다. 만들기 및 배포 인프라를 관리 해야 하는 번거로움 없이 응용 프로그램에 기존 도구를 활용 합니다.
-> 
+>
 > 프로 비전 프로덕션 웹 응용 프로그램을 직접 몇 분 안에 쉽게 하므로 좋아하는 개발 도구를 사용 하 여 만든 콘텐츠를 배포 하 여 합니다. 에 대 한 지원과 함께 소스 제어에서 직접 기존 사이트를 배포할 수 있습니다 **Git**, **GitHub**합니다 **Bitbucket**를 **TFS**, 및도  **DropBox**합니다. 사용 하 여 스크립트 또는 즐겨 찾는 IDE에서 직접 배포할 **PowerShell** Windows에서 또는 **CLI** 모든 OS에서 실행 되는 도구입니다. 을 배포한 후에 사이트를 연속 배포에 대 한 지원을 지속적으로 최신 상태로 유지 합니다.
-> 
+>
 > Azure 큰 또는 작은 모든 데이터에 대해 확장 가능한 지속형 클라우드 저장소, 백업 및 복구 솔루션 제공합니다. 프로덕션 환경에서 테이블, Blob 및 SQL Database와 같은 저장소 서비스를 응용 프로그램을 배포할 때 클라우드에서 응용 프로그램을 확장 하는 데 도움이 됩니다.
-> 
+>
 > SQL Database를 사용 하 여 응용 프로그램의 새 버전을 배포 하는 경우 생산성 데이터베이스를 최신 상태로 유지 하는 것이 반드시 합니다. 에 감사 드립니다 **Entity Framework Code First 마이그레이션을**, 개발 및 데이터 모델의 배포 환경을 몇 분 안에 업데이트 간소화 되었습니다. 이 실습 랩에서 Microsoft Azure에서 프로덕션 환경에 웹 앱을 배포할 때 발생할 수 있습니다 다른 항목에 표시 됩니다.
-> 
+>
 > 웹 캠프 교육 키트에서에서 사용할 수 있는 모든 샘플 코드 및 코드 조각 포함 됩니다 [ http://aka.ms/webcamps-training-kit ](http://aka.ms/webcamps-training-kit)합니다.
-> 
+>
 > 이 항목의 자세한 자세한 검사를 참조 하세요. 합니다 [전자책은 Azure를 사용 하 여 실제 클라우드 앱 빌드](building-real-world-cloud-apps-with-windows-azure/introduction.md)합니다.
 
 
@@ -60,7 +60,7 @@ ms.locfileid: "41827087"
 - [Visual Studio Express 2013 for Web](https://www.microsoft.com/visualstudio/) 이상
 - [Azure SDK for.NET 2.2](https://www.microsoft.com/windowsazure/sdk/)
 - [GIT 버전 제어 시스템입니다.](http://git-scm.com/download)
-- Microsoft Azure 구독 
+- Microsoft Azure 구독
 
     - 등록을 [무료 평가판](http://aka.ms/watk-freetrial)
     - 인 경우 Visual Studio Professional, Test Professional, Premium 또는 Ultimate with MSDN 또는 MSDN 플랫폼 구독자를 활성화 하 [MSDN 혜택](http://aka.ms/watk-msdn) 개발 및 Azure에서 테스트를 시작 하려면 지금
@@ -202,10 +202,10 @@ ms.locfileid: "41827087"
 
     > [!NOTE]
     > 두 가지 방법으로 구성 된 마이그레이션 파일 **위로** 하 고 **아래로**합니다.
-    > 
+    >
     > - 합니다 **등록** 메서드를 사용 하 여 현재 버전의 데이터베이스에 적용 하는 응용 프로그램 요구 변경 내용 지정할 수는 있습니다.
     > - **아래로** 에 추가 변경을 하는 데 사용 되는 **위로** 메서드.
-    > 
+    >
     > 타임 스탬프 순서 및 해당 하는 마지막 업데이트 이후 사용 되지 않은 모든 마이그레이션을 데이터베이스 마이그레이션은 데이터베이스를 업데이트할 때 실행 됩니다 (의 \_마이그레이션을 적용 된 MigrationHistory 테이블의 추적). 합니다 **등록** 모든 마이그레이션 메서드의 호출 되며 지정한 데이터베이스에 변경 합니다. 마이그레이션 이전으로 돌아가서 하기로 하는 경우는 **다운** 메서드를 호출 하 여 역순으로 변경 내용을 다시 실행 하는 합니다.
 4. 에 **패키지 관리자 콘솔**, 다음 명령을 입력 하 고 다음 키를 누릅니다 **Enter**합니다.
 
@@ -298,15 +298,15 @@ ms.locfileid: "41827087"
 
     > [!NOTE]
     > 기본적으로 Azure에서 도메인을 제공 *azurewebsites.net* 를 Azure 관리 포털을 사용 하 여 사용자 지정 도메인을 설정할 제공 합니다. 그러나 특정 Azure App Service 모드를 사용 하는 경우 사용자 지정 도메인에 관리할 수만 있습니다.
-    > 
+    >
     > Azure App Service는 Free, Shared, Basic, Standard 및 Premium edition에서 사용할 수 있습니다. 무료 및 공유 모드에서 모든 web apps 다중 테 넌 트 환경에서 실행 되며 CPU, 메모리 및 네트워크 사용량에 대 한 할당량을 갖습니다. 무료 앱의 최대 수는 계획을 사용 하 여 달라질 수 있습니다. 표준 모드에서 표준 Azure에 해당 하는 전용 가상 머신에서 실행 되는 앱 리소스를 계산 하는 것이 있습니다. 웹 앱 모드 구성에서 찾을 수 있습니다 합니다 **확장** 웹 앱의 메뉴.
-    > 
+    >
     > ![Azure App Service 모드](maintainable-azure-websites-managing-change-and-scale/_static/image19.png "Azure App Service 모드")
-    > 
+    >
     > 사용 중인 경우 **Shared** 또는 **표준** 앱으로 이동 하 여 웹 앱에 대 한 사용자 지정 도메인을 관리할 수 있는 모드 **구성** 메뉴와 클릭**도메인 관리** 아래에서 *도메인 이름*합니다.
-    > 
+    >
     > ![도메인 관리](maintainable-azure-websites-managing-change-and-scale/_static/image20.png "도메인 관리")
-    > 
+    >
     > ![사용자 지정 도메인 관리](maintainable-azure-websites-managing-change-and-scale/_static/image21.png "사용자 지정 도메인 관리")
 9. 웹 앱이 만들어지면 아래에 있는 링크를 클릭 합니다 **URL** 열을 새 웹 앱이 실행 중인지 확인 합니다.
 
@@ -754,7 +754,7 @@ ms.locfileid: "41827087"
 
     > [!NOTE]
     > 이 범위는 웹 앱에 대 한 평균 CPU 사용량을 나타냅니다. Azure을 추가 하거나이 범위에서 웹 앱을 유지 하도록 인스턴스를 제거 합니다. 에 지정 된 크기 조정 시 사용 되는 인스턴스의 최소 및 최대 수를 **인스턴스 수** 구성 합니다. Azure 위나 제한을 벗어나서 이동 하지 않습니다.
-    > 
+    >
     > 기본값 **대상 CPU** 값은이 랩의 목적에 대해서만 수정 합니다. 작은 값을 사용 하 여 CPU 범위를 구성 하 여 보통 수준의 부하는 응용 프로그램에 배치 되 면 자동 크기 조정 트리거와 가능성은 증가 합니다.
 
     ![변경 대상 CPU 20%에서 40% 사이 여야](maintainable-azure-websites-managing-change-and-scale/_static/image78.png "20%에서 40% 사이 여야 CPU 대상 변경")
@@ -869,7 +869,7 @@ ms.locfileid: "41827087"
 20. **솔루션 탐색기**를 두 번 클릭 합니다 **Local.settings** 테스트 설정을 탐색 하는 파일입니다. 기본적으로 Visual Studio는 테스트를 실행 하려면 로컬 컴퓨터를 사용 합니다.
 
     > [!NOTE]
-    > 또는 사용 하 여 클라우드 부하 테스트를 실행 하려면 테스트 프로젝트를 구성할 수 있습니다 **VSO Visual Studio Online ()** 합니다. VSO는 클라우드 기반 부하 테스트를 좀 더 현실적인 로드를 시뮬레이션 하는 서비스, 네트워크 대역폭, CPU 용량 및 사용 가능한 메모리 등 로컬 환경 제약 조건을 방지를 제공 합니다. VSO를 사용 하 여 부하 테스트를 실행 하는 방법에 대 한 자세한 내용은 참조 하세요. [이 문서에서는](https://www.visualstudio.com/get-started/load-test-your-app-vs)합니다.
+    > 또는 사용 하 여 클라우드 부하 테스트를 실행 하려면 테스트 프로젝트를 구성할 수 있습니다 **Azure 테스트 계획**합니다. 테스트 계획을 azure 클라우드 기반 부하 테스트를 좀 더 현실적인 로드를 시뮬레이션 하는 서비스, CPU 용량, 사용 가능한 메모리 및 네트워크 대역폭과 같은 로컬 환경 제약 조건을 방지를 제공 합니다. Azure 테스트 계획을 사용 하 여 부하 테스트를 실행 하는 방법에 대 한 자세한 내용은 참조 하십시오 [부하 테스트 시나리오](/azure/devops/test/load-test/overview?view=vsts)합니다.
 
     ![테스트 설정](maintainable-azure-websites-managing-change-and-scale/_static/image98.png)
 
@@ -904,10 +904,10 @@ ms.locfileid: "41827087"
 
     > [!NOTE]
     > 변경 내용을 그래프에 표시 하려면 몇 분 정도 걸릴 수 있습니다 (키를 눌러 **ctrl+f5** 주기적으로 페이지를 새로). 모든 변경 내용이 표시 되지 않으면, 다음을 시도할 수 있습니다.
-    > 
+    >
     > - 부하 테스트 시간을 증가 시킬 (예: **10 분**)
     > - 최대값과 최소값을 줄일 합니다 **대상 CPU** 웹 앱의 자동 크기 조정 구성의 범위
-    > - 사용 하 여 클라우드에서 부하 테스트 실행 **Visual Studio Online**합니다. 자세한 내용은 [여기](https://www.visualstudio.com/get-started/load-test-your-app-vs.aspx)
+    > - 사용 하 여 클라우드에서 부하 테스트 실행 **Azure 테스트 계획**합니다. 자세한 내용은 [여기](/azure/devops/test/load-test/index?view=vsts)
 
 * * *
 

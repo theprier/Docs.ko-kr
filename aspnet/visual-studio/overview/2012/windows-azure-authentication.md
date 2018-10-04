@@ -8,16 +8,16 @@ ms.date: 02/20/2013
 ms.assetid: a3cef801-a54b-4ebd-93c3-55764e2e14b1
 msc.legacyurl: /visual-studio/overview/2012/windows-azure-authentication
 msc.type: authoredcontent
-ms.openlocfilehash: d5d055d90b263050ef6defa1b98b139c4f8e4dee
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: a45b0ad2b61c2b78f7f06e85fe5e92193d73041d
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41835526"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577511"
 ---
 <a name="windows-azure-authentication"></a>Windows Azure 인증
 ====================
-[Rick Anderson](https://github.com/Rick-Anderson)
+[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > Windows Azure Active Directory를 통해 간단히에서 호스팅된 웹 응용 프로그램에 대 한 인증을 사용 하도록 Microsoft ASP.NET 도구 [Windows Azure 웹 사이트](https://www.windowsazure.com/home/features/web-sites/)합니다. 조직에서 온-프레미스 Active Directory에서 동기화 하는 회사 계정 또는 사용자 고유의 사용자 지정 Windows Azure Active Directory 도메인에서 만든 사용자가 Office 365 사용자를 인증 하도록 Windows Azure 인증을 사용할 수 있습니다. Windows Azure 인증을 사용 하면 단일을 사용 하 여 사용자를 인증 하도록 응용 프로그램 구성 [Windows Azure Active Directory](https://docs.microsoft.com/azure/active-directory/) 테 넌 트입니다.
 > 

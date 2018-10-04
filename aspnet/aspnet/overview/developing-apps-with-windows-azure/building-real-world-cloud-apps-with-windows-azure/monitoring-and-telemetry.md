@@ -8,16 +8,16 @@ ms.date: 07/09/2015
 ms.assetid: 7e986ab5-6615-4638-add7-4614ce7b51db
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry
 msc.type: authoredcontent
-ms.openlocfilehash: cec29e27e834317661f80eed93cb8b81a0786644
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: f4dae827627103e5cfb9981b6c3b9342cdc34c13
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41829123"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48578005"
 ---
 <a name="monitoring-and-telemetry-building-real-world-cloud-apps-with-azure"></a>모니터링 및 원격 분석 (Azure 사용 하 여 빌드 실제 클라우드 앱)
 ====================
-하 여 [Mike Wasson](https://github.com/MikeWasson)하십시오 [Rick Anderson](https://github.com/Rick-Anderson), [Tom Dykstra](https://github.com/tdykstra)
+하 여 [Mike Wasson](https://github.com/MikeWasson)하십시오 [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Tom Dykstra](https://github.com/tdykstra)
 
 [다운로드 해결 프로젝트](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) 또는 [전자책 다운로드](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
@@ -29,7 +29,7 @@ ms.locfileid: "41829123"
 ## <a name="buy-or-rent-a-telemetry-solution"></a>구입 또는 원격 분석 솔루션도 임대
 
 > [!NOTE]
-> 이 문서에서는 되기 전에 작성 된 [Application Insights](https://azure.microsoft.com/services/application-insights/) 출시 되었습니다. Application Insights는 Azure에서 원격 분석 솔루션에 대 한 기본 방법입니다. 참조 [ASP.NET 웹 사이트에 대 한 Application Insights 설정](https://docs.microsoft.com/azure/application-insights/app-insights-asp-net) 자세한 내용은 합니다.
+> 이 문서에서는 되기 전에 작성 된 [Application Insights](/azure/application-insights/app-insights-overview) 출시 되었습니다. Application Insights는 Azure에서 원격 분석 솔루션에 대 한 기본 방법입니다. 참조 [ASP.NET 웹 사이트에 대 한 Application Insights 설정](/azure/application-insights/app-insights-asp-net) 자세한 내용은 합니다.
 
 
 클라우드 환경에 대 한 훌륭한 것 중 하나는 쉽게 구입 하거나 임대 승리 하는 것입니다. 원격 분석은 예제입니다. 많은 노력 없이 작동 및 실행, 비용 효율적으로 매우 좋은 원격 분석 시스템을 가져올 수 있습니다. Azure와 통합 되는 뛰어난 파트너는 여러 있고 일부는 무료 계층으로 아무 작업도 수행에 대 한 기본 원격 분석을 얻을 수 있습니다. Azure에서 현재 사용할 수 중 일부에 불과합니다가 같습니다.
@@ -38,7 +38,7 @@ ms.locfileid: "41829123"
 - [AppDynamics](http://www.appdynamics.com/)
 - [Dynatrace](https://datamarket.azure.com/application/b4011de2-1212-4375-9211-e882766121ff)
 
-2015 년 3 월부터 [Visual Studio Online 용 Microsoft Application Insights](https://azure.microsoft.com/documentation/articles/app-insights-get-started/) 아직 출시 되지 않지만를 사용해 미리 보기로 제공 됩니다. [Microsoft System Center](http://www.petri.co.il/microsoft-system-center-introduction.htm#) 도 모니터링 기능을 포함 합니다.
+[Microsoft System Center](http://www.petri.co.il/microsoft-system-center-introduction.htm#) 도 모니터링 기능을 포함 합니다.
 
 New Relic 얼마나 수 있는지는 원격 분석 시스템을 사용 하 여 표시할 설정를 신속 하 게 살펴보겠습니다.
 

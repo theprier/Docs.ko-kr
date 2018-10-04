@@ -8,16 +8,16 @@ ms.date: 05/21/2015
 ms.assetid: 97902c66-cb61-4d11-be52-73f962f2db0a
 msc.legacyurl: /identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure
 msc.type: authoredcontent
-ms.openlocfilehash: eda2277a4baad8f2a63aa2fdf6ab84f57f1eb0e0
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 8b5d6bf9fad72218341e4e0b90144da01abea3aa
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41829888"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577543"
 ---
 <a name="best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure-app-service"></a>ASP.NET 및 Azure App Service에 암호 및 기타 중요 한 데이터를 배포 하기 위한 모범 사례
 ====================
-[Rick Anderson](https://github.com/Rick-Anderson)
+[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 이 자습서는 어떻게 코드가 안전 하 게 저장 및 액세스할 수 보안 정보를 보여줍니다. 무엇보다 중요한 점은 절대로 소스 코드에 암호나 기타 중요한 데이터를 저장하면 안 될 뿐만 아니라, 프로덕션 환경의 보안 정보를 개발 및 테스트 모드에서 사용해서는 안 된다는 것입니다
 > 

@@ -3,14 +3,14 @@ title: 사이트 간 스크립팅 (XSS) ASP.NET Core에서 방지
 author: rick-anderson
 description: 사이트 간 스크립팅 (XSS) 및 ASP.NET Core 앱에서이 취약성을 해결 하는 방법에 알아봅니다.
 ms.author: riande
-ms.date: 10/14/2016
+ms.date: 10/02/2018
 uid: security/cross-site-scripting
-ms.openlocfilehash: 4784b1775d955f0ef00526e50b960fc873ea218d
-ms.sourcegitcommit: 927e510d68f269d8335b5a7c8592621219a90965
+ms.openlocfilehash: e937ce47b7151155197cd607832eeb6bf62e3a19
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 07/30/2018
-ms.locfileid: "39342213"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577446"
 ---
 # <a name="prevent-cross-site-scripting-xss-in-aspnet-core"></a>사이트 간 스크립팅 (XSS) ASP.NET Core에서 방지
 
@@ -36,9 +36,9 @@ ms.locfileid: "39342213"
 
 모두 자동으로 MVC에서 사용 되는 Razor 엔진 인코딩합니다 이렇게 것을 방지 하기 위해 열심히 작업 하지 않는 출력 변수에서 제공 합니다. HTML 특성을 사용할 때마다 인코딩 규칙을 사용 합니다 *@* 지시문입니다. HTML로 인코딩 특성은 HTML 인코딩 즉, HTML 인코딩 또는 HTML 특성 인코딩입니다을 사용할 것인지 걱정 없는 합니다. 만 사용 하는 HTML 컨텍스트에서 JavaScript로 직접 신뢰할 수 없는 입력을 삽입 하려고 할 때 하지 확인 해야 합니다. 태그 도우미는 또한 tag 매개 변수에서 사용 하는 입력을 인코딩합니다.
 
-다음 Razor 보기를; 사용
+다음 Razor 보기를 수행 합니다.
 
-```none
+```cshtml
 @{
        var untrustedInput = "<\"123\">";
    }
@@ -59,7 +59,7 @@ ms.locfileid: "39342213"
 
 보기 처리 하는 JavaScript 값을 삽입 하려는 경우가 있을 수 있습니다. 구체적인 방법은 두 가지입니다. 값을 삽입 하는 가장 안전한 방법은 태그의 데이터 특성의 값을 배치 하 여 JavaScript에서 검색 됩니다. 예를 들어:
 
-```none
+```cshtml
 @{
        var untrustedInput = "<\"123\">";
    }
@@ -114,9 +114,9 @@ ms.locfileid: "39342213"
    <"123">
    ```
 
-JavaScript 인코더를 직접 호출할 수도 있습니다.
+또한 JavaScript 인코더를 직접 호출할 수 있습니다.
 
-```none
+```cshtml
 @using System.Text.Encodings.Web;
    @inject JavaScriptEncoder encoder;
 
@@ -225,4 +225,4 @@ services.AddSingleton<HtmlEncoder>(
 
 ## <a name="validation-as-an-xss-prevention-technique"></a>XSS 방지 기술로 유효성 검사
 
-유효성 검사 제한 XSS 공격에 유용한 도구가 될 수 있습니다. 예를 들어 0-9 문자만 포함 된 숫자 문자열 XSS 공격을 트리거하지 않습니다. 유효성 검사 불가능 하지 않다면 어려울는 HTML 입력을 구문 분석할-사용자 입력의 HTML을 허용 하려는 경우 문제가 더 복잡해 집니다. MarkDown 및 다른 텍스트 형식이 안전한 옵션이 다양 한 입력에 대 한 것입니다. 유효성 검사에 의존 하지 않아야 합니다. 항상 수행한 유효성 검사에 관계 없이 출력 하기 전에 신뢰할 수 없는 입력을 인코딩하십시오.
+유효성 검사 제한 XSS 공격에 유용한 도구가 될 수 있습니다. 예를 들어 0-9 문자만 포함 된 숫자 문자열 XSS 공격을 트리거하지 않습니다. 유효성 검사 사용자 입력에서 HTML을 허용할 때 좀 더 복잡해 집니다. HTML 입력을 구문 분석 하는 것은 불가능 하지 않다면 어려울 합니다. 포함 된 HTML을 제거 하는 파서를 사용 하 여 결합 된 markdown에는 다양 한 입력을 수락 하기 위해 더 안전한 옵션입니다. 유효성 검사에만 의존해 서는 안 됩니다. 항상 어떤 유효성 검사 또는 삭제가 수행 된 관계 없이 출력 하기 전에 신뢰할 수 없는 입력을 인코딩하십시오.

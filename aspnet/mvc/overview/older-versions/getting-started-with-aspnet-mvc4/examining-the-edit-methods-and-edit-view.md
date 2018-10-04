@@ -8,16 +8,16 @@ ms.date: 08/28/2012
 ms.assetid: 41eb99ca-e88f-4720-ae6d-49a958da8116
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: ea8156fc2ea334be37e7c3f02ac15d168cfc6843
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 1223e110ce98c5b511312de42bc2992045a4a40b
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41836690"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577992"
 ---
 <a name="examining-the-edit-methods-and-edit-view"></a>편집 메서드 및 편집 보기 검사
 ====================
-[Rick Anderson](https://github.com/Rick-Anderson)
+[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > > [!NOTE]
 > > 이 자습서는 업데이트 된 버전을 사용할 수 [여기](../../getting-started/introduction/getting-started.md) 는 ASP.NET MVC 5 및 Visual Studio 2013을 사용 합니다. 보다 안전 하 고 더 간단 하 게 수행 되며 더 많은 기능을 보여 줍니다.

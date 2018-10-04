@@ -8,16 +8,16 @@ ms.date: 03/14/2013
 ms.assetid: aadc5fa4-8215-4fc7-afd5-bcd2ef879728
 msc.legacyurl: /mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages
 msc.type: authoredcontent
-ms.openlocfilehash: cd1b8de51c180471ab273c4541959368ffbd48a3
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 5db661cccc58d1101f95091b069ab5cbfe78a378
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41837006"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577940"
 ---
 <a name="xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages"></a>ASP.NET MVC 및 웹 페이지에서 XSRF/CSRF 방지
 ====================
-[Rick Anderson](https://github.com/Rick-Anderson)
+[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 교차 사이트 요청 위조 (XSRF 또는 CSRF 라고도 함)은 악의적인 웹 사이트는 클라이언트 브라우저와 해당 브라우저에서 신뢰할 수 있는 웹 사이트 간의 상호 작용에 영향을 줄 가능해 집니다 웹 호스팅 응용 프로그램에 대 한 공격입니다. 이러한 공격은 웹 사이트로 웹 브라우저 인증 토큰이 모든 요청에 자동으로 보내기 때문에 가능 합니다. 정식 예로 ASP와 같은 인증 쿠키가 있습니다. NET의 폼 인증 티켓입니다. 그러나 웹 사이트 (예: Windows 인증, 기본 및 등) 영구적 인증 메커니즘을 사용 하는 이러한 공격 대상이 될 수 있습니다.
 > 

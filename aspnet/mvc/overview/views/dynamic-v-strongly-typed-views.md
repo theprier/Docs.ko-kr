@@ -8,16 +8,16 @@ ms.date: 01/27/2011
 ms.assetid: 0cbd88da-0da6-4605-b222-2835c6478304
 msc.legacyurl: /mvc/overview/views/dynamic-v-strongly-typed-views
 msc.type: authoredcontent
-ms.openlocfilehash: 41a47f0f6e5fd900e8bf35c37ed98566fe416ace
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: bd00fccc44019b2e401247de1532d2abcb5dd396
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41829081"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48578505"
 ---
 <a name="dynamic-v-strongly-typed-views"></a>Dynamic v입니다. 강력한 형식의 보기
 ====================
-[Rick Anderson](https://github.com/Rick-Anderson)
+[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 ASP.NET MVC 3에서 뷰 컨트롤러에서 정보를 전달 하는 방법은 세 가지가 있습니다.
 

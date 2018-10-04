@@ -8,16 +8,16 @@ ms.date: 01/12/2012
 ms.assetid: 53767e05-c8ab-42e1-a94b-22d906195200
 msc.legacyurl: /mvc/overview/older-versions/working-with-the-dropdownlist-box-and-jquery/using-the-dropdownlist-helper-with-aspnet-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 600a8ad409d55f0b01eedc8168eaec2b39c88a3b
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 11b874d2d07c84631c6c5c266c22c6de49d40cf2
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41838255"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48578070"
 ---
 <a name="using-the-dropdownlist-helper-with-aspnet-mvc"></a>ASP.NET MVC DropDownList 도우미 사용
 ====================
-[Rick Anderson](https://github.com/Rick-Anderson)
+[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 이 자습서는 작업의 기본 사항을 설명 합니다 [DropDownList](https://msdn.microsoft.com/library/dd492948.aspx) 도우미 및 [ListBox](https://msdn.microsoft.com/library/system.web.mvc.html.selectextensions.listbox.aspx) ASP.NET MVC 웹 응용 프로그램의 도우미입니다. Microsoft Visual Web Developer 2010 Express 서비스 팩 1, 자습서를 수행 하려면 Microsoft Visual Studio의 무료 버전인를 사용할 수 있습니다. 시작 하기 전에 아래에 나열 된 필수 구성 요소를 설치한 다음 있는지 확인 합니다. 다음 링크를 클릭 하 여 이들 모두를 설치할 수 있습니다: [웹 플랫폼 설치 관리자](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)합니다. 또는 다음 링크를 사용 하 여 필수 구성 요소를 개별적으로 설치할 수 있습니다.
 

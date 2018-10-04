@@ -8,16 +8,16 @@ ms.date: 12/19/2014
 ms.assetid: 220d3d75-16b2-4240-beae-a5b534f06419
 msc.legacyurl: /identity/overview/migrations/migrating-an-existing-website-from-sql-membership-to-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 51b97ee413ea0304177d5963b5fd9d7253778d4f
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 393d14799973e9126379743f63f79a7131206f38
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41835479"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577615"
 ---
 <a name="migrating-an-existing-website-from-sql-membership-to-aspnet-identity"></a>SQL 멤버 자격에서 ASP.NET Id로 기존 웹 사이트를 마이그레이션
 ====================
-하 여 [Rick Anderson](https://github.com/Rick-Anderson), [Suhas Joshi](https://github.com/suhasj)
+하 여 [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Suhas Joshi](https://github.com/suhasj)
 
 > 이 자습서에서는 사용자와 역할 데이터를 SQL 멤버 자격을 사용 하 여 새 ASP.NET Id 시스템에 만든 기존 웹 응용 프로그램을 마이그레이션하는 단계를를 보여 줍니다. 이 방법은 ASP.NET Id와 후크를 기존/신규 클래스에 의해 필요한 하나에 기존 데이터베이스 스키마를 변경 하는 것입니다. 데이터베이스 마이그레이션되면이 방법을 채택 하면, 향후 업데이트에서 Id로 간편 하 게 처리 됩니다.
 
@@ -86,7 +86,7 @@ ASP.NET Id 시스템에 필요한 스키마에 기존 데이터베이스를 마�
 | **IdentityUser** | **Type** | **IdentityRole** | **IdentityUserRole** | **IdentityUserLogin** | **IdentityUserClaim** |
 | --- | --- | --- | --- | --- | --- |
 | ID | string | ID | RoleId | ProviderKey | ID |
-| 사용자 이름 | string | name | UserId | UserId | ClaimType |
+| 사용자 이름 | string | 이름 | UserId | UserId | ClaimType |
 | PasswordHash | string |  |  | LoginProvider | ClaimValue |
 | SecurityStamp | string |  |  |  | 사용자\_Id |
 | 메일 | string |  |  |  |  |

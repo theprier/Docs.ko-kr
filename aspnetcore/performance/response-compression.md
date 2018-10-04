@@ -7,12 +7,12 @@ ms.author: riande
 ms.custom: mvc
 ms.date: 09/21/2018
 uid: performance/response-compression
-ms.openlocfilehash: 3a01c2d572c0026944347f736f9658a7872e6c35
-ms.sourcegitcommit: 4d5f8680d68b39c411b46c73f7014f8aa0f12026
+ms.openlocfilehash: d5e0b6ed21c14f2e76396cde846c69a76ad40794
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47028286"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48578148"
 ---
 # <a name="response-compression-in-aspnet-core"></a>ASP.NET Core에서 응답 압축
 
@@ -150,9 +150,21 @@ public class Startup
 
 ![Accept-encoding 헤더 없이 요청의 결과 보여 주는 fiddler 창입니다. 응답 압축 되지 않습니다.](response-compression/_static/request-uncompressed.png)
 
+::: moniker range=">= aspnetcore-2.2"
+
+샘플 응용 프로그램에 요청을 제출 합니다 `Accept-Encoding: br` 헤더 (Brotli 압축) 응답 압축 되어 있는지 확인 합니다. 합니다 `Content-Encoding` 고 `Vary` 헤더가 응답에 있는 합니다.
+
+![Accept-encoding 헤더를 사용 하 여 요청의 결과 및 브라질의 값을 보여 주는 fiddler 창입니다. Vary 및 Content-encoding 헤더를 응답에 추가 됩니다. 응답 압축 됩니다.](response-compression/_static/request-compressed-br.png)
+
+::: moniker-end
+
+::: moniker range="< aspnetcore-2.2"
+
 샘플 응용 프로그램에 요청을 제출 합니다 `Accept-Encoding: gzip` 헤더 응답 압축 되어 있는지 확인 합니다. 합니다 `Content-Encoding` 고 `Vary` 헤더가 응답에 있는 합니다.
 
 ![Accept-encoding 헤더를 사용 하 여 요청의 결과 및 gzip 값을 보여 주는 fiddler 창입니다. Vary 및 Content-encoding 헤더를 응답에 추가 됩니다. 응답 압축 됩니다.](response-compression/_static/request-compressed.png)
+
+::: moniker-end
 
 ## <a name="providers"></a>공급자
 

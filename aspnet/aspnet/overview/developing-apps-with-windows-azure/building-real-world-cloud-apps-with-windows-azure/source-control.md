@@ -8,23 +8,22 @@ ms.date: 06/23/2015
 ms.assetid: 2a0370d3-c2fb-4bf3-88b8-aad5a736c793
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/source-control
 msc.type: authoredcontent
-ms.openlocfilehash: 8402b73f5f9d063d958df39f98267468e4aef746
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 5df863762523b62759bb4f7849ca2635e5241b0a
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41838510"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577797"
 ---
 <a name="source-control-building-real-world-cloud-apps-with-azure"></a>소스 제어 (실제 클라우드 앱 빌드 Azure 사용 하 여)
 ====================
-하 여 [Mike Wasson](https://github.com/MikeWasson)하십시오 [Rick Anderson](https://github.com/Rick-Anderson), [Tom Dykstra](https://github.com/tdykstra)
+하 여 [Mike Wasson](https://github.com/MikeWasson)하십시오 [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Tom Dykstra](https://github.com/tdykstra)
 
 [다운로드 해결 프로젝트](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) 또는 [전자책 다운로드](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
 > 합니다 **실제 세계 클라우드 앱 빌드 Azure** 전자책 Scott Guthrie를 개발한 프레젠테이션을 기반으로 합니다. 13 패턴 설명 하 고 도움이 될 수 있는 사례 성공적인 클라우드를 위한 웹 앱을 개발할 수 있습니다. 전자책에 대 한 정보를 참조 하세요 [첫 번째 장에서](introduction.md)합니다.
 
-
-소스 제어에 대 한 모든 클라우드 개발 프로젝트, 팀 환경 뿐 아니라 반드시 필요 합니다. 생각 하지 않습니다. 소스 코드를 편집 하거나 실행 취소 기능과 및 자동 백업, 소스 제어 하지 않고 Word 문서도 오류가 발생 하면 더 많은 시간을 절약할 수 있는 프로젝트 수준에서 이러한 함수를 제공 합니다. 클라우드 소스 제어 서비스를 사용 하 여 복잡 한 설정에 걱정할 필요가 없습니다 및 Visual Studio Online 소스 제어 사용자 5 명까지 무료로 사용할 수 없습니다.
+소스 제어에 대 한 모든 클라우드 개발 프로젝트, 팀 환경 뿐 아니라 반드시 필요 합니다. 생각 하지 않습니다. 소스 코드를 편집 하거나 실행 취소 기능과 및 자동 백업, 소스 제어 하지 않고 Word 문서도 오류가 발생 하면 더 많은 시간을 절약할 수 있는 프로젝트 수준에서 이러한 함수를 제공 합니다. 클라우드 소스 제어 서비스를 사용 하 여 복잡 한 설정에 걱정할 필요가 없습니다 및 최대 5 명 사용자까지 무료 Azure 리포지토리 소스 제어를 사용할 수 없습니다.
 
 이 장의 첫 번째 부분에서는 염두에 세 가지 주요 모범 사례를 설명 합니다.
 
@@ -32,11 +31,11 @@ ms.locfileid: "41838510"
 - [비밀 정보에서 확인 하지 않음](#secrets) (자격 증명과 같은 중요 한 데이터) 소스 코드 리포지토리를 합니다.
 - [소스 분기 설정](#devops) DevOps 워크플로 사용 하도록 합니다.
 
-이 장의 나머지 Visual Studio, Azure 및 Visual Studio Online에서 이러한 패턴의 몇 가지 샘플 구현을 제공합니다.
+이 장의 나머지 Visual Studio, Azure 및 Azure 저장소에서 이러한 패턴의 몇 가지 샘플 구현을 제공합니다.
 
 - [Visual Studio에서 소스 제어에 스크립트 추가](#vsscripts)
 - [Azure에서 중요 한 데이터를 저장 합니다.](#appsettings)
-- [Visual Studio 및 Visual Studio Online에서 Git 사용](#gittfs)
+- [Visual Studio 및 Azure 리포지토리에서 Git 사용](#gittfs)
 
 <a id="scripts"></a>
 ## <a name="treat-automation-scripts-as-source-code"></a>자동화 스크립트를 소스 코드로 처리
@@ -73,7 +72,7 @@ ms.locfileid: "41838510"
 
 프로덕션 및 개발 분기의 해당 분리를 사용 하 여 이와 같은 분기 구조를 하지 않고 프로덕션 문제에에서 배치할 수 있습니다 프로덕션 수정 사항을 함께 새 기능 코드를 승격할 필요가 위치. 새 기능 코드를 완벽 하 게 테스트 및 준비에 대 한 프로덕션 되지 않을 수 있습니다 하 고 많은 준비 되지 않은 변경 내용을 백업 작업을 수행 해야 합니다. 또는 지연 변경 내용을 테스트 하 고 배포를 준비 하기 위해 수정 해야 할 수 있습니다.
 
-그런 다음 Visual Studio, Azure 및 Visual Studio Online에서 이러한 세 가지 패턴을 구현 하는 방법의 예제를 볼 수 있습니다. 자세한 단계별 방법-을 수행-it 지침은; 보다는 예제는 모든 필요한 컨텍스트를 제공 하는 자세한 지침을 참조 합니다 [리소스](#resources) 장의 끝에 있는 섹션입니다.
+그런 다음 Visual Studio, Azure 및 Azure 저장소에서 이러한 세 가지 패턴을 구현 하는 방법의 예제를 볼 수 있습니다. 자세한 단계별 방법-을 수행-it 지침은; 보다는 예제는 모든 필요한 컨텍스트를 제공 하는 자세한 지침을 참조 합니다 [리소스](#resources) 장의 끝에 있는 섹션입니다.
 
 <a id="vsscripts"></a>
 ## <a name="add-scripts-to-source-control-in-visual-studio"></a>Visual Studio에서 소스 제어에 스크립트 추가
@@ -128,17 +127,17 @@ Azure 제공에 대 한 대안을 **appSettings** 부분 문자열을 연결 합
 를 실행 하면 로컬 개발 환경에서 앱을 읽고 로컬 Web.config 파일에 연결 문자열 지점에 SQL Server LocalDB 데이터베이스에는 *앱\_데이터* 웹 프로젝트의 폴더입니다. Azure에서 앱을 실행 하 고 앱의 Web.config 파일에서 이러한 값을 읽을 하려고 하는 경우 어떤 다시 가져옵니다 하 고 사용 하 여는 것이 아니라 실제로 Web.config 파일에서 웹 사이트에 대해 저장 값이 됩니다.
 
 <a id="gittfs"></a>
-## <a name="use-git-in-visual-studio-and-visual-studio-online"></a>Visual Studio 및 Visual Studio Online에서 Git 사용
+## <a name="use-git-in-visual-studio-and-azure-devops"></a>Visual Studio 및 Azure DevOps에서 Git 사용
 
 이전에 제공 되는 DevOps 분기 구조를 구현 하려면 모든 원본 제어 환경을 사용할 수 있습니다. 분산 된 팀에는 [분산 버전 제어 시스템](http://en.wikipedia.org/wiki/Distributed_revision_control) (DVCS) 가장 잘 작동 될 수 있습니다 다른 팀에 대 한를 [시스템을 중앙 집중식](http://en.wikipedia.org/wiki/Revision_control) 더 적합할 수입니다.
 
-[Git](http://git-scm.com/) 는 DVCS 매우 인기가 됩니다. 소스 제어에 Git를 사용 하는 경우 로컬 컴퓨터에 모든 기록과 사용 하 여 저장소의 전체 복사본이 있는 합니다. 많은 사람들이 더 쉽기 때문에 계속 해 서 작업을 계속 수행할 수 있습니다-네트워크에 연결 되지 않은 커밋 만들고 롤백, 및 분기를 전환 등을 선호 합니다. 네트워크에 연결 하는 경우에 쉽고 빠르게 분기를 만들고 로컬 상태인 경우 분기를 전환 됩니다. 또한 다른 개발자에 게 영향을 하지 않고도 로컬 커밋 및 롤백을 수행할 수 있습니다. 및 커밋을 서버에 보내기 전에 일괄 처리할 수 있습니다.
+[Git](http://git-scm.com/) 는 인기 있는 분산된 버전 제어 시스템입니다. 소스 제어에 Git를 사용 하는 경우 로컬 컴퓨터에 모든 기록과 사용 하 여 저장소의 전체 복사본이 있는 합니다. 많은 사람들이 더 쉽기 때문에 계속 해 서 작업을 계속 수행할 수 있습니다-네트워크에 연결 되지 않은 커밋 만들고 롤백, 및 분기를 전환 등을 선호 합니다. 네트워크에 연결 하는 경우에 쉽고 빠르게 분기를 만들고 로컬 상태인 경우 분기를 전환 됩니다. 또한 다른 개발자에 게 영향을 하지 않고도 로컬 커밋 및 롤백을 수행할 수 있습니다. 및 커밋을 서버에 보내기 전에 일괄 처리할 수 있습니다.
 
-[Microsoft Visual Studio Online](https://www.visualstudio.com/)VSO (), Team Foundation Service 라고 두 Git를 제공 하는 이전 하 고 [Team Foundation 버전 제어](https://msdn.microsoft.com/library/ms181237(v=vs.120).aspx) (TFVC; 중앙 집중식 소스 제어). 여기 Microsoft Azure 그룹의 일부 팀은 사용 하 여 중앙 집중식된 소스 제어, 배포 하는 몇 가지 사용 및 몇 가지를 조합 (일부 프로젝트에 대 한 중앙 집중식 및 다른 프로젝트에 대 한 분산)를 사용 합니다. VSO 서비스를 최대 5 명의 사용자 무료. 무료 플랜에 등록할 수 있습니다 [여기](https://go.microsoft.com/fwlink/?LinkId=307137)합니다.
+[Azure 리포지토리](/azure/devops/repos/index?view=vsts) 둘 다 제공 [Git](/azure/devops/repos/git/?view=vsts) 하 고 [Team Foundation 버전 제어](/azure/devops/repos/tfvc/index?view=vsts) (TFVC; 소스 제어를 중앙 집중식). Azure DevOps를 사용 하 여 시작 [여기](https://app.vsaex.visualstudio.com/signup)합니다.
 
-기본 제공 첫 번째 클래스를 포함 하는 visual Studio 2013 [Git 지원](https://msdn.microsoft.com/library/hh850437.aspx); 같습니다. 빠른 동작 원리를 데모 합니다.
+Visual Studio 2017에는 기본 제공 고급 포함 [Git 지원](https://msdn.microsoft.com/library/hh850437.aspx)합니다. 다음은 빠른 작동 하는 방법의 데모입니다.
 
-Visual Studio 2013에서 열려 있는 프로젝트에서 솔루션을 마우스 오른쪽 단추로 클릭 **솔루션 탐색기**, 선택한 **원본 제어에 솔루션 추가**합니다.
+Visual Studio에서 열려 있는 프로젝트에서 솔루션을 마우스 오른쪽 단추로 클릭 **솔루션 탐색기**를 선택한 후 **원본 제어에 솔루션 추가**합니다.
 
 ![소스 제어에 솔루션 추가](source-control/_static/image9.png)
 
@@ -184,7 +183,7 @@ Visual Studio에서 자동으로 모든 커밋에 대 한 프로젝트 파일을
 
 이 간단한 예제를 하는 방법을 신속 하 게 분기를 만들 분기 간에 앞뒤로 이동 합니다. 이 기능을 사용 하면 분기 구조를 사용 하 여 항상 agile 워크플로 및 자동화 스크립트에 표시 되는 [모든 자동화](automate-everything.md) 장입니다. 예를 들어 수 Development 분기에서 작업 마스터에서 핫픽스 분기 만들기, 새 분기로 전환, 변경 내용을 확인 하면 및 Development 분기로 다시 전환 합니다 커밋한 하 던 작업을 계속 합니다.
 
-여기서 살펴본 것은 Visual Studio에서 로컬 Git 리포지토리를 사용 하는 방법입니다. 팀 환경에서 일반적으로 변경 내용을 푸시할 공용 리포지토리에 있습니다. Visual Studio 도구에서는 원격 Git 리포지토리를 가리키도록 수도 수 있습니다. GitHub.com를 사용 하 여이 위해 또는 사용할 수 있습니다 [Visual Studio Online에서 Git](https://msdn.microsoft.com/library/hh850437.aspx) 작업 항목 및 버그 추적 같은 다른 모든 Visual Studio Online 기능과 통합 합니다.
+여기서 살펴본 것은 Visual Studio에서 로컬 Git 리포지토리를 사용 하는 방법입니다. 팀 환경에서 일반적으로 변경 내용을 푸시할 공용 리포지토리에 있습니다. Visual Studio 도구에서는 원격 Git 리포지토리를 가리키도록 수도 수 있습니다. 이 위해서는 GitHub.com를 사용할 수 있습니다 하거나 사용할 수 있습니다 [Git 및 Azure 리포지토리](/azure/devops/repos/git/overview?view=vsts) 작업 항목 및 버그 추적 등 모든 다른 Azure DevOps 기능을 사용 하 여 통합 합니다.
 
 물론 agile 분기 전략을 구현할 수 있습니다 하는 유일한 방법은 아닙니다. 중앙 집중식된 소스 제어 리포지토리를 사용 하 여 동일한 agile 워크플로 사용할 수 있습니다.
 
@@ -194,13 +193,6 @@ Visual Studio에서 자동으로 모든 커밋에 대 한 프로젝트 파일을
 
 <a id="resources"></a>
 ## <a name="resources"></a>자료
-
-합니다 [Visual Studio Online](https://www.visualstudio.com/) 포털 설명서 및 지원 서비스를 제공 하 고 계정에 등록할 수 있습니다. Visual Studio 2012 하 고 Git를 사용 하려는 경우 [Visual Studio Tools for Git](https://visualstudiogallery.msdn.microsoft.com/abafc7d6-dcaa-40f4-8a5e-d6724bdb980c)합니다.
-
-(중앙 집중식된 버전 제어) TFVC와 Git (분산된 버전 제어)에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
-
-- [버전 제어 시스템을 사용 해야 합니다: TFVC 또는 Git?](https://msdn.microsoft.com/library/vstudio/ms181368.aspx#tfvc_or_git_summary) MSDN 설명서 TFVC와 Git 간의 차이점을 요약 하는 표를 포함 합니다.
-- [물론 필자는 Team Foundation Server 및 필자는 Git 이지만 더 나은?](https://blogs.msdn.com/b/visualstudiouk/archive/2013/08/05/well-i-like-team-foundation-server-and-i-like-git-but-which-is-better.aspx) Git 및 TFVC 비교 합니다.
 
 분기 전략에 대 한 자세한 내용은 다음 리소스를 참조 하세요.
 

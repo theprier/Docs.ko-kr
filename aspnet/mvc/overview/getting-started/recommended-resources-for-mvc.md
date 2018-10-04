@@ -8,16 +8,16 @@ ms.date: 04/10/2014
 ms.assetid: 7958d725-e958-4566-a85b-535eeb985f94
 msc.legacyurl: /mvc/overview/getting-started/recommended-resources-for-mvc
 msc.type: authoredcontent
-ms.openlocfilehash: 57997241afc0a326d5381c7dcef15122fb04ab7d
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: cbd72233fb5688c27d3675e2621eab58a64db80c
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41829433"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48578186"
 ---
 <a name="mvc-recommended-resources"></a>MVC 권장 리소스
 ====================
-[Rick Anderson](https://github.com/Rick-Anderson)
+[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 이 항목에서는 ASP.NET MVC 5에 대 한 설명서 리소스에 대 한 링크를 제공합니다. 훌륭한 블로그 게시물을 알고 있는 경우 [stackoverflow](http://stackoverflow.com/) 스레드나 유용할를 전송 하는 다른 모든 링크 [me](mailto:aspnetue@microsoft.com?subject=Great ASP.NET MVC link) 링크를 사용 하 여 전자 메일입니다. 여기에 제공 된 링크를 주기적으로 업데이트 됩니다. 이전 찾을 수 있습니다 (해도 대부분의 경우 여전히 관련) ASP.NET MVC의 링크를 클릭 합니다 [MSDN 콘텐츠 맵](https://msdn.microsoft.com/library/gg416514(v=vs.108).aspx)합니다.
 > 

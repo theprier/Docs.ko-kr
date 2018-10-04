@@ -8,16 +8,16 @@ ms.date: 04/03/2015
 ms.assetid: 81ee500f-fc37-40d6-8722-f1b64720fbb6
 msc.legacyurl: /mvc/overview/security/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on
 msc.type: authoredcontent
-ms.openlocfilehash: 330cb290668ae951e822b95990ed92100b790cd5
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 611a4b59b2ea2eee771f4060fb5d5af041b2ccc6
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41835727"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577771"
 ---
 <a name="create-an-aspnet-mvc-5-app-with-facebook-twitter-linkedin-and-google-oauth2-sign-on-c"></a>Facebook, Twitter, LinkedIn 및 Google OAuth2 sign-on (C#)를 사용 하 여 ASP.NET MVC 5 앱 만들기
 ====================
-[Rick Anderson](https://github.com/Rick-Anderson)
+[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 이 자습서에서는 사용 하 여 사용자가 로그인 할 수 있도록 하는 ASP.NET MVC 5 웹 응용 프로그램을 빌드하는 방법을 보여 줍니다 [OAuth 2.0](http://oauth.net/2/) 외부 인증 공급자, 예: Facebook, Twitter, LinkedIn, Microsoft 또는 Google에서에서 자격 증명을 사용 합니다. 간단히 하기 위해이 자습서는 Facebook 및 Google에서 자격 증명을 사용 하 여 작업에 집중 합니다.
 > 

@@ -8,16 +8,16 @@ ms.date: 08/15/2012
 ms.assetid: 27dc4fc8-1b51-43b0-933f-fc1b52476523
 msc.legacyurl: /mvc/overview/older-versions/aspnet-mvc-4-mobile-features
 msc.type: authoredcontent
-ms.openlocfilehash: a3cb2414775b2c29617296dcf0c2dc5729153cdd
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 8b82b8b9b1ee6646072931da889c643afb34d474
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41836966"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48578161"
 ---
 <a name="aspnet-mvc-4-mobile-features"></a>ASP.NET MVC 4 모바일 기능
 ====================
-[Rick Anderson](https://github.com/Rick-Anderson)
+[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 이제는 MVC 5의 버전이이 자습서에서 샘플 코드 [ASP.NET MVC 5 모바일 웹 응용 프로그램이 Azure 웹 사이트에서 배포](https://azure.microsoft.com/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/)합니다.
 

@@ -8,16 +8,16 @@ ms.date: 03/26/2015
 ms.assetid: 8d54180d-f826-4df7-b503-7debf5ed9fb3
 msc.legacyurl: /identity/overview/features-api/account-confirmation-and-password-recovery-with-aspnet-identity
 msc.type: authoredcontent
-ms.openlocfilehash: 77a3e9d5e8b2698d2464e33520d779febd4533bd
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 84f35cfc0f0e0f1c268e0e9c18fd47aa68deb7d1
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41829781"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577836"
 ---
 <a name="account-confirmation-and-password-recovery-with-aspnet-identity-c"></a>계정 확인 및 ASP.NET Id (C#)를 사용 하 여 암호 복구
 ====================
-하 여 [Hao 둘러싼](https://github.com/HaoK)를 [Pranav Rastogi](https://github.com/rustd)하십시오 [Rick Anderson](https://github.com/Rick-Anderson), [Suhas Joshi](https://github.com/suhasj)
+하 여 [Hao 둘러싼](https://github.com/HaoK)를 [Pranav Rastogi](https://github.com/rustd)하십시오 [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Suhas Joshi](https://github.com/suhasj)
 
 > 이 자습서를 수행 하기 전에 먼저를 완료 해야 [로그인, 전자 메일 확인 및 암호 재설정을 사용 하 여 보안 ASP.NET MVC 5 웹 앱을 만들기](../../../mvc/overview/security/create-an-aspnet-mvc-5-web-app-with-email-confirmation-and-password-reset.md)합니다. 이 자습서는 자세한 세부 정보를 포함 하 고 로컬 계정 확인에 대 한 전자 메일을 설정 하 고 ASP.NET Id에서 잊어버린된 암호를 재설정할 수 있도록 하는 방법을 표시 됩니다. Rick anderson이 문서가 작성 된 ([@RickAndMSFT](https://twitter.com/#!/RickAndMSFT)), Pranav Rastogi ([@rustd](https://twitter.com/rustd)), Hao 둘러싼 및 Suhas Joshi 합니다. NuGet 샘플 Hao 둘러싼 기본적 작성 되었습니다.
 

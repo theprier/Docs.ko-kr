@@ -8,16 +8,16 @@ ms.date: 02/03/2014
 ms.assetid: bffd7863-f63b-4b23-a13c-372b5492e9fb
 msc.legacyurl: /web-api/overview/error-handling/web-api-global-error-handling
 msc.type: authoredcontent
-ms.openlocfilehash: a52c2a1589327421b7f498ff551145676c80e3e8
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 3e371760d2b34eb2be492e6ebbb33a5f9f7eff10
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41838243"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577173"
 ---
 <a name="global-error-handling-in-aspnet-web-api-2"></a>ASP.NET Web API 2에서에서 전역 오류 처리
 ====================
-하 여 [David Matson](https://github.com/davidmatson), [Rick Anderson](https://github.com/Rick-Anderson)
+하 여 [David Matson](https://github.com/davidmatson), [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 지금 로그인 하거나 전역 오류 처리를 Web API에서 쉽지가 않습니다. 통해 일부 처리 되지 않은 예외를 처리할 수 있습니다 [예외 필터](exception-handling.md), 되지만 많은 예외 필터에서 처리할 수 없는 경우. 예를 들어:
 
