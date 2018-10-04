@@ -8,16 +8,16 @@ ms.date: 06/12/2014
 ms.assetid: eaece9f5-f80c-428b-b771-5db66d275b7d
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/continuous-integration-and-continuous-delivery
 msc.type: authoredcontent
-ms.openlocfilehash: 7a92a68ce8bbeec604a22e082975d33f9f3377c1
-ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
+ms.openlocfilehash: f701488025ec84a17651f9abff43f84531d35689
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44340071"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48576250"
 ---
 <a name="continuous-integration-and-continuous-delivery-building-real-world-cloud-apps-with-azure"></a>연속 통합 및 지속적인 업데이트 (Azure 사용 하 여 빌드 실제 클라우드 앱)
 ====================
-하 여 [Mike Wasson](https://github.com/MikeWasson)하십시오 [Rick Anderson](https://github.com/Rick-Anderson), [Tom Dykstra](https://github.com/tdykstra)
+하 여 [Mike Wasson](https://github.com/MikeWasson)하십시오 [Rick Anderson]((https://twitter.com/RickAndMSFT)), [Tom Dykstra](https://github.com/tdykstra)
 
 [다운로드 해결 프로젝트](http://code.msdn.microsoft.com/Fix-It-app-for-Building-cdd80df4) 또는 [전자책 다운로드](http://blogs.msdn.com/b/microsoft_press/archive/2014/07/23/free-ebook-building-cloud-apps-with-microsoft-azure.aspx)
 
@@ -40,7 +40,7 @@ ms.locfileid: "44340071"
 
 Azure에서 이러한 프로세스를 자동화 하는 것은 쉽습니다. 를 실행 중인 모든 클라우드에 있으므로 구입 하거나 빌드 또는 테스트 환경에 대 한 서버를 관리할 필요가 없습니다. 및 테스트에 사용할 수 있도록 서버를 기다릴 필요가 없습니다. 수행 하는 모든 빌드를 사용 하 여 automation 스크립트, 실행된 승인 테스트 또는 한 심도 있는 더 많은 테스트를 사용 하 여 Azure에서 테스트 환경을 스핀업 하 고 방금 완료 되 면 중단할 수 있습니다. 이며만 2 시간 8 시간 또는 하루에 해당 서버를 실행 하면에 대 한 요금을 지불 해야 할 금액 최소화 하기 때문에 컴퓨터를 실제로 실행 되는 시간에만 지불 합니다. 예를 들어, 환경에 필요한 수정 프로그램 응용 프로그램 기본적으로 비용이 시간당 약 1% 무료 수준에서 한 계층을 이동 하는 경우. 한 달에 걸쳐 한 번에 한 시간 환경만 실행 하는 경우 테스트 환경의 아마도 비용은 커피숍에서 구입할 수 있는 latte 미만입니다.
 
-## <a name="azure-devops-services"></a>Azure DevOps 서비스 
+## <a name="azure-devops-services"></a>Azure DevOps Services 
 
 Azure DevOps 서비스에서 배포 하려는 응용 프로그램 개발에 도움이 기능의 수를 제공 합니다.
 
