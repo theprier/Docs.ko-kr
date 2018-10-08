@@ -8,16 +8,16 @@ ms.date: 08/29/2011
 ms.assetid: c23d27f7-b0cf-44f2-8445-fb69e045c674
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1
 msc.type: authoredcontent
-ms.openlocfilehash: c98c77d5e9e965fb82efbe6ed88700c89bc67b4c
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: a9a373a54458faa21199019a4adbe69c0b94cb60
+ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41831487"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48577348"
 ---
 <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-1"></a>ASP.NET MVC-파트 1에서 HTML5 및 jQuery UI Datepicker 팝업 일정 사용
 ====================
-[Rick Anderson](https://github.com/Rick-Anderson)
+[Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 이 자습서는 편집기 템플릿, 표시 템플릿 및 ASP.NET MVC 웹 응용 프로그램에서 jQuery UI datepicker 팝업 일정을 사용 하는 방법의 기본 사항을 설명 합니다.
 
@@ -54,7 +54,7 @@ C# 및 Visual Basic 소스 코드를 사용 하 여 Visual Studio 프로젝트�
 
 ### <a name="getting-started"></a>시작
 
-다음 링크를 사용 하 여 시작 프로젝트에서 영화 목록 응용 프로그램에 아직 없는 경우 다운로드 합니다. [다운로드](https://code.msdn.microsoft.com/Project/Download/FileDownload.aspx?https://archive.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=aspnetmvcsamples&amp;DownloadId=15800)합니다. 그런 다음 Windows 탐색기에서 마우스 오른쪽 단추로 클릭 합니다 *MvcMovie.zip* 파일을 선택 **속성**합니다. 에 **MvcMovie.zip 속성** 대화 상자에서 **차단 해제**합니다. (사용 하려고 할 때 발생 하는 보안 경고를 방지 차단 해제 된 *.zip* 웹에서 다운로드 한 파일입니다.)
+다음 링크를 사용 하 여 시작 프로젝트에서 영화 목록 응용 프로그램에 아직 없는 경우 다운로드 합니다. [다운로드](https://code.msdn.microsoft.com/Project/Download/FileDownload.aspx? https://archive.msdn.microsoft.com/Project/Download/FileDownload.aspx?ProjectName=aspnetmvcsamples&amp;DownloadId=15800)합니다. 그런 다음 Windows 탐색기에서 마우스 오른쪽 단추로 클릭 합니다 *MvcMovie.zip* 파일을 선택 **속성**합니다. 에 **MvcMovie.zip 속성** 대화 상자에서 **차단 해제**합니다. (사용 하려고 할 때 발생 하는 보안 경고를 방지 차단 해제 된 *.zip* 웹에서 다운로드 한 파일입니다.)
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-1/_static/image2.png)
 
