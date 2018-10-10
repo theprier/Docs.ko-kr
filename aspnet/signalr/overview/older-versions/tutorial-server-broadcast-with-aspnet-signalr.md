@@ -8,12 +8,12 @@ ms.date: 04/10/2013
 ms.assetid: ab7b2554-956a-4f6d-b2a0-4ae0c62e8580
 msc.legacyurl: /signalr/overview/older-versions/tutorial-server-broadcast-with-aspnet-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 76dc2f4d54f6ab4cebbde06dfd611a9b5ee5ae64
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 7d604af11ade848358e291d1df25f2f8df850132
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41829827"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911983"
 ---
 <a name="tutorial-server-broadcast-with-aspnet-signalr-1x"></a>자습서: ASP.NET SignalR을 사용 하 여 서버 브로드캐스트 1.x
 ====================
@@ -40,7 +40,7 @@ ms.locfileid: "41829827"
 
 이 자습서는 다음 섹션이 포함 되어 있습니다.
 
-- [필수 조건](#prerequisites)
+- [필수 구성 요소](#prerequisites)
 - [프로젝트를 만들려면](#createproject)
 - [SignalR NuGet 패키지 추가](#nugetpackages)
 - [서버 코드 설정](#server)
@@ -80,7 +80,7 @@ Visual Studio 2010 경우 했는지 [NuGet](https://visualstudiogallery.msdn.mic
 
 프로젝트에 NuGet 패키지를 설치 하 여 SignalR 기능을 추가할 수 있습니다.
 
-1. 클릭 **도구 | 라이브러리 패키지 관리자 | 패키지 관리자 콘솔**합니다.
+1. 클릭 **도구 | NuGet 패키지 관리자 | 패키지 관리자 콘솔**합니다.
 2. 패키지 관리자에서 다음 명령을 입력 합니다.
 
     [!code-powershell[Main](tutorial-server-broadcast-with-aspnet-signalr/samples/sample1.ps1)]

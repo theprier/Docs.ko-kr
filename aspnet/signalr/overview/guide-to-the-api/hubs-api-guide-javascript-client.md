@@ -8,38 +8,38 @@ ms.date: 09/28/2015
 ms.assetid: a9fd4dc0-1b96-4443-82ca-932a5b4a8ea4
 msc.legacyurl: /signalr/overview/guide-to-the-api/hubs-api-guide-javascript-client
 msc.type: authoredcontent
-ms.openlocfilehash: de47593e7f54757d4f91a6e92485567e74b829ed
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 9edb7fd100a3f4c5331454045ac206d2f7a81961
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41830334"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912451"
 ---
 <a name="aspnet-signalr-hubs-api-guide---javascript-client"></a>ASP.NET SignalR 허브 API 가이드-JavaScript 클라이언트
 ====================
 하 여 [Patrick Fletcher](https://github.com/pfletcher), [Tom Dykstra](https://github.com/tdykstra)
 
 > 이 문서에서는 허브 API를 사용 하 여 SignalR 브라우저 및 Windows 스토어 (WinJS) 응용 프로그램과 같은 JavaScript 클라이언트에서 버전 2에 대 한 소개를 제공 합니다.
-> 
+>
 > SignalR 허브 API를 사용 하면 클라이언트가 서버에 연결 된 클라이언트에는 서버에서 원격 프로시저 호출 (Rpc)을 만들 수 있습니다. 서버 코드에서 클라이언트에서 호출할 수 있는 메서드를 정의 하 고 클라이언트에서 실행 되는 메서드를 호출 합니다. 클라이언트 코드에서 서버에서 호출할 수 있는 메서드를 정의 하 고 서버에서 실행 되는 메서드를 호출 합니다. SignalR은 모든 클라이언트-서버 연결 구조를 처리합니다.
-> 
+>
 > 또한 SignalR 영구 연결을 호출 하는 하위 수준 API를 제공 합니다. SignalR에서 허브 및 영구 연결 소개를 참조 하세요 [SignalR 소개](../getting-started/introduction-to-signalr.md)합니다.
-> 
+>
 > ## <a name="software-versions-used-in-this-topic"></a>이 항목에서 사용 하는 소프트웨어 버전
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - SignalR 버전 2
->   
-> 
-> 
+>
+>
+>
 > ## <a name="previous-versions-of-this-topic"></a>이 항목의 이전 버전
-> 
+>
 > 이전 버전의 SignalR에 대 한 정보를 참조 하세요 [SignalR 이전 버전](../older-versions/index.md)합니다.
-> 
+>
 > ## <a name="questions-and-comments"></a>질문이 나 의견이 있으면
-> 
+>
 > 이 자습서를 연결 하는 방법 및 새로운 개선할 수 있습니다 페이지의 맨 아래에 의견에서에 의견을 남겨 주세요. 에 자습서로 직접 관련 되지 않은 질문이 있을 경우 게시할 수 하는 [ASP.NET SignalR 포럼](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) 또는 [StackOverflow.com](http://stackoverflow.com/)합니다.
 
 
@@ -234,7 +234,7 @@ JSONP (이전 브라우저에서 도메인 간 요청을 지원)를 클라이언
 
 ### <a name="calling-usecors"></a>UseCors를 호출합니다.
 
- 다음 코드 조각은 SignalR 2에서 도메인 간 연결을 구현 하는 방법에 설명 합니다. 
+ 다음 코드 조각은 SignalR 2에서 도메인 간 연결을 구현 하는 방법에 설명 합니다.
 
 **SignalR 2에서 도메인 간 요청을 구현합니다.**
 
@@ -242,12 +242,12 @@ JSONP (이전 브라우저에서 도메인 간 요청을 지원)를 클라이언
 
 [!code-csharp[Main](hubs-api-guide-javascript-client/samples/sample11.cs)]
 
-> [!NOTE] 
-> 
+> [!NOTE]
+>
 > - 설정 하지 않은 `jQuery.support.cors` 코드에서 true로 합니다.
-> 
+>
 >     ![JQuery.support.cors true로 설정 하지](hubs-api-guide-javascript-client/_static/image7.png)
-> 
+>
 >     SignalR은 CORS 사용을 처리합니다. 설정 `jQuery.support.cors` true SignalR를 브라우저에서 CORS를 지원 하면 되므로 JSONP 사용 하지 않도록 설정 하려면.
 > - Localhost URL에 연결할 때 Internet Explorer 10 않습니다 고려 도메인 간 연결을 응용 프로그램은 작동 로컬로 IE 10을 사용 하 여 서버에서 도메인 간 연결을 설정 하지 않은 경우에 합니다.
 > - Internet Explorer 9를 사용 하 여 도메인 간 연결을 사용 하는 방법에 대 한 내용은 [이 StackOverflow 스레드](http://stackoverflow.com/questions/13573397/siganlr-ie9-cross-domain-request-dont-work)합니다.

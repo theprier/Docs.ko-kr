@@ -5,12 +5,12 @@ description: 권한 부여로 보호 되는 사용자 데이터를 사용 하 �
 ms.author: riande
 ms.date: 7/24/2018
 uid: security/authorization/secure-data
-ms.openlocfilehash: 2fb13f0772a1f8aa4ed2ff3ece2a2c5d3b7360c9
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 71b7855958b530b8bac32843a8d1e7db0113ffd9
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46010938"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912633"
 ---
 ::: moniker range="<= aspnetcore-1.1"
 
@@ -350,6 +350,7 @@ dotnet ef database update
 
 ### <a name="additional-resources"></a>추가 자료
 
+* [Azure App Service에서.NET Core 및 SQL Database 웹 앱 빌드](/azure/app-service/app-service-web-tutorial-dotnetcore-sqldb)
 * [ASP.NET Core 권한 부여 랩](https://github.com/blowdart/AspNetAuthorizationWorkshop)합니다. 이 랩에서이 자습서에 도입 된 보안 기능에 자세한 내용으로 이어집니다.
 * [ASP.NET Core에서 권한 부여: 단순, 역할, 클레임 기반 및 사용자 지정](xref:security/authorization/index)
 * [사용자 지정 정책 기반 권한 부여](xref:security/authorization/policies)

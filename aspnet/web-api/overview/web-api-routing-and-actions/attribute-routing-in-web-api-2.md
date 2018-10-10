@@ -8,12 +8,12 @@ ms.date: 01/20/2014
 ms.assetid: 979d6c9f-0129-4e5b-ae56-4507b281b86d
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: 35cf3bf555218b6b49b30f48186e4c67aff4ff7b
-ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
+ms.openlocfilehash: d16dcc618bf6c60714179601db14f4dd2a9e41ce
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48795553"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912154"
 ---
 <a name="attribute-routing-in-aspnet-web-api-2"></a>ASP.NET Web API 2에서에서 특성 라우팅
 ====================
@@ -29,7 +29,7 @@ ms.locfileid: "48795553"
 
 [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017) Community, Professional 또는 Enterprise edition
 
-또는, NuGet 패키지 관리자를 사용 하 여 필요한 패키지를 설치 합니다. **도구** Visual Studio에서 메뉴 **라이브러리 패키지 관리자**을 선택한 후 **패키지 관리자 콘솔**합니다. 패키지 관리자 콘솔 창에서 다음 명령을 입력 합니다.
+또는, NuGet 패키지 관리자를 사용 하 여 필요한 패키지를 설치 합니다. **도구** Visual Studio에서 메뉴 **NuGet 패키지 관리자**을 선택한 후 **패키지 관리자 콘솔**합니다. 패키지 관리자 콘솔 창에서 다음 명령을 입력 합니다.
 
 `Install-Package Microsoft.AspNet.WebApi.WebHost`
 

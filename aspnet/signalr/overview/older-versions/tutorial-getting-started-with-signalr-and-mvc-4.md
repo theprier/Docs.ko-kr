@@ -8,12 +8,12 @@ ms.date: 03/29/2013
 ms.assetid: eeef9f73-6de3-49f9-b50b-9af22108f2ce
 msc.legacyurl: /signalr/overview/older-versions/tutorial-getting-started-with-signalr-and-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 34a7ae97a0a0652c090aa72e2cb21a4bce13bd5c
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 95fc3315149e07dbdb0505a2b5ab197bfedba097
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41837352"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910878"
 ---
 <a name="tutorial-getting-started-with-signalr-1x-and-mvc-4"></a>자습서: 시작 SignalR 1.x 및 MVC 4
 ====================
@@ -63,7 +63,7 @@ ms.locfileid: "41837352"
       2. 인터넷 응용 프로그램 템플릿을 선택 하는 옵션의 선택을 취소 합니다 **단위 테스트 프로젝트 만들기**, 확인을 클릭 합니다.
 
          ![Mvc 인터넷 사이트 만들기](tutorial-getting-started-with-signalr-and-mvc-4/_static/image4.png)
-      3. 열기는 **도구 | 라이브러리 패키지 관리자 | 패키지 관리자 콘솔** 하 고 다음 명령을 실행 합니다. 이 단계는 스크립트 파일 및 SignalR 기능을 사용 하는 어셈블리 참조의 집합을 프로젝트에 추가 합니다.
+      3. 엽니다는 **도구 > NuGet 패키지 관리자 > 패키지 관리자 콘솔** 하 고 다음 명령을 실행 합니다. 이 단계는 스크립트 파일 및 SignalR 기능을 사용 하는 어셈블리 참조의 집합을 프로젝트에 추가 합니다.
 
          `install-package Microsoft.AspNet.SignalR -Version 1.1.3`
       4. **솔루션 탐색기** 스크립트 폴더를 확장 합니다. SignalR에 대 한 스크립트 라이브러리를 프로젝트에 추가한 참고 합니다.

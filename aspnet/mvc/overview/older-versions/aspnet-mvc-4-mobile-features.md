@@ -8,12 +8,12 @@ ms.date: 08/15/2012
 ms.assetid: 27dc4fc8-1b51-43b0-933f-fc1b52476523
 msc.legacyurl: /mvc/overview/older-versions/aspnet-mvc-4-mobile-features
 msc.type: authoredcontent
-ms.openlocfilehash: 8b82b8b9b1ee6646072931da889c643afb34d474
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 6fe55a14b40f8c50dee91cdc7f59d0378f2a1ea2
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48578161"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912334"
 ---
 <a name="aspnet-mvc-4-mobile-features"></a>ASP.NET MVC 4 모바일 기능
 ====================
@@ -184,7 +184,7 @@ ASP.NET MVC 4의 중요 한 새로운 기능에는 모바일 브라우저는 개
 
 설치 합니다 *jQuery.Mobile.MVC* 이 수행 하 여 NuGet 패키지:
 
-1. **도구** 메뉴에서 **라이브러리 패키지 관리자**를 선택한 후 **패키지 관리자 콘솔**합니다.
+1. **도구** 메뉴에서 **NuGet 패키지 관리자**를 선택한 후 **패키지 관리자 콘솔**합니다.
 
     [![p3_packageMgr](aspnet-mvc-4-mobile-features/_static/image20.png)](aspnet-mvc-4-mobile-features/_static/image19.png)
 2. 에 **패키지 관리자 콘솔**, 입력 `Install-Package jQuery.Mobile.MVC -version 1.0.0`
@@ -245,11 +245,11 @@ ASP.NET MVC 4의 중요 한 새로운 기능에는 모바일 브라우저는 개
 
 > [!NOTE]
 > 참고 디버그:는 Views\Shared의 끝에 다음 코드를 추가할 수 있습니다\\_ViewSwitcher.cshtml 브라우저 사용자 에이전트 문자열을 사용 하 여 모바일 장치를 설정 하는 경우 뷰를 디버깅할 수 있도록 합니다.
-> 
+>
 > [!code-csharp[Main](aspnet-mvc-4-mobile-features/samples/sample15.cs)]
-> 
->  다음 머리글을 추가 합니다 *Views\Shared\\_Layout.cshtml* 파일입니다.  
-> 
+>
+>  다음 머리글을 추가 합니다 *Views\Shared\\_Layout.cshtml* 파일입니다.
+>
 > [!code-html[Main](aspnet-mvc-4-mobile-features/samples/sample16.html)]
 
 

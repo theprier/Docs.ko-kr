@@ -8,39 +8,39 @@ ms.date: 08/15/2012
 ms.assetid: ed66530a-04d5-49eb-b76a-85be1f57c437
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/intro-to-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: 62f67d0d0dfe7a3c9d04eacfbcac56f7fd03ef07
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: ea3d1517192ded0e5372c49897bb1fec33324b6f
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48577368"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912399"
 ---
 <a name="intro-to-aspnet-mvc-4"></a>ASP.NET MVC 4 소개
 ====================
 [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
-> 이 자습서는 사용할 수 있는 경우 업데이트 된 버전 [같습니다](../../getting-started/introduction/getting-started.md) 사용 하 여 [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)합니다. 새 자습서에는이 자습서를 통해 많은 향상 된 기능을 제공 하는 ASP.NET MVC 5를 사용 합니다.
-> 
+> 이 자습서는 사용할 수 있는 경우 업데이트 된 버전 [같습니다](../../getting-started/introduction/getting-started.md) 사용 하 여 [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)합니다. 새 자습서에는이 자습서를 통해 많은 향상 된 기능을 제공 하는 ASP.NET MVC 5를 사용 합니다.
+>
 > 이 자습서는 Microsoft를 사용 하 여 ASP.NET MVC 4 웹 응용 프로그램을 빌드하는 기본 사항 설명 [Visual Studio Express 2012](https://www.microsoft.com/visualstudio/11/products/express) 또는 Visual Web Developer 2010 Express 서비스 팩 1입니다. 자습서를 완료 하려면 어떤 항목도 설치 하지 않아도 됩니다. visual Studio 2012 좋습니다. Visual Studio 2010을 사용 하는 경우 아래 구성 요소를 설치 해야 합니다. 다음 링크를 클릭 하 여 이들 모두를 설치할 수 있습니다.
-> 
+>
 > - [Visual Studio Web Developer Express SP1 필수 구성 요소](https://www.microsoft.com/web/gallery/install.aspx?appid=VWD2010SP1Pack)
 > - [ASP.NET MVC 4 용 WPI 설치 관리자](https://go.microsoft.com/fwlink/?LinkId=243392)
 > - [LocalDB](https://www.microsoft.com/web/gallery/install.aspx?appid=SQLLocalDBOnly_11_0)
 > - [SSDT](https://blogs.msdn.com/b/rickandy/archive/2012/08/02/installing-and-using-sql-server-data-tools-ssdt-on-visual-studio-2010-and-vwd.aspx)
-> 
+>
 > Visual Web Developer 2010 대신 Visual Studio 2010을 사용 하는 경우 설치 합니다 [ASP.NET MVC 4에 대 한 설치 관리자 WPI](https://go.microsoft.com/fwlink/?LinkId=243392) 및: [Visual Studio 2010 필수 구성 요소](https://www.microsoft.com/web/gallery/install.aspx?appsxml=&amp;appid=VS2010SP1Pack)
-> 
+>
 > C# 소스 코드를 사용 하 여 Visual Web Developer 프로젝트는 다음이 항목과 함께 사용할 수 있습니다. [C# 버전 다운로드](https://code.msdn.microsoft.com/Intro-to-ASPNET-MVC-4-61d0219d/file/114480/1/MvcMovie.zip)합니다.
-> 
+>
 > 이 자습서에서 Visual Studio에서 응용 프로그램을 실행 합니다. 또한 가능 응용 프로그램 사용 가능한 인터넷을 통해 호스팅 공급자에 배포 하 여 합니다. Microsoft에서 제공 하는 무료 웹 호스팅에 최대 10 개의 웹 사이트를 [Windows Azure 평가판 계정](https://www.windowsazure.com/pricing/free-trial/?WT.mc_id=A443DD604)합니다. Visual Studio 웹 프로젝트를 Windows Azure 웹 사이트를 배포 하는 방법에 대 한 정보를 참조 하세요 [만들기 및 ASP.NET 웹 사이트 및 Visual Studio를 사용 하 여 SQL Database를 배포](https://docs.microsoft.com/dotnet/azure/)합니다. 이 자습서에는 Windows Azure SQL Database (이전의 SQL Azure)에 SQL Server 데이터베이스를 배포 하려면 Entity Framework Code First 마이그레이션을 사용 하는 방법을 보여 줍니다.
-> 
+>
 > Rick anderson이 자습서가 작성 ( [ @RickAndMSFT ](https://twitter.com/#!/RickAndMSFT) ).
 
 
 ## <a name="what-youll-build"></a>만들 내용
 
 > [!NOTE]
-> 이 자습서는 사용할 수 있는 경우 업데이트 된 버전 [같습니다](../../getting-started/introduction/getting-started.md) 사용 하 여 [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)합니다. 새 자습서에는이 자습서를 통해 많은 향상 된 기능을 제공 하는 ASP.NET MVC 5를 사용 합니다.
+> 이 자습서는 사용할 수 있는 경우 업데이트 된 버전 [같습니다](../../getting-started/introduction/getting-started.md) 사용 하 여 [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)합니다. 새 자습서에는이 자습서를 통해 많은 향상 된 기능을 제공 하는 ASP.NET MVC 5를 사용 합니다.
 
 
 만들기, 편집, 검색 및 나열 하는 데이터베이스에서 동영상을 지 원하는 간단한 영화 목록 응용 프로그램을 구현할 수 있습니다. 다음은 빌드할 응용 프로그램의 두 가지 스크린샷입니다. 데이터베이스에서 동영상 목록을 표시 하는 페이지가 포함 됩니다.

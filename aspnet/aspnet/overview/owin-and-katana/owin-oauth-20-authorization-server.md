@@ -8,33 +8,33 @@ ms.date: 03/20/2014
 ms.assetid: 20acee16-c70c-41e9-b38f-92bfcf9a4c1c
 msc.legacyurl: /aspnet/overview/owin-and-katana/owin-oauth-20-authorization-server
 msc.type: authoredcontent
-ms.openlocfilehash: 2dd4af4543713ab08ad9427d183f667e2dc04f1f
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 095dad49a8e9f963d941a84398afe9da0f46ce0b
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48578044"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912269"
 ---
 <a name="owin-oauth-20-authorization-server"></a>OWIN OAuth 2.0 권한 부여 서버
 ====================
 하 여 [Hongye Sun](https://github.com/hongyes)하십시오 [Praburaj Thiagarajan](https://github.com/Praburaj), [Rick Anderson]((https://twitter.com/RickAndMSFT))
 
 > 이 자습서에서 OAuth OWIN 미들웨어를 사용 하 여 OAuth 2.0 권한 부여 서버를 구현 하는 방법을 안내 합니다. 만 OWIN OAuth 2.0 권한 부여 서버를 만드는 단계를 간략하게 설명 하는 고급 자습서입니다. 이것이 단계별 자습서입니다. [샘플 코드 다운로드](https://code.msdn.microsoft.com/OWIN-OAuth-20-Authorization-ba2b8783/file/114932/1/AuthorizationServer.zip)합니다.
-> 
+>
 > > [!NOTE]
 > > 이 개요는 안전한 프로덕션 앱을 만드는 데 사용할 아닙니다. 이 자습서는 OAuth OWIN 미들웨어를 사용 하 여 OAuth 2.0 권한 부여 서버를 구현 하는 방법에만 개요를 제공 하도록 작성 되었습니다.
-> 
-> 
+>
+>
 > ## <a name="software-versions"></a>소프트웨어 버전
-> 
+>
 > | **자습서에 표시** | **역시** |
 > | --- | --- |
 > | Windows 8.1 | Windows 8, Windows 7 |
-> | [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads) | [Visual Studio 2013 Express for Desktop](https://www.microsoft.com/visualstudio/eng/2013-downloads#d-2013-express)합니다. 최신 업데이트를 사용 하 여 visual Studio 2012에는 작동 하지만 자습서를 사용 하 여 테스트 되지 않았습니다 하 고 일부 메뉴 선택 및 대화 상자는 다릅니다. |
+> | [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013) | [Visual Studio 2013 Express for Desktop](https://my.visualstudio.com/Downloads?q=visual%20studio%202013#d-2013-express)합니다. 최신 업데이트를 사용 하 여 visual Studio 2012에는 작동 하지만 자습서를 사용 하 여 테스트 되지 않았습니다 하 고 일부 메뉴 선택 및 대화 상자는 다릅니다. |
 > | .NET 4.5 |  |
-> 
+>
 > ## <a name="questions-and-comments"></a>질문이 나 의견이 있으면
-> 
+>
 > 에 자습서로 직접 관련 되지 않은 질문이 있는 경우에서 게시할 수 있습니다 [Katana 프로젝트 github](https://github.com/aspnet/AspNetKatana/)합니다. 자습서 자체에 대 한 의견 및 질문에 대 한 페이지의 맨 아래에서 설명 섹션을 참조 합니다.
 
 
@@ -81,11 +81,11 @@ ms.locfileid: "48578044"
 
 - `AuthorizeEndpointPath`: 요청 경로 클라이언트 응용 프로그램 사용자를 가져오기 위해 사용자-에이전트를 리디렉션하는 동의 코드 또는 토큰을 발급 하는 것입니다. 예를 들어 선행 슬래시로 시작 해야 합니다 "`/Authorize`"입니다.
 - `TokenEndpointPath`: 요청 경로 클라이언트 응용 프로그램이 액세스 토큰을 가져오려면 직접 통신 합니다. "/Token" 처럼 선행 슬래시로 시작 해야 합니다. 클라이언트는 발급 된 경우는 [클라이언트\_비밀](http://tools.ietf.org/html/rfc6749#appendix-A.2),이 끝점에 제공 되어야 합니다.
-- `ApplicationCanDisplayErrors`:로 설정 합니다. `true` 웹 응용 프로그램에서 클라이언트 유효성 검사 오류에 대 한 사용자 지정 오류 페이지를 생성 하려는 경우 `/Authorize` 끝점입니다. 예를 들어 클라이언트 응용 프로그램에 다시 브라우저 리디렉션되지 않습니다 하는 경우에만 필요 경우 합니다 `client_id` 또는 `redirect_uri` 올바르지 않습니다. `/Authorize` 끝점 "oauth 볼 수 있어야 합니다. 오류 ","oauth입니다. ErrorDescription"및"oauth입니다. ErrorUri"속성은 OWIN 환경에 추가 됩니다. 
+- `ApplicationCanDisplayErrors`:로 설정 합니다. `true` 웹 응용 프로그램에서 클라이언트 유효성 검사 오류에 대 한 사용자 지정 오류 페이지를 생성 하려는 경우 `/Authorize` 끝점입니다. 예를 들어 클라이언트 응용 프로그램에 다시 브라우저 리디렉션되지 않습니다 하는 경우에만 필요 경우 합니다 `client_id` 또는 `redirect_uri` 올바르지 않습니다. `/Authorize` 끝점 "oauth 볼 수 있어야 합니다. 오류 ","oauth입니다. ErrorDescription"및"oauth입니다. ErrorUri"속성은 OWIN 환경에 추가 됩니다.
 
     > [!NOTE]
     > 그렇지 않은 경우 true, 권한 부여 서버가 반환 하는 오류 세부 정보를 사용 하 여 기본 오류 페이지입니다.
-- `AllowInsecureHttp`: 권한 부여 및 토큰 요청이 HTTP URI 주소에 도착 하 고 들어오는 수 있도록 허용 True를 `redirect_uri` 요청 매개 변수를 HTTP URI 주소에 권한을 부여 합니다. 
+- `AllowInsecureHttp`: 권한 부여 및 토큰 요청이 HTTP URI 주소에 도착 하 고 들어오는 수 있도록 허용 True를 `redirect_uri` 요청 매개 변수를 HTTP URI 주소에 권한을 부여 합니다.
 
     > [!WARNING]
     > 개발 용도로 이것이 보안-입니다.
@@ -107,9 +107,9 @@ OAuth는 사용자 계정 정보를 관리 하는 방법 또는 위치를 고려
 
 ![](owin-oauth-20-authorization-server/_static/image1.png)
 
-IETF의 OAuth 2를 검토 [권한 부여 코드 부여](http://tools.ietf.org/html/rfc6749#section-4.1) 이제 섹션입니다. 
+IETF의 OAuth 2를 검토 [권한 부여 코드 부여](http://tools.ietf.org/html/rfc6749#section-4.1) 이제 섹션입니다.
 
-**공급자** (아래 표에서)은 [OAuthAuthorizationServerOptions](https://msdn.microsoft.com/library/microsoft.owin.security.oauth.oauthauthorizationserveroptions(v=vs.111).aspx)합니다. 공급자 형식의 `OAuthAuthorizationServerProvider`, 모든 OAuth 서버 이벤트를 포함 하는 합니다. 
+**공급자** (아래 표에서)은 [OAuthAuthorizationServerOptions](https://msdn.microsoft.com/library/microsoft.owin.security.oauth.oauthauthorizationserveroptions(v=vs.111).aspx)합니다. 공급자 형식의 `OAuthAuthorizationServerProvider`, 모든 OAuth 서버 이벤트를 포함 하는 합니다.
 
 | 인증 코드 부여 섹션에서 흐름 단계 | 샘플 다운로드에는 이러한 단계를 수행합니다. |
 | --- | --- |
@@ -134,13 +134,13 @@ IETF의 OAuth 2를 검토 [권한 부여 코드 부여](http://tools.ietf.org/ht
 
 ![](owin-oauth-20-authorization-server/_static/image2.png)
 
-경우는 **권한 부여** 단추를 선택 합니다 `Authorize` 작업에서 새 "Bearer" identity와 로그인 하기를 만듭니다. 권한 부여 서버를 전달자 토큰을 생성 하 고 JSON 페이로드를 사용 하 여 클라이언트로 다시 보낼를 트리거합니다. 
+경우는 **권한 부여** 단추를 선택 합니다 `Authorize` 작업에서 새 "Bearer" identity와 로그인 하기를 만듭니다. 권한 부여 서버를 전달자 토큰을 생성 하 고 JSON 페이로드를 사용 하 여 클라이언트로 다시 보낼를 트리거합니다.
 
 ### <a name="implicit-grant"></a>암시적 권한 부여
 
 IETF의 OAuth 2를 참조 하십시오 [암시적 권한 부여](http://tools.ietf.org/html/rfc6749#section-4.2) 이제 섹션입니다.
 
- 합니다 [암시적 권한 부여](http://tools.ietf.org/html/rfc6749#section-4.2) 그림 4에 표시 된 흐름은 흐름 및 미들웨어는 OWIN OAuth 매핑을 따릅니다.  
+ 합니다 [암시적 권한 부여](http://tools.ietf.org/html/rfc6749#section-4.2) 그림 4에 표시 된 흐름은 흐름 및 미들웨어는 OWIN OAuth 매핑을 따릅니다.
 
 | 암시적 권한 부여 섹션에서 흐름 단계 | 샘플 다운로드에는 이러한 단계를 수행합니다. |
 | --- | --- |
@@ -159,7 +159,7 @@ IETF의 OAuth 2를 참조 하십시오 [암시적 권한 부여](http://tools.ie
 
 IETF의 OAuth 2를 참조 하십시오 [리소스 소유자 암호 자격 증명 부여](http://tools.ietf.org/html/rfc6749#section-4.3) 이제 섹션입니다.
 
- 합니다 [리소스 소유자 암호 자격 증명 부여](http://tools.ietf.org/html/rfc6749#section-4.3) 그림 5에 표시 된 흐름은 흐름 및 미들웨어는 OWIN OAuth 매핑을 따릅니다.  
+ 합니다 [리소스 소유자 암호 자격 증명 부여](http://tools.ietf.org/html/rfc6749#section-4.3) 그림 5에 표시 된 흐름은 흐름 및 미들웨어는 OWIN OAuth 매핑을 따릅니다.
 
 | 리소스 소유자 암호 자격 증명 권한 부여 섹션에서 흐름 단계 | 샘플 다운로드에는 이러한 단계를 수행합니다. |
 | --- | --- |
@@ -182,7 +182,7 @@ IETF의 OAuth 2를 참조 하십시오 [리소스 소유자 암호 자격 증명
 
 IETF의 OAuth 2를 참조 하십시오 [클라이언트 자격 증명 부여](http://tools.ietf.org/html/rfc6749#section-4.4) 이제 섹션입니다.
 
- 합니다 [클라이언트 자격 증명 부여](http://tools.ietf.org/html/rfc6749#section-4.4) 그림 6에 표시 된 흐름은 흐름 및 미들웨어는 OWIN OAuth 매핑을 따릅니다.  
+ 합니다 [클라이언트 자격 증명 부여](http://tools.ietf.org/html/rfc6749#section-4.4) 그림 6에 표시 된 흐름은 흐름 및 미들웨어는 OWIN OAuth 매핑을 따릅니다.
 
 | 클라이언트 자격 증명 권한 부여 섹션에서 흐름 단계 | 샘플 다운로드에는 이러한 단계를 수행합니다. |
 | --- | --- |
@@ -203,7 +203,7 @@ IETF의 OAuth 2를 참조 하십시오 [클라이언트 자격 증명 부여](ht
 
 IETF의 OAuth 2를 참조 하십시오 [새로 고침 토큰](http://tools.ietf.org/html/rfc6749#section-1.5) 이제 섹션입니다.
 
- 합니다 [새로 고침 토큰](http://tools.ietf.org/html/rfc6749#section-1.5) 그림 2에 표시 된 흐름은 흐름 및 미들웨어는 OWIN OAuth 매핑을 따릅니다.  
+ 합니다 [새로 고침 토큰](http://tools.ietf.org/html/rfc6749#section-1.5) 그림 2에 표시 된 흐름은 흐름 및 미들웨어는 OWIN OAuth 매핑을 따릅니다.
 
 | 클라이언트 자격 증명 권한 부여 섹션에서 흐름 단계 | 샘플 다운로드에는 이러한 단계를 수행합니다. |
 | --- | --- |
@@ -212,7 +212,7 @@ IETF의 OAuth 2를 참조 하십시오 [새로 고침 토큰](http://tools.ietf.
 |  |  |
 | (H) 권한 부여 서버 새로 고침 토큰의 유효성을 검사 및 유효한 경우 문제는 새 액세스 토큰 (및 필요에 따라 새로운 새로 고침 토큰) 클라이언트를 인증 합니다. |  |
 
-에 대 한 샘플 구현은 같습니다 `Provider.GrantRefreshToken`: 
+에 대 한 샘플 구현은 같습니다 `Provider.GrantRefreshToken`:
 
 [!code-csharp[Main](owin-oauth-20-authorization-server/samples/sample9.cs)]
 

@@ -8,40 +8,40 @@ ms.date: 06/10/2014
 ms.assetid: 03960de2-8d95-4444-9169-4426dcc64913
 msc.legacyurl: /signalr/overview/guide-to-the-api/handling-connection-lifetime-events
 msc.type: authoredcontent
-ms.openlocfilehash: 42cf7faf9112875e15072993b6210348d0c42534
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 1783a3ab292a5460d5cc1b7ad78073071d65d379
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41827539"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911958"
 ---
 <a name="understanding-and-handling-connection-lifetime-events-in-signalr"></a>이해 및 SignalR의 연결 수명 이벤트를 처리 합니다.
 ====================
 하 여 [Patrick Fletcher](https://github.com/pfletcher), [Tom Dykstra](https://github.com/tdykstra)
 
 > 이 문서는 SignalR 연결, 다시 연결 및 연결 끊기 이벤트를 처리할 수 있는 및 구성할 수 있는 시간 제한 및 keepalive 설정의 개요를 제공 합니다.
-> 
+>
 > 이 문서에서는 SignalR 및 연결 수명 이벤트에 대 한 지식이 이미 가정 합니다. SignalR 소개를 참조 하세요 [SignalR 소개](../getting-started/introduction-to-signalr.md)합니다. 연결 수명 이벤트의 목록에 대 한 다음 리소스를 참조 합니다.
-> 
+>
 > - [허브 클래스에서 연결 수명 이벤트를 처리 하는 방법](hubs-api-guide-server.md#connectionlifetime)
 > - [JavaScript 클라이언트에서 연결 수명 이벤트를 처리 하는 방법](hubs-api-guide-javascript-client.md#connectionlifetime)
 > - [.NET 클라이언트에서 연결 수명 이벤트를 처리 하는 방법](hubs-api-guide-net-client.md#connectionlifetime)
-> 
+>
 > ## <a name="software-versions-used-in-this-topic"></a>이 항목에서 사용 하는 소프트웨어 버전
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - SignalR 버전 2
->   
-> 
-> 
+>
+>
+>
 > ## <a name="previous-versions-of-this-topic"></a>이 항목의 이전 버전
-> 
+>
 > 이전 버전의 SignalR에 대 한 정보를 참조 하세요 [SignalR 이전 버전](../older-versions/index.md)합니다.
-> 
+>
 > ## <a name="questions-and-comments"></a>질문이 나 의견이 있으면
-> 
+>
 > 이 자습서를 연결 하는 방법 및 새로운 개선할 수 있습니다 페이지의 맨 아래에 의견에서에 의견을 남겨 주세요. 에 자습서로 직접 관련 되지 않은 질문이 있을 경우 게시할 수 하는 [ASP.NET SignalR 포럼](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) 또는 [StackOverflow.com](http://stackoverflow.com/)합니다.
 
 
@@ -144,8 +144,8 @@ ms.locfileid: "41827539"
 
 의도적으로 일부 네트워크 환경 유휴 연결을 닫고 keepalive 패킷의 다른 기능은 이러한 네트워크 알리는 SignalR 연결을 사용 하 여이 방지 하는 것입니다. 극단적인 경우 keepalive ping 기본 빈도 충분 하지 않이 닫힌된에 연결할 수 없게 합니다. 이 경우 더 자주 전송할 keepalive ping을 구성할 수 있습니다. 자세한 내용은 [제한 시간 및 keepalive 설정을](#timeoutkeepalive) 이 항목의에서 뒷부분에 있습니다.
 
-> [!NOTE] 
-> 
+> [!NOTE]
+>
 > **중요 한**: 여기에 설명 된 이벤트의 순서는 보장 되지 않습니다. SignalR에서는이 스키마에 따라 예측 가능한 방식으로 연결 수명 이벤트를 발생 시키는 모든 있지만 가지 다양 한 네트워크 이벤트 및 전송 Api와 같은 기본 통신 프레임 워크 처리 하는 다양 합니다. 예를 들어를 `Reconnected` 클라이언트는 다음 작업을 다시 연결 되 면 이벤트가 발생할 수 있습니다 또는 `OnConnected` 서버에서 처리기는 연결을 설정 하려는 시도가 성공적으로 수행 되지 경우에 실행할 수 있습니다. 이 항목에서는 일반적인 상황에서 정상적으로 생성 되는 영향만 설명 합니다.
 
 

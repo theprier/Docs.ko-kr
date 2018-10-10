@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 093c1362-f10b-407c-a708-be370f4b62b0
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/aspnet-mvc-4-entity-framework-scaffolding-and-migrations
 msc.type: authoredcontent
-ms.openlocfilehash: 10a61b70ef52aa9f5bb9004df3dba9e323d021db
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: bfb1edfcb756706e44126e7e96803bd2e9ce99fb
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41831483"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911021"
 ---
 # <a name="aspnet-mvc-4-entity-framework-scaffolding-and-migrations"></a>ASP.NET MVC 4 Entity Framework 스 캐 폴딩 및 마이그레이션
 
@@ -172,7 +172,7 @@ ASP.NET MVC 4 컨트롤러 메서드를 사용 하 여 익숙한 또는 완료 �
 
 이 작업에서는 Entity Framework 마이그레이션을 사용 하 여 데이터베이스를 업데이트 합니다. 알게 될 것이 얼마나 쉬운지 모델을 변경 하 여 Entity Framework 마이그레이션 기능을 사용 하 여 데이터베이스에서 변경 내용을 반영 합니다.
 
-1. 패키지 관리자 콘솔을 엽니다. 선택 **도구 | 라이브러리 패키지 관리자 | 패키지 관리자 콘솔**합니다.
+1. 패키지 관리자 콘솔을 엽니다. 선택 **도구가** > **NuGet 패키지 관리자** > **패키지 관리자 콘솔**합니다.
 2. 패키지 관리자 콘솔에서 다음 명령을 입력 합니다.
 
     PMC

@@ -8,12 +8,12 @@ ms.date: 06/16/2014
 ms.assetid: 20360326-b123-4b1e-abae-1d350edf4ce4
 msc.legacyurl: /web-api/overview/data/using-web-api-with-entity-framework/part-6
 msc.type: authoredcontent
-ms.openlocfilehash: 4967e21190c34f698e9c28fd9b921f07bef2ffaf
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: b5cb4d93c30ef80a48da48ffc51dd51411b1d0d0
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41838778"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912666"
 ---
 <a name="create-the-javascript-client"></a>JavaScript 클라이언트 만들기
 ====================
@@ -41,7 +41,7 @@ Knockout 라이브러리-Model-view-viewmodel (MVVM) 패턴을 사용합니다.
 
 ## <a name="add-the-knockout-library"></a>Knockout 라이브러리 추가
 
-Visual Studio에서에서 합니다 **도구** 메뉴에서 **라이브러리 패키지 관리자**합니다. 선택한 **패키지 관리자 콘솔**합니다. 패키지 관리자 콘솔 창에서 다음 명령을 입력 합니다.
+Visual Studio에서에서 합니다 **도구** 메뉴에서 **NuGet 패키지 관리자**합니다. 선택한 **패키지 관리자 콘솔**합니다. 패키지 관리자 콘솔 창에서 다음 명령을 입력 합니다.
 
 [!code-console[Main](part-6/samples/sample1.cmd)]
 

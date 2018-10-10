@@ -8,12 +8,12 @@ ms.date: 02/15/2013
 ms.assetid: ae4def81-fa37-4883-a13e-d9896cbf6c36
 msc.legacyurl: /web-forms/overview/deployment/visual-studio-web-deployment/preparing-databases
 msc.type: authoredcontent
-ms.openlocfilehash: 7bdf443fbce7376ac057c848df146717955203f9
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 67f44d9f23a2fe83c48e68328b1dee739056e32f
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41829748"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912386"
 ---
 <a name="aspnet-web-deployment-using-visual-studio-preparing-for-database-deployment"></a>Visual Studio를 사용 하 여 ASP.NET 웹 배포: 배포 데이터베이스에 대 한 준비
 ====================
@@ -84,15 +84,13 @@ Code First 마이그레이션을 사용 하 고는, 필요가 없습니다 사�
 > [!NOTE]
 > 이니셜라이저 클래스를 지정 하는 또 다른 방법은 호출 하 여 수행 됩니다 `Database.SetInitializer` 에 `Application_Start` 에서 메서드는 *Global.asax* 파일입니다. 해당 메서드를 사용 하 여 이니셜라이저를 지정 하는 프로젝트에서 Migrations를 사용 하는 경우 해당 코드 줄을 제거 합니다.
 
-
 > [!NOTE]
 > Visual Studio 2013을 사용 하는 경우 단계 2와 3 간의 다음 단계를 추가: (a)의 PMC 입력 "업데이트 패키지 entityframework-6.1.1 버전" 현재 버전의 EF 가져오려고 합니다. 다음 (b) 빌드 프로젝트 빌드 오류 목록을 가져오려면를 해결할 수 있습니다. 문을 사용 하 여 더 이상 존재 마우스 오른쪽 단추로 클릭 하 고, 필요한 곳 문을 사용 하 여 추가 확인을 클릭 하는 네임 스페이스를 삭제 하 고 System.Data.Entity.EntityState System.Data.EntityState 개 변경 합니다.
-
 
 ### <a name="enable-code-first-migrations"></a>Code First 마이그레이션 사용
 
 1. ContosoUniversity 프로젝트 (없습니다 ContosoUniversity.DAL)를 시작 프로젝트로 설정 되어 있는지 확인 합니다. **솔루션 탐색기**ContosoUniversity 프로젝트를 마우스 오른쪽 단추로 클릭 하 고 선택 **시작 프로젝트로 설정**합니다. Code First 마이그레이션을 데이터베이스 연결 문자열을 찾을 시작 프로젝트에 표시 됩니다.
-2. **도구** 메뉴에서 클릭 **라이브러리 패키지 관리자** (또는 **NuGet 패키지 관리자**) 차례로 **패키지 관리자 콘솔**합니다.
+2. **도구** 메뉴 선택 **NuGet 패키지 관리자** > **패키지 관리자 콘솔**합니다.
 
     ![Selecting_Package_Manager_Console](preparing-databases/_static/image3.png)
 3. 맨 위에 있는 합니다 **패키지 관리자 콘솔** 창 선택 ContosoUniversity.DAL 그 다음으로 기본 프로젝트에 `PM>` 프롬프트 "enable-마이그레이션"을 입력 합니다.

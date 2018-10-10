@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: a8b3b778-f009-4369-85c7-e90f9878d8b4
 msc.legacyurl: /signalr/overview/getting-started/tutorial-getting-started-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 647dab496acd63dc774236ed448bd6b37b19c707
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 676dc0854ef6f041e705ed6b39432e11dd8643ed
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41838830"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910904"
 ---
 <a name="tutorial-getting-started-with-signalr-2"></a>자습서: SignalR 2 시작
 ====================
@@ -102,7 +102,7 @@ SignalR 실시간 응용 프로그램을 빌드하는 프로세스를 간소화 
 3. **솔루션 탐색기**프로젝트를 마우스 오른쪽 단추로 클릭을 **추가 | SignalR 허브 클래스 (v2)** 합니다. 클래스의 이름을 **ChatHub.cs** 하 고 프로젝트에 추가 합니다. 이 단계에서는 합니다 **ChatHub** 클래스 및 스크립트 파일 및 SignalR을 지 원하는 어셈블리 참조의 집합을 프로젝트에 추가 합니다.
 
     > [!NOTE]
-    > 열어 프로젝트에 SignalR을 추가할 수도 있습니다는 **도구 | 라이브러리 패키지 관리자 | 패키지 관리자 콘솔** 및 명령을 실행 합니다.
+    > 열어 프로젝트에 SignalR을 추가할 수도 있습니다는 **도구 > NuGet 패키지 관리자 > 패키지 관리자 콘솔** 명령을 실행 하 고:
 
     `install-package Microsoft.AspNet.SignalR`
 

@@ -8,12 +8,12 @@ ms.date: 07/16/2014
 ms.assetid: ecfd0eb4-c4ad-44e6-9db9-a2a66611ff6a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/maintainable-azure-websites-managing-change-and-scale
 msc.type: authoredcontent
-ms.openlocfilehash: 05181ae1b2d857eea45983d378b28011c1cd755a
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: bc6de2f0c8b2cd958c198abb90fc4ad97613e973
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48578135"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48913309"
 ---
 <a name="hands-on-lab-maintainable-azure-websites-managing-change-and-scale"></a>실습: Azure Websites 유지: 변경 및 규모 관리
 ====================
@@ -124,7 +124,7 @@ ms.locfileid: "48578135"
 
 1. Visual Studio를 열고 엽니다는 **GeekQuiz.sln** 에서 솔루션 파일 **Source\Ex1 UsingEntityFrameworkMigrations\Begin**합니다.
 2. 다운로드 및 설치 하기 위해 솔루션을 구축 합니다 **NuGet** 종속성 패키지 합니다. 이렇게 하려면 솔루션을 마우스 오른쪽 단추로 클릭 하 고 클릭 **솔루션 빌드** 누르거나 **Ctrl + Shift + B**합니다.
-3. **도구** Visual Studio에서 메뉴 **라이브러리 패키지 관리자**를 클릭 하 고 **패키지 관리자 콘솔**합니다.
+3. **도구** Visual Studio에서 메뉴 **NuGet 패키지 관리자**를 클릭 하 고 **패키지 관리자 콘솔**합니다.
 4. 에 **패키지 관리자 콘솔**, 다음 명령을 입력 하 고 다음 키를 누릅니다 **Enter**합니다. 기존 모델을 기반으로 하는 초기 마이그레이션 만들어질 수 있습니다.
 
     [!code-powershell[Main](maintainable-azure-websites-managing-change-and-scale/samples/sample1.ps1)]

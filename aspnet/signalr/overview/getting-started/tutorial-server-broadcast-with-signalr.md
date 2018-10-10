@@ -8,49 +8,49 @@ ms.date: 10/13/2014
 ms.assetid: 1568247f-60b5-4eca-96e0-e661fbb2b273
 msc.legacyurl: /signalr/overview/getting-started/tutorial-server-broadcast-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: c2248e68b3c9411687ab6410f12ec85488fe0738
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 7a85a704dc5d830ec793540fbc44a3ce7ec8c934
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41837311"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911545"
 ---
 <a name="tutorial-server-broadcast-with-signalr-2"></a>자습서: SignalR 2 사용 하 여 서버 브로드캐스트 한다
 ====================
 하 여 [Tom Dykstra](https://github.com/tdykstra), [Tom FitzMacken](https://github.com/tfitzmac)
 
 > 이 자습서에는 ASP.NET SignalR 2를 사용 하 여 서버 브로드캐스트 기능을 제공 하는 웹 응용 프로그램을 만드는 방법을 보여 줍니다. 서버 브로드캐스트 클라이언트로 전송 되는 통신 서버에서 시작 되는 것을 의미 합니다. 이 시나리오에는 클라이언트로 전송 되는 통신 클라이언트 중 하나 이상으로 시작 되는 채팅 응용 프로그램과 같은 피어-투-피어 시나리오 보다 다른 프로그래밍 접근 방법이 필요 합니다.
-> 
+>
 > 이 자습서에서 만들어야 하는 응용 프로그램 주식 시세 표시기, 서버 브로드캐스트 기능에 대 한 일반적인 시나리오를 시뮬레이션 합니다.
-> 
+>
 > 이 항목에서는 Patrick Fletcher 하 여 원래 작성 되었습니다.
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>이 자습서에 사용 되는 소프트웨어 버전
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - SignalR 버전 2
->   
-> 
-> 
+>
+>
+>
 > ## <a name="using-visual-studio-2012-with-this-tutorial"></a>이 자습서를 사용 하 여 Visual Studio 2012를 사용 하 여
-> 
-> 
+>
+>
 > 이 자습서를 사용 하 여 Visual Studio 2012를 사용 하려면 다음을 수행 합니다.
-> 
+>
 > - 업데이트 프로그램 [패키지 관리자](http://docs.nuget.org/docs/start-here/installing-nuget) 최신 버전으로 합니다.
 > - 설치 합니다 [웹 플랫폼 설치 관리자](https://www.microsoft.com/web/downloads/platform.aspx)합니다.
 > - 웹 플랫폼 설치 관리자에서 검색 하 고 설치 **ASP.NET 및 Visual Studio 2012 용 웹 도구 2013.1**합니다. SignalR 클래스에 대 한 Visual Studio 템플릿 같은 설치 합니다 **허브**합니다.
 > - 일부 템플릿 (와 같은 **OWIN 시작 클래스**)를 사용할 수 없습니다;이 대 한 클래스 파일을 대신 사용 합니다.
-> 
-> 
+>
+>
 > ## <a name="tutorial-versions"></a>자습서 버전
-> 
+>
 > 이전 버전의 SignalR에 대 한 정보를 참조 하세요 [SignalR 이전 버전](../older-versions/index.md)합니다.
-> 
+>
 > ## <a name="questions-and-comments"></a>질문이 나 의견이 있으면
-> 
+>
 > 이 자습서를 연결 하는 방법 및 새로운 개선할 수 있습니다 페이지의 맨 아래에 의견에서에 의견을 남겨 주세요. 에 자습서로 직접 관련 되지 않은 질문이 있을 경우 게시할 수 하는 [ASP.NET SignalR 포럼](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) 또는 [StackOverflow.com](http://stackoverflow.com/)합니다.
 
 
@@ -66,7 +66,7 @@ ms.locfileid: "41837311"
 
 이 자습서는 다음 섹션이 포함 되어 있습니다.
 
-- [필수 조건](#prerequisites)
+- [필수 구성 요소](#prerequisites)
 - [프로젝트를 만들려면](#createproject)
 - [서버 코드 설정](#server)
 - [클라이언트 코드를 설정 하기](#client)

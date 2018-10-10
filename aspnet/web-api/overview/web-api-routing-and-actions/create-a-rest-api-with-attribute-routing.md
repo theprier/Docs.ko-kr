@@ -8,12 +8,12 @@ ms.date: 06/26/2013
 ms.assetid: 23fc77da-2725-4434-99a0-ff872d96336b
 msc.legacyurl: /web-api/overview/web-api-routing-and-actions/create-a-rest-api-with-attribute-routing
 msc.type: authoredcontent
-ms.openlocfilehash: 191452204d4347396b1d339d9b82d583a2ce9f3c
-ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
+ms.openlocfilehash: 3b66f02c9be6441ff7d6c38d6180cc8556c6b8b9
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48795520"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912893"
 ---
 <a name="create-a-rest-api-with-attribute-routing-in-aspnet-web-api-2"></a>ASP.NET Web API 2에서에서 특성 라우팅을 사용 하 여 REST API 만들기
 ====================
@@ -104,7 +104,7 @@ Ctrl+Shift+B를 눌러 프로젝트를 빌드합니다. Entity Framework 리플�
 
 ### <a name="seed-the-database"></a>데이터베이스 시드
 
-도구 메뉴에서 선택 **라이브러리 패키지 관리자**를 선택한 후 **패키지 관리자 콘솔**합니다.
+도구 메뉴에서 선택 **NuGet 패키지 관리자**를 선택한 후 **패키지 관리자 콘솔**합니다.
 
 패키지 관리자 콘솔 창에서 다음 명령을 입력 합니다.
 

@@ -8,12 +8,12 @@ ms.date: 07/16/2014
 ms.assetid: 4fe2558d-67cc-4d12-a5c1-6fb9f6f16137
 msc.legacyurl: /visual-studio/overview/2013/one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: b6ac0dca92ab3d75eb871099882dcea549264354
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: c18911680b59448cd67190f71e951a3fcf3d0478
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41836587"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912737"
 ---
 <a name="hands-on-lab-one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api"></a>실습: 하나의 ASP.NET: ASP.NET Web Forms, MVC 및 Web API 통합
 ====================
@@ -372,7 +372,7 @@ Web API 프레임 워크 ASP.NET 스택에의 일부 이며 쉽게 구현 하는
 
 Web API를 만들 때 다른 개발자가 API를 호출 하는 방법을 알 수 있도록 도움말 페이지를 만드는 것이 유용할 것입니다. 만들고 설명서 페이지를 수동으로 업데이트할 수 있지만 유지 관리 작업을 수행할 것을 방지 하도록 자동으로 생성 하는 것이 좋습니다. 이 작업에서는 솔루션에 Web API 도움말 페이지를 자동으로 생성 하는 Nuget 패키지를 사용 합니다.
 
-1. **도구** Visual Studio에서 메뉴 **라이브러리 패키지 관리자**를 클릭 하 고 **패키지 관리자 콘솔**합니다.
+1. **도구** Visual Studio에서 메뉴 **NuGet 패키지 관리자**를 클릭 하 고 **패키지 관리자 콘솔**합니다.
 2. 에 **패키지 관리자 콘솔** 창에서 다음 명령을 실행 합니다.
 
     [!code-powershell[Main](one-aspnet-integrating-aspnet-web-forms-mvc-and-web-api/samples/sample7.ps1)]

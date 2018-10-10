@@ -8,12 +8,12 @@ ms.date: 07/03/2013
 ms.assetid: 9594d644-66b6-4223-acdd-23e29a6e4c46
 msc.legacyurl: /signalr/overview/older-versions/signalr-performance
 msc.type: authoredcontent
-ms.openlocfilehash: 4fba0cc79046f5f3fd1dc50e5b69ddb78d98c23d
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 3ac62639617e1ff83761d0a1d45c27303d0b820d
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41836676"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912763"
 ---
 <a name="signalr-performance-signalr-1x"></a>SignalR 성능 (SignalR 1.x)
 ====================
@@ -119,7 +119,7 @@ SignalR 클라이언트와 서버 간의 통신에 대 한 다양 한 전송 방
 
 성능 카운터 SignalR.exe 라는 유틸리티를 사용 하 여 서버에 추가할 수 있습니다. 이 유틸리티를 설치 하려면 다음이 단계를 수행 합니다.
 
-1. Visual Studio 응용 프로그램에서 선택 **도구**하십시오 **라이브러리 패키지 관리자**, **솔루션용 NuGet 패키지 관리...**
+1. Visual Studio에서 선택 **도구가** > **NuGet 패키지 관리자** > **솔루션용 NuGet 패키지 관리**
 2. 검색할 **signalr.utils**, 설치를 선택 합니다.
 
     ![](signalr-performance/_static/image1.png)

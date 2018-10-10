@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: 4ba029b6-ee7c-4e45-a0e7-b703c37e5d9a
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 037f67d679762a037eaef9f0a4060156b94d97b1
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: b691f718258f98e03513a089ca26b286f284765e
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41829193"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48913237"
 ---
 <a name="creating-an-entity-framework-data-model-for-an-aspnet-mvc-application-1-of-10"></a>(1 / 10) ASP.NET MVC 응용 프로그램에 대 한 Entity Framework 데이터 모델 만들기
 ====================
@@ -142,7 +142,7 @@ Visual Studio를 열고 새 C# 프로젝트 만들기 "ContosoUniversity"를 사
 
 `StudentID` 속성은 이 클래스에 해당하는 데이터베이스 테이블의 기본 키 열이 됩니다. 기본적으로 Entity Framework는 명명 된 속성을 해석 `ID` 나 *classname* `ID` 기본 키로 합니다.
 
-합니다 `Enrollments` 속성을 *탐색 속성*합니다. 탐색 속성은 이 엔터티와 관련된 다른 엔터티를 포함합니다. 이 경우에 `Enrollments` 의 속성을 `Student` 엔터티 모두 보유할를 `Enrollment` 는 관련 된 엔터티 `Student` 엔터티. 즉, 경우를 지정 `Student` 데이터베이스의 행에는 관련 된 두 개의 `Enrollment` 행 (해당 학생의 기본 키를 포함 하는 행 값을 해당 `StudentID` 외래 키 열), 해당 `Student` 엔터티의 `Enrollments` 탐색 속성 이러한 두 사용 될 `Enrollment` 엔터티.
+`Enrollments` 속성은 *탐색 속성*입니다. 탐색 속성은 이 엔터티와 관련된 다른 엔터티를 포함합니다. 이 경우에 `Enrollments` 의 속성을 `Student` 엔터티 모두 보유할를 `Enrollment` 는 관련 된 엔터티 `Student` 엔터티. 즉, 경우를 지정 `Student` 데이터베이스의 행에는 관련 된 두 개의 `Enrollment` 행 (해당 학생의 기본 키를 포함 하는 행 값을 해당 `StudentID` 외래 키 열), 해당 `Student` 엔터티의 `Enrollments` 탐색 속성 이러한 두 사용 될 `Enrollment` 엔터티.
 
 탐색 속성은 일반적으로 정의 됩니다 `virtual` 를 같은 특정 Entity Framework 기능을 취할 수 있습니다 *지연 로딩*합니다. (지연 로딩에 설명의 뒷부분에 나오는 합니다 [관련 데이터를 읽는](reading-related-data-with-the-entity-framework-in-an-asp-net-mvc-application.md) 이 시리즈의 뒷부분에 나오는 자습서입니다.
 
@@ -210,7 +210,7 @@ Visual Studio 2012 및 이후 버전에서는 LocalDB Visual Studio를 사용 �
 
 ### <a name="enable-code-first-migrations"></a>Code First 마이그레이션 사용
 
-1. **도구** 메뉴에서 클릭 **라이브러리 패키지 관리자** 차례로 **패키지 관리자 콘솔**합니다.
+1. **도구** 메뉴에서 클릭 **NuGet 패키지 관리자** 차례로 **패키지 관리자 콘솔**합니다.
 
     ![Selecting_Package_Manager_Console](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application/_static/image10.png)
 2. 에 `PM>` 프롬프트에 다음 명령을 입력 합니다.

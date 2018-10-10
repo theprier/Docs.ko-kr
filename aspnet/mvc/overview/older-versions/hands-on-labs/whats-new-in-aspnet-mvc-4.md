@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: 48f7feb3-872f-485d-b96f-e30011ff8c4a
 msc.legacyurl: /mvc/overview/older-versions/hands-on-labs/whats-new-in-aspnet-mvc-4
 msc.type: authoredcontent
-ms.openlocfilehash: b1d80928d765bc71ea1579272662b6697371c47b
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 9d5a51a5887ecbbc96fce1416b88aa849bc3674e
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41837231"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912724"
 ---
 # <a name="whats-new-in-aspnet-mvc-4"></a>ASP.NET MVC 4의에서 새로운 기능
 
@@ -382,7 +382,7 @@ ASP.NET MVC 4 웹 사이트에 모바일 및 태블릿 브라우저의 개발을
 
       > [!NOTE]
       > NuGet을 사용 하는 이점은 중 하나는 필요가 프로젝트에서 모든 라이브러리를 제공 합니다. 프로젝트 크기를 줄이면입니다. NuGet 파워 도구를 사용 하 여 Packages.config 파일에서 패키지 버전을 지정 하 여 있습니다 됩니다 처음 프로젝트를 실행 하면 필요한 라이브러리를 다운로드할 수 있습니다. 이 때문에이 랩의 기존 솔루션을 연 후 다음이 단계를 실행 해야 합니다.
-2. 엽니다는 **패키지 관리자 콘솔** 를 클릭 하 여 합니다 **도구** &gt; **라이브러리 패키지 관리자** &gt; **패키지 관리자 콘솔** 메뉴 옵션입니다.
+2. 엽니다는 **패키지 관리자 콘솔** 를 클릭 하 여 합니다 **도구** > **NuGet 패키지 관리자** > **패키지 관리자 콘솔**  메뉴 옵션입니다.
 
     ![NuGet 패키지 관리자 콘솔을 열고](whats-new-in-aspnet-mvc-4/_static/image22.png "NuGet 패키지 관리자 콘솔을 열고")
 

@@ -8,12 +8,12 @@ ms.date: 05/22/2015
 ms.assetid: 52a4d5fe-aa31-4471-b3cb-a064f82cb791
 msc.legacyurl: /mvc/overview/getting-started/introduction/examining-the-edit-methods-and-edit-view
 msc.type: authoredcontent
-ms.openlocfilehash: 27c4bcc6dd127fe1a430aaec462e2c19a5fb7851
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 29ece7754bc6e25ea968c25a99a2f48ab837e12c
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48577381"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911548"
 ---
 <a name="examining-the-edit-methods-and-edit-view"></a>편집 메서드 및 편집 보기 검사
 ====================
@@ -99,16 +99,15 @@ ms.locfileid: "48577381"
 > [!NOTE]
 > 쉼표를 사용 하는 영어가 아닌 로캘의 jQuery 유효성 검사를 지원 하도록 (&quot;,&quot;), 소수점 및 미국 영어가 아닌 날짜 형식에 대 한 포함 해야 합니다 *globalize.js* 및 특정  *cultures/globalize.cultures.js* 파일 (에서 [ https://github.com/jquery/globalize ](https://github.com/jquery/globalize) ) 및 JavaScript를 사용 하 여 `Globalize.parseFloat`입니다. NuGet에서 영어가 아닌 jQuery 유효성 검사를 가져올 수 있습니다. (설치 하지 마십시오 Globalize 영어 로캘을 사용 하는 경우.)
 
+1. **도구** 메뉴 **NuGet 패키지 관리자**를 클릭 하 고 **솔루션용 NuGet 패키지 관리**합니다.
 
-1. **도구** 메뉴 **NuGetLibrary 패키지 관리자**를 클릭 하 고 **솔루션용 NuGet 패키지 관리**합니다.  
-  
     ![](examining-the-edit-methods-and-edit-view/_static/image5.png)
 2. 왼쪽된 창에서 선택 <strong>찾아보기 *.</strong>* (아래 이미지 참조).
-3. 입력된 상자에 입력 * Globalize * * 합니다.  
-  
+3. 입력된 상자에 입력 * Globalize * * 합니다.
+
     ![](examining-the-edit-methods-and-edit-view/_static/image6.png) 선택할 `jQuery.Validation.Globalize`, 선택 `MvcMovie` 클릭 **설치**합니다. 합니다 *Scripts\jquery.globalize\globalize.js* 프로젝트에 추가할 파일입니다. *Scripts\jquery.globalize\cultures\* 폴더에는 많은 문화권 JavaScript 파일이 포함 됩니다. Note:이 패키지를 설치 하는 데 5 분이 걸릴 수 있습니다.
 
-   다음 코드는 Views\Movies\Edit.cshtml 파일에 수정 내용을 보여 줍니다. 
+   다음 코드는 Views\Movies\Edit.cshtml 파일에 수정 내용을 보여 줍니다.
 
 [!code-cshtml[Main](examining-the-edit-methods-and-edit-view/samples/sample10.cshtml)]
 

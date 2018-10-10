@@ -8,21 +8,20 @@ ms.date: 01/13/2015
 ms.assetid: c89d809f-6c65-4425-a3fa-c9f6e8ac89f2
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/connection-resiliency-and-command-interception-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 9b326ec22fc70a8c1746c5cd2c302c7f04fa8d3e
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: ab6a553100d704746840eaad512ec140d4576c44
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41829096"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911788"
 ---
 <a name="connection-resiliency-and-command-interception-with-the-entity-framework-in-an-aspnet-mvc-application"></a>연결 복원 력 및 명령 인터 셉 션 ASP.NET MVC 응용 프로그램에서 Entity Framework 사용 하 여
 ====================
 [Tom Dykstra](https://github.com/tdykstra)
 
-[완료 된 프로젝트를 다운로드](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8) 또는 [PDF 다운로드](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
+[완료 된 프로젝트 다운로드](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
 
-> Contoso University 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio 2013을 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)를 참조하세요.
-
+> Contoso University 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)를 참조하세요.
 
 지금까지 응용 프로그램에서 실행 되었음을 로컬 IIS Express 개발 컴퓨터에 있습니다. 실제 응용 프로그램을 사용 하 여 인터넷을 통해 다른 사람들이 사용할 수 있도록 하려면 웹 호스팅 공급자를 배포 해야 하 고 데이터베이스 서버에 데이터베이스를 배포 해야 합니다.
 
@@ -73,7 +72,7 @@ Entity Framework 공급자를 지 원하는 데이터베이스 환경에 수동�
 
 ### <a name="create-a-logging-interface-and-class"></a>로깅 인터페이스 및 클래스 만들기
 
-A [로깅에 대 한 최상의](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry.md#log) 인터페이스를 사용 하 여 작업을 수행 하는 호출을 System.Diagnostics.Trace 또는 logging 클래스에 하드 코딩 하는 대신 합니다. 쉽게 작업을 수행 해야 하는 경우 나중에 로깅 메커니즘을 변경 합니다. 이 섹션의 로깅 인터페이스와 해당/p를 구현 하는 클래스를 만들 수 > 
+A [로깅에 대 한 최상의](../../../../aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/monitoring-and-telemetry.md#log) 인터페이스를 사용 하 여 작업을 수행 하는 호출을 System.Diagnostics.Trace 또는 logging 클래스에 하드 코딩 하는 대신 합니다. 쉽게 작업을 수행 해야 하는 경우 나중에 로깅 메커니즘을 변경 합니다. 이 섹션의 로깅 인터페이스와 해당/p를 구현 하는 클래스를 만들 수 >
 
 1. 프로젝트에서 폴더를 만들고 이름을 *로깅*합니다.
 2. 에 *로깅* 폴더를 라는 클래스 파일을 만듭니다 *ILogger.cs*, 템플릿 코드를 다음 코드로 바꾸고:
@@ -138,7 +137,7 @@ A [로깅에 대 한 최상의](../../../../aspnet/overview/developing-apps-with
 
 ## <a name="test-logging-and-connection-resiliency"></a>테스트 로깅, 연결 복원 력
 
-1. F5 키를 눌러 디버그 모드에서 응용 프로그램을 실행 하 고 클릭 하 여 **학생** 탭 합니다.
+1. 키를 눌러 **F5** 디버그 모드에서 응용 프로그램을 실행 한 다음 클릭 합니다 **학생** 탭 합니다.
 2. Visual Studio 살펴보기 **출력** 창 추적 출력을 확인 합니다. 로 거에 의해 기록 된 로그를 이동 하려면 일부 JavaScript 오류가 구성 스크롤해야 할 수도 있습니다.
 
     데이터베이스에 전송 되는 실제 SQL 쿼리를 볼 수 있는지 확인 합니다. 일부 초기 쿼리 및 Entity Framework 시작 하는 데이터베이스 버전을 확인 하는 명령 및 마이그레이션 기록 테이블 (배웁니다 마이그레이션에 대 한 다음 자습서에서) 표시 됩니다. 가 얼마나 많은 학생 알아보려면 페이징에 대 한 쿼리를 표시 및 마지막으로 학생 데이터를 가져오는 쿼리를 참조 합니다.
@@ -172,7 +171,7 @@ A [로깅에 대 한 최상의](../../../../aspnet/overview/developing-apps-with
 
 이 자습서에서는 연결 복원 력을 지원 및 Entity Framework를 작성 하 고 데이터베이스를 전송 하는 SQL 명령을 기록 하는 방법을 살펴보았습니다. 다음 자습서에서는 Code First 마이그레이션을 사용 하 여 데이터베이스를 배포 하려면 인터넷에 응용 프로그램 배포.
 
-이 자습서를 연결 하는 방법을 개선할 수 것에 의견을 남겨 주세요. 새 항목을 요청할 수도 있습니다 [표시 코드 사용 방법 보기](http://aspnet.uservoice.com/forums/228522-show-me-how-with-code)합니다.
+이 자습서를 연결 하는 방법을 개선할 수 것에 의견을 남겨 주세요.
 
 다른 Entity Framework 리소스에 대 한 링크에서 찾을 수 있습니다 [ASP.NET 데이터 액세스-권장 리소스](../../../../whitepapers/aspnet-data-access-content-map.md)합니다.
 

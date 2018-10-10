@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: 0fab5e35-8c1f-43d4-8635-b8aba8766a71
 msc.legacyurl: /signalr/overview/getting-started/introduction-to-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: f35e26bc8db2bbdb579836bbc9556ad2147cb8bf
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: d103573fb31bb3b08d054cbf65ff906bd5d151d3
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41829713"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912802"
 ---
 <a name="introduction-to-signalr"></a>SignalR 소개
 ====================
@@ -29,7 +29,7 @@ ms.locfileid: "41829713"
 > 이 자습서를 연결 하는 방법 및 새로운 개선할 수 있습니다 페이지의 맨 아래에 의견에서에 의견을 남겨 주세요. 에 자습서로 직접 관련 되지 않은 질문이 있을 경우 게시할 수 하는 [ASP.NET SignalR 포럼](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) 또는 [StackOverflow.com](https://stackoverflow.com/questions/tagged/signalr)합니다.
 
 
-## <a name="what-is-signalr"></a>SignalR 이란?
+## <a name="what-is-signalr"></a>SignalR이란?
 
 ASP.NET SignalR은 ASP.NET 개발자를 위한 응용 프로그램에 실시간 웹 기능을 추가 하는 프로세스를 간소화 하는 라이브러리입니다. 실시간 웹 기능은 서버 코드 푸시를 사용할 수 있게 되 면 즉시 연결 된 클라이언트에 콘텐츠 대신 서버는 클라이언트가 새 데이터를 요청을 대기 하는 기능을 합니다.
 
@@ -51,9 +51,7 @@ SignalR은 오픈 소스를 통해 액세스할 수 있습니다 [GitHub](https:
 
 ## <a name="signalr-and-websocket"></a>SignalR 및 WebSocket
 
-SignalR 사용 가능한 경우 새 WebSocket 전송 사용 및 필요한 경우 이전 전송으로 대체 합니다. 하지만 물론 직접 WebSocket을 사용 하 여, 추가 기능을 구현 해야 합니다. 많은 이미 완료 된를 즉 SignalR을 사용 하 여 응용 프로그램을 작성할 수 있습니다. 가장 중요 한 점은이 이전 버전의 클라이언트에 대 한 별도 코드 경로 생성 하는 방법에 대 한 걱정 없이 WebSocket을 활용 하려면 응용 프로그램을 코딩할 수 있습니다 의미 합니다. SignalR도 보호 SignalR 계속 기본 전송에 대 한 변경을 지원 하도록 업데이트 되어야 WebSocket의 버전 간에 응용 프로그램을 일관 된 인터페이스를 제공 하므로 WebSocket에 대 한 업데이트에 걱정할 필요가 없도록 합니다.
-
-확실히만 WebSocket을 사용 하는 솔루션을 만들 수 있습니다, 있지만 SignalR은 모든 다른 전송 및 WebSocket 구현에 업데이트에 대 한 응용 프로그램을 수정 하는 대체 (fallback)와 같은 사용자가 직접 작성 해야 하는 기능을 제공 합니다.
+SignalR 사용 가능한 경우 새 WebSocket 전송 사용 및 필요한 경우 이전 전송으로 대체 합니다. 하지만 물론 직접 WebSocket을 사용 하 여, 많은 구현 해야 하는 추가 기능을 이미 수행 즉 SignalR을 사용 하 여 앱을 작성할 수 있습니다. 가장 중요 한 점은이 이전 버전의 클라이언트에 대 한 별도 코드 경로 생성 하는 방법에 대 한 걱정 없이 WebSocket을 활용 하려면 앱을 코딩할 수 있습니다 의미 합니다. SignalR도 보호 SignalR 기본 전송에 대 한 변경을 지원 하도록 업데이트 됩니다 WebSocket의 버전 간에 응용 프로그램을 일관 된 인터페이스를 제공 하므로 WebSocket에 대 한 업데이트에 걱정할 필요가 없도록 합니다.
 
 <a id="transports"></a>
 

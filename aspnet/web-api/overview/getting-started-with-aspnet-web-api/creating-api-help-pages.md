@@ -8,12 +8,12 @@ ms.date: 04/01/2013
 ms.assetid: 0150e67b-c50d-4613-83ea-7b4ef8cacc5a
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/creating-api-help-pages
 msc.type: authoredcontent
-ms.openlocfilehash: 2d8758034ca4339ed7e9699cf2f2643bfab87ba4
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: c081064a32151a71fc4f3ea407e0c48a1539432a
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41837577"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48913127"
 ---
 <a name="creating-help-pages-for-aspnet-web-api"></a>ASP.NET Web API에 대 한 도움말 페이지 만들기
 ====================
@@ -55,7 +55,7 @@ Web API를 만들 때 유용 도움말 페이지를 만들려면 다른 개발�
 
 기존 Web API 프로젝트에 NuGet 패키지 관리자를 사용 하 여 도움말 페이지를 추가할 수 있습니다. 이 옵션은 "Web API" 템플릿 보다 다른 프로젝트 템플릿에서 시작 하는 데 유용 합니다.
 
-**도구** 메뉴에서 **라이브러리 패키지 관리자**를 선택한 후 **패키지 관리자 콘솔**합니다. 에 [패키지 관리자 콘솔](http://docs.nuget.org/docs/start-here/using-the-package-manager-console) 창에서 다음 명령 중 하나를 입력 합니다.
+**도구** 메뉴에서 **NuGet 패키지 관리자**를 선택한 후 **패키지 관리자 콘솔**합니다. 에 [패키지 관리자 콘솔](http://docs.nuget.org/docs/start-here/using-the-package-manager-console) 창에서 다음 명령 중 하나를 입력 합니다.
 
 에 **C#** 응용 프로그램: `Install-Package Microsoft.AspNet.WebApi.HelpPage`
 

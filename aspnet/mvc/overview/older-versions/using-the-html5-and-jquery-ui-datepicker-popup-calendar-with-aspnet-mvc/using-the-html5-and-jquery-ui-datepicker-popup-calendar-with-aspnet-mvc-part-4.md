@@ -8,12 +8,12 @@ ms.date: 08/29/2011
 ms.assetid: 57666c69-2b0f-423a-a61d-be49547fa585
 msc.legacyurl: /mvc/overview/older-versions/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc/using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4
 msc.type: authoredcontent
-ms.openlocfilehash: 7ecd180b7608e82ea143575c6590574b92843dcf
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 6768472b0c75757c9f368cfea58d5084c26719e1
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48577498"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48913166"
 ---
 <a name="using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc---part-4"></a>ASP.NET MVC-4 부에서 HTML5 및 jQuery UI Datepicker 팝업 일정 사용
 ====================
@@ -76,13 +76,13 @@ Ctrl+F5를 눌러 응용 프로그램을 실행합니다. 중인지 확인할 �
 
 먼저, jQuery UI 라이브러리를 설치 해야 합니다. 이렇게 하려면 SP1 버전의 Visual Studio 2010 및 Visual Web Developer에 포함 된 패키지 관리자 인 NuGet을 사용 합니다.
 
-Visual Web developer에서에서 합니다 **도구** 메뉴에서 **라이브러리 패키지 관리자** 선택한 후 **NuGet 패키지 관리**합니다.
+Visual Web developer에서에서 합니다 **도구** 메뉴에서 **NuGet 패키지 관리자** 선택한 후 **NuGet 패키지 관리**합니다.
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/_static/image3.png)
 
-참고: 경우는 **도구** 메뉴를 표시 하지 않습니다는 **라이브러리 패키지 관리자** 명령, 지시에 따라 NuGet을 설치 해야 합니다 [NuGet 설치](http://docs.nuget.org/docs/start-here/installing-nuget) 페이지 NuGet 웹 사이트입니다.   
+참고: 경우는 **도구** 메뉴를 표시 하지 않습니다는 **NuGet 패키지 관리자** 명령, 지시에 따라 NuGet을 설치 해야 합니다 [NuGet 설치](http://docs.nuget.org/docs/start-here/installing-nuget) 페이지 NuGet 웹 사이트입니다.   
   
-Visual Web Developer에서 대신 Visual Studio에서 사용 중인 경우는 **도구** 메뉴에서 **라이브러리 패키지 관리자** 선택한 후 **라이브러리 패키지 참조 추가**합니다.
+Visual Web Developer에서 대신 Visual Studio에서 사용 중인 경우는 **도구** 메뉴에서 **NuGet 패키지 관리자** 선택한 후 **라이브러리 패키지 참조 추가**합니다.
 
 ![](using-the-html5-and-jquery-ui-datepicker-popup-calendar-with-aspnet-mvc-part-4/_static/image4.png)
 

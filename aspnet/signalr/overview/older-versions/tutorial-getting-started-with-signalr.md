@@ -8,12 +8,12 @@ ms.date: 02/18/2013
 ms.assetid: fdc3599a-5217-44c1-951f-0eec9812dce7
 msc.legacyurl: /signalr/overview/older-versions/tutorial-getting-started-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 2223675ab2ec40a7e25229bf34b2f0ffddc31fed
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: d541dad19d8fd547d61e8850d64e514ea5db7fcf
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41836644"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912425"
 ---
 <a name="tutorial-getting-started-with-signalr-1x"></a>자습서: SignalR 시작 1.x
 ====================
@@ -66,7 +66,7 @@ SignalR 실시간 응용 프로그램을 빌드하는 프로세스를 간소화 
 1. Visual Studio에서 ASP.NET 빈 웹 응용 프로그램을 만듭니다.
 
     ![빈 웹 만들기](tutorial-getting-started-with-signalr/_static/image2.png)
-2. 엽니다는 **패키지 관리자 콘솔** 를 선택 하 여 **도구 | 라이브러리 패키지 관리자 | 패키지 관리자 콘솔**합니다. 콘솔 창에 다음 명령을 입력 합니다.
+2. 엽니다는 **패키지 관리자 콘솔** 를 선택 하 여 **도구 | NuGet 패키지 관리자 | 패키지 관리자 콘솔**합니다. 콘솔 창에 다음 명령을 입력 합니다.
 
     `Install-Package Microsoft.AspNet.SignalR -Version 1.1.3`
 

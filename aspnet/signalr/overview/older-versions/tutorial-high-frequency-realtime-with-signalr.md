@@ -8,12 +8,12 @@ ms.date: 04/16/2013
 ms.assetid: ad2a5da5-2e79-40ea-bc84-028d327f5982
 msc.legacyurl: /signalr/overview/older-versions/tutorial-high-frequency-realtime-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 53cc35d819c0d3a9bd84e8bfc44098a3b62e6db3
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: c677bcbc78eac6056c035c2b34fe659caac9c6fa
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41837646"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912282"
 ---
 <a name="high-frequency-realtime-with-signalr-1x"></a>SignalR 사용 하 여 고주파수 1.x
 ====================
@@ -42,7 +42,7 @@ ms.locfileid: "41837646"
 
 이 자습서는 다음 섹션이 포함 되어 있습니다.
 
-- [필수 조건](#prerequisites)
+- [필수 구성 요소](#prerequisites)
 - [프로젝트를 만들려면](#createtheproject)
 - [ASP.NET SignalR 및 JQuery.UI NuGet 패키지 추가](#nugetpackages)
 - [기본 응용 프로그램 만들기](#baseapp)
@@ -79,7 +79,7 @@ Visual Studio 2010 경우 했는지 [NuGet](https://visualstudiogallery.msdn.mic
 
 프로젝트에 NuGet 패키지를 설치 하 여 SignalR 기능을 추가할 수 있습니다. 이 자습서 도형에 애니메이션을 끌어서 놓을 수 있도록 하는 것에 대 한 JQuery.UI 패키지도 사용 됩니다.
 
-1. 클릭 **도구 | 라이브러리 패키지 관리자 | 패키지 관리자 콘솔**합니다.
+1. 클릭 **도구 | NuGet 패키지 관리자 | 패키지 관리자 콘솔**합니다.
 2. 패키지 관리자에서 다음 명령을 입력 합니다.
 
     [!code-powershell[Main](tutorial-high-frequency-realtime-with-signalr/samples/sample1.ps1)]

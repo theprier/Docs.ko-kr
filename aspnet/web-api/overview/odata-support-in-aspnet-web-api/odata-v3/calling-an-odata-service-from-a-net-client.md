@@ -8,12 +8,12 @@ ms.date: 02/26/2014
 ms.assetid: 6f448917-ad23-4dcc-9789-897fad74051b
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/calling-an-odata-service-from-a-net-client
 msc.type: authoredcontent
-ms.openlocfilehash: 45d4d1304d2c628d2ab0d09925d2050bf6f58c60
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 75f8e3eab7bd5667bbdcccbb5ae8a8e5b1f5fdba
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41833513"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912054"
 ---
 <a name="calling-an-odata-service-from-a-net-client-c"></a>.NET 클라이언트 (C#)에서 OData 서비스를 호출합니다.
 ====================
@@ -22,11 +22,11 @@ ms.locfileid: "41833513"
 [완료 된 프로젝트 다운로드](http://code.msdn.microsoft.com/ASPNET-Web-API-OData-cecdb524)
 
 > 이 자습서에서는 C# 클라이언트 응용 프로그램에서 OData 서비스를 호출 하는 방법을 보여 줍니다.
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>이 자습서에 사용 되는 소프트웨어 버전
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads) (Visual Studio 2012를 사용 하 여 작동)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013) (Visual Studio 2012를 사용 하 여 작동)
 > - [WCF Data Services 클라이언트 라이브러리](https://msdn.microsoft.com/library/cc668772.aspx)
 > - Web API 2입니다. (예제에서는 OData 서비스 Web API 2를 사용 하 여 빌드됩니다. 하지만 클라이언트 응용 프로그램이 웹 API에 종속 되지 않습니다.)
 

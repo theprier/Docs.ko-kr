@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: 8af630e0-fffa-4110-9eca-c96e201b2724
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application
 msc.type: authoredcontent
-ms.openlocfilehash: 72180686ea1ee6f6695b24fcedf3af90c1eddcfa
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 8bea3d4bc19a5a47240abeb2cc015116814a8fdf
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41835186"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911821"
 ---
 <a name="sorting-filtering-and-paging-with-the-entity-framework-in-an-aspnet-mvc-application-3-of-10"></a>정렬, 필터링 및 페이징 (3 / 10) ASP.NET MVC 응용 프로그램에서 Entity Framework를 사용 하 여
 ====================
@@ -117,7 +117,7 @@ ms.locfileid: "41835186"
 
 NuGet **PagedList.Mvc** 패키지를 자동으로 설치 합니다 **PagedList** 패키지를 종속성으로 합니다. 합니다 **PagedList** 설치 패키지를 `PagedList` 에 대 한 컬렉션 형식 및 확장명 메서드 `IQueryable` 및 `IEnumerable` 컬렉션입니다. 확장 메서드는 데이터의 단일 페이지 만들기를 `PagedList` 의 컬렉션에 `IQueryable` 또는 `IEnumerable`, 및 `PagedList` 컬렉션 여러 속성 및 페이징에 도움이 되는 메서드를 제공 합니다. 합니다 **PagedList.Mvc** 패키지 페이징 단추를 표시 하는 페이징 도우미를 설치 합니다.
 
-**도구** 메뉴에서 **라이브러리 패키지 관리자** 차례로 **솔루션용 NuGet 패키지 관리**합니다.
+**도구** 메뉴에서 **NuGet 패키지 관리자** 차례로 **솔루션용 NuGet 패키지 관리**합니다.
 
 에 **NuGet 패키지 관리** 대화 상자에서 클릭 합니다 **온라인** 왼쪽 탭 한 다음 검색 상자에 "페이징"를 입력 합니다. 표시 되 면 합니다 **PagedList.Mvc** 패키지를 클릭 **설치**합니다.
 

@@ -8,12 +8,12 @@ ms.date: 09/08/2014
 ms.assetid: 423498f7-1a4b-44a1-b342-5f39d0bcf94f
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/aspnet-error-handling
 msc.type: authoredcontent
-ms.openlocfilehash: ed5d7b9b4e61b0289734f4cdef1039b31ddda7a7
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: af5e5a9c8d211b07b57aa50238b02cabe249aef8
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41837507"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911843"
 ---
 <a name="aspnet-error-handling"></a>ASP.NET 오류 처리
 ====================
@@ -275,7 +275,7 @@ ELMAH (오류 로깅 모듈 및 처리기)는 NuGet 패키지로 ASP.NET 응용 
 
 ELMAH를 사용 하 여 작업 하려면, 먼저 설치 해야 합니다. 이 작업은 사용 하 여는 *NuGet* 설치 관리자를 패키지 합니다. 이 자습서 시리즈의 앞부분에서 설명 했 듯이 NuGet은 쉽게 설치 하 고 Visual Studio에서 오픈 소스 라이브러리와 도구를 업데이트 하는 Visual Studio 확장입니다.
 
-1. Visual Studio 내에서 **도구** 메뉴에서 **라이브러리 패키지 관리자**  - &gt; **솔루션용 NuGet 패키지 관리**합니다. 
+1. Visual Studio 내에서 **도구** 메뉴에서 **NuGet 패키지 관리자** > **솔루션용 NuGet 패키지 관리**합니다. 
 
     ![ASP.NET 오류 처리-솔루션용 NuGet 패키지 관리](aspnet-error-handling/_static/image6.png)
 2. 합니다 **NuGet 패키지 관리** Visual Studio 내에서 대화 상자가 표시 됩니다.

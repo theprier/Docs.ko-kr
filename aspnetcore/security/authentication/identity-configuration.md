@@ -5,12 +5,12 @@ description: ASP.NET Core Id 기본 값을 이해 하 고 사용자 지정 값�
 ms.author: riande
 ms.date: 08/14/2018
 uid: security/authentication/identity-configuration
-ms.openlocfilehash: 0faab001b981c79f6afa16b2a8cf80c1ef141b11
-ms.sourcegitcommit: b2723654af4969a24545f09ebe32004cb5e84a96
+ms.openlocfilehash: 02441cd28c2a99eda7b50ed54f4437d4b52ca5d9
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46011302"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911948"
 ---
 # <a name="configure-aspnet-core-identity"></a>ASP.NET Core Id를 구성 합니다.
 
@@ -79,18 +79,30 @@ ASP.NET Core Id는 암호 정책, 잠금 쿠키 구성과 같은 설정에 대 �
 
 [IdentityOptions.Password](/dotnet/api/microsoft.aspnetcore.identity.identityoptions.password) 지정 된 [PasswordOptions](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions) 표에 표시 된 속성을 사용 하 여 합니다.
 
+::: moniker range=">= aspnetcore-2.0"
+
 | 속성 | 설명 | 기본 |
 | -------- | ----------- | :-----: |
 | [RequireDigit](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requiredigit) | 암호에 0-9 사이의 숫자를 여야 합니다. | `true` |
 | [RequiredLength](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requiredlength) | 암호의 최소 길이입니다. | 6 |
-
-::: moniker range=">= aspnetcore-2.0"
-
+| [RequireLowercase](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requirelowercase) | 암호에 소문자가 필요합니다. | `true` |
+| [RequireNonAlphanumeric](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requirenonalphanumeric) | 암호의 영숫자가 아닌 문자가 필요합니다. | `true` |
 | [RequiredUniqueChars](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requireduniquechars) | ASP.NET Core 2.0 이상에 적용 됩니다.<br><br> 암호에 고유 문자 수가 필요합니다. | 1 |
+| [RequireUppercase](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requireuppercase) | 암호에 대문자가 필요합니다. | `true` |
 
 ::: moniker-end
 
-| [RequireLowercase](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requirelowercase) | 암호에 소문자가 필요합니다. | `true` | | [RequireNonAlphanumeric](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requirenonalphanumeric) | 암호의 영숫자가 아닌 문자가 필요합니다. | `true` | | [RequireUppercase](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requireuppercase) | 암호에 대문자가 필요합니다. | `true` |
+::: moniker range="< aspnetcore-2.0"
+
+| 속성 | 설명 | 기본 |
+| -------- | ----------- | :-----: |
+| [RequireDigit](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requiredigit) | 암호에 0-9 사이의 숫자를 여야 합니다. | `true` |
+| [RequiredLength](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requiredlength) | 암호의 최소 길이입니다. | 6 |
+| [RequireLowercase](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requirelowercase) | 암호에 소문자가 필요합니다. | `true` |
+| [RequireNonAlphanumeric](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requirenonalphanumeric) | 암호의 영숫자가 아닌 문자가 필요합니다. | `true` |
+| [RequireUppercase](/dotnet/api/microsoft.aspnetcore.identity.passwordoptions.requireuppercase) | 암호에 대문자가 필요합니다. | `true` |
+
+::: moniker-end
 
 ### <a name="sign-in"></a>로그인
 
@@ -137,7 +149,7 @@ ASP.NET Core Id는 암호 정책, 잠금 쿠키 구성과 같은 설정에 대 �
 
 | 속성 | 설명 | 기본 |
 | -------- | ----------- | :-----: |
-| [AllowedUserNameCharacters](/dotnet/api/microsoft.aspnetcore.identity.useroptions.allowedusernamecharacters) | 사용자 이름에 허용 되는 문자입니다. | abcdefghijklmnopqrstuvwxyz<br>ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>0123456789<br>-._@+ |
+| [AllowedUserNameCharacters](/dotnet/api/microsoft.aspnetcore.identity.useroptions.allowedusernamecharacters) | 사용자 이름에 허용 되는 문자입니다. | abcdefghijklmnopqrstuvwxyz<br>ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>0123456789<br>-.\_@+ |
 | [RequireUniqueEmail](/dotnet/api/microsoft.aspnetcore.identity.useroptions.requireuniqueemail) | 각 사용자에 게 고유한 전자 메일에 필요 합니다. | `false` |
 
 ### <a name="cookie-settings"></a>쿠키 설정

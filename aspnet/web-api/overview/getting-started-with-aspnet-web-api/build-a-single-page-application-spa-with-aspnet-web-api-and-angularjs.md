@@ -8,12 +8,12 @@ ms.date: 09/30/2015
 ms.assetid: 719727b7-bef3-45ad-bfe9-ba5bcdb2305f
 msc.legacyurl: /web-api/overview/getting-started-with-aspnet-web-api/build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs
 msc.type: authoredcontent
-ms.openlocfilehash: 24ab1c470a22b5b328d1f3bc400400978eb31600
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 3c3557bb2be2807b11874937fcc629b5b773e463
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41836049"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912256"
 ---
 <a name="hands-on-lab-build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs"></a>실습: ASP.NET Web API 및 Angular.js를 사용 하 여 단일 페이지 응용 프로그램 (SPA) 빌드
 ====================
@@ -308,7 +308,7 @@ Visual Studio의 패키지 관리자 콘솔에서 AngularJS를 설치 하 여 �
 
 
 1. 엽니다 **Visual Studio Express 2013 for Web** 연 합니다 **GeekQuiz.sln** 솔루션을 **소스/e x 2-CreatingASPAInterface/시작** 폴더. 또는 계속할 수 있습니다 솔루션을 사용 하 여 이전 연습에서 얻은.
-2. 엽니다는 **패키지 관리자 콘솔** 에서 **도구** | **라이브러리 패키지 관리자**합니다. 설치 하려면 다음 명령을 입력 합니다 **AngularJS.Core** NuGet 패키지.
+2. 엽니다는 **패키지 관리자 콘솔** 에서 **도구** > **NuGet 패키지 관리자**합니다. 설치 하려면 다음 명령을 입력 합니다 **AngularJS.Core** NuGet 패키지.
 
     [!code-powershell[Main](build-a-single-page-application-spa-with-aspnet-web-api-and-angularjs/samples/sample16.ps1)]
 3. **솔루션 탐색기**를 마우스 오른쪽 단추로 클릭 합니다 **스크립트** 폴더를 **GeekQuiz** 프로젝트를 마우스 **추가 | 새 폴더**합니다. 폴더의 이름을 **앱** 누릅니다 **Enter**합니다.

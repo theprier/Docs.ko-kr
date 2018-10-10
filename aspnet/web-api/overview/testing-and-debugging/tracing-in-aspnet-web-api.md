@@ -8,12 +8,12 @@ ms.date: 02/25/2014
 ms.assetid: 66a837e9-600b-4b72-97a9-19804231c64a
 msc.legacyurl: /web-api/overview/testing-and-debugging/tracing-in-aspnet-web-api
 msc.type: authoredcontent
-ms.openlocfilehash: 426e3500c504a651a325eec021e2d9e8b9cc1d32
-ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
+ms.openlocfilehash: e0d525e497cf41a79820417a9c832fa6b5cd7f8a
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48795282"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912841"
 ---
 <a name="tracing-in-aspnet-web-api-2"></a>ASP.NET Web API 2에서 추적
 ====================
@@ -37,7 +37,7 @@ Web API 프로젝트 템플릿을 선택 합니다.
 
 [![](tracing-in-aspnet-web-api/_static/image4.png)](tracing-in-aspnet-web-api/_static/image3.png)
 
-**도구** 메뉴에서 **라이브러리 패키지 관리자**, 한 다음 **패키지 관리 콘솔**.
+**도구** 메뉴에서 **NuGet 패키지 관리자**, 한 다음 **패키지 관리 콘솔**.
 
 패키지 관리자 콘솔 창에서 다음 명령을 입력 합니다.
 
@@ -47,7 +47,6 @@ Web API 프로젝트 템플릿을 선택 합니다.
 
 > [!NOTE]
 > 사용 하 여 웹 API의 특정 버전을 대상으로 하려는 경우 추적 패키지를 설치할 때-버전 플래그입니다.
-
 
 앱에서 WebApiConfig.cs 파일을 열고\_시작 폴더입니다. 다음 코드를 추가 합니다 **등록** 메서드.
 

@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: 9f969dda-78ea-4329-b1e3-e51c02210a2b
 msc.legacyurl: /signalr/overview/getting-started/tutorial-high-frequency-realtime-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: 008cbc8ec7ca0af4b20e5e3974cf3862efa7677e
-ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
+ms.openlocfilehash: 23dc9cc7fd469e934ed9915922a3baa772d9e1ab
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48794882"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912035"
 ---
 <a name="tutorial-high-frequency-realtime-with-signalr-2"></a>자습서: 고주파수 SignalR 2 사용 하 여
 ====================
@@ -22,37 +22,37 @@ ms.locfileid: "48794882"
 [완료 된 프로젝트 다운로드](http://code.msdn.microsoft.com/SignalR-20-MoveShape-Demo-6285b83a)
 
 > 이 자습서에는 빈도가 높은 메시징 기능을 제공 하는 데 ASP.NET SignalR 2를 사용 하는 웹 응용 프로그램을 만드는 방법을 보여 줍니다. 이 경우 고정 된 요금이; 전송 되는 업데이트를 의미 빈도가 높은 메시징 이 응용 프로그램의 경우 최대 10 개까지 두 번째를 메시지입니다.
-> 
+>
 > 이 자습서에서 만드는 응용 프로그램 사용자 끌 수 있는 셰이프를 표시 합니다. 연결 된 다른 모든 브라우저에서 모양의 위치 다음의 업데이트를 사용 하 여 끌어 온 모양의 위치와 일치 하도록 업데이트 됩니다.
-> 
+>
 > 이 자습서에 도입 된 개념 실시간 게임에서 응용 프로그램 및 다른 시뮬레이션 응용 프로그램을 갖습니다.
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>이 자습서에 사용 되는 소프트웨어 버전
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - SignalR 버전 2
->   
-> 
-> 
+>
+>
+>
 > ## <a name="using-visual-studio-2012-with-this-tutorial"></a>이 자습서를 사용 하 여 Visual Studio 2012를 사용 하 여
-> 
-> 
+>
+>
 > 이 자습서를 사용 하 여 Visual Studio 2012를 사용 하려면 다음을 수행 합니다.
-> 
+>
 > - 업데이트 프로그램 [패키지 관리자](http://docs.nuget.org/docs/start-here/installing-nuget) 최신 버전으로 합니다.
 > - 설치 합니다 [웹 플랫폼 설치 관리자](https://www.microsoft.com/web/downloads/platform.aspx)합니다.
 > - 웹 플랫폼 설치 관리자에서 검색 하 고 설치 **ASP.NET 및 Visual Studio 2012 용 웹 도구 2013.1**합니다. SignalR 클래스에 대 한 Visual Studio 템플릿 같은 설치 합니다 **허브**합니다.
 > - 일부 템플릿 (와 같은 **OWIN 시작 클래스**)를 사용할 수 없습니다;이 대 한 클래스 파일을 대신 사용 합니다.
-> 
-> 
+>
+>
 > ## <a name="tutorial-versions"></a>자습서 버전
-> 
+>
 > 이전 버전의 SignalR에 대 한 정보를 참조 하세요 [SignalR 이전 버전](../older-versions/index.md)합니다.
-> 
+>
 > ## <a name="questions-and-comments"></a>질문이 나 의견이 있으면
-> 
+>
 > 이 자습서를 연결 하는 방법 및 새로운 개선할 수 있습니다 페이지의 맨 아래에 의견에서에 의견을 남겨 주세요. 에 자습서로 직접 관련 되지 않은 질문이 있을 경우 게시할 수 하는 [ASP.NET SignalR 포럼](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) 또는 [StackOverflow.com](http://stackoverflow.com/)합니다.
 
 
@@ -70,7 +70,7 @@ ms.locfileid: "48794882"
 
 이 자습서는 다음 섹션이 포함 되어 있습니다.
 
-- [필수 조건](#prerequisites)
+- [필수 구성 요소](#prerequisites)
 - [프로젝트를 만들고 SignalR 및 JQuery.UI NuGet 패키지 추가](#createtheproject2013)
 - [기본 응용 프로그램 만들기](#baseapp)
 - [허브를 시작 하면 응용 프로그램 시작](#startup2013)
@@ -102,12 +102,12 @@ ms.locfileid: "48794882"
 3. **솔루션 탐색기**프로젝트를 마우스 오른쪽 단추로 클릭을 **추가 | SignalR 허브 클래스 (v2)** 합니다. 클래스의 이름을 **MoveShapeHub.cs** 하 고 프로젝트에 추가 합니다. 이 단계에서는 합니다 **MoveShapeHub** 클래스 및 스크립트 파일 및 SignalR을 지 원하는 어셈블리 참조의 집합을 프로젝트에 추가 합니다.
 
     > [!NOTE]
-    > 클릭 하 여 프로젝트에 SignalR을 추가할 수도 있습니다 **도구 | 라이브러리 패키지 관리자 | 패키지 관리자 콘솔** 및 명령을 실행 합니다.
+    > 클릭 하 여 프로젝트에 SignalR을 추가할 수도 있습니다 **도구 > NuGet 패키지 관리자 > 패키지 관리자 콘솔** 및 명령을 실행 합니다.
 
-    `install-package Microsoft.AspNet.SignalR`. 
+    `install-package Microsoft.AspNet.SignalR`.
 
     SignalR을 추가 하려면 콘솔을 사용 하는 경우는 SignalR을 추가한 후 별도 단계로 SignalR 허브 클래스를 만듭니다.
-4. 클릭 **도구 | 라이브러리 패키지 관리자 | 패키지 관리자 콘솔**합니다. 패키지 관리자 창에서 다음 명령을 실행 합니다.
+4. 클릭 **도구 > NuGet 패키지 관리자 > 패키지 관리자 콘솔**합니다. 패키지 관리자 창에서 다음 명령을 실행 합니다.
 
     `Install-Package jQuery.UI.Combined`
 

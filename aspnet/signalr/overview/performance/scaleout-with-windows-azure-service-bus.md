@@ -8,12 +8,12 @@ ms.date: 06/10/2014
 ms.assetid: ce1305f9-30fd-49e3-bf38-d0a78dfb06c3
 msc.legacyurl: /signalr/overview/performance/scaleout-with-windows-azure-service-bus
 msc.type: authoredcontent
-ms.openlocfilehash: b87eb9f2df82d92c07ea0c86873849a44660e5c2
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 3adc8768eb7271de32180ba98f67864b22283510
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41823747"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910800"
 ---
 <a name="signalr-scaleout-with-azure-service-bus"></a>Azure Service Bus로 SignalR 규모 확장
 ====================
@@ -94,7 +94,7 @@ Visual Studio를 시작합니다. **파일** 메뉴에서 클릭 **새 프로젝
 
 채팅 응용 프로그램을 만들려면이 자습서의 단계를 따라 [SignalR 및 MVC 5 시작](../getting-started/tutorial-getting-started-with-signalr-and-mvc.md)합니다.
 
-필요한 라이브러리를 설치 하려면 NuGet을 사용 합니다. **도구** 메뉴에서 **라이브러리 패키지 관리자**을 선택한 후 **패키지 관리자 콘솔**합니다. 에 **패키지 관리자 콘솔** 창에서 다음 명령을 입력 합니다.
+필요한 라이브러리를 설치 하려면 NuGet을 사용 합니다. **도구** 메뉴에서 **NuGet 패키지 관리자**을 선택한 후 **패키지 관리자 콘솔**합니다. 에 **패키지 관리자 콘솔** 창에서 다음 명령을 입력 합니다.
 
 [!code-powershell[Main](scaleout-with-windows-azure-service-bus/samples/sample2.ps1)]
 

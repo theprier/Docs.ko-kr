@@ -8,21 +8,20 @@ ms.date: 12/08/2014
 ms.assetid: f35a9b0c-49ef-4cde-b06d-19d1543feb0b
 msc.legacyurl: /mvc/overview/getting-started/getting-started-with-ef-using-mvc/advanced-entity-framework-scenarios-for-an-mvc-web-application
 msc.type: authoredcontent
-ms.openlocfilehash: 6e3de242f7cfc584f4c3d1dfa3d1948ee4d49d66
-ms.sourcegitcommit: 67a0a04ebb3b21c826e5b9600bacfc897abd6a46
+ms.openlocfilehash: 0aa440e700c9bfb02aa5d55ebf481850a730febe
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42899827"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912685"
 ---
 <a name="advanced-entity-framework-6-scenarios-for-an-mvc-5-web-application-12-of-12"></a>MVC 5 웹 응용 프로그램 (12는 12)에 대 한 고급 Entity Framework 6 시나리오
 ====================
 [Tom Dykstra](https://github.com/tdykstra)
 
-[완료 된 프로젝트를 다운로드](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8) 또는 [PDF 다운로드](http://download.microsoft.com/download/0/F/B/0FBFAA46-2BFD-478F-8E56-7BF3C672DF9D/Getting%20Started%20with%20Entity%20Framework%206%20Code%20First%20using%20MVC%205.pdf)
+[완료 된 프로젝트 다운로드](http://code.msdn.microsoft.com/ASPNET-MVC-Application-b01a9fe8)
 
-> Contoso University 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio 2013을 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)를 참조하세요.
-
+> Contoso University 샘플 웹 응용 프로그램에는 Entity Framework 6 Code First 및 Visual Studio를 사용 하 여 ASP.NET MVC 5 응용 프로그램을 만드는 방법을 보여 줍니다. 자습서 시리즈에 대한 정보는 [시리즈의 첫 번째 자습서](creating-an-entity-framework-data-model-for-an-asp-net-mvc-application.md)를 참조하세요.
 
 이전 자습서에서 계층당 하나의 테이블 상속을 구현 했습니다. 이 자습서는 Entity Framework Code First를 사용 하는 ASP.NET 웹 응용 프로그램 개발의 기본 개념을 넘어 때 알아야 할 유용한 몇 가지 항목을 소개 합니다. 단계별 지침 안내는 코드 및 Visual Studio를 사용 하 여 다음 항목에 대 한 합니다.
 
@@ -150,7 +149,7 @@ Contoso University 관리자 대량 변경 내용이 모든 강좌에 대 한 �
 
 [!code-csharp[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample6.cs)]
 
-이제에 중단점을 설정 합니다 `return` 문 (해당 줄에 커서를 놓고 F9). F5 키를 눌러 디버그 모드에서 프로젝트를 실행 하 고 과정 인덱스 페이지를 선택 합니다. 코드에서 중단점에 도달 하면 검사를 `sql` 변수입니다. SQL Server로 전송 되는 쿼리가 표시 됩니다. 단순 `Select` 문입니다.
+이제에 중단점을 설정 합니다 `return` 문 (해당 줄에 커서를 놓고 F9). 키를 눌러 **F5** 디버그 모드에서 프로젝트를 실행 하 고 과정 인덱스 페이지를 선택 합니다. 코드에서 중단점에 도달 하면 검사를 `sql` 변수입니다. SQL Server로 전송 되는 쿼리가 표시 됩니다. 단순 `Select` 문입니다.
 
 [!code-json[Main](advanced-entity-framework-scenarios-for-an-mvc-web-application/samples/sample7.json)]
 
@@ -291,7 +290,6 @@ Entity Framework 6에 대 한 소스 코드에서 제공 됩니다 [GitHub](http
 
 > 복사본을 만드는 섀도 수 없습니다. '&lt;filename&gt;' 파일이 이미 있는 경우.
 
-
 솔루션
 
 몇 초를 기다렸다가 페이지를 새로 고칩니다.
@@ -301,7 +299,6 @@ Entity Framework 6에 대 한 소스 코드에서 제공 됩니다 [GitHub](http
 오류 메시지 (에서 `Update-Database` PMC 명령을):
 
 > ' Update-database ' 용어는 cmdlet, 함수, 스크립트 파일 또는 실행 프로그램의 이름으로 인식 되지 않습니다. 이름의 철자를 확인 하거나 경로 포함 하는 경우 경로가 올바른지 확인 하 고 다시 시도 합니다.
-
 
 솔루션
 
@@ -313,7 +310,6 @@ Visual Studio를 끝냅니다. 프로젝트를 열어야 하 고 다시 시도 �
 
 > 하나 이상의 엔터티에 대 한 유효성 검사가 실패 했습니다. 자세한 내용은 'EntityValidationErrors' 속성을 참조 하세요.
 
-
 솔루션
 
 이 문제의 원인 중 하나는 유효성 검사 오류는 경우는 `Seed` 메서드를 실행 합니다. 참조 [시드 및 디버깅 EF (Entity Framework) Db](https://blogs.msdn.com/b/rickandy/archive/2013/02/12/seeding-and-debugging-entity-framework-ef-dbs.aspx) 디버깅에 대 한 팁을 `Seed` 메서드.
@@ -322,9 +318,7 @@ Visual Studio를 끝냅니다. 프로젝트를 열어야 하 고 다시 시도 �
 
 오류 메시지:
 
-> HTTP 오류 500.19-내부 서버 오류  
-> 페이지의 관련된 구성 데이터가 잘못 되어 요청된 된 페이지를 액세스할 수 없습니다.
-
+> HTTP 오류 500.19-내부 서버 오류 요청된 된 페이지는 페이지의 관련된 구성 데이터가 잘못 되어 액세스할 수 없습니다.
 
 솔루션
 
@@ -335,7 +329,6 @@ Visual Studio를 끝냅니다. 프로젝트를 열어야 하 고 다시 시도 �
 오류 메시지:
 
 > SQL Server에 연결하는 중에 네트워크 관련 오류 또는 인스턴스별 오류가 발생했습니다. 서버를 찾을 수 없거나 액세스할 수 없습니다. 인스턴스 이름이 올바르고 SQL Server가 원격 연결을 허용하도록 구성되어 있는지 확인합니다. (공급자: SQL 네트워크 인터페이스, 오류: 26-지정된 서버/인스턴스를 찾는 동안 오류가 발생했습니다)
-
 
 솔루션
 

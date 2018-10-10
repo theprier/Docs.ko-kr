@@ -8,12 +8,12 @@ ms.date: 07/16/2014
 ms.assetid: ba07958c-42e1-4da0-81db-ba6925ed6db0
 msc.legacyurl: /signalr/overview/getting-started/real-time-web-applications-with-signalr
 msc.type: authoredcontent
-ms.openlocfilehash: a3f6174049ffddae4bb2a1819e3684bcdec1b55f
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 59831fb8497c86ec5e02de3912b36a15f416597c
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41836669"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48913243"
 ---
 <a name="hands-on-lab-real-time-web-applications-with-signalr"></a>SignalR 사용 하 여 실시간 웹 응용 프로그램을 실습:
 ====================
@@ -148,7 +148,7 @@ SignalR을 지 원하는 **서버 푸시** 또는 **브로드캐스팅** 기능 
 
 이 태스크에서는 SignalR 솔루션에 추가 하 고 업데이트를 보내는 클라이언트에 자동으로 새 응답을 서버에 전송 될 때입니다.
 
-1. **도구** Visual Studio에서 메뉴 **라이브러리 패키지 관리자**를 클릭 하 고 **패키지 관리자 콘솔**합니다.
+1. **도구** Visual Studio에서 메뉴 **NuGet 패키지 관리자**를 클릭 하 고 **패키지 관리자 콘솔**합니다.
 2. 에 **패키지 관리자 콘솔** 창에서 다음 명령을 실행 합니다.
 
     [!code-powershell[Main](real-time-web-applications-with-signalr/samples/sample1.ps1)]
@@ -362,7 +362,7 @@ SignalR 백플레인으로 작동 원리,이 대 한 자세한 내용은 [문서
 
 이 작업에서 구성한 **Geek 퀴즈** SQL Server 백플레인에서 연결할 합니다. 먼저 추가 합니다 **SignalR.SqlServer** 백플레인 데이터베이스에 NuGet 패키지 및 연결 집합 문자열입니다.
 
-1. 엽니다는 **패키지 관리자 콘솔** 에서 **도구** | **라이브러리 패키지 관리자**합니다. 했는지 **GeekQuiz** 에서 프로젝트를 선택 합니다 **기본 프로젝트** 드롭 다운 목록. 설치 하려면 다음 명령을 입력 합니다 **Microsoft.AspNet.SignalR.SqlServer** NuGet 패키지.
+1. 엽니다는 **패키지 관리자 콘솔** 에서 **도구** > **NuGet 패키지 관리자**합니다. 했는지 **GeekQuiz** 에서 프로젝트를 선택 합니다 **기본 프로젝트** 드롭 다운 목록. 설치 하려면 다음 명령을 입력 합니다 **Microsoft.AspNet.SignalR.SqlServer** NuGet 패키지.
 
     [!code-powershell[Main](real-time-web-applications-with-signalr/samples/sample13.ps1)]
 2. 프로젝트에 대해 이전 단계 이번 반복 **GeekQuiz2**합니다.

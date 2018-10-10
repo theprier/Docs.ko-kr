@@ -8,12 +8,12 @@ ms.date: 09/27/2013
 ms.assetid: 6dae249f-5ac6-4f6e-bc49-13bcd5a54a70
 msc.legacyurl: /aspnet/overview/owin-and-katana/getting-started-with-owin-and-katana
 msc.type: authoredcontent
-ms.openlocfilehash: f400ec887bdee123084f582d18016fb5ed3f2165
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 9920861da0e67d9304a944cacfb8ff8685267cd6
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41827275"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48913179"
 ---
 <a name="getting-started-with-owin-and-katana"></a>OWIN 및 Katana 시작
 ====================
@@ -39,7 +39,7 @@ OWIN는 커뮤니티 소유 사양을 구현 하지 않습니다. Katana 프로�
 
 ### <a name="add-nuget-packages"></a>NuGet 패키지 추가
 
-다음으로 필요한 NuGet 패키지를 추가 합니다. **도구** 메뉴에서 **라이브러리 패키지 관리자**을 선택한 후 **패키지 관리자 콘솔**합니다. 패키지 관리자 콘솔 창에서 다음 명령을 입력 합니다.
+다음으로 필요한 NuGet 패키지를 추가 합니다. **도구** 메뉴에서 **NuGet 패키지 관리자**을 선택한 후 **패키지 관리자 콘솔**합니다. 패키지 관리자 콘솔 창에서 다음 명령을 입력 합니다.
 
 `install-package Microsoft.Owin.Host.SystemWeb –Pre`
 

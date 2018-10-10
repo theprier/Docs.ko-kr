@@ -8,27 +8,27 @@ ms.date: 04/11/2014
 ms.assetid: 07aa855a-92ee-4d43-ba66-5bfd7de20ee6
 msc.legacyurl: /aspnet/overview/owin-and-katana/host-owin-in-an-azure-worker-role
 msc.type: authoredcontent
-ms.openlocfilehash: 6bead915491c62de809b8625d8071a63c70a6ef5
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: dbf0964695dd2592d063b05c0778923edffe8e2e
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41837935"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910777"
 ---
 <a name="host-owin-in-an-azure-worker-role"></a>Azure 작업자 역할에 OWIN 호스트
 ====================
 [Mike Wasson](https://github.com/MikeWasson)
 
 > 이 자습서에는 Microsoft Azure 작업자 역할에 OWIN 자체 호스트 하는 방법을 보여 줍니다.
-> 
+>
 > [Open Web Interface for.NET](http://owin.org/) (OWIN).NET 웹 서버 및 웹 응용 프로그램 간의 추상화를 정의 합니다. 이상적인 OWIN 자체 IIS 외부에서 사용자 고유의 프로세스에서 웹 응용 프로그램을 호스팅하는 서버에서 웹 응용 프로그램을 분리 하는 OWIN – Azure 작업자 역할 내에서 예를 들어 있습니다.
-> 
+>
 > 이 자습서에서는 Microsoft Azure 작업자 역할 내에서 OWIN 응용 프로그램을 자체 호스트 하는 방법에 알아봅니다. 작업자 역할에 대 한 자세한 내용은 참조 하세요 [Azure 실행 모델](https://azure.microsoft.com/documentation/articles/fundamentals-application-models/#CloudServices)합니다.
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>이 자습서에 사용 되는 소프트웨어 버전
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - [Azure SDK for.NET 2.3](https://azure.microsoft.com/downloads/)
 > - [Microsoft.Owin.Selfhost 2.1.0](http://www.nuget.org/packages/Microsoft.Owin.SelfHost/2.1.0)
 
@@ -56,7 +56,7 @@ ms.locfileid: "41837935"
 
 ## <a name="add-the-owin-self-host-packages"></a>OWIN 자체 호스트 패키지 추가
 
-**도구** 메뉴에서 클릭 **라이브러리 패키지 관리자**, 클릭 **패키지 관리자 콘솔**합니다.
+**도구** 메뉴에서 클릭 **NuGet 패키지 관리자**, 클릭 **패키지 관리자 콘솔**합니다.
 
 패키지 관리자 콘솔 창에서 다음 명령을 입력 합니다.
 

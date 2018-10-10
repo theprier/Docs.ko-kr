@@ -8,34 +8,34 @@ ms.date: 06/10/2014
 ms.assetid: ed562717-8591-4936-8e10-c7e63dcb570a
 msc.legacyurl: /signalr/overview/security/introduction-to-security
 msc.type: authoredcontent
-ms.openlocfilehash: 62f835349697d02ebe7363b00a032a5353d3dfc2
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 765abd36c5182f291499042e787bcb4fcc727997
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41829879"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910859"
 ---
 <a name="introduction-to-signalr-security"></a>SignalR 보안 소개
 ====================
 하 여 [Patrick Fletcher](https://github.com/pfletcher), [Tom FitzMacken](https://github.com/tfitzmac)
 
-> 이 문서에는 SignalR 응용 프로그램을 개발할 때 고려해 야 할 보안 문제를 설명 합니다. 
-> 
+> 이 문서에는 SignalR 응용 프로그램을 개발할 때 고려해 야 할 보안 문제를 설명 합니다.
+>
 > ## <a name="software-versions-used-in-this-topic"></a>이 항목에서 사용 하는 소프트웨어 버전
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET 4.5
 > - SignalR 버전 2
->   
-> 
-> 
+>
+>
+>
 > ## <a name="previous-versions-of-this-topic"></a>이 항목의 이전 버전
-> 
+>
 > 이전 버전의 SignalR에 대 한 정보를 참조 하세요 [SignalR 이전 버전](../older-versions/index.md)합니다.
-> 
+>
 > ## <a name="questions-and-comments"></a>질문이 나 의견이 있으면
-> 
+>
 > 이 자습서를 연결 하는 방법 및 새로운 개선할 수 있습니다 페이지의 맨 아래에 의견에서에 의견을 남겨 주세요. 에 자습서로 직접 관련 되지 않은 질문이 있을 경우 게시할 수 하는 [ASP.NET SignalR 포럼](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) 또는 [StackOverflow.com](http://stackoverflow.com/)합니다.
 
 
@@ -108,7 +108,7 @@ CSRF 공격의 예는 다음과 같습니다.
 
 1. 사용자  www.example.com , 로그인 폼 인증을 사용 하 여 합니다.
 2. 서버에서 사용자를 인증 합니다. 인증 쿠키를 포함 하는 서버에서 응답 합니다.
-3. 로그 아웃을 하지 않고 사용자가 악성 웹 사이트를 방문 합니다. 다음 HTML 양식을 포함 하는이 악성 사이트: 
+3. 로그 아웃을 하지 않고 사용자가 악성 웹 사이트를 방문 합니다. 다음 HTML 양식을 포함 하는이 악성 사이트:
 
     [!code-html[Main](introduction-to-security/samples/sample1.html)]
 
@@ -124,12 +124,9 @@ CSRF 공격의 예는 다음과 같습니다.
 
 SignalR 악성 사이트에서 응용 프로그램에 유효한 요청을 만들지 않도록 하려면 다음 단계를 사용 합니다. 기본적으로 이러한 단계를 수행 하는 SignalR, 코드에서 어떤 조치도 취할 필요가 없습니다.
 
-- **도메인 간 요청을 사용 하지 않도록 설정**  
- SignalR 외부 도메인의 SignalR 끝점을 호출 하지 못하게 하려면 도메인 간 요청 사용 하지 않도록 설정 합니다. SignalR을 유효 하지 않게 외부 도메인의 모든 요청을 고려 하 고 요청을 차단 합니다. 이 기본 동작을 유지 하는 것이 좋습니다. 이 고, 그렇지 악성 사이트 수 사용자를 속여 사이트로 명령을 전송 합니다. 도메인 간 요청 사용 해야 하는 경우 참조 [도메인 간 연결을 설정 하는 방법을](../guide-to-the-api/hubs-api-guide-javascript-client.md#crossdomain) 합니다.
-- **쿠키 하지 쿼리 문자열에 연결 토큰을 전달 합니다.**  
- SignalR 쿠키 대신 쿼리 문자열 값으로 연결 토큰을 전달합니다. 악성 코드가 발생 하면 브라우저 연결 토큰을 실수로 전달할 수 있으므로 연결 토큰을 쿠키에 저장은 안전 하지 않습니다. 또한 쿼리 문자열의 연결 토큰을 전달 합니다. 현재 연결 이외의 유지 연결 토큰을 방지 합니다. 따라서 악의적인 사용자는 다른 사용자의 인증 자격 증명 요청을 만들 수 없습니다.
-- **연결 토큰 확인**  
- 에 설명 된 대로 합니다 [연결 토큰](#connectiontoken) 섹션에서는 서버 연결 id는 각 인증 된 사용자와 연결 된 인식 합니다. 서버는 사용자 이름 일치 하지 않는 연결 id의 모든 요청을 처리 하지 않습니다. 그럴 가능성은 악의적인 사용자 사용자 이름 및 현재 임의로 생성 된 연결 id를 알고 있어야 하기 때문에 악의적인 사용자 요청이 유효한 추측할 수 있습니다. 연결 id는 연결이 종료 되는 즉시 무효화 됩니다. 익명 사용자에 게 중요 한 정보를 권한이 있어야 합니다.
+- **도메인 간 요청을 사용 하지 않도록 설정** SignalR 외부 도메인의 SignalR 끝점을 호출 하지 못하게 하려면 도메인 간 요청 사용 하지 않도록 설정 합니다. SignalR을 유효 하지 않게 외부 도메인의 모든 요청을 고려 하 고 요청을 차단 합니다. 이 기본 동작을 유지 하는 것이 좋습니다. 이 고, 그렇지 악성 사이트 수 사용자를 속여 사이트로 명령을 전송 합니다. 도메인 간 요청 사용 해야 하는 경우 참조 [도메인 간 연결을 설정 하는 방법을](../guide-to-the-api/hubs-api-guide-javascript-client.md#crossdomain) 합니다.
+- **쿼리 문자열 하지 쿠키에에서 연결 토큰을 전달** SignalR 쿠키 대신 쿼리 문자열 값으로 연결 토큰을 전달 합니다. 악성 코드가 발생 하면 브라우저 연결 토큰을 실수로 전달할 수 있으므로 연결 토큰을 쿠키에 저장은 안전 하지 않습니다. 또한 쿼리 문자열의 연결 토큰을 전달 합니다. 현재 연결 이외의 유지 연결 토큰을 방지 합니다. 따라서 악의적인 사용자는 다른 사용자의 인증 자격 증명 요청을 만들 수 없습니다.
+- **연결 토큰을 확인** 에 설명 된 대로 합니다 [연결 토큰](#connectiontoken) 섹션에서는 서버 연결 id는 각 인증 된 사용자와 연결 된 인식 합니다. 서버는 사용자 이름 일치 하지 않는 연결 id의 모든 요청을 처리 하지 않습니다. 그럴 가능성은 악의적인 사용자 사용자 이름 및 현재 임의로 생성 된 연결 id를 알고 있어야 하기 때문에 악의적인 사용자 요청이 유효한 추측할 수 있습니다. 연결 id는 연결이 종료 되는 즉시 무효화 됩니다. 익명 사용자에 게 중요 한 정보를 권한이 있어야 합니다.
 
 <a id="recommendations"></a>
 

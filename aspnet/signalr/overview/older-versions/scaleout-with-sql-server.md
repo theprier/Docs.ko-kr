@@ -8,12 +8,12 @@ ms.date: 05/01/2013
 ms.assetid: 1dca7967-8296-444a-9533-837eb284e78c
 msc.legacyurl: /signalr/overview/older-versions/scaleout-with-sql-server
 msc.type: authoredcontent
-ms.openlocfilehash: cd0e3d4bdb4d2eb78e5c41167a17f8673584f654
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: d68196aa8e4d0c60570a0e36ccc75a2a080d57bc
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41837513"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912750"
 ---
 <a name="signalr-scaleout-with-sql-server-signalr-1x"></a>SQL Server로 SignalR 규모 확장 (SignalR 1.x)
 ====================
@@ -66,7 +66,6 @@ Service Broker를 사용 하도록 설정 하려면 다음 SQL 쿼리를 사용 
 > [!NOTE]
 > 교착 상태가 발생 했는지를이 쿼리가 나타납니다 경우 DB에 연결 하는 응용 프로그램이 없습니다.
 
-
 추적을 설정한 경우 추적 Service Broker 사용 되는지 여부를 표시도 됩니다.
 
 ## <a name="create-a-signalr-application"></a>SignalR 응용 프로그램 만들기
@@ -76,7 +75,7 @@ Service Broker를 사용 하도록 설정 하려면 다음 SQL 쿼리를 사용 
 - [SignalR 시작](../getting-started/tutorial-getting-started-with-signalr.md)
 - [SignalR 및 MVC 4 시작](tutorial-getting-started-with-signalr-and-mvc-4.md)
 
-다음으로, SQL Server를 사용 하 여 확장을 지원 하기 위해 채팅 응용 프로그램을 수정 합니다. 먼저 프로젝트에 SignalR.SqlServer NuGet 패키지를 추가 합니다. Visual Studio에서에서 합니다 **도구** 메뉴에서 **라이브러리 패키지 관리자**을 선택한 후 **패키지 관리자 콘솔**합니다. 패키지 관리자 콘솔 창에서 다음 명령을 입력 합니다.
+다음으로, SQL Server를 사용 하 여 확장을 지원 하기 위해 채팅 응용 프로그램을 수정 합니다. 먼저 프로젝트에 SignalR.SqlServer NuGet 패키지를 추가 합니다. Visual Studio에서에서 합니다 **도구** 메뉴에서 **NuGet 패키지 관리자**을 선택한 후 **패키지 관리자 콘솔**합니다. 패키지 관리자 콘솔 창에서 다음 명령을 입력 합니다.
 
 [!code-powershell[Main](scaleout-with-sql-server/samples/sample4.ps1)]
 

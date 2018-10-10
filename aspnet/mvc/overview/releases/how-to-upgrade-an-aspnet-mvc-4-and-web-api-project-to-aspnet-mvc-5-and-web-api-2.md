@@ -8,12 +8,12 @@ ms.date: 10/17/2013
 ms.assetid: db0d02d9-58e8-4a0b-8d7d-b8df8ea97b88
 msc.legacyurl: /mvc/overview/releases/how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2
 msc.type: authoredcontent
-ms.openlocfilehash: d6fb40741c5f7b992e907a462ac92972fe603624
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 2566e201e44ccd9642abda7c7996056c73178fd6
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48578369"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912854"
 ---
 <a name="how-to-upgrade-an-aspnet-mvc-4-and-web-api-project-to-aspnet-mvc-5-and-web-api-2"></a>ASP.NET MVC 5 및 Web API 2에는 ASP.NET MVC 4 및 Web API 프로젝트를 업그레이드 하는 방법
 ====================
@@ -71,8 +71,8 @@ ms.locfileid: "48578369"
     > Microsoft-웹-도우미 Microsoft.AspNet.WebHelpers 바뀌었습니다. 이전 패키지를 먼저 제거 하 고 최신 패키지를 설치 해야 합니다.   
     >   
     > 주요 ASP.NET 패키지 간에 교차 버전 모드가 있습니다. 예를 들어 MVC 5와 호환 되만 3 Razor, Razor 2 없습니다.
-4. Visual Studio 2013에서 프로젝트를 엽니다.
-5. 설치 된 다음 ASP.NET NuGet 패키지를 제거 합니다. (PMC (패키지 관리자 콘솔)를 사용 하 여 제거 합니다. PMC를 열려면 선택 합니다 **도구** 메뉴를 선택 합니다 **라이브러리 패키지 관리자** 선택한 **패키지 관리자 콘솔**합니다. 프로젝트가이 모두를 포함할 수 있습니다.
+4. Visual Studio에서 프로젝트를 엽니다.
+5. 설치 된 다음 ASP.NET NuGet 패키지를 제거 합니다. (PMC (패키지 관리자 콘솔)를 사용 하 여 제거 합니다. PMC를 열려면 선택 합니다 **도구** 메뉴를 선택 합니다 **NuGet 패키지 관리자** 선택한 **패키지 관리자 콘솔**합니다. 프로젝트가이 모두를 포함할 수 있습니다.
 
     1. `Microsoft.AspNet.WebPages.Administration`  
    이 패키지는 MVC 3에서 MVC 4로 업그레이드 하는 경우에 일반적으로 추가 됩니다. 를 제거 하려면 PMC에서 다음 명령을 실행 합니다.  

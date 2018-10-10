@@ -8,12 +8,12 @@ ms.date: 06/12/2014
 ms.assetid: 1bc333c5-f096-4ea7-b170-779accc21c1a
 msc.legacyurl: /aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/the-fix-it-sample-application
 msc.type: authoredcontent
-ms.openlocfilehash: 435ee61a9c28ad0035457990cd3a889f5b240517
-ms.sourcegitcommit: 7890dfb5a8f8c07d813f166d3ab0c263f893d0c6
+ms.openlocfilehash: de3c8ea29f2c271136f58d8165bb92f4ab28ce83
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48795540"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912828"
 ---
 <a name="appendix-the-fix-it-sample-application-building-real-world-cloud-apps-with-azure"></a>부록: 수정이 샘플 응용 프로그램 (Azure 사용 하 여 실제 클라우드 앱 빌드)
 ====================
@@ -221,7 +221,7 @@ Fix It 응용 프로그램을 실행 하는 방법은 두 가지 있습니다.
 4. 파일 탐색기에서.zip 파일을 마우스 오른쪽 단추로 클릭 속성을 클릭 하 고 속성 창에서 차단 해제를 클릭 합니다.
 5. 파일을 압축을 풉니다.
 6. Visual Studio를 시작.sln 파일을 두 번 클릭 합니다.
-7. 도구 메뉴에서 라이브러리 패키지 관리자를 패키지 관리자 콘솔을 클릭 합니다.
+7. **도구** 메뉴에서 클릭 **NuGet 패키지 관리자**, 한 다음 **패키지 관리자 콘솔**합니다.
 8. 관리자 콘솔 (PMC (패키지)에서 복원을 클릭 합니다.
 9. Visual Studio를 끝냅니다.
 10. 시작 합니다 [Azure storage 에뮬레이터](/azure/storage/common/storage-use-emulator)합니다.

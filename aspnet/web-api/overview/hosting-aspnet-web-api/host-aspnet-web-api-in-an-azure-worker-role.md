@@ -8,27 +8,27 @@ ms.date: 04/02/2014
 ms.assetid: 6980ee2e-d6b0-4a08-8fb6-ab96362dd0e3
 msc.legacyurl: /web-api/overview/hosting-aspnet-web-api/host-aspnet-web-api-in-an-azure-worker-role
 msc.type: authoredcontent
-ms.openlocfilehash: cabf88e4e6c946f92a9e4534a4db5ae15dd8cae5
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 40cb1a4514beaf81e7ed75bbd3e478f2ba146fe5
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41835478"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910748"
 ---
 <a name="host-aspnet-web-api-2-in-an-azure-worker-role"></a>ASP.NET Web API 2 Azure 작업자 역할에서 호스트
 ====================
 [Mike Wasson](https://github.com/MikeWasson)
 
 > 이 자습서에 OWIN을 사용 하 여 Web API 프레임 워크 자체 호스트 하는 Azure 작업자 역할에서 ASP.NET Web API를 호스트 하는 방법을 보여줍니다.
-> 
+>
 > [Open Web Interface for.NET](http://owin.org/) (OWIN).NET 웹 서버 및 웹 응용 프로그램 간의 추상화를 정의 합니다. 이상적인 OWIN 자체 IIS 외부에서 사용자 고유의 프로세스에서 웹 응용 프로그램을 호스팅하는 서버에서 웹 응용 프로그램을 분리 하는 OWIN – Azure 작업자 역할 내에서 예를 들어 있습니다.
-> 
+>
 > 이 자습서에서는 Microsoft.Owin.Host.HttpListener 패키지 자체 OWIN 응용 프로그램을 호스팅하는 데 사용 하는 HTTP 서버를 제공 하는 합니다.
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>이 자습서에 사용 되는 소프트웨어 버전
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - Web API 2
 > - [Azure SDK for.NET 2.3](https://azure.microsoft.com/downloads/)
 
@@ -56,7 +56,7 @@ ms.locfileid: "41835478"
 
 ## <a name="add-the-web-api-and-owin-packages"></a>웹 API 및 OWIN 패키지를 추가 합니다.
 
-**도구** 메뉴에서 클릭 **라이브러리 패키지 관리자**, 클릭 **패키지 관리자 콘솔**합니다.
+**도구** 메뉴에서 클릭 **NuGet 패키지 관리자**, 클릭 **패키지 관리자 콘솔**합니다.
 
 패키지 관리자 콘솔 창에서 다음 명령을 입력 합니다.
 

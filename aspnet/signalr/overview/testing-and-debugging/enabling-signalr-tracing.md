@@ -8,32 +8,32 @@ ms.date: 08/08/2014
 ms.assetid: 30060acb-be3e-4347-996f-3870f0c37829
 msc.legacyurl: /signalr/overview/testing-and-debugging/enabling-signalr-tracing
 msc.type: authoredcontent
-ms.openlocfilehash: ee62a7b01ff357262aa89dbac4f49180b4c58fe0
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 89b27267bec5edb0692fe75061d08b4688df5a8c
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41828777"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912069"
 ---
 <a name="enabling-signalr-tracing"></a>SignalR 추적 사용
 ====================
 [Tom FitzMacken](https://github.com/tfitzmac)
 
 > 이 문서에 사용 하도록 설정 하 여 SignalR 서버 및 클라이언트에 대 한 추적을 구성 하는 방법을 설명 합니다. 추적을 사용 하 여 SignalR 응용 프로그램에서 이벤트에 대 한 진단 정보를 볼 수 있습니다.
-> 
+>
 > 이 항목에서는 Patrick Fletcher 하 여 원래 작성 되었습니다.
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>이 자습서에 사용 되는 소프트웨어 버전
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - .NET Framework 4.5
 > - SignalR 버전 2
->   
-> 
-> 
+>
+>
+>
 > ## <a name="questions-and-comments"></a>질문이 나 의견이 있으면
-> 
+>
 > 이 자습서를 연결 하는 방법 및 새로운 개선할 수 있습니다 페이지의 맨 아래에 의견에서에 의견을 남겨 주세요. 에 자습서로 직접 관련 되지 않은 질문이 있을 경우 게시할 수 하는 [ASP.NET SignalR 포럼](https://forums.asp.net/1254.aspx/1?ASP+NET+SignalR) 또는 [StackOverflow.com](http://stackoverflow.com/)합니다.
 
 
@@ -134,7 +134,7 @@ ms.locfileid: "41828777"
 <a id="phone"></a>
 ## <a name="enabling-tracing-in-windows-phone-8-clients"></a>Windows Phone 8 클라이언트에서 추적을 사용 하도록 설정
 
-Windows Phone 앱 용 SignalR 응용 프로그램 같은.NET 클라이언트를 사용 하 여 데스크톱 앱으로 하지만 [Console.Out](https://msdn.microsoft.com/library/system.console.out(v=vs.110).aspx) 사용 하 여 파일에 쓰고 [StreamWriter](https://msdn.microsoft.com/library/system.io.streamwriter(v=vs.110).aspx) 를 사용할 수 없습니다. 사용자 지정 구현을 생성 해야 하는 대신 [TextWriter](https://msdn.microsoft.com/library/system.io.textwriter(v=vs.110).aspx) 추적 합니다. 
+Windows Phone 앱 용 SignalR 응용 프로그램 같은.NET 클라이언트를 사용 하 여 데스크톱 앱으로 하지만 [Console.Out](https://msdn.microsoft.com/library/system.console.out(v=vs.110).aspx) 사용 하 여 파일에 쓰고 [StreamWriter](https://msdn.microsoft.com/library/system.io.streamwriter(v=vs.110).aspx) 를 사용할 수 없습니다. 사용자 지정 구현을 생성 해야 하는 대신 [TextWriter](https://msdn.microsoft.com/library/system.io.textwriter(v=vs.110).aspx) 추적 합니다.
 
 <a id="phone_ui"></a>
 ### <a name="logging-windows-phone-client-events-to-the-ui"></a>UI에 Windows Phone 클라이언트 이벤트를 기록합니다.

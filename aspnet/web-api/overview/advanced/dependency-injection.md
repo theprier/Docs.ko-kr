@@ -8,12 +8,12 @@ ms.date: 01/20/2014
 ms.assetid: e3d3e7ba-87f0-4032-bdd3-31f3c1aa9d9c
 msc.legacyurl: /web-api/overview/advanced/dependency-injection
 msc.type: authoredcontent
-ms.openlocfilehash: 41db1af79ed63ff4dd12be37e9cc76e16f1bf5e4
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: c58b06af0044144cf28cc36c16a41672aa1f6eb3
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41831892"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911267"
 ---
 <a name="dependency-injection-in-aspnet-web-api-2"></a>ASP.NET Web API 2에서에서 종속성 주입
 ====================
@@ -88,7 +88,7 @@ IoC 컨테이너는 종속성을 관리 하는 일을 담당 하는 소프트웨
 > "IoC"는 "제어 반전"에 대 한 일반적인 패턴을 설정 하는 프레임 워크 응용 프로그램 코드를 호출 하는 경우이 합니다. IoC 컨테이너 생성 개체를 "반전" 컨트롤의 일반적인 흐름입니다.
 
 
-이 자습서에서는 [Unity](https://msdn.microsoft.com/library/ff647202.aspx) 에서 Microsoft Patterns &amp; 사례입니다. (다른 인기 있는 라이브러리 포함 [Castle Windsor](http://www.castleproject.org/)를 [Spring.Net](http://www.springframework.net/)를 [Autofac](https://code.google.com/p/autofac/)를 [Ninject](http://www.ninject.org/), 및 [StructureMap ](http://docs.structuremap.net/).) Unity를 설치 하려면 NuGet 패키지 관리자를 사용할 수 있습니다. **도구** Visual Studio에서 메뉴 **라이브러리 패키지 관리자**을 선택한 후 **패키지 관리자 콘솔**합니다. 패키지 관리자 콘솔 창에서 다음 명령을 입력 합니다.
+이 자습서에서는 [Unity](https://msdn.microsoft.com/library/ff647202.aspx) 에서 Microsoft Patterns &amp; 사례입니다. (다른 인기 있는 라이브러리 포함 [Castle Windsor](http://www.castleproject.org/)를 [Spring.Net](http://www.springframework.net/)를 [Autofac](https://code.google.com/p/autofac/)를 [Ninject](http://www.ninject.org/), 및 [StructureMap ](http://docs.structuremap.net/).) Unity를 설치 하려면 NuGet 패키지 관리자를 사용할 수 있습니다. **도구** Visual Studio에서 메뉴 **NuGet 패키지 관리자**을 선택한 후 **패키지 관리자 콘솔**합니다. 패키지 관리자 콘솔 창에서 다음 명령을 입력 합니다.
 
 [!code-console[Main](dependency-injection/samples/sample7.cmd)]
 

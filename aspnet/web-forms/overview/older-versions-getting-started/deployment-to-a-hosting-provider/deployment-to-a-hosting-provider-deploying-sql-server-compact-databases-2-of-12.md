@@ -8,12 +8,12 @@ ms.date: 11/17/2011
 ms.assetid: c3c76516-4c48-4153-bd03-d70e3a3edbb0
 msc.legacyurl: /web-forms/overview/older-versions-getting-started/deployment-to-a-hosting-provider/deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12
 msc.type: authoredcontent
-ms.openlocfilehash: 378bcc038335ee852cd1a6c6e545eb72c6e0c78b
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 9b3d47c3c8fe5f0b37f1d45e19341df3f91a5bb0
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41829732"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911190"
 ---
 <a name="deploying-an-aspnet-web-application-with-sql-server-compact-using-visual-studio-or-visual-web-developer-deploying-sql-server-compact-databases---2-of-12"></a>SQL Server Compact Visual Studio 또는 Visual Web Developer를 사용 하 여를 사용 하 여 ASP.NET 웹 응용 프로그램 배포: 배포 SQL Server Compact 데이터베이스-2/12
 ====================
@@ -105,12 +105,11 @@ Code First 마이그레이션을 사용 하 고는, 더 이상 사용 해야 합
 > [!NOTE]
 > 이니셜라이저 클래스를 지정 하는 또 다른 방법은 호출 하 여 수행 됩니다 `Database.SetInitializer` 에 `Application_Start` 에서 메서드는 *Global.asax* 파일입니다. 해당 메서드를 사용 하 여 이니셜라이저를 지정 하는 프로젝트에서 Migrations를 사용 하는 경우 해당 코드 줄을 제거 합니다.
 
-
 다음으로 Code First 마이그레이션을 사용 하도록 설정 합니다.
 
 첫 번째 단계 ContosoUniversity 프로젝트를 시작 프로젝트로 설정 되어 있는지 확인 하는 것입니다. **솔루션 탐색기**ContosoUniversity 프로젝트를 마우스 오른쪽 단추로 클릭 하 고 선택 **시작 프로젝트로 설정**합니다. Code First 마이그레이션을 데이터베이스 연결 문자열을 찾을 시작 프로젝트에 표시 됩니다.
 
-**도구** 메뉴에서 클릭 **라이브러리 패키지 관리자** 차례로 **패키지 관리자 콘솔**합니다.
+**도구** 메뉴에서 클릭 **NuGet 패키지 관리자** 차례로 **패키지 관리자 콘솔**합니다.
 
 ![Selecting_Package_Manager_Console](deployment-to-a-hosting-provider-deploying-sql-server-compact-databases-2-of-12/_static/image6.png)
 

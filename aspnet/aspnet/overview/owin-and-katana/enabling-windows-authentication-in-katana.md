@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: 82324ef0-3b75-4f63-a217-76ef4036ec93
 msc.legacyurl: /aspnet/overview/owin-and-katana/enabling-windows-authentication-in-katana
 msc.type: authoredcontent
-ms.openlocfilehash: 0aa578020a1f02fa68c74e758014c642219b4265
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 8afa2c9dfbe03a9874513f7d083adf7608f4218f
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41837839"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910462"
 ---
 <a name="enabling-windows-authentication-in-katana"></a>Katana에서 Windows 인증 사용
 ====================
@@ -36,7 +36,6 @@ Katana에는 현재 Windows 통합 인증을 모두 지 원하는 두 서버를 
 > [!NOTE]
 > Katana 제공 하지 않습니다 현재 OWIN 미들웨어입니다. Windows 인증을 위해 때문이 기능은 이미 서버에 사용할 수 있습니다.
 
-
 ## <a name="windows-authentication-in-iis"></a>IIS에서 Windows 인증
 
 Microsoft.Owin.Host.SystemWeb를 사용 하 여 IIS에서 Windows 인증 간단히 설정할 수 있습니다.
@@ -45,7 +44,7 @@ Microsoft.Owin.Host.SystemWeb를 사용 하 여 IIS에서 Windows 인증 간단�
 
 ![](enabling-windows-authentication-in-katana/_static/image1.png)
 
-그런 다음 NuGet 패키지를 추가 합니다. **도구** 메뉴에서 **라이브러리 패키지 관리자**을 선택한 후 **패키지 관리자 콘솔**합니다. 패키지 관리자 콘솔 창에서 다음 명령을 입력 합니다.
+그런 다음 NuGet 패키지를 추가 합니다. **도구** 메뉴에서 **NuGet 패키지 관리자**을 선택한 후 **패키지 관리자 콘솔**합니다. 패키지 관리자 콘솔 창에서 다음 명령을 입력 합니다.
 
 [!code-console[Main](enabling-windows-authentication-in-katana/samples/sample1.cmd)]
 
@@ -75,7 +74,7 @@ Visual Studio에서 응용 프로그램을 실행 하는 경우 IIS Express는 �
 
 Microsoft.Owin.Host.HttpListener Katana를 자체 호스트를 사용 하는 경우에 직접 Windows 인증을 사용할 수 있습니다 합니다 **HttpListener** 인스턴스.
 
-먼저 새 콘솔 응용 프로그램을 만듭니다. 그런 다음 NuGet 패키지를 추가 합니다. **도구** 메뉴에서 **라이브러리 패키지 관리자**을 선택한 후 **패키지 관리자 콘솔**합니다. 패키지 관리자 콘솔 창에서 다음 명령을 입력 합니다.
+먼저 새 콘솔 응용 프로그램을 만듭니다. 그런 다음 NuGet 패키지를 추가 합니다. **도구** 메뉴에서 **NuGet 패키지 관리자**을 선택한 후 **패키지 관리자 콘솔**합니다. 패키지 관리자 콘솔 창에서 다음 명령을 입력 합니다.
 
 [!code-console[Main](enabling-windows-authentication-in-katana/samples/sample4.cmd)]
 

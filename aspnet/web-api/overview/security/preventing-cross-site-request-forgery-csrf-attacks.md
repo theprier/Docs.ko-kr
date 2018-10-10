@@ -1,21 +1,21 @@
 ---
 uid: web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks
-title: ASP.NET Web API에서에서 교차 사이트 요청 위조 (CSRF) 공격 방지 | Microsoft Docs
+title: ASP.NET MVC에서 교차 사이트 요청 위조 (CSRF) 공격 방지
 author: MikeWasson
-description: 교차 사이트 요청 위조 (CSRF) 공격 및 ASP.NET Web API에서 CSRF 방지 조치를 구현 하는 방법을 설명 합니다.
+description: 교차 사이트 요청 위조 (CSRF) 공격 및 ASP.NET 웹 MVC CSRF 방지 조치를 구현 하는 방법을 설명 합니다.
 ms.author: riande
 ms.date: 12/12/2012
 ms.assetid: 81d46f14-8f48-4d8c-830d-cc8d594dc11b
 msc.legacyurl: /web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks
 msc.type: authoredcontent
-ms.openlocfilehash: cd7d978190d28a028285746781a380d9bb5f91d4
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: c88975d1c205e9d0733bfb4c710b92bc8fdaaa7a
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41829114"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911499"
 ---
-<a name="preventing-cross-site-request-forgery-csrf-attacks-in-aspnet-web-api"></a>ASP.NET Web API에서에서 교차 사이트 요청 위조 (CSRF) 공격 방지
+<a name="preventing-cross-site-request-forgery-csrf-attacks-in-aspnet-mvc-application"></a>ASP.NET MVC 응용 프로그램에서 교차 사이트 요청 위조 (CSRF) 공격 방지
 ====================
 [Mike Wasson](https://github.com/MikeWasson)
 

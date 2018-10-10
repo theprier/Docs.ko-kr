@@ -8,12 +8,12 @@ ms.date: 08/28/2012
 ms.assetid: 9ef2c4f1-a305-4e0a-9fb8-bfbd9ef331d9
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-new-field-to-the-movie-model-and-table
 msc.type: authoredcontent
-ms.openlocfilehash: 39b48c67b5264a9b3ad97389f6a5c2bf9d94d25f
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 0f9b659b67a9a62635091b1e87169bce1218281a
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48576563"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911415"
 ---
 <a name="adding-a-new-field-to-the-movie-model-and-table"></a>영화 모델 및 테이블에 새 필드 추가
 ====================
@@ -41,7 +41,7 @@ Visual Studio 2012를 사용 하는 경우 두 번 클릭 합니다 *Movies.mdf*
 
 오류가 없는지 확인 하려면 응용 프로그램을 빌드하십시오.
 
-**도구** 메뉴에서 클릭 **라이브러리 패키지 관리자** 차례로 **패키지 관리자 콘솔**합니다.
+**도구** 메뉴에서 클릭 **NuGet 패키지 관리자** 차례로 **패키지 관리자 콘솔**합니다.
 
 ![팩 Man 추가](adding-a-new-field-to-the-movie-model-and-table/_static/image3.png)
 

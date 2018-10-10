@@ -8,12 +8,12 @@ ms.date: 07/30/2013
 ms.assetid: d0a89089-eed8-4f61-a478-c5ffa30186f5
 msc.legacyurl: /mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/building-the-ef5-mvc4-chapter-downloads
 msc.type: authoredcontent
-ms.openlocfilehash: fa018ea12929efa742a323d96938d372b634fdd7
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 6b5d10ba9e878908953e999bd1fd44970acf4ca5
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48577070"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48911970"
 ---
 <a name="building-the-chapter-downloads-for-the-ef-5-mvc-4-tutorials"></a>4 개의 자습서 5 EF MVC에 대 한 다운로드 장 빌드
 ====================
@@ -32,7 +32,7 @@ ms.locfileid: "48577070"
     ![](building-the-ef5-mvc4-chapter-downloads/_static/image1.png)
 3. 파일을 압축을 풉니다.
 4. 두 번 클릭 합니다 *CUx.sln* 파일을 Visual Studio를 시작 합니다.
-5. **도구** 메뉴에서 클릭 **라이브러리 패키지 관리자**, 한 다음 **패키지 관리자 콘솔**합니다.  
+5. **도구** 메뉴에서 클릭 **NuGet 패키지 관리자**, 한 다음 **패키지 관리자 콘솔**합니다.  
   
     ![](building-the-ef5-mvc4-chapter-downloads/_static/image2.png)
 6. 관리자 콘솔 (PMC (패키지)를 클릭 **복원**합니다.  

@@ -8,12 +8,12 @@ ms.date: 05/01/2013
 ms.assetid: 6abecf80-8ffa-41ba-b0d9-1d9edbe7687b
 msc.legacyurl: /signalr/overview/older-versions/scaleout-with-redis
 msc.type: authoredcontent
-ms.openlocfilehash: 4f587b129a1a22e64625d2ab0fc7655984262ebe
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 90f1f1429dcdf8f1015365e5aa337371c6307715
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41836624"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910722"
 ---
 <a name="signalr-scaleout-with-redis-signalr-1x"></a>Redis로 SignalR 규모 확장 (SignalR 1.x)
 ====================
@@ -94,7 +94,7 @@ Redis 이진이 빌드는 `src` 디렉터리입니다.
 - [SignalR 시작](../getting-started/tutorial-getting-started-with-signalr.md)
 - [SignalR 및 MVC 4 시작](tutorial-getting-started-with-signalr-and-mvc-4.md)
 
-다음으로 Redis로 규모 확장을 지원 하기 위해 채팅 응용 프로그램을 수정 합니다. 먼저 프로젝트에 SignalR.Redis NuGet 패키지를 추가 합니다. Visual Studio에서에서 합니다 **도구** 메뉴에서 **라이브러리 패키지 관리자**을 선택한 후 **패키지 관리자 콘솔**합니다. 패키지 관리자 콘솔 창에서 다음 명령을 입력 합니다.
+다음으로 Redis로 규모 확장을 지원 하기 위해 채팅 응용 프로그램을 수정 합니다. 먼저 프로젝트에 SignalR.Redis NuGet 패키지를 추가 합니다. Visual Studio에서에서 합니다 **도구** 메뉴에서 **NuGet 패키지 관리자**을 선택한 후 **패키지 관리자 콘솔**합니다. 패키지 관리자 콘솔 창에서 다음 명령을 입력 합니다.
 
 [!code-powershell[Main](scaleout-with-redis/samples/sample5.ps1)]
 

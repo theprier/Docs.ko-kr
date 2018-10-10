@@ -8,12 +8,12 @@ ms.date: 02/25/2014
 ms.assetid: 262843d6-43a2-4f1c-82d9-0b90ae6df0cf
 msc.legacyurl: /web-api/overview/odata-support-in-aspnet-web-api/odata-v3/creating-an-odata-endpoint
 msc.type: authoredcontent
-ms.openlocfilehash: 654f697c8d095d45ba31e2808c52f9ad24b606c8
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 2e0d3b45fd51192d227d852dc2f05b45ca42944c
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41836334"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910917"
 ---
 <a name="creating-an-odata-v3-endpoint-with-web-api-2"></a>Web API 2 OData v3 엔드포인트 만들기
 ====================
@@ -22,18 +22,18 @@ ms.locfileid: "41836334"
 [완료 된 프로젝트 다운로드](http://code.msdn.microsoft.com/ASPNET-Web-API-OData-cecdb524)
 
 > 합니다 [개방형 데이터 프로토콜](http://www.odata.org/) 는 웹에 대 한 데이터 액세스 프로토콜 (OData). OData는 데이터 구조, 데이터를 쿼리하고, CRUD 작업을 통해 데이터 집합을 조작 하는 일관 된 방식을 제공 (만들기, 읽기, 업데이트 및 삭제). OData는 AtomPub (XML) 및 JSON 형식 모두를 지원합니다. OData는 데이터에 대 한 메타 데이터를 노출 하는 방법을 정의 합니다. 클라이언트 메타 데이터를 사용 하 여 형식 정보 및 데이터 집합에 대 한 관계를 검색할 수 있습니다.
-> 
+>
 > ASP.NET Web API 쉽게 데이터 집합에 대 한 OData 끝점을 만듭니다. 끝점이 지 원하는 OData 작업 정확 하 게 제어할 수 있습니다. 비 OData 끝점와 함께 여러 OData 끝점을 호스트할 수 있습니다. 데이터 모델, 백 엔드 비즈니스 논리 및 데이터 계층을 통해 전체 제어를 해야합니다.
-> 
+>
 > ## <a name="software-versions-used-in-the-tutorial"></a>이 자습서에 사용 되는 소프트웨어 버전
-> 
-> 
-> - [Visual Studio 2013](https://www.microsoft.com/visualstudio/eng/2013-downloads)
+>
+>
+> - [Visual Studio 2013](https://my.visualstudio.com/Downloads?q=visual%20studio%202013)
 > - Web API 2
 > - OData 버전 3
 > - Entity Framework 6
 > - [Fiddler 웹 디버깅 프록시 (선택 사항)](http://www.fiddler2.com)
-> 
+>
 > Web API OData 지원에서 추가한 [ASP.NET 및 Web Tools 2012.2 업데이트](https://go.microsoft.com/fwlink/?LinkId=282650)합니다. 그러나이 자습서에서는 Visual Studio 2013에 추가 된 스 캐 폴딩 합니다.
 
 
@@ -154,7 +154,7 @@ EDM은 데이터의 추상적 모델입니다. EDM 메타 데이터 문서를 �
 
 이 단계에서는 일부 테스트 데이터를 사용 하 여 데이터베이스를 시드하려면 Entity Framework를 사용 합니다. 이 단계는 선택 사항이 있지만 OData 끝점을 즉시 테스트할 수 있습니다.
 
-**도구** 메뉴에서 **라이브러리 패키지 관리자**을 선택한 후 **패키지 관리자 콘솔**합니다. 패키지 관리자 콘솔 창에서 다음 명령을 입력 합니다.
+**도구** 메뉴에서 **NuGet 패키지 관리자**을 선택한 후 **패키지 관리자 콘솔**합니다. 패키지 관리자 콘솔 창에서 다음 명령을 입력 합니다.
 
 [!code-console[Main](creating-an-odata-endpoint/samples/sample5.cmd)]
 
@@ -240,7 +240,7 @@ OData는 몇 가지 직렬화 형식을 지원합니다.
 - JSON "light" (OData v3에 도입 됨)
 - JSON "verbose" (OData v2)
 
-기본적으로 웹 API AtomPubJSON "light" 형식을 사용합니다. 
+기본적으로 웹 API AtomPubJSON "light" 형식을 사용합니다.
 
 AtomPub 형식을 가져오려고 Accept 헤더를 "application/atom + xml"로 설정 합니다. 예제 응답 본문은 다음과 같습니다.
 

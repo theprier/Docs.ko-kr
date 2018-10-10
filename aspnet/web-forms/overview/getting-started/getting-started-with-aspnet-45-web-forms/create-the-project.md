@@ -8,12 +8,12 @@ ms.date: 09/08/2014
 ms.assetid: 2ce36f78-8ecb-4ab1-b748-6d0ab633ea3f
 msc.legacyurl: /web-forms/overview/getting-started/getting-started-with-aspnet-45-web-forms/create-the-project
 msc.type: authoredcontent
-ms.openlocfilehash: de0f8092342a8ba8979a31e9a97b603e44e6a85d
-ms.sourcegitcommit: 45ac74e400f9f2b7dbded66297730f6f14a4eb25
+ms.openlocfilehash: 754f085e3e43f7efa155f410d02a0d29d3349612
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "41828751"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48912295"
 ---
 <a name="create-the-project"></a>프로젝트 만들기
 ====================
@@ -174,8 +174,7 @@ ASP.NET Web Forms 페이지를 실행 하는 경우 페이지를 일련의 처�
 > 
 > Wingtip Toys 응용 프로그램에서 ASP.NET Web Forms 응용 프로그램 템플릿에서 기능 외에도 다음을 사용 합니다. [Entity Framework Code First](https://weblogs.asp.net/scottgu/archive/2010/12/08/announcing-entity-framework-code-first-ctp5-release.aspx), 데이터로 작업할 때 코드 중심의 개발을 수 있는 NuGet 라이브러리는 합니다. 간단히 말해서, 작성 하는 코드에 따라 응용 프로그램의 데이터베이스 부분을 만듭니다. Entity Framework를 사용 하 여 검색 하 고 강력한 형식의 개체로 데이터를 조작 합니다. 데이터에 액세스 하는 방법의 세부 정보를 사용 하지 않고 응용 프로그램에 비즈니스 논리에 집중이 있습니다.
 > 
-> 설치 된 라이브러리 및 ASP.NET Web Forms 템플릿을 사용 하 여 포함 된 패키지에 대 한 자세한 내용은 설치 된 NuGet 패키지 목록을 참조 하세요. 이렇게 하려면 Visual Studio에서 만드는 새 Web Forms 프로젝트를 선택 **도구가**  - &gt; **라이브러리 패키지 관리자**  - &gt; **관리 솔루션용 NuGet 패키지**를 선택 하 고 **패키지를 설치** 에 **NuGet 패키지 관리** 대화 상자.
-
+> 설치 된 라이브러리 및 ASP.NET Web Forms 템플릿을 사용 하 여 포함 된 패키지에 대 한 자세한 내용은 설치 된 NuGet 패키지 목록을 참조 하세요. 이렇게 하려면 Visual Studio에서 만드는 새 Web Forms 프로젝트를 선택 **도구가** > **NuGet 패키지 관리자** > **솔루션용NuGet패키지관리**를 선택한 **설치 된 패키지** 에 **NuGet 패키지 관리** 대화 상자.
 
 ### <a name="touring-visual-studio"></a>Visual Studio touring
 

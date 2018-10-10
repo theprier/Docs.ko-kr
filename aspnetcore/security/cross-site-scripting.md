@@ -5,18 +5,18 @@ description: 사이트 간 스크립팅 (XSS) 및 ASP.NET Core 앱에서이 취�
 ms.author: riande
 ms.date: 10/02/2018
 uid: security/cross-site-scripting
-ms.openlocfilehash: e937ce47b7151155197cd607832eeb6bf62e3a19
-ms.sourcegitcommit: 7b4e3936feacb1a8fcea7802aab3e2ea9c8af5b4
+ms.openlocfilehash: 50f0211a2c64708d9b788dd10ce9064e66014d55
+ms.sourcegitcommit: a4dcca4f1cb81227c5ed3c92dc0e28be6e99447b
 ms.translationtype: MT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48577446"
+ms.lasthandoff: 10/10/2018
+ms.locfileid: "48910527"
 ---
 # <a name="prevent-cross-site-scripting-xss-in-aspnet-core"></a>사이트 간 스크립팅 (XSS) ASP.NET Core에서 방지
 
 작성자: [Rick Anderson](https://twitter.com/RickAndMSFT)
 
-사이트 간 스크립팅 (XSS)는 보안 취약점으로 인 한 공격자가 클라이언트 측 스크립트 (일반적으로 JavaScript) 웹 페이지에 배치할 수 있도록 하는 경우 공격자가 스크립트를 실행 하는 영향을 받는 페이지를 로드 하는 다른 사용자를 공격자가 쿠키를 도용 하는 세션 토큰에 사용 하도록 설정 DOM 조작을 통해 웹 페이지의 콘텐츠를 변경 또는 다른 페이지로 브라우저를 리디렉션하십시오. XSS 취약성으로 인 한 응용 프로그램은 사용자 입력 하 고 유효성 검사, 인코딩 또는 해 서 이스케이프 없이 페이지에서 출력 하는 경우에 일반적으로 발생 합니다.
+사이트 간 스크립팅 (XSS)는 보안 취약점으로 인 한 공격자가 클라이언트 측 스크립트 (일반적으로 JavaScript) 웹 페이지에 배치할 수 있도록 하는 경우 다른 사용자에 게 공격자의 스크립트를 실행 하는 영향을 받는 페이지를 로드 하는 경우 DOM 조작을 통해 웹 페이지의 콘텐츠를 변경 또는 다른 페이지로 브라우저를 리디렉션할 공격자가 쿠키를 도용 하는 세션 토큰에 사용 하도록 설정. XSS 취약성으로 인 한 응용 프로그램은 사용자 입력 하 고 유효성 검사, 인코딩 또는 해 서 이스케이프 하지 않고 페이지를 출력 하는 경우에 일반적으로 발생 합니다.
 
 ## <a name="protecting-your-application-against-xss"></a>XSS에 대 한 응용 프로그램 보호
 
@@ -26,15 +26,15 @@ ms.locfileid: "48577446"
 
 2. HTML 요소 내에서 신뢰할 수 없는 데이터를 배치 하기 전에 HTML로 인코딩된 것을 확인 합니다. 와 같은 문자는 HTML 인코딩을 &lt; 와 같은 안전한 형식으로 변경 하 고 &amp;l t;
 
-3. HTML 특성을 신뢰할 수 없는 데이터를 전환 하기 전에 인코딩된 HTML 특성을 확인 합니다. HTML 인코딩을의 상위 집합 및와 같은 추가 문자를 인코딩합니다 HTML 특성 인코딩입니다 "및 '.
+3. HTML 특성을 신뢰할 수 없는 데이터를 전환 하기 전에 HTML로 인코딩된 것을 확인 합니다. HTML 인코딩을의 상위 집합 및와 같은 추가 문자를 인코딩합니다 HTML 특성 인코딩입니다 "및 '.
 
-4. JavaScript를 신뢰할 수 없는 데이터를 전환 하기 전에 데이터를 런타임에 검색 내용이 HTML 요소에 배치 합니다. 이 불가능 한 다음 데이터를 확인 하는 경우 JavaScript이 인코딩됩니다. JavaScript에 대 한 위험한 문자는 JavaScript 인코딩 및 예를 들어 해당 16 진수 바뀝니다 &lt; 로 인코딩할 수는 `\u003C`합니다.
+4. JavaScript를 신뢰할 수 없는 데이터를 전환 하기 전에 데이터를 런타임에 검색 내용이 HTML 요소에 배치 합니다. 이것이 불가능 하면 JavaScript로 인코딩된 데이터가 확인 합니다. JavaScript에 대 한 위험한 문자는 JavaScript 인코딩 및 예를 들어 해당 16 진수 바뀝니다 &lt; 로 인코딩할 수는 `\u003C`합니다.
 
 5. URL 쿼리 문자열이를 신뢰할 수 없는 데이터를 전환 하기 전에 URL로 인코딩된 것을 확인 합니다.
 
 ## <a name="html-encoding-using-razor"></a>Razor를 사용 하 여 HTML 인코딩
 
-모두 자동으로 MVC에서 사용 되는 Razor 엔진 인코딩합니다 이렇게 것을 방지 하기 위해 열심히 작업 하지 않는 출력 변수에서 제공 합니다. HTML 특성을 사용할 때마다 인코딩 규칙을 사용 합니다 *@* 지시문입니다. HTML로 인코딩 특성은 HTML 인코딩 즉, HTML 인코딩 또는 HTML 특성 인코딩입니다을 사용할 것인지 걱정 없는 합니다. 만 사용 하는 HTML 컨텍스트에서 JavaScript로 직접 신뢰할 수 없는 입력을 삽입 하려고 할 때 하지 확인 해야 합니다. 태그 도우미는 또한 tag 매개 변수에서 사용 하는 입력을 인코딩합니다.
+모두 자동으로 MVC에서 사용 되는 Razor 엔진 인코딩합니다 이렇게 것을 방지 하기 위해 열심히 작업 하지 않는 출력 변수에서 제공 합니다. 사용할 때마다 HTML 특성에 대 한 인코딩 규칙을 사용 합니다 *@* 지시문입니다. HTML로 인코딩 특성은 HTML 인코딩 즉, HTML 인코딩 또는 HTML 특성 인코딩입니다을 사용할 것인지 걱정 없는 합니다. 만 사용 하는 HTML 컨텍스트에서 JavaScript로 직접 신뢰할 수 없는 입력을 삽입 하려고 할 때 하지 확인 해야 합니다. 태그 도우미는 또한 tag 매개 변수에서 사용 하는 입력을 인코딩합니다.
 
 다음 Razor 보기를 수행 합니다.
 
@@ -55,7 +55,7 @@ ms.locfileid: "48577446"
 >[!WARNING]
 > 제공 하는 ASP.NET Core MVC는 `HtmlString` 클래스는 출력 시 자동으로 인코딩된 되지 않습니다. 이 되지 사용할 함께 신뢰할 수 없는 입력으로이 XSS 취약점에 노출 됩니다.
 
-## <a name="javascript-encoding-using-razor"></a>Razor를 사용 하 여 Javascript 인코딩
+## <a name="javascript-encoding-using-razor"></a>Razor를 사용 하 여 JavaScript 인코딩
 
 보기 처리 하는 JavaScript 값을 삽입 하려는 경우가 있을 수 있습니다. 구체적인 방법은 두 가지입니다. 값을 삽입 하는 가장 안전한 방법은 태그의 데이터 특성의 값을 배치 하 여 JavaScript에서 검색 됩니다. 예를 들어:
 
@@ -107,7 +107,7 @@ ms.locfileid: "48577446"
    </script>
    ```
 
-실행 될 때 렌더링 됩니다; 다음
+실행 될 때 다음 렌더링 됩니다. 다음
 
 ```none
 <"123">
@@ -129,7 +129,7 @@ ms.locfileid: "48577446"
    </script>
    ```
 
-이 브라우저에서 다음과 같이 렌더링;
+이 다음과 같이 브라우저에서 렌더링 됩니다.
 
 ```html
 <script>
