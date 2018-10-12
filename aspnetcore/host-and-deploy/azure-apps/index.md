@@ -1,19 +1,19 @@
 ---
-title: Azure App Service에서 ASP.NET Core 호스트
+title: Azure App Service에 ASP.NET Core 앱 배포
 author: guardrex
-description: 유용한 리소스에 대한 링크를 통해 Azure App Service에서 ASP.NET Core 앱을 호스트하는 방법을 알아봅니다.
+description: 이 문서에는 Azure 호스트 및 배포 리소스의 링크가 포함됩니다.
 ms.author: riande
 ms.custom: mvc
 ms.date: 08/29/2018
 uid: host-and-deploy/azure-apps/index
-ms.openlocfilehash: 23289823e154d93e4bedd23a1efae0e58c71eae0
-ms.sourcegitcommit: 57eccdea7d89a62989272f71aad655465f1c600a
+ms.openlocfilehash: f2de81af4bd2992aec76a287484d0057021231d8
+ms.sourcegitcommit: 13940eb53c68664b11a2d685ee17c78faab1945d
 ms.translationtype: HT
 ms.contentlocale: ko-KR
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44340188"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47860968"
 ---
-# <a name="host-aspnet-core-on-azure-app-service"></a>Azure App Service에서 ASP.NET Core 호스트
+# <a name="deploy-aspnet-core-apps-to-azure-app-service"></a>Azure App Service에 ASP.NET Core 앱 배포
 
 [Azure App Service](https://azure.microsoft.com/services/app-service/)는 ASP.NET Core를 비롯한 웹앱을 호스트하기 위한 [Microsoft 클라우드 컴퓨팅 플랫폼 서비스](https://azure.microsoft.com/)입니다.
 
@@ -31,9 +31,6 @@ Visual Studio를 사용하여 ASP.NET Core 웹앱을 만들고 Windows의 Azure 
 
 [Visual Studio를 사용하여 Azure에 게시](xref:tutorials/publish-to-azure-webapp-using-vs)  
 Visual Studio를 사용하여 Azure App Service에 ASP.NET Core 앱을 게시하는 방법을 알아봅니다.
-
-[CLI 도구를 사용하여 Azure에 게시](xref:tutorials/publish-to-azure-webapp-using-cli)  
-Git 명령줄 클라이언트를 사용하여 Azure App Service에 ASP.NET Core 앱을 게시하는 방법을 알아봅니다.
 
 [Visual Studio 및 Git을 사용하여 Azure에 연속 배포](xref:host-and-deploy/azure-apps/azure-continuous-deployment)  
 Visual Studio를 사용하여 ASP.NET Core 웹앱을 만들고 연속 배포를 위한 Git을 사용하여 Azure App Service에 배포하는 방법을 알아봅니다.
